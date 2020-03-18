@@ -1,40 +1,40 @@
 ---
 ms.openlocfilehash: 58dbb73902c0226fa81acf1a70de2160f406f6c6
-ms.sourcegitcommit: 7088f87e9a7da144266135f4b2397e611cf0a228
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/11/2020
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "75901984"
 ---
-### <a name="authorization-iauthorizationpolicyprovider-implementations-require-new-method"></a>Autorizace: implementace IAuthorizationPolicyProvider vyžadují novou metodu.
+### <a name="authorization-iauthorizationpolicyprovider-implementations-require-new-method"></a>Autorizace: Implementace IAuthorizationPolicyProvider vyžadují novou metodu
 
-V ASP.NET Core 3,0 byla do `IAuthorizationPolicyProvider`přidána nová metoda `GetFallbackPolicyAsync`. Tuto záložní zásadu používá middleware autorizace, pokud není zadána žádná zásada.
+V ASP.NET Core 3.0 `GetFallbackPolicyAsync` byla do `IAuthorizationPolicyProvider`aplikace přidána nová metoda . Tato záložní zásada je používána middleware autorizace, pokud není zadána žádná zásada.
 
-Další informace naleznete v tématu [dotnet/aspnetcore # 9759](https://github.com/dotnet/aspnetcore/pull/9759).
+Další informace naleznete [v tématu dotnet/aspnetcore#9759](https://github.com/dotnet/aspnetcore/pull/9759).
 
-#### <a name="version-introduced"></a>Představená verze
+#### <a name="version-introduced"></a>Zavedená verze
 
-3,0
+3.0
 
 #### <a name="old-behavior"></a>Staré chování
 
-Implementace `IAuthorizationPolicyProvider` nevyžadovala `GetFallbackPolicyAsync` metodu.
+Implementace `IAuthorizationPolicyProvider` nevyžadovaly metodu. `GetFallbackPolicyAsync`
 
 #### <a name="new-behavior"></a>Nové chování
 
-Implementace `IAuthorizationPolicyProvider` vyžadují metodu `GetFallbackPolicyAsync`.
+Implementace vyžadují `IAuthorizationPolicyProvider` metodu. `GetFallbackPolicyAsync`
 
 #### <a name="reason-for-change"></a>Důvod změny
 
-Nová metoda byla nutná k tomu, aby nový `AuthorizationMiddleware` mohl použít, když není zadána žádná zásada.
+Pro nové `AuthorizationMiddleware` použití nové metody byla zapotřebí nová metoda, pokud není zadána žádná zásada.
 
 #### <a name="recommended-action"></a>Doporučená akce
 
-Přidejte metodu `GetFallbackPolicyAsync` do implementací `IAuthorizationPolicyProvider`.
+Přidejte `GetFallbackPolicyAsync` metodu do `IAuthorizationPolicyProvider`implementace aplikace .
 
 #### <a name="category"></a>Kategorie
 
-ASP.NET Core
+Jádro ASP.NET
 
 #### <a name="affected-apis"></a>Ovlivněná rozhraní API
 

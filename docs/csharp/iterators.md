@@ -1,34 +1,34 @@
 ---
 title: Iterátory
-description: Naučte se používat integrované C# iterátory a vytvářet vlastní metody iterátoru.
+description: Naučte se používat integrované c# iterátory a jak vytvořit vlastní metody iterátoru.
 ms.date: 06/20/2016
 ms.technology: csharp-advanced-concepts
 ms.assetid: 5cf36f45-f91a-4fca-a0b7-87f233e108e9
 ms.openlocfilehash: 1933ecf83e9fa234f9b88c815d8ab527997c97f2
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73036418"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79399614"
 ---
 # <a name="iterators"></a>Iterátory
 
-Skoro každý program, který napíšete, bude nutné iterovat v kolekci. Budete psát kód, který prověřuje každou položku v kolekci.
+Téměř každý program, který napíšete, bude mít nějakou potřebu iterate přes sbírku. Napíšete kód, který zkoumá každou položku v kolekci.
 
-Také vytvoříte iterátory, které jsou metody, které vytvoří iterátor pro prvky této třídy. Můžete je použít pro:
+Budete také vytvořit iterátor metody, které jsou metody, které vytváří iterátor pro prvky této třídy. Ty mohou být použity pro:
 
-+ Provedení akce u každé položky v kolekci.
-+ Vytváří se výčet vlastní kolekce.
-+ Rozšíření [LINQ](linq/index.md) nebo jiné knihovny.
-+ Vytvoření datového kanálu, ve kterém data efektivně proudí prostřednictvím metod iterátoru.
++ Provedení akce pro každou položku v kolekci.
++ Výčet vlastní kolekce.
++ Rozšíření [LINQ](linq/index.md) nebo jiných knihoven.
++ Vytvoření datového kanálu, kde data efektivně proudí prostřednictvím metod iterátoru.
 
-C# Jazyk poskytuje funkce pro oba tyto scénáře. Tento článek obsahuje přehled těchto funkcí.
+Jazyk C# poskytuje funkce pro oba tyto scénáře. Tento článek obsahuje přehled těchto funkcí.
 
-V tomto kurzu se používá několik kroků. Po každém kroku můžete spustit aplikaci a zobrazit průběh. Můžete také [Zobrazit nebo stáhnout dokončenou ukázku](https://github.com/dotnet/samples/blob/master/csharp/iterators) pro toto téma. Pokyny ke stažení najdete v tématu [ukázky a kurzy](../samples-and-tutorials/index.md#viewing-and-downloading-samples).
+Tento kurz má několik kroků. Po každém kroku můžete spustit aplikaci a zobrazit průběh. Můžete také [zobrazit nebo stáhnout dokončenou ukázku](https://github.com/dotnet/samples/blob/master/csharp/iterators) pro toto téma. Pokyny ke stažení naleznete v [tématu Ukázky a výukové programy](../samples-and-tutorials/index.md#viewing-and-downloading-samples).
 
-## <a name="iterating-with-foreach"></a>Iterace pomocí příkazu foreach
+## <a name="iterating-with-foreach"></a>Iterace s foreach
 
-Výčet kolekce je jednoduchý: klíčové slovo `foreach` vytvoří výčet kolekce a jednou spustí vložený příkaz pro každý prvek v kolekci:
+Výčet kolekce je jednoduchý: `foreach` Klíčové slovo vyjmenovává kolekci a jednou provede vložený příkaz pro každý prvek v kolekci:
 
 ```csharp
 foreach (var item in collection)
@@ -37,15 +37,15 @@ foreach (var item in collection)
 }
 ```
 
-To je všechno, co je to vše. Chcete-li iterovat všechny obsahy kolekce, příkaz `foreach` je vše, co potřebujete. Příkaz `foreach` není Magic, i když. Spoléhá se na dvě Obecná rozhraní definovaná v knihovně .NET Core, aby bylo možné vygenerovat kód potřebný k iteraci kolekce: `IEnumerable<T>` a `IEnumerator<T>`. Tento mechanismus je podrobněji vysvětlen níže.
+A to je vše. Chcete-li iterate přes veškerý obsah `foreach` kolekce, prohlášení je vše, co potřebujete. To `foreach` prohlášení ale není kouzelné. Spoléhá se na dvě obecná rozhraní definovaná v základní knihovně .NET za účelem `IEnumerable<T>` `IEnumerator<T>`generování kódu potřebného k iterovat kolekci: a . Tento mechanismus je podrobněji vysvětlen níže.
 
-Obě tato rozhraní mají také neobecné protějšky: `IEnumerable` a `IEnumerator`. [Obecné](programming-guide/generics/index.md) verze jsou upřednostňovány pro moderní kód.
+Obě tato rozhraní mají také neobecné `IEnumerable` protějšky: a `IEnumerator`. [Obecné](programming-guide/generics/index.md) verze jsou upřednostňovány pro moderní kód.
 
-## <a name="enumeration-sources-with-iterator-methods"></a>Výčtové zdroje s metodami iterátoru
+## <a name="enumeration-sources-with-iterator-methods"></a>Zdroje výčtu pomocí metod iterátoru
 
-Další skvělou funkcí C# jazyka je umožňuje vytvořit metody, které vytvoří zdroj pro výčet. Tyto metody se označují jako *iterátory*. Metoda iterátoru definuje způsob generování objektů v pořadí podle požadavku. K definování metody iterátoru slouží kontextové klíčové slovo `yield return`.
+Další skvělá funkce jazyka C# umožňuje vytvářet metody, které vytvářejí zdroj pro výčet. Tyto metody se označují jako *metody iterátoru*. Metoda iterátoru definuje, jak generovat objekty v pořadí na požádání. Kontextová `yield return` klíčová slova slouží k definování metody iterátoru.
 
-Tuto metodu můžete zapsat pro vytvoření posloupnosti celých čísel od 0 do 9:
+Tuto metodu můžete napsat k vytvoření posloupnosti celých čísel od 0 do 9:
 
 ```csharp
 public IEnumerable<int> GetSingleDigitNumbers()
@@ -63,8 +63,8 @@ public IEnumerable<int> GetSingleDigitNumbers()
 }
 ```
 
-Výše uvedený kód ukazuje odlišné příkazy `yield return` pro zvýraznění faktu, že můžete použít více diskrétních `yield return`ch příkazů v metodě iterátoru.
-Můžete (a často) použít jiné jazykové konstrukce pro zjednodušení kódu metody iterátoru. Následující definice metody vytváří přesně stejnou sekvenci čísel:
+Výše uvedený kód `yield return` ukazuje odlišné příkazy zvýraznit `yield return` skutečnost, že můžete použít více diskrétní příkazy v iterátor metody.
+Můžete (a často dělat) použít jiné jazykové konstrukce pro zjednodušení kódu metody iterátoru. Níže uvedená definice metody vytváří přesně stejnou posloupnost čísel:
 
 ```csharp
 public IEnumerable<int> GetSingleDigitNumbers()
@@ -75,7 +75,7 @@ public IEnumerable<int> GetSingleDigitNumbers()
 }
 ```
 
-Nemusíte se rozhodnout ani jedno z nich. Pro splnění požadavků vaší metody můžete mít tolik `yield return` příkazů:
+Nemusíš rozhodovat o jednom nebo druhém. Můžete mít tolik `yield return` příkazů, kolik je potřeba, aby vyhovovaly potřebám vaší metody:
 
 ```csharp
 public IEnumerable<int> GetSingleDigitNumbers()
@@ -92,7 +92,7 @@ public IEnumerable<int> GetSingleDigitNumbers()
 }
 ```
 
-To je základní syntaxe. Pojďme se na příklad reálného světa, kde byste napsali metodu iterátoru. Představte si, že jste v projektu IoT a senzory zařízení generují velmi velký proud dat. Chcete-li pro data získat dojem, můžete napsat metodu, která bude odebírat každý n-tý datový prvek. Tato metoda malého iterátoru dělá štych:
+To je základní syntaxe. Podívejme se na příklad reálného světa, kde byste napsali metodu iterátoru. Představte si, že jste na projektu IoT a senzory zařízení generují velmi velký proud dat. Chcete-li získat cit pro data, můžete napsat metodu, která vzorky každý n-tý datový prvek. Tato malá metoda iterátoru dělá trik:
 
 ```csharp
 public static IEnumerable<T> Sample(this IEnumerable<T> sourceSequence, int interval)
@@ -106,7 +106,7 @@ public static IEnumerable<T> Sample(this IEnumerable<T> sourceSequence, int inte
 }
 ```
 
-Existují jedna důležitá omezení pro metody iterátoru: ve stejné metodě nemůžete mít příkaz `return` a `yield return` příkaz. Následující kroky nebudou zkompilovány:
+Existuje jedno důležité omezení metod iterátoru: nemůžete mít `return` jak `yield return` příkaz, tak příkaz ve stejné metodě. Následující nebude kompilovat:
 
 ```csharp
 public IEnumerable<int> GetSingleDigitNumbers()
@@ -123,9 +123,9 @@ public IEnumerable<int> GetSingleDigitNumbers()
 }
 ```
 
-Toto omezení se obvykle nejedná o problém. Máte možnost volby buď pomocí `yield return` v rámci této metody, nebo oddělením původní metody do více metod, některých pomocí `return` a některých pomocí `yield return`.
+Toto omezení obvykle není problém. Máte na výběr buď `yield return` pomocí v rámci metody, nebo oddělení původní `return`metody do `yield return`více metod, některé pomocí a některé pomocí .
 
-Poslední metodu můžete upravit mírně a použít `yield return` všude:
+Můžete upravit poslední metodu mírně `yield return` použít všude:
 
 ```csharp
 public IEnumerable<int> GetSingleDigitNumbers()
@@ -142,7 +142,7 @@ public IEnumerable<int> GetSingleDigitNumbers()
 }
 ```
 
-V některých případech je správná odpověď rozdělením metody iterátoru do dvou různých metod. Ten používá `return` a druhý, který používá `yield return`. Vezměte v úvahu situaci, kdy byste mohli chtít vrátit prázdnou kolekci, nebo prvních 5 lichých čísel na základě argumentu Boolean. Můžete napsat tyto dvě metody:
+Někdy je správnou odpovědí rozdělení metody iterátoru na dvě různé metody. Jeden, `return`který používá , `yield return`a druhý, který používá . Zvažte situaci, kdy můžete chtít vrátit prázdnou kolekci nebo prvních 5 lichých čísel na základě logického argumentu. Dalo by se napsat, že jako tyto dvě metody:
 
 ```csharp
 public IEnumerable<int> GetSingleDigitOddNumbers(bool getCollection)
@@ -165,13 +165,13 @@ private IEnumerable<int> IteratorMethod()
 }
 ```
 
-Podívejte se na výše uvedené metody. První používá příkaz standardní `return` pro vrácení prázdné kolekce nebo iterátoru vytvořeného druhou metodou. Druhá metoda používá příkaz `yield return` k vytvoření požadované sekvence.
+Podívejte se na výše uvedené metody. První používá standardní `return` příkaz vrátit buď prázdnou kolekci nebo iterátor vytvořený druhou metodou. Druhá metoda používá `yield return` příkaz k vytvoření požadované sekvence.
 
-## <a name="deeper-dive-into-foreach"></a>Hlubší podrobně do `foreach`
+## <a name="deeper-dive-into-foreach"></a>Hlouběji ponořte se do`foreach`
 
-Příkaz `foreach` se rozšíří na standardní idiom, který používá rozhraní `IEnumerable<T>` a `IEnumerator<T>` k iterování napříč všemi prvky kolekce. Také minimalizuje chyby, které vývojáři vytvářejí při nesprávné správě prostředků.
+Příkaz `foreach` rozbalí do standardní idiom, `IEnumerable<T>` `IEnumerator<T>` který používá a rozhraní iterát u všech prvků kolekce. Také minimalizuje chyby, které vývojáři dělají tím, že správně nespravují prostředky.
 
-Kompilátor transformuje `foreach` cyklus zobrazený v prvním příkladu na něco podobného této konstrukci:
+Kompilátor přeloží smyčku zobrazenou `foreach` v prvním příkladu na něco podobného této konstrukci:
 
 ```csharp
 IEnumerator<int> enumerator = collection.GetEnumerator();
@@ -182,7 +182,7 @@ while (enumerator.MoveNext())
 }
 ```
 
-Výše uvedená konstrukce představuje kód generovaný C# kompilátorem ve verzi 5 a vyšší. Před verzí 5 měla proměnná `item` jiný obor:
+Konstrukce výše představuje kód generovaný kompilátorem Jazyka C# od verze 5 a vyšší. Před verzí 5 `item` měla proměnná jiný rozsah:
 
 ```csharp
 // C# versions 1 through 4:
@@ -195,9 +195,9 @@ while (enumerator.MoveNext())
 }
 ```
 
-Tato změna byla změněna, protože předchozí chování může vést k nejemnému a obtížnému Diagnostikování chyb týkajících se výrazů lambda. Další informace o výrazech lambda naleznete v tématu [lambda Expressions](./programming-guide/statements-expressions-operators/lambda-expressions.md).
+To bylo změněno, protože dřívější chování může vést k jemné a těžko diagnostikovat chyby zahrnující lambda výrazy. Další informace o výrazech lambda naleznete v tématu [Lambda výrazy](./programming-guide/statements-expressions-operators/lambda-expressions.md).
 
-Přesný kód generovaný kompilátorem je poněkud složitější a zpracovává situace, kde objekt vrácený `GetEnumerator()` implementuje rozhraní `IDisposable`. Úplné rozšíření generuje podobný kód jako tento:
+Přesný kód generovaný kompilátorem je poněkud složitější a zpracovává situace, kdy objekt vrácený implementuje `GetEnumerator()` `IDisposable` rozhraní. Úplné rozšíření generuje kód více takto:
 
 ```csharp
 {
@@ -216,7 +216,7 @@ Přesný kód generovaný kompilátorem je poněkud složitější a zpracováv�
 }
 ```
 
-Způsob, jakým je uvolněn enumerátor, závisí na charakteristikách typu `enumerator`. V obecném případě je klauzule `finally` rozšířena na:
+Způsob, jakým je čítač zlikvidován, závisí `enumerator`na vlastnostech typu . V obecném případě `finally` se doložka rozšiřuje na:
 
 ```csharp
 finally
@@ -225,7 +225,7 @@ finally
 }
 ```
 
-Pokud je však typ `enumerator` zapečetěný typ a neexistuje žádný implicitní převod z typu `enumerator` na `IDisposable`, klauzule `finally` se rozšíří do prázdného bloku:
+`enumerator` Pokud je však typ zapečetěného typu a neexistuje žádný `enumerator` implicitní převod z typu na `IDisposable`, `finally` klauzule se rozbalí na prázdný blok:
 
 ```csharp
 finally
@@ -233,7 +233,7 @@ finally
 }
 ```
 
-Pokud existuje implicitní převod z typu `enumerator` na `IDisposable` a `enumerator` je typ hodnoty, která není null, klauzule `finally` se rozšíří na:
+Pokud je implicitní převod z `enumerator` `IDisposable`typu `enumerator` na , a je non-null typ hodnoty, `finally` klauzule rozbalí na:
 
 ```csharp
 finally
@@ -242,4 +242,4 @@ finally
 }
 ```
 
-Naštěstí, nemusíte si pamatovat všechny tyto podrobnosti. Příkaz `foreach` zpracuje všechny tyto drobné odlišnosti za vás. Kompilátor vygeneruje správný kód pro některý z těchto konstrukcí.
+Naštěstí si nemusíte pamatovat všechny tyto detaily. Prohlášení `foreach` zpracovává všechny tyto nuance pro vás. Kompilátor vygeneruje správný kód pro všechny tyto konstrukce.

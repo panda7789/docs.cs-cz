@@ -1,34 +1,34 @@
 ---
 ms.openlocfilehash: 24141f4b95cda2ae382a923da034e75c329b8555
-ms.sourcegitcommit: 79a2d6a07ba4ed08979819666a0ee6927bbf1b01
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/28/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "74643961"
 ---
-### <a name="modernization-of-the-folderbrowserdialog"></a>Modernizace FolderBrowserDialog
+### <a name="modernization-of-the-folderbrowserdialog"></a>Modernizace dialogového okna FolderBrowserDialog
 
-<xref:System.Windows.Forms.FolderBrowserDialog> ovládací prvek se změnil v model Windows Forms aplikacích pro .NET Core.
+Ovládací <xref:System.Windows.Forms.FolderBrowserDialog> prvek byl změněn v aplikacích Windows Forms pro .NET Core.
 
-#### <a name="change-description"></a>Změnit popis
+#### <a name="change-description"></a>Popis změny
 
-V .NET Framework Windows Forms používá pro ovládací prvek <xref:System.Windows.Forms.FolderBrowserDialog> následující dialog:
+V rozhraní .NET Framework používají formuláře systému Windows pro <xref:System.Windows.Forms.FolderBrowserDialog> ovládací prvek následující dialogové okno:
 
-![FolderBrowserDialogControl v .NET Framework](~/docs/images/core-changes/windowsforms/modernized-folderbrowserdialog/folderdlg-framework.png)
+![Ovládací prvek FolderBrowserDialogVV frameworku .NET Framework](~/docs/images/core-changes/windowsforms/modernized-folderbrowserdialog/folderdlg-framework.png)
 
-V rozhraní .NET Core 3,0 model Windows Forms uživatelé novějším ovládacím prvkem založeným na modelu COM, který byl představen v systému Windows Vista:
+V rozhraní .NET Core 3.0 uživatelé windows forms novější ovládací prvek založený na modelu COM, který byl zaveden v systému Windows Vista:
 
-![FolderBrowserDialogControl v rozhraní .NET Core](~/docs/images/core-changes/windowsforms/modernized-folderbrowserdialog/folderdlg-core.png)
+![Ovládací prvek FolderBrowserDialogControl v jádru rozhraní .NET](~/docs/images/core-changes/windowsforms/modernized-folderbrowserdialog/folderdlg-core.png)
 
-#### <a name="version-introduced"></a>Představená verze
+#### <a name="version-introduced"></a>Zavedená verze
 
-3,0
+3.0
 
 #### <a name="recommended-action"></a>Doporučená akce
 
-Dialog se upgraduje automaticky.
+Dialog bude automaticky inovován.
 
-Pokud si přejete zachovat původní dialog, nastavte vlastnost <xref:System.Windows.Forms.FolderBrowserDialog.AutoUpgradeEnabled?displayProperty=nameWithType> na `false` před zobrazením dialogového okna, jak je znázorněno v následujícím fragmentu kódu:
+Pokud chcete zachovat původní dialogové okno, nastavte <xref:System.Windows.Forms.FolderBrowserDialog.AutoUpgradeEnabled?displayProperty=nameWithType> vlastnost před `false` zobrazením dialogového okna, jak je znázorněno na následujícím fragmentu kódu:
 
 ```csharp
 var dialog = new FolderBrowserDialog();

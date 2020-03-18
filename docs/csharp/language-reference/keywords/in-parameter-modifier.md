@@ -1,37 +1,37 @@
 ---
-title: v modifikátoru parametru C# – referenční informace
+title: v modifikátoru parametrů - C# Reference
 ms.date: 03/26/2019
 helpviewer_keywords:
 - parameters [C#], in
 - in parameters [C#]
-ms.openlocfilehash: 10e7b91f9a6bf280c5f0654b243492bac8cde1e0
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: cbde7a571fb71ed7577077c77a5c61db553ec859
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75715255"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79173611"
 ---
-# <a name="in-parameter-modifier-c-reference"></a>in – modifikátor parametruC# (odkaz)
+# <a name="in-parameter-modifier-c-reference"></a>v modifikátoru parametrů (C# Reference)
 
-Klíčové slovo `in` způsobí, že argumenty budou předány odkazem. Nastaví formální parametr jako alias pro argument, který musí být proměnná. Jinými slovy, každá operace s parametrem je provedena na argumentu. Je podobný klíčovým slovem [ref](ref.md) nebo [out](out-parameter-modifier.md) s tím rozdílem, že `in` argumenty nelze upravovat pomocí volané metody. Vzhledem k tomu, že lze upravit argumenty `ref`, `out` argumenty musí být upraveny volanou metodou a tyto úpravy jsou pozorovatelně v volajícím kontextu.
+Klíčové `in` slovo způsobí, že argumenty, které mají být předány odkazem. Vytvoří formální parametr alias pro argument, který musí být proměnná. Jinými slovy, každá operace na parametr je provedena na argument. Je to jako [ref](ref.md) nebo [out](out-parameter-modifier.md) `in` klíčová slova, s tím rozdílem, že argumenty nelze změnit volanou metodou. Vzhledem `ref` k tomu, `out` argumenty mohou být změněny, argumenty musí být změněny volanou metodou a tyto změny jsou pozorovatelné v kontextu volání.
 
 [!code-csharp-interactive[cs-in-keyword](../../../../samples/snippets/csharp/language-reference/keywords/in-ref-out-modifier/InParameterModifier.cs#1)]  
 
-Předchozí příklad ukazuje, že modifikátor `in` je obvykle zbytečný na webu volání. Vyžaduje se pouze v deklaraci metody.
+Předchozí příklad ukazuje, že `in` modifikátor je obvykle zbytečné na webu volání. Je vyžadována pouze v deklaraci metody.
 
-> [!NOTE] 
-> Klíčové slovo `in` lze také použít s parametrem obecného typu k určení toho, že parametr typu je kontravariantní, jako součást příkazu `foreach` nebo jako součást klauzule `join` v dotazu LINQ. Další informace o použití klíčového slova `in` v těchto kontextech naleznete [v části v](in.md)tématu, která poskytuje odkazy na všechna tato použití.
+> [!NOTE]
+> Klíčové `in` slovo lze také použít s parametrem obecného typu k určení, že `foreach` parametr typu je `join` kontravariantní, jako součást příkazu nebo jako součást klauzule v dotazu LINQ. Další informace o použití `in` klíčového slova v těchto souvislostech naleznete v [části](in.md), která obsahuje odkazy na všechna tato použití.
   
-Proměnné předané jako argumenty `in` musí být před předáním do volání metody inicializovány. Volaná metoda ale nemůže přiřadit hodnotu ani upravovat argument.  
+Proměnné předané `in` jako argumenty musí být inicializovány před předáním ve volání metody. Volaná metoda však nesmí přiřadit hodnotu nebo upravit argument.  
 
-Modifikátor parametru `in` je k dispozici C# v 7,2 a novějších. Předchozí verze generují chybu kompilátoru `CS8107` ("funkce" odkazy jen pro čtení "není v C# 7,0 k dispozici. Použijte prosím jazyk verze 7,2 nebo vyšší. ") Chcete-li nakonfigurovat verzi jazyka kompilátoru, přečtěte si téma [ C# výběr jazykové verze](../configure-language-version.md).
+Modifikátor `in` parametrů je k dispozici v c# 7.2 a novější. Předchozí verze generovat chybu `CS8107` kompilátoru ("Funkce odkazy jen pro čtení' není k dispozici v C# 7.0. Použijte prosím jazyk verze 7.2 nebo vyšší.") Informace o konfiguraci jazykové verze kompilátoru naleznete [v tématu Výběr jazykové verze jazyka C#](../configure-language-version.md).
 
-Klíčová slova `in`, `ref`a `out` nejsou považována za součást signatury metody pro účely překladu přetížení. Proto metody nemohou být přetíženy, pokud jediným rozdílem je, že jedna metoda přebírá `ref` nebo `in` argument a druhý přebírá `out` argument. Následující kód například nebude zkompilován:  
+`in`, `ref`a `out` klíčová slova nejsou považovány za součást podpisu metody pro účely řešení přetížení. Proto metody nelze přetížit, pokud jediný rozdíl `ref` je, že jedna metoda trvá nebo `in` argument a druhý trvá `out` argument. Následující kód, například, nebude kompilovat:  
   
 ```csharp
 class CS0663_Example
 {
-    // Compiler error CS0663: "Cannot define overloaded 
+    // Compiler error CS0663: "Cannot define overloaded
     // methods that differ only on in, ref and out".
     public void SampleMethod(in int i) { }
     public void SampleMethod(ref int i) { }
@@ -50,19 +50,19 @@ class InOverloads
 
 ## <a name="overload-resolution-rules"></a>Pravidla řešení přetížení
 
-Pravidla řešení přetížení můžete pochopit pro metody s hodnotou a `in` argumenty vysvětlením motivace pro `in` argumenty. Definování metod pomocí `in`ch parametrů je potenciální optimalizace výkonu. Některé argumenty typu `struct` mohou být velké a když jsou metody volány v těsných smyčkách nebo kritických cestách kódu, náklady na kopírování těchto struktur jsou kritické. Metody deklarují `in` parametrů pro určení, že argumenty mohou být předány odkazem bezpečně, protože volaná metoda neupravuje stav tohoto argumentu. Předání těchto argumentů odkazem se vyhne (potenciálně) nákladné kopii. 
+Můžete pochopit pravidla řešení přetížení pro metody s `in` hodnotou vs `in` argumenty pochopením motivace pro argumenty. Definování metod `in` pomocí parametrů je potenciální optimalizace výkonu. Některé `struct` argumenty typu mohou mít velké velikosti a při volání metod v těsných cyklických cynicích nebo kritických cestách kódu jsou náklady na kopírování těchto struktur kritické. Metody `in` deklarují parametry, které určují, že argumenty mohou být bezpečně předány odkazem, protože volaná metoda nemění stav tohoto argumentu. Předáním těchto argumentů odkazem se vyhnete (potenciálně) nákladné kopii.
 
-Určení `in` argumentů na webu volání je obvykle volitelné. Neexistuje žádný sémantický rozdíl mezi předáním argumentů podle hodnoty a jejich předáním odkazem pomocí modifikátoru `in`. Modifikátor `in` na webu volání je nepovinný, protože nemusíte označovat, že hodnota argumentu může být změněna. Explicitně přidáte modifikátor `in` na webu volání, aby se zajistilo, že argument je předán odkazem, nikoli hodnotou. Explicitní použití `in` má následující dva účinky:
+Zadání `in` argumentů na webu volání je obvykle volitelné. Neexistuje žádný sémantický rozdíl mezi předávání argumentů hodnotou `in` a jejich předávání odkazem pomocí modifikátoru. Modifikátor `in` na webu volání je volitelný, protože není nutné označit, že hodnota argumentu může být změněna. Explicitně přidáte `in` modifikátor na webu volání, abyste zajistili, že argument je předán odkazem, nikoli hodnotou. Explicitně `in` using má následující dva efekty:
 
-Nejprve zadáním `in` na webu volání vynutí kompilátor vybrat metodu definovanou s parametrem odpovídajícího `in`. V opačném případě, pokud se dvě metody liší pouze v přítomnosti `in`, je přetížení hodnotou pomocí lepší shody.
+Nejprve zadání `in` na pracovišti volání vynutí kompilátoru `in` vybrat metodu definovanou s odpovídající parametr. V opačném případě, pokud dvě `in`metody se liší pouze v přítomnosti , přetížení podle hodnoty je lepší shoda.
 
-Dále zadáním `in` deklarujete záměr k předání argumentu odkazem. Argument použitý v `in` musí představovat umístění, na které lze přímo odkazovat. Platí stejná obecná pravidla pro argumenty `out` a `ref`: nemůžete použít konstanty, běžné vlastnosti nebo jiné výrazy, které vytváří hodnoty. V opačném případě vynechání `in` na webu volání informuje kompilátor, že umožňuje vytvořit dočasnou proměnnou, která bude předána odkazem jen pro čtení k metodě. Kompilátor vytvoří dočasnou proměnnou k překonání několika omezení s `in` argumenty:
+Za druhé, `in` zadání deklaruje váš záměr předat argument odkazem. Argument použitý `in` s musí představovat umístění, které lze přímo odkazovat. Stejná obecná `out` pravidla `ref` pro a argumenty platí: Nelze použít konstanty, běžné vlastnosti nebo jiné výrazy, které vytvářejí hodnoty. V opačném případě `in` vynechání na webu volání informuje kompilátor, který mu umožní vytvořit dočasnou proměnnou předat jen pro čtení odkaz na metodu. Kompilátor vytvoří dočasnou proměnnou `in` k překonání několika omezení s argumenty:
 
-- Dočasná proměnná umožňuje konstanty v čase kompilace jako parametry `in`.
-- Dočasná proměnná povoluje vlastnosti nebo jiné výrazy pro parametry `in`.
-- Dočasná proměnná umožňuje argumenty, kde existuje implicitní převod typu argumentu na typ parametru.
+- Dočasná proměnná umožňuje konstanty `in` v době kompilace jako parametry.
+- Dočasná proměnná umožňuje vlastnosti `in` nebo jiné výrazy pro parametry.
+- Dočasná proměnná umožňuje argumenty, kde je implicitní převod z typu argumentu na typ parametru.
 
-Ve všech předchozích instancích vytvoří kompilátor dočasnou proměnnou, která ukládá hodnotu konstanty, vlastnosti nebo jiného výrazu.
+Ve všech předchozích instancích kompilátor vytvoří dočasnou proměnnou, která ukládá hodnotu konstanty, vlastnosti nebo jiného výrazu.
 
 Následující kód ilustruje tato pravidla:
 
@@ -82,7 +82,7 @@ Method(i); // passed by readonly reference
 Method(in i); // passed by readonly reference, explicitly using `in`
 ```
 
-Nyní předpokládejme, že je k dispozici jiná metoda používající argumenty hodnoty. Změny výsledků, jak je znázorněno v následujícím kódu:
+Nyní předpokládejme, že byla k dispozici jiná metoda používající argumenty hodnoty. Výsledky se mění tak, jak je znázorněno v následujícím kódu:
 
 ```csharp
 static void Method(int argument)
@@ -105,25 +105,25 @@ Method(i); // Calls overload passed by value
 Method(in i); // passed by readonly reference, explicitly using `in`
 ```
 
-Jediným voláním metody, kde je argument předána odkazem, je ten poslední.
+Jediná metoda volání, kde je argument předán odkazem je poslední.
 
 > [!NOTE]
-> Předchozí kód používá `int` jako typ argumentu pro zjednodušení. Vzhledem k tomu, že `int` není větší než odkaz ve většině moderních počítačů, neexistuje žádná výhoda k předání jednoho `int` jako odkazu jen pro čtení. 
+> Předchozí kód používá `int` jako typ argumentu pro jednoduchost. Protože `int` není větší než odkaz ve většině moderních počítačů, není `int` žádný přínos pro předání jeden jako odkaz jen pro čtení.
 
-## <a name="limitations-on-in-parameters"></a>Omezení parametrů `in`
+## <a name="limitations-on-in-parameters"></a>Omezení `in` parametrů
 
-Klíčová slova `in`, `ref`a `out` nelze použít pro následující typy metod:  
+Klíčová `out` slova a `in`klíčová `ref`slova nelze použít pro následující typy metod:  
   
-- Asynchronní metody, které definujete pomocí modifikátoru [Async](async.md) .  
-- Metody iterátoru, které zahrnují příkaz [yield return](yield.md) nebo `yield break`.  
+- Asynchronní metody, které definujete pomocí [asynchronního](async.md) modifikátoru.  
+- Iterátor metody, které zahrnují výnos `yield break` výnos [return](yield.md) nebo příkaz.  
 
-## <a name="c-language-specification"></a>C# – jazyková specifikace  
+## <a name="c-language-specification"></a>Specifikace jazyka C#  
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [C#Odkaz](../index.md)
-- [Průvodce programováním v jazyce C#](../../programming-guide/index.md)
-- [Klíčová slova jazyka C#](index.md)
+- [Odkaz jazyka C#](../index.md)
+- [Programovací příručka jazyka C#](../../programming-guide/index.md)
+- [C# Klíčová slova](index.md)
 - [Parametry metody](method-parameters.md)
-- [Zapisovat bezpečný efektivní kód](../../write-safe-efficient-code.md)
+- [Zapisujte bezpečný efektivní kód](../../write-safe-efficient-code.md)

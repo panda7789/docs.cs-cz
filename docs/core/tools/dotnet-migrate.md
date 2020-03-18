@@ -1,23 +1,23 @@
 ---
-title: dotnet – příkaz migrace
-description: Příkaz dotnet migruje migruje projekt a všechny jeho závislosti.
+title: dotnet migrate, příkaz
+description: Příkaz migrace dotnet migruje projekt a všechny jeho závislosti.
 ms.date: 02/14/2020
 ms.openlocfilehash: 6148048c469c43320cc4459352fd2fb62f101740
-ms.sourcegitcommit: f38e527623883b92010cf4760246203073e12898
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/20/2020
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "77503694"
 ---
 # <a name="dotnet-migrate"></a>dotnet migrate
 
-**Tento článek se týká:** ✔️ .NET Core 2. x SDK
+**Tento článek se týká:** ✔️ .NET Core 2.x SDK
 
-## <a name="name"></a>Název
+## <a name="name"></a>Name (Název)
 
-`dotnet migrate` – migruje projekt .NET Core ve verzi Preview 2 na projekt ve stylu .NET Core SDK.
+`dotnet migrate`- Migruje projekt Preview 2 .NET Core do projektu ve stylu sady .NET Core SDK.
 
-## <a name="synopsis"></a>Stručný obsah
+## <a name="synopsis"></a>Synopse
 
 ```dotnetcli
 dotnet migrate [<SOLUTION_FILE|PROJECT_DIR>] [--format-report-file-json] [-r|--report-file] [-s|--skip-project-references] [--skip-backup] [-t|--template-file] [-v|--sdk-package-version] [-x|--xproj-file]
@@ -26,80 +26,80 @@ dotnet migrate [-h|--help]
 
 ## <a name="description"></a>Popis
 
-Tento příkaz je zastaralý. Příkaz `dotnet migrate` již není od sady .NET Core 3,0 SDK k dispozici. Může migrovat pouze projekt verze Preview 2 .NET Core do projektu .NET Core s 1. x, který není podporován.
+Tento příkaz je zastaralé. Příkaz `dotnet migrate` již není k dispozici počínaje sadou .NET Core 3.0 SDK. Může migrovat pouze projekt Preview 2 .NET Core do projektu 1.x .NET Core, který je mimo podporu.
 
-Ve výchozím nastavení příkaz migruje kořenový projekt a všechny odkazy projektu, které obsahuje kořenový projekt. Toto chování je zakázáno pomocí možnosti `--skip-project-references` za běhu.
+Ve výchozím nastavení příkaz migruje kořenový projekt a všechny odkazy na projekt, které kořenový projekt obsahuje. Toto chování je `--skip-project-references` zakázáno pomocí možnosti za běhu.
 
-Migraci můžete provádět na těchto prostředcích:
+Migraci lze provést u následujících prostředků:
 
-* Jeden projekt zadáním souboru *Project. JSON* , který se má migrovat.
-* Všechny adresáře zadané v souboru *Global. JSON* předáním cesty k souboru *Global. JSON* .
-* Soubor *řešení. sln* , kde migruje projekty, na které je odkazováno v řešení.
+* Jeden projekt zadáním souboru *project.json* k migraci.
+* Všechny adresáře zadané v souboru *global.json* předáním v cestě k souboru *global.json.*
+* Soubor *solution.sln,* kde migruje projekty odkazované v řešení.
 * Ve všech podadresářích daného adresáře rekurzivně.
 
-Příkaz `dotnet migrate` udržuje migrovaný soubor *Project. JSON* v adresáři `backup`, který se vytvoří, pokud adresář neexistuje. Toto chování je přepsáno pomocí možnosti `--skip-backup`.
+Příkaz `dotnet migrate` uchovává migrovaný soubor *project.json* uvnitř `backup` adresáře, který vytvoří, pokud adresář neexistuje. Toto chování je `--skip-backup` přepsáno pomocí možnosti.
 
-Ve výchozím nastavení operace migrace vypíše stav procesu migrace do standardního výstupu (STDOUT). Použijete-li možnost `--report-file <REPORT_FILE>`, výstup je uložen do souboru s zadáním.
+Ve výchozím nastavení operace migrace vypisuje stav procesu migrace na standardní výstup (STDOUT). Pokud použijete `--report-file <REPORT_FILE>` tuto možnost, výstup se uloží do určeného souboru.
 
-Příkaz `dotnet migrate` podporuje pouze platná verze Preview 2 projekty založené na *projektu. JSON*. To znamená, že ho nemůžete použít k migraci DNX nebo Preview 1 projektů založených na *Project. JSON*přímo do projektů MSBuild/csproj. Nejprve je třeba ručně migrovat projekt do projektu verze Preview 2 *Project. JSON*a potom použít příkaz `dotnet migrate` pro migraci projektu.
+Příkaz `dotnet migrate` podporuje pouze platné projekty založené na *projektu.json*preview 2. To znamená, že jej nelze použít k migraci projektů založených na *projektu*DNX nebo Preview 1 přímo do projektů MSBuild/csproj. Nejprve je třeba ručně migrovat projekt do projektu.json verze `dotnet migrate` Preview 2 a potom pomocí příkazu k migraci projektu. *project.json*
 
 ## <a name="arguments"></a>Argumenty
 
 `PROJECT_JSON/GLOBAL_JSON/SOLUTION_FILE/PROJECT_DIR`
 
-Cesta k jednomu z následujících:
+Cesta k jedné z následujících možností:
 
-* soubor *Project. JSON* , který se má migrovat
-* soubor *Global. JSON* : složky zadané v souboru *Global. JSON* se migrují.
-* soubor *řešení. sln* : projekty odkazované v řešení jsou migrovány.
-* Adresář, který se má migrovat: rekurzivně vyhledává soubory *Project. JSON* , které se mají migrovat do zadaného adresáře.
+* soubor *u množení.*
+* *global.json* soubor: složky zadané v *global.json* jsou migrovány.
+* soubor *solution.sln:* projekty odkazované v řešení jsou migrovány.
+* adresář pro migraci: rekurzivně vyhledá soubory *project.json,* které mají být migrovány uvnitř zadaného adresáře.
 
-Použije se výchozí nastavení aktuální adresář, pokud není nic zadané.
+Pokud není nic zadáno, výchozí je aktuální adresář.
 
 ## <a name="options"></a>Možnosti
 
 `--format-report-file-json <REPORT_FILE>`
 
-Výstupní soubor sestavy migrace jako JSON, nikoli zprávy uživatele
+Výstupní migrace soubor sestavy jako JSON spíše než uživatelské zprávy.
 
 `-h|--help`
 
-Vypíše krátkou nápovědu k příkazu.
+Vytiskne krátkou nápovědu pro příkaz.
 
 `-r|--report-file <REPORT_FILE>`
 
-Výstup sestavy migrace do souboru spolu s konzolou.
+Výstupní zpráva o migraci do souboru kromě konzoly.
 
 `-s|--skip-project-references [Debug|Release]`
 
-Přeskočit migraci odkazů na projekt Ve výchozím nastavení jsou odkazy na projekt migrovány rekurzivně.
+Přeskočení migrace odkazů na projekt Ve výchozím nastavení jsou odkazy na projekt migrovány rekurzivně.
 
 `--skip-backup`
 
-Po úspěšné migraci můžete přeskočit přesunutí *Project. JSON*, *Global. JSON*a *\*. xproj* do adresáře `backup`.
+Po úspěšné migraci přeskočte `backup` přesunutí *souboru project.json*, *global.json*a * \*.xproj* do adresáře.
 
 `-t|--template-file <TEMPLATE_FILE>`
 
-Soubor CSPROJ šablony, který se má použít pro migraci Ve výchozím nastavení se používá stejná šablona jako ta, kterou vynechává `dotnet new console`.
+Šablona csproj soubor pro migraci. Ve výchozím nastavení se používá stejná šablona, kterou jste upustili. `dotnet new console`
 
 `-v|--sdk-package-version <VERSION>`
 
-Verze balíčku sady SDK, na který se odkazuje migrovaná aplikace Výchozím nastavením je verze sady SDK v `dotnet new`.
+Verze balíčku sady SDK, na kterou odkazuje migrovaná aplikace. Výchozí je verze sady SDK `dotnet new`v .
 
 `-x|--xproj-file <FILE>`
 
-Cesta k souboru xproj, který se má použít Požadováno v případě, že je v adresáři projektu více než jeden xproj.
+Cesta k souboru xproj, který chcete použít. Povinné v případě, že je více než jeden xproj v adresáři projektu.
 
 ## <a name="examples"></a>Příklady
 
-Migrovat projekt v aktuálním adresáři a všech jeho závislostech mezi projekty:
+Migrujte projekt v aktuálním adresáři a všechny jeho závislosti mezi projekty:
 
 `dotnet migrate`
 
-Migrujte všechny projekty, které obsahuje soubor *Global. JSON* :
+Migrace všech projektů, které soubor *global.json* obsahuje:
 
 `dotnet migrate path/to/global.json`
 
-Migrujte pouze aktuální projekt a žádné závislosti mezi projekty (P2P). Použijte také konkrétní verzi sady SDK:
+Migrujte pouze aktuální projekt a žádné závislosti projektu k projektu (P2P). Použijte také konkrétní verzi sady SDK:
 
 `dotnet migrate -s -v 1.0.0-preview4`

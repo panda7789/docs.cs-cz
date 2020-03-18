@@ -1,35 +1,35 @@
 ---
 ms.openlocfilehash: e6e10b2ec451c07bf397cbdcac51ef57c29dab47
-ms.sourcegitcommit: 79a2d6a07ba4ed08979819666a0ee6927bbf1b01
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/28/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "74568088"
 ---
-### <a name="json-serializer-exception-type-changed-from-jsonexception-to-notsupportedexception"></a>Typ výjimky serializátoru JSON se změnil z `JsonException` na `NotSupportedException`
+### <a name="json-serializer-exception-type-changed-from-jsonexception-to-notsupportedexception"></a>Typ výjimky serializátoru Json byl změněn z `JsonException` na`NotSupportedException`
 
-V .NET Core 3,0 Preview 6 až 8 by serializátor vyvolal <xref:System.Text.Json.JsonException>, když narazil na nepodporovaný odvozený typ kolekce. Počínaje rozhraním .NET Core 3,0 Preview 9 vyvolá serializátor místo toho <xref:System.NotSupportedException>.
+V .NET Core 3.0 Náhled 6 až 8 <xref:System.Text.Json.JsonException> serializátor by vyvolat, když došlo k nepodporované odvozené kolekce typu. Počínaje .NET Core 3.0 Náhled 9 serializátor vyvolá <xref:System.NotSupportedException> místo.
 
-#### <a name="change-description"></a>Změnit popis
+#### <a name="change-description"></a>Popis změny
 
-V .NET Core 3,0 Preview 6 až Preview 8 by serializátor vyvolal <xref:System.Text.Json.JsonException>, když narazil na nepodporovaný odvozený typ kolekce. *Nepodporovaný typ odvozené kolekce* je libovolný typ kolekce, který není možné přiřadit k jednomu z následujících typů:
+V .NET Core 3.0 Náhled 6 až Náhled <xref:System.Text.Json.JsonException> 8 serializátor by vyvolat, když došlo k nepodporované odvozené kolekce typu. Nepodporovaný *typ odvozené kolekce* je libovolný typ kolekce, který nelze přiřadit jednomu z následujících typů:
 
 - <xref:System.Collections.IList>
 - <xref:System.Collections.Generic.ICollection%601>
 - <xref:System.Collections.Generic.Stack%601>
 - <xref:System.Collections.Generic.Queue%601>
 - <xref:System.Collections.IDictionary>
-- [Řetězec IDictionary\<, T >](xref:System.Collections.Generic.IDictionary%602)
+- [Řetězec IDictionary,t\<>](xref:System.Collections.Generic.IDictionary%602)
 
-Počínaje rozhraním .NET Core 3,0 Preview 9 vyvolá serializátor při zjištění nepodporovaného typu kolekce <xref:System.NotSupportedException>. Nový typ výjimky lépe odráží důvod selhání operace deserializace.
+Počínaje .NET Core 3.0 Náhled 9 serializátor vyvolá <xref:System.NotSupportedException> Při výskytu nepodporovaný typ kolekce. Nový typ výjimky lépe odráží, proč operace deserializace selhává.
 
-#### <a name="version-introduced"></a>Představená verze
+#### <a name="version-introduced"></a>Zavedená verze
 
-3,0 Preview 9
+3.0 Náhled 9
 
 #### <a name="recommended-action"></a>Doporučená akce
 
-Pokud při deserializaci zachytíte <xref:System.Text.Json.JsonException>, možná budete chtít zvážit také zachytávání <xref:System.NotSupportedException>.
+Pokud jste chytání <xref:System.Text.Json.JsonException> při deserializaci, možná budete <xref:System.NotSupportedException>chtít, aby zvážila také chytání .
 
 #### <a name="category"></a>Kategorie
 

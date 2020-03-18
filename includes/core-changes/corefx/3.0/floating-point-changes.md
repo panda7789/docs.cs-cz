@@ -1,28 +1,28 @@
 ---
 ms.openlocfilehash: ce4f09908b1025e8e5a0380c9bf035c6b0db479a
-ms.sourcegitcommit: 79a2d6a07ba4ed08979819666a0ee6927bbf1b01
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/28/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "74568208"
 ---
-### <a name="floating-point-formatting-and-parsing-behavior-changed"></a>Změnilo se formátování a chování při analýze s plovoucí desetinnou čárkou.
+### <a name="floating-point-formatting-and-parsing-behavior-changed"></a>Změněno formátování a analýza s plovoucí desetinnou tázkem.
 
-Chování při analýze a formátování plovoucí desetinné čárky (pomocí <xref:System.Double> a <xref:System.Single>ch typů) nyní dodržuje standard IEEE.
+Chování analýzy a formátování s plovoucí <xref:System.Double> desetinnou tázkem (podle <xref:System.Single> a typů) je nyní kompatibilní s IEEE.
 
-#### <a name="change-description"></a>Změnit popis
+#### <a name="change-description"></a>Popis změny
 
-V .NET Core 2,2 a starších verzích se formátování pomocí <xref:System.Double.ToString%2A?displayProperty=nameWithType> a <xref:System.Single.ToString%2A?displayProperty=nameWithType>a analýzy pomocí <xref:System.Double.Parse%2A?displayProperty=nameWithType>, <xref:System.Double.TryParse%2A?displayProperty=nameWithType>, <xref:System.Single.Parse%2A?displayProperty=nameWithType>a <xref:System.Single.TryParse%2A?displayProperty=nameWithType> nedodržují Standard IEEE. V důsledku toho není možné zaručit, že hodnota převedená s jakýmkoli podporovaným standardním nebo vlastním formátovacím řetězcem. U některých vstupů může být pokus o analýzu formátované hodnoty neúspěšný a pro ostatní se analyzovaná hodnota nerovná původní hodnotě.
+V rozhraní .NET Core 2.2 a starších <xref:System.Single.ToString%2A?displayProperty=nameWithType>verzích formátování <xref:System.Double.Parse%2A?displayProperty=nameWithType>s <xref:System.Double.TryParse%2A?displayProperty=nameWithType> <xref:System.Double.ToString%2A?displayProperty=nameWithType> <xref:System.Single.Parse%2A?displayProperty=nameWithType>a <xref:System.Single.TryParse%2A?displayProperty=nameWithType> , a analýza s , , a nejsou kompatibilní s IEEE. V důsledku toho není možné zaručit, že hodnota bude roundtrip s všechny podporované standardní nebo vlastní formátovací řetězec. U některých vstupů může pokus o analýzu formátované hodnoty selhat a u jiných se analyzovaná hodnota nerovná původní hodnotě.
 
-Počínaje .NET Core 3,0 jsou operace analýzy a formátování kompatibilní se standardem IEEE 754. Tím je zajištěno, že chování typů s plovoucí desetinnou čárkou v rozhraní .NET odpovídá NORMám standardu IEEE, jako je například C#. Další informace najdete v příspěvku na blogu k [analýze a formátování s plovoucí desetinnou čárkou v .NET Core 3,0](https://devblogs.microsoft.com/dotnet/floating-point-parsing-and-formatting-improvements-in-net-core-3-0/) .
+Počínaje rozhraním .NET Core 3.0 jsou operace analýzy a formátování kompatibilní s rozhraním IEEE 754. Tím je zajištěno, že chování typů s plovoucí desetinnou desetinnou tácek v rozhraní .NET odpovídá chování jazyků kompatibilních s IEEE, jako je například C#. Další informace naleznete v [vylepšení analýzy a formátování s plovoucí desetinnou tácející](https://devblogs.microsoft.com/dotnet/floating-point-parsing-and-formatting-improvements-in-net-core-3-0/) v příspěvku blogu .NET Core 3.0.
 
-#### <a name="version-introduced"></a>Představená verze
+#### <a name="version-introduced"></a>Zavedená verze
 
-3,0
+3.0
 
 #### <a name="recommended-action"></a>Doporučená akce
 
-Část "potenciální dopad na stávající kód" v rámci analýzy s plovoucí desetinnou čárkou [a vylepšení formátování na blogu .NET core 3,0](https://devblogs.microsoft.com/dotnet/floating-point-parsing-and-formatting-improvements-in-net-core-3-0/) navrhuje změny kódu, pokud v porovnání s aplikacemi .net Core 2,2 nastáváte se změnou chování, pokud se obvykle projeví při použití jiného standardního nebo vlastního formátovacího řetězce, který vynutil požadované chování. Některé výsledky nemusí mít alternativní řešení, pokud byly dříve nesprávné.
+Část "Potenciální dopad na existující kód" vylepšení [analýzy a formátování s plovoucí desetinnou čárkou v](https://devblogs.microsoft.com/dotnet/floating-point-parsing-and-formatting-improvements-in-net-core-3-0/) příspěvku blogu .NET Core 3.0 navrhuje změny kódu, pokud zaznamenáte změnu chování ve srovnání s aplikacemi .NET Core 2.2 Obecně to zahrnuje použití jiného standardního nebo vlastního formátovacího řetězce k vynucení požadovaného chování. Některé výsledky nemusí mít řešení, pokud byly dříve nesprávné.
 
 #### <a name="category"></a>Kategorie
 

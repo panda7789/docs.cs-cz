@@ -1,22 +1,22 @@
 ---
-title: 'Ukázkový soubor XML: zákazníci a objednávky (LINQ to XML)'
+title: 'Ukázkový soubor XML: Zákazníci a objednávky (LINQ to XML)'
 ms.date: 07/20/2015
 ms.assetid: d6d1c9ea-be74-4e6d-bfdd-d4bcc2d301cf
 ms.openlocfilehash: 01c1719bd67bbaf0d46dc6e3c23b5031afd271f8
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "75346496"
 ---
-# <a name="sample-xml-file-customers-and-orders-linq-to-xml"></a>Ukázkový soubor XML: zákazníci a objednávky (LINQ to XML)
-Následující soubor XML se používá v různých příkladech v dokumentaci k [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]. Tento soubor obsahuje zákazníky a objednávky.  
+# <a name="sample-xml-file-customers-and-orders-linq-to-xml"></a>Ukázkový soubor XML: Zákazníci a objednávky (LINQ to XML)
+Následující soubor XML se používá v [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] různých příkladech v dokumentaci. Tento soubor obsahuje zákazníky a objednávky.  
   
- [Ukázkový soubor XSD: zákazníci a objednávky](./sample-xsd-file-customers-and-orders1.md) obsahují XSD, které lze použít k ověření tohoto dokumentu. Používá funkce `xs:key` a `xs:keyref` XSD k určení toho, že atribut `CustomerID` elementu `Customer` je klíč a k navázání vztahu mezi `CustomerID` prvkem v každém `Order` elementu a atributem `CustomerID` v každém prvku `Customer`.  
+ Téma [Ukázkový soubor XSD: Zákazníci a objednávky](./sample-xsd-file-customers-and-orders1.md) obsahuje xsd, které lze použít k ověření tohoto dokumentu. Používá `xs:key` a `xs:keyref` funkce XSD k `CustomerID` vytvoření, že `Customer` atribut prvku je klíč a vytvořit `CustomerID` vztah `Order` mezi element `CustomerID` v `Customer` každém prvku a atribut v každém prvku.  
   
- Příklad psaní dotazů LINQ, které využijí tohoto vztahu pomocí klauzule `Join`, naleznete v tématu [How to join Two (LINQ to XML) (C#)](./how-to-join-two-collections-linq-to-xml.md).  
+ Příklad psaní dotazů LINQ, které využívají výhod `Join` tohoto vztahu pomocí klauzule, naleznete v tématu [Jak spojit dvě kolekce (LINQ do XML) (C#)](./how-to-join-two-collections-linq-to-xml.md).  
   
-## <a name="customersordersxml"></a>CustomersOrders. XML  
+## <a name="customersordersxml"></a>CustomersOrders.xml  
   
 ```xml  
 <?xml version="1.0" encoding="utf-8"?>  

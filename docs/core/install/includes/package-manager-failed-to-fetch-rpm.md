@@ -1,10 +1,10 @@
 ---
 ms.openlocfilehash: 96f3ef0160144322f77413995c842b745bb5bb1e
-ms.sourcegitcommit: cdf5084648bf5e77970cbfeaa23f1cab3e6e234e
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/01/2020
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "76920745"
 ---
 
-Při instalaci balíčku .NET Core se může zobrazit chyba podobná `signature verification failed for file 'repomd.xml' from repository 'packages-microsoft-com-prod'`. Obecně řečeno, tato chyba znamená, že kanál balíčku pro .NET Core se upgraduje s novějšími verzemi balíčků a že byste se měli pokusit později. Během upgradu by kanál balíčku neměl být nedostupný déle než 2 hodiny. Pokud se tato chyba průběžně zobrazuje déle než 2 hodiny, uveďte problém na <https://github.com/dotnet/core/issues>.
+Při instalaci balíčku .NET Core se může `signature verification failed for file 'repomd.xml' from repository 'packages-microsoft-com-prod'`zobrazit chyba podobná . Obecně řečeno, tato chyba znamená, že zdroj balíčku pro .NET Core je upgradován novějšími verzemi balíčků a že byste to měli zkusit znovu později. Během upgradu by neměl být zdroj balíčku k dispozici déle než 2 hodiny. Pokud se tato chyba zobrazuje nepřetržitě déle než 2 <https://github.com/dotnet/core/issues>hodiny, podejte problém na adrese .

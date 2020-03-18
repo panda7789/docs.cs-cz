@@ -1,5 +1,5 @@
 ---
-title: '#elif – C# reference'
+title: '#elif - C# Reference'
 ms.date: 07/20/2015
 f1_keywords:
 - '#elif'
@@ -7,14 +7,14 @@ helpviewer_keywords:
 - '#elif directive [C#]'
 ms.assetid: 731d78df-08e0-4d51-b8c8-f193c27de13f
 ms.openlocfilehash: c78818f40b76414d289af6c704ff019b63befe37
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "75712569"
 ---
 # <a name="elif-c-reference"></a>#elif (referenční dokumentace jazyka C#)
-Výraz `#elif` umožňuje vytvořit složenou podmíněnou direktivu. Výraz `#elif` bude vyhodnocen, pokud není předchozí [#if](./preprocessor-if.md) ani předchozí, volitelné, `#elif` výrazy direktivy vyhodnoceny na `true`. Je-li výraz `#elif` vyhodnocen jako `true`, vyhodnotí kompilátor kód mezi výrazem `#elif` a další podmíněnou direktivou. Příklad:  
+Výraz `#elif` umožňuje vytvořit složenou podmíněnou direktivu. Výraz `#elif` bude vyhodnocen, pokud předchozí [#if](./preprocessor-if.md) ani žádné `#elif` předchozí, volitelné `true`výrazy direktivy vyhodnotí . Je-li výraz `#elif` vyhodnocen jako `true`, vyhodnotí kompilátor kód mezi výrazem `#elif` a další podmíněnou direktivou. Například:  
   
 ```csharp
 #define VC7  
@@ -36,12 +36,12 @@ Výraz `#elif` umožňuje vytvořit složenou podmíněnou direktivu. Výraz `#e
 #if  
 ```  
   
- Použití `#elif` je jednodušší, protože každý `#if` vyžaduje [#endif](./preprocessor-endif.md), zatímco `#elif` lze použít bez odpovídajícího `#endif`.  
+ Použití `#elif` je jednodušší, `#if` protože každý vyžaduje `#elif` [#endif](./preprocessor-endif.md), zatímco `#endif`lze použít bez odpovídající .  
   
- Příklad použití `#elif`naleznete v tématu [#if](./preprocessor-if.md) .  
+ Příklad použití [viz #if](./preprocessor-if.md) `#elif`.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [C#Odkaz](../index.md)
-- [Průvodce programováním v jazyce C#](../../programming-guide/index.md)
-- [C# Direktivy preprocesoru](./index.md)
+- [Odkaz jazyka C#](../index.md)
+- [Programovací příručka jazyka C#](../../programming-guide/index.md)
+- [Direktivy preprocesoru jazyka C#](./index.md)

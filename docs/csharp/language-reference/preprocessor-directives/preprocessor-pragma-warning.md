@@ -1,5 +1,5 @@
 ---
-title: '#pragma – upozornění C# – reference'
+title: '#pragma varování - C# Reference'
 ms.date: 07/20/2015
 f1_keywords:
 - '#pragma warning'
@@ -7,14 +7,14 @@ helpviewer_keywords:
 - '#pragma warning [C#]'
 ms.assetid: 723493d5-9753-4cec-babb-54e2b8eb36b6
 ms.openlocfilehash: 5620ea9e5f31c22e26bee95a450335bb179ced25
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "75712465"
 ---
 # <a name="pragma-warning-c-reference"></a>#pragma – upozornění (Referenční dokumentace jazyka C#)
-`#pragma warning` může povolit nebo zakázat určitá upozornění.  
+`#pragma warning`povolit nebo zakázat určitá varování.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -25,12 +25,12 @@ ms.locfileid: "75712465"
   
 ## <a name="parameters"></a>Parametry  
  `warning-list`  
- Seznam čísel upozornění oddělených čárkami. Předpona CS je volitelná.  
+ Seznam výstražných čísel oddělených čárkami. Předpona "CS" je volitelná.  
   
- Pokud nejsou zadána žádná čísla upozornění, `disable` zakáže všechna upozornění a `restore` povolí všechna upozornění.  
+ Pokud nejsou zadána `disable` žádná čísla upozornění, zakáže všechna upozornění a `restore` povolí všechna upozornění.  
   
 > [!NOTE]
-> Chcete-li najít čísla upozornění v aplikaci Visual Studio, sestavte projekt a vyhledejte čísla upozornění v okně **výstup** .  
+> Chcete-li najít čísla upozornění v sadě Visual Studio, vytvořte projekt a vyhledejte čísla upozornění v okně **Výstup.**  
   
 ## <a name="example"></a>Příklad  
   
@@ -58,9 +58,9 @@ public class D
 }  
 ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [C#Odkaz](../index.md)
-- [Průvodce programováním v jazyce C#](../../programming-guide/index.md)
-- [C# Direktivy preprocesoru](./index.md)
+- [Odkaz jazyka C#](../index.md)
+- [Programovací příručka jazyka C#](../../programming-guide/index.md)
+- [Direktivy preprocesoru jazyka C#](./index.md)
 - [Chyby kompilátoru jazyka C#](../compiler-messages/index.md)

@@ -1,103 +1,103 @@
 ---
-title: Upgradujte rozhraní API pro typy odkazů s možnou hodnotou null s atributy, které definují očekávání pro hodnoty null.
-description: Naučte se používat popisné atributy AllowNull má, DisallowNull, MaybeNull, NotNull a další k úplnému popisu stavu null vašich rozhraní API.
+title: Upgrade polí API pro typy odkazů s možnou hodnotou null s atributy, které definují očekávání pro hodnoty null
+description: Naučte se používat popisné atributy AllowNull, DisallowNull, MaybeNull, NotNull a další plně popsat stav null vašich api.
 ms.technology: csharp-null-safety
 ms.date: 07/31/2019
-ms.openlocfilehash: 7142fe0566b1cc7373f5dc777c36443041114c4f
-ms.sourcegitcommit: 81ad1f09b93f3b3e6706a7f2e4ddf50ef229ea3d
+ms.openlocfilehash: a4b1f851bcbe27dd4884d45eb6d1209ab54271d1
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74204630"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79170360"
 ---
-# <a name="update-libraries-to-use-nullable-reference-types-and-communicate-nullable-rules-to-callers"></a>Aktualizace knihoven pro použití typů odkazů s možnou hodnotou null a sdělování pravidel s možnou hodnotou null volajícím
+# <a name="update-libraries-to-use-nullable-reference-types-and-communicate-nullable-rules-to-callers"></a>Aktualizace knihoven za účelem použití typů odkazů s možnou hodnotou null a komunikace pravidel s možnou hodnotou null volajícím
 
-Přidání [typů odkazů s možnou hodnotou null](nullable-references.md) znamená, že můžete deklarovat, zda je hodnota `null` povolena nebo očekávána pro každou proměnnou. Kromě toho můžete použít několik atributů: `AllowNull`, `DisallowNull`, `MaybeNull`, `NotNull`, `NotNullWhen`, `MaybeNullWhen`a `NotNullWhenNotNull` k úplnému popisu stavů null argumentů a vrácených hodnot. Poskytuje skvělé prostředí při psaní kódu. Zobrazí se upozornění, pokud může být proměnná bez hodnoty null nastavena na `null`. Zobrazí se upozornění, pokud u proměnné s možnou hodnotou null není zkontrolována hodnota null před tím, než ji zrušíte. Aktualizace knihoven může chvíli trvat, ale výnosy je. Další informace, které pro kompilátor poskytnete, *Pokud* je povolená nebo zakázaná hodnota `null`, budou se lépe zobrazovat uživatelé vašeho rozhraní API. Pojďme začít se známým příkladem. Představte si, že knihovna má následující rozhraní API k načtení řetězce prostředků:
+Přidání [typů odkazů s možnou hodnotou](nullable-references.md) null `null` znamená, že můžete deklarovat, zda je hodnota povolena nebo očekávána pro každou proměnnou. Kromě toho `AllowNull`můžete použít řadu atributů: `DisallowNull` `MaybeNull`, `NotNull` `NotNullWhen`, `MaybeNullWhen`, `NotNullWhenNotNull` , a zcela popsat nulové stavy argumentů a vrácených hodnot. To poskytuje skvělé zkušenosti při psaní kódu. Upozornění se vám objeví, pokud může být `null`proměnná s možnou hodnotou null nastavena na hodnotu . Upozornění, pokud proměnná s možnou hodnotou null není před dereferenced. Aktualizace knihoven může nějakou dobu trvat, ale odměny stojí za to. Čím více informací, které poskytnete `null` kompilátoru o *tom, kdy* je hodnota povolena nebo zakázána, tím lepší upozornění uživatelé vašeho rozhraní API získají. Začněme se známým příkladem. Představte si, že vaše knihovna má následující rozhraní API pro načtení řetězce prostředků:
 
 ```csharp
 bool TryGetMessage(string key, out string message)
 ```
 
-Předchozí příklad dodržuje známý `Try*` vzor v rozhraní .NET. Pro toto rozhraní API existují dva argumenty odkazů: `key` a parametr `message`. Toto rozhraní API má následující pravidla týkající se hodnoty null těchto argumentů:
+Předchozí příklad následuje známý `Try*` vzor v rozhraní .NET. Existují dva referenční argumenty pro `key` toto `message` rozhraní API: a parametr. Toto rozhraní API má následující pravidla týkající se nullness těchto argumentů:
 
-- Volající by neměl předat `null` jako argument pro `key`.
-- Volající mohou předat proměnnou, jejíž hodnota je `null` jako argument pro `message`.
-- Pokud metoda `TryGetMessage` vrátí `true`, hodnota `message` není null. Pokud je vrácená hodnota `false,` hodnota `message` (a její stav null) má hodnotu null.
+- Volající by neměli `null` projít jako `key`argument pro .
+- Volající mohou předat proměnnou, `null` jejíž `message`hodnota je jako argument pro .
+- Pokud `TryGetMessage` metoda `true`vrátí , `message` hodnota není null. Pokud je `false,` vrácená hodnota `message` hodnota (a její stav null) je null.
 
-Pravidlo pro `key` může být zcela vyjádřeno typem proměnné: `key` by měl být odkazový typ, který nepovoluje hodnotu null. Parametr `message` je složitější. Povoluje `null` jako argument, ale garantuje, že při úspěšném použití `out` argumentu není null. V těchto scénářích potřebujete podrobnější slovník, který popisuje očekávání.
+Pravidlo pro `key` může být zcela vyjádřeno `key` typem proměnné: by měl být typ odkazu s hodnotou nes hotelnou hodnotou null. Parametr `message` je složitější. Umožňuje `null` jako argument, ale zaručuje, že na `out` úspěch, že argument není null. Pro tyto scénáře potřebujete bohatší slovní zásobu k popisu očekávání.
 
-Aktualizace knihovny pro odkazy s možnou hodnotou null vyžaduje více než automatické přihlašování `?` u některých proměnných a názvů typů. Předchozí příklad ukazuje, že je nutné projít vaše rozhraní API a vzít v úvahu vaše očekávání pro každý vstupní argument. Vezměte v úvahu záruky pro vrácenou hodnotu a všechny `out` nebo `ref` argumenty na vrácení metody. Potom tyto pravidla sdělí kompilátoru a kompilátor poskytne upozornění, pokud se volajícím tyto pravidla neřídí.
+Aktualizace knihovny pro odkazy s možnou `?` hodnotou null vyžaduje více než pokrokání na některé proměnné a názvy typů. Předchozí příklad ukazuje, že je třeba prozkoumat vaše api a zvážit vaše očekávání pro každý vstupní argument. Zvažte záruky pro vrácenou hodnotu a všechny `out` nebo `ref` argumenty na vrácení metody. Pak sdělte tato pravidla kompilátoru a kompilátor poskytne upozornění, když volající nedodržují tato pravidla.
 
-Tato práce trvá určitou dobu. Pojďme začít s strategiemi, které vaší knihovně nebo aplikaci zohledňují hodnoty null, zatímco se vyrovnávají další požadavky a dodávky. Uvidíte, jak vyrovnávat průběžný vývoj a povolit typy odkazů s možnou hodnotou null. Seznámíte se s problémy s definicemi obecného typu. Dozvíte se, jak použít atributy k popisu před a po jednotlivých podmínkách rozhraní API.
+Tahle práce chce čas. Začněme se strategiemi, aby vaše knihovna nebo aplikace byla upozorněna na nulu a zároveň vyvažovala další požadavky a dodávky. Uvidíte, jak vyvážit probíhající vývoj, který umožňuje typy odkazů s možnou hodnotou null. Dozvíte se výzvy pro definice obecných typů. Naučíte se použít atributy k popisu před a po podmínkách na jednotlivých api.
 
-## <a name="choose-a-nullable-strategy"></a>Výběr strategie s možnou hodnotou null
+## <a name="choose-a-nullable-strategy"></a>Zvolte strategii, jejíž hodnotu lze zrušit
 
-První volbou je, že ve výchozím nastavení by se měly zapnout nebo vypnout typy odkazů s možnou hodnotou null. Máte dvě strategie:
+První volbou je, zda null typy odkazů by měly být zapnuty nebo vypnuty ve výchozím nastavení. Máte dvě strategie:
 
-- Povolte typy odkazů s možnou hodnotou null pro celý projekt a zakažte ho v kódu, který není připravený.
-- Povolit pouze typy odkazů s možnou hodnotou null pro kód, který je opatřen poznámkou pro typy s možnou hodnotou null
+- Povolte typy odkazů s možnou hodnotou null pro celý projekt a zakažte je v kódu, který není připraven.
+- Povolit pouze typy odkazů s možnou hodnotou null pro kód, který byl anotován pro typy odkazů s možnou hodnotou null.
 
-První strategie funguje nejlépe při přidávání dalších funkcí do knihovny při jejich aktualizaci na typy odkazů s možnou hodnotou null. Veškerý nový vývoj má na paměti s možnou hodnotou null. Při aktualizaci existujícího kódu povolíte v těchto třídách typy odkazů s možnou hodnotou null.
+První strategie funguje nejlépe, když přidáváte další funkce do knihovny při aktualizaci pro typy odkazů s možnou hodnotou null. Všechny nové vývoj je null,,,,,,,,,,,,,,,,,,,,, Při aktualizaci existujícího kódu povolíte v těchto třídách typy odkazů s možnou hodnotou null.
 
-Po této první strategii provedete následující:
+Po této první strategii postupujte takto:
 
-1. Povolit typy s možnou hodnotou null pro celý projekt přidáním prvku `<Nullable>enable</Nullable>` do souborů *csproj* . 
-1. Přidejte direktivu pragma `#nullable disable` do každého zdrojového souboru v projektu. 
-1. Při práci na jednotlivých souborech odeberte direktivu pragma a vyřešte všechna upozornění.
+1. Povolte typy s možnou hodnotou null pro celý projekt přidáním `<Nullable>enable</Nullable>` prvku do souborů *csproj.*
+1. Přidejte `#nullable disable` pragma do každého zdrojového souboru v projektu.
+1. Při práci na každém souboru odeberte pragmu a zřete všechna varování.
 
-Tato první strategie obsahuje více než více práce pro přidání direktivy pragma do každého souboru. Výhodou je, že každý nový soubor kódu přidaný do projektu bude mít povolenou hodnotu null. Jakékoli nové práce budou mít na paměti nabývat hodnoty null; je nutné aktualizovat pouze existující kód.
+Tato první strategie má více práce předem přidat pragma do každého souboru. Výhodou je, že každý nový soubor kódu přidaný do projektu bude mít hodnotu null povolenou hodnotou. Všechny nové práce budou nullable vědomi; je třeba aktualizovat pouze existující kód.
 
-Druhá strategie funguje lépe, pokud je knihovna obecně stabilní a hlavní fokus vývoje je přijmout typy odkazů s možnou hodnotou null. Při přidávání poznámek k rozhraním API můžete zapnout typy odkazů s možnou hodnotou null. Až budete hotovi, povolte v celém projektu typy odkazů s možnou hodnotou null.
+Druhá strategie funguje lépe, pokud je knihovna obecně stabilní a hlavním zaměřením vývoje je přijmout typy odkazů s možnou hodnotou null. Při osazování polí API zapnete typy odkazů s možnou hodnotou null. Po dokončení povolíte typy odkazů s možnou hodnotou null pro celý projekt.
 
-Po této druhé strategii provedete následující:
+V návaznosti na tuto druhou strategii postupujte takto:
 
-1. Přidejte direktivu pragma `#nullable enable` do souboru, pro který chcete zadat nepovolenou hodnotu null.
-1. Vyřešte všechna upozornění.
-1. Pokračujte v těchto prvních dvou krocích, dokud nebudete mít k celou knihovnu s podporou null.
-1. Povolit typy s možnou hodnotou null pro celý projekt přidáním prvku `<Nullable>enable</Nullable>` do souborů *csproj* . 
-1. Odeberte direktivy pragma `#nullable enable`, protože už nejsou potřeba.
+1. Přidejte `#nullable enable` pragma do souboru, který chcete, aby null být vědomi.
+1. Adresují všechna varování.
+1. Pokračujte v těchto prvních dvou krocích, dokud neuvědomíte celou knihovnu, která by byla známa.
+1. Povolte typy s možnou hodnotou null pro celý projekt přidáním `<Nullable>enable</Nullable>` prvku do souborů *csproj.*
+1. Odstraňte `#nullable enable` pragmy, protože už nejsou potřeba.
 
-Tato druhá strategie má méně práce předem. Kompromisy je, že první úkol při vytváření nového souboru je přidání direktivy pragma a zpřístupnění hodnoty null. Pokud se některý z vývojářů v týmu zapomene, je nový kód v nedokončené práci, aby se zajistilo, že bude mít veškerý kód na hodnotu null.
+Tato druhá strategie má méně práce předem. Kompromis je, že první úkol při vytváření nového souboru je přidat pragma a učinit ji nullable aware. Pokud všichni vývojáři ve vašem týmu zapomenout, že nový kód je nyní v nevyřízených položkách práce, aby všechny kód nullable aware.
 
-Které z těchto strategií vybíráte, závisí na tom, kolik aktivního vývoje se v projektu provádí. Tím se zlepší a stabilnější váš projekt, tím lepší je druhá strategie. Vyvíjejí se další funkce, což je lepší první strategie.
+Která z těchto strategií si vyberete, závisí na tom, kolik aktivního vývoje probíhá ve vašem projektu. Čím zralejší a stabilnější váš projekt, tím lepší je druhá strategie. Čím více funkcí se vyvíjí, tím lepší je první strategie.
 
-## <a name="should-nullable-warnings-introduce-breaking-changes"></a>Má upozornění na hodnotu null zavést průlomové změny?
+## <a name="should-nullable-warnings-introduce-breaking-changes"></a>Měla by zavést neplatné výstrahy narušující změny?
 
-Než povolíte typy odkazů s možnou hodnotou null, jsou proměnné považovány za *Nullable oblivious*. Jakmile povolíte typy odkazů s možnou hodnotou null, všechny tyto proměnné nebudou *mít hodnotu null*. Kompilátor bude vydávat upozornění, pokud tyto proměnné nejsou inicializovány na hodnoty, které nejsou null.
+Před povolením typů odkazů s možnou hodnotou null jsou proměnné považovány za *netečné*. Jakmile povolíte typy odkazů s možnou hodnotou null, všechny tyto proměnné jsou *nenulové*. Kompilátor vydá upozornění, pokud tyto proměnné nejsou inicializovány na hodnoty bez nuly.
 
-Dalším pravděpodobným zdrojem upozornění je vrácení hodnot, pokud hodnota nebyla inicializována.
+Dalším pravděpodobným zdrojem upozornění je vrácené hodnoty, pokud hodnota nebyla inicializována.
 
-Prvním krokem při adresování upozornění kompilátoru je použití `?` poznámek u parametrů a návratových typů, které označují, kdy argumenty nebo návratové hodnoty mohou být null. Pokud referenční proměnné nesmí mít hodnotu null, je původní deklarace správná. V takovém případě váš cíl nestačí jenom opravit upozornění. Důležitější je, že kompilátor porozuměl vašemu záměru pro potenciální hodnoty null. Při kontrole upozornění se dostanete k vašemu dalšímu hlavnímu rozhodnutí o vaší knihovně. Chcete zvážit úpravu signatur rozhraní API, abyste mohli snadněji sdělit záměr návrhu? Lepší signatura rozhraní API pro metodu `TryGetMessage` přezkoumána dříve:
+Prvním krokem při adresování upozornění kompilátoru je použití `?` anotací na parametr a návratové typy k označení, kdy argumenty nebo vrácené hodnoty mohou být nulové. Pokud referenční proměnné nesmí být null, původní deklarace je správná. Jak to uděláte, vaším cílem není jen opravit varování. Důležitější je, aby kompilátor pochopil váš záměr pro potenciální hodnoty null. Při zkoumání varování dosáhnete dalšího zásadního rozhodnutí pro vaši knihovnu. Chcete zvážit úpravu podpisů rozhraní API tak, aby jasněji sdělovaly záměr návrhu? Lepší podpis rozhraní `TryGetMessage` API pro dříve zkoumanou metodu může být:
 
 ```csharp
 string? TryGetMessage(string key);
 ```
 
-Vrácená hodnota označuje úspěch nebo neúspěch a přenese hodnotu, pokud byla hodnota nalezena. V mnoha případech může změna signatur rozhraní API zlepšit způsob, jakým komunikuje hodnoty null.
+Vrácená hodnota označuje úspěch nebo neúspěch a nese hodnotu, pokud byla nalezena hodnota. V mnoha případech může změna podpisů rozhraní API zlepšit způsob, jakým komunikují hodnoty null.
 
-Pro veřejné knihovny nebo knihovny s velkými základy uživatelů ale můžete raději nezavádět změny signatur rozhraní API. Pro tyto případy a další běžné vzory můžete použít atributy pro snadnější definování, když je možné `null`argument nebo návratová hodnota. Bez ohledu na to, zda zvažte změnu povrchu rozhraní API, pravděpodobně zjistíte, že tyto anotace typu nejsou dostačující pro popis `null` hodnot argumentů nebo vrácených hodnot. V těchto případech můžete použít atributy pro přehlednější Popis rozhraní API. 
+Pro veřejné knihovny nebo knihovny s velkými uživatelskými základnami však můžete upřednostňovat nezavádět žádné změny podpisu rozhraní API. Pro tyto případy a další běžné vzory můžete atributy použít jasněji definovat, `null`kdy argument nebo vrácená hodnota může být . Bez ohledu na to, zda uvažujete o změně povrchu rozhraní API, pravděpodobně zjistíte, `null` že samotné poznámky typu nejsou dostatečné pro popis hodnot argumentů nebo vrácených hodnot. V těchto případech můžete atributy použít jasněji popsat rozhraní API.
 
-## <a name="attributes-extend-type-annotations"></a>Atributy rozšiřuje anotace typu
+## <a name="attributes-extend-type-annotations"></a>Atributy rozšiřují poznámky typu
 
-Bylo přidáno několik atributů pro vyjádření dalších informací o stavu hodnoty null proměnných. Veškerý kód, který jste C# napsali před 8 představenými typy odkazů s možnou hodnotou null, byl *null oblivious* To znamená, že jakákoli proměnná typu odkazu může mít hodnotu null, ale kontroly hodnoty null nejsou požadovány. Jakmile kód bude *mít na paměti hodnotu s možnou hodnotou null*, změní se tato pravidla. Odkazové typy by nikdy neměly být `null` hodnotou a typy odkazů s možnou hodnotou null musí být před odkázáním zkontrolovány proti `null`.
+Několik atributů byly přidány vyjádřit další informace o stavu null proměnných. Veškerý kód, který jste napsali před c# 8 představil null reference typy byl *null nevšímavý*. To znamená, že všechny proměnné typu odkazu může být null, ale null kontroly nejsou vyžadovány. Jakmile váš kód je *null,,,* tato pravidla změnit. Referenční typy by `null` nikdy měla být hodnota a nullable `null` typy odkazů musí být zkontrolovány proti před tím, než je odkazováno.
 
-Pravidla pro vaše rozhraní API jsou pravděpodobně složitá, jak jste viděli ve scénáři `TryGetValue` API. Mnohé z vašich rozhraní API mají složitější pravidla, pokud proměnné můžou nebo nemůžou být `null`. V těchto případech použijete jeden z následujících atributů pro vyjádření těchto pravidel:
+Pravidla pro vaše rozhraní API jsou pravděpodobně složitější, `TryGetValue` jak jste viděli u scénáře rozhraní API. Mnoho vašich api mají složitější pravidla pro proměnné může `null`nebo nemůže být . V těchto případech použijete k vyjádření těchto pravidel jeden z následujících atributů:
 
-- [AllowNull má](xref:System.Diagnostics.CodeAnalysis.AllowNullAttribute): vstupní argument, který nemůže mít hodnotu null, může mít hodnotu null.
-- [DisallowNull](xref:System.Diagnostics.CodeAnalysis.DisallowNullAttribute): vstupní argument s možnou hodnotou null by nikdy neměl mít hodnotu null.
-- [MaybeNull](xref:System.Diagnostics.CodeAnalysis.MaybeNullAttribute): návratová hodnota, která není null, může mít hodnotu null.
-- [NotNull](xref:System.Diagnostics.CodeAnalysis.NotNullAttribute): návratová hodnota s možnou hodnotou null nikdy nebude null.
-- [MaybeNullWhen](xref:System.Diagnostics.CodeAnalysis.MaybeNullWhenAttribute): vstupní argument, který nemůže mít hodnotu null, může mít hodnotu null, pokud metoda vrátí zadanou `bool` hodnotu.
-- [NotNullWhen](xref:System.Diagnostics.CodeAnalysis.NotNullWhenAttribute): vstupní argument s možnou hodnotou null nebude mít hodnotu null, pokud metoda vrátí zadanou `bool` hodnotu.
-- [NotNullIfNotNull](xref:System.Diagnostics.CodeAnalysis.NotNullIfNotNullAttribute): návratová hodnota není null, pokud argument pro zadaný parametr není null.
+- [AllowNull](xref:System.Diagnostics.CodeAnalysis.AllowNullAttribute): Vstupní argument, který nelze upustit, může mít hodnotu null.
+- [DisallowNull](xref:System.Diagnostics.CodeAnalysis.DisallowNullAttribute): Vstupní argument s možnou hodnotou null by nikdy neměl mít hodnotu null.
+- [MaybeNull](xref:System.Diagnostics.CodeAnalysis.MaybeNullAttribute): Vrácená hodnota, jejíž nenulovatelná hodnota může být null.
+- [NotNull](xref:System.Diagnostics.CodeAnalysis.NotNullAttribute): Vrácená hodnota s možnou hodnotou null nikdy nebude null.
+- [MaybeNullWhen](xref:System.Diagnostics.CodeAnalysis.MaybeNullWhenAttribute): Vstupní argument, který nelze utnou, `bool` může mít hodnotu null, pokud metoda vrátí zadanou hodnotu.
+- [NotNullWhen](xref:System.Diagnostics.CodeAnalysis.NotNullWhenAttribute): Vstupní argument s možnou hodnotou null `bool` nebude null, pokud metoda vrátí zadanou hodnotu.
+- [NotNullIfNotNull](xref:System.Diagnostics.CodeAnalysis.NotNullIfNotNullAttribute): Vrácená hodnota není null, pokud argument pro zadaný parametr není null.
 
-Předchozí popisy představují rychlý odkaz na to, co každý atribut dělá. Každá z následujících částí popisuje chování a lepší význam.
+Předchozí popisy jsou stručný odkaz na to, co každý atribut dělá. Každá následující část popisuje chování a význam důkladněji.
 
-Přidáním těchto atributů poskytne kompilátor více informací o pravidlech pro vaše rozhraní API. Při volání kódu v kontextu s povolenou hodnotou null, kompilátor upozorní volající, když porušují tato pravidla. Tyto atributy neumožňují u implementace další kontroly.
+Přidání těchto atributů poskytuje kompilátoru další informace o pravidlech pro rozhraní API. Při volání kódu je kompilován v kontextu s povoleným hodnotou null, kompilátor bude varovat volající, když porušují tato pravidla. Tyto atributy neumožňují další kontroly implementace.
 
-## <a name="specify-preconditions-allownull-and-disallownull"></a>Zadat předběžné podmínky: `AllowNull` a `DisallowNull`
+## <a name="specify-preconditions-allownull-and-disallownull"></a>Určete předběžné `AllowNull` podmínky: a`DisallowNull`
 
-Zvažte vlastnost pro čtení a zápis, která nikdy nevrátí `null`, protože má rozumnou výchozí hodnotu. Volající přecházejí `null` k přístupovému objektu set při jeho nastavování na tuto výchozí hodnotu. Představte si třeba systém zasílání zpráv, který se zeptá na název obrazovky v chatovací místnosti. Pokud není k dispozici žádný, systém vygeneruje náhodný název:
+Zvažte vlastnost pro čtení `null` a zápis, která se nikdy nevrátí, protože má přiměřenou výchozí hodnotu. Volající předat `null` nastavit přistupujícího pole při jeho nastavení na tuto výchozí hodnotu. Zvažte například systém zasílání zpráv, který požádá o název obrazovky v chatovací místnosti. Pokud není k dispozici žádný, systém generuje náhodný název:
 
 ```csharp
 public string ScreenName
@@ -108,7 +108,7 @@ public string ScreenName
 private string screenName;
 ```
 
-Pokud kompilujete předchozí kód v oblivious kontextu s možnou hodnotou null, vše je dobré. Jakmile povolíte typy odkazů s možnou hodnotou null, vlastnost `ScreenName` se zobrazí jako odkaz bez hodnoty null. To je správné pro přistupující objekt `get`: nikdy nevrátí `null`. Volající nepotřebují kontrolovat vrácenou vlastnost pro `null`. Ale teď nastavením vlastnosti na `null` vygeneruje upozornění. Aby bylo možné pokračovat v podpoře tohoto typu kódu, přidejte atribut <xref:System.Diagnostics.CodeAnalysis.AllowNullAttribute?displayProperty=nameWithType> do vlastnosti, jak je znázorněno v následujícím kódu: 
+Při kompilaci předchozíkód v nečitelný kontext, vše je v pořádku. Jakmile povolíte typy odkazů `ScreenName` s možnou hodnotou null, vlastnost se stane nenulelným odkazem. To je správné `get` pro přistupující `null`ho: nikdy se vrátí . Volající nemusí kontrolovat vrácenou vlastnost pro `null`. Ale nyní nastavení `null` vlastnosti generuje upozornění. Chcete-li i nadále podporovat tento typ <xref:System.Diagnostics.CodeAnalysis.AllowNullAttribute?displayProperty=nameWithType> kódu, přidejte atribut do vlastnosti, jak je znázorněno v následujícím kódu:
 
 ```csharp
 [AllowNull]
@@ -120,16 +120,16 @@ public string ScreenName
 private string screenName = GenerateRandomScreenName();
 ```
 
-Je možné, že budete muset přidat direktivu `using`, aby <xref:System.Diagnostics.CodeAnalysis> používala tento a další atributy popsané v tomto článku. Atribut se aplikuje na vlastnost, nikoli na přistupující objekt `set`. Atribut `AllowNull` Určuje *předběžné podmínky*a vztahuje se pouze na vstupy. Přistupující objekt `get` má návratovou hodnotu, ale žádné vstupní argumenty. Proto atribut `AllowNull` platí pouze pro přistupující objekt `set`.
+Možná budete muset `using` přidat <xref:System.Diagnostics.CodeAnalysis> direktivu pro použití tohoto a dalších atributů popsaných v tomto článku. Atribut je použit a vlastnost, `set` nikoli přistupující objekt. Atribut `AllowNull` určuje *předběžné podmínky*a vztahuje se pouze na vstupy. Přistupující `get` odkaz má vrácenou hodnotu, ale žádné vstupní argumenty. Proto `AllowNull` atribut platí pouze pro `set` přistupujícího pole.
 
-Předchozí příklad ukazuje, co je třeba najít při přidávání atributu `AllowNull` v argumentu:
+Předchozí příklad ukazuje, co hledat při `AllowNull` přidávání atributu na argument:
 
-1. Obecnou smlouvou pro tuto proměnnou je, že by neměla být `null`, takže budete chtít typ odkazu, který nepovoluje hodnotu null.
-1. Existují scénáře, které mají být `null`vstupní proměnné, i když nejsou nejběžnějším využitím.
+1. Obecná smlouva pro tuto proměnnou je, `null`že by neměla být , takže chcete typ odkazu s nemožnou hodnotou null.
+1. Existují scénáře pro vstupní proměnné `null`, i když nejsou nejběžnější použití.
 
-Nejčastěji budete potřebovat tento atribut pro vlastnosti, nebo `in`, `out`a `ref` argumenty. `AllowNull` atribut je nejlepší volbou, pokud je proměnná obvykle nenulová, ale je třeba umožnit `null` jako předběžnou podmínku.
+Nejčastěji budete potřebovat tento atribut pro `in` `out`vlastnosti `ref` , nebo , a argumenty. Atribut `AllowNull` je nejlepší volbou, pokud je proměnná obvykle non-null, ale je třeba povolit `null` jako předběžnou podmínku.
 
-Na rozdíl od scénářů použití `DisallowNull`: pomocí tohoto atributu určíte, že vstupní proměnná typu s možnou hodnotou null by neměla `null`. Vezměte v úvahu vlastnost, kde `null` výchozí hodnota, ale klienti ji můžou nastavit jenom na jinou hodnotu než null. Vezměte v úvahu následující kód:
+Kontrast, který se `DisallowNull`scénáře pro použití : Tento atribut slouží k určení, `null`že vstupní proměnná typu null by neměla být . Zvažte vlastnost, kde `null` je výchozí hodnota, ale klienti ji mohou nastavit pouze na hodnotu, která není null. Uvažujte následující kód:
 
 ```csharp
 public string ReviewComment
@@ -140,10 +140,10 @@ public string ReviewComment
 string _comment;
 ```
 
-Předchozí kód je nejlepším způsobem, jak vyjádřit návrh, že `ReviewComment` možné `null`, ale nelze je nastavit na `null`. Jakmile tento kód bude mít na paměti hodnotu s možnou hodnotou null, můžete tento koncept zřetelně vyjádřit volajícím pomocí <xref:System.Diagnostics.CodeAnalysis.DisallowNullAttribute?displayProperty=nameWithType>:
+Předchozí kód je nejlepší způsob, jak vyjádřit `ReviewComment` svůj `null`návrh, který by `null`mohl být , ale nelze nastavit na . Jakmile je tento kód nullable vědomi, můžete vyjádřit tento <xref:System.Diagnostics.CodeAnalysis.DisallowNullAttribute?displayProperty=nameWithType>koncept jasněji volajícím pomocí :
 
 ```csharp
-[DisallowNull] 
+[DisallowNull]
 public string? ReviewComment
 {
     get => _comment;
@@ -152,19 +152,19 @@ public string? ReviewComment
 string? _comment;
 ```
 
-V kontextu s možnou hodnotou null by přístupový objekt `ReviewComment` `get` mohl vrátit výchozí hodnotu `null`. Kompilátor upozorní, že před přístupem musí být zkontrolován. Kromě toho upozorňuje volající, že i když by to bylo možné `null`, by volající neměli explicitně nastavit `null`. Atribut `DisallowNull` také určuje *předběžnou podmínku*, nemá vliv na přistupující objekt `get`. Měli byste se rozhodnout použít atribut `DisallowNull`, když budete pozorovat tyto charakteristiky:
+V kontextu s možnou hodnotou `ReviewComment` `get` null může `null`přistupující odkaz vrátit výchozí hodnotu aplikace . Kompilátor varuje, že musí být kontrolovány před přístupem. Kromě toho varuje volající, že i když `null`by to mohlo být , `null`volající by nemělexplicitně nastavit na . Atribut `DisallowNull` také určuje *předběžnou podmínku*, nemá `get` vliv na přistupující ho. Atribut byste měli `DisallowNull` použít, pokud sledujete tyto charakteristiky:
 
-1. Proměnná by mohla být `null` v základních scénářích, často při první instanci.
-1. Proměnná by neměla být explicitně nastavená na `null`.
+1. Proměnná může `null` být v základních scénářích, často při první instanci.
+1. Proměnná by neměla být `null`explicitně nastavena na .
 
-Tyto situace jsou běžné v kódu, který byl původně *null oblivious*. Je možné, že vlastnosti objektu jsou nastaveny ve dvou různých inicializačních operacích. Je možné, že některé vlastnosti jsou nastaveny až po dokončení některé asynchronní práce.
+Tyto situace jsou běžné v kódu, který byl původně *null nevšímavý*. Je možné, že vlastnosti objektu jsou nastaveny ve dvou odlišných inicializačních operacích. Je možné, že některé vlastnosti jsou nastaveny pouze po dokončení některé asynchronní práce.
 
-Atributy `AllowNull` a `DisallowNull` umožňují určit, že představy pro proměnné nemusí odpovídat na tyto proměnné anotace s možnou hodnotou null. Poskytují podrobnější informace o vlastnostech vašeho rozhraní API. Tyto další informace pomáhají volajícímu používat rozhraní API správně. Nezapomeňte zadat předpoklady pomocí následujících atributů:
+`AllowNull` Atributy `DisallowNull` a umožňují určit, že předběžné podmínky na proměnné nemusí odpovídat poznámky s hodnotou null na tyto proměnné. Tyto poskytují další podrobnosti o charakteristikách rozhraní API. Tyto další informace pomáhají volajícím správně používat vaše rozhraní API. Nezapomeňte zadat předběžné podmínky pomocí následujících atributů:
 
-- [AllowNull má](xref:System.Diagnostics.CodeAnalysis.AllowNullAttribute): vstupní argument, který nemůže mít hodnotu null, může mít hodnotu null.
-- [DisallowNull](xref:System.Diagnostics.CodeAnalysis.DisallowNullAttribute): vstupní argument s možnou hodnotou null by nikdy neměl mít hodnotu null.
+- [AllowNull](xref:System.Diagnostics.CodeAnalysis.AllowNullAttribute): Vstupní argument, který nelze upustit, může mít hodnotu null.
+- [DisallowNull](xref:System.Diagnostics.CodeAnalysis.DisallowNullAttribute): Vstupní argument s možnou hodnotou null by nikdy neměl mít hodnotu null.
 
-## <a name="specify-post-conditions-maybenull-and-notnull"></a>Zadat podmínky po: `MaybeNull` a `NotNull`
+## <a name="specify-post-conditions-maybenull-and-notnull"></a>Uveďte post-podmínky: `MaybeNull` a`NotNull`
 
 Předpokládejme, že máte metodu s následujícím podpisem:
 
@@ -172,30 +172,30 @@ Předpokládejme, že máte metodu s následujícím podpisem:
 public Customer FindCustomer(string lastName, string firstName)
 ```
 
-Pravděpodobně jste napsali metodu, jako je ta, která vrátí `null`, když se hledané jméno nenašlo. `null` jasně indikuje, že se záznam nenašel. V tomto příkladu jste pravděpodobně změnili návratový typ z `Customer` na `Customer?`. Deklarace návratové hodnoty jako typ odkazu s možnou hodnotou null určuje záměr tohoto rozhraní API jasně. 
+Pravděpodobně jste napsali metodu, `null` jako je tato, abyste se vrátili, když se nenašel hledaný název. Jasně `null` ukazuje, že záznam nebyl nalezen. V tomto příkladu byste pravděpodobně změnit `Customer` návratový typ z na `Customer?`. Deklarování vrácené hodnoty jako typu odkazu s možnou hodnotou null jasně určuje záměr tohoto rozhraní API.
 
-Z důvodů uvedených v rámci [obecných definic a možností použití hodnoty null](#generic-definitions-and-nullability) , které technika nepracuje s obecnými metodami. Je možné, že budete mít obecnou metodu, která následuje podobný vzor:
+Z důvodů uvedených v [obecných definicích a nullability](#generic-definitions-and-nullability) tato technika nefunguje s obecnými metodami. Můžete mít obecnou metodu, která následuje podobný vzor:
 
 ```csharp
 public T Find<T>(IEnumerable<T> sequence, Func<T, bool> match)
 ```
 
-Nelze určit, že návratová hodnota je `T?`. Metoda vrátí `null`, když se požadovaná položka nenajde. Vzhledem k tomu, že nelze deklarovat `T?` návratový typ, přidáte poznámku `MaybeNull` do metody Return:
+Nelze určit, že vrácená `T?`hodnota je . Metoda vrátí, `null` když není nalezena požadovaná položka. Vzhledem k tomu, `T?` že nelze deklarovat návratový typ, přidáte poznámku `MaybeNull` k metodě return:
 
 ```csharp
 [return: MaybeNull]
 public T Find<T>(IEnumerable<T> sequence, Func<T, bool> match)
 ```
 
-Předchozí kód informuje volající, že kontrakt implikuje typ, který nemůže mít hodnotu null, ale vrácená hodnota *může* být null.  Atribut `MaybeNull` použijte v případě, že by vaše rozhraní API mělo být typu, který nemůže mít hodnotu null, obvykle parametr obecného typu, ale mohou nastat instance, kde by se vrátilo `null`.
+Předchozí kód informuje volající, že smlouva znamená typ s nulou, ale vrácená hodnota *může* být ve skutečnosti null.  Použijte `MaybeNull` atribut, pokud by vaše rozhraní API mělo být typu s nulovým hodnotou, `null` obvykle parametr obecného typu, ale mohou existovat instance, kde by měl být vrácen.
 
-Můžete také určit, že návratová hodnota nebo `out` nebo `ref` argument nemá hodnotu null, přestože typ je typ s možnou hodnotou null. Vezměte v úvahu metodu, která zajistí, že je pole dostatečně velké pro udržení počtu prvků. Pokud vstupní argument nemá kapacitu, rutina přidělí nové pole a zkopíruje do něj všechny existující prvky. Pokud je vstupní argument `null`, rutina přidělí nové úložiště. Pokud existuje dostatečná kapacita, rutina neprovede nic:
+Můžete také určit, že vrácená hodnota nebo `out` nebo `ref` argument není null, i když typ je typ s možnou hodnotou null. Zvažte metodu, která zajišťuje, že pole je dostatečně velké pro uložení několika prvků. Pokud vstupní argument nemá kapacitu, rutina by přidělit nové pole a zkopírovat všechny existující prvky do něj. Pokud je `null`vstupní argument , rutina by přidělit nové úložiště. Pokud je dostatečná kapacita, rutina nedělá nic:
 
 ```csharp
 public void EnsureCapacity<T>(ref T[] storage, int size)
 ```
 
-Tuto rutinu můžete zavolat následujícím způsobem:
+Dalo by se volat tuto rutinu takto:
 
 ```csharp
 // messages has the default value (null) when EnsureCapacity is called:
@@ -204,28 +204,28 @@ EnsureCapacity<string>(ref messages, 10);
 EnsureCapacity<string>(messages, 50);
 ```
 
-Po povolení typů odkazů s hodnotou null Chcete zajistit, aby předchozí kód byl zkompilován bez upozornění. Když metoda vrátí hodnotu, je zaručena, že argument `storage` nesmí mít hodnotu null. Je však přijatelné volat `EnsureCapacity` s odkazem s hodnotou null. Můžete nastavit `storage` typ odkazu s možnou hodnotou null a přidat `NotNull` post-Condition do deklarace parametru:
+Po povolení typů odkazů null, chcete zajistit, že předchozí kód zkompiluje bez upozornění. Když metoda vrátí, `storage` argument je zaručeno, že není null. Je však přijatelné volat `EnsureCapacity` s nulovým odkazem. Můžete vytvořit `storage` typ odkazu s možnou `NotNull` hodnotou null a přidat do deklarace parametru podmínku post-condition:
 
 ```csharp
 public void EnsureCapacity<T>([NotNull]ref T[]? storage, int size)
 ```
 
-Předchozí kód vyjadřuje jednoznačně stávající kontrakt: volající mohou předat proměnnou s hodnotou `null`, ale vrácená hodnota zaručuje, že nikdy nebude mít hodnotu null. Atribut `NotNull` je nejužitečnější pro `ref` a `out` argumenty, kde `null` může být předán jako argument, ale u tohoto argumentu je zaručeno, že není null, pokud se metoda vrátí.
+Předchozí kód vyjadřuje existující smlouvy velmi jasně: Volající můžete předat `null` proměnnou s hodnotou, ale vrácená hodnota je zaručeno, že nikdy být null. Atribut `NotNull` je nejužitečnější pro `ref` a `out` argumenty, kde `null` mohou být předány jako argument, ale tento argument je zaručeno, že není null, když metoda vrátí.
 
-Nepodmíněné následné podmínky se zadává pomocí následujících atributů:
+Můžete zadat bezpodmínečné postconditions pomocí následujících atributů:
 
-- [MaybeNull](xref:System.Diagnostics.CodeAnalysis.MaybeNullAttribute): návratová hodnota, která není null, může mít hodnotu null.
-- [NotNull](xref:System.Diagnostics.CodeAnalysis.NotNullAttribute): návratová hodnota s možnou hodnotou null nikdy nebude null.
+- [MaybeNull](xref:System.Diagnostics.CodeAnalysis.MaybeNullAttribute): Vrácená hodnota, jejíž nenulovatelná hodnota může být null.
+- [NotNull](xref:System.Diagnostics.CodeAnalysis.NotNullAttribute): Vrácená hodnota s možnou hodnotou null nikdy nebude null.
 
-## <a name="specify-conditional-post-conditions-notnullwhen-maybenullwhen-and-notnullifnotnull"></a>Zadejte podmíněné podmínky odeslání: `NotNullWhen`, `MaybeNullWhen`a `NotNullIfNotNull`
+## <a name="specify-conditional-post-conditions-notnullwhen-maybenullwhen-and-notnullifnotnull"></a>Určete podmíněné `NotNullWhen`post-podmínky: , `MaybeNullWhen`a`NotNullIfNotNull`
 
-Pravděpodobně jste obeznámeni s <xref:System.String.IsNullOrEmpty(System.String)?DisplayProperty=nameWithType>ou `string` metodou. Tato metoda vrací `true`, pokud má argument hodnotu null nebo prázdný řetězec. Jedná se o podobu hodnoty null-check: volající nemusí mít hodnotu null – Pokud metoda vrátí `false`, zaškrtnete argument. Chcete-li vytvořit metodu, jako je tato vlastnost s možnou hodnotou null, nastavte argument na typ s možnou hodnotou null a přidejte atribut `NotNullWhen`:
+Pravděpodobně jste obeznámeni `string` s <xref:System.String.IsNullOrEmpty(System.String)?DisplayProperty=nameWithType>metodou . Tato metoda `true` vrátí, pokud je argument null nebo prázdný řetězec. Je to forma null-check: Volající nemusí null-zkontrolovat argument, pokud metoda `false`vrátí . Chcete-li metodu, jako je tato nullable aware, byste nastavit argument `NotNullWhen` na typ s hodnotou null a přidat atribut:
 
 ```csharp
 bool IsNullOrEmpty([NotNullWhen(false)]string? value);
 ```
 
-To informuje kompilátor, že jakýkoliv kód, kde je vrácená hodnota `false` nemusí být zaškrtnutou hodnotou null. Přidání atributu informuje o statické analýze kompilátoru, která `IsNullOrEmpty` provádí nezbytnou kontrolu null: když vrátí `false`, vstupní argument není `null`.
+To informuje kompilátor, že žádný kód, kde je `false` vrácená hodnota nemusí být null-kontrolovány. Přidání atributu informuje statické analýzy kompilátoru, který `IsNullOrEmpty` provádí potřebnou `false`kontrolu null: `null`když vrátí , vstupní argument není .
 
 ```csharp
 string? userInput = GetUserInput();
@@ -236,71 +236,71 @@ if (!string.IsNullOrEmpty(userInput))
 // null check needed on userInput here.
 ```
 
-Metoda <xref:System.String.IsNullOrEmpty(System.String)?DisplayProperty=nameWithType> bude opatřena poznámkami, jak je uvedeno výše pro .NET Core 3,0. Můžete mít podobné metody v základu kódu, které kontrolují stav objektů pro hodnoty null. Kompilátor nerozpozná vlastní metody kontroly null a bude nutné poznámky přidat sami. Když přidáte atribut, statická analýza kompilátoru zná, když byla testovaná proměnná vrácena na hodnotu null.
+Metoda <xref:System.String.IsNullOrEmpty(System.String)?DisplayProperty=nameWithType> bude uvedena v notaci, jak je uvedeno výše pro .NET Core 3.0. Můžete mít podobné metody v základu kódu, které kontrolují stav objektů pro nulové hodnoty. Kompilátor nerozpozná vlastní metody kontroly null a poznámky budete muset přidat sami. Když přidáte atribut, statická analýza kompilátoru ví, kdy byla ověřená proměnná zkontrolována.
 
-Jiné použití pro tyto atributy je `Try*` vzor. Následné podmínky pro `ref` a proměnné `out` jsou přenášeny prostřednictvím návratové hodnoty. Zvažte tuto metodu popsanou výše:
+Dalším použitím pro tyto `Try*` atributy je vzor. Postconditions pro `ref` `out` a proměnné jsou sdělovány prostřednictvím vrácená hodnota. Zvažte tuto metodu zobrazenou dříve:
 
 ```csharp
 bool TryGetMessage(string key, out string message)
 ```
 
-Předchozí metoda dodržuje typické rozhraní .NET idiom: vrácená hodnota označuje, zda `message` nastavena na nalezenou hodnotu, nebo pokud není nalezena žádná zpráva, na výchozí hodnotu. Pokud metoda vrátí `true`, hodnota `message` není null; v opačném případě metoda nastaví `message` na hodnotu null.
+Předchozí metoda následuje za typickým idiomem .NET: `message` vrácená hodnota označuje, zda byla nastavena na nalezenou hodnotu nebo, pokud není nalezena žádná zpráva, na výchozí hodnotu. Pokud metoda `true`vrátí , `message` hodnota není null; jinak metoda nastaví `message` na null.
 
-Tento idiom můžete komunikovat pomocí atributu `NotNullWhen`. Pokud aktualizujete podpis pro typy odkazů s možnou hodnotou null, udělejte `message` `string?` a přidejte atribut:
+Můžete komunikovat, že idiom pomocí atributu. `NotNullWhen` Při aktualizaci podpisu pro typy `message` odkazů `string?` s možnou hodnotou null vytvořte atribut a přidejte:
 
 ```csharp
 bool TryGetMessage(string key, [NotNullWhen(true)] out string? message)
 ```
 
-V předchozím příkladu je hodnota `message` známa, že není null, pokud `TryGetMessage` vrátí `true`. Podobné metody v základu kódu je vhodné opatřit poznámkami stejným způsobem: argumenty mohou být `null`a jsou známy jako nenulové, pokud metoda vrátí `true`.
+V předchozím příkladu `message` je známo, že hodnota `TryGetMessage` není `true`null při vrátí . Měli byste anotovat podobné metody v základu kódu stejným způsobem: argumenty mohou být `null`a je `true`známo, že nejsou null, když metoda vrátí .
 
-Je možné, že budete potřebovat i jeden konečný atribut. V některých případech je nulový stav návratové hodnoty závislý na nulovém stavu jednoho nebo více vstupních argumentů. Tyto metody vrátí hodnotu, která není null, pokud některé vstupní argumenty nejsou `null`. Chcete-li tyto metody správně opatřit poznámkami, použijte atribut `NotNullIfNotNull`. Vezměte v úvahu následující metodu:
+Je tu ještě jeden poslední atribut, který můžete také potřebovat. Někdy stav null vrácené hodnoty závisí na stavu null jednoho nebo více vstupních argumentů. Tyto metody vrátí hodnotu bez hodnoty null vždy, `null`když určité vstupní argumenty nejsou . Chcete-li správně opatří tyto metody, použijte `NotNullIfNotNull` atribut. Zvažte následující metodu:
 
 ```csharp
 string GetTopLevelDomainFromFullUrl(string url);
 ```
 
-Pokud argument `url` není null, výstup není `null`. Jakmile jsou povoleny odkazy s hodnotou null, tento podpis funguje správně, pokud rozhraní API nikdy nepřijímá vstup s hodnotou null. Pokud ale může mít vstup hodnotu null, může být návratová hodnota také null. Proto můžete změnit signaturu na následující kód:
+Pokud `url` argument není null, výstup není `null`. Po povolení odkazů s možnou hodnotou null bude tento podpis fungovat správně za předpokladu, že rozhraní API nikdy nepřijme nulový vstup. Však pokud vstup může být null, pak vrácená hodnota může být také null. Proto můžete změnit podpis na následující kód:
 
 ```csharp
 string? GetTopLevelDomainFromFullUrl(string? url);
 ```
 
-To funguje i v případě, že bude často vynutit, aby volající implementovali dodatečné kontroly `null`. Kontraktem je, že návratová hodnota by se `null` jenom v případě, že je `null`vstupní argument `url`. Pro vyjádření této smlouvy byste si tuto metodu měli opatřit poznámkami, jak je znázorněno v následujícím kódu:
+To také funguje, ale často nutí `null` volající implementovat další kontroly. Smlouva je, že vrácená `null` hodnota by `url` být `null`pouze v případě, že vstupní argument je . Chcete-li vyjádřit tuto smlouvu, měli byste anotovat tuto metodu, jak je znázorněno v následujícím kódu:
 
 ```csharp
 [return: NotNullIfNotNull("url")]
 string? GetTopLevelDomainFromFullUrl(string? url);
 ```
 
-Pro návratovou hodnotu a argument byly oba poznámy s `?`, což značí, že lze `null`. Atribut dále upřesňuje, že návratová hodnota nebude null, pokud není `null`argument `url`.
+Vrácená hodnota a argument byly anotovány `?` s označením, `null`že buď může být . Atribut dále objasňuje, že vrácená hodnota `url` nebude null, `null`pokud argument není .
 
-Podmíněný následné podmínky můžete zadat pomocí těchto atributů:
+Podmíněné postconditions zadáte pomocí těchto atributů:
 
-- [MaybeNullWhen](xref:System.Diagnostics.CodeAnalysis.MaybeNullWhenAttribute): vstupní argument, který nemůže mít hodnotu null, může mít hodnotu null, pokud metoda vrátí zadanou `bool` hodnotu.
-- [NotNullWhen](xref:System.Diagnostics.CodeAnalysis.NotNullWhenAttribute): vstupní argument s možnou hodnotou null nebude mít hodnotu null, pokud metoda vrátí zadanou `bool` hodnotu.
-- [NotNullIfNotNull](xref:System.Diagnostics.CodeAnalysis.NotNullIfNotNullAttribute): návratová hodnota není null, pokud vstupní argument pro zadaný parametr není null.
+- [MaybeNullWhen](xref:System.Diagnostics.CodeAnalysis.MaybeNullWhenAttribute): Vstupní argument, který nelze utnou, `bool` může mít hodnotu null, pokud metoda vrátí zadanou hodnotu.
+- [NotNullWhen](xref:System.Diagnostics.CodeAnalysis.NotNullWhenAttribute): Vstupní argument s možnou hodnotou null `bool` nebude null, pokud metoda vrátí zadanou hodnotu.
+- [NotNullIfNotNull](xref:System.Diagnostics.CodeAnalysis.NotNullIfNotNullAttribute): Vrácená hodnota není null, pokud vstupní argument pro zadaný parametr není null.
 
-## <a name="generic-definitions-and-nullability"></a>Obecné definice a možnost použití hodnoty null
+## <a name="generic-definitions-and-nullability"></a>Obecné definice a nullability
 
-Správně komunikující stav null obecných typů a obecné metody vyžadují zvláštní péči. To je fakt, že typ hodnoty s možnou hodnotou null a typ odkazu s možnou hodnotou null jsou zásadním rozdílem. `int?` je synonymum pro `Nullable<int>`, zatímco `string?` je `string` s atributem přidaným kompilátorem. Výsledkem je, že kompilátor nemůže vygenerovat správný kód pro `T?` bez znalosti, zda `T` je `class` nebo `struct`. 
+Správná komunikace nulového stavu obecných typů a obecných metod vyžaduje zvláštní péči. To vyplývá ze skutečnosti, že typ hodnoty s možnou hodnotou s hodnotou null a typ odkazu s možnou hodnotou s možnou hodnotou null se zásadně liší. Synonymum `int?` pro `Nullable<int>`, `string?` vzhledem k tomu, že je `string` s atributem přidaným kompilátorem. Výsledkem je, že kompilátor nemůže `T?` generovat správný `T` kód, aniž by věděl, zda je `class` nebo `struct`.
 
-To neznamená, že nemůžete použít typ s povolenou hodnotou null (buď typ hodnoty, nebo odkazový typ) jako argument typu pro uzavřený obecný typ. `List<string?>` i `List<int?>` jsou platné instance `List<T>`. 
+To neznamená, že nelze použít typ s hodnotou null (typ hodnoty nebo typ odkazu) jako argument typu pro uzavřený obecný typ. Oba `List<string?>` `List<int?>` a jsou platné instance `List<T>`.
 
-To znamená, že nemůžete použít `T?` v deklaraci obecné třídy nebo metody bez omezení. <xref:System.Linq.Enumerable.FirstOrDefault%60%601(System.Collections.Generic.IEnumerable%7B%60%600%7D)?displayProperty=nameWithType> například nebude změněno, aby vracela `T?`. Toto omezení můžete překonat přidáním `struct` nebo omezení `class`. U některého z těchto omezení kompilátor ví, jak generovat kód pro `T` i `T?`.
+Co to znamená, že nelze `T?` použít v deklaraci obecné třídy nebo metody bez omezení. Například <xref:System.Linq.Enumerable.FirstOrDefault%60%601(System.Collections.Generic.IEnumerable%7B%60%600%7D)?displayProperty=nameWithType> nebude změněn na návrat `T?`. Toto omezení můžete překonat `struct` přidáním omezení nebo. `class` S některou z těchto omezení kompilátor ví, `T` `T?`jak generovat kód pro oba a .
 
-Můžete chtít omezit typy používané pro argument obecného typu, aby byly typy bez hodnoty null. To lze provést přidáním omezení `notnull` pro tento argument typu. Při použití tohoto omezení nesmí argument type být typ s možnou hodnotou null.
+Můžete chtít omezit typy používané pro obecný typ argumentu, které mají být nenulové typy. Můžete to udělat přidáním `notnull` omezení pro tento argument typu. When that constraint is applied, the type argument must not be a nullable type.
 
 ## <a name="conclusions"></a>Závěry
 
-Přidání typů odkazů s možnou hodnotou null poskytuje počáteční slovník pro popis očekávání vašich rozhraní API pro proměnné, které by mohly být `null`. Další atributy poskytují bohatší slovník popisující stav null proměnných jako předpoklady a následné podmínky. Tyto atributy podrobněji popisují vaše očekávání a poskytují lepší prostředí pro vývojáře pomocí vašich rozhraní API.
+Přidání typů odkazů s možnou hodnotou null poskytuje počáteční slovní `null`zásobu k popisu očekávání api pro proměnné, které by mohly být . Další atributy poskytují bohatší slovní zásobu k popisu stavu null proměnných jako předpoklady a postconditions. Tyto atributy jasněji popisují vaše očekávání a poskytují lepší prostředí pro vývojáře, kteří používají vaše rozhraní API.
 
-Když aktualizujete knihovny pro kontext s možnou hodnotou null, přidejte tyto atributy, aby uživatelé vašich rozhraní API měli k správné využití. Tyto atributy vám pomůžou plně popsat stav hodnoty null vstupních argumentů a vrácených hodnot:
+Při aktualizaci knihoven pro kontext s možnou hodnotou null přidejte tyto atributy, které uživatele vašich api navedou ke správnému použití. Tyto atributy vám pomohou plně popsat stav null vstupních argumentů a vrácených hodnot:
 
-- [AllowNull má](xref:System.Diagnostics.CodeAnalysis.AllowNullAttribute): vstupní argument, který nemůže mít hodnotu null, může mít hodnotu null.
-- [DisallowNull](xref:System.Diagnostics.CodeAnalysis.DisallowNullAttribute): vstupní argument s možnou hodnotou null by nikdy neměl mít hodnotu null.
-- [MaybeNull](xref:System.Diagnostics.CodeAnalysis.MaybeNullAttribute): návratová hodnota, která není null, může mít hodnotu null.
-- [NotNull](xref:System.Diagnostics.CodeAnalysis.NotNullAttribute): návratová hodnota s možnou hodnotou null nikdy nebude null.
-- [MaybeNullWhen](xref:System.Diagnostics.CodeAnalysis.MaybeNullWhenAttribute): vstupní argument, který nemůže mít hodnotu null, může mít hodnotu null, pokud metoda vrátí zadanou `bool` hodnotu.
-- [NotNullWhen](xref:System.Diagnostics.CodeAnalysis.NotNullWhenAttribute): vstupní argument s možnou hodnotou null nebude mít hodnotu null, pokud metoda vrátí zadanou `bool` hodnotu.
-- [NotNullIfNotNull](xref:System.Diagnostics.CodeAnalysis.NotNullIfNotNullAttribute): návratová hodnota není null, pokud vstupní argument pro zadaný parametr není null.
+- [AllowNull](xref:System.Diagnostics.CodeAnalysis.AllowNullAttribute): Vstupní argument, který nelze upustit, může mít hodnotu null.
+- [DisallowNull](xref:System.Diagnostics.CodeAnalysis.DisallowNullAttribute): Vstupní argument s možnou hodnotou null by nikdy neměl mít hodnotu null.
+- [MaybeNull](xref:System.Diagnostics.CodeAnalysis.MaybeNullAttribute): Vrácená hodnota, jejíž nenulovatelná hodnota může být null.
+- [NotNull](xref:System.Diagnostics.CodeAnalysis.NotNullAttribute): Vrácená hodnota s možnou hodnotou null nikdy nebude null.
+- [MaybeNullWhen](xref:System.Diagnostics.CodeAnalysis.MaybeNullWhenAttribute): Vstupní argument, který nelze utnou, `bool` může mít hodnotu null, pokud metoda vrátí zadanou hodnotu.
+- [NotNullWhen](xref:System.Diagnostics.CodeAnalysis.NotNullWhenAttribute): Vstupní argument s možnou hodnotou null `bool` nebude null, pokud metoda vrátí zadanou hodnotu.
+- [NotNullIfNotNull](xref:System.Diagnostics.CodeAnalysis.NotNullIfNotNullAttribute): Vrácená hodnota není null, pokud vstupní argument pro zadaný parametr není null.

@@ -1,30 +1,30 @@
 ---
-title: Jak najít atributy na stejné úrovni s konkrétním názvem (XPath-LINQ to XML) (C#)
+title: Jak najít atributy na stejné úrovni s určitým názvem (XPath-LINQ na XML) (C#)
 ms.date: 07/20/2015
 ms.assetid: c3133d64-523f-422d-8838-73d36b945ca0
-ms.openlocfilehash: 788945232874ed5c1ba9a8a43c10eaf012320cbb
-ms.sourcegitcommit: fbb8a593a511ce667992502a3ce6d8f65c594edf
+ms.openlocfilehash: 331e1a7f432f4d06b697180b1594106ec6842c9a
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/16/2019
-ms.locfileid: "74141140"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79169256"
 ---
-# <a name="how-to-find-attributes-of-siblings-with-a-specific-name-xpath-linq-to-xml-c"></a>Jak najít atributy na stejné úrovni s konkrétním názvem (XPath-LINQ to XML) (C#)
-Toto téma ukazuje, jak najít všechny atributy na stejné úrovni kontextu uzlu. V kolekci jsou vráceny pouze atributy s určitým názvem.  
+# <a name="how-to-find-attributes-of-siblings-with-a-specific-name-xpath-linq-to-xml-c"></a>Jak najít atributy na stejné úrovni s určitým názvem (XPath-LINQ na XML) (C#)
+Toto téma ukazuje, jak najít všechny atributy na stejné úrovni kontextového uzlu. V kolekci jsou vráceny pouze atributy s určitým názvem.  
   
  Výraz XPath je:  
   
  `../Book/@id`  
   
 ## <a name="example"></a>Příklad  
- Tento příklad nejprve vyhledá prvek `Book` a poté vyhledá všechny prvky na stejné úrovni s názvem `Book`a pak najde všechny atributy s názvem `id`. Výsledkem je kolekce atributů.  
+ Tento příklad nejprve `Book` vyhledá prvek a potom `Book`vyhledá všechny prvky `id`na stejné úrovni s názvem a potom vyhledá všechny atributy s názvem . Výsledkem je kolekce atributů.  
   
- Tento příklad používá následující dokument XML: [ukázkový soubor XML: Books (LINQ to XML)](./sample-xml-file-books-linq-to-xml.md).  
+ Tento příklad používá následující dokument XML: [Ukázkový soubor XML: Books (LINQ to XML).](./sample-xml-file-books-linq-to-xml.md)  
   
 ```csharp  
 XDocument books = XDocument.Load("Books.xml");  
   
-XElement book =   
+XElement book =
     books  
     .Root  
     .Element("Book");  
@@ -47,7 +47,7 @@ foreach (XAttribute el in list1)
     Console.WriteLine(el);  
 ```  
   
- Tento příklad vytvoří následující výstup:  
+ Tento příklad vytváří následující výstup:  
   
 ```output  
 Results are identical  

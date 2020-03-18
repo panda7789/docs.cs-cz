@@ -1,5 +1,5 @@
 ---
-title: Příkaz fixed – C# reference
+title: opraven příkaz - C# Reference
 ms.date: 05/10/2018
 f1_keywords:
 - fixed_CSharpKeyword
@@ -7,41 +7,41 @@ f1_keywords:
 helpviewer_keywords:
 - fixed keyword [C#]
 ms.openlocfilehash: e527e8a54a739391d18b180532372b5b70f34d37
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "75713525"
 ---
 # <a name="fixed-statement-c-reference"></a>fixed – příkaz (Referenční dokumentace jazyka C#)
 
-Příkaz `fixed` zabraňuje systému uvolňování paměti v přemístění pohyblivé proměnné. Příkaz je povolen pouze v nezabezpečeném kontextu. [nebezpečný](unsafe.md) `fixed` Pomocí klíčového slova `fixed` lze také vytvořit [vyrovnávací paměti pevné velikosti](../../programming-guide/unsafe-code-pointers/fixed-size-buffers.md).
+Příkaz `fixed` zabrání systému uvolňování paměti přemístit pohyblivou proměnnou. Příkaz `fixed` je povolen pouze v [nebezpečném](unsafe.md) kontextu. Klíčové `fixed` slovo můžete také použít k vytvoření [vyrovnávacích pamětí s pevnou velikostí](../../programming-guide/unsafe-code-pointers/fixed-size-buffers.md).
 
-Příkaz `fixed` nastaví ukazatel na spravovanou proměnnou a "PIN" tuto proměnnou během provádění příkazu. Ukazatele na pohyblivé spravované proměnné jsou užitečné pouze v kontextu `fixed`. Bez kontextu `fixed`, uvolňování paměti může přemístit proměnné nepředvídatelné. C# Kompilátor umožňuje přiřadit ukazatel na spravovanou proměnnou v příkazu `fixed`.
+Příkaz `fixed` nastaví ukazatel na spravovanou proměnnou a "kolíky" tuto proměnnou během provádění příkazu. Ukazatele na pohyblivé spravované proměnné `fixed` jsou užitečné pouze v kontextu. Bez `fixed` kontextu uvolňování paměti může přemístit proměnné nepředvídatelně. Kompilátor Jazyka C# umožňuje pouze přiřadit ukazatel spravované `fixed` proměnné v příkazu.
 
 [!code-csharp[Accessing fixed memory](../../../../samples/snippets/csharp/keywords/FixedKeywordExamples.cs#1)]
 
-Můžete inicializovat ukazatel pomocí pole, řetězce, vyrovnávací paměti pevné velikosti nebo adresy proměnné. Následující příklad ilustruje použití proměnných adres, polí a řetězců:
+Ukazatel můžete inicializovat pomocí pole, řetězce, vyrovnávací paměti s pevnou velikostí nebo adresy proměnné. Následující příklad ilustruje použití proměnných adres, polí a řetězců:
 
 [!code-csharp[Initializing fixed size buffers](../../../../samples/snippets/csharp/keywords/FixedKeywordExamples.cs#2)]
 
-Počínaje C# 7,3 se příkaz `fixed` pracuje na dalších typech nad rámec polí, řetězců, vyrovnávací paměti pevné velikosti nebo nespravovaných proměnných. Libovolný typ, který implementuje metodu s názvem `GetPinnableReference` lze připnout. Musí vracet proměnnou nespravovaného [typu.](../builtin-types/unmanaged-types.md) `GetPinnableReference` `ref` Typy .NET <xref:System.Span%601?displayProperty=nameWithType> a <xref:System.ReadOnlySpan%601?displayProperty=nameWithType> představené v .NET Core 2,0 využívají tento model a dají se připnout. To je ukázáno v následujícím příkladu:
+Počínaje C# 7.3, `fixed` příkaz pracuje na další typy mimo pole, řetězce, vyrovnávací paměti s pevnou velikostí nebo nespravované proměnné. Libovolný typ, který implementuje metodu s názvem `GetPinnableReference` lze připnout. Musí `GetPinnableReference` vrátit `ref` proměnnou [nespravovaného typu](../builtin-types/unmanaged-types.md). Typy <xref:System.Span%601?displayProperty=nameWithType> .NET <xref:System.ReadOnlySpan%601?displayProperty=nameWithType> a zavedené v rozhraní .NET Core 2.0 využívají tento vzor a lze je připnout. To je znázorněno v následujícím příkladu:
 
 [!code-csharp[Accessing fixed memory](../../../../samples/snippets/csharp/keywords/FixedKeywordExamples.cs#FixedSpan)]
 
-Pokud vytváříte typy, které by se měly účastnit tohoto modelu, přečtěte si téma <xref:System.Span%601.GetPinnableReference?displayProperty=nameWithType> pro příklad implementace vzoru.
+Pokud vytváříte typy, které by se <xref:System.Span%601.GetPinnableReference?displayProperty=nameWithType> měly účastnit tohoto vzoru, naleznete příklad implementace vzoru.
 
-V jednom příkazu lze inicializovat více ukazatelů, pokud jsou všechny stejného typu:
+Více ukazatelů lze inicializovat v jednom příkazu, pokud jsou všechny stejného typu:
 
 ```csharp
 fixed (byte* ps = srcarray, pd = dstarray) {...}
 ```
 
-Chcete-li inicializovat ukazatele různých typů, jednoduše vnořovat `fixed` příkazy, jak je znázorněno v následujícím příkladu.
+Chcete-li inicializovat ukazatele různých `fixed` typů, jednoduše vnořte příkazy, jak je znázorněno v následujícím příkladu.
 
 [!code-csharp[Initializing multiple pointers](../../../../samples/snippets/csharp/keywords/FixedKeywordExamples.cs#3)]
 
-Po spuštění kódu v příkazu nejsou připnuté žádné připnuté proměnné a podléhají uvolňování paměti. Proto neodkazujte na tyto proměnné mimo příkaz `fixed`. Proměnné deklarované v příkazu `fixed` jsou vymezeny na tento příkaz, což usnadňuje tyto akce:
+Po spuštění kódu v příkazu jsou všechny připnuté proměnné odepnuty a podléhají uvolňování paměti. Proto neodkazují na tyto proměnné `fixed` mimo příkaz. Proměnné deklarované `fixed` v příkazu jsou vymezeny na toto prohlášení, což usnadňuje:
 
 ```csharp
 fixed (byte* ps = srcarray, pd = dstarray)
@@ -51,7 +51,7 @@ fixed (byte* ps = srcarray, pd = dstarray)
 // ps and pd are no longer in scope here.
 ```
 
-Ukazatele inicializované v příkazech `fixed` jsou proměnné jen pro čtení. Chcete-li změnit hodnotu ukazatele, je nutné deklarovat druhý ukazatel na proměnnou a upravit ji. Proměnnou deklarovanou v příkazu `fixed` nelze změnit:
+Ukazatele inicializované v `fixed` příkazech jsou proměnné jen pro čtení. Pokud chcete změnit hodnotu ukazatele, musíte deklarovat druhou proměnnou ukazatele a upravit ji. Proměnnou uvedenou `fixed` v výkazu nelze změnit:
 
 ```csharp
 fixed (byte* ps = srcarray, pd = dstarray)
@@ -62,17 +62,17 @@ fixed (byte* ps = srcarray, pd = dstarray)
 }
 ```
 
-Můžete přidělit paměť v zásobníku, kde nepodléhá uvolňování paměti, a proto není nutné ji připnout. K tomu použijte [operátor`stackalloc`](../operators/stackalloc.md).
+Můžete přidělit paměť v zásobníku, kde není předmětem uvolňování paměti a proto není nutné připnout. Chcete-li, že pomocí [ `stackalloc` operátoru](../operators/stackalloc.md).
 
 ## <a name="c-language-specification"></a>specifikace jazyka C#
 
-Další informace naleznete v části s [příkazem fixed](~/_csharplang/spec/unsafe-code.md#the-fixed-statement) ve [ C# specifikaci jazyka](~/_csharplang/spec/introduction.md).
+Další informace naleznete [v části Pevný příkaz](~/_csharplang/spec/unsafe-code.md#the-fixed-statement) specifikace jazyka [C#](~/_csharplang/spec/introduction.md).
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [C#Odkaz](../index.md)
-- [Průvodce programováním v jazyce C#](../../programming-guide/index.md)
-- [Klíčová slova jazyka C#](index.md)
+- [Odkaz jazyka C#](../index.md)
+- [Programovací příručka jazyka C#](../../programming-guide/index.md)
+- [C# Klíčová slova](index.md)
 - [unsafe](unsafe.md)
 - [Typy ukazatelů](../../programming-guide/unsafe-code-pointers/pointer-types.md)
-- [Vyrovnávací paměti pevné velikosti](../../programming-guide/unsafe-code-pointers/fixed-size-buffers.md)
+- [Vyrovnávací paměti s pevnou velikostí](../../programming-guide/unsafe-code-pointers/fixed-size-buffers.md)

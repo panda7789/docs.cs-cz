@@ -1,26 +1,26 @@
 ---
-ms.openlocfilehash: 1b4b0aba3ea24682ae972bf283ac387692c83781
-ms.sourcegitcommit: 7088f87e9a7da144266135f4b2397e611cf0a228
+ms.openlocfilehash: 9d138f79fcede4acac837f8d7793aa343ced737c
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75902032"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "78290762"
 ---
-### <a name="http-defaulthttpcontext-extensibility-removed"></a>HTTP: rozšíření DefaultHttpContext bylo odebráno.
+### <a name="http-defaulthttpcontext-extensibility-removed"></a>HTTP: VýchozíhttpContext rozšiřitelnost odebrána
 
-V rámci vylepšení výkonu ASP.NET Core 3,0 se rozšíření `DefaultHttpContext` odebralo. Třída je nyní `sealed`. Další informace naleznete v tématu [dotnet/aspnetcore # 6504](https://github.com/dotnet/aspnetcore/pull/6504).
+Jako součást ASP.NET vylepšení výkonu jádra 3.0 `DefaultHttpContext` byla zrušena rozšiřitelnost. Třída je `sealed`nyní . Další informace naleznete [v tématu dotnet/aspnetcore#6504](https://github.com/dotnet/aspnetcore/pull/6504).
 
-Pokud testy jednotek používají `Mock<DefaultHttpContext>`, použijte místo toho `Mock<HttpContext>`.
+Pokud jednotkové `Mock<DefaultHttpContext>`testy `Mock<HttpContext>` používají `new DefaultHttpContext()` , použijte nebo místo.
 
-Diskuzi najdete v tématu [dotnet/aspnetcore # 6534](https://github.com/dotnet/aspnetcore/issues/6534).
+Diskuse naleznete [v tématu dotnet/aspnetcore#6534](https://github.com/dotnet/aspnetcore/issues/6534).
 
-#### <a name="version-introduced"></a>Představená verze
+#### <a name="version-introduced"></a>Zavedená verze
 
-3,0
+3.0
 
 #### <a name="old-behavior"></a>Staré chování
 
-Třídy mohou odvozovat z `DefaultHttpContext`.
+Třídy mohou `DefaultHttpContext`být odvozeny z .
 
 #### <a name="new-behavior"></a>Nové chování
 
@@ -28,15 +28,15 @@ Třídy nelze odvodit z `DefaultHttpContext`.
 
 #### <a name="reason-for-change"></a>Důvod změny
 
-Tato rozšiřitelná služba byla zpočátku k dispozici, aby umožňovala sdružování `HttpContext`, ale zavedla zbytečné složitosti a bránila jiným optimalizacím.
+Rozšiřitelnost byla poskytnuta zpočátku umožnit `HttpContext`sdružování , ale zavedla zbytečnou složitost a bránila dalším optimalizacím.
 
 #### <a name="recommended-action"></a>Doporučená akce
 
-Pokud používáte `Mock<DefaultHttpContext>` při testování částí, začněte místo toho používat `Mock<HttpContext>`.
+Pokud používáte `Mock<DefaultHttpContext>` v testování částí, `Mock<HttpContext>` začněte používat místo.
 
 #### <a name="category"></a>Kategorie
 
-ASP.NET Core
+Jádro ASP.NET
 
 #### <a name="affected-apis"></a>Ovlivněná rozhraní API
 

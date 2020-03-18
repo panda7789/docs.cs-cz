@@ -1,50 +1,50 @@
 ---
 title: Rozlišování delegátů a událostí
-description: Přečtěte si rozdíl mezi delegáty a událostmi a kdy použít každou z těchto funkcí .NET Core.
+description: Zjistěte rozdíl mezi delegáty a událostmi a kdy použít každou z těchto funkcí .NET Core.
 ms.date: 06/20/2016
 ms.technology: csharp-fundamentals
 ms.assetid: 0fdc8629-2fdb-4a7c-a433-5b9d04eaf911
-ms.openlocfilehash: ff90af1d2b1a92f06eed58228f8e8ca5ff6b93ca
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.openlocfilehash: 04738ac2dd82da9c577e88598d0bb737a93333c1
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73037322"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79146175"
 ---
 # <a name="distinguishing-delegates-and-events"></a>Rozlišování delegátů a událostí
 
 [Předchozí](modern-events.md)
 
-Vývojáři, kteří jsou noví na platformě .NET Core, se často bojovat při rozhodování mezi návrhem založeným na `delegates` a návrhem na základě `events`. Toto je obtížné koncept, protože tyto dvě jazykové funkce jsou velmi podobné. Události jsou dokonce vytvořené pomocí jazykové podpory pro delegáty. 
+Vývojáři, kteří jsou na platformě .NET Core noví, `delegates` se často `events`potýkají s problémy při rozhodování mezi návrhem založeným na návrhu a návrhem založeným na . Jedná se o obtížný koncept, protože dva jazykové funkce jsou velmi podobné. Události jsou dokonce sestaveny pomocí jazykové podpory pro delegáty.
 
-Nabízí jak scénář pozdní vazby: umožňuje scénáře, kdy komponenta komunikuje, voláním metody, která je známá pouze za běhu. Obě tyto metody podporují jednu i více předplatitelů. Můžete to zjistit jako singlecast a podpora vícesměrového vysílání. Obě podporují podobnou syntaxi pro přidávání a odebírání obslužných rutin. Nakonec vyvolání události a volání delegáta používá přesně stejnou syntaxi volání metody. I oba podporují stejnou syntaxi metody `Invoke()` pro použití s operátorem `?.`.
+Oba nabízejí scénář pozdní vazby: umožňují scénáře, kde komponenta komunikuje voláním metody, která je známa pouze za běhu. Oba podporují metody jednoho a více odběratelů. Může se vám to líbit jako podpora jednoho vysílání a vícesměrového vysílání. Oba podporují podobnou syntaxi pro přidávání a odebírání obslužných rutin. Nakonec vyvolání události a volání delegáta použít přesně stejnou syntaxi volání metody. I oba podporují `Invoke()` stejnou syntaxi metody `?.` pro použití s operátorem.
 
-U všech podobných funkcí je snadné mít problémy s určením, kdy se má použít.
+Se všemi těmito podobnostmi, je snadné mít potíže s určením, kdy použít, které.
 
-## <a name="listening-to-events-is-optional"></a>Naslouchat události je nepovinné.
+## <a name="listening-to-events-is-optional"></a>Naslouchání událostem je volitelné
 
-Nejdůležitějším aspektem při rozhodování o tom, kterou jazykovou funkci použít, je, zda musí být připojen předplatitel. Pokud váš kód musí volat kód dodaný předplatitelem, měli byste použít návrh založený na delegátech. Pokud váš kód může dokončit veškerou práci bez volání jakýchkoli předplatitelů, měli byste použít návrh založený na událostech. 
+Nejdůležitější mne v úvahu při určování, který jazyk funkce použít, je zda musí být připojené odběratel. Pokud váš kód musí volat kód dodaný předplatitelem, měli byste použít návrh založený na delegátech. Pokud váš kód může dokončit všechny své práce bez volání odběratele, měli byste použít návrh založený na událostech.
 
-Vezměte v úvahu příklady vytvořené v této části. Kód, který jste vytvořili pomocí `List.Sort()`, musí být předána funkci Comparer, aby bylo možné správně seřadit prvky. Dotazy LINQ musí být dodány s delegáty, aby bylo možné určit, jaké prvky se mají vrátit. Používali jsme návrh sestavený s delegáty.
+Vezměme si příklady vytvořené během této části. Kód, který `List.Sort()` jste vytvořili pomocí musí být poskytnuta funkce porovnávání, aby bylo možné správně třídit prvky. Linq dotazy musí být dodány s delegáty, aby bylo možné určit, jaké prvky vrátit. Oba používali návrh vytvořený s delegáty.
 
-Zvažte `Progress` událost. Oznamuje průběh úkolu.
-Úloha bude pokračovat bez ohledu na to, zda existují nějaké naslouchací procesy.
-`FileSearcher` je další příklad. Pořád bude hledat a najít všechny hledané soubory, a to i v případě, že nejsou připojeni žádní Odběratelé.
-Ovládací prvky uživatelského rozhraní i nadále fungují správně, i když neexistují předplatitelé, kteří na ně naslouchajíi událostmi. Používají návrhy založené na událostech.
+Vezměme `Progress` si událost. Hlásí průběh úkolu.
+Úloha pokračuje pokračovat bez ohledu na to, zda existují naslouchací procesy.
+Další `FileSearcher` příklad je. To by ještě hledat a najít všechny soubory, které byly vyhledávány, a to i bez události účastníků připojen.
+Ovládací prvky uživatelského rozhraní stále fungují správně, i když neexistují žádní odběratelé, kteří poslouchají události. Oba používají návrhy založené na událostech.
 
-## <a name="return-values-require-delegates"></a>Návratové hodnoty vyžadují delegáty.
+## <a name="return-values-require-delegates"></a>Návratové hodnoty vyžadují delegáty
 
-Dalším aspektem je prototyp metody, který byste chtěli pro metodu delegáta. Jak jste viděli, delegáti, kteří používají pro události, mají návratový typ void. Viděli jste také, že jsou k dispozici idiomy k vytváření obslužných rutin událostí, které přecházejí informace zpět do zdrojů událostí prostřednictvím úprav vlastností objektu argumentu události. I když tyto idiomy fungují, nejsou tak přirozené jako vrácení hodnoty z metody.
+Dalším aspektem je prototyp metody, který byste chtěli pro metodu delegáta. Jak jste viděli, delegáti používané pro události všechny mají prázdný návratový typ. Také jste viděli, že existují idiomy k vytvoření obslužné rutiny událostí, které předávají informace zpět zdrojům událostí prostřednictvím úpravy vlastností objektu argumentu události. Zatímco tyto idiomy fungují, nejsou tak přirozené jako vrácení hodnoty z metody.
 
-Všimněte si, že tyto dvě heuristiky mohou být často k dispozici: Pokud vaše metoda delegáta vrací hodnotu, bude pravděpodobně ovlivněn algoritmus nějakým způsobem.
+Všimněte si, že tyto dvě heuristiky mohou být často oba přítomny: Pokud vaše metoda delegáta vrátí hodnotu, bude pravděpodobně nějakým způsobem ovlivnit algoritmus.
 
-## <a name="event-listeners-often-have-longer-lifetimes"></a>Naslouchací procesy událostí mají často delší životnost 
+## <a name="event-listeners-often-have-longer-lifetimes"></a>Posluchači událostí mají často delší životnost
 
-Jedná se o mírně slabší odůvodnění. Můžete ale zjistit, že návrhy založené na událostech jsou přirozenější, když zdroj události vyvolává události v dlouhou dobu. V mnoha systémech si můžete prohlédnout příklady pro ovládací prvky UX. Jakmile se přihlásíte k odběru události, může zdroj události vyvolat události po celou dobu životnosti programu.
-(Odběr událostí můžete zrušit, pokud je už nepotřebujete.)
+To je o něco slabší ospravedlnění. Můžete však zjistit, že návrhy založené na událostech jsou přirozenější, když zdroj události bude vyvolávat události po dlouhou dobu. Můžete zobrazit příklady tohoto pro ovládací prvky uživatelského rozhraní v mnoha systémech. Jakmile se přihlásíte k odběru události, zdroj události může vyvolat události po celou dobu životnosti programu.
+(Z odběru se můžete odhlásit, když je již nepotřebujete.)
 
-Na rozdíl od mnoha návrhů založených na delegátech, kde je delegát použit jako argument metody a delegát se nepoužívá poté, co metoda vrátí.
+Kontrast, že s mnoha návrhy založené na delegáta, kde delegát se používá jako argument k metodě a delegát se nepoužívá po této metody vrátí.
 
 ## <a name="evaluate-carefully"></a>Pečlivě vyhodnoťte
 
-Výše uvedené požadavky nejsou pevná a rychlá pravidla. Místo toho představují pokyny, které vám mohou pomoci při rozhodování, která volba je nejvhodnější pro vaše konkrétní využití. Vzhledem k tomu, že jsou podobné, můžete dokonce prototypovat jak obojí, tak zvážit, který by byl přirozený pro práci s. Oba zpracovávají i pozdní spojování scénářů. Použijte ten, který komunikuje s návrhem nejlépe.
+Výše uvedené úvahy nejsou tvrdá a rychlá pravidla. Místo toho představují pokyny, které vám pomohou rozhodnout, která volba je nejvhodnější pro konkrétní použití. Vzhledem k tomu, že jsou podobné, můžete dokonce prototyp oba, a zvážit, které by bylo přirozenější pracovat. Oba dobře zvládnou pozdní vazebné scénáře. Použijte ten, který komunikuje váš návrh nejlepší.

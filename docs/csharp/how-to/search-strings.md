@@ -1,5 +1,5 @@
 ---
-title: Hledání řetězců (C# průvodce)
+title: Jak vyhledávat řetězce (Průvodce C# )
 ms.date: 02/21/2018
 helpviewer_keywords:
 - searching strings [C#]
@@ -7,79 +7,79 @@ helpviewer_keywords:
 - strings [C#], searching with regular expressions
 ms.assetid: fb1d9a6d-598d-4a35-bd5f-b86012edcb2b
 ms.openlocfilehash: 15ea77d13a93d88bd996a22b6fe1aaad81df572d
-ms.sourcegitcommit: 42ed59871db1f29a32b3d8e7abeb20e6eceeda7c
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "74959699"
 ---
 # <a name="how-to-search-strings"></a>Jak hledat řetězce
 
-Můžete použít dvě hlavní strategie pro hledání textu v řetězcích. Metody <xref:System.String> třídy hledají konkrétní text. Regulární výrazy hledají vzory v textu.
+K hledání textu v řetězcích můžete použít dvě hlavní strategie. Metody třídy <xref:System.String> vyhledávají konkrétní text. Regulární výrazy vyhledávají vzorky v textu.
 
 [!INCLUDE[interactive-note](~/includes/csharp-interactive-note.md)]
 
-Typ [řetězce](../language-reference/builtin-types/reference-types.md#the-string-type) , který je aliasem pro třídu <xref:System.String?displayProperty=nameWithType>, poskytuje řadu užitečných metod pro hledání obsahu řetězce. Mezi nimi se <xref:System.String.Contains%2A>, <xref:System.String.StartsWith%2A>, <xref:System.String.EndsWith%2A><xref:System.String.IndexOf%2A><xref:System.String.LastIndexOf%2A>. Třída <xref:System.Text.RegularExpressions.Regex?displayProperty=nameWithType> poskytuje bohatou slovník pro hledání vzorů v textu. V tomto článku se seznámíte s těmito technikami a zvolíte nejlepší způsob pro vaše potřeby.
+Typ [řetězce,](../language-reference/builtin-types/reference-types.md#the-string-type) který je alias <xref:System.String?displayProperty=nameWithType> pro třídu, poskytuje řadu užitečných metod pro vyhledávání obsahu řetězce. Mezi nimi <xref:System.String.Contains%2A> <xref:System.String.StartsWith%2A>jsou <xref:System.String.EndsWith%2A> <xref:System.String.IndexOf%2A>, <xref:System.String.LastIndexOf%2A>, , , . Třída <xref:System.Text.RegularExpressions.Regex?displayProperty=nameWithType> poskytuje bohatou slovní zásobu pro hledání vzorů v textu. V tomto článku se naučíte tyto techniky a jak zvolit nejlepší metodu pro vaše potřeby.
 
 ## <a name="does-a-string-contain-text"></a>Obsahuje řetězec text?
 
-Metody <xref:System.String.Contains%2A?displayProperty=nameWithType>, <xref:System.String.StartsWith%2A?displayProperty=nameWithType> a <xref:System.String.EndsWith%2A?displayProperty=nameWithType> prohledají řetězec pro konkrétní text. Následující příklad ukazuje každou z těchto metod a variaci, která používá hledání bez rozlišení velkých a malých písmen:
+V <xref:System.String.Contains%2A?displayProperty=nameWithType> <xref:System.String.StartsWith%2A?displayProperty=nameWithType> a <xref:System.String.EndsWith%2A?displayProperty=nameWithType> metody hledat řetězec pro konkrétní text. Následující příklad ukazuje každou z těchto metod a variantu, která používá hledání bez rozlišování velkých a malých písmen:
 
 [!code-csharp-interactive[search strings using methods](../../../samples/snippets/csharp/how-to/strings/SearchStrings.cs#1)]
 
-Předchozí příklad ukazuje důležitý bod pro použití těchto metod. U hledání se ve výchozím nastavení **rozlišují malá a velká písmena** . Pomocí hodnoty výčtu <xref:System.StringComparison.CurrentCultureIgnoreCase?displayProperty=nameWithType> zadáte hledání bez rozlišení velkých a malých písmen.
+Předchozí příklad ukazuje důležitý bod pro použití těchto metod. Hledání ve výchozím nastavení **rozlišují malá a velká písmena.** Hodnotu <xref:System.StringComparison.CurrentCultureIgnoreCase?displayProperty=nameWithType> výčtu slouží k určení hledání bez rozlišování velkých a malých písmen.
 
-## <a name="where-does-the-sought-text-occur-in-a-string"></a>Kde v řetězci dojde k hledanému textu?
+## <a name="where-does-the-sought-text-occur-in-a-string"></a>Kde se vyhledávaný text vyskytuje v řetězci?
 
-Metody <xref:System.String.IndexOf%2A> a <xref:System.String.LastIndexOf%2A> také vyhledávají text v řetězcích. Tyto metody vracejí umístění hledaného textu. Pokud se text nenajde, vrátí `-1`. Následující příklad ukazuje hledání prvního a posledního výskytu slova "metody" a zobrazuje text mezi.
+Metody <xref:System.String.IndexOf%2A> <xref:System.String.LastIndexOf%2A> a také vyhledávají text v řetězcích. Tyto metody vrátí umístění hledaného textu. Pokud text není nalezen, vrátí `-1`se . Následující příklad ukazuje hledání prvního a posledního výskytu slova "metody" a zobrazuje text mezi nimi.
   
 [!code-csharp-interactive[search strings for indices](../../../samples/snippets/csharp/how-to/strings/SearchStrings.cs#2)]
 
 ## <a name="finding-specific-text-using-regular-expressions"></a>Hledání konkrétního textu pomocí regulárních výrazů
 
-Třídu <xref:System.Text.RegularExpressions.Regex?displayProperty=nameWithType> lze použít pro hledání řetězců. Tato hledání mohou být v rozsahu od jednoduchých až po složité textové vzory.
+Třídu <xref:System.Text.RegularExpressions.Regex?displayProperty=nameWithType> lze použít k vyhledávání řetězců. Tato hledání mohou být složitější od jednoduchých až po složité textové vzory.
 
-Následující příklad kódu vyhledá ve větě slovo "" nebo "jejich", ignoruje případ. Statická metoda <xref:System.Text.RegularExpressions.Regex.IsMatch%2A?displayProperty=nameWithType> provede hledání. Dáte mu řetězec pro hledání a vzor hledání. V tomto případě třetí argument určuje hledání bez rozlišování velkých a malých písmen. Další informace najdete v tématu <xref:System.Text.RegularExpressions.RegexOptions?displayProperty=nameWithType>.  
+Následující příklad kódu hledá slovo "" nebo "jejich" ve větě, ignoruje případ. Statická <xref:System.Text.RegularExpressions.Regex.IsMatch%2A?displayProperty=nameWithType> metoda provádí hledání. Dáte mu řetězec k vyhledávání a vyhledávací vzor. V tomto případě třetí argument určuje hledání bez rozlišování velkých a malých písmen. Další informace naleznete v tématu <xref:System.Text.RegularExpressions.RegexOptions?displayProperty=nameWithType>.  
 
-Vzor hledání popisuje hledaný text. Následující tabulka popisuje jednotlivé prvky vzoru vyhledávání. (Následující tabulka používá jednu `\`, která musí být uvozená jako `\\` v C# řetězci).
+Vyhledávací vzor popisuje hledaný text. Následující tabulka popisuje každý prvek vyhledávacího vzoru. (Níže uvedená tabulka `\` používá singl, `\\` který musí být uvozeny jako v řetězci C#).
 
-| vzorku  | Význam     |
+| Vzor  | Význam     |
 | -------- |-------------|
-| the      | odpovídá textu "The" |
-| (eir)?   | porovnává 0 nebo 1 výskyt "EIR" |
-| \s       | odpovídá prázdnému znaku    |
+| prostředek      | odpovídají textu "the" |
+| (eir)?   | shoda 0 nebo 1 výskyt "eir" |
+| \s       | porovná se s nebílým znakem    |
   
 [!code-csharp-interactive[Search using regular expressions](../../../samples/snippets/csharp/how-to/strings/SearchStrings.cs#3)]
   
 > [!TIP]
-> Metody `string` jsou obvykle lepší volby při hledání přesný řetězec. Regulární výrazy jsou lepší při hledání určitého vzoru ve zdrojovém řetězci.
+> Metody `string` jsou obvykle lepší volby při hledání přesného řetězce. Regulární výrazy jsou lepší při hledání nějakého vzoru ve zdrojovém řetězci.
 
-## <a name="does-a-string-follow-a-pattern"></a>Sleduje řetězec vzor?
+## <a name="does-a-string-follow-a-pattern"></a>Sleduje řetězec vzorek?
 
-Následující kód používá regulární výrazy k ověření formátu každého řetězce v poli. Ověřování vyžaduje, aby měl každý řetězec formu telefonního čísla, ve kterém jsou tři skupiny číslic oddělené pomlčkami, první dvě skupiny obsahují tři číslice a třetí skupina obsahuje čtyři číslice. Vzor hledání používá `^\\d{3}-\\d{3}-\\d{4}$`regulárních výrazů. Další informace najdete v tématu [Jazyk regulárních výrazů – rychlé reference](../../standard/base-types/regular-expression-language-quick-reference.md).
+Následující kód používá regulární výrazy k ověření formátu každého řetězce v poli. Ověření vyžaduje, aby každý řetězec měl tvar telefonního čísla, ve kterém jsou tři skupiny číslic odděleny pomlčkami, první dvě skupiny obsahují tři číslice a třetí skupina obsahuje čtyři číslice. Vyhledávací vzor používá regulární výraz `^\\d{3}-\\d{3}-\\d{4}$`. Další informace naleznete v [tématu Jazyk regulárních výrazů – stručný přehled](../../standard/base-types/regular-expression-language-quick-reference.md).
 
-| vzorku  | Význam                             |
+| Vzor  | Význam                             |
 | -------- |-------------------------------------|
 | ^        | odpovídá začátku řetězce |
-| \d{3}    | odpovídá přesně 3 číslicovým znakům  |
+| \d{3}    | přesně 3 číslice znaků  |
 | -        | odpovídá znaku '-'           |
-| \d{3}    | odpovídá přesně 3 číslicovým znakům  |
+| \d{3}    | přesně 3 číslice znaků  |
 | -        | odpovídá znaku '-'           |
-| \d{4}    | odpovídá přesně 4 znakům číslice  |
+| \d{4}    | přesně 4 číslice znaků  |
 | $        | odpovídá konci řetězce       |
 
 [!code-csharp-interactive[csProgGuideStrings#4](../../../samples/snippets/csharp/how-to/strings/SearchStrings.cs#4)]
 
-Tento jednoduchý vzor hledání odpovídá mnoha platným řetězcům. Regulární výrazy jsou lepší vyhledat nebo ověřit proti vzorci místo jediného textového řetězce.
+Tento jediný vyhledávací vzor odpovídá mnoha platným řetězcům. Regulární výrazy je lepší vyhledat nebo ověřit proti vzorek, spíše než jeden textový řetězec.
 
-Tyto ukázky můžete vyzkoušet na základě kódu v našem [úložišti GitHub](https://github.com/dotnet/samples/tree/master/snippets/csharp/how-to/strings). Nebo si můžete stáhnout ukázky [jako soubor zip](https://github.com/dotnet/samples/raw/master/snippets/csharp/how-to/strings.zip).
+Tyto ukázky můžete vyzkoušet tak, že se podíváte na kód v našem [úložišti GitHub](https://github.com/dotnet/samples/tree/master/snippets/csharp/how-to/strings). Nebo si můžete stáhnout ukázky [jako zip soubor](https://github.com/dotnet/samples/raw/master/snippets/csharp/how-to/strings.zip).
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Průvodce programováním v jazyce C#](../programming-guide/index.md)
+- [Programovací příručka jazyka C#](../programming-guide/index.md)
 - [Řetězce](../programming-guide/strings/index.md)
 - [LINQ a řetězce](../programming-guide/concepts/linq/linq-and-strings.md)
 - <xref:System.Text.RegularExpressions.Regex?displayProperty=nameWithType>
-- [.NET Framework regulární výrazy](../../standard/base-types/regular-expressions.md)
+- [.NET Framework – regulární výrazy](../../standard/base-types/regular-expressions.md)
 - [Jazyk regulárních výrazů – stručná referenční dokumentace](../../standard/base-types/regular-expression-language-quick-reference.md)
-- [Osvědčené postupy pro používání řetězců v .NET](../../standard/base-types/best-practices-strings.md)
+- [Doporučené postupy pro použití řetězců v rozhraní .NET](../../standard/base-types/best-practices-strings.md)

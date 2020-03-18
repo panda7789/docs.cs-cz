@@ -1,23 +1,23 @@
 ---
-title: Použití variance v rozhraních pro obecné kolekceC#()
+title: Použití odchylky v rozhraních pro obecné kolekce (C#)
 ms.date: 07/20/2015
 ms.assetid: a44f0708-10fa-4c76-82cd-daa6e6b31e8e
-ms.openlocfilehash: 53aaf49ee0802c0d207e0b0a29661cee7c628b4d
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
+ms.openlocfilehash: b891ccde93e18baf5d5e814911666e9c6268e009
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69595217"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79169737"
 ---
-# <a name="using-variance-in-interfaces-for-generic-collections-c"></a>Použití variance v rozhraních pro obecné kolekceC#()
-Kovariantní rozhraní umožňuje svým metodám vracet více odvozených typů než ty, které jsou zadány v rozhraní. Kontravariantní rozhraní umožňuje jeho metodám přijímat parametry méně odvozených typů než těch, které jsou zadány v rozhraní.  
+# <a name="using-variance-in-interfaces-for-generic-collections-c"></a>Použití odchylky v rozhraních pro obecné kolekce (C#)
+Kovariantní rozhraní umožňuje jeho metody vrátit více odvozených typů, než jsou uvedeny v rozhraní. Rozhraní contravariant umožňuje jeho metody přijímat parametry méně odvozené typy, než jsou uvedeny v rozhraní.  
   
- V .NET Framework 4 se několik stávajících rozhraní stala kovariantou a kontravariantní. Mezi ně <xref:System.Collections.Generic.IEnumerable%601> patří <xref:System.IComparable%601>a. To umožňuje znovu použít metody, které pracují s obecnými kolekcemi základních typů pro kolekce odvozených typů.  
+ V rozhraní .NET Framework 4 se několik existujících rozhraní stalo kovariantním i kontravariantními. Patří <xref:System.Collections.Generic.IEnumerable%601> mezi <xref:System.IComparable%601>ně a . To umožňuje znovu použít metody, které pracují s obecnými kolekcemi základních typů pro kolekce odvozených typů.  
   
- Seznam rozhraní variant v .NET Framework naleznete v tématu [Variance in Generic InterfacesC#()](./variance-in-generic-interfaces.md).  
+ Seznam variantních rozhraní v rozhraní .NET Framework naleznete v tématu [Odchylka v obecných rozhraních (C#).](./variance-in-generic-interfaces.md)  
   
 ## <a name="converting-generic-collections"></a>Převod obecných kolekcí  
- Následující příklad ukazuje výhody kovariance v <xref:System.Collections.Generic.IEnumerable%601> rozhraní. Metoda přijímá kolekci `IEnumerable<Person>` typu jako parametr. `PrintFullName` Můžete ji však znovu použít pro kolekci `IEnumerable<Employee>` typu, protože `Employee` dědí `Person`.  
+ Následující příklad ilustruje výhody podpory kovariance <xref:System.Collections.Generic.IEnumerable%601> v rozhraní. Metoda `PrintFullName` přijímá kolekci `IEnumerable<Person>` typu jako parametr. Můžete jej však znovu použít pro `IEnumerable<Employee>` kolekci typu, protože `Employee` dědí `Person`.  
   
 ```csharp  
 // Simple hierarchy of classes.  
@@ -45,7 +45,7 @@ class Program
     {  
         IEnumerable<Employee> employees = new List<Employee>();  
   
-        // You can pass IEnumerable<Employee>,   
+        // You can pass IEnumerable<Employee>,
         // although the method expects IEnumerable<Person>.  
   
         PrintFullName(employees);  
@@ -55,7 +55,7 @@ class Program
 ```  
   
 ## <a name="comparing-generic-collections"></a>Porovnání obecných kolekcí  
- Následující příklad znázorňuje výhody podpory aplikace kontravariance v <xref:System.Collections.Generic.IComparer%601> rozhraní. `PersonComparer` Třída`IComparer<Person>` implementuje rozhraní. Tuto třídu však můžete použít k porovnání sekvence objektů `Employee` typu, protože `Employee` dědí `Person`.  
+ Následující příklad ilustruje výhody podpory contravariance <xref:System.Collections.Generic.IComparer%601> v rozhraní. Třída `PersonComparer` implementuje rozhraní `IComparer<Person>`. Tuto třídu však můžete znovu použít k `Employee` porovnání `Employee` posloupnosti objektů typu, protože dědí `Person`.  
   
 ```csharp  
 // Simple hierarchy of classes.  
@@ -73,11 +73,11 @@ public class Employee : Person { }
 class PersonComparer : IEqualityComparer<Person>  
 {  
     public bool Equals(Person x, Person y)  
-    {              
+    {
         if (Object.ReferenceEquals(x, y)) return true;  
         if (Object.ReferenceEquals(x, null) ||  
             Object.ReferenceEquals(y, null))  
-            return false;              
+            return false;
         return x.FirstName == y.FirstName && x.LastName == y.LastName;  
     }  
     public int GetHashCode(Person person)  
@@ -100,7 +100,7 @@ class Program
                new Employee() {FirstName = "Jeff", LastName = "Price"}  
             };  
   
-        // You can pass PersonComparer,   
+        // You can pass PersonComparer,
         // which implements IEqualityComparer<Person>,  
         // although the method expects IEqualityComparer<Employee>.  
   
@@ -113,6 +113,6 @@ class Program
 }  
 ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Variance v obecných rozhraníchC#()](./variance-in-generic-interfaces.md)
+- [Odchylka v obecných rozhraních (C#)](./variance-in-generic-interfaces.md)

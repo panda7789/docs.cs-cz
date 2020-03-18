@@ -1,147 +1,147 @@
 ---
-title: Zápis vlastního hostitele modulu runtime .NET Core
-description: Naučte se hostovat modul runtime .NET Core z nativního kódu pro podporu pokročilých scénářů, které vyžadují řízení fungování modulu runtime .NET Core.
+title: Napsat vlastního hostitele runtime jádra .NET
+description: Naučte se hostovat runtime jádra .NET z nativního kódu pro podporu pokročilých scénářů, které vyžadují řízení fungování runtime .NET Core.
 author: mjrousos
 ms.date: 12/21/2018
 ms.openlocfilehash: 46c7873a1865db04cf1c2b1bb2ded2b5dacbcc8d
-ms.sourcegitcommit: 43d10ef65f0f1fd6c3b515e363bde11a3fcd8d6d
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/03/2020
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "78239895"
 ---
-# <a name="write-a-custom-net-core-host-to-control-the-net-runtime-from-your-native-code"></a>Zápis vlastního hostitele .NET Core pro řízení modulu .NET runtime z vašeho nativního kódu
+# <a name="write-a-custom-net-core-host-to-control-the-net-runtime-from-your-native-code"></a>Napište vlastní hostiteli jádra .NET pro řízení běhu .NET z nativního kódu
 
-Stejně jako všechny spravované kódy jsou aplikace .NET Core spouštěny hostitelem. Hostitel zodpovídá za spuštění modulu runtime (včetně součástí, jako je například JIT a systém uvolňování paměti) a vyvolává spravované vstupní body.
+Stejně jako všechny spravované kódy, .NET Core aplikace jsou spouštěny hostitelem. Hostitel je zodpovědný za spuštění runtime (včetně součástí, jako je JIT a uvolňování paměti) a vyvolání spravovaných vstupních bodů.
 
-Hostování modulu runtime .NET Core je pokročilý scénář a ve většině případů se vývojáři .NET Core nemusejí starat o hostování, protože procesy sestavení .NET Core poskytují výchozímu hostiteli spouštění aplikací .NET Core. V některých specializovaných případech může být užitečné explicitně hostovat modul runtime .NET Core, a to buď jako způsob vyvolání spravovaného kódu v nativním procesu, nebo aby bylo možné získat větší kontrolu nad tím, jak funguje modul runtime.
+Hostování runtime .NET Core je pokročilý scénář a ve většině případů vývojáři .NET Core se nemusí starat o hostování, protože procesy sestavení .NET Core poskytují výchozího hostitele pro spuštění aplikací .NET Core. V některých specializovaných okolností však může být užitečné explicitně hostovat zaběhu .NET Core, buď jako prostředek vyvolání spravovaného kódu v nativním procesu, nebo za účelem získání větší kontroly nad tím, jak runtime funguje.
 
-Tento článek obsahuje přehled kroků nezbytných ke spuštění modulu runtime .NET Core z nativního kódu a spuštění spravovaného kódu.
+Tento článek poskytuje přehled kroků nezbytných ke spuštění runtime .NET Core z nativního kódu a spuštění spravovaného kódu v něm.
 
-## <a name="prerequisites"></a>Předpoklady
+## <a name="prerequisites"></a>Požadavky
 
-Vzhledem k tomu, že hostitelé jsou nativní aplikace, tento C++ kurz popisuje vytvoření aplikace pro hostování .NET Core. Budete potřebovat C++ vývojové prostředí (například to, které poskytuje [Visual Studio](https://aka.ms/vsdownload?utm_source=mscom&utm_campaign=msdocs)).
+Vzhledem k tomu, že hostitelé jsou nativní aplikace, tento kurz zahrnuje konstrukci aplikace Jazyka C++ pro hostování .NET Core. Budete potřebovat vývojové prostředí jazyka C++ (například prostředí poskytované [aplikací Visual Studio).](https://aka.ms/vsdownload?utm_source=mscom&utm_campaign=msdocs)
 
-Budete také chtít, aby hostitel v rámci aplikace .NET Core otestoval hostitele. proto byste měli nainstalovat [.NET Core SDK](https://dotnet.microsoft.com/download) a [vytvořit malou testovací aplikaci .NET Core](with-visual-studio.md) (například aplikaci Hello World). Je dostačující aplikace Hello World vytvořená novou šablonou projektu konzoly .NET Core.
+Budete také chtít jednoduchou aplikaci .NET Core pro testování hostitele, takže byste měli nainstalovat [.NET Core SDK](https://dotnet.microsoft.com/download) a [vytvořit malou testovací aplikaci .NET Core](with-visual-studio.md) (například aplikaci Hello World). Aplikace Hello World vytvořená novou šablonou konzoly .NET Core je dostatečná.
 
-## <a name="hosting-apis"></a>Hostování rozhraní API
-Existují tři různá rozhraní API, která lze použít k hostování .NET Core. Tento článek (a jeho přidružené [ukázky](https://github.com/dotnet/samples/tree/master/core/hosting)) se zabývá všemi možnostmi.
+## <a name="hosting-apis"></a>Hostování apis
+Existují tři různá rozhraní API, která lze použít k hostování .NET Core. Tento článek (a jeho přidružené [ukázky)](https://github.com/dotnet/samples/tree/master/core/hosting)pokrývá všechny možnosti.
 
-* Upřednostňovanou metodou hostování modulu runtime .NET Core v rozhraní .NET Core 3,0 a vyšším je rozhraní API `nethost` a `hostfxr` knihovny. Tyto vstupní body zpracovávají složitost hledání a nastavení modulu runtime pro inicializaci a umožňují spouštění spravované aplikace a volání do statické spravované metody.
-* Upřednostňovanou metodou hostování modulu runtime .NET Core před rozhraním .NET Core 3,0 je rozhraní API [CoreClrHost. h](https://github.com/dotnet/runtime/blob/master/src/coreclr/src/hosts/inc/coreclrhost.h) . Toto rozhraní API zpřístupňuje funkce pro snadné spouštění a zastavování modulu runtime a vyvolání spravovaného kódu (buď spuštěním spravovaného souboru exe, nebo voláním statických spravovaných metod).
-* Rozhraní .NET Core lze také hostovat s rozhraním `ICLRRuntimeHost4` v [knihovně Mscoree. h](https://github.com/dotnet/runtime/blob/master/src/coreclr/src/pal/prebuilt/inc/mscoree.h). Toto rozhraní API bylo asi delší než CoreClrHost. h, takže jste se mohli setkat s jeho staršími hostiteli. Pořád funguje a umožňuje nad hostitelským procesem větší kontrolu než CoreClrHost. U většiny scénářů se ale CoreClrHost. h upřednostňuje teď z důvodu jednodušších rozhraní API.
+* Upřednostňovanou metodou hostování runtime jádra .NET v rozhraní .NET `nethost` Core `hostfxr` 3.0 a vyšší je rozhraní API a knihovny. Tyto vstupní body zpracovávají složitost hledání a nastavení runtime pro inicializaci a umožňují spuštění spravované aplikace a volání do statické spravované metody.
+* Upřednostňovanou metodou hostování runtime .NET Core před rozhraním .NET Core 3.0 je [rozhraní CoreClrHost.h](https://github.com/dotnet/runtime/blob/master/src/coreclr/src/hosts/inc/coreclrhost.h) API. Toto rozhraní API zveřejňuje funkce pro snadné spuštění a zastavení runtime a vyvolání spravovaného kódu (buď spuštěním spravovaného exe nebo voláním statických spravovaných metod).
+* .NET Core lze také hostovat s rozhraním `ICLRRuntimeHost4` v [mscoree.h](https://github.com/dotnet/runtime/blob/master/src/coreclr/src/pal/prebuilt/inc/mscoree.h). Toto rozhraní API bylo delší než CoreClrHost.h, takže jste možná viděli starší hostitele, kteří ho používají. Stále funguje a umožňuje trochu větší kontrolu nad procesem hostování než CoreClrHost. Pro většinu scénářů je však CoreClrHost.h nyní upřednostňován z důvodu jeho jednodušších api.
 
 ## <a name="sample-hosts"></a>Ukázkové hostitele
 
-[Příklady hostitelů](https://github.com/dotnet/samples/tree/master/core/hosting) , které demonstrují kroky popsané v následujících kurzech, jsou k dispozici v úložišti GitHub/Samples GitHub. Komentáře v ukázkách jasně přiřazují očíslované kroky z těchto kurzů s tím, kde jsou provedeny v ukázce. Pokyny ke stažení najdete v tématu [ukázky a kurzy](../../samples-and-tutorials/index.md#viewing-and-downloading-samples).
+[Ukázkoví hostitelé](https://github.com/dotnet/samples/tree/master/core/hosting) demonstrující kroky popsané v níže uvedených kurzech jsou k dispozici v úložišti GitHub dotnet/samples. Komentáře ve vzorcích jasně přidružit číslované kroky z těchto kurzů s kde jsou prováděny v ukázce. Pokyny ke stažení naleznete v [tématu Ukázky a výukové programy](../../samples-and-tutorials/index.md#viewing-and-downloading-samples).
 
-Mějte na paměti, že Ukázkoví hostitelé se mají použít ke studijním účelům, takže mají světlou kontrolu chyb a jsou navržené pro zdůraznění čitelnosti v průběhu efektivity.
+Mějte na paměti, že ukázkové hostitele jsou určeny pro účely učení, takže jsou lehké na kontrolu chyb a jsou navrženy tak, aby zdůraznily čitelnost oproti efektivitě.
 
-## <a name="create-a-host-using-nethosth-and-hostfxrh"></a>Vytvoření hostitele pomocí NetHost. h a HostFxr. h
+## <a name="create-a-host-using-nethosth-and-hostfxrh"></a>Vytvoření hostitele pomocí NetHost.h a HostFxr.h
 
-Následující kroky podrobně popisují, jak pomocí knihoven `nethost` a `hostfxr` spustit modul runtime .NET Core v nativní aplikaci a volat do spravované statické metody. [Ukázka](https://github.com/dotnet/samples/tree/master/core/hosting/HostWithHostFxr) používá hlavičku `nethost` a knihovnu nainstalovanou se sadou .NET SDK a kopie [`coreclr_delegates.h`](https://github.com/dotnet/core-setup/blob/master/src/corehost/cli/coreclr_delegates.h) a [`hostfxr.h`](https://github.com/dotnet/core-setup/blob/master/src/corehost/cli/hostfxr.h) souborů z úložiště [dotnet/Core-Setup](https://github.com/dotnet/core-setup) .
+Následující kroky podrobně popisují, `nethost` `hostfxr` jak pomocí knihoven a spustit runtime .NET Core v nativní aplikaci a volat do spravované statické metody. [Ukázka](https://github.com/dotnet/samples/tree/master/core/hosting/HostWithHostFxr) používá `nethost` záhlaví a knihovnu nainstalovanou sadou .NET SDK a kopie souborů [`coreclr_delegates.h`](https://github.com/dotnet/core-setup/blob/master/src/corehost/cli/coreclr_delegates.h) a [`hostfxr.h`](https://github.com/dotnet/core-setup/blob/master/src/corehost/cli/hostfxr.h) z úložiště [dotnet/core-setup.](https://github.com/dotnet/core-setup)
 
-### <a name="step-1---load-hostfxr-and-get-exported-hosting-functions"></a>Krok 1 – načtení HostFxr a získání exportovaných funkcí hostování
+### <a name="step-1---load-hostfxr-and-get-exported-hosting-functions"></a>Krok 1 - Načíst HostFxr a získat exportované hostitelské funkce
 
-Knihovna `nethost` poskytuje funkci `get_hostfxr_path` pro vyhledání knihovny `hostfxr`. Knihovna `hostfxr` zpřístupňuje funkce pro hostování modulu runtime .NET Core. Úplný seznam funkcí najdete v [`hostfxr.h`](https://github.com/dotnet/core-setup/blob/master/src/corehost/cli/hostfxr.h) a v [nativním dokumentu návrhu hostování](https://github.com/dotnet/core-setup/blob/master/Documentation/design-docs/native-hosting.md). Ukázka a tento kurz používá následující:
+Knihovna `nethost` poskytuje `get_hostfxr_path` funkci pro vyhledání knihovny. `hostfxr` Knihovna `hostfxr` zveřejňuje funkce pro hostování za běhu jádra .NET. Úplný seznam funkcí lze nalézt [`hostfxr.h`](https://github.com/dotnet/core-setup/blob/master/src/corehost/cli/hostfxr.h) v a [nativní hosting návrhdokumentu](https://github.com/dotnet/core-setup/blob/master/Documentation/design-docs/native-hosting.md). Ukázka a tento kurz používají následující:
 
-* `hostfxr_initialize_for_runtime_config`: inicializuje hostitelský kontext a připraví inicializaci modulu runtime .NET Core pomocí zadané konfigurace modulu runtime.
-* `hostfxr_get_runtime_delegate`: Získá delegáta pro běhovou funkčnost.
-* `hostfxr_close`: zavře hostitelský kontext.
+* `hostfxr_initialize_for_runtime_config`: Inicializuje kontext hostitele a připraví se na inicializaci zaběhu .NET Core pomocí zadané konfigurace runtime.
+* `hostfxr_get_runtime_delegate`: Získá delegáta pro funkce za běhu.
+* `hostfxr_close`: Zavře kontext hostitele.
 
-Knihovna `hostfxr` se našla pomocí `get_hostfxr_path`. Pak se načte a jeho exporty se načtou.
+Knihovna se `hostfxr` `get_hostfxr_path`nachází pomocí . Potom je načten a jeho exporty jsou načteny.
 
 [!code-cpp[HostFxrHost#LoadHostFxr](~/samples/snippets/core/tutorials/netcore-hosting/csharp/HostWithHostFxr/src/NativeHost/nativehost.cpp#LoadHostFxr)]
 
-### <a name="step-2---initialize-and-start-the-net-core-runtime"></a>Krok 2 – inicializace a spuštění modulu runtime .NET Core
+### <a name="step-2---initialize-and-start-the-net-core-runtime"></a>Krok 2 – Inicializovat a spustit zaběhu jádra .NET
 
-Funkce `hostfxr_initialize_for_runtime_config` a `hostfxr_get_runtime_delegate` Inicializuje a spustí modul runtime .NET Core pomocí konfigurace modulu runtime pro spravovanou komponentu, která bude načtena. Funkce `hostfxr_get_runtime_delegate` slouží k získání delegáta modulu runtime, který umožňuje načíst spravované sestavení a získat ukazatel funkce na statickou metodu v tomto sestavení.
+Funkce `hostfxr_initialize_for_runtime_config` `hostfxr_get_runtime_delegate` a inicializují a spouštějí zaběhu .NET Core pomocí konfigurace runtime pro spravovanou součást, která bude načtena. Funkce `hostfxr_get_runtime_delegate` se používá k získání delegáta za běhu, který umožňuje načtení spravovaného sestavení a získání ukazatele funkce na statickou metodu v tomto sestavení.
 
 [!code-cpp[HostFxrHost#Initialize](~/samples/snippets/core/tutorials/netcore-hosting/csharp/HostWithHostFxr/src/NativeHost/nativehost.cpp#Initialize)]
 
-### <a name="step-3---load-managed-assembly-and-get-function-pointer-to-a-managed-method"></a>Krok 3 – načtení spravovaného sestavení a získání ukazatele na spravovanou metodu
+### <a name="step-3---load-managed-assembly-and-get-function-pointer-to-a-managed-method"></a>Krok 3 – Načtení spravovaného sestavení a získání ukazatele funkce na spravovanou metodu
 
-Delegát modulu runtime je volán pro načtení spravovaného sestavení a získání ukazatele na funkci spravované metody. Delegát vyžaduje cestu sestavení, název typu a název metody jako vstupy a vrátí ukazatel na funkci, který lze použít k vyvolání spravované metody.
+Delegát za běhu je volán k načtení spravovaného sestavení a získání ukazatele funkce na spravovanou metodu. Delegát vyžaduje cestu sestavení, název typu a název metody jako vstupy a vrátí ukazatel funkce, který lze použít k vyvolání spravované metody.
 
 [!code-cpp[HostFxrHost#LoadAndGet](~/samples/snippets/core/tutorials/netcore-hosting/csharp/HostWithHostFxr/src/NativeHost/nativehost.cpp#LoadAndGet)]
 
-Předáním `nullptr` jako názvu typu delegáta při volání delegáta modulu runtime používá ukázka výchozí signaturu pro spravovanou metodu:
+Předáním `nullptr` jako název typu delegáta při volání delegáta runtime ukázka používá výchozí podpis pro spravovanou metodu:
 
 ```csharp
 public delegate int ComponentEntryPoint(IntPtr args, int sizeBytes);
 ```
 
-Jiný podpis lze použít zadáním názvu typu delegáta při volání delegáta modulu runtime.
+Jiný podpis lze použít zadáním názvu typu delegáta při volání zástupce runtime.
 
-### <a name="step-4---run-managed-code"></a>Krok 4 – spuštění spravovaného kódu
+### <a name="step-4---run-managed-code"></a>Krok 4 – Spusťte spravovaný kód!
 
-Nativní hostitel teď může zavolat spravovanou metodu a předat jí požadované parametry.
+Nativní hostitel nyní může volat spravovanou metodu a předat jí požadované parametry.
 
 [!code-cpp[HostFxrHost#CallManaged](~/samples/snippets/core/tutorials/netcore-hosting/csharp/HostWithHostFxr/src/NativeHost/nativehost.cpp#CallManaged)]
 
-## <a name="create-a-host-using-coreclrhosth"></a>Vytvoření hostitele pomocí CoreClrHost. h
+## <a name="create-a-host-using-coreclrhosth"></a>Vytvoření hostitele pomocí CoreClrHost.h
 
-Následující kroky podrobně popisují, jak pomocí rozhraní API CoreClrHost. h spustit modul runtime .NET Core v nativní aplikaci a volat do spravované statické metody. Fragmenty kódu v tomto dokumentu používají některá rozhraní API specifická pro systém Windows, ale [úplný Ukázkový hostitel](https://github.com/dotnet/samples/tree/master/core/hosting/HostWithCoreClrHost) zobrazuje cesty kódu pro Windows i Linux.
+Následující kroky podrobně popisují, jak pomocí rozhraní CoreClrHost.h API spustit runtime .NET Core v nativní aplikaci a volat do spravované statické metody. Fragmenty kódu v tomto dokumentu používají některá api specifická pro systém Windows, ale [úplný ukázkový hostitel](https://github.com/dotnet/samples/tree/master/core/hosting/HostWithCoreClrHost) zobrazuje cesty kódu systému Windows i Linux.
 
-Hostitel spolupracujícího s platformou [UNIX](https://github.com/dotnet/runtime/tree/master/src/coreclr/src/hosts/unixcorerun) obsahuje složitější příklad hostování v reálném čase pomocí coreclrhost. h.
+Unix [CoreRun host](https://github.com/dotnet/runtime/tree/master/src/coreclr/src/hosts/unixcorerun) ukazuje složitější, real-svět příklad hostingu pomocí coreclrhost.h.
 
-### <a name="step-1---find-and-load-coreclr"></a>Krok 1 – vyhledání a načtení CoreCLR
+### <a name="step-1---find-and-load-coreclr"></a>Krok 1 – Nalezení a načtení coreclru
 
-Rozhraní API modulu runtime .NET Core jsou v *CoreCLR. dll* (ve Windows), v *Libcoreclr.so* (na platformě Linux) nebo v *Libcoreclr. DYLIB* (na MacOS). Prvním krokem pro hostování .NET Core je načtení knihovny CoreCLR. Někteří hostitelé prohledají různé cesty nebo používají vstupní parametry k nalezení knihovny, zatímco jiné vědí, že ji načítají z určité cesty (vedle hostitele, například nebo z umístění v rámci počítače).
+Rozhraní .NET Core runtime API jsou v *coreclr.dll* (v systému Windows), v *libcoreclr.so* (na Linuxu) nebo v *libcoreclr.dylib* (na macOS). Prvním krokem k hostování .NET Core je načtení knihovny CoreCLR. Někteří hostitelé sondují různé cesty nebo používají vstupní parametry k nalezení knihovny, zatímco jiní vědí, že ji mají načíst z určité cesty (například vedle hostitele nebo z umístění v celém počítači).
 
-Po nalezení se knihovna načte s `LoadLibraryEx` (ve Windows) nebo `dlopen` (na platformě Linux/macOS).
+Po nalezení je knihovna `LoadLibraryEx` načtena (ve Windows) nebo `dlopen` (na Linuxu /macOS).
 
 [!code-cpp[CoreClrHost#1](~/samples/snippets/core/tutorials/netcore-hosting/csharp/HostWithCoreClrHost/src/SampleHost.cpp#1)]
 
-### <a name="step-2---get-net-core-hosting-functions"></a>Krok 2 – získání hostujících funkcí .NET Core
+### <a name="step-2---get-net-core-hosting-functions"></a>Krok 2 – Získání funkcí hostingu .NET Core
 
-CoreClrHost má několik důležitých metod, které jsou užitečné pro hostování .NET Core:
+CoreClrHost má několik důležitých metod užitečných pro hostování .NET Core:
 
-* `coreclr_initialize`: spustí modul runtime .NET Core a nastaví výchozí (a pouze) doménu AppDomain.
-* `coreclr_execute_assembly`: spustí spravované sestavení.
-* `coreclr_create_delegate`: Vytvoří ukazatel na funkci spravované metody.
-* `coreclr_shutdown`: ukončí modul runtime .NET Core.
-* `coreclr_shutdown_2`: jako `coreclr_shutdown`, ale také načte ukončovací kód spravovaného kódu.
+* `coreclr_initialize`: Spustí runtime jádra .NET a nastaví výchozí (a pouze) AppDomain.
+* `coreclr_execute_assembly`: Provede spravované sestavení.
+* `coreclr_create_delegate`: Vytvoří ukazatel funkce na spravovanou metodu.
+* `coreclr_shutdown`: Vypne zaběhu .NET Core.
+* `coreclr_shutdown_2`: `coreclr_shutdown`To se mi líbí , ale také načte ukončovací kód spravovaného kódu.
 
-Po načtení knihovny CoreCLR je dalším krokem získat odkazy na tyto funkce pomocí `GetProcAddress` (ve Windows) nebo `dlsym` (na platformě Linux/macOS).
+Po načtení knihovny CoreCLR je dalším krokem získání `GetProcAddress` odkazů na tyto `dlsym` funkce pomocí (ve Windows) nebo (v Linuxu/macOS).
 
 [!code-cpp[CoreClrHost#2](~/samples/snippets/core/tutorials/netcore-hosting/csharp/HostWithCoreClrHost/src/SampleHost.cpp#2)]
 
-### <a name="step-3---prepare-runtime-properties"></a>Krok 3 – Příprava vlastností modulu runtime
+### <a name="step-3---prepare-runtime-properties"></a>Krok 3 – Příprava vlastností runtime
 
-Než začnete s modulem runtime, je nutné připravit některé vlastnosti k určení chování (zejména týkající se zavaděče sestavení).
+Před spuštěním runtime je nutné připravit některé vlastnosti pro určení chování (zejména pokud jde o montážní zavaděč).
 
 Mezi běžné vlastnosti patří:
 
-* `TRUSTED_PLATFORM_ASSEMBLIES` Toto je seznam cest sestavení (oddělený znakem '; ' ve Windows a ': ' v systému Linux), který bude ve výchozím nastavení schopný vyřešit. Někteří hostitelé mají pevně kódované manifesty se seznamem sestavení, která lze načíst. Ostatní budou do tohoto seznamu vkládat všechny knihovny v určitých umístěních (například vedle *CoreCLR. dll*).
-* `APP_PATHS` se jedná o seznam cest k testování pro sestavení, pokud se nenalezne v seznamu důvěryhodných platforem sestavení (TPA). Vzhledem k tomu, že hostitel má větší kontrolu nad tím, která sestavení jsou načtena pomocí seznamu TPA, je osvědčeným postupem pro hostitele k určení, která sestavení chtějí načíst a jejich seznam explicitně. Pokud je tato vlastnost potřebná ke zjišťování za běhu, může tento scénář povolit.
-* `APP_NI_PATHS` tento seznam se podobá APP_PATHS s tím rozdílem, že se jedná o cesty, které budou zjišťovány pro nativní bitové kopie.
-* `NATIVE_DLL_SEARCH_DIRECTORIES` Tato vlastnost je seznam cest, které by měl zavaděč při hledání nativních knihoven volaných prostřednictvím volání nespravovaného testu otestovat.
-* `PLATFORM_RESOURCE_ROOTS` tento seznam obsahuje cesty ke sondám pro satelitní sestavení prostředků (v podadresářích závislých na jazykové verzi).
+* `TRUSTED_PLATFORM_ASSEMBLIES`Toto je seznam cest sestavení (oddělených ';' v systému Windows a ':' v systému Linux), které bude runtime schopen vyřešit ve výchozím nastavení. Někteří hostitelé mají pevně zakódované manifesty se seznamem sestavení, která mohou načíst. Ostatní budou umístit všechny knihovny v určitých umístěních (vedle *coreclr.dll*, například) v tomto seznamu.
+* `APP_PATHS`Toto je seznam cest pro sondy v sestavení, pokud nelze nalézt v seznamu sestavení důvěryhodných platforem (TPA). Vzhledem k tomu, že hostitel má větší kontrolu nad sestaveními, která jsou načtena pomocí seznamu TPA, je osvědčeným postupem pro hostitele určit, která sestavení očekávají, že načtou a výslovně je vydají. Pokud je potřeba zjišťování za běhu, ale tato vlastnost můžete povolit tento scénář.
+* `APP_NI_PATHS`Tento seznam je podobný APP_PATHS kromě toho, že je určen k cestám, které budou sondovány pro nativní obrázky.
+* `NATIVE_DLL_SEARCH_DIRECTORIES`Tato vlastnost je seznam cest zavaděč by měl sondy při hledání nativní knihovny volána prostřednictvím p/invoke.
+* `PLATFORM_RESOURCE_ROOTS`Tento seznam obsahuje cesty ke sondě v pro satelitní sestavení prostředků (v podadresářích specifických pro jazykovou verzi).
 
-V tomto ukázkovém hostiteli je seznam TPA vytvořený pouhým seznamem všech knihoven v aktuálním adresáři:
+V tomto ukázkovém hostiteli je seznam TPA vytvořen jednoduše výpisem všech knihoven v aktuálním adresáři:
 
 [!code-cpp[CoreClrHost#7](~/samples/snippets/core/tutorials/netcore-hosting/csharp/HostWithCoreClrHost/src/SampleHost.cpp#7)]
 
-Vzhledem k tomu, že je ukázka jednoduchá, potřebuje pouze vlastnost `TRUSTED_PLATFORM_ASSEMBLIES`:
+Vzhledem k tomu, že `TRUSTED_PLATFORM_ASSEMBLIES` ukázka je jednoduchá, potřebuje pouze vlastnost:
 
 [!code-cpp[CoreClrHost#3](~/samples/snippets/core/tutorials/netcore-hosting/csharp/HostWithCoreClrHost/src/SampleHost.cpp#3)]
 
-### <a name="step-4---start-the-runtime"></a>Krok 4 – spuštění modulu runtime
+### <a name="step-4---start-the-runtime"></a>Krok 4 – spuštění běhu
 
-Na rozdíl od rozhraní API pro hostování aplikace Mscoree. h (popsané níže), rozhraní API CoreCLRHost. h spustí modul runtime a vytvoří výchozí doménu AppDomain s jediným voláním. Funkce `coreclr_initialize` přebírá základní cestu, název a vlastnosti popsané dříve a vrací zpětnou obslužnou rutinu na hostitele prostřednictvím parametru `hostHandle`.
+Na rozdíl od hostitelského rozhraní API mscoree.h (popsané níže) rozhraní API CoreCLRHost.h spustí runtime a vytvoří výchozí doménu AppDomain s jediným voláním. Funkce `coreclr_initialize` trvá základní cestu, název a vlastnosti popsané výše a vrátí zpět `hostHandle` popisovač hostitele prostřednictvím parametru.
 
 [!code-cpp[CoreClrHost#4](~/samples/snippets/core/tutorials/netcore-hosting/csharp/HostWithCoreClrHost/src/SampleHost.cpp#4)]
 
-### <a name="step-5---run-managed-code"></a>Krok 5 – spuštění spravovaného kódu
+### <a name="step-5---run-managed-code"></a>Krok 5 – Spusťte spravovaný kód!
 
-Při spuštění modulu runtime může hostitel volat spravovaný kód. To lze provést několika různými způsoby. Vzorový kód spojený s tímto kurzem používá funkci `coreclr_create_delegate` k vytvoření delegáta staticky spravované metody. Toto rozhraní API přebírá [název sestavení](../../standard/assembly/names.md), kvalifikovaný název oboru názvů a název metody jako vstupy a vrací delegáta, který může být použit k vyvolání metody.
+Se spuštěním runtime může hostitel volat spravovaný kód. To lze provést několika různými způsoby. Ukázkový kód propojený s `coreclr_create_delegate` tímto kurzem používá funkci k vytvoření delegáta statické spravované metody. Toto rozhraní API přebírá [název sestavení](../../standard/assembly/names.md), název typu s kvalifikovanou kvalifikací oboru názvů a název metody jako vstupy a vrátí delegáta, který lze použít k vyvolání metody.
 
 [!code-cpp[CoreClrHost#5](~/samples/snippets/core/tutorials/netcore-hosting/csharp/HostWithCoreClrHost/src/SampleHost.cpp#5)]
 
-V této ukázce může hostitel nyní volat `managedDelegate` ke spuštění metody `ManagedWorker.DoWork`.
+V této ukázce `managedDelegate` může hostitel `ManagedWorker.DoWork` nyní volat ke spuštění metody.
 
-Alternativně lze funkci `coreclr_execute_assembly` použít ke spuštění spravovaného spustitelného souboru. Toto rozhraní API přebírá cestu sestavení a pole argumentů jako vstupní parametry. Načte sestavení na této cestě a vyvolá jeho metodu Main.
+Alternativně `coreclr_execute_assembly` lze funkci použít ke spuštění spravovaného spustitelného souboru. Toto rozhraní API přebírá cestu sestavení a pole argumentů jako vstupní parametry. Načte sestavení na této cestě a vyvolá jeho hlavní metodu.
 
 ```C++
 int hr = executeAssembly(
@@ -153,85 +153,85 @@ int hr = executeAssembly(
         (unsigned int*)&exitCode);
 ```
 
-### <a name="step-6---shutdown-and-clean-up"></a>Krok 6 – vypnutí a vyčištění
+### <a name="step-6---shutdown-and-clean-up"></a>Krok 6 – Vypnutí a vyčištění
 
-Nakonec, když se hostitel spustí se spravovaným kódem, modul runtime .NET Core se vypne s `coreclr_shutdown` nebo `coreclr_shutdown_2`.
+Nakonec po dokončení spuštění spravovaného kódu hostitele je runtime jádra .NET vypnuto pomocí `coreclr_shutdown` nebo `coreclr_shutdown_2`.
 
 [!code-cpp[CoreClrHost#6](~/samples/snippets/core/tutorials/netcore-hosting/csharp/HostWithCoreClrHost/src/SampleHost.cpp#6)]
 
-CoreCLR nepodporuje opětovnou inicializaci ani uvolnění. Nevolejte `coreclr_initialize` znovu ani uvolněte knihovnu CoreCLR.
+CoreCLR nepodporuje reinicializaci nebo uvolnění. Nevolejte `coreclr_initialize` znovu nebo uvolnit knihovnu CoreCLR.
 
-## <a name="create-a-host-using-mscoreeh"></a>Vytvoření hostitele pomocí knihovny MSCOREE. h
+## <a name="create-a-host-using-mscoreeh"></a>Vytvoření hostitele pomocí mscoree.h
 
-Jak bylo zmíněno dříve, CoreClrHost. h je nyní upřednostňovanou metodou hostování modulu runtime .NET Core. Rozhraní `ICLRRuntimeHost4` lze přesto použít, i když rozhraní CoreClrHost. h nejsou dostatečná (pokud jsou třeba nestandardní spouštěcí příznaky, například nebo pokud je AppDomainManager nutné ve výchozí doméně). Tyto pokyny vás provede hostováním .NET Core pomocí Mscoree. h.
+Jak již bylo zmíněno dříve, CoreClrHost.h je nyní upřednostňovanou metodou hostování runtime .NET Core. Rozhraní `ICLRRuntimeHost4` lze stále použít, i když pokud rozhraní CoreClrHost.h nejsou dostatečné (pokud jsou potřeba nestandardní spouštěcí příznaky, například, nebo pokud AppDomainManager je potřeba na výchozí doméně). Tyto pokyny vás provedou hostováním .NET Core pomocí souboru mscoree.h.
 
-Hostitel spoluopětovného [spuštění](https://github.com/dotnet/runtime/tree/master/src/coreclr/src/hosts/corerun) zobrazuje složitější, reálný příklad hostování pomocí Mscoree. h.
+[CoreRun host](https://github.com/dotnet/runtime/tree/master/src/coreclr/src/hosts/corerun) ukazuje složitější, real-svět příklad hostování pomocí mscoree.h.
 
-### <a name="a-note-about-mscoreeh"></a>Poznámka o knihovně Mscoree. h
-Rozhraní pro hostování `ICLRRuntimeHost4` .NET Core je definováno v [knihovně Mscoree. IDL](https://github.com/dotnet/runtime/blob/master/src/coreclr/src/inc/MSCOREE.IDL). Verze hlavičky tohoto souboru (mscoree. h), kterou váš hostitel bude potřebovat odkazovat, je vytvořena prostřednictvím MIDL při sestavení [modulu runtime .NET Core](https://github.com/dotnet/runtime/) . Pokud nechcete sestavit modul runtime .NET Core, Mscoree. h je také k dispozici jako [předem sestavená hlavička](https://github.com/dotnet/runtime/blob/master/src/coreclr/src/pal/prebuilt/inc/) v úložišti dotnet/runtime.
+### <a name="a-note-about-mscoreeh"></a>Poznámka o mscoree.h
+Hostitelské `ICLRRuntimeHost4` rozhraní .NET Core je definováno v [MSCOREE. IDL](https://github.com/dotnet/runtime/blob/master/src/coreclr/src/inc/MSCOREE.IDL). Hlavičková verze tohoto souboru (mscoree.h), na kterou bude váš hostitel muset odkazovat, je vytvořena prostřednictvím protokolu MIDL při vytvoření [runtime .NET Core.](https://github.com/dotnet/runtime/) Pokud nechcete vytvářet runtime .NET Core, mscoree.h je také k dispozici jako [předem sestavené záhlaví](https://github.com/dotnet/runtime/blob/master/src/coreclr/src/pal/prebuilt/inc/) v úložišti dotnet/runtime.
 
-### <a name="step-1---identify-the-managed-entry-point"></a>Krok 1 – určení spravovaného vstupního bodu
-Po odkazování na potřebné hlavičky (například[Mscoree. h](https://github.com/dotnet/runtime/blob/master/src/coreclr/src/pal/prebuilt/inc/mscoree.h) a stdio. h) jedna z prvních věcí, kterou musí hostitel .NET Core udělat, je najít spravovaný vstupní bod, který bude používat. V našem ukázkovém hostiteli je to provedeno pouhým prvním argumentem příkazového řádku pro hostitele jako cestu ke spravovanému binárnímu souboru, jehož metoda `main` bude provedena.
+### <a name="step-1---identify-the-managed-entry-point"></a>Krok 1 – Identifikace spravovaného vstupního bodu
+Po odkazování na nezbytné hlavičky[(například mscoree.h](https://github.com/dotnet/runtime/blob/master/src/coreclr/src/pal/prebuilt/inc/mscoree.h) a stdio.h) je jednou z prvních věcí, kterou musí hostitel .NET Core udělat, najít spravovaný vstupní bod, který bude používat. V našem ukázkovém hostiteli se to provádí pouze tím, že první argument `main` příkazového řádku našeho hostitele jako cestu ke spravovanébinární, jehož metoda bude spuštěna.
 
 [!code-cpp[NetCoreHost#1](~/samples/snippets/core/tutorials/netcore-hosting/csharp/HostWithMscoree/host.cpp#1)]
 
-### <a name="step-2---find-and-load-coreclr"></a>Krok 2 – vyhledání a načtení CoreCLR
-Rozhraní API modulu runtime .NET Core jsou v *CoreCLR. dll* (ve Windows). Chcete-li získat naše hostující rozhraní (`ICLRRuntimeHost4`), je nutné najít a načíst *CoreCLR. dll*. Pro definování konvence, jak bude vyhledána *Knihovna CoreCLR. dll*, je k dis na hostitele. Někteří hostitelé očekávají, že se soubor nachází v dobře známém umístění v rámci počítače (například *%ProgramFiles%\dotnet\shared\Microsoft.NETCore.App\2.1.6*). Ostatní očekávají, že *CoreCLR. dll* se načte z umístění vedle samotného hostitele nebo aplikace, která se má hostovat. I když ostatní můžou najít knihovnu v proměnné prostředí.
+### <a name="step-2---find-and-load-coreclr"></a>Krok 2 – Nalezení a načtení coreclr
+Rozhraní API prostředí .NET Core runtime jsou v *souboru CoreCLR.dll* (v systému Windows). Chcete-li získat`ICLRRuntimeHost4`naše hostingové rozhraní ( ), je nutné najít a načíst *CoreCLR.dll*. Je na hostiteli, aby definoval konvenci, jak bude vyhledávat *soubor CoreCLR.dll*. Někteří hostitelé očekávají, že soubor bude přítomen ve známém umístění pro celý počítač (například *%programfiles%\dotnet\shared\Microsoft.NETCore.App\2.1.6*). Jiní očekávají, že *CoreCLR.dll* bude načten z umístění vedle samotného hostitele nebo aplikace, která má být hostována. Ještě jiní mohou konzultovat proměnné prostředí najít knihovnu.
 
-V systému Linux nebo macOS je základní běhová knihovna *libcoreclr.so* nebo *libcoreclr. DYLIB*, v uvedeném pořadí.
+V Linuxu nebo macOS je základní runtime knihovna *libcoreclr.so* nebo *libcoreclr.dylib*.
 
-Náš Ukázkový hostitel sonduje několik běžných umístění pro *CoreCLR. dll*. Po nalezení je nutné ji načíst prostřednictvím `LoadLibrary` (nebo `dlopen` v systému Linux/macOS).
+Naše ukázkové hostitelské sondy několik běžných umístění pro *CoreCLR.dll*. Jakmile je nalezen, musí `LoadLibrary` být `dlopen` načten přes (nebo na Linuxu / macOS).
 
 [!code-cpp[NetCoreHost#2](~/samples/snippets/core/tutorials/netcore-hosting/csharp/HostWithMscoree/host.cpp#2)]
 
 ### <a name="step-3---get-an-iclrruntimehost4-instance"></a>Krok 3 – získání instance ICLRRuntimeHost4
-Rozhraní `ICLRRuntimeHost4` hostování je načteno voláním `GetProcAddress` (nebo `dlsym` na Linux/macOS) na `GetCLRRuntimeHost`a následným vyvoláním této funkce.
+Hostitelské `ICLRRuntimeHost4` rozhraní je načteno `GetProcAddress` voláním (nebo `dlsym` na Linuxu/macOS) na `GetCLRRuntimeHost`a následným vyvoláním této funkce.
 
 [!code-cpp[NetCoreHost#3](~/samples/snippets/core/tutorials/netcore-hosting/csharp/HostWithMscoree/host.cpp#3)]
 
-### <a name="step-4---set-startup-flags-and-start-the-runtime"></a>Krok 4 – nastavení příznaků spuštění a spuštění modulu runtime
-S `ICLRRuntimeHost4` teď můžeme zadat spouštěcí příznaky pro celé prostředí a spustit modul runtime. Příznaky při spuštění určují, který systém uvolňování paměti (GC) se má použít (souběžný nebo Server), jestli budeme používat jednu doménu AppDomain nebo více doménových sad a jaké zásady optimalizace zavaděče použít (pro doménové nezávislé načítání sestavení).
+### <a name="step-4---set-startup-flags-and-start-the-runtime"></a>Krok 4 – Nastavení příznaků spuštění a spuštění běhu
+S `ICLRRuntimeHost4` in-hand, nyní můžeme zadat runtime-wide spouštěcí příznaky a spustit. Příznaky spuštění určují, který systém uvolňování paměti (GC) se má použít (souběžně nebo server), zda použijeme jednu doménu AppDomain nebo více domén AppDomain a jaké zásady optimalizace zavaděče použít (pro neutrální načítání sestavení domény).
 
 [!code-cpp[NetCoreHost#4](~/samples/snippets/core/tutorials/netcore-hosting/csharp/HostWithMscoree/host.cpp#4)]
 
-Modul runtime je spuštěn s voláním funkce `Start`.
+Runtime je spuštěn s voláním `Start` funkce.
 
 ```C++
 hr = runtimeHost->Start();
 ```
 
-### <a name="step-5---preparing-appdomain-settings"></a>Krok 5 – Příprava nastavení AppDomain
-Po spuštění modulu runtime budeme chtít nastavit doménu AppDomain. K dispozici je několik možností, které je třeba zadat při vytváření domény aplikace .NET, takže je nutné je nejprve připravit.
+### <a name="step-5---preparing-appdomain-settings"></a>Krok 5 – Příprava nastavení domény aplikace
+Po spuštění runtime budeme chtít nastavit AppDomain. Existuje několik možností, které musí být zadány při vytváření .NET AppDomain, ale proto je nutné připravit ty první.
 
-Příznaky AppDomain určují chování AppDomain související se zabezpečením a interoperabilitou. Starší hostitelé technologie Silverlight používali tato nastavení pro uživatelský kód izolovaného prostoru, ale většina moderních hostitelů .NET Core spouští uživatelský kód jako úplný vztah důvěryhodnosti a povoluje spolupráci.
+Příznaky AppDomain určují chování Domény AppDomain související se zabezpečením a interop. Starší hostitelé Silverlight používali tato nastavení k izolovanému prostoru uživatelského kódu, ale většina moderních hostitelů .NET Core spouštěla uživatelský kód jako úplný vztah důvěryhodnosti a povoluje interop.
 
 [!code-cpp[NetCoreHost#5](~/samples/snippets/core/tutorials/netcore-hosting/csharp/HostWithMscoree/host.cpp#5)]
 
-Až se rozhodnete, které příznaky AppDomain se mají použít, musí být definované vlastnosti AppDomain. Vlastnosti jsou páry klíč/hodnota řetězců. Mnohé z vlastností se týkají způsobu, jakým aplikace AppDomain načte sestavení.
+Po rozhodnutí, které příznaky AppDomain použít, AppDomain vlastnosti musí být definovány. Vlastnosti jsou dvojice řetězce klíč/hodnota. Mnoho vlastností se vztahuje k tomu, jak AppDomain načte sestavení.
 
 Mezi běžné vlastnosti AppDomain patří:
 
-* `TRUSTED_PLATFORM_ASSEMBLIES` se jedná o seznam cest sestavení (oddělený `;` ve Windows a `:` na Linux/macOS), které by měly mít v doméně přednost při načítání a udělení úplné důvěryhodnosti (i v částečně důvěryhodných doménách). Tento seznam má obsahovat sestavení architektury a jiné důvěryhodné moduly, podobně jako globální mezipaměť sestavení (GAC) v .NET Frameworkch scénářích. Někteří hostitelé vloží do tohoto seznamu všechny knihovny v *CoreCLR. dll* , ostatní mají pevně kódované manifesty, které uvádějí důvěryhodná sestavení pro jejich účely.
-* `APP_PATHS` se jedná o seznam cest k testování pro sestavení, pokud se nenalezne v seznamu důvěryhodných platforem sestavení (TPA). Vzhledem k tomu, že hostitel má větší kontrolu nad tím, která sestavení jsou načtena pomocí seznamu TPA, je osvědčeným postupem pro hostitele k určení, která sestavení chtějí načíst a jejich seznam explicitně. Pokud je tato vlastnost potřebná ke zjišťování za běhu, může tento scénář povolit.
-* `APP_NI_PATHS` tento seznam je velmi podobný APP_PATHS s tím rozdílem, že se jedná o cesty, které budou zjišťovány pro nativní bitové kopie.
-* `NATIVE_DLL_SEARCH_DIRECTORIES` Tato vlastnost je seznam cest, které by měl zavaděč při hledání nativních knihoven DLL volaných prostřednictvím volání nespravovaného testu otestovat.
-* `PLATFORM_RESOURCE_ROOTS` tento seznam obsahuje cesty ke sondám pro satelitní sestavení prostředků (v podadresářích závislých na jazykové verzi).
+* `TRUSTED_PLATFORM_ASSEMBLIES`Toto je seznam cest sestavení (oddělený chod `;` na Windows a `:` na Linuxu/macOS), které AppDomain by měl yutování načítání a dát plnou důvěru (i v částečně důvěryhodných doménách). Tento seznam má obsahovat sestavení rozhraní Framework a další důvěryhodné moduly, podobně jako gac ve scénářích rozhraní .NET Framework. Někteří hostitelé budou mít všechny knihovny vedle *coreclr.dll* na tomto seznamu, jiní mají pevně zakódované manifesty výpis důvěryhodných sestavení pro jejich účely.
+* `APP_PATHS`Toto je seznam cest pro sondy v sestavení, pokud nelze nalézt v seznamu sestavení důvěryhodných platforem (TPA). Vzhledem k tomu, že hostitel má větší kontrolu nad sestaveními, která jsou načtena pomocí seznamu TPA, je osvědčeným postupem pro hostitele určit, která sestavení očekávají, že načtou a výslovně je vydají. Pokud je potřeba zjišťování za běhu, ale tato vlastnost můžete povolit tento scénář.
+* `APP_NI_PATHS`Tento seznam je velmi podobný APP_PATHS kromě toho, že to má být cesty, které budou sondoval pro nativní obrázky.
+* `NATIVE_DLL_SEARCH_DIRECTORIES`Tato vlastnost je seznam cest zavaděč by měl sondy při hledání nativní knihovny DLL volány prostřednictvím p/invoke.
+* `PLATFORM_RESOURCE_ROOTS`Tento seznam obsahuje cesty ke sondě v pro satelitní sestavení prostředků (v podadresářích specifických pro jazykovou verzi).
 
-V našem [jednoduchém ukázkovém hostiteli](https://github.com/dotnet/samples/tree/master/core/hosting/HostWithMscoree)se tyto vlastnosti nastavují takto:
+V našem [jednoduchém ukázkovém hostiteli](https://github.com/dotnet/samples/tree/master/core/hosting/HostWithMscoree)jsou tyto vlastnosti nastaveny takto:
 
 [!code-cpp[NetCoreHost#6](~/samples/snippets/core/tutorials/netcore-hosting/csharp/HostWithMscoree/host.cpp#6)]
 
-### <a name="step-6---create-the-appdomain"></a>Krok 6 – vytvoření domény AppDomain
-Po přípravě všech příznaků a vlastností domény aplikace `ICLRRuntimeHost4::CreateAppDomainWithManager` lze použít k nastavení domény AppDomain. Tato funkce volitelně přijímá plně kvalifikovaný název sestavení a název typu, který se použije jako správce domény AppDomain. Správce AppDomain může hostiteli umožnit řídit některé aspekty chování AppDomain a může poskytovat vstupní body pro spuštění spravovaného kódu, pokud hostitel nemá v úmyslu vyvolat kód uživatele přímo.
+### <a name="step-6---create-the-appdomain"></a>Krok 6 – Vytvoření domény aplikace
+Po přípravě všech příznaků a `ICLRRuntimeHost4::CreateAppDomainWithManager` vlastností AppDomain lze nastavit AppDomain. Tato funkce volitelně přebírá plně kvalifikovaný název sestavení a název typu, který chcete použít jako správce domény AppDomain. Správce AppDomain může umožnit hostiteli řídit některé aspekty chování AppDomain a může poskytnout vstupní body pro spuštění spravovaného kódu, pokud hostitel nemá v úmyslu vyvolat uživatelský kód přímo.
 
 [!code-cpp[NetCoreHost#7](~/samples/snippets/core/tutorials/netcore-hosting/csharp/HostWithMscoree/host.cpp#7)]
 
-### <a name="step-7---run-managed-code"></a>Krok 7 – spuštění spravovaného kódu
-V případě, že je doména AppDomain spuštěná a spuštěná, může nyní hostitel spouštět spravovaný kód. Nejjednodušší způsob, jak to provést, je použít `ICLRRuntimeHost4::ExecuteAssembly` k vyvolání metody vstupního bodu spravovaného sestavení. Všimněte si, že tato funkce funguje pouze ve scénářích s jednou doménou.
+### <a name="step-7---run-managed-code"></a>Krok 7 – Spusťte spravovaný kód!
+S AppDomain v provozu, hostitel nyní můžete spustit provádění spravovaného kódu. Nejjednodušší způsob, jak to provést, je použít `ICLRRuntimeHost4::ExecuteAssembly` k vyvolání metody vstupního bodu spravovaného sestavení. Všimněte si, že tato funkce funguje pouze ve scénářích s jednou doménou.
 
 [!code-cpp[NetCoreHost#8](~/samples/snippets/core/tutorials/netcore-hosting/csharp/HostWithMscoree/host.cpp#8)]
 
-Další možnost, pokud `ExecuteAssembly` nesplňuje potřeby hostitele, je použití `CreateDelegate` k vytvoření ukazatele funkce na statickou spravovanou metodu. To vyžaduje, aby hostitel znal podpis metody, do které volá (aby mohl vytvořit typ ukazatele na funkci), ale umožňuje hostitelům flexibility vyvolat kód jiný než vstupní bod sestavení. Název sestavení zadaný ve druhém parametru je [úplný název spravovaného sestavení](../../standard/assembly/names.md) knihovny, která se má načíst.
+Další možností, `ExecuteAssembly` pokud nevyhovuje potřebám hostitele, je `CreateDelegate` použít k vytvoření ukazatele funkce na statickou spravovanou metodu. To vyžaduje, aby hostitel znát podpis metody, kterou volá do (chcete-li vytvořit typ ukazatele funkce), ale umožňuje hostitelům flexibilitu vyvolat kód jiný než vstupní bod sestavení. Název sestavení zadaný v druhém parametru je [úplný název spravovaného sestavení](../../standard/assembly/names.md) knihovny, který má být načíst.
 
 ```C++
 void *pfnDelegate = NULL;
@@ -245,16 +245,16 @@ hr = runtimeHost->CreateDelegate(
 ((MainMethodFp*)pfnDelegate)(NULL);
 ```
 
-### <a name="step-8---clean-up"></a>Krok 8 – vyčištění
-Nakonec by se měl hostitel vyčistit po samotném uvolněním AppDomains, zastavením modulu runtime a uvolněním `ICLRRuntimeHost4` odkazem.
+### <a name="step-8---clean-up"></a>Krok 8 – Vyčištění
+Nakonec by měl hostitel vyčistit po sobě uvolněním AppDomains, zastavením `ICLRRuntimeHost4` runtime a uvolněním odkazu.
 
 [!code-cpp[NetCoreHost#9](~/samples/snippets/core/tutorials/netcore-hosting/csharp/HostWithMscoree/host.cpp#9)]
 
-CoreCLR nepodporuje vykládku. Uvolněte knihovnu CoreCLR.
+CoreCLR nepodporuje uvolnění. Neuvolnovat knihovnu CoreCLR.
 
 ## <a name="conclusion"></a>Závěr
-Po sestavení hostitele je možné ho otestovat spuštěním z příkazového řádku a předávat všechny argumenty, které hostitel očekává (jako je spravovaná aplikace pro spuštění ukázkového hostitele mscoree). Při zadávání aplikace .NET Core pro spuštění hostitele nezapomeňte použít knihovnu DLL, která je vytvořena nástrojem `dotnet build`. Spustitelné soubory (soubory. exe) vytvořené `dotnet publish` pro samostatné aplikace jsou ve skutečnosti výchozím hostitelem .NET Core (aby bylo možné aplikaci spustit přímo z příkazového řádku ve scénářích hlavní); uživatelský kód je zkompilován do knihovny DLL se stejným názvem.
+Jakmile je hostitel sestaven, může být testován spuštěním z příkazového řádku a předáním všech argumentů, které hostitel očekává (jako je spravovaná aplikace, která má být spuštěna pro hostitele příkladu mscoree). Při zadávání aplikace .NET Core pro spuštění hostitele nezapomeňte použít soubor DLL, `dotnet build`který je vytvářen aplikací . Spustitelné soubory (.exe soubory) vytvořené `dotnet publish` pro samostatné aplikace jsou ve skutečnosti výchozí hostitel .NET Core (takže aplikace může být spuštěna přímo z příkazového řádku v mainline scénáře); uživatelský kód je zkompilován do dll se stejným názvem.
 
-Pokud co nejdříve nefunguje, poklikejte na to, že *CoreCLR. dll* je k dispozici v umístění očekávaném hostitelem, že všechny nezbytné knihovny rozhraní jsou v seznamu TPA a že CoreCLR bitová verze (32-bit nebo 64) odpovídá způsobu sestavení hostitele.
+Pokud věci nefungují zpočátku, zkontrolujte, zda *coreclr.dll* je k dispozici v umístění očekává hostitele, že všechny potřebné framework knihovny jsou v seznamu TPA a že Bitness CoreCLR (32bitový nebo 64bitový) odpovídá způsobu, jakým byl vytvořen hostitel.
 
-Hostování modulu runtime .NET Core je pokročilý scénář, který nevyžaduje mnoho vývojářů, ale pro uživatele, kteří potřebují spustit spravovaný kód z nativního procesu nebo kteří potřebují větší kontrolu nad chováním modulu runtime .NET Core, může být velmi užitečné.
+Hostování runtime .NET Core je pokročilý scénář, který mnoho vývojářů nebude vyžadovat, ale pro ty, kteří potřebují spustit spravovaný kód z nativního procesu nebo kteří potřebují větší kontrolu nad chováním runtime .NET Core, může být velmi užitečné.

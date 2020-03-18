@@ -1,31 +1,31 @@
 ---
-title: Porovnání mezi vlastnostmi a indexery – C# Průvodce programováním
+title: Porovnání vlastností a indexerů – průvodce programováním jazyka C#
 ms.date: 07/20/2015
 helpviewer_keywords:
 - properties [C#], vs. indexers
 - indexers [C#], vs. properties
 ms.assetid: 3358a89f-44a0-4a4d-bf8c-07237a90af39
 ms.openlocfilehash: 330d222083ce599719698c023803196dfe88da84
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "75712127"
 ---
 # <a name="comparison-between-properties-and-indexers-c-programming-guide"></a>Porovnání mezi vlastnostmi a indexery (Průvodce programováním v C#)
-Indexery jsou jako vlastnosti. S výjimkou rozdílů uvedených v následující tabulce se všechna pravidla, která jsou definována pro přistupující objekty vlastnosti, vztahují také na přistupující objekty indexeru.  
+Indexery jsou jako vlastnosti. S výjimkou rozdílů uvedených v následující tabulce platí všechna pravidla, která jsou definována pro přístupové objekty vlastností také pro přístupové objekty indexeru.  
   
 |Vlastnost|Indexer|  
 |--------------|-------------|  
-|Povoluje volání metod, jako by šlo o veřejné datové členy.|Povoluje prvky interní kolekce objektu, které jsou k dispozici pomocí zápisu pole u objektu samotného.|  
-|Je k dispozici prostřednictvím jednoduchého názvu.|Je k dispozici prostřednictvím indexu.|  
-|Může být statický nebo členem instance.|Musí být členem instance.|  
-|Přístupový objekt [Get](../../language-reference/keywords/get.md) vlastnosti nemá žádné parametry.|Přístupový objekt `get` indexeru má stejný seznam formálních parametrů jako indexer.|  
-|Přístupový objekt [set](../../language-reference/keywords/set.md) vlastnosti obsahuje implicitní parametr `value`.|Přístupový objekt `set` indexeru má stejný formální seznam parametrů jako indexer a také parametr [Value](../../language-reference/keywords/value.md) .|  
-|Podporuje zkrácenou syntaxi s [automaticky implementovanými vlastnostmi](../classes-and-structs/auto-implemented-properties.md).|Podporuje členy Expression těle pro získání pouze indexerů.|  
+|Umožňuje metody, které mají být volány, jako by byly členy veřejných dat.|Umožňuje prvky vnitřní kolekce objektu, které mají být přístupné pomocí zápisu pole na samotný objekt.|  
+|Přístup prostřednictvím jednoduchého názvu.|Přístup prostřednictvím indexu.|  
+|Může být statický nebo člen instance.|Musí být členem instance.|  
+|Přístupový [objekt get](../../language-reference/keywords/get.md) vlastnosti nemá žádné parametry.|Přistupující `get` objekt indexeru má stejný seznam formálních parametrů jako indexer.|  
+|Set [set](../../language-reference/keywords/set.md) přistupující objekt vlastnosti obsahuje implicitní `value` parametr.|Přistupující `set` objekt indexeru má stejný seznam formálních parametrů jako indexer a také parametr [hodnoty.](../../language-reference/keywords/value.md)|  
+|Podporuje zkrácenou syntaxi s [automaticky implementovanými vlastnostmi](../classes-and-structs/auto-implemented-properties.md).|Podporuje výraz tělesně členy pro získat pouze indexery.|  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Průvodce programováním v jazyce C#](../index.md)
+- [Programovací příručka jazyka C#](../index.md)
 - [Indexery](./index.md)
 - [Vlastnosti](../classes-and-structs/properties.md)

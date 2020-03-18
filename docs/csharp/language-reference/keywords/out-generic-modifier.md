@@ -1,58 +1,58 @@
 ---
-title: out – klíčové slovo (obecný modifikátor C# ) – Referenční dokumentace
+title: out klíčové slovo (obecný modifikátor) - C# Reference
 ms.date: 07/20/2015
 helpviewer_keywords:
 - covariance, out keyword [C#]
 - out keyword [C#]
 ms.assetid: f8c20dec-a8bc-426a-9882-4076b1db1e00
 ms.openlocfilehash: 97ddae2efe55be89840f7a483c18d61259020283
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "75713291"
 ---
-# <a name="out-generic-modifier-c-reference"></a>out (generický modifikátor) (C# Referenční dokumentace)
+# <a name="out-generic-modifier-c-reference"></a>out (obecný modifikátor) (Odkaz Jazyka C#)
 
-Pro parametry obecného typu Určuje klíčové slovo `out`, že parametr typu je kovariantní. Klíčové slovo `out` lze použít v obecných rozhraních a delegátech.
+Pro parametry obecného `out` typu klíčové slovo určuje, že parametr typu je kovariantní. Klíčové `out` slovo můžete použít v obecných rozhraních a delegátech.
 
-Kovariance umožňuje použít více odvozený typ, než který je určen obecným parametrem. To umožňuje implicitní převod tříd, které implementují kovariantní rozhraní a implicitní převod typů delegátů. Kovariance a kontravariance jsou podporovány pro typy odkazů, ale nejsou podporovány pro typy hodnot.
+Kovariance umožňuje použít více odvozený typ, než je určen obecný parametr. To umožňuje implicitní převod tříd, které implementují kovariantní rozhraní a implicitní převod typů delegátů. Kovariance a contravariance jsou podporovány pro typy odkazů, ale nejsou podporovány pro typy hodnot.
 
-Rozhraní, které má parametr kovariantního typu, umožňuje jeho metodám vracet více odvozených typů než hodnoty určené parametrem typu. Například vzhledem k tomu, že v .NET Framework 4 v <xref:System.Collections.Generic.IEnumerable%601>typ T je kovariantní, můžete přiřadit objekt `IEnumerable(Of String)`ho typu k objektu `IEnumerable(Of Object)` typu bez použití jakýchkoli speciálních metod převodu.
+Rozhraní, které má parametr kovariantního typu, umožňuje jeho metodám vrátit více odvozených typů, než jaké jsou určeny parametrem typu. Například protože v rozhraní .NET <xref:System.Collections.Generic.IEnumerable%601>Framework 4 je typ T v aplikaci kovariantní, můžete objekt `IEnumerable(Of String)` typu přiřadit objektu `IEnumerable(Of Object)` typu bez použití speciálních metod převodu.
 
-Spoluvariantnímu delegátu se dá přiřadit jiný delegát stejného typu, ale s více odvozeným parametrem obecného typu.
+Kovariantní delegát může být přiřazen jiný delegát stejného typu, ale s více odvozené obecný typ parametru.
 
-Další informace najdete v tématu [kovariance a kontravariance](../../programming-guide/concepts/covariance-contravariance/index.md).
+Další informace naleznete [v tématu Kovariance a Contravariance](../../programming-guide/concepts/covariance-contravariance/index.md).
 
-## <a name="example---covariant-generic-interface"></a>Příklad: kovariantní obecné rozhraní
+## <a name="example---covariant-generic-interface"></a>Příklad - kovariantní obecné rozhraní
 
-Následující příklad ukazuje, jak deklarovat, rozšiřuje a implementovat kovariantní obecné rozhraní. Také ukazuje, jak použít implicitní převod pro třídy, které implementují kovariantní rozhraní.
+Následující příklad ukazuje, jak deklarovat, rozšířit a implementovat kovariantní obecné rozhraní. Také ukazuje, jak použít implicitní převod pro třídy, které implementují kovariantní rozhraní.
 
 [!code-csharp[csVarianceKeywords#3](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csvariancekeywords/cs/program.cs#3)]
 
-V obecném rozhraní může být parametr typu deklarován kovariantou, pokud splňuje následující podmínky:
+V obecném rozhraní může být parametr typu deklarován jako kovariantní, pokud splňuje následující podmínky:
 
-- Parametr typu se používá jenom jako návratový typ metod rozhraní a nepoužívá se jako typ argumentů metody.
+- Parametr type se používá pouze jako návratový typ metod rozhraní a není použit jako typ argumentů metody.
 
     > [!NOTE]
-    > Toto pravidlo obsahuje jednu výjimku. Pokud v kovariantovém rozhraní máte kontravariantního obecného delegáta jako parametr metody, můžete použít kovariantní typ jako parametr obecného typu pro tohoto delegáta. Další informace o kovariantních a kontravariantních obecných delegátech naleznete v tématu [Variance v delegátech](../../programming-guide/concepts/covariance-contravariance/variance-in-delegates.md) a [použití variance pro obecné delegáty Func a Action](../../programming-guide/concepts/covariance-contravariance/using-variance-for-func-and-action-generic-delegates.md).
+    > Existuje jedna výjimka z tohoto pravidla. Pokud v kovariantní rozhraní máte kontravariantní obecný delegát jako parametr metody, můžete použít kovariantní typ jako parametr obecného typu pro tohoto delegáta. Další informace o kovariantních a kontravariantních obecných delegátech naleznete [v tématu Odchylka v delegátech](../../programming-guide/concepts/covariance-contravariance/variance-in-delegates.md) a [Použití odchylky pro obecné delegáty aplikace Func a Obecné akce](../../programming-guide/concepts/covariance-contravariance/using-variance-for-func-and-action-generic-delegates.md).
 
-- Parametr typu se nepoužívá jako obecné omezení pro metody rozhraní.
+- Parametr type se nepoužívá jako obecné omezení pro metody rozhraní.
 
-## <a name="example---covariant-generic-delegate"></a>Příklad – kovariance obecného delegáta
+## <a name="example---covariant-generic-delegate"></a>Příklad - kovariantní obecný delegát
 
-Následující příklad ukazuje, jak deklarovat, vytvářet instance a vyvolat kovariantní obecný delegát. Také ukazuje, jak implicitně převést typy delegátů.
+Následující příklad ukazuje, jak deklarovat, instanci a vyvolat kovariantní obecný delegát. Také ukazuje, jak implicitně převést typy delegátů.
 
 [!code-csharp[csVarianceKeywords#4](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csvariancekeywords/cs/program.cs#4)]
 
-V obecném delegátu může být typ deklarovaný jako kovariant, pokud se používá jenom jako návratový typ metody a nepoužívá se pro argumenty metody.
+V obecné delegáta typ lze deklarovat kovariantní, pokud se používá pouze jako metoda návratový typ a není použit pro argumenty metody.
 
 ## <a name="c-language-specification"></a>specifikace jazyka C#
 
 [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Odchylky obecných rozhraní](../../programming-guide/concepts/covariance-contravariance/variance-in-generic-interfaces.md)
-- [in](in-generic-modifier.md)
+- [In](in-generic-modifier.md)
 - [Modifikátory](index.md)

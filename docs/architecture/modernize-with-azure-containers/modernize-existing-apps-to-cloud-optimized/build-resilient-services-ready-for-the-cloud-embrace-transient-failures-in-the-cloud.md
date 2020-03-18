@@ -1,62 +1,62 @@
 ---
-title: Vytvářejte odolné služby připravené pro Cloud. Zpracování přechodných selhání v cloudu
-description: Modernizovat stávající aplikace .NET pomocí cloudu Azure a kontejnerů Windows | Vytvářejte odolné služby připravené pro Cloud. Zpracování přechodných selhání v cloudu
+title: Vytvářejte odolné služby připravené pro cloud. Zpracování přechodných selhání v cloudu
+description: Modernizace stávajících aplikací .NET pomocí Azure Cloudu a kontejnerů Windows | Vytvářejte odolné služby připravené pro cloud. Zpracování přechodných selhání v cloudu
 ms.date: 04/30/2018
 ms.openlocfilehash: e516dc675ceb8def25c6d676bced0ea7f253b2d5
-ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/03/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "74711252"
 ---
-# <a name="build-resilient-services-ready-for-the-cloud-embrace-transient-failures-in-the-cloud"></a>Vytváření odolných služeb připravených pro Cloud: zapojení přechodných selhání do cloudu
+# <a name="build-resilient-services-ready-for-the-cloud-embrace-transient-failures-in-the-cloud"></a>Vytváření odolných služeb připravených pro cloud: Zpracování přechodných selhání v cloudu
 
-Odolnost proti chybám je schopnost zotavení po selháních a nadále fungovat. Odolnost proti chybám nebrání, ale přijímá skutečnost, že dojde k selhání, a pak na ně reagovat způsobem, který brání výpadkům nebo ztrátě dat. Cílem odolnosti proti chybám je vrátit aplikaci do plně funkčního stavu po selhání.
+Odolnost proti chybám je schopnost zotavit se z chyb a nadále fungovat. Odolnost proti chybám není o předcházení chybám, ale o přijetí skutečnosti, že dojde k chybám, a následné reakci na ně způsobem, který zabraňuje výpadkům nebo ztrátě dat. Cílem odolnosti proti chybám je vrátit aplikaci do plně funkčního stavu po selhání.
 
-Vaše aplikace je připravená na Cloud, pokud má přinejmenším za to, že implementuje softwarový model odolnosti, spíše než model založený na hardwaru. Vaše cloudová aplikace musí vycházet z částečně neúspěšných selhání. Navrhněte nebo částečně refaktorujte svoji aplikaci, aby se zajistila odolnost s očekávanými částečnými chybami. Měla by být navržená tak, aby se vypořádat s částečnými chybami, jako jsou přechodné výpadky sítě a uzly, nebo dojde k selhání virtuálních počítačů v cloudu. Dokonce i kontejnery, které se přesunou do jiného uzlu v rámci clusteru nástroje Orchestrator, můžou způsobit přerušované krátké chyby v rámci aplikace.
+Vaše aplikace je připravena pro cloud, když minimálně implementuje softwarový model odolnosti, nikoli hardwarový model. Vaše cloudová aplikace musí zahrnovat částečné chyby, které jistě nastanou. Navrhněte nebo částečně refaktorujte aplikaci, abyste dosáhli odolnosti proti chybám s očekávanými částečnými chybami. Měl by být navržen tak, aby se vypořádal s částečnými chybami, jako jsou přechodné výpadky sítě a uzly nebo selhání virtuálních počítačů v cloudu. I kontejnery přesouvány do jiného uzlu v rámci clusteru orchestrator může způsobit občasné krátké chyby v rámci aplikace.
 
 ## <a name="handling-partial-failure"></a>Zpracování částečného selhání
 
-V cloudové aplikaci existuje stále přítomné riziko částečného selhání. Například jedna instance webu nebo kontejner může selhat nebo může být nedostupná nebo nereaguje na krátkou dobu. Nebo může dojít k selhání jednoho virtuálního počítače nebo serveru.
+V cloudové aplikaci existuje stále přítomné riziko částečného selhání. Například jedna instance webu nebo kontejner může selhat nebo může být nedostupný nebo nereaguje na krátkou dobu. Nebo může dojít k selhání jednoho virtuálního aplikace nebo serveru.
 
-Vzhledem k tomu, že klienti a služby jsou samostatné procesy, nemusí být služba schopná reagovat včas na požadavky klienta. Služba může být přetížena a reagovat pomalu na požadavky nebo nemusí být k dispozici po krátkou dobu kvůli problémům se sítí.
+Vzhledem k tomu, že klienti a služby jsou samostatné procesy, služba nemusí být schopen reagovat včas na požadavek klienta. Služba může být přetížena a reagovat pomalu na požadavky nebo nemusí být přístupná na krátkou dobu z důvodu problémů se sítí.
 
-Zvažte například monolitické aplikaci .NET, která přistupuje k databázi v Azure SQL Database. Pokud Azure SQL Database nebo jakákoli jiná služba třetí strany nereaguje na krátkou dobu (může se stát, že se Azure SQL Database přesune na jiný uzel nebo server a nereaguje na několik sekund), když se uživatel pokusí provést jakoukoli akci, může aplikace selhat a zobrazit s výjimkou ve stejný okamžik.
+Zvažte například monolitickou aplikaci .NET, která přistupuje k databázi v Azure SQL Database. Pokud databáze Azure SQL nebo jiné služby třetích stran nereaguje na krátkou dobu (databáze Azure SQL může být přesunuta do jiného uzlu nebo serveru a nereaguje na několik sekund), když se uživatel pokusí provést jakoukoli akci, aplikace může dojít k chybě a v té min.
 
-Podobný scénář může nastat v aplikaci, která používá služby HTTP. Síť nebo samotná služba nemusí být v cloudu během krátkého přechodného selhání k dispozici.
+Podobný scénář může dojít v aplikaci, která spotřebovává služby HTTP. Síť nebo samotná služba nemusí být k dispozici v cloudu během krátké, přechodné selhání.
 
-Odolná aplikace jako ta, která je znázorněna na obrázku 4-9, by měla implementovat techniky, jako je "opakování s exponenciálním omezení rychlosti", aby aplikace mohla mít možnost zpracovávat přechodné chyby v prostředcích. V aplikacích byste také měli použít "okruhy okruhů". Přepínací modul okruhů zastaví aplikaci, aby se pokusil o přístup k prostředku, když je skutečně dlouhodobá chyba. Když použijete přerušení obvodu, aplikace zabrání tomu, aby provoking odepření služby.
+Odolná aplikace, jako je ta, která je znázorněna na obrázku 4-9, by měla implementovat techniky, jako je "opakování s exponenciálním zpětným vypnutím", aby aplikace měla příležitost zpracovat přechodná selhání prostředků. Měli byste také použít "jističe" ve vašich aplikacích. Jistič zastaví aplikace z pokusu o přístup k prostředku, když je to vlastně dlouhodobé selhání. Pomocí jističe, aplikace zabraňuje vyvolání odmítnutí služby pro sebe.
 
-![Diagram částečných selhání zpracovávaných opakovanými pokusy pomocí exponenciálního omezení rychlostiu.](./media/retry-partial-failures.png)
+![Diagram částečné chyby zpracovány opakování s exponenciální backoff.](./media/retry-partial-failures.png)
 
-**Obrázek 4-9.** Částečné chyby zpracovávané opakováním exponenciálního omezení rychlostiu
+**Obrázek 4-9.** Částečné chyby zpracované opakovanými pokusy s exponenciálním zpětným vypnutím
 
-Tyto techniky můžete použít v prostředcích HTTP i v databázových prostředcích. Na obrázku 4-9 je aplikace založená na architektuře 3, takže tyto techniky budete potřebovat na úrovni služeb (HTTP) a na úrovni datové vrstvy (TCP). V aplikaci monolitické, která kromě databáze nástroje používá jenom jednu vrstvu aplikace (žádné další služby ani mikroslužby), může být dostatečné pro zpracování přechodných chyb na úrovni připojení databáze. V takovém scénáři je vyžadována pouze určitá konfigurace připojení k databázi.
+Tyto techniky můžete použít v prostředcích HTTP i v databázových prostředcích. Na obrázku 4-9 je aplikace založena na třívrstvé architektuře, takže potřebujete tyto techniky na úrovni služeb (HTTP) a na úrovni datové vrstvy (TCP). V monolitické aplikace, která používá pouze jednu vrstvu aplikace kromě databáze (žádné další služby nebo mikroslužeb), zpracování přechodných chyb na úrovni připojení databáze může být dost. V tomto scénáři je vyžadována pouze konkrétní konfigurace připojení databáze.
 
-Při implementaci odolné komunikace, která přistupuje k databázi, v závislosti na verzi rozhraní .NET, kterou používáte, může být jednoduchá (například [s Entity Framework 6 nebo novějším](/ef/ef6/fundamentals/connection-resiliency/retry-logic). Je to jenom ta konfigurace připojení k databázi). Nebo může být nutné použít další knihovny, jako je například [přechodný blok aplikace pro zpracování chyb](https://docs.microsoft.com/previous-versions/msp-n-p/hh680934(v=pandp.50)) (pro starší verze rozhraní .NET), nebo dokonce implementovat vlastní knihovnu.
+Při implementaci odolné komunikace, která přístup k databázi, v závislosti na verzi rozhraní .NET, které používáte, může být jednoduché (například [s Entity Framework 6 nebo novější](/ef/ef6/fundamentals/connection-resiliency/retry-logic). Je to jen otázka konfigurace připojení k databázi). Nebo budete muset použít další knihovny, jako [je přechodný blok aplikace zpracování chyb](https://docs.microsoft.com/previous-versions/msp-n-p/hh680934(v=pandp.50)) (pro starší verze rozhraní .NET) nebo dokonce implementovat vlastní knihovnu.
 
-Při implementaci opakování protokolu HTTP a přepínacích cyklů okruhu je doporučení pro .NET používat knihovnu [Polly](https://github.com/App-vNext/Polly) , která cílí na .NET Framework 4,0, .NET Framework 4,5 a .NET Standard 1,1, což zahrnuje podporu .NET Core.
+Při implementaci opakovaných pokusů http a jističů je doporučením pro rozhraní .NET použít [knihovnu Polly,](https://github.com/App-vNext/Polly) která cílí na rozhraní .NET Framework 4.0, .NET Framework 4.5 a .NET Standard 1.1, která zahrnuje podporu .NET Core.
 
-Další informace o implementaci strategií pro zpracování částečných chyb v cloudu najdete v následujících odkazech.
+Informace o tom, jak implementovat strategie pro zpracování částečné chyby v cloudu, naleznete v následujících odkazech.
 
-### <a name="additional-resources"></a>Další materiály a zdroje informací
+### <a name="additional-resources"></a>Další zdroje
 
 - **Implementace odolné komunikace pro zpracování částečného selhání**
 
     [https://docs.microsoft.com/dotnet/architecture/microservices/implement-resilient-applications/partial-failure-strategies](../../microservices/implement-resilient-applications/partial-failure-strategies.md)
 
-- **Entity Framework odolnost připojení a opakování logiky (verze 6 a novější)**
+- **Odolnost k připojení rozhraní entity framework a logika opakování (verze 6 a novější)**
 
     [https://docs.microsoft.com/ef/ef6/fundamentals/connection-resiliency/retry-logic](/ef/ef6/fundamentals/connection-resiliency/retry-logic)
 
-- **Blok aplikace pro zpracování přechodného selhání**
+- **Blok aplikací zpracování přechodných chyb**
 
 - <https://docs.microsoft.com/previous-versions/msp-n-p/hh680934(v=pandp.50)>
 
-- **Polly Library pro odolnou komunikaci HTTP**
+- **Polly knihovna pro odolnou HTTP komunikaci**
 
     https://github.com/App-vNext/Polly
 
 >[!div class="step-by-step"]
 >[Předchozí](when-to-deploy-windows-containers-to-azure-container-service-kubernetes.md)
->[Další](modernize-your-apps-with-monitoring-and-telemetry.md)
+>[další](modernize-your-apps-with-monitoring-and-telemetry.md)

@@ -1,21 +1,21 @@
 ---
-title: Výčty Protobuf – gRPC pro vývojáře WCF
+title: Protobuf výčty - gRPC pro vývojáře WCF
 description: Naučte se deklarovat a používat výčty v Protobuf.
 ms.date: 09/09/2019
-ms.openlocfilehash: 01cf4a4e5e0eda1e7ddff2a6780119fcb3120dad
-ms.sourcegitcommit: 771c554c84ba38cbd4ac0578324ec4cfc979cf2e
+ms.openlocfilehash: 2177f568a671fa0e651625c6e025ac70c243feb5
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/21/2020
-ms.locfileid: "77543141"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79148072"
 ---
 # <a name="protobuf-enumerations"></a>Výčty protobuf
 
-Protobuf podporuje výčtové typy. Tuto podporu jste viděli v předchozí části, kde byl k určení typu `Oneof` pole použit výčet. Můžete definovat vlastní typy výčtu a Protobuf je zkompiluje do C# výčtových typů. 
+Protobuf podporuje typy výčtu. Tuto podporu jste viděli v předchozí části, kde byl použit `Oneof` výčt k určení typu pole. Můžete definovat vlastní typy výčtu a Protobuf je zkompiluje do c# výčtu.
 
-Vzhledem k tomu, že můžete používat Protobuf s různými jazyky, zásady vytváření názvů pro výčty se C# liší od konvencí. Generátor kódu však převede názvy na tradiční C# případ. Pokud je ekvivalent názvu pole v jazyce Pascal shodný s názvem výčtu, bude odstraněn.
+Vzhledem k tomu, že můžete použít Protobuf s různými jazyky, konvence pojmenování pro výčty se liší od c# konvence. Generátor kódu však převádí názvy na tradiční případ Jazyka C#. Pokud pascal-case ekvivalent názvu pole začíná názvem výčtu, pak je odebrán.
 
-Například v následujícím výčtu Protobuf jsou pole s předponou `ACCOUNT_STATUS`. Tato předpona je shodná s názvem Pascal-Case Enum, `AccountStatus`.
+Například v následujícím výčtu Protobuf jsou pole `ACCOUNT_STATUS`předponou . Tato předpona je ekvivalentní pascal-case `AccountStatus`výčtu název .
 
 ```protobuf
 enum AccountStatus {
@@ -27,7 +27,7 @@ enum AccountStatus {
 }
 ```
 
-Generátor vytvoří C# výčet podobný následujícímu kódu:
+Generátor vytvoří výčt c# ekvivalentní následující kód:
 
 ```csharp
 public enum AccountStatus
@@ -40,7 +40,7 @@ public enum AccountStatus
 }
 ```
 
-Definice výčtu Protobuf *musí* mít jako první pole nulovou konstantu. Jako v C#můžete deklarovat více polí se stejnou hodnotou. Tuto možnost však musíte explicitně povolit pomocí možnosti `allow_alias` ve výčtu:
+Protobuf výčtu definice *musí* mít nulovou konstantu jako jejich první pole. Stejně jako v c#, můžete deklarovat více polí se stejnou hodnotou. Ale musíte explicitně povolit `allow_alias` tuto možnost pomocí možnosti ve výčtu:
 
 ```protobuf
 enum AccountStatus {
@@ -54,9 +54,9 @@ enum AccountStatus {
 }
 ```
 
-Výčty můžete deklarovat na nejvyšší úrovni v souboru `.proto` nebo jsou vnořené v rámci definice zprávy. Vnořené výčty – podobně jako vnořené zprávy – budou deklarovány v rámci `.Types` statické třídy ve třídě generované zprávy.
+Výčty na nejvyšší úrovni v souboru `.proto` můžete deklarovat nebo vnořené v rámci definice zprávy. Vnořené výčty – jako vnořené `.Types` zprávy – budou deklarovány v rámci statické třídy ve třídě generované zprávy.
 
-Neexistuje žádný způsob, jak použít atribut [[Flags]](xref:System.FlagsAttribute) u výčtu generovaného Protobuf a Protobuf nerozumí kombinací bitových výčtů. Podívejte se na následující příklad:
+Neexistuje žádný způsob, jak použít [[Flags]](xref:System.FlagsAttribute) atribut Protobuf generované výčtu a Protobuf nerozumí bitové výčtu kombinace. Podívejte se na následující příklad:
 
 ```protobuf
 enum Region {
@@ -72,10 +72,10 @@ message Product {
 }
 ```
 
-Nastavíte-li `product.AvailableIn` na `Region.NorthAmerica | Region.SouthAmerica`, je serializován jako celočíselná hodnota `3`. Když se klient nebo server pokusí hodnotu deserializovat, nenajde shodu v definici výčtu pro `3`. Výsledek bude `Region.None`.
+Pokud nastavíte `product.AvailableIn` hodnotu `Region.NorthAmerica | Region.SouthAmerica`, bude serializována `3`jako celá hodnota . Když se klient nebo server pokusí rekonstruovat hodnotu, nenajde shodu v `3`definici výčtu pro . Výsledkem bude `Region.None`.
 
-Nejlepším způsobem, jak pracovat s více hodnotami výčtu v Protobuf, je použít pole `repeated` typu výčtu.
+Nejlepší způsob, jak pracovat s více hodnotami výčtu v Protobuf je použít `repeated` pole typu výčtu.
 
 >[!div class="step-by-step"]
 >[Předchozí](protobuf-any-oneof.md)
->[Další](protobuf-maps.md)
+>[další](protobuf-maps.md)

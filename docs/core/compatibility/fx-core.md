@@ -1,26 +1,26 @@
 ---
-title: Průlomové změny – .NET Framework do .NET Core
+title: Narušující změny - rozhraní .NET Framework na jádro .NET
 titleSuffix: ''
-description: Obsahuje seznam přerušujících změn z .NET Framework do .NET Core.
+description: Uvádí nejnovější změny z rozhraní .NET Framework na .NET Core.
 ms.date: 12/18/2019
 ms.openlocfilehash: f712be14d7debc4b3008f8459e6ee925754b25f0
-ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/19/2020
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "77449391"
 ---
-# <a name="breaking-changes-for-migration-from-net-framework-to-net-core"></a>Zásadní změny migrace z .NET Framework do .NET Core
+# <a name="breaking-changes-for-migration-from-net-framework-to-net-core"></a>Nejnovější změny pro migraci z rozhraní .NET Framework na .NET Core
 
-Pokud migrujete aplikaci z .NET Framework do .NET Core, může to mít vliv na změny, které jsou uvedené v tomto článku. Zásadní změny jsou seskupené podle kategorií a v rámci těchto kategorií podle verze rozhraní .NET Core, ve které byly zavedeny.
+Pokud migrujete aplikaci z rozhraní .NET Framework do .NET Core, mohou vás mít vliv narušující změny uvedené v tomto článku. Nejnovější změny jsou seskupeny podle kategorie a v rámci těchto kategorií podle verze .NET Core, ve kterém byly zavedeny.
 
 > [!NOTE]
-> Tento článek není úplný seznam průlomových změn mezi .NET Framework a .NET Core. Nejdůležitější nedůležité změny se tady přidají, jak je máme vědět.
+> Tento článek není úplný seznam narušující změny mezi rozhraním .NET Framework a .NET Core. Nejdůležitější změny jsou přidány zde, jak jsme se dozvěděli o nich.
 
 ## <a name="corefx"></a>CoreFx
 
-- [Změna výchozí hodnoty UseShellExecute objektu Process](#change-in-default-value-of-useshellexecute)
-- [UnauthorizedAccessException vyvolaná atributy SystemInfo.](#unauthorizedaccessexception-thrown-by-filesysteminfoattributes)
+- [Změna výchozí hodnoty useShellExecute](#change-in-default-value-of-useshellexecute)
+- [UnauthorizedAccessException vyvoláno souborem FileSystemInfo.Attributes](#unauthorizedaccessexception-thrown-by-filesysteminfoattributes)
 
 ### <a name="net-core-21"></a>.NET Core 2.1
 
@@ -28,7 +28,7 @@ Pokud migrujete aplikaci z .NET Framework do .NET Core, může to mít vliv na z
 
 ***
 
-### <a name="net-core-10"></a>.NET Core 1,0
+### <a name="net-core-10"></a>.NET Jádro 1.0
 
 [!INCLUDE [UnauthorizedAccessException thrown by FileSystemInfo.Attributes](~/includes/core-changes/corefx/1.0/filesysteminfo-attributes-exceptions.md)]
 
@@ -36,7 +36,7 @@ Pokud migrujete aplikaci z .NET Framework do .NET Core, může to mít vliv na z
 
 ## <a name="cryptography"></a>Kryptografie
 
-- [Je respektován logický parametr SignedCms. ComputeSignature.](#boolean-parameter-of-signedcmscomputesignature-is-respected)
+- [Logický parametr SignedCms.ComputeSignature je respektován](#boolean-parameter-of-signedcmscomputesignature-is-respected)
 
 ### <a name="net-core-21"></a>.NET Core 2.1
 
@@ -46,25 +46,25 @@ Pokud migrujete aplikaci z .NET Framework do .NET Core, může to mít vliv na z
 
 ## <a name="windows-forms"></a>Windows Forms
 
-Do .NET Core ve verzi 3,0 se přidala podpora model Windows Forms. Pokud migrujete aplikaci model Windows Forms z .NET Framework na .NET Core, můžou se tyto změny týkat vaší aplikace.
+Podpora windows forms byla přidána do rozhraní .NET Core ve verzi 3.0. Pokud migrujete aplikaci windows forms z rozhraní .NET Framework na .NET Core, narušující změny uvedené zde mohou mít vliv na vaši aplikaci.
 
 - [Odebrané ovládací prvky](#removed-controls)
-- [Pokud je zobrazený popis, událost CellFormatting se neaktivuje.](#cellformatting-event-not-raised-if-tooltip-is-shown)
-- [Control. DefaultFont se změnil na Segoe UI 9 bodů.](#default-control-font-changed-to-segoe-ui-9-pt)
-- [Modernizace FolderBrowserDialog](#modernization-of-the-folderbrowserdialog)
-- [SerializableAttribute byl odebrán z některých typů model Windows Forms.](#serializableattribute-removed-from-some-windows-forms-types)
-- [Přepínač kompatibility AllowUpdateChildControlIndexForTabControls se nepodporuje.](#allowupdatechildcontrolindexfortabcontrols-compatibility-switch-not-supported)
-- [Přepínač kompatibility DomainUpDown. UseLegacyScrolling se nepodporuje.](#domainupdownuselegacyscrolling-compatibility-switch-not-supported)
-- [Přepínač kompatibility DoNotLoadLatestRichEditControl se nepodporuje.](#donotloadlatestricheditcontrol-compatibility-switch-not-supported)
-- [Přepínač kompatibility DoNotSupportSelectAllShortcutInMultilineTextBox se nepodporuje.](#donotsupportselectallshortcutinmultilinetextbox-compatibility-switch-not-supported)
-- [Přepínač kompatibility DontSupportReentrantFilterMessage se nepodporuje.](#dontsupportreentrantfiltermessage-compatibility-switch-not-supported)
-- [Přepínač kompatibility EnableVisualStyleValidation se nepodporuje.](#enablevisualstylevalidation-compatibility-switch-not-supported)
-- [Přepínač kompatibility UseLegacyContextMenuStripSourceControlValue se nepodporuje.](#uselegacycontextmenustripsourcecontrolvalue-compatibility-switch-not-supported)
-- [Přepínač kompatibility UseLegacyImages se nepodporuje.](#uselegacyimages-compatibility-switch-not-supported)
-- [Změna přístupu pro třída AccessibleObject. RuntimeIDFirstItem](#change-of-access-for-accessibleobjectruntimeidfirstitem)
-- [Odebrala se duplicitní rozhraní API z model Windows Forms.](#duplicated-apis-removed-from-windows-forms)
+- [Událost CellFormatting není vyvolána, pokud je zobrazen popisek](#cellformatting-event-not-raised-if-tooltip-is-shown)
+- [Control.DefaultFont změněn na Segoe UI 9 pt](#default-control-font-changed-to-segoe-ui-9-pt)
+- [Modernizace dialogového okna FolderBrowserDialog](#modernization-of-the-folderbrowserdialog)
+- [Serializovatelný atribut odebraný z některých typů formulářů systému Windows](#serializableattribute-removed-from-some-windows-forms-types)
+- [Přepínač kompatibility AllowUpdateChildControlIndexForTabControls není podporován.](#allowupdatechildcontrolindexfortabcontrols-compatibility-switch-not-supported)
+- [Přepínač kompatibility DomainUpDown.UseLegacyScrolling není podporován.](#domainupdownuselegacyscrolling-compatibility-switch-not-supported)
+- [Přepínač kompatibility DoNotLoadLatestRichEditControl není podporován.](#donotloadlatestricheditcontrol-compatibility-switch-not-supported)
+- [Přepínač kompatibility DoNotSupportSelectAllShortcutInMultilineTextBox není podporován](#donotsupportselectallshortcutinmultilinetextbox-compatibility-switch-not-supported)
+- [Přepínač kompatibility DontSupportReentrantFilterMessage není podporován.](#dontsupportreentrantfiltermessage-compatibility-switch-not-supported)
+- [Přepínač kompatibility EnableVisualStyleValidation není podporován.](#enablevisualstylevalidation-compatibility-switch-not-supported)
+- [Přepínač kompatibility UseLegacyContextMenuStripSourceSourceControlValue není podporován.](#uselegacycontextmenustripsourcecontrolvalue-compatibility-switch-not-supported)
+- [Přepínač kompatibility UseLegacyImages není podporován.](#uselegacyimages-compatibility-switch-not-supported)
+- [Změna přístupu pro AccessibleObject.RuntimeIDFirstItem](#change-of-access-for-accessibleobjectruntimeidfirstitem)
+- [Duplicitní api odebraná z formulářů systému Windows Forms](#duplicated-apis-removed-from-windows-forms)
 
-### <a name="net-core-31"></a>.NET Core 3,1
+### <a name="net-core-31"></a>.NET Jádro 3.1
 
 [!INCLUDE[Removed controls](~/includes/core-changes/windowsforms/3.1/remove-controls-3.1.md)]
 
@@ -130,5 +130,5 @@ Do .NET Core ve verzi 3,0 se přidala podpora model Windows Forms. Pokud migruje
 
 ## <a name="see-also"></a>Viz také
 
-- [Rozhraní API, která vždy vyvolávají výjimky v .NET Core](unsupported-apis.md)
-- [Technologie .NET Framework nedostupné v .NET Core](../porting/net-framework-tech-unavailable.md)
+- [Rozhraní API, která vždy vyzvou výjimky na jádru .NET](unsupported-apis.md)
+- [Technologie rozhraní .NET Framework nejsou v jádru rozhraní .NET k dispozici](../porting/net-framework-tech-unavailable.md)

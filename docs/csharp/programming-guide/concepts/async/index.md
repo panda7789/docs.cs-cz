@@ -1,66 +1,66 @@
 ---
-title: Asynchronní programování vC#
-description: Přehled C# jazykové podpory pro asynchronní programování pomocí asynchronních, operátorů await, úloh a úkolů<T>
+title: 'Asynchronní programování v C #'
+description: Přehled podpory jazyka C# pro asynchronní programování pomocí async, await, Task a Task<T>
 ms.date: 03/18/2019
-ms.openlocfilehash: 633da9485c5f74efb6e57234a31f0404e39605ec
-ms.sourcegitcommit: 93762e1a0dae1b5f64d82eebb7b705a6d566d839
+ms.openlocfilehash: 4cbbff0f2c48f0ec2f8befa234ea5023465a1c5d
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/27/2019
-ms.locfileid: "74552431"
+ms.lasthandoff: 03/15/2020
+ms.locfileid: "79169906"
 ---
-# <a name="asynchronous-programming-with-async-and-await"></a>Asynchronní programování s modifikátorem Async a operátoru await
+# <a name="asynchronous-programming-with-async-and-await"></a>Asynchronní programování pomocí modifikátoru Async a operátoru Await
 
-Asynchronní programovací model úlohy (klepněte na) poskytuje abstrakci pro asynchronní kód. Kód můžete napsat jako posloupnost příkazů, stejně jako vždycky. Tento kód si můžete přečíst, jako by byl každý příkaz dokončen před dalším začátkem. Kompilátor provádí řadu transformací, protože některé z těchto příkazů mohou začít pracovat a vracet <xref:System.Threading.Tasks.Task>, které představují probíhající práci.
+Úloha asynchronní programovací model (TAP) poskytuje abstrakce přes asynchronní kód. Píšete kód jako posloupnost příkazů, stejně jako vždy. Tento kód si můžete přečíst, jako by každý příkaz dokončen před dalším zahájením. Kompilátor provádí počet transformací, protože některé z těchto <xref:System.Threading.Tasks.Task> příkazů může začít pracovat a vrátit, který představuje probíhající práci.
 
-To je cílem této syntaxe: umožňuje povolit kód, který se čte jako sekvence příkazů, ale provádí se v mnohem složitějším pořadí založeném na externím přidělení prostředků a po dokončení úkolů. Podobá se tomu, jak lidé dávají pokyny pro procesy, které zahrnují asynchronní úlohy. V celém tomto článku použijete příklad pokynů pro vytvoření snídani k tomu, abyste viděli, jak klíčová slova `async` a `await` usnadňují vysvětlení kódu, který obsahuje řadu asynchronních instrukcí. Měli byste napsat pokyny, jako je v následujícím seznamu, abyste se vysvětlují, jak vytvořit snídani:
+To je cílem této syntaxe: povolit kód, který čte jako posloupnost příkazů, ale provádí v mnohem složitější pořadí na základě přidělení externích prostředků a po dokončení úkolů. Je to analogické, jak lidé dávají pokyny pro procesy, které zahrnují asynchronní úkoly. V tomto článku použijete příklad pokynů pro provedení snídaně, `async` abyste `await` zjistili, jak klíčová slova a usnadňují důvod týkající se kódu, který obsahuje řadu asynchronních pokynů. Napsali byste pokyny něco jako následující seznam, abyste vysvětlili, jak udělat snídani:
 
-1. Nalijte konvičku z kávy.
-1. Zastavte pánev a pak dvě vejce v SRJ.
-1. SRJ tři řezy slanina
-1. Informační zprávy jsou dvě části chleba.
-1. Přidejte máslo a zaseknutí do informačních zpráv.
-1. Nalijte sklo oranžové šťávy.
+1. Nalijte šálek kávy.
+1. Zahřejte pánev, pak smažte dvě vejce.
+1. Smažte tři plátky slaniny.
+1. Opékejte dva kusy chleba.
+1. Přidejte máslo a džem do toastu.
+1. Nalijte sklenici pomerančového džusu.
 
-Pokud máte zkušenosti s vařením, spusťte tyto pokyny **asynchronně**. Začnete zahříváním pánev pro vejce a pak zahájíte slanina. Vložili jste chléb do informačního pole a pak vejce začali. V každém kroku procesu byste úlohu spustili a pak jste si měli pozor na úkoly, které jsou připravené na vaši pozornost.
+Pokud máte zkušenosti s vařením, provedete tyto pokyny **asynchronně**. Začal bys ohřívat pánev na vajíčka a pak začal slaninu. Dal bys chleba do toustovače a pak začal s vejci. V každém kroku procesu byste zahájili úkol a pak obrátili svou pozornost na úkoly, které jsou připraveny pro vaši pozornost.
 
-Vaření snídaně je dobrým příkladem asynchronní práce, která není paralelní. Všechny tyto úlohy může zvládnout jedna osoba (nebo vlákno). Pokračováním v analogovém režimu může jedna osoba provést asynchronní zpracování asynchronně spuštěním další úlohy před prvním dokončením. Vaření bude postupovat bez ohledu na to, jestli ho někdo sleduje. Jakmile začnete zahříváním pánev pro vejce, můžete začít Frying slanina. Po spuštění slanina můžete přidat chléb do informačního části.
+Vaření snídaně je dobrým příkladem asynchronní práce, která není paralelní. Všechny tyto úkoly zvládne jedna osoba (nebo vlákno). Pokračování snídaně analogie, jedna osoba může snídani asynchronně spuštěním další úkol před prvním dokončením. Vaření postupuje, zda se na to někdo dívá. Jakmile začnete zahřívat pánev na vejce, můžete začít smažit slaninu. Jakmile začne slanina, můžete dát chléb do toustovače.
 
-Pro paralelní algoritmus budete potřebovat více cooků (neboli vláken). To by mělo být vejce, jedna slanina a tak dále. Každé z nich by se zaměřilo jenom na jeden úkol. Každé Cookovy (nebo vlákno) se zablokuje synchronně, čeká se, až bude slanina připravený k převrácení, nebo informační zprávy, které se mají blokovat. 
+Pro paralelní algoritmus budete potřebovat více kuchařů (nebo vláken). Jeden by udělal vejce, jednu slaninu a tak dále. Každý z nich by se zaměřil jen na jeden úkol. Každý kuchař (nebo vlákno) by být blokovány synchronně čeká na slaninu, aby byl připraven k flip, nebo přípitek na pop.
 
-Nyní zvažte stejné pokyny, které jsou zapsány jako C# příkazy:
+Nyní zvažte stejné pokyny napsané jako příkazy Jazyka C#:
 
 [!code-csharp[SynchronousBreakfast](~/samples/snippets/csharp/tour-of-async/AsyncBreakfast-starter/Program.cs#Main)]
 
-Počítače neinterpretují tyto pokyny stejným způsobem jako lidé. Počítač bude zablokovat každý příkaz, dokud nebude dokončeno dokončení práce, než přejde k dalšímu příkazu. Tím se vytvoří nevyhovující snídaně. Pozdější úkoly by nemusely být spuštěny, dokud se předchozí úkoly nedokončí. Vytvoření snídaně by trvat mnohem delší dobu a některé položky by byly před odesláním nedoručeny. 
+Počítače neinterpretují tyto pokyny stejným způsobem jako lidé. Počítač bude blokovat na každém příkazu, dokud práce je dokončena před přechodem na další příkaz. To vytváří neuspokojivou snídani. Pozdější úkoly nebudou zahájeny, dokud nebudou dokončeny předchozí úkoly. Trvalo by mnohem déle, než by se snídaně vytvořila, a některé položky by se před podáváním ochladila.
 
-Pokud chcete, aby počítač prováděl výše uvedené pokyny asynchronně, je nutné napsat asynchronní kód.
+Pokud chcete, aby počítač provedl výše uvedené pokyny asynchronně, musíte napsat asynchronní kód.
 
-Tyto aspekty jsou důležité pro programy, které dnes napíšete. Při psaní klientských programů budete chtít, aby uživatelské rozhraní reagovalo na vstup uživatele. Vaše aplikace by se neměla po stažení dat z webu jevit jako zmrazená. Když píšete serverové programy, nechcete, aby byla vlákna blokovaná. Tato vlákna mohou obsluhovat jiné požadavky. Použití synchronního kódu v případě, že existují asynchronní alternativy, neuškodí schopnost horizontálního navýšení kapacity snížit kapacitu. Platíte za tato blokovaná vlákna.
+Tyto obavy jsou důležité pro programy, které píšete dnes. Při psaní klientských programů chcete, aby uživatelské rozhraní reagovalo na vstup uživatele. Aplikace by neměla způsobit, že by telefon při stahování dat z webu vypadal zmrazený. Při psaní serverových programů nechcete blokovat vlákna. Tato vlákna mohou obsluhují jiné požadavky. Použití synchronního kódu při existenci asynchronních alternativ poškozuje vaši schopnost škálovat levněji. Platíte za ty zablokované vlákna.
 
-Úspěšné moderní aplikace vyžadují asynchronní kód. Bez podpory jazyků, psaní zpětných volání vyžadovaných asynchronním kódem, události dokončení nebo jiné způsob, který zakrývá původní záměr kódu. Výhodou synchronního kódu je, že je snadné ho pochopit. Podrobné akce usnadňují kontrolu a pochopení. Tradiční asynchronní modely vám pomohly soustředit se na asynchronní povahu kódu, nikoli na základní akce kódu.
+Úspěšné moderní aplikace vyžadují asynchronní kód. Bez jazykové podpory, psaní asynchronní kód vyžaduje zpětná volání, události dokončení nebo jiné prostředky, které zakrývaly původní záměr kódu. Výhodou synchronního kódu je, že je snadno pochopitelný. Akce krok za krokem usnadňují skenování a pochopení. Tradiční asynchronní modely nuceni zaměřit se na asynchronní povahu kódu, nikoli na základní akce kódu.
 
-## <a name="dont-block-await-instead"></a>Neblokovat, místo toho očekávat
+## <a name="dont-block-await-instead"></a>Neblokujte, čekejte místo toho
 
-Předchozí kód demonstruje špatný postup: sestavení synchronního kódu pro provádění asynchronních operací. Jak je zapsáno, tento kód zablokuje vlákno, které ho spouští, od jakékoli jiné práce. Nedojde k přerušení, dokud nebudou dokončeny žádné úlohy. Může to být tak, jak jste v informačním části postari po vložení chleba do. Na vás bude nikdo mluvit, dokud nebudou informační zprávy odebrány. 
+Předchozí kód ukazuje chybný postup: vytvoření synchronního kódu k provádění asynchronních operací. Jak je napsáno, tento kód blokuje vlákno provádění jej z provádění jakékoli jiné práce. Nebude přerušena, zatímco některý z úkolů probíhá. Bylo by to, jako bys zíral na toustovač po chleba. Ignoroval bys každého, kdo by s tebou mluvil, dokud by se neobjevil přípitek.
 
-Pojďme začít aktualizací tohoto kódu, aby vlákno neblokovalo úlohy spuštěné. Klíčové slovo `await` poskytuje neblokující způsob spuštění úlohy a pak pokračuje v provádění po dokončení této úlohy. Jednoduchá asynchronní verze kódu pro vytvoření snídani by vypadala jako následující fragment kódu:
+Začněme aktualizací tohoto kódu tak, aby vlákno neblokovalo, když jsou spuštěny úlohy. Klíčové `await` slovo poskytuje neblokující způsob spuštění úlohy a po dokončení této úlohy pokračujte v provádění. Jednoduchá asynchronní verze kódu make a breakfast by vypadala jako následující úryvek:
 
 [!code-csharp[SimpleAsyncBreakfast](~/samples/snippets/csharp/tour-of-async/AsyncBreakfast-V2/Program.cs#Main)]
 
-Tento kód se neblokuje, pokud jsou vejce nebo slanina vaření. Tento kód v takovém případě nespustí žádné další úlohy. Informační zprávy do informačního oddělení byste pořád umístili do informačních zpráv a tam, kde se neobjeví. Ale aspoň, budete reagovat na kohokoli, kdo si přeje vaši pozornost. V rámci restaurace, kde je umístěno více objednávek, může Cook Cook začít jinou snídani, zatímco první je vaření.
+Tento kód neblokuje, když vejce nebo slanina jsou vaření. Tento kód však nespustí žádné další úkoly. Pořád bys dával přípitek do toustovače a zíral na něj, dokud nevyskočil. Ale aspoň bys reagoval na každého, kdo by chtěl tvou pozornost. V restauraci, kde je umístěno více objednávek, by kuchař mohl začít další snídani, zatímco první je vaření.
 
-Vlákno, které pracuje na snídani, není nyní blokované při čekání na spuštěnou úlohu, která ještě nebyla dokončena. U některých aplikací je tato změna potřebná. Aplikace grafického uživatelského rozhraní pořád reaguje na uživatele pouze touto změnou. V tomto scénáři ale potřebujete víc. Nechcete, aby se jednotlivé úlohy komponenty prováděly sekvenčně. Před čekáním na dokončení předchozího úkolu je lepší spustit každou z těchto úloh.
+Nyní vlákno pracující na snídani není blokováno, zatímco čeká na jakýkoli zahájený úkol, který ještě nebyl dokončen. Pro některé aplikace je tato změna vše, co je potřeba. Gui aplikace stále reaguje na uživatele právě s touto změnou. Však pro tento scénář chcete další. Nechcete, aby každý z úloh komponenty, které mají být provedeny postupně. Je lepší spustit každý z úloh komponenty před čekáním na dokončení předchozího úkolu.
 
-## <a name="start-tasks-concurrently"></a>Spustit souběžně úlohy
+## <a name="start-tasks-concurrently"></a>Souběžné zahájení úloh
 
-V mnoha scénářích chcete okamžitě spustit několik nezávislých úloh. Po dokončení jednotlivých úkolů můžete pokračovat v práci, která je připravená. V analogické pracovní snídaně to je způsob, jak rychle získat snídani. Všechno se ale také dokončí blízko stejnou dobu. Získáte horkou snídani.
+V mnoha scénářích chcete okamžitě spustit několik nezávislých úloh. Po dokončení každého úkolu pak můžete pokračovat v další práci, která je připravena. V analogie snídaně, to je, jak se dostanete snídani udělat rychleji. Také dostanete všechno udělat blízko ke stejnému času. Dostaneš teplou snídani.
 
-<xref:System.Threading.Tasks.Task?displayProperty=nameWithType> a související typy jsou třídy, které můžete použít k rozhodnutí o probíhajících úkolech. To vám umožňuje psát kód, který se bude lépe podobat způsobu, jakým jste ve skutečnosti vytvořili snídani. Začít vaření na vejce, slanina a informační zprávy ve stejnou dobu. Vzhledem k tomu, že každá z nich vyžaduje akci, byste měli věnovat pozornost této úloze, pořídit další akci a pak očekávat něco jiného, co vyžaduje vaši pozornost.
+A <xref:System.Threading.Tasks.Task?displayProperty=nameWithType> související typy jsou třídy, které můžete použít k důvodu o probíhajících úkolech. To vám umožní napsat kód, který se více podobá způsobu, jakým byste skutečně vytvořit snídani. Začal bys vařit vejce, slaninu a toast ve stejnou dobu. Jako každý vyžaduje akci, měli byste obrátit svou pozornost k tomuto úkolu, postarat se o další akci, pak čekají na něco jiného, co vyžaduje vaši pozornost.
 
-Spustíte úlohu a podržíte se s objektem <xref:System.Threading.Tasks.Task>, který představuje práci. Než začnete s jeho výsledkem pracovat, budete `await` každou úlohu.
+Můžete zahájit úkol a <xref:System.Threading.Tasks.Task> podržte objekt, který představuje práci. Budete `await` každý úkol před prací s jeho výsledkem.
 
-Pojďme udělat tyto změny kódu snídani. Prvním krokem je ukládat úlohy pro operace, když se spouštějí, a nečekají na ně:
+Pojďme udělat tyto změny v kódu snídaně. Prvním krokem je uložení úkolů pro operace při jejich spuštění, nikoli jejich čekání:
 
 ```csharp
 Coffee cup = PourCoffee();
@@ -82,7 +82,7 @@ Console.WriteLine("oj is ready");
 Console.WriteLine("Breakfast is ready!");
 ```
 
-Dále můžete přesunout příkazy `await` pro slanina a vejce na konec metody před obsluhou snídaně:
+Dále můžete přesunout `await` prohlášení o slanině a vejcích na konec metody, než servírujete snídani:
 
 ```csharp
 Coffee cup = PourCoffee();
@@ -105,28 +105,28 @@ Console.WriteLine("bacon is ready");
 Console.WriteLine("Breakfast is ready!");
 ```
 
-Předchozí kód funguje lépe. Současně spustíte všechny asynchronní úlohy. Každou úlohu můžete očekávat pouze v případě, že potřebujete výsledky. Předchozí kód může být podobný kódu ve webové aplikaci, který vytváří požadavky na různé mikroslužby, a pak kombinuje výsledky do jediné stránky. Okamžitě provedete všechny požadavky a pak `await` všechny tyto úlohy a vytvoříte webovou stránku.
+Předchozí kód funguje lépe. Spuštění všech asynchronních úloh najednou. Na každý úkol čekáte pouze v případě, že potřebujete výsledky. Předchozí kód může být podobný kódu ve webové aplikaci, která provádí požadavky různých mikroslužeb, pak kombinuje výsledky do jedné stránky. Budete dělat všechny požadavky okamžitě, `await` pak všechny tyto úkoly a tvoří webové stránky.
 
 ## <a name="composition-with-tasks"></a>Složení s úkoly
 
- Máte všechno připravené k snídani ve stejnou dobu s výjimkou informačních zpráv. Zpřístupnění informačních zpráv je složením asynchronní operace (informační zpráva o příchodu) a synchronní operace (přidání másla a zaseknutí). Aktualizace tohoto kódu ilustruje důležitý koncept:
+ Máte vše připravené k snídani ve stejnou dobu kromě přípitku. Tvorba toast je složení asynchronní operace (opékání chleba), a synchronní operace (přidání másla a džemu). Aktualizace tohoto kódu ilustruje důležitý koncept:
 
 > [!IMPORTANT]
-> Složení asynchronní operace následované synchronní prací je asynchronní operace. Pokud je libovolná část operace asynchronní, je celá operace asynchronní, pokud je uvedena jinak.
+> Složení asynchronní operace následované synchronní prací je asynchronní operace. Uvedeno jiným způsobem, pokud je jakákoli část operace asynchronní, je celá operace asynchronní.
 
-Předchozí kód vám ukázal, že můžete použít objekty <xref:System.Threading.Tasks.Task> nebo <xref:System.Threading.Tasks.Task%601> k udržení spuštěných úloh. Před použitím svého výsledku `await` každou úlohu. Dalším krokem je vytvoření metod, které reprezentují kombinaci jiné práce. Před tím, než zachováte snídani, chcete čekat na úkol, který představuje informační zprávu, před přidáním másla a zaseknutím. Tuto práci můžete vyjádřit pomocí následujícího kódu:
+Předchozí kód ukázal, že můžete <xref:System.Threading.Tasks.Task> <xref:System.Threading.Tasks.Task%601> použít nebo objekty pro uložení spuštěných úloh. Každý `await` úkol před použitím jeho výsledek. Dalším krokem je vytvoření metod, které představují kombinaci jiné práce. Před podáváním snídaně, chcete počkat na úkol, který představuje opékání chleba před přidáním másla a džemu. Tuto práci můžete reprezentovat pomocí následujícího kódu:
 
 [!code-csharp[ComposeToastTask](~/samples/snippets/csharp/tour-of-async/AsyncBreakfast-V3/Program.cs#ComposeToastTask)]
 
-Předchozí metoda má v podpisu modifikátor `async`. To signalizuje kompilátoru, že tato metoda obsahuje příkaz `await`; obsahuje asynchronní operace. Tato metoda představuje úkol, který označuje chléb a pak přidá máslo a zaseknutí. Tato metoda vrací <xref:System.Threading.Tasks.Task%601>, která představuje složení těchto tří operací. Hlavní blok kódu teď bude:
+Předchozí metoda má `async` modifikátor ve svém podpisu. To signalizuje kompilátoru, `await` že tato metoda obsahuje příkaz; obsahuje asynchronní operace. Tato metoda představuje úkol, který opéká chléb, pak přidá máslo a džem. Tato metoda <xref:System.Threading.Tasks.Task%601> vrátí, který představuje složení těchto tří operací. Hlavní blok kódu se nyní stane:
 
 [!code-csharp[StartConcurrentTasks](~/samples/snippets/csharp/tour-of-async/AsyncBreakfast-V3/Program.cs#Main)]
 
-Předchozí změna ukázala důležitou techniku pro práci s asynchronním kódem. Můžete vytvářet úkoly oddělením operací s novou metodou, která vrací úlohu. Můžete vybrat, kdy se má tento úkol očekávat. Můžete spustit souběžně jiné úkoly.
+Předchozí změna ilustrovala důležitou techniku pro práci s asynchronním kódem. Úlohy můžete vytvořit oddělením operací do nové metody, která vrací úkol. Můžete si vybrat, kdy na tento úkol čekat. Další úkoly můžete spustit současně.
 
-## <a name="await-tasks-efficiently"></a>Pro úlohy čekají efektivně
+## <a name="await-tasks-efficiently"></a>Vyčkejte efektivně na úkoly
 
-Řadu příkazů `await` na konci předchozího kódu lze zlepšit pomocí metod `Task` třídy. Jedno z těchto rozhraní API je <xref:System.Threading.Tasks.Task.WhenAll%2A>, což vrátí <xref:System.Threading.Tasks.Task>, který se dokončí po dokončení všech úkolů v seznamu argumentů, jak je znázorněno v následujícím kódu:
+Řada `await` příkazů na konci předchozího kódu lze zlepšit pomocí metod `Task` třídy. Jedním z těchto <xref:System.Threading.Tasks.Task.WhenAll%2A>api je <xref:System.Threading.Tasks.Task> , který vrátí, který dokončí po dokončení všech úkolů v seznamu argumentů, jak je znázorněno v následujícím kódu:
 
 ```csharp
 await Task.WhenAll(eggsTask, baconTask, toastTask);
@@ -136,12 +136,12 @@ Console.WriteLine("toast is ready");
 Console.WriteLine("Breakfast is ready!");
 ```
 
-Další možností je použít <xref:System.Threading.Tasks.Task.WhenAny%2A>, což vrátí `Task<Task>`, který se dokončí po dokončení některého z jeho argumentů. Můžete očekávat vrácenou úlohu s vědomím, že již byla dokončena. Následující kód ukazuje, jak můžete použít <xref:System.Threading.Tasks.Task.WhenAny%2A> k čekání na dokončení první úlohy a následnému zpracování výsledku. Po zpracování výsledku z dokončené úlohy odstraníte tuto dokončenou úlohu ze seznamu úkolů předaných do `WhenAny`.
+Další možností je <xref:System.Threading.Tasks.Task.WhenAny%2A>použití , `Task<Task>` který vrátí, který dokončí po dokončení některého z jeho argumentů. Můžete čekat na vrácený úkol s vědomím, že již byla dokončena. Následující kód ukazuje, jak <xref:System.Threading.Tasks.Task.WhenAny%2A> můžete použít čekat na první úkol k dokončení a potom zpracovat jeho výsledek. Po zpracování výsledku dokončeného úkolu odeberete tento dokončený `WhenAny`úkol ze seznamu úkolů předaných aplikaci .
 
 [!code-csharp[AwaitAnyTask](~/samples/snippets/csharp/tour-of-async/AsyncBreakfast-final/Program.cs#AwaitAnyTask)]
 
-Po všech změnách bude konečná verze `Main` vypadat jako v následujícím kódu:
+Po všech těchto změnách `Main` vypadá konečná verze aplikace následující kód:
 
 [!code-csharp[Final](~/samples/snippets/csharp/tour-of-async/AsyncBreakfast-final/Program.cs#Main)]
 
-Tento konečný kód je asynchronní. Přesněji odráží, jak by osoba navařené snídani. Porovnejte předchozí kód s první ukázkou kódu v tomto článku. Základní akce jsou stále jasné z čtení kódu. Tento kód si můžete přečíst stejným způsobem, jakým jste si přečetli tyto pokyny pro vytvoření snídaně na začátku tohoto článku. Jazykové funkce pro `async` a `await` poskytují překlad pro všechny uživatele, kteří mají za úkol postupovat podle těchto pokynů: spustit úlohy jako nemůžete a neblokovat čekání na dokončení úkolů.
+Tento konečný kód je asynchronní. To přesněji odráží, jak by člověk vařit snídani. Porovnejte předchozí kód s první ukázkou kódu v tomto článku. Základní akce jsou stále jasné ze čtení kódu. Tento kód si můžete přečíst stejným způsobem, jakým jste si přečetli tyto pokyny pro snídani na začátku tohoto článku. Jazykové funkce `async` pro `await` a poskytují překlad každý člověk dělá následovat tyto písemné pokyny: spuštění úkolů, jak můžete a neblokujte čekání na dokončení úkolů.

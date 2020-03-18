@@ -1,40 +1,40 @@
 ---
 ms.openlocfilehash: db1d09c8c9e606b5327a42977a74a74703282d84
-ms.sourcegitcommit: 79a2d6a07ba4ed08979819666a0ee6927bbf1b01
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/28/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "74568156"
 ---
-### <a name="net-core-30-follows-unicode-best-practices-when-replacing-ill-formed-utf-8-byte-sequences"></a>.NET Core 3,0 dodržuje osvědčené postupy Unicode při nahrazování chybových sekvencí s chybou ve formátu UTF-8.
+### <a name="net-core-30-follows-unicode-best-practices-when-replacing-ill-formed-utf-8-byte-sequences"></a>Rozhraní .NET Core 3.0 se řídí osvědčenými postupy unicode při výměně špatně vytvořených bajtových sekvencí UTF-8
 
-<xref:System.Text.UTF8Encoding> Když třída narazí na nesprávně vytvořenou sekvenci bajtů UTF-8 během operace překódování typu Byte-Character, nahradí tuto sekvenci znakem '�' (U + FFFD náhradní znak) ve výstupním řetězci. .NET Core 3,0 se liší od předchozích verzí rozhraní .NET Core a .NET Framework podle osvědčeného postupu Unicode pro provádění této náhrady během operace překódování.
+Když <xref:System.Text.UTF8Encoding> třída narazí na špatně formátované UTF-8 bajt sekvence během operace překódování bajt-znak, nahradí tuto sekvenci znakem ' ' (U + FFFD NÁHRADNÍ ZNAK) ve výstupním řetězci. .NET Core 3.0 se liší od předchozích verzí rozhraní .NET Core a rozhraní .NET Framework podle osvědčeného osvědčeného postupu unicode pro provedení této náhrady během operace překódování.
 
-Toto je část větší snahy o zlepšení zpracování UTF-8 v rámci .NET, včetně nových <xref:System.Text.Unicode.Utf8?displayProperty=nameWithType> a <xref:System.Text.Rune?displayProperty=nameWithType>ch typů. <xref:System.Text.UTF8Encoding> typ byl dán Vylepšený mechanismus zpracování chyb, aby vznikl výstup konzistentní s nově zavedený typy.
+Toje součástí větší úsilí o zlepšení zpracování UTF-8 v <xref:System.Text.Unicode.Utf8?displayProperty=nameWithType> celé <xref:System.Text.Rune?displayProperty=nameWithType> .NET, včetně nové a typy. Typ <xref:System.Text.UTF8Encoding> byl dán lepší mechaniky zpracování chyb tak, aby vytváří výstup v souladu s nově zavedené typy.
 
-#### <a name="change-description"></a>Změnit popis
+#### <a name="change-description"></a>Popis změny
 
-Počínaje .NET Core 3,0, při překódování bajtů na znaky, třída <xref:System.Text.UTF8Encoding> provádí substituci znaků na základě osvědčených postupů Unicode. Použití náhradního mechanismu je popsané [standardem Unicode verze 12,0, sec. 3,9 (PDF)](https://www.unicode.org/versions/Unicode12.0.0/ch03.pdf) v hlavičce s názvem _U + FFFD nahrazením maximálního počtu částí_.
+Počínaje rozhraním .NET Core 3.0, když překódování <xref:System.Text.UTF8Encoding> bajtů na znaky, třída provádí nahrazení znaků na základě osvědčených postupů Unicode. Použitý substituční mechanismus je popsán [standardem Unicode, verze 12.0, § 3,9 (PDF)](https://www.unicode.org/versions/Unicode12.0.0/ch03.pdf) v nadpisu s názvem _U+FFFD Substituce maximálních subdílů_.
 
-Toto chování se vztahuje _jenom_ v případě, že vstupní bajtová sekvence obsahuje nesprávně vytvořená data UTF-8. Kromě toho, pokud byla instance <xref:System.Text.UTF8Encoding> vytvořená pomocí `throwOnInvalidBytes: true` (viz dokumentace k konstruktoru UTF8Encoding] (<xref:System.Text.UTF8Encoding.%23ctor(System.Boolean,System.Boolean)>, instance `UTF8Encoding` se bude i nadále vyvolávat na neplatném vstupu, místo aby bylo možné provést nahrazení U + FFFD.
+Toto chování platí _pouze_ v případě, že vstupní bajt sekvence obsahuje špatně vytvořená data UTF-8. Navíc pokud <xref:System.Text.UTF8Encoding> instance byla vytvořena s `throwOnInvalidBytes: true` (viz [UTF8Encoding konstruktor<xref:System.Text.UTF8Encoding.%23ctor(System.Boolean,System.Boolean)>dokumentace]( , `UTF8Encoding` instance bude i nadále vyvolávat na neplatný vstup, spíše než provádět Nahrazení U + FFFD.
 
-Následující příklad ukazuje dopad této změny s neplatným 3 bajty vstupu:
+Následující ilustruje dopad této změny s neplatným 3bajtovým vstupem:
 
-|Nesprávně vytvořený 3 bajtový vstup|Výstup před .NET Core 3,0|Výstup od .NET Core 3,0|
+|Špatně vytvořený 3bajtový vstup|Výstup před rozhraním .NET Core 3.0|Výstup začínající na .NET Core 3.0|
 |---|---|---|
-| `[ ED A0 90 ]` | `[ FFFD FFFD ]` (výstup se dvěma znaky)| `[ FFFD FFFD FFFD ]` (výstup se 3 znaky)|
+| `[ ED A0 90 ]` | `[ FFFD FFFD ]`(Dvoumístný výstup)| `[ FFFD FFFD FFFD ]`(3znakový výstup)|
 
-Tento 3 znakový výstup je preferovaný výstup podle _tabulky 3-9_ dříve propojeného PDF standardu Unicode.
+Tento 3-char výstup je preferovaný výstup, podle _tabulky 3-9_ dříve propojeného Unicode Standard PDF.
 
-#### <a name="version-introduced"></a>Představená verze
+#### <a name="version-introduced"></a>Zavedená verze
 
 3.0
 
 #### <a name="recommended-action"></a>Doporučená akce
 
-V rámci vývojáře není vyžadována žádná akce.
+Není vyžadována žádná akce ze strany vývojáře.
 
-#### <a name="category"></a>Category
+#### <a name="category"></a>Kategorie
 
 CoreFx
 

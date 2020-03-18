@@ -1,23 +1,23 @@
 ---
-title: Použití variance v delegátechC#()
+title: Použití odchylky v delegátech (C#)
 ms.date: 07/20/2015
 ms.assetid: 1638c95d-dc8b-40c1-972c-c2dcf84be55e
-ms.openlocfilehash: 980caf8d5e4699115d203a89fab7994d18cc1707
-ms.sourcegitcommit: 1b020356e421a9314dd525539da12463d980ce7a
+ms.openlocfilehash: 83e86e760edb17f6d9ae61864c154062d41416e4
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "70168372"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79169763"
 ---
-# <a name="using-variance-in-delegates-c"></a>Použití variance v delegátechC#()
-Když přiřadíte metodu delegátovi, *kovariance* a *kontravariance* poskytují flexibilitu pro porovnání typu delegáta s podpisem metody. Kovariance povoluje, aby metoda měla návratový typ, který je více odvozen od definice v delegátu. Kontravariance povoluje metodu, která má typy parametrů, které jsou méně odvozené než hodnoty v typu delegáta.  
+# <a name="using-variance-in-delegates-c"></a>Použití odchylky v delegátech (C#)
+Při přiřazení metody delegátovi, *kovariance* a *contravariance* poskytují flexibilitu pro porovnávání typu delegáta s podpisem metody. Kovariance umožňuje metodu mít návratový typ, který je více odvozený než definovaný v delegátovi. Contravariance umožňuje metodu, která má typy parametrů, které jsou méně odvozené než ty v typu delegáta.  
   
 ## <a name="example-1-covariance"></a>Příklad 1: Kovariance  
   
 ### <a name="description"></a>Popis  
- Tento příklad ukazuje, jak lze delegáty použít s metodami, které mají návratové typy odvozené od návratového typu v signatuře delegáta. Datový typ vrácený funkcí `DogsHandler` je typu `Dogs`, `Mammals` který je odvozen z typu, který je definován v delegátu.  
+ Tento příklad ukazuje, jak lze použít delegáty s metodami, které mají návratové typy, které jsou odvozeny z návratového typu v podpisu delegáta. Datový typ vrácený `DogsHandler` podle `Dogs`je typu , `Mammals` který je odvozen od typu, který je definován v delegáta.  
   
-### <a name="code"></a>Kód  
+### <a name="code"></a>kód  
   
 ```csharp  
 class Mammals {}  
@@ -52,23 +52,23 @@ class Program
   
 ### <a name="description"></a>Popis
 
-Tento příklad ukazuje, jak lze použít delegáty s metodami, které mají parametry, jejichž typy jsou základní typy parametrů signatury delegátů. S kontravariance můžete použít jednu obslužnou rutinu události místo samostatných obslužných rutin. Následující příklad využívá dva delegáty:
+Tento příklad ukazuje, jak lze delegáty použít s metodami, které mají parametry, jejichž typy jsou základními typy typu parametru podpisu delegáta. S contravariance, můžete použít jednu obslužnou rutinu události namísto samostatných obslužných rutin. Následující příklad využívá dva delegáty:
 
-- Delegát, který definuje signaturu události [Button. KeyDown.](xref:System.Windows.Forms.Control.KeyDown) <xref:System.Windows.Forms.KeyEventHandler> Jeho signatura je:
+- Delegát, <xref:System.Windows.Forms.KeyEventHandler> který definuje podpis [Button.KeyDown](xref:System.Windows.Forms.Control.KeyDown) události. Jeho podpis je:
 
    ```csharp
    public delegate void KeyEventHandler(object sender, KeyEventArgs e)
    ```
 
-- Delegát, který definuje podpis události [Button. MouseClick.](xref:System.Windows.Forms.Control.MouseDown) <xref:System.Windows.Forms.MouseEventHandler> Jeho signatura je:
+- Delegát, <xref:System.Windows.Forms.MouseEventHandler> který definuje podpis [Button.MouseClick](xref:System.Windows.Forms.Control.MouseDown) události. Jeho podpis je:
 
    ```csharp
    public delegate void MouseEventHandler(object sender, MouseEventArgs e)
    ```
 
-V příkladu je definována obslužná rutina události <xref:System.EventArgs> s parametrem a používá ji pro zpracování `Button.KeyDown` událostí `Button.MouseClick` a. To může být způsobeno <xref:System.EventArgs> tím, že je základní typ <xref:System.Windows.Forms.KeyEventArgs> a <xref:System.Windows.Forms.MouseEventArgs>. 
+Příklad definuje obslužnou <xref:System.EventArgs> rutinu události s `Button.KeyDown` parametrem a používá ji ke zpracování události a události. `Button.MouseClick` Může to provést, protože <xref:System.EventArgs> je <xref:System.Windows.Forms.KeyEventArgs> základní <xref:System.Windows.Forms.MouseEventArgs>typ obou a .
   
-### <a name="code"></a>Kód  
+### <a name="code"></a>kód  
   
 ```csharp  
 // Event handler that accepts a parameter of the EventArgs type.  
@@ -85,14 +85,14 @@ public Form1()
     // although the event expects the KeyEventArgs parameter.  
     this.button1.KeyDown += this.MultiHandler;  
   
-    // You can use the same method   
+    // You can use the same method
     // for an event that expects the MouseEventArgs parameter.  
     this.button1.MouseClick += this.MultiHandler;  
   
 }  
 ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Variance v delegátechC#()](./variance-in-delegates.md)
-- [Použití odchylky pro obecné delegáty Func a ActionC#()](./using-variance-for-func-and-action-generic-delegates.md)
+- [Odchylka v delegátech (C#)](./variance-in-delegates.md)
+- [Použití odchylky pro obecné delegáty aplikace Func a obecné akce (C#)](./using-variance-for-func-and-action-generic-delegates.md)

@@ -1,16 +1,16 @@
 ---
-title: Jak spočítat výskyty slova v řetězci (LINQ) (C#)
+title: Jak počítat výskyty slova v řetězci (LINQ) (C#)
 ms.date: 07/20/2015
 ms.assetid: f8e6f546-7c14-4aa1-8a75-e8d09f3b8ccd
-ms.openlocfilehash: 0411b0c17b57a49e031f078412b9e45692c619fe
-ms.sourcegitcommit: fbb8a593a511ce667992502a3ce6d8f65c594edf
+ms.openlocfilehash: 9c3ac2e0d44d52e437586a4d105a022f75c1dc54
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/16/2019
-ms.locfileid: "74141336"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79169322"
 ---
-# <a name="how-to-count-occurrences-of-a-word-in-a-string-linq-c"></a>Jak spočítat výskyty slova v řetězci (LINQ) (C#)
-Tento příklad ukazuje, jak pomocí dotazu LINQ spočítat výskyty zadaného slova v řetězci. Všimněte si, že k provedení tohoto počtu je nejprve volána metoda <xref:System.String.Split%2A> pro vytvoření pole slov. Do metody <xref:System.String.Split%2A> se účtují náklady na výkon. Pokud je jedinou operací na řetězci spočítat slova, měli byste zvážit použití metod <xref:System.Text.RegularExpressions.Regex.Matches%2A> nebo <xref:System.String.IndexOf%2A>. Pokud ale výkon není kritickým problémem nebo jste už tuto větu rozdělili, abyste mohli provádět další typy dotazů, je vhodné použít LINQ k počítání slov nebo frází.  
+# <a name="how-to-count-occurrences-of-a-word-in-a-string-linq-c"></a>Jak počítat výskyty slova v řetězci (LINQ) (C#)
+Tento příklad ukazuje, jak pomocí dotazu LINQ počítat výskyty zadaného slova v řetězci. Všimněte si, že k <xref:System.String.Split%2A> provedení count, nejprve metoda je volána k vytvoření pole slov. <xref:System.String.Split%2A> Je náklady na výkon metody. Pokud jedinou operací na řetězci je počítat slova, <xref:System.Text.RegularExpressions.Regex.Matches%2A> <xref:System.String.IndexOf%2A> měli byste zvážit použití metody nebo místo. Pokud však výkon není kritický problém nebo jste již větu rozdělili, abyste nad ní mohli provádět jiné typy dotazů, má smysl použít linq k počítání slov nebo frází.  
   
 ## <a name="example"></a>Příklad  
   
@@ -35,7 +35,7 @@ class CountWords
         //Convert the string into an array of words  
         string[] source = text.Split(new char[] { '.', '?', '!', ' ', ';', ':', ',' }, StringSplitOptions.RemoveEmptyEntries);  
   
-        // Create the query.  Use ToLowerInvariant to match "data" and "Data"   
+        // Create the query.  Use ToLowerInvariant to match "data" and "Data"
         var matchQuery = from word in source  
                          where word.ToLowerInvariant() == searchTerm.ToLowerInvariant()  
                          select word;  
@@ -55,8 +55,8 @@ class CountWords
 ```  
   
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
- Vytvořte projekt C# konzolové aplikace s direktivami `using` pro obory názvů System. Linq a System.IO.  
+ Vytvořte projekt aplikace konzoly `using` Jazyka C# se direktivami pro obory názvů System.Linq a System.IO.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [LINQ a řetězce (C#)](./linq-and-strings.md)

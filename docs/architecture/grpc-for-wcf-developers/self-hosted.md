@@ -1,23 +1,23 @@
 ---
-title: Samoobslužné aplikace gRPC – gRPC pro vývojáře WCF
-description: Nasazení ASP.NET Corech aplikací gRPC jako samoobslužných služeb.
+title: Samostatně hostované gRPC aplikace - gRPC pro vývojáře WCF
+description: Nasazení ASP.NET aplikací Core gRPC jako samoobslužných služeb.
 ms.date: 09/02/2019
-ms.openlocfilehash: ee370ba1893b060505b38ddf84235bd84433ad32
-ms.sourcegitcommit: 771c554c84ba38cbd4ac0578324ec4cfc979cf2e
+ms.openlocfilehash: 00fb1453e19a02469f80af79672e0c1f72c7280f
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/21/2020
-ms.locfileid: "77542986"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79147799"
 ---
-# <a name="self-hosted-grpc-applications"></a>Samoobslužné aplikace gRPC
+# <a name="self-hosted-grpc-applications"></a>Samoobslužné gRPC aplikace
 
-I když je možné aplikace ASP.NET Core 3,0 hostovat ve službě IIS na Windows serveru, v současné době není možné hostovat aplikaci gRPC ve službě IIS, protože některé funkce HTTP/2 se nepodporují. Tato funkce je cílem budoucí aktualizace Windows serveru.
+Přestože ASP.NET aplikace Core 3.0 mohou být hostovány ve službě IIS v systému Windows Server, v současné době není možné hostovat aplikaci gRPC ve službě IIS, protože některé funkce HTTP/2 nejsou podporovány. Tato funkce je cílem budoucí aktualizace systému Windows Server.
 
-Aplikaci můžete spustit jako službu systému Windows. Nebo ho můžete spustit jako službu Linux řízenou [systémem](https://en.wikipedia.org/wiki/Systemd), protože v rozšířeních hostování .net Core 3,0 jsou nové funkce.
+Aplikaci můžete spustit jako službu systému Windows. Nebo ji můžete spustit jako službu Linuxu řízenou [systemd](https://en.wikipedia.org/wiki/Systemd), protože nové funkce v rozšířeních .NET Core 3.0 hosting.
 
-## <a name="run-your-app-as-a-windows-service"></a>Spuštění aplikace jako služby systému Windows
+## <a name="run-your-app-as-a-windows-service"></a>Spuštění aplikace jako služby Windows
 
-Chcete-li nakonfigurovat aplikaci ASP.NET Core tak, aby běžela jako služba systému Windows, nainstalujte balíček [Microsoft. Extensions. Hosting. WindowsServices](https://www.nuget.org/packages/Microsoft.Extensions.Hosting.WindowsServices) z nástroje NuGet. Pak přidejte volání `UseWindowsService` do metody `CreateHostBuilder` v `Program.cs`.
+Chcete-li nakonfigurovat ASP.NET základní aplikaci tak, aby běžela jako služba systému Windows, nainstalujte balíček [Microsoft.Extensions.Hosting.WindowsServices](https://www.nuget.org/packages/Microsoft.Extensions.Hosting.WindowsServices) z NuGet. Potom přidejte `UseWindowsService` volání `CreateHostBuilder` k `Program.cs`metodě v .
 
 ```csharp
 public static IHostBuilder CreateHostBuilder(string[] args) =>
@@ -30,44 +30,44 @@ public static IHostBuilder CreateHostBuilder(string[] args) =>
 ```
 
 > [!NOTE]
-> Pokud aplikace není spuštěna jako služba systému Windows, `UseWindowsService` metoda neprovede žádné akce.
+> Pokud aplikace není spuštěna jako služba `UseWindowsService` systému Windows, metoda neprovádí nic.
 
-Nyní můžete aplikaci publikovat pomocí jedné z následujících metod:
+Nyní publikujte aplikaci pomocí jedné z těchto metod:
 
-* V aplikaci Visual Studio kliknutím pravým tlačítkem myši na projekt a výběrem možnosti **publikovat** v místní nabídce.
-* Z .NET Core CLI.
+* Z Visual Studia kliknutím pravým tlačítkem myši na projekt a výběrem **publikovat** v místní nabídce.
+* Z rozhraní .NET Core CLI.
 
-Při publikování aplikace .NET Core se můžete rozhodnout pro vytvoření nasazení *závislého na rozhraní* nebo *samostatného* nasazení. Nasazení závislá na rozhraní vyžadují, aby byl na hostiteli, na kterém je spuštěný, nainstalovaný sdílený modul .NET Core Shared. Samostatně obsažená nasazení jsou publikována s úplnou kopií modulu runtime .NET Core a architekturou a lze ji spustit na jakémkoli hostiteli. Další informace, včetně výhod a nevýhod každého přístupu, naleznete v dokumentaci k [nasazení aplikace .NET Core](../../core/deploying/index.md) .
+Při publikování aplikace .NET Core můžete vytvořit nasazení *závislé na rozhraní* nebo *samostatné* nasazení. Nasazení závislá na rozhraní vyžadují, aby byl sdílený runtime .NET Core nainstalován na hostiteli, kde jsou spuštěny. Samostatná nasazení jsou publikována s úplnou kopií runtime a frameworku .NET Core a lze je spustit na libovolném hostiteli. Další informace, včetně výhod a nevýhod každého přístupu, naleznete v dokumentaci [k nasazení aplikace .NET Core.](../../core/deploying/index.md)
 
-Chcete-li publikovat samostatné sestavení aplikace, které nevyžaduje instalaci modulu runtime .NET Core 3,0 na hostitele, zadejte modul runtime, který bude součástí aplikace. Použijte příznak `-r` (nebo `--runtime`).
+Chcete-li publikovat samostatné sestavení aplikace, která nevyžaduje instalaci runtime .NET Core 3.0 na hostiteli, zadejte dobu runtime, která má být součástí aplikace. Použijte `-r` příznak `--runtime`(nebo).
 
 ```dotnetcli
 dotnet publish -c Release -r win-x64 -o ./publish
 ```
 
-Chcete-li publikovat sestavení závislé na rozhraní, vynechejte příznak `-r`.
+Chcete-li publikovat sestavení závislé na `-r` rámci, vyneche příznak.
 
 ```dotnetcli
 dotnet publish -c Release -o ./publish
 ```
 
-Zkopírujte celý obsah adresáře `publish` do instalační složky. Pak pomocí [Nástroje SC](/windows/desktop/services/controlling-a-service-using-sc) vytvořte službu systému Windows pro spustitelný soubor.
+Zkopírujte celý obsah `publish` adresáře do instalační složky. Potom pomocí [nástroje sc](/windows/desktop/services/controlling-a-service-using-sc) vytvořte službu systému Windows pro spustitelný soubor.
 
 ```console
 sc create MyService binPath=C:\MyService\MyService.exe
 ```
 
-### <a name="log-to-the-windows-event-log"></a>Přihlášení do protokolu událostí systému Windows
+### <a name="log-to-the-windows-event-log"></a>Protokolovat do protokolu událostí systému Windows
 
-Metoda `UseWindowsService` automaticky přidá poskytovatele [protokolování](/aspnet/core/fundamentals/logging/) , který zapíše zprávy protokolu do protokolu událostí systému Windows. Protokolování pro tohoto zprostředkovatele můžete nakonfigurovat přidáním položky `EventLog` do oddílu `Logging` `appsettings.json` nebo jiného zdroje konfigurace. 
+Metoda `UseWindowsService` automaticky přidá [zprostředkovatele protokolování,](/aspnet/core/fundamentals/logging/) který zapisuje zprávy protokolu do protokolu událostí systému Windows. Protokolování tohoto zprostředkovatele můžete `EventLog` nakonfigurovat `Logging` přidáním `appsettings.json` položky do oddílu nebo jiného zdroje konfigurace.
 
-Název zdroje použitý v protokolu událostí můžete přepsat nastavením vlastnosti `SourceName` v těchto nastaveních. Pokud název nezadáte, použije se výchozí název aplikace (obvykle se jedná o spustitelný název sestavení).
+Název zdroje použitý v protokolu událostí můžete přepsat `SourceName` nastavením vlastnosti v těchto nastaveních. Pokud název nezadáte, bude použit výchozí název aplikace (obvykle název spustitelného sestavení).
 
-Další informace o protokolování najdete na konci této kapitoly.
+Více informací o protokolování je na konci této kapitoly.
 
-## <a name="run-your-app-as-a-linux-service-with-systemd"></a>Spuštění aplikace jako služby pro Linux se systémem
+## <a name="run-your-app-as-a-linux-service-with-systemd"></a>Spusťte aplikaci jako službu Linuxu s systemd
 
-Pokud chcete svou aplikaci ASP.NET Core nakonfigurovat tak, aby běžela jako služba pro Linux (nebo *démon* v systému Linux agilním), nainstalujte balíček [Microsoft. Extensions. Hosting. systemd](https://www.nuget.org/packages/Microsoft.Extensions.Hosting.Systemd) z NuGet. Pak přidejte volání `UseSystemd` do metody `CreateHostBuilder` v `Program.cs`.
+Chcete-li nakonfigurovat aplikaci ASP.NET Core tak, aby běžela jako služba Linuxu (nebo *daemon* v jazyce Linuxu), nainstalujte balíček [Microsoft.Extensions.Hosting.Systemd](https://www.nuget.org/packages/Microsoft.Extensions.Hosting.Systemd) z NuGet. Potom přidejte `UseSystemd` volání `CreateHostBuilder` k `Program.cs`metodě v .
 
 ```csharp
 public static IHostBuilder CreateHostBuilder(string[] args) =>
@@ -80,20 +80,20 @@ public static IHostBuilder CreateHostBuilder(string[] args) =>
 ```
 
 > [!NOTE]
-> Pokud aplikace není spuštěna jako služba pro Linux, `UseSystemd` metoda neprovede žádné akce.
+> Pokud aplikace není spuštěna jako služba `UseSystemd` Linuxu, metoda neprovádí nic.
 
-Nyní publikujte aplikaci. Aplikace může být buď závislá na architektuře, nebo samostatná jako pro příslušné prostředí Linux runtime (například `linux-x64`). Můžete publikovat pomocí jedné z následujících metod:
+Nyní publikujte svou žádost. Aplikace může být závislá na rámci nebo samostatně obsažená pro příslušný `linux-x64`linuxový runtime (například). Publikovat můžete pomocí jedné z těchto metod:
 
-* V aplikaci Visual Studio kliknutím pravým tlačítkem myši na projekt a výběrem možnosti **publikovat** v místní nabídce. 
-* Z .NET Core CLI pomocí následujícího příkazu:
+* Z Visual Studia kliknutím pravým tlačítkem myši na projekt a výběrem **publikovat** v místní nabídce.
+* Z rozhraní příkazového příkazu .NET Core pomocí následujícího příkazu:
 
   ```dotnetcli
   dotnet publish -c Release -r linux-x64 -o ./publish
   ```
   
-Zkopírujte celý obsah adresáře `publish` do instalační složky na hostiteli se systémem Linux. Registrace služby vyžaduje speciální soubor nazvaný *soubor jednotky*, který bude přidán do adresáře `/etc/systemd/system`. K vytvoření souboru v této složce budete potřebovat oprávnění root. Pojmenujte soubor s identifikátorem, který chcete použít `systemd` a rozšířením `.service`. Použijte například `/etc/systemd/system/myapp.service`.
+Zkopírujte celý obsah `publish` adresáře do instalační složky na hostiteli Linuxu. Registrace služby vyžaduje přidání do *unit file* `/etc/systemd/system` adresáře speciální soubor nazývaný soubor jednotky . K vytvoření souboru v této složce budete potřebovat oprávnění root. Pojmenujte soubor identifikátorem, `systemd` který chcete `.service` použít, a příponou. Použijte například `/etc/systemd/system/myapp.service`.
 
-Soubor služby používá formát INI, jak je znázorněno v následujícím příkladu:
+Soubor služby používá formát INI, jak je znázorněno v tomto příkladu:
 
 ```ini
 [Unit]
@@ -107,16 +107,16 @@ ExecStart=/usr/sbin/myapp
 WantedBy=multi-user.target
 ```
 
-Vlastnost `Type=notify` oznamuje `systemd`, že ji aplikace upozorní na spuštění a vypnutí. Nastavení `WantedBy=multi-user.target` způsobí, že se služba spustí, když systém Linux dosáhne "runlevel 2", což znamená, že je aktivní negrafické prostředí pro více uživatelů.
+Vlastnost `Type=notify` říká, `systemd` že aplikace ji upozorní na spuštění a vypnutí. Nastavení `WantedBy=multi-user.target` způsobí spuštění služby, když systém Linux dosáhne "runlevel 2", což znamená, že je aktivní negrafické prostředí pro více uživatelů.
 
-Předtím, než `systemd` rozpozná službu, musí znovu načíst konfiguraci. `systemd` můžete ovládat pomocí příkazu `systemctl`. Po opětovném načtení pomocí dílčího příkazu `status` potvrďte, že se aplikace úspěšně zaregistrovala.
+Předtím, než `systemd` rozpozná službu, je třeba znovu načíst jeho konfiguraci. Řízení `systemd` pomocí příkazu. `systemctl` Po opětovném načtení použijte `status` podpříkaz k potvrzení, že aplikace byla úspěšně zaregistrována.
 
 ```console
 sudo systemctl daemon-reload
 sudo systemctl status myapp
 ```
 
-Pokud jste službu správně nakonfigurovali, získáte následující výstup:
+Pokud jste službu nakonfigurovali správně, získáte následující výstup:
 
 ```text
 myapp.service - My gRPC Application
@@ -124,52 +124,52 @@ myapp.service - My gRPC Application
  Active: inactive (dead)
 ```
 
-Službu spusťte pomocí příkazu `start`.
+Ke `start` spuštění služby použijte příkaz.
 
 ```console
 sudo systemctl start myapp.service
 ```
 
 > [!TIP]
-> Rozšíření `.service` je při použití `systemctl start`volitelné.
+> Rozšíření `.service` je volitelné, pokud `systemctl start`používáte .
 
-Chcete-li sdělit `systemd`, aby se služba automaticky spouštěla při spuštění systému, použijte příkaz `enable`.
+Chcete-li spustit `systemd` službu automaticky při `enable` spuštění systému, použijte příkaz.
 
 ```console
 sudo systemctl enable myapp
 ```
 
-### <a name="log-to-journald"></a>Přihlášení do deníku
+### <a name="log-to-journald"></a>Protokolovat do deníku
 
-Ekvivalent systému Linux v protokolu událostí Windows je `journald`, strukturované protokolovací služby protokolování, která je součástí `systemd`. Protokolovat zprávy zapsané do standardního výstupu pomocí démona Linux se automaticky zapisují do `journald`. Chcete-li nakonfigurovat úrovně protokolování, použijte část `Console` v konfiguraci protokolování. Metoda `UseSystemd` Host Builder automaticky konfiguruje výstupní formát konzoly tak, aby odpovídaly deníku.
+Linuxový ekvivalent protokolu událostí `journald`systému Windows je strukturovaná systémová `systemd`služba protokolování, která je součástí aplikace . Protokolovat zprávy zapsané do standardního výstupu linuxovým `journald`daemonem jsou automaticky zapsány do aplikace . Chcete-li konfigurovat úrovně `Console` protokolování, použijte část konfigurace protokolování. Metoda `UseSystemd` tvůrce hostitelů automaticky konfiguruje výstupní formát konzoly tak, aby vyhovoval deníku.
 
-Vzhledem k tomu, že `journald` je standard pro protokoly Linux, je k tomu integrovaná celá řada nástrojů. Protokoly můžete snadno směrovat z `journald` do externího systému protokolování. Místně pracujete na hostiteli pomocí příkazu `journalctl` k zobrazení protokolů z příkazového řádku.
+Vzhledem k tomu, `journald` že je standardem pro protokoly Linux, různé nástroje integrovat s ním. Protokoly můžete snadno `journald` směrovat do externího systému protokolování. Pracovat místně na hostiteli, můžete `journalctl` použít příkaz k zobrazení protokolů z příkazového řádku.
 
 ```console
 sudo journalctl -u myapp
 ```
 
 > [!TIP]
-> Pokud máte k dispozici prostředí GUI na vašem hostiteli, je pro Linux k dispozici několik grafických prohlížečů, jako jsou například *QJournalctl* a *GNOME-* log.
+> Pokud máte na hostiteli k dispozici prostředí GUI, je k dispozici několik grafických prohlížečů protokolů pro Linux, jako jsou *QJournalctl* a *gnome-logs*.
 
-Další informace o dotazování deníku `systemd` z příkazového řádku pomocí `journalctl`najdete [na stránkách Man](https://manpages.debian.org/buster/systemd/journalctl.1).
+Další informace o dotazování `systemd` deníku z příkazového řádku pomocí naleznete `journalctl`na stránkách [man](https://manpages.debian.org/buster/systemd/journalctl.1).
 
 ## <a name="https-certificates-for-self-hosted-applications"></a>Certifikáty HTTPS pro samoobslužné aplikace
 
-Pokud spouštíte aplikaci gRPC v produkčním prostředí, měli byste použít certifikát TLS od důvěryhodné certifikační autority (CA). Tato certifikační autorita může být veřejná certifikační autoritou nebo interní pro vaši organizaci.
+Pokud v produkčním provozu používáte aplikaci gRPC, měli byste použít certifikát TLS od důvěryhodné certifikační autority (CA). Tato certifikační autorita může být veřejná certifikační autorita nebo interní certifikační autorita pro vaši organizaci.
 
-Na hostitelích se systémem Windows můžete načíst certifikát z zabezpečeného [úložiště certifikátů](/windows/win32/seccrypto/managing-certificates-with-certificate-stores) pomocí třídy <xref:System.Security.Cryptography.X509Certificates.X509Store>. Můžete také použít třídu `X509Store` s úložištěm klíčů OpenSSL na některých hostitelích se systémem Linux.
+Na hostitelích systému Windows můžete certifikát načíst <xref:System.Security.Cryptography.X509Certificates.X509Store> z úložiště zabezpečených [certifikátů](/windows/win32/seccrypto/managing-certificates-with-certificate-stores) pomocí třídy. Třídu `X509Store` můžete také použít s úložištěm klíčů OpenSSL na některých hostitelích Linuxu.
 
-Můžete také vytvořit certifikáty pomocí jednoho z [konstruktorů X509Certificate2](xref:System.Security.Cryptography.X509Certificates.X509Certificate2.%23ctor%2A), a to z těchto:
+Certifikáty můžete také vytvořit pomocí jednoho z [konstruktorů X509Certificate2](xref:System.Security.Cryptography.X509Certificates.X509Certificate2.%23ctor%2A), a to buď z následujících:
 
-* Soubor, například soubor `.pfx` chráněný silným heslem
-* Binární data načtená ze zabezpečené služby úložiště, jako je [Azure Key Vault](https://azure.microsoft.com/services/key-vault/)
+* Soubor, například `.pfx` soubor chráněný silným heslem
+* Binární data načtená ze služby zabezpečeného úložiště, jako je [azure key vault](https://azure.microsoft.com/services/key-vault/)
 
 Kestrel můžete nakonfigurovat tak, aby používal certifikát dvěma způsoby: z konfigurace nebo v kódu.
 
 ### <a name="set-https-certificates-by-using-configuration"></a>Nastavení certifikátů HTTPS pomocí konfigurace
 
-Konfigurační přístup vyžaduje nastavení cesty k souboru `.pfx` certifikátu a heslo v oddílu konfigurace Kestrel. V `appsettings.json`by to vypadalo takto:
+Konfigurační přístup vyžaduje nastavení `.pfx` cesty k souboru certifikátu a hesla v části konfigurace kestrelu. V `appsettings.json`, které by vypadaly takto:
 
 ```json
 {
@@ -184,14 +184,14 @@ Konfigurační přístup vyžaduje nastavení cesty k souboru `.pfx` certifikát
 }
 ```
 
-Zadejte heslo pomocí zabezpečeného zdroje konfigurace, například Azure Key Vault nebo trezoru Hashicorp.
+Zadejte heslo pomocí zabezpečeného konfiguračního zdroje, jako je Azure Key Vault nebo Hashicorp Vault.
 
 > [!IMPORTANT]
-> V konfiguračních souborech neukládejte nešifrovaná hesla.
+> Neuklápejte nešifrovaná hesla do konfiguračních souborů.
 
 ### <a name="set-https-certificates-in-code"></a>Nastavení certifikátů HTTPS v kódu
 
-Chcete-li nakonfigurovat HTTPS na Kestrel v kódu, použijte metodu `ConfigureKestrel` pro `IWebHostBuilder` ve třídě `Program`.
+Chcete-li nakonfigurovat protokol HTTPS na `ConfigureKestrel` kestrelu v kódu, použijte metodu ve `IWebHostBuilder` `Program` třídě.
 
 ```csharp
 public static IHostBuilder CreateHostBuilder(string[] args) =>
@@ -209,8 +209,8 @@ public static IHostBuilder CreateHostBuilder(string[] args) =>
         });
 ```
 
-Znovu nezapomeňte uložit heslo pro soubor `.pfx` v a načíst ho ze zabezpečeného zdroje konfigurace.
+Opět nezapomeňte uložit heslo pro `.pfx` soubor a načíst z zabezpečeného konfiguračního zdroje.
 
 >[!div class="step-by-step"]
 >[Předchozí](grpc-in-production.md)
->[Další](docker.md)
+>[další](docker.md)

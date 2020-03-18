@@ -1,28 +1,28 @@
 ---
-title: Kurzy ML.NET
-description: Prozkoumejte kurzy ML.NET, kde se dozvíte, jak vytvářet vlastní řešení AI a integrovat je do aplikací .NET.
+title: ML.NET výukové programy
+description: Prozkoumejte ML.NET kurzy, kde se dozvíte, jak vytvářet vlastní řešení AI a integrovat je do aplikací .NET.
 ms.date: 07/08/2019
 ms.openlocfilehash: 771ecd83d3f901af84da1f55d7b48152e8145205
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "75716623"
 ---
-# <a name="mlnet-tutorials"></a>Kurzy ML.NET
+# <a name="mlnet-tutorials"></a>ML.NET výukové programy
 
-V následujících kurzech se dozvíte, jak používat [ml.NET](../index.yml) k vytváření vlastních řešení pro strojové učení a jejich integraci do aplikací .NET:
+Následující kurzy vám umožní pochopit, jak používat [ML.NET](../index.yml) k vytváření vlastních řešení strojového učení a jejich integraci do aplikací .NET:
 
-- [Analýza mínění](sentiment-analysis.md): ukazuje, jak použít **binární úlohu klasifikace** pomocí ml.NET.
-- [Klasifikace problému GitHub](github-issue-classification.md): ukazuje, jak použít úlohu **klasifikace s více třídami** pomocí ml.NET.
-- [Prediktivní odhad ceny](predict-prices.md): ukazuje, jak použít **regresní** úlohu pomocí ml.NET.
-- [Clustering Iris](iris-clustering.md): ukazuje, jak použít úlohu **clusteringu** pomocí ml.NET.
-- [Doporučení](movie-recommendation.md): generování filmových **doporučení** na základě předchozích hodnocení uživatelů
-- [Klasifikace obrázku](image-classification.md): ukazuje, jak přeškolovat stávající TensorFlow model a vytvořit vlastní klasifikátor obrázků pomocí ml.NET.
+- [Analýza mínění](sentiment-analysis.md): ukazuje, jak použít **úlohu binární klasifikace** pomocí ML.NET.
+- [Klasifikace problémů GitHub](github-issue-classification.md): ukazuje, jak použít úlohu **klasifikace více tříd** pomocí ML.NET.
+- [Prediktor ceny](predict-prices.md): ukazuje, jak použít **regresní** úlohu pomocí ML.NET.
+- [Shlukování duhovky](iris-clustering.md): ukazuje, jak použít **clustering úlohu** pomocí ML.NET.
+- [Doporučení](movie-recommendation.md): generovat **doporučení** pro filmy na základě předchozích hodnocení uživatelů
+- [Klasifikace obrázků](image-classification.md): ukazuje, jak přeškolit existující model TensorFlow k vytvoření vlastního klasifikátoru obrázků pomocí ML.NET.
 - [Detekce anomálií](sales-anomaly-detection.md): ukazuje, jak vytvořit aplikaci pro detekci anomálií pro analýzu dat prodeje produktu.
-- [Detekovat objekty v obrázcích](object-detection-onnx.md): ukazuje, jak detekovat objekty v obrázcích pomocí předem připraveného modelu ONNX.
-- [Klasifikace mínění revizí filmů](text-classification-tf.md): Naučte se, jak načíst předučený TensorFlow model pro klasifikaci mínění recenze filmů.
+- [Detekce objektů v obrazech](object-detection-onnx.md): ukazuje, jak detekovat objekty v obrazech pomocí předem trénovaného modelu ONNX.
+- [Klasifikujte sentiment filmových recenzí](text-classification-tf.md): naučte se načítat předem vycvičený model TensorFlow, abyste klasifikovali sentiment filmových recenzí.
 
 ## <a name="next-steps"></a>Další kroky
 
-Další příklady, které používají ML.NET, najdete v úložišti GitHub pro [dotnet/machinelearning-Samples](https://github.com/dotnet/machinelearning-samples) .
+Další příklady, které používají ML.NET, podívejte se na úložiště GitHub [dotnet/machinelearning-samples.](https://github.com/dotnet/machinelearning-samples)

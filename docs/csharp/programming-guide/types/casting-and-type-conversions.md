@@ -1,5 +1,5 @@
 ---
-title: Přetypování a převody typů C# – Průvodce programováním
+title: Převody odlitků a typů – průvodce programováním jazyka C#
 ms.date: 07/20/2015
 helpviewer_keywords:
 - type conversion [C#]
@@ -10,40 +10,40 @@ helpviewer_keywords:
 - converting types [C#]
 ms.assetid: 568df58a-d292-4b55-93ba-601578722878
 ms.openlocfilehash: 252d509617ab5dbc53b282bac52e356396d82fab
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "75711893"
 ---
-# <a name="casting-and-type-conversions-c-programming-guide"></a>Přetypování a převody typůC# (Průvodce programováním)
+# <a name="casting-and-type-conversions-c-programming-guide"></a>Převody přetypování a typu (Průvodce programováním jazyka C#)
 
-Vzhledem C# k tomu, že je staticky zadán v době kompilace, poté, co je deklarována proměnná, nelze ji deklarovat znovu ani přiřadit hodnotu jiného typu, pokud tento typ není implicitně převeden na typ proměnné. `string` například nelze implicitně převést na `int`. Proto po deklaraci `i` jako `int`nemůžete k ní přiřadit řetězec "Hello", jak ukazuje následující kód:
+Protože C# je staticky zadán v době kompilace, po deklarované proměnné, nemůže být deklarována znovu nebo přiřazena hodnota jiného typu, pokud tento typ je implicitně převoditelný s typem proměnné. Například `string` nelze implicitně převést `int`na . Proto po deklarování `i` jako `int`, nelze přiřadit řetězec "Hello" k němu, jak ukazuje následující kód:
   
 ```csharp  
 int i;  
 i = "Hello"; // error CS0029: Cannot implicitly convert type 'string' to 'int'
 ```  
   
- Někdy však může být nutné zkopírovat hodnotu do proměnné nebo parametru metody jiného typu. Například můžete mít celočíselnou proměnnou, kterou potřebujete předat metodě, jejíž parametr je zadán jako `double`. Nebo může být nutné přiřadit proměnnou třídy proměnné typu rozhraní. Tyto druhy operací se nazývají *převody typu*. V C#nástroji můžete provádět následující typy převodů:  
+ Někdy však může být nutné zkopírovat hodnotu do parametru proměnné nebo metody jiného typu. Můžete mít například integer ovou proměnnou, kterou potřebujete předat metodě, jejíž parametr je zadán jako `double`. Nebo může být nutné přiřadit proměnnou třídy proměnné typu rozhraní. Tyto druhy operací se nazývají *převody typu*. V c# můžete provádět následující druhy převodů:  
   
-- **Implicitní převody**: nevyžaduje se žádná speciální syntaxe, protože převod je typově bezpečný a neztratí se žádná data. Příklady zahrnují převody z menších na větší integrální typy a převody z odvozených tříd na základní třídy.  
+- **Implicitní převody**: Není vyžadována žádná speciální syntaxe, protože převod je typově bezpečný a žádná data nebudou ztracena. Příklady zahrnují převody z menších na větší integrální typy a převody z odvozených tříd na základní třídy.  
   
-- **Explicitní převody (přetypování)** : explicitní převody vyžadují [operátor přetypování `()`](../../language-reference/operators/type-testing-and-cast.md#cast-operator-). Přetypování je požadováno v případě, že může dojít ke ztrátě informací v převodu nebo v případě, že převod nemusí být úspěšný z jiných důvodů. Mezi typické příklady patří číselný převod na typ, který má menší přesnost nebo menší rozsah, a převod instance základní třídy na odvozenou třídu.  
+- **Explicitní převody (přetypáty):** Explicitní převody vyžadují [operátor `()`přetypádka ](../../language-reference/operators/type-testing-and-cast.md#cast-operator-). Obsazení je vyžadováno v případě, že informace mohou být ztraceny v převodu nebo pokud převod nemusí být úspěšný z jiných důvodů. Mezi typické příklady patří číselný převod na typ, který má menší přesnost nebo menší rozsah, a převod instance základní třídy na odvozenou třídu.  
   
-- **Uživatelem definované převody**: uživatelsky definované převody jsou prováděny speciálními metodami, které můžete definovat pro povolení explicitních a implicitních převodů mezi vlastními typy, které nemají základní třídu odvozenou od atributu Base Class. Další informace naleznete v tématu [uživatelsky definované operátory převodu](../../language-reference/operators/user-defined-conversion-operators.md).  
+- **Uživatelem definované převody**: Uživatelem definované převody jsou prováděny speciálními metodami, které můžete definovat tak, aby bylo možné povolit explicitní a implicitní převody mezi vlastními typy, které nemají vztah třídy odvozené základní třídy. Další informace naleznete v [tématu User-defined operátory převodu](../../language-reference/operators/user-defined-conversion-operators.md).  
   
-- **Převody s podpůrnými třídami**: pro převod mezi nekompatibilními typy, jako jsou například celá čísla a <xref:System.DateTime?displayProperty=nameWithType> objekty nebo hexadecimální řetězce a pole bajtů, lze použít třídu <xref:System.BitConverter?displayProperty=nameWithType>, třídu <xref:System.Convert?displayProperty=nameWithType> a metody `Parse` předdefinovaných číselných typů, jako je například <xref:System.Int32.Parse%2A?displayProperty=nameWithType>. Další informace naleznete v tématu [Jak převést bajtové pole na int](./how-to-convert-a-byte-array-to-an-int.md), [Jak převést řetězec na číslo](./how-to-convert-a-string-to-a-number.md)a [Jak převádět mezi hexadecimálními řetězci a číselnými typy](./how-to-convert-between-hexadecimal-strings-and-numeric-types.md).
+- **Převody s pomocnými třídami**: Chcete-li převést mezi <xref:System.DateTime?displayProperty=nameWithType> nekompatibilními typy, například celočíselnými a objekty, nebo <xref:System.BitConverter?displayProperty=nameWithType> šestnáctkovými řetězci a bajtovými poli, můžete použít třídu, třídu <xref:System.Convert?displayProperty=nameWithType> a `Parse` metody předdefinovaných číselných typů, například <xref:System.Int32.Parse%2A?displayProperty=nameWithType>. Další informace naleznete [v tématech Převod bajtového pole na int](./how-to-convert-a-byte-array-to-an-int.md), [Jak převést řetězec na číslo](./how-to-convert-a-string-to-a-number.md)a Jak [převést mezi šestnáctkovými řetězci a číselnými typy](./how-to-convert-between-hexadecimal-strings-and-numeric-types.md).
   
 ## <a name="implicit-conversions"></a>Implicitní převody
 
- U předdefinovaných číselných typů lze vytvořit implicitní převod, pokud hodnota, která má být uložena, se může vejít do proměnné, aniž by byla zkrácena nebo zaokrouhlena. U integrálních typů to znamená, že rozsah zdrojového typu je správná podmnožina rozsahu pro cílový typ. Například proměnná typu [Long](../../language-reference/builtin-types/integral-numeric-types.md) (64-bit integer) může ukládat libovolnou hodnotu, kterou může [Uložit celé číslo (32](../../language-reference/builtin-types/integral-numeric-types.md) ). V následujícím příkladu kompilátor implicitně převede hodnotu `num` na pravé straně k typu `long` před přiřazením do `bigNum`.  
+ Pro předdefinované číselné typy implicitní převod lze provést, když hodnota, která má být uložena vejde do proměnné bez zkrácení nebo zaokrouhlení off. Pro integrální typy to znamená, že rozsah typu zdroje je správná podmnožina rozsahu pro cílový typ. Například proměnná typu [long](../../language-reference/builtin-types/integral-numeric-types.md) (64bitové celé číslo) může ukládat libovolnou hodnotu, kterou může ukládat [int](../../language-reference/builtin-types/integral-numeric-types.md) (32bitové celé číslo). V následujícím příkladu kompilátor implicitně převede hodnotu `num` vpravo na typ `bigNum` `long` před jeho přiřazením .  
   
  [!code-csharp[csProgGuideTypes#34](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsProgGuideTypes/CS/Class1.cs#34)]  
   
- Úplný seznam všech implicitních převodů čísel najdete v části [implicitní číselné převody](../../language-reference/builtin-types/numeric-conversions.md#implicit-numeric-conversions) v tématu [integrovaných číselných převodů](../../language-reference/builtin-types/numeric-conversions.md) .
+ Úplný seznam všech implicitních číselných konverzí naleznete v části [Implicitní číselné převody](../../language-reference/builtin-types/numeric-conversions.md#implicit-numeric-conversions) v článku [Předdefinované číselné převody.](../../language-reference/builtin-types/numeric-conversions.md)
   
- U typů odkazů je implicitní převod vždy existovat ze třídy na jakoukoli z přímých nebo nepřímých základních tříd nebo rozhraní. Žádná speciální syntaxe není nutná, protože odvozená třída vždy obsahuje všechny členy základní třídy.  
+ Pro typy odkazů implicitní převod vždy existuje z třídy do některé z jeho přímé nebo nepřímé základní třídy nebo rozhraní. Žádná speciální syntaxe není nutná, protože odvozená třída vždy obsahuje všechny členy základní třídy.  
   
 ```csharp
 Derived d = new Derived();  
@@ -52,13 +52,13 @@ Base b = d; // Always OK.
   
 ## <a name="explicit-conversions"></a>Explicitní převody
 
- Nicméně, pokud převod nelze provést bez rizika ztráty informací, kompilátor vyžaduje, abyste provedli explicitní převod, který se nazývá *přetypování*. Přetypování je způsob, jak explicitně informovat kompilátor, který máte v úmyslu převést, a že víte, že by mohlo dojít ke ztrátě dat. Chcete-li provést přetypování, zadejte typ, na který se předáváte, do závorek před hodnotu nebo proměnnou, která má být převedena. Následující program přetypování [Double](../../language-reference/builtin-types/floating-point-numeric-types.md) na [int](../../language-reference/builtin-types/integral-numeric-types.md). Program nebude zkompilován bez přetypování.  
+ Pokud však převod nelze provést bez rizika ztráty informací, kompilátor vyžaduje, abyste provedli explicitní převod, který se nazývá *přetypování*. Přetypování je způsob, jak explicitně informovat kompilátor, který chcete provést převod a že jste si vědomi, že může dojít ke ztrátě dat. Chcete-li provést přetypování, zadejte typ, do kterého přetypujte, v závorce před hodnotou nebo proměnnou, která má být převedena. Následující program [přetypovává double](../../language-reference/builtin-types/floating-point-numeric-types.md) [na int](../../language-reference/builtin-types/integral-numeric-types.md). Program nebude kompilovat bez přetypování.  
   
  [!code-csharp[csProgGuideTypes#2](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsProgGuideTypes/CS/Class1.cs#2)]  
   
- Úplný seznam podporovaných explicitních převodů naleznete v části [explicitní číselné převody](../../language-reference/builtin-types/numeric-conversions.md#explicit-numeric-conversions) v tématu [integrovaných číselných převodů](../../language-reference/builtin-types/numeric-conversions.md) .
+ Úplný seznam podporovaných explicitních číselných konverzí naleznete v části [Explicitní číselné převody](../../language-reference/builtin-types/numeric-conversions.md#explicit-numeric-conversions) v článku [Předdefinované číselné konverze.](../../language-reference/builtin-types/numeric-conversions.md)
   
- U typů odkazů je vyžadováno explicitní přetypování, pokud potřebujete převést ze základního typu na odvozený typ:  
+ Pro typy odkazů je vyžadován explicitní přetypování, pokud potřebujete převést ze základního typu na odvozený typ:  
   
 ```csharp  
 // Create a new derived type.  
@@ -74,25 +74,25 @@ Animal a = g;
 Giraffe g2 = (Giraffe) a;  
 ```  
   
- Operace přetypování mezi typy odkazů nemění typ běhu podkladového objektu; změní jenom typ hodnoty, která se používá jako odkaz na tento objekt. Další informace najdete v tématu [polymorfismus](../classes-and-structs/polymorphism.md).  
+ Operace přetypování mezi typy odkazů nezmění typ běhu podkladového objektu; změní pouze typ hodnoty, která se používá jako odkaz na tento objekt. Další informace naleznete [v tématu Polymorfismus](../classes-and-structs/polymorphism.md).  
   
-## <a name="type-conversion-exceptions-at-run-time"></a>Výjimky převodu typů v době běhu
+## <a name="type-conversion-exceptions-at-run-time"></a>Zadejte výjimky převodu za běhu
 
- V některých převodech typu reference kompilátor nemůže určit, zda bude přetypování platné. Je možné, že operace přetypování, která se správně zkompiluje, aby selhala v době běhu. Jak je znázorněno v následujícím příkladu, přetypování, které selže v době běhu, způsobí vyvolání <xref:System.InvalidCastException>.  
+ V některých převodech typu odkazu kompilátor nemůže určit, zda bude přetypování platné. Je možné pro přetypování operace, která zkompiluje správně nezdaří v době běhu. Jak je znázorněno v následujícím příkladu, přetypovaného typu, který selže v době běhu způsobí, <xref:System.InvalidCastException> že vyvolá.  
   
  [!code-csharp[csProgGuideTypes#41](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsProgGuideTypes/CS/Class1.cs#41)]  
   
- C#poskytuje operátor [is](../../language-reference/operators/type-testing-and-cast.md#is-operator) , který umožňuje testovat kompatibilitu před samotným přetypováním. Další informace naleznete v tématu [jak bezpečně přetypovat pomocí porovnávání vzorů a operátorů as a is](../../how-to/safely-cast-using-pattern-matching-is-and-as-operators.md).  
+ C# poskytuje [je](../../language-reference/operators/type-testing-and-cast.md#is-operator) operátor, který vám umožní otestovat kompatibilitu před skutečně provedení přetypování. Další informace naleznete v tématu [Jak bezpečně přetypování pomocí porovnávání vzorů a as a is operátory](../../how-to/safely-cast-using-pattern-matching-is-and-as-operators.md).  
   
 ## <a name="c-language-specification"></a>specifikace jazyka C#
 
-Další informace naleznete v části [převody](~/_csharplang/spec/conversions.md) [ C# specifikace jazyka](~/_csharplang/spec/introduction.md).
+Další informace naleznete v části [Převody](~/_csharplang/spec/conversions.md) [ve specifikaci jazyka C#](~/_csharplang/spec/introduction.md).
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Průvodce programováním v jazyce C#](../index.md)
+- [Programovací příručka jazyka C#](../index.md)
 - [Typy](./index.md)
-- [() cast – operátor](../../language-reference/operators/type-testing-and-cast.md#cast-operator-)
-- [Uživatelsky definované operátory převodu](../../language-reference/operators/user-defined-conversion-operators.md)
-- [Převod generalizované typu](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/yy580hbd(v=vs.120))
+- [() operátor obsazení](../../language-reference/operators/type-testing-and-cast.md#cast-operator-)
+- [Operátory převodu definované uživatelem](../../language-reference/operators/user-defined-conversion-operators.md)
+- [Převod zobecněného typu](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/yy580hbd(v=vs.120))
 - [Jak převést řetězec na číslo](./how-to-convert-a-string-to-a-number.md)

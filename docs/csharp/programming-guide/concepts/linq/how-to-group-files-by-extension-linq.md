@@ -1,19 +1,19 @@
 ---
-title: Postup seskupení souborů podle přípony (LINQ) (C#)
+title: Jak seskupit soubory podle přípony (LINQ) (C#)
 ms.date: 07/20/2015
 ms.assetid: 21a98320-a5a1-4981-82d8-6a637e7d9018
-ms.openlocfilehash: d12b40c7dba7bd3e10f30ddfd394b25c36794428
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.openlocfilehash: 2ee1fa1291f5845c818395dfe038ec5894adc863
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75345903"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79169152"
 ---
-# <a name="how-to-group-files-by-extension-linq-c"></a>Postup seskupení souborů podle přípony (LINQ) (C#)
-Tento příklad ukazuje, jak lze LINQ použít k provádění pokročilých operací seskupení a řazení v seznamech souborů nebo složek. Ukazuje také výstup stránky v okně konzoly pomocí metod <xref:System.Linq.Enumerable.Skip%2A> a <xref:System.Linq.Enumerable.Take%2A>.  
+# <a name="how-to-group-files-by-extension-linq-c"></a>Jak seskupit soubory podle přípony (LINQ) (C#)
+Tento příklad ukazuje, jak linq lze použít k provádění rozšířené seskupení a řazení operace v seznamech souborů nebo složek. Také ukazuje, jak stránkovat výstup v <xref:System.Linq.Enumerable.Skip%2A> okně <xref:System.Linq.Enumerable.Take%2A> konzoly pomocí a metody.  
   
 ## <a name="example"></a>Příklad  
- Následující dotaz ukazuje, jak seskupit obsah zadaného stromu adresářů podle přípony názvu souboru.  
+ Následující dotaz ukazuje, jak seskupit obsah zadaného adresářového stromu podle přípony názvu souboru.  
   
 ```csharp  
 class GroupByExtension  
@@ -42,7 +42,7 @@ class GroupByExtension
             orderby fileGroup.Key  
             select fileGroup;  
   
-        // Display one group at a time. If the number of   
+        // Display one group at a time. If the number of
         // entries is greater than the number of lines  
         // in the console window, then page the output.  
         PageOutput(trimLength, queryGroupByExt);  
@@ -102,12 +102,12 @@ class GroupByExtension
 }  
 ```  
   
- Výstup z tohoto programu může být dlouhý v závislosti na podrobnostech místního systému souborů a nastavení, na které je `startFolder`. Pokud chcete povolit zobrazení všech výsledků, tento příklad ukazuje, jak stránky procházet výsledky. Stejné postupy můžete použít pro Windows a webové aplikace. Všimněte si, že vzhledem k tomu, že kód stránky má položky ve skupině, je nutná vnořená `foreach` smyčka. K dispozici je také některá další logika, která umožňuje vypočítat aktuální pozici v seznamu a umožnit uživateli zastavit stránkování a ukončit program. V tomto konkrétním případě se stránkovací dotaz spustí proti výsledkům uloženým v mezipaměti z původního dotazu. V jiných kontextech, jako je například LINQ to SQL, taková mezipaměť není nutná.  
+ Výstup z tohoto programu může být dlouhý, v závislosti na `startFolder` podrobnostech místního systému souborů a na tom, na co je nastaven. Chcete-li povolit zobrazení všech výsledků, tento příklad ukazuje, jak stránkovat výsledky. Stejné techniky lze použít pro systém Windows a webové aplikace. Všimněte si, že vzhledem k tomu, `foreach` že kód stránky položky ve skupině, vnořené smyčky je vyžadována. K dispozici je také některé další logiku vypočítat aktuální pozici v seznamu a umožnit uživateli zastavit stránkování a ukončovat program. V tomto konkrétním případě je stránkovací dotaz spuštěn proti výsledky uložené v mezipaměti z původního dotazu. V jiných kontextech, jako je například LINQ na SQL, takové ukládání do mezipaměti není vyžadováno.  
   
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
- Vytvořte projekt C# konzolové aplikace s direktivami `using` pro obory názvů System. Linq a System.IO.  
+ Vytvořte projekt aplikace konzoly `using` Jazyka C# se direktivami pro obory názvů System.Linq a System.IO.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [LINQ to Objects (C#)](./linq-to-objects.md)
-- [LINQ a souborové adresáře (C#)](./linq-and-file-directories.md)
+- [LINQ na objekty (C#)](./linq-to-objects.md)
+- [Linq a souborové adresáře (C#)](./linq-and-file-directories.md)
