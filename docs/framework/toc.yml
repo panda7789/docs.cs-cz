@@ -13,30 +13,31 @@
   items:
     - name: Domény a sestavení aplikací
       href: app-domains/
-    - name: Prostředky v aplikacích klasické pracovní plochy
+    - name: Prostředky v desktopových aplikacích
       href: resources/
     - name: Usnadnění
       href: ui-automation/
     - name: "Data a\_modelování"
       href: data/
     - name: Klientské aplikace
-      href: develop-client-apps.md
       items:
+        - name: Přehled
+          href: develop-client-apps.md
         - name: Windows Presentation Foundation
           href: wpf/
         - name: Windows Forms
           href: winforms/
-    - name: "Aplikace orientované na služby s\_použitím technologie WCF"
+    - name: Aplikace orientované na služby s použitím WCF
       href: wcf/
     - name: Windows Workflow Foundation
       href: windows-workflow-foundation/
-    - name: Aplikace spouštěné jako služby systému Windows
+    - name: Aplikace služeb Windows
       href: windows-services/
     - name: 64bitové aplikace
       href: 64-bit-apps.md
     - name: Webové aplikace s ASP.NET
       href: develop-web-apps-with-aspnet.md
-    - name: Síťové programování v rozhraní .NET Framework
+    - name: Síťové programování
       href: network-programming/
     - name: Konfigurace aplikací
       href: configure-apps/

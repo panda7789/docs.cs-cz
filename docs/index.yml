@@ -1,0 +1,246 @@
+### YamlMime:Hub
+title: Dokumentace pro .NET
+summary: Naučte se pomocí technologie .NET vytvářet aplikace v jazycích C#, Visual Basic a F# určené pro libovolnou platformu. Procházejte referenční informace k rozhraní API, ukázky kódu, kurzy a další zdroje informací.
+brand: dotnet
+metadata:
+  title: Dokumentace pro .NET
+  description: Naučte se pomocí technologie .NET vytvářet aplikace v jazycích C#, Visual Basic a F# určené pro libovolnou platformu. Procházejte referenční informace k rozhraní API, ukázky kódu, kurzy a další zdroje informací.
+  ms.product: dotnet
+  ms.topic: hub-page
+  ms.collection: collection
+  author: BillWagner
+  ms.author: wiwagn
+  ms.date: 12/19/2019
+  ms.openlocfilehash: 6b23ab2f0214f23d45499fcf8ab7c3f2771be15c
+  ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+  ms.translationtype: HT
+  ms.contentlocale: cs-CZ
+  ms.lasthandoff: 03/16/2020
+  ms.locfileid: "79416324"
+highlightedContent:
+  items:
+  - title: Úvod do jazyka C#. Rychlý interaktivní začátek.
+    itemType: get-started
+    url: csharp/tutorials/intro-to-csharp/hello-world.yml
+  - title: Vytvořte si svou první konzolovou aplikaci.
+    itemType: tutorial
+    url: core/get-started.md
+  - title: Vytvořte si svou první webovou aplikaci.
+    itemType: learn
+    url: https://dotnet.microsoft.com/learn/aspnet/hello-world-tutorial/intro
+  - title: Co je nového v dokumentaci pro .NET
+    itemType: whats-new
+    url: whats-new/index.yml
+conceptualContent:
+  title: 'Technologie .NET: Bezplatná. Pro různé platformy. Open source.'
+  summary: 'Vývojářská platforma pro vytváření všech vašich aplikací: webových, mobilních, desktopových, herních, aplikací IoT a dalších. Podporovaná v systémech Windows, Linux a macOS.'
+  items:
+  - title: Opensourcová technologie .NET
+    summary: Informace o .NET Core
+    links:
+    - url: core/index.md
+      itemType: overview
+      text: Přehled .NET Core
+    - url: core/whats-new/dotnet-core-3-1.md
+      itemType: whats-new
+      text: Co je nového v .NET Core 3.1
+    - url: standard/tour.md
+      itemType: overview
+      text: Prohlídka technologie .NET
+    - url: core/deploying/index.md
+      itemType: deploy
+      text: Nasazování aplikací .NET Core
+    - url: core/docker/build-container.md
+      itemType: tutorial
+      text: Kontejnerizace aplikací .NET Core pomocí Dockeru
+    - url: core/tutorials/index.md
+      itemType: tutorial
+      text: Kurzy
+  - title: Koncepty technologie .NET
+    summary: Seznamte se se základními koncepty technologie .NET.
+    links:
+    - url: https://channel9.msdn.com/Series/NET-Core-101/What-is-NET
+      itemType: video
+      text: Co je .NET?
+    - url: standard/index.md
+      itemType: overview
+      text: Přehled technologie .NET
+    - url: standard/net-standard.md
+      itemType: overview
+      text: .NET Standard
+    - url: /aspnet/core/
+      itemType: overview
+      text: ASP.NET Core
+    - url: /ef/core/
+      itemType: overview
+      text: Entity Framework Core
+    - url: standard/get-started.md
+      itemType: get-started
+      text: Začínáme
+    - url: standard/components.md
+      itemType: concept
+      text: Součásti architektury technologie .NET
+    - url: framework/index.md
+      itemType: overview
+      text: Aplikace pro .NET Framework (Windows)
+  - title: Vývoj aplikací .NET
+    summary: Začněte vyvíjet pomocí technologie .NET.
+    links:
+    - url: core/sdk.md
+      itemType: download
+      text: Stažení sady .NET Core SDK
+    - url: core/tools/index.md
+      itemType: overview
+      text: Přehled rozhraní .NET Core CLI
+    - url: core/porting/index.md
+      itemType: how-to-guide
+      text: Přizpůsobení z .NET Framework na .NET Core
+    - url: core/compatibility/index.md
+      itemType: concept
+      text: Zásadní změny v .NET Core
+    - url: desktop-wpf/overview/index.md
+      itemType: overview
+      text: Vytváření desktopových aplikací .NET Core pro Windows
+    - url: standard/library-guidance/index.md
+      itemType: concept
+      text: Pokyny pro opensourcovou knihovnu
+  - title: Příručky architektury .NET
+    summary: Přečtěte si základní pokyny pro .NET týkající se vývoje a architektury.
+    links:
+    - url: architecture/microservices/index.md
+      itemType: architecture
+      text: 'Mikroslužby .NET: Architektura kontejnerizovaných aplikací .NET'
+    - url: architecture/modern-web-apps-azure/index.md
+      itemType: architecture
+      text: Navrhování moderních webových aplikací pomocí ASP.NET Core a Azure
+    - url: architecture/containerized-lifecycle/index.md
+      itemType: architecture
+      text: Životní cyklus kontejnerizovaných aplikací Dockeru s platformou a nástroji Microsoft
+    - url: architecture/modernize-with-azure-containers/index.md
+      itemType: architecture
+      text: Modernizace stávajících aplikací .NET pomocí cloudu Azure a kontejnerů Windows
+    footerLink:
+      url: architecture/index.yml
+      text: Všechny příručky o architektuře
+tools:
+  title: Programovací jazyky
+  summary: Aplikace .NET můžete psát v jazyce C#, F# nebo Visual Basic.
+  items:
+  - title: Moderní, objektově orientovaný člen řady C zajišťující bezpečnost typů
+    imageSrc: https://docs.microsoft.com/media/logos/logo_Csharp.svg
+    url: csharp/index.yml
+  - title: Jazyk funkčního programování pro .NET
+    imageSrc: https://docs.microsoft.com/media/logos/logo_Fsharp.svg
+    url: fsharp/index.yml
+  - title: Přístupný jazyk s čitelnou syntaxí
+    imageSrc: https://docs.microsoft.com/media/logos/logo_VB.svg
+    url: visual-basic/index.yml
+additionalContent:
+  sections:
+  - title: Vytvořte si svoji aplikaci
+    summary: Můžete si zvolit webovou, mobilní, desktopovou nebo herní aplikaci, aplikaci IoT a další.
+    items:
+    - title: Web
+      links:
+      - url: /aspnet/core/getting-started
+        text: Vytvořte si svou první aplikaci
+      - url: /aspnet/core/tutorials
+        text: Kurzy k ASP.NET Core
+      - url: /aspnet/core
+        text: Co je ASP.NET Core?
+      - url: /aspnet/core/tutorials/first-mvc-app/start-mvc
+        text: ASP.NET Core v sadě Visual Studio
+      - url: /aspnet/mvc/overview/deployment/docker-aspnetmvc
+        text: Aplikace ASP.NET MVC v kontejnerech Windows
+      - url: /aspnet/core/blazor/
+        text: 'Blazor: Interaktivní webové uživatelské rozhraní na straně klienta s technologií .NET'
+    - title: Nativní cloudové aplikace a mikroslužby
+      links:
+      - url: /dotnet/azure/
+        text: Dokumentace k Azure pro .NET
+      - url: /azure/storage
+        text: Úložiště
+      - url: /dotnet/fsharp/using-fsharp-on-azure/
+        text: Použití jazyka F# v Azure
+      - url: architecture/serverless/index.md
+        text: 'Bezserverové aplikace: Architektura, vzory a implementace v Azure'
+      - url: architecture/microservices/index.md
+        text: 'Mikroslužby .NET: Architektura pro kontejnerizované aplikace .NET'
+    - title: Mobilní zařízení
+      links:
+      - url: /xamarin/ios/
+        text: Xamarin.iOS
+      - url: /xamarin/android
+        text: Xamarin.Android
+      - url: /xamarin/xamarin-forms
+        text: Xamarin.Forms
+    - title: Aplikace klasické pracovní plochy
+      links:
+      - url: /uwp
+        text: Univerzální aplikace pro Windows
+      - url: desktop-wpf/index.md
+        text: Windows Presentation Foundation (.NET Core)
+      - url: framework/wpf/index.md
+        text: Windows Presentation Foundation (.NET Framework)
+      - url: framework/winforms/index.md
+        text: Windows Forms
+      - url: /xamarin/mac
+        text: Xamarin pro macOS
+    - title: Hry
+      links:
+      - url: https://visualstudio.microsoft.com/vs/features/game-development/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link
+        text: Vývoj her v sadě Visual Studio
+      - url: https://docs.cryengine.com/display/CEPROG/C%23+Programming
+        text: Naučte se používat CRYENGINE k vytváření her v jazyce C#
+      - url: http://www.monogame.net/documentation/?page=main
+        text: Vytváření her v jazyce C# pomocí knihovny MonoGame
+      - url: https://docs.unity3d.com/Manual/index.html
+        text: Naučte se používat platformu Unity k vytváření 2D a 3D her v jazyce C#
+    - title: Strojové učení a umělá inteligence
+      links:
+      - url: machine-learning/index.yml
+        text: Vytváření vlastních řešení umělé inteligence pomocí ML.NET
+      - url: /azure/cognitive-services/
+        text: Azure Cognitive Services
+      - url: /azure/machine-learning
+        text: Strojové učení Azure
+      - url: spark/index.yml
+        text: .NET for Apache Spark
+    - title: Internet věcí (IoT)
+      links:
+      - url: https://channel9.msdn.com/Shows/On-NET/IoT-support-for-NET-Core
+        text: '.NET: Informace o podpoře IoT v .NET Core'
+      - url: https://docs.microsoft.com/archive/msdn-magazine/2019/august/net-core-cross-platform-iot-programming-with-net-core-3-0
+        text: Programování IoT pro různé platformy pomocí .NET Core 3.0
+      - url: https://github.com/dotnet/iot
+        text: Knihovny .NET Core pro IoT
+      - url: https://www.nuget.org/packages/System.Device.Gpio
+        text: Balíček NuGet System.Device.Gpio
+  - title: Části s referenčními informacemi k rozhraním API
+    summary: Hledejte v referenční dokumentaci k rozhraním .NET API uspořádané podle vašich zájmů.
+    items:
+    - title: Reference k rozhraní .NET Core API
+      summary: Referenční dokumentace k rozhraní API pro .NET Core
+      url: https://docs.microsoft.com/dotnet/api/?view=netcore-3.1
+    - title: Reference k rozhraní .NET Framework API
+      summary: Referenční dokumentace k rozhraní API pro .NET Framework
+      url: https://docs.microsoft.com/dotnet/api/?view=netframework-4.8
+    - title: Reference k rozhraní ASP.NET Core API
+      summary: Referenční dokumentace k rozhraní API pro ASP.NET Core
+      url: https://docs.microsoft.com/dotnet/api/?view=aspnetcore-3.1
+    - title: Reference k rozhraní ML.NET API
+      summary: Referenční dokumentace k rozhraní API pro ML.NET
+      url: https://docs.microsoft.com/dotnet/api/?view=ml-dotnet
+    - title: Reference k rozhraní .NET for Apache Spark API
+      summary: Referenční dokumentace k rozhraní API pro .NET for Apache Spark
+      url: https://docs.microsoft.com/dotnet/api/?view=spark-dotnet
+    - title: Referenční dokumentace jazyka C#
+      summary: Referenční dokumentace a specifikace jazyka C#
+      url: csharp/language-reference/index.md
+    - title: Referenční dokumentace jazyka F#
+      summary: Referenční dokumentace jazyka F#
+      url: fsharp/language-reference/index.md
+    - title: Referenční dokumentace jazyka Visual Basic
+      summary: Referenční dokumentace a specifikace jazyka Visual Basic
+      url: visual-basic/language-reference/index.md
+  footer: Přispívejte do dokumentace pro .NET. Přečtěte si [Průvodce přispěvatele](https://github.com/dotnet/Docs/blob/master/CONTRIBUTING.md).
