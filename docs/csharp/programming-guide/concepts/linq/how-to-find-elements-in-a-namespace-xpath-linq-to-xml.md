@@ -1,25 +1,25 @@
 ---
-title: Jak najít elementy v oboru názvů (XPath-LINQ to XML) (C#)
+title: Jak najít prvky v oboru názvů (XPath-LINQ na XML) (C#)
 ms.date: 07/20/2015
 ms.assetid: cae1c4ac-6cd5-46cf-9b1c-bd85bc9b7ea9
 ms.openlocfilehash: da9d819be5234a2429b6eab276f89bd0d877d4a7
-ms.sourcegitcommit: fbb8a593a511ce667992502a3ce6d8f65c594edf
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/16/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "74141064"
 ---
-# <a name="how-to-find-elements-in-a-namespace-xpath-linq-to-xml-c"></a><span data-ttu-id="d9c0f-102">Jak najít elementy v oboru názvů (XPath-LINQ to XML) (C#)</span><span class="sxs-lookup"><span data-stu-id="d9c0f-102">How to find elements in a namespace (XPath-LINQ to XML) (C#)</span></span>
+# <a name="how-to-find-elements-in-a-namespace-xpath-linq-to-xml-c"></a><span data-ttu-id="38518-102">Jak najít prvky v oboru názvů (XPath-LINQ na XML) (C#)</span><span class="sxs-lookup"><span data-stu-id="38518-102">How to find elements in a namespace (XPath-LINQ to XML) (C#)</span></span>
 
-<span data-ttu-id="d9c0f-103">Výrazy XPath můžou najít uzly v konkrétním oboru názvů.</span><span class="sxs-lookup"><span data-stu-id="d9c0f-103">XPath expressions can find nodes in a particular namespace.</span></span> <span data-ttu-id="d9c0f-104">Výrazy XPath používají předpony oboru názvů pro zadání oborů názvů.</span><span class="sxs-lookup"><span data-stu-id="d9c0f-104">XPath expressions use namespace prefixes for specifying namespaces.</span></span> <span data-ttu-id="d9c0f-105">Chcete-li analyzovat výraz XPath, který obsahuje předpony oboru názvů, je nutné předat objekt metodám XPath implementující <xref:System.Xml.IXmlNamespaceResolver>.</span><span class="sxs-lookup"><span data-stu-id="d9c0f-105">To parse an XPath expression that contains namespace prefixes, you must pass an object to the XPath methods that implements <xref:System.Xml.IXmlNamespaceResolver>.</span></span> <span data-ttu-id="d9c0f-106">Tento příklad používá <xref:System.Xml.XmlNamespaceManager>.</span><span class="sxs-lookup"><span data-stu-id="d9c0f-106">This example uses <xref:System.Xml.XmlNamespaceManager>.</span></span>
+<span data-ttu-id="38518-103">Výrazy XPath mohou najít uzly v určitém oboru názvů.</span><span class="sxs-lookup"><span data-stu-id="38518-103">XPath expressions can find nodes in a particular namespace.</span></span> <span data-ttu-id="38518-104">Výrazy XPath používají předpony oboru názvů pro určení jmenných prostorů.</span><span class="sxs-lookup"><span data-stu-id="38518-104">XPath expressions use namespace prefixes for specifying namespaces.</span></span> <span data-ttu-id="38518-105">Chcete-li analyzovat výraz XPath, který obsahuje předpony oboru názvů, musíte předat <xref:System.Xml.IXmlNamespaceResolver>objekt metodám XPath, které implementují .</span><span class="sxs-lookup"><span data-stu-id="38518-105">To parse an XPath expression that contains namespace prefixes, you must pass an object to the XPath methods that implements <xref:System.Xml.IXmlNamespaceResolver>.</span></span> <span data-ttu-id="38518-106">Tento příklad <xref:System.Xml.XmlNamespaceManager>používá .</span><span class="sxs-lookup"><span data-stu-id="38518-106">This example uses <xref:System.Xml.XmlNamespaceManager>.</span></span>
 
-<span data-ttu-id="d9c0f-107">Výraz XPath je:</span><span class="sxs-lookup"><span data-stu-id="d9c0f-107">The XPath expression is:</span></span>
+<span data-ttu-id="38518-107">Výraz XPath je:</span><span class="sxs-lookup"><span data-stu-id="38518-107">The XPath expression is:</span></span>
 
 `./aw:*`
 
-## <a name="example"></a><span data-ttu-id="d9c0f-108">Příklad</span><span class="sxs-lookup"><span data-stu-id="d9c0f-108">Example</span></span>
+## <a name="example"></a><span data-ttu-id="38518-108">Příklad</span><span class="sxs-lookup"><span data-stu-id="38518-108">Example</span></span>
 
-<span data-ttu-id="d9c0f-109">Následující příklad přečte strom XML, který obsahuje dva obory názvů.</span><span class="sxs-lookup"><span data-stu-id="d9c0f-109">The following example reads an XML tree that contains two namespaces.</span></span> <span data-ttu-id="d9c0f-110">Používá <xref:System.Xml.XmlReader> ke čtení dokumentu XML.</span><span class="sxs-lookup"><span data-stu-id="d9c0f-110">It uses an <xref:System.Xml.XmlReader> to read the XML document.</span></span> <span data-ttu-id="d9c0f-111">Pak získá <xref:System.Xml.XmlNameTable> z <xref:System.Xml.XmlReader>a <xref:System.Xml.XmlNamespaceManager> ze <xref:System.Xml.XmlNameTable>.</span><span class="sxs-lookup"><span data-stu-id="d9c0f-111">It then gets an <xref:System.Xml.XmlNameTable> from the <xref:System.Xml.XmlReader>, and an <xref:System.Xml.XmlNamespaceManager> from the <xref:System.Xml.XmlNameTable>.</span></span> <span data-ttu-id="d9c0f-112">Při výběru elementů používá <xref:System.Xml.XmlNamespaceManager>.</span><span class="sxs-lookup"><span data-stu-id="d9c0f-112">It uses the <xref:System.Xml.XmlNamespaceManager> when selecting elements.</span></span>
+<span data-ttu-id="38518-109">Následující příklad přečte strom XML, který obsahuje dva obory názvů.</span><span class="sxs-lookup"><span data-stu-id="38518-109">The following example reads an XML tree that contains two namespaces.</span></span> <span data-ttu-id="38518-110">Používá ke <xref:System.Xml.XmlReader> čtení dokumentu XML.</span><span class="sxs-lookup"><span data-stu-id="38518-110">It uses an <xref:System.Xml.XmlReader> to read the XML document.</span></span> <span data-ttu-id="38518-111">To pak <xref:System.Xml.XmlNameTable> dostane <xref:System.Xml.XmlReader>od , <xref:System.Xml.XmlNamespaceManager> a <xref:System.Xml.XmlNameTable>z .</span><span class="sxs-lookup"><span data-stu-id="38518-111">It then gets an <xref:System.Xml.XmlNameTable> from the <xref:System.Xml.XmlReader>, and an <xref:System.Xml.XmlNamespaceManager> from the <xref:System.Xml.XmlNameTable>.</span></span> <span data-ttu-id="38518-112">Používá při <xref:System.Xml.XmlNamespaceManager> výběru prvků.</span><span class="sxs-lookup"><span data-stu-id="38518-112">It uses the <xref:System.Xml.XmlNamespaceManager> when selecting elements.</span></span>
 
 ```csharp
 XmlReader reader = XmlReader.Create("ConsolidatedPurchaseOrders.xml");
@@ -41,7 +41,7 @@ foreach (XElement el in list2)
     Console.WriteLine(el);
 ```
 
-<span data-ttu-id="d9c0f-113">Tento příklad vytvoří následující výstup:</span><span class="sxs-lookup"><span data-stu-id="d9c0f-113">This example produces the following output:</span></span>
+<span data-ttu-id="38518-113">Tento příklad vytváří následující výstup:</span><span class="sxs-lookup"><span data-stu-id="38518-113">This example produces the following output:</span></span>
 
 ```output
 Results are identical

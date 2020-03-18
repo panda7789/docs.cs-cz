@@ -1,19 +1,19 @@
 ---
-title: Jak pracovat se slovníky pomocí LINQ to XML (C#)
+title: Jak pracovat se slovníky pomocí LINQ na XML (C#)
 ms.date: 07/20/2015
 ms.assetid: 57bcefe3-8433-4d3b-935a-511c9bcbdfa8
 ms.openlocfilehash: 1a98293f208e80e969362fca27014ecd2e5c4183
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "75347229"
 ---
-# <a name="how-to-work-with-dictionaries-using-linq-to-xml-c"></a><span data-ttu-id="e3649-102">Jak pracovat se slovníky pomocí LINQ to XML (C#)</span><span class="sxs-lookup"><span data-stu-id="e3649-102">How to work with dictionaries using LINQ to XML (C#)</span></span>
-<span data-ttu-id="e3649-103">Je často vhodné převést odrůdy datových struktur do XML a vrátit se do jiných datových struktur.</span><span class="sxs-lookup"><span data-stu-id="e3649-103">It is often convenient to convert varieties of data structures to XML, and XML back to other data structures.</span></span> <span data-ttu-id="e3649-104">Toto téma ukazuje konkrétní implementaci tohoto obecného přístupu převodem <xref:System.Collections.Generic.Dictionary%602> na XML a zpět.</span><span class="sxs-lookup"><span data-stu-id="e3649-104">This topic shows a specific implementation of this general approach by converting a <xref:System.Collections.Generic.Dictionary%602> to XML and back.</span></span>  
+# <a name="how-to-work-with-dictionaries-using-linq-to-xml-c"></a><span data-ttu-id="5e5e5-102">Jak pracovat se slovníky pomocí LINQ na XML (C#)</span><span class="sxs-lookup"><span data-stu-id="5e5e5-102">How to work with dictionaries using LINQ to XML (C#)</span></span>
+<span data-ttu-id="5e5e5-103">Často je vhodné převést různé datové struktury na XML a XML zpět na jiné datové struktury.</span><span class="sxs-lookup"><span data-stu-id="5e5e5-103">It is often convenient to convert varieties of data structures to XML, and XML back to other data structures.</span></span> <span data-ttu-id="5e5e5-104">Toto téma ukazuje konkrétní implementaci tohoto obecného přístupu převodem a <xref:System.Collections.Generic.Dictionary%602> na XML a zpět.</span><span class="sxs-lookup"><span data-stu-id="5e5e5-104">This topic shows a specific implementation of this general approach by converting a <xref:System.Collections.Generic.Dictionary%602> to XML and back.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="e3649-105">Příklad</span><span class="sxs-lookup"><span data-stu-id="e3649-105">Example</span></span>  
- <span data-ttu-id="e3649-106">V tomto příkladu se používá forma konstrukce funkčnosti, ve které se dotazují projekty nové <xref:System.Xml.Linq.XElement> objekty a výsledná kolekce se předává jako argument konstruktoru kořenového objektu <xref:System.Xml.Linq.XElement>.</span><span class="sxs-lookup"><span data-stu-id="e3649-106">This example uses a form of functional construction in which a query projects new <xref:System.Xml.Linq.XElement> objects, and the resulting collection is passed as an argument to the constructor of the Root <xref:System.Xml.Linq.XElement> object.</span></span>  
+## <a name="example"></a><span data-ttu-id="5e5e5-105">Příklad</span><span class="sxs-lookup"><span data-stu-id="5e5e5-105">Example</span></span>  
+ <span data-ttu-id="5e5e5-106">Tento příklad používá formu funkční konstrukce, ve <xref:System.Xml.Linq.XElement> kterém dotaz promítá nové objekty a výsledná <xref:System.Xml.Linq.XElement> kolekce je předána jako argument konstruktoru kořenového objektu.</span><span class="sxs-lookup"><span data-stu-id="5e5e5-106">This example uses a form of functional construction in which a query projects new <xref:System.Xml.Linq.XElement> objects, and the resulting collection is passed as an argument to the constructor of the Root <xref:System.Xml.Linq.XElement> object.</span></span>  
   
 ```csharp  
 Dictionary<string, string> dict = new Dictionary<string, string>();  
@@ -28,7 +28,7 @@ XElement root = new XElement("Root",
 Console.WriteLine(root);  
 ```  
   
- <span data-ttu-id="e3649-107">Výsledkem tohoto kódu je následující výstup:</span><span class="sxs-lookup"><span data-stu-id="e3649-107">This code produces the following output:</span></span>  
+ <span data-ttu-id="5e5e5-107">Výsledkem tohoto kódu je následující výstup:</span><span class="sxs-lookup"><span data-stu-id="5e5e5-107">This code produces the following output:</span></span>  
   
 ```xml  
 <Root>  
@@ -39,8 +39,8 @@ Console.WriteLine(root);
 </Root>  
 ```  
   
-## <a name="example"></a><span data-ttu-id="e3649-108">Příklad</span><span class="sxs-lookup"><span data-stu-id="e3649-108">Example</span></span>  
- <span data-ttu-id="e3649-109">Následující kód vytvoří slovník z XML.</span><span class="sxs-lookup"><span data-stu-id="e3649-109">The following code creates a dictionary from XML.</span></span>  
+## <a name="example"></a><span data-ttu-id="5e5e5-108">Příklad</span><span class="sxs-lookup"><span data-stu-id="5e5e5-108">Example</span></span>  
+ <span data-ttu-id="5e5e5-109">Následující kód vytvoří slovník z XML.</span><span class="sxs-lookup"><span data-stu-id="5e5e5-109">The following code creates a dictionary from XML.</span></span>  
   
 ```csharp  
 XElement root = new XElement("Root",  
@@ -57,7 +57,7 @@ foreach (string str in dict.Keys)
     Console.WriteLine("{0}:{1}", str, dict[str]);  
 ```  
   
- <span data-ttu-id="e3649-110">Výsledkem tohoto kódu je následující výstup:</span><span class="sxs-lookup"><span data-stu-id="e3649-110">This code produces the following output:</span></span>  
+ <span data-ttu-id="5e5e5-110">Výsledkem tohoto kódu je následující výstup:</span><span class="sxs-lookup"><span data-stu-id="5e5e5-110">This code produces the following output:</span></span>  
   
 ```output  
 Child1:Value1  

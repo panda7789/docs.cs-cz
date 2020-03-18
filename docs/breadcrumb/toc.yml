@@ -148,7 +148,7 @@
             - name: Diagnostické nástroje
               tocHref: /dotnet/core/diagnostics/
               topicHref: /dotnet/core/diagnostics/index
-            - name: Testování jednotek
+            - name: Testování částí
               tocHref: /dotnet/core/testing/
               topicHref: /dotnet/core/testing/index
             - name: Správa verzí
@@ -398,7 +398,7 @@
               tocHref: /dotnet/framework/wpf/
               topicHref: /dotnet/framework/wpf/index
               items:
-                - name: Upřesnit
+                - name: Upřesňující
                   tocHref: /dotnet/framework/wpf/advanced/
                   topicHref: /dotnet/framework/wpf/advanced/index
                 - name: Vývoj aplikací
@@ -488,13 +488,13 @@
                 - name: Rozhraní
                   tocHref: /dotnet/csharp/programming-guide/interfaces/
                   topicHref: /dotnet/csharp/programming-guide/interfaces/index
-                - name: Interoperabilita
+                - name: Vzájemná funkční spolupráce
                   tocHref: /dotnet/csharp/programming-guide/interop/
                   topicHref: /dotnet/csharp/programming-guide/interop/index
                 - name: Main() a argumenty příkazového řádku
                   tocHref: /dotnet/csharp/programming-guide/main-and-command-args/
                   topicHref: /dotnet/csharp/programming-guide/main-and-command-args/index
-                - name: Jmenné prostory
+                - name: Obory názvů
                   tocHref: /dotnet/csharp/programming-guide/namespaces/
                   topicHref: /dotnet/csharp/programming-guide/namespaces/index
                 - name: "Typy s\_povolenou hodnotou Null"
@@ -540,7 +540,7 @@
                 - name: dokumentace XML
                   tocHref: /dotnet/csharp/programming-guide/xmldoc/
                   topicHref: /dotnet/csharp/programming-guide/xmldoc/xml-documentation-comments
-            - name: Referenční dokumentace jazyka
+            - name: Referenční informace k jazyku
               tocHref: /dotnet/csharp/language-reference/
               topicHref: /dotnet/csharp/language-reference/index
               items:
@@ -673,10 +673,10 @@
             - name: zprostředkovatel komunikace s objekty COM
               tocHref: /dotnet/visual-basic/programming-guide/com-interop/
               topicHref: /dotnet/visual-basic/programming-guide/com-interop/index
-            - name: Referenční dokumentace jazyka
+            - name: Referenční informace k jazyku
               tocHref: /dotnet/visual-basic/language-reference/
               topicHref: /dotnet/visual-basic/language-reference/index
-            - name: Odkaz
+            - name: Referenční informace
               tocHref: /dotnet/visual-basic/reference/
               topicHref: /dotnet/visual-basic/reference/index
         - name: Průvodce ML.NET
@@ -686,7 +686,7 @@
             - name: Návody
               tocHref: /dotnet/machine-learning/how-to-guides/
               topicHref: /dotnet/machine-learning/how-to-guides/index
-            - name: Prostředky
+            - name: Zdroje
               tocHref: /dotnet/machine-learning/resources/
               topicHref: /dotnet/machine-learning/resources/index
             - name: Kurzy

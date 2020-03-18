@@ -10,7 +10,7 @@
           href: pack-uris-in-wpf.md
         - name: Přidání úvodní obrazovky do aplikace WPF
           href: how-to-add-a-splash-screen-to-a-wpf-application.md
-        - name: Použití slovníku prostředků v rozsahu aplikace
+        - name: Použití slovníku zdrojů rozsahu aplikace
           href: how-to-use-an-application-scope-resource-dictionary.md
         - name: Zachování a obnovení vlastností v rozsahu aplikace mezi jednotlivými relacemi aplikace
           href: persist-and-restore-application-scope-properties.md
@@ -82,7 +82,7 @@
           items:
             - name: 'Vytvoření doplňku, který vrací uživatelské rozhraní'
               href: how-to-create-an-add-in-that-returns-a-ui.md
-            - name: 'Vytvoření doplňku, který je uživatelským rozhraním'
+            - name: Vytvoření doplňku tvořící uživatelské rozhraní
               href: how-to-create-an-add-in-that-is-a-ui.md
     - name: Hostování
       href: hosting-wpf-applications.md

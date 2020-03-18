@@ -1,7 +1,7 @@
 - name: LINQ (Language-Integrated Query)
   href: index.md
   items:
-    - name: Úvod do jazyka LINQ
+    - name: Úvod do LINQ
       href: introduction-to-linq.md
     - name: Začínáme s jazykem LINQ
       href: getting-started-with-linq.md
@@ -67,7 +67,7 @@
           href: how-to-query-for-characters-in-a-string-linq.md
         - name: Jak kombinovat dotazy LINQ s regulárními výrazy
           href: how-to-combine-linq-queries-with-regular-expressions.md
-        - name: 'Postup: Hledání množinových rozdílů mezi dvěma seznamy (LINQ)'
+        - name: 'Postupy: Hledání množinových rozdílů mezi dvěma seznamy (LINQ)'
           href: how-to-find-the-set-difference-between-two-lists-linq.md
         - name: 'Postupy: Řazení nebo filtrování textových dat podle libovolného slova či pole (LINQ)'
           href: how-to-sort-or-filter-text-data-by-any-word-or-field-linq.md
@@ -105,7 +105,7 @@
           href: how-to-query-for-duplicate-files-in-a-directory-tree-linq.md
         - name: Jak vytvářet dotazy na obsah souborů ve složce (LINQ)
           href: how-to-query-the-contents-of-files-in-a-folder-linq.md
-        - name: 'Postup: Vytvoření dotazu na ArrayList pomocí jazyka LINQ'
+        - name: 'Postupy: Vytvoření dotazu na ArrayList pomocí jazyka LINQ'
           href: how-to-query-an-arraylist-with-linq.md
         - name: 'Postupy: Přidávání vlastních metod do dotazů v jazyce LINQ'
           href: how-to-add-custom-methods-for-linq-queries.md
@@ -142,7 +142,7 @@
         - name: Vytváření stromů XML
           href: creating-xml-trees.md
           items:
-            - name: Funkční konstrukce (LINQ to XML)
+            - name: funkční konstrukce (LINQ to XML)
               href: functional-construction-linq-to-xml.md
             - name: Úvod k literálům XML
               href: introduction-to-xml-literals.md

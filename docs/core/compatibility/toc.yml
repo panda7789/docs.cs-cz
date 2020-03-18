@@ -26,7 +26,7 @@
 - name: Podle oblasti
   expanded: true
   items:
-    - name: ASP.NET Core
+    - name: Jádro ASP.NET
       href: aspnetcore.md
     - name: CoreFx
       href: corefx.md
@@ -38,7 +38,7 @@
       href: globalization.md
     - name: MSBuild
       href: msbuild.md
-    - name: Síťové služby
+    - name: Sítě
       href: networking.md
     - name: Visual Basic
       href: visualbasic.md
