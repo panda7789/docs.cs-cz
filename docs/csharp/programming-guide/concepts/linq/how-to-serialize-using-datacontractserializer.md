@@ -1,19 +1,19 @@
 ---
-title: Postup serializace pomocí třídy DataContractSerializerC#()
+title: Serializace pomocí datacontractserializeru (C#)
 ms.date: 07/20/2015
 ms.assetid: 3320ecbf-cdbe-480e-979c-2c14bbef9988
-ms.openlocfilehash: c75455ce7c7943194ab43ac0150f5b9392f92e16
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.openlocfilehash: 0b6d35a2f73ac512f05341f5aaffa61484657576
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75347412"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79168697"
 ---
-# <a name="how-to-serialize-using-datacontractserializer-c"></a><span data-ttu-id="4df67-102">Postup serializace pomocí třídy DataContractSerializerC#()</span><span class="sxs-lookup"><span data-stu-id="4df67-102">How to serialize using DataContractSerializer (C#)</span></span>
-<span data-ttu-id="4df67-103">Toto téma ukazuje příklad, který serializace a deserializace používá <xref:System.Runtime.Serialization.DataContractSerializer>.</span><span class="sxs-lookup"><span data-stu-id="4df67-103">This topic shows an example that serializes and deserializes using <xref:System.Runtime.Serialization.DataContractSerializer>.</span></span>  
+# <a name="how-to-serialize-using-datacontractserializer-c"></a><span data-ttu-id="6b45a-102">Serializace pomocí datacontractserializeru (C#)</span><span class="sxs-lookup"><span data-stu-id="6b45a-102">How to serialize using DataContractSerializer (C#)</span></span>
+<span data-ttu-id="6b45a-103">Toto téma ukazuje příklad, který serializuje a <xref:System.Runtime.Serialization.DataContractSerializer>reserializuje pomocí .</span><span class="sxs-lookup"><span data-stu-id="6b45a-103">This topic shows an example that serializes and deserializes using <xref:System.Runtime.Serialization.DataContractSerializer>.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="4df67-104">Příklad</span><span class="sxs-lookup"><span data-stu-id="4df67-104">Example</span></span>  
- <span data-ttu-id="4df67-105">Následující příklad vytvoří počet objektů, které obsahují objekty <xref:System.Xml.Linq.XElement>.</span><span class="sxs-lookup"><span data-stu-id="4df67-105">The following example creates a number of objects that contain <xref:System.Xml.Linq.XElement> objects.</span></span> <span data-ttu-id="4df67-106">Pak je rozkonstruuje do textových souborů a poté je deserializace z textových souborů.</span><span class="sxs-lookup"><span data-stu-id="4df67-106">It then serializes them to text files, and then deserializes them from the text files.</span></span>  
+## <a name="example"></a><span data-ttu-id="6b45a-104">Příklad</span><span class="sxs-lookup"><span data-stu-id="6b45a-104">Example</span></span>  
+ <span data-ttu-id="6b45a-105">Následující příklad vytvoří počet objektů, <xref:System.Xml.Linq.XElement> které obsahují objekty.</span><span class="sxs-lookup"><span data-stu-id="6b45a-105">The following example creates a number of objects that contain <xref:System.Xml.Linq.XElement> objects.</span></span> <span data-ttu-id="6b45a-106">Potom serializuje je do textových souborů a potom je z textových souborů reserializuje.</span><span class="sxs-lookup"><span data-stu-id="6b45a-106">It then serializes them to text files, and then deserializes them from the text files.</span></span>  
   
 ```csharp  
 using System;  
@@ -36,7 +36,7 @@ public class XLinqTest
         DataContractSerializer s = new DataContractSerializer(typeof(T));  
         using (FileStream fs = File.Open("test" + typeof(T).Name + ".xml", FileMode.Create))  
         {  
-            Console.WriteLine("Testing for type: {0}", typeof(T));   
+            Console.WriteLine("Testing for type: {0}", typeof(T));
             s.WriteObject(fs, obj);  
         }  
         using (FileStream fs = File.Open("test" + typeof(T).Name + ".xml", FileMode.Open))  
@@ -80,7 +80,7 @@ public class XElementNullContainer
 }  
 ```  
   
- <span data-ttu-id="4df67-107">Tento příklad vytvoří následující výstup:</span><span class="sxs-lookup"><span data-stu-id="4df67-107">This example produces the following output:</span></span>  
+ <span data-ttu-id="6b45a-107">Tento příklad vytváří následující výstup:</span><span class="sxs-lookup"><span data-stu-id="6b45a-107">This example produces the following output:</span></span>  
   
 ```output  
 Testing for type: System.Xml.Linq.XElement  

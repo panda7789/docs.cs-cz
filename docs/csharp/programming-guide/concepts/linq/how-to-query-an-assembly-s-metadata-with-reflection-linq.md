@@ -1,21 +1,21 @@
 ---
-title: Postup dotazování na metadata sestavení s reflexí (LINQ)C#()
+title: Jak dotazovat metadata sestavení s reflexe (LINQ) (C#)
 ms.date: 07/20/2015
 ms.assetid: c4cdce49-b1c8-4420-b12a-9ff7e6671368
-ms.openlocfilehash: 65f27ae17d77553bfd7a78c1310febd337a55a6e
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.openlocfilehash: 6e68cfea2bf3e03aed9de3e4a18cf9941ece34e3
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75345692"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79168918"
 ---
-# <a name="how-to-query-an-assemblys-metadata-with-reflection-linq-c"></a><span data-ttu-id="71344-102">Postup dotazování na metadata sestavení s reflexí (LINQ)C#()</span><span class="sxs-lookup"><span data-stu-id="71344-102">How to query an assembly's metadata with Reflection (LINQ) (C#)</span></span>
+# <a name="how-to-query-an-assemblys-metadata-with-reflection-linq-c"></a><span data-ttu-id="b2da1-102">Jak dotazovat metadata sestavení s reflexe (LINQ) (C#)</span><span class="sxs-lookup"><span data-stu-id="b2da1-102">How to query an assembly's metadata with Reflection (LINQ) (C#)</span></span>
 
-<span data-ttu-id="71344-103">Rozhraní API pro reflexi knihovny tříd .NET Framework lze použít k prozkoumávání metadat v sestavení .NET a vytvoření kolekcí typů, členů typu, parametrů a tak dále, které jsou v tomto sestavení.</span><span class="sxs-lookup"><span data-stu-id="71344-103">The .NET Framework class library reflection APIs can be used to examine the metadata in a .NET assembly and create collections of types, type members, parameters, and so on that are in that assembly.</span></span> <span data-ttu-id="71344-104">Vzhledem k tomu, že tyto kolekce podporují obecné <xref:System.Collections.Generic.IEnumerable%601> rozhraní, mohou být dotazovány pomocí jazyka LINQ.</span><span class="sxs-lookup"><span data-stu-id="71344-104">Because these collections support the generic <xref:System.Collections.Generic.IEnumerable%601> interface, they can be queried by using LINQ.</span></span>  
+<span data-ttu-id="b2da1-103">Rozhraní API pro reflexi třídy rozhraní .NET Framework lze použít ke kontrole metadat v sestavení .NET a k vytvoření kolekcí typů, členů typu, parametrů a tak dále, které jsou v tomto sestavení.</span><span class="sxs-lookup"><span data-stu-id="b2da1-103">The .NET Framework class library reflection APIs can be used to examine the metadata in a .NET assembly and create collections of types, type members, parameters, and so on that are in that assembly.</span></span> <span data-ttu-id="b2da1-104">Vzhledem k tomu, <xref:System.Collections.Generic.IEnumerable%601> že tyto kolekce podporují obecné rozhraní, mohou být dotazovány pomocí LINQ.</span><span class="sxs-lookup"><span data-stu-id="b2da1-104">Because these collections support the generic <xref:System.Collections.Generic.IEnumerable%601> interface, they can be queried by using LINQ.</span></span>  
   
-<span data-ttu-id="71344-105">Následující příklad ukazuje, jak lze pomocí technologie LINQ použít s reflexí k načtení konkrétních metadat pro metody, které odpovídají zadanému vyhledávacímu kritériu.</span><span class="sxs-lookup"><span data-stu-id="71344-105">The following example shows how LINQ can be used with reflection to retrieve specific metadata about methods that match a specified search criterion.</span></span> <span data-ttu-id="71344-106">V tomto případě dotaz vyhledá názvy všech metod v sestavení, které vracejí výčtové typy jako pole.</span><span class="sxs-lookup"><span data-stu-id="71344-106">In this case, the query will find the names of all the methods in the assembly that return enumerable types such as arrays.</span></span>  
+<span data-ttu-id="b2da1-105">Následující příklad ukazuje, jak linq lze použít s odrazem načíst konkrétní metadata o metodách, které odpovídají zadané vyhledávací kritérium.</span><span class="sxs-lookup"><span data-stu-id="b2da1-105">The following example shows how LINQ can be used with reflection to retrieve specific metadata about methods that match a specified search criterion.</span></span> <span data-ttu-id="b2da1-106">V takovém případě dotaz najde názvy všech metod v sestavení, které vracejí výčet typů, jako jsou pole.</span><span class="sxs-lookup"><span data-stu-id="b2da1-106">In this case, the query will find the names of all the methods in the assembly that return enumerable types such as arrays.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="71344-107">Příklad</span><span class="sxs-lookup"><span data-stu-id="71344-107">Example</span></span>  
+## <a name="example"></a><span data-ttu-id="b2da1-107">Příklad</span><span class="sxs-lookup"><span data-stu-id="b2da1-107">Example</span></span>  
   
 ```csharp  
 using System;
@@ -30,7 +30,7 @@ class ReflectionHowTO
         var pubTypesQuery = from type in assembly.GetTypes()  
                     where type.IsPublic  
                         from method in type.GetMethods()  
-                        where method.ReturnType.IsArray == true 
+                        where method.ReturnType.IsArray == true
                             || ( method.ReturnType.GetInterface(  
                                 typeof(System.Collections.Generic.IEnumerable<>).FullName ) != null  
                             && method.ReturnType.FullName != "System.String" )  
@@ -51,8 +51,8 @@ class ReflectionHowTO
 }
 ```  
 
-<span data-ttu-id="71344-108">V příkladu se používá metoda <xref:System.Reflection.Assembly.GetTypes%2A?displayProperty=nameWithType> k vrácení pole typů v zadaném sestavení.</span><span class="sxs-lookup"><span data-stu-id="71344-108">The example uses the <xref:System.Reflection.Assembly.GetTypes%2A?displayProperty=nameWithType> method to return an array of types in the specified assembly.</span></span> <span data-ttu-id="71344-109">Filtr [WHERE](../../../language-reference/keywords/where-clause.md) je použit, aby byly vráceny pouze veřejné typy.</span><span class="sxs-lookup"><span data-stu-id="71344-109">The [where](../../../language-reference/keywords/where-clause.md) filter is applied so that only public types are returned.</span></span> <span data-ttu-id="71344-110">Pro každý veřejný typ je poddotaz generován pomocí pole <xref:System.Reflection.MethodInfo>, které je vráceno z volání <xref:System.Type.GetMethods%2A?displayProperty=nameWithType>.</span><span class="sxs-lookup"><span data-stu-id="71344-110">For each public type, a subquery is generated by using the <xref:System.Reflection.MethodInfo> array that is returned from the <xref:System.Type.GetMethods%2A?displayProperty=nameWithType> call.</span></span> <span data-ttu-id="71344-111">Tyto výsledky jsou filtrovány tak, aby vracely pouze metody, jejichž návratový typ je Array nebo else typu, který implementuje <xref:System.Collections.Generic.IEnumerable%601>.</span><span class="sxs-lookup"><span data-stu-id="71344-111">These results are filtered to return only those methods whose return type is an array or else a type that implements <xref:System.Collections.Generic.IEnumerable%601>.</span></span> <span data-ttu-id="71344-112">Nakonec jsou tyto výsledky seskupeny pomocí názvu typu jako klíč.</span><span class="sxs-lookup"><span data-stu-id="71344-112">Finally, these results are grouped by using the type name as a key.</span></span>  
+<span data-ttu-id="b2da1-108">Příklad používá <xref:System.Reflection.Assembly.GetTypes%2A?displayProperty=nameWithType> metodu k vrácení pole typů v zadaném sestavení.</span><span class="sxs-lookup"><span data-stu-id="b2da1-108">The example uses the <xref:System.Reflection.Assembly.GetTypes%2A?displayProperty=nameWithType> method to return an array of types in the specified assembly.</span></span> <span data-ttu-id="b2da1-109">Kde [where](../../../language-reference/keywords/where-clause.md) je použit filtr tak, aby byly vráceny pouze veřejné typy.</span><span class="sxs-lookup"><span data-stu-id="b2da1-109">The [where](../../../language-reference/keywords/where-clause.md) filter is applied so that only public types are returned.</span></span> <span data-ttu-id="b2da1-110">Pro každý veřejný typ je generován poddotaz <xref:System.Reflection.MethodInfo> pomocí pole, <xref:System.Type.GetMethods%2A?displayProperty=nameWithType> které je vráceno z volání.</span><span class="sxs-lookup"><span data-stu-id="b2da1-110">For each public type, a subquery is generated by using the <xref:System.Reflection.MethodInfo> array that is returned from the <xref:System.Type.GetMethods%2A?displayProperty=nameWithType> call.</span></span> <span data-ttu-id="b2da1-111">Tyto výsledky jsou filtrovány vrátit pouze ty metody, jejichž návratový <xref:System.Collections.Generic.IEnumerable%601>typ je pole nebo jiný typ, který implementuje .</span><span class="sxs-lookup"><span data-stu-id="b2da1-111">These results are filtered to return only those methods whose return type is an array or else a type that implements <xref:System.Collections.Generic.IEnumerable%601>.</span></span> <span data-ttu-id="b2da1-112">Nakonec tyto výsledky jsou seskupeny pomocí názvu typu jako klíč.</span><span class="sxs-lookup"><span data-stu-id="b2da1-112">Finally, these results are grouped by using the type name as a key.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="71344-113">Viz také:</span><span class="sxs-lookup"><span data-stu-id="71344-113">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="b2da1-113">Viz také</span><span class="sxs-lookup"><span data-stu-id="b2da1-113">See also</span></span>
 
-- [<span data-ttu-id="71344-114">LINQ to Objects (C#)</span><span class="sxs-lookup"><span data-stu-id="71344-114">LINQ to Objects (C#)</span></span>](./linq-to-objects.md)
+- [<span data-ttu-id="b2da1-114">LINQ na objekty (C#)</span><span class="sxs-lookup"><span data-stu-id="b2da1-114">LINQ to Objects (C#)</span></span>](./linq-to-objects.md)
