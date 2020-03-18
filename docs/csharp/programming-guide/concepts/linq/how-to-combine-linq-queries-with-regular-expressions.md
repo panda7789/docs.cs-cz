@@ -2,17 +2,17 @@
 title: Jak kombinovat dotazy LINQ s regulárními výrazy (C#)
 ms.date: 07/20/2015
 ms.assetid: 6b003b65-20a4-4ca2-929e-2ee3f215aecc
-ms.openlocfilehash: 97551f7d9d8cf13f05449c2f825ed4d29eb3d86e
-ms.sourcegitcommit: fbb8a593a511ce667992502a3ce6d8f65c594edf
+ms.openlocfilehash: 104e63adb9c07a75077b92654afd791b6c82d8de
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/16/2019
-ms.locfileid: "74141406"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79169426"
 ---
-# <a name="how-to-combine-linq-queries-with-regular-expressions-c"></a><span data-ttu-id="41575-102">Jak kombinovat dotazy LINQ s regulárními výrazy (C#)</span><span class="sxs-lookup"><span data-stu-id="41575-102">How to combine LINQ queries with regular expressions (C#)</span></span>
-<span data-ttu-id="41575-103">Tento příklad ukazuje, jak použít třídu <xref:System.Text.RegularExpressions.Regex> k vytvoření regulárního výrazu pro komplexnější porovnání v textových řetězcích.</span><span class="sxs-lookup"><span data-stu-id="41575-103">This example shows how to use the <xref:System.Text.RegularExpressions.Regex> class to create a regular expression for more complex matching in text strings.</span></span> <span data-ttu-id="41575-104">Dotaz LINQ usnadňuje filtrování přesně těch souborů, které chcete prohledávat pomocí regulárního výrazu, a k tvarování výsledků.</span><span class="sxs-lookup"><span data-stu-id="41575-104">The LINQ query makes it easy to filter on exactly the files that you want to search with the regular expression, and to shape the results.</span></span>  
+# <a name="how-to-combine-linq-queries-with-regular-expressions-c"></a><span data-ttu-id="f9505-102">Jak kombinovat dotazy LINQ s regulárními výrazy (C#)</span><span class="sxs-lookup"><span data-stu-id="f9505-102">How to combine LINQ queries with regular expressions (C#)</span></span>
+<span data-ttu-id="f9505-103">Tento příklad ukazuje, <xref:System.Text.RegularExpressions.Regex> jak použít třídu k vytvoření regulárního výrazu pro složitější párování v textových řetězcích.</span><span class="sxs-lookup"><span data-stu-id="f9505-103">This example shows how to use the <xref:System.Text.RegularExpressions.Regex> class to create a regular expression for more complex matching in text strings.</span></span> <span data-ttu-id="f9505-104">Dotaz LINQ usnadňuje filtrování přesně souborů, které chcete prohledávat pomocí regulárního výrazu, a tvarovat výsledky.</span><span class="sxs-lookup"><span data-stu-id="f9505-104">The LINQ query makes it easy to filter on exactly the files that you want to search with the regular expression, and to shape the results.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="41575-105">Příklad</span><span class="sxs-lookup"><span data-stu-id="41575-105">Example</span></span>  
+## <a name="example"></a><span data-ttu-id="f9505-105">Příklad</span><span class="sxs-lookup"><span data-stu-id="f9505-105">Example</span></span>  
   
 ```csharp  
 class QueryWithRegEx  
@@ -36,7 +36,7 @@ class QueryWithRegEx
         // This query produces a list of files where a match  
         // was found, and a list of the matchedValues in that file.  
         // Note: Explicit typing of "Match" in select clause.  
-        // This is required because MatchCollection is not a   
+        // This is required because MatchCollection is not a
         // generic IEnumerable collection.  
         var queryMatchingFiles =  
             from file in fileList  
@@ -56,7 +56,7 @@ class QueryWithRegEx
   
         foreach (var v in queryMatchingFiles)  
         {  
-            // Trim the path a bit, then write   
+            // Trim the path a bit, then write
             // the file name in which a match was found.  
             string s = v.name.Substring(startFolder.Length - 1);  
             Console.WriteLine(s);  
@@ -73,7 +73,7 @@ class QueryWithRegEx
         Console.ReadKey();  
     }  
   
-    // This method assumes that the application has discovery   
+    // This method assumes that the application has discovery
     // permissions for all folders under the specified path.  
     static IEnumerable<System.IO.FileInfo> GetFiles(string path)  
     {  
@@ -93,12 +93,12 @@ class QueryWithRegEx
 }  
 ```  
   
- <span data-ttu-id="41575-106">Všimněte si, že můžete také zadat dotaz na objekt <xref:System.Text.RegularExpressions.MatchCollection>, který je vrácený `RegEx` vyhledávání.</span><span class="sxs-lookup"><span data-stu-id="41575-106">Note that you can also query the <xref:System.Text.RegularExpressions.MatchCollection> object that is returned by a `RegEx` search.</span></span> <span data-ttu-id="41575-107">V tomto příkladu se ve výsledcích vytvoří pouze hodnota každé shody.</span><span class="sxs-lookup"><span data-stu-id="41575-107">In this example only the value of each match is produced in the results.</span></span> <span data-ttu-id="41575-108">Je ale také možné použít LINQ k provádění všech druhů filtrování, řazení a seskupování v této kolekci.</span><span class="sxs-lookup"><span data-stu-id="41575-108">However, it is also possible to use LINQ to perform all kinds of filtering, sorting, and grouping on that collection.</span></span> <span data-ttu-id="41575-109">Vzhledem k tomu, že <xref:System.Text.RegularExpressions.MatchCollection> je neobecná <xref:System.Collections.IEnumerable> kolekce, je nutné explicitně uvést typ proměnné rozsahu v dotazu.</span><span class="sxs-lookup"><span data-stu-id="41575-109">Because <xref:System.Text.RegularExpressions.MatchCollection> is a non-generic <xref:System.Collections.IEnumerable> collection, you have to explicitly state the type of the range variable in the query.</span></span>  
+ <span data-ttu-id="f9505-106">Všimněte si, že <xref:System.Text.RegularExpressions.MatchCollection> můžete také dotaz `RegEx` na objekt, který je vrácen hledáním.</span><span class="sxs-lookup"><span data-stu-id="f9505-106">Note that you can also query the <xref:System.Text.RegularExpressions.MatchCollection> object that is returned by a `RegEx` search.</span></span> <span data-ttu-id="f9505-107">V tomto příkladu je ve výsledcích vytvořena pouze hodnota každé shody.</span><span class="sxs-lookup"><span data-stu-id="f9505-107">In this example only the value of each match is produced in the results.</span></span> <span data-ttu-id="f9505-108">Je však také možné použít LINQ provádět všechny druhy filtrování, řazení a seskupení v této kolekci.</span><span class="sxs-lookup"><span data-stu-id="f9505-108">However, it is also possible to use LINQ to perform all kinds of filtering, sorting, and grouping on that collection.</span></span> <span data-ttu-id="f9505-109">Protože <xref:System.Text.RegularExpressions.MatchCollection> je neobecná <xref:System.Collections.IEnumerable> kolekce, musíte explicitně uvést typ proměnné rozsahu v dotazu.</span><span class="sxs-lookup"><span data-stu-id="f9505-109">Because <xref:System.Text.RegularExpressions.MatchCollection> is a non-generic <xref:System.Collections.IEnumerable> collection, you have to explicitly state the type of the range variable in the query.</span></span>  
   
-## <a name="compiling-the-code"></a><span data-ttu-id="41575-110">Probíhá kompilace kódu</span><span class="sxs-lookup"><span data-stu-id="41575-110">Compiling the Code</span></span>  
- <span data-ttu-id="41575-111">Vytvořte projekt C# konzolové aplikace s direktivami `using` pro obory názvů System. Linq a System.IO.</span><span class="sxs-lookup"><span data-stu-id="41575-111">Create a C# console application project with `using` directives for the System.Linq and System.IO namespaces.</span></span>  
+## <a name="compiling-the-code"></a><span data-ttu-id="f9505-110">Probíhá kompilace kódu</span><span class="sxs-lookup"><span data-stu-id="f9505-110">Compiling the Code</span></span>  
+ <span data-ttu-id="f9505-111">Vytvořte projekt aplikace konzoly Jazyka C# se `using` direktivami pro obory názvů System.Linq a System.IO.</span><span class="sxs-lookup"><span data-stu-id="f9505-111">Create a C# console application project with `using` directives for the System.Linq and System.IO namespaces.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="41575-112">Viz také:</span><span class="sxs-lookup"><span data-stu-id="41575-112">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="f9505-112">Viz také</span><span class="sxs-lookup"><span data-stu-id="f9505-112">See also</span></span>
 
-- [<span data-ttu-id="41575-113">LINQ a řetězce (C#)</span><span class="sxs-lookup"><span data-stu-id="41575-113">LINQ and Strings (C#)</span></span>](./linq-and-strings.md)
-- [<span data-ttu-id="41575-114">LINQ a souborové adresáře (C#)</span><span class="sxs-lookup"><span data-stu-id="41575-114">LINQ and File Directories (C#)</span></span>](./linq-and-file-directories.md)
+- [<span data-ttu-id="f9505-113">LINQ a řetězce (C#)</span><span class="sxs-lookup"><span data-stu-id="f9505-113">LINQ and Strings (C#)</span></span>](./linq-and-strings.md)
+- [<span data-ttu-id="f9505-114">Linq a souborové adresáře (C#)</span><span class="sxs-lookup"><span data-stu-id="f9505-114">LINQ and File Directories (C#)</span></span>](./linq-and-file-directories.md)
