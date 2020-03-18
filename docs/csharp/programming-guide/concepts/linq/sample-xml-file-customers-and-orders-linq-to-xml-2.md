@@ -1,22 +1,22 @@
 ---
-title: 'Ukázkový soubor XML: zákazníci a objednávky (LINQ to XML)'
+title: 'Ukázkový soubor XML: Zákazníci a objednávky (LINQ to XML)'
 ms.date: 07/20/2015
 ms.assetid: d6d1c9ea-be74-4e6d-bfdd-d4bcc2d301cf
 ms.openlocfilehash: 01c1719bd67bbaf0d46dc6e3c23b5031afd271f8
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "75346496"
 ---
-# <a name="sample-xml-file-customers-and-orders-linq-to-xml"></a><span data-ttu-id="d97b4-102">Ukázkový soubor XML: zákazníci a objednávky (LINQ to XML)</span><span class="sxs-lookup"><span data-stu-id="d97b4-102">Sample XML File: Customers and Orders (LINQ to XML)</span></span>
-<span data-ttu-id="d97b4-103">Následující soubor XML se používá v různých příkladech v dokumentaci k [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)].</span><span class="sxs-lookup"><span data-stu-id="d97b4-103">The following XML file is used in various examples in the [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] documentation.</span></span> <span data-ttu-id="d97b4-104">Tento soubor obsahuje zákazníky a objednávky.</span><span class="sxs-lookup"><span data-stu-id="d97b4-104">This file contains customers and orders.</span></span>  
+# <a name="sample-xml-file-customers-and-orders-linq-to-xml"></a><span data-ttu-id="8d43e-102">Ukázkový soubor XML: Zákazníci a objednávky (LINQ to XML)</span><span class="sxs-lookup"><span data-stu-id="8d43e-102">Sample XML File: Customers and Orders (LINQ to XML)</span></span>
+<span data-ttu-id="8d43e-103">Následující soubor XML se používá v [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] různých příkladech v dokumentaci.</span><span class="sxs-lookup"><span data-stu-id="8d43e-103">The following XML file is used in various examples in the [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] documentation.</span></span> <span data-ttu-id="8d43e-104">Tento soubor obsahuje zákazníky a objednávky.</span><span class="sxs-lookup"><span data-stu-id="8d43e-104">This file contains customers and orders.</span></span>  
   
- <span data-ttu-id="d97b4-105">[Ukázkový soubor XSD: zákazníci a objednávky](./sample-xsd-file-customers-and-orders1.md) obsahují XSD, které lze použít k ověření tohoto dokumentu.</span><span class="sxs-lookup"><span data-stu-id="d97b4-105">The topic [Sample XSD File: Customers and Orders](./sample-xsd-file-customers-and-orders1.md) contains an XSD that can be used to validate this document.</span></span> <span data-ttu-id="d97b4-106">Používá funkce `xs:key` a `xs:keyref` XSD k určení toho, že atribut `CustomerID` elementu `Customer` je klíč a k navázání vztahu mezi `CustomerID` prvkem v každém `Order` elementu a atributem `CustomerID` v každém prvku `Customer`.</span><span class="sxs-lookup"><span data-stu-id="d97b4-106">It uses the `xs:key` and `xs:keyref` features of XSD to establish that the `CustomerID` attribute of the `Customer` element is a key, and to establish a relationship between the `CustomerID` element in each `Order` element and the `CustomerID` attribute in each `Customer` element.</span></span>  
+ <span data-ttu-id="8d43e-105">Téma [Ukázkový soubor XSD: Zákazníci a objednávky](./sample-xsd-file-customers-and-orders1.md) obsahuje xsd, které lze použít k ověření tohoto dokumentu.</span><span class="sxs-lookup"><span data-stu-id="8d43e-105">The topic [Sample XSD File: Customers and Orders](./sample-xsd-file-customers-and-orders1.md) contains an XSD that can be used to validate this document.</span></span> <span data-ttu-id="8d43e-106">Používá `xs:key` a `xs:keyref` funkce XSD k `CustomerID` vytvoření, že `Customer` atribut prvku je klíč a vytvořit `CustomerID` vztah `Order` mezi element `CustomerID` v `Customer` každém prvku a atribut v každém prvku.</span><span class="sxs-lookup"><span data-stu-id="8d43e-106">It uses the `xs:key` and `xs:keyref` features of XSD to establish that the `CustomerID` attribute of the `Customer` element is a key, and to establish a relationship between the `CustomerID` element in each `Order` element and the `CustomerID` attribute in each `Customer` element.</span></span>  
   
- <span data-ttu-id="d97b4-107">Příklad psaní dotazů LINQ, které využijí tohoto vztahu pomocí klauzule `Join`, naleznete v tématu [How to join Two (LINQ to XML) (C#)](./how-to-join-two-collections-linq-to-xml.md).</span><span class="sxs-lookup"><span data-stu-id="d97b4-107">For an example of writing LINQ queries that take advantage of this relationship using the `Join` clause, see [How to join two collections (LINQ to XML) (C#)](./how-to-join-two-collections-linq-to-xml.md).</span></span>  
+ <span data-ttu-id="8d43e-107">Příklad psaní dotazů LINQ, které využívají výhod `Join` tohoto vztahu pomocí klauzule, naleznete v tématu [Jak spojit dvě kolekce (LINQ do XML) (C#)](./how-to-join-two-collections-linq-to-xml.md).</span><span class="sxs-lookup"><span data-stu-id="8d43e-107">For an example of writing LINQ queries that take advantage of this relationship using the `Join` clause, see [How to join two collections (LINQ to XML) (C#)](./how-to-join-two-collections-linq-to-xml.md).</span></span>  
   
-## <a name="customersordersxml"></a><span data-ttu-id="d97b4-108">CustomersOrders. XML</span><span class="sxs-lookup"><span data-stu-id="d97b4-108">CustomersOrders.xml</span></span>  
+## <a name="customersordersxml"></a><span data-ttu-id="8d43e-108">CustomersOrders.xml</span><span class="sxs-lookup"><span data-stu-id="8d43e-108">CustomersOrders.xml</span></span>  
   
 ```xml  
 <?xml version="1.0" encoding="utf-8"?>  

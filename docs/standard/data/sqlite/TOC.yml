@@ -23,7 +23,7 @@
       href: encryption.md
     - name: Online zálohování
       href: backup.md
-    - name: Uživatelem definované funkce
+    - name: Uživatelsky definované funkce
       displayName: UDFs
       href: user-defined-functions.md
     - name: Vlastní verze SQLite
@@ -33,7 +33,7 @@
     - name: I/O objektů blob
       displayName: Streams
       href: blob-io.md
-    - name: Interoperabilita
+    - name: Vzájemná funkční spolupráce
       href: interop.md
     - name: Rozšíření
       href: extensions.md

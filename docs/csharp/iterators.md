@@ -1,34 +1,34 @@
 ---
 title: Iterátory
-description: Naučte se používat integrované C# iterátory a vytvářet vlastní metody iterátoru.
+description: Naučte se používat integrované c# iterátory a jak vytvořit vlastní metody iterátoru.
 ms.date: 06/20/2016
 ms.technology: csharp-advanced-concepts
 ms.assetid: 5cf36f45-f91a-4fca-a0b7-87f233e108e9
 ms.openlocfilehash: 1933ecf83e9fa234f9b88c815d8ab527997c97f2
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73036418"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79399614"
 ---
-# <a name="iterators"></a><span data-ttu-id="923bd-103">Iterátory</span><span class="sxs-lookup"><span data-stu-id="923bd-103">Iterators</span></span>
+# <a name="iterators"></a><span data-ttu-id="1e507-103">Iterátory</span><span class="sxs-lookup"><span data-stu-id="1e507-103">Iterators</span></span>
 
-<span data-ttu-id="923bd-104">Skoro každý program, který napíšete, bude nutné iterovat v kolekci.</span><span class="sxs-lookup"><span data-stu-id="923bd-104">Almost every program you write will have some need to iterate over a collection.</span></span> <span data-ttu-id="923bd-105">Budete psát kód, který prověřuje každou položku v kolekci.</span><span class="sxs-lookup"><span data-stu-id="923bd-105">You'll write code that examines every item in a collection.</span></span>
+<span data-ttu-id="1e507-104">Téměř každý program, který napíšete, bude mít nějakou potřebu iterate přes sbírku.</span><span class="sxs-lookup"><span data-stu-id="1e507-104">Almost every program you write will have some need to iterate over a collection.</span></span> <span data-ttu-id="1e507-105">Napíšete kód, který zkoumá každou položku v kolekci.</span><span class="sxs-lookup"><span data-stu-id="1e507-105">You'll write code that examines every item in a collection.</span></span>
 
-<span data-ttu-id="923bd-106">Také vytvoříte iterátory, které jsou metody, které vytvoří iterátor pro prvky této třídy.</span><span class="sxs-lookup"><span data-stu-id="923bd-106">You'll also create iterator methods which are methods that produces an iterator for the elements of that class.</span></span> <span data-ttu-id="923bd-107">Můžete je použít pro:</span><span class="sxs-lookup"><span data-stu-id="923bd-107">These can be used for:</span></span>
+<span data-ttu-id="1e507-106">Budete také vytvořit iterátor metody, které jsou metody, které vytváří iterátor pro prvky této třídy.</span><span class="sxs-lookup"><span data-stu-id="1e507-106">You'll also create iterator methods which are methods that produces an iterator for the elements of that class.</span></span> <span data-ttu-id="1e507-107">Ty mohou být použity pro:</span><span class="sxs-lookup"><span data-stu-id="1e507-107">These can be used for:</span></span>
 
-+ <span data-ttu-id="923bd-108">Provedení akce u každé položky v kolekci.</span><span class="sxs-lookup"><span data-stu-id="923bd-108">Performing an action on each item in a collection.</span></span>
-+ <span data-ttu-id="923bd-109">Vytváří se výčet vlastní kolekce.</span><span class="sxs-lookup"><span data-stu-id="923bd-109">Enumerating a custom collection.</span></span>
-+ <span data-ttu-id="923bd-110">Rozšíření [LINQ](linq/index.md) nebo jiné knihovny.</span><span class="sxs-lookup"><span data-stu-id="923bd-110">Extending [LINQ](linq/index.md) or other libraries.</span></span>
-+ <span data-ttu-id="923bd-111">Vytvoření datového kanálu, ve kterém data efektivně proudí prostřednictvím metod iterátoru.</span><span class="sxs-lookup"><span data-stu-id="923bd-111">Creating a data pipeline where data flows efficiently through iterator methods.</span></span>
++ <span data-ttu-id="1e507-108">Provedení akce pro každou položku v kolekci.</span><span class="sxs-lookup"><span data-stu-id="1e507-108">Performing an action on each item in a collection.</span></span>
++ <span data-ttu-id="1e507-109">Výčet vlastní kolekce.</span><span class="sxs-lookup"><span data-stu-id="1e507-109">Enumerating a custom collection.</span></span>
++ <span data-ttu-id="1e507-110">Rozšíření [LINQ](linq/index.md) nebo jiných knihoven.</span><span class="sxs-lookup"><span data-stu-id="1e507-110">Extending [LINQ](linq/index.md) or other libraries.</span></span>
++ <span data-ttu-id="1e507-111">Vytvoření datového kanálu, kde data efektivně proudí prostřednictvím metod iterátoru.</span><span class="sxs-lookup"><span data-stu-id="1e507-111">Creating a data pipeline where data flows efficiently through iterator methods.</span></span>
 
-<span data-ttu-id="923bd-112">C# Jazyk poskytuje funkce pro oba tyto scénáře.</span><span class="sxs-lookup"><span data-stu-id="923bd-112">The C# language provides features for both these scenarios.</span></span> <span data-ttu-id="923bd-113">Tento článek obsahuje přehled těchto funkcí.</span><span class="sxs-lookup"><span data-stu-id="923bd-113">This article provides an overview of those features.</span></span>
+<span data-ttu-id="1e507-112">Jazyk C# poskytuje funkce pro oba tyto scénáře.</span><span class="sxs-lookup"><span data-stu-id="1e507-112">The C# language provides features for both these scenarios.</span></span> <span data-ttu-id="1e507-113">Tento článek obsahuje přehled těchto funkcí.</span><span class="sxs-lookup"><span data-stu-id="1e507-113">This article provides an overview of those features.</span></span>
 
-<span data-ttu-id="923bd-114">V tomto kurzu se používá několik kroků.</span><span class="sxs-lookup"><span data-stu-id="923bd-114">This tutorial has multiple steps.</span></span> <span data-ttu-id="923bd-115">Po každém kroku můžete spustit aplikaci a zobrazit průběh.</span><span class="sxs-lookup"><span data-stu-id="923bd-115">After each step, you can run the application and see the progress.</span></span> <span data-ttu-id="923bd-116">Můžete také [Zobrazit nebo stáhnout dokončenou ukázku](https://github.com/dotnet/samples/blob/master/csharp/iterators) pro toto téma.</span><span class="sxs-lookup"><span data-stu-id="923bd-116">You can also [view or download the completed sample](https://github.com/dotnet/samples/blob/master/csharp/iterators) for this topic.</span></span> <span data-ttu-id="923bd-117">Pokyny ke stažení najdete v tématu [ukázky a kurzy](../samples-and-tutorials/index.md#viewing-and-downloading-samples).</span><span class="sxs-lookup"><span data-stu-id="923bd-117">For download instructions, see [Samples and Tutorials](../samples-and-tutorials/index.md#viewing-and-downloading-samples).</span></span>
+<span data-ttu-id="1e507-114">Tento kurz má několik kroků.</span><span class="sxs-lookup"><span data-stu-id="1e507-114">This tutorial has multiple steps.</span></span> <span data-ttu-id="1e507-115">Po každém kroku můžete spustit aplikaci a zobrazit průběh.</span><span class="sxs-lookup"><span data-stu-id="1e507-115">After each step, you can run the application and see the progress.</span></span> <span data-ttu-id="1e507-116">Můžete také [zobrazit nebo stáhnout dokončenou ukázku](https://github.com/dotnet/samples/blob/master/csharp/iterators) pro toto téma.</span><span class="sxs-lookup"><span data-stu-id="1e507-116">You can also [view or download the completed sample](https://github.com/dotnet/samples/blob/master/csharp/iterators) for this topic.</span></span> <span data-ttu-id="1e507-117">Pokyny ke stažení naleznete v [tématu Ukázky a výukové programy](../samples-and-tutorials/index.md#viewing-and-downloading-samples).</span><span class="sxs-lookup"><span data-stu-id="1e507-117">For download instructions, see [Samples and Tutorials](../samples-and-tutorials/index.md#viewing-and-downloading-samples).</span></span>
 
-## <a name="iterating-with-foreach"></a><span data-ttu-id="923bd-118">Iterace pomocí příkazu foreach</span><span class="sxs-lookup"><span data-stu-id="923bd-118">Iterating with foreach</span></span>
+## <a name="iterating-with-foreach"></a><span data-ttu-id="1e507-118">Iterace s foreach</span><span class="sxs-lookup"><span data-stu-id="1e507-118">Iterating with foreach</span></span>
 
-<span data-ttu-id="923bd-119">Výčet kolekce je jednoduchý: klíčové slovo `foreach` vytvoří výčet kolekce a jednou spustí vložený příkaz pro každý prvek v kolekci:</span><span class="sxs-lookup"><span data-stu-id="923bd-119">Enumerating a collection is simple: The `foreach` keyword enumerates a collection, executing the embedded statement once for each element in the collection:</span></span>
+<span data-ttu-id="1e507-119">Výčet kolekce je jednoduchý: `foreach` Klíčové slovo vyjmenovává kolekci a jednou provede vložený příkaz pro každý prvek v kolekci:</span><span class="sxs-lookup"><span data-stu-id="1e507-119">Enumerating a collection is simple: The `foreach` keyword enumerates a collection, executing the embedded statement once for each element in the collection:</span></span>
 
 ```csharp
 foreach (var item in collection)
@@ -37,15 +37,15 @@ foreach (var item in collection)
 }
 ```
 
-<span data-ttu-id="923bd-120">To je všechno, co je to vše.</span><span class="sxs-lookup"><span data-stu-id="923bd-120">That's all there is to it.</span></span> <span data-ttu-id="923bd-121">Chcete-li iterovat všechny obsahy kolekce, příkaz `foreach` je vše, co potřebujete.</span><span class="sxs-lookup"><span data-stu-id="923bd-121">To iterate over all the contents of a collection, the `foreach` statement is all you need.</span></span> <span data-ttu-id="923bd-122">Příkaz `foreach` není Magic, i když.</span><span class="sxs-lookup"><span data-stu-id="923bd-122">The `foreach` statement isn't magic, though.</span></span> <span data-ttu-id="923bd-123">Spoléhá se na dvě Obecná rozhraní definovaná v knihovně .NET Core, aby bylo možné vygenerovat kód potřebný k iteraci kolekce: `IEnumerable<T>` a `IEnumerator<T>`.</span><span class="sxs-lookup"><span data-stu-id="923bd-123">It relies on two generic interfaces defined in the .NET core library in order to generate the code necessary to iterate a collection: `IEnumerable<T>` and `IEnumerator<T>`.</span></span> <span data-ttu-id="923bd-124">Tento mechanismus je podrobněji vysvětlen níže.</span><span class="sxs-lookup"><span data-stu-id="923bd-124">This mechanism is explained in more detail below.</span></span>
+<span data-ttu-id="1e507-120">A to je vše.</span><span class="sxs-lookup"><span data-stu-id="1e507-120">That's all there is to it.</span></span> <span data-ttu-id="1e507-121">Chcete-li iterate přes veškerý obsah `foreach` kolekce, prohlášení je vše, co potřebujete.</span><span class="sxs-lookup"><span data-stu-id="1e507-121">To iterate over all the contents of a collection, the `foreach` statement is all you need.</span></span> <span data-ttu-id="1e507-122">To `foreach` prohlášení ale není kouzelné.</span><span class="sxs-lookup"><span data-stu-id="1e507-122">The `foreach` statement isn't magic, though.</span></span> <span data-ttu-id="1e507-123">Spoléhá se na dvě obecná rozhraní definovaná v základní knihovně .NET za účelem `IEnumerable<T>` `IEnumerator<T>`generování kódu potřebného k iterovat kolekci: a .</span><span class="sxs-lookup"><span data-stu-id="1e507-123">It relies on two generic interfaces defined in the .NET core library in order to generate the code necessary to iterate a collection: `IEnumerable<T>` and `IEnumerator<T>`.</span></span> <span data-ttu-id="1e507-124">Tento mechanismus je podrobněji vysvětlen níže.</span><span class="sxs-lookup"><span data-stu-id="1e507-124">This mechanism is explained in more detail below.</span></span>
 
-<span data-ttu-id="923bd-125">Obě tato rozhraní mají také neobecné protějšky: `IEnumerable` a `IEnumerator`.</span><span class="sxs-lookup"><span data-stu-id="923bd-125">Both of these interfaces also have non-generic counterparts: `IEnumerable` and `IEnumerator`.</span></span> <span data-ttu-id="923bd-126">[Obecné](programming-guide/generics/index.md) verze jsou upřednostňovány pro moderní kód.</span><span class="sxs-lookup"><span data-stu-id="923bd-126">The [generic](programming-guide/generics/index.md) versions are preferred for modern code.</span></span>
+<span data-ttu-id="1e507-125">Obě tato rozhraní mají také neobecné `IEnumerable` protějšky: a `IEnumerator`.</span><span class="sxs-lookup"><span data-stu-id="1e507-125">Both of these interfaces also have non-generic counterparts: `IEnumerable` and `IEnumerator`.</span></span> <span data-ttu-id="1e507-126">[Obecné](programming-guide/generics/index.md) verze jsou upřednostňovány pro moderní kód.</span><span class="sxs-lookup"><span data-stu-id="1e507-126">The [generic](programming-guide/generics/index.md) versions are preferred for modern code.</span></span>
 
-## <a name="enumeration-sources-with-iterator-methods"></a><span data-ttu-id="923bd-127">Výčtové zdroje s metodami iterátoru</span><span class="sxs-lookup"><span data-stu-id="923bd-127">Enumeration sources with iterator methods</span></span>
+## <a name="enumeration-sources-with-iterator-methods"></a><span data-ttu-id="1e507-127">Zdroje výčtu pomocí metod iterátoru</span><span class="sxs-lookup"><span data-stu-id="1e507-127">Enumeration sources with iterator methods</span></span>
 
-<span data-ttu-id="923bd-128">Další skvělou funkcí C# jazyka je umožňuje vytvořit metody, které vytvoří zdroj pro výčet.</span><span class="sxs-lookup"><span data-stu-id="923bd-128">Another great feature of the C# language enables you to build methods that create a source for an enumeration.</span></span> <span data-ttu-id="923bd-129">Tyto metody se označují jako *iterátory*.</span><span class="sxs-lookup"><span data-stu-id="923bd-129">These are referred to as *iterator methods*.</span></span> <span data-ttu-id="923bd-130">Metoda iterátoru definuje způsob generování objektů v pořadí podle požadavku.</span><span class="sxs-lookup"><span data-stu-id="923bd-130">An iterator method defines how to generate the objects in a sequence when requested.</span></span> <span data-ttu-id="923bd-131">K definování metody iterátoru slouží kontextové klíčové slovo `yield return`.</span><span class="sxs-lookup"><span data-stu-id="923bd-131">You use the `yield return` contextual keywords to define an iterator method.</span></span>
+<span data-ttu-id="1e507-128">Další skvělá funkce jazyka C# umožňuje vytvářet metody, které vytvářejí zdroj pro výčet.</span><span class="sxs-lookup"><span data-stu-id="1e507-128">Another great feature of the C# language enables you to build methods that create a source for an enumeration.</span></span> <span data-ttu-id="1e507-129">Tyto metody se označují jako *metody iterátoru*.</span><span class="sxs-lookup"><span data-stu-id="1e507-129">These are referred to as *iterator methods*.</span></span> <span data-ttu-id="1e507-130">Metoda iterátoru definuje, jak generovat objekty v pořadí na požádání.</span><span class="sxs-lookup"><span data-stu-id="1e507-130">An iterator method defines how to generate the objects in a sequence when requested.</span></span> <span data-ttu-id="1e507-131">Kontextová `yield return` klíčová slova slouží k definování metody iterátoru.</span><span class="sxs-lookup"><span data-stu-id="1e507-131">You use the `yield return` contextual keywords to define an iterator method.</span></span>
 
-<span data-ttu-id="923bd-132">Tuto metodu můžete zapsat pro vytvoření posloupnosti celých čísel od 0 do 9:</span><span class="sxs-lookup"><span data-stu-id="923bd-132">You could write this method to produce the sequence of integers from 0 through 9:</span></span>
+<span data-ttu-id="1e507-132">Tuto metodu můžete napsat k vytvoření posloupnosti celých čísel od 0 do 9:</span><span class="sxs-lookup"><span data-stu-id="1e507-132">You could write this method to produce the sequence of integers from 0 through 9:</span></span>
 
 ```csharp
 public IEnumerable<int> GetSingleDigitNumbers()
@@ -63,8 +63,8 @@ public IEnumerable<int> GetSingleDigitNumbers()
 }
 ```
 
-<span data-ttu-id="923bd-133">Výše uvedený kód ukazuje odlišné příkazy `yield return` pro zvýraznění faktu, že můžete použít více diskrétních `yield return`ch příkazů v metodě iterátoru.</span><span class="sxs-lookup"><span data-stu-id="923bd-133">The code above shows distinct `yield return` statements to highlight the fact that you can use multiple discrete `yield return` statements in an iterator method.</span></span>
-<span data-ttu-id="923bd-134">Můžete (a často) použít jiné jazykové konstrukce pro zjednodušení kódu metody iterátoru.</span><span class="sxs-lookup"><span data-stu-id="923bd-134">You can (and often do) use other language constructs to simplify the code of an iterator method.</span></span> <span data-ttu-id="923bd-135">Následující definice metody vytváří přesně stejnou sekvenci čísel:</span><span class="sxs-lookup"><span data-stu-id="923bd-135">The method definition below produces the exact same sequence of numbers:</span></span>
+<span data-ttu-id="1e507-133">Výše uvedený kód `yield return` ukazuje odlišné příkazy zvýraznit `yield return` skutečnost, že můžete použít více diskrétní příkazy v iterátor metody.</span><span class="sxs-lookup"><span data-stu-id="1e507-133">The code above shows distinct `yield return` statements to highlight the fact that you can use multiple discrete `yield return` statements in an iterator method.</span></span>
+<span data-ttu-id="1e507-134">Můžete (a často dělat) použít jiné jazykové konstrukce pro zjednodušení kódu metody iterátoru.</span><span class="sxs-lookup"><span data-stu-id="1e507-134">You can (and often do) use other language constructs to simplify the code of an iterator method.</span></span> <span data-ttu-id="1e507-135">Níže uvedená definice metody vytváří přesně stejnou posloupnost čísel:</span><span class="sxs-lookup"><span data-stu-id="1e507-135">The method definition below produces the exact same sequence of numbers:</span></span>
 
 ```csharp
 public IEnumerable<int> GetSingleDigitNumbers()
@@ -75,7 +75,7 @@ public IEnumerable<int> GetSingleDigitNumbers()
 }
 ```
 
-<span data-ttu-id="923bd-136">Nemusíte se rozhodnout ani jedno z nich.</span><span class="sxs-lookup"><span data-stu-id="923bd-136">You don't have to decide one or the other.</span></span> <span data-ttu-id="923bd-137">Pro splnění požadavků vaší metody můžete mít tolik `yield return` příkazů:</span><span class="sxs-lookup"><span data-stu-id="923bd-137">You can have as many `yield return` statements as necessary to meet the needs of your method:</span></span>
+<span data-ttu-id="1e507-136">Nemusíš rozhodovat o jednom nebo druhém.</span><span class="sxs-lookup"><span data-stu-id="1e507-136">You don't have to decide one or the other.</span></span> <span data-ttu-id="1e507-137">Můžete mít tolik `yield return` příkazů, kolik je potřeba, aby vyhovovaly potřebám vaší metody:</span><span class="sxs-lookup"><span data-stu-id="1e507-137">You can have as many `yield return` statements as necessary to meet the needs of your method:</span></span>
 
 ```csharp
 public IEnumerable<int> GetSingleDigitNumbers()
@@ -92,7 +92,7 @@ public IEnumerable<int> GetSingleDigitNumbers()
 }
 ```
 
-<span data-ttu-id="923bd-138">To je základní syntaxe.</span><span class="sxs-lookup"><span data-stu-id="923bd-138">That's the basic syntax.</span></span> <span data-ttu-id="923bd-139">Pojďme se na příklad reálného světa, kde byste napsali metodu iterátoru.</span><span class="sxs-lookup"><span data-stu-id="923bd-139">Let's consider a real world example where you would write an iterator method.</span></span> <span data-ttu-id="923bd-140">Představte si, že jste v projektu IoT a senzory zařízení generují velmi velký proud dat.</span><span class="sxs-lookup"><span data-stu-id="923bd-140">Imagine you're on an IoT project and the device sensors generate a very large stream of data.</span></span> <span data-ttu-id="923bd-141">Chcete-li pro data získat dojem, můžete napsat metodu, která bude odebírat každý n-tý datový prvek.</span><span class="sxs-lookup"><span data-stu-id="923bd-141">To get a feel for the data, you might write a method that samples every Nth data element.</span></span> <span data-ttu-id="923bd-142">Tato metoda malého iterátoru dělá štych:</span><span class="sxs-lookup"><span data-stu-id="923bd-142">This small iterator method does the trick:</span></span>
+<span data-ttu-id="1e507-138">To je základní syntaxe.</span><span class="sxs-lookup"><span data-stu-id="1e507-138">That's the basic syntax.</span></span> <span data-ttu-id="1e507-139">Podívejme se na příklad reálného světa, kde byste napsali metodu iterátoru.</span><span class="sxs-lookup"><span data-stu-id="1e507-139">Let's consider a real world example where you would write an iterator method.</span></span> <span data-ttu-id="1e507-140">Představte si, že jste na projektu IoT a senzory zařízení generují velmi velký proud dat.</span><span class="sxs-lookup"><span data-stu-id="1e507-140">Imagine you're on an IoT project and the device sensors generate a very large stream of data.</span></span> <span data-ttu-id="1e507-141">Chcete-li získat cit pro data, můžete napsat metodu, která vzorky každý n-tý datový prvek.</span><span class="sxs-lookup"><span data-stu-id="1e507-141">To get a feel for the data, you might write a method that samples every Nth data element.</span></span> <span data-ttu-id="1e507-142">Tato malá metoda iterátoru dělá trik:</span><span class="sxs-lookup"><span data-stu-id="1e507-142">This small iterator method does the trick:</span></span>
 
 ```csharp
 public static IEnumerable<T> Sample(this IEnumerable<T> sourceSequence, int interval)
@@ -106,7 +106,7 @@ public static IEnumerable<T> Sample(this IEnumerable<T> sourceSequence, int inte
 }
 ```
 
-<span data-ttu-id="923bd-143">Existují jedna důležitá omezení pro metody iterátoru: ve stejné metodě nemůžete mít příkaz `return` a `yield return` příkaz.</span><span class="sxs-lookup"><span data-stu-id="923bd-143">There is one important restriction on iterator methods: you can't have both a `return` statement and a `yield return` statement in the same method.</span></span> <span data-ttu-id="923bd-144">Následující kroky nebudou zkompilovány:</span><span class="sxs-lookup"><span data-stu-id="923bd-144">The following will not compile:</span></span>
+<span data-ttu-id="1e507-143">Existuje jedno důležité omezení metod iterátoru: nemůžete mít `return` jak `yield return` příkaz, tak příkaz ve stejné metodě.</span><span class="sxs-lookup"><span data-stu-id="1e507-143">There is one important restriction on iterator methods: you can't have both a `return` statement and a `yield return` statement in the same method.</span></span> <span data-ttu-id="1e507-144">Následující nebude kompilovat:</span><span class="sxs-lookup"><span data-stu-id="1e507-144">The following will not compile:</span></span>
 
 ```csharp
 public IEnumerable<int> GetSingleDigitNumbers()
@@ -123,9 +123,9 @@ public IEnumerable<int> GetSingleDigitNumbers()
 }
 ```
 
-<span data-ttu-id="923bd-145">Toto omezení se obvykle nejedná o problém.</span><span class="sxs-lookup"><span data-stu-id="923bd-145">This restriction normally isn't a problem.</span></span> <span data-ttu-id="923bd-146">Máte možnost volby buď pomocí `yield return` v rámci této metody, nebo oddělením původní metody do více metod, některých pomocí `return` a některých pomocí `yield return`.</span><span class="sxs-lookup"><span data-stu-id="923bd-146">You have a choice of either using `yield return` throughout the method, or separating the original method into multiple methods, some using `return`, and some using `yield return`.</span></span>
+<span data-ttu-id="1e507-145">Toto omezení obvykle není problém.</span><span class="sxs-lookup"><span data-stu-id="1e507-145">This restriction normally isn't a problem.</span></span> <span data-ttu-id="1e507-146">Máte na výběr buď `yield return` pomocí v rámci metody, nebo oddělení původní `return`metody do `yield return`více metod, některé pomocí a některé pomocí .</span><span class="sxs-lookup"><span data-stu-id="1e507-146">You have a choice of either using `yield return` throughout the method, or separating the original method into multiple methods, some using `return`, and some using `yield return`.</span></span>
 
-<span data-ttu-id="923bd-147">Poslední metodu můžete upravit mírně a použít `yield return` všude:</span><span class="sxs-lookup"><span data-stu-id="923bd-147">You can modify the last method slightly to use `yield return` everywhere:</span></span>
+<span data-ttu-id="1e507-147">Můžete upravit poslední metodu mírně `yield return` použít všude:</span><span class="sxs-lookup"><span data-stu-id="1e507-147">You can modify the last method slightly to use `yield return` everywhere:</span></span>
 
 ```csharp
 public IEnumerable<int> GetSingleDigitNumbers()
@@ -142,7 +142,7 @@ public IEnumerable<int> GetSingleDigitNumbers()
 }
 ```
 
-<span data-ttu-id="923bd-148">V některých případech je správná odpověď rozdělením metody iterátoru do dvou různých metod.</span><span class="sxs-lookup"><span data-stu-id="923bd-148">Sometimes, the right answer is to split an iterator method into two different methods.</span></span> <span data-ttu-id="923bd-149">Ten používá `return` a druhý, který používá `yield return`.</span><span class="sxs-lookup"><span data-stu-id="923bd-149">One that uses `return`, and a second that uses `yield return`.</span></span> <span data-ttu-id="923bd-150">Vezměte v úvahu situaci, kdy byste mohli chtít vrátit prázdnou kolekci, nebo prvních 5 lichých čísel na základě argumentu Boolean.</span><span class="sxs-lookup"><span data-stu-id="923bd-150">Consider a situation where you might want to return an empty collection, or the first 5 odd numbers, based on a boolean argument.</span></span> <span data-ttu-id="923bd-151">Můžete napsat tyto dvě metody:</span><span class="sxs-lookup"><span data-stu-id="923bd-151">You could write that as these two methods:</span></span>
+<span data-ttu-id="1e507-148">Někdy je správnou odpovědí rozdělení metody iterátoru na dvě různé metody.</span><span class="sxs-lookup"><span data-stu-id="1e507-148">Sometimes, the right answer is to split an iterator method into two different methods.</span></span> <span data-ttu-id="1e507-149">Jeden, `return`který používá , `yield return`a druhý, který používá .</span><span class="sxs-lookup"><span data-stu-id="1e507-149">One that uses `return`, and a second that uses `yield return`.</span></span> <span data-ttu-id="1e507-150">Zvažte situaci, kdy můžete chtít vrátit prázdnou kolekci nebo prvních 5 lichých čísel na základě logického argumentu.</span><span class="sxs-lookup"><span data-stu-id="1e507-150">Consider a situation where you might want to return an empty collection, or the first 5 odd numbers, based on a boolean argument.</span></span> <span data-ttu-id="1e507-151">Dalo by se napsat, že jako tyto dvě metody:</span><span class="sxs-lookup"><span data-stu-id="1e507-151">You could write that as these two methods:</span></span>
 
 ```csharp
 public IEnumerable<int> GetSingleDigitOddNumbers(bool getCollection)
@@ -165,13 +165,13 @@ private IEnumerable<int> IteratorMethod()
 }
 ```
 
-<span data-ttu-id="923bd-152">Podívejte se na výše uvedené metody.</span><span class="sxs-lookup"><span data-stu-id="923bd-152">Look at the methods above.</span></span> <span data-ttu-id="923bd-153">První používá příkaz standardní `return` pro vrácení prázdné kolekce nebo iterátoru vytvořeného druhou metodou.</span><span class="sxs-lookup"><span data-stu-id="923bd-153">The first uses the standard `return` statement to return either an empty collection, or the iterator created by the second method.</span></span> <span data-ttu-id="923bd-154">Druhá metoda používá příkaz `yield return` k vytvoření požadované sekvence.</span><span class="sxs-lookup"><span data-stu-id="923bd-154">The second method uses the `yield return` statement to create the requested sequence.</span></span>
+<span data-ttu-id="1e507-152">Podívejte se na výše uvedené metody.</span><span class="sxs-lookup"><span data-stu-id="1e507-152">Look at the methods above.</span></span> <span data-ttu-id="1e507-153">První používá standardní `return` příkaz vrátit buď prázdnou kolekci nebo iterátor vytvořený druhou metodou.</span><span class="sxs-lookup"><span data-stu-id="1e507-153">The first uses the standard `return` statement to return either an empty collection, or the iterator created by the second method.</span></span> <span data-ttu-id="1e507-154">Druhá metoda používá `yield return` příkaz k vytvoření požadované sekvence.</span><span class="sxs-lookup"><span data-stu-id="1e507-154">The second method uses the `yield return` statement to create the requested sequence.</span></span>
 
-## <a name="deeper-dive-into-foreach"></a><span data-ttu-id="923bd-155">Hlubší podrobně do `foreach`</span><span class="sxs-lookup"><span data-stu-id="923bd-155">Deeper Dive into `foreach`</span></span>
+## <a name="deeper-dive-into-foreach"></a><span data-ttu-id="1e507-155">Hlouběji ponořte se do`foreach`</span><span class="sxs-lookup"><span data-stu-id="1e507-155">Deeper Dive into `foreach`</span></span>
 
-<span data-ttu-id="923bd-156">Příkaz `foreach` se rozšíří na standardní idiom, který používá rozhraní `IEnumerable<T>` a `IEnumerator<T>` k iterování napříč všemi prvky kolekce.</span><span class="sxs-lookup"><span data-stu-id="923bd-156">The `foreach` statement expands into a standard idiom that uses the `IEnumerable<T>` and `IEnumerator<T>` interfaces to iterate across all elements of a collection.</span></span> <span data-ttu-id="923bd-157">Také minimalizuje chyby, které vývojáři vytvářejí při nesprávné správě prostředků.</span><span class="sxs-lookup"><span data-stu-id="923bd-157">It also  minimizes errors developers make by not properly managing resources.</span></span>
+<span data-ttu-id="1e507-156">Příkaz `foreach` rozbalí do standardní idiom, `IEnumerable<T>` `IEnumerator<T>` který používá a rozhraní iterát u všech prvků kolekce.</span><span class="sxs-lookup"><span data-stu-id="1e507-156">The `foreach` statement expands into a standard idiom that uses the `IEnumerable<T>` and `IEnumerator<T>` interfaces to iterate across all elements of a collection.</span></span> <span data-ttu-id="1e507-157">Také minimalizuje chyby, které vývojáři dělají tím, že správně nespravují prostředky.</span><span class="sxs-lookup"><span data-stu-id="1e507-157">It also  minimizes errors developers make by not properly managing resources.</span></span>
 
-<span data-ttu-id="923bd-158">Kompilátor transformuje `foreach` cyklus zobrazený v prvním příkladu na něco podobného této konstrukci:</span><span class="sxs-lookup"><span data-stu-id="923bd-158">The compiler translates the `foreach` loop shown in the first example into something similar to this construct:</span></span>
+<span data-ttu-id="1e507-158">Kompilátor přeloží smyčku zobrazenou `foreach` v prvním příkladu na něco podobného této konstrukci:</span><span class="sxs-lookup"><span data-stu-id="1e507-158">The compiler translates the `foreach` loop shown in the first example into something similar to this construct:</span></span>
 
 ```csharp
 IEnumerator<int> enumerator = collection.GetEnumerator();
@@ -182,7 +182,7 @@ while (enumerator.MoveNext())
 }
 ```
 
-<span data-ttu-id="923bd-159">Výše uvedená konstrukce představuje kód generovaný C# kompilátorem ve verzi 5 a vyšší.</span><span class="sxs-lookup"><span data-stu-id="923bd-159">The construct above represents the code generated by the C# compiler as of version 5 and above.</span></span> <span data-ttu-id="923bd-160">Před verzí 5 měla proměnná `item` jiný obor:</span><span class="sxs-lookup"><span data-stu-id="923bd-160">Prior to version 5, the `item` variable had a different scope:</span></span>
+<span data-ttu-id="1e507-159">Konstrukce výše představuje kód generovaný kompilátorem Jazyka C# od verze 5 a vyšší.</span><span class="sxs-lookup"><span data-stu-id="1e507-159">The construct above represents the code generated by the C# compiler as of version 5 and above.</span></span> <span data-ttu-id="1e507-160">Před verzí 5 `item` měla proměnná jiný rozsah:</span><span class="sxs-lookup"><span data-stu-id="1e507-160">Prior to version 5, the `item` variable had a different scope:</span></span>
 
 ```csharp
 // C# versions 1 through 4:
@@ -195,9 +195,9 @@ while (enumerator.MoveNext())
 }
 ```
 
-<span data-ttu-id="923bd-161">Tato změna byla změněna, protože předchozí chování může vést k nejemnému a obtížnému Diagnostikování chyb týkajících se výrazů lambda.</span><span class="sxs-lookup"><span data-stu-id="923bd-161">This was changed because the earlier behavior could lead to subtle and hard to diagnose bugs involving lambda expressions.</span></span> <span data-ttu-id="923bd-162">Další informace o výrazech lambda naleznete v tématu [lambda Expressions](./programming-guide/statements-expressions-operators/lambda-expressions.md).</span><span class="sxs-lookup"><span data-stu-id="923bd-162">For more information about lambda expressions, see [Lambda expressions](./programming-guide/statements-expressions-operators/lambda-expressions.md).</span></span>
+<span data-ttu-id="1e507-161">To bylo změněno, protože dřívější chování může vést k jemné a těžko diagnostikovat chyby zahrnující lambda výrazy.</span><span class="sxs-lookup"><span data-stu-id="1e507-161">This was changed because the earlier behavior could lead to subtle and hard to diagnose bugs involving lambda expressions.</span></span> <span data-ttu-id="1e507-162">Další informace o výrazech lambda naleznete v tématu [Lambda výrazy](./programming-guide/statements-expressions-operators/lambda-expressions.md).</span><span class="sxs-lookup"><span data-stu-id="1e507-162">For more information about lambda expressions, see [Lambda expressions](./programming-guide/statements-expressions-operators/lambda-expressions.md).</span></span>
 
-<span data-ttu-id="923bd-163">Přesný kód generovaný kompilátorem je poněkud složitější a zpracovává situace, kde objekt vrácený `GetEnumerator()` implementuje rozhraní `IDisposable`.</span><span class="sxs-lookup"><span data-stu-id="923bd-163">The exact code generated by the compiler is somewhat more complicated, and handles situations where the object returned by `GetEnumerator()` implements the `IDisposable` interface.</span></span> <span data-ttu-id="923bd-164">Úplné rozšíření generuje podobný kód jako tento:</span><span class="sxs-lookup"><span data-stu-id="923bd-164">The full expansion generates code more like this:</span></span>
+<span data-ttu-id="1e507-163">Přesný kód generovaný kompilátorem je poněkud složitější a zpracovává situace, kdy objekt vrácený implementuje `GetEnumerator()` `IDisposable` rozhraní.</span><span class="sxs-lookup"><span data-stu-id="1e507-163">The exact code generated by the compiler is somewhat more complicated, and handles situations where the object returned by `GetEnumerator()` implements the `IDisposable` interface.</span></span> <span data-ttu-id="1e507-164">Úplné rozšíření generuje kód více takto:</span><span class="sxs-lookup"><span data-stu-id="1e507-164">The full expansion generates code more like this:</span></span>
 
 ```csharp
 {
@@ -216,7 +216,7 @@ while (enumerator.MoveNext())
 }
 ```
 
-<span data-ttu-id="923bd-165">Způsob, jakým je uvolněn enumerátor, závisí na charakteristikách typu `enumerator`.</span><span class="sxs-lookup"><span data-stu-id="923bd-165">The manner in which the enumerator is disposed of depends on the characteristics of the type of `enumerator`.</span></span> <span data-ttu-id="923bd-166">V obecném případě je klauzule `finally` rozšířena na:</span><span class="sxs-lookup"><span data-stu-id="923bd-166">In the general case, the `finally` clause expands to:</span></span>
+<span data-ttu-id="1e507-165">Způsob, jakým je čítač zlikvidován, závisí `enumerator`na vlastnostech typu .</span><span class="sxs-lookup"><span data-stu-id="1e507-165">The manner in which the enumerator is disposed of depends on the characteristics of the type of `enumerator`.</span></span> <span data-ttu-id="1e507-166">V obecném případě `finally` se doložka rozšiřuje na:</span><span class="sxs-lookup"><span data-stu-id="1e507-166">In the general case, the `finally` clause expands to:</span></span>
 
 ```csharp
 finally
@@ -225,7 +225,7 @@ finally
 }
 ```
 
-<span data-ttu-id="923bd-167">Pokud je však typ `enumerator` zapečetěný typ a neexistuje žádný implicitní převod z typu `enumerator` na `IDisposable`, klauzule `finally` se rozšíří do prázdného bloku:</span><span class="sxs-lookup"><span data-stu-id="923bd-167">However, if the type of `enumerator` is a sealed type and there is no implicit conversion from the type of `enumerator` to `IDisposable`, the `finally` clause expands to an empty block:</span></span>
+<span data-ttu-id="1e507-167">`enumerator` Pokud je však typ zapečetěného typu a neexistuje žádný `enumerator` implicitní převod z typu na `IDisposable`, `finally` klauzule se rozbalí na prázdný blok:</span><span class="sxs-lookup"><span data-stu-id="1e507-167">However, if the type of `enumerator` is a sealed type and there is no implicit conversion from the type of `enumerator` to `IDisposable`, the `finally` clause expands to an empty block:</span></span>
 
 ```csharp
 finally
@@ -233,7 +233,7 @@ finally
 }
 ```
 
-<span data-ttu-id="923bd-168">Pokud existuje implicitní převod z typu `enumerator` na `IDisposable` a `enumerator` je typ hodnoty, která není null, klauzule `finally` se rozšíří na:</span><span class="sxs-lookup"><span data-stu-id="923bd-168">If there is an implicit conversion from the type of `enumerator` to `IDisposable`, and `enumerator` is a non-nullable value type, the `finally` clause expands to:</span></span>
+<span data-ttu-id="1e507-168">Pokud je implicitní převod z `enumerator` `IDisposable`typu `enumerator` na , a je non-null typ hodnoty, `finally` klauzule rozbalí na:</span><span class="sxs-lookup"><span data-stu-id="1e507-168">If there is an implicit conversion from the type of `enumerator` to `IDisposable`, and `enumerator` is a non-nullable value type, the `finally` clause expands to:</span></span>
 
 ```csharp
 finally
@@ -242,4 +242,4 @@ finally
 }
 ```
 
-<span data-ttu-id="923bd-169">Naštěstí, nemusíte si pamatovat všechny tyto podrobnosti.</span><span class="sxs-lookup"><span data-stu-id="923bd-169">Thankfully, you don't need to remember all these details.</span></span> <span data-ttu-id="923bd-170">Příkaz `foreach` zpracuje všechny tyto drobné odlišnosti za vás.</span><span class="sxs-lookup"><span data-stu-id="923bd-170">The `foreach` statement handles all those nuances for you.</span></span> <span data-ttu-id="923bd-171">Kompilátor vygeneruje správný kód pro některý z těchto konstrukcí.</span><span class="sxs-lookup"><span data-stu-id="923bd-171">The compiler will generate the correct code for any of these constructs.</span></span>
+<span data-ttu-id="1e507-169">Naštěstí si nemusíte pamatovat všechny tyto detaily.</span><span class="sxs-lookup"><span data-stu-id="1e507-169">Thankfully, you don't need to remember all these details.</span></span> <span data-ttu-id="1e507-170">Prohlášení `foreach` zpracovává všechny tyto nuance pro vás.</span><span class="sxs-lookup"><span data-stu-id="1e507-170">The `foreach` statement handles all those nuances for you.</span></span> <span data-ttu-id="1e507-171">Kompilátor vygeneruje správný kód pro všechny tyto konstrukce.</span><span class="sxs-lookup"><span data-stu-id="1e507-171">The compiler will generate the correct code for any of these constructs.</span></span>

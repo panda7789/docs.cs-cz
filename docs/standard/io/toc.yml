@@ -24,7 +24,7 @@
           href: how-to-write-characters-to-a-string.md
         - name: 'Postupy: Přidávání a odebírání položek seznamu řízení přístupu'
           href: how-to-add-or-remove-access-control-list-entries.md
-        - name: 'Postupy: Komprese a extrahování souborů'
+        - name: 'Postupy: Komprimování a extrahování souborů'
           href: how-to-compress-and-extract-files.md
         - name: Skládání streamů
           href: composing-streams.md
@@ -55,7 +55,7 @@
           href: how-to-read-and-write-to-files-in-isolated-storage.md
         - name: 'Postupy: Odstraňování souborů a adresářů v izolovaném úložišti'
           href: how-to-delete-files-and-directories-in-isolated-storage.md
-    - name: Kanály
+    - name: Pojmenované kanály
       href: pipe-operations.md
       items:
         - name: 'Postupy: Místní meziprocesová komunikace pomocí anonymních kanálů'
