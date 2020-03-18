@@ -1,48 +1,48 @@
 ---
-title: Zrušení asynchronních úloh po uplynutí časového intervalu (C#)
+title: Zrušit asynchronní úkoly po časovém období (C#)
 ms.date: 07/20/2015
 ms.assetid: 194282c2-399f-46da-a7a6-96674e00b0b3
 ms.openlocfilehash: 110c4700d0d2afc87f9144bf258cdd4991f107f4
-ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/31/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "70204345"
 ---
-# <a name="cancel-async-tasks-after-a-period-of-time-c"></a><span data-ttu-id="ff0c9-102">Zrušení asynchronních úloh po uplynutí časového intervalu (C#)</span><span class="sxs-lookup"><span data-stu-id="ff0c9-102">Cancel async tasks after a period of time (C#)</span></span>
+# <a name="cancel-async-tasks-after-a-period-of-time-c"></a><span data-ttu-id="9d11f-102">Zrušení asynchronních úloh po určité době (C#)</span><span class="sxs-lookup"><span data-stu-id="9d11f-102">Cancel async tasks after a period of time (C#)</span></span>
 
-<span data-ttu-id="ff0c9-103">Asynchronní operaci můžete zrušit po časovém intervalu pomocí metody, <xref:System.Threading.CancellationTokenSource.CancelAfter%2A?displayProperty=nameWithType> Pokud nechcete čekat na dokončení operace.</span><span class="sxs-lookup"><span data-stu-id="ff0c9-103">You can cancel an asynchronous operation after a period of time by using the  <xref:System.Threading.CancellationTokenSource.CancelAfter%2A?displayProperty=nameWithType> method if you don't want to wait for the operation to finish.</span></span> <span data-ttu-id="ff0c9-104">Tato metoda naplánuje zrušení všech přidružených úloh, které nejsou dokončeny v časovém období určeném `CancelAfter` výrazem.</span><span class="sxs-lookup"><span data-stu-id="ff0c9-104">This method schedules the cancellation of any associated tasks that aren’t complete within the period of time that’s designated by the `CancelAfter` expression.</span></span>
+<span data-ttu-id="9d11f-103">Asynchronní operaci můžete po určité době zrušit pomocí <xref:System.Threading.CancellationTokenSource.CancelAfter%2A?displayProperty=nameWithType> metody, pokud nechcete čekat na dokončení operace.</span><span class="sxs-lookup"><span data-stu-id="9d11f-103">You can cancel an asynchronous operation after a period of time by using the  <xref:System.Threading.CancellationTokenSource.CancelAfter%2A?displayProperty=nameWithType> method if you don't want to wait for the operation to finish.</span></span> <span data-ttu-id="9d11f-104">Tato metoda naplánuje zrušení všech přidružených úkolů, které nejsou dokončeny v `CancelAfter` rámci časového období, které je určeno výrazem.</span><span class="sxs-lookup"><span data-stu-id="9d11f-104">This method schedules the cancellation of any associated tasks that aren’t complete within the period of time that’s designated by the `CancelAfter` expression.</span></span>
 
-<span data-ttu-id="ff0c9-105">Tento příklad přidá do kódu, který je vyvíjen v rámci [zrušení asynchronní úlohy nebo seznamu úkolůC#()](./cancel-an-async-task-or-a-list-of-tasks.md) pro stažení seznamu webů a zobrazení délky obsahu každého z nich.</span><span class="sxs-lookup"><span data-stu-id="ff0c9-105">This example adds to the code that’s developed in [Cancel an Async Task or a List of Tasks (C#)](./cancel-an-async-task-or-a-list-of-tasks.md) to download a list of websites and to display the length of the contents of each one.</span></span>
+<span data-ttu-id="9d11f-105">Tento příklad přidá ke kódu, který je vyvinut v [Zrušit asynchronní úlohu nebo Seznam úkolů (C#)](./cancel-an-async-task-or-a-list-of-tasks.md) ke stažení seznamu webů a zobrazit délku obsahu každého z nich.</span><span class="sxs-lookup"><span data-stu-id="9d11f-105">This example adds to the code that’s developed in [Cancel an Async Task or a List of Tasks (C#)](./cancel-an-async-task-or-a-list-of-tasks.md) to download a list of websites and to display the length of the contents of each one.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="ff0c9-106">Chcete-li spustit příklady, je nutné mít v počítači nainstalován systém Visual Studio 2012 nebo novější a .NET Framework 4,5 nebo novější.</span><span class="sxs-lookup"><span data-stu-id="ff0c9-106">To run the examples, you must have Visual Studio 2012 or newer and the .NET Framework 4.5 or newer installed on your computer.</span></span>
+> <span data-ttu-id="9d11f-106">Chcete-li spustit příklady, musíte mít Visual Studio 2012 nebo novější a rozhraní .NET Framework 4.5 nebo novější nainstalován v počítači.</span><span class="sxs-lookup"><span data-stu-id="9d11f-106">To run the examples, you must have Visual Studio 2012 or newer and the .NET Framework 4.5 or newer installed on your computer.</span></span>
 
-## <a name="download-the-example"></a><span data-ttu-id="ff0c9-107">Stažení příkladu</span><span class="sxs-lookup"><span data-stu-id="ff0c9-107">Download the example</span></span>
+## <a name="download-the-example"></a><span data-ttu-id="9d11f-107">Stáhněte si příklad</span><span class="sxs-lookup"><span data-stu-id="9d11f-107">Download the example</span></span>
 
-<span data-ttu-id="ff0c9-108">Kompletní projekt Windows Presentation Foundation (WPF) si můžete stáhnout z [části Async Sample: Vyladění aplikace](https://code.msdn.microsoft.com/Async-Fine-Tuning-Your-a676abea) a pak postupujte podle těchto kroků.</span><span class="sxs-lookup"><span data-stu-id="ff0c9-108">You can download the complete Windows Presentation Foundation (WPF) project from [Async Sample: Fine Tuning Your Application](https://code.msdn.microsoft.com/Async-Fine-Tuning-Your-a676abea) and then follow these steps.</span></span>
+<span data-ttu-id="9d11f-108">Můžete si stáhnout celý projekt Windows Presentation Foundation (WPF) z [ukázky asynchronní: Jemné doladění aplikace](https://code.msdn.microsoft.com/Async-Fine-Tuning-Your-a676abea) a postupujte takto.</span><span class="sxs-lookup"><span data-stu-id="9d11f-108">You can download the complete Windows Presentation Foundation (WPF) project from [Async Sample: Fine Tuning Your Application](https://code.msdn.microsoft.com/Async-Fine-Tuning-Your-a676abea) and then follow these steps.</span></span>
 
-1. <span data-ttu-id="ff0c9-109">Dekomprimovat soubor, který jste stáhli, a potom spusťte Visual Studio.</span><span class="sxs-lookup"><span data-stu-id="ff0c9-109">Decompress the file that you downloaded, and then start Visual Studio.</span></span>
+1. <span data-ttu-id="9d11f-109">Dekomprimujte soubor, který jste stáhli, a spusťte Visual Studio.</span><span class="sxs-lookup"><span data-stu-id="9d11f-109">Decompress the file that you downloaded, and then start Visual Studio.</span></span>
 
-2. <span data-ttu-id="ff0c9-110">Na panelu nabídek vyberte **soubor** > **otevřít** > **projekt/řešení**.</span><span class="sxs-lookup"><span data-stu-id="ff0c9-110">On the menu bar, choose **File** > **Open** > **Project/Solution**.</span></span>
+2. <span data-ttu-id="9d11f-110">Na řádku nabídek zvolte **Soubor** > **otevřít** > **projekt/řešení**.</span><span class="sxs-lookup"><span data-stu-id="9d11f-110">On the menu bar, choose **File** > **Open** > **Project/Solution**.</span></span>
 
-3. <span data-ttu-id="ff0c9-111">V dialogovém okně **Otevřít projekt** otevřete složku, která obsahuje ukázkový kód, který jste dekomprimujei, a poté otevřete soubor řešení (. sln) pro AsyncFineTuningCS.</span><span class="sxs-lookup"><span data-stu-id="ff0c9-111">In the **Open Project** dialog box, open the folder that holds the sample code that you decompressed, and then open the solution (.sln) file for AsyncFineTuningCS.</span></span>
+3. <span data-ttu-id="9d11f-111">V dialogovém okně **Otevřít projekt** otevřete složku obsahující ukázkový kód, který jste dekomprimovali, a potom otevřete soubor řešení (.sln) pro AsyncFineTuningCS.</span><span class="sxs-lookup"><span data-stu-id="9d11f-111">In the **Open Project** dialog box, open the folder that holds the sample code that you decompressed, and then open the solution (.sln) file for AsyncFineTuningCS.</span></span>
 
-4. <span data-ttu-id="ff0c9-112">V **Průzkumník řešení**otevřete místní nabídku pro projekt **CancelAfterTime** a pak zvolte **nastavit jako projekt po spuštění**.</span><span class="sxs-lookup"><span data-stu-id="ff0c9-112">In **Solution Explorer**, open the shortcut menu for the **CancelAfterTime** project, and then choose **Set as StartUp Project**.</span></span>
+4. <span data-ttu-id="9d11f-112">V **Průzkumníku řešení**otevřete místní nabídku projektu **CancelAfterTime** a pak zvolte **Nastavit jako počáteční projekt**.</span><span class="sxs-lookup"><span data-stu-id="9d11f-112">In **Solution Explorer**, open the shortcut menu for the **CancelAfterTime** project, and then choose **Set as StartUp Project**.</span></span>
 
-5. <span data-ttu-id="ff0c9-113">Kliknutím na klávesu **F5** spusťte projekt.</span><span class="sxs-lookup"><span data-stu-id="ff0c9-113">Choose the **F5** key to run the project.</span></span> <span data-ttu-id="ff0c9-114">(Nebo stiskněte klávesu **CTRL**+**F5** pro spuštění projektu bez ladění).</span><span class="sxs-lookup"><span data-stu-id="ff0c9-114">(Or, press **Ctrl**+**F5** to run the project without debugging it).</span></span>
+5. <span data-ttu-id="9d11f-113">Zvolte klávesu **F5** pro spuštění projektu.</span><span class="sxs-lookup"><span data-stu-id="9d11f-113">Choose the **F5** key to run the project.</span></span> <span data-ttu-id="9d11f-114">(Nebo stisknutím **klávesy Ctrl**+**F5** spusťte projekt bez ladění).</span><span class="sxs-lookup"><span data-stu-id="9d11f-114">(Or, press **Ctrl**+**F5** to run the project without debugging it).</span></span>
 
-6. <span data-ttu-id="ff0c9-115">Spusťte program několikrát, abyste ověřili, že výstup může zobrazit výstup pro všechny weby, žádné weby nebo některé weby.</span><span class="sxs-lookup"><span data-stu-id="ff0c9-115">Run the program several times to verify that the output might show output for all websites, no websites, or some web sites.</span></span>
+6. <span data-ttu-id="9d11f-115">Spusťte program několikrát a ověřte, zda výstup může zobrazovat výstup pro všechny weby, žádné weby nebo některé webové stránky.</span><span class="sxs-lookup"><span data-stu-id="9d11f-115">Run the program several times to verify that the output might show output for all websites, no websites, or some web sites.</span></span>
 
-<span data-ttu-id="ff0c9-116">Pokud nechcete stáhnout projekt, můžete si prohlédnout soubor MainWindow.xaml.cs na konci tohoto tématu.</span><span class="sxs-lookup"><span data-stu-id="ff0c9-116">If you don't want to download the project, you can review the MainWindow.xaml.cs file at the end of this topic.</span></span>
+<span data-ttu-id="9d11f-116">Pokud projekt nechcete stáhnout, můžete zkontrolovat soubor MainWindow.xaml.cs na konci tohoto tématu.</span><span class="sxs-lookup"><span data-stu-id="9d11f-116">If you don't want to download the project, you can review the MainWindow.xaml.cs file at the end of this topic.</span></span>
 
-## <a name="build-the-example"></a><span data-ttu-id="ff0c9-117">Sestavení příkladu</span><span class="sxs-lookup"><span data-stu-id="ff0c9-117">Build the example</span></span>
+## <a name="build-the-example"></a><span data-ttu-id="9d11f-117">Sestavení příkladu</span><span class="sxs-lookup"><span data-stu-id="9d11f-117">Build the example</span></span>
 
-<span data-ttu-id="ff0c9-118">Příklad v tomto tématu se přidá do projektu, který je vyvíjen v části [zrušení asynchronní úlohy nebo seznamu úkolůC#()](./cancel-an-async-task-or-a-list-of-tasks.md) pro zrušení seznamu úkolů.</span><span class="sxs-lookup"><span data-stu-id="ff0c9-118">The example in this topic adds to the project that's developed in [Cancel an Async Task or a List of Tasks (C#)](./cancel-an-async-task-or-a-list-of-tasks.md) to cancel a list of tasks.</span></span> <span data-ttu-id="ff0c9-119">V příkladu se používá stejné uživatelské rozhraní, i když se tlačítko **Storno** nepoužívá explicitně.</span><span class="sxs-lookup"><span data-stu-id="ff0c9-119">The example uses the same UI, although the **Cancel** button isn’t used explicitly.</span></span>
+<span data-ttu-id="9d11f-118">Příklad v tomto tématu přidá do projektu, který je vyvinut v [Zrušit asynchronní úkol nebo Seznam úkolů (C#)](./cancel-an-async-task-or-a-list-of-tasks.md) zrušit seznam úkolů.</span><span class="sxs-lookup"><span data-stu-id="9d11f-118">The example in this topic adds to the project that's developed in [Cancel an Async Task or a List of Tasks (C#)](./cancel-an-async-task-or-a-list-of-tasks.md) to cancel a list of tasks.</span></span> <span data-ttu-id="9d11f-119">Příklad používá stejné ui, i když **tlačítko Storno** není použit explicitně.</span><span class="sxs-lookup"><span data-stu-id="9d11f-119">The example uses the same UI, although the **Cancel** button isn’t used explicitly.</span></span>
 
-<span data-ttu-id="ff0c9-120">Chcete-li sestavit příklad sami, postupujte podle pokynů v části "stažení příkladu", ale jako **spouštěný projekt**vyberte **CancelAListOfTasks** .</span><span class="sxs-lookup"><span data-stu-id="ff0c9-120">To build the example yourself, step by step, follow the instructions in the "Downloading the Example" section, but choose **CancelAListOfTasks** as the **StartUp Project**.</span></span> <span data-ttu-id="ff0c9-121">Přidejte změny v tomto tématu do projektu.</span><span class="sxs-lookup"><span data-stu-id="ff0c9-121">Add the changes in this topic to that project.</span></span>
+<span data-ttu-id="9d11f-120">Chcete-li vytvořit příklad sami, krok za krokem postupujte podle pokynů v části "Stažení příkladu", ale zvolte **CancelAListOfTasks** jako **projekt StartUp**Project .</span><span class="sxs-lookup"><span data-stu-id="9d11f-120">To build the example yourself, step by step, follow the instructions in the "Downloading the Example" section, but choose **CancelAListOfTasks** as the **StartUp Project**.</span></span> <span data-ttu-id="9d11f-121">Přidejte změny v tomto tématu do tohoto projektu.</span><span class="sxs-lookup"><span data-stu-id="9d11f-121">Add the changes in this topic to that project.</span></span>
 
-<span data-ttu-id="ff0c9-122">Chcete-li zadat maximální dobu před tím, než jsou úkoly označeny jako zrušené, `CancelAfter` přidejte `startButton_Click`volání do do, jak ukazuje následující příklad.</span><span class="sxs-lookup"><span data-stu-id="ff0c9-122">To specify a maximum time before the tasks are marked as canceled, add a call to `CancelAfter` to `startButton_Click`, as the following example shows.</span></span> <span data-ttu-id="ff0c9-123">Sčítání jsou označeny hvězdičkami.</span><span class="sxs-lookup"><span data-stu-id="ff0c9-123">The addition is marked with asterisks.</span></span>
+<span data-ttu-id="9d11f-122">Chcete-li určit maximální dobu, po jejíž například `CancelAfter` `startButton_Click`jsou úkoly označeny jako zrušené, přidejte volání do , jak ukazuje následující příklad.</span><span class="sxs-lookup"><span data-stu-id="9d11f-122">To specify a maximum time before the tasks are marked as canceled, add a call to `CancelAfter` to `startButton_Click`, as the following example shows.</span></span> <span data-ttu-id="9d11f-123">Přídavek je označen hvězdičkami.</span><span class="sxs-lookup"><span data-stu-id="9d11f-123">The addition is marked with asterisks.</span></span>
 
 ```csharp
 private async void startButton_Click(object sender, RoutedEventArgs e)
@@ -74,7 +74,7 @@ private async void startButton_Click(object sender, RoutedEventArgs e)
 }
 ```
 
- <span data-ttu-id="ff0c9-124">Spusťte program několikrát, abyste ověřili, že výstup může zobrazit výstup pro všechny weby, žádné weby nebo některé weby.</span><span class="sxs-lookup"><span data-stu-id="ff0c9-124">Run the program several times to verify that the output might show output for all websites, no websites, or some web sites.</span></span> <span data-ttu-id="ff0c9-125">Následující výstup je ukázka.</span><span class="sxs-lookup"><span data-stu-id="ff0c9-125">The following output is a sample.</span></span>
+ <span data-ttu-id="9d11f-124">Spusťte program několikrát a ověřte, zda výstup může zobrazovat výstup pro všechny weby, žádné weby nebo některé webové stránky.</span><span class="sxs-lookup"><span data-stu-id="9d11f-124">Run the program several times to verify that the output might show output for all websites, no websites, or some web sites.</span></span> <span data-ttu-id="9d11f-125">Následující výstup je ukázka.</span><span class="sxs-lookup"><span data-stu-id="9d11f-125">The following output is a sample.</span></span>
 
 ```output
 Length of the downloaded string: 35990.
@@ -86,13 +86,13 @@ Length of the downloaded string: 226091.
 Downloads canceled.
 ```
 
-## <a name="complete-example"></a><span data-ttu-id="ff0c9-126">Kompletní příklad</span><span class="sxs-lookup"><span data-stu-id="ff0c9-126">Complete example</span></span>
+## <a name="complete-example"></a><span data-ttu-id="9d11f-126">Kompletní příklad</span><span class="sxs-lookup"><span data-stu-id="9d11f-126">Complete example</span></span>
 
-<span data-ttu-id="ff0c9-127">Následující kód je úplný text souboru MainWindow.xaml.cs pro příklad.</span><span class="sxs-lookup"><span data-stu-id="ff0c9-127">The following code is the complete text of the MainWindow.xaml.cs file for the example.</span></span> <span data-ttu-id="ff0c9-128">Hvězdičky označují prvky, které byly přidány pro tento příklad.</span><span class="sxs-lookup"><span data-stu-id="ff0c9-128">Asterisks mark the elements that were added for this example.</span></span>
+<span data-ttu-id="9d11f-127">Následující kód je úplný text MainWindow.xaml.cs souboru pro příklad.</span><span class="sxs-lookup"><span data-stu-id="9d11f-127">The following code is the complete text of the MainWindow.xaml.cs file for the example.</span></span> <span data-ttu-id="9d11f-128">Hvězdičky označují prvky, které byly přidány pro tento příklad.</span><span class="sxs-lookup"><span data-stu-id="9d11f-128">Asterisks mark the elements that were added for this example.</span></span>
 
-<span data-ttu-id="ff0c9-129">Všimněte si, že je nutné přidat odkaz <xref:System.Net.Http>pro.</span><span class="sxs-lookup"><span data-stu-id="ff0c9-129">Notice that you must add a reference for <xref:System.Net.Http>.</span></span>
+<span data-ttu-id="9d11f-129">Všimněte si, že <xref:System.Net.Http>je nutné přidat odkaz pro .</span><span class="sxs-lookup"><span data-stu-id="9d11f-129">Notice that you must add a reference for <xref:System.Net.Http>.</span></span>
 
-<span data-ttu-id="ff0c9-130">Projekt si můžete stáhnout z [části asynchronní Ukázka: Jemné ladění aplikace](https://code.msdn.microsoft.com/Async-Fine-Tuning-Your-a676abea)</span><span class="sxs-lookup"><span data-stu-id="ff0c9-130">You can download the project from [Async Sample: Fine Tuning Your Application](https://code.msdn.microsoft.com/Async-Fine-Tuning-Your-a676abea).</span></span>
+<span data-ttu-id="9d11f-130">Projekt si můžete stáhnout z [ukázky aplikace Async: Fine Tuning Your Application](https://code.msdn.microsoft.com/Async-Fine-Tuning-Your-a676abea).</span><span class="sxs-lookup"><span data-stu-id="9d11f-130">You can download the project from [Async Sample: Fine Tuning Your Application](https://code.msdn.microsoft.com/Async-Fine-Tuning-Your-a676abea).</span></span>
 
 ```csharp
 using System;
@@ -215,10 +215,10 @@ namespace CancelAfterTime
 }
 ```
 
-## <a name="see-also"></a><span data-ttu-id="ff0c9-131">Viz také:</span><span class="sxs-lookup"><span data-stu-id="ff0c9-131">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="9d11f-131">Viz také</span><span class="sxs-lookup"><span data-stu-id="9d11f-131">See also</span></span>
 
-- [<span data-ttu-id="ff0c9-132">Asynchronní programování s modifikátorem Async aC#operátoru Await ()</span><span class="sxs-lookup"><span data-stu-id="ff0c9-132">Asynchronous Programming with async and await (C#)</span></span>](./index.md)
-- [<span data-ttu-id="ff0c9-133">Návod: Přístup k webu pomocí modifikátoru Async a operátoru Await (C#)</span><span class="sxs-lookup"><span data-stu-id="ff0c9-133">Walkthrough: Accessing the Web by Using async and await (C#)</span></span>](./walkthrough-accessing-the-web-by-using-async-and-await.md)
-- [<span data-ttu-id="ff0c9-134">Zrušení asynchronní úlohy nebo seznamu úkolů (C#)</span><span class="sxs-lookup"><span data-stu-id="ff0c9-134">Cancel an Async Task or a List of Tasks (C#)</span></span>](./cancel-an-async-task-or-a-list-of-tasks.md)
-- [<span data-ttu-id="ff0c9-135">Vyladění asynchronní aplikace (C#)</span><span class="sxs-lookup"><span data-stu-id="ff0c9-135">Fine-Tuning Your Async Application (C#)</span></span>](./fine-tuning-your-async-application.md)
-- [<span data-ttu-id="ff0c9-136">Asynchronní Ukázka: Jemné ladění aplikace</span><span class="sxs-lookup"><span data-stu-id="ff0c9-136">Async Sample: Fine Tuning Your Application</span></span>](https://code.msdn.microsoft.com/Async-Fine-Tuning-Your-a676abea)
+- [<span data-ttu-id="9d11f-132">Asynchronní programování s asynchronní a await (C#)</span><span class="sxs-lookup"><span data-stu-id="9d11f-132">Asynchronous Programming with async and await (C#)</span></span>](./index.md)
+- [<span data-ttu-id="9d11f-133">Návod: Přístup k webu pomocí asynchronní a čeká (C#)</span><span class="sxs-lookup"><span data-stu-id="9d11f-133">Walkthrough: Accessing the Web by Using async and await (C#)</span></span>](./walkthrough-accessing-the-web-by-using-async-and-await.md)
+- [<span data-ttu-id="9d11f-134">Zrušení asynchronní úlohy nebo seznamu úkolů (C#)</span><span class="sxs-lookup"><span data-stu-id="9d11f-134">Cancel an Async Task or a List of Tasks (C#)</span></span>](./cancel-an-async-task-or-a-list-of-tasks.md)
+- [<span data-ttu-id="9d11f-135">Jemné doladění asynchronní aplikace (C#)</span><span class="sxs-lookup"><span data-stu-id="9d11f-135">Fine-Tuning Your Async Application (C#)</span></span>](./fine-tuning-your-async-application.md)
+- [<span data-ttu-id="9d11f-136">Asynchronní ukázka: Jemné doladění aplikace</span><span class="sxs-lookup"><span data-stu-id="9d11f-136">Async Sample: Fine Tuning Your Application</span></span>](https://code.msdn.microsoft.com/Async-Fine-Tuning-Your-a676abea)

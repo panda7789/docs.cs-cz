@@ -23,9 +23,9 @@
     - name: Manipulace s XML
       href: manipulating-xml.md
       items:
-        - name: 'Postupy: Načtení XML ze souboru, řetězce nebo streamu'
+        - name: 'Postupy: Načtení XML ze souboru, řetězce nebo proudu'
           href: how-to-load-xml-from-a-file-string-or-stream.md
-        - name: 'Postupy: Transformace XML pomocí jazyka LINQ'
+        - name: 'Postupy: Transformace XML pomocí LINQ'
           href: how-to-transform-xml-by-using-linq.md
         - name: 'Postupy: Změna literálů XML'
           href: how-to-modify-xml-literals.md
@@ -38,5 +38,5 @@
           href: how-to-access-xml-child-elements.md
         - name: 'Postupy: Přístup k atributům XML'
           href: how-to-access-xml-attributes.md
-        - name: 'Postupy: Deklarace a používání předpon názvového prostoru XML'
+        - name: 'Postupy: Deklarace a používání předpon oboru názvů XML'
           href: how-to-declare-and-use-xml-namespace-prefixes.md

@@ -1,7 +1,7 @@
 - name: 'Ladění, trasování a profilace'
   href: index.md
   items:
-    - name: 'Povolení JIT – ladění Attach '
+    - name: Povolení JIT – ladění Attach
       href: enabling-jit-attach-debugging.md
     - name: Usnadnění ladění image
       href: making-an-image-easier-to-debug.md

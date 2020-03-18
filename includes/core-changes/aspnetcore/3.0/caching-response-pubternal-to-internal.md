@@ -1,46 +1,46 @@
 ---
 ms.openlocfilehash: ae5a5fbf97ed4a03de7d35b9d5d5ca8de3aebc39
-ms.sourcegitcommit: 2e95559d957a1a942e490c5fd916df04b39d73a9
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/16/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "72394342"
 ---
-### <a name="caching-responsecaching-pubternal-types-changed-to-internal"></a><span data-ttu-id="2d748-101">Ukládání do mezipaměti: ResponseCaching typy "pubternal" se změnily na interní</span><span class="sxs-lookup"><span data-stu-id="2d748-101">Caching: ResponseCaching "pubternal" types changed to internal</span></span>
+### <a name="caching-responsecaching-pubternal-types-changed-to-internal"></a><span data-ttu-id="6f99c-101">Ukládání do mezipaměti: ResponseCaching "pubternal" typy změněny na vnitřní</span><span class="sxs-lookup"><span data-stu-id="6f99c-101">Caching: ResponseCaching "pubternal" types changed to internal</span></span>
 
-<span data-ttu-id="2d748-102">V ASP.NET Core 3,0 jsou typy "pubternal" v `ResponseCaching` změněny na `internal`.</span><span class="sxs-lookup"><span data-stu-id="2d748-102">In ASP.NET Core 3.0, "pubternal" types in `ResponseCaching` have been changed to `internal`.</span></span>
+<span data-ttu-id="6f99c-102">V ASP.NET Core 3.0, "pubternal" typy v `ResponseCaching` byly změněny na `internal`.</span><span class="sxs-lookup"><span data-stu-id="6f99c-102">In ASP.NET Core 3.0, "pubternal" types in `ResponseCaching` have been changed to `internal`.</span></span>
 
-<span data-ttu-id="2d748-103">Kromě toho výchozí implementace `IResponseCachingPolicyProvider` a `IResponseCachingKeyProvider` již nejsou přidány do služeb jako součást metody `AddResponseCaching`.</span><span class="sxs-lookup"><span data-stu-id="2d748-103">In addition, default implementations of `IResponseCachingPolicyProvider` and `IResponseCachingKeyProvider` are no longer added to services as part of the `AddResponseCaching` method.</span></span>
+<span data-ttu-id="6f99c-103">Kromě toho výchozí implementace `IResponseCachingPolicyProvider` `IResponseCachingKeyProvider` a již nejsou přidány do `AddResponseCaching` služeb jako součást metody.</span><span class="sxs-lookup"><span data-stu-id="6f99c-103">In addition, default implementations of `IResponseCachingPolicyProvider` and `IResponseCachingKeyProvider` are no longer added to services as part of the `AddResponseCaching` method.</span></span>
 
-#### <a name="change-description"></a><span data-ttu-id="2d748-104">Změnit popis</span><span class="sxs-lookup"><span data-stu-id="2d748-104">Change description</span></span>
+#### <a name="change-description"></a><span data-ttu-id="6f99c-104">Popis změny</span><span class="sxs-lookup"><span data-stu-id="6f99c-104">Change description</span></span>
 
-<span data-ttu-id="2d748-105">V ASP.NET Core jsou typy "pubternal" deklarovány jako `public`, ale nacházejí se v oboru názvů s příponou `.Internal`.</span><span class="sxs-lookup"><span data-stu-id="2d748-105">In ASP.NET Core, "pubternal" types are declared as `public` but reside in a namespace suffixed with `.Internal`.</span></span> <span data-ttu-id="2d748-106">I když jsou tyto typy veřejné, nemají žádné zásady podpory a podléhají změnám.</span><span class="sxs-lookup"><span data-stu-id="2d748-106">While these types are public, they have no support policy and are subject to breaking changes.</span></span> <span data-ttu-id="2d748-107">Omlouváme se, ale náhodné použití těchto typů je běžné, což vedlo k zásadním změnám těchto projektů a omezení schopnosti zachovat rozhraní.</span><span class="sxs-lookup"><span data-stu-id="2d748-107">Unfortunately, accidental use of these types has been common, resulting in breaking changes to these projects and limiting the ability to maintain the framework.</span></span>
+<span data-ttu-id="6f99c-105">V ASP.NET Core jsou typy "pubternal" deklarovány jako, `public` ale `.Internal`jsou umístěny v oboru názvů suffixed s .</span><span class="sxs-lookup"><span data-stu-id="6f99c-105">In ASP.NET Core, "pubternal" types are declared as `public` but reside in a namespace suffixed with `.Internal`.</span></span> <span data-ttu-id="6f99c-106">Zatímco tyto typy jsou veřejné, nemají žádné zásady podpory a jsou předmětem změny.</span><span class="sxs-lookup"><span data-stu-id="6f99c-106">While these types are public, they have no support policy and are subject to breaking changes.</span></span> <span data-ttu-id="6f99c-107">Bohužel náhodné použití těchto typů bylo běžné, což má za následek porušení změn těchto projektů a omezení schopnosti udržovat rámec.</span><span class="sxs-lookup"><span data-stu-id="6f99c-107">Unfortunately, accidental use of these types has been common, resulting in breaking changes to these projects and limiting the ability to maintain the framework.</span></span>
 
-#### <a name="version-introduced"></a><span data-ttu-id="2d748-108">Představená verze</span><span class="sxs-lookup"><span data-stu-id="2d748-108">Version introduced</span></span>
+#### <a name="version-introduced"></a><span data-ttu-id="6f99c-108">Zavedená verze</span><span class="sxs-lookup"><span data-stu-id="6f99c-108">Version introduced</span></span>
 
-<span data-ttu-id="2d748-109">3.0</span><span class="sxs-lookup"><span data-stu-id="2d748-109">3.0</span></span>
+<span data-ttu-id="6f99c-109">3.0</span><span class="sxs-lookup"><span data-stu-id="6f99c-109">3.0</span></span>
 
-#### <a name="old-behavior"></a><span data-ttu-id="2d748-110">Staré chování</span><span class="sxs-lookup"><span data-stu-id="2d748-110">Old behavior</span></span>
+#### <a name="old-behavior"></a><span data-ttu-id="6f99c-110">Staré chování</span><span class="sxs-lookup"><span data-stu-id="6f99c-110">Old behavior</span></span>
 
-<span data-ttu-id="2d748-111">Tyto typy byly veřejně viditelné, ale nepodporované.</span><span class="sxs-lookup"><span data-stu-id="2d748-111">These types were publicly visible, but unsupported.</span></span>
+<span data-ttu-id="6f99c-111">Tyto typy byly veřejně viditelné, ale nepodporované.</span><span class="sxs-lookup"><span data-stu-id="6f99c-111">These types were publicly visible, but unsupported.</span></span>
 
-#### <a name="new-behavior"></a><span data-ttu-id="2d748-112">Nové chování</span><span class="sxs-lookup"><span data-stu-id="2d748-112">New behavior</span></span>
+#### <a name="new-behavior"></a><span data-ttu-id="6f99c-112">Nové chování</span><span class="sxs-lookup"><span data-stu-id="6f99c-112">New behavior</span></span>
 
-<span data-ttu-id="2d748-113">Tyto typy jsou nyní `internal`.</span><span class="sxs-lookup"><span data-stu-id="2d748-113">These types are now `internal`.</span></span>
+<span data-ttu-id="6f99c-113">Tyto typy `internal`jsou nyní .</span><span class="sxs-lookup"><span data-stu-id="6f99c-113">These types are now `internal`.</span></span>
 
-#### <a name="reason-for-change"></a><span data-ttu-id="2d748-114">Důvod změny</span><span class="sxs-lookup"><span data-stu-id="2d748-114">Reason for change</span></span>
+#### <a name="reason-for-change"></a><span data-ttu-id="6f99c-114">Důvod změny</span><span class="sxs-lookup"><span data-stu-id="6f99c-114">Reason for change</span></span>
 
-<span data-ttu-id="2d748-115">Rozsah `internal` lépe odráží nepodporované zásady.</span><span class="sxs-lookup"><span data-stu-id="2d748-115">The `internal` scope better reflects the unsupported policy.</span></span>
+<span data-ttu-id="6f99c-115">Obor `internal` lépe odráží nepodporované zásady.</span><span class="sxs-lookup"><span data-stu-id="6f99c-115">The `internal` scope better reflects the unsupported policy.</span></span>
 
-#### <a name="recommended-action"></a><span data-ttu-id="2d748-116">Doporučená akce</span><span class="sxs-lookup"><span data-stu-id="2d748-116">Recommended action</span></span>
+#### <a name="recommended-action"></a><span data-ttu-id="6f99c-116">Doporučená akce</span><span class="sxs-lookup"><span data-stu-id="6f99c-116">Recommended action</span></span>
 
-<span data-ttu-id="2d748-117">Kopírování typů používaných vaší aplikací nebo knihovnou.</span><span class="sxs-lookup"><span data-stu-id="2d748-117">Copy types that are used by your app or library.</span></span>
+<span data-ttu-id="6f99c-117">Zkopírujte typy, které používá vaše aplikace nebo knihovna.</span><span class="sxs-lookup"><span data-stu-id="6f99c-117">Copy types that are used by your app or library.</span></span>
 
-#### <a name="category"></a><span data-ttu-id="2d748-118">Kategorie</span><span class="sxs-lookup"><span data-stu-id="2d748-118">Category</span></span>
+#### <a name="category"></a><span data-ttu-id="6f99c-118">Kategorie</span><span class="sxs-lookup"><span data-stu-id="6f99c-118">Category</span></span>
 
-<span data-ttu-id="2d748-119">ASP.NET Core</span><span class="sxs-lookup"><span data-stu-id="2d748-119">ASP.NET Core</span></span>
+<span data-ttu-id="6f99c-119">Jádro ASP.NET</span><span class="sxs-lookup"><span data-stu-id="6f99c-119">ASP.NET Core</span></span>
 
-#### <a name="affected-apis"></a><span data-ttu-id="2d748-120">Ovlivněná rozhraní API</span><span class="sxs-lookup"><span data-stu-id="2d748-120">Affected APIs</span></span>
+#### <a name="affected-apis"></a><span data-ttu-id="6f99c-120">Ovlivněná rozhraní API</span><span class="sxs-lookup"><span data-stu-id="6f99c-120">Affected APIs</span></span>
 
 - `Microsoft.AspNetCore.ResponseCaching.Internal.CachedResponse`
 - `Microsoft.AspNetCore.ResponseCaching.Internal.CachedVaryByRules`

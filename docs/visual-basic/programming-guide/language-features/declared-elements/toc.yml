@@ -1,9 +1,9 @@
 - name: Deklarované elementy
   href: index.md
   items:
-    - name: Deklarované názvy elementů
+    - name: Deklarované názvy elementu
       href: declared-element-names.md
-    - name: Deklarované charakteristiky elementů
+    - name: Deklarované charakteristiky elementu
       href: declared-element-characteristics.md
       items:
         - name: Doba platnosti

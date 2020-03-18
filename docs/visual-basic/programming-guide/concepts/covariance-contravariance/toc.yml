@@ -6,7 +6,7 @@
       items:
         - name: Vytváření variantních obecných rozhraní
           href: creating-variant-generic-interfaces.md
-        - name: Použití odchylky v rozhraní pro obecné kolekce
+        - name: "Použití odchylky v\_rozhraní pro obecné kolekce"
           href: using-variance-in-interfaces-for-generic-collections.md
     - name: Odchylky v delegátech
       href: variance-in-delegates.md

@@ -9,12 +9,12 @@ ms.topic: landing-page
 ms.custom: updateeachrelease
 ms.date: 01/24/2020
 ms.openlocfilehash: 2c3901f8d5c8bb0c7ffde31b1aec19a81af9f4ce
-ms.sourcegitcommit: 43d10ef65f0f1fd6c3b515e363bde11a3fcd8d6d
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/03/2020
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "78239921"
 ---
-# <a name="net-api-browser"></a><span data-ttu-id="866ca-102">Prohlížeč rozhraní API pro .NET</span><span class="sxs-lookup"><span data-stu-id="866ca-102">.NET API browser</span></span>
+# <a name="net-api-browser"></a><span data-ttu-id="ddda0-102">Prohlížeč rozhraní API pro .NET</span><span class="sxs-lookup"><span data-stu-id="ddda0-102">.NET API browser</span></span>
 
-<span data-ttu-id="866ca-103">Vítá vás prohlížeč rozhraní .NET API – vaše zastavení pro všechny. Rozhraní API založená na síti od Microsoftu.</span><span class="sxs-lookup"><span data-stu-id="866ca-103">Welcome to the .NET API browser – your one-stop shop for all .NET-based APIs from Microsoft.</span></span> <span data-ttu-id="866ca-104">Zahajte hledání všech spravovaných rozhraní API zadáním následujícího pole.</span><span class="sxs-lookup"><span data-stu-id="866ca-104">Start searching for any managed APIs by typing in the box below.</span></span> <span data-ttu-id="866ca-105">Další informace o prohlížeči rozhraní API najdete [v našem blogovém příspěvku](https://aka.ms/apibrowser).</span><span class="sxs-lookup"><span data-stu-id="866ca-105">You can learn more about the API browser [in our blog post](https://aka.ms/apibrowser).</span></span> <span data-ttu-id="866ca-106">Pokud máte nějakou zpětnou vazbu, vytvořte nový problém v [úložišti MicrosoftDocs/Feedback na GitHubu](https://github.com/MicrosoftDocs/feedback/issues).</span><span class="sxs-lookup"><span data-stu-id="866ca-106">If you have any feedback, create a new issue in the [MicrosoftDocs/feedback repository on GitHub](https://github.com/MicrosoftDocs/feedback/issues).</span></span>
+<span data-ttu-id="ddda0-103">Vítejte v prohlížeči .NET API – vašem one-stop shopu pro všechny . ROZHRANÍ API založená na NET od společnosti Microsoft.</span><span class="sxs-lookup"><span data-stu-id="ddda0-103">Welcome to the .NET API browser – your one-stop shop for all .NET-based APIs from Microsoft.</span></span> <span data-ttu-id="ddda0-104">Začněte hledat všechna spravovaná api zadáním do pole níže.</span><span class="sxs-lookup"><span data-stu-id="ddda0-104">Start searching for any managed APIs by typing in the box below.</span></span> <span data-ttu-id="ddda0-105">Další informace o prohlížeči API najdete [v našem příspěvku na blogu](https://aka.ms/apibrowser).</span><span class="sxs-lookup"><span data-stu-id="ddda0-105">You can learn more about the API browser [in our blog post](https://aka.ms/apibrowser).</span></span> <span data-ttu-id="ddda0-106">Pokud máte nějakou zpětnou vazbu, vytvořte nový problém v [úložišti MicrosoftDocs/feedback na GitHubu](https://github.com/MicrosoftDocs/feedback/issues).</span><span class="sxs-lookup"><span data-stu-id="ddda0-106">If you have any feedback, create a new issue in the [MicrosoftDocs/feedback repository on GitHub](https://github.com/MicrosoftDocs/feedback/issues).</span></span>
