@@ -1,40 +1,40 @@
 ---
-title: Technologie Microsoftu v cloudově optimalizovaných aplikacích
-description: Modernizovat stávající aplikace .NET pomocí cloudu Azure a kontejnerů Windows | Technologie Microsoftu v cloudově optimalizovaných aplikacích
+title: Technologie Microsoftu v aplikacích optimalizovaných pro cloud
+description: Modernizace stávajících aplikací .NET pomocí Azure Cloudu a kontejnerů Windows | Technologie Microsoftu v aplikacích optimalizovaných pro cloud
 ms.date: 04/28/2018
 ms.openlocfilehash: 915aa99d2331c5b9c46eabef3335fb809baa9370
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/08/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "68676994"
 ---
-# <a name="microsoft-technologies-in-cloud-optimized-applications"></a>Technologie Microsoftu v cloudově optimalizovaných aplikacích
+# <a name="microsoft-technologies-in-cloud-optimized-applications"></a>Technologie Microsoftu v cloudových aplikacích
 
-Následující seznam popisuje nástroje, technologie a řešení, které se rozpoznávají jako požadavky na aplikace optimalizované pro Cloud. V závislosti na vašich prioritách můžete v závislosti na svých prioritách přijmout selektivně nebo postupně optimalizované cloudové prvky.
+Následující seznam popisuje nástroje, technologie a řešení, které jsou rozpoznány jako požadavky na aplikace optimalizované pro cloud. V závislosti na vašich prioritách můžete přijímat prvky optimalizované pro cloud selektivně nebo postupně.
 
-- **Infrastruktura cloudu**: infrastruktura, která poskytuje výpočetní platformu, operační systém, síť a úložiště. Microsoft Azure je umístěn na této úrovni.
+- **Cloudová infrastruktura**: Infrastruktura, která poskytuje výpočetní platformu, operační systém, síť a úložiště. Microsoft Azure je umístěn na této úrovni.
 
-- **Runtime**: Tato vrstva poskytuje prostředí, které má aplikace běžet. Pokud používáte kontejnery, tato vrstva je obvykle založená na [modulu Docker](https://docs.docker.com/engine/), který běží na hostitelích se systémem Linux nebo na hostitelích se systémem Windows. ([Kontejnery Windows](https://docs.microsoft.com/virtualization/windowscontainers/about/) se podporují od windows serveru 2016. Kontejnery Windows jsou nejlepší volbou pro existující aplikace .NET Framework spuštěné v systému Windows.)
+- **Runtime**: Tato vrstva poskytuje prostředí pro spuštění aplikace. Pokud používáte kontejnery, tato vrstva je obvykle založena na [Docker Engine](https://docs.docker.com/engine/), běží buď na linuxových hostitelích nebo na hostitelích systému Windows. ([Kontejnery systému Windows](https://docs.microsoft.com/virtualization/windowscontainers/about/) jsou podporovány počínaje windows serverem 2016. Kontejnery systému Windows jsou nejlepší volbou pro existující aplikace rozhraní .NET Framework, které běží v systému Windows.)
 
-- **Spravovaný Cloud**: když zvolíte možnost spravovaného cloudu, můžete se vyhnout nákladům a složitosti správy a podpory základní infrastruktury, virtuálních počítačů, oprav operačního systému a konfigurace sítě. Pokud se rozhodnete migrovat pomocí IaaS, zodpovídáte za všechny tyto úkoly a pro související náklady. V případě možnosti spravovaného cloudu budete spravovat jenom aplikace a služby, které vyvíjíte. Poskytovatel cloudové služby obvykle spravuje všechno ostatní. Příklady spravovaných cloudových služeb v Azure [zahrnují Azure SQL Database](https://azure.microsoft.com/services/sql-database), [Azure Redis Cache](https://azure.microsoft.com/services/cache/), [Azure Cosmos DB](https://azure.microsoft.com/services/cosmos-db/), [Azure Storage](https://azure.microsoft.com/services/storage/), [Azure Database for MySQL](https://azure.microsoft.com/services/mysql/), [Azure Database for PostgreSQL](https://azure.microsoft.com/services/postgresql/), [Azure Active Directory](https://azure.microsoft.com/services/active-directory/)a spravované výpočetní služby, jako jsou [VM Scale Sets](https://azure.microsoft.com/services/virtual-machine-scale-sets/), [Azure App Service](https://azure.microsoft.com/services/app-service/)a [Azure Kubernetes Service](https://azure.microsoft.com/services/container-service/).
+- **Spravovaný cloud**: Když zvolíte možnost spravovaného cloudu, můžete se vyhnout nákladům a složitosti správy a podpory základní infrastruktury, virtuálních počítačů, oprav operačních systémů a konfigurace sítě. Pokud se rozhodnete migrovat pomocí služby IaaS, jste zodpovědní za všechny tyto úkoly a za související náklady. V možnosti spravovaného cloudu spravujete jenom aplikace a služby, které vyvíjíte. Poskytovatel cloudových služeb obvykle spravuje vše ostatní. Příklady spravovaných cloudových služeb v Azure zahrnují [Azure SQL Database](https://azure.microsoft.com/services/sql-database), Azure [Redis Cache](https://azure.microsoft.com/services/cache/), Azure [Cosmos DB](https://azure.microsoft.com/services/cosmos-db/), Azure [Storage](https://azure.microsoft.com/services/storage/), Azure Database [for MySQL](https://azure.microsoft.com/services/mysql/), [Azure Database for PostgreSQL](https://azure.microsoft.com/services/postgresql/), [Azure Active Directory](https://azure.microsoft.com/services/active-directory/)a spravované výpočetní služby, jako jsou [škálovací sady virtuálních montoslužeb](https://azure.microsoft.com/services/virtual-machine-scale-sets/)pro virtuální počítače , [Azure App Service](https://azure.microsoft.com/services/app-service/)a [Azure Kubernetes Service](https://azure.microsoft.com/services/container-service/).
 
-- **Vývoj aplikací**: při sestavování aplikací, které běží v kontejnerech, si můžete vybrat z mnoha jazyků. Tato příručka se zaměřuje na [rozhraní .NET](https://www.microsoft.com/net), ale můžete vyvíjet aplikace založené na kontejnerech pomocí jiných jazyků, jako je Node. js, Python, pružina/Java nebo přejít.
+- **Vývoj aplikací**: Můžete si vybrat z mnoha jazyků při vytváření aplikací, které běží v kontejnerech. Tato příručka se zaměřuje na [rozhraní .NET](https://www.microsoft.com/net), ale můžete vyvíjet aplikace založené na kontejnerech pomocí jiných jazyků, jako je Node.js, Python, Jaro/Java nebo Go.
 
-- **Monitorování, telemetrie, protokolování a auditování**: schopnost sledovat a auditovat aplikace a kontejnery, které běží v cloudu, jsou klíčové pro libovolnou cloudově optimalizovanou aplikaci. [Azure Application Insights](https://azure.microsoft.com/services/application-insights/) a [Microsoft Operations Management Suite](https://www.microsoft.com/cloud-platform/operations-management-suite) jsou hlavní nástroje Microsoftu, které poskytují monitorování a auditování pro cloudově optimalizované aplikace.
+- **Monitorování, telemetrie, protokolování a auditování**: Možnost monitorování a auditování aplikací a kontejnerů spuštěných v cloudu je důležitá pro všechny aplikace optimalizované pro cloud. [Azure Application Insights](https://azure.microsoft.com/services/application-insights/) a [Microsoft Operations Management Suite](https://www.microsoft.com/cloud-platform/operations-management-suite) jsou hlavní nástroje Microsoftu, které poskytují monitorování a auditování aplikací optimalizovaných pro cloud.
 
-- **Zřizování**: nástroje pro automatizaci vám pomůžou zřídit infrastrukturu a nasadit aplikaci do několika prostředí (produkční, testovací, fázování). Ke správě konfigurace a prostředí aplikace můžete použít nástroje, jako je třeba Puppet. Tato vrstva se dá implementovat taky pomocí jednodušších a přímých přístupů. Například můžete nasadit přímo pomocí nástrojů rozhraní příkazového řádku Azure (Azure CLI) a potom použít kanály pro průběžné nasazování a správu verzí v [Azure DevOps Services](https://azure.microsoft.com/services/devops/).
+- **Zřizování**: Nástroje automatizace vám pomohou zřídit infrastrukturu a nasadit aplikaci do více prostředí (výroba, testování, pracovní). Pomocí nástrojů, jako je Chef a Puppet, můžete spravovat konfiguraci a prostředí aplikace. Tato vrstva může být také implementována pomocí jednodušších a přímějších přístupů. Můžete například nasadit přímo pomocí nástrojů rozhraní příkazového řádku Azure (Azure CLI) a potom použít kanály pro průběžné nasazení a správu verzí ve [službách Azure DevOps](https://azure.microsoft.com/services/devops/)Services .
 
-- **Životní cyklus aplikace**: [Azure DevOps Services](https://azure.microsoft.com/services/devops/) a další nástroje, jako je Jenkinse, jsou sestavené automatizační servery, které vám pomůžou s implementací kanálů CI/CD, včetně Release managementu.
+- **Životní cyklus aplikací**: [Azure DevOps Services](https://azure.microsoft.com/services/devops/) a další nástroje, jako je Jenkins, jsou integrované automatizační servery, které vám pomohou implementovat kanály CI/CD, včetně správy verzí.
 
-V dalších částech této kapitoly a souvisejících návodech se zaměřujete konkrétně na podrobnosti o vrstvě prostředí runtime (kontejnery Windows). Pokyny popisují způsoby nasazení kontejnerů Windows na virtuální počítače s Windows serverem 2016 (a novějšími verzemi) a Azure Container Instances. Zahrnuje taky pokročilejší PaaS platformy, jako je Azure App Service a Orchestrator, jako je třeba služba Azure Kubernetes.
+Další části této kapitoly a související návody se zaměřují konkrétně na podrobnosti o vrstvě runtime (kontejnery systému Windows). Pokyny popisují způsoby nasazení kontejnerů Windows na virtuálních počítačích Windows Server 2016 (a novějších verzích) a instanci kontejnerů Azure. Zahrnuje také pokročilejší platformy PaaS, jako je Služba Azure App Service a orchestrator, jako je služba Azure Kubernetes.
 
-## <a name="monolithic-applications-can-be-cloud-optimized"></a>Aplikace monolitické *můžou* být optimalizované pro Cloud.
+## <a name="monolithic-applications-can-be-cloud-optimized"></a>Monolitické aplikace *mohou* být optimalizovány pro cloud
 
-Je důležité zdůraznit, že aplikace monolitické (aplikace, které nejsou založené na mikroslužbách), *můžou* být cloudově optimalizované aplikace. Můžete vytvářet a provozovat monolitické aplikace, které využívají model cloud computingu, a to pomocí kombinace kontejnerů, průběžného doručování a DevOps. Pokud je existující aplikace monolitické vhodná pro vaše obchodní cíle, můžete ji modernizovat a zajistit její optimalizaci pro Cloud.
+Je důležité zdůraznit, že monolitické aplikace (aplikace, které nejsou založeny na mikroslužbách) *mohou* být aplikace optimalizované pro cloud. Můžete vytvářet a provozovat monolitické aplikace, které využívají výhod modelu cloud computingu pomocí kombinace kontejnerů, nepřetržitého doručování a DevOps. Pokud je stávající monolitická aplikace vhodná pro vaše obchodní cíle, můžete ji modernizovat a optimalizovat cloudem.
 
-Podobně platí, že pokud aplikace monolitické můžou být cloudově optimalizované aplikace, jiné a složitější architektury, jako jsou N-vrstvé aplikace, je také možné moderní jako cloudově optimalizované aplikace.
+Podobně pokud monolitické aplikace mohou být aplikace optimalizované pro cloud, jiné, složitější architektury, jako jsou n-vrstvé aplikace, mohou být také modernizovány jako aplikace optimalizované pro cloud.
 
 >[!div class="step-by-step"]
 >[Předchozí](reasons-to-modernize-existing-net-apps-to-cloud-optimized-applications.md)
->[Další](what-about-cloud-native-applications.md)
+>[další](what-about-cloud-native-applications.md)

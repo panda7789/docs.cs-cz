@@ -1,19 +1,19 @@
 ---
-title: Jak najít bezprostřední předchozí položku na stejné úrovni (XPath-LINQ to XML)C#()
+title: Jak najít bezprostřední předchozí na stejné úrovni (XPath-LINQ na XML) (C#)
 ms.date: 07/20/2015
 ms.assetid: 74c06201-0b1b-4b5e-b3ac-0092980614e6
 ms.openlocfilehash: 1e5aece41021642d43b7f6f7b78bb105156ee4ee
-ms.sourcegitcommit: fbb8a593a511ce667992502a3ce6d8f65c594edf
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/16/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "74141000"
 ---
-# <a name="how-to-find-the-immediate-preceding-sibling-xpath-linq-to-xml-c"></a>Jak najít bezprostřední předchozí položku na stejné úrovni (XPath-LINQ to XML)C#()
-Někdy chcete najít bezprostřední předchozí položku na stejné úrovni jako uzel. Z důvodu rozdílu v sémantikě pozičních predikátů pro předchozí osy na stejné úrovni ve výrazu XPath, na rozdíl od [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)], se jedná o jedno z zajímavějších porovnání.  
+# <a name="how-to-find-the-immediate-preceding-sibling-xpath-linq-to-xml-c"></a>Jak najít bezprostřední předchozí na stejné úrovni (XPath-LINQ na XML) (C#)
+Někdy chcete najít bezprostřední předchozí na stejné úrovni na uzlu. Vzhledem k rozdílu v sémantice poziční predikáty pro předchozí na [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]stejné úrovni osy v XPath na rozdíl od , to je jeden z více zajímavých srovnání.  
   
 ## <a name="example"></a>Příklad  
- V tomto příkladu používá [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] dotaz <xref:System.Linq.Enumerable.Last%2A> operátor, který vyhledá poslední uzel v kolekci vrácenou <xref:System.Xml.Linq.XNode.ElementsBeforeSelf%2A>. Naopak výraz XPath používá predikát s hodnotou 1 pro nalezení bezprostředně předcházejícího prvku.  
+ V tomto příkladu [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] dotaz <xref:System.Linq.Enumerable.Last%2A> používá operátor najít poslední uzel v <xref:System.Xml.Linq.XNode.ElementsBeforeSelf%2A>kolekci vrácené . Naproti tomu výraz XPath používá predikát s hodnotou 1 k nalezení bezprostředně předcházejícího prvku.  
   
 ```csharp  
 XElement root = XElement.Parse(  
@@ -45,7 +45,7 @@ else
 Console.WriteLine(el1);  
 ```  
   
- Tento příklad vytvoří následující výstup:  
+ Tento příklad vytváří následující výstup:  
   
 ```output  
 Results are identical  

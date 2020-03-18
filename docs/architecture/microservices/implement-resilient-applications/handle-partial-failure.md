@@ -1,42 +1,42 @@
 ---
 title: Zpracování částečného selhání
-description: Přečtěte si, jak řádně zpracovat částečné chyby. Mikroslužba nemusí být plně funkční, ale je možné, že je stále možné provést některé užitečné práce.
+description: Zjistěte, jak řádně zpracovat částečné chyby. Mikroslužba nemusí být plně funkční, ale stále může být schopen provést některé užitečné práce.
 ms.date: 10/16/2018
 ms.openlocfilehash: f00e5349df74b543deb6ac941c751cb130b3837c
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/07/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "73733004"
 ---
-# <a name="handle-partial-failure"></a>Zpracovat částečnou chybu
+# <a name="handle-partial-failure"></a>Zpracování částečné poruchy
 
-V distribuovaných systémech, jako jsou aplikace založené na mikroslužbách, existuje stále přítomné riziko částečného selhání. Jedna mikroslužba nebo kontejner může například selhat nebo nemusí být k dispozici, aby mohla reagovat po krátkou dobu, nebo může dojít k selhání jednoho virtuálního počítače nebo serveru. Vzhledem k tomu, že klienti a služby jsou samostatné procesy, nemusí být služba schopná reagovat včas na požadavky klienta. Služba může být přetížená a reaguje velmi pomalu na požadavky nebo může být v důsledku problémů se sítí nepřístupná po krátkou dobu.
+V distribuovaných systémech, jako jsou aplikace založené na mikroslužbách, existuje stále přítomné riziko částečného selhání. Například jeden mikroslužbu/kontejner může selhat nebo nemusí být k dispozici reagovat na krátkou dobu, nebo jeden virtuální počítač nebo server může dojít k chybě. Vzhledem k tomu, že klienti a služby jsou samostatné procesy, služba nemusí být schopna včas reagovat na požadavek klienta. Služba může být přetížena a reagovat velmi pomalu na požadavky nebo jednoduše není přístupná na krátkou dobu z důvodu problémů se sítí.
 
-Můžete například zvážit stránku podrobnosti objednávky z ukázkové aplikace eShopOnContainers. Pokud mikroslužba řazení nereaguje, když se uživatel pokusí odeslat objednávku, špatná implementace klientského procesu (webová aplikace MVC) – například pokud kód klienta používá synchronní službu RPCSS bez časového limitu, by neomezená vlákna byla neomezená. čeká se na odpověď. Kromě vytvoření špatného uživatelského prostředí nereagují při čekání na zpracování nebo blokování vlákna a vlákna jsou v vysoce škálovatelných aplikacích extrémně cenná. Pokud je k dispozici mnoho blokovaných vláken, modul runtime aplikace může být mimo vlákna. V takovém případě může aplikace namísto pouze částečně nereagujících reagovat, a to jak je znázorněno na obrázku 8-1.
+Zvažte například stránku Podrobnosti objednávky z ukázkové aplikace eShopOnContainers. Pokud řazení mikroslužby nereaguje, když se uživatel pokusí odeslat objednávku, chybná implementace klientského procesu (webová aplikace MVC) – například pokud by kód klienta používal synchronní rpc bez časového omezení – by blokoval podprocesy po neomezenou dobu čeká na odpověď. Kromě vytvoření špatné uživatelské prostředí, každé nereagující čekání spotřebovává nebo blokuje vlákno a vlákna jsou velmi cenné ve vysoce škálovatelné aplikace. Pokud existuje mnoho blokovaných vláken, nakonec může dojít k běhu aplikace. V takovém případě aplikace může být globálně nereagující namísto jen částečně neodpovídá, jak je znázorněno na obrázku 8-1.
 
-![Diagram znázorňující částečné chyby](./media/handle-partial-failure/partial-failures-diagram.png)
+![Diagram zobrazující částečné chyby.](./media/handle-partial-failure/partial-failures-diagram.png)
 
-**Obrázek 8-1**. Částečné selhání kvůli závislostem, které mají vliv na dostupnost vlákna služby
+**Obrázek 8-1**. Částečné chyby z důvodu závislostí, které mají vliv na dostupnost vlákna služby
 
-V rozsáhlých aplikacích založených na mikroslužbách může být jakékoli částečné selhání rozšířeno, zejména pokud je většina interních interakcí mikroslužeb založená na synchronních voláních HTTP (což se považuje za antipattern). Zamyslete se nad systémem, který přijímá miliony příchozích hovorů za den. Pokud má váš systém špatný návrh, který je založený na dlouhých řetězech synchronních volání HTTP, může výsledkem těchto příchozích volání být mnoho dalších milionů odchozích volání (Předpokládejme, že se jedná o poměr 1:4) až desítky interních mikroslužeb jako synchronních závislostí. Tato situace je znázorněna na obrázku 8-2, zejména závislost \#3, která začíná řetězcem, volání #4 závislostí. které volání #5.
+Ve velké aplikace založené na mikroslužbách může být zesilována jakákoli částečná chyba, zejména pokud je většina interní interakce mikroslužeb založena na synchronních voláních HTTP (což je považováno za anti-pattern). Zamyslete se nad systémem, který přijímá miliony příchozích hovorů denně. Pokud váš systém má špatný návrh, který je založen na dlouhé řetězce synchronní volání HTTP, tyto příchozí volání může mít za následek mnoho dalších milionů odchozích volání (předpokládejme poměr 1:4) k desítkám interních mikroslužeb jako synchronní závislosti. Tato situace je znázorněna na obrázku \#8-2, zejména závislost 3, která spustí řetěz, volání závislosti #4. které #5 hovory.
 
 ![Diagram znázorňující více distribuovaných závislostí.](./media/handle-partial-failure/multiple-distributed-dependencies.png)
 
-**Obrázek 8-2**. Dopad nesprávného návrhu, který nabízí dlouhé řetězce požadavků HTTP
+**Obrázek 8-2**. Dopad nesprávného návrhu s dlouhými řetězci požadavků HTTP
 
-Občasné selhání je zaručené u distribuovaného a cloudového systému, a to i v případě, že každá závislá závislost má skvělou dostupnost. Je to fakt, že je potřeba vzít v úvahu.
+Občasné selhání je zaručeno v distribuovaném a cloudovém systému, i když každá závislost sama o sobě má vynikající dostupnost. Je to fakt, který musíš zvážit.
 
-Pokud nenavrhnete a neimplementujete techniky pro zajištění odolnosti proti chybám, může být i malé výpadky. Příklad: 50 závislosti každé s 99,99% dostupnosti by vedlo k několika hodinám výpadků v každém měsíci z důvodu tohoto efektu Ripple. V případě selhání závislosti mikroslužeb při zpracování vysokého objemu požadavků může tato chyba rychle navýšit všechna dostupná vlákna žádostí v každé službě a selhání celé aplikace.
+Pokud nenavrhujete a neimplementujete techniky k zajištění odolnosti proti chybám, mohou být zesíleny i malé prostoje. Například 50 závislostí s 99,99 % dostupnosti by mělo za následek několik hodin prostojů každý měsíc z důvodu tohoto dominový efekt. Pokud závislost mikroslužeb selže při zpracování velkého objemu požadavků, tato chyba může rychle nasytit všechna dostupná vlákna požadavků v každé službě a selhání celé aplikace.
 
-![Diagram znázorňující částečné selhání v mikroslužbách.](./media/handle-partial-failure/partial-failure-amplified-microservices.png)
+![Diagram znázorňující částečné selhání zesílené v mikroslužbách.](./media/handle-partial-failure/partial-failure-amplified-microservices.png)
 
-**Obrázek 8-3**. Částečná selhání dodaná mikroslužby s dlouhými řetězy synchronních volání HTTP
+**Obrázek 8-3**. Částečné selhání zesílené mikroslužbami s dlouhými řetězci synchronních volání HTTP
 
-Aby se tento problém minimalizoval, v části [asynchronní integrace mikroslužeb vynutila autonomii](../architect-microservice-container-applications/communication-in-microservice-architecture.md#asynchronous-microservice-integration-enforces-microservices-autonomy)mikroslužby. Tato příručka vám pomůže použít asynchronní komunikaci mezi interními mikroslužbami.
+Chcete-li minimalizovat tento problém, v části [Asynchronní integrace mikroslužeb vynucují autonomii mikroslužeb](../architect-microservice-container-applications/communication-in-microservice-architecture.md#asynchronous-microservice-integration-enforces-microservices-autonomy), tato příručka doporučuje používat asynchronní komunikaci napříč interní mikroslužby.
 
-Kromě toho je důležité, abyste navrhli své mikroslužby a klientské aplikace pro zpracování částečných selhání – to znamená vytvořit odolné mikroslužby a klientské aplikace.
+Kromě toho je nezbytné, abyste navrhli mikroslužeb a klientské aplikace pro zpracování částečných selhání – to znamená vytvořit odolné mikroslužby a klientské aplikace.
 
 >[!div class="step-by-step"]
 >[Předchozí](index.md)
->[Další](partial-failure-strategies.md)
+>[další](partial-failure-strategies.md)

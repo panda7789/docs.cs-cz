@@ -3,51 +3,51 @@ title: Architektura nástrojů příkazového řádku .NET Core
 description: Přečtěte si o vrstvách nástrojů .NET Core a o tom, co se změnilo v posledních verzích.
 ms.date: 03/06/2017
 ms.openlocfilehash: fde1a0acb6af9dd65aa3466b4ea37473b2eab6fb
-ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/09/2020
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "77092912"
 ---
-# <a name="high-level-overview-of-changes-in-the-net-core-tools"></a>Podrobný přehled změn v nástrojích .NET Core
+# <a name="high-level-overview-of-changes-in-the-net-core-tools"></a>Přehled změn v nástrojích .NET Core na vysoké úrovni
 
-Tento dokument popisuje změny spojené s přesunutím z *Project. JSON* na MSBuild a systém projektu *csproj* s informacemi o změnách vrstev nástrojů .NET Core a implementaci příkazů CLI. K těmto změnám došlo s vydáním .NET Core SDK 1,0 a sady Visual Studio 2017 7. března 2017 (viz [oznámení](https://devblogs.microsoft.com/dotnet/announcing-net-core-tools-1-0/)), ale byly původně implementovány s vydáním .NET Core SDK Preview 3.
+Tento dokument popisuje změny spojené s přechodem z *project.json* na MSBuild a *csproj* projektový systém s informacemi o změnách vrstvení nástrojů .NET Core a implementaci příkazů rozhraní PŘÍKAZOVÉHO PŘÍKAZU. K těmto změnám došlo s vydáním .NET Core SDK 1.0 a Visual Studio 2017 dne 7. [announcement](https://devblogs.microsoft.com/dotnet/announcing-net-core-tools-1-0/)
 
-## <a name="moving-away-from-projectjson"></a>Přesun mimo Project. JSON
+## <a name="moving-away-from-projectjson"></a>Odklon od project.json
 
-Největší změna v nástrojích pro .NET Core je určitě [z Project. JSON přejít na csproj](https://devblogs.microsoft.com/dotnet/changes-to-project-json/) jako systém projektu. Nejnovější verze nástrojů příkazového řádku nepodporují soubory *Project. JSON* . To znamená, že se nedá použít k sestavení, spuštění nebo publikování aplikací a knihoven založených na Project. JSON. Chcete-li použít tuto verzi nástrojů, migrujte existující projekty nebo začněte novými.
+Největší změnou v nástrojích pro .NET Core je jistě [přechod od project.json k csproj](https://devblogs.microsoft.com/dotnet/changes-to-project-json/) jako projektový systém. Nejnovější verze nástrojů příkazového řádku nepodporují soubory *project.json.* To znamená, že jej nelze použít k vytváření, spouštění nebo publikování aplikací a knihoven založených na projektu. Chcete-li použít tuto verzi nástrojů, migrujte existující projekty nebo začněte nové.
 
-V rámci tohoto přesunu byl vlastní modul sestavení vyvinutý pro sestavení projektů Project. JSON nahrazen vyspělým a plně schopným sestavovacím modulem s názvem [MSBuild](https://github.com/Microsoft/msbuild). MSBuild je známý modul v komunitě .NET. Byla to klíčová technologie od první verze platformy. Vzhledem k tomu, že je potřeba sestavovat aplikace .NET Core, MSBuild byl předaný do .NET Core a lze ho použít na libovolné platformě, na které běží .NET Core. Jednou z hlavních příslibů .NET Core je sada pro vývoj pro různé platformy a zajistili jsme, že tento přesun neruší tento příslib.
+V rámci tohoto pohybu byl vlastní modul sestavení, který byl vyvinut k sestavení projektů project.json, nahrazen zralým a plně schopným modulem sestavení s názvem [MSBuild](https://github.com/Microsoft/msbuild). MSBuild je známý modul v komunitě .NET. To bylo klíčové technologie od prvního vydání platformy. Protože je potřeba vytvářet aplikace .NET Core, msbuild byl portován na .NET Core a lze použít na libovolné platformě, která .NET Core běží na. Jedním z hlavních slibů .NET Core je zásobník vývoje napříč platformami a ujistili jsme se, že tento krok tento slib neporuší.
 
 > [!TIP]
-> Pokud s nástrojem MSBuild začínáte a chcete získat další informace o této službě, můžete začít načtením článku [koncepty nástroje MSBuild](/visualstudio/msbuild/msbuild-concepts) .
+> Pokud jste na MSBuild a chcete se dozvědět více o tom, můžete začít čtením [msbuild koncepty](/visualstudio/msbuild/msbuild-concepts) článku.
 
 ## <a name="the-tooling-layers"></a>Vrstvy nástrojů
 
-Se změnou v modulu sestavení a přesunem z existujícího systému projektů se za vás některé otázky přirozeně sledují. Provedení kterékoli z těchto změn změní celkové "vrstvení" nástrojů pro ekosystém nástrojů .NET Core? Existují nové bity a součásti?
+Se změnou v sestavení motoru a odklon od stávajícího systému projektu, některé otázky přirozeně následovat. Mění některá z těchto změn celkové "vrstvení" ekosystému nástrojů .NET Core? Existují nové bity a součásti?
 
-Pojďme začít s rychlým aktualizačním rozhraním ve verzi Preview 2, jak je znázorněno na následujícím obrázku:
+Začněme s rychlým osvěžením při vrstvách náhledu 2, jak je znázorněno na následujícím obrázku:
 
-![Preview 2 – architektura vysoké úrovně nástrojů](media/cli-msbuild-architecture/p2-arch.png)
+![Náhled 2 nástrojů architektury na vysoké úrovni](media/cli-msbuild-architecture/p2-arch.png)
 
-Vrstvení nástrojů v Preview 2 je jednoduché. V dolní části je základem .NET Core CLI. Všechny ostatní nástroje vyšší úrovně, jako je například Visual Studio nebo Visual Studio Code, závisí a spoléhají na rozhraní příkazového řádku pro sestavování projektů, obnovování závislostí a tak dále. Například pokud aplikace Visual Studio chtěla provést operaci obnovení, zavolá do příkazu `dotnet restore` ([Viz poznámku](#dotnet-restore-note)) v rozhraní příkazového řádku.
+Vrstvení nástrojů v náhledu 2 je jednoduché. V dolní části je základem rozhraní PŘÍKAZOVÉHO ŘÁDKU jádra .NET. Všechny ostatní nástroje vyšší úrovně, jako je například Visual Studio nebo Visual Studio Code, závisí a spoléhají na cli k vytváření projektů, obnovení závislostí a tak dále. Například pokud Visual Studio chtěl provést operaci obnovení, `dotnet restore` by volání do příkazu ([viz poznámka](#dotnet-restore-note)) v příkazu cli.
 
-Při přesunu na nový systém projektu se změní předchozí diagram:
+S přechodem na nový systém projektu se předchozí diagram změní:
 
-![Architektura vysoké úrovně .NET Core SDK 1.0.0](media/cli-msbuild-architecture/p3-arch.png)
+![Architektura na vysoké úrovni .NET Core SDK 1.0.0](media/cli-msbuild-architecture/p3-arch.png)
 
-Hlavním rozdílem je, že rozhraní příkazového řádku již není základní vrstva; Tato role je nyní vyplněna "sdílenou komponentou sady SDK". Tato sdílená součást sady SDK je sada cílů a přidružených úloh, které jsou zodpovědné za kompilování kódu, publikování a balení balíčků NuGet atd. .NET Core SDK je open source a je k dispozici na GitHubu v [úložišti SDK](https://github.com/dotnet/sdk).
+Hlavní rozdíl je v tom, že CLI již není základní vrstvou; tuto roli nyní plní "sdílená součást sady SDK". Tato sdílená součást sady SDK je sada cílů a přidružených úloh, které jsou zodpovědné za kompilaci kódu, jeho publikování, balení balíčků NuGet a tak dále. Sada .NET Core SDK je open source a je k dispozici na GitHubu v [úložišti sady SDK](https://github.com/dotnet/sdk).
 
 > [!NOTE]
-> "Target" je výraz MSBuild, který označuje pojmenovanou operaci, kterou může nástroj MSBuild vyvolat. Obvykle je spojen s jednou nebo více úlohami, které spouštějí určitou logiku, kterou by měl cíl provádět. Nástroj MSBuild podporuje mnoho předem připravených cílů, jako `Copy` nebo `Execute`; umožňuje také uživatelům psát vlastní úkoly pomocí spravovaného kódu a definovat cíle pro provádění těchto úkolů. Další informace najdete v tématu [úlohy nástroje MSBuild](/visualstudio/msbuild/msbuild-tasks).
+> "Cíl" je termín MSBuild, který označuje pojmenovanou operaci, kterou může MSBuild vyvolat. Obvykle je spojen s jedním nebo více úloh, které provádějí některé logiky, které cíl má dělat. MSBuild podporuje mnoho hotových `Copy` cílů, jako je například nebo `Execute`; umožňuje také uživatelům psát vlastní úkoly pomocí spravovaného kódu a definovat cíle pro provádění těchto úkolů. Další informace naleznete v tématu [MSBuild tasks](/visualstudio/msbuild/msbuild-tasks).
 
-Všechny sady nástrojů teď využívají sdílenou součást sady SDK a její cíle, včetně rozhraní příkazového řádku. Například Visual Studio 2019 nevolá do příkazu `dotnet restore` ([Viz poznámku](#dotnet-restore-note)), aby obnovil závislosti pro projekty .NET Core. Místo toho používá cíl "obnovit" přímo. Vzhledem k tomu, že se jedná o cíle nástroje MSBuild, můžete pomocí příkazu [dotnet MSBuild](dotnet-msbuild.md) spustit také nezpracovaný nástroj MSBuild.
+Všechny sady nástrojů nyní spotřebovávají sdílenou komponentu Sady SDK a její cíle, včetně cli. Například Visual Studio 2019 nevolá `dotnet restore` do příkazu ([viz poznámka](#dotnet-restore-note)) k obnovení závislostí pro projekty .NET Core. Místo toho používá cíl "Obnovit" přímo. Vzhledem k tomu, že se jedná o cíle MSBuild, můžete také použít nezpracovaná MSBuild k jejich spuštění pomocí příkazu [dotnet msbuild.](dotnet-msbuild.md)
 
-### <a name="cli-commands"></a>Příkazy rozhraní příkazového řádku
+### <a name="cli-commands"></a>Příkazy příkazového příkazu
 
-Sdílená součást sady SDK znamená, že většina existujících příkazů rozhraní příkazového řádku byla znovu implementována jako úlohy a cíle nástroje MSBuild. Co to znamená pro příkazy rozhraní příkazového řádku a vaše využití sady nástrojů?
+Sdílená součást sady SDK znamená, že většina existujících příkazů příkazového příkazu příkazového příkazu byla znovu implementována jako úlohy a cíle msbuild. Co to znamená pro příkazy příkazu příkazu příkazu příkazu příkazu a vaše použití sady nástrojů?
 
-Z perspektivy využití se nezmění způsob, jakým rozhraní příkazového řádku používáte. Rozhraní příkazového řádku má stále základní příkazy, které existovaly ve verzi .NET Core 1,0 Preview 2:
+Z hlediska využití nezmění způsob použití cli. Rozhraní příkazového příkazu má stále základní příkazy, které existovaly ve verzi .NET Core 1.0 Preview 2:
 
 - `new`
 - `restore`
@@ -57,21 +57,21 @@ Z perspektivy využití se nezmění způsob, jakým rozhraní příkazového ř
 - `test`
 - `pack`
 
-Tyto příkazy pořád dělají, co očekáváte (nový projekt, sestavte ho, publikujte ho, probalíte a tak dále). Můžete se obrátit na obrazovku Nápověda (pomocí `dotnet <command> --help`) nebo v dokumentaci k tomuto webu, kde se seznámíte s jejich chováním.
+Tyto příkazy stále dělají to, co očekáváte, že budou dělat (nové projekty, sestavení, publikování, balení a tak dále). Můžete se seznámit s jejich chováním `dotnet <command> --help`na obrazovce nápovědy příkazu (pomocí) nebo v dokumentaci na tomto webu.
 
-V perspektivě spuštění příkazy rozhraní příkazového řádku převezmou své parametry a vytvoří volání "raw" MSBuild, které nastaví potřebné vlastnosti a spustí požadovaný cíl. K lepší ilustraci byste měli vzít v úvahu následující příkaz:
+Z hlediska provádění příkazy rozhraní příkazu převzít jejich parametry a vytvořit volání "raw" MSBuild, který nastaví potřebné vlastnosti a spustí požadovaný cíl. Chcete-li to lépe ilustrovat, zvažte následující příkaz:
 
    ```dotnetcli
    dotnet publish -o pub -c Release
    ```
 
-Tento příkaz publikuje aplikaci do `pub` složky pomocí konfigurace Release (vydání). Interně se tento příkaz převede do následujícího vyvolání MSBuild:
+Tento příkaz publikuje aplikaci do `pub` složky pomocí konfigurace "Release". Interně tento příkaz získá přeloženy do následující ho vyvolání MSBuild:
 
    ```dotnetcli
    dotnet msbuild -t:Publish -p:OutputPath=pub -p:Configuration=Release
    ```
 
-Mezi významné výjimky z tohoto pravidla patří `new` a `run` příkazy. Nebyly implementovány jako cíle nástroje MSBuild.
+Významné výjimky z tohoto `new` `run` pravidla jsou příkazy a. Nebyly implementovány jako cíle MSBuild.
 
 <a name="dotnet-restore-note"></a>
 [!INCLUDE[DotNet Restore Note](~/includes/dotnet-restore-note.md)]

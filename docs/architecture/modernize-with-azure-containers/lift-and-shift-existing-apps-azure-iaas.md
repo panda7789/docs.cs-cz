@@ -1,87 +1,87 @@
 ---
-title: Přezvednutí a posunutí stávajících aplikací .NET do Azure IaaS (cloudová infrastruktura – připravená)
-description: Modernizovat stávající aplikace .NET pomocí cloudu Azure a kontejnerů Windows.
+title: Výtah a přesun existujících aplikací .NET na Azure IaaS (Cloud Infrastructure-Ready)
+description: Modernizujte existující aplikace .NET pomocí Azure Cloudu a kontejnerů Windows.
 ms.date: 04/28/2018
 ms.openlocfilehash: c7638a034dbb27baea1b097bdb66175bfb5a71f2
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/08/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "73089639"
 ---
-# <a name="lift-and-shift-existing-net-apps-to-azure-iaas-cloud-infrastructure-ready"></a>Přezvednutí a posunutí stávajících aplikací .NET do Azure IaaS (cloudová infrastruktura – připravená)
+# <a name="lift-and-shift-existing-net-apps-to-azure-iaas-cloud-infrastructure-ready"></a>Výtah a přesun existujících aplikací .NET na Azure IaaS (Cloud Infrastructure-Ready)
 
-> Vize: jako první krok můžete snížit svou místní investici a celkové náklady na údržbu hardwaru a sítě, jednoduše znovu hostovat své stávající aplikace v cloudu.
+> Vize: Chcete-li snížit místní investice a celkové náklady na údržbu hardwaru a sítě, jednoduše hostujte stávající aplikace v cloudu, abyste snížili místní investice a celkové náklady na údržbu hardwaru a sítí.
 
-Než *se pustíte do migrace* stávajících aplikací na platformu IaaS (infrastruktura jako služba) Azure, je důležité analyzovat důvody, *Proč* byste chtěli migrovat přímo na IaaS v Azure. Scénář v této úrovni zralosti v podstatě je začít používat virtuální počítače v cloudu a nemusíte dál používat svou stávající místní infrastrukturu.
+Než začnete *migrovat* stávající aplikace na platformu Azure infrastructure as service (IaaS), je důležité analyzovat důvody, *proč* byste chtěli migrovat přímo do IaaS v Azure. Scénář na této úrovni vyspělosti modernizace v podstatě je začít používat virtuální počítače v cloudu, namísto pokračování v používání aktuální místní infrastruktury.
 
-Dalším bodem k analýze je, *Proč* možná budete chtít migrovat na čistý IaaS Cloud místo pouhého přidávání pokročilejších spravovaných služeb v Azure. Určete, jaké případy můžou na prvním místě vyžadovat IaaS.
+Dalším bodem k analýze je *důvod, proč* budete chtít migrovat do čistého cloudu IaaS namísto pouhého přidání pokročilejších spravovaných služeb v Azure. Určete, jaké případy mohou vyžadovat IaaS na prvním místě.
 
-Obrázek 2-1 umisťuje aplikace připravené pro cloudovou infrastrukturu do vyspělosti úrovní zralosti:
+Obrázek 2-1 pozice Cloud Infrastructure-Ready aplikace v úrovních vyspělosti modernizace:
 
-![Umístění aplikací připravených pro cloudovou infrastrukturu](./media/image2-1.png)
+![Aplikace připravené pro umístění cloudové infrastruktury](./media/image2-1.png)
 
-**Obrázek 2-1.** Umístění aplikací připravených pro cloudovou infrastrukturu
+**Obrázek 2-1.** Aplikace připravené pro umístění cloudové infrastruktury
 
 ## <a name="why-migrate-existing-net-web-applications-to-azure-iaas"></a>Proč migrovat existující webové aplikace .NET do Azure IaaS
 
-Hlavním důvodem pro migraci do cloudu, a to i na počáteční úrovni IaaS, je dosáhnout snížení nákladů. Díky využívání více spravovaných služeb infrastruktury může vaše organizace snížit svou investici do údržby hardwaru, zřizování serverů a nasazení virtuálních počítačů a správy infrastruktury.
+Hlavním důvodem migrace do cloudu, a to i na počáteční úrovni IaaS, je dosažení snížení nákladů. Pomocí více služeb spravované infrastruktury může vaše organizace snížit své investice do údržby hardwaru, zřizování a nasazování a nasazování serveru nebo virtuálních počítačů a správy infrastruktury.
 
-Až se rozhodnete přesunout vaše aplikace do cloudu, hlavní důvod, proč byste si měli vybrat IaaS místo pokročilejších možností, jako je PaaS, je jednoduše tím, že prostředí IaaS bude lépe známé. Přesun do prostředí, které je podobné vašemu aktuálnímu, místnímu prostředí nabízí nižší výukovou křivku, která umožňuje nejrychlejší cestu ke cloudu.
+Po rozhodnutí přesunout aplikace do cloudu, hlavním důvodem, proč si můžete vybrat IaaS místo pokročilejších možností, jako je PaaS, je prostě to, že prostředí IaaS bude známější. Přechod do prostředí, které je podobné vašemu aktuálnímu místnímu prostředí, nabízí nižší křivku učení, což z něj činí nejrychlejší cestu do cloudu.
 
-Použití nejrychlejší cesty ke cloudu ale neznamená, že získáte největší výhody využívání vašich aplikací v cloudu. Každá organizace bude získávat nejvýznamnější výhody migrace do cloudu v již zavedených cloudově optimalizovaných a cloudových úrovních zralosti.
+Nejrychlejší cesta ke cloudu však neznamená, že budete mít největší užitek z toho, že vaše aplikace běží v cloudu. Každá organizace získá ty nejvýznamnější výhody migrace z cloudu na již zavedených úrovních vyspělosti optimalizované pro cloud a nativní cloud.
 
-Také se stala zjevné, že aplikace jsou v budoucnu jednodušší a modernizovat, když už běží v cloudu, a to i na IaaS. Migrace dat aplikací se už dosáhla. Vaše organizace taky získala dovednosti nutné pro práci v cloudu a provedla se tak jejímu fungování v "jazykové verzi cloudu".
+Je také zřejmé, že aplikace jsou snadněji modernizovat a rearchitect v budoucnu, když jsou již spuštěny v cloudu, a to i na IaaS. Migrace dat aplikace již byla dokončena. Vaše organizace také získá dovednosti potřebné pro práci v cloudu a přejde k provozu v "cloudové kultuře".
 
-## <a name="when-to-migrate-to-iaas-instead-of-to-paas"></a>Kdy migrovat na IaaS místo na PaaS
+## <a name="when-to-migrate-to-iaas-instead-of-to-paas"></a>Kdy migrovat na IaaS místo do PaaS
 
-V dalších částech se projednávají cloudově optimalizované aplikace, které jsou většinou založené na PaaS platformách a službách. Tyto aplikace vám poskytnou největší výhody migrace do cloudu.
+V dalších částech se popisují aplikace optimalizované pro cloud, které jsou většinou založeny na platformách a službách PaaS. Tyto aplikace vám nejvíce výhod plynouz migrace do cloudu.
 
-Pokud je vaším cílem jednoduše přesunout stávající aplikace do cloudu, identifikujte nejprve existující aplikace, které nevyžadují, aby se v Azure App Service spouštěla značná úprava. Tyto aplikace by měly být prvním kandidátem optimalizovaného pro Cloud.
+Pokud je vaším cílem jednoduše přesunout existující aplikace do cloudu, nejprve identifikujte existující aplikace, které by nevyžadovaly podstatné změny ke spuštění ve službě Azure App Service. Tyto aplikace by měly být prvními kandidáty pro optimalizované pro cloud.
 
-Pak u aplikací, které se stále nedají přesunout do kontejnerů Windows a PaaS, jako jsou App Service nebo Orchestration, jako je Azure Kubernetes Service, migrujte na jednoduché virtuální počítače (IaaS).
+Pak pro aplikace, které stále nelze přesunout do Kontejnery Windows a PaaS, jako je služba App Service nebo orchestrátory, jako je služba Azure Kubernetes, migrovat do jednoduchých prostých virtuálních počítačů (IaaS).
 
-Mějte ale na paměti, že správná konfigurace, zabezpečení a údržba virtuálních počítačů vyžaduje mnohem více času a odbornost IT v porovnání s používáním služeb PaaS v Azure. Pokud zvažujete Virtual Machines Azure, ujistěte se, že jste přihlédli k probíhajícímu úsilí údržby potřebnému k opravě, aktualizaci a správě prostředí virtuálních počítačů. Azure Virtual Machines je IaaS.
+Ale mějte na paměti, že správná konfigurace, zabezpečení a údržba virtuálních počítačů vyžaduje mnohem více času a odborných znalostí V OBLASTI IT ve srovnání s používáním služeb PaaS v Azure. Pokud uvažujete o virtuálních počítačích Azure, ujistěte se, že berete v úvahu probíhající úsilí údržby potřebné k opravě, aktualizaci a správě prostředí virtuálních počítačů. Virtuální počítače Azure je IaaS.
 
-## <a name="use-azure-migrate-to-analyze-and-migrate-your-existing-applications-to-azure"></a>Použití Azure Migrate k analýze a migraci stávajících aplikací do Azure
+## <a name="use-azure-migrate-to-analyze-and-migrate-your-existing-applications-to-azure"></a>Analýza a migrace stávajících aplikací do Azure pomocí Migrace Azure
 
-Migrace do cloudu nemusí být obtížné. Spousta organizací ale bojovat začít – získat hlubokou viditelnost prostředí a těsné vzájemné závislosti mezi aplikacemi, úlohami a daty. Bez této viditelnosti může být obtížné naplánovat cestu s přesměrováním. Bez podrobných informací o tom, co je potřeba k úspěšné migraci, nemůžete mít ve vaší organizaci správné konverzace. Neznáte dostatek informací o potenciálních cenových výhodách nebo o tom, jestli úlohy mohly způsobit, že se úspěšně migrují a že by vyžadovaly významnou přepracování. Nemusíte nic váhají o mnoha organizacích.
+Migrace do cloudu nemusí být obtížná. Ale mnoho organizací se snaží začít - získat hlubokou viditelnost do prostředí a těsné vzájemné závislosti mezi aplikacemi, úlohami a daty. Bez této viditelnosti může být obtížné naplánovat cestu vpřed. Bez podrobných informací o tom, co je potřeba pro úspěšnou migraci, nemůžete mít ve vaší organizaci správné konverzace. Nevíte dost o potenciálních nákladových výhodách nebo o tom, zda by úlohy mohly pouze převést a posunout nebo by k úspěšné migraci vyžadovaly významné přepracování. Není divu, že mnoho organizací váhá.
 
-[Azure Migrate](https://aka.ms/azuremigrate) je nová služba, která poskytuje pokyny, přehledy a mechanismy potřebné k tomu, aby vám pomohla při migraci do Azure. Azure Migrate poskytuje:
+[Azure Migrate](https://aka.ms/azuremigrate) je nová služba, která poskytuje pokyny, přehledy a mechanismy potřebné k migraci do Azure. Migrace Azure poskytuje:
 
 - Zjišťování a hodnocení místních virtuálních počítačů
 
-- Předdefinované mapování závislostí pro vysoce spolehlivé zjišťování vícevrstvých aplikací
+- Integrované mapování závislostí pro zjišťování vícevrstvých aplikací s vysokou spolehlivostí
 
-- Inteligentní správná velikost na virtuální počítače Azure
+- Inteligentní přizpůsobení správného nastavení virtuálním počítačům Azure
 
-- Vytváření sestav kompatibility s pokyny pro oprava potenciální problémy
+- Hlášení o kompatibilitě s pokyny pro nápravu potenciálních problémů
 
-- Integrace se službou správy Azure Database pro zjišťování a migraci databází
+- Integrace se službou Azure Database Management Service pro zjišťování a migraci databází
 
-Azure Migrate vám poskytne jistotu, že vaše úlohy se můžou migrovat s minimálním dopadem na firmu a v Azure běžet podle očekávání. Díky správným nástrojům a návodům můžete dosáhnout maximální návratnosti investic a přitom zajistit splnění nejdůležitějších potřeb výkonu a spolehlivosti.
+Azure Migrate vám dává jistotu, že vaše úlohy můžete migrovat s minimálním dopadem na podnikání a spustit podle očekávání v Azure. Se správnými nástroji a pokyny můžete dosáhnout maximální návratnosti investic a zároveň zajistit, aby byly splněny kritické potřeby v oblasti výkonu a spolehlivosti.
 
-Obrázek 2-2 ukazuje integrované mapování závislostí pro všechna připojení serverů a aplikací prováděná nástrojem Azure Migrate.
+Obrázek 2-2 ukazuje integrované mapování závislostí pro všechna připojení serverů a aplikací prováděná azure migrate.
 
-![Umístění aplikací připravených pro cloudovou infrastrukturu](./media/image2-2.png)
+![Aplikace připravené pro umístění cloudové infrastruktury](./media/image2-2.png)
 
-**Obrázek 2-2.** Umístění aplikací připravených pro cloudovou infrastrukturu
+**Obrázek 2-2.** Aplikace připravené pro umístění cloudové infrastruktury
 
-## <a name="use-azure-site-recovery-to-migrate-your-existing-vms-to-azure-vms"></a>Migrace stávajících virtuálních počítačů do virtuálních počítačů Azure pomocí Azure Site Recovery
+## <a name="use-azure-site-recovery-to-migrate-your-existing-vms-to-azure-vms"></a>Migrace stávajících virtuálních počítačů do virtuálních virtuálních virtuálních počítačů Azure pomocí Azure Site Recovery
 
-V rámci komplexního [Azure Migrate](https://aka.ms/azuremigrate)je [Azure Site Recovery](https://docs.microsoft.com/azure/site-recovery/site-recovery-overview) nástroj, který můžete použít ke snadné migraci webových aplikací do virtuálních počítačů v Azure. Site Recovery můžete použít k replikaci místních virtuálních počítačů a fyzických serverů do Azure nebo k jejich replikaci do sekundárního místního umístění. Můžete dokonce replikovat úlohy, které běží na podporovaném virtuálním počítači Azure, na místním virtuálním počítači s *technologií Hyper-V* , na virtuálním počítači *VMware* nebo na fyzickém serveru se systémem Windows nebo Linux. Replikace do Azure eliminuje náklady a složitost údržby sekundárního datového centra.
+Jako součást komplexní [migrace Azure](https://aka.ms/azuremigrate)je [Azure Site Recovery](https://docs.microsoft.com/azure/site-recovery/site-recovery-overview) nástroj, který můžete použít ke snadné migraci webových aplikací do virtuálních počítačů v Azure. Site Recovery můžete použít k replikaci místních virtuálních počítačů a fyzických serverů do Azure nebo k jejich replikaci do sekundárního místního umístění. Můžete dokonce replikovat úlohu, která běží na podporovaném virtuálním počítači Azure, na místním virtuálním počítači *Hyper-V,* na virtuálním počítači *VMware* nebo na fyzickém serveru Windows nebo Linux. Replikací do Azure se eliminují náklady a složitost spojené s udržováním sekundárního datového centra.
 
-Site Recovery je taky určený konkrétně pro hybridní prostředí, která jsou částečně místní a částečně v Azure. Site Recovery pomáhá zajistit kontinuitu podnikových aplikací tím, že udržuje aplikace běžící na virtuálních počítačích a místních fyzických serverech k dispozici v případě, že dojde k výpadku webu. Replikuje úlohy spuštěné na virtuálních počítačích a fyzických serverech tak, aby zůstaly dostupné v sekundárním umístění, pokud není primární lokalita k dispozici. Po opětovném spuštění a opětovném spuštění obnoví úlohy do primární lokality.
+Site Recovery se také provádí speciálně pro hybridní prostředí, která jsou částečně místní a částečně v Azure. Site Recovery pomáhá zajistit kontinuitu podnikání tím, že vaše aplikace, které běží na virtuálních počítačích a místních fyzických serverech, jsou k dispozici, pokud dojde k pádu webu. Replikuje úlohy, které jsou spuštěny na virtuálních počítačích a fyzických serverech, aby zůstaly dostupné v sekundárním umístění, pokud primární lokalita není k dispozici. Po opětovném zprovoznění primární lokality do ní úlohy obnoví.
 
-Obrázek 2-3 ukazuje spuštění několika migrací virtuálních počítačů pomocí Azure Site Recovery.
+Obrázek 2-3 ukazuje provádění více migrace virtuálních počítačových sítí pomocí Azure Site Recovery.
 
-![Umístění aplikací připravených pro cloudovou infrastrukturu](./media/image2-3.png)
+![Aplikace připravené pro umístění cloudové infrastruktury](./media/image2-3.png)
 
-**Obrázek 2-3.** Umístění aplikací připravených pro cloudovou infrastrukturu
+**Obrázek 2-3.** Aplikace připravené pro umístění cloudové infrastruktury
 
-### <a name="additional-resources"></a>Další materiály a zdroje informací
+### <a name="additional-resources"></a>Další zdroje
 
-- **Azure Migrate datový list**
+- **Datový list migrace Azure**
 
     <https://aka.ms/azuremigration\_datasheet>
 
@@ -101,10 +101,10 @@ Obrázek 2-3 ukazuje spuštění několika migrací virtuálních počítačů p
 
     <https://docs.microsoft.com/azure/site-recovery/site-recovery-overview>
 
-- **Migrace virtuálních počítačů v AWS do virtuálních počítačů Azure**
+- **Migrace virtuálních počítačů ve službě AWS do virtuálních počítačů Azure**
 
     <https://docs.microsoft.com/azure/site-recovery/site-recovery-migrate-aws-to-azure>
 
 >[!div class="step-by-step"]
 >[Předchozí](index.md)
->[Další](migrate-your-relational-databases-to-azure.md) <!-- Next Chapter -->
+>[další](migrate-your-relational-databases-to-azure.md) <!-- Next Chapter -->

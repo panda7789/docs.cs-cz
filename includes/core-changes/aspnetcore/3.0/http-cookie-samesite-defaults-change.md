@@ -1,38 +1,38 @@
 ---
 ms.openlocfilehash: 15ba678431b97e7c961c119d83546569bdf9bad2
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "74282532"
 ---
-### <a name="http-some-cookie-samesite-defaults-changed-to-none"></a>HTTP: některé výchozí hodnoty souborů cookie SameSite se změnily na žádné.
+### <a name="http-some-cookie-samesite-defaults-changed-to-none"></a>HTTP: Některé výchozí hodnoty cookie SameSite se změnily na Žádné
 
-`SameSite` je možnost souborů cookie, které mohou napomoci zmírnit útokům prostřednictvím CSRF (více lokalit). Při počátečním zavedení této možnosti se v různých ASP.NET Core rozhraní API používaly nekonzistentní výchozí hodnoty. Nekonzistence vedla k matoucímu výsledku. Od ASP.NET Core 3,0 jsou tyto výchozí hodnoty lépe zarovnané. K této funkci se musíte vyjádřit na základě jednotlivých komponent.
+`SameSite`je možnost pro soubory cookie, které mohou pomoci zmírnit některé útoky na vyžádání mezi stránkami (CSRF). Když byla tato možnost původně zavedena, byly použity nekonzistentní výchozí hodnoty v různých ASP.NET základní chod y API. Nekonzistence vedla k matoucím výsledkům. Od ASP.NET jádra 3.0 jsou tyto výchozí hodnoty lépe zarovnány. K této funkci se musíte přihlásit pro jednotlivé komponenty.
 
-#### <a name="version-introduced"></a>Představená verze
+#### <a name="version-introduced"></a>Zavedená verze
 
-3,0
+3.0
 
 #### <a name="old-behavior"></a>Staré chování
 
-Podobná ASP.NET Core rozhraní API používala jiné výchozí hodnoty <xref:Microsoft.AspNetCore.Http.SameSiteMode>. Příklad nekonzistence se zobrazuje v `HttpResponse.Cookies.Append(String, String)` a `HttpResponse.Cookies.Append(String, String, CookieOptions)`, která je nastavená na `SameSiteMode.None` a `SameSiteMode.Lax`, v uvedeném pořadí.
+Podobná ASP.NET jádrová api <xref:Microsoft.AspNetCore.Http.SameSiteMode> používají různé výchozí hodnoty. Příklad nekonzistence je zobrazen `HttpResponse.Cookies.Append(String, String)` `HttpResponse.Cookies.Append(String, String, CookieOptions)`v a , `SameSiteMode.None` `SameSiteMode.Lax`které defaulted a , v uvedeném pořadí.
 
 #### <a name="new-behavior"></a>Nové chování
 
-Všechna ovlivněná rozhraní API jsou ve výchozím nastavení `SameSiteMode.None`.
+Všechna ovlivněná nastavení `SameSiteMode.None`API jsou ve výchozím nastavení nastavena na hodnotu .
 
 #### <a name="reason-for-change"></a>Důvod změny
 
-Výchozí hodnota byla změněna, aby byla `SameSite` funkce výslovného souhlasu.
+Výchozí hodnota byla změněna tak, aby byla nastavena `SameSite` funkce pro přihlášení.
 
 #### <a name="recommended-action"></a>Doporučená akce
 
-Každá komponenta, která generuje soubory cookie, musí rozhodnout, zda je `SameSite` vhodná pro své scénáře. Zkontrolujte využití ovlivněných rozhraní API a podle potřeby `SameSite` znovu nakonfigurujte.
+Každá komponenta, která vydává `SameSite` soubory cookie, se musí rozhodnout, zda je pro její scénáře vhodná. Zkontrolujte využití postižených rozhraní API `SameSite` a podle potřeby je překonfigurujte.
 
 #### <a name="category"></a>Kategorie
 
-ASP.NET Core
+Jádro ASP.NET
 
 #### <a name="affected-apis"></a>Ovlivněná rozhraní API
 

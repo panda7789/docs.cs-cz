@@ -3,23 +3,23 @@ title: Zachování prázdných znaků při načítání nebo analýze XML
 ms.date: 07/20/2015
 ms.assetid: f3ff58c4-55aa-4fcd-b933-e3a2ee6e706c
 ms.openlocfilehash: d015c21813df2224356bb49212fe282fa5372d03
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/19/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "69591551"
 ---
 # <a name="preserving-white-space-while-loading-or-parsing-xml"></a>Zachování prázdných znaků při načítání nebo analýze XML
-Toto téma popisuje, jak ovládat chování prázdného místa v [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)].  
+Toto téma popisuje, jak řídit chování [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]prázdného místa aplikace .  
   
- Běžným scénářem je čtení odsazeného XML, vytvoření stromu XML v paměti bez jakýchkoli textových uzlů s prázdnými znaky (tj. bez zachovávání prázdných znaků), provedení některých operací v XML a následné uložení XML s odsazením. Při serializaci XML s formátováním je zachováno pouze významné prázdné znaky ve stromu XML. Toto je výchozí chování pro [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)].  
+ Běžným scénářem je čtení odsazeného xml, vytvoření stromu XML v paměti bez uzly prázdného textu (to znamená nezachování prázdného místa), provedení některých operací v xml a následné uložení XML s odsazením. Při serializaci xml s formátováním se zachová pouze významné prázdné místo ve stromu XML. Toto je výchozí [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]chování pro aplikace .  
   
- Dalším běžným scénářem je číst a upravovat kód XML, který již byl záměrně odsazen. Toto odsazení nebudete chtít nijak měnit. Chcete-li to [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]provést v, zachováte prázdné místo při načítání nebo analýze XML a při serializaci kódu XML zakážete formátování.  
+ Dalším běžným scénářem je čtení a úprava xml, který již byl záměrně odsazen. Možná nebudete chtít změnit toto odsazení v žádném případě. Chcete-li [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]to provést v aplikace , zachovejte prázdné místo při načtení nebo analýzě xml a zakázat formátování při serializaci XML.  
   
- Toto téma popisuje prázdné místo v případě metod, které naplňují stromy XML. Informace o řízení prázdných znaků při serializaci stromů XML naleznete v tématu [zachování mezer při serializaci](./preserving-white-space-while-serializing.md).  
+ Toto téma popisuje prázdné místo chování metod, které naplní stromy XML. Informace o řízení prázdného místa při serializaci stromů XML naleznete v tématu [Zachování prázdného místa při serializaci](./preserving-white-space-while-serializing.md).  
   
-## <a name="behavior-of-methods-that-populate-xml-trees"></a>Chování metod, které naplňují stromy XML  
- Následující metody v <xref:System.Xml.Linq.XElement> třídách a <xref:System.Xml.Linq.XDocument> naplní strom XML. Můžete naplnit strom XML ze souboru, <xref:System.IO.TextReader>a <xref:System.Xml.XmlReader>, nebo pomocí řetězce:  
+## <a name="behavior-of-methods-that-populate-xml-trees"></a>Chování metod, které naplní stromy XML  
+ Následující metody v <xref:System.Xml.Linq.XElement> <xref:System.Xml.Linq.XDocument> a třídy naplnit strom XML. Strom XML můžete naplnit ze <xref:System.IO.TextReader>souboru <xref:System.Xml.XmlReader>, , nebo řetězce:  
   
 - <xref:System.Xml.Linq.XElement.Load%2A?displayProperty=nameWithType>  
   
@@ -29,11 +29,11 @@ Toto téma popisuje, jak ovládat chování prázdného místa v [!INCLUDE[sqlte
   
 - <xref:System.Xml.Linq.XDocument.Parse%2A?displayProperty=nameWithType>  
   
- Pokud metoda nepřijímá <xref:System.Xml.Linq.LoadOptions> jako argument, nezachová metoda nevýznamné prázdné znaky.  
+ Pokud metoda nebere <xref:System.Xml.Linq.LoadOptions> jako argument, metoda nezachová nevýznamné prázdné místo.  
   
- Ve většině případů, pokud metoda přebírá <xref:System.Xml.Linq.LoadOptions> jako argument, můžete volitelně zachovat nevýznamné prázdné znaky jako textové uzly ve stromu XML. Nicméně pokud metoda načítá XML z <xref:System.Xml.XmlReader>a, <xref:System.Xml.XmlReader> pak určuje, zda bude prázdný znak zachován nebo ne. Nastavení <xref:System.Xml.Linq.LoadOptions.PreserveWhitespace> nebude mít žádný vliv.  
+ Ve většině případů, pokud <xref:System.Xml.Linq.LoadOptions> metoda trvá jako argument, můžete volitelně zachovat nevýznamné prázdné místo jako textové uzly ve stromu XML. Pokud však metoda načítá XML <xref:System.Xml.XmlReader>z <xref:System.Xml.XmlReader> aplikace , určuje, zda bude prázdné místo zachováno či nikoli. Nastavení <xref:System.Xml.Linq.LoadOptions.PreserveWhitespace> nebude mít žádný vliv.  
   
- S těmito metodami, pokud je zachováno prázdné místo, je do stromu XML jako <xref:System.Xml.Linq.XText> uzly vloženo nevýznamné prázdné znaky. Pokud prázdné znaky nejsou zachovány, textové uzly nejsou vloženy.  
+ S těmito metodami, pokud je zachováno prázdné místo, je <xref:System.Xml.Linq.XText> nevýznamné prázdné místo vloženo do stromu XML jako uzly. Pokud prázdné místo není zachováno, textové uzly nejsou vloženy.  
   
- Strom XML lze vytvořit pomocí <xref:System.Xml.XmlWriter>. Uzly, které jsou zapsány do, <xref:System.Xml.XmlWriter> jsou vyplněny ve stromové struktuře. Při sestavování stromu XML pomocí této metody však jsou zachovány všechny uzly bez ohledu na to, zda je uzel prázdný znak nebo není nebo zda je mezera významná.  
+ Strom XML můžete vytvořit pomocí <xref:System.Xml.XmlWriter>aplikace . Uzly, které <xref:System.Xml.XmlWriter> jsou zapsány do jsou naplněny ve stromu. Však při vytváření stromu XML pomocí této metody jsou zachovány všechny uzly, bez ohledu na to, zda uzel je prázdné místo nebo ne, nebo zda je prázdné místo významné nebo ne.  
   

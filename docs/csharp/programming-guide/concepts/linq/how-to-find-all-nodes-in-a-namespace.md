@@ -3,17 +3,17 @@ title: Jak najít všechny uzly v oboru názvů (C#)
 ms.date: 07/20/2015
 ms.assetid: 3a38b913-a53e-4d0e-a19d-8782bffd3364
 ms.openlocfilehash: 408f4207798720428d0dd3821d33fd3edf2f897e
-ms.sourcegitcommit: fbb8a593a511ce667992502a3ce6d8f65c594edf
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/16/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "74141192"
 ---
 # <a name="how-to-find-all-nodes-in-a-namespace-c"></a>Jak najít všechny uzly v oboru názvů (C#)
-Můžete filtrovat podle oboru názvů každého elementu nebo atributu, aby bylo možné najít všechny uzly v daném oboru názvů.  
+Můžete filtrovat obor názvů každého prvku nebo atributu a najít všechny uzly v daném oboru názvů.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad vytvoří strom XML se dvěma obory názvů. Pak projde stromovou strukturou a vytiskne názvy všech prvků a atributů v jednom z těchto oborů názvů.  
+ Následující příklad vytvoří strom XML se dvěma obory názvů. Potom iterates prostřednictvím stromu a vytiskne názvy všech prvků a atributů v jednom z těchto oborů názvů.  
   
 ```csharp  
 string markup = @"<aw:Root xmlns:aw='http://www.adventure-works.com' xmlns:fc='www.fourthcoffee.com'>  
@@ -35,7 +35,7 @@ foreach (XElement el in awElements)
     Console.WriteLine(el.Name.ToString());  
 ```  
   
- Tento kód generuje následující výstup:  
+ Výsledkem tohoto kódu je následující výstup:  
   
 ```output  
 Nodes in the http://www.adventure-works.com namespace  
@@ -44,9 +44,9 @@ Nodes in the http://www.adventure-works.com namespace
 ```  
   
 ## <a name="example"></a>Příklad  
- Soubor XML, ke kterému má přistup následující dotaz, obsahuje objednávky nákupu ve dvou různých oborech názvů. Dotaz vytvoří nový strom s pouze prvky v jednom z oborů názvů.  
+ Soubor XML, ke kterého přistupuje následující dotaz, obsahuje nákupní objednávky ve dvou různých oborech názvů. Dotaz vytvoří nový strom s pouze prvky v jednom z oborů názvů.  
   
- Tento příklad používá následující dokument XML: [vzorový soubor XML: konsolidované nákupní objednávky](./sample-xml-file-consolidated-purchase-orders.md).  
+ Tento příklad používá následující dokument XML: [Ukázkový soubor XML: Konsolidované nákupní objednávky](./sample-xml-file-consolidated-purchase-orders.md).  
   
 ```csharp  
 XDocument cpo = XDocument.Load("ConsolidatedPurchaseOrders.xml");  
@@ -59,7 +59,7 @@ XElement newTree = new XElement("Root",
 Console.WriteLine(newTree);  
 ```  
   
- Tento kód generuje následující výstup:  
+ Výsledkem tohoto kódu je následující výstup:  
   
 ```xml  
 <Root>  

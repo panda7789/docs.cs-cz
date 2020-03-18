@@ -1,6 +1,6 @@
 ---
-title: Operátory související s ukazateli – C# reference
-description: Přečtěte C# si o operátorech, které můžete použít při práci s ukazateli.
+title: Operátory související s ukazatelem – odkaz jazyka C#
+description: Další informace o operátory Jazyka C#, které můžete použít při práci s ukazateli.
 ms.date: 05/20/2019
 author: pkulikov
 f1_keywords:
@@ -20,57 +20,57 @@ helpviewer_keywords:
 - pointer increment [C#]
 - pointer decrement [C#]
 - pointer comparison [C#]
-ms.openlocfilehash: 51e6aeda7699d9e2fe3c46ced93e1783a52e6743
-ms.sourcegitcommit: 43d10ef65f0f1fd6c3b515e363bde11a3fcd8d6d
+ms.openlocfilehash: 7c95fe07220a78b388a5c6850e4123feb029d951
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/03/2020
-ms.locfileid: "78238959"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79399544"
 ---
-# <a name="pointer-related-operators-c-reference"></a>Operátory související s ukazateli (C# referenční)
+# <a name="pointer-related-operators-c-reference"></a>Operátory související s ukazatelem (odkaz C#
 
 Pro práci s ukazateli můžete použít následující operátory:
 
-- Unární [`&` operátor (Address-of)](#address-of-operator-) : pro získání adresy proměnné
-- Unární [`*` operátor (dereference ukazatele)](#pointer-indirection-operator-) : pro získání proměnné, na kterou odkazuje ukazatel
-- Operátory [`->` (přístup do členů)](#pointer-member-access-operator--) a [`[]` (přístup k prvkům)](#pointer-element-access-operator-)
-- Aritmetické operátory [`+`, `-`, `++`a `--`](#pointer-arithmetic-operators)
-- Operátory porovnání [`==`, `!=`, `<`, `>`, `<=`a `>=`](#pointer-comparison-operators)
+- Unární [ `&` (adresa- of)](#address-of-operator-) operátor: získat adresu proměnné
+- Unární [ `*` (směrový bod)](#pointer-indirection-operator-) operátor: chcete-li získat proměnnou špičatou ukazatelem
+- [ `->` Operátory (přístup u členů)](#pointer-member-access-operator--) a [ `[]` (přístup k prvkům)](#pointer-element-access-operator-)
+- Aritmetické obsluze [ `+`, `-` `++`, , a`--`](#pointer-arithmetic-operators)
+- Srovnávací operátory [ `==` `>`, `<=` `!=`, `<`, , a`>=`](#pointer-comparison-operators)
 
-Informace o typech ukazatelů naleznete v tématu [typy ukazatelů](../../programming-guide/unsafe-code-pointers/pointer-types.md).
+Informace o typech ukazatelů naleznete v tématu [Pointer types](../../programming-guide/unsafe-code-pointers/pointer-types.md).
 
 > [!NOTE]
-> Jakákoli operace s ukazateli vyžaduje [nezabezpečený](../keywords/unsafe.md) kontext. Kód, který obsahuje nebezpečné bloky, musí být kompilován s možností kompilátoru [`-unsafe`](../compiler-options/unsafe-compiler-option.md) .
+> Každá operace s ukazateli vyžaduje [nebezpečný](../keywords/unsafe.md) kontext. Kód, který obsahuje nebezpečné bloky, [`-unsafe`](../compiler-options/unsafe-compiler-option.md) musí být zkompilován s možností kompilátoru.
 
-## <a name="address-of-operator-"></a>&amp; operátoru adresy
+## <a name="address-of-operator-"></a>Adresa operátora&amp;
 
-Unární operátor `&` vrátí adresu svého operandu:
+Unární `&` operátor vrátí adresu svého operandu:
 
-[!code-csharp[address of local](~/samples/snippets/csharp/language-reference/operators/PointerOperators.cs#AddressOf)]
+[!code-csharp[address of local](snippets/PointerOperators.cs#AddressOf)]
 
-Operandem operátoru `&` musí být pevná proměnná. *Pevné* proměnné jsou proměnné, které jsou umístěny v umístěních úložiště, která nejsou ovlivněna operací [uvolňování paměti](../../../standard/garbage-collection/index.md). V předchozím příkladu je místní proměnná `number` pevnou proměnnou, protože se nachází v zásobníku. Proměnné, které jsou umístěné v umístění úložiště, které může být ovlivněno systémem uvolňování paměti (například přemístěné), se nazývají *pohyblivé* proměnné. V příkladech pohyblivých proměnných jsou pole objektů a prvky pole. Adresu pohyblivé proměnné můžete získat, pokud "opravíte" nebo "PIN" a pomocí [příkazu`fixed`](../keywords/fixed-statement.md). Získaná adresa je platná pouze uvnitř bloku příkazu `fixed`. Následující příklad ukazuje, jak použít příkaz `fixed` a operátor `&`:
+Operand `&` provozovatele musí být pevná proměnná. *Pevné* proměnné jsou proměnné, které se nacházejí v umístěních úložiště, které nejsou ovlivněny provozem [systému uvolňování paměti](../../../standard/garbage-collection/index.md). V předchozím příkladu je `number` místní proměnná pevnou proměnnou, protože je umístěna v zásobníku. Proměnné, které jsou umístěny v umístěníúložiště, které mohou být ovlivněny systémem uvolňování paměti (například přemístěné) se nazývají *pohyblivé* proměnné. Pole objektů a prvky pole jsou příklady pohyblivých proměnných. Můžete získat adresu pohyblivé proměnné, pokud "opravit", nebo "pin", to s [ `fixed` příkazem](../keywords/fixed-statement.md). Získaná adresa je `fixed` platná pouze uvnitř bloku příkazu. Následující příklad ukazuje, jak `fixed` používat `&` příkaz a operátor:
 
-[!code-csharp[address of fixed](~/samples/snippets/csharp/language-reference/operators/PointerOperators.cs#AddressOfFixed)]
+[!code-csharp[address of fixed](snippets/PointerOperators.cs#AddressOfFixed)]
 
-Nemůžete získat adresu konstanty nebo hodnoty.
+Nelze získat adresu konstanty nebo hodnoty.
 
-Další informace o pevných a pohyblivých proměnných naleznete v části [pevné a mobilní](~/_csharplang/spec/unsafe-code.md#fixed-and-moveable-variables) proměnné [ C# specifikace jazyka](~/_csharplang/spec/introduction.md).
+Další informace o pevných a pohyblivých proměnných naleznete v části [Pevné a pohyblivé proměnné](~/_csharplang/spec/unsafe-code.md#fixed-and-moveable-variables) ve [specifikaci jazyka C#](~/_csharplang/spec/introduction.md).
 
-Operátor binárního `&` vypočítá [logický a](boolean-logical-operators.md#logical-and-operator-) jeho logický operandy nebo [bitovou logickou hodnotu a](bitwise-and-shift-operators.md#logical-and-operator-) její celočíselné operandy.
+Binární `&` operátor vypočítá [logické and](boolean-logical-operators.md#logical-and-operator-) jeho logické operandy nebo [bitové logické AND](bitwise-and-shift-operators.md#logical-and-operator-) jeho integrální operandy.
 
-## <a name="pointer-indirection-operator-"></a>Operátor dereference ukazatele *
+## <a name="pointer-indirection-operator-"></a>Operátor přesměrování ukazatele *
 
-Operátor dereference unárního ukazatele `*` získá proměnnou, ke které má svůj operand ukazatel. Označuje se také jako operátor odkázání. Operand operátoru `*` musí být typu ukazatele.
+Unární ukazatel dereference `*` operátor získá proměnnou, na kterou jeho operand odkazuje. Je také známý jako dereference operátor. Operand operátoru `*` musí být typu ukazatele.
 
-[!code-csharp[pointer indirection](~/samples/snippets/csharp/language-reference/operators/PointerOperators.cs#PointerIndirection)]
+[!code-csharp[pointer indirection](snippets/PointerOperators.cs#PointerIndirection)]
 
-Operátor `*` nelze použít na výraz typu `void*`.
+`*` Operátor nelze použít na výraz `void*`typu .
 
-Operátor binárního `*` vypočítá [součin](arithmetic-operators.md#multiplication-operator-) svých číselných operandů.
+Binární `*` operátor vypočítá [součin](arithmetic-operators.md#multiplication-operator-) jeho číselné operandy.
 
-## <a name="pointer-member-access-operator--"></a>Operátor přístupu členů ukazatele->
+## <a name="pointer-member-access-operator--"></a>Operátor přístupu člena ukazatele ->
 
-Operátor `->` kombinuje [nepřímý odkaz na ukazatel](#pointer-indirection-operator-) a [přístup ke členu](member-access-operators.md#member-access-operator-). To znamená, že pokud je `x` ukazatelem typu `T*` a `y` je přístupný člen typu `T`, výraz formuláře
+Operátor `->` kombinuje [dereference ukazatele](#pointer-indirection-operator-) a [přístup členů](member-access-operators.md#member-access-operator-). To znamená, `x` pokud je `T*` ukazatel `y` typu a je `T`přístupný člen typu , výraz formuláře
 
 ```csharp
 x->y
@@ -82,115 +82,115 @@ je ekvivalentem
 (*x).y
 ```
 
-Následující příklad ukazuje použití operátoru `->`:
+Následující příklad ukazuje použití operátoru: `->`
 
-[!code-csharp[pointer member access](~/samples/snippets/csharp/language-reference/operators/PointerOperators.cs#MemberAccess)]
+[!code-csharp[pointer member access](snippets/PointerOperators.cs#MemberAccess)]
 
-Operátor `->` nelze použít na výraz typu `void*`.
+`->` Operátor nelze použít na výraz `void*`typu .
 
 ## <a name="pointer-element-access-operator-"></a>Operátor přístupu k elementu ukazatele []
 
-Pro výraz `p` typu ukazatele je přístup k prvku `p[n]` formuláře vyhodnocen jako `*(p + n)`, kde `n` musí být typu implicitně převoditelná na `int`, `uint`, `long`nebo `ulong`. Informace o chování operátoru `+` s ukazateli naleznete v části [sčítání nebo odčítání celočíselné hodnoty nebo z ukazatele na ukazatel](#addition-or-subtraction-of-an-integral-value-to-or-from-a-pointer) .
+Pro výraz `p` typu ukazatele je přístup prvku ukazatele `p[n]` formuláře `*(p + n)`vyhodnocen jako `n` , kde musí `int` `uint`být typu implicitně převoditelného na , , `long`, nebo `ulong`. Informace o chování operátoru `+` s ukazateli naleznete v tématu Sčítání nebo [odčítání integrální hodnoty do nebo z oddílu ukazatele.](#addition-or-subtraction-of-an-integral-value-to-or-from-a-pointer)
 
-Následující příklad ukazuje, jak přistupovat k prvkům pole s ukazatelem a operátorem `[]`:
+Následující příklad ukazuje, jak získat přístup k `[]` prvkům pole s ukazatelem a operátorem:
 
-[!code-csharp[pointer element access](~/samples/snippets/csharp/language-reference/operators/PointerOperators.cs#ElementAccess)]
+[!code-csharp[pointer element access](snippets/PointerOperators.cs#ElementAccess)]
 
-V příkladu se pomocí [operátoru`stackalloc`](stackalloc.md) přidělí blok paměti v zásobníku.
+Příklad používá [ `stackalloc` operátor](stackalloc.md) přidělit blok paměti v zásobníku.
 
 > [!NOTE]
-> Operátor přístupu elementu ukazatele nekontroluje chyby mimo hranice.
+> Operátor přístupu prvku ukazatele nekontroluje chyby mimo rozsah.
 
-`[]` nelze použít pro přístup k prvku ukazatele s výrazem typu `void*`.
+Nelze použít `[]` pro přístup k elementu `void*`ukazatele s výrazem typu .
 
-Můžete také použít operátor `[]` pro [prvek pole nebo přístup indexeru](member-access-operators.md#indexer-operator-).
+Můžete také použít `[]` operátor pro [prvek pole nebo přístup indexeru](member-access-operators.md#indexer-operator-).
 
 ## <a name="pointer-arithmetic-operators"></a>Aritmetické operátory ukazatele
 
 S ukazateli můžete provádět následující aritmetické operace:
 
-- Přidat nebo odečíst celočíselnou hodnotu do nebo z ukazatele
-- Odečíst dva ukazatele
+- Sčítání nebo odečtení integrální hodnoty k ukazateli nebo od něj
+- Odečtení dvou ukazatelů
 - Zvýšení nebo snížení ukazatele
 
-Tyto operace nelze provést s ukazateli typu `void*`.
+Tyto operace nelze provádět s `void*`ukazateli typu .
 
-Informace o podporovaných aritmetických operacích s číselnými typy naleznete v tématu [aritmetické operátory](arithmetic-operators.md).
+Informace o podporovaných aritmetických operacích s číselnými typy naleznete [v tématu Aritmetické operátory](arithmetic-operators.md).
 
-### <a name="addition-or-subtraction-of-an-integral-value-to-or-from-a-pointer"></a>Sčítání nebo odečítání celočíselné hodnoty do nebo z ukazatele
+### <a name="addition-or-subtraction-of-an-integral-value-to-or-from-a-pointer"></a>Sčítání nebo odčítání integrální hodnoty do ukazatele nebo z ukazatele
 
-Pro ukazatel `p` typu `T*` a výraz `n` pro typ implicitně převoditelný na `int`, `uint`, `long`nebo `ulong`, sčítání a odčítání jsou definovány takto:
+Pro ukazatel `p` typu `T*` a `n` výraz typu implicitně `int`převoditelný na , `uint`, , `long`nebo `ulong`, sčítání a odčítání jsou definovány takto:
 
-- `p + n` i `n + p` výrazy vytvoří ukazatel typu `T*`, který je výsledkem přidání `n * sizeof(T)` na adresu danou `p`.
-- Výraz `p - n` vytvoří ukazatel typu `T*`, který je výsledkem odečtení `n * sizeof(T)` od adresy zadané `p`.
+- Oba `p + n` `n + p` a výrazy vytvořit `T*` ukazatel typu, `n * sizeof(T)` který je `p`výsledkem přidání na adresu danou .
+- Výraz `p - n` vytvoří ukazatel typu, `T*` který je výsledkem odečtení `n * sizeof(T)` `p`od adresy zadané .
 
-[Operátor`sizeof`](sizeof.md) získá velikost typu v bajtech.
+[ `sizeof` Operátor](sizeof.md) získá velikost typu v bajtů.
 
 Následující příklad ukazuje použití operátoru `+` s ukazatelem:
 
-[!code-csharp[pointer addition](~/samples/snippets/csharp/language-reference/operators/PointerOperators.cs#AddNumber)]
+[!code-csharp[pointer addition](snippets/PointerOperators.cs#AddNumber)]
 
 ### <a name="pointer-subtraction"></a>Odečtení ukazatele
 
-Pro dva ukazatele `p1` a `p2` typu `T*``p1 - p2` výraz vygeneruje rozdíl mezi adresami daným `p1` a `p2` dělenou `sizeof(T)`. Typ výsledku je `long`. To znamená, že `p1 - p2` je vypočítávána jako `((long)(p1) - (long)(p2)) / sizeof(T)`.
+Pro dva `p1` ukazatele `p2` a `T*`typu `p1 - p2` výraz vytváří rozdíl mezi adresami `p1` `p2` danými `sizeof(T)`a dělené . Typ výsledku je `long`. To znamená, `p1 - p2` že `((long)(p1) - (long)(p2)) / sizeof(T)`je vypočítán jako .
 
 Následující příklad ukazuje odčítání ukazatele:
 
-[!code-csharp[pointer subtraction](~/samples/snippets/csharp/language-reference/operators/PointerOperators.cs#SubtractPointers)]
+[!code-csharp[pointer subtraction](snippets/PointerOperators.cs#SubtractPointers)]
 
-### <a name="pointer-increment-and-decrement"></a>Zvýšení a snížení ukazatele
+### <a name="pointer-increment-and-decrement"></a>Přírůstek a snížení ukazatele
 
-Operátor přírůstku `++` [přidá](#addition-or-subtraction-of-an-integral-value-to-or-from-a-pointer) 1 k operandu ukazatele. Operátor snížení `--` [odečte](#addition-or-subtraction-of-an-integral-value-to-or-from-a-pointer) 1 od jeho operandu ukazatele.
+Operátor `++` přírůstek [přidá](#addition-or-subtraction-of-an-integral-value-to-or-from-a-pointer) 1 do operandu ukazatele. Operátor `--` snížení [odečte](#addition-or-subtraction-of-an-integral-value-to-or-from-a-pointer) 1 z jeho operand ukazovátku.
 
-Oba operátory jsou podporovány ve dvou formulářích: přípona (`p++` a `p--`) a předpona (`++p` a `--p`). Výsledek `p++` a `p--` je hodnota `p` *před* operací. Výsledkem `++p` a `--p` je hodnota `p` *po* operaci.
+Oba operátory jsou podporovány ve`p++` `p--`dvou formách:`++p` `--p`postfix ( a ) a prefix ( a ). Výsledek `p++` a `p--` je hodnota `p` *před* operací. Výsledek `++p` a `--p` je hodnota `p` *po* operaci.
 
-Následující příklad demonstruje chování obou operátorů přípony i prefixu:
+Následující příklad ukazuje chování operátorů přípony i přírůstku předpony:
 
-[!code-csharp[pointer increment](~/samples/snippets/csharp/language-reference/operators/PointerOperators.cs#Increment)]
+[!code-csharp[pointer increment](snippets/PointerOperators.cs#Increment)]
 
 ## <a name="pointer-comparison-operators"></a>Operátory porovnání ukazatelů
 
-Operátory `==`, `!=`, `<`, `>`, `<=`a `>=` lze použít k porovnání operandů libovolného typu ukazatele, včetně `void*`. Tyto operátory porovnávají adresy zadané dvěma operandy, jako by šlo o celá čísla bez znaménka.
+Operandy `==` `!=` `<` `>` `<=`libovolného typu ukazatele, včetně `void*` `>=` . Tito operátoři porovnávají adresy dané dvěma operandy, jako by se jednalo o nepodepsaná celá čísla.
 
-Informace o chování těchto operátorů pro operandy jiných typů naleznete v článcích [operátory rovnosti](equality-operators.md) a [operátory porovnání](comparison-operators.md) .
+Informace o chování těchto operátorů pro operandy jiných typů naleznete v [článcích Operátory rovnosti](equality-operators.md) a [Operátory porovnání.](comparison-operators.md)
 
 ## <a name="operator-precedence"></a>Priorita operátorů
 
-Následující seznam uvádí operátory související s ukazateli počínaje od nejvyšší priority k nejnižší:
+Následující seznam seřídí operátory související s ukazatelem od nejvyšší priority k nejnižší:
 
-- Přírůstek přípony `x++` a snížení `x--`ch operátorů a operátorů `->` a `[]`
-- Zvýšení prefixu `++x` a snížení `--x` operátorů a operátorů `&` a `*`
-- Aditivní `+` a `-` operátory
-- Operátory `<`, `>`, `<=`a `>=` pro porovnání
-- Operátory rovnosti `==` a `!=`
+- Operátory přírůstek `x++` a `x--` snížení přípony a operátory `->` a `[]`
+- Operátory přírůstku `++x` a snížení předpony `*` a operátory a operátory `&` `--x`
+- Doplňkové `+` `-` látky a obsluha
+- Srovnání `<` `>`, `<=`, `>=` , a operátory
+- Rovnost `==` a `!=` provozovatelé
 
-Pomocí závorek, `()`můžete změnit pořadí vyhodnocování stanovené předností operátorů.
+Pomocí závorek `()`, můžete změnit pořadí hodnocení uloženého prioritou operátoru.
 
-Úplný seznam C# operátorů seřazených podle priority najdete v části [Priorita operátorů](index.md#operator-precedence) [ C# v článku věnovaném operátorům](index.md) .
+Úplný seznam operátorů jazyka C# seřazené podle úrovně priority naleznete v části [Priorita operátora](index.md#operator-precedence) v článku [operátorů jazyka C#.](index.md)
 
-## <a name="operator-overloadability"></a>Přetížení operátoru
+## <a name="operator-overloadability"></a>Přetížení obsluhy
 
-Uživatelsky definovaný typ nemůže přetížit operátory související s ukazatelem `&`, `*`, `->`a `[]`.
+Uživatelem definovaný typ nemůže přetížit `*` `->`operátory `[]` `&`související s ukazatelem , , a .
 
 ## <a name="c-language-specification"></a>specifikace jazyka C#
 
-Další informace najdete v následujících oddílech [ C# specifikace jazyka](~/_csharplang/spec/introduction.md):
+Další informace naleznete v následujících částech [specifikace jazyka C#](~/_csharplang/spec/introduction.md):
 
-- [Pevné a mobilní proměnné](~/_csharplang/spec/unsafe-code.md#fixed-and-moveable-variables)
-- [Operátor address-of](~/_csharplang/spec/unsafe-code.md#the-address-of-operator)
-- [Indirekce ukazatele](~/_csharplang/spec/unsafe-code.md#pointer-indirection)
-- [Přístup ke členu ukazatele](~/_csharplang/spec/unsafe-code.md#pointer-member-access)
-- [Přístup k prvku ukazatele](~/_csharplang/spec/unsafe-code.md#pointer-element-access)
-- [Aritmetický ukazatel](~/_csharplang/spec/unsafe-code.md#pointer-arithmetic)
-- [Zvýšení a snížení ukazatele](~/_csharplang/spec/unsafe-code.md#pointer-increment-and-decrement)
-- [Porovnání ukazatelů](~/_csharplang/spec/unsafe-code.md#pointer-comparison)
+- [Pevné a pohyblivé proměnné](~/_csharplang/spec/unsafe-code.md#fixed-and-moveable-variables)
+- [Adresa operátora](~/_csharplang/spec/unsafe-code.md#the-address-of-operator)
+- [Přesměrování ukazatele](~/_csharplang/spec/unsafe-code.md#pointer-indirection)
+- [Přístup člena ukazatele](~/_csharplang/spec/unsafe-code.md#pointer-member-access)
+- [Přístup k elementu ukazatele](~/_csharplang/spec/unsafe-code.md#pointer-element-access)
+- [Aritmetika ukazatele](~/_csharplang/spec/unsafe-code.md#pointer-arithmetic)
+- [Přírůstek a snížení ukazatele](~/_csharplang/spec/unsafe-code.md#pointer-increment-and-decrement)
+- [Porovnání ukazatele](~/_csharplang/spec/unsafe-code.md#pointer-comparison)
 
 ## <a name="see-also"></a>Viz také
 
-- [C#odkaz](../index.md)
+- [Referenční dokumentace k jazyku C#](../index.md)
 - [Operátory jazyka C#](index.md)
 - [Typy ukazatelů](../../programming-guide/unsafe-code-pointers/pointer-types.md)
-- [UNSAFE – klíčové slovo](../keywords/unsafe.md)
-- [klíčové slovo fixed](../keywords/fixed-statement.md)
-- [stackalloc – operátor](stackalloc.md)
+- [nebezpečné klíčové slovo](../keywords/unsafe.md)
+- [pevné klíčové slovo](../keywords/fixed-statement.md)
+- [Operátor stackalloc](stackalloc.md)
 - [sizeof – operátor](sizeof.md)

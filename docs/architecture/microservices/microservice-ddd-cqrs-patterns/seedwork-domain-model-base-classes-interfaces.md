@@ -1,31 +1,31 @@
 ---
 title: Seedwork (opakovaně použitelné základní třídy a rozhraní pro doménový model)
-description: Architektura mikroslužeb .NET pro kontejnerové aplikace .NET | Použijte koncept seedwork jako výchozí bod pro zahájení implementace pro doménový model orientovaný na DDD.
+description: Architektura mikroslužeb .NET pro kontejnerizované aplikace .NET | Pomocí konceptu seedwork jako výchozí bod pro spuštění implementace pro model domény orientované na DDD.
 ms.date: 10/08/2018
 ms.openlocfilehash: ab0aadc28dbd1175c75b04dadca29b7b0947f29b
-ms.sourcegitcommit: ed3f926b6cdd372037bbcc214dc8f08a70366390
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/16/2020
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "76116567"
 ---
 # <a name="seedwork-reusable-base-classes-and-interfaces-for-your-domain-model"></a>Seedwork (opakovaně použitelné základní třídy a rozhraní pro doménový model)
 
-Složka řešení obsahuje složku *SeedWork* . Tato složka obsahuje vlastní základní třídy, které lze použít jako základ pro vaše doménové entity a objekty hodnot. Použijte tyto základní třídy, takže nemáte redundantní kód ve třídě objektu v každé doméně. Složka pro tyto typy tříd se nazývá *SeedWork* a ne jako *rozhraní*. Má název *SeedWork* , protože složka obsahuje pouze malou podmnožinu opakovaně použitelných tříd, které nemohou být skutečně považovány za rozhraní. *Seedwork* je pojem, který zavádí [Michael peří](https://www.artima.com/forums/flat.jsp?forum=106&thread=8826) a je oblíbený pomocí [Novák Fowlera](https://martinfowler.com/bliki/Seedwork.html) , ale můžete také pojmenovat složku Common, SharedKernel nebo podobnou.
+Složka řešení obsahuje složku *SeedWork.* Tato složka obsahuje vlastní základní třídy, které můžete použít jako základ pro entity domény a objekty hodnot. Použijte tyto základní třídy, takže nemáte redundantní kód v každé třídě objektů domény. Složka pro tyto typy tříd se nazývá *SeedWork* a ne něco jako *Framework*. Nazývá se *SeedWork,* protože složka obsahuje pouze malou podmnožinu opakovaně použitelných tříd, které nelze skutečně považovat za rámec. *Seedwork* je termín zavedený [Michael feathers](https://www.artima.com/forums/flat.jsp?forum=106&thread=8826) a popularizoval [Martin Fowler,](https://martinfowler.com/bliki/Seedwork.html) ale můžete také název, že složka Společné, SharedKernel, nebo podobné.
 
-Obrázek 7-12 ukazuje třídy, které tvoří seedwork doménového modelu při řazení mikroslužby. Má několik vlastních základních tříd, jako je entita, ValueObject a výčet, a navíc několik rozhraní. Tato rozhraní (IRepository a IUnitOfWork) informují vrstvu infrastruktury o tom, co je potřeba implementovat. Tato rozhraní se používají také prostřednictvím injektáže závislosti z aplikační vrstvy.
+Obrázek 7-12 ukazuje třídy, které tvoří seedwork modelu domény v objednávání mikroslužby. Má několik vlastních základních tříd, jako je Entita, ValueObject a Výčet, plus několik rozhraní. Tato rozhraní (IRepository a IUnitOfWork) informují vrstvu infrastruktury o tom, co je třeba implementovat. Tato rozhraní se také používají prostřednictvím vkládání závislostí z aplikační vrstvy.
 
-:::image type="complex" source="./media/seedwork-domain-model-base-classes-interfaces/vs-solution-seedwork-classes.png" alt-text="Snímek obrazovky tříd obsažených ve složce SeedWork":::
+:::image type="complex" source="./media/seedwork-domain-model-base-classes-interfaces/vs-solution-seedwork-classes.png" alt-text="Snímek obrazovky s třídami obsaženými ve složce SeedWork":::
 Podrobný obsah složky SeedWork obsahující základní třídy a rozhraní: Entity.cs, Enumeration.cs, IAggregateRoot.cs, IRepository.cs, IUnitOfWork.cs a ValueObject.cs.
 :::image-end:::
 
-**Obrázek 7-12**. Ukázková sada základních tříd a rozhraní doménové modelu seedwork
+**Obrázek 7-12**. Ukázková sada základních tříd a rozhraní modelu domény "seedwork"
 
-Toto je typ opakovaného použití kopírování a vložení, který mnoho vývojářů sdílí mezi projekty, nikoli formálním rozhraním. Můžete mít seedworks v libovolné vrstvě nebo knihovně. Nicméně pokud sada tříd a rozhraní bude dostatečně velká, může být vhodné vytvořit jedinou knihovnu tříd.
+Toto je typ kopírování a vkládání opakované použití, které mnoho vývojářů sdílet mezi projekty, nikoli formální rámec. Seedworks můžete mít v libovolné vrstvě nebo knihovně. Pokud je však sada tříd a rozhraní dostatečně velká, můžete vytvořit jednu knihovnu tříd.
 
-## <a name="the-custom-entity-base-class"></a>Třída Custom entity Base
+## <a name="the-custom-entity-base-class"></a>Základní třída vlastní entity
 
-Následující kód je příkladem základní třídy entity, kde můžete umístit kód, který lze použít stejným způsobem jako jakákoli entita domény, například ID entity, [operátory rovnosti](../../../csharp/language-reference/operators/equality-operators.md), seznam událostí domény na entitu atd.
+Následující kód je příkladem základní třídy entity, kde můžete umístit kód, který může použít stejným způsobem libovolná entita domény, například ID entity, [operátory rovnosti](../../../csharp/language-reference/operators/equality-operators.md), seznam událostí domény pro každou entitu atd.
 
 ```csharp
 // COMPATIBLE WITH ENTITY FRAMEWORK CORE (1.1 and later)
@@ -105,19 +105,19 @@ public abstract class Entity
 }
 ```
 
-Předchozí kód, který používá seznam událostí domény pro každou entitu, bude vysvětlený v dalších částech při zaměření na události domény.
+Předchozí kód pomocí seznamu událostí domény pro jednotlivé entity bude vysvětlen v dalších částech při zaměření na události domény.
 
-## <a name="repository-contracts-interfaces-in-the-domain-model-layer"></a>Kontrakty úložiště (rozhraní) ve vrstvě doménového modelu
+## <a name="repository-contracts-interfaces-in-the-domain-model-layer"></a>Kontrakty úložiště (rozhraní) ve vrstvě modelu domény
 
-Kontrakty úložiště jsou jednoduše rozhraní .NET, která vyjadřují požadavky na kontrakt úložišť, která se mají použít pro každou agregaci.
+Kontrakty úložiště jsou jednoduše rozhraní .NET, která vyjadřují požadavky na smlouvy úložišť, které mají být použity pro každou agregaci.
 
-Samotná úložiště nesmí být v doménovém modelu implementovaná pomocí EF Coreho kódu nebo jakýchkoli jiných závislostí infrastruktury a kódu (LINQ, SQL atd.). úložiště by měla implementovat pouze rozhraní, které definujete v doménovém modelu.
+Samotná úložiště s EF core kódem nebo jinými závislostmi infrastruktury a kódem (Linq, SQL atd.) nesmí být implementována v rámci modelu domény; úložiště by měla implementovat pouze rozhraní, která definujete v modelu domény.
 
-Vzor vztahující se k tomuto postupu (umístění rozhraní úložiště do vrstvy doménové struktury) je model odděleného rozhraní. Jak [je vysvětleno](https://www.martinfowler.com/eaaCatalog/separatedInterface.html) v Martinu Fowlera, "použijte oddělené rozhraní k definování rozhraní v jednom balíčku, ale jeho implementaci v jiném. Tímto způsobem klient, který potřebuje závislost na rozhraní, může zcela nevědět o implementaci. "
+Vzor související s touto praxí (umístění rozhraní úložiště ve vrstvě modelu domény) je vzor odděleného rozhraní. Jak [vysvětlil](https://www.martinfowler.com/eaaCatalog/separatedInterface.html) Martin Fowler, "Použijte oddělené rozhraní definovat rozhraní v jednom balíčku, ale implementovat v jiném. Tímto způsobem klient, který potřebuje závislost na rozhraní může být zcela nevědomý implementace."
 
-Po použití vzoru odděleného rozhraní umožňuje aplikační vrstvě (v tomto případě projekt webového rozhraní API pro mikroslužeb) závislosti na požadavcích definovaných v doménovém modelu, ale ne na přímé závislosti na vrstvě infrastruktury/trvalosti. Navíc můžete pomocí injektáže závislosti izolovat implementaci, která je implementována v infrastruktuře/trvalosti vrstvy pomocí úložišť.
+Následující vzor oddělené rozhraní umožňuje aplikační vrstvy (v tomto případě projekt webového rozhraní API pro mikroslužbu) mít závislost na požadavky definované v modelu domény, ale ne přímou závislost na vrstvě infrastruktury/trvalosti. Kromě toho můžete použít vkládání závislostí izolovat implementaci, která je implementována ve vrstvě infrastruktury/ trvalosti pomocí úložišť.
 
-Například následující příklad s rozhraním IOrderRepository definuje, které operace bude třída OrderRepository potřebovat implementovat na vrstvu infrastruktury. V aktuální implementaci aplikace kód pouze potřebuje přidat nebo aktualizovat Objednávky do databáze, protože dotazy jsou rozděleny podle zjednodušeného přístupu CQRS.
+Například následující příklad s rozhraním IOrderRepository definuje, jaké operace orderrepository třídy bude muset implementovat ve vrstvě infrastruktury. V aktuální implementaci aplikace kód stačí přidat nebo aktualizovat objednávky do databáze, protože dotazy jsou rozděleny podle zjednodušeného přístupu CQRS.
 
 ```csharp
 // Defined at IOrderRepository.cs
@@ -137,11 +137,11 @@ public interface IRepository<T> where T : IAggregateRoot
 }
 ```
 
-## <a name="additional-resources"></a>Další materiály a zdroje informací
+## <a name="additional-resources"></a>Další zdroje
 
-- **Martin Fowlera. Rozhraní oddělené.** \
+- **Martin Fowler. Oddělené rozhraní.** \
   <https://www.martinfowler.com/eaaCatalog/separatedInterface.html>
 
 >[!div class="step-by-step"]
 >[Předchozí](net-core-microservice-domain-model.md)
->[Další](implement-value-objects.md)
+>[další](implement-value-objects.md)

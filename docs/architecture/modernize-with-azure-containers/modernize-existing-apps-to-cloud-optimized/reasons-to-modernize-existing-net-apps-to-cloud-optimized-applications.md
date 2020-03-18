@@ -1,70 +1,70 @@
 ---
-title: Důvody pro modernizovatí stávajících aplikací .NET na cloudově optimalizované aplikace
-description: Modernizovat stávající aplikace .NET pomocí cloudu Azure a kontejnerů Windows | Důvody pro modernizovatí stávajících aplikací .NET na cloudově optimalizované aplikace
+title: Důvody pro modernizaci stávajících aplikací .NET na aplikace optimalizované pro cloud
+description: Modernizace stávajících aplikací .NET pomocí Azure Cloudu a kontejnerů Windows | Důvody pro modernizaci stávajících aplikací .NET na aplikace optimalizované pro cloud
 ms.date: 04/28/2018
 ms.openlocfilehash: 55eb3fb9b0b6c91e25bcdb23056a8a8e51463ef7
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/08/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "73093631"
 ---
-# <a name="reasons-to-modernize-existing-net-apps-to-cloud-optimized-applications"></a>Důvody pro modernizovatí stávajících aplikací .NET na cloudově optimalizované aplikace
+# <a name="reasons-to-modernize-existing-net-apps-to-cloud-optimized-applications"></a>Důvody pro modernizaci stávajících aplikací .NET na aplikace optimalizované pro cloud
 
-Díky optimalizované cloudové aplikaci můžete zákazníkům rychle a opakovaně doručovat spolehlivé aplikace. Základní flexibilitu a spolehlivost získáte tak, že odvedete značnou provozní složitost vaší aplikace na platformu.
+S aplikací optimalizovanou pro cloud můžete rychle a opakovaně dodávat spolehlivé aplikace svým zákazníkům. Základní flexibilitu a spolehlivost získáte odložením velké části provozní složitosti aplikace na platformu.
 
-Pokud nemůžete vašim aplikacím rychle začít na trhu, bude se v době, kdy jste doložili vaši aplikaci, vyvíjet i trh, který jste se zaměřuje. Může být příliš pozdě bez ohledu na to, jak dobře došlo k navržení nebo analýze aplikace. Může se stát, že nebudete mít úplný potenciál, protože nemůžete synchronizovat doručování aplikací s potřebou trhu.
+Pokud se vám nepodaří rychle uvést své aplikace na trh, v době odeslání aplikace se trh, na který jste cílili, vyvinul. Můžete být příliš pozdě, bez ohledu na to, jak dobře byla aplikace navržena nebo navržena. Možná se vám nedaří nebo nedosahujete svého plného potenciálu, protože nemůžete synchronizovat doručování aplikací s potřebami trhu.
 
-Potřeba průběžných firemních inovací do limitu nabízí vývoj a provozní týmy. Jediným způsobem, jak dosáhnout flexibility, kterou potřebujete při průběžných inovacích, je modernizaci vašich aplikací s využitím technologií jako kontejnerů a specifických principů aplikací optimalizovaných pro Cloud.
+Potřeba neustálých obchodních inovací posouvá vývojové a provozní týmy na hranici možností. Jediný způsob, jak dosáhnout flexibility, kterou potřebujete při neustálých obchodních inovacích, je modernizace vašich aplikací pomocí technologií, jako jsou kontejnery a specifické principy aplikací optimalizované pro cloud.
 
-Dolním řádkem je, že když organizace sestavuje a spravuje aplikace, které jsou optimalizované pro Cloud, můžou do rukou zákazníků vložit řešení a při jejich relevantních nápadech přinášet nové nápady na trh.
+Pointa je, že když organizace buduje a spravuje aplikace, které jsou optimalizované pro cloud, může dát řešení do rukou zákazníků dříve a přinést nové nápady na trh, když jsou relevantní.
 
-## <a name="cloud-optimized-application-principles-and-tenets"></a>Principy a principy optimalizované pro cloudové aplikace
+## <a name="cloud-optimized-application-principles-and-tenets"></a>Principy a principy aplikací optimalizované pro cloud
 
-Vylepšení v cloudu se většinou zaměřují na splnění dvou cílů: Snižte náklady a zvyšte růst podnikání díky vylepšení flexibility. Tyto cíle se dosahují zjednodušením procesů a snížením třením při vydávání a dodávání aplikací.
+Vylepšení v cloudu se většinou zaměřují na splnění dvou cílů: Snížení nákladů a zlepšení růstu podnikání zlepšením agility. Těchto cílů je dosaženo zjednodušením procesů a snížením tření při uvolnění a odeslání aplikací.
 
-Vaše aplikace je optimalizovaná pro Cloud, pokud můžete agilní způsob – vyvíjet aplikaci samostatně z jiných místních aplikací a potom vydávat, nasazovat, automaticky škálovat, monitorovat a řešit potíže s aplikací v cloudu.
+Vaše aplikace je optimalizovaná pro cloud, pokud můžete agilně rozvíjet aplikaci autonomně z jiných místních aplikací a pak uvolnit, nasadit, automaticky škálovat, monitorovat a řešit problémy s aplikací v cloudu.
 
-Klíč je *flexibilita*. Nemůžete dodávat s flexibilitou, pokud se nesnížíte na absolutní minimální problémy s nasazením na produkční prostředí a problémy pro vývoj a testování. Kontejnery (konkrétně Docker jako de facto standard) a spravované služby byly navrženy speciálně pro tento účel.
+Klíčem je *hbitost*. Nelze doručovat s agility, pokud snížit na absolutní minimum všechny problémy nasazení k výrobě a vývoj a testování prostředí problémy. Kontejnery (konkrétně Docker, jako de facto standard) a spravované služby byly navrženy speciálně pro tento účel.
 
-Pro dosažení flexibility potřebujete také automatizované procesy DevOps, které jsou založeny na kanálech CI/CD, které jsou vydány pro škálovatelné platformy v cloudu. Platformy CI/CD (jako Azure DevOps Services nebo Jenkinse), které se nasazují na škálovatelnou a odolnou cloudovou platformu (jako je Azure App Service nebo Azure Kubernetes), jsou klíčové technologie pro dosažení flexibility v cloudu.
+K dosažení agility potřebujete také automatizované procesy DevOps, které jsou založeny na kanálech CI/CD, které se vydávají na škálovatelné platformy v cloudu. Platformy CI/CD (jako jsou Služby Azure DevOps services nebo Jenkins), které se nasazují na škálovatelnou a odolnou cloudovou platformu (jako je Azure App Service nebo Služba Azure Kubernetes) jsou klíčové technologie pro dosažení agility v cloudu.
 
-Následující seznam popisuje hlavní principy nebo postupy pro cloudově optimalizované aplikace. Všimněte si, že v progresivním nebo přírůstkovém přístupu můžete přijmout všechny nebo jenom některé z těchto principů:
+Následující seznam popisuje hlavní principy nebo postupy pro aplikace optimalizované pro cloud. Všimněte si, že můžete přijmout všechny nebo jen některé z těchto zásad, v postupné nebo přírůstkové přístup:
 
-- **Kontejnery**. Kontejnery umožňují zahrnout závislosti aplikací do samotné aplikace. Vytváření kontejnerů významně snižuje počet problémů, se kterými se můžete setkat při nasazení do produkčních prostředí nebo testování v pracovních prostředích. Kontejnery v konečném důsledku zlepšují flexibilitu doručování aplikací.
+- **Kontejnery**. Kontejnery poskytují možnost zahrnout závislosti aplikací se samotnou aplikací. Kontejnerizace výrazně snižuje počet problémů, se kterými se může dojít při nasazení do produkčního prostředí nebo testování v pracovních prostředích. Kontejnery nakonec zlepšují agilitu doručení aplikace.
 
-- **Odolný a škálovatelný Cloud**. Cloud poskytuje platformu, která je spravovaná, pružná, škálovatelná a odolná. Tyto charakteristiky jsou zásadní pro získání cenových vylepšení a při průběžném doručování vysoce dostupných a spolehlivých aplikací. Spravované služby, jako jsou spravované databáze, spravovaná mezipaměť jako služba (CaaS) a spravované úložiště, jsou základními částmi, které řeší náklady na údržbu vaší aplikace.
+- **Odolný a škálovatelný cloud**. Cloud poskytuje platformu, která je spravovaná, elastická, škálovatelná a odolná. Tyto vlastnosti jsou zásadní pro získání zlepšení nákladů a dodání vysoce dostupných a spolehlivých aplikací v nepřetržitém doručování. Spravované služby, jako jsou spravované databáze, spravovaná mezipaměť jako služba (CaaS) a spravované úložiště, jsou základními částmi pro zmírnění nákladů na údržbu vaší aplikace.
 
-- **Monitorování**. Nemůžete mít spolehlivou aplikaci, aniž byste měli dobrý způsob, jak detekovat a diagnostikovat výjimky a problémy s výkonem aplikací. Potřebujete získat užitečné poznatky prostřednictvím správy výkonu aplikací a okamžitých analýz.
+- **Monitorování**. Nemůžete mít spolehlivou aplikaci bez nutnosti dobrý způsob, jak zjistit a diagnostikovat výjimky a problémy s výkonem aplikací. Potřebujete získat užitečné přehledy prostřednictvím správy výkonu aplikací a okamžité analýzy.
 
-- **DevOps kultura a průběžné doručování**. Přijetí postupů DevOps vyžaduje kulturní změnu, ve které týmy již nefungují v nezávislých silech. Kanály CI/CD jsou možné jenom v případě, že se zvýšila spolupráce mezi vývojovými a provozními týmy, které podporují kontejnery a nástroje CI/CD.
+- **DevOps kultury a průběžné doručování**. Přijetí devOps postupy vyžaduje kulturní změnu, ve kterém týmy již pracují v nezávislých sil. Kanály CI/CD jsou možné pouze v případě, že existuje zvýšená spolupráce mezi vývojovými a it provozními týmy, podporovanými kontejnery a nástroji CI/CD.
 
-Obrázek 4-2 ukazuje hlavní volitelné pilíře aplikace optimalizované pro Cloud. U více sloupků, které implementujete, bude mít připravenost vaší aplikace po splnění očekávání vašich zákazníků úspěch.
+Obrázek 4-2 znázorňuje hlavní volitelné pilíře aplikace optimalizované pro cloud. Čím více pilířů implementujete, tím připravenější bude vaše aplikace, aby splnila očekávání vašich zákazníků.
 
-![Diagram pojmenovává hlavní pilíře aplikace optimalizované pro Cloud.](./media/main-pillars-cloud-optimized-application.png)
+![Diagram s názvem hlavních pilířů aplikace optimalizované pro cloud.](./media/main-pillars-cloud-optimized-application.png)
 
-**Obrázek 4-2.** Hlavní pilíře aplikace optimalizované pro Cloud
+**Obrázek 4-2.** Hlavní pilíře aplikace optimalizované pro cloud
 
-Cloudově optimalizovaná aplikace představuje přístup k vytváření a správě aplikací, které využívají model cloud computingu, a přitom využívají kombinaci kontejnerů, spravované cloudové infrastruktury, odolných aplikačních technik, monitorování, průběžné doručování a DevOps, a to vše bez nutnosti rearchitektovat a Recode vaše stávající aplikace.
+Abychom to shrnuli, aplikace optimalizovaná pro cloud je přístup k vytváření a správě aplikací, které využívají model cloud computingu, a zároveň používají kombinaci kontejnerů, spravované cloudové infrastruktury, odolných aplikačních technik, monitorování, průběžné doručování a DevOps, to vše bez nutnosti rearchitect a recode vaše stávající aplikace.
 
-Vaše organizace může tyto technologie a přístupy postupně přijmout. Nemusíte je vůbec využívat, a to vše najednou. Můžete je přijmout přírůstkově v závislosti na prioritách Enterprise a uživatelských potřebách.
+Vaše organizace může tyto technologie a přístupy postupně přijímat. Nemusíš je všechny objímat, všechny najednou. Můžete je přijmout postupně v závislosti na prioritách organizace a potřebách uživatelů.
 
-## <a name="benefits-of-a-cloud-optimized-application"></a>Výhody aplikace optimalizované pro Cloud
+## <a name="benefits-of-a-cloud-optimized-application"></a>Výhody aplikace optimalizované pro cloud
 
-Následující výhody můžete získat převodem existující aplikace do aplikace optimalizované pro Cloud (bez nutnosti opětovného vytváření architektů nebo kódování):
+Následující výhody můžete získat převodem existující aplikace na aplikaci optimalizovanou pro cloud (bez rearchitecting nebo kódování):
 
-- **Nižší náklady, protože spravovaná infrastruktura je zpracovávána poskytovatelem cloudu**. Cloudově optimalizované aplikace získají výhody cloudu s využitím špičkové pružnosti, automatického škálování a vysoké dostupnosti cloudu. Výhody se týkají nejen výpočetních funkcí (virtuálních počítačů a kontejnerů), ale také závisí na prostředcích v cloudu, jako je DBaaS, CaaS a jakékoli infrastruktuře, které může aplikace potřebovat.
+- **Nižší náklady, protože spravovanou infrastrukturu zpracovává poskytovatel cloudu**. Aplikace optimalizované pro cloud získají výhody cloudu pomocí pružnosti, automatického škálování a vysoké dostupnosti cloudu. Výhody se vztahují nejen k výpočetním funkcím (virtuálnípočítače a kontejnery), ale také závisí na prostředky v cloudu, jako je DBaaS, CaaS a všechny infrastruktury aplikace může potřebovat.
 
-- **Odolná aplikace a infrastruktura** Když migrujete do cloudu, budete muset zamezit přechodným selháním. v cloudu dojde k selhání. Cloudová infrastruktura a hardware jsou taky "nahraditelný", což zvyšuje možnosti přechodného výpadku. Funkce vnitřního cloudu a některé techniky vývoje aplikací, které implementují odolnost a automatizované obnovení, výrazně usnadňují zotavení z neočekávaných chyb v cloudu, a to ve stejnou chvíli.
+- **Odolné aplikace a infrastruktura**. Když migrujete do cloudu, musíte přijmout přechodná selhání; v cloudu dojde k chybám. Cloudová infrastruktura a hardware jsou také "vyměnitelné", což zvyšuje příležitosti pro přechodné prostoje. Současně funkce vnitřního cloudu a některé techniky vývoje aplikací, které implementují odolnost proti chybám a automatizují obnovení, usnadňují zotavení z neočekávaných selhání v cloudu.
 
-- **Hlubší přehledy o výkonu aplikace**. Nástroje pro monitorování cloudu, jako je Azure Application Insights, poskytují vizualizaci pro správu stavu, protokolování a oznámení. Protokoly auditu umožňují aplikacím snadné ladění a audit, základní pro spolehlivou cloudovou aplikaci.
+- **Hlubší přehled o výkonu aplikací**. Nástroje pro monitorování cloudu, jako jsou Azure Application Insights, poskytují vizualizaci pro správu stavu, protokolování a oznámení. Protokoly auditu usnadňují ladění a auditování aplikací, což je zásadní pro spolehlivou cloudovou aplikaci.
 
-- **Přenositelnost aplikací s agilními nasazeními**. Kontejnery (v kontejnerech Linux nebo Windows na základě Docker Engine) nabízejí nejlepší řešení pro zamezení aplikace uzamčené pro Cloud. Díky kontejnerům, hostitelům Docker a orchestraci více cloudů můžete snadno přesouvat z jednoho prostředí nebo cloudu do jiného. Kontejnery odstraňují tření, ke kterému obvykle dochází v nasazeních do jakéhokoli prostředí (fáze/testování/produkce).
+- **Přenositelnost aplikací s agilnímnasazením**. Kontejnery (linuxové nebo windowskontejnery založené na Docker Engine) nabízejí nejlepší řešení, jak se vyhnout aplikaci uzamčenou v cloudu. Pomocí kontejnerů, hostitelů Dockeru a orchestrátorů s více cloudy můžete snadno přejít z jednoho prostředí nebo cloudu do druhého. Kontejnery eliminují tření, ke kterému obvykle dochází v nasazeních do libovolného prostředí (fáze/test/výroba).
 
-Všechny tyto výhody nakonec poskytují klíčové snížení nákladů pro celý životní cyklus aplikace.
+Všechny tyto výhody v konečném důsledku poskytují klíčové snížení nákladů pro váš koncový životní cyklus aplikací.
 
-V následujících částech jsou tyto výhody vysvětleny podrobněji a jsou propojeny s konkrétními technologiemi.
+V následujících částech jsou tyto výhody podrobněji vysvětleny a jsou propojeny s konkrétními technologiemi.
 
 >[!div class="step-by-step"]
 >[Předchozí](index.md)
->[Další](microsoft-technologies-in-cloud-optimized-applications.md)
+>[další](microsoft-technologies-in-cloud-optimized-applications.md)

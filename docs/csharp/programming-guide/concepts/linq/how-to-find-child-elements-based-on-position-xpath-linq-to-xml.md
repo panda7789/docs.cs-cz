@@ -1,27 +1,27 @@
 ---
-title: Jak najít podřízené elementy na základě pozice (XPath-LINQ to XML) (C#)
+title: Jak najít podřízené prvky na základě pozice (XPath-LINQ na XML) (C#)
 ms.date: 07/20/2015
 ms.assetid: e35bb269-ec86-4c96-8321-12491a0eb2c3
 ms.openlocfilehash: cc0ff5639345d36ebb0423a12b66de8f1a70ade1
-ms.sourcegitcommit: fbb8a593a511ce667992502a3ce6d8f65c594edf
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/16/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "74141117"
 ---
-# <a name="how-to-find-child-elements-based-on-position-xpath-linq-to-xml-c"></a>Jak najít podřízené elementy na základě pozice (XPath-LINQ to XML) (C#)
-Někdy chcete najít prvky na základě jejich pozice. Je možné, že budete chtít najít druhý prvek nebo můžete chtít najít třetí prostřednictvím pátého prvku.  
+# <a name="how-to-find-child-elements-based-on-position-xpath-linq-to-xml-c"></a>Jak najít podřízené prvky na základě pozice (XPath-LINQ na XML) (C#)
+Někdy chcete najít prvky na základě jejich pozice. Můžete chtít najít druhý prvek, nebo můžete chtít najít třetí prostřednictvím pátého prvku.  
   
  Výraz XPath je:  
   
  `Test[position() >= 2 and position() <= 4]`  
   
- Existují dva přístupy k zápisu tohoto [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]ho dotazu opožděným způsobem. Můžete použít operátory <xref:System.Linq.Enumerable.Skip%2A> a <xref:System.Linq.Enumerable.Take%2A> nebo můžete použít přetížení <xref:System.Linq.Enumerable.Where%2A>, které přebírá index. Použijete-li přetížení <xref:System.Linq.Enumerable.Where%2A>, použijete výraz lambda, který převezme dva argumenty. Následující příklad ukazuje obě metody výběru na základě pozice.  
+ Existují dva přístupy [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] k zápisu tohoto dotazu opožděným způsobem. Můžete použít <xref:System.Linq.Enumerable.Skip%2A> operátory a <xref:System.Linq.Enumerable.Take%2A> nebo můžete <xref:System.Linq.Enumerable.Where%2A> použít přetížení, které přebírá index. Při použití <xref:System.Linq.Enumerable.Where%2A> přetížení, použijete výraz lambda, který trvá dva argumenty. Následující příklad ukazuje obě metody výběru na základě pozice.  
   
 ## <a name="example"></a>Příklad  
- Tento příklad najde druhý prostřednictvím čtvrtého `Test` elementu. Výsledkem je kolekce prvků.  
+ Tento příklad najde druhý `Test` prostřednictvím čtvrtého prvku. Výsledkem je kolekce prvků.  
   
- Tento příklad používá následující dokument XML: [ukázkový soubor XML: testovací konfigurace (LINQ to XML)](./sample-xml-file-test-configuration-linq-to-xml.md).  
+ Tento příklad používá následující dokument XML: [Ukázkový soubor XML: Test Configuration (LINQ to XML).](./sample-xml-file-test-configuration-linq-to-xml.md)  
   
 ```csharp  
 XElement testCfg = XElement.Load("TestConfig.xml");  
@@ -54,7 +54,7 @@ foreach (XElement el in list1)
     Console.WriteLine(el);  
 ```  
   
- Tento příklad vytvoří následující výstup:  
+ Tento příklad vytváří následující výstup:  
   
 ```output  
 Results are identical  

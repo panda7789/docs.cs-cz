@@ -3,14 +3,14 @@ title: Vytváření vlastních atributů (C#)
 ms.date: 07/20/2015
 ms.assetid: 500e1977-c6de-462d-abce-78a0eb1eda22
 ms.openlocfilehash: c0f25adf0d562b659edaa8f36e72332fd0c1ee7e
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/19/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "69595415"
 ---
 # <a name="creating-custom-attributes-c"></a>Vytváření vlastních atributů (C#)
-Můžete vytvořit vlastní atributy definováním třídy atributů, třídy, která je odvozena přímo nebo nepřímo z <xref:System.Attribute>, což umožňuje rychlou a jednoduchou identifikaci definic atributů v metadatech. Předpokládejme, že chcete označit typy s názvem programátora, který typ napsal. Je možné definovat vlastní `Author` třídu atributu:  
+Vlastní atributy můžete vytvořit definováním třídy atributů, třídy, která <xref:System.Attribute>je přímo nebo nepřímo odvozena z , což umožňuje rychlou a snadnou identifikaci definic atributů v metadatech. Předpokládejme, že chcete označit typy s názvem programátora, který napsal typ. Můžete definovat vlastní `Author` třídu atributů:  
   
 ```csharp  
 [System.AttributeUsage(System.AttributeTargets.Class |  
@@ -29,7 +29,7 @@ public class Author : System.Attribute
 }  
 ```  
   
- Název třídy je název atributu, `Author`. Je odvozen z `System.Attribute`, takže se jedná o vlastní třídu atributu. Parametry konstruktoru jsou poziční parametry vlastního atributu. V tomto příkladu `name` je poziční parametr. Všechna veřejná pole nebo vlastnosti pro čtení i zápis se nazývají parametry. V tomto případě `version` je jediným pojmenovaným parametrem. Všimněte si, že použití `AttributeUsage` atributu pro nastavení atributu `Author` je platné pouze pro třídu a `struct` deklarace.  
+ Název třídy je název atributu . `Author` Je odvozen od `System.Attribute`, takže se jedná o vlastní třídu atributů. Parametry konstruktoru jsou poziční parametry vlastního atributu. V tomto `name` příkladu je poziční parametr. Všechna veřejná pole pro čtení a zápis nebo vlastnosti jsou pojmenovány parametry. V tomto `version` případě je pouze pojmenovaný parametr. Všimněte si `AttributeUsage` použití atributu, aby byl `Author` `struct` atribut platný pouze pro třídu a deklarace.  
   
  Tento nový atribut můžete použít následujícím způsobem:  
   
@@ -41,7 +41,7 @@ class SampleClass
 }  
 ```  
   
- `AttributeUsage`má pojmenovaný parametr, `AllowMultiple`pomocí kterého můžete vytvořit vlastní atribut s jedním použitím nebo Multiuse. V následujícím příkladu kódu je vytvořen atribut Multiuse.  
+ `AttributeUsage`má pojmenovaný parametr `AllowMultiple`, pomocí kterého můžete vytvořit vlastní atribut na jedno použití nebo vícepoužití. V následujícím příkladu kódu je vytvořen víceúčelový atribut.  
   
 ```csharp  
 [System.AttributeUsage(System.AttributeTargets.Class |  
@@ -63,10 +63,10 @@ class SampleClass
 }  
 ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Reflection>
-- [Průvodce programováním v jazyce C#](../../index.md)
+- [Programovací příručka jazyka C#](../../index.md)
 - [Zápis vlastních atributů](../../../../standard/attributes/writing-custom-attributes.md)
 - [Reflexe (C#)](../reflection.md)
 - [Atributy (C#)](./index.md)

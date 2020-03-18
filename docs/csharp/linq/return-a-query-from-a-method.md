@@ -4,22 +4,22 @@ description: Jak vrátit dotaz.
 ms.date: 11/30/2016
 ms.assetid: db220f79-c35b-41f2-886c-cd068672d42d
 ms.openlocfilehash: 1df533770f76301432b104d6f8398f1687750cce
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/12/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "73972512"
 ---
-# <a name="how-to-return-a-query-from-a-method-c-programming-guide"></a>Postup vrácení dotazu z metody (C# Průvodce programováním)
-Tento příklad ukazuje, jak vrátit dotaz z metody jako návratovou hodnotu a jako parametr `out`.  
+# <a name="how-to-return-a-query-from-a-method-c-programming-guide"></a>Jak vrátit dotaz z metody (C# Programovací průvodce)
+Tento příklad ukazuje, jak vrátit dotaz z metody jako `out` vrácená hodnota a jako parametr.  
   
- Objekty dotazů jsou sestavitelné, což znamená, že můžete vracet dotaz z metody. Objekty, které reprezentují dotazy, neukládají výslednou kolekci, ale v případě potřeby pak kroky k vyprodukování výsledků. Výhodou vrácení objektů dotazů z metod je, že je lze dále sestavit nebo upravit. Proto všechny vrácené hodnoty nebo parametry `out` metody, která vrací dotaz, musí mít také tento typ. Pokud metoda materializuje dotaz do konkrétního <xref:System.Collections.Generic.List%601> nebo <xref:System.Array> typu, považuje se za vracené výsledky dotazu místo dotazu samotného. Proměnnou dotazu, která je vrácena z metody, lze stále sestavit nebo upravit.  
+ Objekty dotazu jsou kompozitelné, což znamená, že můžete vrátit dotaz z metody. Objekty, které představují dotazy neukládají výsledné kolekce, ale spíše kroky k vytvoření výsledků v případě potřeby. Výhodou vrácení objektů dotazu z metod je, že mohou být dále složeny nebo změněny. Proto všechny vrácené hodnoty nebo `out` parametr metody, která vrací dotaz musí mít také tento typ. Pokud metoda zhmotní dotaz do <xref:System.Collections.Generic.List%601> konkrétní <xref:System.Array> nebo typ, je považován za vrácení výsledků dotazu namísto samotného dotazu. Proměnná dotazu, která je vrácena z metody, může být stále složena nebo změněna.  
   
 ## <a name="example"></a>Příklad  
- V následujícím příkladu vrátí první metoda dotaz jako návratovou hodnotu a druhá metoda vrátí dotaz jako parametr `out`. Všimněte si, že v obou případech se jedná o dotaz, který je vrácen, nikoli výsledky dotazu.  
+ V následujícím příkladu první metoda vrátí dotaz jako vrácenou hodnotu a `out` druhá metoda vrátí dotaz jako parametr. Všimněte si, že v obou případech se jedná o dotaz, který je vrácen, nikoli výsledky dotazu.  
   
  [!code-csharp[csProgGuideLINQ#80](~/samples/snippets/csharp/concepts/linq/how-to-return-a-query-from-a-method_1.cs)]  
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [LINQ (Language Integrated Query)](index.md)

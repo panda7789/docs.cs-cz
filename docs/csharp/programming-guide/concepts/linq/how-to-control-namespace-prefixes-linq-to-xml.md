@@ -3,29 +3,29 @@ title: Jak řídit předpony oboru názvů (C#) (LINQ to XML)
 ms.date: 07/20/2015
 ms.assetid: 64de5186-b81a-4ddd-8327-8693df59a01b
 ms.openlocfilehash: 9f43c0804d8c830fa75f1e1390cb578c5f5d5106
-ms.sourcegitcommit: fbb8a593a511ce667992502a3ce6d8f65c594edf
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/16/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "74141377"
 ---
 # <a name="how-to-control-namespace-prefixes-c-linq-to-xml"></a>Jak řídit předpony oboru názvů (C#) (LINQ to XML)
-Toto téma popisuje, jak lze řídit předpony oboru názvů při serializaci stromu XML.  
+Toto téma popisuje, jak můžete řídit předpony oboru názvů při serializaci stromu XML.  
   
  V mnoha situacích není nutné řídit předpony oboru názvů.  
   
- Nicméně některé programovací nástroje XML vyžadují konkrétní kontrolu předpon oboru názvů. Můžete například manipulovat se šablonou stylů XSLT nebo dokumentem XAML obsahující vložené výrazy XPath, které odkazují na konkrétní předpony oboru názvů. v takovém případě je důležité, aby byl dokument serializován s těmito konkrétními předponami.  
+ Některé programovací nástroje XML však vyžadují zvláštní řízení předpon oboru názvů. Můžete například manipulovat se šablonou stylů XSLT nebo dokumentem XAML, který obsahuje vložené výrazy XPath, které odkazují na konkrétní předpony oboru názvů; v tomto případě je důležité, aby byl dokument serializován s těmito specifickými předčíslími.  
   
- Toto je nejběžnější důvod pro řídící předpony oboru názvů.  
+ Toto je nejčastější důvod pro řízení předpon oboru názvů.  
   
- Dalším běžným důvodem pro kontrolní předpony oboru názvů je, že chcete, aby uživatelé upravili dokument XML ručně a chcete vytvořit předpony oboru názvů, které jsou vhodné pro uživatele, aby zadali. Můžete například vygenerovat dokument XSD. Konvence pro schémata naznačují, že jako předponu pro obor názvů schématu používáte buď `xs`, nebo `xsd`.  
+ Dalším běžným důvodem pro řízení předpon oboru názvů je, že chcete, aby uživatelé ručně upravovali dokument XML, a chcete vytvořit předpony oboru názvů, které jsou vhodné pro uživatele k zadání. Například můžete generovat dokument XSD. Konvence pro schémata naznačují, že `xs` používáte buď nebo `xsd` jako předponu pro obor názvů schématu.  
   
- Chcete-li řídit předpony oboru názvů, vložte atributy, které deklaruje obory názvů. Pokud deklarujete obory názvů se specifickými předponami, [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] se pokusí při serializaci akceptovat předpony oboru názvů.  
+ Chcete-li řídit předpony oboru názvů, vložte atributy, které deklarují obory názvů. Pokud deklarujete obory [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] názvů s určitými předčíslími, pokusíte se respektovat předpony oboru názvů při serializaci.  
   
- Chcete-li vytvořit atribut, který deklaruje obor názvů s předponou, vytvoříte atribut, kde je obor názvů názvu atributu <xref:System.Xml.Linq.XNamespace.Xmlns%2A>a název atributu je předpona oboru názvů. Hodnota atributu je identifikátor URI oboru názvů.  
+ Chcete-li vytvořit atribut, který deklaruje obor názvů s předponou, vytvořte <xref:System.Xml.Linq.XNamespace.Xmlns%2A>atribut, ve kterém je obor názvů názvu atributu a název atributu je předpona oboru názvů. Hodnota atributu je identifikátor URI oboru názvů.  
   
 ## <a name="example"></a>Příklad  
- Tento příklad deklaruje dva obory názvů. Určuje, že obor názvů `http://www.adventure-works.com` má předponu `aw`a že obor názvů `www.fourthcoffee.com` má předponu `fc`.  
+ Tento příklad deklaruje dva obory názvů. Určuje, že `http://www.adventure-works.com` obor názvů má předponu `aw`a `www.fourthcoffee.com` že obor názvů `fc`má předponu .  
   
 ```csharp  
 XNamespace aw = "http://www.adventure-works.com";  
@@ -42,7 +42,7 @@ XElement root = new XElement(aw + "Root",
 Console.WriteLine(root);  
 ```  
   
- Tento příklad vytvoří následující výstup:  
+ Tento příklad vytváří následující výstup:  
   
 ```xml  
 <aw:Root xmlns:aw="http://www.adventure-works.com" xmlns:fc="www.fourthcoffee.com">  
@@ -54,6 +54,6 @@ Console.WriteLine(root);
 </aw:Root>  
 ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Přehled oborů názvů (LINQ to XML)C#()](namespaces-overview-linq-to-xml.md)
+- [Obory názvů – přehled (LINQ to XML) (C#)](namespaces-overview-linq-to-xml.md)

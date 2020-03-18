@@ -1,21 +1,21 @@
 ---
-title: Postup vytvoření hierarchie pomocí seskupení (C#)
+title: Jak vytvořit hierarchii pomocí seskupení (C#)
 ms.date: 07/20/2015
 ms.assetid: 0213d59e-5f76-438c-9cab-4bf11f7b971d
 ms.openlocfilehash: c5a96b02595446b2efa01868cc88377c3a5151c9
-ms.sourcegitcommit: fbb8a593a511ce667992502a3ce6d8f65c594edf
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/16/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "74141299"
 ---
-# <a name="how-to-create-hierarchy-using-grouping-c"></a>Postup vytvoření hierarchie pomocí seskupení (C#)
-Tento příklad ukazuje, jak seskupit data a pak vygenerovat XML na základě seskupení.  
+# <a name="how-to-create-hierarchy-using-grouping-c"></a>Jak vytvořit hierarchii pomocí seskupení (C#)
+Tento příklad ukazuje, jak seskupit data a potom generovat XML na základě seskupení.  
   
 ## <a name="example"></a>Příklad  
- Tento příklad nejprve seskupuje data podle kategorie a pak vygeneruje nový soubor XML, ve kterém hierarchie XML odráží seskupení.  
+ Tento příklad nejprve seskupí data podle kategorie a poté vygeneruje nový soubor XML, ve kterém hierarchie XML odráží seskupení.  
   
- Tento příklad používá následující dokument XML: [ukázkový soubor XML: numerická data (LINQ to XML)](./sample-xml-file-numerical-data-linq-to-xml.md).  
+ Tento příklad používá následující dokument XML: [Ukázkový soubor XML: Numerická data (LINQ to XML).](./sample-xml-file-numerical-data-linq-to-xml.md)  
   
 ```csharp  
 XElement doc = XElement.Load("Data.xml");  
@@ -35,7 +35,7 @@ var newData =
 Console.WriteLine(newData);  
 ```  
   
- Tento příklad vytvoří následující výstup:  
+ Tento příklad vytváří následující výstup:  
   
 ```xml  
 <Root>  

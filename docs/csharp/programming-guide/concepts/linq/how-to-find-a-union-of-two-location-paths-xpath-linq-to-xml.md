@@ -1,27 +1,27 @@
 ---
-title: Jak najít sjednocení dvou cest umístění (XPath-LINQ to XML) (C#)
+title: Jak najít sjednocení dvou cest umístění (XPath-LINQ do XML) (C#)
 ms.date: 07/20/2015
 ms.assetid: 069622d3-2b58-4919-8903-710a564c0788
 ms.openlocfilehash: 17a3310f367cb68b3b80b1a3f30af40428f6d2c7
-ms.sourcegitcommit: fbb8a593a511ce667992502a3ce6d8f65c594edf
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/16/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "74141208"
 ---
-# <a name="how-to-find-a-union-of-two-location-paths-xpath-linq-to-xml-c"></a>Jak najít sjednocení dvou cest umístění (XPath-LINQ to XML) (C#)
-XPath umožňuje najít sjednocení výsledků dvou cest umístění XPath.  
+# <a name="how-to-find-a-union-of-two-location-paths-xpath-linq-to-xml-c"></a>Jak najít sjednocení dvou cest umístění (XPath-LINQ do XML) (C#)
+XPath umožňuje najít spojení výsledků dvou cest umístění XPath.  
   
  Výraz XPath je:  
   
  `//Category|//Price`  
   
- Stejné výsledky můžete dosáhnout pomocí operátoru dotazu <xref:System.Linq.Enumerable.Concat%2A> Standard.  
+ Můžete dosáhnout stejných výsledků <xref:System.Linq.Enumerable.Concat%2A> pomocí standardního operátoru dotazu.  
   
 ## <a name="example"></a>Příklad  
- V tomto příkladu jsou vyhledány všechny prvky `Category` a všechny `Price` prvky a zřetězeny do jedné kolekce. Všimněte si, že dotaz [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] volá <xref:System.Xml.Linq.Extensions.InDocumentOrder%2A> k seřazení výsledků. Výsledky vyhodnocení výrazu XPath jsou také v pořadí dokumentů.  
+ Tento příklad vyhledá `Category` všechny prvky `Price` a všechny prvky a zřetězí je do jedné kolekce. Všimněte [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] si, <xref:System.Xml.Linq.Extensions.InDocumentOrder%2A> že dotaz volá pořadí výsledků. Výsledky vyhodnocení výrazu XPath jsou také v pořadí dokumentů.  
   
- Tento příklad používá následující dokument XML: [ukázkový soubor XML: numerická data (LINQ to XML)](./sample-xml-file-numerical-data-linq-to-xml.md).  
+ Tento příklad používá následující dokument XML: [Ukázkový soubor XML: Numerická data (LINQ to XML).](./sample-xml-file-numerical-data-linq-to-xml.md)  
   
 ```csharp  
 XDocument data = XDocument.Load("Data.xml");  
@@ -48,7 +48,7 @@ foreach (XElement el in list1)
     Console.WriteLine(el);  
 ```  
   
- Tento příklad vytvoří následující výstup:  
+ Tento příklad vytváří následující výstup:  
   
 ```output  
 Results are identical  

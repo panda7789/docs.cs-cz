@@ -11,34 +11,34 @@ helpviewer_keywords:
 - Visual C#, compiler options
 ms.assetid: d3403556-1816-4546-a782-e8223a772e44
 ms.openlocfilehash: 787f9c5fff79eb67e2d74043782532c1fc4034b5
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/12/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "73972751"
 ---
 # <a name="c-compiler-options"></a>Možnosti kompilátoru C#
 
-Kompilátor vytváří spustitelné soubory (. exe), dynamické knihovny (. dll) nebo kódové moduly (. netmodule).
+Kompilátor vytváří spustitelné (.exe) soubory, dynamické knihovny (.dll) nebo moduly kódu (.netmodule).
 
-Každá možnost kompilátoru je k dispozici ve dvou formách: **-Option** a **/Option**. V dokumentaci se zobrazí pouze formulář **s možnostmi** .
+Každá možnost kompilátoru je k dispozici ve dvou formách: **-option** a **/option**. V dokumentaci se zobrazí pouze formulář **-option.**
 
-V sadě Visual Studio jste v souboru *Web. config* nastavili možnosti kompilátoru. Další informace naleznete v tématu [\<> elementu kompilátoru](../../../framework/configure-apps/file-schema/compiler/compiler-element.md).
+V sadě Visual Studio nastavíte možnosti kompilátoru v souboru *web.config.* Další informace naleznete v [ \<tématu kompilátor> Element](../../../framework/configure-apps/file-schema/compiler/compiler-element.md).
 
 ## <a name="in-this-section"></a>V tomto oddílu
 
-- [Sestavování z příkazového řádku pomocí CSc. exe](command-line-building-with-csc-exe.md) Informace o vytvoření vizuální C# aplikace z příkazového řádku.
+- [Vytvoření příkazového řádku s csc.exe](command-line-building-with-csc-exe.md) Informace o vytváření aplikace Visual C# z příkazového řádku.
 
-- [Postup nastavení proměnných prostředí pro příkazový řádek sady Visual Studio](how-to-set-environment-variables-for-the-visual-studio-command-line.md) Popisuje kroky, jak spustit *vsvars32. bat* pro povolení sestavení příkazového řádku.
+- [Jak nastavit proměnné prostředí pro příkazový řádek sady Visual Studio](how-to-set-environment-variables-for-the-visual-studio-command-line.md) Obsahuje kroky pro spuštění *souboru vsvars32.bat* pro povolení sestavení příkazového řádku.
 
-- [Možnosti kompilátoru uvedené podle kategorie C# ](listed-by-category.md) Seznam kategorií možností kompilátoru.
+- [Možnosti kompilátoru jazyka C# uvedené podle kategorie](listed-by-category.md) Kategorický seznam možností kompilátoru.
 
-- Možnosti kompilátoru seřazené abecedně [ C# ](listed-alphabetically.md) Abecední seznam možností kompilátoru.
+- [C# Kompilátor Možnosti uvedené abecedně](listed-alphabetically.md) Abecední seznam možností kompilátoru.
 
 ## <a name="related-sections"></a>Související oddíly
 
-- [Stránka sestavení, Návrhář projektu](/visualstudio/ide/reference/build-page-project-designer-csharp) Nastavení vlastností, které určují, jak je projekt kompilován, sestaven a laděn. Obsahuje informace o vlastních krocích sestavení v vizuálních C# projektech.
+- [Stránka sestavení, Návrhář projektu](/visualstudio/ide/reference/build-page-project-designer-csharp) Nastavení vlastností, které řídí způsob kompilace, sestavení a odlazení projektu. Obsahuje informace o vlastní kroky sestavení v projektech Visual C#.
 
 - [Výchozí a vlastní sestavení](/visualstudio/ide/compiling-and-building-in-visual-studio) Informace o typech sestavení a konfiguracích.
 
-- [Příprava a správa sestavení](/visualstudio/ide/building-and-cleaning-projects-and-solutions-in-visual-studio) Postupy pro sestavení ve vývojovém prostředí sady Visual Studio.
+- [Příprava a správa sestavení](/visualstudio/ide/building-and-cleaning-projects-and-solutions-in-visual-studio) Postupy pro vytváření v rámci vývojového prostředí sady Visual Studio.

@@ -1,23 +1,23 @@
 ---
-title: Jak najít následníky podřízeného elementu (XPath-LINQ to XML) (C#)
+title: Jak najít potomky podřízeného prvku (XPath-LINQ to XML) (C#)
 ms.date: 07/20/2015
 ms.assetid: 505b7512-bb8b-4f85-abbf-491f039c961e
 ms.openlocfilehash: fb3e20ce21c1f6d2a71f2f71b8acec7cecf0f3ed
-ms.sourcegitcommit: fbb8a593a511ce667992502a3ce6d8f65c594edf
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/16/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "74141091"
 ---
-# <a name="how-to-find-descendants-of-a-child-element-xpath-linq-to-xml-c"></a>Jak najít následníky podřízeného elementu (XPath-LINQ to XML) (C#)
-Toto téma ukazuje, jak získat odvozené prvky podřízeného elementu s konkrétním názvem.  
+# <a name="how-to-find-descendants-of-a-child-element-xpath-linq-to-xml-c"></a>Jak najít potomky podřízeného prvku (XPath-LINQ to XML) (C#)
+Toto téma ukazuje, jak získat potomek prvky podřízeného prvku s určitým názvem.  
   
  Výraz XPath je:  
   
  `./Paragraph//Text/text()`  
   
 ## <a name="example"></a>Příklad  
- Tento příklad simuluje problémy extrakce textu z reprezentace XML dokumentu zpracování slova. Nejprve vybere všechny prvky `Paragraph` a potom vybere všechny `Text` následníků každého elementu `Paragraph`. Tato možnost nevybere následníky `Text` prvků `Comment` elementu.  
+ Tento příklad simuluje problémy s extrahováním textu z reprezentace XML dokumentu pro zpracování textu. Nejprve vybere `Paragraph` všechny prvky a potom `Text` vybere všechny `Paragraph` potomek prvky každého prvku. Tím nevyberete potomky `Text` `Comment` prvků prvku.  
   
 ```csharp  
 XElement root = XElement.Parse(  
@@ -68,7 +68,7 @@ else
 Console.WriteLine(str2);  
 ```  
   
- Tento příklad vytvoří následující výstup:  
+ Tento příklad vytváří následující výstup:  
   
 ```output  
 Results are identical  
