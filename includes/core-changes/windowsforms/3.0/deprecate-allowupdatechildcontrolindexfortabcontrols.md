@@ -1,28 +1,28 @@
 ---
 ms.openlocfilehash: 7e76c32ddeb50eaf1ee93d7cf3cac7469187cc41
-ms.sourcegitcommit: 7e2128d4a4c45b4274bea3b8e5760d4694569ca1
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/14/2020
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "75936990"
 ---
-### <a name="allowupdatechildcontrolindexfortabcontrols-compatibility-switch-not-supported"></a>Přepínač kompatibility AllowUpdateChildControlIndexForTabControls se nepodporuje.
+### <a name="allowupdatechildcontrolindexfortabcontrols-compatibility-switch-not-supported"></a>Přepínač kompatibility AllowUpdateChildControlIndexForTabControls není podporován.
 
-Přepínač kompatibility `Switch.System.Windows.Forms.AllowUpdateChildControlIndexForTabControls` je podporován v model Windows Forms na .NET Framework 4,6 a novějších verzích, ale není podporován v model Windows Forms Počínaje rozhraním .NET Core 3,0.
+Přepínač `Switch.System.Windows.Forms.AllowUpdateChildControlIndexForTabControls` kompatibility je podporován ve formulářích Windows v rozhraní .NET Framework 4.6 a novějších verzích, ale není podporován ve formulářích Windows počínaje rozhraním .NET Core 3.0.
 
 #### <a name="change-description"></a>Popis změny
 
-V .NET Framework 4,6 a novějších verzích vybere karta změnu pořadí kolekce ovládacích prvků. Přepínač kompatibility `Switch.System.Windows.Forms.AllowUpdateChildControlIndexForTabControls` umožňuje aplikaci přeskočit toto přeřazení, pokud je toto chování nežádoucí.
+V rozhraní .NET Framework 4.6 a novějších verzích výběr karty přeřazuje její kolekci ovládacích prvku. Přepínač `Switch.System.Windows.Forms.AllowUpdateChildControlIndexForTabControls` kompatibility umožňuje aplikaci přeskočit toto změny pořadí, pokud je toto chování nežádoucí.
 
-V rozhraní .NET Core není přepínač `Switch.System.Windows.Forms.AllowUpdateChildControlIndexForTabControls` podporován.
+V rozhraní .NET `Switch.System.Windows.Forms.AllowUpdateChildControlIndexForTabControls` Core není přepínač podporován.
 
-#### <a name="version-introduced"></a>Představená verze
+#### <a name="version-introduced"></a>Zavedená verze
 
-3,0 Preview 9
+3.0 Náhled 9
 
 #### <a name="recommended-action"></a>Doporučená akce
 
-Odeberte přepínač. Přepínač není podporován a nejsou k dispozici žádné alternativní funkce.
+Odstraňte spínač. Přepínač není podporován a nejsou k dispozici žádné alternativní funkce.
 
 #### <a name="category"></a>Kategorie
 
@@ -30,7 +30,7 @@ Windows Forms
 
 #### <a name="affected-apis"></a>Ovlivněná rozhraní API
 
-- Žádné
+- Žádný
 
 <!-- 
 
