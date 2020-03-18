@@ -1,46 +1,46 @@
 ---
-title: Vazby a přenosy WCF – gRPC pro vývojáře WCF
-description: Přečtěte si, jak se liší vazby WCF a přenosy na gRPC.
+title: WCF vazby a přenosy - gRPC pro vývojáře WCF
+description: Zjistěte, jak různé WCF vazby a přenosy v porovnání s gRPC.
 ms.date: 09/02/2019
-ms.openlocfilehash: ebe324eace8f5f418b920c59f6d72eaaa686ef02
-ms.sourcegitcommit: f38e527623883b92010cf4760246203073e12898
+ms.openlocfilehash: 3a295268b486578c70c2c98f1d05f89070daaeb3
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77503353"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79147721"
 ---
 # <a name="wcf-bindings-and-transports"></a>Vazby a přenosy WCF
 
-Windows Communication Foundation (WCF) obsahuje předdefinované *vazby* , které určují různé síťové protokoly, formáty drátů a další podrobnosti implementace. gRPC má efektivně jenom jeden síťový protokol a jeden formát drátu. (Technicky můžete *přizpůsobit formát* drátu, ale to je nad rámec této knihy.) Pravděpodobně zjistíte, že gRPC nabízí nejlepší řešení ve většině případů. 
+Windows Communication Foundation (WCF) má integrované *vazby,* které určují různé síťové protokoly, formáty drátu a další podrobnosti implementace. gRPC má efektivně pouze jeden síťový protokol a jeden drátový formát. (Technicky *si můžete* přizpůsobit formát drátu, ale to je nad rámec této knihy.) Pravděpodobně zjistíte, že gRPC nabízí ve většině případů nejlepší řešení.
 
-Níže je Stručná diskuze o nejrelevantnějších vazbách WCF a jejich porovnání s jejich ekvivalenty v gRPC.
+Co bude následovat, je krátká diskuse o nejdůležitější WCF vazby a jak se porovnávají s jejich ekvivalenty v gRPC.
 
-## <a name="nettcp"></a>NetTCP
+## <a name="nettcp"></a>Protokol NetTCP
 
-NetTCP vazba WCF umožňuje trvalá připojení, malé zprávy a obousměrné zasílání zpráv. Ale funguje jenom mezi klienty rozhraní .NET a servery. gRPC umožňuje stejné funkce, ale podporuje se v různých programovacích jazycích a platformách. 
+WCF nettcp vazby umožňuje trvalé připojení, malé zprávy a obousměrné zasílání zpráv. Ale funguje pouze mezi klienty .NET a servery. gRPC umožňuje stejné funkce, ale je podporován napříč více programovacími jazyky a platformami.
 
-gRPC má mnoho funkcí vazby NetTCP WCF, ale nejsou vždy implementovány stejným způsobem. Například v technologii WCF je šifrování řízeno prostřednictvím konfigurace a zpracovává se v rámci rozhraní. V gRPC se šifrování dosahuje na úrovni připojení prostřednictvím protokolu HTTP/2 přes TLS.
+gRPC má mnoho funkcí WCF NetTCP vazby, ale nejsou vždy implementovány stejným způsobem. Například v WCF šifrování je řízenprostřednictvím konfigurace a zpracovány v rámci. V gRPC je šifrování dosaženo na úrovni připojení přes HTTP/2 přes TLS.
 
 ## <a name="http"></a>HTTP
 
-Vazba WCF s názvem BasicHttpBinding je obvykle založená na textu a používá protokol SOAP jako formát drátu. V porovnání s vazbou NetTCP je pomalé. Obecně se používá k zajištění vzájemné funkční spolupráce mezi platformami nebo připojení přes internetovou infrastrukturu. 
+WCF vazby s názvem BasicHttpBinding je obvykle založen na textu a používá SOAP jako formát drátu. Je to pomalé ve srovnání s NetTCP vazby. Obvykle se používá k zajištění interoperability napříč platformami nebo připojení přes internetovou infrastrukturu.
 
-Ekvivalent v gRPC používá protokol HTTP/2 jako podkladovou přenosovou vrstvu pro zprávy ve formátu binárního Protobuf. Takže může nabízet výkon na úrovni služby NetTCP a celou spolupráci mezi platformami se všemi moderními programovacími jazyky a rozhraními.
+Ekvivalent v gRPC používá HTTP/2 jako základní transportní vrstvu s binárním formátem Protobuf drátu pro zprávy. Takže může nabídnout výkon na úrovni služeb NetTCP a plnou interoperabilitu napříč platformami se všemi moderními programovacími jazyky a frameworky.
 
 ## <a name="named-pipes"></a>Pojmenované kanály
 
-Technologie WCF poskytovala vazbu *pojmenovaných kanálů* pro komunikaci mezi procesy na stejném fyzickém počítači. První verze ASP.NET Core gRPC nepodporuje pojmenované kanály. Přidání podpory klienta a serveru pro pojmenované kanály (a doménové sokety systému UNIX) je cílem budoucí verze.
+WCF za *předpokladu, pojmenované kanály* vazby pro komunikaci mezi procesy na stejném fyzickém počítači. První vydání ASP.NET Core gRPC nepodporuje pojmenované kanály. Přidání podpory klienta a serveru pro pojmenované kanály (a sokety domény Unix) je cílem pro budoucí verzi.
 
 ## <a name="msmq"></a>MSMQ
 
-MSMQ je proprietární fronta zpráv Windows. Vazba WCF na službu MSMQ umožňuje "požární a zapomenuté" žádosti od klientů, které mohou být zpracovány kdykoli později. gRPC nativně neposkytuje žádné funkce fronty zpráv. 
+Služba MSMQ je proprietární fronta zpráv systému Windows. WCF je vazba na službu MSMQ umožňuje "požární a zapomenout" požadavky od klientů, které mohou být zpracovány kdykoli v budoucnu. gRPC neposkytuje nativně žádné funkce fronty zpráv.
 
-Nejlepší alternativou je přímé použití systému zasílání zpráv, jako je Azure Service Bus, RabbitMQ nebo Kafka. To můžete implementovat pomocí klienta, který přímo do fronty umísťuje zprávy, nebo služby streamování klienta gRPC, která zprávy zařadí do fronty.
+Nejlepší alternativou je přímé použití systému zasílání zpráv, jako je Azure Service Bus, RabbitMQ nebo Kafka. Můžete implementovat s klientem umístění zpráv přímo do fronty nebo gRPC klienta streamování služby, která zařadí zprávy.
 
-## <a name="webhttpbinding"></a>WebHttpBinding
+## <a name="webhttpbinding"></a>Vazba na webhttp
 
-WebHttpBinding (označované také jako služba WCF REST) s atributy `WebGet` a `WebInvoke` umožňují vyvíjet rozhraní API RESTful, která by mohla mluvit JSON v době, kdy to bylo méně běžné. Pokud máte rozhraní API RESTful vytvořené pomocí WCF REST, zvažte jeho migraci na běžnou ASP.NET Core aplikaci webového rozhraní API MVC. Tato migrace by poskytovala stejné funkce jako převod na gRPC.
+WebHttpBinding (také známý jako WCF `WebGet` `WebInvoke` REST), s atributy a, umožnil ovývojit RESTful rozhraní API, která by mohla mluvit JSON v době, kdy to bylo méně časté. Pokud máte restful rozhraní API vytvořené s WCF REST, zvažte migraci do běžné ASP.NET aplikace Core MVC Web API. Tato migrace by poskytovala stejné funkce jako převod na gRPC.
 
 >[!div class="step-by-step"]
 >[Předchozí](wcf-endpoints-grpc-methods.md)
->[Další](rpc-types.md)
+>[další](rpc-types.md)

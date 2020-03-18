@@ -1,26 +1,26 @@
 ---
-title: Použití funkcí dokumentace XML – C# Průvodce programováním
+title: Použití funkcí dokumentace XML – průvodce programováním jazyka C#
 ms.date: 06/01/2018
 helpviewer_keywords:
 - XML documentation [C#]
 - C# language, XML documentation features
 ms.assetid: 8f33917b-9577-4c9a-818a-640dbbb0b399
-ms.openlocfilehash: 57034fb835d4c82b5bf658e61ec78ef226c2551e
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.openlocfilehash: e279b13d9216120e25f454faa14dc71ad24c74ef
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76789774"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79156997"
 ---
 # <a name="how-to-use-the-xml-documentation-features"></a>Jak používat funkce dokumentace XML
 
-Následující příklad obsahuje základní přehled o typu, který je dokumentován.
+Následující ukázka obsahuje základní přehled typu, který byl zdokumentován.
 
 ## <a name="example"></a>Příklad
 
 [!code-csharp[csProgGuideDocComments#15](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideDocComments/CS/DocComments.cs#15)]
 
-Příklad vygeneruje soubor *. XML* s následujícím obsahem.
+Příklad generuje soubor *XML* s následujícím obsahem.
 
 ```xml
 <?xml version="1.0"?>
@@ -62,7 +62,7 @@ Příklad vygeneruje soubor *. XML* s následujícím obsahem.
             </summary>
             <param name="s"> Parameter description for s goes here.</param>
             <seealso cref="T:System.String">
-            You can use the cref attribute on any tag to reference a type or member 
+            You can use the cref attribute on any tag to reference a type or member
             and the compiler will check that the reference exists.
             </seealso>
         </member>
@@ -106,35 +106,35 @@ Příklad vygeneruje soubor *. XML* s následujícím obsahem.
 </doc>
 ```
 
-## <a name="compiling-the-code"></a>Kompilování kódu
+## <a name="compiling-the-code"></a>Zkompilování kódu
 
 Chcete-li zkompilovat příklad, zadejte následující příkazový řádek:
 
 `csc XMLsample.cs /doc:XMLsample.xml`
 
-Tento příkaz vytvoří soubor XML *XMLsample. XML*, který lze zobrazit v prohlížeči nebo pomocí příkazu Type.
+Tento příkaz vytvoří soubor XML *XMLsample.xml*, který můžete zobrazit v prohlížeči nebo pomocí příkazu TYP.
 
 ## <a name="robust-programming"></a>Robustní programování
 
-Dokumentace XML začíná na///. Při vytváření nového projektu Průvodce vloží do za vás některé počáteční///řádky. Zpracování těchto komentářů má určitá omezení:
+Dokumentace XML začíná na ///. Když vytvoříte nový projekt, průvodci zasadí některé řádky startéru /// pro vás. Zpracování těchto připomínek má určitá omezení:
 
-- Dokumentace musí být ve správném formátu XML. Pokud XML není ve správném formátu, je vygenerováno upozornění a soubor dokumentace bude obsahovat komentář, který říká, že došlo k chybě.
+- Dokumentace musí být ve správném formátu XML. Pokud xml není ve správném formátu, je generováno upozornění a soubor dokumentace bude obsahovat komentář, který říká, že došlo k chybě.
 
-- Vývojářům je zdarma vytvořit vlastní sadu značek. Je [doporučena sada značek](recommended-tags-for-documentation-comments.md). Některé z doporučených značek mají zvláštní význam:
+- Vývojáři mohou vytvořit vlastní sadu značek. K dispozici je [doporučená sada značek](recommended-tags-for-documentation-comments.md). Některé z doporučených značek mají zvláštní význam:
 
-  - K popisu parametrů se používá značka \<param >. Pokud je tento parametr použit, kompilátor ověří, zda existuje parametr a zda jsou všechny parametry popsány v dokumentaci. Pokud se ověření nepovedlo, kompilátor vydá upozornění.
+  - Značka \<param> se používá k popisu parametrů. Pokud je použit, kompilátor ověří, zda parametr existuje a že všechny parametry jsou popsány v dokumentaci. Pokud se ověření nezdařilo, kompilátor vydá upozornění.
 
-  - Atribut `cref` lze připojit k libovolné značce k poskytnutí odkazu na prvek kódu. Kompilátor ověřuje, zda tento prvek kódu existuje. Pokud se ověření nepovedlo, kompilátor vydá upozornění. Kompilátor respektuje jakékoli `using` příkazy, pokud hledá typ popsaný v atributu `cref`.
+  - Atribut `cref` lze připojit k libovolné značce poskytnout odkaz na prvek kódu. Kompilátor ověří, zda tento prvek kódu existuje. Pokud se ověření nezdařilo, kompilátor vydá upozornění. Kompilátor respektuje `using` všechny příkazy, když hledá typ `cref` popsaný v atributu.
 
-  - Inteligentní > Značka \<je používána technologií IntelliSense v aplikaci Visual Studio k zobrazení dalších informací o typu nebo členu.
+  - Značka \<souhrnné> používá technologie IntelliSense v sadě Visual Studio k zobrazení dalších informací o typu nebo členu.
 
     > [!NOTE]
-    > Soubor XML neposkytuje úplné informace o typu a členech (například neobsahuje žádné informace o typu). Chcete-li získat úplné informace o typu nebo členu, je nutné použít soubor dokumentace spolu s reflexí pro skutečný typ nebo člen.
+    > Soubor XML neposkytuje úplné informace o typu a členy (například neobsahuje žádné informace o typu). Chcete-li získat úplné informace o typu nebo členu, musí být soubor dokumentace použit společně s reflexí skutečného typu nebo člena.
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [C#Průvodce programováním](../index.md)
-- [-doc (C# možnosti kompilátoru)](../../language-reference/compiler-options/doc-compiler-option.md)
-- [Dokumentační komentáře XML](./index.md)
-- [Procesor dokumentace DocFX](https://dotnet.github.io/docfx/)
-- [Procesor dokumentace Sandcastle](https://github.com/EWSoftware/SHFB)
+- [Průvodce programováním v C#](../index.md)
+- [-doc (možnosti kompilátoru Jazyka C#)](../../language-reference/compiler-options/doc-compiler-option.md)
+- [Komentáře dokumentace XML](./index.md)
+- [Dokumentační procesor DocFX](https://dotnet.github.io/docfx/)
+- [Dokumentační procesor Sandcastle](https://github.com/EWSoftware/SHFB)

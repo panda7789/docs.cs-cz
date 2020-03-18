@@ -7,63 +7,63 @@ helpviewer_keywords:
 - garbage collection, latency modes
 ms.assetid: 96278bb7-6eab-4612-8594-ceebfc887d81
 ms.openlocfilehash: a8eaf0c80aa32978eead80c51a905cbcd66a537b
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "74283598"
 ---
 # <a name="latency-modes"></a>Režimy latence
 
-Chcete-li uvolnit objekty, musí uvolňování paměti (GC) zastavit všechny spuštěné vlákna v aplikaci. Doba, během které je systém uvolňování paměti aktivní, se označuje jako *latence*.
+Chcete-li získat objekty, systém uvolňování paměti (GC) musí zastavit všechna spuštěná vlákna v aplikaci. Doba, po kterou je aktivní systém uvolňování paměti, se označuje jako jeho *latence*.
 
-V některých situacích, například když aplikace načítá data nebo zobrazuje obsah, může v kritickém čase dojít k úplnému uvolňování paměti a brání se tak výkonu. Můžete upravit rušivost systému uvolňování paměti nastavením vlastnosti <xref:System.Runtime.GCSettings.LatencyMode%2A?displayProperty=nameWithType> na jednu z hodnot <xref:System.Runtime.GCLatencyMode?displayProperty=nameWithType>.
+V některých situacích, například když aplikace načte data nebo zobrazí obsah, úplné uvolnění paměti může dojít v kritickém čase a bránit výkonu. Můžete upravit rušivost systému uvolňování paměti <xref:System.Runtime.GCSettings.LatencyMode%2A?displayProperty=nameWithType> nastavením vlastnosti <xref:System.Runtime.GCLatencyMode?displayProperty=nameWithType> na jednu z hodnot.
 
-## <a name="low-latency-settings"></a>Nastavení nízké latence
+## <a name="low-latency-settings"></a>Nastavení s nízkou latencí
 
-Když použijete nastavení latence nízká, znamená to, že systém uvolňování paměti intrudes méně ve vaší aplikaci. Uvolňování paměti je více konzervativní pro uvolnění paměti.
+Použití "nízké" latence nastavení znamená, že uvolňování vnikne méně ve vaší aplikaci. Uvolňování paměti je konzervativnější o uvolnění paměti.
 
 Výčet <xref:System.Runtime.GCLatencyMode?displayProperty=nameWithType> poskytuje dvě nastavení s nízkou latencí:
 
-- [GCLatencyMode. LowLatency](xref:System.Runtime.GCLatencyMode.LowLatency) potlačí kolekce 2. generace a provede pouze kolekce generace 0 a 1. Dá se použít jenom pro krátkou dobu. V delší dobu, pokud je systém v paměti, uvolňování paměti spustí kolekci, která může krátce pozastavit aplikaci a rušit kritické operace. Toto nastavení je dostupné jenom pro uvolňování paměti pracovní stanice.
+- [GCLatencyMode.LowLatency](xref:System.Runtime.GCLatencyMode.LowLatency) potlačuje kolekce generace 2 a provádí pouze generování 0 a 1 kolekce. Může být použit pouze na krátkou dobu. Po delší dobu, pokud je systém pod tlakem paměti, systém uvolňování paměti spustí kolekci, která může krátce pozastavit aplikaci a narušit časově kritickou operaci. Toto nastavení je k dispozici pouze pro uvolňování paměti pracovní stanice.
 
-- [GCLatencyMode. SustainedLowLatency](xref:System.Runtime.GCLatencyMode.SustainedLowLatency) potlačí kolekce na popředí 2. generace a provede pouze kolekce generace 0, 1 a Background generace 2. Dá se použít po delší dobu a je k dispozici pro pracovní stanici i pro uvolňování paměti serveru. Toto nastavení se nedá použít, pokud je zakázané uvolňování paměti na pozadí.
+- [GCLatencyMode.SustainedLowLatency](xref:System.Runtime.GCLatencyMode.SustainedLowLatency) potlačuje kolekce generace popředí 2 a provádí pouze generování 0, 1 a pozadí generace 2 kolekce. Může být použit pro delší časové období a je k dispozici pro pracovní stanice a server uvolňování paměti. Toto nastavení nelze použít, pokud je zakázáno uvolňování paměti na pozadí.
 
-Během období s nízkou latencí jsou kolekce 2. generace potlačeny, pokud nedojde k následujícím akcím:
+Během období s nízkou latencí generace 2 kolekce jsou potlačeny, pokud dojde k následující:
 
 - Systém obdrží oznámení o nedostatku paměti z operačního systému.
 
-- Kód aplikace vyvolá kolekci voláním metody <xref:System.GC.Collect%2A?displayProperty=nameWithType> a zadáním 2 pro parametr `generation`.
+- Kód aplikace indukuje <xref:System.GC.Collect%2A?displayProperty=nameWithType> kolekci voláním `generation` metody a zadáním 2 pro parametr.
 
 ## <a name="scenarios"></a>Scénáře
 
-Následující tabulka obsahuje seznam scénářů aplikací pro použití <xref:System.Runtime.GCLatencyMode>ch hodnot:
+V následující tabulce jsou uvedeny <xref:System.Runtime.GCLatencyMode> scénáře aplikace pro použití hodnot:
 
-|Režim latence|Scénáře aplikací|
+|Latence režim|Scénáře aplikací|
 |------------------|---------------------------|
-|<xref:System.Runtime.GCLatencyMode.Batch>|Pro aplikace, které nemají žádné uživatelské rozhraní (UI) nebo serverové operace.<br /><br />Když je zakázané uvolňování paměti na pozadí, jedná se o výchozí režim pro uvolnění paměti pracovní stanice a serveru. režim <xref:System.Runtime.GCLatencyMode.Batch> také přepisuje nastavení [gcConcurrent](../../framework/configure-apps/file-schema/runtime/gcconcurrent-element.md) , to znamená, že zabrání na pozadí nebo souběžných kolekcích.|
-|<xref:System.Runtime.GCLatencyMode.Interactive>|Pro většinu aplikací, které mají uživatelské rozhraní.<br /><br />Toto je výchozí režim pro uvolňování paměti pracovních stanic a serverů. Pokud je však aplikace hostována, má přednost nastavení systému uvolňování paměti hostitelského procesu.|
-|<xref:System.Runtime.GCLatencyMode.LowLatency>|Pro aplikace, které mají krátkodobé, časově citlivé operace, během kterých by mohlo dojít k přerušení výpadků ze systému uvolňování paměti. Například aplikace, které vykreslují animace nebo funkce pro získání dat.|
-|<xref:System.Runtime.GCLatencyMode.SustainedLowLatency>|Pro aplikace, které mají časově náročné operace pro obsaženou, ale potenciálně delší dobu, kdy může dojít k přerušení výpadků ze systému uvolňování paměti. Například aplikace, které vyžadují dobu trvání rychlé odezvy v době, kdy se mění data trhu během doby obchodování.<br /><br />Výsledkem tohoto režimu je větší spravovaná velikost haldy než jiné režimy. Vzhledem k tomu, že nástroj nekomprimuje spravovanou haldu, je možné zvýšit fragmentaci. Ujistěte se, že je k dispozici dostatek paměti.|
+|<xref:System.Runtime.GCLatencyMode.Batch>|Pro aplikace, které nemají žádné uživatelské rozhraní (UI) nebo operace na straně serveru.<br /><br />Pokud je uvolňování paměti na pozadí zakázáno, jedná se o výchozí režim pro uvolňování paměti pracovní stanice a serveru. <xref:System.Runtime.GCLatencyMode.Batch>režim také přepíše nastavení [gcConcurrent,](../../framework/configure-apps/file-schema/runtime/gcconcurrent-element.md) to znamená, že zabraňuje pozadí nebo souběžných kolekcí.|
+|<xref:System.Runtime.GCLatencyMode.Interactive>|Pro většinu aplikací, které mají ui.<br /><br />Toto je výchozí režim pro uvolňování paměti pracovní stanice a serveru. Pokud je však aplikace hostována, mají přednost nastavení uvolňování paměti hostitelského procesu.|
+|<xref:System.Runtime.GCLatencyMode.LowLatency>|Pro aplikace, které mají krátkodobé, časově citlivé operace, během kterého přerušení z uvolňování může být rušivé. Například aplikace, které vykreslují animace nebo funkce pro sběr dat.|
+|<xref:System.Runtime.GCLatencyMode.SustainedLowLatency>|Pro aplikace, které mají časově citlivé operace pro uzavřené, ale potenciálně delší dobu trvání, během kterého přerušení z uvolňování může být rušivé. Například aplikace, které potřebují rychlou odezvu, protože se během obchodních hodin mění údaje o trhu.<br /><br />Výsledkem tohoto režimu je větší velikost spravované haldy než jiné režimy. Vzhledem k tomu, že není komprimovat spravované haldy, vyšší fragmentace je možné. Ujistěte se, že je k dispozici dostatek paměti.|
 
-## <a name="guidelines-for-using-low-latency"></a>Pokyny pro použití nízké latence
+## <a name="guidelines-for-using-low-latency"></a>Pokyny pro použití s nízkou latencí
 
-Při použití režimu [GCLatencyMode. LowLatency](xref:System.Runtime.GCLatencyMode.LowLatency) zvažte následující pokyny:
+Při použití [režimu GCLatencyMode.LowLatency](xref:System.Runtime.GCLatencyMode.LowLatency) zvažte následující pokyny:
 
-- Udržujte dobu v nízké latenci, která je co nejkratší.
+- Udržujte časové období v nízké latenci co nejkratší.
 
-- Vyhněte se přidělování vysoké velikosti paměti během období s nízkou latencí. K oznamování nedostatku paměti může dojít, protože uvolňování paměti uvolňuje méně objektů.
+- Vyhněte se přidělování vysoké množství paměti během období s nízkou latencí. Oznámení nedostatku paměti může dojít, protože uvolňování paměti uvolňuje méně objektů.
 
-- V režimu s nízkou latencí Minimalizujte počet nových přidělení, zejména přidělení na haldu velkých objektů a připnuté objekty.
+- Zatímco v režimu s nízkou latencí, minimalizovat počet nových přidělení, zejména přidělení na haldy velkého objektu a připnuté objekty.
 
-- Upozorňujeme na vlákna, která by se dala přidělit. Vzhledem k tomu, že nastavení vlastnosti <xref:System.Runtime.GCSettings.LatencyMode%2A> je v rámci procesu, <xref:System.OutOfMemoryException> výjimky mohou být generovány v jakémkoli vlákně, které je alokováno.
+- Mějte na paměti podprocesy, které by mohly být přidělování. Vzhledem <xref:System.Runtime.GCSettings.LatencyMode%2A> k tomu, že <xref:System.OutOfMemoryException> nastavení vlastnosti je celý proces, výjimky mohou být generovány v libovolném vlákně, které je přidělování.
 
-- Zabalte kód nízké latence v oblastech omezeného provádění. Další informace najdete v tématu [omezené oblasti provádění](../../../docs/framework/performance/constrained-execution-regions.md).
+- Zalomit kód s nízkou latencí v oblastech omezené spuštění. Další informace naleznete [v tématu Oblasti omezeného provádění](../../../docs/framework/performance/constrained-execution-regions.md).
 
-- Můžete vynutit kolekce 2. generace během období s nízkou latencí voláním metody <xref:System.GC.Collect%28System.Int32%2CSystem.GCCollectionMode%29?displayProperty=nameWithType>.
+- Můžete vynutit generování 2 kolekce během období <xref:System.GC.Collect%28System.Int32%2CSystem.GCCollectionMode%29?displayProperty=nameWithType> s nízkou latencí voláním metody.
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.GC?displayProperty=nameWithType>
 - [Vyvolané kolekce](../../../docs/standard/garbage-collection/induced.md)
-- [Uvolňování paměti](../../../docs/standard/garbage-collection/index.md)
+- [Kolekce paměti](../../../docs/standard/garbage-collection/index.md)

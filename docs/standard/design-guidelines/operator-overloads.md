@@ -9,42 +9,42 @@ helpviewer_keywords:
 - overloaded operators
 ms.assetid: 37585bf2-4c27-4dee-849a-af70e3338cc1
 ms.openlocfilehash: 0999e94c8d77396b237522e89c51206ce1226718
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76743685"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79400566"
 ---
 # <a name="operator-overloads"></a>Přetížení operátoru
-Přetížení operátorů umožňují, aby se typy rozhraní zobrazovaly, jako kdyby byly předdefinované jazykové primitivy.
+Přetížení operátorů umožňují, aby se typy architektury zobrazovaly, jako by byly předdefinované jazykové primitivy.
 
- I když je v některých situacích povolená a užitečná, je nutné přetížení operátorů používat obezřetně. Existuje mnoho případů, ve kterých je přetížení operátoru zneužití, například když návrháři architektury začali používat operátory pro operace, které by měly být jednoduché metody. Následující pokyny by vám měly pomáhat při rozhodování, kdy a jak používat přetížení operátoru.
+ Ačkoli povolené a užitečné v některých situacích, přetížení operátoru by měly být používány opatrně. Existuje mnoho případů, ve kterých bylo zneužito přetížení operátoru, například když návrháři architektury začali používat operátory pro operace, které by měly být jednoduché metody. Následující pokyny by vám měly pomoci rozhodnout, kdy a jak používat přetížení operátoru.
 
- ❌ Vyhněte se definování přetížení operátoru, s výjimkou typů, které by se měly cítit jako primitivní (předdefinované) typy.
+ ❌Vyhněte se definování přetížení operátoru, s výjimkou typů, které by se měly cítit jako primitivní (vestavěné) typy.
 
- ✔️ Zvažte definování přetížení operátoru v typu, který by se měl cítit jako primitivní typ.
+ ✔️ zvážit definování přetížení operátoru v typu, který by se měl cítit jako primitivní typ.
 
- Například <xref:System.String?displayProperty=nameWithType> má definováno `operator==` a `operator!=`.
+ Například <xref:System.String?displayProperty=nameWithType> má `operator==` `operator!=` a definována.
 
- ✔️ definovat přetížení operátoru ve strukturách, které reprezentují čísla (například <xref:System.Decimal?displayProperty=nameWithType>).
+ ✔️ do definovat přetížení operátoru ve strukturách, <xref:System.Decimal?displayProperty=nameWithType>které představují čísla (například ).
 
- ❌ roztomilá při definování přetížení operátoru.
+ ❌Nebuďte roztomilí při definování přetížení operátoru.
 
- Přetížení operátoru je užitečné v případech, kdy je okamžitě zřejmé, jaký výsledek operace bude. Je například vhodné, aby bylo možné odečíst jednu <xref:System.DateTime> z jiného `DateTime` a získat <xref:System.TimeSpan>. Není však vhodné použít operátor logického sjednocení pro sjednocení dvou databázových dotazů nebo k zápisu do datového proudu pomocí operátoru Shift.
+ Přetížení operátoru je užitečné v případech, kdy je okamžitě zřejmé, jaký bude výsledek operace. Například má smysl, aby bylo možné <xref:System.DateTime> odečíst jeden od druhého `DateTime` a získat <xref:System.TimeSpan>. Není však vhodné použít operátor logického sjednocení k sjednocení dvou databázových dotazů nebo k zápisu do datového proudu pomocí operátoru shift.
 
- ❌ neposkytují přetížení operátorů, pokud alespoň jeden z operandů není typu definujícího přetížení.
+ ❌NEPOSKYTUJÍ operátor přetížení, pokud alespoň jeden z operandů je typu definující přetížení.
 
- ✔️ operátory přetížení způsobem symetricky.
+ ✔️ operátory přetížení do symetrickým způsobem.
 
- Například Pokud převedete `operator==`, měli byste také přetížit `operator!=`. Podobně pokud převedete `operator<`, měli byste také přetížit `operator>`a tak dále.
+ Například pokud přetížení `operator==`, měli byste `operator!=`také přetížení . Podobně pokud přetížení `operator<`, měli byste také `operator>`přetížení , a tak dále.
 
- ✔️ Zvažte poskytnutí metod s popisnými názvy, které odpovídají každému přetíženému operátoru.
+ ✔️ zvažte poskytování metod s popisnými názvy, které odpovídají každému přetíženému operátoru.
 
- Mnoho jazyků nepodporuje přetížení operátorů. Z tohoto důvodu se doporučuje, aby typy, které přetěžují operátory obsahují sekundární metodu s vhodným názvem domény, který poskytuje ekvivalentní funkce.
+ Mnoho jazyků nepodporuje přetížení operátoru. Z tohoto důvodu se doporučuje, aby typy operátorů přetížení obsahovat sekundární metodu s odpovídající název specifické pro doménu, který poskytuje ekvivalentní funkce.
 
  Následující tabulka obsahuje seznam operátorů a odpovídající popisné názvy metod.
 
-|C#Symbol operátoru|Název metadat|Popisný název|
+|Symbol operátora Jazyka C#|Název metadat|Popisný název|
 |-------------------------|-------------------|-------------------|
 |`N/A`|`op_Implicit`|`To<TypeName>/From<TypeName>`|
 |`N/A`|`op_Explicit`|`To<TypeName>/From<TypeName>`|
@@ -85,31 +85,31 @@ Přetížení operátorů umožňují, aby se typy rozhraní zobrazovaly, jako k
 |`+ (unary)`|`op_UnaryPlus`|`Plus`|
 |`~`|`op_OnesComplement`|`OnesComplement`|
 
-### <a name="overloading-operator-"></a>Operátor přetížení = =
- Přetížení `operator ==` je poměrně komplikované. Sémantika operátoru musí být kompatibilní s několika ostatními členy, například <xref:System.Object.Equals%2A?displayProperty=nameWithType>.
+### <a name="overloading-operator-"></a>Operátor přetížení ==
+ Přetížení `operator ==` je poměrně komplikované. Sémantiku operátora musí být kompatibilní s několika <xref:System.Object.Equals%2A?displayProperty=nameWithType>dalšími členy, například .
 
 ### <a name="conversion-operators"></a>Operátory převodu
- Operátory převodu jsou unární operátory, které umožňují převod z jednoho typu na jiný. Operátory musí být definovány jako statické členy buď na operandu, nebo na návratový typ. Existují dva typy operátorů převodu: implicitní a explicitní.
+ Operátory převodu jsou unární operátory, které umožňují převod z jednoho typu na jiný. Operátory musí být definovány jako statické členy na operandu nebo návratového typu. Existují dva typy operátorů převodu: implicitní a explicitní.
 
- ❌ neposkytují operátor převodu, Pokud koncoví uživatelé tyto převody jasně neočekávají.
+ ❌Neposkytujte operátor převodu, pokud takový převod není jasně očekáván koncovými uživateli.
 
- ❌ nedefinovat operátory převodu mimo doménu typu.
+ ❌NEDEFINUJTE operátory převodu mimo doménu typu.
 
- Například <xref:System.Int32>, <xref:System.Double>a <xref:System.Decimal> jsou všechny číselné typy, zatímco <xref:System.DateTime> ne. Proto by neměl existovat žádný operátor převodu k převedení `Double(long)` na `DateTime`. V takovém případě je upřednostňován konstruktor.
+ Například <xref:System.Int32>, <xref:System.Double>, <xref:System.Decimal> a jsou všechny <xref:System.DateTime> číselné typy, vzhledem k tomu, že není. Proto by měl být žádný operátor `Double(long)` převodu převést na `DateTime`. Konstruktor je upřednostňován v takovém případě.
 
- ❌ neposkytují implicitní operátor převodu, pokud je převod potenciálně ztrátný.
+ ❌NEPOSKYTUJÍ implicitní operátor převodu, pokud převod je potenciálně ztrátové.
 
- Například by neměl být implicitní převod z `Double` na `Int32`, protože `Double` má širší rozsah než `Int32`. Explicitní operátor převodu lze zadat i v případě, že je převod potenciálně ztrátný.
+ Například by neměl být implicitní `Double` `Int32` převod `Double` z do, `Int32`protože má širší rozsah než . Explicitní operátor převodu může být poskytnuta i v případě, že převod je potenciálně ztrátové.
 
- ❌ nevyvolávat výjimky z implicitních přetypování.
+ ❌NEVYVOLÁVAT výjimky z implicitní přetypáže.
 
- Koncovým uživatelům je velmi obtížné pochopit, co se děje, protože nemusí vědět, že probíhá převod.
+ Pro koncové uživatele je velmi obtížné pochopit, co se děje, protože si nemusí být vědomi, že probíhá převod.
 
- ✔️ vyvolat <xref:System.InvalidCastException?displayProperty=nameWithType>, pokud volání operátoru přetypování má za následek ztrátový převod a kontrakt operátora nepovoluje ztrátové převody.
+ ✔️ DO <xref:System.InvalidCastException?displayProperty=nameWithType> throw, pokud volání operátoru přetypovacího vysílání vede ke ztrátovému převodu a smlouva operátoru neumožňuje ztrátové převody.
 
  *Části © 2005, 2009 Microsoft Corporation. Všechna práva vyhrazena.*
 
- *Přetištěno oprávněním Pearsonova vzdělávání, Inc. z [pokynů pro návrh rozhraní: konvence, idiomy a vzory pro opakovaně použitelné knihovny .NET, druhá edice](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) od Krzysztof Cwalina a Brad Abrams, publikovaly 22. října 2008 Addison-Wesley Professional jako součást sady Microsoft Windows Development Series.*
+ *Přetištěno se svolením Pearson Education, Inc. z [Framework Design Guidelines: Conventions, Idioms, and Patterns for Reusable .NET Libraries, 2nd Edition](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) by Krzysztof Cwalina and Brad Abrams, published Oct 22, 2008 by Addison-Wesley Professional as part of the Microsoft Windows Development Series.*
 
 ## <a name="see-also"></a>Viz také
 

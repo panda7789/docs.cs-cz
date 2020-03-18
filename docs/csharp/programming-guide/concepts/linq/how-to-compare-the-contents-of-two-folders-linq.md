@@ -1,27 +1,27 @@
 ---
-title: Postup porovnání obsahu dvou složek (LINQ) (C#)
+title: Jak porovnat obsah dvou složek (LINQ) (C#)
 ms.date: 07/20/2015
 ms.assetid: c7c4870e-c500-4de3-afa4-2c8e07f510e6
-ms.openlocfilehash: 9d46303068f2284415ea50c0514d76c5b2b55780
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.openlocfilehash: 44dc97d6d48bed5e8b4d0376838e4dada2e8300c
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75346540"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79169399"
 ---
-# <a name="how-to-compare-the-contents-of-two-folders-linq-c"></a>Postup porovnání obsahu dvou složek (LINQ) (C#)
-Tento příklad ukazuje tři způsoby, jak porovnat dva seznamy souborů:  
+# <a name="how-to-compare-the-contents-of-two-folders-linq-c"></a>Jak porovnat obsah dvou složek (LINQ) (C#)
+Tento příklad ukazuje tři způsoby porovnání dvou výpisů souborů:  
   
-- Dotazování na logickou hodnotu, která určuje, zda jsou dva seznamy souborů identické.  
+- Dotazem na logickou hodnotu, která určuje, zda jsou dva seznamy souborů identické.  
   
-- Dotazem pro průnik pro načtení souborů, které jsou v obou složkách.  
+- Dotazem na průsečík načíst soubory, které jsou v obou složkách.  
   
-- Pomocí dotazu na nastavený rozdíl, který načte soubory, které jsou v jedné složce, ale ne na druhé.  
+- Dotazem na rozdíl sady načíst soubory, které jsou v jedné složce, ale ne v druhé.  
   
     > [!NOTE]
-    > Zde uvedené techniky lze přizpůsobit pro porovnání sekvencí objektů libovolného typu.  
+    > Zde uvedené techniky lze upravit tak, aby porovnávaly sekvence objektů libovolného typu.  
   
- Třída `FileComparer` zobrazená zde ukazuje, jak použít vlastní třídu porovnávače společně se standardními operátory dotazu. Třída není určena pro použití ve scénářích reálného světa. Používá pouze název a délku v bajtech jednotlivých souborů, aby bylo možné určit, zda obsah každé složky je identický nebo nikoli. Ve scénáři reálného světa byste tuto porovnávací metodu měli upravit, aby prováděla přísnější kontrolu rovnosti.  
+ Třída `FileComparer` zde zobrazena ukazuje, jak používat vlastní třídu porovnávání spolu s operátory standardní dotaz. Třída není určena pro použití v reálných scénářích. Pouze používá název a délku v bajtů každého souboru k určení, zda obsah každé složky jsou identické nebo ne. V reálném scénáři byste měli upravit tento porovnávání provést přísnější kontrolu rovnosti.  
   
 ## <a name="example"></a>Příklad  
   
@@ -34,7 +34,7 @@ namespace QueryCompareTwoDirs
         static void Main(string[] args)  
         {  
   
-            // Create two identical or different temporary folders   
+            // Create two identical or different temporary folders
             // on a local drive and change these file paths.  
             string pathA = @"C:\TestDir";  
             string pathB = @"C:\TestDir2";  
@@ -64,7 +64,7 @@ namespace QueryCompareTwoDirs
                 Console.WriteLine("The two folders are not the same");  
             }  
   
-            // Find the common files. It produces a sequence and doesn't   
+            // Find the common files. It produces a sequence and doesn't
             // execute until the foreach statement.  
             var queryCommonFiles = list1.Intersect(list2, myFileCompare);  
   
@@ -111,7 +111,7 @@ namespace QueryCompareTwoDirs
                     f1.Length == f2.Length);  
         }  
   
-        // Return a hash that reflects the comparison criteria. According to the   
+        // Return a hash that reflects the comparison criteria. According to the
         // rules for IEqualityComparer<T>, if Equals is true, then the hash codes must  
         // also be equal. Because equality as defined here is a simple value equality, not  
         // reference identity, it is possible that two or more objects will produce the same  
@@ -126,9 +126,9 @@ namespace QueryCompareTwoDirs
 ```  
   
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
- Vytvořte projekt C# konzolové aplikace s direktivami `using` pro obory názvů System. Linq a System.IO.  
+ Vytvořte projekt aplikace konzoly `using` Jazyka C# se direktivami pro obory názvů System.Linq a System.IO.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [LINQ to Objects (C#)](./linq-to-objects.md)
-- [LINQ a souborové adresáře (C#)](./linq-and-file-directories.md)
+- [LINQ na objekty (C#)](./linq-to-objects.md)
+- [Linq a souborové adresáře (C#)](./linq-and-file-directories.md)

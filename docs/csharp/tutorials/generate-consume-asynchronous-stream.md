@@ -1,75 +1,75 @@
 ---
 title: Generování a využívání asynchronních datových proudů
-description: Tento rozšířený kurz znázorňuje scénáře, kdy generování a využívání asynchronních streamů poskytuje přirozenější způsob práce s posloupnosti dat, která se dají vygenerovat asynchronně.
+description: Tento pokročilý kurz ilustruje scénáře, kde generování a využívání asynchronních datových proudů poskytuje přirozenější způsob práce s sekvencemi dat, které mohou být generovány asynchronně.
 ms.date: 02/10/2019
 ms.technology: csharp-async
 ms.custom: mvc
-ms.openlocfilehash: 2fab2917a26a1774ad73866fa0448dbf47c94583
-ms.sourcegitcommit: 43d10ef65f0f1fd6c3b515e363bde11a3fcd8d6d
+ms.openlocfilehash: de090eb9cc1e8b511956313ab5169ee4d07a492f
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/03/2020
-ms.locfileid: "78240090"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79156737"
 ---
-# <a name="tutorial-generate-and-consume-async-streams-using-c-80-and-net-core-30"></a>Kurz: generování a využívání asynchronních datových C# proudů pomocí 8,0 a .net Core 3,0
+# <a name="tutorial-generate-and-consume-async-streams-using-c-80-and-net-core-30"></a>Kurz: Generování a využívání asynchronních datových proudů pomocí c# 8.0 a .NET Core 3.0
 
-C#8,0 zavádí **asynchronní streamy**, které modelují zdroj dat streamování, když mohou být prvky v datovém proudu načteny nebo generovány asynchronně. Asynchronní streamy spoléhají na nová rozhraní zavedená v .NET Standard 2,1 a implementovaná v rozhraní .NET Core 3,0 za účelem poskytnutí přirozeného programovacího modelu pro zdroje dat pro asynchronní streamování.
+C# 8.0 zavádí **asynchronní proudy**, které modelují zdroj datových proudů, když mohou být prvky v datovém proudu načteny nebo generovány asynchronně. Asynchronní proudy spoléhají na nová rozhraní zavedená v rozhraní .NET Standard 2.1 a implementovaná v rozhraní .NET Core 3.0, aby poskytla přirozený programovací model pro asynchronní zdroje dat streamování.
 
 V tomto kurzu se naučíte:
 
 > [!div class="checklist"]
 >
 > - Vytvořte zdroj dat, který generuje posloupnost datových prvků asynchronně.
-> - Spotřebujte tento zdroj dat asynchronně.
-> - Rozpoznat, kdy je nové rozhraní a zdroj dat upřednostňováno na dřívější synchronní sekvence dat.
+> - Spotřebovávat tento zdroj dat asynchronně.
+> - Rozpoznat, kdy nové rozhraní a zdroj dat jsou upřednostňovány před starší synchronní datové sekvence.
 
-## <a name="prerequisites"></a>Předpoklady
+## <a name="prerequisites"></a>Požadavky
 
-Musíte nastavit počítač tak, aby běžel .NET Core, včetně kompilátoru C# 8,0. Kompilátor C# 8 je k dispozici počínaje [verzí Visual Studio 2019 verze 16,3](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2019) nebo [.NET Core 3,0 SDK](https://dotnet.microsoft.com/download).
+Budete muset nastavit počítač pro spuštění .NET Core, včetně kompilátoru C# 8.0. Kompilátor Jazyka C# 8 je k dispozici počínaje [sadou Visual Studio 2019 verze 16.3](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2019) nebo [.NET Core 3.0 SDK](https://dotnet.microsoft.com/download).
 
-Budete muset vytvořit [přístupový token GitHubu](https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/#creating-a-token) , abyste mohli získat přístup ke koncovému bodu GraphQL GitHubu. Pro přístupový token GitHubu vyberte následující oprávnění:
+Budete muset vytvořit [přístupový token GitHubu,](https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/#creating-a-token) abyste měli přístup ke koncovému bodu GitHub GraphQL. Vyberte následující oprávnění pro přístupový token GitHubu:
 
-- repo:status
+- repo:stav
 - public_repo
 
-Uložte přístupový token na bezpečném místě, abyste ho mohli použít k získání přístupu ke koncovému bodu rozhraní API GitHubu.
+Uložte přístupový token na bezpečném místě, abyste ho mohli použít k získání přístupu ke koncovému bodu rozhraní API GitHub.
 
 > [!WARNING]
-> Udržujte svůj osobní přístupový token zabezpečený. Libovolný software s vaším osobním přístupovým tokenem by mohl volat rozhraní API GitHubu pomocí vašich přístupových práv.
+> Udržujte svůj osobní přístupový token v bezpečí. Jakýkoli software s vaším osobním přístupovým tokenem může volat rozhraní GitHub API pomocí vašich přístupových práv.
 
-V tomto kurzu se předpokládá, že C# máte zkušenosti s platformou a .NET, včetně sady Visual Studio nebo .NET Core CLI.
+Tento kurz předpokládá, že jste obeznámeni s C# a .NET, včetně Visual Studio nebo .NET Core CLI.
 
-## <a name="run-the-starter-application"></a>Spuštění aplikace Starter
+## <a name="run-the-starter-application"></a>Spuštění startovací aplikace
 
-Kód pro úvodní aplikaci použitou v tomto kurzu můžete získat z našeho úložiště [dotnet/Samples](https://github.com/dotnet/samples) ve složce [CSharp/tutorials/AsyncStreams](https://github.com/dotnet/samples/tree/master/csharp/tutorials/AsyncStreams/start) .
+Můžete získat kód pro počáteční aplikace použité v tomto kurzu z [našeho úložiště dotnet/samples](https://github.com/dotnet/samples) ve složce [csharp/tutorials/AsyncStreams.](https://github.com/dotnet/samples/tree/master/csharp/tutorials/AsyncStreams/start)
 
-Úvodní aplikace je Konzolová aplikace, která používá rozhraní [GitHub GraphQL](https://developer.github.com/v4/) k načtení nedávných problémů napsaných v úložišti [dotnet/docs](https://github.com/dotnet/docs) . Začněte tím, že si vyhledáte následující kód pro úvodní aplikaci `Main` metodu:
+Počáteční aplikace je konzolová aplikace, která používá rozhraní [GitHub GraphQL](https://developer.github.com/v4/) k načtení nedávných problémů napsaných v úložišti [dotnet/docs.](https://github.com/dotnet/docs) Začněte tím, že se podíváte na následující kód pro metodu počáteční aplikace: `Main`
 
 [!code-csharp[StarterAppMain](~/samples/snippets/csharp/tutorials/AsyncStreams/start/IssuePRreport/IssuePRreport/Program.cs#StarterAppMain)]
 
-Můžete buď nastavit proměnnou prostředí `GitHubKey` na váš osobní přístupový token, nebo můžete nahradit poslední argument ve volání `GenEnvVariable` pomocí vašeho osobního přístupového tokenu. Pokud uložíte zdroj s ostatními nebo pokud ho umístíte do sdíleného zdrojového úložiště, neumísťujte do zdrojového kódu svůj přístupový kód.
+Můžete buď nastavit `GitHubKey` proměnnou prostředí na váš osobní přístupový token, nebo `GenEnvVariable` můžete nahradit poslední argument ve volání s vaším osobním přístupovým tokenem. Nevkládejte přístupový kód do zdrojového kódu, pokud budete zdroj ukládat s ostatními nebo jej ukládat do sdíleného zdrojového úložiště.
 
-Po vytvoření klienta GitHub kód v `Main` vytvoří objekt vytváření sestav o průběhu a token zrušení. Po vytvoření těchto objektů `Main` voláním `runPagedQueryAsync` načíst nejnovější 250 vytvořené problémy. Po dokončení této úlohy se zobrazí výsledky.
+Po vytvoření klienta GitHub `Main` kód v vytvoří objekt hlášení průběhu a token zrušení. Po vytvoření těchto `Main` objektů `runPagedQueryAsync` volání načíst posledních 250 vytvořených problémů. Po dokončení tohoto úkolu se zobrazí výsledky.
 
-Při spuštění aplikace Starter můžete provést několik důležitých pozorování, jak se tato aplikace spouští.  Uvidíte průběh nahlášený pro každou stránku vrácenou z GitHubu. Můžete sledovat, že se pozastavená pauza ještě před tím, než GitHub vrátí všechny nové stránky problémů. A konečně problémy se zobrazí až po načtení všech 10 stránek z GitHubu.
+Při spuštění počáteční aplikace, můžete provést některé důležité poznámky o tom, jak tato aplikace běží.  Uvidíte průběh hlášené pro každou stránku vrácenou z GitHubu. Můžete sledovat znatelnou pauzu, než GitHub vrátí každou novou stránku problémů. Nakonec se problémy zobrazí až po načtení všech 10 stránek z GitHubu.
 
-## <a name="examine-the-implementation"></a>Kontrola implementace
+## <a name="examine-the-implementation"></a>Prozkoumat provádění
 
-Implementace odhalí, proč jste pozorováni chování popsané v předchozí části. Projděte si kód pro `runPagedQueryAsync`:
+Implementace odhaluje, proč jste pozorovali chování popsané v předchozí části. Zkontrolujte kód `runPagedQueryAsync`pro :
 
 [!code-csharp[RunPagedQueryStarter](~/samples/snippets/csharp/tutorials/AsyncStreams/start/IssuePRreport/IssuePRreport/Program.cs#RunPagedQuery)]
 
-Pojďme se soustředit na algoritmus stránkování a asynchronní strukturu předchozího kódu. (Podrobnosti o rozhraních API GitHub GraphQL najdete v [dokumentaci k GitHubu GraphQL](https://developer.github.com/v4/guides/) .) Metoda `runPagedQueryAsync` vytvoří výčet problémů od nejnovějších k nejstarší. Vyžádá 25 problémů na stránku a prověřuje `pageInfo` struktury odpovědi, aby pokračovaly na předchozí stránce. To sleduje standardní podporu stránkování GraphQL pro reakce na vícestránkové stránky. Odpověď obsahuje objekt `pageInfo`, který obsahuje hodnotu `hasPreviousPages` a hodnotu `startCursor`, která se používá k vyžádání předchozí stránky. Problémy se nacházejí v poli `nodes`. Metoda `runPagedQueryAsync` připojí tyto uzly k poli, které obsahuje všechny výsledky ze všech stránek.
+Soustřeďme se na stránkovací algoritmus a asynchronní strukturu předchozího kódu. (Podrobnosti o rozhraní API GitHub GraphQL najdete v dokumentaci k [rozhraní GitHub](https://developer.github.com/v4/guides/) GraphQL.) Metoda `runPagedQueryAsync` vyjmenovává problémy od nejnovějších po nejstarší. Požaduje 25 otázek na stránku `pageInfo` a zkoumá strukturu odpovědi pokračovat s předchozí stránku. To vyplývá graphql standardní stránkování podporu pro vícestránkové odpovědi. Odpověď obsahuje `pageInfo` objekt, který `hasPreviousPages` obsahuje `startCursor` hodnotu a hodnotu použitou k vyžádání předchozí stránky. Problémy jsou `nodes` v poli. Metoda `runPagedQueryAsync` připojí tyto uzly k poli, které obsahuje všechny výsledky ze všech stránek.
 
-Po načtení a obnovení stránky výsledků `runPagedQueryAsync` nahlásí průběh a kontrolují zrušení. Pokud je požadováno zrušení, `runPagedQueryAsync` vyvolá <xref:System.OperationCanceledException>.
+Po načtení a obnovení stránky `runPagedQueryAsync` výsledků, hlásí průběh a kontroly zrušení. Pokud bylo požadováno `runPagedQueryAsync` zrušení, <xref:System.OperationCanceledException>vyvolá .
 
-Tento kód obsahuje několik prvků, které lze zlepšit. Nejdůležitější je, `runPagedQueryAsync` musí přidělit úložiště pro všechny vrácené problémy. Tato ukázka zastaví problémy 250, protože načtení všech otevřených problémů by vyžadovalo mnohem více paměti pro uložení všech načtených problémů. Navíc protokoly pro podporu pokroku a podpory zrušení usnadňují pochopení algoritmu při prvním čtení. Chcete-li zjistit, kde je zaznamenán průběh, je nutné vyhledat třídu Progress. Také je nutné trasovat komunikaci prostřednictvím <xref:System.Threading.CancellationTokenSource> a její přidružené <xref:System.Threading.CancellationToken>, abyste pochopili, kde je požadováno zrušení a kde je uděleno.
+Existuje několik prvků v tomto kódu, které lze zlepšit. A co `runPagedQueryAsync` je nejdůležitější, musí přidělit úložiště pro všechny vrácené problémy. Tato ukázka se zastaví na 250 problémy, protože načítání všech otevřených problémů by vyžadovalo mnohem více paměti pro uložení všech načtených problémů. Kromě toho protokoly pro podporu pokroku a podporu zrušení algoritmus těžší pochopit na jeho první čtení. Musíte vyhledat třídu průběhu a zjistit, kde je hlášen průběh. Musíte také sledovat komunikaci prostřednictvím <xref:System.Threading.CancellationTokenSource> a <xref:System.Threading.CancellationToken> jeho přidružené pochopit, kde je požadováno zrušení a kde je uděleno.
 
-## <a name="async-streams-provide-a-better-way"></a>Asynchronní streamy poskytují lepší způsob
+## <a name="async-streams-provide-a-better-way"></a>Asynchronní proudy poskytují lepší způsob
 
-Asynchronní streamy a přidružená jazyková podpora řeší všechna tyto aspekty. Kód, který generuje sekvenci, teď může použít `yield return` k vrácení prvků v metodě, která byla deklarována pomocí modifikátoru `async`. Asynchronní datový proud můžete využívat pomocí `await foreach` smyčky stejným způsobem jako jakoukoli sekvenci pomocí `foreach` smyčky.
+Asynchronní proudy a související jazyková podpora řeší všechny tyto obavy. Kód, který generuje sekvence nyní `yield return` můžete použít k vrácení prvků `async` v metodě, která byla deklarována s modifikátorem. Můžete konzumovat asynchronní `await foreach` datový proud pomocí smyčky stejně jako spotřebovávají libovolné sekvence pomocí `foreach` smyčky.
 
-Tyto nové funkce jazyka závisí na třech nových rozhraních přidaných do .NET Standard 2,1 a implementovaná v rozhraní .NET Core 3,0:
+Tyto nové jazykové funkce závisí na třech nových rozhraních, která jsou přidána do standardu .NET Standard 2.1 a implementována v rozhraní .NET Core 3.0:
 
 ```csharp
 namespace System.Collections.Generic
@@ -96,21 +96,21 @@ namespace System
 }
 ```
 
-Tato tři rozhraní by měla být obeznámena C# s většinou pro vývojáře. Chovají se způsobem podobným jejich synchronním protějškům:
+Tato tři rozhraní by měla být známá většině vývojářů jazyka C#. Chovají se podobně jako jejich synchronní protějšky:
 
 - <xref:System.Collections.Generic.IEnumerable%601?displayProperty=nameWithType>
 - <xref:System.Collections.Generic.IEnumerator%601?displayProperty=nameWithType>
 - <xref:System.IDisposable?displayProperty=nameWithType>
 
-Jeden typ, který může být neznámý, je <xref:System.Threading.Tasks.ValueTask?displayProperty=nameWithType>. Struktura `ValueTask` poskytuje podobné rozhraní API pro třídu <xref:System.Threading.Tasks.Task?displayProperty=nameWithType>. `ValueTask` se v těchto rozhraních používají z důvodů výkonu.
+Jeden typ, který může <xref:System.Threading.Tasks.ValueTask?displayProperty=nameWithType>být neznámý, je . `ValueTask` Struktura poskytuje podobné rozhraní API <xref:System.Threading.Tasks.Task?displayProperty=nameWithType> třídy. `ValueTask`se používá v těchto rozhraních z důvodů výkonu.
 
-## <a name="convert-to-async-streams"></a>Převést na asynchronní proudy
+## <a name="convert-to-async-streams"></a>Převod na asynchronní datové proudy
 
-Dále převeďte metodu `runPagedQueryAsync` pro vygenerování asynchronního datového proudu. Nejprve změňte podpis `runPagedQueryAsync` a vraťte `IAsyncEnumerable<JToken>`a odeberte token zrušení a objekty průběhu ze seznamu parametrů, jak je znázorněno v následujícím kódu:
+Dále převeďte metodu `runPagedQueryAsync` a vygenerujte asynchronní datový proud. Nejprve změňte `runPagedQueryAsync` podpis pro `IAsyncEnumerable<JToken>`vrácení a odeberte objekty tokenu zrušení a průběhu ze seznamu parametrů, jak je znázorněno v následujícím kódu:
 
 [!code-csharp[FinishedSignature](~/samples/snippets/csharp/tutorials/AsyncStreams/finished/IssuePRreport/IssuePRreport/Program.cs#UpdateSignature)]
 
-Počáteční kód zpracuje každou stránku při načtení stránky, jak je znázorněno v následujícím kódu:
+Počáteční kód zpracovává každou stránku při načítání stránky, jak je znázorněno v následujícím kódu:
 
 [!code-csharp[StarterPaging](~/samples/snippets/csharp/tutorials/AsyncStreams/start/IssuePRreport/IssuePRreport/Program.cs#ProcessPage)]
 
@@ -118,26 +118,28 @@ Nahraďte tyto tři řádky následujícím kódem:
 
 [!code-csharp[FinishedPaging](~/samples/snippets/csharp/tutorials/AsyncStreams/finished/IssuePRreport/IssuePRreport/Program.cs#YieldReturnPage)]
 
-Můžete také odebrat deklaraci `finalResults` dříve v této metodě a příkaz `return`, který následuje za smyčkou, kterou jste změnili.
+Můžete také odebrat `finalResults` prohlášení dříve v `return` této metodě a příkaz, který následuje za smyčky, kterou jste upravili.
 
-Dokončili jste změny pro vygenerování asynchronního datového proudu. Metoda Finish by měla vypadat podobně jako následující kód:
+Dokončili jste změny pro generování asynchronního datového proudu. Hotová metoda by se měla podobat níže uvedenému kódu:
 
 [!code-csharp[FinishedGenerate](~/samples/snippets/csharp/tutorials/AsyncStreams/finished/IssuePRreport/IssuePRreport/Program.cs#GenerateAsyncStream)]
 
-Dále změníte kód, který používá kolekci ke využívání asynchronního datového proudu. V `Main`, který zpracovává kolekci problémů, vyhledejte následující kód:
+Dále změníte kód, který spotřebovává kolekce využívat asynchronní datový proud. V tomto zpracuje tekutou kolekci problémů následující kód: `Main`
 
 [!code-csharp[EnumerateOldStyle](~/samples/snippets/csharp/tutorials/AsyncStreams/start/IssuePRreport/IssuePRreport/Program.cs#EnumerateOldStyle)]
 
-Nahraďte tento kód následující `await foreach` smyčce:
+Nahraďte tento `await foreach` kód následující smyčkou:
 
 [!code-csharp[FinishedEnumerateAsyncStream](~/samples/snippets/csharp/tutorials/AsyncStreams/finished/IssuePRreport/IssuePRreport/Program.cs#EnumerateAsyncStream)]
 
-Kód pro dokončený kurz můžete získat z úložiště [dotnet/Samples](https://github.com/dotnet/samples) ve složce [CSharp/tutorials/AsyncStreams](https://github.com/dotnet/samples/tree/master/csharp/tutorials/AsyncStreams/finished) .
+Ve výchozím nastavení jsou prvky datového proudu zpracovány v zachyceném kontextu. Pokud chcete zakázat zachycení kontextu, použijte <xref:System.Threading.Tasks.TaskAsyncEnumerableExtensions.ConfigureAwait%2A?displayProperty=nameWithType> metodu rozšíření. Další informace o kontextech synchronizace a zachycení aktuálního kontextu naleznete v článku o [využití asynchronního vzoru založeného na úlohách](../../standard/asynchronous-programming-patterns/consuming-the-task-based-asynchronous-pattern.md).
+
+Můžete získat kód pro hotový kurz z [úložiště dotnet/samples](https://github.com/dotnet/samples) ve složce [csharp/tutorials/AsyncStreams.](https://github.com/dotnet/samples/tree/master/csharp/tutorials/AsyncStreams/finished)
 
 ## <a name="run-the-finished-application"></a>Spuštění dokončené aplikace
 
-Spusťte aplikaci znovu. Kontrastujte své chování s chováním úvodní aplikace. První stránka výsledků je vyhodnocena, jakmile bude k dispozici. Je možné, že při každém vyžádání a načtení každé nové stránky dojde k pozastavení, takže se výsledky další stránky rychle vytvoří. Blok `catch` `try` / není nutné ke zpracování zrušení: volající může zastavit výčet kolekce. Průběh je jasně nahlášený, protože asynchronní datový proud generuje výsledky při stažení každé stránky. Stav každého vráceného problému je bez problémů zahrnutý ve smyčce `await foreach`. K sledování průběhu nepotřebujete objekt zpětného volání.
+Spusťte aplikaci znovu. Porovnejte jeho chování s chováním počáteční aplikace. První stránka výsledků je uveden, jakmile je k dispozici. Je tu pozorovatelné pauza jako každá nová stránka je požadována a načtena, pak další stránka výsledky jsou rychle vyčísleny. `try`  /  Blok `catch` není potřeba ke zpracování zrušení: volající můžete zastavit výčet kolekce. Průběh je jasně hlášena, protože asynchronní datový proud generuje výsledky jako každá stránka je stažena. Stav pro každý vrácený problém je `await foreach` hladce součástí smyčky. Ke sledování průběhu nepotřebujete objekt zpětného volání.
 
-Vylepšení využití paměti můžete zobrazit zkoumáním kódu. Již nemusíte přidělovat kolekci pro uložení všech výsledků před jejich výčtem. Volající může určit, jak se mají výsledky využívat, a pokud je potřeba kolekce úložiště.
+Můžete zobrazit zlepšení využití paměti kontrolou kódu. Již není nutné přidělit kolekci pro uložení všech výsledků před jejich výčtu. Volající můžete určit, jak spotřebovat výsledky a pokud je potřeba kolekce úložiště.
 
-Spouštějte počáteční i hotové aplikace a můžete sledovat rozdíly mezi implementacemi pro sebe. Přístupový token GitHubu, který jste vytvořili po spuštění tohoto kurzu, můžete odstranit po dokončení tohoto kurzu. Pokud útočník získal přístup k tomuto tokenu, měl by získat přístup k rozhraním API GitHubu pomocí vašich přihlašovacích údajů.
+Spusťte počáteční i dokončené aplikace a můžete sledovat rozdíly mezi implementacemi pro sebe. Můžete odstranit přístupový token GitHub, který jste vytvořili při spuštění tohoto kurzu po dokončení. Pokud útočník získal přístup k tomuto tokenu, mohl by přistupovat k rozhraním API GitHub pomocí vašich přihlašovacích údajů.

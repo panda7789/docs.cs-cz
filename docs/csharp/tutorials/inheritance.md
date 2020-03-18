@@ -1,66 +1,66 @@
 ---
-title: Dědičnost vC#
-description: Naučte se používat dědičnost C# v knihovnách a aplikacích.
+title: 'Dědičnost v C #'
+description: Naučte se používat dědičnost v knihovnách a aplikacích jazyka C#.
 ms.date: 07/05/2018
 ms.technology: csharp-fundamentals
 ms.assetid: aeb68c74-0ea0-406f-9fbe-2ce02d47ef31
-ms.openlocfilehash: b69da841c7c7a2e518191ad34f2ff5b368899728
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: b72badb7833e018dfcbf5d2583b17f17c800c382
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73120136"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79156750"
 ---
 # <a name="inheritance-in-c-and-net"></a>Dědičnost v jazyce C# a technologii .NET
 
-V tomto kurzu se seznámíte s C#děděním v. Dědičnost je funkcí objektově orientovaných programovacích jazyků, které umožňují definovat základní třídu, která poskytuje konkrétní funkce (data a chování) a definovat odvozené třídy, které obě tyto funkce dědí nebo přepíší.
+Tento kurz vás seznámí s dědičností v c#. Dědičnost je funkce objektově orientovaných programovacích jazyků, která umožňuje definovat základní třídu, která poskytuje specifické funkce (data a chování) a definovat odvozené třídy, které tuto funkci dědí nebo převyšují.
 
 ## <a name="prerequisites"></a>Požadavky
 
-V tomto kurzu se předpokládá, že jste nainstalovali .NET Core SDK. Navštivte stránku [ke stažení pro .NET Core](https://dotnet.microsoft.com/download) , kterou si můžete stáhnout. Budete také potřebovat Editor kódu. V tomto kurzu se používá [Visual Studio Code](https://code.visualstudio.com), i když můžete použít libovolný editor kódu, který si vyberete.
+Tento kurz předpokládá, že jste nainstalovali .NET Core SDK. Navštivte stránku [stahování jádra .NET a](https://dotnet.microsoft.com/download) stáhněte si ji. Potřebujete také editor kódu. Tento kurz používá [Visual Studio Code](https://code.visualstudio.com), i když můžete použít libovolný editor kódu podle vašeho výběru.
 
 ## <a name="running-the-examples"></a>Spuštění příkladů
 
-Chcete-li vytvořit a spustit příklady v tomto kurzu, použijte nástroj [dotnet](../../core/tools/dotnet.md) z příkazového řádku. Pro každý příklad použijte tento postup:
+Chcete-li vytvořit a spustit příklady v tomto kurzu, použijte nástroj [dotnet](../../core/tools/dotnet.md) z příkazového řádku. Pro každý příklad postupujte takto:
 
-1. Vytvořte adresář, do kterého chcete příklad Uložit.
-1. Chcete-li vytvořit nový projekt .NET Core, zadejte do příkazového řádku příkaz [dotnet New Console](../../core/tools/dotnet-new.md) .
+1. Vytvořte adresář pro uložení příkladu.
+1. Zadejte příkaz [dotnet new console](../../core/tools/dotnet-new.md) na příkazovém řádku a vytvořte nový projekt .NET Core.
 1. Zkopírujte a vložte kód z příkladu do editoru kódu.
-1. Zadejte příkaz [dotnet Restore](../../core/tools/dotnet-restore.md) z příkazového řádku, aby se načetly nebo obnovily závislosti projektu.
+1. Zadejte příkaz [dotnet restore](../../core/tools/dotnet-restore.md) z příkazového řádku, chcete-li načíst nebo obnovit závislosti projektu.
 
   [!INCLUDE[DotNet Restore Note](~/includes/dotnet-restore-note.md)]
 
-1. Zadejte příkaz [dotnet Run](../../core/tools/dotnet-run.md) pro zkompilování a spuštění příkladu.
+1. Zadejte příkaz [dotnet run](../../core/tools/dotnet-run.md) pro kompilaci a provedení příkladu.
 
-## <a name="background-what-is-inheritance"></a>Pozadí: co je dědičnost?
+## <a name="background-what-is-inheritance"></a>Souvislosti: Co je dědictví?
 
-*Dědičnost* je jedním ze základních atributů objektově orientovaného programování. Umožňuje definovat podřízenou třídu, která znovu používá (dědí), rozšiřuje nebo upravuje chování nadřazené třídy. Třída, jejíž členové jsou zděděni, se nazývají *základní třídy*. Třída, která dědí členy základní třídy, se nazývá *odvozená třída*.
+*Dědičnost* je jedním ze základních atributů objektově orientovaného programování. Umožňuje definovat podřízenou třídu, která opakovaně používá (dědí), rozšiřuje nebo upravuje chování nadřazené třídy. Třída, jejíž členové jsou zděděni, se nazývá *základní třída*. Třída, která dědí členy základní třídy se nazývá *odvozené třídy*.
 
-C#a podpora rozhraní .NET podporuje pouze *jedinou dědičnost* . To znamená, že třída může dědit pouze z jedné třídy. Dědičnost je však tranzitivní, což umožňuje definovat hierarchii dědičnosti pro sadu typů. Jinými slovy typ `D` může dědit z typu `C`, který dědí z typu `B`, který dědí ze `A`typu základní třídy. Vzhledem k tomu, že dědičnost je tranzitivní, jsou členy typu `A` k dispozici pro typ `D`.
+C# a .NET podporují pouze *jednu dědičnost.* To znamená, že třída může dědit pouze z jedné třídy. Dědičnost je však přenositelná, což umožňuje definovat hierarchii dědičnosti pro sadu typů. Jinými slovy, `D` typ může `C`dědit z `B`typu , který dědí `A`z typu , který dědí z typu základní třídy . Vzhledem k tomu, že dědičnost je přenositá, jsou členové typu `A` k dispozici pro typ `D`.
 
-Ne všichni členové základní třídy jsou děděni odvozenými třídami. Následující členové nejsou děděni:
+Ne všichni členové základní třídy jsou zděděni odvozenými třídami. Následující členové nejsou zděděni:
 
 - [Statické konstruktory](../programming-guide/classes-and-structs/static-constructors.md), které inicializují statická data třídy.
 
-- [Konstruktory instancí](../programming-guide/classes-and-structs/constructors.md), které zavoláte k vytvoření nové instance třídy. Každá třída musí definovat vlastní konstruktory.
+- [Instance konstruktory](../programming-guide/classes-and-structs/constructors.md), které voláte k vytvoření nové instance třídy. Každá třída musí definovat své vlastní konstruktory.
 
-- [Finalizační metody](../programming-guide/classes-and-structs/destructors.md), které jsou volány uvolňováním paměti modulu runtime pro zničení instancí třídy.
+- [Finalizační metody](../programming-guide/classes-and-structs/destructors.md), které jsou volány systémem uvolňování paměti za běhu ke zničení instancí třídy.
 
-Zatímco všichni ostatní členové základní třídy jsou děděni odvozenými třídami, ať už jsou viditelné, nebo nejsou závislé na jejich přístupnost. Přístupnost člena má vliv na jeho viditelnost pro odvozené třídy následujícím způsobem:
+Zatímco všechny ostatní členy základní třídy jsou zděděny odvozené třídy, zda jsou viditelné nebo ne, závisí na jejich usnadnění přístupu. Usnadnění přístupu člena ovlivňuje jeho viditelnost pro odvozené třídy následujícím způsobem:
 
-- [Soukromé](../language-reference/keywords/private.md) členy jsou viditelné pouze v odvozených třídách, které jsou vnořeny do jejich základní třídy. V opačném případě nejsou viditelné v odvozených třídách. V následujícím příkladu je `A.B` vnořená třída, která je odvozena z `A`a `C` je odvozena z `A`. Soukromé `A.value` pole je viditelné v A.B. Pokud však odeberete komentáře z metody `C.GetValue` a pokusíte se zkompilovat příklad, vyvolá chybu kompilátoru CS0122: A. Value je nepřístupný z důvodu úrovně ochrany. "
+- [Soukromé](../language-reference/keywords/private.md) členy jsou viditelné pouze v odvozených třídách, které jsou vnořeny do své základní třídy. V opačném případě nejsou viditelné v odvozených třídách. V následujícím příkladu je `A.B` vnořená `A`třída, `C` která `A`je odvozena od , a pochází z . Soukromé `A.value` pole je viditelné v A.B. Pokud však odeberete `C.GetValue` komentáře z metody a pokusíte se zkompilovat příklad, vytvoří chybu kompilátoru CS0122: "'Hodnota' je nepřístupná z důvodu úrovně ochrany."
 
   [!code-csharp[Inheritance](../../../samples/snippets/csharp/tutorials/inheritance/private.cs#1)]
 
-- [Chránění](../language-reference/keywords/protected.md) členové jsou viditelné pouze v odvozených třídách.
+- [Chráněné](../language-reference/keywords/protected.md) členy jsou viditelné pouze v odvozených třídách.
 
-- [Interní](../language-reference/keywords/internal.md) členy jsou viditelné pouze v odvozených třídách, které jsou umístěny ve stejném sestavení jako základní třída. Nejsou viditelné v odvozených třídách, které jsou umístěny v jiném sestavení ze základní třídy.
+- [Vnitřní](../language-reference/keywords/internal.md) členy jsou viditelné pouze v odvozených třídách, které jsou umístěny ve stejném sestavení jako základní třída. Nejsou viditelné v odvozených třídách umístěných v jiném sestavení od základní třídy.
 
-- [Veřejné](../language-reference/keywords/public.md) členy jsou viditelné v odvozených třídách a jsou součástí veřejného rozhraní odvozené třídy. Veřejné zděděné členy mohou být volány stejně, jako kdyby byly definovány v odvozené třídě. V následujícím příkladu třída `A` definuje metodu nazvanou `Method1`a třída `B` dědí ze třídy `A`. Příklad poté volá `Method1`, jako by šlo o metodu instance v `B`.
+- [Veřejné](../language-reference/keywords/public.md) členy jsou viditelné v odvozené třídy a jsou součástí veřejné rozhraní odvozené třídy. Veřejné zděděné členy lze volat stejně jako pokud jsou definovány v odvozené třídě. V následujícím příkladu `A` třída definuje `Method1`metodu `B` s názvem `A`a třída dědí z třídy . Příklad pak `Method1` volá, jako by se `B`jednalo o metodu instance na .
 
 [!code-csharp[Inheritance](../../../samples/snippets/csharp/tutorials/inheritance/basics.cs#1)]
 
-Odvozené třídy mohou také *přepsat* zděděné členy poskytnutím alternativní implementace. Aby bylo možné přepsat člena, musí být člen v základní třídě označený klíčovým slovem [Virtual](../language-reference/keywords/virtual.md) . Ve výchozím nastavení nejsou členy základní třídy označeny jako `virtual` a nelze je přepsat. Při pokusu o přepsání nevirtuálního člena, jak je znázorněno v následujícím příkladu, vygeneruje chybu kompilátoru CS0506: "\<členský > nemůže přepsat zděděný člen > \<členů, protože není označen jako virtuální, abstraktní nebo přepsání.
+Odvozené třídy můžete také *přepsat* zděděné členy poskytnutím alternativní implementace. Aby bylo možné přepsat člena, musí být člen v základní třídě označen [virtuálním](../language-reference/keywords/virtual.md) klíčovým slovem. Ve výchozím nastavení nejsou členové `virtual` základní třídy označeni jako a nelze je přepsat. Při pokusu o přepsání nevirtuálního člena, jak to dělá následující příklad,\<generuje chyba kompilátoru \<CS0506: " člen> nemůže přepsat zděděný člen> protože není označen virtuální, abstraktní nebo přepsání.
 
 ```csharp
 public class A
@@ -80,7 +80,7 @@ public class B : A
 }
 ```
 
-V některých případech *musí* odvozená třída přepsat implementaci základní třídy. Členy základní třídy označené pomocí klíčového slova [abstract](../language-reference/keywords/abstract.md) vyžadují, aby je přepsaly odvozené třídy. Při pokusu o zkompilování následujícího příkladu dojde k chybě kompilátoru CS0534, "&lt;&gt; třídy neimplementuje zděděný abstraktní člen &lt;member&gt;", protože třída `B` neposkytuje žádnou implementaci pro `A.Method1`.
+V některých případech *musí* odvozená třída přepsat implementaci základní třídy. Členové základní třídy označeni [abstraktním](../language-reference/keywords/abstract.md) klíčovým slovem vyžadují, aby je odvozené třídy přepsaly. Pokus o kompilaci následujícípříklad generuje chybu kompilátoru&lt;CS0534, " třída&gt; neimplementuje zděděný &lt;abstraktní člen&gt;", protože třída `B` poskytuje žádné implementace pro `A.Method1`.
 
 ```csharp
 public abstract class A
@@ -97,7 +97,7 @@ public class B : A // Generates CS0534.
 }
 ```
 
-Dědičnost se vztahuje pouze na třídy a rozhraní. Jiné kategorie typů (struktury, delegáti a výčty) nepodporují dědění. Z důvodu těchto pravidel se při pokusu o zkompilování kódu, jako je následující příklad, vytvoří Chyba kompilátoru CS0527: "Type ' ValueType ' v seznamu rozhraní není rozhraní." Chybová zpráva označuje, že i když můžete definovat rozhraní implementující strukturou, dědičnost není podporována.
+Dědičnost platí pouze pro třídy a rozhraní. Jiné kategorie typů (struktury, delegáti a výčty) nepodporují dědičnost. Z důvodu těchto pravidel, pokus o kompilaci kódu, jako je následující příklad produkuje chybu kompilátoru CS0527: "Typ ValueType' v seznamu rozhraní není rozhraní." Chybová zpráva označuje, že i když můžete definovat rozhraní, která implementuje struktury, dědičnost není podporována.
 
 ```csharp
 using System;
@@ -109,193 +109,193 @@ public struct ValueStructure : ValueType // Generates CS0527.
 
 ## <a name="implicit-inheritance"></a>Implicitní dědičnost
 
-Kromě jakýchkoli typů, které mohou dědit prostřednictvím jedné dědičnosti, všechny typy v systému typů .NET implicitně dědí z <xref:System.Object> nebo z něj odvozený typ. Běžné funkce <xref:System.Object> jsou k dispozici pro libovolný typ.
+Kromě všech typů, které mohou dědit z prostřednictvím jedné dědičnosti, <xref:System.Object> všechny typy v systému typu .NET implicitně dědí z nebo typ odvozený z něj. Běžné funkce <xref:System.Object> je k dispozici pro všechny typy.
 
-Chcete-li zjistit, co implicitní dědičnost znamená, definujte novou třídu, `SimpleClass`, která je jednoduše definicí prázdné třídy:
+Chcete-li zjistit, co implicitní dědičnost `SimpleClass`znamená, definujme novou třídu , která je jednoduše prázdnou definicí třídy:
 
 [!code-csharp[Inheritance](../../../samples/snippets/csharp/tutorials/inheritance/simpleclass.cs#1)]
 
-Pak můžete použít reflexi (což vám umožní zkontrolovat metadata typu a získat informace o tomto typu) a získat tak seznam členů, kteří patří do typu `SimpleClass`. I když jste nedefinovali žádné členy ve třídě `SimpleClass`, výstup z příkladu označuje, že ve skutečnosti má devět členů. Jeden z těchto členů je konstruktor bez parametrů (nebo výchozí), který je automaticky dodán pro `SimpleClass` typ C# kompilátorem. Zbývající osm jsou členy <xref:System.Object>, typ, ze kterého všechny třídy a rozhraní v systému typů .NET jsou nakonec implicitně děděny.
+Potom můžete použít reflexe (který umožňuje zkontrolovat metadata typu získat informace o tomto typu) získat seznam `SimpleClass` členů, které patří do typu. I když jste nedefinovali `SimpleClass` žádné členy ve vaší třídě, výstup z příkladu označuje, že ve skutečnosti má devět členů. Jeden z těchto členů je konstruktor bez parametrů (nebo `SimpleClass` výchozí), který je automaticky dodáván pro typ kompilátorem Jazyka C#. Zbývajících osm jsou <xref:System.Object>členy , typ, ze kterého všechny třídy a rozhraní v systému typu .NET nakonec implicitně dědí.
 
 [!code-csharp[Inheritance](../../../samples/snippets/csharp/tutorials/inheritance/simpleclass.cs#2)]
 
-Implicitní dědění z <xref:System.Object> třídy zpřístupňuje tyto metody pro `SimpleClass` třídy:
+Implicitní dědičnost z třídy <xref:System.Object> `SimpleClass` zpřístupňuje tyto metody pro třídu:
 
-- Metoda Public `ToString`, která převede `SimpleClass` objektu na jeho řetězcovou reprezentaci, vrátí název plně kvalifikovaného typu. V tomto případě metoda `ToString` vrátí řetězec "SimpleClass".
+- Veřejná `ToString` metoda, která `SimpleClass` převádí objekt na jeho řetězcovou reprezentaci, vrátí plně kvalifikovaný název typu. V tomto případě `ToString` metoda vrátí řetězec "SimpleClass".
 
-- Tři metody, které testují rovnost dvou objektů: veřejné instance `Equals(Object)` metodu, veřejnou statickou `Equals(Object, Object)` metodou a veřejnou statickou `ReferenceEquals(Object, Object)` metodou. Ve výchozím nastavení tyto metody test rovnosti referencí; To znamená, že dva objektové proměnné musí odkazovat na stejný objekt.
+- Tři metody, které testují rovnost dvou `Equals(Object)` objektů: metodu `Equals(Object, Object)` veřejné instance, `ReferenceEquals(Object, Object)` veřejnou statickou metodu a veřejnou statickou metodu. Ve výchozím nastavení tyto metody testují referenční rovnost; to znamená, že se rovná dvě proměnné objektu musí odkazovat na stejný objekt.
 
-- Metoda Public `GetHashCode`, která vypočítá hodnotu, která umožňuje použití instance typu v kolekcích s algoritmem hash.
+- Public `GetHashCode` Metoda, která vypočítá hodnotu, která umožňuje instanci typu, který má být použit v zachycované kolekce.
 
-- Metoda Public `GetType`, která vrací objekt <xref:System.Type>, který představuje typ `SimpleClass`.
+- Public `GetType` Metoda, která <xref:System.Type> vrátí objekt, `SimpleClass` který představuje typ.
 
-- Chráněná <xref:System.Object.Finalize%2A> metoda, která je navržena pro uvolnění nespravovaných prostředků před tím, než je paměť objektu uvolněna systémem uvolňování paměti.
+- Chráněná <xref:System.Object.Finalize%2A> metoda, která je určena k uvolnění nespravovaných prostředků před uvolněním paměti objektu uvolněnou systémem uvolňování paměti.
 
-- Chráněná <xref:System.Object.MemberwiseClone%2A> metoda, která vytvoří neomezený klon aktuálního objektu.
+- Chráněná <xref:System.Object.MemberwiseClone%2A> metoda, která vytvoří mělký klon aktuálního objektu.
 
-Z důvodu implicitní dědičnosti můžete volat všechny zděděné členy z objektu `SimpleClass` stejným způsobem, jako kdyby byl ve skutečnosti člen definován ve třídě `SimpleClass`. Například následující příklad volá metodu `SimpleClass.ToString`, která `SimpleClass` dědí z <xref:System.Object>.
+Z důvodu implicitní dědičnosti můžete volat `SimpleClass` libovolný zděděný člen z objektu, stejně jako kdyby byl ve skutečnosti členem definovaným `SimpleClass` ve třídě. Například následující příklad volá `SimpleClass.ToString` metodu, `SimpleClass` která <xref:System.Object>dědí z .
 
 [!code-csharp[Inheritance](../../../samples/snippets/csharp/tutorials/inheritance/simpleclass2.cs#1)]
 
-V následující tabulce jsou uvedeny kategorie typů, které lze vytvořit v C# a typy, ze kterých jsou implicitně děděny. Každý základní typ zpřístupňuje jinou sadu členů prostřednictvím dědičnosti implicitně odvozeným typům.
+V následující tabulce jsou uvedeny kategorie typů, které můžete vytvořit v jazyce C# a typy, ze kterých implicitně dědí. Každý základní typ zpřístupňuje jinou sadu členů prostřednictvím dědičnosti implicitně odvozené typy.
 
 | Kategorie typu | Implicitně dědí z                                                      |
 | ------------- | ----------------------------------------------------------------------------- |
 | třída         | <xref:System.Object>                                                          |
-| struct        | <xref:System.ValueType><xref:System.Object>                                 |
-| enum          | <xref:System.Enum>, <xref:System.ValueType><xref:System.Object>             |
-| delegát      | <xref:System.MulticastDelegate>, <xref:System.Delegate><xref:System.Object> |
+| struct         | <xref:System.ValueType>, <xref:System.Object>                                 |
+| enum          | <xref:System.Enum>, <xref:System.ValueType>, <xref:System.Object>             |
+| delegát      | <xref:System.MulticastDelegate>, <xref:System.Delegate>, <xref:System.Object> |
 
-## <a name="inheritance-and-an-is-a-relationship"></a>Dědičnost a "je" relace
+## <a name="inheritance-and-an-is-a-relationship"></a>Dědičnost a vztah "je"
 
-Obvykle se dědičnost používá k vyjádření vztahu "je" vztah mezi základní třídou a jednou nebo více odvozenými třídami, kde jsou odvozenými třídami specializované verze základní třídy; odvozená třída je typem základní třídy. Například třída `Publication` představuje publikaci jakéhokoli druhu a třídy `Book` a `Magazine` představují konkrétní typy publikací.
+Dědičnost se obvykle používá k vyjádření vztahu "is a" mezi základní třídou a jednou nebo více odvozenými třídami, kde odvozené třídy jsou specializované verze základní třídy; odvozená třída je typ základní třídy. Například `Publication` třída představuje publikace jakéhokoli druhu a `Book` `Magazine` a třídy představují určité typy publikací.
 
 > [!NOTE]
-> Třída nebo struktura může implementovat jedno nebo více rozhraní. I když je implementace rozhraní často prezentována jako alternativní řešení pro jednoduchou dědičnost nebo jako způsob použití dědičnosti s strukturami, je určena k vyjádření odlišné relace (relace "může provádět") mezi rozhraním a jeho implementující typ než dědičnost. Rozhraní definuje podmnožinu funkcí (například možnost testování rovnosti, pro porovnání nebo řazení objektů nebo pro podporu analýzy a formátování zohledňující jazykovou verzi), že rozhraní zpřístupňuje své implementující typy.
+> Třída nebo struktura může implementovat jedno nebo více rozhraní. Zatímco implementace rozhraní je často prezentována jako řešení pro jednu dědičnost nebo jako způsob použití dědičnosti se strukturami, je určena k vyjádření jiného vztahu (vztah "může udělat") mezi rozhraním a jeho implementačním typem než Dědičnosti. Rozhraní definuje podmnožinu funkcí (například schopnost testovat rovnost, porovnávat nebo řadit objekty nebo podporovat analýzu a formátování zkoumaná jazykovou verzí), kterou rozhraní zpřístupní implementujícím typům.
 
-Všimněte si, že "je" také vyjadřuje vztah mezi typem a specifickou instancí tohoto typu. V následujícím příkladu je `Automobile` třída, která má tři jedinečné vlastnosti jen pro čtení: `Make`, výrobce automobilu; `Model`druh automobilu; a `Year`rok výroby. Vaše třída `Automobile` má také konstruktor, jehož argumenty jsou přiřazeny hodnotám vlastností, a přepisuje metodu <xref:System.Object.ToString%2A?displayProperty=nameWithType> k vytvoření řetězce, který jedinečně identifikuje instanci `Automobile` spíše než `Automobile` třídy.
+Všimněte si, že "je a" také vyjadřuje vztah mezi typem a konkrétní konkretiace tohoto typu. V následujícím příkladu je třída, `Automobile` která má tři `Make`jedinečné vlastnosti jen pro čtení: , výrobce automobilu; `Model`, druh automobilu; a `Year`, rok výroby. Vaše `Automobile` třída má také konstruktor, jehož argumenty jsou přiřazeny <xref:System.Object.ToString%2A?displayProperty=nameWithType> k hodnotám vlastností a `Automobile` přepíše metodu k vytvoření řetězce, který jednoznačně identifikuje instanci spíše než třídu. `Automobile`
 
 [!code-csharp[Inheritance](../../../samples/snippets/csharp/tutorials/inheritance/is-a.cs#1)]
 
-V takovém případě byste neměli spoléhat na dědění, která představuje konkrétní automobilové a modely. Například nemusíte definovat typ `Packard`, který bude reprezentovat Automobiles vyráběná společností Packard motorového automobilu. Místo toho je lze reprezentovat vytvořením objektu `Automobile` s odpovídajícími hodnotami předanými do svého konstruktoru třídy, jak je uvedeno v následujícím příkladu.
+V tomto případě byste se neměli spoléhat na dědictví reprezentovat konkrétní auto dělá a modelů. Například není nutné definovat `Packard` typ představující automobily vyrobené packardovou společností. Místo toho je můžete reprezentovat `Automobile` vytvořením objektu s příslušnými hodnotami předanými jeho konstruktoru třídy, jak to dělá následující příklad.
 
 [!code-csharp[Inheritance](../../../samples/snippets/csharp/tutorials/inheritance/is-a.cs#2)]
 
-Je relace založená na dědičnosti nejvhodnější pro základní třídu a na odvozené třídy, které přidávají další členy do základní třídy nebo které vyžadují další funkce, které nejsou k dispozici v základní třídě.
+Vztah is-a založený na dědičnosti je nejlépe použita pro základní třídu a odvozené třídy, které přidávají další členy do základní třídy nebo které vyžadují další funkce, které nejsou k dispozici v základní třídě.
 
 ## <a name="designing-the-base-class-and-derived-classes"></a>Návrh základní třídy a odvozených tříd
 
-Pojďme se podívat na postup navrhování základní třídy a jejích odvozených tříd. V této části definujete základní třídu, `Publication`, která představuje publikaci libovolného druhu, jako je kniha, časopis, Magazine, novinka, článek atd. Definujete také třídu `Book`, která je odvozena od `Publication`. Můžete snadno roztáhnout příklad pro definování dalších odvozených tříd, například `Magazine`, `Journal`, `Newspaper`a `Article`.
+Podívejme se na proces navrhování základní třídy a její odvozené třídy. V této části definujete základní třídu , `Publication`která představuje publikaci jakéhokoli druhu, například knihu, časopis, noviny, časopis, článek atd. Budete také definovat `Book` třídu, která `Publication`je odvozena od . Příklad můžete snadno rozšířit a definovat další odvozené `Journal` `Newspaper`třídy, například `Magazine`, , a `Article`.
 
-### <a name="the-base-publication-class"></a>Základní třída publikace
+### <a name="the-base-publication-class"></a>Základní třída Publication
 
-Při navrhování `Publication` třídy je potřeba provést několik rozhodnutí o návrhu:
+Při navrhování `Publication` vaší třídy je třeba provést několik rozhodnutí o návrhu:
 
-- Jaké členy mají být zahrnuty do základní třídy `Publication` a zda `Publication` členy poskytují implementace metod nebo zda je `Publication` abstraktní základní třída, která slouží jako šablona pro odvozené třídy.
+- Jaké členy zahrnout do `Publication` základní třídy `Publication` a zda členové `Publication` poskytují implementace metody nebo zda je abstraktní základní třída, která slouží jako šablona pro odvozené třídy.
 
-  V tomto případě bude třída `Publication` poskytovat implementace metod. Oddíl [navrhování abstraktních základních tříd a jejich odvozené třídy](#abstract) obsahuje příklad, který používá abstraktní základní třídu k definování metod, které musí přepsat odvozené třídy. Odvozené třídy jsou bezplatné k poskytnutí libovolné implementace, která je vhodná pro odvozený typ.
+  V tomto případě `Publication` bude třída poskytovat implementace metody. [Návrh abstraktní základní třídy a jejich odvozené třídy](#abstract) sekce obsahuje příklad, který používá abstraktní základní třídy definovat metody, které odvozené třídy musí přepsat. Odvozené třídy jsou zdarma poskytnout všechny implementace, která je vhodná pro odvozený typ.
 
-  Možnost opětovného použití kódu (to znamená, že více odvozených tříd sdílí deklaraci a implementaci metod základní třídy a není nutné je přepsat) je výhodou neabstraktních základních tříd. Proto byste měli přidat členy do `Publication`, pokud je jejich kód pravděpodobně sdílen některými nebo nejvíce specializovanými typy `Publication`. Pokud nebudete moci efektivně poskytovat implementace základní třídy, bude nutné, abyste v odvozených třídách poskytovali v podstatě identické implementace členů, nikoli na jednu implementaci v základní třídě. Nutnost udržovat duplicitní kód ve více umístěních je potenciální zdrojem chyb.
+  Schopnost znovu použít kód (to znamená, že více odvozených tříd sdílí deklaraci a implementaci metod základní třídy a není nutné je přepsat) je výhodou neabstraktních základních tříd. Proto byste měli přidat `Publication` členy, pokud jejich kód je pravděpodobně `Publication` sdílet některé nebo většina specializovaných typů. Pokud se vám nepodaří poskytnout implementace základní třídy efektivně, budete nakonec muset poskytnout do značné míry identické členské implementace v odvozených třídách spíše jednu implementaci v základní třídě. Potřeba udržovat duplicitní kód na více místech je potenciálním zdrojem chyb.
 
-  Jak maximalizovat opětovné použití kódu a vytvořit logickou a intuitivní hierarchii dědičnosti, chcete mít jistotu, že zahrnete do `Publication` třídy jenom data a funkce, které jsou společné pro všechny nebo na většinu publikací. Odvozené třídy potom implementují členy, které jsou jedinečné pro konkrétní druhy publikace, které představují.
+  Chcete-li maximalizovat opakované použití kódu a vytvořit logickou a intuitivní hierarchii `Publication` dědičnosti, měli byste mít jistotu, že do třídy zahrnete pouze data a funkce, které jsou společné pro všechny nebo pro většinu publikací. Odvozené třídy pak implementovat členy, které jsou jedinečné pro konkrétní druhy publikace, které představují.
 
-- Jak daleko se rozšířila vaše hierarchie tříd. Chcete vytvořit hierarchii tří nebo více tříd, nikoli jednoduše základní třídu a jednu nebo více odvozených tříd? Například `Publication` může být základní třídou `Periodical`, která je zase základní třídou `Magazine`, `Journal` a `Newspaper`.
+- Jak daleko rozšířit hierarchii tříd. Chcete vytvořit hierarchii tří nebo více tříd, nikoli pouze základní třídy a jedné nebo více odvozených tříd? Může se `Publication` například jedná `Periodical`o základní třídu , `Magazine`která `Journal` `Newspaper`je zase základní třídou . a .
 
-  Pro váš příklad budete používat malou hierarchii `Publication` třídy a jednu odvozenou třídu, `Book`. Příklad můžete snadno zvětšit a vytvořit tak mnoho dalších tříd, které jsou odvozeny od `Publication`, například `Magazine` a `Article`.
+  V příkladu použijete malou hierarchii `Publication` třídy a jednu `Book`odvozenou třídu . Můžete snadno rozšířit příklad vytvořit řadu dalších tříd, které `Magazine` `Article`jsou odvozeny z `Publication`, například a .
 
-- Zda má smysl vytvořit instanci základní třídy. Pokud tomu tak není, měli byste použít klíčové slovo [abstract](../language-reference/keywords/abstract.md) pro třídu. V opačném případě může být vytvořena instance třídy `Publication` voláním svého konstruktoru třídy. Pokud je proveden pokus o vytvoření instance třídy označené klíčovým slovem `abstract` přímým voláním konstruktoru třídy, C# kompilátor vygeneruje chybu CS0144, "nemůže vytvořit instanci abstraktní třídy nebo rozhraní". Pokud je proveden pokus o vytvoření instance třídy pomocí reflexe, vyvolá metoda Reflection <xref:System.MemberAccessException>.
+- Zda má smysl vytvořit konkretizovat základní třídu. Pokud tomu tak není, měli byste použít [abstraktní](../language-reference/keywords/abstract.md) klíčové slovo na třídu. V opačném `Publication` případě může být vaše třída vytvořena instance voláním jeho konstruktoru třídy. Pokud je proveden pokus o vytvoření instance třídy označené `abstract` klíčovým slovem přímým voláním konstruktoru třídy, kompilátor Jazyka C# generuje chybu CS0144, "Nelze vytvořit instanci abstraktní třídy nebo rozhraní." Pokud je proveden pokus o vytvoření instance třídy pomocí reflexe, <xref:System.MemberAccessException>metoda odrazu vyvolá .
 
-  Ve výchozím nastavení lze vytvořit instanci základní třídy voláním svého konstruktoru třídy. Nemusíte explicitně definovat konstruktor třídy. Pokud není k dispozici ve zdrojovém kódu základní třídy, C# kompilátor automaticky poskytne výchozí konstruktor (bez parametrů).
+  Ve výchozím nastavení lze vytvořit instanci základní třídy voláním svého konstruktoru třídy. Není třeba explicitně definovat konstruktor třídy. Pokud jeden není k dispozici ve zdrojovém kódu základní třídy, kompilátor Jazyka C# automaticky poskytuje výchozí (parametrless) konstruktor.
 
-  Pro váš příklad označíte třídu `Publication` jako [abstraktní](../language-reference/keywords/abstract.md) , takže nelze vytvořit instanci.  Třída `abstract` bez jakýchkoli metod `abstract` označuje, že tato třída představuje abstraktní koncept, který je sdílen mezi několika konkrétními třídami (například `Book`, `Journal`).
+  V příkladu označíte `Publication` třídu jako [abstraktní,](../language-reference/keywords/abstract.md) aby ji nebylo možné vytvořit.  Třída `abstract` bez `abstract` jakékoli metody označuje, že tato třída představuje abstraktní koncept, `Book` `Journal`který je sdílen mezi několik konkrétních tříd (například , ).
 
-- Zda odvozené třídy musí dědit implementaci základní třídy konkrétních členů, zda mají možnost přepsat implementaci základní třídy nebo zda musí poskytovat implementaci. Pomocí klíčového slova [abstract](../language-reference/keywords/abstract.md) vynutíte odvozené třídy pro zajištění implementace. Použijete klíčové slovo [Virtual](../language-reference/keywords/virtual.md) k povolení odvozených tříd pro přepsání metody základní třídy. Ve výchozím nastavení nejsou metody definované v základní *třídě přepsatelné* .
+- Zda odvozené třídy musí dědit implementaci základní třídy konkrétní chčlenů, zda mají možnost přepsat implementaci základní třídy, nebo zda musí poskytnout implementaci. Pomocí [abstraktního](../language-reference/keywords/abstract.md) klíčového slova vynutíte odvozené třídy k poskytnutí implementace. Virtuální [klíčové](../language-reference/keywords/virtual.md) slovo slouží k povolení odvozených tříd přepsat metodu základní třídy. Ve výchozím nastavení metody definované v základní třídě *nejsou* overridable.
 
- Třída `Publication` neobsahuje žádné metody `abstract`, ale samotná třída je `abstract`.
+ Třída `Publication` nemá žádné `abstract` metody, ale třída `abstract`sama je .
 
-- Zda odvozená třída představuje konečnou třídu v hierarchii dědičnosti a nemůže být použita jako základní třída pro další odvozené třídy. Ve výchozím nastavení může kterákoli třída sloužit jako základní třída. Můžete použít [zapečetěné](../language-reference/keywords/sealed.md) klíčové slovo k označení, že třída nemůže sloužit jako základní třída pro žádné další třídy. Došlo k pokusu o odvození od zapečetěné třídy s chybou kompilátoru CS0509, "nelze odvozovat od zapečetěného typu \<typeName >".
+- Zda odvozená třída představuje konečnou třídu v hierarchii dědičnosti a nemůže být sama použita jako základní třída pro další odvozené třídy. Ve výchozím nastavení může každá třída sloužit jako základní třída. Můžete použít [zapečetěné](../language-reference/keywords/sealed.md) klíčové slovo označující, že třída nemůže sloužit jako základní třída pro všechny další třídy. Pokus o odvození z zapečetěné třídy generované chyba kompilátoru CS0509, "nelze odvodit z zapečetěného typu \<typeName>".
 
-  Jako příklad označíte svou odvozenou třídu jako `sealed`.
+  V příkladu označíte odvozenou `sealed`třídu jako .
 
-Následující příklad ukazuje zdrojový kód pro třídu `Publication` a také výčet `PublicationType`, který je vrácen vlastností `Publication.PublicationType`. Kromě členů, které dědí z <xref:System.Object>, třída `Publication` definuje následující jedinečné členy a přepsání členů:
+Následující příklad ukazuje zdrojový kód `Publication` pro třídu, `PublicationType` stejně jako výčet, který je vrácen vlastností. `Publication.PublicationType` Kromě členů, které dědí <xref:System.Object>z `Publication` , třída definuje následující jedinečné členy a přepsání členů:
 
 [!code-csharp[Inheritance](../../../samples/snippets/csharp/tutorials/inheritance/base-and-derived.cs#1)]
 
 - Konstruktor
 
-  Vzhledem k tomu, že třída `Publication` je `abstract`, nelze vytvořit instanci přímo z kódu, podobně jako v následujícím příkladu:
+  Vzhledem `Publication` k `abstract`tomu, že třída je , nelze vytvořit instanci přímo z kódu, jako je následující příklad:
 
   ```csharp
   var publication = new Publication("Tiddlywinks for Experts", "Fun and Games",
                                     PublicationType.Book);
   ```
 
-  Nicméně jeho konstruktor instance lze volat přímo z konstruktorů odvozené třídy, jak ukazuje zdrojový kód třídy `Book`.
+  Jeho instance konstruktor však může být volána přímo z konstruktorů `Book` odvozené třídy, jak ukazuje zdrojový kód pro třídu.
 
-- Dvě vlastnosti týkající se publikace
+- Dvě vlastnosti související s publikací
 
-  `Title` je vlastnost <xref:System.String> jen pro čtení, jejíž hodnota je dodána voláním konstruktoru `Publication`.
+  `Title`je vlastnost jen <xref:System.String> pro čtení, jejíž `Publication` hodnota je zadána voláním konstruktoru.
 
-  `Pages` je vlastnost pro čtení i zápis <xref:System.Int32>, která určuje, kolik celkových stránek publikace má. Hodnota je uložena v soukromém poli s názvem `totalPages`. Musí se jednat o kladné číslo, nebo je vyvolána <xref:System.ArgumentOutOfRangeException>.
+  `Pages`je vlastnost pro <xref:System.Int32> čtení a zápis, která označuje, kolik celkových stránek publikace má. Hodnota je uložena v `totalPages`soukromém poli s názvem . Musí to být kladné <xref:System.ArgumentOutOfRangeException> číslo nebo je hozen.
 
 - Členové související s vydavatelem
 
-  Dvě vlastnosti, `Publisher` a `Type`jen pro čtení. Hodnoty jsou původně poskytnuty voláním konstruktoru třídy `Publication`.
+  Dvě vlastnosti jen `Publisher` `Type`pro čtení a . Hodnoty jsou původně dodávány voláním konstruktoru `Publication` třídy.
 
 - Členové související s publikováním
 
-  Existují dvě metody, `Publish` a `GetPublicationDate`, nastavení a vrácení data publikace. Metoda `Publish` nastaví příznak Private `published` na `true` při volání a přiřadí k němu datum předané jako argument pro pole private `datePublished`. Metoda `GetPublicationDate` vrátí řetězec "NYP", pokud je příznak `published` `false`, a hodnotu `datePublished` pole, pokud je `true`.
+  Dvě metody `Publish` `GetPublicationDate`a , nastavte a vraťte datum publikování. Metoda `Publish` nastaví `published` soukromý `true` příznak, když je volána a přiřadí datum, `datePublished` které mu bylo předáno jako argument do soukromého pole. Metoda `GetPublicationDate` vrátí řetězec "NYP", `published` pokud `false`je příznak , `datePublished` a hodnota `true`pole, pokud je .
 
-- Členové související s copyrightem
+- Členové související s autorskými právy
 
-  Metoda `Copyright` přebírá jméno vlastníka autorského práva a rok copyrightu jako argumenty a přiřazuje je k vlastnostem `CopyrightName` a `CopyrightDate`.
+  Metoda `Copyright` bere jméno držitele autorských práv a rok autorského práva jako `CopyrightName` argumenty a přiřazuje je k vlastnostem a. `CopyrightDate`
 
-- Přepsání metody `ToString`
+- Přepsání `ToString` metody
 
-  Pokud typ nepřepisuje metodu <xref:System.Object.ToString%2A?displayProperty=nameWithType>, vrátí plně kvalifikovaný název typu, který je malý použití při odlišení jedné instance od druhé. Třída `Publication` Přepisuje <xref:System.Object.ToString%2A?displayProperty=nameWithType>, aby vracela hodnotu vlastnosti `Title`.
+  Pokud typ nepřepíše <xref:System.Object.ToString%2A?displayProperty=nameWithType> metodu, vrátí plně kvalifikovaný název typu, který je málo použitelný při odlišení jedné instance od druhé. Třída `Publication` přepíše <xref:System.Object.ToString%2A?displayProperty=nameWithType> vrátit hodnotu `Title` vlastnosti.
 
-Následující obrázek znázorňuje vztah mezi základní třídou `Publication` a implicitně děděnou <xref:System.Object> třídou.
+Následující obrázek znázorňuje vztah `Publication` mezi základní třídou <xref:System.Object> a její implicitně zděděnou třídou.
 
-![Třídy objektu a publikace](media/publication-class.jpg)
+![Třídy Object and Publication](media/publication-class.jpg)
 
 ### <a name="the-book-class"></a>Třída `Book`
 
-Třída `Book` představuje knihu jako specializovaný typ publikace. Následující příklad ukazuje zdrojový kód pro třídu `Book`.
+Třída `Book` představuje knihu jako specializovaný typ publikace. Následující příklad ukazuje zdrojový kód `Book` pro třídu.
 
 [!code-csharp[Inheritance](../../../samples/snippets/csharp/tutorials/inheritance/base-and-derived.cs#2)]
 
-Kromě členů, které dědí z `Publication`, třída `Book` definuje následující jedinečné členy a přepsání členů:
+Kromě členů, které dědí `Publication`z `Book` , třída definuje následující jedinečné členy a přepsání členů:
 
 - Dva konstruktory
 
-  Dva konstruktory `Book` sdílejí tři společné parametry. Dva, *název* a *Vydavatel*odpovídají parametrům `Publication` konstruktoru. Třetí je *Autor*, který je uložený do veřejné vlastnosti neměnného `Author`. Jeden konstruktor obsahuje parametr *ISBN* , který je uložený v `ISBN` automatické vlastnosti.
+  Dva `Book` konstruktory sdílejí tři společné parametry. Dva, *název* a *vydavatel*, odpovídají `Publication` parametrům konstruktoru. Třetí je *autor*, který je uložen na `Author` veřejné neměnné vlastnosti. Jeden konstruktor obsahuje *isbn* parametr, který `ISBN` je uložen v auto-vlastnost.
 
-  První konstruktor používá klíčové slovo [This](../language-reference/keywords/this.md) k volání druhého konstruktoru. Řetězení konstruktorů je běžným vzorem v definování konstruktorů. Konstruktory s menšími parametry poskytují výchozí hodnoty při volání konstruktoru s největším počtem parametrů.
+  První konstruktor používá klíčové slovo [this](../language-reference/keywords/this.md) k volání jiného konstruktoru. Řetězení konstruktoru je běžný vzor při definování konstruktorů. Konstruktory s menším počtem parametrů poskytují výchozí hodnoty při volání konstruktoru s největším počtem parametrů.
 
-  Druhý konstruktor používá klíčové slovo [Base](../language-reference/keywords/base.md) k předání názvu a názvu vydavatele konstruktoru základní třídy. Pokud neprovedete explicitní volání konstruktoru základní třídy ve zdrojovém kódu, C# kompilátor automaticky dodá volání výchozí třídy Base nebo konstruktoru bez parametrů.
+  Druhý konstruktor používá [základní](../language-reference/keywords/base.md) klíčové slovo předat název a název vydavatele konstruktoru základní třídy. Pokud neprovedete explicitní volání konstruktoru základní třídy ve zdrojovém kódu, kompilátor Jazyka C# automaticky dodá volání výchozího konstruktoru základní třídy nebo konstruktoru bez parametrů.
 
-- Vlastnost `ISBN` jen pro čtení, která vrací číslo mezinárodní knihy standardního objektu `Book`, jedinečné číslo s 10 nebo 13 číslicemi. ISBN je zadáno jako argument jednoho z `Book` konstruktorů. ISBN je uložen v soukromém zálohovacím poli, které je automaticky generováno kompilátorem.
+- Vlastnost jen `ISBN` pro čtení, `Book` která vrací mezinárodní standardní číslo knihy objektu, jedinečné 10 nebo 13místné číslo. ISBN je dodáván jako argument jednomu `Book` z konstruktorů. ISBN je uložen v privátní záložní pole, které je automaticky generováno kompilátorem.
 
-- Vlastnost `Author` jen pro čtení. Jméno autora je zadáno jako argument pro oba konstruktory `Book` a je uloženo ve vlastnosti.
+- Vlastnost jen `Author` pro čtení. Jméno autora je zadáno `Book` jako argument oběma konstruktorům a je uloženo ve vlastnosti.
 
-- Dvě vlastnosti `Price` a `Currency`s cenami jen pro čtení. Jejich hodnoty jsou k dispozici jako argumenty ve volání metody `SetPrice`. Vlastnost `Currency` je třímístný symbol měny ISO (například USD za americký dolar). Z vlastnosti <xref:System.Globalization.RegionInfo.ISOCurrencySymbol%2A> lze načíst symboly ISO měny. Obě tyto vlastnosti jsou externě jen pro čtení, ale obě lze nastavit pomocí kódu ve třídě `Book`.
+- Dvě vlastnosti související s `Price` cenou `Currency`jen pro čtení a . Jejich hodnoty jsou uvedeny jako `SetPrice` argumenty v volání metody. Vlastnost `Currency` je třímístný symbol měny ISO (například USD pro americký dolar). Symboly měny ISO lze <xref:System.Globalization.RegionInfo.ISOCurrencySymbol%2A> načíst z vlastnosti. Obě tyto vlastnosti jsou externě jen pro čtení, `Book` ale obě lze nastavit podle kódu ve třídě.
 
-- `SetPrice` metoda, která nastavuje hodnoty vlastností `Price` a `Currency`. Tyto hodnoty jsou vraceny pomocí stejných vlastností.
+- Metoda, `SetPrice` která nastaví hodnoty `Price` `Currency` vlastnosti a. Tyto hodnoty jsou vráceny stejnými vlastnostmi.
 
-- Přepíše metodu `ToString` (zděděná z `Publication`) a metody <xref:System.Object.Equals%28System.Object%29?displayProperty=nameWithType> a <xref:System.Object.GetHashCode%2A> (zděděné z <xref:System.Object>).
+- Přepíše `ToString` metodu (zděděnou z) `Publication`a metody <xref:System.Object.Equals%28System.Object%29?displayProperty=nameWithType> a <xref:System.Object.GetHashCode%2A> (zděděné z). <xref:System.Object>
 
-  Pokud není přepsán, metoda <xref:System.Object.Equals%28System.Object%29?displayProperty=nameWithType> testuje referenční rovnost. To znamená, že dvě proměnné objektu jsou považovány za stejné, pokud odkazují na stejný objekt. Ve třídě `Book`, na druhé straně by měly být dva objekty `Book` stejné, pokud mají stejné ISBN.
+  Pokud není přepsána, <xref:System.Object.Equals%28System.Object%29?displayProperty=nameWithType> metoda testuje rovnost odkazů. To znamená, že dvě proměnné objektu jsou považovány za stejné, pokud odkazují na stejný objekt. Ve `Book` třídě, na druhé straně `Book` dva objekty by měly být stejné, pokud mají stejné ISBN.
 
-  Pokud přepíšete metodu <xref:System.Object.Equals%28System.Object%29?displayProperty=nameWithType>, je nutné také přepsat metodu <xref:System.Object.GetHashCode%2A>, která vrací hodnotu, kterou modul runtime používá k ukládání položek v kolekcích hash pro efektivní načtení. Kód hash by měl vracet hodnotu, která je konzistentní s testem pro rovnost. Vzhledem k tomu, že jste přepsali <xref:System.Object.Equals%28System.Object%29?displayProperty=nameWithType> pro návrat `true` Pokud jsou vlastnosti ISBN dvou `Book` objektů stejné, vrátíte kód hash vypočítaný voláním metody <xref:System.String.GetHashCode%2A> řetězce vráceného vlastností `ISBN`.
+  Při přepsání <xref:System.Object.Equals%28System.Object%29?displayProperty=nameWithType> metody, musíte také <xref:System.Object.GetHashCode%2A> přepsat metodu, která vrátí hodnotu, která runtime používá k ukládání položek v zachycované kolekce pro efektivní načítání. Kód hash by měl vrátit hodnotu, která je konzistentní s testem rovnosti. Vzhledem k tomu, že jste přepsáni <xref:System.Object.Equals%28System.Object%29?displayProperty=nameWithType> vrátit, `true` pokud ISBN vlastnosti dvou `Book` objektů <xref:System.String.GetHashCode%2A> jsou stejné, vrátíte hash kód vypočítaný voláním metody řetězce vrácené `ISBN` vlastností.
 
-Následující obrázek znázorňuje vztah mezi `Book` třídou a `Publication`, její základní třídou.
+Následující obrázek znázorňuje `Book` vztah `Publication`mezi třídou a jeho základní třídou.
 
-![Třídy publikace a knihy](media/book-class.jpg)
+![Publikační a knižní třídy](media/book-class.jpg)
 
-Nyní můžete vytvořit instanci objektu `Book`, vyvolat jeho jedinečné i zděděné členy a předat jej jako argument metodě, která očekává parametr typu `Publication` nebo typu `Book`, jak ukazuje následující příklad.
+Nyní můžete vytvořit instanci objektu, `Book` vyvolat jeho jedinečné i zděděné členy a předat jej `Publication` jako argument `Book`metodě, která očekává parametr typu nebo typu , jak ukazuje následující příklad.
 
 [!code-csharp[Inheritance](../../../samples/snippets/csharp/tutorials/inheritance/use-publication.cs#1)]
 
 ## <a name="designing-abstract-base-classes-and-their-derived-classes"></a>Navrhování abstraktních základních tříd a jejich odvozených tříd
 <a name="abstract"></a>
 
-V předchozím příkladu jste definovali základní třídu, která poskytuje implementaci pro určitý počet metod, který umožňuje odvozeným třídám sdílet kód. V mnoha případech však neočekáváme, že základní třída poskytuje implementaci. Místo toho je základní třídou *abstraktní třída* , která deklaruje *abstraktní metody*; slouží jako šablona definující členy, které musí implementovat jednotlivé odvozené třídy. Obvykle v abstraktní základní třídě je implementace každého odvozeného typu pro tento typ jedinečná. Označili jste třídu pomocí klíčového slova abstract, protože nevytvořila žádné smysly pro vytvoření instance objektu `Publication`, i když třída poskytovala implementace funkcí běžných pro publikace.
+V předchozím příkladu jste definovali základní třídu, která poskytla implementaci pro řadu metod, které umožňují odvozeným třídám sdílet kód. V mnoha případech se však neočekává, že základní třída poskytuje implementaci. Místo toho základní třída je *abstraktní třída,* která deklaruje *abstraktní metody*; slouží jako šablona, která definuje členy, které musí každá odvozená třída implementovat. Obvykle v abstraktní základní třídy implementace každého odvozeného typu je jedinečný pro tento typ. Třídu jste označili abstraktním klíčovým slovem, protože `Publication` nemělo smysl vytvořit instanci objektu, i když třída poskytovala implementace funkcí, které jsou společné pro publikace.
 
-Každý uzavřený 2D tvar obsahuje například dvě vlastnosti: oblast, vnitřní rozsah tvaru; a obvodu nebo vzdálenost podél okrajů obrazce. Způsob, jakým jsou tyto vlastnosti vypočítávány, však závisí zcela na konkrétním tvaru. Vzorec pro výpočet hraničního (nebo obvodu) kružnice, například se liší od trojúhelníku. Třída `Shape` je `abstract` třída s metodami `abstract`. Který označuje, že odvozené třídy mají stejné funkce, ale tyto odvozené třídy implementují tuto funkčnost jinak.
+Například každý uzavřený dvourozměrný geometrický tvar obsahuje dvě vlastnosti: oblast, vnitřní rozsah tvaru; a obvodu, nebo vzdálenost podél okrajů tvaru. Způsob výpočtu těchto vlastností však zcela závisí na konkrétním tvaru. Vzorec pro výpočet obvodu (nebo obvodu) kruhu se například liší od vzorce trojúhelníku. Třída `Shape` je `abstract` třída `abstract` s metodami. To znamená, že odvozené třídy sdílejí stejné funkce, ale tyto odvozené třídy implementují tuto funkci odlišně.
 
-Následující příklad definuje abstraktní základní třídu s názvem `Shape`, která definuje dvě vlastnosti: `Area` a `Perimeter`. Kromě označení třídy pomocí klíčového slova [abstract](../language-reference/keywords/abstract.md) je každý člen instance označen také pomocí klíčového slova [abstract](../language-reference/keywords/abstract.md) . V tomto případě `Shape` také přepíše metodu <xref:System.Object.ToString%2A?displayProperty=nameWithType>, aby vrátila název typu, nikoli jeho plně kvalifikovaný název. A definuje dva statické členy `GetArea` a `GetPerimeter`, které umožňují volajícíům snadno načíst oblast a obvod instance jakékoli odvozené třídy. Pokud předáte instanci odvozené třídy jedné z těchto metod, modul runtime zavolá metodu přepsání odvozené třídy.
+Následující příklad definuje abstraktní základní `Shape` třídu s názvem, která definuje dvě vlastnosti: `Area` a `Perimeter`. Kromě označení třídy [pomocí klíčového](../language-reference/keywords/abstract.md) slova abstract je každý člen instance také označen [abstraktním](../language-reference/keywords/abstract.md) klíčovým slovem. V tomto `Shape` případě také <xref:System.Object.ToString%2A?displayProperty=nameWithType> přepíše metodu vrátit název typu, spíše než jeho plně kvalifikovaný název. A definuje dva statické `GetArea` členy `GetPerimeter`a , které umožňují volajícím snadno načíst oblast a obvod instance libovolné odvozené třídy. Když předáte instanci odvozené třídy jedné z těchto metod, runtime volá přepsání metody odvozené třídy.
 
 [!code-csharp[Inheritance](../../../samples/snippets/csharp/tutorials/inheritance/shape.cs#1)]
 
-Pak můžete odvodit některé třídy z `Shape`, které reprezentují konkrétní tvary. Následující příklad definuje tři třídy, `Triangle`, `Rectangle`a `Circle`. Každá z nich používá vzorec jedinečný pro konkrétní obrazec k výpočtu oblasti a hraničního prostředí. Některé odvozené třídy také definují vlastnosti, například `Rectangle.Diagonal` a `Circle.Diameter`, které jsou jedinečné pro tvar, který představují.
+Potom můžete odvodit některé třídy z, `Shape` které představují určité obrazce. Následující příklad definuje tři `Triangle`třídy , `Rectangle`, a `Circle`. Každý používá vzorec jedinečný pro daný obrazec k výpočtu plochy a obvodu. Některé odvozené třídy také definují vlastnosti, například `Rectangle.Diagonal` a `Circle.Diameter`, které jsou jedinečné pro obrazec, který představují.
 
 [!code-csharp[Inheritance](../../../samples/snippets/csharp/tutorials/inheritance/shape.cs#2)]
 
-Následující příklad používá objekty odvozené z `Shape`. Vytvoří instanci pole objektů odvozených od `Shape` a zavolá statické metody třídy `Shape`, která zabalí návratové hodnoty vlastností `Shape`. Modul runtime načítá hodnoty z potlačených vlastností odvozených typů. Příklad také přetypování každého objektu `Shape` v poli na jeho odvozený typ a, pokud je přetypování úspěšné, načte vlastnosti této konkrétní podtřídy `Shape`. 
+Následující příklad používá objekty `Shape`odvozené z . Konkretizovat pole objektů odvozených z `Shape` a volá `Shape` statické metody třídy, která obtéká hodnoty vlastností vrátit. `Shape` Runtime načte hodnoty z přepsaných vlastností odvozených typů. Příklad také přetypuje každý `Shape` objekt v poli na jeho odvozený typ a pokud je `Shape`přetypovost úspěšná, načte vlastnosti této konkrétní podtřídy .
 
 [!code-csharp[Inheritance](../../../samples/snippets/csharp/tutorials/inheritance/shape.cs#3)]
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Třídy a objekty](../tour-of-csharp/classes-and-objects.md)
-- [Dědičnost (C# Průvodce programováním)](../programming-guide/classes-and-structs/inheritance.md)
+- [Dědičnost (Průvodce programováním v C#)](../programming-guide/classes-and-structs/inheritance.md)

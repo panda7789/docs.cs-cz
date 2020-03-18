@@ -1,27 +1,27 @@
 ---
-title: Jak najít související elementy (XPath-LINQ to XML) (C#)
+title: Jak najít související prvky (XPath-LINQ do XML) (C#)
 ms.date: 07/20/2015
 ms.assetid: 41b386ee-562d-4841-bd6b-e44a7eb69f26
-ms.openlocfilehash: cdc281d0b08ee7b7f93ac28b14e82fa113a3379d
-ms.sourcegitcommit: fbb8a593a511ce667992502a3ce6d8f65c594edf
+ms.openlocfilehash: f74c338019c0451ab5e3ac0d8da10392ae5601ed
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/16/2019
-ms.locfileid: "74141029"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79169230"
 ---
-# <a name="how-to-find-related-elements-xpath-linq-to-xml-c"></a>Jak najít související elementy (XPath-LINQ to XML) (C#)
-Toto téma ukazuje, jak získat prvek pro výběr atributu, na který odkazuje hodnota jiného prvku.  
+# <a name="how-to-find-related-elements-xpath-linq-to-xml-c"></a>Jak najít související prvky (XPath-LINQ do XML) (C#)
+Toto téma ukazuje, jak získat prvek výběru na atribut, který je označován hodnotou jiného prvku.  
   
  Výraz XPath je:  
   
  `.//Customer[@CustomerID=/Root/Orders/Order[12]/CustomerID]`  
   
 ## <a name="example"></a>Příklad  
- Tento příklad najde 12 `Order` prvek a potom vyhledá zákazníka pro tuto objednávku.  
+ Tento příklad vyhledá dvanáctý `Order` prvek a potom najde zákazníka pro tuto objednávku.  
   
- Všimněte si, že indexování do seznamu v rozhraní .NET je založené na nule. Indexování do kolekce uzlů v predikátu XPath je založené na "One". Tento příklad odráží tento rozdíl.  
+ Všimněte si, že indexování do seznamu v rozhraní .NET je "nula" na základě. Indexování do kolekce uzlů v predikátu XPath je založen na jednom. Tento příklad odráží tento rozdíl.  
   
- Tento příklad používá následující dokument XML: [ukázkový soubor XML: zákazníci a objednávky (LINQ to XML)](./sample-xml-file-customers-and-orders-linq-to-xml-2.md).  
+ Tento příklad používá následující dokument XML: [Ukázkový soubor XML: Zákazníci a objednávky (LINQ to XML).](./sample-xml-file-customers-and-orders-linq-to-xml-2.md)  
   
 ```csharp  
 XDocument co = XDocument.Load("CustomersOrders.xml");  
@@ -64,7 +64,7 @@ else
 Console.WriteLine(customer1);  
 ```  
   
- Tento příklad vytvoří následující výstup:  
+ Tento příklad vytváří následující výstup:  
   
 ```output  
 Results are identical  
@@ -83,4 +83,3 @@ Results are identical
   </FullAddress>  
 </Customer>  
 ```  
- 

@@ -1,38 +1,38 @@
 ---
-title: Smíšený deklarativní kód – chyby kódu – imperativní kód (LINQ to XMLC#) ()
+title: Smíšené deklarativní chyby kódu imperativní kód (LINQ do XML) (C#)
 ms.date: 07/20/2015
 ms.assetid: fada62d0-0680-4e73-945a-2b00d7a507af
-ms.openlocfilehash: 30760999a264c81e16104c0c9b112d442ce66121
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
+ms.openlocfilehash: 76a9bb5abf6ce2700a2a0698ebc109f65e2b7eb1
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69591620"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79168346"
 ---
-# <a name="mixed-declarative-codeimperative-code-bugs-linq-to-xml-c"></a>Smíšený deklarativní kód/chyby nepodmíněných kódů (LINQ to XMLC#) ()
-[!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]obsahuje různé metody, které umožňují přímou úpravu stromu XML. Můžete přidat prvky, odstranit prvky, změnit obsah elementu, přidat atributy a tak dále. Toto programovací rozhraní je popsáno v tématu [Úprava stromů XML (LINQ to XML)C#()](./in-memory-xml-tree-modification-vs-functional-construction-linq-to-xml.md). Pokud provádíte iteraci na jednu z OS, <xref:System.Xml.Linq.XContainer.Elements%2A>jako je například, a upravujete strom XML při iteraci přes osu, můžete ukončit některé neobvyklé chyby.  
+# <a name="mixed-declarative-codeimperative-code-bugs-linq-to-xml-c"></a>Smíšené deklarativní chyby kódu/imperativního kódu (LINQ to XML) (C#)
+[!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]obsahuje různé metody, které umožňují přímo upravit strom XML. Můžete přidávat prvky, odstraňovat prvky, měnit obsah prvku, přidávat atributy a tak dále. Toto programovací rozhraní je popsáno [v úpravě stromů XML (LINQ to XML) (C#)](./in-memory-xml-tree-modification-vs-functional-construction-linq-to-xml.md). Pokud iterace prostřednictvím jedné z os, jako je například <xref:System.Xml.Linq.XContainer.Elements%2A>, a upravujete strom XML při iterace přes osu, můžete skončit s některé podivné chyby.  
   
- Tento problém se někdy označuje jako "problém Halloweenem".  
+ Tento problém je někdy známý jako "Halloween problém".  
   
 ## <a name="definition-of-the-problem"></a>Definice problému  
- Při psaní kódu pomocí LINQ, který projde kolekcí, píšete kód v deklarativním stylu. K popisu *toho, co* chcete udělat, je další podobají, a to tak, *jak* chcete. Pokud napíšete kód, který 1) získá první prvek, 2) ho testuje v nějaké podmínce, 3) ho upraví a 4) ho vrátí zpátky do seznamu, pak by to byl imperativní kód. Informujete o tom, *jak* se má počítač provést.  
+ Při psaní některého kódu pomocí LINQ, který iteruje prostřednictvím kolekce, píšete kód v deklarativním stylu. Je to více podobně jako popis toho, *co* chcete, spíše to, *jak* chcete, aby si to udělat. Pokud napíšete kód, který 1) získá první prvek, 2) testuje pro některé podmínky, 3) upraví jej a 4) vloží zpět do seznamu, pak by to bylo nutné kód. Říkáte počítači, *jak* dělat to, co chcete udělat.  
   
- Kombinování těchto stylů kódu ve stejné operaci je to, co vede k problémům. Zvažte použití těchto zdrojů:  
+ Míchání těchto stylů kódu ve stejné operaci je to, co vede k problémům. Zvažte použití těchto zdrojů:  
   
  Předpokládejme, že máte propojený seznam se třemi položkami (a, b a c):  
   
  `a -> b -> c`  
   
- Nyní předpokládejme, že chcete přejít přes propojený seznam a přidat tři nové položky (a, b a c). Chcete, aby výsledný propojený seznam vypadal takto:  
+ Nyní předpokládejme, že chcete procházet propojený seznam a přidat tři nové položky (a', b' a c'). Chcete, aby výsledný propojený seznam vypadal takto:  
   
  `a -> a' -> b -> b' -> c -> c'`  
   
- Takže napíšete kód, který projde seznamem, a pro každou položku přidá novou položku hned po ní. Co se stane, váš kód nejprve uvidí `a` prvek a vloží `a'` za něj. Nyní se váš kód přesune na další uzel v seznamu, který je nyní `a'`! Happily IT přidá novou položku do seznamu, `a''`.  
+ Takže napíšete kód, který itetuje prostřednictvím seznamu a pro každou položku přidá novou položku hned za ním. Co se stane, je, `a` že váš `a'` kód nejprve zobrazí prvek a vložit za něj. Nyní se váš kód přesune do dalšího uzlu v `a'`seznamu, což je nyní! To šťastně přidá novou položku `a''`do seznamu, .  
   
- Jak to byste měli v reálném světě vyřešit? Také můžete vytvořit kopii původního propojeného seznamu a vytvořit úplně nový seznam. Nebo pokud píšete čistě imperativní kód, můžete najít první položku, přidat novou položku a pak dvakrát v propojeném seznamu a přejít tak na prvek, který jste právě přidali.  
+ Jak byste to vyřešili ve skutečném světě? No, můžete vytvořit kopii původního propojeného seznamu, a vytvořit zcela nový seznam. Nebo pokud píšete čistě imperativní kód, můžete najít první položku, přidat novou položku a potom dvakrát postoupit v propojeném seznamu a posunit se přes prvek, který jste právě přidali.  
   
-## <a name="adding-while-iterating"></a>Přidávání během iterací  
- Předpokládejme například, že chcete napsat kód, který je pro každý prvek ve stromové struktuře, chcete vytvořit duplicitní prvek:  
+## <a name="adding-while-iterating"></a>Přidání při iterace  
+ Předpokládejme například, že chcete napsat nějaký kód, který pro každý prvek ve stromu chcete vytvořit duplicitní prvek:  
   
 ```csharp  
 XElement root = new XElement("Root",  
@@ -44,9 +44,9 @@ foreach (XElement e in root.Elements())
     root.Add(new XElement(e.Name, (string)e));  
 ```  
   
- Tento kód přejde do nekonečné smyčky. Příkaz prochází `Elements()` osu a `doc` přidává nové prvky do prvku. `foreach` Ukončí iteraci také prostřednictvím prvků, které jste právě přidali. A protože přiděluje nové objekty s každou iterací smyčky, bude nakonec využívat veškerou dostupnou paměť.  
+ Tento kód přejde do nekonečné smyčky. Příkaz `foreach` iterates přes `Elements()` osu, přidání `doc` nových prvků do prvku. To skončí iterace i prostřednictvím prvků, které právě přidal. A protože přiděluje nové objekty s každou iteraci smyčky, nakonec spotřebuje všechny dostupné paměti.  
   
- Tento problém můžete vyřešit tak, že narazíte kolekci do paměti <xref:System.Linq.Enumerable.ToList%2A> pomocí standardního operátoru dotazu, a to takto:  
+ Tento problém můžete vyřešit vytažením <xref:System.Linq.Enumerable.ToList%2A> kolekce do paměti pomocí standardního operátoru dotazu, a to následujícím způsobem:  
   
 ```csharp  
 XElement root = new XElement("Root",  
@@ -72,8 +72,8 @@ Console.WriteLine(root);
 </Root>  
 ```  
   
-## <a name="deleting-while-iterating"></a>Odstraňování během iterace  
- Pokud chcete odstranit všechny uzly na určité úrovni, můžete se rozhodnout, že napíšete kód podobný následujícímu:  
+## <a name="deleting-while-iterating"></a>Odstranění při iterace  
+ Pokud chcete odstranit všechny uzly na určité úrovni, můžete být v pokušení napsat kód, jako je následující:  
   
 ```csharp  
 XElement root = new XElement("Root",  
@@ -86,9 +86,9 @@ foreach (XElement e in root.Elements())
 Console.WriteLine(root);  
 ```  
   
- To ale neudělá to, co chcete. V takové situaci, po odebrání prvního prvku, je odebrán ze stromu XML obsaženého v kořenovém adresáři a kódem v metodě element, který provádí iteraci, nelze najít další prvek.  
+ To však nedělá to, co chcete. V takovém případě po odebrání první prvek, A, je odebrán ze stromu XML obsažené v kořenovém adresáři a kód v Elements metoda, která dělá iterace nelze najít další prvek.  
   
- Předchozí kód vytvoří následující výstup:  
+ Předchozí kód vytváří následující výstup:  
   
 ```xml  
 <Root>  
@@ -97,7 +97,7 @@ Console.WriteLine(root);
 </Root>  
 ```  
   
- Řešením je znovu zavolat <xref:System.Linq.Enumerable.ToList%2A> do vyhodnotit kolekce následujícím způsobem:  
+ Řešením je opět <xref:System.Linq.Enumerable.ToList%2A> volat k zhmotnění kolekce, a to následovně:  
   
 ```csharp  
 XElement root = new XElement("Root",  
@@ -116,7 +116,7 @@ Console.WriteLine(root);
 <Root />  
 ```  
   
- Alternativně můžete iteraci eliminovat zcela voláním <xref:System.Xml.Linq.XElement.RemoveAll%2A> na nadřazený element:  
+ Alternativně můžete eliminovat iterace úplně <xref:System.Xml.Linq.XElement.RemoveAll%2A> voláním na nadřazený prvek:  
   
 ```csharp  
 XElement root = new XElement("Root",  
@@ -128,10 +128,10 @@ root.RemoveAll();
 Console.WriteLine(root);  
 ```  
   
-## <a name="why-cant-linq-automatically-handle-this"></a>Proč nedokážete tuto technologii LINQ automaticky zpracovat?  
- Jedním z přístupů je vždycky přenášet vše do paměti namísto opožděného vyhodnocení. Je ale velmi nákladný z pohledu výkonu a využití paměti. Pokud by se jednalo o tento přístup v praxi LINQ and (LINQ to XML), nedošlo by k chybě v reálných situacích.  
+## <a name="why-cant-linq-automatically-handle-this"></a>Proč to linq nemůže automaticky zpracovat?  
+ Jedním z přístupů by bylo vždy přinést vše do paměti namísto toho, aby opožděné hodnocení. Nicméně, to by bylo velmi drahé, pokud jde o výkon a využití paměti. Ve skutečnosti, pokud LINQ a (LINQ na XML) byly tento přístup, by se nezdaří v reálných situacích.  
   
- Dalším možným přístupem by bylo, že se do LINQ vloží syntaxe transakce a pokusí se kompilátor analyzovat kód a určí, jestli je potřeba vyhodnocená konkrétní kolekce. Nicméně pokus o určení veškerého kódu, který má vedlejší účinky, je neuvěřitelně složitý. Vezměte v úvahu následující kód:  
+ Dalším možným přístupem by bylo vložit nějakou syntaxi transakce do LINQ a mít kompilátor pokus o analýzu kódu a zjistit, zda je třeba zhmotnit nějakou konkrétní kolekci. Však pokus o určení všech kód, který má vedlejší účinky je neuvěřitelně složité. Uvažujte následující kód:  
   
 ```csharp  
 var z =  
@@ -140,20 +140,20 @@ var z =
     select DoMyProjection(e);  
 ```  
   
- Takový kód analýzy by musel analyzovat metody TestSomeCondition a DoMyProjection a všechny metody, které tyto metody volaly, k určení, zda nějaký kód měl vedlejší účinky. Ale kód analýzy nemůže vyhledat žádný kód, který má vedlejší účinky. Je nutné vybrat pouze kód, který měl vedlejší účinky na podřízené prvky `root` v této situaci.  
+ Takový kód analýzy by bylo třeba analyzovat metody TestSomeCondition a DoMyProjection a všechny metody, které tyto metody volal, k určení, pokud nějaký kód měl vedlejší účinky. Ale kód analýzy nemohl jen hledat žádný kód, který měl vedlejší účinky. Bude muset vybrat pouze pro kód, který měl vedlejší `root` účinky na podřízené prvky v této situaci.  
   
- LINQ to XML se neprovede žádná taková analýza.  
+ LINQ na XML se nepokouší provést žádnou takovou analýzu.  
   
- Abyste se těmto problémům vyhnuli, je to na vás.  
+ Je na vás, abyste se těmto problémům vyhnuli.  
   
 ## <a name="guidance"></a>Doprovodné materiály  
- Nejdříve Nekombinujte deklarativní a imperativní kód.  
+ Za prvé, nemíchejte deklarativní a imperativní kód.  
   
- I v případě, že znáte přesně sémantiku vašich kolekcí a sémantiku metod, které mění strom XML, pokud napíšete kód chytřejší, který brání těmto kategoriím problémů, váš kód bude muset být v budoucnu udržován jinými vývojáři. a nemusí být na problémech jasné. Pokud kombinujete deklarativní a imperativní styly kódování, váš kód bude více poměrně křehký.  
+ I v případě, že přesně znáte sémantiku vašich sbírek a sémantiku metod, které upravují strom XML, pokud napíšete nějaký chytrý kód, který se těmto kategoriím problémů vyhne, bude váš kód muset v budoucnu udržovat jiní vývojáři a nemusí být v otázkách tak jasné. Pokud smícháte deklarativní a imperativní styly kódování, váš kód bude křehčí.  
   
- Pokud píšete kód, který materializuje kolekci tak, aby se tyto problémy předešly, poznamenejte si je podle potřeby v kódu, aby Programátori údržby porozuměli problému.  
+ Pokud napíšete kód, který zhmotní kolekci tak, aby se tyto problémy vyhnout, poznamenejte si s komentáři podle potřeby ve vašem kódu, takže programátoři údržby bude rozumět problému.  
   
- Za druhé, pokud povolíte výkon a další okolnosti, používejte pouze deklarativní kód. Neměňte existující strom XML. Vygenerujte nový.  
+ Za druhé, pokud výkon a další aspekty umožňují, použijte pouze deklarativní kód. Neupravujte existující strom XML. Vygenerujte nový.  
   
 ```csharp  
 XElement root = new XElement("Root",  
@@ -167,4 +167,3 @@ XElement newRoot = new XElement("Root",
 );  
 Console.WriteLine(newRoot);  
 ```  
- 
