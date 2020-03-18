@@ -45,9 +45,9 @@
           href: how-to-encrypt-xml-elements-with-asymmetric-keys.md
         - name: 'Postupy: Dešifrování elementů XML pomocí asymetrických klíčů'
           href: how-to-decrypt-xml-elements-with-asymmetric-keys.md
-        - name: 'Postupy: Šifrování elementů XML pomocí certifikátů X.509'
+        - name: 'Postupy: Šifrování XML elementů pomocí certifikátů X.509'
           href: how-to-encrypt-xml-elements-with-x-509-certificates.md
-        - name: 'Postupy: Dešifrování elementů XML pomocí certifikátů X.509'
+        - name: 'Postupy: Dešifrování XML elementů pomocí certifikátů X.509'
           href: how-to-decrypt-xml-elements-with-x-509-certificates.md
         - name: 'Postupy: Podepisování dokumentů XML digitálními podpisy'
           href: how-to-sign-xml-documents-with-digital-signatures.md

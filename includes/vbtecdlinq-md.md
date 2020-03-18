@@ -1,9 +1,9 @@
 ---
 ms.openlocfilehash: f13ba3a6cbeaecb4f2dc9d5e84ab86274ca57499
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "65633629"
 ---
-<span data-ttu-id="28819-101">Technologie LINQ to SQL</span><span class="sxs-lookup"><span data-stu-id="28819-101">LINQ to SQL</span></span>
+<span data-ttu-id="8393a-101">Technologie LINQ to SQL</span><span class="sxs-lookup"><span data-stu-id="8393a-101">LINQ to SQL</span></span>

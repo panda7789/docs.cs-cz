@@ -1,7 +1,7 @@
 - name: Referenční dokumentace jazyka XAML
   href: index.md
   items:
-    - name: 'Jazykové funkce kompatibility značek (mc:)'
+    - name: 'Jazykové funkce oboru názvů jazyka XAML (x:)'
       href: namespace-language-features.md
       items:
         - name: Funkce jazyka XAML 2009 (nikoli WPF)
