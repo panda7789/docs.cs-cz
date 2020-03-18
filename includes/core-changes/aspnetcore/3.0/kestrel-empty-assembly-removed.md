@@ -1,35 +1,35 @@
 ---
 ms.openlocfilehash: 1c9c899d77dd69e185281d98bfec18ce73d80815
-ms.sourcegitcommit: 2e95559d957a1a942e490c5fd916df04b39d73a9
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/16/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "72394378"
 ---
-### <a name="kestrel-empty-https-assembly-removed"></a>Kestrel: bylo odebráno prázdné sestavení HTTPS.
+### <a name="kestrel-empty-https-assembly-removed"></a>Poštolek: Prázdná sestava HTTPS byla odebrána.
 
-Bylo odebráno sestavení <xref:Microsoft.AspNetCore.Server.Kestrel.Https?displayProperty=fullName>.
+Sestavení <xref:Microsoft.AspNetCore.Server.Kestrel.Https?displayProperty=fullName> bylo odebráno.
 
-#### <a name="version-introduced"></a>Představená verze
+#### <a name="version-introduced"></a>Zavedená verze
 
 3.0
 
 #### <a name="reason-for-change"></a>Důvod změny
 
-V ASP.NET Core 2,1 byl obsah `Microsoft.AspNetCore.Server.Kestrel.Https` přesunut do <xref:Microsoft.AspNetCore.Server.Kestrel.Core?displayProperty=fullName>. Tato změna byla provedena neukončujícím způsobem pomocí atributů `[TypeForwardedTo]`.
+V ASP.NET Core 2.1 `Microsoft.AspNetCore.Server.Kestrel.Https` byl obsah <xref:Microsoft.AspNetCore.Server.Kestrel.Core?displayProperty=fullName>přesunut do . Tato změna byla provedena nerozdělitelné `[TypeForwardedTo]` způsobem pomocí atributů.
 
 #### <a name="recommended-action"></a>Doporučená akce
 
-- Knihovny odkazující `Microsoft.AspNetCore.Server.Kestrel.Https` 2,0 by měly aktualizovat všechny závislosti ASP.NET Core na 2,1 nebo novější. V opačném případě mohou při načtení do aplikace ASP.NET Core 3,0 dojít k přerušení.
-- Aplikace a knihovny cílené na ASP.NET Core 2,1 a novější by měly odebrat všechny přímé odkazy na balíček NuGet `Microsoft.AspNetCore.Server.Kestrel.Https`.
+- Knihovny odkazující `Microsoft.AspNetCore.Server.Kestrel.Https` na 2.0 by měly aktualizovat všechny ASP.NET základní závislosti na 2.1 nebo novější. V opačném případě se mohou přerušit při načtení do aplikace core 3.0 ASP.NET.
+- Aplikace a knihovny zaměřené ASP.NET Core 2.1 a novější `Microsoft.AspNetCore.Server.Kestrel.Https` by měly odebrat všechny přímé odkazy na balíček NuGet.
 
 #### <a name="category"></a>Kategorie
 
-ASP.NET Core
+Jádro ASP.NET
 
 #### <a name="affected-apis"></a>Ovlivněná rozhraní API
 
-Žádné
+Žádný
 
 <!-- 
 

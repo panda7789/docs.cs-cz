@@ -1,38 +1,38 @@
 ---
 title: Orchestrace mikroslužeb a vícekontejnerových aplikací pro vysokou škálovatelnost a dostupnost
-description: Naučte se, jak nasadit aplikaci pomocí služby Azure Kubernetes.
+description: Přečtěte si, jak nasadit aplikaci pomocí služby Azure Kubernetes Service.
 ms.date: 02/15/2019
 ms.openlocfilehash: 0aa2f83fbf8f9a8815d65730002943cca748643d
-ms.sourcegitcommit: 55f438d4d00a34b9aca9eedaac3f85590bb11565
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/23/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "71182368"
 ---
 # <a name="deploy-to-azure-kubernetes-service-aks"></a>Nasazení do služby Azure Kubernetes Service (AKS)
 
-S AKS můžete komunikovat s použitím preferovaného klientského operačního systému, v tomto článku se dozvíte, jak to udělat s Windows, a s vloženou verzí Ubuntu Linux v systému Windows pomocí příkazů bash.
+Můžete komunikovat s AKS pomocí preferovaného klientského operačního systému, zde vám ukážeme, jak to udělat s Microsoft Windows a vestavěnou verzí Ubuntu Linux v systému Windows pomocí příkazů Bash.
 
-Předpoklady pro použití AKS jsou:
+Předpoklady, které je třeba mít před použitím AKS, jsou:
 
-- Počítač pro vývoj pro Linux nebo Mac
-- Počítač pro vývoj ve Windows
-  - Režim pro vývojáře povolený ve Windows
-  - Subsystém Windows pro Linux
-- Azure – rozhraní příkazového řádku nainstalované v [systémech Windows, Mac nebo Linux](https://docs.microsoft.com/cli/azure/install-azure-cli)
+- Vývojový stroj pro Linux nebo Mac
+- Vývojový počítač systému Windows
+  - Režim pro vývojáře v systému Windows
+  - Windows Subsystem for Linux
+- Azure-CLI nainstalované na [Windows, Mac nebo Linux](https://docs.microsoft.com/cli/azure/install-azure-cli)
 
 > [!NOTE]
-> Podrobné informace o:
+> Chcete-li najít úplné informace o:
 >
-> Azure-CLI: <https://docs.microsoft.com/cli/azure/index>
+> Azure-CLI:<https://docs.microsoft.com/cli/azure/index>
 >
-> Subsystém Windows pro Linux: <https://docs.microsoft.com/windows/wsl/about>
+> Windows Subsystem pro Linux:<https://docs.microsoft.com/windows/wsl/about>
 
 ## <a name="create-the-aks-environment-in-azure"></a>Vytvoření prostředí AKS v Azure
 
-Existuje několik způsobů, jak vytvořit prostředí AKS. Dá se to udělat pomocí příkazů Azure-CLI nebo pomocí Azure Portal.
+Prostředí AKS lze vytvořit několika způsoby. Dá se to provést pomocí příkazů Azure-CLI nebo pomocí portálu Azure.
 
-Tady můžete prozkoumat některé příklady pomocí Azure-CLI a vytvořit tak cluster a Azure Portal ke kontrole výsledků. Musíte mít také Kubectl a Docker ve vývojovém počítači.  
+Tady si můžete prohlédnout některé příklady pomocí Azure-CLI k vytvoření clusteru a portálu Azure ke kontrole výsledků. Také musíte mít Kubectl a Docker ve vývojovém počítači.  
 
 ## <a name="create-the-aks-cluster"></a>Vytvoření clusteru AKS
 
@@ -42,42 +42,42 @@ Vytvořte cluster AKS pomocí tohoto příkazu:
 az aks create --resource-group MSSampleResourceGroup --name MSSampleClusterK801 --agent-count 1 --generate-ssh-keys --location westus2
 ```
 
-Po dokončení úlohy vytváření se můžete podívat na AKS vytvořený v Azure Portal:
+Po dokončení úlohy vytvoření uvidíte AKS vytvořené na webu Azure Portal:
 
 Skupina prostředků:
 
 ![Zobrazení prohlížeče skupiny prostředků Azure AKS.](media/aks-resource-group-view.png)
 
-**Obrázek 4-17**. AKS zobrazení skupiny prostředků z Azure.
+**Obrázek 4-17**. Zobrazení Skupiny prostředků AKS z Azure.
 
 Cluster AKS:
 
 ![Zobrazení prohlížeče skupiny prostředků AKS.](media/aks-cluster-view.png)
 
-**Obrázek 4-18**. AKS zobrazení z Azure.
+**Obrázek 4-18**. Zobrazení AKS z Azure.
 
-Můžete také zobrazit uzel vytvořený pomocí `Azure-CLI` a `Kubectl`.
+Můžete také zobrazit uzel vytvořený `Azure-CLI` `Kubectl`pomocí a .
 
-Nejdřív načítají se přihlašovací údaje:
+Za prvé, získání pověření:
 
 ```console
 az aks get-credentials --resource-group MSSampleK8ClusterRG --name MSSampleK8Cluster
 ```
 
-![Výstup z konzoly z výše uvedeného příkazu: sloučený MsSampleK8Cluster jako aktuální kontext v/root/.Kube/config.](media/get-credentials-command-result.png)
+![Výstup konzoly z výše uvedeného příkazu: Sloučený "MsSampleK8Cluster jako aktuální kontext v /root/.kube/config.](media/get-credentials-command-result.png)
 
-**Obrázek 4-19**. výsledek `aks get-credentials` příkazu
+**Obrázek 4-19**. `aks get-credentials`výsledek příkazu.
 
-A pak načítají uzly z Kubectl:
+A pak, jak se uzly z Kubectl:
 
 ```console
 kubectl get nodes
 ```
 
-![Výstup na konzole z výše uvedeného příkazu: seznam uzlů se stavem, stáří (čas spuštění) a verze](media/kubectl-get-nodes-command-result.png)
+![Výstup konzoly z výše uvedeného příkazu: Seznam uzlů se stavem, věkem (běžícím časem) a verzí](media/kubectl-get-nodes-command-result.png)
 
-**Obrázek 4-20**. výsledek `kubectl get nodes` příkazu
+**Obrázek 4-20**. `kubectl get nodes`výsledek příkazu.
 
 >[!div class="step-by-step"]
 >[Předchozí](orchestrate-high-scalability-availability.md)
->[Další](docker-apps-development-environment.md)
+>[další](docker-apps-development-environment.md)

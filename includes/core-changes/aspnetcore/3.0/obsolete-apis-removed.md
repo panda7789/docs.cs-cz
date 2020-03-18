@@ -1,34 +1,34 @@
 ---
 ms.openlocfilehash: b4a20599ce6b7d8fd642e4f0e5b5f7d3fbcdac92
-ms.sourcegitcommit: 2e95559d957a1a942e490c5fd916df04b39d73a9
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/16/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "72394291"
 ---
-### <a name="obsolete-antiforgery-cors-diagnostics-mvc-and-routing-apis-removed"></a>Odebrání zastaralých rozhraní API pro antipadělání, CORS, diagnostiku, MVC a směrování
+### <a name="obsolete-antiforgery-cors-diagnostics-mvc-and-routing-apis-removed"></a>Byla odebrána zastaralá antiforgerií, CORS, diagnostika, MVC a směrovací api
 
-Zastaralé členy a přepínače kompatibility v ASP.NET Core 2,2 byly odebrány.
+Zastaralé členy a přepínače kompatibility v ASP.NET Core 2.2 byly odebrány.
 
-#### <a name="version-introduced"></a>Představená verze
+#### <a name="version-introduced"></a>Zavedená verze
 
 3.0
 
 #### <a name="reason-for-change"></a>Důvod změny
 
-Zlepšení povrchu rozhraní API v průběhu času.
+Zlepšení povrchu ROZHRANÍ API v průběhu času.
 
 #### <a name="recommended-action"></a>Doporučená akce
 
-Při cílení na .NET Core 2,2 postupujte podle pokynů v zastaralých zprávách sestavení, abyste místo toho přijali nová rozhraní API.
+Při cílení na rozhraní .NET Core 2.2 postupujte podle pokynů v zastaralých zprávách sestavení a přijměte místo toho nová rozhraní API.
 
 #### <a name="category"></a>Kategorie
 
-ASP.NET Core
+Jádro ASP.NET
 
 #### <a name="affected-apis"></a>Ovlivněná rozhraní API
 
-Následující typy a členy byly označeny jako zastaralé pro ASP.NET Core 2,1 a 2,2:
+Následující typy a členy byly označeny jako zastaralé pro ASP.NET jádrem 2.1 a 2.2:
 
 **Typy**
 

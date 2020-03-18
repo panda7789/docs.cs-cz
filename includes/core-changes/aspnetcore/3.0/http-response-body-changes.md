@@ -1,22 +1,22 @@
 ---
 ms.openlocfilehash: cd66317bc93343e03a73dec74dff534776ca42e4
-ms.sourcegitcommit: 5a28f8eb071fcc09b045b0c4ae4b96898673192e
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/31/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "73198400"
 ---
-### <a name="http-response-body-infrastructure-changes"></a>HTTP: změny infrastruktury textu odpovědi
+### <a name="http-response-body-infrastructure-changes"></a>HTTP: Změny infrastruktury těla odezvy
 
-Infrastruktura, která přestala text odpovědi HTTP, se změnila. Pokud používáte `HttpResponse` přímo, neměli byste dělat žádné změny kódu. Pokud zabalíte nebo nahrazujete `HttpResponse.Body` nebo máte přístup k `HttpContext.Features`, přečtěte si další informace.
+Infrastruktura podporující tělo odpovědi HTTP se změnila. Pokud používáte `HttpResponse` přímo, neměli byste muset provádět žádné změny kódu. Přečtěte si další informace, `HttpResponse.Body` pokud balíte, nahrazujete nebo přistupujete k aplikaci `HttpContext.Features`.
 
-#### <a name="version-introduced"></a>Představená verze
+#### <a name="version-introduced"></a>Zavedená verze
 
 3.0
 
 #### <a name="old-behavior"></a>Staré chování
 
-K tělo odpovědi HTTP bylo přidruženo tři rozhraní API:
+K tělu odpovědi HTTP byla přidružena tři řešení API:
 
 - `IHttpResponseFeature.Body`
 - `IHttpSendFileFeature.SendFileAsync`
@@ -24,19 +24,19 @@ K tělo odpovědi HTTP bylo přidruženo tři rozhraní API:
 
 #### <a name="new-behavior"></a>Nové chování
 
-Pokud nahradíte `HttpResponse.Body`, nahradí se celý `IHttpResponseBodyFeature` obálkou kolem daného datového proudu pomocí `StreamResponseBodyFeature` pro poskytování výchozích implementací pro všechna očekávaná rozhraní API. Nastavení vrátit původní datový proud vrátí tuto změnu.
+Pokud nahradíte `HttpResponse.Body`, nahradí `IHttpResponseBodyFeature` celý obálku kolem daného `StreamResponseBodyFeature` datového proudu pomocí poskytnout výchozí implementace pro všechny očekávané api. Nastavení původního datového proudu vrátí tuto změnu.
 
 #### <a name="reason-for-change"></a>Důvod změny
 
-Motivací je kombinování rozhraní API těla odpovědi do jednoho nového rozhraní funkce.
+Motivací je kombinovat rozhraní API těla odezvy do jednoho rozhraní nové funkce.
 
 #### <a name="recommended-action"></a>Doporučená akce
 
-Použijte `IHttpResponseBodyFeature`, kde jste dříve používali `IHttpResponseFeature.Body`, `IHttpSendFileFeature` nebo `IHttpBufferingFeature`.
+Místo `IHttpResponseBodyFeature` použití dříve `IHttpResponseFeature.Body`používali `IHttpSendFileFeature`, `IHttpBufferingFeature`nebo .
 
 #### <a name="category"></a>Kategorie
 
-ASP.NET Core
+Jádro ASP.NET
 
 #### <a name="affected-apis"></a>Ovlivněná rozhraní API
 

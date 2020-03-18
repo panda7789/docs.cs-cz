@@ -1,19 +1,19 @@
 ---
-title: Příklad řetězení dotazů (C#)
+title: Příklad zřetězení dotazů (C#)
 ms.date: 07/20/2015
 ms.assetid: abbca162-d95e-43af-b92c-e46e6aa2540e
 ms.openlocfilehash: 45e3a4f341ca8eb06ff0f553e0f933956e6c6546
-ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/31/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "70205417"
 ---
-# <a name="chaining-queries-example-c"></a>Příklad řetězení dotazů (C#)
-Tento příklad sestaví v předchozím příkladu a ukazuje, co se stane, když zřetězení dvou dotazů, které používají odložené provádění a opožděné vyhodnocení.  
+# <a name="chaining-queries-example-c"></a>Příklad zřetězení dotazů (C#)
+Tento příklad vychází z předchozího příkladu a ukazuje, co se stane, když zřetězení dohromady dva dotazy, které oba používají odložené spuštění a opožděné vyhodnocení.  
   
 ## <a name="example"></a>Příklad  
- V tomto příkladu je zavedena `AppendString`jiná rozšiřující metoda, která připojí zadaný řetězec ke každému řetězci ve zdrojové kolekci a následně vytvoří nové řetězce.  
+ V tomto příkladu je zavedena `AppendString`jiná metoda rozšíření , která připojí zadaný řetězec ke každému řetězci ve zdrojové kolekci a pak dává nové řetězce.  
   
 ```csharp  
 public static class LocalExtensions  
@@ -62,7 +62,7 @@ class Program
 }  
 ```  
   
- Tento příklad vytvoří následující výstup:  
+ Tento příklad vytváří následující výstup:  
   
 ```output  
 ToUpper: source >abc<  
@@ -78,14 +78,14 @@ AppendString: source >GHI<
 Main: str >GHI!!!<  
 ```  
   
- V tomto příkladu vidíte, že každá metoda rozšíření funguje postupně pro každou položku ve zdrojové kolekci.  
+ V tomto příkladu uvidíte, že každá metoda rozšíření pracuje jeden po druhém pro každou položku ve zdrojové kolekci.  
   
- To, co by mělo být z tohoto příkladu jasné, je, že i když jsme zřetězené dotazy, které poskytují kolekce, nematerializují žádné zprostředkující kolekce. Místo toho je každá položka předána z jedné opožděné metody do další. To vede k mnohem menšímu nároky na paměť než k přístupu, který by nejdřív přijal jedno pole řetězců, a pak vytvoří druhé pole řetězců, které se převedlo na velká písmena a nakonec vytvoří třetí pole řetězců, kde má každý řetězec vykřičník připojené body.  
+ Co by mělo být jasné z tohoto příkladu je, že i když jsme zřetězené společně dotazy, které výnos kolekce, žádné zprostředkující kolekce jsou materialized. Místo toho každá položka je předánz jedné opožděné metody na další. Výsledkem je mnohem menší nároky na paměť než přístup, který by nejprve trvat jedno pole řetězců, pak vytvořit druhé pole řetězců, které byly převedeny na velká písmena a nakonec vytvořit třetí pole řetězců, kde každý řetězec má vykřičník připojených bodů.  
   
- Další téma v tomto kurzu ilustruje mezilehlé vymaterializování:  
+ Další téma v tomto kurzu ilustruje zprostředkující materializaci:  
   
 - [Zprostředkující materializace (C#)](./intermediate-materialization.md)  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Kurz: Zřetězení dotazů společně (C#)](./deferred-execution-and-lazy-evaluation-in-linq-to-xml.md)
+- [Kurz: Řetězení dotazů dohromady (C#)](./deferred-execution-and-lazy-evaluation-in-linq-to-xml.md)

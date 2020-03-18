@@ -9,12 +9,12 @@ ms.topic: landing-page
 ms.custom: updateeachrelease
 ms.date: 01/24/2020
 ms.openlocfilehash: 2c3901f8d5c8bb0c7ffde31b1aec19a81af9f4ce
-ms.sourcegitcommit: 43d10ef65f0f1fd6c3b515e363bde11a3fcd8d6d
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/03/2020
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "78239921"
 ---
 # <a name="net-api-browser"></a>Prohlížeč rozhraní API pro .NET
 
-Vítá vás prohlížeč rozhraní .NET API – vaše zastavení pro všechny. Rozhraní API založená na síti od Microsoftu. Zahajte hledání všech spravovaných rozhraní API zadáním následujícího pole. Další informace o prohlížeči rozhraní API najdete [v našem blogovém příspěvku](https://aka.ms/apibrowser). Pokud máte nějakou zpětnou vazbu, vytvořte nový problém v [úložišti MicrosoftDocs/Feedback na GitHubu](https://github.com/MicrosoftDocs/feedback/issues).
+Vítejte v prohlížeči .NET API – vašem one-stop shopu pro všechny . ROZHRANÍ API založená na NET od společnosti Microsoft. Začněte hledat všechna spravovaná api zadáním do pole níže. Další informace o prohlížeči API najdete [v našem příspěvku na blogu](https://aka.ms/apibrowser). Pokud máte nějakou zpětnou vazbu, vytvořte nový problém v [úložišti MicrosoftDocs/feedback na GitHubu](https://github.com/MicrosoftDocs/feedback/issues).

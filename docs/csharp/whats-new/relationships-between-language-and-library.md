@@ -1,35 +1,35 @@
 ---
-title: Vztah mezi funkcí jazyka a knihovny typů | Dokumentace Microsoftu
-description: Jazykové funkce se často spoléhat na knihovnu typů pro implementaci. Seznamte se s danou relaci.
+title: Vztah mezi jazykovými prvky a typy knihoven | Dokumenty společnosti Microsoft
+description: Funkce jazyka často spoléhají na typy knihoven pro implementaci. Pochop ten vztah.
 ms.date: 07/20/2017
 ms.openlocfilehash: dfae7972af0a251a92700d7d33bd6f971eb1870e
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "61706023"
 ---
-# <a name="relationships-between-language-features-and-library-types"></a>Vztahy mezi funkcí jazyka a knihovny typů
+# <a name="relationships-between-language-features-and-library-types"></a>Vztahy mezi funkcemi jazyka a typy knihoven
 
-C# Vyžaduje standardní knihovny měl určité typy a členy určitých přístupné pro tyto typy definice jazyka. Kompilátor generuje kód, který používá tyto požadované typy a členy pro mnoho funkcí v jiném jazyce. Pokud je to nezbytné, existují balíčky NuGet, které obsahují typy potřebné pro novější verze jazyka při psaní kódu pro prostředí, kde tyto typy nebo členy nejsou nasazeni ještě.
+Definice jazyka C# vyžaduje standardní knihovny mít určité typy a některé přístupné členy na tyto typy. Kompilátor generuje kód, který používá tyto požadované typy a členy pro mnoho různých jazykových funkcí. V případě potřeby existují balíčky NuGet, které obsahují typy potřebné pro novější verze jazyka při psaní kódu pro prostředí, kde tyto typy nebo členy ještě nebyly nasazeny.
 
-Tato závislost na funkce standardní knihovny, které bylo součástí C# jazyk od své první verze. V této verzi zahrnutý příklady:
+Tato závislost na standardní funkce knihovny byla součástí jazyka C# od jeho první verze. V této verzi jsou příklady:
 
-* <xref:System.Exception> -používá pro všechny výjimky generované kompilátorem.
-* <xref:System.String> - C# `string` je synonymum pro typ <xref:System.String>.
-* <xref:System.Int32> -synonymum `int`.
+* <xref:System.Exception>- používá se pro všechny výjimky generované kompilátorem.
+* <xref:System.String>- C# `string` typ je <xref:System.String>synonymem pro .
+* <xref:System.Int32>- synonymum `int`.
 
-Tento první verze byla jednoduché: kompilátor a standardní knihovny dodané společně a došlo jenom jednu verzi každého.
+Tato první verze byla jednoduchá: kompilátor a standardní knihovna byly dodány společně a byla tam pouze jedna verze každého.
 
-Další verze C# nové typy nebo členy příležitostně přidali do závislostí. Mezi příklady patří: <xref:System.Runtime.CompilerServices.INotifyCompletion>, <xref:System.Runtime.CompilerServices.CallerFilePathAttribute> a <xref:System.Runtime.CompilerServices.CallerMemberNameAttribute>. C#7.0 pokračuje to tak, že přidáte závislost na <xref:System.ValueTuple> k implementaci [řazených kolekcí členů](../tuples.md) funkci jazyka.
+Následné verze jazyka C# příležitostně přidaly nové typy nebo členy do závislostí. Příklady: <xref:System.Runtime.CompilerServices.INotifyCompletion>a <xref:System.Runtime.CompilerServices.CallerFilePathAttribute> <xref:System.Runtime.CompilerServices.CallerMemberNameAttribute>. C# 7.0 pokračuje tím, že <xref:System.ValueTuple> přidá závislost na implementovat funkci jazyka [řazené kolekce členů.](../tuples.md)
 
-Tým návrhu jazyk pracuje minimalizovat útoku na typy a členy v kompatibilní standardní knihovna vyžaduje. Tohoto cíle je porovnán s čistým návrhem, kde nových funkcí knihovny jsou bezproblémově součástí jazyka. V budoucích verzích bude mít nové funkce C# , které vyžadují nové typy a členy ve standardní knihovně. Je důležité pochopit, jak spravovat tyto závislosti práce se změnami.
+Tým pronávrh jazyka pracuje na minimalizaci plochy typů a členů požadovaných v kompatibilní standardní knihovně. Tento cíl je vyvážen proti čistému designu, kde jsou nové funkce knihovny bezproblémově začleněny do jazyka. V budoucích verzích jazyka C# budou nové funkce, které vyžadují nové typy a členy ve standardní knihovně. Je důležité pochopit, jak spravovat tyto závislosti ve vaší práci.
 
 ## <a name="managing-your-dependencies"></a>Správa závislostí
 
-C#kompilačních nástrojů se nyní oddělený od cyklu vydávání verzí knihoven .NET na podporovaných platformách. Ve skutečnosti různé knihovny .NET mají cykly vydávání verzí různé: rozhraní .NET Framework na Windows nebude vydaná jako Windows Update, .NET Core se celá dodává v samostatném plánu a Xamarin verze knihovny aktualizace se dodávají s nástroje Xamarin pro každou cílovou platformu.
+Nástroje kompilátoru jazyka C# jsou nyní odděleny od cyklu vydání knihoven .NET na podporovaných platformách. Ve skutečnosti různé knihovny .NET mají různé cykly vydání: rozhraní .NET Framework v systému Windows je vydáno jako služba Windows Update, rozhraní .NET Core je dodáváno podle samostatného plánu a verze aktualizací knihovny Xamarin jsou dodávány s nástroji Xamarin pro každou cílovou platformu.
 
-Většinu času, nebude Všimněte si těchto změn. Při práci s novější verzí jazyka, který vyžaduje funkce není dosud knihoven .NET na této platformě, ale budete odkazovat balíčky NuGet, k poskytování těchto nových typů.
-Jako platformy nové instalace rozhraní framework, se aktualizují vaše aplikace podporuje můžete odebrat odkaz na další.
+Po většinu času si těchto změn nevšimnete. Však při práci s novější verzi jazyka, který vyžaduje funkce, které ještě nejsou v knihovnách .NET na této platformě, budete odkazovat na balíčky NuGet poskytnout tyto nové typy.
+Vzhledem k tomu, že platformy, které vaše aplikace podporuje, jsou aktualizovány novými instalacemi architektury, můžete odebrat další odkaz.
 
-Toto oddělení znamená, že nové funkce jazyků můžete použít i v případě, že se zaměřujete na počítače, které nemusí mít odpovídající rozhraní.
+Toto oddělení znamená, že můžete použít nové funkce jazyka i v případě, že cílíte na počítače, které nemusí mít odpovídající rámec.

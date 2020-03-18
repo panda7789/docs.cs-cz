@@ -1,101 +1,101 @@
 ---
 title: Přístupy k architektuře – aplikace bez serveru
-description: Úvod do architektury architektury pro vytváření cloudových podnikových aplikací, od N-vrstvých architektur až po bez serveru.
+description: Úvod k přístupům architektury pro vytváření cloudových podnikových aplikací, od n-vrstvých architektur až po bezserverové.
 author: JEREMYLIKNESS
 ms.author: jeliknes
 ms.date: 06/26/2018
 ms.openlocfilehash: 74de96bef48f16ced4adf82855a740aa0afcdf1d
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/08/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "72522894"
 ---
 # <a name="architecture-approaches"></a>Přístupy k architektuře
 
-Porozumění existujícím přístupům k architektům podnikových aplikací je vyjasnění role, kterou prohrála bez serveru. Existuje mnoho přístupů a vzorů, které se vyvinuly během desetiletí vývoje softwaru, a všechny mají své vlastní specialisty a nevýhody. V mnoha případech se může stát, že konečné řešení nezahrnuje rozhodování o jednom přístupu, ale může integrovat několik přístupů. Scénáře migrace často zahrnují přesun z jednoho přístupu architektury do druhého prostřednictvím hybridního přístupu.
+Principy stávajících přístupů k navrhování podnikových aplikací pomáhají objasnit roli, kterou hrají serverové služby. Existuje mnoho přístupů a vzorů, které se vyvíjely v průběhu desetiletí vývoje softwaru, a všechny mají své vlastní klady a zápory. V mnoha případech nemusí konečné řešení zahrnovat rozhodování o jednotném přístupu, ale může integrovat několik přístupů. Scénáře migrace často zahrnují přechod z jednoho přístupu architektury na jiný prostřednictvím hybridního přístupu.
 
-V této části najdete přehled logických i fyzických struktur pro podnikové aplikace.
+Tato kapitola obsahuje přehled logických i fyzických vzorů architektury pro podnikové aplikace.
 
 ## <a name="architecture-patterns"></a>Vzory architektury
 
-Moderní obchodní aplikace se řídí různými modely architektury. Tato část představuje průzkum běžných vzorů. Zde uvedené příklady nejsou nutně všechny osvědčené postupy, ale ilustrují různé přístupy.
+Moderní obchodní aplikace se řídí různými vzory architektury. Tato část představuje přehled běžných vzorů. Vzory zde uvedené nejsou nutně všechny osvědčené postupy, ale ilustrují různé přístupy.
 
-Další informace najdete v tématu [Průvodce architekturou aplikací Azure](https://docs.microsoft.com/azure/architecture/guide/).
+Další informace najdete v [tématu Architektura aplikací Azure průvodce](https://docs.microsoft.com/azure/architecture/guide/).
 
-## <a name="monoliths"></a>Monolitů
+## <a name="monoliths"></a>Monolity
 
-Řada obchodních aplikací dodržuje vzor monolitu. Starší verze aplikací jsou často implementovány jako monolitů. Ve vzorci monolitu jsou všechny aspekty týkající se aplikace obsaženy v jednom nasazení. Vše od uživatelského rozhraní po volání databáze je zahrnuto ve stejném základu kódu.
+Mnoho obchodních aplikací se řídí vzorem monolitu. Starší aplikace jsou často implementovány jako monolity. Ve vzoru monolitu jsou všechny obavy aplikace obsaženy v jednom nasazení. Vše od uživatelského rozhraní až po volání databáze je součástí stejného základu kódu.
 
-![Architektura monolitu](./media/monolith-architecture.png)
+![Monolitová architektura](./media/monolith-architecture.png)
 
-Přístup k monolitu má několik výhod. Je často snadné stáhnout jeden základ kódu a začít pracovat. Doba provozu může být menší a vytváření testovacích prostředí je stejně snadné jako poskytování nové kopie. Monolitu může být navržený tak, aby zahrnoval více komponent a aplikací.
+Přístup monolitu má několik výhod. Často je snadné stáhnout jeden základ kódu a začít pracovat. Doba rozjetí může být kratší a vytváření testovacích prostředí je stejně jednoduché jako poskytnutí nové kopie. Monolit může být navržen tak, aby zahrnoval více součástí a aplikací.
 
-Monolitu vzor bohužel má tendenci rozlomit se škálováním. Mezi hlavní nevýhody přístupu monolitu patří:
+Bohužel, monolit vzor má tendenci se rozkládat ve velkém měřítku. Mezi hlavní nevýhody monolitového přístupu patří:
 
-- Obtížně fungovat paralelně ve stejném základu kódu.
-- Jakékoli změny bez ohledu na to, jak triviální vyžaduje nasazení nové verze celé aplikace.
-- Refaktoring může mít vliv na celou aplikaci.
-- Jediným řešením pro horizontální navýšení kapacity je často vytvoření více kopií monolitu náročných na prostředky.
-- V případě, že se systémy rozbalí nebo ostatní systémy získávají, může být integrace obtížné.
-- Testování může být obtížné kvůli nutnosti nakonfigurovat celou monolitu.
-- Opětovné použití kódu je náročné a často jiné aplikace mají vlastní kopie kódu.
+- Obtížné pracovat paralelně ve stejném základu kódu.
+- Každá změna, bez ohledu na to, jak triviální, vyžaduje nasazení nové verze celé aplikace.
+- Refaktoring potenciálně ovlivňuje celou aplikaci.
+- Často jediným řešením škálování je vytvořit více kopií monolitu náročné na prostředky.
+- Jak se systémy rozšiřují nebo získávají jiné systémy, integrace může být obtížná.
+- Může být obtížné testovat z důvodu nutnosti konfigurovat celý monolit.
+- Opakované použití kódu je náročné a často jiné aplikace skončí s vlastní kopie kódu.
 
-Mnohé firmy vypadají v cloudu jako příležitost k migraci aplikací monolitu a ve stejnou dobu refaktorování na více použitelných vzorů. Je běžné rozdělit jednotlivé aplikace a komponenty, aby je bylo možné udržovat, nasadit a škálovat samostatně.
+Mnoho firem se na cloud dívá jako na příležitost k migraci monolitových aplikací a zároveň je refaktorovat na použitelnější vzory. Je běžné prolomit jednotlivé aplikace a součásti, aby mohly být udržovány, nasazovány a škálovány samostatně.
 
 ## <a name="n-layer-applications"></a>N-vrstvé aplikace
 
-N-vrstvá aplikace oddíl aplikační logiky do specifických vrstev. Mezi nejběžnější vrstvy patří:
+Aplikační logika oddílu n vrstvy do konkrétních vrstev. Mezi nejběžnější vrstvy patří:
 
 - Uživatelské rozhraní
 - Obchodní logika
-- Přístup k datům
+- Přístup k datům
 
-Další vrstvy můžou zahrnovat middleware, dávkové zpracování a rozhraní API. Je důležité si uvědomit, že vrstvy jsou logické. I když se vyvíjí v izolaci, můžou se všechny nasadit na stejnou cílovou platformu.
+Ostatní vrstvy mohou zahrnovat middleware, dávkové zpracování a rozhraní API. Je důležité si uvědomit, že vrstvy jsou logické. I když jsou vyvinuty izolovaně, mohou být všechny nasazeny na stejnou cílovou platformu.
 
-![N-vrstvá architektura](./media/n-layer-architecture.png)
+![Architektura N-Layer](./media/n-layer-architecture.png)
 
-K dispozici je několik výhod pro N-vrstvý přístup, včetně:
+Přístup N-Layer má několik výhod, včetně:
 
-- Refaktoring je izolovaný s vrstvou.
-- Týmy můžou nezávisle sestavovat, testovat, nasazovat a udržovat samostatné vrstvy.
-- Vrstvy lze odkládací, například datová vrstva může přistupovat k několika databázím, aniž by vyžadovaly změny ve vrstvě uživatelského rozhraní.
+- Refaktoring je izolován do vrstvy.
+- Týmy mohou nezávisle vytvářet, testovat, nasazovat a udržovat samostatné vrstvy.
+- Vrstvy lze vyměnit, například datová vrstva může přistupovat k více databázím bez nutnosti změn vrstvy uj.
 
-Bez serveru se dá použít k implementaci jedné nebo víc vrstev.
+Bez serveru lze použít k implementaci jedné nebo více vrstev.
 
 ## <a name="microservices"></a>Mikroslužby
 
-Architektury **[mikroslužeb](https://docs.microsoft.com/azure/architecture/guide/architecture-styles/microservices)** obsahují běžné charakteristiky, které zahrnují:
+**[Architektury mikroslužeb](https://docs.microsoft.com/azure/architecture/guide/architecture-styles/microservices)** obsahují společné charakteristiky, které zahrnují:
 
 - Aplikace se skládají z několika malých služeb.
-- Každá služba se spouští ve vlastním procesu.
-- Služby jsou zarovnány k obchodním doménám.
-- Služby komunikují přes odlehčená rozhraní API, obvykle jako přenos pomocí protokolu HTTP.
-- Služby je možné nasadit a upgradovat nezávisle.
+- Každá služba běží ve svém vlastním procesu.
+- Služby jsou zarovnány kolem obchodních domén.
+- Služby komunikovat přes zjednodušené api, obvykle pomocí protokolu HTTP jako přenos.
+- Služby lze nasadit a upgradovat nezávisle.
 - Služby nejsou závislé na jednom úložišti dat.
-- Systém je navržený s ohledem na selhání a aplikace může běžet i v případě, že některé služby selžou.
+- Systém je navržen s ohledem na selhání a aplikace může stále běžet i v případě, že některé služby selžou.
 
-Mikroslužby nemusí být vzájemně exkluzivní pro jiné přístupy k architektuře. N-vrstvá architektura může například používat mikroslužby pro střední vrstvu. Je také možné implementovat mikroslužby mnoha různými způsoby, od virtuálních adresářů hostitelů služby IIS až po kontejnery. Charakteristiky mikroslužeb je zvláště ideální pro implementace bez serveru.
+Mikroslužeb nemusí vzájemně vylučovat jiné architektury přístupy. Například n-vrstvé architektury můžete použít mikroslužeb pro střední vrstvy. Je také možné implementovat mikroslužeb různými způsoby, od virtuálních adresářů na hostitelích služby IIS až po kontejnery. Vlastnosti mikroslužeb, aby byly obzvláště ideální pro implementace bez serveru.
 
 ![Architektura mikroslužeb](./media/microservices-architecture.png)
 
 Mezi profesionály architektury mikroslužeb patří:
 
-- Refaktoring se často izoluje u jediné služby.
-- Služby je možné upgradovat nezávisle na sobě.
-- Odolnost a pružnost je možné vyladit podle požadavků jednotlivých služeb.
-- Vývoj může nastat paralelně napříč různými týmy a platformami.
-- Napsání komplexních testů pro izolované služby je snazší.
+- Refaktoring je často izolován do jedné služby.
+- Služby lze upgradovat nezávisle na sobě.
+- Odolnost a pružnost lze vyladit podle požadavků jednotlivých služeb.
+- Vývoj může probíhat souběžně napříč různorodými týmy a platformami.
+- Je jednodušší psát komplexní testy pro izolované služby.
 
-Mikroslužby se dodávají s vlastními výzvami, včetně:
+Mikroslužby přicházejí s vlastními výzvami, včetně:
 
-- Určete, jaké služby jsou k dispozici a jak je volat.
+- Určení, jaké služby jsou k dispozici a jak je nazývat.
 - Správa životního cyklu služeb.
-- Seznamte se s tím, jak se služby vzájemně vejdou do celkové aplikace.
-- Úplné systémové testování volání prováděných napříč různými službami.
+- Pochopení toho, jak služby zapadají do celkové aplikace.
+- Úplné testování systému volání uskutečněných napříč různorodými službami.
 
-Nakonec existují řešení, která řeší všechny tyto výzvy, včetně klepnutí na výhody bez serveru, které jsou popsány později.
+Nakonec existují řešení pro řešení všech těchto problémů, včetně využití výhod bez serveru, které jsou popsány později.
 
 >[!div class="step-by-step"]
 >[Předchozí](index.md)
->[Další](architecture-deployment-approaches.md)
+>[další](architecture-deployment-approaches.md)

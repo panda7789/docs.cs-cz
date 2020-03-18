@@ -1,66 +1,66 @@
 ---
-title: Nový operátor – C# referenční informace
+title: nový operátor - odkaz Jazyka C#
 ms.date: 06/25/2019
 helpviewer_keywords:
 - new operator keyword [C#]
 ms.assetid: a212b697-a79b-4105-9923-1f7b108036e8
-ms.openlocfilehash: 60d1f1b2fc2792d40d36482dc880d924220f12a2
-ms.sourcegitcommit: 43d10ef65f0f1fd6c3b515e363bde11a3fcd8d6d
+ms.openlocfilehash: 84131bc503a106961419a27fc4e3e0f2d82306a8
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/03/2020
-ms.locfileid: "78239193"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "78846230"
 ---
-# <a name="new-operator-c-reference"></a>New – operátorC# (Referenční dokumentace)
+# <a name="new-operator-c-reference"></a>nový operátor (odkaz C# )
 
 Operátor `new` vytvoří novou instanci typu.
 
-Můžete také použít klíčové slovo `new` jako [Modifikátor deklarace člena](../keywords/new-modifier.md) nebo [omezení obecného typu](../keywords/new-constraint.md).
+Klíčové slovo můžete také použít jako [modifikátor deklarace člena](../keywords/new-modifier.md) nebo [omezení obecného typu](../keywords/new-constraint.md). `new`
 
 ## <a name="constructor-invocation"></a>Vyvolání konstruktoru
 
-Chcete-li vytvořit novou instanci typu, obvykle vyvoláte jeden z [konstruktorů](../../programming-guide/classes-and-structs/constructors.md) tohoto typu pomocí operátoru `new`:
+Chcete-li vytvořit novou instanci typu, obvykle vyvolat jeden z [konstruktorů](../../programming-guide/classes-and-structs/constructors.md) tohoto typu pomocí operátoru: `new`
 
-[!code-csharp-interactive[invoke constructor](~/samples/snippets/csharp/language-reference/operators/NewOperator.cs#Constructor)]
+[!code-csharp-interactive[invoke constructor](snippets/NewOperator.cs#Constructor)]
 
-Můžete použít [inicializátor objektu nebo kolekce](../../programming-guide/classes-and-structs/object-and-collection-initializers.md) s operátorem `new` pro vytvoření instance a inicializaci objektu v jednom příkazu, jak ukazuje následující příklad:
+[Inicializátor objektu nebo](../../programming-guide/classes-and-structs/object-and-collection-initializers.md) `new` kolekce s operátorem můžete použít k vytvoření instance a inicializaci objektu v jednom příkazu, jak ukazuje následující příklad:
 
-[!code-csharp-interactive[constructor with initializer](~/samples/snippets/csharp/language-reference/operators/NewOperator.cs#ConstructorWithInitializer)]
+[!code-csharp-interactive[constructor with initializer](snippets/NewOperator.cs#ConstructorWithInitializer)]
 
 ## <a name="array-creation"></a>Vytvoření pole
 
-Také operátor `new` slouží k vytvoření instance pole, jak ukazuje následující příklad:
+`new` Operátor můžete také použít k vytvoření instance pole, jak ukazuje následující příklad:
 
-[!code-csharp-interactive[create array](~/samples/snippets/csharp/language-reference/operators/NewOperator.cs#Array)]
+[!code-csharp-interactive[create array](snippets/NewOperator.cs#Array)]
 
-Pomocí syntaxe inicializace pole vytvořte instanci pole a naplňte ji prvky v jednom příkazu. Následující příklad ukazuje různé způsoby, jak to lze provést:
+Pomocí syntaxe inicializace pole vytvořte instanci pole a naplňte ji prvky v jednom příkazu. Následující příklad ukazuje různé způsoby, jak to udělat:
 
-[!code-csharp-interactive[initialize array](~/samples/snippets/csharp/language-reference/operators/NewOperator.cs#ArrayInitialization)]
+[!code-csharp-interactive[initialize array](snippets/NewOperator.cs#ArrayInitialization)]
 
-Další informace o polích naleznete v tématu [Arrays](../../programming-guide/arrays/index.md).
+Další informace o polích naleznete v [tématu Arrays](../../programming-guide/arrays/index.md).
 
 ## <a name="instantiation-of-anonymous-types"></a>Vytváření instancí anonymních typů
 
-Chcete-li vytvořit instanci [anonymního typu](../../programming-guide/classes-and-structs/anonymous-types.md), použijte operátor `new` a syntaxi inicializátoru objektu:
+Chcete-li vytvořit instanci [anonymního typu](../../programming-guide/classes-and-structs/anonymous-types.md), použijte syntaxi inicializačního operátoru `new` a objektu:
 
-[!code-csharp-interactive[anonymous type](~/samples/snippets/csharp/language-reference/operators/NewOperator.cs#AnonymousType)]
+[!code-csharp-interactive[anonymous type](snippets/NewOperator.cs#AnonymousType)]
 
-## <a name="destruction-of-type-instances"></a>Zničení instancí typů
+## <a name="destruction-of-type-instances"></a>Zničení instancí typu
 
-Nemusíte zničit dřívější vytvořené instance typu. Instance obou typů odkaz i hodnota jsou zničeny automaticky. Instance typů hodnot jsou zničeny ihned po zničení kontextu, který je obsahuje. Instance typů odkazů jsou zničeny systémem [uvolňování paměti](../../../standard/garbage-collection/index.md) v nespecifikovaném čase po odebrání posledního odkazu na ně.
+Není třeba zničit dříve vytvořené instance typu. Instance referenčních i hodnotových typů jsou automaticky zničeny. Instance typů hodnot jsou zničeny, jakmile je zničen kontext, který je obsahuje. Instance typů odkazů jsou zničeny [systémem uvolňování paměti](../../../standard/garbage-collection/index.md) v neurčeném čase po odebrání posledního odkazu na ně.
 
-U instancí typu, které obsahují nespravované prostředky, například popisovač souboru, se doporučuje použít deterministické vyčištění, aby bylo zajištěno, že prostředky, které obsahují, budou zveřejněny co nejdříve. Další informace najdete v tématu Reference k rozhraní API <xref:System.IDisposable?displayProperty=nameWithType> a v článku o [příkazu Using](../keywords/using-statement.md) .
+Pro instance typu, které obsahují nespravované prostředky, například popisovač souboru, se doporučuje použít deterministické vyčištění, aby bylo zajištěno, že prostředky, které obsahují, budou vydány co nejdříve. Další informace naleznete <xref:System.IDisposable?displayProperty=nameWithType> v odkazu rozhraní API a [using prohlášení](../keywords/using-statement.md) článku.
 
-## <a name="operator-overloadability"></a>Přetížení operátoru
+## <a name="operator-overloadability"></a>Přetížení obsluhy
 
-Uživatelsky definovaný typ nemůže přetížit operátor `new`.
+Uživatelem definovaný typ nemůže `new` přetížit operátor.
 
 ## <a name="c-language-specification"></a>specifikace jazyka C#
 
-Další informace najdete v části [Nový operátor](~/_csharplang/spec/expressions.md#the-new-operator) ve [ C# specifikaci jazyka](~/_csharplang/spec/introduction.md).
+Další informace naleznete [v části Nový operátor](~/_csharplang/spec/expressions.md#the-new-operator) specifikace jazyka [C#](~/_csharplang/spec/introduction.md).
 
 ## <a name="see-also"></a>Viz také
 
-- [C#odkaz](../index.md)
+- [Referenční dokumentace k jazyku C#](../index.md)
 - [Operátory jazyka C#](index.md)
-- [Inicializátory objektu a kolekce](../../programming-guide/classes-and-structs/object-and-collection-initializers.md)
+- [Inicializátory objektů a kolekcí](../../programming-guide/classes-and-structs/object-and-collection-initializers.md)

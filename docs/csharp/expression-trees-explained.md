@@ -1,49 +1,49 @@
 ---
 title: Vysvětlení stromů výrazů
-description: Přečtěte si o stromech výrazů a o tom, jak jsou užitečné při překladu algoritmů pro externí spuštění a kontrolu kódu před jeho provedením.
+description: Zjistěte o stromech výrazů a o tom, jak jsou užitečné při překladu algoritmů pro externí spuštění a kontrolu kódu před jeho spuštěním.
 ms.date: 06/20/2016
 ms.technology: csharp-advanced-concepts
 ms.assetid: bbcdd339-86eb-4ae5-9911-4c214a39a92d
 ms.openlocfilehash: 12093e9c9246c87cc5ea3aedaca6ba34acacce4d
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "73036996"
 ---
 # <a name="expression-trees-explained"></a>Vysvětlení stromů výrazů
 
-[Předchozí – přehled](expression-trees.md)
+[Předchozí -- Přehled](expression-trees.md)
 
-Strom výrazu je datová struktura, která definuje kód. Jsou založené na stejných strukturách, které kompilátor používá k analýze kódu a generování zkompilovaného výstupu. Při čtení v tomto kurzu si všimnete trochu podobnosti mezi stromy výrazů a typy používanými v rozhraních API Roslyn k vytváření [analyzátorů a CodeFixes](https://github.com/dotnet/roslyn-analyzers).
-(Analyzátory a CodeFixes jsou balíčky NuGet, které provádějí statickou analýzu kódu a můžou navrhovat možné opravy pro vývojáře.) Koncepty jsou podobné a konečný výsledek je datová struktura, která umožňuje srozumitelným způsobem vyzkoušení zdrojového kódu. Stromy výrazů jsou však založeny na zcela jiné sadě tříd a rozhraní API než rozhraní API Roslyn.
+Strom výrazů je datová struktura, která definuje kód. Jsou založeny na stejné struktury, které kompilátor používá k analýze kódu a generovat zkompilovaný výstup. Při čtení tohoto kurzu si všimnete poměrně dost podobnosti mezi stromy výrazů a typy používanými v roslynských apich k sestavení [analyzátorů a oprav kódu](https://github.com/dotnet/roslyn-analyzers).
+(Analyzátory a codefixes jsou balíčky NuGet, které provádějí statickou analýzu kódu a mohou navrhnout potenciální opravy pro vývojáře.) Koncepty jsou podobné a konečným výsledkem je datová struktura, která umožňuje smysluplnou kontrolu zdrojového kódu. Stromy výrazů jsou však založeny na zcela jinou sadu tříd a api než Roslyn API.
 
-Pojďme se podívat na jednoduchý příklad.
-Zde je řádek kódu:
+Podívejme se na jednoduchý příklad.
+Tady je řádek kódu:
 
 ```csharp
 var sum = 1 + 2;
 ```
 
-Pokud jste ho mohli analyzovat jako strom výrazu, strom obsahuje několik uzlů.
-Nejvzdálenější uzel je příkaz deklarace proměnné s přiřazením (`var sum = 1 + 2;`), který má nejvzdálenější uzel několik podřízených uzlů: deklaraci proměnné, operátor přiřazení a výraz představující pravou stranu znaménka rovná se. Tento výraz je dále rozdělen na výrazy, které reprezentují operaci sčítání a levý a pravý operand přidání.
+Pokud byste to měli analyzovat jako strom výrazů, strom obsahuje několik uzlů.
+Nejvzdálenější uzel je deklarace proměnné s`var sum = 1 + 2;`přiřazením ( ) Tento nejvzdálenější uzel obsahuje několik podřízených uzlů: deklaraci proměnné, operátor přiřazení a výraz představující pravou stranu znaménko rovná se. Tento výraz je dále rozdělen na výrazy, které představují operaci sčítání a levé a pravé operandy přidání.
 
-Pojďme přejít k podrobnostem o výrazech, které tvoří pravou stranu znaménka rovná se.
-Výraz je `1 + 2`. To je binární výraz. Konkrétně se jedná o binární výraz sčítání. Výraz výrazu Binary má dva podřízené prvky, reprezentující levý a pravý uzel výrazu sčítání. Tady jsou oba uzly konstantní výrazy: levý operand je hodnota `1`a pravý operand je hodnota `2`.
+Podívejme se trochu dále do výrazů, které tvoří pravou stranu znaménko rovná se.
+Výraz je `1 + 2`. To je binární výraz. Přesněji řečeno, je to binární doplněk výraz. Binární doplněk výraz má dvě podřízené objekty, představující levé a pravé uzly výrazu sčítání. Zde jsou oba uzly konstantní výrazy: Levý `1`operand je hodnota a `2`pravý operand je hodnota .
 
-Vizuálně je celý příkaz stromovou strukturou: můžete začít na kořenovém uzlu a procházet každý uzel stromu a zobrazit kód, který tvoří příkaz:
+Vizuálně je celý příkaz strom: Můžete začít u kořenového uzlu a cestovat do každého uzlu ve stromu, abyste viděli kód, který tvoří příkaz:
 
-- Proměnná deklarace příkazu s přiřazením (`var sum = 1 + 2;`)
-  - Deklarace implicitního typu proměnné (`var sum`)
-    - Implicitní klíčové slovo var (`var`)
-    - Deklarace proměnné názvu (`sum`)
-  - Operátor přiřazení (`=`)
-  - Výraz binárního sčítání (`1 + 2`)
-    - Levý operand (`1`)
-    - Operátor sčítání (`+`)
-    - Pravý operand (`2`)
+- Prohlášení proměnné s`var sum = 1 + 2;`přiřazením ( )
+  - Implicitní deklarace`var sum`typu proměnné ( )
+    - Implicitní klíčové`var`slovo var ( )
+    - Deklarace názvu`sum`proměnné ( )
+  - Operátor přiřazení`=`( )
+  - Binární přídavek`1 + 2`výraz ( )
+    - Levý operand`1`( )
+    - Operátor sčítání`+`( )
+    - Pravý operand`2`( )
 
-To může vypadat komplikované, ale je velmi výkonné. Po stejném procesu můžete rozložit mnohem složitější výrazy. Vezměte v úvahu tento výraz:
+To může vypadat komplikovaně, ale je to velmi silné. Stejným postupem můžete rozložit mnohem složitější výrazy. Zvažte tento výraz:
 
 ```csharp
 var finalAnswer = this.SecretSauceFunction(
@@ -53,21 +53,21 @@ var finalAnswer = this.SecretSauceFunction(
 ```
 
 Výše uvedený výraz je také deklarace proměnné s přiřazením.
-V této instanci je pravá strana přiřazení mnohem složitější strom.
-Tento výraz nebudeme rozložit, ale zvažte, co můžou být jednotlivé uzly. Existují volání metody s použitím aktuálního objektu jako přijímače, který má explicitní `this` přijímač, což není. Existují volání metod pomocí jiných objektů přijímače, existují konstantní argumenty různých typů. A nakonec je k dispozici binární operátor sčítání. V závislosti na návratovém typu `SecretSauceFunction()` nebo `MoreSecretSauce()`může být daný binární operátor sčítání metodou volání přepsaného operátoru sčítání a překládá se na statické volání metody do binárního operátoru sčítání definovaného pro třídu.
+V tomto případě je pravá strana přiřazení mnohem složitější strom.
+Nebudu rozkládat tento výraz, ale zvážit, jaké by mohly být různé uzly. Existují volání metody pomocí aktuálního objektu jako příjemce, ten, který má explicitní `this` příjemce, ten, který nemá. Existují volání metody pomocí jiných objektů příjemce, existují konstantní argumenty různých typů. A konečně, tam je binární sčítání operátor. V závislosti na `SecretSauceFunction()` návratový typ nebo `MoreSecretSauce()`, že binární sčítání operátor může být volání metody potlačené sčítání operátor, řešení statické metody volání binární sčítání operátor definované pro třídu.
 
-Navzdory této vnímané složitosti výše uvedený výraz vytvoří stromovou strukturu, kterou lze snadno přejít jako první vzorek. Chcete-li ve výrazu najít uzly typu list, můžete ve výrazu zůstat přecházení podřízených uzlů. Nadřazené uzly budou mít odkazy na své podřízené položky a každý uzel má vlastnost, která popisuje, jaký typ uzlu je.
+Navzdory této složitosti, výše uvedený výraz vytvoří stromovou strukturu, která může být navigována stejně snadno jako první vzorek. Můžete pokračovat v procházení podřízených uzlů najít listové uzly ve výrazu. Nadřazené uzly budou mít odkazy na své podřízené položky a každý uzel má vlastnost, která popisuje, jaký druh uzlu je.
 
-Struktura stromu výrazů je velmi konzistentní. Jakmile se naučíte základy, můžete pochopit i nejsložitější kód, když je reprezentován jako strom výrazu. Elegance v datové struktuře vysvětluje, jak může C# kompilátor analyzovat nejvíc komplexní C# programy a vytvořit vhodný výstup z tohoto složitého zdrojového kódu.
+Struktura stromu výrazů je velmi konzistentní. Jakmile se naučíte základy, můžete pochopit i nejsložitější kód, když je reprezentován jako strom výrazů. Elegance v datové struktuře vysvětluje, jak kompilátor Jazyka C# můžete analyzovat nejsložitější c# programy a vytvořit správný výstup z tohoto složitého zdrojového kódu.
 
-Jakmile se seznámíte se strukturou stromů výrazů, zjistíte, že znalostní báze vám pomůže rychle pracovat s mnoha dalšími a pokročilejšími scénáři. Ve stromech výrazů je nedostupné napájení.
+Jakmile se seznámíte se strukturou stromů výrazů, zjistíte, že znalosti, které jste získali rychle, vám umožní pracovat s mnoha dalšími a pokročilejšími scénáři. Tam je neuvěřitelná síla výrazu stromů.
 
-Kromě překladu algoritmů pro spuštění v jiných prostředích můžete použít stromy výrazů, aby bylo snazší psát algoritmy, které kontrolují kód před jeho spuštěním. Můžete napsat metodu, jejíž argumenty jsou výrazy, a poté tyto výrazy před spuštěním kódu prostudovat. Strom výrazu je úplná reprezentace kódu: můžete zobrazit hodnoty libovolného dílčího výrazu.
-Můžete vidět názvy metod a vlastností. Můžete zobrazit hodnotu libovolných konstantních výrazů.
-Strom výrazu lze také převést na delegáta spustitelného souboru a spustit kód.
+Kromě překladu algoritmů pro spuštění v jiných prostředích lze stromy výrazů usnadnit zápis algoritmů, které kontrolují kód před jeho spuštěním. Můžete napsat metodu, jejíž argumenty jsou výrazy a potom zkontrolujte tyto výrazy před spuštěním kódu. Strom výrazů je úplnou reprezentací kódu: můžete zobrazit hodnoty libovolného dílčího výrazu.
+Můžete zobrazit názvy metod a vlastností. Můžete zobrazit hodnotu všech konstantních výrazů.
+Můžete také převést strom výrazů na spustitelného delegáta a spustit kód.
 
-Rozhraní API pro stromy výrazů umožňují vytvářet stromy, které reprezentují téměř jakoukoli platnou konstrukci kódu. Pokud ale chcete co nejjednodušším způsobem zjednodušit, C# některé idiomy nejde ve stromové struktuře výrazu vytvořit. Jedním z příkladů jsou asynchronní výrazy (pomocí klíčových slov `async` a `await`). Pokud vaše potřeby vyžadují asynchronní algoritmy, je nutné manipulovat přímo s `Task` objekty namísto spoléhání na podporu kompilátoru. Další je vytváření smyček. Obvykle je vytvoříte pomocí `for`, `foreach`, `while` nebo `do` cyklů. Jak vidíte [později v této sérii](expression-trees-building.md), rozhraní API pro stromy výrazů podporují výraz s jednou smyčkou, s `break` a `continue` výrazy, které řídí opakování smyčky.
+Api pro stromy výrazů umožňují vytvářet stromy, které představují téměř všechny platné konstrukce kódu. Chcete-li však zachovat věci co nejjednodušší, některé idiomy jazyka C# nelze vytvořit ve stromu výrazů. Jedním z příkladů jsou asynchronní `async` výrazy (pomocí `await` a klíčová slova). Pokud vaše potřeby vyžadují asynchronní algoritmy, budete `Task` muset manipulovat s objekty přímo, spíše než spoléhat na podporu kompilátoru. Dalším je vytváření smyček. Obvykle je vytvoříte pomocí `for` `foreach`, `while` `do` , nebo smyčky. Jak uvidíte [dále v této řadě](expression-trees-building.md), api pro stromy výrazů podporují výraz jedné smyčky, s `break` výrazy a `continue` výrazy, které řídí opakování smyčky.
 
-Jedna z věcí, kterou nemůžete udělat, je změnit strom výrazu.  Stromy výrazů jsou neměnné datové struktury. Chcete-li postupovat (změnit) strom výrazu, je nutné vytvořit nový strom, který je kopií původního objektu, ale s požadovanými změnami.
+Jedna věc, kterou nemůžete udělat, je upravit strom výrazů.  Výraz stromy jsou neměnné datové struktury. Pokud chcete zmutovat (změnit) strom výrazů, musíte vytvořit nový strom, který je kopií originálu, ale s požadovanými změnami.
 
-[Typy dalších--architektury podporující stromy výrazů](expression-classes.md)
+[Další -- Typy architektury podporující stromy výrazů](expression-classes.md)

@@ -1,49 +1,49 @@
 ---
 title: Návrh aplikační vrstvy a webového rozhraní API mikroslužby
-description: Architektura mikroslužeb .NET pro kontejnerové aplikace .NET | Stručně zmíněné základní zásady pro návrh vrstvy aplikace.
+description: Architektura mikroslužeb .NET pro kontejnerizované aplikace .NET | Stručná zmínka o principech SOLID pro návrh aplikační vrstvy.
 ms.date: 10/08/2018
 ms.openlocfilehash: 3c3b9f74e76e01deafa1f97de5d3250d57716014
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/30/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "70296738"
 ---
-# <a name="design-the-microservice-application-layer-and-web-api"></a>Návrh aplikační vrstvy a webového rozhraní API mikroslužeb
+# <a name="design-the-microservice-application-layer-and-web-api"></a>Návrh aplikační vrstvy mikroslužeb a webového rozhraní API
 
-## <a name="use-solid-principles-and-dependency-injection"></a>Použití pevných principů a injektáže závislostí
+## <a name="use-solid-principles-and-dependency-injection"></a>Použití principů SOLID a vkládání závislostí
 
-ZÁKLADNÍ zásady představují klíčové techniky pro použití v jakékoli moderní a klíčové aplikaci, jako je například vývoj mikroslužeb se vzory DDD. SOLID je akronym, který seskupuje pět základních principů:
+Principy SOLID jsou kritické techniky, které mají být použity v jakékoli moderní a kritické aplikace, jako je například vývoj mikroslužeb se vzory DDD. SOLID je zkratka, která seskupuje pět základních principů:
 
-- Princip jedné zodpovědnosti
+- Zásada jednotné odpovědnosti
 
-- Princip otevření/uzavření
+- Otevřený/uzavřený princip
 
-- Liskov – princip nahrazení
+- Liskovův substituční princip
 
-- Princip oddělení rozhraní
+- Princip segregace rozhraní
 
-- Princip inverze závislosti
+- Princip inverze závislostí
 
-SOLID je více informací o návrhu aplikace nebo vnitřních vrstev mikroslužeb a o vzájemných závislostech mezi nimi. Nesouvisí s doménou, ale s technickým návrhem aplikace. Konečný princip – princip inverze závislostí, umožňuje oddělit vrstvu infrastruktury od zbytku vrstev, což umožňuje lepší oddělit implementaci rozmístěných vrstev.
+SOLID je více o tom, jak navrhnout vnitřní vrstvy aplikace nebo mikroslužeb a o oddělení závislostí mezi nimi. Nesouvisí s doménou, ale s technickým návrhem aplikace. Konečný princip, princip inverze závislostí, umožňuje oddělit vrstvu infrastruktury od ostatních vrstev, což umožňuje lepší oddělenou implementaci vrstev DDD.
 
-Vkládání závislostí (DI) je jeden způsob, jak implementovat princip inverze závislostí. Je to způsob, jak dosáhnout volného spojení mezi objekty a jejich závislostmi. Namísto přímého vytváření instancí spolupracovníků nebo použití statických odkazů (to znamená použití New...) objekty, které třída potřebuje k provedení svých akcí, jsou poskytovány třídě (nebo "vložené do") třídy. Nejčastěji třídy budou deklarovat své závislosti prostřednictvím jejich konstruktoru, což jim umožní dodržovat princip explicitní závislosti. Vkládání závislostí je obvykle založeno na konkrétních kontejnerech inverze ovládacích prvků (IoC). ASP.NET Core poskytuje jednoduchý integrovaný kontejner IoC, ale můžete použít i oblíbený IoC kontejner, jako je Autofac nebo Ninject.
+Vkládání závislostí (DI) je jedním ze způsobů, jak implementovat princip inverze závislostí. Jedná se o techniku pro dosažení volné párování mezi objekty a jejich závislosti. Spíše než přímo vytváření konkretizovat spolupracovníky nebo pomocí statických odkazů (to znamená pomocí new...), objekty, které třída potřebuje k provedení své akce jsou k dispozici (nebo "vstřikuje do" třídy. Nejčastěji třídy deklarují své závislosti prostřednictvím svého konstruktoru, což jim umožňuje dodržovat zásadu explicitní závislosti. Vkládání závislostí je obvykle založena na konkrétní inverze řídicí (IoC) kontejnery. ASP.NET Core poskytuje jednoduchý vestavěný kontejner IoC, ale můžete také použít svůj oblíbený kontejner IoC, jako je Autofac nebo Ninject.
 
-Podle plných principů budou vaše třídy pravděpodobně přirozeně malé, dobře náročné a snadno testované. Ale jak zjistíte, jestli se do tříd vkládají příliš mnoho závislostí? Použijete-li parametr DI prostřednictvím konstruktoru, bude snadné ho detekovat pouze v případě, že se díváte na počet parametrů vašeho konstruktoru. Pokud existuje příliš mnoho závislostí, obvykle se jedná o znaménko ( [zápach kódu](https://deviq.com/code-smells/)), že se vaše třída pokouší provést příliš mnoho a je pravděpodobně porušena jedna zásada zodpovědnosti.
+Dodržováním zásad SOLID budou vaše třídy přirozeně malé, dobře zapracované a snadno testovatelné. Ale jak můžete vědět, zda příliš mnoho závislostí jsou vstřikovány do vašich tříd? Pokud používáte DI prostřednictvím konstruktoru, bude snadné zjistit, že pouhým pohledem na počet parametrů pro konstruktoru. Pokud existuje příliš mnoho závislostí, je to obecně znaménko [(zápach kódu),](https://deviq.com/code-smells/)že vaše třída se snaží udělat příliš mnoho a pravděpodobně porušuje zásadu jedné odpovědnosti.
 
-Mělo by to mít další průvodce, aby se podrobně kryl. Proto tato příručka vyžaduje, abyste měli jenom minimální znalosti těchto témat.
+To by trvalo další průvodce na pokrytí SOLID v detailu. Proto tato příručka vyžaduje, abyste měli pouze minimální znalosti o těchto tématech.
 
-#### <a name="additional-resources"></a>Další materiály a zdroje informací
+#### <a name="additional-resources"></a>Další zdroje
 
-- **Solid: základní principy OOP** \
+- **SOLID: Základní principy OOP** \
   <https://deviq.com/solid/>
 
-- **Inverze řídicích kontejnerů a vzor pro vkládání závislostí** \
+- **Inverze řídicích kontejnerů a vzor vkládání závislostí** \
   <https://martinfowler.com/articles/injection.html>
 
-- **Steve Smith. Nové je připevňování** \
+- **Steva Smithe. Novinou je lepidlo** \
   <https://ardalis.com/new-is-glue>
 
 > [!div class="step-by-step"]
 > [Předchozí](nosql-database-persistence-infrastructure.md)
-> [Další](microservice-application-layer-implementation-web-api.md)
+> [další](microservice-application-layer-implementation-web-api.md)

@@ -1,6 +1,6 @@
 ---
-title: základní klíčové slovo C# – referenční informace
-description: Přečtěte si základní klíčové slovo, které se používá pro přístup ke členům základní třídy v rámci odvozené třídy v C#.
+title: základní klíčové slovo - C# Reference
+description: Informace o základní klíčové slovo, které se používá pro přístup k členům základní třídy z v rámci odvozené třídy v C#.
 ms.date: 07/20/2015
 f1_keywords:
 - base
@@ -10,37 +10,37 @@ helpviewer_keywords:
 - base keyword [C#]
 ms.assetid: 8b645dbe-1a33-49b8-8716-1c401f9a5ea5
 ms.openlocfilehash: a4686fc5d4245a50de5d77dc0e71c231772f40ef
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "75713770"
 ---
 # <a name="base-c-reference"></a>base (Referenční dokumentace jazyka C#)
 
-Klíčové slovo `base` se používá pro přístup ke členům základní třídy v rámci odvozené třídy:
+Klíčové `base` slovo se používá pro přístup k členům základní třídy z odvozené třídy:
 
-- Volejte metodu pro základní třídu, která byla přepsána jinou metodou.
+- Volání metody na základní třídy, která byla přepsána jinou metodou.
 
-- Určuje, který konstruktor základní třídy by měl být volán při vytváření instancí odvozené třídy.
+- Určete, který konstruktor základní třídy by měl být volán při vytváření instancí odvozené třídy.
 
-Přístup ke základní třídě je povolený jenom v konstruktoru, metodě instance nebo přistupujícím objektu vlastnosti instance.
+Přístup základní třídy je povolen pouze v konstruktoru, metodě instance nebo přistupujícím objektu vlastnosti instance.
 
-Použití klíčového slova `base` v rámci statické metody je chybné.
+Je chyba použít `base` klíčové slovo z v rámci statické metody.
 
-Základní třída, která je k dispozici, je základní třída zadaná v deklaraci třídy. Například pokud zadáte `class ClassB : ClassA`, jsou k členům třídy Class přistup z ClassB bez ohledu na základní třídu třídy.
+Základní třída, která je přístupná, je základní třída zadaná v deklaraci třídy. Například pokud zadáte `class ClassB : ClassA`, členy ClassA jsou přístupné z ClassB, bez ohledu na základní třídy ClassA.
 
 ## <a name="example"></a>Příklad
 
-V tomto příkladu má základní třída, `Person`a odvozená třída `Employee`, metodu s názvem `Getinfo`. Pomocí klíčového slova `base` lze volat metodu `Getinfo` v základní třídě z odvozené třídy.
+V tomto příkladu mají `Person`základní třída a odvozená třída `Employee`, `Getinfo`metodu s názvem . Pomocí klíčového `base` slova je možné `Getinfo` volat metodu na základní třídy, z v rámci odvozené třídy.
 
 [!code-csharp[csrefKeywordsAccess#1](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsAccess/CS/csrefKeywordsAccess.cs#1)]
 
-Další příklady naleznete v tématu [New](new-modifier.md), [Virtual](virtual.md)a [override](override.md).
+Další příklady naleznete [v tématu new](new-modifier.md), [virtual](virtual.md)a [override](override.md).
 
 ## <a name="example"></a>Příklad
 
-Tento příklad ukazuje, jak určit konstruktor základní třídy nazvaný při vytváření instancí odvozené třídy.
+Tento příklad ukazuje, jak určit konstruktor základní třídy volaný při vytváření instancí odvozené třídy.
 
 [!code-csharp[csrefKeywordsAccess#2](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsAccess/CS/csrefKeywordsAccess.cs#2)]
 
@@ -48,9 +48,9 @@ Tento příklad ukazuje, jak určit konstruktor základní třídy nazvaný při
 
 [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [C#Odkaz](../index.md)
-- [Průvodce programováním v jazyce C#](../../programming-guide/index.md)
-- [Klíčová slova jazyka C#](./index.md)
-- [this](./this.md)
+- [Odkaz jazyka C#](../index.md)
+- [Programovací příručka jazyka C#](../../programming-guide/index.md)
+- [C# Klíčová slova](./index.md)
+- [tohoto provozu](./this.md)

@@ -1,63 +1,63 @@
 ---
 title: Architektura mikroslužeb
-description: Architektura mikroslužeb .NET pro kontejnerové aplikace .NET | zobrazení architektury mikroslužeb 30,000 metrů.
+description: Architektura mikroslužeb .NET pro kontejnerizované aplikace .NET | 30.000 stop pohled na architekturu Mikroslužeb.
 ms.date: 09/20/2018
 ms.openlocfilehash: d1c58d218be9e5f8c0ae8ae732f9bdd06674a2c2
-ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/03/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "71834388"
 ---
 # <a name="microservices-architecture"></a>Architektura mikroslužeb
 
-Jak název naznačuje, architektura mikroslužeb je přístup k vytvoření serverové aplikace jako sady malých služeb. To znamená, že architektura mikroslužeb se hlavně orientuje na back-end, i když je tento přístup také používán pro front-end. Každá služba se spouští ve vlastním procesu a komunikuje s ostatními procesy pomocí protokolů, jako jsou HTTP/HTTPS, WebSockets nebo [AMQP](https://en.wikipedia.org/wiki/Advanced_Message_Queuing_Protocol). Každá mikroslužba implementuje určitou ucelenou nebo podnikovou možnost v rámci určité hranice kontextu a každá z nich musí být vyvinutá samostatně a dá se nasadit nezávisle. Nakonec by každá mikroslužba měla vlastnit svůj související doménový datový model a doménovou logiku (na základě suverenity a decentralizované správy dat) a může být založená na různých technologiích úložiště dat (SQL, NoSQL) a různých programovacích jazycích.
+Jak název napovídá, architektura mikroslužeb je přístup k vytváření serverové aplikace jako sadu malých služeb. To znamená, že architektura mikroslužeb je hlavně orientována na back-end, i když přístup se používá také pro front-end. Každá služba běží ve vlastním procesu a komunikuje s jinými procesy pomocí protokolů, jako je HTTP/HTTPS, WebSockets nebo [AMQP](https://en.wikipedia.org/wiki/Advanced_Message_Queuing_Protocol). Každá mikroslužba implementuje konkrétní doménu end nebo obchodní schopnosti v rámci určité hranice kontextu a každý musí být vyvinut samostatně a být nasaditelný nezávisle. Nakonec by každá mikroslužba měla vlastnit svůj související datový model domény a logiku domény (suverenita a decentralizovaná správa dat) a mohla by být založena na různých technologiích pro ukládání dat (SQL, NoSQL) a různých programovacích jazycích.
 
-Jakou velikost by měla mikroslužba? Při vývoji mikroslužeb by velikost neměla být důležitým bodem. Místo toho by měl být důležitým bodem vytvoření volně propojených služeb, takže máte samostatnou autonomii vývoje, nasazení a škálování pro každou službu. Samozřejmě při identifikaci a návrhu mikroslužeb byste se měli pokusit, aby byly co nejmenší, dokud nebudete mít příliš mnoho přímých závislostí s ostatními mikroslužbami. Důležitější než velikost mikroslužeb je interní soudržnosti, kterou musí mít, a její nezávislost z jiných služeb.
+Jakou velikost by měla být mikroslužba? Při vývoji mikroslužby velikost by neměla být důležitým bodem. Místo toho by mělo být důležité vytvořit volně vázané služby, abyste měli autonomii vývoje, nasazení a škálování pro každou službu. Samozřejmě při identifikaci a navrhování mikroslužeb, měli byste se pokusit, aby byly co nejmenší, pokud nemáte příliš mnoho přímých závislostí s jinými mikroslužbami. Důležitější než velikost mikroslužby je vnitřní soudržnost, kterou musí mít, a její nezávislost na jiných službách.
 
-Proč architektura mikroslužeb? V krátké době poskytuje dlouhodobou flexibilitu. Mikroslužby umožňují lepší udržovatelnost v komplexních, rozsáhlých a vysoce škálovatelných systémech tím, že vám umožní vytvářet aplikace založené na řadě nezávisle nasazených služeb, které mají každý z nich podrobně a autonomní životní cyklus.
+Proč architektura mikroslužeb? Stručně řečeno, poskytuje dlouhodobou agilitu. Mikroslužby umožňují lepší udržovatelnost ve složitých, velkých a vysoce škálovatelných systémech tím, že umožňují vytvářet aplikace založené na mnoha nezávisle nasaditelných službách, které mají podrobné a autonomní životní cykly.
 
-S další výhodou je možné mikroslužby škálovat nezávisle. Místo toho, abyste měli jednu monolitické aplikaci, kterou musíte škálovat jako jednotku, můžete místo toho škálovat konkrétní mikroslužby. Tímto způsobem můžete škálovat pouze funkční oblast, která vyžaduje vyšší výpočetní výkon nebo šířku pásma sítě pro podporu požadavků, nikoli škálovat jiné oblasti aplikace, které nemusejí být škálované. To znamená úspory nákladů, protože potřebujete méně hardwaru.
+Jako další výhodu mikroslužeb můžete škálovat nezávisle. Místo toho, aby s jednu monolitickou aplikaci, kterou je nutné horizontální navýšení kapacity jako celek, můžete místo toho horizontální navýšení kapacity konkrétní mikroslužeb. Tímto způsobem můžete škálovat pouze funkční oblast, která potřebuje větší výpočetní výkon nebo šířku pásma sítě pro podporu poptávky, spíše než horizontální navýšení kapacity jiných oblastí aplikace, které není nutné škálovat. To znamená úsporu nákladů, protože potřebujete méně hardwaru.
 
 ![Diagram rozdílů mezi dvěma metodami nasazení.](./media/microservices-architecture/monolith-deployment-vs-microservice-approach.png)
 
-**Obrázek 4-6**. Monolitické nasazení versus přístup k mikroslužbám
+**Obrázek 4-6**. Monolitické nasazení versus přístup mikroslužeb
 
-Jak ukazuje obrázek 4-6, v tradičním přístupu monolitické se aplikace škáluje pomocí klonování celé aplikace na několika serverech/virtuálních počítačích. V přístupu k mikroslužbám jsou funkce oddělené v menších službách, takže každá služba se může škálovat nezávisle. Přístup k mikroslužbám umožňuje agilní změny a rychlé opakování každé mikroslužby, protože můžete změnit konkrétní, malé oblasti komplexních, rozsáhlých a škálovatelných aplikací.
+Jak ukazuje obrázek 4-6, v tradičním monolitickém přístupu se aplikace škáluje klonováním celé aplikace v několika serverech/virtuálních mích. V přístupu mikroslužeb funkce je oddělena v menších službách, takže každá služba můžete škálovat nezávisle. Přístup mikroslužeb umožňuje agilní změny a rychlou iteraci každé mikroslužby, protože můžete změnit konkrétní, malé oblasti složitých, velkých a škálovatelných aplikací.
 
-Architektově odstupňované aplikace založené na mikroslužbách umožňují průběžnou integraci a průběžné doručování. Zrychluje také doručování nových funkcí do aplikace. Jemně odstupňované sestavování aplikací umožňuje také spouštět a testovat mikroslužby v izolaci a vyvíjet je samostatně a přitom zachovat jasné smlouvy mezi nimi. Pokud neměníte rozhraní nebo kontrakty, můžete změnit interní implementaci jakékoli mikroslužby nebo přidat nové funkce, aniž by došlo k narušení dalších mikroslužeb.
+Navrhování jemně odstupňovaných aplikací založených na mikroslužbách umožňuje průběžnou integraci a průběžné postupy doručování. Také urychluje dodávku nových funkcí do aplikace. Jemně odstupňované složení aplikací také umožňuje spustit a otestovat mikroslužeb v izolaci a vyvíjet je autonomně při zachování jasné smlouvy mezi nimi. Pokud nezměníte rozhraní nebo smlouvy, můžete změnit interní implementaci jakékoli mikroslužby nebo přidat nové funkce bez přerušení jiných mikroslužeb.
 
-V následujícím seznamu jsou důležité aspekty, jak umožnit v přechodu do provozu pomocí systému založeného na mikroslužbách:
+Následující jsou důležité aspekty, které umožňují úspěch při vstupu do výroby pomocí systému založeného na mikroslužbách:
 
-- Monitorování a kontrola stavu služeb a infrastruktury.
+- Monitorování a zdravotní kontroly služeb a infrastruktury.
 
-- Škálovatelná infrastruktura pro služby (tj. Cloud a orchestration).
+- Škálovatelná infrastruktura pro služby (to znamená cloud a orchestrátory).
 
-- Návrh a implementace zabezpečení na více úrovních: ověřování, autorizace, Správa tajných kódů, zabezpečená komunikace atd.
+- Návrh zabezpečení a implementace na více úrovních: ověřování, autorizace, správa tajných kódů, zabezpečená komunikace atd.
 
-- Rychlé doručování aplikací, obvykle s různými týmy zaměřenými na různé mikroslužby.
+- Rychlé dodání aplikace, obvykle s různými týmy se zaměřením na různé mikroslužby.
 
-- Postupy a infrastruktura pro DevOps a CI/CD
+- DevOps a CI/CD postupy a infrastruktury.
 
-Z těchto kroků se v této příručce vztahují nebo zavádějí jenom první tři. Poslední dva body, které se vztahují k životnímu cyklu aplikace, jsou pokryty dodatečným [životním cyklem aplikace Docker s využitím Microsoft Platform a nástrojů](https://aka.ms/dockerlifecycleebook) .
+Z nich jsou v této příručce zahrnuty nebo zavedeny pouze první tři. Poslední dva body, které souvisejí s životním cyklem aplikací, jsou zahrnuty v dalším [kontejnerizovaném životním cyklu aplikací Dockeru s](https://aka.ms/dockerlifecycleebook) e-knihou Microsoft Platform and Tools.
 
-## <a name="additional-resources"></a>Další materiály a zdroje informací
+## <a name="additional-resources"></a>Další zdroje
 
-- **Označte Russinovich. Mikroslužby: aplikace s revoluce, kterou Cloud \ využívá**
+- **Mark Russinovich. Mikroslužby: Revoluce aplikací poháněná cloudem** \
   <https://azure.microsoft.com/blog/microservices-an-application-revolution-powered-by-the-cloud/>
 
-- **Martin Fowlera. \ mikroslužeb**
+- **Martin Fowler. Mikroslužeb** \
   <https://www.martinfowler.com/articles/microservices.html>
 
-- **Martin Fowlera. Předpoklady pro mikroslužby** \
+- **Martin Fowler. Předpoklady mikroslužeb** \
   <https://martinfowler.com/bliki/MicroservicePrerequisites.html>
 
-- **Jimmy Nilsson. \ cloud computingu bloků dat**
+- **Jimmy Nilsson. Chunk Cloud Computing** \
   <https://www.infoq.com/articles/CCC-Jimmy-Nilsson>
 
-- **Cesar de la Torre. Kontejnerový životní cyklus aplikace Docker s platformou a nástroji Microsoftu** (elektronická kniha ke stažení) \
+- **Cesar de la Torre. Kontejnerizovaný životní cyklus aplikací Dockeru s platformou Microsoft Platform and Tools** (e-kniha ke stažení) \
   <https://aka.ms/dockerlifecycleebook>
 
 >[!div class="step-by-step"]
 >[Předchozí](service-oriented-architecture.md)
->[Další](data-sovereignty-per-microservice.md)
+>[další](data-sovereignty-per-microservice.md)

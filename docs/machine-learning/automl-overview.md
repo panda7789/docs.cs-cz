@@ -1,31 +1,31 @@
 ---
-title: Automatizované Machine Learning s ML.NET
-description: Přehled automatického výběru modelu a školení
+title: Automatizované strojové učení s ML.NET
+description: Přehled automatického výběru a školení modelů
 ms.date: 05/01/2019
 ms.topic: overview
-ms.custom: mvc
-ms.openlocfilehash: c6c369dc0b0375f180d33d85ef320ddb24102f3e
-ms.sourcegitcommit: 9a97c76e141333394676bc5d264c6624b6f45bcf
+ms.custom: mvc, mlnet-tooling
+ms.openlocfilehash: acd6cae71d2d5d79209a77d34175e7f1b3c1ee35
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75740095"
+ms.lasthandoff: 03/15/2020
+ms.locfileid: "78849351"
 ---
-# <a name="automated-machine-learning-with-mlnet"></a>Automatizované Machine Learning s ML.NET
+# <a name="automated-machine-learning-with-mlnet"></a>Automatizované strojové učení s ML.NET
 
-Automatizované Machine Learning je funkce ML.NET, která provádí automatický výběr modelů a školení. Můžete zadat úlohu strojového učení a zadat datovou sadu a automatizovanou ML si vyberou model s nejlepšími metrikami. Výstupy IT:
+Automatizované strojové učení je funkce ML.NET, která provádí automatický výběr modelu a školení. Zadáte úlohu strojového učení a zadáte datovou sadu a automatizovaná ml vybere model s nejlepšími metrikami. To výstupy:
 
-- soubor modelu, který lze načíst do aplikace předpovědi
-- kód aplikace pro vytvoření předpovědi
-- zdrojový kód, který se používá pro výběr funkcí a pro školení modelů (pro pochopení modelu)
+- soubor modelu, který lze načíst do aplikace předpověď
+- kód aplikace, aby se předpovědi
+- zdrojový kód používaný pro výběr funkcí a trénování modelu (pro pochopení modelu)
 
 > [!NOTE]
-> Tato funkce je aktuálně ve verzi Preview a může se stát, že se změní materiál.
+> Tato funkce je v současné době ve verzi Preview a materiál se může změnit.
 
-Automatizované ML je aktuálně omezené na [úlohy](resources/tasks.md) strojového učení binární klasifikace, klasifikace s více třídami a regrese. Ostatní úkoly strojového učení budou v budoucích vydáních podporovány.
+Automatizované ML je aktuálně omezena na [úlohy](resources/tasks.md) strojového učení binární klasifikace, klasifikace více tříd a regrese. Ostatní úlohy strojového učení budou podporovány v budoucích verzích.
 
-Existují tři způsoby použití automatizovaného ML:
+Automatické ml lze používat třemi způsoby:
 
-1. S grafickým uživatelským rozhraním pomocí [Tvůrce modelů ml.NET](automate-training-with-model-builder.md)
-1. V příkazovém řádku s rozhraním [CLI ml.NET](automate-training-with-cli.md)
-1. Přes aplikaci s [rozhraním API automatizovaného ml](how-to-guides/how-to-use-the-automl-api.md)
+1. S grafickým uživatelským rozhraním, s [ML.NET Model Builder](automate-training-with-model-builder.md)
+1. Na příkazovém řádku s [ML.NET příkazovým příkazem](automate-training-with-cli.md)
+1. Prostřednictvím aplikace s [automatizovaným ROZHRANÍM ML API](how-to-guides/how-to-use-the-automl-api.md)

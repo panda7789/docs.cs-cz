@@ -1,60 +1,60 @@
 ---
-title: Vytvoření složeného uživatelského rozhraní založeného na mikroslužbách
-description: Architektura mikroslužeb není jenom pro back-end. Získejte náhled při jeho použití v front-endu.
+title: Vytváření složeného ui na základě mikroslužeb
+description: Architektura mikroslužeb není pouze pro back-end. Získejte náhled na jeho použití v přední části.
 ms.date: 09/20/2018
 ms.openlocfilehash: 1861d3bb6e5d4a0226aa8f3f72a2e0d3e83be56f
-ms.sourcegitcommit: 992f80328b51b165051c42ff5330788627abe973
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/11/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "72275738"
 ---
-# <a name="creating-composite-ui-based-on-microservices"></a>Vytvoření složeného uživatelského rozhraní založeného na mikroslužbách
+# <a name="creating-composite-ui-based-on-microservices"></a>Vytváření složeného ui na základě mikroslužeb
 
-Architektura mikroslužeb často začíná zpracováním dat a logiky na straně serveru, ale v mnoha případech se uživatelské rozhraní pořád zpracovává jako monolitu. Pokročilejší přístup označovaný jako [mikro-endy](https://martinfowler.com/articles/micro-frontends.html)je však navrhovat uživatelské rozhraní aplikace založené i na mikroslužbách. To znamená, že mají složené uživatelské rozhraní vytvořené mikroslužbami, místo abyste měli mikroslužby na serveru a jenom klientská aplikace monolitické využívající mikroslužby. S tímto přístupem můžete mikroslužby, které sestavíte, dokončit jak pomocí logiky, tak i vizuální reprezentace.
+Architektura mikroslužeb často začíná zpracování dat na straně serveru a logiky, ale v mnoha případech ui je stále zpracována jako monolit. Pokročilejší přístup, nazývaný mikro [front-endy](https://martinfowler.com/articles/micro-frontends.html), je však navrhnout vaše aplikace ui na základě mikroslužeb také. To znamená, že s složené ui vyrobené mikroslužeb, namísto mikroslužeb na serveru a pouze monolitické klientské aplikace náročné mikroslužeb. S tímto přístupem mikroslužeb, které vytvoříte může být kompletní s logikou a vizuální reprezentace.
 
-Obrázek 4-20 ukazuje jednodušší přístup pouze k náročným mikroslužbám z klientské aplikace monolitické. Samozřejmě můžete mít ASP.NET službu MVC mezi vytvářením kódu HTML a JavaScriptu. Obrázek je zjednodušený, který zdůrazňuje, že máte jedno (monolitické) klientské uživatelské rozhraní náročné na mikroslužby, které se zaměřují jenom na logiku a data, a ne na tvar uživatelského rozhraní (HTML a JavaScript).
+Obrázek 4-20 ukazuje jednodušší přístup právě náročné mikroslužeb z monolitické klientské aplikace. Samozřejmě, můžete mít ASP.NET Služby MVC mezi výrobou HTML a JavaScript. Obrázek je zjednodušení, které zdůrazňuje, že máte jeden (monolitické) klientské ui náročné mikroslužeb, které se zaměřují pouze na logiku a data, a nikoli na obrazec ui (HTML a JavaScript).
 
-![Diagram aplikace uživatelského rozhraní monolitické, která se připojuje k mikroslužbám](./media/microservice-based-composite-ui-shape-layout/monolith-ui-consume-microservices.png)
+![Diagram monolitické aplikace ui připojení k mikroslužbám.](./media/microservice-based-composite-ui-shape-layout/monolith-ui-consume-microservices.png)
 
-**Obrázek 4-20**. Aplikace uživatelského rozhraní monolitické využívající back-end mikroslužby
+**Obrázek 4-20**. Monolitické aplikace ui náročné back-endové mikroslužby
 
-Naproti tomu složené uživatelské rozhraní je přesně vygenerováno a tvořeno samotnými mikroslužbami. Některé mikroslužby na jednotce vizuální tvar určitých oblastí uživatelského rozhraní. Hlavním rozdílem je, že máte komponenty uživatelského rozhraní klienta (například třídy TypeScript) založené na šablonách a Data-Shaping-UI ViewModel pro tyto šablony pocházejí z každé mikroslužby.
+Naproti tomu složené uzpložené umělá vi je přesně generována a skládá mikroslužeb sami. Některé mikroslužeb řídit vizuální tvar konkrétní oblasti ui. Klíčovým rozdílem je, že máte komponenty uživatelského prostředí klienta (například třídy TypeScript) založené na šablonách a model zobrazení ui pro tyto šablony pro tyto šablony pochází z každé mikroslužby.
 
-V počátečním čase klientské aplikace se každá z komponent klientského uživatelského rozhraní (například třídy TypeScript) registruje s mikroslužbou infrastruktury schopnou poskytovat ViewModels pro daný scénář. Pokud mikroslužba změní tvar, uživatelské rozhraní se také změní.
+Při spuštění klientské aplikace se každá komponenta klientského ui (například třídy jazyka TypeScript) zaregistruje pomocí mikroslužby infrastruktury, která je schopna poskytnout ViewModels pro daný scénář. Pokud mikroslužba změní tvar, změní se také ui.
 
-Obrázek 4-21 ukazuje verzi tohoto složeného přístupu k uživatelskému rozhraní. To je zjednodušené, protože možná máte jiné mikroslužby, které agreguje podrobné části, které jsou založené na různých technikách. Záleží na tom, jestli vytváříte tradiční webový přístup (ASP.NET MVC), nebo na ZABEZPEČENou aplikaci (jednostránkové).
+Obrázek 4-21 ukazuje verzi tohoto přístupu složené houževnatého. To je zjednodušeno, protože může mít jiné mikroslužby, které agregují granulované části, které jsou založeny na různých technikách. Záleží na tom, zda vytváříte tradiční webový přístup (ASP.NET MVC) nebo SPA (jednostránková aplikace).
 
-![Diagram složeného uživatelského rozhraní, který sestavil mnoho modelů zobrazení.](./media/microservice-based-composite-ui-shape-layout/microservice-generate-composite-ui.png)
+![Diagram složeného ui tvořeného mnoha modely zobrazení.](./media/microservice-based-composite-ui-shape-layout/microservice-generate-composite-ui.png)
 
-**Obrázek 4-21**. Příklad složené aplikace uživatelského rozhraní ve tvaru back-endové mikroslužby
+**Obrázek 4-21**. Příklad složené aplikace unesprávné back-endovými mikroslužbami
 
-Každé z těchto mikroslužeb kompozice uživatelského rozhraní se podobá malé bráně API. Ale v tomto případě je každý z nich zodpovědný za malou oblast uživatelského rozhraní.
+Každá z těchto mikroslužeb složení ui by být podobné malé brány rozhraní API. Ale v tomto případě je každý z nich zodpovědný za malou oblast ui.
 
-Přístup k složenému uživatelskému rozhraní, který ovládá mikroslužby, může být náročnější nebo méně, a to v závislosti na tom, jaké technologie uživatelského rozhraní používáte. Nebudete například používat stejné techniky pro vytváření tradičních webových aplikací, které používáte pro vytváření zabezpečeného hesla nebo pro nativní mobilní aplikace (jako při vývoji aplikací pro Xamarin, které mohou být pro tento přístup náročnější).
+Přístup kombinovaného ui, který je řízen mikroslužeb může být náročnější nebo méně, v závislosti na tom, jaké technologie ui, které používáte. Například nebudete používat stejné techniky pro vytváření tradiční webové aplikace, které používáte pro vytváření SPA nebo pro nativní mobilní aplikace (jako při vývoji aplikací Xamarin, což může být pro tento přístup náročnější).
 
-Ukázková aplikace [eShopOnContainers](https://aka.ms/MicroservicesArchitecture) používá přístup k uživatelskému rozhraní monolitické z několika důvodů. Nejprve se jedná o Úvod do mikroslužeb a kontejnerů. Složené uživatelské rozhraní je pokročilejší, ale také při navrhování a vývoji uživatelského rozhraní vyžaduje další složitost. Druhý eShopOnContainers také poskytuje nativní mobilní aplikaci založenou na Xamarin, která by byla složitější na straně klienta C\#.
+Ukázková aplikace [eShopOnContainers](https://aka.ms/MicroservicesArchitecture) používá monolitický přístup ui z několika důvodů. Nejprve je úvod do mikroslužeb a kontejnerů. Složené ui je pokročilejší, ale také vyžaduje další složitost při navrhování a vývoji uj. Za druhé, eShopOnContainers také poskytuje nativní mobilní aplikace založená na Xamarin, což by bylo složitější na straně klienta C.\#
 
-Doporučujeme vám ale použít následující odkazy na Další informace o složeném uživatelském rozhraní založeném na mikroslužbách.
+Doporučujeme však použít následující odkazy, abyste se dozvěděli další informace o složeném uzpořeného ui na základě mikroslužeb.
 
-## <a name="additional-resources"></a>Další materiály a zdroje informací
+## <a name="additional-resources"></a>Další zdroje
 
-- **Mikroslužby na front-endy (blog Novák Fowlera)**  
+- **Micro Frontends (Martin Fowler blog)**  
   <https://martinfowler.com/articles/micro-frontends.html>
   
-- **Micro front-endu (Michael Geers Web)**  
+- **Micro Frontends (Michael Geers stránky)**  
   <https://micro-frontends.org/>
   
-- **Složené uživatelské rozhraní využívající ASP.NET (konkrétně Workshop)**  
+- **Kompozitní ui pomocí ASP.NET (Particular's Workshop)**  
   <https://github.com/Particular/Workshop/tree/master/demos/asp-net-core>
 
-- **Ruben Oostinga. Monolitické front-endové architektury mikroslužeb**  
+- **Ruben Oostinga. Monolitický frontend v architektuře mikroslužeb**  
   <https://xebia.com/blog/the-monolithic-frontend-in-the-microservices-architecture/>
 
-- **Mauro Servienti. Tajný kód lepšího složení uživatelského rozhraní**  
+- **Mauro Servienti. Tajemství lepší složení ui**  
   <https://particular.net/blog/secret-of-better-ui-composition>
 
-- **Viktor Farcic. Zahrnutí front-endové webových součástí do mikroslužeb**  
+- **Viktor Farcic. Zahrnutí webových komponent front-endu do mikroslužeb**  
   <https://technologyconversations.com/2015/08/09/including-front-end-web-components-into-microservices/>
 
 - **Správa front-endu v architektuře mikroslužeb**  
@@ -62,4 +62,4 @@ Doporučujeme vám ale použít následující odkazy na Další informace o slo
 
 >[!div class="step-by-step"]
 >[Předchozí](microservices-addressability-service-registry.md)
->[Další](resilient-high-availability-microservices.md)
+>[další](resilient-high-availability-microservices.md)

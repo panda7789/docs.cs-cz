@@ -1,20 +1,20 @@
 ---
-title: Implementace opakovaných pokusů pomocí exponenciálního omezení rychlostiu
-description: Naučte se implementovat opakování pomocí exponenciálního omezení rychlostiu.
+title: Implementace opakovaných pokusů s exponenciálním backoffem
+description: Zjistěte, jak implementovat opakování s exponenciálním vypnutím.
 ms.date: 10/16/2018
 ms.openlocfilehash: 1b948e399495eeb12016006442ac08d2b04f2e69
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/30/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "70296063"
 ---
-# <a name="implement-retries-with-exponential-backoff"></a>Implementace opakovaných pokusů pomocí exponenciálního omezení rychlostiu
+# <a name="implement-retries-with-exponential-backoff"></a>Implementace opakovaných pokusů s exponenciálním backoffem
 
-[*Opakování s exponenciálním omezení rychlosti*](/azure/architecture/patterns/retry) je technika, která opakuje operaci s exponenciálním zvýšením doby čekání, až do maximálního počtu opakování ( [exponenciální omezení rychlosti](https://en.wikipedia.org/wiki/Exponential_backoff)). Tato technika zahrnuje skutečnost, že cloudové prostředky můžou být z jakéhokoli důvodu občas nedostupné po dobu delší než pár sekund. Například produkt Orchestrator může přesunout kontejner do jiného uzlu v clusteru pro vyrovnávání zatížení. Během této doby může dojít k selhání některých požadavků. Dalším příkladem může být databáze, jako je například SQL Azure, kde je možné databázi přesunout na jiný server pro vyrovnávání zatížení, což způsobí, že databáze bude během několika sekund nedostupná.
+[*Opakování s exponenciálním podčasovým vypnutím*](/azure/architecture/patterns/retry) je technika, která opakuje operaci s exponenciálně zvyšující čekací dobou, až do maximálního počtu opakování bylo dosaženo [(exponenciální backoff](https://en.wikipedia.org/wiki/Exponential_backoff)). Tato technika zahrnuje skutečnost, že cloudové prostředky může být občas k dispozici pro více než několik sekund z jakéhokoli důvodu. Například orchestrator může být přesunutí kontejneru do jiného uzlu v clusteru pro vyrovnávání zatížení. Během této doby může dojít k selhání některých požadavků. Dalším příkladem může být databáze jako SQL Azure, kde databáze lze přesunout na jiný server pro vyrovnávání zatížení, což způsobí, že databáze nebude k dispozici po dobu několika sekund.
 
-Existuje mnoho přístupů k implementaci logiky opakování pomocí exponenciálního omezení rychlostiu.
+Existuje mnoho přístupů k implementaci logiky opakování s exponenciální mantinely.
 
 >[!div class="step-by-step"]
 >[Předchozí](partial-failure-strategies.md)
->[Další](implement-resilient-entity-framework-core-sql-connections.md)
+>[další](implement-resilient-entity-framework-core-sql-connections.md)

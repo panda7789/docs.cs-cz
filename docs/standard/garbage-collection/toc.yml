@@ -1,4 +1,4 @@
-- name: "Správa paměti a\_uvolňování paměti"
+- name: "Správa paměti a\_systém uvolňování paměti"
   href: memory-management-and-gc.md
   items:
     - name: Vymazání nespravovaných prostředků

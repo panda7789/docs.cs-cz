@@ -1,113 +1,113 @@
 ---
-title: Jak jsou verze prostředí .NET Core Runtime a sady SDK
-description: Tento článek vás seznámí s tím, jak jsou .NET Core SDK a modul runtime ve verzi (podobně jako sémantická Správa verzí).
+title: Jak jsou verzí rozhraní .NET Core Runtime a Sady SDK
+description: Tento článek vás naučí, jak jsou verzí sady .NET Core SDK a Runtime (podobně jako sémantická správa verzí).
 ms.date: 07/26/2018
 ms.openlocfilehash: c85a2112b439768068663688947960ac814de824
-ms.sourcegitcommit: cbdc0f4fd39172b5191a35200c33d5030774463c
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/09/2020
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "75777320"
 ---
-# <a name="overview-of-how-net-core-is-versioned"></a>Přehled toho, jak je verze .NET Core
+# <a name="overview-of-how-net-core-is-versioned"></a>Přehled verzí rozhraní .NET Core
 
-.NET Core odkazuje na modul runtime .NET Core a .NET Core SDK, který obsahuje nástroje, které potřebujete pro vývoj aplikací. Sady .NET Core SDK jsou navržené tak, aby fungovaly s jakoukoli předchozí verzí modulu runtime .NET Core. Tento článek popisuje strategii modulu runtime a verze sady SDK. Vysvětlení čísel verzí pro .NET Standard najdete v článku Úvod do [.NET Standard](../../standard/net-standard.md#net-implementation-support).
+.NET Core odkazuje na .NET Core Runtime a .NET Core SDK, který obsahuje nástroje potřebné k vývoji aplikací. Sady .NET Core SDK jsou navrženy tak, aby fungovaly s jakoukoli předchozí verzí rozhraní .NET Core Runtime. Tento článek vysvětluje runtime a strategie verze sady SDK. Vysvětlení čísel verzí pro rozhraní .NET Standard naleznete v článku o zavedení [standardu .NET](../../standard/net-standard.md#net-implementation-support).
 
-Modul runtime .NET Core a .NET Core SDK přidávají nové funkce v jiné míře – obecně .NET Core SDK poskytuje aktualizované nástroje rychleji než modul runtime .NET Core mění modul runtime, který používáte v produkčním prostředí.
+Sada .NET Core Runtime a .NET Core SDK přidávají nové funkce jinou rychlostí – obecně sada .NET Core SDK poskytuje aktualizované nástroje rychleji, než prostředí .NET Core Runtime změní za běhu, který používáte v produkčním prostředí.
 
 ## <a name="versioning-details"></a>Podrobnosti správy verzí
 
-.NET Core 2,1 odkazuje na číslo verze modulu runtime .NET Core. Modul runtime .NET Core má přístup k hlavnímu/dílčímu/opravnému způsobu správy verzí, který následuje po [sémantické verzi](#semantic-versioning).
+".NET Core 2.1" odkazuje na číslo verze .NET Core Runtime. .NET Core Runtime má hlavní/minor/patch přístup k správu verzí, která následuje [sémantické správu verzí](#semantic-versioning).
 
-.NET Core SDK nedodržuje sémantickou správu verzí. .NET Core SDK vydává rychlejší a jejich verze musí komunikovat se zarovnaným modulem runtime i s vlastními podverzemi sady SDK a verzemi oprav. První dvě pozice .NET Core SDK verze jsou uzamčeny modulem runtime .NET Core vydaným pomocí. Každá verze sady SDK může vytvářet aplikace pro tento modul runtime nebo jakoukoli nižší verzi.
+Sada .NET Core SDK nesleduje sémantickou správu verzí. Sada .NET Core SDK vydává rychleji a její verze musí komunikovat zarovnané runtime a vlastní dílčí verze sady SDK a opravy. První dvě pozice verze .NET Core SDK jsou uzamčeny na rozhraní .NET Core Runtime, které bylo vydáno. Každá verze sady SDK můžete vytvořit aplikace pro tento runtime nebo nižší verzi.
 
-Třetí pozice čísla verze sady SDK komunikuje s podverzem a číslem opravy. Vedlejší verze je vynásobena 100. Dílčí verze 1, verze patch 2 by byla reprezentovaná jako 102. Poslední dvě číslice reprezentují číslo opravy. Například vydání .NET Core 2,2 může vytvořit vydání jako v následující tabulce:
+Třetí pozice čísla verze sady SDK sděluje číslo vedlejší i oplatky. Dílčí verze se vynásobí 100. Dílčí verze 1, oprava verze 2 bude reprezentována jako 102. Poslední dvě číslice představují číslo opravy. Například vydání rozhraní .NET Core 2.2 může vytvořit verze, jako je následující tabulka:
 
-| Změna                | .NET Core Runtime | .NET Core SDK (\*) |
+| Změnit                | .NET Core Runtime | Sada SDK jádra .NET (\*) |
 |-----------------------|-------------------|-------------------|
 | Původní vydaná verze       | 2.2.0             | 2.2.100           |
 | Oprava sady SDK             | 2.2.0             | 2.2.101           |
-| Modul runtime a oprava sady SDK | 2.2.1             | 2.2.102           |
+| Oprava runtime a sady SDK | 2.2.1             | 2.2.102           |
 | Změna funkce sady SDK    | 2.2.1             | 2.2.200           |
 
-(\*) Tento graf jako příklad používá modul runtime 2,2 .NET Core, protože historický artefakt znamenal první sadu SDK pro .NET Core 2,1 je 2.1.300. Další informace najdete v části [Výběr verze .NET Core](selection.md).
+(\*) Tento graf používá 2.2 .NET Core Runtime jako příklad, protože historický artefakt znamená první SDK pro .NET Core 2.1 je 2.1.300. Další informace naleznete ve [výběru verze .NET Core](selection.md).
 
-Poznámka
+Poznámky:
 
-- Pokud sada SDK obsahuje 10 aktualizací funkcí před aktualizací běhové funkce, čísla verzí se převádějí do řady 1000 s čísly, jako je například 2.2.1000, jako je verze funkce následující po 2.2.900. Tato situace se neočekává.
-- neprojeví se verze opravy 99 bez vydání funkce. Pokud k tomuto číslu přistupuje verze, vynutí vydání funkce.
+- Pokud sada SDK obsahuje 10 aktualizací funkcí před aktualizací funkce runtime, čísla verzí se přetočí do řady 1000 s čísly jako 2.2.1000 jako verze funkce po verzi 2.2.900. Tato situace se neočekává, že nastane.
+- 99 vydání oprav bez vydání funkce nedojde. Pokud se vydání přiblíží k tomuto číslu, vynutí vydání prvku.
 
-Další podrobnosti můžete zobrazit v prvním návrhu v úložišti [dotnet/Designs](https://github.com/dotnet/designs/pull/29) .
+Další podrobnosti můžete vidět v původním návrhu v úložišti [dotnet/designs.](https://github.com/dotnet/designs/pull/29)
 
-## <a name="semantic-versioning"></a>Sémantická verze
+## <a name="semantic-versioning"></a>Sémantická správa verzí
 
-*Modul runtime* .NET Core zhruba dodržuje [sémantickou správu verzí (SemVer)](https://semver.org/)a přijímá použití `MAJOR.MINOR.PATCH` verzí, a to pomocí různých částí čísla verze, které popisují stupeň a typ změny.
+.NET Core *Runtime* zhruba dodržuje [sémantické versioning (SemVer)](https://semver.org/) `MAJOR.MINOR.PATCH` , přijetí použití správy verzí, pomocí různých částí číslo verze k popisu stupně a typu změny.
 
 ```
 MAJOR.MINOR.PATCH[-PRERELEASE-BUILDNUMBER]
 ```
 
-Volitelné `PRERELEASE` a `BUILDNUMBER` části nejsou nikdy součástí podporovaných vydání a existují pouze v noci buildech, místních sestaveních ze zdrojových cílů a nepodporovaných verzích Preview.
+Volitelné `PRERELEASE` a `BUILDNUMBER` části jsou nikdy součástí podporovaných verzí a existují pouze na noční sestavení, místní sestavení ze zdrojových cílů a nepodporované verze náhledu.
 
-### <a name="understand-runtime-version-number-changes"></a>Principy změn v číslech verzí modulu runtime
+### <a name="understand-runtime-version-number-changes"></a>Principy změn čísel verzí za běhu
 
-`MAJOR` se zvýší, když:
+`MAJOR`se zintáží, když:
 
-- Dojde k významným změnám produktu nebo novému směru produktu.
-- Byly provedeny zásadní změny. K přijetí nejnovějších změn je k dispozici vysoký pás.
-- Stará verze už není podporovaná.
-- Je přijata novější `MAJOR` verze stávající závislosti.
+- Dojde k významným změnám produktu nebo nového směru produktu.
+- Byly přijaty změny. Je tu vysoká laťka pro přijímání změn.
+- Stará verze již není podporována.
+- Je přijata novější `MAJOR` verze existující závislosti.
 
-`MINOR` se zvýší, když:
+`MINOR`se zintáží, když:
 
-- Přidala se plocha veřejné rozhraní API.
-- Bylo přidáno nové chování.
-- Je přijata novější `MINOR` verze stávající závislosti.
-- Zavádí se nová závislost.
+- Veřejné rozhraní API je přidán.
+- Je přidáno nové chování.
+- Je přijata novější `MINOR` verze existující závislosti.
+- Je zavedena nová závislost.
 
-`PATCH` se zvýší, když:
+`PATCH`se zintáží, když:
 
-- Byly provedeny opravy chyb.
-- Přidala se podpora pro novější platformu.
-- Je přijata novější `PATCH` verze stávající závislosti.
-- Jakékoli jiné změny nespadají do jednoho z předchozích případů.
+- Opravy chyb jsou prováděny.
+- Je přidána podpora novější platformy.
+- Je přijata novější `PATCH` verze existující závislosti.
+- Žádná jiná změna se nevejde do jednoho z předchozích případů.
 
-V případě více změn se zvýší nejvyšší prvek ovlivněný jednotlivými změnami a následující hodnoty jsou vynulovány na nulu. Například při zvýšení `MAJOR` `MINOR` a `PATCH` se resetují na nula. Když se `MINOR` zvýší, `PATCH` se resetuje na nulu, zatímco `MAJOR` zůstane beze změny.
+Pokud existuje více změn, nejvyšší prvek ovlivněný jednotlivými změnami se zintácí a následující jsou nastaveny na nulu. Například při `MAJOR` zvýšení `MINOR` a `PATCH` jsou obnoveny na nulu. Při `MINOR` zvýšení je resetován na `PATCH` `MAJOR` nulu, zatímco zůstane nedotčena.
 
 ## <a name="version-numbers-in-file-names"></a>Čísla verzí v názvech souborů
 
-Soubory stažené pro .NET Core obsahují verzi, například `dotnet-sdk-2.1.300-win10-x64.exe`.
+Soubory stažené pro rozhraní .NET Core nesou `dotnet-sdk-2.1.300-win10-x64.exe`například verzi .
 
-### <a name="preview-versions"></a>Verze Preview
+### <a name="preview-versions"></a>Náhled verzí
 
-Verze Preview mají `-preview[number]-([build]|"final")` připojit k verzi. Například `2.0.0-preview1-final`.
+Verze preview mají `-preview[number]-([build]|"final")` připojený k verzi. Například, `2.0.0-preview1-final`.
 
-### <a name="servicing-versions"></a>Verze údržby
+### <a name="servicing-versions"></a>Servis verzí
 
-Po vyzkoušení vydání vydaných verzí větve vydaných verzí většinou ukončí vytváření každodenních sestavení a místo toho začnou vytvářet servisní sestavení. Verze obsluhy mají `-servicing-[number]` připojeny k verzi. Například `2.0.1-servicing-006924`.
+Po vydání zhasne, větve verze obecně zastavit výrobu denní sestavení a místo toho začít vyrábět údržbu sestavení. Obsluhující verze mají `-servicing-[number]` připojenk verzi. Například, `2.0.1-servicing-006924`.
 
-## <a name="relationship-to-net-standard-versions"></a>Vztah k .NET Standard verzí
+## <a name="relationship-to-net-standard-versions"></a>Vztah k verzím .NET Standard
 
-.NET Standard se skládá z referenčního sestavení .NET. K dispozici je více implementací specifických pro jednotlivé platformy. Referenční sestavení obsahuje definici rozhraní API .NET, která jsou součástí dané .NET Standard verze. Každá implementace splňuje .NET Standard kontraktu na konkrétní platformě. Další informace o .NET Standard najdete v článku o [.NET Standard](../../standard/net-standard.md) v příručce .NET.
+Standard .NET se skládá z referenčního sestavení .NET. Existuje více implementací specifických pro každou platformu. Referenční sestavení obsahuje definici rozhraní API .NET, která jsou součástí dané verze .NET Standard. Každá implementace splňuje .NET Standard smlouvy na konkrétní platformě. Další informace o standardu .NET v článku [o standardu .NET v](../../standard/net-standard.md) průvodci .NET.
 
-.NET Standard referenční sestavení používá schéma `MAJOR.MINOR`ch verzí. úroveň `PATCH` není užitečná pro .NET Standard, protože zpřístupňuje jenom specifikaci rozhraní API (žádná implementace) a podle definice jakákoliv změna rozhraní API by představovala změnu v sadě funkcí, a proto novou verzi `MINOR`.
+Referenční sestavení .NET Standard `MAJOR.MINOR` používá schéma správy verzí. `PATCH`úroveň není užitečná pro standard .NET, protože zveřejňuje pouze specifikaci rozhraní API (bez implementace) a podle definice by `MINOR` jakákoli změna rozhraní API představovala změnu v sadě funkcí a tedy novou verzi.
 
-Implementace na jednotlivých platformách se můžou aktualizovat, obvykle jako součást verze platformy, a nemusejí být zřejmé pro programátory, kteří používají .NET Standard na této platformě.
+Implementace na každé platformě mohou být aktualizovány, obvykle jako součást verze platformy, a proto nejsou zřejmé programátorům používajícím na této platformě standard .NET Standard.
 
-Každá verze rozhraní .NET Core implementuje verzi .NET Standard. Implementace verze .NET Standard implikuje podporu pro předchozí verze .NET Standard. Verze .NET Standard a .NET Core nezávisle. Je to koshoda, kterou .NET Core 2,0 implementuje .NET Standard 2,0. Rozhraní .NET Core 2,1 také implementuje .NET Standard 2,0. .NET Core bude podporovat budoucí verze .NET Standard, jakmile budou k dispozici.
+Každá verze rozhraní .NET Core implementuje verzi standardu .NET. Implementace verze standardu .NET Znamená podporu pro předchozí verze rozhraní .NET Standard. Verze .NET Standard a .NET Core nezávisle. Je to náhoda, že .NET Core 2.0 implementuje .NET Standard 2.0. .NET Core 2.1 také implementuje standard .NET 2.0. .NET Core bude podporovat budoucí verze standardu .NET, jakmile budou k dispozici.
 
 | .NET Core | .NET Standard |
 |-----------|---------------|
 | 1.0       | až 1,6     |
 | 2.0       | až 2,0     |
 | 2.1       | až 2,0     |
-| 2.2       | až 2,0     |
-| 3,0       | až 2,1     |
+| 2,2       | až 2,0     |
+| 3.0       | až 2.1     |
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Cílové architektury](../../standard/frameworks.md)
 - [Vytváření distribučních balíčků .NET Core](../build/distribution-packaging.md)
-- [Tabulka faktů pro životní cyklus podpory .NET Core](https://dotnet.microsoft.com/platform/support/policy)
-- [Vazba .NET Core 2 + verze](https://github.com/dotnet/designs/issues/3)
-- [Image Docker pro .NET Core](https://hub.docker.com/_/microsoft-dotnet-core/)
+- [Přehled faktů o životním cyklu základní podpory .NET](https://dotnet.microsoft.com/platform/support/policy)
+- [Vazba verze .NET Core 2+](https://github.com/dotnet/designs/issues/3)
+- [Inaje Dockeru pro jádro .NET Core](https://hub.docker.com/_/microsoft-dotnet-core/)

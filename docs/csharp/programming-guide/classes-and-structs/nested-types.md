@@ -1,14 +1,14 @@
 ---
-title: Vnořené typy – C# Průvodce programováním
+title: Vnořené typy – programovací příručka jazyka C#
 ms.date: 02/08/2020
 helpviewer_keywords:
 - nested types [C#]
 ms.assetid: f2e1b315-e3d1-48ce-977f-7bae0960ba99
 ms.openlocfilehash: 12e44ccc1254424c152a238c8390f133550fa54c
-ms.sourcegitcommit: 44a7cd8687f227fc6db3211ccf4783dc20235e51
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/26/2020
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "77626487"
 ---
 # <a name="nested-types-c-programming-guide"></a>Vnořené typy (Průvodce programováním v C#)
@@ -17,33 +17,33 @@ Typ definovaný v rámci [třídy](../../language-reference/keywords/class.md), 
 
 [!code-csharp[DeclareNestedClass](~/samples/snippets/csharp/objectoriented/nestedtypes.cs#DeclareNestedClass)]
 
-Bez ohledu na to, zda je vnější typ třída, rozhraní nebo struktura, jsou vnořené typy standardně [soukromé](../../language-reference/keywords/private.md); jsou přístupné pouze z jejich nadřazeného typu. V předchozím příkladu je třída `Nested` nepřístupná externím typům.
+Bez ohledu na to, zda vnější typ je třída, rozhraní nebo struktura, vnořené typy výchozí [private](../../language-reference/keywords/private.md); jsou přístupné pouze z jejich obsahujícího typu. V předchozím příkladu `Nested` je třída nepřístupná pro externí typy.
 
-Můžete také zadat [modifikátor přístupu](../../language-reference/keywords/access-modifiers.md) pro definování přístupnosti vnořeného typu, a to následujícím způsobem:
+Můžete také určit [modifikátor přístupu](../../language-reference/keywords/access-modifiers.md) k definování přístupnosti vnořeného typu následujícím způsobem:
 
-- Vnořené typy **třídy** můžou být [veřejné](../../language-reference/keywords/public.md), [chráněné](../../language-reference/keywords/protected.md), [interní](../../language-reference/keywords/internal.md), [chráněné interní](../../language-reference/keywords/protected-internal.md), [privátní](../../language-reference/keywords/private.md) nebo [privátní](../../language-reference/keywords/private-protected.md).
+- Vnořené typy **třídy** mohou být [veřejné](../../language-reference/keywords/public.md), [chráněné](../../language-reference/keywords/protected.md), [interní](../../language-reference/keywords/internal.md), [chráněné interní](../../language-reference/keywords/protected-internal.md), [soukromé](../../language-reference/keywords/private.md) nebo [soukromé chráněné](../../language-reference/keywords/private-protected.md).
 
-   Nicméně definování `protected`, `protected internal` nebo `private protected` vnořené třídy v [zapečetěné třídě](../../language-reference/keywords/sealed.md) vygeneruje upozornění kompilátoru [CS0628](../../misc/cs0628.md), v zapečetěné třídě je deklarovaný nový chráněný člen.
+   `protected`Definování třídy nebo `protected internal` `private protected` vnořené třídy uvnitř [zapečetěné třídy](../../language-reference/keywords/sealed.md) však generuje upozornění kompilátoru [CS0628](../../misc/cs0628.md), "nový chráněný člen deklarovaný v zapečetěné třídě".
   
-- Vnořené typy **struktury** můžou být [veřejné](../../language-reference/keywords/public.md), [interní](../../language-reference/keywords/internal.md)nebo [soukromé](../../language-reference/keywords/private.md).
+- Vnořené typy **struktury** mohou být [veřejné](../../language-reference/keywords/public.md), [interní](../../language-reference/keywords/internal.md)nebo [soukromé](../../language-reference/keywords/private.md).
 
-Následující příklad nastaví `Nested` třídy jako veřejné:
+Následující příklad zpřístupňuje třídu: `Nested`
 
 [!code-csharp[PublicNestedClass](~/samples/snippets/csharp/objectoriented/nestedtypes.cs#PublicNestedClass)]
 
-Vnořený nebo vnitřní typ může přistupovat k typu, který obsahuje, nebo vnějšímu typu. Chcete-li získat přístup k nadřazenému typu, předejte jej jako argument konstruktoru vnořeného typu. Příklad:
+Vnořený nebo vnitřní, typ může přistupovat k obsahující nebo vnější, typ. Chcete-li získat přístup k obsahujícímu typu, předajte jej jako argument konstruktoru vnořeného typu. Například:
 
 [!code-csharp[DeclareNestedInstance](~/samples/snippets/csharp/objectoriented/nestedtypes.cs#DeclareNestedInstance)]
 
-Vnořený typ má přístup ke všem členům, kteří mají přístup k jeho nadřazenému typu. Má přístup k soukromým a chráněným členům nadřazeného typu, včetně všech zděděných chráněných členů.
+Vnořený typ má přístup ke všem členům, které jsou přístupné pro jeho obsahující typ. Může přistupovat k soukromým a chráněným členům obsahujícího typu, včetně všech zděděných chráněných členů.
 
-V předchozí deklaraci je úplný název třídy `Nested` `Container.Nested`. Toto je název, který se používá k vytvoření nové instance vnořené třídy následujícím způsobem:
+V předchozím prohlášení je `Nested` `Container.Nested`úplný název třídy . Toto je název použitý k vytvoření nové instance vnořené třídy takto:
 
 [!code-csharp[UseNestedInstance](~/samples/snippets/csharp/objectoriented/nestedtypes.cs#UseNestedInstance)]
 
 ## <a name="see-also"></a>Viz také
 
-- [Průvodce programováním v C#](../index.md)
-- [Třídy a struktury](./index.md)
+- [Programovací příručka jazyka C#](../index.md)
+- [Třídy a struky](./index.md)
 - [Modifikátory přístupu](./access-modifiers.md)
 - [Konstruktory](./constructors.md)

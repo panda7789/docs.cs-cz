@@ -1,82 +1,82 @@
 ---
-title: Kolekce telemetrie pomocí ML.NET CLI
-description: Přečtěte si o funkcích telemetrie ML.NET CLI, které shromažďují informace o využití pro analýzu, shromažďovaná data a jejich zakázání. Vyhledejte také odkazy na licenční smlouvu .NET a informace o dodržování předpisů v Microsoft GDPRe.
+title: Kolekce telemetrie podle ML.NET CLI
+description: Další informace o ML.NET funkce telemetrie cli, které shromažďují informace o využití pro analýzu, která data jsou shromažďována a jak je zakázat. Najděte také odkazy na licenční smlouvu .NET a informace o dodržování nařízení Microsoft GDPR.
 ms.topic: conceptual
 ms.date: 09/03/2019
-ms.custom: ''
-ms.openlocfilehash: edd74b6f3d3c50d5eff012629f0b1db6b62d9021
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.custom: mlnet-tooling
+ms.openlocfilehash: 99e11acba343cc689c3219ca9316144fc62cd618
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73977269"
+ms.lasthandoff: 03/15/2020
+ms.locfileid: "78849741"
 ---
-# <a name="telemetry-collection-by-the-mlnet-cli"></a>Kolekce telemetrie pomocí rozhraní příkazového řádku ML.NET
+# <a name="telemetry-collection-by-the-mlnet-cli"></a>Kolekce telemetrie podle ML.NET CLI
 
-[Ml.NET CLI](https://aka.ms/mlnet-cli) obsahuje funkci telemetrie, která shromažďuje anonymní data o využití, která jsou agregovaná pro použití Microsoftem.
+Rozhraní [ML.NET CLI](https://aka.ms/mlnet-cli) obsahuje funkci telemetrie, která shromažďuje anonymní data o využití, která jsou agregována pro použití společností Microsoft.
 
-## <a name="how-microsoft-uses-the-data"></a>Způsob, jakým společnost Microsoft používá data
+## <a name="how-microsoft-uses-the-data"></a>Jak společnost Microsoft používá data
 
-Produktový tým používá data telemetrie ML.NET CLI, která vám pomůžou pochopit, jak tyto nástroje vylepšit. Pokud například zákazníci často používají konkrétní úlohu strojového učení, produktový tým prozkoumá důvody, proč a používá zjištění k určení priorit vývoje funkcí. Telemetrie ML.NET CLI také pomáhá s laděním problémů, jako jsou havárie a anomálie v kódu.
+Produktový tým používá ML.NET telemetrická data cli, které pomáhají pochopit, jak zlepšit nástroje. Pokud například zákazníci zřídka používají určitý úkol strojového učení, produktový tým zkoumá proč a pomocí zjištění upřednostňuje vývoj funkcí. ML.NET telemetrii CLI také pomáhá s laděním problémů, jako jsou selhání a anomálie kódu.
 
-I když se tento přehled oceňuje produktovým týmem, ví, že ne všichni chtějí posílat tato data. [Zjistěte, jak zakázat telemetrii.](#opt-out-of-data-collection)
+I když produktový tým tento přehled oceňuje, víme také, že ne každý chce tato data odeslat. [Zjistěte, jak zakázat telemetrii.](#opt-out-of-data-collection)
 
 ## <a name="scope"></a>Rozsah
 
-Příkaz `mlnet` spustí rozhraní příkazového řádku ML.NET, ale samotný příkaz nebude shromažďovat telemetrii.
+Příkaz `mlnet` spustí ML.NET CLI, ale samotný příkaz neshromažďuje telemetrii.
 
-Telemetrie *není povolená* , když spustíte příkaz `mlnet` bez připojeného příkazu. Příklad:
+Telemetrie *není povolena* při `mlnet` spuštění příkazu bez připojeného jiného příkazu. Například:
 
 - `mlnet`
 - `mlnet --help`
 
-Telemetrii *je povolena* , když spustíte [příkaz ml.NET CLI](../reference/ml-net-cli-reference.md), například `mlnet auto-train`.
+Telemetrie *je povolena* při spuštění [příkazu ML.NET CLI](../reference/ml-net-cli-reference.md), například `mlnet auto-train`.
 
-## <a name="opt-out-of-data-collection"></a>Odhlásit se od shromažďování dat
+## <a name="opt-out-of-data-collection"></a>Odhlásit se ze shromažďování údajů
 
-Funkce telemetrie ML.NET CLI je ve výchozím nastavení povolená.
+Funkce telemetrie ML.NET CLI je ve výchozím nastavení povolena.
 
-Odsouhlasit funkci telemetrie nastavením proměnné prostředí `MLDOTNET_CLI_TELEMETRY_OPTOUT` na `1` nebo `true`. Tato proměnná prostředí se globálně aplikuje na nástroj ML.NET CLI.
+Odhlásit se z funkce telemetrie nastavením proměnné `MLDOTNET_CLI_TELEMETRY_OPTOUT` prostředí na `1` nebo `true`. Tato proměnná prostředí platí globálně pro nástroj ML.NET CLI.
 
 ## <a name="data-points-collected"></a>Shromážděné datové body
 
 Tato funkce shromažďuje následující data:
 
-- Jaký příkaz byl vyvolán, například `auto-train`
-- Použité názvy parametrů příkazového řádku (to znamená "DataSet-Name; Label-column-name, ml-Task, Output-Path, Max-prozkoumává-Time, verbose")
-- Adresa MAC s algoritmem hash: kryptograficky (SHA256) anonymní a jedinečné ID pro počítač
+- Jaký příkaz byl vyvolán, například`auto-train`
+- Použité názvy parametrů příkazového řádku (to znamená "název datové sady, název sloupce popisku, ml-task, výstupní cesta, max-exploration-time, podrobnost")
+- Hashed MAC adresa: kryptograficky (SHA256) anonymní a jedinečné ID pro počítač
 - Časové razítko vyvolání
-- Tři oktety: IP adresa (nikoli plná IP adresa) se používá jenom k určení geografického umístění.
-- Název všech argumentů/parametrů použitých. Nejedná se o hodnoty zákazníka, jako jsou například řetězce.
-- Název souboru datové sady s algoritmem hash
-- Datová sada – interval velikosti souboru
+- Tři oktetové IP adresy (ne úplná IP adresa) používané pouze k určení zeměpisné polohy
+- Název všech použitých argumentů/parametrů. Nejsou hodnoty zákazníka, například řetězce
+- Název souboru hashed dataset
+- Kontejner velikosti souboru datové sady
 - Operační systém a verze
-- Hodnota parametru--Task: kategorií hodnoty, například `regression`, `binary-classification`a `multiclass-classification`
-- Verze rozhraní příkazového řádku ML.NET (tj. 0.3.27703.4)
+- Hodnota parametru --task: Kategorické `regression` `binary-classification`hodnoty, například , a`multiclass-classification`
+- ML.NET verze CLI (tj. 0.3.27703.4)
 
-Data se na servery Microsoftu odesílají zabezpečeně pomocí technologie [Azure Application Insights](https://azure.microsoft.com/services/application-insights/) , která se drží pod omezeným přístupem, a používají se v rámci přísných bezpečnostních mechanismů pro systémy zabezpečení [Azure Storage](https://azure.microsoft.com/services/storage/) .
+Data se bezpečně odesílají na servery Microsoftu pomocí technologie [Azure Application Insights,](https://azure.microsoft.com/services/application-insights/) která je držena s omezeným přístupem a používá se pod přísnými bezpečnostními kontrolami ze zabezpečených systémů [Azure Storage.](https://azure.microsoft.com/services/storage/)
 
-### <a name="data-points-not-collected"></a>Datové body nejsou shromažďovány.
+### <a name="data-points-not-collected"></a>Neshromažďované datové body
 
-*Funkce telemetrie* neshromažďuje:
+Funkce telemetrie *neshromažďuje:*
 
-- osobní údaje, jako jsou uživatelská jména
-- názvy souborů DataSet
+- osobních údajů, jako jsou uživatelská jména
+- názvy souborů datové sady
 - data ze souborů datové sady
 
-Pokud máte podezření, že telemetrie ML.NET CLI shromažďuje citlivá data, nebo že data jsou nezabezpečená nebo nevhodně zpracovaná, zajistěte si problém v úložišti [ml.NET](https://github.com/dotnet/machinelearning) pro účely šetření.
+Pokud máte podezření, že telemetrie ML.NET CLI shromažďuje citlivá data nebo že jsou data nebezpečně nebo nevhodně zpracována, zasuzujte problém do [úložiště ML.NET](https://github.com/dotnet/machinelearning) pro šetření.
 
-## <a name="license"></a>průkaz
+## <a name="license"></a>Licence
 
-Distribuce rozhraní ML.NET CLI společnosti Microsoft je licencovaná s [licenčními podmínkami pro software společnosti Microsoft: Knihovna Microsoft .NET](https://aka.ms/dotnet-core-eula). Podrobnosti o shromažďování a zpracování dat najdete v části s názvem "data".
+Distribuce ML.NET cli společnosti Microsoft je licencována s [licenčními podmínkami pro software společnosti Microsoft: Microsoft .NET Library](https://aka.ms/dotnet-core-eula). Podrobnosti o shromažďování a zpracování údajů naleznete v části s názvem "Data".
 
-## <a name="disclosure"></a>Námitk
+## <a name="disclosure"></a>Zveřejnění
 
-Při prvním spuštění [příkazu cli ml.NET](../reference/ml-net-cli-reference.md) , jako je například `mlnet auto-train`, se v nástroji ml.NET CLI zobrazí text, který vám ukáže, jak se odhlásit z telemetrie. Text se může mírně lišit v závislosti na verzi rozhraní příkazového řádku, kterou používáte.
+Při prvním spuštění [příkazu ML.NET příkazu příkazu příkazu,](../reference/ml-net-cli-reference.md) například `mlnet auto-train`, nástroj ML.NET příkazového příkazu zobrazí zpřístupnění text, který vám řekne, jak se odhlásit z telemetrie. Text se může mírně lišit v závislosti na verzi spuštěného vodního úpově.
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Reference k rozhraní příkazového řádku ML.NET](../reference/ml-net-cli-reference.md)
-- [Licenční smlouvy pro software společnosti Microsoft: Knihovna Microsoft .NET](https://aka.ms/dotnet-core-eula)
-- [Ochrana osobních údajů v Microsoftu](https://www.microsoft.com/trustcenter/privacy/)
-- [Prohlášení o zásadách ochrany osobních údajů společnosti Microsoft](https://privacy.microsoft.com/privacystatement)
+- [ML.NET odkaz na cli](../reference/ml-net-cli-reference.md)
+- [Licenční podmínky pro software společnosti Microsoft: Knihovna Microsoft .NET](https://aka.ms/dotnet-core-eula)
+- [Ochrana osobních údajů ve společnosti Microsoft](https://www.microsoft.com/trustcenter/privacy/)
+- [Prohlášení společnosti Microsoft o zásadách ochrany osobních údajů](https://privacy.microsoft.com/privacystatement)

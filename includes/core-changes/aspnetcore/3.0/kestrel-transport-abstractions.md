@@ -1,43 +1,43 @@
 ---
 ms.openlocfilehash: f95c3916f4da8164cf927344f60f2845f04ddc5c
-ms.sourcegitcommit: 2e95559d957a1a942e490c5fd916df04b39d73a9
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/16/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "72394196"
 ---
-### <a name="kestrel-transport-abstractions-removed-and-made-public"></a>Kestrel: abstrakce přenosu se odebrala a provedla jako veřejná.
+### <a name="kestrel-transport-abstractions-removed-and-made-public"></a>Poštolka: Transport abstrakce odstraněny a zveřejněny
 
-V rámci přesunu z rozhraní API pro pubternal jsou v knihovně `Microsoft.AspNetCore.Connections.Abstractions` zpřístupněny rozhraní API přenosové vrstvy Kestrel jako veřejné rozhraní.
+Jako součást odklonu od "pubternal" rozhraní API kestrel transportní vrstvy rozhraní `Microsoft.AspNetCore.Connections.Abstractions` jsou vystaveny jako veřejné rozhraní v knihovně.
 
-#### <a name="version-introduced"></a>Představená verze
+#### <a name="version-introduced"></a>Zavedená verze
 
-3,0
+3.0
 
 #### <a name="old-behavior"></a>Staré chování
 
-- V knihovně `Microsoft.AspNetCore.Server.Kestrel.Transport.Abstractions` byly k dispozici abstrakce související s přenosem.
-- Vlastnost `ListenOptions.NoDelay` byla k dispozici.
+- Abstrakce související s dopravou `Microsoft.AspNetCore.Server.Kestrel.Transport.Abstractions` byly k dispozici v knihovně.
+- Nemovitost `ListenOptions.NoDelay` byla k dispozici.
 
 #### <a name="new-behavior"></a>Nové chování
 
-- Rozhraní `IConnectionListener` bylo představeno v knihovně `Microsoft.AspNetCore.Connections.Abstractions`, aby vystavilo nejvíce používané funkce z knihovny `...Transport.Abstractions`.
-- `NoDelay` je teď k dispozici v možnostech přenosu (`LibuvTransportOptions` a `SocketTransportOptions`).
-- `SchedulingMode` již není k dispozici.
+- Rozhraní `IConnectionListener` bylo zavedeno `Microsoft.AspNetCore.Connections.Abstractions` v knihovně vystavit nejpoužívanější `...Transport.Abstractions` funkce z knihovny.
+- The `NoDelay` je nyní k`LibuvTransportOptions` dispozici `SocketTransportOptions`v možnostech dopravy ( a ).
+- `SchedulingMode`již není k dispozici.
 
 #### <a name="reason-for-change"></a>Důvod změny
 
-ASP.NET Core 3,0 se přesunuly z rozhraní API "pubternal".
+ASP.NET Core 3.0 se odklonil od "pubternal" API.
 
 #### <a name="recommended-action"></a>Doporučená akce
 
 #### <a name="category"></a>Kategorie
 
-ASP.NET Core
+Jádro ASP.NET
 
 #### <a name="affected-apis"></a>Ovlivněná rozhraní API
 
-Žádné
+Žádný
 
 <!-- 
 

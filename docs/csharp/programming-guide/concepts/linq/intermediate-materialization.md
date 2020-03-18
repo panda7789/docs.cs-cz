@@ -3,17 +3,17 @@ title: Zprostředkující materializace (C#)
 ms.date: 07/20/2015
 ms.assetid: 7922d38f-5044-41cf-8e17-7173d6553a5e
 ms.openlocfilehash: af1eb7df7da02d8e72fc102cda4ee5f329dc7974
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "70253166"
 ---
 # <a name="intermediate-materialization-c"></a>Zprostředkující materializace (C#)
-Pokud nejste opatrní, v některých situacích můžete významně změnit velikost paměti a profilu výkonu aplikace tím, že ve svých dotazech dojde k předčasnému materializování kolekcí. Některé standardní operátory dotazu způsobují materializaci své zdrojové kolekce před tím, než budou vracet jediný element. Například <xref:System.Linq.Enumerable.OrderBy%2A?displayProperty=nameWithType> první projde celou zdrojovou kolekcí a pak seřadí všechny položky a nakonec vyřadí první položku. To znamená, že je nákladné získat první položku seřazené kolekce. u každé položky pak není nákladné. To je smysl: To by nebylo možné, aby tento operátor dotazu jinak nepoužil.  
+Pokud nejste opatrní, v některých situacích můžete výrazně změnit paměť a profil výkonu aplikace tím, že způsobí předčasné materializace kolekcí v dotazech. Některé operátory standardní dotaz způsobit materializaci jejich zdrojové kolekce před získávání jeden prvek. Například <xref:System.Linq.Enumerable.OrderBy%2A?displayProperty=nameWithType> nejprve iterates prostřednictvím celé jeho zdrojové kolekce, pak seřadí všechny položky a nakonec výnosy první položku. To znamená, že je nákladné získat první položku objednané kolekce; každá položka poté není drahá. To dává smysl: Pro tento operátor dotazu by bylo nemožné provést jinak.  
   
 ## <a name="example"></a>Příklad  
- Tento příklad změní předchozí příklad. `AppendString` Metoda volá<xref:System.Linq.Enumerable.ToList%2A> před iterací ve zdroji. Příčinou je materializace.  
+ Tento příklad změní předchozí příklad. Metoda `AppendString` volá <xref:System.Linq.Enumerable.ToList%2A> před iterace prostřednictvím zdroje. To způsobí materializaci.  
   
 ```csharp  
 public static class LocalExtensions  
@@ -64,7 +64,7 @@ class Program
 }  
 ```  
   
- Tento příklad vytvoří následující výstup:  
+ Tento příklad vytváří následující výstup:  
   
 ```output  
 ToUpper: source >abc<  
@@ -80,12 +80,12 @@ AppendString: source >GHI<
 Main: str >GHI!!!<  
 ```  
   
- V tomto příkladu vidíte, že volání z důvodu <xref:System.Linq.Enumerable.ToList%2A> `AppendString` vyčíslení celého zdroje před vyvoláním první položky. Pokud by byl zdrojem velké pole, významně byste tím změnili profil paměti aplikace.  
+ V tomto příkladu uvidíte, <xref:System.Linq.Enumerable.ToList%2A> že `AppendString` volání způsobí výčet celého zdroje před získávání první položky. Pokud by zdrojem bylo velké pole, výrazně by to změnilo profil paměti aplikace.  
   
- Standardní operátory dotazu je také možné zřetězit dohromady. Toto je znázorněno v posledním tématu tohoto kurzu.  
+ Standardní operátory dotazů lze také zřetězit dohromady. Poslední téma v tomto kurzu ilustruje toto.  
   
-- [Zřetězení standardních operátorů dotazů (C#)](./chaining-standard-query-operators-together.md)  
+- [Zřetězení operátorů standardních dotazů dohromady (C#)](./chaining-standard-query-operators-together.md)  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Kurz: Zřetězení dotazů společně (C#)](./deferred-execution-and-lazy-evaluation-in-linq-to-xml.md)
+- [Kurz: Řetězení dotazů dohromady (C#)](./deferred-execution-and-lazy-evaluation-in-linq-to-xml.md)

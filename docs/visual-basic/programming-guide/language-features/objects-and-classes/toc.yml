@@ -7,9 +7,9 @@
       href: overloaded-properties-and-methods.md
     - name: Základní informace o dědičnosti
       href: inheritance-basics.md
-    - name: 'Doba života objektu: Vytváření a zničení objektů'
+    - name: 'Doba života objektu: Vytváření a odstraňování objektů'
       href: object-lifetime-how-objects-are-created-and-destroyed.md
-    - name: 'Inicializátory objektů: Pojmenované a anonymní typy'
+    - name: 'Inicializátory objektů: pojmenované a anonymní typy'
       href: object-initializers-named-and-anonymous-types.md
       items:
         - name: 'Postupy: Deklarace objektu pomocí inicializátoru objektu'
@@ -19,5 +19,5 @@
       items:
         - name: 'Postupy: Odvození názvů a typů vlastností v deklaracích anonymního typu'
           href: how-to-infer-property-names-and-types-in-anonymous-type-declarations.md
-        - name: Definice anonymního typu
+        - name: Definice autonomního typu
           href: anonymous-type-definition.md

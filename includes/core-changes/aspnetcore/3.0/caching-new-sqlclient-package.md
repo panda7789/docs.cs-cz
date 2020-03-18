@@ -1,42 +1,42 @@
 ---
 ms.openlocfilehash: 771238c53dc97f4cf4068968f3c68500ba9f87da
-ms.sourcegitcommit: 5a28f8eb071fcc09b045b0c4ae4b96898673192e
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/31/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "73198404"
 ---
-### <a name="caching-microsoftextensionscachingsqlserver-uses-new-sqlclient-package"></a>Ukládání do mezipaměti: Microsoft. Extensions. Caching. SqlServer používá nový balíček SqlClient.
+### <a name="caching-microsoftextensionscachingsqlserver-uses-new-sqlclient-package"></a>Ukládání do mezipaměti: Microsoft.Extensions.Caching.SqlServer používá nový balíček SqlClient
 
-Balíček `Microsoft.Extensions.Caching.SqlServer` použije nový balíček `Microsoft.Data.SqlClient` místo balíčku `System.Data.SqlClient`. Tato změna by mohla způsobit mírné změny v chování. Další informace najdete v tématu [představení nového Microsoft. data. SqlClient](https://devblogs.microsoft.com/dotnet/introducing-the-new-microsoftdatasqlclient/).
+Balíček `Microsoft.Extensions.Caching.SqlServer` bude používat `Microsoft.Data.SqlClient` nový `System.Data.SqlClient` balíček namísto balíčku. Tato změna může způsobit mírné změny chování lámání. Další informace naleznete [v tématu Introducing the new Microsoft.Data.SqlClient](https://devblogs.microsoft.com/dotnet/introducing-the-new-microsoftdatasqlclient/).
 
-#### <a name="version-introduced"></a>Představená verze
+#### <a name="version-introduced"></a>Zavedená verze
 
 3.0
 
 #### <a name="old-behavior"></a>Staré chování
 
-Balíček `Microsoft.Extensions.Caching.SqlServer` použil balíček `System.Data.SqlClient`.
+Balíček `Microsoft.Extensions.Caching.SqlServer` použil `System.Data.SqlClient` balíček.
 
 #### <a name="new-behavior"></a>Nové chování
 
-`Microsoft.Extensions.Caching.SqlServer` nyní používá balíček `Microsoft.Data.SqlClient`.
+`Microsoft.Extensions.Caching.SqlServer`nyní používá `Microsoft.Data.SqlClient` balíček.
 
 #### <a name="reason-for-change"></a>Důvod změny
 
-`Microsoft.Data.SqlClient` je nový balíček, který je vytvořen z `System.Data.SqlClient`. Je to místo, kde se všechny nové funkce budou dělat hned na.
+`Microsoft.Data.SqlClient`je nový balíček, který `System.Data.SqlClient`je postaven mimo . To je místo, kde všechny nové funkce práce bude provedeno od nynějška.
 
 #### <a name="recommended-action"></a>Doporučená akce
 
-Zákazníci by se neměli muset starat o tuto zásadní změnu, pokud nepoužívali typy vrácené balíčkem `Microsoft.Extensions.Caching.SqlServer` a přetypování do `System.Data.SqlClient` typů. Pokud někdo například přetypování `DbConnection` na [starý typ SqlConnection](xref:System.Data.SqlClient.SqlConnection), museli byste přetypování změnit na nový typ `Microsoft.Data.SqlClient.SqlConnection`.
+Zákazníci by se neměli obávat této narušující změny, pokud nepoužívali typy vrácené `Microsoft.Extensions.Caching.SqlServer` balíčkem a přetypovali je na `System.Data.SqlClient` typy. Například pokud někdo byl `DbConnection` přetypování na [starý typ SqlConnection](xref:System.Data.SqlClient.SqlConnection), budou `Microsoft.Data.SqlClient.SqlConnection` muset změnit přetypování na nový typ.
 
 #### <a name="category"></a>Kategorie
 
-ASP.NET Core
+Jádro ASP.NET
 
 #### <a name="affected-apis"></a>Ovlivněná rozhraní API
 
-Žádné
+Žádný
 
 <!-- 
 

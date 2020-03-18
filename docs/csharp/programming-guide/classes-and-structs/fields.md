@@ -1,48 +1,48 @@
 ---
-title: Pole – C# Průvodce programováním
+title: Pole – průvodce programováním jazyka C#
 ms.date: 07/20/2015
 helpviewer_keywords:
 - fields [C#]
 ms.assetid: 3cbb2f61-75f8-4cce-b4ef-f5d1b3de0db7
 ms.openlocfilehash: 46d4f77a4a490b2acdb5da20b9a477f27c38d410
-ms.sourcegitcommit: 44a7cd8687f227fc6db3211ccf4783dc20235e51
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/26/2020
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "77628238"
 ---
 # <a name="fields-c-programming-guide"></a>Pole (Průvodce programováním v C#)
 
-*Pole* je proměnná libovolného typu, který je deklarován přímo ve [třídě](../../language-reference/keywords/class.md) nebo [struktuře](../../language-reference/builtin-types/struct.md). Pole jsou *členy* jejich nadřazeného typu.
+*Pole* je proměnná libovolného typu, která je deklarována přímo ve [třídě](../../language-reference/keywords/class.md) nebo [struktuře](../../language-reference/builtin-types/struct.md). Pole jsou *členy* jejich obsahující ho typu.
 
-Třída nebo struktura může mít pole instance, statická pole nebo obojí. Pole instance jsou specifická pro instanci typu. Máte-li třídu T s polem instance F, můžete vytvořit dva objekty typu T a upravit hodnotu F v každém objektu, aniž by to ovlivnilo hodnotu v jiném objektu. Naproti tomu statické pole patří do samotné třídy a je sdíleno mezi všemi instancemi této třídy. Ke statickému poli můžete přistupovat pouze pomocí názvu třídy. Pokud ke statickému poli přistupujete pomocí názvu instance, získáte [CS0176](../../misc/cs0176.md) chybu při kompilaci.
+Třída nebo struktura může mít pole instancí, statická pole nebo obojí. Pole instance jsou specifická pro instanci typu. Pokud máte třídu T s polem instance F, můžete vytvořit dva objekty typu T a upravit hodnotu F v každém objektu bez ovlivnění hodnoty v druhém objektu. Naproti tomu statické pole patří do samotné třídy a je sdíleno mezi všemi instancemi této třídy. Ke statickému poli můžete přistupovat pouze pomocí názvu třídy. Pokud k statickému poli přistupujete podle názvu instance, zobrazí se chyba [cs0176](../../misc/cs0176.md) kompilace.
 
-Obecně platí, že byste měli používat pole jenom pro proměnné, které mají privátní nebo chráněné přístupnost. Data, která vaše třída zveřejňuje klientským kódem, by měla být poskytnuta prostřednictvím [metod](./methods.md), [vlastností](./properties.md)a [indexerů](../indexers/index.md). Pomocí těchto konstrukcí pro nepřímý přístup k interním polím můžete chránit proti neplatným vstupním hodnotám. Soukromé pole, ve kterém jsou uložena data vystavená veřejnou vlastností, se nazývá *záložní úložiště* nebo *pole zálohování*.
+Obecně byste měli pole používat pouze pro proměnné, které mají privátní nebo chráněnou přístupnost. Data, která vaše třída zveřejňuje kódu klienta by měla být poskytnuta prostřednictvím [metod](./methods.md), [vlastností](./properties.md)a [indexerů](../indexers/index.md). Pomocí těchto konstrukcí pro nepřímý přístup k interním polím můžete chránit před neplatnými vstupními hodnotami. Soukromé pole, které ukládá data vystavená veřejnou vlastností, se nazývá *záložní úložiště* nebo *záložní pole*.
 
-Pole obvykle ukládají data, která musí být přístupná pro více než jednu metodu třídy a musí být uložena po dobu delší, než je doba života jakékoli jediné metody. Například třída, která představuje kalendářní datum, může mít tři celočíselná pole: jednu pro měsíc, jednu pro den a jednu pro rok. Proměnné, které se nepoužívají mimo rozsah jediné metody, by měly být deklarovány jako *lokální proměnné* v rámci samotného těla metody.
+Pole obvykle ukládají data, která musí být přístupná více než jedné metodě třídy a musí být uložena po dobu delší než životnost jedné metody. Například třída, která představuje kalendářní datum, může mít tři celočíselná pole: jedno pro měsíc, jedno pro den a jedno pro rok. Proměnné, které nejsou použity mimo rozsah jedné metody by *měly* být deklarovány jako místní proměnné v rámci samotného těla metody.
 
-Pole jsou deklarována v bloku třídy zadáním úrovně přístupu pole následovaný typem pole následovaným názvem pole. Příklad:
+Pole jsou deklarována v bloku třídy zadáním úrovně přístupu pole, následovanou typem pole následovaným názvem pole. Například:
 
 [!code-csharp[csProgGuideObjects#61](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#61)]
 
-Chcete-li získat přístup k poli v objektu, přidejte tečku za název objektu následovaný názvem pole, jak je uvedeno v `objectname.fieldname`. Příklad:
+Chcete-li získat přístup k poli v objektu, přidejte za název objektu tečku následovanou názvem pole, například v . `objectname.fieldname` Například:
 
 [!code-csharp[csProgGuideObjects#62](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#62)]
 
-Poli lze předávat počáteční hodnotu pomocí operátoru přiřazení při deklaraci pole. Chcete-li automaticky přiřadit pole `day` jako `"Monday"`, například byste deklarovali `day` jako v následujícím příkladu:
+Pole může být poskytnuta počáteční hodnota pomocí operátoru přiřazení při deklarace pole. Chcete-li `day` pole `"Monday"`automaticky přiřadit , byste `day` například deklarovali jako v následujícím příkladu:
 
 [!code-csharp[csProgGuideObjects#63](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#63)]
 
-Pole jsou inicializována bezprostředně před voláním konstruktoru pro instanci objektu. Pokud konstruktor přiřadí hodnotu pole, přepíše se jakákoli hodnota zadaná během deklarace pole. Další informace najdete v tématu [Použití konstruktorů](./using-constructors.md).
+Pole jsou inicializována bezprostředně před voláním konstruktoru pro instanci objektu. Pokud konstruktor přiřadí hodnotu pole, přepíše libovolnou hodnotu uvedenou během deklarace pole. Další informace naleznete [v tématu Using Constructors](./using-constructors.md).
 
 > [!NOTE]
 > Inicializátor pole nemůže odkazovat na jiná pole instance.
 
-Pole mohou být označena jako [Veřejná](../../language-reference/keywords/public.md), [soukromá](../../language-reference/keywords/private.md), [chráněná](../../language-reference/keywords/protected.md), [interní](../../language-reference/keywords/internal.md), [chráněná interní](../../language-reference/keywords/protected-internal.md)nebo [soukromá](../../language-reference/keywords/private-protected.md). Tyto modifikátory přístupu definují, jak budou uživatelé třídy mít přístup k polím. Další informace najdete v tématu [modifikátory přístupu](./access-modifiers.md).
+Pole mohou být označena jako [veřejná](../../language-reference/keywords/public.md), [soukromá](../../language-reference/keywords/private.md), [chráněná](../../language-reference/keywords/protected.md), [interní](../../language-reference/keywords/internal.md), [chráněná interní](../../language-reference/keywords/protected-internal.md)nebo [soukromá chráněná](../../language-reference/keywords/private-protected.md). Tyto modifikátory přístupu definují, jak mohou uživatelé třídy přistupovat k polím. Další informace naleznete [v tématu Access Modifiers](./access-modifiers.md).
 
-Pole může být volitelně deklarováno jako [static](../../language-reference/keywords/static.md). Tím je pole dostupné volajícím kdykoli, i když žádná instance třídy neexistuje. Další informace naleznete v tématu [statické třídy a statické členy třídy](./static-classes-and-static-class-members.md).
+Pole může být volitelně prohlášeno za [statické](../../language-reference/keywords/static.md). To zpřístupňuje pole volajícím kdykoli, i v případě, že neexistuje žádná instance třídy. Další informace naleznete [v tématu Statické třídy a statické členy třídy](./static-classes-and-static-class-members.md).
 
-Pole může být deklarované [jen pro čtení](../../language-reference/keywords/readonly.md). Poli jen pro čtení může být přiřazena hodnota pouze během inicializace nebo v konstruktoru. `static readonly` pole je velmi podobné konstantě s tím rozdílem, že C# kompilátor nemá přístup k hodnotě statického pole jen pro čtení v době kompilace, pouze v době běhu. Další informace naleznete v tématu [konstanty](./constants.md).
+Pole lze deklarovat [pouze pro čtení](../../language-reference/keywords/readonly.md). Pole jen pro čtení lze přiřadit pouze hodnotu během inicializace nebo v konstruktoru. Pole `static readonly` je velmi podobné konstantě s tím rozdílem, že kompilátor jazyka C# nemá přístup k hodnotě statického pole jen pro čtení v době kompilace, pouze za běhu. Další informace naleznete v [tématu Konstanty](./constants.md).
 
 ## <a name="c-language-specification"></a>specifikace jazyka C#
 
@@ -50,8 +50,8 @@ Pole může být deklarované [jen pro čtení](../../language-reference/keyword
 
 ## <a name="see-also"></a>Viz také
 
-- [Průvodce programováním v C#](../index.md)
-- [Třídy a struktury](./index.md)
+- [Programovací příručka jazyka C#](../index.md)
+- [Třídy a struky](./index.md)
 - [Použití konstruktorů](./using-constructors.md)
 - [Dědičnost](./inheritance.md)
 - [Modifikátory přístupu](./access-modifiers.md)

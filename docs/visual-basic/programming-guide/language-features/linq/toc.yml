@@ -1,7 +1,7 @@
 - name: LINQ v jazyce Visual Basic
   href: index.md
   items:
-    - name: Úvod do jazyka LINQ
+    - name: Úvod do LINQ
       href: introduction-to-linq.md
     - name: 'Postupy: Dotaz na databázi pomocí LINQ'
       href: how-to-query-a-database-by-using-linq.md

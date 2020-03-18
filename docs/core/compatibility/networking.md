@@ -1,19 +1,19 @@
 ---
-title: Síťové přerušující změny
-description: Obsahuje seznam nejnovějších změn v sítích .NET Core.
+title: Změny v síti
+description: Uvádí nejnovější změny v síti v .NET Core.
 ms.date: 10/03/2019
 ms.openlocfilehash: d5d445827554d2c898e07dac53d8a571ebdf9359
-ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/09/2020
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "77092990"
 ---
-# <a name="networking-breaking-changes"></a>Síťové přerušující změny
+# <a name="networking-breaking-changes"></a>Změny v síti
 
-Na této stránce jsou popsány následující přerušující se změny:
+Na této stránce jsou popsány následující změny:
 
-- [Výchozí hodnota zprávy HttpRequestMessage. Version se změnila na 1,1.](#default-value-of-httprequestmessageversion-changed-to-11)
+- [Výchozí hodnota HttpRequestMessage.Version změněna na 1.1](#default-value-of-httprequestmessageversion-changed-to-11)
 
 ## <a name="net-core-30"></a>.NET Core 3.0
 

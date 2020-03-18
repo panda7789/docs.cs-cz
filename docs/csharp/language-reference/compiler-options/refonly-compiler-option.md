@@ -1,5 +1,5 @@
 ---
-title: -Nepoužívejte refout (C# možnosti kompilátoru)
+title: -refonly (Možnosti kompilátoru Jazyka C#)
 ms.date: 07/08/2017
 f1_keywords:
 - /refonly
@@ -8,15 +8,15 @@ helpviewer_keywords:
 - -refonly compiler option [C#]
 - refonly compiler option [C#]
 ms.openlocfilehash: 856b65d3b2217dbe5d53ecda00723b47247d80a4
-ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "72773854"
 ---
-# <a name="-refonly-c-compiler-options"></a>-Nepoužívejte refout (C# možnosti kompilátoru)
+# <a name="-refonly-c-compiler-options"></a>-refonly (Možnosti kompilátoru Jazyka C#)
 
-Možnost **-nepoužívejte refout** označuje, že referenční sestavení by měl být výstupem namísto sestavení implementace jako primární výstup. Parametr `-refonly` tiše zakáže soubory pdbí výstupu, protože referenční sestavení nelze spustit. Tato možnost odpovídá vlastnosti projektu [ProduceOnlyReferenceAssembly](/visualstudio/msbuild/common-msbuild-project-properties) nástroje MSBuild.
+Možnost **-refonly** označuje, že referenční sestavení by mělo být výstupní místo sestavení implementace jako primární výstup. Parametr `-refonly` tiše zakáže odchozí pdb, jako referenční sestavení nelze provést. Tato možnost odpovídá vlastnosti [projektu ProduceOnlyReferenceAssembly](/visualstudio/msbuild/common-msbuild-project-properties) msbuild.
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -26,11 +26,11 @@ Možnost **-nepoužívejte refout** označuje, že referenční sestavení by m�
 
 ## <a name="remarks"></a>Poznámky
 
-Referenční sestavení jsou speciálním typem sestavení, který obsahuje pouze minimální velikost metadat, která je vyžadována pro reprezentaci veřejného povrchu rozhraní API knihovny. Zahrnují deklarace pro všechny členy, které jsou významné při odkazování na sestavení v nástrojích sestavení, ale vyloučí všechny implementace členů a deklarace privátních členů, které nemají žádný pozor na jejich kontrakty rozhraní API. Další informace najdete v tématu [referenční sestavení](../../../standard/assembly/reference-assemblies.md) v příručce .NET.
+Referenční sestavení jsou zvláštní typ sestavení, které obsahují pouze minimální množství metadat, které jsou nutné k reprezentaci veřejného povrchu rozhraní API knihovny. Zahrnují deklarace pro všechny členy, které jsou významné při odkazování na sestavení v nástrojích sestavení, ale vyloučit všechny implementace členů a deklarace soukromých členů, které nemají žádný pozorovatelný dopad na jejich smlouvy rozhraní API. Další informace naleznete [v tématu Reference assemblies](../../../standard/assembly/reference-assemblies.md) in .NET Guide.
 
-Možnosti `-refonly` a [`-refout`](refout-compiler-option.md) se vzájemně vylučují.
+A `-refonly` [`-refout`](refout-compiler-option.md) možnosti se vzájemně vylučují.
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Možnosti kompilátoru jazyka C#](./index.md)
 - [Správa vlastností projektů a řešení](/visualstudio/ide/managing-project-and-solution-properties)

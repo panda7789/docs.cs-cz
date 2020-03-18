@@ -1,23 +1,23 @@
 ---
-title: Refaktoring pomocí funkce Pure (C#)
+title: Refaktoring pomocí čisté funkce (C#)
 ms.date: 07/20/2015
 ms.assetid: a3416a45-9e12-4e4a-9747-897f06eef510
 ms.openlocfilehash: f264a0028ed265a5a4fbe1dc32f430c648724c20
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "70253083"
 ---
-# <a name="refactoring-using-a-pure-function-c"></a>Refaktoring pomocí funkce Pure (C#)
-Následující příklad [refaktoruje předchozí příklad refaktoringu pomocí metody rozšíření (C#)](./refactoring-using-an-extension-method.md)pro použití funkce Pure v tomto příkladu, kód pro vyhledání textu odstavce je přesunut na čistě statickou metodu. `ParagraphText`  
+# <a name="refactoring-using-a-pure-function-c"></a>Refaktoring pomocí čisté funkce (C#)
+Následující příklad refaktoruje předchozí příklad [Refaktoring Pomocí metody rozšíření (C#)](./refactoring-using-an-extension-method.md), chcete-li použít čistou funkci V tomto příkladu je kód pro nalezení textu odstavce přesunut na čistě statickou metodu `ParagraphText`.  
   
 ## <a name="example"></a>Příklad  
- Tento příklad zpracovává dokument WordprocessingML a načítá uzly odstavců z dokumentu WordprocessingML. Určuje také styl každého odstavce. Tento příklad sestaví na předchozích příkladech v tomto kurzu. Refaktoring Code se volá v komentářích v následujícím kódu.  
+ Tento příklad zpracuje dokument WordprocessingML, načtení odstavcových uzlů z dokumentu WordprocessingML. Také identifikuje styl každého odstavce. Tento příklad vychází z předchozích příkladů v tomto kurzu. Refaktorovaný kód je volán v komentářích v níže uvedeném kódu.  
   
- Pokyny k vytvoření zdrojového dokumentu pro tento příklad najdete v tématu [vytvoření zdrojového dokumentu XML (C#) pro zdrojový Office](./creating-the-source-office-open-xml-document.md).  
+ Pokyny k vytvoření zdrojového dokumentu pro tento příklad naleznete [v tématu Vytvoření dokumentu Open XML (C#) zdrojové sady Office](./creating-the-source-office-open-xml-document.md).  
   
- Tento příklad používá třídy ze sestavení WindowsBase. Používá typy v <xref:System.IO.Packaging?displayProperty=nameWithType> oboru názvů.  
+ Tento příklad používá třídy z sestavení WindowsBase. Používá typy v <xref:System.IO.Packaging?displayProperty=nameWithType> oboru názvů.  
   
 ```csharp  
 public static class LocalExtensions  
@@ -154,7 +154,7 @@ class Program
 }  
 ```  
   
- Tento příklad vytvoří stejný výstup jako před refaktoringem:  
+ Tento příklad vytváří stejný výstup jako před refaktoring:  
   
 ```output  
 StyleName:Heading1 >Parsing WordprocessingML with LINQ to XML<  
@@ -175,12 +175,12 @@ StyleName:Code >Hello World<
 ```  
   
 ### <a name="next-steps"></a>Další kroky  
- Následující příklad ukazuje, jak projekt XML do jiného tvaru:  
+ Následující příklad ukazuje, jak promítat XML do jiného tvaru:  
   
-- [Projektování XML v jiném obrazci (C#)](./projecting-xml-in-a-different-shape.md)  
+- [Promítání XML v jiném obrazci (C#)](./projecting-xml-in-a-different-shape.md)  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Kurz: Manipulace s obsahem v dokumentu WordprocessingML (C#)](./shape-of-wordprocessingml-documents.md)
 - [Refaktoring pomocí metody rozšíření (C#)](./refactoring-using-an-extension-method.md)
-- [Refaktoring do čistě funkcí (C#)](./refactoring-into-pure-functions.md)
+- [Refaktoring do čistých funkcí (C#)](./refactoring-into-pure-functions.md)

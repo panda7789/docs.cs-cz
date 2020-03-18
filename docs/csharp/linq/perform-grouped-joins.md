@@ -1,39 +1,39 @@
 ---
-title: Provádění seskupených spojení (LINQ v JAZYKU C#)
-description: Zjistěte, jak k provádění seskupených spojení pomocí jazyka LINQ v jazyce C#.
+title: Provedení seskupených spojení (LINQ v C#)
+description: Zjistěte, jak provádět seskupená spojení pomocí LINQ v C#.
 ms.date: 12/01/2016
 ms.assetid: 9667daf9-a5fd-4b43-a5c4-a9c2b744000e
 ms.openlocfilehash: dfb75b55336d8ca486d5f10b187e955d20cd06fd
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "61689135"
 ---
 # <a name="perform-grouped-joins"></a>Provádění seskupených spojení
 
-Spojení skupiny je užitečné při vytváření hierarchických datové struktury. Je to dvojice každý prvek od první kolekce sadu korelační prvky z druhé kolekci.
+Spojení skupiny je užitečné pro vytváření hierarchických datových struktur. Spáruje každý prvek z první kolekce se sadou korelovaných prvků z druhé kolekce.
 
-Například třída nebo relační databázi tabulku s názvem `Student` může obsahovat dvě pole: `Id` a `Name`. Druhé třídy nebo relační databázi tabulku s názvem `Course` může obsahovat dvě pole: `StudentId` a `CourseTitle`. Skupiny spojení těchto dvou zdrojů dat, na základě porovnání `Student.Id` a `Course.StudentId`, by každé skupině `Student` sbírka `Course` objekty (které můžou být prázdné).
+Například třída nebo relační databázová tabulka s názvem `Student` může obsahovat dvě pole: `Id` a `Name`. Druhá třída nebo relační `Course` databázová tabulka `StudentId` `CourseTitle`s názvem může obsahovat dvě pole: a . Spojení skupiny těchto dvou zdrojů dat, `Course.StudentId`založené na `Student` porovnávání `Student.Id` `Course` a , by seskupit každý s kolekcí objektů (které mohou být prázdné).
 
 > [!NOTE]
-> Každý prvek první kolekce se zobrazí v sadě výsledků spojení skupiny bez ohledu na to, jestli se korelační elementy nacházejí v druhé kolekci. V tomto případě se nenašly žádné korelační prvky je prázdná sekvence korelační prvků tohoto prvku. Výběr výsledku proto má přístup k každý prvek první kolekce. Tím se liší od výsledku selektoru v jiné skupině spojení, které nelze přistupovat k prvkům z první kolekce, které nemají žádná shoda v druhé kolekci.
+> Každý prvek první kolekce se zobrazí ve výsledkové sadě skupiny spojení bez ohledu na to, zda korelované prvky jsou nalezeny v druhé kolekci. V případě, kde jsou nalezeny žádné korelační prvky, pořadí korelovaných prvků pro tento prvek je prázdný. Volič výsledků má proto přístup ke každému prvku první kolekce. To se liší od voliče výsledků v neskupinovém spojení, které nemají přístup k prvkům z první kolekce, které nemají žádnou shodu v druhé kolekci.
 
-První příklad v tomto článku se dozvíte, jak provést spojení skupiny. Druhý příklad ukazuje, jak vytvořit elementů XML pomocí spojení skupiny.
+První příklad v tomto článku ukazuje, jak provést připojení ke skupině. Druhý příklad ukazuje, jak pomocí skupinového spojení vytvořit elementy XML.
 
-## <a name="example---group-join"></a>Příklad - Group join
+## <a name="example---group-join"></a>Příklad - Skupinové spojení
 
-Následující příklad provádí spojení skupiny objektů typu `Person` a `Pet` na základě `Person` odpovídající `Pet.Owner` vlastnost. Na rozdíl od jiných skupiny spojení, které byste mohli vytvořit dvojici prvků pro jednotlivé shody, spojení skupiny vytváří jediný výsledný objekt pro každý prvek první kolekce, která v tomto příkladu je `Person` objektu. Odpovídající prvky z druhého kolekce, které v tomto příkladu jsou `Pet` objekty, jsou seskupené do kolekce. Nakonec funkce selektor výsledek vytvoří anonymního typu pro jednotlivé shody, který se skládá z `Person.FirstName` a kolekce `Pet` objekty.
+Následující příklad provádí skupinové spojení `Person` objektů `Pet` typu `Person` a `Pet.Owner` na základě odpovídající vlastnosti. Na rozdíl od spojení bez skupiny, které by vytvořilo dvojici prvků pro každou shodu, spojení skupiny vytvoří `Person` pouze jeden výsledný objekt pro každý prvek první kolekce, který v tomto příkladu je objekt. Odpovídající prvky z druhé kolekce, které `Pet` v tomto příkladu jsou objekty, jsou seskupeny do kolekce. Nakonec funkce selektoru výsledků vytvoří anonymní typ pro `Person.FirstName` každou shodu, která se skládá z `Pet` a kolekce objektů.
 
 [!code-csharp[CsLINQProgJoining#5](~/samples/snippets/csharp/concepts/linq/how-to-perform-grouped-joins_1.cs)]
 
-## <a name="example---group-join-to-create-xml"></a>Příklad - Group join k vytvoření XML
+## <a name="example---group-join-to-create-xml"></a>Příklad - Seskupit spojení pro vytvoření XML
 
-Group JOIN – klauzule jsou ideální pro vytváření XML pomocí LINQ to XML. Následující příklad je podobný jako předchozí příklad, s tím rozdílem, že místo vytvoření anonymní typy, funkce selektor výsledek vytvoří elementů XML, které představují připojených objektů.
+Spojení skupin jsou ideální pro vytváření XML pomocí LINQ na XML. Následující příklad je podobný předchozímu příkladu s tím rozdílem, že namísto vytváření anonymních typů vytvoří funkce selektoru výsledků elementy XML, které představují spojené objekty.
 
 [!code-csharp[CsLINQProgJoining#6](~/samples/snippets/csharp/concepts/linq/how-to-perform-grouped-joins_2.cs)]
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Linq.Enumerable.Join%2A>
 - <xref:System.Linq.Enumerable.GroupJoin%2A>

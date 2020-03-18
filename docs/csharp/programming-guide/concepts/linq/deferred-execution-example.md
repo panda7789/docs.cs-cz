@@ -1,19 +1,19 @@
 ---
-title: Příklad odloženého provedení (C#)
+title: Příklad odloženého spuštění (C#)
 ms.date: 07/20/2015
 ms.assetid: 50f4fbac-81fe-4f26-aedf-506e21419b19
 ms.openlocfilehash: 0816594ad016f19af4c97198160b4bafb9b4b8b4
-ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/31/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "70204130"
 ---
-# <a name="deferred-execution-example-c"></a>Příklad odloženého provedení (C#)
-Toto téma ukazuje, jak odložené provádění a opožděné vyhodnocení ovlivní spuštění dotazů LINQ to XML.  
+# <a name="deferred-execution-example-c"></a>Příklad odloženého spuštění (C#)
+Toto téma ukazuje, jak odložené spuštění a opožděné vyhodnocení ovlivňují provádění dotazů LINQ na dotazy XML.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje pořadí spouštění při použití metody rozšíření, která používá odložené provádění. Příklad deklaruje pole tří řetězců. Poté provede iteraci kolekcí vrácenou `ConvertCollectionToUpperCase`.  
+ Následující příklad ukazuje pořadí provádění při použití metody rozšíření, která používá odložené spuštění. Příklad deklaruje pole tří řetězců. Potom iterace prostřednictvím kolekce `ConvertCollectionToUpperCase`vrácené .  
   
 ```csharp  
 public static class LocalExtensions  
@@ -44,7 +44,7 @@ class Program
 }  
 ```  
   
- Tento příklad vytvoří následující výstup:  
+ Tento příklad vytváří následující výstup:  
   
 ```output  
 ToUpper: source abc  
@@ -55,14 +55,14 @@ ToUpper: source ghi
 Main: str GHI  
 ```  
   
- Všimněte si, že při iteraci v kolekci `ConvertCollectionToUpperCase`, kterou vrátí, každá položka je načtena ze zdrojového pole řetězce a převedena na velká písmena před načtením další položky ze zdrojového pole řetězce.  
+ Všimněte si, že při iterace prostřednictvím kolekce vrácené `ConvertCollectionToUpperCase`, každá položka je načtena ze zdrojového pole řetězce a převedena na velká písmena před další položkou je načten ze zdrojového pole řetězce.  
   
- Můžete vidět, že celé pole řetězců není převedeno na velká písmena před tím, než se každá položka v vrácené kolekci zpracuje ve `foreach` smyčce v `Main`.  
+ Můžete vidět, že celé pole řetězců není převedenna velká písmena před každou položku `foreach` v `Main`vrácené kolekci je zpracována ve smyčce v .  
   
- Další téma v tomto kurzu znázorňuje zřetězení dotazů dohromady:  
+ Další téma v tomto kurzu ilustruje řetězení dotazů dohromady:  
   
-- [Příklad řetězení dotazů (C#)](./chaining-queries-example.md)  
+- [Příklad zřetězení dotazů (C#)](./chaining-queries-example.md)  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Kurz: Zřetězení dotazů společně (C#)](./deferred-execution-and-lazy-evaluation-in-linq-to-xml.md)
+- [Kurz: Řetězení dotazů dohromady (C#)](./deferred-execution-and-lazy-evaluation-in-linq-to-xml.md)

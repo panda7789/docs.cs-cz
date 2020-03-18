@@ -1,18 +1,18 @@
 ---
 ms.openlocfilehash: 10811a90887624a731c58d557e1dd196ae2c9207
-ms.sourcegitcommit: 09b4090b78f52fd09b0e430cd4b26576f1fdf96e
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/22/2020
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "76508647"
 ---
 ### <a name="removed-controls"></a>Odebrané ovládací prvky
 
-Počínaje rozhraním .NET Core 3,1 Některé ovládací prvky model Windows Forms již nejsou k dispozici.
+Počínaje rozhraním .NET Core 3.1 již nejsou některé ovládací prvky windows forms k dispozici.
 
 #### <a name="change-description"></a>Popis změny
 
-Počínaje rozhraním .NET Core 3,1 nejsou k dispozici různé ovládací prvky model Windows Forms. Náhradní ovládací prvky, které mají lepší návrh a podporu, byly zavedeny v .NET Framework 2,0. Zastaralé ovládací prvky byly předtím odebrány z nástrojů návrháře, ale byly stále k dispozici pro použití.
+Počínaje rozhraním .NET Core 3.1 již nejsou k dispozici různé ovládací prvky windows forms. Náhradní ovládací prvky, které mají lepší návrh a podporu byly zavedeny v rozhraní .NET Framework 2.0. Zastaralé ovládací prvky byly dříve odebrány z návrháře panelů nástrojů, ale byly stále k dispozici pro použití.
 
 Následující typy již nejsou k dispozici:
 
@@ -45,23 +45,23 @@ Následující typy již nejsou k dispozici:
 - <xref:System.Windows.Forms.DataGrid.HitTestType>
 - <xref:System.Windows.Forms.Design.IMenuEditorService>
 
-#### <a name="version-introduced"></a>Představená verze
+#### <a name="version-introduced"></a>Zavedená verze
 
 3.1
 
 #### <a name="recommended-action"></a>Doporučená akce
 
-Každý odebraný ovládací prvek má doporučený ovládací prvek pro nahrazení. Podívejte se na následující tabulku:
+Každý odebraný ovládací prvek má doporučený ovládací prvek nahrazení. Viz následující tabulka:
 
-| Odebraný ovládací prvek (API) | Doporučená náhrada | Přidružená rozhraní API k odebrání |
+| Odstraněný ovládací prvek (ROZHRANÍ API) | Doporučená výměna | Přidružená přístupová i kasea, která jsou odebrána |
 |-|-|-|
-| DataGrid | Ovládací prvek DataGridView | DataGridCell, hodnota DataGridRow, DataGridTableCollection, DataGridColumnCollection, styl DataGridTableStyle, styl DataGridColumnStyle, DataGridLineStyle, DataGridParentRowsLabel, DataGridParentRowsLabelStyle, funkce DataGridBoolColumn, DataGridTextBox, Kolekce GridColumnStylesCollection, GridTableStylesCollection, HitTestType |
-| ToolBar | ToolStrip | ToolBarAppearance |
-| ToolBarButton | Prvek ToolStripButton | ToolBarButtonClickEventArgs, ToolBarButtonClickEventHandler, ToolBarButtonStyle, ToolBarTextAlign|
+| DataGrid | Datagridview | DataGridCell, DataGridRow, DataGridTableCollection, DataGridColumnCollection, DataGridTableStyle, DataGridColumnStyle, DataGridLineStyle, DataGridParentRowsLabel, DataGridParentRowsLabelStyle, DataGridBoolColumn, DataGridText, GridColumnStylesCollection, GridTableStylesCollection, HitTestType |
+| ToolBar | ToolStrip | Vzhled panelu nástrojů |
+| Toolbarbutton | Toolstripbutton | ToolBarClickEventArgs, ToolBarButtonClickEventHandler, ToolBarButtonStyle, ToolBarTextAlign|
 | ContextMenu | ContextMenuStrip | |
-| Nabídka | Ovládací prvek ToolStripDropDown, ToolStripDropDownMenu | MenuItemcollection |
-| MainMenu | MenuStrip | |
-| MenuItem | ToolStripMenuItem | |
+| Nabídka | ToolStripDropDown, ToolStripDropDownMenu | Kolekce položek MenuCollection |
+| Mainmenu | MenuStrip | |
+| MenuItem | Toolstripmenuitem | |
 
 #### <a name="category"></a>Kategorie
 

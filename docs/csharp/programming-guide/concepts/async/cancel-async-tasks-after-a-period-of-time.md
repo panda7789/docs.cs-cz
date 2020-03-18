@@ -1,48 +1,48 @@
 ---
-title: Zrušení asynchronních úloh po uplynutí časového intervalu (C#)
+title: Zrušit asynchronní úkoly po časovém období (C#)
 ms.date: 07/20/2015
 ms.assetid: 194282c2-399f-46da-a7a6-96674e00b0b3
 ms.openlocfilehash: 110c4700d0d2afc87f9144bf258cdd4991f107f4
-ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/31/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "70204345"
 ---
-# <a name="cancel-async-tasks-after-a-period-of-time-c"></a>Zrušení asynchronních úloh po uplynutí časového intervalu (C#)
+# <a name="cancel-async-tasks-after-a-period-of-time-c"></a>Zrušení asynchronních úloh po určité době (C#)
 
-Asynchronní operaci můžete zrušit po časovém intervalu pomocí metody, <xref:System.Threading.CancellationTokenSource.CancelAfter%2A?displayProperty=nameWithType> Pokud nechcete čekat na dokončení operace. Tato metoda naplánuje zrušení všech přidružených úloh, které nejsou dokončeny v časovém období určeném `CancelAfter` výrazem.
+Asynchronní operaci můžete po určité době zrušit pomocí <xref:System.Threading.CancellationTokenSource.CancelAfter%2A?displayProperty=nameWithType> metody, pokud nechcete čekat na dokončení operace. Tato metoda naplánuje zrušení všech přidružených úkolů, které nejsou dokončeny v `CancelAfter` rámci časového období, které je určeno výrazem.
 
-Tento příklad přidá do kódu, který je vyvíjen v rámci [zrušení asynchronní úlohy nebo seznamu úkolůC#()](./cancel-an-async-task-or-a-list-of-tasks.md) pro stažení seznamu webů a zobrazení délky obsahu každého z nich.
+Tento příklad přidá ke kódu, který je vyvinut v [Zrušit asynchronní úlohu nebo Seznam úkolů (C#)](./cancel-an-async-task-or-a-list-of-tasks.md) ke stažení seznamu webů a zobrazit délku obsahu každého z nich.
 
 > [!NOTE]
-> Chcete-li spustit příklady, je nutné mít v počítači nainstalován systém Visual Studio 2012 nebo novější a .NET Framework 4,5 nebo novější.
+> Chcete-li spustit příklady, musíte mít Visual Studio 2012 nebo novější a rozhraní .NET Framework 4.5 nebo novější nainstalován v počítači.
 
-## <a name="download-the-example"></a>Stažení příkladu
+## <a name="download-the-example"></a>Stáhněte si příklad
 
-Kompletní projekt Windows Presentation Foundation (WPF) si můžete stáhnout z [části Async Sample: Vyladění aplikace](https://code.msdn.microsoft.com/Async-Fine-Tuning-Your-a676abea) a pak postupujte podle těchto kroků.
+Můžete si stáhnout celý projekt Windows Presentation Foundation (WPF) z [ukázky asynchronní: Jemné doladění aplikace](https://code.msdn.microsoft.com/Async-Fine-Tuning-Your-a676abea) a postupujte takto.
 
-1. Dekomprimovat soubor, který jste stáhli, a potom spusťte Visual Studio.
+1. Dekomprimujte soubor, který jste stáhli, a spusťte Visual Studio.
 
-2. Na panelu nabídek vyberte **soubor** > **otevřít** > **projekt/řešení**.
+2. Na řádku nabídek zvolte **Soubor** > **otevřít** > **projekt/řešení**.
 
-3. V dialogovém okně **Otevřít projekt** otevřete složku, která obsahuje ukázkový kód, který jste dekomprimujei, a poté otevřete soubor řešení (. sln) pro AsyncFineTuningCS.
+3. V dialogovém okně **Otevřít projekt** otevřete složku obsahující ukázkový kód, který jste dekomprimovali, a potom otevřete soubor řešení (.sln) pro AsyncFineTuningCS.
 
-4. V **Průzkumník řešení**otevřete místní nabídku pro projekt **CancelAfterTime** a pak zvolte **nastavit jako projekt po spuštění**.
+4. V **Průzkumníku řešení**otevřete místní nabídku projektu **CancelAfterTime** a pak zvolte **Nastavit jako počáteční projekt**.
 
-5. Kliknutím na klávesu **F5** spusťte projekt. (Nebo stiskněte klávesu **CTRL**+**F5** pro spuštění projektu bez ladění).
+5. Zvolte klávesu **F5** pro spuštění projektu. (Nebo stisknutím **klávesy Ctrl**+**F5** spusťte projekt bez ladění).
 
-6. Spusťte program několikrát, abyste ověřili, že výstup může zobrazit výstup pro všechny weby, žádné weby nebo některé weby.
+6. Spusťte program několikrát a ověřte, zda výstup může zobrazovat výstup pro všechny weby, žádné weby nebo některé webové stránky.
 
-Pokud nechcete stáhnout projekt, můžete si prohlédnout soubor MainWindow.xaml.cs na konci tohoto tématu.
+Pokud projekt nechcete stáhnout, můžete zkontrolovat soubor MainWindow.xaml.cs na konci tohoto tématu.
 
 ## <a name="build-the-example"></a>Sestavení příkladu
 
-Příklad v tomto tématu se přidá do projektu, který je vyvíjen v části [zrušení asynchronní úlohy nebo seznamu úkolůC#()](./cancel-an-async-task-or-a-list-of-tasks.md) pro zrušení seznamu úkolů. V příkladu se používá stejné uživatelské rozhraní, i když se tlačítko **Storno** nepoužívá explicitně.
+Příklad v tomto tématu přidá do projektu, který je vyvinut v [Zrušit asynchronní úkol nebo Seznam úkolů (C#)](./cancel-an-async-task-or-a-list-of-tasks.md) zrušit seznam úkolů. Příklad používá stejné ui, i když **tlačítko Storno** není použit explicitně.
 
-Chcete-li sestavit příklad sami, postupujte podle pokynů v části "stažení příkladu", ale jako **spouštěný projekt**vyberte **CancelAListOfTasks** . Přidejte změny v tomto tématu do projektu.
+Chcete-li vytvořit příklad sami, krok za krokem postupujte podle pokynů v části "Stažení příkladu", ale zvolte **CancelAListOfTasks** jako **projekt StartUp**Project . Přidejte změny v tomto tématu do tohoto projektu.
 
-Chcete-li zadat maximální dobu před tím, než jsou úkoly označeny jako zrušené, `CancelAfter` přidejte `startButton_Click`volání do do, jak ukazuje následující příklad. Sčítání jsou označeny hvězdičkami.
+Chcete-li určit maximální dobu, po jejíž například `CancelAfter` `startButton_Click`jsou úkoly označeny jako zrušené, přidejte volání do , jak ukazuje následující příklad. Přídavek je označen hvězdičkami.
 
 ```csharp
 private async void startButton_Click(object sender, RoutedEventArgs e)
@@ -74,7 +74,7 @@ private async void startButton_Click(object sender, RoutedEventArgs e)
 }
 ```
 
- Spusťte program několikrát, abyste ověřili, že výstup může zobrazit výstup pro všechny weby, žádné weby nebo některé weby. Následující výstup je ukázka.
+ Spusťte program několikrát a ověřte, zda výstup může zobrazovat výstup pro všechny weby, žádné weby nebo některé webové stránky. Následující výstup je ukázka.
 
 ```output
 Length of the downloaded string: 35990.
@@ -88,11 +88,11 @@ Downloads canceled.
 
 ## <a name="complete-example"></a>Kompletní příklad
 
-Následující kód je úplný text souboru MainWindow.xaml.cs pro příklad. Hvězdičky označují prvky, které byly přidány pro tento příklad.
+Následující kód je úplný text MainWindow.xaml.cs souboru pro příklad. Hvězdičky označují prvky, které byly přidány pro tento příklad.
 
-Všimněte si, že je nutné přidat odkaz <xref:System.Net.Http>pro.
+Všimněte si, že <xref:System.Net.Http>je nutné přidat odkaz pro .
 
-Projekt si můžete stáhnout z [části asynchronní Ukázka: Jemné ladění aplikace](https://code.msdn.microsoft.com/Async-Fine-Tuning-Your-a676abea)
+Projekt si můžete stáhnout z [ukázky aplikace Async: Fine Tuning Your Application](https://code.msdn.microsoft.com/Async-Fine-Tuning-Your-a676abea).
 
 ```csharp
 using System;
@@ -215,10 +215,10 @@ namespace CancelAfterTime
 }
 ```
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Asynchronní programování s modifikátorem Async aC#operátoru Await ()](./index.md)
-- [Návod: Přístup k webu pomocí modifikátoru Async a operátoru Await (C#)](./walkthrough-accessing-the-web-by-using-async-and-await.md)
+- [Asynchronní programování s asynchronní a await (C#)](./index.md)
+- [Návod: Přístup k webu pomocí asynchronní a čeká (C#)](./walkthrough-accessing-the-web-by-using-async-and-await.md)
 - [Zrušení asynchronní úlohy nebo seznamu úkolů (C#)](./cancel-an-async-task-or-a-list-of-tasks.md)
-- [Vyladění asynchronní aplikace (C#)](./fine-tuning-your-async-application.md)
-- [Asynchronní Ukázka: Jemné ladění aplikace](https://code.msdn.microsoft.com/Async-Fine-Tuning-Your-a676abea)
+- [Jemné doladění asynchronní aplikace (C#)](./fine-tuning-your-async-application.md)
+- [Asynchronní ukázka: Jemné doladění aplikace](https://code.msdn.microsoft.com/Async-Fine-Tuning-Your-a676abea)

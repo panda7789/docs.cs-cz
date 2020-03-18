@@ -1,26 +1,26 @@
 ---
-title: Modernizovat stávající aplikace .NET pro cloudově optimalizované aplikace
-description: Modernizovat stávající aplikace .NET pomocí cloudu Azure a kontejnerů Windows.
+title: Modernizace stávajících aplikací .NET na aplikace optimalizované pro cloud
+description: Modernizujte existující aplikace .NET pomocí Azure Cloudu a kontejnerů Windows.
 ms.date: 04/28/2018
 ms.openlocfilehash: cd7e2886b135eb89c381965a327b6e62baa39736
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/08/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "72318588"
 ---
-# <a name="modernize-existing-net-apps-to-cloud-optimized-applications"></a>Modernizovat stávající aplikace .NET pro cloudově optimalizované aplikace
+# <a name="modernize-existing-net-apps-to-cloud-optimized-applications"></a>Modernizace stávajících aplikací .NET na aplikace optimalizované pro cloud
 
-> Vision: modernizovat své stávající aplikace .NET Framework pro cloudově optimalizované aplikace, které výrazně zlepšují flexibilitu nasazení, takže můžete dodávat rychlejší a nižší náklady na doručení aplikace.
+> Vize: Modernizujte stávající aplikace rozhraní .NET Framework na aplikace optimalizované pro cloud, abyste výrazně zlepšili agilitu nasazení, abyste mohli doručovat rychlejší a nižší náklady na doručení aplikací.
 
-Pokud chcete využít výhody cloudu a nových technologií, jako jsou kontejnery, měli byste alespoň částečně modernizovat své stávající aplikace .NET. Modernizaci vaše podnikové aplikace nakonec sníží vaše celkové náklady na vlastnictví.
+Chcete-li využít výhod cloudu a nových technologií, jako jsou kontejnery, měli byste alespoň částečně modernizovat stávající aplikace .NET. Modernizace podnikových aplikací nakonec sníží celkové náklady na vlastnictví.
 
-Částečně modernizaci aplikace nutně neznamená úplnou migraci a novou architekturu. Můžete zpočátku modernizovat své stávající aplikace s důležitou, ale snadnou modernizací. Aktuální základ kódu, který je napsán ve stávajících .NET Framework verzích, můžete zachovat s libovolnými závislostmi Windows a IIS. Obrázek 4-1 ukazuje, jak jsou aplikace optimalizované pro cloudové aplikace umístěné v modelech vyspělosti aplikací Azure v moderních aplikacích.
+Částečná modernizace aplikace nemusí nutně znamenat úplnou migraci a přearchitekturu. Zpočátku můžete modernizovat své stávající aplikace s důležitou, ale snadnou modernizací. Aktuální základ kódu napsaný v existujících verzích rozhraní .NET Framework můžete udržovat se všemi závislostmi systému Windows a IIS. Obrázek 4-1 zvýrazňuje umístění aplikací optimalizovaných pro cloud v modelech vyspělosti upgradu aplikací Azure.
 
-![Diagram, jak umístit aplikace optimalizované pro Cloud](./media/index/position-cloud-optimized-application.png)
+![Diagram umístění aplikací optimalizovaných pro cloud.](./media/index/position-cloud-optimized-application.png)
 
-**Obrázek 4-1.** Umísťování cloudově optimalizovaných aplikací
+**Obrázek 4-1.** Umístění aplikací optimalizovaných pro cloud
 
 >[!div class="step-by-step"]
 >[Předchozí](../migrate-your-relational-databases-to-azure.md)
->[Další](reasons-to-modernize-existing-net-apps-to-cloud-optimized-applications.md)
+>[další](reasons-to-modernize-existing-net-apps-to-cloud-optimized-applications.md)

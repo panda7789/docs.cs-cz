@@ -1,25 +1,25 @@
 ---
 title: Vzory orchestrace – aplikace bez serveru
-description: Trvalá funkce Azure pro trvalou činnost
+description: Funkce Azure Durable pr
 author: cecilphillip
 ms.author: cephilli
 ms.date: 06/26/2018
 ms.openlocfilehash: 2bd81c29e727254af6c8ecf39ee4bfef1f39d009
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/08/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "72522634"
 ---
 # <a name="orchestration-patterns"></a>Vzory orchestrace
 
-Durable Functions usnadňuje vytváření stavových pracovních postupů, které se skládají z diskrétních a dlouhodobě běžících aktivit v prostředí bez serveru. Vzhledem k tomu, že Durable Functions může sledovat průběh vašich pracovních postupů a pravidelně vystavovat historii spouštění, zapůjčuje se sama na implementaci některých zajímavých vzorů.
+Trvalé funkce usnadňuje vytváření stavových pracovních postupů, které se skládají z diskrétních, dlouhotrvajících aktivit v prostředí bez serveru. Vzhledem k tomu, že trvalé funkce můžete sledovat průběh pracovních postupů a pravidelně kontrolní body historie provádění, půjčuje se k implementaci některé zajímavé vzory.
 
 ## <a name="function-chaining"></a>Řetězení funkcí
 
-V typickém sekvenčním procesu musí aktivity provádět jednu po druhé v určitém pořadí. V případě potřeby může nadcházející aktivita vyžadovat nějaký výstup z předchozí funkce. Tato závislost na řazení aktivit vytvoří řetěz funkce provádění.
+V typickém sekvenčním procesu je třeba aktivity provádět jeden po druhém v určitém pořadí. Volitelně nadcházející aktivita může vyžadovat určitý výstup z předchozí funkce. Tato závislost na řazení aktivit vytvoří řetězec funkcí provádění.
 
-Výhoda použití Durable Functions k implementaci tohoto vzoru pracovního postupu přichází z jeho schopnosti provádět vytváření kontrolních bodů. Pokud dojde k chybě serveru, dojde k vypršení časového limitu sítě nebo k jinému problému, trvalé funkce můžou obnovit z posledního známého stavu a pokračovat ve spuštění pracovního postupu i v případě, že se nachází na jiném serveru.
+Výhodou použití trvalé funkce k implementaci tohoto vzoru pracovního postupu pochází z jeho schopnost provádět vytváření kontrolních bodů. Pokud dojde k chybě serveru, časový mat v síti nebo dojde k jinému problému, trvalé funkce mohou pokračovat z posledního známého stavu a pokračovat ve spuštění pracovního postupu, i když je na jiném serveru.
 
 ```csharp
 [FunctionName("PlaceOrder")]
@@ -37,9 +37,9 @@ public static async Task<string> PlaceOrder([OrchestrationTrigger] DurableOrches
 }
 ```
 
-V předchozím příkladu kódu je funkce `CallActivityAsync` zodpovědná za spuštění dané aktivity na virtuálním počítači v datovém centru. Když funkce await vrátí a podkladovou úlohu dokončí, bude spuštění zaznamenáno do tabulky historie. Kód ve funkci Orchestrator může využít jakékoli známé konstrukce úlohy paralelní knihovny a klíčová slova Async/await.
+V předchozí ukázce `CallActivityAsync` kódu je funkce zodpovědná za spuštění dané aktivity na virtuálním počítači v datovém centru. Když await vrátí a základní Task dokončí, spuštění se zaznamená do tabulky historie. Kód ve funkci orchestrator můžete využít některé známé konstrukce task paralelní knihovny a async/await klíčová slova.
 
-Následující kód je zjednodušený příklad toho, co může `ProcessPayment` metoda vypadat takto:
+Následující kód je zjednodušeným příkladem `ProcessPayment` toho, jak může metoda vypadat:
 
 ```csharp
 [FunctionName("ProcessPayment")]
@@ -56,11 +56,11 @@ public static bool ProcessPayment([ActivityTrigger] DurableActivityContext conte
 }
 ```
 
-## <a name="asynchronous-http-apis"></a>Asynchronní rozhraní HTTP API
+## <a name="asynchronous-http-apis"></a>Asynchronní http api
 
-V některých případech mohou pracovní postupy obsahovat aktivity, které mohou trvat poměrně dlouhou dobu. Představte si proces, který zahájí zálohování mediálních souborů do úložiště objektů BLOB. V závislosti na velikosti a množství mediálních souborů může tento proces zálohování trvat i hodiny.
+V některých případech mohou pracovní postupy obsahovat aktivity, které jejich dokončení trvá poměrně dlouhou dobu. Představte si proces, který spustí zálohování mediálních souborů do úložiště objektů blob. V závislosti na velikosti a množství mediálních souborů může dokončení tohoto procesu zálohování trvat hodiny.
 
-V tomto scénáři se můžete podívat na `DurableOrchestrationClient`možnost kontrolovat stav spuštěného pracovního postupu. Při použití `HttpTrigger` ke spuštění pracovního postupu lze metodu `CreateCheckStatusResponse` použít k vrácení instance `HttpResponseMessage`. Tato odpověď poskytuje klientovi identifikátor URI v datové části, který lze použít ke kontrole stavu spuštěného procesu.
+V tomto scénáři `DurableOrchestrationClient`'s schopnost zkontrolovat stav spuštěného pracovního postupu se stane užitečné. Při použití `HttpTrigger` a ke spuštění `CreateCheckStatusResponse` pracovního postupu lze metodu použít k vrácení instance aplikace `HttpResponseMessage`. Tato odpověď poskytuje klientovi identifikátor URI v datové části, který lze použít ke kontrole stavu spuštěného procesu.
 
 ```csharp
 [FunctionName("OrderWorkflow")]
@@ -76,7 +76,7 @@ public static async Task<HttpResponseMessage> Run(
 }
 ```
 
-Následující výsledek ukázky ukazuje strukturu datové části odpovědi.
+Ukázkový výsledek níže ukazuje strukturu datové části odpovědi.
 
 ```json
 {
@@ -87,7 +87,7 @@ Následující výsledek ukázky ukazuje strukturu datové části odpovědi.
 }
 ```
 
-Pomocí preferovaného klienta HTTP se dá k identifikátoru URI v statusQueryGetUri provést požadavky GET pro kontrolu stavu spuštěného pracovního postupu. Vrácená odpověď stavu by měla vypadat podobně jako následující kód.
+Pomocí upřednostňovaného klienta HTTP mohou být požadavky GET provedeny na identifikátor URI ve statusQueryGetUri ke kontrole stavu spuštěného pracovního postupu. Vrácená odpověď na stav by se měla podobat následujícímu kódu.
 
 ```json
 {
@@ -101,13 +101,13 @@ Pomocí preferovaného klienta HTTP se dá k identifikátoru URI v statusQueryGe
 }
 ```
 
-Jak proces pokračuje, změní se odpověď na stav buď na **neúspěšnou** , nebo na **dokončeno**. Po úspěšném dokončení bude vlastnost **Output** v datové části obsahovat všechna vrácená data.
+Jak proces pokračuje, odpověď na stav se změní na **Neúspěšná** nebo **Dokončená**. Po úspěšném dokončení **bude výstupní** vlastnost v datové části obsahovat všechna vrácená data.
 
 ## <a name="monitoring"></a>Monitorování
 
-V případě jednoduchých opakujících se úloh Azure Functions poskytuje `TimerTrigger`, která se dají naplánovat na základě výrazu CRON. Časovač funguje dobře pro jednoduché krátkodobé úlohy, ale může se jednat o scénáře, kde je potřeba pružnější plánování. Tento scénář je, když vám může pomáhat model monitorování a Durable Functions.
+Pro jednoduché opakované úkoly `TimerTrigger` Azure Functions poskytuje, které lze naplánovat na základě výrazu CRON. Časovač funguje dobře pro jednoduché, krátkodobé úkoly, ale mohou existovat scénáře, kde je potřeba flexibilnější plánování. Tento scénář je, když může pomoci vzor monitorování a trvalé funkce.
 
-Durable Functions umožňuje flexibilní plánovací intervaly, správu životnosti a vytváření více procesů monitorování z jedné funkce orchestrace. Jedním z případů použití této funkce může být vytvoření sledovacích procesů pro změny cen akcií, které se dokončí po splnění určité prahové hodnoty.
+Trvalé funkce umožňuje flexibilní intervaly plánování, správu životnosti a vytváření více procesů monitorování z jediné funkce orchestrace. Jeden případ použití pro tuto funkci může být vytvoření sledovacích modulů pro změny cen akcií, které dokončí po splnění určité prahové hodnoty.
 
 ```csharp
 [FunctionName("CheckStockPrice")]
@@ -149,13 +149,13 @@ public static async Task CheckStockPrice([OrchestrationTrigger] DurableOrchestra
 }
 ```
 
-Metoda `CreateTimer` `DurableOrchestrationContext`nastaví plán pro další vyvolání smyčky, aby kontroloval změny cen akcií. `DurableOrchestrationContext` má také vlastnost `CurrentUtcDateTime` k získání aktuální hodnoty DateTime ve standardu UTC. Je lepší použít tuto vlastnost místo `DateTime.UtcNow`, protože je snadno napodobná pro testování.
+`DurableOrchestrationContext`Metoda `CreateTimer` programu nastaví plán pro další vyvolání smyčky a zkontroluje se změna ceny akcií. `DurableOrchestrationContext`má také `CurrentUtcDateTime` vlastnost získat aktuální DateTime hodnotu v UTC. Je lepší použít tuto vlastnost `DateTime.UtcNow` namísto toho, protože je to snadno zesměšňován pro testování.
 
-## <a name="recommended-resources"></a>Doporučené prostředky
+## <a name="recommended-resources"></a>Doporučené zdroje
 
-- [Durable Functions Azure](https://docs.microsoft.com/azure/azure-functions/durable-functions-overview)
-- [Testování částí v .NET Core a .NET Standard](../../core/testing/index.md)
+- [Azure Durable Functions](https://docs.microsoft.com/azure/azure-functions/durable-functions-overview)
+- [Testování částí ve standardu .NET Core a .NET](../../core/testing/index.md)
 
 >[!div class="step-by-step"]
 >[Předchozí](durable-azure-functions.md)
->[Další](serverless-business-scenarios.md)
+>[další](serverless-business-scenarios.md)

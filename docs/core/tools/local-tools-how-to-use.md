@@ -1,50 +1,50 @@
 ---
-title: 'Kurz: instalace a používání místních nástrojů .NET Core'
-description: Naučte se instalovat a používat nástroj .NET jako místní nástroj.
+title: 'Kurz: Instalace a použití místních nástrojů .NET Core'
+description: Přečtěte si, jak nainstalovat a používat nástroj .NET jako místní nástroj.
 ms.date: 02/12/2020
 ms.openlocfilehash: a4355886513040e2436bdbd87905e5baee2dd7a5
-ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2020
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "78156696"
 ---
-# <a name="tutorial-install-and-use-a-net-core-local-tool-using-the-net-core-cli"></a>Kurz: instalace a použití místního nástroje .NET Core pomocí .NET Core CLI
+# <a name="tutorial-install-and-use-a-net-core-local-tool-using-the-net-core-cli"></a>Kurz: Instalace a použití místního nástroje .NET Core pomocí rozhraní CLI jádra .NET
 
-**Tento článek se týká:** ✔️ .net Core 3,0 SDK a novějších verzí
+**Tento článek se týká:** ✔️ .NET Core 3.0 SDK a novější verze
 
-V tomto kurzu se naučíte, jak nainstalovat a používat místní nástroj. Použijete nástroj, který vytvoříte v [prvním kurzu této série](global-tools-how-to-create.md).
+Tento kurz vás naučí, jak nainstalovat a používat místní nástroj. Nástroj, který vytvoříte v [prvním kurzu této řady](global-tools-how-to-create.md).
 
-## <a name="prerequisites"></a>Předpoklady
+## <a name="prerequisites"></a>Požadavky
 
 * Dokončete [první kurz této série](global-tools-how-to-create.md).
-* Nainstalujte modul runtime .NET Core 2,1.
+* Nainstalujte runtime .NET Core 2.1.
 
-  V tomto kurzu nainstalujete a použijete nástroj, který cílí na .NET Core 2,1, takže musíte mít v počítači nainstalovaný tento modul runtime. Pokud chcete nainstalovat modul runtime 2,1, navštivte [stránku ke stažení pro .NET Core 2,1](https://dotnet.microsoft.com/download/dotnet-core/2.1) a vyhledejte odkaz instalace modulu runtime ve sloupci **Spustit aplikace – modul runtime** .
+  Pro účely tohoto kurzu nainstalujete a použijete nástroj, který se zaměřuje na rozhraní .NET Core 2.1, takže musíte mít tento runtime nainstalován v počítači. Chcete-li nainstalovat runtime 2.1, přejděte na [stránku pro stažení rozhraní .NET Core 2.1](https://dotnet.microsoft.com/download/dotnet-core/2.1) a vyhledejte odkaz na instalaci runtime ve sloupci **Spustit aplikace – runtime.**
 
-## <a name="create-a-manifest-file"></a>Vytvořit soubor manifestu
+## <a name="create-a-manifest-file"></a>Vytvoření souboru manifestu
 
-Chcete-li nainstalovat nástroj pouze pro místní přístup (pro aktuální adresář a podadresáře), je nutné jej přidat do souboru manifestu.
+Chcete-li nainstalovat nástroj pouze pro místní přístup (pro aktuální adresář a podadresáře), musí být přidán do souboru manifestu.
 
-Ve složce *Microsoft. botsay* přejděte o jednu úroveň výš do složky *úložiště* :
+Ze složky *microsoft.botsay* přejděte o jednu úroveň nahoru do složky *úložiště:*
 
 ```console
 cd ..
 ```
 
-Vytvořte soubor manifestu spuštěním příkazu [dotnet New](dotnet-new.md) :
+Vytvořte soubor manifestu spuštěním nového příkazu [dotnet:](dotnet-new.md)
 
 ```dotnetcli
 dotnet new tool-manifest
 ```
 
-Výstup indikuje úspěšné vytvoření souboru.
+Výstup označuje úspěšné vytvoření souboru.
 
 ```console
 The template "Dotnet local tool manifest file" was created successfully.
 ```
 
-Soubor *. config/dotnet-Tools. JSON* zatím neobsahuje žádné nástroje:
+Soubor *.config/dotnet-tools.json* v něm zatím nemá žádné nástroje:
 
 ```json
 {
@@ -54,11 +54,11 @@ Soubor *. config/dotnet-Tools. JSON* zatím neobsahuje žádné nástroje:
 }
 ```
 
-Nástroje uvedené v souboru manifestu jsou k dispozici pro aktuální adresář a podadresáře. Aktuální adresář je ten, který obsahuje adresář *. config* se souborem manifestu.
+Nástroje uvedené v souboru manifestu jsou k dispozici pro aktuální adresář a podadresáře. Aktuální adresář je ten, který obsahuje adresář *.config* se souborem manifestu.
 
-Když použijete příkaz CLI, který odkazuje na místní nástroj, sada SDK vyhledá soubor manifestu v aktuálním adresáři a v nadřazených adresářích. Pokud najde soubor manifestu, ale soubor neobsahuje odkazovaný nástroj, pokračuje v hledání prostřednictvím nadřazených adresářů. Hledání skončí, když nalezne odkazovaný nástroj, nebo najde soubor manifestu s `isRoot` nastavenou na `true`.
+Při použití příkazu příkazu příkazu příkazu příkazu, který odkazuje na místní nástroj, sada SDK vyhledá soubor manifestu v aktuálním adresáři a nadřazených adresářích. Pokud najde soubor manifestu, ale soubor neobsahuje odkazovaný nástroj, pokračuje v hledání prostřednictvím nadřazených adresářů. Hledání končí, když vyhledá odkazovaný nástroj nebo najde `isRoot` soubor `true`manifestu s nastavenou na .
 
-## <a name="install-botsay-as-a-local-tool"></a>Nainstalovat botsay jako místní nástroj
+## <a name="install-botsay-as-a-local-tool"></a>Nainstalujte botsay jako místní nástroj
 
 Nainstalujte nástroj z balíčku, který jste vytvořili v prvním kurzu:
 
@@ -66,7 +66,7 @@ Nainstalujte nástroj z balíčku, který jste vytvořili v prvním kurzu:
 dotnet tool install --add-source ./microsoft.botsay/nupkg microsoft.botsay
 ```
 
-Tento příkaz přidá nástroj do souboru manifestu, který jste vytvořili v předchozím kroku. Výstup příkazu zobrazuje, ve kterém souboru manifestu je nově nainstalovaný nástroj:
+Tento příkaz přidá nástroj do souboru manifestu, který jste vytvořili v předchozím kroku. Výstup příkazu ukazuje, ve kterém souboru manifestu se nově nainstalovaný nástroj nachází:
 
  ```console
  You can invoke the tool from this directory using the following command:
@@ -75,7 +75,7 @@ Tento příkaz přidá nástroj do souboru manifestu, který jste vytvořili v p
  Entry is added to the manifest file /home/name/repository/.config/dotnet-tools.json
  ```
 
-Soubor *. config/dotnet-Tools. JSON* teď obsahuje jeden nástroj:
+Soubor *.config/dotnet-tools.json* má nyní jeden nástroj:
 
 ```json
 {
@@ -94,7 +94,7 @@ Soubor *. config/dotnet-Tools. JSON* teď obsahuje jeden nástroj:
 
 ## <a name="use-the-tool"></a>Použití nástroje
 
-Vyvolejte nástroj spuštěním příkazu `dotnet tool run` ze složky *úložiště* :
+Vyvolat nástroj spuštěním `dotnet tool run` příkazu ze složky *úložiště:*
 
 ```dotnetcli
 dotnet tool run botsay hello from the bot
@@ -102,9 +102,9 @@ dotnet tool run botsay hello from the bot
 
 ## <a name="restore-a-local-tool-installed-by-others"></a>Obnovení místního nástroje nainstalovaného jinými uživateli
 
-V kořenovém adresáři úložiště obvykle nainstalujete místní nástroj. Po vrácení souboru manifestu do úložiště mohou jiní vývojáři získat nejnovější soubor manifestu. Chcete-li nainstalovat všechny nástroje, které jsou uvedeny v souboru manifestu, mohou spustit jeden `dotnet tool restore` příkaz.
+Obvykle nainstalujete místní nástroj do kořenového adresáře úložiště. Po vrácení souboru manifestu se změnami do úložiště mohou ostatní vývojáři získat nejnovější soubor manifestu. Chcete-li nainstalovat všechny nástroje uvedené v souboru `dotnet tool restore` manifestu, mohou spustit jeden příkaz.
 
-1. Otevřete soubor *. config/dotnet-Tools. JSON* a nahraďte obsah následujícím kódem JSON:
+1. Otevřete soubor *.config/dotnet-tools.json* a nahraďte obsah následujícím nástrojem JSON:
 
    ```json
    {
@@ -127,11 +127,11 @@ V kořenovém adresáři úložiště obvykle nainstalujete místní nástroj. P
    }
    ```
 
-1. Nahraďte `<name>` názvem, který jste použili k vytvoření projektu.
+1. Nahraďte `<name>` název, který jste použili k vytvoření projektu.
 
 1. Uložte provedené změny.
 
-   Tato změna je stejná jako získání nejnovější verze z úložiště poté, co někdo jiný nainstaloval balíček `dotnetsay` pro adresář projektu.
+   Provedení této změny je stejné jako získání nejnovější verze z úložiště `dotnetsay` poté, co někdo jiný nainstaloval balíček pro adresář projektu.
 
 1. Spusťte příkaz `dotnet tool restore`.
 
@@ -139,7 +139,7 @@ V kořenovém adresáři úložiště obvykle nainstalujete místní nástroj. P
    dotnet tool restore
    ```
 
-   Příkaz vytvoří výstup podobný následujícímu příkladu:
+   Příkaz vytváří výstup jako v následujícím příkladu:
 
    ```console
    Tool 'microsoft.botsay' (version '1.0.0') was restored. Available commands: botsay
@@ -147,13 +147,13 @@ V kořenovém adresáři úložiště obvykle nainstalujete místní nástroj. P
    Restore was successful.
    ```
 
-1. Ověřte, že jsou dostupné tyto nástroje:
+1. Ověřte, zda jsou nástroje k dispozici:
 
    ```dotnetcli
    dotnet tool list
    ```
 
-   Výstupem je seznam balíčků a příkazů, podobně jako v následujícím příkladu:
+   Výstup je seznam balíčků a příkazů, podobně jako v následujícím příkladu:
 
    ```console
    Package Id      Version      Commands       Manifest
@@ -171,24 +171,24 @@ V kořenovém adresáři úložiště obvykle nainstalujete místní nástroj. P
 
 ## <a name="update-a-local-tool"></a>Aktualizace místního nástroje
 
-Nainstalovaná verze místního nástroje `dotnetsay` je 2.1.3.  Nejnovější verze je 2.1.4. K aktualizaci nástroje na nejnovější verzi použijte příkaz [dotnet Tool Update](dotnet-tool-update.md) .
+Nainstalovaná verze místního nástroje `dotnetsay` je 2.1.3.  Nejnovější verze je 2.1.4. Pomocí příkazu [aktualizace nástroje dotnet](dotnet-tool-update.md) aktualizujte nástroj na nejnovější verzi.
 
 ```dotnetcli
 dotnet tool update dotnetsay
 ```
 
-Výstup označuje nové číslo verze:
+Na výstupu je uvedeno nové číslo verze:
 
 ```console
 Tool 'dotnetsay' was successfully updated from version '2.1.3' to version '2.1.4'
 (manifest file /home/name/repository/.config/dotnet-tools.json).
 ```
 
-Příkaz Update vyhledá první soubor manifestu, který obsahuje ID balíčku, a aktualizuje ho. Pokud žádné takové ID balíčku není v žádném souboru manifestu, který je v oboru hledání, sada SDK přidá novou položku do nejbližšího souboru manifestu. Rozsah hledání je až do nadřazených adresářů, dokud se nenajde soubor manifestu s `isRoot = true`.
+Příkaz update vyhledá první soubor manifestu, který obsahuje ID balíčku, a aktualizuje jej. Pokud není žádné takové ID balíčku v libovolném souboru manifestu, který je v oboru hledání, sada SDK přidá novou položku do nejbližšího souboru manifestu. Obor hledání je až přes nadřazené adresáře, dokud není nalezen soubor manifestu s. `isRoot = true`
 
-## <a name="remove-local-tools"></a>Odebrat místní nástroje
+## <a name="remove-local-tools"></a>Odebrání místních nástrojů
 
-Nainstalované nástroje odeberte spuštěním příkazu pro [odinstalaci nástroje dotnet](dotnet-tool-uninstall.md) :
+Odeberte nainstalované nástroje spuštěním příkazu [odinstalace nástroje dotnet:](dotnet-tool-uninstall.md)
 
 ```dotnetcli
 dotnet tool uninstall microsoft.botsay
@@ -200,8 +200,8 @@ dotnet tool uninstall dotnetsay
 
 ## <a name="troubleshoot"></a>Řešení potíží
 
-Pokud se vám zobrazí chybová zpráva s postupem v tomto kurzu, přečtěte si téma [řešení potíží s používáním nástrojů .NET Core](troubleshoot-usage-issues.md).
+Pokud se při sledování kurzu zobrazí chybová zpráva, [přečtěte si článek Poradce při potížích s používáním nástroje .NET Core](troubleshoot-usage-issues.md).
 
 ## <a name="see-also"></a>Viz také
 
-Další informace najdete v tématu [nástroje .NET Core](global-tools.md) .
+Další informace naleznete v tématu [.NET Core tools](global-tools.md)

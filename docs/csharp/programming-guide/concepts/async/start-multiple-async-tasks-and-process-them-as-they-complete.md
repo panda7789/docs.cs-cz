@@ -1,93 +1,93 @@
 ---
-title: Zpracování asynchronních úloh po dokončení
+title: Zpracování asynchronních úloh po jejich dokončení
 ms.date: 09/12/2018
 ms.assetid: 25331850-35a7-43b3-ab76-3908e4346b9d
 ms.openlocfilehash: b618fd6bf80551231d2b285fd0e8aef688d00d93
-ms.sourcegitcommit: 878ca7550b653114c3968ef8906da2b3e60e3c7a
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/02/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "71736733"
 ---
-# <a name="start-multiple-async-tasks-and-process-them-as-they-complete-c"></a>Spuštění několika asynchronních úloh a jejich zpracování po dokončení (C#)
+# <a name="start-multiple-async-tasks-and-process-them-as-they-complete-c"></a>Spuštění více asynchronních úloh a jejich zpracování po dokončení (C#)
 
-Pomocí <xref:System.Threading.Tasks.Task.WhenAny%2A?displayProperty=nameWithType> můžete spustit více úloh současně a zpracovat je jednou, když jsou dokončeny, a nikoli jejich zpracování v pořadí, ve kterém jsou spuštěny.
+Pomocí <xref:System.Threading.Tasks.Task.WhenAny%2A?displayProperty=nameWithType>aplikace můžete spustit více úkolů najednou a zpracovat je jeden po druhém při jejich dokončení, nikoli je zpracovat v pořadí, ve kterém jsou spuštěny.
 
-Následující příklad používá dotaz k vytvoření kolekce úkolů. Každý úkol stáhne obsah zadaného webu. V každé iteraci smyčky while očekává volání `WhenAny` úkol v kolekci úkolů, které dokončí stahování jako první. Tato úloha je odebrána z kolekce a zpracována. Smyčka se opakuje, dokud kolekce neobsahuje žádné další úlohy.
+Následující příklad používá dotaz k vytvoření kolekce úkolů. Každý úkol stáhne obsah zadaného webu. V každé iteraci smyčky while očekávané `WhenAny` volání vrátí úlohu v kolekci úkolů, které dokončí jeho stažení jako první. Tato úloha je odebrána z kolekce a zpracována. Smyčka se opakuje, dokud kolekce neobsahuje žádné další úkoly.
 
 > [!NOTE]
-> Chcete-li spustit příklady, je nutné mít v počítači nainstalován systém Visual Studio (2012 nebo novější) a .NET Framework 4,5 nebo novější.
+> Chcete-li spustit příklady, musíte mít Visual Studio (2012 nebo novější) a rozhraní .NET Framework 4.5 nebo novější nainstalován v počítači.
 
 ## <a name="download-an-example-solution"></a>Stažení ukázkového řešení
 
-Z Async Sample si můžete stáhnout dokončený projekt Windows Presentation Foundation (WPF) [: jemné ladění aplikace](https://code.msdn.microsoft.com/Async-Fine-Tuning-Your-a676abea) a pak postupujte podle těchto kroků.
+Můžete si stáhnout celý projekt Windows Presentation Foundation (WPF) z [ukázky asynchronní: Jemné doladění aplikace](https://code.msdn.microsoft.com/Async-Fine-Tuning-Your-a676abea) a postupujte takto.
 
 > [!TIP]
-> Pokud nechcete stáhnout projekt, můžete místo toho zkontrolovat soubor *MainWindow.XAML.cs* na konci tohoto tématu.
+> Pokud nechcete stáhnout projekt, můžete si prohlédnout *soubor MainWindow.xaml.cs* na konci tohoto tématu.
 
-1. Extrahujte soubory, které jste stáhli ze souboru *. zip* , a potom spusťte Visual Studio.
+1. Extrahujte soubory, které jste stáhli ze souboru *ZIP,* a spusťte aplikaci Visual Studio.
 
-2. Na panelu nabídek vyberte **soubor** > **otevřít** > **projekt/řešení**.
+2. Na řádku nabídek zvolte **Soubor** > **otevřít** > **projekt/řešení**.
 
-3. V dialogovém okně **Otevřít projekt** otevřete složku, která obsahuje ukázkový kód, který jste stáhli, a poté otevřete soubor řešení ( *. sln*) pro *AsyncFineTuningCS*/*AsyncFineTuningVB*.
+3. V dialogovém okně **Otevřít projekt** otevřete složku obsahující ukázkový kód, který jste stáhli, a potom otevřete soubor řešení *(.sln)* pro *AsyncFineTuningCS*/*AsyncFineTuningVB*.
 
-4. V **Průzkumník řešení**otevřete místní nabídku pro projekt **ProcessTasksAsTheyFinish** a pak zvolte **nastavit jako projekt po spuštění**.
+4. V **Průzkumníku řešení**otevřete místní nabídku projektu **ProcessTasksAsTheyFinish** a pak zvolte **Nastavit jako počáteční projekt**.
 
-5. Zvolte klávesu <kbd>F5</kbd> ke spuštění programu s laděním nebo stiskněte klávesovou zkratku <kbd>CTRL</kbd>+<kbd>F5</kbd> ke spuštění programu bez ladění.
+5. Zvolte klávesu <kbd>F5</kbd> pro spuštění programu s laděním nebo stisknutím kláves <kbd>Ctrl</kbd>+<kbd>F5</kbd> program spusťte bez ladění.
 
-6. Spusťte projekt několikrát, abyste ověřili, že stažené délky se vždy nezobrazí ve stejném pořadí.
+6. Spusťte projekt několikrát a ověřte, zda se stažené délky nevždy zobrazují ve stejném pořadí.
 
-## <a name="create-the-program-yourself"></a>Vytvoření programu sami
+## <a name="create-the-program-yourself"></a>Vytvořte si program sami
 
-Tento příklad přidá do kódu, který je vyvinut v části [zrušení zbývajících asynchronních úloh po dokončení jednéC#z nich ()](cancel-remaining-async-tasks-after-one-is-complete.md)a používá stejné uživatelské rozhraní.
+Tento příklad přidá ke kódu, který je vyvinut v [zrušit zbývající asynchronní úkoly po dokončení jednoho (C#)](cancel-remaining-async-tasks-after-one-is-complete.md)a používá stejné ui.
 
-Chcete-li sestavit příklad sami, postupujte podle pokynů v části [stažení ukázkového](cancel-remaining-async-tasks-after-one-is-complete.md#downloading-the-example) oddílu, ale nastavte **CancelAfterOneTask** jako spouštěný projekt. Přidejte změny v tomto tématu do metody `AccessTheWebAsync` v tomto projektu. Změny jsou označeny hvězdičkami.
+Chcete-li vytvořit příklad sami, krok za krokem postupujte podle pokynů v [části Stažení příkladu,](cancel-remaining-async-tasks-after-one-is-complete.md#downloading-the-example) ale nastavte **CancelAfterOneTask** jako projekt po spuštění. Přidejte změny v tomto `AccessTheWebAsync` tématu k metodě v tomto projektu. Změny jsou označeny hvězdičkami.
 
-Projekt **CancelAfterOneTask** již obsahuje dotaz, který při spuštění vytvoří kolekci úkolů. Každé volání `ProcessURLAsync` v následujícím kódu vrátí hodnotu <xref:System.Threading.Tasks.Task%601>, kde `TResult` je celé číslo:
+Projekt **CancelAfterOneTask** již obsahuje dotaz, který při spuštění vytvoří kolekci úkolů. Každé volání `ProcessURLAsync` do následujícího <xref:System.Threading.Tasks.Task%601>kódu `TResult` vrátí , kde je celé číslo:
 
 ```csharp
 IEnumerable<Task<int>> downloadTasksQuery = from url in urlList select ProcessURL(url, client, ct);
 ```
 
-V souboru *MainWindow.XAML.cs* projektu proveďte následující změny metody `AccessTheWebAsync`:
+V *MainWindow.xaml.cs* souboru projektu proveďte následující `AccessTheWebAsync` změny metody:
 
-- Spusťte dotaz použitím <xref:System.Linq.Enumerable.ToList%2A?displayProperty=nameWithType> místo <xref:System.Linq.Enumerable.ToArray%2A>.
+- Spusťte dotaz <xref:System.Linq.Enumerable.ToList%2A?displayProperty=nameWithType> použitím <xref:System.Linq.Enumerable.ToArray%2A>namísto .
 
     ```csharp
     List<Task<int>> downloadTasks = downloadTasksQuery.ToList();
     ```
 
-- Přidejte smyčku `while`, která provede následující kroky pro každý úkol v kolekci:
+- Přidejte `while` smyčku, která provádí následující kroky pro každou úlohu v kolekci:
 
-    1. Očekává volání `WhenAny` pro identifikaci první úlohy v kolekci, aby bylo možné její stažení dokončit.
+    1. Čeká na volání `WhenAny` k identifikaci první úkol v kolekci k dokončení jeho stažení.
 
         ```csharp
         Task<int> firstFinishedTask = await Task.WhenAny(downloadTasks);
         ```
 
-    2. Odebere úlohu z kolekce.
+    2. Odebere tento úkol z kolekce.
 
         ```csharp
         downloadTasks.Remove(firstFinishedTask);
         ```
 
-    3. Očekává `firstFinishedTask`, který je vrácen voláním `ProcessURLAsync`. Proměnná `firstFinishedTask` je <xref:System.Threading.Tasks.Task%601>, kde `TReturn` je celé číslo. Úkol je již dokončen, ale očekáváte, že bude načtena délka staženého webu, jak ukazuje následující příklad. Pokud dojde k chybě úlohy, `await` vyvolá první podřízenou výjimku uloženou v `AggregateException`, na rozdíl od čtení vlastnosti `Result`, která by vyvolala `AggregateException`.
+    3. Čeká `firstFinishedTask`, který je vrácen voláním `ProcessURLAsync`. Proměnná `firstFinishedTask` je <xref:System.Threading.Tasks.Task%601> `TReturn` kde je celé číslo. Úloha je již dokončena, ale čekáte na to, abyste načetli délku staženého webu, jak ukazuje následující příklad. Pokud je chyba `await` úlohy, vyvolá první podřízenou výjimku uloženou `AggregateException`v , na rozdíl od čtení `Result` vlastnosti, která by vyvolána `AggregateException`.
 
         ```csharp
         int length = await firstFinishedTask;
         resultsTextBox.Text += $"\r\nLength of the download:  {length}";
         ```
 
-Spusťte program několikrát, abyste ověřili, že stažené délky se vždy nezobrazí ve stejném pořadí.
+Spusťte program několikrát a ověřte, zda se stažené délky nevždy zobrazují ve stejném pořadí.
 
 > [!CAUTION]
-> Ve smyčce můžete použít `WhenAny`, jak je popsáno v příkladu, pro řešení problémů, které zahrnují malý počet úkolů. Další přístupy jsou ale efektivnější, pokud máte velký počet úkolů, které je potřeba zpracovat. Další informace a příklady najdete v tématu [zpracování úloh po dokončení](https://devblogs.microsoft.com/pfxteam/processing-tasks-as-they-complete/).
+> Můžete použít `WhenAny` ve smyčce, jak je popsáno v příkladu, k řešení problémů, které zahrnují malý počet úkolů. Jiné přístupy jsou však efektivnější, pokud máte velký počet úkolů ke zpracování. Další informace a příklady naleznete v [tématu Zpracování úloh při jejich dokončení](https://devblogs.microsoft.com/pfxteam/processing-tasks-as-they-complete/).
 
 ## <a name="complete-example"></a>Kompletní příklad
 
-Následující kód je úplný text souboru *MainWindow.XAML.cs* pro příklad. Hvězdičky označují prvky, které byly přidány pro tento příklad. Všimněte si také, že je nutné přidat odkaz na <xref:System.Net.Http>.
+Následující kód je úplný text *MainWindow.xaml.cs* souboru pro příklad. Hvězdičky označují prvky, které byly přidány pro tento příklad. Vezměte také na vědomí, že <xref:System.Net.Http>je nutné přidat odkaz na .
 
-Projekt si můžete stáhnout z části [Async Sample: jemné ladění aplikace](https://code.msdn.microsoft.com/Async-Fine-Tuning-Your-a676abea).
+Projekt si můžete stáhnout z [ukázky aplikace Async: Fine Tuning Your Application](https://code.msdn.microsoft.com/Async-Fine-Tuning-Your-a676abea).
 
 ```csharp
 using System;
@@ -225,9 +225,9 @@ namespace ProcessTasksAsTheyFinish
 // Downloads complete.
 ```
 
-## <a name="see-also"></a>Další informace najdete v tématech
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Threading.Tasks.Task.WhenAny%2A>
-- [Vyladění asynchronní aplikace (C#)](fine-tuning-your-async-application.md)
-- [Asynchronní programování s modifikátorem Async aC#operátoru Await ()](index.md)
-- [Asynchronní vzorek: jemné ladění aplikace](https://code.msdn.microsoft.com/Async-Fine-Tuning-Your-a676abea)
+- [Jemné doladění asynchronní aplikace (C#)](fine-tuning-your-async-application.md)
+- [Asynchronní programování s asynchronní a await (C#)](index.md)
+- [Asynchronní ukázka: Jemné doladění aplikace](https://code.msdn.microsoft.com/Async-Fine-Tuning-Your-a676abea)

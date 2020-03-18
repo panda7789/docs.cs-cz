@@ -1,33 +1,33 @@
 ---
-title: Provedení levých vnějších spojení (LINQ v JAZYKU C#)
-description: Zjistěte, jak provedení levých vnějších spojení pomocí jazyka LINQ v jazyce C#.
+title: Provedení levých vnějších spojení (LINQ v C#)
+description: Zjistěte, jak provádět levé vnější spojení pomocí LINQ v C#.
 ms.date: 12/01/2016
 ms.assetid: f542cee6-3169-4dcf-a631-3a6a79ccd473
 ms.openlocfilehash: cc08a1c8670623a10d1e0bf10221d02037a8d7bc
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "61688576"
 ---
 # <a name="perform-left-outer-joins"></a>Provedení levých vnějších spojení
 
-Levé vnější spojení je spojení ve kterém každý prvek první kolekce, kterou je vrácen, bez ohledu na to, jestli má korelační elementy v druhé kolekci. Je možné použít k provedení levé vnější spojení voláním LINQ <xref:System.Linq.Enumerable.DefaultIfEmpty%2A> metodu na výsledky spojení skupiny.
+Levé vnější spojení je spojení, ve kterém je vrácena každý prvek první kolekce, bez ohledu na to, zda má všechny korelované prvky v druhé kolekci. Linq můžete použít k provedení levé vnější <xref:System.Linq.Enumerable.DefaultIfEmpty%2A> spojení voláním metody na výsledky spojení skupiny.
 
 ## <a name="example"></a>Příklad
 
-Následující příklad ukazuje způsob použití <xref:System.Linq.Enumerable.DefaultIfEmpty%2A> metodu na výsledky spojení skupiny k provedení levé vnější spojení.
+Následující příklad ukazuje, jak <xref:System.Linq.Enumerable.DefaultIfEmpty%2A> použít metodu na výsledky spojení skupiny k provedení levé vnější spojení.
 
-Prvním krokem při vytváření levé vnější spojení dvou kolekcí je provedení vnitřního spojení pomocí spojení skupiny. (Viz [provádění vnitřních spojení](perform-inner-joins.md) vysvětlení tohoto procesu.) V tomto příkladu seznam `Person` objekty je vnitřní připojené k seznamu `Pet` na základě objektů `Person` objekt, který odpovídá `Pet.Owner`.
+Prvním krokem při vytváření levé vnější spojení dvou kolekcí je provést vnitřní spojení pomocí spojení skupiny. (Vysvětlení tohoto procesu naleznete v tématu [Provedení vnitřních spojení.)](perform-inner-joins.md) V tomto příkladu `Person` je seznam objektů vnitřní připojen `Pet` k seznamu `Person` objektů `Pet.Owner`na základě objektu, který odpovídá .
 
-Druhým krokem je zahrnout všechny prvky objektu první (vlevo) kolekce i v případě, že tento element nemá žádné odpovídající položky v kolekci správné sady výsledků. To lze provést zavoláním <xref:System.Linq.Enumerable.DefaultIfEmpty%2A> na každou sekvenci odpovídající prvky ze skupiny spojení. V tomto příkladu <xref:System.Linq.Enumerable.DefaultIfEmpty%2A> volat pro každou sekvenci odpovídající `Pet` objekty. Metoda vrátí kolekci, která obsahuje pouze jednu, výchozí hodnotu, pokud posloupnost odpovídající `Pet` objekty je prázdný na žádném `Person` objektu, a zajistí tak každý `Person` objekt je reprezentován v kolekci výsledek.
+Druhým krokem je zahrnout každý prvek první (vlevo) kolekce v sadě výsledků i v případě, že tento prvek nemá žádné shody v pravé kolekci. Toho je dosaženo <xref:System.Linq.Enumerable.DefaultIfEmpty%2A> voláním na každou sekvenci odpovídající prvky ze skupiny spojení. V tomto <xref:System.Linq.Enumerable.DefaultIfEmpty%2A> příkladu se nazývá `Pet` na každé sekvenci odpovídající objekty. Metoda vrátí kolekci, která obsahuje jednu výchozí `Pet` hodnotu, pokud `Person` je posloupnost odpovídajících objektů prázdná pro libovolný objekt, čímž zajistí, že každý `Person` objekt je reprezentován v kolekci výsledků.
 
 > [!NOTE]
-> Výchozí hodnota pro typ odkazu je `null`; proto příklad vyhledává odkaz s hodnotou null před přístupem k každý prvek každého `Pet` kolekce.
+> Výchozí hodnota pro typ `null`odkazu je ; proto příklad zkontroluje null odkaz před přístupem každý `Pet` prvek každé kolekce.
 
 [!code-csharp[CsLINQProgJoining#7](~/samples/snippets/csharp/concepts/linq/how-to-perform-left-outer-joins_1.cs)]
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Linq.Enumerable.Join%2A>
 - <xref:System.Linq.Enumerable.GroupJoin%2A>

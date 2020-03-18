@@ -1,23 +1,23 @@
 ---
-title: dotnet restore – příkaz
-description: Naučte se obnovit závislosti a nástroje specifické pro projekt pomocí příkazu dotnet restore.
+title: dotnet obnovit, příkaz
+description: Pomocí příkazu dotnet restore se dozvíte, jak obnovit závislosti a nástroje specifické pro projekt.
 ms.date: 02/27/2020
 ms.openlocfilehash: e74027ba70ddf6905a12f9691caeb0a406428ad6
-ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2020
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "78157021"
 ---
 # <a name="dotnet-restore"></a>dotnet restore
 
-**Tento článek se týká:** ✔️ .net Core 2,1 SDK a novějších verzí
+**Tento článek se týká:** ✔️ .NET Core 2.1 SDK a novější verze
 
-## <a name="name"></a>Název
+## <a name="name"></a>Name (Název)
 
-`dotnet restore` – obnoví závislosti a nástroje projektu.
+`dotnet restore`- Obnoví závislosti a nástroje projektu.
 
-## <a name="synopsis"></a>Stručný obsah
+## <a name="synopsis"></a>Synopse
 
 ```dotnetcli
 dotnet restore [<ROOT>] [--configfile] [--disable-parallel]
@@ -30,35 +30,35 @@ dotnet restore [-h|--help]
 
 ## <a name="description"></a>Popis
 
-Příkaz `dotnet restore` používá NuGet pro obnovení závislostí a také nástrojů specifických pro projekt, které jsou uvedeny v souboru projektu. Ve výchozím nastavení jsou obnovení závislostí a nástrojů spouštěny paralelně.
+Příkaz `dotnet restore` používá NuGet k obnovení závislostí, stejně jako nástroje specifické pro projekt, které jsou zadány v souboru projektu. Ve výchozím nastavení jsou obnovení závislostí a nástrojů spouštěny paralelně.
 
-Pro obnovení závislostí potřebuje NuGet informační kanály, ve kterých se balíčky nacházejí. Informační kanály jsou obvykle poskytovány prostřednictvím konfiguračního souboru *NuGet. config* . Výchozí konfigurační soubor se poskytne při instalaci .NET Core SDK. Další kanály určíte tak, že vytvoříte vlastní soubor *NuGet. config* v adresáři projektu. Informační kanály *NuGet. config* můžete přepsat pomocí možnosti-`-s`.
+Chcete-li obnovit závislosti, NuGet potřebuje kanály, kde jsou umístěny balíčky. Informační kanály jsou obvykle poskytovány prostřednictvím konfiguračního souboru *nuget.config.* Při instalaci sady .NET Core SDK je k dispozici výchozí konfigurační soubor. Další informační kanály zadáte vytvořením vlastního souboru *nuget.config* v adresáři projektu. Kanály *nuget.config* můžete přepsat pomocí `-s` možnosti - .
 
-U závislostí určíte, kde se obnovené balíčky umístí během operace obnovení pomocí argumentu `--packages`. Pokud není zadaný, použije se výchozí mezipaměť balíčků NuGet, která se nachází v adresáři `.nuget/packages` v domovském adresáři uživatele ve všech operačních systémech. Například */Home/user1* v systému Linux nebo *C:\Users\user1* ve Windows.
+U závislostí určíte, kam budou obnovené balíčky umístěny během operace obnovení pomocí argumentu. `--packages` Pokud není zadán, je použita výchozí mezipaměť balíčku `.nuget/packages` NuGet, která se nachází v adresáři v domovském adresáři uživatele ve všech operačních systémech. Například */home/user1* v Systému Linux nebo *C:\Users\user1* v systému Windows.
 
-U nástrojů specifických pro projekt `dotnet restore` nejprve obnovte balíček, ve kterém je nástroj zabalený, a pak pokračuje v obnovování závislostí nástroje, jak je uvedeno v souboru projektu.
+Pro nástroje specifické pro `dotnet restore` projekt nejprve obnoví balíček, ve kterém je nástroj zabalen a potom pokračuje obnovit závislosti nástroje, jak je uvedeno v jeho souboru projektu.
 
-### <a name="nugetconfig-differences"></a>rozdíly v NuGet. config
+### <a name="nugetconfig-differences"></a>nuget.config rozdíly
 
-Chování `dotnet restore` příkazu je ovlivněno nastavením v souboru *NuGet. config* , pokud je k dispozici. Například nastavení `globalPackagesFolder` v *souboru NuGet. config* umístí obnovené balíčky NuGet do zadané složky. Toto je alternativa k zadání možnosti `--packages` v příkazu `dotnet restore`. Další informace najdete v referenčních informacích k [NuGet. config](/nuget/schema/nuget-config-file).
+Chování příkazu `dotnet restore` je ovlivněno nastavením v souboru *nuget.config,* pokud je k dispozici. Například nastavení `globalPackagesFolder` v *nuget.config* umístí obnovené balíčky NuGet do zadané složky. Toto je alternativa `--packages` k určení `dotnet restore` možnosti v příkazu. Další informace naleznete v [odkazu nuget.config](/nuget/schema/nuget-config-file).
 
-Existují tři specifická nastavení, která `dotnet restore` ignorují:
+Existují tři konkrétní `dotnet restore` nastavení, která ignorují:
 
-- [bindingRedirects](/nuget/schema/nuget-config-file#bindingredirects-section)
+- [vazbyPřesměrování](/nuget/schema/nuget-config-file#bindingredirects-section)
 
-  Přesměrování vazby nefungují s prvky `<PackageReference>` a .NET Core podporuje pouze `<PackageReference>` prvky pro balíčky NuGet.
+  Přesměrování vazby nefungují s `<PackageReference>` prvky a .NET Core podporuje `<PackageReference>` pouze prvky pro balíčky NuGet.
 
-- [řešení](/nuget/schema/nuget-config-file#solution-section)
+- [Řešení](/nuget/schema/nuget-config-file#solution-section)
 
-  Toto nastavení je specifické pro Visual Studio a neplatí pro .NET Core. .NET Core nepoužívá soubor `packages.config` a místo toho používá `<PackageReference>` prvky pro balíčky NuGet.
+  Toto nastavení je specifické pro visual studio a nevztahuje se na jádro .NET. .NET Core nepoužívá `packages.config` soubor a místo `<PackageReference>` toho používá prvky pro balíčky NuGet.
 
-- [trustedSigners](/nuget/schema/nuget-config-file#trustedsigners-section)
+- [důvěryhodní podepisující](/nuget/schema/nuget-config-file#trustedsigners-section)
 
-  Toto nastavení se nedá použít, protože [NuGet zatím nepodporuje ověřování](https://github.com/NuGet/Home/issues/7939) pro důvěryhodné balíčky v různých platformách.
+  Toto nastavení není použitelné, protože [NuGet ještě nepodporuje ověřování](https://github.com/NuGet/Home/issues/7939) důvěryhodných balíčků napříč platformami.
 
 ## <a name="implicit-restore"></a>Implicitní obnovení
 
-Příkaz `dotnet restore` se v případě potřeby spustí implicitně, když spustíte následující příkazy:
+Příkaz `dotnet restore` je spuštěn implicitně v případě potřeby při spuštění následujících příkazů:
 
 - [`dotnet new`](dotnet-new.md)
 - [`dotnet build`](dotnet-build.md)
@@ -68,21 +68,21 @@ Příkaz `dotnet restore` se v případě potřeby spustí implicitně, když sp
 - [`dotnet publish`](dotnet-publish.md)
 - [`dotnet pack`](dotnet-pack.md)
 
-Ve většině případů nemusíte explicitně používat příkaz `dotnet restore`.
+Ve většině případů není nutné explicitně `dotnet restore` použít příkaz.
 
-V některých případech může být nepraktické spustit `dotnet restore` implicitně. Například některé automatizované systémy, například systémy sestavení, musí volat `dotnet restore` explicitně pro řízení, když dojde k obnovení, aby bylo možné řídit využití sítě. Chcete-li zabránit spuštění `dotnet restore` implicitně, můžete použít příznak `--no-restore` s některým z těchto příkazů k zakázání implicitního obnovení.
+Někdy může být nepohodlné `dotnet restore` spustit implicitně. Například některé automatizované systémy, jako jsou systémy `dotnet restore` sestavení, musí explicitně volat, aby řídily, kdy dojde k obnovení, aby mohly řídit využití sítě. Chcete-li zabránit `dotnet restore` spuštění implicitně, `--no-restore` můžete použít příznak s některou z těchto příkazů zakázat implicitní obnovení.
 
 ## <a name="arguments"></a>Argumenty
 
 - **`ROOT`**
 
-  Volitelná cesta k souboru projektu, který má být obnoven.
+  Volitelná cesta k souboru projektu k obnovení.
 
 ## <a name="options"></a>Možnosti
 
 - **`--configfile <FILE>`**
 
-  Konfigurační soubor NuGet (*NuGet. config*), který se má použít pro operaci obnovení.
+  Konfigurační soubor NuGet *(nuget.config),* který se má použít pro operaci obnovení.
 
 - **`--disable-parallel`**
 
@@ -90,23 +90,23 @@ V některých případech může být nepraktické spustit `dotnet restore` impl
 
 - **`--force`**
 
-  Vynutí vyřešení všech závislostí i v případě, že bylo poslední obnovení úspěšné. Zadání tohoto příznaku je stejné jako odstranění souboru *Project. assets. JSON* .
+  Vynutí vyřešení všech závislostí, i když bylo poslední obnovení úspěšné. Zadání tohoto příznaku je stejné jako odstranění souboru *project.assets.json.*
 
 - **`-h|--help`**
 
-  Vypíše krátkou nápovědu k příkazu.
+  Vytiskne krátkou nápovědu pro příkaz.
 
 - **`--ignore-failed-sources`**
 
-  Pouze upozornit na zdroje, které selhaly, pokud existují balíčky, které splňují požadavky na verzi.
+  Pouze upozornit na zdroje selhání, pokud existují balíčky splňující požadavek na verzi.
 
 - **`--no-cache`**
 
-  Určuje, že nejsou balíčky mezipaměti a požadavky HTTP.
+  Určuje, že se nebudou ukládáy balíčky a požadavky HTTP.
 
 - **`--no-dependencies`**
 
-  Při obnovení projektu s odkazy z projektu na projekt (P2P) obnoví kořenový projekt a nikoli odkazy.
+  Při obnovení projektu s odkazy projekt-projekt (P2P) obnoví kořenový projekt a nikoli odkazy.
 
 - **`--packages <PACKAGES_DIRECTORY>`**
 
@@ -114,35 +114,35 @@ V některých případech může být nepraktické spustit `dotnet restore` impl
 
 - **`-r|--runtime <RUNTIME_IDENTIFIER>`**
 
-  Určuje modul runtime pro obnovení balíčku. Slouží k obnovení balíčků pro moduly runtime, které nejsou explicitně uvedeny v značce `<RuntimeIdentifiers>` v souboru *. csproj* . Seznam identifikátorů modulu runtime (identifikátorů RID) najdete v [katalogu RID](../rid-catalog.md). Zadáním této možnosti několikrát zadejte víc identifikátorů RID.
+  Určuje dobu runtime pro obnovení balíčku. Používá se k obnovení balíčků pro runtimes, které nejsou výslovně uvedeny ve značce `<RuntimeIdentifiers>` v souboru *.csproj.* Seznam identifikátorů modulu Runtime (RID) naleznete v [katalogu RID](../rid-catalog.md). Zadejte více ridů zadáním této možnosti vícekrát.
 
 - **`-s|--source <SOURCE>`**
 
-  Určuje zdroj balíčku NuGet, který se použije během operace obnovení. Toto nastavení přepíše všechny zdroje zadané v souborech *NuGet. config* . Více zdrojů lze zadat zadáním této možnosti několikrát.
+  Určuje zdroj balíčku NuGet, který se má použít během operace obnovení. Toto nastavení přepíše všechny zdroje zadané v souborech *nuget.config.* Zadáním této možnosti vícekrát lze poskytnout více zdrojů.
 
 - **`--verbosity <LEVEL>`**
 
-  Nastaví úroveň podrobností příkazu. Povolené hodnoty jsou `q[uiet]`, `m[inimal]`, `n[ormal]`, `d[etailed]`a `diag[nostic]`. Výchozí hodnota je `minimal`.
+  Nastaví úroveň podrobností příkazu. Povolené hodnoty `q[uiet]` `m[inimal]`jsou `n[ormal]` `d[etailed]`, `diag[nostic]`, , a . Výchozí hodnota `minimal`je .
 
 - **`--interactive`**
 
-  Umožňuje příkazu zastavit a počkat na vstup nebo akci uživatele (například k dokončení ověřování). Vzhledem k tomu, že .NET Core 2.1.400.
+  Umožňuje příkazu zastavit a čekat na vstup uživatele nebo akci (například k dokončení ověřování). Od .NET Core 2.1.400.
 
 ## <a name="examples"></a>Příklady
 
-- Obnovit závislosti a nástroje pro projekt v aktuálním adresáři:
+- Obnovení závislostí a nástrojů pro projekt v aktuálním adresáři:
 
   ```dotnetcli
   dotnet restore
   ```
 
-- V dané cestě se našly závislosti a nástroje pro `app1` projekt:
+- Obnovit závislosti a nástroje `app1` pro projekt nalezený v dané cestě:
 
   ```dotnetcli
   dotnet restore ~/projects/app1/app1.csproj
   ```
 
-- Obnovte závislosti a nástroje pro projekt v aktuálním adresáři pomocí cesty k souboru, který jste zadali jako zdroj:
+- Obnovte závislosti a nástroje pro projekt v aktuálním adresáři pomocí cesty k souboru, která je k dispozici jako zdroj:
 
   ```dotnetcli
   dotnet restore -s c:\packages\mypackages
@@ -154,7 +154,7 @@ V některých případech může být nepraktické spustit `dotnet restore` impl
   dotnet restore -s c:\packages\mypackages -s c:\packages\myotherpackages
   ```
 
-- Obnoví závislosti a nástroje pro projekt v aktuálním adresáři se zobrazeným podrobným výstupem:
+- Obnovení závislostí a nástrojů pro projekt v aktuálním adresáři zobrazujícího podrobný výstup:
 
   ```dotnetcli
   dotnet restore --verbosity detailed

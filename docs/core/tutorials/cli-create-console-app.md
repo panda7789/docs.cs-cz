@@ -1,92 +1,92 @@
 ---
 title: Začínáme s .NET Core v rozhraní příkazového řádku
-description: Podrobný kurz ukazující, jak začít s .NET Core v systému Windows, Linux nebo macOS pomocí .NET Core CLI.
+description: Podrobný kurz, který ukazuje, jak začít s rozhraním .NET Core ve Windows, Linuxu nebo macOS pomocí rozhraní .NET Core CLI.
 author: thraka
 ms.author: adegeo
 ms.date: 12/05/2019
 ms.technology: dotnet-cli
 ms.custom: updateeachrelease
 ms.openlocfilehash: fe69521a6ac88055e3e8c8502a7e19a72667dbef
-ms.sourcegitcommit: 43d10ef65f0f1fd6c3b515e363bde11a3fcd8d6d
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/03/2020
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "78240854"
 ---
-# <a name="get-started-with-net-core-using-the-net-core-cli"></a>Začínáme s .NET Core s využitím .NET Core CLI
+# <a name="get-started-with-net-core-using-the-net-core-cli"></a>Začínáme s rozhraním .NET Core pomocí rozhraní CLI jádra .NET
 
-V tomto článku se dozvíte, jak začít s vývojem aplikací .NET Core, které fungují na Windows, Linux a macOS, pomocí .NET Core CLI.
+Tento článek vám ukáže, jak začít vyvíjet aplikace .NET Core, které fungují ve Windows, Linuxu a macOS pomocí rozhraní .NET Core CLI.
 
-Pokud .NET Core CLI neznáte, přečtěte si [přehled .NET Core CLI](../tools/index.md).
+Pokud nejste obeznámeni s rozhraním .NET Core CLI, podívejte se na [přehled rozhraní .NET Core CLI](../tools/index.md).
 
-## <a name="prerequisites"></a>Předpoklady
+## <a name="prerequisites"></a>Požadavky
 
-- [.NET Core SDK 3,1](https://dotnet.microsoft.com/download) nebo novější verze.
+- [Sada .NET Core SDK 3.1](https://dotnet.microsoft.com/download) nebo novější verze.
 - Textový editor nebo editor kódu podle vašeho výběru.
 
-## <a name="hello-console-app"></a>Hello, konzolová aplikace!
+## <a name="hello-console-app"></a>Dobrý den, konzole App!
 
-[Vzorový kód můžete zobrazit nebo stáhnout](https://github.com/dotnet/samples/tree/master/core/console-apps/HelloMsBuild) z úložiště GitHub/Samples GitHub. Pokyny ke stažení najdete v tématu [ukázky a kurzy](../../samples-and-tutorials/index.md#viewing-and-downloading-samples).
+[Ukázkový kód](https://github.com/dotnet/samples/tree/master/core/console-apps/HelloMsBuild) můžete zobrazit nebo stáhnout z úložiště GitHub dotnet/samples. Pokyny ke stažení naleznete v [tématu Ukázky a výukové programy](../../samples-and-tutorials/index.md#viewing-and-downloading-samples).
 
-Otevřete příkazový řádek a vytvořte složku s názvem *Hello*. Přejděte do složky, kterou jste vytvořili, a zadejte následující text.
+Otevřete příkazový řádek a vytvořte složku s názvem *Hello*. Přejděte do složky, kterou jste vytvořili, a zadejte následující.
 
 ```dotnetcli
 dotnet new console
 dotnet run
 ```
 
-Podívejme se na stručný návod:
+Udělejme rychlý návod:
 
 01. `dotnet new console`
 
-    [dotnet New](../tools/dotnet-new.md) vytvoří aktuální soubor projektu *Hello. csproj* se závislostmi nezbytnými k vytvoření konzolové aplikace. Vytvoří také základní soubor *program.cs*, který obsahuje vstupní bod pro aplikaci.
+    [dotnet new](../tools/dotnet-new.md) vytvoří aktuální soubor projektu *Hello.csproj* se závislostmi potřebnými k vytvoření konzolové aplikace. Vytvoří také *Program.cs*, základní soubor obsahující vstupní bod pro aplikaci.
 
-    *Hello. csproj*:
+    *Hello.csproj*:
 
     [!code-xml[Hello.csproj](~/samples/snippets/core/tutorials/cli-create-console-app/HelloMsBuild/csharp/Hello.csproj)]
 
-    Soubor projektu určuje vše potřebné k obnovení závislostí a sestavování programu.
+    Soubor projektu určuje vše, co je potřeba k obnovení závislostí a sestavení programu.
 
-    - Element `<OutputType>` určuje, že vytváříme spustitelný soubor, a to i v jiných slovech konzolové aplikace.
-    - Element `<TargetFramework>` určuje, jakou implementaci .NET cílíme. V pokročilém scénáři můžete zadat více cílových rozhraní a sestavit je pro všechny v rámci jedné operace. V tomto kurzu se podíváme na vytváření jenom pro .NET Core 3,1.
+    - Prvek `<OutputType>` určuje, že vytváříme spustitelný soubor, jinými slovy konzolovou aplikaci.
+    - Prvek `<TargetFramework>` určuje, na jakou implementaci rozhraní .NET cílíme. V rozšířeném scénáři můžete zadat více cílových architektur a sestavit pro všechny v jedné operaci. V tomto kurzu se budeme držet vytváření pouze pro rozhraní .NET Core 3.1.
 
     *Program.cs*:
 
     [!code-csharp[Program.cs](~/samples/snippets/core/tutorials/cli-create-console-app/HelloMsBuild/csharp/Program.cs)]
 
-    Program se spustí `using System`, což znamená "přenést vše do oboru názvů `System` do rozsahu pro tento soubor". Obor názvů `System` obsahuje třídu `Console`.
+    Program začíná `using System`, což znamená "přenést `System` vše v oboru názvů do oboru pro tento soubor". Obor `System` názvů obsahuje `Console` třídu.
 
-    Pak definujeme obor názvů s názvem `Hello`. Můžete to změnit na cokoli, co potřebujete. Třída s názvem `Program` je definována v rámci tohoto oboru názvů s metodou `Main`, která přebírá pole řetězců s názvem `args`. Toto pole obsahuje seznam argumentů předaných při spuštění programu. V takovém případě se toto pole nepoužívá a program jednoduše zapisuje text "Hello World!". do konzoly. Později provedeme změny kódu, který tento argument využije.
+    Poté definujeme obor `Hello`názvů s názvem . Můžete to změnit na cokoliv chcete. Třída s `Program` názvem je definována v `Main` tomto oboru názvů s `args`metodou, která přebírá pole řetězců s názvem . Toto pole obsahuje seznam argumentů předaných při spuštění programu. Jak to je, toto pole se nepoužívá a program jednoduše zapíše text "Hello World!" „Hello, World!“. Později provedeme změny kódu, který bude používat tento argument.
 
-    `dotnet new` volá implicitně [dotnet Restore](../tools/dotnet-restore.md) . `dotnet restore` volání [NuGet](https://www.nuget.org/) (Správce balíčků .NET) pro obnovení stromu závislostí. NuGet analyzuje soubor *Hello. csproj* , stáhne závislosti definované v souboru (nebo je z mezipaměti v počítači převede) a zapíše soubor *obj/Project. assets. JSON* , který je nezbytný pro zkompilování a spuštění ukázky.
+    `dotnet new`volání [dotnet obnovit](../tools/dotnet-restore.md) implicitně. `dotnet restore`volá do [NuGet](https://www.nuget.org/) (správce balíčků.NET) k obnovení stromu závislostí. NuGet analyzuje soubor *Hello.csproj,* stáhne závislosti definované v souboru (nebo je uchopí z mezipaměti v počítači) a zapíše soubor *obj/project.assets.json,* který je nezbytný pro kompilaci a spuštění ukázky.
 
 02. `dotnet run`
 
-    [dotnet spustit](../tools/dotnet-run.md) volá [sestavení dotnet](../tools/dotnet-build.md) , aby bylo zajištěno, že cíle sestavení byly sestaveny, a poté volá `dotnet <assembly.dll>` pro spuštění cílové aplikace.
+    [dotnet spustit](../tools/dotnet-run.md) volání [dotnet sestavení](../tools/dotnet-build.md) zajistit, že cíle sestavení `dotnet <assembly.dll>` byly vytvořeny a potom volání ke spuštění cílové aplikace.
 
     ```dotnetcli
     dotnet run
     ```
 
-    Zobrazí se následující výstup.
+    Získáte následující výstup.
 
     ```console
     Hello World!
     ```
 
-    Alternativně můžete také spustit `dotnet build` pro zkompilování kódu bez spuštění konzolových aplikací sestavení. Výsledkem je kompilovaná aplikace, jako soubor DLL, na základě názvu projektu. V tomto případě se vytvoří soubor s názvem *Hello. dll*. Tuto aplikaci můžete spustit s `dotnet bin\Debug\netcoreapp3.1\Hello.dll` ve Windows (použijte `/` pro systémy jiné než Windows).
+    Alternativně můžete také `dotnet build` spustit ke kompilaci kódu bez spuštění aplikací konzoly sestavení. Výsledkem je zkompilovaná aplikace jako soubor DLL na základě názvu projektu. V tomto případě se vytvořený soubor nazývá *Hello.dll*. Tato aplikace může `dotnet bin\Debug\netcoreapp3.1\Hello.dll` být spuštěna `/` v systému Windows (použití pro systémy, které nejsou systémy Windows).
 
     ```dotnetcli
     dotnet bin\Debug\netcoreapp3.1\Hello.dll
     ```
 
-    Zobrazí se následující výstup.
+    Získáte následující výstup.
 
     ```console
     Hello World!
     ```
 
-    Když je aplikace zkompilována, byl společně s `Hello.dll`vytvořen spustitelný soubor specifický pro operační systém. V systému Windows to bude `Hello.exe`. v systému Linux nebo macOS by to bylo `hello`. S výše uvedeným příkladem je soubor pojmenován pomocí `Hello.exe` nebo `Hello`. Tento spustitelný soubor můžete spustit přímo.
+    Při kompilaci aplikace byl vytvořen spustitelný soubor specifický pro `Hello.dll`operační systém spolu s souborem . V systému Windows `Hello.exe`by to bylo ; na Linuxu nebo macOS, to by bylo `hello`. S výše uvedeným příkladem je `Hello.exe` soubor `Hello`pojmenován s nebo . Tento spustitelný soubor můžete spustit přímo.
 
     ```console
     .\bin\Debug\netcoreapp3.1\Hello.exe
@@ -96,21 +96,21 @@ Podívejme se na stručný návod:
 
 ## <a name="modify-the-program"></a>Úprava programu
 
-Pojďme program trochu změnit. Fibonacci čísla jsou zábavné, takže je přidáváme a také k použití argumentu pro přání uživatele, který aplikaci spouští.
+Pojďme trochu změnit program. Fibonaccičísla jsou zábavné, takže přidejme, že a také použít argument pozdravit osobu, která provozuje aplikaci.
 
-01. Obsah souboru *program.cs* nahraďte následujícím kódem:
+01. Nahraďte obsah *Program.cs* souboru následujícím kódem:
 
     [!code-csharp[Fibonacci](~/samples/snippets/core/tutorials/cli-create-console-app/fibonacci-msbuild/csharp/Program.cs)]
 
-02. Spusťte [sestavení dotnet](../tools/dotnet-build.md) pro zkompilování změn.
+02. Spusťte [sestavení dotnet](../tools/dotnet-build.md) a zkompilujte změny.
 
-03. Spusťte program předáním parametru do aplikace. Když použijete příkaz `dotnet` ke spuštění aplikace, přidejte `--` na konec. Cokoli napravo od `--` bude do aplikace předán jako parametr. V následujícím příkladu je hodnota `John` předána do aplikace.
+03. Spusťte program předání parametru do aplikace. Když pomocí `dotnet` příkazu spustíte aplikaci, přidejte `--` ji na konec. Cokoli vpravo `--` od bude předáno jako parametr do aplikace. V následujícím příkladu `John` je hodnota předána aplikaci.
 
     ```dotnetcli
     dotnet run -- John
     ```
 
-    Zobrazí se následující výstup.
+    Získáte následující výstup.
 
     ```console
     Hello John!
@@ -132,29 +132,29 @@ Pojďme program trochu změnit. Fibonacci čísla jsou zábavné, takže je při
     15: 377
     ```
 
-A to je vše! *Program.cs* můžete upravit jakýmkoli způsobem.
+A to je vše! Můžete *Program.cs* libovolně upravovat.
 
 ## <a name="working-with-multiple-files"></a>Práce s více soubory
 
-Jednotlivé soubory jsou pro jednoduché jednorázové programy přesné, ale pokud sestavíte komplexnější aplikaci, pravděpodobně budete mít v projektu více souborů kódu. Pojďme si vytvořit z předchozího příkladu Fibonacci ukládáním do mezipaměti některé hodnoty Fibonacci a přidat některé rekurzivní funkce.
+Jednotlivé soubory jsou v pořádku pro jednoduché jednorázové programy, ale pokud vytváříte složitější aplikaci, pravděpodobně budete mít v projektu více souborů kódu. Pojďme sestavit z předchozího příkladu Fibonacciho ukládáním některých hodnot Fibonacciho do mezipaměti a přidáním některých rekurzivních funkcí.
 
 01. Přidejte nový soubor do adresáře *Hello* s názvem *FibonacciGenerator.cs* s následujícím kódem:
 
     [!code-csharp[Fibonacci Generator](~/samples/snippets/core/tutorials/cli-create-console-app/FibonacciBetterMsBuild/csharp/FibonacciGenerator.cs)]
 
-02. Změňte metodu `Main` v souboru *program.cs* pro vytvoření instance nové třídy a zavolejte její metodu jako v následujícím příkladu:
+02. Změňte `Main` metodu v *souboru Program.cs* k vytvoření instance nové třídy a volání její metody jako v následujícím příkladu:
 
     [!code-csharp[New Program.cs](~/samples/snippets/core/tutorials/cli-create-console-app/FibonacciBetterMsBuild/csharp/Program.cs)]
 
-03. Spusťte [sestavení dotnet](../tools/dotnet-build.md) pro zkompilování změn.
+03. Spusťte [sestavení dotnet](../tools/dotnet-build.md) a zkompilujte změny.
 
-04. Spusťte aplikaci spuštěním příkazu [dotnet](../tools/dotnet-run.md).
+04. Spusťte aplikaci spuštěním [dotnet run](../tools/dotnet-run.md).
 
     ```dotnetcli
     dotnet run
     ```
 
-    Zobrazí se následující výstup.
+    Získáte následující výstup.
 
     ```console
     0
@@ -176,13 +176,13 @@ Jednotlivé soubory jsou pro jednoduché jednorázové programy přesné, ale po
 
 ## <a name="publish-your-app"></a>Publikování aplikace
 
-Až budete připraveni k distribuci vaší aplikace, pomocí příkazu [dotnet Publish](../tools/dotnet-publish.md) vygenerujte složku pro _publikování_ v _přihrádce\\ladění\\netcoreapp 3.1\\publikovat\\_ (použijte `/` pro systémy jiné než Windows). Obsah složky pro _publikování_ můžete distribuovat na jiné platformy, pokud už máte nainstalovanou modul dotnet runtime.
+Jakmile budete připraveni distribuovat aplikaci, použijte příkaz [dotnet publish](../tools/dotnet-publish.md) ke generování složky _publikování_ při _publikování\\\\\\\\ ladění aplikace netcoreapp3.1_ (používá se `/` pro systémy, které nejsou systémy Windows). Obsah složky _publikování_ můžete distribuovat na jiné platformy, pokud již nainstalovali dotnet runtime.
 
 ```dotnetcli
 dotnet publish
 ```
 
-Zobrazí se výstup podobný následujícímu.
+Získáte výstup podobný následující.
 
 ```console
 Microsoft (R) Build Engine version 16.4.0+e901037fe for .NET Core
@@ -193,21 +193,21 @@ Copyright (C) Microsoft Corporation. All rights reserved.
   Hello -> C:\Code\Temp\Hello\bin\Debug\netcoreapp3.1\publish\
 ```
 
-Výše uvedený výstup se může lišit v závislosti na vaší aktuální složce a operačním systému, výstup by měl být podobný.
+Výše uvedený výstup se může lišit v závislosti na aktuální složce a operačním systému, ale výstup by měl být podobný.
 
-Publikovanou aplikaci můžete spustit pomocí příkazu [dotnet](../tools/dotnet.md) :
+Publikovanou aplikaci můžete spustit pomocí příkazu [dotnet:](../tools/dotnet.md)
 
 ```dotnetcli
 dotnet bin\Debug\netcoreapp3.1\publish\Hello.dll
 ```
 
-Zobrazí se následující výstup.
+Získáte následující výstup.
 
 ```console
 Hello World!
 ```
 
-Jak je uvedeno na začátku tohoto článku, byl společně s `Hello.dll`vytvořen spustitelný soubor specifický pro operační systém. V systému Windows to bude `Hello.exe`. v systému Linux nebo macOS by to bylo `hello`. S výše uvedeným příkladem je soubor pojmenován pomocí `Hello.exe` nebo `Hello`. Tento publikovaný spustitelný soubor můžete spustit přímo.
+Jak již bylo zmíněno na začátku tohoto článku, byl vytvořen `Hello.dll`spustitelný soubor specifický pro operační systém spolu s souborem . V systému Windows `Hello.exe`by to bylo ; na Linuxu nebo macOS, to by bylo `hello`. S výše uvedeným příkladem je `Hello.exe` soubor `Hello`pojmenován s nebo . Tento publikovaný spustitelný soubor můžete spustit přímo.
 
 ```console
 .\bin\Debug\netcoreapp3.1\publish\Hello.exe
@@ -217,10 +217,10 @@ Hello World!
 
 ## <a name="conclusion"></a>Závěr
 
-A to je vše! Teď můžete začít používat základní koncepty, které jste zde zjistili, k vytvoření vlastních programů.
+A to je vše! Nyní můžete začít používat základní koncepty zde naučil vytvořit si vlastní programy.
 
 ## <a name="see-also"></a>Viz také
 
-- [Organizování a testování projektů pomocí .NET Core CLI](testing-with-cli.md)
-- [Publikování aplikací .NET Core pomocí .NET Core CLI](../deploying/deploy-with-cli.md)
+- [Uspořádání a testování projektů pomocí rozhraní CLI jádra .NET](testing-with-cli.md)
+- [Publikování aplikací .NET Core pomocí rozhraní CLI jádra ROZHRANÍ .NET](../deploying/deploy-with-cli.md)
 - [Nasazení aplikace .NET Core](../deploying/index.md)

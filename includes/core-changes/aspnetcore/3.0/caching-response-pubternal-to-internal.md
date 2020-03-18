@@ -1,22 +1,22 @@
 ---
 ms.openlocfilehash: ae5a5fbf97ed4a03de7d35b9d5d5ca8de3aebc39
-ms.sourcegitcommit: 2e95559d957a1a942e490c5fd916df04b39d73a9
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/16/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "72394342"
 ---
-### <a name="caching-responsecaching-pubternal-types-changed-to-internal"></a>Ukládání do mezipaměti: ResponseCaching typy "pubternal" se změnily na interní
+### <a name="caching-responsecaching-pubternal-types-changed-to-internal"></a>Ukládání do mezipaměti: ResponseCaching "pubternal" typy změněny na vnitřní
 
-V ASP.NET Core 3,0 jsou typy "pubternal" v `ResponseCaching` změněny na `internal`.
+V ASP.NET Core 3.0, "pubternal" typy v `ResponseCaching` byly změněny na `internal`.
 
-Kromě toho výchozí implementace `IResponseCachingPolicyProvider` a `IResponseCachingKeyProvider` již nejsou přidány do služeb jako součást metody `AddResponseCaching`.
+Kromě toho výchozí implementace `IResponseCachingPolicyProvider` `IResponseCachingKeyProvider` a již nejsou přidány do `AddResponseCaching` služeb jako součást metody.
 
-#### <a name="change-description"></a>Změnit popis
+#### <a name="change-description"></a>Popis změny
 
-V ASP.NET Core jsou typy "pubternal" deklarovány jako `public`, ale nacházejí se v oboru názvů s příponou `.Internal`. I když jsou tyto typy veřejné, nemají žádné zásady podpory a podléhají změnám. Omlouváme se, ale náhodné použití těchto typů je běžné, což vedlo k zásadním změnám těchto projektů a omezení schopnosti zachovat rozhraní.
+V ASP.NET Core jsou typy "pubternal" deklarovány jako, `public` ale `.Internal`jsou umístěny v oboru názvů suffixed s . Zatímco tyto typy jsou veřejné, nemají žádné zásady podpory a jsou předmětem změny. Bohužel náhodné použití těchto typů bylo běžné, což má za následek porušení změn těchto projektů a omezení schopnosti udržovat rámec.
 
-#### <a name="version-introduced"></a>Představená verze
+#### <a name="version-introduced"></a>Zavedená verze
 
 3.0
 
@@ -26,19 +26,19 @@ Tyto typy byly veřejně viditelné, ale nepodporované.
 
 #### <a name="new-behavior"></a>Nové chování
 
-Tyto typy jsou nyní `internal`.
+Tyto typy `internal`jsou nyní .
 
 #### <a name="reason-for-change"></a>Důvod změny
 
-Rozsah `internal` lépe odráží nepodporované zásady.
+Obor `internal` lépe odráží nepodporované zásady.
 
 #### <a name="recommended-action"></a>Doporučená akce
 
-Kopírování typů používaných vaší aplikací nebo knihovnou.
+Zkopírujte typy, které používá vaše aplikace nebo knihovna.
 
 #### <a name="category"></a>Kategorie
 
-ASP.NET Core
+Jádro ASP.NET
 
 #### <a name="affected-apis"></a>Ovlivněná rozhraní API
 

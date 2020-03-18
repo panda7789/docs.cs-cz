@@ -1,44 +1,44 @@
 ---
 ms.openlocfilehash: 5741e8cdd51e00d5459c4c1032a56682429aab17
-ms.sourcegitcommit: 7088f87e9a7da144266135f4b2397e611cf0a228
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/11/2020
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "75901833"
 ---
-### <a name="mvc-pubternal-types-changed-to-internal"></a>MVC: typy "Pubternal" se změnily na interní
+### <a name="mvc-pubternal-types-changed-to-internal"></a>MVC: "Pubternal" typy změněny na vnitřní
 
-V ASP.NET Core 3,0 se všechny typy "pubternal" v MVC aktualizovaly buď jako `public` v podporovaném oboru názvů, nebo v případě potřeby `internal`.
+V ASP.NET Core 3.0 byly všechny typy pubternal v MVC aktualizovány tak, aby byly `public` buď v podporovaném oboru názvů, nebo `internal` podle potřeby.
 
 #### <a name="change-description"></a>Popis změny
 
-V ASP.NET Core jsou typy "pubternal" deklarovány jako `public`, ale nacházejí se v oboru názvů `.Internal`s příponou. I když jsou tyto typy `public`, nemají žádné zásady podpory a podléhají změnám. Omlouváme se, ale náhodné použití těchto typů je běžné, což vedlo k zásadním změnám těchto projektů a omezení schopnosti zachovat rozhraní.
+V ASP.NET Core jsou typy "pubternal" deklarovány jako, `public` ale jsou umístěny v oboru názvů `.Internal`s uznanou suffixed. Zatímco tyto `public`typy jsou , nemají žádné zásady podpory a jsou předmětem změny. Bohužel náhodné použití těchto typů bylo běžné, což má za následek porušení změn těchto projektů a omezení schopnosti udržovat rámec.
 
-#### <a name="version-introduced"></a>Představená verze
+#### <a name="version-introduced"></a>Zavedená verze
 
-3,0
+3.0
 
 #### <a name="old-behavior"></a>Staré chování
 
-Některé typy v MVC byly `public`, ale v oboru názvů `.Internal`. Tyto typy neobsahovaly žádné zásady podpory a měly by podléhat nezměněným změnám.
+Některé typy v MVC `public` `.Internal` byly, ale v oboru názvů. Tyto typy neměly žádné zásady podpory a byly předmětem porušení změn.
 
 #### <a name="new-behavior"></a>Nové chování
 
-Všechny tyto typy jsou aktualizovány tak, aby byly `public` v podporovaném oboru názvů nebo označené jako `internal`.
+Všechny tyto typy jsou `public` aktualizovány buď tak, `internal`aby byly v podporovaném oboru názvů, nebo označeny jako .
 
 #### <a name="reason-for-change"></a>Důvod změny
 
-Náhodné použití typů "pubternal" bylo běžné, což vede k zásadním změnám těchto projektů a omezení schopnosti zachovat rozhraní.
+Náhodné použití typů "pubternal" bylo běžné, což vedlo k porušení změn těchto projektů a omezení schopnosti udržovat rámec.
 
 #### <a name="recommended-action"></a>Doporučená akce
 
-Pokud používáte typy, které se stanou skutečně `public` a byly přesunuty do nového podporovaného oboru názvů, aktualizujte odkazy tak, aby odpovídaly novým oborům názvů.
+Pokud používáte typy, které `public` se skutečně staly a byly přesunuty do nového podporovaného oboru názvů, aktualizujte odkazy tak, aby odpovídaly novým oborům názvů.
 
-Pokud používáte typy, které se stanou označenými jako `internal`, budete muset najít alternativu. Předchozí typy "pubternal" nebyly nikdy podporovány pro veřejné použití. Pokud existují konkrétní typy v těchto oborech názvů, které jsou pro vaše aplikace kritické, zapište problém v [dotnet/aspnetcore](https://github.com/dotnet/aspnetcore/issues). Mohou být provedeny důvody pro vytvoření požadovaných typů `public`.
+Pokud používáte typy, které byly `internal`označeny jako , budete muset najít alternativu. Dříve "pubternal" typy nebyly nikdy podporovány pro veřejné použití. Pokud existují určité typy v těchto oborech názvů, které jsou důležité pro vaše aplikace, soubor problém [na dotnet/aspnetcore](https://github.com/dotnet/aspnetcore/issues). Lze vzít v úvahu vytvoření `public`požadovaných typů .
 
 #### <a name="category"></a>Kategorie
 
-ASP.NET Core
+Jádro ASP.NET
 
 #### <a name="affected-apis"></a>Ovlivněná rozhraní API
 

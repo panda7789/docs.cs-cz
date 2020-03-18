@@ -1,90 +1,90 @@
 ---
-title: Migrace .NET Core ze služby Project. JSON
-description: Naučte se migrovat starší projekt .NET Core pomocí Project. JSON.
+title: Migrace jádra .NET z souboru project.json
+description: Zjistěte, jak migrovat starší projekt .NET Core pomocí souboru project.json
 ms.date: 07/19/2017
 ms.openlocfilehash: 8a9dc05c82fd5476a70ee36a294a287abbfb68c4
-ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/19/2020
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "77450684"
 ---
-# <a name="migrating-net-core-projects-from-projectjson"></a>Migrace projektů .NET Core ze služby Project. JSON
+# <a name="migrating-net-core-projects-from-projectjson"></a>Migrace základních projektů .NET z aplikace project.json
 
 Tento dokument popisuje následující tři scénáře migrace pro projekty .NET Core:
 
-1. [Migrace z platného nejnovějšího schématu *Project. JSON* na *csproj*](#migration-from-projectjson-to-csproj)
-2. [Migrace z DNX do csproj](#migration-from-dnx-to-csproj)
-3. [Migrace z RC3 a předchozích projektů .NET Core csproj do konečného formátu](#migration-from-earlier-net-core-csproj-formats-to-rtm-csproj)
+1. [Migrace z platného nejnovějšího schématu *project.json* na *csproj*](#migration-from-projectjson-to-csproj)
+2. [Migrace z DNX na csproj](#migration-from-dnx-to-csproj)
+3. [Přechod z RC3 a předchozích projektů .NET Core csproj do konečného formátu](#migration-from-earlier-net-core-csproj-formats-to-rtm-csproj)
 
-Tento dokument se vztahuje pouze na starší projekty .NET Core, které používají Project. JSON. Nevztahuje se na migraci z .NET Framework do .NET Core.
+Tento dokument je použitelný pouze pro starší projekty .NET Core, které používají project.json. Nevztahuje se na migraci z rozhraní .NET Framework na .NET Core.
 
-## <a name="migration-from-projectjson-to-csproj"></a>Migrace z Project. JSON na csproj
+## <a name="migration-from-projectjson-to-csproj"></a>Migrace z project.json na csproj
 
-Migraci z *Project. JSON* na *. csproj* lze provést pomocí jedné z následujících metod:
+Přechod z *project.json* na *.csproj* lze provést pomocí jedné z následujících metod:
 
 - [Visual Studio](#visual-studio)
-- [Nástroj příkazového řádku dotnet pro migraci](#dotnet-migrate)
+- [nástroj příkazového řádku dotnet migrate](#dotnet-migrate)
 
-Obě metody používají stejný základní modul pro migraci projektů, takže výsledky budou stejné pro obě. Ve většině případů jedním z těchto dvou způsobů, jak migrovat soubor *Project. JSON* na *csproj* , je jediná věc, kterou potřebujete, a není nutné provádět žádné další ruční úpravy souboru projektu. Výsledný soubor *. csproj* bude pojmenován stejně jako obsahující název adresáře.
+Obě metody používají stejný základní modul pro migraci projektů, takže výsledky budou stejné pro oba. Ve většině případů pomocí jednoho z těchto dvou způsobů migrace *project.json* na *csproj* je jediná věc, která je potřeba, a žádné další ruční úpravy souboru projektu je nutné. Výsledný soubor *.csproj* bude pojmenován stejně jako obsahující název adresáře.
 
 ### <a name="visual-studio"></a>Visual Studio
 
-Po otevření souboru *. xproj* nebo souboru řešení, který odkazuje na soubory *. xproj* v aplikaci Visual Studio 2017 nebo visual Studio 2019 verze 16,2 a starší se zobrazí dialogové okno **jednosměrného upgradu** . V dialogovém okně se zobrazí projekty, které mají být migrovány. Pokud otevřete soubor řešení, zobrazí se všechny projekty zadané v souboru řešení. Zkontrolujte seznam projektů, které chcete migrovat, a vyberte **OK**.
+Když otevřete soubor *.xproj* nebo soubor řešení, který odkazuje na soubory *.xproj* v sadě Visual Studio 2017 nebo Visual Studio 2019 verze 16.2 a starší, zobrazí se dialogové okno **jednosměrného upgradu.** V dialogovém okně se zobrazí projekty, které mají být migrovány. Pokud otevřete soubor řešení, jsou uvedeny všechny projekty zadané v souboru řešení. Zkontrolujte seznam projektů, které mají být migrovány, a vyberte **ok**.
 
-![Dialog s jednosměrným upgradem zobrazující seznam projektů, které se mají migrovat](media/one-way-upgrade.jpg)
+![Dialogové okno jednosměrného upgradu se seznamem projektů, které mají být migrovány](media/one-way-upgrade.jpg)
 
-Visual Studio automaticky migruje vybrané projekty. Pokud při migraci řešení nezvolíte možnost všechny projekty, zobrazí se stejné dialogové okno s výzvou k upgradu zbývajících projektů z tohoto řešení. Po dokončení migrace projektu můžete zobrazit a upravit jeho obsah tak, že kliknete pravým tlačítkem myši na projekt v okně **Průzkumník řešení** a vyberete **Upravit \<název projektu >. csproj**.
+Visual Studio migruje vybrané projekty automaticky. Při migraci řešení, pokud nevyberete všechny projekty, se zobrazí stejné dialogové okno s žádostí o upgrade zbývajících projektů z tohoto řešení. Po migraci projektu můžete zobrazit a upravit jeho obsah klepnutím pravým tlačítkem myši na projekt v okně **Průzkumník řešení** a výběrem **možnosti Upravit \<název projektu>.csproj**.
 
-Migrované soubory (*Project. JSON*, *Global. JSON*, *. xproj*a soubor řešení) se přesunou do složky *zálohy* . Migrovaný soubor řešení je upgradován na Visual Studio 2017 nebo Visual Studio 2019 a nebudete moci otevřít tento soubor řešení v aplikaci Visual Studio 2015 nebo starší verze. Soubor s názvem *UpgradeLog. htm* , který obsahuje sestavu migrace, se také ukládá a otevírá automaticky.
+Přenesené soubory *(project.json*, *global.json*, *.xproj*a soubor řešení) jsou *přesunuty* do složky Backup. Soubor přeneseného řešení se upgraduje na Visual Studio 2017 nebo Visual Studio 2019 a tento soubor řešení nebudete moct otevřít v visual tase 2015 nebo starších verzích. Soubor s názvem *UpgradeLog.htm,* který obsahuje sestavu migrace je také uložen a otevřen automaticky.
 
 > [!IMPORTANT]
-> V aplikaci Visual Studio 2019 verze 16,3 a novější nelze načíst nebo migrovat soubor *. xproj* . Kromě toho Visual Studio 2015 neposkytuje možnost migrovat soubor *. xproj* . Pokud používáte jednu z těchto verzí sady Visual Studio, buď nainstalujte vhodnou verzi sady Visual Studio, nebo použijte nástroj pro migraci z příkazového řádku, který je popsán dále.
+> Ve Visual Studiu 2019 verze 16.3 a novějších nelze načíst nebo migrovat soubor *.xproj.* Visual Studio 2015 navíc neposkytuje možnost migrace souboru *.xproj.* Pokud používáte některou z těchto verzí sady Visual Studio, nainstalujte vhodnou verzi sady Visual Studio nebo použijte nástroj pro migraci příkazového řádku, který je popsán dále.
 
 ### <a name="dotnet-migrate"></a>dotnet migrate
 
-Ve scénáři příkazového řádku můžete použít příkaz [`dotnet migrate`](../tools/dotnet-migrate.md) . Migruje projekt, řešení nebo sadu složek v tomto pořadí v závislosti na tom, které z nich byly nalezeny. Při migraci projektu se migruje projekt a všechny jeho závislosti.
+Ve scénáři příkazového řádku můžete [`dotnet migrate`](../tools/dotnet-migrate.md) použít příkaz. Migruje projekt, řešení nebo sadu složek v tomto pořadí, v závislosti na tom, které byly nalezeny. Při migraci projektu se migruje projekt a všechny jeho závislosti.
 
-Migrované soubory (*Project. JSON*, *Global. JSON*a *. xproj*) se přesunou do složky *zálohy* .
+Přenesené soubory *(project.json*, *global.json*a *.xproj*) jsou přesunuty do *záložní* složky.
 
 > [!NOTE]
-> Pokud používáte Visual Studio Code, příkaz `dotnet migrate` neupraví soubory specifické pro Visual Studio Code, jako je *Tasks. JSON*. Tyto soubory je třeba změnit ručně.
-> To platí také v případě, že používáte editor nebo integrované vývojové prostředí (IDE) jiné než Visual Studio.
+> Pokud používáte visual studio `dotnet migrate` kód, příkaz nemění Soubory specifické pro kód sady Visual Studio, jako je *například tasks.json*. Tyto soubory je třeba změnit ručně.
+> To platí také, pokud používáte editor nebo integrované vývojové prostředí (IDE) než Visual Studio.
 
-Prohlédněte si [mapování mezi vlastnostmi Project. JSON a csproj](../tools/project-json-to-csproj.md) pro porovnání formátů *Project. JSON* a *. csproj* .
+Porovnání formátů *project.json* a *.csproj* naleznete v [tématu Mapování mezi vlastnostmi project.json a csproj.](../tools/project-json-to-csproj.md)
 
 Pokud se zobrazí chyba:
 
-> Nenašel se žádný spustitelný soubor, který by odpovídal příkazu dotnet – migrace.
+> Nebyl nalezen žádný spustitelný soubor odpovídající příkaz dotnet-migrate
 
-Spuštěním `dotnet --version` zobrazíte verzi, kterou používáte. [`dotnet migrate`](../tools/dotnet-migrate.md) byla představena v .NET Core SDK 1.0.0 a odebrána ve verzi 3.0.100.
-Tato chyba se zobrazí, pokud máte soubor *Global. JSON* v aktuálním nebo nadřazeném adresáři a verze `sdk`, kterou Určuje, je mimo tento rozsah.
+Spuštěním `dotnet --version` zobrazíte, kterou verzi používáte. [`dotnet migrate`](../tools/dotnet-migrate.md)byl zaveden v .NET Core SDK 1.0.0 a odebrán ve verzi 3.0.100.
+Tato chyba se zobrazí, pokud máte soubor *global.json* v aktuálním `sdk` nebo nadřazeném adresáři a verze, kterou určuje, je mimo tento rozsah.
 
-## <a name="migration-from-dnx-to-csproj"></a>Migrace z DNX do csproj
+## <a name="migration-from-dnx-to-csproj"></a>Migrace z DNX na csproj
 
-Pokud stále používáte DNX pro vývoj v .NET Core, proces migrace by se měl provádět ve dvou fázích:
+Pokud stále používáte DNX pro vývoj jádra .NET, proces migrace by měl být proveden ve dvou fázích:
 
-1. Použijte [stávající pokyny k migraci DNX](from-dnx.md) k migraci z DNX na rozhraní PŘÍKAZového řádku s povoleným formátem JSON pro Project.
-2. Postupujte podle kroků z předchozí části a migrujte z *Project. JSON* na *. csproj*.
+1. Pomocí [existujících pokynů pro migraci DNX](from-dnx.md) migrujte z rozhraní cli s podporou projektu-json.
+2. Podle pokynů z předchozí části migrujte z *souboru project.json* na *soubor .csproj*.
 
 > [!NOTE]
-> DNX se oficiálně zastaralá během vydání verze Preview 1 .NET Core CLI.
+> DNX se stala oficiálně zastaralé během verze Preview 1 rozhraní CLI .NET Core.
 
-## <a name="migration-from-earlier-net-core-csproj-formats-to-rtm-csproj"></a>Migrace z dřívějších formátů .NET Core csproj do RTM csproj
+## <a name="migration-from-earlier-net-core-csproj-formats-to-rtm-csproj"></a>Migrace z dřívějších formátů csproj .NET Core do RTM csproj
 
-Formát .NET Core csproj se mění a vyvíjí u každé nové předběžné verze nástrojů. Neexistuje žádný nástroj, který by migrovali soubor projektu z dřívějších verzí sady csproj na nejnovější, takže je nutné ručně upravit soubor projektu. Skutečný postup závisí na verzi souboru projektu, který migrujete. Níže jsou uvedeny pokyny, které je třeba vzít v úvahu v závislosti na změnách, ke kterým došlo mezi verzemi:
+Formát .NET Core csproj se mění a vyvíjí s každou novou předběžnou verzí nástroje. Neexistuje žádný nástroj, který bude migrovat soubor projektu z dřívějších verzí csproj na nejnovější, takže je třeba ručně upravit soubor projektu. Skutečné kroky závisí na verzi souboru projektu, který migrujete. Následuje některé pokyny, které je třeba zvážit na základě změn, ke kterým došlo mezi verzemi:
 
-- Odeberte vlastnost verze nástrojů z prvku `<Project>`, pokud existuje.
-- Z `<Project>` elementu odeberte obor názvů XML (`xmlns`).
-- Pokud neexistuje, přidejte atribut `Sdk` do prvku `<Project>` a nastavte jej na `Microsoft.NET.Sdk` nebo `Microsoft.NET.Sdk.Web`. Tento atribut určuje, že projekt používá sadu SDK, která má být použita. `Microsoft.NET.Sdk.Web` se používá pro webové aplikace.
-- Odeberte příkazy `<Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" />` a `<Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />` z horního a dolního okraje projektu. Tyto příkazy import jsou odvozeny v sadě SDK, takže není nutné, aby byly v projektu.
-- Pokud máte v projektu `Microsoft.NETCore.App` nebo `NETStandard.Library` `<PackageReference>` položky, měli byste je odebrat. Tyto odkazy na balíčky jsou [odvozeny v sadě SDK](https://aka.ms/sdkimplicitrefs).
-- Odeberte prvek `Microsoft.NET.Sdk` `<PackageReference>`, pokud existuje. Odkaz na sadu SDK přichází prostřednictvím atributu `Sdk` u elementu `<Project>`.
-- Odeberte [globy](https://en.wikipedia.org/wiki/Glob_(programming)) , které jsou [zahrnuté v sadě SDK](../project-sdk/overview.md#default-compilation-includes). Ponecháním těchto globy ve vašem projektu dojde k chybě při sestavování, protože položky kompilace budou duplikovány.
+- Odeberte vlastnost verze `<Project>` nástrojů z prvku, pokud existuje.
+- Odeberte z`xmlns`elementu `<Project>` obor názvů XML ( ).
+- Pokud neexistuje, přidejte `Sdk` atribut do `<Project>` prvku a nastavte `Microsoft.NET.Sdk` `Microsoft.NET.Sdk.Web`jej na nebo . Tento atribut určuje, že projekt používá sadu SDK, která má být použita. `Microsoft.NET.Sdk.Web`se používá pro webové aplikace.
+- Odeberte příkazy `<Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" />` a `<Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />` z horní a dolní části projektu. Tyto příkazy importu jsou implicitní sadou SDK, takže není nutné, aby byly v projektu.
+- Pokud máte `Microsoft.NETCore.App` `NETStandard.Library` `<PackageReference>` nebo položky v projektu, měli byste je odebrat. Tyto odkazy na balíček jsou [implikovány sadou SDK](https://aka.ms/sdkimplicitrefs).
+- `Microsoft.NET.Sdk` `<PackageReference>` Odeberte prvek, pokud existuje. Odkaz sady SDK `Sdk` prochází atributem na `<Project>` prvku.
+- Odeberte [globs,](https://en.wikipedia.org/wiki/Glob_(programming)) které jsou [implikovány sadou SDK](../project-sdk/overview.md#default-compilation-includes). Ponechání těchto globs v projektu způsobí chybu na sestavení, protože kompilace položky budou duplikovány.
 
-Po provedení těchto kroků by váš projekt měl být plně kompatibilní s formátem RTM .NET Core csproj.
+Po těchto krocích by měl být projekt plně kompatibilní s formátem CSProJ RTM .NET Core.
 
-Příklady před a po migraci ze starého formátu csproj na nový najdete v článku [aktualizace nástrojů pro vylepšení sady Visual Studio 2017 RC – .NET Core](https://devblogs.microsoft.com/dotnet/updating-visual-studio-2017-rc-net-core-tooling-improvements/) na blogu .NET.
+Příklady před a po migraci ze starého formátu csproj do nového, naleznete [v aktualizaci Visual Studio 2017 RC – .NET Core Tooling vylepšení](https://devblogs.microsoft.com/dotnet/updating-visual-studio-2017-rc-net-core-tooling-improvements/) článku na blogu .NET.
 
 ## <a name="see-also"></a>Viz také
 

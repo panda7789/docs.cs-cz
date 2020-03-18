@@ -1,86 +1,86 @@
 ---
-title: Zahození – C# Průvodce
-description: Popisuje C#podporu pro zahození, které jsou nepřiřazené, hodíelné proměnné a způsoby, jak je možné je použít.
+title: Zahodit - Průvodce C#
+description: Popisuje podporu jazyka C#' pro zahození, které jsou nepřiřazené, zahoditelné proměnné a způsoby, ve kterém lze použít zahození.
 ms.technology: csharp-fundamentals
 ms.date: 07/21/2017
 ms.openlocfilehash: a76e7fc13f92ec0de87153bb35eb3924bb317616
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "73100642"
 ---
-# <a name="discards---c-guide"></a>Zahození – C# Průvodce
+# <a name="discards---c-guide"></a>Zahodit - Průvodce C#
 
-Počínaje C# 7,0 C# podporuje zahození, což jsou dočasné a fiktivní proměnné, které jsou záměrně nepoužívané v kódu aplikace. Zahození jsou ekvivalentní nepřiřazeným proměnným; nemají hodnotu. Vzhledem k tomu, že existuje pouze jedna proměnná zahození a tato proměnná nesmí být přidělena jako úložiště, zrušení zahození může snížit přidělení paměti. Vzhledem k tomu, že záměr vašeho kódu je jasný, zvyšují jeho čitelnost a udržovatelnost.
+Počínaje C# 7.0, C# podporuje zahodí, které jsou dočasné, fiktivní proměnné, které jsou záměrně nepoužívané v kódu aplikace. Zahodity jsou ekvivalentní nepřiřazené proměnné; nemají hodnotu. Vzhledem k tomu, že existuje pouze jedna proměnná prohození a tato proměnná nemusí být ani přidělena úložiště, zahodí může snížit přidělení paměti. Vzhledem k tomu, že záměr vašeho kódu jasné, zvyšují jeho čitelnost a udržovatelnost.
 
-Označíte, že proměnná je zahozena přiřazením podtržítka (`_`) jako názvu. Například následující volání metody vrací 3-Tuple, ve kterém jsou první a druhé hodnoty zahozeny a *oblast* je dřív deklarovaná proměnná, která má být nastavena na odpovídající třetí komponentu vrácenou *GetCityInformation*:
+Můžete označit, že proměnná je zahození`_`přiřazením podtržítko ( ) jako jeho název. Například následující volání metody vrátí 3-n-tice, ve kterém první a druhé hodnoty jsou zahodí a *oblast* je dříve deklarované proměnné, které mají být nastaveny na odpovídající třetí součást vrácené *GetCityInformation*:
 
 ```csharp
 (_, _, area) = city.GetCityInformation(cityName);
 ```
 
-V C# rámci přiřazení v následujících kontextech jsou zahozena 7,0:
+V c# 7.0 zahození jsou podporovány v přiřazení v následujících kontextech:
 
-- Řazená kolekce členů a [dekonstrukce](deconstruct.md)objektu.
-- Porovnávání vzorů s [je](language-reference/keywords/is.md) a [Switch](language-reference/keywords/switch.md).
-- Volá metody s parametry `out`.
-- Samostatný `_`, pokud není v oboru žádné `_`.
+- N-tice a [objekt dekonstrukce](deconstruct.md).
+- Porovnávání vzorů s [je](language-reference/keywords/is.md) a [přepínač](language-reference/keywords/switch.md).
+- Volání metod `out` s parametry.
+- Samostatný, `_` pokud `_` ne je v oboru.
 
-Pokud je `_` platným zahozením, pokus o načtení jeho hodnoty nebo jeho použití v operaci přiřazení generuje chybu kompilátoru CS0301, název\_v aktuálním kontextu neexistuje. Důvodem je to, že `_` nemá přiřazenou hodnotu a nemusí být ani přiřazeno umístění úložiště. Pokud se jednalo o skutečnou proměnnou, nemůžete zahodit více než jednu hodnotu, protože předchozí příklad proběhl.
+Pokud `_` je platný zahození, pokus o načtení jeho hodnoty nebo použít v operaci přiřazení generuje\_chybu kompilátoru CS0301, "Název ' ' neexistuje v aktuálním kontextu". Důvodem `_` je, že není přiřazena hodnota a nemusí být ani přiřazeno umístění úložiště. Pokud se jednalo o skutečnou proměnnou, nelze zahodit více než jednu hodnotu, jako tomu bylo v předchozím příkladu.
 
-## <a name="tuple-and-object-deconstruction"></a>Tuple a dekonstrukce objektu
+## <a name="tuple-and-object-deconstruction"></a>N-tice a dekonstrukce objektů
 
-Zahození jsou zvláště užitečné při práci s řazenými kolekcemi členů, když kód aplikace používá některé prvky řazené kolekce členů, ale ignoruje jiné. Například následující metoda `QueryCityDataForYears` vrátí 6-řazené kolekce členů s názvem města, jeho oblastí, rokem, populacem města pro daný rok, druhým rokem a plněním města pro daný druhý rok. V tomto příkladu se zobrazuje změna populace mezi těmito dvěma roky. Z dat, která jsou k dispozici v rámci řazené kolekce členů, jsme nevěděli s oblastí město a znali jsme název města a dvě datum v době návrhu. V důsledku toho se zajímá jenom o dvě hodnoty populace uložené v řazené kolekci členů a můžou své zbývající hodnoty zpracovat jako zahozené.  
+Zahodí jsou užitečné zejména při práci s řazené kolekce členů, když kód aplikace používá některé prvky řazené kolekce členů, ale ignoruje ostatní. Například následující `QueryCityDataForYears` metoda vrátí 6-n-tice s názvem města, jeho oblast, rok, město populace pro tento rok, druhý rok, a populace města pro tento druhý rok. Příklad ukazuje změnu počtu obyvatel mezi těmito dvěma roky. Z údajů dostupných z řazené kolekce členů se nestaráme o městskou oblast a známe název města a dvě data v době návrhu. V důsledku toho nás zajímají pouze dvě hodnoty základního souboru uložené v řazené kolekce členů a mohou zpracovat jeho zbývající hodnoty jako zahození.  
 
 [!code-csharp[Tuple-discard](../../samples/snippets/csharp/programming-guide/deconstructing-tuples/discard-tuple1.cs)]
 
-Další informace o dekonstrukci řazených kolekcí členů pomocí výmětů naleznete v tématu [dekonstrukce řazených kolekcí členů a dalších typů](deconstruct.md#deconstructing-tuple-elements-with-discards).
+Další informace o deconstructing řazené kolekce členů s výtažky, naleznete v [tématu Deconstructing řazené kolekce členů a další typy](deconstruct.md#deconstructing-tuple-elements-with-discards).
 
-Metoda `Deconstruct` třídy, struktury nebo rozhraní také umožňuje načíst a dekonstruovat konkrétní sadu dat z objektu. Pokud vás zajímá, že pracujete jenom s podmnožinou dekonstruovaných hodnot, můžete zahození použít. Následující příklad dekonstruuje objekt `Person` do čtyř řetězců (křestní jméno a příjmení, město a stav), ale zahodí příjmení a stav.
+Metoda `Deconstruct` třídy, struktury nebo rozhraní také umožňuje načíst a dekonstruovat konkrétní sadu dat z objektu. Zahodity můžete použít, pokud máte zájem pracovat pouze s podmnožinou deconstructed hodnot. Následující příklad dekonstruuje `Person` objekt do čtyř řetězců (křestní jméno a příjmení, město a stát), ale zahodí příjmení a stav.
 
 [!code-csharp[Class-discard](../../samples/snippets/csharp/programming-guide/deconstructing-tuples/class-discard1.cs)]
 
-Další informace o dekonstrukci uživatelsky definovaných typů pomocí zahození naleznete v tématu [dekonstrukce řazených kolekcí členů a dalších typů](deconstruct.md#deconstructing-a-user-defined-type-with-discards).
+Další informace o dekonstrukci uživatelem definované typy s zahození, naleznete v [tématu Deconstructing řazené kolekce členů a další typy](deconstruct.md#deconstructing-a-user-defined-type-with-discards).
 
-## <a name="pattern-matching-with-switch-and-is"></a>Porovnávání vzorů s `switch` a `is`
+## <a name="pattern-matching-with-switch-and-is"></a>Porovnávání `switch` vzorů s a`is`
 
-*Vzor zahození* lze použít při porovnávání vzorů s klíčovým slovem [is](language-reference/keywords/is.md) a [Switch](language-reference/keywords/switch.md) . Každý výraz vždy odpovídá vzoru zahození.
+Vzorek *zahození* lze použít v porovnávání vzorů s klíčovými slovy [is](language-reference/keywords/is.md) a [switch.](language-reference/keywords/switch.md) Každý výraz vždy odpovídá vzoru zahození.
 
-Následující příklad definuje metodu `ProvidesFormatInfo`, [která používá příkazy, k určení](language-reference/keywords/is.md) , zda objekt poskytuje <xref:System.IFormatProvider> implementaci a testuje, zda je objekt `null`. Používá také vzor zahození pro zpracování objektů jiného typu, které nejsou null.
+Následující příklad definuje `ProvidesFormatInfo` metodu, která používá [příkazy](language-reference/keywords/is.md) is <xref:System.IFormatProvider> k určení, zda `null`objekt poskytuje implementaci a testuje, zda je objekt . Používá také vzorek zahození ke zpracování objektů jiného typu, které nejsou null.
 
 [!code-csharp[discard-pattern](../../samples/snippets/csharp/programming-guide/discards/discard-pattern2.cs)]
 
-## <a name="calls-to-methods-with-out-parameters"></a>Volání metod s výstupními parametry
+## <a name="calls-to-methods-with-out-parameters"></a>Volání metod s out parametry
 
-Při volání metody `Deconstruct` pro dekonstrukci uživatelsky definovaného typu (instance třídy, struktury nebo rozhraní) můžete zahodit hodnoty jednotlivých argumentů `out`. Ale při volání libovolné metody s parametrem out můžete také zahodit hodnotu `out` argumenty.
+Při volání `Deconstruct` metody dekonstruovat uživatelem definovaný typ (instance třídy, struktury nebo rozhraní) `out` můžete zahodit hodnoty jednotlivých argumentů. Ale můžete také zahodit `out` hodnotu argumentů při volání libovolné metody s out parametr.
 
-Následující příklad volá metodu [DateTime. TryParse (String, out DateTime)](<xref:System.DateTime.TryParse(System.String,System.DateTime@)>) k určení, zda řetězcové vyjádření data je platné v aktuální jazykové verzi. Vzhledem k tomu, že se jedná o příklad pouze při ověřování řetězce data a nikoli při jeho analýze pro extrakci data, argument `out` metody je zahození.
+Následující příklad volá [Metodu DateTime.TryParse(String, out DateTime)](<xref:System.DateTime.TryParse(System.String,System.DateTime@)>) k určení, zda je řetězcová reprezentace data platná v aktuální jazykové verzi. Vzhledem k tomu, že se příklad týká pouze ověřování řetězce data a `out` nikoli jeho analýzy za účelem extrahování data, argument metody je zahození.
 
 [!code-csharp[discard-with-out](../../samples/snippets/csharp/programming-guide/discards/discard-out1.cs)]
 
-## <a name="a-standalone-discard"></a>Samostatné zahození
+## <a name="a-standalone-discard"></a>Samostatný výmět
 
-Samostatné zahození můžete použít k označení všech proměnných, které se rozhodnete ignorovat. Následující příklad používá samostatné zahození pro ignorování objektu <xref:System.Threading.Tasks.Task> vráceného asynchronní operací. To má dopad na potlačení výjimky, kterou operace vyvolá, protože se chystá její dokončení.
+Samostatné zahození můžete použít k označení libovolné proměnné, kterou se rozhodnete ignorovat. Následující příklad používá samostatné zahození <xref:System.Threading.Tasks.Task> ignorovat objekt vrácený asynchronní operace. To má za následek potlačení výjimky, která operace vyvolá, jak se chystá dokončit.
 
 [!code-csharp[standalone-discard](../../samples/snippets/csharp/programming-guide/discards/standalone-discard1.cs)]
 
-Všimněte si, že `_` je také platný identifikátor. Pokud se používá mimo podporovaný kontext, `_` se považuje za zahození, ale jako platnou proměnnou. Pokud je v oboru již identifikátor s názvem `_`, použití `_` jako samostatné zahození může mít za následek:
+Všimněte `_` si, že je také platný identifikátor. Při použití mimo podporovaný `_` kontext, je považován za zahození, ale jako platná proměnná. Pokud je `_` identifikátor s názvem již `_` v oboru, použití jako samostatné zahození může mít za následek:
 
-- Náhodné úpravy hodnoty proměnné `_` v oboru přiřazením hodnoty zamýšleného zahození. Příklad:
+- Náhodná změna hodnoty proměnné in-scope `_` přiřazením hodnoty zamýšleného zahození. Například:
 
    [!code-csharp[standalone-discard](../../samples/snippets/csharp/programming-guide/discards/standalone-discard2.cs#1)]
 
-- Chyba kompilátoru pro porušení bezpečnosti typů. Příklad:
+- Chyba kompilátoru pro porušení bezpečnosti typů. Například:
 
    [!code-csharp[standalone-discard](../../samples/snippets/csharp/programming-guide/discards/standalone-discard2.cs#2)]
 
-- Chyba kompilátoru CS0136, v tomto oboru nelze deklarovat místní nebo parametr s názvem\_, protože tento název se používá v nadřazeném místním oboru pro definování místní proměnné nebo parametru. Příklad:
+- Chyba kompilátoru CS0136, "Místní\_nebo parametr s názvem ' ' nelze deklarovat v tomto oboru, protože tento název se používá v ohraničujícím místním oboru k definování místního nebo parametru." Například:
 
    [!code-csharp[standalone-discard](../../samples/snippets/csharp/programming-guide/discards/standalone-discard2.cs#3)]
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Dekonstrukce řazených kolekcí členů a dalších typů](deconstruct.md)
-- [`is` – klíčové slovo](language-reference/keywords/is.md)
-- [`switch` – klíčové slovo](language-reference/keywords/switch.md)
+- [`is`Klíčové slovo](language-reference/keywords/is.md)
+- [`switch`Klíčové slovo](language-reference/keywords/switch.md)

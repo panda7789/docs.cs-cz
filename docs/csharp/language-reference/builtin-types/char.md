@@ -1,5 +1,5 @@
 ---
-title: typ znaku – C# odkaz
+title: typ znaku – odkaz jazyka C#
 ms.date: 11/22/2019
 f1_keywords:
 - char
@@ -7,55 +7,55 @@ f1_keywords:
 helpviewer_keywords:
 - char data type [C#]
 ms.assetid: b51cf4fb-124c-4067-af48-afbac122b228
-ms.openlocfilehash: a5aca12e4037d517c3bcfb403c990605a052d48f
-ms.sourcegitcommit: 43d10ef65f0f1fd6c3b515e363bde11a3fcd8d6d
+ms.openlocfilehash: c4e29e6437edfe549b36a04a2050f63caa0d3d2a
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/03/2020
-ms.locfileid: "78239843"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "78846519"
 ---
-# <a name="char-c-reference"></a>char (C# Referenční dokumentace)
+# <a name="char-c-reference"></a>char (odkaz C#)
 
-Klíčové slovo Type `char` je alias pro typ struktury <xref:System.Char?displayProperty=nameWithType> .NET, který představuje znak Unicode UTF-16.
+Klíčové `char` slovo type je alias <xref:System.Char?displayProperty=nameWithType> pro typ struktury .NET, který představuje znak Unicode UTF-16.
 
 |Typ|Rozsah|Velikost|Typ .NET|
 |----------|-----------|----------|-------------------------|
-|`char`|U + 0000 až U + FFFF|16 bitů|<xref:System.Char?displayProperty=nameWithType>|
+|`char`|U+0000 až U+FFFF|16 bitů|<xref:System.Char?displayProperty=nameWithType>|
 
-Výchozí hodnota typu `char` je `\0`, tedy U + 0000.
+Výchozí hodnota `char` typu je `\0`, to znamená U + 0000.
 
-Typ [řetězce](reference-types.md#the-string-type) představuje text jako posloupnost hodnot `char`.
+Typ [řetězce](reference-types.md#the-string-type) představuje text jako `char` posloupnost hodnot.
 
 ## <a name="literals"></a>Literály
 
-`char` hodnotu můžete zadat pomocí:
+Hodnotu `char` můžete zadat pomocí:
 
-- znakový literál.
-- řídicí sekvence Unicode, která je `\u` následovaná hexadecimálním znázorněním kódu znaku se čtyřmi symboly.
-- šestnáctková řídicí sekvence, která je `\x` následovaná hexadecimálním znázorněním kódu znaku.
+- znak literál.
+- řídicí sekvence Unicode, `\u` po níž následuje šestnáctková reprezentace znakového kódu se čtyřmi symboly.
+- šestnáctková escape sekvence, `\x` po které následuje šestnáctkové znázornění znakového kódu.
 
-[!code-csharp-interactive[char literals](~/samples/snippets/csharp/language-reference/builtin-types/CharType.cs#Literals)]
+[!code-csharp-interactive[char literals](snippets/CharType.cs#Literals)]
 
-Jak ukazuje předchozí příklad, můžete také přetypovat hodnotu kódu znaku na odpovídající `char`ovou hodnotu.
+Jak ukazuje předchozí příklad, můžete také přetypovat hodnotu `char` kódu znaku do odpovídající hodnoty.
 
 > [!NOTE]
-> V případě řídicí sekvence Unicode je nutné zadat všechny čtyři šestnáctkové číslice. To znamená, že `\u006A` je platná řídicí sekvence, zatímco `\u06A` a `\u6A` nejsou platné.
+> V případě sekvence escape Unicode je nutné zadat všechny čtyři šestnáctkové číslice. To znamená, `\u006A` že je platná `\u06A` `\u6A` sekvence escape, zatímco a nejsou platné.
 >
-> V případě hexadecimální sekvence escape můžete vynechat úvodní nuly. To znamená, že řídicí sekvence `\x006A`, `\x06A`a `\x6A` jsou platné a odpovídají stejnému znaku.
+> V případě šestnáctkové únikové sekvence můžete vynechat úvodní nuly. To znamená `\x006A`, `\x06A`, `\x6A` a escape sekvence jsou platné a odpovídají stejnému znaku.
 
 ## <a name="conversions"></a>Převody
 
-`char` typ je implicitně převoditelný na následující [celočíselné](integral-numeric-types.md) typy: `ushort`, `int`, `uint`, `long`a `ulong`. Je také implicitně převoditelná na předdefinované číselné typy s [plovoucí desetinnou](floating-point-numeric-types.md) čárkou: `float`, `double`a `decimal`. Je explicitně převoditelná na `sbyte`, `byte`a `short` integrálních typů.
+Typ `char` je implicitně převoditelný na `int`následující `uint` `long` [integrální](integral-numeric-types.md) typy: `ushort`, , , a `ulong`. Je také implicitně převoditelný na předdefinované číselné `float` `double`typy `decimal` [s plovoucí desetinnou desetinnou desetinnou desetinnou hodnotou:](floating-point-numeric-types.md) , , a . Je explicitně převoditelný na `sbyte`, `byte`a `short` integrální typy.
 
-Neexistují žádné implicitní převody z jiných typů na typ `char`. Jakýkoli [celočíselný](integral-numeric-types.md) typ nebo číslo [s plovoucí desetinnou](floating-point-numeric-types.md) čárkou však lze explicitně převést na `char`.
+Neexistují žádné implicitní převody z `char` jiných typů na typ. Všechny [integrální](integral-numeric-types.md) nebo [plovoucí desetinné](floating-point-numeric-types.md) číselné typy je však explicitně převodonvertorní na `char`.
 
 ## <a name="c-language-specification"></a>specifikace jazyka C#
 
-Další informace naleznete v části [celočíselné typy](~/_csharplang/spec/types.md#integral-types) [ C# specifikace jazyka](~/_csharplang/spec/introduction.md).
+Další informace naleznete [v](~/_csharplang/spec/types.md#integral-types) části Integral types ve [specifikaci jazyka C#](~/_csharplang/spec/introduction.md).
 
 ## <a name="see-also"></a>Viz také
 
-- [C#odkaz](../index.md)
+- [Referenční dokumentace k jazyku C#](../index.md)
 - [Typy hodnot](value-types.md)
 - [Řetězce](../../programming-guide/strings/index.md)
 - <xref:System.Text.Rune?displayProperty=nameWithType>

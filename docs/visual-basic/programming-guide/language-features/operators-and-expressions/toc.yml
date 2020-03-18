@@ -7,7 +7,7 @@
       href: arithmetic-operators.md
     - name: Operátory porovnání
       href: comparison-operators.md
-    - name: 'Postupy: Test, jestli jsou dva objekty stejné'
+    - name: 'Postupy: Test, zda jsou dva objekty stejné.'
       href: how-to-test-whether-two-objects-are-the-same.md
     - name: 'Postupy: Porovnání řetězce se vzorem'
       href: how-to-match-a-string-against-a-pattern.md

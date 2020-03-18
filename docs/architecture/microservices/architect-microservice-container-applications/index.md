@@ -1,32 +1,32 @@
 ---
-title: Architekty aplikací založených na kontejnerech a mikroslužbách
-description: Navrhování kontejnerů a aplikací založených na mikroslužbách není nijak malé Feat a neměli byste je považovat za lehce. Seznamte se se základními koncepty v této kapitole.
+title: Navrhování kontejnerů a aplikací založených na mikroslužbách
+description: Navrhování kontejneru a aplikace založené na mikroslužbách není malý výkon a neměly by být brány na lehkou váhu. Naučte se základní pojmy v této kapitole.
 ms.date: 09/20/2018
 ms.openlocfilehash: aff30c907f1140b94dbcae330ed7cb633b0a744b
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/30/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "70295516"
 ---
-# <a name="architecting-container-and-microservice-based-applications"></a>Architekty aplikací založených na kontejnerech a mikroslužbách
+# <a name="architecting-container-and-microservice-based-applications"></a>Navrhování kontejnerů a aplikací založených na mikroslužbách
 
-*Mikroslužby nabízejí skvělé výhody, ale také vyvolává velké nové problémy. Modely architektury mikroslužeb jsou základní pilíře při vytváření aplikací založených na mikroslužbách.*
+*Mikroslužby nabízejí velké výhody, ale také vyvolávají obrovské nové výzvy. Vzory architektury mikroslužeb jsou základní pilíře při vytváření aplikace založené na mikroslužbách.*
 
-Výše v tomto průvodci jste zjistili základní koncepty o kontejnerech a Docker. To bylo minimální informace, které jste potřebovali k zahájení práce s kontejnery. I když jsou kontejnery zablokované a velmi vhodné pro mikroslužby, nemusejí být pro architekturu mikroslužeb povinné a mnoho konceptů architektury v této architektuře může být taky možné použít bez kontejnerů. Tento návod se ale zaměřuje na průnik obou z důvodu již zavedeného důležitosti kontejnerů.
+Dříve v této příručce jste se naučili základní koncepty o kontejnerech a Dockeru. To byly minimální informace, které jste potřebovali, abyste mohli začít s kontejnery. I když i v případě, že kontejnery jsou enablers a vhodné pro mikroslužeb, nejsou povinné pro architekturu mikroslužeb a mnoho architektonických konceptů v této části architektury lze použít bez kontejnerů, příliš. Tyto pokyny se však zaměřuje na průsečík obou kvůli již zavedené důležitosti kontejnerů.
 
-Podnikové aplikace můžou být složité a často se skládají z několika služeb namísto jedné aplikace založené na službách. V takových případech potřebujete pochopit další přístupy k architektuře, jako jsou mikroslužby a určité vzory návrhu založené na doméně (DDD) a koncepty orchestrace kontejnerů. Všimněte si, že tato kapitola popisuje nejen mikroslužby na kontejnerech, ale také všechny aplikace v kontejneru.
+Podnikové aplikace mohou být složité a často se skládají z více služeb namísto jedné aplikace založené na službě. V těchto případech je třeba pochopit další architektonické přístupy, jako jsou například mikroslužeb a některé vzory návrhu řízeného doménou (DDD) plus koncepty orchestrace kontejnerů. Všimněte si, že tato kapitola popisuje nejen mikroslužeb na kontejnery, ale všechny kontejnerizované aplikace, také.
 
-## <a name="container-design-principles"></a>Principy návrhu kontejneru
+## <a name="container-design-principles"></a>Principy návrhu kontejnerů
 
-V modelu kontejneru představuje instance image kontejneru jeden proces. Definováním image kontejneru jako hranice procesu můžete vytvořit primitivní prvky, které lze použít ke škálování procesu nebo k vytvoření dávky.
+V modelu kontejneru představuje instance image kontejneru jeden proces. Definováním image kontejneru jako hranice procesu můžete vytvořit primitiva, která lze použít ke změně měřítka procesu nebo k jeho dávkování.
 
-Při návrhu image kontejneru se na souboru Dockerfile zobrazí definice [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint) . Tím se definuje proces, jehož životnost řídí dobu života kontejneru. Po dokončení procesu skončí životní cyklus kontejneru. Kontejnery mohou představovat dlouhotrvající procesy, jako jsou webové servery, ale mohou také představovat krátkodobé procesy, jako jsou dávkové úlohy, které dříve mohly být implementovány jako Azure [WebJobs](https://github.com/Azure/azure-webjobs-sdk/wiki).
+Při návrhu image kontejneru, uvidíte [entrypoint](https://docs.docker.com/engine/reference/builder/#entrypoint) definice v Dockerfile. To definuje proces, jehož životnost řídí životnost kontejneru. Po dokončení procesu končí životní cyklus kontejneru. Kontejnery mohou představovat dlouhotrvající procesy, jako jsou webové servery, ale mohou také představovat krátkodobé procesy, jako jsou dávkové úlohy, které dříve mohly být implementovány jako Azure [WebJobs](https://github.com/Azure/azure-webjobs-sdk/wiki).
 
-Pokud se proces nezdařil, kontejner skončí a nástroj Orchestrator převezme. Pokud byl produkt Orchestrator nakonfigurován tak, aby zachoval pět instancí a jeden selže, nástroj Orchestrator vytvoří jinou instanci kontejneru, aby nahradila neúspěšný proces. V úloze Batch se proces spouští s parametry. Po dokončení procesu se práce dokončí. Tato příručka se podrobněji rozchází na orchestrací, a to později.
+Pokud proces selže, kontejner končí a orchestrátor převezme. Pokud byl orchestrator nakonfigurován tak, aby udržel spuštěno pět instancí a jedna selhala, orchestrátor vytvoří jinou instanci kontejneru, která nahradí neúspěšný proces. V dávkové úloze je proces zahájen s parametry. Po dokončení procesu je práce dokončena. Toto pokyny vrtá dolů na orchestrátory, později.
 
-Můžete najít scénář, ve kterém chcete, aby více procesů běželo v jednom kontejneru. V tomto scénáři, protože může existovat pouze jeden vstupní bod pro každý kontejner, můžete spustit skript v rámci kontejneru, který v případě potřeby spustí tolik programů. Můžete například použít [správce](http://supervisord.org/) nebo podobný nástroj k tomu, abyste se mohli postarat o spuštění více procesů uvnitř jednoho kontejneru. I když ale můžete najít architektury, které obsahují více procesů na kontejner, tento přístup není velmi běžný.
+Můžete najít scénář, kde chcete více procesů spuštěných v jednom kontejneru. Pro tento scénář, protože může existovat pouze jeden vstupní bod na kontejner, můžete spustit skript v rámci kontejneru, který spustí tolik programů podle potřeby. Můžete například použít [supervisor](http://supervisord.org/) nebo podobný nástroj, abyste se postarali o spuštění více procesů uvnitř jednoho kontejneru. Však i když můžete najít architektury, které mají více procesů na kontejner, tento přístup není příliš běžné.
 
 >[!div class="step-by-step"]
 >[Předchozí](../net-core-net-framework-containers/official-net-docker-images.md)
->[Další](containerize-monolithic-applications.md)
+>[další](containerize-monolithic-applications.md)
