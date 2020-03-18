@@ -1,23 +1,23 @@
 ---
-title: Znalost, kdy použít klíčová slova override a C# New – Průvodce programováním
+title: Vědět, kdy použít přepsat a nová klíčová slova - C# Programovací průvodce
 ms.date: 07/20/2015
 helpviewer_keywords:
 - override keyword [C#]
 - new keyword [C#]
 - polymorphism [C#], using override and new [C#]
 ms.assetid: 323db184-b136-46fc-8839-007886e7e8b0
-ms.openlocfilehash: 0a209b9522202649765654013fdc3a468913c6b1
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 493c6c5f5bf47c6b2cd140ac0f6922f91ca4252b
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75714783"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79170257"
 ---
-# <a name="knowing-when-to-use-override-and-new-keywords-c-programming-guide"></a><span data-ttu-id="0aef9-102">Znalost, kdy použít klíčová slova override a new (Průvodce programováním v C#)</span><span class="sxs-lookup"><span data-stu-id="0aef9-102">Knowing When to Use Override and New Keywords (C# Programming Guide)</span></span>
+# <a name="knowing-when-to-use-override-and-new-keywords-c-programming-guide"></a><span data-ttu-id="a8ef5-102">Znalost, kdy použít klíčová slova override a new (Průvodce programováním v C#)</span><span class="sxs-lookup"><span data-stu-id="a8ef5-102">Knowing When to Use Override and New Keywords (C# Programming Guide)</span></span>
 
-<span data-ttu-id="0aef9-103">V C#rozhraní může mít metoda v odvozené třídě stejný název jako metoda v základní třídě.</span><span class="sxs-lookup"><span data-stu-id="0aef9-103">In C#, a method in a derived class can have the same name as a method in the base class.</span></span> <span data-ttu-id="0aef9-104">Můžete určit způsob interakce metod pomocí klíčových slov [New](../../language-reference/keywords/new-modifier.md) a [override](../../language-reference/keywords/override.md) .</span><span class="sxs-lookup"><span data-stu-id="0aef9-104">You can specify how the methods interact by using the [new](../../language-reference/keywords/new-modifier.md) and [override](../../language-reference/keywords/override.md) keywords.</span></span> <span data-ttu-id="0aef9-105">Modifikátor `override` *rozšiřuje* metodu `virtual` základní třídy a modifikátor `new` *skrývá* přístupnou metodu základní třídy.</span><span class="sxs-lookup"><span data-stu-id="0aef9-105">The `override` modifier *extends* the base class `virtual` method, and the `new` modifier *hides* an accessible base class method.</span></span> <span data-ttu-id="0aef9-106">Rozdíl je znázorněn v příkladech v tomto tématu.</span><span class="sxs-lookup"><span data-stu-id="0aef9-106">The difference is illustrated in the examples in this topic.</span></span>  
+<span data-ttu-id="a8ef5-103">V C# metoda v odvozené třídě může mít stejný název jako metoda v základní třídě.</span><span class="sxs-lookup"><span data-stu-id="a8ef5-103">In C#, a method in a derived class can have the same name as a method in the base class.</span></span> <span data-ttu-id="a8ef5-104">Můžete určit, jak se metody vzájemně ovlivňují pomocí [nových](../../language-reference/keywords/new-modifier.md) a [přepsat](../../language-reference/keywords/override.md) klíčová slova.</span><span class="sxs-lookup"><span data-stu-id="a8ef5-104">You can specify how the methods interact by using the [new](../../language-reference/keywords/new-modifier.md) and [override](../../language-reference/keywords/override.md) keywords.</span></span> <span data-ttu-id="a8ef5-105">Modifikátor `override` rozšiřuje metodu základní `new` *třídy* `virtual` a modifikátor skryje přístupnou metodu základní *třídy.*</span><span class="sxs-lookup"><span data-stu-id="a8ef5-105">The `override` modifier *extends* the base class `virtual` method, and the `new` modifier *hides* an accessible base class method.</span></span> <span data-ttu-id="a8ef5-106">Rozdíl je znázorněn v příkladech v tomto tématu.</span><span class="sxs-lookup"><span data-stu-id="a8ef5-106">The difference is illustrated in the examples in this topic.</span></span>  
   
- <span data-ttu-id="0aef9-107">V konzolové aplikaci deklarujte následující dvě třídy `BaseClass` a `DerivedClass`.</span><span class="sxs-lookup"><span data-stu-id="0aef9-107">In a console application, declare the following two classes, `BaseClass` and `DerivedClass`.</span></span> <span data-ttu-id="0aef9-108">`DerivedClass` dědí z `BaseClass`.</span><span class="sxs-lookup"><span data-stu-id="0aef9-108">`DerivedClass` inherits from `BaseClass`.</span></span>  
+ <span data-ttu-id="a8ef5-107">V konzolové aplikaci deklarujte následující dvě třídy `BaseClass` a `DerivedClass`.</span><span class="sxs-lookup"><span data-stu-id="a8ef5-107">In a console application, declare the following two classes, `BaseClass` and `DerivedClass`.</span></span> <span data-ttu-id="a8ef5-108">`DerivedClass`dědí `BaseClass`od .</span><span class="sxs-lookup"><span data-stu-id="a8ef5-108">`DerivedClass` inherits from `BaseClass`.</span></span>  
   
 ```csharp  
 class BaseClass  
@@ -37,15 +37,15 @@ class DerivedClass : BaseClass
 }  
 ```  
   
- <span data-ttu-id="0aef9-109">V metodě `Main` deklarujte proměnné `bc`, `dc`a `bcdc`.</span><span class="sxs-lookup"><span data-stu-id="0aef9-109">In the `Main` method, declare variables `bc`, `dc`, and `bcdc`.</span></span>  
+ <span data-ttu-id="a8ef5-109">V `Main` metodě deklarujte proměnné `bc`, `dc`a `bcdc`.</span><span class="sxs-lookup"><span data-stu-id="a8ef5-109">In the `Main` method, declare variables `bc`, `dc`, and `bcdc`.</span></span>  
   
-- <span data-ttu-id="0aef9-110">`bc` je typu `BaseClass`a jeho hodnota je typu `BaseClass`.</span><span class="sxs-lookup"><span data-stu-id="0aef9-110">`bc` is of type `BaseClass`, and its value is of type `BaseClass`.</span></span>  
+- <span data-ttu-id="a8ef5-110">`bc`je typu `BaseClass`a jeho hodnota `BaseClass`je typu .</span><span class="sxs-lookup"><span data-stu-id="a8ef5-110">`bc` is of type `BaseClass`, and its value is of type `BaseClass`.</span></span>  
   
-- <span data-ttu-id="0aef9-111">`dc` je typu `DerivedClass`a jeho hodnota je typu `DerivedClass`.</span><span class="sxs-lookup"><span data-stu-id="0aef9-111">`dc` is of type `DerivedClass`, and its value is of type `DerivedClass`.</span></span>  
+- <span data-ttu-id="a8ef5-111">`dc`je typu `DerivedClass`a jeho hodnota `DerivedClass`je typu .</span><span class="sxs-lookup"><span data-stu-id="a8ef5-111">`dc` is of type `DerivedClass`, and its value is of type `DerivedClass`.</span></span>  
   
-- <span data-ttu-id="0aef9-112">`bcdc` je typu `BaseClass`a jeho hodnota je typu `DerivedClass`.</span><span class="sxs-lookup"><span data-stu-id="0aef9-112">`bcdc` is of type `BaseClass`, and its value is of type `DerivedClass`.</span></span> <span data-ttu-id="0aef9-113">Toto je proměnná, na kterou se má věnovat pozornost.</span><span class="sxs-lookup"><span data-stu-id="0aef9-113">This is the variable to pay attention to.</span></span>  
+- <span data-ttu-id="a8ef5-112">`bcdc`je typu `BaseClass`a jeho hodnota `DerivedClass`je typu .</span><span class="sxs-lookup"><span data-stu-id="a8ef5-112">`bcdc` is of type `BaseClass`, and its value is of type `DerivedClass`.</span></span> <span data-ttu-id="a8ef5-113">To je proměnná věnovat pozornost.</span><span class="sxs-lookup"><span data-stu-id="a8ef5-113">This is the variable to pay attention to.</span></span>  
   
- <span data-ttu-id="0aef9-114">Vzhledem k tomu, že `bc` a `bcdc` mají typ `BaseClass`, mohou přímo přistupovat k `Method1`, pokud nepoužíváte přetypování.</span><span class="sxs-lookup"><span data-stu-id="0aef9-114">Because `bc` and `bcdc` have type `BaseClass`, they can only directly access `Method1`, unless you use casting.</span></span> <span data-ttu-id="0aef9-115">Proměnná `dc` má přístup k `Method1` i `Method2`.</span><span class="sxs-lookup"><span data-stu-id="0aef9-115">Variable `dc` can access both `Method1` and `Method2`.</span></span> <span data-ttu-id="0aef9-116">Tyto vztahy jsou uvedeny v následujícím kódu.</span><span class="sxs-lookup"><span data-stu-id="0aef9-116">These relationships are shown in the following code.</span></span>  
+ <span data-ttu-id="a8ef5-114">Vzhledem `bcdc` k `BaseClass`tomu, `bc` a `Method1`mají typ , mohou pouze přímý přístup , pokud používáte odtypování.</span><span class="sxs-lookup"><span data-stu-id="a8ef5-114">Because `bc` and `bcdc` have type `BaseClass`, they can only directly access `Method1`, unless you use casting.</span></span> <span data-ttu-id="a8ef5-115">Proměnná `dc` může `Method1` `Method2`přistupovat k oběma a .</span><span class="sxs-lookup"><span data-stu-id="a8ef5-115">Variable `dc` can access both `Method1` and `Method2`.</span></span> <span data-ttu-id="a8ef5-116">Tyto vztahy jsou uvedeny v následujícím kódu.</span><span class="sxs-lookup"><span data-stu-id="a8ef5-116">These relationships are shown in the following code.</span></span>  
   
 ```csharp  
 class Program  
@@ -69,7 +69,7 @@ class Program
 }  
 ```  
   
- <span data-ttu-id="0aef9-117">Dále přidejte následující metodu `Method2` k `BaseClass`.</span><span class="sxs-lookup"><span data-stu-id="0aef9-117">Next, add the following `Method2` method to `BaseClass`.</span></span> <span data-ttu-id="0aef9-118">Signatura této metody odpovídá podpisu metody `Method2` v `DerivedClass`.</span><span class="sxs-lookup"><span data-stu-id="0aef9-118">The signature of this method matches the signature of the `Method2` method in `DerivedClass`.</span></span>  
+ <span data-ttu-id="a8ef5-117">Dále přidejte `Method2` následující `BaseClass`metodu do .</span><span class="sxs-lookup"><span data-stu-id="a8ef5-117">Next, add the following `Method2` method to `BaseClass`.</span></span> <span data-ttu-id="a8ef5-118">Podpis této metody odpovídá podpisu `Method2` metody `DerivedClass`v .</span><span class="sxs-lookup"><span data-stu-id="a8ef5-118">The signature of this method matches the signature of the `Method2` method in `DerivedClass`.</span></span>  
   
 ```csharp  
 public void Method2()  
@@ -78,7 +78,7 @@ public void Method2()
 }  
 ```  
   
- <span data-ttu-id="0aef9-119">Vzhledem k tomu, že `BaseClass` nyní má metodu `Method2`, lze přidat druhý volající příkaz pro `BaseClass` proměnné `bc` a `bcdc`, jak je znázorněno v následujícím kódu.</span><span class="sxs-lookup"><span data-stu-id="0aef9-119">Because `BaseClass` now has a `Method2` method, a second calling statement can be added for `BaseClass` variables `bc` and `bcdc`, as shown in the following code.</span></span>  
+ <span data-ttu-id="a8ef5-119">Protože `BaseClass` nyní `Method2` má metodu, druhý příkaz `BaseClass` volání `bc` lze `bcdc`přidat pro proměnné a , jak je znázorněno v následujícím kódu.</span><span class="sxs-lookup"><span data-stu-id="a8ef5-119">Because `BaseClass` now has a `Method2` method, a second calling statement can be added for `BaseClass` variables `bc` and `bcdc`, as shown in the following code.</span></span>  
   
 ```csharp  
 bc.Method1();  
@@ -89,9 +89,9 @@ bcdc.Method1();
 bcdc.Method2();  
 ```  
   
- <span data-ttu-id="0aef9-120">Při sestavování projektu se zobrazí, že přidání metody `Method2` v `BaseClass` způsobí upozornění.</span><span class="sxs-lookup"><span data-stu-id="0aef9-120">When you build the project, you see that the addition of the `Method2` method in `BaseClass` causes a warning.</span></span> <span data-ttu-id="0aef9-121">Upozornění říká, že metoda `Method2` v `DerivedClass` skrývá `Method2` metodu v `BaseClass`.</span><span class="sxs-lookup"><span data-stu-id="0aef9-121">The warning says that the `Method2` method in `DerivedClass` hides the `Method2` method in `BaseClass`.</span></span> <span data-ttu-id="0aef9-122">Pokud chcete tento výsledek způsobit, doporučujeme použít klíčové slovo `new` v definici `Method2`.</span><span class="sxs-lookup"><span data-stu-id="0aef9-122">You are advised to use the `new` keyword in the `Method2` definition if you intend to cause that result.</span></span> <span data-ttu-id="0aef9-123">Alternativně můžete přejmenovat jednu z `Method2` metod pro vyřešení upozornění, ale to není vždy praktické.</span><span class="sxs-lookup"><span data-stu-id="0aef9-123">Alternatively, you could rename one of the `Method2` methods to resolve the warning, but that is not always practical.</span></span>  
+ <span data-ttu-id="a8ef5-120">Při vytváření projektu uvidíte, že přidání `Method2` metody `BaseClass` v způsobí upozornění.</span><span class="sxs-lookup"><span data-stu-id="a8ef5-120">When you build the project, you see that the addition of the `Method2` method in `BaseClass` causes a warning.</span></span> <span data-ttu-id="a8ef5-121">Upozornění říká, `Method2` že `DerivedClass` metoda v `Method2` skryje metodu v `BaseClass`.</span><span class="sxs-lookup"><span data-stu-id="a8ef5-121">The warning says that the `Method2` method in `DerivedClass` hides the `Method2` method in `BaseClass`.</span></span> <span data-ttu-id="a8ef5-122">Doporučujeme použít `new` klíčové slovo `Method2` v definici, pokud máte v úmyslu způsobit tento výsledek.</span><span class="sxs-lookup"><span data-stu-id="a8ef5-122">You are advised to use the `new` keyword in the `Method2` definition if you intend to cause that result.</span></span> <span data-ttu-id="a8ef5-123">Alternativně můžete přejmenovat jednu `Method2` z metod k vyřešení upozornění, ale to není vždy praktické.</span><span class="sxs-lookup"><span data-stu-id="a8ef5-123">Alternatively, you could rename one of the `Method2` methods to resolve the warning, but that is not always practical.</span></span>  
   
- <span data-ttu-id="0aef9-124">Před přidáním `new`spusťte program, aby se zobrazil výstup vyprodukovaný dalšími příkazy volání.</span><span class="sxs-lookup"><span data-stu-id="0aef9-124">Before adding `new`, run the program to see the output produced by the additional calling statements.</span></span> <span data-ttu-id="0aef9-125">Zobrazí se následující výsledky.</span><span class="sxs-lookup"><span data-stu-id="0aef9-125">The following results are displayed.</span></span>  
+ <span data-ttu-id="a8ef5-124">Před `new`přidáním spusťte program a zosakažte výstup emitovaná dalšími příkazy volání.</span><span class="sxs-lookup"><span data-stu-id="a8ef5-124">Before adding `new`, run the program to see the output produced by the additional calling statements.</span></span> <span data-ttu-id="a8ef5-125">Zobrazí se následující výsledky.</span><span class="sxs-lookup"><span data-stu-id="a8ef5-125">The following results are displayed.</span></span>  
   
 ```csharp  
 // Output:  
@@ -103,9 +103,9 @@ bcdc.Method2();
 // Base - Method2  
 ```  
   
- <span data-ttu-id="0aef9-126">Klíčové slovo `new` zachovává vztahy, které tvoří tento výstup, ale potlačí upozornění.</span><span class="sxs-lookup"><span data-stu-id="0aef9-126">The `new` keyword preserves the relationships that produce that output, but it suppresses the warning.</span></span> <span data-ttu-id="0aef9-127">Proměnné, které mají typ `BaseClass` nadále mají přístup k členům `BaseClass`a proměnná, která má typ `DerivedClass`, nadále přistupuje k členům v `DerivedClass` jako první a následně ke zvážení členů zděděných z `BaseClass`.</span><span class="sxs-lookup"><span data-stu-id="0aef9-127">The variables that have type `BaseClass` continue to access the members of `BaseClass`, and the variable that has type `DerivedClass` continues to access members in `DerivedClass` first, and then to consider members inherited from `BaseClass`.</span></span>  
+ <span data-ttu-id="a8ef5-126">Klíčové `new` slovo zachová vztahy, které vytvářejí tento výstup, ale potlačí upozornění.</span><span class="sxs-lookup"><span data-stu-id="a8ef5-126">The `new` keyword preserves the relationships that produce that output, but it suppresses the warning.</span></span> <span data-ttu-id="a8ef5-127">Proměnné, které mají `BaseClass` typ nadále `BaseClass`přístup k členům `DerivedClass` , a proměnná, která má typ nadále přístup členů v `DerivedClass` první a pak zvážit členy zděděné z `BaseClass`.</span><span class="sxs-lookup"><span data-stu-id="a8ef5-127">The variables that have type `BaseClass` continue to access the members of `BaseClass`, and the variable that has type `DerivedClass` continues to access members in `DerivedClass` first, and then to consider members inherited from `BaseClass`.</span></span>  
   
- <span data-ttu-id="0aef9-128">Chcete-li potlačit upozornění, přidejte modifikátor `new` do definice `Method2` v `DerivedClass`, jak je znázorněno v následujícím kódu.</span><span class="sxs-lookup"><span data-stu-id="0aef9-128">To suppress the warning, add the `new` modifier to the definition of `Method2` in `DerivedClass`, as shown in the following code.</span></span> <span data-ttu-id="0aef9-129">Modifikátor lze přidat před nebo po `public`.</span><span class="sxs-lookup"><span data-stu-id="0aef9-129">The modifier can be added before or after `public`.</span></span>  
+ <span data-ttu-id="a8ef5-128">Chcete-li upozornění potlačit, přidejte `new` modifikátor k definici `Method2` v `DerivedClass`, jak je znázorněno v následujícím kódu.</span><span class="sxs-lookup"><span data-stu-id="a8ef5-128">To suppress the warning, add the `new` modifier to the definition of `Method2` in `DerivedClass`, as shown in the following code.</span></span> <span data-ttu-id="a8ef5-129">Modifikátor lze přidat `public`před nebo za .</span><span class="sxs-lookup"><span data-stu-id="a8ef5-129">The modifier can be added before or after `public`.</span></span>  
   
 ```csharp  
 public new void Method2()  
@@ -114,9 +114,9 @@ public new void Method2()
 }  
 ```  
   
- <span data-ttu-id="0aef9-130">Spusťte program znovu a ověřte, zda se výstup nezměnil.</span><span class="sxs-lookup"><span data-stu-id="0aef9-130">Run the program again to verify that the output has not changed.</span></span> <span data-ttu-id="0aef9-131">Ověřte také, že se upozornění již nezobrazuje.</span><span class="sxs-lookup"><span data-stu-id="0aef9-131">Also verify that the warning no longer appears.</span></span> <span data-ttu-id="0aef9-132">Pomocí `new`uplatňujete, že jste si vědomi, že člen, který upravuje, skrývá člena, který je zděděn ze základní třídy.</span><span class="sxs-lookup"><span data-stu-id="0aef9-132">By using `new`, you are asserting that you are aware that the member that it modifies hides a member that is inherited from the base class.</span></span> <span data-ttu-id="0aef9-133">Další informace o skrývání názvů prostřednictvím dědičnosti naleznete v tématu [new modifikátor](../../language-reference/keywords/new-modifier.md).</span><span class="sxs-lookup"><span data-stu-id="0aef9-133">For more information about name hiding through inheritance, see [new Modifier](../../language-reference/keywords/new-modifier.md).</span></span>  
+ <span data-ttu-id="a8ef5-130">Spusťte program znovu a ověřte, zda se výstup nezměnil.</span><span class="sxs-lookup"><span data-stu-id="a8ef5-130">Run the program again to verify that the output has not changed.</span></span> <span data-ttu-id="a8ef5-131">Ověřte také, že se upozornění již nezobrazuje.</span><span class="sxs-lookup"><span data-stu-id="a8ef5-131">Also verify that the warning no longer appears.</span></span> <span data-ttu-id="a8ef5-132">Pomocí `new`, tvrdíte, že jste si vědomi, že člen, který upravuje skryje člen, který je zděděn ze základní třídy.</span><span class="sxs-lookup"><span data-stu-id="a8ef5-132">By using `new`, you are asserting that you are aware that the member that it modifies hides a member that is inherited from the base class.</span></span> <span data-ttu-id="a8ef5-133">Další informace o skrytí názvu prostřednictvím dědičnosti naleznete v [tématu new Modifier](../../language-reference/keywords/new-modifier.md).</span><span class="sxs-lookup"><span data-stu-id="a8ef5-133">For more information about name hiding through inheritance, see [new Modifier](../../language-reference/keywords/new-modifier.md).</span></span>  
   
- <span data-ttu-id="0aef9-134">Chcete-li toto chování kontrastovat s účinky použití `override`, přidejte následující metodu pro `DerivedClass`.</span><span class="sxs-lookup"><span data-stu-id="0aef9-134">To contrast this behavior to the effects of using `override`, add the following method to `DerivedClass`.</span></span> <span data-ttu-id="0aef9-135">Modifikátor `override` lze přidat před nebo po `public`.</span><span class="sxs-lookup"><span data-stu-id="0aef9-135">The `override` modifier can be added before or after `public`.</span></span>  
+ <span data-ttu-id="a8ef5-134">Chcete-li toto chování `override`narozdíloddůsledků použití `DerivedClass`, přidejte do aplikace následující metodu .</span><span class="sxs-lookup"><span data-stu-id="a8ef5-134">To contrast this behavior to the effects of using `override`, add the following method to `DerivedClass`.</span></span> <span data-ttu-id="a8ef5-135">Modifikátor `override` lze přidat `public`před nebo za .</span><span class="sxs-lookup"><span data-stu-id="a8ef5-135">The `override` modifier can be added before or after `public`.</span></span>  
   
 ```csharp  
 public override void Method1()  
@@ -125,7 +125,7 @@ public override void Method1()
 }  
 ```  
   
- <span data-ttu-id="0aef9-136">Přidejte modifikátor `virtual` do definice `Method1` v `BaseClass`.</span><span class="sxs-lookup"><span data-stu-id="0aef9-136">Add the `virtual` modifier to the definition of `Method1` in `BaseClass`.</span></span> <span data-ttu-id="0aef9-137">Modifikátor `virtual` lze přidat před nebo po `public`.</span><span class="sxs-lookup"><span data-stu-id="0aef9-137">The `virtual` modifier can be added before or after `public`.</span></span>  
+ <span data-ttu-id="a8ef5-136">Přidejte `virtual` modifikátor `Method1` k `BaseClass`definici v .</span><span class="sxs-lookup"><span data-stu-id="a8ef5-136">Add the `virtual` modifier to the definition of `Method1` in `BaseClass`.</span></span> <span data-ttu-id="a8ef5-137">Modifikátor `virtual` lze přidat `public`před nebo za .</span><span class="sxs-lookup"><span data-stu-id="a8ef5-137">The `virtual` modifier can be added before or after `public`.</span></span>  
   
 ```csharp  
 public virtual void Method1()  
@@ -134,7 +134,7 @@ public virtual void Method1()
 }  
 ```  
   
- <span data-ttu-id="0aef9-138">Spusťte projekt znovu.</span><span class="sxs-lookup"><span data-stu-id="0aef9-138">Run the project again.</span></span> <span data-ttu-id="0aef9-139">Všimněte si zejména posledních dvou řádků následujícího výstupu.</span><span class="sxs-lookup"><span data-stu-id="0aef9-139">Notice especially the last two lines of the following output.</span></span>  
+ <span data-ttu-id="a8ef5-138">Spusťte projekt znovu.</span><span class="sxs-lookup"><span data-stu-id="a8ef5-138">Run the project again.</span></span> <span data-ttu-id="a8ef5-139">Všimněte si zejména posledních dvou řádků následujícího výstupu.</span><span class="sxs-lookup"><span data-stu-id="a8ef5-139">Notice especially the last two lines of the following output.</span></span>  
   
 ```csharp  
 // Output:  
@@ -146,9 +146,9 @@ public virtual void Method1()
 // Base - Method2  
 ```  
   
- <span data-ttu-id="0aef9-140">Použití modifikátoru `override` umožňuje `bcdc` přístup k metodě `Method1`, která je definována v `DerivedClass`.</span><span class="sxs-lookup"><span data-stu-id="0aef9-140">The use of the `override` modifier enables `bcdc` to access the `Method1` method that is defined in `DerivedClass`.</span></span> <span data-ttu-id="0aef9-141">Obvykle to je požadované chování v hierarchiích dědičnosti.</span><span class="sxs-lookup"><span data-stu-id="0aef9-141">Typically, that is the desired behavior in inheritance hierarchies.</span></span> <span data-ttu-id="0aef9-142">Chcete, aby objekty, které mají hodnoty vytvořené z odvozené třídy, používaly metody, které jsou definovány v odvozené třídě.</span><span class="sxs-lookup"><span data-stu-id="0aef9-142">You want objects that have values that are created from the derived class to use the methods that are defined in the derived class.</span></span> <span data-ttu-id="0aef9-143">Toto chování dosáhnete použitím `override` k rozšiřování metody základní třídy.</span><span class="sxs-lookup"><span data-stu-id="0aef9-143">You achieve that behavior by using `override` to extend the base class method.</span></span>  
+ <span data-ttu-id="a8ef5-140">Použití `override` modifikátoru `bcdc` umožňuje `Method1` přístup k metodě, která je definována v aplikaci `DerivedClass`.</span><span class="sxs-lookup"><span data-stu-id="a8ef5-140">The use of the `override` modifier enables `bcdc` to access the `Method1` method that is defined in `DerivedClass`.</span></span> <span data-ttu-id="a8ef5-141">To je obvykle požadované chování v hierarchiích dědičnosti.</span><span class="sxs-lookup"><span data-stu-id="a8ef5-141">Typically, that is the desired behavior in inheritance hierarchies.</span></span> <span data-ttu-id="a8ef5-142">Chcete, aby objekty, které mají hodnoty, které jsou vytvořeny z odvozené třídy používat metody, které jsou definovány v odvozené třídě.</span><span class="sxs-lookup"><span data-stu-id="a8ef5-142">You want objects that have values that are created from the derived class to use the methods that are defined in the derived class.</span></span> <span data-ttu-id="a8ef5-143">Tohoto chování lze `override` dosáhnout pomocí rozšířit metodu základní třídy.</span><span class="sxs-lookup"><span data-stu-id="a8ef5-143">You achieve that behavior by using `override` to extend the base class method.</span></span>  
   
- <span data-ttu-id="0aef9-144">Následující kód obsahuje úplný příklad.</span><span class="sxs-lookup"><span data-stu-id="0aef9-144">The following code contains the full example.</span></span>  
+ <span data-ttu-id="a8ef5-144">Následující kód obsahuje úplný příklad.</span><span class="sxs-lookup"><span data-stu-id="a8ef5-144">The following code contains the full example.</span></span>  
   
 ```csharp  
 using System;  
@@ -180,7 +180,7 @@ namespace OverrideAndNew
             // Derived - Method1  
             // Derived - Method2  
   
-            // The following two calls produce different results, depending   
+            // The following two calls produce different results, depending
             // on whether override (Method1) or new (Method2) is used.  
             bcdc.Method1();  
             bcdc.Method2();  
@@ -218,7 +218,7 @@ namespace OverrideAndNew
 }  
 ```  
   
- <span data-ttu-id="0aef9-145">Následující příklad ilustruje podobné chování v jiném kontextu.</span><span class="sxs-lookup"><span data-stu-id="0aef9-145">The following example illustrates similar behavior in a different context.</span></span> <span data-ttu-id="0aef9-146">Příklad definuje tři třídy: základní třídu s názvem `Car` a dvě třídy, které jsou odvozeny z ní, `ConvertibleCar` a `Minivan`.</span><span class="sxs-lookup"><span data-stu-id="0aef9-146">The example defines three classes: a base class named `Car` and two classes that are derived from it, `ConvertibleCar` and `Minivan`.</span></span> <span data-ttu-id="0aef9-147">Základní třída obsahuje metodu `DescribeCar`.</span><span class="sxs-lookup"><span data-stu-id="0aef9-147">The base class contains a `DescribeCar` method.</span></span> <span data-ttu-id="0aef9-148">Metoda zobrazí základní popis auta a potom zavolá `ShowDetails` k poskytnutí dalších informací.</span><span class="sxs-lookup"><span data-stu-id="0aef9-148">The method displays a basic description of a car, and then calls `ShowDetails` to provide additional information.</span></span> <span data-ttu-id="0aef9-149">Každá ze tří tříd definuje metodu `ShowDetails`.</span><span class="sxs-lookup"><span data-stu-id="0aef9-149">Each of the three classes defines a `ShowDetails` method.</span></span> <span data-ttu-id="0aef9-150">Modifikátor `new` slouží k definování `ShowDetails` ve třídě `ConvertibleCar`.</span><span class="sxs-lookup"><span data-stu-id="0aef9-150">The `new` modifier is used to define `ShowDetails` in the `ConvertibleCar` class.</span></span> <span data-ttu-id="0aef9-151">Modifikátor `override` slouží k definování `ShowDetails` ve třídě `Minivan`.</span><span class="sxs-lookup"><span data-stu-id="0aef9-151">The `override` modifier is used to define `ShowDetails` in the `Minivan` class.</span></span>  
+ <span data-ttu-id="a8ef5-145">Následující příklad ilustruje podobné chování v jiném kontextu.</span><span class="sxs-lookup"><span data-stu-id="a8ef5-145">The following example illustrates similar behavior in a different context.</span></span> <span data-ttu-id="a8ef5-146">Příklad definuje tři třídy: základní `Car` třídu s názvem a `ConvertibleCar` dvě `Minivan`třídy, které jsou odvozeny z něj a .</span><span class="sxs-lookup"><span data-stu-id="a8ef5-146">The example defines three classes: a base class named `Car` and two classes that are derived from it, `ConvertibleCar` and `Minivan`.</span></span> <span data-ttu-id="a8ef5-147">Základní třída obsahuje `DescribeCar` metodu.</span><span class="sxs-lookup"><span data-stu-id="a8ef5-147">The base class contains a `DescribeCar` method.</span></span> <span data-ttu-id="a8ef5-148">Metoda zobrazí základní popis vozu a pak `ShowDetails` volá poskytnout další informace.</span><span class="sxs-lookup"><span data-stu-id="a8ef5-148">The method displays a basic description of a car, and then calls `ShowDetails` to provide additional information.</span></span> <span data-ttu-id="a8ef5-149">Každá ze tří tříd `ShowDetails` definuje metodu.</span><span class="sxs-lookup"><span data-stu-id="a8ef5-149">Each of the three classes defines a `ShowDetails` method.</span></span> <span data-ttu-id="a8ef5-150">Modifikátor `new` se `ShowDetails` používá `ConvertibleCar` k definování ve třídě.</span><span class="sxs-lookup"><span data-stu-id="a8ef5-150">The `new` modifier is used to define `ShowDetails` in the `ConvertibleCar` class.</span></span> <span data-ttu-id="a8ef5-151">Modifikátor `override` se `ShowDetails` používá `Minivan` k definování ve třídě.</span><span class="sxs-lookup"><span data-stu-id="a8ef5-151">The `override` modifier is used to define `ShowDetails` in the `Minivan` class.</span></span>  
   
 ```csharp  
 // Define the base class, Car. The class defines two methods,  
@@ -262,7 +262,7 @@ class Minivan : Car
 }  
 ```  
   
- <span data-ttu-id="0aef9-152">Příklad testuje, která verze `ShowDetails` je volána.</span><span class="sxs-lookup"><span data-stu-id="0aef9-152">The example tests which version of `ShowDetails` is called.</span></span> <span data-ttu-id="0aef9-153">Následující metoda, `TestCars1`, deklaruje instanci každé třídy a poté volá `DescribeCar` na každé instanci.</span><span class="sxs-lookup"><span data-stu-id="0aef9-153">The following method, `TestCars1`, declares an instance of each class, and then calls `DescribeCar` on each instance.</span></span>  
+ <span data-ttu-id="a8ef5-152">Příklad testuje, která `ShowDetails` verze je volána.</span><span class="sxs-lookup"><span data-stu-id="a8ef5-152">The example tests which version of `ShowDetails` is called.</span></span> <span data-ttu-id="a8ef5-153">Následující metoda `TestCars1`, deklaruje instanci `DescribeCar` každé třídy a potom volá každou instanci.</span><span class="sxs-lookup"><span data-stu-id="a8ef5-153">The following method, `TestCars1`, declares an instance of each class, and then calls `DescribeCar` on each instance.</span></span>  
   
 ```csharp  
 public static void TestCars1()  
@@ -276,7 +276,7 @@ public static void TestCars1()
   
     // Notice the output from this test case. The new modifier is  
     // used in the definition of ShowDetails in the ConvertibleCar  
-    // class.    
+    // class.
   
     ConvertibleCar car2 = new ConvertibleCar();  
     car2.DescribeCar();  
@@ -288,7 +288,7 @@ public static void TestCars1()
 }  
 ```  
   
- <span data-ttu-id="0aef9-154">`TestCars1` generuje následující výstup.</span><span class="sxs-lookup"><span data-stu-id="0aef9-154">`TestCars1` produces the following output.</span></span> <span data-ttu-id="0aef9-155">Všimněte si zejména výsledků `car2`, což pravděpodobně neočekáváte, co jste očekávali.</span><span class="sxs-lookup"><span data-stu-id="0aef9-155">Notice especially the results for `car2`, which probably are not what you expected.</span></span> <span data-ttu-id="0aef9-156">Typ objektu je `ConvertibleCar`, ale `DescribeCar` nemá přístup k verzi `ShowDetails`, která je definována v `ConvertibleCar` třídě, protože tato metoda je deklarována s modifikátorem `new`, nikoli s modifikátorem `override`.</span><span class="sxs-lookup"><span data-stu-id="0aef9-156">The type of the object is `ConvertibleCar`, but `DescribeCar` does not access the version of `ShowDetails` that is defined in the `ConvertibleCar` class because that method is declared with the `new` modifier, not the `override` modifier.</span></span> <span data-ttu-id="0aef9-157">V důsledku toho `ConvertibleCar` objekt zobrazuje stejný popis jako objekt `Car`.</span><span class="sxs-lookup"><span data-stu-id="0aef9-157">As a result, a `ConvertibleCar` object displays the same description as a `Car` object.</span></span> <span data-ttu-id="0aef9-158">Porovnejte výsledky pro `car3`, což je objekt `Minivan`.</span><span class="sxs-lookup"><span data-stu-id="0aef9-158">Contrast the results for `car3`, which is a `Minivan` object.</span></span> <span data-ttu-id="0aef9-159">V tomto případě metoda `ShowDetails` deklarovaná v `Minivan` třídy přepíše metodu `ShowDetails`, která je deklarována v třídě `Car` a popis, který se zobrazí, popisuje minivan.</span><span class="sxs-lookup"><span data-stu-id="0aef9-159">In this case, the `ShowDetails` method that is declared in the `Minivan` class overrides the `ShowDetails` method that is declared in the `Car` class, and the description that is displayed describes a minivan.</span></span>  
+ <span data-ttu-id="a8ef5-154">`TestCars1`vytvoří následující výstup.</span><span class="sxs-lookup"><span data-stu-id="a8ef5-154">`TestCars1` produces the following output.</span></span> <span data-ttu-id="a8ef5-155">Všimněte si `car2`zejména výsledky pro , které pravděpodobně nejsou to, co jste očekávali.</span><span class="sxs-lookup"><span data-stu-id="a8ef5-155">Notice especially the results for `car2`, which probably are not what you expected.</span></span> <span data-ttu-id="a8ef5-156">Typ objektu je `ConvertibleCar`, `DescribeCar` ale nemá přístup `ShowDetails` k verzi, `ConvertibleCar` která je definována `new` ve třídě, `override` protože tato metoda je deklarována modifikátorem, nikoli modifikátorem.</span><span class="sxs-lookup"><span data-stu-id="a8ef5-156">The type of the object is `ConvertibleCar`, but `DescribeCar` does not access the version of `ShowDetails` that is defined in the `ConvertibleCar` class because that method is declared with the `new` modifier, not the `override` modifier.</span></span> <span data-ttu-id="a8ef5-157">V důsledku toho `ConvertibleCar` objekt zobrazí stejný `Car` popis jako objekt.</span><span class="sxs-lookup"><span data-stu-id="a8ef5-157">As a result, a `ConvertibleCar` object displays the same description as a `Car` object.</span></span> <span data-ttu-id="a8ef5-158">Porovnejte `car3`výsledky pro `Minivan` , což je objekt.</span><span class="sxs-lookup"><span data-stu-id="a8ef5-158">Contrast the results for `car3`, which is a `Minivan` object.</span></span> <span data-ttu-id="a8ef5-159">V tomto případě `ShowDetails` metoda, která `Minivan` je deklarována ve třídě přepíše metodu, `ShowDetails` která je deklarována ve `Car` třídě a popis, který je zobrazen, popisuje minivan.</span><span class="sxs-lookup"><span data-stu-id="a8ef5-159">In this case, the `ShowDetails` method that is declared in the `Minivan` class overrides the `ShowDetails` method that is declared in the `Car` class, and the description that is displayed describes a minivan.</span></span>  
   
 ```csharp  
 // TestCars1  
@@ -304,7 +304,7 @@ public static void TestCars1()
 // ----------  
 ```  
   
- <span data-ttu-id="0aef9-160">`TestCars2` vytvoří seznam objektů, které mají typ `Car`.</span><span class="sxs-lookup"><span data-stu-id="0aef9-160">`TestCars2` creates a list of objects that have type `Car`.</span></span> <span data-ttu-id="0aef9-161">Hodnoty objektů jsou vytvořeny z tříd `Car`, `ConvertibleCar`a `Minivan`.</span><span class="sxs-lookup"><span data-stu-id="0aef9-161">The values of the objects are instantiated from the `Car`, `ConvertibleCar`, and `Minivan` classes.</span></span> <span data-ttu-id="0aef9-162">`DescribeCar` je volána u každého prvku seznamu.</span><span class="sxs-lookup"><span data-stu-id="0aef9-162">`DescribeCar` is called on each element of the list.</span></span> <span data-ttu-id="0aef9-163">Následující kód ukazuje definici `TestCars2`.</span><span class="sxs-lookup"><span data-stu-id="0aef9-163">The following code shows the definition of `TestCars2`.</span></span>  
+ <span data-ttu-id="a8ef5-160">`TestCars2`vytvoří seznam objektů, které `Car`mají typ .</span><span class="sxs-lookup"><span data-stu-id="a8ef5-160">`TestCars2` creates a list of objects that have type `Car`.</span></span> <span data-ttu-id="a8ef5-161">Hodnoty objektů jsou vytvářeny z `Car`, `ConvertibleCar`a `Minivan` třídy.</span><span class="sxs-lookup"><span data-stu-id="a8ef5-161">The values of the objects are instantiated from the `Car`, `ConvertibleCar`, and `Minivan` classes.</span></span> <span data-ttu-id="a8ef5-162">`DescribeCar`je volána na každý prvek seznamu.</span><span class="sxs-lookup"><span data-stu-id="a8ef5-162">`DescribeCar` is called on each element of the list.</span></span> <span data-ttu-id="a8ef5-163">Následující kód ukazuje definici `TestCars2`.</span><span class="sxs-lookup"><span data-stu-id="a8ef5-163">The following code shows the definition of `TestCars2`.</span></span>  
   
 ```csharp  
 public static void TestCars2()  
@@ -312,7 +312,7 @@ public static void TestCars2()
     System.Console.WriteLine("\nTestCars2");  
     System.Console.WriteLine("----------");  
   
-    var cars = new List<Car> { new Car(), new ConvertibleCar(),   
+    var cars = new List<Car> { new Car(), new ConvertibleCar(),
         new Minivan() };  
   
     foreach (var car in cars)  
@@ -323,7 +323,7 @@ public static void TestCars2()
 }  
 ```  
   
- <span data-ttu-id="0aef9-164">Zobrazí se následující výstup.</span><span class="sxs-lookup"><span data-stu-id="0aef9-164">The following output is displayed.</span></span> <span data-ttu-id="0aef9-165">Všimněte si, že je stejný jako výstup, který je zobrazen `TestCars1`.</span><span class="sxs-lookup"><span data-stu-id="0aef9-165">Notice that it is the same as the output that is displayed by `TestCars1`.</span></span> <span data-ttu-id="0aef9-166">Metoda `ShowDetails` třídy `ConvertibleCar` není volána, bez ohledu na to, zda je typ objektu `ConvertibleCar`, jako v `TestCars1`nebo `Car`, jako v `TestCars2`.</span><span class="sxs-lookup"><span data-stu-id="0aef9-166">The `ShowDetails` method of the `ConvertibleCar` class is not called, regardless of whether the type of the object is `ConvertibleCar`, as in `TestCars1`, or `Car`, as in `TestCars2`.</span></span> <span data-ttu-id="0aef9-167">Naopak `car3` volá metodu `ShowDetails` z třídy `Minivan` v obou případech bez ohledu na to, zda má typ `Minivan` nebo typ `Car`.</span><span class="sxs-lookup"><span data-stu-id="0aef9-167">Conversely, `car3` calls the `ShowDetails` method from the `Minivan` class in both cases, whether it has type `Minivan` or type `Car`.</span></span>  
+ <span data-ttu-id="a8ef5-164">Zobrazí se následující výstup.</span><span class="sxs-lookup"><span data-stu-id="a8ef5-164">The following output is displayed.</span></span> <span data-ttu-id="a8ef5-165">Všimněte si, že je stejný jako `TestCars1`výstup, který je zobrazen .</span><span class="sxs-lookup"><span data-stu-id="a8ef5-165">Notice that it is the same as the output that is displayed by `TestCars1`.</span></span> <span data-ttu-id="a8ef5-166">Metoda `ShowDetails` `ConvertibleCar` třídy není volána, bez ohledu na to, `ConvertibleCar`zda `TestCars1`je `Car`typ objektu , jako v , nebo , jako v `TestCars2`.</span><span class="sxs-lookup"><span data-stu-id="a8ef5-166">The `ShowDetails` method of the `ConvertibleCar` class is not called, regardless of whether the type of the object is `ConvertibleCar`, as in `TestCars1`, or `Car`, as in `TestCars2`.</span></span> <span data-ttu-id="a8ef5-167">`car3` Naopak volá metodu `ShowDetails` z `Minivan` třídy v obou případech, zda má typ `Minivan` nebo typ `Car`.</span><span class="sxs-lookup"><span data-stu-id="a8ef5-167">Conversely, `car3` calls the `ShowDetails` method from the `Minivan` class in both cases, whether it has type `Minivan` or type `Car`.</span></span>  
   
 ```csharp  
 // TestCars2  
@@ -339,7 +339,7 @@ public static void TestCars2()
 // ----------  
 ```  
   
- <span data-ttu-id="0aef9-168">Metody `TestCars3` a `TestCars4` dokončí příklad.</span><span class="sxs-lookup"><span data-stu-id="0aef9-168">Methods `TestCars3` and `TestCars4` complete the example.</span></span> <span data-ttu-id="0aef9-169">Tyto metody volají `ShowDetails` přímo, nejprve z objektů deklarovaných jako typ `ConvertibleCar` a `Minivan` (`TestCars3`), a poté z objektů deklarovaných jako typ `Car` (`TestCars4`).</span><span class="sxs-lookup"><span data-stu-id="0aef9-169">These methods call `ShowDetails` directly, first from objects declared to have type `ConvertibleCar` and `Minivan` (`TestCars3`), then from objects declared to have type `Car` (`TestCars4`).</span></span> <span data-ttu-id="0aef9-170">Následující kód definuje tyto dvě metody.</span><span class="sxs-lookup"><span data-stu-id="0aef9-170">The following code defines these two methods.</span></span>  
+ <span data-ttu-id="a8ef5-168">Metody `TestCars3` `TestCars4` a dokončit příklad.</span><span class="sxs-lookup"><span data-stu-id="a8ef5-168">Methods `TestCars3` and `TestCars4` complete the example.</span></span> <span data-ttu-id="a8ef5-169">Tyto metody `ShowDetails` volání přímo, nejprve `ConvertibleCar` z `Minivan` `TestCars3`objektů deklarovaných za `Car` `TestCars4`typ a ( ), pak z objektů deklarovaných typu ( ).</span><span class="sxs-lookup"><span data-stu-id="a8ef5-169">These methods call `ShowDetails` directly, first from objects declared to have type `ConvertibleCar` and `Minivan` (`TestCars3`), then from objects declared to have type `Car` (`TestCars4`).</span></span> <span data-ttu-id="a8ef5-170">Následující kód definuje tyto dvě metody.</span><span class="sxs-lookup"><span data-stu-id="a8ef5-170">The following code defines these two methods.</span></span>  
   
 ```csharp  
 public static void TestCars3()  
@@ -363,7 +363,7 @@ public static void TestCars4()
 }  
 ```  
   
- <span data-ttu-id="0aef9-171">Metody vyvolávají následující výstup, který odpovídá výsledkům z prvního příkladu v tomto tématu.</span><span class="sxs-lookup"><span data-stu-id="0aef9-171">The methods produce the following output, which corresponds to the results from the first example in this topic.</span></span>  
+ <span data-ttu-id="a8ef5-171">Metody vytvářejí následující výstup, který odpovídá výsledkům z prvního příkladu v tomto tématu.</span><span class="sxs-lookup"><span data-stu-id="a8ef5-171">The methods produce the following output, which corresponds to the results from the first example in this topic.</span></span>  
   
 ```csharp  
 // TestCars3  
@@ -377,7 +377,7 @@ public static void TestCars4()
 // Carries seven people.  
 ```  
   
- <span data-ttu-id="0aef9-172">Následující kód ukazuje kompletní projekt a jeho výstup.</span><span class="sxs-lookup"><span data-stu-id="0aef9-172">The following code shows the complete project and its output.</span></span>  
+ <span data-ttu-id="a8ef5-172">Následující kód ukazuje celý projekt a jeho výstup.</span><span class="sxs-lookup"><span data-stu-id="a8ef5-172">The following code shows the complete project and its output.</span></span>  
   
 ```csharp  
 using System;  
@@ -419,7 +419,7 @@ namespace OverrideAndNew2
   
             // Notice the output from this test case. The new modifier is  
             // used in the definition of ShowDetails in the ConvertibleCar  
-            // class.    
+            // class.
             ConvertibleCar car2 = new ConvertibleCar();  
             car2.DescribeCar();  
             System.Console.WriteLine("----------");  
@@ -446,7 +446,7 @@ namespace OverrideAndNew2
             System.Console.WriteLine("\nTestCars2");  
             System.Console.WriteLine("----------");  
   
-            var cars = new List<Car> { new Car(), new ConvertibleCar(),   
+            var cars = new List<Car> { new Car(), new ConvertibleCar(),
                 new Minivan() };  
   
             foreach (var car in cars)  
@@ -542,10 +542,10 @@ namespace OverrideAndNew2
 }  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="0aef9-173">Viz také:</span><span class="sxs-lookup"><span data-stu-id="0aef9-173">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="a8ef5-173">Viz také</span><span class="sxs-lookup"><span data-stu-id="a8ef5-173">See also</span></span>
 
-- [<span data-ttu-id="0aef9-174">Průvodce programováním v jazyce C#</span><span class="sxs-lookup"><span data-stu-id="0aef9-174">C# Programming Guide</span></span>](../index.md)
-- [<span data-ttu-id="0aef9-175">Třídy a struktury</span><span class="sxs-lookup"><span data-stu-id="0aef9-175">Classes and Structs</span></span>](./index.md)
-- [<span data-ttu-id="0aef9-176">Správa verzí pomocí klíčových slov override a new</span><span class="sxs-lookup"><span data-stu-id="0aef9-176">Versioning with the Override and New Keywords</span></span>](./versioning-with-the-override-and-new-keywords.md)
-- [<span data-ttu-id="0aef9-177">base</span><span class="sxs-lookup"><span data-stu-id="0aef9-177">base</span></span>](../../language-reference/keywords/base.md)
-- [<span data-ttu-id="0aef9-178">abstract</span><span class="sxs-lookup"><span data-stu-id="0aef9-178">abstract</span></span>](../../language-reference/keywords/abstract.md)
+- [<span data-ttu-id="a8ef5-174">Programovací příručka jazyka C#</span><span class="sxs-lookup"><span data-stu-id="a8ef5-174">C# Programming Guide</span></span>](../index.md)
+- [<span data-ttu-id="a8ef5-175">Třídy a struky</span><span class="sxs-lookup"><span data-stu-id="a8ef5-175">Classes and Structs</span></span>](./index.md)
+- [<span data-ttu-id="a8ef5-176">Správa verzí pomocí klíčových slov override a new</span><span class="sxs-lookup"><span data-stu-id="a8ef5-176">Versioning with the Override and New Keywords</span></span>](./versioning-with-the-override-and-new-keywords.md)
+- [<span data-ttu-id="a8ef5-177">base</span><span class="sxs-lookup"><span data-stu-id="a8ef5-177">base</span></span>](../../language-reference/keywords/base.md)
+- [<span data-ttu-id="a8ef5-178">Abstraktní</span><span class="sxs-lookup"><span data-stu-id="a8ef5-178">abstract</span></span>](../../language-reference/keywords/abstract.md)

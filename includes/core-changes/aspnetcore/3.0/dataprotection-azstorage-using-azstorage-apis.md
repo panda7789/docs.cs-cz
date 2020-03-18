@@ -1,38 +1,38 @@
 ---
 ms.openlocfilehash: db70596552ffd699156e1b7a55cb1e944596f077
-ms.sourcegitcommit: 7088f87e9a7da144266135f4b2397e611cf0a228
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/11/2020
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "75901594"
 ---
-### <a name="data-protection-dataprotectionazurestorage-uses-new-azure-storage-apis"></a><span data-ttu-id="30060-101">Ochrana dat: DataProtection. AzureStorage používá nová rozhraní API Azure Storage.</span><span class="sxs-lookup"><span data-stu-id="30060-101">Data Protection: DataProtection.AzureStorage uses new Azure Storage APIs</span></span>
+### <a name="data-protection-dataprotectionazurestorage-uses-new-azure-storage-apis"></a><span data-ttu-id="f3467-101">Ochrana dat: DataProtection.AzureStorage používá nová api úložiště Azure</span><span class="sxs-lookup"><span data-stu-id="f3467-101">Data Protection: DataProtection.AzureStorage uses new Azure Storage APIs</span></span>
 
-<span data-ttu-id="30060-102"><xref:Microsoft.AspNetCore.DataProtection.AzureStorage?displayProperty=fullName> závisí na [Azure Storagech knihovnách](https://github.com/Azure/azure-storage-net).</span><span class="sxs-lookup"><span data-stu-id="30060-102"><xref:Microsoft.AspNetCore.DataProtection.AzureStorage?displayProperty=fullName> depends on the [Azure Storage libraries](https://github.com/Azure/azure-storage-net).</span></span> <span data-ttu-id="30060-103">Tyto knihovny přejmenovaly jejich sestavení, balíčky a obory názvů.</span><span class="sxs-lookup"><span data-stu-id="30060-103">These libraries renamed their assemblies, packages, and namespaces.</span></span> <span data-ttu-id="30060-104">Počínaje ASP.NET Core 3,0 `Microsoft.AspNetCore.DataProtection.AzureStorage` používá nová `Microsoft.Azure.Storage.`ová a předem vydaná rozhraní API a balíčky.</span><span class="sxs-lookup"><span data-stu-id="30060-104">Starting in ASP.NET Core 3.0, `Microsoft.AspNetCore.DataProtection.AzureStorage` uses the new `Microsoft.Azure.Storage.`-prefixed APIs and packages.</span></span>
+<span data-ttu-id="f3467-102"><xref:Microsoft.AspNetCore.DataProtection.AzureStorage?displayProperty=fullName>závisí na [knihovnách Azure Storage](https://github.com/Azure/azure-storage-net).</span><span class="sxs-lookup"><span data-stu-id="f3467-102"><xref:Microsoft.AspNetCore.DataProtection.AzureStorage?displayProperty=fullName> depends on the [Azure Storage libraries](https://github.com/Azure/azure-storage-net).</span></span> <span data-ttu-id="f3467-103">Tyto knihovny přejmenovaly svá sestavení, balíčky a obory názvů.</span><span class="sxs-lookup"><span data-stu-id="f3467-103">These libraries renamed their assemblies, packages, and namespaces.</span></span> <span data-ttu-id="f3467-104">Počínaje ASP.NET Core 3.0, `Microsoft.AspNetCore.DataProtection.AzureStorage` `Microsoft.Azure.Storage.`používá nová předpona API a balíčky.</span><span class="sxs-lookup"><span data-stu-id="f3467-104">Starting in ASP.NET Core 3.0, `Microsoft.AspNetCore.DataProtection.AzureStorage` uses the new `Microsoft.Azure.Storage.`-prefixed APIs and packages.</span></span>
 
-<span data-ttu-id="30060-105">Pro otázky týkající se rozhraní Azure Storage API použijte <https://github.com/Azure/azure-storage-net>.</span><span class="sxs-lookup"><span data-stu-id="30060-105">For questions about the Azure Storage APIs, use <https://github.com/Azure/azure-storage-net>.</span></span> <span data-ttu-id="30060-106">Diskuzi o tomto problému najdete v tématu [dotnet/aspnetcore # 8472](https://github.com/dotnet/aspnetcore/issues/8472).</span><span class="sxs-lookup"><span data-stu-id="30060-106">For discussion on this issue, see [dotnet/aspnetcore#8472](https://github.com/dotnet/aspnetcore/issues/8472).</span></span>
+<span data-ttu-id="f3467-105">Máte-li dotazy týkající se <https://github.com/Azure/azure-storage-net>api úložiště Azure, použijte .</span><span class="sxs-lookup"><span data-stu-id="f3467-105">For questions about the Azure Storage APIs, use <https://github.com/Azure/azure-storage-net>.</span></span> <span data-ttu-id="f3467-106">Diskuse o tomto problému naleznete [v tématu dotnet/aspnetcore#8472](https://github.com/dotnet/aspnetcore/issues/8472).</span><span class="sxs-lookup"><span data-stu-id="f3467-106">For discussion on this issue, see [dotnet/aspnetcore#8472](https://github.com/dotnet/aspnetcore/issues/8472).</span></span>
 
-#### <a name="version-introduced"></a><span data-ttu-id="30060-107">Představená verze</span><span class="sxs-lookup"><span data-stu-id="30060-107">Version introduced</span></span>
+#### <a name="version-introduced"></a><span data-ttu-id="f3467-107">Zavedená verze</span><span class="sxs-lookup"><span data-stu-id="f3467-107">Version introduced</span></span>
 
-<span data-ttu-id="30060-108">3,0</span><span class="sxs-lookup"><span data-stu-id="30060-108">3.0</span></span>
+<span data-ttu-id="f3467-108">3.0</span><span class="sxs-lookup"><span data-stu-id="f3467-108">3.0</span></span>
 
-#### <a name="old-behavior"></a><span data-ttu-id="30060-109">Staré chování</span><span class="sxs-lookup"><span data-stu-id="30060-109">Old behavior</span></span>
+#### <a name="old-behavior"></a><span data-ttu-id="f3467-109">Staré chování</span><span class="sxs-lookup"><span data-stu-id="f3467-109">Old behavior</span></span>
 
-<span data-ttu-id="30060-110">Balíček odkazoval na `WindowsAzure.Storage` balíček NuGet.</span><span class="sxs-lookup"><span data-stu-id="30060-110">The package referenced the `WindowsAzure.Storage` NuGet package.</span></span>
+<span data-ttu-id="f3467-110">Balíček odkazuje `WindowsAzure.Storage` na balíček NuGet.</span><span class="sxs-lookup"><span data-stu-id="f3467-110">The package referenced the `WindowsAzure.Storage` NuGet package.</span></span>
 
-#### <a name="new-behavior"></a><span data-ttu-id="30060-111">Nové chování</span><span class="sxs-lookup"><span data-stu-id="30060-111">New behavior</span></span>
+#### <a name="new-behavior"></a><span data-ttu-id="f3467-111">Nové chování</span><span class="sxs-lookup"><span data-stu-id="f3467-111">New behavior</span></span>
 
-<span data-ttu-id="30060-112">Balíček odkazuje na balíček NuGet `Microsoft.Azure.Storage.Blob`.</span><span class="sxs-lookup"><span data-stu-id="30060-112">The package references the `Microsoft.Azure.Storage.Blob` NuGet package.</span></span>
+<span data-ttu-id="f3467-112">Balíček odkazuje `Microsoft.Azure.Storage.Blob` na balíček NuGet.</span><span class="sxs-lookup"><span data-stu-id="f3467-112">The package references the `Microsoft.Azure.Storage.Blob` NuGet package.</span></span>
 
-#### <a name="reason-for-change"></a><span data-ttu-id="30060-113">Důvod změny</span><span class="sxs-lookup"><span data-stu-id="30060-113">Reason for change</span></span>
+#### <a name="reason-for-change"></a><span data-ttu-id="f3467-113">Důvod změny</span><span class="sxs-lookup"><span data-stu-id="f3467-113">Reason for change</span></span>
 
-<span data-ttu-id="30060-114">Tato změna umožňuje `Microsoft.AspNetCore.DataProtection.AzureStorage` migrovat na Doporučené balíčky Azure Storage.</span><span class="sxs-lookup"><span data-stu-id="30060-114">This change allows `Microsoft.AspNetCore.DataProtection.AzureStorage` to migrate to the recommended Azure Storage packages.</span></span>
+<span data-ttu-id="f3467-114">Tato změna `Microsoft.AspNetCore.DataProtection.AzureStorage` umožňuje migraci na doporučené balíčky azure storage.</span><span class="sxs-lookup"><span data-stu-id="f3467-114">This change allows `Microsoft.AspNetCore.DataProtection.AzureStorage` to migrate to the recommended Azure Storage packages.</span></span>
 
-#### <a name="recommended-action"></a><span data-ttu-id="30060-115">Doporučená akce</span><span class="sxs-lookup"><span data-stu-id="30060-115">Recommended action</span></span>
+#### <a name="recommended-action"></a><span data-ttu-id="f3467-115">Doporučená akce</span><span class="sxs-lookup"><span data-stu-id="f3467-115">Recommended action</span></span>
 
-<span data-ttu-id="30060-116">Pokud stále potřebujete používat starší rozhraní Azure Storage API s ASP.NET Core 3,0, přidejte přímou závislost do balíčku [windowsazure. Storage](https://www.nuget.org/packages/WindowsAzure.Storage/) .</span><span class="sxs-lookup"><span data-stu-id="30060-116">If you still need to use the older Azure Storage APIs with ASP.NET Core 3.0, add a direct dependency to the [WindowsAzure.Storage](https://www.nuget.org/packages/WindowsAzure.Storage/) package.</span></span> <span data-ttu-id="30060-117">Tento balíček se dá nainstalovat spolu s novými rozhraními API `Microsoft.Azure.Storage`.</span><span class="sxs-lookup"><span data-stu-id="30060-117">This package can be installed alongside the new `Microsoft.Azure.Storage` APIs.</span></span>
+<span data-ttu-id="f3467-116">Pokud stále potřebujete používat starší rozhraní API úložiště Azure s ASP.NET Core 3.0, přidejte přímou závislost do balíčku [WindowsAzure.Storage.](https://www.nuget.org/packages/WindowsAzure.Storage/)</span><span class="sxs-lookup"><span data-stu-id="f3467-116">If you still need to use the older Azure Storage APIs with ASP.NET Core 3.0, add a direct dependency to the [WindowsAzure.Storage](https://www.nuget.org/packages/WindowsAzure.Storage/) package.</span></span> <span data-ttu-id="f3467-117">Tento balíček lze nainstalovat `Microsoft.Azure.Storage` společně s novými api.</span><span class="sxs-lookup"><span data-stu-id="f3467-117">This package can be installed alongside the new `Microsoft.Azure.Storage` APIs.</span></span>
 
-<span data-ttu-id="30060-118">V mnoha případech upgrade zahrnuje pouze změnu příkazů `using` pro použití nových oborů názvů:</span><span class="sxs-lookup"><span data-stu-id="30060-118">In many cases, the upgrade only involves changing the `using` statements to use the new namespaces:</span></span>
+<span data-ttu-id="f3467-118">V mnoha případech upgrade zahrnuje `using` pouze změnu příkazů použít nové obory názvů:</span><span class="sxs-lookup"><span data-stu-id="f3467-118">In many cases, the upgrade only involves changing the `using` statements to use the new namespaces:</span></span>
 
 ```diff
 - using Microsoft.WindowsAzure.Storage;
@@ -41,13 +41,13 @@ ms.locfileid: "75901594"
 + using Microsoft.Azure.Storage.Blob;
 ```
 
-#### <a name="category"></a><span data-ttu-id="30060-119">Kategorie</span><span class="sxs-lookup"><span data-stu-id="30060-119">Category</span></span>
+#### <a name="category"></a><span data-ttu-id="f3467-119">Kategorie</span><span class="sxs-lookup"><span data-stu-id="f3467-119">Category</span></span>
 
-<span data-ttu-id="30060-120">ASP.NET Core</span><span class="sxs-lookup"><span data-stu-id="30060-120">ASP.NET Core</span></span>
+<span data-ttu-id="f3467-120">Jádro ASP.NET</span><span class="sxs-lookup"><span data-stu-id="f3467-120">ASP.NET Core</span></span>
 
-#### <a name="affected-apis"></a><span data-ttu-id="30060-121">Ovlivněná rozhraní API</span><span class="sxs-lookup"><span data-stu-id="30060-121">Affected APIs</span></span>
+#### <a name="affected-apis"></a><span data-ttu-id="f3467-121">Ovlivněná rozhraní API</span><span class="sxs-lookup"><span data-stu-id="f3467-121">Affected APIs</span></span>
 
-<span data-ttu-id="30060-122">Žádné</span><span class="sxs-lookup"><span data-stu-id="30060-122">None</span></span>
+<span data-ttu-id="f3467-122">Žádný</span><span class="sxs-lookup"><span data-stu-id="f3467-122">None</span></span>
 
 <!-- 
 

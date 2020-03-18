@@ -2,17 +2,17 @@
 title: 'Ukázkový soubor XML: Typická nákupní objednávka v názvovém prostoru'
 ms.date: 07/20/2015
 ms.assetid: 84dc3339-ea32-4ccc-9af6-ab38ddfecced
-ms.openlocfilehash: 59ef22c73345fa13278795a6363871b3657e5b8f
-ms.sourcegitcommit: 9ee6cd851b6e176a5811ea28ed0d5935c71950f9
+ms.openlocfilehash: 001a12210c2252d9718425d0d4013bdbdf25b996
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68868698"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79167961"
 ---
-# <a name="sample-xml-file-typical-purchase-order-in-a-namespace"></a><span data-ttu-id="411ab-102">Ukázkový soubor XML: Typická nákupní objednávka v názvovém prostoru</span><span class="sxs-lookup"><span data-stu-id="411ab-102">Sample XML File: Typical Purchase Order in a Namespace</span></span>
-<span data-ttu-id="411ab-103">Následující soubor XML se v [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] dokumentaci používá v různých příkladech.</span><span class="sxs-lookup"><span data-stu-id="411ab-103">The following XML file is used in various examples in the [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] documentation.</span></span> <span data-ttu-id="411ab-104">Tento soubor je typickou nákupní objednávkou.</span><span class="sxs-lookup"><span data-stu-id="411ab-104">This file is a typical purchase order.</span></span> <span data-ttu-id="411ab-105">KÓD XML je v oboru názvů.</span><span class="sxs-lookup"><span data-stu-id="411ab-105">The XML is in a namespace.</span></span>  
+# <a name="sample-xml-file-typical-purchase-order-in-a-namespace"></a><span data-ttu-id="0802e-102">Ukázkový soubor XML: Typická nákupní objednávka v názvovém prostoru</span><span class="sxs-lookup"><span data-stu-id="0802e-102">Sample XML File: Typical Purchase Order in a Namespace</span></span>
+<span data-ttu-id="0802e-103">Následující soubor XML se používá v [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] různých příkladech v dokumentaci.</span><span class="sxs-lookup"><span data-stu-id="0802e-103">The following XML file is used in various examples in the [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] documentation.</span></span> <span data-ttu-id="0802e-104">Tento soubor je typická nákupní objednávka.</span><span class="sxs-lookup"><span data-stu-id="0802e-104">This file is a typical purchase order.</span></span> <span data-ttu-id="0802e-105">Kód XML je v oboru názvů.</span><span class="sxs-lookup"><span data-stu-id="0802e-105">The XML is in a namespace.</span></span>  
   
-## <a name="purchaseorderinnamespacexml"></a><span data-ttu-id="411ab-106">PurchaseOrderInNamespace. XML</span><span class="sxs-lookup"><span data-stu-id="411ab-106">PurchaseOrderInNamespace.xml</span></span>  
+## <a name="purchaseorderinnamespacexml"></a><span data-ttu-id="0802e-106">Soubor PurchaseOrderInNamespace.xml</span><span class="sxs-lookup"><span data-stu-id="0802e-106">PurchaseOrderInNamespace.xml</span></span>  
   
 ```xml  
 <?xml version="1.0"?>  
@@ -53,4 +53,3 @@ ms.locfileid: "68868698"
   </aw:Items>  
 </aw:PurchaseOrder>  
 ```  
- 
