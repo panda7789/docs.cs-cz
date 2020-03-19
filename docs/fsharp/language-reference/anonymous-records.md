@@ -1,21 +1,21 @@
 ---
 title: Anonymní záznamy
-description: Naučte se používat vytváření a používání anonymních záznamů, funkce jazyka, která pomáhá s manipulací s daty.
+description: Naučte se používat konstrukce a použití anonymních záznamů, což je jazyková funkce, která pomáhá při manipulaci s daty.
 ms.date: 06/12/2019
-ms.openlocfilehash: 061fd3279c84b9a3161c687d9392947ee7ce9c83
-ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
+ms.openlocfilehash: ef3aa8fccdb6ff406542932816e4138040845a59
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77453023"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79187497"
 ---
 # <a name="anonymous-records"></a>Anonymní záznamy
 
-Anonymní záznamy jsou jednoduché agregované pojmenované hodnoty, které není nutné deklarovat před použitím. Můžete je deklarovat buď jako struktury, nebo na typy odkazů. Ve výchozím nastavení se jedná o typy odkazů.
+Anonymní záznamy jsou jednoduché agregace pojmenovaných hodnot, které není nutné deklarovat před použitím. Můžete je deklarovat jako struktury nebo typy odkazů. Ve výchozím nastavení se neje vypořádají referenčními typy.
 
 ## <a name="syntax"></a>Syntaxe
 
-Následující příklady ukazují syntaxi anonymního záznamu. Položky s oddělovači `[item]` jsou volitelné.
+Následující příklady ukazují syntaxi anonymního záznamu. Položky oddělené `[item]` jako volitelné.
 
 ```fsharp
 // Construct an anonymous record
@@ -28,11 +28,11 @@ let value-name = Type-Name<[struct] {| Label1: Type1; Label2: Type2; ...|}>
 let function-name (arg-name: [struct] {| Label1: Type1; Label2: Type2; ...|}) ...
 ```
 
-## <a name="basic-usage"></a>Základní využití
+## <a name="basic-usage"></a>Základní použití
 
-Anonymní záznamy se nejlépe považují za F# typy záznamů, které není nutné deklarovat před vytvořením instance.
+Anonymní záznamy jsou nejlépe myšlenka jako F# typy záznamů, které není nutné deklarovat před instanci.
 
-Tady je příklad, jak můžete pracovat s funkcí, která vytváří anonymní záznam:
+Zde například můžete pracovat s funkcí, která vytváří anonymní záznam:
 
 ```fsharp
 open System
@@ -50,7 +50,7 @@ printfn "Circle with radius: %f has diameter %f, area %f, and circumference %f"
     r stats.Diameter stats.Area stats.Circumference
 ```
 
-V následujícím příkladu se rozšíří na předchozí s funkcí `printCircleStats`, která přebírá anonymní záznam jako vstup:
+Následující příklad rozbalí předchozí s `printCircleStats` funkcí, která bere anonymní záznam jako vstup:
 
 ```fsharp
 open System
@@ -71,7 +71,7 @@ let stats = getCircleStats r
 printCircleStats r stats
 ```
 
-Volání `printCircleStats` s jakýmkoli typem anonymního záznamu, který nemá stejný "tvar", protože vstupní typ se nepodaří zkompilovat:
+Volání `printCircleStats` s libovolným anonymním typem záznamu, který nemá stejný "tvar" jako vstupní typ, se nepodaří zkompilovat:
 
 ```fsharp
 printCircleStats r {| Diameter = 2.0; Area = 4.0; MyCircumference = 12.566371 |}
@@ -79,9 +79,9 @@ printCircleStats r {| Diameter = 2.0; Area = 4.0; MyCircumference = 12.566371 |}
 // '["Area"; "Circumference"; "Diameter"]' and '["Area"; "Diameter"; "MyCircumference"]'
 ```
 
-## <a name="struct-anonymous-records"></a>Strukturování anonymních záznamů
+## <a name="struct-anonymous-records"></a>Strukturovat anonymní záznamy
 
-Anonymní záznamy lze definovat také jako strukturu s nepovinným klíčovým slovem `struct`. Následující příklad rozšiřuje předchozí vyprodukováním a spotřebou anonymního záznamu struktury:
+Anonymní záznamy lze také definovat jako `struct` strukturu s volitelným klíčovým slovem. Následující příklad rozšiřuje předchozí tím, že produkuje a spotřebovává nitanonymní záznam:
 
 ```fsharp
 open System
@@ -104,9 +104,9 @@ let stats = getCircleStats r
 printCircleStats r stats
 ```
 
-### <a name="structness-inference"></a>Odvození struktury
+### <a name="structness-inference"></a>Závěr o struktuře
 
-Strukturování anonymních záznamů také umožňuje "odvození struktury", kde není nutné zadávat klíčové slovo `struct` na webu volání. V tomto příkladu jste při volání `printCircleStats`Elide klíčové slovo `struct`:
+Strukturovat anonymní záznamy také umožňují "odvození struktury", kde není `struct` nutné zadat klíčové slovo na webu volání. V tomto příkladu můžete `struct` elide `printCircleStats`klíčové slovo při volání :
 
 ```fsharp
 
@@ -117,11 +117,11 @@ let printCircleStats r (stats: struct {| Area: float; Circumference: float; Diam
 printCircleStats r {| Area = 4.0; Circumference = 12.6; Diameter = 12.6 |}
 ```
 
-Zpětný vzor – určení `struct`, když není vstupní typ struktura anonymního záznamu – selže kompilace.
+Reverzní vzor - `struct` určující, kdy vstupní typ není nitanonymní záznam - se nezdaří kompilovat.
 
-## <a name="embedding-anonymous-records-within-other-types"></a>Vkládání anonymních záznamů v rámci jiných typů
+## <a name="embedding-anonymous-records-within-other-types"></a>Vkládání anonymních záznamů do jiných typů
 
-Je užitečné deklarovat [rozlišené sjednocení](discriminated-unions.md) , jejichž případy jsou záznamy. Pokud jsou však data v záznamech stejného typu jako rozlišené sjednocení, je nutné definovat všechny typy jako vzájemně rekurzivní. Použití anonymních záznamů zabraňuje tomuto omezení. Co následuje příklad typu a funkce, pro kterou odpovídá vzorek:
+Je užitečné deklarovat [diskriminované odbory,](discriminated-unions.md) jejichž případy jsou záznamy. Ale pokud data v záznamech je stejný typ jako discriminated unie, je nutné definovat všechny typy jako vzájemně rekurzivní. Použití anonymních záznamů zabrání toto omezení. Následuje příklad typu a funkce, která se nad ním shoduje:
 
 ```fsharp
 type FullName = { FirstName: string; LastName: string }
@@ -139,23 +139,23 @@ let getFirstName e =
     | Executive ex -> ex.Name.FirstName
 ```
 
-## <a name="copy-and-update-expressions"></a>Výrazy kopírování a aktualizace
+## <a name="copy-and-update-expressions"></a>Kopírování a aktualizace výrazů
 
-Anonymní záznamy podporují vytváření pomocí [výrazů kopírování a aktualizace](copy-and-update-record-expressions.md). Tady je příklad, jak můžete vytvořit novou instanci anonymního záznamu, který zkopíruje existující data:
+Anonymní záznamy podporují konstrukci s [výrazy kopírování a aktualizace](copy-and-update-record-expressions.md). Můžete například vytvořit novou instanci anonymního záznamu, který kopíruje data existujícího:
 
 ```fsharp
 let data = {| X = 1; Y = 2 |}
 let data' = {| data with Y = 3 |}
 ```
 
-Na rozdíl od pojmenovaných záznamů ale anonymní záznamy umožňují vytvořit zcela různé formuláře s výrazy kopírování a aktualizace. Následující příklad používá stejný anonymní záznam z předchozího příkladu a rozbalí ho do nového anonymního záznamu:
+Na rozdíl od pojmenovaných záznamů však anonymní záznamy umožňují vytvářet zcela odlišné formuláře s výrazy kopírování a aktualizace. Následující příklad převezme stejný anonymní záznam z předchozího příkladu a rozbalí jej na nový anonymní záznam:
 
 ```fsharp
 let data = {| X = 1; Y = 2 |}
 let expandedData = {| data with Z = 3 |} // Gives {| X=1; Y=2; Z=3 |}
 ```
 
-Je také možné vytvořit anonymní záznamy z instancí pojmenovaných záznamů:
+Je také možné vytvářet anonymní záznamy z instancí pojmenovaných záznamů:
 
 ```fsharp
 type R = { X: int }
@@ -163,7 +163,7 @@ let data = { X = 1 }
 let data' = {| data with Y = 2 |} // Gives {| X=1; Y=2 |}
 ```
 
-Můžete také kopírovat data do a z odkazů a struktury anonymních záznamů:
+Můžete také kopírovat data do a z referenčních a strukturovaných anonymních záznamů:
 
 ```fsharp
 // Copy data from a reference record into a struct anonymous record
@@ -185,20 +185,20 @@ let data3 = struct {| data2 with Z = r2.X |}
 
 ## <a name="properties-of-anonymous-records"></a>Vlastnosti anonymních záznamů
 
-Anonymní záznamy mají řadu vlastností, které jsou nezbytné pro úplné porozumění způsobu jejich použití.
+Anonymní záznamy mají řadu charakteristik, které jsou nezbytné pro úplné pochopení, jak mohou být použity.
 
 ### <a name="anonymous-records-are-nominal"></a>Anonymní záznamy jsou nominální
 
-Anonymní záznamy jsou [nominální typy](https://en.wikipedia.org/wiki/Nominal_type_system). Nejlépe se považují za pojmenované typy [záznamů](records.md) (které jsou také nominální), které nevyžadují deklaraci předem.
+Anonymní záznamy jsou [nominální typy](https://en.wikipedia.org/wiki/Nominal_type_system). Oni jsou nejlépe myšlenka jako pojmenované typy [záznamů](records.md) (které jsou také nominální), které nevyžadují předem prohlášení.
 
-Vezměte v úvahu následující příklad se dvěma deklaracemi anonymního záznamu:
+Zvažte následující příklad se dvěma anonymními deklaracemi záznamů:
 
 ```fsharp
 let x = {| X = 1 |}
 let y = {| Y = 1 |}
 ```
 
-Hodnoty `x` a `y` mají různé typy a nejsou kompatibilní mezi sebou. Nejsou shodné a nejsou srovnatelné. K ilustraci použijte podobný záznam s názvem:
+Hodnoty `x` `y` a mají různé typy a nejsou vzájemně kompatibilní. Nejsou schavitelné a nejsou srovnatelné. Pro ilustraci zvažte pojmenovaný ekvivalent záznamu:
 
 ```fsharp
 type X = { X: int }
@@ -208,11 +208,11 @@ let x = { X = 1 }
 let y = { Y = 1 }
 ```
 
-U anonymních záznamů se v porovnání s jejich pojmenovaným záznamem neliší žádné podstatné informace, které se týkají rovnocennosti typu nebo porovnání.
+Neexistuje nic ze své podstaty odlišné o anonymní záznamy ve srovnání s jejich pojmenované ekvivalenty záznamu, pokud jde o typ ekvivalence nebo porovnání.
 
-### <a name="anonymous-records-use-structural-equality-and-comparison"></a>Anonymní záznamy používají strukturální rovnost a porovnávání.
+### <a name="anonymous-records-use-structural-equality-and-comparison"></a>Anonymní záznamy používají strukturální rovnost a porovnání
 
-Podobně jako typy záznamů jsou anonymní záznamy strukturované a srovnatelné. To platí pouze v případě, že všechny typy prvků podporují rovnost a porovnávání, jako u typů záznamů. Pro podporu rovnosti nebo porovnání musí mít dva anonymní záznamy stejný "tvar".
+Stejně jako typy záznamů jsou anonymní záznamy strukturálně srovnatelné a srovnatelné. To platí pouze v případě, že všechny typy složek podporují rovnost a porovnání, jako u typů záznamů. Pro podporu rovnosti nebo porovnání musí mít dva anonymní záznamy stejný "tvar".
 
 ```fsharp
 {| a = 1+1 |} = {| a = 2 |} // true
@@ -222,25 +222,25 @@ Podobně jako typy záznamů jsou anonymní záznamy strukturované a srovnateln
 {| a = 1 + 1 |} = {| a = 2;  b = 1|}
 ```
 
-### <a name="anonymous-records-are-serializable"></a>Anonymní záznamy jsou serializovatelné.
+### <a name="anonymous-records-are-serializable"></a>Anonymní záznamy lze serializovat.
 
-Anonymní záznamy můžete serializovat stejně jako u pojmenovaných záznamů. Tady je příklad použití [Newtonsoft. JSON](https://www.nuget.org/packages/Newtonsoft.Json/):
+Anonymní záznamy můžete serializovat stejně jako s pojmenovanými záznamy. Zde je příklad pomocí [Newtonsoft.Json](https://www.nuget.org/packages/Newtonsoft.Json/):
 
 ```fsharp
 open Newtonsoft.Json
 
 let phillip' = {| name="Phillip"; age=28 |}
-let philStr = JsonConvert.SerializeObject(phillip') 
+let philStr = JsonConvert.SerializeObject(phillip')
 
 let phillip = JsonConvert.DeserializeObject<{|name: string; age: int|}>(philStr)
 printfn "Name: %s Age: %d" phillip.name phillip.age
 ```
 
-Anonymní záznamy jsou užitečné pro posílání odlehčených dat v síti, aniž by bylo potřeba definovat doménu pro serializované/deserializované typy vpřed.
+Anonymní záznamy jsou užitečné pro odesílání zjednodušených dat v síti bez nutnosti definovat doménu pro serializované/rekonstruované typy předem.
 
-### <a name="anonymous-records-interoperate-with-c-anonymous-types"></a>Anonymní záznamy spolupracující s C# anonymními typy
+### <a name="anonymous-records-interoperate-with-c-anonymous-types"></a>Anonymní záznamy spolupracují s anonymními typy jazyka C#
 
-Je možné použít rozhraní .NET API, které vyžaduje použití [ C# anonymních typů](../../csharp/programming-guide/classes-and-structs/anonymous-types.md). C#anonymní typy jsou triviální pro spolupráci s použitím anonymních záznamů. Následující příklad ukazuje způsob použití anonymních záznamů pro volání přetížení [LINQ](../../csharp/programming-guide/concepts/linq/index.md) , které vyžaduje anonymní typ:
+Je možné použít rozhraní .NET API, které vyžaduje použití [anonymních typů jazyka C#](../../csharp/programming-guide/classes-and-structs/anonymous-types.md). C# anonymní typy jsou triviální pro vzájemnou prosazení pomocí anonymních záznamů. Následující příklad ukazuje, jak pomocí anonymních záznamů volat [přetížení LINQ,](../../csharp/programming-guide/concepts/linq/index.md) které vyžaduje anonymní typ:
 
 ```fsharp
 open System.Linq
@@ -251,26 +251,26 @@ for ng in nameGrouping do
     printfn "%s has first letter %c" ng.Name ng.FirstLetter
 ```
 
-V rozhraní .NET je velké množství dalších rozhraní API, které vyžaduje použití předávání anonymního typu. Anonymní záznamy jsou nástroje pro práci s nimi.
+Existuje velké množství dalších rozhraní API používané v celé .NET, které vyžadují použití předávání v anonymní typ. Anonymní záznamy jsou vaším nástrojem pro práci s nimi.
 
 ## <a name="limitations"></a>Omezení
 
-Anonymní záznamy mají určitá omezení používání. Některé jsou podstatou jejich návrhu, ale jiné jsou snadněji ke změně.
+Anonymní záznamy mají určitá omezení v jejich použití. Některé z nich jsou vlastní jejich designu, ale jiní jsou přístupné ke změně.
 
 ### <a name="limitations-with-pattern-matching"></a>Omezení s porovnáváním vzorů
 
 Anonymní záznamy nepodporují porovnávání vzorů, na rozdíl od pojmenovaných záznamů. Existují tři důvody:
 
-1. Vzor by musel být pro každé pole anonymního záznamu vyúčtován na rozdíl od pojmenovaných typů záznamů. Je tomu tak proto, že anonymní záznamy nepodporují strukturální podtypování – jedná se o nominální typy.
-2. Vzhledem k tomu, že je (1), není možné mít ve výrazu porovnávání vzorů další vzory, protože každý odlišný vzor by znamenal jiný typ anonymního záznamu.
-3. Z důvodu (3) by byl jakýkoli vzor anonymního záznamu podrobnější než použití notace "tečka".
+1. Vzor by musel odpovídat za každé pole anonymního záznamu, na rozdíl od pojmenovaných typů záznamů. Je to proto, že anonymní záznamy nepodporují strukturální subtypování – jsou to nominální typy.
+2. Z důvodu (1) není možné mít další vzory ve výrazu shody vzoru, protože každý odlišný vzor by znamenal jiný anonymní typ záznamu.
+3. Z důvodu (3) by jakýkoli anonymní záznam vzor by být podrobnější než použití "tečka" zápis.
 
-Existuje návrh otevřeného jazyka, který umožňuje [porovnávání vzorů v omezeném kontextu](https://github.com/fsharp/fslang-suggestions/issues/713).
+Existuje otevřený jazyk návrh [povolit porovnávání vzorů v omezených kontextech](https://github.com/fsharp/fslang-suggestions/issues/713).
 
-### <a name="limitations-with-mutability"></a>Omezení pomocí proměnlivost
+### <a name="limitations-with-mutability"></a>Omezení s proměnlivostí
 
-V současné době není možné definovat anonymní záznam s `mutable`mi daty. K dispozici je [Návrh otevřeného jazyka](https://github.com/fsharp/fslang-suggestions/issues/732) , který povoluje proměnlivá data.
+V současné době není možné definovat `mutable` anonymní záznam s daty. Existuje [návrh otevřeného jazyka,](https://github.com/fsharp/fslang-suggestions/issues/732) který umožňuje proměnlivá data.
 
-### <a name="limitations-with-struct-anonymous-records"></a>Omezení pomocí anonymních záznamů struktury
+### <a name="limitations-with-struct-anonymous-records"></a>Omezení s nitkovými anonymními záznamy
 
-Není možné deklarovat anonymní záznamy struktury jako `IsByRefLike` nebo `IsReadOnly`. K dispozici je [Návrh otevřeného jazyka](https://github.com/fsharp/fslang-suggestions/issues/712) pro `IsByRefLike` a `IsReadOnly` anonymní záznamy.
+Není možné deklarovat struktury `IsByRefLike` anonymní `IsReadOnly`záznamy jako nebo . Existuje [otevřený jazyk návrh](https://github.com/fsharp/fslang-suggestions/issues/712) `IsByRefLike` pro `IsReadOnly` anonymní záznamy.

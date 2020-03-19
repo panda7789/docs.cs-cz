@@ -1,20 +1,20 @@
 ---
 title: Parametry ByRef
-description: Seznamte se s typy ByRef a ByRef jako F#v, které se používají pro programování na nízké úrovni.
+description: Další informace o byref a byref-like typy v F#, které se používají pro programování nižší úrovně.
 ms.date: 11/04/2019
-ms.openlocfilehash: 2d98d325dc4ad26548fb2cc6aa5b872e152ee0a8
-ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
+ms.openlocfilehash: 527f465ee87fe153a2deae1306b6730531dc4123
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/09/2020
-ms.locfileid: "77092785"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79187054"
 ---
 # <a name="byrefs"></a>Parametry ByRef
 
-F#má dvě hlavní oblasti funkcí, které se týkají prostoru programování nízké úrovně:
+F# má dvě hlavní oblasti funkcí, které se zabývají v prostoru programování nízké úrovně:
 
-* `byref`/`inref`/typy `outref`, což jsou spravované ukazatele. Mají omezení používání, takže nemůžete kompilovat program, který je neplatný v době běhu.
-* Struktura podobná `byref`, což je [Struktura](structures.md) , která má podobnou sémantiku a stejná omezení při kompilaci jako `byref<'T>`. Jedním z příkladů je <xref:System.Span%601>.
+* `byref` / `inref` Typy, / `outref` které jsou spravované ukazatele. Mají omezení použití, takže nelze zkompilovat program, který je neplatný za běhu.
+* -like `byref`struct, což je [struktura,](structures.md) která má podobnou sémantiku a stejné omezení kompilace jako `byref<'T>`. Jedním z <xref:System.Span%601>příkladů je .
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -37,19 +37,19 @@ type S(count1: int, count2: int) =
     member x.Count2 = count2
 ```
 
-## <a name="byref-inref-and-outref"></a>ByRef, inref a outref
+## <a name="byref-inref-and-outref"></a>Byref, inref a outref
 
 Existují tři formy `byref`:
 
-* `inref<'T>`spravovaný ukazatel pro čtení podkladové hodnoty.
-* `outref<'T>`spravovaný ukazatel pro zápis na podkladovou hodnotu.
-* `byref<'T>`spravovaný ukazatel pro čtení a zápis základní hodnoty.
+* `inref<'T>`, spravovaný ukazatel pro čtení základní hodnoty.
+* `outref<'T>`, spravovaný ukazatel pro zápis do podkladové hodnoty.
+* `byref<'T>`, spravovaný ukazatel pro čtení a zápis podkladové hodnoty.
 
-`byref<'T>` lze předat, pokud je očekávána `inref<'T>`. Podobně je možné předat `byref<'T>`, kde se očekává `outref<'T>`.
+A `byref<'T>` může být `inref<'T>` předána tam, kde se očekává. Podobně může `byref<'T>` být předána, `outref<'T>` kde se očekává.
 
-## <a name="using-byrefs"></a>Použití ByRef
+## <a name="using-byrefs"></a>Použití byrefs
 
-Chcete-li použít `inref<'T>`, je třeba získat hodnotu ukazatele s `&`:
+Chcete-li `inref<'T>`použít , je třeba `&`získat hodnotu ukazatele s :
 
 ```fsharp
 open System
@@ -62,7 +62,7 @@ let usage =
     f &dt // Pass a pointer to 'dt'
 ```
 
-Chcete-li zapisovat do ukazatele pomocí `outref<'T>` nebo `byref<'T>`, je nutné také nastavit hodnotu, kterou jste převedli ukazatel na `mutable`.
+Chcete-li zapsat na `outref<'T>` `byref<'T>`ukazatel pomocí nebo , musíte také `mutable`provést hodnotu, na kterou ukazatel uchopíte .
 
 ```fsharp
 open System
@@ -78,63 +78,63 @@ let mutable dt = DateTime.Now
 f &dt
 ```
 
-Pokud pouze píšete ukazatel namísto čtení, zvažte použití `outref<'T>` místo `byref<'T>`.
+Pokud ukazatel píšete pouze místo toho, `outref<'T>` abyste `byref<'T>`ho četli, zvažte použití místo .
 
-### <a name="inref-semantics"></a>Sémantika Inref
+### <a name="inref-semantics"></a>Sémantiku inref
 
-Vezměte v úvahu následující kód:
+Uvažujte následující kód:
 
 ```fsharp
 let f (x: inref<SomeStruct>) = x.SomeField
 ```
 
-Sémantika znamená následující:
+Sémanticky to znamená následující:
 
-* Držitel `x`ového ukazatele ho může použít jenom ke čtení hodnoty.
-* Jakýkoli ukazatel získaný pro `struct` polí vnořených v rámci `SomeStruct` je uveden typ `inref<_>`.
+* Držitel `x` ukazatele jej může použít pouze ke čtení hodnoty.
+* Všechny ukazatele `struct` získané na `SomeStruct` pole vnořené v rámci jsou uvedeny typu `inref<_>`.
 
-Platí to i pro následující skutečnosti:
+Platí také toto:
 
-* Neexistují žádné nenásobení, že k `x`nejsou k dispozici další vlákna nebo aliasy.
-* Neexistuje žádné nenásobení, které `SomeStruct` není proměnlivé na základě `x` je `inref`.
+* Neexistuje žádný důsledek, že jiná vlákna nebo `x`aliasy nemají přístup pro zápis do aplikace .
+* Neexistuje žádný důsledek, který `SomeStruct` je neměnný na `x` základě toho, že `inref`je .
 
-U F# typů hodnot, které **jsou** neměnné, však je ukazatel `this` odvozen jako `inref`.
+Pro typy hodnot F#, které **jsou** neměnné, je však `this` ukazatel odvozen za . `inref`
 
-Všechna tato pravidla dohromady znamenají, že držitel `inref`ového ukazatele nemůže upravit okamžitý obsah paměti, na kterou se odkazuje.
+Všechna tato pravidla společně znamenají, `inref` že držitel ukazatele nemusí změnit okamžitý obsah paměti, na kterou se odkazuje.
 
-### <a name="outref-semantics"></a>Sémantika Outref
+### <a name="outref-semantics"></a>Sémantiku předčí
 
-Účelem `outref<'T>` je označit, že ukazatel by měl zapisovat pouze do. Neočekávaně `outref<'T>` povoluje čtení základní hodnoty navzdory jejímu názvu. Jedná se o účely kompatibility. Sémanticky, `outref<'T>` se neliší od `byref<'T>`.
+Účelem `outref<'T>` je označit, že ukazatel by měl být zapsán pouze do. Neočekávaně `outref<'T>` umožňuje čtení základní hodnoty i přes jeho název. Toto je pro účely kompatibility. Sémanticky, `outref<'T>` se `byref<'T>`nijak neliší od .
 
-### <a name="interop-with-c"></a>Spolupráce s C\#
+### <a name="interop-with-c"></a>Interop s C\#
 
-C#Kromě `ref` vrací i klíčová slova `in ref` a `out ref`. Následující tabulka ukazuje, jak F# interpretuje, C# co emituje:
+C# podporuje `in ref` `out ref` a klíčová slova, `ref` kromě vrátí. Následující tabulka ukazuje, jak F# interpretuje to, co c# vydává:
 
-|C#Contains|F#odvodí|
+|Konstrukce jazyka C#|F# odvodí|
 |------------|---------|
-|`ref` návratová hodnota|`outref<'T>`|
-|`ref readonly` návratová hodnota|`inref<'T>`|
-|`in ref` parametr|`inref<'T>`|
-|`out ref` parametr|`outref<'T>`|
+|`ref`vrácená hodnota|`outref<'T>`|
+|`ref readonly`vrácená hodnota|`inref<'T>`|
+|`in ref`Parametr|`inref<'T>`|
+|`out ref`Parametr|`outref<'T>`|
 
-Následující tabulka ukazuje, co F# emituje:
+V následující tabulce je uvedeno, co f# vyzařuje:
 
-|F#Contains|Emited – konstrukce|
+|F# konstrukce|Vyzařovaná konstrukce|
 |------------|-----------------|
-|Argument `inref<'T>`|atribut `[In]` v argumentu|
-|`inref<'T>` návrat|`modreq` atribut pro hodnotu|
-|`inref<'T>` v abstraktní patici nebo implementaci|`modreq` argumentu nebo návratem|
-|Argument `outref<'T>`|atribut `[Out]` v argumentu|
+|Argument `inref<'T>`|`[In]`atribut na argumentu|
+|`inref<'T>`Vrátit|`modreq`atribut na hodnotě|
+|`inref<'T>`v abstraktním slotu nebo implementaci|`modreq`na argument nebo návrat|
+|Argument `outref<'T>`|`[Out]`atribut na argumentu|
 
-### <a name="type-inference-and-overloading-rules"></a>Odvození typu a pravidla přetížení
+### <a name="type-inference-and-overloading-rules"></a>Pravidla odvození typu a přetížení
 
-Typ `inref<'T>` je odvozen F# kompilátorem v následujících případech:
+Typ `inref<'T>` je odvozen kompilátorem F#v následujících případech:
 
-1. Parametr nebo návratový typ .NET, který má atribut `IsReadOnly`.
-2. Ukazatel `this` u typu struktury, který nemá žádná proměnlivá pole.
-3. Adresa umístění v paměti odvozeného od jiného ukazatele `inref<_>`.
+1. Parametr .NET nebo návratový `IsReadOnly` typ, který má atribut.
+2. Ukazatel `this` na typ struktury, který nemá žádná proměnlivá pole.
+3. Adresa umístění paměti odvozené z `inref<_>` jiného ukazatele.
 
-Když je využívána implicitní adresa `inref`, přetížení s argumentem typu `SomeType` je upřednostňováno na přetížení s argumentem typu `inref<SomeType>`. Například:
+Při implicitní adresu `inref` je přijata, přetížení s `SomeType` argumentem typu je upřednostňována přetížení s argumentem typu `inref<SomeType>`. Například:
 
 ```fsharp
 type C() =
@@ -148,11 +148,11 @@ let v =  C.M(res)
 let v2 =  C.M2(res, 4)
 ```
 
-V obou případech jsou přetížení přebírající `System.DateTime` vyřešeny, nikoli přetížení, které přebírají `inref<System.DateTime>`.
+V obou případech přetížení `System.DateTime` přičemž jsou vyřešeny `inref<System.DateTime>`spíše než přetížení přičemž .
 
-## <a name="byref-like-structs"></a>Struktury podobné typu ByRef
+## <a name="byref-like-structs"></a>Byref-jako struktury
 
-Kromě `byref`/`inref`/`outref` trojice můžete definovat vlastní struktury, které mohou splňovat `byref`jako sémantiku. To se provádí s atributem <xref:System.Runtime.CompilerServices.IsByRefLikeAttribute>:
+Kromě tria `byref` / `inref` / `outref` můžete definovat vlastní struktury, které mohou `byref`dodržovat sémantiku jako. To se provádí <xref:System.Runtime.CompilerServices.IsByRefLikeAttribute> s atributem:
 
 ```fsharp
 open System
@@ -164,31 +164,31 @@ type S(count1: Span<int>, count2: Span<int>) =
     member x.Count2 = count2
 ```
 
-`IsByRefLike` neznamená `Struct`. Oba typy musí být k dispozici na typu.
+`IsByRefLike`neznamená `Struct`. Oba musí být přítomen na typu.
 
-Struktura "`byref`jako" v F# je typ hodnoty vázané na zásobník. Nikdy se nepřiřazuje na spravovanou haldu. Struktura podobná `byref`je užitečná pro vysoce výkonné programování, protože se vynutila se sadou silných kontrol životního cyklu životnosti a bez zachycení. Pravidla jsou:
+Struktura`byref`"-like" v F# je typ hodnoty vázaný na zásobník. Nikdy přidělena na spravované haldy. -like `byref`struct je užitečné pro vysoce výkonné programování, protože je vynuceno se sadou silných kontrol o životnosti a bez zachycení. Pravidla jsou:
 
-* Mohou být použity jako parametry funkce, parametry metody, místní proměnné, metoda vrátí.
-* Nemohou být statické nebo členy instance třídy nebo normální struktury.
-* Nemohou být zachyceny žádnou uzavírací konstrukcí (`async` metody nebo lambda výrazy).
+* Mohou být použity jako parametry funkce, parametry metody, lokální proměnné, výnosy metod.
+* Nemohou být statické nebo instance členy třídy nebo normální struktury.
+* Nemohou být zachyceny žádnou`async` uzavírací konstrukcí (metodami nebo výrazy lambda).
 * Nelze je použít jako obecný parametr.
 
-Tento poslední bod je rozhodující pro F# programování ve stylu kanálu, protože `|>` je obecná funkce, která parameterizes své vstupní typy. Toto omezení může být pro `|>` v budoucnu odlehčené, protože je vložené a neprovádí v těle žádné volání obecných funkcí, které nejsou vloženy.
+Tento poslední bod je rozhodující pro programování `|>` ve stylu kanálu F#, stejně jako obecná funkce, která parametrizuje jeho vstupní typy. Toto omezení může `|>` být uvolněno pro v budoucnu, protože je vložené a neprovádí žádné volání na nevložené obecné funkce v jeho těle.
 
-I když tato pravidla omezují použití, tak aby mohli bezpečným způsobem plnit vysoce výkonné výpočetní výkon.
+Přestože tato pravidla silně omezují použití, činí tak, aby splnila slib vysoce výkonnévýpočetní techniky bezpečným způsobem.
 
-## <a name="byref-returns"></a>ByRef – vrácené hodnoty
+## <a name="byref-returns"></a>Byref vrátí
 
-Návratové hodnoty F# ByRef z funkcí nebo členů lze vytvářet a spotřebovat. Při zpracování metody vracené `byref`se hodnota implicitně odkázat. Například:
+Byref vrátí z F# funkce nebo členy mohou být vyrobeny a spotřebovány. Při spotřebovávání `byref`-returning metoda, hodnota je implicitně dereferenced. Například:
 
 ```fsharp
-let squareAndPrint (data : byref<int>) = 
+let squareAndPrint (data : byref<int>) =
     let squared = data*data    // data is implicitly dereferenced
     printfn "%d" squared
 ```
 
-Chcete-li vrátit hodnotu ByRef, proměnná, která obsahuje hodnotu, musí být živá déle než aktuální obor.
-Také pro návrat typu ByRef použijte `&value` (kde value je proměnná, která je větší než aktuální rozsah).
+Chcete-li vrátit hodnotu byref, proměnná, která obsahuje hodnotu musí žít déle než aktuální obor.
+Chcete-li vrátit byref, použijte `&value` (kde hodnota je proměnná, která žije déle než aktuální obor).
 
 ```fsharp
 let mutable sum = 0
@@ -198,9 +198,9 @@ let safeSum (bytes: Span<byte>) =
     &sum  // sum lives longer than the scope of this function.
 ```
 
-Chcete-li se vyhnout implicitnímu odkázání, jako je například předání odkazu prostřednictvím více zřetězených volání, použijte `&x` (kde `x` je hodnota).
+Chcete-li se vyhnout implicitní dereference, jako je `&x` například `x` předávání odkazu prostřednictvím více zřetězených volání, použijte (kde je hodnota).
 
-Můžete také přímo přiřadit k návratové `byref`. Vezměte v úvahu následující (vysoce imperativně) program:
+Můžete také přímo přiřadit `byref`k návratu . Zvažte následující (velmi imperativní) program:
 
 ```fsharp
 type C() =
@@ -236,9 +236,9 @@ Original sequence: 1 3 7 15 31 63 127 255 511 1023
 New sequence:      1 3 7 30 31 63 127 255 511 1023
 ```
 
-## <a name="scoping-for-byrefs"></a>Určení rozsahu pro parametry ByRef
+## <a name="scoping-for-byrefs"></a>Vymezení oborů pro byrefs
 
-Hodnota vazby `let`nemůže mít odkaz nad rámec, ve kterém byla definována. Například následující příkaz není povolen:
+Hodnota `let`-bound nemůže mít svůj odkaz překročit rozsah, ve kterém byla definována. Například následující je zakázáno:
 
 ```fsharp
 let test2 () =
@@ -252,4 +252,4 @@ let test () =
     ()
 ```
 
-Tím se zabrání v získání různých výsledků v závislosti na tom, jestli kompilujete s optimalizacemi nebo ne.
+Tím zabráníte získání různých výsledků v závislosti na tom, zda kompilujete s optimalizací nebo ne.

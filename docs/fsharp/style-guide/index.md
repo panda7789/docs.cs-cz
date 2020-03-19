@@ -1,48 +1,48 @@
 ---
-title: F#Průvodce správným stylem
-description: Další pět zásadami dobrého F# kódu.
+title: Příručka stylu jazyka F#
+description: Naučte se pět zásad dobrého kódu F#.
 ms.date: 12/10/2018
 ms.openlocfilehash: 9f47257626e04b09b546de2ae315d48d791678be
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61901846"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79400265"
 ---
-# <a name="f-style-guide"></a>F#Průvodce správným stylem
+# <a name="f-style-guide"></a>Příručka stylu jazyka F#
 
-Následující články popisují pokyny pro formátování F# kódu a užitečná pokyny pro funkce jazyka, a způsob jejich použití.
+Následující články popisují pokyny pro formátování kódu F# a aktuální pokyny pro funkce jazyka a jak by měly být použity.
 
-Tento návod byl vydá podle použití F# ve velké základy kódu s různými skupiny programátorů. Tyto pokyny jsou zpravidla vede k úspěšné využívání F# a minimalizuje frustrations při požadavky pro programy v průběhu času měnit.
+Tento návod byl formulován na základě použití F# ve velkých codebases s různorodou skupinou programátorů. Tento návod obecně vede k úspěšnému použití Jazyka F# a minimalizuje frustrace při změně požadavků na programy v průběhu času.
 
-## <a name="five-principles-of-good-f-code"></a>Pět zásadami dobrého F# kódu
+## <a name="five-principles-of-good-f-code"></a>Pět principů dobrého kódu F#
 
-Mějte tyto zásady kdykoli napíšete F# kódu, zejména v systémech, které se v průběhu času měnit. Každá část podle pokynů uvedených v dalších článcích vyplývá z těchto pět bodů.
+Mějte na paměti následující zásady při každém psaní kódu F#, zejména v systémech, které se budou v průběhu času měnit. Každý kus návodu v dalších článcích vychází z těchto pěti bodů.
 
-1. **Dobrý F# kód je stručné, výrazový a sestavitelný**
+1. **Dobrý kód F# je stručný, expresivní a kompozitelný**
 
-    F#má řadu funkcí, které vám umožní express akce v míň řádků kódu a opětovné použití obecné funkce. F# Základní knihovna také obsahuje mnoho funkcí pro práci s common kolekce dat a užitečné typy. Složení vašich vlastních funkcích a těm F# základní knihovna (nebo jiných knihovnách) je součástí rutina idiomatickou F# programování. Obecně platí Pokud řešení problému v míň řádků kódu, můžete vyjádřit ostatním vývojářům (nebo budoucí self) bude appreciative. Také důrazně doporučujeme použít knihovnu, jako je například FSharp.Core, [rozsáhlé knihovny .NET](../../../api/index.md) , který F# spuštěný, nebo pomocí balíčku třetí strany na [NuGet](https://www.nuget.org/) když potřebujete provést úlohu triviální.
+    F# má mnoho funkcí, které umožňují vyjádřit akce v méně řádků kódu a opakovaně používat obecné funkce. Základní knihovna F# také obsahuje mnoho užitečných typů a funkcí pro práci s běžnými kolekcemi dat. Složení vlastních funkcí a funkcí v základní knihovně F# (nebo jiných knihovnách) je součástí rutinního idiomatického programování F#. Obecně platí, že pokud můžete vyjádřit řešení problému v menším počtu řádků kódu, ostatní vývojáři (nebo vaše budoucí já) budou vděčni. Je také důrazně doporučujeme použít knihovnu, jako je FSharp.Core, [rozsáhlé knihovny .NET,](../../../api/index.md) které f# běží na nebo balíček jiného výrobce na [NuGet,](https://www.nuget.org/) když potřebujete provést netriviální úlohu.
 
-2. **Dobrý F# kód je interoperabilní**
+2. **Dobrý kód F# je interoperabilní**
 
-    Vzájemná spolupráce grafického subsystému může trvat více podobách, například používání kódu v různých jazycích. Hranice kódu, které další volající spolupracovat s jsou zásadní pro získání správné, i když volající jsou také v F#. Při zápisu F#, je vždy být uvažujete, o jak jiný kód zavolá do kódu, který píšete, včetně pokud z jiného jazyka, jako je C#. [ F# Pokyny k návrhu komponenty](component-design-guidelines.md) interoperability podrobně popisují.
+    Spolupráce může mít více forem, včetně využití kódu v různých jazycích. Hranice kódu, který ostatní volající spolupracovat s jsou kritické kusy získat správné, i v případě, že volající jsou také v F#. Při psaní F#, měli byste vždy přemýšlet o tom, jak jiný kód bude volat do kódu, který píšete, včetně pokud tak učiní z jiného jazyka, jako je C#. [F# Pokyny pro návrh komponent](component-design-guidelines.md) popisují interoperabilitu podrobně.
 
-3. **Dobrý F# kód provede pomocí objektu programování, není objekt orientace**
+3. **Dobrý kód F# využívá programování objektů, nikoli orientaci objektu**
 
-    F#obsahuje plnou podporu pro programování s objekty v .NET, včetně [třídy](../language-reference/classes.md), [rozhraní](../language-reference/interfaces.md), [modifikátorů přístupu](../language-reference/access-control.md), [abstraktní třídy](../language-reference/abstract-classes.md), a tak dále. Pro složitější funkční kód, jako je například funkce, které musí být kontextově objekty zapouzdřují snadno kontextové informace takovým způsobem, který nelze funkce. Funkce, jako [volitelné parametry](../language-reference/members/methods.md#optional-arguments) a pečlivé použití [přetížení](../language-reference/members/methods.md#overloaded-methods) můžete usnadnit využití této funkce pro volající.
+    F# má plnou podporu pro programování s objekty v rozhraní .NET, včetně [tříd](../language-reference/classes.md), [rozhraní](../language-reference/interfaces.md), [modifikátory přístupu](../language-reference/access-control.md), [abstraktní třídy](../language-reference/abstract-classes.md)a tak dále. Pro složitější funkční kód, jako jsou funkce, které musí být kontextové, objekty mohou snadno zapouzdřit kontextové informace způsoby, které funkce nelze. Funkce, jako jsou [volitelné parametry](../language-reference/members/methods.md#optional-arguments) a pečlivé použití [přetížení](../language-reference/members/methods.md#overloaded-methods) může usnadnit spotřebu této funkce pro volající.
 
-4. **Dobrý F# kód provede správně bez vystavení mutace**
+4. **Dobrý Kód F# funguje dobře bez vystavení mutace**
 
-    Není žádný tajný klíč musí používat k psaní kódu, výkonné, mutace. Je počítače fungování, všechny. Takový kód je často náchylné a obtížně získat správný. Vyhněte se vystavení mutace volajícím. Místo toho [vytvoření funkční rozhraní, která skrývá na základě mutace implementace](conventions.md#performance) když je nejdůležitější výkon.
+    Není žádným tajemstvím, že k napsání vysoce výkonného kódu musíte použít mutaci. Je to o tom, jak počítače fungují, po tom všem. Takový kód je často náchylný k chybám a je obtížné se správně dostat. Vyhněte se vystavení mutace volajícím. Místo toho [vytvořte funkční rozhraní, které skryje implementaci založenou na mutaci,](conventions.md#performance) když je důležitý výkon.
 
-5. **Dobrý F# je jazyk kódu**
+5. **Dobrý kód F# je použitelný pro nástroje**
 
-    Nástroje jsou nedocenitelné pro práci v velké základy kódu a můžete napsat F# kódu tak, aby ji lze efektivněji s F# nástroje jazyka. Jedním z příkladů je zajistit, že jste nepřežeňte to stylem bodu bez programování, tak, aby mohly být zkontrolovány hodnoty, ležící se ladicí program. Další příklad používá [dokumentační komentáře XML](../language-reference/xml-documentation.md) popisující konstrukce tak, že popisy v editorech může zobrazit tyto komentáře na lokalitu volání. Vždy uvažovat o jak váš kód bude číst, přejde, ladit a manipulovat s jejich nástroje jinými programátory.
+    Nástroje jsou neocenitelné pro práci ve velkých codebases a můžete napsat F# kód tak, aby jej lze použít efektivněji s nástroji jazyka F#. Jedním z příkladů je ujistěte se, že není přehánět s bezbodový styl programování, tak, aby mezilehlé hodnoty mohou být kontrolovány s ladicím programem. Dalším příkladem je použití [komentáře dokumentace XML](../language-reference/xml-documentation.md) popisující konstrukce tak, že popisky v editorech můžete zobrazit tyto komentáře na webu volání. Vždy přemýšlejte o tom, jak bude váš kód číst, navigovat, ladit a manipulovat s jinými programátory pomocí jejich nástrojů.
 
 ## <a name="next-steps"></a>Další kroky
 
-[ F# Pokyny k formátování kódu](formatting.md) pokyny o tom, jak formátovat kód tak, aby byl snadno čitelný.
+Pokyny [pro formátování kódu Jazyka F#](formatting.md) poskytují pokyny pro formátování kódu tak, aby byl snadno čitelný.
 
-[ F# Konvence kódování](conventions.md) poskytují pokyny pro F# programovací idiomy, které vám pomůžou dlouhodobou údržbu větší F# základů kódu.
+[Konvence kódování F#](conventions.md) poskytují pokyny pro f# programovací idiomy, které pomohou dlouhodobé údržby větší chrápání kódu F#.
 
-[ F# Pokyny k návrhu komponenty](component-design-guidelines.md) poskytují pokyny k vytváření F# součásti, jako jsou knihovny.
+[Pokyny pro návrh komponent y F#](component-design-guidelines.md) poskytují pokyny pro vytváření součástí F#, jako jsou například knihovny.

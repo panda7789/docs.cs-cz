@@ -1,25 +1,25 @@
 ---
-title: Co je nového v F# 4,7 – F# příručka
-description: Získejte přehled o nových funkcích dostupných v F# 4,7.
+title: Co je nového ve F# 4.7 - F# Guide
+description: Získejte přehled o nových funkcích dostupných v f# 4.7.
 ms.date: 11/27/2019
-ms.openlocfilehash: 203b258466cb9f1f50215ecf8884e92e7e86416b
-ms.sourcegitcommit: 79a2d6a07ba4ed08979819666a0ee6927bbf1b01
+ms.openlocfilehash: 7a6e744a398719bcb55d168dd700459e0b122dd6
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74644066"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79185874"
 ---
-# <a name="whats-new-in-f-47"></a>Co je nového v F# 4,7
+# <a name="whats-new-in-f-47"></a>Co je nového ve F# 4.7
 
-F#4,7 přidává k F# jazyku více vylepšení.
+F# 4.7 přidává více vylepšení jazyka F#.
 
 ## <a name="get-started"></a>Začínáme
 
-F#4,7 je k dispozici ve všech distribucích .NET Core a nástrojích sady Visual Studio. Začněte [s F# ](../get-started/index.md) a získejte další informace.
+F# 4.7 je k dispozici ve všech distribucích .NET Core a nástrojích Visual Studio. [Můžete začít s F#](../get-started/index.md) a dozvíte se více.
 
-## <a name="language-version"></a>Verze jazyka
+## <a name="language-version"></a>Jazyková verze
 
-Kompilátor F# 4,7 zavádí možnost nastavení efektivní jazykové verze prostřednictvím vlastnosti v souboru projektu:
+Kompilátor F# 4.7 zavádí možnost nastavit efektivní jazykovou verzi prostřednictvím vlastnosti v souboru projektu:
 
 ```xml
 <PropertyGroup>
@@ -27,52 +27,52 @@ Kompilátor F# 4,7 zavádí možnost nastavení efektivní jazykové verze prost
 </PropertyGroup>
 ```
 
-Můžete ji nastavit na hodnoty `4.6`, `4.7`, `latest`a `preview`. Výchozí hodnota je `latest`.
+Můžete ji nastavit na `4.6` `4.7`hodnoty `latest`, `preview`, a . Výchozí formát je `latest`.
 
-Pokud nastavíte `preview`, kompilátor bude aktivovat všechny F# funkce verze Preview, které jsou implementovány ve vašem kompilátoru.
+Pokud ji nastavíte na `preview`, kompilátor aktivuje všechny funkce Náhled Jazyka F#, které jsou implementovány v kompilátoru.
 
 ## <a name="implicit-yields"></a>Implicitní výnosy
 
-Již nemusíte používat klíčové slovo `yield` v polích, seznamech, sekvencích nebo výpočtových výrazech, kde lze typ odvodit. V následujícím příkladu oba výrazy vyžadovaly příkaz `yield` pro každou položku před F# 4,7:
+Již není nutné použít `yield` klíčové slovo v polích, seznamech, sekvencích nebo výpočtových výrazech, kde lze odvodit typ. V následujícím příkladu oba výrazy vyžadovaly `yield` příkaz pro každou položku před F# 4.7:
 
 ```fsharp
 let s = seq { 1; 2; 3; 4; 5 }
 
 let daysOfWeek includeWeekend =
-    [ 
+    [
         "Monday"
         "Tuesday"
         "Wednesday"
         "Thursday"
         "Friday"
-        if includeWeekend then 
+        if includeWeekend then
             "Saturday"
             "Sunday"
-    ] 
+    ]
 ```
 
-Pokud zavedete jedno klíčové slovo `yield`, musí mít každá další položka také `yield` na ni použit.
+Pokud zavedete `yield` jedno klíčové slovo, `yield` musí se na něj použít i každá další položka.
 
-Implicitní výnosy nejsou aktivovány při použití ve výrazu, který také používá `yield!` k tomu, aby něco vypadalo jako sloučení sekvence. V těchto případech musíte nadále používat `yield` dnes.
+Implicitní výnosy nejsou aktivovány při použití `yield!` ve výrazu, který také používá k tomu něco jako vyrovnat posloupnost. V těchto případech `yield` musíte pokračovat v používání i dnes.
 
-## <a name="wildcard-identifiers"></a>Identifikátory zástupných znaků
+## <a name="wildcard-identifiers"></a>Identifikátory zástupných symbolů
 
-V F# kódu zahrnujícím třídy musí mít držitel v deklaracích členů vždycky explicitní identifikátor. V případech, kdy se držitel nikdy nepoužívá, se tradičně použila konvence k použití dvojitého podtržítka k označení vlastních identifikátorů Nameless. Teď můžete použít jedno podtržítko:
+V kódu F# zahrnující třídy, vlastní identifikátor musí být vždy explicitní v deklaracích členů. Ale v případech, kdy se vlastní identifikátor nikdy nepoužívá, tradičně byla konvence použít dvojité podtržítko k označení bezejmenných vlastních identifikátorů. Nyní můžete použít jedno podtržítko:
 
 ```fsharp
 type C() =
     member _.M() = ()
 ```
 
-To platí i pro `for` smyčky:
+To platí i `for` pro smyčky:
 
 ```fsharp
 for _ in 1..10 do printfn "Hello!"
 ```
 
-## <a name="indentation-relaxations"></a>Zvětšení odsazení
+## <a name="indentation-relaxations"></a>Uvolnění odsazení
 
-Před F# 4,7 se požadavky odsazení pro primární konstruktor a statické členské argumenty vyžadovaly nadměrné odsazení. Nyní vyžadují pouze jeden rozsah odsazení:
+Před F# 4.7 požadavky na odsazení pro primární konstruktor a statické argumenty členů vyžaduje nadměrné odsazení. Nyní vyžadují pouze jeden obor odsazení:
 
 ```fsharp
 type OffsideCheck(a:int,
