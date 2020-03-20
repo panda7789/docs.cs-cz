@@ -15,21 +15,21 @@ helpviewer_keywords:
 ms.assetid: 542c7c65-dd56-4651-b76f-5db2465e4a15
 topic_type:
 - apiref
-ms.openlocfilehash: 55411f187e2ef73997633d94b37a7d5d2cfd74c9
-ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
+ms.openlocfilehash: 50d16b8036144d6ede349149fa4ae37344064d8b
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76868561"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79177017"
 ---
-# <a name="icorprofilerinfo3getfunctionenter3info-method"></a><span data-ttu-id="96638-102">ICorProfilerInfo3::GetFunctionEnter3Info – metoda</span><span class="sxs-lookup"><span data-stu-id="96638-102">ICorProfilerInfo3::GetFunctionEnter3Info Method</span></span>
-<span data-ttu-id="96638-103">Poskytuje informace o snímku zásobníku a argumentu funkce, která je hlášena v profileru funkcí [FunctionEnter3WithInfo –](functionenter3withinfo-function.md) .</span><span class="sxs-lookup"><span data-stu-id="96638-103">Provides the stack frame and argument information of the function that is being reported to the profiler by the [FunctionEnter3WithInfo](functionenter3withinfo-function.md) function.</span></span> <span data-ttu-id="96638-104">Tuto metodu lze volat pouze během `FunctionEnter3WithInfo` zpětného volání.</span><span class="sxs-lookup"><span data-stu-id="96638-104">This method can be called only during the `FunctionEnter3WithInfo` callback.</span></span>  
+# <a name="icorprofilerinfo3getfunctionenter3info-method"></a><span data-ttu-id="74f91-102">ICorProfilerInfo3::GetFunctionEnter3Info – metoda</span><span class="sxs-lookup"><span data-stu-id="74f91-102">ICorProfilerInfo3::GetFunctionEnter3Info Method</span></span>
+<span data-ttu-id="74f91-103">Poskytuje zásobníku rámce a argument informace o funkci, která je hlášena profiler funkce [FunctionEnter3WithInfo](functionenter3withinfo-function.md) funkce.</span><span class="sxs-lookup"><span data-stu-id="74f91-103">Provides the stack frame and argument information of the function that is being reported to the profiler by the [FunctionEnter3WithInfo](functionenter3withinfo-function.md) function.</span></span> <span data-ttu-id="74f91-104">Tuto metodu lze volat `FunctionEnter3WithInfo` pouze během zpětného volání.</span><span class="sxs-lookup"><span data-stu-id="74f91-104">This method can be called only during the `FunctionEnter3WithInfo` callback.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="96638-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="96638-105">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="74f91-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="74f91-105">Syntax</span></span>  
   
 ```cpp  
 HRESULT GetFunctionEnter3Info(  
-            [in]  FunctionID functionId,   
+            [in]  FunctionID functionId,
             [in]  COR_PRF_ELT_INFO eltInfo,  
             [out] COR_PRF_FRAME_INFO *pFrameInfo,  
             [in, out] ULONG *pcbArgumentInfo,  
@@ -37,39 +37,39 @@ HRESULT GetFunctionEnter3Info(
                   COR_PRF_FUNCTION_ARGUMENT_INFO *pArgumentInfo);  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="96638-106">Parametry</span><span class="sxs-lookup"><span data-stu-id="96638-106">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="74f91-106">Parametry</span><span class="sxs-lookup"><span data-stu-id="74f91-106">Parameters</span></span>  
  `functionId`  
- <span data-ttu-id="96638-107">pro `FunctionID` funkce, která se zadává.</span><span class="sxs-lookup"><span data-stu-id="96638-107">[in] The `FunctionID` of the function that is being entered.</span></span>  
+ <span data-ttu-id="74f91-107">[v] Funkce, `FunctionID` která je zadána.</span><span class="sxs-lookup"><span data-stu-id="74f91-107">[in] The `FunctionID` of the function that is being entered.</span></span>  
   
  `eltInfo`  
- <span data-ttu-id="96638-108">pro Neprůhledný popisovač, který představuje informace o daném snímku zásobníku.</span><span class="sxs-lookup"><span data-stu-id="96638-108">[in] An opaque handle that represents information about a given stack frame.</span></span> <span data-ttu-id="96638-109">Profiler by měl poskytnout stejnou `eltInfo`, že byl dán funkcí [FunctionEnter3WithInfo –](functionenter3withinfo-function.md) .</span><span class="sxs-lookup"><span data-stu-id="96638-109">The profiler should provide the same `eltInfo` that it was given by the [FunctionEnter3WithInfo](functionenter3withinfo-function.md) function.</span></span>  
+ <span data-ttu-id="74f91-108">[v] Neprůhledný popisovač, který představuje informace o daném rámci zásobníku.</span><span class="sxs-lookup"><span data-stu-id="74f91-108">[in] An opaque handle that represents information about a given stack frame.</span></span> <span data-ttu-id="74f91-109">Profiler by měl `eltInfo` poskytnout stejné, které bylo dáno [functionEnter3WithInfo](functionenter3withinfo-function.md) funkce.</span><span class="sxs-lookup"><span data-stu-id="74f91-109">The profiler should provide the same `eltInfo` that it was given by the [FunctionEnter3WithInfo](functionenter3withinfo-function.md) function.</span></span>  
   
  `pFrameInfo`  
- <span data-ttu-id="96638-110">mimo Neprůhledný popisovač, který představuje obecné informace o daném snímku zásobníku.</span><span class="sxs-lookup"><span data-stu-id="96638-110">[out] An opaque handle that represents generics information about a given stack frame.</span></span> <span data-ttu-id="96638-111">Tento popisovač je platný pouze během `FunctionEnter3WithInfo` zpětného volání, ve kterém Profiler volal metodu `GetFunctionEnter3Info`.</span><span class="sxs-lookup"><span data-stu-id="96638-111">This handle is valid only during the `FunctionEnter3WithInfo` callback in which the profiler called the `GetFunctionEnter3Info` method.</span></span>  
+ <span data-ttu-id="74f91-110">[out] Neprůhledný popisovač, který představuje obecné informace o daném rámci zásobníku.</span><span class="sxs-lookup"><span data-stu-id="74f91-110">[out] An opaque handle that represents generics information about a given stack frame.</span></span> <span data-ttu-id="74f91-111">Tento popisovač je `FunctionEnter3WithInfo` platný pouze během zpětného `GetFunctionEnter3Info` volání, ve kterém profiler volal metodu.</span><span class="sxs-lookup"><span data-stu-id="74f91-111">This handle is valid only during the `FunctionEnter3WithInfo` callback in which the profiler called the `GetFunctionEnter3Info` method.</span></span>  
   
  `pcbArgumentInfo`  
- <span data-ttu-id="96638-112">[in, out] Ukazatel na celkovou velikost [COR_PRF_FUNCTION_ARGUMENT_INFO](cor-prf-function-argument-info-structure.md) struktury (včetně všech dalších [COR_PRF_FUNCTION_ARGUMENT_RANGE](cor-prf-function-argument-range-structure.md) struktur pro rozsahy argumentů, na které odkazuje `pArgumentInfo`).</span><span class="sxs-lookup"><span data-stu-id="96638-112">[in, out] A pointer to the total size, in bytes, of the [COR_PRF_FUNCTION_ARGUMENT_INFO](cor-prf-function-argument-info-structure.md) structure (plus any additional [COR_PRF_FUNCTION_ARGUMENT_RANGE](cor-prf-function-argument-range-structure.md) structures for the argument ranges pointed to by `pArgumentInfo`).</span></span> <span data-ttu-id="96638-113">Pokud zadaná velikost není dostatečná, je vrácena ERROR_INSUFFICIENT_BUFFER a očekávaná velikost je uložena v `pcbArgumentInfo`.</span><span class="sxs-lookup"><span data-stu-id="96638-113">If the specified size is not enough, ERROR_INSUFFICIENT_BUFFER is returned and the expected size is stored in `pcbArgumentInfo`.</span></span> <span data-ttu-id="96638-114">Chcete-li volat `GetFunctionEnter3Info` pouze k načtení očekávané hodnoty pro `*pcbArgumentInfo`, nastavte `*pcbArgumentInfo`= 0 a `pArgumentInfo`= NULL.</span><span class="sxs-lookup"><span data-stu-id="96638-114">To call `GetFunctionEnter3Info` just to retrieve the expected value for `*pcbArgumentInfo`, set `*pcbArgumentInfo`=0 and `pArgumentInfo`=NULL.</span></span>  
+ <span data-ttu-id="74f91-112">[dovnitř, ven] Ukazatel na celkovou velikost [COR_PRF_FUNCTION_ARGUMENT_INFO](cor-prf-function-argument-info-structure.md) struktury v bajtech (plus všechny další [COR_PRF_FUNCTION_ARGUMENT_RANGE](cor-prf-function-argument-range-structure.md) struktury pro `pArgumentInfo`rozsahy argumentů, na které odkazuje ).</span><span class="sxs-lookup"><span data-stu-id="74f91-112">[in, out] A pointer to the total size, in bytes, of the [COR_PRF_FUNCTION_ARGUMENT_INFO](cor-prf-function-argument-info-structure.md) structure (plus any additional [COR_PRF_FUNCTION_ARGUMENT_RANGE](cor-prf-function-argument-range-structure.md) structures for the argument ranges pointed to by `pArgumentInfo`).</span></span> <span data-ttu-id="74f91-113">Pokud zadaná velikost nestačí, ERROR_INSUFFICIENT_BUFFER je vrácena `pcbArgumentInfo`a očekávaná velikost je uložena v .</span><span class="sxs-lookup"><span data-stu-id="74f91-113">If the specified size is not enough, ERROR_INSUFFICIENT_BUFFER is returned and the expected size is stored in `pcbArgumentInfo`.</span></span> <span data-ttu-id="74f91-114">Chcete-li `GetFunctionEnter3Info` volat pouze pro `*pcbArgumentInfo`načtení očekávané hodnoty pro , nastavte `*pcbArgumentInfo`=0 a `pArgumentInfo`=NULL.</span><span class="sxs-lookup"><span data-stu-id="74f91-114">To call `GetFunctionEnter3Info` just to retrieve the expected value for `*pcbArgumentInfo`, set `*pcbArgumentInfo`=0 and `pArgumentInfo`=NULL.</span></span>  
   
  `pArgumentInfo`  
- <span data-ttu-id="96638-115">mimo Ukazatel na [COR_PRF_FUNCTION_ARGUMENT_INFO](cor-prf-function-argument-info-structure.md) strukturu, která popisuje umístění argumentů funkce v paměti v pořadí zleva doprava.</span><span class="sxs-lookup"><span data-stu-id="96638-115">[out] A pointer to a [COR_PRF_FUNCTION_ARGUMENT_INFO](cor-prf-function-argument-info-structure.md) structure that describes the locations of the function's arguments in memory, in left-to-right order.</span></span>  
+ <span data-ttu-id="74f91-115">[out] Ukazatel na [COR_PRF_FUNCTION_ARGUMENT_INFO](cor-prf-function-argument-info-structure.md) struktury, která popisuje umístění argumentů funkce v paměti, v pořadí zleva doprava.</span><span class="sxs-lookup"><span data-stu-id="74f91-115">[out] A pointer to a [COR_PRF_FUNCTION_ARGUMENT_INFO](cor-prf-function-argument-info-structure.md) structure that describes the locations of the function's arguments in memory, in left-to-right order.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="96638-116">Poznámky</span><span class="sxs-lookup"><span data-stu-id="96638-116">Remarks</span></span>  
- <span data-ttu-id="96638-117">Profiler musí přidělit dostatek místa pro `COR_PRF_FUNCTION_ARGUMENT_INFO` strukturu kontrolované funkce a musí určit velikost v parametru `pcbArgumentInfo`.</span><span class="sxs-lookup"><span data-stu-id="96638-117">The profiler must allocate sufficient space for the `COR_PRF_FUNCTION_ARGUMENT_INFO` structure of the function that is being inspected, and must indicate the size in the `pcbArgumentInfo` parameter.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="74f91-116">Poznámky</span><span class="sxs-lookup"><span data-stu-id="74f91-116">Remarks</span></span>  
+ <span data-ttu-id="74f91-117">Profiler musí přidělit dostatek `COR_PRF_FUNCTION_ARGUMENT_INFO` místa pro strukturu funkce, která je kontrolována `pcbArgumentInfo` a musí uvádět velikost v parametru.</span><span class="sxs-lookup"><span data-stu-id="74f91-117">The profiler must allocate sufficient space for the `COR_PRF_FUNCTION_ARGUMENT_INFO` structure of the function that is being inspected, and must indicate the size in the `pcbArgumentInfo` parameter.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="96638-118">Požadavky</span><span class="sxs-lookup"><span data-stu-id="96638-118">Requirements</span></span>  
- <span data-ttu-id="96638-119">**Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="96638-119">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="74f91-118">Požadavky</span><span class="sxs-lookup"><span data-stu-id="74f91-118">Requirements</span></span>  
+ <span data-ttu-id="74f91-119">**Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="74f91-119">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="96638-120">**Hlavička:** CorProf. idl, CorProf. h</span><span class="sxs-lookup"><span data-stu-id="96638-120">**Header:** CorProf.idl, CorProf.h</span></span>  
+ <span data-ttu-id="74f91-120">**Záhlaví:** CorProf.idl, CorProf.h</span><span class="sxs-lookup"><span data-stu-id="74f91-120">**Header:** CorProf.idl, CorProf.h</span></span>  
   
- <span data-ttu-id="96638-121">**Knihovna:** CorGuids. lib</span><span class="sxs-lookup"><span data-stu-id="96638-121">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="74f91-121">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="74f91-121">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="96638-122">**Verze .NET Framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="96638-122">**.NET Framework Versions:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]</span></span>  
+ <span data-ttu-id="74f91-122">**Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="74f91-122">**.NET Framework Versions:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="96638-123">Viz také:</span><span class="sxs-lookup"><span data-stu-id="96638-123">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="74f91-123">Viz také</span><span class="sxs-lookup"><span data-stu-id="74f91-123">See also</span></span>
 
-- [<span data-ttu-id="96638-124">FunctionEnter3WithInfo</span><span class="sxs-lookup"><span data-stu-id="96638-124">FunctionEnter3WithInfo</span></span>](functionenter3withinfo-function.md)
-- [<span data-ttu-id="96638-125">FunctionLeave3WithInfo</span><span class="sxs-lookup"><span data-stu-id="96638-125">FunctionLeave3WithInfo</span></span>](functionleave3withinfo-function.md)
-- [<span data-ttu-id="96638-126">FunctionTailcall3WithInfo</span><span class="sxs-lookup"><span data-stu-id="96638-126">FunctionTailcall3WithInfo</span></span>](functiontailcall3withinfo-function.md)
-- [<span data-ttu-id="96638-127">ICorProfilerInfo3 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="96638-127">ICorProfilerInfo3 Interface</span></span>](icorprofilerinfo3-interface.md)
-- [<span data-ttu-id="96638-128">Rozhraní pro profilaci</span><span class="sxs-lookup"><span data-stu-id="96638-128">Profiling Interfaces</span></span>](profiling-interfaces.md)
-- [<span data-ttu-id="96638-129">Profilace</span><span class="sxs-lookup"><span data-stu-id="96638-129">Profiling</span></span>](index.md)
+- [<span data-ttu-id="74f91-124">FunkceEnter3WithInfo</span><span class="sxs-lookup"><span data-stu-id="74f91-124">FunctionEnter3WithInfo</span></span>](functionenter3withinfo-function.md)
+- [<span data-ttu-id="74f91-125">FunkceLeave3WithInfo</span><span class="sxs-lookup"><span data-stu-id="74f91-125">FunctionLeave3WithInfo</span></span>](functionleave3withinfo-function.md)
+- [<span data-ttu-id="74f91-126">FunkceTailcall3WithInfo</span><span class="sxs-lookup"><span data-stu-id="74f91-126">FunctionTailcall3WithInfo</span></span>](functiontailcall3withinfo-function.md)
+- [<span data-ttu-id="74f91-127">ICorProfilerInfo3 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="74f91-127">ICorProfilerInfo3 Interface</span></span>](icorprofilerinfo3-interface.md)
+- [<span data-ttu-id="74f91-128">Rozhraní pro profilaci</span><span class="sxs-lookup"><span data-stu-id="74f91-128">Profiling Interfaces</span></span>](profiling-interfaces.md)
+- [<span data-ttu-id="74f91-129">Profilování</span><span class="sxs-lookup"><span data-stu-id="74f91-129">Profiling</span></span>](index.md)

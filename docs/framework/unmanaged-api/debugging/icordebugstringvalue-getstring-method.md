@@ -15,42 +15,42 @@ helpviewer_keywords:
 ms.assetid: 2b94bda7-09ee-435d-91b9-c4e31af1896c
 topic_type:
 - apiref
-ms.openlocfilehash: c4b01b2c346d3173b2a5ecc144474d7fb1e6dce5
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: e23133176cbd703a58c92f9bf1ead530b0bbb8a8
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73138976"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79178503"
 ---
-# <a name="icordebugstringvaluegetstring-method"></a><span data-ttu-id="670c4-102">ICorDebugStringValue::GetString – metoda</span><span class="sxs-lookup"><span data-stu-id="670c4-102">ICorDebugStringValue::GetString Method</span></span>
-<span data-ttu-id="670c4-103">Získá řetězec, na který odkazuje tento ICorDebugStringValue.</span><span class="sxs-lookup"><span data-stu-id="670c4-103">Gets the string referenced by this ICorDebugStringValue.</span></span>  
+# <a name="icordebugstringvaluegetstring-method"></a><span data-ttu-id="b7a26-102">ICorDebugStringValue::GetString – metoda</span><span class="sxs-lookup"><span data-stu-id="b7a26-102">ICorDebugStringValue::GetString Method</span></span>
+<span data-ttu-id="b7a26-103">Získá řetězec odkazuje tento ICorDebugStringValue.</span><span class="sxs-lookup"><span data-stu-id="b7a26-103">Gets the string referenced by this ICorDebugStringValue.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="670c4-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="670c4-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="b7a26-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="b7a26-104">Syntax</span></span>  
   
 ```cpp  
 HRESULT GetString (  
     [in] ULONG32    cchString,  
     [out] ULONG32   *pcchString,  
-    [out, size_is(cchString), length_is(*pcchString)]   
+    [out, size_is(cchString), length_is(*pcchString)]
         WCHAR       szString[]  
 );  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="670c4-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="670c4-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="b7a26-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="b7a26-105">Parameters</span></span>  
  `cchString`  
- <span data-ttu-id="670c4-106">pro Velikost pole `szString`.</span><span class="sxs-lookup"><span data-stu-id="670c4-106">[in] The size of the `szString` array.</span></span>  
+ <span data-ttu-id="b7a26-106">[v] Velikost `szString` pole.</span><span class="sxs-lookup"><span data-stu-id="b7a26-106">[in] The size of the `szString` array.</span></span>  
   
  `pcchString`  
- <span data-ttu-id="670c4-107">mimo Ukazatel na počet znaků vrácený v poli `szString`.</span><span class="sxs-lookup"><span data-stu-id="670c4-107">[out] A pointer to the number of characters returned in the `szString` array.</span></span>  
+ <span data-ttu-id="b7a26-107">[out] Ukazatel na počet znaků vrácených `szString` v poli.</span><span class="sxs-lookup"><span data-stu-id="b7a26-107">[out] A pointer to the number of characters returned in the `szString` array.</span></span>  
   
  `szString`  
- <span data-ttu-id="670c4-108">mimo Pole, které ukládá načtený řetězec.</span><span class="sxs-lookup"><span data-stu-id="670c4-108">[out] An array that stores the retrieved string.</span></span>  
+ <span data-ttu-id="b7a26-108">[out] Pole, které ukládá načtený řetězec.</span><span class="sxs-lookup"><span data-stu-id="b7a26-108">[out] An array that stores the retrieved string.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="670c4-109">Požadavky</span><span class="sxs-lookup"><span data-stu-id="670c4-109">Requirements</span></span>  
- <span data-ttu-id="670c4-110">**Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="670c4-110">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="b7a26-109">Požadavky</span><span class="sxs-lookup"><span data-stu-id="b7a26-109">Requirements</span></span>  
+ <span data-ttu-id="b7a26-110">**Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="b7a26-110">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="670c4-111">**Hlavička:** CorDebug. idl, CorDebug. h</span><span class="sxs-lookup"><span data-stu-id="670c4-111">**Header:** CorDebug.idl, CorDebug.h</span></span>  
+ <span data-ttu-id="b7a26-111">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="b7a26-111">**Header:** CorDebug.idl, CorDebug.h</span></span>  
   
- <span data-ttu-id="670c4-112">**Knihovna:** CorGuids. lib</span><span class="sxs-lookup"><span data-stu-id="670c4-112">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="b7a26-112">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="b7a26-112">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="670c4-113">**Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="670c4-113">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>
+ <span data-ttu-id="b7a26-113">**Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="b7a26-113">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>

@@ -15,43 +15,43 @@ helpviewer_keywords:
 ms.assetid: c6c1aaaf-e2cd-407c-b73e-fbe6ffd83bb3
 topic_type:
 - apiref
-ms.openlocfilehash: 6737275fb77e6f177832eb1d96214c37942bcd22
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 375c4b2cece0bdfd763ae383c5412c9e25614baf
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74442151"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79177546"
 ---
-# <a name="imetadataemitsethandler-method"></a><span data-ttu-id="4e741-102">IMetaDataEmit::SetHandler – metoda</span><span class="sxs-lookup"><span data-stu-id="4e741-102">IMetaDataEmit::SetHandler Method</span></span>
-<span data-ttu-id="4e741-103">Nastaví metodu, na kterou odkazuje zadaný `IUnknown` ukazatel jako zpětné volání oznámení pro přemapování tokenů.</span><span class="sxs-lookup"><span data-stu-id="4e741-103">Sets the method referenced by the specified `IUnknown` pointer as a notification callback for token remaps.</span></span>  
+# <a name="imetadataemitsethandler-method"></a><span data-ttu-id="17de9-102">IMetaDataEmit::SetHandler – metoda</span><span class="sxs-lookup"><span data-stu-id="17de9-102">IMetaDataEmit::SetHandler Method</span></span>
+<span data-ttu-id="17de9-103">Nastaví metodu, na `IUnknown` kterou zadaný ukazatel odkazuje jako zpětné volání oznámení pro přemapování tokenů.</span><span class="sxs-lookup"><span data-stu-id="17de9-103">Sets the method referenced by the specified `IUnknown` pointer as a notification callback for token remaps.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="4e741-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="4e741-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="17de9-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="17de9-104">Syntax</span></span>  
   
 ```cpp  
-HRESULT SetHandler (   
+HRESULT SetHandler (
     [in]  IUnknown    *pUnk  
 );  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="4e741-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="4e741-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="17de9-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="17de9-105">Parameters</span></span>  
  `pUnk`  
- <span data-ttu-id="4e741-106">pro Obslužná rutina, která se má zaregistrovat</span><span class="sxs-lookup"><span data-stu-id="4e741-106">[in] The handler to register.</span></span>  
+ <span data-ttu-id="17de9-106">[v] Obslužná rutina k registraci.</span><span class="sxs-lookup"><span data-stu-id="17de9-106">[in] The handler to register.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="4e741-107">Poznámky</span><span class="sxs-lookup"><span data-stu-id="4e741-107">Remarks</span></span>  
- <span data-ttu-id="4e741-108">Modul metadat odesílá oznámení pomocí metody, která je poskytována `SetHandler`, kompilátorům, které negenerují záznamy optimalizovaným způsobem a které by chtěli optimalizovat uložené záznamy.</span><span class="sxs-lookup"><span data-stu-id="4e741-108">The metadata engine sends notification by using the method that is provided by `SetHandler`, to compilers that do not generate records in an optimized way and that would like to optimize saved records.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="17de9-107">Poznámky</span><span class="sxs-lookup"><span data-stu-id="17de9-107">Remarks</span></span>  
+ <span data-ttu-id="17de9-108">Modul metadat odešle oznámení pomocí metody, která `SetHandler`je poskytována aplikace , kompilátorům, které negenerují záznamy optimalizovaným způsobem a které by chtěly optimalizovat uložené záznamy.</span><span class="sxs-lookup"><span data-stu-id="17de9-108">The metadata engine sends notification by using the method that is provided by `SetHandler`, to compilers that do not generate records in an optimized way and that would like to optimize saved records.</span></span>  
   
- <span data-ttu-id="4e741-109">Pokud metoda zpětného volání není k dispozici prostřednictvím `SetHandler`, nebude provedena žádná optimalizace s výjimkou případů, kdy byl pro každý obor sloučeno několik importovaných oborů pomocí `IMapToken` při sloučení.</span><span class="sxs-lookup"><span data-stu-id="4e741-109">If the callback method is not provided through `SetHandler`, no optimization will be performed on save except where several import scopes have been merged using `IMapToken` on merge for each scope.</span></span>  
+ <span data-ttu-id="17de9-109">Pokud metoda zpětného volání není `SetHandler`k dispozici prostřednictvím , žádná optimalizace bude provedena `IMapToken` na uložit s výjimkou případů, kdy několik oborů importu byly sloučeny pomocí sloučení pro každý obor.</span><span class="sxs-lookup"><span data-stu-id="17de9-109">If the callback method is not provided through `SetHandler`, no optimization will be performed on save except where several import scopes have been merged using `IMapToken` on merge for each scope.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="4e741-110">Požadavky</span><span class="sxs-lookup"><span data-stu-id="4e741-110">Requirements</span></span>  
- <span data-ttu-id="4e741-111">**Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="4e741-111">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="17de9-110">Požadavky</span><span class="sxs-lookup"><span data-stu-id="17de9-110">Requirements</span></span>  
+ <span data-ttu-id="17de9-111">**Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="17de9-111">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="4e741-112">**Hlavička:** Cor. h</span><span class="sxs-lookup"><span data-stu-id="4e741-112">**Header:** Cor.h</span></span>  
+ <span data-ttu-id="17de9-112">**Záhlaví:** Kor.h.</span><span class="sxs-lookup"><span data-stu-id="17de9-112">**Header:** Cor.h</span></span>  
   
- <span data-ttu-id="4e741-113">**Knihovna:** Používá se jako prostředek v knihovně MSCorEE. dll.</span><span class="sxs-lookup"><span data-stu-id="4e741-113">**Library:** Used as a resource in MSCorEE.dll</span></span>  
+ <span data-ttu-id="17de9-113">**Knihovna:** Používá se jako prostředek v souboru MSCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="17de9-113">**Library:** Used as a resource in MSCorEE.dll</span></span>  
   
- <span data-ttu-id="4e741-114">**Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="4e741-114">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
+ <span data-ttu-id="17de9-114">**Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="17de9-114">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="4e741-115">Viz také:</span><span class="sxs-lookup"><span data-stu-id="4e741-115">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="17de9-115">Viz také</span><span class="sxs-lookup"><span data-stu-id="17de9-115">See also</span></span>
 
-- [<span data-ttu-id="4e741-116">IMetaDataEmit – rozhraní</span><span class="sxs-lookup"><span data-stu-id="4e741-116">IMetaDataEmit Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)
-- [<span data-ttu-id="4e741-117">IMetaDataEmit2 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="4e741-117">IMetaDataEmit2 Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-interface.md)
+- [<span data-ttu-id="17de9-116">IMetaDataEmit – rozhraní</span><span class="sxs-lookup"><span data-stu-id="17de9-116">IMetaDataEmit Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)
+- [<span data-ttu-id="17de9-117">IMetaDataEmit2 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="17de9-117">IMetaDataEmit2 Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-interface.md)

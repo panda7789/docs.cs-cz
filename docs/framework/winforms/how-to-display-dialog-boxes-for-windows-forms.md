@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: zobrazení dialogových oken'
+title: 'Postup: Zobrazení dialogových oken'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -11,21 +11,21 @@ helpviewer_keywords:
 - Windows Forms, calling one form from another
 - dialog boxes [Windows Forms], displaying for Windows Forms
 ms.assetid: aaac1b38-c651-495a-8d3d-5a9bfb32fee3
-ms.openlocfilehash: dd04a06eaa0dd7583ef2f72edb4cffa99aaaa60c
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: 3625080c7c322e297a9de92e4f95a40c0caf3e72
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76739459"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79181977"
 ---
-# <a name="how-to-display-dialog-boxes-for-windows-forms"></a><span data-ttu-id="b23c3-102">Postupy: Zobrazování dialogových oken pro Windows Forms</span><span class="sxs-lookup"><span data-stu-id="b23c3-102">How to: Display Dialog Boxes for Windows Forms</span></span>
-<span data-ttu-id="b23c3-103">Dialogové okno se zobrazí stejným způsobem jako jakýkoli jiný formulář v aplikaci.</span><span class="sxs-lookup"><span data-stu-id="b23c3-103">You display a dialog box in the same way you display any other form in an application.</span></span> <span data-ttu-id="b23c3-104">Spouštěcí formulář se při spuštění aplikace automaticky načte.</span><span class="sxs-lookup"><span data-stu-id="b23c3-104">The startup form loads automatically when the application is run.</span></span> <span data-ttu-id="b23c3-105">Chcete-li v aplikaci zobrazit druhý formulář nebo dialogové okno, zadejte kód pro načtení a zobrazení.</span><span class="sxs-lookup"><span data-stu-id="b23c3-105">To make a second form or dialog box appear in the application, write code to load and display it.</span></span> <span data-ttu-id="b23c3-106">Podobně pokud chcete, aby formulář nebo dialogové okno zmizely, napište kód pro uvolnění nebo skrytí.</span><span class="sxs-lookup"><span data-stu-id="b23c3-106">Similarly, to make the form or dialog box disappear, write code to unload or hide it.</span></span>  
+# <a name="how-to-display-dialog-boxes-for-windows-forms"></a><span data-ttu-id="eb5a8-102">Postupy: Zobrazování dialogových oken pro Windows Forms</span><span class="sxs-lookup"><span data-stu-id="eb5a8-102">How to: Display Dialog Boxes for Windows Forms</span></span>
+<span data-ttu-id="eb5a8-103">Dialogové okno se zobrazí stejným způsobem jako jakýkoli jiný formulář v aplikaci.</span><span class="sxs-lookup"><span data-stu-id="eb5a8-103">You display a dialog box in the same way you display any other form in an application.</span></span> <span data-ttu-id="eb5a8-104">Spouštěcí formulář se načte automaticky při spuštění aplikace.</span><span class="sxs-lookup"><span data-stu-id="eb5a8-104">The startup form loads automatically when the application is run.</span></span> <span data-ttu-id="eb5a8-105">Chcete-li, aby se v aplikaci objevil druhý formulář nebo dialogové okno, napište kód, který se načte a zobrazí.</span><span class="sxs-lookup"><span data-stu-id="eb5a8-105">To make a second form or dialog box appear in the application, write code to load and display it.</span></span> <span data-ttu-id="eb5a8-106">Podobně chcete-li, aby formulář nebo dialogové okno zmizelo, napište kód pro jeho uvolnění nebo skrytí.</span><span class="sxs-lookup"><span data-stu-id="eb5a8-106">Similarly, to make the form or dialog box disappear, write code to unload or hide it.</span></span>  
   
-### <a name="to-display-a-dialog-box"></a><span data-ttu-id="b23c3-107">Zobrazení dialogového okna</span><span class="sxs-lookup"><span data-stu-id="b23c3-107">To display a dialog box</span></span>  
+### <a name="to-display-a-dialog-box"></a><span data-ttu-id="eb5a8-107">Zobrazení dialogového okna</span><span class="sxs-lookup"><span data-stu-id="eb5a8-107">To display a dialog box</span></span>  
   
-1. <span data-ttu-id="b23c3-108">Přejděte k obslužné rutině události, pomocí které chcete otevřít dialogové okno.</span><span class="sxs-lookup"><span data-stu-id="b23c3-108">Navigate to the event handler with which you want to open the dialog box.</span></span> <span data-ttu-id="b23c3-109">K tomu může dojít při výběru příkazu nabídky, při kliknutí na tlačítko nebo při výskytu jakékoli jiné události.</span><span class="sxs-lookup"><span data-stu-id="b23c3-109">This can happen when a menu command is selected, when a button is clicked, or when any other event occurs.</span></span>  
+1. <span data-ttu-id="eb5a8-108">Přejděte na obslužnou rutinu události, se kterou chcete dialogové okno otevřít.</span><span class="sxs-lookup"><span data-stu-id="eb5a8-108">Navigate to the event handler with which you want to open the dialog box.</span></span> <span data-ttu-id="eb5a8-109">K tomu může dojít, když je vybrán příkaz nabídky, klepnutí na tlačítko nebo při výskytu jakékoli jiné události.</span><span class="sxs-lookup"><span data-stu-id="eb5a8-109">This can happen when a menu command is selected, when a button is clicked, or when any other event occurs.</span></span>  
   
-2. <span data-ttu-id="b23c3-110">V obslužné rutině události přidejte kód pro otevření dialogového okna.</span><span class="sxs-lookup"><span data-stu-id="b23c3-110">In the event handler, add code to open the dialog box.</span></span> <span data-ttu-id="b23c3-111">V tomto příkladu se k zobrazení dialogového okna používá událost kliknutí tlačítkem myši:</span><span class="sxs-lookup"><span data-stu-id="b23c3-111">In this example, a button-click event is used to show the dialog box:</span></span>  
+2. <span data-ttu-id="eb5a8-110">V obslužné rutině události přidejte kód a otevřete dialogové okno.</span><span class="sxs-lookup"><span data-stu-id="eb5a8-110">In the event handler, add code to open the dialog box.</span></span> <span data-ttu-id="eb5a8-111">V tomto příkladu se k zobrazení dialogového okna používá událost kliknutí na tlačítko:</span><span class="sxs-lookup"><span data-stu-id="eb5a8-111">In this example, a button-click event is used to show the dialog box:</span></span>  
   
     ```vb  
     Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click  
@@ -35,7 +35,7 @@ ms.locfileid: "76739459"
     ```  
   
     ```csharp  
-    private void button1_Click(object sender, System.EventArgs e)   
+    private void button1_Click(object sender, System.EventArgs e)
     {  
        Form dlg1 = new Form();  
        dlg1.ShowDialog();  
@@ -43,7 +43,7 @@ ms.locfileid: "76739459"
     ```  
   
     ```cpp  
-    private:   
+    private:
       void button1_Click(System::Object ^ sender,  
         System::EventArgs ^ e)  
       {  

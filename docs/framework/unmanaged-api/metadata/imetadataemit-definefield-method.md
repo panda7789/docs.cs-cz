@@ -15,70 +15,70 @@ helpviewer_keywords:
 ms.assetid: 6b5be4fc-2e86-499c-8b09-833160bca767
 topic_type:
 - apiref
-ms.openlocfilehash: 40f24a4ea628ce92a27ab1bfe97fc87a57dfa4f0
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 8ca5ab70f60de4d783800fb18612a8f04cb9cee1
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74432556"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79177705"
 ---
-# <a name="imetadataemitdefinefield-method"></a><span data-ttu-id="51724-102">IMetaDataEmit::DefineField – metoda</span><span class="sxs-lookup"><span data-stu-id="51724-102">IMetaDataEmit::DefineField Method</span></span>
-<span data-ttu-id="51724-103">Vytvoří definici pro pole se zadaným podpisem metadat a získá token do této definice pole.</span><span class="sxs-lookup"><span data-stu-id="51724-103">Creates a definition for a field with the specified metadata signature, and gets a token to that field definition.</span></span>  
+# <a name="imetadataemitdefinefield-method"></a><span data-ttu-id="2b50f-102">IMetaDataEmit::DefineField – metoda</span><span class="sxs-lookup"><span data-stu-id="2b50f-102">IMetaDataEmit::DefineField Method</span></span>
+<span data-ttu-id="2b50f-103">Vytvoří definici pole se zadaným podpisem metadat a získá token pro tuto definici pole.</span><span class="sxs-lookup"><span data-stu-id="2b50f-103">Creates a definition for a field with the specified metadata signature, and gets a token to that field definition.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="51724-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="51724-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="2b50f-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="2b50f-104">Syntax</span></span>  
   
 ```cpp  
-HRESULT DefineField (   
-    [in]  mdTypeDef   td,   
-    [in]  LPCWSTR     szName,   
-    [in]  DWORD       dwFieldFlags,   
-    [in]  PCCOR_SIGNATURE pvSigBlob,   
-    [in]  ULONG       cbSigBlob,   
-    [in]  DWORD       dwCPlusTypeFlag,   
-    [in]  void const  *pValue,   
-    [in]  ULONG       cchValue,   
-    [out] mdFieldDef  *pmd   
+HRESULT DefineField (
+    [in]  mdTypeDef   td,
+    [in]  LPCWSTR     szName,
+    [in]  DWORD       dwFieldFlags,
+    [in]  PCCOR_SIGNATURE pvSigBlob,
+    [in]  ULONG       cbSigBlob,
+    [in]  DWORD       dwCPlusTypeFlag,
+    [in]  void const  *pValue,
+    [in]  ULONG       cchValue,
+    [out] mdFieldDef  *pmd
 );  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="51724-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="51724-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="2b50f-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="2b50f-105">Parameters</span></span>  
  `td`  
- <span data-ttu-id="51724-106">pro Token `mdTypeDef` nadřazené třídy nebo rozhraní.</span><span class="sxs-lookup"><span data-stu-id="51724-106">[in] The `mdTypeDef` token for the enclosing class or interface.</span></span>  
+ <span data-ttu-id="2b50f-106">[v] Token `mdTypeDef` pro ohraničující třídu nebo rozhraní.</span><span class="sxs-lookup"><span data-stu-id="2b50f-106">[in] The `mdTypeDef` token for the enclosing class or interface.</span></span>  
   
  `szName`  
- <span data-ttu-id="51724-107">pro Název pole v kódování Unicode.</span><span class="sxs-lookup"><span data-stu-id="51724-107">[in] The field name in Unicode.</span></span>  
+ <span data-ttu-id="2b50f-107">[v] Název pole v unicode.</span><span class="sxs-lookup"><span data-stu-id="2b50f-107">[in] The field name in Unicode.</span></span>  
   
  `dwFieldFlags`  
- <span data-ttu-id="51724-108">pro Atributy pole</span><span class="sxs-lookup"><span data-stu-id="51724-108">[in] The field attributes.</span></span> <span data-ttu-id="51724-109">Toto je Bitová maska `CorFieldAttr` hodnot.</span><span class="sxs-lookup"><span data-stu-id="51724-109">This is a bitmask of `CorFieldAttr` values.</span></span>  
+ <span data-ttu-id="2b50f-108">[v] Atributy pole.</span><span class="sxs-lookup"><span data-stu-id="2b50f-108">[in] The field attributes.</span></span> <span data-ttu-id="2b50f-109">Toto je bitová maska `CorFieldAttr` hodnot.</span><span class="sxs-lookup"><span data-stu-id="2b50f-109">This is a bitmask of `CorFieldAttr` values.</span></span>  
   
  `pvSigBlob`  
- <span data-ttu-id="51724-110">pro Podpis pole jako objekt BLOB</span><span class="sxs-lookup"><span data-stu-id="51724-110">[in] The field signature as a BLOB.</span></span>  
+ <span data-ttu-id="2b50f-110">[v] Podpis pole jako objekt BLOB.</span><span class="sxs-lookup"><span data-stu-id="2b50f-110">[in] The field signature as a BLOB.</span></span>  
   
  `cbSigBlob`  
- <span data-ttu-id="51724-111">pro Počet bajtů v `pvSigBlob`.</span><span class="sxs-lookup"><span data-stu-id="51724-111">[in] The count of bytes in `pvSigBlob`.</span></span>  
+ <span data-ttu-id="2b50f-111">[v] Počet bajtů v `pvSigBlob`.</span><span class="sxs-lookup"><span data-stu-id="2b50f-111">[in] The count of bytes in `pvSigBlob`.</span></span>  
   
  `dwCPlusTypeFlag`  
- <span data-ttu-id="51724-112">pro *\** `ELEMENT_TYPE_`pro hodnotu konstanty.</span><span class="sxs-lookup"><span data-stu-id="51724-112">[in] The `ELEMENT_TYPE_`*\** for the constant value.</span></span> <span data-ttu-id="51724-113">Toto je `CorElementType` hodnota.</span><span class="sxs-lookup"><span data-stu-id="51724-113">This is a `CorElementType` value.</span></span> <span data-ttu-id="51724-114">Pokud nedefinujete konstantní hodnotu pro pole, použijte `ELEMENT_TYPE_END`.</span><span class="sxs-lookup"><span data-stu-id="51724-114">If not defining a constant value for the field, use `ELEMENT_TYPE_END`.</span></span>  
+ <span data-ttu-id="2b50f-112">[v] Pro `ELEMENT_TYPE_` *\** konstantní hodnotu.</span><span class="sxs-lookup"><span data-stu-id="2b50f-112">[in] The `ELEMENT_TYPE_`*\** for the constant value.</span></span> <span data-ttu-id="2b50f-113">To je `CorElementType` hodnota.</span><span class="sxs-lookup"><span data-stu-id="2b50f-113">This is a `CorElementType` value.</span></span> <span data-ttu-id="2b50f-114">Pokud nedefinujete konstantní hodnotu pole, použijte `ELEMENT_TYPE_END`.</span><span class="sxs-lookup"><span data-stu-id="2b50f-114">If not defining a constant value for the field, use `ELEMENT_TYPE_END`.</span></span>  
   
  `pValue`  
- <span data-ttu-id="51724-115">pro Hodnota konstanty pro pole</span><span class="sxs-lookup"><span data-stu-id="51724-115">[in] The constant value for the field.</span></span>  
+ <span data-ttu-id="2b50f-115">[v] Konstantní hodnota pole.</span><span class="sxs-lookup"><span data-stu-id="2b50f-115">[in] The constant value for the field.</span></span>  
   
  `cchValue`  
- <span data-ttu-id="51724-116">pro Velikost v (Unicode) znaků `pValue`.</span><span class="sxs-lookup"><span data-stu-id="51724-116">[in] The size in (Unicode) characters of `pValue`.</span></span>  
+ <span data-ttu-id="2b50f-116">[v] Velikost znaků (Unicode) `pValue`.</span><span class="sxs-lookup"><span data-stu-id="2b50f-116">[in] The size in (Unicode) characters of `pValue`.</span></span>  
   
  `pmd`  
- <span data-ttu-id="51724-117">mimo Byl přiřazen token `mdFieldDef`.</span><span class="sxs-lookup"><span data-stu-id="51724-117">[out] The `mdFieldDef` token assigned.</span></span>  
+ <span data-ttu-id="2b50f-117">[out] Přiřazen `mdFieldDef` token.</span><span class="sxs-lookup"><span data-stu-id="2b50f-117">[out] The `mdFieldDef` token assigned.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="51724-118">Požadavky</span><span class="sxs-lookup"><span data-stu-id="51724-118">Requirements</span></span>  
- <span data-ttu-id="51724-119">**Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="51724-119">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="2b50f-118">Požadavky</span><span class="sxs-lookup"><span data-stu-id="2b50f-118">Requirements</span></span>  
+ <span data-ttu-id="2b50f-119">**Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="2b50f-119">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="51724-120">**Hlavička:** Cor. h</span><span class="sxs-lookup"><span data-stu-id="51724-120">**Header:** Cor.h</span></span>  
+ <span data-ttu-id="2b50f-120">**Záhlaví:** Kor.h.</span><span class="sxs-lookup"><span data-stu-id="2b50f-120">**Header:** Cor.h</span></span>  
   
- <span data-ttu-id="51724-121">**Knihovna:** Používá se jako prostředek v knihovně MSCorEE. dll.</span><span class="sxs-lookup"><span data-stu-id="51724-121">**Library:** Used as a resource in MSCorEE.dll</span></span>  
+ <span data-ttu-id="2b50f-121">**Knihovna:** Používá se jako prostředek v souboru MSCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="2b50f-121">**Library:** Used as a resource in MSCorEE.dll</span></span>  
   
- <span data-ttu-id="51724-122">**Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="51724-122">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
+ <span data-ttu-id="2b50f-122">**Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="2b50f-122">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="51724-123">Viz také:</span><span class="sxs-lookup"><span data-stu-id="51724-123">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="2b50f-123">Viz také</span><span class="sxs-lookup"><span data-stu-id="2b50f-123">See also</span></span>
 
-- [<span data-ttu-id="51724-124">IMetaDataEmit – rozhraní</span><span class="sxs-lookup"><span data-stu-id="51724-124">IMetaDataEmit Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)
-- [<span data-ttu-id="51724-125">IMetaDataEmit2 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="51724-125">IMetaDataEmit2 Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-interface.md)
+- [<span data-ttu-id="2b50f-124">IMetaDataEmit – rozhraní</span><span class="sxs-lookup"><span data-stu-id="2b50f-124">IMetaDataEmit Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)
+- [<span data-ttu-id="2b50f-125">IMetaDataEmit2 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="2b50f-125">IMetaDataEmit2 Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-interface.md)

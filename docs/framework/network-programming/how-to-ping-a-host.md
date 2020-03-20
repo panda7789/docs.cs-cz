@@ -4,17 +4,17 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - Ping
 ms.assetid: bbf20f5b-eca1-4661-af04-cb8837f9af05
-ms.openlocfilehash: c4efe358147c10ac31d42b83f6f4a65c274fe8dc
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 09ae830bbef078b94bd28e654d93c10cde6108fd
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64624563"
+ms.lasthandoff: 03/15/2020
+ms.locfileid: "79180791"
 ---
-# <a name="how-to-ping-a-host"></a><span data-ttu-id="81901-102">Postupy: Příkaz Ping na hostitele</span><span class="sxs-lookup"><span data-stu-id="81901-102">How to: Ping a Host</span></span>
-<span data-ttu-id="81901-103">Tento příklad ukazuje, jak pomocí příkazu ping vzdálený hostitel.</span><span class="sxs-lookup"><span data-stu-id="81901-103">This sample shows how to ping a remote host.</span></span>  
+# <a name="how-to-ping-a-host"></a><span data-ttu-id="ca15d-102">Postupy: Příkaz Ping na hostitele</span><span class="sxs-lookup"><span data-stu-id="ca15d-102">How to: Ping a Host</span></span>
+<span data-ttu-id="ca15d-103">Tato ukázka ukazuje, jak příkaz ping vzdáleného hostitele.</span><span class="sxs-lookup"><span data-stu-id="ca15d-103">This sample shows how to ping a remote host.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="81901-104">Příklad</span><span class="sxs-lookup"><span data-stu-id="81901-104">Example</span></span>  
+## <a name="example"></a><span data-ttu-id="ca15d-104">Příklad</span><span class="sxs-lookup"><span data-stu-id="ca15d-104">Example</span></span>  
   
 ```csharp
 using System;  
@@ -77,8 +77,8 @@ namespace Examples.System.Net.NetworkInformation.PingTest
             {  
                 Console.WriteLine ("Ping canceled.");  
   
-                // Let the main thread resume.   
-                // UserToken is the AutoResetEvent object that the main thread   
+                // Let the main thread resume.
+                // UserToken is the AutoResetEvent object that the main thread
                 // is waiting for.  
                 ((AutoResetEvent)e.UserState).Set ();  
             }  
@@ -89,7 +89,7 @@ namespace Examples.System.Net.NetworkInformation.PingTest
                 Console.WriteLine ("Ping failed:");  
                 Console.WriteLine (e.Error.ToString ());  
   
-                // Let the main thread resume.   
+                // Let the main thread resume.
                 ((AutoResetEvent)e.UserState).Set();  
             }  
   
@@ -120,7 +120,7 @@ namespace Examples.System.Net.NetworkInformation.PingTest
 }  
 ```  
   
-## <a name="compiling-the-code"></a><span data-ttu-id="81901-105">Probíhá kompilace kódu</span><span class="sxs-lookup"><span data-stu-id="81901-105">Compiling the Code</span></span>  
- <span data-ttu-id="81901-106">Tento příklad vyžaduje:</span><span class="sxs-lookup"><span data-stu-id="81901-106">This example requires:</span></span>  
+## <a name="compiling-the-code"></a><span data-ttu-id="ca15d-105">Probíhá kompilace kódu</span><span class="sxs-lookup"><span data-stu-id="ca15d-105">Compiling the Code</span></span>  
+ <span data-ttu-id="ca15d-106">Tento příklad vyžaduje:</span><span class="sxs-lookup"><span data-stu-id="ca15d-106">This example requires:</span></span>  
   
-- <span data-ttu-id="81901-107">Odkazy **System.Net** oboru názvů.</span><span class="sxs-lookup"><span data-stu-id="81901-107">References to the **System.Net** namespace.</span></span>
+- <span data-ttu-id="ca15d-107">Odkazy na **System.Net** oboru názvů.</span><span class="sxs-lookup"><span data-stu-id="ca15d-107">References to the **System.Net** namespace.</span></span>
