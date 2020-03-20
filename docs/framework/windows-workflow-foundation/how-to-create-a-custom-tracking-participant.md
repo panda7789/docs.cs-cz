@@ -5,24 +5,24 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 1b612c7e-2381-4a7c-b07a-77030415f2a3
-ms.openlocfilehash: 280f68c8b762562a56ce96f45f118702fb0e4d76
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: ea7a598a73f131d8ee33e285a39173fbf84a97f5
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69962404"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79182909"
 ---
 # <a name="how-to-create-a-custom-tracking-participant"></a>Postupy: Vytvoření vlastního účastníka sledování
-Sledování pracovního postupu nabízí přehled o stavu provádění pracovního postupu. Modul runtime pracovního postupu generuje záznamy sledování, které popisují události životního cyklu pracovního postupu, události životního cyklu aktivity, obnovení záložek a chyby. Tyto záznamy sledování se spotřebují sledováním účastníků. Programovací model Windows Workflow Foundation (WF) zahrnuje standardního účastníka sledování, který zapisuje záznamy sledování jako události trasování událostí pro Windows (ETW). Je-li který nesplňuje vaše požadavky, můžete také napsat vlastní sledování účastník. Tento krok kurzu popisuje, jak vytvořit vlastního účastníka sledování a profil sledování, který zachycuje výstup `WriteLine` aktivit, aby je bylo možné zobrazit uživateli.  
+Sledování pracovního postupu poskytuje přehled o stavu provádění pracovního postupu. Za běhu pracovního postupu vyzařuje záznamy sledování, které popisují události životního cyklu pracovního postupu, události životního cyklu aktivity, obnovení záložek a poruchy. Tyto záznamy sledování jsou spotřebovány sledování účastníků. Windows Workflow Foundation (WF) zahrnuje standardní sledování účastníka, který zapisuje záznamy sledování jako události trasování událostí pro Windows (ETW). Je-li který nesplňuje vaše požadavky, můžete také napsat vlastní sledování účastník. Tento krok kurzu popisuje, jak vytvořit vlastní sledování účastníka `WriteLine` a sledování profilu, které zachycují výstup aktivit tak, aby mohly být zobrazeny uživateli.  
   
 > [!NOTE]
-> Každé téma v kurzu Začínáme závisí na předchozích tématech. Chcete-li dokončit toto téma, je nutné nejprve dokončit předchozí témata. Pokud si chcete stáhnout dokončenou verzi nebo zobrazit návod k videu, přečtěte si [kurz programovací model Windows Workflow Foundation (WF45)-začínáme](https://go.microsoft.com/fwlink/?LinkID=248976).  
+> Každé téma v kurzu Začínáme závisí na předchozích tématech. Chcete-li toto téma dokončit, musíte nejprve dokončit předchozí témata. Pokud chcete stáhnout dokončenou verzi nebo zobrazit video návod k kurzu, přečtěte si část [Windows Workflow Foundation (WF45) – Kurz začínáme](https://go.microsoft.com/fwlink/?LinkID=248976).  
   
 ## <a name="to-create-the-custom-tracking-participant"></a>Vytvoření vlastního účastníka sledování  
   
-1. V **Průzkumník řešení** klikněte pravým tlačítkem na **NumberGuessWorkflowHost** a vyberte **Přidat**, **Třída**. Do `StatusTrackingParticipant` pole **název** zadejte a klikněte na **Přidat**.  
+1. Klepněte pravým tlačítkem myši na **numberguessWorkflowHost** v **Průzkumníku řešení** a zvolte **Přidat**, **Třída**. Zadejte `StatusTrackingParticipant` do pole **Název** a klepněte na **tlačítko Přidat**.  
   
-2. Do horní části `using` souboru přidejte `Imports`následující příkazy (nebo), které budou `using` příkazy (nebo `Imports`).  
+2. Přidejte `using` následující `Imports`příkazy (nebo ) v horní `using` části `Imports`souboru s ostatními příkazy (nebo ).  
   
     ```vb  
     Imports System.Activities.Tracking  
@@ -34,7 +34,7 @@ Sledování pracovního postupu nabízí přehled o stavu provádění pracovní
     using System.IO;  
     ```  
   
-3. Upravte třídu tak, aby dědila z `TrackingParticipant`. `StatusTrackingParticipant`  
+3. Upravte `StatusTrackingParticipant` třídu tak, `TrackingParticipant`aby dědí z .  
   
     ```vb  
     Public Class StatusTrackingParticipant  
@@ -49,7 +49,7 @@ Sledování pracovního postupu nabízí přehled o stavu provádění pracovní
     }  
     ```  
   
-4. Přidejte následující `Track` přepsání metody. Existuje několik různých typů záznamů sledování. Zajímá Vás výstup `WriteLine` aktivit, které jsou obsaženy v záznamech sledování aktivit. `TrackingRecord` Pokud `InstanceId` je aktivita`WriteLine` pro aktivitu, jepřipojenksouborusnázvemzapracovnípostup.`WriteLine` `Text` `ActivityTrackingRecord` V tomto kurzu se soubor uloží do aktuální složky hostitelské aplikace.  
+4. Přidejte `Track` následující přepsání metody. Existuje několik různých typů záznamů sledování. Máme zájem o výstup `WriteLine` y aktivit, které jsou obsaženy v záznamech sledování aktivit. Pokud `TrackingRecord` je `ActivityTrackingRecord` pro `WriteLine` aktivitu, `Text` je `WriteLine` připojen k souboru pojmenované `InstanceId` po pracovního postupu. V tomto kurzu je soubor uložen do aktuální složky hostitelské aplikace.  
   
     ```vb  
     Protected Overrides Sub Track(record As TrackingRecord, timeout As TimeSpan)  
@@ -92,13 +92,13 @@ Sledování pracovního postupu nabízí přehled o stavu provádění pracovní
     }  
     ```  
   
-     Pokud není zadán žádný profil sledování, použije se výchozí profil sledování. Při použití výchozího profilu sledování jsou vygenerovány `ActivityStates`záznamy sledování. Protože potřebujeme zachytit text jenom jednou během životního cyklu `WriteLine` aktivity, extrahujeme jenom text `ActivityStates.Executing` ze stavu. Aby bylo [možné vytvořit profil sledování a registrovat účastníka sledování](#to-create-the-tracking-profile-and-register-the-tracking-participant), je vytvořen profil sledování, který určuje, že `WriteLine` budou generovány pouze `ActivityStates.Executing` záznamy sledování.  
+     Pokud není zadán žádný profil sledování, použije se výchozí profil sledování. Při použití výchozího profilu sledování jsou záznamy `ActivityStates`sledování vyzařovány pro všechny . Vzhledem k tomu, že potřebujeme zachytit text `WriteLine` pouze jednou během životního cyklu `ActivityStates.Executing` aktivity, extrahujeme pouze text ze stavu. [Chcete-li vytvořit profil sledování a zaregistrovat účastníka sledování](#to-create-the-tracking-profile-and-register-the-tracking-participant), `WriteLine` `ActivityStates.Executing` je vytvořen profil sledování, který určuje, že jsou emitovány pouze záznamy sledování.  
   
-## <a name="to-create-the-tracking-profile-and-register-the-tracking-participant"></a>Postup vytvoření profilu sledování a registrace účastníka sledování  
+## <a name="to-create-the-tracking-profile-and-register-the-tracking-participant"></a>Vytvoření profilu sledování a registrace účastníka sledování  
   
-1. V **Průzkumník řešení** klikněte pravým tlačítkem na **WorkflowHostForm** a vyberte **Zobrazit kód**.  
+1. Klepněte pravým tlačítkem myši na **příkaz WorkflowHostForm** v **Průzkumníku řešení** a zvolte **Zobrazit kód**.  
   
-2. Do horní části `using` souboru přidejte `Imports`následující příkaz (nebo) pomocí příkazů other `using` (nebo `Imports`).  
+2. Přidejte `using` následující `Imports`příkaz (nebo ) v horní `using` části `Imports`souboru s ostatními příkazy (nebo ).  
   
     ```vb  
     Imports System.Activities.Tracking  
@@ -108,7 +108,7 @@ Sledování pracovního postupu nabízí přehled o stavu provádění pracovní
     using System.Activities.Tracking;  
     ```  
   
-3. Přidejte následující kód k `ConfigureWorkflowApplication` hned za kód, který `StringWriter` přidá do rozšíření pracovního postupu a před obslužné rutiny životního cyklu pracovního postupu.  
+3. Přidejte následující `ConfigureWorkflowApplication` kód těsně za kód, který přidá `StringWriter` rozšíření pracovního postupu a před obslužné rutiny životního cyklu pracovního postupu.  
   
     ```vb  
     'Add the custom tracking participant with a tracking profile  
@@ -134,7 +134,7 @@ Sledování pracovního postupu nabízí přehled o stavu provádění pracovní
     {  
         TrackingProfile = new TrackingProfile  
         {  
-            Queries =   
+            Queries =
             {  
                 new ActivityStateQuery  
                 {  
@@ -149,9 +149,9 @@ Sledování pracovního postupu nabízí přehled o stavu provádění pracovní
     wfApp.Extensions.Add(stp);  
     ```  
   
-     Tento profil sledování Určuje, že do vlastního účastníka `WriteLine` sledování se budou `Executing` generovat jenom záznamy stavu aktivity pro aktivity ve stavu.  
+     Tento profil sledování určuje, že `WriteLine` pouze záznamy `Executing` stavu aktivity pro aktivity ve stavu jsou vydávány pro vlastní sledování účastníka.  
   
-     Po přidání kódu `ConfigureWorkflowApplication` bude začátek vypadat podobně jako v následujícím příkladu.  
+     Po přidání kódu bude `ConfigureWorkflowApplication` začátek vypadat jako v následujícím příkladu.  
   
     ```vb  
     Private Sub ConfigureWorkflowApplication(wfApp As WorkflowApplication)  
@@ -198,7 +198,7 @@ Sledování pracovního postupu nabízí přehled o stavu provádění pracovní
         {  
             TrackingProfile = new TrackingProfile  
             {  
-                Queries =   
+                Queries =
                 {  
                     new ActivityStateQuery  
                     {  
@@ -217,9 +217,9 @@ Sledování pracovního postupu nabízí přehled o stavu provádění pracovní
   
 ## <a name="to-display-the-tracking-information"></a>Zobrazení informací o sledování  
   
-1. V **Průzkumník řešení** klikněte pravým tlačítkem na **WorkflowHostForm** a vyberte **Zobrazit kód**.  
+1. Klepněte pravým tlačítkem myši na **příkaz WorkflowHostForm** v **Průzkumníku řešení** a zvolte **Zobrazit kód**.  
   
-2. `InstanceId_SelectedIndexChanged` V obslužné rutině přidejte následující kód hned za kód, který vymaže okno stavu.  
+2. Do `InstanceId_SelectedIndexChanged` obslužné rutiny přidejte následující kód ihned za kód, který vymaže stavové okno.  
   
     ```vb  
     'If there is tracking data for this workflow, display it  
@@ -240,7 +240,7 @@ Sledování pracovního postupu nabízí přehled o stavu provádění pracovní
     }  
     ```  
   
-     Když se v seznamu pracovních postupů vybere nový pracovní postup, načtou se záznamy sledování pro tento pracovní postup a zobrazí se v okně stav. Následující příklad je dokončená `InstanceId_SelectedIndexChanged` obslužná rutina.  
+     Pokud je v seznamu pracovních postupů vybrán nový pracovní postup, záznamy sledování pro tento pracovní postup se načtou a zobrazí ve stavovém okně. Následující příklad je `InstanceId_SelectedIndexChanged` dokončená obslužná rutina.  
   
     ```vb  
     Private Sub InstanceId_SelectedIndexChanged(sender As Object, e As EventArgs) Handles InstanceId.SelectedIndexChanged  
@@ -310,29 +310,29 @@ Sledování pracovního postupu nabízí přehled o stavu provádění pracovní
     }  
     ```  
   
-## <a name="to-build-and-run-the-application"></a>Sestavení a spuštění aplikace  
+## <a name="to-build-and-run-the-application"></a>Vytvoření a spuštění aplikace  
   
-1. Stisknutím kombinace kláves CTRL + SHIFT + B sestavte aplikaci.  
+1. Stisknutím kláves Ctrl+Shift+B vytvořte aplikaci.  
   
-2. Stisknutím kombinace kláves CTRL + F5 spusťte aplikaci.  
+2. Stisknutím kláves Ctrl+F5 spusťte aplikaci.  
   
-3. Vyberte rozsah pro odhad hry a typ pracovního postupu, který chcete spustit, a klikněte na **Nová hra**. V poli **odhad** zadejte odhad a kliknutím na tlačítko **Přejít** odešlete svůj odhad. Všimněte si, že stav pracovního postupu se zobrazí v okně stav. Tento výstup je zachycen z `WriteLine` aktivit. Přepněte na jiný pracovní postup tak, že ho vyberete v poli se seznamem **ID instance pracovního postupu** a Všimněte si, že se odebral stav aktuálního pracovního postupu. Přepněte zpátky na předchozí pracovní postup a Všimněte si, že je stav obnovený, podobně jako v následujícím příkladu.  
+3. Vyberte rozsah pro hádanku a typ pracovního postupu, který chcete spustit, a klepněte na tlačítko **Nová hra**. Zadejte do pole **Odhad** odhad a kliknutím na **Přejít** odešlete svůj odhad. Všimněte si, že stav pracovního postupu se zobrazí ve stavovém okně. Tento výstup je zachycen `WriteLine` z aktivit. Přepněte do jiného pracovního postupu tak, že vyberete jeden z pole se seznamem **Id instance pracovního postupu** a všimněte si, že se odebere stav aktuálního pracovního postupu. Přepněte zpět na předchozí pracovní postup a všimněte si, že stav je obnoven, podobně jako v následujícím příkladu.  
   
     > [!NOTE]
-    > Pokud přepnete na pracovní postup, který byl spuštěn před povolením sledování, nebude zobrazen žádný stav. Pokud však provedete další odhad, jejich stav bude uložen, protože sledování je nyní povoleno.  
+    > Pokud přepnete na pracovní postup, který byl spuštěn před povolením sledování, nezobrazí se žádný stav. Pokud však provedete další odhady, jejich stav se uloží, protože sledování je nyní povoleno.  
   
     ```output
     Please enter a number between 1 and 10
     Your guess is too high.
     Please enter a number between 1 and 10
     ```
-    
-    > [!NOTE]
-    > Tyto informace jsou užitečné při určování rozsahu náhodných čísel, ale neobsahují žádné informace o tom, jaké odhady se dřív udělaly. Tyto informace jsou v dalším kroku, [jak: Hostování více verzí pracovního postupu vedle](how-to-host-multiple-versions-of-a-workflow-side-by-side.md)sebe.
 
-    Poznamenejte si ID instance pracovního postupu a Dohrajte hru do jejího dokončení.
+    > [!NOTE]
+    > Tyto informace jsou užitečné pro určení rozsahu náhodného čísla, ale neobsahují žádné informace o tom, jaké odhady byly dříve provedeny. Tyto informace jsou v dalším [kroku: Host více verzí pracovního postupu vedle sebe](how-to-host-multiple-versions-of-a-workflow-side-by-side.md).
+
+    Poznamenejte si ID instance pracovního postupu a přehrajte hru až do jejího dokončení.
   
-4. Otevřete Průzkumníka Windows a přejděte do složky **NumberGuessWorkflowHost\bin\debug** (nebo **bin\Release** v závislosti na nastavení projektu). Všimněte si, že kromě spustitelných souborů projektu jsou soubory s názvy souborů identifikátorů GUID. Identifikujte ten, který odpovídá ID instance pracovního postupu z dokončeného pracovního postupu v předchozím kroku a otevřete ho v programu Poznámkový blok. Informace o sledování obsahují informace podobné následujícímu.  
+4. Otevřete Průzkumníka Windows a přejděte do složky **NumberGuessWorkflowHost\bin\debug** (nebo **bin\release** v závislosti na nastavení projektu). Všimněte si, že kromě spustitelných souborů projektu existují soubory s názvy souborů GUID. Identifikujte ten, který odpovídá ID instance pracovního postupu z dokončeného pracovního postupu v předchozím kroku, a otevřete ho v poznámkovém bloku. Informace o sledování obsahují informace podobné následujícím.  
   
     ```output
     Please enter a number between 1 and 10
@@ -342,4 +342,4 @@ Sledování pracovního postupu nabízí přehled o stavu provádění pracovní
     Please enter a number between 1 and 10
     ```
 
-    Kromě neexistence odhadů uživatele Tato sledovací data neobsahují informace o konečném odhadu pracovního postupu. Důvodem je, že informace o sledování se skládají pouze `WriteLine` z výstupu pracovního postupu a poslední zobrazená zpráva je provedena `Completed` z obslužné rutiny po dokončení pracovního postupu. V dalším kroku kurzu [: Hostování více verzí pracovního postupu vedle](how-to-host-multiple-versions-of-a-workflow-side-by-side.md)sebe: existující `WriteLine` aktivity jsou upraveny tak, aby se zobrazily odhadované množství uživatelů, a přidala se další `WriteLine` aktivita, která zobrazí konečné výsledky. Po integraci [těchto změn můžete postupovat takto: Hostování více verzí pracovního postupu vedle](how-to-host-multiple-versions-of-a-workflow-side-by-side.md) sebe znázorňuje, jak hostovat více verzí pracovního postupu současně.
+    Kromě absence dohadů uživatele tato data sledování neobsahuje informace o konečném odhadu pracovního postupu. Důvodem je, že informace o `WriteLine` sledování se skládá pouze z výstupu z pracovního `Completed` postupu a poslední zpráva, která se zobrazí, se provádí z obslužné rutiny po dokončení pracovního postupu. V dalším kroku [kurzu, Jak: Host více verzí pracovního postupu side-by-Side](how-to-host-multiple-versions-of-a-workflow-side-by-side.md), existující `WriteLine` aktivity jsou upraveny `WriteLine` tak, aby zobrazení odhady uživatele a další aktivita je přidána, která zobrazuje konečné výsledky. Po integraci těchto [změn: Hostování více verzí pracovního postupu vedle sebe](how-to-host-multiple-versions-of-a-workflow-side-by-side.md) ukazuje, jak hostovat více verzí pracovního postupu současně.

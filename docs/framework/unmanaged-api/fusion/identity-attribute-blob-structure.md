@@ -16,15 +16,15 @@ helpviewer_keywords:
 ms.assetid: af14ae5f-d226-47dd-ba90-8fc6e6605d4d
 topic_type:
 - apiref
-ms.openlocfilehash: 212a9f46dd33f98abd31e7a78c7a830cb3386cb6
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 8f838d5c812842e2a637065b25182b6a12609231
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73108013"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79176549"
 ---
 # <a name="identity_attribute_blob-structure"></a>IDENTITY_ATTRIBUTE_BLOB – struktura
-Obsahuje informace o jednom atributu v sestavení a skládá se ze tří `DWORD`s. Každý `DWORD` je posunem na vyrovnávací paměť znaků vytvořenou metodou `CurrentIntoBuffer` rozhraní [IEnumIDENTITY_ATTRIBUTE](ienumidentity-attribute-interface.md) .  
+Obsahuje informace o jeden atribut v sestavení a `DWORD`skládá se ze tří s. Každý `DWORD` je posun do znakové `CurrentIntoBuffer` vyrovnávací paměti vytvořené metodou [rozhraní IEnumIDENTITY_ATTRIBUTE](ienumidentity-attribute-interface.md)  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,20 +40,20 @@ typedef struct _IDENTITY_ATTRIBUTE_BLOB {
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`ofsNamespace`|První posun do vyrovnávací paměti znaků. Na tento posun nenásleduje obor názvů atributu, ale řada znaků null. Proto se nepoužívá.|  
+|`ofsNamespace`|První posun do vyrovnávací paměti znaků. Za tímto posunem není následovat obor názvů atributu, ale řada znaků null. Proto se nepoužívá.|  
 |`ofsName`|Druhý posun do vyrovnávací paměti znaků. Toto umístění označuje začátek názvu atributu.|  
 |`ofsValue`|Třetí posun do vyrovnávací paměti znaků. Toto umístění označuje začátek hodnoty atributu.|  
   
 ## <a name="sample"></a>Ukázka  
- Následující příklad znázorňuje několik základních kroků, které nakonec vedou k vyplnění `IDENTITY_ATTRIBUTE_BLOB` struktury:  
+ Následující příklad ilustruje několik základních kroků, které nakonec `IDENTITY_ATTRIBUTE_BLOB` za následek obydlené struktury:  
   
-1. Získejte [IReferenceIdentity –](ireferenceidentity-interface.md) pro sestavení.  
+1. Získat [IReferenceIdentity](ireferenceidentity-interface.md) pro sestavení.  
   
-2. Zavolejte metodu `IReferenceIdentity::EnumAttributes` a získejte [IEnumIDENTITY_ATTRIBUTE](ienumidentity-attribute-interface.md).  
+2. Volání `IReferenceIdentity::EnumAttributes` metody a získat [IEnumIDENTITY_ATTRIBUTE](ienumidentity-attribute-interface.md).  
   
-3. Vytvořte vyrovnávací paměť znaků a přetypujte ji jako strukturu `IDENTITY_ATTRIBUTE_BLOB`.  
+3. Vytvořte vyrovnávací paměť znaků a `IDENTITY_ATTRIBUTE_BLOB` přetypujte ji jako strukturu.  
   
-4. Zavolejte metodu `CurrentIntoBuffer` rozhraní `IEnumIDENTITY_ATTRIBUTE`. Tato metoda zkopíruje atributy `Namespace`, `Name`a `Value` do vyrovnávací paměti znaků. Tři posuny k těmto řetězcům budou k dispozici ve struktuře `IDENTITY_ATTRIBUTE_BLOB`.  
+4. Volání `CurrentIntoBuffer` metody `IEnumIDENTITY_ATTRIBUTE` rozhraní. Tato metoda zkopíruje `Namespace` `Name`atributy `Value` , a do vyrovnávací paměti znaků. Tři posuny těchto řetězců budou k `IDENTITY_ATTRIBUTE_BLOB` dispozici ve struktuře.  
   
 ```cpp  
 // EnumAssemblyAttributes.cpp : main project file.  
@@ -97,7 +97,7 @@ bool Init()
                                 (VOID **)&g_pfnGetIdentityAuthority);  
     }  
   
-    if (!g_pfnGetAssemblyIdentityFromFile ||   
+    if (!g_pfnGetAssemblyIdentityFromFile ||
         !g_pfnGetIdentityAuthority)  
     {  
         printf("Error: Cannot get required APIs from fusion.dll!\n");  
@@ -120,7 +120,7 @@ void Shutdown()
   
 void Usage()  
 {  
-    printf("EnumAssemblyAttributes: A tool to enumerate the identity   
+    printf("EnumAssemblyAttributes: A tool to enumerate the identity
             attributes of a given assembly.\n\n");  
     printf("Usage: EnumAssemblyAttributes AssemblyFilePath\n");  
     printf("\n");  
@@ -131,7 +131,7 @@ int _cdecl wmain(int argc, LPCWSTR argv[])
     int     iResult = 1;  
     IUnknown                    *pUnk  = NULL;  
     IReferenceIdentity          *pRef  = NULL;  
-    HRESULT                     hr     = S_OK;     
+    HRESULT                     hr     = S_OK;
     IEnumIDENTITY_ATTRIBUTE     *pEnum = NULL;  
     BYTE                        abData[1024];  
     DWORD                       cbAvailable;  
@@ -148,16 +148,16 @@ int _cdecl wmain(int argc, LPCWSTR argv[])
         goto Exit;  
     }  
   
-    hr = g_pfnGetAssemblyIdentityFromFile(argv[1],   
+    hr = g_pfnGetAssemblyIdentityFromFile(argv[1],
                             __uuidof(IReferenceIdentity), &pUnk);  
   
     if (FAILED(hr)) {  
-        printf("GetAssemblyIdentityFromFile failed with hr = 0x%x",   
+        printf("GetAssemblyIdentityFromFile failed with hr = 0x%x",
                 hr);  
         goto Exit;  
     }  
   
-    hr = pUnk->QueryInterface(__uuidof(IReferenceIdentity),   
+    hr = pUnk->QueryInterface(__uuidof(IReferenceIdentity),
                               (void**)&pRef);  
     if (FAILED(hr)) {  
         goto Exit;  
@@ -165,7 +165,7 @@ int _cdecl wmain(int argc, LPCWSTR argv[])
   
     hr = pRef->EnumAttributes(&pEnum);  
     if (FAILED(hr)) {  
-        printf("IReferenceIdentity::EnumAttributes failed with hr =   
+        printf("IReferenceIdentity::EnumAttributes failed with hr =
                 0x%x", hr);  
         goto Exit;  
     }  
@@ -175,7 +175,7 @@ int _cdecl wmain(int argc, LPCWSTR argv[])
         cbAvailable = sizeof(abData);  
         hr = pEnum->CurrentIntoBuffer(cbAvailable, abData, &cbUsed);  
         if (FAILED(hr)) {  
-            printf("IEnumIDENTITY_ATTRIBUTE::CurrentIntoBuffer failed   
+            printf("IEnumIDENTITY_ATTRIBUTE::CurrentIntoBuffer failed
                     with hr = 0x%x", hr);  
             goto Exit;  
         }  
@@ -191,7 +191,7 @@ int _cdecl wmain(int argc, LPCWSTR argv[])
   
         hr = pEnum->Skip(1);  
         if (FAILED(hr)) {  
-            printf("IEnumIDENTITY_ATTRIBUTE::Skip failed with hr =   
+            printf("IEnumIDENTITY_ATTRIBUTE::Skip failed with hr =
                     0x%x", hr);  
             goto Exit;  
         }  
@@ -220,12 +220,12 @@ Exit:
 ```  
   
 ### <a name="to-run-the-sample"></a>Chcete-li spustit ukázku  
- C:\\> EnumAssemblyAttributes. exe C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\System.dll  
+ C:\\> EnumAssemblyAttributes.exe C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\System.dll  
   
 ### <a name="sample-output"></a>Ukázkový výstup  
- Culture = neutrální  
+ Kultura = neutrální  
   
- název = systém  
+ název = Systém  
   
  processorArchitecture = MSIL  
   
@@ -234,13 +234,13 @@ Exit:
  Verze = 2.0.0.0  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
+ **Platformy:** Viz [Systémové požadavky](../../get-started/system-requirements.md).  
   
- **Hlavička:** Izolace. h  
+ **Záhlaví:** Izolace.h  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [IReferenceIdentity – rozhraní](ireferenceidentity-interface.md)
 - [IEnumIDENTITY_ATTRIBUTE – rozhraní](ienumidentity-attribute-interface.md)

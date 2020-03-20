@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: 93829d15-d942-4e2d-b7a4-dfc9d7fb96be
 topic_type:
 - apiref
-ms.openlocfilehash: ffab2762fd86e95c3272ca456039028e0897bc41
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: fb8b8f3e29c141e91587a4d0cdc81cdabccdbc9e
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73137183"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79178639"
 ---
 # <a name="icordebugprocess2setunmanagedbreakpoint-method"></a>ICorDebugProcess2::SetUnmanagedBreakpoint – metoda
-Nastaví nespravovanou zarážku na zadaném posunu nativní bitové kopie.  
+Nastaví nespravovanou zarážku na určeném odsazení nativního obrazu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -31,7 +31,7 @@ Nastaví nespravovanou zarážku na zadaném posunu nativní bitové kopie.
 HRESULT SetUnmanagedBreakpoint (  
     [in]  CORDB_ADDRESS    address,  
     [in]  ULONG32          bufsize,  
-    [out, size_is(bufsize), length_is(*bufLen)]   
+    [out, size_is(bufsize), length_is(*bufLen)]
         BYTE               buffer[],  
     [out] ULONG32          *bufLen  
 );  
@@ -39,25 +39,25 @@ HRESULT SetUnmanagedBreakpoint (
   
 ## <a name="parameters"></a>Parametry  
  `address`  
- pro Objekt `CORDB_ADDRESS`, který určuje posunutí nativní bitové kopie.  
+ [v] Objekt, `CORDB_ADDRESS` který určuje odsazení nativního obrazu.  
   
  `bufsize`  
- pro Velikost pole `buffer` v bajtech  
+ [v] Velikost `buffer` pole v bajtech.  
   
  `buffer`  
- mimo Pole, které obsahuje operační kód, který je nahrazen zarážkou.  
+ [out] Pole, které obsahuje operační kód, který je nahrazen zarážkou.  
   
  `bufLen`  
- mimo Ukazatel na počet bajtů vrácených v poli `buffer`.  
+ [out] Ukazatel na počet bajtů vrácených `buffer` v poli.  
   
 ## <a name="remarks"></a>Poznámky  
- Pokud je posun nativní bitové kopie v rámci modulu CLR (Common Language Runtime), zarážka bude ignorována. To umožňuje modulu CLR zabránit odesílání zarážek mimo pásmo, pokud je zarážka nastavena v ladicím programu.  
+ Pokud je posun nativního obrazu v rámci běžného jazykového běhu (CLR), zarážka bude ignorována. To umožňuje CLR vyhnout se odeslání out-of-band zarážka, při zarážky je nastavenladem.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Hlavička:** CorDebug. idl, CorDebug. h  
+ **Záhlaví:** CorDebug.idl, CorDebug.h  
   
- **Knihovna:** CorGuids. lib  
+ **Knihovna:** CorGuids.lib  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]
+ **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]

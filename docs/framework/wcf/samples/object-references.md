@@ -2,23 +2,23 @@
 title: Odkazy na objekty
 ms.date: 03/30/2017
 ms.assetid: 7a93d260-91c3-4448-8f7a-a66fb562fc23
-ms.openlocfilehash: bc9c318fc0e05f384a00df7cd1436a138315d880
-ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
+ms.openlocfilehash: 5eb842e1bff9ba60074379fde5ef3d0597f2184e
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74714683"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79183450"
 ---
 # <a name="object-references"></a>Odkazy na objekty
-Tato ukázka předvádí, jak předat objekty pomocí odkazů mezi serverem a klientem. Ukázka používá simulované *sociální sítě*. Sociální síť se skládá z `Person` třídy, která obsahuje seznam přátel, ve kterých je každý přítel instancí `Person` třídy s vlastním seznamem přátel. Tím se vytvoří graf objektů. Služba zveřejňuje operace v těchto sociálních sítích.  
+Tato ukázka ukazuje, jak předat objekty odkazy mezi serverem a klientem. Vzorek používá simulované *sociální sítě*. Sociální síť se skládá `Person` z třídy, která obsahuje seznam přátel, `Person` ve kterém každý přítel je instancí třídy, s vlastním seznamem přátel. Tím se vytvoří graf objektů. Služba zveřejňuje operace na těchto sociálních sítích.  
   
- V této ukázce je služba hostovaná službou Internetová informační služba (IIS) a klientem je Konzolová aplikace (. exe).  
+ V této ukázce je služba hostována internetovou informační službou (IIS) a klient je konzolová aplikace (.exe).  
   
 > [!NOTE]
-> Postup nastavení a pokyny pro sestavení pro tuto ukázku najdete na konci tohoto tématu.  
+> Postup instalace a pokyny k sestavení pro tuto ukázku jsou umístěny na konci tohoto tématu.  
   
-## <a name="service"></a>Service  
- Třída `Person` má použit atribut <xref:System.Runtime.Serialization.DataContractAttribute>, s polem <xref:System.Runtime.Serialization.DataContractAttribute.IsReference%2A> nastaveným na `true` pro deklaraci jako typ odkazu. U všech vlastností je použit atribut <xref:System.Runtime.Serialization.DataMemberAttribute>.  
+## <a name="service"></a>Služba  
+ Třída `Person` má <xref:System.Runtime.Serialization.DataContractAttribute> atribut použit, <xref:System.Runtime.Serialization.DataContractAttribute.IsReference%2A> s polem nastaveným na `true` deklarování jako typ odkazu. Všechny vlastnosti <xref:System.Runtime.Serialization.DataMemberAttribute> mají atribut použit.  
   
 ```csharp
 [DataContract(IsReference=true)]  
@@ -51,7 +51,7 @@ public class Person
 }  
 ```  
   
- Operace `GetPeopleInNetwork` přebírá parametr typu `Person` a vrátí všechny lidi v síti. To znamená, že všichni lidé v seznamu `friends`, přátelé přítele a tak dále, bez duplicit.  
+ Operace `GetPeopleInNetwork` přebírá parametr typu `Person` a vrátí všechny osoby v síti; to znamená, že všichni `friends` lidé v seznamu, přátelé přítele a tak dále, bez duplikátů.  
   
 ```csharp
 public List<Person> GetPeopleInNetwork(Person p)  
@@ -63,7 +63,7 @@ public List<Person> GetPeopleInNetwork(Person p)
 }  
 ```  
   
- Operace `GetMutualFriends` přebírá parametr typu `Person` a vrátí všechny přátele ze seznamu, kteří mají tuto osobu také v seznamu `friends`.  
+ Operace `GetMutualFriends` přebírá parametr typu `Person` a vrátí všechny přátele v seznamu, kteří `friends` mají také tuto osobu v seznamu.  
   
 ```csharp
 public List<Person> GetMutualFriends(Person p)  
@@ -78,7 +78,7 @@ public List<Person> GetMutualFriends(Person p)
 }  
 ```  
   
- Operace `GetCommonFriends` přebírá seznam typů `Person`. V seznamu se očekává, že budou mít dva `Person` objekty. Tato operace vrátí seznam `Person` objektů, které jsou v `friends`ch seznamech `Person` objektů ve vstupním seznamu.  
+ Operace `GetCommonFriends` má seznam typu `Person`. Očekává se, že `Person` v seznamu budou dva objekty. Operace vrátí seznam `Person` objektů, které `friends` jsou v `Person` seznamech obou objektů ve vstupním seznamu.  
   
 ```csharp
 public List<Person> GetCommonFriends(List<Person> people)  
@@ -92,28 +92,28 @@ public List<Person> GetCommonFriends(List<Person> people)
 ```  
   
 ## <a name="client"></a>Klient  
- Klientský proxy server se vytvoří pomocí funkce **Přidat odkaz na službu** sady Visual Studio.  
+ Proxy klienta je vytvořen pomocí funkce **Přidat odkaz na službu** sady Visual Studio.  
   
- Vytvoří se sociální síť, která se skládá z pěti objektů `Person`. Klient volá každou ze tří metod služby.  
+ Vytvoří se sociální síť, `Person` která se skládá z pěti objektů. Klient volá každou ze tří metod ve službě.  
   
 #### <a name="to-set-up-build-and-run-the-sample"></a>Nastavení, sestavení a spuštění ukázky  
   
-1. Ujistěte se, že jste provedli [postup jednorázového nastavení pro Windows Communication Foundation ukázky](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
+1. Ujistěte se, že jste provedli [jednorázový postup instalace pro ukázky windows communication foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
   
-2. Pokud chcete vytvořit C# edici nebo Visual Basic .NET, postupujte podle pokynů v tématu [sestavování ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
+2. Chcete-li vytvořit c# nebo Visual Basic .NET vydání řešení, postupujte podle pokynů v [sestavení windows communication foundation ukázky](../../../../docs/framework/wcf/samples/building-the-samples.md).  
   
-3. Chcete-li spustit ukázku v konfiguraci s jedním nebo více počítači, postupujte podle pokynů v části [spuštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
+3. Chcete-li spustit ukázku v konfiguraci jednoho nebo více počítačů, postupujte podle pokynů v [části Spuštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
   
 > [!IMPORTANT]
-> Ukázky už můžou být na vašem počítači nainstalované. Než budete pokračovat, vyhledejte následující (výchozí) adresář.  
->   
+> Ukázky mohou být již nainstalovány v počítači. Před pokračováním zkontrolujte následující (výchozí) adresář.  
+>
 > `<InstallDrive>:\WF_WCF_Samples`  
->   
-> Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] Samples. Tato ukázka se nachází v následujícím adresáři.  
->   
+>
+> Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a Windows Workflow Foundation (WF) Ukázky pro rozhraní .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka je umístěna v následujícím adresáři.  
+>
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Contract\Data\ObjectReferences`  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Runtime.Serialization.DataContractAttribute.IsReference%2A>
 - [Interoperabilní odkazy na objekty](../../../../docs/framework/wcf/feature-details/interoperable-object-references.md)

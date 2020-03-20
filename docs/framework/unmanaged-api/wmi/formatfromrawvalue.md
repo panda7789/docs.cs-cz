@@ -1,5 +1,5 @@
 ---
-title: FormatFromRawValue – funkce (Reference nespravovaného rozhraní API)
+title: FormatFromRawValue (Nespravovaný odkaz na rozhraní API)
 description: Funkce FormatFromRawValue převede nezpracovaná data výkonu do určeného formátu.
 ms.date: 11/21/2017
 api_name:
@@ -14,15 +14,15 @@ helpviewer_keywords:
 - FormatFromRawValue function [.NET WMI and performance counters]
 topic_type:
 - Reference
-ms.openlocfilehash: 5097cfe43ae785461a1e2af1217bcbd5e8c4b79c
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 0a7c0b8387f0c8e2b6e2ade94f7efeede75bd758
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73120290"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79176835"
 ---
 # <a name="formatfromrawvalue-function"></a>Funkce FormatFromRawValue
-Převede jednu nezpracovaná hodnota dat výkonu na určený formát nebo dvě nezpracované hodnoty dat výkonu, pokud je převod formátu založený na čase. 
+Převede jednu nezpracovaná hodnota dat výkonu na zadaný formát nebo dvě nezpracovaná hodnoty dat výkonu, pokud je převod formátu založen na čase.
 
 [!INCLUDE[internalonly-unmanaged](../../../../includes/internalonly-unmanaged.md)]
 
@@ -30,69 +30,70 @@ Převede jednu nezpracovaná hodnota dat výkonu na určený formát nebo dvě n
 
 ```cpp
 int FormatFromRawValue (
-   [in] uint                    dwCounterType, 
-   [in] uint                    dwFormat, 
+   [in] uint                    dwCounterType,
+   [in] uint                    dwFormat,
    [in] long*                   pTimeBase,
    [in] PDH_RAW_COUNTER*        pRawValue1,
    [in] PDH_RAW_COUNTER*        pRawValue2,
    [out] PDH_FMT_COUNTERVALUE*  pFmtValue
-); 
+);
 ```
 
 ## <a name="parameters"></a>Parametry
 
 `dwCounterType`\
-pro Typ čítače. Seznam typů čítačů najdete v tématu [typy čítačů výkonu služby WMI](/windows/desktop/WmiSdk/wmi-performance-counter-types). `dwCounterType` může být jakýkoli typ čítače s výjimkou `PERF_LARGE_RAW_FRACTION` a `PERF_LARGE_RAW_BASE`. 
+[v] Typ čítače. Seznam typů čítačů naleznete v tématu [Typy čítačů výkonu služby WMI](/windows/desktop/WmiSdk/wmi-performance-counter-types). `dwCounterType`může být libovolný typ `PERF_LARGE_RAW_FRACTION` `PERF_LARGE_RAW_BASE`čítače s výjimkou a .
 
 `dwFormat`\
-pro Formát, ve kterém mají být převedena nezpracovaná data výkonu. Může to být jedna z následujících hodnot:
+[v] Formát, na který chcete převést nezpracovaná data o výkonu. Může to být jedna z následujících hodnot:
 
-|Konstanta  |Hodnota  |Popis |
+|Trvalé  |Hodnota  |Popis |
 |---------|---------|---------|
-| `PDH_FMT_DOUBLE` |0x00000200 | Vrátí počítanou hodnotu jako hodnotu s dvojitou přesností s plovoucí desetinnou čárkou. | 
-| `PDH_FMT_LARGE` | 0x00000400 | Vrátí počítanou hodnotu jako celé číslo 64. |
-| `PDH_FMT_LONG` | 0x00000100 | Vrátí počítanou hodnotu jako celé číslo 32. |
+| `PDH_FMT_DOUBLE` |0x00000200 | Vrátí vypočtenou hodnotu jako hodnotu s dvojitou přesností s plovoucí desetinnou hodnotou. |
+| `PDH_FMT_LARGE` | 0x00000400 | Vrátí vypočtenou hodnotu jako 64bitové celé číslo. |
+| `PDH_FMT_LONG` | 0x00000100 | Vrátí vypočtenou hodnotu jako 32bitové celé číslo. |
 
-Jedna z předchozích hodnot může být ORed s jedním z následujících příznaků škálování:
+Jednou z předchozích hodnot může být ORed s jedním z následujících příznaků měřítka:
 
-|Konstanta  |Hodnota  |Popis |
+|Trvalé  |Hodnota  |Popis |
 |---------|---------|---------|
-| `PDH_FMT_NOSCALE` | 0x00001000 | Nepoužívejte faktory škálování čítače. |
-| `PDH_FMT_1000` | 0x00002000 | Vynásobte konečnou hodnotu hodnotou 1 000. | 
+| `PDH_FMT_NOSCALE` | 0x000010000 | Nepoužívejte faktory měřítka čítače. |
+| `PDH_FMT_1000` | 0x00002000 | Konečnou hodnotu vynásobte hodnotou 1 000. |
 
 `pTimeBase`\
-pro Ukazatel na časový základ, je-li to nutné pro převod formátu. Pokud informace o časovém základu není pro převod formátu nutná, hodnota tohoto parametru je ignorována.
+[v] Ukazatel na časovou základnu, pokud je to nutné pro převod formátu. Pokud informace o základu času není nutné pro převod formátu, hodnota tohoto parametru je ignorována.
 
-`pRawValue1`\ [in] ukazatel na strukturu [`PDH_RAW_COUNTER`](/windows/win32/api/pdh/ns-pdh-pdh_raw_counter) , která představuje nezpracovaný hodnotu výkonu.
+`pRawValue1`\
+[v] Ukazatel na [`PDH_RAW_COUNTER`](/windows/win32/api/pdh/ns-pdh-pdh_raw_counter) strukturu, která představuje hodnotu nezpracovaného výkonu.
 
 `pRawValue2`\
-pro Ukazatel na strukturu [`PDH_RAW_COUNTER`](/windows/win32/api/pdh/ns-pdh-pdh_raw_counter) , která představuje druhou hodnotu nezpracovaného výkonu. Není-li druhá hodnota nezpracovaného výkonu nutná, tento parametr by měl být `null`.
+[v] Ukazatel na [`PDH_RAW_COUNTER`](/windows/win32/api/pdh/ns-pdh-pdh_raw_counter) strukturu, která představuje druhou hodnotu nezpracovaného výkonu. Pokud druhá nezpracovaná hodnota výkonu není `null`nutná, měl by být tento parametr .
 
 `pFmtValue`\
-mimo Ukazatel na strukturu [`PDH_FMT_COUNTERVALUE`](/windows/win32/api/pdh/ns-pdh-pdh_fmt_countervalue) , která přijímá naformátovanou hodnotu výkonu.
+[out] Ukazatel na [`PDH_FMT_COUNTERVALUE`](/windows/win32/api/pdh/ns-pdh-pdh_fmt_countervalue) strukturu, která obdrží formátovanou hodnotu výkonu.
 
 ## <a name="return-value"></a>Návratová hodnota
 
-Následující hodnoty jsou vráceny touto funkcí:
+Tato funkce vrací následující hodnoty:
 
-|Konstanta  |Hodnota  |Popis  |
+|Trvalé  |Hodnota  |Popis  |
 |---------|---------|---------|
-| `ERROR_SUCCESS` | 0,8 | Volání funkce je úspěšné. |
-| `PDH_INVALID_ARGUMENT` | 0xC0000BBD | Požadovaný argument chybí nebo není správný. | 
-| `PDH_INVALID_HANDLE` | 0xC0000BBC | Popisovač není platným objektem PDH. |
+| `ERROR_SUCCESS` | 0 | Volání funkce je úspěšné. |
+| `PDH_INVALID_ARGUMENT` | 0xC0000BBD | Požadovaný argument chybí nebo je nesprávný. |
+| `PDH_INVALID_HANDLE` | 0xC0000BBC | Popisovač není platný objekt PDH. |
 
 ## <a name="remarks"></a>Poznámky
 
-Tato funkce zalomí volání funkce [FormatFromRawValue](https://docs.microsoft.com/previous-versions/ms231047(v=vs.85)) .
+Tato funkce zabalí volání [FormatFromRawValue](https://docs.microsoft.com/previous-versions/ms231047(v=vs.85)) funkce.
 
 ## <a name="requirements"></a>Požadavky
 
- **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).
+ **Platformy:** Viz [Systémové požadavky](../../get-started/system-requirements.md).
 
- **Knihovna:** Dokončení PerfCounter. dll
+ **Knihovna:** Soubor PerfCounter.dll
 
- **Verze .NET Framework:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]
+ **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [WMI a čítače výkonu (Reference nespravovaného rozhraní API)](index.md)
+- [Čítače služby WMI a výkonu (nespravovaný odkaz na rozhraní API)](index.md)

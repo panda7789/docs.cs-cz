@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: 6a0ad3ee-dacb-47e9-abae-4536bcc4804b
 topic_type:
 - apiref
-ms.openlocfilehash: 644b5ed751caaf1809250244b37badc8037b0f57
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.openlocfilehash: 29006eba3d3a523fd24a461207ab12222a639782
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76792345"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79178594"
 ---
 # <a name="icordebugprocess5gettypefields-method"></a>ICorDebugProcess5::GetTypeFields – metoda
-Poskytuje informace o polích, která patří do typu.  
+Obsahuje informace o polích, která patří k typu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -31,37 +31,37 @@ Poskytuje informace o polích, která patří do typu.
 HRESULT GetTypeFields(  
     [in] COR_TYPEID id,  
     [in] ULONG32 celt,  
-    [out] COR_FIELD fields[],   
+    [out] COR_FIELD fields[],
     [out] ULONG32 *pceltNeeded  
 );  
 ```  
   
 ## <a name="parameters"></a>Parametry  
  `id`  
- pro Identifikátor typu, jehož informace o poli jsou načteny.  
+ [v] Identifikátor typu, jehož informace o poli jsou načteny.  
   
  `celt`  
- pro Počet objektů [COR_FIELD](cor-field-structure.md) , jejichž informace o poli mají být načteny.  
+ [v] Počet [COR_FIELD](cor-field-structure.md) objektů, jejichž informace o poli má být načten.  
   
  `fields`  
- mimo Pole objektů [COR_FIELD](cor-field-structure.md) , které poskytují informace o polích, která patří do typu.  
+ [out] Pole [COR_FIELD](cor-field-structure.md) objekty, které poskytují informace o polích, které patří k typu.  
   
  `pceltNeeded`  
- mimo Ukazatel na počet objektů [COR_FIELD](cor-field-structure.md) obsažených v `fields`.  
+ [out] Ukazatel na počet [COR_FIELD](cor-field-structure.md) objektů `fields`zahrnutých v .  
   
 ## <a name="remarks"></a>Poznámky  
- Parametr `celt`, který určuje počet polí, jejichž informace o poli, kterou metoda používá k naplnění `fields`, by měla odpovídat hodnotě pole `COR_TYPE_LAYOUT::numFields`.  
+ Parametr, `celt` který určuje počet polí, jejichž informace o `fields`polích, které metoda `COR_TYPE_LAYOUT::numFields` používá k naplnění , by měl odpovídat hodnotě pole.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Hlavička:** CorDebug. idl, CorDebug. h  
+ **Záhlaví:** CorDebug.idl, CorDebug.h  
   
- **Knihovna:** CorGuids. lib  
+ **Knihovna:** CorGuids.lib  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
+ **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [ICorDebugProcess5 – rozhraní](icordebugprocess5-interface.md)
-- [Rozhraní pro ladění](debugging-interfaces.md)
+- [Debugging – rozhraní](debugging-interfaces.md)

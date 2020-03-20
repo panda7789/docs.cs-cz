@@ -15,48 +15,48 @@ helpviewer_keywords:
 ms.assetid: dbab7d90-d515-4dc9-8195-294d5d04bab6
 topic_type:
 - apiref
-ms.openlocfilehash: 1cf3f2b62b388b6c2d6fcd75b1b07a67d5b2e49f
-ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
+ms.openlocfilehash: 8b3f7712436c001e5cd44f214f6edb06390abd41
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76866699"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79177069"
 ---
 # <a name="icorprofilercallbackappdomaincreationfinished-method"></a>ICorProfilerCallback::AppDomainCreationFinished – metoda
-Oznamuje profileru, že byla vytvořena doména aplikace.  
+Upozorní profiler, že byla vytvořena doména aplikace.  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```cpp  
 HRESULT AppDomainCreationFinished(  
     [in] AppDomainID appDomainId,  
-    [in] HRESULT     hrStatus);   
+    [in] HRESULT     hrStatus);
 ```  
   
 ## <a name="parameters"></a>Parametry
 
 - `appDomainId`
 
-  \[v] identifikuje doménu, která byla vytvořena.
+  \[in] Identifikuje doménu, která byla vytvořena.
 
 - `hrStatus`
 
-  \[in] hodnota HRESULT, která indikuje, jestli se úspěšně dokončilo vytváření domény aplikace.
+  \[in] HRESULT, který označuje, zda bylo vytvoření domény aplikace úspěšně dokončeno.
 
 ## <a name="remarks"></a>Poznámky  
- ID aplikace není platné pro žádnou žádost o informace, dokud není volána metoda `AppDomainCreationFinished`.  
+ ID aplikace není platné pro žádný `AppDomainCreationFinished` požadavek na informace, dokud není metoda volána.  
   
- Některé části načtení aplikační domény můžou po zpětném volání `AppDomainCreationFinished` pokračovat. Selhání HRESULT v `hrStatus` označuje selhání. Úspěšnost HRESULT v `hrStatus` však znamená, že první část vytváření domény aplikace byla úspěšně dokončena.  
+ Některé části načítání domény aplikace může `AppDomainCreationFinished` pokračovat po zpětném volání. Selhání HRESULT `hrStatus` in označuje selhání. Úspěch HRESULT v `hrStatus` šak v však označuje pouze, že první část vytvoření domény aplikace byla úspěšná.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Hlavička:** CorProf. idl, CorProf. h  
+ **Záhlaví:** CorProf.idl, CorProf.h  
   
- **Knihovna:** CorGuids. lib  
+ **Knihovna:** CorGuids.lib  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [ICorProfilerCallback – rozhraní](icorprofilercallback-interface.md)

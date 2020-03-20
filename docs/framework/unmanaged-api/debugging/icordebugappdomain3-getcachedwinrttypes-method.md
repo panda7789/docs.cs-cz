@@ -15,37 +15,37 @@ helpviewer_keywords:
 ms.assetid: 9afd0e04-a403-41e2-9528-a6dcbcdcbd4d
 topic_type:
 - apiref
-ms.openlocfilehash: 55d0b40bbdb5628f60090d9d70f7dccbebe9d58f
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.openlocfilehash: e5fd1730bbe5b6f2905691dce41a7f503227534a
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76785002"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79179073"
 ---
 # <a name="icordebugappdomain3getcachedwinrttypes-method"></a>ICorDebugAppDomain3::GetCachedWinRTTypes – metoda
-Získá enumerátor pro všechny typy prostředí Windows Runtime v mezipaměti.  
+Získá čítač pro všechny typy prostředí Windows Runtime uložené v mezipaměti.  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```cpp  
-HRESULT GetCachedWinRTTypes (   
+HRESULT GetCachedWinRTTypes (
     [out] ICorDebugGuidToTypeEnum **ppGuidToTypeEnum)  
 ;  
 ```  
   
 ## <a name="parameters"></a>Parametry  
  `ppGuidToTypeEnum`  
- mimo Ukazatel na objekt rozhraní [ICorDebugGuidToTypeEnum –](icordebugguidtotypeenum-interface.md) , který může vyčíslit spravované reprezentace prostředí Windows runtimech typů, které jsou aktuálně načteny v doméně aplikace.  
+ [out] Ukazatel na objekt rozhraní [ICorDebugGuidToTypeEnum,](icordebugguidtotypeenum-interface.md) který může vytvořit výčet spravovaných reprezentací typů prostředí Windows Runtime aktuálně načtených v doméně aplikace.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** prostředí Windows Runtime  
+ **Platformy:** Windows Runtime  
   
- **Hlavička:** CorDebug. idl, CorDebug. h  
+ **Záhlaví:** CorDebug.idl, CorDebug.h  
   
- **Knihovna:** CorGuids. lib  
+ **Knihovna:** CorGuids.lib  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
+ **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [ICorDebugAppDomain3 – rozhraní](icordebugappdomain3-interface.md)

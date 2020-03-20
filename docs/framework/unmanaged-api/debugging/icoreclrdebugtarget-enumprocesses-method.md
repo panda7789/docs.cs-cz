@@ -17,54 +17,54 @@ helpviewer_keywords:
 ms.assetid: e00fd477-4f49-43d3-bd0e-3094824b1136
 topic_type:
 - apiref
-ms.openlocfilehash: 11b1072b3467f7d0a3f223fbc2151ec9ccf461ad
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.openlocfilehash: 6484832e8e737b9a0d0b3eaf3ede4078729f7a4a
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76790807"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79178442"
 ---
 # <a name="icoreclrdebugtargetenumprocesses-method"></a>ICoreClrDebugTarget::EnumProcesses – metoda
-Vytvoří výčet procesů, které jsou spuštěny na vzdáleném počítači.  
+Vyjmenovává procesy spuštěné ve vzdáleném počítači.  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```cpp  
 HRESULT EnumProcesses (  
-       [out]  DWORD*                  pcProcs,   
+       [out]  DWORD*                  pcProcs,
        [out]  CoreClrDebugProcInfo**  ppProcs  
 );  
 ```  
   
 ## <a name="parameters"></a>Parametry  
  `pcProcs`  
- mimo Počet procesů vrácených v `ppProcs`. Tato hodnota může být 0 (nula).  
+ [out] Počet vrácených procesů `ppProcs`v . Tato hodnota může být 0 (nula).  
   
  `ppProcs`  
- mimo Pole struktur [coreclrdebugprocinfo –](coreclrdebugprocinfo-structure.md) , které reprezentují procesy běžící na vzdáleném počítači.  
+ [out] Pole [CoreClrDebugProcInfo](coreclrdebugprocinfo-structure.md) struktury, které představují procesy spuštěné ve vzdáleném počítači.  
   
 ## <a name="return-value"></a>Návratová hodnota  
  S_OK  
- Nástup.  
+ Úspěch  
   
  E_OUTOFMEMORY  
- Nelze přidělit dostatek paměti pro `ppProcs`.  
+ Nelze přidělit dostatek `ppProcs`paměti pro .  
   
- E_FAIL (nebo jiné návratové kódy E_)  
- Další chyby.  
+ E_FAIL (nebo jiné E_ návratové kódy)  
+ Další selhání.  
   
 ## <a name="remarks"></a>Poznámky  
- Chcete-li uvolnit paměť, která byla přidělena touto metodou, zavolejte metodu [ICoreClrDebugTarget:: FreeMemory –](icoreclrdebugtarget-freememory-method.md) .  
+ Chcete-li uvolnit paměť, která byla přidělena touto metodou, zavolejte metodu [ICoreClrDebugTarget::FreeMemory.](icoreclrdebugtarget-freememory-method.md)  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Hlavička:** CoreClrRemoteDebuggingInterfaces. h  
+ **Záhlaví:** CoreClrRemoteDebuggingInterfaces.h  
   
- **Library:** mscordbi_macx86.dll  
+ **Knihovna:** mscordbi_macx86.dll  
   
- **Verze .NET Framework:** 3,5 SP1  
+ **Verze rozhraní .NET Framework:** 3.5 SP1  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [ICoreClrDebugTarget – rozhraní](icoreclrdebugtarget-interface.md)

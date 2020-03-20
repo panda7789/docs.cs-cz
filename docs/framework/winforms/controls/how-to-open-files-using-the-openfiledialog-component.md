@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Otevírání souborů pomocí komponenty OpenFileDialog'
+title: 'Postup: Otevření souborů pomocí komponenty OpenFileDialog'
 ms.date: 02/11/2019
 dev_langs:
 - csharp
@@ -9,38 +9,38 @@ helpviewer_keywords:
 - OpenFile method [Windows Forms], OpenFileDialog component
 - files [Windows Forms], opening with OpenFileDialog component
 ms.assetid: 9d88367a-cc21-4ffd-be74-89fd63767d35
-ms.openlocfilehash: 7f4e96f1714a182647665f12e29d38f2b8037478
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: ca69de19ab1b9ae387002898145fe99e35a7b6b9
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61913455"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79182135"
 ---
-# <a name="how-to-open-files-with-the-openfiledialog"></a>Postupy: Otevřít soubory s OpenFileDialog 
+# <a name="how-to-open-files-with-the-openfiledialog"></a>Postup: Otevření souborů pomocí dialogu OpenFileDialog
 
-<xref:System.Windows.Forms.OpenFileDialog?displayProperty=nameWithType> Komponenty otevře dialogové okno Windows pro procházení a výběr souborů. Otevřít a přečíst si vybrané soubory, můžete použít <xref:System.Windows.Forms.OpenFileDialog.OpenFile%2A?displayProperty=nameWithType> metodu, nebo vytvořit instanci <xref:System.IO.StreamReader?displayProperty=nameWithType> třídy. Následující příklady ukazují oba přístupy. 
+Komponenta <xref:System.Windows.Forms.OpenFileDialog?displayProperty=nameWithType> otevře dialogové okno Systému Windows pro procházení a výběr souborů. Chcete-li otevřít a číst vybrané <xref:System.Windows.Forms.OpenFileDialog.OpenFile%2A?displayProperty=nameWithType> soubory, můžete použít metodu nebo vytvořit instanci třídy. <xref:System.IO.StreamReader?displayProperty=nameWithType> Následující příklady ukazují oba přístupy.
 
-V rozhraní .NET Framework pro získání nebo nastavení <xref:System.Windows.Forms.FileDialog.FileName%2A> vlastnost vyžaduje úroveň oprávnění udělenou <xref:System.Security.Permissions.FileIOPermission?displayProperty=nameWithType> třídy. Spuštění příkladů <xref:System.Security.Permissions.FileIOPermission> oprávnění Zkontrolujte a může vyvolat výjimku z důvodu nedostatečné oprávnění, pokud spuštění v kontextu částečným vztahem důvěryhodnosti. Další informace najdete v tématu [Základy zabezpečení přístupu kódu](../../misc/code-access-security-basics.md).
+V rozhraní .NET Framework vyžaduje <xref:System.Windows.Forms.FileDialog.FileName%2A> získání nebo nastavení vlastnosti úroveň oprávnění udělenou třídou. <xref:System.Security.Permissions.FileIOPermission?displayProperty=nameWithType> Příklady spustit <xref:System.Security.Permissions.FileIOPermission> kontrolu oprávnění a může vyvolat výjimku z důvodu nedostatečných oprávnění, pokud jsou spuštěny v kontextu částečné důvěryhodnosti. Další informace naleznete v [tématu Základy zabezpečení přístupu kódu](../../misc/code-access-security-basics.md).
 
-Můžete sestavit a spustit tyto příklady jako aplikace rozhraní .NET Framework C# nebo příkazového řádku jazyka Visual Basic. Další informace najdete v tématu [příkazového řádku pomocí csc.exe](../../../csharp/language-reference/compiler-options/command-line-building-with-csc-exe.md) nebo [sestavení z příkazového řádku](../../../visual-basic/reference/command-line-compiler/building-from-the-command-line.md). 
+Tyto příklady můžete vytvořit a spustit jako aplikace rozhraní .NET Framework z příkazového řádku jazyka C# nebo Visual Basic. Další informace naleznete v [tématu Vytváření příkazového řádku s csc.exe](../../../csharp/language-reference/compiler-options/command-line-building-with-csc-exe.md) nebo [Sestavení z příkazového řádku](../../../visual-basic/reference/command-line-compiler/building-from-the-command-line.md).
 
-Od verze .NET Core 3.0, můžete také sestavit a spustit v příkladech jako Windows aplikace .NET Core ze složky, která má formulářů Windows .NET Core  *\<název složky > .csproj* souboru projektu. 
+Počínaje rozhraním .NET Core 3.0 můžete také vytvářet a spouštět příklady jako aplikace Windows .NET Core ze složky, která má název složky .NET Core Windows Forms * \<>.csproj* soubor projektu.
 
-## <a name="example-read-a-file-as-a-stream-with-streamreader"></a>Příklad: Čtení souboru jako datový proud pomocí třídy StreamReader  
+## <a name="example-read-a-file-as-a-stream-with-streamreader"></a>Příklad: Čtení souboru jako datového proudu pomocí streamreaderu  
   
-Následující příklad používá Windows Forms <xref:System.Windows.Forms.Button> ovládacího prvku <xref:System.Windows.Forms.Control.Click> obslužná rutina události otevřete <xref:System.Windows.Forms.OpenFileDialog> s <xref:System.Windows.Forms.CommonDialog.ShowDialog%2A> metody. Poté, co uživatel vybere soubor a vybere **OK**, instance <xref:System.IO.StreamReader> třídy načte soubor a zobrazí jeho obsah v textovém poli formuláři. Další informace o čtení ze souborů datových proudů, naleznete v tématu <xref:System.IO.FileStream.BeginRead%2A?displayProperty=nameWithType> a <xref:System.IO.FileStream.Read%2A?displayProperty=nameWithType>.  
+Následující příklad používá obslužnou rutinu <xref:System.Windows.Forms.OpenFileDialog> události <xref:System.Windows.Forms.CommonDialog.ShowDialog%2A> ovládacího <xref:System.Windows.Forms.Control.Click> prvku Windows Forms <xref:System.Windows.Forms.Button> k otevření metody s. Poté, co uživatel vybere soubor **OK**a vybere OK <xref:System.IO.StreamReader> , instance třídy přečte soubor a zobrazí jeho obsah v textovém poli formuláře. Další informace o čtení z datových proudů souborů naleznete v tématu <xref:System.IO.FileStream.BeginRead%2A?displayProperty=nameWithType> a <xref:System.IO.FileStream.Read%2A?displayProperty=nameWithType>.  
 
  [!code-csharp[OpenFileDialog#1](~/samples/snippets/winforms/open-files/example1/cs/Form1.cs)]
  [!code-vb[OpenFileDialog#1](~/samples/snippets/winforms/open-files/example1/vb/Form1.vb)]  
 
-## <a name="example-open-a-file-from-a-filtered-selection-with-openfile"></a>Příklad: Otevřete soubor z filtrovaný výběr s OpenFile 
+## <a name="example-open-a-file-from-a-filtered-selection-with-openfile"></a>Příklad: Otevření souboru z filtrovaného výběru pomocí openfile
 
-V následujícím příkladu <xref:System.Windows.Forms.Button> ovládacího prvku <xref:System.Windows.Forms.Control.Click> obslužná rutina události otevřete <xref:System.Windows.Forms.OpenFileDialog> s filtrem, který zobrazuje pouze textové soubory. Poté, co uživatel vybere textový soubor a vybere **OK**, <xref:System.Windows.Forms.OpenFileDialog.OpenFile%2A> metoda se používá k otevření souboru v poznámkovém bloku.
+Následující příklad používá <xref:System.Windows.Forms.Button> obslužnou rutinu události ovládacího <xref:System.Windows.Forms.Control.Click> prvku k otevření <xref:System.Windows.Forms.OpenFileDialog> filtru, který zobrazuje pouze textové soubory. Poté, co uživatel vybere textový **OK**soubor a <xref:System.Windows.Forms.OpenFileDialog.OpenFile%2A> vybere OK , metoda se používá k otevření souboru v poznámkovém bloku.
 
  [!code-csharp[OpenFileDialog#2](~/samples/snippets/winforms/open-files/example2/cs/Form1.cs)]
  [!code-vb[OpenFileDialog#2](~/samples/snippets/winforms/open-files/example2/vb/Form1.vb)]  
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Forms.OpenFileDialog>
-- [OpenFileDialog – komponenta](openfiledialog-component-windows-forms.md)
+- [Komponenta OpenFileDialog](openfiledialog-component-windows-forms.md)

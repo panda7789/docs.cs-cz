@@ -1,5 +1,5 @@
 ---
-title: Dokončení tiskových úloh
+title: Kompletní tiskové úlohy
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -9,21 +9,21 @@ helpviewer_keywords:
 - print jobs [Windows Forms], completing in Windows Forms
 - printing [Windows Forms], print jobs
 ms.assetid: 23ec74f7-34c5-4710-82a0-ee2914518548
-ms.openlocfilehash: b8ef4fa05b2107247181e82b72389f9503507135
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: 62f67002bfbaf46e73bae06fdaff26efde865c06
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76746501"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79182599"
 ---
 # <a name="how-to-complete-windows-forms-print-jobs"></a>Postupy: Dokončení tiskových úloh Windows Forms
-Často používané wordové procesory a další aplikace, které zahrnují tisk, poskytují možnost Zobrazit zprávu uživatelům, že se tisková úloha dokončila. Tuto funkci můžete ve svém model Windows Forms poskytnout tak, že provedete událost <xref:System.Drawing.Printing.PrintDocument.EndPrint> součásti <xref:System.Drawing.Printing.PrintDocument>.  
+Textové procesory a další aplikace, které zahrnují tisk, často poskytují možnost zobrazit uživatelům zprávu, že tisková úloha je dokončena. Tuto funkci můžete zadat ve formulářích <xref:System.Drawing.Printing.PrintDocument.EndPrint> systému <xref:System.Drawing.Printing.PrintDocument> Windows zpracováním události součásti.  
   
- Následující postup vyžaduje, abyste vytvořili aplikaci založenou na systému Windows s <xref:System.Drawing.Printing.PrintDocument> komponentou, což je standardní způsob, jak povolit tisk z aplikace založené na systému Windows. Další informace o tisku z model Windows Forms pomocí komponenty <xref:System.Drawing.Printing.PrintDocument> naleznete v tématu [How to: Create Standard model Windows Forms Print Jobs](how-to-create-standard-windows-forms-print-jobs.md).  
+ Následující postup vyžaduje, abyste vytvořili aplikaci <xref:System.Drawing.Printing.PrintDocument> založenou na systému Windows s komponentou, což je standardní způsob povolení tisku z aplikace založené na systému Windows. Další informace o tisku z <xref:System.Drawing.Printing.PrintDocument> formulářů systému Windows pomocí komponenty naleznete v [tématu Postup: Vytvoření standardních tiskových úloh formulářů systému Windows](how-to-create-standard-windows-forms-print-jobs.md).  
   
 ### <a name="to-complete-a-print-job"></a>Dokončení tiskové úlohy  
   
-1. Nastavte vlastnost <xref:System.Drawing.Printing.PrintDocument.DocumentName%2A> komponenty <xref:System.Drawing.Printing.PrintDocument>.  
+1. Nastavte <xref:System.Drawing.Printing.PrintDocument.DocumentName%2A> vlastnost komponenty. <xref:System.Drawing.Printing.PrintDocument>  
   
     ```vb  
     PrintDocument1.DocumentName = "MyTextFile"  
@@ -37,9 +37,9 @@ ms.locfileid: "76746501"
     printDocument1->DocumentName = "MyTextFile";  
     ```  
   
-2. Napište kód pro zpracování události <xref:System.Drawing.Printing.PrintDocument.EndPrint>.  
+2. Napište kód <xref:System.Drawing.Printing.PrintDocument.EndPrint> pro zpracování události.  
   
-     V následujícím příkladu kódu se zobrazí okno se zprávou, které indikuje, že dokument dokončil tisk.  
+     V následujícím příkladu kódu se zobrazí okno se zprávou označující, že dokument byl dokončen tisk.  
   
     ```vb  
     Private Sub PrintDocument1_EndPrint(ByVal sender As Object, ByVal e As System.Drawing.Printing.PrintEventArgs) Handles PrintDocument1.EndPrint  
@@ -48,10 +48,10 @@ ms.locfileid: "76746501"
     ```  
   
     ```csharp  
-    private void printDocument1_EndPrint(object sender,   
+    private void printDocument1_EndPrint(object sender,
     System.Drawing.Printing.PrintEventArgs e)  
     {  
-       MessageBox.Show(printDocument1.DocumentName +   
+       MessageBox.Show(printDocument1.DocumentName +
           " has finished printing.");  
     }  
     ```  
@@ -66,7 +66,7 @@ ms.locfileid: "76746501"
        }  
     ```  
   
-     (Vizuální C# a vizuální C++) Vložte následující kód do konstruktoru formuláře pro registraci obslužné rutiny události.  
+     (Visual C# a Visual C++) Umístěte následující kód do konstruktoru formuláře pro registraci obslužné rutiny události.  
   
     ```csharp  
     this.printDocument1.EndPrint += new  
@@ -83,4 +83,4 @@ ms.locfileid: "76746501"
 ## <a name="see-also"></a>Viz také
 
 - <xref:System.Drawing.Printing.PrintDocument>
-- [Podpora tisku v modelu Windows Forms](windows-forms-print-support.md)
+- [Podpora tisku ve Windows Forms](windows-forms-print-support.md)

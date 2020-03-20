@@ -1,5 +1,5 @@
 ---
-title: <assemblyIdentity> – element pro <runtime>
+title: Element <assemblyIdentity> pro <runtime>
 ms.date: 03/30/2017
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/runtime/assemblyBinding/dependentAssembly/assemblyIdentity
@@ -9,26 +9,26 @@ helpviewer_keywords:
 - container tags, <assemblyIdentity> element
 - assemblyIdentity element
 ms.assetid: cea4d187-6398-4da4-af09-c1abc6a349c1
-ms.openlocfilehash: 7cce12f6fb4b957d740cd590bd84851fa16a117d
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.openlocfilehash: b026dafbde796bbd8726de56b532ed6710ba2290
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70252800"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79154306"
 ---
-# <a name="assemblyidentity-element-for-runtime"></a>\<prvek assemblyIdentity > pro \<modul runtime >
+# <a name="assemblyidentity-element-for-runtime"></a>\<assemblyIdentity> \<Element pro> za běhu
 Obsahuje identifikační informace o sestavení.  
   
-[ **\<> Konfigurace**](../configuration-element.md)\
-&nbsp;&nbsp;[ **\<> modulu runtime**](runtime-element.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;[ **\<assemblyBinding >** ](assemblybinding-element-for-runtime.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<> dependentAssembly**](dependentassembly-element.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<> assemblyIdentity**  
+[**\<>konfigurace**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<>za běhu**](runtime-element.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[**\<assemblyBinding>**](assemblybinding-element-for-runtime.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<dependentAssembly>**](dependentassembly-element.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<assemblyIdentity>**  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```xml  
-   <assemblyIdentity    
+   <assemblyIdentity
 name="assembly name"  
 publicKeyToken="public key token"  
 culture="assembly culture"/>  
@@ -42,37 +42,37 @@ culture="assembly culture"/>
 |Atribut|Popis|  
 |---------------|-----------------|  
 |`name`|Požadovaný atribut.<br /><br /> Název sestavení|  
-|`culture`|Nepovinný atribut.<br /><br /> Řetězec, který určuje jazyk a zemi/oblast sestavení.|  
-|`publicKeyToken`|Nepovinný atribut.<br /><br /> Hexadecimální hodnota, která určuje silný název sestavení.|  
-|`processorArchitecture`|Nepovinný atribut.<br /><br /> Jedna z hodnot "x86", "amd64", "MSIL" nebo "ia64" s určením architektury procesoru pro sestavení, které obsahuje kód specifický pro procesor. V hodnotách se nerozlišují velká a malá písmena. Pokud má atribut přiřazenou jinou hodnotu, je ignorován celý `<assemblyIdentity>` prvek. Viz <xref:System.Reflection.ProcessorArchitecture>.|  
+|`culture`|Nepovinný atribut.<br /><br /> Řetězec, který určuje jazyk a zemi nebo oblast sestavení.|  
+|`publicKeyToken`|Nepovinný atribut.<br /><br /> Šestnáctková hodnota, která určuje silný název sestavení.|  
+|`processorArchitecture`|Nepovinný atribut.<br /><br /> Jedna z hodnot "x86", "amd64", "msil" nebo "ia64", určující architekturu procesoru pro sestavení, které obsahuje kód specifický pro procesor. Hodnoty nejsou rozlišována malá a velká písmena. Pokud je atribut přiřazen jinou `<assemblyIdentity>` hodnotu, celý prvek je ignorován. Viz třída <xref:System.Reflection.ProcessorArchitecture>.|  
   
-## <a name="processorarchitecture-attribute"></a>processorArchitecture – atribut  
+## <a name="processorarchitecture-attribute"></a>atribut architektury procesoru  
   
-|Value|Popis|  
+|Hodnota|Popis|  
 |-----------|-----------------|  
-|`amd64`|Pouze architektura AMD X86-64.|  
-|`ia64`|Jenom architektura Intel Itanium.|  
+|`amd64`|Pouze architektura AMD x86-64.|  
+|`ia64`|Pouze architektura Intel Itanium.|  
 |`msil`|Neutrální s ohledem na procesor a bity na slovo.|  
-|`x86`|32 procesor x86, buď nativní, nebo v prostředí Windows on Windows (WOW) na platformě 64.|  
+|`x86`|32bitový procesor x86, nativní nebo v prostředí Windows v systému Windows (WOW) na 64bitové platformě.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
- Žádné  
+ Žádné.  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
-|Prvek|Popis|  
+|Element|Popis|  
 |-------------|-----------------|  
 |`assemblyBinding`|Obsahuje informace o přesměrování verze sestavení a umístění sestavení.|  
 |`configuration`|Kořenový prvek v každém konfiguračním souboru, který je používán modulem Common Language Runtime (CLR) a aplikacemi rozhraní .NET Framework.|  
-|`dependentAssembly`|Zapouzdřuje pro jednotlivá sestavení zásady vazeb a umístění sestavení. Pro každé `<dependentAssembly>` sestavení použijte jeden prvek.|  
+|`dependentAssembly`|Zapouzdřuje pro jednotlivá sestavení zásady vazeb a umístění sestavení. Pro `<dependentAssembly>` každé sestavení použijte jeden prvek.|  
 |`runtime`|Obsahuje informace o vazbách sestavení a uvolnění paměti.|  
   
 ## <a name="remarks"></a>Poznámky  
- **Každý\<prvek dependentAssembly >** musí mít jeden  **\<podřízený prvek assemblyIdentity >** .  
+ Každý ** \<prvek dependentAssembly>** musí mít jeden ** \<prvek identity identity>** podřízeného prvku.  
   
- Pokud je přítomen `<assemblyIdentity>`atribut, element se vztahuje pouze na sestavení s odpovídající architekturou procesoru. `processorArchitecture` Pokud atribut není přítomen, element může platit pro sestavení s libovolnou architekturou procesoru. `<assemblyIdentity>` `processorArchitecture`  
+ Pokud `processorArchitecture` je atribut přítomen, `<assemblyIdentity>` prvek se vztahuje pouze na sestavení s odpovídající architekturou procesoru. Pokud `processorArchitecture` atribut není k `<assemblyIdentity>` dispozici, prvek lze použít pro sestavení s libovolnou architekturou procesoru.  
   
- Následující příklad ukazuje konfigurační soubor pro dvě sestavení se stejným názvem, která cílí na dvě různé architektury procesorů a jejichž verze nebyly v synchronizaci synchronizovány. Když se aplikace spustí na platformě x86, použije se `<assemblyIdentity>` první prvek a druhý se ignoruje. Pokud je aplikace spuštěna na jiné platformě než x86 nebo ia64, obě jsou ignorovány.  
+ Následující příklad ukazuje konfigurační soubor pro dvě sestavení se stejným názvem, které se zaměřují na dvě různé architektury procesoru a jejichž verze nebyly udržovány v synchronizaci. Když se aplikace spustí na platformě `<assemblyIdentity>` x86, použije se první prvek a druhý je ignorován. Pokud se aplikace spustí na jiné platformě než x86 nebo ia64, jsou ignorovány.  
   
 ```xml  
 <configuration>  
@@ -83,15 +83,15 @@ culture="assembly culture"/>
                   publicKeyToken="14a739be0244c389"  
                   culture="neutral"  
                   processorArchitecture="x86" />  
-            <bindingRedirect oldVersion= "1.0.0.0"   
+            <bindingRedirect oldVersion= "1.0.0.0"
                   newVersion="1.1.0.0" />  
          </dependentAssembly>  
          <dependentAssembly>  
             <assemblyIdentity name="MyAssembly"  
                   publicKeyToken="14a739be0244c389"  
-                  culture="neutral"   
+                  culture="neutral"
                   processorArchitecture="ia64" />  
-            <bindingRedirect oldVersion="1.0.0.0"   
+            <bindingRedirect oldVersion="1.0.0.0"
                   newVersion="2.0.0.0" />  
          </dependentAssembly>  
       </assemblyBinding>  
@@ -99,7 +99,7 @@ culture="assembly culture"/>
 </configuration>  
 ```  
   
- Pokud konfigurační soubor obsahuje `<assemblyIdentity>` prvek `processorArchitecture` bez atributu a neobsahuje prvek, který odpovídá platformě `processorArchitecture` , je použit prvek bez atributu.  
+ Pokud konfigurační `<assemblyIdentity>` soubor `processorArchitecture` obsahuje prvek bez atributu a neobsahuje prvek, `processorArchitecture` který odpovídá platformě, prvek bez atributu se používá.  
   
 ## <a name="example"></a>Příklad  
  Následující příklad ukazuje, jak poskytnout informace o sestavení.  
@@ -119,7 +119,7 @@ culture="assembly culture"/>
 </configuration>  
 ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Schéma nastavení běhového prostředí](index.md)
 - [Schéma konfiguračního souboru](../index.md)

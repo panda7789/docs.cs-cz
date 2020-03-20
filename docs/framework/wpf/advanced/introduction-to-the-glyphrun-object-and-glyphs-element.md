@@ -9,91 +9,91 @@ helpviewer_keywords:
 - glyphs [WPF]
 - typography [WPF], GlyphRun object
 ms.assetid: 746ca769-a331-4435-9b95-f72a883b67c1
-ms.openlocfilehash: 9af07d48877fee0e94f8e5fa2556c4361795df6a
-ms.sourcegitcommit: 9a97c76e141333394676bc5d264c6624b6f45bcf
+ms.openlocfilehash: 32e8ab7104b8ea2f985395065868ed154ca1e378
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75740354"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79181954"
 ---
 # <a name="introduction-to-the-glyphrun-object-and-glyphs-element"></a>Úvod do objektu GlyphRun a elementu Glyph
-Toto téma popisuje objekt <xref:System.Windows.Media.GlyphRun> a prvek <xref:System.Windows.Documents.Glyphs>.  
+Toto téma <xref:System.Windows.Media.GlyphRun> popisuje objekt <xref:System.Windows.Documents.Glyphs> a prvek.  
 
-<a name="text_glyphrunovw_intro"></a>   
-## <a name="introduction-to-glyphrun"></a>Úvod do GlyphRun  
- [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] poskytuje rozšířenou podporu textu včetně značek na úrovni glyfů s přímým přístupem k <xref:System.Windows.Documents.Glyphs> pro zákazníky, kteří chtějí zachytit a uchovat text po formátování. Tyto funkce poskytují kritickou podporu pro různé požadavky na vykreslování textu v každém z následujících scénářů.  
+<a name="text_glyphrunovw_intro"></a>
+## <a name="introduction-to-glyphrun"></a>Úvod do Glydu  
+ [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]Poskytuje pokročilou textovou podporu včetně značek na <xref:System.Windows.Documents.Glyphs> úrovni glyfů s přímým přístupem pro zákazníky, kteří chtějí zachytit a zachovat text po formátování. Tyto funkce poskytují kritickou podporu pro různé požadavky na vykreslování textu v každém z následujících scénářů.  
   
-1. Zobrazení dokumentů s pevným formátem  
+1. Zobrazení dokumentů v pevném formátu.  
   
-2. Scénáře tisku.  
+2. Vytisknout scénáře.  
   
-    - [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] jako jazyk tiskárny zařízení.  
+    - [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)]jako jazyk tiskárny zařízení.  
   
-    - Zapisovač dokumentů Microsoft XPS.  
+    - Zapisovač dokumentů systému Microsoft XPS.  
   
-    - Předchozí ovladače tiskáren, výstup z aplikací Win32 do pevného formátu.  
+    - Předchozí ovladače tiskárny, výstup z aplikací Win32 do pevného formátu.  
   
-    - Formát zařazování tisku.  
+    - Formát zařazovací liby tisku.  
   
-3. Reprezentace dokumentu s pevným formátem, včetně klientů pro předchozí verze Windows a dalších výpočetních zařízení.  
+3. Reprezentace dokumentu s pevným formátem, včetně klientů pro předchozí verze systému Windows a dalších výpočetních zařízení.  
   
 > [!NOTE]
-> <xref:System.Windows.Documents.Glyphs> a <xref:System.Windows.Media.GlyphRun> jsou navržené pro scénáře informaování a tisku dokumentů s pevným formátováním. [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] poskytuje několik prvků pro obecné rozložení a [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)] scénáře, jako je například <xref:System.Windows.Controls.Label> a <xref:System.Windows.Controls.TextBlock>. Další informace o scénářích rozložení a [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] najdete v tématu [Typografie v](typography-in-wpf.md)subsystému WPF.  
+> <xref:System.Windows.Documents.Glyphs>a <xref:System.Windows.Media.GlyphRun> jsou určeny pro prezentační a tiskové scénáře s pevným formátem. [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]obsahuje několik prvků pro [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)] obecné <xref:System.Windows.Controls.Label> rozložení <xref:System.Windows.Controls.TextBlock>a scénáře, jako je například a . Další informace o [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] rozložení a scénářích naleznete [v tématu Typografie v WPF](typography-in-wpf.md).  
   
-<a name="text_glyphrunovw_glyphrunobject"></a>   
-## <a name="the-glyphrun-object"></a>Objekt GlyphRun  
- Objekt <xref:System.Windows.Media.GlyphRun> představuje sekvenci glyfů z jedné plošky jednoho písma v jedné velikosti a s jedním stylem vykreslování.  
+<a name="text_glyphrunovw_glyphrunobject"></a>
+## <a name="the-glyphrun-object"></a>Objekt Glyphrun  
+ Objekt <xref:System.Windows.Media.GlyphRun> představuje posloupnost glyfů z jedné plochy jednoho písma v jedné velikosti a s jedním stylem vykreslování.  
   
- <xref:System.Windows.Media.GlyphRun> obsahuje jak podrobnosti o písmu, například glyf <xref:System.Windows.Documents.Glyphs.Indices%2A> a jednotlivé pozice glyfů. Zahrnuje také původní body kódování Unicode, ke kterým byl vygenerován běh, informace o mapování vyrovnávací paměti znaků na glyfy a příznaky pro jednotlivé znaky a pro piktogramy.  
+ <xref:System.Windows.Media.GlyphRun>obsahuje jak podrobnosti <xref:System.Windows.Documents.Glyphs.Indices%2A> písma, jako je glyf, tak jednotlivé polohy glyfů. Obsahuje také původní body kódu Unicode, ze kterých bylo spuštění generováno, informace o odsazení vyrovnávací paměti znak-gly a příznaky pro znaky a glyfy.  
   
- <xref:System.Windows.Media.GlyphRun> má odpovídající <xref:System.Windows.FrameworkElement>na nejvyšší úrovni <xref:System.Windows.Documents.Glyphs>. <xref:System.Windows.Documents.Glyphs> lze použít ve stromové struktuře elementů a v [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] značek pro reprezentaci <xref:System.Windows.Media.GlyphRun>ho výstupu.  
+ <xref:System.Windows.Media.GlyphRun>má odpovídající vysokou <xref:System.Windows.FrameworkElement>úroveň <xref:System.Windows.Documents.Glyphs>. <xref:System.Windows.Documents.Glyphs>lze použít ve stromu [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] prvků a <xref:System.Windows.Media.GlyphRun> ve značkách k reprezentaci výstupu.  
   
-<a name="text_glyphrunovw_glyphselement"></a>   
-## <a name="the-glyphs-element"></a>Piktograms – element  
- Element <xref:System.Windows.Documents.Glyphs> představuje výstup <xref:System.Windows.Media.GlyphRun> v [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]. Následující syntaxe kódu se používá k popisu prvku <xref:System.Windows.Documents.Glyphs>.  
+<a name="text_glyphrunovw_glyphselement"></a>
+## <a name="the-glyphs-element"></a>Element glyfů  
+ Prvek <xref:System.Windows.Documents.Glyphs> představuje výstup in <xref:System.Windows.Media.GlyphRun> [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]. Následující syntaxe značek se používá <xref:System.Windows.Documents.Glyphs> k popisu prvku.  
   
  [!code-xaml[GlyphsOvwSample1#1](~/samples/snippets/csharp/VS_Snippets_Wpf/GlyphsOvwSample1/CS/default.xaml#1)]  
   
- Následující definice vlastností odpovídají prvních čtyř atributů v ukázkovém kódu.  
+ Následující definice vlastností odpovídají prvním čtyřem atributům ve značce vzorku.  
   
 |Vlastnost|Popis|  
 |--------------|-----------------|  
-|<xref:System.Windows.Documents.Glyphs.FontUri%2A>|Určuje identifikátor prostředku: název souboru, identifikátor URI (Web Uniform Resource Identifier) nebo odkaz na prostředek v souboru Application. exe nebo Container.|  
-|<xref:System.Windows.Documents.Glyphs.FontRenderingEmSize%2A>|Určuje velikost písma v jednotkách kresby (výchozí hodnota je. 96 palců).|  
-|<xref:System.Windows.Documents.Glyphs.StyleSimulations%2A>|Určuje příznaky pro styly tučného písma a kurzívy.|  
-|<xref:System.Windows.Documents.Glyphs.BidiLevel%2A>|Určuje obousměrnou úroveň rozložení. Sudé a nulové hodnoty implikují rozložení zleva doprava; hodnoty s lichými čísly naznačují rozložení zprava doleva.|  
+|<xref:System.Windows.Documents.Glyphs.FontUri%2A>|Určuje identifikátor prostředku: název souboru, identifikátor identifikátor identifikátoru URI (Web uniform) nebo odkaz na prostředek v aplikaci EXE nebo kontejneru.|  
+|<xref:System.Windows.Documents.Glyphs.FontRenderingEmSize%2A>|Určuje velikost písma v jednotkách výkresového povrchu (výchozí hodnota je 0,96 palce).|  
+|<xref:System.Windows.Documents.Glyphs.StyleSimulations%2A>|Určuje příznaky pro tučné písmo a kurzívu.|  
+|<xref:System.Windows.Documents.Glyphs.BidiLevel%2A>|Určuje obousměrnou úroveň rozložení. Sudé a nulové hodnoty implikují rozložení zleva doprava; liché hodnoty implikují rozložení zprava doleva.|  
   
-<a name="text_glyphrunovw_indicesproperty"></a>   
-### <a name="indices-property"></a>Vlastnost Indexes  
- Vlastnost <xref:System.Windows.Documents.Glyphs.Indices%2A> je řetězec specifikace glyfů. Pokud sekvence glyfů tvoří jeden cluster, předá specifikace prvního glyfu v clusteru specifikace toho, kolik glyfů a kolik bodů kódu se kombinuje s vytvořením clusteru. Vlastnost <xref:System.Windows.Documents.Glyphs.Indices%2A> shromažďuje v jednom řetězci následující vlastnosti.  
+<a name="text_glyphrunovw_indicesproperty"></a>
+### <a name="indices-property"></a>Vlastnost Indexy  
+ Vlastnost <xref:System.Windows.Documents.Glyphs.Indices%2A> je řetězec specifikace glyfů. Pokud posloupnost glyfů tvoří jeden cluster, specifikaci prvního glyfu v clusteru předchází specifikace počtu glyfů a počtu bodů kódu, které se spojí a vytvoří cluster. Vlastnost <xref:System.Windows.Documents.Glyphs.Indices%2A> shromažďuje v jednom řetězci následující vlastnosti.  
   
 - Indexy glyfů  
   
-- Šířka pro zálohy glyfů  
+- Šířky glyfu  
   
-- Kombinování vektorů příloh glyfů  
+- Kombinování vektorů příloh glyfu  
   
 - Mapování clusteru z bodů kódu na glyfy  
   
 - Příznaky glyfů  
   
- Každá specifikace glyfu má následující formu.  
+ Každá specifikace glyfu má následující tvar.  
   
  `[GlyphIndex][,[Advance][,[uOffset][,[vOffset][,[Flags]]]]]`  
   
-<a name="text_glyphrunovw_glyphmetrics"></a>   
-## <a name="glyph-metrics"></a>Metriky glyfů  
- Každý glyf definuje metriky, které určují, jak se má zarovnat s ostatními <xref:System.Windows.Documents.Glyphs>. Následující obrázek definuje různé typografické kvality dvou různých znaků glyfů.  
+<a name="text_glyphrunovw_glyphmetrics"></a>
+## <a name="glyph-metrics"></a>Metriky glyfu  
+ Každý glyf definuje metriky, které <xref:System.Windows.Documents.Glyphs>určují, jak bude zarovnán s ostatními . Následující obrázek definuje různé typografické kvality dvou různých znaků glyfu.  
   
- ![Diagraph měření glyfů](./media/glyph-example.png "glyph_example")  
+ ![Diagraf měření glyfů](./media/glyph-example.png "glyph_example")  
   
-<a name="text_glyphrunovw_glyphsmarkup"></a>   
-## <a name="glyphs-markup"></a>Piktogramy – značky  
- Následující příklad kódu ukazuje, jak použít různé vlastnosti prvku <xref:System.Windows.Documents.Glyphs> v [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)].  
+<a name="text_glyphrunovw_glyphsmarkup"></a>
+## <a name="glyphs-markup"></a>Značky glyfů  
+ Následující příklad kódu ukazuje, jak používat <xref:System.Windows.Documents.Glyphs> různé [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]vlastnosti prvku v .  
   
  [!code-xaml[GlyphsOvwSamp2#1](~/samples/snippets/csharp/VS_Snippets_Wpf/GlyphsOvwSamp2/CS/default.xaml#1)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Typografie v rozhraní WPF](typography-in-wpf.md)
 - [Dokumenty v platformě WPF](documents-in-wpf.md)

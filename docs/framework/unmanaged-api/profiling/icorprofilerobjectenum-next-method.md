@@ -15,22 +15,22 @@ helpviewer_keywords:
 ms.assetid: b420433c-5ebe-4986-bba1-97902e6db819
 topic_type:
 - apiref
-ms.openlocfilehash: 0c833416cca965f2655266152c5bdf5f11624d14
-ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
+ms.openlocfilehash: b6e26d1538cab30db66e887aee89b8fbae501bdb
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76861135"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79177004"
 ---
 # <a name="icorprofilerobjectenumnext-method"></a>ICorProfilerObjectEnum::Next – metoda
-Získá zadaný počet souvislých objektů ze sekvenční kolekce objektů počínaje aktuální pozicí čítače výčtu v sekvenci.  
+Získá zadaný počet souvislých objektů z sekvenční kolekce objektů, počínaje aktuální pozici čítače v pořadí.  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```cpp  
 HRESULT Next (  
     [in] ULONG                    celt,  
-    [out, size_is(celt), length_is(*pceltFetched)]    
+    [out, size_is(celt), length_is(*pceltFetched)]
         ObjectID                  objects[],  
     [out] ULONG                   *pceltFetched  
 );  
@@ -38,23 +38,23 @@ HRESULT Next (
   
 ## <a name="parameters"></a>Parametry  
  `celt`  
- pro Počet objektů, které mají být načteny.  
+ [v] Počet objektů, které mají být načteny.  
   
  `objects`  
- mimo Pole hodnot `ObjectID`, z nichž každý představuje načtený objekt.  
+ [out] Pole `ObjectID` hodnot, z nichž každá představuje načtený objekt.  
   
  `pceltFetched`  
- mimo Ukazatel na počet prvků, které jsou ve skutečnosti vráceny v poli `objects`.  
+ [out] Ukazatel na počet prvků skutečně vrácených v `objects` poli.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Hlavička:** CorProf. idl, CorProf. h  
+ **Záhlaví:** CorProf.idl, CorProf.h  
   
- **Knihovna:** CorGuids. lib  
+ **Knihovna:** CorGuids.lib  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [ICorProfilerObjectEnum – rozhraní](icorprofilerobjectenum-interface.md)

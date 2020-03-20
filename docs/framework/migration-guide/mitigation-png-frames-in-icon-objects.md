@@ -1,37 +1,37 @@
 ---
-title: 'Zmírnění: snímky PNG v objektech ikon'
+title: 'Zmírnění: Png snímky v objektech ikon'
 ms.date: 03/30/2017
 ms.assetid: ca87fefb-7144-4b4e-8832-5a939adbb4b2
-ms.openlocfilehash: 1a4ae0c069a4cd6d53bce77e64822ebf3fbb5361
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: d661e45bfbbe5e1c5ca5b7eb123e71aa32a096ca
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73457879"
+ms.lasthandoff: 03/15/2020
+ms.locfileid: "79181223"
 ---
-# <a name="mitigation-png-frames-in-icon-objects"></a>Zmírnění: snímky PNG v objektech ikon
-Počínaje .NET Framework 4,6 <xref:System.Drawing.Icon.ToBitmap%2A?displayProperty=nameWithType> metoda úspěšně převádí ikony s snímky PNG do objektů <xref:System.Drawing.Bitmap>.  
+# <a name="mitigation-png-frames-in-icon-objects"></a>Zmírnění: Png snímky v objektech ikon
+Počínaje rozhraním .NET Framework 4.6 <xref:System.Drawing.Icon.ToBitmap%2A?displayProperty=nameWithType> metoda úspěšně převede <xref:System.Drawing.Bitmap> ikony s rámečky PNG na objekty.  
   
- V aplikacích, které cílí na .NET Framework 4.5.2 a starší verze, vyvolá metoda <xref:System.Drawing.Icon.ToBitmap%2A?displayProperty=nameWithType> výjimku <xref:System.ArgumentOutOfRangeException>, pokud objekt <xref:System.Drawing.Icon> obsahuje snímky PNG.  
+ V aplikacích, které cílí na rozhraní .NET Framework <xref:System.Drawing.Icon.ToBitmap%2A?displayProperty=nameWithType> 4.5.2 a starší verze, metoda vyvolá výjimku, <xref:System.ArgumentOutOfRangeException> pokud <xref:System.Drawing.Icon> objekt má png rámce.  
   
 ## <a name="impact"></a>Dopad  
- Tato změna ovlivní aplikace, které jsou znovu zkompilovány pro cílení na .NET Framework 4,6 a které implementují speciální zpracování pro <xref:System.ArgumentOutOfRangeException>, která je vyvolána, když objekt <xref:System.Drawing.Icon> obsahuje snímky PNG. Při spuštění pod .NET Framework 4,6 je převod úspěšný, <xref:System.ArgumentOutOfRangeException> již není vyvolán, a proto obslužná rutina výjimky již není vyvolána.  
+ Tato změna má vliv na aplikace, které jsou překompilovány na cíl <xref:System.ArgumentOutOfRangeException> .NET Framework <xref:System.Drawing.Icon> 4.6 a které implementují speciální zpracování pro to, který je vyvolán, když má objekt png rámce. Při spuštění v rámci rozhraní .NET Framework 4.6 je převod úspěšný, <xref:System.ArgumentOutOfRangeException> již není vyvolána a proto obslužná rutina výjimky již není vyvolána.  
   
-### <a name="mitigation"></a>Zmírnění  
- Pokud je toto chování nežádoucí, můžete předchozí chování zachovat přidáním následujícího elementu do oddílu [\<runtime >](../configure-apps/file-schema/runtime/runtime-element.md) souboru App. config:  
+### <a name="mitigation"></a>Omezení rizik  
+ Pokud je toto chování nežádoucí, můžete zachovat předchozí chování přidáním následujícího prvku do sekce [ \<runtime>](../configure-apps/file-schema/runtime/runtime-element.md) souboru app.config:  
   
 ```xml  
-<AppContextSwitchOverrides   
+<AppContextSwitchOverrides
       value="Switch.System.Drawing.DontSupportPngFramesInIcons=true" />  
 ```  
   
- Pokud soubor App. config již obsahuje prvek `AppContextSwitchOverrides`, nová hodnota by měla být sloučena s atributem `value` takto:  
+ Pokud soubor app.config již `AppContextSwitchOverrides` prvek obsahuje, měla by `value` být nová hodnota sloučena s atributem takto:  
   
 ```xml  
-<AppContextSwitchOverrides   
+<AppContextSwitchOverrides
       value="Switch.System.Drawing.DontSupportPngFramesInIcons=true;<previous key>=<previous value>" />  
 ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Kompatibilita aplikací](application-compatibility.md)

@@ -15,61 +15,61 @@ helpviewer_keywords:
 ms.assetid: dd11c485-be95-4b97-9cd8-68679a4fb432
 topic_type:
 - apiref
-ms.openlocfilehash: 031996813718a074eebab62ff54a2de52b898c22
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 4f1c3e823b35fcf7d5935eee111e042b2291d216
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74450211"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79175756"
 ---
 # <a name="imetadataemitdefinetypedef-method"></a>IMetaDataEmit::DefineTypeDef – metoda
-Vytvoří definici typu pro typ modulu CLR (Common Language Runtime) a získá token metadat pro danou definici typu.  
+Vytvoří definici typu pro typ modulu runtime společného jazyka a získá token metadat pro tuto definici typu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```cpp  
-HRESULT DefineTypeDef (   
-    [in]  LPCWSTR     szTypeDef,   
-    [in]  DWORD       dwTypeDefFlags,   
-    [in]  mdToken     tkExtends,   
-    [in]  mdToken     rtkImplements[],   
+HRESULT DefineTypeDef (
+    [in]  LPCWSTR     szTypeDef,
+    [in]  DWORD       dwTypeDefFlags,
+    [in]  mdToken     tkExtends,
+    [in]  mdToken     rtkImplements[],
     [out] mdTypeDef   *ptd  
 );  
 ```  
   
 ## <a name="parameters"></a>Parametry  
  `szTypeDef`  
- pro Název typu v kódování Unicode.  
+ [v] Název typu v Unicode.  
   
  `dwTypeDefFlags`  
- [in] `TypeDef` atributy. Toto je Bitová maska `CoreTypeAttr` hodnot.  
+ [v] `TypeDef` atributy. Toto je bitová maska `CoreTypeAttr` hodnot.  
   
  `tkExtends`  
- pro Token základní třídy. Musí to být buď `mdTypeDef`, nebo token `mdTypeRef`.  
+ [v] Token základní třídy. Musí být buď `mdTypeDef` token `mdTypeRef` nebo token.  
   
  `rtkImplements`  
- pro Pole tokenů určující rozhraní, které tato třída nebo rozhraní implementuje.  
+ [v] Pole tokenů určující rozhraní, které implementuje tato třída nebo rozhraní.  
   
  `ptd`  
- mimo Byl přiřazen token `mdTypeDef`.  
+ [out] Přiřazen `mdTypeDef` token.  
   
 ## <a name="remarks"></a>Poznámky  
- Příznak v `dwTypeDefFlags` určuje, zda typ, který je vytvářen, je typ odkazu na běžný typ systému (třída nebo rozhraní) nebo běžný typ hodnoty systému.  
+ Příznak v `dwTypeDefFlags` aplikaci určuje, zda je vytvářený typ běžným typem systému (třída nebo rozhraní) nebo běžným typem systémové hodnoty.  
   
- V závislosti na zadaných parametrech může tato metoda jako vedlejší efekt vytvořit také záznam `mdInterfaceImpl` pro každé rozhraní, které je zděděno nebo implementováno tímto typem. Tato metoda však nevrací žádné z těchto tokenů `mdInterfaceImpl`. Pokud chce klient později přidat nebo změnit `mdInterfaceImpl` tokenu, musí k zobrazení výčtu použít rozhraní `IMetaDataImport`. Pokud chcete použít sémantiku COM `[default]` rozhraní, měli byste zadat výchozí rozhraní jako první prvek v `rtkImplements`; vlastní atribut nastavený u třídy bude označovat, že třída má výchozí rozhraní (což se vždy předpokládá, že se jedná o první `mdInterfaceImpl` token deklarovaný pro třídu).  
+ V závislosti na zadaných parametrech může tato metoda jako `mdInterfaceImpl` vedlejší účinek také vytvořit záznam pro každé rozhraní, které je zděděno nebo implementováno tímto typem. Tato metoda však nevrátí žádný `mdInterfaceImpl` z těchto tokenů. Pokud klient chce později přidat `mdInterfaceImpl` nebo upravit token, musí použít `IMetaDataImport` rozhraní k jejich výčetu. Pokud chcete použít sémantiku `[default]` com rozhraní, měli byste zadat výchozí `rtkImplements`rozhraní jako první prvek v ; vlastní atribut nastavený na třídě bude znamenat, že třída má výchozí `mdInterfaceImpl` rozhraní (což je vždy považováno za první token deklarovaný pro třídu).  
   
- Každý prvek `rtkImplements` pole obsahuje token `mdTypeDef` nebo `mdTypeRef`. Poslední prvek v poli musí být `mdTokenNil`.  
+ Každý prvek `rtkImplements` pole obsahuje `mdTypeDef` `mdTypeRef` nebo token. Poslední prvek v poli `mdTokenNil`musí být .  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Hlavička:** Cor. h  
+ **Záhlaví:** Kor.h.  
   
- **Knihovna:** Používá se jako prostředek v knihovně MSCorEE. dll.  
+ **Knihovna:** Používá se jako prostředek v souboru MSCorEE.dll  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [IMetaDataEmit – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)
 - [IMetaDataEmit2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-interface.md)

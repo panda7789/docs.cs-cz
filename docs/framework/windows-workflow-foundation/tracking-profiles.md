@@ -2,22 +2,22 @@
 title: Sledování profilů
 ms.date: 03/30/2017
 ms.assetid: 22682566-1cd9-4672-9791-fb3523638e18
-ms.openlocfilehash: 9217f25ba4499e7ff75020642be387aa79ba27bf
-ms.sourcegitcommit: a4f9b754059f0210e29ae0578363a27b9ba84b64
+ms.openlocfilehash: 9723b8fbb0bb8f24e8c9544d8bac8252b2fc763a
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74837620"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79182731"
 ---
 # <a name="tracking-profiles"></a>Sledování profilů
 
-Sledování profilů obsahuje sledovací dotazy, které umožňují sledování účastníka přihlásit k odběru událostí pracovního postupu, které jsou emitovány při změně stavu instance pracovního postupu za běhu.
+Profily sledování obsahují sledovací dotazy, které umožňují účastníkovi sledování přihlásit se k odběru událostí pracovního postupu, které jsou emitovány při změně stavu instance pracovního postupu za běhu.
 
 ## <a name="tracking-profiles"></a>Sledování profilů
 
-Sledování profilů se používá k určení, které informace o sledování budou vygenerovány pro instanci pracovního postupu. Pokud není zadán žádný profil, budou vygenerovány všechny události sledování. Pokud je zadán profil, budou vygenerovány události sledování zadané v profilu. V závislosti na požadavcích na monitorování můžete napsat profil, který je velmi obecný, který se přihlásí k odběru malé sady změn stavu vysoké úrovně v pracovním postupu. Naopak můžete vytvořit velmi podrobný profil, jehož výsledné události jsou dostatečně bohatě pro pozdější vytvoření podrobného toku spuštění.
+Profily sledování se používají k určení informací o sledování, které jsou vydávány pro instanci pracovního postupu. Pokud není zadán žádný profil, jsou emitovány všechny události sledování. Pokud je zadán profil, budou emitovány události sledování zadané v profilu. V závislosti na požadavcích na monitorování můžete napsat profil, který je velmi obecný, který se přihlásí k malé sadě změn stavu vysoké úrovně v pracovním postupu. Naopak můžete vytvořit velmi podrobný profil, jehož výsledné události jsou dostatečně bohaté na to, aby později rekonstruovaly podrobný tok spuštění.
 
-Sledovací profily se manifestují jako prvky XML v rámci standardního konfiguračního souboru .NET Framework nebo jsou zadané v kódu. V následujícím příkladu je profil sledování [!INCLUDE[netfx_current_long](../../../includes/netfx-current-long-md.md)] v konfiguračním souboru, který umožňuje sledování účastníka přihlásit k odběru `Started` a `Completed` události pracovního postupu.
+Sledovací profily se projevují jako elementy XML v rámci standardního konfiguračního souboru rozhraní .NET Framework nebo zadaném v kódu. Následující příklad je [!INCLUDE[netfx_current_long](../../../includes/netfx-current-long-md.md)] profil sledování v konfiguračním souboru, `Started` `Completed` který umožňuje účastníkovi sledování přihlásit k odběru událostí a pracovního postupu.
 
 ```xml
 <system.serviceModel>
@@ -59,28 +59,28 @@ TrackingProfile profile = new TrackingProfile()
 };
 ```
 
-Sledování záznamů se filtruje přes režim viditelnosti v rámci profilu sledování pomocí atributu <xref:System.Activities.Tracking.ImplementationVisibility>. Složená aktivita je aktivita nejvyšší úrovně, která obsahuje další aktivity, které tvoří svou implementaci. Režim viditelnosti určuje sledování záznamů emitovaných ze složených aktivit v rámci aktivity pracovního postupu, které určují, jestli se mají sledovat aktivity, které tvoří implementaci. Režim viditelnosti se vztahuje na úroveň profilu sledování. Filtrování záznamů sledování pro jednotlivé aktivity v rámci pracovního postupu je řízeno dotazy v rámci profilu sledování. Další informace najdete v části **typy dotazů profilu sledování** v tomto dokumentu.
+Záznamy sledování jsou filtrovány prostřednictvím režimu viditelnosti <xref:System.Activities.Tracking.ImplementationVisibility> v rámci profilu sledování pomocí atributu. Složená aktivita je aktivita nejvyšší úrovně, která obsahuje další aktivity, které tvoří jeho implementaci. Režim viditelnosti určuje sledování záznamů vyzařovaných z složených aktivit v rámci aktivity pracovního postupu, chcete-li určit, zda jsou sledovány aktivity, které tvoří implementaci. Režim viditelnosti platí na úrovni profilu sledování. Filtrování sledování záznamů pro jednotlivé aktivity v rámci pracovního postupu je řízeno dotazy v rámci profilu sledování. Další informace naleznete v části **Typy dotazů profilu sledování** v tomto dokumentu.
 
-Dva režimy viditelnosti zadané atributem `implementationVisibility` v profilu sledování jsou `RootScope` a `All`. Použití režimu `RootScope` potlačí záznamy sledování pro aktivity, které tvoří implementaci aktivity v případě, že složená aktivita není kořenem pracovního postupu. To znamená, že když se do pracovního postupu přidá aktivita, která je implementovaná pomocí jiných aktivit, a `implementationVisibility` nastavená na RootScope, bude sledována pouze aktivita nejvyšší úrovně v rámci této složené aktivity. Pokud je aktivita kořenem pracovního postupu, pak implementace aktivity je samotný pracovní postup a záznamy sledování jsou vygenerovány pro aktivity, které tvoří implementaci. Použití režimu All povoluje generování všech záznamů sledování pro kořenovou aktivitu a všechny její složené aktivity.
+Dva režimy viditelnosti `implementationVisibility` určené atributem v `RootScope` `All`profilu sledování jsou a . Použití `RootScope` režimu potlačí záznamy sledování pro aktivity, které tvoří implementaci aktivity v případě, že složená aktivita není kořenem pracovního postupu. To znamená, že při aktivitě, která je implementována `implementationVisibility` pomocí jiných aktivit, je přidána do pracovního postupu a nastavena na RootScope, je sledována pouze aktivita nejvyšší úrovně v rámci této složené aktivity. Pokud je aktivita kořenem pracovního postupu, pak implementace aktivity je samotný pracovní postup a sledování záznamů jsou vydávány pro aktivity, které tvoří implementaci. Použití režimu Vše umožňuje, aby byly emitovány všechny záznamy sledování pro kořenovou aktivitu a všechny její složené aktivity.
 
-Předpokládejme například, že *MyActivity* je složená aktivita, jejíž implementace obsahuje dvě aktivity, *Activity1* a *"Activity2"* . Když se tato aktivita přidá do pracovního postupu a sledování je povolené s profilem sledování s `implementationVisibility` nastavenou na `RootScope`, sledování záznamů se generuje jenom pro *MyActivity*. Pro aktivity *Activity1* a *"Activity2"* se ale negenerují žádné záznamy.
+Předpokládejme například, že *MyActivity* je složená aktivita, jejíž implementace obsahuje dvě aktivity, *Activity1* a *Activity2*. Pokud je tato aktivita přidána do pracovního `implementationVisibility` postupu `RootScope`a sledování je povoleno s profilem sledování s nastavenou na , jsou záznamy sledování emitovány pouze pro *MyActivity*. Nejsou však vyzařovány žádné záznamy pro aktivity *Activity1* a *Activity2*.
 
-Pokud je však atribut `implementationVisibility` pro profil sledování nastaven na hodnotu `All`, pak sledování záznamů je generováno nejen pro *MyActivity*, ale také pro aktivity *Activity1* a *"Activity2"* .
+Pokud je `implementationVisibility` však atribut pro profil `All`sledování nastaven na , jsou záznamy sledování emitovány nejen pro *MyActivity*, ale také pro aktivity *Activity1* a *Activity2*.
 
 Příznak `implementationVisibility` se vztahuje na následující typy záznamů sledování:
 
 - ActivityStateRecord
 
-- FaultPropagationRecord
+- Záznam propagace faultpro
 
 - CancelRequestedRecord
 
 - ActivityScheduledRecord
 
 > [!NOTE]
-> CustomTrackingRecords vysílaná z implementace aktivity není odfiltrována nastavením implementationVisibility.
+> CustomTrackingRecords vyzařované z implementace aktivity nejsou odfiltrovány implementacíVisibility nastavení.
 
-Funkce `implementationVisibility` je určena jako <xref:System.Activities.Tracking.ImplementationVisibility.RootScope> v profilu sledování v kódu následujícím způsobem:
+Funkce `implementationVisibility` je určena <xref:System.Activities.Tracking.ImplementationVisibility.RootScope> jako na sledování profilu v kódu takto:
 
 ```csharp
 TrackingProfile sampleTrackingProfile = new TrackingProfile()
@@ -90,7 +90,7 @@ TrackingProfile sampleTrackingProfile = new TrackingProfile()
 };
 ```
 
-Funkce `implementationVisibility` je určena jako <xref:System.Activities.Tracking.ImplementationVisibility.All> v profilu sledování v konfiguračním souboru následujícím způsobem:
+Funkce `implementationVisibility` je určena <xref:System.Activities.Tracking.ImplementationVisibility.All> jako na sledování profilu v konfiguračním souboru takto:
 
 ```xml
 <tracking>
@@ -104,13 +104,13 @@ Funkce `implementationVisibility` je určena jako <xref:System.Activities.Tracki
 </tracking>
 ```
 
-Nastavení `ImplementationVisibility` v profilu sledování je volitelné. Ve výchozím nastavení je jeho hodnota nastavená na `RootScope`. Hodnoty pro tento atribut také rozlišují velká a malá písmena.
+Nastavení `ImplementationVisibility` na profilu sledování je volitelné. Ve výchozím nastavení je `RootScope`jeho hodnota nastavena na hodnotu . Hodnoty pro tento atribut jsou také malá a velká písmena.
 
-### <a name="tracking-profile-query-types"></a>Typy dotazů na profil sledování
+### <a name="tracking-profile-query-types"></a>Sledování typů dotazů profilu
 
-Sledování profily mají strukturu deklarativní odběrů pro sledování záznamů, které umožňují dotazů modulu runtime pracovního postupu pro záznamy sledování. Existuje několik typů dotazů, které umožňují přihlášení k odběru různých tříd <xref:System.Activities.Tracking.TrackingRecord> objektů. Profily sledování lze zadat v konfiguraci nebo prostřednictvím kódu. Tady jsou nejběžnější typy dotazů:
+Sledování profily mají strukturu deklarativní odběrů pro sledování záznamů, které umožňují dotazů modulu runtime pracovního postupu pro záznamy sledování. Existuje několik typů dotazů, které umožňují <xref:System.Activities.Tracking.TrackingRecord> přihlásit se k odběru různých tříd objektů. Profily sledování lze zadat v konfiguraci nebo prostřednictvím kódu. Zde jsou nejběžnější typy dotazů:
 
-- <xref:System.Activities.Tracking.WorkflowInstanceQuery> – Toto použijte ke sledování změn životního cyklu instance pracovního postupu, jako jsou dřív vykázáno `Started` a `Completed`. <xref:System.Activities.Tracking.WorkflowInstanceQuery> Se používá k přihlášení k odběru následující <xref:System.Activities.Tracking.TrackingRecord> objekty:
+- <xref:System.Activities.Tracking.WorkflowInstanceQuery>- Slouží ke sledování změn životního cyklu instance `Started` pracovního postupu, jako jsou dříve demonstrované a `Completed`. <xref:System.Activities.Tracking.WorkflowInstanceQuery> Se používá k přihlášení k odběru následující <xref:System.Activities.Tracking.TrackingRecord> objekty:
 
   - <xref:System.Activities.Tracking.WorkflowInstanceRecord>
 
@@ -122,9 +122,9 @@ Sledování profily mají strukturu deklarativní odběrů pro sledování zázn
 
   - <xref:System.Activities.Tracking.WorkflowInstanceSuspendedRecord>
 
-  Stavy, které lze předplatit, jsou určeny ve třídě <xref:System.Activities.Tracking.WorkflowInstanceStates>.
+  Stavy, které lze přihlásit k <xref:System.Activities.Tracking.WorkflowInstanceStates> odběru jsou určeny ve třídě.
 
-  V následujícím příkladu je uvedena konfigurace nebo kód, který se používá k přihlášení k odběru záznamů sledování na úrovni instance pracovního postupu pro stav `Started` instance pomocí <xref:System.Activities.Tracking.WorkflowInstanceQuery>.
+  Konfigurace nebo kód použitý k odběru záznamů sledování `Started` na úrovni <xref:System.Activities.Tracking.WorkflowInstanceQuery> instance pracovního postupu pro stav instance pomocí uvedeného v následujícím příkladu.
 
   ```xml
   <workflowInstanceQueries>
@@ -150,9 +150,9 @@ Sledování profily mají strukturu deklarativní odběrů pro sledování zázn
   };
   ```
 
-- <xref:System.Activities.Tracking.ActivityStateQuery> – slouží ke sledování změn životního cyklu aktivit, které tvoří instanci pracovního postupu. Například můžete chtít sledovat pokaždé, když se aktivita odeslat E-Mail dokončí v instanci pracovního postupu. Tento dotaz je nutný, aby se <xref:System.Activities.Tracking.TrackingParticipant> přihlásil k odběru <xref:System.Activities.Tracking.ActivityStateRecord> objektů. Dostupné stavy pro přihlášení k odběru jsou určené v <xref:System.Activities.Tracking.ActivityStates>.
+- <xref:System.Activities.Tracking.ActivityStateQuery>- Slouží ke sledování změn životního cyklu aktivit, které tvoří instanci pracovního postupu. Můžete například sledovat pokaždé, když se aktivita "Odeslat e-mail" dokončí v rámci instance pracovního postupu. Tento dotaz je <xref:System.Activities.Tracking.TrackingParticipant> nezbytné pro <xref:System.Activities.Tracking.ActivityStateRecord> odběr k odběru objektů. Dostupné stavy, k jejichž <xref:System.Activities.Tracking.ActivityStates>odběru se chcete přihlásit, jsou uvedeny v .
 
-  V následujícím příkladu je uvedena konfigurace a kód, který se používá k odběru záznamů sledování stavu aktivity, které používají <xref:System.Activities.Tracking.ActivityStateQuery> pro aktivitu `SendEmailActivity`.
+  Konfigurace a kód použitý k odběru záznamů <xref:System.Activities.Tracking.ActivityStateQuery> sledování `SendEmailActivity` stavu aktivity, které používají pro aktivitu, jsou uvedeny v následujícím příkladu.
 
   ```xml
   <activityStateQueries>
@@ -180,11 +180,11 @@ Sledování profily mají strukturu deklarativní odběrů pro sledování zázn
   ```
 
   > [!NOTE]
-  > Pokud má více elementů activityStateQuery stejný název, budou použity pouze stavy v posledním prvku v profilu sledování.
+  > Pokud více activityStateQuery prvky mají stejný název, pouze stavy v poslední prvek se používají v profilu sledování.
 
-- <xref:System.Activities.Tracking.ActivityScheduledQuery> – tento dotaz umožňuje sledovat aktivitu naplánovanou pro provádění nadřazenou aktivitou. Dotaz je nutný, aby se <xref:System.Activities.Tracking.TrackingParticipant> přihlásil k odběru <xref:System.Activities.Tracking.ActivityScheduledRecord> objektů.
+- <xref:System.Activities.Tracking.ActivityScheduledQuery>- Tento dotaz umožňuje sledovat aktivitu naplánovanou k provedení nadřazenou aktivitou. Dotaz je nezbytné <xref:System.Activities.Tracking.TrackingParticipant> pro odběr <xref:System.Activities.Tracking.ActivityScheduledRecord> k odběru objektů.
 
-  V následujícím příkladu je uvedena konfigurace a kód, který se používá k přihlášení k odběru záznamů souvisejících s `SendEmailActivity` podřízená aktivita pomocí <xref:System.Activities.Tracking.ActivityScheduledQuery>.
+  Konfigurace a kód použitý k odběru `SendEmailActivity` záznamů souvisejících s <xref:System.Activities.Tracking.ActivityScheduledQuery> podřízenou aktivitou naplánovanou pomocí následujícího příkladu.
 
   ```xml
   <activityScheduledQueries>
@@ -207,9 +207,9 @@ Sledování profily mají strukturu deklarativní odběrů pro sledování zázn
   };
   ```
 
-- <xref:System.Activities.Tracking.FaultPropagationQuery> – slouží ke sledování manipulace s chybami, ke kterým dojde v rámci aktivity. Dotaz je nutný, aby se <xref:System.Activities.Tracking.TrackingParticipant> přihlásil k odběru <xref:System.Activities.Tracking.FaultPropagationRecord> objektů.
+- <xref:System.Activities.Tracking.FaultPropagationQuery>- Použijte ke sledování zpracování chyb, ke kterým dochází v rámci aktivity. Dotaz je nezbytné <xref:System.Activities.Tracking.TrackingParticipant> pro odběr <xref:System.Activities.Tracking.FaultPropagationRecord> k odběru objektů.
 
-  V následujícím příkladu je uvedena konfigurace a kód, který se používá k přihlášení k odběru záznamů souvisejících s šířením chyb pomocí <xref:System.Activities.Tracking.FaultPropagationQuery>.
+  Konfigurace a kód použitý k odběru záznamů souvisejících <xref:System.Activities.Tracking.FaultPropagationQuery> s šířením chyb pomocí je uveden v následujícím příkladu.
 
   ```xml
   <faultPropagationQueries>
@@ -232,9 +232,9 @@ Sledování profily mají strukturu deklarativní odběrů pro sledování zázn
   };
   ```
 
-- <xref:System.Activities.Tracking.CancelRequestedQuery> – slouží ke sledování požadavků pro zrušení podřízené aktivity Nadřazená aktivita. Dotaz je nutný, aby se <xref:System.Activities.Tracking.TrackingParticipant> přihlásil k odběru <xref:System.Activities.Tracking.CancelRequestedRecord> objektů.
+- <xref:System.Activities.Tracking.CancelRequestedQuery>- Slouží ke sledování požadavků na zrušení podřízené aktivity nadřazenou aktivitou. Dotaz je nezbytné <xref:System.Activities.Tracking.TrackingParticipant> pro odběr <xref:System.Activities.Tracking.CancelRequestedRecord> k odběru objektů.
 
-  V následujícím příkladu je uvedena konfigurace a kód, který se používá k přihlášení k odběru záznamů souvisejících s zrušením aktivity pomocí <xref:System.Activities.Tracking.CancelRequestedQuery>.
+  Konfigurace a kód použitý k odběru záznamů <xref:System.Activities.Tracking.CancelRequestedQuery> souvisejících se zrušením aktivity pomocí je uveden v následujícím příkladu.
 
   ```xml
   <cancelRequestedQueries>
@@ -257,9 +257,9 @@ Sledování profily mají strukturu deklarativní odběrů pro sledování zázn
   };
   ```
 
-- <xref:System.Activities.Tracking.CustomTrackingQuery> – slouží ke sledování událostí, které definujete v aktivitách kódu. Dotaz je nutný, aby se <xref:System.Activities.Tracking.TrackingParticipant> přihlásil k odběru <xref:System.Activities.Tracking.CustomTrackingRecord> objektů.
+- <xref:System.Activities.Tracking.CustomTrackingQuery>- Pomocí tohoto můžete sledovat události, které definujete v kódu aktivity. Dotaz je nezbytné <xref:System.Activities.Tracking.TrackingParticipant> pro odběr <xref:System.Activities.Tracking.CustomTrackingRecord> k odběru objektů.
 
-  Konfigurace a kód, který se používá k přihlášení k odběru záznamů souvisejících s vlastními záznamy sledování pomocí <xref:System.Activities.Tracking.CustomTrackingQuery>, je znázorněno v následujícím příkladu.
+  Konfigurace a kód použitý k přihlášení k odběru <xref:System.Activities.Tracking.CustomTrackingQuery> záznamů souvisejících s vlastními záznamy sledování pomocí je uveden v následujícím příkladu.
 
   ```xml
   <customTrackingQueries>
@@ -282,9 +282,9 @@ Sledování profily mají strukturu deklarativní odběrů pro sledování zázn
   };
   ```
 
-- <xref:System.Activities.Tracking.BookmarkResumptionQuery> – slouží ke sledování obnovování záložky v rámci instance pracovního postupu. Tento dotaz je nutný, aby se <xref:System.Activities.Tracking.TrackingParticipant> přihlásil k odběru <xref:System.Activities.Tracking.BookmarkResumptionRecord> objektů.
+- <xref:System.Activities.Tracking.BookmarkResumptionQuery>- Pomocí tohoto můžete sledovat obnovení záložky v rámci instance pracovního postupu. Tento dotaz je <xref:System.Activities.Tracking.TrackingParticipant> nezbytné pro <xref:System.Activities.Tracking.BookmarkResumptionRecord> odběr k odběru objektů.
 
-  Konfigurace a kód, který se používá k přihlášení k odběru záznamů souvisejících s obnovením záložek pomocí <xref:System.Activities.Tracking.BookmarkResumptionQuery>, je znázorněno v následujícím příkladu.
+  Konfigurace a kód použitý k odběru záznamů souvisejících s obnovením záložky pomocí <xref:System.Activities.Tracking.BookmarkResumptionQuery> je uveden v následujícím příkladu.
 
   ```xml
   <bookmarkResumptionQueries>
@@ -308,9 +308,9 @@ Sledování profily mají strukturu deklarativní odběrů pro sledování zázn
 
 ### <a name="annotations"></a>Poznámky
 
-Anotace umožňují libovolně značku sledování záznamů s hodnotou, kterou lze nakonfigurovat po čas sestavení. Můžete například chtít, aby několik sledovacích záznamů v několika pracovních postupech bylo označeno jako "poštovní server" = = "pošta Server1". To umožňuje snadno vyhledat všechny záznamy s touto značkou při dotazování sledování záznamy později.
+Anotace umožňují libovolně značku sledování záznamů s hodnotou, kterou lze nakonfigurovat po čas sestavení. Můžete například chtít, aby bylo několik záznamů sledování v několika pracovních postupech označeno "Poštovním serverem" == "Poštovní server1". To umožňuje snadno vyhledat všechny záznamy s touto značkou při dotazování sledování záznamy později.
 
-K tomu je přidána poznámka do sledovacího dotazu, jak je znázorněno v následujícím příkladu.
+Chcete-li to provést, je do sledovacího dotazu přidána anotace, jak je znázorněno v následujícím příkladu.
 
 ```xml
 <activityStateQuery activityName="SendEmailActivity">
@@ -323,9 +323,9 @@ K tomu je přidána poznámka do sledovacího dotazu, jak je znázorněno v nás
 </activityStateQuery>
 ```
 
-### <a name="how-to-create-a-tracking-profile"></a>Postup vytvoření profilu sledování
+### <a name="how-to-create-a-tracking-profile"></a>Jak vytvořit profil sledování
 
-Sledování prvků dotazu slouží k vytvoření profilu sledování pomocí konfiguračního souboru XML nebo kódu [!INCLUDE[netfx_current_long](../../../includes/netfx-current-long-md.md)]. Tady je příklad profilu sledování vytvořeného pomocí konfiguračního souboru.
+Prvky sledovacího dotazu se používají k vytvoření [!INCLUDE[netfx_current_long](../../../includes/netfx-current-long-md.md)] profilu sledování pomocí konfiguračního souboru XML nebo kódu. Zde je příklad profilu sledování vytvořeného pomocí konfiguračního souboru.
 
 ```xml
 <system.serviceModel>
@@ -342,15 +342,15 @@ Sledování prvků dotazu slouží k vytvoření profilu sledování pomocí kon
 ```
 
 > [!WARNING]
-> V případě WF pomocí hostitele služby pracovního postupu se profil sledování obvykle vytváří pomocí konfiguračního souboru. Je také možné vytvořit profil sledování s kódem pomocí sledovacího profilu a rozhraní API pro sledování dotazů.
+> Pro wf pomocí hostitele služby Workflow je profil sledování obvykle vytvořen pomocí konfiguračního souboru. Je také možné vytvořit profil sledování s kódem pomocí sledování profilu a sledování dotazu ROZHRANÍ API.
 
-Profil nakonfigurovaný jako konfigurační soubor XML je použit pro sledování účastníka pomocí rozšíření chování. Tento postup je přidán k hostiteli WorkflowServiceHost, jak je popsáno v části Další [Konfigurace sledování pracovního postupu](configuring-tracking-for-a-workflow.md).
+Profil nakonfigurovaný jako konfigurační soubor XML se použije na účastníka sledování pomocí přípony chování. To je přidáno do WorkflowServiceHost, jak je popsáno v další části [Konfigurace sledování pro pracovní postup](configuring-tracking-for-a-workflow.md).
 
-Podrobnost sledování záznamů generovaných hostitelem je určena nastavením konfigurace v rámci profilu sledování. Účastník sledování se přihlašuje k odběru sledování záznamů přidáním dotazů do profilu sledování. Chcete-li se přihlásit k odběru všech záznamů sledování, je potřeba, abyste profil sledování určili všechny sledovací dotazy pomocí "\*" v polích Název v jednotlivých dotazech.
+Podrobnost záznamů sledování vyzařovaných hostitelem je určena nastavením konfigurace v rámci profilu sledování. Účastník sledování se přihlásí ke sledování záznamů přidáním dotazů do profilu sledování. Chcete-li se přihlásit k odběru všech záznamů sledování,\*musí profil sledování zadat všechny sledovací dotazy pomocí " " v polích názvů v každém z dotazů.
 
-Tady jsou některé z běžných příkladů sledování profilů.
+Zde jsou některé z běžných příkladů sledování profilů.
 
-- Sledovací profil pro získání záznamů a chyb instance pracovního postupu.
+- Profil sledování pro získání záznamů instancí pracovního postupu a chyb.
 
   ```xml
   <trackingProfile name="Instance and Fault Records">
@@ -385,8 +385,8 @@ Tady jsou některé z běžných příkladů sledování profilů.
   </trackingProfile>
   ```
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Sledování SQL](./samples/sql-tracking.md)
-- [Monitorování Windows Server App Fabric](https://docs.microsoft.com/previous-versions/appfabric/ee677251(v=azure.10))
-- [Monitorování aplikací pomocí prostředků infrastruktury aplikace](https://docs.microsoft.com/previous-versions/appfabric/ee677276(v=azure.10))
+- [Monitorování prostředků infrastruktury aplikací pro Windows Server](https://docs.microsoft.com/previous-versions/appfabric/ee677251(v=azure.10))
+- [Monitorování aplikací pomocí prostředků infrastruktury aplikací](https://docs.microsoft.com/previous-versions/appfabric/ee677276(v=azure.10))

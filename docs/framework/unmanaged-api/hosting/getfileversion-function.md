@@ -14,49 +14,49 @@ helpviewer_keywords:
 ms.assetid: b3222c85-da88-4485-97d7-3a6ee3e8d358
 topic_type:
 - apiref
-ms.openlocfilehash: f197c8802bd9e55391b3e3e20c64398736070a16
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: f3b51c1b376fa9c664de53aa76ec724ca305ae6a
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73136339"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79178183"
 ---
 # <a name="getfileversion-function"></a>GetFileVersion – funkce
-Získá informace o verzi modulu CLR (Common Language Runtime) zadaného souboru pomocí zadané vyrovnávací paměti.  
+Získá informace o verzi clr (COMMON Language runtime) zadaného souboru pomocí zadané vyrovnávací paměti.  
   
- Tato funkce se už nepoužívá v .NET Framework 4.  
+ Tato funkce byla v rozhraní .NET Framework 4 zastaralá.  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```cpp  
 HRESULT GetFileVersion (  
-    [in]  LPCWSTR      szFilename,   
-    [in, out] LPWSTR   szBuffer,   
-    [in]  DWORD        cchBuffer,   
+    [in]  LPCWSTR      szFilename,
+    [in, out] LPWSTR   szBuffer,
+    [in]  DWORD        cchBuffer,
     [out] DWORD        *dwLength  
 );  
 ```  
   
 ## <a name="parameters"></a>Parametry  
  `szFilename`  
- pro Cesta k souboru, který se má prozkoumat  
+ [v] Cesta souboru, který má být zkontrolován.  
   
  `szBuffer`  
- [in, out] Vyrovnávací paměť přidělená pro vrácené informace o verzi.  
+ [dovnitř, ven] Vyrovnávací paměť přidělená pro informace o verzi, která je vrácena.  
   
  `cchBuffer`  
- pro Velikost `szBuffer`v různých znacích.  
+ [v] Velikost . `szBuffer`  
   
  `dwLength`  
- mimo Velikost vrácených `szBuffer`v bajtech.  
+ [out] Velikost vráceného bajtu v bajtech `szBuffer`.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Hlavička:** MSCorEE. h  
+ **Záhlaví:** MSCorEE.h  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v11plus](../../../../includes/net-current-v11plus-md.md)]  
+ **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v11plus](../../../../includes/net-current-v11plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Zastaralé funkce pro hostování CLR](../../../../docs/framework/unmanaged-api/hosting/deprecated-clr-hosting-functions.md)
+- [Zastaralé funkce hostování CLR](../../../../docs/framework/unmanaged-api/hosting/deprecated-clr-hosting-functions.md)

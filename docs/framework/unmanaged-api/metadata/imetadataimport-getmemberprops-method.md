@@ -15,31 +15,31 @@ helpviewer_keywords:
 ms.assetid: 42790918-4142-4938-b8f4-a56979a55846
 topic_type:
 - apiref
-ms.openlocfilehash: bc5bbba2fa4a95955e52a2e083a2097178b5d96a
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 72e14ea0414ebdeb8f54a4bdef8ce5208fc8ef72
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74437517"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79177233"
 ---
 # <a name="imetadataimportgetmemberprops-method"></a>IMetaDataImport::GetMemberProps – metoda
-Načte informace uložené v metadatech pro zadanou definici člena, včetně názvu, binárního podpisu a relativní virtuální adresy, <xref:System.Type> člena, na který odkazuje zadaný token metadat. Toto je jednoduchá pomocná metoda: Pokud je v *MB* , je zavolána metoda **getmethodprops –** ; Pokud je *MB* FieldDef, pak se zavolá **getfieldprops –** . Podrobnosti najdete v těchto dalších metodách. 
+Získá informace uložené v metadatech pro definici zadaného člena, včetně názvu, <xref:System.Type> binárního podpisu a relativní virtuální adresy člena, na který odkazuje zadaný token metadat. Toto je jednoduchá pomocná metoda: pokud *mb* je MethodDef, pak **GetMethodProps** je volána; Pokud *mb* je FieldDef, pak **GetFieldProps** je volána. Podrobnosti naleznete v následujících dalších metodách.
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```cpp  
 HRESULT GetMemberProps (  
-   [in]  mdToken           mb,   
+   [in]  mdToken           mb,
    [out] mdTypeDef         *pClass,  
-   [out] LPWSTR            szMember,   
-   [in]  ULONG             cchMember,   
-   [out] ULONG             *pchMember,   
+   [out] LPWSTR            szMember,
+   [in]  ULONG             cchMember,
+   [out] ULONG             *pchMember,
    [out] DWORD             *pdwAttr,  
-   [out] PCCOR_SIGNATURE   *ppvSigBlob,   
-   [out] ULONG             *pcbSigBlob,   
-   [out] ULONG             *pulCodeRVA,   
-   [out] DWORD             *pdwImplFlags,   
-   [out] DWORD             *pdwCPlusTypeFlag,   
+   [out] PCCOR_SIGNATURE   *ppvSigBlob,
+   [out] ULONG             *pcbSigBlob,
+   [out] ULONG             *pulCodeRVA,
+   [out] DWORD             *pdwImplFlags,
+   [out] DWORD             *pdwCPlusTypeFlag,
    [out] UVCP_CONSTANT     *ppValue,  
    [out] ULONG             *pcchValue  
 );  
@@ -47,54 +47,54 @@ HRESULT GetMemberProps (
   
 ## <a name="parameters"></a>Parametry  
  `mb`  
- pro Token, který odkazuje na člena, aby získal přidružená metadata pro.  
+ [v] Token, který odkazuje na člena získat přidružená metadata.  
   
  `pClass`  
- mimo Ukazatel na token metadat, který představuje třídu člena.  
+ [out] Ukazatel na token metadat, který představuje třídu člena.  
   
  `szMember`  
- mimo Název člena.  
+ [out] Jméno člena.  
   
  `cchMember`  
- pro Velikost v rámci velkých písmen `szMember` vyrovnávací paměti.  
+ [v] Velikost v široké znaky `szMember` vyrovnávací paměti.  
   
  `pchMember`  
- mimo Velikost vráceného názvu v rámci velkých znaků.  
+ [out] Velikost širokých znaků vráceného názvu.  
   
  `pdwAttr`  
- mimo Všechny hodnoty příznaků použité u člena.  
+ [out] Všechny hodnoty příznaku použité na člena.  
   
  `ppvSigBlob`  
- mimo Ukazatel na binární podpis metadat člena.  
+ [out] Ukazatel na podpis binárních metadat člena.  
   
  `pcbSigBlob`  
- mimo Velikost v bajtech `ppvSigBlob`.  
+ [out] Velikost v bajtů `ppvSigBlob`.  
   
  `pulCodeRVA`  
- mimo Ukazatel na relativní virtuální adresu člena.  
+ [out] Ukazatel na relativní virtuální adresu člena.  
   
  `pdwImplFlags`  
- mimo Jakékoli příznaky implementace metody přidružené ke členu.  
+ [out] Všechny příznaky implementace metody přidružené k členu.  
   
  `pdwCPlusTypeFlag`  
- mimo Příznak, který označuje <xref:System.ValueType>. Je to jedna z hodnot `ELEMENT_TYPE_*`.
+ [out] Příznak, který <xref:System.ValueType>označuje . Je to jedna `ELEMENT_TYPE_*` z hodnot.
   
  `ppValue`  
- mimo Hodnota konstanty řetězce vrácená tímto členem.  
+ [out] Konstantní hodnota řetězce vrácená tímto členem.  
   
  `pcchValue`  
- mimo Velikost ve znacích `ppValue`nebo nula, pokud `ppValue` nedrží řetězec.  
+ [out] Velikost ve znacích `ppValue`, `ppValue` nebo nula, pokud není obsahovat řetězec.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Hlavička:** Cor. h  
+ **Záhlaví:** Kor.h.  
   
- **Knihovna:** Zahrnuto jako prostředek v knihovně MsCorEE. dll  
+ **Knihovna:** Zahrnuto jako prostředek v souboru MsCorEE.dll  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [IMetaDataImport – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
 - [IMetaDataImport2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)

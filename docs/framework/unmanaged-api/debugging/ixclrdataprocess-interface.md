@@ -15,12 +15,12 @@ topic_type:
 - apiref
 author: cshung
 ms.author: andrewau
-ms.openlocfilehash: a5d707d61513b030e5968af28db3c2a606e4419b
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.openlocfilehash: e7e53615e38d0ab76f9e7c0a753be3c13780057d
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76790377"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79178378"
 ---
 # <a name="ixclrdataprocess-interface"></a>IXCLRDataProcess – rozhraní
 
@@ -32,26 +32,26 @@ Poskytuje metody pro dotazování na informace o procesu.
 
 | Metoda                                                                                                                                               | Popis                                                                                     |
 | ---------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
-| [GetAppDomainByUniqueId](ixclrdataprocess-getappdomainbyuniqueid-method.md)                       | Načte `AppDomain` v procesu podle jeho jedinečného ID.                                              |
-| [StartEnumModules](ixclrdataprocess-startenummodules-method.md)                                   | Poskytuje popisovač pro zobrazení výčtu modulů procesu.                                        |
-| [EnumModule](ixclrdataprocess-enummodule-method.md)                                               | Vytvoří výčet modulů tohoto procesu.                                                         |
-| [EndEnumModules](ixclrdataprocess-endenummodules-method.md)                                       | Uvolňuje prostředky používané vnitřními iterátory použitými při výčtu modulů.               |
-| [StartEnumMethodInstancesByAddress](ixclrdataprocess-startenummethodinstancesbyaddress-method.md) | Poskytuje popisovač pro zobrazení výčtu instancí metody `AppDomain` začínajících na dané adrese. |
-| [EnumMethodInstanceByAddress](ixclrdataprocess-enummethodinstancebyaddress-method.md)             | Vytvoří výčet instancí metody tohoto procesu počínaje posunem adresy.                  |
-| [EndEnumMethodInstancesByAddress](ixclrdataprocess-endenummethodinstancesbyaddress-method.md)     | Uvolní prostředky používané interními iterátory použitými během výčtu instance.             |
+| [GetAppDomainByUniqueId](ixclrdataprocess-getappdomainbyuniqueid-method.md)                       | Získá `AppDomain` v procesu jeho jedinečné id.                                              |
+| [StartEnumModules](ixclrdataprocess-startenummodules-method.md)                                   | Poskytuje popisovač pro výčet modulů procesu.                                        |
+| [EnumModule](ixclrdataprocess-enummodule-method.md)                                               | Vyjmenovává moduly tohoto procesu.                                                         |
+| [EndEnumModules](ixclrdataprocess-endenummodules-method.md)                                       | Uvolní prostředky používané interními iterátory používanými při výčtu modulu.               |
+| [StartEnumMethodInstancesByAddress](ixclrdataprocess-startenummethodinstancesbyaddress-method.md) | Poskytuje popisovač pro výčet instance metody `AppDomain` počínaje danou adresou. |
+| [EnumMethodInstanceByAddress](ixclrdataprocess-enummethodinstancebyaddress-method.md)             | Vyjmenovává instance metody tohoto procesu počínaje posunem adresy.                  |
+| [EndEnumMethodInstancesByAddress](ixclrdataprocess-endenummethodinstancesbyaddress-method.md)     | Uvolní prostředky používané interními iterátory používanými při výčtu instancí.             |
 
 ## <a name="remarks"></a>Poznámky
 
-Toto rozhraní je v modulu runtime a není zveřejněné prostřednictvím hlaviček nebo souborů knihoven. Jedná se však o rozhraní modelu COM, které je odvozeno od `IUnknown` s identifikátorem GUID `5c552ab6-fc09-4cb3-8e36-22fa03c798b7`, které lze získat prostřednictvím obvyklých mechanismů modelu COM.
+Toto rozhraní žije uvnitř modulu runtime a není vystaveno prostřednictvím žádné hlavičky nebo soubory knihovny. Je to však rozhraní COM, `IUnknown` které je `5c552ab6-fc09-4cb3-8e36-22fa03c798b7` odvozeno z s identifikátorem GUID, které lze získat prostřednictvím obvyklých mechanismů COM.
 
 ## <a name="requirements"></a>Požadavky
 
-**Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).   
-**Hlavička:** NTato  
-**Knihovna:** NTato  
-**Verze .NET Framework:** [!INCLUDE[net_current_v47plus](../../../../includes/net-current-v47plus.md)]  
+**Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).
+**Záhlaví:** Žádný  
+**Knihovna:** Žádný  
+**Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v47plus](../../../../includes/net-current-v47plus.md)]  
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Ladění](index.md)
-- [Rozhraní pro ladění](debugging-interfaces.md)
+- [ladění](index.md)
+- [Debugging – rozhraní](debugging-interfaces.md)

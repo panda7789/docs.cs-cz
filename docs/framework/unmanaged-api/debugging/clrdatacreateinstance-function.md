@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 440bad90-5a88-45e7-9157-4596801d8d19
 topic_type:
 - apiref
-ms.openlocfilehash: 71836108dbd0ce01a64b4d9ac773c28d385dfd7c
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: c24963a6e56adfb9f763c6521027744db82cc357
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73099679"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79179366"
 ---
 # <a name="clrdatacreateinstance-function"></a>CLRDataCreateInstance – funkce
 Vytvoří objekt rozhraní pro zadanou cílovou položku.  
@@ -29,34 +29,34 @@ Vytvoří objekt rozhraní pro zadanou cílovou položku.
   
 ```cpp  
 HRESULT CLRDataCreateInstance (  
-    [in]  REFIID           iid,   
-    [in]  ICLRDataTarget  *target,   
+    [in]  REFIID           iid,
+    [in]  ICLRDataTarget  *target,
     [out] void           **iface  
 );  
 ```  
   
 ## <a name="parameters"></a>Parametry  
  `iid`  
- pro Identifikátor rozhraní, které má být vytvořena instance.  
+ [v] Identifikátor rozhraní, které má být vytvořena instance.  
   
  `target`  
- pro Ukazatel na uživatelem implementovaný objekt [ICLRDataTarget](iclrdatatarget-interface.md) , který představuje cílovou položku, pro kterou chcete vytvořit objekt rozhraní.  
+ [v] Ukazatel na uživatelem implementovaný objekt [ICLRDataTarget,](iclrdatatarget-interface.md) který představuje cílovou položku, pro kterou chcete vytvořit objekt rozhraní.  
   
  `iface`  
- mimo Ukazatel na adresu vráceného objektu rozhraní.  
+ [out] Ukazatel na adresu vráceného objektu rozhraní.  
   
 ## <a name="remarks"></a>Poznámky  
- Objekt `ICLRDataTarget` je implementován modulem pro ladění aplikace. Implementace závisí na typu reprezentované cílové položky. Cílová položka může být proces, výpis paměti, vzdálený počítač atd.  
+ Objekt `ICLRDataTarget` je implementován zapisovače ladicí aplikace. Implementace závisí na typu reprezentované cílové položky. Cílovou položkou může být proces, výpis stavu paměti, vzdálený počítač a tak dále.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
+ **Platformy:** Viz [Systémové požadavky](../../get-started/system-requirements.md).  
   
- **Hlavička:** ClrData. idl  
+ **Záhlaví:** ClrData.idl  
   
- **Knihovna:** CorGuids. lib  
+ **Knihovna:** CorGuids.lib  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Globální statické funkce pro ladění](debugging-global-static-functions.md)

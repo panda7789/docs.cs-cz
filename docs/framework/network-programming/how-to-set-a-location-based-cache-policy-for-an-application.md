@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Nastavení zásad mezipaměti na základě umístění pro aplikaci'
+title: 'Postupy: Nastavení zásad mezipaměti na základě místa pro aplikaci'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -11,25 +11,25 @@ helpviewer_keywords:
 - request cache policies
 - cache [.NET Framework], location-based policies
 ms.assetid: 683bb88e-3411-4f46-9686-3411b6ba511c
-ms.openlocfilehash: 150198c2bda220e4b37981e461e19b8e4e30e483
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: 6fe569e781b005461ea41e3d6b90859666f9601a
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71048125"
+ms.lasthandoff: 03/15/2020
+ms.locfileid: "79180783"
 ---
-# <a name="how-to-set-a-location-based-cache-policy-for-an-application"></a>Postupy: Nastavení zásad mezipaměti na základě umístění pro aplikaci
-Zásady mezipaměti na základě umístění umožňují aplikaci explicitně definovat chování ukládání do mezipaměti na základě umístění požadovaného prostředku. Toto téma ukazuje, jak nastavit zásady mezipaměti programově. Informace o nastavení zásad pro aplikaci pomocí konfiguračních souborů naleznete v tématu [ \<RequestCaching > element (nastavení sítě)](../configure-apps/file-schema/network/requestcaching-element-network-settings.md).  
+# <a name="how-to-set-a-location-based-cache-policy-for-an-application"></a>Postupy: Nastavení zásad mezipaměti na základě místa pro aplikaci
+Zásady mezipaměti založené na umístění umožňují aplikaci explicitně definovat chování ukládání do mezipaměti na základě umístění požadovaného prostředku. Toto téma ukazuje nastavení zásad mezipaměti programově. Informace o nastavení zásad pro aplikaci používající konfigurační soubory naleznete v [ \<tématu requestCaching> Element (Network Settings).](../configure-apps/file-schema/network/requestcaching-element-network-settings.md)  
   
-### <a name="to-set-a-location-based-cache-policy-for-an-application"></a>Nastavení zásad mezipaměti na základě umístění pro aplikaci  
+### <a name="to-set-a-location-based-cache-policy-for-an-application"></a>Nastavení zásad mezipaměti založené na umístění pro aplikaci  
   
-1. Vytvořte objekt <xref:System.Net.Cache.HttpRequestCachePolicy>nebo. <xref:System.Net.Cache.RequestCachePolicy>  
+1. Vytvořte <xref:System.Net.Cache.RequestCachePolicy> <xref:System.Net.Cache.HttpRequestCachePolicy> nebo objekt.  
   
 2. Nastavte objekt zásad jako výchozí pro doménu aplikace.  
   
-### <a name="to-set-a-policy-that-takes-requested-resources-from-a-cache"></a>Nastavení zásad, které přebírají požadované prostředky z mezipaměti  
+### <a name="to-set-a-policy-that-takes-requested-resources-from-a-cache"></a>Nastavení zásady, která přebírá požadované prostředky z mezipaměti  
   
-- Vytvořte zásadu, která provede požadované prostředky z mezipaměti, pokud je k dispozici, a v opačném případě odešle požadavky na server nastavením úrovně mezipaměti <xref:System.Net.Cache.HttpRequestCacheLevel.CacheIfAvailable>na. Požadavek může splnit jakákoli mezipaměť mezi klientem a serverem, včetně vzdálených mezipamětí.  
+- Vytvořte zásadu, která převezme požadované prostředky z mezipaměti, pokud je k dispozici, <xref:System.Net.Cache.HttpRequestCacheLevel.CacheIfAvailable>a jinak odešle požadavky na server nastavením úrovně mezipaměti na . Požadavek může splnit libovolná mezipaměť mezi klientem a serverem, včetně vzdálených mezipamětí.  
   
     ```csharp  
     public static void UseCacheIfAvailable()  
@@ -48,14 +48,14 @@ Zásady mezipaměti na základě umístění umožňují aplikaci explicitně de
     End Sub  
     ```  
   
-### <a name="to-set-a-policy-that-prevents-any-cache-from-supplying-resources"></a>Nastavení zásad, které zabrání v poskytnutí prostředků do mezipaměti  
+### <a name="to-set-a-policy-that-prevents-any-cache-from-supplying-resources"></a>Nastavení zásady, která brání jakékoli mezipaměti v poskytování prostředků  
   
-- Vytvořte zásadu, která zabrání libovolné mezipaměti v poskytnutí požadovaných prostředků nastavením úrovně mezipaměti na <xref:System.Net.Cache.HttpRequestCacheLevel.NoCacheNoStore>. Tato úroveň zásad odstraní prostředek z místní mezipaměti, pokud je přítomen, a označuje vzdálené mezipaměti, které by měly také odebrat prostředek.  
+- Vytvořte zásadu, která zabrání jakékoli mezipaměti v poskytování <xref:System.Net.Cache.HttpRequestCacheLevel.NoCacheNoStore>požadovaných prostředků nastavením úrovně mezipaměti na . Tato úroveň zásad odebere prostředek z místní mezipaměti, pokud je k dispozici, a označuje vzdálené mezipaměti, že by měly také odebrat prostředek.  
   
     ```csharp  
     public static void DoNotUseCache()  
     {  
-    HttpRequestCachePolicy policy = new HttpRequestCachePolicy   
+    HttpRequestCachePolicy policy = new HttpRequestCachePolicy
             (HttpRequestCacheLevel.NoCacheNoStore);  
         HttpWebRequest.DefaultCachePolicy = policy;  
     }  
@@ -69,14 +69,14 @@ Zásady mezipaměti na základě umístění umožňují aplikaci explicitně de
     End Sub  
     ```  
   
-### <a name="to-set-a-policy-that-returns-requested-resources-only-if-they-are-in-the-local-cache"></a>Nastavení zásad, které vrátí požadované prostředky pouze v případě, že jsou v místní mezipaměti  
+### <a name="to-set-a-policy-that-returns-requested-resources-only-if-they-are-in-the-local-cache"></a>Nastavení zásady, která vrací požadované prostředky pouze v případě, že jsou v místní mezipaměti  
   
-- Vytvořte zásadu, která bude vracet požadované prostředky pouze v případě, že jsou v místní mezipaměti nastavením úrovně mezipaměti na <xref:System.Net.Cache.HttpRequestCacheLevel.CacheOnly>. Pokud požadovaný prostředek není v mezipaměti, <xref:System.Net.WebException> je vyvolána výjimka.  
+- Vytvořte zásadu, která vrátí požadované prostředky pouze v případě, <xref:System.Net.Cache.HttpRequestCacheLevel.CacheOnly>že jsou v místní mezipaměti nastavením úrovně mezipaměti na . Pokud požadovaný prostředek není v mezipaměti, je vyvolána <xref:System.Net.WebException> výjimka.  
   
     ```csharp  
     public static void OnlyUseCache()  
     {  
-        HttpRequestCachePolicy policy = new HttpRequestCachePolicy   
+        HttpRequestCachePolicy policy = new HttpRequestCachePolicy
             (HttpRequestCacheLevel.CacheOnly);  
         HttpWebRequest.DefaultCachePolicy = policy;  
     }  
@@ -90,14 +90,14 @@ Zásady mezipaměti na základě umístění umožňují aplikaci explicitně de
     End Sub  
     ```  
   
-### <a name="to-set-a-policy-that-prevents-the-local-cache-from-supplying-resources"></a>Nastavení zásad, které brání místní mezipaměti v zásobování prostředků  
+### <a name="to-set-a-policy-that-prevents-the-local-cache-from-supplying-resources"></a>Nastavení zásady, která brání místní mezipaměti v poskytování prostředků  
   
-- Vytvořte zásadu, která zabrání v ukládání požadovaných prostředků do místní mezipaměti nastavením úrovně mezipaměti na <xref:System.Net.Cache.HttpRequestCacheLevel.Refresh>. Pokud se požadovaný prostředek nachází v přechodné mezipaměti a úspěšně se znovu ověří, mezilehlá mezipaměť může dodat požadovaný prostředek.  
+- Vytvořte zásadu, která zabrání místní mezipaměti v poskytování <xref:System.Net.Cache.HttpRequestCacheLevel.Refresh>požadovaných prostředků nastavením úrovně mezipaměti na . Pokud je požadovaný prostředek v mezilehlé mezipaměti a je úspěšně znovu ověřen, může mezilehlá mezipaměť poskytnout požadovaný prostředek.  
   
     ```csharp  
     public static void DoNotUseLocalCache()  
     {  
-     HttpRequestCachePolicy policy = new HttpRequestCachePolicy   
+     HttpRequestCachePolicy policy = new HttpRequestCachePolicy
             (HttpRequestCacheLevel.Refresh);  
         HttpWebRequest.DefaultCachePolicy = policy;  
     }  
@@ -111,14 +111,14 @@ Zásady mezipaměti na základě umístění umožňují aplikaci explicitně de
     End Sub  
     ```  
   
-### <a name="to-set-a-policy-that-prevents-any-cache-from-supplying-requested-resources"></a>Nastavení zásad, které zabrání v ukládání požadovaných prostředků do mezipaměti  
+### <a name="to-set-a-policy-that-prevents-any-cache-from-supplying-requested-resources"></a>Nastavení zásady, která brání jakékoli mezipaměti v poskytování požadovaných prostředků  
   
-- Vytvořte zásadu, která zabrání libovolné mezipaměti v poskytnutí požadovaných prostředků nastavením úrovně mezipaměti na <xref:System.Net.Cache.HttpRequestCacheLevel.Reload>. Prostředek vrácený serverem může být uložený v mezipaměti.  
+- Vytvořte zásadu, která zabrání jakékoli mezipaměti v poskytování <xref:System.Net.Cache.HttpRequestCacheLevel.Reload>požadovaných prostředků nastavením úrovně mezipaměti na . Prostředek vrácený serverem může být uložen v mezipaměti.  
   
     ```csharp  
     public static void SendToServer()  
     {  
-    HttpRequestCachePolicy policy = new HttpRequestCachePolicy   
+    HttpRequestCachePolicy policy = new HttpRequestCachePolicy
             (HttpRequestCacheLevel.Reload);  
         HttpWebRequest.DefaultCachePolicy = policy;  
     }  
@@ -132,9 +132,9 @@ Zásady mezipaměti na základě umístění umožňují aplikaci explicitně de
     End Sub  
     ```  
   
-### <a name="to-set-a-policy-that-allows-any-cache-to-supply-requested-resources-if-the-resource-on-the-server-is-not-newer-than-the-cached-copy"></a>Nastavení zásady, která umožní, aby jakákoli mezipaměť poskytovala požadované prostředky, pokud prostředek na serveru není novější než kopie v mezipaměti  
+### <a name="to-set-a-policy-that-allows-any-cache-to-supply-requested-resources-if-the-resource-on-the-server-is-not-newer-than-the-cached-copy"></a>Nastavení zásady, která umožňuje jakékoli mezipaměti zadávat požadované prostředky, pokud prostředek na serveru není novější než kopie uložená v mezipaměti  
   
-- Vytvořte zásadu, která umožňuje, aby jakákoli mezipaměť poskytovala požadované prostředky, pokud prostředek na serveru není novější než kopie uložená v mezipaměti nastavením úrovně mezipaměti na <xref:System.Net.Cache.HttpRequestCacheLevel.Revalidate>.  
+- Vytvořte zásadu, která umožní jakékoli mezipaměti zadávat požadované prostředky, pokud prostředek na serveru <xref:System.Net.Cache.HttpRequestCacheLevel.Revalidate>není novější než kopie uložená v mezipaměti, a to nastavením úrovně mezipaměti na .  
   
     ```csharp  
     public static void CheckServer()  
@@ -153,10 +153,10 @@ Zásady mezipaměti na základě umístění umožňují aplikaci explicitně de
     End Sub  
     ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Správa mezipaměti pro síťové aplikace](cache-management-for-network-applications.md)
 - [Zásady mezipaměti](cache-policy.md)
 - [Zásady mezipaměti na základě místa](location-based-cache-policies.md)
 - [Zásady mezipaměti na základě času](time-based-cache-policies.md)
-- [\<requestCaching – element > (nastavení sítě)](../configure-apps/file-schema/network/requestcaching-element-network-settings.md)
+- [\<requestCaching> Element (Nastavení sítě)](../configure-apps/file-schema/network/requestcaching-element-network-settings.md)

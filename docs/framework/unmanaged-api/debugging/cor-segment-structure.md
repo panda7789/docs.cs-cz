@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 93aeecb9-7fef-4545-8daf-f566dfc47084
 topic_type:
 - apiref
-ms.openlocfilehash: 0370c74bde9ca5bdbd0fd03515f4b174ddd0a39a
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: a5c743064b8ca645cf45d02b8800c88187bf4c6c
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73132321"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79179287"
 ---
 # <a name="cor_segment-structure"></a>COR_SEGMENT – struktura
 Obsahuje informace o oblasti paměti ve spravované haldě.  
@@ -28,10 +28,10 @@ Obsahuje informace o oblasti paměti ve spravované haldě.
   
 ```cpp  
 typedef struct _COR_SEGMENT {  
-    CORDB_ADDRESS start;            
-    CORDB_ADDRESS end;              
-    CorDebugGenerationTypes gen;    
-    ULONG heap;                     
+    CORDB_ADDRESS start;
+    CORDB_ADDRESS end;
+    CorDebugGenerationTypes gen;
+    ULONG heap;
 } COR_SEGMENT;  
 ```  
   
@@ -41,24 +41,24 @@ typedef struct _COR_SEGMENT {
 |------------|-----------------|  
 |`start`|Počáteční adresa oblasti paměti.|  
 |`end`|Koncová adresa oblasti paměti.|  
-|`gen`|Člen výčtu [CorDebugGenerationTypes –](cordebuggenerationtypes-enumeration.md) , který označuje generování oblasti paměti.|  
-|`heap`|Číslo haldy, ve které se nachází oblast paměti. Další informace naleznete v části Poznámky.|  
+|`gen`|[CorDebugGenerationTypes](cordebuggenerationtypes-enumeration.md) výčtu člena, který označuje generování oblasti paměti.|  
+|`heap`|Číslo haldy, ve kterém je umístěna oblast paměti. Další informace naleznete v části Poznámky.|  
   
 ## <a name="remarks"></a>Poznámky  
- Struktura `COR_SEGMENTS` představuje oblast paměti ve spravované haldě.  objekty `COR_SEGMENTS` jsou členy objektu kolekce [ICorDebugHeapRegionEnum](icordebugheapsegmentenum-interface.md) , který je vyplněn voláním metody [ICorDebugProcess5:: EnumerateHeapRegions –](icordebugprocess5-enumerateheapregions-method.md) .  
+ Struktura `COR_SEGMENTS` představuje oblast paměti ve spravované haldě.  `COR_SEGMENTS`objekty jsou členy objektu kolekce [ICorDebugHeapRegionEnum,](icordebugheapsegmentenum-interface.md) který je naplněn voláním metody [ICorDebugProcess5::EnumerateHeapRegions.](icordebugprocess5-enumerateheapregions-method.md)  
   
- Pole `heap` je číslo procesoru, které odpovídá vyhlášené haldě. Pro kolekce uvolnění paměti pracovní stanice je jeho hodnota vždycky nula, protože pracovní stanice mají jenom jednu haldu uvolňování paměti. Pro sběrače paměti serveru odpovídá jeho hodnota procesoru, ke kterému je halda připojena. Všimněte si, že může existovat více nebo méně hald uvolňování paměti, než kolik existuje skutečným procesorům z důvodu podrobností implementace uvolňování paměti.  
+ Pole `heap` je číslo procesoru, které odpovídá nahlášené haldě. Pro uvolňování paměti pracovní stanice jeho hodnota je vždy nula, protože pracovní stanice mají pouze jednu haldu uvolňování paměti. Pro server uvolňování odpovídá jeho hodnota procesoru haldy je připojen. Všimněte si, že může být více nebo méně hromady uvolňování paměti, než jsou skutečné procesory z důvodu podrobnosti implementace uvolňování paměti.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
+ **Platformy:** Viz [Systémové požadavky](../../get-started/system-requirements.md).  
   
- **Hlavička:** CorDebug. idl, CorDebug. h  
+ **Záhlaví:** CorDebug.idl, CorDebug.h  
   
- **Knihovna:** CorGuids. lib  
+ **Knihovna:** CorGuids.lib  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
+ **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Struktury pro ladění](debugging-structures.md)
-- [Ladění](index.md)
+- [ladění](index.md)

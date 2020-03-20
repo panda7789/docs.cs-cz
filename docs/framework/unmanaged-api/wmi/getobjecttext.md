@@ -1,6 +1,6 @@
 ---
-title: GetObjectText – funkce (Reference nespravovaného rozhraní API)
-description: Funkce GetObjectText vrací textové vykreslování objektu v syntaxi MOF.
+title: Funkce GetObjectText (Nespravovaný odkaz na rozhraní API)
+description: Funkce GetObjectText vrátí textové vykreslování objektu v syntaxi MOF.
 ms.date: 11/06/2017
 api_name:
 - GetObjectText
@@ -14,74 +14,73 @@ helpviewer_keywords:
 - GetObjectText function [.NET WMI and performance counters]
 topic_type:
 - Reference
-ms.openlocfilehash: 412e1ad503fa0e0b4f813298c0ac96ae80098c06
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 6881125760e0f1dc38e6b01917d5829edc95e3ca
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73102456"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79176783"
 ---
 # <a name="getobjecttext-function"></a>Funkce GetObjectText
-Vrátí textové vykreslování objektu v syntaxi formát MOF (Managed Object Format) (MOF).
+Vrátí textové vykreslování objektu v syntaxi formátu spravovaného objektu (MOF).
 
 [!INCLUDE[internalonly-unmanaged](../../../../includes/internalonly-unmanaged.md)]
-    
+
 ## <a name="syntax"></a>Syntaxe  
   
 ```cpp  
 HRESULT GetObjectText (
-   [in] int                vFunc, 
-   [in] IWbemClassObject*   ptr, 
+   [in] int                vFunc,
+   [in] IWbemClassObject*   ptr,
    [in] LONG                lFlags,
    [out] BSTR*              pstrObjectText
-); 
+);
 ```  
 
 ## <a name="parameters"></a>Parametry
 
 `vFunc`  
-pro Tento parametr se nepoužívá.
+[v] Tento parametr není použit.
 
 `ptr`  
-pro Ukazatel na instanci [IWbemClassObject](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject) .
+[v] Ukazatel na instanci [IWbemClassObject.](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject)
 
 `lFlags`  
-pro Normálně 0. Jsou-li zadány `WBEM_FLAG_NO_FLAVORS` (nebo 0x1), jsou kvalifikátory zahrnuty bez informací o šíření nebo charakteru.
+[v] Normálně 0. Pokud `WBEM_FLAG_NO_FLAVORS` (nebo 0x1) je zadán, kvalifikátory jsou zahrnuty bez šíření nebo informace o příchuť.
 
-`pstrObjectText`   
-mimo Ukazatel na `null` na vstupu. Při návratu se nově přidělená `BSTR`, která obsahuje vykreslování syntaxe MOF objektu.  
+`pstrObjectText`[out] Ukazatel na `null` položku při vstupu. Při návratu nově přidělené, `BSTR` který obsahuje vykreslování syntaxe MOF objektu.  
 
 ## <a name="return-value"></a>Návratová hodnota
 
-Následující hodnoty vrácené touto funkcí jsou definovány v souboru hlaviček *WbemCli. h* nebo je můžete definovat jako konstanty v kódu:
+Následující hodnoty vrácené touto funkcí jsou definovány v souboru *hlavičky WbemCli.h,* nebo je můžete definovat jako konstanty v kódu:
 
-|Konstanta  |Hodnota  |Popis  |
+|Trvalé  |Hodnota  |Popis  |
 |---------|---------|---------|
-|`WBEM_E_FAILED` | 0x80041001 | Došlo k obecné chybě. |
+|`WBEM_E_FAILED` | 0x80041001 | Došlo k obecnému selhání. |
 |`WBEM_E_INVALID_PARAMETER` | 0x80041008 | Parametr není platný. |
-|`WBEM_E_OUT_OF_MEMORY` | 0x80041006 | K dokončení této operace není k dispozici dostatek paměti. |
-|`WBEM_S_NO_ERROR` | 0,8 | Volání funkce bylo úspěšné.  |
+|`WBEM_E_OUT_OF_MEMORY` | 0x80041006 | K dokončení operace není k dispozici dostatek paměti. |
+|`WBEM_S_NO_ERROR` | 0 | Volání funkce bylo úspěšné.  |
   
 ## <a name="remarks"></a>Poznámky
 
-Tato funkce zalomí volání metody [IWbemclassObject:: GetObjectText](/windows/desktop/api/wbemcli/nf-wbemcli-iwbemclassobject-getobjecttext) .
+Tato funkce zabalí volání metody [IWbemClassObject::GetObjectText.](/windows/desktop/api/wbemcli/nf-wbemcli-iwbemclassobject-getobjecttext)
 
-Vrácený text MOF neobsahuje všechny informace o objektu, ale pouze dostatek informací pro kompilátor MOF, aby bylo možné znovu vytvořit původní objekt. Například nejsou zahrnuty žádné šířené vlastnosti kvalifikátorů nebo nadřazené třídy.
+Vrácený text MOF neobsahuje všechny informace o objektu, ale pouze dostatek informací pro kompilátor MOF, aby bylo možné znovu vytvořit původní objekt. Například nejsou zahrnuty žádné rozšířené kvalifikátory nebo vlastnosti nadřazené třídy.
 
-Následující algoritmus slouží k rekonstrukci textu parametrů metody:
+Následující algoritmus se používá k rekonstrukci textu parametrů metody:
 
-1. Parametry se přesekvencují v pořadí jejich hodnot identifikátorů.
-1. Parametry, které jsou zadány jako `[in]` a `[out]` jsou zkombinovány do jednoho parametru.
- 
-`pstrObjectText` musí být ukazatel na `null` při volání funkce. nesmí ukazovat na řetězec, který je platný před voláním metody, protože ukazatel nebude navrácen.
+1. Parametry jsou resequenced v pořadí jejich hodnoty identifikátoru.
+1. Parametry, které `[in]` jsou `[out]` určeny jako a jsou kombinovány do jednoho parametru.
+
+`pstrObjectText`musí být ukazatel `null` na při volání funkce; nesmí ukazovat na řetězec, který je platný před voláním metody, protože ukazatel nebude přidělen.
 
 ## <a name="requirements"></a>Požadavky  
-**Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
+**Platformy:** Viz [Systémové požadavky](../../get-started/system-requirements.md).  
   
- **Hlavička:** WMINet_Utils. idl  
+ **Záhlaví:** WMINet_Utils.idl  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
+ **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [WMI a čítače výkonu (Reference nespravovaného rozhraní API)](index.md)
+- [Čítače služby WMI a výkonu (nespravovaný odkaz na rozhraní API)](index.md)

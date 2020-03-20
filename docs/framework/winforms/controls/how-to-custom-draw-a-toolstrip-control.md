@@ -16,40 +16,40 @@ helpviewer_keywords:
 - custom drawing
 - owner drawing
 ms.assetid: 94e7d7bd-a752-441c-b5b3-7acf98881163
-ms.openlocfilehash: 810a680a1a9d9065e80ed87453a728fe628a953d
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: a9f603efdb4b4a5f68154da9c6a8bd05b55b8f46
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69935359"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79182215"
 ---
 # <a name="how-to-custom-draw-a-toolstrip-control"></a>Postupy: Vlastní vykreslení ovládacího prvku ToolStrip
-<xref:System.Windows.Forms.ToolStrip> Ovládací prvky mají následující přidružené třídy vykreslování (malování):  
+Ovládací <xref:System.Windows.Forms.ToolStrip> prvky mají následující přidružené vykreslování (malování) třídy:  
   
-- <xref:System.Windows.Forms.ToolStripSystemRenderer>poskytuje vzhled a styl vašeho operačního systému.  
+- <xref:System.Windows.Forms.ToolStripSystemRenderer>poskytuje vzhled a styl operačního systému.  
   
-- <xref:System.Windows.Forms.ToolStripProfessionalRenderer>poskytuje vzhled a styl systém Microsoft Office.  
+- <xref:System.Windows.Forms.ToolStripProfessionalRenderer>poskytuje vzhled a styl sady Microsoft Office.  
   
-- <xref:System.Windows.Forms.ToolStripRenderer>je abstraktní základní třída pro ostatní dvě třídy vykreslování.  
+- <xref:System.Windows.Forms.ToolStripRenderer>je abstraktní základní třída pro další dvě třídy vykreslování.  
   
- Pro vlastní vykreslování (označované také jako Draw Draw) <xref:System.Windows.Forms.ToolStrip>a můžete přepsat jednu z tříd Renderer a změnit aspekt logiky vykreslování.  
+ Chcete-li vlastní kreslení (označované <xref:System.Windows.Forms.ToolStrip>také jako owner draw) a , můžete přepsat jednu z tříd vykreslovače a změnit aspekt logiky vykreslování.  
   
- Následující postupy popisují různé aspekty vlastního vykreslování.  
+ Následující postupy popisují různé aspekty vlastního výkresu.  
   
-### <a name="to-switch-between-the-provided-renderers"></a>Přepínání mezi poskytnutými zobrazovacími jednotkami  
+### <a name="to-switch-between-the-provided-renderers"></a>Přepínání mezi dodávacími renderery  
   
-- <xref:System.Windows.Forms.ToolStrip.RenderMode%2A> Nastavte vlastnost<xref:System.Windows.Forms.ToolStripRenderMode> na hodnotu, kterou chcete.  
+- Nastavte <xref:System.Windows.Forms.ToolStrip.RenderMode%2A> vlastnost na <xref:System.Windows.Forms.ToolStripRenderMode> požadovanou hodnotu.  
   
-     Pomocí <xref:System.Windows.Forms.ToolStripRenderMode.ManagerRenderMode>nástroje statická <xref:System.Windows.Forms.ToolStrip.RenderMode%2A> určuje zobrazovací jednotku pro vaši aplikaci. Ostatní hodnoty <xref:System.Windows.Forms.ToolStripRenderMode> jsou <xref:System.Windows.Forms.ToolStripRenderMode.Custom>, <xref:System.Windows.Forms.ToolStripRenderMode.Professional>a. <xref:System.Windows.Forms.ToolStripRenderMode.System>  
+     Pomocí <xref:System.Windows.Forms.ToolStripRenderMode.ManagerRenderMode>aplikace <xref:System.Windows.Forms.ToolStrip.RenderMode%2A> určuje statický vykreslovací modul pro vaši aplikaci. Ostatní hodnoty <xref:System.Windows.Forms.ToolStripRenderMode> jsou <xref:System.Windows.Forms.ToolStripRenderMode.Custom> <xref:System.Windows.Forms.ToolStripRenderMode.Professional>, <xref:System.Windows.Forms.ToolStripRenderMode.System>a .  
   
-### <a name="to-change-the-microsoft-officestyle-borders-to-straight"></a>Změna systém Microsoft Office – ohraničení stylu na rovnou  
+### <a name="to-change-the-microsoft-officestyle-borders-to-straight"></a>Změna ohraničení stylu Microsoft Office na rovné  
   
-- Přepište <xref:System.Windows.Forms.ToolStripProfessionalRenderer.OnRenderToolStripBorder%2A?displayProperty=nameWithType>, ale Nevolejte základní třídu.  
+- Přepište <xref:System.Windows.Forms.ToolStripProfessionalRenderer.OnRenderToolStripBorder%2A?displayProperty=nameWithType>, ale nevolejte základní třídu.  
   
 > [!NOTE]
-> Existuje verze této metody pro <xref:System.Windows.Forms.ToolStripRenderer>, <xref:System.Windows.Forms.ToolStripSystemRenderer>a <xref:System.Windows.Forms.ToolStripProfessionalRenderer>.  
+> Existuje verze této metody <xref:System.Windows.Forms.ToolStripRenderer>pro <xref:System.Windows.Forms.ToolStripSystemRenderer>, <xref:System.Windows.Forms.ToolStripProfessionalRenderer>a .  
   
-### <a name="to-change-the-professionalcolortable"></a>Změna ProfessionalColorTable  
+### <a name="to-change-the-professionalcolortable"></a>Změna tabulky ProfessionalColorTable  
   
 - Přepište <xref:System.Windows.Forms.ProfessionalColorTable> a změňte požadované barvy.  
   
@@ -60,7 +60,7 @@ ms.locfileid: "69935359"
         ToolStrip1.Renderer = New ToolStripProfessionalRenderer(t)  
     End Sub  
   
-    Class MyColorTable   
+    Class MyColorTable
     Inherits ProfessionalColorTable  
   
     Public Overrides ReadOnly Property ButtonPressedGradientBegin() As Color  
@@ -107,17 +107,17 @@ ms.locfileid: "69935359"
   
 ### <a name="to-change-the-rendering-for-all-toolstrip-controls-in-your-application"></a>Změna vykreslování pro všechny ovládací prvky ToolStrip v aplikaci  
   
-1. <xref:System.Windows.Forms.ToolStripManager.RenderMode%2A?displayProperty=nameWithType> Pomocí vlastnosti vyberte jednu z poskytnutých zobrazovacích objektů.  
+1. Pomocí <xref:System.Windows.Forms.ToolStripManager.RenderMode%2A?displayProperty=nameWithType> vlastnosti vyberte jeden z poskytnutých rendererů.  
   
-2. Slouží <xref:System.Windows.Forms.ToolStripManager.Renderer%2A?displayProperty=nameWithType> k přiřazení vlastního zobrazovací jednotky.  
+2. Slouží <xref:System.Windows.Forms.ToolStripManager.Renderer%2A?displayProperty=nameWithType> k přiřazení vlastního vykreslovače.  
   
-3. Ujistěte se <xref:System.Windows.Forms.ToolStrip.RenderMode%2A?displayProperty=nameWithType> , že je nastavená výchozí <xref:System.Windows.Forms.ToolStripRenderMode.ManagerRenderMode>hodnota.  
+3. Ujistěte <xref:System.Windows.Forms.ToolStrip.RenderMode%2A?displayProperty=nameWithType> se, že je <xref:System.Windows.Forms.ToolStripRenderMode.ManagerRenderMode>nastavena na výchozí hodnotu .  
   
-### <a name="to-turn-off-the-microsoft-office-colors-for-the-entire-application"></a>Vypnutí systém Microsoft Officech barev pro celou aplikaci  
+### <a name="to-turn-off-the-microsoft-office-colors-for-the-entire-application"></a>Vypnutí barev sady Microsoft Office pro celou aplikaci  
   
-- Nastavte <xref:System.Windows.Forms.ToolStripManager.VisualStylesEnabled%2A?displayProperty=nameWithType> na `false`.  
+- <xref:System.Windows.Forms.ToolStripManager.VisualStylesEnabled%2A?displayProperty=nameWithType> Nastaveno `false`na .  
   
-### <a name="to-turn-off-the-microsoft-office-colors-for-one-toolstrip-control"></a>Vypnutí systém Microsoft Officech barev pro jeden ovládací prvek ToolStrip  
+### <a name="to-turn-off-the-microsoft-office-colors-for-one-toolstrip-control"></a>Vypnutí ovládacího prvku Microsoft Office pro jeden ovládací prvek ToolStrip  
   
 - Použijte kód podobný následujícímu příkladu kódu.  
   
@@ -133,11 +133,11 @@ ms.locfileid: "69935359"
     toolStrip.Renderer = new ToolStripProfessionalRenderer(colorTable);  
     ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Forms.ToolStripSystemRenderer>
 - <xref:System.Windows.Forms.ToolStripProfessionalRenderer>
 - <xref:System.Windows.Forms.ToolStripRenderer>
 - [Ovládací prvky s vestavěnou podporou vykreslování vlastníkem](controls-with-built-in-owner-drawing-support.md)
-- [Postupy: Vytvoření a nastavení vlastního zobrazovací jednotky pro ovládací prvek ToolStrip v model Windows Forms](create-and-set-a-custom-renderer-for-the-toolstrip-control-in-wf.md)
-- [Přehled ovládacího prvku ToolStrip](toolstrip-control-overview-windows-forms.md)
+- [Postupy: Vytvoření a nastavení vlastního rendereru pro ovládací prvek ToolStrip ve Windows Forms](create-and-set-a-custom-renderer-for-the-toolstrip-control-in-wf.md)
+- [ToolStrip – přehled ovládacího prvku](toolstrip-control-overview-windows-forms.md)

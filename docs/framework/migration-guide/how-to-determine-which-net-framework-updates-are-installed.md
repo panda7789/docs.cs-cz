@@ -1,6 +1,6 @@
 ---
-title: Viz nainstalované aktualizace zabezpečení a opravy hotfix pro .NET Framework.
-description: Zjistěte, jak určit, které .NET Framework aktualizace zabezpečení a opravy hotfix jsou nainstalovány v počítači.
+title: Viz nainstalované aktualizace zabezpečení rozhraní .NET Framework a opravy hotfix
+description: Přečtěte si, jak určit, které aktualizace zabezpečení rozhraní .NET Framework a opravy hotfix jsou v počítači nainstalovány.
 ms.date: 11/27/2017
 dev_langs:
 - csharp
@@ -9,42 +9,42 @@ helpviewer_keywords:
 - updates, determining for .NET Framework
 - .NET Framework, determining updates
 ms.assetid: 53c7b5f7-d47a-402a-b194-7244a696a88b
-ms.openlocfilehash: 087519048b412798ef7495d250dc2538ee5c2fd0
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 5c7bf48d5786530a9bcb69fb7cf605ac2c80a4eb
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75716259"
+ms.lasthandoff: 03/15/2020
+ms.locfileid: "79181272"
 ---
-# <a name="how-to-determine-which-net-framework-security-updates-and-hotfixes-are-installed"></a>Jak určit, které .NET Framework aktualizace zabezpečení a opravy hotfix jsou nainstalovány
+# <a name="how-to-determine-which-net-framework-security-updates-and-hotfixes-are-installed"></a>Jak zjistit, které aktualizace zabezpečení rozhraní .NET Framework a opravy hotfix jsou nainstalovány
 
-V tomto článku se dozvíte, jak zjistit, které .NET Framework aktualizace zabezpečení a opravy hotfix jsou nainstalovány v počítači.
+V tomto článku se dozvíte, které aktualizace zabezpečení rozhraní .NET Framework a opravy hotfix jsou v počítači nainstalovány.
 
 > [!NOTE]
 > Všechny techniky uvedené v tomto článku vyžadují účet s oprávněními správce.
 
-## <a name="use-registry-editor"></a>Použití Editoru registru
+## <a name="use-registry-editor"></a>Použít Editor registru
 
-Nainstalované aktualizace zabezpečení a opravy hotfix pro každou verzi .NET Framework nainstalované na počítači jsou uvedené v registru Windows. K zobrazení těchto informací můžete použít program Editor registru (*Regedit. exe*).
+Nainstalované aktualizace zabezpečení a opravy hotfix pro každou verzi rozhraní .NET Framework nainstalovaných v počítači jsou uvedeny v registru systému Windows. K zobrazení těchto informací můžete použít program Editor registru (*regedit.exe*).
 
-1. Spusťte program **Regedit. exe**. V systému Windows 8 a novějších verzích klikněte pravým tlačítkem myši na **Start** ![snímku loga Windows Key.](./media/how-to-determine-which-net-framework-updates-are-installed/windows-keyboard-logo.png "Windowskeyboardlogo")a pak vyberte **Spustit**. Do pole **otevřít** zadejte **Regedit** a vyberte **OK**.
+1. Otevřete program **regedit.exe**. Ve Windows 8 a novějších verzích klikněte pravým tlačítkem **Run**myši na **položku Spustit** ![snímek obrazovky loga klíče systému Windows.](./media/how-to-determine-which-net-framework-updates-are-installed/windows-keyboard-logo.png "Windowskeyboardlogo") Do pole **Otevřít** zadejte **regedit** a vyberte **OK**.
 
 2. V editoru registru otevřete následující podklíč:
 
-     **HKEY_LOCAL_MACHINE \SOFTWARE\Wow6432Node\Microsoft\Updates**
+     **HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Updates**
 
      Nainstalované aktualizace jsou uvedeny v podklíčích, které určují verzi rozhraní .NET Framework, na kterou se vztahují. Jednotlivé aktualizace jsou označeny číslem znalostní báze Knowledge Base (KB).
 
-V editoru registru jsou verze rozhraní .NET Framework a nainstalované aktualizace pro jednotlivé verze uloženy v různých podklíčích. Informace o zjištění čísel nainstalovaných verzí najdete v tématu [Postup: určení, které verze .NET Framework jsou nainstalovány](how-to-determine-which-versions-are-installed.md).
+V editoru registru jsou verze rozhraní .NET Framework a nainstalované aktualizace pro jednotlivé verze uloženy v různých podklíčích. Informace o zjišťování nainstalovaných čísel verzí naleznete v [tématu Postup: Určení, které verze rozhraní .NET Framework jsou nainstalovány](how-to-determine-which-versions-are-installed.md).
 
-## <a name="query-the-registry-using-code"></a>Dotazování registru pomocí kódu
+## <a name="query-the-registry-using-code"></a>Dotaz na registr pomocí kódu
 
-Následující příklad programově určuje .NET Framework aktualizace zabezpečení a opravy hotfix, které jsou nainstalovány v počítači:
+Následující příklad programově určuje aktualizace zabezpečení rozhraní .NET Framework a opravy hotfix nainstalované v počítači:
 
 [!code-csharp[ListUpdates](../../../samples/snippets/csharp/VS_Snippets_CLR/listupdates/cs/program.cs)]
 [!code-vb[ListUpdates](../../../samples/snippets/visualbasic/VS_Snippets_CLR/listupdates/vb/program.vb)]
 
-Příklad vytvoří výstup podobný následujícímu:
+Příklad vytvoří výstup, který je podobný následujícímu:
 
 ```console
 Microsoft .NET Framework 4 Client Profile
@@ -65,16 +65,16 @@ Microsoft .NET Framework 4 Extended
   KB2600217
 ```
 
-## <a name="use-powershell-to-query-the-registry"></a>Použití PowerShellu k dotazování registru
+## <a name="use-powershell-to-query-the-registry"></a>Použití prostředí PowerShell k dotazování registru
 
-Následující příklad ukazuje, jak určit .NET Framework aktualizace zabezpečení a opravy hotfix, které jsou nainstalovány na počítači pomocí prostředí PowerShell:
+Následující příklad ukazuje, jak určit aktualizace zabezpečení rozhraní .NET Framework a opravy hotfix nainstalované v počítači pomocí prostředí PowerShell:
 
 ```powershell
 $DotNetVersions = Get-ChildItem HKLM:\SOFTWARE\WOW6432Node\Microsoft\Updates | Where-Object {$_.name -like
  "*.NET Framework*"}
 
 ForEach($Version in $DotNetVersions){
-    
+
    $Updates = Get-ChildItem $Version.PSPath
     $Version.PSChildName
     ForEach ($Update in $Updates){
@@ -83,7 +83,7 @@ ForEach($Version in $DotNetVersions){
 }
 ```
 
-Příklad vytvoří výstup podobný následujícímu:
+Příklad vytvoří výstup, který je podobný následujícímu:
 
 ```console
 Microsoft .NET Framework 4 Client Profile
@@ -104,8 +104,8 @@ KB2600211
 KB2600217
 ```
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Postupy: určení, které verze .NET Framework jsou nainstalovány](how-to-determine-which-versions-are-installed.md)
-- [Instalace .NET Framework pro vývojáře](../install/guide-for-developers.md)
+- [Postup: Určení nainstalovaných verzí rozhraní .NET Framework](how-to-determine-which-versions-are-installed.md)
+- [Instalace rozhraní .NET Framework pro vývojáře](../install/guide-for-developers.md)
 - [Verze a závislosti](versions-and-dependencies.md)

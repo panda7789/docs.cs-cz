@@ -1,53 +1,53 @@
 ---
-title: 'ICorDebugMergedAssemblyRecord:: getculture – metoda'
+title: ICorDebugMergedAssemblyRecord::Metoda GetCulture
 ms.date: 03/30/2017
 ms.assetid: 030b2f8c-8c21-40b7-855d-3afa78975a17
-ms.openlocfilehash: 77ad8ee7977096e87b9fd2e131920a042243560e
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.openlocfilehash: ad54a93b16e803170987dd56d8063669f7e67f94
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76793161"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79178755"
 ---
-# <a name="icordebugmergedassemblyrecordgetculture-method"></a>ICorDebugMergedAssemblyRecord:: getculture – metoda
-Získá řetězec názvu jazykové verze sestavení.  
+# <a name="icordebugmergedassemblyrecordgetculture-method"></a>ICorDebugMergedAssemblyRecord::Metoda GetCulture
+Získá řetězec název jazykové verze sestavení.  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```cpp  
 HRESULT GetCulture(  
-   [in] ULONG32 cchCulture,   
-   [out] ULONG32 *pcchCulture,   
+   [in] ULONG32 cchCulture,
+   [out] ULONG32 *pcchCulture,
    [out, size_is(cchCulture), length_is(*pcchCulture)] WCHAR szCulture[]  
 );  
 ```  
   
 ## <a name="parameters"></a>Parametry  
  `cchCulture`  
- pro Počet znaků ve vyrovnávací paměti `szCulture`.  
+ [v] Počet znaků ve `szCulture` vyrovnávací paměti.  
   
  `pcchCulture`  
- mimo Počet znaků skutečně zapsaných do vyrovnávací paměti `szCulture`.  
+ [out] Počet znaků skutečně zapsaných `szCulture` do vyrovnávací paměti.  
   
  `szCulture`  
- mimo Pole znaků, které obsahuje název jazykové verze.  
+ [out] Pole znaků, které obsahuje název jazykové verze.  
   
 ## <a name="remarks"></a>Poznámky  
- Název jazykové verze je jedinečný řetězec, který identifikuje jazykovou verzi, jako je "en-US" (pro anglickou (USA) jazykovou verzi), nebo "neutrální" (pro neutrální jazykovou verzi).  
+ Název jazykové verze je jedinečný řetězec, který identifikuje jazykovou verzi, například "en US" (pro jazykovou verzi angličtiny (Spojené státy) nebo "neutrální" (pro neutrální jazykovou verzi).  
   
 > [!NOTE]
-> Tato metoda je k dispozici pouze s .NET Native.  
+> Tato metoda je k dispozici pouze s nativní .NET.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Hlavička:** CorDebug. idl, CorDebug. h  
+ **Záhlaví:** CorDebug.idl, CorDebug.h  
   
- **Knihovna:** CorGuids. lib  
+ **Knihovna:** CorGuids.lib  
   
- **Verze .NET Framework:** [!INCLUDE[net_46_native](../../../../includes/net-46-native-md.md)]  
+ **Verze rozhraní .NET Framework:**[!INCLUDE[net_46_native](../../../../includes/net-46-native-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [ICorDebugMergedAssemblyRecord – rozhraní](icordebugmergedassemblyrecord-interface.md)
-- [Rozhraní pro ladění](debugging-interfaces.md)
+- [Debugging – rozhraní](debugging-interfaces.md)

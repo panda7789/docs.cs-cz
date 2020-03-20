@@ -1,5 +1,5 @@
 ---
-title: Svázání ovládacího prvku DataGrid se zdrojem dat
+title: Vazby ovládacího prvku DataGrid se zdrojem dat
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -14,26 +14,26 @@ helpviewer_keywords:
 - bound controls [Windows Forms]
 - data-bound controls [Windows Forms], DataGrid
 ms.assetid: 128cdb07-dfd3-4d60-9d6a-902847667c36
-ms.openlocfilehash: 2634a6bd8ace36bcf7a49120162474a8c04b2b83
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: 42514c6a0ab9cf912a32b13675a069976632ece5
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76746689"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79182247"
 ---
 # <a name="how-to-bind-the-windows-forms-datagrid-control-to-a-data-source"></a>Postupy: Vázání ovládacího prvku Windows Forms DataGrid ke zdroji dat
 > [!NOTE]
-> Ovládací prvek <xref:System.Windows.Forms.DataGridView> nahrazuje a přidává funkce do ovládacího prvku <xref:System.Windows.Forms.DataGrid>; Nicméně ovládací prvek <xref:System.Windows.Forms.DataGrid> se zachovává pro zpětnou kompatibilitu i pro budoucí použití, pokud zvolíte. Další informace naleznete v tématu [rozdíly mezi ovládacími prvky model Windows Forms DataGridView a DataGrid](differences-between-the-windows-forms-datagridview-and-datagrid-controls.md).  
+> Ovládací <xref:System.Windows.Forms.DataGridView> prvek nahradí a přidá <xref:System.Windows.Forms.DataGrid> funkce ovládacího prvku; <xref:System.Windows.Forms.DataGrid> ovládací prvek je však zachován a to jak pro zpětnou kompatibilitu, tak pro budoucí použití, pokud se rozhodnete. Další informace naleznete v [tématu Rozdíly mezi ovládacími prvky Windows Forms DataGridView a DataGrid](differences-between-the-windows-forms-datagridview-and-datagrid-controls.md).  
   
- Ovládací prvek model Windows Forms <xref:System.Windows.Forms.DataGrid> je speciálně navržený tak, aby zobrazoval informace ze zdroje dat. Ovládací prvek navážete za běhu voláním metody <xref:System.Windows.Forms.DataGrid.SetDataBinding%2A>. I když můžete zobrazit data z nejrůznějších zdrojů dat, nejdůležitější zdroje jsou datové sady a zobrazení dat.  
+ Ovládací prvek <xref:System.Windows.Forms.DataGrid> Windows Forms je speciálně navržen tak, aby zobrazoval informace ze zdroje dat. Svázat ovládací prvek za běhu <xref:System.Windows.Forms.DataGrid.SetDataBinding%2A> voláním metody. I když můžete zobrazit data z různých zdrojů dat, nejtypičtějšízdroje jsou datové sady a zobrazení dat.  
   
-### <a name="to-data-bind-the-datagrid-control-programmatically"></a>Pro datovou svázání ovládacího prvku DataGrid prostřednictvím kódu programu  
+### <a name="to-data-bind-the-datagrid-control-programmatically"></a>Chcete-li data-bind ovládací prvek DataGrid programově  
   
-1. Zadejte kód, který bude datovou sadu vyplnit.  
+1. Napište kód pro vyplnění datové sady.  
   
-     Pokud je zdrojem dat datová sada nebo zobrazení dat založené na tabulce DataSet, přidejte do formuláře kód, který datovou sadu vyplní.  
+     Pokud je zdrojem dat dat sada dat nebo zobrazení dat založené na tabulce datových sad, přidejte do formuláře kód pro vyplnění datové sady.  
   
-     Přesný kód, který použijete, závisí na tom, kde datová sada získává data. Pokud je datová sada naplněna přímo z databáze, obvykle zavoláte metodu `Fill` datového adaptéru, jak je uvedeno v následujícím příkladu, který naplňuje datovou sadu s názvem `DsCategories1`:  
+     Přesný kód, který používáte, závisí na tom, kde datová sada získává data. Pokud je datová sada naplněna přímo z databáze, `Fill` obvykle voláte metodu datového adaptéru, jako v `DsCategories1`následujícím příkladu, který naplňuje datovou sadu s názvem :  
   
     ```vb  
     sqlDataAdapter1.Fill(DsCategories1)  
@@ -47,7 +47,7 @@ ms.locfileid: "76746689"
     sqlDataAdapter1->Fill(dsCategories1);  
     ```  
   
-     Pokud je datová sada vyplněna z webové služby XML, obvykle je ve svém kódu vytvořena instance služby a poté je volána jedna z metod, která vrátí datovou sadu. Datovou sadu pak sloučíte z webové služby XML do vaší místní datové sady. Následující příklad ukazuje, jak lze vytvořit instanci webové služby XML s názvem `CategoriesService`, zavolat metodu `GetCategories` a sloučit výslednou datovou sadu do místní datové sady s názvem `DsCategories1`:  
+     Pokud je datová sada vyplňována z webové služby XML, obvykle vytvoříte instanci služby v kódu a pak zavoláte jednu z jejích metod a vrátíte datovou sadu. Potom sloučit datovou sadu z webové služby XML do místní datové sady. Následující příklad ukazuje, jak můžete vytvořit instanci `CategoriesService`webové `GetCategories` služby XML s názvem , volat její `DsCategories1`metodu a sloučit výslednou datovou sadu do místní datové sady s názvem :  
   
     ```vb  
     Dim ws As New MyProject.localhost.CategoriesService()  
@@ -62,18 +62,18 @@ ms.locfileid: "76746689"
     ```  
   
     ```cpp  
-    MyProject::localhost::CategoriesService^ ws =   
+    MyProject::localhost::CategoriesService^ ws =
        new MyProject::localhost::CategoriesService();  
     ws->Credentials = System::Net::CredentialCache::DefaultCredentials;  
     dsCategories1->Merge(ws->GetCategories());  
     ```  
   
-2. Zavolejte metodu <xref:System.Windows.Forms.DataGrid.SetDataBinding%2A> ovládacího prvku <xref:System.Windows.Forms.DataGrid> a předejte jí zdroj dat a datový člen. Pokud nepotřebujete explicitně předat datový člen, předejte prázdný řetězec.  
+2. Volání <xref:System.Windows.Forms.DataGrid> metody ovládacího <xref:System.Windows.Forms.DataGrid.SetDataBinding%2A> prvku, předání zdroje dat a datového člena. Pokud nepotřebujete explicitně předat datový člen, předejte prázdný řetězec.  
   
     > [!NOTE]
-    > Pokud vytváříte vazbu mezi mřížkou poprvé, můžete nastavit vlastnosti <xref:System.Windows.Forms.DataGrid.DataSource%2A> a <xref:System.Windows.Forms.DataGrid.DataMember%2A> ovládacího prvku. Po nastavení ale tyto vlastnosti nemůžete resetovat. Proto se doporučuje vždy používat metodu <xref:System.Windows.Forms.DataGrid.SetDataBinding%2A>.  
+    > Pokud jste vazba mřížky poprvé, můžete nastavit <xref:System.Windows.Forms.DataGrid.DataSource%2A> ovládací <xref:System.Windows.Forms.DataGrid.DataMember%2A> prvek a vlastnosti. Tyto vlastnosti však nelze obnovit, jakmile byly nastaveny. Proto se doporučuje vždy použít <xref:System.Windows.Forms.DataGrid.SetDataBinding%2A> metodu.  
   
-     Následující příklad ukazuje, jak lze programově navazovat vazby na tabulku Customers v datové sadě s názvem `DsCustomers1`:  
+     Následující příklad ukazuje, jak můžete programově vytvořit vazbu na `DsCustomers1`tabulku Zákazníci v datové sadě s názvem :  
   
     ```vb  
     DataGrid1.SetDataBinding(DsCustomers1, "Customers")  
@@ -87,7 +87,7 @@ ms.locfileid: "76746689"
     dataGrid1->SetDataBinding(dsCustomers1, "Customers");  
     ```  
   
-     Pokud tabulka Customers (zákazníci) je jediná tabulka v datové sadě, můžete datovou mřížku vytvořit jinak, a to takto:  
+     Pokud je tabulka Zákazníci jedinou tabulkou v datové sadě, můžete alternativně svázat mřížku tímto způsobem:  
   
     ```vb  
     DataGrid1.SetDataBinding(DsCustomers1, "")  
@@ -101,7 +101,7 @@ ms.locfileid: "76746689"
     dataGrid1->SetDataBinding(dsCustomers1, "");  
     ```  
   
-3. Volitelné Přidejte do mřížky vhodné styly tabulek a sloupců. Pokud neexistují žádné styly tabulek, zobrazí se tabulka, ale s minimálním formátováním a všemi zobrazenými sloupci.  
+3. (Nepovinné) Přidejte do mřížky příslušné styly a styly sloupců. Pokud nejsou k dispozici žádné styly tabulky, zobrazí se tabulka, ale s minimálním formátováním a se všemi viditelnými sloupci.  
   
 ## <a name="see-also"></a>Viz také
 

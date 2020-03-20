@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 6ef78d3c-1c69-4141-b687-dcb065b7a74d
 topic_type:
 - apiref
-ms.openlocfilehash: d03c22c455f0e44ce32d4593d9eee50ceef94a22
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 812b70a594b5aa933f52d36f32d96d712267ecf4
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74443956"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79177962"
 ---
 # <a name="cor_native_link-structure"></a>COR_NATIVE_LINK – struktura
 Obsahuje informace, které se používají k propojení nativního kódu.  
@@ -27,7 +27,7 @@ Obsahuje informace, které se používají k propojení nativního kódu.
 ## <a name="syntax"></a>Syntaxe  
   
 ```cpp  
-typedef struct   
+typedef struct
 {  
     BYTE        m_linkType;  
     BYTE        m_flags;  
@@ -39,20 +39,20 @@ typedef struct
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`m_linkType`|Typ, který se má propojit v nativním kódu. Tato hodnota je jednou z hodnot [CorNativeLinkType –](../../../../docs/framework/unmanaged-api/metadata/cornativelinktype-enumeration.md) .|  
-|`m_flags`|Příznaky používané linkerem při propojování nativního kódu. Tato hodnota je jednou z hodnot [CorNativeLinkFlags –](../../../../docs/framework/unmanaged-api/metadata/cornativelinkflags-enumeration.md) .|  
+|`m_linkType`|Typ, který má být propojen v nativním kódu. Tato hodnota je jednou z hodnot [CorNativeLinkType.](../../../../docs/framework/unmanaged-api/metadata/cornativelinktype-enumeration.md)|  
+|`m_flags`|Příznaky používané propojovacím programem při propojování nativního kódu. Tato hodnota je jednou z hodnot [CorNativeLinkFlags.](../../../../docs/framework/unmanaged-api/metadata/cornativelinkflags-enumeration.md)|  
 |`m_entryPoint`|Token metadat MemberRef, který představuje vstupní bod. Formát je `lib:entrypoint`.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Hlavička:** Cor. h  
+ **Záhlaví:** Kor.h.  
   
- **Knihovna:** Používá se jako prostředek v knihovně MsCorEE. dll.  
+ **Knihovna:** Používá se jako prostředek v souboru MsCorEE.dll  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Struktury pro metadata](../../../../docs/framework/unmanaged-api/metadata/metadata-structures.md)
 - [CorNativeLinkType – výčet](../../../../docs/framework/unmanaged-api/metadata/cornativelinktype-enumeration.md)

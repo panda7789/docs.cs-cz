@@ -2,35 +2,35 @@
 title: Použití kanálu klienta zjišťování
 ms.date: 03/30/2017
 ms.assetid: 1494242a-1d64-4035-8ecd-eb4f06c8d2ba
-ms.openlocfilehash: 05ca54d62179d024e619bc5c9c70a4e08b9dd62f
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: 2d9dd68d233541f4d8cb3185adc1023cd5a19de1
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73975942"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79184255"
 ---
 # <a name="using-the-discovery-client-channel"></a>Použití kanálu klienta zjišťování
-Při psaní klientské aplikace WCF potřebujete znát adresu koncového bodu služby, kterou voláte. V mnoha případech adresa koncového bodu služby není známá předem nebo se adresa služby mění v průběhu času. Kanál klienta zjišťování umožňuje napsat aplikaci klienta WCF, popsat službu, kterou chcete volat, a kanál klienta automaticky odešle požadavek testu. Když služba odpoví, kanál klienta zjišťování získá adresu koncového bodu pro službu z odpovědi sondy a použije ji k volání služby.  
+Při psaní klientské aplikace WCF potřebujete znát adresu koncového bodu služby, kterou voláte. V mnoha situacích není předem známa adresa koncového bodu služby nebo se adresa služby v průběhu času mění. Kanál klienta zjišťování umožňuje napsat klientskou aplikaci WCF, popsat službu, kterou chcete volat, a kanál klienta automaticky odešle požadavek na sondu. Když služba odpoví, kanál klienta zjišťování načte adresu koncového bodu pro službu z odpovědi sondy a použije ji k volání služby.  
   
 ## <a name="using-the-discovery-client-channel"></a>Použití kanálu klienta zjišťování  
- Chcete-li použít kanál klienta zjišťování, přidejte instanci <xref:System.ServiceModel.Discovery.DiscoveryClientBindingElement> do zásobníku kanálu klienta. Případně můžete použít <xref:System.ServiceModel.Discovery.DynamicEndpoint> a <xref:System.ServiceModel.Discovery.DiscoveryClientBindingElement> je automaticky přidán do vaší vazby, pokud ještě neexistují.  
+ Chcete-li použít kanál klienta zjišťování, přidejte instanci zásobníku <xref:System.ServiceModel.Discovery.DiscoveryClientBindingElement> klientských kanálů. Případně můžete použít <xref:System.ServiceModel.Discovery.DynamicEndpoint> a <xref:System.ServiceModel.Discovery.DiscoveryClientBindingElement> a je automaticky přidán do vazby, pokud již není k dispozici.  
   
 > [!CAUTION]
-> Doporučuje se, aby <xref:System.ServiceModel.Discovery.DiscoveryClientBindingElement> v zásobníku kanálů klienta na nejvyšší úrovni. Libovolný prvek vazby, který je přidán nad <xref:System.ServiceModel.Discovery.DiscoveryClientBindingElement> musí zajistit, aby <xref:System.ServiceModel.ChannelFactory> nebo kanál, který vytvořil, nepoužíval adresu koncového bodu nebo adresu `Via` (předaný metodě `CreateChannel`), protože nemusí obsahovat správnou adresu.  
+> Doporučuje se, <xref:System.ServiceModel.Discovery.DiscoveryClientBindingElement> že je nejvyšší prvek v zásobníku klientského kanálu. Všechny element vazby, který <xref:System.ServiceModel.Discovery.DiscoveryClientBindingElement> je přidán nad <xref:System.ServiceModel.ChannelFactory> musí ujistěte se, že nebo `Via` kanál, který `CreateChannel` vytvoří nepoužívá adresu koncového bodu nebo adresu (předána metodě), protože nemusí obsahovat správnou adresu.  
   
  Třída <xref:System.ServiceModel.Discovery.DiscoveryClientBindingElement> obsahuje dvě veřejné vlastnosti:  
   
-1. <xref:System.ServiceModel.Discovery.DiscoveryClientBindingElement.FindCriteria%2A>, která se používá k popisu služby, kterou chcete volat.  
+1. <xref:System.ServiceModel.Discovery.DiscoveryClientBindingElement.FindCriteria%2A>, který se používá k popisu služby, kterou chcete volat.  
   
-2. <xref:System.ServiceModel.Discovery.DiscoveryClientBindingElement.DiscoveryEndpointProvider%2A>, který určuje koncový bod zjišťování, do kterého se mají odesílat zprávy zjišťování.  
+2. <xref:System.ServiceModel.Discovery.DiscoveryClientBindingElement.DiscoveryEndpointProvider%2A>který určuje koncový bod zjišťování, do kterého chcete odesílat zprávy zjišťování.  
   
- Vlastnost <xref:System.ServiceModel.Discovery.FindCriteria.%23ctor%2A> umožňuje zadat kontrakt služby, který hledáte, všechny požadované identifikátory URI oboru a maximální počet času, který se pokusí otevřít kanál. Typ kontraktu je určen voláním konstruktoru <xref:System.ServiceModel.Discovery.FindCriteria>. Do vlastnosti <xref:System.ServiceModel.Discovery.FindCriteria.Scopes%2A> lze přidat identifikátory URI oboru. Vlastnost <xref:System.ServiceModel.Discovery.FindCriteria.MaxResults%2A> umožňuje zadat maximální počet výsledků, ke kterým se klient pokusí připojit. Když se přijme odpověď testu, klient se pokusí otevřít kanál pomocí adresy koncového bodu z odpovědi testu. Pokud dojde k výjimce, klient přejde k další reakci testu, která čeká na přijetí dalších odpovědí v případě potřeby. I nadále to bude pokračovat, dokud se kanál úspěšně neotevře nebo dokud nedosáhnete maximálního počtu výsledků. Další informace o těchto nastaveních naleznete v tématu <xref:System.ServiceModel.Discovery.FindCriteria>.  
+ Vlastnost <xref:System.ServiceModel.Discovery.FindCriteria.%23ctor%2A> umožňuje zadat servisní smlouvu, kterou hledáte, všechny požadované identifikátory URI oboru a maximální počet času při pokusu o otevření kanálu. Typ smlouvy je určen voláním <xref:System.ServiceModel.Discovery.FindCriteria>konstruktoru . Do vlastnosti lze přidat <xref:System.ServiceModel.Discovery.FindCriteria.Scopes%2A> identifikátory URI oboru. Vlastnost <xref:System.ServiceModel.Discovery.FindCriteria.MaxResults%2A> umožňuje zadat maximální počet výsledků, ke kterým se klient pokusí připojit. Při přijetí odpovědi sondy se klient pokusí otevřít kanál pomocí adresy koncového bodu z odpovědi sondy. Pokud dojde k výjimce klient přesune na další odpověď sonda a čeká na další odpovědi, které mají být přijaty v případě potřeby. Pokračuje v tom, dokud kanál je úspěšně otevřen nebo maximální počet výsledků je dosaženo. Další informace o těchto <xref:System.ServiceModel.Discovery.FindCriteria>nastaveních naleznete v tématu .  
   
- Vlastnost <xref:System.ServiceModel.Discovery.DiscoveryClientBindingElement.DiscoveryEndpointProvider%2A> umožňuje zadat koncový bod zjišťování, který se má použít. Obvykle se jedná o <xref:System.ServiceModel.Discovery.UdpDiscoveryEndpoint>, ale může to být libovolný platný koncový bod.  
+ Vlastnost <xref:System.ServiceModel.Discovery.DiscoveryClientBindingElement.DiscoveryEndpointProvider%2A> umožňuje zadat koncový bod zjišťování, který se má použít. Obvykle se <xref:System.ServiceModel.Discovery.UdpDiscoveryEndpoint>jedná o , ale může to být libovolný platný koncový bod.  
   
- Při vytváření vazby, která se má použít ke komunikaci se službou, musíte být opatrní, abyste použili stejnou vazbu jako službu. Jediným rozdílem je, že vazba klienta má <xref:System.ServiceModel.Discovery.DiscoveryClientBindingElement> v horní části zásobníku. Pokud služba používá jednu ze zadaných vazeb poskytovaných systémem, vytvořte novou <xref:System.ServiceModel.Channels.CustomBinding> a předejte ji do systému <xref:System.ServiceModel.Channels.CustomBinding.%23ctor%2A> konstruktoru. Potom můžete přidat <xref:System.ServiceModel.Discovery.DiscoveryClientBindingElement> voláním `Insert` na vlastnost <xref:System.ServiceModel.Channels.CustomBinding.Elements%2A>.  
+ Při vytváření vazby pro komunikaci se službou, musíte být opatrní používat přesně stejnou vazbu jako služba. Jediným rozdílem je, že <xref:System.ServiceModel.Discovery.DiscoveryClientBindingElement> vazba klienta má v horní části zásobníku. Pokud služba používá jednu ze systémem poskytovaných <xref:System.ServiceModel.Channels.CustomBinding> vazeb, vytvořte nové a <xref:System.ServiceModel.Channels.CustomBinding.%23ctor%2A> předat v systému poskytované vazby konstruktoru. Pak můžete přidat <xref:System.ServiceModel.Discovery.DiscoveryClientBindingElement> voláním `Insert` <xref:System.ServiceModel.Channels.CustomBinding.Elements%2A> na vlastnost.  
   
- Jakmile přidáte <xref:System.ServiceModel.Discovery.DiscoveryClientBindingElement> do vazby a nakonfigurujete ji, můžete vytvořit instanci třídy klienta WCF, otevřít ji a volat její metody. Následující příklad používá kanál klienta zjišťování k zjištění služby WCF, která implementuje třídu `ICalculator` (používá se v kurzu Začínáme WCF) a volá metodu `Add`.  
+ Jakmile jste přidali <xref:System.ServiceModel.Discovery.DiscoveryClientBindingElement> do vazby a nakonfigurovali ji, můžete vytvořit instanci třídy wcf klienta, otevřít ji a volat její metody. Následující příklad používá kanál klienta zjišťování ke zjištění služby WCF, která implementuje `ICalculator` třídu `Add` (použitou v kurzu Začínáme wcf) a volá její metodu.  
   
 ```csharp
 // Create the DiscoveryClientBindingElement  
@@ -41,7 +41,7 @@ bindingElement.FindCriteria = new FindCriteria(typeof(ICalculator)) { MaxResults
 // Use the UdpDiscoveryEndpoint  
 bindingElement.DiscoveryEndpoint = new UdpDiscoveryEndpoint();  
   
-// The service uses the BasicHttpBinding, so use that and insert the DiscoveryClientBindingElement at the   
+// The service uses the BasicHttpBinding, so use that and insert the DiscoveryClientBindingElement at the
 // top of the stack  
 CustomBinding binding = new CustomBinding(new BasicHttpBinding());  
 binding.Elements.Insert(0,bindingElement);  
@@ -60,4 +60,4 @@ catch (EndpointNotFoundException ex)
 ```  
   
 ## <a name="security-and-the-discovery-client-channel"></a>Zabezpečení a kanál klienta zjišťování  
- Při použití kanálu klienta zjišťování jsou zadány dva koncové body. Jedna se používá pro zprávy zjišťování, obvykle <xref:System.ServiceModel.Discovery.UdpDiscoveryEndpoint>a druhá je koncovým bodem aplikace. Při implementaci zabezpečené služby musí být zajištěna péče o zabezpečení obou koncových bodů. Další informace o zabezpečení najdete v tématu [zabezpečení služeb a klientů](../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md).
+ Při použití kanálu klienta zjišťování jsou určeny dva koncové body. Jeden se používá pro <xref:System.ServiceModel.Discovery.UdpDiscoveryEndpoint>zjišťování zpráv, obvykle a druhý je koncový bod aplikace. Při implementaci zabezpečené služby je třeba dbát na zabezpečení obou koncových bodů. Další informace o zabezpečení naleznete v tématu [Zabezpečení služeb a klientů](../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md).

@@ -3,32 +3,32 @@ title: ICorProfilerInfo10 – rozhraní
 ms.date: 08/06/2019
 author: davmason
 ms.author: davmason
-ms.openlocfilehash: 30179c7c198a343baa3fa01ae64f6d580a3f9e7e
-ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
+ms.openlocfilehash: 4c5d553744008734037975d6e63e1b07b89cf886
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77452198"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79175067"
 ---
 # <a name="icorprofilerinfo10-interface"></a>ICorProfilerInfo10 – rozhraní
 
-Podtřída [ICorProfilerInfo9](icorprofilerinfo9-interface.md) , která poskytuje metody pro úpravu Il funkce, dotazování na informace z modulu runtime a pozastavení a obnovení modulu runtime.
+Podtřída [ICorProfilerInfo9,](icorprofilerinfo9-interface.md) která poskytuje metody pro úpravu funkce IL, informace o dotazu z běhu a pozastavení a obnovení běhu.
 
 ## <a name="methods"></a>Metody  
 
 | Metoda|Popis|  
 | ------------|-----------------|  
-|[Metoda EnumerateObjectReferences](icorprofilerinfo10-enumerateobjectreferences-method.md)|Po předaném identifikátoru ObjectID, zpětnému volání a clientData vytvoří výčet jednotlivých odkazů na objekty (pokud existuje). |
-|[Metoda IsFrozenObject](icorprofilerinfo10-isfrozenobject-method.md)|V případě objektu ObjectID určuje, zda je objekt v segmentu určeném jen pro čtení. |
-|[Metoda GetLOHObjectSizeThreshold](icorprofilerinfo10-getlohobjectsizethreshold-method.md)|Získá hodnotu nakonfigurované prahové hodnoty LOH. |
-|[Metoda RequestReJITWithInliners](icorprofilerinfo10-requestrejitwithinliners-method.md)| ReJITs požadované metody, jakož i všechny zažádané metody.  |
-|[Metoda SuspendRuntime](icorprofilerinfo10-suspendruntime-method.md)| Pozastaví modul runtime bez provedení GC. |
-|[Metoda ResumeRuntime](icorprofilerinfo10-resumeruntime-method.md)| Obnoví modul runtime bez provedení GC. |
+|[EnumerateObjectReferences – metoda](icorprofilerinfo10-enumerateobjectreferences-method.md)|Dané ObjectID, zpětné volání a clientData, vyjmenovává každý odkaz na objekt (pokud existuje). |
+|[IsFrozenObject – metoda](icorprofilerinfo10-isfrozenobject-method.md)|Dané ObjectID, určuje, zda je objekt v segmentu jen pro čtení. |
+|[GetLOHObjectSizeThreshold – metoda](icorprofilerinfo10-getlohobjectsizethreshold-method.md)|Získá hodnotu nakonfigurované prahové hodnoty LOH. |
+|[RequestReJITWithInliners – metoda](icorprofilerinfo10-requestrejitwithinliners-method.md)| Požadované metody, jakož i všechny vložky požadovaných metod.  |
+|[SuspendRuntime – metoda](icorprofilerinfo10-suspendruntime-method.md)| Pozastaví dobu běhu bez provedení gc. |
+|[ResumeRuntime – metoda](icorprofilerinfo10-resumeruntime-method.md)| Obnoví dobu běhu bez provedení gc. |
 
 ## <a name="requirements"></a>Požadavky  
-**Platformy:** Viz [podporované operační systémy .NET Core](../../../core/install/dependencies.md?pivots=os-windows).  
-**Hlavička:** CorProf. idl, CorProf. h  
-**Verze rozhraní .NET:** [!INCLUDE[net_core_22](../../../../includes/net-core-30-md.md)] 
+**Platformy:** Viz [operační systémy podporované rozhraním .NET Core](../../../core/install/dependencies.md?pivots=os-windows).  
+**Záhlaví:** CorProf.idl, CorProf.h  
+**Verze rozhraní .NET:**[!INCLUDE[net_core_22](../../../../includes/net-core-30-md.md)]
 
 ## <a name="see-also"></a>Viz také
 

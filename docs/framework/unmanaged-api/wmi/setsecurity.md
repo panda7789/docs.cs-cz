@@ -1,5 +1,5 @@
 ---
-title: SetSecurity – funkce (Reference nespravovaného rozhraní API)
+title: Funkce SetSecurity (nespravovaný odkaz na rozhraní API)
 description: Funkce SetSecurity načte token zosobnění aktuálního vlákna.
 ms.date: 11/06/2017
 api_name:
@@ -14,16 +14,16 @@ helpviewer_keywords:
 - SetSecurity function [.NET WMI and performance counters]
 topic_type:
 - Reference
-ms.openlocfilehash: 6d27779bcfc97e1c4156b8782896e83d4754491b
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 809f6a95fdd6854b3a591b496877838c48d52199
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73120215"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79176731"
 ---
-# <a name="setsecurity-function"></a>SetSecurity – funkce
+# <a name="setsecurity-function"></a>Funkce SetSecurity
 
-Načte token zosobnění přidružený k aktuálnímu vláknu. 
+Načte token zosobnění přidružený k aktuálnímu vláknu.
 
 [!INCLUDE[internalonly-unmanaged](../../../../includes/internalonly-unmanaged.md)]
 
@@ -31,33 +31,33 @@ Načte token zosobnění přidružený k aktuálnímu vláknu.
 
 ```cpp
 HRESULT SetSecurity (
-   [out] boolean* pNeedToReset, 
+   [out] boolean* pNeedToReset,
    [out] HANDLE* pCurrentThreadToken
-); 
+);
 ```
 
 ## <a name="parameters"></a>Parametry
 
 `pNeedToReset`\
-mimo Když funkce vrátí, obsahuje ukazatel na `boolean`, který označuje, zda má být token resetován voláním funkce [ResetSecurity](resetsecurity.md) .
+[out] Když funkce vrátí, obsahuje ukazatel `boolean` na a, který označuje, zda token by měl být resetován voláním [funkce ResetSecurity.](resetsecurity.md)
 
 `token`\
-mimo Když funkce vrátí, obsahuje ukazatel na popisovač zosobněného tokenu přidruženého k aktuálnímu vláknu. Jeho hodnota může být `null`, pokud k aktuálnímu vláknu není přidružen žádný token. 
+[out] Když funkce vrátí, obsahuje ukazatel na popisovač tokenu zosobnění přidružené ho aktuální vlákno. Jeho hodnota `null` může být, pokud neexistuje žádný token přidružený k aktuálnívlákno.
 
 ## <a name="return-value"></a>Návratová hodnota
 
-Pokud je funkce úspěšná, návratová hodnota je `S_OK` (0).
+Pokud je funkce úspěšná, `S_OK` vrácená hodnota je (0).
 
-Pokud dojde k chybě funkce, vrácená hodnota je nenulový kód chyby. Chcete-li získat rozšířené informace o chybě, zavolejte funkci [GetErrorInfo](geterrorinfo.md) .
+Pokud funkce selže, vrácená hodnota je nenulový kód chyby. Chcete-li získat rozšířené informace o chybě, zavolejte funkci [GetErrorInfo.](geterrorinfo.md)
 
 ## <a name="requirements"></a>Požadavky
 
- **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).
+ **Platformy:** Viz [Systémové požadavky](../../get-started/system-requirements.md).
 
- **Hlavička:** WMINet_Utils. idl
+ **Záhlaví:** WMINet_Utils.idl
 
- **Verze .NET Framework:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]
+ **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [WMI a čítače výkonu (Reference nespravovaného rozhraní API)](index.md)
+- [Čítače služby WMI a výkonu (nespravovaný odkaz na rozhraní API)](index.md)

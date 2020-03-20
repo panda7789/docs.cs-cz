@@ -1,25 +1,25 @@
 ---
-title: <add> – element pro <namedCaches>
+title: Element <add> pro <namedCaches>
 ms.date: 03/30/2017
 helpviewer_keywords:
 - add element for <namedCaches>
 - <add> element for <namedCaches>
 ms.assetid: ce2a63a8-c829-4742-a6ea-72ee5d89f169
-ms.openlocfilehash: 076d940e0c15cf48013480fef68b8fac42cf76e9
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.openlocfilehash: c1345022b79df371ad9c89a39a0a8b625e26608c
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70252889"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79154502"
 ---
-# <a name="add-element-for-namedcaches"></a>\<Přidat > element pro \<> namedCaches
-`namedCache` Přidá položku`namedCaches` do kolekce mezipaměti paměti.  
+# <a name="add-element-for-namedcaches"></a>\<přidání prvku \<> pro> namedCaches
+Přidá `namedCache` položku `namedCaches` do kolekce pro mezipaměti paměti.  
   
-[ **\<> Konfigurace**](../configuration-element.md)\
-&nbsp;&nbsp;[ **\<System. Runtime. Caching >** ](system-runtime-caching-element-cache-settings.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;[ **\<memoryCache >** ](memorycache-element-cache-settings.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<namedCaches >** ](namedcaches-element-cache-settings.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<Přidat >**  
+[**\<>konfigurace**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<system.runtime.caching>**](system-runtime-caching-element-cache-settings.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[**\<memoryCache>**](memorycache-element-cache-settings.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<pojmenováno Caches>**](namedcaches-element-cache-settings.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<přidat>**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -30,7 +30,7 @@ ms.locfileid: "70252889"
  </namedCaches>  
 ```  
   
-## <a name="type"></a>type  
+## <a name="type"></a>Typ  
  `None`  
   
 ## <a name="attributes-and-elements"></a>Atributy a elementy  
@@ -40,25 +40,25 @@ ms.locfileid: "70252889"
   
 |Atribut|Popis|  
 |-|-|  
-|`CacheMemoryLimitMegabytes`|Celočíselná hodnota, která určuje maximální povolenou velikost (v megabajtech), kterou může <xref:System.Runtime.Caching.MemoryCache> instance a růst. Výchozí hodnota je 0, což znamená, že <xref:System.Runtime.Caching.MemoryCache> ve výchozím nastavení jsou používány heuristické automatické změny velikosti třídy.|  
+|`CacheMemoryLimitMegabytes`|Celá hodnota, která určuje maximální povolenou velikost (v megabajtech), <xref:System.Runtime.Caching.MemoryCache> na kterou může instanci instanci zvětšit. Výchozí hodnota je 0, což <xref:System.Runtime.Caching.MemoryCache> znamená, že ve výchozím nastavení se používají autosizing heuristiky třídy.|  
 |`Name`|Název mezipaměti.|  
-|`PhysicalMemoryLimitPercentage`|Celočíselná hodnota mezi 0 a 100, která určuje maximální procento fyzicky instalované paměti počítače, kterou může mezipaměť spotřebovat. Výchozí hodnota je 0, což znamená, že <xref:System.Runtime.Caching.MemoryCache> ve výchozím nastavení jsou používány heuristické automatické změny velikosti třídy.|  
-|`PollingInterval`|Hodnota, která označuje časový interval, po kterém implementace mezipaměti porovnává aktuální zatížení paměti s omezeními na základě absolutního a procenta velikosti paměti, které jsou nastaveny pro instanci mezipaměti. Tato hodnota je zadaná ve formátu "HH: MM: SS".|  
+|`PhysicalMemoryLimitPercentage`|Celá hodnota mezi 0 a 100, která určuje maximální procento fyzicky nainstalované paměti počítače, které mohou být spotřebovány mezipamětí. Výchozí hodnota je 0, což <xref:System.Runtime.Caching.MemoryCache> znamená, že ve výchozím nastavení se používají autosizing heuristiky třídy.|  
+|`PollingInterval`|Hodnota, která označuje časový interval, po kterém implementace mezipaměti porovnává aktuální zatížení paměti s absolutní a procentuální limity paměti, které jsou nastaveny pro instanci mezipaměti. Tato hodnota je zadána ve formátu HH:MM:SS.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
  `None`  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
-|Prvek|Popis|  
+|Element|Popis|  
 |-------------|-----------------|  
-|[\<namedCaches>](namedcaches-element-cache-settings.md)|Obsahuje kolekci konfiguračních nastavení pro pojmenované <xref:System.Runtime.Caching.MemoryCache> instance.|  
+|[\<pojmenováno Caches>](namedcaches-element-cache-settings.md)|Obsahuje kolekci nastavení konfigurace <xref:System.Runtime.Caching.MemoryCache> pro pojmenované instance.|  
   
 ## <a name="remarks"></a>Poznámky  
- Element přidá položku `namedCaches` do kolekce mezipaměti paměti. `add` Element [clear](clear-element-for-namedcaches.md) lze použít před použitím `add` elementu, aby bylo jisté, že v kolekci nejsou žádné další pojmenované mezipaměti. Tento element lze použít v souboru Machine. config a v souboru Web. config.  
+ Prvek `add` přidá položku `namedCaches` do kolekce pro mezipaměti paměti. Před použitím `add` prvku můžete použít prvek [clear,](clear-element-for-namedcaches.md) abyste si byli jisti, že v kolekci nejsou žádné jiné pojmenované mezipaměti. Tento prvek lze použít v souboru machine.config a v souboru Web.config.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje, jak definovat nastavení pro výchozí `namedCache` položku `namedCaches` do kolekce mezipaměti paměti.  
+ Následující příklad ukazuje, jak definovat `namedCache` nastavení pro `namedCaches` výchozí položku do kolekce pro mezipaměti paměti.  
   
 ```xml  
 <configuration>  
@@ -66,8 +66,8 @@ ms.locfileid: "70252889"
   <system.runtime.caching>  
     <memoryCache>  
       <namedCaches>  
-          <add name="Default"   
-               cacheMemoryLimitMegabytes="0"   
+          <add name="Default"
+               cacheMemoryLimitMegabytes="0"
                physicalMemoryPercentage="0"  
                pollingInterval="00:02:00" />  
       </namedCaches>  
@@ -77,6 +77,6 @@ ms.locfileid: "70252889"
 </configuration>  
 ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [\<namedCaches – element > (nastavení mezipaměti)](namedcaches-element-cache-settings.md)
+- [\<namedCaches> Element (Nastavení mezipaměti)](namedcaches-element-cache-settings.md)

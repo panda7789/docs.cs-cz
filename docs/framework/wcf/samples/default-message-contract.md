@@ -4,22 +4,22 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - Message Contract
 ms.assetid: 5a200b78-1a46-4104-b7fb-da6dbab33893
-ms.openlocfilehash: dcdeeda0d6054c9cf6fefa31ea33d720c0c0f3f7
-ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
+ms.openlocfilehash: 46b69697616ad7983daed16f8a180a4da7f61a16
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74716584"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79183773"
 ---
 # <a name="default-message-contract"></a>Výchozí kontrakt zprávy
-Výchozí ukázka kontraktu zpráv ukazuje službu, ve které se vlastní uživatelem definovaná zpráva předává do a z operací služby. Tato ukázka je založená na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md) , která implementuje rozhraní kalkulačky jako typovou službu. Namísto individuálních operací služby pro sčítání, odčítání, násobení a dělení použité v [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md)tento příklad projde vlastní zprávu, která obsahuje operandy i operátor, a vrátí výsledek aritmetického výpočtu.  
+Ukázka výchozí zprávy kontrakt udává službu, kde je vlastní uživatelem definovaná zpráva předána a z operací služby. Tato ukázka je založena na [Začínáme,](../../../../docs/framework/wcf/samples/getting-started-sample.md) který implementuje rozhraní kalkulačky jako zadali služby. Namísto jednotlivých operací služby pro sčítání, odčítání, násobení a dělení použité v [začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md), tato ukázka předá vlastní zprávu, která obsahuje operandy i operátor a vrátí výsledek výpočtu aritmetiky.  
   
- Klient je program konzoly (. exe) a knihovna služeb (. dll) je hostovaná službou Internetová informační služba (IIS). Aktivita klienta se zobrazí v okně konzoly.  
+ Klient je konzolový program (.exe) a knihovna služeb (.dll) je hostována internetovou informační službou (IIS). Aktivita klienta je viditelná v okně konzoly.  
   
 > [!NOTE]
-> Postup nastavení a pokyny pro sestavení pro tuto ukázku najdete na konci tohoto tématu.  
+> Postup instalace a pokyny k sestavení pro tuto ukázku jsou umístěny na konci tohoto tématu.  
   
- V rámci služby je definována jedna operace služby, která přijímá a vrací vlastní zprávy typu `MyMessage`. I když v této ukázce jsou zprávy žádosti a odpovědi stejného typu, můžou být v případě potřeby v případě potřeby jiné kontrakty zpráv.  
+ Ve službě je definována jedna operace služby, která `MyMessage`přijímá a vrací vlastní zprávy typu . I když v této ukázce jsou zprávy požadavků a odpovědí stejného typu, mohou být samozřejmě různé zprávy smlouvy v případě potřeby.  
   
 ```csharp
 [ServiceContract(Namespace="http://Microsoft.ServiceModel.Samples")]  
@@ -31,7 +31,7 @@ public interface ICalculator
 }  
 ```  
   
- Vlastní `MyMessage` zpráv je definována ve třídě s poznámkou pomocí atributů <xref:System.ServiceModel.MessageContractAttribute>, <xref:System.ServiceModel.MessageHeaderAttribute> a <xref:System.ServiceModel.MessageBodyMemberAttribute>. V této ukázce je použit pouze třetí konstruktor. Použití kontraktů zpráv vám umožní plně ovládat zprávu protokolu SOAP. V této ukázce je atribut <xref:System.ServiceModel.MessageHeaderAttribute> použit k vložení `Operation` v hlavičce SOAP. Operandy `N1`, `N2` a `Result` se zobrazí v těle SOAP, protože mají použit atribut <xref:System.ServiceModel.MessageBodyMemberAttribute>.  
+ Vlastní zpráva `MyMessage` je definována ve třídě <xref:System.ServiceModel.MessageContractAttribute>s <xref:System.ServiceModel.MessageHeaderAttribute> <xref:System.ServiceModel.MessageBodyMemberAttribute> poznámkou a atributy . V této ukázce se používá pouze třetí konstruktor. Pomocí smlouvy zprávy umožňuje vykonávat plnou kontrolu nad zprávou SOAP. V této ukázce <xref:System.ServiceModel.MessageHeaderAttribute> se `Operation` atribut používá k vložení do hlavičky SOAP. Operandy `N1` `N2` a `Result` zobrazí se v těle SOAP, <xref:System.ServiceModel.MessageBodyMemberAttribute> protože mají atribut použit.  
   
 ```csharp
 [MessageContract]  
@@ -48,7 +48,7 @@ public class MyMessage
   
     //Constructor - create a message and populate its members.  
   
-    public MyMessage(double n1, double n2, string operation,   
+    public MyMessage(double n1, double n2, string operation,
                      double result)  
     {  
         this.n1 = n1;  
@@ -97,7 +97,7 @@ public class MyMessage
 }  
 ```  
   
- Třída Implementation obsahuje kód pro operaci `Calculate` služby. Třída `CalculateService` získá operandy a operátor ze zprávy požadavku a vytvoří zprávu odpovědi, která obsahuje výsledek požadovaného výpočtu, jak je znázorněno v následujícím ukázkovém kódu.  
+ Třída implementace obsahuje kód `Calculate` pro operaci služby. Třída `CalculateService` získá operandy a operátor ze zprávy požadavku a vytvoří zprávu odpovědi, která obsahuje výsledek požadovaného výpočtu, jak je znázorněno v následujícím ukázkovém kódu.  
   
 ```csharp
 // Service class which implements the service contract.  
@@ -131,13 +131,13 @@ public class CalculatorService : ICalculator
 }  
 ```  
   
- Vygenerovaný klientský kód pro klienta byl vytvořen pomocí nástroje Nástroj pro [DoSvcutilí metadat (ServiceModel. exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) . Nástroj v případě potřeby automaticky vytvoří typy kontraktů zpráv v generovaném kódu klienta. Pro vynucení generování kontraktů zpráv je možné zadat možnost `/messageContract` příkazu.  
+ Generovaný kód klienta pro klienta byl vytvořen pomocí nástroje [ServiceModel Metadata Utility Tool (Svcutil.exe).](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) Nástroj v případě potřeby automaticky vytvoří typy smluv zpráv v generovaném kódu klienta. Možnost `/messageContract` příkazu může být zadán a vynutit generování zpráv smluv.  
   
 ```console  
 svcutil.exe /n:"http://Microsoft.ServiceModel.Samples,Microsoft.ServiceModel.Samples" /o:client\generatedClient.cs http://localhost/servicemodelsamples/service.svc/mex  
 ```  
   
- Následující vzorový kód demonstruje klienta pomocí `MyMessage`ové zprávy.  
+ Následující ukázkový kód ukazuje klienta pomocí `MyMessage` zprávy.  
   
 ```csharp
 // Create a client with given client endpoint configuration  
@@ -145,7 +145,7 @@ CalculatorClient client = new CalculatorClient();
   
 // Perform addition using a typed message.  
   
-MyMessage request = new MyMessage() 
+MyMessage request = new MyMessage()
                     {  
                         N1 = 100D,  
                         N2 = 15.99D,  
@@ -155,7 +155,7 @@ MyMessage response = ((ICalculator)client).Calculate(request);
 Console.WriteLine("Add({0},{1}) = {2}", request.N1, request.N2, response.Result);  
 ```  
   
- Při spuštění ukázky se výpočty zobrazí v okně konzoly klienta. V okně klienta stiskněte klávesu ENTER pro vypnutí klienta.  
+ Při spuštění ukázky jsou výpočty zobrazeny v okně klientské konzole. Stisknutím klávesy ENTER v okně klienta vypněte klienta.  
   
 ```console  
 Add(100,15.99) = 115.99  
@@ -166,21 +166,21 @@ Divide(22,7) = 3.14285714285714
 Press <ENTER> to terminate client.  
 ```  
   
- V tomto okamžiku byly mezi klientem a operací služby předány vlastní uživatelem definované zprávy. Kontrakt zprávy definoval, že operandy a výsledky byly v těle zprávy a že byl operátor v záhlaví zprávy. Protokolování zpráv je možné nakonfigurovat tak, aby sledovalo tuto strukturu zpráv.  
+ V tomto okamžiku vlastní uživatelem definované zprávy prošly mezi klientem a operace služby. Kontrakt zprávy definoval, že operandy a výsledky byly v textu zprávy a že operátor byl v záhlaví zprávy. Protokolování zpráv lze nakonfigurovat tak, aby sledovalo tuto strukturu zpráv.  
   
 ### <a name="to-set-up-build-and-run-the-sample"></a>Nastavení, sestavení a spuštění ukázky  
   
-1. Ujistěte se, že jste provedli [postup jednorázového nastavení pro Windows Communication Foundation ukázky](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
+1. Ujistěte se, že jste provedli [jednorázový postup instalace pro ukázky windows communication foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
   
-2. Pokud chcete vytvořit C# edici nebo Visual Basic .NET, postupujte podle pokynů v tématu [sestavování ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
+2. Chcete-li vytvořit c# nebo Visual Basic .NET vydání řešení, postupujte podle pokynů v [sestavení windows communication foundation ukázky](../../../../docs/framework/wcf/samples/building-the-samples.md).  
   
-3. Chcete-li spustit ukázku v konfiguraci s jedním nebo více počítači, postupujte podle pokynů v části [spuštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
+3. Chcete-li spustit ukázku v konfiguraci jednoho nebo více počítačů, postupujte podle pokynů v [části Spuštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
   
 > [!IMPORTANT]
-> Ukázky už můžou být na vašem počítači nainstalované. Než budete pokračovat, vyhledejte následující (výchozí) adresář.  
->   
+> Ukázky mohou být již nainstalovány v počítači. Před pokračováním zkontrolujte následující (výchozí) adresář.  
+>
 > `<InstallDrive>:\WF_WCF_Samples`  
->   
-> Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] Samples. Tato ukázka se nachází v následujícím adresáři.  
->   
+>
+> Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a Windows Workflow Foundation (WF) Ukázky pro rozhraní .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka je umístěna v následujícím adresáři.  
+>
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Contract\Message\Default`  

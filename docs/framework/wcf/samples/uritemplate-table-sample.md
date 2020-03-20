@@ -2,40 +2,40 @@
 title: Ukázková tabulka UriTemplate
 ms.date: 03/30/2017
 ms.assetid: 5dd1d38f-1989-4c64-820d-821f5a02216a
-ms.openlocfilehash: fb5932acce60e2da45f99730580237d31130d918
-ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
+ms.openlocfilehash: c0aed1a49faf74ab9fd463769aab66ad72e74038
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74715404"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79183256"
 ---
 # <a name="uritemplate-table-sample"></a>Ukázková tabulka UriTemplate
-Třída <xref:System.UriTemplateTable> poskytuje pro práci se sadou instancí `UriTemplate` asociativní strukturu tabulkového typu. Konkrétní identifikátory URI (Uniform Resource Identifier) lze efektivně porovnat proti všem šablonám v tabulce a data přidružená k odpovídající šabloně lze načíst.  
+Třída <xref:System.UriTemplateTable> poskytuje slovníkjako asociativní tabulka strukturu pro práci `UriTemplate` se sadou instancí. Specifické identifikátory prostředků (URI) lze efektivně porovnat se všemi šablonami v tabulce a lze je načíst data přidružená k odpovídající šabloně.  
   
- Tato ukázka demonstruje následující klíčové koncepty související s `UriTemplateTable` třídou:  
+ Tato ukázka ukazuje následující klíčové pojmy vztahující se k `UriTemplateTable` třídě:  
   
-- Syntaxe pro vytvoření instance `UriTemplateTable`.  
+- Syntaxe pro vytvoření `UriTemplateTable`instance rozhraní .  
   
-- Naplnění `UriTemplateTable` se sadou párů klíč/hodnota.  
+- Naplnění a `UriTemplateTable` se sadou párů klíč/hodnota.  
   
-- Porovnání kandidátu identifikátoru URI s tabulkou pomocí <xref:System.UriTemplateTable.MatchSingle%2A>.  
+- Porovnávání identifikátoru URI <xref:System.UriTemplateTable.MatchSingle%2A>kandidáta s tabulkami pomocí aplikace .  
   
 ### <a name="to-set-up-build-and-run-the-sample"></a>Nastavení, sestavení a spuštění ukázky  
   
-1. Pokud chcete vytvořit C# edici nebo Visual Basic .NET, postupujte podle pokynů v tématu [sestavování ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
+1. Chcete-li vytvořit c# nebo Visual Basic .NET vydání řešení, postupujte podle pokynů v [sestavení windows communication foundation ukázky](../../../../docs/framework/wcf/samples/building-the-samples.md).  
   
-2. Chcete-li spustit ukázku v konfiguraci s jedním nebo více počítači, postupujte podle pokynů v části [spuštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
+2. Chcete-li spustit ukázku v konfiguraci jednoho nebo více počítačů, postupujte podle pokynů v [části Spuštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
   
 > [!IMPORTANT]
-> Ukázky již mohou být nainstalovány v počítači. Než budete pokračovat, vyhledejte následující (výchozí) adresář.  
->   
+> Ukázky mohou být již nainstalovány v počítači. Před pokračováním zkontrolujte následující (výchozí) adresář.  
+>
 > `<InstallDrive>:\WF_WCF_Samples`  
->   
-> Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] Samples. Tato ukázka se nachází v následujícím adresáři.  
->   
+>
+> Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a Windows Workflow Foundation (WF) Ukázky pro rozhraní .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka je umístěna v následujícím adresáři.  
+>
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Web\UriTemplateTable`  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Dispečer tabulky UriTemplate](../../../../docs/framework/wcf/samples/uritemplate-table-dispatcher-sample.md)
 - [UriTemplate](../../../../docs/framework/wcf/samples/uritemplate-sample.md)

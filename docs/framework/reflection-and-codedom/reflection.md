@@ -1,5 +1,5 @@
 ---
-title: Odraz v .NET
+title: Reflexe v rozhraní .NET
 ms.date: 03/30/2017
 helpviewer_keywords:
 - assemblies [.NET], reflection
@@ -21,66 +21,66 @@ helpviewer_keywords:
 - discovering type information at run time
 - type system, reflection
 ms.assetid: d1a58e7f-fb39-4d50-bf84-e3b8f9bf9775
-ms.openlocfilehash: 42944d8267d2e99fd9eb1a2cb28c0c81d3e9af75
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: 90d9cf4c473d73d1eeeb5f2a1098f8626c20359f
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76744565"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79180479"
 ---
-# <a name="reflection-in-net"></a>Odraz v .NET
+# <a name="reflection-in-net"></a>Reflexe v rozhraní .NET
 
-Třídy v oboru názvů <xref:System.Reflection> společně s <xref:System.Type?displayProperty=nameWithType>umožňují získat informace o načtených [sestaveních](../../standard/assembly/index.md) a typech definovaných v nich, jako jsou [třídy](../../standard/base-types/common-type-system.md#classes), [rozhraní](../../standard/base-types/common-type-system.md#interfaces)a typy hodnot (tj. [struktury](../../standard/base-types/common-type-system.md#structures) a [výčty](../../standard/base-types/common-type-system.md#enumerations)). Reflexe můžete také použít k vytvoření instancí typu za běhu a k jejich vyvolání a přístup k nim. Témata týkající se konkrétních aspektů reflexe najdete v části [Příbuzná témata](#related_topics) na konci tohoto přehledu.
+Třídy v <xref:System.Reflection> oboru názvů <xref:System.Type?displayProperty=nameWithType>spolu s rozhraním umožňují získat informace o načtených sestaveních a typech v nich [definovaných,](../../standard/assembly/index.md) jako jsou [třídy](../../standard/base-types/common-type-system.md#classes), [rozhraní](../../standard/base-types/common-type-system.md#interfaces)a typy hodnot (tj. [struktury](../../standard/base-types/common-type-system.md#structures) a [výčty).](../../standard/base-types/common-type-system.md#enumerations) Reflexe můžete také použít k vytvoření instance typu za běhu a k vyvolání a přístupu k nim. Témata týkající se konkrétních aspektů reflexe naleznete v [tématu Příbuzná témata](#related_topics) na konci tohoto přehledu.
   
-Modul [CLR (Common Language Runtime)](../../standard/clr.md) spravuje [aplikační domény](../app-domains/application-domains.md), které tvoří hranice kolem objektů, které mají stejný obor aplikace. Tato Správa zahrnuje načtení každého sestavení do příslušné aplikační domény a řízení rozložení paměti hierarchie typů v rámci každého sestavení.  
+Zavaděč [běžného běhu jazyka](../../standard/clr.md) spravuje [aplikační domény](../app-domains/application-domains.md), které představují definované hranice kolem objektů, které mají stejný rozsah aplikace. Tato správa zahrnuje načítání každého sestavení do příslušné domény aplikace a řízení rozložení paměti hierarchie typů v rámci každého sestavení.  
   
-[Sestavení](../app-domains/index.md) obsahují moduly, moduly obsahují typy a typy obsahují členy. Reflexe poskytuje objekty, které zapouzdřují sestavení, moduly a typy. Můžete použít reflexi k dynamickému vytvoření instance typu, svázání typu s existujícím objektem nebo získání typu z existujícího objektu. Pak můžete vyvolat metody typu nebo získat přístup k jeho polím a vlastnostem. Mezi Typická použití reflexe patří následující:  
+[Sestavení](../app-domains/index.md) obsahují moduly, moduly obsahují typy a typy obsahují členy. Reflexe poskytuje objekty, které zapouzdřují sestavení, moduly a typy. Odraz můžete použít k dynamickému vytvoření instance typu, svázání typu s existujícím objektem nebo získání typu z existujícího objektu. Potom můžete vyvolat metody typu nebo přístup k jeho polím a vlastnostem. Typické použití reflexe patří následující:  
   
-- Pomocí <xref:System.Reflection.Assembly> definujte a načtěte sestavení, načtěte moduly, které jsou uvedeny v manifestu sestavení a vyhledejte typ z tohoto sestavení a vytvořte jeho instanci.  
+- Slouží <xref:System.Reflection.Assembly> k definování a načtení sestavení, zatížení modulů, které jsou uvedeny v manifestu sestavení a vyhledejte typ z tohoto sestavení a vytvořte jeho instanci.  
   
-- Pomocí <xref:System.Reflection.Module> můžete zjistit informace, jako je například sestavení obsahující modul a třídy v modulu. Můžete také získat všechny globální metody nebo jiné specifické neglobální metody definované v modulu.  
+- Slouží <xref:System.Reflection.Module> ke zjištění informací, jako je například sestavení, které obsahuje modul a třídy v modulu. Můžete také získat všechny globální metody nebo jiné specifické, neglobální metody definované v modulu.  
   
-- Pomocí <xref:System.Reflection.ConstructorInfo> můžete zjistit informace, jako je název, parametry, modifikátory přístupu (například `public` nebo `private`), a podrobnosti implementace (například `abstract` nebo `virtual`) konstruktoru. K vyvolání konkrétního konstruktoru použijte metodu <xref:System.Type.GetConstructors%2A> nebo <xref:System.Type.GetConstructor%2A> <xref:System.Type>.  
+- Slouží <xref:System.Reflection.ConstructorInfo> ke zjišťování informací, jako je název, parametry, `public` `private`modifikátory přístupu `abstract` `virtual`(například nebo ) a podrobnosti implementace (například nebo ) konstruktoru. Použijte <xref:System.Type.GetConstructors%2A> metodu <xref:System.Type.GetConstructor%2A> nebo <xref:System.Type> k vyvolání konkrétního konstruktoru.  
   
-- Pomocí <xref:System.Reflection.MethodInfo> můžete zjistit informace, jako je název, návratový typ, parametry, modifikátory přístupu (například `public` nebo `private`), a podrobnosti implementace (například `abstract` nebo `virtual`) metody. K vyvolání konkrétní metody použijte metodu <xref:System.Type.GetMethods%2A> nebo <xref:System.Type.GetMethod%2A> <xref:System.Type>.  
+- Slouží <xref:System.Reflection.MethodInfo> ke zjišťování informací, jako je název, návratový typ, `public` parametry, modifikátory přístupu (například nebo `private`) a podrobnosti implementace (například `abstract` nebo `virtual`) metody. Použijte <xref:System.Type.GetMethods%2A> metodu <xref:System.Type.GetMethod%2A> nebo <xref:System.Type> k vyvolání určité metody.  
   
-- Pomocí <xref:System.Reflection.FieldInfo> můžete zjišťovat informace, jako je název, modifikátory přístupu (například `public` nebo `private`) a podrobnosti implementace (například `static`) pole a získat nebo nastavit hodnoty polí.  
+- Slouží <xref:System.Reflection.FieldInfo> ke zjišťování informací, jako je název, `public` modifikátory přístupu (například nebo) `private`a podrobnosti implementace (například) `static`pole, a k získání nebo nastavení hodnot polí.  
   
-- Pomocí <xref:System.Reflection.EventInfo> můžete zjistit informace, jako je název, datový typ obslužné rutiny události, vlastní atributy, deklarující typ a reflektující typ události a přidat nebo odebrat obslužné rutiny událostí.  
+- Slouží <xref:System.Reflection.EventInfo> ke zjišťování informací, jako je název, datový typ obslužné rutiny událostí, vlastní atributy, deklarující typ a odražený typ události, a k přidání nebo odebrání obslužných rutin událostí.  
   
-- Pomocí <xref:System.Reflection.PropertyInfo> můžete zjišťovat informace, jako je název, datový typ, deklarující typ, reflektující typ a stav jen pro čtení nebo zapisovatelný stav vlastnosti, a získat nebo nastavit hodnoty vlastností.  
+- Slouží <xref:System.Reflection.PropertyInfo> ke zjišťování informací, jako je název, datový typ, deklarování typu, odraženého typu a stavu vlastnosti jen pro čtení nebo zápis, a k získání nebo nastavení hodnot vlastností.  
   
-- Pomocí <xref:System.Reflection.ParameterInfo> můžete zjistit informace, jako je název parametru, datový typ, to, zda je parametr vstupní nebo výstupní parametr a pozice parametru v signatuře metody.  
+- Slouží <xref:System.Reflection.ParameterInfo> ke zjištění informací, jako je název parametru, datový typ, zda je parametr vstupní mandatorní nebo výstupní parametr a umístění parametru v podpisu metody.  
   
-- Použijte <xref:System.Reflection.CustomAttributeData> pro zjišťování informací o vlastních atributech při práci v kontextu pouze pro reflexi domény aplikace. <xref:System.Reflection.CustomAttributeData> slouží k prohlédnutí atributů bez vytváření instancí.  
+- Slouží <xref:System.Reflection.CustomAttributeData> ke zjišťování informací o vlastních atributech při práci v kontextu domény aplikace pouze reflexe. <xref:System.Reflection.CustomAttributeData>umožňuje zkoumat atributy bez vytváření jejich instancí.  
   
-Třídy oboru názvů <xref:System.Reflection.Emit> poskytují specializované formy reflexe, které umožňují vytvářet typy v době běhu.  
+Třídy oboru <xref:System.Reflection.Emit> názvů poskytují specializovanou formu reflexe, která umožňuje vytvářet typy za běhu.  
   
-Reflexi lze také použít k vytváření aplikací nazývaných prohlížeč typu, které umožňují uživatelům vybrat typy a poté zobrazit informace o těchto typech.  
+Reflexe lze také použít k vytvoření aplikací nazývaných prohlížeče typů, které uživatelům umožňují vybrat typy a poté zobrazit informace o těchto typech.  
   
-Existují i jiné způsoby, jak reflexe. Kompilátory pro jazyky, jako je JScript, používají reflexi k vytváření tabulek symbolů. Třídy v oboru názvů <xref:System.Runtime.Serialization> používají reflexi pro přístup k datům a určují, která pole se mají zachovat. Třídy v oboru názvů <xref:System.Runtime.Remoting> používají reflexi nepřímo prostřednictvím serializace.  
+Existují i jiné využití pro reflexi. Kompilátory pro jazyky, jako je JScript, používají reflexe k vytváření tabulek symbolů. Třídy v <xref:System.Runtime.Serialization> oboru názvů používají reflexe pro přístup k datům a k určení, která pole mají být zachována. Třídy v <xref:System.Runtime.Remoting> oboru názvů používají reflexe nepřímo prostřednictvím serializace.  
   
 ## <a name="runtime-types-in-reflection"></a>Typy runtime v reflexi  
-Reflexe poskytuje třídy, například <xref:System.Type> a <xref:System.Reflection.MethodInfo>, k reprezentaci typů, členů, parametrů a dalších entit kódu. Nicméně při použití reflexe nepracujete přímo s těmito třídami, přičemž většina z nich je abstraktní (`MustInherit` v Visual Basic). Místo toho pracujete s typy poskytnutými modulem CLR (Common Language Runtime).  
+Reflexe poskytuje třídy, jako je například <xref:System.Type> a <xref:System.Reflection.MethodInfo>, představují typy, členy, parametry a další entity kódu. Však při použití reflexe, nepracujete přímo s těmito třídami, z nichž většina jsou abstraktní (v`MustInherit` jazyce Visual Basic). Místo toho pracujete s typy poskytovanými běžným jazykem runtime (CLR).  
   
-Například při použití operátoru C# `typeof` (`GetType` v Visual Basic) k získání objektu <xref:System.Type> je objekt skutečně `RuntimeType`. `RuntimeType` je odvozen z <xref:System.Type> a poskytuje implementace všech abstraktních metod.  
+Například při použití c# `typeof` operátor`GetType` ( v jazyce <xref:System.Type> Visual Basic) k `RuntimeType`získání objektu, objekt je opravdu . `RuntimeType`odvozuje <xref:System.Type> a poskytuje implementace všech abstraktních metod.  
   
-Tyto běhové třídy jsou `internal` (`Friend` v Visual Basic). Nejsou dokumentovány odděleně od jejich základních tříd, protože jejich chování je popsáno v dokumentaci základní třídy.  
+Tyto runtime `internal` třídy jsou (`Friend` v jazyce Visual Basic). Nejsou dokumentovány odděleně od svých základních tříd, protože jejich chování je popsáno v dokumentaci základní třídy.  
   
-<a name="related_topics"></a>   
+<a name="related_topics"></a>
 
 ## <a name="related-topics"></a>Související témata  
   
-|Název|Popis|  
+|Nadpis|Popis|  
 |-----------|-----------------|  
-|[Zobrazení informací o typu](viewing-type-information.md)|Popisuje třídu <xref:System.Type> a poskytuje příklady kódu, které ilustrují použití <xref:System.Type> s několika třídami Reflection k získání informací o konstruktorech, metodách, polích, vlastnostech a událostech.|  
-|[Reflexe a obecné typy](reflection-and-generic-types.md)|Vysvětluje, jak reflexe zpracovává parametry typu a argumenty typů obecných typů a obecných metod.|  
-|[Důležité informace o zabezpečení pro reflexi](security-considerations-for-reflection.md)|Popisuje pravidla, která určují, jaké reflexe úrovně lze použít ke zjištění informací o typu a přístupových typů.|  
-|[Dynamické načtení a použití typů](dynamically-loading-and-using-types.md)|Popisuje rozhraní vlastní vazby odrazu, které podporuje pozdní vazbu.|  
-|[Postupy: Načtení sestavení do kontextu pouze pro reflexi](how-to-load-assemblies-into-the-reflection-only-context.md)|Popisuje kontext načtení pouze pro reflexi. Ukazuje, jak načíst sestavení, jak testovat kontext a jak kontrolovat atributy použité pro sestavení v kontextu pouze pro reflexi.|  
-|[Přístup k vlastním atributům](accessing-custom-attributes.md)|Ukazuje použití reflexe pro dotaz na existenci a hodnoty atributu.|  
-|[Určení úplných názvů typů](specifying-fully-qualified-type-names.md)|Popisuje formát plně kvalifikovaných názvů typů v souvislosti s formulářem Backus-Naur (BNF) a syntaxí nutnou pro zadání speciálních znaků, názvů sestavení, ukazatelů, odkazů a polí.|  
-|[Postupy: Připojení delegáta pomocí reflexe](how-to-hook-up-a-delegate-using-reflection.md)|Vysvětluje, jak vytvořit delegáta pro metodu a zapojit delegáta do události. Vysvětluje, jak vytvořit metodu zpracování událostí v době běhu pomocí <xref:System.Reflection.Emit.DynamicMethod>.|  
+|[Zobrazení informací o typu](viewing-type-information.md)|Popisuje třídu <xref:System.Type> a poskytuje příklady kódu, <xref:System.Type> které ilustrují použití s několika třídami odrazu k získání informací o konstruktorech, metodách, polích, vlastnostech a událostech.|  
+|[Reflexe a obecné typy](reflection-and-generic-types.md)|Vysvětluje, jak reflexe zpracovává parametry typu a argumenty typu obecných typů a obecných metod.|  
+|[Důležité informace o zabezpečení pro reflexi](security-considerations-for-reflection.md)|Popisuje pravidla, která určují, do jaké míry lze odraz použít ke zjištění informací o typu a typů přístupu.|  
+|[Dynamické načtení a použití typů](dynamically-loading-and-using-types.md)|Popisuje reflexe vlastní vazby rozhraní, které podporuje pozdní vazby.|  
+|[Postupy: Načtení sestavení do kontextu pouze pro reflexi](how-to-load-assemblies-into-the-reflection-only-context.md)|Popisuje kontext načítání pouze reflexe. Ukazuje, jak načíst sestavení, jak otestovat kontext a jak prozkoumat atributy použité pro sestavení v kontextu pouze reflexe.|  
+|[Přístup k vlastním atributům](accessing-custom-attributes.md)|Ukazuje použití reflexe k existenci atributu dotazu a hodnoty.|  
+|[Určení úplných názvů typů](specifying-fully-qualified-type-names.md)|Popisuje formát plně kvalifikovaných názvů typů z hlediska formuláře Backus-Naur (BNF) a syntaxe požadované pro určení speciálních znaků, názvů sestavení, ukazatelů, odkazů a polí.|  
+|[Postupy: Připojení delegáta pomocí reflexe](how-to-hook-up-a-delegate-using-reflection.md)|Vysvětluje, jak vytvořit delegáta pro metodu a připojit delegáta k události. Vysvětluje, jak vytvořit metodu zpracování událostí <xref:System.Reflection.Emit.DynamicMethod>za běhu pomocí aplikace .|  
 |[Generování dynamických metod a sestavení](emitting-dynamic-methods-and-assemblies.md)|Vysvětluje, jak generovat dynamická sestavení a dynamické metody.|  
   
 ## <a name="reference"></a>Referenční informace  

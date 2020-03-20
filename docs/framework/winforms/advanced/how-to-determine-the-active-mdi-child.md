@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Určení aktivního podřízeného formuláře MDI'
+title: 'Postupy: Určení podřízeného prvku aktivního MDI'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -11,26 +11,26 @@ helpviewer_keywords:
 - MDI [Windows Forms], activating forms
 - MDI [Windows Forms], locating focus
 ms.assetid: 33880ec3-0207-4c2b-a616-ff140443cc0f
-ms.openlocfilehash: 91100b37e4cae9041479b209e40034efe376df5b
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 57491faa10c182630d41565ba236d65e393929b3
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69946223"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79182549"
 ---
-# <a name="how-to-determine-the-active-mdi-child"></a>Postupy: Určení aktivního podřízeného formuláře MDI
-V některých případech budete chtít poskytnout příkaz, který bude fungovat na ovládacím prvku, který má fokus na aktuálně aktivním podřízeném formuláři. Předpokládejme například, že chcete zkopírovat vybraný text z textového pole podřízeného formuláře do schránky. Vytvořili jste proceduru, která zkopíruje vybraný text do schránky pomocí <xref:System.Windows.Forms.Control.Click> události položky nabídky Kopírovat v nabídce standardní úpravy.  
+# <a name="how-to-determine-the-active-mdi-child"></a>Postupy: Určení podřízeného prvku aktivního MDI
+V některých případech budete chtít poskytnout příkaz, který pracuje na ovládací prvek, který má fokus na aktuálně aktivní podřízený formulář. Předpokládejme například, že chcete zkopírovat vybraný text z textového pole podřízeného formuláře do schránky. Vytvořili byste proceduru, která zkopíruje vybraný <xref:System.Windows.Forms.Control.Click> text do schránky pomocí události položky nabídky Kopírovat ve standardní nabídce Úpravy.  
   
- Vzhledem k tomu, že aplikace MDI může mít mnoho instancí stejného podřízeného formuláře, procedura musí znát, který formulář se má použít. Chcete-li zadat správnou formu, <xref:System.Windows.Forms.Form.ActiveMdiChild%2A> použijte vlastnost, která vrátí podřízený formulář, který má fokus nebo který byl naposledy aktivní.  
+ Vzhledem k tomu, že aplikace MDI může mít mnoho instancí stejnépodřízené ho formuláře, postup potřebuje vědět, který formulář použít. Chcete-li zadat správný <xref:System.Windows.Forms.Form.ActiveMdiChild%2A> formulář, použijte vlastnost, která vrátí podřízený formulář, který má fokus nebo který byl naposledy aktivní.  
   
- Pokud máte ve formuláři několik ovládacích prvků, musíte také určit, který ovládací prvek je aktivní. Podobně jako <xref:System.Windows.Forms.ContainerControl.ActiveControl%2A> vlastnost vrátí vlastnost ovládací prvek s fokusem na aktivním podřízeném formuláři. <xref:System.Windows.Forms.Form.ActiveMdiChild%2A> Následující postup ukazuje postup kopírování, který lze volat z podřízené nabídky formuláře, nabídky ve formuláři MDI nebo tlačítka panelu nástrojů.  
+ Pokud máte ve formuláři několik ovládacích prvků, musíte také určit, který ovládací prvek je aktivní. Stejně <xref:System.Windows.Forms.Form.ActiveMdiChild%2A> jako <xref:System.Windows.Forms.ContainerControl.ActiveControl%2A> vlastnost, vlastnost vrátí ovládací prvek se zaměřením na aktivní podřízený formulář. Následující postup ilustruje postup kopírování, který lze volat z nabídky podřízeného formuláře, nabídky ve formuláři MDI nebo tlačítka panelu nástrojů.  
   
-### <a name="to-determine-the-active-mdi-child-to-copy-its-text-to-the-clipboard"></a>Určení aktivního podřízeného prvku MDI (zkopírování jeho textu do schránky)  
+### <a name="to-determine-the-active-mdi-child-to-copy-its-text-to-the-clipboard"></a>Chcete-li zjistit aktivní podřízenou položku MDI (zkopírovat jeho text do schránky)  
   
 1. V rámci metody zkopírujte text aktivního ovládacího prvku aktivního podřízeného formuláře do schránky.  
   
     > [!NOTE]
-    > Tento příklad předpokládá, že existuje nadřazený formulář MDI (`Form1`), který obsahuje jeden nebo více podřízených oken MDI <xref:System.Windows.Forms.RichTextBox> obsahující ovládací prvek. Další informace najdete v tématu [Vytváření nadřazených formulářů MDI](how-to-create-mdi-parent-forms.md).  
+    > Tento příklad předpokládá, že existuje nadřazený formulář MDI (`Form1`), <xref:System.Windows.Forms.RichTextBox> který má jedno nebo více podřízených oken MDI obsahující chod ovládacího prvku. Další informace naleznete v [tématu Vytváření nadřazených formulářů MDI](how-to-create-mdi-parent-forms.md).  
   
     ```vb  
     Public Sub mniCopy_Click(ByVal sender As Object, _  
@@ -64,7 +64,7 @@ V některých případech budete chtít poskytnout příkaz, který bude fungova
        // If there is an active child form, find the active control, which  
        // in this example should be a RichTextBox.  
        if (activeChild != null)  
-       {    
+       {
           try  
           {  
              RichTextBox theBox = (RichTextBox)activeChild.ActiveControl;  
@@ -83,10 +83,10 @@ V některých případech budete chtít poskytnout příkaz, který bude fungova
     }  
     ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Aplikace MDI (Multiple-Document Interface)](multiple-document-interface-mdi-applications.md)
-- [Postupy: Vytvoření nadřazených formulářů MDI](how-to-create-mdi-parent-forms.md)
-- [Postupy: Vytvořit podřízené formuláře MDI](how-to-create-mdi-child-forms.md)
-- [Postupy: Odeslat data do aktivního podřízeného rozhraní MDI](how-to-send-data-to-the-active-mdi-child.md)
-- [Postupy: Uspořádat podřízené formuláře MDI](how-to-arrange-mdi-child-forms.md)
+- [Postupy: Vytváření nadřazených formulářů MDI](how-to-create-mdi-parent-forms.md)
+- [Postupy: Vytváření podřízených formulářů MDI](how-to-create-mdi-child-forms.md)
+- [Postupy: Odesílání dat do aktivního podřízeného MDI](how-to-send-data-to-the-active-mdi-child.md)
+- [Postupy: Uspořádání podřízených formulářů MDI](how-to-arrange-mdi-child-forms.md)

@@ -7,38 +7,38 @@ helpviewer_keywords:
 - LoadFrom context
 - LoadFromContext MDA
 ms.assetid: a9b14db1-d3a9-4150-a767-dcf3aea0071a
-ms.openlocfilehash: 28ef6e12c82cf5ca56962756b9ea964d0ae9baaa
-ms.sourcegitcommit: 9c54866bcbdc49dbb981dd55be9bbd0443837aa2
+ms.openlocfilehash: d0090a0272d1c3b6175b351175689df1e1e4fdbd
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/14/2020
-ms.locfileid: "77216163"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79181799"
 ---
 # <a name="loadfromcontext-mda"></a>loadFromContext – pomocník spravovaného ladění (MDA)
-Pokud je sestavení načteno do kontextu `LoadFrom`, je aktivována aplikace `loadFromContext` Managed Debugging Assistant (MDA). Tato situace může nastat v důsledku volání <xref:System.Reflection.Assembly.LoadFrom%2A?displayProperty=nameWithType> nebo jiných podobných metod.  
+Spravovaný `loadFromContext` pomocník pro ladění (MDA) je aktivován, `LoadFrom` pokud je sestavení načteno do kontextu. Tato situace může nastat <xref:System.Reflection.Assembly.LoadFrom%2A?displayProperty=nameWithType> v důsledku volání nebo jiné podobné metody.  
   
 ## <a name="symptoms"></a>Příznaky  
- Použití některých metod zavaděče může mít za následek načítání sestavení v kontextu `LoadFrom`. Použití tohoto kontextu může vést k neočekávanému chování při serializaci, přetypování a rozlišení závislostí. Obecně se doporučuje, aby byla sestavení načtena do `Load`ho kontextu, aby se předešlo těmto problémům. Je obtížné určit, který kontext bylo sestavení načteno bez tohoto MDA.  
+ Použití některých metod zavaděče může mít `LoadFrom` za následek sestavení načtenv kontextu. Použití tohoto kontextu může mít za následek neočekávané chování pro serializaci, přetypování a řešení závislostí. Obecně se doporučuje, aby sestavení být `Load` načteny do kontextu, aby se zabránilo těmto problémům. Je obtížné určit, do kterého kontextu bylo sestavení načteno bez tohoto MDA.  
   
 ## <a name="cause"></a>Příčina  
- Obecně platí, že sestavení bylo načteno do kontextu `LoadFrom`, pokud bylo načteno z cesty mimo `Load` kontext, jako je například globální mezipaměť sestavení (GAC) nebo vlastnost <xref:System.AppDomainSetup.ApplicationBase%2A?displayProperty=nameWithType>.  
+ Obecně platí, že sestavení `LoadFrom` bylo načteno do kontextu, `Load` pokud bylo načteno z <xref:System.AppDomainSetup.ApplicationBase%2A?displayProperty=nameWithType> cesty mimo kontext, jako je například globální mezipaměť sestavení nebo vlastnost.  
   
 ## <a name="resolution"></a>Řešení  
- Konfigurace aplikací, například <xref:System.Reflection.Assembly.LoadFrom%2A> volání již nejsou potřeba. K tomu můžete použít následující postupy:  
+ Nakonfigurujte aplikace tak, aby <xref:System.Reflection.Assembly.LoadFrom%2A> volání již není potřeba. K tomu můžete použít následující techniky:  
   
-- Nainstalujte sestavení do globální mezipaměti sestavení (GAC).  
+- Nainstalujte sestavení do globální mezipaměti sestavení.  
   
-- Pro <xref:System.AppDomain>umístěte sestavení do adresáře <xref:System.AppDomainSetup.ApplicationBase%2A>. V případě výchozí domény je <xref:System.AppDomainSetup.ApplicationBase%2A> adresářem, který obsahuje spustitelný soubor, který proces zahájil. To může také vyžadovat vytvoření nového <xref:System.AppDomain>, pokud není vhodné přesunout sestavení.  
+- Umístěte sestavení do <xref:System.AppDomainSetup.ApplicationBase%2A> adresáře <xref:System.AppDomain>pro rozhraní . V případě výchozí domény je <xref:System.AppDomainSetup.ApplicationBase%2A> adresář ten, který obsahuje spustitelný soubor, který proces spustil. To může také vyžadovat <xref:System.AppDomain> vytvoření nového, pokud není vhodné přesunout sestavení.  
   
-- Přidejte cestu pro zjišťování do konfiguračního souboru aplikace (. config) nebo do domén sekundární aplikace, pokud jsou závislá sestavení v podřízených adresářích vzhledem ke spustitelnému souboru.  
+- Přidejte cestu zjišťování do souboru konfigurace aplikace (.config) nebo do sekundárních aplikačních domén, pokud jsou závislá sestavení v podřízených adresářích vzhledem ke spustitelnému souboru.  
   
- V každém případě může být kód změněn tak, aby používal metodu <xref:System.Reflection.Assembly.Load%2A?displayProperty=nameWithType>.  
+ V každém případě kód lze změnit <xref:System.Reflection.Assembly.Load%2A?displayProperty=nameWithType> na použití metody.  
   
-## <a name="effect-on-the-runtime"></a>Vliv na modul runtime  
- Modul MDA nemá žádný vliv na CLR. Oznamuje kontext, který byl použit jako výsledek žádosti o načtení.  
+## <a name="effect-on-the-runtime"></a>Vliv na běhový čas  
+ MDA nemá žádný vliv na CLR. Hlásí kontext, který byl použit v důsledku požadavku na zatížení.  
   
 ## <a name="output"></a>Výstup  
- MDA hlásí, že bylo sestavení načteno do kontextu `LoadFrom`. Určuje jednoduchý název sestavení a cesty. Navrhuje také zmírnění rizik, aby se předešlo použití `LoadFrom`ho kontextu.  
+ MDA hlásí, že sestavení bylo `LoadFrom` načteno do kontextu. Určuje jednoduchý název sestavení a cesty. Navrhuje také skutečnosti snižující závažnost `LoadFrom` rizika, aby se zabránilo použití kontextu.  
   
 ## <a name="configuration"></a>Konfigurace  
   
@@ -51,7 +51,7 @@ Pokud je sestavení načteno do kontextu `LoadFrom`, je aktivována aplikace `lo
 ```  
   
 ## <a name="example"></a>Příklad  
- Následující příklad kódu ukazuje situaci, která může aktivovat Tento MDA:  
+ Následující příklad kódu ukazuje situaci, která může aktivovat tento MDA:  
   
 ```csharp
 using System.Reflection;  
@@ -62,8 +62,8 @@ namespace ConsoleApplication1
         static void Main(string[] args)  
         {  
             // The following call caused the LoadFrom context to be used  
-            // because the assembly is loaded using LoadFrom and the path is   
-            // located outside of the Load context probing path.   
+            // because the assembly is loaded using LoadFrom and the path is
+            // located outside of the Load context probing path.
             Assembly.LoadFrom(@"C:\Text\Test.dll");  
         }  
     }  

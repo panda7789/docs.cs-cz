@@ -15,61 +15,61 @@ helpviewer_keywords:
 ms.assetid: e97c97a6-6e4f-41f5-9af1-9b3cf3bdbd6b
 topic_type:
 - apiref
-ms.openlocfilehash: 743b6bed1a5d62f5214b8366b1a3c6e4ebecb98b
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: b8a65b0748fec0e474d8b3b5dc03473fbd716108
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74441714"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79177335"
 ---
 # <a name="imetadataimportenummemberrefs-method"></a>IMetaDataImport::EnumMemberRefs – metoda
-Vytvoří výčet tokenů MemberRef představujících členy zadaného typu.  
+Výčet Tokeny MemberRef představující členy zadaného typu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```cpp  
 HRESULT EnumMemberRefs (  
-   [in, out] HCORENUM    *phEnum,   
-   [in]   mdToken        tkParent,   
-   [out]  mdMemberRef    rMemberRefs[],   
-   [in]   ULONG          cMax,   
+   [in, out] HCORENUM    *phEnum,
+   [in]   mdToken        tkParent,
+   [out]  mdMemberRef    rMemberRefs[],
+   [in]   ULONG          cMax,
    [out]  ULONG          *pcTokens  
 );  
 ```  
   
 ## <a name="parameters"></a>Parametry  
  `phEnum`  
- [in, out] Ukazatel na enumerátor.  
+ [dovnitř, ven] Ukazatel na čítač výčtu.  
   
  `tkParent`  
- pro Token TypeDef, TypeRef, MethodDef nebo odkaz ModuleRef pro typ, jehož členy mají být vyčísleny.  
+ [v] A TypeDef, TypeRef, MethodDef nebo ModuleRef token pro typ, jehož členy mají být uvedeny ve výčtu.  
   
  `rMemberRefs`  
- mimo Pole použité pro ukládání tokenů MemberRef  
+ [out] Pole používané k ukládání tokenů MemberRef.  
   
  `cMax`  
- pro Maximální velikost `rMemberRefs` pole  
+ [v] Maximální velikost `rMemberRefs` pole.  
   
  `pcTokens`  
- mimo Skutečný počet tokenů MemberRef vrácených v `rMemberRefs`.  
+ [out] Skutečný počet Tokenů MemberRef `rMemberRefs`vrácených v .  
   
 ## <a name="return-value"></a>Návratová hodnota  
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
-|`S_OK`|`EnumMemberRefs` byla úspěšně vrácena.|  
-|`S_FALSE`|Pro výčet nejsou k dispozici žádné tokeny MemberRef. V takovém případě je `pcTokens` nula.|  
+|`S_OK`|`EnumMemberRefs`úspěšně vrácena.|  
+|`S_FALSE`|Neexistují žádné MemberRef tokeny k výčetu. V tom `pcTokens` případě je na nulu.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Hlavička:** Cor. h  
+ **Záhlaví:** Kor.h.  
   
- **Knihovna:** Zahrnuto jako prostředek v knihovně MsCorEE. dll  
+ **Knihovna:** Zahrnuto jako prostředek v souboru MsCorEE.dll  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [IMetaDataImport – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
 - [IMetaDataImport2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)

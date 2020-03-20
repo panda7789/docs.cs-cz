@@ -14,39 +14,39 @@ helpviewer_keywords:
 - network
 - WPAD (Web Proxy Auto-Discovery)
 ms.assetid: fcd9c3bd-93de-4c92-8ff3-837327ad18de
-ms.openlocfilehash: 6a52a38473e339b892673e7c1a2f9e1f58dad359
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: 4c5bc9e0efb39032d388d141e8bccf3e520ebd45
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71048947"
+ms.lasthandoff: 03/15/2020
+ms.locfileid: "79180897"
 ---
 # <a name="automatic-proxy-detection"></a>Automatické rozpoznávání proxy serveru
-Automatická detekce proxy je proces, kterým systém identifikuje webový proxy server a který slouží k odesílání žádostí jménem klienta. Tato funkce se označuje taky jako automatické zjišťování webových proxy serverů (WPAD). Pokud je povolená Automatická detekce proxy serveru, systém se pokusí vyhledat konfigurační skript proxy serveru, který je zodpovědný za vrácení sady proxy serverů, které se dají pro požadavek použít. Pokud se skript konfigurace proxy serveru najde, skript se stáhne, zkompiluje a spustí v místním počítači, když se pro požadavek, který používá <xref:System.Net.WebProxy> instanci, získá informace o proxy serveru, datový proud požadavku nebo odpověď.  
+Automatická detekce proxy serveru je proces, při kterém je systém identifikován webovým proxy serverem a používán k odesílání požadavků jménem klienta. Tato funkce je také známá jako automatické zjišťování webového proxy serveru (WPAD). Je-li povoleno automatické zjišťování proxy serveru, systém se pokusí vyhledat konfigurační skript proxy serveru, který je zodpovědný za vrácení sady proxy serverů, které lze použít pro požadavek. Pokud je nalezen konfigurační skript proxy, je skript stažen, zkompilován a spuštěn v místním počítači, když <xref:System.Net.WebProxy> jsou získány informace o serveru proxy, datový proud požadavku nebo odpověď pro požadavek, který používá instanci.  
   
- Automatickou detekci proxy provádí <xref:System.Net.WebProxy> třída a může využívat nastavení na úrovni požadavků, nastavení v konfiguračních souborech a nastavení určená pomocí dialogového okna místní sítě Internet Exploreru **(LAN)** .  
-  
-> [!NOTE]
-> Dialogové okno **Nastavení místní sítě (LAN)** Internet Exploreru můžete zobrazit tak, že v hlavní nabídce aplikace Internet Explorer vyberete **nástroje** a pak vyberete **Možnosti Internetu**. Potom vyberte kartu **připojení** a pak klikněte na **Nastavení místní sítě**.  
-  
- Pokud je povolena automatická detekce proxy, třída <xref:System.Net.WebProxy> se pokusí vyhledat skript konfigurace proxy následujícím způsobem:  
-  
-1. Funkce WinInet `InternetQueryOption` slouží k vyhledání konfiguračního skriptu proxy serveru naposledy zjištěného aplikací Internet Explorer.  
-  
-2. Pokud skript není umístěný, <xref:System.Net.WebProxy> Třída pomocí protokolu DHCP (Dynamic Host Configuration Protocol) Tento skript vyhledá. Server DHCP může reagovat buď s umístěním (názvem hostitele) skriptu, nebo s úplnou adresou URL pro tento skript.  
-  
-3. Pokud server DHCP neidentifikuje hostitele WPAD, bude pro hostitele s protokolem WPAD jako jeho název nebo alias dotazován dotaz na server DNS.  
-  
-4. Pokud hostitel není identifikovaný a umístění konfiguračního skriptu proxy serveru je zadáno pomocí nastavení aplikace Internet Explorer LAN nebo konfiguračního souboru, bude použito toto umístění.  
+ Automatické zjišťování proxy serveru <xref:System.Net.WebProxy> provádí třída a může využívat nastavení na úrovni požadavků, nastavení v konfiguračních souborech a nastavení určená pomocí dialogového okna Lan (Internet Explorer **Local Area Network).**  
   
 > [!NOTE]
-> Aplikace spuštěné jako služba NT nebo jako součást ASP.NET používají nastavení aplikace Internet Explorer proxy server (Pokud je k dispozici) vyvolání uživatele. Tato nastavení nemusí být k dispozici pro všechny aplikace služby.  
+> Dialogové okno Nastavení místní sítě Internet Explorer **(LAN)** můžete zobrazit tak, že vyberete **nástroje** z hlavní nabídky aplikace Internet Explorer a potom vyberete **možnosti Internetu**. Dále vyberte kartu **Připojení** a klepněte na **položku Nastavení místní sítě**.  
   
- Proxy servery jsou nakonfigurovány podle connectoid. Connectoid je položka v dialogovém okně připojení k síti a může to být fyzické síťové zařízení (modem nebo ethernetová karta) nebo virtuální rozhraní (například připojení VPN spuštěné přes síťové zařízení). Pokud se connectoid změní (například bezdrátové připojení změní přístupový bod nebo je povolena síť VPN), algoritmus detekce proxy se spustí znovu.  
+ Pokud je povolena automatická <xref:System.Net.WebProxy> detekce proxy serveru, třída se pokusí vyhledat skript konfigurace proxy takto:  
   
- Ve výchozím nastavení se k detekci proxy serveru používá nastavení proxy serveru aplikace Internet Explorer. Pokud vaše aplikace běží pod neinteraktivním účtem (bez pohodlnýho způsobu konfigurace nastavení proxy serveru IE), nebo pokud chcete použít nastavení proxy serveru, které se liší od nastavení IE, můžete nakonfigurovat proxy tak, že vytvoříte konfigurační soubor s [ defaultProxy\<prvek > (nastavení sítě)](../configure-apps/file-schema/network/defaultproxy-element-network-settings.md) a [ \<elementy proxy > elementu (nastavení sítě)](../configure-apps/file-schema/network/proxy-element-network-settings.md) definovány.  
+1. Funkce WinINet `InternetQueryOption` se používá k vyhledání konfiguračního skriptu proxy, který aplikace Internet Explorer naposledy zjistila.  
   
- U požadavků, které vytvoříte, můžete vypnout automatickou detekci proxy na úrovni žádosti pomocí hodnoty null <xref:System.Net.WebRequest.Proxy%2A> s vaším požadavkem, jak je znázorněno v následujícím příkladu kódu.  
+2. Pokud skript není nalezen, <xref:System.Net.WebProxy> třída používá k vyhledání skriptu protokol DHCP(DHCP). Server DHCP může odpovědět buď umístěním (názvem hostitele) skriptu, nebo úplnou adresou URL skriptu.  
+  
+3. Pokud server DHCP neidentifikuje hostitele WPAD, je služba DNS dotazována na hostitele s názvem nebo aliasem WPAD.  
+  
+4. Pokud hostitel není identifikován a umístění konfiguračního skriptu proxy je určeno nastavením sítě LAN aplikace Internet Explorer nebo konfiguračním souborem, použije se toto umístění.  
+  
+> [!NOTE]
+> Aplikace spuštěné jako služba NT nebo jako součást ASP.NET používají nastavení proxy serveru aplikace Internet Explorer (je-li k dispozici) vyvolávajícího uživatele. Tato nastavení nemusí být k dispozici pro všechny aplikace služby.  
+  
+ Proxy servery jsou konfigurovány na základě per-connectoid. Connectoid je položka v dialogovém okně síťového připojení a může být fyzické síťové zařízení (modem nebo ethernetová karta) nebo virtuální rozhraní (například připojení VPN běžící přes síťové zařízení). Při změně connectoid (například bezdrátové připojení změní přístupový bod nebo je povolena vpn), algoritmus detekce proxy je znovu spuštěn.  
+  
+ Ve výchozím nastavení se nastavení serveru proxy aplikace Internet Explorer používá k rozpoznání proxy serveru. Pokud je vaše aplikace spuštěna pod neinteraktivním účtem (bez vhodného způsobu konfigurace nastavení proxy serveru IE), nebo pokud chcete použít nastavení proxy serveru odlišné od nastavení iE, můžete nakonfigurovat proxy server vytvořením konfiguračního souboru s [ \<výchozím proxy> Element (Nastavení sítě)](../configure-apps/file-schema/network/defaultproxy-element-network-settings.md) a [ \<proxy> Element (Nastavení sítě)](../configure-apps/file-schema/network/proxy-element-network-settings.md) prvky definované.  
+  
+ U požadavků, které vytvoříte, můžete zakázat automatické zjišťování proxy <xref:System.Net.WebRequest.Proxy%2A> serveru na úrovni požadavku pomocí null s požadavkem, jak je znázorněno v následujícím příkladu kódu.  
   
 ```csharp  
 public static void DisableForMyRequest (Uri resource)  
@@ -62,13 +62,13 @@ Public Shared Sub DisableForMyRequest(ByVal resource As Uri)
     Dim request As WebRequest = WebRequest.Create(resource)  
     request.Proxy = Nothing  
     Dim response As WebResponse = request.GetResponse()  
-    End Sub   
+    End Sub
 ```  
   
- Žádosti, které nemají proxy, používají výchozí proxy server domény, který je k dispozici ve <xref:System.Net.WebRequest.DefaultWebProxy%2A> vlastnosti.  
+ Požadavky, které nemají proxy server, používají výchozí proxy server domény <xref:System.Net.WebRequest.DefaultWebProxy%2A> aplikace, který je k dispozici ve vlastnosti.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Net.WebProxy>
 - <xref:System.Net.WebRequest>
-- [\<System .NET > – element (nastavení sítě)](../configure-apps/file-schema/network/system-net-element-network-settings.md)
+- [\<system.Net> element (nastavení sítě)](../configure-apps/file-schema/network/system-net-element-network-settings.md)
