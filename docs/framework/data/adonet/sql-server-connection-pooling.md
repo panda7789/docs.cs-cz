@@ -1,105 +1,105 @@
 ---
-title: SQL Server sdružování připojení
+title: Sdružování připojení serveru SQL Server
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: 7e51d44e-7c4e-4040-9332-f0190fe36f07
-ms.openlocfilehash: 3bf0ce98b9b16b8d698a814f3bf2c4f442f3bf06
-ms.sourcegitcommit: 19014f9c081ca2ff19652ca12503828db8239d48
+ms.openlocfilehash: 149511bd4e84baabf11eca014257127b587830df
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "76980038"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79148995"
 ---
 # <a name="sql-server-connection-pooling-adonet"></a>Sdružování připojení SQL Serveru (ADO.NET)
-Připojení k databázovému serveru se obvykle skládá z několika časově náročných kroků. Musí se navázat fyzický kanál, jako je například soket nebo pojmenovaný kanál. musí se vyskytnout počáteční Metoda handshake se serverem, informace o připojovacím řetězci musí být analyzovány, musí být spuštěny pro zařazení do aktuální transakce a tak dále.  
+Připojení k databázovému serveru se obvykle skládá z několika časově náročných kroků. Fyzický kanál, jako je soket nebo pojmenovaný kanál, musí být vytvořen, musí dojít k počátečnímu podání ruky se serverem, musí být analyzovány informace o připojovacím řetězci, připojení musí být ověřeno serverem, kontroly musí být spuštěny pro zařazení do aktuální transakce a tak dále.  
   
- V praxi většina aplikací používá pro připojení jenom jednu nebo několik různých konfigurací. To znamená, že během provádění aplikace se opakovaně otevírají a zavřou spousta identických připojení. Pro minimalizaci nákladů na otevírání připojení používá ADO.NET techniku optimalizace nazývanující *sdružování připojení*.  
+ V praxi většina aplikací používá pouze jednu nebo několik různých konfigurací pro připojení. To znamená, že během provádění aplikace bude mnoho identických připojení opakovaně otevřeno a zavírat. Chcete-li minimalizovat náklady na otevření připojení, ADO.NET používá optimalizační techniku nazvanou *sdružování připojení*.  
   
- Sdružování připojení snižuje počet, kolikrát musí být otevřená nová připojení. *Pooler* udržuje vlastnictví fyzického připojení. Spravuje připojení tak, že udržuje pro každou konfiguraci připojení sadu aktivních připojení. Pokaždé, když uživatel zavolá `Open` v připojení, Pooler vyhledá dostupné připojení ve fondu. Pokud je připojení ve fondu k dispozici, vrátí ho volajícímu místo otevření nového připojení. Když aplikace zavolá `Close` v rámci připojení, vrátí ji do fondu sady aktivních připojení místo jejího zavření. Jakmile se připojení vrátí do fondu, je připraveno k jeho opětovnému použití při příštím `Open` volání.  
+ Sdružování připojení snižuje počet, kolikrát je nutné otevřít nová připojení. *Pooler* udržuje vlastnictví fyzicképřipojení. Spravuje připojení udržováním při životě sadu aktivních připojení pro každou konfiguraci daného připojení. Kdykoli uživatel `Open` volá připojení, pooler hledá dostupné připojení ve fondu. Pokud je k dispozici sdružené připojení, vrátí jej volajícímu namísto otevření nového připojení. Když aplikace `Close` volá připojení, pooler vrátí do sdružené sady aktivních připojení namísto jeho zavření. Jakmile je připojení vráceno do fondu, je připraveno `Open` k opětovnému použití při dalším volání.  
   
- Sdružená můžou být jenom připojení se stejnou konfigurací. ADO.NET udržuje několik fondů ve stejnou dobu, jednu pro každou konfiguraci. Připojení jsou při použití integrovaného zabezpečení rozdělená na fondy podle připojovacího řetězce a identity Windows. Připojení jsou také sdružená na základě toho, zda jsou zařazeny do transakce. Při použití <xref:System.Data.SqlClient.SqlConnection.ChangePassword%2A>má instance <xref:System.Data.SqlClient.SqlCredential> vliv na fond připojení. Různé instance <xref:System.Data.SqlClient.SqlCredential> budou používat různé fondy připojení, a to i v případě, že je ID uživatele a heslo stejné.  
+ Sdružují se pouze připojení se stejnou konfigurací. ADO.NET udržuje několik fondů současně, jeden pro každou konfiguraci. Připojení jsou rozdělena do fondů podle připojovacího řetězce a identity systému Windows při použití integrovaného zabezpečení. Připojení jsou také sdružené na základě toho, zda jsou zapsány v transakci. Při <xref:System.Data.SqlClient.SqlConnection.ChangePassword%2A>použití <xref:System.Data.SqlClient.SqlCredential> instance ovlivňuje fond připojení. Různé instance <xref:System.Data.SqlClient.SqlCredential> budou používat různé fondy připojení, i když id uživatele a heslo jsou stejné.  
   
- Připojení sdružování můžou významně zlepšit výkon a škálovatelnost vaší aplikace. Ve výchozím nastavení je sdružování připojení povolené v ADO.NET. Pokud je explicitně nezakážete, Pooler optimalizuje připojení při jejich otevření a zavření ve vaší aplikaci. Můžete také dodat několik modifikátorů připojovacího řetězce pro řízení chování sdružování připojení. Další informace najdete v části řízení sdružování připojení pomocí klíčových slov připojovacího řetězce dále v tomto tématu.  
+ Sdružování připojení může výrazně zvýšit výkon a škálovatelnost vaší aplikace. Ve výchozím nastavení je sdružování připojení povoleno v ADO.NET. Pokud explicitně zakázat, pooler optimalizuje připojení, jak jsou otevřeny a uzavřeny ve vaší aplikaci. Můžete také zadat několik modifikátorů připojovacího řetězce pro řízení chování sdružování připojení. Další informace naleznete v tématu "Řízení sdružování připojení s klíčovými slovy připojovacího řetězce" dále v tomto tématu.  
   
 > [!NOTE]
-> Když je sdružování připojení povolené a pokud dojde k chybě časového limitu nebo jiné chybě přihlášení, vyvolá se výjimka a následné pokusy o připojení selžou po dobu dalších pěti sekund, což je "blokující perioda". Pokud se aplikace pokusí připojit v rámci blokujícího období, bude znovu vyvolána první výjimka. Následná selhání po uplynutí doby blokování budou mít za následek novou dobu blokování, která bude dvakrát po dobu, po kterou se zablokuje, maximálně po dobu jedné minuty.  
+> Pokud je povoleno sdružování připojení a dojde-li k chybě vypršení časového limitu nebo jiné chybě přihlášení, bude vyvolána výjimka a následné pokusy o připojení se nezdaří po dobu dalších pěti sekund, "blokovací období". Pokud se aplikace pokusí připojit v rámci období blokování, bude znovu vyvolána první výjimka. Následné chyby po ukončení blokovacího období budou mít za následek nové blokovací období, které je dvakrát delší než předchozí blokovací období, maximálně jednu minutu.  
   
 ## <a name="pool-creation-and-assignment"></a>Vytvoření a přiřazení fondu  
- Při prvním otevření připojení se vytvoří fond připojení založený na přesně odpovídajícím algoritmu, který přidruží fond k připojovacímu řetězci v připojení. Každý fond připojení je přidružený k jedinečnému připojovacímu řetězci. Pokud se při otevření nového připojení nejedná o přesný řetězec odpovídající existujícímu fondu, vytvoří se nový fond. Připojení jsou sdružená podle procesu, podle domény aplikace, podle připojovacího řetězce a při použití integrovaného zabezpečení podle identity systému Windows. Připojovací řetězce musí mít také přesnou shodu; Klíčová slova dodaná v jiném pořadí pro stejné připojení budou sdružená samostatně.  
+ Při prvním otevření připojení je vytvořen fond připojení na základě algoritmu přesného párování, který přidružuje fond k připojovacímu řetězci v připojení. Každý fond připojení je přidružen k odlišnému připojovacímu řetězci. Při otevření nového připojení, pokud připojovací řetězec není přesná shoda s existujícím fondem, je vytvořen nový fond. Připojení jsou sdružená podle procesu, podle domény aplikace, podle připojovacího řetězce a při použití integrovaného zabezpečení podle identity systému Windows. Připojovací řetězce musí být také přesnou shodu; klíčová slova dodaná v jiném pořadí pro stejné připojení budou sdružena samostatně.  
   
- V následujícím C# příkladu jsou vytvořeny tři nové objekty <xref:System.Data.SqlClient.SqlConnection>, ale pro jejich správu jsou vyžadovány pouze dva fondy připojení. Všimněte si, že první a druhý řetězec připojení se liší podle hodnoty přiřazené pro `Initial Catalog`.  
+ V následujícím příkladu jazyka <xref:System.Data.SqlClient.SqlConnection> C# jsou vytvořeny tři nové objekty, ale ke správě jsou vyžadovány pouze dva fondy připojení. Všimněte si, že první a druhý připojovací řetězce se liší podle hodnoty přiřazené pro `Initial Catalog`.  
   
 ```csharp
 using (SqlConnection connection = new SqlConnection(  
   "Integrated Security=SSPI;Initial Catalog=Northwind"))  
     {  
-        connection.Open();        
+        connection.Open();
         // Pool A is created.  
     }  
   
 using (SqlConnection connection = new SqlConnection(  
   "Integrated Security=SSPI;Initial Catalog=pubs"))  
     {  
-        connection.Open();        
+        connection.Open();
         // Pool B is created because the connection strings differ.  
     }  
   
 using (SqlConnection connection = new SqlConnection(  
   "Integrated Security=SSPI;Initial Catalog=Northwind"))  
     {  
-        connection.Open();        
+        connection.Open();
         // The connection string matches pool A.  
     }  
 ```  
   
- Pokud v připojovacím řetězci není zadáno `MinPoolSize` nebo je zadáno jako nula, připojení ve fondu budou po určité době nečinnosti zavřena. Pokud je však zadaný `MinPoolSize` větší než nula, fond připojení nebude zničen, dokud nebude `AppDomain` uvolněn a proces skončí. Údržba neaktivních nebo prázdných fondů zahrnuje minimální nároky na systém.  
+ Pokud `MinPoolSize` není zadán v připojovacím řetězci nebo je zadán jako nula, připojení ve fondu bude uzavřenpo určité době nečinnosti. Pokud je však zadaný `MinPoolSize` je větší než nula, fond připojení není zničen, `AppDomain` dokud je uvolněn a proces končí. Údržba neaktivních nebo prázdných fondů zahrnuje minimální režii systému.  
   
 > [!NOTE]
-> Fond se automaticky vymaže, když dojde k závažné chybě, třeba při převzetí služeb při selhání.  
+> Fond je automaticky vymazána, když dojde k závažné chybě, jako je například převzetí služeb při selhání.  
   
-## <a name="adding-connections"></a>Přidávání připojení  
- U každého jedinečného připojovacího řetězce se vytvoří fond připojení. Při vytvoření fondu se vytvoří víc objektů připojení a přidají se do fondu, aby se splnil minimální požadavek na velikost fondu. Připojení se do fondu přidají podle potřeby až do maximální zadané velikosti fondu (výchozí hodnota je 100). Připojení se uvolní zpátky do fondu, když se zavřou nebo odstraněly.  
+## <a name="adding-connections"></a>Přidání připojení  
+ Fond připojení je vytvořen pro každý jedinečný připojovací řetězec. Při vytvoření fondu jsou vytvořeny a přidány do fondu více objektů připojení, aby byl splněn požadavek na minimální velikost fondu. Připojení jsou přidány do fondu podle potřeby až do maximální velikostfondu zadaná (100 je výchozí). Připojení jsou uvolněny zpět do fondu, když jsou uzavřeny nebo vyřazeny.  
   
- Pokud je požadován objekt <xref:System.Data.SqlClient.SqlConnection>, získá se z fondu, pokud je k dispozici použitelné připojení. Aby bylo možné použít připojení, musí být připojení nepoužitelné, mít odpovídající kontext transakce nebo být Nepřidruženo k jakémukoli kontextu transakce a musí obsahovat platný odkaz na server.  
+ Pokud <xref:System.Data.SqlClient.SqlConnection> je požadován objekt, je získán z fondu, pokud je k dispozici použitelné připojení. Aby bylo možné připojení použít, musí být nevyužité, musí mít odpovídající kontext transakce nebo být nepřidruženo k libovolnému kontextu transakce a mít platné propojení se serverem.  
   
- Pooler připojení splňuje požadavky na připojení tím, že je znovu přidělí, protože se uvolní do fondu. Pokud byla dosažena maximální velikost fondu a není k dispozici žádné použitelné připojení, je požadavek zařazen do fronty. Pooler se pak pokusí uvolnit všechna připojení až do vypršení časového limitu (výchozí hodnota je 15 sekund). Pokud Pooler nemůže požadavek splnit, než vyprší časový limit připojení, je vyvolána výjimka.  
+ Sdružovací služba připojení splňuje požadavky na připojení přerozdělením připojení při jejich uvolnění zpět do fondu. Pokud bylo dosaženo maximální velikosti fondu a není k dispozici žádné použitelné připojení, je požadavek zařazen do fronty. Pooler se pak pokusí získat zpět všechna připojení, dokud není dosaženo časového limitu (výchozí hodnota je 15 sekund). Pokud pooler nemůže splnit požadavek před časový limit připojení, je vyvolána výjimka.  
   
 > [!CAUTION]
-> Důrazně doporučujeme, abyste připojení vždy zavřeli, až ho budete používat, aby se připojení vrátilo do fondu. Můžete to provést buď pomocí `Close`, nebo `Dispose`ch metod objektu `Connection`, nebo otevřením všech připojení v příkazu `using` v C#nebo v příkazu `Using` v Visual Basic. Nemusejí být do fondu přidány ani vráceny připojení, která nejsou explicitně zavřena. Další informace naleznete v tématu [using](../../../csharp/language-reference/keywords/using-statement.md) a [How to: Dispose of System Resource](../../../visual-basic/programming-guide/language-features/control-flow/how-to-dispose-of-a-system-resource.md) for Visual Basic.  
+> Důrazně doporučujeme, abyste vždy zavřít připojení po dokončení jeho použití tak, aby připojení bude vrácena do fondu. Můžete to provést pomocí `Close` `Dispose` nebo metody `Connection` objektu nebo otevřením `using` všechna připojení uvnitř příkazu v jazyce C# nebo `Using` příkaz v jazyce Visual Basic. Připojení, která nejsou explicitně uzavřena, nemusí být přidána nebo vrácena do fondu. Další informace naleznete [v tématu using Statement](../../../csharp/language-reference/keywords/using-statement.md) or How [to: Dispose of a System Resource](../../../visual-basic/programming-guide/language-features/control-flow/how-to-dispose-of-a-system-resource.md) for Visual Basic.  
   
 > [!NOTE]
-> Nevolejte `Close` ani `Dispose` na `Connection`, `DataReader`nebo jiném spravovaném objektu v metodě `Finalize` vaší třídy. V finalizační metodě pouze uvolní nespravované prostředky, které vaše třída vlastní. Pokud vaše třída nevlastní žádné nespravované prostředky, nezahrnujte metodu `Finalize` do definice třídy. Další informace najdete v tématu [uvolňování paměti](../../../standard/garbage-collection/index.md).  
+> Nevolejte `Close` nebo `Dispose` na `Connection`, `DataReader`, , nebo jakýkoli `Finalize` jiný spravovaný objekt v metodě vaší třídy. Ve finalizační metodě uvolněte pouze nespravované prostředky, které přímo vlastní vaše třída. Pokud vaše třída nevlastní žádné nespravované prostředky, `Finalize` nezahrnujte metodu do definice třídy. Další informace naleznete v [tématu Garbage Collection](../../../standard/garbage-collection/index.md).  
   
-Další informace o událostech spojených s otevřením a zavřením připojení najdete v tématu [audit třídy událostí přihlášení](/sql/relational-databases/event-classes/audit-login-event-class) a [třídy události odhlášení auditu](/sql/relational-databases/event-classes/audit-logout-event-class) v dokumentaci k SQL Server.  
+Další informace o událostech spojených s otevíráním a zavíráním připojení naleznete v [tématu Audit přihlášení třídy událostí](/sql/relational-databases/event-classes/audit-login-event-class) a [třídy odhlášení auditu](/sql/relational-databases/event-classes/audit-logout-event-class) v dokumentaci k serveru SQL Server.  
   
-## <a name="removing-connections"></a>Odebírání připojení  
- Připojení Pooler Odebere připojení z fondu poté, co bylo nečinné po dobu přibližně 4-8 minut, nebo pokud Pooler zjistí, že spojení se serverem bylo přerušeno. Je možné, že se po pokusu o komunikaci se serverem zjistí zavážné připojení. Pokud se zjistí připojení, které už není připojené k serveru, je označený jako neplatný. Neplatná připojení jsou odebrána z fondu připojení pouze v případě, že jsou zavřena nebo znovu získána.  
+## <a name="removing-connections"></a>Odebrání připojení  
+ Sdružovací služba připojení odebere připojení z fondu poté, co byl nečinný po dobu přibližně 4-8 minut, nebo pokud pooler zjistí, že připojení se serverem byla přerušena. Všimněte si, že přerušené připojení lze zjistit pouze po pokusu o komunikaci se serverem. Pokud je nalezeno připojení, které již není připojeno k serveru, je označeno jako neplatné. Neplatná připojení jsou odebrána z fondu připojení pouze v případě, že jsou uzavřeny nebo regenerované.  
   
- Pokud připojení existuje na serveru, který zmizel, může být toto připojení vykresleno z fondu i v případě, že Pooler připojení nerozpoznalo vážné připojení a označil ho jako neplatný. Jedná se o případ, že režie kontroly, že připojení je stále platné, by vyloučila výhody použití Pooler tím, že by mohlo dojít k dalšímu přenosu zpráv do serveru. Pokud k tomu dojde, při prvním pokusu o použití připojení zjistíte, že připojení bylo vážně navázáno, a vyvolá se výjimka.  
+ Pokud existuje připojení k serveru, který zmizel, toto připojení lze nakreslit z fondu i v případě, že sdružovací připojení nezjistilpřerušené připojení a označil jej jako neplatné. To je případ, protože režie kontroly, že připojení je stále platný by eliminovat výhody s pooler tím, že způsobí další odezvu na server dojít. V takovém případě první pokus o použití připojení zjistí, že připojení bylo přerušeno a je vyvolána výjimka.  
   
-## <a name="clearing-the-pool"></a>Vymazávání fondu  
- ADO.NET 2,0 představil dvě nové metody pro vymazání fondu: <xref:System.Data.SqlClient.SqlConnection.ClearAllPools%2A> a <xref:System.Data.SqlClient.SqlConnection.ClearPool%2A>. `ClearAllPools` vymaže fondy připojení pro daného zprostředkovatele a `ClearPool` vymaže fond připojení, který je přidružen ke konkrétnímu připojení. Pokud jsou v době volání používána připojení, jsou označeny příznakem odpovídajícím způsobem. Pokud jsou uzavřeny, budou namísto návratu do fondu zahozeny.  
+## <a name="clearing-the-pool"></a>Vymazání fondu  
+ ADO.NET 2.0 zavedla dvě nové metody <xref:System.Data.SqlClient.SqlConnection.ClearAllPools%2A> <xref:System.Data.SqlClient.SqlConnection.ClearPool%2A>pro vyčištění bazénu: a . `ClearAllPools`vymaže fondy připojení `ClearPool` pro daného zprostředkovatele a vymaže fond připojení, který je přidružen k určitému připojení. Pokud jsou v době volání používána připojení, jsou odpovídajícím způsobem označena. Když jsou uzavřeny, jsou zahozeny namísto vrácení do fondu.  
   
 ## <a name="transaction-support"></a>Podpora transakcí  
- Připojení jsou vykreslena z fondu a přiřazena na základě kontextu transakce. Pokud v připojovacím řetězci není zadáno `Enlist=false`, fond připojení zajistí, že se připojení zařadí do <xref:System.Transactions.Transaction.Current%2A>ho kontextu. Když je připojení uzavřeno a vráceno do fondu s zařazenou `System.Transactions` transakcí, je nastaveno tak, aby další požadavek pro tento fond připojení se stejnou `System.Transactions` transakce vrátil stejné připojení, je-li k dispozici. Pokud je taková žádost vystavená a nejsou k dispozici žádná připojení ve fondu, připojení se vykreslí z části fondu, která není v transakčním režimu, a zařadí se do ní. Pokud nejsou žádná připojení dostupná v žádné z oblastí fondu, vytvoří se nové připojení a zařadí se.  
+ Připojení jsou čerpána z fondu a přiřazena na základě kontextu transakce. Pokud `Enlist=false` není zadán v připojovacím řetězci, fond připojení <xref:System.Transactions.Transaction.Current%2A> zajišťuje, že připojení je zapsán v kontextu. Pokud je připojení uzavřeno a vráceno do `System.Transactions` fondu s zapsanou transakcí, je odloženo tak, že `System.Transactions` další požadavek pro tento fond připojení se stejnou transakcí vrátí stejné připojení, pokud je k dispozici. Pokud je takový požadavek vydán a nejsou k dispozici žádná sdružená připojení, je připojení nakresleno z netransakční části fondu a zapsáno. Pokud v žádné oblasti fondu nejsou k dispozici žádná připojení, je vytvořeno a zapsáno nové připojení.  
   
- Když je připojení ukončeno, je uvolněno zpátky do fondu a do příslušného dílčího dělení na základě jeho transakčního kontextu. Proto můžete připojení zavřít bez vygenerování chyby, i když distribuovaná transakce stále čeká na vyřízení. To vám umožní později odeslat nebo zrušit distribuovanou transakci.  
+ Když je připojení uzavřeno, je uvolněna zpět do fondu a do příslušného dělení na základě jeho kontextu transakce. Proto můžete zavřít připojení bez generování chyby, i když distribuovaná transakce stále čeká na vyřízení. To umožňuje potvrdit nebo přerušit distribuované transakce později.  
   
 ## <a name="controlling-connection-pooling-with-connection-string-keywords"></a>Řízení sdružování připojení pomocí klíčových slov připojovacího řetězce  
- Vlastnost `ConnectionString` objektu <xref:System.Data.SqlClient.SqlConnection> podporuje páry klíč/hodnota připojovacího řetězce, které lze použít k úpravě chování logiky sdružování připojení. Další informace najdete v tématu <xref:System.Data.SqlClient.SqlConnection.ConnectionString%2A>.  
+ Vlastnost `ConnectionString` objektu <xref:System.Data.SqlClient.SqlConnection> podporuje dvojice klíčů a hodnot připojovacího řetězce, které lze použít k úpravě chování logiky sdružování připojení. Další informace naleznete v tématu <xref:System.Data.SqlClient.SqlConnection.ConnectionString%2A>.  
   
 ## <a name="pool-fragmentation"></a>Fragmentace fondu  
- Fragmentace fondu je běžný problém v mnoha webových aplikacích, kde aplikace může vytvořit velký počet fondů, které nejsou uvolněny, dokud se proces neukončí. Tím dojde k tomu, že se velké množství připojení otevře a spotřebovává paměť, což vede k špatnému výkonu.  
+ Fragmentace fondu je běžný problém v mnoha webových aplikacích, kde aplikace může vytvořit velký počet fondů, které nejsou uvolněny, dokud proces ukončí. To ponechává velký počet připojení otevřené a náročné paměti, což má za následek nízký výkon.  
   
-### <a name="pool-fragmentation-due-to-integrated-security"></a>Fragmentace fondu z důvodu integrovaného zabezpečení  
- Připojení jsou sdružená podle připojovacího řetězce plus identity uživatele. Proto pokud na webu používáte základní ověřování nebo ověřování systému Windows a integrované přihlášení zabezpečení, získáte jeden fond na uživatele. I když to zlepšuje výkon následných databázových požadavků pro jednoho uživatele, tento uživatel nemůže využívat připojení, která udělali jiní uživatelé. Také má za následek aspoň jedno připojení pro každého uživatele k databázovému serveru. Toto je vedlejší účinek konkrétní architektury webové aplikace, kterou vývojáři musí zvážit před požadavky na zabezpečení a auditování.  
+### <a name="pool-fragmentation-due-to-integrated-security"></a>Fragmentace fondu díky integrovanému zabezpečení  
+ Připojení jsou sdružena podle připojovacího řetězce a identity uživatele. Proto pokud používáte základní ověřování nebo ověřování systému Windows na webu a integrované přihlášení zabezpečení, získáte jeden fond na uživatele. Přestože to zlepšuje výkon následných požadavků na databázi pro jednoho uživatele, tento uživatel nemůže využít výhod připojení jiných uživatelů. Výsledkem je také alespoň jedno připojení na uživatele k databázovému serveru. Jedná se o vedlejší účinek konkrétní architektury webových aplikací, které musí vývojáři zvážit s požadavky na zabezpečení a auditování.  
   
-### <a name="pool-fragmentation-due-to-many-databases"></a>Fragmentace fondu v důsledku mnoha databází  
- Mnoho poskytovatelů internetových služeb hostuje několik webů na jednom serveru. Můžou použít izolovanou databázi k potvrzení přihlášení k ověřování pomocí formulářů a pak otevřít připojení ke konkrétní databázi pro daného uživatele nebo skupinu uživatelů. Připojení k databázi ověřování je sdružené a používané všemi uživateli. Existuje však samostatný fond připojení ke každé databázi, který zvyšuje počet připojení k serveru.  
+### <a name="pool-fragmentation-due-to-many-databases"></a>Fragmentace fondu z důvodu mnoha databází  
+ Mnoho poskytovatelů služeb Internetu hostuje několik webů na jednom serveru. Mohou použít jednu databázi k potvrzení přihlášení ověřování pomocí formuláře a potom otevřít připojení k určité databázi pro tohoto uživatele nebo skupinu uživatelů. Připojení k databázi ověřování je sdružené a používá každý. Existuje však samostatný fond připojení ke každé databázi, které zvyšují počet připojení k serveru.  
   
- To je také vedlejší efekt návrhu aplikace. Existuje poměrně jednoduchý způsob, jak zabránit tomuto vedlejšímu účinku, aniž by došlo k narušení zabezpečení při připojení k SQL Server. Namísto připojení k samostatné databázi pro každého uživatele nebo skupinu se připojte ke stejné databázi na serveru a potom spuštěním příkazu Transact-SQL použijte příkaz ke změně na požadovanou databázi. Následující fragment kódu ukazuje vytvoření počátečního připojení k databázi `master` a následné přepínání do požadované databáze zadané v proměnné řetězce `databaseName`.  
+ To je také vedlejší účinek návrhu aplikace. Existuje poměrně jednoduchý způsob, jak se vyhnout tento vedlejší účinek bez ohrožení zabezpečení při připojení k serveru SQL Server. Namísto připojení k samostatné databázi pro každého uživatele nebo skupinu se připojte ke stejné databázi na serveru a potom spusťte příkaz Transact-SQL USE a změňte na požadovanou databázi. Následující fragment kódu ukazuje vytvoření počátečního `master` připojení k databázi a následné `databaseName` přepnutí na požadovanou databázi zadanou v proměnné řetězce.  
   
 ```vb  
 ' Assumes that command is a valid SqlCommand object and that  
@@ -123,13 +123,13 @@ using (SqlConnection connection = new SqlConnection(
   }  
 ```  
   
-## <a name="application-roles-and-connection-pooling"></a>Aplikační role a sdružování připojení  
- Po aktivaci role SQL Server aplikace voláním uložené procedury systému `sp_setapprole` nelze kontext zabezpečení tohoto připojení resetovat. Pokud je ale povoleno sdružování do fondu, bude se připojení vracet do fondu a při opětovném použití sdruženého připojení dojde k chybě. Další informace najdete v článku znalostní báze "[chyby rolí aplikace SQL s OLE DB sdružování zdrojů](https://support.microsoft.com/default.aspx?scid=KB;EN-US;Q229564)."  
+## <a name="application-roles-and-connection-pooling"></a>Role aplikací a sdružování připojení  
+ Po aktivaci role aplikace serveru SQL `sp_setapprole` Server voláním uložené procedury systému nelze obnovit kontext zabezpečení tohoto připojení. Pokud je však povoleno sdružování, je připojení vráceno do fondu a při opakovaném použití sdruženého připojení dojde k chybě. Další informace naleznete v článku znalostní báze Knowledge Base "[Chyby role aplikace SQL se sdružováním prostředků technologie OLE DB](https://support.microsoft.com/default.aspx?scid=KB;EN-US;Q229564)" .  
   
-### <a name="application-role-alternatives"></a>Alternativy aplikační role  
- Doporučujeme, abyste využili výhod mechanismů zabezpečení, které můžete použít místo aplikačních rolí. Další informace najdete v tématu [vytváření aplikačních rolí v SQL Server](./sql/creating-application-roles-in-sql-server.md).  
+### <a name="application-role-alternatives"></a>Alternativy rolí aplikace  
+ Doporučujeme využít výhod mechanismů zabezpečení, které můžete použít namísto rolí aplikace. Další informace naleznete [v tématu Vytváření rolí aplikací na serveru SQL Server](./sql/creating-application-roles-in-sql-server.md).  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Sdružování připojení](connection-pooling.md)
 - [SQL Server a ADO.NET](./sql/index.md)

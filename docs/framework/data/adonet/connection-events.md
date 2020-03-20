@@ -5,28 +5,28 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 5a29de74-acfc-4134-8616-829dd7ce0710
-ms.openlocfilehash: e958c96e304962dace72e90b9266b57943f01ac9
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: a7ad0d4d950da71db0aebca872949fa82669c5c5
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70785732"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79151696"
 ---
 # <a name="connection-events"></a>Události připojení
-Všichni poskytovatelé dat .NET Framework mají objekty **připojení** se dvěma událostmi, které můžete použít k načtení informativních zpráv ze zdroje dat nebo k určení, jestli se změnil stav **připojení** . Následující tabulka popisuje události objektu **připojení** .  
+Všichni zprostředkovatelé dat rozhraní .NET Framework mají objekty **connection** se dvěma událostmi, které můžete použít k načtení informačních zpráv ze zdroje dat nebo k určení, zda se změnil stav **připojení.** Následující tabulka popisuje události objektu **Connection.**  
   
 |Událost|Popis|  
 |-----------|-----------------|  
-|**InfoMessage**|Nastane, pokud se ze zdroje dat vrátí informační zpráva. Informační zprávy jsou zprávy ze zdroje dat, které nevedou k vyvolání výjimky.|  
-|**StateChange**|Vyvolá se v případě, že dojde ke změně stavu **připojení** .|  
+|**Informační zpráva**|Vyvolá se při vrácení informační zprávy ze zdroje dat. Informační zprávy jsou zprávy ze zdroje dat, které nevedou k vyvolání výjimky.|  
+|**Změna stavu**|Vyvolá se při změně stavu **připojení.**|  
   
 ## <a name="working-with-the-infomessage-event"></a>Práce s událostí InfoMessage  
- Můžete načíst upozornění a informativní zprávy ze zdroje dat SQL Server s využitím <xref:System.Data.SqlClient.SqlConnection.InfoMessage> události <xref:System.Data.SqlClient.SqlConnection> objektu. Chyby vrácené ze zdroje dat se úrovní závažnosti 11 až 16 způsobují výjimku, která má být vyvolána. <xref:System.Data.SqlClient.SqlConnection.InfoMessage> Událost však lze použít k získání zpráv ze zdroje dat, které nejsou přidruženy k chybě. V případě Microsoft SQL Server se jako informační zpráva považuje jakákoli chyba se závažností 10 nebo méně, která může být zachycena pomocí <xref:System.Data.SqlClient.SqlConnection.InfoMessage> události. Další informace najdete v článku o [závažnosti chyb databázového stroje](/sql/relational-databases/errors-events/database-engine-error-severities) .
+ Upozornění a informační zprávy můžete načíst ze zdroje <xref:System.Data.SqlClient.SqlConnection.InfoMessage> dat <xref:System.Data.SqlClient.SqlConnection> serveru SQL Server pomocí události objektu. Chyby vrácené ze zdroje dat s úrovní závažnosti 11 až 16 způsobit výjimku vyvolat. <xref:System.Data.SqlClient.SqlConnection.InfoMessage> Událost však lze získat zprávy ze zdroje dat, které nejsou spojeny s chybou. V případě serveru Microsoft SQL Server je jakákoli chyba se závažností 10 nebo menší považována za informační <xref:System.Data.SqlClient.SqlConnection.InfoMessage> zprávu a může být zachycena pomocí události. Další informace naleznete v článku [Rozdělení chyb databázového stroje.](/sql/relational-databases/errors-events/database-engine-error-severities)
   
- Událost obdrží objekt obsahující ve vlastnosti Errors kolekci zpráv ze zdroje dat. <xref:System.Data.SqlClient.SqlConnection.InfoMessage> <xref:System.Data.SqlClient.SqlInfoMessageEventArgs> Můžete zadat dotaz na objekty **chyby** v této kolekci pro číslo chyby a text zprávy a také zdroj chyby. Zprostředkovatel dat .NET Framework pro SQL Server obsahuje také podrobnosti o databázi, uložené proceduře a čísle řádku, ze kterého zpráva pochází.  
+ Událost <xref:System.Data.SqlClient.SqlConnection.InfoMessage> obdrží <xref:System.Data.SqlClient.SqlInfoMessageEventArgs> objekt obsahující, v jeho **Errors** vlastnost, kolekce zpráv ze zdroje dat. Můžete dotaz **Error** objekty v této kolekci pro číslo chyby a text zprávy, jakož i zdroj chyby. Zprostředkovatel dat rozhraní .NET Framework pro SQL Server také obsahuje podrobnosti o databázi, uložené proceduře a čísle řádku, ze kterého zpráva pochází.  
   
 ### <a name="example"></a>Příklad  
- Následující příklad kódu ukazuje, jak přidat obslužnou rutinu události pro <xref:System.Data.SqlClient.SqlConnection.InfoMessage> událost.  
+ Následující příklad kódu ukazuje, jak přidat <xref:System.Data.SqlClient.SqlConnection.InfoMessage> obslužnou rutinu události pro událost.  
   
 ```vb  
 ' Assumes that connection represents a SqlConnection object.  
@@ -48,7 +48,7 @@ End Sub
   
 ```csharp  
 // Assumes that connection represents a SqlConnection object.  
-  connection.InfoMessage +=   
+  connection.InfoMessage +=
     new SqlInfoMessageEventHandler(OnInfoMessage);  
   
 protected static void OnInfoMessage(  
@@ -59,24 +59,24 @@ protected static void OnInfoMessage(
     Console.WriteLine(  
   "The {0} has received a severity {1}, state {2} error number {3}\n" +  
   "on line {4} of procedure {5} on server {6}:\n{7}",  
-   err.Source, err.Class, err.State, err.Number, err.LineNumber,   
+   err.Source, err.Class, err.State, err.Number, err.LineNumber,
    err.Procedure, err.Server, err.Message);  
   }  
 }  
 ```  
   
-## <a name="handling-errors-as-infomessages"></a>Zpracování chyb jako InfoMessages  
- <xref:System.Data.SqlClient.SqlConnection.InfoMessage> Událost se normálně aktivuje jenom pro informativní a varovné zprávy, které se odesílají ze serveru. Pokud však dojde ke skutečné chybě, spuštění metody **ExecuteNonQuery** nebo **ExecuteReader** , která iniciovala operaci serveru, je zastaveno a je vyvolána výjimka.  
+## <a name="handling-errors-as-infomessages"></a>Zpracování chyb jako informačních zpráv  
+ Událost <xref:System.Data.SqlClient.SqlConnection.InfoMessage> se obvykle vypaluje pouze pro informační a varovné zprávy odeslané ze serveru. Však když dojde k skutečné chybě, provádění **ExecuteNonQuery** nebo **ExecuteReader** metoda, která iniciovala operaci serveru je zastavena a je vyvolána výjimka.  
   
- Pokud chcete pokračovat v zpracovávání zbývajících příkazů v příkazu bez ohledu na chyby vyprodukované serverem, nastavte <xref:System.Data.SqlClient.SqlConnection.FireInfoMessageEventOnUserErrors%2A> vlastnost <xref:System.Data.SqlClient.SqlConnection> `true`na. To způsobí, že připojení <xref:System.Data.SqlClient.SqlConnection.InfoMessage> vyvolá událost pro chyby namísto vyvolání výjimky a přerušení zpracování. Klientská aplikace pak může tuto událost zpracovat a reagovat na chybové podmínky.  
+ Pokud chcete pokračovat ve zpracování zbývajících příkazů v příkazu bez ohledu na <xref:System.Data.SqlClient.SqlConnection.FireInfoMessageEventOnUserErrors%2A> chyby <xref:System.Data.SqlClient.SqlConnection> vytvořené `true`serverem, nastavte vlastnost do . To způsobí, že připojení <xref:System.Data.SqlClient.SqlConnection.InfoMessage> k požáru události pro chyby namísto vyvolání výjimky a přerušení zpracování. Klientská aplikace pak může tuto událost zpracovat a reagovat na chybové stavy.  
   
 > [!NOTE]
-> Chyba s úrovní závažnosti 17 nebo vyšší, která způsobí, že server přestane zpracovávat příkazy, musí být zpracován jako výjimka. V tomto případě je vyvolána výjimka bez ohledu na to, jak je chyba zpracována v <xref:System.Data.SqlClient.SqlConnection.InfoMessage> události.  
+> Jako výjimku musí být zpracována chyba s úrovní závažnosti 17 nebo vyšší, která způsobí, že server zastaví zpracování příkazu. V tomto případě je vyvolána výjimka bez ohledu na <xref:System.Data.SqlClient.SqlConnection.InfoMessage> to, jak je chyba zpracována v události.  
   
 ## <a name="working-with-the-statechange-event"></a>Práce s událostí StateChange  
- K události **StateChange** dojde, když se změní stav **připojení** . Událost **StateChange** přijímá <xref:System.Data.StateChangeEventArgs> , která umožňuje určit změnu stavu **připojení** pomocí vlastností **OriginalState** a **CurrentState** . Vlastnost **OriginalState** je <xref:System.Data.ConnectionState> výčet, který označuje stav **připojení** před jeho změnou. **CurrentState** je <xref:System.Data.ConnectionState> výčet, který označuje stav **připojení** po jeho změně.  
+ **StateChange** Událost nastane při změně stavu **připojení.** **StateChange** <xref:System.Data.StateChangeEventArgs> událost obdrží, které umožňují určit změnu stavu **připojení** pomocí **OriginalState** a **CurrentState** vlastnosti. Vlastnost **OriginalState** je <xref:System.Data.ConnectionState> výčet, který označuje stav **connection** před změnou. **CurrentState** je <xref:System.Data.ConnectionState> výčet, který označuje stav **připojení** po změně.  
   
- Následující příklad kódu používá událost **StateChange** k zápisu zprávy do konzoly, když se změní stav **připojení** .  
+ Následující příklad kódu používá událost **StateChange** k zápisu zprávy do konzoly při změně stavu **připojení.**  
   
 ```vb  
 ' Assumes connection represents a SqlConnection object.  
@@ -96,7 +96,7 @@ End Sub
 // Assumes connection represents a SqlConnection object.  
   connection.StateChange  += new StateChangeEventHandler(OnStateChange);  
   
-protected static void OnStateChange(object sender,   
+protected static void OnStateChange(object sender,
   StateChangeEventArgs args)  
 {  
   Console.WriteLine(  
@@ -105,7 +105,7 @@ protected static void OnStateChange(object sender,
 }  
 ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Připojení ke zdroji dat](connecting-to-a-data-source.md)
 - [Přehled ADO.NET](ado-net-overview.md)
