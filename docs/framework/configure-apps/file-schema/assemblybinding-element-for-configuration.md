@@ -7,19 +7,18 @@ helpviewer_keywords:
 - assemblyBinding Element
 - <assemblyBinding> Element
 ms.assetid: 6cc55983-b894-449b-8e26-b258e53939cd
-ms.openlocfilehash: e0b83c4b3573ab6819654e72cac1bf3e4a0ba637
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 21cf5e749b0dae310c3326f8abf82c6678fc97e9
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69921276"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79155476"
 ---
-# <a name="assemblybinding-element-for-configuration"></a>\<assemblyBinding element > pro \<konfigurační >
+# <a name="assemblybinding-element-for-configuration"></a>\<assemblyBinding> \<element pro konfigurační>
 
 Určuje zásadu vazby sestavení na úrovni konfigurace.
 
-[ **\<> Konfigurace**](configuration-element.md)   
-&nbsp;&nbsp; **\<assemblyBinding >**
+konfigurace &nbsp; &nbsp;>[** \<**](configuration-element.md) **>\<vazby sestavení**
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -33,26 +32,26 @@ Určuje zásadu vazby sestavení na úrovni konfigurace.
 
 |           | Popis |
 | --------- | ----------- |
-| **xmlns** | Požadovaný atribut.<br><br>Určuje obor názvů XML vyžadovaný pro vazbu sestavení. Jako hodnotu použijte řetězec "urn: schemas-microsoft-com: asm. v1". |
+| **Xmlns** | Požadovaný atribut.<br><br>Určuje obor názvů XML požadovaný pro vazbu sestavení. Jako hodnotu použijte řetězec "urn:schemas-microsoft-com:asm.v1". |
 
-## <a name="parent-element"></a>Nadřazený element
-
-|     | Popis |
-| --- | ----------- |
-| [ **\<> Konfigurace**](configuration-element.md) | Kořenový prvek v každém konfiguračním souboru, který je používán modulem Common Language Runtime (CLR) a aplikacemi rozhraní .NET Framework. |
-
-## <a name="child-element"></a>Podřízený element
+## <a name="parent-element"></a>Nadřazený prvek
 
 |     | Popis |
 | --- | ----------- |
-| [ **\<linkedConfiguration>** ](linkedconfiguration-element.md) | Určuje konfigurační soubor, který se má zahrnout. |
+| [**\<>konfigurace**](configuration-element.md) | Kořenový prvek v každém konfiguračním souboru, který je používán modulem Common Language Runtime (CLR) a aplikacemi rozhraní .NET Framework. |
+
+## <a name="child-element"></a>Podřízený prvek
+
+|     | Popis |
+| --- | ----------- |
+| [**\<linkedKonfigurační>**](linkedconfiguration-element.md) | Určuje konfigurační soubor, který má být zahrnut. |
 
 ## <a name="remarks"></a>Poznámky
 
-Element [**linkedConfiguration > zjednodušuje správu sestavení komponent tím, že umožňuje aplikačním konfiguračním souborům zahrnout konfigurační soubory sestavení do známých umístění místo duplikace sestavení. \<** ](linkedconfiguration-element.md) nastavení konfigurace.
+Prvek [** \<LinkedConfiguration>**](linkedconfiguration-element.md) zjednodušuje správu sestav součástí tím, že umožňuje konfiguračním souborům aplikací zahrnout konfigurační soubory sestavení do známých umístění, nikoli duplikovat nastavení konfigurace sestavení.
 
 > [!NOTE]
-> **\<Linkedconfiguration – >** element není podporován pro aplikace s Windows manifesty vedle sebe.
+> Prvek ** \<linkedConfiguration>** není podporován pro aplikace s windows side-by-side manifesty.
 
 ## <a name="example"></a>Příklad
 
@@ -66,6 +65,6 @@ Následující příklad ukazuje, jak zahrnout konfigurační soubor na místní
 </configuration>
 ```
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Schéma konfiguračního souboru pro .NET Framework](index.md)
+- [Schéma konfiguračního souboru pro rozhraní .NET Framework](index.md)
