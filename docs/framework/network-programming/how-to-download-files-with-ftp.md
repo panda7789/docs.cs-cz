@@ -1,23 +1,23 @@
 ---
-title: 'Postupy: Stahování souborů přes FTP'
-description: Tento článek popisuje ukázku toho, jak stáhnout soubor ze serveru FTP.
+title: 'Postup: Stahování souborů pomocí FTP'
+description: Tento článek ukazuje ukázku stažení souboru ze serveru FTP.
 ms.date: 06/26/2018
 dev_langs:
 - csharp
 - vb
 ms.assetid: 892548b8-954a-4f6a-9bca-2ae620c3700f
 ms.openlocfilehash: a0941d42de71029be9aab2fdbc69f8434fb73e2d
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "65632996"
 ---
-# <a name="how-to-download-files-with-ftp"></a><span data-ttu-id="f5e36-103">Postupy: Stahování souborů přes FTP</span><span class="sxs-lookup"><span data-stu-id="f5e36-103">How to: Download files with FTP</span></span>
+# <a name="how-to-download-files-with-ftp"></a><span data-ttu-id="3a3e6-103">Postup: Stahování souborů pomocí FTP</span><span class="sxs-lookup"><span data-stu-id="3a3e6-103">How to: Download files with FTP</span></span>
 
-<span data-ttu-id="f5e36-104">Tento příklad ukazuje, jak stáhnout soubor ze serveru FTP.</span><span class="sxs-lookup"><span data-stu-id="f5e36-104">This sample shows how to download a file from an FTP server.</span></span>
+<span data-ttu-id="3a3e6-104">Tato ukázka ukazuje, jak stáhnout soubor ze serveru FTP.</span><span class="sxs-lookup"><span data-stu-id="3a3e6-104">This sample shows how to download a file from an FTP server.</span></span>
 
-## <a name="example"></a><span data-ttu-id="f5e36-105">Příklad</span><span class="sxs-lookup"><span data-stu-id="f5e36-105">Example</span></span>
+## <a name="example"></a><span data-ttu-id="3a3e6-105">Příklad</span><span class="sxs-lookup"><span data-stu-id="3a3e6-105">Example</span></span>
 
 ```csharp
 using System;

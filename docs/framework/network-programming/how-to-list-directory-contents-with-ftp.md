@@ -1,23 +1,23 @@
 ---
-title: 'Postupy: Výpis obsahu adresáře s využitím protokolu FTP'
-description: Tento článek popisuje ukázku toho, jak zobrazit obsah adresáře serveru FTP.
+title: 'Postup: Seznam obsahu adresáře pomocí protokolu FTP'
+description: Tento článek ukazuje ukázku, jak zobrazit obsah adresáře serveru FTP.
 ms.date: 06/26/2018
 dev_langs:
 - csharp
 - vb
 ms.assetid: 130c64c9-7b7f-4672-9b3b-d946bd2616c5
 ms.openlocfilehash: 924e6731ce585f127af319fdbfbdc8c12e61c46d
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "61642617"
 ---
-# <a name="how-to-list-directory-contents-with-ftp"></a><span data-ttu-id="5951a-103">Postupy: Výpis obsahu adresáře s využitím protokolu FTP</span><span class="sxs-lookup"><span data-stu-id="5951a-103">How to: List directory contents with FTP</span></span>
+# <a name="how-to-list-directory-contents-with-ftp"></a><span data-ttu-id="ae493-103">Postup: Seznam obsahu adresáře pomocí protokolu FTP</span><span class="sxs-lookup"><span data-stu-id="ae493-103">How to: List directory contents with FTP</span></span>
 
-<span data-ttu-id="5951a-104">Tento příklad ukazuje, jak zobrazit obsah adresáře serveru FTP.</span><span class="sxs-lookup"><span data-stu-id="5951a-104">This sample shows how to list the directory contents of an FTP server.</span></span>
+<span data-ttu-id="ae493-104">Tato ukázka ukazuje, jak zobrazit obsah adresáře serveru FTP.</span><span class="sxs-lookup"><span data-stu-id="ae493-104">This sample shows how to list the directory contents of an FTP server.</span></span>
 
-## <a name="example"></a><span data-ttu-id="5951a-105">Příklad</span><span class="sxs-lookup"><span data-stu-id="5951a-105">Example</span></span>
+## <a name="example"></a><span data-ttu-id="ae493-105">Příklad</span><span class="sxs-lookup"><span data-stu-id="ae493-105">Example</span></span>
 
 ```csharp
 using System;
@@ -81,7 +81,7 @@ Namespace Examples.System.Net
 End Namespace
 ```
 
-<span data-ttu-id="5951a-106">Pokud potřebujete konkrétní adresář seznamu, stačí přidat adresář na konec identifikátoru URI, které používáte ve <xref:System.Net.WebRequest.Create%2A?displayProperty=nameWithType> metody:</span><span class="sxs-lookup"><span data-stu-id="5951a-106">If you need to list a specific directory, just add the directory to the end of the URI you're using in the <xref:System.Net.WebRequest.Create%2A?displayProperty=nameWithType> method:</span></span>
+<span data-ttu-id="ae493-106">Pokud potřebujete uvést konkrétní adresář, stačí přidat adresář na konec identifikátoru URI, který používáte v metodě: <xref:System.Net.WebRequest.Create%2A?displayProperty=nameWithType></span><span class="sxs-lookup"><span data-stu-id="ae493-106">If you need to list a specific directory, just add the directory to the end of the URI you're using in the <xref:System.Net.WebRequest.Create%2A?displayProperty=nameWithType> method:</span></span>
 
 ```csharp
 FtpWebRequest request = (FtpWebRequest)WebRequest.Create("ftp://www.contoso.com/your_preferred_directory");
