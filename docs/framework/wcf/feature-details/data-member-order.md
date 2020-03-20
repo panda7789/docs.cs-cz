@@ -7,29 +7,29 @@ dev_langs:
 helpviewer_keywords:
 - data contracts [WCF], ordering members
 ms.assetid: 0658a47d-b6e5-4ae0-ba72-ababc3c6ff33
-ms.openlocfilehash: d717673139ba810c1593e5c60e488537426f1f64
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 2a5d7430953bdc31644e92b9207cd2865209cce5
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64754407"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79185202"
 ---
 # <a name="data-member-order"></a>Pořadí datových členů
-V některých aplikacích je užitečné vědět, pořadí, ve kterém se odešle data z různých datových členů, nebo má být přijata (jako například pořadí, ve kterém se zobrazí data v serializovaném kódu XML). V některých případech může být potřeba toto pořadí změnit. Toto téma popisuje pravidla řazení.  
+V některých aplikacích je užitečné znát pořadí, ve kterém jsou odesílána nebo očekáváse, že budou přijata data z různých datových členů (například pořadí, ve kterém se data zobrazí v serializovaném xml). Někdy může být nutné toto pořadí změnit. Toto téma vysvětluje pravidla řazení.  
   
 ## <a name="basic-rules"></a>Základní pravidla  
- Základní pravidla pro řazení dat patří:  
+ Mezi základní pravidla pro objednávání dat patří:  
   
-- Pokud typ kontraktu dat je součástí hierarchie dědičnosti, jsou vždy první v pořadí datových členů z jeho základních typů.  
+- Pokud typ kontraktu dat je součástí hierarchie dědičnosti, datové členy jeho základní typy jsou vždy první v pořadí.  
   
-- Dále v pořadí jsou aktuální typ datové členy, které nemají <xref:System.Runtime.Serialization.DataMemberAttribute.Order%2A> vlastnost <xref:System.Runtime.Serialization.DataMemberAttribute> atribut sady, v abecedním pořadí.  
+- Další v pořadí jsou datové členy aktuálního typu, které nemají <xref:System.Runtime.Serialization.DataMemberAttribute.Order%2A> vlastnost sady <xref:System.Runtime.Serialization.DataMemberAttribute> atributů v abecedním pořadí.  
   
-- Dále jsou všechny datové členy, které mají <xref:System.Runtime.Serialization.DataMemberAttribute.Order%2A> vlastnost <xref:System.Runtime.Serialization.DataMemberAttribute> sadu atributů. Tyto jsou řazeny podle hodnoty `Order` vlastnost první a pak podle abecedy, pokud existuje více než jednoho člena sady určitým `Order` hodnotu. Hodnoty pořadí se může přeskočit.  
+- Dále jsou všechny datové <xref:System.Runtime.Serialization.DataMemberAttribute.Order%2A> členy, <xref:System.Runtime.Serialization.DataMemberAttribute> které mají vlastnost atribut ustanovené. Ty jsou seřazeny podle hodnoty `Order` vlastnosti první a pak abecedně, pokud je více než jeden člen určité `Order` hodnoty. Hodnoty objednávky mohou být přeskočeny.  
   
- Abecedním pořadí pokládáme stav, voláním <xref:System.String.CompareOrdinal%2A> metody.  
+ Abecední pořadí je <xref:System.String.CompareOrdinal%2A> stanovena voláním metody.  
   
 ## <a name="examples"></a>Příklady  
- Uvažujme následující kód.  
+ Zvažte následující kód.  
   
  [!code-csharp[C_DataContractNames#4](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_datacontractnames/cs/source.cs#4)]
  [!code-vb[C_DataContractNames#4](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_datacontractnames/vb/source.vb#4)]  
@@ -39,13 +39,13 @@ V některých aplikacích je užitečné vědět, pořadí, ve kterém se odešl
 ```xml  
 <DerivedType>  
     <!-- Zebra is a base data member, and appears first. -->  
-    <zebra/>   
+    <zebra/>
   
     <!-- Cat has no Order, appears alphabetically first. -->  
     <cat/>  
   
    <!-- Dog has no Order, appears alphabetically last. -->  
-    <dog/>   
+    <dog/>
   
     <!-- Bird is the member with the smallest Order value -->  
     <bird/>  
@@ -58,11 +58,11 @@ V některých aplikacích je užitečné vědět, pořadí, ve kterém se odešl
   
     <!-- Antelope is the member with the highest Order value. Note that   
     Order=2 is skipped -->  
-     <antelope/>   
+     <antelope/>
 </DerivedType>  
 ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Runtime.Serialization.DataContractAttribute>
 - [Ekvivalence kontraktů dat](../../../../docs/framework/wcf/feature-details/data-contract-equivalence.md)

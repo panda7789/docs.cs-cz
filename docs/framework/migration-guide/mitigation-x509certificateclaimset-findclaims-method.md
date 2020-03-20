@@ -1,39 +1,39 @@
 ---
-title: 'Zmírnění: metoda X509CertificateClaimSet. FindClaims'
+title: 'Zmírnění: X509CertificateClaimSet.FindClaims Metoda'
 ms.date: 03/30/2017
 ms.assetid: ee356e3b-f932-48f5-875a-5e42340bee63
-ms.openlocfilehash: e75b1cae599b153012b8525a0e1e36ed116e695f
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: f94a5f685a5aa94332bf2e15e5d5eb0def02d7ef
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73457756"
+ms.lasthandoff: 03/15/2020
+ms.locfileid: "79400139"
 ---
-# <a name="mitigation-x509certificateclaimsetfindclaims-method"></a>Zmírnění: metoda X509CertificateClaimSet. FindClaims
-Počínaje aplikacemi, které cílí na .NET Framework 4.6.1, se metoda <xref:System.IdentityModel.Claims.X509CertificateClaimSet.FindClaims%2A?displayProperty=nameWithType> pokusí spárovat argument `claimType` se všemi položkami DNS v poli SAN.  
+# <a name="mitigation-x509certificateclaimsetfindclaims-method"></a>Zmírnění: X509CertificateClaimSet.FindClaims Metoda
+Počínaje aplikacemi, které cílí na rozhraní .NET Framework 4.6.1, se <xref:System.IdentityModel.Claims.X509CertificateClaimSet.FindClaims%2A?displayProperty=nameWithType> metoda pokusí porovnat `claimType` argument se všemi položkami DNS v poli SAN.  
   
 ## <a name="impact"></a>Dopad  
- Tato změna ovlivní pouze aplikace, které cílí na verze .NET Framework počínaje .NET Framework 4.6.1.  
+ Tato změna se týká pouze aplikací, které cílí na verze rozhraní .NET Framework počínaje rozhraním .NET Framework 4.6.1.  
   
- U aplikací, které cílí na předchozí verze .NET Framework, se metoda <xref:System.IdentityModel.Claims.X509CertificateClaimSet.FindClaims%2A?displayProperty=nameWithType> pokusí spárovat argument `claimType` jenom s poslední položkou DNS.  
+ U aplikací, které cílí na předchozí <xref:System.IdentityModel.Claims.X509CertificateClaimSet.FindClaims%2A?displayProperty=nameWithType> verze rozhraní .NET `claimType` Framework, se metoda pokusí porovnat argument pouze s poslední položkou DNS.  
   
-## <a name="mitigation"></a>Zmírnění  
- Pokud je tato změna nežádoucí, aplikace, které cílí na verze .NET Framework počínaje .NET Framework 4.6.1, se můžou odhlásit přidáním následujícího nastavení konfigurace do části [> modulu runtime\<](../configure-apps/file-schema/runtime/runtime-element.md) konfiguračního souboru aplikace:  
-  
-```xml  
-<runtime>  
-   <AppContextSwitchOverrides value="Switch.System.IdentityModel.DisableMultipleDNSEntriesInSANCertificate=true" />   
-</runtime>  
-```  
-  
- Kromě toho aplikace, které cílí na předchozí verze .NET Framework, ale běží v .NET Framework 4.6.1 a novějších verzích se můžou k tomuto chování vyjádřit přidáním následujícího nastavení konfigurace do části [> modulu runtime\<](../configure-apps/file-schema/runtime/runtime-element.md) konfigurační soubor aplikace:  
+## <a name="mitigation"></a>Omezení rizik  
+ Pokud je tato změna nežádoucí, aplikace, které cílí na verze rozhraní .NET Framework počínaje rozhraním .NET Framework 4.6.1, se z ní mohou odhlásit přidáním následujícího nastavení konfigurace do [ \<](../configure-apps/file-schema/runtime/runtime-element.md) části konfigurace>runtime aplikace:  
   
 ```xml  
 <runtime>  
-    <AppContextSwitchOverrides value="Switch.System.IdentityModel.DisableMultipleDNSEntriesInSANCertificate=false" />   
+   <AppContextSwitchOverrides value="Switch.System.IdentityModel.DisableMultipleDNSEntriesInSANCertificate=true" />
 </runtime>  
 ```  
   
-## <a name="see-also"></a>Viz také:
+ Kromě toho se aplikace, které cílí na předchozí verze rozhraní .NET Framework, ale jsou spuštěny v rámci rozhraní .NET Framework [ \<](../configure-apps/file-schema/runtime/runtime-element.md) 4.6.1 a novějších verzí, mohou přihlásit k tomuto chování přidáním následujícího nastavení konfigurace do části konfigurace konfiguračního souboru aplikace>běhu:  
+  
+```xml  
+<runtime>  
+    <AppContextSwitchOverrides value="Switch.System.IdentityModel.DisableMultipleDNSEntriesInSANCertificate=false" />
+</runtime>  
+```  
+  
+## <a name="see-also"></a>Viz také
 
 - [Kompatibilita aplikací](application-compatibility.md)

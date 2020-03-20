@@ -2,25 +2,25 @@
 title: System.ServiceModel.Channels.MsmqMoveOrDeleteAttemptFailed
 ms.date: 03/30/2017
 ms.assetid: d75d39da-7502-4a6a-91b9-eaa05b8e24d5
-ms.openlocfilehash: d56bbf145c85902d8e5f1fd21f760633121da6da
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: f89dd1373d67714046f8cb958582c3a5dea04456
+ms.sourcegitcommit: 515469828d0f040e01bde01df6b8e4eb43630b06
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61939215"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78674781"
 ---
 # <a name="systemservicemodelchannelsmsmqmoveordeleteattemptfailed"></a>System.ServiceModel.Channels.MsmqMoveOrDeleteAttemptFailed
-Nelze přesunout nebo odstraňovat zprávy.  
+Zprávu nelze přesunout ani odstranit.  
   
 ## <a name="description"></a>Popis  
- Trasování označuje, že došlo k chybě při pokusu o přesunutí, odstraňte nebo odmítnout zprávu služby MSMQ.  
+ Trasování označuje, že při pokusu o přesunutí, odstranění nebo odmítnutí zprávy služby MSMQ došlo k chybě.  
   
- Zprávy služby MSMQ se použijí ve Windows Communication Foundation (WCF) (při použití s NetMsmqBinding nebo třídu MsmqIntegrationBinding). Trasování souvisí s zvolená hodnota `ReceiveErrorHandling` vlastnosti NetMsmqBinding nebo vazbu MsmqIntegrationBinding.  
+ Zprávy služby MSMQ jsou používány službou WCF (Při použití s netmsmqbinding nebo MsmqIntegrationBinding). Toto trasování souvisí s `ReceiveErrorHandling` vybranou hodnotu vlastnosti na NetMsmqBinding nebo MsmqIntegrationBinding.  
   
- Trasování není indikátorem celkového selhání systému. Ale znamená, že zvolený zacházení s nezpracovatelnými zpráva dispozice pro zprávy se nezdařilo. Zobrazit [zpracování zpráv Poison](https://go.microsoft.com/fwlink/?LinkID=99546) podrobné informace o při stát nezpracovatelných zpráv a způsob konfigurace vaší služby k odpovídajícím způsobem zpracovat.  
+ Toto trasování nesvědčí o celkové selhání systému. Však označuje, že vybrané poškozená zpráva dispozice se nezdařilo pro zprávu. Další informace o tom, kdy se zprávy stanou jedovatými a jak nakonfigurovat službu tak, aby je správně zpracovávala, naleznete v [tématu Zpracování zpráv poison](../../feature-details/poison-message-handling.md).  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Trasování](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)
-- [Řešení problémů s aplikací pomocí trasování](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)
+- [Řešení potíží s aplikací pomocí trasování](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)
 - [Správa a diagnostika](../../../../../docs/framework/wcf/diagnostics/index.md)

@@ -6,29 +6,29 @@ helpviewer_keywords:
 - focus [WPF], visual styling
 - styles [WPF], focus visual style
 ms.assetid: 786ac576-011b-4d72-913b-558deccb9b35
-ms.openlocfilehash: 988b084144532df6f7a6073184fcf035b0813bfd
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: fda7ed12d232af5a7cfb8eb43cbb09eb793da171
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73458677"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79141196"
 ---
 # <a name="styling-for-focus-in-controls-and-focusvisualstyle"></a>Nastavení stylů pro fokus v ovládacích prvcích a FocusVisualStyle
-[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] poskytuje dva paralelní mechanismy pro změnu vizuálního vzhledu ovládacího prvku, když obdrží fokus klávesnice. Prvním mechanismem je použití setter vlastností pro vlastnosti, jako je například <xref:System.Windows.UIElement.IsKeyboardFocused%2A> v rámci stylu nebo šablony, které jsou použity pro ovládací prvek. Druhým mechanismem je poskytnout samostatný styl jako hodnotu vlastnosti <xref:System.Windows.FrameworkElement.FocusVisualStyle%2A>; styl výběru fokusu vytvoří samostatný vizuální strom pro doplňku, který kreslí nad ovládací prvek, nikoli změnou vizuálního stromu ovládacího prvku nebo jiného prvku uživatelského rozhraní jeho nahrazením. Toto téma popisuje scénáře, kde je každý z těchto mechanismů vhodný.  
+[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]poskytuje dva paralelní mechanismy pro změnu vizuální vzhled ovládacího prvku, když obdrží fokus klávesnice. Prvním mechanismem je použití nastavení vlastností <xref:System.Windows.UIElement.IsKeyboardFocused%2A> pro vlastnosti, například v rámci stylu nebo šablony, která je použita na ovládací prvek. Druhý mechanismus je poskytnout samostatný styl jako <xref:System.Windows.FrameworkElement.FocusVisualStyle%2A> hodnotu vlastnosti; "fokus vizuální styl" vytvoří samostatný vizuální strom pro adorner, který čerpá na horní části ovládacího prvku, spíše než měnit vizuální strom ovládacího prvku nebo jiného prvku rozhraní jeho nahrazením. Toto téma popisuje scénáře, kde každý z těchto mechanismů je vhodné.  
 
-<a name="Purpose"></a>   
-## <a name="the-purpose-of-focus-visual-style"></a>Účel vizuálního stylu fokusu  
- Funkce vizuálního stylu fokusu poskytuje společný "objektový model" pro představení vizuální zpětné vazby uživatelů na základě navigace pomocí klávesnice do libovolného prvku uživatelského rozhraní. To je možné bez použití nové šablony k ovládacímu prvku nebo znalosti konkrétního složení šablony.  
+<a name="Purpose"></a>
+## <a name="the-purpose-of-focus-visual-style"></a>Účel zaostření vizuální styl  
+ Funkce vizuálního stylu fokusu poskytuje společný "objektový model" pro zavedení vizuální zpětné vazby od uživatelů na základě navigace pomocí klávesnice na libovolný prvek uživatelského rozhraní. To je možné bez použití nové šablony na ovládací prvek nebo znát konkrétní složení šablony.  
   
- Nicméně přesně vzhledem k tomu, že funkce vizuálu fokusu funguje bez znalosti šablon ovládacích prvků, vizuální zpětnou vazbu, která se dá zobrazit pro ovládací prvek pomocí vizuálního stylu fokusu, je nutně omezená. Co funkce ve skutečnosti dělá, je překryv jiného vizuálního stromu (doplňku) na vizuálním stromu, který byl vytvořen vykreslováním ovládacího prvku prostřednictvím jeho šablony. Tento samostatný vizuální strom definujete pomocí stylu, který vyplní vlastnost <xref:System.Windows.FrameworkElement.FocusVisualStyle%2A>.  
+ Ale právě proto, že funkce vizuálnístyl fokusu funguje bez znalosti šablon ovládacích prvků, vizuální zpětná vazba, která může být zobrazena pro ovládací prvek pomocí vizuálního stylu fokusu, je nutně omezená. Co funkce ve skutečnosti dělá, je překrytí jiného vizuálního stromu (adorner) v horní části vizuálního stromu, jak je vytvořeno vykreslování ovládacího prvku prostřednictvím šablony. Tento samostatný vizuální strom definujete pomocí <xref:System.Windows.FrameworkElement.FocusVisualStyle%2A> stylu, který vyplní vlastnost.  
   
-<a name="Default"></a>   
-## <a name="default-focus-visual-style-behavior"></a>Výchozí chování stylu vizuálu fokusu  
- Vizuální styly fokusu se chovají pouze v případě, že byla akce fokusu iniciována klávesnicí. Jakákoli akce myši nebo Programová změna v rámci fokusu zakáže režim pro výběr vizuálních stylů. Další informace o rozdílech mezi detailními režimy najdete v tématu [Přehled fokusu](focus-overview.md).  
+<a name="Default"></a>
+## <a name="default-focus-visual-style-behavior"></a>Výchozí chování vizuálního stylu fokusu  
+ Vizuální styly fokusu se chovají pouze v případě, že akce fokusu byla iniciována klávesnicí. Jakákoli akce myši nebo programová změna fokusu zakáže režim vizuálních stylů fokusu. Další informace o rozdílech mezi režimy fokusu naleznete v [tématu Focus Overview](focus-overview.md).  
   
- Motivy pro ovládací prvky obsahují výchozí chování fokusu ovládacího prvku, které se stávají vizuálním stylem fokusu pro všechny ovládací prvky v motivu. Tento styl motivu je identifikován hodnotou statického klíče <xref:System.Windows.SystemParameters.FocusVisualStyleKey%2A>. Když deklarujete vlastní vizuální styl fokusu na úrovni aplikace, nahradíte toto výchozí chování stylu z motivů. Případně, pokud definujete celý motiv, měli byste použít stejný klíč k definování stylu pro výchozí chování celého motivu.  
+ Motivy pro ovládací prvky zahrnují výchozí chování vizuálního stylu fokusu, které se stane vizuálním stylem fokusu pro všechny ovládací prvky v motivu. Tento styl motivu je identifikován hodnotou <xref:System.Windows.SystemParameters.FocusVisualStyleKey%2A>statického klíče . Když deklarujete vlastní vizuální styl fokusu na úrovni aplikace, nahradíte toto výchozí chování stylu z motivů. Případně pokud definujete celý motiv, měli byste použít stejný klíč k definování stylu pro výchozí chování pro celý motiv.  
   
- V motivech je výchozím vizuálním stylem fokusu všeobecně velmi jednoduché. Následuje hrubá aproximace:  
+ V tématech je výchozí vizuální styl fokusu obecně velmi jednoduchý. Následuje hrubá aproximace:  
   
 ```xaml  
 <Style x:Key="{x:Static SystemParameters.FocusVisualStyleKey}">  
@@ -45,37 +45,37 @@ ms.locfileid: "73458677"
 </Style>  
 ```  
   
-<a name="When"></a>   
+<a name="When"></a>
 ## <a name="when-to-use-focus-visual-styles"></a>Kdy použít vizuální styly fokusu  
- V koncepčním případě by se měl vzhled vizuálních stylů fokusu aplikovaný na ovládací prvky spojit s ovládacím prvkem. Jedním ze způsobů, jak zajistit soudržnost, je změnit styl vizuálního zaměření pouze v případě, že sestavování celého motivu, kde každý ovládací prvek, který je definován v motivu, získá buď stejný vizuální styl fokusu, nebo určitou variaci stylu, který vizuálně souvisí s ovládacím prvkem s pokračováním. rol. Alternativně můžete použít stejný styl (nebo podobné styly) pro styl každého prvku, který je zaměřen na klávesnici na stránce nebo v uživatelském rozhraní.  
+ Koncepčně vzhled fokus vizuální styly aplikované na ovládací prvky by měly být koherentní od ovládacího prvku k ovládacímu prvku. Jedním ze způsobů, jak zajistit soudržnost, je změnit vizuální styl zaostření pouze v případě, že skládáte celý motiv, kde každý ovládací prvek, který je definován v motivu, získá buď stejný vizuální styl zaměření, nebo nějakou variantu stylu, který je vizuálně příbuzný z ovládacího prvku na Ovládací prvek. Případně můžete použít stejný styl (nebo podobné styly) styl každý prvek fokusta klávesnice na stránce nebo v ui.  
   
- Nastavení <xref:System.Windows.FrameworkElement.FocusVisualStyle%2A> pro jednotlivé styly ovládacích prvků, které nejsou součástí motivu, není zamýšlené použití vizuálních stylů fokusu. Důvodem je, že nekonzistentní vizuální chování mezi ovládacími prvky může vést k matoucímu uživatelskému rozhraní týkajícímu se fokusu klávesnice. Pokud pro fokus klávesnice nepoužíváte chování specifické pro ovládací prvky, které jsou záměrně nesouvislé v rámci motivu, je mnohem lepším řešením použití triggerů v stylech pro jednotlivé vlastnosti stavu vstupu, například <xref:System.Windows.UIElement.IsFocused%2A> nebo <xref:System.Windows.UIElement.IsKeyboardFocused%2A>.  
+ Nastavení <xref:System.Windows.FrameworkElement.FocusVisualStyle%2A> jednotlivých stylů ovládacích prvků, které nejsou součástí motivu, není zamýšleným použitím vizuálních stylů fokusu. Důvodem je, že nekonzistentní vizuální chování mezi ovládacími prvky může vést k matoucí uživatelské prostředí týkající se fokusu klávesnice. Pokud máte v úmyslu chování specifické pro ovládací prvek pro fokus klávesnice, které záměrně nejsou koherentní napříč tématem, <xref:System.Windows.UIElement.IsFocused%2A> <xref:System.Windows.UIElement.IsKeyboardFocused%2A>mnohem lepší mů e být přístup některou z aktivačních událostí je použití aktivačních událostí ve stylech pro jednotlivé vlastnosti stavu vstupu, například nebo .  
   
- Vizuální styly fokusu fungují výhradně pro fokus klávesnice. V takovém případě jsou vizuální styly fokusu typem funkce usnadnění. Pokud chcete změnit uživatelské rozhraní pro jakýkoliv typ fokusu, ať už přes myš, klávesnici nebo programově, neměli byste používat vizuální styly fokusu a místo toho byste měli použít metody setter a triggery v stylech nebo šablonách, které fungují z hodnoty vlastností obecného výběru. například <xref:System.Windows.UIElement.IsFocused%2A> nebo <xref:System.Windows.UIElement.IsKeyboardFocusWithin%2A>.  
+ Vizuální styly fokusu fungují výhradně pro zaostření klávesnice. Vizuální styly fokusu jsou jako takové typem funkce usnadnění přístupu. Pokud chcete změny uživatelského rozhraní pro jakýkoli typ fokusu, ať už pomocí myši, klávesnice nebo programově, pak byste neměli používat fokus vizuální styly a místo <xref:System.Windows.UIElement.IsFocused%2A> toho <xref:System.Windows.UIElement.IsKeyboardFocusWithin%2A>použít setters a aktivační události ve stylech nebo šablon, které pracují z hodnoty obecné fokus vlastnosti, jako je nebo .  
   
-<a name="How"></a>   
-## <a name="how-to-create-a-focus-visual-style"></a>Postup vytvoření vizuálního stylu fokusu  
- Styl, který vytvoříte pro vizuální styl fokusu, by měl mít vždycky <xref:System.Windows.Style.TargetType%2A> <xref:System.Windows.Controls.Control>. Styl by měl sestávat hlavně z <xref:System.Windows.Controls.ControlTemplate>. Neurčíte cílový typ, který bude typem, který je přiřazen k <xref:System.Windows.FrameworkElement.FocusVisualStyle%2A>mu stylu fokusu.  
+<a name="How"></a>
+## <a name="how-to-create-a-focus-visual-style"></a>Jak vytvořit vizuální styl fokusu  
+ Styl, který vytvoříte pro vizuální styl <xref:System.Windows.Style.TargetType%2A> <xref:System.Windows.Controls.Control>fokusu, by měl mít vždy název . Styl by se měl <xref:System.Windows.Controls.ControlTemplate>skládat hlavně z . Nezadáte cílový typ jako typ, ve kterém je vizuální <xref:System.Windows.FrameworkElement.FocusVisualStyle%2A>styl fokusu přiřazen k souboru .  
   
- Vzhledem k tomu, že cílový typ je vždy <xref:System.Windows.Controls.Control>, je nutné styl použít pomocí vlastností, které jsou společné pro všechny ovládací prvky (pomocí vlastností třídy <xref:System.Windows.Controls.Control> a jejích základních tříd). Měli byste vytvořit šablonu, která bude správně fungovat jako překryv pro prvek uživatelského rozhraní a který nebude krýt funkční oblasti tohoto ovládacího prvku. Obecně to znamená, že vizuální zpětná vazba by se měla zobrazit mimo řídicí okraje nebo jako dočasné nebo nenáročné efekty, které neblokují testování přístupů na ovládacím prvku, kde je použit styl vizuálu fokusu. Vlastnosti, které lze použít ve vazbách šablon, které jsou užitečné při určování velikosti a umístění překryté šablony, zahrnují <xref:System.Windows.FrameworkElement.ActualHeight%2A>, <xref:System.Windows.FrameworkElement.ActualWidth%2A>, <xref:System.Windows.FrameworkElement.Margin%2A>a <xref:System.Windows.Controls.Control.Padding%2A>.  
+ Vzhledem k tomu, že cílový typ je vždy <xref:System.Windows.Controls.Control>, musíte styl <xref:System.Windows.Controls.Control> pomocí vlastností, které jsou společné pro všechny ovládací prvky (pomocí vlastností třídy a její základní třídy). Měli byste vytvořit šablonu, která bude správně fungovat jako překrytí prvku uživatelského rozhraní a která nebude zakrývat funkční oblasti ovládacího prvku. Obecně to znamená, že vizuální zpětná vazba by se měla zobrazit mimo ovládací okraje nebo jako dočasné nebo nenápadné efekty, které nebudou blokovat testování přístupů na ovládací ms, kde je použit vizuální styl fokusu. Mezi vlastnosti, které lze použít ve vazbě šablony, které jsou užitečné <xref:System.Windows.FrameworkElement.ActualHeight%2A> <xref:System.Windows.FrameworkElement.ActualWidth%2A>pro <xref:System.Windows.FrameworkElement.Margin%2A>určení <xref:System.Windows.Controls.Control.Padding%2A>velikosti a umístění překryvné šablony, patří , , , a .  
   
-<a name="Alternatives"></a>   
+<a name="Alternatives"></a>
 ## <a name="alternatives-to-using-a-focus-visual-style"></a>Alternativy k použití vizuálního stylu fokusu  
- V situacích, kdy použití stylu fokusu fokusu není vhodné, buď protože přidáváte pouze jednotlivé ovládací prvky, nebo protože potřebujete větší kontrolu nad šablonou ovládacího prvku, existuje mnoho dalších přístupných vlastností a technik, které mohou vytvořit vizuál. chování v reakci na změny fokusu.  
+ V situacích, kdy použití vizuálního stylu fokusu není vhodné, protože jste pouze styling jednotlivé ovládací prvky nebo protože chcete větší kontrolu nad šablonou ovládacího prvku, existuje mnoho dalších přístupných vlastností a technik, které mohou vytvořit vizuální chování v reakci na změny v zaostření.  
   
- Triggery, metody setter a metody setter jsou podrobněji popsány v článku [stylování a šablonování](../../../desktop-wpf/fundamentals/styles-templates-overview.md). Směrované zpracování událostí je popsáno v tématu [Přehled směrovaných událostí](routed-events-overview.md).  
+ Aktivační události, nastavení a nastavení událostí jsou podrobně popsány v [stylingu a šablonování](../../../desktop-wpf/fundamentals/styles-templates-overview.md). Zpracování směrovaných událostí je popsáno v [přehledu směrovaných událostí](routed-events-overview.md).  
   
-### <a name="iskeyboardfocused"></a>IsKeyboardFocused  
- Pokud vás zajímá konkrétně fokus klávesnice, lze vlastnost <xref:System.Windows.UIElement.IsKeyboardFocused%2A> Dependency použít pro <xref:System.Windows.Trigger>vlastností. Aktivační událost vlastnosti ve stylu nebo šabloně je vhodnější pro definování chování fokusu klávesnice, které je velmi vhodné pro jeden ovládací prvek a který nemusí vizuálně odpovídat chování fokusu klávesnice pro jiné ovládací prvky.  
+### <a name="iskeyboardfocused"></a>Na iskeyboardfocused  
+ Pokud máte konkrétně zájem o <xref:System.Windows.UIElement.IsKeyboardFocused%2A> fokus klávesnice, vlastnost závislosti <xref:System.Windows.Trigger>lze použít pro vlastnost . Aktivační událost vlastnosti ve stylu nebo šabloně je vhodnější technika pro definování chování fokusu klávesnice, která je velmi specificky pro jeden ovládací prvek a která nemusí vizuálně odpovídat chování fokusu klávesnice pro jiné ovládací prvky.  
   
- Další podobná vlastnost závislosti je <xref:System.Windows.UIElement.IsKeyboardFocusWithin%2A>, která může být vhodná k použití, pokud chcete vizuálně vyzvat, aby se fokus klávesnice nacházet někde v rámci skládání nebo v rámci funkční oblasti ovládacího prvku. Například můžete umístit aktivační událost <xref:System.Windows.UIElement.IsKeyboardFocusWithin%2A> tak, aby se panel, který seskupuje několik ovládacích prvků, zobrazoval jinak, i když fokus klávesnice může být přesnější na jednotlivém prvku v tomto panelu.  
+ Další podobná vlastnost <xref:System.Windows.UIElement.IsKeyboardFocusWithin%2A>závislosti je , které mohou být vhodné použít, pokud chcete vizuálně volat, že fokus klávesnice je někde v rámci skládání nebo v rámci funkční oblasti ovládacího prvku. Můžete například umístit <xref:System.Windows.UIElement.IsKeyboardFocusWithin%2A> aktivační událost tak, aby panel, který seskupuje několik ovládacích prvků, sejmul odlišně, i když fokus klávesnice může být přesněji na jednotlivém prvku v rámci tohoto panelu.  
   
- Můžete také použít události <xref:System.Windows.UIElement.GotKeyboardFocus> a <xref:System.Windows.UIElement.LostKeyboardFocus> (stejně jako jejich ekvivalenty ve verzi Preview). Tyto události lze použít jako základ pro <xref:System.Windows.EventSetter>, nebo můžete napsat obslužné rutiny pro události v kódu na pozadí.  
+ Můžete také použít <xref:System.Windows.UIElement.GotKeyboardFocus> události <xref:System.Windows.UIElement.LostKeyboardFocus> a (stejně jako jejich ekvivalenty náhledu). Tyto události můžete použít jako <xref:System.Windows.EventSetter>základ pro , nebo můžete psát obslužné rutiny pro události v kódu na pozadí.  
   
-### <a name="other-focus-properties"></a>Vlastnosti dalších vlastností výběru  
- Pokud chcete, aby všechny možné příčiny se změnou fokusu na vizuální chování, měli byste založit metodu setter nebo Trigger na vlastnosti závislosti <xref:System.Windows.UIElement.IsFocused%2A> nebo případně na událostech <xref:System.Windows.UIElement.GotFocus> nebo <xref:System.Windows.UIElement.LostFocus>, které se používají pro <xref:System.Windows.EventSetter>.  
+### <a name="other-focus-properties"></a>Další vlastnosti fokusu  
+ Pokud chcete, aby všechny možné příčiny změny fokusu vytvořily vizuální chování, měli byste založit nastavení nebo aktivační událost na vlastnosti <xref:System.Windows.UIElement.IsFocused%2A> závislosti nebo alternativně na událostech <xref:System.Windows.UIElement.GotFocus> nebo <xref:System.Windows.UIElement.LostFocus> událostech používaných pro . <xref:System.Windows.EventSetter>  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.FrameworkElement.FocusVisualStyle%2A>
 - [Styly a šablony](../../../desktop-wpf/fundamentals/styles-templates-overview.md)

@@ -6,37 +6,37 @@ helpviewer_keywords:
 - WCF, authorization
 - WCF, security
 ms.assetid: 322c56e0-938f-4f19-a981-7b6530045b90
-ms.openlocfilehash: b86287440b2265349b853265f12a2f6e48b4cff3
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: 5b15d56c7150a8478bc32651538903778e3b877d
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70045274"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79184798"
 ---
 # <a name="how-to-use-the-aspnet-membership-provider"></a>Postupy: Používání poskytovatele členství ASP.NET
 
-Poskytovatel členství ASP.NET je funkce, která vývojářům ASP.NET umožňuje vytvářet weby, které uživatelům umožňují vytvářet jedinečné kombinace uživatelského jména a hesla. U tohoto zařízení může každý uživatel vytvořit účet s webem a přihlásit se pro výhradní přístup k webu a jeho službám. To je na rozdíl od zabezpečení systému Windows, které vyžaduje, aby uživatelé měli účty v doméně systému Windows. Místo toho může web a jeho služby používat libovolný uživatel, který poskytuje své přihlašovací údaje (kombinace uživatelské jméno/heslo).
+Poskytovatel členství ASP.NET je funkce, která umožňuje vývojářům ASP.NET vytvářet weby, které uživatelům umožňují vytvářet jedinečné kombinace uživatelských jmen a hesel. S tímto zařízením může každý uživatel vytvořit účet s webem a přihlásit se pro exkluzivní přístup k webu a jeho službám. To je na rozdíl od zabezpečení systému Windows, který vyžaduje, aby uživatelé měli účty v doméně systému Windows. Místo toho může každý uživatel, který poskytuje svá pověření (kombinace uživatelského jména a hesla), používat web a jeho služby.
 
-Ukázkovou aplikaci najdete v tématu věnovaném [členství a zprostředkovateli rolí](../../../../docs/framework/wcf/samples/membership-and-role-provider.md). Informace o použití funkce poskytovatele rolí ASP.NET naleznete v tématu [How to: Použijte poskytovatele rolí ASP.NET se službou](../../../../docs/framework/wcf/feature-details/how-to-use-the-aspnet-role-provider-with-a-service.md).
+Ukázková aplikace naleznete v [tématu Členství a zprostředkovatel role](../../../../docs/framework/wcf/samples/membership-and-role-provider.md). Informace o použití funkce zprostředkovatele role ASP.NET naleznete v [tématu Postup: Použití ASP.NET zprostředkovatele rolí se službou](../../../../docs/framework/wcf/feature-details/how-to-use-the-aspnet-role-provider-with-a-service.md).
 
-Funkce členství vyžaduje použití databáze SQL Server k uložení informací o uživateli. Tato funkce zahrnuje také metody pro dotazování s otázkou, které si uživatelé zapomněli heslo.
+Funkce členství vyžaduje k uložení informací o uživateli použití databáze serveru SQL Server. Tato funkce také obsahuje metody pro dotazování s dotazem, všichni uživatelé, kteří zapomněli své heslo.
 
-Vývojáři Windows Communication Foundation (WCF) můžou využít výhod těchto funkcí z hlediska zabezpečení. Při integraci do aplikace WCF musí uživatelé do klientské aplikace WCF dodat kombinaci uživatelského jména a hesla. Pro přenos dat do služby WCF použijte vazbu, která podporuje přihlašovací údaje uživatelského jména a hesla, například <xref:System.ServiceModel.WSHttpBinding> (v konfiguraci `UserName` [ \<, WSHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md)) a nastavte typ přihlašovacích údajů klienta na. Ve službě Služba WCF Security ověřuje uživatele na základě uživatelského jména a hesla a také přiřadí roli určenou rolí ASP.NET.
+Vývojáři Windows Communication Foundation (WCF) mohou tyto funkce využívat z bezpečnostních důvodů. Při integraci do aplikace WCF, uživatelé musí zadat kombinaci uživatelského jména a hesla do klientské aplikace WCF. Chcete-li přenést data do služby WCF, použijte vazbu, která <xref:System.ServiceModel.WSHttpBinding> podporuje pověření uživatelského jména a hesla, jako je `UserName`například (v konfiguraci [ \<wsHttpBinding>) ](../../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md)a nastavte typ pověření klienta na . Ve službě zabezpečení WCF ověřuje uživatele na základě uživatelského jména a hesla a také přiřadí roli určenou ASP.NET role.
 
 > [!NOTE]
-> WCF neposkytuje metody pro naplnění databáze pomocí kombinace uživatelského jména a hesla nebo jiných informací o uživateli.
+> WCF neposkytuje metody k naplnění databáze s kombinacemi uživatelského jména a hesla nebo jiné informace o uživateli.
 
 ### <a name="to-configure-the-membership-provider"></a>Konfigurace poskytovatele členství
 
-1. V souboru Web. config v rámci prvku <`system.web`> vytvořte <`membership`> element.
+1. V souboru Web.config pod `system.web` elementem <`membership`> vytvořte prvek <>.
 
-2. V rámci `<providers>` elementu vytvořte element. `<membership>`
+2. Pod `<membership>` elementem vytvořte `<providers>` prvek.
 
-3. Jako podřízený prvku <`providers`> `<clear />` přidejte prvek pro vyprázdnění kolekce zprostředkovatelů.
+3. Jako podřízený prvek `providers` <> `<clear />` přidejte prvek pro vyprázdnění kolekce zprostředkovatelů.
 
-4. `type` `name``add` `connectionStringName` `enablePasswordReset` `applicationName` `requiresQuestionAndAnswer` `enablePasswordRetrieval`V rámci elementuvytvořte<>elementsnásledujícímiatributynastavenýminapříslušnéhodnoty:,,,,,,`<clear />` , `requiresUniqueEmail`a .`passwordFormat` `name` Atribut je použit později jako hodnota v konfiguračním souboru. Následující příklad nastaví na `SqlMembershipProvider`.
+4. Pod `<clear />` elementem vytvořte `add` prvek <> s následujícími `name`atributy nastavenými na příslušné hodnoty: `type`, `connectionStringName`, `applicationName` `enablePasswordRetrieval`, , `enablePasswordReset` `requiresQuestionAndAnswer`, `requiresUniqueEmail`, a `passwordFormat`. Atribut `name` se později použije jako hodnota v konfiguračním souboru. Následující příklad jej `SqlMembershipProvider`nastaví na .
 
-    Následující příklad ukazuje konfigurační oddíl.
+    Následující příklad ukazuje konfigurační část.
 
     ```xml
     <!-- Configure the Sql Membership Provider -->
@@ -57,15 +57,15 @@ Vývojáři Windows Communication Foundation (WCF) můžou využít výhod těch
     </membership>
     ```
 
-### <a name="to-configure-service-security-to-accept-the-user-namepassword-combination"></a>Konfigurace zabezpečení služby pro přijetí kombinace uživatelského jména a hesla
+### <a name="to-configure-service-security-to-accept-the-user-namepassword-combination"></a>Konfigurace zabezpečení služby tak, aby přijímala kombinaci uživatelského jména a hesla
 
-1. V konfiguračním souboru v rámci [ \<](../../../../docs/framework/configure-apps/file-schema/wcf/bindings.md) [ \<prvku System. ServiceModel >](../../../../docs/framework/configure-apps/file-schema/wcf/system-servicemodel.md) přidejte vazby > elementu.
+1. V konfiguračním souboru pod elementem [ \<system.serviceModel>](../../../../docs/framework/configure-apps/file-schema/wcf/system-servicemodel.md) přidejte [ \<element>vazby.](../../../../docs/framework/configure-apps/file-schema/wcf/bindings.md)
 
-2. Přidejte > WSHttpBinding do oddílu Bindings. [ \<](../../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md) Další informace o vytvoření elementu vazby WCF naleznete v tématu [How to: Zadejte vazbu služby v konfiguraci](../../../../docs/framework/wcf/how-to-specify-a-service-binding-in-configuration.md).
+2. Přidejte [ \<>wsHttpBinding](../../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md) do oddílu vazby. Další informace o vytvoření elementu vazby WCF naleznete v [tématu How to: Specify a Service Binding in Configuration](../../../../docs/framework/wcf/how-to-specify-a-service-binding-in-configuration.md).
 
-3. Nastavte `mode` atribut `<security>` elementu `Message`.
+3. Nastavte `mode` atribut prvku `<security>` na `Message`.
 
-4. Nastavte atribut prvku <`message`> na `UserName`. `clientCredentialType` Tím se určí, že se jako přihlašovací údaje klienta budou používat dvojice uživatelské jméno a heslo.
+4. Nastavte `clientCredentialType` atribut prvku `message` <> `UserName`na . To určuje, že dvojice uživatelského jména a hesla bude použita jako pověření klienta.
 
     Následující příklad ukazuje konfigurační kód pro vazbu.
 
@@ -86,22 +86,22 @@ Vývojáři Windows Communication Foundation (WCF) můžou využít výhod těch
 
 ### <a name="to-configure-a-service-to-use-the-membership-provider"></a>Konfigurace služby pro použití poskytovatele členství
 
-1. Jako podřízený `<system.serviceModel>` prvek elementu [ \<přidejte chování >](../../../../docs/framework/configure-apps/file-schema/wcf/behaviors.md) elementu.
+1. Jako podřízený `<system.serviceModel>` prvek přidejte [ \<>](../../../../docs/framework/configure-apps/file-schema/wcf/behaviors.md) prvku chování.
 
-2. Přidejte >`behaviors`serviceBehaviors do elementu < >. [ \<](../../../../docs/framework/configure-apps/file-schema/wcf/servicebehaviors.md)
+2. Přidejte [ \<>serviceBehaviors](../../../../docs/framework/configure-apps/file-schema/wcf/servicebehaviors.md) `behaviors` do prvku <>.
 
-3. Přidejte > `name` chování a nastavte atribut na odpovídající hodnotu. [ \<](../../../../docs/framework/configure-apps/file-schema/wcf/behavior-of-endpointbehaviors.md)
+3. Přidejte [ \<>chování](../../../../docs/framework/configure-apps/file-schema/wcf/behavior-of-endpointbehaviors.md) `name` a nastavte atribut na příslušnou hodnotu.
 
-4. Přidejte >`behavior`ServiceCredentials do elementu < >. [ \<](../../../../docs/framework/configure-apps/file-schema/wcf/servicecredentials.md)
+4. Přidejte [ \<>serviceCredentials](../../../../docs/framework/configure-apps/file-schema/wcf/servicecredentials.md) `behavior` do prvku <>.
 
-5. Přidejte [> UserNameAuthentication k elementu. \<](../../../../docs/framework/configure-apps/file-schema/wcf/usernameauthentication.md) `<serviceCredentials>`
+5. Přidejte do `<serviceCredentials>` prvku>[ \<userNameAuthentication.](../../../../docs/framework/configure-apps/file-schema/wcf/usernameauthentication.md)
 
-6. Nastavte atribut na `MembershipProvider`. `userNamePasswordValidationMode`
+6. Nastavte `userNamePasswordValidationMode` atribut `MembershipProvider`na .
 
     > [!IMPORTANT]
-    > `userNamePasswordValidationMode` Pokud hodnota není nastavená, WCF místo poskytovatele členství v ASP.NET použije ověřování systému Windows.
+    > Pokud `userNamePasswordValidationMode` hodnota není nastavena, WCF používá ověřování systému Windows namísto poskytovatele členství ASP.NET.
 
-7. `membershipProviderName` Nastavte atribut na název zprostředkovatele (zadaný při přidávání poskytovatele v prvním postupu v tomto tématu). Následující příklad ukazuje `<serviceCredentials>` fragment na tento bod.
+7. Nastavte `membershipProviderName` atribut na název zprostředkovatele (zadaný při přidání zprostředkovatele v prvním postupu v tomto tématu). Následující příklad ukazuje `<serviceCredentials>` fragment do tohoto bodu.
 
     ```xml
     <behaviors>
@@ -119,7 +119,7 @@ Vývojáři Windows Communication Foundation (WCF) můžou využít výhod těch
 
 ## <a name="example"></a>Příklad
 
-Následující kód ukazuje konfiguraci služby, která používá funkci členství ASP.
+Následující kód ukazuje konfiguraci služby, která používá funkci členství asp.
 
 ```xml
 <?xml version="1.0" encoding="utf-8" ?>
@@ -156,7 +156,7 @@ Následující kód ukazuje konfiguraci služby, která používá funkci člens
 </configuration>
 ```
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Postupy: Použití poskytovatele rolí ASP.NET se službou](../../../../docs/framework/wcf/feature-details/how-to-use-the-aspnet-role-provider-with-a-service.md)
+- [Postupy: Použití zprostředkovatele rolí ASP.NET se službou](../../../../docs/framework/wcf/feature-details/how-to-use-the-aspnet-role-provider-with-a-service.md)
 - [Členství a zprostředkovatel rolí](../../../../docs/framework/wcf/samples/membership-and-role-provider.md)

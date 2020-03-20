@@ -1,21 +1,21 @@
 ---
-title: 'Postupy: Výpis obsahu adresáře s využitím protokolu FTP'
-description: Tento článek popisuje ukázku toho, jak zobrazit obsah adresáře serveru FTP.
+title: 'Postup: Seznam obsahu adresáře pomocí protokolu FTP'
+description: Tento článek ukazuje ukázku, jak zobrazit obsah adresáře serveru FTP.
 ms.date: 06/26/2018
 dev_langs:
 - csharp
 - vb
 ms.assetid: 130c64c9-7b7f-4672-9b3b-d946bd2616c5
 ms.openlocfilehash: 924e6731ce585f127af319fdbfbdc8c12e61c46d
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "61642617"
 ---
-# <a name="how-to-list-directory-contents-with-ftp"></a>Postupy: Výpis obsahu adresáře s využitím protokolu FTP
+# <a name="how-to-list-directory-contents-with-ftp"></a>Postup: Seznam obsahu adresáře pomocí protokolu FTP
 
-Tento příklad ukazuje, jak zobrazit obsah adresáře serveru FTP.
+Tato ukázka ukazuje, jak zobrazit obsah adresáře serveru FTP.
 
 ## <a name="example"></a>Příklad
 
@@ -81,7 +81,7 @@ Namespace Examples.System.Net
 End Namespace
 ```
 
-Pokud potřebujete konkrétní adresář seznamu, stačí přidat adresář na konec identifikátoru URI, které používáte ve <xref:System.Net.WebRequest.Create%2A?displayProperty=nameWithType> metody:
+Pokud potřebujete uvést konkrétní adresář, stačí přidat adresář na konec identifikátoru URI, který používáte v metodě: <xref:System.Net.WebRequest.Create%2A?displayProperty=nameWithType>
 
 ```csharp
 FtpWebRequest request = (FtpWebRequest)WebRequest.Create("ftp://www.contoso.com/your_preferred_directory");

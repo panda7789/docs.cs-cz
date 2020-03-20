@@ -1,18 +1,17 @@
 ---
-ms.openlocfilehash: 64d540278544e74c46d46b77c97bccd26d4116dd
-ms.sourcegitcommit: d55e14eb63588830c0ba1ea95a24ce6c57ef8c8c
+ms.openlocfilehash: e5d81d791e1a2f1a2dbdafc787dec1227423883d
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/11/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "67803164"
 ---
-### <a name="opt-in-break-to-revert-from-different-45-sql-generation-to-simpler-40-sql-generation"></a>Konec vyjádřit výslovný souhlas se vrátit z různých 4.5 generování SQL pro jednodušší 4.0 generování SQL
+### <a name="opt-in-break-to-revert-from-different-45-sql-generation-to-simpler-40-sql-generation"></a>Opt-in break pro návrat z různých 4.5 SQL generace na jednodušší 4.0 SQL generace
 
 |   |   |
 |---|---|
-|Podrobnosti|Dotazy, které vytvářejí Příkazy JOIN a obsahovat volání limitující operace, aniž byste nejdřív pomocí OrderBy nyní vytvořit jednodušší SQL. Po upgradu na rozhraní .NET Framework 4.5, vytváří tyto dotazy SQL složitější než předchozí verze.|
-|Doporučení|Tato funkce je ve výchozím nastavení zakázaná. Pokud rozhraní Entity Framework generuje dodatečné příkazy JOIN, které způsobují snížení výkonu, můžete tuto funkci povolíte tak, že přidáte následující položky <code>&lt;appSettings&gt;</code> souboru konfigurace (app.config) aplikace:<pre><code class="lang-xml">&lt;add key=&quot;EntityFramework_SimplifyLimitOperations&quot; value=&quot;true&quot; /&gt;&#13;&#10;</code></pre>|
-|Scope|Transparentní|
+|Podrobnosti|Dotazy, které vytvářejí příkazy JOIN a obsahují volání omezující operace bez předchozího použití OrderBy nyní vytvořit jednodušší SQL. Po upgradu na rozhraní .NET Framework 4.5 tyto dotazy vytvořily složitější SQL než předchozí verze.|
+|Návrh|Tato funkce je ve výchozím nastavení zakázána. Pokud entity Framework generuje další příkazy JOIN, které způsobují snížení výkonu, <code>&lt;appSettings&gt;</code> můžete tuto funkci povolit přidáním následující položky do části souboru konfigurace aplikace (app.config):<pre><code class="lang-xml">&lt;add key=&quot;EntityFramework_SimplifyLimitOperations&quot; value=&quot;true&quot; /&gt;&#13;&#10;</code></pre>|
+|Rozsah|Průhlednost|
 |Version|4.5.2|
-|type|Modul runtime|
-
+|Typ|Modul runtime|

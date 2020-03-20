@@ -3,42 +3,42 @@ title: Obor názvů System.Net.PeerToPeer.Collaboration
 ms.date: 03/30/2017
 ms.assetid: b5d8c1c1-6844-4947-9759-c7f1b564bded
 ms.openlocfilehash: f0c9ecaacc1d875aac8eed61a85ca7579f5cb8a1
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "64649529"
 ---
 # <a name="about-the-systemnetpeertopeercollaboration-namespace"></a>Obor názvů System.Net.PeerToPeer.Collaboration
-<xref:System.Net.PeerToPeer.Collaboration> Obor názvů obsahuje třídy a rozhraní API, která slouží k implementaci aktivity spolupráce peer pomocí infrastruktury spolupráci Peer-to-Peer.  
+Obor <xref:System.Net.PeerToPeer.Collaboration> názvů poskytuje třídy a api, které se používají k implementaci aktivit spolupráce rovnocenných prostorů pomocí infrastruktury spolupráce peer-to-peer.  
   
 ## <a name="classes"></a>Třídy  
- Hlavní třídy použitý v implementaci aktivity spolupráce Peer-to-Peer jsou:  
+ Hlavní třídy používané při implementaci aktivity peer-to-peer spolupráce jsou:  
   
-- <xref:System.Net.PeerToPeer.Collaboration.ContactManager>, Který slouží k ukládání partnerské kontakty.  
+- <xref:System.Net.PeerToPeer.Collaboration.ContactManager>, který lze použít k uložení kontaktů mezi stranami.  
   
-- <xref:System.Net.PeerToPeer.Collaboration.PeerApplication> Ve kterém chcete spolupracovat, jako jsou hry, klienta nebo konference řešení.  
+- Spolupráce, <xref:System.Net.PeerToPeer.Collaboration.PeerApplication> například herní, chatovací klient nebo konferenční řešení.  
   
-- Partnerské uzly, které budete spolupracovat v nějaké aktivitě.  Těchto partnerských uzlů může být reprezentován jako <xref:System.Net.PeerToPeer.Collaboration.PeerContact>, <xref:System.Net.PeerToPeer.Collaboration.PeerNearMe>, nebo <xref:System.Net.PeerToPeer.Collaboration.PeerEndPoint> objekty.  
+- Partneři, kteří budou spolupracovat na aktivitě.  Tyto partnery mohou <xref:System.Net.PeerToPeer.Collaboration.PeerContact> <xref:System.Net.PeerToPeer.Collaboration.PeerNearMe>být <xref:System.Net.PeerToPeer.Collaboration.PeerEndPoint> reprezentovány jako , nebo objekty.  
   
-- Statické <xref:System.Net.PeerToPeer.Collaboration.PeerCollaboration> třídu, která určuje, které aplikace jsou dostupné a které partnerské uzly se účastní programu je.  
+- Samotná <xref:System.Net.PeerToPeer.Collaboration.PeerCollaboration> statická třída, která určuje, které aplikace jsou k dispozici a které partnerské strany se jich účastní.  
   
- <xref:System.Net.PeerToPeer.Collaboration.PeerContact.Invite%2A> Metody se používají k pozvat kolegy k relaci spolupráci.  Volání peer můžete přihlásit k odběru jiného partnera pro události, signál aktualizace informací o aplikaci, objekt nebo přítomnosti přidruženého relaci spolupráce. Přítomnost třídy určují, jestli <xref:System.Net.PeerToPeer.Collaboration.Peer> je k dispozici pro spolupráci a <xref:System.Net.PeerToPeer.Collaboration.PeerScope> třída se používá k určení, kolik účast je povolený pro partnerský uzel: <xref:System.Net.PeerToPeer.Collaboration.PeerScope.Internet> (globální), <xref:System.Net.PeerToPeer.Collaboration.PeerScope.NearMe>, (podsítě) nebo <xref:System.Net.PeerToPeer.Collaboration.PeerScope.None>.  
+ Metody <xref:System.Net.PeerToPeer.Collaboration.PeerContact.Invite%2A> se používají k pozvání partnerů do relace spolupráce.  Volající partner se může přihlásit k jinému partnerovi pro události, které signalizují aktualizace informací o aplikaci, objektu nebo stavu přidružených k relaci spolupráce. Třídy přítomnosti <xref:System.Net.PeerToPeer.Collaboration.Peer> určují, zda je <xref:System.Net.PeerToPeer.Collaboration.PeerScope> a k dispozici pro spolupráci a třída <xref:System.Net.PeerToPeer.Collaboration.PeerScope.Internet> se <xref:System.Net.PeerToPeer.Collaboration.PeerScope.NearMe>používá k určení, <xref:System.Net.PeerToPeer.Collaboration.PeerScope.None>kolik účasti je povoleno pro druhou stranou: (globální), , (podsíť) nebo .  
   
- Relaci spolupráce se skládá ze čtyř kroků:  
+ Zasedání spolupráce se skládá ze čtyř kroků:  
   
-- Zjišťování. Podívejte se na nebo publikování aplikace, partnerech a informace o stavu.  Například vyhledejte jiní lidé v místní podsíti, která mají stejné hry nainstalované.  
+- Zjišťování: Objevte nebo publikujte aplikace, partnery a informace o stavu.  Například najít další osoby v místní podsíti, které mají nainstalovány stejné hry.  
   
-- Pozvání. Odesílat a přijímat zabezpečené pozvánky pro vzdálené peer(s) ke spuštění nebo připojení <xref:System.Net.PeerToPeer.Collaboration.PeerCollaboration> relace.  
+- Pozvání. Odesílat a přijímat zabezpečené pozvánky pro vzdálené <xref:System.Net.PeerToPeer.Collaboration.PeerCollaboration> partnery ke spuštění nebo připojení relací.  
   
-- Obraťte se na správu. Přidat zjištěné partnerských uzlů jako kontakt <xref:System.Net.PeerToPeer.Collaboration.ContactManager>.  
+- Správa kontaktů. Přidejte zjištěné partnery <xref:System.Net.PeerToPeer.Collaboration.ContactManager>jako kontakt do .  
   
-- Komunikace. Při komunikaci se naváže, použijte <xref:System.Net> rozhraní API, <xref:System.Net.PeerToPeer> rozhraní API nebo Windows Communication Foundation protokolu Peer Channel třídy pro éře komunikace.  
+- Komunikace. Při navázání komunikace <xref:System.Net> použijte rozhraní <xref:System.Net.PeerToPeer> API, rozhraní API nebo třídy Peer Channel platformy Windows Communication Foundation pro vícestrannou komunikaci.  
   
- Například spustí relaci spolupráci peer hostitele a využívá <xref:System.Net.PeerToPeer.Collaboration.ContactManager.CreateContact%2A> způsob, jak přidat vzdáleném partnerském a jeden z jeho místní partnerské počítače, kontaktujte správce partnerského uzlu hostitele.  Tři uživatele se pak účastní relace jejich vlastní privátní spolupráci.  
+ Například partner hostitele spustí relaci spolupráce a <xref:System.Net.PeerToPeer.Collaboration.ContactManager.CreateContact%2A> použije metodu k přidání vzdáleného partnera a jednoho z jeho místních partnerů do Správce kontaktů hostitelského partnera.  Tři uživatelé se pak zúčastní vlastní relace soukromé spolupráce.  
   
- Typická aplikace P2P: konferenční hovory pro spolupráci pořizování nebo využití tabulí, aplikace bez serveru chatu, interaktivní oznámení o inzerovaných programech a hraní online relace.  
+ Typické P2P aplikace jsou: konferenční hovory pro kolaborativní pořizování poznámek nebo whiteboarding, aplikace bez serveru chat, interaktivní reklamy a online herní relace.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Net.PeerToPeer.Collaboration>

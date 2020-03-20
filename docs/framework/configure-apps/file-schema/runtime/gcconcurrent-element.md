@@ -1,5 +1,5 @@
 ---
-title: Element gcConcurrent
+title: gcConcurrent Element
 ms.date: 03/30/2017
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/runtime/gcConcurrent
@@ -10,19 +10,19 @@ helpviewer_keywords:
 - <gcConcurrent> element
 ms.assetid: 503f55ba-26ed-45ac-a2ea-caf994da04cd
 ms.openlocfilehash: 5957337aa960a0d5f445249b410dbfaddb7b08e9
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73969231"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79400041"
 ---
-# <a name="gcconcurrent-element"></a>\<element > gcConcurrent
+# <a name="gcconcurrent-element"></a>\<gcConcurrent> element
 
-Určuje, zda modul CLR (Common Language Runtime) spouští uvolňování paměti v samostatném vlákně.
+Určuje, zda soubor RUNTIME společného jazyka spustí uvolňování paměti v samostatném vlákně.
 
-[konfigurační >\<](../configuration-element.md)\
-&nbsp;&nbsp;[\<runtime >](runtime-element.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;\<gcConcurrent >
+[\<>konfigurace](../configuration-element.md)\
+&nbsp;&nbsp;[\<>za běhu](runtime-element.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;\<gcConcurrent>
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -31,7 +31,7 @@ Určuje, zda modul CLR (Common Language Runtime) spouští uvolňování paměti
    enabled="true|false"/>
 ```
 
-## <a name="attributes-and-elements"></a>Atributy a elementy
+## <a name="attributes-and-elements"></a>Atributy a prvky
 
 Následující části popisují atributy, podřízené prvky a nadřazené prvky.
 
@@ -39,36 +39,36 @@ Následující části popisují atributy, podřízené prvky a nadřazené prvk
 
 |Atribut|Popis|
 |---------------|-----------------|
-|`enabled`|Požadovaný atribut.<br /><br />Určuje, zda modul runtime současně spustí uvolňování paměti.|
+|`enabled`|Požadovaný atribut.<br /><br />Určuje, zda běhový čas spouští souběžné uvolňování paměti.|
 
 #### <a name="enabled-attribute"></a>povolený atribut
 
 |Hodnota|Popis|
 |-----------|-----------------|
-|`false`|Nespustí souběžný sběr paměti.|
+|`false`|Nespustí uvolňování paměti současně.|
 |`true`|Souběžně spustí uvolňování paměti. Toto nastavení je výchozí.|
 
 ### <a name="child-elements"></a>Podřízené prvky
 
-Žádné
+Žádné.
 
 ### <a name="parent-elements"></a>Nadřazené prvky
 
-|Prvek|Popis|
+|Element|Popis|
 |-------------|-----------------|
 |`configuration`|Kořenový prvek v každém konfiguračním souboru, který je používán modulem Common Language Runtime (CLR) a aplikacemi rozhraní .NET Framework.|
 |`runtime`|Obsahuje informace o vazbách sestavení a uvolnění paměti.|
 
 ## <a name="remarks"></a>Poznámky
 
-Před verzí .NET Framework 4 bylo podporováno souběžné uvolňování paměti pracovní stanice, které provedlo uvolňování paměti na pozadí v samostatném vlákně. V .NET Framework 4 se souběžné uvolňování paměti nahradilo pomocí GC na pozadí, které také provádí uvolňování paměti na pozadí v samostatném vlákně. Počínaje .NET Framework 4,5 se kolekce na pozadí stala k dispozici v uvolňování paměti serveru. Element **gcConcurrent** řídí, zda modul runtime provádí souběžné nebo pozadí uvolňování paměti, pokud je k dispozici, nebo zda provádí uvolňování paměti v popředí.
+Před rozhraním .NET Framework 4 uvolňování paměti pracovní stanice podporovalo souběžné uvolňování paměti, které provedlo uvolňování paměti na pozadí v samostatném vlákně. V rozhraní .NET Framework 4 bylo souběžné uvolňování paměti nahrazeno gc na pozadí, který také provádí uvolňování paměti na pozadí v samostatném vlákně. Počínaje rozhraním .NET Framework 4.5 je kolekce na pozadí dostupná v uvolňování paměti serveru. Prvek **gcConcurrent** určuje, zda runtime provádí souběžné nebo pozadí uvolňování paměti, pokud je k dispozici, nebo zda provádí uvolňování paměti v popředí.
 
 ### <a name="to-disable-background-garbage-collection"></a>Zakázání uvolňování paměti na pozadí
 
 > [!WARNING]
-> Počínaje .NET Framework 4 je souběžné uvolňování paměti nahrazeno kolekcí paměti na pozadí. V dokumentaci .NET Framework se používají zaměnitelné a *pozadí* podmínek. Chcete-li zakázat uvolňování paměti na pozadí, použijte element **gcConcurrent** , jak je popsáno v tomto článku.
+> Počínaje rozhraním .NET Framework 4 je souběžné uvolňování paměti nahrazeno uvolňováním paměti na pozadí. Termíny *souběžné* a *pozadí* se používají zaměnitelně v dokumentaci rozhraní .NET Framework. Chcete-li zakázat uvolňování paměti na pozadí, použijte **gcConcurrent** element, jak je popsáno v tomto článku.
 
-Ve výchozím nastavení používá modul runtime souběžné nebo pozadí uvolňování paměti, které je optimalizováno pro latenci. Pokud vaše aplikace zahrnuje těžkou interakci s uživatelem, nechte souběžné uvolňování paměti povolené, aby se minimalizovala doba pozastavení aplikace, aby se provádělo uvolňování paměti. Pokud nastavíte atribut `enabled` elementu **gcConcurrent** na `false`, modul runtime používá nesouběžné uvolňování paměti, které je optimalizováno pro propustnost.
+Ve výchozím nastavení používá runtime souběžné nebo pozadí uvolňování paměti, který je optimalizován pro latenci. Pokud vaše aplikace zahrnuje náročnou interakci uživatele, ponechte souběžné uvolňování paměti povoleno minimalizovat dobu pozastavení aplikace k provedení uvolňování paměti. Pokud nastavíte `enabled` atribut **gcConcurrent** `false`element , runtime používá non-souběžné uvolňování paměti, který je optimalizován pro propustnost.
 
 Následující konfigurační soubor zakáže uvolňování paměti na pozadí:
 
@@ -80,13 +80,13 @@ Následující konfigurační soubor zakáže uvolňování paměti na pozadí:
 </configuration>
 ```
 
-Pokud je v konfiguračním souboru počítače **NagcConcurrentSettingé** nastavení, definuje se výchozí hodnota pro všechny aplikace .NET Framework. Nastavení konfiguračního souboru počítače přepisuje nastavení konfiguračního souboru aplikace.
+Pokud je v konfiguračním souboru počítače nastaveno **gcConcurrentSetting,** definuje výchozí hodnotu pro všechny aplikace rozhraní .NET Framework. Nastavení konfiguračního souboru počítače přepíše nastavení konfiguračního souboru aplikace.
 
-Další informace o souběžném a uvolňování paměti na pozadí najdete v částech [souběžné uvolňování paměti](../../../../standard/garbage-collection/fundamentals.md#concurrent-garbage-collection), [uvolňování paměti pracovní stanice na pozadí](../../../../standard/garbage-collection/fundamentals.md#background-workstation-garbage-collection)a [uvolňování paměti serveru na pozadí](../../../../standard/garbage-collection/fundamentals.md#background-server-garbage-collection) v článku [Základy uvolňování](../../../../standard/garbage-collection/fundamentals.md) paměti.
+Další informace o souběžné a pozadí uvolňování paměti naleznete [v části Souběžné uvolňování paměti](../../../../standard/garbage-collection/fundamentals.md#concurrent-garbage-collection), uvolňování paměti pracovní stanice na [pozadí](../../../../standard/garbage-collection/fundamentals.md#background-workstation-garbage-collection)a uvolňování paměti serveru [na pozadí](../../../../standard/garbage-collection/fundamentals.md#background-server-garbage-collection) v článku [Základy uvolňování paměti.](../../../../standard/garbage-collection/fundamentals.md)
 
 ## <a name="example"></a>Příklad
 
-Následující příklad povoluje uvolňování paměti na pozadí:
+Následující příklad umožňuje uvolňování paměti na pozadí:
 
 ```xml
 <configuration>
@@ -96,7 +96,7 @@ Následující příklad povoluje uvolňování paměti na pozadí:
 </configuration>
 ```
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Schéma nastavení běhového prostředí](index.md)
 - [Schéma konfiguračního souboru](../index.md)

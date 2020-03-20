@@ -2,27 +2,27 @@
 title: Integrace transakčních komponent služeb Enterprise Services
 ms.date: 03/30/2017
 ms.assetid: 05dab277-b8b2-48cf-b40c-826be128b175
-ms.openlocfilehash: 5914f76639adc3ff569a3bfb8d6eb1db14313e76
-ms.sourcegitcommit: 09b4090b78f52fd09b0e430cd4b26576f1fdf96e
+ms.openlocfilehash: 292573f911459d8a8419e09d81fd1e54dbc6c70b
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "76211941"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79184742"
 ---
 # <a name="integrating-enterprise-services-transactional-components"></a>Integrace transakčních komponent služeb Enterprise Services
 
-Windows Communication Foundation (WCF) poskytuje automatický mechanismus pro integraci s podnikovými službami (viz [integrace s aplikacemi modelu COM+](integrating-with-com-plus-applications.md)). Je ale možné, že budete chtít pružně vyvíjet služby, které interně využívají transakční komponenty hostované v rámci podnikových služeb. Vzhledem k tomu, že funkce transakcí WCF je postavená na infrastruktuře <xref:System.Transactions>, proces integrace podnikových služeb se službou WCF je stejný jako při určování interoperability mezi <xref:System.Transactions> a podnikovými službami, jak je uvedeno v [interoperabilitě se službami Enterprise Services a transakcemi com+](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.0/ms229974(v=vs.85)).  
+Windows Communication Foundation (WCF) poskytuje automatický mechanismus pro integraci s Enterprise Services (viz [Integrace s com+ aplikace).](integrating-with-com-plus-applications.md) Můžete však chtít flexibilitu při vývoji služeb, které interně používají transakční součásti hostované v rámci služeb Enterprise Services. Vzhledem k tomu, že funkce <xref:System.Transactions> WCF Transactions je postavena na infrastruktuře, proces integrace <xref:System.Transactions> podnikových služeb s WCF je shodný s procesem pro určení interoperability mezi a enterprise services, jak je uvedeno v [interoperabilitě s podnikovými službami a transakcemi modelu COM+](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.0/ms229974(v=vs.85)).  
   
- Aby byla zajištěna požadovaná úroveň interoperability mezi příchozími transakcemi a transakcemi kontextu modelu COM+, musí implementace služby vytvořit instanci <xref:System.Transactions.TransactionScope> a použít odpovídající hodnotu z výčtu <xref:System.Transactions.EnterpriseServicesInteropOption>.  
+ Chcete-li poskytnout požadovanou úroveň interoperability mezi příchozí tok transakce a com + <xref:System.Transactions.TransactionScope> kontext transakce, implementace <xref:System.Transactions.EnterpriseServicesInteropOption> služby musí vytvořit instanci a použít příslušnou hodnotu z výčtu.  
   
-## <a name="integrating-enterprise-services-with-a-service-operation"></a>Integrace služeb Enterprise Services s operací služby  
- Následující kód demonstruje operaci s povoleným tokem transakce, která vytvoří <xref:System.Transactions.TransactionScope> s možností <xref:System.Transactions.EnterpriseServicesInteropOption.Full>. V tomto scénáři platí následující podmínky:  
+## <a name="integrating-enterprise-services-with-a-service-operation"></a>Integrace podnikových služeb s operací služby  
+ Následující kód ukazuje operaci s povoleným tokem <xref:System.Transactions.TransactionScope> transakce, která vytvoří s <xref:System.Transactions.EnterpriseServicesInteropOption.Full> možností. V tomto scénáři platí následující podmínky:  
   
-- Pokud klient natéká transakci, operace, včetně volání do komponenty Enterprise Services, se spustí v rámci této transakce. Pomocí <xref:System.Transactions.EnterpriseServicesInteropOption.Full> zajistí, že transakce bude synchronizována s <xref:System.EnterpriseServices>m kontextem, což znamená, že ambientní transakce pro <xref:System.Transactions> a <xref:System.EnterpriseServices> je stejná.  
+- Pokud klient toky transakce, operace, včetně volání součásti Enterprise Services, je proveden v rámci této transakce. Použití <xref:System.Transactions.EnterpriseServicesInteropOption.Full> zajišťuje, že transakce je <xref:System.EnterpriseServices> synchronizována s kontextem, <xref:System.Transactions> což <xref:System.EnterpriseServices> znamená, že okolí transakce pro a je stejný.  
   
-- Pokud klient neflowe transakci, nastavení <xref:System.ServiceModel.OperationBehaviorAttribute.TransactionScopeRequired%2A> pro `true` vytvoří nový obor transakce pro operaci. Podobně použití <xref:System.Transactions.EnterpriseServicesInteropOption.Full> zajišťuje, že transakce operace je stejná jako transakce použitá v kontextu <xref:System.EnterpriseServices> součásti.  
+- Pokud klient netokuje transakci, nastavení <xref:System.ServiceModel.OperationBehaviorAttribute.TransactionScopeRequired%2A> vytvoří `true` nový rozsah transakce pro operaci. Podobně pomocí <xref:System.Transactions.EnterpriseServicesInteropOption.Full> zajišťuje, že transakce operace je stejná jako transakce <xref:System.EnterpriseServices> použitá v kontextu komponenty.  
   
- K dalším voláním metody dojde také v rámci oboru transakce stejné operace.  
+ Jakékoli další volání metody také dojít v rámci rozsahu transakce stejné operace.  
   
 ```csharp
 [ServiceContract()]  
@@ -46,11 +46,11 @@ public class CustomerService : ICustomerServiceContract
                      EnterpriseServicesInteropOption.Full))  
       {  
          // Create an Enterprise Services component  
-         // Call UpdateCustomer method on an Enterprise Services   
-         // component   
+         // Call UpdateCustomer method on an Enterprise Services
+         // component
   
-         // Call UpdateOtherCustomerData method on an Enterprise   
-         // Services component   
+         // Call UpdateOtherCustomerData method on an Enterprise
+         // Services component
          ts.Complete();  
       }  
   
@@ -60,10 +60,10 @@ public class CustomerService : ICustomerServiceContract
 }  
 ```  
   
- Pokud se mezi aktuální transakcí operace nepožaduje žádná synchronizace a volání součástí transakčních služeb Enterprise Services, použijte při vytváření instance <xref:System.Transactions.TransactionScope> možnost <xref:System.Transactions.EnterpriseServicesInteropOption.None>.  
+ Pokud není vyžadována žádná synchronizace mezi aktuální transakcí operace a voláním transakčních součástí služby Enterprise Services, použijte <xref:System.Transactions.EnterpriseServicesInteropOption.None> tuto možnost při vytváření instancí. <xref:System.Transactions.TransactionScope>  
   
 ## <a name="integrating-enterprise-services-with-a-client"></a>Integrace podnikových služeb s klientem  
- Následující kód demonstruje klientský kód pomocí <xref:System.Transactions.TransactionScope> instance s nastavením <xref:System.Transactions.EnterpriseServicesInteropOption.Full>. V tomto scénáři volání služeb, které podporují tok transakce, dochází v rámci oboru stejné transakce jako volání součástí služeb Enterprise Services.  
+ Následující kód ukazuje kód klienta <xref:System.Transactions.TransactionScope> pomocí <xref:System.Transactions.EnterpriseServicesInteropOption.Full> instance s nastavením. V tomto scénáři volání operací služby, které podporují tok transakcí dojít v rámci rozsahu stejné transakce jako volání součásti Enterprise Services.  
   
 ```csharp
 static void Main()  
@@ -81,19 +81,19 @@ static void Main()
   
         // Create an Enterprise Services component  
   
-        // Call UpdateCustomer method on an Enterprise Services   
-        // component   
+        // Call UpdateCustomer method on an Enterprise Services
+        // component
   
         ts.Complete();  
     }  
   
-    // Closing the client gracefully closes the connection and   
+    // Closing the client gracefully closes the connection and
     // cleans up resources  
     client.Close();  
 }  
 ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Integrace s aplikacemi modelu COM+](../../../../docs/framework/wcf/feature-details/integrating-with-com-plus-applications.md)
 - [Integrace s aplikacemi modelu COM](../../../../docs/framework/wcf/feature-details/integrating-with-com-applications.md)

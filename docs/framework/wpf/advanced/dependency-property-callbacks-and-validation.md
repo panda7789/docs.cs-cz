@@ -11,74 +11,74 @@ helpviewer_keywords:
 - dependency properties [WPF], callbacks
 - validation of dependency properties [WPF]
 ms.assetid: 48db5fb2-da7f-49a6-8e81-3540e7b25825
-ms.openlocfilehash: 7f00961ba100700c68936cc33facfdc758c77d3f
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: c5f7439753037aeb5c2ff558da63e063ad65a5e1
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69940826"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79186428"
 ---
 # <a name="dependency-property-callbacks-and-validation"></a>Zpětné volání a ověření vlastností závislostí
-Toto téma popisuje, jak vytvořit vlastnosti závislosti pomocí alternativních vlastních implementací pro funkce související s vlastnostmi, jako je například určení ověřování, zpětná volání, která jsou vyvolána při změně efektivní hodnoty vlastnosti a přepsání možné vnější vlivy na určení hodnoty. Toto téma také popisuje scénáře, kdy je vhodné rozšířit chování výchozího systému vlastností systémem pomocí těchto technik.  
+Toto téma popisuje, jak vytvořit vlastnosti závislostí pomocí alternativních vlastních implementací pro funkce související s vlastnostmi, jako je například určení ověření, zpětná volání, která jsou vyvolána při každé změně efektivní hodnoty vlastnosti, a přepsání možné vnější vlivy na stanovení hodnoty. Toto téma také popisuje scénáře, kde je vhodné rozšířit chování výchozího systému vlastností pomocí těchto technik.  
 
-<a name="prerequisites"></a>   
+<a name="prerequisites"></a>
 ## <a name="prerequisites"></a>Požadavky  
- V tomto tématu se předpokládá, že rozumíte základním scénářům implementace vlastnosti závislosti a způsobu, jakým se aplikují metadata na vlastní vlastnost závislosti. Podívejte se na téma [vlastnosti vlastní závislosti](custom-dependency-properties.md) a [metadata vlastnosti závislosti](dependency-property-metadata.md) pro kontext.  
+ Toto téma předpokládá, že rozumíte základním scénářům implementace vlastnosti závislosti a způsobu použití metadat na vlastní vlastnost závislosti. Viz [Vlastní vlastnosti závislostí](custom-dependency-properties.md) a [metadata vlastností závislostí](dependency-property-metadata.md) pro kontext.  
   
-<a name="Validation_Callbacks"></a>   
-## <a name="validation-callbacks"></a>Zpětná volání ověření  
- Zpětná volání ověřování lze přiřadit vlastnosti závislosti při prvním registraci. Zpětné volání ověřování není součástí metadat vlastností; Jedná se o přímý vstup <xref:System.Windows.DependencyProperty.Register%2A> metody. Proto Jakmile je pro vlastnost závislosti vytvořeno zpětné volání ověřování, nelze ji přepsat novou implementací.  
+<a name="Validation_Callbacks"></a>
+## <a name="validation-callbacks"></a>Ověřovací zpětná volání  
+ Ověření zpětná volání lze přiřadit k vlastnosti závislosti při první registraci. Zpětné volání ověření není součástí metadat vlastnosti; jedná se o přímý <xref:System.Windows.DependencyProperty.Register%2A> vstup metody. Proto po vytvoření zpětného volání ověření pro vlastnost závislosti, nemůže být přepsána novou implementací.  
   
  [!code-csharp[DPCallbackOverride#CurrentDefinitionWithWrapper](~/samples/snippets/csharp/VS_Snippets_Wpf/DPCallbackOverride/CSharp/SDKSampleLibrary/class1.cs#currentdefinitionwithwrapper)]
  [!code-vb[DPCallbackOverride#CurrentDefinitionWithWrapper](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DPCallbackOverride/visualbasic/sdksamplelibrary/class1.vb#currentdefinitionwithwrapper)]  
   
- Zpětná volání jsou implementována tak, aby byla poskytnuta hodnota objektu. Vrátí `true` , pokud je zadaná hodnota pro vlastnost platná. v opačném případě vrátí `false`. Předpokládá se, že vlastnost je správného typu na typ zaregistrovaný v systému vlastností, takže typ kontroly v rámci zpětných volání není obvykle proveden. Zpětná volání jsou používána systémem vlastností v nejrůznějších různých operacích. To zahrnuje inicializaci počátečního typu podle výchozí hodnoty, programového změny vyvoláním <xref:System.Windows.DependencyObject.SetValue%2A>nebo pokusů o přepsání metadat s poskytnutou novou výchozí hodnotou. Pokud je zpětné volání ověřování vyvoláno kteroukoli z těchto operací a vrátí `false`, bude vyvolána výjimka. Aby bylo možné tyto výjimky zpracovat, musí být moduly pro zápis aplikací připravené. Běžné použití zpětných volání ověřování ověřuje hodnoty výčtu nebo omezuje hodnoty celých čísel nebo dvojitých hodnot, pokud vlastnost nastavuje měření, která musí být nulová nebo větší.  
+ Zpětná volání jsou implementována tak, aby jim byla poskytnuta hodnota objektu. Vrátí `true` se, pokud je zadaný hodnota platná pro vlastnost; v opačném `false`případě se vrátí . Předpokládá se, že vlastnost je správného typu podle typu registrovaného v systému vlastností, takže kontrola typu v rámci zpětná volání se obvykle neprovádí. Zpětná volání jsou používány systémem vlastností v různých operacích. To zahrnuje počáteční inicializaci typu výchozí hodnotou, <xref:System.Windows.DependencyObject.SetValue%2A>programovou změnu vyvoláním nebo pokusy o přepsání metadat s novou výchozí hodnotou. Pokud je zpětné volání ověření vyvoláno některou `false`z těchto operací a vrátí , bude vyvolána výjimka. Autoři aplikací musí být připraveni ke zpracování těchto výjimek. Běžné použití ověření zpětná volání je ověření výčtu hodnoty nebo omezení hodnoty celá čísla nebo zdvojnásobí při vlastnost nastaví měření, která musí být nula nebo větší.  
   
- Zpětná volání ověřování jsou určena speciálně pro validátory tříd, nikoli pro validátory instancí. Parametry zpětného volání nekomunikují specificky <xref:System.Windows.DependencyObject> , na kterých jsou nastaveny vlastnosti k ověření. Zpětná volání ověřování nejsou proto užitečná pro vynucování možných "závislostí", které by mohly ovlivnit hodnotu vlastnosti, kde je hodnota vlastnosti specifická pro konkrétní instance závislá na faktorech, jako jsou například hodnoty specifické pro instance jiných vlastností nebo Běhový stav.  
+ Validace zpětná volání konkrétně jsou určeny k třídy validátory, nikoli instance validátory. Parametry zpětného volání nesdělují konkrétní, <xref:System.Windows.DependencyObject> na kterých jsou nastaveny vlastnosti k ověření. Proto zpětná volání ověření nejsou užitečné pro vynucení možné "závislosti", které by mohly ovlivnit hodnotu vlastnosti, kde je hodnota specifické pro instanci vlastnosti závislá na faktorech, jako jsou hodnoty specifické pro instanci jiných vlastností, nebo stavu za běhu.  
   
- Následuje příklad kódu pro velmi jednoduché ověřování typu zpětného volání: ověřování, že vlastnost, která je zadána jako <xref:System.Double> primitivní <xref:System.Double.PositiveInfinity> , není nebo <xref:System.Double.NegativeInfinity>.  
+ Následuje příklad kódu pro velmi jednoduchý scénář ověření zpětného volání: ověření, <xref:System.Double> že vlastnost, která je zadána jako primitivní není <xref:System.Double.PositiveInfinity> nebo <xref:System.Double.NegativeInfinity>.  
   
  [!code-csharp[DPCallbackOverride#ValidateValueCallback](~/samples/snippets/csharp/VS_Snippets_Wpf/DPCallbackOverride/CSharp/SDKSampleLibrary/class1.cs#validatevaluecallback)]
  [!code-vb[DPCallbackOverride#ValidateValueCallback](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DPCallbackOverride/visualbasic/sdksamplelibrary/class1.vb#validatevaluecallback)]  
   
-<a name="Coerce_Value_Callbacks_and_Property_Changed_Events"></a>   
-## <a name="coerce-value-callbacks-and-property-changed-events"></a>Převede zpětná volání hodnot a události změněné vlastností.  
- Zpětná volání převodních hodnot předají <xref:System.Windows.DependencyObject> konkrétní instanci pro vlastnosti, <xref:System.Windows.PropertyChangedCallback> stejně jako implementace, které jsou vyvolány systémem vlastností při změně hodnoty vlastnosti závislosti. Pomocí těchto dvou zpětných volání v kombinaci můžete vytvořit řadu vlastností pro prvky, kde změny v jedné vlastnosti vynutí vynucení nebo opětovné vyhodnocení jiné vlastnosti.  
+<a name="Coerce_Value_Callbacks_and_Property_Changed_Events"></a>
+## <a name="coerce-value-callbacks-and-property-changed-events"></a>Události změny hodnoty coerce a události změněné vlastnosti  
+ Zpětná volání hodnoty coerce <xref:System.Windows.DependencyObject> předávají konkrétní instanci pro vlastnosti, stejně <xref:System.Windows.PropertyChangedCallback> jako implementace, které jsou vyvolány systémem vlastností při každé změně hodnoty vlastnosti závislosti. Pomocí těchto dvou zpětná volání v kombinaci můžete vytvořit řadu vlastností na prvky, kde změny v jedné vlastnosti vynutí nátlaku nebo přecenění jiné vlastnosti.  
   
- Typický scénář pro použití propojení vlastností závislosti je v případě, že máte vlastnost založenou na uživatelském rozhraní, kde element obsahuje jednu vlastnost pro minimální a maximální hodnotu a třetí vlastnost pro skutečnou nebo aktuální hodnotu. Pokud je toto maximum upraveno takovým způsobem, že aktuální hodnota překročila nové maximum, měla by být aktuální hodnota převedena na hodnotu vyšší než nové maximum a podobný vztah pro minimum na hodnotu Current.  
+ Typický scénář pro použití propojení vlastností závislostí je, když máte vlastnost řízenou uživatelským rozhraním, kde prvek obsahuje jednu vlastnost pro minimální a maximální hodnotu a třetí vlastnost pro skutečnou nebo aktuální hodnotu. Pokud bylo maximum upraveno tak, že aktuální hodnota překročila nové maximum, bylo by nutné donutit aktuální hodnotu, aby nebyla větší než nové maximum a podobný vztah pro minimální až aktuální.  
   
- Následuje stručný ukázkový kód pouze pro jednu ze tří vlastností závislosti, které ilustrují tento vztah. Příklad ukazuje, jak `CurrentReading` je zaregistrována vlastnost minimální/maximální/aktuální sady souvisejících vlastností pro čtení. Používá ověření, jak je znázorněno v předchozí části.  
+ Následuje velmi stručný příklad kódu pouze pro jednu ze tří vlastností závislostí, které ilustrují tento vztah. Příklad ukazuje, `CurrentReading` jak je registrována vlastnost min/max/aktuální sadu související *čtení vlastností. Používá ověření, jak je znázorněno v předchozí části.  
   
  [!code-csharp[DPCallbackOverride#CurrentDefinitionWithWrapper](~/samples/snippets/csharp/VS_Snippets_Wpf/DPCallbackOverride/CSharp/SDKSampleLibrary/class1.cs#currentdefinitionwithwrapper)]
  [!code-vb[DPCallbackOverride#CurrentDefinitionWithWrapper](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DPCallbackOverride/visualbasic/sdksamplelibrary/class1.vb#currentdefinitionwithwrapper)]  
   
- Vlastnost, která se změnila zpět pro aktuální, slouží k přeposílání změn na jiné závislé vlastnosti tím, že explicitně vyvolá zpětná volání přenesených hodnot, která jsou registrována pro tyto ostatní vlastnosti:  
+ Vlastnost změněna zpětné volání pro Current se používá k předání změny na jiné závislé vlastnosti, explicitní vyvolání příkazu hodnota zpětná volání, které jsou registrovány pro tyto další vlastnosti:  
   
  [!code-csharp[DPCallbackOverride#OnPCCurrent](~/samples/snippets/csharp/VS_Snippets_Wpf/DPCallbackOverride/CSharp/SDKSampleLibrary/class1.cs#onpccurrent)]
  [!code-vb[DPCallbackOverride#OnPCCurrent](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DPCallbackOverride/visualbasic/sdksamplelibrary/class1.vb#onpccurrent)]  
   
- Zpětné volání s převedenou hodnotou kontroluje hodnoty vlastností, na kterých je aktuální vlastnost potenciálně závislá, a v případě potřeby Převede aktuální hodnotu:  
+ Zpětné volání hodnoty couvat kontroluje hodnoty vlastností, na kterých je aktuální vlastnost potenciálně závislá, a v případě potřeby vylomií aktuální hodnotu:  
   
  [!code-csharp[DPCallbackOverride#CoerceCurrent](~/samples/snippets/csharp/VS_Snippets_Wpf/DPCallbackOverride/CSharp/SDKSampleLibrary/class1.cs#coercecurrent)]
  [!code-vb[DPCallbackOverride#CoerceCurrent](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DPCallbackOverride/visualbasic/sdksamplelibrary/class1.vb#coercecurrent)]  
   
 > [!NOTE]
-> Výchozí hodnoty vlastností nejsou přiřazeny. Hodnota vlastnosti, která se rovná výchozí hodnotě, může nastat, pokud hodnota vlastnosti stále má počáteční výchozí hodnotu, nebo pomocí mazání jiných hodnot <xref:System.Windows.DependencyObject.ClearValue%2A>pomocí.  
+> Výchozí hodnoty vlastností nejsou vykonavovány. Hodnota vlastnosti rovnající se výchozí hodnotě může nastat, pokud hodnota vlastnosti stále má své původní výchozí hodnoty, nebo vymazáním jiných hodnot pomocí <xref:System.Windows.DependencyObject.ClearValue%2A>.  
   
- Zpětná volání přeměněných hodnot a vlastností jsou součástí metadat vlastností. Proto můžete změnit zpětná volání pro konkrétní vlastnost závislosti, protože existuje u typu, který je odvozen z typu, který vlastní vlastnost závislosti, přepsáním metadat pro tuto vlastnost typu.  
+ Hodnota coerce a zpětná volání změněné vlastnosti jsou součástí metadat vlastnosti. Proto můžete změnit zpětná volání pro konkrétní vlastnost závislosti, protože existuje na typu, který je odvozen z typu, který vlastní vlastnost závislosti, přepsáním metadat pro tuto vlastnost na vašem typu.  
   
-<a name="Advanced"></a>   
-## <a name="advanced-coercion-and-callback-scenarios"></a>Pokročilé scénáře vynucení a zpětného volání  
+<a name="Advanced"></a>
+## <a name="advanced-coercion-and-callback-scenarios"></a>Pokročilé scénáře nátlaku a zpětného volání  
   
 ### <a name="constraints-and-desired-values"></a>Omezení a požadované hodnoty  
- <xref:System.Windows.PropertyMetadata.CoerceValueCallback%2A> Zpětná volání budou použita systémem vlastností k přenesení hodnoty v souladu s logikou, kterou deklarujete, ale převedená hodnota vlastnosti lokálně uchová stále "požadovanou hodnotu" interně. Pokud jsou omezení založena na dalších hodnotách vlastností, které se mohou dynamicky měnit během životního cyklu aplikace, jsou omezení vynuceně měněna dynamicky a omezená vlastnost může změnit její hodnotu tak, aby se co nejblíže požadované hodnotě. je možné vydávat nová omezení. Hodnota se změní na požadovanou hodnotu, pokud jsou všechna omezení vyvolána. V případě, že máte více vlastností, které jsou na sobě vzájemně závislé, můžete začlenit některé poměrně složité scénáře závislosti. Například ve scénáři min/max/current se můžete rozhodnout, že nastavit uživatele jako minimální a maximální hodnotu. Pokud ano, může být nutné, aby toto maximum bylo vždy větší než minimum a naopak. Pokud je však tato konverze aktivní a maximum se převede na minimum, zůstane aktuální v nastavitelných stavech, protože je závislý na obou a je omezený na rozsah mezi hodnotami, což je nula. Když se pak hodnota maximum nebo minimum upraví, zobrazí se u položky "sledovat" jednu z hodnot, protože požadovaná hodnota Current je stále uložená a pokouší se dosáhnout požadované hodnoty, protože jsou omezení vydaná.  
+ Zpětná <xref:System.Windows.PropertyMetadata.CoerceValueCallback%2A> volání budou použita systémem vlastností k dosazení hodnoty v souladu s logikou, kterou deklarujete, ale vykonaná hodnota místně nastavené vlastnosti si zachová "požadovanou hodnotu" interně. Pokud jsou omezení založena na jiných hodnotách vlastností, které se mohou během doby trvání aplikace dynamicky měnit, budou omezení nátlaku dynamicky také změněna a omezující vlastnost může změnit svou hodnotu tak, aby se přiblížila požadované hodnotě jako s ohledem na nová omezení. Hodnota se stane požadovanou hodnotou, pokud jsou zrušena všechna omezení. Můžete potenciálně zavést některé poměrně složité scénáře závislostí, pokud máte více vlastností, které jsou závislé na sobě navzájem cyklickým způsobem. Například v min/max/aktuální scénář můžete zvolit minimální a maximální být uživatel nastavitelný. Pokud ano, možná budete muset dotálet, že maximum je vždy větší než minimum a naopak. Ale pokud je aktivní, a Maximální nátlaku na minimum, opustí Current v unsettable stavu, protože je závislá na obou a je omezena na rozsah mezi hodnotami, což je nula. Potom, pokud maximální nebo minimální jsou upraveny, Current se zdá, že "následovat" jednu z hodnot, protože požadovaná hodnota Current je stále uložena a pokouší se dosáhnout požadované hodnoty jako omezení jsou uvolněny.  
   
- Nedošlo k žádné technické chybě se složitými závislostmi, ale může se jednat o mírné zvýšení výkonu, pokud vyžadují velký počet přehodnocení a může být také matoucí pro uživatele, pokud mají vliv na uživatelské rozhraní přímo. Buďte opatrní se změnou vlastnosti a převedli zpětná volání hodnot a zajistěte, aby se převedená konverze mohla považovat za nejednoznačnou možnou hodnotu a nepředstavuje "omezení".  
+ Není nic technicky špatného s komplexní závislosti, ale mohou být mírné poškození výkonu, pokud vyžadují velký počet přehodnocení a může být také matoucí pro uživatele, pokud ovlivňují uživatelské prostředí přímo. Buďte opatrní se změnou vlastnosti a ve snaze o zpětná volání hodnoty a ujistěte se, že pokus o nátlak může být považován za jednoznačně, jak je to možné, a není "přetížení".  
   
-### <a name="using-coercevalue-to-cancel-value-changes"></a>Zrušení změn hodnot pomocí CoerceValue  
- Systém vlastností zpracuje všechny <xref:System.Windows.CoerceValueCallback> , které vrací hodnotu <xref:System.Windows.DependencyProperty.UnsetValue> jako zvláštní případ. Tento zvláštní případ znamená, že změna vlastnosti, která je výsledkem <xref:System.Windows.CoerceValueCallback> volání metody, by měla být zamítnutá systémem vlastností a že by měl systém vlastností místo toho hlásit jakoukoli předchozí hodnotu, kterou vlastnost měla. Tento mechanismus může být užitečný pro kontrolu, že změny vlastnosti, které byly iniciovány asynchronně, jsou pro aktuální stav objektu stále platné, a změny se potlačí, pokud ne. Dalším možným scénářem je, že můžete selektivně potlačit hodnotu v závislosti na tom, která součást určení hodnot vlastností zodpovídá za nahlášenou hodnotu. Chcete-li to provést, můžete použít <xref:System.Windows.DependencyProperty> předaný příkaz ke zpětnému volání a identifikátor vlastnosti jako <xref:System.Windows.DependencyPropertyHelper.GetValueSource%2A>vstup pro a poté zpracovat <xref:System.Windows.ValueSource>.  
+### <a name="using-coercevalue-to-cancel-value-changes"></a>Použití funkce CoerceValue ke zrušení změn hodnoty  
+ Systém vlastností bude <xref:System.Windows.CoerceValueCallback> považovat všechny, které vrátí hodnotu <xref:System.Windows.DependencyProperty.UnsetValue> jako zvláštní případ. Tento zvláštní případ znamená, že změna <xref:System.Windows.CoerceValueCallback> vlastnosti, která vyústila v volání by měla být odmítnuta systémem vlastností a že systém vlastností by měl místo toho hlásit jakoukoli předchozí hodnotu vlastnosti. Tento mechanismus může být užitečné zkontrolovat, že změny vlastnosti, které byly zahájeny asynchronně jsou stále platné pro aktuální stav objektu a potlačit změny, pokud tomu tak není. Dalším možným scénářem je, že můžete selektivně potlačit hodnotu v závislosti na tom, která složka stanovení hodnoty vlastnosti je zodpovědná za vykazovanou hodnotu. Chcete-li to provést, <xref:System.Windows.DependencyProperty> můžete použít předané v zpětnévolání <xref:System.Windows.DependencyPropertyHelper.GetValueSource%2A>a identifikátor <xref:System.Windows.ValueSource>vlastnosti jako vstup pro , a potom zpracovat .  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Přehled vlastností závislosti](dependency-properties-overview.md)
 - [Metadata vlastností závislosti](dependency-property-metadata.md)

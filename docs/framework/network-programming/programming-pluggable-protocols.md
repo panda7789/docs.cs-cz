@@ -16,24 +16,24 @@ helpviewer_keywords:
 - protocols, pluggable
 ms.assetid: 66ef8456-7576-4e97-8956-959b216373db
 ms.openlocfilehash: 94dfedd317782b9e518df02c84d9af55b1ef2b69
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "71047390"
 ---
 # <a name="programming-pluggable-protocols"></a>Programování připojitelných protokolů
-Abstraktní <xref:System.Net.WebRequest> a<xref:System.Net.WebResponse> třídy poskytují základ pro připojené protokoly. Odvozením tříd specifických pro protokol od <xref:System.Net.WebRequest> a <xref:System.Net.WebResponse>může aplikace požadovat data z internetového prostředku a číst odpověď bez určení používaného protokolu.  
+Abstraktní <xref:System.Net.WebRequest> a <xref:System.Net.WebResponse> třídy poskytují základnu pro připojitelné protokoly. Odvozením tříd specifických pro <xref:System.Net.WebRequest> <xref:System.Net.WebResponse>protokol z aplikace a , aplikace může požadovat data z internetového prostředku a číst odpověď bez určení použitého protokolu.  
   
- Než budete moct vytvořit konkrétní <xref:System.Net.WebRequest>protokol, musíte zaregistrovat jeho metodu create. Použijte statickou <xref:System.Net.WebRequest.RegisterPrefix%28System.String%2CSystem.Net.IWebRequestCreate%29> <xref:System.Net.WebRequest> metodu pro registraci <xref:System.Net.WebRequest> následníka pro zpracování sady požadavků na konkrétní internetové schéma, na schéma a Server nebo na schéma, server a cestu.  
+ Před vytvořením protokolu specifické <xref:System.Net.WebRequest>, je nutné zaregistrovat jeho Create metoda. Statickou <xref:System.Net.WebRequest.RegisterPrefix%28System.String%2CSystem.Net.IWebRequestCreate%29> <xref:System.Net.WebRequest> metodou registrace potomka <xref:System.Net.WebRequest> zpracování množiny požadavků na určité schéma Internetu, schématu a serveru nebo schématu, serveru a cesty.  
   
- Ve většině případů budete moci odesílat a přijímat data pomocí metod a vlastností <xref:System.Net.WebRequest> třídy. Pokud však potřebujete získat přístup k vlastnostem specifickým pro protokol, můžete přetypovat <xref:System.Net.WebRequest> na konkrétní instanci odvozené třídy.  
+ Ve většině případů budete moci odesílat a přijímat data <xref:System.Net.WebRequest> pomocí metod a vlastností třídy. Pokud však potřebujete získat přístup k vlastnostem specifickým pro protokol, můžete typcast a <xref:System.Net.WebRequest> pro konkrétní instanci odvozené třídy.  
   
- Chcete-li využít výhod protokolů pro připojení, <xref:System.Net.WebRequest> musí vaši následovníci poskytnout výchozí transakci požadavku a odpovědi, která nevyžaduje nastavení vlastností specifických pro protokol. Například <xref:System.Net.HttpWebRequest> třída, která <xref:System.Net.WebRequest> implementuje třídu `GET` pro http, poskytuje ve výchozím nastavení požadavek a vrátí objekt <xref:System.Net.HttpWebResponse> , který obsahuje datový proud vrácený z webového serveru.  
+ Chcete-li využít připojitelné protokoly, potomci <xref:System.Net.WebRequest> musí poskytnout výchozí transakce požadavku a odpovědi, která nevyžaduje nastavení vlastností specifických pro protokol. Například <xref:System.Net.HttpWebRequest> třída, která implementuje třídu <xref:System.Net.WebRequest> pro `GET` PROTOKOL HTTP, <xref:System.Net.HttpWebResponse> poskytuje ve výchozím nastavení požadavek a vrací datový proud vrácený z webového serveru.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Odvození ze žádosti WebRequest](deriving-from-webrequest.md)
 - [Odvození z odpovědi WebResponse](deriving-from-webresponse.md)
 - [Síťové programování v rozhraní .NET Framework](index.md)
-- [Postupy: Přetypovat a WebRequest pro přístup k vlastnostem specifickým pro protokol](how-to-typecast-a-webrequest-to-access-protocol-specific-properties.md)
+- [Postupy: Zadání žádosti WebRequest pro přístup k vlastnostem specifickým pro protokol](how-to-typecast-a-webrequest-to-access-protocol-specific-properties.md)

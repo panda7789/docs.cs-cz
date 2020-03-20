@@ -15,61 +15,61 @@ helpviewer_keywords:
 - easing functions [WPF], customizing
 - animations [WPF], applying
 ms.assetid: 075b9c2b-82c4-43fa-b3cd-de0b6236eb38
-ms.openlocfilehash: 72118711dfd40ad8c665157e09f01c60085db903
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: a25bde5098af853c3906a174a189fc35f33f0525
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69965736"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79186502"
 ---
 # <a name="easing-functions"></a>Funkce usnadnění
-Funkce usnadnění umožňují použít pro animace vlastní matematické vzorce. Například můžete chtít, aby objekt realisticky vynechal nebo choval, jako by byl na jaře. K aproximaci těchto efektů byste mohli použít klíčový rámec nebo dokonce i z animací a, ale to by vedlo k výraznému množství práce a animace bude méně přesná než při použití matematického vzorce.  
+Funkce náběhu/doběhu umožňují použít vlastní matematické vzorce na animace. Můžete například chtít, aby se objekt realisticky odrazil nebo se choval, jako by byl na pružině. Můžete použít Key-Frame nebo dokonce From/To/By animace pro aproximaci těchto efektů, ale to by trvalo značné množství práce a animace by bylo méně přesné než pomocí matematického vzorce.  
   
- Kromě vytvoření vlastní funkce náběh a dědění z <xref:System.Windows.Media.Animation.EasingFunctionBase>můžete použít jednu z několika funkcí usnadnění poskytovaných modulem runtime k vytvoření běžných efektů.  
+ Kromě vytvoření vlastní funkce náběhu/doběhu děděním z <xref:System.Windows.Media.Animation.EasingFunctionBase>, můžete použít jednu z několika funkcí náběhu/doběhu poskytovaných modulem runtime k vytvoření běžných efektů.  
   
-- <xref:System.Windows.Media.Animation.BackEase>: Odvolá pohyb animace mírně předtím, než se začne animovat v uvedené cestě.  
+- <xref:System.Windows.Media.Animation.BackEase>: Mírně zatáhne pohyb animace, než začne animovat v uvedené cestě.  
   
-- <xref:System.Windows.Media.Animation.BounceEase>: Vytvoří skákající efekt.  
+- <xref:System.Windows.Media.Animation.BounceEase>: Vytvoří efekt odrážení.  
   
-- <xref:System.Windows.Media.Animation.CircleEase>: Vytvoří animaci, která zrychlí a/nebo zpomaluje pomocí kruhové funkce.  
+- <xref:System.Windows.Media.Animation.CircleEase>: Vytvoří animaci, která zrychluje nebo zpomaluje pomocí kruhové funkce.  
   
-- <xref:System.Windows.Media.Animation.CubicEase>: Vytvoří animaci, která zrychlí a/nebo zpomaluje pomocí vzorce *f*(*t*) = *t*<sup>3</sup>.  
+- <xref:System.Windows.Media.Animation.CubicEase>: Vytvoří animaci, která zrychluje a/nebo zpomaluje pomocí vzorce *f*(*t*) = *t*<sup>3</sup>.  
   
-- <xref:System.Windows.Media.Animation.ElasticEase>: Vytvoří animaci, která se podobá jarnímu kmitání a až do chvíle, kdy přijde do klidového režimu.  
+- <xref:System.Windows.Media.Animation.ElasticEase>: Vytvoří animaci, která se podobá jarní oscilesmu tam a zpět, dokud neodpočívá.  
   
-- <xref:System.Windows.Media.Animation.ExponentialEase>: Vytvoří animaci, která zrychlí a/nebo zpomaluje pomocí exponenciálního vzorce.  
+- <xref:System.Windows.Media.Animation.ExponentialEase>: Vytvoří animaci, která zrychluje nebo zpomaluje pomocí exponenciálního vzorce.  
   
-- <xref:System.Windows.Media.Animation.PowerEase>: Vytvoří animaci, která zrychlí a/nebo zpomaluje pomocí vzorce *f*(*t*) = *t*<sup>p</sup> , kde p je rovna <xref:System.Windows.Media.Animation.PowerEase.Power%2A> vlastnosti.  
+- <xref:System.Windows.Media.Animation.PowerEase>: Vytvoří animaci, která zrychluje a/nebo zpomaluje pomocí vzorce *f*( <xref:System.Windows.Media.Animation.PowerEase.Power%2A> *t*) = *t*<sup>p,</sup> kde p se rovná vlastnosti.  
   
-- <xref:System.Windows.Media.Animation.QuadraticEase>: Vytvoří animaci, která zrychlí a/nebo zpomaluje pomocí vzorce *f*(*t*) = *t*<sup>2</sup>.  
+- <xref:System.Windows.Media.Animation.QuadraticEase>: Vytvoří animaci, která zrychluje a/nebo zpomaluje pomocí vzorce *f*(*t*) = *t*<sup>2</sup>.  
   
-- <xref:System.Windows.Media.Animation.QuarticEase>: Vytvoří animaci, která zrychlí a/nebo zpomaluje pomocí vzorce *f*(*t*) = *t*<sup>4</sup>.  
+- <xref:System.Windows.Media.Animation.QuarticEase>: Vytvoří animaci, která zrychluje a/nebo zpomaluje pomocí vzorce *f*(*t*) = *t*<sup>4</sup>.  
   
-- <xref:System.Windows.Media.Animation.QuinticEase>: Vytvořte animaci, která zrychlí a/nebo zpomaluje pomocí vzorce *f*(*t*) = *t*<sup>5</sup>.  
+- <xref:System.Windows.Media.Animation.QuinticEase>: Vytvořte animaci, která zrychluje a/nebo zpomaluje pomocí vzorce *f*(*t*) = *t*<sup>5</sup>.  
   
-- <xref:System.Windows.Media.Animation.SineEase>: Vytvoří animaci, která zrychlí a/nebo zpomaluje pomocí vzorce sinus.  
+- <xref:System.Windows.Media.Animation.SineEase>: Vytvoří animaci, která zrychluje nebo zpomaluje pomocí sinusového vzorce.  
   
- Chcete-li použít funkci náběh a doběh pro animaci, `EasingFunction` použijte vlastnost animace a určete funkci náběh a doběh, která se má použít pro animaci. Následující příklad používá <xref:System.Windows.Media.Animation.BounceEase> funkci náběh a doběh <xref:System.Windows.Media.Animation.DoubleAnimation> pro vytvoření skákajícího efektu.  
+ Chcete-li použít funkci náběhu/doběhu na animaci, použijte `EasingFunction` vlastnost animace a určete funkci náběhu/doběhu, která se má na animaci použít. Následující příklad použije <xref:System.Windows.Media.Animation.BounceEase> funkci náběhu/doběhu na a <xref:System.Windows.Media.Animation.DoubleAnimation> a a vytvoří efekt odrážení.  
   
  [!code-xaml[BounceEase_snippet#BounceEase](~/samples/snippets/csharp/VS_Snippets_Wpf/bounceease_snippet/CS/window1.xaml#bounceease)]  
   
- V předchozím příkladu byla funkce náběhu a animací aplikována na animaci od/do/. Tyto funkce usnadnění můžete použít také pro animace klíčových snímků. Následující příklad ukazuje, jak používat klíčové snímky s funkcemi usnadnění, které jsou k nim přidružené, k vytvoření animace obdélníku, který se smlouvou nahoru, zpomaluje a pak rozbalí dolů (jak je to možné) a pak se zastaví.  
+ V předchozím příkladu byla funkce náběhu/odsuzování použita na animaci From/To/By. Tyto funkce náběhu/doběhu můžete také použít na animace klíčových snímků. Následující příklad ukazuje, jak pomocí klíčových snímků s funkcemi náběhu/doběhu, které jsou s nimi spojeny, k vytvoření animace obdélníku, který se smršťuje směrem nahoru, zpomaluje, pak se rozšiřuje směrem dolů (jako by padal) a pak se odrazí na zastávku.  
   
  [!code-xaml[EasingFunctionDoubleKeyFrame_snippet#EasingFunctionDoubleKeyFrame](~/samples/snippets/csharp/VS_Snippets_Wpf/easingfunctiondoublekeyframe_snippet/CS/window1.xaml#easingfunctiondoublekeyframe)]  
   
- <xref:System.Windows.Media.Animation.EasingFunctionBase.EasingMode%2A> Vlastnost lze použít pro změnu způsobu, jakým se chová funkce náběhu a nikoli. to znamená změnit způsob, jakým se animace interpoluje. Existují tři možné hodnoty, které můžete zadat pro <xref:System.Windows.Media.Animation.EasingFunctionBase.EasingMode%2A>:  
+ <xref:System.Windows.Media.Animation.EasingFunctionBase.EasingMode%2A> Vlastnost můžete použít ke změně způsobu, jakým se vyvíjí funkce náběhu/doběhu, to znamená, že změníte způsob interpolace animace. Existují tři možné hodnoty, <xref:System.Windows.Media.Animation.EasingFunctionBase.EasingMode%2A>které můžete uvést:  
   
-- <xref:System.Windows.Media.Animation.EasingMode.EaseIn>: Interpolace probíhá pomocí matematického vzorce spojeného s funkcí náběh/doběh.  
+- <xref:System.Windows.Media.Animation.EasingMode.EaseIn>: Interpolace se řídí matematickým vzorcem přidruženým k funkci náběhu/doběhu.  
   
-- <xref:System.Windows.Media.Animation.EasingMode.EaseOut>: Interpolace následuje 100% interpolace minus výstup vzorce přidruženého k funkci náběh/doběh.  
+- <xref:System.Windows.Media.Animation.EasingMode.EaseOut>: Interpolace následuje 100% interpolaci mínus výstup vzorce spojeného s funkcí náběhu/doběhu.  
   
-- <xref:System.Windows.Media.Animation.EasingMode.EaseInOut>: Interpolace používá <xref:System.Windows.Media.Animation.EasingMode.EaseIn> pro první polovinu animace a <xref:System.Windows.Media.Animation.EasingMode.EaseOut> za druhou polovinu.  
+- <xref:System.Windows.Media.Animation.EasingMode.EaseInOut>: Interpolace používá <xref:System.Windows.Media.Animation.EasingMode.EaseIn> pro první <xref:System.Windows.Media.Animation.EasingMode.EaseOut> polovinu animace a pro druhou polovinu.  
   
- Následující grafy <xref:System.Windows.Media.Animation.EasingFunctionBase.EasingMode%2A> ukazují různé hodnoty, kde *f*(*x*) představuje průběh animace a *t* představuje čas.  
+ Níže uvedené grafy ukazují <xref:System.Windows.Media.Animation.EasingFunctionBase.EasingMode%2A> různé hodnoty, kde *f*(*x*) představuje průběh animace a *t* představuje čas.  
   
  <xref:System.Windows.Media.Animation.BackEase>  
   
- ![EasingMode grafy.](./media/backease-graph.png "BackEase_Graph")  
+ ![Grafy BackEase EasingMode.](./media/backease-graph.png "BackEase_Graph")  
   
  <xref:System.Windows.Media.Animation.BounceEase>  
   
@@ -85,36 +85,36 @@ Funkce usnadnění umožňují použít pro animace vlastní matematické vzorce
   
  <xref:System.Windows.Media.Animation.ElasticEase>  
   
- ![ElasticEase s grafy různých easingmodes.](./media/elasticease-graph.png "ElasticEase_Graph")  
+ ![ElasticEase s grafy různých režimů náběhu/doběhu.](./media/elasticease-graph.png "ElasticEase_Graph")  
   
  <xref:System.Windows.Media.Animation.ExponentialEase>  
   
- ![ExponentialEase grafy různých easingmodes.](./media/exponentialease-graph.png "ExponentialEase_Graph")  
+ ![ExponenciálníUsnadnit grafy různých režimů náběhu/doběhu.](./media/exponentialease-graph.png "ExponentialEase_Graph")  
   
  <xref:System.Windows.Media.Animation.PowerEase>  
   
- ![QuarticEase s grafy různých easingmodes.](./media/quarticease-graph.png "QuarticEase_Graph")  
+ ![QuarticEase s grafy různých režimů náběhu/doběhu.](./media/quarticease-graph.png "QuarticEase_Graph")  
   
  <xref:System.Windows.Media.Animation.QuadraticEase>  
   
- ![QuadraticEase s grafy různých easingmodes](./media/quadraticease-graph.png "QuadraticEase_Graph")  
+ ![QuadraticEase s grafy různých režimů náběhu/doběhu](./media/quadraticease-graph.png "QuadraticEase_Graph")  
   
  <xref:System.Windows.Media.Animation.QuarticEase>  
   
- ![QuarticEase s grafy různých easingmodes.](./media/quarticease-graph.png "QuarticEase_Graph")  
+ ![QuarticEase s grafy různých režimů náběhu/doběhu.](./media/quarticease-graph.png "QuarticEase_Graph")  
   
  <xref:System.Windows.Media.Animation.QuinticEase>  
   
- ![QuinticEase s grafy různých easingmodes.](./media/quinticease-graph.png "QuinticEase_Graph")  
+ ![QuinticEase s grafy různých režimů náběh/doběhu.](./media/quinticease-graph.png "QuinticEase_Graph")  
   
  <xref:System.Windows.Media.Animation.SineEase>  
   
- ![SineEase pro různé EasingMode hodnoty](./media/sineease-graph.png "SineEase_Graph")  
+ ![SineEase pro různé hodnoty EasingMode](./media/sineease-graph.png "SineEase_Graph")  
   
 > [!NOTE]
-> Můžete použít <xref:System.Windows.Media.Animation.PowerEase> k vytvoření stejného chování jako <xref:System.Windows.Media.Animation.QuadraticEase> <xref:System.Windows.Media.Animation.QuarticEase> <xref:System.Windows.Media.Animation.CubicEase>,, a <xref:System.Windows.Media.Animation.QuinticEase> pomocí <xref:System.Windows.Media.Animation.PowerEase.Power%2A> vlastnosti. Například pokud chcete použít <xref:System.Windows.Media.Animation.PowerEase> k <xref:System.Windows.Media.Animation.CubicEase>nahrazení, zadejte <xref:System.Windows.Media.Animation.PowerEase.Power%2A> hodnotu 3.  
+> Můžete vytvořit <xref:System.Windows.Media.Animation.PowerEase> stejné chování jako <xref:System.Windows.Media.Animation.CubicEase> <xref:System.Windows.Media.Animation.QuadraticEase>, <xref:System.Windows.Media.Animation.QuarticEase>, <xref:System.Windows.Media.Animation.QuinticEase> a <xref:System.Windows.Media.Animation.PowerEase.Power%2A> pomocí vlastnosti. Chcete-li například použít <xref:System.Windows.Media.Animation.PowerEase> jako <xref:System.Windows.Media.Animation.CubicEase>náhradu <xref:System.Windows.Media.Animation.PowerEase.Power%2A> , zadejte hodnotu 3.  
   
- Kromě používání funkcí usnadnění obsažených v době běhu můžete vytvořit vlastní funkce náběhu a dědění z <xref:System.Windows.Media.Animation.EasingFunctionBase>. Následující příklad ukazuje, jak vytvořit jednoduchou vlastní funkci náběh a doběh. Pomocí přepsání <xref:System.Windows.Media.Animation.EasingFunctionBase.EaseInCore%2A> metody můžete přidat vlastní matematickou logiku pro chování funkce náběh/doběh.   
+ Kromě použití funkcí náběhu/doběhu zahrnutých v běhu můžete vytvořit vlastní funkce <xref:System.Windows.Media.Animation.EasingFunctionBase>náběhu/doběhu děděním z aplikace . Následující příklad ukazuje, jak vytvořit jednoduchou vlastní funkci náběhu/doběhu. Můžete přidat vlastní matematickou logiku pro to, jak <xref:System.Windows.Media.Animation.EasingFunctionBase.EaseInCore%2A> se chová funkce náběhu/doběhu přepsáním metody.
   
  [!code-csharp[CustomEasingFunction#CustomEasingFunction](~/samples/snippets/csharp/VS_Snippets_Wpf/customeasingfunction/csharp/customlog10easingfunction.cs#customeasingfunction)]
  [!code-vb[CustomEasingFunction#CustomEasingFunction](~/samples/snippets/visualbasic/VS_Snippets_Wpf/customeasingfunction/visualbasic/customlog10easingfunction.vb#customeasingfunction)]

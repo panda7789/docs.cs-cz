@@ -3,37 +3,37 @@ title: Směrování IPv6
 ms.date: 03/30/2017
 ms.assetid: c98731b4-b542-46a2-9947-1cea63c186b2
 ms.openlocfilehash: 93300107710164d755d578633b7fa6651f984987
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "71047790"
 ---
 # <a name="ipv6-routing"></a>Směrování IPv6
-Flexibilní mechanizmus směrování je výhodou protokolu IPv6. Vzhledem k tomu, jak se přidělují identifikátory sítě IPv4 a jsou přidělené, musí být velké směrovací tabulky udržované směrovači, které se nacházejí v Internetu. Aby bylo možné přesměrování paketů, které jsou potenciálně směrovány na libovolný uzel na internetu, musí tyto směrovače znát všechny trasy. Díky schopnosti agregovat adresy podporuje IPv6 flexibilní adresování a významně snižuje velikost směrovacích tabulek. V této nové architektuře adres musí zprostředkující směrovače sledovat pouze místní část své sítě, aby bylo možné zprávy přeposílat správně.  
+Flexibilní mechanismus směrování je výhodou protokolu IPv6. Vzhledem ke způsobu, jakým byla a přidělována ID sítě IPv4, musí být velké směrovací tabulky udržovány směrovači, které jsou v páteřních sítích. Tyto směrovače musí znát všechny trasy, aby bylo možné předávat pakety, které jsou potenciálně směrovány do libovolného uzlu v Síti Internet. Díky schopnosti agregovat adresy umožňuje protokol IPv6 flexibilní adresování a výrazně zmenšuje velikost směrovacích tabulek. V této nové architektuře adresování musí zprostředkující směrovače sledovat pouze místní část své sítě, aby mohly zprávy odpovídajícím způsobem předat dál.  
   
-## <a name="neighbor-discovery"></a>Sousední zjišťování  
- Mezi funkce poskytované sousedním zjišťováním patří:  
+## <a name="neighbor-discovery"></a>Zjišťování souseda  
+ Některé z funkcí poskytovaných Neighbor Discovery jsou:  
   
 - Zjišťování směrovače. To umožňuje hostitelům identifikovat místní směrovače.  
   
-- Překlad adres. To umožňuje uzlům přeložit adresu linkové vrstvy pro odpovídající adresu dalšího směrování (náhradu za protokol ARP (Address Resolution Protocol)).  
+- Rozlišení adresy. To umožňuje uzlům vyřešit adresu linkové vrstvy pro odpovídající adresu dalšího směrování (náhrada za protokol Http Resolution Protocol [ARP]).  
   
-- Automatická konfigurace adres. To umožňuje hostitelům automaticky konfigurovat místní a globální adresy lokality.  
+- Automatická konfigurace adresy. To umožňuje hostitelům automaticky konfigurovat místní a globální adresy lokality.  
   
- Sousední zjišťování používá protokol zpráv protokolu IPv6 (ICMPv6), který zahrnuje:  
+ Zjišťování souseda používá pro zprávy IPv6 (ICMPv6) protokol IPV6 (ICMPv6), které zahrnují:  
   
-- Inzerování směrovače. Odesílá se směrovačem na základě pseudo-periody nebo v reakci na oslovování směrovače. Směrovače IPv6 používají inzerování směrovače k inzerování jejich dostupnosti, předpon adres a dalších parametrů.  
+- Router reklama. Odesláno směrovačem pseudopravidelně nebo v reakci na oslovení směrovače. Směrovače IPv6 používají inzerování směrovačů k propagaci své dostupnosti, předpon adres a dalších parametrů.  
   
-- Oslovování směrovače. Odesílá se hostitelem, aby požádal o to, aby směrovače v odkazu odeslaly oznámení směrovače okamžitě.  
+- Oslovení směrovače. Odesláno hostitelem s požadavkem, aby směrovače na propojení okamžitě odeslali reklamu směrovače.  
   
-- Oslovování sousedů. Odesílá se uzly kvůli překladu adres, duplicitě zjišťování adres nebo k ověření, že je sousední uzel stále dosažitelný.  
+- Sousedské obtěžování. Odesláno uzly pro překlad adres, vyhledávání duplicitních adres nebo ověření, zda je soused stále dostupný.  
   
-- Inzerování sousedů. Odesílá se uzly, aby reagovaly na oslovování sousedů nebo upozornily sousedním uzlům na změnu v adrese linkové vrstvy.  
+- Sousedská reklama. Odesláno uzly reagovat na souseda oslovení nebo upozornit sousedy na změnu adresy linkové vrstvy.  
   
-- Požadavek. Odesílá se směrovači k označení lepší adresy dalšího směrování na konkrétní cíl pro odesílající uzel.  
+- Přesměrování. Odeslané směrovači k označení lepší adresy dalšího směrování do určitého cíle pro odesílající uzel.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Protokol IP (Internet Protocol) verze 6](internet-protocol-version-6.md)
 - [Sokety](sockets.md)

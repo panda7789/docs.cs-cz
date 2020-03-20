@@ -1,18 +1,17 @@
 ---
-ms.openlocfilehash: 9ad283af76085c228bedceb6db723a1d18b10210
-ms.sourcegitcommit: d55e14eb63588830c0ba1ea95a24ce6c57ef8c8c
+ms.openlocfilehash: 71c81cf188fa4c2300661f10eb87e7ae00e031f6
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/11/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "67804455"
 ---
-### <a name="etw-event-names-cannot-differ-only-by-a-start-or-stop-suffix"></a>Názvy událostí trasování událostí pro Windows nelze odlišit pouze podle přípony "Start" nebo "Stop"
+### <a name="etw-event-names-cannot-differ-only-by-a-start-or-stop-suffix"></a>Názvy událostí ETW se nemohou lišit pouze příponou "Start" nebo "Stop".
 
 |   |   |
 |---|---|
-|Podrobnosti|V rozhraní .NET Framework 4.6 a 4.6.1, modul runtime vyvolá <xref:System.ArgumentException> při dva názvy událostí trasování událostí pro Windows (ETW) se liší pouze &quot;Start&quot; nebo &quot;Zastavit&quot; příponu (jako když je jedna událost s názvem <code>LogUser</code>a druhou s názvem <code>LogUserStart</code>). V takovém případě modul runtime nelze vytvořit zdroj události, které nelze generovat žádné protokolování.|
-|Doporučení|Aby se zabránilo výjimku, ujistěte se, že žádné názvy dvou událostí se liší pouze &quot;Start&quot; nebo &quot;Zastavit&quot; příponu. Tento požadavek je odebrána od verze rozhraní .NET Framework 4.6.2; modul runtime může rozlišit názvy událostí, které se liší pouze &quot;Start&quot; a &quot;Zastavit&quot; příponu.|
-|Scope|Edge|
+|Podrobnosti|V rozhraní .NET Framework 4.6 a 4.6.1 <xref:System.ArgumentException> modul runtime vyvolá při dvou názvech událostí trasování &quot;&quot; událostí &quot;&quot; pro Windows (ETW) <code>LogUser</code> liší pouze <code>LogUserStart</code>příponou Start nebo Stop (jako když je jedna událost pojmenována a druhá je pojmenována ). V tomto případě runtime nelze vytvořit zdroj události, který nemůže vyzařovat žádné protokolování.|
+|Návrh|Chcete-li zabránit výjimce, ujistěte se,&quot; &quot;že&quot; žádné dva názvy událostí se liší pouze příponou &quot;Start nebo Stop. Tento požadavek je odebrán počínaje rozhraním .NET Framework 4.6.2; modul runtime může rozptýlit názvy událostí, &quot;které&quot; &quot;se&quot; liší pouze příponou Start a Stop.|
+|Rozsah|Edge|
 |Version|4.6|
-|type|Změna cílení|
-
+|Typ|Změna cílení|

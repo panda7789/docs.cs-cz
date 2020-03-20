@@ -2,24 +2,24 @@
 title: Určení vlastního šifrovacího algoritmu
 ms.date: 03/30/2017
 ms.assetid: d662a305-8e09-451d-9a59-b0f12b012f1d
-ms.openlocfilehash: 0bfa6c46f4db1171eb314625e36c267000a0ec12
-ms.sourcegitcommit: 44a7cd8687f227fc6db3211ccf4783dc20235e51
+ms.openlocfilehash: 673d177a665e265d77f0221e0a00f4b814c8795c
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/26/2020
-ms.locfileid: "77628680"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79186479"
 ---
 # <a name="specifying-a-custom-crypto-algorithm"></a>Určení vlastního šifrovacího algoritmu
-WCF umožňuje zadat vlastní šifrovací algoritmus, který se použije při šifrování dat nebo výpočetních digitálních podpisů. To se provádí pomocí následujících kroků:  
+WCF umožňuje zadat vlastní kryptografický algoritmus, který se má použít při šifrování dat nebo výpočtu digitálních podpisů. To se provádí následujícími kroky:  
   
-1. Odvodit třídu z <xref:System.ServiceModel.Security.SecurityAlgorithmSuite>  
+1. Odvodit třídu z<xref:System.ServiceModel.Security.SecurityAlgorithmSuite>  
   
-2. Registrovat algoritmus  
+2. Registrace algoritmu  
   
-3. Nakonfigurujte vazbu s třídou odvozenou od <xref:System.ServiceModel.Security.SecurityAlgorithmSuite>.  
+3. Nakonfigurujte <xref:System.ServiceModel.Security.SecurityAlgorithmSuite>vazbu s -derived třídy.  
   
-## <a name="derive-a-class-from-securityalgorithmsuite"></a>Odvození třídy z SecurityAlgorithmSuite  
- <xref:System.ServiceModel.Security.SecurityAlgorithmSuite> je abstraktní základní třída, která umožňuje určit algoritmus, který se má použít při provádění různých operací souvisejících se zabezpečením. Například výpočet hash pro digitální podpis nebo šifrování zprávy. Následující kód ukazuje, jak odvodit třídu z <xref:System.ServiceModel.Security.SecurityAlgorithmSuite>:  
+## <a name="derive-a-class-from-securityalgorithmsuite"></a>Odvodit třídu z SecurityAlgorithmSuite  
+ Jedná <xref:System.ServiceModel.Security.SecurityAlgorithmSuite> se o abstraktní základní třídu, která umožňuje určit algoritmus, který se má použít při provádění různých operací souvisejících se zabezpečením. Například výpočet hash pro digitální podpis nebo šifrování zprávy. Následující kód ukazuje, jak odvodit třídu z <xref:System.ServiceModel.Security.SecurityAlgorithmSuite>:  
   
 ```csharp  
 public class MyCustomAlgorithmSuite : SecurityAlgorithmSuite  
@@ -87,7 +87,7 @@ public class MyCustomAlgorithmSuite : SecurityAlgorithmSuite
 ```  
   
 ## <a name="register-the-custom-algorithm"></a>Registrace vlastního algoritmu  
- Registraci je možné provést v konfiguračním souboru nebo v imperativně kódu. Registrace vlastního algoritmu se provádí vytvořením mapování mezi třídou, která implementuje poskytovatele kryptografických služeb a aliasu. Alias se pak namapuje na identifikátor URI, který se používá při zadávání algoritmu ve vazbě služby WCF. Následující fragment kódu ukazuje, jak zaregistrovat vlastní algoritmus v konfiguraci:  
+ Registrace může být provedena v konfiguračním souboru nebo v imperativním kódu. Registrace vlastního algoritmu se provádí vytvořením mapování mezi třídou, která implementuje poskytovatele kryptografických služeb a alias. Alias je pak mapován na identifikátor URI, který se používá při zadávání algoritmu ve vazbě služby WCF. Následující fragment konfigurace ukazuje, jak zaregistrovat vlastní algoritmus v konfiguraci:  
   
 ```xml  
 <configuration>  
@@ -105,29 +105,29 @@ public class MyCustomAlgorithmSuite : SecurityAlgorithmSuite
 </configuration>  
 ```  
   
- Část pod prvkem <`cryptoClasses`> vytvoří mapování mezi SHA256CryptoServiceProvider a aliasem "SHA256CSP". Element <`nameEntry`> vytvoří mapování mezi aliasem "SHA256CSP" a zadanou `http://constoso.com/CustomAlgorithms/CustomHashAlgorithm`ou URL.  
+ Oddíl pod elementem <`cryptoClasses`> vytvoří mapování mezi sha256CryptoServiceProvider a alias "SHA256CSP". Element `nameEntry` <> vytvoří mapování mezi aliasem SHA256CSP `http://constoso.com/CustomAlgorithms/CustomHashAlgorithm`a zadanou adresou URL .  
   
- Chcete-li zaregistrovat vlastní algoritmus v kódu, použijte metodu <xref:System.Security.Cryptography.CryptoConfig.AddAlgorithm(System.Type,System.String[])>. Tato metoda vytvoří obě mapování. Následující příklad ukazuje, jak zavolat tuto metodu:  
+ Chcete-li zaregistrovat vlastní <xref:System.Security.Cryptography.CryptoConfig.AddAlgorithm(System.Type,System.String[])> algoritmus v kódu použijte metodu. Tato metoda vytvoří obě mapování. Následující příklad ukazuje, jak volat tuto metodu:  
   
 ```csharp
-// Register the custom URI string defined for the hashAlgorithm in MyCustomAlgorithmSuite class to create the   
+// Register the custom URI string defined for the hashAlgorithm in MyCustomAlgorithmSuite class to create the
 // SHA256CryptoServiceProvider hash algorithm object.  
 CryptoConfig.AddAlgorithm(typeof(SHA256CryptoServiceProvider), "http://constoso.com/CustomAlgorithms/CustomHashAlgorithm");  
 ```  
   
 ## <a name="configure-the-binding"></a>Konfigurace vazby  
- Vazbu nakonfigurujete tak, že v nastavení vazby zadáte vlastní třídu odvozenou od <xref:System.ServiceModel.Security.SecurityAlgorithmSuite>, jak je znázorněno v následujícím fragmentu kódu:  
+ Vazbu nakonfigurujete zadáním třídy custom-derived <xref:System.ServiceModel.Security.SecurityAlgorithmSuite>v nastavení vazby, jak je znázorněno v následujícím fragmentu kódu:  
   
 ```csharp  
 WSHttpBinding binding = new WSHttpBinding();  
             binding.Security.Message.AlgorithmSuite = new MyCustomAlgorithmSuite();  
 ```  
   
- Úplný příklad kódu naleznete [v tématu kryptografická flexibilita v ukázce zabezpečení služby WCF](../samples/cryptographic-agility-in-wcf-security.md) .  
+ Úplný příklad kódu naleznete v [cryptografické agility v wcf zabezpečení](../samples/cryptographic-agility-in-wcf-security.md) vzorku.  
   
 ## <a name="see-also"></a>Viz také
 
 - [Zabezpečení služeb a klientů](../feature-details/securing-services-and-clients.md)
 - [Zabezpečení služeb](../securing-services.md)
 - [Přehled zabezpečení](../feature-details/security-overview.md)
-- [Koncepty zabezpečení](../feature-details/security-concepts.md)
+- [Koncepce zabezpečení](../feature-details/security-concepts.md)

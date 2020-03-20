@@ -1,19 +1,18 @@
 ---
-ms.openlocfilehash: ab7731d34aad5b6b6481f13ba11b778393e2cac2
-ms.sourcegitcommit: d55e14eb63588830c0ba1ea95a24ce6c57ef8c8c
+ms.openlocfilehash: 3f553f95941eaf36cf335e9765a670a05bd157f4
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/11/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "67858478"
 ---
-### <a name="appdomainsetupdynamicbase-is-no-longer-randomized-by-userandomizedstringhashalgorithm"></a>AppDomainSetup.DynamicBase náhodně UseRandomizedStringHashAlgorithm už posunut
+### <a name="appdomainsetupdynamicbase-is-no-longer-randomized-by-userandomizedstringhashalgorithm"></a>Soubor AppDomainSetup.DynamicBase již není randomizován pomocí metody UseRandomizedStringHashAlgorithm
 
 |   |   |
 |---|---|
-|Podrobnosti|Před rozhraní .NET Framework 4.6, hodnota <xref:System.AppDomainSetup.DynamicBase> by se náhodně mění mezi doménami aplikace nebo mezi procesy, pokud userandomizedstringhashalgorithm – byla povolena v konfiguračním souboru aplikace. Počínaje .NET Framework 4.6 <xref:System.AppDomainSetup.DynamicBase> vrátí stabilní výsledek mezi různými instancemi produktu běžící aplikaci a mezi doménami aplikací lišit. Dynamické základny budou stále lišit pro různé aplikace; Tato změna odebere jenom náhodných názvů element pro různé instance stejné aplikace.|
-|Doporučení|Mějte na paměti tuto povolení <code>UseRandomizedStringHashAlgorithm</code> opozdí ve vykonání <xref:System.AppDomainSetup.DynamicBase> se náhodně mění. V případě potřeby náhodná základní musí být vytvořený v kódu vaší aplikace, nikoli přes toto rozhraní API.|
-|Scope|Edge|
+|Podrobnosti|Před rozhraním .NET Framework 4.6 <xref:System.AppDomainSetup.DynamicBase> by byla hodnota randomizována mezi aplikačními doménami nebo mezi procesy, pokud byl v konfiguračním souboru aplikace povolen apovolen. Počínaje rozhraním .NET Framework <xref:System.AppDomainSetup.DynamicBase> 4.6 vrátí stabilní výsledek mezi různými instancemi spuštěné aplikace a mezi různými doménami aplikací. Dynamické základy se budou pro různé aplikace stále lišit; Tato změna odebere pouze náhodný prvek pojmenování pro různé instance stejné aplikace.|
+|Návrh|Uvědomte si, že <code>UseRandomizedStringHashAlgorithm</code> <xref:System.AppDomainSetup.DynamicBase> povolení nebude mít za následek randomizované. Pokud je potřeba náhodná základna, musí být vytvořena v kódu vaší aplikace, nikoli prostřednictvím tohoto rozhraní API.|
+|Rozsah|Edge|
 |Version|4.6|
-|type|Modul runtime|
+|Typ|Modul runtime|
 |Ovlivněná rozhraní API|<ul><li><xref:System.AppDomainSetup.DynamicBase?displayProperty=nameWithType></li></ul>|
-

@@ -1,19 +1,18 @@
 ---
-ms.openlocfilehash: d3c6818861f8b0261a9a71a4654029143d928d08
-ms.sourcegitcommit: d55e14eb63588830c0ba1ea95a24ce6c57ef8c8c
+ms.openlocfilehash: fbc39b6e1cc19f6c2846caaabb9a8a721494b4e6
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/11/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "67856952"
 ---
-### <a name="allow-unicode-in-uris-that-resemble-unc-shares"></a>Povolit kódování Unicode v identifikátory URI, které se podobají UNC sdílené složky
+### <a name="allow-unicode-in-uris-that-resemble-unc-shares"></a>Povolit kódování Unicode v identifikátorech URI, které se podobají sdíleným položkům UNC
 
 |   |   |
 |---|---|
-|Podrobnosti|V <xref:System.Uri?displayProperty=fullName>sestavením souboru identifikátory URI obsahující oba UNC název sdílené složky a znaky znakové sady Unicode již nebude v identifikátoru URI se neplatný vnitřní stav. Chování se změní, pouze pokud všechny tyto jsou splněny:<ul><li>Identifikátor URI obsahuje schéma <code>file:</code> a je následována čtyři nebo více lomítek.</li><li>Název hostitele začíná podtržítkem nebo jiný nerezervované symbol.</li><li>Identifikátor URI obsahuje znaky kódování Unicode.</li></ul>|
-|Doporučení|Aplikace pracující s identifikátory URI obsahující konzistentně Unicode mohli případně použít toto chování Pokud chcete zakázat odkazy na sdílené složky UNC. Tyto aplikace by měly používat <xref:System.Uri.IsUnc> místo.|
-|Scope|Edge|
+|Podrobnosti|V <xref:System.Uri?displayProperty=fullName>oblasti , vytvoření identifikátoru URI souboru obsahujícího název sdílené složky UNC i znaků Unicode již nebude mít za následek identifikátor URI s neplatným vnitřním stavem. Chování se změní pouze v případě, že jsou splněny všechny následující:<ul><li>Identifikátor URI má <code>file:</code> schéma a následuje čtyři nebo více lomítka.</li><li>Název hostitele začíná podtržítkem nebo jiným nevyhrazeným symbolem.</li><li>Identifikátor URI obsahuje znaky Unicode.</li></ul>|
+|Návrh|Aplikace pracující s identifikátory URI, které konzistentně obsahují kódování Unicode, mohly toto chování pravděpodobně použít k nepovolení odkazů na sdílené složky UNC. Tyto aplikace <xref:System.Uri.IsUnc> by měly používat místo.|
+|Rozsah|Edge|
 |Version|4.7.2|
-|type|Modul runtime|
+|Typ|Modul runtime|
 |Ovlivněná rozhraní API|<ul><li><xref:System.Uri?displayProperty=nameWithType></li></ul>|
-

@@ -2,18 +2,18 @@
 title: Objekty DiscoveryClient a DynamicEndpoint
 ms.date: 03/30/2017
 ms.assetid: 7cd418f0-0eab-48d1-a493-7eb907867ec3
-ms.openlocfilehash: 455ccc7f09c13a33b4034099b16b116fd3a8dbdf
-ms.sourcegitcommit: 5ae5a1a9520b8b8b6164ad728d396717f30edafc
+ms.openlocfilehash: c6d87a04a6787725ad7c4546650485af932882b0
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70895297"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79185183"
 ---
 # <a name="discoveryclient-and-dynamicendpoint"></a>Objekty DiscoveryClient a DynamicEndpoint
-<xref:System.ServiceModel.Discovery.DiscoveryClient>a <xref:System.ServiceModel.Discovery.DynamicEndpoint> jsou dvě třídy, které se používají na straně klienta pro hledání služeb. <xref:System.ServiceModel.Discovery.DiscoveryClient>poskytuje seznam služeb, které odpovídají určité sadě kritérií, a umožňuje se připojit ke službám. <xref:System.ServiceModel.Discovery.DynamicEndpoint>provede stejnou operaci a navíc se automaticky připojí k jedné ze služeb, které byly nalezeny. Libovolný koncový bod lze navázat do <xref:System.ServiceModel.Discovery.DynamicEndpoint>konfigurace, kritéria hledání je také možné přidat v konfiguraci, což <xref:System.ServiceModel.Discovery.DynamicEndpoint> je užitečné v případě, že budete potřebovat zjišťování ve vašem řešení, ale nechcete měnit klientskou logiku – stačí pouze upravit koncové body. <xref:System.ServiceModel.Discovery.DiscoveryClient>na druhé straně je možné použít k získání přesnější kontroly nad operací vyhledávání. Využití a výhody z nich jsou vypracované níže.  
+<xref:System.ServiceModel.Discovery.DiscoveryClient>a <xref:System.ServiceModel.Discovery.DynamicEndpoint> jsou dvě třídy používané na straně klienta k vyhledávání služeb. <xref:System.ServiceModel.Discovery.DiscoveryClient>Poskytuje seznam služeb, které odpovídají určité sadě kritérií a umožňují připojení ke službám. <xref:System.ServiceModel.Discovery.DynamicEndpoint>provádí stejnou operaci a navíc se automaticky připojí k jedné ze služeb, které byly nalezeny. Libovolný koncový bod lze <xref:System.ServiceModel.Discovery.DynamicEndpoint>provést do , kritéria vyhledávání lze <xref:System.ServiceModel.Discovery.DynamicEndpoint> také přidat v konfiguraci, tedy je užitečné, když potřebujete zjišťování ve vašem řešení, ale nechcete změnit logiku klienta – stačí upravit koncové body. <xref:System.ServiceModel.Discovery.DiscoveryClient>na druhé straně lze získat jemnější kontrolu nad vaší vyhledávací operací. Použití a výhody každého z nich jsou zpracovány níže.  
   
-## <a name="discoveryclient"></a>Objektem DiscoveryClient zahozena  
- Definuje synchronní a asynchronní <xref:System.ServiceModel.Discovery.DiscoveryClient.FindCompleted> metody Find a <xref:System.ServiceModel.Discovery.DiscoveryClient.FindProgressChanged> události. <xref:System.ServiceModel.Discovery.DiscoveryClient>  Definuje také synchronní a asynchronní metody Resolve a <xref:System.ServiceModel.Discovery.DiscoveryClient.ResolveCompleted> událost. Pomocí metod <xref:System.ServiceModel.Discovery.DiscoveryClient.FindAsync%2A>nebovyhledejteslužby. <xref:System.ServiceModel.Discovery.DiscoveryClient.Find%2A> Obě tyto metody přijímají <xref:System.ServiceModel.Discovery.FindCriteria> instanci, která umožňuje zadat názvy typů kontraktů, obory, maximální počet požadovaných výsledků a pravidla pro porovnání oboru. Události <xref:System.ServiceModel.Discovery.DiscoveryClient.FindCompleted> <xref:System.ServiceModel.Discovery.DiscoveryClient.FindAsync%2A> a <xref:System.ServiceModel.Discovery.DiscoveryClient.FindProgressChanged> lze použít při volání metody. <xref:System.ServiceModel.Discovery.DiscoveryClient.FindProgressChanged>se aktivuje pokaždé, <xref:System.ServiceModel.Discovery.DiscoveryClient> když přijme odpověď ze služby. Dá se použít k zobrazení indikátoru průběhu znázorňujícího průběh operace Find. Dá se použít i k tomu, aby se při přijetí odpovědi vypracovaly. <xref:System.ServiceModel.Discovery.DiscoveryClient.FindCompleted> Událost se aktivuje po dokončení operace Find. K tomu může dojít, protože byl přijat maximální počet odpovědí nebo pokud <xref:System.ServiceModel.Discovery.FindCriteria.Duration%2A> uplynula platnost. Po dokončení operace Find se výsledky vrátí do <xref:System.ServiceModel.Discovery.FindResponse> instance. <xref:System.ServiceModel.Discovery.FindResponse> Obsahuje kolekci,kteráobsahujeadresy,názvytypůkontraktů,rozšíření,identifikátorůURInasloucháníaobory<xref:System.ServiceModel.Discovery.EndpointDiscoveryMetadata> odpovídajícího služby. Tyto informace pak můžete použít k připojení a volání jedné z těchto služeb. Následující příklad ukazuje, jak zavolat metodu System. ServiceModel. Discovery. objektem DiscoveryClient zahozena. Find (System. ServiceModel. Discovery. kritéria hledání) a použít vracená metadata pro volání nalezené služby. Výhodou použití <xref:System.ServiceModel.Discovery.DiscoveryClient.Find(System.ServiceModel.Discovery.FindCriteria)> je, že můžete seznam koncových bodů, které jste našli, ukládat do mezipaměti a později je použít. Pomocí této mezipaměti můžete vytvořit vlastní logiku, která bude zpracovávat různé stavy selhání.  
+## <a name="discoveryclient"></a>Klient zjišťování  
+ Definuje <xref:System.ServiceModel.Discovery.DiscoveryClient> synchronní a asynchronní Find metody <xref:System.ServiceModel.Discovery.DiscoveryClient.FindCompleted> <xref:System.ServiceModel.Discovery.DiscoveryClient.FindProgressChanged> a události.  Definuje také synchronní a asynchronní Resolve metody <xref:System.ServiceModel.Discovery.DiscoveryClient.ResolveCompleted> a událost. Pomocí <xref:System.ServiceModel.Discovery.DiscoveryClient.Find%2A> metod <xref:System.ServiceModel.Discovery.DiscoveryClient.FindAsync%2A> or vyhledejte služby. Obě tyto metody <xref:System.ServiceModel.Discovery.FindCriteria> přijmout instanci, která umožňuje zadat názvy typů smlouvy, obory, maximální počet požadovaných výsledků a pravidla pro porovnávání oboru. A <xref:System.ServiceModel.Discovery.DiscoveryClient.FindCompleted> <xref:System.ServiceModel.Discovery.DiscoveryClient.FindProgressChanged> události lze použít při <xref:System.ServiceModel.Discovery.DiscoveryClient.FindAsync%2A> volání metody. <xref:System.ServiceModel.Discovery.DiscoveryClient.FindProgressChanged>je aktivována <xref:System.ServiceModel.Discovery.DiscoveryClient> vždy, když obdrží odpověď ze služby. Lze jej použít k zobrazení indikátoru průběhu zobrazujícího průběh operace hledání. Může být také použit k jednání o hledání odpovědí, jak jsou přijímány. Událost <xref:System.ServiceModel.Discovery.DiscoveryClient.FindCompleted> je aktivována po dokončení operace hledání. K tomu může dojít, protože byl přijat maximální <xref:System.ServiceModel.Discovery.FindCriteria.Duration%2A> počet odpovědí nebo pokud uplynula. Po dokončení operace hledání jsou vráceny <xref:System.ServiceModel.Discovery.FindResponse> výsledky v instanci. Obsahuje <xref:System.ServiceModel.Discovery.FindResponse> kolekci, <xref:System.ServiceModel.Discovery.EndpointDiscoveryMetadata> která obsahuje adresy, názvy typů smlouvy, rozšíření, poslouchat identifikátory URI a obory odpovídajících služeb. Tyto informace pak můžete použít k připojení a volání jedné z odpovídajících služeb. Následující příklad ukazuje, jak volat metodu System.ServiceModel.DiscoveryClient.Find(System.ServiceModel.Discovery.FindCriteria) a použít vrácená metadata k volání nalezené služby. Výhodou použití <xref:System.ServiceModel.Discovery.DiscoveryClient.Find(System.ServiceModel.Discovery.FindCriteria)> je, že můžete uložit do mezipaměti seznam koncových bodů, které jste našli, a použít je později. Pomocí této mezipaměti můžete vytvořit vlastní logiku pro zpracování různých podmínek selhání.  
   
 ```csharp
 DiscoveryClient dc = new DiscoveryClient(new UdpDiscoveryEndpoint());  
@@ -41,23 +41,23 @@ else
    Console.WriteLine("No matching endpoints found");  
 ```  
   
- Následující příklad ukazuje, jak provést asynchronní operaci Find.  
+ Následující příklad ukazuje, jak provést operaci hledání asynchronně.  
   
 ```csharp
 static void FindServiceAsync()  
 {  
-   DiscoveryClient dc = new DiscoveryClient(new UdpDiscoveryEndpoint());   
+   DiscoveryClient dc = new DiscoveryClient(new UdpDiscoveryEndpoint());
    dc.FindCompleted += new EventHandler<FindCompletedEventArgs>( discoveryClient_FindCompleted);  
    dc.FindProgressChanged += new EventHandler<FindProgressChangedEventArgs>(discoveryClient_FindProgressChanged);  
-   dc.FindAsync(new FindCriteria(typeof(ICalculatorService)));   
-}   
+   dc.FindAsync(new FindCriteria(typeof(ICalculatorService)));
+}
 static void discoveryClient_FindProgressChanged(object sender, FindProgressChangedEventArgs e)  
 {  
    Console.WriteLine("Found service at: " + e.EndpointDiscoveryMetadata.Address  
-}   
+}
   
 static void discoveryClient_FindCompleted(object sender, FindCompletedEventArgs e)  
-{    
+{
       if (e.Result.Endpoints.Count > 0)  
             {  
                 EndpointAddress ep = e.Result.Endpoints[0].Address;  
@@ -79,7 +79,7 @@ static void discoveryClient_FindCompleted(object sender, FindCompletedEventArgs 
         }  
 ```
   
- Použijte metody <xref:System.ServiceModel.Discovery.DiscoveryClient.ResolveAsync%28System.ServiceModel.Discovery.ResolveCriteria%29> a k vyhledání služby na základě adresy jejího koncového bodu. <xref:System.ServiceModel.Discovery.DiscoveryClient.Resolve%2A> To je užitečné, když adresa koncového bodu není síťová adresa. Metody Resolve přebírají instanci <xref:System.ServiceModel.Discovery.ResolveCriteria> , která umožňuje zadat adresu koncového bodu služby, kterou řešíte, maximální dobu trvání operace řešení a sadu rozšíření. Následující příklad ukazuje, jak použít <xref:System.ServiceModel.Discovery.DiscoveryClient.Resolve%2A> metodu k vyřešení služby.  
+ Pomocí <xref:System.ServiceModel.Discovery.DiscoveryClient.Resolve%2A> metod <xref:System.ServiceModel.Discovery.DiscoveryClient.ResolveAsync%28System.ServiceModel.Discovery.ResolveCriteria%29> a vyhledejte službu na základě její adresy koncového bodu. To je užitečné v případě, že adresa koncového bodu není adresovatelná v síti. Resolve Metody trvat <xref:System.ServiceModel.Discovery.ResolveCriteria> instance, která umožňuje zadat adresu koncového bodu služby, kterou řešíte, maximální dobu trvání operace resolve a sadu rozšíření. Následující příklad ukazuje, jak <xref:System.ServiceModel.Discovery.DiscoveryClient.Resolve%2A> použít metodu k vyřešení služby.  
   
 ```csharp  
 DiscoveryClient dc = new DiscoveryClient(new UdpDiscoveryEndpoint());  
@@ -88,8 +88,8 @@ ResolveResponse response = dc.Resolve(criteria);
 EndpointAddress newEp = response.EndpointDiscoveryMetadata.Address;  
 ```  
   
-## <a name="dynamicendpoint"></a>DynamicEndpoint  
- <xref:System.ServiceModel.Discovery.DynamicEndpoint>je standardním koncovým bodem (Další informace naleznete v tématu [Standardní koncové body](../../../../docs/framework/wcf/feature-details/standard-endpoints.md)), který provádí zjišťování a automaticky vybere vyhovující službu. Stačí vytvořit <xref:System.ServiceModel.Discovery.DynamicEndpoint> předávání v kontraktu pro vyhledání a vazba pro použití a <xref:System.ServiceModel.Discovery.DynamicEndpoint> předání instance klientovi WCF. Následující příklad ukazuje, jak vytvořit a použít <xref:System.ServiceModel.Discovery.DynamicEndpoint> pro volání služby kalkulačky. Zjišťování se provádí při každém otevření klienta. Libovolný koncový bod definovaný v konfiguraci lze také zapnout <xref:System.ServiceModel.Discovery.DynamicEndpoint> `kind ="dynamicEndpoint"` přidáním atributu do konfiguračního elementu koncového bodu.  
+## <a name="dynamicendpoint"></a>DynamicKá koncový bod  
+ <xref:System.ServiceModel.Discovery.DynamicEndpoint>je standardní koncový bod (Další informace naleznete v [tématu Standardní koncové body),](../../../../docs/framework/wcf/feature-details/standard-endpoints.md)který provádí zjišťování a automaticky vybere odpovídající službu. Stačí vytvořit <xref:System.ServiceModel.Discovery.DynamicEndpoint> předávání ve smlouvě hledat a vazbu použít <xref:System.ServiceModel.Discovery.DynamicEndpoint> a předat instanci wcf klienta. Následující příklad ukazuje, jak vytvořit <xref:System.ServiceModel.Discovery.DynamicEndpoint> a použít k volání služby kalkulačky. Zjišťování se provádí při každém otevření klienta. Libovolný koncový bod definovaný v konfiguraci <xref:System.ServiceModel.Discovery.DynamicEndpoint> lze `kind ="dynamicEndpoint"` také převést na a přidáním atributu do prvku konfigurace koncového bodu.  
   
 ```csharp  
 DynamicEndpoint dynamicEndpoint = new DynamicEndpoint(ContractDescription.GetContract(typeof(ICalculatorService)), new WSHttpBinding());  
@@ -105,7 +105,7 @@ double result = client.Add(value1, value2);
 Console.WriteLine("Add({0},{1}) = {2}", value1, value2, result);  
 ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Zjišťování pomocí oborů](../../../../docs/framework/wcf/samples/discovery-with-scopes-sample.md)
-- [Základy](../../../../docs/framework/wcf/samples/basic-sample.md)
+- [Basic](../../../../docs/framework/wcf/samples/basic-sample.md)

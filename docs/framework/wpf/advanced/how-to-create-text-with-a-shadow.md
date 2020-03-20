@@ -6,57 +6,57 @@ helpviewer_keywords:
 - shadow effects in text [WPF]
 - text [WPF], shadowed
 ms.assetid: 6ab9c754-6001-4708-b479-5367f2fd1a35
-ms.openlocfilehash: 0fe64e4e9e7aadbd30a38743647251f9fa49ba95
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: c3e8135372ce4a092552c812cd971cb70bc49bf3
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69960442"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79186852"
 ---
 # <a name="how-to-create-text-with-a-shadow"></a>Postupy: Vytvoření textu se stínem
-Příklady v této části ukazují, jak vytvořit stínový efekt pro zobrazený text.  
+Příklady v této části ukazují, jak vytvořit efekt stínu pro zobrazený text.  
   
 ## <a name="example"></a>Příklad  
- Objekt umožňuje vytvořit celou řadu efektů vržených stínů pro [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] objekty. <xref:System.Windows.Media.Effects.DropShadowEffect> Následující příklad ukazuje efekt Vržený stín aplikovaný na text. V tomto případě je stín měkký stín, což znamená, že se barva stínu rozostří.  
+ Objekt <xref:System.Windows.Media.Effects.DropShadowEffect> umožňuje vytvořit pro [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] objekty různé efekty vrženého stínu. Následující příklad ukazuje efekt vrženého stínu aplikovaný na text. V tomto případě je stín měkký stín, což znamená, že barva stínu se rozostří.  
   
- ![Stín textu s měkkou &#61; 0,25](./media/how-to-create-text-with-a-shadow/drop-shadow-text-effect.jpg) 
+ ![Textový stín s &#61; měkkosti 0,25](./media/how-to-create-text-with-a-shadow/drop-shadow-text-effect.jpg)
   
- Šířku stínu můžete nastavit nastavením <xref:System.Windows.Media.Effects.DropShadowEffect.ShadowDepth%2A> vlastnosti. Hodnota `4.0` označuje stínovou šířku 4 pixelů. Úpravou <xref:System.Windows.Media.Effects.DropShadowEffect.BlurRadius%2A> vlastnosti můžete řídit měkké nebo rozostření stínové kopie. Hodnota `0.0` označuje rozostření. Následující příklad kódu ukazuje, jak vytvořit měkký stín.  
+ Šířku stínu můžete řídit nastavením <xref:System.Windows.Media.Effects.DropShadowEffect.ShadowDepth%2A> vlastnosti. Hodnota `4.0` označuje šířku stínu 4 obrazové body. Měkkost nebo rozostření stínu můžete ovládat úpravou <xref:System.Windows.Media.Effects.DropShadowEffect.BlurRadius%2A> vlastnosti. Hodnota `0.0` označuje žádné rozostření. Následující příklad kódu ukazuje, jak vytvořit měkký stín.  
   
  [!code-xaml[TextShadowSnippets#TextShadowSnippet1](~/samples/snippets/csharp/VS_Snippets_Wpf/TextShadowSnippets/CS/SingleShadows.xaml#textshadowsnippet1)]  
   
 > [!NOTE]
-> Tyto efekty [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] stínů neprojde kanálem vykreslování textu. V důsledku toho je technologie ClearType při použití těchto efektů zakázaná.  
+> Tyto stínové efekty neprocházejí kanálem vykreslování [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] textu. V důsledku toho cleartype je zakázáno při použití těchto efektů.  
   
- Následující příklad ukazuje efekt vrženého stínu, který je použit na text. V tomto případě není stín rozmazaný.  
+ Následující příklad ukazuje efekt tíška aplikovaný na text. V tomto případě není stín rozmazaný.  
   
- ![Stín textu s přítvrdosti &#61; 0](./media/how-to-create-text-with-a-shadow/text-shadow-softness.jpg) 
+ ![Textový stín s &#61; měkkosti 0](./media/how-to-create-text-with-a-shadow/text-shadow-softness.jpg)
   
- Můžete vytvořit pevný stín <xref:System.Windows.Media.Effects.DropShadowEffect.BlurRadius%2A> nastavením vlastnosti na `0.0`, což znamená, že se nepoužívá žádná rozostření. Změnou <xref:System.Windows.Media.Effects.DropShadowEffect.Direction%2A> vlastnosti můžete řídit směr stínu. Nastavte směrovou hodnotu této vlastnosti na stupeň mezi `0` a. `360` Následující ilustrace znázorňuje směrové hodnoty <xref:System.Windows.Media.Effects.DropShadowEffect.Direction%2A> nastavení vlastnosti.  
+ Pevný stín můžete vytvořit nastavením <xref:System.Windows.Media.Effects.DropShadowEffect.BlurRadius%2A> `0.0`vlastnosti na , což znamená, že se nepoužívá žádné rozostření. Můžete řídit směr stínu úpravou vlastnosti. <xref:System.Windows.Media.Effects.DropShadowEffect.Direction%2A> Nastavte směrovou hodnotu této vlastnosti `0` `360`do určité míry mezi a . Následující obrázek znázorňuje směrové hodnoty nastavení vlastnosti. <xref:System.Windows.Media.Effects.DropShadowEffect.Direction%2A>  
   
- ![Nastavení DropShadow úrovně stínu](./media/how-to-create-text-with-a-shadow/drop-shadow-degree-setting.png)
+ ![Nastavení stupně Stínu DropShadow](./media/how-to-create-text-with-a-shadow/drop-shadow-degree-setting.png)
   
  Následující příklad kódu ukazuje, jak vytvořit pevný stín.  
   
  [!code-xaml[TextShadowSnippets#TextShadowSnippet2](~/samples/snippets/csharp/VS_Snippets_Wpf/TextShadowSnippets/CS/SingleShadows.xaml#textshadowsnippet2)]  
   
 ## <a name="using-a-blur-effect"></a>Použití efektu rozostření  
- <xref:System.Windows.Media.Effects.BlurBitmapEffect> Lze použít k vytvoření efektu stínu, který lze umístit za textový objekt. Efekt rozostření rastrového obrázku aplikovaný na text rozostří text rovnoměrně ze všech směrů.  
+ A <xref:System.Windows.Media.Effects.BlurBitmapEffect> lze použít k vytvoření efektu podobnéstínu, který lze umístit za textový objekt. Bitmapový efekt rozostření aplikovaný na text rozostří text rovnoměrně ve všech směrech.  
   
  Následující příklad ukazuje efekt rozostření aplikovaný na text.  
   
- ![Stín textu s použitím BlurBitmapEffect](./media/how-to-create-text-with-a-shadow/text-shadow-blur-effect.jpg)  
+ ![Textový stín pomocí efektu BlurBitmapEffect](./media/how-to-create-text-with-a-shadow/text-shadow-blur-effect.jpg)  
   
  Následující příklad kódu ukazuje, jak vytvořit efekt rozostření.  
   
  [!code-xaml[TextShadowSnippets#TextShadowSnippet6](~/samples/snippets/csharp/VS_Snippets_Wpf/TextShadowSnippets/CS/BlurShadows.xaml#textshadowsnippet6)]  
   
-## <a name="using-a-translate-transform"></a>Použití transformace převodu  
- <xref:System.Windows.Media.TranslateTransform> Lze použít k vytvoření efektu stínu, který lze umístit za textový objekt.  
+## <a name="using-a-translate-transform"></a>Použití transformace překladu  
+ A <xref:System.Windows.Media.TranslateTransform> lze použít k vytvoření efektu podobnéstínu, který lze umístit za textový objekt.  
   
- Následující příklad kódu používá <xref:System.Windows.Media.TranslateTransform> k posunu textu. V tomto příkladu mírně posunutí kopie textu pod primárním textem vytvoří stínový efekt.  
+ Následující příklad kódu <xref:System.Windows.Media.TranslateTransform> používá k odsazení textu. V tomto příkladu vytvoří mírně odsazená kopie textu pod primárním textem stínový efekt.  
   
- ![Stín textu s použitím TranslateTransform](./media/how-to-create-text-with-a-shadow/text-transform-shadow-effect.jpg)    
+ ![Stín textu pomocí TranslateTransform](./media/how-to-create-text-with-a-shadow/text-transform-shadow-effect.jpg)
   
  Následující příklad kódu ukazuje, jak vytvořit transformaci pro stínový efekt.  
   

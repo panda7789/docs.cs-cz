@@ -7,47 +7,47 @@ dev_langs:
 helpviewer_keywords:
 - WCF, authentication
 ms.assetid: bb0190ff-0738-4e54-8d22-c97d343708bf
-ms.openlocfilehash: b2407c293de7f11b90586f5a55bd759a4ea734aa
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: af1bb9b2ff793f6e6854c1b253dd445a35a5076f
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70795688"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79185580"
 ---
 # <a name="how-to-create-a-service-that-employs-a-custom-certificate-validator"></a>Postupy: Vytvoření služby, která používá vlastní validátor certifikátů
-V tomto tématu se dozvíte, jak implementovat vlastní validátor certifikátů a jak nakonfigurovat pověření klienta nebo služby, aby se výchozí logika ověřování certifikátů nahradila vlastním validátorem certifikátů.  
+Toto téma ukazuje, jak implementovat vlastní validátor certifikátu a jak nakonfigurovat pověření klienta nebo služby tak, aby nahradila výchozí logiku ověření certifikátu vlastním validátorem certifikátu.  
   
- Pokud se certifikát X. 509 používá k ověření klienta nebo služby, Windows Communication Foundation (WCF) ve výchozím nastavení používá úložiště certifikátů Windows a kryptografické rozhraní API k ověření certifikátu a k zajištění jeho důvěryhodnosti. V některých případech nejsou integrované funkce ověřování certifikátů dostatečné a je třeba je změnit. Služba WCF poskytuje snadný způsob, jak změnit logiku ověřování tím, že uživatelům umožní přidat vlastní validátor certifikátů. Pokud je určen vlastní validátor certifikátů, WCF nepoužívá integrovanou logiku ověřování certifikátů, ale spoléhá na vlastní validátor.  
+ Pokud je certifikát X.509 použit k ověření klienta nebo služby, windows communication foundation (WCF) ve výchozím nastavení používá úložiště certifikátů systému Windows a crypto API k ověření certifikátu a k zajištění jeho důvěryhodnosti. V některých proto není dostatečná vestavěná funkce ověření certifikátu, která musí být změněna. WCF poskytuje snadný způsob, jak změnit logiku ověřování tím, že umožňuje uživatelům přidat vlastní validátor certifikátu. Pokud je zadán vlastní validátor certifikátu, WCF nepoužívá předdefinovanou logiku ověření certifikátu, ale místo toho spoléhá na vlastní validátor.  
   
 ## <a name="procedures"></a>Procedury  
   
-#### <a name="to-create-a-custom-certificate-validator"></a>Vytvoření vlastního validátoru certifikátů  
+#### <a name="to-create-a-custom-certificate-validator"></a>Vytvoření vlastního validátoru certifikátu  
   
-1. Definujte novou třídu odvozenou z <xref:System.IdentityModel.Selectors.X509CertificateValidator>.  
+1. Definujte novou třídu <xref:System.IdentityModel.Selectors.X509CertificateValidator>odvozenou z .  
   
-2. Implementujte abstraktní <xref:System.IdentityModel.Selectors.X509CertificateValidator.Validate%2A> metodu. Certifikát, který se musí ověřit, se předává jako argument metody. Pokud předaný certifikát není podle logiky ověřování platný, vyvolá <xref:System.IdentityModel.Tokens.SecurityTokenValidationException>Tato metoda. Pokud je certifikát platný, metoda se vrátí volajícímu.  
+2. Implementujte <xref:System.IdentityModel.Selectors.X509CertificateValidator.Validate%2A> abstraktní metodu. Certifikát, který musí být ověřen, je předán jako argument metodě. Pokud předaný certifikát není platný podle logiky ověřování, tato metoda vyvolá <xref:System.IdentityModel.Tokens.SecurityTokenValidationException>. Pokud je certifikát platný, metoda se vrátí volajícímu.  
   
     > [!NOTE]
-    > Chcete-li vrátit chyby ověřování zpět do klienta, vyvolejte <xref:System.ServiceModel.FaultException> <xref:System.IdentityModel.Selectors.UserNamePasswordValidator.Validate%2A> v metodě.  
+    > Chcete-li vrátit chyby ověřování <xref:System.ServiceModel.FaultException> zpět <xref:System.IdentityModel.Selectors.UserNamePasswordValidator.Validate%2A> klientovi, vyhoďte metodu.  
   
  [!code-csharp[c_CustomCertificateValidator#2](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_customcertificatevalidator/cs/source.cs#2)]
  [!code-vb[c_CustomCertificateValidator#2](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_customcertificatevalidator/vb/source.vb#2)]  
   
-#### <a name="to-specify-a-custom-certificate-validator-in-service-configuration"></a>Určení vlastního validátoru certifikátů v konfiguraci služby  
+#### <a name="to-specify-a-custom-certificate-validator-in-service-configuration"></a>Určení vlastního validátoru certifikátu v konfiguraci služby  
   
-1. Přidejte > prvek [ chovánía>serviceBehaviorsdoprvkuSystem.ServiceModel>.\<](../../configure-apps/file-schema/wcf/behaviors.md) [ \<](../../configure-apps/file-schema/wcf/servicebehaviors.md) [ \<](../../configure-apps/file-schema/wcf/system-servicemodel.md)  
+1. Přidejte [ \<chování>](../../configure-apps/file-schema/wcf/behaviors.md) element a [ \<serviceBehaviors>](../../configure-apps/file-schema/wcf/servicebehaviors.md) do elementu [ \<system.serviceModel>.](../../configure-apps/file-schema/wcf/system-servicemodel.md)  
   
-2. Přidejte > `name` chování a nastavte atribut na odpovídající hodnotu. [ \<](../../configure-apps/file-schema/wcf/behavior-of-endpointbehaviors.md)  
+2. Přidejte [ \<>chování](../../configure-apps/file-schema/wcf/behavior-of-endpointbehaviors.md) `name` a nastavte atribut na příslušnou hodnotu.  
   
-3. Přidejte [> ServiceCredentials k elementu. \<](../../configure-apps/file-schema/wcf/servicecredentials.md) `<behavior>`  
+3. Přidejte [ \<>serviceCredentials](../../configure-apps/file-schema/wcf/servicecredentials.md) do `<behavior>` prvku.  
   
-4. `<clientCertificate>` Přidejte element`<serviceCredentials>` do elementu.  
+4. Přidejte `<clientCertificate>` prvek `<serviceCredentials>` do prvku.  
   
-5. Přidejte [> ověřování k elementu. \<](../../configure-apps/file-schema/wcf/authentication-of-clientcertificate-element.md) `<clientCertificate>`  
+5. Přidejte [ \<>ověřování](../../configure-apps/file-schema/wcf/authentication-of-clientcertificate-element.md) do `<clientCertificate>` prvku.  
   
-6. `customCertificateValidatorType` Nastavte atribut na typ validátoru. Následující příklad nastaví atribut na obor názvů a název typu.  
+6. Nastavte `customCertificateValidatorType` atribut na typ validátoru. Následující příklad nastaví atribut na obor názvů a název typu.  
   
-7. Nastavte atribut na `Custom`. `certificateValidationMode`  
+7. Nastavte `certificateValidationMode` atribut `Custom`na .  
   
     ```xml  
     <configuration>  
@@ -67,23 +67,23 @@ V tomto tématu se dozvíte, jak implementovat vlastní validátor certifikátů
     </configuration>  
     ```  
   
-#### <a name="to-specify-a-custom-certificate-validator-using-configuration-on-the-client"></a>Určení vlastního validátoru certifikátů pomocí konfigurace na klientovi  
+#### <a name="to-specify-a-custom-certificate-validator-using-configuration-on-the-client"></a>Určení vlastního validátoru certifikátu pomocí konfigurace v klientovi  
   
-1. Přidejte > prvek [ chovánía>serviceBehaviorsdoprvkuSystem.ServiceModel>.\<](../../configure-apps/file-schema/wcf/behaviors.md) [ \<](../../configure-apps/file-schema/wcf/servicebehaviors.md) [ \<](../../configure-apps/file-schema/wcf/system-servicemodel.md)  
+1. Přidejte [ \<chování>](../../configure-apps/file-schema/wcf/behaviors.md) element a [ \<serviceBehaviors>](../../configure-apps/file-schema/wcf/servicebehaviors.md) do elementu [ \<system.serviceModel>.](../../configure-apps/file-schema/wcf/system-servicemodel.md)  
   
-2. Přidejte prvek endpointBehaviors >. [ \<](../../configure-apps/file-schema/wcf/endpointbehaviors.md)  
+2. Přidejte [ \<prvek>koncového boduChování.](../../configure-apps/file-schema/wcf/endpointbehaviors.md)  
   
-3. Přidejte element a `name` nastavte atribut na odpovídající hodnotu. `<behavior>`  
+3. Přidejte `<behavior>` prvek a `name` nastavte atribut na příslušnou hodnotu.  
   
-4. Přidejte prvek [> ClientCredentials.\<](../../configure-apps/file-schema/wcf/clientcredentials.md)  
+4. Přidejte [ \<prvek>clientCredentials.](../../configure-apps/file-schema/wcf/clientcredentials.md)  
   
-5. Přidejte > ServiceCertificate. [ \<](../../configure-apps/file-schema/wcf/servicecertificate-of-clientcredentials-element.md)  
+5. Přidejte [ \<službuCertificate>](../../configure-apps/file-schema/wcf/servicecertificate-of-clientcredentials-element.md).  
   
-6. Přidejte > ověřování, jak je znázorněno v následujícím příkladu. [ \<](../../configure-apps/file-schema/wcf/authentication-of-servicecertificate-element.md)  
+6. Přidejte [ \<ověřovací>,](../../configure-apps/file-schema/wcf/authentication-of-servicecertificate-element.md) jak je znázorněno v následujícím příkladu.  
   
-7. `customCertificateValidatorType` Nastavte atribut na typ validátoru.  
+7. Nastavte `customCertificateValidatorType` atribut na typ validátoru.  
   
-8. Nastavte atribut na `Custom`. `certificateValidationMode` Následující příklad nastaví atribut na obor názvů a název typu.  
+8. Nastavte `certificateValidationMode` atribut `Custom`na . Následující příklad nastaví atribut na obor názvů a název typu.  
   
     ```xml  
     <configuration>  
@@ -93,7 +93,7 @@ V tomto tématu se dozvíte, jak implementovat vlastní validátor certifikátů
         <behavior name="clientBehavior">  
          <clientCredentials>  
           <serviceCertificate>  
-           <authentication certificateValidationMode="Custom"   
+           <authentication certificateValidationMode="Custom"
                   customCertificateValidatorType=  
              "Samples.CustomX509CertificateValidator, client"/>  
           </serviceCertificate>  
@@ -105,30 +105,30 @@ V tomto tématu se dozvíte, jak implementovat vlastní validátor certifikátů
     </configuration>  
     ```  
   
-#### <a name="to-specify-a-custom-certificate-validator-using-code-on-the-service"></a>Určení vlastního validátoru certifikátů pomocí kódu ve službě  
+#### <a name="to-specify-a-custom-certificate-validator-using-code-on-the-service"></a>Určení vlastního validátoru certifikátu pomocí kódu ve službě  
   
-1. Zadejte vlastní validátor certifikátu pro <xref:System.ServiceModel.Description.ServiceCredentials.ClientCertificate%2A> vlastnost. K pověřením služby můžete přistupovat pomocí <xref:System.ServiceModel.ServiceHostBase.Credentials%2A> vlastnosti.  
+1. Zadejte vlastní validátor certifikátu ve vlastnosti. <xref:System.ServiceModel.Description.ServiceCredentials.ClientCertificate%2A> Můžete přistupovat k pověření <xref:System.ServiceModel.ServiceHostBase.Credentials%2A> služby pomocí vlastnosti.  
   
-2. Nastavte <xref:System.ServiceModel.Security.X509ClientCertificateAuthentication.CertificateValidationMode%2A> vlastnost <xref:System.ServiceModel.Security.X509CertificateValidationMode.Custom>.  
+2. Nastavte <xref:System.ServiceModel.Security.X509ClientCertificateAuthentication.CertificateValidationMode%2A> vlastnost <xref:System.ServiceModel.Security.X509CertificateValidationMode.Custom>na .  
   
  [!code-csharp[c_CustomCertificateValidator#1](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_customcertificatevalidator/cs/source.cs#1)]
  [!code-vb[c_CustomCertificateValidator#1](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_customcertificatevalidator/vb/source.vb#1)]  
   
-#### <a name="to-specify-a-custom-certificate-validator-using-code-on-the-client"></a>Určení vlastního validátoru certifikátů pomocí kódu na klientovi  
+#### <a name="to-specify-a-custom-certificate-validator-using-code-on-the-client"></a>Určení vlastního validátoru certifikátu pomocí kódu na straně klienta  
   
-1. Pomocí <xref:System.ServiceModel.Security.X509ServiceCertificateAuthentication.CustomCertificateValidator%2A> vlastnosti zadejte vlastní validátor certifikátů. Přístup k přihlašovacím údajům klienta můžete <xref:System.ServiceModel.ServiceHostBase.Credentials%2A> získat pomocí vlastnosti. (Třída klienta generovaná [nástrojem ServiceModel Metadata Utility (Svcutil. exe)](../servicemodel-metadata-utility-tool-svcutil-exe.md) je vždy odvozena od <xref:System.ServiceModel.ClientBase%601> třídy.)  
+1. Zadejte vlastní validátor certifikátu pomocí vlastnosti. <xref:System.ServiceModel.Security.X509ServiceCertificateAuthentication.CustomCertificateValidator%2A> Můžete přistupovat k pověření <xref:System.ServiceModel.ServiceHostBase.Credentials%2A> klienta pomocí vlastnosti. (Třída klienta generovaná [nástrojem ServiceModel Metadata Utility Tool (Svcutil.exe)](../servicemodel-metadata-utility-tool-svcutil-exe.md) je vždy odvozena <xref:System.ServiceModel.ClientBase%601> od třídy.)  
   
-2. Nastavte <xref:System.ServiceModel.Security.X509ServiceCertificateAuthentication.CertificateValidationMode%2A> vlastnost <xref:System.ServiceModel.Security.X509CertificateValidationMode.Custom>.  
+2. Nastavte <xref:System.ServiceModel.Security.X509ServiceCertificateAuthentication.CertificateValidationMode%2A> vlastnost <xref:System.ServiceModel.Security.X509CertificateValidationMode.Custom>na .  
   
 ## <a name="example"></a>Příklad  
   
 ### <a name="description"></a>Popis  
- Následující příklad ukazuje implementaci vlastního validátoru certifikátů a jeho využití ve službě.  
+ Následující ukázka ukazuje implementaci vlastní validátor certifikátu a jeho použití ve službě.  
   
-### <a name="code"></a>Kód  
+### <a name="code"></a>kód  
  [!code-csharp[c_CustomCertificateValidator#3](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_customcertificatevalidator/cs/source.cs#3)]
  [!code-vb[c_CustomCertificateValidator#3](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_customcertificatevalidator/vb/source.vb#3)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.IdentityModel.Selectors.X509CertificateValidator>

@@ -1,18 +1,18 @@
 ---
 ms.openlocfilehash: d75eff2d2a43ab4488577014ec43a9826b2b2924
-ms.sourcegitcommit: 4d8efe00f2e5ab42e598aff298d13b8c052d9593
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/16/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "68237820"
 ---
-### <a name="remove-ssl3-from-the-wcf-transportdefaults"></a>Odebrání Ssl3 WCF TransportDefaults
+### <a name="remove-ssl3-from-the-wcf-transportdefaults"></a>Odebrání ssl3 z wcf transportdefaults
 
 |   |   |
 |---|---|
-|Podrobnosti|Při použití NetTcp se zabezpečením přenosu a přihlašovacích údajů typu certifikátu, protokol SSL 3 je již výchozí protokol použitý pro vyjednávání zabezpečeného připojení. Ve většině případů by měl existovat žádný vliv na stávající aplikace jako TLS 1.0 vždy byla zahrnuta do seznamu protokolů pro NetTcp. Všichni existující klienti měli být schopni vyjednat připojení pomocí na nejnižší protokol TLS 1.0.|
-|Doporučení|Ssl3 je potřeba, použijte jednu z následujících mechanismů konfigurace Ssl3 přidat do seznamu vyjednávaný protokolů.<ul><li><xref:System.ServiceModel.Channels.SslStreamSecurityBindingElement.SslProtocols></li><li><xref:System.ServiceModel.TcpTransportSecurity.SslProtocols></li><li>[<](~/docs/framework/configure-apps/file-schema/wcf/transport-of-nettcpbinding.md)</li><li>[&lt;sslStreamSecurity&gt; část &lt;customBinding&gt;] ~ / docs/framework/configure-apps/file-schema/wcf/sslstreamsecurity.md)</li></ul>|
-|Scope|Edge|
+|Podrobnosti|Při použití protokolu NetTcp se zabezpečením přenosu a typem pověření certifikátu již protokol SSL 3 není výchozím protokolem používaným pro vyjednávání zabezpečeného připojení. Ve většině případů by nemělo být žádný dopad na existující aplikace jako TLS 1.0 byla vždy zahrnuta do seznamu protokolů pro NetTcp. Všichni stávající klienti by měli být schopni vyjednat připojení pomocí alespoň TLS1.0.|
+|Návrh|Pokud je požadováno Ssl3, použijte jeden z následujících konfiguračních mechanismů přidat Ssl3 do seznamu vyjednaných protokolů.<ul><li><xref:System.ServiceModel.Channels.SslStreamSecurityBindingElement.SslProtocols></li><li><xref:System.ServiceModel.TcpTransportSecurity.SslProtocols></li><li>[<](~/docs/framework/configure-apps/file-schema/wcf/transport-of-nettcpbinding.md)</li><li>[&lt;sslStreamSecurity&gt; &lt;sekce&gt;customBinding ]~/docs/framework/configure-apps/file-schema/wcf/sslstreamsecurity.md)</li></ul>|
+|Rozsah|Edge|
 |Version|4.6.2|
-|type|Modul runtime|
+|Typ|Modul runtime|
 |Ovlivněná rozhraní API|<ul><li><xref:System.ServiceModel.Channels.SslStreamSecurityBindingElement.SslProtocols?displayProperty=nameWithType></li><li><xref:System.ServiceModel.TcpTransportSecurity.SslProtocols?displayProperty=nameWithType></li></ul>|

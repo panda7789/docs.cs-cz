@@ -2,53 +2,53 @@
 title: Souhrn typů trasování
 ms.date: 03/30/2017
 ms.assetid: e639410b-d1d1-479c-b78e-a4701d4e4085
-ms.openlocfilehash: 8f54f71ef63338708a29fac5557c7c7e8f257f58
-ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
+ms.openlocfilehash: 8ed6dceb19caa52f928f285064c60337e3f15a87
+ms.sourcegitcommit: 515469828d0f040e01bde01df6b8e4eb43630b06
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70856010"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78674843"
 ---
 # <a name="trace-type-summary"></a>Souhrn typů trasování
-[Zdrojové úrovně](https://go.microsoft.com/fwlink/?LinkID=94943) definují různé úrovně trasování: Kritická, chyba, upozornění, informace a podrobné a také poskytuje popis `ActivityTracing` příznaku, který přepíná výstup událostí pro trasování a přenos aktivity.  
+[Úrovně zdrojového přenosu](xref:System.Diagnostics.SourceLevels) definuje různé úrovně trasování: Kritická, Chyba, Upozornění, Informace `ActivityTracing` a Verbose, stejně jako poskytuje popis příznaku, který přepíná výstup hranice trasování a události přenosu aktivity.  
   
- Můžete také zkontrolovat [TraceEventType](https://go.microsoft.com/fwlink/?LinkId=95169) pro typy trasování, ze <xref:System.Diagnostics>kterých lze generovat.  
+ Můžete také <xref:System.Diagnostics.TraceEventType> zkontrolovat typy trasování, které mohou <xref:System.Diagnostics>být emitovány z .  
   
- V následující tabulce jsou uvedeny nejdůležitější ty.  
+ V následující tabulce jsou uvedeny nejdůležitější.  
   
 |Typ trasování|Popis|  
 |----------------|-----------------|  
-|Kritická|Závažná chyba nebo selhání aplikace|  
+|Kritická|Závažná chyba nebo selhání aplikace.|  
 |Chyba|Obnovitelná chyba.|  
 |Upozornění|Informační zpráva.|  
-|Informace o|Nekritický problém.|  
-|Podrobnosti|Trasování ladění.|  
-|Spustit|Spuštění logické jednotky zpracování.|  
-|Pozastavit|Pozastavení logické jednotky zpracování.|  
-|Resume|Obnovení logické jednotky zpracování.|  
-|Zastavit|Zastavuje se logická jednotka zpracování.|  
-|Přenos|Změna identity korelace.|  
+|Informace|Nekritický problém.|  
+|Verbose|Ladění trasování.|  
+|Start|Spuštění logické jednotky zpracování.|  
+|Suspend|Pozastavení logické jednotky zpracování.|  
+|Obnovit|Obnovení logické jednotky zpracování.|  
+|Zastavit|Zastavení logické jednotky zpracování.|  
+|Přenos|Změna korelační identity.|  
   
- Aktivita je definována jako kombinace typů trasování výše.  
+ Aktivita je definována jako kombinace výše uvedených typů trasování.  
   
- Následuje regulární výraz, který definuje ideální aktivitu v oboru místního (zdroje trasování),  
+ Následuje regulární výraz, který definuje ideální aktivitu v místním oboru (zdroj trasování),  
   
  `R = Start (Critical | Error | Warning | Information | Verbose | Transfer | (Transfer Suspend Transfer Resume) )* Stop`  
   
- To znamená, že aktivita musí splňovat následující podmínky.  
+ To znamená, že činnost musí splňovat následující podmínky.  
   
-- Musí začínat a zastavovat trasování spuštění a zastavení.  
+- Musí se spustit a zastavit, respektive stopami Start a Stop  
   
-- Musí mít trasování přenosu hned před přerušením nebo obnovením trasování.  
+- Musí mít trasování přenosu bezprostředně předcházející sledování pozastavit nebo pokračovat.  
   
-- Nesmí obsahovat žádné trasování mezi trasováním pozastavení a obnovení, pokud taková trasování existují.  
+- Nesmí mít žádné stopy mezi Stopy spánku a Pokračovat, pokud takové stopy existují  
   
-- Může mít libovolné a tolik kritických/chyb/upozornění/informací/podrobných trasování/přenosů, pokud jsou splněny předchozí podmínky.  
+- To může mít všechny a tolik kritických / Chyba / Varování / Informace / Verbose / Transfer stopy tak dlouho, dokud jsou dodrženy předchozí podmínky  
   
- Následuje regulární výraz, který definuje ideální aktivitu v globálním oboru.  
+ Následuje regulární výraz, který definuje ideální aktivitu v globálním rozsahu,  
   
 `R+`  
   
- v jazyce R je regulární výraz aktivity v místním oboru. To se týká,  
+ r je regulární výraz pro aktivitu v místním oboru. To se promítá do,  
   
 `[R+ = Start ( Critical | Error | Warning | Information | Verbose | Transfer | (Transfer Suspend Transfer Resume) )* Stop]+`

@@ -1,18 +1,17 @@
 ---
-ms.openlocfilehash: 2e974d277d6659aaada321b2a7e7a604df78a7bd
-ms.sourcegitcommit: d55e14eb63588830c0ba1ea95a24ce6c57ef8c8c
+ms.openlocfilehash: 3b7309347c643d89a28331c6ef3cac36085a969a
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/11/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "67858646"
 ---
-### <a name="wpf-windows-are-rendered-without-clipping-when-extending-outside-a-single-monitor"></a>Vykreslení WPF windows bez oříznutí při rozšiřování mimo jednoho monitoru
+### <a name="wpf-windows-are-rendered-without-clipping-when-extending-outside-a-single-monitor"></a>WPF okna jsou vykreslovány bez oříznutí při vysazení mimo jeden monitor
 
 |   |   |
 |---|---|
-|Podrobnosti|V rozhraní .NET Framework 4.6 spuštěné v systému Windows 8 a vyšším, je vykreslen celé okno bez oříznutí při rozšiřuje mimo jednotné zobrazení v případě více monitorů. Tím se liší od předchozích verzí rozhraní .NET Framework, které by oříznout WPF windows, které rozšířit nad rámec jednoho zobrazení.|
-|Doporučení|Toto chování (jestli se má oříznout nebo ne) lze explicitně nastavit pomocí <code>&lt;EnableMultiMonitorDisplayClipping&gt;</code> prvek <code>&lt;appSettings&gt;</code> v konfiguračním souboru aplikace nebo tím, že nastavíte <code>EnableMultiMonitorDisplayClipping</code> vlastnost při spuštění aplikace.|
-|Scope|Vedlejší|
+|Podrobnosti|V rozhraní .NET Framework 4.6 spuštěné v systému Windows 8 a vyšší, celé okno je vykreslen bez oříznutí, když rozšiřuje mimo jeden displej ve scénáři více monitorů. To se liší od předchozích verzí rozhraní .NET Framework, které by klip WPF okna, která rozšířena mimo jeden displej.|
+|Návrh|Toto chování (zda klip nebo ne) <code>&lt;EnableMultiMonitorDisplayClipping&gt;</code> lze <code>&lt;appSettings&gt;</code> explicitně nastavit pomocí prvku v konfiguračním souboru aplikace nebo nastavením <code>EnableMultiMonitorDisplayClipping</code> vlastnosti při spuštění aplikace.|
+|Rozsah|Vedlejší|
 |Version|4.6|
-|type|Modul runtime|
-
+|Typ|Modul runtime|

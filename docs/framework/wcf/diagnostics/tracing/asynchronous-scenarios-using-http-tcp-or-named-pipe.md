@@ -2,73 +2,73 @@
 title: Asynchronní scénáře použití HTTP, TCP nebo pojmenovaného kanálu
 ms.date: 03/30/2017
 ms.assetid: a4d62402-43a4-48a4-9ced-220633ebc4ce
-ms.openlocfilehash: 218887f7d09e234d0d02dfa1df5c1d4e114ddc11
-ms.sourcegitcommit: 9b1ac36b6c80176fd4e20eb5bfcbd9d56c3264cf
+ms.openlocfilehash: 6ae96c0aac5010adf37eb78ed57d1549885ece58
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67422242"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79185788"
 ---
 # <a name="asynchronous-scenarios-using-http-tcp-or-named-pipe"></a>Asynchronní scénáře použití HTTP, TCP nebo pojmenovaného kanálu
-Toto téma popisuje činnosti a přenosy pro jiné Asynchronní požadavek/odpověď scénáře s více vlákny požadavky pomocí protokolu HTTP, TCP, nebo pojmenovaného kanálu.  
+Toto téma popisuje aktivity a přenosy pro různé scénáře asynchronní požadavek/odpověď s vícevláknové požadavky pomocí HTTP, TCP nebo pojmenované kanálu.  
   
 ## <a name="asynchronous-requestreply-without-errors"></a>Asynchronní požadavek/odpověď bez chyb  
- Tato část popisuje aktivity a přenosy pro scénáři Asynchronní požadavek/odpověď s klienty s více vlákny.  
+ Tato část popisuje aktivity a přenosy pro scénář asynchronní požadavek/odpověď s vícevláknovými klienty.  
   
- Aktivita volající skončí, když `beginCall` vrací, a `endCall` vrátí. Pokud zpětné volání je volána, zpětné volání vrátí.  
+ Volající aktivita ukončí, `beginCall` když `endCall` vrátí a vrátí. Pokud je voláno zpětné volání, vrátí zpětné volání.  
   
- Volané aktivity skončí, když `beginCall` návratu `endCall` vrátí, nebo když zpětného volání vrátí, pokud byla volána z aktivity.  
+ Volaná aktivita `beginCall` končí, když vrátí, `endCall` vrátí nebo když zpětné volání vrátí, pokud byla volána z této aktivity.  
   
-### <a name="asynchronous-client-without-callback"></a>Asynchronní klienta bez zpětného volání  
+### <a name="asynchronous-client-without-callback"></a>Asynchronní klient bez zpětného volání  
   
 #### <a name="propagation-is-enabled-on-both-sides-using-http"></a>Šíření je povoleno na obou stranách pomocí protokolu HTTP  
- ![Asynchronní klienta se bez zpětného volání, kde je propagateActivity nastaven na hodnotu true na obou stranách.](./media/asynchronous-scenarios-using-http-tcp-or-named-pipe/asynchronous-client-no-callback.gif)   
+ ![Asynchronní klient bez zpětného volání, kde je propagateActivity nastavena na hodnotu true na obou stranách.](./media/asynchronous-scenarios-using-http-tcp-or-named-pipe/asynchronous-client-no-callback.gif)
   
- Pokud `propagateActivity=true`, ProcessMessage indikuje aktivitu které ProcessAction přenést do.  
+ If `propagateActivity=true`, ProcessMessage označuje, které ProcessAction aktivity k přenosu.  
   
- Pro scénáře založené na protokolu HTTP, je vyvolána ReceiveBytes na první zprávu odeslat a existuje po dobu platnosti požadavku.  
+ Pro scénáře založené na protokolu HTTP ReceiveBytes je vyvolána na první zprávu odeslat a existuje po dobu životnosti požadavku.  
   
-#### <a name="propagation-is-disabled-on-either-sides-using-http"></a>Šíření je zakázáno na buď stranách, pomocí protokolu HTTP  
- Pokud `propagateActivity=false` na obou stranách ProcessMessage neindikuje, které aktivita ProcessAction přenést do. Proto je vyvolána nová dočasná ProcessAction aktivita s novým ID. Pokud asynchronní odpověď je nalezena shoda, požadavek na ServiceModel kódu, ID aktivity mohou být načteny z místního kontextu. Skutečné ProcessAction aktivity lze přenést do tohoto ID.  
+#### <a name="propagation-is-disabled-on-either-sides-using-http"></a>Šíření je zakázáno na obou stranách pomocí protokolu HTTP  
+ Pokud `propagateActivity=false` na obou stranách ProcessMessage neoznačuje, které ProcessAction aktivity k přenosu. Proto je vyvolána nová dočasná aktivita ProcessAction s novým ID. Pokud je asynchronní odpověď spárována s požadavkem v kódu ServiceModel, id aktivity lze načíst z místního kontextu. Skutečná aktivita ProcessAction může být převedena na s tímto ID.  
   
- ![Asynchronní klienta se bez zpětného volání, kde je propagateActivity nastaven na hodnotu false na obou stranách.](./media/asynchronous-scenarios-using-http-tcp-or-named-pipe/asynchronous-scenario-propagation-disabled-either-side.gif)  
-    
- Pro scénáře založené na protokolu HTTP, je vyvolána ReceiveBytes na první zprávu odeslat a existuje po dobu platnosti požadavku.  
+ ![Asynchronní klient bez zpětného volání, kde je propagateActivity nastavena na false na obou stranách.](./media/asynchronous-scenarios-using-http-tcp-or-named-pipe/asynchronous-scenario-propagation-disabled-either-side.gif)  
+
+ Pro scénáře založené na protokolu HTTP ReceiveBytes je vyvolána na první zprávu odeslat a existuje po dobu životnosti požadavku.  
   
- Vytvoření akce proces aktivity na asynchronního klientského při `propagateActivity=false` volající nebo volaný a zprávy s odpovědí neobsahuje hlavičku akce.  
+ Aktivita akce procesu je vytvořena na `propagateActivity=false` asynchronního klienta, když na volajícího nebo volaný, a když zpráva odpovědi neobsahuje hlavičku akce.  
   
 #### <a name="propagation-is-enabled-on-both-sides-using-tcp-or-named-pipe"></a>Šíření je povoleno na obou stranách pomocí protokolu TCP nebo pojmenovaného kanálu  
- ![Asynchronní klienta se bez zpětného volání propagateActivity, kde je nastaven na hodnotu true na obou stranách a pojmenovaný kanál/TCP.](./media/asynchronous-scenarios-using-http-tcp-or-named-pipe/asynchronous-scenario-propagation-enabled-using-tcp.gif)  
+ ![Asynchronní klient bez zpětného volání, kde je propagateActivity nastavena na hodnotu true na obou stranách a pojmenovaný kanál/TCP.](./media/asynchronous-scenarios-using-http-tcp-or-named-pipe/asynchronous-scenario-propagation-enabled-using-tcp.gif)  
   
- Pro scénář založené na TCP nebo pojmenované kanály ReceiveBytes je voláno, když klient je otevřený a existuje po dobu životnosti připojení.  
+ Pro scénář založený na pojmenovaném kanálu nebo TCP receivebytes je vyvolána při otevření klienta a existuje po dobu životnosti připojení.  
   
- Podobně jako na prvním obrázku, pokud `propagateActivity=true`, ProcessMessage indikuje aktivitu které ProcessAction přenést do.  
+ Podobně jako první obrázek, if `propagateActivity=true`, ProcessMessage označuje, které ProcessAction aktivity k přenosu.  
   
-#### <a name="propagation-is-disabled-on-either-sides-using-tcp-or-named-pipe"></a>Šíření je zakázáno na buď stranách, TCP nebo pojmenovaného kanálu  
- Pro scénář založené na TCP nebo pojmenované kanály ReceiveBytes je voláno, když klient je otevřený a existuje po dobu životnosti připojení.  
+#### <a name="propagation-is-disabled-on-either-sides-using-tcp-or-named-pipe"></a>Šíření je zakázáno na obou stranách pomocí protokolu TCP nebo pojmenovaného kanálu.  
+ Pro scénář založený na pojmenovaném kanálu nebo TCP receivebytes je vyvolána při otevření klienta a existuje po dobu životnosti připojení.  
   
- Podobně jako druhý obrázek, pokud `propagateActivity=false` na obou stranách ProcessMessage neindikuje, které aktivita ProcessAction přenést do. Proto je vyvolána nová dočasná ProcessAction aktivita s novým ID. Pokud asynchronní odpověď je nalezena shoda, požadavek na ServiceModel kódu, ID aktivity mohou být načteny z místního kontextu. Skutečné ProcessAction aktivity lze přenést do tohoto ID.  
+ Podobně jako druhý obrázek, pokud `propagateActivity=false` na obou stranách ProcessMessage neoznačuje, které ProcessAction aktivity k přenosu. Proto je vyvolána nová dočasná aktivita ProcessAction s novým ID. Pokud je asynchronní odpověď spárována s požadavkem v kódu ServiceModel, id aktivity lze načíst z místního kontextu. Skutečná aktivita ProcessAction může být převedena na s tímto ID.  
   
- ![Asynchronní klienta se bez zpětného volání, kde je nastavena na hodnotu false na obou stranách propagateActivity a je pojmenován kanálu/TCP.](./media/asynchronous-scenarios-using-http-tcp-or-named-pipe/asynchronous-scenario-propagation-disabled-using-tcp.gif)  
-    
-### <a name="asynchronous-client-with-callback"></a>Asynchronní zpětné volání klienta  
- Tento scénář přidá aktivity G a A ", zpětného volání a `endCall`a jejich přenosy vstup a výstup.  
+ ![Asynchronní klient bez zpětného volání, kde je propagateActivity nastavena na false na obou stranách a pojmenované kanálu/TCP.](./media/asynchronous-scenarios-using-http-tcp-or-named-pipe/asynchronous-scenario-propagation-disabled-using-tcp.gif)  
+
+### <a name="asynchronous-client-with-callback"></a>Asynchronní klient s zpětným voláním  
+ Tento scénář přidá aktivity G a A', pro zpětné volání a `endCall`, a jejich převody dovnitř / ven.  
   
- V této části ukážeme pouze pomocí protokolu HTTP s `propagateActivity` = `true`. Však další aktivity a přenosy platí také pro další případy (to znamená `propagateActivity` = `false`, TCP nebo pojmenované kanály).  
+ Tato část ukazuje pouze `propagateActivity` = `true`pomocí protokolu HTTP s . Další aktivity a převody se však vztahují `propagateActivity` = `false`také na ostatní případy (tj. pomocí protokolu TCP nebo pojmenovaného kanálu).  
   
- Zpětné volání vytvoří novou aktivitu (G), když klient volá kód uživatele upozornit, že jsou výsledky připraveny. Uživatelský kód zavolá `endCall` v rámci zpětného volání (jak je znázorněno na obrázku 5) nebo mimo zpětného volání (obrázek 6). Protože není známo, které aktivity uživatelů `endCall` je volána z, je tato aktivita označená `A’`. Je možné, A "může být stejný jako nebo liší od A.  
+ Zpětné volání vytvoří novou aktivitu (G), když klient volá uživatelský kód upozornit, že výsledky jsou připraveny. Uživatelský kód `endCall` pak volá v rámci zpětného volání (jak je znázorněno na obrázku 5) nebo mimo zpětné volání (obrázek 6). Vzhledem k tomu, `endCall` že není známo, ze které `A’`aktivity uživatele je volána, je tato aktivita označena . Je možné, že A' může být totožný nebo odlišný od A.  
   
- ![Ukazuje asynchronního klientského s zpětné volání, endcall ve zpětném volání.](./media/asynchronous-scenarios-using-http-tcp-or-named-pipe/asynchronous-client-callback-endcall-in-callback.gif)  
-    
- ![Ukazuje asynchronního klientského s zpětné volání, endcall mimo zpětného volání.](./media/asynchronous-scenarios-using-http-tcp-or-named-pipe/asynchronous-client-callback-endcall-outside-callback.gif)  
-    
-### <a name="asynchronous-server-with-callback"></a>Asynchronní serveru pomocí zpětného volání  
- ![Ukazuje asynchronního serverového se zpětným voláním.](./media/asynchronous-scenarios-using-http-tcp-or-named-pipe/asynchronous-server-callback.gif)  
-    
- Kanál zásobníku volání zpět klienta na přijetí zprávy: trasování pro zpracování jsou zaznamenávány do aktivity ProcessRequest samotný.  
+ ![Zobrazuje asynchronního klienta s zpětným voláním, endcall v zpětném volání.](./media/asynchronous-scenarios-using-http-tcp-or-named-pipe/asynchronous-client-callback-endcall-in-callback.gif)  
+
+ ![Zobrazuje asynchronního klienta s zpětným voláním, endcall mimo zpětné volání.](./media/asynchronous-scenarios-using-http-tcp-or-named-pipe/asynchronous-client-callback-endcall-outside-callback.gif)  
+
+### <a name="asynchronous-server-with-callback"></a>Asynchronní server s zpětným voláním  
+ ![Zobrazuje asynchronní server s zpětným voláním.](./media/asynchronous-scenarios-using-http-tcp-or-named-pipe/asynchronous-server-callback.gif)  
+
+ Zásobník kanálu volá zpět klienta na přijetí zprávy: trasování pro toto zpracování jsou emitovány v samotné aktivitě ProcessRequest.  
   
 ## <a name="asynchronous-requestreply-with-errors"></a>Asynchronní požadavek/odpověď s chybami  
- Zpráva chyby selhání přijme během `endCall`. V opačném případě aktivity a přenosy jsou podobné předchozího scénáře.  
+ Během souboru jsou `endCall`přijímány chyby chyb V opačném případě aktivity a převody jsou podobné předchozím scénářům.  
   
-## <a name="asynchronous-one-way-with-or-without-errors"></a>Asynchronní jednosměrné s nebo bez chyb  
- Žádná odpověď nebo selhání je vrácen do klienta.
+## <a name="asynchronous-one-way-with-or-without-errors"></a>Asynchronní jednosměrný s chybami nebo bez chyb  
+ Klientovi není vrácena žádná odpověď ani chyba.

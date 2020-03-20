@@ -1,17 +1,16 @@
 ---
-ms.openlocfilehash: f34938b0dadce7da0e7d27f0a6a84185522e312e
-ms.sourcegitcommit: d55e14eb63588830c0ba1ea95a24ce6c57ef8c8c
+ms.openlocfilehash: 8797ea76e529d501fb492623cd270e0437c70193
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/11/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "67802612"
 ---
-### <a name="keyboard-navigation-improvement-in-listbox-with-hyperlinks"></a>Vylepšení navigace klávesnice seznam s hypertextovými odkazy
+### <a name="keyboard-navigation-improvement-in-listbox-with-hyperlinks"></a>Vylepšení navigace pomocí služby ListBox pomocí hypertextových odkazů
 
 |   |   |
 |---|---|
-|Podrobnosti|Oprava nesprávný výsledek stisknutí klávesy se šipkou, pokud je fokus nastavený na hypertextový odkaz, který není vybrané položky z nadřazené položky <xref:System.Windows.Controls.ItemsControl>.|
-|Scope|Hlavní|
+|Podrobnosti|Opraven nesprávný výsledek stisknutí klávesy se šipkou, když je fokus na <xref:System.Windows.Controls.ItemsControl>hypertextovém odkazu v položce, která není vybranou položkou nadřazené položky .|
+|Rozsah|Hlavní|
 |Version|4.8|
-|type|Modul runtime|
-
+|Typ|Modul runtime|

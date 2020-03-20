@@ -3,50 +3,50 @@ title: Publikování a řešení názvů partnerských uzlů
 ms.date: 03/30/2017
 ms.assetid: f0370e08-9fa6-4ee5-ab78-9a58a20a7da2
 ms.openlocfilehash: 4a0787972a61f5700d1e8728be96db8ef9ee749e
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "64623204"
 ---
 # <a name="peer-name-publication-and-resolution"></a>Publikování a řešení názvů partnerských uzlů
 
-## <a name="publishing-a-peer-name"></a>Publikování název partnerského zařízení  
+## <a name="publishing-a-peer-name"></a>Publikování názvu partnera  
 
- Chcete-li publikovat nové ID PNRP, partnerské zařízení provede následující akce:  
+ Chcete-li publikovat nové ID PNRP, partner provede následující:  
   
-- Odešle zprávy publikace PNRP k jejím sousedům mezipaměti (partnerské uzly, které jste zaregistrovali ID PNRP na nejnižší úrovni mezipaměti) naplnit jejich mezipamětí.  
+- Odešle zprávy publikace PNRP svým sousedům mezipaměti (protějškům, kteří zaregistrovali ID PNRP v nejnižší úrovni mezipaměti) do osiva jejich mezipamětí.  
   
-- Zvolí náhodné uzly v cloudu, které nejsou jeho okolím a odesílá požadavky na řešení PNRP název pro vlastní ID P2P. Výsledný procesu určení koncový bod nasazení nasazuje mezipamětí náhodné uzly v cloudu s ID PNRP publikování partnerského uzlu.  
+- Vybere náhodné uzly v cloudu, které nejsou jeho sousedy a odešle jim PNRP požadavky na překlad názvů pro své vlastní ID P2P. Výsledný proces určení koncového bodu zasílá mezipaměti náhodných uzlů v cloudu s ID PNRP publikujícího partnera.  
   
-PNRP verze 2 uzly nepublikujte ID PNRP, pokud jsou pouze řeší jiné ID P2P. HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\PeerNet\PNRP\IPV6-Global\SearchOnly = 1 hodnotu registru (typ REG_DWORD) určuje, zda partnerské uzly protokolu PNRP pouze používat pro překlad názvů, nikdy pro název publikace. Tato hodnota registru je také možné nakonfigurovat pomocí zásad skupiny.  
+Uzly PNRP verze 2 nepublikují ID PNRP, pokud řeší pouze jiná ID P2P. Hodnota registru HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\PeerNet\PNRP\IPV6-Global\SearchOnly=1 (typ REG_DWORD) určuje, že partneři používají pnrp pouze pro překlad názvů, nikdy pro publikování názvů. Tuto hodnotu registru lze také nakonfigurovat prostřednictvím zásad skupiny.  
   
-## <a name="resolving-a-peer-name"></a>Název partnera řešení
+## <a name="resolving-a-peer-name"></a>Řešení názvu partnera
 
- Vyhledání dalších partnerských uzlů v PNRP sítě nebo cloudové je proces se skládá ze dvou fází:  
+ Vyhledání dalších partnerů v síti nebo cloudu PNRP je proces složený ze dvou fází:  
   
-1. Určení koncového bodu  
+1. Stanovení koncového bodu  
   
-2. ID řešení PNRP  
+2. ID PNRP rozlišení  
   
- Ve fázi stanovení koncový bod partnerského uzlu, který se pokouší se přeložit ID PNRP služby na jiném počítači určuje adresu protokolu IPv6 tohoto vzdáleného partnerského uzlu.  Vzdáleném partnerském je ta, kterou publikována nebo je přidružen ID PNRP počítače nebo služby.  
+ Ve fázi určení koncového bodu druhá strana, která se pokouší vyřešit ID PNRP služby v jiném počítači, určuje adresu IPv6 tohoto vzdáleného partnera.  Vzdálený partner je ten, který publikoval nebo je přidružen k ID PNRP počítače nebo služby.  
   
- Po potvrzení, že vzdálený koncový bod byl zaregistrován do cloudu PNRP, žádost o partnerským zařízením ve fázi překladu PNRP ID odešle žádost do tohoto koncového bodu partnera pro ID PNRP požadované služby. Koncový bod pošle odpověď. potvrzení ID PNRP služby komentář, a až 4 kB dalších informací, že žádosti o vytvoření partnerského vztahu můžete použít pro budoucí komunikaci. Například pokud požadovaný koncový bod serveru hry, data další peer název záznamu může obsahovat informace o hry, úroveň play a aktuální počet hráčů.  
+ Po potvrzení, že vzdálený koncový bod byl zaregistrován do cloudu PNRP, žádající partner ve fázi rozlišení PNRP ID odešle požadavek na tento koncový bod partnera pro ID PNRP požadované služby. Koncový bod odešle odpověď potvrzující ID PNRP služby, komentář a až 4 kilobajty další informace, které může žádající partner použít pro budoucí komunikaci. Pokud je například požadovaným koncovým bodem herní server, mohou další data záznamu jmen partnera obsahovat informace o hře, úrovni hry a aktuálním počtu hráčů.  
   
- PNRP ve fázi stanovení koncový bod používá iterativní proces pro vyhledání uzlu, která publikuje ID PNRP, ve které je zodpovědný za kontaktování uzly, které jsou postupně blíž k cílové ID PNRP. uzel vyřešení  
+ Ve fázi stanovení koncového bodu Používá PNRP iterativní proces pro vyhledání uzlu, který publikoval ID PNRP, ve kterém uzel provádějící rozlišení je zodpovědný za kontaktování uzlů, které jsou postupně blíže k cílovéi ID PNRP.  
   
- Provádět překlad adres v PNRP byly partnerské prozkoumá položky vlastní mezipaměti pro položku, která odpovídá cílové ID PNRP. Pokud najde, partnerský uzel odešle zprávu požadavku PNRP partnerským zařízením a čeká na odpověď. Pokud není nalezen záznam pro PNRP ID, partnerský uzel odešle zprávu požadavku protokolu PNRP na partnera, který odpovídá položce, která má ID PNRP, který nejlépe odpovídá cílové ID PNRP. Uzel, který obdrží zprávu požadavku PNRP prozkoumá svoji vlastní mezipaměti a provede následující akce:  
+ Chcete-li provést překlad názvů v PNRP, partner zkontroluje položky ve své vlastní mezipaměti pro položku, která odpovídá cílovému ID PNRP. Pokud je nalezen, peer odešle zprávu žádosti PNRP peer a čeká na odpověď. Pokud není nalezena položka pro ID PNRP, druhá strana odešle zprávu požadavku PNRP druhé straně, která odpovídá položce, která má ID PNRP, které nejvíce odpovídá cílovému ID PNRP. Uzel, který obdrží zprávu požadavku PNRP, zkontroluje vlastní mezipaměť a provádí následující akce:  
   
-- Pokud je nalezeno PNRP ID, požadovaný koncový bod partnera odpovědi přímo na vyžádání partnera.  
+- Pokud je nalezeno ID PNRP, požadovaný koncový bod peer odpovědi přímo na žádající peer.  
   
-- Pokud nebylo nalezeno PNRP ID a ID PNRP v mezipaměti je blíž ke cílové PNRP ID, požadované sdílené odešle odpověď na žádost o partnera obsahující IPv6 adresu partnerského uzlu, který představuje položku s ID PNRP, která lépe odpovídá cílovému ID PNRP. Pomocí IP adresy v odpovědi, odešle žádost o uzlu další zprávu požadavku protokolu PNRP na adresu IPv6 a odpověď nebo zkontrolovat uloženou v mezipaměti.  
+- Pokud ID PNRP není nalezen a ID PNRP v mezipaměti je blíže k cílové ID PNRP, požadovaný partner odešle odpověď na žádající partner obsahující adresu IPv6 partnera, který představuje položku s ID PNRP, který více odpovídá cílové ID PNRP. Pomocí adresy IP v odpovědi odešle žádající uzel na adresu IPv6 další zprávu požadavku PNRP, aby odpověděl nebo prozkoumal její mezipaměť.  
   
-- Pokud nebylo nalezeno PNRP ID a neexistuje žádné ID PNRP v mezipaměti, který je blíž k cíli PNRP ID, požadované sdílené odešle žádost o peer odpověď, která upozorňuje na tento stav. Žádost o peer potom Vybere nejbližší ID PNRP.  
+- Pokud ID PNRP není nalezen a není žádné PNRP ID v mezipaměti, která je blíže k cílové ID PNRP, požadovaný partner odešle žádající peer odpověď, která označuje tuto podmínku. Žádající partner pak zvolí nejbližší ID PNRP.  
   
-Žádost o peer tento proces pokračuje s každou následnou iterací, nakonec vyhledání uzel, který zaregistrované ID protokolu PNRP.  
+Žádající partner pokračuje v tomto procesu s po sobě jdoucími iterací, případně lokalizovat uzel, který zaregistroval ID PNRP.  
   
- V rámci <xref:System.Net.PeerToPeer> obor názvů, existuje vztah n: n mezi <xref:System.Net.PeerToPeer.PeerName> záznamy, které obsahují koncové body a cloudy PNRP nebo OK, ve kterých komunikovat. Pokud existují duplicitní nebo zastaralý položky nebo více uzlů se stejným názvem sdílené, PNRP uzly můžete získat pomocí aktuální informace <xref:System.Net.PeerToPeer.PeerNameResolver> třídy. <xref:System.Net.PeerToPeer.PeerNameResolver> Metody používají název jednoho partnerského zařízení ke zjednodušení perspektivu pro záznamy názvového jedné sdílené peer m a témuž jeden na mnoho cloudů. Toto je podobný dotaz provádí spojení relační tabulky. Po úspěšném dokončení vrátí objekt překladače <xref:System.Net.PeerToPeer.PeerNameRecordCollection> pro název zadaného partnera.  Název partnerského zařízení by tomu bylo ve všech záznamech název partnera v kolekci, například seřazené podle cloudu. Toto jsou instance název partnerského zařízení, jehož podpůrné data mohou být vyžádány aplikací založené na protokolu PNRP.  
+ V <xref:System.Net.PeerToPeer> rámci oboru názvů existuje vztah N:N <xref:System.Net.PeerToPeer.PeerName> mezi záznamy, které obsahují koncové body a cloudy PNRP nebo sítě, ve kterých komunikují. Pokud existují duplicitní nebo zastaralé položky nebo více uzlů se stejným názvem partnera, mohou <xref:System.Net.PeerToPeer.PeerNameResolver> uzly PNRP získat aktuální informace pomocí třídy. Metody <xref:System.Net.PeerToPeer.PeerNameResolver> používají jeden název partnera pro zjednodušení perspektivy na jeden peer-to-many peer name records a stejný jeden peer to many cloud. To je podobné dotazu prováděnému pomocí spojení relační tabulky. Po úspěšném dokončení resolver <xref:System.Net.PeerToPeer.PeerNameRecordCollection> objekt vrátí pro zadaný název partnera.  Například název partnera by dojít ve všech záznamů názvu partnera v kolekci, seřazené podle cloudu. Jedná se o instance názvu partnera, jehož podpůrná data mohou být požadována aplikací založenou na PNRP.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Net.PeerToPeer>

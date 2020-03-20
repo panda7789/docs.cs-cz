@@ -1,18 +1,17 @@
 ---
-ms.openlocfilehash: 2bb40294685c987de84138ee889e6b88f7184bb0
-ms.sourcegitcommit: d55e14eb63588830c0ba1ea95a24ce6c57ef8c8c
+ms.openlocfilehash: 22c4b61b293ac2366cae1dc73e0f6805a4a5fb8b
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/11/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "67857232"
 ---
-### <a name="chained-popups-with-staysopenfalse"></a>Zřetězené automaticky otevíraná okna s nastavením StaysOpen = False
+### <a name="chained-popups-with-staysopenfalse"></a>Zřetězená vyskakovací okno s pobytyOtevřené= False
 
 |   |   |
 |---|---|
-|Podrobnosti|Automaticky otevíraného okna s nastavením StaysOpen = False by měl po kliknutí na mimo automaticky otevírané okno zavřít. Když jsou zřetězeny dva nebo více těchto automaticky otevíraná okna (to znamená jeden obsahuje další), došlo k mnoha problémům, včetně:<ul><li>Spusťte dvě úrovně, klikněte na mimo P2, ale uvnitř P1.  Nic se nestane.</li><li>Spusťte dvě úrovně, klikněte na vnější P1.  Zavřete obě automaticky otevíraná okna.</li><li>Otevření a zavření dvě úrovně.  Zkuste znovu otevřít P2.  Nic se nestane.</li><li>Došlo k pokusu o otevření tři úrovně.  Nemůžete.  (Nic se nestane nebo zavřete první dvě úrovně, v závislosti na tom, kde klikněte na.) Tyto případy (a další varianty) nyní fungovat podle očekávání.</li></ul>|
-|Scope|Edge|
+|Podrobnosti|Místní okno s staysopen=false má zavřít, když kliknete mimo popup. Když jsou dvě nebo více takových vyskakovacích zařízení zřetězena (tj. jedna obsahuje další), došlo k mnoha problémům, včetně:<ul><li>Otevřete dvě úrovně, klikněte mimo P2, ale uvnitř P1.  Nic se neděje.</li><li>Otevřete dvě úrovně, klepněte mimo P1.  Obě vyskakovací okno blízko.</li><li>Otevřete a zavřete dvě úrovně.  Pak zkuste znovu otevřít P2.  Nic se neděje.</li><li>Pokuste se otevřít tři úrovně.  To nemůžeš.  (Buď se nic nestane, nebo první dvě úrovně blízko, v závislosti na tom, kde kliknete.) Tyto případy (a další varianty) nyní fungují podle očekávání.</li></ul>|
+|Rozsah|Edge|
 |Version|4.7.1|
-|type|Modul runtime|
+|Typ|Modul runtime|
 |Ovlivněná rozhraní API|<ul><li><xref:System.Windows.Controls.Primitives.Popup.StaysOpen?displayProperty=nameWithType></li></ul>|
-

@@ -1,19 +1,18 @@
 ---
-ms.openlocfilehash: 2c54912e5c29b2ed8f4c8163550050e12e367263
-ms.sourcegitcommit: d55e14eb63588830c0ba1ea95a24ce6c57ef8c8c
+ms.openlocfilehash: 68da7216890da1819a994161507355a0b5ea1f9f
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/11/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "67857567"
 ---
-### <a name="signedxml-and-encryptedxml-breaking-changes"></a>SignedXml a EncryptedXml Rozbíjející změny v
+### <a name="signedxml-and-encryptedxml-breaking-changes"></a>Změny rozdělení signedxml a encryptedxml
 
 |   |   |
 |---|---|
-|Podrobnosti|V rozhraní .NET Framework 4.6.2, opravy zabezpečení v <xref:System.Security.Cryptography.Xml.SignedXml?displayProperty=name> a <xref:System.Security.Cryptography.Xml.EncryptedXml?displayProperty=name> může vést k jiné chování za běhu. Například<ul><li>Pokud dokument má více elementů se stejnou <code>id</code> atribut a podpis cílí na jeden z těchto elementů jako kořenový podpis, dokument se nyní být považované za neplatné.</li><li>Dokumenty pomocí jiné kanonické algoritmy transformace XPath v odkazech jsou nyní považovány za neplatné.</li><li>Dokumenty pomocí jiné kanonické algoritmy transformace XSLT v odkazech se teď se podíváme neplatný.</li><li>Provedete to tak nebude možné jakékoli program využívající podpisy externí prostředek odpojit.</li></ul>|
-|Doporučení|Vývojáři chtít Zkontrolujte použití <xref:System.Security.Cryptography.Xml.XmlDsigXsltTransform> a <xref:System.Security.Cryptography.Xml.XmlDsigXsltTransform>, stejně jako typy odvozené z <xref:System.Security.Cryptography.Xml.Transform> od dokumentu příjemce nemusí být možné zpracovat.|
-|Scope|Vedlejší|
+|Podrobnosti|V rozhraní .NET Framework 4.6.2 zabezpečení opravuje <xref:System.Security.Cryptography.Xml.SignedXml?displayProperty=name> a <xref:System.Security.Cryptography.Xml.EncryptedXml?displayProperty=name> vést k různým chováním za běhu. Například:<ul><li>Pokud dokument obsahuje více prvků <code>id</code> se stejným atributem a podpis cílí na jeden z těchto prvků jako kořen podpisu, bude dokument nyní považován za neplatný.</li><li>Dokumenty používající nekanonické algoritmy transformace XPath v odkazech jsou nyní považovány za neplatné.</li><li>Dokumenty používající nekanonické algoritmy transformace XSLT v odkazech jsou nyní neplatné.</li><li>Žádný program využívající podpisy odpojené externí prostředky nebude moci tak učinit.</li></ul>|
+|Návrh|Vývojáři mohou chtít zkontrolovat <xref:System.Security.Cryptography.Xml.XmlDsigXsltTransform> <xref:System.Security.Cryptography.Xml.XmlDsigXsltTransform>použití a , stejně <xref:System.Security.Cryptography.Xml.Transform> jako typy odvozené od protože příjemce dokumentu nemusí být schopen zpracovat.|
+|Rozsah|Vedlejší|
 |Version|4.6.2|
-|type|Modul runtime|
+|Typ|Modul runtime|
 |Ovlivněná rozhraní API|<ul><li><xref:System.Security.Cryptography.Xml.Transform?displayProperty=nameWithType></li><li><xref:System.Security.Cryptography.Xml.XmlDsigXPathTransform?displayProperty=nameWithType></li><li><xref:System.Security.Cryptography.Xml.XmlDsigXsltTransform?displayProperty=nameWithType></li></ul>|
-

@@ -1,19 +1,18 @@
 ---
-ms.openlocfilehash: 8e37007318a55188d44607fd5e4c4f3950c105df
-ms.sourcegitcommit: d55e14eb63588830c0ba1ea95a24ce6c57ef8c8c
+ms.openlocfilehash: 8a1e2ca0790cb62e3c2c879f2ba0bb169ef07d77
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/11/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "67804359"
 ---
-### <a name="applicationfiltermessage-no-longer-throws-for-re-entrant-implementations-of-imessagefilterprefiltermessage"></a>Application.FilterMessage již nevyvolá pro vícenásobně implementace IMessageFilter.PreFilterMessage
+### <a name="applicationfiltermessage-no-longer-throws-for-re-entrant-implementations-of-imessagefilterprefiltermessage"></a>Application.FilterMessage již nevyvolá pro znovu vstupující implementace zprávy IMessageFilter.PreFilterMessage
 
 |   |   |
 |---|---|
-|Podrobnosti|Před rozhraní .NET Framework 4.6.1, volání <xref:System.Windows.Forms.Application.FilterMessage(System.Windows.Forms.Message@)> s <xref:System.Windows.Forms.IMessageFilter.PreFilterMessage(System.Windows.Forms.Message@)> kterou volat <xref:System.Windows.Forms.Application.AddMessageFilter(System.Windows.Forms.IMessageFilter)?displayProperty=name> nebo <xref:System.Windows.Forms.Application.RemoveMessageFilter(System.Windows.Forms.IMessageFilter)?displayProperty=name> (také věnovaly <xref:System.Windows.Forms.Application.DoEvents>) by způsobilo <xref:System.IndexOutOfRangeException?displayProperty=name>.<p/>Od verze aplikace cílené na rozhraní .NET Framework 4.6.1, tento je již vyvolána výjimka, a vícenásobně výše popsaným způsobem mohou být použity filtry.|
-|Doporučení|Mějte na paměti, která <xref:System.Windows.Forms.Application.FilterMessage(System.Windows.Forms.Message@)> se již nezobrazují výjimku pro vícenásobně <xref:System.Windows.Forms.IMessageFilter.PreFilterMessage(System.Windows.Forms.Message@)> chování popsané výše. To ovlivní pouze aplikace cílí na rozhraní .NET Framework 4.6.1 můžete vyjádřit výslovný nesouhlas tato změna cílení 4.6.1.Apps rozhraní .NET Framework (nebo aplikace cílení starší rozhraní mohou vyjádřit výslovný souhlas) s použitím [DontSupportReentrantFilterMessage](~/docs/framework/migration-guide/mitigation-custom-imessagefilter-prefiltermessage-implementations.md#mitigation) přepínače kompatibility.|
-|Scope|Edge|
+|Podrobnosti|Před rozhraním .NET Framework 4.6.1 <xref:System.Windows.Forms.IMessageFilter.PreFilterMessage(System.Windows.Forms.Message@)> by <xref:System.Windows.Forms.Application.AddMessageFilter(System.Windows.Forms.IMessageFilter)?displayProperty=name> <xref:System.Windows.Forms.Application.RemoveMessageFilter(System.Windows.Forms.IMessageFilter)?displayProperty=name> volání <xref:System.Windows.Forms.Application.FilterMessage(System.Windows.Forms.Message@)> s <xref:System.Windows.Forms.Application.DoEvents>a, které <xref:System.IndexOutOfRangeException?displayProperty=name>volalo nebo (a také voláno) způsobilo .<p/>Počínaje aplikacemi zaměřenými na rozhraní .NET Framework 4.6.1 již tato výjimka není vyvolána a mohou být použity filtry pro opětovné zahájení.|
+|Návrh|Uvědomte <xref:System.Windows.Forms.Application.FilterMessage(System.Windows.Forms.Message@)> si, že již nebude <xref:System.Windows.Forms.IMessageFilter.PreFilterMessage(System.Windows.Forms.Message@)> házet pro re-účastníka chování popsané výše. To se týká pouze aplikací, které cílí na rozhraní .NET Framework 4.6.1.Aplikace, které cílí na rozhraní .NET Framework 4.6.1, se mohou odhlásit z této změny (nebo aplikace, které cílí na starší architektury, se mohou přihlásit) pomocí přepínače kompatibility [DontSupportReentrantFilterMessage.](~/docs/framework/migration-guide/mitigation-custom-imessagefilter-prefiltermessage-implementations.md#mitigation)|
+|Rozsah|Edge|
 |Version|4.6.1|
-|type|Změna cílení|
+|Typ|Změna cílení|
 |Ovlivněná rozhraní API|<ul><li><xref:System.Windows.Forms.Application.FilterMessage(System.Windows.Forms.Message@)?displayProperty=nameWithType></li></ul>|
-

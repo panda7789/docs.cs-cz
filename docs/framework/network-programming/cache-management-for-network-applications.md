@@ -7,34 +7,34 @@ helpviewer_keywords:
 - Internet, caching
 ms.assetid: fc258a40-f370-434f-ae09-4a8cb11ddaeb
 ms.openlocfilehash: 7e131963999db3e3d5e0e6f3fa110da36e6452a1
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "71048878"
 ---
 # <a name="cache-management-for-network-applications"></a>Správa mezipaměti pro síťové aplikace
-Toto téma a související dílčí témata popisují ukládání do mezipaměti pro <xref:System.Net.WebClient>prostředky získané pomocí tříd, <xref:System.Net.WebRequest>, <xref:System.Net.HttpWebRequest>a. <xref:System.Net.FtpWebRequest>  
+Toto téma a související dílčí témata popisují ukládání <xref:System.Net.WebClient> <xref:System.Net.WebRequest>prostředků <xref:System.Net.HttpWebRequest>získaných pomocí tříd , , a <xref:System.Net.FtpWebRequest> tříd.  
   
- Mezipaměť poskytuje dočasné úložiště prostředků, které požadovala aplikace. Pokud aplikace požádá o stejný prostředek více než jednou, může být prostředek vrácen z mezipaměti, takže nebude mít na serveru nárok na jejich opětovné vyžádání. Ukládání do mezipaměti může zlepšit výkon aplikace tím, že zkracuje dobu potřebnou k získání požadovaného prostředku. Ukládání do mezipaměti může také snížit zatížení sítě tím, že se sníží počet cest k serveru. I když ukládání do mezipaměti zvyšuje výkon, zvyšuje riziko, že prostředek vrácený do aplikace je zastaralý, což znamená, že se neshoduje s prostředkem, který by byl odeslán serverem, pokud se ukládání do mezipaměti nepoužívalo.  
+ Mezipaměť poskytuje dočasné úložiště prostředků, které byly požadovány aplikací. Pokud aplikace požaduje stejný prostředek více než jednou, prostředek může být vrácena z mezipaměti, aby se zabránilo režii opětovného vyžádání ze serveru. Ukládání do mezipaměti může zlepšit výkon aplikace zkrácením času potřebného k získání požadovaného prostředku. Ukládání do mezipaměti může také snížit provoz v síti snížením počtu cest na server. Při ukládání do mezipaměti zlepšuje výkon, zvyšuje riziko, že prostředek vrácený do aplikace je zastaralý, což znamená, že není totožný s prostředek, který by byly odeslány serverem, pokud ukládání do mezipaměti nebyly používány.  
   
- Ukládání do mezipaměti může umožňovat neoprávněným uživatelům nebo procesům číst citlivá data. Ověřená odpověď, která je uložena v mezipaměti, může být načtena z mezipaměti bez další autorizace. Pokud je povoleno ukládání do mezipaměti, <xref:System.Net.WebRequest.CachePolicy%2A> přejděte <xref:System.Net.Cache.RequestCacheLevel.BypassCache> na <xref:System.Net.Cache.RequestCacheLevel.NoCacheNoStore> nebo a zakažte ukládání do mezipaměti pro tento požadavek.  
+ Ukládání do mezipaměti může umožnit neoprávněným uživatelům nebo procesům číst citlivá data. Ověřená odpověď, která je uložena v mezipaměti, může být načtena z mezipaměti bez další autorizace. Pokud je ukládání do mezipaměti <xref:System.Net.Cache.RequestCacheLevel.BypassCache> <xref:System.Net.Cache.RequestCacheLevel.NoCacheNoStore> povoleno, změňte na <xref:System.Net.WebRequest.CachePolicy%2A> nebo zakázat ukládání do mezipaměti pro tento požadavek.  
   
- Kvůli problémům se zabezpečením není ukládání do **mezipaměti doporučováno** pro scénáře střední vrstvy.  
+ Z důvodu obav o zabezpečení ukládání do mezipaměti se **nedoporučuje** pro scénáře střední vrstvy.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Zásady mezipaměti](cache-policy.md)  
  Vysvětluje, co je zásada mezipaměti a jak ji definovat.  
   
  [Zásady mezipaměti na základě místa](location-based-cache-policies.md)  
- Definuje každý typ zásad mezipaměti na základě umístění dostupných pro prostředky http a HTTPS (Hypertext Transfer Protocol).  
+ Definuje každý typ zásad mezipaměti založených na umístění, které jsou k dispozici pro prostředky protokolu HTTP a https .)  
   
  [Zásady mezipaměti na základě času](time-based-cache-policies.md)  
- V této části najdete popis kritérií, která lze použít k přizpůsobení zásad mezipaměti založeného na čase.  
+ Popisuje kritéria, která lze použít k přizpůsobení zásad mezipaměti založené na čase.  
   
- [Konfigurace mezipaměti v síťových aplikacích](configuring-caching-in-network-applications.md)  
- Popisuje způsob, jak programově vytvářet zásady mezipaměti a požadavky, které používají ukládání do mezipaměti.  
+ [Konfigurace ukládání do mezipaměti v síťových aplikacích](configuring-caching-in-network-applications.md)  
+ Popisuje, jak programově vytvořit zásady mezipaměti a požadavky, které používají ukládání do mezipaměti.  
   
-## <a name="reference"></a>Reference  
+## <a name="reference"></a>Referenční informace  
  <xref:System.Net.Cache>  
- Definuje typy a výčty používané k definování zásad mezipaměti pro prostředky získané pomocí <xref:System.Net.WebRequest>tříd, <xref:System.Net.HttpWebRequest>a <xref:System.Net.FtpWebRequest> .
+ Definuje typy a výčty používané k definování zásad mezipaměti <xref:System.Net.HttpWebRequest>pro <xref:System.Net.FtpWebRequest> prostředky získané pomocí <xref:System.Net.WebRequest>, a tříd.

@@ -1,18 +1,17 @@
 ---
-ms.openlocfilehash: 9d09f598538b9d5ee3f995d6281b8eb4b2668050
-ms.sourcegitcommit: d55e14eb63588830c0ba1ea95a24ce6c57ef8c8c
+ms.openlocfilehash: a3f5f512fd17ab2b076f868be24e5c73d8698c49
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/11/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "67802535"
 ---
-### <a name="objectdisposedexception-thrown-by-wpf-spellchecker"></a>Objectdisposedexception – vyvolané kontrolu pravopisu WPF
+### <a name="objectdisposedexception-thrown-by-wpf-spellchecker"></a>ObjectDisposedException vyvolána WPF kontrola pravopisu
 
 |   |   |
 |---|---|
-|Podrobnosti|Aplikace WPF někdy dojít k chybě při ukončení aplikace se <xref:System.ObjectDisposedException?displayProperty=name> vyvolané kontrolu pravopisu. Tento problém je vyřešený v rozhraní .NET Framework 4.7 WPF řádně zpracování výjimek a zajistila, že aplikace jsou už nebude mít nepříznivý vliv. Je třeba poznamenat, že by má být dodržen v aplikacích spuštěných v ladicím programu pokračovat občasné výjimkách first-chance.|
-|Doporučení|Upgrade na rozhraní .NET Framework 4.7|
-|Scope|Edge|
+|Podrobnosti|WPF aplikace občas selhání během <xref:System.ObjectDisposedException?displayProperty=name> vypnutí aplikace s vyvolána kontrola pravopisu. To je opraveno v rozhraní .NET Framework 4.7 WPF zpracováním výjimky řádně a tím zajistit, že aplikace již nejsou nepříznivě ovlivněny. Je třeba poznamenat, že příležitostné výjimky první šance by i nadále být pozorovány v aplikacích spuštěných v ladicím programu.|
+|Návrh|Upgrade na rozhraní .NET Framework 4.7|
+|Rozsah|Edge|
 |Version|4.6.1|
-|type|Modul runtime|
-
+|Typ|Modul runtime|

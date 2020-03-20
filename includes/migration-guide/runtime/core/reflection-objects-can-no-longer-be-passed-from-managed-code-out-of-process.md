@@ -1,18 +1,17 @@
 ---
-ms.openlocfilehash: d00f86c492a7d32344b1067a48c8e53aa2a43426
-ms.sourcegitcommit: d55e14eb63588830c0ba1ea95a24ce6c57ef8c8c
+ms.openlocfilehash: 38c774417fc94fa080bf2b82c04d575e9068cdcb
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/11/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "67858488"
 ---
-### <a name="reflection-objects-can-no-longer-be-passed-from-managed-code-to-out-of-process-dcom-clients"></a>Objekty reflexe lze předat už ze spravovaného kódu DCOM klientům mimo proces
+### <a name="reflection-objects-can-no-longer-be-passed-from-managed-code-to-out-of-process-dcom-clients"></a>Reflexní objekty již nelze předat ze spravovaného kódu klientům DCOM mimo proces.
 
 |   |   |
 |---|---|
-|Podrobnosti|Objekty reflexe je už předat ze spravovaného kódu DCOM klientům mimo proces. Jsou ovlivněny následující typy:<ul><li><xref:System.Reflection.Assembly?displayProperty=name></li><li><xref:System.Reflection.MemberInfo?displayProperty=name> (a jeho odvozeným typům, včetně <xref:System.Reflection.FieldInfo?displayProperty=name>, <xref:System.Reflection.MethodInfo?displayProperty=name>, <xref:System.Type?displayProperty=name>, a <xref:System.Reflection.TypeInfo?displayProperty=name>)</li><li><xref:System.Reflection.MethodBody?displayProperty=name></li><li><xref:System.Reflection.Module?displayProperty=name></li><li><xref:System.Reflection.ParameterInfo?displayProperty=name>.</li></ul>Volání <code>IMarshal</code> pro vrácení objektu <code>E_NOINTERFACE</code>.|
-|Doporučení|Aktualizace kódu zařazování pro práci s objekty bez reflexe|
-|Scope|Vedlejší|
+|Podrobnosti|Reflexní objekty již nelze předat ze spravovaného kódu klientům DCOM mimo proces. Ovlivněny jsou následující typy:<ul><li><xref:System.Reflection.Assembly?displayProperty=name></li><li><xref:System.Reflection.MemberInfo?displayProperty=name>(a jeho odvozené <xref:System.Reflection.FieldInfo?displayProperty=name>typy, <xref:System.Type?displayProperty=name>včetně <xref:System.Reflection.TypeInfo?displayProperty=name>, <xref:System.Reflection.MethodInfo?displayProperty=name>, a )</li><li><xref:System.Reflection.MethodBody?displayProperty=name></li><li><xref:System.Reflection.Module?displayProperty=name></li><li><xref:System.Reflection.ParameterInfo?displayProperty=name>.</li></ul>Volání <code>IMarshal</code> pro návrat <code>E_NOINTERFACE</code>objektu .|
+|Návrh|Aktualizace zařazovacího kódu pro práci s objekty bez odrazu|
+|Rozsah|Vedlejší|
 |Version|4.6|
-|type|Modul runtime|
-
+|Typ|Modul runtime|

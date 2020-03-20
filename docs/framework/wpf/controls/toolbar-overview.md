@@ -5,39 +5,39 @@ helpviewer_keywords:
 - controls [WPF], ToolBar
 - ToolBar control [WPF]
 ms.assetid: a8edb32c-118d-4f31-b6e6-8899082b504b
-ms.openlocfilehash: 460d4420d5faf849a8d05a94e0170aea384f69b4
-ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
+ms.openlocfilehash: b5498b8b88c7403ffe51256a57544261de3ace08
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77452692"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79186616"
 ---
 # <a name="toolbar-overview"></a>ToolBar – přehled
-ovládací prvky <xref:System.Windows.Controls.ToolBar> jsou kontejnery pro skupinu příkazů nebo ovládacích prvků, které obvykle souvisejí s jejich funkcí. <xref:System.Windows.Controls.ToolBar> obvykle obsahuje tlačítka, která vyvolávají příkazy.  
+<xref:System.Windows.Controls.ToolBar>ovládací prvky jsou kontejnery pro skupinu příkazů nebo ovládacích prvků, které jsou obvykle související v jejich funkci. Obvykle <xref:System.Windows.Controls.ToolBar> obsahuje tlačítka, která vyvolávají příkazy.  
 
-<a name="ToolBarControl"></a>   
+<a name="ToolBarControl"></a>
 ## <a name="toolbar-control"></a>ToolBar – ovládací prvek  
- Ovládací prvek <xref:System.Windows.Controls.ToolBar> přebírá svůj název z pruhu tlačítek nebo jiných ovládacích prvků na jeden řádek nebo sloupec. [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] <xref:System.Windows.Controls.ToolBar> ovládací prvky poskytují mechanismus přetečení, který umístí všechny položky, které nejsou přirozeně v rámci omezené velikosti <xref:System.Windows.Controls.ToolBar> do speciální oblasti přetečení. Také [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] <xref:System.Windows.Controls.ToolBar> ovládací prvky se obvykle používají spolu se souvisejícím ovládacím prvkem <xref:System.Windows.Controls.ToolBarTray>, který poskytuje speciální chování rozložení a také podporu pro uživatele iniciující změny velikosti a uspořádání panelů nástrojů.  
+ Ovládací <xref:System.Windows.Controls.ToolBar> prvek přenese svůj název z bar-jako uspořádání tlačítek nebo jiných ovládacích prvků do jednoho řádku nebo sloupce. [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]<xref:System.Windows.Controls.ToolBar> ovládací prvky poskytují mechanismus přetečení, který umísťuje <xref:System.Windows.Controls.ToolBar> všechny položky, které se přirozeně nevejdou do velikosti omezené, do zvláštní oblasti přetečení. Ovládací prvky se také <xref:System.Windows.Controls.ToolBarTray> obvykle používají s souvisejícím ovládacím prvkem, který poskytuje speciální chování rozložení, stejně jako podporu pro uživatelem iniciované změny velikosti a uspořádání panelů nástrojů. [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] <xref:System.Windows.Controls.ToolBar>  
   
-<a name="Creating_ToolBars"></a>   
-## <a name="specifying-the-position-of-toolbars-in-a-toolbartray"></a>Určení pozice panelů nástrojů v ovládacího prvku ToolBarTray  
- Pomocí vlastností <xref:System.Windows.Controls.ToolBar.Band%2A> a <xref:System.Windows.Controls.ToolBar.BandIndex%2A> umístěte <xref:System.Windows.Controls.ToolBar> do <xref:System.Windows.Controls.ToolBarTray>. <xref:System.Windows.Controls.ToolBar.Band%2A> určuje pozici, ve které je <xref:System.Windows.Controls.ToolBar> umístěn v rámci své nadřazené <xref:System.Windows.Controls.ToolBarTray>. <xref:System.Windows.Controls.ToolBar.BandIndex%2A> určuje pořadí, ve kterém se <xref:System.Windows.Controls.ToolBar> umístí do svého pásma. Následující příklad ukazuje, jak použít tuto vlastnost k umístění <xref:System.Windows.Controls.ToolBar> ovládacích prvků uvnitř <xref:System.Windows.Controls.ToolBarTray>.  
+<a name="Creating_ToolBars"></a>
+## <a name="specifying-the-position-of-toolbars-in-a-toolbartray"></a>Určení umístění panelů nástrojů v panelu nástrojů  
+ Pomocí <xref:System.Windows.Controls.ToolBar.Band%2A> vlastností a <xref:System.Windows.Controls.ToolBar.BandIndex%2A> <xref:System.Windows.Controls.ToolBar> umístěte <xref:System.Windows.Controls.ToolBarTray>v . <xref:System.Windows.Controls.ToolBar.Band%2A>označuje pozici, ve <xref:System.Windows.Controls.ToolBar> které je <xref:System.Windows.Controls.ToolBarTray>umístěn v rámci svého mateřského . <xref:System.Windows.Controls.ToolBar.BandIndex%2A>označuje pořadí, ve <xref:System.Windows.Controls.ToolBar> kterém je umístěn v jeho pásmu. Následující příklad ukazuje, jak použít <xref:System.Windows.Controls.ToolBar> tuto <xref:System.Windows.Controls.ToolBarTray>vlastnost k umístění ovládacích prvků uvnitř .  
   
  [!code-xaml[ToolBarExample#2](~/samples/snippets/csharp/VS_Snippets_Wpf/ToolBarExample/CS/Pane1.xaml#2)]  
   
-<a name="ToolBars_with_Overflow_Items"></a>   
+<a name="ToolBars_with_Overflow_Items"></a>
 ## <a name="toolbars-with-overflow-items"></a>Panely nástrojů s položkami přetečení  
- Často <xref:System.Windows.Controls.ToolBar> ovládací prvky obsahují více položek, než lze umístit do velikosti panelu nástrojů. Pokud k tomu dojde, zobrazí <xref:System.Windows.Controls.ToolBar> tlačítko přetečení. Chcete-li zobrazit položky přetečení, uživatel klikne na tlačítko přetečení a položky se zobrazí v překryvném okně pod <xref:System.Windows.Controls.ToolBar>. Následující obrázek ukazuje <xref:System.Windows.Controls.ToolBar> s položkami přetečení:  
+ Ovládací <xref:System.Windows.Controls.ToolBar> prvky často obsahují více položek, než se vejde do velikosti panelu nástrojů. V takovém případě <xref:System.Windows.Controls.ToolBar> se zobrazí tlačítko přetečení. Chcete-li zobrazit položky přetečení, uživatel klepne na tlačítko přetečení a <xref:System.Windows.Controls.ToolBar>položky jsou zobrazeny v rozbalovacím okně pod . Následující obrázek <xref:System.Windows.Controls.ToolBar> znázorňuje položky s přetečením:  
   
- ![Snímek obrazovky, který zobrazuje panel nástrojů s položkami přetečení.](./media/toolbar-overview/toolbar-overflow-items.png)  
+ ![Snímek obrazovky, který zobrazuje panel nástrojů s přetečením položek.](./media/toolbar-overview/toolbar-overflow-items.png)  
   
- Můžete určit, kdy se má položka na panelu nástrojů umístit na panel přetečení, nastavením vlastnosti <xref:System.Windows.Controls.ToolBar.OverflowMode%2A?displayProperty=nameWithType> připojeno na <xref:System.Windows.Controls.OverflowMode.Always?displayProperty=nameWithType>, <xref:System.Windows.Controls.OverflowMode.Never?displayProperty=nameWithType>nebo <xref:System.Windows.Controls.OverflowMode.AsNeeded?displayProperty=nameWithType>. Následující příklad určuje, že poslední čtyři tlačítka na panelu nástrojů by měla být vždy na panelu přetečení.  
+ Můžete určit, kdy bude položka na panelu nástrojů umístěna <xref:System.Windows.Controls.ToolBar.OverflowMode%2A?displayProperty=nameWithType> na panelu přetečení, nastavením připojené vlastnosti na <xref:System.Windows.Controls.OverflowMode.Always?displayProperty=nameWithType>, <xref:System.Windows.Controls.OverflowMode.Never?displayProperty=nameWithType>, nebo <xref:System.Windows.Controls.OverflowMode.AsNeeded?displayProperty=nameWithType>. Následující příklad určuje, že poslední čtyři tlačítka na panelu nástrojů by měla být vždy na panelu přetečení.  
   
  [!code-xaml[ToolBarExample#3](~/samples/snippets/csharp/VS_Snippets_Wpf/ToolBarExample/CS/Pane1.xaml#3)]  
   
- <xref:System.Windows.Controls.ToolBar> v <xref:System.Windows.Controls.ControlTemplate>používá <xref:System.Windows.Controls.Primitives.ToolBarPanel> a <xref:System.Windows.Controls.Primitives.ToolBarOverflowPanel>.  <xref:System.Windows.Controls.Primitives.ToolBarPanel> zodpovídá za rozložení položek na panelu nástrojů.  <xref:System.Windows.Controls.Primitives.ToolBarOverflowPanel> zodpovídá za rozložení položek, které se nevejdou do <xref:System.Windows.Controls.ToolBar>. Příklad <xref:System.Windows.Controls.ControlTemplate> pro <xref:System.Windows.Controls.ToolBar>najdete v tématu.  
+ Použití <xref:System.Windows.Controls.ToolBar> <xref:System.Windows.Controls.Primitives.ToolBarPanel> a a <xref:System.Windows.Controls.Primitives.ToolBarOverflowPanel> v <xref:System.Windows.Controls.ControlTemplate>jeho .  Je <xref:System.Windows.Controls.Primitives.ToolBarPanel> zodpovědný za rozložení položek na panelu nástrojů.  Je <xref:System.Windows.Controls.Primitives.ToolBarOverflowPanel> zodpovědný za rozložení položek, které se <xref:System.Windows.Controls.ToolBar>nevejdou na rozhraní . Příklad <xref:System.Windows.Controls.ControlTemplate> a <xref:System.Windows.Controls.ToolBar>for , viz  
   
- [Styly a šablony panelů nástrojů](toolbar-styles-and-templates.md).  
+ [Styly a šablony panelu nástrojů](toolbar-styles-and-templates.md).  
   
 ## <a name="see-also"></a>Viz také
 

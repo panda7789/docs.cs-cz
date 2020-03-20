@@ -1,19 +1,18 @@
 ---
-ms.openlocfilehash: c800b3fcc1eff5d7a669611cb0697aa8c87a37a4
-ms.sourcegitcommit: d55e14eb63588830c0ba1ea95a24ce6c57ef8c8c
+ms.openlocfilehash: e39b4e85b47902babac7a22a93aa64c2f86ef01f
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/11/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "67804656"
 ---
 ### <a name="dataobjectgetdata-now-retrieves-data-as-utf-8"></a>DataObject.GetData nyní načítá data jako UTF-8
 
 |   |   |
 |---|---|
-|Podrobnosti|Pro aplikace, které cílí na .NET Framework 4 nebo, na kterých běží na rozhraní .NET Framework 4.5.1 nebo starší <code>DataObject.GetData</code> načítá data ve formátu HTML jako řetězec ve formátu ASCII. Ne ASCII znaky (znaky jehož ASCII kódy jsou větší než 0x7F) v důsledku toho jsou reprezentované pomocí dvou náhodných znaků.<p/>Pro aplikace, které cílí .NET Framework 4.5 nebo novější a spustit v rozhraní .NET Framework 4.5.2 <code>DataObject.GetData</code> načítá data ve formátu HTML jako UTF-8, která představuje znaků, které jsou větší než 0x7F správně.|
-|Doporučení|Pokud jste implementovali řešení pro kódování problém s řetězce ve formátu HTML (například explicitně kódování HTML řetězec načtení ze schránky ji do <xref:System.Text.UTF8Encoding.GetString(System.Byte[],System.Int32,System.Int32)?displayProperty=name>) a při změně cíle vaší aplikace z verze 4 4.5, který alternativní řešení byste měli odebrat. Pokud z nějakého důvodu je potřeba staré chování, aplikace mohou cílit na .NET Framework 4.0 tohoto chování.|
-|Scope|Edge|
+|Podrobnosti|Pro aplikace, které cílí na rozhraní .NET Framework 4 nebo které běží <code>DataObject.GetData</code> v rozhraní .NET Framework 4.5.1 nebo starších verzích, načte data ve formátu HTML jako řetězec ASCII. V důsledku toho jsou znaky bez ASCII (znaky, jejichž kódy ASCII jsou větší než 0x7F) reprezentovány dvěma náhodnými znaky.<p/>Pro aplikace, které cílí na rozhraní .NET Framework 4.5 nebo novější <code>DataObject.GetData</code> a běží na rozhraní .NET Framework 4.5.2, načte data ve formátu HTML jako UTF-8, který představuje znaky větší než 0x7F správně.|
+|Návrh|Pokud jste implementovali řešení problému s kódováním s řetězci ve formátu HTML (například explicitně kódováním řetězce <xref:System.Text.UTF8Encoding.GetString(System.Byte[],System.Int32,System.Int32)?displayProperty=name>HTML načteného ze schránky předáním ) a znovu cílíte na aplikaci z verze 4 na 4.5, mělo by být toto řešení odebráno. Pokud staré chování je potřeba z nějakého důvodu, aplikace můžete cílit rozhraní .NET Framework 4.0 získat toto chování.|
+|Rozsah|Edge|
 |Version|4.5.2|
-|type|Změna cílení|
+|Typ|Změna cílení|
 |Ovlivněná rozhraní API|<ul><li><xref:System.Windows.DataObject.GetData(System.String)?displayProperty=nameWithType></li><li><xref:System.Windows.DataObject.GetData(System.Type)?displayProperty=nameWithType></li><li><xref:System.Windows.DataObject.GetData(System.String,System.Boolean)?displayProperty=nameWithType></li></ul>|
-

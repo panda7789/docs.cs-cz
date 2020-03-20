@@ -1,5 +1,5 @@
 ---
-title: Určení, kdy se mění atributy formátování v ovládacím prvku RichTextBox
+title: Určení změny atributů formátování v ovládacím prvku RichTextBox
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -11,21 +11,21 @@ helpviewer_keywords:
 - text boxes [Windows Forms], determining font changes
 - SelChange event
 ms.assetid: bdfed015-f77a-41e5-b38f-f8629b2fa166
-ms.openlocfilehash: f9b2a1028f79059ec7d4d6bf3683100455bb5dea
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: a190c3479b58464763e0eefdd32d14e88a1f05e1
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76746046"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79142261"
 ---
 # <a name="how-to-determine-when-formatting-attributes-change-in-the-windows-forms-richtextbox-control"></a>Postupy: Určení momentu změny atributů formátování v ovládacím prvku Windows Forms RichTextBox
-Běžné použití ovládacího prvku model Windows Forms <xref:System.Windows.Forms.RichTextBox> formátuje text s atributy, jako jsou možnosti písma nebo Odstavcové styly. Vaše aplikace může potřebovat sledovat všechny změny formátování textu pro účely zobrazení panelu nástrojů, stejně jako v mnoha aplikacích pro zpracování textu.  
+Ovládací prvek Formuláře <xref:System.Windows.Forms.RichTextBox> systému Windows běžně používá formátování textu s atributy, jako jsou volby písma nebo odstavcové styly. Aplikace může být nutné sledovat všechny změny ve formátování textu za účelem zobrazení panelu nástrojů, stejně jako v mnoha aplikacích pro zpracování textu.  
   
 ### <a name="to-respond-to-changes-in-formatting-attributes"></a>Reakce na změny atributů formátování  
   
-1. Napište kód v obslužné rutině události <xref:System.Windows.Forms.RichTextBox.SelectionChanged> k provedení příslušné akce v závislosti na hodnotě atributu. Následující příklad změní vzhled tlačítka panelu nástrojů v závislosti na hodnotě vlastnosti <xref:System.Windows.Forms.RichTextBox.SelectionBullet%2A>. Tlačítko panelu nástrojů bude aktualizováno pouze v případě, že je v ovládacím prvku přesunut kurzor.  
+1. Napište kód <xref:System.Windows.Forms.RichTextBox.SelectionChanged> v obslužné rutině události k provedení příslušné akce v závislosti na hodnotě atributu. Následující příklad změní vzhled tlačítka panelu nástrojů v <xref:System.Windows.Forms.RichTextBox.SelectionBullet%2A> závislosti na hodnotě vlastnosti. Tlačítko panelu nástrojů bude aktualizováno pouze v případě, že je kurzor přesunut v ovládacím prvku.  
   
-     Následující příklad předpokládá, že formulář obsahuje ovládací prvek <xref:System.Windows.Forms.RichTextBox> a ovládací prvek <xref:System.Windows.Forms.ToolBar>, který obsahuje tlačítko panelu nástrojů. Další informace o panelech nástrojů a tlačítkách panelu nástrojů naleznete v tématu [How to: Add Buttons on a Toolbar Control](how-to-add-buttons-to-a-toolbar-control.md).  
+     Následující příklad předpokládá formulář s <xref:System.Windows.Forms.RichTextBox> ovládacím <xref:System.Windows.Forms.ToolBar> prvkem a ovládacíprvek, který obsahuje tlačítko panelu nástrojů. Další informace o panelech nástrojů a tlačítkách panelu nástrojů naleznete v [tématu Postup: Přidání tlačítek do ovládacího prvku Panel nástrojů](how-to-add-buttons-to-a-toolbar-control.md).  
   
     ```vb  
     ' The following code assumes the existence of a toolbar control  
@@ -47,12 +47,12 @@ Běžné použití ovládacího prvku model Windows Forms <xref:System.Windows.F
     private void richTextBox1_SelectionChanged(object sender,  
     System.EventArgs e)  
     {  
-       if (richTextBox1.SelectionBullet == true)   
+       if (richTextBox1.SelectionBullet == true)
        {  
           // Bullet button on toolbar should appear pressed  
           toolBarButton1.Pushed = true;  
        }  
-       else   
+       else
        {  
           // Bullet button on toolbar should appear unpressed  
           toolBarButton1.Pushed = false;  

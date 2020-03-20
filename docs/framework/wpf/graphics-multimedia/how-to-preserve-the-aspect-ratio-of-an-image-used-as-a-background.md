@@ -6,40 +6,40 @@ helpviewer_keywords:
 - brushes [WPF], preserving aspect ratios of background images
 - background images [WPF], preserving aspect ratios
 ms.assetid: 28c39478-13d7-4011-80a3-8b9cc3e54478
-ms.openlocfilehash: 4ae6f1242548038bcd54b7218783e5063fa67872
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: b467fcd353994faef19b5a997e03d6582789eac1
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61921750"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79186035"
 ---
 # <a name="how-to-preserve-the-aspect-ratio-of-an-image-used-as-a-background"></a>Postupy: Zachování poměru stran u obrázku na pozadí
-Tento příklad ukazuje způsob použití <xref:System.Windows.Media.TileBrush.Stretch%2A> vlastnost <xref:System.Windows.Media.ImageBrush> aby bylo možné zachovat poměr stran obrázku.  
+Tento příklad ukazuje, <xref:System.Windows.Media.TileBrush.Stretch%2A> jak používat <xref:System.Windows.Media.ImageBrush> vlastnost k zachování poměru stran obrazu.  
   
- Ve výchozím nastavení při použití <xref:System.Windows.Media.ImageBrush> k vykreslení oblasti, jeho obsah roztáhne pro úplně naplnění výstupní oblasti. Při různých poměry stran mají výstupní oblasti a bitovou kopii, bitovou kopii je narušeny tento roztažení.  
+ Ve výchozím nastavení se <xref:System.Windows.Media.ImageBrush> její obsah při malování oblasti použije k malování oblasti a zcela vyplní výstupní oblast. Pokud má výstupní oblast a obraz různé poměry stran, obraz je tímto roztažením zkreslen.  
   
- Chcete-li <xref:System.Windows.Media.ImageBrush> zachování poměru stran jeho bitové kopie, nastavte <xref:System.Windows.Media.TileBrush.Stretch%2A> vlastnost <xref:System.Windows.Media.Stretch.Uniform> nebo <xref:System.Windows.Media.Stretch.UniformToFill>.  
+ Chcete-li <xref:System.Windows.Media.ImageBrush> zachovat poměr stran jeho obrazu, <xref:System.Windows.Media.Stretch.Uniform> nastavte <xref:System.Windows.Media.Stretch.UniformToFill> <xref:System.Windows.Media.TileBrush.Stretch%2A> vlastnost na nebo .  
   
 ## <a name="example"></a>Příklad  
- Následující příklad používá dva <xref:System.Windows.Media.ImageBrush> objekty k vykreslení dvou obdélníků. Každý obdélníku je 300 x 150 pixelů a každý obsahuje bitovou kopii 300 podle 300 pixelů. <xref:System.Windows.Media.TileBrush.Stretch%2A> První štětce je nastavena na <xref:System.Windows.Media.Stretch.Uniform>a <xref:System.Windows.Media.TileBrush.Stretch%2A> druhý štětce je nastavena na <xref:System.Windows.Media.Stretch.UniformToFill>.  
+ Následující příklad používá <xref:System.Windows.Media.ImageBrush> dva objekty k malování dvou obdélníků. Každý obdélník je 300 x 150 pixelů a každý obsahuje obraz 300 x 300 pixelů. Vlastnost <xref:System.Windows.Media.TileBrush.Stretch%2A> první stopy je <xref:System.Windows.Media.Stretch.Uniform>nastavena <xref:System.Windows.Media.TileBrush.Stretch%2A> na a vlastnost druhé <xref:System.Windows.Media.Stretch.UniformToFill>stopy je nastavena na .  
   
  [!code-csharp[UsingImageBrush_snip#ImageBrushStretchModesExampleWholePage](~/samples/snippets/csharp/VS_Snippets_Wpf/UsingImageBrush_snip/CSharp/StretchModes.cs#imagebrushstretchmodesexamplewholepage)]  
   
- Následující obrázek znázorňuje výstup první štětec, který má <xref:System.Windows.Media.TileBrush.Stretch%2A> nastavení <xref:System.Windows.Media.Stretch.Uniform>.  
+ Následující obrázek znázorňuje výstup první <xref:System.Windows.Media.TileBrush.Stretch%2A> stopy, <xref:System.Windows.Media.Stretch.Uniform>která má nastavení .  
   
- ![ImageBrush s jednotnou roztažení](./media/graphicsmm-imagebrushuniformstretch.jpg "graphicsmm_ImageBrushUniformStretch")  
+ ![ImageBrush s rovnoměrným roztažením](./media/graphicsmm-imagebrushuniformstretch.jpg "graphicsmm_ImageBrushUniformStretch")  
   
- Následující obrázek znázorňuje výstup druhý štětec, který má <xref:System.Windows.Media.TileBrush.Stretch%2A> nastavení <xref:System.Windows.Media.Stretch.UniformToFill>.  
+ Další obrázek znázorňuje výstup druhého <xref:System.Windows.Media.TileBrush.Stretch%2A> stopy, <xref:System.Windows.Media.Stretch.UniformToFill>který má nastavení .  
   
- ![ImageBrush s roztažením UniformToFill](./media/graphicsmm-imagebrushuniformtofillstretch.jpg "graphicsmm_ImageBrushUniformToFillStretch")  
+ ![ImageBrush s uniformyToFill strečink](./media/graphicsmm-imagebrushuniformtofillstretch.jpg "graphicsmm_ImageBrushUniformToFillStretch")  
   
- Všimněte si, že <xref:System.Windows.Media.TileBrush.Stretch%2A> vlastnost chová stejně jako pro ostatní <xref:System.Windows.Media.TileBrush> objekty, to znamená pro <xref:System.Windows.Media.DrawingBrush> a <xref:System.Windows.Media.VisualBrush>. Další informace o <xref:System.Windows.Media.ImageBrush> a druhý <xref:System.Windows.Media.TileBrush> objekty, najdete [Malování pomocí obrázků, kreseb a vizuálních](painting-with-images-drawings-and-visuals.md).  
+ Všimněte <xref:System.Windows.Media.TileBrush.Stretch%2A> si, že vlastnost se <xref:System.Windows.Media.TileBrush> chová stejně pro <xref:System.Windows.Media.DrawingBrush> <xref:System.Windows.Media.VisualBrush>ostatní objekty, to znamená pro a . Další informace <xref:System.Windows.Media.ImageBrush> o ostatních <xref:System.Windows.Media.TileBrush> objektech naleznete v [tématu Malování obrázky, kresbami a vizuály](painting-with-images-drawings-and-visuals.md).  
   
- Všimněte si také, že, i když <xref:System.Windows.Media.TileBrush.Stretch%2A> vlastnost se zobrazí, zadejte způsob, jak <xref:System.Windows.Media.TileBrush> obsah roztáhne podle jeho výstupní oblasti, ve skutečnosti určuje způsob, jak <xref:System.Windows.Media.TileBrush> obsahu úsecích tak, aby vyplnil svůj základní dlaždice. Další informace naleznete v tématu <xref:System.Windows.Media.TileBrush>.  
+ Všimněte si také, že i když se zdá, že <xref:System.Windows.Media.TileBrush.Stretch%2A> vlastnost určuje, jak se <xref:System.Windows.Media.TileBrush> obsah roztáhne tak, aby odpovídal výstupní oblasti, ve skutečnosti určuje, jak se <xref:System.Windows.Media.TileBrush> obsah roztáhne, aby vyplnil svou základní dlaždici. Další informace naleznete v tématu <xref:System.Windows.Media.TileBrush>.  
   
- Tento příklad kódu je součástí většího příkladu, která je k dispozici pro <xref:System.Windows.Media.ImageBrush> třídy. Úplnou ukázku najdete v tématu [ImageBrush ukázka](https://go.microsoft.com/fwlink/?LinkID=160005).  
+ Tento příklad kódu je součástí většípříklad, který <xref:System.Windows.Media.ImageBrush> je k dispozici pro třídu. Kompletní ukázku naleznete v tématu [ImageBrush Sample](https://github.com/Microsoft/WPF-Samples/tree/master/Graphics/ImageBrush).  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Media.TileBrush>
 - [Malování pomocí obrázků, kreseb a vizuálních objektů](painting-with-images-drawings-and-visuals.md)

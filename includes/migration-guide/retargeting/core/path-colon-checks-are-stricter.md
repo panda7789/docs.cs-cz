@@ -1,19 +1,18 @@
 ---
-ms.openlocfilehash: 7f551fbc194d2da2fdae6bcc7025c20b03aadda2
-ms.sourcegitcommit: d55e14eb63588830c0ba1ea95a24ce6c57ef8c8c
+ms.openlocfilehash: a51738fa75ba2dd4574549fce2570df8231c4cae
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/11/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "67859284"
 ---
-### <a name="path-colon-checks-are-stricter"></a>Byly přísnější kontroly dvojtečka cesta
+### <a name="path-colon-checks-are-stricter"></a>Kontroly dvojtečky cesty jsou přísnější
 
 |   |   |
 |---|---|
-|Podrobnosti|V rozhraní .NET Framework 4.6.2 počet změn nebyly zadány podporují dříve nepodporované cesty (jak formát a). Kontroly syntaxe správná jednotka oddělovač (dvojtečka) byly provedeny více správné, který má vedlejší účinek blokování některé cesty identifikátoru URI v několika vyberte rozhraní API cesta kde používají tolerovat.|
-|Doporučení|Pokud předávání identifikátorů URI pro ovlivněné rozhraní API, upravte řetězec, který má být nejprve právní cesta.<ul><li>Schéma ručně odebrat z adres URL (třeba odebrat <code>file://</code> z adresy URL)</li><li>Předat identifikátor URI <xref:System.Uri> třídy a použití <xref:System.Uri.LocalPath></li></ul>Alternativně můžete zrušit nové normalizace cestu tak, že nastavíte <code>Switch.System.IO.UseLegacyPathHandling</code> přepínač AppContext na hodnotu true.|
-|Scope|Edge|
+|Podrobnosti|V rozhraní .NET Framework 4.6.2 byla provedena řada změn pro podporu dříve nepodporovaných cest (v délce i formátu). Kontroly správné syntaxe oddělovače jednotek (dvojtečka) byly provedeny více správné, což mělo vedlejší účinek blokování některých cest URI v několika vybraných rozhraní chodišti rozhraní API, kde byly tolerovány.|
+|Návrh|Pokud předání identifikátoru URI ovlivněným souborům API upravte nejprve řetězec jako legální cestu.<ul><li>Ruční odebrání schématu z adres URL (např. odebrání <code>file://</code> z adres URL)</li><li>Předat identifikátor URI <xref:System.Uri> do třídy a použít<xref:System.Uri.LocalPath></li></ul>Případně můžete odhlásit z normalizace nové cesty <code>Switch.System.IO.UseLegacyPathHandling</code> nastavením AppContext přepínač true.|
+|Rozsah|Edge|
 |Version|4.6.2|
-|type|Změna cílení|
+|Typ|Změna cílení|
 |Ovlivněná rozhraní API|<ul><li><xref:System.IO.Path.GetDirectoryName(System.String)?displayProperty=nameWithType></li><li><xref:System.IO.Path.GetPathRoot(System.String)?displayProperty=nameWithType></li></ul>|
-

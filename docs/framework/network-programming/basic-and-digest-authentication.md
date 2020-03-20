@@ -20,16 +20,16 @@ helpviewer_keywords:
 - user authentication, digest
 ms.assetid: 8cce2742-8d52-4643-9dd2-64ddf38aa878
 ms.openlocfilehash: 9a1ad701e1e8f4ee9966ebd56922c29e2bae7a03
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "71048904"
 ---
 # <a name="basic-and-digest-authentication"></a>Základní ověřování a ověřování hodnotou hash
-<xref:System.Net> Implementace základního ověřování a ověřování algoritmem Digest vyhovuje RFC2617 – ověřování http: Základní ověřování a ověřování algoritmem Digest (k dispozici na webu [konsorcium World Wide Web](https://www.w3.org) ).  
+Implementace <xref:System.Net> základního ověřování a ověřování algoritmem Digest je v souladu s protokolem RFC2617 – Ověřování HTTP: Základní a ověřování algoritmem Digest (k dispozici na webu [konsorcia World Wide Web Consortium).](https://www.w3.org)  
   
- Chcete-li použít základní ověřování a ověřování algoritmem Digest, aplikace musí zadat uživatelské jméno a <xref:System.Net.WebRequest.Credentials%2A> heslo ve vlastnosti <xref:System.Net.WebRequest> objektu, který používá k vyžádání dat z Internetu, jak je znázorněno v následujícím příkladu.  
+ Chcete-li použít základní a digest ověřování, aplikace musí <xref:System.Net.WebRequest.Credentials%2A> poskytnout <xref:System.Net.WebRequest> uživatelské jméno a heslo ve vlastnosti objektu, který používá k vyžádání dat z Internetu, jak je znázorněno v následujícím příkladu.  
   
 ```vb  
 Dim MyURI As String = "http://www.contoso.com/"  
@@ -44,9 +44,9 @@ WReq.Credentials = new NetworkCredential(UserName, SecurelyStoredPassword);
 ```  
   
 > [!CAUTION]
-> Data odesílaná pomocí základního ověřování a ověřování algoritmem Digest nejsou šifrována, takže je lze zobrazit pomocí nežádoucí osoba. Navíc se přihlašovací údaje základního ověřování (uživatelské jméno a heslo) odesílají jasně a je možné je zachytit.  
+> Data odeslaná pomocí základního ověřování a ověřování algoritmem Digest nejsou šifrována, takže je může vidět protivník. Kromě toho základní ověřování pověření (uživatelské jméno a heslo) jsou odesílány v vymazat a mohou být zachyceny.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Ověřování NTLM a Kerberos](ntlm-and-kerberos-authentication.md)
 - [Ověřování v internetu](internet-authentication.md)

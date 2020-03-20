@@ -1,5 +1,5 @@
 ---
-title: Bezpečnější soubor a přístup k datům
+title: Bezpečnější přístup k souborům a datům
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -13,50 +13,50 @@ helpviewer_keywords:
 - file access [Windows Forms]
 - security [Windows Forms], data access
 ms.assetid: 3cd3e55b-2f5e-40dd-835d-f50f7ce08967
-ms.openlocfilehash: 49ba1919f68f35e9d72b012540b785e05c307c39
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: a29c2f7137440e64fbf8095f77d5d10d0505bc2d
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76743747"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79185902"
 ---
 # <a name="more-secure-file-and-data-access-in-windows-forms"></a>Více zabezpečený přístup k souborům a datům ve Windows Forms
-.NET Framework používá oprávnění, která vám pomůžou chránit prostředky a data. Kde vaše aplikace může číst nebo zapisovat data, závisí na oprávněních udělených aplikaci. Pokud vaše aplikace běží v prostředí s částečným vztahem důvěryhodnosti, možná nemáte přístup k vašim datům nebo možná budete muset změnit způsob, jakým přistupujete k datům.  
+Rozhraní .NET Framework používá oprávnění k ochraně prostředků a dat. Kde vaše aplikace může číst nebo zapisovat data závisí na oprávnění udělených aplikaci. Při spuštění aplikace v prostředí částečné důvěryhodnosti, pravděpodobně nemáte přístup k datům nebo budete muset změnit způsob přístupu k datům.  
   
- Pokud narazíte na omezení zabezpečení, máte dvě možnosti: vyhodnotit oprávnění (za předpokladu, že byla aplikace udělena), nebo použít verzi funkce zapsanou pro práci v částečném vztahu důvěryhodnosti. Následující části popisují, jak pracovat s přístupem k souborům, databázím a registrům z aplikací, které běží v prostředí s částečným vztahem důvěryhodnosti.  
+ Pokud narazíte na omezení zabezpečení, máte dvě možnosti: uplatnit oprávnění (za předpokladu, že byla udělena vaší aplikaci) nebo použít verzi funkce napsané pro práci v částečném vztahu důvěryhodnosti. Následující části popisují, jak pracovat s přístupem k souborům, databázím a registru z aplikací spuštěných v prostředí s částečnou důvěryhodností.  
   
 > [!NOTE]
-> Ve výchozím nastavení nástroje, které generují nasazení ClickOnce, jsou ve výchozím nastavení tato nasazení, aby požadovaly úplný vztah důvěryhodnosti z počítačů, ve kterých jsou spuštěny. Pokud se rozhodnete, že chcete přidané výhody zabezpečení spouštět v částečném vztahu důvěryhodnosti, je nutné změnit toto výchozí nastavení buď v aplikaci Visual Studio, nebo v některém z Windows SDKch nástrojů (Mage. exe nebo MageUI. exe). Další informace o zabezpečení model Windows Forms a o tom, jak určit odpovídající úroveň důvěryhodnosti pro vaši aplikaci, najdete v tématu [zabezpečení v model Windows Forms přehledu](security-in-windows-forms-overview.md).  
+> Ve výchozím nastavení nástroje, které generují nasazení ClickOnce, ve výchozím nastavení tato nasazení požadují úplné důvěryhodnosti z počítačů, ve kterých jsou spuštěny. Pokud se rozhodnete, že chcete přidat výhody zabezpečení spuštění v částečném vztahu důvěryhodnosti, musíte změnit toto výchozí nastavení v sadě Visual Studio nebo v jednom z nástrojů sady Windows SDK (Mage.exe nebo MageUI.exe). Další informace o zabezpečení formulářů Windows Forms a o určení odpovídající úrovně důvěryhodnosti aplikace naleznete [v tématu Zabezpečení v Přehledu formulářů systému Windows](security-in-windows-forms-overview.md).  
   
 ## <a name="file-access"></a>Přístup k souborům  
- Třída <xref:System.Security.Permissions.FileIOPermission> řídí přístup k souborům a složkám v .NET Framework. Ve výchozím nastavení systém zabezpečení neuděluje <xref:System.Security.Permissions.FileIOPermission> do prostředí s částečným vztahem důvěryhodnosti, jako je například místní intranet nebo zóna Internet. Aplikace, která vyžaduje přístup k souborům, ale v těchto prostředích můžou pořád fungovat, pokud upravíte návrh aplikace nebo pro přístup k souborům použijete jiné metody. Ve výchozím nastavení má zóna Místní intranet právo mít stejný přístup k webu a stejný přístup k adresáři, aby se mohl připojit zpátky k původnímu serveru a číst z jeho instalačního adresáře. Ve výchozím nastavení je v zóně Internet uděleno právo na zpětné připojení k původnímu serveru.  
+ Třída <xref:System.Security.Permissions.FileIOPermission> řídí přístup k souborům a složkám v rozhraní .NET Framework. Ve výchozím nastavení systém zabezpečení <xref:System.Security.Permissions.FileIOPermission> neuděluje prostředí částečné důvěryhodnosti, jako je například místní intranet a internetové zóny. Aplikace, která vyžaduje přístup k souborům, však může v těchto prostředích stále fungovat, pokud změníte návrh aplikace nebo pro přístup k souborům použijete různé metody. Ve výchozím nastavení je místní intranetové zóně uděleno právo mít stejný přístup k webu a stejný přístup k adresáři, připojit se zpět k webu svého původu a číst z instalačního adresáře. Ve výchozím nastavení je internetové zóně uděleno pouze právo připojit se zpět k místu, kde je původ.  
   
 ### <a name="user-specified-files"></a>Soubory zadané uživatelem  
- Jedním ze způsobů, jak se zabývat neoprávněným oprávněním k přístupu k souborům, je vyzvat uživatele k zadání konkrétních informací o souboru pomocí třídy <xref:System.Windows.Forms.OpenFileDialog> nebo <xref:System.Windows.Forms.SaveFileDialog>. Tato interakce uživatele pomáhá zajistit určitou jistotu, že aplikace nemůže škodlivým způsobem načíst soukromé soubory nebo přepsat důležité soubory. Metody <xref:System.Windows.Forms.OpenFileDialog.OpenFile%2A> a <xref:System.Windows.Forms.SaveFileDialog.OpenFile%2A> poskytují přístup pro čtení a zápis souborů otevřením datového proudu souboru pro soubor, který zadal uživatel. Metody také pomůžou chránit soubor uživatele tím, že zakrývá cestu k souboru.  
+ Jedním ze způsobů, jak se vypořádat s tím, že nemáte <xref:System.Windows.Forms.OpenFileDialog> oprávnění <xref:System.Windows.Forms.SaveFileDialog> k přístupu k souborům, je vyzvat uživatele k zadání konkrétních informací o souboru pomocí třídy nebo. Tato interakce s uživatelem pomáhá poskytnout určitou jistotu, že aplikace nemůže zlomyslně načíst soukromé soubory nebo přepsat důležité soubory. Metody <xref:System.Windows.Forms.OpenFileDialog.OpenFile%2A> <xref:System.Windows.Forms.SaveFileDialog.OpenFile%2A> a poskytují přístup k souborům pro čtení a zápis otevřením datového proudu souboru pro soubor, který uživatel zadal. Metody také pomáhají chránit soubor uživatele tím, že zakrývají cestu k souboru.  
   
 > [!NOTE]
-> Tato oprávnění se liší v závislosti na tom, jestli je vaše aplikace v zóně Internet nebo intranetu. Aplikace internetové zóny můžou používat jenom <xref:System.Windows.Forms.OpenFileDialog>, zatímco intranetové aplikace mají oprávnění dialogové okno neomezený soubor.  
+> Tato oprávnění se liší v závislosti na tom, zda je aplikace v zóně Internet nebo Intranet. Aplikace zóny Internetu mohou <xref:System.Windows.Forms.OpenFileDialog>používat pouze aplikace , zatímco aplikace intranetu mají oprávnění k dialogovému oknu bez omezení.  
   
- Třída <xref:System.Security.Permissions.FileDialogPermission> určuje, který typ souboru dialogové okno může vaše aplikace používat. V následující tabulce je uvedena hodnota, kterou je nutné použít k použití každé <xref:System.Windows.Forms.FileDialog> třídy.  
+ Třída <xref:System.Security.Permissions.FileDialogPermission> určuje, jaký typ dialogového okna souboru může aplikace použít. V následující tabulce je uvedena hodnota, <xref:System.Windows.Forms.FileDialog> kterou musíte použít pro každou třídu.  
   
-|Třída|Požadovaná přístupová hodnota|  
+|Třída|Požadovaná hodnota přístupu|  
 |-----------|---------------------------|  
 |<xref:System.Windows.Forms.OpenFileDialog>|<xref:System.Security.Permissions.FileDialogPermissionAccess.Open>|  
 |<xref:System.Windows.Forms.SaveFileDialog>|<xref:System.Security.Permissions.FileDialogPermissionAccess.Save>|  
   
 > [!NOTE]
-> Konkrétní oprávnění není vyžádáno, dokud není ve skutečnosti volána metoda <xref:System.Windows.Forms.OpenFileDialog.OpenFile%2A>.  
+> Konkrétní oprávnění není požadováno, <xref:System.Windows.Forms.OpenFileDialog.OpenFile%2A> dokud je metoda skutečně volána.  
   
- Oprávnění k zobrazení dialogového okna soubor neuděluje vaší aplikaci úplný přístup ke všem členům třídy <xref:System.Windows.Forms.FileDialog>, <xref:System.Windows.Forms.OpenFileDialog>a <xref:System.Windows.Forms.SaveFileDialog>. Přesné oprávnění, která jsou vyžadována pro volání jednotlivých metod, naleznete v referenčním tématu pro danou metodu v dokumentaci knihovny tříd .NET Framework.  
+ Oprávnění k zobrazení dialogového okna souboru neuděluje aplikaci <xref:System.Windows.Forms.FileDialog> <xref:System.Windows.Forms.OpenFileDialog>úplný <xref:System.Windows.Forms.SaveFileDialog> přístup všem členům tříd , a tříd. Přesná oprávnění, která jsou vyžadována pro volání jednotlivých metod, naleznete v referenčním tématu pro tuto metodu v dokumentaci ke knihovně tříd rozhraní .NET Framework.  
   
- Následující příklad kódu používá metodu <xref:System.Windows.Forms.OpenFileDialog.OpenFile%2A> k otevření uživatelem zadaného souboru do ovládacího prvku <xref:System.Windows.Forms.RichTextBox>. Příklad vyžaduje <xref:System.Security.Permissions.FileDialogPermission> a přidruženou hodnotu výčtu <xref:System.Security.Permissions.FileDialogPermissionAttribute.Open%2A>. Tento příklad ukazuje, jak zpracovat <xref:System.Security.SecurityException>, abyste zjistili, zda by měla být funkce Uložit zakázána. Tento příklad vyžaduje, aby váš <xref:System.Windows.Forms.Form> měl ovládací prvek <xref:System.Windows.Forms.Button> s názvem `ButtonOpen`a ovládací prvek <xref:System.Windows.Forms.RichTextBox> s názvem `RtfBoxMain`.  
+ Následující příklad kódu <xref:System.Windows.Forms.OpenFileDialog.OpenFile%2A> používá metodu k otevření souboru zadaného uživatelem do ovládacího <xref:System.Windows.Forms.RichTextBox> prvku. Příklad vyžaduje <xref:System.Security.Permissions.FileDialogPermission> a <xref:System.Security.Permissions.FileDialogPermissionAttribute.Open%2A> související výčtu hodnotu. Příklad ukazuje, jak zpracovat <xref:System.Security.SecurityException> určit, zda má být zakázána funkce ukládání. Tento příklad vyžaduje, <xref:System.Windows.Forms.Button> aby `ButtonOpen`váš <xref:System.Windows.Forms.Form> má <xref:System.Windows.Forms.RichTextBox> ovládací `RtfBoxMain`prvek s názvem a ovládací prvek s názvem .  
   
 > [!NOTE]
-> V tomto příkladu není zobrazená logika programování pro funkci uložit.  
+> Programovací logika pro funkci uložení není uvedena v příkladu.  
   
 ```vb  
 Private Sub ButtonOpen_Click(ByVal sender As System.Object, _  
-    ByVal e As System.EventArgs) Handles ButtonOpen.Click   
+    ByVal e As System.EventArgs) Handles ButtonOpen.Click
   
     Dim editingFileName as String = ""  
     Dim saveAllowed As Boolean = True  
@@ -64,9 +64,9 @@ Private Sub ButtonOpen_Click(ByVal sender As System.Object, _
     ' Displays the OpenFileDialog.  
     If (OpenFileDialog1.ShowDialog() = DialogResult.OK) Then  
         Dim userStream as System.IO.Stream  
-        Try   
+        Try
             ' Opens the file stream for the file selected by the user.  
-            userStream =OpenFileDialog1.OpenFile()   
+            userStream =OpenFileDialog1.OpenFile()
             Me.RtfBoxMain.LoadFile(userStream, _  
                 RichTextBoxStreamType.PlainText)  
         Finally  
@@ -76,14 +76,14 @@ Private Sub ButtonOpen_Click(ByVal sender As System.Object, _
         ' Tries to get the file name selected by the user.  
         ' Failure means that the application does not have  
         ' unrestricted permission to the file.  
-        Try   
+        Try
             editingFileName = OpenFileDialog1.FileName  
         Catch ex As Exception  
-            If TypeOf ex Is System.Security.SecurityException Then   
-                ' The application does not have unrestricted permission   
+            If TypeOf ex Is System.Security.SecurityException Then
+                ' The application does not have unrestricted permission
                 ' to the file so the save feature will be disabled.  
-                saveAllowed = False   
-            Else   
+                saveAllowed = False
+            Else
                 Throw ex  
             End If  
         End Try  
@@ -92,16 +92,16 @@ End Sub
 ```  
   
 ```csharp  
-private void ButtonOpen_Click(object sender, System.EventArgs e)   
+private void ButtonOpen_Click(object sender, System.EventArgs e)
 {  
     String editingFileName = "";  
     Boolean saveAllowed = true;  
   
     // Displays the OpenFileDialog.  
-    if (openFileDialog1.ShowDialog() == DialogResult.OK)   
+    if (openFileDialog1.ShowDialog() == DialogResult.OK)
     {  
         // Opens the file stream for the file selected by the user.  
-        using (System.IO.Stream userStream = openFileDialog1.OpenFile())   
+        using (System.IO.Stream userStream = openFileDialog1.OpenFile())
         {  
             this.RtfBoxMain.LoadFile(userStream,  
                 RichTextBoxStreamType.PlainText);  
@@ -111,19 +111,19 @@ private void ButtonOpen_Click(object sender, System.EventArgs e)
         // Tries to get the file name selected by the user.  
         // Failure means that the application does not have  
         // unrestricted permission to the file.  
-        try   
+        try
         {  
             editingFileName = openFileDialog1.FileName;  
-        }   
-        catch (Exception ex)   
+        }
+        catch (Exception ex)
         {  
-            if (ex is System.Security.SecurityException)   
+            if (ex is System.Security.SecurityException)
             {  
-                // The application does not have unrestricted permission   
+                // The application does not have unrestricted permission
                 // to the file so the save feature will be disabled.  
-                saveAllowed = false;   
-            }   
-            else   
+                saveAllowed = false;
+            }
+            else
             {  
                 throw ex;  
             }  
@@ -133,19 +133,19 @@ private void ButtonOpen_Click(object sender, System.EventArgs e)
 ```  
   
 > [!NOTE]
-> V vizuálu C#se ujistěte, že přidáte kód pro povolení obslužné rutiny události. Pomocí kódu z předchozího příkladu následující kód ukazuje, jak povolit obslužnou rutinu události.`this.ButtonOpen.Click += newSystem.Windows.Forms.EventHandler(this.ButtonOpen_Click);`  
+> V jazyce Visual C# se ujistěte, že přidáte kód pro povolení obslužné rutiny události. Pomocí kódu z předchozího příkladu následující kód ukazuje, jak povolit obslužnou rutinu události.`this.ButtonOpen.Click += newSystem.Windows.Forms.EventHandler(this.ButtonOpen_Click);`  
   
-### <a name="other-files"></a>Jiné soubory  
- Někdy budete muset číst soubory nebo zapisovat do souborů, které uživatel nezadá, například když musíte zachovat nastavení aplikace. V zóně Místní intranet a Internet nebude vaše aplikace mít oprávnění ukládat data do místního souboru. Vaše aplikace však bude moci ukládat data v izolovaném úložišti. Izolované úložiště je abstraktní datové pole (nejedná se o konkrétní umístění úložiště), které obsahuje jeden nebo víc souborů izolovaného úložiště nazývaných obchody, které obsahují skutečná umístění adresářů, kde jsou data uložená. Oprávnění pro přístup k souborům, jako je <xref:System.Security.Permissions.FileIOPermission>, se nevyžadují. místo toho <xref:System.Security.Permissions.IsolatedStoragePermission> Třída řídí oprávnění pro izolované úložiště. Ve výchozím nastavení můžou aplikace, které běží v místních intranetech a zónách Internetu, ukládat data pomocí izolovaného úložiště; nastavení, jako je disková kvóta, se ale může lišit. Další informace o izolovaném úložišti najdete v tématu [izolované úložiště](../../standard/io/isolated-storage.md).  
+### <a name="other-files"></a>Další soubory  
+ Někdy budete muset číst nebo zapisovat do souborů, které uživatel nezadá, například když je nutné zachovat nastavení aplikace. V místních intranetových a internetových zónách nebude mít aplikace oprávnění k ukládání dat do místního souboru. Vaše aplikace však bude moci ukládat data v izolovaném úložišti. Izolované úložiště je abstraktní datový oddíl (nikoli konkrétní umístění úložiště), který obsahuje jeden nebo více izolovaných souborů úložiště, nazývaných úložiště, které obsahují skutečná umístění adresářů, kde jsou uložena data. Oprávnění pro <xref:System.Security.Permissions.FileIOPermission> přístup k souborům nejsou vyžadována. místo toho <xref:System.Security.Permissions.IsolatedStoragePermission> třída řídí oprávnění pro izolované úložiště. Ve výchozím nastavení mohou aplikace spuštěné v místních intranetových a internetových zónách ukládat data pomocí izolovaného úložiště. Nastavení, jako je disková kvóta, se však mohou lišit. Další informace o izolovaném úložišti naleznete v [tématu Izolované úložiště](../../standard/io/isolated-storage.md).  
   
- Následující příklad používá izolované úložiště k zápisu dat do souboru umístěného v úložišti. Příklad vyžaduje <xref:System.Security.Permissions.IsolatedStorageFilePermission> a hodnotu výčtu <xref:System.Security.Permissions.IsolatedStorageContainment.DomainIsolationByUser>. Příklad ukazuje čtení a zápis určitých hodnot vlastností ovládacího prvku <xref:System.Windows.Forms.Button> do souboru v izolovaném úložišti. Funkce `Read` by byla volána po spuštění aplikace a funkce `Write` by byla volána před ukončením aplikace. Příklad vyžaduje, aby funkce `Read` a `Write` existovaly jako členové <xref:System.Windows.Forms.Form>, který obsahuje ovládací prvek <xref:System.Windows.Forms.Button> s názvem `MainButton`.  
+ Následující příklad používá izolované úložiště k zápisu dat do souboru umístěného v úložišti. Příklad vyžaduje <xref:System.Security.Permissions.IsolatedStorageFilePermission> a <xref:System.Security.Permissions.IsolatedStorageContainment.DomainIsolationByUser> hodnotu výčtu. Příklad ukazuje čtení a zápis určitých <xref:System.Windows.Forms.Button> hodnot vlastností ovládacího prvku do souboru v izolovaném úložišti. Funkce `Read` bude volána po spuštění `Write` aplikace a funkce bude volána před ukončením aplikace. Příklad vyžaduje, `Read` aby `Write` funkce a existovaly jako <xref:System.Windows.Forms.Button> členové `MainButton`ovládacího <xref:System.Windows.Forms.Form> prvku, který obsahuje ovládací prvek s názvem .  
   
 ```vb  
-' Reads the button options from the isolated storage. Uses Default values   
+' Reads the button options from the isolated storage. Uses Default values
 ' for the button if the options file does not exist.  
-Public Sub Read()   
+Public Sub Read()
     Dim isoStore As System.IO.IsolatedStorage.IsolatedStorageFile = _  
-        System.IO.IsolatedStorage.IsolatedStorageFile. _   
+        System.IO.IsolatedStorage.IsolatedStorageFile. _
         GetUserStoreForDomain()  
   
     Dim filename As String = "options.txt"  
@@ -154,28 +154,28 @@ Public Sub Read()
         If (isoStore.GetFileNames(filename).GetLength(0) <> 0) Then  
   
             ' Opens the file because it exists.  
-            Dim isos As New System.IO.IsolatedStorage.IsolatedStorageFileStream _   
+            Dim isos As New System.IO.IsolatedStorage.IsolatedStorageFileStream _
                  (filename, IO.FileMode.Open,isoStore)  
             Dim reader as System.IO.StreamReader  
-            Try   
+            Try
                 reader = new System.IO.StreamReader(isos)  
   
                 ' Reads the values stored.  
                 Dim converter As System.ComponentModel.TypeConverter  
-                converter = System.ComponentModel.TypeDescriptor.GetConverter _   
+                converter = System.ComponentModel.TypeDescriptor.GetConverter _
                     (GetType(Color))  
   
-                Me.MainButton.BackColor = _   
-                        CType(converter.ConvertFromString _   
+                Me.MainButton.BackColor = _
+                        CType(converter.ConvertFromString _
                          (reader.ReadLine()), Color)  
                 me.MainButton.ForeColor = _  
-                        CType(converter.ConvertFromString _   
+                        CType(converter.ConvertFromString _
                          (reader.ReadLine()), Color)  
   
-                converter = System.ComponentModel.TypeDescriptor.GetConverter _   
+                converter = System.ComponentModel.TypeDescriptor.GetConverter _
                     (GetType(Font))  
                 me.MainButton.Font = _  
-                        CType(converter.ConvertFromString _   
+                        CType(converter.ConvertFromString _
                          (reader.ReadLine()), Font)  
   
             Catch ex As Exception  
@@ -192,13 +192,13 @@ Public Sub Read()
 End Sub  
   
 ' Writes the button options to the isolated storage.  
-Public Sub Write()   
+Public Sub Write()
     Dim isoStore As System.IO.IsolatedStorage.IsolatedStorageFile = _  
-        System.IO.IsolatedStorage.IsolatedStorageFile. _   
+        System.IO.IsolatedStorage.IsolatedStorageFile. _
         GetUserStoreForDomain()  
   
     Dim filename As String = "options.txt"  
-    Try   
+    Try
         ' Checks if the file exists, and if it does, tries to delete it.  
         If (isoStore.GetFileNames(filename).GetLength(0) <> 0) Then  
             isoStore.DeleteFile(filename)  
@@ -209,21 +209,21 @@ Public Sub Write()
   
     ' Creates the options.txt file and writes the button options to it.  
     Dim writer as System.IO.StreamWriter  
-    Try   
-        Dim isos As New System.IO.IsolatedStorage.IsolatedStorageFileStream _   
+    Try
+        Dim isos As New System.IO.IsolatedStorage.IsolatedStorageFileStream _
              (filename, IO.FileMode.CreateNew, isoStore)  
   
         writer = New System.IO.StreamWriter(isos)  
         Dim converter As System.ComponentModel.TypeConverter  
   
-        converter = System.ComponentModel.TypeDescriptor.GetConverter _   
+        converter = System.ComponentModel.TypeDescriptor.GetConverter _
            (GetType(Color))  
         writer.WriteLine(converter.ConvertToString( _  
             Me.MainButton.BackColor))  
         writer.WriteLine(converter.ConvertToString( _  
             Me.MainButton.ForeColor))  
   
-        converter = System.ComponentModel TypeDescriptor.GetConverter _   
+        converter = System.ComponentModel TypeDescriptor.GetConverter _
            (GetType(Font))  
         writer.WriteLine(converter.ConvertToString( _  
             Me.MainButton.Font))  
@@ -238,11 +238,11 @@ End Sub
 ```  
   
 ```csharp  
-// Reads the button options from the isolated storage. Uses default values   
+// Reads the button options from the isolated storage. Uses default values
 // for the button if the options file does not exist.  
-public void Read()   
+public void Read()
 {  
-    System.IO.IsolatedStorage.IsolatedStorageFile isoStore =   
+    System.IO.IsolatedStorage.IsolatedStorageFile isoStore =
         System.IO.IsolatedStorage.IsolatedStorageFile.  
         GetUserStoreForDomain();  
   
@@ -250,14 +250,14 @@ public void Read()
     try  
     {  
         // Checks to see if the options.txt file exists.  
-        if (isoStore.GetFileNames(filename).GetLength(0) != 0)   
+        if (isoStore.GetFileNames(filename).GetLength(0) != 0)
         {  
             // Opens the file because it exists.  
-            System.IO.IsolatedStorage.IsolatedStorageFileStream isos =   
+            System.IO.IsolatedStorage.IsolatedStorageFileStream isos =
                 new System.IO.IsolatedStorage.IsolatedStorageFileStream  
                     (filename, System.IO.FileMode.Open,isoStore);  
             System.IO.StreamReader reader = null;  
-            try   
+            try
             {  
                 reader = new System.IO.StreamReader(isos);  
   
@@ -265,17 +265,17 @@ public void Read()
                 TypeConverter converter ;  
                 converter = TypeDescriptor.GetConverter(typeof(Color));  
   
-                this.MainButton.BackColor =   
+                this.MainButton.BackColor =
                  (Color)(converter.ConvertFromString(reader.ReadLine()));  
-                this.MainButton.ForeColor =   
+                this.MainButton.ForeColor =
                  (Color)(converter.ConvertFromString(reader.ReadLine()));  
   
                 converter = TypeDescriptor.GetConverter(typeof(Font));  
-                this.MainButton.Font =   
+                this.MainButton.Font =
                   (Font)(converter.ConvertFromString(reader.ReadLine()));  
             }  
             catch (Exception ex)  
-            {   
+            {
                 System.Diagnostics.Debug.WriteLine  
                      ("Cannot read options " + ex.ToString());  
             }  
@@ -284,8 +284,8 @@ public void Read()
                 reader.Close();  
             }  
         }  
-    }   
-    catch (Exception ex)   
+    }
+    catch (Exception ex)
     {  
         System.Diagnostics.Debug.WriteLine  
             ("Cannot read options " + ex.ToString());  
@@ -293,22 +293,22 @@ public void Read()
 }  
   
 // Writes the button options to the isolated storage.  
-public void Write()   
+public void Write()
 {  
-    System.IO.IsolatedStorage.IsolatedStorageFile isoStore =   
+    System.IO.IsolatedStorage.IsolatedStorageFile isoStore =
         System.IO.IsolatedStorage.IsolatedStorageFile.  
         GetUserStoreForDomain();  
   
     string filename = "options.txt";  
-    try   
+    try
     {  
         // Checks if the file exists and, if it does, tries to delete it.  
-        if (isoStore.GetFileNames(filename).GetLength(0) != 0)   
+        if (isoStore.GetFileNames(filename).GetLength(0) != 0)
         {  
             isoStore.DeleteFile(filename);  
         }  
     }  
-    catch (Exception ex)   
+    catch (Exception ex)
     {  
         System.Diagnostics.Debug.WriteLine  
             ("Cannot delete file " + ex.ToString());  
@@ -316,10 +316,10 @@ public void Write()
   
     // Creates the options file and writes the button options to it.  
     System.IO.StreamWriter writer = null;  
-    try   
+    try
     {  
-        System.IO.IsolatedStorage.IsolatedStorageFileStream isos = new   
-            System.IO.IsolatedStorage.IsolatedStorageFileStream(filename,   
+        System.IO.IsolatedStorage.IsolatedStorageFileStream isos = new
+            System.IO.IsolatedStorage.IsolatedStorageFileStream(filename,
             System.IO.FileMode.CreateNew,isoStore);  
   
         writer = new System.IO.StreamWriter(isos);  
@@ -337,7 +337,7 @@ public void Write()
   
     }  
     catch (Exception ex)  
-    {   
+    {
         System.Diagnostics.Debug.WriteLine  
            ("Cannot write options " + ex.ToString());  
     }  
@@ -349,18 +349,18 @@ public void Write()
 ```  
   
 ## <a name="database-access"></a>Přístup k databázi  
- Oprávnění požadovaná pro přístup k databázi se liší v závislosti na poskytovateli databáze. přístup k databázi prostřednictvím datového připojení však mají pouze aplikace, které jsou spuštěny s příslušnými oprávněními. Další informace o oprávněních, která jsou nutná pro přístup k databázi, najdete v tématu [zabezpečení přístupu kódu a ADO.NET](../data/adonet/code-access-security.md).  
+ Oprávnění požadovaná pro přístup k databázi se liší v závislosti na poskytovateli databáze. pouze aplikace, které jsou spuštěny s příslušnými oprávněními, však mohou přistupovat k databázi prostřednictvím datového připojení. Další informace o oprávněních, která jsou vyžadována pro přístup k databázi, naleznete v [tématu Zabezpečení přístupu kódu a ADO.NET](../data/adonet/code-access-security.md).  
   
- Pokud nemůžete získat přímý přístup k databázi, protože chcete, aby se vaše aplikace spouštěla v částečném vztahu důvěryhodnosti, můžete pro přístup k datům použít webovou službu jako alternativní způsob. Webová služba je softwarový software, ke kterému se dá programově přistupovat přes síť. U webových služeb můžou aplikace sdílet data mezi zónami skupin kódu. Ve výchozím nastavení jsou aplikacím v místních intranetech a zónách Internetu udělen právo na přístup k jejich webům původu, což jim umožňuje volat webovou službu hostovanou na stejném serveru. Další informace najdete v tématu [webové služby v ASP.NET AJAX](https://docs.microsoft.com/previous-versions/aspnet/bb398785(v=vs.100)) nebo [Windows Communication Foundation](../wcf/index.md).  
+ Pokud nelze přímo přistupovat k databázi, protože chcete, aby aplikace spustit v částečném vztahu důvěryhodnosti, můžete použít webovou službu jako alternativní prostředek pro přístup k datům. Webová služba je software, ke kterému lze programově přistupovat prostředně prostředně. Pomocí webových služeb mohou aplikace sdílet data mezi zónami kódových skupin. Ve výchozím nastavení je aplikacím v místní chu-intranetu a internetových zónách uděleno právo na přístup k jejich webům původu, což jim umožňuje volat webovou službu hostovanou na stejném serveru. Další informace naleznete [v tématu Webové služby v ASP.NET AJAX](https://docs.microsoft.com/previous-versions/aspnet/bb398785(v=vs.100)) nebo Windows Communication [Foundation](../wcf/index.md).  
   
 ## <a name="registry-access"></a>Přístup k registru  
- Třída <xref:System.Security.Permissions.RegistryPermission> řídí přístup k registru operačního systému. Ve výchozím nastavení mají přístup k registru jenom aplikace, které jsou spuštěné místně.  <xref:System.Security.Permissions.RegistryPermission> udělí aplikaci oprávnění pouze k pokusu o přístup k registru; Nezaručujeme přístup úspěšně, protože operační systém stále vynutil zabezpečení registru.  
+ Třída <xref:System.Security.Permissions.RegistryPermission> řídí přístup k registru operačního systému. Ve výchozím nastavení mohou k registru přistupovat pouze aplikace, které jsou spuštěny místně.  <xref:System.Security.Permissions.RegistryPermission>pouze uděluje aplikaci právo vyzkoušet přístup k registru; nezaručuje, že přístup bude úspěšný, protože operační systém stále vynucuje zabezpečení v registru.  
   
- Vzhledem k tomu, že nemůžete získat přístup k registru s částečnou důvěryhodností, možná budete muset najít další metody ukládání dat. Při ukládání nastavení aplikace použijte místo registru izolované úložiště. Izolované úložiště lze také použít k ukládání jiných souborů specifických pro aplikaci. Můžete také uložit globální informace o aplikaci o serveru nebo webu původu, protože ve výchozím nastavení je aplikaci uděleno právo na přístup k webu svého původu.  
+ Vzhledem k tomu, že nelze získat přístup k registru pod částečným vztahem důvěryhodnosti, bude pravděpodobně nutné najít jiné metody ukládání dat. Při ukládání nastavení aplikace použijte místo registru izolované úložiště. Izolované úložiště lze také použít k ukládání jiných souborů specifických pro aplikaci. Můžete také ukládat informace o globální aplikaci o serveru nebo webu původu, protože ve výchozím nastavení je aplikaci uděleno právo na přístup k webu svého původu.  
   
 ## <a name="see-also"></a>Viz také
 
-- [Zabezpečenější tisk ve Windows Forms](more-secure-printing-in-windows-forms.md)
+- [Bezpečnější tisk ve Windows Forms](more-secure-printing-in-windows-forms.md)
 - [Dodatečné informace o zabezpečení ve Windows Forms](additional-security-considerations-in-windows-forms.md)
 - [Přehled zabezpečení ve Windows Forms](security-in-windows-forms-overview.md)
 - [Windows Forms – zabezpečení](windows-forms-security.md)

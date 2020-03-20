@@ -9,117 +9,117 @@ helpviewer_keywords:
 - hybrid applications [WPF interoperability]
 - message loops [WPF]
 ms.assetid: f440c23f-fa5d-4d5a-852f-ba61150e6405
-ms.openlocfilehash: 7af110b9b00b080bf40bc9ee4b85aa293940bbc3
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.openlocfilehash: b85a607d2e44d6253359a81118f90e6ee05d2d3f
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76794265"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79187317"
 ---
 # <a name="troubleshooting-hybrid-applications"></a>Řešení potíží s hybridními aplikacemi
-<a name="introduction"></a>Toto téma uvádí některé běžné problémy, ke kterým může dojít při vytváření hybridních aplikací, které používají technologie [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] i model Windows Forms.  
+<a name="introduction"></a>Toto téma uvádí některé běžné problémy, které mohou [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] nastat při vytváření hybridních aplikací, které používají technologie windows forms.  
 
-<a name="overlapping_controls"></a>   
+<a name="overlapping_controls"></a>
 ## <a name="overlapping-controls"></a>Překrývající se ovládací prvky  
- Ovládací prvky se nesmí překrývat, jak byste očekávali. Model Windows Forms používá samostatný HWND pro každý ovládací prvek. [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] používá pro veškerý obsah na stránce jeden HWND. Tento rozdíl implementace způsobuje neočekávané překrývající se chování.  
+ Ovládací prvky se nemusí překrývat podle očekávání. Windows Forms používá samostatný HWND pro každý ovládací prvek. [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]používá jeden HWND pro veškerý obsah na stránce. Tento rozdíl implementace způsobuje neočekávané překrývající se chování.  
   
- Model Windows Forms ovládací prvek hostovaný v [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] se vždy zobrazuje nad [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] obsahem.  
+ Ovládací prvek Windows Forms [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] hostovaný v [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikaci se vždy zobrazí nad obsahem.  
   
- [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] obsah hostovaný v ovládacím prvku <xref:System.Windows.Forms.Integration.ElementHost> se zobrazí v pořadí vykreslování ovládacího prvku <xref:System.Windows.Forms.Integration.ElementHost>. Je možné překrývat <xref:System.Windows.Forms.Integration.ElementHost> ovládací prvky, ale hostovaný [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] obsah nespojuje ani nekomunikuje.  
+ [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]obsah hostovaný <xref:System.Windows.Forms.Integration.ElementHost> v ovládacím prvku se <xref:System.Windows.Forms.Integration.ElementHost> zobrazí v pořadí vykreslovat ovládacího prvku. Je možné překrývat <xref:System.Windows.Forms.Integration.ElementHost> ovládací prvky, ale hostovaný [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] obsah nekombinuje ani neinteraguje.  
   
-<a name="child_property"></a>   
+<a name="child_property"></a>
 ## <a name="child-property"></a>Podřízená vlastnost  
- Třídy <xref:System.Windows.Forms.Integration.WindowsFormsHost> a <xref:System.Windows.Forms.Integration.ElementHost> mohou hostovat pouze jeden podřízený ovládací prvek nebo prvek. Chcete-li hostovat více než jeden ovládací prvek nebo prvek, musíte jako podřízený obsah použít kontejner. Můžete například přidat model Windows Forms tlačítko a ovládací prvky zaškrtávací políčko ovládacímu prvku <xref:System.Windows.Forms.Panel?displayProperty=nameWithType> a pak přiřadit panel k <xref:System.Windows.Forms.Integration.WindowsFormsHost.Child%2A> vlastnosti ovládacího prvku <xref:System.Windows.Forms.Integration.WindowsFormsHost>. Ovládací prvky tlačítko a zaškrtávací políčko však nelze přidat odděleně ke stejnému ovládacímu prvku <xref:System.Windows.Forms.Integration.WindowsFormsHost>.  
+ <xref:System.Windows.Forms.Integration.WindowsFormsHost> Třídy <xref:System.Windows.Forms.Integration.ElementHost> a může hostit pouze jeden podřízený ovládací prvek nebo prvek. Chcete-li hostovat více než jeden ovládací prvek nebo prvek, musíte použít kontejner jako podřízený obsah. Můžete například přidat tlačítko Formuláře systému Windows <xref:System.Windows.Forms.Panel?displayProperty=nameWithType> a ovládací prvky zaškrtávacích políček do ovládacího prvku a potom přiřadit panel k vlastnosti <xref:System.Windows.Forms.Integration.WindowsFormsHost> ovládacího <xref:System.Windows.Forms.Integration.WindowsFormsHost.Child%2A> prvku. Ovládací prvky tlačítka a zaškrtávacích <xref:System.Windows.Forms.Integration.WindowsFormsHost> políček však nelze přidat samostatně do stejného ovládacího prvku.  
   
-<a name="scaling"></a>   
+<a name="scaling"></a>
 ## <a name="scaling"></a>Škálování  
- [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] a model Windows Forms mají různé modely škálování. Některé transformace škálování [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] jsou smysluplné pro model Windows Forms ovládací prvky, ale jiné ne. Například škálování ovládacího prvku model Windows Forms na 0 bude fungovat, ale pokud se pokusíte škálovat stejný ovládací prvek zpět na nenulovou hodnotu, zůstane velikost ovládacího prvku 0. Další informace najdete v tématu [požadavky na rozložení pro element WindowsFormsHost](layout-considerations-for-the-windowsformshost-element.md).  
+ [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]a Windows Forms mají různé modely škálování. Některé [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] transformace škálování jsou smysluplné pro ovládací prvky Windows Forms, ale jiné nikoli. Například škálování ovládacího prvku Windows Forms na 0 bude fungovat, ale pokud se pokusíte změnit velikost stejného ovládacího prvku zpět na nenulovou hodnotu, velikost ovládacího prvku zůstane 0. Další informace naleznete v [tématu Aspekty rozložení elementu WindowsFormsHost](layout-considerations-for-the-windowsformshost-element.md).  
   
-<a name="adapter"></a>   
+<a name="adapter"></a>
 ## <a name="adapter"></a>Adaptér  
- Při práci s třídami <xref:System.Windows.Forms.Integration.WindowsFormsHost> a <xref:System.Windows.Forms.Integration.ElementHost> může dojít k nejasnostem, protože obsahují skrytý kontejner. Třídy <xref:System.Windows.Forms.Integration.WindowsFormsHost> i <xref:System.Windows.Forms.Integration.ElementHost> mají skrytý kontejner nazvaný *adaptér*, který používá k hostování obsahu. Pro prvek <xref:System.Windows.Forms.Integration.WindowsFormsHost> je adaptér odvozen z třídy <xref:System.Windows.Forms.ContainerControl?displayProperty=nameWithType>. Pro ovládací prvek <xref:System.Windows.Forms.Integration.ElementHost> je adaptér odvozen od <xref:System.Windows.Controls.DockPanel> elementu. Když vidíte odkazy na adaptér v jiných tématech vzájemná spolupráce, tento kontejner je právě diskutován.  
+ Může být zmatek <xref:System.Windows.Forms.Integration.WindowsFormsHost> při <xref:System.Windows.Forms.Integration.ElementHost> práci a třídy, protože obsahují skrytý kontejner. A <xref:System.Windows.Forms.Integration.WindowsFormsHost> třídy <xref:System.Windows.Forms.Integration.ElementHost> mají skrytý kontejner, nazývaný *adaptér*, který používají k hostování obsahu. Pro <xref:System.Windows.Forms.Integration.WindowsFormsHost> prvek adaptér uvozová <xref:System.Windows.Forms.ContainerControl?displayProperty=nameWithType> z třídy. Pro <xref:System.Windows.Forms.Integration.ElementHost> ovládací prvek adaptér uvozová z <xref:System.Windows.Controls.DockPanel> prvku. Když se zobrazí odkazy na adaptér v jiných tématech spolupráce, tento kontejner je to, co je diskutováno.  
   
-<a name="nesting"></a>   
+<a name="nesting"></a>
 ## <a name="nesting"></a>Vnoření  
- Vnořování prvku <xref:System.Windows.Forms.Integration.WindowsFormsHost> uvnitř ovládacího prvku <xref:System.Windows.Forms.Integration.ElementHost> není podporováno. Vnoření ovládacího prvku <xref:System.Windows.Forms.Integration.ElementHost> uvnitř elementu <xref:System.Windows.Forms.Integration.WindowsFormsHost> není také podporováno.  
+ Vnoření <xref:System.Windows.Forms.Integration.WindowsFormsHost> prvku <xref:System.Windows.Forms.Integration.ElementHost> uvnitř ovládacího prvku není podporováno. Vnoření <xref:System.Windows.Forms.Integration.ElementHost> ovládacího <xref:System.Windows.Forms.Integration.WindowsFormsHost> prvku uvnitř prvku také není podporováno.  
   
-<a name="focus"></a>   
-## <a name="focus"></a>Vybrána  
- Fokus funguje v [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] a model Windows Forms odlišně, což znamená, že se v hybridní aplikaci můžou objevit problémy s fokusem. Například pokud máte fokus v rámci prvku <xref:System.Windows.Forms.Integration.WindowsFormsHost> a buď minimalizujete a obnovíte stránku nebo zobrazíte modální dialogové okno, je možné, že se fokus uvnitř elementu <xref:System.Windows.Forms.Integration.WindowsFormsHost> ztratí. Element <xref:System.Windows.Forms.Integration.WindowsFormsHost> má stále fokus, ale ovládací prvek uvnitř něj není.  
+<a name="focus"></a>
+## <a name="focus"></a>Zaměření  
+ Fokus funguje [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] odlišně v a Windows Forms, což znamená, že problémy fokus může dojít v hybridní aplikaci. Například pokud máte fokus <xref:System.Windows.Forms.Integration.WindowsFormsHost> uvnitř prvku a buď minimalizovat a obnovit stránku nebo <xref:System.Windows.Forms.Integration.WindowsFormsHost> zobrazit modální dialogové okno, fokus uvnitř prvku může dojít ke ztrátě. Prvek <xref:System.Windows.Forms.Integration.WindowsFormsHost> má stále fokus, ale ovládací prvek uvnitř nemusí.  
   
- Ověřování dat je také ovlivněno fokusem. Ověřování funguje v prvku <xref:System.Windows.Forms.Integration.WindowsFormsHost>, ale nefunguje jako karta z <xref:System.Windows.Forms.Integration.WindowsFormsHost> elementu nebo mezi dvěma různými <xref:System.Windows.Forms.Integration.WindowsFormsHost> prvky.  
+ Ověřování dat je také ovlivněno fokusem. Ověření funguje <xref:System.Windows.Forms.Integration.WindowsFormsHost> v prvku, ale nefunguje jako kartu <xref:System.Windows.Forms.Integration.WindowsFormsHost> z prvku nebo <xref:System.Windows.Forms.Integration.WindowsFormsHost> mezi dvěma různými prvky.  
   
-<a name="property_mapping"></a>   
+<a name="property_mapping"></a>
 ## <a name="property-mapping"></a>Mapování vlastností  
- Některá mapování vlastností vyžadují rozsáhlé vyhodnocení pro přemostění nepodobných implementací mezi [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] a model Windows Forms technologiemi. Mapování vlastností umožňuje vašemu kódu reagovat na změny písem, barev a dalších vlastností. Obecně platí, že mapování vlastností funguje tak, že naslouchá buď událostem změněné *vlastnosti*, nebo voláním změněných*vlastností*a nastavují příslušné vlastnosti buď podřízenému ovládacímu prvku, nebo jeho adaptéru. Další informace najdete v tématu [mapování vlastností model Windows Forms a WPF](windows-forms-and-wpf-property-mapping.md).  
+ Některá mapování vlastností vyžadují rozsáhlou interpretaci k [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] překlenutí odlišných implementací mezi technologiemi a technologiemi Windows Forms. Mapování vlastností umožňuje kódu reagovat na změny v písmech, barvách a dalších vlastnostech. Obecně platí, že mapování vlastností funguje nasloucháním pro události *Property*Changed nebo On*Property*Changed volání a nastavením vhodných vlastností na podřízeném ovládacím prvku nebo jeho adaptéru. Další informace naleznete v [tématu Windows Forms a WPF Property Mapping](windows-forms-and-wpf-property-mapping.md).  
   
-<a name="layoutrelated_properties_on_hosted_content"></a>   
-## <a name="layout-related-properties-on-hosted-content"></a>Vlastnosti související s rozložením u hostovaného obsahu  
- Když je přiřazena vlastnost <xref:System.Windows.Forms.Integration.WindowsFormsHost.Child%2A?displayProperty=nameWithType> nebo <xref:System.Windows.Forms.Integration.ElementHost.Child%2A?displayProperty=nameWithType>, jsou automaticky nastaveny některé vlastnosti v hostovaném obsahu, které se týkají rozložení. Změna těchto vlastností obsahu může způsobit neočekávané chování rozložení.  
+<a name="layoutrelated_properties_on_hosted_content"></a>
+## <a name="layout-related-properties-on-hosted-content"></a>Vlastnosti související s rozložením hostovaného obsahu  
+ Při <xref:System.Windows.Forms.Integration.WindowsFormsHost.Child%2A?displayProperty=nameWithType> přiřazení <xref:System.Windows.Forms.Integration.ElementHost.Child%2A?displayProperty=nameWithType> vlastnosti nebo se automaticky nastaví několik vlastností souvisejících s rozložením v hostovaném obsahu. Změna těchto vlastností obsahu může způsobit neočekávané chování rozložení.  
   
- Hostovaný obsah je ukotven, aby bylo možné vyplnit <xref:System.Windows.Forms.Integration.WindowsFormsHost> a <xref:System.Windows.Forms.Integration.ElementHost> nadřazený objekt. Pokud chcete povolit toto chování při plnění, nastaví se při nastavování podřízené vlastnosti několik vlastností. Následující tabulka uvádí, které vlastnosti obsahu jsou nastaveny pomocí tříd <xref:System.Windows.Forms.Integration.ElementHost> a <xref:System.Windows.Forms.Integration.WindowsFormsHost>.  
+ Hostovaný obsah je ukotven tak, aby vyplnil nadřazený <xref:System.Windows.Forms.Integration.WindowsFormsHost> obsah a. <xref:System.Windows.Forms.Integration.ElementHost> Chcete-li povolit toto chování výplně, několik vlastností jsou nastaveny při nastavení podřízené vlastnosti. V následující tabulce jsou uvedeny, <xref:System.Windows.Forms.Integration.ElementHost> <xref:System.Windows.Forms.Integration.WindowsFormsHost> které vlastnosti obsahu jsou nastaveny třídami a.  
   
-|Třída Host|Vlastnosti obsahu|  
+|Hostitelská třída|Vlastnosti obsahu|  
 |----------------|------------------------|  
 |<xref:System.Windows.Forms.Integration.ElementHost>|<xref:System.Windows.FrameworkElement.Height%2A><br /><br /> <xref:System.Windows.FrameworkElement.Width%2A><br /><br /> <xref:System.Windows.FrameworkElement.Margin%2A><br /><br /> <xref:System.Windows.FrameworkElement.VerticalAlignment%2A><br /><br /> <xref:System.Windows.FrameworkElement.HorizontalAlignment%2A>|  
 |<xref:System.Windows.Forms.Integration.WindowsFormsHost>|<xref:System.Windows.Forms.Control.Margin%2A><br /><br /> <xref:System.Windows.Forms.Control.Dock%2A><br /><br /> <xref:System.Windows.Forms.Control.AutoSize%2A><br /><br /> <xref:System.Windows.Forms.Control.Location%2A><br /><br /> <xref:System.Windows.Forms.Control.MaximumSize%2A>|  
   
- Tyto vlastnosti nenastavujte přímo na hostovaný obsah. Další informace najdete v tématu [požadavky na rozložení pro element WindowsFormsHost](layout-considerations-for-the-windowsformshost-element.md).  
+ Nenastavujte tyto vlastnosti přímo na hostovaném obsahu. Další informace naleznete v [tématu Aspekty rozložení elementu WindowsFormsHost](layout-considerations-for-the-windowsformshost-element.md).  
   
-<a name="navigation_applications"></a>   
+<a name="navigation_applications"></a>
 ## <a name="navigation-applications"></a>Navigační aplikace  
- Navigační aplikace pravděpodobně neudržují stav uživatele. Element <xref:System.Windows.Forms.Integration.WindowsFormsHost> znovu vytvoří své ovládací prvky, pokud se používá v navigační aplikaci. Opětovné vytvoření podřízených ovládacích prvků nastane, když uživatel přejde pryč ze stránky, která je hostitelem prvku <xref:System.Windows.Forms.Integration.WindowsFormsHost> a pak se vrátí do něj. Veškerý obsah, který byl zadán uživatelem, bude ztracen.  
+ Navigační aplikace nemusí udržovat stav uživatele. Prvek <xref:System.Windows.Forms.Integration.WindowsFormsHost> znovu vytvoří své ovládací prvky při použití v navigační aplikaci. K opětovnému vytvoření podřízených ovládacích prvků dochází, když uživatel přejde od stránky hostující <xref:System.Windows.Forms.Integration.WindowsFormsHost> prvek a potom se k němu vrátí. Veškerý obsah, který uživatel zadal, bude ztracen.  
   
-<a name="message_loop_interoperation"></a>   
-## <a name="message-loop-interoperation"></a>Prochod smyčky zpráv  
- Pokud pracujete se smyčkami zpráv model Windows Forms, zprávy nemusejí být zpracovány podle očekávání. Metoda <xref:System.Windows.Forms.Integration.WindowsFormsHost.EnableWindowsFormsInterop%2A> je volána konstruktorem <xref:System.Windows.Forms.Integration.WindowsFormsHost>. Tato metoda přidá filtr zpráv do smyčky zpráv [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]. Tento filtr volá metodu <xref:System.Windows.Forms.Control.PreProcessMessage%2A?displayProperty=nameWithType>, pokud byl <xref:System.Windows.Forms.Control?displayProperty=nameWithType> cílem zprávy a překládá/odesílá zprávu.  
+<a name="message_loop_interoperation"></a>
+## <a name="message-loop-interoperation"></a>Spolupráce smyčky zpráv  
+ Při práci s windows forms smyčky zpráv zprávy nemusí být zpracovány podle očekávání. Metoda <xref:System.Windows.Forms.Integration.WindowsFormsHost.EnableWindowsFormsInterop%2A> je volána <xref:System.Windows.Forms.Integration.WindowsFormsHost> konstruktorem. Tato metoda přidá filtr [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] zpráv do smyčky zpráv. Tento filtr <xref:System.Windows.Forms.Control.PreProcessMessage%2A?displayProperty=nameWithType> volá metodu, <xref:System.Windows.Forms.Control?displayProperty=nameWithType> pokud a byl cíl zprávy a překládá/odešle zprávu.  
   
- Pokud zobrazíte <xref:System.Windows.Window> ve smyčce model Windows Forms zpráv <xref:System.Windows.Forms.Application.Run%2A?displayProperty=nameWithType>, nemůžete zadat cokoli, dokud nebudete volat metodu <xref:System.Windows.Forms.Integration.ElementHost.EnableModelessKeyboardInterop%2A>. Metoda <xref:System.Windows.Forms.Integration.ElementHost.EnableModelessKeyboardInterop%2A> přebírá <xref:System.Windows.Window> a přidává <xref:System.Windows.Forms.IMessageFilter?displayProperty=nameWithType>, který přesměruje zprávy týkající se klíčů na [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] smyčku zpráv. Další informace najdete v tématu [Architektura vstupu interoperability model Windows Forms a WPF](windows-forms-and-wpf-interoperability-input-architecture.md).  
+ Pokud zobrazíte <xref:System.Windows.Window> ve smyčce zpráv <xref:System.Windows.Forms.Application.Run%2A?displayProperty=nameWithType>windows forms s , <xref:System.Windows.Forms.Integration.ElementHost.EnableModelessKeyboardInterop%2A> nelze zadat nic, pokud voláte metodu. Metoda <xref:System.Windows.Forms.Integration.ElementHost.EnableModelessKeyboardInterop%2A> trvá <xref:System.Windows.Window> a přidá <xref:System.Windows.Forms.IMessageFilter?displayProperty=nameWithType>, který přesměruje zprávy [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] související s klíčem do smyčky zpráv. Další informace naleznete v [tématech Windows Forms a WPF Interoperability Input Architecture](windows-forms-and-wpf-interoperability-input-architecture.md).  
   
-<a name="opacity_and_layering"></a>   
-## <a name="opacity-and-layering"></a>Neprůhlednost a vrstvení  
- Třída <xref:System.Windows.Interop.HwndHost> nepodporuje vrstvení. To znamená, že nastavení vlastnosti <xref:System.Windows.UIElement.Opacity%2A> u elementu <xref:System.Windows.Forms.Integration.WindowsFormsHost> nemá žádný účinek a žádné prolnutí nebude provedeno v ostatních [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] oknech, které mají <xref:System.Windows.Window.AllowsTransparency%2A> nastavené na `true`.  
+<a name="opacity_and_layering"></a>
+## <a name="opacity-and-layering"></a>Krytí a vrstvení  
+ Třída <xref:System.Windows.Interop.HwndHost> nepodporuje vrstvení. To znamená, <xref:System.Windows.UIElement.Opacity%2A> že nastavení <xref:System.Windows.Forms.Integration.WindowsFormsHost> vlastnosti prvku nemá žádný vliv a [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] žádné <xref:System.Windows.Window.AllowsTransparency%2A> prolnutí nedojde s jinými okny, které mají nastavena na `true`.  
   
-<a name="dispose"></a>   
-## <a name="dispose"></a>Zrušen  
- Třídy neumožňující správné prostředky způsobit nevracení prostředků. V hybridních aplikacích se ujistěte, že <xref:System.Windows.Forms.Integration.WindowsFormsHost> a <xref:System.Windows.Forms.Integration.ElementHost> třídy jsou vyřazené nebo že byste mohli zrušit jeho prostředky. Model Windows Forms odřadí <xref:System.Windows.Forms.Integration.ElementHost> ovládací prvky při zavření jejího nemodálního <xref:System.Windows.Forms.Form> nadřazeného prvku. [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] odstraní <xref:System.Windows.Forms.Integration.WindowsFormsHost> prvky, když se vaše aplikace ukončí. Je možné zobrazit <xref:System.Windows.Forms.Integration.WindowsFormsHost> prvek v <xref:System.Windows.Window> ve smyčce zprávy model Windows Forms. V takovém případě váš kód nemusí dostávat oznámení o ukončení aplikace.  
+<a name="dispose"></a>
+## <a name="dispose"></a>Dispose  
+ Není správně disposing třídy může únik unikající prostředky. V hybridních aplikacích se <xref:System.Windows.Forms.Integration.WindowsFormsHost> <xref:System.Windows.Forms.Integration.ElementHost> ujistěte, že a třídy jsou uvolněny, nebo může dojít k úniku prostředků. Windows Forms <xref:System.Windows.Forms.Integration.ElementHost> vyloží ovládací <xref:System.Windows.Forms.Form> prvky při ukončení jeho nemodální nadřazené položky. [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]odstraňuje <xref:System.Windows.Forms.Integration.WindowsFormsHost> prvky při vypnutí aplikace. Je možné zobrazit <xref:System.Windows.Forms.Integration.WindowsFormsHost> prvek ve <xref:System.Windows.Window> smyčce zpráv Windows Forms. V takovém případě nemusí váš kód přijímat oznámení, že se aplikace vypíná.  
   
-<a name="enabling_visual_styles"></a>   
+<a name="enabling_visual_styles"></a>
 ## <a name="enabling-visual-styles"></a>Povolení vizuálních stylů  
- Vizuální styly systému Microsoft Windows XP v ovládacím prvku model Windows Forms nemusí být povoleny. Metoda <xref:System.Windows.Forms.Application.EnableVisualStyles%2A?displayProperty=nameWithType> je volána v šabloně model Windows Forms aplikace. I když tato metoda není volána ve výchozím nastavení, pokud použijete sadu Visual Studio k vytvoření projektu, získáte vizuální styly Microsoft Windows XP pro ovládací prvky, pokud je k dispozici verze 6,0 souboru Comctl32. dll. Před vytvořením popisovačů ve vlákně je třeba zavolat metodu <xref:System.Windows.Forms.Application.EnableVisualStyles%2A>. Další informace najdete v tématu [Postup: Povolení vizuálních stylů v hybridní aplikaci](how-to-enable-visual-styles-in-a-hybrid-application.md).  
+ Vizuální styly systému Microsoft Windows XP v ovládacím prvku Windows Forms pravděpodobně nejsou povoleny. Metoda <xref:System.Windows.Forms.Application.EnableVisualStyles%2A?displayProperty=nameWithType> je volána v šabloně pro aplikaci Windows Forms. I když tato metoda není volána ve výchozím nastavení, pokud používáte Visual Studio k vytvoření projektu, získáte Microsoft Windows XP vizuální styly pro ovládací prvky, pokud verze 6.0 comctl32.dll je k dispozici. Je nutné <xref:System.Windows.Forms.Application.EnableVisualStyles%2A> volat metodu před popisovače jsou vytvořeny ve vlákně. Další informace naleznete v [tématu How to: Enable Visual Styles in a Hybrid Application](how-to-enable-visual-styles-in-a-hybrid-application.md).  
   
-<a name="licensed_controls"></a>   
+<a name="licensed_controls"></a>
 ## <a name="licensed-controls"></a>Licencované ovládací prvky  
- Licencované model Windows Forms ovládací prvky, které zobrazují informace o licencích v okně se zprávou pro uživatele, můžou způsobit neočekávané chování hybridní aplikace. Některé licencované ovládací prvky zobrazí dialogové okno v reakci na vytvoření popisovače. Licencovaný ovládací prvek může například informovat uživatele o tom, že je požadována licence nebo zda má uživatel tři zbývající zkušební využití tohoto ovládacího prvku.  
+ Licencované ovládací prvky systému Windows Forms, které uživateli zobrazují informace o licencích v poli se zprávou, mohou způsobit neočekávané chování hybridní aplikace. Některé licencované ovládací prvky zobrazují dialogové okno v reakci na vytvoření popisovače. Licencovaný ovládací prvek může například informovat uživatele, že je vyžadována licence nebo že uživatel má tři zbývající zkušební použití ovládacího prvku.  
   
- Prvek <xref:System.Windows.Forms.Integration.WindowsFormsHost> je odvozen z třídy <xref:System.Windows.Interop.HwndHost> a popisovač podřízeného ovládacího prvku je vytvořen v rámci metody <xref:System.Windows.Forms.Integration.WindowsFormsHost.BuildWindowCore%2A>. Třída <xref:System.Windows.Interop.HwndHost> nepovoluje zpracování zpráv v metodě <xref:System.Windows.Forms.Integration.WindowsFormsHost.BuildWindowCore%2A>, ale zobrazení dialogového okna způsobí odeslání zpráv. Chcete-li povolit tento scénář licencování, zavolejte metodu <xref:System.Windows.Forms.Control.CreateControl%2A?displayProperty=nameWithType> ovládacího prvku před přiřazením jako podřízenou položku <xref:System.Windows.Forms.Integration.WindowsFormsHost> elementu.  
+ Prvek <xref:System.Windows.Forms.Integration.WindowsFormsHost> je odvozen <xref:System.Windows.Interop.HwndHost> od třídy a popisovač podřízeného <xref:System.Windows.Forms.Integration.WindowsFormsHost.BuildWindowCore%2A> ovládacího prvku je vytvořen uvnitř metody. Třída <xref:System.Windows.Interop.HwndHost> neumožňuje zprávy, které mají <xref:System.Windows.Forms.Integration.WindowsFormsHost.BuildWindowCore%2A> být zpracovány v metodě, ale zobrazení dialogového okna způsobí, že zprávy, které mají být odeslány. Chcete-li povolit tento <xref:System.Windows.Forms.Control.CreateControl%2A?displayProperty=nameWithType> scénář licencování, volání metody <xref:System.Windows.Forms.Integration.WindowsFormsHost> na ovládací prvek před přiřazením jako podřízený prvek.  
   
-<a name="wpf_designer"></a>   
+<a name="wpf_designer"></a>
 ## <a name="wpf-designer"></a>návrhář WPF  
- Obsah WPF můžete navrhnout pomocí Návrháře WPF pro Visual Studio. V následujících částech jsou uvedeny některé běžné problémy, které mohou nastat při vytváření hybridních aplikací pomocí Návrháře WPF.  
+ Obsah WPF můžete navrhnout pomocí WPF Designer pro Visual Studio. V následujících částech jsou uvedeny některé běžné problémy, které mohou nastat při vytváření hybridních aplikací pomocí návrháře WPF.  
   
-### <a name="backcolortransparent-is-ignored-at-design-time"></a>BackColorTransparent se v době návrhu ignoruje.  
- Vlastnost <xref:System.Windows.Forms.Integration.ElementHost.BackColorTransparent%2A> nemusí v době návrhu fungovat podle očekávání.  
+### <a name="backcolortransparent-is-ignored-at-design-time"></a>BackColorTransparent je ignorována v době návrhu  
+ Vlastnost <xref:System.Windows.Forms.Integration.ElementHost.BackColorTransparent%2A> nemusí fungovat podle očekávání v době návrhu.  
   
- Pokud ovládací prvek WPF není na viditelném nadřazeném prvku, modul runtime WPF ignoruje hodnotu <xref:System.Windows.Forms.Integration.ElementHost.BackColorTransparent%2A>. Důvodem, proč <xref:System.Windows.Forms.Integration.ElementHost.BackColorTransparent%2A> může být ignorováno, je, že objekt <xref:System.Windows.Forms.Integration.ElementHost> je vytvořen v samostatném <xref:System.AppDomain>. Při spuštění aplikace ale <xref:System.Windows.Forms.Integration.ElementHost.BackColorTransparent%2A> fungovat podle očekávání.  
+ Pokud ovládací prvek WPF není na viditelné nadřazené, wpf runtime ignoruje hodnotu. <xref:System.Windows.Forms.Integration.ElementHost.BackColorTransparent%2A> Důvod, <xref:System.Windows.Forms.Integration.ElementHost.BackColorTransparent%2A> který může být <xref:System.Windows.Forms.Integration.ElementHost> ignorován, je proto, že objekt je vytvořen v samostatném <xref:System.AppDomain>. Však při spuštění aplikace, <xref:System.Windows.Forms.Integration.ElementHost.BackColorTransparent%2A> funguje podle očekávání.  
   
-### <a name="design-time-error-list-appears-when-the-obj-folder-is-deleted"></a>Při odstranění složky obj se zobrazí Seznam chyb v době návrhu.  
- Pokud je odstraněna složka obj, Seznam chyb zobrazí se čas návrhu.  
+### <a name="design-time-error-list-appears-when-the-obj-folder-is-deleted"></a>Při odstranění složky obj se zobrazí seznam chyb v době návrhu  
+ Pokud je složka obj odstraněna, zobrazí se seznam chyb v době návrhu.  
   
- Při návrhu pomocí <xref:System.Windows.Forms.Integration.ElementHost>Návrhář formulářů používá generované soubory ve složce pro ladění nebo vydání ve složce obj projektu. Při odstranění těchto souborů se zobrazí Seznam chyb čas návrhu. Chcete-li tento problém vyřešit, znovu sestavte projekt. Další informace najdete v tématu [chyby při návrhu v Návrhář formulářů](../../winforms/controls/design-time-errors-in-the-windows-forms-designer.md).  
+ Při návrhu <xref:System.Windows.Forms.Integration.ElementHost>pomocí aplikace Používá Návrhář formulářů systému Windows generované soubory ve složce Ladění nebo Vydání ve složce obj projektu. Pokud tyto soubory odstraníte, zobrazí se seznam chyb v době návrhu. Chcete-li tento problém vyřešit, znovu vytvořte projekt. Další informace naleznete [v tématu Chyby návrhu v Návrháři formulářů systému Windows](../../winforms/controls/design-time-errors-in-the-windows-forms-designer.md).  
   
-<a name="elementhost_and_ime"></a>   
+<a name="elementhost_and_ime"></a>
 ## <a name="elementhost-and-ime"></a>ElementHost a IME  
- Ovládací prvky WPF hostované v <xref:System.Windows.Forms.Integration.ElementHost> aktuálně nepodporují vlastnost <xref:System.Windows.Forms.Control.ImeMode%2A>. Změny <xref:System.Windows.Forms.Control.ImeMode%2A> budou v hostovaných ovládacích prvcích ignorovány.  
+ WPF ovládací prvky <xref:System.Windows.Forms.Integration.ElementHost> hostované v <xref:System.Windows.Forms.Control.ImeMode%2A> aktuálně nepodporují vlastnost. Změny <xref:System.Windows.Forms.Control.ImeMode%2A> budou hostovanými ovládacími prvky ignorovány.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Forms.Integration.ElementHost>
 - <xref:System.Windows.Forms.Integration.WindowsFormsHost>
-- [Interoperabilita v Návrháři WPF](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/bb628658(v=vs.100))
+- [Interoperabilita v návrháři WPF](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/bb628658(v=vs.100))
 - [Architektura vstupu interoperability Windows Forms a WPF](windows-forms-and-wpf-interoperability-input-architecture.md)
 - [Postupy: Povolení vizuálních stylů v hybridní aplikaci](how-to-enable-visual-styles-in-a-hybrid-application.md)
 - [Předpoklady rozložení pro element WindowsFormsHost](layout-considerations-for-the-windowsformshost-element.md)
 - [Mapování vlastnosti Windows Forms a WPF](windows-forms-and-wpf-property-mapping.md)
-- [Chyby v rámci doby návrhu v Návrháři formulářů](../../winforms/controls/design-time-errors-in-the-windows-forms-designer.md)
+- [Chyby při návrhu v Návrháři formulářů Windows](../../winforms/controls/design-time-errors-in-the-windows-forms-designer.md)
 - [Migrace a interoperabilita](migration-and-interoperability.md)

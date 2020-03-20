@@ -1,19 +1,18 @@
 ---
-ms.openlocfilehash: c4b293cf7db3762831be7f3a7a355748ff5758c5
-ms.sourcegitcommit: d55e14eb63588830c0ba1ea95a24ce6c57ef8c8c
+ms.openlocfilehash: 1148d040aa3b292d5c37eb50224413b6ddd202e2
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/11/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "67858921"
 ---
-### <a name="servicebase-doesnt-propagate-onstart-exceptions"></a>ServiceBase – nebude šířit OnStart výjimky
+### <a name="servicebase-doesnt-propagate-onstart-exceptions"></a>ServiceBase nerozšíří výjimky OnStart
 
 |   |   |
 |---|---|
-|Podrobnosti|V rozhraní .NET Framework 4.7 a dřívějších verzích výjimky vyvolané při spuštění služby nejsou šířeny do volajícího <xref:System.ServiceProcess.ServiceBase.Run%2A?displayProperty=nameWithType>.<br/>Počínaje aplikací určených pro rozhraní .NET Framework 4.7.1, modul runtime rozšíří výjimky <xref:System.ServiceProcess.ServiceBase.Run%2A?displayProperty=nameWithType> pro služby, které nejde spustit.|
-|Doporučení|Při spuštění služby pokud dojde k výjimce, tato výjimka se rozšíří. Toto by mělo pomoci diagnostikovat případy, kdy služeb nezdaří. <br/>Pokud toto chování nežádoucí, můžete zrušit jeho přidáním následujícího kódu &lt;AppContextSwitchOverrides&gt; elementu &lt;runtime&gt; oddílu konfiguračního souboru aplikace:<pre><code class="lang-xml">&lt;AppContextSwitchOverrides value=&quot;Switch.System.ServiceProcess.DontThrowExceptionsOnStart=true&quot; /&gt;&#13;&#10;</code></pre>Pokud vaše aplikace cílí na starší verzi než 4.7.1, ale budete chtít mít toto chování, přidejte následující &lt;AppContextSwitchOverrides&gt; elementu &lt;runtime&gt; části vaší aplikace konfigurační soubor:<pre><code class="lang-xml">&lt;AppContextSwitchOverrides value=&quot;Switch.System.ServiceProcess.DontThrowExceptionsOnStart=false&quot; /&gt;&#13;&#10;</code></pre>|
-|Scope|Vedlejší|
+|Podrobnosti|V rozhraní .NET Framework 4.7 a starších verzích nejsou výjimky vyzývané při spuštění služby šířeny volajícímu aplikace <xref:System.ServiceProcess.ServiceBase.Run%2A?displayProperty=nameWithType>.<br/>Počínaje aplikacemi, které cílí na rozhraní .NET Framework 4.7.1, program runtime šíří výjimky <xref:System.ServiceProcess.ServiceBase.Run%2A?displayProperty=nameWithType> pro služby, které se nepodaří spustit.|
+|Návrh|Při spuštění služby, pokud existuje výjimka, bude tato výjimka rozšířena. To by mělo pomoci diagnostikovat případy, kdy se služby nespustí. <br/>Pokud je toto chování nežádoucí, můžete se z &lt;něj odhlásit&gt; přidáním &lt;následujícího prvku AppContextSwitchOverrides do části runtime&gt; konfiguračního souboru aplikace:<pre><code class="lang-xml">&lt;AppContextSwitchOverrides value=&quot;Switch.System.ServiceProcess.DontThrowExceptionsOnStart=true&quot; /&gt;&#13;&#10;</code></pre>Pokud vaše aplikace cílí na starší verzi než 4.7.1, &lt;ale chcete mít&gt; toto &lt;chování, přidejte následující prvek AppContextSwitchOverrides do sekce runtime&gt; konfiguračního souboru aplikace:<pre><code class="lang-xml">&lt;AppContextSwitchOverrides value=&quot;Switch.System.ServiceProcess.DontThrowExceptionsOnStart=false&quot; /&gt;&#13;&#10;</code></pre>|
+|Rozsah|Vedlejší|
 |Version|4.7.1|
-|type|Změna cílení|
+|Typ|Změna cílení|
 |Ovlivněná rozhraní API|<ul><li><xref:System.ServiceProcess.ServiceBase.Run(System.ServiceProcess.ServiceBase)?displayProperty=nameWithType></li><li><xref:System.ServiceProcess.ServiceBase.Run(System.ServiceProcess.ServiceBase[])?displayProperty=nameWithType></li></ul>|
-

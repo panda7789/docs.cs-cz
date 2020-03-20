@@ -1,19 +1,18 @@
 ---
-ms.openlocfilehash: 529d1b83c0637f705b725a64aa82e2c053bbfd19
-ms.sourcegitcommit: d55e14eb63588830c0ba1ea95a24ce6c57ef8c8c
+ms.openlocfilehash: 705bbd0e0bf80e0726d41898685a5e166e039f99
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/11/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "67858595"
 ---
-### <a name="contentdisposition-datetimes-returns-slightly-different-string"></a>Vrátí řetězec mírně liší, ContentDisposition data a času
+### <a name="contentdisposition-datetimes-returns-slightly-different-string"></a>ContentDisposition DateTimes vrátí mírně odlišný řetězec
 
 |   |   |
 |---|---|
-|Podrobnosti|Řetězcových reprezentací objektu <xref:System.Net.Mime.ContentDisposition?displayProperty=name>společnosti byly aktualizovány, počínaje 4.6, vždy představující hodinu součást <xref:System.DateTime?displayProperty=name> se dvěma číslicemi. Toto je v souladu s [RFC822](https://www.ietf.org/rfc/rfc0822.txt) a [RFC2822](https://www.ietf.org/rfc/rfc2822.txt). To způsobí, že <xref:System.Net.Mime.ContentDisposition.ToString> vrátit řetězec mírně liší v 4.6 ve scénářích prvků času dispozice byl před 10:00:00. Všimněte si, že ContentDispositions serializují někdy prostřednictvím převádění na řetězce, tak, aby <xref:System.Net.Mime.ContentDisposition.ToString> operace, serializace nebo GetHashCode volání byste měli zkontrolovat.|
-|Doporučení|Nečekejte, že se mezi sebou správně porovnání řetězcové reprezentace ContentDispositions z různých verzí rozhraní .NET Framework. Převod řetězce ContentDispositions, pokud je to možné, před provedením porovnání.|
-|Scope|Vedlejší|
+|Podrobnosti|Řetězcové reprezentace <xref:System.Net.Mime.ContentDisposition?displayProperty=name>s byly aktualizovány, počínaje 4.6, aby vždy <xref:System.DateTime?displayProperty=name> představovaly hodinovou složku a se dvěma číslicemi. To je v souladu s [RFC822](https://www.ietf.org/rfc/rfc0822.txt) a [RFC2822](https://www.ietf.org/rfc/rfc2822.txt). To <xref:System.Net.Mime.ContentDisposition.ToString> způsobí, že vrátit mírně jiný řetězec v 4.6 ve scénářích, kde jeden z dispozičních časových prvků byl před 10:00. Všimněte si, že ContentDispositions jsou někdy serializovány <xref:System.Net.Mime.ContentDisposition.ToString> prostřednictvím jejich převodu na řetězce, takže všechny operace, serializace nebo GetHashCode volání by měly být přezkoumány.|
+|Návrh|Neočekávejte, že řetězcové reprezentace ContentDispositions z různých verzí rozhraní .NET Framework budou správně porovnávány navzájem. Převeďte řetězce zpět na ContentDispositions, pokud je to možné, před provedením porovnání.|
+|Rozsah|Vedlejší|
 |Version|4.6|
-|type|Modul runtime|
+|Typ|Modul runtime|
 |Ovlivněná rozhraní API|<ul><li><xref:System.Net.Mime.ContentDisposition.ToString?displayProperty=nameWithType></li><li><xref:System.Net.Mime.ContentDisposition.GetHashCode?displayProperty=nameWithType></li></ul>|
-

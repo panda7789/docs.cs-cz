@@ -9,42 +9,42 @@ helpviewer_keywords:
 - brushes [WPF], Transform property
 - rotating contents of brushes [WPF]
 ms.assetid: ebada2f9-f01f-4863-9ea2-c2e4e51610f1
-ms.openlocfilehash: a83f3b1c046e94faa8816e8c310f438b4711048a
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: b4484e2fc1ae3e969b02b1d8f3ae4ab2a035558e
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61769377"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79187340"
 ---
 # <a name="how-to-transform-a-brush"></a>Postupy: Transformace štětce
-Tento příklad ukazuje, jak transformovat <xref:System.Windows.Media.Brush> objektů pomocí jejich transformaci dvě vlastnosti: <xref:System.Windows.Media.Brush.RelativeTransform%2A> a <xref:System.Windows.Media.Brush.Transform%2A>.  
+Tento příklad ukazuje, <xref:System.Windows.Media.Brush> jak transformovat objekty <xref:System.Windows.Media.Brush.RelativeTransform%2A> pomocí <xref:System.Windows.Media.Brush.Transform%2A>jejich dvou vlastností transformace: a .  
   
- Následující příklady používají <xref:System.Windows.Media.RotateTransform> obměna obsah <xref:System.Windows.Media.ImageBrush> o 45 stupňů.  
+ Následující příklady používají <xref:System.Windows.Media.RotateTransform> k otočení obsahu <xref:System.Windows.Media.ImageBrush> o 45 stupňů.  
   
- Je vidět na následujícím obrázku <xref:System.Windows.Media.ImageBrush> bez <xref:System.Windows.Media.RotateTransform>, s <xref:System.Windows.Media.RotateTransform> u <xref:System.Windows.Media.Brush.RelativeTransform%2A> vlastnost a s <xref:System.Windows.Media.RotateTransform> u <xref:System.Windows.Media.Brush.Transform%2A> vlastnost.  
+ Následující obrázek <xref:System.Windows.Media.ImageBrush> znázorňuje <xref:System.Windows.Media.RotateTransform>bez <xref:System.Windows.Media.RotateTransform> a <xref:System.Windows.Media.Brush.RelativeTransform%2A> , s aplikovanou vlastností a s <xref:System.Windows.Media.RotateTransform> aplikovanou vlastností. <xref:System.Windows.Media.Brush.Transform%2A>  
   
- ![Štětec RelativeTransform workflow a transformovat nastavení](./media/wcpsdk-graphicsmm-transformandrelativetransform.png "wcpsdk_graphicsmm_transformandrelativetransform")  
+ ![Nastavení Relativní transformace stopy a transformace](./media/wcpsdk-graphicsmm-transformandrelativetransform.png "wcpsdk_graphicsmm_transformandrelativetransform")  
   
 ## <a name="example"></a>Příklad  
- V prvním příkladu se vztahuje <xref:System.Windows.Media.RotateTransform> k <xref:System.Windows.Media.Brush.RelativeTransform%2A> vlastnost <xref:System.Windows.Media.ImageBrush>. <xref:System.Windows.Media.RotateTransform.CenterX%2A> a <xref:System.Windows.Media.RotateTransform.CenterY%2A> vlastnosti <xref:System.Windows.Media.RotateTransform> objektu jsou nastaveny na 0,5, která je relativní souřadnice středový bod tohoto obsahu. V důsledku toho <xref:System.Windows.Media.ImageBrush> obsah otočí o jeho střed.  
+ První příklad platí <xref:System.Windows.Media.RotateTransform> a <xref:System.Windows.Media.Brush.RelativeTransform%2A> pro vlastnost <xref:System.Windows.Media.ImageBrush>. <xref:System.Windows.Media.RotateTransform.CenterX%2A> Vlastnosti <xref:System.Windows.Media.RotateTransform.CenterY%2A> a <xref:System.Windows.Media.RotateTransform> objektu jsou nastaveny na 0,5, což je relativní souřadnice středového bodu tohoto obsahu. V důsledku toho <xref:System.Windows.Media.ImageBrush> se obsah otáčí kolem svého středu.  
   
  [!code-csharp[BrushesIntroduction_snip#ImageBrushRelativeTransformExample](~/samples/snippets/csharp/VS_Snippets_Wpf/BrushesIntroduction_snip/CSharp/BrushTransformExample.cs#imagebrushrelativetransformexample)]
  [!code-vb[BrushesIntroduction_snip#ImageBrushRelativeTransformExample](~/samples/snippets/visualbasic/VS_Snippets_Wpf/BrushesIntroduction_snip/visualbasic/brushtransformexample.vb#imagebrushrelativetransformexample)]
  [!code-xaml[BrushesIntroduction_snip#ImageBrushRelativeTransformExample](~/samples/snippets/xaml/VS_Snippets_Wpf/BrushesIntroduction_snip/XAML/BrushTransformExample.xaml#imagebrushrelativetransformexample)]  
   
- V druhém příkladu platí také <xref:System.Windows.Media.RotateTransform> do <xref:System.Windows.Media.ImageBrush>, nicméně v tomto příkladu <xref:System.Windows.Media.Brush.Transform%2A> vlastnost místo <xref:System.Windows.Media.Brush.RelativeTransform%2A> vlastnost.  
+ Druhý příklad platí také <xref:System.Windows.Media.RotateTransform> pro <xref:System.Windows.Media.ImageBrush>; v tomto příkladu <xref:System.Windows.Media.Brush.Transform%2A> však <xref:System.Windows.Media.Brush.RelativeTransform%2A> používá vlastnost namísto vlastnosti.  
   
- Otočit štětec o jeho střed, příklad nastaví <xref:System.Windows.Media.RotateTransform.CenterX%2A> a <xref:System.Windows.Media.RotateTransform.CenterY%2A> vlastnosti <xref:System.Windows.Media.RotateTransform> objektu na absolutní souřadnice. Vzhledem k tomu, že štětec jsou vykreslovány obdélníku, který je 175 o 90 pixelů, je středový bod obdélníku (87.5, 45).  
+ Chcete-li otočit stopu kolem jejího <xref:System.Windows.Media.RotateTransform.CenterX%2A> <xref:System.Windows.Media.RotateTransform.CenterY%2A> středu, <xref:System.Windows.Media.RotateTransform> příklad nastaví vlastnosti a objektu na absolutní souřadnice. Vzhledem k tomu, že štětec maluje obdélník, který je 175 x 90 pixelů, středový bod obdélníku je (87.5, 45).  
   
  [!code-csharp[BrushesIntroduction_snip#ImageBrushTransformExample](~/samples/snippets/csharp/VS_Snippets_Wpf/BrushesIntroduction_snip/CSharp/BrushTransformExample.cs#imagebrushtransformexample)]
  [!code-vb[BrushesIntroduction_snip#ImageBrushTransformExample](~/samples/snippets/visualbasic/VS_Snippets_Wpf/BrushesIntroduction_snip/visualbasic/brushtransformexample.vb#imagebrushtransformexample)]
  [!code-xaml[BrushesIntroduction_snip#ImageBrushTransformExample](~/samples/snippets/xaml/VS_Snippets_Wpf/BrushesIntroduction_snip/XAML/BrushTransformExample.xaml#imagebrushtransformexample)]  
   
- Popis toho, jak <xref:System.Windows.Media.Brush.RelativeTransform%2A> a <xref:System.Windows.Media.Brush.Transform%2A> vlastnosti fungují, najdete v článku [přehled transformace štětce](brush-transformation-overview.md).  
+ Popis fungování <xref:System.Windows.Media.Brush.RelativeTransform%2A> vlastností <xref:System.Windows.Media.Brush.Transform%2A> a naleznete v tématu [Přehled transformace stopy](brush-transformation-overview.md).  
   
- Úplnou ukázku najdete v tématu [Ukázka štětců](https://go.microsoft.com/fwlink/?LinkID=159973). Další informace o štětcích najdete v tématu [Malování plnými barvami a přechody přehled](painting-with-solid-colors-and-gradients-overview.md).  
+ Úplný vzorek naleznete v tématu [Brushes Sample](https://github.com/Microsoft/WPF-Samples/tree/master/Graphics/Brushes). Další informace o stopách naleznete v [tématu Malování plnými barvami a přechody – přehled](painting-with-solid-colors-and-gradients-overview.md).  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Přehled transformace štětce](brush-transformation-overview.md)
 - [Přehled malování plnými barvami a přechody](painting-with-solid-colors-and-gradients-overview.md)

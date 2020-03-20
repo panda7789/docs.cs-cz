@@ -17,45 +17,45 @@ helpviewer_keywords:
 - application development [WPF], files
 - application management [WPF]
 ms.assetid: 7ad2943b-3961-41d3-8fc6-1582d43f5d99
-ms.openlocfilehash: ee636c49da64ad07ec5df2f11171b7f9aed713d1
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: f17898972eeef66447060db32bae5fae377b710e
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76743361"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79186193"
 ---
 # <a name="wpf-application-resource-content-and-data-files"></a>Zdroj, obsah a datové soubory zdroje aplikací WPF
-Aplikace Microsoft Windows jsou často závislé na souborech, které obsahují data, která nejsou spustitelná, například [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)], obrázky, videa a zvuky. Windows Presentation Foundation (WPF) nabízí speciální podporu pro konfiguraci, identifikaci a používání těchto typů datových souborů, které se nazývají datové soubory aplikace. Tato podpora se otáčí kolem konkrétní sady typů datových souborů aplikace, včetně:  
+Aplikace systému Microsoft Windows často závisí na souborech, které obsahují nespustitelná data, například [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)]obrázky, video a zvuk. Windows Presentation Foundation (WPF) nabízí speciální podporu pro konfiguraci, identifikaci a používání těchto typů datových souborů, které se nazývají datové soubory aplikace. Tato podpora se točí kolem konkrétní sadu typů datových souborů aplikace, včetně:  
   
-- **Soubory prostředků**: datové soubory, které jsou kompilovány buď do spustitelného souboru, nebo do knihovny WPF sestavení.  
+- **Soubory prostředků**: Datové soubory, které jsou zkompilovány do spustitelného nebo knihovny WPF sestavení.  
   
-- **Soubory obsahu**: samostatné datové soubory, které mají explicitní přidružení se spustitelným sestavením WPF.  
+- **Soubory obsahu**: Samostatné datové soubory, které mají explicitní přidružení ke spustitelnému sestavení WPF.  
   
-- **Lokalita se zdrojovými soubory**: samostatné datové soubory, které nemají žádné spojení se spustitelným sestavením WPF.  
+- **Web souborů původu**: Samostatné datové soubory, které nemají žádnou souvislost s spustitelným sestavením WPF.  
   
- Jedním z důležitých rozdílů mezi těmito třemi typy souborů je, že soubory prostředků a soubory obsahu jsou známy v době sestavování. sestavení má explicitní znalosti. Pro weby, které mají zdrojové soubory, ale sestavení nemusí mít žádná vědomí vůbec nebo implicitně znát odkaz na identifikátor URI (Uniform Resource Identifier). v opačném případě není nijak zaručeno, že již existuje odkazovaná lokalita zdrojového souboru.  
+ Jedním z důležitých rozdílů mezi těmito třemi typy souborů je, že soubory prostředků a soubory obsahu jsou známy v době sestavení; shromáždění o nich má výslovnou znalost. Pro soubory původu webu však sestavení nemusí mít žádné znalosti o nich vůbec nebo implicitní znalosti prostřednictvím odkazu identifikátor u jednotného prostředku (pack). v tomto případě neexistuje žádná záruka, že odkazované místo původu skutečně existuje.  
   
- Chcete-li odkazovat na datové soubory aplikace Windows Presentation Foundation (WPF), používá schéma identifikátoru URI (Uniform Resource Identifier), které je podrobněji popsáno v [balíčku identifikátory URI v](pack-uris-in-wpf.md)subsystému WPF.  
+ Chcete-li odkazovat na datové soubory aplikace, Windows Presentation Foundation (WPF) používá pack identifikátor identifikátor uuniform (URI) scheme, který je podrobně popsán v [balení URI v WPF](pack-uris-in-wpf.md)).  
   
- Toto téma popisuje, jak nakonfigurovat a používat datové soubory aplikace.  
+ Toto téma popisuje konfiguraci a použití datových souborů aplikace.  
 
-<a name="Resource_Files"></a>   
+<a name="Resource_Files"></a>
 ## <a name="resource-files"></a>Zdrojové soubory  
- Pokud datový soubor aplikace musí být vždy k dispozici aplikaci, jediným způsobem, jak zaručit dostupnost, je jeho kompilace do hlavního spustitelného sestavení aplikace nebo do jednoho z jeho odkazovaných sestavení. Tento typ datového souboru aplikace je známý jako *soubor prostředků*.  
+ Pokud datový soubor aplikace musí být vždy k dispozici pro aplikaci, jediný způsob, jak zaručit dostupnost je zkompilovat do hlavního spustitelného sestavení aplikace nebo jednoho z jeho odkazovaných sestavení. Tento typ datového souboru aplikace se označuje jako *soubor prostředků*.  
   
- Soubory prostředků byste měli používat v těchto případech:  
+ Soubory prostředků byste měli použít v:  
   
-- Po zkompilování do sestavení nemusíte aktualizovat obsah zdrojového souboru.  
+- Není nutné aktualizovat obsah souboru prostředků po kompilaci do sestavení.  
   
-- Chcete zjednodušit distribuci aplikací tím, že snížíte počet závislostí souborů.  
+- Chcete zjednodušit složitost distribuce aplikací snížením počtu závislostí souborů.  
   
-- Váš datový soubor aplikace musí být Lokalizovatelný (viz [Přehled globalizace a lokalizace WPF](../advanced/wpf-globalization-and-localization-overview.md)).  
+- Datový soubor aplikace musí být lokalizovatelný (viz [Přehled globalizace a lokalizace WPF).](../advanced/wpf-globalization-and-localization-overview.md)  
   
 > [!NOTE]
-> Soubory prostředků popsané v této části se liší od souborů prostředků popsaných v tématu [prostředky XAML](../../../desktop-wpf/fundamentals/xaml-resources-define.md) a liší se od vložených nebo propojených prostředků popsaných v tématu [Správa prostředků aplikace (.NET)](/visualstudio/ide/managing-application-resources-dotnet).  
+> Soubory prostředků popsané v této části se liší od souborů prostředků popsaných v [prostředku XAML](../../../desktop-wpf/fundamentals/xaml-resources-define.md) a liší se od vložených nebo propojených prostředků popsaných v [části Správa prostředků aplikace (.NET).](/visualstudio/ide/managing-application-resources-dotnet)  
   
 ### <a name="configuring-resource-files"></a>Konfigurace souborů prostředků  
- V WPF je soubor prostředků soubor, který je součástí projektu nástroje Microsoft Build Engine (MSBuild) jako položka `Resource`.  
+ V WPF soubor prostředků je soubor, který je součástí projektu microsoft sestavení `Resource` modulu (MSBuild) jako položka.  
   
 ```xml  
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ... >  
@@ -68,35 +68,35 @@ Aplikace Microsoft Windows jsou často závislé na souborech, které obsahují 
 ```  
   
 > [!NOTE]
-> V aplikaci Visual Studio vytvoříte soubor prostředků přidáním souboru do projektu a nastavením jeho `Build Action` na `Resource`.  
+> V sadě Visual Studio vytvoříte soubor prostředků přidáním souboru do projektu a jeho nastavením `Build Action` na `Resource`.  
   
- Když je projekt sestaven, MSBuild zkompiluje prostředek do sestavení.  
+ Při vytváření projektu MSBuild zkompiluje prostředek do sestavení.  
   
 ### <a name="using-resource-files"></a>Použití souborů prostředků  
- Chcete-li načíst soubor prostředků, můžete zavolat metodu <xref:System.Windows.Application.GetResourceStream%2A> třídy <xref:System.Windows.Application> a předat identifikátor URI balíčku, který identifikuje požadovaný soubor prostředků. <xref:System.Windows.Application.GetResourceStream%2A> vrátí objekt <xref:System.Windows.Resources.StreamResourceInfo>, který zpřístupňuje soubor prostředků jako <xref:System.IO.Stream> a popisuje jeho typ obsahu.  
+ Chcete-li načíst soubor prostředků, můžete volat <xref:System.Windows.Application.GetResourceStream%2A> metodu <xref:System.Windows.Application> třídy a předat identifikátor URI balíčku, který identifikuje požadovaný soubor prostředků. <xref:System.Windows.Application.GetResourceStream%2A>vrátí <xref:System.Windows.Resources.StreamResourceInfo> objekt, který zpřístupňuje soubor <xref:System.IO.Stream> prostředků jako a popisuje jeho typ obsahu.  
   
- Například následující kód ukazuje, jak pomocí <xref:System.Windows.Application.GetResourceStream%2A> načíst soubor prostředků <xref:System.Windows.Controls.Page> a nastavit jej jako obsah <xref:System.Windows.Controls.Frame> (`pageFrame`):  
+ Následující kód například ukazuje, jak <xref:System.Windows.Application.GetResourceStream%2A> použít <xref:System.Windows.Controls.Page> k načtení souboru prostředků <xref:System.Windows.Controls.Frame> a`pageFrame`nastavit jej jako obsah ( ):  
   
  [!code-csharp[WPFAssemblyResourcesSnippets#LoadAPageResourceFileManuallyCODE](~/samples/snippets/csharp/VS_Snippets_Wpf/WPFAssemblyResourcesSnippets/CSharp/ResourcesSample/ApplicationGetResourceStreamSnippetWindow.xaml.cs#loadapageresourcefilemanuallycode)]
  [!code-vb[WPFAssemblyResourcesSnippets#LoadAPageResourceFileManuallyCODE](~/samples/snippets/visualbasic/VS_Snippets_Wpf/WPFAssemblyResourcesSnippets/VisualBasic/ResourcesSample/ApplicationGetResourceStreamSnippetWindow.xaml.vb#loadapageresourcefilemanuallycode)]  
   
- Když zavoláte <xref:System.Windows.Application.GetResourceStream%2A> máte přístup k <xref:System.IO.Stream>, je nutné provést další práci, která je převedená na typ vlastnosti, se kterou budete nastavovat. Místo toho je možné nechat, aby se WPF postaral o otevření a převod <xref:System.IO.Stream> načtením souboru prostředků přímo do vlastnosti typu pomocí kódu.  
+ Při <xref:System.Windows.Application.GetResourceStream%2A> volání vám umožní <xref:System.IO.Stream>přístup k , je třeba provést další práci převodu na typ vlastnosti, které budete nastavení s. Místo toho můžete nechat WPF postarat o <xref:System.IO.Stream> otevření a převod unavování souboru prostředků přímo do vlastnosti typu pomocí kódu.  
   
- Následující příklad ukazuje, jak načíst <xref:System.Windows.Controls.Page> přímo do <xref:System.Windows.Controls.Frame> (`pageFrame`) pomocí kódu.  
+ Následující příklad ukazuje, jak <xref:System.Windows.Controls.Page> načíst <xref:System.Windows.Controls.Frame> `pageFrame`přímo do ( ) pomocí kódu.  
   
  [!code-csharp[WPFAssemblyResourcesSnippets#LoadPageResourceFileFromCODE](~/samples/snippets/csharp/VS_Snippets_Wpf/WPFAssemblyResourcesSnippets/CSharp/ResourcesSample/ApplicationGetResourceStreamSnippetWindow.xaml.cs#loadpageresourcefilefromcode)]
  [!code-vb[WPFAssemblyResourcesSnippets#LoadPageResourceFileFromCODE](~/samples/snippets/visualbasic/VS_Snippets_Wpf/WPFAssemblyResourcesSnippets/VisualBasic/ResourcesSample/ApplicationGetResourceStreamSnippetWindow.xaml.vb#loadpageresourcefilefromcode)]  
   
- V následujícím příkladu je ekvivalent kódu v předchozím příkladu.  
+ Následující příklad je ekvivalent značky předchozího příkladu.  
   
  [!code-xaml[WPFAssemblyResourcesSnippets#LoadPageResourceFileFromXAML](~/samples/snippets/csharp/VS_Snippets_Wpf/WPFAssemblyResourcesSnippets/CSharp/ResourcesSample/ApplicationGetResourceStreamSnippetWindow.xaml#loadpageresourcefilefromxaml)]  
   
-### <a name="application-code-files-as-resource-files"></a>Soubory s kódem aplikace jako soubory prostředků  
- Pomocí identifikátorů URI balíčků, včetně oken, stránek, toků dokumentů a slovníků prostředků, se dá odkazovat speciální sada souborů s kódem aplikace WPF. Můžete například nastavit vlastnost <xref:System.Windows.Application.StartupUri%2A?displayProperty=nameWithType> s identifikátorem URI balíčku, který odkazuje na okno nebo stránku, které chcete načíst při spuštění aplikace.  
+### <a name="application-code-files-as-resource-files"></a>Soubory kódu aplikace jako soubory prostředků  
+ Na speciální sadu souborů kódu aplikace WPF lze odkazovat pomocí identifikátorů URI balíčku, včetně oken, stránek, dokumentů toku a slovníků prostředků. Můžete například nastavit <xref:System.Windows.Application.StartupUri%2A?displayProperty=nameWithType> vlastnost pomocí identifikátoru URI balíčku, který odkazuje na okno nebo stránku, kterou chcete načíst při spuštění aplikace.  
   
  [!code-xaml[WPFAssemblyResourcesSnippets#SetApplicationStartupURI](~/samples/snippets/csharp/VS_Snippets_Wpf/WPFAssemblyResourcesSnippets/CSharp/ResourcesSample/App.xaml#setapplicationstartupuri)]  
   
- To lze provést, pokud je soubor XAML obsažen v projektu MSBuild jako položka `Page`.  
+ Můžete to provést, pokud je soubor XAML součástí projektu `Page` MSBuild jako položka.  
   
 ```xml  
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ... >  
@@ -109,23 +109,23 @@ Aplikace Microsoft Windows jsou často závislé na souborech, které obsahují 
 ```  
   
 > [!NOTE]
-> V aplikaci Visual Studio přidáte do projektu novou <xref:System.Windows.Window>, <xref:System.Windows.Navigation.NavigationWindow>, <xref:System.Windows.Controls.Page>, <xref:System.Windows.Documents.FlowDocument>nebo <xref:System.Windows.ResourceDictionary>, `Build Action` pro soubor označení bude standardně `Page`.  
+> V sadě Visual Studio <xref:System.Windows.Window>přidáte <xref:System.Windows.Navigation.NavigationWindow> <xref:System.Windows.Controls.Page>nový <xref:System.Windows.Documents.FlowDocument>, <xref:System.Windows.ResourceDictionary> , , `Build Action` nebo do projektu, pro `Page`soubor značek bude výchozí .  
   
- Když je zkompilován projekt s `Page`mi položkami, [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] položky jsou převedeny do binárního formátu a zkompilovány do přidruženého sestavení. V důsledku toho lze tyto soubory použít stejným způsobem jako typické soubory prostředků.  
+ Při kompilaci `Page` projektu s položkami jsou položky převedeny do binárního [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] formátu a zkompilovány do přidruženého sestavení. V důsledku toho tyto soubory lze použít stejným způsobem jako typické soubory prostředků.  
   
 > [!NOTE]
-> Pokud je soubor [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] nakonfigurovaný jako `Resource` položka a nemá soubor s kódem na pozadí, nezpracovaný [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] se zkompiluje do sestavení namísto binární verze nezpracovaného [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)].  
+> Pokud [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] je soubor nakonfigurován jako `Resource` položka a nemá soubor s [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] kódem na pozadí, je nezpracovaný soubor [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]zkompilován do sestavení, nikoli do binární verze nezpracovaného souboru .  
   
-<a name="Content_Files"></a>   
+<a name="Content_Files"></a>
 ## <a name="content-files"></a>Soubory obsahu  
- *Soubor obsahu* je distribuován jako volný soubor společně se spustitelným sestavením. I když nejsou zkompilovány do sestavení, sestavení jsou kompilována s metadaty, která vytváří přidružení ke každému souboru obsahu.  
+ *Soubor obsahu* je distribuován jako volný soubor vedle spustitelného sestavení. Přestože nejsou kompilovány do sestavení, sestavení jsou kompilovány s metadaty, která vytváří přidružení s každým souborem obsahu.  
   
- Soubory obsahu byste měli použít, pokud vaše aplikace vyžaduje konkrétní sadu datových souborů aplikace, které chcete aktualizovat, aniž by bylo nutné znovu kompilovat sestavení, které je využívá.  
+ Soubory obsahu byste měli použít, pokud vaše aplikace vyžaduje určitou sadu datových souborů aplikace, které chcete aktualizovat bez opětovné kompilace sestavení, které je spotřebovává.  
   
 ### <a name="configuring-content-files"></a>Konfigurace souborů obsahu  
- Chcete-li přidat soubor obsahu do projektu, je třeba zahrnout datový soubor aplikace jako položku `Content`. Vzhledem k tomu, že soubor obsahu není zkompilován přímo do sestavení, je nutné nastavit prvek metadat `CopyToOutputDirectory` MSBuild pro určení, zda je soubor obsahu zkopírován do umístění, které je relativní k sestavenému sestavení. Pokud chcete, aby byl prostředek zkopírován do výstupní složky sestavení pokaždé, když je projekt sestaven, nastavíte `CopyToOutputDirectory` element metadata s hodnotou `Always`. V opačném případě můžete zajistit, aby byla do výstupní složky sestavení zkopírována pouze nejnovější verze prostředku pomocí `PreserveNewest` hodnoty.  
+ Chcete-li přidat soubor obsahu do projektu, musí být `Content` datový soubor aplikace zahrnut jako položka. Navíc vzhledem k tomu, že soubor obsahu není kompilován přímo `CopyToOutputDirectory` do sestavení, je třeba nastavit prvek metadat MSBuild, který určí, že soubor obsahu je zkopírován do umístění, které je relativní vzhledem k sestavení. Pokud chcete, aby byl prostředek zkopírován do výstupní složky sestavení `CopyToOutputDirectory` při každém `Always` sestavení projektu, nastavte prvek metadat s hodnotou. V opačném případě můžete zajistit, že pouze nejnovější verze prostředku je zkopírován do výstupní složky sestavení pomocí `PreserveNewest` hodnoty.  
   
- Následující příklad ukazuje soubor, který je nakonfigurován jako soubor obsahu, který je zkopírován do výstupní složky sestavení pouze v případě, že je do projektu přidána nová verze prostředku.  
+ Následující text ukazuje soubor, který je nakonfigurován jako soubor obsahu, který je zkopírován do výstupní složky sestavení pouze v případě, že je do projektu přidána nová verze zdroje.  
   
 ```xml  
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ... >  
@@ -140,64 +140,64 @@ Aplikace Microsoft Windows jsou často závislé na souborech, které obsahují 
 ```  
   
 > [!NOTE]
-> V sadě Visual Studio vytvoříte soubor obsahu přidáním souboru do projektu a nastavením jeho `Build Action` na `Content`a nastavíte jeho `Copy to Output Directory` na `Copy always` (totéž jako `Always`) a `Copy if newer` (totéž jako `PreserveNewest`).  
+> V sadě Visual Studio vytvoříte soubor obsahu přidáním souboru do projektu `Copy to Output Directory` `Copy always` a jeho `Always`nastavením `Build Action` `Content`na `PreserveNewest`, a nastavíte jeho soubor na (stejné jako ) a `Copy if newer` (stejné jako ).  
   
- Při sestavení projektu je atribut <xref:System.Windows.Resources.AssemblyAssociatedContentFileAttribute> zkompilován do metadat sestavení pro každý soubor obsahu.  
+ Při sestavení projektu <xref:System.Windows.Resources.AssemblyAssociatedContentFileAttribute> je atribut zkompilován do metadat sestavení pro každý soubor obsahu.  
   
  `[assembly: AssemblyAssociatedContentFile("ContentFile.xaml")]`  
   
- Hodnota <xref:System.Windows.Resources.AssemblyAssociatedContentFileAttribute> implikuje cestu k souboru obsahu relativně k jeho umístění v projektu. Například pokud se soubor obsahu nachází v podsložce projektu, další informace o cestě budou začleněny do <xref:System.Windows.Resources.AssemblyAssociatedContentFileAttribute> hodnoty.  
+ Hodnota <xref:System.Windows.Resources.AssemblyAssociatedContentFileAttribute> znamená cestu k souboru obsahu vzhledem k jeho umístění v projektu. Například pokud soubor obsahu byl umístěn v podsložce projektu, další informace <xref:System.Windows.Resources.AssemblyAssociatedContentFileAttribute> o cestě by být začleněny do hodnoty.  
   
  `[assembly: AssemblyAssociatedContentFile("Resources/ContentFile.xaml")]`  
   
- Hodnota <xref:System.Windows.Resources.AssemblyAssociatedContentFileAttribute> je také hodnotou cesty k souboru obsahu ve výstupní složce sestavení.  
+ Hodnota <xref:System.Windows.Resources.AssemblyAssociatedContentFileAttribute> je také hodnota cesty k souboru obsahu ve výstupní složce sestavení.  
   
-### <a name="using-content-files"></a>Používání souborů obsahu  
- Chcete-li načíst soubor obsahu, můžete zavolat metodu <xref:System.Windows.Application.GetContentStream%2A> třídy <xref:System.Windows.Application> a předat identifikátor URI balíčku, který identifikuje požadovaný soubor obsahu. <xref:System.Windows.Application.GetContentStream%2A> vrátí objekt <xref:System.Windows.Resources.StreamResourceInfo>, který zpřístupňuje soubor obsahu jako <xref:System.IO.Stream> a popisuje jeho typ obsahu.  
+### <a name="using-content-files"></a>Použití souborů obsahu  
+ Chcete-li načíst soubor obsahu, můžete volat <xref:System.Windows.Application.GetContentStream%2A> metodu <xref:System.Windows.Application> třídy a předat identifikátor URI balíčku, který identifikuje požadovaný soubor obsahu. <xref:System.Windows.Application.GetContentStream%2A>vrátí <xref:System.Windows.Resources.StreamResourceInfo> objekt, který zpřístupňuje soubor <xref:System.IO.Stream> obsahu jako a popisuje jeho typ obsahu.  
   
- Například následující kód ukazuje, jak použít <xref:System.Windows.Application.GetContentStream%2A> k načtení <xref:System.Windows.Controls.Page> souboru obsahu a jeho nastavení jako obsahu <xref:System.Windows.Controls.Frame> (`pageFrame`).  
+ Následující kód například ukazuje, jak <xref:System.Windows.Application.GetContentStream%2A> použít <xref:System.Windows.Controls.Page> k načtení souboru obsahu <xref:System.Windows.Controls.Frame> a`pageFrame`nastavit jej jako obsah ( ).  
   
  [!code-csharp[WPFAssemblyResourcesSnippets#LoadAPageContentFileManuallyCODE](~/samples/snippets/csharp/VS_Snippets_Wpf/WPFAssemblyResourcesSnippets/CSharp/ResourcesSample/ApplicationGetContentStreamSnippetWindow.xaml.cs#loadapagecontentfilemanuallycode)]
  [!code-vb[WPFAssemblyResourcesSnippets#LoadAPageContentFileManuallyCODE](~/samples/snippets/visualbasic/VS_Snippets_Wpf/WPFAssemblyResourcesSnippets/VisualBasic/ResourcesSample/ApplicationGetContentStreamSnippetWindow.xaml.vb#loadapagecontentfilemanuallycode)]  
   
- Když zavoláte <xref:System.Windows.Application.GetContentStream%2A> máte přístup k <xref:System.IO.Stream>, je nutné provést další práci, která je převedená na typ vlastnosti, se kterou budete nastavovat. Místo toho je možné nechat, aby se WPF postaral o otevření a převod <xref:System.IO.Stream> načtením souboru prostředků přímo do vlastnosti typu pomocí kódu.  
+ Při <xref:System.Windows.Application.GetContentStream%2A> volání vám umožní <xref:System.IO.Stream>přístup k , je třeba provést další práci převodu na typ vlastnosti, které budete nastavení s. Místo toho můžete nechat WPF postarat o <xref:System.IO.Stream> otevření a převod unavování souboru prostředků přímo do vlastnosti typu pomocí kódu.  
   
- Následující příklad ukazuje, jak načíst <xref:System.Windows.Controls.Page> přímo do <xref:System.Windows.Controls.Frame> (`pageFrame`) pomocí kódu.  
+ Následující příklad ukazuje, jak <xref:System.Windows.Controls.Page> načíst <xref:System.Windows.Controls.Frame> `pageFrame`přímo do ( ) pomocí kódu.  
   
  [!code-csharp[WPFAssemblyResourcesSnippets#LoadPageContentFileFromCODE](~/samples/snippets/csharp/VS_Snippets_Wpf/WPFAssemblyResourcesSnippets/CSharp/ResourcesSample/ApplicationGetContentStreamSnippetWindow.xaml.cs#loadpagecontentfilefromcode)]
  [!code-vb[WPFAssemblyResourcesSnippets#LoadPageContentFileFromCODE](~/samples/snippets/visualbasic/VS_Snippets_Wpf/WPFAssemblyResourcesSnippets/VisualBasic/ResourcesSample/ApplicationGetContentStreamSnippetWindow.xaml.vb#loadpagecontentfilefromcode)]  
   
- V následujícím příkladu je ekvivalent kódu v předchozím příkladu.  
+ Následující příklad je ekvivalent značky předchozího příkladu.  
   
  [!code-xaml[WPFAssemblyResourcesSnippets#LoadPageContentFileFromXAML](~/samples/snippets/csharp/VS_Snippets_Wpf/WPFAssemblyResourcesSnippets/CSharp/ResourcesSample/ApplicationGetContentStreamSnippetWindow.xaml#loadpagecontentfilefromxaml)]  
   
-<a name="Site_of_Origin_Files"></a>   
-## <a name="site-of-origin-files"></a>Lokalita se zdrojovými soubory  
- Soubory prostředků mají explicitní vztah se sestaveními, která jsou distribuována společně, jak je definováno <xref:System.Windows.Resources.AssemblyAssociatedContentFileAttribute>. Existují však situace, kdy může být vhodné vytvořit implicitní nebo neexistující relaci mezi sestavením a datovým souborem aplikace, včetně:  
+<a name="Site_of_Origin_Files"></a>
+## <a name="site-of-origin-files"></a>Stránky souborů původu  
+ Soubory prostředků mají explicitní vztah se sestaveními, která jsou distribuována společně, jak je definováno <xref:System.Windows.Resources.AssemblyAssociatedContentFileAttribute>v . Existují však časy, kdy můžete chtít vytvořit implicitní nebo neexistující vztah mezi sestavením a datovým souborem aplikace, včetně případů, kdy:  
   
-- Soubor v době kompilace neexistuje.  
+- Soubor neexistuje v době kompilace.  
   
-- Nevíte, které soubory bude vaše sestavení vyžadovat až do doby běhu.  
+- Nevíte, jaké soubory bude vaše sestavení vyžadovat až do běhu.  
   
-- Chcete být schopni aktualizovat soubory bez opětovné kompilace sestavení, ke kterému jsou přidruženy.  
+- Chcete mít možnost aktualizovat soubory bez opětovné kompilace sestavení, ke kterému jsou přidruženy.  
   
-- Vaše aplikace používá velké datové soubory, jako je například zvuk a video, a chcete, aby je uživatelé stáhli, pouze pokud si zvolí.  
+- Aplikace používá velké datové soubory, například zvuk a video, a chcete, aby si je uživatelé stáhli pouze v případě, že se tak rozhodnou.  
   
- Tyto typy souborů je možné načíst pomocí tradičních schémat identifikátorů URI, jako jsou file:///a http://.  
+ Je možné načíst tyto typy souborů pomocí tradičních schémat URI, jako je například file:/// a schémata http://.  
   
  [!code-xaml[WPFAssemblyResourcesSnippets#AbsolutePackUriFileHttpReferenceXAML](~/samples/snippets/csharp/VS_Snippets_Wpf/WPFAssemblyResourcesSnippets/CSharp/ResourcesSample/AbsolutePackUriPage.xaml#absolutepackurifilehttpreferencexaml)]  
   
- Schémata file:///a http://však vyžadují, aby vaše aplikace měla úplný vztah důvěryhodnosti. Pokud je vaše aplikace aplikace prohlížeče XAML (XBAP), která byla spuštěna z Internetu nebo intranetu, a žádá o ni pouze sada oprávnění povolených pro aplikace spuštěné z těchto umístění, volné soubory lze načíst pouze z původní lokalita aplikace (umístění pro spuštění). Takové soubory se označují jako *weby se zdrojovými* soubory.  
+ schémata file:/// a http:// však vyžadují, aby vaše aplikace měla plnou důvěryhodnost. Pokud je vaše aplikace aplikace xaml prohlížeč aplikace (XBAP), který byl spuštěn z Internetu nebo intranet, a požaduje pouze sadu oprávnění, která jsou povolena pro aplikace spouštěné z těchto umístění, volné soubory lze načíst pouze z místa původu aplikace (místo spuštění). Tyto soubory jsou známé jako *soubory původu.*  
   
- Lokalita počátečních souborů je jedinou možností pro aplikace s částečným vztahem důvěryhodnosti, i když nejsou omezeny na aplikace s částečným vztahem důvěryhodnosti. Aplikace s plnou důvěryhodností stále můžou potřebovat načíst datové soubory aplikace, které neznají v době sestavení. zatímco aplikace s plnou důvěryhodností můžou používat file:///, je nejspíš, že se soubory dat aplikace nainstalují do stejné složky jako nebo z podsložky sestavení aplikace. V takovém případě je používání webu s odkazem na počátek snazší než použití file:///, protože použití file:///vyžaduje, abyste si vypracovali celou cestu k souboru.  
+ Soubory původu jsou jedinou možností pro aplikace s částečnou důvěryhodností, i když nejsou omezeny na aplikace s částečnou důvěryhodností. Aplikace s úplným vztahem důvěryhodnosti mohou stále potřebovat načíst datové soubory aplikací, o kterých v době sestavení nevědí. zatímco aplikace s úplnou důvěryhodností mohou používat file:///, je pravděpodobné, že datové soubory aplikace budou nainstalovány ve stejné složce jako sestavení aplikace nebo podsložky. V tomto případě je použití odkazování na místo původu jednodušší než použití file:///, protože použití file:/// vyžaduje, abyste vypracovali úplnou cestu souboru.  
   
 > [!NOTE]
-> Web se zdrojovými soubory není uložen v mezipaměti aplikace prohlížeče XAML (XBAP) na klientském počítači, zatímco soubory obsahu jsou. V důsledku toho se stáhnou jenom v případě, že je to výslovně požadováno. Pokud aplikace prohlížeče XAML (XBAP) obsahuje velké mediální soubory, nakonfigurujete je jako lokalita původních souborů znamená, že počáteční spuštění aplikace je mnohem rychlejší a soubory se stáhnou jenom na vyžádání.  
+> Soubory původu webu nejsou ukládány do mezipaměti s aplikací prohlížeče XAML (XBAP) v klientském počítači, zatímco soubory obsahu jsou. V důsledku toho jsou staženy pouze na žádost výslovně. Pokud aplikace prohlížeče XAML (XBAP) má velké mediální soubory, jejich konfigurace jako soubory původu webu znamená, že počáteční spuštění aplikace je mnohem rychlejší a soubory jsou staženy pouze na vyžádání.  
   
-### <a name="configuring-site-of-origin-files"></a>Probíhá konfigurace serveru počátečních souborů  
- Pokud je vaše lokalita se zdrojovými soubory v době kompilace neexistující nebo neznámá, je nutné použít tradiční mechanismy nasazení, aby bylo zajištěno, že požadované soubory jsou k dispozici v době běhu, včetně buď `XCopy` programu příkazového řádku nebo Instalační služba systému Windows společnosti Microsoft.  
+### <a name="configuring-site-of-origin-files"></a>Konfigurace souborů původu webu  
+ Pokud vaše soubory původu neexistují nebo nejsou v době kompilace známy, je třeba použít tradiční mechanismy nasazení, které `XCopy` zajistí, že požadované soubory budou k dispozici za běhu, včetně použití programu příkazového řádku nebo Instalační služby systému Microsoft Windows.  
   
- Pokud v době kompilace znáte soubory, které by měly být umístěny v lokalitě původu, ale přesto chcete se vyhnout explicitní závislosti, můžete tyto soubory přidat do projektu MSBuild jako položku `None`. Stejně jako u souborů obsahu je potřeba nastavit atribut MSBuild `CopyToOutputDirectory`, abyste určili, že je lokalita zdrojového souboru zkopírována do umístění, které je relativní k sestavenému sestavení, zadáním hodnoty `Always` nebo `PreserveNewest` hodnoty.  
+ Pokud v době kompilace víte, že soubory, které chcete být umístěny v místě původu, ale přesto chcete vyhnout explicitní závislost, můžete přidat tyto soubory do projektu MSBuild jako `None` položku. Stejně jako u souborů obsahu je `CopyToOutputDirectory` třeba nastavit atribut MSBuild, abyste určili, že soubor webu původu je zkopírován do umístění, které je relativní k sestavení, zadáním `Always` hodnoty nebo `PreserveNewest` hodnoty.  
   
 ```xml  
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ... >  
@@ -210,32 +210,32 @@ Aplikace Microsoft Windows jsou často závislé na souborech, které obsahují 
 ```  
   
 > [!NOTE]
-> V aplikaci Visual Studio vytvoříte web se zdrojovým souborem přidáním souboru do projektu a nastavením jeho `Build Action` na `None`.  
+> V sadě Visual Studio vytvoříte soubor původního webu přidáním `Build Action` souboru do projektu a nastavením jeho na `None`.  
   
- Po sestavení projektu nástroj MSBuild zkopíruje zadané soubory do výstupní složky sestavení.  
+ Při vytváření projektu MSBuild zkopíruje zadané soubory do výstupní složky sestavení.  
   
-### <a name="using-site-of-origin-files"></a>Použití serveru původních souborů  
- Chcete-li načíst web se zdrojovým souborem, můžete zavolat metodu <xref:System.Windows.Application.GetRemoteStream%2A> třídy <xref:System.Windows.Application> a předat identifikátor URI balíčku, který identifikuje požadovaný web se zdrojovým souborem. <xref:System.Windows.Application.GetRemoteStream%2A> vrátí objekt <xref:System.Windows.Resources.StreamResourceInfo>, který zpřístupňuje web zdrojového souboru jako <xref:System.IO.Stream> a popisuje jeho typ obsahu.  
+### <a name="using-site-of-origin-files"></a>Použití souborů webu původu  
+ Chcete-li načíst soubor webu původu, můžete volat <xref:System.Windows.Application.GetRemoteStream%2A> metodu <xref:System.Windows.Application> třídy a předat identifikátor URI balíčku, který identifikuje požadovaný soubor původu. <xref:System.Windows.Application.GetRemoteStream%2A>vrátí <xref:System.Windows.Resources.StreamResourceInfo> objekt, který zpřístupňuje soubor webu <xref:System.IO.Stream> původu jako a popisuje jeho typ obsahu.  
   
- Například následující kód ukazuje, jak použít <xref:System.Windows.Application.GetRemoteStream%2A> k načtení <xref:System.Windows.Controls.Page> lokality zdrojového kódu a jejich nastavení jako obsahu <xref:System.Windows.Controls.Frame> (`pageFrame`).  
+ Následující kód například ukazuje, jak <xref:System.Windows.Application.GetRemoteStream%2A> použít <xref:System.Windows.Controls.Page> k načtení souboru webu původu <xref:System.Windows.Controls.Frame> a`pageFrame`nastavit jej jako obsah ( ).  
   
  [!code-csharp[WPFAssemblyResourcesSnippets#LoadAPageSOOFileManuallyCODE](~/samples/snippets/csharp/VS_Snippets_Wpf/WPFAssemblyResourcesSnippets/CSharp/ResourcesSample/SOOPage.xaml.cs#loadapagesoofilemanuallycode)]
  [!code-vb[WPFAssemblyResourcesSnippets#LoadAPageSOOFileManuallyCODE](~/samples/snippets/visualbasic/VS_Snippets_Wpf/WPFAssemblyResourcesSnippets/VisualBasic/ResourcesSample/SOOPage.xaml.vb#loadapagesoofilemanuallycode)]  
   
- Když zavoláte <xref:System.Windows.Application.GetRemoteStream%2A> máte přístup k <xref:System.IO.Stream>, je nutné provést další práci, která je převedená na typ vlastnosti, se kterou budete nastavovat. Místo toho je možné nechat, aby se WPF postaral o otevření a převod <xref:System.IO.Stream> načtením souboru prostředků přímo do vlastnosti typu pomocí kódu.  
+ Při <xref:System.Windows.Application.GetRemoteStream%2A> volání vám umožní <xref:System.IO.Stream>přístup k , je třeba provést další práci převodu na typ vlastnosti, které budete nastavení s. Místo toho můžete nechat WPF postarat o <xref:System.IO.Stream> otevření a převod unavování souboru prostředků přímo do vlastnosti typu pomocí kódu.  
   
- Následující příklad ukazuje, jak načíst <xref:System.Windows.Controls.Page> přímo do <xref:System.Windows.Controls.Frame> (`pageFrame`) pomocí kódu.  
+ Následující příklad ukazuje, jak <xref:System.Windows.Controls.Page> načíst <xref:System.Windows.Controls.Frame> `pageFrame`přímo do ( ) pomocí kódu.  
   
  [!code-csharp[WPFAssemblyResourcesSnippets#LoadPageSOOFileFromCODE](~/samples/snippets/csharp/VS_Snippets_Wpf/WPFAssemblyResourcesSnippets/CSharp/ResourcesSample/SOOPage.xaml.cs#loadpagesoofilefromcode)]
  [!code-vb[WPFAssemblyResourcesSnippets#LoadPageSOOFileFromCODE](~/samples/snippets/visualbasic/VS_Snippets_Wpf/WPFAssemblyResourcesSnippets/VisualBasic/ResourcesSample/SOOPage.xaml.vb#loadpagesoofilefromcode)]  
   
- V následujícím příkladu je ekvivalent kódu v předchozím příkladu.  
+ Následující příklad je ekvivalent značky předchozího příkladu.  
   
  [!code-xaml[WPFAssemblyResourcesSnippets#LoadPageSOOFileFromXAML](~/samples/snippets/csharp/VS_Snippets_Wpf/WPFAssemblyResourcesSnippets/CSharp/ResourcesSample/SOOPage.xaml#loadpagesoofilefromxaml)]  
   
-<a name="Rebuilding_after_Changing_Build_Type"></a>   
+<a name="Rebuilding_after_Changing_Build_Type"></a>
 ## <a name="rebuilding-after-changing-build-type"></a>Opětovné sestavení po změně typu sestavení  
- Po změně typu sestavení datového souboru aplikace je nutné znovu sestavit celou aplikaci, abyste zajistili, že tyto změny budou provedeny. Pokud sestavíte pouze aplikaci, změny se neprojeví.  
+ Po změně typu sestavení datového souboru aplikace je třeba znovu sestavit celou aplikaci, abyste zajistili, že tyto změny budou použity. Pokud vytvoříte pouze aplikaci, změny nebudou použity.  
   
 ## <a name="see-also"></a>Viz také
 
