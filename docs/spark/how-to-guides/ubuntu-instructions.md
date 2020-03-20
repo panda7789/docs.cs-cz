@@ -1,53 +1,53 @@
 ---
-title: Vytvoření aplikace .NET pro Apache Spark v Ubuntu
-description: Informace o tom, jak sestavit rozhraní .NET pro Apache Spark aplikaci v Ubuntu
+title: Sestavení aplikace .NET pro Apache Spark na Ubuntu
+description: Naučte se, jak vytvořit aplikaci .NET pro Apache Spark na Ubuntu
 ms.date: 01/29/2020
 ms.topic: conceptual
 ms.custom: mvc,how-to
-ms.openlocfilehash: a12c861d0f231910f715a13fd41d1f3f0d6748a7
-ms.sourcegitcommit: cdf5084648bf5e77970cbfeaa23f1cab3e6e234e
+ms.openlocfilehash: 6dd6f60bb89a51c47fe17182fc47de818cd00b80
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76928041"
+ms.lasthandoff: 03/15/2020
+ms.locfileid: "79187575"
 ---
-# <a name="learn-how-to-build-your-net-for-apache-spark-application-on-ubuntu"></a><span data-ttu-id="e1213-103">Informace o tom, jak sestavit rozhraní .NET pro Apache Spark aplikaci v Ubuntu</span><span class="sxs-lookup"><span data-stu-id="e1213-103">Learn how to build your .NET for Apache Spark application on Ubuntu</span></span>
+# <a name="learn-how-to-build-your-net-for-apache-spark-application-on-ubuntu"></a><span data-ttu-id="5f3c5-103">Naučte se, jak vytvořit aplikaci .NET pro Apache Spark na Ubuntu</span><span class="sxs-lookup"><span data-stu-id="5f3c5-103">Learn how to build your .NET for Apache Spark application on Ubuntu</span></span>
 
-<span data-ttu-id="e1213-104">V tomto článku se naučíte, jak sestavit rozhraní .NET pro Apache Spark aplikace na Ubuntu.</span><span class="sxs-lookup"><span data-stu-id="e1213-104">This article teaches you how to build your .NET for Apache Spark applications on Ubuntu.</span></span>
+<span data-ttu-id="5f3c5-104">Tento článek vás naučí, jak vytvořit .NET pro aplikace Apache Spark na Ubuntu.</span><span class="sxs-lookup"><span data-stu-id="5f3c5-104">This article teaches you how to build your .NET for Apache Spark applications on Ubuntu.</span></span>
 
-## <a name="prerequisites"></a><span data-ttu-id="e1213-105">Požadavky</span><span class="sxs-lookup"><span data-stu-id="e1213-105">Prerequisites</span></span>
+## <a name="prerequisites"></a><span data-ttu-id="5f3c5-105">Požadavky</span><span class="sxs-lookup"><span data-stu-id="5f3c5-105">Prerequisites</span></span>
 
-<span data-ttu-id="e1213-106">Pokud již máte všechny následující požadavky, přejděte k postupu [sestavení](#build) .</span><span class="sxs-lookup"><span data-stu-id="e1213-106">If you already have all of the following prerequisites, skip to the [build](#build) steps.</span></span>
+<span data-ttu-id="5f3c5-106">Pokud již máte všechny následující požadavky, přejděte na kroky [sestavení.](#build)</span><span class="sxs-lookup"><span data-stu-id="5f3c5-106">If you already have all of the following prerequisites, skip to the [build](#build) steps.</span></span>
 
-1. <span data-ttu-id="e1213-107">Stažení a instalace sady **[.NET core 2,1 SDK](https://dotnet.microsoft.com/download/dotnet-core/2.1)** nebo sady **[.NET Core 3,1 SDK](https://dotnet.microsoft.com/download/dotnet-core/3.1)** – instalace sady SDK přidá do vaší cesty `dotnet` sada nástrojů.</span><span class="sxs-lookup"><span data-stu-id="e1213-107">Download and install **[.NET Core 2.1 SDK](https://dotnet.microsoft.com/download/dotnet-core/2.1)** or the **[.NET Core 3.1 SDK](https://dotnet.microsoft.com/download/dotnet-core/3.1)** - installing the SDK adds the `dotnet` toolchain to your path.</span></span>  <span data-ttu-id="e1213-108">Podporují se .NET Core 2,1, 2,2 a 3,1.</span><span class="sxs-lookup"><span data-stu-id="e1213-108">.NET Core 2.1, 2.2 and 3.1 are supported.</span></span>
+1. <span data-ttu-id="5f3c5-107">Stáhněte a nainstalujte **[sadu .NET Core 2.1 SDK](https://dotnet.microsoft.com/download/dotnet-core/2.1)** nebo **[sadu .NET Core 3.1 SDK](https://dotnet.microsoft.com/download/dotnet-core/3.1)** – instalace sady SDK přidá sadu `dotnet` nástrojů do vaší cesty.</span><span class="sxs-lookup"><span data-stu-id="5f3c5-107">Download and install **[.NET Core 2.1 SDK](https://dotnet.microsoft.com/download/dotnet-core/2.1)** or the **[.NET Core 3.1 SDK](https://dotnet.microsoft.com/download/dotnet-core/3.1)** - installing the SDK adds the `dotnet` toolchain to your path.</span></span>  <span data-ttu-id="5f3c5-108">Podporují se jádra .NET 2.1, 2.2 a 3.1.</span><span class="sxs-lookup"><span data-stu-id="5f3c5-108">.NET Core 2.1, 2.2 and 3.1 are supported.</span></span>
 
-2. <span data-ttu-id="e1213-109">Nainstalujte **[OpenJDK 8](https://openjdk.java.net/install/)** .</span><span class="sxs-lookup"><span data-stu-id="e1213-109">Install **[OpenJDK 8](https://openjdk.java.net/install/)**.</span></span> 
+2. <span data-ttu-id="5f3c5-109">Nainstalujte **[OpenJDK 8](https://openjdk.java.net/install/)**.</span><span class="sxs-lookup"><span data-stu-id="5f3c5-109">Install **[OpenJDK 8](https://openjdk.java.net/install/)**.</span></span>
 
-   - <span data-ttu-id="e1213-110">Můžete použít následující příkaz:</span><span class="sxs-lookup"><span data-stu-id="e1213-110">You can use the following command:</span></span>
+   - <span data-ttu-id="5f3c5-110">Můžete použít následující příkaz:</span><span class="sxs-lookup"><span data-stu-id="5f3c5-110">You can use the following command:</span></span>
 
    ```bash
    sudo apt install openjdk-8-jdk
    ```
 
-   * <span data-ttu-id="e1213-111">Ověřte, že je možné spustit `java` z příkazového řádku.</span><span class="sxs-lookup"><span data-stu-id="e1213-111">Verify you are able to run `java` from your command-line.</span></span>       
+   * <span data-ttu-id="5f3c5-111">Ověřte, zda `java` je možné spustit z příkazového řádku.</span><span class="sxs-lookup"><span data-stu-id="5f3c5-111">Verify you are able to run `java` from your command-line.</span></span>
 
-      <span data-ttu-id="e1213-112">Ukázka výstupu Java-Version:</span><span class="sxs-lookup"><span data-stu-id="e1213-112">Sample java -version output:</span></span>
-          
+      <span data-ttu-id="5f3c5-112">Ukázkový výstup java -version:</span><span class="sxs-lookup"><span data-stu-id="5f3c5-112">Sample java -version output:</span></span>
+
       ```bash
       openjdk version "1.8.0_191"
       OpenJDK Runtime Environment (build 1.8.0_191-8u191-b12-2ubuntu0.18.04.1-b12)
       OpenJDK 64-Bit Server VM (build 25.191-b12, mixed mode)
       ```
 
-   * <span data-ttu-id="e1213-113">Pokud již máte nainstalované více verzí OpenJDK a chcete vybrat OpenJDK 8, použijte následující příkaz:</span><span class="sxs-lookup"><span data-stu-id="e1213-113">If you already have multiple OpenJDK versions installed and want to select OpenJDK 8, use the following command:</span></span>
+   * <span data-ttu-id="5f3c5-113">Pokud už máte nainstalované více verzí OpenJDK a chcete vybrat OpenJDK 8, použijte následující příkaz:</span><span class="sxs-lookup"><span data-stu-id="5f3c5-113">If you already have multiple OpenJDK versions installed and want to select OpenJDK 8, use the following command:</span></span>
 
       ```bash
       sudo update-alternatives --config java
       ```
 
-3. <span data-ttu-id="e1213-114">Nainstalujte **[Apache Maven 3.6.0 +](https://maven.apache.org/download.cgi)** .</span><span class="sxs-lookup"><span data-stu-id="e1213-114">Install **[Apache Maven 3.6.0+](https://maven.apache.org/download.cgi)**.</span></span>
+3. <span data-ttu-id="5f3c5-114">Nainstalujte **[Apache Maven 3.6.0+](https://maven.apache.org/download.cgi)**.</span><span class="sxs-lookup"><span data-stu-id="5f3c5-114">Install **[Apache Maven 3.6.0+](https://maven.apache.org/download.cgi)**.</span></span>
 
-   * <span data-ttu-id="e1213-115">Spusťte následující příkaz:</span><span class="sxs-lookup"><span data-stu-id="e1213-115">Run the following command:</span></span>
+   * <span data-ttu-id="5f3c5-115">Spusťte následující příkaz:</span><span class="sxs-lookup"><span data-stu-id="5f3c5-115">Run the following command:</span></span>
 
       ```bash
       mkdir -p ~/bin/maven
@@ -59,13 +59,13 @@ ms.locfileid: "76928041"
       export PATH=${M2_HOME}/bin:${PATH}
       source ~/.bashrc
       ```
-       
-       <span data-ttu-id="e1213-116">Všimněte si, že při zavření terminálu dojde ke ztrátě těchto proměnných prostředí.</span><span class="sxs-lookup"><span data-stu-id="e1213-116">Note that these environment variables will be lost when you close your terminal.</span></span> <span data-ttu-id="e1213-117">Pokud chcete, aby byly změny trvalé, přidejte `export` řádky do souboru `~/.bashrc`.</span><span class="sxs-lookup"><span data-stu-id="e1213-117">If you want the changes to be permanent, add the `export` lines to your `~/.bashrc` file.</span></span>
 
-   * <span data-ttu-id="e1213-118">Ověřte, že je možné spouštět `mvn` z příkazového řádku.</span><span class="sxs-lookup"><span data-stu-id="e1213-118">Verify you are able to run `mvn` from your command-line</span></span>       
+       <span data-ttu-id="5f3c5-116">Všimněte si, že tyto proměnné prostředí budou ztraceny při zavření terminálu.</span><span class="sxs-lookup"><span data-stu-id="5f3c5-116">Note that these environment variables will be lost when you close your terminal.</span></span> <span data-ttu-id="5f3c5-117">Pokud chcete, aby změny byly `export` trvalé, `~/.bashrc` přidejte řádky do souboru.</span><span class="sxs-lookup"><span data-stu-id="5f3c5-117">If you want the changes to be permanent, add the `export` lines to your `~/.bashrc` file.</span></span>
 
-       <span data-ttu-id="e1213-119">Ukázka výstupu MVN-Version:</span><span class="sxs-lookup"><span data-stu-id="e1213-119">Sample mvn -version output:</span></span>
-       
+   * <span data-ttu-id="5f3c5-118">Ověřte, zda `mvn` je možné spustit z příkazového řádku</span><span class="sxs-lookup"><span data-stu-id="5f3c5-118">Verify you are able to run `mvn` from your command-line</span></span>
+
+       <span data-ttu-id="5f3c5-119">Ukázkový výstup mvn -version:</span><span class="sxs-lookup"><span data-stu-id="5f3c5-119">Sample mvn -version output:</span></span>
+
        ```
        Apache Maven 3.6.0 (97c98ec64a1fdfee7767ce5ffb20918da4f719f3; 2018-10-24T18:41:47Z)
        Maven home: ~/bin/apache-maven-3.6.0
@@ -74,27 +74,27 @@ ms.locfileid: "76928041"
        OS name: "linux", version: "4.4.0-17763-microsoft", arch: "amd64", family: "unix"
        ```
 
-4. <span data-ttu-id="e1213-120">Nainstalujte **[Apache Spark 2.3 +](https://spark.apache.org/downloads.html)** .</span><span class="sxs-lookup"><span data-stu-id="e1213-120">Install **[Apache Spark 2.3+](https://spark.apache.org/downloads.html)**.</span></span>
-<span data-ttu-id="e1213-121">Stáhněte si [Apache Spark 2.3 +](https://spark.apache.org/downloads.html) a extrahujte ji do místní složky (např. `~/bin/spark-2.3.2-bin-hadoop2.7`).</span><span class="sxs-lookup"><span data-stu-id="e1213-121">Download [Apache Spark 2.3+](https://spark.apache.org/downloads.html) and extract it into a local folder (e.g., `~/bin/spark-2.3.2-bin-hadoop2.7`).</span></span> <span data-ttu-id="e1213-122">(Podporované verze Sparku jsou 2,3. \*, 2.4.0, 2.4.1, 2.4.3 a 2.4.4)</span><span class="sxs-lookup"><span data-stu-id="e1213-122">(The supported spark versions are 2.3.\*, 2.4.0, 2.4.1, 2.4.3 and 2.4.4)</span></span>
+4. <span data-ttu-id="5f3c5-120">Nainstalujte **[Apache Spark 2.3+](https://spark.apache.org/downloads.html)**.</span><span class="sxs-lookup"><span data-stu-id="5f3c5-120">Install **[Apache Spark 2.3+](https://spark.apache.org/downloads.html)**.</span></span>
+<span data-ttu-id="5f3c5-121">Stáhněte si [Apache Spark 2.3+](https://spark.apache.org/downloads.html) a extrahujte `~/bin/spark-2.3.2-bin-hadoop2.7`ji do místní složky (např. ).</span><span class="sxs-lookup"><span data-stu-id="5f3c5-121">Download [Apache Spark 2.3+](https://spark.apache.org/downloads.html) and extract it into a local folder (e.g., `~/bin/spark-2.3.2-bin-hadoop2.7`).</span></span> <span data-ttu-id="5f3c5-122">(Podporované verze jiskry jsou 2.3.\*, 2.4.0, 2.4.1, 2.4.3 a 2.4.4)</span><span class="sxs-lookup"><span data-stu-id="5f3c5-122">(The supported spark versions are 2.3.\*, 2.4.0, 2.4.1, 2.4.3 and 2.4.4)</span></span>
 
    ```bash
    tar -xvzf /path/to/spark-2.3.2-bin-hadoop2.7.tgz -C ~/bin/spark-2.3.2-bin-hadoop2.7
    ```
 
-   * <span data-ttu-id="e1213-123">Přidejte potřebné [proměnné prostředí](https://www.java.com/en/download/help/path.xml) `SPARK_HOME` (například `~/bin/spark-2.3.2-bin-hadoop2.7/`) a `PATH` (například `$SPARK_HOME/bin:$PATH`).</span><span class="sxs-lookup"><span data-stu-id="e1213-123">Add the necessary [environment variables](https://www.java.com/en/download/help/path.xml) `SPARK_HOME` (e.g., `~/bin/spark-2.3.2-bin-hadoop2.7/`) and `PATH` (e.g., `$SPARK_HOME/bin:$PATH`)</span></span>
+   * <span data-ttu-id="5f3c5-123">Přidejte potřebné [proměnné](https://www.java.com/en/download/help/path.xml) `SPARK_HOME` prostředí (např. `~/bin/spark-2.3.2-bin-hadoop2.7/`) `PATH` a (např. `$SPARK_HOME/bin:$PATH`)</span><span class="sxs-lookup"><span data-stu-id="5f3c5-123">Add the necessary [environment variables](https://www.java.com/en/download/help/path.xml) `SPARK_HOME` (e.g., `~/bin/spark-2.3.2-bin-hadoop2.7/`) and `PATH` (e.g., `$SPARK_HOME/bin:$PATH`)</span></span>
 
       ```bash
       export SPARK_HOME=~/bin/spark-2.3.2-hadoop2.7
       export PATH="$SPARK_HOME/bin:$PATH"
       source ~/.bashrc
       ```
-       
-      <span data-ttu-id="e1213-124">Všimněte si, že při zavření terminálu dojde ke ztrátě těchto proměnných prostředí.</span><span class="sxs-lookup"><span data-stu-id="e1213-124">Note that these environment variables will be lost when you close your terminal.</span></span> <span data-ttu-id="e1213-125">Pokud chcete, aby byly změny trvalé, přidejte `export` řádky do souboru `~/.bashrc`.</span><span class="sxs-lookup"><span data-stu-id="e1213-125">If you want the changes to be permanent, add the `export` lines to your `~/.bashrc` file.</span></span>
 
-   * <span data-ttu-id="e1213-126">Ověřte, že je možné spustit `spark-shell` z příkazového řádku.</span><span class="sxs-lookup"><span data-stu-id="e1213-126">Verify you are able to run `spark-shell` from your command-line.</span></span>
+      <span data-ttu-id="5f3c5-124">Všimněte si, že tyto proměnné prostředí budou ztraceny při zavření terminálu.</span><span class="sxs-lookup"><span data-stu-id="5f3c5-124">Note that these environment variables will be lost when you close your terminal.</span></span> <span data-ttu-id="5f3c5-125">Pokud chcete, aby změny byly `export` trvalé, `~/.bashrc` přidejte řádky do souboru.</span><span class="sxs-lookup"><span data-stu-id="5f3c5-125">If you want the changes to be permanent, add the `export` lines to your `~/.bashrc` file.</span></span>
 
-      <span data-ttu-id="e1213-127">Ukázkový výstup konzoly:</span><span class="sxs-lookup"><span data-stu-id="e1213-127">Sample console output:</span></span>
-      
+   * <span data-ttu-id="5f3c5-126">Ověřte, zda `spark-shell` je možné spustit z příkazového řádku.</span><span class="sxs-lookup"><span data-stu-id="5f3c5-126">Verify you are able to run `spark-shell` from your command-line.</span></span>
+
+      <span data-ttu-id="5f3c5-127">Ukázkový výstup konzoly:</span><span class="sxs-lookup"><span data-stu-id="5f3c5-127">Sample console output:</span></span>
+
       ```
       Welcome to
             ____              __
@@ -109,52 +109,52 @@ ms.locfileid: "76928041"
 
       scala> sc
       res0: org.apache.spark.SparkContext = org.apache.spark.SparkContext@6eaa6b0c
-      ```                      
+      ```
 
-<span data-ttu-id="e1213-128">Než přejdete k další části, ujistěte se, že máte možnost spustit `dotnet`, `java`, `mvn``spark-shell` z příkazového řádku.</span><span class="sxs-lookup"><span data-stu-id="e1213-128">Make sure you are able to run `dotnet`, `java`, `mvn`, `spark-shell` from your command-line before you move to the next section.</span></span> <span data-ttu-id="e1213-129">Máte lepší možnost?</span><span class="sxs-lookup"><span data-stu-id="e1213-129">Feel there is a better way?</span></span> <span data-ttu-id="e1213-130">[Otevřete prosím problém](https://github.com/dotnet/spark/issues) a nebojte se přispívat.</span><span class="sxs-lookup"><span data-stu-id="e1213-130">Please [open an issue](https://github.com/dotnet/spark/issues) and feel free to contribute.</span></span>
+<span data-ttu-id="5f3c5-128">Před přechodem do `dotnet`další `java` `mvn`části `spark-shell` se ujistěte, že je možné spustit příkazový řádek .</span><span class="sxs-lookup"><span data-stu-id="5f3c5-128">Make sure you are able to run `dotnet`, `java`, `mvn`, `spark-shell` from your command-line before you move to the next section.</span></span> <span data-ttu-id="5f3c5-129">Cítíš, že existuje lepší způsob?</span><span class="sxs-lookup"><span data-stu-id="5f3c5-129">Feel there is a better way?</span></span> <span data-ttu-id="5f3c5-130">Prosím, [otevřete problém](https://github.com/dotnet/spark/issues) a neváhejte přispět.</span><span class="sxs-lookup"><span data-stu-id="5f3c5-130">Please [open an issue](https://github.com/dotnet/spark/issues) and feel free to contribute.</span></span>
 
-## <a name="build"></a><span data-ttu-id="e1213-131">Sestavit</span><span class="sxs-lookup"><span data-stu-id="e1213-131">Build</span></span>
+## <a name="build"></a><span data-ttu-id="5f3c5-131">Sestavení</span><span class="sxs-lookup"><span data-stu-id="5f3c5-131">Build</span></span>
 
-<span data-ttu-id="e1213-132">Ve zbývající části tohoto průvodce budete muset naklonovat rozhraní .NET pro Apache Spark úložiště do svého počítače, třeba `~/dotnet.spark/`.</span><span class="sxs-lookup"><span data-stu-id="e1213-132">For the remainder of this guide, you will need to have cloned the .NET for Apache Spark repository into your machine e.g., `~/dotnet.spark/`.</span></span>
+<span data-ttu-id="5f3c5-132">Pro zbytek této příručky budete muset naklonovat úložiště .NET pro Apache Spark do `~/dotnet.spark/`vašeho počítače např.</span><span class="sxs-lookup"><span data-stu-id="5f3c5-132">For the remainder of this guide, you will need to have cloned the .NET for Apache Spark repository into your machine e.g., `~/dotnet.spark/`.</span></span>
 
 ```bash
 git clone https://github.com/dotnet/spark.git ~/dotnet.spark
 ```
 
-### <a name="build-net-for-spark-scala-extensions-layer"></a><span data-ttu-id="e1213-133">Sestavení .NET pro vrstvu rozšíření Spark Scala</span><span class="sxs-lookup"><span data-stu-id="e1213-133">Build .NET for Spark Scala extensions layer</span></span>
+### <a name="build-net-for-spark-scala-extensions-layer"></a><span data-ttu-id="5f3c5-133">Sestavení rozhraní .NET pro vrstvu rozšíření Spark Scala</span><span class="sxs-lookup"><span data-stu-id="5f3c5-133">Build .NET for Spark Scala extensions layer</span></span>
 
-<span data-ttu-id="e1213-134">Při odeslání aplikace .NET má rozhraní .NET pro Apache Spark potřebnou logiku napsanou v Scala, která informuje Apache Spark jak zpracovat vaše požadavky (například požadavek na vytvoření nové relace Sparku, požádat o přenos dat ze strany .NET na stranu JVM atd.).</span><span class="sxs-lookup"><span data-stu-id="e1213-134">When you submit a .NET application, .NET for Apache Spark has the necessary logic written in Scala that informs Apache Spark how to handle your requests (e.g., request to create a new Spark Session, request to transfer data from .NET side to JVM side etc.).</span></span> <span data-ttu-id="e1213-135">Tato logika se dá najít v [rozhraní .NET pro Apache Spark zdrojový kód Scala](https://github.com/dotnet/spark/tree/master/src/scala).</span><span class="sxs-lookup"><span data-stu-id="e1213-135">This logic can be found in the [.NET for Apache Spark Scala Source Code](https://github.com/dotnet/spark/tree/master/src/scala).</span></span>
+<span data-ttu-id="5f3c5-134">Když odešlete .NET aplikaci, .NET pro Apache Spark má potřebnou logiku napsanou v Scale, která informuje Apache Spark, jak zpracovat vaše požadavky (např. žádost o vytvoření nové Spark Session, žádost o přenos dat ze strany .NET na stranu JVM atd.).</span><span class="sxs-lookup"><span data-stu-id="5f3c5-134">When you submit a .NET application, .NET for Apache Spark has the necessary logic written in Scala that informs Apache Spark how to handle your requests (e.g., request to create a new Spark Session, request to transfer data from .NET side to JVM side etc.).</span></span> <span data-ttu-id="5f3c5-135">Tuto logiku lze nalézt v [.NET pro Apache Spark Scala zdrojový kód](https://github.com/dotnet/spark/tree/master/src/scala).</span><span class="sxs-lookup"><span data-stu-id="5f3c5-135">This logic can be found in the [.NET for Apache Spark Scala Source Code](https://github.com/dotnet/spark/tree/master/src/scala).</span></span>
 
-<span data-ttu-id="e1213-136">Dalším krokem je sestavení vrstvy rozšíření .NET for Apache Spark Scala:</span><span class="sxs-lookup"><span data-stu-id="e1213-136">The next step is to build the .NET for Apache Spark Scala extension layer:</span></span>
+<span data-ttu-id="5f3c5-136">Dalším krokem je vytvoření přípojné vrstvy .NET pro Apache Spark Scala:</span><span class="sxs-lookup"><span data-stu-id="5f3c5-136">The next step is to build the .NET for Apache Spark Scala extension layer:</span></span>
 
 ```bash
 cd src/scala
-mvn clean package 
+mvn clean package
 ```
 
-<span data-ttu-id="e1213-137">Měli byste vidět jar vytvořené pro podporované verze Sparku:</span><span class="sxs-lookup"><span data-stu-id="e1213-137">You should see JARs created for the supported Spark versions:</span></span>
+<span data-ttu-id="5f3c5-137">Měli byste vidět JARs vytvořené pro podporované verze Spark:</span><span class="sxs-lookup"><span data-stu-id="5f3c5-137">You should see JARs created for the supported Spark versions:</span></span>
 
 * `microsoft-spark-2.3.x/target/microsoft-spark-2.3.x-<version>.jar`
 * `microsoft-spark-2.4.x/target/microsoft-spark-2.4.x-<version>.jar`
 
-### <a name="build-net-sample-applications-using-net-core-cli"></a><span data-ttu-id="e1213-138">Sestavení ukázkových aplikací .NET pomocí .NET Core CLI</span><span class="sxs-lookup"><span data-stu-id="e1213-138">Build .NET sample applications using .NET Core CLI</span></span>
+### <a name="build-net-sample-applications-using-net-core-cli"></a><span data-ttu-id="5f3c5-138">Vytváření ukázkových aplikací rozhraní .NET pomocí rozhraní CLI jádra .NET</span><span class="sxs-lookup"><span data-stu-id="5f3c5-138">Build .NET sample applications using .NET Core CLI</span></span>
 
-<span data-ttu-id="e1213-139">V této části je vysvětlen postup sestavení [ukázkových aplikací](https://github.com/dotnet/spark/tree/master/examples) pro rozhraní .net pro Apache Spark.</span><span class="sxs-lookup"><span data-stu-id="e1213-139">This section explains how to build the [sample applications](https://github.com/dotnet/spark/tree/master/examples) for .NET for Apache Spark.</span></span> <span data-ttu-id="e1213-140">Tyto kroky vám pomůžou pochopit celkový proces vytváření jakékoli aplikace .NET pro Spark.</span><span class="sxs-lookup"><span data-stu-id="e1213-140">These steps will help in understanding the overall building process for any .NET for Spark application.</span></span>
+<span data-ttu-id="5f3c5-139">Tato část vysvětluje, jak vytvořit [ukázkové aplikace](https://github.com/dotnet/spark/tree/master/examples) pro rozhraní .NET pro Apache Spark.</span><span class="sxs-lookup"><span data-stu-id="5f3c5-139">This section explains how to build the [sample applications](https://github.com/dotnet/spark/tree/master/examples) for .NET for Apache Spark.</span></span> <span data-ttu-id="5f3c5-140">Tyto kroky vám pomohou pochopit celkový proces vytváření pro všechny .NET pro aplikaci Spark.</span><span class="sxs-lookup"><span data-stu-id="5f3c5-140">These steps will help in understanding the overall building process for any .NET for Spark application.</span></span>
 
-1. <span data-ttu-id="e1213-141">Sestavte pracovní proces:</span><span class="sxs-lookup"><span data-stu-id="e1213-141">Build the worker:</span></span>
+1. <span data-ttu-id="5f3c5-141">Sestavte pracovníka:</span><span class="sxs-lookup"><span data-stu-id="5f3c5-141">Build the worker:</span></span>
 
    ```dotnetcli
    cd ~/dotnet.spark/src/csharp/Microsoft.Spark.Worker/
    dotnet publish -f netcoreapp2.1 -r ubuntu.18.04-x64
    ```
-      
-   <span data-ttu-id="e1213-142">Ukázkový výstup konzoly:</span><span class="sxs-lookup"><span data-stu-id="e1213-142">Sample console output:</span></span>
+
+   <span data-ttu-id="5f3c5-142">Ukázkový výstup konzoly:</span><span class="sxs-lookup"><span data-stu-id="5f3c5-142">Sample console output:</span></span>
 
    ```bash
    user@machine:/home/user/dotnet.spark/src/csharp/Microsoft.Spark.Worker$ dotnet publish -f netcoreapp2.1 -r ubuntu.18.04-x64
    Microsoft (R) Build Engine version 16.0.462+g62fb89029d for .NET Core
    Copyright (C) Microsoft Corporation. All rights reserved.
-      
+
       Restore completed in 36.03 ms for /home/user/dotnet.spark/src/csharp/Microsoft.Spark.Worker/Microsoft.Spark.Worker.csproj.
       Restore completed in 35.94 ms for /home/user/dotnet.spark/src/csharp/Microsoft.Spark/Microsoft.Spark.csproj.
       Microsoft.Spark -> /home/user/dotnet.spark/artifacts/bin/Microsoft.Spark/Debug/netstandard2.0/Microsoft.Spark.dll
@@ -162,14 +162,14 @@ mvn clean package
       Microsoft.Spark.Worker -> /home/user/dotnet.spark/artifacts/bin/Microsoft.Spark.Worker/Debug/netcoreapp2.1/ubuntu.18.04-x64/publish/
    ```
 
-2. <span data-ttu-id="e1213-143">Sestavte ukázky:</span><span class="sxs-lookup"><span data-stu-id="e1213-143">Build the samples:</span></span>
+2. <span data-ttu-id="5f3c5-143">Sestavte ukázky:</span><span class="sxs-lookup"><span data-stu-id="5f3c5-143">Build the samples:</span></span>
 
    ```dotnetcli
    cd ~/dotnet.spark/examples/Microsoft.Spark.CSharp.Examples/
    dotnet publish -f netcoreapp2.1 -r ubuntu.18.04-x64
    ```
-      
-   <span data-ttu-id="e1213-144">Ukázkový výstup konzoly:</span><span class="sxs-lookup"><span data-stu-id="e1213-144">Sample console output:</span></span>
+
+   <span data-ttu-id="5f3c5-144">Ukázkový výstup konzoly:</span><span class="sxs-lookup"><span data-stu-id="5f3c5-144">Sample console output:</span></span>
 
    ```bash
    user@machine:/home/user/dotnet.spark/examples/Microsoft.Spark.CSharp.Examples$ dotnet publish -f netcoreapp2.1 -r ubuntu.18.04-x64
@@ -183,23 +183,23 @@ mvn clean package
       Microsoft.Spark.CSharp.Examples -> /home/user/dotnet.spark/artifacts/bin/Microsoft.Spark.CSharp.Examples/Debug/netcoreapp2.1/ubuntu.18.04-x64/publish/
    ```  
 
-## <a name="run-the-net-for-spark-sample-applications"></a><span data-ttu-id="e1213-145">Spuštění ukázkových aplikací .NET pro Spark</span><span class="sxs-lookup"><span data-stu-id="e1213-145">Run the .NET for Spark sample applications</span></span>
+## <a name="run-the-net-for-spark-sample-applications"></a><span data-ttu-id="5f3c5-145">Spuštění rozhraní .NET pro ukázkové aplikace Spark</span><span class="sxs-lookup"><span data-stu-id="5f3c5-145">Run the .NET for Spark sample applications</span></span>
 
-<span data-ttu-id="e1213-146">Po sestavení ukázek můžete použít `spark-submit` k odeslání aplikací .NET Core.</span><span class="sxs-lookup"><span data-stu-id="e1213-146">Once you build the samples, you can use `spark-submit` to submit your .NET Core apps.</span></span> <span data-ttu-id="e1213-147">Ujistěte se, že jste postupovali s částí [požadavky](#prerequisites) a nainstalovali Apache Spark.</span><span class="sxs-lookup"><span data-stu-id="e1213-147">Make sure you have followed the [prerequisites](#prerequisites) section and installed Apache Spark.</span></span>
+<span data-ttu-id="5f3c5-146">Po sestavení ukázky, můžete `spark-submit` použít k odeslání aplikace .NET Core.</span><span class="sxs-lookup"><span data-stu-id="5f3c5-146">Once you build the samples, you can use `spark-submit` to submit your .NET Core apps.</span></span> <span data-ttu-id="5f3c5-147">Ujistěte se, že jste postupovali [podle požadavků](#prerequisites) a nainstalovali Apache Spark.</span><span class="sxs-lookup"><span data-stu-id="5f3c5-147">Make sure you have followed the [prerequisites](#prerequisites) section and installed Apache Spark.</span></span>
 
-1. <span data-ttu-id="e1213-148">Nastavte proměnnou prostředí `DOTNET_WORKER_DIR` nebo `PATH` tak, aby zahrnovala cestu, kde byl vygenerován `Microsoft.Spark.Worker` binární (např. `~/dotnet.spark/artifacts/bin/Microsoft.Spark.Worker/Debug/netcoreapp2.1/ubuntu.18.04-x64/publish`).</span><span class="sxs-lookup"><span data-stu-id="e1213-148">Set the `DOTNET_WORKER_DIR` or `PATH` environment variable to include the path where the `Microsoft.Spark.Worker` binary has been generated (e.g., `~/dotnet.spark/artifacts/bin/Microsoft.Spark.Worker/Debug/netcoreapp2.1/ubuntu.18.04-x64/publish`).</span></span>
+1. <span data-ttu-id="5f3c5-148">Nastavte `DOTNET_WORKER_DIR` proměnnou prostředí nebo `PATH` tak, `Microsoft.Spark.Worker` aby zahrnovala cestu, kde `~/dotnet.spark/artifacts/bin/Microsoft.Spark.Worker/Debug/netcoreapp2.1/ubuntu.18.04-x64/publish`byl binární soubor vygenerován (např. ).</span><span class="sxs-lookup"><span data-stu-id="5f3c5-148">Set the `DOTNET_WORKER_DIR` or `PATH` environment variable to include the path where the `Microsoft.Spark.Worker` binary has been generated (e.g., `~/dotnet.spark/artifacts/bin/Microsoft.Spark.Worker/Debug/netcoreapp2.1/ubuntu.18.04-x64/publish`).</span></span>
 
    ```bash
    export DOTNET_WORKER_DIR=~/dotnet.spark/artifacts/bin/Microsoft.Spark.Worker/Debug/netcoreapp2.1/ubuntu.18.04-x64/publish
    ```
 
-2. <span data-ttu-id="e1213-149">Otevřete terminál a přejděte do adresáře, kde byl vygenerován binární soubor aplikace (např. `~/dotnet.spark/artifacts/bin/Microsoft.Spark.CSharp.Examples/Debug/netcoreapp2.1/ubuntu.18.04-x64/publish`).</span><span class="sxs-lookup"><span data-stu-id="e1213-149">Open a terminal and go to the directory where your app binary has been generated (e.g., `~/dotnet.spark/artifacts/bin/Microsoft.Spark.CSharp.Examples/Debug/netcoreapp2.1/ubuntu.18.04-x64/publish`).</span></span>
+2. <span data-ttu-id="5f3c5-149">Otevřete terminál a přejděte do adresáře, kde byl vygenerován binární soubor aplikace (např. `~/dotnet.spark/artifacts/bin/Microsoft.Spark.CSharp.Examples/Debug/netcoreapp2.1/ubuntu.18.04-x64/publish`).</span><span class="sxs-lookup"><span data-stu-id="5f3c5-149">Open a terminal and go to the directory where your app binary has been generated (e.g., `~/dotnet.spark/artifacts/bin/Microsoft.Spark.CSharp.Examples/Debug/netcoreapp2.1/ubuntu.18.04-x64/publish`).</span></span>
 
    ```bash
    cd ~/dotnet.spark/artifacts/bin/Microsoft.Spark.CSharp.Examples/Debug/netcoreapp2.1/ubuntu.18.04-x64/publish
    ```
 
-3. <span data-ttu-id="e1213-150">Spuštění aplikace se řídí základní strukturou:</span><span class="sxs-lookup"><span data-stu-id="e1213-150">Running your app follows the basic structure:</span></span>
+3. <span data-ttu-id="5f3c5-150">Spuštění aplikace se řídí základní strukturou:</span><span class="sxs-lookup"><span data-stu-id="5f3c5-150">Running your app follows the basic structure:</span></span>
 
    ```bash
    spark-submit \
@@ -210,9 +210,9 @@ mvn clean package
      <path-to-your-app-binary> <argument(s)-to-your-app>
    ```
 
-   <span data-ttu-id="e1213-151">Tady je několik příkladů, které můžete spustit:</span><span class="sxs-lookup"><span data-stu-id="e1213-151">Here are some examples you can run:</span></span>
+   <span data-ttu-id="5f3c5-151">Zde je několik příkladů, které můžete spustit:</span><span class="sxs-lookup"><span data-stu-id="5f3c5-151">Here are some examples you can run:</span></span>
 
-   * <span data-ttu-id="e1213-152">**[Microsoft. spark. Examples. SQL. batch. Basic](https://github.com/dotnet/spark/blob/master/examples/Microsoft.Spark.CSharp.Examples/Sql/Batch/Basic.cs)**</span><span class="sxs-lookup"><span data-stu-id="e1213-152">**[Microsoft.Spark.Examples.Sql.Batch.Basic](https://github.com/dotnet/spark/blob/master/examples/Microsoft.Spark.CSharp.Examples/Sql/Batch/Basic.cs)**</span></span>
+   * <span data-ttu-id="5f3c5-152">**[Microsoft.Spark.Examples.sql.Batch.Basic](https://github.com/dotnet/spark/blob/master/examples/Microsoft.Spark.CSharp.Examples/Sql/Batch/Basic.cs)**</span><span class="sxs-lookup"><span data-stu-id="5f3c5-152">**[Microsoft.Spark.Examples.Sql.Batch.Basic](https://github.com/dotnet/spark/blob/master/examples/Microsoft.Spark.CSharp.Examples/Sql/Batch/Basic.cs)**</span></span>
 
       ```bash
       spark-submit \
@@ -222,7 +222,7 @@ mvn clean package
       Microsoft.Spark.CSharp.Examples Sql.Batch.Basic $SPARK_HOME/examples/src/main/resources/people.json
       ```
 
-   * <span data-ttu-id="e1213-153">**[Microsoft. spark. Examples. SQL. Streaming. StructuredNetworkWordCount](https://github.com/dotnet/spark/blob/master/examples/Microsoft.Spark.CSharp.Examples/Sql/Streaming/StructuredNetworkWordCount.cs)**</span><span class="sxs-lookup"><span data-stu-id="e1213-153">**[Microsoft.Spark.Examples.Sql.Streaming.StructuredNetworkWordCount](https://github.com/dotnet/spark/blob/master/examples/Microsoft.Spark.CSharp.Examples/Sql/Streaming/StructuredNetworkWordCount.cs)**</span></span>
+   * <span data-ttu-id="5f3c5-153">**[Microsoft.Spark.Examples.Sql.Streaming.StructuredNetworkWordCount](https://github.com/dotnet/spark/blob/master/examples/Microsoft.Spark.CSharp.Examples/Sql/Streaming/StructuredNetworkWordCount.cs)**</span><span class="sxs-lookup"><span data-stu-id="5f3c5-153">**[Microsoft.Spark.Examples.Sql.Streaming.StructuredNetworkWordCount](https://github.com/dotnet/spark/blob/master/examples/Microsoft.Spark.CSharp.Examples/Sql/Streaming/StructuredNetworkWordCount.cs)**</span></span>
 
       ```bash
       spark-submit \
@@ -232,7 +232,7 @@ mvn clean package
       Microsoft.Spark.CSharp.Examples Sql.Streaming.StructuredNetworkWordCount localhost 9999
       ```
 
-   * <span data-ttu-id="e1213-154">**[Microsoft. spark. Examples. SQL. Streaming. StructuredKafkaWordCount (přístup k Maven)](https://github.com/dotnet/spark/blob/master/examples/Microsoft.Spark.CSharp.Examples/Sql/Streaming/StructuredKafkaWordCount.cs)**</span><span class="sxs-lookup"><span data-stu-id="e1213-154">**[Microsoft.Spark.Examples.Sql.Streaming.StructuredKafkaWordCount (maven accessible)](https://github.com/dotnet/spark/blob/master/examples/Microsoft.Spark.CSharp.Examples/Sql/Streaming/StructuredKafkaWordCount.cs)**</span></span>
+   * <span data-ttu-id="5f3c5-154">**[Microsoft.Spark.Examples.Sql.Streaming.StructuredKafkaWordCount (maven přístupné)](https://github.com/dotnet/spark/blob/master/examples/Microsoft.Spark.CSharp.Examples/Sql/Streaming/StructuredKafkaWordCount.cs)**</span><span class="sxs-lookup"><span data-stu-id="5f3c5-154">**[Microsoft.Spark.Examples.Sql.Streaming.StructuredKafkaWordCount (maven accessible)](https://github.com/dotnet/spark/blob/master/examples/Microsoft.Spark.CSharp.Examples/Sql/Streaming/StructuredKafkaWordCount.cs)**</span></span>
 
       ```bash
       spark-submit \
@@ -243,7 +243,7 @@ mvn clean package
       Microsoft.Spark.CSharp.Examples Sql.Streaming.StructuredKafkaWordCount localhost:9092 subscribe test
       ```
 
-   * <span data-ttu-id="e1213-155">**[Microsoft. spark. Examples. SQL. Streamed. StructuredKafkaWordCount (poskytnutý jar)](https://github.com/dotnet/spark/blob/master/examples/Microsoft.Spark.CSharp.Examples/Sql/Streaming/StructuredKafkaWordCount.cs)**</span><span class="sxs-lookup"><span data-stu-id="e1213-155">**[Microsoft.Spark.Examples.Sql.Streaming.StructuredKafkaWordCount (jars provided)](https://github.com/dotnet/spark/blob/master/examples/Microsoft.Spark.CSharp.Examples/Sql/Streaming/StructuredKafkaWordCount.cs)**</span></span>
+   * <span data-ttu-id="5f3c5-155">**[Microsoft.Spark.Examples.Sql.Streaming.StructuredKafkaWordCount (sklenice k dispozici)](https://github.com/dotnet/spark/blob/master/examples/Microsoft.Spark.CSharp.Examples/Sql/Streaming/StructuredKafkaWordCount.cs)**</span><span class="sxs-lookup"><span data-stu-id="5f3c5-155">**[Microsoft.Spark.Examples.Sql.Streaming.StructuredKafkaWordCount (jars provided)](https://github.com/dotnet/spark/blob/master/examples/Microsoft.Spark.CSharp.Examples/Sql/Streaming/StructuredKafkaWordCount.cs)**</span></span>
 
       ```bash
       spark-submit \
