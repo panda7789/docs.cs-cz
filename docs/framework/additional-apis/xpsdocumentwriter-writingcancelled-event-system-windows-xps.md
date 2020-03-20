@@ -1,5 +1,5 @@
 ---
-title: Událost XpsDocumentWriter. _WritingCancelled (System. Windows. XPS)
+title: Událost XpsDocumentWriter._WritingCancelled (System.Windows.XPs)
 ms.date: 10/17/2017
 api_location:
 - system.printing.dll
@@ -11,27 +11,27 @@ api_type:
 - Assembly
 topic_type:
 - apiref
-ms.openlocfilehash: c05736e68fa094a0bc408ef76bf62d4fa9898f58
-ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
+ms.openlocfilehash: 79f9d3c4163b05719d2296d30b87a35a4c282212
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72524916"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79155606"
 ---
-# <a name="xpsdocumentwriter_writingcancelled-event"></a><span data-ttu-id="66a3f-102">XpsDocumentWriter. Událost \_WritingCancelled</span><span class="sxs-lookup"><span data-stu-id="66a3f-102">XpsDocumentWriter.\_WritingCancelled Event</span></span>
+# <a name="xpsdocumentwriter_writingcancelled-event"></a><span data-ttu-id="a2eea-102">XpsDocumentWriter. \_ZápisZrušená událost</span><span class="sxs-lookup"><span data-stu-id="a2eea-102">XpsDocumentWriter.\_WritingCancelled Event</span></span>
 
-<span data-ttu-id="66a3f-103">Nastane, pokud se zruší operace <xref:System.Windows.Xps.XpsDocumentWriter.Write%2A> nebo <xref:System.Windows.Xps.XpsDocumentWriter.WriteAsync%2A>.</span><span class="sxs-lookup"><span data-stu-id="66a3f-103">Occurs when a <xref:System.Windows.Xps.XpsDocumentWriter.Write%2A> or <xref:System.Windows.Xps.XpsDocumentWriter.WriteAsync%2A> operation is canceled.</span></span> 
+<span data-ttu-id="a2eea-103">Vyvolá se <xref:System.Windows.Xps.XpsDocumentWriter.Write%2A> při <xref:System.Windows.Xps.XpsDocumentWriter.WriteAsync%2A> zrušení operace nebo operace.</span><span class="sxs-lookup"><span data-stu-id="a2eea-103">Occurs when a <xref:System.Windows.Xps.XpsDocumentWriter.Write%2A> or <xref:System.Windows.Xps.XpsDocumentWriter.WriteAsync%2A> operation is canceled.</span></span>
 
-## <a name="syntax"></a><span data-ttu-id="66a3f-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="66a3f-104">Syntax</span></span>
+## <a name="syntax"></a><span data-ttu-id="a2eea-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="a2eea-104">Syntax</span></span>
 
 ``` csharp
 internal event WritingCancelledEventHandler _WritingCancelled
 ```
 
-## <a name="requirements"></a><span data-ttu-id="66a3f-105">Požadavky</span><span class="sxs-lookup"><span data-stu-id="66a3f-105">Requirements</span></span>
+## <a name="requirements"></a><span data-ttu-id="a2eea-105">Požadavky</span><span class="sxs-lookup"><span data-stu-id="a2eea-105">Requirements</span></span>
 
-<span data-ttu-id="66a3f-106">**Obor názvů:** <xref:System.Windows.Xps></span><span class="sxs-lookup"><span data-stu-id="66a3f-106">**Namespace:** <xref:System.Windows.Xps></span></span>
+<span data-ttu-id="a2eea-106">**Obor názvů:**<xref:System.Windows.Xps></span><span class="sxs-lookup"><span data-stu-id="a2eea-106">**Namespace:** <xref:System.Windows.Xps></span></span>
 
-<span data-ttu-id="66a3f-107">**Sestavení:** System. Printing (v System. Printing. dll)</span><span class="sxs-lookup"><span data-stu-id="66a3f-107">**Assembly:** System.Printing (in system.printing.dll)</span></span>
+<span data-ttu-id="a2eea-107">**Sestava:** System.Printing (v souboru system.printing.dll)</span><span class="sxs-lookup"><span data-stu-id="a2eea-107">**Assembly:** System.Printing (in system.printing.dll)</span></span>
 
-<span data-ttu-id="66a3f-108">**Verze .NET Framework:** K dispozici od od 3,0</span><span class="sxs-lookup"><span data-stu-id="66a3f-108">**.NET Framework versions:** Available since 3.0</span></span>
+<span data-ttu-id="a2eea-108">**Verze rozhraní .NET Framework:** K dispozici od 3.0</span><span class="sxs-lookup"><span data-stu-id="a2eea-108">**.NET Framework versions:** Available since 3.0</span></span>

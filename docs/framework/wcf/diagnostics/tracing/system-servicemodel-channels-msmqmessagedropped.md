@@ -2,26 +2,26 @@
 title: System.ServiceModel.Channels.MsmqMessageDropped
 ms.date: 03/30/2017
 ms.assetid: 8b6e644d-fa68-4be7-abe9-3659671a37c1
-ms.openlocfilehash: 3fa5ec62c5e8ac83f3f81fb406499b7e596b3dac
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: e80fecf508158dcb53f08b75c8f9486c13e403a4
+ms.sourcegitcommit: 515469828d0f040e01bde01df6b8e4eb43630b06
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61969504"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78674802"
 ---
-# <a name="systemservicemodelchannelsmsmqmessagedropped"></a><span data-ttu-id="403d9-102">System.ServiceModel.Channels.MsmqMessageDropped</span><span class="sxs-lookup"><span data-stu-id="403d9-102">System.ServiceModel.Channels.MsmqMessageDropped</span></span>
-<span data-ttu-id="403d9-103">MSMQ vyřadit zprávu.</span><span class="sxs-lookup"><span data-stu-id="403d9-103">MSMQ dropped the message.</span></span>  
+# <a name="systemservicemodelchannelsmsmqmessagedropped"></a><span data-ttu-id="937a8-102">System.ServiceModel.Channels.MsmqMessageDropped</span><span class="sxs-lookup"><span data-stu-id="937a8-102">System.ServiceModel.Channels.MsmqMessageDropped</span></span>
+<span data-ttu-id="937a8-103">Služba MSMQ zprávu vynechala.</span><span class="sxs-lookup"><span data-stu-id="937a8-103">MSMQ dropped the message.</span></span>  
   
-## <a name="description"></a><span data-ttu-id="403d9-104">Popis</span><span class="sxs-lookup"><span data-stu-id="403d9-104">Description</span></span>  
- <span data-ttu-id="403d9-105">Trasování označuje, že zprávy MSMQ byla vynechána.</span><span class="sxs-lookup"><span data-stu-id="403d9-105">The trace indicates that an MSMQ message was dropped.</span></span> <span data-ttu-id="403d9-106">Zprávy služby MSMQ můžete vyřadit, když Windows Communication Foundation (WCF) (používá se NetMsmqBinding nebo vazbu MsmqIntegrationBinding) se nepodařilo zpracovat.</span><span class="sxs-lookup"><span data-stu-id="403d9-106">MSMQ messages can be dropped when Windows Communication Foundation (WCF) (used with either the NetMsmqBinding or MsmqIntegrationBinding) is unable to process them.</span></span> <span data-ttu-id="403d9-107">Tyto zprávy jsou označovány jako počet nezpracovatelných zpráv.</span><span class="sxs-lookup"><span data-stu-id="403d9-107">Such messages are referred to as poison messages.</span></span>  
+## <a name="description"></a><span data-ttu-id="937a8-104">Popis</span><span class="sxs-lookup"><span data-stu-id="937a8-104">Description</span></span>  
+ <span data-ttu-id="937a8-105">Trasování označuje, že zpráva služby MSMQ byla vynechána.</span><span class="sxs-lookup"><span data-stu-id="937a8-105">The trace indicates that an MSMQ message was dropped.</span></span> <span data-ttu-id="937a8-106">Zprávy služby MSMQ mohou být zrušeny, pokud je nelze zpracovat při službě WCF (wcf) systému Windows Communication Foundation (používané s vazací NetMsmqBinding nebo MsmqIntegrationBinding).</span><span class="sxs-lookup"><span data-stu-id="937a8-106">MSMQ messages can be dropped when Windows Communication Foundation (WCF) (used with either the NetMsmqBinding or MsmqIntegrationBinding) is unable to process them.</span></span> <span data-ttu-id="937a8-107">Tyto zprávy jsou označovány jako poškozená zprávy.</span><span class="sxs-lookup"><span data-stu-id="937a8-107">Such messages are referred to as poison messages.</span></span>  
   
- <span data-ttu-id="403d9-108">Nezpracovatelná zpráva se zahodí, kdy `ReceiveErrorHandling` NetMsmqBinding nebo vazbu MsmqIntegrationBinding je nastavena na `Drop`.</span><span class="sxs-lookup"><span data-stu-id="403d9-108">A poison message is dropped when the `ReceiveErrorHandling` property on the NetMsmqBinding or MsmqIntegrationBinding is set to `Drop`.</span></span> <span data-ttu-id="403d9-109">Vyřazené zprávy je odebrána z fronty a není už zotavit.</span><span class="sxs-lookup"><span data-stu-id="403d9-109">A dropped message is removed from the queue and is no longer recoverable.</span></span>  
+ <span data-ttu-id="937a8-108">Poškozená zpráva je `ReceiveErrorHandling` vynechána, pokud je vlastnost na NetMsmqBinding `Drop`nebo MsmqIntegrationBinding nastavena na .</span><span class="sxs-lookup"><span data-stu-id="937a8-108">A poison message is dropped when the `ReceiveErrorHandling` property on the NetMsmqBinding or MsmqIntegrationBinding is set to `Drop`.</span></span> <span data-ttu-id="937a8-109">Vynechaná zpráva je odebrána z fronty a již není obnovitelná.</span><span class="sxs-lookup"><span data-stu-id="937a8-109">A dropped message is removed from the queue and is no longer recoverable.</span></span>  
   
- <span data-ttu-id="403d9-110">Zobrazit [zpracování zpráv Poison](https://go.microsoft.com/fwlink/?LinkID=99546) podrobné informace o při stát nezpracovatelných zpráv a způsob konfigurace vaší služby k odpovídajícím způsobem zpracovat.</span><span class="sxs-lookup"><span data-stu-id="403d9-110">See [Poison-Message Handling](https://go.microsoft.com/fwlink/?LinkID=99546) for more details on when messages become poison and how to configure your service to handle them appropriately.</span></span>  
+ <span data-ttu-id="937a8-110">Další informace o tom, kdy se zprávy stanou jedovatými a jak nakonfigurovat službu tak, aby je správně zpracovávala, naleznete v [tématu Zpracování zpráv poison](../../feature-details/poison-message-handling.md).</span><span class="sxs-lookup"><span data-stu-id="937a8-110">For more information on when messages become poison and how to configure your service to handle them appropriately, see [Poison-Message Handling](../../feature-details/poison-message-handling.md).</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="403d9-111">Viz také:</span><span class="sxs-lookup"><span data-stu-id="403d9-111">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="937a8-111">Viz také</span><span class="sxs-lookup"><span data-stu-id="937a8-111">See also</span></span>
 
-- [<span data-ttu-id="403d9-112">Trasování</span><span class="sxs-lookup"><span data-stu-id="403d9-112">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)
-- [<span data-ttu-id="403d9-113">Řešení problémů s aplikací pomocí trasování</span><span class="sxs-lookup"><span data-stu-id="403d9-113">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)
-- [<span data-ttu-id="403d9-114">Správa a diagnostika</span><span class="sxs-lookup"><span data-stu-id="403d9-114">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)
-- [<span data-ttu-id="403d9-115">Zpracování zpráv Poison</span><span class="sxs-lookup"><span data-stu-id="403d9-115">Poison-Message Handling</span></span>](https://go.microsoft.com/fwlink/?LinkID=99546)
+- [<span data-ttu-id="937a8-112">Trasování</span><span class="sxs-lookup"><span data-stu-id="937a8-112">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)
+- [<span data-ttu-id="937a8-113">Řešení potíží s aplikací pomocí trasování</span><span class="sxs-lookup"><span data-stu-id="937a8-113">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)
+- [<span data-ttu-id="937a8-114">Správa a diagnostika</span><span class="sxs-lookup"><span data-stu-id="937a8-114">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)
+- [<span data-ttu-id="937a8-115">Zpracování poškozená zpráva</span><span class="sxs-lookup"><span data-stu-id="937a8-115">Poison-Message Handling</span></span>](../../feature-details/poison-message-handling.md)

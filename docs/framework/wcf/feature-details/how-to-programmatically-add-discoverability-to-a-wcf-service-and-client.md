@@ -1,30 +1,30 @@
 ---
-title: 'Postupy: přidávání zjistitelnosti do služby a klienta WCF prostřednictvím kódu programu'
+title: 'Postupy: Programové přidání možností rozpoznání do klienta a služby WCF'
 ms.date: 03/30/2017
 ms.assetid: 4f7ae7ab-6fc8-4769-9730-c14d43f7b9b1
-ms.openlocfilehash: a139eb4a15486be329bc6853ee6b3a3be06b0619
-ms.sourcegitcommit: 9c3a4f2d3babca8919a1e490a159c1500ba7a844
+ms.openlocfilehash: dd96bc168413eef99260a5251e74971aa1309ff4
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/12/2019
-ms.locfileid: "72291570"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79184889"
 ---
-# <a name="how-to-programmatically-add-discoverability-to-a-wcf-service-and-client"></a><span data-ttu-id="fced1-102">Postupy: přidávání zjistitelnosti do služby a klienta WCF prostřednictvím kódu programu</span><span class="sxs-lookup"><span data-stu-id="fced1-102">How to: Programmatically Add Discoverability to a WCF Service and Client</span></span>
-<span data-ttu-id="fced1-103">Toto téma vysvětluje, jak nastavit službu Windows Communication Foundation (WCF) jako zjistitelnou.</span><span class="sxs-lookup"><span data-stu-id="fced1-103">This topic explains how to make a Windows Communication Foundation (WCF) service discoverable.</span></span> <span data-ttu-id="fced1-104">Je založený na ukázce [samostatného hostitele](https://go.microsoft.com/fwlink/?LinkId=145523) .</span><span class="sxs-lookup"><span data-stu-id="fced1-104">It is based on the [Self-Host](https://go.microsoft.com/fwlink/?LinkId=145523) sample.</span></span>  
+# <a name="how-to-programmatically-add-discoverability-to-a-wcf-service-and-client"></a><span data-ttu-id="f03d4-102">Postupy: Programové přidání možností rozpoznání do klienta a služby WCF</span><span class="sxs-lookup"><span data-stu-id="f03d4-102">How to: Programmatically Add Discoverability to a WCF Service and Client</span></span>
+<span data-ttu-id="f03d4-103">Toto téma vysvětluje, jak zjistit službu WCF (Windows Communication Foundation).</span><span class="sxs-lookup"><span data-stu-id="f03d4-103">This topic explains how to make a Windows Communication Foundation (WCF) service discoverable.</span></span> <span data-ttu-id="f03d4-104">Je založen na vzorku [Self-Host.](https://go.microsoft.com/fwlink/?LinkId=145523)</span><span class="sxs-lookup"><span data-stu-id="f03d4-104">It is based on the [Self-Host](https://go.microsoft.com/fwlink/?LinkId=145523) sample.</span></span>  
   
-### <a name="to-configure-the-existing-self-host-service-sample-for-discovery"></a><span data-ttu-id="fced1-105">Postup konfigurace existující ukázky služby pro samoobslužné hostování pro zjišťování</span><span class="sxs-lookup"><span data-stu-id="fced1-105">To configure the existing Self-Host service sample for Discovery</span></span>  
+### <a name="to-configure-the-existing-self-host-service-sample-for-discovery"></a><span data-ttu-id="f03d4-105">Konfigurace existující ukázky služby Samoobslužné služby pro zjišťování</span><span class="sxs-lookup"><span data-stu-id="f03d4-105">To configure the existing Self-Host service sample for Discovery</span></span>  
   
-1. <span data-ttu-id="fced1-106">Otevřete řešení samostatného hostitele v aplikaci Visual Studio 2012.</span><span class="sxs-lookup"><span data-stu-id="fced1-106">Open the Self-Host solution in Visual Studio 2012.</span></span> <span data-ttu-id="fced1-107">Ukázka se nachází v adresáři TechnologySamples\Basic\Service\Hosting\SelfHost.</span><span class="sxs-lookup"><span data-stu-id="fced1-107">The sample is located in the TechnologySamples\Basic\Service\Hosting\SelfHost directory.</span></span>  
+1. <span data-ttu-id="f03d4-106">Otevřete řešení Self-Host v sadě Visual Studio 2012.</span><span class="sxs-lookup"><span data-stu-id="f03d4-106">Open the Self-Host solution in Visual Studio 2012.</span></span> <span data-ttu-id="f03d4-107">Ukázka je umístěna v adresáři TechnologySamples\Basic\Service\Hosting\SelfHost.</span><span class="sxs-lookup"><span data-stu-id="f03d4-107">The sample is located in the TechnologySamples\Basic\Service\Hosting\SelfHost directory.</span></span>  
   
-2. <span data-ttu-id="fced1-108">Přidejte odkaz na `System.ServiceModel.Discovery.dll` do projektu služby.</span><span class="sxs-lookup"><span data-stu-id="fced1-108">Add a reference to `System.ServiceModel.Discovery.dll` to the service project.</span></span> <span data-ttu-id="fced1-109">Může se zobrazit chybová zpráva oznamující, že systém.</span><span class="sxs-lookup"><span data-stu-id="fced1-109">You may see an error message saying "System.</span></span> <span data-ttu-id="fced1-110">ServiceModel. Discovery. dll nebo jedna z jeho závislostí vyžaduje novější verzi .NET Framework než ta, která je zadaná v projektu... Pokud se zobrazí tato zpráva, klikněte pravým tlačítkem na projekt v Průzkumník řešení a vyberte **vlastnosti**.</span><span class="sxs-lookup"><span data-stu-id="fced1-110">ServiceModel.Discovery.dll or one of its dependencies requires a later version of the .NET Framework than the one specified in the project …" If you see this message, right-click the project in the Solution Explorer and choose **Properties**.</span></span> <span data-ttu-id="fced1-111">V okně **Vlastnosti projektu** se ujistěte, že je **Cílová architektura** [!INCLUDE[netfx_current_long](../../../../includes/netfx-current-long-md.md)].</span><span class="sxs-lookup"><span data-stu-id="fced1-111">In the **Project Properties** window, make sure that the **Target Framework** is [!INCLUDE[netfx_current_long](../../../../includes/netfx-current-long-md.md)].</span></span>  
+2. <span data-ttu-id="f03d4-108">Přidejte odkaz `System.ServiceModel.Discovery.dll` na projekt servisu.</span><span class="sxs-lookup"><span data-stu-id="f03d4-108">Add a reference to `System.ServiceModel.Discovery.dll` to the service project.</span></span> <span data-ttu-id="f03d4-109">Může se zobrazit chybová zpráva s nápisem "Systém.You may see an error message saying "System.</span><span class="sxs-lookup"><span data-stu-id="f03d4-109">You may see an error message saying "System.</span></span> <span data-ttu-id="f03d4-110">ServiceModel.Discovery.dll nebo jedna z jeho závislostí vyžaduje novější verzi rozhraní .NET Framework, než je zadaná v projektu ..." Pokud se zobrazí tato zpráva, klepněte pravým tlačítkem myši na projekt v Průzkumníku řešení a zvolte **Vlastnosti**.</span><span class="sxs-lookup"><span data-stu-id="f03d4-110">ServiceModel.Discovery.dll or one of its dependencies requires a later version of the .NET Framework than the one specified in the project …" If you see this message, right-click the project in the Solution Explorer and choose **Properties**.</span></span> <span data-ttu-id="f03d4-111">V okně **Vlastnosti projektu** zkontrolujte, [!INCLUDE[netfx_current_long](../../../../includes/netfx-current-long-md.md)]zda je **cílová architektura** .</span><span class="sxs-lookup"><span data-stu-id="f03d4-111">In the **Project Properties** window, make sure that the **Target Framework** is [!INCLUDE[netfx_current_long](../../../../includes/netfx-current-long-md.md)].</span></span>  
   
-3. <span data-ttu-id="fced1-112">Otevřete soubor Service.cs a přidejte následující příkaz `using`.</span><span class="sxs-lookup"><span data-stu-id="fced1-112">Open the Service.cs file and add the following `using` statement.</span></span>  
+3. <span data-ttu-id="f03d4-112">Otevřete soubor Service.cs a `using` přidejte následující příkaz.</span><span class="sxs-lookup"><span data-stu-id="f03d4-112">Open the Service.cs file and add the following `using` statement.</span></span>  
   
     ```csharp  
     using System.ServiceModel.Discovery;  
     ```  
   
-4. <span data-ttu-id="fced1-113">V metodě `Main()` uvnitř příkazu `using` přidejte instanci <xref:System.ServiceModel.Discovery.ServiceDiscoveryBehavior> k hostiteli služby.</span><span class="sxs-lookup"><span data-stu-id="fced1-113">In the `Main()` method, inside the `using` statement, add a <xref:System.ServiceModel.Discovery.ServiceDiscoveryBehavior> instance to the service host.</span></span>  
+4. <span data-ttu-id="f03d4-113">V `Main()` metodě uvnitř `using` příkazu <xref:System.ServiceModel.Discovery.ServiceDiscoveryBehavior> přidejte instanci do hostitele služby.</span><span class="sxs-lookup"><span data-stu-id="f03d4-113">In the `Main()` method, inside the `using` statement, add a <xref:System.ServiceModel.Discovery.ServiceDiscoveryBehavior> instance to the service host.</span></span>  
   
     ```csharp  
     public static void Main()  
@@ -33,16 +33,16 @@ ms.locfileid: "72291570"
         using (ServiceHost serviceHost = new ServiceHost(typeof(CalculatorService)))  
         {  
             // Add a ServiceDiscoveryBehavior  
-            serviceHost.Description.Behaviors.Add(new ServiceDiscoveryBehavior());                  
+            serviceHost.Description.Behaviors.Add(new ServiceDiscoveryBehavior());
   
             // ...  
         }  
     }  
     ```  
   
-     <span data-ttu-id="fced1-114">@No__t-0 určuje, zda je služba, na kterou je použita, zjistitelná.</span><span class="sxs-lookup"><span data-stu-id="fced1-114">The <xref:System.ServiceModel.Discovery.ServiceDiscoveryBehavior> specifies that the service it is applied to is discoverable.</span></span>  
+     <span data-ttu-id="f03d4-114">Určuje, <xref:System.ServiceModel.Discovery.ServiceDiscoveryBehavior> že služba, na kterou je použita, je zjistitelná.</span><span class="sxs-lookup"><span data-stu-id="f03d4-114">The <xref:System.ServiceModel.Discovery.ServiceDiscoveryBehavior> specifies that the service it is applied to is discoverable.</span></span>  
   
-5. <span data-ttu-id="fced1-115">Přidejte <xref:System.ServiceModel.Discovery.UdpDiscoveryEndpoint> do hostitele služby hned za kód, který přidá <xref:System.ServiceModel.Discovery.ServiceDiscoveryBehavior>.</span><span class="sxs-lookup"><span data-stu-id="fced1-115">Add a <xref:System.ServiceModel.Discovery.UdpDiscoveryEndpoint> to the service host right after the code that adds the <xref:System.ServiceModel.Discovery.ServiceDiscoveryBehavior>.</span></span>  
+5. <span data-ttu-id="f03d4-115">Přidejte <xref:System.ServiceModel.Discovery.UdpDiscoveryEndpoint> a do hostitele služby hned <xref:System.ServiceModel.Discovery.ServiceDiscoveryBehavior>za kód, který přidá .</span><span class="sxs-lookup"><span data-stu-id="f03d4-115">Add a <xref:System.ServiceModel.Discovery.UdpDiscoveryEndpoint> to the service host right after the code that adds the <xref:System.ServiceModel.Discovery.ServiceDiscoveryBehavior>.</span></span>  
   
     ```csharp  
     // Add ServiceDiscoveryBehavior  
@@ -52,19 +52,19 @@ ms.locfileid: "72291570"
     serviceHost.AddServiceEndpoint(new UdpDiscoveryEndpoint());  
     ```  
   
-     <span data-ttu-id="fced1-116">Tento kód určuje, zda mají být zprávy zjišťování odesílány na standardní koncový bod zjišťování UDP.</span><span class="sxs-lookup"><span data-stu-id="fced1-116">This code specifies that discovery messages should be sent to the standard UDP discovery endpoint.</span></span>  
+     <span data-ttu-id="f03d4-116">Tento kód určuje, že zprávy zjišťování by měly být odeslány do koncového bodu zjišťování standardníu UDP.</span><span class="sxs-lookup"><span data-stu-id="f03d4-116">This code specifies that discovery messages should be sent to the standard UDP discovery endpoint.</span></span>  
   
-### <a name="to-create-a-client-application-that-uses-discovery-to-call-the-service"></a><span data-ttu-id="fced1-117">Vytvoření klientské aplikace používající zjišťování pro volání služby</span><span class="sxs-lookup"><span data-stu-id="fced1-117">To create a client application that uses discovery to call the service</span></span>  
+### <a name="to-create-a-client-application-that-uses-discovery-to-call-the-service"></a><span data-ttu-id="f03d4-117">Vytvoření klientské aplikace, která používá zjišťování k volání služby</span><span class="sxs-lookup"><span data-stu-id="f03d4-117">To create a client application that uses discovery to call the service</span></span>  
   
-1. <span data-ttu-id="fced1-118">Do řešení s názvem `DiscoveryClientApp` přidejte novou konzolovou aplikaci.</span><span class="sxs-lookup"><span data-stu-id="fced1-118">Add a new console application to the solution called `DiscoveryClientApp`.</span></span>  
+1. <span data-ttu-id="f03d4-118">Přidejte novou konzolovou aplikaci do řešení s názvem `DiscoveryClientApp`.</span><span class="sxs-lookup"><span data-stu-id="f03d4-118">Add a new console application to the solution called `DiscoveryClientApp`.</span></span>  
   
-2. <span data-ttu-id="fced1-119">Přidat odkaz na `System.ServiceModel.dll` a `System.ServiceModel.Discovery.dll`</span><span class="sxs-lookup"><span data-stu-id="fced1-119">Add a reference to `System.ServiceModel.dll` and `System.ServiceModel.Discovery.dll`</span></span>  
+2. <span data-ttu-id="f03d4-119">Přidejte odkaz `System.ServiceModel.dll` na a`System.ServiceModel.Discovery.dll`</span><span class="sxs-lookup"><span data-stu-id="f03d4-119">Add a reference to `System.ServiceModel.dll` and `System.ServiceModel.Discovery.dll`</span></span>  
   
-3. <span data-ttu-id="fced1-120">Zkopírujte soubory GeneratedClient.cs a App. config z existujícího projektu klienta do nového projektu DiscoveryClientApp.</span><span class="sxs-lookup"><span data-stu-id="fced1-120">Copy the GeneratedClient.cs and App.config files from the existing client project to the new DiscoveryClientApp project.</span></span> <span data-ttu-id="fced1-121">Provedete to tak, že kliknete pravým tlačítkem na soubory v **Průzkumník řešení**, vyberete **Kopírovat**a pak vyberete projekt **DiscoveryClientApp** , kliknete pravým tlačítkem a vyberete **Vložit**.</span><span class="sxs-lookup"><span data-stu-id="fced1-121">To do this, right-click the files in the **Solution Explorer**, select **Copy**, and then select the **DiscoveryClientApp** project, right-click and select **Paste**.</span></span>  
+3. <span data-ttu-id="f03d4-120">Zkopírujte soubory GeneratedClient.cs a App.config z existujícího klientského projektu do nového projektu DiscoveryClientApp.</span><span class="sxs-lookup"><span data-stu-id="f03d4-120">Copy the GeneratedClient.cs and App.config files from the existing client project to the new DiscoveryClientApp project.</span></span> <span data-ttu-id="f03d4-121">Chcete-li to provést, klepněte pravým tlačítkem myši na soubory v **Průzkumníku řešení**, vyberte **příkaz Kopírovat**a potom vyberte projekt **DiscoveryClientApp,** klepněte pravým tlačítkem myši a vyberte **vložit**.</span><span class="sxs-lookup"><span data-stu-id="f03d4-121">To do this, right-click the files in the **Solution Explorer**, select **Copy**, and then select the **DiscoveryClientApp** project, right-click and select **Paste**.</span></span>  
   
-4. <span data-ttu-id="fced1-122">Otevřete Program.cs.</span><span class="sxs-lookup"><span data-stu-id="fced1-122">Open Program.cs.</span></span>  
+4. <span data-ttu-id="f03d4-122">Otevřete Program.cs.</span><span class="sxs-lookup"><span data-stu-id="f03d4-122">Open Program.cs.</span></span>  
   
-5. <span data-ttu-id="fced1-123">Přidejte následující příkazy `using`.</span><span class="sxs-lookup"><span data-stu-id="fced1-123">Add the following `using` statements.</span></span>  
+5. <span data-ttu-id="f03d4-123">Přidejte následující příkazy `using`.</span><span class="sxs-lookup"><span data-stu-id="f03d4-123">Add the following `using` statements.</span></span>  
   
     ```csharp  
     using System.ServiceModel;  
@@ -72,7 +72,7 @@ ms.locfileid: "72291570"
     using Microsoft.ServiceModel.Samples;  
     ```  
   
-6. <span data-ttu-id="fced1-124">Přidejte statickou metodu nazvanou `FindCalculatorServiceAddress()` do třídy `Program`.</span><span class="sxs-lookup"><span data-stu-id="fced1-124">Add a static method called `FindCalculatorServiceAddress()` to the `Program` class.</span></span>  
+6. <span data-ttu-id="f03d4-124">Přidejte statickou `FindCalculatorServiceAddress()` metodu volanou do `Program` třídy.</span><span class="sxs-lookup"><span data-stu-id="f03d4-124">Add a static method called `FindCalculatorServiceAddress()` to the `Program` class.</span></span>  
   
     ```csharp  
     static EndpointAddress FindCalculatorServiceAddress()  
@@ -80,9 +80,9 @@ ms.locfileid: "72291570"
     }  
     ```  
   
-     <span data-ttu-id="fced1-125">Tato metoda používá zjišťování k vyhledání služby `CalculatorService`.</span><span class="sxs-lookup"><span data-stu-id="fced1-125">This method uses discovery to search for the `CalculatorService` service.</span></span>  
+     <span data-ttu-id="f03d4-125">Tato metoda používá zjišťování `CalculatorService` k vyhledání služby.</span><span class="sxs-lookup"><span data-stu-id="f03d4-125">This method uses discovery to search for the `CalculatorService` service.</span></span>  
   
-7. <span data-ttu-id="fced1-126">Uvnitř metody `FindCalculatorServiceAddress` vytvořte novou instanci <xref:System.ServiceModel.Discovery.DiscoveryClient> a předejte do konstruktoru <xref:System.ServiceModel.Discovery.UdpDiscoveryEndpoint>.</span><span class="sxs-lookup"><span data-stu-id="fced1-126">Inside the `FindCalculatorServiceAddress` method, create a new <xref:System.ServiceModel.Discovery.DiscoveryClient> instance, passing in a <xref:System.ServiceModel.Discovery.UdpDiscoveryEndpoint> to the constructor.</span></span>  
+7. <span data-ttu-id="f03d4-126">Uvnitř `FindCalculatorServiceAddress` metody vytvořte <xref:System.ServiceModel.Discovery.DiscoveryClient> novou instanci, která předává <xref:System.ServiceModel.Discovery.UdpDiscoveryEndpoint> konstruktoru.</span><span class="sxs-lookup"><span data-stu-id="f03d4-126">Inside the `FindCalculatorServiceAddress` method, create a new <xref:System.ServiceModel.Discovery.DiscoveryClient> instance, passing in a <xref:System.ServiceModel.Discovery.UdpDiscoveryEndpoint> to the constructor.</span></span>  
   
     ```csharp  
     static EndpointAddress FindCalculatorServiceAddress()  
@@ -92,16 +92,16 @@ ms.locfileid: "72291570"
     }  
     ```  
   
-     <span data-ttu-id="fced1-127">To oznamuje, že třída <xref:System.ServiceModel.Discovery.DiscoveryClient> by měla používat standardní koncový bod zjišťování UDP pro odesílání a příjem zpráv zjišťování.</span><span class="sxs-lookup"><span data-stu-id="fced1-127">This tells WCF that the <xref:System.ServiceModel.Discovery.DiscoveryClient> class should use the standard UDP discovery endpoint to send and receive discovery messages.</span></span>  
+     <span data-ttu-id="f03d4-127">To říká WCF, že <xref:System.ServiceModel.Discovery.DiscoveryClient> třída by měla používat koncový bod zjišťování standardní UDP k odesílání a přijímání zpráv zjišťování.</span><span class="sxs-lookup"><span data-stu-id="f03d4-127">This tells WCF that the <xref:System.ServiceModel.Discovery.DiscoveryClient> class should use the standard UDP discovery endpoint to send and receive discovery messages.</span></span>  
   
-8. <span data-ttu-id="fced1-128">Na dalším řádku volejte metodu <xref:System.ServiceModel.Discovery.DiscoveryClient.Find%2A> a zadejte instanci <xref:System.ServiceModel.Discovery.FindCriteria> obsahující kontrakt služby, který chcete vyhledat.</span><span class="sxs-lookup"><span data-stu-id="fced1-128">On the next line, call the <xref:System.ServiceModel.Discovery.DiscoveryClient.Find%2A> method and specify a <xref:System.ServiceModel.Discovery.FindCriteria> instance that contains the service contract you want to search for.</span></span> <span data-ttu-id="fced1-129">V takovém případě zadejte `ICalculator`.</span><span class="sxs-lookup"><span data-stu-id="fced1-129">In this case, specify `ICalculator`.</span></span>  
+8. <span data-ttu-id="f03d4-128">Na dalším řádku zavolejte <xref:System.ServiceModel.Discovery.DiscoveryClient.Find%2A> metodu <xref:System.ServiceModel.Discovery.FindCriteria> a zadejte instanci, která obsahuje servisní smlouvu, kterou chcete vyhledat.</span><span class="sxs-lookup"><span data-stu-id="f03d4-128">On the next line, call the <xref:System.ServiceModel.Discovery.DiscoveryClient.Find%2A> method and specify a <xref:System.ServiceModel.Discovery.FindCriteria> instance that contains the service contract you want to search for.</span></span> <span data-ttu-id="f03d4-129">V tomto případě `ICalculator`zadejte .</span><span class="sxs-lookup"><span data-stu-id="f03d4-129">In this case, specify `ICalculator`.</span></span>  
   
     ```csharp  
-    // Find ICalculatorService endpoints              
+    // Find ICalculatorService endpoints
     FindResponse findResponse = discoveryClient.Find(new FindCriteria(typeof(ICalculator)));  
     ```  
   
-9. <span data-ttu-id="fced1-130">Po volání <xref:System.ServiceModel.Discovery.DiscoveryClient.Find%2A> Zkontrolujte, zda existuje alespoň jedna vyhovující služba a vrátí <xref:System.ServiceModel.EndpointAddress> první vyhovující služby.</span><span class="sxs-lookup"><span data-stu-id="fced1-130">After the call to <xref:System.ServiceModel.Discovery.DiscoveryClient.Find%2A>, check to see if there is at least one matching service and return the <xref:System.ServiceModel.EndpointAddress> of the first matching service.</span></span> <span data-ttu-id="fced1-131">V opačném případě vrátí `null`.</span><span class="sxs-lookup"><span data-stu-id="fced1-131">Otherwise return `null`.</span></span>  
+9. <span data-ttu-id="f03d4-130">Po volání <xref:System.ServiceModel.Discovery.DiscoveryClient.Find%2A>, zkontrolujte, zda existuje alespoň jedna odpovídající <xref:System.ServiceModel.EndpointAddress> služby a vrátit první odpovídající služby.</span><span class="sxs-lookup"><span data-stu-id="f03d4-130">After the call to <xref:System.ServiceModel.Discovery.DiscoveryClient.Find%2A>, check to see if there is at least one matching service and return the <xref:System.ServiceModel.EndpointAddress> of the first matching service.</span></span> <span data-ttu-id="f03d4-131">V `null`opačném případě vrátíte .</span><span class="sxs-lookup"><span data-stu-id="f03d4-131">Otherwise return `null`.</span></span>  
   
     ```csharp  
     if (findResponse.Endpoints.Count > 0)  
@@ -114,7 +114,7 @@ ms.locfileid: "72291570"
     }  
     ```  
   
-10. <span data-ttu-id="fced1-132">Přidejte statickou metodu s názvem `InvokeCalculatorService` do třídy `Program`.</span><span class="sxs-lookup"><span data-stu-id="fced1-132">Add a static method named `InvokeCalculatorService` to the `Program` class.</span></span>  
+10. <span data-ttu-id="f03d4-132">Přidejte statickou `InvokeCalculatorService` metodu s názvem do `Program` třídy.</span><span class="sxs-lookup"><span data-stu-id="f03d4-132">Add a static method named `InvokeCalculatorService` to the `Program` class.</span></span>  
   
     ```csharp  
     static void InvokeCalculatorService(EndpointAddress endpointAddress)  
@@ -122,23 +122,23 @@ ms.locfileid: "72291570"
     }  
     ```  
   
-     <span data-ttu-id="fced1-133">Tato metoda používá adresu koncového bodu vrácenou z `FindCalculatorServiceAddress` pro volání služby kalkulačky.</span><span class="sxs-lookup"><span data-stu-id="fced1-133">This method uses the endpoint address returned from `FindCalculatorServiceAddress` to call the calculator service.</span></span>  
+     <span data-ttu-id="f03d4-133">Tato metoda používá adresu koncového bodu vrácenou z `FindCalculatorServiceAddress` k volání služby kalkulačky.</span><span class="sxs-lookup"><span data-stu-id="f03d4-133">This method uses the endpoint address returned from `FindCalculatorServiceAddress` to call the calculator service.</span></span>  
   
-11. <span data-ttu-id="fced1-134">Uvnitř metody `InvokeCalculatorService` vytvořte instanci třídy `CalculatorServiceClient`.</span><span class="sxs-lookup"><span data-stu-id="fced1-134">Inside the `InvokeCalculatorService` method, create an instance of the `CalculatorServiceClient` class.</span></span> <span data-ttu-id="fced1-135">Tato třída je definována v rámci ukázky pro [vlastní hostitele](https://go.microsoft.com/fwlink/?LinkId=145523) .</span><span class="sxs-lookup"><span data-stu-id="fced1-135">This class is defined by the [Self-Host](https://go.microsoft.com/fwlink/?LinkId=145523) sample.</span></span> <span data-ttu-id="fced1-136">Byl vygenerován pomocí Svcutil. exe.</span><span class="sxs-lookup"><span data-stu-id="fced1-136">It was generated using Svcutil.exe.</span></span>  
+11. <span data-ttu-id="f03d4-134">Uvnitř `InvokeCalculatorService` metody vytvořte instanci třídy. `CalculatorServiceClient`</span><span class="sxs-lookup"><span data-stu-id="f03d4-134">Inside the `InvokeCalculatorService` method, create an instance of the `CalculatorServiceClient` class.</span></span> <span data-ttu-id="f03d4-135">Tato třída je definována ukázkou [vlastního hostitele.](https://go.microsoft.com/fwlink/?LinkId=145523)</span><span class="sxs-lookup"><span data-stu-id="f03d4-135">This class is defined by the [Self-Host](https://go.microsoft.com/fwlink/?LinkId=145523) sample.</span></span> <span data-ttu-id="f03d4-136">To bylo generováno pomocí Svcutil.exe.</span><span class="sxs-lookup"><span data-stu-id="f03d4-136">It was generated using Svcutil.exe.</span></span>  
   
     ```csharp  
     // Create a client  
     CalculatorClient client = new CalculatorClient();  
     ```  
   
-12. <span data-ttu-id="fced1-137">Na dalším řádku nastavte adresu koncového bodu klienta na adresu koncového bodu vrácenou z `FindCalculatorServiceAddress()`.</span><span class="sxs-lookup"><span data-stu-id="fced1-137">On the next line, set the endpoint address of the client to the endpoint address returned from `FindCalculatorServiceAddress()`.</span></span>  
+12. <span data-ttu-id="f03d4-137">Na dalším řádku nastavte adresu koncového bodu klienta na `FindCalculatorServiceAddress()`adresu koncového bodu vrácenou z .</span><span class="sxs-lookup"><span data-stu-id="f03d4-137">On the next line, set the endpoint address of the client to the endpoint address returned from `FindCalculatorServiceAddress()`.</span></span>  
   
     ```csharp  
     // Connect to the discovered service endpoint  
     client.Endpoint.Address = endpointAddress;  
     ```  
   
-13. <span data-ttu-id="fced1-138">Hned za kód pro předchozí krok volejte metody vystavené službou Kalkulačka.</span><span class="sxs-lookup"><span data-stu-id="fced1-138">Immediately after the code for the previous step, call the methods exposed by the calculator service.</span></span>  
+13. <span data-ttu-id="f03d4-138">Bezprostředně po kódu pro předchozí krok volejte metody vystavené službou kalkulačky.</span><span class="sxs-lookup"><span data-stu-id="f03d4-138">Immediately after the code for the previous step, call the methods exposed by the calculator service.</span></span>  
   
     ```csharp  
     Console.WriteLine("Invoking CalculatorService at {0}", endpointAddress);  
@@ -167,7 +167,7 @@ ms.locfileid: "72291570"
     client.Close();  
     ```  
   
-14. <span data-ttu-id="fced1-139">Přidejte kód do metody `Main()` v třídě `Program` pro volání `FindCalculatorServiceAddress`.</span><span class="sxs-lookup"><span data-stu-id="fced1-139">Add code to the `Main()` method in the `Program` class to call `FindCalculatorServiceAddress`.</span></span>  
+14. <span data-ttu-id="f03d4-139">Přidejte kód `Main()` do `Program` metody ve `FindCalculatorServiceAddress`třídě, kterou chcete volat .</span><span class="sxs-lookup"><span data-stu-id="f03d4-139">Add code to the `Main()` method in the `Program` class to call `FindCalculatorServiceAddress`.</span></span>  
   
     ```csharp  
     public static void Main()  
@@ -176,7 +176,7 @@ ms.locfileid: "72291570"
     }  
     ```  
   
-15. <span data-ttu-id="fced1-140">Na dalším řádku volejte `InvokeCalculatorService()` a předejte adresu koncového bodu vrácenou z `FindCalculatorServiceAddress()`.</span><span class="sxs-lookup"><span data-stu-id="fced1-140">On the next line, call the `InvokeCalculatorService()` and pass in the endpoint address returned from `FindCalculatorServiceAddress()`.</span></span>  
+15. <span data-ttu-id="f03d4-140">Na dalším řádku volejte `InvokeCalculatorService()` a předat adresu koncového `FindCalculatorServiceAddress()`bodu vrácenou z .</span><span class="sxs-lookup"><span data-stu-id="f03d4-140">On the next line, call the `InvokeCalculatorService()` and pass in the endpoint address returned from `FindCalculatorServiceAddress()`.</span></span>  
   
     ```csharp  
     if (endpointAddress != null)  
@@ -188,13 +188,13 @@ ms.locfileid: "72291570"
     Console.ReadLine();  
     ```  
   
-### <a name="to-test-the-application"></a><span data-ttu-id="fced1-141">Otestování aplikace</span><span class="sxs-lookup"><span data-stu-id="fced1-141">To test the application</span></span>  
+### <a name="to-test-the-application"></a><span data-ttu-id="f03d4-141">Testování aplikace</span><span class="sxs-lookup"><span data-stu-id="f03d4-141">To test the application</span></span>  
   
-1. <span data-ttu-id="fced1-142">Otevřete příkazový řádek se zvýšenými oprávněními a spusťte Service. exe.</span><span class="sxs-lookup"><span data-stu-id="fced1-142">Open an elevated command prompt and run Service.exe.</span></span>  
+1. <span data-ttu-id="f03d4-142">Otevřete příkazový řádek se zvýšenými oprávněními a spusťte soubor Service.exe.</span><span class="sxs-lookup"><span data-stu-id="f03d4-142">Open an elevated command prompt and run Service.exe.</span></span>  
   
-2. <span data-ttu-id="fced1-143">Otevřete příkazový řádek a spusťte DiscoveryClientApp. exe.</span><span class="sxs-lookup"><span data-stu-id="fced1-143">Open a command prompt and run Discoveryclientapp.exe.</span></span>  
+2. <span data-ttu-id="f03d4-143">Otevřete příkazový řádek a spusťte soubor Discoveryclientapp.exe.</span><span class="sxs-lookup"><span data-stu-id="f03d4-143">Open a command prompt and run Discoveryclientapp.exe.</span></span>  
   
-3. <span data-ttu-id="fced1-144">Výstup souboru Service. exe by měl vypadat jako následující výstup.</span><span class="sxs-lookup"><span data-stu-id="fced1-144">The output from service.exe should look like the following output.</span></span>  
+3. <span data-ttu-id="f03d4-144">Výstup z service.exe by měl vypadat jako následující výstup.</span><span class="sxs-lookup"><span data-stu-id="f03d4-144">The output from service.exe should look like the following output.</span></span>  
   
     ```output  
     Received Add(100,15.99)  
@@ -207,7 +207,7 @@ ms.locfileid: "72291570"
     Return: 6.25390869293308  
     ```  
   
-4. <span data-ttu-id="fced1-145">Výstup z DiscoveryClientApp. exe by měl vypadat jako následující výstup.</span><span class="sxs-lookup"><span data-stu-id="fced1-145">The output from Discoveryclientapp.exe should look like the following output.</span></span>  
+4. <span data-ttu-id="f03d4-145">Výstup z Discoveryclientapp.exe by měl vypadat jako následující výstup.</span><span class="sxs-lookup"><span data-stu-id="f03d4-145">The output from Discoveryclientapp.exe should look like the following output.</span></span>  
   
     ```output  
     Invoking CalculatorService at http://localhost:8000/ServiceModelSamples/service  
@@ -219,8 +219,8 @@ ms.locfileid: "72291570"
     Press <ENTER> to exit.  
     ```  
   
-## <a name="example"></a><span data-ttu-id="fced1-146">Příklad:</span><span class="sxs-lookup"><span data-stu-id="fced1-146">Example</span></span>  
- <span data-ttu-id="fced1-147">Následující seznam obsahuje kód pro tuto ukázku.</span><span class="sxs-lookup"><span data-stu-id="fced1-147">The following is a listing of the code for this sample.</span></span> <span data-ttu-id="fced1-148">Vzhledem k tomu, že je tento kód založen na [samostatném hostiteli](https://go.microsoft.com/fwlink/?LinkId=145523) , jsou uvedeny pouze změněné soubory.</span><span class="sxs-lookup"><span data-stu-id="fced1-148">Because this code is based on the [Self-Host](https://go.microsoft.com/fwlink/?LinkId=145523) sample, only those files that are changed are listed.</span></span> <span data-ttu-id="fced1-149">Další informace o ukázce samostatného hostitele najdete v tématu [pokyny k instalaci](https://go.microsoft.com/fwlink/?LinkId=145522).</span><span class="sxs-lookup"><span data-stu-id="fced1-149">For more information about the Self-Host sample, see [Setup Instructions](https://go.microsoft.com/fwlink/?LinkId=145522).</span></span>  
+## <a name="example"></a><span data-ttu-id="f03d4-146">Příklad</span><span class="sxs-lookup"><span data-stu-id="f03d4-146">Example</span></span>  
+ <span data-ttu-id="f03d4-147">Následuje seznam kódu pro tuto ukázku.</span><span class="sxs-lookup"><span data-stu-id="f03d4-147">The following is a listing of the code for this sample.</span></span> <span data-ttu-id="f03d4-148">Vzhledem k tomu, že tento kód je založen na [ukázce vlastního hostitele,](https://go.microsoft.com/fwlink/?LinkId=145523) jsou uvedeny pouze ty soubory, které jsou změněny.</span><span class="sxs-lookup"><span data-stu-id="f03d4-148">Because this code is based on the [Self-Host](https://go.microsoft.com/fwlink/?LinkId=145523) sample, only those files that are changed are listed.</span></span> <span data-ttu-id="f03d4-149">Další informace o ukázce vlastního hostitele naleznete v [tématu Pokyny k instalaci](https://go.microsoft.com/fwlink/?LinkId=145522).</span><span class="sxs-lookup"><span data-stu-id="f03d4-149">For more information about the Self-Host sample, see [Setup Instructions](https://go.microsoft.com/fwlink/?LinkId=145522).</span></span>  
   
 ```csharp  
 // Service.cs  
@@ -277,7 +277,7 @@ namespace DiscoveryClientApp
             // Create DiscoveryClient  
             DiscoveryClient discoveryClient = new DiscoveryClient(new UdpDiscoveryEndpoint());  
   
-            // Find ICalculatorService endpoints              
+            // Find ICalculatorService endpoints
             FindResponse findResponse = discoveryClient.Find(new FindCriteria(typeof(ICalculator)));  
   
             if (findResponse.Endpoints.Count > 0)  
@@ -340,7 +340,7 @@ namespace DiscoveryClientApp
 }  
 ```  
 
-## <a name="see-also"></a><span data-ttu-id="fced1-150">Další informace najdete v tématech</span><span class="sxs-lookup"><span data-stu-id="fced1-150">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="f03d4-150">Viz také</span><span class="sxs-lookup"><span data-stu-id="f03d4-150">See also</span></span>
 
-- [<span data-ttu-id="fced1-151">Přehled zjišťování WCF</span><span class="sxs-lookup"><span data-stu-id="fced1-151">WCF Discovery Overview</span></span>](../../../../docs/framework/wcf/feature-details/wcf-discovery-overview.md)
-- [<span data-ttu-id="fced1-152">Objektový model zjišťování WCF</span><span class="sxs-lookup"><span data-stu-id="fced1-152">WCF Discovery Object Model</span></span>](../../../../docs/framework/wcf/feature-details/wcf-discovery-object-model.md)
+- [<span data-ttu-id="f03d4-151">Přehled zjišťování WCF</span><span class="sxs-lookup"><span data-stu-id="f03d4-151">WCF Discovery Overview</span></span>](../../../../docs/framework/wcf/feature-details/wcf-discovery-overview.md)
+- [<span data-ttu-id="f03d4-152">Objektový model zjišťování WCF</span><span class="sxs-lookup"><span data-stu-id="f03d4-152">WCF Discovery Object Model</span></span>](../../../../docs/framework/wcf/feature-details/wcf-discovery-object-model.md)

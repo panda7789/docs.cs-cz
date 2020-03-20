@@ -5,17 +5,17 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 7e828566-fffe-4d38-abb2-4d68fd73f663
-ms.openlocfilehash: 6082a171d24c55ea52c153bbd920bb7486be78a7
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 5e9a00ab78a57c3c1686d7c87ed8b45d9b2649af
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70784371"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79150828"
 ---
-# <a name="performing-an-xpath-query-on-a-dataset"></a><span data-ttu-id="52080-102">Provedení dotazu XPath u datové sady</span><span class="sxs-lookup"><span data-stu-id="52080-102">Performing an XPath Query on a DataSet</span></span>
-<span data-ttu-id="52080-103">Vztah mezi synchronizovaným <xref:System.Data.DataSet> a <xref:System.Xml.XmlDataDocument> umožňuje využívat služby XML, jako je dotaz jazyka XML Path (XPath), který přistupuje k **objektu XmlDataDocument** a umožňuje pohodlnější fungování určitých funkcí než přímý přístup k **datové sadě** .</span><span class="sxs-lookup"><span data-stu-id="52080-103">The relationship between a synchronized <xref:System.Data.DataSet> and <xref:System.Xml.XmlDataDocument> allows you to make use of XML services, such as the XML Path Language (XPath) query, that access the **XmlDataDocument** and can perform certain functionality more conveniently than accessing the **DataSet** directly.</span></span> <span data-ttu-id="52080-104">Například namísto použití metody **Select** objektu <xref:System.Data.DataTable> pro navigaci na relace s jinými tabulkami v **datové sadě**můžete provést dotaz XPath v **objektu XmlDataDocument** , který je synchronizován s **datovou sadou**, a získat tak seznam elementů XML ve formě <xref:System.Xml.XmlNodeList>.</span><span class="sxs-lookup"><span data-stu-id="52080-104">For example, rather than using the **Select** method of a <xref:System.Data.DataTable> to navigate relationships to other tables in a **DataSet**, you can perform an XPath query on an **XmlDataDocument** that is synchronized with the **DataSet**, to get a list of XML elements in the form of an <xref:System.Xml.XmlNodeList>.</span></span> <span data-ttu-id="52080-105">Uzly v **XmlNodeList**, přetypování jako <xref:System.Xml.XmlElement> uzly, mohou být předány metodě **GetRowFromElement** **objektu XmlDataDocument**, aby vracely vyhovující <xref:System.Data.DataRow> odkazy na řádky tabulky v synchronizovaných.  **Datová sada**.</span><span class="sxs-lookup"><span data-stu-id="52080-105">The nodes in the **XmlNodeList**, cast as <xref:System.Xml.XmlElement> nodes, can then be passed to the **GetRowFromElement** method of the **XmlDataDocument**, to return matching <xref:System.Data.DataRow> references to the rows of the table in the synchronized **DataSet**.</span></span>  
+# <a name="performing-an-xpath-query-on-a-dataset"></a><span data-ttu-id="5d883-102">Provedení dotazu XPath u datové sady</span><span class="sxs-lookup"><span data-stu-id="5d883-102">Performing an XPath Query on a DataSet</span></span>
+<span data-ttu-id="5d883-103">Vztah mezi synchronizované <xref:System.Data.DataSet> <xref:System.Xml.XmlDataDocument> a umožňuje využívat služby XML, jako je například dotaz Xml Path Language (XPath), které přistupují k **XmlDataDocument** a mohou provádět určité funkce pohodlněji než přímý přístup k **datové sadě.**</span><span class="sxs-lookup"><span data-stu-id="5d883-103">The relationship between a synchronized <xref:System.Data.DataSet> and <xref:System.Xml.XmlDataDocument> allows you to make use of XML services, such as the XML Path Language (XPath) query, that access the **XmlDataDocument** and can perform certain functionality more conveniently than accessing the **DataSet** directly.</span></span> <span data-ttu-id="5d883-104">Například místo použití metody **Select** <xref:System.Data.DataTable> a k navigaci relací do jiných tabulek v **datové sadě**můžete provést dotaz XPath na **dokumentu XmlDataDocument,** který je <xref:System.Xml.XmlNodeList>synchronizován s **datovou sadou**, a získat tak seznam elementů XML ve formě .</span><span class="sxs-lookup"><span data-stu-id="5d883-104">For example, rather than using the **Select** method of a <xref:System.Data.DataTable> to navigate relationships to other tables in a **DataSet**, you can perform an XPath query on an **XmlDataDocument** that is synchronized with the **DataSet**, to get a list of XML elements in the form of an <xref:System.Xml.XmlNodeList>.</span></span> <span data-ttu-id="5d883-105">Uzly v **XmlNodeList**, <xref:System.Xml.XmlElement> přetypování jako uzly, pak mohou být předány **GetRowFromElement** metoda **XmlDataDocument**, vrátit odpovídající <xref:System.Data.DataRow> odkazy na řádky tabulky v synchronizované **DataSet**.</span><span class="sxs-lookup"><span data-stu-id="5d883-105">The nodes in the **XmlNodeList**, cast as <xref:System.Xml.XmlElement> nodes, can then be passed to the **GetRowFromElement** method of the **XmlDataDocument**, to return matching <xref:System.Data.DataRow> references to the rows of the table in the synchronized **DataSet**.</span></span>  
   
- <span data-ttu-id="52080-106">Například následující ukázka kódu provede "podřízený" dotaz XPath.</span><span class="sxs-lookup"><span data-stu-id="52080-106">For example, the following code sample performs a "grandchild" XPath query.</span></span> <span data-ttu-id="52080-107">**Datová sada** je vyplněna třemi tabulkami: **Zákazníci**, **objednávky**a **OrderDetails**.</span><span class="sxs-lookup"><span data-stu-id="52080-107">The **DataSet** is filled with three tables: **Customers**, **Orders**, and **OrderDetails**.</span></span> <span data-ttu-id="52080-108">V ukázce je relace nadřazený-podřízený nejprve vytvořena mezi tabulkami **zákazníci** a **objednávky** a mezi tabulkami **Orders** a **OrderDetails** .</span><span class="sxs-lookup"><span data-stu-id="52080-108">In the sample, a parent-child relation is first created between the **Customers** and **Orders** tables, and between the **Orders** and **OrderDetails** tables.</span></span> <span data-ttu-id="52080-109">Pak se provede dotaz XPath, který vrátí **XmlNodeList** **uzly,** kde má uzel **OrderDetails** uzel **ProductID** s hodnotou 43.</span><span class="sxs-lookup"><span data-stu-id="52080-109">An XPath query is then performed to return an **XmlNodeList** of **Customers** nodes where a grandchild **OrderDetails** node has a **ProductID** node with the value of 43.</span></span> <span data-ttu-id="52080-110">V podstatě ukázka používá dotaz XPath k určení, kteří zákazníci objednali produkt s **ProductID** 43.</span><span class="sxs-lookup"><span data-stu-id="52080-110">In essence, the sample is using the XPath query to determine which customers have ordered the product that has the **ProductID** of 43.</span></span>  
+ <span data-ttu-id="5d883-106">Například následující ukázka kódu provádí dotaz XPath "vnouče".</span><span class="sxs-lookup"><span data-stu-id="5d883-106">For example, the following code sample performs a "grandchild" XPath query.</span></span> <span data-ttu-id="5d883-107">**DataSet** je vyplněn třemi tabulkami: **Zákazníci**, **Objednávky**a **Podrobnosti objednávky**.</span><span class="sxs-lookup"><span data-stu-id="5d883-107">The **DataSet** is filled with three tables: **Customers**, **Orders**, and **OrderDetails**.</span></span> <span data-ttu-id="5d883-108">V ukázce je nejprve vytvořen vztah nadřazený podřízený mezi **tabulkami Zákazníci** a **Objednávky** a mezi **tabulkami Orders** a **OrderDetails.**</span><span class="sxs-lookup"><span data-stu-id="5d883-108">In the sample, a parent-child relation is first created between the **Customers** and **Orders** tables, and between the **Orders** and **OrderDetails** tables.</span></span> <span data-ttu-id="5d883-109">Dotaz XPath se pak provede vrátit **XmlNodeList** uzlů **zákazníků,** kde vnouče **OrderDetails** uzel má **ProductID** uzel s hodnotou 43.</span><span class="sxs-lookup"><span data-stu-id="5d883-109">An XPath query is then performed to return an **XmlNodeList** of **Customers** nodes where a grandchild **OrderDetails** node has a **ProductID** node with the value of 43.</span></span> <span data-ttu-id="5d883-110">V podstatě ukázka používá dotaz XPath k určení, kteří zákazníci objednali produkt, který má **ProductID** 43.</span><span class="sxs-lookup"><span data-stu-id="5d883-110">In essence, the sample is using the XPath query to determine which customers have ordered the product that has the **ProductID** of 43.</span></span>  
   
 ```vb  
 ' Assumes that connection is a valid SqlConnection.  
@@ -43,7 +43,7 @@ dataSet.Relations.Add("OrderDetail", _
   dataSet.Tables("Orders").Columns("OrderID"), _  
 dataSet.Tables("OrderDetails").Columns("OrderID"), false).Nested = true  
   
-Dim xmlDoc As XmlDataDocument = New XmlDataDocument(dataSet)   
+Dim xmlDoc As XmlDataDocument = New XmlDataDocument(dataSet)
   
 Dim nodeList As XmlNodeList = xmlDoc.DocumentElement.SelectNodes( _  
   "descendant::Customers[*/OrderDetails/ProductID=43]")  
@@ -84,10 +84,10 @@ dataSet.Relations.Add("CustOrders",
   
 dataSet.Relations.Add("OrderDetail",  
   dataSet.Tables["Orders"].Columns["OrderID"],  
-  dataSet.Tables["OrderDetails"].Columns["OrderID"],   
+  dataSet.Tables["OrderDetails"].Columns["OrderID"],
   false).Nested = true;  
   
-XmlDataDocument xmlDoc = new XmlDataDocument(dataSet);   
+XmlDataDocument xmlDoc = new XmlDataDocument(dataSet);
   
 XmlNodeList nodeList = xmlDoc.DocumentElement.SelectNodes(  
   "descendant::Customers[*/OrderDetails/ProductID=43]");  
@@ -101,7 +101,7 @@ foreach (XmlNode xmlNode in nodeList)
 }  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="52080-111">Viz také:</span><span class="sxs-lookup"><span data-stu-id="52080-111">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="5d883-111">Viz také</span><span class="sxs-lookup"><span data-stu-id="5d883-111">See also</span></span>
 
-- [<span data-ttu-id="52080-112">Synchronizace datové sady a datového dokumentu XML</span><span class="sxs-lookup"><span data-stu-id="52080-112">DataSet and XmlDataDocument Synchronization</span></span>](dataset-and-xmldatadocument-synchronization.md)
-- [<span data-ttu-id="52080-113">Přehled ADO.NET</span><span class="sxs-lookup"><span data-stu-id="52080-113">ADO.NET Overview</span></span>](../ado-net-overview.md)
+- [<span data-ttu-id="5d883-112">Synchronizace datové sady a datového dokumentu XML</span><span class="sxs-lookup"><span data-stu-id="5d883-112">DataSet and XmlDataDocument Synchronization</span></span>](dataset-and-xmldatadocument-synchronization.md)
+- [<span data-ttu-id="5d883-113">Přehled ADO.NET</span><span class="sxs-lookup"><span data-stu-id="5d883-113">ADO.NET Overview</span></span>](../ado-net-overview.md)

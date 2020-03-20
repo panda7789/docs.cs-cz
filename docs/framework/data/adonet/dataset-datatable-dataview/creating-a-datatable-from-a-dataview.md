@@ -5,22 +5,22 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 2d45cf41-d8ae-4409-af3e-a96a7e476d85
-ms.openlocfilehash: 6e066bcbe02fa9cf498e11af431b9f6dcd4432ab
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: e5135aca49a63aafa3330832c54f2d28d31d60d0
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70785510"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79151348"
 ---
-# <a name="creating-a-datatable-from-a-dataview"></a><span data-ttu-id="0e782-102">Vytvoření datové tabulky ze zobrazení dat</span><span class="sxs-lookup"><span data-stu-id="0e782-102">Creating a DataTable from a DataView</span></span>
-<span data-ttu-id="0e782-103">Jakmile načtete data ze zdroje dat a vyplníte <xref:System.Data.DataTable> je daty, můžete chtít vrácená data seřadit, filtrovat nebo jinak omezit, aniž byste je museli znovu načítat.</span><span class="sxs-lookup"><span data-stu-id="0e782-103">Once you have retrieved data from a data source, and have filled a <xref:System.Data.DataTable> with the data, you may want to sort, filter, or otherwise limit the returned data without retrieving it again.</span></span> <span data-ttu-id="0e782-104"><xref:System.Data.DataView> Třída to umožňuje.</span><span class="sxs-lookup"><span data-stu-id="0e782-104">The <xref:System.Data.DataView> class makes this possible.</span></span> <span data-ttu-id="0e782-105">Kromě toho, <xref:System.Data.DataTable> Pokud potřebujete vytvořit nový <xref:System.Data.DataView>z <xref:System.Data.DataView.ToTable%2A> , můžete použít metodu ke zkopírování všech řádků a sloupců nebo podmnožiny dat do nového <xref:System.Data.DataTable>.</span><span class="sxs-lookup"><span data-stu-id="0e782-105">In addition, if you need to create a new <xref:System.Data.DataTable> from the <xref:System.Data.DataView>, you can use the <xref:System.Data.DataView.ToTable%2A> method to copy all the rows and columns, or a subset of the data into a new <xref:System.Data.DataTable>.</span></span> <span data-ttu-id="0e782-106"><xref:System.Data.DataView.ToTable%2A> Metoda poskytuje přetížení pro:</span><span class="sxs-lookup"><span data-stu-id="0e782-106">The <xref:System.Data.DataView.ToTable%2A> method provides overloads to:</span></span>  
+# <a name="creating-a-datatable-from-a-dataview"></a><span data-ttu-id="20781-102">Vytvoření datové tabulky ze zobrazení dat</span><span class="sxs-lookup"><span data-stu-id="20781-102">Creating a DataTable from a DataView</span></span>
+<span data-ttu-id="20781-103">Jakmile načtete data ze zdroje dat a <xref:System.Data.DataTable> naplníte je daty, můžete vrátit data seřadit, filtrovat nebo jinak omezit, aniž byste je znovu načetli.</span><span class="sxs-lookup"><span data-stu-id="20781-103">Once you have retrieved data from a data source, and have filled a <xref:System.Data.DataTable> with the data, you may want to sort, filter, or otherwise limit the returned data without retrieving it again.</span></span> <span data-ttu-id="20781-104">Třída <xref:System.Data.DataView> to umožňuje.</span><span class="sxs-lookup"><span data-stu-id="20781-104">The <xref:System.Data.DataView> class makes this possible.</span></span> <span data-ttu-id="20781-105">Kromě toho, pokud potřebujete vytvořit <xref:System.Data.DataTable> nový <xref:System.Data.DataView>z , <xref:System.Data.DataView.ToTable%2A> můžete použít metodu ke kopírování všech řádků a sloupců <xref:System.Data.DataTable>nebo podmnožinu dat do nového .</span><span class="sxs-lookup"><span data-stu-id="20781-105">In addition, if you need to create a new <xref:System.Data.DataTable> from the <xref:System.Data.DataView>, you can use the <xref:System.Data.DataView.ToTable%2A> method to copy all the rows and columns, or a subset of the data into a new <xref:System.Data.DataTable>.</span></span> <span data-ttu-id="20781-106">Metoda <xref:System.Data.DataView.ToTable%2A> poskytuje přetížení:</span><span class="sxs-lookup"><span data-stu-id="20781-106">The <xref:System.Data.DataView.ToTable%2A> method provides overloads to:</span></span>  
   
-- <span data-ttu-id="0e782-107">Vytvořit sloupce <xref:System.Data.DataView>obsahující podmnožinu sloupců v. <xref:System.Data.DataTable></span><span class="sxs-lookup"><span data-stu-id="0e782-107">Create a <xref:System.Data.DataTable> containing columns that are a subset of the columns in the <xref:System.Data.DataView>.</span></span>  
+- <span data-ttu-id="20781-107">Vytvořte <xref:System.Data.DataTable> sloupce obsahující, které jsou podmnožinou sloupců v oblasti <xref:System.Data.DataView>.</span><span class="sxs-lookup"><span data-stu-id="20781-107">Create a <xref:System.Data.DataTable> containing columns that are a subset of the columns in the <xref:System.Data.DataView>.</span></span>  
   
-- <span data-ttu-id="0e782-108">Vytvořte objekt <xref:System.Data.DataTable> , který obsahuje pouze odlišné řádky z <xref:System.Data.DataView>rozhraní, obdobně k klíčovému slovu DISTINCT v jazyce Transact-SQL.</span><span class="sxs-lookup"><span data-stu-id="0e782-108">Create a <xref:System.Data.DataTable> that includes only distinct rows from the <xref:System.Data.DataView>, analogously to the DISTINCT keyword in Transact-SQL.</span></span>  
+- <span data-ttu-id="20781-108">Vytvořte, <xref:System.Data.DataTable> který obsahuje pouze <xref:System.Data.DataView>odlišné řádky od , analogicky na distinct klíčové slovo v Transact-SQL.</span><span class="sxs-lookup"><span data-stu-id="20781-108">Create a <xref:System.Data.DataTable> that includes only distinct rows from the <xref:System.Data.DataView>, analogously to the DISTINCT keyword in Transact-SQL.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="0e782-109">Příklad</span><span class="sxs-lookup"><span data-stu-id="0e782-109">Example</span></span>  
- <span data-ttu-id="0e782-110">Následující příklad konzolové aplikace vytvoří <xref:System.Data.DataTable> , který obsahuje data z tabulky **Person. Contact** v ukázkové databázi **AdventureWorks** .</span><span class="sxs-lookup"><span data-stu-id="0e782-110">The following console application example creates a <xref:System.Data.DataTable> that contains data from the **Person.Contact** table in the **AdventureWorks** sample database.</span></span> <span data-ttu-id="0e782-111">Dále příklad vytvoří seřazený a filtrovaný <xref:System.Data.DataView> na základě. <xref:System.Data.DataTable></span><span class="sxs-lookup"><span data-stu-id="0e782-111">Next, the example creates a sorted and filtered <xref:System.Data.DataView> based on the <xref:System.Data.DataTable>.</span></span> <span data-ttu-id="0e782-112"><xref:System.Data.DataTable> Po zobrazení obsahu <xref:System.Data.DataView.ToTable%2A> <xref:System.Data.DataView> <xref:System.Data.DataTable> a, v příkladu, vytvoří nový z rozhraní voláním metody a výběrem pouze podmnožinu dostupných sloupců. <xref:System.Data.DataView></span><span class="sxs-lookup"><span data-stu-id="0e782-112">After displaying the contents of the <xref:System.Data.DataTable> and the <xref:System.Data.DataView>, the example creates a new <xref:System.Data.DataTable> from the <xref:System.Data.DataView> by calling the <xref:System.Data.DataView.ToTable%2A> method, selecting only a subset of the available columns.</span></span> <span data-ttu-id="0e782-113">Nakonec v příkladu se zobrazí obsah nového <xref:System.Data.DataTable>.</span><span class="sxs-lookup"><span data-stu-id="0e782-113">Finally, the example displays the contents of the new <xref:System.Data.DataTable>.</span></span>  
+## <a name="example"></a><span data-ttu-id="20781-109">Příklad</span><span class="sxs-lookup"><span data-stu-id="20781-109">Example</span></span>  
+ <span data-ttu-id="20781-110">Následující příklad aplikace konzoly vytvoří soubor, <xref:System.Data.DataTable> který obsahuje data z tabulky **Person.Contact** v ukázkové databázi **AdventureWorks.**</span><span class="sxs-lookup"><span data-stu-id="20781-110">The following console application example creates a <xref:System.Data.DataTable> that contains data from the **Person.Contact** table in the **AdventureWorks** sample database.</span></span> <span data-ttu-id="20781-111">V dalším příkladu vytvoří seřazené a filtrované <xref:System.Data.DataView> na základě <xref:System.Data.DataTable>.</span><span class="sxs-lookup"><span data-stu-id="20781-111">Next, the example creates a sorted and filtered <xref:System.Data.DataView> based on the <xref:System.Data.DataTable>.</span></span> <span data-ttu-id="20781-112">Po zobrazení <xref:System.Data.DataTable> obsahu a <xref:System.Data.DataView>a , v příkladu vytvoří nový <xref:System.Data.DataView.ToTable%2A> <xref:System.Data.DataTable> z <xref:System.Data.DataView> voláním metody, výběrem pouze podmnožinu dostupných sloupců.</span><span class="sxs-lookup"><span data-stu-id="20781-112">After displaying the contents of the <xref:System.Data.DataTable> and the <xref:System.Data.DataView>, the example creates a new <xref:System.Data.DataTable> from the <xref:System.Data.DataView> by calling the <xref:System.Data.DataView.ToTable%2A> method, selecting only a subset of the available columns.</span></span> <span data-ttu-id="20781-113">Nakonec příklad zobrazí obsah nového <xref:System.Data.DataTable>.</span><span class="sxs-lookup"><span data-stu-id="20781-113">Finally, the example displays the contents of the new <xref:System.Data.DataTable>.</span></span>  
   
 ```vb  
 Private Sub DemonstrateDataView()  
@@ -114,7 +114,7 @@ private static void DemonstrateDataView()
 // connectionString is assumed to be a valid connection string.  
 SqlDataAdapter adapter = new SqlDataAdapter(  
     "SELECT FirstName, LastName, EmailAddress " +  
-    "FROM Person.Contact WHERE FirstName LIKE 'Mich%'",   
+    "FROM Person.Contact WHERE FirstName LIKE 'Mich%'",
        GetConnectionString());  
 DataTable table = new DataTable();  
   
@@ -203,10 +203,10 @@ Console.WriteLine();
 }  
 ```  
   
- <span data-ttu-id="0e782-114">}</span><span class="sxs-lookup"><span data-stu-id="0e782-114">}</span></span>  
+ <span data-ttu-id="20781-114">}</span><span class="sxs-lookup"><span data-stu-id="20781-114">}</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="0e782-115">Viz také:</span><span class="sxs-lookup"><span data-stu-id="0e782-115">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="20781-115">Viz také</span><span class="sxs-lookup"><span data-stu-id="20781-115">See also</span></span>
 
 - <xref:System.Data.DataView.ToTable%2A>
-- [<span data-ttu-id="0e782-116">Zobrazení dat</span><span class="sxs-lookup"><span data-stu-id="0e782-116">DataViews</span></span>](dataviews.md)
-- [<span data-ttu-id="0e782-117">Přehled ADO.NET</span><span class="sxs-lookup"><span data-stu-id="0e782-117">ADO.NET Overview</span></span>](../ado-net-overview.md)
+- [<span data-ttu-id="20781-116">Zobrazení dat</span><span class="sxs-lookup"><span data-stu-id="20781-116">DataViews</span></span>](dataviews.md)
+- [<span data-ttu-id="20781-117">Přehled ADO.NET</span><span class="sxs-lookup"><span data-stu-id="20781-117">ADO.NET Overview</span></span>](../ado-net-overview.md)

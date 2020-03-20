@@ -1,18 +1,17 @@
 ---
-ms.openlocfilehash: d7cf32eb369e2607ee540d7188cc680b9506c261
-ms.sourcegitcommit: d55e14eb63588830c0ba1ea95a24ce6c57ef8c8c
+ms.openlocfilehash: 946096cb9510ca12bbd2cecd00099142308b072a
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/11/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "67856965"
 ---
-### <a name="keytips-behavior-improved-in-wpf"></a><span data-ttu-id="92b3d-101">Popisy tlačítek chování vylepšené v subsystému WPF</span><span class="sxs-lookup"><span data-stu-id="92b3d-101">Keytips behavior improved in WPF</span></span>
+### <a name="keytips-behavior-improved-in-wpf"></a><span data-ttu-id="4b6a4-101">Chování klíčových tipů bylo v wpf vylepšeno</span><span class="sxs-lookup"><span data-stu-id="4b6a4-101">Keytips behavior improved in WPF</span></span>
 
 |   |   |
 |---|---|
-|<span data-ttu-id="92b3d-102">Podrobnosti</span><span class="sxs-lookup"><span data-stu-id="92b3d-102">Details</span></span>|<span data-ttu-id="92b3d-103">Popisy tlačítek chování byla změněna zpřístupnit se chování v aplikaci Microsoft Word a Průzkumníka Windows.</span><span class="sxs-lookup"><span data-stu-id="92b3d-103">Keytips behavior has been modified to bring parity with behavior on Microsoft Word and Windows Explorer.</span></span> <span data-ttu-id="92b3d-104">Tak, že zkontrolujete, jestli má stav klávesovou zkratku, nebo není v případě třídy <xref:System.Windows.Input.KeyEventArgs.SystemKey> (zejména <xref:System.Windows.Input.Key> nebo <xref:System.Windows.Input.Key.F11>) se stiskne, WPF zpracovává klávesovou zkratku klíče odpovídajícím způsobem.</span><span class="sxs-lookup"><span data-stu-id="92b3d-104">By checking whether keytip state is enabled or not in the case of a <xref:System.Windows.Input.KeyEventArgs.SystemKey> (in particular, <xref:System.Windows.Input.Key> or <xref:System.Windows.Input.Key.F11>) being pressed, WPF handles keytip keys appropriately.</span></span> <span data-ttu-id="92b3d-105">Popisy tlačítek teď zavřete nabídku i v případě, že se otevře pomocí myši.</span><span class="sxs-lookup"><span data-stu-id="92b3d-105">Keytips now dismiss a menu even when it is opened by mouse.</span></span>|
-|<span data-ttu-id="92b3d-106">Doporučení</span><span class="sxs-lookup"><span data-stu-id="92b3d-106">Suggestion</span></span>|<span data-ttu-id="92b3d-107">Není k dispozici</span><span class="sxs-lookup"><span data-stu-id="92b3d-107">N/A</span></span>|
-|<span data-ttu-id="92b3d-108">Scope</span><span class="sxs-lookup"><span data-stu-id="92b3d-108">Scope</span></span>|<span data-ttu-id="92b3d-109">Edge</span><span class="sxs-lookup"><span data-stu-id="92b3d-109">Edge</span></span>|
-|<span data-ttu-id="92b3d-110">Version</span><span class="sxs-lookup"><span data-stu-id="92b3d-110">Version</span></span>|<span data-ttu-id="92b3d-111">4.7.2</span><span class="sxs-lookup"><span data-stu-id="92b3d-111">4.7.2</span></span>|
-|<span data-ttu-id="92b3d-112">type</span><span class="sxs-lookup"><span data-stu-id="92b3d-112">Type</span></span>|<span data-ttu-id="92b3d-113">Modul runtime</span><span class="sxs-lookup"><span data-stu-id="92b3d-113">Runtime</span></span>|
-
+|<span data-ttu-id="4b6a4-102">Podrobnosti</span><span class="sxs-lookup"><span data-stu-id="4b6a4-102">Details</span></span>|<span data-ttu-id="4b6a4-103">Klíčové klávesy chování byla změněna tak, aby parity s chováním v aplikaci Microsoft Word a Průzkumníkwindows.</span><span class="sxs-lookup"><span data-stu-id="4b6a4-103">Keytips behavior has been modified to bring parity with behavior on Microsoft Word and Windows Explorer.</span></span> <span data-ttu-id="4b6a4-104">Kontrolou, zda je povolen stav klíčového klíče <xref:System.Windows.Input.KeyEventArgs.SystemKey> nebo ne <xref:System.Windows.Input.Key> v <xref:System.Windows.Input.Key.F11>případě stisknutí (zejména nebo) wpf zpracovává klávesové zkratky odpovídajícím způsobem.</span><span class="sxs-lookup"><span data-stu-id="4b6a4-104">By checking whether keytip state is enabled or not in the case of a <xref:System.Windows.Input.KeyEventArgs.SystemKey> (in particular, <xref:System.Windows.Input.Key> or <xref:System.Windows.Input.Key.F11>) being pressed, WPF handles keytip keys appropriately.</span></span> <span data-ttu-id="4b6a4-105">Klávesové zkratky nyní zavře tezi nabídky i v případě, že je otevřena myší.</span><span class="sxs-lookup"><span data-stu-id="4b6a4-105">Keytips now dismiss a menu even when it is opened by mouse.</span></span>|
+|<span data-ttu-id="4b6a4-106">Návrh</span><span class="sxs-lookup"><span data-stu-id="4b6a4-106">Suggestion</span></span>|<span data-ttu-id="4b6a4-107">Není dostupné.</span><span class="sxs-lookup"><span data-stu-id="4b6a4-107">N/A</span></span>|
+|<span data-ttu-id="4b6a4-108">Rozsah</span><span class="sxs-lookup"><span data-stu-id="4b6a4-108">Scope</span></span>|<span data-ttu-id="4b6a4-109">Edge</span><span class="sxs-lookup"><span data-stu-id="4b6a4-109">Edge</span></span>|
+|<span data-ttu-id="4b6a4-110">Version</span><span class="sxs-lookup"><span data-stu-id="4b6a4-110">Version</span></span>|<span data-ttu-id="4b6a4-111">4.7.2</span><span class="sxs-lookup"><span data-stu-id="4b6a4-111">4.7.2</span></span>|
+|<span data-ttu-id="4b6a4-112">Typ</span><span class="sxs-lookup"><span data-stu-id="4b6a4-112">Type</span></span>|<span data-ttu-id="4b6a4-113">Modul runtime</span><span class="sxs-lookup"><span data-stu-id="4b6a4-113">Runtime</span></span>|

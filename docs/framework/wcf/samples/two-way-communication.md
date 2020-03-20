@@ -2,38 +2,38 @@
 title: Obousměrná komunikace
 ms.date: 03/30/2017
 ms.assetid: fb64192d-b3ea-4e02-9fb3-46a508d26c60
-ms.openlocfilehash: 9cf8d3746cea5746bee186a8a68a515c8503cb85
-ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
+ms.openlocfilehash: 56f789fe185cb2885c215e9512e82ae2fbb64a36
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74715903"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79143756"
 ---
-# <a name="two-way-communication"></a><span data-ttu-id="7972a-102">Obousměrná komunikace</span><span class="sxs-lookup"><span data-stu-id="7972a-102">Two-Way Communication</span></span>
-<span data-ttu-id="7972a-103">Tato ukázka předvádí, jak provést transakční obousměrnou komunikaci přes službu MSMQ ve frontě.</span><span class="sxs-lookup"><span data-stu-id="7972a-103">This sample demonstrates how to perform transacted two-way queued communication over MSMQ.</span></span> <span data-ttu-id="7972a-104">V této ukázce se používá vazba `netMsmqBinding`.</span><span class="sxs-lookup"><span data-stu-id="7972a-104">This sample uses the `netMsmqBinding` binding.</span></span> <span data-ttu-id="7972a-105">V tomto případě je tato služba samoobslužná Konzolová aplikace, která umožňuje sledovat službu přijímající zprávy ve frontě.</span><span class="sxs-lookup"><span data-stu-id="7972a-105">In this case, the service is a self-hosted console application that allows you to observe the service receiving queued messages.</span></span>  
+# <a name="two-way-communication"></a><span data-ttu-id="7b760-102">Obousměrná komunikace</span><span class="sxs-lookup"><span data-stu-id="7b760-102">Two-Way Communication</span></span>
+<span data-ttu-id="7b760-103">Tato ukázka ukazuje, jak provádět transakční obousměrnou komunikaci ve frontě přes službu MSMQ.</span><span class="sxs-lookup"><span data-stu-id="7b760-103">This sample demonstrates how to perform transacted two-way queued communication over MSMQ.</span></span> <span data-ttu-id="7b760-104">Tato ukázka `netMsmqBinding` používá vazbu.</span><span class="sxs-lookup"><span data-stu-id="7b760-104">This sample uses the `netMsmqBinding` binding.</span></span> <span data-ttu-id="7b760-105">V tomto případě je služba aplikace konzoly s vlastním hostitelem, která umožňuje sledovat službu přijímající zprávy ve frontě.</span><span class="sxs-lookup"><span data-stu-id="7b760-105">In this case, the service is a self-hosted console application that allows you to observe the service receiving queued messages.</span></span>  
   
 > [!NOTE]
-> <span data-ttu-id="7972a-106">Postup nastavení a pokyny pro sestavení pro tuto ukázku najdete na konci tohoto tématu.</span><span class="sxs-lookup"><span data-stu-id="7972a-106">The setup procedure and build instructions for this sample are located at the end of this topic.</span></span>  
+> <span data-ttu-id="7b760-106">Postup instalace a pokyny k sestavení pro tuto ukázku jsou umístěny na konci tohoto tématu.</span><span class="sxs-lookup"><span data-stu-id="7b760-106">The setup procedure and build instructions for this sample are located at the end of this topic.</span></span>  
   
- <span data-ttu-id="7972a-107">Tato ukázka je založená na [transakční vazbě služby MSMQ](../../../../docs/framework/wcf/samples/transacted-msmq-binding.md).</span><span class="sxs-lookup"><span data-stu-id="7972a-107">This sample is based on the [Transacted MSMQ Binding](../../../../docs/framework/wcf/samples/transacted-msmq-binding.md).</span></span>  
+ <span data-ttu-id="7b760-107">Tato ukázka je založena na [transacted MSMQ vazby](../../../../docs/framework/wcf/samples/transacted-msmq-binding.md).</span><span class="sxs-lookup"><span data-stu-id="7b760-107">This sample is based on the [Transacted MSMQ Binding](../../../../docs/framework/wcf/samples/transacted-msmq-binding.md).</span></span>  
   
- <span data-ttu-id="7972a-108">V komunikaci ve frontě klient komunikuje se službou pomocí fronty.</span><span class="sxs-lookup"><span data-stu-id="7972a-108">In queued communication, the client communicates to the service using a queue.</span></span> <span data-ttu-id="7972a-109">Klient odesílá zprávy do fronty a služba přijímá zprávy z fronty.</span><span class="sxs-lookup"><span data-stu-id="7972a-109">The client sends messages to a queue, and the service receives messages from the queue.</span></span> <span data-ttu-id="7972a-110">Službu a klient proto nemusí běžet současně, aby bylo možné komunikovat pomocí fronty.</span><span class="sxs-lookup"><span data-stu-id="7972a-110">The service and client therefore, do not have to be running at the same time to communicate using a queue.</span></span>  
+ <span data-ttu-id="7b760-108">Ve frontové komunikaci klient komunikuje se službou pomocí fronty.</span><span class="sxs-lookup"><span data-stu-id="7b760-108">In queued communication, the client communicates to the service using a queue.</span></span> <span data-ttu-id="7b760-109">Klient odesílá zprávy do fronty a služba přijímá zprávy z fronty.</span><span class="sxs-lookup"><span data-stu-id="7b760-109">The client sends messages to a queue, and the service receives messages from the queue.</span></span> <span data-ttu-id="7b760-110">Služba a klient proto nemusí být spuštěny současně komunikovat pomocí fronty.</span><span class="sxs-lookup"><span data-stu-id="7b760-110">The service and client therefore, do not have to be running at the same time to communicate using a queue.</span></span>  
   
- <span data-ttu-id="7972a-111">Tato ukázka předvádí obousměrnou komunikaci pomocí front.</span><span class="sxs-lookup"><span data-stu-id="7972a-111">This sample demonstrates 2-way communication using queues.</span></span> <span data-ttu-id="7972a-112">Klient odesílá nákupní objednávky do fronty z rozsahu transakce.</span><span class="sxs-lookup"><span data-stu-id="7972a-112">The client sends purchase orders to the queue from within the scope of a transaction.</span></span> <span data-ttu-id="7972a-113">Služba obdrží objednávky, zpracuje objednávku a pak zavolá zpět klienta se stavem pořadí z fronty v rámci rozsahu transakce.</span><span class="sxs-lookup"><span data-stu-id="7972a-113">The service receives the orders, processes the order and then calls back the client with the status of the order from the queue within the scope of a transaction.</span></span> <span data-ttu-id="7972a-114">Aby se usnadnila obousměrná komunikace klienta a služby, používají fronty k zařazování nákupních objednávek a stavu objednávek.</span><span class="sxs-lookup"><span data-stu-id="7972a-114">To facilitate two-way communication the client and service both use queues to enqueue purchase orders and order status.</span></span>  
+ <span data-ttu-id="7b760-111">Tato ukázka ukazuje obousměrnou komunikaci pomocí front.</span><span class="sxs-lookup"><span data-stu-id="7b760-111">This sample demonstrates 2-way communication using queues.</span></span> <span data-ttu-id="7b760-112">Klient odešle nákupní objednávky do fronty z rozsahu transakce.</span><span class="sxs-lookup"><span data-stu-id="7b760-112">The client sends purchase orders to the queue from within the scope of a transaction.</span></span> <span data-ttu-id="7b760-113">Služba přijímá objednávky, zpracovává objednávku a pak zavolá zpět klientovi se stavem objednávky z fronty v rámci transakce.</span><span class="sxs-lookup"><span data-stu-id="7b760-113">The service receives the orders, processes the order and then calls back the client with the status of the order from the queue within the scope of a transaction.</span></span> <span data-ttu-id="7b760-114">Pro usnadnění obousměrné komunikace klient i služba používají fronty k zařazení nákupních objednávek do fronty a stavu objednávky.</span><span class="sxs-lookup"><span data-stu-id="7b760-114">To facilitate two-way communication the client and service both use queues to enqueue purchase orders and order status.</span></span>  
   
- <span data-ttu-id="7972a-115">Kontrakt služby `IOrderProcessor` definuje jednosměrné operace služby, které vyhovují používání služby Řízení front zpráv.</span><span class="sxs-lookup"><span data-stu-id="7972a-115">The service contract `IOrderProcessor` defines one-way service operations that suit the use of queuing.</span></span> <span data-ttu-id="7972a-116">Operace služby zahrnuje koncový bod odpovědi, který se použije k odeslání stavu objednávky na.</span><span class="sxs-lookup"><span data-stu-id="7972a-116">The service operation includes the reply endpoint to use to send the order statuses to.</span></span> <span data-ttu-id="7972a-117">Koncový bod odpovědi je identifikátor URI fronty, který odesílá stav objednávky zpátky klientovi.</span><span class="sxs-lookup"><span data-stu-id="7972a-117">The reply endpoint is the URI of the queue to send the order status back to the client.</span></span> <span data-ttu-id="7972a-118">Aplikace pro zpracování objednávek tuto smlouvu implementuje.</span><span class="sxs-lookup"><span data-stu-id="7972a-118">The order processing application implements this contract.</span></span>  
+ <span data-ttu-id="7b760-115">Servisní smlouva `IOrderProcessor` definuje jednosměrné operace služeb, které vyhovují použití fronty.</span><span class="sxs-lookup"><span data-stu-id="7b760-115">The service contract `IOrderProcessor` defines one-way service operations that suit the use of queuing.</span></span> <span data-ttu-id="7b760-116">Operace služby zahrnuje koncový bod odpovědi, který se má použít k odeslání stavů objednávek.</span><span class="sxs-lookup"><span data-stu-id="7b760-116">The service operation includes the reply endpoint to use to send the order statuses to.</span></span> <span data-ttu-id="7b760-117">Koncový bod odpovědi je identifikátor URI fronty pro odeslání stavu objednávky zpět klientovi.</span><span class="sxs-lookup"><span data-stu-id="7b760-117">The reply endpoint is the URI of the queue to send the order status back to the client.</span></span> <span data-ttu-id="7b760-118">Aplikace zpracování objednávky implementuje tuto smlouvu.</span><span class="sxs-lookup"><span data-stu-id="7b760-118">The order processing application implements this contract.</span></span>  
 
 ```csharp
 [ServiceContract(Namespace="http://Microsoft.ServiceModel.Samples")]  
 public interface IOrderProcessor  
 {  
     [OperationContract(IsOneWay = true)]  
-    void SubmitPurchaseOrder(PurchaseOrder po, string   
+    void SubmitPurchaseOrder(PurchaseOrder po, string
                                   reportOrderStatusTo);  
 }
 ```
   
- <span data-ttu-id="7972a-119">Klient zadá odpověď na odeslání stavu objednávky.</span><span class="sxs-lookup"><span data-stu-id="7972a-119">The reply contract to send order status is specified by the client.</span></span> <span data-ttu-id="7972a-120">Klient implementuje kontrakt stavu objednávky.</span><span class="sxs-lookup"><span data-stu-id="7972a-120">The client implements the order status contract.</span></span> <span data-ttu-id="7972a-121">Služba používá vygenerovaný proxy server této smlouvy k odeslání stavu objednávky zpět klientovi.</span><span class="sxs-lookup"><span data-stu-id="7972a-121">The service uses the generated proxy of this contract to send order status back to the client.</span></span>  
+ <span data-ttu-id="7b760-119">Kontrakt odpovědi na odeslání stavu objednávky je určen klientem.</span><span class="sxs-lookup"><span data-stu-id="7b760-119">The reply contract to send order status is specified by the client.</span></span> <span data-ttu-id="7b760-120">Klient implementuje kontrakt stavu objednávky.</span><span class="sxs-lookup"><span data-stu-id="7b760-120">The client implements the order status contract.</span></span> <span data-ttu-id="7b760-121">Služba používá generovaný proxy serveru této smlouvy k odeslání stavu objednávky zpět klientovi.</span><span class="sxs-lookup"><span data-stu-id="7b760-121">The service uses the generated proxy of this contract to send order status back to the client.</span></span>  
 
 ```csharp
 [ServiceContract]  
@@ -44,9 +44,9 @@ public interface IOrderStatus
 }  
 ```
 
- <span data-ttu-id="7972a-122">Operace služby zpracuje odeslanou nákupní objednávku.</span><span class="sxs-lookup"><span data-stu-id="7972a-122">The service operation processes the submitted purchase order.</span></span> <span data-ttu-id="7972a-123"><xref:System.ServiceModel.OperationBehaviorAttribute> se použije na operaci služby a určí se automatické zařazení v transakci, která se používá k přijetí zprávy z fronty a automatickému dokončení transakcí při dokončení operace služby.</span><span class="sxs-lookup"><span data-stu-id="7972a-123">The <xref:System.ServiceModel.OperationBehaviorAttribute> is applied to the service operation to specify automatic enlistment in a transaction that is used to receive the message from the queue and automatic completion of transactions on completion of the service operation.</span></span> <span data-ttu-id="7972a-124">Třída `Orders` zapouzdřuje funkce zpracování objednávek.</span><span class="sxs-lookup"><span data-stu-id="7972a-124">The `Orders` class encapsulates order processing functionality.</span></span> <span data-ttu-id="7972a-125">V tomto případě přidá nákupní objednávku do slovníku.</span><span class="sxs-lookup"><span data-stu-id="7972a-125">In this case, it adds the purchase order to a dictionary.</span></span> <span data-ttu-id="7972a-126">Transakce, ve které je zapsána operace služby v nástroji, je k dispozici pro operace ve třídě `Orders`.</span><span class="sxs-lookup"><span data-stu-id="7972a-126">The transaction that the service operation enlisted in is available to the operations in the `Orders` class.</span></span>  
+ <span data-ttu-id="7b760-122">Operace služby zpracovává odeslanou nákupní objednávku.</span><span class="sxs-lookup"><span data-stu-id="7b760-122">The service operation processes the submitted purchase order.</span></span> <span data-ttu-id="7b760-123">Použije <xref:System.ServiceModel.OperationBehaviorAttribute> se na operaci služby k určení automatického zařazení do transakce, která se používá k přijetí zprávy z fronty a automatického dokončení transakcí po dokončení operace služby.</span><span class="sxs-lookup"><span data-stu-id="7b760-123">The <xref:System.ServiceModel.OperationBehaviorAttribute> is applied to the service operation to specify automatic enlistment in a transaction that is used to receive the message from the queue and automatic completion of transactions on completion of the service operation.</span></span> <span data-ttu-id="7b760-124">Třída `Orders` zapouzdřuje funkce zpracování objednávek.</span><span class="sxs-lookup"><span data-stu-id="7b760-124">The `Orders` class encapsulates order processing functionality.</span></span> <span data-ttu-id="7b760-125">V tomto případě přidá nákupní objednávku do slovníku.</span><span class="sxs-lookup"><span data-stu-id="7b760-125">In this case, it adds the purchase order to a dictionary.</span></span> <span data-ttu-id="7b760-126">Transakce, která operace služby zapsána v je `Orders` k dispozici operace ve třídě.</span><span class="sxs-lookup"><span data-stu-id="7b760-126">The transaction that the service operation enlisted in is available to the operations in the `Orders` class.</span></span>  
   
- <span data-ttu-id="7972a-127">Operace služby kromě zpracování odeslané nákupní objednávky odpoví zpátky na klienta ve stavu objednávky.</span><span class="sxs-lookup"><span data-stu-id="7972a-127">The service operation, in addition to processing the submitted purchase order, replies back to the client on the status of the order.</span></span>  
+ <span data-ttu-id="7b760-127">Operace servisu kromě zpracování odeslané nákupní objednávky odpovídá klientovi zpět na stav objednávky.</span><span class="sxs-lookup"><span data-stu-id="7b760-127">The service operation, in addition to processing the submitted purchase order, replies back to the client on the status of the order.</span></span>  
 
 ```csharp
 [OperationBehavior(TransactionScopeRequired = true, TransactionAutoComplete = true)]  
@@ -70,12 +70,12 @@ public void SubmitPurchaseOrder(PurchaseOrder po, string reportOrderStatusTo)
 }  
 ```
 
- <span data-ttu-id="7972a-128">Název fronty MSMQ je zadán v oddílu appSettings konfiguračního souboru.</span><span class="sxs-lookup"><span data-stu-id="7972a-128">The MSMQ queue name is specified in an appSettings section of the configuration file.</span></span> <span data-ttu-id="7972a-129">Koncový bod služby je definován v oddílu System. ServiceModel konfiguračního souboru.</span><span class="sxs-lookup"><span data-stu-id="7972a-129">The endpoint for the service is defined in the System.ServiceModel section of the configuration file.</span></span>  
+ <span data-ttu-id="7b760-128">Název fronty služby MSMQ je určen v části appSettings konfiguračního souboru.</span><span class="sxs-lookup"><span data-stu-id="7b760-128">The MSMQ queue name is specified in an appSettings section of the configuration file.</span></span> <span data-ttu-id="7b760-129">Koncový bod služby je definován v části System.ServiceModel konfiguračního souboru.</span><span class="sxs-lookup"><span data-stu-id="7b760-129">The endpoint for the service is defined in the System.ServiceModel section of the configuration file.</span></span>  
   
 > [!NOTE]
-> <span data-ttu-id="7972a-130">Název fronty MSMQ a adresa koncového bodu používají mírně odlišnou konvenci adres.</span><span class="sxs-lookup"><span data-stu-id="7972a-130">The MSMQ queue name and endpoint address use slightly different addressing conventions.</span></span> <span data-ttu-id="7972a-131">Název fronty MSMQ používá tečku (.) pro místní počítač a oddělovače zpětného lomítka v cestě.</span><span class="sxs-lookup"><span data-stu-id="7972a-131">The MSMQ queue name uses a dot (.) for the local machine and backslash separators in its path.</span></span> <span data-ttu-id="7972a-132">Adresa koncového bodu služby Windows Communication Foundation (WCF) určuje položku NET. MSMQ: schéma, používá pro místní počítač localhost a v cestě používá lomítka.</span><span class="sxs-lookup"><span data-stu-id="7972a-132">The Windows Communication Foundation (WCF) endpoint address specifies a net.msmq: scheme, uses "localhost" for the local machine, and uses forward slashes in its path.</span></span> <span data-ttu-id="7972a-133">Chcete-li číst z fronty hostované na vzdáleném počítači, nahraďte název vzdáleného počítače "." a "localhost".</span><span class="sxs-lookup"><span data-stu-id="7972a-133">To read from a queue that is hosted on the remote machine, replace the "." and "localhost" to the remote machine name.</span></span>  
+> <span data-ttu-id="7b760-130">Název fronty a adresa koncového bodu msmq používají mírně odlišné konvence adresování.</span><span class="sxs-lookup"><span data-stu-id="7b760-130">The MSMQ queue name and endpoint address use slightly different addressing conventions.</span></span> <span data-ttu-id="7b760-131">Název fronty msmq používá tečku (.) pro místní počítač a oddělovače zpětného lomítka v jeho cestě.</span><span class="sxs-lookup"><span data-stu-id="7b760-131">The MSMQ queue name uses a dot (.) for the local machine and backslash separators in its path.</span></span> <span data-ttu-id="7b760-132">Adresa koncového bodu WCF (Windows Communication Foundation) určuje schéma net.msmq:, používá "localhost" pro místní počítač a používá lomítka v cestě.</span><span class="sxs-lookup"><span data-stu-id="7b760-132">The Windows Communication Foundation (WCF) endpoint address specifies a net.msmq: scheme, uses "localhost" for the local machine, and uses forward slashes in its path.</span></span> <span data-ttu-id="7b760-133">Chcete-li číst z fronty, která je hostována ve vzdáleném počítači, nahraďte "." a "localhost" na název vzdáleného počítače.</span><span class="sxs-lookup"><span data-stu-id="7b760-133">To read from a queue that is hosted on the remote machine, replace the "." and "localhost" to the remote machine name.</span></span>  
   
- <span data-ttu-id="7972a-134">Služba je hostována svým hostitelem.</span><span class="sxs-lookup"><span data-stu-id="7972a-134">The service is self hosted.</span></span> <span data-ttu-id="7972a-135">Při použití přenosu služby MSMQ musí být použitá fronta předem vytvořená.</span><span class="sxs-lookup"><span data-stu-id="7972a-135">When using the MSMQ transport, the queue used must be created in advance.</span></span> <span data-ttu-id="7972a-136">To lze provést ručně nebo prostřednictvím kódu.</span><span class="sxs-lookup"><span data-stu-id="7972a-136">This can be done manually or through code.</span></span> <span data-ttu-id="7972a-137">V této ukázce služba kontroluje existenci fronty a v případě potřeby ji vytvoří.</span><span class="sxs-lookup"><span data-stu-id="7972a-137">In this sample, the service checks for the existence of the queue and creates it, if necessary.</span></span> <span data-ttu-id="7972a-138">Název fronty se načte z konfiguračního souboru.</span><span class="sxs-lookup"><span data-stu-id="7972a-138">The queue name is read from the configuration file.</span></span> <span data-ttu-id="7972a-139">Základní adresa je používána [nástrojem Svcutil. exe](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) pro vygenerování proxy serveru ke službě.</span><span class="sxs-lookup"><span data-stu-id="7972a-139">The base address is used by the [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) to generate the proxy to the service.</span></span>  
+ <span data-ttu-id="7b760-134">Služba je hostována samostatně.</span><span class="sxs-lookup"><span data-stu-id="7b760-134">The service is self hosted.</span></span> <span data-ttu-id="7b760-135">Při použití přenosu služby MSMQ musí být použitá fronta vytvořena předem.</span><span class="sxs-lookup"><span data-stu-id="7b760-135">When using the MSMQ transport, the queue used must be created in advance.</span></span> <span data-ttu-id="7b760-136">To lze provést ručně nebo prostřednictvím kódu.</span><span class="sxs-lookup"><span data-stu-id="7b760-136">This can be done manually or through code.</span></span> <span data-ttu-id="7b760-137">V této ukázce služba zkontroluje existenci fronty a v případě potřeby ji vytvoří.</span><span class="sxs-lookup"><span data-stu-id="7b760-137">In this sample, the service checks for the existence of the queue and creates it, if necessary.</span></span> <span data-ttu-id="7b760-138">Název fronty se čte z konfiguračního souboru.</span><span class="sxs-lookup"><span data-stu-id="7b760-138">The queue name is read from the configuration file.</span></span> <span data-ttu-id="7b760-139">Základní adresa se používá [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) generovat proxy služby.</span><span class="sxs-lookup"><span data-stu-id="7b760-139">The base address is used by the [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) to generate the proxy to the service.</span></span>  
 
 ```csharp
 // Host the service within this EXE console application.  
@@ -103,7 +103,7 @@ public static void Main()
 }  
 ```
 
- <span data-ttu-id="7972a-140">Klient vytvoří transakci.</span><span class="sxs-lookup"><span data-stu-id="7972a-140">The client creates a transaction.</span></span> <span data-ttu-id="7972a-141">Komunikace s frontou probíhá v rámci rozsahu transakce, což způsobuje, že se bude považovat za atomickou jednotku, ve které všechny zprávy budou úspěšné nebo neúspěšné.</span><span class="sxs-lookup"><span data-stu-id="7972a-141">Communication with the queue takes place within the scope of the transaction, causing it to be treated as an atomic unit where all messages succeed or fail.</span></span>  
+ <span data-ttu-id="7b760-140">Klient vytvoří transakci.</span><span class="sxs-lookup"><span data-stu-id="7b760-140">The client creates a transaction.</span></span> <span data-ttu-id="7b760-141">Komunikace s frontou probíhá v rámci transakce, což způsobuje, že je považována za atomovou jednotku, kde všechny zprávy úspěšné nebo neúspěšné.</span><span class="sxs-lookup"><span data-stu-id="7b760-141">Communication with the queue takes place within the scope of the transaction, causing it to be treated as an atomic unit where all messages succeed or fail.</span></span>  
 
 ```csharp
 // Create a ServiceHost for the OrderStatus service type.  
@@ -143,23 +143,23 @@ using (ServiceHost serviceHost = new ServiceHost(typeof(OrderStatusService)))
 }  
 ```
 
- <span data-ttu-id="7972a-142">Klientský kód implementuje kontrakt `IOrderStatus` pro příjem stavu objednávky ze služby.</span><span class="sxs-lookup"><span data-stu-id="7972a-142">The client code implements the `IOrderStatus` contract to receive order status from the service.</span></span> <span data-ttu-id="7972a-143">V tomto případě vytiskne stav objednávky.</span><span class="sxs-lookup"><span data-stu-id="7972a-143">In this case, it prints out the order status.</span></span>  
+ <span data-ttu-id="7b760-142">Kód klienta implementuje smlouvu `IOrderStatus` pro příjem stavu objednávky ze služby.</span><span class="sxs-lookup"><span data-stu-id="7b760-142">The client code implements the `IOrderStatus` contract to receive order status from the service.</span></span> <span data-ttu-id="7b760-143">V tomto případě vytiskne stav objednávky.</span><span class="sxs-lookup"><span data-stu-id="7b760-143">In this case, it prints out the order status.</span></span>  
 
 ```csharp
 [ServiceBehavior]  
 public class OrderStatusService : IOrderStatus  
 {  
-    [OperationBehavior(TransactionAutoComplete = true,   
+    [OperationBehavior(TransactionAutoComplete = true,
                         TransactionScopeRequired = true)]  
     public void OrderStatus(string poNumber, string status)  
     {  
-        Console.WriteLine("Status of order {0}:{1} ", poNumber ,   
+        Console.WriteLine("Status of order {0}:{1} ", poNumber ,
                                                            status);  
     }  
 }  
 ```
 
- <span data-ttu-id="7972a-144">Fronta stavů pořadí je vytvořena v metodě `Main`.</span><span class="sxs-lookup"><span data-stu-id="7972a-144">The order status queue is created in the `Main` method.</span></span> <span data-ttu-id="7972a-145">Konfigurace klienta zahrnuje pořadí konfigurace stavové služby pro hostování služby stavu objednávky, jak je znázorněno v následující ukázkové konfiguraci.</span><span class="sxs-lookup"><span data-stu-id="7972a-145">The client configuration includes the order status service configuration to host the order status service, as shown in the following sample configuration.</span></span>  
+ <span data-ttu-id="7b760-144">V metodě je vytvořena `Main` fronta stavu objednávky.</span><span class="sxs-lookup"><span data-stu-id="7b760-144">The order status queue is created in the `Main` method.</span></span> <span data-ttu-id="7b760-145">Konfigurace klienta zahrnuje konfiguraci služby stavu objednávky pro hostování služby stavu objednávky, jak je znázorněno v následující vzorové konfiguraci.</span><span class="sxs-lookup"><span data-stu-id="7b760-145">The client configuration includes the order status service configuration to host the order status service, as shown in the following sample configuration.</span></span>  
   
 ```xml  
 <appSettings>  
@@ -170,7 +170,7 @@ public class OrderStatusService : IOrderStatus
 <system.serviceModel>  
   
   <services>  
-    <service   
+    <service
        name="Microsoft.ServiceModel.Samples.OrderStatusService">  
       <!-- Define NetMsmqEndpoint -->  
       <endpoint address="net.msmq://localhost/private/ServiceModelSamplesTwo-way/OrderStatus"  
@@ -182,17 +182,17 @@ public class OrderStatusService : IOrderStatus
   <client>  
     <!-- Define NetMsmqEndpoint -->  
     <endpoint name="OrderProcessorEndpoint"  
-              address="net.msmq://localhost/private/ServiceModelSamplesTwo-way/OrderProcessor"   
-              binding="netMsmqBinding"   
+              address="net.msmq://localhost/private/ServiceModelSamplesTwo-way/OrderProcessor"
+              binding="netMsmqBinding"
               contract="Microsoft.ServiceModel.Samples.IOrderProcessor" />  
   </client>  
   
 </system.serviceModel>  
 ```  
   
- <span data-ttu-id="7972a-146">Když spustíte ukázku, aktivity klienta a služby se zobrazí v oknech konzoly služby i klienta.</span><span class="sxs-lookup"><span data-stu-id="7972a-146">When you run the sample, the client and service activities are displayed in both the service and client console windows.</span></span> <span data-ttu-id="7972a-147">Můžete vidět, že služba přijímá zprávy z klienta.</span><span class="sxs-lookup"><span data-stu-id="7972a-147">You can see the service receive messages from the client.</span></span> <span data-ttu-id="7972a-148">V každém okně konzoly stiskněte klávesu ENTER a ukončete službu a klienta.</span><span class="sxs-lookup"><span data-stu-id="7972a-148">Press ENTER in each console window to shut down the service and client.</span></span>  
+ <span data-ttu-id="7b760-146">Při spuštění ukázky jsou aktivity klienta a služby zobrazeny v systému Windows služby i klientské konzole.</span><span class="sxs-lookup"><span data-stu-id="7b760-146">When you run the sample, the client and service activities are displayed in both the service and client console windows.</span></span> <span data-ttu-id="7b760-147">Můžete vidět službu přijímat zprávy od klienta.</span><span class="sxs-lookup"><span data-stu-id="7b760-147">You can see the service receive messages from the client.</span></span> <span data-ttu-id="7b760-148">Stisknutím klávesy ENTER v každém okně konzoly vypněte službu a klienta.</span><span class="sxs-lookup"><span data-stu-id="7b760-148">Press ENTER in each console window to shut down the service and client.</span></span>  
   
- <span data-ttu-id="7972a-149">Služba zobrazí informace o objednávce nákupu a indikuje, že posílá zpět stav objednávky do fronty stavu objednávky.</span><span class="sxs-lookup"><span data-stu-id="7972a-149">The service displays the purchase order information and indicates it is sending back the order status to the order status queue.</span></span>  
+ <span data-ttu-id="7b760-149">Služba zobrazí informace o nákupní objednávce a označuje, že odesílá zpět stav objednávky do fronty stavu objednávky.</span><span class="sxs-lookup"><span data-stu-id="7b760-149">The service displays the purchase order information and indicates it is sending back the order status to the order status queue.</span></span>  
   
 ```console  
 The service is ready.  
@@ -209,29 +209,29 @@ Processing Purchase Order: 124a1f69-3699-4b16-9bcc-43147a8756fc
 Sending back order status information  
 ```  
   
- <span data-ttu-id="7972a-150">Klient zobrazí informace o stavu objednávky odesílané službou.</span><span class="sxs-lookup"><span data-stu-id="7972a-150">The client displays the order status information sent by the service.</span></span>  
+ <span data-ttu-id="7b760-150">Klient zobrazí informace o stavu objednávky odeslané službou.</span><span class="sxs-lookup"><span data-stu-id="7b760-150">The client displays the order status information sent by the service.</span></span>  
   
 ```console  
 Press <ENTER> to terminate client.  
 Status of order 124a1f69-3699-4b16-9bcc-43147a8756fc:Pending  
 ```  
   
-### <a name="to-set-up-build-and-run-the-sample"></a><span data-ttu-id="7972a-151">Nastavení, sestavení a spuštění ukázky</span><span class="sxs-lookup"><span data-stu-id="7972a-151">To set up, build, and run the sample</span></span>  
+### <a name="to-set-up-build-and-run-the-sample"></a><span data-ttu-id="7b760-151">Nastavení, sestavení a spuštění ukázky</span><span class="sxs-lookup"><span data-stu-id="7b760-151">To set up, build, and run the sample</span></span>  
   
-1. <span data-ttu-id="7972a-152">Ujistěte se, že jste provedli [postup jednorázového nastavení pro Windows Communication Foundation ukázky](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).</span><span class="sxs-lookup"><span data-stu-id="7972a-152">Ensure that you have performed the [One-Time Setup Procedure for the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).</span></span>  
+1. <span data-ttu-id="7b760-152">Ujistěte se, že jste provedli [jednorázový postup instalace pro ukázky windows communication foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).</span><span class="sxs-lookup"><span data-stu-id="7b760-152">Ensure that you have performed the [One-Time Setup Procedure for the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).</span></span>  
   
-2. <span data-ttu-id="7972a-153">Pokud chcete vytvořit C# edici nebo Visual Basic .NET, postupujte podle pokynů v tématu [sestavování ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).</span><span class="sxs-lookup"><span data-stu-id="7972a-153">To build the C# or Visual Basic .NET edition of the solution, follow the instructions in [Building the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/building-the-samples.md).</span></span>  
+2. <span data-ttu-id="7b760-153">Chcete-li vytvořit c# nebo Visual Basic .NET vydání řešení, postupujte podle pokynů v [sestavení windows communication foundation ukázky](../../../../docs/framework/wcf/samples/building-the-samples.md).</span><span class="sxs-lookup"><span data-stu-id="7b760-153">To build the C# or Visual Basic .NET edition of the solution, follow the instructions in [Building the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/building-the-samples.md).</span></span>  
   
-3. <span data-ttu-id="7972a-154">Chcete-li spustit ukázku v konfiguraci s jedním nebo více počítači, postupujte podle pokynů v části [spuštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).</span><span class="sxs-lookup"><span data-stu-id="7972a-154">To run the sample in a single- or cross-machine configuration, follow the instructions in [Running the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/running-the-samples.md).</span></span>  
+3. <span data-ttu-id="7b760-154">Chcete-li spustit ukázku v konfiguraci jednoho nebo více počítačů, postupujte podle pokynů v [části Spuštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).</span><span class="sxs-lookup"><span data-stu-id="7b760-154">To run the sample in a single- or cross-machine configuration, follow the instructions in [Running the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/running-the-samples.md).</span></span>  
   
     > [!NOTE]
-    > <span data-ttu-id="7972a-155">Pokud pro obnovení konfigurace této ukázky používáte Svcutil. exe, nezapomeňte změnit názvy koncových bodů v konfiguraci klienta tak, aby odpovídaly kódu klienta.</span><span class="sxs-lookup"><span data-stu-id="7972a-155">If you use Svcutil.exe to regenerate the configuration for this sample, be sure to modify the endpoint names in the client configuration to match the client code.</span></span>  
+    > <span data-ttu-id="7b760-155">Pokud používáte Svcutil.exe k obnovení konfigurace pro tuto ukázku, nezapomeňte upravit názvy koncových bodů v konfiguraci klienta tak, aby odpovídaly kódu klienta.</span><span class="sxs-lookup"><span data-stu-id="7b760-155">If you use Svcutil.exe to regenerate the configuration for this sample, be sure to modify the endpoint names in the client configuration to match the client code.</span></span>  
   
- <span data-ttu-id="7972a-156">Ve výchozím nastavení je u <xref:System.ServiceModel.NetMsmqBinding>povolena možnost zabezpečení přenosu.</span><span class="sxs-lookup"><span data-stu-id="7972a-156">By default with the <xref:System.ServiceModel.NetMsmqBinding>, transport security is enabled.</span></span> <span data-ttu-id="7972a-157">Existují dvě důležité vlastnosti zabezpečení přenosu ve službě MSMQ, <xref:System.ServiceModel.MsmqTransportSecurity.MsmqAuthenticationMode%2A> a <xref:System.ServiceModel.MsmqTransportSecurity.MsmqProtectionLevel%2A>`.` ve výchozím nastavení je režim ověřování nastaven na `Windows` a úroveň ochrany je nastavena na `Sign`.</span><span class="sxs-lookup"><span data-stu-id="7972a-157">There are two relevant properties for MSMQ transport security, <xref:System.ServiceModel.MsmqTransportSecurity.MsmqAuthenticationMode%2A> and <xref:System.ServiceModel.MsmqTransportSecurity.MsmqProtectionLevel%2A>`.` By default, the authentication mode is set to `Windows` and the protection level is set to `Sign`.</span></span> <span data-ttu-id="7972a-158">Aby služba MSMQ poskytovala funkci ověřování a podepisování, musí být součástí domény a musí být nainstalovaná možnost integrace služby Active Directory pro službu MSMQ.</span><span class="sxs-lookup"><span data-stu-id="7972a-158">For MSMQ to provide the authentication and signing feature, it must be part of a domain and the active directory integration option for MSMQ must be installed.</span></span> <span data-ttu-id="7972a-159">Pokud tuto ukázku spustíte na počítači, který nesplňuje tato kritéria, zobrazí se chyba.</span><span class="sxs-lookup"><span data-stu-id="7972a-159">If you run this sample on a computer that does not satisfy these criteria you receive an error.</span></span>  
+ <span data-ttu-id="7b760-156">Ve výchozím <xref:System.ServiceModel.NetMsmqBinding>nastavení je povoleno zabezpečení přenosu.</span><span class="sxs-lookup"><span data-stu-id="7b760-156">By default with the <xref:System.ServiceModel.NetMsmqBinding>, transport security is enabled.</span></span> <span data-ttu-id="7b760-157">Existují dvě relevantní vlastnosti zabezpečení přenosu <xref:System.ServiceModel.MsmqTransportSecurity.MsmqAuthenticationMode%2A> služby MSMQ a <xref:System.ServiceModel.MsmqTransportSecurity.MsmqProtectionLevel%2A> `.` `Windows` ve výchozím nastavení je `Sign`režim ověřování nastaven na a úroveň ochrany je nastavena na hodnotu .</span><span class="sxs-lookup"><span data-stu-id="7b760-157">There are two relevant properties for MSMQ transport security, <xref:System.ServiceModel.MsmqTransportSecurity.MsmqAuthenticationMode%2A> and <xref:System.ServiceModel.MsmqTransportSecurity.MsmqProtectionLevel%2A>`.` By default, the authentication mode is set to `Windows` and the protection level is set to `Sign`.</span></span> <span data-ttu-id="7b760-158">Aby služba MSMQ poskytovala funkci ověřování a podepisování, musí být součástí domény a musí být nainstalována možnost integrace služby Active Directory pro službu MSMQ.</span><span class="sxs-lookup"><span data-stu-id="7b760-158">For MSMQ to provide the authentication and signing feature, it must be part of a domain and the active directory integration option for MSMQ must be installed.</span></span> <span data-ttu-id="7b760-159">Pokud spustíte tuto ukázku v počítači, který nesplňuje tato kritéria, zobrazí se chyba.</span><span class="sxs-lookup"><span data-stu-id="7b760-159">If you run this sample on a computer that does not satisfy these criteria you receive an error.</span></span>  
   
-### <a name="to-run-the-sample-on-a-computer-joined-to-a-workgroup-or-without-active-directory-integration"></a><span data-ttu-id="7972a-160">Spuštění ukázky na počítači připojeném k pracovní skupině nebo bez integrace služby Active Directory</span><span class="sxs-lookup"><span data-stu-id="7972a-160">To run the sample on a computer joined to a workgroup or without active directory integration</span></span>  
+### <a name="to-run-the-sample-on-a-computer-joined-to-a-workgroup-or-without-active-directory-integration"></a><span data-ttu-id="7b760-160">Spuštění ukázky v počítači připojovat se k pracovní skupině nebo bez integrace služby Active Directory</span><span class="sxs-lookup"><span data-stu-id="7b760-160">To run the sample on a computer joined to a workgroup or without active directory integration</span></span>  
   
-1. <span data-ttu-id="7972a-161">Pokud počítač není součástí domény nebo nemáte nainstalovanou integraci služby Active Directory, vypněte zabezpečení přenosu nastavením režimu ověřování a úrovně ochrany na `None`, jak je znázorněno v následující ukázkové konfiguraci:</span><span class="sxs-lookup"><span data-stu-id="7972a-161">If your computer is not part of a domain or does not have active directory integration installed, turn off transport security by setting the authentication mode and protection level to `None` as shown in the following sample configuration:</span></span>  
+1. <span data-ttu-id="7b760-161">Pokud počítač není součástí domény nebo není nainstalována integrace služby Active Directory, vypněte zabezpečení `None` přenosu nastavením režimu ověřování a úrovně ochrany na úroveň uvedenou v následující ukázkové konfiguraci:</span><span class="sxs-lookup"><span data-stu-id="7b760-161">If your computer is not part of a domain or does not have active directory integration installed, turn off transport security by setting the authentication mode and protection level to `None` as shown in the following sample configuration:</span></span>  
   
     ```xml  
     <configuration>  
@@ -243,12 +243,12 @@ Status of order 124a1f69-3699-4b16-9bcc-43147a8756fc:Pending
   
       <system.serviceModel>  
         <services>  
-          <service   
+          <service
               name="Microsoft.ServiceModel.Samples.OrderProcessorService">  
             <!-- Define NetMsmqEndpoint -->  
             <endpoint address="net.msmq://localhost/private/ServiceModelSamplesTwo-way/OrderProcessor"  
                       binding="netMsmqBinding"  
-                      bindingConfiguration="TransactedBinding"   
+                      bindingConfiguration="TransactedBinding"
                       contract="Microsoft.ServiceModel.Samples.IOrderProcessor" />  
           </service>  
         </services>  
@@ -266,7 +266,7 @@ Status of order 124a1f69-3699-4b16-9bcc-43147a8756fc:Pending
     </configuration>  
     ```  
   
-2. <span data-ttu-id="7972a-162">Vypnutí zabezpečení pro konfiguraci klienta generuje následující:</span><span class="sxs-lookup"><span data-stu-id="7972a-162">Turning off security for a client configuration generates the following:</span></span>  
+2. <span data-ttu-id="7b760-162">Vypnutí zabezpečení konfigurace klienta generuje následující:</span><span class="sxs-lookup"><span data-stu-id="7b760-162">Turning off security for a client configuration generates the following:</span></span>  
   
     ```xml  
     <?xml version="1.0" encoding="utf-8" ?>  
@@ -279,7 +279,7 @@ Status of order 124a1f69-3699-4b16-9bcc-43147a8756fc:Pending
       <system.serviceModel>  
   
         <services>  
-          <service   
+          <service
              name="Microsoft.ServiceModel.Samples.OrderStatusService">  
             <!-- Define NetMsmqEndpoint -->  
             <endpoint address="net.msmq://localhost/private/ServiceModelSamplesTwo-way/OrderStatus"  
@@ -291,8 +291,8 @@ Status of order 124a1f69-3699-4b16-9bcc-43147a8756fc:Pending
         <client>  
           <!-- Define NetMsmqEndpoint -->  
           <endpoint name="OrderProcessorEndpoint"  
-                    address="net.msmq://localhost/private/ServiceModelSamplesTwo-way/OrderProcessor"   
-                    binding="netMsmqBinding"   
+                    address="net.msmq://localhost/private/ServiceModelSamplesTwo-way/OrderProcessor"
+                    binding="netMsmqBinding"
                     bindingConfiguration="TransactedBinding"  
                     contract="Microsoft.ServiceModel.Samples.IOrderProcessor" />  
         </client>  
@@ -310,23 +310,23 @@ Status of order 124a1f69-3699-4b16-9bcc-43147a8756fc:Pending
     </configuration>  
     ```  
   
-3. <span data-ttu-id="7972a-163">Služba pro tuto ukázku vytvoří vazbu v `OrderProcessorService`.</span><span class="sxs-lookup"><span data-stu-id="7972a-163">The service for this sample creates a binding in the `OrderProcessorService`.</span></span> <span data-ttu-id="7972a-164">Po vytvoření instance vazby přidejte řádek kódu, který nastaví režim zabezpečení na `None`.</span><span class="sxs-lookup"><span data-stu-id="7972a-164">Add a line of code after the binding is instantiated to set the security mode to `None`.</span></span>  
+3. <span data-ttu-id="7b760-163">Služba pro tuto ukázku vytvoří `OrderProcessorService`vazbu v .</span><span class="sxs-lookup"><span data-stu-id="7b760-163">The service for this sample creates a binding in the `OrderProcessorService`.</span></span> <span data-ttu-id="7b760-164">Přidejte řádek kódu po vytvoření instance vazby pro nastavení `None`režimu zabezpečení na .</span><span class="sxs-lookup"><span data-stu-id="7b760-164">Add a line of code after the binding is instantiated to set the security mode to `None`.</span></span>  
   
     ```csharp
     NetMsmqBinding msmqCallbackBinding = new NetMsmqBinding();  
     msmqCallbackBinding.Security.Mode = NetMsmqSecurityMode.None;  
     ```  
   
-4. <span data-ttu-id="7972a-165">Před spuštěním ukázky se ujistěte, že jste změnili konfiguraci na serveru i v klientovi.</span><span class="sxs-lookup"><span data-stu-id="7972a-165">Ensure that you change the configuration on both the server and the client before you run the sample.</span></span>  
+4. <span data-ttu-id="7b760-165">Před spuštěním ukázky se ujistěte, že změníte konfiguraci na serveru i na klientovi.</span><span class="sxs-lookup"><span data-stu-id="7b760-165">Ensure that you change the configuration on both the server and the client before you run the sample.</span></span>  
   
     > [!NOTE]
-    > <span data-ttu-id="7972a-166">Nastavení `security mode` na `None` je ekvivalentem nastavení <xref:System.ServiceModel.MsmqTransportSecurity.MsmqAuthenticationMode%2A>, <xref:System.ServiceModel.MsmqTransportSecurity.MsmqProtectionLevel%2A> nebo `Message` zabezpečení na `None`.</span><span class="sxs-lookup"><span data-stu-id="7972a-166">Setting `security mode` to `None` is equivalent to setting <xref:System.ServiceModel.MsmqTransportSecurity.MsmqAuthenticationMode%2A>, <xref:System.ServiceModel.MsmqTransportSecurity.MsmqProtectionLevel%2A> or `Message` security to `None`.</span></span>  
+    > <span data-ttu-id="7b760-166">Nastavení `security mode` `None` na je <xref:System.ServiceModel.MsmqTransportSecurity.MsmqAuthenticationMode%2A>ekvivalentní <xref:System.ServiceModel.MsmqTransportSecurity.MsmqProtectionLevel%2A> `Message` nastavení `None`nebo zabezpečení .</span><span class="sxs-lookup"><span data-stu-id="7b760-166">Setting `security mode` to `None` is equivalent to setting <xref:System.ServiceModel.MsmqTransportSecurity.MsmqAuthenticationMode%2A>, <xref:System.ServiceModel.MsmqTransportSecurity.MsmqProtectionLevel%2A> or `Message` security to `None`.</span></span>  
   
 > [!IMPORTANT]
-> <span data-ttu-id="7972a-167">Ukázky už můžou být na vašem počítači nainstalované.</span><span class="sxs-lookup"><span data-stu-id="7972a-167">The samples may already be installed on your machine.</span></span> <span data-ttu-id="7972a-168">Než budete pokračovat, vyhledejte následující (výchozí) adresář.</span><span class="sxs-lookup"><span data-stu-id="7972a-168">Check for the following (default) directory before continuing.</span></span>  
->   
+> <span data-ttu-id="7b760-167">Ukázky mohou být již nainstalovány v počítači.</span><span class="sxs-lookup"><span data-stu-id="7b760-167">The samples may already be installed on your machine.</span></span> <span data-ttu-id="7b760-168">Před pokračováním zkontrolujte následující (výchozí) adresář.</span><span class="sxs-lookup"><span data-stu-id="7b760-168">Check for the following (default) directory before continuing.</span></span>  
+>
 > `<InstallDrive>:\WF_WCF_Samples`  
->   
-> <span data-ttu-id="7972a-169">Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] Samples.</span><span class="sxs-lookup"><span data-stu-id="7972a-169">If this directory does not exist, go to [Windows Communication Foundation (WCF) and Windows Workflow Foundation (WF) Samples for .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) to download all Windows Communication Foundation (WCF) and [!INCLUDE[wf1](../../../../includes/wf1-md.md)] samples.</span></span> <span data-ttu-id="7972a-170">Tato ukázka se nachází v následujícím adresáři.</span><span class="sxs-lookup"><span data-stu-id="7972a-170">This sample is located in the following directory.</span></span>  
->   
+>
+> <span data-ttu-id="7b760-169">Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a Windows Workflow Foundation (WF) Ukázky pro rozhraní .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky.</span><span class="sxs-lookup"><span data-stu-id="7b760-169">If this directory does not exist, go to [Windows Communication Foundation (WCF) and Windows Workflow Foundation (WF) Samples for .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) to download all Windows Communication Foundation (WCF) and [!INCLUDE[wf1](../../../../includes/wf1-md.md)] samples.</span></span> <span data-ttu-id="7b760-170">Tato ukázka je umístěna v následujícím adresáři.</span><span class="sxs-lookup"><span data-stu-id="7b760-170">This sample is located in the following directory.</span></span>  
+>
 > `<InstallDrive>:\WF_WCF_Samples\WF\Basic\Binding\Net\MSMQ\Two-Way`  
