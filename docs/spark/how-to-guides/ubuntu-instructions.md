@@ -1,27 +1,27 @@
 ---
-title: Vytvoření aplikace .NET pro Apache Spark v Ubuntu
-description: Informace o tom, jak sestavit rozhraní .NET pro Apache Spark aplikaci v Ubuntu
+title: Sestavení aplikace .NET pro Apache Spark na Ubuntu
+description: Naučte se, jak vytvořit aplikaci .NET pro Apache Spark na Ubuntu
 ms.date: 01/29/2020
 ms.topic: conceptual
 ms.custom: mvc,how-to
-ms.openlocfilehash: a12c861d0f231910f715a13fd41d1f3f0d6748a7
-ms.sourcegitcommit: cdf5084648bf5e77970cbfeaa23f1cab3e6e234e
+ms.openlocfilehash: 6dd6f60bb89a51c47fe17182fc47de818cd00b80
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76928041"
+ms.lasthandoff: 03/15/2020
+ms.locfileid: "79187575"
 ---
-# <a name="learn-how-to-build-your-net-for-apache-spark-application-on-ubuntu"></a>Informace o tom, jak sestavit rozhraní .NET pro Apache Spark aplikaci v Ubuntu
+# <a name="learn-how-to-build-your-net-for-apache-spark-application-on-ubuntu"></a>Naučte se, jak vytvořit aplikaci .NET pro Apache Spark na Ubuntu
 
-V tomto článku se naučíte, jak sestavit rozhraní .NET pro Apache Spark aplikace na Ubuntu.
+Tento článek vás naučí, jak vytvořit .NET pro aplikace Apache Spark na Ubuntu.
 
 ## <a name="prerequisites"></a>Požadavky
 
-Pokud již máte všechny následující požadavky, přejděte k postupu [sestavení](#build) .
+Pokud již máte všechny následující požadavky, přejděte na kroky [sestavení.](#build)
 
-1. Stažení a instalace sady **[.NET core 2,1 SDK](https://dotnet.microsoft.com/download/dotnet-core/2.1)** nebo sady **[.NET Core 3,1 SDK](https://dotnet.microsoft.com/download/dotnet-core/3.1)** – instalace sady SDK přidá do vaší cesty `dotnet` sada nástrojů.  Podporují se .NET Core 2,1, 2,2 a 3,1.
+1. Stáhněte a nainstalujte **[sadu .NET Core 2.1 SDK](https://dotnet.microsoft.com/download/dotnet-core/2.1)** nebo **[sadu .NET Core 3.1 SDK](https://dotnet.microsoft.com/download/dotnet-core/3.1)** – instalace sady SDK přidá sadu `dotnet` nástrojů do vaší cesty.  Podporují se jádra .NET 2.1, 2.2 a 3.1.
 
-2. Nainstalujte **[OpenJDK 8](https://openjdk.java.net/install/)** . 
+2. Nainstalujte **[OpenJDK 8](https://openjdk.java.net/install/)**.
 
    - Můžete použít následující příkaz:
 
@@ -29,23 +29,23 @@ Pokud již máte všechny následující požadavky, přejděte k postupu [sesta
    sudo apt install openjdk-8-jdk
    ```
 
-   * Ověřte, že je možné spustit `java` z příkazového řádku.       
+   * Ověřte, zda `java` je možné spustit z příkazového řádku.
 
-      Ukázka výstupu Java-Version:
-          
+      Ukázkový výstup java -version:
+
       ```bash
       openjdk version "1.8.0_191"
       OpenJDK Runtime Environment (build 1.8.0_191-8u191-b12-2ubuntu0.18.04.1-b12)
       OpenJDK 64-Bit Server VM (build 25.191-b12, mixed mode)
       ```
 
-   * Pokud již máte nainstalované více verzí OpenJDK a chcete vybrat OpenJDK 8, použijte následující příkaz:
+   * Pokud už máte nainstalované více verzí OpenJDK a chcete vybrat OpenJDK 8, použijte následující příkaz:
 
       ```bash
       sudo update-alternatives --config java
       ```
 
-3. Nainstalujte **[Apache Maven 3.6.0 +](https://maven.apache.org/download.cgi)** .
+3. Nainstalujte **[Apache Maven 3.6.0+](https://maven.apache.org/download.cgi)**.
 
    * Spusťte následující příkaz:
 
@@ -59,13 +59,13 @@ Pokud již máte všechny následující požadavky, přejděte k postupu [sesta
       export PATH=${M2_HOME}/bin:${PATH}
       source ~/.bashrc
       ```
-       
-       Všimněte si, že při zavření terminálu dojde ke ztrátě těchto proměnných prostředí. Pokud chcete, aby byly změny trvalé, přidejte `export` řádky do souboru `~/.bashrc`.
 
-   * Ověřte, že je možné spouštět `mvn` z příkazového řádku.       
+       Všimněte si, že tyto proměnné prostředí budou ztraceny při zavření terminálu. Pokud chcete, aby změny byly `export` trvalé, `~/.bashrc` přidejte řádky do souboru.
 
-       Ukázka výstupu MVN-Version:
-       
+   * Ověřte, zda `mvn` je možné spustit z příkazového řádku
+
+       Ukázkový výstup mvn -version:
+
        ```
        Apache Maven 3.6.0 (97c98ec64a1fdfee7767ce5ffb20918da4f719f3; 2018-10-24T18:41:47Z)
        Maven home: ~/bin/apache-maven-3.6.0
@@ -74,27 +74,27 @@ Pokud již máte všechny následující požadavky, přejděte k postupu [sesta
        OS name: "linux", version: "4.4.0-17763-microsoft", arch: "amd64", family: "unix"
        ```
 
-4. Nainstalujte **[Apache Spark 2.3 +](https://spark.apache.org/downloads.html)** .
-Stáhněte si [Apache Spark 2.3 +](https://spark.apache.org/downloads.html) a extrahujte ji do místní složky (např. `~/bin/spark-2.3.2-bin-hadoop2.7`). (Podporované verze Sparku jsou 2,3. *, 2.4.0, 2.4.1, 2.4.3 a 2.4.4)
+4. Nainstalujte **[Apache Spark 2.3+](https://spark.apache.org/downloads.html)**.
+Stáhněte si [Apache Spark 2.3+](https://spark.apache.org/downloads.html) a extrahujte `~/bin/spark-2.3.2-bin-hadoop2.7`ji do místní složky (např. ). (Podporované verze jiskry jsou 2.3.*, 2.4.0, 2.4.1, 2.4.3 a 2.4.4)
 
    ```bash
    tar -xvzf /path/to/spark-2.3.2-bin-hadoop2.7.tgz -C ~/bin/spark-2.3.2-bin-hadoop2.7
    ```
 
-   * Přidejte potřebné [proměnné prostředí](https://www.java.com/en/download/help/path.xml) `SPARK_HOME` (například `~/bin/spark-2.3.2-bin-hadoop2.7/`) a `PATH` (například `$SPARK_HOME/bin:$PATH`).
+   * Přidejte potřebné [proměnné](https://www.java.com/en/download/help/path.xml) `SPARK_HOME` prostředí (např. `~/bin/spark-2.3.2-bin-hadoop2.7/`) `PATH` a (např. `$SPARK_HOME/bin:$PATH`)
 
       ```bash
       export SPARK_HOME=~/bin/spark-2.3.2-hadoop2.7
       export PATH="$SPARK_HOME/bin:$PATH"
       source ~/.bashrc
       ```
-       
-      Všimněte si, že při zavření terminálu dojde ke ztrátě těchto proměnných prostředí. Pokud chcete, aby byly změny trvalé, přidejte `export` řádky do souboru `~/.bashrc`.
 
-   * Ověřte, že je možné spustit `spark-shell` z příkazového řádku.
+      Všimněte si, že tyto proměnné prostředí budou ztraceny při zavření terminálu. Pokud chcete, aby změny byly `export` trvalé, `~/.bashrc` přidejte řádky do souboru.
+
+   * Ověřte, zda `spark-shell` je možné spustit z příkazového řádku.
 
       Ukázkový výstup konzoly:
-      
+
       ```
       Welcome to
             ____              __
@@ -109,52 +109,52 @@ Stáhněte si [Apache Spark 2.3 +](https://spark.apache.org/downloads.html) a ex
 
       scala> sc
       res0: org.apache.spark.SparkContext = org.apache.spark.SparkContext@6eaa6b0c
-      ```                      
+      ```
 
-Než přejdete k další části, ujistěte se, že máte možnost spustit `dotnet`, `java`, `mvn``spark-shell` z příkazového řádku. Máte lepší možnost? [Otevřete prosím problém](https://github.com/dotnet/spark/issues) a nebojte se přispívat.
+Před přechodem do `dotnet`další `java` `mvn`části `spark-shell` se ujistěte, že je možné spustit příkazový řádek . Cítíš, že existuje lepší způsob? Prosím, [otevřete problém](https://github.com/dotnet/spark/issues) a neváhejte přispět.
 
-## <a name="build"></a>Sestavit
+## <a name="build"></a>Sestavení
 
-Ve zbývající části tohoto průvodce budete muset naklonovat rozhraní .NET pro Apache Spark úložiště do svého počítače, třeba `~/dotnet.spark/`.
+Pro zbytek této příručky budete muset naklonovat úložiště .NET pro Apache Spark do `~/dotnet.spark/`vašeho počítače např.
 
 ```bash
 git clone https://github.com/dotnet/spark.git ~/dotnet.spark
 ```
 
-### <a name="build-net-for-spark-scala-extensions-layer"></a>Sestavení .NET pro vrstvu rozšíření Spark Scala
+### <a name="build-net-for-spark-scala-extensions-layer"></a>Sestavení rozhraní .NET pro vrstvu rozšíření Spark Scala
 
-Při odeslání aplikace .NET má rozhraní .NET pro Apache Spark potřebnou logiku napsanou v Scala, která informuje Apache Spark jak zpracovat vaše požadavky (například požadavek na vytvoření nové relace Sparku, požádat o přenos dat ze strany .NET na stranu JVM atd.). Tato logika se dá najít v [rozhraní .NET pro Apache Spark zdrojový kód Scala](https://github.com/dotnet/spark/tree/master/src/scala).
+Když odešlete .NET aplikaci, .NET pro Apache Spark má potřebnou logiku napsanou v Scale, která informuje Apache Spark, jak zpracovat vaše požadavky (např. žádost o vytvoření nové Spark Session, žádost o přenos dat ze strany .NET na stranu JVM atd.). Tuto logiku lze nalézt v [.NET pro Apache Spark Scala zdrojový kód](https://github.com/dotnet/spark/tree/master/src/scala).
 
-Dalším krokem je sestavení vrstvy rozšíření .NET for Apache Spark Scala:
+Dalším krokem je vytvoření přípojné vrstvy .NET pro Apache Spark Scala:
 
 ```bash
 cd src/scala
-mvn clean package 
+mvn clean package
 ```
 
-Měli byste vidět jar vytvořené pro podporované verze Sparku:
+Měli byste vidět JARs vytvořené pro podporované verze Spark:
 
 * `microsoft-spark-2.3.x/target/microsoft-spark-2.3.x-<version>.jar`
 * `microsoft-spark-2.4.x/target/microsoft-spark-2.4.x-<version>.jar`
 
-### <a name="build-net-sample-applications-using-net-core-cli"></a>Sestavení ukázkových aplikací .NET pomocí .NET Core CLI
+### <a name="build-net-sample-applications-using-net-core-cli"></a>Vytváření ukázkových aplikací rozhraní .NET pomocí rozhraní CLI jádra .NET
 
-V této části je vysvětlen postup sestavení [ukázkových aplikací](https://github.com/dotnet/spark/tree/master/examples) pro rozhraní .net pro Apache Spark. Tyto kroky vám pomůžou pochopit celkový proces vytváření jakékoli aplikace .NET pro Spark.
+Tato část vysvětluje, jak vytvořit [ukázkové aplikace](https://github.com/dotnet/spark/tree/master/examples) pro rozhraní .NET pro Apache Spark. Tyto kroky vám pomohou pochopit celkový proces vytváření pro všechny .NET pro aplikaci Spark.
 
-1. Sestavte pracovní proces:
+1. Sestavte pracovníka:
 
    ```dotnetcli
    cd ~/dotnet.spark/src/csharp/Microsoft.Spark.Worker/
    dotnet publish -f netcoreapp2.1 -r ubuntu.18.04-x64
    ```
-      
+
    Ukázkový výstup konzoly:
 
    ```bash
    user@machine:/home/user/dotnet.spark/src/csharp/Microsoft.Spark.Worker$ dotnet publish -f netcoreapp2.1 -r ubuntu.18.04-x64
    Microsoft (R) Build Engine version 16.0.462+g62fb89029d for .NET Core
    Copyright (C) Microsoft Corporation. All rights reserved.
-      
+
       Restore completed in 36.03 ms for /home/user/dotnet.spark/src/csharp/Microsoft.Spark.Worker/Microsoft.Spark.Worker.csproj.
       Restore completed in 35.94 ms for /home/user/dotnet.spark/src/csharp/Microsoft.Spark/Microsoft.Spark.csproj.
       Microsoft.Spark -> /home/user/dotnet.spark/artifacts/bin/Microsoft.Spark/Debug/netstandard2.0/Microsoft.Spark.dll
@@ -168,7 +168,7 @@ V této části je vysvětlen postup sestavení [ukázkových aplikací](https:/
    cd ~/dotnet.spark/examples/Microsoft.Spark.CSharp.Examples/
    dotnet publish -f netcoreapp2.1 -r ubuntu.18.04-x64
    ```
-      
+
    Ukázkový výstup konzoly:
 
    ```bash
@@ -183,11 +183,11 @@ V této části je vysvětlen postup sestavení [ukázkových aplikací](https:/
       Microsoft.Spark.CSharp.Examples -> /home/user/dotnet.spark/artifacts/bin/Microsoft.Spark.CSharp.Examples/Debug/netcoreapp2.1/ubuntu.18.04-x64/publish/
    ```  
 
-## <a name="run-the-net-for-spark-sample-applications"></a>Spuštění ukázkových aplikací .NET pro Spark
+## <a name="run-the-net-for-spark-sample-applications"></a>Spuštění rozhraní .NET pro ukázkové aplikace Spark
 
-Po sestavení ukázek můžete použít `spark-submit` k odeslání aplikací .NET Core. Ujistěte se, že jste postupovali s částí [požadavky](#prerequisites) a nainstalovali Apache Spark.
+Po sestavení ukázky, můžete `spark-submit` použít k odeslání aplikace .NET Core. Ujistěte se, že jste postupovali [podle požadavků](#prerequisites) a nainstalovali Apache Spark.
 
-1. Nastavte proměnnou prostředí `DOTNET_WORKER_DIR` nebo `PATH` tak, aby zahrnovala cestu, kde byl vygenerován `Microsoft.Spark.Worker` binární (např. `~/dotnet.spark/artifacts/bin/Microsoft.Spark.Worker/Debug/netcoreapp2.1/ubuntu.18.04-x64/publish`).
+1. Nastavte `DOTNET_WORKER_DIR` proměnnou prostředí nebo `PATH` tak, `Microsoft.Spark.Worker` aby zahrnovala cestu, kde `~/dotnet.spark/artifacts/bin/Microsoft.Spark.Worker/Debug/netcoreapp2.1/ubuntu.18.04-x64/publish`byl binární soubor vygenerován (např. ).
 
    ```bash
    export DOTNET_WORKER_DIR=~/dotnet.spark/artifacts/bin/Microsoft.Spark.Worker/Debug/netcoreapp2.1/ubuntu.18.04-x64/publish
@@ -210,9 +210,9 @@ Po sestavení ukázek můžete použít `spark-submit` k odeslání aplikací .N
      <path-to-your-app-binary> <argument(s)-to-your-app>
    ```
 
-   Tady je několik příkladů, které můžete spustit:
+   Zde je několik příkladů, které můžete spustit:
 
-   * **[Microsoft. spark. Examples. SQL. batch. Basic](https://github.com/dotnet/spark/blob/master/examples/Microsoft.Spark.CSharp.Examples/Sql/Batch/Basic.cs)**
+   * **[Microsoft.Spark.Examples.sql.Batch.Basic](https://github.com/dotnet/spark/blob/master/examples/Microsoft.Spark.CSharp.Examples/Sql/Batch/Basic.cs)**
 
       ```bash
       spark-submit \
@@ -222,7 +222,7 @@ Po sestavení ukázek můžete použít `spark-submit` k odeslání aplikací .N
       Microsoft.Spark.CSharp.Examples Sql.Batch.Basic $SPARK_HOME/examples/src/main/resources/people.json
       ```
 
-   * **[Microsoft. spark. Examples. SQL. Streaming. StructuredNetworkWordCount](https://github.com/dotnet/spark/blob/master/examples/Microsoft.Spark.CSharp.Examples/Sql/Streaming/StructuredNetworkWordCount.cs)**
+   * **[Microsoft.Spark.Examples.Sql.Streaming.StructuredNetworkWordCount](https://github.com/dotnet/spark/blob/master/examples/Microsoft.Spark.CSharp.Examples/Sql/Streaming/StructuredNetworkWordCount.cs)**
 
       ```bash
       spark-submit \
@@ -232,7 +232,7 @@ Po sestavení ukázek můžete použít `spark-submit` k odeslání aplikací .N
       Microsoft.Spark.CSharp.Examples Sql.Streaming.StructuredNetworkWordCount localhost 9999
       ```
 
-   * **[Microsoft. spark. Examples. SQL. Streaming. StructuredKafkaWordCount (přístup k Maven)](https://github.com/dotnet/spark/blob/master/examples/Microsoft.Spark.CSharp.Examples/Sql/Streaming/StructuredKafkaWordCount.cs)**
+   * **[Microsoft.Spark.Examples.Sql.Streaming.StructuredKafkaWordCount (maven přístupné)](https://github.com/dotnet/spark/blob/master/examples/Microsoft.Spark.CSharp.Examples/Sql/Streaming/StructuredKafkaWordCount.cs)**
 
       ```bash
       spark-submit \
@@ -243,7 +243,7 @@ Po sestavení ukázek můžete použít `spark-submit` k odeslání aplikací .N
       Microsoft.Spark.CSharp.Examples Sql.Streaming.StructuredKafkaWordCount localhost:9092 subscribe test
       ```
 
-   * **[Microsoft. spark. Examples. SQL. Streamed. StructuredKafkaWordCount (poskytnutý jar)](https://github.com/dotnet/spark/blob/master/examples/Microsoft.Spark.CSharp.Examples/Sql/Streaming/StructuredKafkaWordCount.cs)**
+   * **[Microsoft.Spark.Examples.Sql.Streaming.StructuredKafkaWordCount (sklenice k dispozici)](https://github.com/dotnet/spark/blob/master/examples/Microsoft.Spark.CSharp.Examples/Sql/Streaming/StructuredKafkaWordCount.cs)**
 
       ```bash
       spark-submit \

@@ -1,45 +1,45 @@
 ---
-title: Kurz strukturovaného streamování s .NET for Apache Spark
-description: V tomto kurzu se naučíte používat rozhraní .NET pro Apache Spark pro strukturované streamování Spark.
+title: Strukturované streamování s rozhraním .NET pro kurz Apache Spark
+description: V tomto kurzu se dozvíte, jak používat rozhraní .NET pro Apache Spark pro strukturované streamování Spark.
 author: mamccrea
 ms.author: mamccrea
 ms.date: 12/04/2019
 ms.topic: tutorial
-ms.openlocfilehash: 83d44af080d95ab6f9311ddd3ca4860806757436
-ms.sourcegitcommit: f38e527623883b92010cf4760246203073e12898
+ms.openlocfilehash: 125ef834da8e42c99c8080a3d5414a7927ce7636
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77504039"
+ms.lasthandoff: 03/15/2020
+ms.locfileid: "79186514"
 ---
-# <a name="tutorial-structured-streaming-with-net-for-apache-spark"></a>Kurz: strukturované streamování s rozhraním .NET pro Apache Spark 
+# <a name="tutorial-structured-streaming-with-net-for-apache-spark"></a>Kurz: Strukturované streamování s rozhraním .NET pro Apache Spark
 
-V tomto kurzu se naučíte vyvolat strukturované streamování Sparku pomocí rozhraní .NET pro Apache Spark. Strukturované streamování Sparku je Apache Spark podpora pro zpracování datových proudů v reálném čase. Zpracování datových proudů znamená analýzu živých dat při jejich vyprodukování.
+Tento kurz vás naučí, jak vyvolat strukturované streamování Spark pomocí rozhraní .NET pro Apache Spark. Spark Structured Streaming je podpora Apache Spark pro zpracování datových toků v reálném čase. Zpracování datového proudu znamená analýzu živých dat při jejich výrobě.
 
 V tomto kurzu se naučíte:
 
 > [!div class="checklist"]
 >
-> * Vytvoření a spuštění rozhraní .NET pro Apache Spark aplikaci
-> * Vytvoření datového proudu pomocí NetCat
-> * Použití uživatelsky definovaných funkcí a SparkSQL k analýze dat streamování
+> * Vytvoření a spuštění rozhraní .NET pro aplikaci Apache Spark
+> * Vytvoření datového proudu pomocí netcatu
+> * Použití uživatelem definovaných funkcí a SparkSQL k analýze streamovaných dat
 
-## <a name="prerequisites"></a>Předpoklady
+## <a name="prerequisites"></a>Požadavky
 
-Pokud je to vaše první rozhraní .NET pro Apache Spark aplikaci, začněte v [kurzu Začínáme](get-started.md) , kde se seznámíte se základy.
+Pokud se jedná o první rozhraní .NET pro aplikaci Apache Spark, začněte [s kurzem Začínáme,](get-started.md) abyste se seznámili se základy.
 
 ## <a name="create-a-console-application"></a>Vytvoření konzolové aplikace
 
-1. Na příkazovém řádku spusťte následující příkazy k vytvoření nové konzolové aplikace:
+1. V příkazovém řádku vytvořte novou konzolovou aplikaci následujícím příkazem:
 
    ```dotnetcli
    dotnet new console -o mySparkStreamingApp
    cd mySparkStreamingApp
    ```
 
-   Příkaz `dotnet` vytvoří pro vás `new`ou aplikaci typu `console`. Parametr `-o` vytvoří adresář s názvem *mySparkStreamingApp* , kde je vaše aplikace uložená, a naplní ji požadovanými soubory. Příkaz `cd mySparkStreamingApp` změní adresář na adresář aplikace, který jste právě vytvořili.
+   Příkaz `dotnet` vytvoří `new` aplikaci `console` typu pro vás. Parametr `-o` vytvoří adresář s názvem *mySparkStreamingApp,* kde je vaše aplikace uložena a naplní ji požadovanými soubory. Příkaz `cd mySparkStreamingApp` změní adresář na adresář aplikace, který jste právě vytvořili.
 
-1. Pokud chcete použít .NET pro Apache Spark v aplikaci, nainstalujte balíček Microsoft. spark. V konzole spusťte následující příkaz:
+1. Chcete-li v aplikaci použít rozhraní .NET pro Apache Spark, nainstalujte balíček Microsoft.Spark. V konzoli spusťte následující příkaz:
 
    ```dotnetcli
    dotnet add package Microsoft.Spark
@@ -47,13 +47,13 @@ Pokud je to vaše první rozhraní .NET pro Apache Spark aplikaci, začněte v [
 
 ## <a name="establish-and-connect-to-a-data-stream"></a>Vytvoření datového proudu a připojení k němu
 
-Jedním z oblíbených způsobů testování zpracování streamu je prostřednictvím **NetCat**. NetCat (označované také jako *NC*) umožňuje číst síťová připojení a zapisovat do nich. Připojení k síti pomocí NetCat můžete vytvořit prostřednictvím okna terminálu. 
+Jeden populární způsob, jak otestovat zpracování datového proudu je prostřednictvím **netcat**. netcat (také známý jako *nc*) umožňuje číst a zapisovat do síťových připojení. Navážete síťové připojení s netcat prostřednictvím okna terminálu.
 
-### <a name="create-a-data-stream-with-netcat"></a>Vytvoření datového proudu pomocí NetCat
+### <a name="create-a-data-stream-with-netcat"></a>Vytvoření datového proudu pomocí netcatu
 
-1. [Stáhněte si NetCat](https://sourceforge.net/projects/nc110/files/). Pak extrahujte soubor ze staženého souboru zip a připojíte extrahovaný adresář do proměnné prostředí PATH.
+1. [Stáhnout netcat](https://sourceforge.net/projects/nc110/files/). Potom extrahujte soubor ze stažení zip a přidejte adresář, který jste extrahovali, do proměnné prostředí PATH.
 
-2. Chcete-li spustit nové připojení, otevřete novou konzolu a spusťte následující příkaz, který se připojí k localhost na portu 9999.
+2. Chcete-li spustit nové připojení, otevřete novou konzolu a spusťte následující příkaz, který se připojuje k localhost na portu 9999.
 
    Ve Windows:
 
@@ -61,17 +61,17 @@ Jedním z oblíbených způsobů testování zpracování streamu je prostředni
    nc -vvv -l -p 9999
    ```
 
-   V Linuxu:
+   Na Linuxu:
 
    ```console
    nc -lk 9999
    ```
 
-   Váš program Spark čeká na vstup, který zadáte do tohoto příkazového řádku.
+   Program Spark naslouchá zadání, které zadáte do tohoto příkazového řádku.
 
-### <a name="create-a-sparksession"></a>Vytvoření SparkSession
+### <a name="create-a-sparksession"></a>Vytvoření sparksession
 
-1. Do horní části souboru *program.cs* přidejte následující další příkazy `using` v *mySparkStreamingApp*:
+1. Přidejte následující `using` další příkazy do horní části *souboru Program.cs* v *aplikaci mySparkStreamingApp*:
 
    ```csharp
    using System;
@@ -80,7 +80,7 @@ Jedním z oblíbených způsobů testování zpracování streamu je prostředni
    using static Microsoft.Spark.Sql.Functions;
    ```
 
-1. Přidejte následující kód do metody `Main` pro vytvoření nové `SparkSession`. Relace Spark je vstupním bodem pro programování Sparku s využitím datové sady a rozhraní API dataframe.
+1. Přidejte do metody `Main` následující kód `SparkSession`a vytvořte nový . Relace Spark je vstupním bodem k programování Spark s datovou sadou a rozhraním DataFrame API.
 
    ```csharp
    SparkSession spark = SparkSession
@@ -89,11 +89,11 @@ Jedním z oblíbených způsobů testování zpracování streamu je prostředni
         .GetOrCreate();
    ```
 
-   Volání objektu *Spark* , který jste vytvořili výše, vám umožní přístup k funkcím Sparku a dataframe v celém programu.
+   Volání výše vytvořeného *objektu spark* umožňuje přístup k funkcím Spark a DataFrame v celém programu.
 
-### <a name="connect-to-a-stream-with-readstream"></a>Připojení ke streamu pomocí ReadStream ()
+### <a name="connect-to-a-stream-with-readstream"></a>Připojení k datovému proudu pomocí služby ReadStream()
 
-Metoda `ReadStream()` vrátí `DataStreamReader`, která se dá použít ke čtení streamových dat v podobě `DataFrame`. Zahrňte informace o hostiteli a portu k informování aplikace Spark, kde očekávat jejich streamovaná data.
+Metoda `ReadStream()` vrátí, `DataStreamReader` které lze použít ke čtení `DataFrame`dat streamování v jako . Zahrňte informace o hostiteli a portu a řekněte aplikaci Spark, kde má očekávat streamovaná data.
 
 ```csharp
 DataFrame lines = spark
@@ -104,37 +104,37 @@ DataFrame lines = spark
     .Load();
 ```
 
-## <a name="register-a-user-defined-function"></a>Registrovat uživatelsky definovanou funkci
+## <a name="register-a-user-defined-function"></a>Registrace uživatelem definované funkce
 
-UDF, *uživatelsky definované funkce*v aplikacích Spark můžete použít k provádění výpočtů a analýz vašich dat.
+K provádění výpočtů a analýz na datech můžete v aplikacích Spark použít uontové soubory, *uživatelem definované funkce*.
 
-Přidejte následující kód do metody `Main` k registraci systému souborů UDF s názvem `udfArray`. 
+Přidejte do `Main` metody následující kód pro `udfArray`registraci udf s názvem .
 
 ```csharp
 Func<Column, Column> udfArray =
     Udf<string, string[]>((str) => new string[] { str, $"{str} {str.Length}" });
 ```
 
-Tato UDF zpracuje každý řetězec, který obdrží od terminálu netcat, a vytvoří pole, které obsahuje původní řetězec (obsažený v *str*) následovaný původním řetězcem, který je zřetězený s délkou původního řetězce. 
+Tento UDF zpracovává každý řetězec, který obdrží z terminálu netcat, aby vytvořil pole, které obsahuje původní řetězec (obsažený v *str*), následovaný původním řetězcem zřetězeným s délkou původního řetězce.
 
-Pokud například zadáte *Hello World* v terminálu netcat, vytvoří se pole, kde:
+Například zadání *Hello world* v terminálu netcat vytváří pole, kde:
 
-* Array\[0] = Hello World
-* Array\[1] = Hello World 11
+* pole\[0] = Hello world
+* pole\[1] = Hello world 11
 
 ## <a name="use-sparksql"></a>Použití SparkSQL
 
-Pomocí SparkSQL můžete provádět různé funkce s daty uloženými v datovém rámci. Je běžné kombinovat UDF a SparkSQL pro použití UDF na každý řádek datového rámce.
+SparkSQL slouží k provádění různých funkcí na datech uložených v datovém rámci. Je běžné kombinovat UDF a SparkSQL použít UDF pro každý řádek DataFrame.
 
 ```csharp
 DataFrame arrayDF = lines.Select(Explode(udfArray(lines["value"])));
 ```
 
-Tento fragment kódu aplikuje *udfArray* na každou hodnotu v dataframe, která představuje každý řetězec načtený z terminálu NetCat. Použijte metodu SparkSQL <xref:Microsoft.Spark.Sql.Functions.Explode%2A> pro vložení každého záznamu pole do vlastního řádku. Nakonec použijte <xref:Microsoft.Spark.Sql.DataFrame.Select%2A> k umístění sloupců, které jste vytvořili v novém *arrayDFi* dataframe.
+Tento fragment kódu použije *udfArray* na každou hodnotu v datovém rámci, která představuje každý řetězec přečtený z terminálu netcat. Použijte metodu <xref:Microsoft.Spark.Sql.Functions.Explode%2A> SparkSQL, aby každá položka vašeho pole ve svém vlastním řádku. Nakonec můžete <xref:Microsoft.Spark.Sql.DataFrame.Select%2A> umístit sloupce, které jste vytvořili, do nového *arrayDF DataFrame.*
 
-## <a name="display-your-stream"></a>Zobrazit datový proud
+## <a name="display-your-stream"></a>Zobrazení streamu
 
-Použijte <xref:Microsoft.Spark.Sql.DataFrame.WriteStream> k navázání vlastností výstupu, jako je například tisk výsledků do konzoly a zobrazení pouze nejaktuálnějšího výstupu.
+Slouží <xref:Microsoft.Spark.Sql.DataFrame.WriteStream> k určení charakteristik výstupu, jako je například tisk výsledků do konzoly a zobrazení pouze nejnovějšího výstupu.
 
 ```csharp
 StreamingQuery query = arrayDf
@@ -145,29 +145,29 @@ StreamingQuery query = arrayDf
 
 ## <a name="run-your-code"></a>Spuštění kódu
 
-Strukturované streamování ve Sparku zpracovává data prostřednictvím řady malých **dávek**.  Když spustíte program, příkazový řádek, kde vytvoříte připojení netcat, vám umožní začít psát. Pokaždé, když stisknete klávesu ENTER po zadání dat v příkazovém řádku, Spark považuje vaši položku za datovou dávku a spustí systém souborů UDF.
+Strukturované streamování v Spark zpracovává data prostřednictvím řady malých **dávek**.  Při spuštění programu vám příkazový řádek, na kterém navážete připojení netcat, umožňuje začít psát. Pokaždé, když po zadání dat do příkazového řádku stisknete klávesu Enter, Spark považuje vaši položku za dávku a spustí UDF.
 
-### <a name="use-spark-submit-to-run-your-app"></a>Spuštění aplikace pomocí Spark-Submit
+### <a name="use-spark-submit-to-run-your-app"></a>Spuštění aplikace pomocí spark-submit
 
-Po spuštění nové relace NetCat otevřete nový terminál a spusťte příkaz `spark-submit`, podobně jako v následujícím příkazu:
+Po spuštění nové relace netcat otevřete nový `spark-submit` terminál a spusťte příkaz, podobně jako následující příkaz:
 
 ```powershell
 spark-submit --class org.apache.spark.deploy.dotnet.DotnetRunner --master local /path/to/microsoft-spark-<version>.jar Microsoft.Spark.CSharp.Examples.exe Sql.Streaming.StructuredNetworkCharacterCount localhost 9999
 ```
 
 > [!NOTE]
-> Nezapomeňte aktualizovat výše uvedený příkaz o skutečnou cestu k vašemu souboru Microsoft Spark jar. Výše uvedený příkaz také předpokládá, že váš server NetCat běží na místním počítači s portem 9999.
+> Nezapomeňte aktualizovat výše uvedený příkaz se skutečnou cestou k vašemu souboru Microsoft Spark jar. Výše uvedený příkaz také předpokládá, že váš server netcat běží na portu localhost 9999.
 
 ## <a name="get-the-code"></a>Získání kódu
 
-V tomto kurzu se používá příklad [StructuredNetworkCharacterCount.cs](https://github.com/dotnet/spark/blob/master/examples/Microsoft.Spark.CSharp.Examples/Sql/Streaming/StructuredNetworkCharacterCount.cs) , ale na GitHubu existují tři další příklady zpracování úplných datových proudů:
+Tento kurz používá [příklad StructuredNetworkCharacterCount.cs,](https://github.com/dotnet/spark/blob/master/examples/Microsoft.Spark.CSharp.Examples/Sql/Streaming/StructuredNetworkCharacterCount.cs) ale existují tři další příklady zpracování celého datového proudu na GitHubu:
 
-* [StructuredNetworkWordCount.cs](https://github.com/dotnet/spark/blob/master/examples/Microsoft.Spark.CSharp.Examples/Sql/Streaming/StructuredNetworkWordCount.cs): počet slov pro datový proud z libovolného zdroje
-* [StructuredNetworkWordCountWindowed.cs](https://github.com/dotnet/spark/blob/master/examples/Microsoft.Spark.CSharp.Examples/Sql/Streaming/StructuredNetworkWordCountWindowed.cs): počet slov pro data s logikou okna
-* [StructuredKafkaWordCount.cs](https://github.com/dotnet/spark/blob/master/examples/Microsoft.Spark.CSharp.Examples/Sql/Streaming/StructuredKafkaWordCount.cs): počet slov pro datový proud z Kafka
+* [StructuredNetworkWordCount.cs](https://github.com/dotnet/spark/blob/master/examples/Microsoft.Spark.CSharp.Examples/Sql/Streaming/StructuredNetworkWordCount.cs): počet slov na data streamovaná z libovolného zdroje
+* [StructuredNetworkWordCountWindowed.cs](https://github.com/dotnet/spark/blob/master/examples/Microsoft.Spark.CSharp.Examples/Sql/Streaming/StructuredNetworkWordCountWindowed.cs): počet slov na datech s logikou oken
+* [StructuredKafkaWordCount.cs](https://github.com/dotnet/spark/blob/master/examples/Microsoft.Spark.CSharp.Examples/Sql/Streaming/StructuredKafkaWordCount.cs): počet slov na data streamovaná z Kafky
 
 ## <a name="next-steps"></a>Další kroky
 
-V dalším článku se dozvíte, jak nasadit rozhraní .NET pro Apache Spark aplikaci do datacihlů.
+Přejdete k dalšímu článku, kde se dozvíte, jak nasadit .NET pro aplikaci Apache Spark do Databricks.
 > [!div class="nextstepaction"]
-> [Kurz: nasazení rozhraní .NET pro Apache Spark aplikaci do datacihlů](databricks-deployment.md)
+> [Kurz: Nasazení rozhraní .NET pro aplikaci Apache Spark do databricks](databricks-deployment.md)
