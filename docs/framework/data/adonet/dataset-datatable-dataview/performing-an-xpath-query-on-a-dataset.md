@@ -5,17 +5,17 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 7e828566-fffe-4d38-abb2-4d68fd73f663
-ms.openlocfilehash: 6082a171d24c55ea52c153bbd920bb7486be78a7
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 5e9a00ab78a57c3c1686d7c87ed8b45d9b2649af
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70784371"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79150828"
 ---
 # <a name="performing-an-xpath-query-on-a-dataset"></a>Provedení dotazu XPath u datové sady
-Vztah mezi synchronizovaným <xref:System.Data.DataSet> a <xref:System.Xml.XmlDataDocument> umožňuje využívat služby XML, jako je dotaz jazyka XML Path (XPath), který přistupuje k **objektu XmlDataDocument** a umožňuje pohodlnější fungování určitých funkcí než přímý přístup k **datové sadě** . Například namísto použití metody **Select** objektu <xref:System.Data.DataTable> pro navigaci na relace s jinými tabulkami v **datové sadě**můžete provést dotaz XPath v **objektu XmlDataDocument** , který je synchronizován s **datovou sadou**, a získat tak seznam elementů XML ve formě <xref:System.Xml.XmlNodeList>. Uzly v **XmlNodeList**, přetypování jako <xref:System.Xml.XmlElement> uzly, mohou být předány metodě **GetRowFromElement** **objektu XmlDataDocument**, aby vracely vyhovující <xref:System.Data.DataRow> odkazy na řádky tabulky v synchronizovaných.  **Datová sada**.  
+Vztah mezi synchronizované <xref:System.Data.DataSet> <xref:System.Xml.XmlDataDocument> a umožňuje využívat služby XML, jako je například dotaz Xml Path Language (XPath), které přistupují k **XmlDataDocument** a mohou provádět určité funkce pohodlněji než přímý přístup k **datové sadě.** Například místo použití metody **Select** <xref:System.Data.DataTable> a k navigaci relací do jiných tabulek v **datové sadě**můžete provést dotaz XPath na **dokumentu XmlDataDocument,** který je <xref:System.Xml.XmlNodeList>synchronizován s **datovou sadou**, a získat tak seznam elementů XML ve formě . Uzly v **XmlNodeList**, <xref:System.Xml.XmlElement> přetypování jako uzly, pak mohou být předány **GetRowFromElement** metoda **XmlDataDocument**, vrátit odpovídající <xref:System.Data.DataRow> odkazy na řádky tabulky v synchronizované **DataSet**.  
   
- Například následující ukázka kódu provede "podřízený" dotaz XPath. **Datová sada** je vyplněna třemi tabulkami: **Zákazníci**, **objednávky**a **OrderDetails**. V ukázce je relace nadřazený-podřízený nejprve vytvořena mezi tabulkami **zákazníci** a **objednávky** a mezi tabulkami **Orders** a **OrderDetails** . Pak se provede dotaz XPath, který vrátí **XmlNodeList** **uzly,** kde má uzel **OrderDetails** uzel **ProductID** s hodnotou 43. V podstatě ukázka používá dotaz XPath k určení, kteří zákazníci objednali produkt s **ProductID** 43.  
+ Například následující ukázka kódu provádí dotaz XPath "vnouče". **DataSet** je vyplněn třemi tabulkami: **Zákazníci**, **Objednávky**a **Podrobnosti objednávky**. V ukázce je nejprve vytvořen vztah nadřazený podřízený mezi **tabulkami Zákazníci** a **Objednávky** a mezi **tabulkami Orders** a **OrderDetails.** Dotaz XPath se pak provede vrátit **XmlNodeList** uzlů **zákazníků,** kde vnouče **OrderDetails** uzel má **ProductID** uzel s hodnotou 43. V podstatě ukázka používá dotaz XPath k určení, kteří zákazníci objednali produkt, který má **ProductID** 43.  
   
 ```vb  
 ' Assumes that connection is a valid SqlConnection.  
@@ -43,7 +43,7 @@ dataSet.Relations.Add("OrderDetail", _
   dataSet.Tables("Orders").Columns("OrderID"), _  
 dataSet.Tables("OrderDetails").Columns("OrderID"), false).Nested = true  
   
-Dim xmlDoc As XmlDataDocument = New XmlDataDocument(dataSet)   
+Dim xmlDoc As XmlDataDocument = New XmlDataDocument(dataSet)
   
 Dim nodeList As XmlNodeList = xmlDoc.DocumentElement.SelectNodes( _  
   "descendant::Customers[*/OrderDetails/ProductID=43]")  
@@ -84,10 +84,10 @@ dataSet.Relations.Add("CustOrders",
   
 dataSet.Relations.Add("OrderDetail",  
   dataSet.Tables["Orders"].Columns["OrderID"],  
-  dataSet.Tables["OrderDetails"].Columns["OrderID"],   
+  dataSet.Tables["OrderDetails"].Columns["OrderID"],
   false).Nested = true;  
   
-XmlDataDocument xmlDoc = new XmlDataDocument(dataSet);   
+XmlDataDocument xmlDoc = new XmlDataDocument(dataSet);
   
 XmlNodeList nodeList = xmlDoc.DocumentElement.SelectNodes(  
   "descendant::Customers[*/OrderDetails/ProductID=43]");  
@@ -101,7 +101,7 @@ foreach (XmlNode xmlNode in nodeList)
 }  
 ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Synchronizace datové sady a datového dokumentu XML](dataset-and-xmldatadocument-synchronization.md)
 - [Přehled ADO.NET](../ado-net-overview.md)

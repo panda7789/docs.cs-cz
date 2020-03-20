@@ -7,24 +7,24 @@ helpviewer_keywords:
 - fusion [.NET Framework], using the unmanaged API
 ms.assetid: f8f20967-ea17-4900-bf05-87a078095fe6
 ms.openlocfilehash: 2bf7bbb59cf983ed536a579ee3a418603f78b49a
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "73131641"
 ---
 # <a name="fusion-unmanaged-api-reference"></a>Fúze (referenční dokumentace nespravovaného rozhraní API)
-Rozhraní API pro syntézu umožňuje hostiteli modulu runtime získat přístup k vlastnostem prostředků aplikace, aby bylo možné najít správné verze těchto prostředků pro aplikaci.  
+Rozhraní API pro fúzi umožňuje hostiteli runtime přístup k vlastnostem prostředků aplikace za účelem vyhledání správných verzí těchto prostředků pro aplikaci.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Rozhraní pro fúze](fusion-interfaces.md)  
- Popisuje nespravovaná rozhraní, která využívá rozhraní API pro syntézu.  
+ [Rozhraní fúze](fusion-interfaces.md)  
+ Popisuje nespravovaná rozhraní, která používá rozhraní API pro fúzi.  
   
- [Globální statické funkce pro fúze](fusion-global-static-functions.md)  
- Popisuje nespravované globální statické funkce, které používá rozhraní API pro syntézu.  
+ [Fúze globálních statických funkcí](fusion-global-static-functions.md)  
+ Popisuje nespravované globální statické funkce, které používá rozhraní API pro fúzi.  
   
- [Výčty pro fúze](fusion-enumerations.md)  
- Popisuje nespravované výčty, které používá rozhraní API pro syntézu.  
+ [Výčty fúzí](fusion-enumerations.md)  
+ Popisuje nespravované výčty, které používá rozhraní API pro fúzi.  
   
  [Struktury pro fúze](fusion-structures.md)  
- Popisuje nespravované struktury, které používá rozhraní API pro syntézu.
+ Popisuje nespravované struktury, které používá rozhraní API pro fúzi.

@@ -6,121 +6,121 @@ helpviewer_keywords:
 - key frames [WPF], about key-frame animations
 - multiple animation target values [WPF]
 ms.assetid: 10028f97-bb63-41fc-b8ad-663dac7ea203
-ms.openlocfilehash: 5c0e574ea494bedc1c359d38cda0d17bbb03fcdf
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: be815ca522cf18ea2403ea7af5549ceaf922854e
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64645339"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79186673"
 ---
 # <a name="key-frame-animations-overview"></a>Přehled animací klíčových snímků
-Toto téma vás seznámí s animací klíčových snímků. Animace klíčových snímků vám umožní pomocí více než dva cílových hodnot animace a řídit metodu interpolace animace společnosti.  
+Toto téma vás seznámí s animacemi klíčových snímků. Animace klíčových snímků umožňují animovat pomocí více než dvou cílových hodnot a řídit metodu interpolace animace.  
   
-<a name="prerequisites"></a>   
+<a name="prerequisites"></a>
 ## <a name="prerequisites"></a>Požadavky  
- Tento přehled informace o tom, měli byste se seznámit s [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] animace a časových os. Úvod do animace, najdete v článku [přehled animace](animation-overview.md). Pomáhá také se seznámit s animace od/Komu/kým. Další informace najdete v tématu Přehled animací From/To/By.  
+ Chcete-li pochopit tento přehled, [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] měli byste být obeznámeni s animacemi a časovými osy. Úvod k animacím najdete v tématu [Přehled animací](animation-overview.md). To také pomáhá být obeznámeni s From / To / By animace. Další informace naleznete v tématu –do/podle animace Přehled.  
   
-<a name="whatisakeyframeanimation"></a>   
+<a name="whatisakeyframeanimation"></a>
 ## <a name="what-is-a-key-frame-animation"></a>Co je animace klíčových snímků?  
- Od/Komu/kým, jako je hodnota vlastnosti cílové animuje animace klíčových snímků animace. Vytvoří přechod mezi jeho cílové hodnoty prostřednictvím jeho <xref:System.Windows.Media.Animation.Timeline.Duration%2A>. Ale při od/Komu/kým animace vytvoří přechod mezi dvěma hodnotami, jeden animace klíčových snímků můžete vytvořit přechody mezi libovolný počet cílových hodnot. Na rozdíl od od/Komu/kým má animace klíčových snímků animace, bez From, pro nebo podle vlastností, pomocí kterého se má nastavit jeho cílové hodnoty. Cílových hodnot animace klíčových snímků jsou popsány pomocí klíčových snímků objektů (proto výraz, "animace klíčových snímků"). K určení cílových hodnot animace, můžete vytvořit klíčový snímek objekty a přidat je do animace <xref:System.Windows.Media.Animation.DoubleAnimationUsingKeyFrames.KeyFrames%2A> kolekce. Při spuštění animace bude přecházet mezi snímky, které jste zadali.  
+ Podobně jako animace Od/Do/Podle animace klíčových snímků animuje hodnotu cílové vlastnosti. Vytvoří přechod mezi svými cílovými <xref:System.Windows.Media.Animation.Timeline.Duration%2A>hodnotami nad jeho . Však zatímco From/To/By animace vytvoří přechod mezi dvěma hodnotami, jeden klíčový snímek animace můžete vytvořit přechody mezi libovolný počet cílových hodnot. Na rozdíl od animace Od/Do/Podle animace klíčových snímků nemá žádné vlastnosti From, To nebo By, pomocí kterých chcete nastavit cílové hodnoty. Cílové hodnoty animace klíčových snímků jsou popsány pomocí objektů klíčových snímků (odtud termín "animace klíčových snímků"). Chcete-li určit cílové hodnoty animace, vytvořte objekty klíčových <xref:System.Windows.Media.Animation.DoubleAnimationUsingKeyFrames.KeyFrames%2A> snímků a přidejte je do kolekce animace. Po spuštění animace přechází mezi zadanými snímky.  
   
- Kromě podpory více cílových hodnot, některé metody klíčových snímků i podporují více metod interpolace. Metodu interpolace animace definuje, jak bude přecházet z jedné hodnoty na další. Existují tři typy interpolace: diskrétní lineární a splined.  
+ Kromě podpory více cílových hodnot některé metody klíčových snímků dokonce podporují více metod interpolace. Metoda interpolace animace definuje, jak přechází z jedné hodnoty na další. Existují tři typy interpolací: diskrétní, lineární a splined.  
   
- Chcete-li animace pomocí klíčových snímků animace, proveďte následující kroky.  
+ Chcete-li animaci klíčových snímků animovat, proveďte následující kroky.  
   
-- Deklarace animace a určit jeho <xref:System.Windows.Media.Animation.Timeline.Duration%2A>, stejně jako byste to udělali pro animace od/Komu/kým.  
+- Deklarujte animaci a zadejte její <xref:System.Windows.Media.Animation.Timeline.Duration%2A>, stejně jako byste pro animaci z/do/by.  
   
-- Pro každou cílovou hodnotu vytvořit klíčový snímek příslušného typu, nastavte ho na hodnotu a <xref:System.Windows.Media.Animation.KeyTime>a přidejte ho do animace <xref:System.Windows.Media.Animation.DoubleAnimationUsingKeyFrames.KeyFrames%2A> kolekce.  
+- Pro každou cílovou hodnotu vytvořte klíčový snímek <xref:System.Windows.Media.Animation.KeyTime>příslušného typu, nastavte jeho <xref:System.Windows.Media.Animation.DoubleAnimationUsingKeyFrames.KeyFrames%2A> hodnotu a přidejte ji do kolekce animace.  
   
-- Přidružit animaci vlastnosti, stejně jako byste to udělali s od/Komu/kým animace. Další informace o použití animace vlastnosti pomocí scénáře najdete v tématu [přehled scénářů](storyboards-overview.md).  
+- Přidružte animaci k vlastnosti, stejně jako u animace Od/Do/Podle. Další informace o použití animace na vlastnost pomocí scénáře, najdete v [tématu Přehled scénářů](storyboards-overview.md).  
   
- Následující příklad používá <xref:System.Windows.Media.Animation.DoubleAnimationUsingKeyFrames> pro animaci <xref:System.Windows.Shapes.Rectangle> element do čtyř různých umístění.  
+ Následující příklad používá <xref:System.Windows.Media.Animation.DoubleAnimationUsingKeyFrames> k animaci <xref:System.Windows.Shapes.Rectangle> prvku do čtyř různých umístění.  
   
  [!code-xaml[keyframes_ovw_snippet#BasicKeyFrameExampleWholePage](~/samples/snippets/csharp/VS_Snippets_Wpf/keyframes_ovw_snippet/CS/KeyFramesIntroduction.xaml#basickeyframeexamplewholepage)]  
   
- Od/Komu/kým, jako je animace, animace klíčových snímků je použít na vlastnost s použitím <xref:System.Windows.Media.Animation.Storyboard> značek a kódu nebo s použitím <xref:System.Windows.Media.Animation.Animatable.BeginAnimation%2A> metody v kódu. Animace klíčových snímků můžete také použít k vytvoření <xref:System.Windows.Media.Animation.AnimationClock> a použít ji pro jednu nebo více vlastností. Další informace o různých způsobech použití animací, najdete v článku [přehled způsobů animace vlastností](property-animation-techniques-overview.md).  
+ Stejně jako from/to/by animace, animace klíčových snímků lze <xref:System.Windows.Media.Animation.Storyboard> použít na vlastnost pomocí v <xref:System.Windows.Media.Animation.Animatable.BeginAnimation%2A> značky a kódu nebo pomocí metody v kódu. Animaci klíčových snímků můžete také <xref:System.Windows.Media.Animation.AnimationClock> použít k vytvoření a použití na jednu nebo více vlastností. Další informace o různých metodách použití animací naleznete v [tématu Přehled technik animace vlastností](property-animation-techniques-overview.md).  
   
-<a name="animation_types"></a>   
-## <a name="key-frame-animation-types"></a>Typy animace klíčových snímků  
- Protože animace hodnoty vlastností, existují jiné typy jiné vlastnosti. Animovat vlastnost, která přijímá <xref:System.Double> (jako je například elementu <xref:System.Windows.FrameworkElement.Width%2A> vlastnost), použijte animaci, která vytváří <xref:System.Double> hodnoty. Animovat vlastnost, která přijímá <xref:System.Windows.Point>, použijte animaci, která vytváří <xref:System.Windows.Point> hodnoty a tak dále.  
+<a name="animation_types"></a>
+## <a name="key-frame-animation-types"></a>Typy animací klíčových snímků  
+ Vzhledem k tomu, že animace generují hodnoty vlastností, existují různé typy animací pro různé typy vlastností. Chcete-li animovat <xref:System.Double> vlastnost, která trvá <xref:System.Windows.FrameworkElement.Width%2A> (například vlastnost prvku), <xref:System.Double> použijte animaci, která vytváří hodnoty. Chcete-li animovat <xref:System.Windows.Point>vlastnost, která trvá , <xref:System.Windows.Point> použijte animaci, která vytváří hodnoty a tak dále.  
   
- Animace klíčových snímků třídy patřit do <xref:System.Windows.Media.Animation> obor názvů a dodržovat následujícími zásadami vytváření názvů:  
+ Třídy animace klíčových snímků <xref:System.Windows.Media.Animation> patří do oboru názvů a dodržují následující konvence pojmenování:  
   
- *\<Typ >* `AnimationUsingKeyFrames`  
+ * \<Typ>*`AnimationUsingKeyFrames`  
   
- Kde  *\<typ >* je typ hodnoty, který animuje třídy.  
+ Kde * \<Type>* je typ hodnoty, kterou třída animuje.  
   
- [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] obsahuje následující třídy animace klíčových snímků.  
+ [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]poskytuje následující třídy animace klíčových snímků.  
   
-|Typ vlastnosti|Třída odpovídající animace od/Komu/kým|Podporované metody interpolace|  
+|Typ vlastnosti|Odpovídající z/do/podle třídy animace|Podporované interpolační metody|  
 |-------------------|------------------------------------------------|-------------------------------------|  
 |<xref:System.Boolean>|<xref:System.Windows.Media.Animation.BooleanAnimationUsingKeyFrames>|Diskrétní|  
-|<xref:System.Byte>|<xref:System.Windows.Media.Animation.ByteAnimationUsingKeyFrames>|Diskrétní, lineární, Splined|  
-|<xref:System.Windows.Media.Color>|<xref:System.Windows.Media.Animation.ColorAnimationUsingKeyFrames>|Diskrétní, lineární, Splined|  
-|<xref:System.Decimal>|<xref:System.Windows.Media.Animation.DecimalAnimationUsingKeyFrames>|Diskrétní, lineární, Splined|  
-|<xref:System.Double>|<xref:System.Windows.Media.Animation.DoubleAnimationUsingKeyFrames>|Diskrétní, lineární, Splined|  
-|<xref:System.Int16>|<xref:System.Windows.Media.Animation.Int16AnimationUsingKeyFrames>|Diskrétní, lineární, Splined|  
-|<xref:System.Int32>|<xref:System.Windows.Media.Animation.Int32AnimationUsingKeyFrames>|Diskrétní, lineární, Splined|  
-|<xref:System.Int64>|<xref:System.Windows.Media.Animation.Int64AnimationUsingKeyFrames>|Diskrétní, lineární, Splined|  
+|<xref:System.Byte>|<xref:System.Windows.Media.Animation.ByteAnimationUsingKeyFrames>|Diskrétní, Lineární, Splined|  
+|<xref:System.Windows.Media.Color>|<xref:System.Windows.Media.Animation.ColorAnimationUsingKeyFrames>|Diskrétní, Lineární, Splined|  
+|<xref:System.Decimal>|<xref:System.Windows.Media.Animation.DecimalAnimationUsingKeyFrames>|Diskrétní, Lineární, Splined|  
+|<xref:System.Double>|<xref:System.Windows.Media.Animation.DoubleAnimationUsingKeyFrames>|Diskrétní, Lineární, Splined|  
+|<xref:System.Int16>|<xref:System.Windows.Media.Animation.Int16AnimationUsingKeyFrames>|Diskrétní, Lineární, Splined|  
+|<xref:System.Int32>|<xref:System.Windows.Media.Animation.Int32AnimationUsingKeyFrames>|Diskrétní, Lineární, Splined|  
+|<xref:System.Int64>|<xref:System.Windows.Media.Animation.Int64AnimationUsingKeyFrames>|Diskrétní, Lineární, Splined|  
 |<xref:System.Windows.Media.Matrix>|<xref:System.Windows.Media.Animation.MatrixAnimationUsingKeyFrames>|Diskrétní|  
 |<xref:System.Object>|<xref:System.Windows.Media.Animation.ObjectAnimationUsingKeyFrames>|Diskrétní|  
-|<xref:System.Windows.Point>|<xref:System.Windows.Media.Animation.PointAnimationUsingKeyFrames>|Diskrétní, lineární, Splined|  
-|<xref:System.Windows.Media.Media3D.Quaternion>|<xref:System.Windows.Media.Animation.QuaternionAnimationUsingKeyFrames>|Diskrétní, lineární, Splined|  
-|<xref:System.Windows.Rect>|<xref:System.Windows.Media.Animation.RectAnimationUsingKeyFrames>|Diskrétní, lineární, Splined|  
-|<xref:System.Windows.Media.Media3D.Rotation3D>|<xref:System.Windows.Media.Animation.Rotation3DAnimationUsingKeyFrames>|Diskrétní, lineární, Splined|  
-|<xref:System.Single>|<xref:System.Windows.Media.Animation.SingleAnimationUsingKeyFrames>|Diskrétní, lineární, Splined|  
+|<xref:System.Windows.Point>|<xref:System.Windows.Media.Animation.PointAnimationUsingKeyFrames>|Diskrétní, Lineární, Splined|  
+|<xref:System.Windows.Media.Media3D.Quaternion>|<xref:System.Windows.Media.Animation.QuaternionAnimationUsingKeyFrames>|Diskrétní, Lineární, Splined|  
+|<xref:System.Windows.Rect>|<xref:System.Windows.Media.Animation.RectAnimationUsingKeyFrames>|Diskrétní, Lineární, Splined|  
+|<xref:System.Windows.Media.Media3D.Rotation3D>|<xref:System.Windows.Media.Animation.Rotation3DAnimationUsingKeyFrames>|Diskrétní, Lineární, Splined|  
+|<xref:System.Single>|<xref:System.Windows.Media.Animation.SingleAnimationUsingKeyFrames>|Diskrétní, Lineární, Splined|  
 |<xref:System.String>|<xref:System.Windows.Media.Animation.StringAnimationUsingKeyFrames>|Diskrétní|  
-|<xref:System.Windows.Size>|<xref:System.Windows.Media.Animation.SizeAnimationUsingKeyFrames>|Diskrétní, lineární, Splined|  
-|<xref:System.Windows.Thickness>|<xref:System.Windows.Media.Animation.ThicknessAnimationUsingKeyFrames>|Diskrétní, lineární, Splined|  
-|<xref:System.Windows.Media.Media3D.Vector3D>|<xref:System.Windows.Media.Animation.Vector3DAnimationUsingKeyFrames>|Diskrétní, lineární, Splined|  
-|<xref:System.Windows.Vector>|<xref:System.Windows.Media.Animation.VectorAnimationUsingKeyFrames>|Diskrétní, lineární, Splined|  
+|<xref:System.Windows.Size>|<xref:System.Windows.Media.Animation.SizeAnimationUsingKeyFrames>|Diskrétní, Lineární, Splined|  
+|<xref:System.Windows.Thickness>|<xref:System.Windows.Media.Animation.ThicknessAnimationUsingKeyFrames>|Diskrétní, Lineární, Splined|  
+|<xref:System.Windows.Media.Media3D.Vector3D>|<xref:System.Windows.Media.Animation.Vector3DAnimationUsingKeyFrames>|Diskrétní, Lineární, Splined|  
+|<xref:System.Windows.Vector>|<xref:System.Windows.Media.Animation.VectorAnimationUsingKeyFrames>|Diskrétní, Lineární, Splined|  
   
-<a name="animation_target_values"></a>   
-## <a name="target-values-key-frames-and-key-times"></a>Cílové hodnoty (klíčových snímků) a časy klíč  
- Stejně jako existují různé typy animací klíčových snímků pro animaci vlastnosti různých typů, existují také různé typy objektů klíčový snímek: jeden pro každý typ hodnoty animace a metodu interpolace podporována. Klíčový snímek typy dodržovat následujícími zásadami vytváření názvů:  
+<a name="animation_target_values"></a>
+## <a name="target-values-key-frames-and-key-times"></a>Cílové hodnoty (klíčové snímky) a klíčové časy  
+ Stejně jako existují různé typy animací klíčových snímků pro animaci různých typů vlastností, existují také různé typy objektů klíčových snímků: jeden pro každý typ animované hodnoty a podporovaná metoda interpolace. Typy klíčových snímků dodržují následující konvence pojmenování:  
   
- *\<InterpolationMethod >\<typ >* `KeyFrame`  
+ *>typu \<>metody InterpolationMethod \<*`KeyFrame`  
   
- Kde  *\<InterpolationMethod >* interpolace metoda používá klíčové rámečku a  *\<typ >* je typ hodnoty, který animuje třídy. Animace klíčových snímků, která podporuje všechny tři interpolace metody bude mít tři typy klíčový snímek, které můžete použít. Například můžete použít tři typy klíčový snímek s <xref:System.Windows.Media.Animation.DoubleAnimationUsingKeyFrames>: <xref:System.Windows.Media.Animation.DiscreteDoubleKeyFrame>, <xref:System.Windows.Media.Animation.LinearDoubleKeyFrame>, a <xref:System.Windows.Media.Animation.SplineDoubleKeyFrame>. (Interpolace metody jsou popsány podrobně v další části).  
+ Kde * \<InterpolationMethod>* je metoda interpolace klíčový snímek používá a * \<Typ>* je typ hodnoty, která třída animuje. Animace klíčových snímků, která podporuje všechny tři metody interpolace, bude mít tři typy klíčových snímků, které můžete použít. Můžete například použít tři typy klíčových <xref:System.Windows.Media.Animation.LinearDoubleKeyFrame>snímků <xref:System.Windows.Media.Animation.SplineDoubleKeyFrame>s : <xref:System.Windows.Media.Animation.DoubleAnimationUsingKeyFrames> <xref:System.Windows.Media.Animation.DiscreteDoubleKeyFrame>, , a . (Interpolační metody jsou podrobně popsány v pozdější části.)  
   
- Hlavním účelem klíčový snímek je k určení <xref:System.Windows.Media.Animation.IKeyFrame.KeyTime%2A> a <xref:System.Windows.Media.Animation.IKeyFrame.Value%2A>. Každý typ klíčový snímek poskytuje tyto dvě vlastnosti.  
+ Primárním účelem klíčového snímku <xref:System.Windows.Media.Animation.IKeyFrame.KeyTime%2A> je <xref:System.Windows.Media.Animation.IKeyFrame.Value%2A>určení a a . Každý typ klíčového snímku poskytuje tyto dvě vlastnosti.  
   
-- <xref:System.Windows.Media.Animation.IKeyFrame.Value%2A> Určuje vlastnost Cílová hodnota klíčových snímků.  
+- Vlastnost <xref:System.Windows.Media.Animation.IKeyFrame.Value%2A> určuje cílovou hodnotu pro tento klíčový snímek.  
   
-- <xref:System.Windows.Media.Animation.IKeyFrame.KeyTime%2A> Vlastnost určuje, kdy (v rámci animace <xref:System.Windows.Media.Animation.Timeline.Duration%2A>) klíčové rámečku <xref:System.Windows.Media.Animation.IKeyFrame.Value%2A> je dosaženo.  
+- Vlastnost <xref:System.Windows.Media.Animation.IKeyFrame.KeyTime%2A> určuje, kdy (v rámci <xref:System.Windows.Media.Animation.Timeline.Duration%2A>animace) <xref:System.Windows.Media.Animation.IKeyFrame.Value%2A> klíčový snímek je dosaženo.  
   
- Po zahájení animace klíčových snímků iteruje její klíčové snímky v pořadí určeném parametrem jejich <xref:System.Windows.Media.Animation.IKeyFrame.KeyTime%2A> vlastnosti.  
+ Když začne animace klíčových snímků, iterátprostřed prostřednictvím klíčových snímků v pořadí definovaném jejich <xref:System.Windows.Media.Animation.IKeyFrame.KeyTime%2A> vlastnostmi.  
   
-- Pokud neexistuje žádný klíčových snímků v čase 0, animace vytvoří přechod mezi aktuální hodnotu pro vlastnost target a <xref:System.Windows.Media.Animation.IKeyFrame.Value%2A> první klíčové rámečku; v opačném případě animace výstupní hodnota se stane hodnotou první klíčové rámečku.  
+- Pokud neexistuje žádný klíčový snímek v čase 0, animace vytvoří přechod mezi <xref:System.Windows.Media.Animation.IKeyFrame.Value%2A> aktuální hodnotou cílové vlastnosti a prvního klíčového snímku; v opačném případě se výstupní hodnota animace stane hodnotou prvního klíčového snímku.  
   
-- Animace vytvoří přechod mezi <xref:System.Windows.Media.Animation.IKeyFrame.Value%2A> z prvního a druhého klíčové snímky, metodou interpolace určené druhý klíčový snímek. Přechod začíná prvním klíčový snímek <xref:System.Windows.Media.Animation.IKeyFrame.KeyTime%2A> a končí, když druhé klíčové rámečku <xref:System.Windows.Media.Animation.IKeyFrame.KeyTime%2A> je dosaženo.  
+- Animace vytvoří přechod mezi <xref:System.Windows.Media.Animation.IKeyFrame.Value%2A> prvním a druhým klíčovým snímkem pomocí interpolační metody určené druhým klíčovým snímkem. Přechod začíná prvním klíčovým snímkem <xref:System.Windows.Media.Animation.IKeyFrame.KeyTime%2A> a končí po <xref:System.Windows.Media.Animation.IKeyFrame.KeyTime%2A> dosažení druhého klíčového snímku.  
   
-- Animace pokračuje, vytváření přechody mezi každé následné klíčového snímku a jeho předchozí klíčové rámečku.  
+- Animace pokračuje a vytváří přechody mezi každým následujícím klíčovým snímkem a jeho předchozím klíčovým snímkem.  
   
-- Nakonec animace přechody hodnota klíčový snímek s časem na největší klíče, který se rovná nebo je menší, než se animace <xref:System.Windows.Media.Animation.Timeline.Duration%2A>.  
+- Nakonec animace přechody na hodnotu klíčového snímku s největší čas klíče, který je <xref:System.Windows.Media.Animation.Timeline.Duration%2A>roven nebo menší než animace .  
   
- Pokud se animace <xref:System.Windows.Media.Animation.Timeline.Duration%2A> je <xref:System.Windows.Duration.Automatic%2A> nebo jeho <xref:System.Windows.Media.Animation.Timeline.Duration%2A> je roven času poslední klíčový snímek animace elementy end. Jinak, pokud se animace <xref:System.Windows.Duration> je větší než klíčovým momentem poslední klíčový snímek animace obsahuje hodnotu klíčového snímku, dokud ho dosáhne konce jeho <xref:System.Windows.Duration>. Podobně jako všechny animace klíčových snímků animace používá jeho <xref:System.Windows.Media.Animation.Timeline.FillBehavior%2A> a určí, zda jej drží konečnou hodnotu dosáhne konce jeho aktivní období. Další informace najdete v tématu [přehled chování časování](timing-behaviors-overview.md).  
+ Pokud <xref:System.Windows.Media.Animation.Timeline.Duration%2A> animace je <xref:System.Windows.Duration.Automatic%2A> nebo <xref:System.Windows.Media.Animation.Timeline.Duration%2A> jeho se rovná čas poslední klíčový snímek, animace končí. V opačném případě, <xref:System.Windows.Duration> pokud animace je větší než čas klíče poslední klíčový snímek, animace obsahuje hodnotu klíčového snímku, dokud nedosáhne konce jeho <xref:System.Windows.Duration>. Stejně jako všechny animace, animace <xref:System.Windows.Media.Animation.Timeline.FillBehavior%2A> klíčových snímků používá svou vlastnost k určení, zda obsahuje konečnou hodnotu, když dosáhne konce aktivní období. Další informace naleznete v tématu [Přehled chování časování](timing-behaviors-overview.md).  
   
- Následující příklad používá <xref:System.Windows.Media.Animation.DoubleAnimationUsingKeyFrames> objekt definovaný v předchozím příkladu k předvedení jak <xref:System.Windows.Media.Animation.IKeyFrame.Value%2A> a <xref:System.Windows.Media.Animation.IKeyFrame.KeyTime%2A> vlastnosti práce.  
+ Následující příklad používá <xref:System.Windows.Media.Animation.DoubleAnimationUsingKeyFrames> objekt definovaný v předchozím příkladu <xref:System.Windows.Media.Animation.IKeyFrame.Value%2A> <xref:System.Windows.Media.Animation.IKeyFrame.KeyTime%2A> k předvedení fungování vlastností a.  
   
-- Výstupní hodnoty animace první klíčové rámečku okamžitě nastaví na hodnotu 0.  
+- První klíčový snímek okamžitě nastaví výstupní hodnotu animace na hodnotu 0.  
   
-- Druhý klíčový snímek animuje od 0 do 350. Spustí po ukončení první klíčových snímků (v době = 0 sekund) a přehraje na 2 sekundy, koncové době = 0:0:2.  
+- Druhý klíčový snímek animuje od 0 do 350. Spustí se po ukončení prvního klíčového snímku (v čase = 0 sekund) a hraje se po dobu 2 sekund, končí v čase = 0:0:2.  
   
-- Třetí klíčový snímek animuje z 350 na 50. Začne při ukončení druhého klíčové rámečku (v době = 2 sekundy) a přehraje po dobu 5 sekund, koncové době = 0:0:7.  
+- Třetí klíčový snímek animuje od 350 do 50. Spustí se, když druhý klíčový snímek skončí (v čase = 2 sekundy) a hraje po dobu 5 sekund, končí v čase = 0:0:7.  
   
-- Čtvrtý klíčový snímek animuje z 50 na 200. Začne při ukončení třetí klíčových snímků (v době = 7 sekund) a přehraje na 1 sekundu koncové době = 0:0:8.  
+- Čtvrtý klíčový snímek animuje od 50 do 200. Spustí se, když třetí klíčový snímek skončí (v čase = 7 sekund) a hraje se po dobu 1 sekundy, končí v čase = 0:0:8.  
   
-- Vzhledem k tomu, <xref:System.Windows.Media.Animation.Timeline.Duration%2A> vlastnost animace byla nastavena na 10 sekund, animace uchovává svou poslední hodnotu 2 sekundy před koncové v době = 0:0:10.  
+- Vzhledem <xref:System.Windows.Media.Animation.Timeline.Duration%2A> k tomu, že vlastnost animace byla nastavena na 10 sekund, animace obsahuje jeho konečnou hodnotu po dobu dvou sekund před koncem v čase = 0:0:10.  
   
  [!code-xaml[keyframes_ovw_snippet#BasicKeyFrameExampleWholePage](~/samples/snippets/csharp/VS_Snippets_Wpf/keyframes_ovw_snippet/CS/KeyFramesIntroduction.xaml#basickeyframeexamplewholepage)]  
   
-<a name="interpolationmethods"></a>   
-## <a name="interpolation-methods"></a>Interpolace metody  
- V předchozích částech uvedeno, že některé animace klíčových snímků podporují více metod interpolace. Interpolace animace popisuje, jak animace přechody mezi hodnotami přes vlastnost duration. Výběrem typu klíčový snímek pomocí animace, můžete definovat metodu interpolace pro tento segment klíčový snímek. Existují tři různé typy metod interpolace: lineární, diskrétní a splined.  
+<a name="interpolationmethods"></a>
+## <a name="interpolation-methods"></a>Interpolační metody  
+ Předchozí části uvedené, že některé animace klíčových snímků podporují více metod interpolace. Interpolace animace popisuje, jak animace přechody mezi hodnotami v průběhu jeho trvání. Výběrem typu klíčového snímku, který použijete s animací, můžete definovat metodu interpolace pro tento segment klíčových snímků. Existují tři různé typy metod interpolace: lineární, diskrétní a splined.  
   
 ### <a name="linear-interpolation"></a>Lineární interpolace  
- Pomocí lineární interpolace animace průběhu tempu trvání segmentu. Například, pokud segment klíčový snímek přechází od 0 do 10 průběhu 5 sekund, animace bude výstup následujících hodnot v zadaném časy:  
+ Při lineární interpolaci animace postupuje konstantní rychlostí trvání segmentu. Pokud například segment klíčového snímku přejde z 0 na 10 po dobu 5 sekund, animace vynese následující hodnoty v určených časech:  
   
 |Time|Výstupní hodnota|  
 |----------|------------------|  
@@ -134,7 +134,7 @@ Toto téma vás seznámí s animací klíčových snímků. Animace klíčových
 |5|10|  
   
 ### <a name="discrete-interpolation"></a>Diskrétní interpolace  
- Diskrétní interpolace animace funkce přejde z jednu hodnotu na další bez interpolace. Pokud segment klíčový snímek přechází od 0 do 10 průběhu 5 sekund, animace bude výstup následujících hodnot v zadaném časy:  
+ Při diskrétní interpolaci se funkce animace přeskakuje z jedné hodnoty na druhou bez interpolace. Pokud segment klíčového snímku přejde z 0 na 10 po dobu trvání 5 sekund, animace vynese následující hodnoty v určených časech:  
   
 |Time|Výstupní hodnota|  
 |----------|------------------|  
@@ -147,150 +147,150 @@ Toto téma vás seznámí s animací klíčových snímků. Animace klíčových
 |4.5|0|  
 |5|10|  
   
- Všimněte si, jak animace nezmění jeho výstupní hodnoty do konce velmi trvání segmentu.  
+ Všimněte si, jak animace nezmění svou výstupní hodnotu až do samého konce trvání segmentu.  
   
- Splined interpolace je složitější. Je popsané v další části.  
+ Splined interpolace je složitější. Je popsán v další části.  
   
-<a name="anim_spline"></a>   
-### <a name="splined-interpolation"></a>Splined interpolace  
- Splined interpolace lze použít k dosažení víc odpovídají realitě účinky časování. Protože animace se proto často používají k napodobují efekty, ke kterým dochází v reálném světě, vývojáři může potřebovat jemné ovládací prvek zrychlení a zpomalení objektů a zavřete manipulaci s časování segmentů. Klíčové snímky SpLine umožňují splined interpolace animace. U dalších klíčových snímků, můžete zadat <xref:System.Windows.Media.Animation.IKeyFrame.Value%2A> a <xref:System.Windows.Media.Animation.IKeyFrame.KeyTime%2A>. U křivkový klíčový snímek, můžete také zadat <xref:System.Windows.Media.Animation.SplineDoubleKeyFrame.KeySpline%2A>. Následující příklad ukazuje klíčové rámečku jedné křivky pro <xref:System.Windows.Media.Animation.DoubleAnimationUsingKeyFrames>. Všimněte si, že <xref:System.Windows.Media.Animation.KeySpline> vlastnost; díky liší od ostatních typů klíčové snímky spline klíčový snímek.  
-  
- [!code-xaml[keyframes_ovw_snippet#SingleSplineKeyFrameExample](~/samples/snippets/csharp/VS_Snippets_Wpf/keyframes_ovw_snippet/CS/InterpolationMethodsExample.xaml#singlesplinekeyframeexample)]  
-  
- Kubické Bézierovy křivky je definován tak, že počáteční bod, koncový bod a dva ovládací prvek body. <xref:System.Windows.Media.Animation.KeySpline> Vlastnost klíčové rámečku křivkový definuje dva řídicí bod Bézierovy křivky, který vede od (0; 0) na (1,1). Určuje první řídicí bod křivky faktor v první polovině roku Bézierovu křivku, a druhý řídicí bod řídí faktor křivky v druhé polovině segmentu Bézierovy křivky. Výsledný křivky popisuje rychlost změny pro klíčový rámec tohoto křivky. Tím strmější křivku, tím rychleji klíčový snímek změní jeho hodnoty. Protože křivka získá plošší, klíčové rámečku změní jeho hodnoty pomaleji.  
-  
- Můžete použít <xref:System.Windows.Media.Animation.KeySpline> chcete simulovat fyzické trajektorie jako spadající vody nebo kuličky nebo použít jiné "usnadnění v" a "doběhu" efekty animace pohybu. Pro efekty interakce uživatele jako pozadí pomalu nebo ovládací prvek tlačítko odrazu můžete použít splined interpolace urychlit nebo zpomalit rychlost změny pro animaci určitým způsobem.  
-  
- Následující příklad určuje <xref:System.Windows.Media.Animation.KeySpline> 0,1 1,0, která vytvoří následující Bézierovu křivku.  
-  
- ![Bézierovy křivky](./media/graphicsmm-keyspline-0-1-1-0.png "graphicsmm_keyspline_0_1_1_0")  
-Klíče křivky pomocí kontrolních bodů (0.0; 1.0) a (1.0, 0.0)  
+<a name="anim_spline"></a>
+### <a name="splined-interpolation"></a>Splined Interpolace  
+ Splined interpolace může být použita k dosažení realističtější časování efekty. Vzhledem k tomu, že animace se tak často používají k napodobování efektů, ke kterým dochází v reálném světě, mohou vývojáři potřebovat jemné řízení zrychlení a zpomalení objektů a úzkou manipulaci segmentů časování. Klíčové snímky spline umožňují animovat pomocí interpolace splined. U jiných klíčových snímků <xref:System.Windows.Media.Animation.IKeyFrame.Value%2A> <xref:System.Windows.Media.Animation.IKeyFrame.KeyTime%2A>zadáte a a . Pomocí klíčového snímku spline zadáte <xref:System.Windows.Media.Animation.SplineDoubleKeyFrame.KeySpline%2A>také . Následující příklad ukazuje jeden klíčový snímek <xref:System.Windows.Media.Animation.DoubleAnimationUsingKeyFrames>spline pro . Všimněte <xref:System.Windows.Media.Animation.KeySpline> si nemovitosti; to je to, co dělá spline klíčový snímek odlišný od ostatních typů klíčových snímků.  
   
  [!code-xaml[keyframes_ovw_snippet#SingleSplineKeyFrameExample](~/samples/snippets/csharp/VS_Snippets_Wpf/keyframes_ovw_snippet/CS/InterpolationMethodsExample.xaml#singlesplinekeyframeexample)]  
   
- Toto klíčové rámečku animuje rychle při jeho začíná, může zpomalit a potom zrychluje znovu předtím, než ho ukončí.  
+ Kubická Bezierova křivka je definována počátečním bodem, koncovým bodem a dvěma řídicími body. Vlastnost <xref:System.Windows.Media.Animation.KeySpline> klíčového snímku spline definuje dva řídicí bod Bezierovy křivky, který sahá od (0,0) do (1,1). První řídicí bod ovládá faktor křivky první poloviny Bezierovy křivky a druhý řídicí bod řídí faktor křivky druhé poloviny Bezierova segmentu. Výsledná křivka popisuje rychlost změny pro tento klíčový snímek spline. Čím strmější je křivka, tím rychleji klíčový snímek mění své hodnoty. Jak se křivka stává plošší, klíčový snímek mění své hodnoty pomaleji.  
   
- Následující příklad určuje <xref:System.Windows.Media.Animation.KeySpline> z 0.5,0.25 0.75,1.0, která vytvoří následující Bézierovu křivku.  
+ Můžete použít <xref:System.Windows.Media.Animation.KeySpline> k simulaci fyzické trajektorie, jako je padající voda nebo skákací koule, nebo použít jiné efekty "snadnost v" a "zmírnit" na pohybanimace. U efektů interakce s uživatelem, jako je zeslábnutí pozadí nebo odskok ovládacího tlačítka, můžete použít sférou interpolace, abyste urychlili nebo zpomalili rychlost změny animace určitým způsobem.  
   
- ![Bézierovy křivky](./media/graphicsmm-keyspline-025-050-075-10.png "graphicsmm_keyspline_025_050_075_10")  
-Klíče křivky s ovládacím prvkem body (0,25; 0,5) a (0,75, 1.0)  
+ Následující příklad určuje <xref:System.Windows.Media.Animation.KeySpline> a 0,1 1,0, který vytvoří následující Bezierovu křivku.  
+  
+ ![Bezierova křivka](./media/graphicsmm-keyspline-0-1-1-0.png "graphicsmm_keyspline_0_1_1_0")  
+Klíčná křivka s řídicími body (0,0, 1,0) a (1,0, 0,0)  
+  
+ [!code-xaml[keyframes_ovw_snippet#SingleSplineKeyFrameExample](~/samples/snippets/csharp/VS_Snippets_Wpf/keyframes_ovw_snippet/CS/InterpolationMethodsExample.xaml#singlesplinekeyframeexample)]  
+  
+ Tento klíčový snímek se rychle animuje, když začíná, zpomaluje a pak se znovu zrychluje, než skončí.  
+  
+ Následující příklad určuje <xref:System.Windows.Media.Animation.KeySpline> a-z 0.5,0.25 0.75,1.0, který vytvoří následující Bezierovu křivku.  
+  
+ ![Bezierova křivka](./media/graphicsmm-keyspline-025-050-075-10.png "graphicsmm_keyspline_025_050_075_10")  
+Klíčná křivka s řídicími body (0,25, 0,5) a (0,75; 1,0)  
   
  [!code-xaml[keyframes_ovw_snippet#SingleSplineKeyFrameExampleInline3](~/samples/snippets/csharp/VS_Snippets_Wpf/keyframes_ovw_snippet/CS/InterpolationMethodsExample.xaml#singlesplinekeyframeexampleinline3)]  
   
- Protože zaoblení Bézierovu křivku mění velmi malý, tento klíčový snímek animuje téměř konstantní rychlostí; To může zpomalit trochu směrem k velmi ukončení.  
+ Vzhledem k tomu, že zakřivení Bezierovy křivky se mění velmi málo, tento klíčový snímek se animuje téměř konstantní rychlostí; zpomaluje poněkud ke svému samému konci.  
   
- Následující příklad používá <xref:System.Windows.Media.Animation.DoubleAnimationUsingKeyFrames> pro animaci pozici obdélníku. Vzhledem k tomu, <xref:System.Windows.Media.Animation.DoubleAnimationUsingKeyFrames> používá <xref:System.Windows.Media.Animation.SplineDoubleKeyFrame> objekty, přechod mezi každou hodnotu klíčového snímku používá splined interpolace.  
+ Následující příklad používá <xref:System.Windows.Media.Animation.DoubleAnimationUsingKeyFrames> k animaci polohy obdélníku. Vzhledem <xref:System.Windows.Media.Animation.DoubleAnimationUsingKeyFrames> <xref:System.Windows.Media.Animation.SplineDoubleKeyFrame> k tomu, že objekty používá, použije přechod mezi jednotlivými hodnotami klíčového snímku interpolaci splined.  
   
  [!code-xaml[keyframes_ovw_snippet#SplinedInterpolationExample](~/samples/snippets/csharp/VS_Snippets_Wpf/keyframes_ovw_snippet/CS/InterpolationMethodsExample.xaml#splinedinterpolationexample)]  
   
- Splined interpolace může být obtížné porozumět; pomůže experimentovat s různými nastaveními. [Ukázkové animace křivkový klíč](https://go.microsoft.com/fwlink/?LinkID=160011) vám umožní změnit hodnoty klíče křivky a zobrazit výsledek na animace.  
+ Splined interpolace může být obtížné pochopit; experimentování s různými nastaveními může pomoci. [Ukázka animace spline klíče](https://github.com/Microsoft/WPF-Samples/tree/master/Animation/KeySplineAnimations) umožňuje změnit hodnoty křivky spline kláves a zobrazit výsledek, který má na animaci.  
   
-<a name="combininginterpolationmethods"></a>   
-### <a name="combining-interpolation-methods"></a>Kombinování interpolace metody  
- Můžete pomocí interpolace různé typy v jeden klíčový snímek animace klíčových snímků. Když dva animace klíčových snímků s jinou interpolace za sebou, metodu interpolace druhé klíčové rámečku slouží k vytvoření přechodu z první hodnoty na druhý.  
+<a name="combininginterpolationmethods"></a>
+### <a name="combining-interpolation-methods"></a>Kombinace interpolačních metod  
+ Klíčové snímky s různými typy interpolace můžete použít v animaci jednoho klíčového snímku. Když dvě animace klíčových snímků s různými interpolacemi následují, použije se metoda interpolace druhého klíčového snímku k vytvoření přechodu z první hodnoty na druhou.  
   
- V následujícím příkladu <xref:System.Windows.Media.Animation.DoubleAnimationUsingKeyFrames> vytvoření této interpolace lineární splined a diskrétní používá.  
+ V následujícím příkladu <xref:System.Windows.Media.Animation.DoubleAnimationUsingKeyFrames> je vytvořen a, který používá lineární, splined a diskrétní interpolaci.  
   
  [!code-xaml[keyframes_ovw_snippet#ComboInterpolationExample](~/samples/snippets/csharp/VS_Snippets_Wpf/keyframes_ovw_snippet/CS/InterpolationMethodsExample.xaml#combointerpolationexample)]  
   
-<a name="keytimes"></a>   
-## <a name="more-about-duration-and-key-times"></a>Další informace o době trvání a časy klíče  
- Stejně jako jiné animace klíčových snímků animace mít <xref:System.Windows.Duration> vlastnost. Kromě zadání animace <xref:System.Windows.Duration>, je třeba zadat, jaká část tento čas dostane na každý klíčový snímek. To provedete tak, že s popisem <xref:System.Windows.Media.Animation.IKeyFrame.KeyTime%2A> pro každou animace klíčových snímků. Každý klíčový snímek <xref:System.Windows.Media.Animation.IKeyFrame.KeyTime%2A> určuje po ukončení tohoto klíčové rámečku.  
+<a name="keytimes"></a>
+## <a name="more-about-duration-and-key-times"></a>Další informace o délce trvání a době platnosti klíčů  
+ Stejně jako ostatní animace mají animace <xref:System.Windows.Duration> klíčových snímků vlastnost. Kromě určení animace <xref:System.Windows.Duration>je třeba určit, jaká část této doby trvání je dána každému klíčovému snímku. Uděláte to tak, <xref:System.Windows.Media.Animation.IKeyFrame.KeyTime%2A> že popopisujete pro každý klíčový snímek animace. Každý klíčový snímek <xref:System.Windows.Media.Animation.IKeyFrame.KeyTime%2A> určuje, kdy tento klíčový snímek skončí.  
   
- <xref:System.Windows.Media.Animation.IKeyFrame.KeyTime%2A> Vlastnost neurčuje, jak dlouho hraje klíčovým momentem. Množství času, které hraje klíčový snímek je určeno po ukončení klíčový snímek, ukončení předchozí klíčový snímek a doba trvání animace. Klíče časy může být zadané jako hodnotu času v procentech nebo jako speciální hodnoty <xref:System.Windows.Media.Animation.KeyTime.Uniform%2A> nebo <xref:System.Windows.Media.Animation.KeyTime.Paced%2A>.  
+ Vlastnost <xref:System.Windows.Media.Animation.IKeyFrame.KeyTime%2A> neurčuje, jak dlouho se hraje čas klíče. Doba přehrávání klíčového snímku je určena ukončením klíčového snímku, ukončením předchozího klíčového snímku a dobou trvání animace. Klíčové časy mohou být určeny jako časová hodnota, <xref:System.Windows.Media.Animation.KeyTime.Uniform%2A> <xref:System.Windows.Media.Animation.KeyTime.Paced%2A>procento nebo jako speciální hodnoty nebo .  
   
- Následující seznam popisuje různé způsoby určení klíče časy.  
+ Následující seznam popisuje různé způsoby určení doby klíče.  
   
-### <a name="timespan-values"></a>Hodnoty TimeSpan  
- Můžete zadat <xref:System.TimeSpan> hodnoty k určení <xref:System.Windows.Media.Animation.KeyTime>. Hodnota by měla být větší než nebo rovna 0 a menší než doba trvání animace. Následující příklad ukazuje s určitou dobou trvání animace 10 sekund a čtyři klíčové snímky, jejichž klíče časy specifikované hodnoty času.  
+### <a name="timespan-values"></a>Hodnoty časového posunu  
+ Hodnoty můžete <xref:System.TimeSpan> použít k <xref:System.Windows.Media.Animation.KeyTime>určení . Hodnota by měla být větší nebo rovna 0 a menší než nebo rovna trvání animace. Následující příklad ukazuje animaci s dobou trvání 10 sekund a čtyři klíčové snímky, jejichž klíčové časy jsou určeny jako časové hodnoty.  
   
-- První klíčové rámečku animuje od základní hodnoty 100 přes první 3 sekundy, koncové době = 0:0:03.  
+- První klíčový snímek animuje ze základní hodnoty na 100 během prvních 3 sekund, končící v čase = 0:0:03.  
   
-- Druhý klíčový snímek animuje ze 100 na 200. Spustí po ukončení první klíčových snímků (v době = 3 sekund) a přehraje po dobu 5 sekund, koncové době = 0:0:8.  
+- Druhý klíčový snímek animuje od 100 do 200. Spustí se po skončení prvního klíčového snímku (v čase = 3 sekundy) a hraje se po dobu 5 sekund, končí v čase = 0:0:8.  
   
-- Třetí klíčový snímek animuje z hodnoty 200 na 500. Začne při ukončení druhého klíčové rámečku (v době = 8 sekund) a přehraje na 1 sekundu koncové době = 0:0:9.  
+- Třetí klíčový snímek animuje od 200 do 500. Spustí se, když druhý klíčový snímek skončí (v čase = 8 sekund) a hraje se po dobu 1 sekundy, končí v čase = 0:0:9.  
   
-- Čtvrtý klíčový snímek animuje od 500 do 600. Začne při ukončení třetí klíčových snímků (v době = 9 sekund) a přehraje na 1 sekundu koncové době = 0:0:10.  
+- Čtvrtý klíčový snímek animuje od 500 do 600. Spustí se, když třetí klíčový snímek končí (v čase = 9 sekund) a hraje po dobu 1 sekundy, končící v čase = 0:0:10.  
   
  [!code-xaml[keyframes_ovw_snippet#TimeSpanKeyTimeExample](~/samples/snippets/csharp/VS_Snippets_Wpf/keyframes_ovw_snippet/CS/KeyTimesExample.xaml#timespankeytimeexample)]  
   
-### <a name="percentage-values"></a>Procento hodnoty  
- Procentuální hodnota určuje, že klíčový snímek končí určité procento animace <xref:System.Windows.Media.Animation.Timeline.Duration%2A>. V [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)], zadejte procento jako čísla následované `%` symbol. V kódu, můžete použít <xref:System.Windows.Media.Animation.KeyTime.FromPercent%2A> metoda a předat ji <xref:System.Double> procentuální hodnota. Hodnota musí být větší než nebo rovna 0 a menší nebo rovna 100 procent. Následující příklad ukazuje s určitou dobou trvání animace 10 sekund a čtyři klíčové snímky, jejichž klíče časy jsou určené jako procenta.  
+### <a name="percentage-values"></a>Procentuální hodnoty  
+ Procentuální hodnota určuje, že klíčový snímek končí <xref:System.Windows.Media.Animation.Timeline.Duration%2A>v určitém procentu animace . V [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]písmenu a) určíte procento `%` jako číslo následované symbolem. V kódu použijete <xref:System.Windows.Media.Animation.KeyTime.FromPercent%2A> metodu a <xref:System.Double> předáte ji označující procento. Hodnota musí být větší nebo rovna 0 a menší nebo rovna 100 procent. Následující příklad ukazuje animaci s dobou trvání 10 sekund a čtyři klíčové snímky, jejichž klíčové časy jsou určeny jako procenta.  
   
-- První klíčové rámečku animuje od základní hodnoty 100 přes první 3 sekundy, koncové době = 0:0:3.  
+- První klíčový snímek animuje ze základní hodnoty na 100 během prvních 3 sekund, končící v čase = 0:0:3.  
   
-- Druhý klíčový snímek animuje ze 100 na 200. Spustí po ukončení první klíčových snímků (v době = 3 sekund) a přehraje po dobu 5 sekund, koncové době = 0:0:8 (0,8 * 10 = 8).  
+- Druhý klíčový snímek animuje od 100 do 200. Spustí se po skončení prvního klíčového snímku (v čase = 3 sekundy) a hraje se po dobu 5 sekund, končí v čase = 0:0:8 (0,8 * 10 = 8).  
   
-- Třetí klíčový snímek animuje z hodnoty 200 na 500. Začne při ukončení druhého klíčové rámečku (v době = 8 sekund) a přehraje na 1 sekundu koncové době = 0:0:9 (0.9 * 10 = 9).  
+- Třetí klíčový snímek animuje od 200 do 500. Spustí se, když druhý klíčový snímek skončí (v čase = 8 sekund) a přehraje se po dobu 1 sekundy, končí v čase = 0:0:9 (0,9 * 10 = 9).  
   
-- Čtvrtý klíčový snímek animuje od 500 do 600. Začne při ukončení třetí klíčových snímků (v době = 9 sekund) a přehraje na 1 sekundu koncové době = 0:0:10 (1 * 10 = 10).  
+- Čtvrtý klíčový snímek animuje od 500 do 600. Spustí se, když třetí klíčový snímek končí (v čase = 9 sekund) a hraje se po dobu 1 sekundy, končí v čase = 0:0:10 (1 * 10 = 10).  
   
  [!code-xaml[keyframes_ovw_snippet#PercentageKeyTimeExample](~/samples/snippets/csharp/VS_Snippets_Wpf/keyframes_ovw_snippet/CS/KeyTimesExample.xaml#percentagekeytimeexample)]  
   
-### <a name="special-value-uniform"></a>Zvláštní hodnota, Uniform  
- Použití <xref:System.Windows.Media.Animation.KeyTime.Uniform%2A> časování, pokud chcete, aby každý klíčový rámec stejné množství času se.  
+### <a name="special-value-uniform"></a>Speciální hodnota, Uniforma  
+ Časování použijte, <xref:System.Windows.Media.Animation.KeyTime.Uniform%2A> pokud chcete, aby každý klíčový snímek zabral stejnou dobu.  
   
- A <xref:System.Windows.Media.Animation.KeyTime.Uniform%2A> dostupný čas klíčovým momentem stejně vydělí počtem klíčových snímků určit čas ukončení každý klíčový snímek. Následující příklad ukazuje animace s určitou dobou trvání 10 sekund a čtyři klíčové snímky krát jejichž klíče jsou zadány jako <xref:System.Windows.Media.Animation.KeyTime.Uniform%2A>.  
+ Klíčový <xref:System.Windows.Media.Animation.KeyTime.Uniform%2A> čas vydělí dostupný čas rovnoměrně počtem klíčových snímků, aby se určil čas ukončení každého klíčového snímku. Následující příklad ukazuje animaci s dobou trvání 10 sekund a <xref:System.Windows.Media.Animation.KeyTime.Uniform%2A>čtyři klíčové snímky, jejichž klíčové časy jsou určeny jako .  
   
-- První klíčové rámečku animuje od základní hodnoty 100 nad prvních 2,5 sekund koncové době = 0:0:2.5.  
+- První klíčový snímek animuje ze základní hodnoty na 100 během prvních 2,5 sekundy, končící v čase = 0:0:2.5.  
   
-- Druhý klíčový snímek animuje ze 100 na 200. Spustí po ukončení první klíčových snímků (v době = 2,5 sekund) a přehraje přibližně 2,5 sekund koncové době = 0:0:5.  
+- Druhý klíčový snímek animuje od 100 do 200. Spustí se po ukončení prvního klíčového snímku (v čase = 2,5 sekundy) a přehraje se přibližně 2,5 sekundy a končí v čase = 0:0:5.  
   
-- Třetí klíčový snímek animuje z hodnoty 200 na 500. Začne při ukončení druhého klíčové rámečku (v době = 5 sekund) a přehraje 2,5 sekund koncové době = 0:0:7.5.  
+- Třetí klíčový snímek animuje od 200 do 500. Spustí se, když druhý klíčový snímek skončí (v čase = 5 sekund) a hraje se po dobu 2,5 sekundy, končí v čase = 0:0:7.5.  
   
-- Čtvrtý klíčový snímek animuje od 500 do 600. Začne při ukončení druhého klíčové rámečku (v době = 7.5 sekund) a přehraje 2,5 sekund koncové době = 0:0:1.  
+- Čtvrtý klíčový snímek animuje od 500 do 600. Spustí se, když druhý klíčový snímek skončí (v čase = 7,5 sekundy) a hraje se po dobu 2,5 sekundy, končí v čase = 0:0:1.  
   
  [!code-xaml[keyframes_ovw_snippet#UniformKeyTimeExample](~/samples/snippets/csharp/VS_Snippets_Wpf/keyframes_ovw_snippet/CS/KeyTimesExample.xaml#uniformkeytimeexample)]  
   
-### <a name="special-value-paced"></a>Zvláštní hodnota tempem  
- Použití <xref:System.Windows.Media.Animation.KeyTime.Paced%2A> časování, pokud chcete animovat tempu.  
+### <a name="special-value-paced"></a>Speciální hodnota, tempo  
+ Časování použijte, <xref:System.Windows.Media.Animation.KeyTime.Paced%2A> když chcete animovat konstantní rychlostí.  
   
- A <xref:System.Windows.Media.Animation.KeyTime.Paced%2A> klíčovým momentem přiděluje čas dostupnosti podle délku každého klíčové snímky k určení doby trvání jednotlivých snímků.  Získají tak chování rychlost nebo rychlost animace zůstává konstantní.  Následující příklad ukazuje animace s určitou dobou trvání 10 sekund a tří klíčových snímků krát jejichž klíče jsou zadány jako <xref:System.Windows.Media.Animation.KeyTime.Paced%2A>.  
+ Čas <xref:System.Windows.Media.Animation.KeyTime.Paced%2A> klíče přiděluje dostupný čas podle délky každého klíčového snímku k určení doby trvání každého snímku.  To bude poskytovat chování, které rychlost nebo tempo animace zůstává konstantní.  Následující příklad ukazuje animaci s dobou trvání 10 sekund a <xref:System.Windows.Media.Animation.KeyTime.Paced%2A>tři klíčové snímky, jejichž klíčové časy jsou určeny jako .  
   
  [!code-xaml[keyframes_ovw_snippet#PacedKeyTimeExample](~/samples/snippets/csharp/VS_Snippets_Wpf/keyframes_ovw_snippet/CS/KeyTimesExample.xaml#pacedkeytimeexample)]  
   
- Všimněte si, že pokud je klíčovým momentem poslední klíčové rámečku <xref:System.Windows.Media.Animation.KeyTime.Paced%2A> nebo <xref:System.Windows.Media.Animation.KeyTime.Uniform%2A>, nastaví se jeho vyřešení klíčovým momentem do 100 procent. Pokud je první klíče snímek s více snímky animace tempem, jeho vyřešení klíčovým momentem se nastaví na hodnotu 0. (Pokud klíčový rámec kolekce obsahuje pouze jeden klíčový snímek a je tempem klíčový snímek, jeho vyřešení klíčovým momentem se nastavit na 100 procent.)  
+ Všimněte si, že pokud je <xref:System.Windows.Media.Animation.KeyTime.Paced%2A> čas <xref:System.Windows.Media.Animation.KeyTime.Uniform%2A>klíče posledního klíčového snímku nebo , jeho přeložený čas klíče bude nastaven na 100 procent. Pokud první klíčový snímek v animaci s více snímkem přecházel, bude jeho vyřešený čas klíče nastaven na 0. (Pokud kolekce klíčových snímků obsahuje pouze jeden klíčový snímek a jedná se o klíčový snímek s tempem, bude jeho čas vyřešeného klíče nastaven na 100 procent.)  
   
- Různých klíčových snímků v rámci jednoho klíčového snímku animace může pomocí různých klíčovým momentem typů.  
+ Různé klíčové snímky v rámci animace jednoho klíčového snímku mohou používat různé typy času kláves.  
   
-<a name="combiningkeytimes"></a>   
-## <a name="combining-key-times-out-of-order-key-frames"></a>Kombinace klíče časy, snímků klíče mimo pořadí  
- Použitím klíčových snímků můžete použít s různými <xref:System.Windows.Media.Animation.KeyTime> typů ve stejném animace hodnot. A i když se doporučuje, přidejte klíčové snímky v pořadí, ve kterém by měl přehrát, není nutné. Animace a časování systém je dokáže řešení mimo pořadí klíčových snímků. Klíčové snímky pomocí neplatné klíče časy jsou ignorovány.  
+<a name="combiningkeytimes"></a>
+## <a name="combining-key-times-out-of-order-key-frames"></a>Kombinace časů klíčů, mimopořadí klíčových snímků  
+ Klíčové snímky s různými <xref:System.Windows.Media.Animation.KeyTime> typy hodnot můžete použít ve stejné animaci. A i když se doporučuje přidat klíčové snímky v pořadí, ve kterém by měly hrát, není to nutné. Animační a časovací systém je schopen vyřešit mimopořadí klíčových snímků. Klíčové snímky s neplatnými časy klíčů jsou ignorovány.  
   
- Následující seznam popisuje postup, kterým jsou klíče časy pro klíčové snímky animace klíčových snímků.  
+ Následující seznam popisuje postup, podle kterého jsou vyřešeny klíčové časy pro klíčové snímky animace klíčových snímků.  
   
-1. Vyřešit <xref:System.TimeSpan> <xref:System.Windows.Media.Animation.KeyTime> hodnoty.  
+1. Vyřešte <xref:System.TimeSpan> <xref:System.Windows.Media.Animation.KeyTime> hodnoty.  
   
-2. Určit, animace *celkový čas interpolace*, celkový čas potřebný animace klíčových snímků dokončete dopředné iterace.  
+2. Určete *celkovou dobu interpolace*animace , celkový čas, který trvá animace klíčových snímků k dokončení iterace vpřed.  
   
-    1. Pokud se animace <xref:System.Windows.Media.Animation.Timeline.Duration%2A> není <xref:System.Windows.Duration.Automatic%2A> nebo <xref:System.Windows.Duration.Forever%2A>, interpolace celkový čas je hodnota animace <xref:System.Windows.Media.Animation.Timeline.Duration%2A> vlastnost.  
+    1. Pokud animace <xref:System.Windows.Media.Animation.Timeline.Duration%2A> není <xref:System.Windows.Duration.Automatic%2A> nebo <xref:System.Windows.Duration.Forever%2A>, celková doba interpolace je hodnota <xref:System.Windows.Media.Animation.Timeline.Duration%2A> vlastnosti animace.  
   
-    2. V opačném případě je největší interpolace celkový čas <xref:System.TimeSpan> <xref:System.Windows.Media.Animation.KeyTime> hodnotu zadanou mezi klíčové snímky, pokud nějaké existují.  
+    2. V opačném případě je celková <xref:System.TimeSpan> <xref:System.Windows.Media.Animation.KeyTime> doba interpolace největší hodnotou zadanou mezi klíčovými snímky, pokud existují.  
   
-    3. V opačném případě interpolace celkový čas je 1 sekunda.  
+    3. V opačném případě je celková doba interpolace 1 sekunda.  
   
-3. Celkový počet interpolace časovou hodnotu použijte k vyřešení <xref:System.Windows.Media.Animation.KeyTimeType.Percent> <xref:System.Windows.Media.Animation.KeyTime> hodnoty.  
+3. K vyřešení <xref:System.Windows.Media.Animation.KeyTimeType.Percent> <xref:System.Windows.Media.Animation.KeyTime> hodnot použijte hodnotu celkové doby interpolace.  
   
-4. Vyřešit poslední klíčový snímek, je-li se už vyřešené v předchozích krocích. Pokud <xref:System.Windows.Media.Animation.KeyTime> posledního klíčového snímku je <xref:System.Windows.Media.Animation.KeyTime.Uniform%2A> nebo <xref:System.Windows.Media.Animation.KeyTime.Paced%2A>, jeho vyřešení čas bude rovnat interpolace celkový čas.  
+4. Vyřešte poslední klíčový snímek, pokud ještě nebyl vyřešen v předchozích krocích. <xref:System.Windows.Media.Animation.KeyTime> Pokud je <xref:System.Windows.Media.Animation.KeyTime.Uniform%2A> poslední klíčový snímek nebo <xref:System.Windows.Media.Animation.KeyTime.Paced%2A>, jeho vyřešený čas se bude rovnat celkovému času interpolace.  
   
-     Pokud <xref:System.Windows.Media.Animation.KeyTime> první klíčové rámečku je <xref:System.Windows.Media.Animation.KeyTime.Paced%2A> a tuto animaci má více než pro klíčové snímky vyřešit jeho <xref:System.Windows.Media.Animation.KeyTime> hodnotu nula, pokud existuje pouze jeden klíčový snímek a jeho <xref:System.Windows.Media.Animation.KeyTime> hodnotu <xref:System.Windows.Media.Animation.KeyTime.Paced%2A>, je přeložen na celkový počet čas umožňuje stručně popsat, jak je popsáno v předchozím kroku.  
+     <xref:System.Windows.Media.Animation.KeyTime> Pokud první klíčový snímek <xref:System.Windows.Media.Animation.KeyTime.Paced%2A> je a tato animace má více <xref:System.Windows.Media.Animation.KeyTime> než na klíčových snímků, vyřešit jeho hodnotu na nulu; pokud existuje pouze jeden klíčový <xref:System.Windows.Media.Animation.KeyTime> snímek a jeho hodnota je <xref:System.Windows.Media.Animation.KeyTime.Paced%2A>, je vyřešen a celkový čas interpolace, jak je popsáno v předchozím kroku.  
   
-5. Vyřešit zbývající <xref:System.Windows.Media.Animation.KeyTime.Uniform%2A> <xref:System.Windows.Media.Animation.KeyTime> hodnoty:, každý získá stejný podíl času dostupnosti.  Během tohoto procesu nevyřešené <xref:System.Windows.Media.Animation.KeyTime.Paced%2A> <xref:System.Windows.Media.Animation.KeyTime> hodnoty jsou dočasně považovány za <xref:System.Windows.Media.Animation.KeyTime.Uniform%2A> <xref:System.Windows.Media.Animation.KeyTime> hodnoty a získat dočasný přeložit čas.  
+5. Vyřešit <xref:System.Windows.Media.Animation.KeyTime.Uniform%2A> <xref:System.Windows.Media.Animation.KeyTime> zbývající hodnoty: každý z nich má stejný podíl na dostupném čase.  Během tohoto procesu <xref:System.Windows.Media.Animation.KeyTime.Paced%2A> <xref:System.Windows.Media.Animation.KeyTime> nevyřešené hodnoty <xref:System.Windows.Media.Animation.KeyTime.Uniform%2A> <xref:System.Windows.Media.Animation.KeyTime> jsou dočasně považovány za hodnoty a získat dočasný vyřešený čas.  
   
-6. Vyřešit <xref:System.Windows.Media.Animation.KeyTime> hodnoty použitím klíčových snímků s použitím klíčových snímků nejbližší je deklarovaná, které byly vyřešeny nespecifikované klíče časy <xref:System.Windows.Media.Animation.KeyTime> hodnoty.  
+6. Vyřešte <xref:System.Windows.Media.Animation.KeyTime> hodnoty klíčových snímků s neurčenými časy klíčů pomocí <xref:System.Windows.Media.Animation.KeyTime> klíčových snímků deklarovaných jako nejbližší, které mají vyřešené hodnoty.  
   
-7. Vyřešit zbývající <xref:System.Windows.Media.Animation.KeyTime.Paced%2A> <xref:System.Windows.Media.Animation.KeyTime> hodnoty. <xref:System.Windows.Media.Animation.KeyTime.Paced%2A> <xref:System.Windows.Media.Animation.KeyTime> použít <xref:System.Windows.Media.Animation.KeyTime> hodnoty sousedních klíčové snímky k určení doby jejich vyřešení.  Cílem je zajistit, aby rychlosti animace konstantní přeložit době klíčový snímek.  
+7. Vyřešte zbývající <xref:System.Windows.Media.Animation.KeyTime.Paced%2A> <xref:System.Windows.Media.Animation.KeyTime> hodnoty. <xref:System.Windows.Media.Animation.KeyTime.Paced%2A><xref:System.Windows.Media.Animation.KeyTime> pomocí <xref:System.Windows.Media.Animation.KeyTime> hodnot sousedních klíčových snímků určete jejich vyřešený čas.  Cílem je zajistit, aby rychlost animace byla konstantní kolem vyřešeného času tohoto klíčového snímku.  
   
-8. Řazení klíčových snímků v pořadí doby vyřešení (primární klíč) a pořadí deklarace (sekundární klíč), to znamená, použijte stabilní řazení podle přeložit klíčový snímek <xref:System.Windows.Media.Animation.KeyTime> hodnoty.  
+8. Seřaďte klíčové snímky podle vyřešeného času (primární klíč) a pořadí deklarace (sekundární klíč), tj. <xref:System.Windows.Media.Animation.KeyTime>  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Media.Animation.KeyTime>
 - <xref:System.Windows.Media.Animation.KeySpline>
 - <xref:System.Windows.Media.Animation.Timeline>
-- [Ukázka animace klíčových křivky](https://go.microsoft.com/fwlink/?LinkID=160011)
+- [Ukázka animace Spline klíče](https://github.com/Microsoft/WPF-Samples/tree/master/Animation/KeySplineAnimations)
 - [Ukázka animace klíčových snímků](https://go.microsoft.com/fwlink/?LinkID=160012)
 - [Přehled animace](animation-overview.md)
 - [Přehled scénářů](storyboards-overview.md)
-- [Témata s postupy ke klíčovým snímkům](key-frame-animation-how-to-topics.md)
+- [Témata animace klíčových snímků](key-frame-animation-how-to-topics.md)
 - [Přehled chování časování](timing-behaviors-overview.md)

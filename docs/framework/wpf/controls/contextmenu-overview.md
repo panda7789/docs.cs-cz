@@ -8,45 +8,45 @@ helpviewer_keywords:
 - controls [WPF], ContextMenu
 - ContextMenu controls [WPF], about ContextMenu controls
 ms.assetid: 16909c42-799a-4561-91e0-7d69dcfeea91
-ms.openlocfilehash: b973d47711632f4c0fe56f042545598272c79d2d
-ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
+ms.openlocfilehash: 4d2d8db0f614b5240705146dbe91432b96b46dd6
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/11/2020
-ms.locfileid: "77124361"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79185913"
 ---
 # <a name="contextmenu-overview"></a>ContextMenu – přehled
-Třída <xref:System.Windows.Controls.ContextMenu> představuje prvek, který zpřístupňuje funkce pomocí <xref:System.Windows.Controls.Menu>pro konkrétní kontext. Uživatel obvykle zpřístupňuje <xref:System.Windows.Controls.ContextMenu> v [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)] tak, že klikne pravým tlačítkem myši na tlačítko myši. Toto téma zavádí prvek <xref:System.Windows.Controls.ContextMenu> a poskytuje příklady, jak ho použít v [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] a kódu.  
+Třída <xref:System.Windows.Controls.ContextMenu> představuje prvek, který zveřejňuje funkce pomocí specifické <xref:System.Windows.Controls.Menu>pro kontext . Obvykle uživatel zpřístupní <xref:System.Windows.Controls.ContextMenu> v [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)] pravým tlačítkem myši. Toto téma <xref:System.Windows.Controls.ContextMenu> představuje prvek a poskytuje příklady, [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] jak jej používat v a kód.  
 
-<a name="contextmenu_control"></a>   
-## <a name="contextmenu-control"></a>Dopředné řízení  
- <xref:System.Windows.Controls.ContextMenu> je připojen ke konkrétnímu ovládacímu prvku. Prvek <xref:System.Windows.Controls.ContextMenu> umožňuje uživatelům prezentovat seznam položek, které určují příkazy nebo možnosti, které jsou přidruženy ke konkrétnímu ovládacímu prvku, například <xref:System.Windows.Controls.Button>. Kliknutím pravým tlačítkem myši na ovládací prvek zobrazíte nabídku. Obvykle kliknutím na <xref:System.Windows.Controls.MenuItem> otevřete podnabídku nebo způsobí, že aplikace provede příkaz.  
+<a name="contextmenu_control"></a>
+## <a name="contextmenu-control"></a>Ovládací prvek ContextMenu  
+ A <xref:System.Windows.Controls.ContextMenu> je připojen ke konkrétnímu ovládacímu prvku. Tento <xref:System.Windows.Controls.ContextMenu> prvek umožňuje uživatelům prezentovat seznam položek, které určují příkazy nebo možnosti, které <xref:System.Windows.Controls.Button>jsou přidruženy k určitému ovládacímu prvku, například . Uživatelé klikněte pravým tlačítkem myši na ovládací prvek, aby se nabídka zobrazila. Obvykle klepnutím na <xref:System.Windows.Controls.MenuItem> otevře podnabídku nebo způsobí, že aplikace provést příkaz.  
   
-<a name="creating_contextmenus"></a>   
-## <a name="creating-contextmenus"></a>Vytváření beznabídku  
- Následující příklady ukazují, jak vytvořit <xref:System.Windows.Controls.ContextMenu> s podnabídkami. Ovládací prvky <xref:System.Windows.Controls.ContextMenu> jsou připojeny k ovládacím prvkům tlačítek.  
+<a name="creating_contextmenus"></a>
+## <a name="creating-contextmenus"></a>Vytváření kontextových nabídek  
+ Následující příklady ukazují, jak <xref:System.Windows.Controls.ContextMenu> vytvořit s podnabídkami. Ovládací <xref:System.Windows.Controls.ContextMenu> prvky jsou připojeny k ovládacím prvkům tlačítek.  
   
  [!code-xaml[ContextMenu#1](~/samples/snippets/csharp/VS_Snippets_Wpf/ContextMenu/CSharp/Pane1.xaml#1)]  
   
  [!code-csharp[ContextMenu#2](~/samples/snippets/csharp/VS_Snippets_Wpf/ContextMenu/CSharp/Pane1.xaml.cs#2)]
  [!code-vb[ContextMenu#2](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ContextMenu/VisualBasic/Pane1.xaml.vb#2)]  
   
-<a name="applying_styles_to_contextmenu"></a>   
-## <a name="applying-styles-to-a-contextmenu"></a>Aplikování stylů na nabídku  
- Pomocí <xref:System.Windows.Style>ovládacího prvku můžete významně změnit vzhled a chování <xref:System.Windows.Controls.ContextMenu> bez psaní vlastního ovládacího prvku. Kromě nastavení vizuálních vlastností lze také použít styly na části ovládacího prvku. Například můžete změnit chování částí ovládacího prvku pomocí vlastností nebo můžete přidat části do nebo změnit rozložení <xref:System.Windows.Controls.ContextMenu>a. Následující příklady znázorňují několik způsobů, jak přidat styly pro ovládací prvky <xref:System.Windows.Controls.ContextMenu>.  
+<a name="applying_styles_to_contextmenu"></a>
+## <a name="applying-styles-to-a-contextmenu"></a>Aplikování stylů na kontextovou nabídku  
+ Pomocí ovládacího <xref:System.Windows.Style>prvku můžete výrazně změnit vzhled a <xref:System.Windows.Controls.ContextMenu> chování bez psaní vlastního ovládacího prvku. Kromě nastavení vizuálních vlastností můžete také aplikovat styly na části ovládacího prvku. Můžete například změnit chování částí ovládacího prvku pomocí vlastností nebo můžete přidat součásti nebo <xref:System.Windows.Controls.ContextMenu>změnit rozložení . Následující příklady ukazují několik způsobů <xref:System.Windows.Controls.ContextMenu> přidání stylů do ovládacích prvků.  
   
- První příklad definuje styl nazvaný `SimpleSysResources`, který ukazuje, jak použít aktuální nastavení systému ve stylu. Příklad přiřadí <xref:System.Windows.SystemColors.MenuHighlightBrushKey%2A> jako barvu <xref:System.Windows.Controls.Control.Background%2A> a <xref:System.Windows.SystemColors.MenuTextBrushKey%2A> jako <xref:System.Windows.Controls.Control.Foreground%2A>ovou barvu <xref:System.Windows.Controls.ContextMenu>.  
+ První příklad definuje styl `SimpleSysResources`s názvem , který ukazuje, jak používat aktuální nastavení systému ve vašem stylu. Příklad přiřadí <xref:System.Windows.SystemColors.MenuHighlightBrushKey%2A> jako <xref:System.Windows.Controls.Control.Background%2A> barvu <xref:System.Windows.SystemColors.MenuTextBrushKey%2A> a <xref:System.Windows.Controls.Control.Foreground%2A> jako <xref:System.Windows.Controls.ContextMenu>barvu .  
   
 ```xaml  
 <Style x:Key="SimpleSysResources" TargetType="{x:Type MenuItem}">  
-  <Setter Property = "Background" Value=   
+  <Setter Property = "Background" Value=
     "{DynamicResource {x:Static SystemColors.MenuHighlightBrushKey}}"/>  
-  <Setter Property = "Foreground" Value=   
+  <Setter Property = "Foreground" Value=
     "{DynamicResource {x:Static SystemColors.MenuTextBrushKey}}"/>  
 </Style>  
 ```  
   
- Následující příklad používá prvek <xref:System.Windows.Trigger> ke změně vzhledu <xref:System.Windows.Controls.Menu> v reakci na události, které jsou vyvolány na <xref:System.Windows.Controls.ContextMenu>. Když uživatel přesune ukazatel myši na nabídku, vzhled <xref:System.Windows.Controls.ContextMenu>ch položek se změní.  
+ Následující příklad používá <xref:System.Windows.Trigger> prvek ke změně <xref:System.Windows.Controls.Menu> vzhledu v reakci na <xref:System.Windows.Controls.ContextMenu>události, které jsou vyvolány na . Když uživatel přesune ukazatel myši nad nabídku, změní se <xref:System.Windows.Controls.ContextMenu> vzhled položek.  
   
 ```xaml  
 <Style x:Key="Triggers" TargetType="{x:Type MenuItem}">  

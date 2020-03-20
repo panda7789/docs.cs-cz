@@ -1,17 +1,17 @@
 ---
 ms.openlocfilehash: fc315faef750d93d914104dd568078aa3fc430d4
-ms.sourcegitcommit: 337bdc5a463875daf2cc6883e5a2da97d56f5000
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/24/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "72887752"
 ---
-### <a name="rsacngverifyhash-now-returns-false-for-any-verification-failure"></a>Algoritmem RSACng. VerifyHash teď pro jakékoli selhání ověřování vrátí hodnotu false.
+### <a name="rsacngverifyhash-now-returns-false-for-any-verification-failure"></a>RSACng.VerifyHash nyní vrátí false pro všechny selhání ověření
 
 |   |   |
 |---|---|
-|Podrobnosti|Počínaje .NET Framework 4.6.2 vrátí tato metoda **hodnotu false** , pokud samotný podpis není správně naformátován. Nyní vrátí hodnotu false pro jakékoli selhání ověřování. V .NET Framework 4,6 a 4.6.1 metoda vyvolá <xref:System.Security.Cryptography.CryptographicException?displayProperty=name>, pokud samotný podpis není správně naformátován.|
-|Doporučení|Jakýkoli kód, jehož provádění závisí na zpracování <xref:System.Security.Cryptography.CryptographicException?displayProperty=name> je třeba provést, pokud se ověření nepovede a metoda vrátí **hodnotu false**.|
+|Podrobnosti|Počínaje rozhraním .NET Framework 4.6.2 vrátí tato metoda **hodnotu False,** pokud je samotný podpis špatně formátován. Nyní vrátí false pro všechny selhání ověření. V rozhraní .NET Framework 4.6 a 4.6.1 <xref:System.Security.Cryptography.CryptographicException?displayProperty=name> metoda vyvolá, pokud samotný podpis je špatně formátován.|
+|Návrh|Jakýkoli kód, jehož <xref:System.Security.Cryptography.CryptographicException?displayProperty=name> spuštění závisí na zpracování by místo toho spustit, pokud ověření selže a metoda vrátí **False**.|
 |Rozsah|Vedlejší|
 |Version|4.6.2|
 |Typ|Modul runtime|

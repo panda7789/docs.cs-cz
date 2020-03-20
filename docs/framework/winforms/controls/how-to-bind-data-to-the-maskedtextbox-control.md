@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Vytvoření vazby dat k ovládacímu prvku MaskedTextBox'
+title: 'Postupy: Připojení dat k ovládacímu prvku MaskedTextBox'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -10,29 +10,29 @@ helpviewer_keywords:
 - data binding [Windows Forms], MaskedTextBox control [Windows Forms]
 - MaskedTextBox control [Windows Forms], binding data
 ms.assetid: 34b29f07-e8df-48d4-b08b-53fcca524708
-ms.openlocfilehash: f10a19433c70eb0a1dacf99925f70d6796727da9
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 0cbb239e24b254c37c453486590185e934adf482
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64612410"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79142170"
 ---
-# <a name="how-to-bind-data-to-the-maskedtextbox-control"></a>Postupy: Vytvoření vazby dat k ovládacímu prvku MaskedTextBox
-Můžete svázat data <xref:System.Windows.Forms.MaskedTextBox> řídit stejně jako na jakýkoli jiný ovládací prvek Windows Forms. Ale pokud formátu vašich dat v databázi neodpovídá formátu očekávaném definicí maska, je potřeba změnit formát data. Následující postup ukazuje, jak to udělat <xref:System.Windows.Forms.Binding.Format> a <xref:System.Windows.Forms.Binding.Parse> události <xref:System.Windows.Forms.Binding> třídy k zobrazení samostatné telefonní číslo a Telefon rozšíření databázová pole jako jedno pole upravitelné.  
+# <a name="how-to-bind-data-to-the-maskedtextbox-control"></a>Postupy: Připojení dat k ovládacímu prvku MaskedTextBox
+Data můžete svázat <xref:System.Windows.Forms.MaskedTextBox> s ovládacím prvkem stejně jako jakýkoli jiný ovládací prvek windows forms. Pokud však formát dat v databázi neodpovídá formátu očekávanému definicí masky, bude nutné data přeformátovat. Následující postup ukazuje, jak to <xref:System.Windows.Forms.Binding.Format> provést <xref:System.Windows.Forms.Binding.Parse> pomocí <xref:System.Windows.Forms.Binding> a události třídy k zobrazení samostatné telefonní číslo a telefonní rozšíření databázová pole jako jediné upravitelné pole.  
   
- Následující postup vyžaduje, abyste měli přístup k databázi SQL serveru s ukázkovou databází Northwind nainstalované.  
+ Následující postup vyžaduje, abyste měli přístup k databázi serveru SQL Server s nainstalovanou ukázkovou databází Northwind.  
   
-### <a name="to-bind-data-to-a-maskedtextbox-control"></a>Vazba dat k ovládacímu prvku MaskedTextBox  
+### <a name="to-bind-data-to-a-maskedtextbox-control"></a>Vazba dat s ovládacím prvkem MaskedTextBox  
   
-1. Vytvoření nového projektu Windows Forms.  
+1. Vytvořte nový projekt Windows Forms.  
   
-2. Přetáhněte dva <xref:System.Windows.Forms.TextBox> ovládací prvky do formuláře; je název `FirstName` a `LastName`.  
+2. Přetáhněte <xref:System.Windows.Forms.TextBox> dva ovládací prvky do formuláře. pojmenovat `FirstName` `LastName`a .  
   
-3. Přetáhněte <xref:System.Windows.Forms.MaskedTextBox> ovládací prvek do formuláře; pojmenujte ji `PhoneMask`.  
+3. Přetáhněte <xref:System.Windows.Forms.MaskedTextBox> ovládací prvek do formuláře. pojmenujte jej `PhoneMask`.  
   
-4. Nastavte <xref:System.Windows.Forms.MaskedTextBox.Mask%2A> vlastnost `PhoneMask` k `(000) 000-0000 x9999`.  
+4. Nastavte <xref:System.Windows.Forms.MaskedTextBox.Mask%2A> vlastnost `PhoneMask` na `(000) 000-0000 x9999`.  
   
-5. Přidáte že následující obor názvů naimportuje do formuláře.  
+5. Přidejte do formuláře následující importy oboru názvů.  
   
     ```csharp  
     using System.Data.SqlClient;  
@@ -42,7 +42,7 @@ Můžete svázat data <xref:System.Windows.Forms.MaskedTextBox> řídit stejně 
     Imports System.Data.SqlClient  
     ```  
   
-6. Klikněte pravým tlačítkem na formuláři a zvolte **zobrazit kód**. Tento kód umístíte kamkoli do vaší třídy formuláře.  
+6. Klikněte pravým tlačítkem myši na formulář a zvolte **Zobrazit kód**. Umístěte tento kód kdekoli ve třídě formuláře.  
   
     ```csharp  
     Binding currentBinding, phoneBinding;  
@@ -72,8 +72,8 @@ Můžete svázat data <xref:System.Windows.Forms.MaskedTextBox> řídit stejně 
         dataConnect.Fill(employeesTable, "Employees");  
   
         // Now bind MaskedTextBox to appropriate field. Note that we must create the Binding objects  
-        // before adding them to the control - otherwise, we won't get a Format event on the   
-        // initial load.   
+        // before adding them to the control - otherwise, we won't get a Format event on the
+        // initial load.
         try  
         {  
             currentBinding = new Binding("Text", employeesTable, "Employees.FirstName");  
@@ -120,7 +120,7 @@ Můžete svázat data <xref:System.Windows.Forms.MaskedTextBox> řídit stejně 
         DataConnect.Fill(EmployeesTable, "Employees")  
   
         ' Now bind MaskedTextBox to appropriate field. Note that we must create the Binding objects  
-        ' before adding them to the control - otherwise, we won't get a Format event on the   
+        ' before adding them to the control - otherwise, we won't get a Format event on the
         ' initial load.  
         Try  
             CurrentBinding = New Binding("Text", EmployeesTable, "Employees.FirstName")  
@@ -136,7 +136,7 @@ Můžete svázat data <xref:System.Windows.Forms.MaskedTextBox> řídit stejně 
     End Sub  
     ```  
   
-7. Přidání obslužné rutiny událostí pro <xref:System.Windows.Forms.Binding.Format> a <xref:System.Windows.Forms.Binding.Parse> události zkombinovat a oddělit `PhoneNumber` a `Extension` pole z vázaného <xref:System.Data.DataSet>.  
+7. Přidejte obslužné rutiny událostí `PhoneNumber` `Extension` pro události <xref:System.Data.DataSet> <xref:System.Windows.Forms.Binding.Format> a <xref:System.Windows.Forms.Binding.Parse> zkombinujte a oddělte pole a od vázaného .  
   
     ```csharp  
     private void phoneBinding_Format(Object sender, ConvertEventArgs e)  
@@ -144,10 +144,10 @@ Můžete svázat data <xref:System.Windows.Forms.MaskedTextBox> řídit stejně 
         String ext;  
   
         DataRowView currentRow = (DataRowView)BindingContext[employeesTable, "Employees"].Current;  
-        if (currentRow["Extension"] == null)   
+        if (currentRow["Extension"] == null)
         {  
             ext = "";  
-        } else   
+        } else
         {  
             ext = currentRow["Extension"].ToString();  
         }  
@@ -163,7 +163,7 @@ Můžete svázat data <xref:System.Windows.Forms.MaskedTextBox> řídit stejně 
         String ext = phoneNumberAndExt.Substring(extIndex).Trim();  
         String phoneNumber = phoneNumberAndExt.Substring(0, extIndex).Trim();  
   
-        //Get the current binding object, and set the new extension manually.   
+        //Get the current binding object, and set the new extension manually.
         DataRowView currentRow = (DataRowView)BindingContext[employeesTable, "Employees"].Current;  
         // Remove the "x" from the extension.  
         currentRow["Extension"] = ext.Substring(1);  
@@ -194,7 +194,7 @@ Můžete svázat data <xref:System.Windows.Forms.MaskedTextBox> řídit stejně 
         Dim Ext As String = PhoneNumberAndExt.Substring(ExtIndex).Trim()  
         Dim PhoneNumber As String = PhoneNumberAndExt.Substring(0, ExtIndex).Trim()  
   
-        ' Get the current binding object, and set the new extension manually.   
+        ' Get the current binding object, and set the new extension manually.
         Dim CurrentRow As DataRowView = CType(Me.BindingContext(EmployeesTable, "Employees").Current, DataRowView)  
         ' Remove the "x" from the extension.  
         CurrentRow("Extension") = CObj(Ext.Substring(1))  
@@ -204,7 +204,7 @@ Můžete svázat data <xref:System.Windows.Forms.MaskedTextBox> řídit stejně 
     End Sub  
     ```  
   
-8. Přidejte dva <xref:System.Windows.Forms.Button> ovládací prvky do formuláře. Pojmenujte je `previousButton` a `nextButton`. Klikněte dvakrát na každé tlačítko pro přidání <xref:System.Windows.Forms.Control.Click> obslužné rutiny události a vyplňte obslužné rutiny událostí, jak je znázorněno v následujícím příkladu kódu.  
+8. Přidejte <xref:System.Windows.Forms.Button> do formuláře dva ovládací prvky. Pojmenujte je `previousButton` a `nextButton`. Poklepáním na každé <xref:System.Windows.Forms.Control.Click> tlačítko přidejte obslužnou rutinu události a vyplňte obslužné rutiny událostí, jak je znázorněno v následujícím příkladu kódu.  
   
     ```csharp  
     private void previousButton_Click(object sender, EventArgs e)  
@@ -228,10 +228,10 @@ Můžete svázat data <xref:System.Windows.Forms.MaskedTextBox> řídit stejně 
     End Sub  
     ```  
   
-9. Spusťte ukázku. Upravit data a použít **předchozí** a **Další** tlačítek a uvidíte, že data se ukládají správně do <xref:System.Data.DataSet>.  
+9. Spusťte ukázku. Upravte data a pomocí tlačítek **Předchozí** a **Další** zjistíte, že <xref:System.Data.DataSet>data jsou správně zachována na .  
   
 ## <a name="example"></a>Příklad  
- Následující příklad kódu je celý kód informacích, které je výsledkem dokončení předchozího postupu.  
+ Následující příklad kódu je úplný kód výpis, který vyplývá z dokončení předchozího postupu.  
   
  [!code-cpp[MaskedTextBoxData#1](~/samples/snippets/cpp/VS_Snippets_Winforms/MaskedTextBoxData/cpp/form1.cpp#1)]
  [!code-csharp[MaskedTextBoxData#1](~/samples/snippets/csharp/VS_Snippets_Winforms/MaskedTextBoxData/CS/form1.cs#1)]
@@ -239,16 +239,16 @@ Můžete svázat data <xref:System.Windows.Forms.MaskedTextBox> řídit stejně 
   
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
   
-- Vytvoření Vizuálu C# nebo projektu jazyka Visual Basic.  
+- Vytvořte projekt Visual C# nebo Visual Basic.  
   
-- Přidat <xref:System.Windows.Forms.TextBox> a <xref:System.Windows.Forms.MaskedTextBox> ovládacích prvků do formuláře, jak je popsáno v předchozím postupu.  
+- Přidejte <xref:System.Windows.Forms.TextBox> <xref:System.Windows.Forms.MaskedTextBox> ovládací prvky a do formuláře, jak je popsáno v předchozím postupu.  
   
-- Otevření souboru se zdrojovým kódem pro výchozí formuláře projektu.  
+- Otevřete soubor zdrojového kódu pro výchozí formulář projektu.  
   
-- Zdrojový kód v tomto souboru nahraďte kód uvedený v předchozí části "Kód".  
+- Nahraďte zdrojový kód v tomto souboru kódem uvedeným v předchozí části "Kód".  
   
 - Zkompilujte aplikaci.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Návod: Práce s ovládacím prvkem MaskedTextBox](walkthrough-working-with-the-maskedtextbox-control.md)

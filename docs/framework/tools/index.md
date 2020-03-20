@@ -8,21 +8,21 @@ helpviewer_keywords:
 - running .NET Framework tools
 ms.assetid: a2ca532d-91f7-426a-9303-417c2ee1247c
 ms.openlocfilehash: 4503e2cff18f4aa901d20c76cfe4076a7fed3600
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "75715770"
 ---
 # <a name="net-framework-tools"></a>.NET Framework – nástroje
 
 Nástroje .NET Framework usnadňují vývoj, nasazení a správu aplikací a komponent určených pro rozhraní .NET Framework.
 
-Většina nástrojů rozhraní .NET Framework popsaná v této části je automaticky nainstalována se sadou Visual Studio. Pokud si chcete stáhnout Visual Studio, přejděte na stránku se [soubory ke stažení pro Visual Studio](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2019) .
+Většina nástrojů rozhraní .NET Framework popsaná v této části je automaticky nainstalována se sadou Visual Studio. Chcete-li stáhnout Visual Studio, navštivte stránku [Stažení sady Visual Studio.](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2019)
 
-Všechny nástroje můžete spustit z příkazového řádku s výjimkou rozhraní Assembly Cache Viewer (*Shfusion. dll*). K souboru *Shfusion. dll* je zapotřebí přistupovat z Průzkumníka souborů.
+Všechny nástroje můžete spustit z příkazového řádku s výjimkou prohlížeče mezipaměti sestavení (*Shfusion.dll*). Soubor *Shfusion.dll* je nutné získat z Průzkumníka souborů.
   
-Nejlepším způsobem, jak spustit nástroje příkazového řádku, je použít příkazový řádek pro vývojáře pro sadu Visual Studio. Tyto nástroje umožňují spustit nástroje snadno, bez přechodu do instalační složky. Další informace najdete v tématu [výzvy k zadání příkazu](developer-command-prompt-for-vs.md).
+Nejlepším způsobem, jak spustit nástroje příkazového řádku, je použít příkazový řádek pro vývojáře pro sadu Visual Studio. Tyto nástroje umožňují spustit nástroje snadno, bez přechodu do instalační složky. Další informace naleznete v [příkazových koncích](developer-command-prompt-for-vs.md).
 
 > [!NOTE]
 > Některé nástroje jsou určeny konkrétně pro 32bitové nebo 64bitové počítače. Ujistěte se, že spouštíte příslušnou verzi nástroje pro váš počítač.
@@ -36,7 +36,7 @@ Generuje soubor, který má manifest sestavení z modulů nebo souborů prostře
 Převádí definice typů v knihovně typů modelu COM pro ovládací prvek ActiveX na ovládací prvek Windows Forms.
 
 - [Caspol.exe (nástroj zásad zabezpečení přístupu kódu)](caspol-exe-code-access-security-policy-tool.md)  
-Umožňuje zobrazit a konfigurovat zásady zabezpečení pro úroveň zásad počítače, úroveň zásad uživatele a úroveň zásad organizace. V .NET Framework 4 nebo novějším tento nástroj nemá vliv na zásady zabezpečení přístupu kódu (CAS), pokud není [element\<legacyCasPolicy >](../configure-apps/file-schema/runtime/netfx40-legacysecuritypolicy-element.md) nastaven na `true`. Další informace najdete v tématu [změny zabezpečení](../security/security-changes.md).
+Umožňuje zobrazit a konfigurovat zásady zabezpečení pro úroveň zásad počítače, úroveň zásad uživatele a úroveň zásad organizace. V rozhraní .NET Framework 4 a novější chod tohoto nástroje nemá vliv na zásady `true`zabezpečení přístupu kódu (CAS), pokud [ \<není nastaven a nenastaven prvek legacyCasPolicy>](../configure-apps/file-schema/runtime/netfx40-legacysecuritypolicy-element.md) . Další informace naleznete v [tématu Změny zabezpečení](../security/security-changes.md).
 
 - [Cert2spc.exe (nástroj pro testování certifikátu vydavatele softwaru)](cert2spc-exe-software-publisher-certificate-test-tool.md)  
 Vytvoří certifikát vydavatele softwaru (SPC) z jednoho nebo více certifikátů X.509. Tento nástroj slouží pouze pro účely testování.
@@ -45,10 +45,10 @@ Vytvoří certifikát vydavatele softwaru (SPC) z jednoho nebo více certifikát
 Spravuje certifikáty, seznamy důvěryhodných certifikátů (CTL) a seznamy odvolaných certifikátů (CRL).
 
 - [Clrver.exe (nástroj verze CLR)](clrver-exe-clr-version-tool.md)  
-Oznamuje všechny nainstalované verze modulu CLR (Common Language Runtime) v počítači.
+Hlásí všechny nainstalované verze clr (COMMON Language runtime) v počítači.
 
 - [Příkazové řádky](developer-command-prompt-for-vs.md)  
-Umožňuje snadnější použití .NET Framework nástrojů. Jedná se o příkazový řádek, který automaticky nastaví konkrétní proměnné prostředí.
+Umožňuje snadněji používat nástroje rozhraní .NET Framework. Jedná se o příkazový řádek, který automaticky nastaví specifické proměnné prostředí.
 
 - [CorFlags.exe (CorFlags – převodní nástroj)](corflags-exe-corflags-conversion-tool.md)  
 Dovoluje nastavit CorFlags sekci hlavičky obrazu přenositelného spustitelného souboru (PE).
@@ -66,16 +66,16 @@ Generuje přenositelný spustitelný soubor (PE) z převodního jazyka (IL; Inte
 Zpracovává přenosné spustitelné (PE) soubory obsahující kód jazyka IL a vytváří textový soubor, který může být vstupem do assembleru jazyka IL (Ilasm.exe).
 
 - [Installutil.exe (instalační nástroj)](installutil-exe-installer-tool.md)  
-Dovoluje nainstalovat a odinstalovat prostředky serveru pomocí spuštění instalačních komponent v určeném sestavení. (Funguje se třídami v oboru názvů <xref:System.Configuration.Install>.)
+Dovoluje nainstalovat a odinstalovat prostředky serveru pomocí spuštění instalačních komponent v určeném sestavení. (Pracuje s třídami v oboru <xref:System.Configuration.Install> názvů.)
 
 - [Lc.exe (kompilátor licencí)](lc-exe-license-compiler.md)  
-Přečte textové soubory, které obsahují informace o licencování a vytvoří soubor *. licenses* , který může být vložen do spustitelného souboru modulu CLR jako prostředek.
+Čte textové soubory, které obsahují informace o licencích, a vytvoří soubor *.licenses,* který lze vložit do spustitelného souboru s běžným jazykem jako prostředek.
 
 - [Mage.exe (Manifest Generation and Editing Tool)](mage-exe-manifest-generation-and-editing-tool.md)  
-Dovoluje vytvářet, upravovat a podepisovat aplikace a manifesty nasazení. Nástroj *Mage. exe* je možné spustit jak v rámci nástroje příkazového řádku, tak i z jiných aplikací pro systém Windows, včetně aplikací ASP.NET.
+Dovoluje vytvářet, upravovat a podepisovat aplikace a manifesty nasazení. Jako nástroj příkazového řádku lze nástroj *Mage.exe* spustit jak z dávkových skriptů, tak z jiných aplikací založených na systému Windows, včetně ASP.NET aplikací.
 
 - [MageUI.exe (Manifest Generation and Editing Tool, grafický klient)](mageui-exe-manifest-generation-and-editing-tool-graphical-client.md)  
-Podporuje stejnou funkci jako nástroj příkazového řádku Mage.exe, ale používá uživatelské rozhraní (UI) založené na Windows. Podporuje stejné funkce jako nástroj příkazového řádku *Mage. exe*, ale používá uživatelské rozhraní (UI) založené na systému Windows.
+Podporuje stejnou funkci jako nástroj příkazového řádku Mage.exe, ale používá uživatelské rozhraní (UI) založené na Windows. Podporuje stejné funkce jako nástroj příkazového řádku *Mage.exe*, ale používá uživatelské rozhraní (UI) založené na systému Windows.
 
 - [MDbg.exe (ladicí program z příkazového řádku .NET Framework)](mdbg-exe.md)  
 Pomáhá výrobcům nástrojů a vývojářům aplikací najít a opravit chyby v programech, které využívají modul CLR rozhraní .NET Framework. Tento nástroj používá API ladění za běhu k poskytování služeb ladění.
@@ -99,10 +99,10 @@ Načte metadata v rámci sestavení a přidá nezbytné položky do registru. To
 Načte a zaregistruje sestavení, vygeneruje a nainstaluje knihovny typů do zadané aplikace modelu COM+ verze 1.0 a konfiguruje služby, které jste programově přidali do třídy.
 
 - [Resgen.exe (generátor zdrojových souborů)](resgen-exe-resource-file-generator.md)  
-Převede soubory textu ( *. txt* nebo *. restext*) a souborů formátu prostředků založených na jazyce XML ( *. resx*) na binární soubory modulu CLR ( *. Resources*), které mohou být vloženy do binárního spustitelného souboru modulu runtime nebo kompilovány do satelitních sestavení.
+Převede soubory textu (*.txt* nebo *.restext*) a xml-based resource format (*.resx*) soubory na binární soubory běžného modulu runtime (*.resources*), které mohou být vloženy do binárního spustitelného souboru runtime nebo zkompilovány do satelitních sestavení.
 
 - [SecAnnotate.exe (nástroj Security Annotator rozhraní .NET)](secannotate-exe-net-security-annotator-tool.md)  
-Identifikuje `SecurityCritical` a `SecuritySafeCritical` části sestavení.
+Identifikuje `SecurityCritical` a `SecuritySafeCritical` části sestavy.
 
 - [SignTool.exe (nástroj pro podpis)](signtool-exe.md)  
 Digitálně podepisuje soubory, ověřuje podpisy v souborech a opatřuje soubory časovými razítky.
@@ -126,15 +126,15 @@ Generuje knihovnu typů, které popisují typy definované v sestavení modulu C
 Převede definice typu nalezené v knihovně typů modelu COM na ekvivalentní definice v sestavení Common Language Runtime.
 
 - [Winmdexp.exe (Nástroj pro export metadat prostředí Windows Runtime)](winmdexp-exe-windows-runtime-metadata-export-tool.md)  
-Exportuje sestavení .NET Framework, které je kompilováno jako soubor *. winmdobj* , do komponenty prostředí Windows Runtime, která je zabalena jako soubor *. winmd* , který obsahuje prostředí Windows Runtime metadata i informace o implementaci.
+Exportuje sestavení rozhraní .NET Framework, které je zkompilováno jako soubor *.winmdobj,* do součásti prostředí Windows Runtime, která je zabalena jako soubor *.winmd,* který obsahuje metadata prostředí Windows Runtime i informace o implementaci.
 
 - [Winres.exe (editor prostředků Windows Forms)](winres-exe-windows-forms-resource-editor.md)  
-Pomáhá lokalizovat prostředky uživatelského rozhraní (soubory *. resx* nebo *. Resources* ), které jsou používány model Windows Forms. Je možné přeložit řetězce a změnit velikost, přesunout a skrýt ovládací prvky pro přizpůsobení lokalizovaných řetězců.
+Pomáhá lokalizovat prostředky uživatelského rozhraní *(.resx* nebo *.resources* files), které jsou používány windows forms. Je možné přeložit řetězce a změnit velikost, přesunout a skrýt ovládací prvky pro přizpůsobení lokalizovaných řetězců.
 
 ## <a name="related-sections"></a>Související oddíly
 
-- [WPF – nástroje](https://docs.microsoft.com/previous-versions/ms742404(v=vs.110))  
-Obsahuje nástroje, jako je například nástroj isXPS (isXPS. exe) a nástroje pro profilaci výkonu.
+- [Nástroje WPF](https://docs.microsoft.com/previous-versions/ms742404(v=vs.110))  
+Obsahuje nástroje, jako je nástroj isXPS Conformance (isXPS.exe) a nástroje pro profilování výkonu.
 
-- [Nástroje Windows Communication Foundation](../wcf/tools.md)  
+- [Nástroje služby Windows Communication Foundation](../wcf/tools.md)  
 Obsahuje nástroje, které usnadňují vytváření, zavádění a správu aplikací služby Windows Communication Foundation (WCF).

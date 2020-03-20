@@ -1,18 +1,17 @@
 ---
-ms.openlocfilehash: e613f0c52c77efebf250f5935d5cbfc29bc09a6b
-ms.sourcegitcommit: d55e14eb63588830c0ba1ea95a24ce6c57ef8c8c
+ms.openlocfilehash: 6fafb689af5d50b31b19f5d1fe7090a6c256ca45
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/11/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "67802460"
 ---
-### <a name="wpf-printing-stack-update"></a>Aktualizace zásobníku tisk WPF
+### <a name="wpf-printing-stack-update"></a>Aktualizace zásobníku tisku WPF
 
 |   |   |
 |---|---|
-|Podrobnosti|Pomocí rozhraní API pro tisk na WPF <xref:System.Printing.PrintQueue?displayProperty=name> nyní volat okna Tisk dokumentu balíčku API ve prospěch teď zastaralé rozhraní API tisk XPS. Změny s použitelnost v úvahu; uživatelé ani vývojáři měli vidět všechny změny v chování nebo použití rozhraní API. Nový zásobník tisk je standardně povolená, když běží v systému Windows 10 Creators Update. Staré zásobníku tisku bude nadále fungovat stejně jako v minulosti ve starších verzích Windows.|
-|Doporučení|Chcete-li použít staré zásobníku ve Windows 10 Creators Update, nastavte <code>UseXpsOMPrinting</code> hodnota REG_DWORD <code>HKEY_CURRENT_USER\Software\Microsoft\.NETFramework\Windows Presentation Foundation\Printing</code> klíč registru, který <code>1</code>.|
-|Scope|Edge|
+|Podrobnosti|WPF je tisková rozhraní <xref:System.Printing.PrintQueue?displayProperty=name> API pomocí nyní volání okna rozhraní API balíčku tiskových dokumentů ve prospěch nyní zastaralé XPS Print API. Změna byla provedena s ohledem na použitelnost; uživatelé ani vývojáři by měli vidět žádné změny v chování nebo využití rozhraní API. Nový tiskový zásobník je ve výchozím nastavení povolen při spuštění v aktualizaci Windows 10 Creators Update. Starý tiskový zásobník bude i nadále fungovat stejně jako dříve ve starších verzích systému Windows.|
+|Návrh|Chcete-li použít starý zásobník v aktualizaci <code>UseXpsOMPrinting</code> Windows 10 <code>HKEY_CURRENT_USER\Software\Microsoft\.NETFramework\Windows Presentation Foundation\Printing</code> Creators <code>1</code>Update, nastavte REG_DWORD hodnotu klíče registru na .|
+|Rozsah|Edge|
 |Version|4.7|
-|type|Modul runtime|
-
+|Typ|Modul runtime|

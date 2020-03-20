@@ -6,22 +6,22 @@ helpviewer_keywords:
 - presence of WPT [WPF], detecting
 - detecting WPF presence [WPF]
 ms.assetid: 7f71d652-1749-4379-945a-aa2e3994cb43
-ms.openlocfilehash: 41010e615b6b3d10ebf6adc0e3f871873e94f409
-ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
+ms.openlocfilehash: 60868661df442849db3f5421f8ea33f790fd83fc
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/11/2020
-ms.locfileid: "77124452"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79187355"
 ---
 # <a name="how-to-detect-whether-the-net-framework-30-is-installed"></a>Postupy: Zjištění, zda je instalována platforma .NET Framework 3.0
-Než můžou správci nasadit aplikace Microsoft .NET Framework v systému, musí nejdřív ověřit, že je k dispozici modul runtime .NET Framework. Toto téma poskytuje skript napsaný ve formátu HTML/JavaScript, který mohou správci použít k určení, zda .NET Framework k dispozici v systému.  
+Před tím, než správci mohou nasadit aplikace rozhraní Microsoft .NET Framework do systému, musí nejprve potvrdit, že je k dispozici zaběhový čas rozhraní .NET Framework. Toto téma obsahuje skript napsaný v jazyce HTML/JavaScript, který mohou správci použít k určení, zda je rozhraní .NET Framework v systému k dispozici.  
   
 > [!NOTE]
-> Podrobnější informace o instalaci, nasazení a detekci .NET Framework Microsoftu najdete v diskuzi v tématu [nasazení microsoft .NET Framework verze 3,0](https://docs.microsoft.com/previous-versions/dotnet/articles/aa480198(v=msdn.10)).  
+> Podrobnější informace o instalaci, nasazení a zjišťování rozhraní Microsoft .NET Framework naleznete v diskusi v [tématu Nasazení rozhraní Microsoft .NET Framework verze 3.0](https://docs.microsoft.com/previous-versions/dotnet/articles/aa480198(v=msdn.10)).  
   
-<a name="content_expiration"></a>   
-## <a name="detect-the-net-clr-user-agent-string"></a>Zjištění řetězce uživatelského agenta .NET CLR  
- Když je nainstalovaná .NET Framework, soubor MSI přidá ".NET CLR" a číslo verze do řetězce UserAgent. Následující příklad ukazuje skript vložený do jednoduché stránky HTML. Skript vyhledá řetězec UserAgent a určí, zda je .NET Framework nainstalován, a zobrazí stavovou zprávu výsledků hledání.  
+<a name="content_expiration"></a>
+## <a name="detect-the-net-clr-user-agent-string"></a>Zjištění řetězce uživatelského agenta ".NET CLR"  
+ Při instalaci rozhraní .NET Framework přidá MSI do řetězce UserAgent ".NET CLR" a číslo verze. Následující příklad ukazuje skript vložený na jednoduchou stránku HTML. Skript prohledá řetězec UserAgent a určí, zda je nainstalována rozhraní .NET Framework, a zobrazí zprávu o stavu ve výsledcích hledání.  
   
 ```html  
 <HTML>  
@@ -113,13 +113,13 @@ Než můžou správci nasadit aplikace Microsoft .NET Framework v systému, mus�
 </HTML>  
 ```  
   
- Pokud je vyhledávání verze .NET CLR úspěšné, zobrazí se následující typ stavové zprávy:  
+ Pokud je hledání verze ".NET CLR " úspěšné, zobrazí se následující typ stavové zprávy:  
   
  `This machine has the correct version of the .NET Framework 3.0: 3.0.04425.00`  
   
  `This machine's userAgent string is: Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1; .NET CLR 1.1.4322; InfoPath.1; .NET CLR 2.0.50727; .NET CLR 3.0.04425.00).`  
   
- V opačném případě se zobrazí následující typ stavové zprávy:  
+ V opačném případě se zobrazí následující typ zprávy o stavu:  
   
  `This machine does not have correct version of the .NET Framework 3.0.`  
   

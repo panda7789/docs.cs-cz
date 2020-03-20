@@ -5,41 +5,41 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 11515b25-ee49-4b1d-9294-a142147c1ec5
-ms.openlocfilehash: 8438a7b54ca19625687ab96386384cf62ae62d11
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: d01198d158c4e1c64f12e8a0756c3d4e599fce74
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70783794"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79149541"
 ---
 # <a name="handling-dataadapter-events"></a>Zpracování událostí adaptéru dat
-ADO.NET <xref:System.Data.Common.DataAdapter> zpřístupňuje tři události, které můžete použít k reakci na změny dat ve zdroji dat. `DataAdapter` Události jsou uvedeny v následující tabulce.  
+ADO.NET <xref:System.Data.Common.DataAdapter> zpřístupňuje tři události, které můžete použít k reakci na změny provedené v datech ve zdroji dat. V následující tabulce `DataAdapter` jsou uvedeny události.  
   
 |Událost|Popis|  
 |-----------|-----------------|  
-|`RowUpdating`|Bude zahájena operace aktualizace, vložení nebo odstranění na řádku (volání jedné z `Update` metod).|  
-|`RowUpdated`|Operace aktualizace, vložení nebo odstranění na řádku (volání jedné z `Update` metod) je dokončena.|  
-|`FillError`|Během `Fill` operace došlo k chybě.|  
+|`RowUpdating`|Operace UPDATE, INSERT nebo DELETE na řádku (voláním `Update` jedné z metod) se chystá zahájit.|  
+|`RowUpdated`|Operace UPDATE, INSERT nebo DELETE na řádku (voláním `Update` jedné z metod) je dokončena.|  
+|`FillError`|Během operace došlo `Fill` k chybě.|  
   
-## <a name="rowupdating-and-rowupdated"></a>RowUpdating a RowUpdated metody Update  
- `RowUpdating`je aktivována před provedením jakékoli aktualizace řádku z, <xref:System.Data.DataSet> která byla zpracována ve zdroji dat. `RowUpdated`je aktivována po provedení jakékoli aktualizace řádku z, `DataSet` která byla zpracována ve zdroji dat. V důsledku toho můžete použít `RowUpdating` ke změně chování aktualizace před tím, než se stane, aby se zajistilo další zpracování, když dojde k aktualizaci, k uchování odkazu na aktualizovaný řádek, ke zrušení aktuální aktualizace a naplánování pro zpracování dávkového procesu později. a tak dále. `RowUpdated`je vhodný pro reakci na chyby a výjimky, ke kterým dojde během aktualizace. Do `DataSet`můžete přidat informace o chybě a také logiku opakování atd.  
+## <a name="rowupdating-and-rowupdated"></a>RowUpdating a ŘádekAktualizováno  
+ `RowUpdating`je aktivována před jakoukoli aktualizaci řádku z <xref:System.Data.DataSet> byl zpracován ve zdroji dat. `RowUpdated`je aktivována po jakékoli aktualizaci řádku z `DataSet` byl zpracován ve zdroji dat. V důsledku toho můžete `RowUpdating` použít k úpravě chování aktualizace dříve, než k ní dojde, poskytnout další zpracování při aktualizaci dojde, zachovat odkaz na aktualizovaný řádek, zrušit aktuální aktualizaci a naplánovat pro dávkový proces, který má být zpracován později a tak dále. `RowUpdated`je užitečné pro odpovědi na chyby a výjimky, ke kterým dochází během aktualizace. Můžete přidat informace o `DataSet`chybě , stejně jako logiku opakování a tak dále.  
   
- `RowUpdated` `Command` `Row` `Command` Argumenty <xref:System.Data.Common.RowUpdatingEventArgs> a<xref:System.Data.Common.RowUpdatedEventArgs> předané`RowUpdating` událostem a zahrnují následující: vlastnost, která odkazuje na objekt používaný k provedení aktualizace. vlastnost, která odkazuje `DataRow` na objekt obsahující aktualizované informace `StatementType` ; vlastnost pro typ aktualizace `TableMapping`, je-li k dispozici, a `Status` na operaci.  
+ <xref:System.Data.Common.RowUpdatingEventArgs> Argumenty <xref:System.Data.Common.RowUpdatedEventArgs> a předané `RowUpdating` `RowUpdated` událostem a zahrnují `Command` následující: vlastnost, která odkazuje na `Command` objekt používaný k provedení aktualizace; `Row` vlastnost, která odkazuje `DataRow` na objekt obsahující aktualizované informace; `StatementType` vlastnost pro jaký typ aktualizace se provádí; `TableMapping`, případně; `Status` a operace.  
   
- `Status` Vlastnost můžete použít k určení, zda během operace došlo k chybě, a v případě potřeby k řízení akcí proti aktuálnímu a výslednému řádku. Pokud dojde k události, `Status` vlastnost se rovná buď `Continue` nebo `ErrorsOccurred`. Následující tabulka uvádí hodnoty, na které můžete nastavit `Status` vlastnost, aby bylo možné řídit pozdější akce během aktualizace.  
+ `Status` Vlastnost můžete použít k určení, pokud došlo k chybě během operace a v případě potřeby k řízení akce proti aktuální a výsledné řádky. Když dojde k události, `Status` vlastnost `Continue` se `ErrorsOccurred`rovná buď nebo . V následující tabulce jsou uvedeny hodnoty, na které můžete nastavit `Status` vlastnost, abyste mohli řídit pozdější akce během aktualizace.  
   
-|Stav|Popis|  
+|Status|Popis|  
 |------------|-----------------|  
 |`Continue`|Pokračujte v operaci aktualizace.|  
-|`ErrorsOccurred`|Přerušte operaci aktualizace a vyvolejte výjimku.|  
-|`SkipCurrentRow`|Ignoruje aktuální řádek a pokračuje v operaci aktualizace.|  
-|`SkipAllRemainingRows`|Přerušte operaci aktualizace, ale Nevolejte výjimku.|  
+|`ErrorsOccurred`|Přerušit operaci aktualizace a vyvolat výjimku.|  
+|`SkipCurrentRow`|Ignorujte aktuální řádek a pokračujte v operaci aktualizace.|  
+|`SkipAllRemainingRows`|Přerušit operaci aktualizace, ale nevyvolat výjimku.|  
   
- Nastavení vlastnosti pro `ErrorsOccurred` způsobí vyvolání výjimky. `Status` Můžete řídit, která výjimka je vyvolána, nastavením `Errors` vlastnosti na požadovanou výjimku. Použití jedné z dalších hodnot pro `Status` brání vyvolání výjimky.  
+ Nastavení `Status` vlastnosti `ErrorsOccurred` způsobí, že výjimku vyvolat. Můžete určit, která výjimka je `Errors` vyvolána nastavením vlastnosti na požadovanou výjimku. Použití jedné z dalších hodnot pro `Status` zabraňuje vyvolání výjimky.  
   
- `ContinueUpdateOnError` Vlastnost můžete použít také ke zpracování chyb pro aktualizované řádky. Pokud `DataAdapter.ContinueUpdateOnError` `RowError` je `true`v případě, že při aktualizaci řádku dojde k výjimce, je text výjimky umístěn do informací o konkrétním řádku a zpracování pokračuje bez vyvolání výjimky. To vám umožní reagovat na chyby `Update` , až se dokončí, a to na rozdíl `RowUpdated` od události, což vám umožní reagovat na chyby, když dojde k chybě.  
+ `ContinueUpdateOnError` Vlastnost můžete také použít ke zpracování chyb pro aktualizované řádky. Pokud `DataAdapter.ContinueUpdateOnError` `true`je , pokud aktualizace řádku má za následek vyvolání výjimky, text `RowError` výjimky je umístěn do informací o konkrétní řádek a zpracování pokračuje bez vyvolání výjimky. To umožňuje reagovat na `Update` chyby po dokončení, `RowUpdated` na rozdíl od události, která umožňuje reagovat na chyby, když dojde k chybě.  
   
- Následující ukázka kódu ukazuje, jak přidat a odebrat obslužné rutiny událostí. Obslužná `RowUpdating` rutina události zapíše protokol všech odstraněných záznamů s časovým razítkem.  =  `DataSet` `RowError` `true`Obslužná rutina `RowUpdated` události přidá informace o chybě do vlastnosti řádku v, potlačí výjimku `ContinueUpdateOnError`a pokračuje ve zpracování (zrcadlení chování).  
+ Následující ukázka kódu ukazuje, jak přidat i odebrat obslužné rutiny událostí. Obslužná rutina `RowUpdating` události zapíše protokol všech odstraněných záznamů s časovým razítkem. Obslužná `RowUpdated` rutina `RowError` události přidá informace `DataSet`o chybě do vlastnosti řádku v oblasti `ContinueUpdateOnError`  =  `true`, potlačí výjimku a pokračuje ve zpracování (zrcadlení chování ).  
   
 ```vb  
 ' Assumes that connection is a valid SqlConnection object.  
@@ -107,7 +107,7 @@ protected static void OnRowUpdating(
   {  
     System.IO.TextWriter tw = System.IO.File.AppendText("Deletes.log");  
     tw.WriteLine(  
-      "{0}: Customer {1} Deleted.", DateTime.Now,   
+      "{0}: Customer {1} Deleted.", DateTime.Now,
        args.Row["CustomerID", DataRowVersion.Original]);  
     tw.Close();  
   }  
@@ -124,21 +124,21 @@ protected static void OnRowUpdated(
 }  
 ```  
   
-## <a name="fillerror"></a>FillError  
- Vyvolá událost, `FillError` když dojde k chybě během `Fill` operace. `DataAdapter` K tomuto typu chyby obvykle dochází, když nelze data v přidávaném řádku převést na typ .NET Framework bez ztráty přesnosti.  
+## <a name="fillerror"></a>Chyba fill  
+ Problémy `DataAdapter` `FillError` události, když dojde k `Fill` chybě během operace. K tomuto typu chyby obvykle dochází, když data v řádku, který je přidáván nelze převést na typ rozhraní .NET Framework bez ztráty přesnosti.  
   
- Pokud během `Fill` operace dojde k chybě, aktuální řádek není přidán `DataTable`do. Událost umožňuje vyřešit chybu a přidat řádek nebo ignorovat vyloučený řádek a pokračovat v `Fill` operaci. `FillError`  
+ Pokud během `Fill` operace dojde k chybě, aktuální řádek `DataTable`není přidán do . Událost `FillError` umožňuje vyřešit chybu a přidat řádek nebo ignorovat vyloučený řádek `Fill` a pokračovat v operaci.  
   
- Předaná`FillError` událost může obsahovat několik vlastností, které vám umožní reagovat na a vyřešit chyby. `FillErrorEventArgs` V následující tabulce jsou uvedeny vlastnosti `FillErrorEventArgs` objektu.  
+ Předáno `FillErrorEventArgs` `FillError` události může obsahovat několik vlastností, které umožňují reagovat a řešit chyby. V následující tabulce jsou `FillErrorEventArgs` uvedeny vlastnosti objektu.  
   
 |Vlastnost|Popis|  
 |--------------|-----------------|  
-|`Errors`|K `Exception` nimž došlo.|  
-|`DataTable`|Objekt `DataTable` , který je vyplněn, když došlo k chybě.|  
-|`Values`|Pole objektů, které obsahují hodnoty řádku přidávaného při výskytu chyby. Řadové odkazy `Values` v poli odpovídají řadovým odkazům na sloupce přidávaného řádku. Například `Values[0]` je hodnota, která byla přidána jako první sloupec řádku.|  
-|`Continue`|Umožňuje zvolit, zda má být vyvolána výjimka. Nastavením vlastnosti na `false` zastavíte aktuální `Fill` operaci a vyvolá se výjimka. `Continue` Nastavení `Continue` na `true` pokračování`Fill` operace bez ohledu na chybu.|  
+|`Errors`|To, `Exception` co se stalo.|  
+|`DataTable`|Objekt, `DataTable` který se vyplňuje, když došlo k chybě.|  
+|`Values`|Pole objektů, které obsahuje hodnoty řádku, který je přidáván, když došlo k chybě. Ordinální odkazy `Values` pole odpovídají řadové odkazy na sloupce řádku, které jsou přidávány. Například `Values[0]` je hodnota, která byla přidána jako první sloupec řádku.|  
+|`Continue`|Umožňuje zvolit, zda chcete vyvolat výjimku. Nastavení `Continue` vlastnosti `false` zastaví aktuální `Fill` operaci a bude vyvolána výjimka. Nastavení `Continue` `true` pokračovat `Fill` v operaci i přes chybu.|  
   
- Následující příklad kódu přidá obslužnou rutinu události pro `FillError` událost. `DataAdapter` V kódu `FillError` události příklad určuje, zda existuje potenciál pro ztrátu přesnosti, a poskytuje příležitost reagovat na výjimku.  
+ Následující příklad kódu přidá obslužnou rutinu `FillError` události pro událost `DataAdapter`. V `FillError` kódu události příklad určuje, zda existuje potenciál pro ztrátu přesnosti, poskytuje možnost reagovat na výjimku.  
   
 ```vb  
 AddHandler adapter.FillError, New FillErrorEventHandler( _  
@@ -178,7 +178,7 @@ protected static void FillError(object sender, FillErrorEventArgs args)
     DataRow myRow = args.DataTable.Rows.Add(new object[]  
        {args.Values[0], args.Values[1], DBNull.Value});  
     //Set the RowError containing the value for the third column.  
-    myRow.RowError =   
+    myRow.RowError =
        "OverflowException Encountered. Value from data source: " +  
        args.Values[2];  
     args.Continue = true;  
@@ -186,10 +186,10 @@ protected static void FillError(object sender, FillErrorEventArgs args)
 }  
 ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Adaptéry a čtečky dat](dataadapters-and-datareaders.md)
 - [Zpracování událostí datové sady](./dataset-datatable-dataview/handling-dataset-events.md)
 - [Zpracování událostí datové tabulky](./dataset-datatable-dataview/handling-datatable-events.md)
-- [Události](../../../standard/events/index.md)
+- [Akce](../../../standard/events/index.md)
 - [Přehled ADO.NET](ado-net-overview.md)

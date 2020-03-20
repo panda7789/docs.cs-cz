@@ -8,25 +8,25 @@ helpviewer_keywords:
 - <oidMap> element
 - oidMap element
 ms.assetid: 7f0c2246-c070-4748-b96a-2f66a296c539
-ms.openlocfilehash: 5f055d6e665f68586191ab760fb5658eeb5c2cb2
-ms.sourcegitcommit: 7f8eeef060ddeb2cabfa52843776faf652c5a1f5
+ms.openlocfilehash: a28eaf68fe1e6ab3f26592eee5ae2d0f2e7a3256
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74087983"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79155164"
 ---
-# <a name="oidmap-element"></a>\<element > oidMap
-Obsahuje mapování identifikátoru objektu ASN. 1 na třídy.  
+# <a name="oidmap-element"></a>\<Map> prvek
+Obsahuje mapování identifikátorů objektu ASN.1 (OID) na třídy.  
 
-[ **\<configuration >** ](../configuration-element.md) \
-&nbsp;&nbsp;[ **\<mscorlib >** ](mscorlib-element-for-cryptography-settings.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;[ **\<cryptographySettings >** ](cryptographysettings-element.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<oidMap >**
+[**\<>konfigurace**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<>mscorlib**](mscorlib-element-for-cryptography-settings.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[**\<kryptografieNastavení>**](cryptographysettings-element.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<oidMap>**
 
 ## <a name="syntax"></a>Syntaxe  
   
 ```xml  
-<oidMap>   
+<oidMap>
 </oidMap>  
 ```  
   
@@ -34,24 +34,24 @@ Obsahuje mapování identifikátoru objektu ASN. 1 na třídy.
  Následující části popisují atributy, podřízené prvky a nadřazené prvky.  
   
 ### <a name="attributes"></a>Atributy  
- Žádné  
+ Žádné.  
   
 ### <a name="child-elements"></a>Podřízené elementy  
   
-|Prvek|Popis|  
+|Element|Popis|  
 |-------------|-----------------|  
-|[\<oidEntry >](oidentry-element.md)|Mapuje identifikátor ID ASN. 1 na popisný název.|  
+|[\<oidEntry>](oidentry-element.md)|Mapuje OID ASN.1 na popisný název.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
-|Prvek|Popis|  
+|Element|Popis|  
 |-------------|-----------------|  
 |`configuration`|Kořenový prvek v každém konfiguračním souboru, který je používán modulem Common Language Runtime (CLR) a aplikacemi rozhraní .NET Framework.|  
 |`cryptographySettings`|Obsahuje nastavení kryptografie.|  
-|`mscorlib`|Obsahuje element `cryptographySettings`.|  
+|`mscorlib`|Obsahuje `cryptographySettings` prvek.|  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje, jak použít prvek **\<oidMap >** pro zahrnutí mapování OID pro algoritmus hash RIPEMD-160 na implementaci tohoto algoritmu hash.  
+ Následující příklad ukazuje, jak použít ** \<oidMap>** prvek obsahovat mapování OID pro algoritmus hash RIPEMD-160 na implementaci tohoto algoritmu hash.  
   
 ```xml  
 <configuration>  
@@ -73,7 +73,7 @@ Obsahuje mapování identifikátoru objektu ASN. 1 na třídy.
 </configuration>  
 ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Schéma konfiguračního souboru](../index.md)
 - [Schéma nastavení šifrování](index.md)

@@ -1,17 +1,17 @@
 ---
-title: WMI a čítače výkonu (Reference nespravovaného rozhraní API)
-description: Shrnuje .NET Framework nespravované rozhraní API pro informace o čítačích výkonu a rozhraní WMI.
+title: Čítače služby WMI a výkonu (nespravovaný odkaz na rozhraní API)
+description: Shrnuje nespravované rozhraní API rozhraní .NET Framework pro rozhraní WMI a informace o čítači výkonu.
 ms.date: 11/06/2017
 ms.openlocfilehash: f28cd25ee6c3511dc5ac8a6dd4076c81f43fe74a
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "73127411"
 ---
-# <a name="windows-management-instrumentation-wmi-and-performance-counters-unmanaged-api-reference"></a>Rozhraní WMI (Windows Management Instrumentation) (WMI) a čítače výkonu (nespravované reference rozhraní API)
+# <a name="windows-management-instrumentation-wmi-and-performance-counters-unmanaged-api-reference"></a>Wmi (WMI) a čítače výkonu (nespravované odkazy na rozhraní API)
 
-Rozhraní API .NET Framework rozhraní WMI a čítače výkonu nespravované rozhraní API se skládá ze sady funkcí, které zabalí volání do [nativního rozhraní api rozhraní WMI (Windows Management Instrumentation)](/windows/desktop/WmiSdk/com-api-for-wmi). Umožňuje vyvíjet nástroje a knihovny, které spravují a monitorují vzdálené počítačové systémy.
+Nespravované rozhraní API rozhraní .NET Framework WMI a Performance Counters se skládá ze sady funkcí, které zalamují volání [do nativního rozhraní API pro službu W MANAGEMENT INSTRUMENTACE](/windows/desktop/WmiSdk/com-api-for-wmi). Umožňuje vyvíjet nástroje a knihovny, které spravují a monitorují vzdálené počítačové systémy.
 
 [!INCLUDE[internalonly-unmanaged](../../../../includes/internalonly-unmanaged.md)]
 
@@ -19,58 +19,58 @@ Rozhraní API obsahuje následující funkce:
 
 | Funkce | Popis |
 |---------|---------|
-| [Funkce BeginEnumeration](beginenumeration.md) | Obnoví enumerátor na začátek výčtu vlastností objektu WMI. |
-| [Funkce BeginMethodEnumeration](beginmethodenumeration.md) |  Spustí výčet metod, které jsou k dispozici pro objekt. |
-| [Funkce BlessIWbemServices](blessiwbemservices.md) | Určuje, zda přihlašovací údaje uživatele povolují přístup k zadané třídě služby IWbem. |
-| [Funkce BlessIWbemServicesObject](blessiwbemservicesobject.md) | Určuje, jestli přihlašovací údaje uživatele povolují přístup k zadanému objektu služby IWbem. |
+| [Funkce BeginEnumeration](beginenumeration.md) | Obnoví čítač výčtu na začátek výčtu vlastností objektu služby WMI. |
+| [Funkce BeginMethodEnumeration](beginmethodenumeration.md) |  Začíná výčet metod, které jsou k dispozici pro objekt. |
+| [Funkce BlessIWbemServices](blessiwbemservices.md) | Označuje, zda pověření uživatele povolit přístup k zadané IWbemServices třídy. |
+| [Funkce BlessIWbemServicesObject](blessiwbemservicesobject.md) | Označuje, zda pověření uživatele povolují přístup k určenému objektu služby IWbem. |
 | [Funkce Clone](clone.md) | Vrátí nový objekt, který je úplným klonem aktuálního objektu. |
-| [Funkce CloneEnumWbemClassObject](cloneenumwbemclassobject.md) | Vytvoří logickou kopii enumerátoru a uchová jeho aktuální pozici ve výčtu. |
+| [Funkce CloneEnumWbemClassObject](cloneenumwbemclassobject.md) | Vytvoří logickou kopii čítače výčtu, zachování jeho aktuální pozici ve výčtu. |
 | [Funkce CompareTo](compareto.md) | Porovná objekt s jiným objektem správy systému Windows. |
-| [ConnectServerWmi – funkce](connectserverwmi.md) | Vytvoří připojení prostřednictvím modelu DCOM k oboru názvů WMI v zadaném počítači. |
-| [CreateClassEnumWmi – funkce](createclassenumwmi.md) | Vrátí enumerátor pro všechny třídy, které odpovídají zadaným kritériím výběru. |
-| [CreateInstanceEnumWmi – funkce](createinstanceenumwmi.md) | Vrátí enumerátor, který vrátí instance zadané třídy, které splňují zadaná kritéria výběru. |
-| [Funkce Delete](delete.md) | Odstraní zadanou vlastnost z definice třídy a všech jejích kvalifikátorů. |
+| [Funkce ConnectServerWmi](connectserverwmi.md) | Vytvoří připojení prostřednictvím souboru DCOM k oboru názvů wmi v zadaném počítači. |
+| [CreateClassEnumWmi](createclassenumwmi.md) | Vrátí čítač výčtu pro všechny třídy, které splňují zadaná kritéria výběru. |
+| [CreateInstanceEnumWmi](createinstanceenumwmi.md) | Vrátí čítač výčtu, který vrací instance zadané třídy, které splňují zadaná kritéria výběru. |
+| [Funkce Delete](delete.md) | Odstraní zadanou vlastnost z definice třídy a všechny její kvalifikátory. |
 | [Funkce DeleteMethod](deletemethod.md) | Odstraní zadanou metodu z definice třídy CIM. |
-| [Funkce EndEnumeration](endenumeration.md) | Ukončí sekvenci výčtu. |
-| [Funkce EndMethodEnumeration](endmethodenumeration.md) | Ukončí sekvenci výčtu spuštěnou voláním [funkce BeginMethodEnumeration](beginmethodenumeration.md). |
+| [Funkce EndEnumeration](endenumeration.md) | Ukončí pořadí výčtu. |
+| [Funkce EndMethodEnumeration](endmethodenumeration.md) | Ukončí posloupnost výčtu spuštěnou voláním [funkce BeginMethodEnumeration .](beginmethodenumeration.md) |
 | [Funkce ExecNotificationQueryWmi](execnotificationquerywmi.md) | Spustí dotaz pro příjem událostí. |
-| [Funkce ExecQueryWmi](execquerywmi.md) | Spustí dotaz pro načtení objektů. |
-| [Funkce FormatFromRawValue](formatfromrawvalue.md) | Převede jednu nezpracovaná hodnota dat výkonu na určený formát nebo dvě nezpracované hodnoty dat výkonu, pokud je převod formátu založený na čase. |
+| [Funkce ExecQueryWmi](execquerywmi.md) | Spustí dotaz k načtení objektů. |
+| [Funkce FormatFromRawValue](formatfromrawvalue.md) | Převede jednu nezpracovaná hodnota dat výkonu na zadaný formát nebo dvě nezpracovaná hodnoty dat výkonu, pokud je převod formátu založen na čase. |
 | [Funkce Get](get.md) | Načte zadanou hodnotu vlastnosti, pokud existuje. |
-| [GetCurrentApartmentType – funkce](getcurrentapartmenttype.md) | Načte typ objektu apartment, ve kterém je volající spuštěn. |
-| [GetDemultiplexedStub – funkce](getdemultiplexedstub.md) | Vytvoří jímku objektu pro překládání objektů, která klientovi pomůže přijímat asynchronní volání ze správy systému Windows. |
-| [GetErrorInfo – funkce](geterrorinfo.md) | Načte informace o chybě z předchozího volání funkce. |
+| [GetCurrentApartmentType](getcurrentapartmenttype.md) | Načte typ apartment, ve kterém volající provádí. |
+| [GetDemultiplexedStub](getdemultiplexedstub.md) | Vytvoří jímku pro předávání objektů, která pomáhá klientovi přijímat asynchronní volání ze správy systému Windows. |
+| [GetErrorInfo](geterrorinfo.md) | Načte informace o chybě z předchozího volání funkce. |
 | [Funkce GetMethod](getmethod.md) | Načte informace o zadané metodě. |
 | [Funkce GetMethodOrigin](getmethodorigin.md) | Určuje třídu, ve které je deklarována metoda. |
-| [Funkce GetMethodQualifierSet](getmethodqualifierset.md) | Načte kvalifikátor sady pro konkrétní metodu. |
-| [Funkce GetNames](getnames.md) | Načte buď podmnožinu, nebo všechny názvy vlastností objektu. |
+| [Funkce GetMethodQualifierSet](getmethodqualifierset.md) | Načte kvalitátor nastavit pro konkrétní metodu. |
+| [Funkce GetNames](getnames.md) | Načte podmnožinu nebo všechny názvy vlastností objektu. |
 | [Funkce GetObjectText](getobjecttext.md) | Vrátí textové vykreslování objektu v syntaxi MOF. |
-| [Funkce GetPropertyHandle](getpropertyhandle.md) | Vrací jedinečný popisovač, který identifikuje vlastnost. |
+| [Funkce GetPropertyHandle](getpropertyhandle.md) | Vrátí jedinečný popisovač, který identifikuje vlastnost. |
 | [Funkce GetPropertyOrigin](getpropertyorigin.md) | Určuje třídu, ve které je deklarována vlastnost. |
-| [GetPropertyQualifierSet – funkce](getpropertyqualifierset.md) | Načte kvalifikátor sady pro konkrétní vlastnost.  |
-| [GetQualifierSet – funkce](getqualifierset.md) | Načte kvalifikátor sady pro instanci třídy nebo definici třídy. |
-| [InheritsFrom – funkce](inheritsfrom.md) | Určuje, zda aktuální třída nebo instance je odvozena ze zadané nadřazené třídy. |
-| [Initialize – funkce](initialize.md) | Provede inicializaci rozhraní WMI. |
-| [Funkce Next](next.md) | Načte další vlastnost ve výčtu. |
-| [NextMethod – funkce](nextmethod.md) | Načte další metodu ve výčtu. |
-| [Put – funkce](put.md) | Nastaví vlastnost s názvem na novou hodnotu. |
-| [PutClassWmi – funkce](putclasswmi.md) | Vytvoří novou třídu nebo aktualizuje stávající. |
-| [PutInstanceWmi – funkce](putinstancewmi.md) | Vytvoří nebo aktualizuje instanci existující třídy. Instance je zapsána do úložiště rozhraní WMI. |
-| [PutMethod – funkce](putmethod.md) | Vytvoří metodu. |
-| [QualifierSet_BeginEnumeration – funkce](qualifierset-beginenumeration.md) | Obnoví enumerátor kvalifikátorů objektu na začátek výčtu. |
-| [QualifierSet_Delete – funkce](qualifierset-delete.md) | Odstraní zadaný kvalifikátor podle názvu.  |
-| [QualifierSet_EndEnumeration – funkce](qualifierset-endenumeration.md) | Ukončí výčet zahájený voláním funkce `QualifierSet_BeginEnumeration`. |
-| [QualifierSet_Get – funkce](qualifierset-get.md) | Získá zadaný pojmenovaný kvalifikátor.  |
-| [QualifierSet_GetNames – funkce](qualifierset-getnames.md) | Načte názvy všech kvalifikátorů nebo určených kvalifikátorů, které jsou k dispozici z aktuálního objektu nebo vlastnosti. |
-| [QualifierSet_Next – funkce](qualifierset-next.md) | Načte další kvalifikátor ve výčtu, který začal voláním funkce [QualifierSet_BeginEnumeration](qualifierset-beginenumeration.md) . |
-| [QualifierSet_Put – funkce](qualifierset-put.md) | Zapíše pojmenovaný kvalifikátor a hodnotu. |
-| [ResetSecurity – funkce](resetsecurity.md) | Přiřadí zadaný token zosobnění aktuálnímu vláknu. |
-| [SetSecurity – funkce](setsecurity.md) | Načte token zosobnění přidružený k aktuálnímu vláknu. |
-| [SpawnDerivedClass – funkce](spawnderivedclass.md) | Vytvoří nově odvozený objekt třídy ze zadaného objektu. |
-| [SpawnInstance – funkce](spawninstance.md) | Vytvoří novou instanci třídy. |
-| [VerifyClient – funkce](verifyclientkey.md) | Zajišťuje, aby měl klíč klienta správné zabezpečení. |
-| [WritePropertyValue – funkce](writepropertyvalue.md) | Zapíše zadaný počet bajtů na vlastnost identifikovanou popisovačem vlastnosti. |
+| [GetPropertyQualifierSet](getpropertyqualifierset.md) | Načte kvalifikátor nastavena pro konkrétní vlastnost.  |
+| [GetQualifierSet](getqualifierset.md) | Načte kvalifikátor nastavenou pro instanci třídy nebo definici třídy. |
+| [InheritsFrom,](inheritsfrom.md) | Určuje, zda aktuální třída nebo instance pochází z zadané nadřazené třídy. |
+| [Inicializovat funkci](initialize.md) | Provede inicializaci wmi. |
+| [Další funkce](next.md) | Načte další vlastnost ve výčtu. |
+| [NextMethod](nextmethod.md) | Načte další metodu ve výčtu. |
+| [Funkce Put](put.md) | Nastaví pojmenovanou vlastnost na novou hodnotu. |
+| [PutClassWmi](putclasswmi.md) | Vytvoří novou třídu nebo aktualizuje existující. |
+| [PutInstanceWmi](putinstancewmi.md) | Vytvoří nebo aktualizuje instanci existující třídy. Instance je zapsána do úložiště služby WMI. |
+| [PutMethod](putmethod.md) | Vytvoří metodu. |
+| [QualifierSet_BeginEnumeration funkce](qualifierset-beginenumeration.md) | Obnoví čítač výčtu kvalifikátory objektu na začátek výčtu. |
+| [QualifierSet_Delete funkce](qualifierset-delete.md) | Odstraní zadaný kvalifikátor podle názvu.  |
+| [QualifierSet_EndEnumeration funkce](qualifierset-endenumeration.md) | Ukončí výčet, který byl zahájen `QualifierSet_BeginEnumeration` voláním funkce. |
+| [QualifierSet_Get funkce](qualifierset-get.md) | Získá zadaný pojmenovaný kvalifikátor.  |
+| [QualifierSet_GetNames funkce](qualifierset-getnames.md) | Načte názvy všech kvalifikátorů nebo určených kvalifikátorů, které jsou k dispozici z aktuálního objektu nebo vlastnosti. |
+| [QualifierSet_Next funkce](qualifierset-next.md) | Načte další kvalifikátor ve výčtu, který začal s voláním [funkce QualifierSet_BeginEnumeration.](qualifierset-beginenumeration.md) |
+| [QualifierSet_Put funkce](qualifierset-put.md) | Zapíše pojmenovaný kvalifikátor a hodnotu. |
+| [Funkce ResetSecurity](resetsecurity.md) | Přiřadí zadaný token zosobnění aktuálnímu vláknu. |
+| [Funkce SetSecurity](setsecurity.md) | Načte token zosobnění přidružený k aktuálnímu vláknu. |
+| [SpawnDerivedClass](spawnderivedclass.md) | Vytvoří nově odvozený objekt třídy z určeného objektu. |
+| [SpawnInstance](spawninstance.md) | Vytvoří novou instanci třídy. |
+| [Ověřit funkci Klienta](verifyclientkey.md) | Zajišťuje, že klientský klíč má správné zabezpečení. |
+| [WritePropertyValue](writepropertyvalue.md) | Zapíše zadaný počet bajtů do vlastnosti identifikované popisovačem vlastnosti. |
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Nespravované reference rozhraní API](../index.md)
+- [Nespravovaný odkaz na rozhraní API](../index.md)

@@ -1,19 +1,18 @@
 ---
-ms.openlocfilehash: 3b36bc1ed9c35722478bdb31b82a79bed1a18914
-ms.sourcegitcommit: d55e14eb63588830c0ba1ea95a24ce6c57ef8c8c
+ms.openlocfilehash: 8332aca6e72346c92e80ce28979b83eec496b0e7
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/11/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "67858385"
 ---
-### <a name="right-clicking-on-a-wpf-datagrid-row-header-changes-the-datagrid-selection"></a>Klikněte pravým tlačítkem myši kliknete na WPF DataGrid záhlaví řádku změní výběr ovládacího prvku DataGrid
+### <a name="right-clicking-on-a-wpf-datagrid-row-header-changes-the-datagrid-selection"></a>Kliknutím pravým tlačítkem myši na záhlaví řádku WPF DataGrid se změní výběr DataGrid
 
 |   |   |
 |---|---|
-|Podrobnosti|Pravým tlačítkem myši vybrané <xref:System.Windows.Controls.DataGrid?displayProperty=name> záhlaví řádku jsou vybrané výsledky do více řádků <xref:System.Windows.Controls.DataGrid?displayProperty=name>pouze tento řádek Změna výběru.|
-|Doporučení|Tento problém jsme opravili v rozhraní .NET Framework 4.6 a může vyřešit upgradem na verzi rozhraní .NET Framework.|
-|Scope|Edge|
+|Podrobnosti|Kliknutí pravým tlačítkem myši na vybrané <xref:System.Windows.Controls.DataGrid?displayProperty=name> záhlaví <xref:System.Windows.Controls.DataGrid?displayProperty=name>řádku, zatímco je vybráno více řádků, má za následek změnu výběru příkazu pouze na tento řádek.|
+|Návrh|Tento problém byl vyřešen v rozhraní .NET Framework 4.6 a může být vyřešen upgradem na tuto verzi rozhraní .NET Framework.|
+|Rozsah|Edge|
 |Version|4.5|
-|type|Modul runtime|
+|Typ|Modul runtime|
 |Ovlivněná rozhraní API|<ul><li><xref:System.Windows.Controls.DataGrid.%23ctor?displayProperty=nameWithType></li></ul>|
-

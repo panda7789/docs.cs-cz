@@ -5,14 +5,14 @@ helpviewer_keywords:
 - Network
 ms.assetid: d4377115-4a76-4848-ab23-4898d65c771c
 ms.openlocfilehash: 9e265a97d339da59bb9d0af6ab6757e16af00e06
-ms.sourcegitcommit: 5ae5a1a9520b8b8b6164ad728d396717f30edafc
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/11/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "70894958"
 ---
 # <a name="how-to-detect-network-availability-and-address-changes"></a>Postupy: Zjištění dostupnosti sítě a vyřešení změn
-Tento příklad ukazuje, jak detekovat změny v síťové adrese rozhraní.  
+Tato ukázka ukazuje, jak zjistit změny v síťové adrese rozhraní.  
   
 ## <a name="example"></a>Příklad  
   
@@ -48,4 +48,4 @@ namespace Examples.Net.AddressChanges
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
  Tento příklad vyžaduje:  
   
-- Odkazuje na obor názvů **System.NET** .
+- Odkazy na **System.Net** oboru názvů.

@@ -1,5 +1,5 @@
 ---
-title: CoreResponseData. m_StatusCode – pole
+title: Pole CoreResponseData.m_StatusCode
 ms.date: 01/29/2018
 topic_type:
 - apiref
@@ -10,16 +10,16 @@ api_location:
 api_type:
 - Assembly
 author: stevewhims
-ms.openlocfilehash: 8abe619a57cc61fc3502807f60deccbbd578f382
-ms.sourcegitcommit: 9a97c76e141333394676bc5d264c6624b6f45bcf
+ms.openlocfilehash: dfed9a748e959f0f751408566c7cbb4d2fa13e3c
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75741002"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79156070"
 ---
-# <a name="coreresponsedatam_statuscode-field"></a>CoreResponseData. m\_pole StatusCode
+# <a name="coreresponsedatam_statuscode-field"></a>Pole StatusCode\_coreResponseData.m
 
-`CoreResponseData.m_StatusCode` je <xref:System.Net.HttpStatusCode> obsahující stav odpovědi.
+`CoreResponseData.m_StatusCode`je <xref:System.Net.HttpStatusCode> obsahující stav odpovědi.
 
 ## <a name="syntax"></a>Syntaxe
   
@@ -28,14 +28,14 @@ public HttpStatusCode m_StatusCode
 ```
 
 > [!WARNING]
-> Toto rozhraní API není určeno k použití přímo v kódu. Místo toho byste k připojení síťového kódu měli použít <xref:System.Diagnostics.DiagnosticSource>. Viz [uživatelská příručka pro DiagnosticSource](https://github.com/dotnet/runtime/blob/master/src/libraries/System.Diagnostics.DiagnosticSource/src/DiagnosticSourceUsersGuide.md).
-> 
-> Společnost Microsoft v žádné situaci nepodporuje použití této třídy v produkční aplikaci.
+> Toto rozhraní API není určen pro použití přímo ve vašem kódu. Místo toho byste <xref:System.Diagnostics.DiagnosticSource> měli použít připojit síťový kód. Viz [DiagnosticSource Uživatelská příručka](https://github.com/dotnet/runtime/blob/master/src/libraries/System.Diagnostics.DiagnosticSource/src/DiagnosticSourceUsersGuide.md).
+>
+> Společnost Microsoft nepodporuje použití této třídy v produkční aplikaci za žádných okolností.
 
 ## <a name="requirements"></a>Požadavky
 
-**Obor názvů:** <xref:System.Net>
+**Obor názvů:**<xref:System.Net>
 
-**Sestavení:** Systém (v System. dll)
+**Sestava:** Systém (v souboru System.dll)
 
-**Verze .NET Framework:** K dispozici od verze 2,0.
+**Verze rozhraní .NET Framework:** K dispozici od 2.0.

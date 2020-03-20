@@ -1,5 +1,5 @@
 ---
-title: Funkce LoadFromHistory – reference nespravovaného rozhraní API WPF
+title: LoadFromHistory Function - WPF nespravované rozhraní API odkaz
 titleSuffix: ''
 ms.date: 03/30/2017
 dev_langs:
@@ -9,23 +9,23 @@ api_name:
 api_location:
 - PresentationHost_v0400.dll
 ms.assetid: d037c062-a911-4949-b251-ccd3e48b1d17
-ms.openlocfilehash: 7807e073d1f09ac6a6213aee6d86d53cc75a3c56
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: be9b8658614e678b4370044a753554859d230fed
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76727927"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79141572"
 ---
-# <a name="loadfromhistory-function-wpf-unmanaged-api-reference"></a>LoadFromHistory – funkce (Referenční dokumentace rozhraní API nespravovaného subsystému WPF)
-Toto rozhraní API podporuje infrastrukturu Windows Presentation Foundation (WPF) a není určeno pro použití přímo v kódu.  
+# <a name="loadfromhistory-function-wpf-unmanaged-api-reference"></a>Funkce LoadFromHistory (WPF Unmanaged API Reference)
+Toto rozhraní API podporuje infrastrukturu Windows Presentation Foundation (WPF) a není určeno k použití přímo z vašeho kódu.  
   
- Používá se v infrastruktuře Windows Presentation Foundation (WPF) pro správu systému Windows.  
+ Používá infrastrukturu WPF (Windows Presentation Foundation) pro správu systému Windows.  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```cpp  
 HRESULT LoadFromHistory_export(  
-        IStream* pHistoryStream,   
+        IStream* pHistoryStream,
         IBindCtx* pBindCtx  
 )  
 ```  
@@ -38,16 +38,16 @@ HRESULT LoadFromHistory_export(
  Ukazatel na kontext vazby.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém .NET Framework](../../get-started/system-requirements.md).  
+ **Platformy:** Viz [Požadavky na systém rozhraní .NET Framework](../../get-started/system-requirements.md).  
   
- **DLL**  
+ **Knihovny dll:**  
   
- V .NET Framework 3,0 a 3,5: PresentationHostDLL. dll  
+ V rozhraní .NET Framework 3.0 a 3.5: PresentationHostDLL.dll ll  
   
- V .NET Framework 4 a novější: PresentationHost_v0400. dll  
+ V rozhraní .NET Framework 4 a novější: PresentationHost_v0400.dll  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v30plus](../../../../includes/net-current-v30plus-md.md)]  
+ **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v30plus](../../../../includes/net-current-v30plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také
 
-- [Odkaz na nespravované rozhraní API subsystému WPF](wpf-unmanaged-api-reference.md)
+- [Referenční informace k nespravovanému rozhraní API WPF](wpf-unmanaged-api-reference.md)

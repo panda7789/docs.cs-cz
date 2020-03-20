@@ -158,20 +158,20 @@ helpviewer_keywords:
 - error messages, Winmdexp.exe
 ms.assetid: 8271973c-deba-47a6-8e5e-04ce63f146ad
 ms.openlocfilehash: e99bdd106c845964f63915c87617e30eb51488f4
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "74447310"
 ---
 # <a name="winmdexpexe-error-messages"></a>Chybové zprávy nástroje Winmdexp.exe
-Proces sestavení volá [Winmdexp. exe (Nástroj pro export metadat prostředí Windows Runtime)](winmdexp-exe-windows-runtime-metadata-export-tool.md) při použití šablony **prostředí Windows Runtime součásti** v aplikaci Visual Studio 2012, takže se v **Seznam chyb**zobrazí chybové zprávy Winmdexp. exe. Winmdexp. exe pracuje na modulu, který je zkompilován s možností `/target:winmdobj`. Protože vyžaduje zkompilovaný modul jako vstup, jeho chybové zprávy se nezobrazí, pokud kompilace nebude úspěšná.  
+Proces sestavení volá [winmdexp.exe (Windows Runtime Metadata Export Tool)](winmdexp-exe-windows-runtime-metadata-export-tool.md) při použití šablony **součásti prostředí Windows Runtime** v sadě Visual Studio 2012, aby se chybové zprávy winmdexp.exe zobrazily v **seznamu chyb**. Winmdexp.exe pracuje na modulu, který `/target:winmdobj` je kompilován s možností. Protože vyžaduje kompilovaný modul jako vstup, jeho chybové zprávy se nezobrazí, pokud kompilace proběhne úspěšně.  
   
- Chybové zprávy jsou navržené tak, aby obsahovaly všechny informace, které potřebujete k vyřešení chybových podmínek, které jsou vykazují. Některé problémy ale vyžadují více informací, než se bude vejít do zprávy. Další informace najdete v [části diagnostikování prostředí Windows runtimech chybových podmínek komponent](https://docs.microsoft.com/previous-versions/hh977010(v=vs.110)).  
+ Chybové zprávy jsou navrženy tak, aby obsahovaly všechny informace, které potřebujete k řešení chybových podmínek, které hlásí. Některé problémy však vyžadují více informací, než se vejde do zprávy. Další informace naleznete v [části Diagnostika chybových stavů součásti prostředí Windows Runtime](https://docs.microsoft.com/previous-versions/hh977010(v=vs.110)).  
   
- Pokud vaše chyba není popsána v tomto článku a máte pocit, že zpráva neobsahuje dostatečné informace k vyřešení problému, použijte prosím odkaz na zpětnou vazbu v tomto článku a přidejte chybovou zprávu. Případně můžete vytvořit chybu na [webu komunity vývojářů](https://developercommunity.visualstudio.com/). Můžete se také podívat na Další informace o [fórech Microsoftu](https://social.msdn.microsoft.com/Forums/).  
+ Pokud vaše chyba není popsána v tomto článku a máte pocit, že zpráva neobsahuje dostatečné informace k vyřešení problému, použijte odkaz na zpětnou vazbu v tomto článku a zahrňte chybovou zprávu. Případně můžete podat chybu na [webu Komunity vývojářů](https://developercommunity.visualstudio.com/). Můžete se také podívat na další informace na [fórech společnosti Microsoft](https://social.msdn.microsoft.com/Forums/).  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Winmdexp.exe (Nástroj pro export metadat prostředí Windows Runtime)](winmdexp-exe-windows-runtime-metadata-export-tool.md)
-- [Diagnostikování chybových podmínek součásti prostředí Windows Runtime](https://docs.microsoft.com/previous-versions/hh977010(v=vs.110))
+- [Diagnostika chybových stavů součásti prostředí Windows Runtime](https://docs.microsoft.com/previous-versions/hh977010(v=vs.110))

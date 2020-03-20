@@ -2,51 +2,51 @@
 title: Zpracování výjimek a chyb
 ms.date: 03/30/2017
 ms.assetid: a64d01c6-f221-4f58-93e5-da4e87a5682e
-ms.openlocfilehash: 2886463510a2237834529e1ec61c73ec7251e621
-ms.sourcegitcommit: 7e2128d4a4c45b4274bea3b8e5760d4694569ca1
+ms.openlocfilehash: bca77b575be65513f9a792352e14e3f9bd7b4904
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75937719"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79185630"
 ---
 # <a name="handling-exceptions-and-faults"></a>Zpracování výjimek a chyb
-Výjimky slouží ke sdělování chyb místně v rámci služby nebo implementace klienta. Na druhé straně chyby slouží k sdělování chyb napříč hranicemi služby, například ze serveru do klienta nebo naopak. Kromě chyb využívají přenosové kanály často mechanismy přenosu pro komunikaci s chybami na úrovni přenosu. Například přenos HTTP používá ke komunikaci neexistující adresy URL koncového bodu stavové kódy jako 404 (není k dispozici žádný koncový bod pro odeslání zpětné chyby). Tento dokument se skládá ze tří částí, které poskytují pokyny pro vlastní autory kanálů. První část poskytuje pokyny, kdy a jak definovat a vyvolat výjimky. Druhá část obsahuje pokyny k vytváření a využívání chyb. Třetí část vysvětluje, jak poskytnout trasovací informace pro pomoc uživateli vlastního kanálu při odstraňování potíží se spuštěnými aplikacemi.  
+Výjimky se používají ke komunikaci chyb místně v rámci služby nebo implementace klienta. Chyby, na druhé straně se používají ke komunikaci chyb přes hranice služby, například ze serveru klientovi nebo naopak. Kromě chyb dopravní kanály často používají mechanismy specifické pro přenos ke komunikaci chyb na úrovni přenosu. Například přenos HTTP používá stavové kódy, jako je například 404 ke komunikaci neexistující adresu URL koncového bodu (neexistuje žádný koncový bod pro odeslání chyby zpět). Tento dokument se skládá ze tří částí, které poskytují pokyny pro vlastní autory kanálů. První část obsahuje pokyny, kdy a jak definovat a vyvolat výjimky. Druhá část obsahuje pokyny týkající se generování a spotřebovávání chyb. Třetí část vysvětluje, jak poskytnout informace o trasování, které pomohou uživateli vlastního kanálu při odstraňování potíží se spuštěných aplikací.  
   
 ## <a name="exceptions"></a>Výjimky  
- Existují dvě věci, které je potřeba vzít v úvahu při vyvolání výjimky: nejdříve musí být typ, který umožňuje uživatelům napsat správný kód, který může reagovat odpovídajícím způsobem. Za druhé musí poskytnout dostatek informací, aby mohl uživatel pochopit, co se nepovedlo, dopad na selhání a jak ho opravit. Následující části obsahují pokyny týkající se typů výjimek a zpráv pro kanály Windows Communication Foundation (WCF). V pokynech pro návrh dokumentu výjimek jsou také k dispozici obecné pokyny týkající se výjimek v rozhraní .NET.  
+ Existují dvě věci, které je třeba mít na paměti při vyvolání výjimky: Nejprve musí být typu, který umožňuje uživatelům psát správný kód, který může odpovídajícím způsobem reagovat na výjimku. Za druhé, musí poskytnout dostatek informací pro uživatele pochopit, co se pokazilo, dopad selhání a jak to opravit. V následujících částech jsou uvedeny pokyny týkající se typů výjimek a zpráv pro kanály WCF (Windows Communication Foundation). V dokumentu Pokyny pro návrh výjimek naleznete také obecné pokyny týkající se výjimek v rozhraní .NET.  
   
 ### <a name="exception-types"></a>Typy výjimek  
- Všechny výjimky vyvolané kanály musí být buď <xref:System.TimeoutException?displayProperty=nameWithType>, <xref:System.ServiceModel.CommunicationException?displayProperty=nameWithType>, nebo typ odvozený z <xref:System.ServiceModel.CommunicationException>. (Výjimky jako <xref:System.ObjectDisposedException> mohou být také vyvolány, ale pouze k označení toho, že volající kód má nepoužitý kanál. Pokud se kanál používá správně, musí vyvolávat pouze dané výjimky.) Služba WCF poskytuje sedm typů výjimek, které jsou odvozeny od <xref:System.ServiceModel.CommunicationException> a jsou určeny pro použití v kanálech. Existují další výjimky odvozené od <xref:System.ServiceModel.CommunicationException>, které jsou určeny pro použití jinými částmi systému. Tyto typy výjimek jsou:  
+ Všechny výjimky vyváděné <xref:System.ServiceModel.CommunicationException?displayProperty=nameWithType>kanály musí být <xref:System.ServiceModel.CommunicationException>buď <xref:System.TimeoutException?displayProperty=nameWithType>, nebo typ odvozený od . (Výjimky, <xref:System.ObjectDisposedException> jako může být také vyvolána, ale pouze k označení, že volající kód zneužil kanál. Pokud kanál se používá správně, musí vyvolat pouze dané výjimky.) WCF poskytuje sedm typů <xref:System.ServiceModel.CommunicationException> výjimek, které jsou odvozeny z a jsou určeny pro použití kanály. Existují další <xref:System.ServiceModel.CommunicationException>odvozené výjimky, které jsou určeny pro použití jinými částmi systému. Tyto typy výjimek jsou:  
   
-|Typ výjimky|Význam|Obsah vnitřní výjimky|Strategie obnovení|  
+|Typ výjimky|Význam|Vnitřní obsah výjimky|Strategie obnovení|  
 |--------------------|-------------|-----------------------------|-----------------------|  
-|<xref:System.ServiceModel.AddressAlreadyInUseException>|Adresa koncového bodu určená pro naslouchání se již používá.|Pokud je k dispozici, poskytuje další podrobnosti o chybě přenosu, která způsobila tuto výjimku. Například. <xref:System.IO.PipeException>, <xref:System.Net.HttpListenerException>nebo <xref:System.Net.Sockets.SocketException>.|Zkuste jinou adresu.|  
-|<xref:System.ServiceModel.AddressAccessDeniedException>|Proces není povolený přístup k adrese koncového bodu zadané pro naslouchání.|Pokud je k dispozici, poskytuje další podrobnosti o chybě přenosu, která způsobila tuto výjimku. Například <xref:System.IO.PipeException>nebo <xref:System.Net.HttpListenerException>.|Zkuste použít jiné přihlašovací údaje.|  
-|<xref:System.ServiceModel.CommunicationObjectFaultedException>|Použitý <xref:System.ServiceModel.ICommunicationObject> je v chybovém stavu (Další informace najdete v tématu [porozumění změnám stavu](understanding-state-changes.md)). Všimněte si, že pokud objekt s více nevyřízenými voláními přechází do chybového stavu, vyvolá pouze jedno volání výjimku, která souvisí s chybou a zbytek volání vyvolá <xref:System.ServiceModel.CommunicationObjectFaultedException>. Tato výjimka je obvykle vyvolána, protože aplikace vyhledává určitou výjimku a pokouší se použít již chybný objekt, pravděpodobně na jiném vlákně, než je ten, který zachytil původní výjimku.|Pokud je k dispozici, zobrazí se podrobnosti o vnitřní výjimce.|Vytvoří nový objekt. Všimněte si, že v závislosti na tom, co způsobilo selhání <xref:System.ServiceModel.ICommunicationObject> v prvním místě, se může stát, že bude nutné obnovit další práci.|  
-|<xref:System.ServiceModel.CommunicationObjectAbortedException>|Použitá <xref:System.ServiceModel.ICommunicationObject> byla přerušena (Další informace naleznete v tématu [porozumění změnám stavu](understanding-state-changes.md)). Podobně jako <xref:System.ServiceModel.CommunicationObjectFaultedException>, jeho výjimka označuje, že aplikace volala <xref:System.ServiceModel.ICommunicationObject.Abort%2A> na objektu, případně z jiného vlákna, a objekt již z tohoto důvodu není použitelný.|Pokud je k dispozici, zobrazí se podrobnosti o vnitřní výjimce.|Vytvoří nový objekt. Všimněte si, že v závislosti na tom, co způsobilo přerušování <xref:System.ServiceModel.ICommunicationObject> v prvním místě, může být nutné provést další práci, kterou je potřeba obnovit.|  
-|<xref:System.ServiceModel.EndpointNotFoundException>|Cílový vzdálený koncový bod nenaslouchá. To může vést k tomu, že všechny části adresy koncového bodu jsou nesprávné, nevyřešitelná nebo koncový bod. Mezi příklady patří Chyba služby DNS, správce front není dostupný a služba není spuštěná.|Vnitřní výjimka poskytuje podrobnosti, obvykle z podkladového přenosu.|Zkuste jinou adresu. Případně může odesílatel chvíli počkat a zkusit to znovu, pokud služba byla vypnutá.|  
-|<xref:System.ServiceModel.ProtocolException>|Komunikační protokoly, jak je popsáno v zásadách koncového bodu, se neshodují mezi koncovými body. Například byl překročen počet neshody typů obsahu rámců nebo maximální velikost zprávy.|Pokud je k dispozici, zobrazí se další informace o chybě konkrétního protokolu. Například <xref:System.ServiceModel.QuotaExceededException> je vnitřní výjimka, když příčina chyby překročí třídu MaxReceivedMessageSize.|Obnovení: Ujistěte se, že se nastavení odesílatele a přijatého protokolu shodují. To lze provést tak, že znovu naimportujete metadata koncového bodu služby (zásady) a pomocí vygenerované vazby znovu vytvoříte kanál.|  
-|<xref:System.ServiceModel.ServerTooBusyException>|Vzdálený koncový bod naslouchá, ale není připraven ke zpracování zpráv.|Je-li k dispozici, vnitřní výjimka poskytuje chyby protokolu SOAP nebo podrobnosti o chybě na úrovni přenosu.|Obnovení: Počkejte a opakujte operaci později.|  
-|<xref:System.TimeoutException>|Operaci se nepovedlo dokončit v časovém limitu.|Může poskytnout podrobnosti o vypršení časového limitu.|Počkejte a opakujte operaci později.|  
+|<xref:System.ServiceModel.AddressAlreadyInUseException>|Adresa koncového bodu zadaná pro naslouchání je již používána.|Pokud je k dispozici, poskytuje další podrobnosti o chybě přenosu, která způsobila tuto výjimku. Například. <xref:System.IO.PipeException>, <xref:System.Net.HttpListenerException>, <xref:System.Net.Sockets.SocketException>nebo .|Zkuste jinou adresu.|  
+|<xref:System.ServiceModel.AddressAccessDeniedException>|Proces není povolen přístup k adrese koncového bodu určené pro naslouchání.|Pokud je k dispozici, poskytuje další podrobnosti o chybě přenosu, která způsobila tuto výjimku. Například <xref:System.IO.PipeException>, <xref:System.Net.HttpListenerException>nebo .|Zkuste s různými přihlašovacími údaji.|  
+|<xref:System.ServiceModel.CommunicationObjectFaultedException>|Používaná <xref:System.ServiceModel.ICommunicationObject> položky jsou ve stavu Chybovaný (další informace naleznete v [tématu Principy změn stavu](understanding-state-changes.md)). Všimněte si, že když objekt s více čekající volání přechody do chybovaného stavu, pouze jedno volání <xref:System.ServiceModel.CommunicationObjectFaultedException>vyvolá výjimku, která souvisí s selhání a zbytek volání vyvolat . Tato výjimka je obvykle vyvolána, protože aplikace přehlíží některé výjimky a pokusí se použít již vadný objekt, případně ve vlákně než ten, který zachytil původní výjimku.|Pokud je k dispozici poskytuje podrobnosti o vnitřní výjimku.|Vytvořte nový objekt. Všimněte si, že <xref:System.ServiceModel.ICommunicationObject> v závislosti na tom, co způsobilo chybu na prvním místě, může být další práce potřebné k obnovení.|  
+|<xref:System.ServiceModel.CommunicationObjectAbortedException>|Používaná <xref:System.ServiceModel.ICommunicationObject> informace byla přerušena (další informace naleznete v [tématu Principy změn stavu](understanding-state-changes.md)). Podobně <xref:System.ServiceModel.CommunicationObjectFaultedException>jako , jeho výjimka <xref:System.ServiceModel.ICommunicationObject.Abort%2A> označuje, že aplikace volá objekt, případně z jiného vlákna, a objekt již není použitelný z tohoto důvodu.|Pokud je k dispozici poskytuje podrobnosti o vnitřní výjimku.|Vytvořte nový objekt. Všimněte si, že <xref:System.ServiceModel.ICommunicationObject> v závislosti na co způsobilo přerušení na prvním místě, může být další práce potřebné k obnovení.|  
+|<xref:System.ServiceModel.EndpointNotFoundException>|Cílový vzdálený koncový bod nenaslouchá. To může vyplývat z jakékoli části koncového bodu adresy je nesprávné, neřešitelné nebo koncový bod je dolů. Příklady zahrnují chybu DNS, Správce front není k dispozici a služba není spuštěna.|Vnitřní výjimka obsahuje podrobnosti, obvykle z podkladového přenosu.|Zkuste jinou adresu. Odesílatel může také chvíli počkat a zkusit to znovu v případě, že služba neklesla.|  
+|<xref:System.ServiceModel.ProtocolException>|Komunikační protokoly, jak je popsáno v zásadách koncového bodu, jsou neodpovídající mezi koncovými body. Například neshoda typu obsahu nebo maximální velikost zprávy byla překročena.|Pokud je k dispozici poskytuje další informace o konkrétní chybě protokolu. Například <xref:System.ServiceModel.QuotaExceededException> je vnitřní výjimka, když příčina chyby je vyšší MaxReceivedMessageSize.|Obnovení: Ujistěte se, že odesílatel a přijaté nastavení protokolu odpovídají. Jedním ze způsobů, jak to provést, je znovu importovat metadata (zásady) koncového bodu služby a použít vygenerovanou vazbu k opětovnému vytvoření kanálu.|  
+|<xref:System.ServiceModel.ServerTooBusyException>|Vzdálený koncový bod naslouchá, ale není připraven ke zpracování zpráv.|Pokud je k dispozici, vnitřní Exception poskytuje podrobnosti o chybě SOAP nebo na úrovni přenosu.|Obnovení: Počkejte a opakujte operaci později.|  
+|<xref:System.TimeoutException>|Operaci se nepodařilo dokončit v časovém rámci.|Může poskytnout podrobnosti o časovém odnož.|Počkejte a opakujte operaci později.|  
   
- Definujte nový typ výjimky pouze v případě, že tento typ odpovídá konkrétní strategii obnovení, která se liší od všech stávajících typů výjimek. Pokud definujete nový typ výjimky, musí odvozovat z <xref:System.ServiceModel.CommunicationException> nebo jedné z jeho odvozených tříd.  
+ Nový typ výjimky definujte pouze v případě, že tento typ odpovídá konkrétní strategii obnovení, která se liší od všech existujících typů výjimek. Pokud definujete nový typ výjimky, <xref:System.ServiceModel.CommunicationException> musí být odvozen z nebo z jedné z jeho odvozených tříd.  
   
-### <a name="exception-messages"></a>Zprávy výjimek  
- Zprávy o výjimkách jsou zaměřeny na uživatele, který není programem, takže by měli poskytnout dostatečné informace, které uživateli pomohou pochopit a vyřešit problém. Mezi tři podstatné části dobré zprávy o výjimce patří:  
+### <a name="exception-messages"></a>Zprávy o výjimky  
+ Zprávy o výjimce jsou zaměřeny na uživatele, nikoli na program, takže by měly poskytnout dostatečné informace, které uživateli pomohou pochopit a vyřešit problém. Tři základní části zprávy o dobré výjimce jsou:  
   
- Co se stalo. Zadejte jasný popis problému s použitím podmínek, které se vztahují k uživatelskému prostředí. Zpráva o špatné výjimce by mohla být například "neplatný konfigurační oddíl". Tím se uživateli zajímá, který konfigurační oddíl je nesprávný a proč není správný. Vylepšená zpráva bude "neplatný konfigurační oddíl \<customBinding >". Ještě lepší zpráva by byla "nelze přidat Transport s názvem myTransport do vazby s názvem myBinding, protože vazba již má Transport s názvem myTransport". Toto je velmi specifická zpráva s použitím podmínek a názvů, které může uživatel snadno identifikovat v konfiguračním souboru aplikace. Stále však chybí několik klíčových součástí.  
+ Co se stalo. Poskytněte jasný popis problému pomocí termínů, které se vztahují k uživatelskému prostředí. Chybná zpráva o výjimce by například byla "Neplatná konfigurační část". To ponechává uživateli přemýšlel, která část konfigurace je nesprávná a proč je nesprávná. Vylepšená zpráva by "Neplatná konfigurační sekce \<customBinding>". Ještě lepší zpráva by "Nelze přidat přenos s názvem myTransport do vazby s názvem myBinding, protože vazba již má přenos s názvem myTransport". Jedná se o velmi specifickou zprávu pomocí termínů a názvů, které může uživatel snadno identifikovat v konfiguračním souboru aplikace. Stále však chybí několik klíčových součástí.  
   
- Význam chyby. Pokud se zpráva nezřetelně nejedná o chybu, uživatel bude pravděpodobně zajímat, zda se jedná o závažnou chybu, nebo zda může být ignorována. Obecně by zprávy měly vést s významem nebo významem chyby. Aby bylo možné vylepšit předchozí příklad, zpráva může být "hostitel ServiceHost se nepodařilo otevřít z důvodu chyby v konfiguraci: nelze přidat Transport s názvem myTransport do vazby s názvem myBinding, protože vazba již má přenos s názvem myTransport".  
+ Význam chyby. Pokud zpráva jasně neuvádí, co chyba znamená, uživatel se pravděpodobně bude ptát, zda se jedná o závažnou chybu nebo zda ji lze ignorovat. Obecně zprávy by měly vést s významem nebo významem chyby. Chcete-li zlepšit předchozí příklad, zpráva může být "ServiceHost se nepodařilo otevřít z důvodu chyby konfigurace: Nelze přidat přenos s názvem myTransport na vazbu s názvem myBinding, protože vazba již má přenos s názvem myTransport".  
   
- Jak by měl uživatel problém vyřešit. Nejdůležitější část zprávy pomáhá uživateli problém vyřešit. Zpráva by měla obsahovat některé doprovodné materiály nebo doporučení týkající se toho, co je třeba opravit nebo opravit, aby problém mohl vyřešit. Například "hostitel ServiceHost se nepodařilo otevřít z důvodu chyby v konfiguraci: do vazby s názvem myBinding nelze přidat přenos s názvem myTransport, protože vazba již má přenos s názvem myTransport. Ujistěte se prosím, že vazba obsahuje jenom jeden přenos.  
+ Jak by měl uživatel problém opravit. Nejdůležitější částí zprávy je pomoc uživateli vyřešit problém. Zpráva by měla obsahovat některé pokyny nebo rady o tom, co zkontrolovat nebo opravit k vyřešení problému. Například "ServiceHost se nepodařilo otevřít z důvodu chyby konfigurace: Nelze přidat přenos s názvem myTransport do vazby s názvem myBinding, protože vazba již má přenos s názvem myTransport. Ujistěte se, že ve vazbě je pouze jedna přeprava".  
   
 ## <a name="communicating-faults"></a>Komunikace s chybami  
- SOAP 1,1 a SOAP 1,2 definují specifickou strukturu pro chyby. Existují některé rozdíly mezi těmito dvěma specifikacemi, ale obecně jsou typy zpráva a parametr MessageFault použity k vytváření a zpracování chyb.  
+ SOAP 1.1 a SOAP 1.2 oba definují specifickou strukturu pro chyby. Existují určité rozdíly mezi dvěma specifikacemi, ale obecně Message a MessageFault typy se používají k vytvoření a využití chyb.  
   
- ![Zpracování výjimek a chyb](./media/wcfc-soap1-1andsoap1-2faultcomparisonc.gif "wcfc_SOAP1 – 1AndSOAP1 – 2FaultComparisonc")  
-Chyba protokolu SOAP 1,2 (Left) a chyby SOAP 1,1 (vpravo). Všimněte si, že v SOAP 1,1 pouze element fault je kvalifikovaný obor názvů.  
+ ![Zpracování výjimek a závad](./media/wcfc-soap1-1andsoap1-2faultcomparisonc.gif "wcfc_SOAP1-1AndSOAP1-2Porovnání chyb")  
+SOAP 1.2 Porucha (vlevo) a CHYBA SOAP 1.1 (vpravo). Všimněte si, že v SOAP 1.1 pouze Fault element je obor názvů kvalifikovaný.  
   
- SOAP definuje zprávu o chybě jako zprávu, která obsahuje pouze element Fault (element, jehož název je `<env:Fault>`) jako podřízený objekt `<env:Body>`. Obsah chybného prvku se mírně liší mezi SOAP 1,1 a SOAP 1,2, jak je znázorněno na obrázku 1. Nicméně třída <xref:System.ServiceModel.Channels.MessageFault?displayProperty=nameWithType> normalizuje tyto rozdíly do jednoho objektového modelu:  
+ SOAP definuje zprávu o chybě jako zprávu, která obsahuje pouze `<env:Fault>`prvek poruchy (prvek, jehož název je ) jako podřízený . `<env:Body>` Obsah zlomového prvku se mírně liší mezi SOAP 1.1 a SOAP 1.2, jak je znázorněno na obrázku 1. Třída však <xref:System.ServiceModel.Channels.MessageFault?displayProperty=nameWithType> normalizuje tyto rozdíly do jednoho objektového modelu:  
   
 ```csharp
 public abstract class MessageFault  
@@ -68,11 +68,11 @@ public abstract class MessageFault
 }  
 ```  
   
- Vlastnost `Code` odpovídá `env:Code` (nebo `faultCode` v protokolu SOAP 1,1) a identifikuje typ chyby. Protokol SOAP 1,2 definuje pět přípustných hodnot pro `faultCode` (například sender a přijímač) a definuje `Subcode` element, který může obsahovat libovolnou hodnotu podkódu. (Viz [specifikace protokolu SOAP 1,2](https://www.w3.org/TR/soap12-part1/#tabsoapfaultcodes) pro seznam povolených kódů chyb a jejich význam) Protokol SOAP 1,1 má mírně odlišný mechanismus: definuje čtyři `faultCode` hodnoty (například klient a Server), které se dají rozšířit tak, že se nadefinují zcela nové nebo pomocí zápisu teček vytvoří konkrétnější `faultCodes`, například Client. Authentication.  
+ Vlastnost `Code` odpovídá `env:Code` (nebo `faultCode` v SOAP 1.1) a identifikuje typ poruchy. SOAP 1.2 definuje pět povolených hodnot pro `faultCode` (například Odesílatel a `Subcode` Příjemce) a definuje prvek, který může obsahovat libovolnou hodnotu podkódu. (Seznam povolených chybových kódů a jejich význam naleznete ve [specifikaci SOAP 1.2.)](https://www.w3.org/TR/soap12-part1/#tabsoapfaultcodes) SOAP 1.1 má mírně odlišný mechanismus: `faultCode` Definuje čtyři hodnoty (například Klient a Server), které lze rozšířit buď definováním zcela nových, `faultCodes`nebo pomocí notace tečky k vytvoření konkrétnější , například Client.Authentication.  
   
- Použijete-li parametr MessageFault k programovým chybám, FaultCode.Name a FaultCode. Namespace se mapují na název a obor názvů `env:Code` protokolu SOAP 1,2 nebo `faultCode`SOAP 1,1. FaultCode. Subcode mapuje na `env:Subcode` pro SOAP 1,2 a pro SOAP 1,1 je null.  
+ Při použití MessageFault k programování chyb, FaultCode.Name a FaultCode.Namespace mapuje na název `env:Code` a obor názvů `faultCode`SOAP 1.2 nebo SOAP 1.1 . FaultCode.SubCode mapuje `env:Subcode` pro SOAP 1.2 a je null pro SOAP 1.1.  
   
- Měli byste vytvořit nové podkódy chyb (nebo nové kódy chyb, pokud používáte protokol SOAP 1,1), pokud je to zajímavé pro programové odlišení chyby. To je podobné jako vytvoření nového typu výjimky. Nepoužívejte zápis tečky s kódy chyb SOAP 1,1. ( [Základní profil WS-I](http://www.ws-i.org/Profiles/BasicProfile-1.1-2004-08-24.html#SOAP_Custom_Fault_Codes) také nedoporučuje použití zápisu teček v kódu chyby.)  
+ Pokud používáte soap 1.1, měli byste vytvořit nové dílčí kódy poruch (nebo nové chybové kódy), pokud je zajímavé programově rozlišit chybu. To je analogické k vytvoření nového typu výjimky. Měli byste se vyhnout použití tečky zápisu s SOAP 1.1 chybové kódy. (Základní [profil WS-I](http://www.ws-i.org/Profiles/BasicProfile-1.1-2004-08-24.html#SOAP_Custom_Fault_Codes) také odrazuje od použití zápisu tečky chybového kódu.)  
   
 ```csharp
 public class FaultCode  
@@ -94,7 +94,7 @@ public class FaultCode
 }  
 ```  
   
- Vlastnost `Reason` odpovídá `env:Reason` (nebo `faultString` v protokolu SOAP 1,1) s popisem chybového stavu, který se podobá zprávě výjimky, uživatelsky čitelný. Třída `FaultReason` (a SOAP `env:Reason/faultString`) obsahuje integrovanou podporu pro více překladů v zájmu globalizace.  
+ Vlastnost `Reason` odpovídá `env:Reason` (nebo `faultString` v SOAP 1.1) lidsky čitelný popis chybového stavu analogicky k zprávě výjimky. Třída `FaultReason` (a `env:Reason/faultString`SOAP) má vestavěnou podporu pro více překladů v zájmu globalizace.  
   
 ```csharp
 public class FaultReason  
@@ -103,20 +103,20 @@ public class FaultReason
     public FaultReason(IEnumerable<FaultReasonText> translations);  
     public FaultReason(string text);  
   
-    public SynchronizedReadOnlyCollection<FaultReasonText> Translations   
-    {   
-       get;   
+    public SynchronizedReadOnlyCollection<FaultReasonText> Translations
+    {
+       get;
     }  
   
  }  
 ```  
   
- Obsah podrobností o chybě se zveřejňuje na parametr MessageFault pomocí různých metod, včetně `GetDetail`\<T > a `GetReaderAtDetailContents`(). Podrobnosti o chybě je neprůhledný prvek pro další podrobnosti o chybě. To je užitečné v případě, že existuje několik libovolných strukturovaných podrobností, které chcete s chybou přenášet.  
+ Obsah podrobností o chybě jsou vystaveny na `GetDetail` \<MessageFault `GetReaderAtDetailContents`pomocí různých metod, včetně T> a (). Detail poruchy je neprůhledný prvek pro přenášení dalších podrobností o poruše. To je užitečné, pokud existuje nějaký libovolný strukturovaný detail, který chcete provést s chybou.  
   
-### <a name="generating-faults"></a>Generují se chyby.  
- Tato část vysvětluje proces generování chyby v reakci na chybový stav zjištěný v kanálu nebo ve vlastnosti zprávy vytvořené kanálem. Typický příklad posílá zpět chybu v reakci na zprávu požadavku, která obsahuje neplatná data.  
+### <a name="generating-faults"></a>Generování chyb  
+ Tato část vysvětluje proces generování chyby v reakci na chybový stav zjištěný v kanálu nebo ve vlastnosti zprávy vytvořené kanálem. Typickým příkladem je odeslání chyby v odpovědi na zprávu požadavku, která obsahuje neplatná data.  
   
- Při generování chyby by vlastní kanál neměl přímo odeslat chybu, místo toho by měla vyvolat výjimku a nechat vrstvu výše rozhodnout, zda má být tato výjimka převedena na chybu a jak ji odeslat. Pro pomoc v tomto převodu by měl kanál poskytovat `FaultConverter` implementaci, která může převést výjimku vyvolanou vlastním kanálem na příslušnou chybu. `FaultConverter` je definován jako:  
+ Při generování chyby by vlastní kanál neměl odesílat chybu přímo, spíše by měl vyvolat výjimku a nechat výše uvedenou vrstvu rozhodnout, zda převést tuto výjimku na chybu a jak ji odeslat. Chcete-li pomoci v tomto převodu, kanál by měl poskytnout `FaultConverter` implementaci, která může převést výjimku vyváděnou vlastní kanál na příslušnou chybu. `FaultConverter`je definována jako:  
   
 ```csharp
 public class FaultConverter  
@@ -124,18 +124,18 @@ public class FaultConverter
     public static FaultConverter GetDefaultFaultConverter(  
                                    MessageVersion version);  
     protected abstract bool OnTryCreateFaultMessage(  
-                                   Exception exception,   
+                                   Exception exception,
                                    out Message message);  
     public bool TryCreateFaultMessage(  
-                                   Exception exception,   
+                                   Exception exception,
                                    out Message message);  
 }  
 ```  
   
- Každý kanál, který generuje vlastní chyby, musí implementovat `FaultConverter` a vracet ho ze volání `GetProperty<FaultConverter>`. Vlastní implementace `OnTryCreateFaultMessage` musí buď převést výjimku na chybu, nebo delegovat na `FaultConverter`vnitřního kanálu. Pokud je kanálem přenos, musí buď převést výjimku nebo delegáta na `FaultConverter` kodéru, nebo výchozí `FaultConverter` poskytovaný v rámci WCF. Výchozí `FaultConverter` převádí chyby odpovídající chybovým zprávám určeným protokolem WS-Addressing a SOAP. Tady je příklad implementace `OnTryCreateFaultMessage`.  
+ Každý kanál, který generuje vlastní `FaultConverter` chyby, musí `GetProperty<FaultConverter>`implementovat a vrátit z volání do . Vlastní `OnTryCreateFaultMessage` implementace musí buď převést výjimku na chybu nebo `FaultConverter`delegovat na vnitřní kanál . Pokud kanál je přenos musí převést výjimku nebo delegovat `FaultConverter` na `FaultConverter` kodéru nebo výchozí k dispozici v WCF . Výchozí `FaultConverter` převede chyby odpovídající chybové zprávy určené WS-Adresování a SOAP. Zde je `OnTryCreateFaultMessage` příklad implementace.  
   
 ```csharp
-public override bool OnTryCreateFaultMessage(Exception exception,   
+public override bool OnTryCreateFaultMessage(Exception exception,
                                              out Message message)  
 {  
     if (exception is ...)  
@@ -145,23 +145,23 @@ public override bool OnTryCreateFaultMessage(Exception exception,
     }  
   
 #if IMPLEMENTING_TRANSPORT_CHANNEL  
-    FaultConverter encoderConverter =   
+    FaultConverter encoderConverter =
                     this.encoder.GetProperty<FaultConverter>();  
-    if ((encoderConverter != null) &&               
+    if ((encoderConverter != null) &&
         (encoderConverter.TryCreateFaultMessage(  
          exception, out message)))  
     {  
         return true;  
     }  
   
-    FaultConverter defaultConverter =   
+    FaultConverter defaultConverter =
                    FaultConverter.GetDefaultFaultConverter(  
                    this.channel.messageVersion);  
     return defaultConverter.TryCreateFaultMessage(  
-                   exception,   
+                   exception,
                    out message);  
 #else  
-    FaultConverter inner =   
+    FaultConverter inner =
                    this.innerChannel.GetProperty<FaultConverter>();  
     if (inner != null)  
     {  
@@ -176,31 +176,31 @@ public override bool OnTryCreateFaultMessage(Exception exception,
 }  
 ```  
   
- Nenásobení tohoto vzoru je, že výjimky vyvolané mezi vrstvami pro chybové stavy, které vyžadují chyby, musí obsahovat dostatek informací pro odpovídající generátor chyb pro vytvoření správné chyby. Jako autor vlastního kanálu můžete definovat typy výjimek, které odpovídají různým chybám, pokud takové výjimky ještě neexistují. Všimněte si, že vrstvy přesměrované kanály by měly sdělit chybový stav, nikoli neprůhledná data chyby.  
+ Důsledkem tohoto vzoru je, že výjimky vyzvané mezi vrstvami pro chybové stavy, které vyžadují chyby, musí obsahovat dostatek informací pro odpovídající generátor chyb k vytvoření správné chyby. Jako vlastní autor kanálu můžete definovat typy výjimek, které odpovídají různým poruchovým podmínkám, pokud takové výjimky ještě neexistují. Všimněte si, že výjimky procházející vrstvy kanálu by měly komunikovat chybový stav spíše než neprůhledná data poruchy.  
   
-### <a name="fault-categories"></a>Kategorie chyb  
- Existují všeobecně tři kategorie chyb:  
+### <a name="fault-categories"></a>Kategorie poruch  
+ Obecně existují tři kategorie závad:  
   
-1. Chyby, které se Pervasive v celém zásobníku. K těmto chybám může dojít v libovolné vrstvě v zásobníku kanálů, například InvalidCardinalityAddressingException.  
+1. Chyby, které jsou všudypřítomné v celém zásobníku. Tyto chyby může dojít v libovolné vrstvě v zásobníku kanálu, například InvalidCardinalityAddressingException.  
   
-2. Chyby, které mohou být zjištěny kdekoli nad určitou vrstvou v zásobníku, například některé chyby, které se týkají toku transakce nebo rolí zabezpečení.  
+2. Chyby, které lze narazit kdekoli nad určitou vrstvu v zásobníku například některé chyby, které se týkající se toku transakce nebo role zabezpečení.  
   
-3. Chyby směrované na jednu vrstvu v zásobníku, například chyby, jako je číslo sekvence WS-RM, chyba.  
+3. Chyby, které jsou směrovány na jednu vrstvu v zásobníku, například chyby, jako jsou chyby pořadového čísla WS-RM.  
   
- Kategorie 1. Chyby jsou obecně WS-Addressing a SOAP chyby. Základní `FaultConverter` třída poskytovaná službou WCF převádí chyby odpovídající chybovým zprávám určeným protokolem WS-Addressing a SOAP, takže nemusíte tyto výjimky zpracovávat sami.  
+ Kategorie 1. Chyby jsou obecně WS adresování a SOAP chyby. Základní `FaultConverter` třída poskytovaná WCF převádí chyby odpovídající chybové zprávy určené WS-Adresování a SOAP, takže není třeba zpracovat převod těchto výjimek sami.  
   
- Kategorie 2. K chybám dochází, když vrstva přidá vlastnost do zprávy, která zcela nespotřebovává informace zprávy, které se vztahují k této vrstvě. Chyby mohou být zjištěny později, pokud vyšší vrstva požádá o vlastnost zprávy o zpracování informací o zprávách. Tyto kanály by měly implementovat `GetProperty` zadanou dříve, aby vyšší vrstva mohla odeslat zpět správnou chybu. Příkladem je TransactionMessageProperty. Tato vlastnost se přidá do zprávy bez úplného ověřování všech dat v hlavičce (v takovém případě může zahrnovat kontaktování služby DTC (Distributed Transaction Coordinator).  
+ Kategorie 2. Chyby dojít, když vrstva přidá vlastnost zprávy, která není zcela využívat informace o zprávě, která se týká této vrstvy. Chyby mohou být zjištěny později, když vyšší vrstva požádá vlastnost zprávy o další zpracování informací o zprávě. Tyto kanály `GetProperty` by měly implementovat zadané dříve povolit vyšší vrstvy odeslat zpět správnou chybu. Příkladem je TransactionMessageProperty. Tato vlastnost je přidána do zprávy bez úplného ověření všech dat v záhlaví (to může zahrnovat kontaktování koordinátora distribuovaných transakcí (DTC).  
   
- Kategorie 3. Chyby jsou generovány a odesílány pouze jednou vrstvou v procesoru. Všechny výjimky jsou proto obsaženy v rámci vrstvy. Aby bylo možné zvýšit konzistenci mezi kanály a snadnou údržbou, váš vlastní kanál by měl pomocí výše uvedeného vzoru vygenerovat chybové zprávy, a to i u interních chyb.  
+ Kategorie 3. Chyby jsou generovány a odesílány pouze jednou vrstvou v procesoru. Proto jsou všechny výjimky obsaženy ve vrstvě. Chcete-li zlepšit konzistenci mezi kanály a usnadnit údržbu, vlastní kanál by měl použít vzor zadaný dříve generovat chybové zprávy i pro vnitřní chyby.  
   
-### <a name="interpreting-received-faults"></a>Interpretují se přijaté chyby.  
- V této části najdete pokyny k vygenerování vhodné výjimky při příjmu chybové zprávy. Rozhodovací strom pro zpracování zprávy v každé vrstvě v zásobníku je následující:  
+### <a name="interpreting-received-faults"></a>Interpretace přijatých chyb  
+ Tato část obsahuje pokyny pro generování příslušné výjimky při přijímání chybové zprávy. Rozhodovací strom pro zpracování zprávy v každé vrstvě v zásobníku je následující:  
   
-1. Pokud vrstva považuje zprávu za neplatnou, měla by tato vrstva provádět zpracování "neplatné zprávy". Toto zpracování je specifické pro vrstvu, ale může zahrnovat vyřazení zprávy, trasování nebo vyvolání výjimky, která je převedena na chybu. Příkladem může být zabezpečení přijímání zprávy, která není správně zabezpečena nebo správce prostředků obdržel zprávu s chybným pořadovým číslem.  
+1. Pokud vrstva považuje zprávu za neplatnou, měla by provést zpracování "neplatné zprávy". Takové zpracování je specifické pro vrstvu, ale může zahrnovat uvolnění zprávy, trasování nebo vyvolání výjimky, která získá převedena na chybu. Mezi příklady patří zabezpečení přijímající zprávu, která není správně zabezpečena, nebo rm přijímající zprávu se špatným pořadovým číslem.  
   
-2. V opačném případě, pokud se jedná o zprávu o chybě, která se vztahuje konkrétně na vrstvu, a zpráva není smysluplná mimo interakci vrstvy, měla by vrstva zpracovat chybový stav. Příkladem je, že sekvence RM odmítla chybu, která nemá smysl na vrstvy nad kanálem RM a který implikuje chybu kanálu RM a vyvolává se z nevyřízených operací.  
+2. V opačném případě pokud zpráva je zpráva, která se vztahuje konkrétně na vrstvu a zpráva není smysluplné mimo interakci vrstvy, vrstva by měla zpracovat chybový stav. Příkladem je chyba ODMÍTNUTÁ RM, která nemá smysl pro vrstvy nad kanálem RM a znamená chybovat kanál RM a vyvolávat z čekajících operací.  
   
-3. V opačném případě by měla být zpráva vrácena z Request () nebo Receive (). To zahrnuje případy, kdy vrstva rozpoznala chybu, ale chyba právě indikuje, že žádost selhala a neznamená chybu kanálu a vyvolání z nevyřízených operací. Pro zlepšení použitelnosti v takovém případě by měla vrstva implementovat `GetProperty<FaultConverter>` a vracet `FaultConverter` odvozenou třídu, která může chybu převést na výjimku přepsáním `OnTryCreateException`.  
+3. V opačném případě by měla být vrácena zpráva z Request() nebo Receive(). To zahrnuje případy, kdy vrstva rozpozná chybu, ale chyba pouze označuje, že požadavek se nezdařil a neznamená chybování kanálu a vyvolání z čekajících operací. Chcete-li zlepšit použitelnost v takovém případě `GetProperty<FaultConverter>` by `FaultConverter` měla vrstva implementovat a vrátit odvozenou `OnTryCreateException`třídu, která může převést chybu na výjimku přepsáním .  
   
  Následující objektový model podporuje převod zpráv na výjimky:  
   
@@ -210,24 +210,24 @@ public class FaultConverter
     public static FaultConverter GetDefaultFaultConverter(  
                                   MessageVersion version);  
     protected abstract bool OnTryCreateException(  
-                                 Message message,   
-                                 MessageFault fault,   
+                                 Message message,
+                                 MessageFault fault,
                                  out Exception exception);  
     public bool TryCreateException(  
-                                 Message message,   
-                                 MessageFault fault,   
+                                 Message message,
+                                 MessageFault fault,
                                  out Exception exception);  
 }  
 ```  
   
- Vrstva kanálu může implementovat `GetProperty<FaultConverter>` pro podporu převodu chybových zpráv na výjimky. Provedete to tak, že přepíšete `OnTryCreateException` a zkontrolujete zprávu o chybě. Je-li rozpoznán, proveďte převod, jinak požádejte o převod na vnitřní kanál. Přenosové kanály by měly `FaultConverter.GetDefaultFaultConverter`, aby se získal výchozí protokol SOAP/WS-Addressing FaultConverter.  
+ Vrstva kanálu `GetProperty<FaultConverter>` můžete implementovat pro podporu převodu chybové zprávy na výjimky. Chcete-li tak `OnTryCreateException` učinit, přepsat a zkontrolujte zprávu o chybě. Pokud je rozpoznán, proveďte převod, jinak požádejte vnitřní kanál, aby jej převedl. Kanály přenosu `FaultConverter.GetDefaultFaultConverter` by měldelegovat získat výchozí SOAP/WS adresování FaultConverter.  
   
  Typická implementace vypadá takto:  
   
 ```csharp
 public override bool OnTryCreateException(  
-                            Message message,   
-                            MessageFault fault,   
+                            Message message,
+                            MessageFault fault,
                             out Exception exception)  
 {  
     if (message.Action == "...")  
@@ -253,9 +253,9 @@ public override bool OnTryCreateException(
     }  
   
 #if IMPLEMENTING_TRANSPORT_CHANNEL  
-    FaultConverter encoderConverter =   
+    FaultConverter encoderConverter =
               this.encoder.GetProperty<FaultConverter>();  
-    if ((encoderConverter != null) &&   
+    if ((encoderConverter != null) &&
         (encoderConverter.TryCreateException(  
                               message, fault, out exception)))  
     {  
@@ -268,7 +268,7 @@ public override bool OnTryCreateException(
     return defaultConverter.TryCreateException(  
                              message, fault, out exception);  
 #else  
-    FaultConverter inner =   
+    FaultConverter inner =
                     this.innerChannel.GetProperty<FaultConverter>();  
     if (inner != null)  
     {  
@@ -283,44 +283,44 @@ public override bool OnTryCreateException(
 }  
 ```  
   
- Pro konkrétní chybové stavy, které mají odlišné scénáře obnovení, zvažte definování odvozené třídy `ProtocolException`.  
+ Pro konkrétní chybové podmínky, které mají odlišné scénáře `ProtocolException`obnovení, zvažte definování odvozené třídy .  
   
-### <a name="mustunderstand-processing"></a>Zpracování MustUnderstand  
- Protokol SOAP definuje obecnou chybu pro signalizaci, že příjemce nerozuměl požadované záhlaví. Tato chyba je známá jako chyba `mustUnderstand`. Ve službě WCF nikdy negenerují vlastní kanály `mustUnderstand` chyby. Místo toho služba WCF Dispatcher, která je umístěna v horní části komunikačního zásobníku WCF, zkontroluje, zda je v podkladovém zásobníku porozuměla všechna záhlaví označená jako MustUnderstand = true. Pokud některý z nich nebyl pochopen, vygeneruje se v tomto okamžiku `mustUnderstand`á chyba. (Uživatel se může rozhodnout vypnout toto `mustUnderstand` zpracování a aplikace obdrží všechna záhlaví zpráv. V takovém případě je aplikace zodpovědná za provádění `mustUnderstand`ho zpracování.) Vygenerovaná chyba zahrnuje hlavičku NotUnderstood, která obsahuje názvy všech hlaviček s MustUnderstand = true, které se nerozuměly.  
+### <a name="mustunderstand-processing"></a>Zpracování musí pochopit  
+ SOAP definuje obecnou chybu pro signalizaci, že příjemce nepochopil požadovanou hlavičku. Tato chyba se `mustUnderstand` označuje jako chyba. V WCF vlastní kanály nikdy generovat `mustUnderstand` chyby. Místo toho WCF Dispatcher, který je umístěn v horní části zásobníku komunikace WCF, zkontroluje, zda všechny hlavičky, které byly označeny jako MustUnderstand =true byly pochopeny základní zásobníku. Pokud některé nebyly pochopeny, `mustUnderstand` chyba je generována v tomto okamžiku. (Uživatel se může rozhodnout `mustUnderstand` toto zpracování vypnout a aplikaci přijímat všechna záhlaví zpráv. V takovém případě je aplikace `mustUnderstand` zodpovědná za zpracování.) Vygenerovaná chyba obsahuje hlavičku NotUnderstood, která obsahuje názvy všech záhlaví s MustUnderstand=true, které nebyly pochopeny.  
   
- Pokud kanál protokolu odešle vlastní hlavičku s MustUnderstand = true a obdrží chybu `mustUnderstand`, musí zjistit, jestli je tato chyba způsobená hlavičkou, kterou odeslala. Existují dva členy `MessageFault` třídy, které jsou užitečné pro tuto třídu:  
+ Pokud váš kanál protokolu odešle vlastní záhlaví s `mustUnderstand` MustUnderstand=true a obdrží chybu, musí zjistit, zda je tato chyba způsobena hlavičkou, kterou odeslal. Ve `MessageFault` třídě jsou dva členy, které jsou užitečné pro toto:  
   
 ```csharp
 public class MessageFault  
 {  
     ...  
     public bool IsMustUnderstandFault { get; }  
-    public static bool WasHeaderNotUnderstood(MessageHeaders headers,   
+    public static bool WasHeaderNotUnderstood(MessageHeaders headers,
         string name, string ns) { }  
     ...  
   
 }  
 ```  
   
- `IsMustUnderstandFault` vrátí `true`, pokud se jedná o chybu `mustUnderstand`. `WasHeaderNotUnderstood` vrátí `true`, pokud je hlavička se zadaným názvem a oborem názvů obsažena v chybě jako hlavička NotUnderstood.  V opačném případě vrátí `false`.  
+ `IsMustUnderstandFault`pokud `true` se závada `mustUnderstand` nachází v závadě. `WasHeaderNotUnderstood`vrátí, `true` pokud je záhlaví se zadaným názvem a oborem názvů zahrnuto do chyby jako hlavička NotUnderstood.  V opačném `false`případě vrátí .  
   
- Pokud kanál vygeneruje hlavičku, která je označena jako MustUnderstand = true, pak by tato vrstva měla také implementovat vzor rozhraní API generování výjimek a měla by převést `mustUnderstand` chyby způsobené touto hlavičkou na užitečnější výjimku, jak je popsáno výše.  
+ Pokud kanál vyzařuje záhlaví, které je označeno MustUnderstand = true, pak by tato `mustUnderstand` vrstva měla také implementovat vzor rozhraní API pro generování výjimek a měla by převést chyby způsobené tímto záhlavím na užitečnější výjimku, jak je popsáno výše.  
   
 ## <a name="tracing"></a>Trasování  
- .NET Framework poskytuje mechanismus pro trasování spuštění programu jako způsob, jak pomoci diagnostikovat produkčních aplikací nebo občasné problémy, kde není možné pouze připojit ladicí program a krokovat kód. Základní komponenty tohoto mechanismu jsou v oboru názvů <xref:System.Diagnostics?displayProperty=nameWithType> a skládají se z:  
+ Rozhraní .NET Framework poskytuje mechanismus pro sledování spuštění programu jako způsob, jak pomoci diagnostikovat produkční aplikace nebo občasné problémy, kde není možné pouze připojit ladicí program a krokovat kód. Základní součásti tohoto mechanismu jsou <xref:System.Diagnostics?displayProperty=nameWithType> v oboru názvů a skládají se z:  
   
-- <xref:System.Diagnostics.TraceSource?displayProperty=nameWithType>, což je zdroj trasovacích informací, které mají být zapsány, <xref:System.Diagnostics.TraceListener?displayProperty=nameWithType>, což je abstraktní základní třída pro konkrétní naslouchací procesy, které obdrží informace, které mají být trasovány z <xref:System.Diagnostics.TraceSource> a jejich výstup do cíle specifického pro naslouchací proces. Například <xref:System.Diagnostics.XmlWriterTraceListener> výstupy trasovacích informací do souboru XML. Nakonec <xref:System.Diagnostics.TraceSwitch?displayProperty=nameWithType>, která umožňuje uživatelskému ovládacímu prvku aplikace sledovat podrobnosti trasování a je obvykle zadáno v konfiguraci.  
+- <xref:System.Diagnostics.TraceSource?displayProperty=nameWithType>, což je zdroj trasovací informace, které mají být zapsány , <xref:System.Diagnostics.TraceListener?displayProperty=nameWithType>, což je abstraktní <xref:System.Diagnostics.TraceSource> základní třída pro konkrétní posluchače, které přijímají informace, které mají být vysledovány z a výstup do cíle specifické pro posluchače. Například <xref:System.Diagnostics.XmlWriterTraceListener> výstupy trasování informace do souboru XML. Nakonec <xref:System.Diagnostics.TraceSwitch?displayProperty=nameWithType>, který umožňuje uživateli aplikace řídit podrobnosti o trasování a je obvykle zadán v konfiguraci.  
   
-- Kromě základních komponent můžete použít [Nástroj pro prohlížeč trasování služby (SvcTraceViewer. exe)](../service-trace-viewer-tool-svctraceviewer-exe.md) k zobrazení a hledání trasování WCF. Nástroj je navržen speciálně pro trasovací soubory vygenerované službou WCF a zapisují se pomocí <xref:System.Diagnostics.XmlWriterTraceListener>. Následující obrázek znázorňuje různé komponenty, které jsou součástí trasování.  
+- Kromě základních součástí můžete k zobrazení a prohledání trasování WCF použít [nástroj prohlížeč trasování služby (SvcTraceViewer.exe).](../service-trace-viewer-tool-svctraceviewer-exe.md) Nástroj je navržen speciálně pro trasovací soubory generované <xref:System.Diagnostics.XmlWriterTraceListener>WCF a psaný pomocí . Následující obrázek znázorňuje různé součásti, které se podílejí na trasování.  
   
- ![Zpracování výjimek a chyb](./media/wcfc-tracinginchannelsc.gif "wcfc_TracingInChannelsc")  
+ ![Zpracování výjimek a závad](./media/wcfc-tracinginchannelsc.gif "wcfc_TracingInChannelsc")  
   
 ### <a name="tracing-from-a-custom-channel"></a>Trasování z vlastního kanálu  
- Vlastní kanály by měly vypsat zprávy trasování, které vám pomůžou diagnostikovat problémy, když není možné připojit ladicí program ke spuštěné aplikaci. To zahrnuje dva úlohy na nejvyšší úrovni: vytvoření instance <xref:System.Diagnostics.TraceSource> a volání jeho metod pro zápis trasování.  
+ Vlastní kanály by měly zapisovat trasovací zprávy, které by pomohly při diagnostice problémů, když není možné připojit ladicí program ke spuštěné aplikaci. To zahrnuje dva úkoly na vysoké <xref:System.Diagnostics.TraceSource> úrovni: Vytváření instancí a volání jeho metody pro zápis trasování.  
   
- Při vytváření instance <xref:System.Diagnostics.TraceSource>se řetězec, který zadáte, bude název tohoto zdroje. Tento název se používá ke konfiguraci (povolení nebo zakázání/nastavení úrovně trasování) zdroje trasování. Také se zobrazí ve výstupu trasování. Vlastní kanály by měly používat jedinečný název zdroje, aby usnadnili čtenářům výstup trasování pochopit, odkud informace o trasování pocházejí. Použití názvu sestavení, které zapisuje informace jako název zdroje trasování, je běžný postup. Například WCF používá jako zdroj trasování System. ServiceModel pro informace napsané ze sestavení System. ServiceModel.  
+ Při vytváření instancí <xref:System.Diagnostics.TraceSource>a se zadaný řetězec stane názvem tohoto zdroje. Tento název se používá ke konfiguraci (povolit/zakázat/nastavit úroveň trasování) zdroj trasování. Zobrazí se také v samotném výstupu trasování. Vlastní kanály by měly používat jedinečný zdrojový název, který čtenářům výstupu trasování pomůže pochopit, odkud pocházejí informace o trasování. Použití názvu sestavení, které zapisuje informace jako název zdroje trasování je běžnou praxí. Například WCF používá System.ServiceModel jako zdroj trasování pro informace napsané ze sestavení System.ServiceModel.  
   
- Jakmile budete mít zdroj trasování, zavolejte jeho <xref:System.Diagnostics.TraceSource.TraceData%2A>, <xref:System.Diagnostics.TraceSource.TraceEvent%2A>nebo <xref:System.Diagnostics.TraceSource.TraceInformation%2A> metody pro zápis trasovacích položek do posluchačů trasování. Pro každý záznam trasování, který zapisujete, je třeba klasifikovat typ události jako jeden z typů událostí definovaných v <xref:System.Diagnostics.TraceEventType>. Tato klasifikace a nastavení úrovně trasování v konfiguraci určují, zda je záznam trasování výstupem naslouchacího procesu. Například nastavení úrovně trasování v konfiguraci na `Warning` povoluje zápis `Warning`, `Error` a `Critical` záznamů trasování, ale blokuje informace a podrobné položky. Tady je příklad vytvoření instance zdroje trasování a zápis položky na úrovni informací:  
+ Jakmile máte zdroj trasování, <xref:System.Diagnostics.TraceSource.TraceData%2A>zavoláte jeho , <xref:System.Diagnostics.TraceSource.TraceEvent%2A>nebo <xref:System.Diagnostics.TraceSource.TraceInformation%2A> metody pro zápis trasovacích položek do posluchačů trasování. Pro každou položku trasování, kterou zapíšete, je třeba klasifikovat typ události jako jeden z typů událostí definovaných v . <xref:System.Diagnostics.TraceEventType> Tato klasifikace a nastavení úrovně trasování v konfiguraci určují, zda je položka trasování výstupem na schytavku. Například nastavení úrovně trasování `Warning` v `Warning` `Error` konfiguraci umožňuje a `Critical` trasování položky, které mají být zapsány, ale blokuje informace a podrobné položky. Zde je příklad vytvoření instance zdroje trasování a zápisu položky na úrovni informace:  
   
 ```csharp
 using System.Diagnostics;  
@@ -331,17 +331,17 @@ udpsource.TraceInformation("UdpInputChannel received a message");
 ```  
   
 > [!IMPORTANT]
-> Důrazně doporučujeme zadat název zdroje trasování, který je jedinečný pro váš vlastní kanál, aby bylo možné sledovat čtecí zařízení pro výstup a pochopit, odkud výstup pochází.  
+> Důrazně doporučujeme zadat název zdroje trasování, který je jedinečný pro váš vlastní kanál, který pomůže sledovat výstupní čtečky pochopit, odkud výstup pochází.  
   
 #### <a name="integrating-with-the-trace-viewer"></a>Integrace s prohlížečem trasování  
- Trasování generovaná vaším kanálem může být výstupem ve formátu čitelném [nástrojem pro prohlížení služby Service Trace (SvcTraceViewer. exe)](../service-trace-viewer-tool-svctraceviewer-exe.md) pomocí <xref:System.Diagnostics.XmlWriterTraceListener?displayProperty=nameWithType> jako naslouchací proces trasování. Nejedná se o něco, co je třeba pro vývojáře kanálu. Místo toho je uživatel aplikace (nebo osoba, která řešení potíží s aplikací), která vyžaduje konfiguraci tohoto naslouchacího procesu trasování v konfiguračním souboru aplikace. Následující konfigurace například vypíše informace o trasování z <xref:System.ServiceModel?displayProperty=nameWithType> a `Microsoft.Samples.Udp` do souboru s názvem `TraceEventsFile.e2e`:  
+ Trasování generované kanálem může být výstup ve formátu čitelné [masce služby (SvcTraceViewer.exe)](../service-trace-viewer-tool-svctraceviewer-exe.md) pomocí <xref:System.Diagnostics.XmlWriterTraceListener?displayProperty=nameWithType> jako naslouchací proces trasování. To není něco, co musíte jako vývojář kanálu udělat. Spíše je uživatel aplikace (nebo osoba řešení potíží s aplikací), který potřebuje nakonfigurovat tento naslouchací proces trasování v konfiguračním souboru aplikace. Například následující konfigurace výstupy trasování <xref:System.ServiceModel?displayProperty=nameWithType> `Microsoft.Samples.Udp` informace z `TraceEventsFile.e2e`obou a do souboru s názvem :  
   
 ```xml  
 <configuration>  
   <system.diagnostics>  
     <sources>  
       <!-- configure System.ServiceModel trace source -->  
-      <source name="System.ServiceModel" switchValue="Verbose"   
+      <source name="System.ServiceModel" switchValue="Verbose"
               propagateActivity="true">  
         <listeners>  
           <add name="e2e" />  
@@ -368,7 +368,7 @@ udpsource.TraceInformation("UdpInputChannel received a message");
 ```  
   
 #### <a name="tracing-structured-data"></a>Trasování strukturovaných dat  
- <xref:System.Diagnostics.TraceSource?displayProperty=nameWithType> má <xref:System.Diagnostics.TraceSource.TraceData%2A> metodu, která přebírá jeden nebo více objektů, které mají být zahrnuty do položky trasování. Obecně je metoda <xref:System.Object.ToString%2A?displayProperty=nameWithType> volána pro každý objekt a výsledný řetězec je zapsán jako součást položky trasování. Při použití <xref:System.Diagnostics.XmlWriterTraceListener?displayProperty=nameWithType> pro výstup trasování můžete předat <xref:System.Xml.XPath.IXPathNavigable?displayProperty=nameWithType> jako datový objekt <xref:System.Diagnostics.TraceSource.TraceData%2A>. Výsledná položka trasování obsahuje XML od <xref:System.Xml.XPath.XPathNavigator?displayProperty=nameWithType>. Tady je příklad položky s daty aplikace XML:  
+ <xref:System.Diagnostics.TraceSource?displayProperty=nameWithType>má <xref:System.Diagnostics.TraceSource.TraceData%2A> metodu, která trvá jeden nebo více objektů, které mají být zahrnuty do položky trasování. Obecně platí, <xref:System.Object.ToString%2A?displayProperty=nameWithType> že metoda je volána na každý objekt a výsledný řetězec je zapsán jako součást položky trasování. Při <xref:System.Diagnostics.XmlWriterTraceListener?displayProperty=nameWithType> použití k výstupu trasování, <xref:System.Xml.XPath.IXPathNavigable?displayProperty=nameWithType> můžete předat <xref:System.Diagnostics.TraceSource.TraceData%2A>jako datový objekt . Výsledná položka trasování zahrnuje xml <xref:System.Xml.XPath.XPathNavigator?displayProperty=nameWithType>poskytované . Zde je ukázková položka s daty aplikace XML:  
   
 ```xml  
 <E2ETraceEvent xmlns="http://schemas.microsoft.com/2004/06/E2ETraceEvent">  
@@ -380,7 +380,7 @@ udpsource.TraceInformation("UdpInputChannel received a message");
     <TimeCreated SystemTime="2006-01-13T22:58:03.0654832Z" />  
     <Source Name="Microsoft.ServiceModel.Samples.Udp" />  
     <Correlation ActivityID="{00000000-0000-0000-0000-000000000000}" />  
-    <Execution  ProcessName="UdpTestConsole"   
+    <Execution  ProcessName="UdpTestConsole"
                 ProcessID="3348" ThreadID="4" />  
     <Channel />  
     <Computer>COMPUTER-LT01</Computer>  
@@ -389,7 +389,7 @@ udpsource.TraceInformation("UdpInputChannel received a message");
   <ApplicationData>  
   <TraceData>  
    <DataItem>  
-   <TraceRecord   
+   <TraceRecord
      Severity="Information"  
      xmlns="…">  
         <TraceIdentifier>some trace id</TraceIdentifier>  
@@ -403,4 +403,4 @@ udpsource.TraceInformation("UdpInputChannel received a message");
 </E2ETraceEvent>  
 ```  
   
- Prohlížeč trasování WCF rozumí schématu `TraceRecord`ho prvku, který jste předtím ukázali, extrahuje data z jejích podřízených prvků a zobrazí je v tabulkovém formátu. Kanál by měl používat toto schéma při trasování strukturovaných dat aplikace, aby uživatelé SvcTraceViewer. exe mohli data číst.
+ Prohlížeč trasování WCF rozumí schématu `TraceRecord` dříve zobrazeného prvku a extrahuje data z podřízených prvků a zobrazí je v tabulkovém formátu. Váš kanál by měl používat toto schéma při trasování strukturovaných dat aplikace pomoci Uživatelům Svctraceviewer.exe číst data.

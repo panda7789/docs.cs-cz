@@ -3,43 +3,43 @@ title: Spolupráce peer-to-peer
 ms.date: 03/30/2017
 ms.assetid: b6216d88-bccb-4a59-9f1c-9f751708e811
 ms.openlocfilehash: 7cf92f6bf3c269e584cb8b3cdcf910be5b89fd7e
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "71047385"
 ---
-# <a name="peer-to-peer-collaboration"></a>Spolupráce peer-to-peer
+# <a name="peer-to-peer-collaboration"></a>Spolupráce mezi dvěma účastníky
 
-Sítě peer-to-peer je využití poměrně výkonných počítačů (osobní počítače), které existují na hranici Internetu, a to více než jenom pro výpočetní úlohy založené na klientech. Moderní osobní počítač (PC) má velmi rychlý procesor, rozsáhlou paměť a velký pevný disk, přičemž žádná z nich se při provádění běžných výpočetních úloh, jako je e-mail a procházení webu, nevyužívá úplně. Moderní počítač může snadno fungovat jako klient i server (partner) pro mnoho typů aplikací.  
+Síť peer-to-peer je využití relativně výkonných počítačů (osobních počítačů), které existují na okraji Internetu pro více než jen klientské výpočetní úlohy. Moderní osobní počítač (PC) má velmi rychlý procesor, rozsáhlou paměť a velký pevný disk, z nichž žádný není plně využíván při provádění běžných výpočetních úloh, jako je e-mail a procházení webu. Moderní počítač může snadno fungovat jako klient i server (peer) pro mnoho typů aplikací.  
   
-Infrastruktura spolupráce peer-to-peer je zjednodušená implementace infrastruktury Microsoft Windows peer-to-peer, která využívá službu lidé v mém okolí v systému Windows Vista a novějších platformách. Je nejvhodnější pro aplikace s povoleným partnerským vztahem v podsíti, pro kterou funguje služba lidé v mém okolí, i když může obsluhovat také koncové body Internetu nebo kontakty. Zahrnuje společného správce kontaktů, který používá Live Messenger a další živé aplikace k určení koncových bodů, dostupnosti a přítomnosti kontaktů.  
+Infrastruktura spolupráce peer-to-peer je zjednodušená implementace infrastruktury Microsoft Windows Peer-to-Peer, která využívá službu Lidé v mém okolí v systému Windows Vista a novějších platformách. Nejlépe se používá pro aplikace s podporou rovnocenných zařízení v rámci podsítě, pro kterou služba People Near Me funguje, i když může také obsluhovat koncové body nebo kontakty v Internetu. Zahrnuje společný Správce kontaktů, který používá Live Messenger a další aplikace podporující živé vysílání k určení koncových bodů kontaktu, dostupnosti a přítomnosti.  
   
 ## <a name="collaboration-applications"></a>Aplikace pro spolupráci
 
- Typická aplikace pro spolupráci Peer-to-peer se skládá z následujících kroků:  
+ Typická aplikace pro spolupráci mezi dvěma účastníky se skládá z následujících kroků:  
   
-- Partner Určuje identitu partnerského zařízení, která má zájem o hostování relace spolupráce.  
+- Peer určuje identitu partnera, který má zájem o hostování relace spolupráce  
   
-- Požadavek na hostování relace se pošle, a proto Partnerská strana souhlasí s tím, aby spravovala aktivitu spolupráce.  
+- Žádost o hostování relace je odeslána, nějak a partner hostitele souhlasí se správou aktivity spolupráce.  
   
-- Hostitel pozve kontakty v podsíti (včetně žadatele) k relaci.  
+- Hostitel pozve kontakty v podsíti (včetně žadatele) do relace.  
   
-- Všichni partneři, kteří chtějí spolupracovat, můžou hostitele přidat ke svým manažerům kontaktů.  
+- Všichni partneři, kteří chtějí spolupracovat, mohou přidat hostitele do svých správců kontaktů.  
   
-- Většina partnerských uzlů pošle odpovědi na pozvánky, ať už přijaté nebo odmítnuté, zpátky partnerovi hostitele včas.  
+- Většina partnerů odešle odpovědi na pozvánky, ať už přijaté nebo odmítnuté, zpět hostitelskému partnerovi včas.  
   
-- Všichni partneři, kteří chtějí spolupracovat, se přihlásí k odběru partnerského uzlu hostitele.  
+- Všichni partneři, kteří chtějí spolupracovat, se přihlásí k odběru partnerského partnera hostitele.  
   
-- I když partneři provádějí svou počáteční aktivitu spolupráce, hostitelská partner může do svého správce kontaktů přidat vzdálené partnerské uzly. Také zpracovává všechny reakce na pozvánky, které určují, kdo přijal, kdo odmítl a kdo na něj neodpověděl.  Může zrušit pozvánky na uživatele, kteří neodpověděli, nebo provést nějakou jinou aktivitu.  
+- Zatímco partneři provádějí svou počáteční aktivitu spolupráce, partner hostitelského partnera může přidat vzdálené partnery do svého správce kontaktů. Zpracovává také všechny odpovědi na pozvánky, aby určil, kdo přijal, kdo odmítl a kdo neodpověděl.  Může zrušit pozvánky pro ty, kteří neodpověděli, nebo provést jinou činnost.  
   
-- V tomto okamžiku může Partnerská strana hostitele spustit relaci spolupráce se všemi pozvanými partnery nebo zaregistrovat aplikaci s infrastrukturou pro spolupráci.  Aplikace P2P používají infrastrukturu spolupráce peer-to-peer a <xref:System.Net.PeerToPeer.Collaboration> obor názvů ke koordinaci komunikace pro hry, vývěsky, konference a další aplikace pro nepřítomnost serveru.  
+- V tomto okamžiku může partner hostitele zahájit relaci spolupráce se všemi pozvanými partnery nebo zaregistrovat aplikaci s infrastrukturou pro spolupráci.  Aplikace P2P používají infrastrukturu spolupráce peer-to-peer a <xref:System.Net.PeerToPeer.Collaboration> obor názvů ke koordinaci komunikace pro hry, vývěsky, konference a další aplikace bez serveru.  
   
-## <a name="peer-to-peer-networking-security"></a>Zabezpečení sítě peer-to-peer  
+## <a name="peer-to-peer-networking-security"></a>Zabezpečení sítě mezi dvěma účastníky  
 
- Řadiče domény v doméně služby Active Directory poskytují ověřovací služby pomocí protokolu Kerberos. V partnerském prostředí bez serveru musí partneři poskytnout své vlastní ověřování. Pro sítě peer-to-peer může kterýkoli uzel fungovat jako certifikační autorita a odebrat požadavek na kořenový certifikát v úložišti důvěryhodných kořenových certifikátů jednotlivých partnerských uzlů. Ověřování je poskytované pomocí certifikátů podepsaných svým držitelem, které jsou formátované jako certifikáty X. 509. Jedná se o certifikáty, které vytváří každý partner, který generuje pár veřejného klíče/privátního klíče a certifikát podepsaný pomocí privátního klíče. Certifikát podepsaný svým držitelem se používá k ověřování a poskytuje informace o partnerské entitě. Podobně jako u ověřování X. 509 závisí ověřování sítě rovnocenných sítí na základě řetězu certifikátů, které se vrátí k veřejnému klíči, který je důvěryhodný.  
+ V doméně služby Active Directory poskytují řadiče domény ověřovací služby pomocí protokolu Kerberos. V prostředí peer bez serveru musí partneři poskytovat vlastní ověřování. Pro peer-to-peer sítě může každý uzel fungovat jako certifikační autorita, odebrání požadavku kořenového certifikátu v úložišti důvěryhodných kořenových adresářů každého partnera. Ověřování je poskytováno pomocí certifikátů podepsaných svým držitelem, formátovaných jako certifikáty X.509. Jedná se o certifikáty, které jsou vytvořeny jednotlivými rovnocennými partnery, které generují dvojici veřejného klíče a soukromého klíče a certifikát, který je podepsán pomocí soukromého klíče. Certifikát podepsaný svým držitelem se používá k ověřování a k poskytování informací o entitě druhé strany. Stejně jako ověřování X.509, peer networking ověřování závisí na řetězci certifikátů, které se vracejí k důvěryhodnému veřejnému klíči.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Net.PeerToPeer.Collaboration>
 - [Obor názvů System.Net.PeerToPeer.Collaboration](about-the-system-net-peertopeer-collaboration-namespace.md)

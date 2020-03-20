@@ -10,26 +10,26 @@ helpviewer_keywords:
 - <connectionManagement>, remove element
 - remove element, connectionManagement
 ms.assetid: 94b81775-5a22-4975-8c47-8620c40c3f35
-ms.openlocfilehash: 287e36dce65be7a002499d2cd22481018a1f4742
-ms.sourcegitcommit: 7f8eeef060ddeb2cabfa52843776faf652c5a1f5
+ms.openlocfilehash: 39ce85c3c15a2d4bdfce801a35e9ca088bd5091b
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74089167"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79154735"
 ---
-# <a name="remove-element-for-connectionmanagement-network-settings"></a>\<odebrat element > pro connectionManagement (nastavení sítě)
-Odebere IP adresu nebo název DNS ze seznamu správy připojení.  
+# <a name="remove-element-for-connectionmanagement-network-settings"></a>\<odebrat> Element pro connectionManagement (Nastavení sítě)
+Odebere adresu IP nebo název DNS ze seznamu správy připojení.  
 
-[ **\<configuration >** ](../configuration-element.md) \
-&nbsp;&nbsp;[ **\<System. net >** ](system-net-element-network-settings.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;[ **\<connectionManagement >** ](connectionmanagement-element-network-settings.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<odebrat >**
+[**\<>konfigurace**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<system.net>**](system-net-element-network-settings.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[**\<connectionManagement>**](connectionmanagement-element-network-settings.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<odebrat>**
 
 ## <a name="syntax"></a>Syntaxe  
   
 ```xml  
-<remove   
-  address="server name or IP address"   
+<remove
+  address="server name or IP address"
 />  
 ```  
   
@@ -40,10 +40,10 @@ Odebere IP adresu nebo název DNS ze seznamu správy připojení.
   
 |**Atribut**|**Popis**|  
 |-------------------|---------------------|  
-|`address`|IP adresa nebo název DNS.|  
+|`address`|Adresa IP nebo název DNS.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
- Žádné  
+ Žádné.  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
@@ -52,15 +52,15 @@ Odebere IP adresu nebo název DNS ze seznamu správy připojení.
 |[connectionManagement](connectionmanagement-element-network-settings.md)|Určuje maximální počet připojení k síťovému hostiteli.|  
   
 ## <a name="remarks"></a>Poznámky  
- Element `remove` odebere položku seznamu správy připojení pro zadaný server.  
+ Prvek `remove` odebere položku seznamu správy připojení pro zadaný server.  
   
- Hodnota atributu `address` musí být platná IP adresa nebo název hostitele.  
+ Hodnota atributu `address` by měla být platná adresa IP nebo název hostitele.  
   
 ## <a name="configuration-files"></a>Konfigurační soubory  
- Tento element lze použít v konfiguračním souboru aplikace nebo v konfiguračním souboru počítače (Machine. config).  
+ Tento prvek lze použít v konfiguračním souboru aplikace nebo v konfiguračním souboru počítače (Machine.config).  
   
 ## <a name="example"></a>Příklad  
- Následující příklad odebere všechny položky seznamu správy připojení pro server `www.adventure-works.com` a pak nakonfiguruje aplikaci tak, aby používala čtyři připojení k serveru `www.contoso.com` a dvě připojení ke všem ostatním serverům.  
+ Následující příklad odebere všechny položky seznamu `www.adventure-works.com` správy připojení pro server a potom `www.contoso.com` nakonfiguruje aplikaci tak, aby používala čtyři připojení k serveru a dvě připojení ke všem ostatním serverům.  
   
 ```xml  
 <configuration>  
@@ -74,7 +74,7 @@ Odebere IP adresu nebo název DNS ze seznamu správy připojení.
 </configuration>  
 ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Net.ServicePoint>
 - <xref:System.Net.ServicePointManager>

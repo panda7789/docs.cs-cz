@@ -18,18 +18,18 @@ helpviewer_keywords:
 - Internet, sockets
 ms.assetid: d1ce882e-653e-41f5-9289-844ec855b804
 ms.openlocfilehash: cbc02c755ceefa8f31439f121a98978b82f33fa2
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "71047037"
 ---
 # <a name="using-a-synchronous-server-socket"></a>Použití synchronního serverového soketu
-Synchronní sokety serveru pozastaví provádění aplikace, dokud se na soketu nepřijme požadavek na připojení. Synchronní sokety serveru nejsou vhodné pro aplikace, které při jejich provozu využívají těžké sítě, ale můžou být vhodné pro jednoduché síťové aplikace.  
+Synchronní sokety serveru pozastaví provádění aplikace, dokud není přijat požadavek na připojení v soketu. Synchronní serverové sokety nejsou vhodné pro aplikace, které při svém provozu velmi využívají síť, ale mohou být vhodné pro jednoduché síťové aplikace.  
   
- Jakmile je nastaveno naslouchání na koncovém bodu <xref:System.Net.Sockets.Socket.Bind%2A> pomocí metod a <xref:System.Net.Sockets.Socket.Listen%2A> , je <xref:System.Net.Sockets.Socket.Accept%2A> připraven přijímat příchozí požadavky na připojení pomocí metody. <xref:System.Net.Sockets.Socket> Aplikace je pozastavena, dokud nebude přijata žádost o připojení při volání metody **Accept** .  
+ Po <xref:System.Net.Sockets.Socket> a je nastavena na naslouchání na koncovém bodu pomocí metody <xref:System.Net.Sockets.Socket.Bind%2A> a, <xref:System.Net.Sockets.Socket.Listen%2A> je připraven přijmout příchozí požadavky na připojení pomocí <xref:System.Net.Sockets.Socket.Accept%2A> metody. Aplikace je pozastavena, dokud není přijat požadavek na připojení při volání metody **Accept.**  
   
- Po přijetí žádosti o připojení vrátí funkce **Accept** novou instanci **soketu** , která je přidružená k připojujícímu se klientovi. Následující příklad čte data z klienta, zobrazuje je v konzole nástroje a vrací data zpět klientovi. **Soket** neurčuje žádný protokol zasílání zpráv, takže řetězec "\<EOF >" označuje konec dat zprávy. Předpokládá, že **soket** s názvem `listener` byl inicializován a svázán s koncovým bodem.  
+ Při přijetí požadavku na připojení **Accept** vrátí novou instanci **Socket,** která je přidružena k připojujícímu se klientovi. Následující příklad čte data z klienta, zobrazí je v konzole a ozvěny data zpět klientovi. **Socket** neurčuje žádný protokol zasílání zpráv,\<takže řetězec "EOF>" označuje konec dat zprávy. Předpokládá, že **Socket** `listener` s názvem byla inicializována a vázána na koncový bod.  
   
 ```vb  
 Console.WriteLine("Waiting for a connection...")  
@@ -75,7 +75,7 @@ handler.Shutdown(SocketShutdown.Both);
 handler.Close();  
 ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Použití asynchronního serverového soketu](using-an-asynchronous-server-socket.md)
 - [Příklad synchronního serverového soketu](synchronous-server-socket-example.md)

@@ -5,73 +5,73 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: e380edac-da67-4276-80a5-b64decae4947
-ms.openlocfilehash: ddb53c9224d56803c3528d79c5ccdf5534b9ab03
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.openlocfilehash: e8d24a3998ca97fdf45e647bc40c1f7d6018ec20
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73039820"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79149450"
 ---
 # <a name="optimistic-concurrency"></a>Optimistická metoda souběžného zpracování
-Ve víceuživatelském prostředí existují dva modely pro aktualizaci dat v databázi: Optimistická souběžnost a pesimistická souběžnost. Objekt <xref:System.Data.DataSet> je navržený tak, aby podporoval použití optimistické souběžnosti pro dlouhotrvající aktivity, jako jsou vzdálená data a interakce s daty.  
+Ve víceuživatelském prostředí existují dva modely pro aktualizaci dat v databázi: optimistická souběžnost a pesimistické souběžnosti. Objekt <xref:System.Data.DataSet> je navržen tak, aby podporoval použití optimistické souběžnosti pro dlouhotrvající aktivity, jako je například vzdálené komunikace dat a interakci s daty.  
   
- Pesimistická souběžnost zahrnuje uzamykání řádků ve zdroji dat, aby ostatní uživatelé nemohli upravovat data způsobem, který má vliv na aktuálního uživatele. V pesimistické modelu, pokud uživatel provede akci, která způsobí použití zámku, nemohou jiní uživatelé provádět akce, které by mohly být v konfliktu s zámkem, dokud ho vlastník zámku neuvolní. Tento model se primárně používá v prostředích, kde se vyskytují silné kolize dat, takže náklady na ochranu dat s zámky jsou nižší než náklady na vracení zpět transakcí, pokud dojde ke konfliktům souběžnosti.  
+ Pesimistické souběžnosti zahrnuje uzamčení řádků ve zdroji dat zabránit ostatním uživatelům v úpravě dat způsobem, který ovlivňuje aktuálního uživatele. V pesimistickém modelu, když uživatel provede akci, která způsobí použití zámku, ostatní uživatelé nemohou provádět akce, které by byly v konfliktu se zámkem, dokud jej vlastník zámku neuvolní. Tento model se používá především v prostředích, kde je těžké tvrzení pro data, tak, aby náklady na ochranu dat s zámky je menší než náklady na vrácení transakce zpět, pokud dojde ke konfliktům souběžnosti.  
   
- Proto v pesimistické Concurrency modelu vytvoří uživatel, který aktualizuje řádek, zámek. Dokud uživatel nedokončil aktualizaci a uvolnil zámek, žádný jiný tento řádek nemůže změnit. Z tohoto důvodu je pesimistická souběžnost nejlépe implementována v případě, že doba uzamčení bude krátká, jako při programovém zpracování záznamů. Pesimistická souběžnost není škálovatelná možnost, když uživatelé vzájemně pracují s daty a způsobují, aby byly záznamy uzamčené poměrně velkých časových období.  
+ Proto v pesimistické souběžnosti modelu, uživatel, který aktualizuje řádek vytvoří zámek. Dokud uživatel nedokončí aktualizaci a neuvolní zámek, nikdo jiný nemůže tento řádek změnit. Z tohoto důvodu pesimistické souběžnosti je nejlépe implementovat, když bude krátké časy uzamčení, jako v programovém zpracování záznamů. Pesimistické souběžnosti není škálovatelná možnost, když uživatelé jsou interakci s daty a způsobuje záznamy, které mají být uzamčeny pro relativně velké časové období.  
   
 > [!NOTE]
-> Pokud potřebujete aktualizovat více řádků ve stejné operaci, pak vytvoření transakce je pružnější možnost než použití Pesimistické uzamykání.  
+> Pokud potřebujete aktualizovat více řádků ve stejné operaci, pak vytvoření transakce je škálovatelnější možnost než pomocí pesimistické zamykání.  
   
- Naproti tomu uživatelé, kteří používají optimistické řízení souběžnosti, nezamkne řádek při čtení. Když uživatel chce aktualizovat řádek, aplikace musí určit, jestli jiný uživatel změnil řádek od jeho čtení. Optimistická souběžnost se obecně používá v prostředích s nízkým kolizí dat. Optimistická souběžnost zlepšuje výkon, protože není nutné žádné zamykání záznamů a uzamykání záznamů vyžaduje další prostředky serveru. Aby bylo možné zachovat zámky záznamů, je nutné trvale připojit k databázovému serveru. Vzhledem k tomu, že se nejedná o případ v optimistickém modelu souběžnosti, připojení k serveru jsou zdarma pro poskytování většího počtu klientů v kratší dobu.  
+ Naproti tomu uživatelé, kteří používají optimistickou souběžnost, neuzamknou řádek při čtení. Pokud chce uživatel aktualizovat řádek, musí aplikace určit, zda jiný uživatel změnil řádek od jeho čtení. Optimistická souběžnost se obvykle používá v prostředích s nízkou kolizí pro data. Optimistická souběžnost zlepšuje výkon, protože není vyžadováno žádné uzamčení záznamů a uzamčení záznamů vyžaduje další prostředky serveru. Chcete-li zachovat uzamčení záznamů, je také vyžadováno trvalé připojení k databázovému serveru. Vzhledem k tomu, že tomu tak není v optimistickém modelu souběžnosti, připojení k serveru mohou obsluhovat větší počet klientů v kratším čase.  
   
- V modelu optimistického souběžnosti se porušení považuje za, pokud poté, co uživatel obdrží hodnotu z databáze, změní jiný uživatel hodnotu předtím, než se první uživatel pokusí ho změnit. Jak server řeší porušení souběžnosti, je nejlepším způsobem, jak nejprve popsat následující příklad.  
+ V optimistické souběžnosti modelu porušení se považuje za došlo, pokud poté, co uživatel obdrží hodnotu z databáze, jiný uživatel upraví hodnotu před první uživatel se pokusí upravit. Jak server řeší porušení souběžnosti je nejlépe zobrazit nejprve popisující následující příklad.  
   
- Následující tabulky následují jako příklad optimistické souběžnosti.  
+ Následující tabulky následují příklad optimistické souběžnosti.  
   
- V 1:00 hodin uživatel1 přečte řádek z databáze s následujícími hodnotami:  
+ V 13:00 uživatel1 přečte řádek z databáze s následujícími hodnotami:  
   
- **CustID příjmení FirstName**  
+ **Jméno příjmení CustID**  
   
- 101 Smith Jan  
-  
-|Název sloupce|Původní hodnota|Aktuální hodnota|Hodnota v databázi|  
-|-----------------|--------------------|-------------------|-----------------------|  
-|CustID|101|101|101|  
-|Polím|Smith|Smith|Smith|  
-|firstName|Bobem|Bobem|Bobem|  
-  
- V 1:01 večer uživatel2 načte stejný řádek.  
-  
- V 1:03. uživatel2 uživatel2 změní **FirstName** z "Bob" na "Robert" a aktualizuje databázi.  
+ 101 Kovář Bob  
   
 |Název sloupce|Původní hodnota|Aktuální hodnota|Hodnota v databázi|  
 |-----------------|--------------------|-------------------|-----------------------|  
 |CustID|101|101|101|  
-|Polím|Smith|Smith|Smith|  
-|firstName|Bobem|Robert|Bobem|  
+|LastName|Smith|Smith|Smith|  
+|FirstName|Bob|Bob|Bob|  
   
- Aktualizace je úspěšná, protože hodnoty v databázi v době aktualizace odpovídají původním hodnotám, které má uživatel2.  
+ V 13:01, User2 přečte stejný řádek.  
   
- V 1:05 ODP. uživatel1 změní jméno "Bob" na "James" a pokusí se řádek aktualizovat.  
+ V 13:03 uživatele změní **Jméno z** "Bob" na "Robert" a aktualizuje databázi.  
   
 |Název sloupce|Původní hodnota|Aktuální hodnota|Hodnota v databázi|  
 |-----------------|--------------------|-------------------|-----------------------|  
 |CustID|101|101|101|  
-|Polím|Smith|Smith|Smith|  
-|firstName|Bobem|Petr|Robert|  
+|LastName|Smith|Smith|Smith|  
+|FirstName|Bob|Robert|Bob|  
   
- V tomto okamžiku uživatel1 narazí na porušení optimistické souběžnosti, protože hodnota v databázi ("Robert") se už neshoduje s původní hodnotou, kterou uživatel1 očekával ("Bob"). Porušení souběžnosti vám stačí, když zjistíte, že se aktualizace nezdařila. Rozhodnutí teď musí být provedeno bez ohledu na to, jestli se změny dodávají v rámci aplikace uživatel2, a změny poskytované uživatelem user1, nebo změny podle uživatele user1 zrušit.  
+ Aktualizace je úspěšná, protože hodnoty v databázi v době aktualizace odpovídají původním hodnotám, které uživatelmá 2.  
   
-## <a name="testing-for-optimistic-concurrency-violations"></a>Testování pro porušení optimistické souběžnosti  
- K dispozici je několik technik pro testování v případě porušení optimistické souběžnosti. Jedna zahrnuje zahrnutí sloupce časového razítka do tabulky. Databáze běžně poskytují funkci časového razítka, která se dá použít k identifikaci data a času poslední aktualizace záznamu. Pomocí této techniky je v definici tabulky zahrnut sloupec časového razítka. Pokaždé, když se záznam aktualizuje, časové razítko se aktualizuje tak, aby odráželo aktuální datum a čas. V testu pro porušení optimistické souběžnosti je sloupec časového razítka vrácen libovolným dotazem na obsah tabulky. Při pokusu o aktualizaci je hodnota časového razítka v databázi porovnána s původní hodnotou časového razítka obsaženou ve změněném řádku. Pokud se shodují, provede se aktualizace a sloupec časového razítka se aktualizuje aktuálním časem, aby odrážel aktualizaci. Pokud se neshodují, došlo k narušení optimistické souběžnosti.  
+ V 13:05 uživatel1 změní křestní jméno "Bob" na "James" a pokusí se aktualizovat řádek.  
   
- Další technikou pro testování pro porušení optimistické souběžnosti je ověřit, zda všechny původní hodnoty sloupců v řádku stále odpovídají hodnotám nalezeným v databázi. Zvažte například následující dotaz:  
+|Název sloupce|Původní hodnota|Aktuální hodnota|Hodnota v databázi|  
+|-----------------|--------------------|-------------------|-----------------------|  
+|CustID|101|101|101|  
+|LastName|Smith|Smith|Smith|  
+|FirstName|Bob|James|Robert|  
+  
+ V tomto okamžiku User1 narazí na optimistické narušení souběžnosti, protože hodnota v databázi ("Robert") již neodpovídá původní hodnotu, která User1 očekával ("Bob"). Porušení souběžnosti jednoduše vám umožní vědět, že aktualizace se nezdařila. Nyní je třeba rozhodnout, zda přepsat změny zadané User2 se změnami zadanými User1, nebo zrušit změny uživatelem1.  
+  
+## <a name="testing-for-optimistic-concurrency-violations"></a>Testování pro optimistické porušení souběžnosti  
+ Existuje několik technik pro testování pro narušení optimistické souběžnosti. Jeden zahrnuje včetně sloupce časového razítka v tabulce. Databáze běžně poskytují funkce časového razítka, které lze použít k identifikaci data a času, kdy byl záznam naposledy aktualizován. Pomocí této techniky je sloupec časového razítka zahrnut do definice tabulky. Při každé aktualizaci záznamu je časové razítko aktualizováno tak, aby odráželo aktuální datum a čas. V testu pro optimistické porušení souběžnosti sloupec časového razítka je vrácena s libovolný dotaz na obsah tabulky. Při pokusu o aktualizaci je hodnota časového razítka v databázi porovnána s původní hodnotou časového razítka obsaženou v upraveném řádku. Pokud se shodují, aktualizace se provede a sloupec časového razítka se aktualizuje s aktuálním časem tak, aby odrážely aktualizaci. Pokud se neshodují, došlo k narušení optimistické souběžnosti.  
+  
+ Další technika pro testování pro narušení optimistické souběžnosti je ověřit, že všechny původní hodnoty sloupců v řádku stále odpovídají těm, které jsou nalezeny v databázi. Zvažte například následující dotaz:  
   
 ```sql
 SELECT Col1, Col2, Col3 FROM Table1  
 ```  
   
- Chcete-li provést test optimistického chování souběžnosti při aktualizaci řádku ve vlastnosti **Tabulka1**, vydejte následující příkaz Update:  
+ Chcete-li otestovat optimistické porušení souběžnosti při aktualizaci řádku v **tabulce1**, vydáte následující příkaz UPDATE:  
   
 ```sql
 UPDATE Table1 Set Col1 = @NewCol1Value,  
@@ -82,28 +82,28 @@ WHERE Col1 = @OldCol1Value AND
       Col3 = @OldCol3Value  
 ```  
   
- Pokud se původní hodnoty shodují s hodnotami v databázi, provede se aktualizace. Pokud byla hodnota změněna, nebude tato aktualizace řádek upravovat, protože klauzule WHERE nenajde shodu.  
+ Tak dlouho, dokud původní hodnoty odpovídají hodnotám v databázi, aktualizace se provádí. Pokud byla změněna hodnota, aktualizace nebude měnit řádek, protože klauzule WHERE nenajde shodu.  
   
- Všimněte si, že se doporučuje vždycky vracet jedinečnou hodnotu primárního klíče v dotazu. V opačném případě může předchozí příkaz UPDATE aktualizovat více než jeden řádek, který nemusí být vaším záměrem.  
+ Všimněte si, že se doporučuje vždy vrátit jedinečnou hodnotu primárního klíče v dotazu. V opačném případě předchozí příkaz UPDATE může aktualizovat více než jeden řádek, což nemusí být váš záměr.  
   
- Pokud sloupec v datovém zdroji povoluje hodnoty null, může být nutné zvětšit klauzuli WHERE, aby kontrolovala shodný odkaz null v místní tabulce a ve zdroji dat. Například následující příkaz UPDATE ověřuje, že odkaz s hodnotou null v místním řádku se stále shoduje s nulovým odkazem ve zdroji dat nebo že hodnota v místním řádku se stále shoduje s hodnotou ve zdroji dat.  
+ Pokud sloupec ve zdroji dat umožňuje null, bude pravděpodobně nutné rozšířit klauzuli WHERE, abyste zkontrolovali odpovídající nulový odkaz v místní tabulce a ve zdroji dat. Například následující příkaz UPDATE ověří, zda nulový odkaz v místním řádku stále odpovídá nulovému odkazu ve zdroji dat nebo že hodnota v místním řádku stále odpovídá hodnotě ve zdroji dat.  
   
 ```sql
 UPDATE Table1 Set Col1 = @NewVal1  
   WHERE (@OldVal1 IS NULL AND Col1 IS NULL) OR Col1 = @OldVal1  
 ```  
   
- Při použití optimistického modelu souběžnosti můžete také zvolit, že se mají použít méně omezující kritéria. Například použití pouze sloupců primárního klíče v klauzuli WHERE způsobí, že data budou přepsána bez ohledu na to, zda byly od posledního dotazu aktualizovány ostatní sloupce. Klauzuli WHERE můžete také použít pouze na konkrétní sloupce a výsledná data budou přepsána, pokud nebyla aktualizována konkrétní pole od posledního dotazu.  
+ Můžete také použít méně omezující kritéria při použití optimistického modelu souběžnosti. Například použití pouze sloupce primárníklíč v where klauzule způsobí, že data přepsat bez ohledu na to, zda ostatní sloupce byly aktualizovány od posledního dotazu. Klauzuli WHERE můžete také použít pouze pro určité sloupce, což vede k přepsání dat, pokud nebyla od posledního dotazování aktualizována určitá pole.  
   
-### <a name="the-dataadapterrowupdated-event"></a>Událost DataAdapter. RowUpdated metody Update  
- Událost **RowUpdated metody Update** objektu <xref:System.Data.Common.DataAdapter> lze použít ve spojení s výše popsanými postupy, aby bylo možné poskytnout oznámení do vaší aplikace porušení optimistické souběžnosti. K **RowUpdated metody Update** dochází po každém pokusu o aktualizaci **upraveného** řádku z **datové sady**. To umožňuje přidat speciální kód pro zpracování, včetně zpracování, když dojde k výjimce, přidání vlastních informací o chybě, přidání logiky opakování atd. Objekt <xref:System.Data.Common.RowUpdatedEventArgs> vrátí vlastnost **RecordsAffected** obsahující počet řádků ovlivněných určitým příkazem Update pro upravený řádek v tabulce. Nastavením příkazu Update na test pro optimistickou souběžnost bude vlastnost **RecordsAffected** v důsledku toho vracet hodnotu 0, pokud došlo k narušení optimistické souběžnosti, protože nebyly aktualizovány žádné záznamy. Pokud se jedná o tento případ, je vyvolána výjimka. Událost **RowUpdated metody Update** umožňuje zpracovat tento výskyt a vyhnout se výjimce nastavením příslušné hodnoty **RowUpdatedEventArgs. status** , například **UpdateStatus. SkipCurrentRow**. Další informace o události **RowUpdated metody Update** naleznete v tématu [zpracování událostí DataAdapter](handling-dataadapter-events.md).  
+### <a name="the-dataadapterrowupdated-event"></a>Událost DataAdapter.RowUpdated  
+ **RowUpdated** událost objektu <xref:System.Data.Common.DataAdapter> lze použít ve spojení s technikami popsanými výše, poskytnout oznámení o použití optimistické porušení souběžnosti. **RowUpdated** dochází po každém pokusu o **aktualizaci upravený** řádek z **DataSet**. To umožňuje přidat speciální kód zpracování, včetně zpracování, když dojde k výjimce, přidání vlastní chudinských informací, přidání logiky opakování a tak dále. Objekt <xref:System.Data.Common.RowUpdatedEventArgs> vrátí **vlastnost RecordsAffected** obsahující počet řádků ovlivněných určitým příkazem aktualizace pro upravený řádek v tabulce. Nastavením příkazu update pro testování optimistické souběžnosti vrátí vlastnost **RecordsAffected** hodnotu 0, když došlo k narušení optimistické souběžnosti, protože nebyly aktualizovány žádné záznamy. Pokud se jedná o tento případ, je vyvolána výjimka. Událost **RowUpdated** umožňuje zpracovat tento výskyt a vyhnout se výjimce nastavením příslušné hodnoty **RowUpdatedEventArgs.Status,** například **UpdateStatus.SkipCurrentRow**. Další informace o události **RowUpdated** naleznete v [tématu Zpracování událostí datového adaptéru](handling-dataadapter-events.md).  
   
- Volitelně můžete nastavit vlastnost **DataAdapter. ContinueUpdateOnError** na **hodnotu true**, před voláním metody **Update**a reagovat na informace o chybě uložené ve vlastnosti **RowError** určitého řádku po dokončení **aktualizace** . Další informace najdete v tématu [informace o chybě řádku](./dataset-datatable-dataview/row-error-information.md).  
+ Volitelně můžete nastavit **DataAdapter.ContinueUpdateOnError** na **true**, před voláním **Update**a reagovat na informace o chybě uložené ve vlastnosti **RowError** určitého řádku po dokončení **aktualizace.** Další informace naleznete v [tématu Informace o chybě řádku](./dataset-datatable-dataview/row-error-information.md).  
   
-## <a name="optimistic-concurrency-example"></a>Příklad optimistického řízení souběžnosti  
- Následuje jednoduchý příklad, který nastaví **událost UpdateCommand** **na test** pro optimistickou souběžnost a poté používá událost **RowUpdated metody Update** k otestování optimistického chování souběžnosti. Když dojde k narušení optimistického řízení souběžnosti, aplikace nastaví **RowError** řádku, pro který byla aktualizace vystavena, aby odrážela optimistické porušení souběžnosti.  
+## <a name="optimistic-concurrency-example"></a>Optimistický příklad souběžnosti  
+ Následuje jednoduchý příklad, který nastaví **UpdateCommand** **DataAdapter** otestovat optimistické souběžnosti a potom používá **RowUpdated** událost k testování optimistických porušení souběžnosti. Při výskytu narušení optimistické souběžnosti aplikace nastaví **RowError** řádku, který byla vydána aktualizace tak, aby odrážela optimistické porušení souběžnosti.  
   
- Všimněte si, že hodnoty parametrů předané do klauzule WHERE příkazu UPDATE jsou namapovány na **původní** hodnoty příslušných sloupců.  
+ Všimněte si, že hodnoty parametrů předané klauzuli WHERE příkazu UPDATE jsou mapovány na **původní** hodnoty příslušných sloupců.  
   
 ```vb  
 ' Assumes connection is a valid SqlConnection.  
@@ -143,7 +143,7 @@ adapter.Update(dataSet, "Customers")
 Dim dataRow As DataRow  
   
 For Each dataRow In dataSet.Tables("Customers").Rows  
-    If dataRow.HasErrors Then   
+    If dataRow.HasErrors Then
        Console.WriteLine(dataRow (0) & vbCrLf & dataRow.RowError)  
     End If  
 Next  
@@ -198,7 +198,7 @@ foreach (DataRow dataRow in dataSet.Tables["Customers"].Rows)
   
 protected static void OnRowUpdated(object sender, SqlRowUpdatedEventArgs args)  
 {  
-  if (args.RecordsAffected == 0)   
+  if (args.RecordsAffected == 0)
   {  
     args.Row.RowError = "Optimistic Concurrency Violation Encountered";  
     args.Status = UpdateStatus.SkipCurrentRow;  
@@ -206,7 +206,7 @@ protected static void OnRowUpdated(object sender, SqlRowUpdatedEventArgs args)
 }  
 ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Načítání a úpravy dat v ADO.NET](retrieving-and-modifying-data.md)
 - [Aktualizace zdrojů dat pomocí adaptérů dat](updating-data-sources-with-dataadapters.md)

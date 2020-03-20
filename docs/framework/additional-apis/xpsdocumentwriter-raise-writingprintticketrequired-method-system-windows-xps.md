@@ -1,5 +1,5 @@
 ---
-title: XpsDocumentWriter. raise__WritingPrintTicketRequired – metoda (System. Windows. XPS)
+title: Metoda XpsDocumentWriter.raise__WritingPrintTicketRequired (System.Windows.XPs)
 ms.date: 12/12/2007
 api_location:
 - system.printing.dll
@@ -9,27 +9,27 @@ api_type:
 - Assembly
 topic_type:
 - apiref
-ms.openlocfilehash: a8d687197d21f54282f04190761b079d702b185e
-ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
+ms.openlocfilehash: 4baa5a568f73f60e2448db968283e2b7b64844c4
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72524923"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79155645"
 ---
-# <a name="xpsdocumentwriterraise__writingprintticketrequired-method"></a>XpsDocumentWriter. vyvolat \_ \_WritingPrintTicketRequired metoda
+# <a name="xpsdocumentwriterraise__writingprintticketrequired-method"></a>XpsDocumentWriter.raise\_\_WritingPrintTicketPožadovaná metoda
 
-Vyvolá událost <xref:System.Windows.Xps.XpsDocumentWriter.WritingPrintTicketRequired>.
+Vyvolá <xref:System.Windows.Xps.XpsDocumentWriter.WritingPrintTicketRequired> událost.
 
 ## <a name="syntax"></a>Syntaxe
 
 ```csharp
-public void raise__WritingPrintTicketRequired (object value0, 
+public void raise__WritingPrintTicketRequired (object value0,
   System.Windows.Documents.Serialization.WritingPrintTicketRequiredEventArgs value1);
 ```
 
 ## <a name="parameters"></a>Parametry
 
-- `value0`<xref:System.Object>  
+- `value0` <xref:System.Object>  
   Zdroj události
 
 - `value1`  <xref:System.Windows.Documents.Serialization.WritingPrintTicketRequiredEventArgs>  
@@ -37,8 +37,8 @@ public void raise__WritingPrintTicketRequired (object value0,
 
 ## <a name="requirements"></a>Požadavky
 
-**Obor názvů:** <xref:System.Windows.Xps>
+**Obor názvů:**<xref:System.Windows.Xps>
 
-**Sestavení:** System. Printing (v System. Printing. dll)
+**Sestava:** System.Printing (v souboru system.printing.dll)
 
-**Verze .NET Framework:** 3,0
+**Verze rozhraní .NET Framework:** 3.0

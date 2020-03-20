@@ -2,24 +2,24 @@
 title: <schemeSettings> – element (nastavení URI)
 ms.date: 03/30/2017
 ms.assetid: 0ae45c6e-8c4c-4c0d-8b9f-a93824648890
-ms.openlocfilehash: 498aef77a1dfd8cffcac73b704b8d1bb6df5d165
-ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
+ms.openlocfilehash: c745c90bb61b9ee393687d7f6db4fd11565c7dc7
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/01/2019
-ms.locfileid: "71697759"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79154644"
 ---
-# <a name="schemesettings-element-uri-settings"></a>\<element > schemeSettings (nastavení URI)
-Určuje, jak se bude <xref:System.Uri> analyzovat pro konkrétní schémata.  
+# <a name="schemesettings-element-uri-settings"></a>\<schemeNastavení> elementu (Nastavení uri)
+Určuje, jak <xref:System.Uri> bude analýza pro konkrétní schémata.  
   
-[**Konfigurace \<>** ](../configuration-element.md)  
-&nbsp;&nbsp;[ **\<URI >** ](uri-element-uri-settings.md)  
-&nbsp;&nbsp;&nbsp;&nbsp; **\<schemeSettings >**  
+[**\<>konfigurace**](../configuration-element.md)  
+&nbsp;&nbsp;[**\<uri>**](uri-element-uri-settings.md)  
+&nbsp;&nbsp;&nbsp;&nbsp;**\<schemeNastavení>**  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```xml  
-<schemeSettings>   
+<schemeSettings>
 </schemeSettings>  
 ```  
   
@@ -27,42 +27,42 @@ Určuje, jak se bude <xref:System.Uri> analyzovat pro konkrétní schémata.
  Následující části popisují atributy, podřízené prvky a nadřazené prvky.  
   
 ### <a name="attributes"></a>Atributy  
- Žádné  
+ Žádný  
   
 ### <a name="child-elements"></a>Podřízené elementy  
   
 |**Element**|**Popis**|  
 |-----------------|---------------------|  
-|[add](add-element-for-schemesettings-uri-settings.md)|Přidá nastavení schématu pro název schématu.|  
-|[jejich](clear-element-for-schemesettings-uri-settings.md)|Vymaže všechna existující nastavení schématu.|  
-|[remove](remove-element-for-schemesettings-uri-settings.md)|Odebere nastavení schématu pro název schématu.|  
+|[Přidat](add-element-for-schemesettings-uri-settings.md)|Přidá nastavení schématu pro název schématu.|  
+|[Jasné](clear-element-for-schemesettings-uri-settings.md)|Vymaže všechna existující nastavení schématu.|  
+|[Odebrat](remove-element-for-schemesettings-uri-settings.md)|Odebere nastavení schématu pro název schématu.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
 |**Element**|**Popis**|  
 |-----------------|---------------------|  
-|[identifikátor URI](uri-element-uri-settings.md)|Obsahuje nastavení, která určují, jak .NET Framework zpracovává webové adresy vyjádřené pomocí identifikátorů URI (Uniform Resource Identifier).|  
+|[Uri](uri-element-uri-settings.md)|Obsahuje nastavení, která určují, jak rozhraní .NET Framework zpracovává webové adresy vyjádřené pomocí identifikátorů jednotného prostředku (URI).|  
   
 ## <a name="remarks"></a>Poznámky  
- Ve výchozím nastavení třída <xref:System.Uri?displayProperty=nameWithType> před spuštěním komprimace cesty vymění v procentech zakódovaných oddělovačů cest. Tato akce byla implementována jako bezpečnostní mechanismus proti útokům, jako jsou tyto:  
+ Ve výchozím <xref:System.Uri?displayProperty=nameWithType> nastavení třída un-escapes procent procent kódované cesty oddělovače před spuštěním komprese cesty. To to bylo implementováno jako mechanismus zabezpečení proti útokům, jako je následující:  
   
  `http://www.contoso.com/..%2F..%2F/Windows/System32/cmd.exe?/c+dir+c:\`  
   
- Pokud se tento identifikátor URI předává do modulů, které nezpracovávají procento nesprávně kódovaných znaků, může to mít za následek provedení následujícího příkazu serveru:  
+ Pokud tento identifikátor URI bude předán modulům, které nezpracovávají méně kódované znaky, může dojít k provedení následujícího příkazu serverem:  
   
  `c:\Windows\System32\cmd.exe /c dir c:\`  
   
- Z tohoto důvodu <xref:System.Uri?displayProperty=nameWithType> třída nejprve zruší oddělovače cest a pak použije kompresi cesty. Výsledek předání škodlivých adres URL výše do konstruktoru <xref:System.Uri?displayProperty=nameWithType> třídy vede k následujícímu identifikátoru URI:  
+ Z tohoto <xref:System.Uri?displayProperty=nameWithType> důvodu třída první un-escapes oddělovače cesty a potom použije kompresi cesty. Výsledkem předání výše uvedené <xref:System.Uri?displayProperty=nameWithType> škodlivé adresy URL konstruktoru třídy je výsledkem následující identifikátor URI:  
   
  `http://www.microsoft.com/Windows/System32/cmd.exe?/c+dir+c:\`  
   
- Toto výchozí chování lze upravit tak, aby nezrušilo řídicí znaky v procentech kódovaných cest, a to pomocí možnosti konfigurace schemeSettings pro konkrétní schéma.  
+ Toto výchozí chování lze upravit tak, aby neodcházaly procentově kódované oddělovače cest pomocí možnosti konfigurace schemeSettings pro určité schéma.  
   
 ## <a name="configuration-files"></a>Konfigurační soubory  
- Tento element lze použít v konfiguračním souboru aplikace nebo v konfiguračním souboru počítače (Machine. config).  
+ Tento prvek lze použít v konfiguračním souboru aplikace nebo v konfiguračním souboru počítače (Machine.config).  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje konfiguraci, kterou používá třída <xref:System.Uri> pro podporu nekódovaných oddělovačů cest pro schéma HTTP v procentech.  
+ Následující příklad ukazuje konfiguraci <xref:System.Uri> používanou třídou pro podporu neunikající oddělovače cest kódovaných procenty pro schéma http.  
   
 ```xml  
 <configuration>  
@@ -78,12 +78,12 @@ Určuje, jak se bude <xref:System.Uri> analyzovat pro konkrétní schémata.
   
 |||
 |-|-|  
-|Obor názvů|Systém|  
+|Obor názvů|Systémový|  
 |Název schématu||  
-|Soubor ověření||  
-|Může být prázdné||  
+|Ověřovací soubor||  
+|Může být prázdný||  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Configuration.SchemeSettingElement?displayProperty=nameWithType>
 - <xref:System.Configuration.SchemeSettingElementCollection?displayProperty=nameWithType>

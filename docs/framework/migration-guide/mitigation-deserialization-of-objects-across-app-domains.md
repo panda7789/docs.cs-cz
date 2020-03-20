@@ -3,10 +3,10 @@ title: 'Zmírnění: Deserializace objektů mezi doménami aplikací'
 ms.date: 03/30/2017
 ms.assetid: 30c2d66c-04a8-41a5-ad31-646b937f61b5
 ms.openlocfilehash: e2d90a77cab699646bd31eaa162d1bd1744fd51b
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/03/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "73457922"
 ---
 # <a name="mitigation-deserialization-of-objects-across-app-domains"></a>Zmírnění: Deserializace objektů mezi doménami aplikací
@@ -35,7 +35,7 @@ V některých případech, kdy aplikace používá dvě nebo více domén aplik
   
 6. Vzhledem k tomu, že ve výchozí doméně aplikace nelze rozpoznat typy, které jsou součástí logického kontextu volání, je vyvolána výjimka.  
   
-## <a name="mitigation"></a>Zmírnění  
+## <a name="mitigation"></a>Omezení rizik  
  Chcete-li tento problém odstranit, postupujte takto:  
   
 1. Pokud je vyvolána výjimka, v zásobníku volání vyhledejte volání metody `get_Evidence`. Touto výjimkou může být jakkoli velká podmnožina výjimek, včetně výjimek <xref:System.IO.FileNotFoundException> a <xref:System.Runtime.Serialization.SerializationException>.  
@@ -46,6 +46,6 @@ V některých případech, kdy aplikace používá dvě nebo více domén aplik
     System.Configuration.ConfigurationManager.GetSection("system.xml/xmlReader");  
     ```
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Kompatibilita aplikací](application-compatibility.md)

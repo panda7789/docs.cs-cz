@@ -8,23 +8,23 @@ helpviewer_keywords:
 - mscorlib element
 - <mscorlib> element
 ms.assetid: d549668f-31f1-4b92-8021-a9135c09ca3c
-ms.openlocfilehash: 4e2159cda5f35b5795804dede09ec17d07d71b23
-ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
+ms.openlocfilehash: d1d805f7154c18dba2dcd4eb7228cc200d8da811
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/01/2019
-ms.locfileid: "71699734"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79155178"
 ---
-# <a name="mscorlib-element-for-cryptography-settings"></a>\<element > mscorlib pro nastavení kryptografie
-Obsahuje [prvek\<cryptographySettings >](cryptographysettings-element.md).  
+# <a name="mscorlib-element-for-cryptography-settings"></a>\<mscorlib> Element pro nastavení kryptografie
+Obsahuje [ \<kryptografiiNastavení> element](cryptographysettings-element.md).  
   
-[**Konfigurace \<>** ](../configuration-element.md)  
-&nbsp;&nbsp; **\<mscorlib >**  
+[**\<>konfigurace**](../configuration-element.md)  
+&nbsp;&nbsp;**\<>mscorlib**  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```xml  
-      <mscorlib>   
+      <mscorlib>
 </mscorlib>  
 ```  
   
@@ -36,18 +36,18 @@ Obsahuje [prvek\<cryptographySettings >](cryptographysettings-element.md).
   
 ### <a name="child-elements"></a>Podřízené elementy  
   
-|Prvek|Popis|  
+|Element|Popis|  
 |-------------|-----------------|  
 |`cryptographySettings`|Obsahuje nastavení kryptografie.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
-|Prvek|Popis|  
+|Element|Popis|  
 |-------------|-----------------|  
 |`configuration`|Kořenový prvek v každém konfiguračním souboru, který je používán modulem Common Language Runtime (CLR) a aplikacemi rozhraní .NET Framework.|  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje způsob použití prvku **\<mscorlib >** k odkazování na třídu kryptografie a ke konfiguraci modulu runtime. Pak můžete předat řetězec "RSA" do metody <xref:System.Security.Cryptography.CryptoConfig.CreateFromName%2A?displayProperty=nameWithType> a použít metodu <xref:System.Security.Cryptography.AsymmetricAlgorithm.Create%2A> k vrácení objektu `MyCryptoRSAClass`.  
+ Následující příklad ukazuje, jak používat prvek ** \<mscorlib>** k odkazování na kryptografickou třídu a ke konfiguraci runtime. Potom můžete předat řetězec "RSA" <xref:System.Security.Cryptography.CryptoConfig.CreateFromName%2A?displayProperty=nameWithType> metodě <xref:System.Security.Cryptography.AsymmetricAlgorithm.Create%2A> a použít `MyCryptoRSAClass` metodu k vrácení objektu.  
   
 ```xml  
 <configuration>  
@@ -68,7 +68,7 @@ Obsahuje [prvek\<cryptographySettings >](cryptographysettings-element.md).
 </configuration>  
 ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Security.Cryptography.CryptoConfig.CreateFromName%2A>
 - <xref:System.Security.Cryptography>

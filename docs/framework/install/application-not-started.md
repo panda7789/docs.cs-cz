@@ -1,66 +1,66 @@
 ---
-title: Řešení potíží "tuto aplikaci nebylo možné spustit"
-description: Přečtěte si, co dělat, když se zobrazí dialogové okno "Tato aplikace se nedá spustit".
+title: Řešení potíží s touto aplikací nelze spustit.
+description: Přečtěte si, co dělat, když se zobrazí dialogové okno Tato aplikace nelze spustit.
 ms.date: 09/05/2019
 ms.openlocfilehash: 864c6ea23e9a048f060eee39d904bd4377be5084
-ms.sourcegitcommit: feb42222f1430ca7b8115ae45e7a38fc4a1ba623
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/02/2020
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "76965903"
 ---
-# <a name="troubleshooting-a-this-application-could-not-be-started-error-message"></a>Řešení potíží s chybovou zprávou "tuto aplikaci nebylo možné spustit"
+# <a name="troubleshooting-a-this-application-could-not-be-started-error-message"></a>Poradce při potížích s chybovou zprávou Tuto aplikaci nelze spustit
 
-Aplikace, které jsou vyvíjené pro .NET Framework obvykle vyžadují, aby byla v systému nainstalovaná určitá verze .NET Framework. V některých případech se můžete pokusit spustit aplikaci, aniž by byla nainstalována buď nainstalovaná verze, nebo očekávaná verze .NET Framework. Tím se často vytvoří chybové dialogové okno podobné následujícímu:
+Aplikace vyvinuté pro rozhraní .NET Framework obvykle vyžadují, aby byla v systému nainstalována určitá verze rozhraní .NET Framework. V některých případech se můžete pokusit spustit aplikaci bez nainstalované verze nebo očekávané verze rozhraní .NET Framework. To často vytváří chybové dialogové okno, jako je následující:
 
-![Tuto aplikaci nebylo možné spustit.](media/application-not-started/app-could-not-be-started.png)
+![Tuto aplikaci nelze spustit.](media/application-not-started/app-could-not-be-started.png)
 
-To obvykle znamená jednu z následujících podmínek:
+To obvykle označuje jednu z následujících podmínek:
 
-- Instalace .NET Framework v systému se stala poškozená.
+- Instalace rozhraní .NET Framework v systému byla poškozena.
 
-- Verze .NET Framework potřebná vaší aplikací nebyla zjištěna.
+- Nelze zjistit verzi rozhraní .NET Framework, kterou vaše aplikace potřebuje.
 
-Chcete-li tento problém vyřešit, abyste mohli spustit aplikaci, postupujte následovně:
+Chcete-li tento problém vyřešit, abyste mohli aplikaci spustit, postupujte takto:
 
-1. Stáhněte si [Nástroj pro opravu .NET Framework (NetFxRepairTool. exe)](https://www.microsoft.com/download/details.aspx?id=30135). Nástroj se spustí automaticky po dokončení stahování.
+1. Stáhněte si [nástroj .NET Framework Repair Tool (NetFxRepairTool.exe)](https://www.microsoft.com/download/details.aspx?id=30135). Nástroj se spustí automaticky po dokončení stahování.
 
-1. Pokud nástroj pro opravu .NET Framework doporučuje jakékoli další akce, jako například na následujícím obrázku, vyberte možnost **Další**.
+1. Pokud nástroj pro opravu rozhraní .NET Framework doporučuje jakoukoli další akci, například akci uvedenou na následujícím obrázku, vyberte **další**.
 
    ![Doporučené změny](media/application-not-started/repair-tool-recommended-changes.png)
 
-1. Nástroje .NET Framework pro opravu zobrazí dialogové okno zobrazené na následujícím obrázku, které indikuje, že se změny dokončily. Nechejte dialogové okno otevřené a zkuste znovu spustit aplikaci. To by mělo být úspěšné, pokud nástroj pro opravu .NET Framework identifikoval a opravil poškozenou instalaci .NET Framework.
+1. Nástroje pro opravu rozhraní .NET Framework zobrazí dialogové okno zobrazené na následujícím obrázku, které označuje, že změny jsou dokončeny. Chcete-li zkusit znovu spustit aplikaci, ponechejte dialogové okno otevřené. To by mělo být úspěšné, pokud nástroj .NET Framework Repair Tool identifikoval a opravil poškozenou instalaci rozhraní .NET Framework.
 
    ![Doporučené změny](media/application-not-started/repair-tool-changes-complete.png)
 
-1. Pokud vaše aplikace funguje úspěšně, vyberte tlačítko **Dokončit** . V opačném případě klikněte na tlačítko **Další** .
+1. Pokud se aplikace úspěšně spustí, vyberte tlačítko **Dokončit.** V opačném případě vyberte tlačítko **Další.**
 
-1. Pokud jste vybrali tlačítko **Další** , nástroj .NET Framework pro opravu zobrazí dialogové okno podobné následujícímu. Kliknutím na tlačítko **Dokončit** odešlete diagnostické informace společnosti Microsoft.
+1. Pokud jste vybrali tlačítko **Další,** nástroj pro opravu rozhraní .NET Framework zobrazí dialogové okno, jako je následující. Chcete-li společnosti Microsoft odeslat diagnostické informace, vyberte tlačítko **Dokončit.**
 
-   ![Nepovedlo se vyřešit problém.](media/application-not-started/repair-tool-no-resolution.png)
+   ![Problém nelze vyřešit.](media/application-not-started/repair-tool-no-resolution.png)
 
-1. Pokud stále nemůžete aplikaci spustit, nainstalujte nejnovější verzi .NET Framework, kterou podporuje vaše verze Windows, jak je znázorněno v následující tabulce.
+1. Pokud aplikaci stále nemůžete spustit, nainstalujte nejnovější verzi rozhraní .NET Framework podporovanou vaší verzí systému Windows, jak je znázorněno v následující tabulce.
 
-   |Verze systému Windows|Instalace .NET Framework|
+   |Verze systému Windows|Instalace rozhraní .NET Framework|
    |---|---|
-   |Windows 10 – aktualizace pro výročí a novější verze|[Modul runtime .NET Framework 4,8](https://dotnet.microsoft.com/download/dotnet-framework/net48)|
-   |Windows 10, listopadová aktualizace Windows 10|[.NET Framework 4.6.2](https://dotnet.microsoft.com/download/dotnet-framework/net462)|
-   |Windows 8.1|[Modul runtime .NET Framework 4,8](https://dotnet.microsoft.com/download/dotnet-framework/net48)|
+   |Aktualizace Windows 10 Anniversary update a novější verze|[Doba běhu rozhraní .NET Framework 4.8](https://dotnet.microsoft.com/download/dotnet-framework/net48)|
+   |Windows 10, Listopadová aktualizace Windows 10|[.NET Framework 4.6.2](https://dotnet.microsoft.com/download/dotnet-framework/net462)|
+   |Windows 8.1|[Doba běhu rozhraní .NET Framework 4.8](https://dotnet.microsoft.com/download/dotnet-framework/net48)|
    |Windows 8|[.NET Framework 4.6.1](https://dotnet.microsoft.com/download/dotnet-framework/net461)|
-   |Windows 7 SP1|[Modul runtime .NET Framework 4,8](https://dotnet.microsoft.com/download/dotnet-framework/net48)|
+   |Windows 7 SP1|[Doba běhu rozhraní .NET Framework 4.8](https://dotnet.microsoft.com/download/dotnet-framework/net48)|
    |Windows Vista SP2|[.NET Framework 4.6](https://dotnet.microsoft.com/download/dotnet-framework/net46)|
 
    > [!NOTE]
-   > .NET Framework 4,8 je předinstalována ve Windows 10 – 2019 aktualizace.
+   > Rozhraní .NET Framework 4.8 je předinstalováno v aktualizaci Windows 10 z května 2019.
 
 1. Pokus o spuštění aplikace.
 
-1. V některých případech se může zobrazit dialogové okno podobné následujícímu, které vás vyzve k instalaci .NET Framework 3,5. Vyberte **Stáhnout a nainstalovat tuto funkci** , pokud chcete nainstalovat .NET Framework 3,5, a pak aplikaci znovu spusťte.
+1. V některých případech se může zobrazit dialogové okno, jako je následující, které vás požádá o instalaci rozhraní .NET Framework 3.5. Vyberte **Stáhnout a nainstalujte tuto funkci,** nainstalujte rozhraní .NET Framework 3.5 a potom aplikaci znovu spusťte.
 
-   ![Nepovedlo se vyřešit problém.](media/application-not-started/install-3-5.png)
+   ![Problém nelze vyřešit.](media/application-not-started/install-3-5.png)
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [.NET Framework požadavky na systém](../get-started/system-requirements.md)
-- [Průvodce instalací .NET Framework](index.md)
+- [Požadavky na systém rozhraní .NET Framework](../get-started/system-requirements.md)
+- [Instalační příručka rozhraní .NET Framework](index.md)
 - [Řešení potíží se zablokovanými instalacemi a odinstalacemi rozhraní .NET Framework](troubleshoot-blocked-installations-and-uninstallations.md)

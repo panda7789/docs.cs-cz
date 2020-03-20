@@ -2,53 +2,53 @@
 title: Použití aktivity Pick
 ms.date: 03/30/2017
 ms.assetid: b89be812-a247-4025-b0e3-ffb20db027a6
-ms.openlocfilehash: b0997254615ca962fd386dea70c67a8edb36c90a
-ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
+ms.openlocfilehash: 7ca4527cc1d5bc90ed1ec4df3eef6cf2d8b93b4e
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74715531"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79142612"
 ---
 # <a name="using-the-pick-activity"></a>Použití aktivity Pick
-Tato ukázka demonstruje použití aktivity <xref:System.Activities.Statements.Pick>.
+Tato ukázka ukazuje, <xref:System.Activities.Statements.Pick> jak použít aktivitu.
 
- Aktivita <xref:System.Activities.Statements.Pick> poskytuje modelování ovládacího prvku založeného na událostech. Chová se podobně jako příkaz C# `switch`, který spouští pouze jednu z větví v příkazu `switch`. Na rozdíl od příkazu `switch`, ve kterém je větev spouštěna na základě hodnoty, aktivita <xref:System.Activities.Statements.Pick> spustí větev na základě toho, jak se aktivita dokončí.
+ Aktivita <xref:System.Activities.Statements.Pick> poskytuje modelování řízení založené na událostech. Chová se podobně jako příkaz `switch` C#, který provede pouze jednu `switch` z větví v příkazu. Na `switch` rozdíl od příkazu, ve kterém je větev spuštěna na základě hodnoty, aktivita <xref:System.Activities.Statements.Pick> provede větev na základě toho, jak se aktivita dokončí.
 
- Tato ukázka vyzve uživatele k zadání názvu v konzole v daném časovém období. Aktivita <xref:System.Activities.Statements.Pick> v ukázce má dvě větve, které jsou spuštěny na základě toho, zda uživatel zadá jméno do 5 sekund nebo ne. Pokud uživatel zadá jméno do 5 sekund, spustí se první větev, která obsahuje vlastní aktivitu `ReadLine`; v opačném případě se spustí druhá větev, která obsahuje aktivitu <xref:System.Activities.Statements.Delay>. Po zadání jména uživatele v konzole nástroje se v konzole vytiskne jméno uživatele. Pokud vstup není zadán do 5 sekund, vypršel časový limit operace.
+ Tato ukázka vyzve uživatele k zadání jejich jména na konzoli v daném časovém období. Aktivita <xref:System.Activities.Statements.Pick> v ukázce má dvě větve, které jsou provedeny na základě toho, zda uživatel zadá v jejich názvu do 5 sekund nebo ne. Pokud uživatel zadá v jejich názvu do 5 sekund, první `ReadLine` větev je spuštěna, která obsahuje vlastní aktivitu; jinak je spuštěna druhá větev, která obsahuje aktivitu. <xref:System.Activities.Statements.Delay> Jakmile je jméno uživatele zadáno do konzole, je na konzoli vytištěno jeho jméno. Pokud vstup není zadán do 5 sekund, operace je časový rozsah.
 
 ## <a name="demonstrates"></a>Demonstruje
- <xref:System.Activities.Statements.Pick> aktivita
+ <xref:System.Activities.Statements.Pick>Činnosti.
 
-## <a name="discussion"></a>Účely
- Ukázka zahrnuje pracovní postup návrháře a kódovaný pracovní postup.
+## <a name="discussion"></a>Diskuse
+ Ukázka obsahuje pracovní postup návrháře a kódovaný pracovní postup.
 
- Pracovní postup návrháře: verze návrháře ukázky ukazuje, jak vytvořit pracovní postup v návrháři. Jsou zahrnuty následující soubory:
+ Pracovní postup návrháře Verze ukázky návrháře ukazuje, jak vytvořit pracovní postup v návrháři. Jsou zahrnuty následující soubory:
 
-- Program.cs: obsahuje funkci `Main`, která spustí ukázkový pracovní postup.
+- Program.cs : `Main` Zahrnuje funkci, která spustí ukázkový pracovní postup.
 
-- ReadString.cs: vlastní aktivita, která čte Některé vstupy z konzoly.
+- ReadString.cs: Vlastní aktivita, která čte některé vstupy z konzoly.
 
-- Sequence1. XAML: pracovní postup vytvořený pomocí návrháře, který používá vybrat.
+- Sequence1.xaml: Pracovní postup vytvořený pomocí návrháře, který používá vyskladnění.
 
- Kódovaný pracovní postup: kódovaná verze ukázky ukazuje, jak vytvořit pracovní postup v návrháři. Jsou zahrnuty následující soubory:
+ Kódovaný pracovní postup Kódovaná verze ukázky ukazuje, jak vytvořit pracovní postup v návrháři. Jsou zahrnuty následující soubory:
 
-- Program.cs: obsahuje funkci `Main`, která spustí ukázkový pracovní postup.
+- Program.cs : `Main` Zahrnuje funkci, která spustí ukázkový pracovní postup.
 
-- ReadString.cs: vlastní aktivita, která čte Některé vstupy z konzoly.
+- ReadString.cs: Vlastní aktivita, která čte některé vstupy z konzoly.
 
-#### <a name="to-use-this-sample"></a>Použití této ukázky
+#### <a name="to-use-this-sample"></a>Chcete-li použít tento vzorek
 
-1. Pomocí sady Visual Studio 2010 otevřete soubor řešení vyskladnit. sln.
+1. Pomocí sady Visual Studio 2010 otevřete soubor řešení Pick.sln.
 
-2. Pro sestavení řešení stiskněte kombinaci kláves CTRL + SHIFT + B.
+2. Chcete-li vytvořit řešení, stiskněte kombinaci kláves CTRL+SHIFT+B.
 
-3. Pokud chcete řešení spustit, stiskněte klávesu F5.
+3. Chcete-li řešení spustit, stiskněte klávesu F5.
 
 > [!IMPORTANT]
-> Ukázky už můžou být na vašem počítači nainstalované. Než budete pokračovat, vyhledejte následující (výchozí) adresář.  
->   
+> Ukázky mohou být již nainstalovány v počítači. Před pokračováním zkontrolujte následující (výchozí) adresář.  
+>
 > `<InstallDrive>:\WF_WCF_Samples`  
->   
-> Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] Samples. Tato ukázka se nachází v následujícím adresáři.  
->   
+>
+> Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a Windows Workflow Foundation (WF) Ukázky pro rozhraní .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka je umístěna v následujícím adresáři.  
+>
 > `<InstallDrive>:\WF_WCF_Samples\WF\Basic\Built-InActivities\Pick`

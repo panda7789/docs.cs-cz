@@ -1,18 +1,18 @@
 ---
 title: Oprava rozhraní .NET Framework
-description: Informace o tom, jak .NET Framework opravit
+description: Zjistěte, jak opravit rozhraní .NET Framework
 ms.date: 08/03/2017
 ms.openlocfilehash: 734fb948728aed21ea5d5e908fbd7aee82c7ac62
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "75716289"
 ---
 # <a name="repair-the-net-framework"></a>Oprava rozhraní .NET Framework
 
-V některých situacích může být instalace .NET Framework poškozená a vyžaduje opravy. To může být případ, kdy se vaše aplikace po pokusu o spuštění nespustí, nebo pokud nemůžete instalovat novější verze .NET Framework.
+V některých situacích může dojít k poškození instalace rozhraní .NET Framework a vyžadovat opravy. To může být případ, pokud vaše aplikace dojde k chybě hned po pokusu o spuštění nebo pokud nelze nainstalovat novější verze rozhraní .NET Framework.
 
-Instalaci .NET Framework můžete opravit pomocí [nástroje .NET Framework opravit](https://download.microsoft.com/download/2/B/D/2BDE5459-2225-48B8-830C-AE19CAF038F1/NetFxRepairTool.exe).
+Instalaci rozhraní .NET Framework můžete opravit pomocí [nástroje .NET Framework Repair Tool](https://download.microsoft.com/download/2/B/D/2BDE5459-2225-48B8-830C-AE19CAF038F1/NetFxRepairTool.exe).
 
-Pokud se vaše aplikace po opravě .NET Framework ještě nespouští, může dojít k problému s aplikací. V takovém případě byste se měli obrátit na vydavatele aplikace.
+Pokud se vaše aplikace po opravě rozhraní .NET Framework stále nespouští, může mít problém. V takovém případě byste měli kontaktovat vydavatele aplikace.

@@ -1,48 +1,48 @@
 ---
-title: 'Postupy: Zkosení elementu'
+title: 'Postupy: Zkreslení elementu'
 ms.date: 03/30/2017
 helpviewer_keywords:
 - skewing elements [WPF]
 - graphics [WPF], skewing elements
 - classes [WPF], SkewTransform
 ms.assetid: 56b65f2f-dc6e-4238-923f-ca44ec53c52f
-ms.openlocfilehash: cf770a284238826852e788e27f3b3f329ed0269f
-ms.sourcegitcommit: d6e27023aeaffc4b5a3cb4b88685018d6284ada4
+ms.openlocfilehash: 370ac28b07427345b52822133b5414b45d4462eb
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67664089"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79187666"
 ---
-# <a name="how-to-skew-an-element"></a>Postupy: Zkosení elementu
-Tento příklad ukazuje způsob použití <xref:System.Windows.Media.SkewTransform> zkosení elementu. Nerovnoměrná distribuce, které se taky říká zkosení je transformace, která roztáhne souřadnicového prostoru nerovnoměrné způsobem. Jeden typické použití <xref:System.Windows.Media.SkewTransform> je pro simulaci 3D hloubka v 2D objekty.  
+# <a name="how-to-skew-an-element"></a>Postupy: Zkreslení elementu
+Tento příklad ukazuje, <xref:System.Windows.Media.SkewTransform> jak použít zkosení prvku. Zkosení, které je také známé jako zkosení, je transformace, která roztáhne souřadnicový prostor nerovnoměrným způsobem. Jedním z typických použití a <xref:System.Windows.Media.SkewTransform> je pro simulaci 3D hloubky ve 2D objektech.  
   
- Použití <xref:System.Windows.Media.SkewTransform.CenterX%2A> a <xref:System.Windows.Media.SkewTransform.CenterY%2A> vlastnosti k určení centru bod <xref:System.Windows.Media.SkewTransform>.  
+ Pomocí <xref:System.Windows.Media.SkewTransform.CenterX%2A> vlastností a <xref:System.Windows.Media.SkewTransform.CenterY%2A> určete středový bod <xref:System.Windows.Media.SkewTransform>rozhraní .  
   
- Použití <xref:System.Windows.Media.SkewTransform.AngleX%2A> a <xref:System.Windows.Media.SkewTransform.AngleY%2A> vlastnosti k určení nerovnoměrné rozdělení úhlu z osy x a y a zkosení aktuální systém souřadnic spolu tyto osy.  
+ Pomocí <xref:System.Windows.Media.SkewTransform.AngleX%2A> vlastností a <xref:System.Windows.Media.SkewTransform.AngleY%2A> určete úhel zkosení osy x a osy y a zkosení aktuálního souřadnicového systému podél těchto os.  
   
- Chcete-li odhadnout účinky transformaci zkosení, zvažte, který <xref:System.Windows.Media.SkewTransform.AngleX%2A> zkosí hodnoty na ose x vzhledem k původní systém souřadnic. Proto se pro <xref:System.Windows.Media.SkewTransform.AngleX%2A> 30, osy y otočí 30 stupňů prostřednictvím původ a zkosí hodnoty x – o 30 stupňů z tohoto počátku. Podobně <xref:System.Windows.Media.SkewTransform.AngleY%2A> 30 zkosí hodnot y tvaru o 30 stupňů z původního zdroje. Všimněte si, že to není stejný účinek jako překladu (přesun) souřadnicový systém o 30 stupňů x nebo y.  
+ Chcete-li předpovědět efekt transformace zkosení, zvažte, že <xref:System.Windows.Media.SkewTransform.AngleX%2A> zkosí hodnoty osy x vzhledem k původnímu souřadnicovému systému. Proto pro <xref:System.Windows.Media.SkewTransform.AngleX%2A> 30 ose y otočí 30 stupňů přes počátek a zkosí hodnoty v x- o 30 stupňů od tohoto počátku. Podobně 30 <xref:System.Windows.Media.SkewTransform.AngleY%2A> zkosí hodnoty y- tvaru o 30 stupňů od počátku. Všimněte si, že to není stejný efekt jako překlad (přesunutí) souřadnicový systém o 30 stupňů v x- nebo y-.  
   
- Následující příklad použije vodorovné zkosení 45 stupňů <xref:System.Windows.Shapes.Rectangle> od středu (0; 0).  
+ Následující příklad použije vodorovné zkosení <xref:System.Windows.Shapes.Rectangle> o 45 stupňů na středový bod (0,0).  
   
 ## <a name="example"></a>Příklad  
  [!code-xaml[transformsSample#41](~/samples/snippets/csharp/VS_Snippets_Wpf/transformsSample/CS/SkewTransformExample.xaml#41)]  
   
- Následující příklad použije vodorovné zkosení 45 stupňů <xref:System.Windows.Shapes.Rectangle> od středu (25,25).  
+ Následující příklad použije vodorovné zkosení <xref:System.Windows.Shapes.Rectangle> o 45 stupňů na středový bod (25,25).  
   
  [!code-xaml[transformsSample#42](~/samples/snippets/csharp/VS_Snippets_Wpf/transformsSample/CS/SkewTransformExample.xaml#42)]  
   
- Následující příklad použije svislé zkosení 45 stupňů <xref:System.Windows.Shapes.Rectangle> od středu (25,25).  
+ Následující příklad použije svislé zkosení o 45 stupňů na <xref:System.Windows.Shapes.Rectangle> středový bod (25,25).  
   
  [!code-xaml[transformsSample#43](~/samples/snippets/csharp/VS_Snippets_Wpf/transformsSample/CS/SkewTransformExample.xaml#43)]  
   
- Následující obrázek znázorňuje různé nerovnoměrné distribuce, které se používají v tomto příkladu.  
+ Následující obrázek znázorňuje různé zkosení, které se používají v tomto příkladu.  
   
- ![SkewTransform examples](./media/img-wcpsdk-graphicsmm-skewtransformexample.gif "img_wcpsdk_graphicsmm_skewtransformexample")  
-Tři SkewTransform – příklady jsou znázorněné  
+ ![Příklady SkewTransform](./media/img-wcpsdk-graphicsmm-skewtransformexample.gif "img_wcpsdk_graphicsmm_skewtransformexample")  
+Tři příklady SkewTransform ilustrované  
   
- Úplnou ukázku najdete v tématu [2D transformace ukázka](https://go.microsoft.com/fwlink/?LinkID=158252).  
+ Kompletní ukázku naleznete v [tématu Ukázka 2D transformací](https://github.com/Microsoft/WPF-Samples/tree/master/Graphics/2DTransforms).  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Media.Transform>
 - <xref:System.Windows.Media.SkewTransform>

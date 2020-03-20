@@ -10,27 +10,27 @@ helpviewer_keywords:
 - add element, connectionManagement
 - connectionManagement, add element
 ms.assetid: 856bf57d-1c63-46c7-a178-03d97b0a4149
-ms.openlocfilehash: 19ebbfba477eeba253a7af0742953cc6a4d45a0e
-ms.sourcegitcommit: 7f8eeef060ddeb2cabfa52843776faf652c5a1f5
+ms.openlocfilehash: 093b68d31e03094bedefa96a2f2d53eb3d84edf0
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74088522"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79155008"
 ---
-# <a name="add-element-for-connectionmanagement-network-settings"></a>\<přidat > element pro connectionManagement (nastavení sítě)
-Přidá IP adresu nebo název DNS do seznamu správy připojení.  
+# <a name="add-element-for-connectionmanagement-network-settings"></a>\<přidat> Element pro connectionManagement (Nastavení sítě)
+Přidá adresu IP nebo název DNS do seznamu správy připojení.  
 
-[ **\<configuration >** ](../configuration-element.md) \
-&nbsp;&nbsp;[ **\<System. net >** ](system-net-element-network-settings.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;[ **\<connectionManagement >** ](connectionmanagement-element-network-settings.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<přidat >**
+[**\<>konfigurace**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<system.net>**](system-net-element-network-settings.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[**\<connectionManagement>**](connectionmanagement-element-network-settings.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<přidat>**
 
 ## <a name="syntax"></a>Syntaxe  
   
 ```xml  
-<add   
-  address="address expression"   
-  maxconnection="integer"   
+<add
+  address="address expression"
+  maxconnection="integer"
 />  
 ```  
   
@@ -41,11 +41,11 @@ Přidá IP adresu nebo název DNS do seznamu správy připojení.
   
 |**Atribut**|**Popis**|  
 |-------------------|---------------------|  
-|`address`|Řetězec popisující IP adresu nebo název DNS.|  
-|`maxconnection`|Maximální počet připojení povolených pro server. Pokud není zadaný, použije se výchozí hodnota 2.|  
+|`address`|Řetězec popisující adresu IP nebo název DNS.|  
+|`maxconnection`|Maximální počet připojení povolených na server. Pokud není zadán, výchozí hodnota je 2.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
- Žádné  
+ Žádné.  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
@@ -54,15 +54,15 @@ Přidá IP adresu nebo název DNS do seznamu správy připojení.
 |[connectionManagement](connectionmanagement-element-network-settings.md)|Určuje maximální počet připojení k síťovému hostiteli.|  
   
 ## <a name="remarks"></a>Poznámky  
- Hodnota atributu `address` musí být buď hvězdička, aby označovala všechna připojení, nebo řetězec formuláře `<schema>://<idn_hostname>[:<port>]`.  
+ Hodnota atributu `address` by měla být hvězdičkou označující všechna připojení nebo `<schema>://<idn_hostname>[:<port>]`řetězcem formuláře .  
   
- Pokud identifikátor URI předaný do libovolného rozhraní API HTTP obsahuje Unicode, název se převede interně pomocí <xref:System.Uri.DnsSafeHost%2A>, což může vracet řetězec punicode (chování závisí na aktuální konfiguraci IDN).  
+ Pokud identifikátor URI předaný libovolným chybám HTTP obsahuje kódování Unicode, bude název převeden interně pomocí <xref:System.Uri.DnsSafeHost%2A> který může vrátit řetězec punicode (chování závislé na aktuální konfiguraci IDN).  
   
 ## <a name="configuration-files"></a>Konfigurační soubory  
- Tento element lze použít v konfiguračním souboru aplikace nebo v konfiguračním souboru počítače (Machine. config).  
+ Tento prvek lze použít v konfiguračním souboru aplikace nebo v konfiguračním souboru počítače (Machine.config).  
   
 ## <a name="example"></a>Příklad  
- Následující příklad nakonfiguruje aplikaci tak, aby používala čtyři připojení k serveru `www.contoso.com` a dvě připojení ke všem ostatním serverům.  
+ Následující příklad konfiguruje aplikaci tak, aby používala čtyři připojení k serveru `www.contoso.com` a dvě připojení ke všem ostatním serverům.  
   
 ```xml  
 <configuration>  
@@ -75,7 +75,7 @@ Přidá IP adresu nebo název DNS do seznamu správy připojení.
 </configuration>  
 ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Net.ServicePoint>
 - <xref:System.Net.ServicePointManager>

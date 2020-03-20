@@ -9,25 +9,25 @@ helpviewer_keywords:
 - dependentAssembly element
 - <dependentAssembly> element
 ms.assetid: 14e95627-dd79-4b82-ac85-e682aa3a31d8
-ms.openlocfilehash: 33309ed89b4d31580da5de3aeb38e9e1fd8ae4d0
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 2de8c752867d00708173d11d1851f415a2e8518d
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73117587"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79154202"
 ---
-# <a name="dependentassembly-element"></a>\<– > elementu dependentAssembly
-Zapouzdřuje pro jednotlivá sestavení zásady vazeb a umístění sestavení. Pro každé sestavení použijte jeden `dependentAssembly` element.  
+# <a name="dependentassembly-element"></a>\<dependentAssembly> Element
+Zapouzdřuje pro jednotlivá sestavení zásady vazeb a umístění sestavení. Pro `dependentAssembly` každé sestavení použijte jeden prvek.  
   
-[ **\<configuration >** ](../configuration-element.md) \
-&nbsp;&nbsp;[ **\<runtime >** ](runtime-element.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;[ **\<assemblyBinding >** ](assemblybinding-element-for-runtime.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<dependentAssembly >**  
+[**\<>konfigurace**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<>za běhu**](runtime-element.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[**\<assemblyBinding>**](assemblybinding-element-for-runtime.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<dependentAssembly>**  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```xml  
-<dependentAssembly>   
+<dependentAssembly>
 </dependentAssembly>  
 ```  
   
@@ -35,20 +35,20 @@ Zapouzdřuje pro jednotlivá sestavení zásady vazeb a umístění sestavení.
  Následující části popisují atributy, podřízené prvky a nadřazené prvky.  
   
 ### <a name="attributes"></a>Atributy  
- Žádné  
+ Žádné.  
   
 ### <a name="child-elements"></a>Podřízené elementy  
   
-|Prvek|Popis|  
+|Element|Popis|  
 |-------------|-----------------|  
-|`assemblyIdentity`|Obsahuje identifikační informace o sestavení. Tento prvek musí být zahrnut do každého prvku `dependentAssembly`.|  
-|`codeBase`|Určuje, kde modul runtime může najít sdílené sestavení, pokud není nainstalován v počítači.|  
+|`assemblyIdentity`|Obsahuje identifikační informace o sestavení. Tento prvek musí být `dependentAssembly` součástí každého prvku.|  
+|`codeBase`|Určuje, kde může runtime najít sdílené sestavení, pokud není v počítači nainstalováno.|  
 |`bindingRedirect`|Přesměruje jednu verzi sestavení k jiné.|  
-|`publisherPolicy`|Určuje, zda modul runtime používá zásady vydavatele pro toto sestavení.|  
+|`publisherPolicy`|Určuje, zda program runtime použije zásadu vydavatele pro toto sestavení.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
-|Prvek|Popis|  
+|Element|Popis|  
 |-------------|-----------------|  
 |`assemblyBinding`|Obsahuje informace o přesměrování verze sestavení a umístění sestavení.|  
 |`configuration`|Kořenový prvek v každém konfiguračním souboru, který je používán modulem Common Language Runtime (CLR) a aplikacemi rozhraní .NET Framework.|  
@@ -78,7 +78,7 @@ Zapouzdřuje pro jednotlivá sestavení zásady vazeb a umístění sestavení.
 </configuration>  
 ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Schéma nastavení běhového prostředí](index.md)
 - [Schéma konfiguračního souboru](../index.md)

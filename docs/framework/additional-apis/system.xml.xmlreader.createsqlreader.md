@@ -1,5 +1,5 @@
 ---
-title: XmlReader. CreateSqlReader – metoda (System. XML)
+title: Metoda XmlReader.CreateSqlReader (System.Xml)
 ms.date: 10/17/2019
 topic_type:
 - apiref
@@ -9,19 +9,19 @@ api_location:
 - system.xml.dll
 api_type:
 - Assembly
-ms.openlocfilehash: c65ef7c073175488c11c5e912a44d46fd4319209
-ms.sourcegitcommit: 9c54866bcbdc49dbb981dd55be9bbd0443837aa2
+ms.openlocfilehash: 7bd2ef5158516acede47f73f9937d06159bc16c9
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/14/2020
-ms.locfileid: "77215452"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79155736"
 ---
 # <a name="xmlreadercreatesqlreader-method"></a>XmlReader.CreateSqlReader – metoda
 
-Vytvoří novou instanci <xref:System.Xml.XmlReader> pomocí zadaného datového proudu, nastavení a kontextové informace pro analýzu.
+Vytvoří novou <xref:System.Xml.XmlReader> instanci pomocí zadaného datového proudu, nastavení a kontextových informací pro analýzu.
 
 ```csharp
-internal static XmlReader CreateSqlReader(Stream input, 
+internal static XmlReader CreateSqlReader(Stream input,
   XmlReaderSettings settings, XmlParserContext inputContext)
 ```
 
@@ -31,10 +31,10 @@ internal static XmlReader CreateSqlReader(Stream input,
   Datový proud, který obsahuje data XML.
 
 - `settings` <xref:System.Xml.XmlReaderSettings>  
-  Nastavení pro novou instanci <xref:System.Xml.XmlReader>. Tato hodnota může být `null`.
+  Nastavení pro novou <xref:System.Xml.XmlReader> instanci. Tato hodnota `null`může být .
 
 - `inputContext` <xref:System.Xml.XmlParserContext>  
-  Kontextové informace vyžadované k analýze fragmentu XML. Tato hodnota může být `null`.
+  Kontextové informace potřebné k analýzě fragmentu XML. Tato hodnota `null`může být .
 
 ## <a name="returns"></a>Vrací
 
@@ -46,12 +46,12 @@ Objekt, který se používá ke čtení dat XML v datovém proudu.
 > [!WARNING]
 > Metoda `XmlReader.CreateSqlReader` je interní a není určena pro použití přímo v kódu.
 >
-> Společnost Microsoft v žádné situaci nepodporuje použití této metody v produkční aplikaci.
+> Společnost Microsoft nepodporuje použití této metody v produkční aplikaci za žádných okolností.
 
 ## <a name="requirements"></a>Požadavky
 
-**Obor názvů:** <xref:System.Xml>
+**Obor názvů:**<xref:System.Xml>
 
-**Sestavení:** System. XML. dll
+**Sestava:** Soubor System.Xml.dll
 
-**Verze .NET Framework:** K dispozici od verze 2,0.
+**Verze rozhraní .NET Framework:** K dispozici od 2.0.

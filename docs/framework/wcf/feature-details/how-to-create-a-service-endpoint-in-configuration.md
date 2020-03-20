@@ -2,15 +2,15 @@
 title: 'Postupy: Vytvoření koncového bodu služby v konfiguraci'
 ms.date: 06/16/2016
 ms.assetid: f474e25d-2a27-4f31-84c5-395c442b8e70
-ms.openlocfilehash: 63a40576b805952197cec5af2f89a5dc4b5d3545
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 9687d9537d6f166a02b79261743050168f677261
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61787644"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79185000"
 ---
 # <a name="how-to-create-a-service-endpoint-in-configuration"></a>Postupy: Vytvoření koncového bodu služby v konfiguraci
-Koncové body mají klienti obdržet přístup k funkcím, které nabízí služba Windows Communication Foundation (WCF). Můžete definovat jeden nebo víc koncových bodů služby pomocí kombinace relativní a absolutní koncový bod adresy, nebo pokud nejsou definovány žádné koncové body služby, modul runtime, poskytuje některé ve výchozím nastavení za vás. Toto téma ukazuje, jak přidat koncové body pomocí konfiguračního souboru, které obsahují relativní a absolutní adresu.  
+Koncové body poskytují klientům přístup k funkcím, které služba WCF (Windows Communication Foundation) nabízí. Můžete definovat jeden nebo více koncových bodů pro službu pomocí kombinace relativní a absolutní adresy koncového bodu, nebo pokud nedefinujete žádné koncové body služby, modul runtime poskytuje některé ve výchozím nastavení pro vás. Toto téma ukazuje, jak přidat koncové body pomocí konfiguračního souboru, který obsahuje relativní i absolutní adresy.  
   
 ## <a name="example"></a>Příklad  
  Následující konfigurace služby určuje základní adresu a pět koncových bodů.  
@@ -70,10 +70,10 @@ Koncové body mají klienti obdržet přístup k funkcím, které nabízí služ
 ```  
   
 ## <a name="example"></a>Příklad  
- Základní adresa je zadána pomocí `add` element v rámci služby/hostitele/baseAddresses, jak je znázorněno v následujícím příkladu.  
+ Základní adresa je určena `add` pomocí prvku v části service/host/baseAddresses, jak je znázorněno v následující ukázce.  
   
 ```xml  
-<service   
+<service
     name="Microsoft.ServiceModel.Samples.CalculatorService">  
   <host>  
     <baseAddresses>  
@@ -83,16 +83,16 @@ Koncové body mají klienti obdržet přístup k funkcím, které nabízí služ
 ```  
   
 ## <a name="example"></a>Příklad  
- První definice koncového bodu je znázorněno v následujícím příkladu určuje relativní adresa, což znamená, že adresa koncového bodu je kombinací základní adresu a relativní adresu dle pravidel složení identifikátor URI (Uniform Resource). Relativní adresa je prázdná (""), takže adresu koncového bodu je stejný jako základní adresu. Adresa skutečný koncový bod je `http://localhost:8000/servicemodelsamples/service`.  
+ První definice koncového bodu zobrazená v následujícím příkladu určuje relativní adresu, což znamená, že adresa koncového bodu je kombinací základní adresy a relativní adresy podle pravidel složení identifikátoru URI (Uniform Resource Identifier). Relativní adresa je prázdná (""), takže adresa koncového bodu je stejná jako základní adresa. Skutečná adresa koncového `http://localhost:8000/servicemodelsamples/service`bodu je .  
   
 ```xml  
-<endpoint address=""   
+<endpoint address=""
     binding="wsHttpBinding"  
     contract="Microsoft.ServiceModel.Samples.ICalculator" />  
 ```  
   
 ## <a name="example"></a>Příklad  
- Druhá definice koncového bodu také určuje relativní adresa, jak je znázorněno v následující ukázková konfigurace. Relativní adresa "test", se připojí k základní adrese. Adresa skutečný koncový bod je `http://localhost:8000/servicemodelsamples/service/test`.  
+ Definice druhého koncového bodu také určuje relativní adresu, jak je znázorněno v následující ukázkové konfiguraci. Relativní adresa "test", je připojen k základní adrese. Skutečná adresa koncového `http://localhost:8000/servicemodelsamples/service/test`bodu je .  
   
 ```xml  
 <endpoint address="/test"  
@@ -101,7 +101,7 @@ Koncové body mají klienti obdržet přístup k funkcím, které nabízí služ
 ```  
   
 ## <a name="example"></a>Příklad  
- Třetí definice koncového bodu určuje absolutní adresu, jak je znázorněno v následující ukázková konfigurace. Základní adresa hraje žádná role v adrese. Adresa skutečný koncový bod je `http://localhost:8001/hello/servicemodelsamples`.  
+ Definice třetího koncového bodu určuje absolutní adresu, jak je znázorněno v následující ukázkové konfiguraci. Základní adresa nehraje žádnou roli v adrese. Skutečná adresa koncového `http://localhost:8001/hello/servicemodelsamples`bodu je .  
   
 ```xml  
 <endpoint address="http://localhost:8001/hello/servicemodelsamples"  
@@ -110,7 +110,7 @@ Koncové body mají klienti obdržet přístup k funkcím, které nabízí služ
 ```  
   
 ## <a name="example"></a>Příklad  
- Na čtvrté adresu koncového bodu určuje absolutní adresu a různé přenosové – TCP. Základní adresa hraje žádná role v adrese. Adresa skutečný koncový bod je NET.TCP://localhost: 9000/servicemodelsamples/služby.  
+ Čtvrtá adresa koncového bodu určuje absolutní adresu a jiný přenos – TCP. Základní adresa nehraje žádnou roli v adrese. Skutečná adresa koncového bodu je net.tcp://localhost:9000/servicemodelsamples/service.  
   
 ```xml  
 <endpoint address="net.tcp://localhost:9000/servicemodelsamples/service"  
@@ -119,7 +119,7 @@ Koncové body mají klienti obdržet přístup k funkcím, které nabízí služ
 ```  
   
 ## <a name="example"></a>Příklad  
- Pokud chcete použít výchozí koncové body poskytovaný modulem runtime, nezadávejte žádné koncové body služby v kódu nebo konfiguračního souboru. V tomto příkladu modul runtime vytvoří výchozí koncové body při otevření služby. Další informace o výchozí koncové body, vazby a chování najdete v tématu [zjednodušená konfigurace](../../../../docs/framework/wcf/simplified-configuration.md) a [zjednodušená konfigurace pro služby WCF](../../../../docs/framework/wcf/samples/simplified-configuration-for-wcf-services.md).  
+ Chcete-li použít výchozí koncové body poskytované runtime, nezadávejte žádné koncové body služby v kódu nebo konfiguračním souboru. V tomto příkladu runtime vytvoří výchozí koncové body při otevření služby. Další informace o výchozích koncových bodech, vazbách a chování naleznete v [tématu Zjednodušená konfigurace](../../../../docs/framework/wcf/simplified-configuration.md) a [zjednodušená konfigurace pro služby WCF](../../../../docs/framework/wcf/samples/simplified-configuration-for-wcf-services.md).  
   
 ```xml  
 <configuration>  

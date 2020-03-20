@@ -4,52 +4,52 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - batching messages [WCF]
 ms.assetid: 53305392-e82e-4e89-aedc-3efb6ebcd28c
-ms.openlocfilehash: a517dc4e143b561a17bb3715b69be393bee2b21e
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: be9661525c960ae558d21b05781007b81b8a3f56
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64585016"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79185441"
 ---
 # <a name="batching-messages-in-a-transaction"></a>Dávkování zpráv v transakci
-Ve frontě aplikací používání transakcí k zajištění správnosti a spolehlivé doručování zpráv. Transakce, ale jsou nákladný provoz a může výrazně snížit propustnost zpráv. Jedním způsobem, jak zlepšit propustnost zpráv je, aby aplikaci číst a zpracovávat více zpráv v rámci jedné transakce. Nutný kompromis je mezi výkonem a možností obnovení: jak se zvyšuje počet zpráv v dávce, postupy zločinců se množství práce obnovení, který vyžaduje, pokud jsou transakce vrácena zpět. Je důležité si uvědomit rozdíl mezi dávkování zpráv v transakci a relací. A *relace* je seskupení související zprávy, které jsou zpracovány jednu aplikaci a potvrzena jako jeden celek. Relace se běžně používají, pokud skupina související zprávy musí být zpracovány současně. Příkladem je online nakupování webové stránky. *Dávky* se používají ke zpracování více, nesouvisející zprávy tak, že zpráva zvýšení propustnosti. Další informace o relacích najdete v tématu [seskupování zpráv zařazených do fronty v relaci](../../../../docs/framework/wcf/feature-details/grouping-queued-messages-in-a-session.md). Také zpracování jedné aplikace a potvrzena jako jednu jednotku zpráv v dávce, ale může být žádný vztah mezi zpráv v dávce. Dávkování zpráv v transakci je optimalizace, která se nemění, jak je aplikace spuštěná.  
+Aplikace ve frontě používají transakce k zajištění správnosti a spolehlivého doručování zpráv. Transakce jsou však nákladné operace a může výrazně snížit propustnost zpráv. Jedním ze způsobů, jak zlepšit propustnost zpráv, je, aby aplikace četla a zpracovávala více zpráv v rámci jedné transakce. Kompromis je mezi výkonem a obnovení: jako počet zpráv v dávce zvyšuje, tak se množství práce obnovení, které vyžadují, pokud jsou transakce vráceny zpět. Je důležité si uvědomit rozdíl mezi dávkově zprávy v transakci a relace. *Relace* je seskupení souvisejících zpráv, které jsou zpracovány jednou aplikací a potvrzeny jako jedna jednotka. Relace se obvykle používají, když skupina souvisejících zpráv musí být zpracována společně. Příkladem je web pro online nakupování. *Listy* se používají ke zpracování více nesouvisejících zpráv způsobem, který zvyšuje propustnost zpráv. Další informace o relacích naleznete [v tématu Seskupování zpráv ve frontě v relaci](../../../../docs/framework/wcf/feature-details/grouping-queued-messages-in-a-session.md). Zprávy v dávce jsou také zpracovány jednou aplikací a potvrzeny jako jedna jednotka, ale může existovat žádný vztah mezi zprávami v dávce. Dávkování zpráv v transakci je optimalizace, která nemění způsob, jakým aplikace běží.  
   
-## <a name="entering-batching-mode"></a>Zadat režim dávkování byl  
- <xref:System.ServiceModel.Description.TransactedBatchingBehavior> Dávkování řídí chování koncového bodu. Přidání tohoto chování koncového bodu na koncový bod služby říká Windows Communication Foundation (WCF) do služby batch zpráv v transakci. Ne všechny zprávy vyžadují transakci, takže pouze zprávy, které vyžadují transakce jsou umístěny v dávce, a pouze zprávy odeslané z operace označené `TransactionScopeRequired`  =  `true` a `TransactionAutoComplete`  =  `true` jsou zahrnutých do dávky. Pokud všechny operace v kontraktu služby jsou označeny `TransactionScopeRequired`  =  `false` a `TransactionAutoComplete`  =  `false`, pak režim dávkování byl se nezadal.  
+## <a name="entering-batching-mode"></a>Zadání dávkovacího režimu  
+ Chování <xref:System.ServiceModel.Description.TransactedBatchingBehavior> koncového bodu řídí dávkování. Přidání tohoto chování koncového bodu do koncového bodu služby říká Windows Communication Foundation (WCF) dávkové zprávy v transakci. Ne všechny zprávy vyžadují transakci, takže pouze zprávy, které vyžadují transakci jsou umístěny `TransactionScopeRequired`  =  `true` `TransactionAutoComplete`  =  v dávce a pouze zprávy odeslané z operací označených a `true` jsou považovány za dávky. Pokud jsou všechny operace na `TransactionScopeRequired`  =  `false` servisní `TransactionAutoComplete`  =  `false`smlouvě označeny a , režim dávkování není nikdy zadán.  
   
 ## <a name="committing-a-transaction"></a>Potvrzení transakce  
- Dávkové transakce se potvrzeny založené na těchto faktorech:  
+ Dávková transakce je potvrzena na základě následujících:  
   
-- `MaxBatchSize`. Vlastnost <xref:System.ServiceModel.Description.TransactedBatchingBehavior> chování. Tato vlastnost určuje maximální počet zpráv, které se umístí do dávky. Při dosažení tohoto počtu se zavazuje služby batch. Toto je hodnota není striktní limitu, je možné potvrdit dávku před přijetím tento počet zpráv.  
+- `MaxBatchSize`. Vlastnost <xref:System.ServiceModel.Description.TransactedBatchingBehavior> chování. Tato vlastnost určuje maximální počet zpráv, které jsou umístěny do dávky. Po dosažení tohoto čísla je dávka potvrzena. Tato hodnota není přísnýlimit, je možné potvrdit dávku před přijetím tohoto počtu zpráv.  
   
-- `Transaction Timeout`. Po uplynutí 80 procent společností z žebříčku časový limit transakce, usiluje o dávky a vytvoří novou dávku. To znamená, že pokud 20 procent nebo méně času pro k dokončení transakce zůstává, služby batch je potvrzená.  
+- `Transaction Timeout`. Po uplynutí 80 procent časového limitu transakce je dávka potvrzena a je vytvořena nová dávka. To znamená, že pokud 20 procent nebo méně času přiděleného pro transakci k dokončení zůstane, dávka je potvrzena.  
   
-- `TransactionScopeRequired`. Při zpracování dávky zprávy, pokud WCF nenajde ten, který má `TransactionScopeRequired`  =  `false`, potvrzení změn služby batch a znovu neotevře novou dávku na příjem první zprávy s `TransactionScopeRequired`  =  `true` a `TransactionAutoComplete`  = `true`.  
+- `TransactionScopeRequired`. Při zpracování dávky zpráv, pokud WCF `TransactionScopeRequired`  =  `false`najde ten, který má , potvrdí dávku a `TransactionScopeRequired`  =  `true` znovu `TransactionAutoComplete`  = otevře novou dávku při přijetí první zprávy s a `true`.  
   
-- Pokud neexistují žádné další zprávy ve frontě, je aktuální dávku potvrzené, i v případě `MaxBatchSize` nebyl dosažen nebo nebyl 80 procent společností z žebříčku transakce časový limit vypršel.  
+- Pokud ve frontě neexistují žádné další zprávy, je aktuální `MaxBatchSize` dávka potvrzena, i když nebylo dosaženo nebo neuplynulo 80 procent časového limitu transakce.  
   
-## <a name="leaving-batching-mode"></a>Opustit režim dávkování byl  
- Pokud zpráva v dávce způsobí, že transakce pro přerušení, dojde k následujícím krokům:  
+## <a name="leaving-batching-mode"></a>Opuštění režimu dávkování  
+ Pokud zpráva v dávce způsobí přerušení transakce, dojde k následujícím krokům:  
   
-1. Celý dávku zpráv se vrátí zpět.  
+1. Celá dávka zpráv je vrácena zpět.  
   
-2. Zprávy jsou jeden po druhém, dokud počet zpráv, přečtěte si, které překročí dvakrát maximální velikost dávky pro čtení.  
+2. Zprávy jsou čteny jeden po druhém, dokud počet přečtených zpráv překročí dvojnásobek maximální velikosti dávky.  
   
-3. Režim dávky je zadat znovu.  
+3. Dávkový režim je znovu zadán.  
   
-## <a name="choosing-the-batch-size"></a>Vyberete velikost dávky  
- Velikost dávky je aplikace závislá. Metoda empirical je nejlepší způsob, jak dorazí na velikost optimální služby batch pro aplikaci. Je důležité pamatovat při volbě velikosti dávky zvolte velikost podle vaší aplikace skutečný nasazení modelu. Například při nasazování aplikací, pokud je třeba SQL server na vzdáleném počítači a transakce, která zahrnuje fronty a SQL server, pak velikost dávky je nejlepší určí spuštěním této přesnou konfiguraci.  
+## <a name="choosing-the-batch-size"></a>Výběr velikosti dávky  
+ Velikost dávky je závislá na aplikaci. Empirická metoda je nejlepší způsob, jak dosáhnout optimální velikosti dávky pro aplikaci. Je důležité mít na paměti při výběru velikosti dávky zvolit velikost podle skutečného modelu nasazení vaší aplikace. Například při nasazování aplikace, pokud potřebujete sql server na vzdáleném počítači a transakce, která zahrnuje fronty a SQL server, pak velikost dávky je nejlépe určit spuštěním této přesné konfigurace.  
   
-## <a name="concurrency-and-batching"></a>Souběžnost a dávkové zpracování  
- Pokud chcete zvýšit propustnost, můžete mít také mnoho dávky běžet souběžně. Nastavením `ConcurrencyMode.Multiple` v `ServiceBehaviorAttribute`, můžete povolit souběžné dávkování.  
+## <a name="concurrency-and-batching"></a>Souběžnost a dávkování  
+ Chcete-li zvýšit propustnost, můžete také mít mnoho dávek spustit současně. Nastavením `ConcurrencyMode.Multiple` `ServiceBehaviorAttribute`v , můžete povolit souběžné dávkování.  
   
- *Služba omezování* je chování služby, který se používá k označení, nelze realizovat maximální počet souběžných volání služby. Při použití s dávkové zpracování, je interpretován jako způsob, jakým lze spustit mnoho souběžných dávky. Pokud omezení služby není nastavená, WCF výchozí maximální souběžných volání na 16. Proto pokud ve výchozím nastavení byly přidány do dávek chování, maximálně 16 dávek může být aktivní ve stejnou dobu. Je nejvhodnější k vyladění omezení služby a dávkové zpracování na základě vaší kapacity. Například pokud fronta má 100 zpráv a je požadován dávku 20, s maximální souběžných volání nastaven na hodnotu 16 není užitečné proto, že v závislosti na propustnost, může být 16 transakce aktivní, podobně jako nemít dávkování zapnuté. Proto při optimalizaci výkonu, buď nemáte k dispozici souběžných dávkování nebo mít souběžných dávkování omezení velikosti správné služby.  
+ *Omezení služby* je chování služby, které se používá k označení, kolik maximální souběžná volání lze provést ve službě. Při použití s dávkování, to je interpretovánjako kolik souběžných dávek lze spustit. Pokud omezení služby není nastavena, WCF výchozí maximální souběžná volání 16. Proto pokud dávkování chování byly přidány ve výchozím nastavení, maximálně 16 dávek může být aktivní ve stejnou dobu. Nejlepší je vyladit omezení služby a dávkování na základě vaší kapacity. Například pokud fronta má 100 zpráv a dávka 20 je žádoucí, s maximální souběžná volání nastavena na 16 není užitečné, protože v závislosti na propustnost 16 transakcí může být aktivní, podobně jako s dávkování zapnuta. Proto při jemné množení pro výkon, buď nemají souběžné dávkování nebo mají souběžné dávkování se správnou velikostí omezení služby.  
   
-## <a name="batching-and-multiple-endpoints"></a>Dávkové zpracování a několik koncových bodů  
- Koncový bod se skládá z adresy a kontrakt. Může existovat více koncových bodů, které sdílejí stejnou vazbu. Je možné pro dva koncové body sdílet stejnou vazbu a naslouchání identifikátor URI (Uniform Resource), nebo adresa fronty. Pokud jsou dva koncové body čtení ze stejné fronty a transakční dávkování chování je přidána do oba koncové body, konfliktu ve službě batch, které by mohly nastat velikosti. Je to vyřešit implementací dávkování použitím velikosti minimální dávky určena v rozsahu mezi dvěma provedené dávkování chování. V tomto scénáři Pokud jeden z koncových bodů není určen provedené dávkování, pak oba koncové body nepoužívejte dávkování.  
+## <a name="batching-and-multiple-endpoints"></a>Dávkování a více koncových bodů  
+ Koncový bod se skládá z adresy a smlouvy. Může existovat více koncových bodů, které sdílejí stejnou vazbu. Je možné pro dva koncové body sdílet stejnou vazbu a poslouchat identifikátor jednotného prostředku (URI) nebo adresu fronty. Pokud dva koncové body jsou čtení ze stejné fronty a transakční dávkování chování je přidán do obou koncových bodů, může dojít ke konfliktu v velikosti dávky zadané. To je vyřešeno implementací dávkování pomocí minimální velikosti dávky zadané mezi dvěma transakčními chováními dávkování. V tomto scénáři pokud jeden z koncových bodů neurčuje transakční dávkování, pak by oba koncové body nepoužívaly dávkování.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje, jak určit `TransactedBatchingBehavior` v konfiguračním souboru.  
+ Následující příklad ukazuje, jak `TransactedBatchingBehavior` zadat v konfiguračním souboru.  
   
 ```xml  
 <behaviors>
@@ -60,14 +60,14 @@ Ve frontě aplikací používání transakcí k zajištění správnosti a spole
 </behaviors>
 ```  
   
- Následující příklad ukazuje, jak určit <xref:System.ServiceModel.Description.TransactedBatchingBehavior> v kódu.  
+ Následující příklad ukazuje, jak <xref:System.ServiceModel.Description.TransactedBatchingBehavior> zadat v kódu.  
   
 ```csharp
 using (ServiceHost serviceHost = new ServiceHost(typeof(OrderProcessorService)))
 {
      ServiceEndpoint sep = ServiceHost.AddServiceEndpoint(typeof(IOrderProcessor), new NetMsmqBinding(), "net.msmq://localhost/private/ServiceModelSamplesTransacted");
      sep.Behaviors.Add(new TransactedBatchingBehavior(100));
-     
+
      // Open the ServiceHost to create listeners and start listening for messages.
     serviceHost.Open();
   
@@ -82,7 +82,7 @@ using (ServiceHost serviceHost = new ServiceHost(typeof(OrderProcessorService)))
 }  
 ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Přehled front](../../../../docs/framework/wcf/feature-details/queues-overview.md)
-- [Zařazování do front ve WCF](../../../../docs/framework/wcf/feature-details/queuing-in-wcf.md)
+- [Fronty ve WCF](../../../../docs/framework/wcf/feature-details/queuing-in-wcf.md)

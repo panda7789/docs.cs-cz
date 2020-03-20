@@ -1,17 +1,17 @@
 ---
 ms.openlocfilehash: 6bb8c87af66e744514fb43e628c6423487342ac2
-ms.sourcegitcommit: 337bdc5a463875daf2cc6883e5a2da97d56f5000
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/24/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "72887754"
 ---
-### <a name="calls-to-systemwindowsinputpencontextdisable-on-touch-enabled-systems-may-throw-an-argumentexception"></a>Volání System. Windows. Input. PenContext. disable pro systémy s podporou dotykového ovládání může vyvolat výjimku ArgumentException.
+### <a name="calls-to-systemwindowsinputpencontextdisable-on-touch-enabled-systems-may-throw-an-argumentexception"></a>Volání System.Windows.Input.PenContext.Disable v systémech s podporou dotykového ovládání může vyvolat výjimku ArgumentException
 
 |   |   |
 |---|---|
-|Podrobnosti|Za určitých okolností můžou volání interní metody **System. Windows. Intput. PenContext. disable** u systémů s podporou dotykového ovládání vyvolat neošetřený <code>T:System.ArgumentException</code> z důvodu Vícenásobný přístup.|
-|Doporučení|Tento problém byl vyřešen v .NET Framework 4,7. Chcete-li zabránit výjimce, upgradujte na verzi .NET Framework počínaje .NET Framework 4,7.|
+|Podrobnosti|Za určitých okolností volání interní **System.Windows.Intput.PenContext.Disable** metoda v systémech s <code>T:System.ArgumentException</code> podporou dotykového ovládání může vyvolat neošetřené z důvodu reentrancy.|
+|Návrh|Tento problém byl vyřešen v rozhraní .NET Framework 4.7. Chcete-li této výjimce zabránit, upgradujte na verzi rozhraní .NET Framework počínaje rozhraním .NET Framework 4.7.|
 |Rozsah|Edge|
 |Version|4.6.1|
 |Typ|Změna cílení|

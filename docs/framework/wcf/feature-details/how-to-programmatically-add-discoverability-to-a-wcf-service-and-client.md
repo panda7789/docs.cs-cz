@@ -1,30 +1,30 @@
 ---
-title: 'Postupy: přidávání zjistitelnosti do služby a klienta WCF prostřednictvím kódu programu'
+title: 'Postupy: Programové přidání možností rozpoznání do klienta a služby WCF'
 ms.date: 03/30/2017
 ms.assetid: 4f7ae7ab-6fc8-4769-9730-c14d43f7b9b1
-ms.openlocfilehash: a139eb4a15486be329bc6853ee6b3a3be06b0619
-ms.sourcegitcommit: 9c3a4f2d3babca8919a1e490a159c1500ba7a844
+ms.openlocfilehash: dd96bc168413eef99260a5251e74971aa1309ff4
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/12/2019
-ms.locfileid: "72291570"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79184889"
 ---
-# <a name="how-to-programmatically-add-discoverability-to-a-wcf-service-and-client"></a>Postupy: přidávání zjistitelnosti do služby a klienta WCF prostřednictvím kódu programu
-Toto téma vysvětluje, jak nastavit službu Windows Communication Foundation (WCF) jako zjistitelnou. Je založený na ukázce [samostatného hostitele](https://go.microsoft.com/fwlink/?LinkId=145523) .  
+# <a name="how-to-programmatically-add-discoverability-to-a-wcf-service-and-client"></a>Postupy: Programové přidání možností rozpoznání do klienta a služby WCF
+Toto téma vysvětluje, jak zjistit službu WCF (Windows Communication Foundation). Je založen na vzorku [Self-Host.](https://go.microsoft.com/fwlink/?LinkId=145523)  
   
-### <a name="to-configure-the-existing-self-host-service-sample-for-discovery"></a>Postup konfigurace existující ukázky služby pro samoobslužné hostování pro zjišťování  
+### <a name="to-configure-the-existing-self-host-service-sample-for-discovery"></a>Konfigurace existující ukázky služby Samoobslužné služby pro zjišťování  
   
-1. Otevřete řešení samostatného hostitele v aplikaci Visual Studio 2012. Ukázka se nachází v adresáři TechnologySamples\Basic\Service\Hosting\SelfHost.  
+1. Otevřete řešení Self-Host v sadě Visual Studio 2012. Ukázka je umístěna v adresáři TechnologySamples\Basic\Service\Hosting\SelfHost.  
   
-2. Přidejte odkaz na `System.ServiceModel.Discovery.dll` do projektu služby. Může se zobrazit chybová zpráva oznamující, že systém. ServiceModel. Discovery. dll nebo jedna z jeho závislostí vyžaduje novější verzi .NET Framework než ta, která je zadaná v projektu... Pokud se zobrazí tato zpráva, klikněte pravým tlačítkem na projekt v Průzkumník řešení a vyberte **vlastnosti**. V okně **Vlastnosti projektu** se ujistěte, že je **Cílová architektura** [!INCLUDE[netfx_current_long](../../../../includes/netfx-current-long-md.md)].  
+2. Přidejte odkaz `System.ServiceModel.Discovery.dll` na projekt servisu. Může se zobrazit chybová zpráva s nápisem "Systém.You may see an error message saying "System. ServiceModel.Discovery.dll nebo jedna z jeho závislostí vyžaduje novější verzi rozhraní .NET Framework, než je zadaná v projektu ..." Pokud se zobrazí tato zpráva, klepněte pravým tlačítkem myši na projekt v Průzkumníku řešení a zvolte **Vlastnosti**. V okně **Vlastnosti projektu** zkontrolujte, [!INCLUDE[netfx_current_long](../../../../includes/netfx-current-long-md.md)]zda je **cílová architektura** .  
   
-3. Otevřete soubor Service.cs a přidejte následující příkaz `using`.  
+3. Otevřete soubor Service.cs a `using` přidejte následující příkaz.  
   
     ```csharp  
     using System.ServiceModel.Discovery;  
     ```  
   
-4. V metodě `Main()` uvnitř příkazu `using` přidejte instanci <xref:System.ServiceModel.Discovery.ServiceDiscoveryBehavior> k hostiteli služby.  
+4. V `Main()` metodě uvnitř `using` příkazu <xref:System.ServiceModel.Discovery.ServiceDiscoveryBehavior> přidejte instanci do hostitele služby.  
   
     ```csharp  
     public static void Main()  
@@ -33,16 +33,16 @@ Toto téma vysvětluje, jak nastavit službu Windows Communication Foundation (W
         using (ServiceHost serviceHost = new ServiceHost(typeof(CalculatorService)))  
         {  
             // Add a ServiceDiscoveryBehavior  
-            serviceHost.Description.Behaviors.Add(new ServiceDiscoveryBehavior());                  
+            serviceHost.Description.Behaviors.Add(new ServiceDiscoveryBehavior());
   
             // ...  
         }  
     }  
     ```  
   
-     @No__t-0 určuje, zda je služba, na kterou je použita, zjistitelná.  
+     Určuje, <xref:System.ServiceModel.Discovery.ServiceDiscoveryBehavior> že služba, na kterou je použita, je zjistitelná.  
   
-5. Přidejte <xref:System.ServiceModel.Discovery.UdpDiscoveryEndpoint> do hostitele služby hned za kód, který přidá <xref:System.ServiceModel.Discovery.ServiceDiscoveryBehavior>.  
+5. Přidejte <xref:System.ServiceModel.Discovery.UdpDiscoveryEndpoint> a do hostitele služby hned <xref:System.ServiceModel.Discovery.ServiceDiscoveryBehavior>za kód, který přidá .  
   
     ```csharp  
     // Add ServiceDiscoveryBehavior  
@@ -52,15 +52,15 @@ Toto téma vysvětluje, jak nastavit službu Windows Communication Foundation (W
     serviceHost.AddServiceEndpoint(new UdpDiscoveryEndpoint());  
     ```  
   
-     Tento kód určuje, zda mají být zprávy zjišťování odesílány na standardní koncový bod zjišťování UDP.  
+     Tento kód určuje, že zprávy zjišťování by měly být odeslány do koncového bodu zjišťování standardníu UDP.  
   
-### <a name="to-create-a-client-application-that-uses-discovery-to-call-the-service"></a>Vytvoření klientské aplikace používající zjišťování pro volání služby  
+### <a name="to-create-a-client-application-that-uses-discovery-to-call-the-service"></a>Vytvoření klientské aplikace, která používá zjišťování k volání služby  
   
-1. Do řešení s názvem `DiscoveryClientApp` přidejte novou konzolovou aplikaci.  
+1. Přidejte novou konzolovou aplikaci do řešení s názvem `DiscoveryClientApp`.  
   
-2. Přidat odkaz na `System.ServiceModel.dll` a `System.ServiceModel.Discovery.dll`  
+2. Přidejte odkaz `System.ServiceModel.dll` na a`System.ServiceModel.Discovery.dll`  
   
-3. Zkopírujte soubory GeneratedClient.cs a App. config z existujícího projektu klienta do nového projektu DiscoveryClientApp. Provedete to tak, že kliknete pravým tlačítkem na soubory v **Průzkumník řešení**, vyberete **Kopírovat**a pak vyberete projekt **DiscoveryClientApp** , kliknete pravým tlačítkem a vyberete **Vložit**.  
+3. Zkopírujte soubory GeneratedClient.cs a App.config z existujícího klientského projektu do nového projektu DiscoveryClientApp. Chcete-li to provést, klepněte pravým tlačítkem myši na soubory v **Průzkumníku řešení**, vyberte **příkaz Kopírovat**a potom vyberte projekt **DiscoveryClientApp,** klepněte pravým tlačítkem myši a vyberte **vložit**.  
   
 4. Otevřete Program.cs.  
   
@@ -72,7 +72,7 @@ Toto téma vysvětluje, jak nastavit službu Windows Communication Foundation (W
     using Microsoft.ServiceModel.Samples;  
     ```  
   
-6. Přidejte statickou metodu nazvanou `FindCalculatorServiceAddress()` do třídy `Program`.  
+6. Přidejte statickou `FindCalculatorServiceAddress()` metodu volanou do `Program` třídy.  
   
     ```csharp  
     static EndpointAddress FindCalculatorServiceAddress()  
@@ -80,9 +80,9 @@ Toto téma vysvětluje, jak nastavit službu Windows Communication Foundation (W
     }  
     ```  
   
-     Tato metoda používá zjišťování k vyhledání služby `CalculatorService`.  
+     Tato metoda používá zjišťování `CalculatorService` k vyhledání služby.  
   
-7. Uvnitř metody `FindCalculatorServiceAddress` vytvořte novou instanci <xref:System.ServiceModel.Discovery.DiscoveryClient> a předejte do konstruktoru <xref:System.ServiceModel.Discovery.UdpDiscoveryEndpoint>.  
+7. Uvnitř `FindCalculatorServiceAddress` metody vytvořte <xref:System.ServiceModel.Discovery.DiscoveryClient> novou instanci, která předává <xref:System.ServiceModel.Discovery.UdpDiscoveryEndpoint> konstruktoru.  
   
     ```csharp  
     static EndpointAddress FindCalculatorServiceAddress()  
@@ -92,16 +92,16 @@ Toto téma vysvětluje, jak nastavit službu Windows Communication Foundation (W
     }  
     ```  
   
-     To oznamuje, že třída <xref:System.ServiceModel.Discovery.DiscoveryClient> by měla používat standardní koncový bod zjišťování UDP pro odesílání a příjem zpráv zjišťování.  
+     To říká WCF, že <xref:System.ServiceModel.Discovery.DiscoveryClient> třída by měla používat koncový bod zjišťování standardní UDP k odesílání a přijímání zpráv zjišťování.  
   
-8. Na dalším řádku volejte metodu <xref:System.ServiceModel.Discovery.DiscoveryClient.Find%2A> a zadejte instanci <xref:System.ServiceModel.Discovery.FindCriteria> obsahující kontrakt služby, který chcete vyhledat. V takovém případě zadejte `ICalculator`.  
+8. Na dalším řádku zavolejte <xref:System.ServiceModel.Discovery.DiscoveryClient.Find%2A> metodu <xref:System.ServiceModel.Discovery.FindCriteria> a zadejte instanci, která obsahuje servisní smlouvu, kterou chcete vyhledat. V tomto případě `ICalculator`zadejte .  
   
     ```csharp  
-    // Find ICalculatorService endpoints              
+    // Find ICalculatorService endpoints
     FindResponse findResponse = discoveryClient.Find(new FindCriteria(typeof(ICalculator)));  
     ```  
   
-9. Po volání <xref:System.ServiceModel.Discovery.DiscoveryClient.Find%2A> Zkontrolujte, zda existuje alespoň jedna vyhovující služba a vrátí <xref:System.ServiceModel.EndpointAddress> první vyhovující služby. V opačném případě vrátí `null`.  
+9. Po volání <xref:System.ServiceModel.Discovery.DiscoveryClient.Find%2A>, zkontrolujte, zda existuje alespoň jedna odpovídající <xref:System.ServiceModel.EndpointAddress> služby a vrátit první odpovídající služby. V `null`opačném případě vrátíte .  
   
     ```csharp  
     if (findResponse.Endpoints.Count > 0)  
@@ -114,7 +114,7 @@ Toto téma vysvětluje, jak nastavit službu Windows Communication Foundation (W
     }  
     ```  
   
-10. Přidejte statickou metodu s názvem `InvokeCalculatorService` do třídy `Program`.  
+10. Přidejte statickou `InvokeCalculatorService` metodu s názvem do `Program` třídy.  
   
     ```csharp  
     static void InvokeCalculatorService(EndpointAddress endpointAddress)  
@@ -122,23 +122,23 @@ Toto téma vysvětluje, jak nastavit službu Windows Communication Foundation (W
     }  
     ```  
   
-     Tato metoda používá adresu koncového bodu vrácenou z `FindCalculatorServiceAddress` pro volání služby kalkulačky.  
+     Tato metoda používá adresu koncového bodu vrácenou z `FindCalculatorServiceAddress` k volání služby kalkulačky.  
   
-11. Uvnitř metody `InvokeCalculatorService` vytvořte instanci třídy `CalculatorServiceClient`. Tato třída je definována v rámci ukázky pro [vlastní hostitele](https://go.microsoft.com/fwlink/?LinkId=145523) . Byl vygenerován pomocí Svcutil. exe.  
+11. Uvnitř `InvokeCalculatorService` metody vytvořte instanci třídy. `CalculatorServiceClient` Tato třída je definována ukázkou [vlastního hostitele.](https://go.microsoft.com/fwlink/?LinkId=145523) To bylo generováno pomocí Svcutil.exe.  
   
     ```csharp  
     // Create a client  
     CalculatorClient client = new CalculatorClient();  
     ```  
   
-12. Na dalším řádku nastavte adresu koncového bodu klienta na adresu koncového bodu vrácenou z `FindCalculatorServiceAddress()`.  
+12. Na dalším řádku nastavte adresu koncového bodu klienta na `FindCalculatorServiceAddress()`adresu koncového bodu vrácenou z .  
   
     ```csharp  
     // Connect to the discovered service endpoint  
     client.Endpoint.Address = endpointAddress;  
     ```  
   
-13. Hned za kód pro předchozí krok volejte metody vystavené službou Kalkulačka.  
+13. Bezprostředně po kódu pro předchozí krok volejte metody vystavené službou kalkulačky.  
   
     ```csharp  
     Console.WriteLine("Invoking CalculatorService at {0}", endpointAddress);  
@@ -167,7 +167,7 @@ Toto téma vysvětluje, jak nastavit službu Windows Communication Foundation (W
     client.Close();  
     ```  
   
-14. Přidejte kód do metody `Main()` v třídě `Program` pro volání `FindCalculatorServiceAddress`.  
+14. Přidejte kód `Main()` do `Program` metody ve `FindCalculatorServiceAddress`třídě, kterou chcete volat .  
   
     ```csharp  
     public static void Main()  
@@ -176,7 +176,7 @@ Toto téma vysvětluje, jak nastavit službu Windows Communication Foundation (W
     }  
     ```  
   
-15. Na dalším řádku volejte `InvokeCalculatorService()` a předejte adresu koncového bodu vrácenou z `FindCalculatorServiceAddress()`.  
+15. Na dalším řádku volejte `InvokeCalculatorService()` a předat adresu koncového `FindCalculatorServiceAddress()`bodu vrácenou z .  
   
     ```csharp  
     if (endpointAddress != null)  
@@ -188,13 +188,13 @@ Toto téma vysvětluje, jak nastavit službu Windows Communication Foundation (W
     Console.ReadLine();  
     ```  
   
-### <a name="to-test-the-application"></a>Otestování aplikace  
+### <a name="to-test-the-application"></a>Testování aplikace  
   
-1. Otevřete příkazový řádek se zvýšenými oprávněními a spusťte Service. exe.  
+1. Otevřete příkazový řádek se zvýšenými oprávněními a spusťte soubor Service.exe.  
   
-2. Otevřete příkazový řádek a spusťte DiscoveryClientApp. exe.  
+2. Otevřete příkazový řádek a spusťte soubor Discoveryclientapp.exe.  
   
-3. Výstup souboru Service. exe by měl vypadat jako následující výstup.  
+3. Výstup z service.exe by měl vypadat jako následující výstup.  
   
     ```output  
     Received Add(100,15.99)  
@@ -207,7 +207,7 @@ Toto téma vysvětluje, jak nastavit službu Windows Communication Foundation (W
     Return: 6.25390869293308  
     ```  
   
-4. Výstup z DiscoveryClientApp. exe by měl vypadat jako následující výstup.  
+4. Výstup z Discoveryclientapp.exe by měl vypadat jako následující výstup.  
   
     ```output  
     Invoking CalculatorService at http://localhost:8000/ServiceModelSamples/service  
@@ -219,8 +219,8 @@ Toto téma vysvětluje, jak nastavit službu Windows Communication Foundation (W
     Press <ENTER> to exit.  
     ```  
   
-## <a name="example"></a>Příklad:  
- Následující seznam obsahuje kód pro tuto ukázku. Vzhledem k tomu, že je tento kód založen na [samostatném hostiteli](https://go.microsoft.com/fwlink/?LinkId=145523) , jsou uvedeny pouze změněné soubory. Další informace o ukázce samostatného hostitele najdete v tématu [pokyny k instalaci](https://go.microsoft.com/fwlink/?LinkId=145522).  
+## <a name="example"></a>Příklad  
+ Následuje seznam kódu pro tuto ukázku. Vzhledem k tomu, že tento kód je založen na [ukázce vlastního hostitele,](https://go.microsoft.com/fwlink/?LinkId=145523) jsou uvedeny pouze ty soubory, které jsou změněny. Další informace o ukázce vlastního hostitele naleznete v [tématu Pokyny k instalaci](https://go.microsoft.com/fwlink/?LinkId=145522).  
   
 ```csharp  
 // Service.cs  
@@ -277,7 +277,7 @@ namespace DiscoveryClientApp
             // Create DiscoveryClient  
             DiscoveryClient discoveryClient = new DiscoveryClient(new UdpDiscoveryEndpoint());  
   
-            // Find ICalculatorService endpoints              
+            // Find ICalculatorService endpoints
             FindResponse findResponse = discoveryClient.Find(new FindCriteria(typeof(ICalculator)));  
   
             if (findResponse.Endpoints.Count > 0)  
@@ -340,7 +340,7 @@ namespace DiscoveryClientApp
 }  
 ```  
 
-## <a name="see-also"></a>Další informace najdete v tématech
+## <a name="see-also"></a>Viz také
 
 - [Přehled zjišťování WCF](../../../../docs/framework/wcf/feature-details/wcf-discovery-overview.md)
 - [Objektový model zjišťování WCF](../../../../docs/framework/wcf/feature-details/wcf-discovery-object-model.md)

@@ -5,22 +5,22 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 2d45cf41-d8ae-4409-af3e-a96a7e476d85
-ms.openlocfilehash: 6e066bcbe02fa9cf498e11af431b9f6dcd4432ab
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: e5135aca49a63aafa3330832c54f2d28d31d60d0
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70785510"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79151348"
 ---
 # <a name="creating-a-datatable-from-a-dataview"></a>Vytvoření datové tabulky ze zobrazení dat
-Jakmile načtete data ze zdroje dat a vyplníte <xref:System.Data.DataTable> je daty, můžete chtít vrácená data seřadit, filtrovat nebo jinak omezit, aniž byste je museli znovu načítat. <xref:System.Data.DataView> Třída to umožňuje. Kromě toho, <xref:System.Data.DataTable> Pokud potřebujete vytvořit nový <xref:System.Data.DataView>z <xref:System.Data.DataView.ToTable%2A> , můžete použít metodu ke zkopírování všech řádků a sloupců nebo podmnožiny dat do nového <xref:System.Data.DataTable>. <xref:System.Data.DataView.ToTable%2A> Metoda poskytuje přetížení pro:  
+Jakmile načtete data ze zdroje dat a <xref:System.Data.DataTable> naplníte je daty, můžete vrátit data seřadit, filtrovat nebo jinak omezit, aniž byste je znovu načetli. Třída <xref:System.Data.DataView> to umožňuje. Kromě toho, pokud potřebujete vytvořit <xref:System.Data.DataTable> nový <xref:System.Data.DataView>z , <xref:System.Data.DataView.ToTable%2A> můžete použít metodu ke kopírování všech řádků a sloupců <xref:System.Data.DataTable>nebo podmnožinu dat do nového . Metoda <xref:System.Data.DataView.ToTable%2A> poskytuje přetížení:  
   
-- Vytvořit sloupce <xref:System.Data.DataView>obsahující podmnožinu sloupců v. <xref:System.Data.DataTable>  
+- Vytvořte <xref:System.Data.DataTable> sloupce obsahující, které jsou podmnožinou sloupců v oblasti <xref:System.Data.DataView>.  
   
-- Vytvořte objekt <xref:System.Data.DataTable> , který obsahuje pouze odlišné řádky z <xref:System.Data.DataView>rozhraní, obdobně k klíčovému slovu DISTINCT v jazyce Transact-SQL.  
+- Vytvořte, <xref:System.Data.DataTable> který obsahuje pouze <xref:System.Data.DataView>odlišné řádky od , analogicky na distinct klíčové slovo v Transact-SQL.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad konzolové aplikace vytvoří <xref:System.Data.DataTable> , který obsahuje data z tabulky **Person. Contact** v ukázkové databázi **AdventureWorks** . Dále příklad vytvoří seřazený a filtrovaný <xref:System.Data.DataView> na základě. <xref:System.Data.DataTable> <xref:System.Data.DataTable> Po zobrazení obsahu <xref:System.Data.DataView.ToTable%2A> <xref:System.Data.DataView> <xref:System.Data.DataTable> a, v příkladu, vytvoří nový z rozhraní voláním metody a výběrem pouze podmnožinu dostupných sloupců. <xref:System.Data.DataView> Nakonec v příkladu se zobrazí obsah nového <xref:System.Data.DataTable>.  
+ Následující příklad aplikace konzoly vytvoří soubor, <xref:System.Data.DataTable> který obsahuje data z tabulky **Person.Contact** v ukázkové databázi **AdventureWorks.** V dalším příkladu vytvoří seřazené a filtrované <xref:System.Data.DataView> na základě <xref:System.Data.DataTable>. Po zobrazení <xref:System.Data.DataTable> obsahu a <xref:System.Data.DataView>a , v příkladu vytvoří nový <xref:System.Data.DataView.ToTable%2A> <xref:System.Data.DataTable> z <xref:System.Data.DataView> voláním metody, výběrem pouze podmnožinu dostupných sloupců. Nakonec příklad zobrazí obsah nového <xref:System.Data.DataTable>.  
   
 ```vb  
 Private Sub DemonstrateDataView()  
@@ -114,7 +114,7 @@ private static void DemonstrateDataView()
 // connectionString is assumed to be a valid connection string.  
 SqlDataAdapter adapter = new SqlDataAdapter(  
     "SELECT FirstName, LastName, EmailAddress " +  
-    "FROM Person.Contact WHERE FirstName LIKE 'Mich%'",   
+    "FROM Person.Contact WHERE FirstName LIKE 'Mich%'",
        GetConnectionString());  
 DataTable table = new DataTable();  
   
@@ -205,7 +205,7 @@ Console.WriteLine();
   
  }  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Data.DataView.ToTable%2A>
 - [Zobrazení dat](dataviews.md)

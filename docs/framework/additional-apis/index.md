@@ -8,85 +8,85 @@ helpviewer_keywords:
 - out-of-band releases
 ms.assetid: cf2d9006-b631-4e5d-81cd-20aab78c60f1
 ms.topic: conceptual
-ms.openlocfilehash: 3a5134aa4407598e223fd2c938bfaac02cf9178c
-ms.sourcegitcommit: 9c54866bcbdc49dbb981dd55be9bbd0443837aa2
+ms.openlocfilehash: abf7fd20988ebaaaf1a40ccc168c636fd0dacc1d
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/14/2020
-ms.locfileid: "77215540"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79155905"
 ---
 # <a name="additional-class-libraries-and-apis"></a>Další knihovny tříd a rozhraní API
 
-.NET Framework se neustále vyvíjí. Pro zlepšení vývoje pro různé platformy a zavedení nových funkcí v brzkém případě jsou nové funkce vydány mimo pásmo (OOB). Toto téma obsahuje seznam projektů OOB, pro které poskytujeme dokumentaci.  
+Rozhraní .NET Framework se neustále vyvíjí. Chcete-li zlepšit vývoj napříč platformami a zavést nové funkce brzy, nové funkce jsou uvolněny mimo pásmo (OOB). Toto téma uvádí projekty OOB, pro které poskytujeme dokumentaci.  
   
-Kromě toho některé knihovny cílí na konkrétní platformy nebo implementace .NET Framework. Například třída <xref:System.Text.CodePagesEncodingProvider> zpřístupňuje kódování znakové stránky aplikacím UWP vyvinutým pomocí .NET Framework. Toto téma obsahuje i tyto knihovny.  
+Kromě toho některé knihovny cílí na konkrétní platformy nebo implementace rozhraní .NET Framework. <xref:System.Text.CodePagesEncodingProvider> Například třída zpřístupňuje kódování znakové stránky pro aplikace UPW vyvinuté pomocí rozhraní .NET Framework. Toto téma obsahuje také tyto knihovny.  
   
 ## <a name="oob-projects"></a>Projekty OOB
   
 | Project | Popis |  
 | ------- | ----------- |  
-| <xref:System.Collections.Immutable> | Poskytuje kolekce, které jsou vláknem bezpečné a zaručují, aby nikdy neměnily obsah. |
-| <xref:System.Net.Http.WinHttpHandler> | Poskytuje popisovač zprávy pro <xref:System.Net.Http.HttpClient> v závislosti na rozhraní WinHTTP systému Windows. |
-| <xref:System.Numerics> | Poskytuje knihovnu vektorových typů, které mohou využívat hardwarové akcelerace založené na SIMD.| 
-| <xref:System.Threading.Tasks.Dataflow> | Knihovna TPL Dataflow poskytuje součásti toku dat, které vám pomůžou zvýšit odolnost aplikací s podporou souběžného zpracování. |  
+| <xref:System.Collections.Immutable> | Poskytuje kolekce, které jsou bezpečné pro přístup z více vláken a zaručeně nikdy nezmění jejich obsah. |
+| <xref:System.Net.Http.WinHttpHandler> | Poskytuje obslužnou rutinu zprávy založenou <xref:System.Net.Http.HttpClient> na rozhraní WinHTTP systému Windows. |
+| <xref:System.Numerics> | Poskytuje knihovnu vektorových typů, které mohou využívat hardwarovou akceleraci SIMD.|
+| <xref:System.Threading.Tasks.Dataflow> | Knihovna Toku dat TPL poskytuje komponenty toku dat, které pomáhají zvýšit robustnost aplikací s podporou souběžnosti. |  
 
-## <a name="platform-specific-libraries"></a>Knihovny pro konkrétní platformu
+## <a name="platform-specific-libraries"></a>Knihovny specifické pro platformu
   
 | Project | Popis |  
 | ------- | ----------- |  
-| <xref:System.Text.CodePagesEncodingProvider> | Rozšiřuje třídu <xref:System.Text.EncodingProvider> a zpřístupňuje kódování znakové stránky aplikacím, které cílí na Univerzální platforma Windows. |  
+| <xref:System.Text.CodePagesEncodingProvider> | Rozšiřuje třídu <xref:System.Text.EncodingProvider> tak, aby kódovací stránky byly dostupné pro aplikace, které cílí na univerzální platformu Windows. |  
   
-## <a name="private-apis"></a>Privátní rozhraní API  
+## <a name="private-apis"></a>Privátní api  
 
-Tato rozhraní API podporují infrastrukturu produktů a nejsou zamýšlená ani podporovaná pro použití přímo v kódu.  
+Tato řešení API podporují infrastrukturu produktů a nejsou určena nebo podporována pro použití přímo z vašeho kódu.  
   
-* [Vlastnost Microsoft. SqlServer. Server. SmiOrderProperty. Item](microsoft.sqlserver.server.smiorderproperty.item.md)
-* [System. Exception. PrepForRemoting – metoda](system.exception.prepforremoting.md)
-* [System. data. SqlTypes. SqlChars. Stream – vlastnost](system.data.sqltypes.sqlchars.stream.md)
-* [System. data. SqlTypes. SqlStreamChars – konstruktor](system.data.sqltypes.sqlstreamchars.-ctor.md)
-* [System. data. SqlTypes. SqlStreamChars. CanSeek – vlastnost](system.data.sqltypes.sqlstreamchars.canseek.md)
-* [System. data. SqlTypes. SqlStreamChars. IsNull – vlastnost](system.data.sqltypes.sqlstreamchars.isnull.md)
-* [System. data. SqlTypes. SqlStreamChars. Length – vlastnost](system.data.sqltypes.sqlstreamchars.length.md)
-* [System. data. SqlTypes. SqlStreamChars. Close – metoda](system.data.sqltypes.sqlstreamchars.close.md)
-* [System. data. SqlTypes. SqlStreamChars. Dispose – metoda](system.data.sqltypes.sqlstreamchars.dispose.md)
-* [System. data. SqlTypes. SqlStreamChars. Flush – metoda](system.data.sqltypes.sqlstreamchars.flush.md)
-* [System. data. SqlTypes. SqlStreamChars. Read – metoda](system.data.sqltypes.sqlstreamchars.read.md)
-* [System. data. SqlTypes. SqlStreamChars. Seek – Metoda](system.data.sqltypes.sqlstreamchars.seek.md)
-* [System. data. SqlTypes. SqlStreamChars. SetLength – metoda](system.data.sqltypes.sqlstreamchars.setlength.md)
-* [System. data. SqlTypes. SqlStreamChars. Write – Metoda](system.data.sqltypes.sqlstreamchars.write.md)
-* [System. IO. typu MemoryStream není. InternalGetOriginAndLength – metoda](system.io.memorystream.internalgetoriginandlength.md)
-* [System .NET. Connection – třída](connection.md)
-* [System .NET. Connection. m\_pole WriteList](m_writelist.md)
-* [System .NET. Connection – třída](connectiongroup.md)
-* [System .NET. Connection. m\_pole ConnectionList](m_connectionlist.md)
-* [System .NET. ConnectStream. Connection – vlastnost](system.net.connectstream.connection.md)
-* [System .NET. CoreResponseData – třída](coreresponsedata.md)
-* [System .NET. CoreResponseData. m\_pole ResponseHeaders hostitele](coreresponsedata_m_responseheaders.md)
-* [System .NET. CoreResponseData. m\_pole StatusCode](coreresponsedata_m_statuscode.md)
-* [Pole autoredirect pro System .NET. HttpWebRequest.\_](_autoredirects.md)
-* [Pole System .NET. HttpWebRequest.\_CoreResponse](httpwebrequest__coreresponse.md)
-* [Pole System .NET. HttpWebRequest.\_HttpResponse](_httpresponse.md)
-* [System .NET. PooledStream. NetworkStream – vlastnost](system.net.pooledstream.networkstream.md)
-* [System .NET. RtcState – třída](system.net.rtcstate.md)
-* [System .NET. ServicePoint. m\_pole ConnectionGroupList](m_connectiongrouplist.md)
-* [System .NET. Třída ServicePointManager. s\_pole ServicePointTable](s_servicepointtable.md)
-* [System .NET. TlsStream. m_Worker – pole](system.net.tlsstream.m_worker.md)
-* [System .NET. Security. SslState. SslProtocol – vlastnost](system.net.security.sslstate.sslprotocol.md)
-* [System. ServiceModel. Channels. Message. BodyToString – metoda](system.servicemodel.channels.message.bodytostring.md)
-* [System. ServiceModel. Channels. Message. WriteStartHeaders – metoda](system.servicemodel.channels.message.writestartheaders.md)
-* [System. Windows. Diagnostics. VisualDiagnostics. s\_pole isDebuggerCheckDisabledForTestPurposes](s-isdebuggercheckdisabledfortestpurposes-field.md)
-* [System. Windows. Forms. Design. DataMemberFieldEditor – třída](datamemberfieldeditor-class.md)
-* [System. Windows. Forms. Design. DataMemberListEditor – třída](datamemberlisteditor-class.md)
-* [System. XML. XmlReader. CreateSqlReader – metoda](system.xml.xmlreader.createsqlreader.md)
-* [ADODB. Rozhraní připojení](adodb.connection.md)
-* [ADODB. Výčet EventReason](adodb.eventreasonenum.md)
-* [ADODB. Výčet EventStatus](adodb.eventstatusenum.md)
+* [Vlastnost Microsoft.SqlServer.Server.SmiOrderProperty.Item](microsoft.sqlserver.server.smiorderproperty.item.md)
+* [Metoda System.Exception.PrepForRemoting](system.exception.prepforremoting.md)
+* [Vlastnost System.Data.SqlTypes.SqlChars.Stream](system.data.sqltypes.sqlchars.stream.md)
+* [Konstruktor System.Data.SqlTypes.SqlStreamChars](system.data.sqltypes.sqlstreamchars.-ctor.md)
+* [Vlastnost System.Data.SqlTypes.SqlStreamChars.CanSeek](system.data.sqltypes.sqlstreamchars.canseek.md)
+* [Vlastnost System.Data.SqlTypes.SqlStreamChars.IsNull](system.data.sqltypes.sqlstreamchars.isnull.md)
+* [Vlastnost System.Data.SqlTypes.SqlStreamChars.Length](system.data.sqltypes.sqlstreamchars.length.md)
+* [Metoda System.Data.SqlTypes.SqlStreamChars.Close](system.data.sqltypes.sqlstreamchars.close.md)
+* [Metoda System.Data.SqlTypes.SqlStreamChars.Dispose](system.data.sqltypes.sqlstreamchars.dispose.md)
+* [Metoda System.Data.SqlTypes.SqlStreamChars.Flush](system.data.sqltypes.sqlstreamchars.flush.md)
+* [Metoda System.Data.SqlTypes.SqlStreamChars.Read](system.data.sqltypes.sqlstreamchars.read.md)
+* [Metoda System.Data.SqlTypes.SqlStreamChars.Seek](system.data.sqltypes.sqlstreamchars.seek.md)
+* [Metoda System.Data.SqlTypes.SqlStreamChars.SetLength](system.data.sqltypes.sqlstreamchars.setlength.md)
+* [Metoda System.Data.SqlTypes.SqlStreamChars.Write](system.data.sqltypes.sqlstreamchars.write.md)
+* [System.io.memorystream.internalGetOriginAndLength Metoda](system.io.memorystream.internalgetoriginandlength.md)
+* [Třída system.net.connection](connection.md)
+* [Pole WriteList souboru\_System.Net.Connection.m](m_writelist.md)
+* [Třída System.Net.ConnectionGroup](connectiongroup.md)
+* [Pole System.Net.ConnectionGroup.m\_ConnectionList](m_connectionlist.md)
+* [Vlastnost System.Net.ConnectStream.Connection](system.net.connectstream.connection.md)
+* [Třída System.Net.CoreResponseData](coreresponsedata.md)
+* [Pole Hlavičky odpovědí System.Net.CoreResponseData.m\_](coreresponsedata_m_responseheaders.md)
+* [Pole StatusCode System.Net.CoreResponseData.m\_](coreresponsedata_m_statuscode.md)
+* [Systém.Net.HttpWebRequest. \_Pole Automatické přesměrování](_autoredirects.md)
+* [Systém.Net.HttpWebRequest. \_Pole CoreResponse](httpwebrequest__coreresponse.md)
+* [Systém.Net.HttpWebRequest. \_Pole HttpResponse](_httpresponse.md)
+* [Vlastnost System.Net.PooledStream.NetworkStream](system.net.pooledstream.networkstream.md)
+* [Třída System.Net.RtcState](system.net.rtcstate.md)
+* [Pole System.Net.ServicePoint.m\_ConnectionGroupList](m_connectiongrouplist.md)
+* [Pole ServicePointTable systému.Net.ServicePointManager.s\_](s_servicepointtable.md)
+* [Pole System.Net.TlsStream.m_Worker](system.net.tlsstream.m_worker.md)
+* [Vlastnost System.Net.Security.SslState.SslProtocol](system.net.security.sslstate.sslprotocol.md)
+* [Metoda System.ServiceModel.Channels.Message.bodytostring](system.servicemodel.channels.message.bodytostring.md)
+* [Metoda System.ServiceModel.Channels.Message.WriteStartHeaders](system.servicemodel.channels.message.writestartheaders.md)
+* [Pole System.Windows.Diagnostics.VisualDiagnostics.s\_isDebuggerCheckDisabledForTestPurposes](s-isdebuggercheckdisabledfortestpurposes-field.md)
+* [System.Windows.Forms.Design.DataMemberFieldEditor Class](datamemberfieldeditor-class.md)
+* [System.Windows.Forms.Design.DataMemberListEditor Class](datamemberlisteditor-class.md)
+* [Metoda System.Xml.XmlReader.CreateSqlReader](system.xml.xmlreader.createsqlreader.md)
+* [Adodb. Rozhraní připojení](adodb.connection.md)
+* [Adodb. Výčt usoudit událost](adodb.eventreasonenum.md)
+* [Adodb. Výčt u stavů událostí](adodb.eventstatusenum.md)
 * [stdole. Struktura DISPPARAMS](stdole.dispparams.md)
 * [stdole. Struktura EXCEPINFO](stdole.excepinfo.md)
-* [stdole. Vlastnost IFont.Name](stdole.ifont.name.md)
+* [stdole. vlastnost IFont.Name](stdole.ifont.name.md)
 * [stdole. Rozhraní IFontDisp](stdole.ifontdisp.md)
-* [stdole. IPicture. Handle – vlastnost](stdole.ipicture.handle.md)
-* [stdole. IPictureDisp. Handle – vlastnost](stdole.ipicturedisp.handle.md)
+* [stdole. Vlastnost IPicture.Handle](stdole.ipicture.handle.md)
+* [stdole. Vlastnost IPictureDisp.Handle](stdole.ipicturedisp.handle.md)
 * [stdole. Rozhraní StdFont](stdole.stdfont.md)
 * [stdole. Rozhraní StdPicture](stdole.stdpicture.md)
   

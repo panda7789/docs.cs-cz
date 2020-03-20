@@ -1,17 +1,17 @@
 ---
 ms.openlocfilehash: 94c582d25ae1cd2249ed2e3774134a86cf77327b
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "73085545"
 ---
-### <a name="dataannotationsdatatypeattributedisableregex-app-setting-is-on-by-default-in-net-framework-472"></a>nastavení aplikace "DataAnnotations: dataTypeAttribute: disableRegEx" je ve výchozím nastavení zapnuté v .NET Framework 4.7.2
+### <a name="dataannotationsdatatypeattributedisableregex-app-setting-is-on-by-default-in-net-framework-472"></a>"dataAnnotations:dataTypeAttribute:disableRegEx" je ve výchozím nastavení zapnuto v rozhraní .NET Framework 4.7.2
 
 |   |   |
 |---|---|
-|Podrobnosti|V .NET Framework 4.6.1 bylo zavedeno nastavení aplikace (<code>&quot;dataAnnotations:dataTypeAttribute:disableRegEx&quot;</code>), které umožňuje uživatelům zakázat použití regulárních výrazů v atributech datových typů (například <xref:System.ComponentModel.DataAnnotations.EmailAddressAttribute?displayProperty=nameWithType>, <xref:System.ComponentModel.DataAnnotations.UrlAttribute?displayProperty=nameWithType>a <xref:System.ComponentModel.DataAnnotations.PhoneAttribute?displayProperty=nameWithType>). To pomáhá snižovat zranitelnost zabezpečení, jako je například vyloučení možnosti útoku DOS pomocí konkrétních regulárních výrazů.<br/>V .NET Framework 4.6.1 bylo toto nastavení aplikace pro vypnutí použití regulárního výrazu ve výchozím nastavení nastaveno na hodnotu <code>false</code>. Počínaje .NET Framework 4.7.2 je tento přepínač konfigurace nastaven na <code>true</code> ve výchozím nastavení, aby bylo možné dále snižovat zabezpečení webových aplikací, které cílí na .NET Framework 4.7.2 a vyšší.|
-|Doporučení|Pokud zjistíte, že tyto regulární výrazy ve webové aplikaci po upgradu na .NET Framework 4.7.2 nefungují, můžete aktualizovat hodnotu nastavení <code>&quot;dataAnnotations:dataTypeAttribute:disableRegEx&quot;</code> na <code>false</code> a vrátit se k předchozímu chování.<pre><code class="lang-xml">&lt;configuration&gt;&#13;&#10;&lt;appSettings&gt;&#13;&#10;...&#13;&#10;&lt;add key=&quot;dataAnnotations:dataTypeAttribute:disableRegEx&quot; value=&quot;false&quot;/&gt;&#13;&#10;...&#13;&#10;&lt;/appSettings&gt;&#13;&#10;&lt;/configuration&gt;&#13;&#10;</code></pre>|
+|Podrobnosti|V rozhraní .NET Framework 4.6.1<code>&quot;dataAnnotations:dataTypeAttribute:disableRegEx&quot;</code>bylo zavedeno nastavení aplikace ( ), které uživatelům umožňuje zakázat <xref:System.ComponentModel.DataAnnotations.EmailAddressAttribute?displayProperty=nameWithType>používání <xref:System.ComponentModel.DataAnnotations.UrlAttribute?displayProperty=nameWithType>regulárních výrazů v atributech datového typu (například , a <xref:System.ComponentModel.DataAnnotations.PhoneAttribute?displayProperty=nameWithType>). To pomáhá snížit zranitelnost zabezpečení, například vyhnout se možnosti útoku odmítnutí služby pomocí specifických regulárních výrazů.<br/>V rozhraní .NET Framework 4.6.1 bylo toto nastavení <code>false</code> aplikace pro zakázání využití regexu ve výchozím nastavení nastaveno na hodnotu. Počínaje rozhraním .NET Framework 4.7.2 je <code>true</code> tento přepínač konfigurace ve výchozím nastavení nastaven na hodnotu dále snížit zabezpečení webových aplikací, které cílí na rozhraní .NET Framework 4.7.2 a vyšší.|
+|Návrh|Pokud zjistíte, že regulární výrazy ve webové aplikaci nefungují po upgradu na rozhraní <code>&quot;dataAnnotations:dataTypeAttribute:disableRegEx&quot;</code> .NET <code>false</code> Framework 4.7.2, můžete aktualizovat hodnotu nastavení a vrátit se k předchozímu chování.<pre><code class="lang-xml">&lt;configuration&gt;&#13;&#10;&lt;appSettings&gt;&#13;&#10;...&#13;&#10;&lt;add key=&quot;dataAnnotations:dataTypeAttribute:disableRegEx&quot; value=&quot;false&quot;/&gt;&#13;&#10;...&#13;&#10;&lt;/appSettings&gt;&#13;&#10;&lt;/configuration&gt;&#13;&#10;</code></pre>|
 |Rozsah|Vedlejší|
 |Version|4.7.2|
 |Typ|Modul runtime|
