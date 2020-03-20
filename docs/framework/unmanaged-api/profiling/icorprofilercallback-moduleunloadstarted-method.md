@@ -15,40 +15,40 @@ helpviewer_keywords:
 ms.assetid: 2debcaab-6005-4245-afdb-4268bb7e74bd
 topic_type:
 - apiref
-ms.openlocfilehash: 7e43f58f619aaa63fa2294dd3e989026dcdfc604
-ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
+ms.openlocfilehash: fcfdddbd5316c098754ea7b0d4714b050c64fe55
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76866127"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79175145"
 ---
 # <a name="icorprofilercallbackmoduleunloadstarted-method"></a>ICorProfilerCallback::ModuleUnloadStarted – metoda
-Upozorní profileru, že je modul uvolňován.  
+Upozorní profiler, že modul je uvolněn.  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```cpp  
 HRESULT ModuleUnloadStarted(  
-    [in] ModuleID moduleId);   
+    [in] ModuleID moduleId);
 ```  
   
 ## <a name="parameters"></a>Parametry  
  `moduleId`  
- pro ID modulu, který se má uvolnit  
+ [v] ID modulu, který je uvolněn.  
   
 ## <a name="remarks"></a>Poznámky  
- Hodnota `moduleId` není platná pro požadavek na informace po návratu metody `ModuleUnloadStarted` – jedná se o poslední možnost profileru získat informace o tomto modulu.  
+ Hodnota `moduleId` není platná pro požadavek na `ModuleUnloadStarted` informace po vrátí metoda – toto je profiler poslední šanci získat informace o tomto modulu.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Hlavička:** CorProf. idl, CorProf. h  
+ **Záhlaví:** CorProf.idl, CorProf.h  
   
- **Knihovna:** CorGuids. lib  
+ **Knihovna:** CorGuids.lib  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [ICorProfilerCallback – rozhraní](icorprofilercallback-interface.md)
 - [ModuleUnloadFinished – metoda](icorprofilercallback-moduleunloadfinished-method.md)

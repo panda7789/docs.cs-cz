@@ -15,40 +15,40 @@ helpviewer_keywords:
 ms.assetid: 554284e7-3f6c-4d40-8da5-1c9317fbd484
 topic_type:
 - apiref
-ms.openlocfilehash: d9430c5a1f37a0507b383ea5437f7d7fed706c43
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 64e697323377d664b7b1e36bbf5931a44465cc51
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73123866"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79178961"
 ---
 # <a name="icordebugchaingetstackrange-method"></a>ICorDebugChain::GetStackRange – metoda
-Získá rozsah adres segmentu zásobníku pro tento řetěz.  
+Získá rozsah adres segmentu zásobníku pro tento řetězec.  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```cpp  
 HRESULT GetStackRange (  
-    [out] CORDB_ADDRESS      *pStart,   
+    [out] CORDB_ADDRESS      *pStart,
     [out] CORDB_ADDRESS      *pEnd  
 );  
 ```  
   
 ## <a name="parameters"></a>Parametry  
  `pStart`  
- mimo Ukazatel na hodnotu `CORDB_ADDRESS`, která je počáteční adresou segmentu zásobníku.  
+ [out] Ukazatel na `CORDB_ADDRESS` hodnotu, která je počáteční adresou segmentu zásobníku.  
   
  `pEnd`  
- mimo Ukazatel na hodnotu `CORDB_ADDRESS`, která je koncovou adresou segmentu zásobníku.  
+ [out] Ukazatel na `CORDB_ADDRESS` hodnotu, která je koncovou adresou segmentu zásobníku.  
   
 ## <a name="remarks"></a>Poznámky  
- Číselný rozsah má smysl pouze pro porovnání umístění rámce zásobníku. Nemůžete dělat žádné předpoklady o tom, co je ve skutečnosti uložené v zásobníku.  
+ Číselný rozsah je smysluplný pouze pro porovnání umístění rámců zásobníku. Nelze provádět žádné předpoklady o tom, co je skutečně uloženo v zásobníku.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Hlavička:** CorDebug. idl, CorDebug. h  
+ **Záhlaví:** CorDebug.idl, CorDebug.h  
   
- **Knihovna:** CorGuids. lib  
+ **Knihovna:** CorGuids.lib  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]
+ **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]

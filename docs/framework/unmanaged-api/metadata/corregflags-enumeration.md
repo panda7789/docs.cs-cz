@@ -14,20 +14,20 @@ helpviewer_keywords:
 ms.assetid: 8d3080ee-39fe-4c57-8950-51323632d045
 topic_type:
 - apiref
-ms.openlocfilehash: 79a9e4513a98a29edc11cc76c599f03c9c3a72b4
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 8fe6216e11a64ea182d796247d888b862b1e8377
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74450109"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79177931"
 ---
 # <a name="corregflags-enumeration"></a>CorRegFlags – výčet
-Poskytuje hodnoty příznaku používané k registraci při instalaci modulu nebo složené image.  
+Poskytuje hodnoty příznaku používané pro registraci při instalaci modulu nebo složené bitové kopie.  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```cpp  
-typedef enum   
+typedef enum
 {  
     regNoCopy  = 0x00000001,  
     regConfig  = 0x00000002,  
@@ -39,19 +39,19 @@ typedef enum
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`regNoCopy`|Určuje, že soubory by neměly být kopírovány do cílového umístění.|  
-|`regConfig`|Určuje, že modul nebo kompozitní je konfigurace.|  
-|`regHasRefs`|Určuje, že modul nebo složený z odkazů na třídy.|  
+|`regNoCopy`|Určuje, že soubory by neměly být zkopírovány do cíle.|  
+|`regConfig`|Určuje, že modul nebo složený je konfigurace.|  
+|`regHasRefs`|Určuje, že modul nebo složený soubor obsahuje odkazy na třídy.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Hlavička:** Cor. h  
+ **Záhlaví:** Kor.h.  
   
- **Knihovna:** Zahrnuto jako prostředek v knihovně MsCorEE. dll  
+ **Knihovna:** Zahrnuto jako prostředek v souboru MsCorEE.dll  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Výčty pro metadata](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)

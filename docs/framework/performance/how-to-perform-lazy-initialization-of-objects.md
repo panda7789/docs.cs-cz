@@ -7,18 +7,18 @@ dev_langs:
 helpviewer_keywords:
 - lazy initialization in .NET, how to perform
 ms.assetid: 8cd68620-dcc3-4f20-8835-c728a6820e71
-ms.openlocfilehash: 6efc89e5c22f53d9b2c48e535c783d488df16462
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: d89d19a7a3edb57dcd6c0e37e6688701da8b3713
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73130328"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79180605"
 ---
 # <a name="how-to-perform-lazy-initialization-of-objects"></a>Postupy: Provádění opožděné inicializace objektů
-Třída <xref:System.Lazy%601?displayProperty=nameWithType> zjednodušuje práci provádění opožděné inicializace a vytváření instancí objektů. Inicializací objektů opožděným způsobem je možné se vyhnout nutnosti jejich vytváření vůbec, pokud nejsou zapotřebí, nebo můžete svou inicializaci odložit, dokud nebudou poprvé k dispozici. Další informace naleznete v tématu [opožděná inicializace](lazy-initialization.md).  
+Třída <xref:System.Lazy%601?displayProperty=nameWithType> zjednodušuje práci opožděné inicializace a instanování objektů. Inicializací objektů opožděným způsobem se můžete vyhnout nutnosti jejich vytváření vůbec, pokud nejsou nikdy potřeba, nebo můžete odložit jejich inicializaci, dokud nejsou nejprve přístupné. Další informace naleznete [v tématu Opožděná inicializace](lazy-initialization.md).  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje, jak inicializovat hodnotu pomocí <xref:System.Lazy%601>. Předpokládat, že opožděná proměnná nemusí být potřebná, v závislosti na nějakém jiném kódu, který nastaví `someCondition` proměnnou na hodnotu true nebo false.  
+ Následující příklad ukazuje, jak inicializovat hodnotu pomocí <xref:System.Lazy%601>. Předpokládejme, že opožděná proměnná nemusí být potřeba, `someCondition` v závislosti na některé jiné kód, který nastaví proměnnou true nebo false.  
   
 ```vb  
 Dim someCondition As Boolean = False  
@@ -48,7 +48,7 @@ End Sub
 ```  
   
 ```csharp  
-  static bool someCondition = false;    
+  static bool someCondition = false;
   //Initializing a value with a big computation, computed in parallel  
   Lazy<int> _data = new Lazy<int>(delegate  
   {  
@@ -69,12 +69,12 @@ End Sub
 ```  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje, jak použít třídu <xref:System.Threading.ThreadLocal%601?displayProperty=nameWithType> k inicializaci typu, který je viditelný pouze pro aktuální instanci objektu v aktuálním vlákně.  
+ Následující příklad ukazuje, jak <xref:System.Threading.ThreadLocal%601?displayProperty=nameWithType> použít třídu k inicializaci typu, který je viditelný pouze pro aktuální instanci objektu v aktuálním vlákně.  
   
  [!code-csharp[CDS#13](../../../samples/snippets/csharp/VS_Snippets_Misc/cds/cs/cds2.cs#13)]
  [!code-vb[CDS#13](../../../samples/snippets/visualbasic/VS_Snippets_Misc/cds/vb/lazyhowto.vb#13)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Threading.LazyInitializer?displayProperty=nameWithType>
 - [Opožděná inicializace](lazy-initialization.md)

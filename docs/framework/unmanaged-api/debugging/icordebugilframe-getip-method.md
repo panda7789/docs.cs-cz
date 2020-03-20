@@ -15,42 +15,42 @@ helpviewer_keywords:
 ms.assetid: 18217ba1-1776-4297-a3b9-f77e64b0fead
 topic_type:
 - apiref
-ms.openlocfilehash: 7e1605eede55360e72d65da6744bc1dcce4f107f
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: f30516a8f59b90de9b4c052d92a8c88575ace3c4
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73130994"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79178828"
 ---
 # <a name="icordebugilframegetip-method"></a>ICorDebugILFrame::GetIP – metoda
-Získá hodnotu ukazatele na instrukci a bitovou kombinaci hodnoty, která popisuje, jak byla získána hodnota ukazatele na instrukci.  
+Získá hodnotu ukazatele instrukce a bitové kombinace hodnotu, která popisuje, jak byla získána hodnota ukazatele instrukce.  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```cpp  
 HRESULT GetIP (  
-    [out] ULONG32               *pnOffset,   
+    [out] ULONG32               *pnOffset,
     [out] CorDebugMappingResult *pMappingResult  
 );  
 ```  
   
 ## <a name="parameters"></a>Parametry  
  `pnOffset`  
- mimo Hodnota ukazatele na instrukci.  
+ [out] Hodnota ukazatele instrukce.  
   
  `pMappingResult`  
- mimo Ukazatel na bitovou kombinaci hodnot výčtu CorDebugMappingResult –, které popisují, jak byla získána hodnota ukazatele na instrukci.  
+ [out] Ukazatel na bitovou kombinaci hodnot výčtu CorDebugMappingResult, které popisují, jak byla získána hodnota ukazatele instrukce.  
   
 ## <a name="remarks"></a>Poznámky  
- Hodnota ukazatele na instrukci je posun rámce zásobníku do kódu jazyka MSIL (Microsoft Intermediate Language) funkce. Pokud je rámec zásobníku aktivní, je tato adresa další instrukcí, která se má provést. Pokud není rámec zásobníku aktivní, jedná se o další instrukci, která se má provést, když se rámec zásobníku znovu aktivuje.  
+ Hodnota ukazatele instrukce je posun rámce zásobníku do kódu zprostředkujícího jazyka Microsoft (MSIL). Pokud je aktivní rámec zásobníku, tato adresa je další instrukce ke spuštění. Pokud rámec zásobníku není aktivní, tato adresa je další instrukce provést při opětovné aktivaci rámce zásobníku.  
   
- Pokud je tento rámec kompilovaným snímkem just-in-time (JIT), hodnota ukazatele na instrukci bude určena mapováním zpět od skutečného nativního ukazatele instrukcí, takže hodnota může být pouze přibližná.  
+ Pokud tento rámec je kompilovaný rámec just-in-time (JIT), hodnota ukazatele instrukce bude určena mapováním zpět od skutečného ukazatele nativní instrukce, takže hodnota může být pouze přibližná.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Hlavička:** CorDebug. idl, CorDebug. h  
+ **Záhlaví:** CorDebug.idl, CorDebug.h  
   
- **Knihovna:** CorGuids. lib  
+ **Knihovna:** CorGuids.lib  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]
+ **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]

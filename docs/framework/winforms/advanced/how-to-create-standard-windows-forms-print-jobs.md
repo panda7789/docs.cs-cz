@@ -1,5 +1,5 @@
 ---
-title: Vytvoření standardních tiskových úloh
+title: Vytvořit standardní tiskové úlohy
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -10,25 +10,25 @@ helpviewer_keywords:
 - printing [Windows Forms], creating print jobs
 - printing [Visual Basic], in Windows applications
 ms.assetid: 03342b90-9cfe-40b2-838b-b479a13c5dea
-ms.openlocfilehash: 4850dc901630179cc44fefda7e25bbabcfb4725f
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: d9607de7c74132e0d7dce605b16d62c79b7dbccb
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76741516"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79182571"
 ---
 # <a name="how-to-create-standard-windows-forms-print-jobs"></a>Postupy: Vytváření standardních tiskových úloh Windows Forms
-Základem tisku v model Windows Forms je <xref:System.Drawing.Printing.PrintDocument> komponenta – konkrétně událost <xref:System.Drawing.Printing.PrintDocument.PrintPage>. Napsáním kódu pro zpracování události <xref:System.Drawing.Printing.PrintDocument.PrintPage> můžete určit, co se má vytisknout, a jak ho vytisknout.  
+Základem tisku ve Windows <xref:System.Drawing.Printing.PrintDocument> Forms je součást <xref:System.Drawing.Printing.PrintDocument.PrintPage> – konkrétně událost. Psaním kódu pro <xref:System.Drawing.Printing.PrintDocument.PrintPage> zpracování události můžete určit, co se má vytisknout a jak ji vytisknout.  
   
 ### <a name="to-create-a-print-job"></a>Vytvoření tiskové úlohy  
   
-1. Přidejte do formuláře komponentu <xref:System.Drawing.Printing.PrintDocument>.  
+1. Přidejte <xref:System.Drawing.Printing.PrintDocument> součást do formuláře.  
   
-2. Napište kód pro zpracování události <xref:System.Drawing.Printing.PrintDocument.PrintPage>.  
+2. Napište kód <xref:System.Drawing.Printing.PrintDocument.PrintPage> pro zpracování události.  
   
-     Budete muset kódovat vlastní logiku tisku. Navíc budete muset určit materiál, který se má vytisknout.  
+     Budete muset kód vlastní tiskové logiky. Kromě toho budete muset zadat materiál, který má být vytištěn.  
   
-     V následujícím příkladu kódu je v obslužné rutině události <xref:System.Drawing.Printing.PrintDocument.PrintPage> vytvořena ukázková grafika v obrazci červeného obdélníku, která bude fungovat jako materiál pro tisk.  
+     V následujícím příkladu kódu je v obslužné rutině události vytvořena ukázková grafika ve tvaru červeného obdélníku, <xref:System.Drawing.Printing.PrintDocument.PrintPage> která bude sloužit jako materiál, který má být vytištěn.  
   
     ```vb  
     Private Sub PrintDocument1_PrintPage(ByVal sender As Object, ByVal e As System.Drawing.Printing.PrintPageEventArgs) Handles PrintDocument1.PrintPage  
@@ -37,10 +37,10 @@ Základem tisku v model Windows Forms je <xref:System.Drawing.Printing.PrintDocu
     ```  
   
     ```csharp  
-    private void printDocument1_PrintPage(object sender,   
+    private void printDocument1_PrintPage(object sender,
     System.Drawing.Printing.PrintPageEventArgs e)  
     {  
-       e.Graphics.FillRectangle(Brushes.Red,   
+       e.Graphics.FillRectangle(Brushes.Red,
          new Rectangle(500, 500, 500, 500));  
     }  
     ```  
@@ -55,7 +55,7 @@ Základem tisku v model Windows Forms je <xref:System.Drawing.Printing.PrintDocu
        }  
     ```  
   
-     (Vizuální C# a vizuální C++) Vložte následující kód do konstruktoru formuláře pro registraci obslužné rutiny události.  
+     (Visual C# a Visual C++) Umístěte následující kód do konstruktoru formuláře pro registraci obslužné rutiny události.  
   
     ```csharp  
     this.printDocument1.PrintPage += new  
@@ -69,14 +69,14 @@ Základem tisku v model Windows Forms je <xref:System.Drawing.Printing.PrintDocu
        (this, &Form1::printDocument1_PrintPage);  
     ```  
   
-     Můžete také vytvořit kód pro <xref:System.Drawing.Printing.PrintDocument.BeginPrint> a <xref:System.Drawing.Printing.PrintDocument.EndPrint> události, třeba včetně celého čísla představujícího celkový počet stránek k vytištění, které se sníží při tisku každé stránky.  
+     Můžete také napsat kód pro <xref:System.Drawing.Printing.PrintDocument.BeginPrint> <xref:System.Drawing.Printing.PrintDocument.EndPrint> události a, případně včetně celého čísla představujícícelkový počet stránek k tisku, který je při tisku jednotlivých stránek snížen.  
   
     > [!NOTE]
-    > Do formuláře můžete přidat komponentu <xref:System.Windows.Forms.PrintDialog>, abyste svým uživatelům zajistili čisté a efektivní uživatelské rozhraní (UI). Nastavením vlastnosti <xref:System.Windows.Forms.PrintDialog.Document%2A> komponenty <xref:System.Windows.Forms.PrintDialog> můžete nastavit vlastnosti, které se týkají tiskového dokumentu, se kterými pracujete na formuláři. Další informace o komponentě <xref:System.Windows.Forms.PrintDialog> naleznete v tématu [PrintDialog Component](../controls/printdialog-component-windows-forms.md).  
+    > Do formuláře <xref:System.Windows.Forms.PrintDialog> můžete přidat komponentu, která uživatelům poskytne čisté a efektivní uživatelské rozhraní. Nastavení <xref:System.Windows.Forms.PrintDialog.Document%2A> vlastnosti <xref:System.Windows.Forms.PrintDialog> komponenty umožňuje nastavit vlastnosti související s tiskovým dokumentem, se kterým pracujete ve formuláři. Další informace o <xref:System.Windows.Forms.PrintDialog> součásti naleznete v tématu [PrintDialog Component](../controls/printdialog-component-windows-forms.md).  
   
-     Další informace o konkrétních model Windows Forms tiskových úlohách, včetně postupu při programovém vytvoření tiskové úlohy, najdete v tématu <xref:System.Drawing.Printing.PrintPageEventArgs>.  
+     Další informace o specifikách tiskových úloh windows forms, včetně programového vytvoření <xref:System.Drawing.Printing.PrintPageEventArgs>tiskové úlohy, naleznete v tématu .  
   
 ## <a name="see-also"></a>Viz také
 
 - <xref:System.Drawing.Printing.PrintDocument>
-- [Podpora tisku v modelu Windows Forms](windows-forms-print-support.md)
+- [Podpora tisku ve Windows Forms](windows-forms-print-support.md)

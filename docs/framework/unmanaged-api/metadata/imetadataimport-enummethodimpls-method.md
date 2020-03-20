@@ -15,65 +15,65 @@ helpviewer_keywords:
 ms.assetid: 4e0f865d-88b5-44bd-be35-492622e5e08e
 topic_type:
 - apiref
-ms.openlocfilehash: 193e8788d5a1b28f43f2fb0d4d935a18542dd923
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: e766cec8fd84713e12c43cd1095650ed5b757bcb
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74427487"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79175470"
 ---
 # <a name="imetadataimportenummethodimpls-method"></a>IMetaDataImport::EnumMethodImpls – metoda
-Vytvoří výčet tokenů MethodBody a MethodDeclaration představujících metody zadaného typu.  
+Výčet MethodBody a MethodDeclaration tokeny představující metody zadaného typu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```cpp  
 HRESULT EnumMethodImpls (  
-   [in, out] HCORENUM    *phEnum,   
-   [in]      mdTypeDef   td,   
-   [out]     mdToken     rMethodBody[],   
-   [out]     mdToken     rMethodDecl[],   
-   [in]      ULONG       cMax,   
+   [in, out] HCORENUM    *phEnum,
+   [in]      mdTypeDef   td,
+   [out]     mdToken     rMethodBody[],
+   [out]     mdToken     rMethodDecl[],
+   [in]      ULONG       cMax,
    [in]      ULONG       *pcTokens  
 );  
 ```  
   
 ## <a name="parameters"></a>Parametry  
  `phEnum`  
- [in, out] Ukazatel na enumerátor. Pro první volání této metody musí mít hodnotu NULL.  
+ [dovnitř, ven] Ukazatel na čítač výčtu. To musí být NULL pro první volání této metody.  
   
  `td`  
- pro Token TypeDef pro typ, jehož implementace metody se má vypsat.  
+ [v] A TypeDef token pro typ, jehož implementace metody k výčtu.  
   
  `rMethodBody`  
- mimo Pole, do kterého se mají ukládat tokeny MethodBody  
+ [out] Pole pro uložení tokenů MethodBody.  
   
  `rMethodDecl`  
- mimo Pole, do kterého se mají ukládat tokeny MethodDeclaration  
+ [out] Pole pro uložení tokenů MethodDeclaration.  
   
  `cMax`  
- pro Maximální velikost `rMethodBody` a `rMethodDecl` polí.  
+ [v] Maximální velikost `rMethodBody` a `rMethodDecl` pole.  
   
  `pcTokens`  
- pro Skutečný počet metod vrácených v `rMethodBody` a `rMethodDecl`.  
+ [v] Skutečný počet vrácených `rMethodBody` metod `rMethodDecl`a .  
   
 ## <a name="return-value"></a>Návratová hodnota  
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
-|`S_OK`|`EnumMethodImpls` byla úspěšně vrácena.|  
-|`S_FALSE`|Nejsou k dispozici žádné tokeny metod pro zobrazení výčtu. V takovém případě je `pcTokens` nula.|  
+|`S_OK`|`EnumMethodImpls`úspěšně vrácena.|  
+|`S_FALSE`|Neexistují žádné tokeny metody pro výčet. V tom `pcTokens` případě je nula.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Hlavička:** Cor. h  
+ **Záhlaví:** Kor.h.  
   
- **Knihovna:** Zahrnuto jako prostředek v knihovně MsCorEE. dll  
+ **Knihovna:** Zahrnuto jako prostředek v souboru MsCorEE.dll  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [IMetaDataImport – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
 - [IMetaDataImport2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)

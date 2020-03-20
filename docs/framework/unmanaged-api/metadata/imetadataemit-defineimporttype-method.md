@@ -15,65 +15,65 @@ helpviewer_keywords:
 ms.assetid: 37fd27af-8062-4904-ace4-51bb78ec600a
 topic_type:
 - apiref
-ms.openlocfilehash: 5b4b0682b2bddff96cb3d720900ed3aa39f06f9d
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 6825a5198976cc7ab2c04ebd6e782418dcf4a8f7
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74431849"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79177684"
 ---
 # <a name="imetadataemitdefineimporttype-method"></a>IMetaDataEmit::DefineImportType – metoda
-Vytvoří odkaz na zadaný typ, který je definován mimo aktuální rozsah, a definuje token pro tento odkaz.  
+Vytvoří odkaz na zadaný typ, který je definován mimo aktuální obor, a definuje token pro tento odkaz.  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```cpp  
-HRESULT DefineImportType (   
-    [in]  IMetaDataAssemblyImport  *pAssemImport,   
-    [in]  const void               *pbHashValue,   
-    [in]  ULONG                    cbHashValue,    
-    [in]  IMetaDataImport          *pImport,   
-    [in]  mdTypeDef                tdImport,   
-    [in]  IMetaDataAssemblyEmit    *pAssemEmit,   
+HRESULT DefineImportType (
+    [in]  IMetaDataAssemblyImport  *pAssemImport,
+    [in]  const void               *pbHashValue,
+    [in]  ULONG                    cbHashValue,
+    [in]  IMetaDataImport          *pImport,
+    [in]  mdTypeDef                tdImport,
+    [in]  IMetaDataAssemblyEmit    *pAssemEmit,
     [out] mdTypeRef                *ptr  
 );  
 ```  
   
 ## <a name="parameters"></a>Parametry  
  `pAssemImport`  
- pro Rozhraní [IMetaDataAssemblyImport](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyimport-interface.md) , které představuje sestavení, ze kterého je importován cílový typ.  
+ [v] Rozhraní [IMetaDataAssemblyImport,](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyimport-interface.md) které představuje sestavení, ze kterého je importován cílový typ.  
   
  `pbHashValue`  
- pro Pole, které obsahuje hodnotu hash pro sestavení určené parametrem `pAssemImport`.  
+ [v] Pole, které obsahuje hash pro `pAssemImport`sestavení určené .  
   
  `cbHashValue`  
- pro Počet bajtů v poli `pbHashValue`.  
+ [v] Počet bajtů v `pbHashValue` poli.  
   
  `pImport`  
- pro Rozhraní [IMetaDataImport](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md) , které představuje obor metadat, ze kterého je importován cílový typ.  
+ [v] Rozhraní [IMetaDataImport,](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md) které představuje obor metadat, ze kterého je importován cílový typ.  
   
  `tdImport`  
- pro Token `mdTypeDef`, který určuje cílový typ.  
+ [v] Token, `mdTypeDef` který určuje cílový typ.  
   
  `pAssemEmit`  
- pro Rozhraní [IMetaDataAssemblyEmit](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyemit-interface.md) představující sestavení, do kterého se naimportuje cílový typ.  
+ [v] Rozhraní [IMetaDataAssemblyEmit,](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyemit-interface.md) které představuje sestavení, do kterého je importován cílový typ.  
   
  `ptr`  
- mimo Token `mdTypeRef`, který je definován v aktuálním oboru pro odkaz na typ.  
+ [out] Token, `mdTypeRef` který je definován v aktuálním oboru pro odkaz na typ.  
   
 ## <a name="remarks"></a>Poznámky  
- Před voláním metody [IMetaDataEmit::D efineimportmember](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-defineimportmember-method.md) lze pomocí metody `DefineImportType` vytvořit odkaz na typ v aktuálním oboru pro nadřazenou třídu člena nebo pro nadřazené rozhraní.  
+ Před voláním metody [IMetaDataEmit::DefineImportMember](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-defineimportmember-method.md) můžete `DefineImportType` použít metodu k vytvoření odkazu na typ v aktuálním oboru pro nadřazenou třídu člena nebo nadřazené rozhraní.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Hlavička:** Cor. h  
+ **Záhlaví:** Kor.h.  
   
- **Knihovna:** Používá se jako prostředek v knihovně MSCorEE. dll.  
+ **Knihovna:** Používá se jako prostředek v souboru MSCorEE.dll  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [IMetaDataEmit – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)
 - [IMetaDataEmit2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-interface.md)

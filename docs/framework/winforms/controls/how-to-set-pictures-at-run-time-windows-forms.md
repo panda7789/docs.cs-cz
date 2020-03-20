@@ -13,25 +13,25 @@ helpviewer_keywords:
 - images [Windows Forms], adding with PictureBox control [Windows Forms]
 - PictureBox control [Windows Forms], adding pictures
 ms.assetid: 18ca41d0-68a5-4660-985e-a6c1fbc01d76
-ms.openlocfilehash: bd0509c05fd9c1cfc0c631fcd613c64d20296f6b
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: cd599ac7e07b5210f8bcff1ffbc76b3d9ee563d7
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76746747"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79182120"
 ---
 # <a name="how-to-set-pictures-at-run-time-windows-forms"></a>Postupy: Nastavení obrázků za běhu (Windows Forms)
-Obrázek zobrazený pomocí ovládacího prvku model Windows Forms <xref:System.Windows.Forms.PictureBox> lze programově nastavit.  
+Můžete programově nastavit obrázek zobrazený ovládacím prvkem Windows Forms. <xref:System.Windows.Forms.PictureBox>  
   
-### <a name="to-set-a-picture-programmatically"></a>Postup při nastavování obrázku prostřednictvím kódu programu  
+### <a name="to-set-a-picture-programmatically"></a>Nastavení obrázku programově  
   
-- Nastavte vlastnost <xref:System.Windows.Forms.PictureBox.Image%2A> pomocí metody <xref:System.Drawing.Image.FromFile%2A> třídy <xref:System.Drawing.Image>.  
+- Nastavte <xref:System.Windows.Forms.PictureBox.Image%2A> vlastnost pomocí <xref:System.Drawing.Image.FromFile%2A> metody <xref:System.Drawing.Image> třídy.  
   
-     V následujícím příkladu je cesta nastavená pro umístění obrázku složkou Dokumenty. To se provádí, protože můžete předpokládat, že většina počítačů, na kterých běží operační systém Windows, bude obsahovat tento adresář. To také umožňuje uživatelům s minimálními úrovněmi přístupu k systému bezpečně spustit aplikaci. Následující příklad předpokládá, že formulář s již přidaným ovládacím prvkem <xref:System.Windows.Forms.PictureBox>.  
+     V níže uvedeném příkladu je nastavenou cestou pro umístění obrázku složka Dokumenty. To je provedeno, protože můžete předpokládat, že většina počítačů s operačním systémem Windows bude obsahovat tento adresář. To také umožňuje uživatelům s minimálními úrovněmi přístupu k systému bezpečně spustit aplikaci. Následující příklad předpokládá formulář s <xref:System.Windows.Forms.PictureBox> již přidaným ovládacím prvkem.  
   
     ```vb  
     Private Sub LoadNewPict()  
-       ' You should replace the bold image   
+       ' You should replace the bold image
        ' in the sample below with an icon of your own choosing.  
        PictureBox1.Image = Image.FromFile _  
        (System.Environment.GetFolderPath _  
@@ -42,7 +42,7 @@ Obrázek zobrazený pomocí ovládacího prvku model Windows Forms <xref:System.
   
     ```csharp  
     private void LoadNewPict(){  
-       // You should replace the bold image   
+       // You should replace the bold image
        // in the sample below with an icon of your own choosing.  
        // Note the escape character used (@) when specifying the path.  
        pictureBox1.Image = Image.FromFile  
@@ -56,7 +56,7 @@ Obrázek zobrazený pomocí ovládacího prvku model Windows Forms <xref:System.
     private:  
        void LoadNewPict()  
        {  
-          // You should replace the bold image   
+          // You should replace the bold image
           // in the sample below with an icon of your own choosing.  
           pictureBox1->Image = Image::FromFile(String::Concat(  
              System::Environment::GetFolderPath(  
@@ -67,7 +67,7 @@ Obrázek zobrazený pomocí ovládacího prvku model Windows Forms <xref:System.
   
 ### <a name="to-clear-a-graphic"></a>Vymazání grafiky  
   
-- Nejdřív uvolněte paměť, kterou image používá, a pak obrázek vymažte. Uvolňování paměti uvolní paměť později, pokud dojde k potížím se správou paměti.  
+- Nejprve uvolněte paměť používanou obrazem a potom vymažte grafiku. Uvolnění paměti uvolní paměť později, pokud se správa paměti stane problémem.  
   
     ```vb  
     If Not (PictureBox1.Image Is Nothing) Then  
@@ -77,7 +77,7 @@ Obrázek zobrazený pomocí ovládacího prvku model Windows Forms <xref:System.
     ```  
   
     ```csharp  
-    if (pictureBox1.Image != null)   
+    if (pictureBox1.Image != null)
     {  
        pictureBox1.Image.Dispose();  
        pictureBox1.Image = null;  
@@ -93,15 +93,15 @@ Obrázek zobrazený pomocí ovládacího prvku model Windows Forms <xref:System.
     ```  
   
     > [!NOTE]
-    > Další informace o tom, proč byste měli použít metodu <xref:System.Drawing.Image.Dispose%2A> tímto způsobem, najdete v tématu [Vymazání nespravovaných prostředků](../../../standard/garbage-collection/unmanaged.md).  
+    > Další informace o tom, <xref:System.Drawing.Image.Dispose%2A> proč byste měli použít metodu tímto způsobem, naleznete v [tématu Vyčištění nespravovaných prostředků](../../../standard/garbage-collection/unmanaged.md).  
   
-     Tento kód vymaže obrázek, i když byl obrázek načten do ovládacího prvku v době návrhu.  
+     Tento kód vymaže obraz i v případě, že grafika byla načtena do ovládacího prvku v době návrhu.  
   
 ## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Forms.PictureBox>
 - <xref:System.Drawing.Image.FromFile%2A?displayProperty=nameWithType>
-- [Přehled ovládacího prvku PictureBox](picturebox-control-overview-windows-forms.md)
+- [PictureBox – přehled ovládacího prvku](picturebox-control-overview-windows-forms.md)
 - [Postupy: Načtení obrázku pomocí Návrháře](how-to-load-a-picture-using-the-designer-windows-forms.md)
 - [Postupy: Změna velikosti či umístění obrázku za běhu](how-to-modify-the-size-or-placement-of-a-picture-at-run-time-windows-forms.md)
-- [Ovládací prvek PictureBox](picturebox-control-windows-forms.md)
+- [PictureBox – ovládací prvek](picturebox-control-windows-forms.md)

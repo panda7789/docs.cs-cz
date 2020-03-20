@@ -2,49 +2,49 @@
 title: .NET Core a open source
 ms.date: 03/30/2017
 ms.assetid: e6bd4655-ce37-4003-8462-468a6fe2c40f
-ms.openlocfilehash: 4032ba771d917d25473c8de350cc752bd052f94d
-ms.sourcegitcommit: 9a97c76e141333394676bc5d264c6624b6f45bcf
+ms.openlocfilehash: b5aa42d0460d743bffe8f17a2603773c03c09ce0
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75752546"
+ms.lasthandoff: 03/15/2020
+ms.locfileid: "79181613"
 ---
-# <a name="net-core-and-open-source"></a>.NET Core a open source
+# <a name="net-core-and-open-source"></a>Jádro .NET a open source
 
-Tento článek poskytuje stručný přehled toho, co je .NET Core, a ukazuje, jak můžete najít další informace. Úplný seznam dokumentace pro .NET Core najdete v [průvodci .NET Core](../../core/index.md).
-  
-<a name="BKMK_WhatisNETCore"></a>   
-## <a name="what-is-net-core"></a>Co je .NET Core?  
- .NET Core je univerzální účelem, modulární, pro více platforem a open source implementaci .NET Standard. Obsahuje mnoho ze stejných rozhraní API jako .NET Framework (ale .NET Core je menší sada) a obsahuje komponenty modulu runtime, architektury, kompilátoru a nástrojů, které podporují různé operační systémy a cíle čipu. Implementace .NET Core byla primárně řízena ASP.NET Core úlohami, ale také potřebou a přáním o moderní implementaci. Dá se použít v scénářích zařízení, cloudu a integrovaných a IoT.  
-  
- Pokud chcete začít pracovat s .NET Core, přejděte do kurzu .NET [Hello World během 10 minut](https://dotnet.microsoft.com/learn/dotnet/hello-world-tutorial/intro).  
-  
-Hlavními charakteristikami .NET Core jsou:
-  
-- Pro **různé platformy:** .NET Core poskytuje klíčovou funkci pro implementaci funkcí aplikace, které potřebujete, a opakované použití tohoto kódu bez ohledu na cíl vaší platformy. V současné době podporuje tři hlavní operační systémy (OS): Windows, Linux a macOS. Můžete psát aplikace a knihovny, které běží beze změny v podporovaných operačních systémech. Seznam podporovaných operačních systémů najdete v článku [Přehled .NET Core](https://github.com/dotnet/core/blob/master/roadmap.md).
-  
-- **Open Source:** .NET Core je jedním z mnoha projektů v Stewardship [rozhraní .NET Foundation](https://www.dotnetfoundation.org/) a je k dispozici na [GitHubu](https://github.com/).  Rozhraní .NET Core jako open source projekt podporuje pokročilejší proces vývoje a podporuje aktivní a spolupracující komunitu.  
-  
-- **Flexibilní nasazení:** existují dva hlavní způsoby nasazení aplikace: nasazení závislé na rozhraní nebo samostatné nasazení. Při nasazení závislém na rozhraní se nainstalují jenom vaše aplikace a závislosti třetích stran a vaše aplikace závisí na verzi .NET Core, která je pro systém platná.  Pomocí samostatně nasazeného nasazení je verze .NET Core, která se používá k sestavení vaší aplikace, nasazená taky společně s vašimi aplikacemi a závislostmi třetích stran a můžou běžet souběžně s jinými verzemi.    Další informace najdete v tématu [nasazení aplikace .NET Core](../../core/deploying/index.md).
+Tento článek obsahuje stručný přehled toho, co je jádro .NET Core, a ukazuje, jak můžete najít další informace. Úplný seznam dokumentace pro rozhraní .NET Core naleznete v [průvodci .NET Core](../../core/index.md).
 
-- **Modulární:** modul .NET Core je modulární, protože je vydaný prostřednictvím NuGet v menších balíčcích sestavení. Místo jednoho velkého sestavení, které obsahuje většinu základních funkcí, je .NET Core dostupné jako menší balíčky zaměřené na funkce. Díky tomu je pro nás vhodnější model pro agilní vývoj a umožňuje optimalizovat aplikaci tak, aby zahrnovala jenom balíčky NuGet, které potřebujete. Výhody menšího povrchu aplikace zahrnují důkladné zabezpečení, omezenou údržbu, vyšší výkon a snížené náklady v modelu průběžných plateb.  
+## <a name="what-is-net-core"></a>Co je jádro .NET?  
+
+.NET Core je implementace .NET Standard pro obecné účely, modulární, napříč platformami a otevřeným zdrojovým kódem. Obsahuje mnoho stejných rozhraní API jako rozhraní .NET Framework (ale .NET Core je menší sada) a obsahuje komponenty runtime, framework, kompilátor a nástroje, které podporují různé operační systémy a cíle čipů. Implementace .NET Core byla primárně řízena úlohami ASP.NET Core, ale také potřebou a touhou mít modernější implementaci. Lze jej použít ve scénářích zařízení, cloudu a vložené/IoT.  
+  
+Chcete-li začít s rozhraním .NET Core, navštivte .NET tutorial [Hello World za 10 minut](https://dotnet.microsoft.com/learn/dotnet/hello-world-tutorial/intro).  
+  
+Hlavní charakteristiky .NET Core jsou:
+  
+- **Multiplatformní:** .NET Core poskytuje klíčové funkce pro implementaci funkcí aplikace, které potřebujete, a znovu použít tento kód bez ohledu na cíl vaší platformy. V současné době podporuje tři hlavní operační systémy (OS): Windows, Linux a macOS. Můžete psát aplikace a knihovny, které běží nezměněné v podporovaných operačních systémech. Seznam podporovaných operačních systémů naleznete na webu [.NET Core roadmap](https://github.com/dotnet/core/blob/master/roadmap.md).
+  
+- **Open source:** .NET Core je jedním z mnoha projektů pod správou [.NET Foundation](https://www.dotnetfoundation.org/) a je k dispozici na [GitHubu](https://github.com/).  S .NET Core jako open source projekt podporuje transparentnější proces vývoje a podporuje aktivní a angažovanou komunitu.  
+  
+- **Flexibilní nasazení:** existují dva hlavní způsoby nasazení aplikace: nasazení závislé na rámci nebo samostatné nasazení. S nasazením závislým na rámci jsou nainstalovány pouze vaše aplikace a závislosti třetích stran a vaše aplikace závisí na celosystémové verzi .NET Core, která má být k dispozici.  S samostatné nasazení verze .NET Core používá k sestavení aplikace je také nasazenspolu s vaší aplikace a závislosti třetích stran a lze spustit vedle sebe s jinými verzemi.    Další informace naleznete v tématu [.NET Core Application Deployment](../../core/deploying/index.md).
+
+- **Modulární:** .NET Core je modulární, protože je vydána prostřednictvím NuGet v menších montážních balíčků. Spíše než jeden velký sestavení, které obsahuje většinu základních funkcí, .NET Core je k dispozici jako menší balíčky zaměřené na funkce. To umožňuje agilnější vývojový model pro nás a umožňuje optimalizovat aplikaci tak, aby zahrnovala pouze balíčky NuGet, které potřebujete. Mezi výhody menší plochy aplikace patří přísnější zabezpečení, nižší servis, lepší výkon a nižší náklady v modelu platby za co použít.  
   
 ## <a name="the-net-core-platform"></a>Platforma .NET Core
   
-Platforma .NET Core se skládá z několika komponent, včetně spravovaných kompilátorů, modulu runtime, knihoven základních tříd a mnoha modelů aplikací, jako je ASP.NET Core. Další informace o různých součástech a o tom, jak se zabývají, najdete v následujících úložištích [GitHub](https://github.com/) :  
+Platforma .NET Core se skládá z několika součástí, včetně spravovaných kompilátorů, runtime, knihoven základních tříd a mnoha aplikačních modelů, jako je ASP.NET Core. Další informace o různých součástech a zapojení se získáte na následujících úložištích [GitHubu:](https://github.com/)  
   
-- [Domovská stránka .NET Core](https://github.com/dotnet/core)  
+- [.NET Core domů](https://github.com/dotnet/core)  
   
-- [Runtime – platforma .NET Core a modul runtime](https://github.com/dotnet/runtime)  
+- [Runtime – platforma .NET Core a runtime](https://github.com/dotnet/runtime)  
   
 - [CLI – nástroje příkazového řádku .NET Core](https://github.com/dotnet/cli)  
   
-- [Roslyn – .NET Compiler Platform](https://github.com/dotnet/roslyn)  
+- [Roslyn - platforma kompilátoru .NET](https://github.com/dotnet/roslyn)  
   
 - [ASP.NET Core](https://github.com/dotnet/aspnetcore)  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Kurz pro .NET – Hello World za 10 minut](https://dotnet.microsoft.com/learn/dotnet/hello-world-tutorial/intro)
-- [Průvodce .NET Core](../../core/index.md)
-- [ASP.NET Core docs](/aspnet/core/)
+- [.NET tutorial - Hello World za 10 minut](https://dotnet.microsoft.com/learn/dotnet/hello-world-tutorial/intro)
+- [Průvodce platformou .NET Core](../../core/index.md)
+- [ASP.NET Základní dokumenty](/aspnet/core/)

@@ -31,60 +31,60 @@ helpviewer_keywords:
 - ConnectionClosed enumeration member
 - SecureChannelFailure enumeration member
 ms.assetid: 657141cd-5cf5-4fdb-a4b2-4c040eba84b5
-ms.openlocfilehash: 7084c4579dd5fca0075c7516754195f7cea9e27c
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: f5be5d8e14d7aa2d98009fc10c9cce314e745ed1
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73458049"
+ms.lasthandoff: 03/15/2020
+ms.locfileid: "79180872"
 ---
 # <a name="handling-errors"></a>Zpracování chyb
 
-Třídy <xref:System.Net.WebRequest> a <xref:System.Net.WebResponse> vyvolají výjimky systému (například <xref:System.ArgumentException>) a výjimky specifické pro web (které jsou <xref:System.Net.WebException> vyvolány metodou <xref:System.Net.WebRequest.GetResponse%2A>).  
+A <xref:System.Net.WebRequest> <xref:System.Net.WebResponse> třídy vyvolat obě systémové <xref:System.ArgumentException>výjimky (například) a <xref:System.Net.WebException> výjimky specifické <xref:System.Net.WebRequest.GetResponse%2A> pro web (které jsou vyvolány metodou).  
   
-Každý **WebException** obsahuje vlastnost <xref:System.Net.WebException.Status%2A>, která obsahuje hodnotu ze výčtu <xref:System.Net.WebExceptionStatus>. Můžete prostudovat vlastnost **stav** a zjistit tak chybu, ke které došlo, a provést správné kroky k vyřešení chyby.  
+Každý **WebException** <xref:System.Net.WebException.Status%2A> obsahuje vlastnost, která <xref:System.Net.WebExceptionStatus> obsahuje hodnotu z výčtu. Můžete zkontrolovat **Stav** vlastnost určit chybu, ke které došlo a provést příslušné kroky k vyřešení chyby.  
   
-Následující tabulka popisuje možné hodnoty vlastnosti **status** .  
+Následující tabulka popisuje možné hodnoty vlastnosti **Stav.**  
   
-|Stav|Popis|  
+|Status|Popis|  
 |------------|-----------------|  
 |ConnectFailure|Vzdálenou službu nelze kontaktovat na úrovni přenosu.|  
-|ConnectionClosed|Připojení bylo předčasně ukončeno.|  
-|KeepAliveFailure|Server uzavřel připojení vytvořené pomocí sady hlaviček Keep-Alive.|  
-|NameResolutionFailure|Názvová služba nemohla přeložit název hostitele.|  
-|ProtocolError|Odpověď přijatá ze serveru byla dokončena, ale na úrovni protokolu byla označena chyba.|  
+|Připojení uzavřeno|Připojení bylo předčasně ukončeno.|  
+|KeepAliveSelhání|Server uzavřel připojení nastojen se sadou hlaviček Keep-alive.|  
+|NázevResolutionFailure|Název služby nelze přeložit název hostitele.|  
+|Chyba protokolu|Odpověď přijatá ze serveru byla dokončena, ale na úrovni protokolu byla uvedena chyba.|  
 |ReceiveFailure|Ze vzdáleného serveru nebyla přijata úplná odpověď.|  
-|RequestCanceled|Žádost se zrušila.|  
-|SecureChannelFailure|V odkazu na zabezpečený kanál došlo k chybě.|  
-|SendFailure|Do vzdáleného serveru nelze odeslat úplnou žádost.|  
+|Požadavek byl zrušen.|Požadavek byl zrušen.|  
+|SecureChannelSelhání|V zabezpečeném propojení kanálu došlo k chybě.|  
+|SendFailure|Úplný požadavek nelze odeslat na vzdálený server.|  
 |ServerProtocolViolation|Odpověď serveru nebyla platnou odpovědí HTTP.|  
-|Nástup|Nedošlo k žádné chybě.|  
-|prodlev|V rámci nastaveného časového limitu pro požadavek nebyla přijata žádná odpověď.|  
-|TrustFailure|Certifikát serveru nelze ověřit.|  
-|MessageLengthLimitExceeded|Byla přijata zpráva, která překročila zadaný limit při odesílání žádosti nebo přijetí odpovědi ze serveru.|  
-|Uložené|Interní asynchronní požadavek čeká na vyřízení.|  
-|PipelineFailure|Tato hodnota podporuje infrastrukturu .NET Framework a není určena pro použití přímo v kódu.|  
-|ProxyNameResolutionFailure|Služba překladač názvů nemohla přeložit název hostitele proxy.|  
-|UnknownError|Došlo k výjimce neznámého typu.|  
+|Úspěch|Nebyla zjištěna žádná chyba.|  
+|Časový limit|V době stanovené pro požadavek nebyla přijata žádná odpověď.|  
+|Selhání důvěryhodnosti|Certifikát serveru nelze ověřit.|  
+|MessageLengthLimitExceeded|Byla přijata zpráva, která překročila zadaný limit při odesílání požadavku nebo přijímání odpovědi ze serveru.|  
+|Čekající na vyřízení|Interní asynchronní požadavek čeká na vyřízení.|  
+|Selhání kanálu|Tato hodnota podporuje infrastrukturu rozhraní .NET Framework a není určena k použití přímo ve vašem kódu.|  
+|Selhání rezoluce__sychu|Služba překladače názvů nemohla přeložit název hostitele proxy serveru.|  
+|Neznámýchyba|Došlo k výjimce neznámého typu.|  
   
-Je- li vlastnost status **WebExceptionStatus rovným. ProtocolError**, je k dispozici odpověď na **WebResponse** obsahující odpověď ze serveru. Tuto odpověď můžete prostudovat a určit skutečný zdroj chyby protokolu.  
+Pokud je vlastnost **Stav** **WebExceptionStatus.ProtocolError**, je k dispozici **webová odpověď** obsahující odpověď ze serveru. Tuto odpověď můžete zkontrolovat a určit skutečný zdroj chyby protokolu.  
   
 Následující příklad ukazuje, jak zachytit **WebException**.  
   
 ```csharp  
-try   
+try
 {  
     // Create a request instance.  
-    WebRequest myRequest =   
+    WebRequest myRequest =
     WebRequest.Create("http://www.contoso.com");  
     // Get the response.  
     WebResponse myResponse = myRequest.GetResponse();  
-    //Get a readable stream from the server.   
+    //Get a readable stream from the server.
     Stream sr = myResponse.GetResponseStream();  
   
     //Read from the stream and write any data to the console.  
     bytesread = sr.Read( myBuffer, 0, length);  
-    while( bytesread > 0 )   
+    while( bytesread > 0 )
     {  
         for (int i=0; i<bytesread; i++) {  
             Console.Write( "{0}", myBuffer[i]);  
@@ -95,7 +95,7 @@ try
     sr.Close();  
     myResponse.Close();  
 }  
-catch (WebException webExcp)   
+catch (WebException webExcp)
 {  
     // If you reach this point, an exception has been caught.  
     Console.WriteLine("A WebException has been caught.");  
@@ -103,8 +103,8 @@ catch (WebException webExcp)
     Console.WriteLine(webExcp.ToString());  
     // Get the WebException status code.  
     WebExceptionStatus status =  webExcp.Status;  
-    // If status is WebExceptionStatus.ProtocolError,   
-    //   there has been a protocol error and a WebResponse   
+    // If status is WebExceptionStatus.ProtocolError,
+    //   there has been a protocol error and a WebResponse
     //   should exist. Display the protocol error.  
     if (status == WebExceptionStatus.ProtocolError) {  
         Console.Write("The server returned protocol error ");  
@@ -114,7 +114,7 @@ catch (WebException webExcp)
            + httpResponse.StatusCode);  
     }  
 }  
-catch (Exception e)   
+catch (Exception e)
 {  
     // Code to catch other exceptions goes here.  
 }  
@@ -126,10 +126,10 @@ Try
     Dim myRequest As WebRequest = WebRequest.Create("http://www.contoso.com")  
     ' Get the response.  
     Dim myResponse As WebResponse = myRequest.GetResponse()  
-    'Get a readable stream from the server.   
+    'Get a readable stream from the server.
     Dim sr As Stream = myResponse.GetResponseStream()  
   
-    Dim i As Integer      
+    Dim i As Integer
     'Read from the stream and write any data to the console.  
     bytesread = sr.Read(myBuffer, 0, length)  
     While bytesread > 0  
@@ -148,8 +148,8 @@ Catch webExcp As WebException
     Console.WriteLine(webExcp.ToString())  
     ' Get the WebException status code.  
     Dim status As WebExceptionStatus = webExcp.Status  
-    ' If status is WebExceptionStatus.ProtocolError,   
-    '   there has been a protocol error and a WebResponse   
+    ' If status is WebExceptionStatus.ProtocolError,
+    '   there has been a protocol error and a WebResponse
     '   should exist. Display the protocol error.  
     If status = WebExceptionStatus.ProtocolError Then  
         Console.Write("The server returned protocol error ")  
@@ -164,11 +164,11 @@ Catch e As Exception
 End Try  
 ```  
   
-Aplikace, které používají <xref:System.Net.Sockets.Socket> třídy, vyvolávají <xref:System.Net.Sockets.SocketException> při výskytu chyb na soketu Windows. Třídy <xref:System.Net.Sockets.TcpClient>, <xref:System.Net.Sockets.TcpListener>a <xref:System.Net.Sockets.UdpClient> jsou postaveny na třídě **soketu** a také vyvolávají **SocketExceptions** .  
+Aplikace, které <xref:System.Net.Sockets.Socket> používají <xref:System.Net.Sockets.SocketException> class throw při výskytu chyb v soketu systému Windows. , <xref:System.Net.Sockets.TcpClient> <xref:System.Net.Sockets.TcpListener>a <xref:System.Net.Sockets.UdpClient> třídy jsou postaveny na vrcholu **Socket** třídy a vyvolat **SocketExceptions** také.  
   
-Když je vyvolána výjimka **SocketException** , třída **SocketException** nastaví vlastnost <xref:System.Net.Sockets.SocketException.ErrorCode%2A> na poslední chybu soketu operačního systému, ke které došlo. Další informace o kódech chyb soketu najdete v dokumentaci k kódu chyby rozhraní API Winsock 2,0 na webu MSDN.  
+Při vyvolání **SocketException,** **SocketException** třída <xref:System.Net.Sockets.SocketException.ErrorCode%2A> nastaví vlastnost na poslední chybu soketu operačního systému, ke které došlo. Další informace o kódech chyb soketu naleznete v dokumentaci k kódu chybrozhraní WINSOCK 2.0 API v msdn.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Zpracování a vyvolávání výjimek v rozhraní .NET](../../standard/exceptions/index.md)
+- [Zpracování a vyvolání výjimek v rozhraní .NET](../../standard/exceptions/index.md)
 - [Žádosti o data](requesting-data.md)

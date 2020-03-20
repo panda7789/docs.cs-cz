@@ -15,98 +15,98 @@ helpviewer_keywords:
 ms.assetid: dc0ff3e6-7e7d-4f6c-948d-52b28f5cb78c
 topic_type:
 - apiref
-ms.openlocfilehash: 247a2793bf3806f5ee38585d50b4535820dfcb69
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 5fc71bf240b89afadbf8f2ba10906322921bdda2
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74437056"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79175327"
 ---
 # <a name="imetadataimportgetpropertyprops-method"></a>IMetaDataImport::GetPropertyProps – metoda
-Získá metadata pro vlastnost představovanou zadaným tokenem.  
+Získá metadata pro vlastnost reprezentované zadaný token.  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```cpp  
 HRESULT GetPropertyProps (  
    [in]  mdProperty        prop,  
-   [out] mdTypeDef         *pClass,   
-   [out] LPCWSTR           szProperty,   
-   [in]  ULONG             cchProperty,   
-   [out] ULONG             *pchProperty,   
-   [out] DWORD             *pdwPropFlags,   
-   [out] PCCOR_SIGNATURE   *ppvSig,   
-   [out] ULONG             *pbSig,   
-   [out] DWORD             *pdwCPlusTypeFlag,   
+   [out] mdTypeDef         *pClass,
+   [out] LPCWSTR           szProperty,
+   [in]  ULONG             cchProperty,
+   [out] ULONG             *pchProperty,
+   [out] DWORD             *pdwPropFlags,
+   [out] PCCOR_SIGNATURE   *ppvSig,
+   [out] ULONG             *pbSig,
+   [out] DWORD             *pdwCPlusTypeFlag,
    [out] UVCP_CONSTANT     *ppDefaultValue,  
    [out] ULONG             *pcchDefaultValue,  
-   [out] mdMethodDef       *pmdSetter,   
-   [out] mdMethodDef       *pmdGetter,   
+   [out] mdMethodDef       *pmdSetter,
+   [out] mdMethodDef       *pmdGetter,
    [out] mdMethodDef       rmdOtherMethod[],  
-   [in]  ULONG             cMax,   
-   [out] ULONG             *pcOtherMethod   
+   [in]  ULONG             cMax,
+   [out] ULONG             *pcOtherMethod
 );  
 ```  
   
 ## <a name="parameters"></a>Parametry  
  `prop`  
- pro Token, který představuje vlastnost, pro kterou se mají vracet metadata  
+ [v] Token, který představuje vlastnost vrátit metadata.  
   
  `pClass`  
- mimo Ukazatel na token TypeDef, který představuje typ, který implementuje vlastnost.  
+ [out] Ukazatel na TypeDef token, který představuje typ, který implementuje vlastnost.  
   
  `szProperty`  
- mimo Vyrovnávací paměť pro uložení názvu vlastnosti.  
+ [out] Vyrovnávací paměť pro uložení názvu vlastnosti.  
   
  `cchProperty`  
- pro Velikost v různých znacích `szProperty`.  
+ [v] Velikost v široké `szProperty`znaky .  
   
  `pchProperty`  
- mimo Počet velkých znaků vrácených v `szProperty`.  
+ [out] Počet širokých znaků `szProperty`vrácených v .  
   
  `pdwPropFlags`  
- mimo Ukazatel na libovolný příznak atributu aplikovaný na vlastnost. Tato hodnota je Bitová maska z výčtu [CorPropertyAttr –](../../../../docs/framework/unmanaged-api/metadata/corpropertyattr-enumeration.md) .  
+ [out] Ukazatel na všechny příznaky atributů aplikované na vlastnost. Tato hodnota je bitová maska z [corpropertyattr](../../../../docs/framework/unmanaged-api/metadata/corpropertyattr-enumeration.md) výčtu.  
   
  `ppvSig`  
- mimo Ukazatel na podpis metadat vlastnosti.  
+ [out] Ukazatel na podpis metadat vlastnosti.  
   
  `pbSig`  
- mimo Počet bajtů vrácených v `ppvSig`.  
+ [out] Počet vrácených bajtů `ppvSig`v .  
   
  `pdwCPlusTypeFlag`  
- mimo Příznak určující typ konstanty, která je výchozí hodnotou vlastnosti. Tato hodnota pochází z výčtu CorElementType –.  
+ [out] Příznak určující typ konstanty, která je výchozí hodnotou vlastnosti. Tato hodnota je z CorElementType výčtu.  
   
  `ppDefaultValue`  
- mimo Ukazatel na bajty, které ukládají výchozí hodnotu pro tuto vlastnost.  
+ [out] Ukazatel na bajty, které ukládají výchozí hodnotu pro tuto vlastnost.  
   
  `pcchDefaultValue`  
- mimo Velikost v mnoha znacích `ppDefaultValue`, pokud je `pdwCPlusTypeFlag` ELEMENT_TYPE_STRING; v opačném případě tato hodnota není relevantní. V takovém případě je délka `ppDefaultValue` odvozena od typu určeného `pdwCPlusTypeFlag`.  
+ [out] Velikost v širokých `ppDefaultValue`znaků `pdwCPlusTypeFlag` , pokud je ELEMENT_TYPE_STRING; v opačném případě tato hodnota není relevantní. V takovém případě `ppDefaultValue` je délka odvodit z typu, který je určen `pdwCPlusTypeFlag`.  
   
  `pmdSetter`  
- mimo Ukazatel na token MethodDef, který představuje metodu set přístupového objektu pro vlastnost.  
+ [out] Ukazatel na token MethodDef, který představuje metodu přístupového objektu set pro vlastnost.  
   
  `pmdGetter`  
- mimo Ukazatel na token MethodDef, který představuje metodu Get přístup k vlastnosti.  
+ [out] Ukazatel na Token MethodDef, který představuje metodu get accessor pro vlastnost.  
   
  `rmdOtherMethod`  
- mimo Pole tokenů MethodDef, které představuje jiné metody přidružené k vlastnosti.  
+ [out] Pole Tokeny MethodDef, které představují jiné metody přidružené k vlastnosti.  
   
  `cMax`  
- pro Maximální velikost `rmdOtherMethod` pole Pokud nezadáte pole dostatečně velké pro uložení všech metod, budou vynechána bez upozornění.  
+ [v] Maximální velikost `rmdOtherMethod` pole. Pokud neposkytnete pole dostatečně velké pro všechny metody, jsou přeskočeny bez upozornění.  
   
  `pcOtherMethod`  
- mimo Počet tokenů MethodDef vrácených v `rmdOtherMethod`.  
+ [out] Počet tokenů MethodDef vrácených v `rmdOtherMethod`.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Hlavička:** Cor. h  
+ **Záhlaví:** Kor.h.  
   
- **Knihovna:** Zahrnuto jako prostředek v knihovně MsCorEE. dll  
+ **Knihovna:** Zahrnuto jako prostředek v souboru MsCorEE.dll  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [IMetaDataImport – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
 - [IMetaDataImport2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)

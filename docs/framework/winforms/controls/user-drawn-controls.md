@@ -9,27 +9,27 @@ helpviewer_keywords:
 - OnPaint method [Windows Forms]
 - user-drawn controls [Windows Forms]
 ms.assetid: 034af4b5-457f-4160-a937-22891817faa8
-ms.openlocfilehash: 50036f5bef323368b4970a080ca7a70cf94252d6
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: c68c8c88376cfe7295962264c466030115f2f3db
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69966488"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79182013"
 ---
 # <a name="user-drawn-controls"></a>Ovládací prvky vykreslované uživatelem
-.NET Framework poskytuje možnost snadného vývoje vlastních ovládacích prvků. Můžete vytvořit uživatelský ovládací prvek, což je sada standardních ovládacích prvků, které jsou vázány pomocí kódu, nebo můžete navrhnout vlastní ovládací prvek od základu. Dědičnost můžete dokonce použít k vytvoření ovládacího prvku, který dědí z existujícího ovládacího prvku a jeho přidáním do své vlastní funkce. Bez ohledu na to, kterou metodu použijete, .NET Framework poskytuje funkce pro nakreslení vlastního grafického rozhraní pro jakýkoli ovládací prvek, který vytvoříte.  
+Rozhraní .NET Framework poskytuje možnost snadno vyvíjet vlastní ovládací prvky. Můžete vytvořit uživatelský ovládací prvek, což je sada standardních ovládacích prvků vázaných kódem, nebo můžete navrhnout vlastní ovládací prvek od základů. Dědičnost můžete dokonce použít k vytvoření ovládacího prvku, který dědí z existujícího ovládacího prvku a přidat k jeho vlastní funkce. Bez ohledu na přístup, který použijete, rozhraní .NET Framework poskytuje funkce pro nakreslení vlastního grafického rozhraní pro libovolný ovládací prvek, který vytvoříte.  
   
- Malování ovládacího prvku je provedeno spuštěním kódu v <xref:System.Windows.Forms.Control.OnPaint%2A> metodě ovládacího prvku. Jediný argument <xref:System.Windows.Forms.Control.OnPaint%2A> metody <xref:System.Windows.Forms.PaintEventArgs> je objekt, který poskytuje všechny informace a funkce požadované pro vykreslení ovládacího prvku. <xref:System.Windows.Forms.PaintEventArgs> Poskytuje jako vlastnosti dva objekty zabezpečení, které budou použity při vykreslování ovládacího prvku:  
+ Malování ovládacího prvku se provádí spuštěním kódu v <xref:System.Windows.Forms.Control.OnPaint%2A> metodě ovládacího prvku. Jediný argument <xref:System.Windows.Forms.Control.OnPaint%2A> metody je <xref:System.Windows.Forms.PaintEventArgs> objekt, který poskytuje všechny informace a funkce potřebné k vykreslení ovládacího prvku. Poskytuje <xref:System.Windows.Forms.PaintEventArgs> jako vlastnosti dva hlavní objekty, které budou použity při vykreslování ovládacího prvku:  
   
-- <xref:System.Windows.Forms.PaintEventArgs.ClipRectangle%2A>Object – obdélník, který představuje část ovládacího prvku, který bude vykreslen. Může to být celý ovládací prvek nebo část ovládacího prvku v závislosti na tom, jak je ovládací prvek vykreslen.  
+- <xref:System.Windows.Forms.PaintEventArgs.ClipRectangle%2A>objekt - obdélník, který představuje část ovládacího prvku, který bude nakreslena. To může být celý ovládací prvek nebo část ovládacího prvku v závislosti na tom, jak je nakreslena ovládacího prvku.  
   
-- <xref:System.Drawing.Graphics>objekt – zapouzdřuje několik grafických objektů a metod, které poskytují funkcionalitu nutnou k nakreslení ovládacího prvku.  
+- <xref:System.Drawing.Graphics>object - zapouzdřuje několik objektů a metod orientovaných na grafiku, které poskytují funkce potřebné k nakreslení ovládacího prvku.  
   
- Další informace o <xref:System.Drawing.Graphics> objektu a jeho použití naleznete v tématu [How to: Vytvoření grafických objektů pro kreslení](../advanced/how-to-create-graphics-objects-for-drawing.md).  
+ Další informace o <xref:System.Drawing.Graphics> objektu a jeho použití naleznete v [tématu How to: Create Graphics Objects for Drawing](../advanced/how-to-create-graphics-objects-for-drawing.md).  
   
- Událost se aktivuje vždy, když se ovládací prvek vykreslí nebo aktualizuje na obrazovce <xref:System.Windows.Forms.PaintEventArgs.ClipRectangle%2A> a objekt představuje obdélník, ve kterém bude provedeno malování. <xref:System.Windows.Forms.Control.OnPaint%2A> Pokud je nutné celý ovládací prvek aktualizovat, <xref:System.Windows.Forms.PaintEventArgs.ClipRectangle%2A> bude reprezentovat velikost celého ovládacího prvku. Je-li však <xref:System.Windows.Forms.PaintEventArgs.ClipRectangle%2A> nutné aktualizovat pouze část ovládacího prvku, bude objekt představovat pouze oblast, která je zapotřebí překreslit. Příkladem takového případu by bylo, že ovládací prvek byl částečně skryt jiným ovládacím prvkem nebo formulářem v uživatelském rozhraní.  
+ Událost <xref:System.Windows.Forms.Control.OnPaint%2A> je aktivována vždy, když je ovládací prvek <xref:System.Windows.Forms.PaintEventArgs.ClipRectangle%2A> nakreslena nebo aktualizována na obrazovce a objekt představuje obdélník, ve kterém bude malování probíhat. Pokud je třeba aktualizovat celý ovládací <xref:System.Windows.Forms.PaintEventArgs.ClipRectangle%2A> prvek, bude představovat velikost celého ovládacího prvku. Pokud je však třeba aktualizovat pouze část <xref:System.Windows.Forms.PaintEventArgs.ClipRectangle%2A> ovládacího prvku, bude objekt představovat pouze oblast, kterou je třeba překreslit. Příkladem takového případu by bylo, když byl ovládací prvek částečně zakryt jiným ovládacím prvkem nebo formulářem v uživatelském rozhraní.  
   
- Při dědění z <xref:System.Windows.Forms.Control> třídy je nutné <xref:System.Windows.Forms.Control.OnPaint%2A> přepsat metodu a zadat kód pro vykreslování grafiky v rámci. Pokud chcete zadat vlastní grafické rozhraní pro uživatelský ovládací prvek nebo Zděděný ovládací prvek, můžete to provést také přepsáním <xref:System.Windows.Forms.Control.OnPaint%2A> metody. Příklad je uveden níže:  
+ Při dědění <xref:System.Windows.Forms.Control> z třídy, <xref:System.Windows.Forms.Control.OnPaint%2A> je nutné přepsat metodu a poskytnout kód vykreslování grafiky uvnitř. Pokud chcete poskytnout vlastní grafické rozhraní uživatelského ovládacího prvku nebo zděděného ovládacího prvku, můžete tak učinit také přepsáním <xref:System.Windows.Forms.Control.OnPaint%2A> metody. Příklad najdete níže:  
   
 ```vb  
 Protected Overrides Sub OnPaint(ByVal e As PaintEventArgs)  
@@ -54,15 +54,15 @@ protected override void OnPaint(PaintEventArgs e)
    using (System.Drawing.Pen myPen = new System.Drawing.Pen(Color.Aqua))  
    {
       // Draw an aqua rectangle in the rectangle represented by the control.  
-      e.Graphics.DrawRectangle(myPen, new Rectangle(this.Location,   
+      e.Graphics.DrawRectangle(myPen, new Rectangle(this.Location,
          this.Size));  
    }
 }  
 ```  
   
- Předchozí příklad ukazuje, jak vykreslit ovládací prvek pomocí velmi jednoduché grafické reprezentace. Volá <xref:System.Windows.Forms.Control.OnPaint%2A> metodu základní třídy, <xref:System.Drawing.Pen> vytvoří objekt, který se má kreslit, a nakonec nakreslí elipsu v obdélníku určeném <xref:System.Windows.Forms.Control.Location%2A> a <xref:System.Windows.Forms.Control.Size%2A> ovládacího prvku. I když je většina vykreslování kódu podstatně složitější, tento příklad ukazuje použití <xref:System.Drawing.Graphics> objektu obsaženého <xref:System.Windows.Forms.PaintEventArgs> v objektu. Všimněte si, že pokud dědíte z třídy, která již obsahuje grafické znázornění, například <xref:System.Windows.Forms.UserControl> nebo <xref:System.Windows.Forms.Button>, a nechcete začlenit tuto reprezentaci do vykreslování, neměli byste <xref:System.Windows.Forms.Control.OnPaint%2A> volat třídu základní třídy. Metoda.  
+ Předchozí příklad ukazuje, jak vykreslit ovládací prvek s velmi jednoduchou grafickou reprezentací. Volá <xref:System.Windows.Forms.Control.OnPaint%2A> metodu základní třídy, vytvoří <xref:System.Drawing.Pen> objekt, se kterým chcete kreslit, a nakonec nakreslí <xref:System.Windows.Forms.Control.Location%2A> <xref:System.Windows.Forms.Control.Size%2A> elipsu v obdélníku určeném ovládacím prvkem a. Ačkoli většina vykreslovací kód bude výrazně složitější <xref:System.Drawing.Graphics> než tento, <xref:System.Windows.Forms.PaintEventArgs> tento příklad ukazuje použití objektu obsaženého v objektu. Všimněte si, že pokud dědíte z třídy, <xref:System.Windows.Forms.UserControl> <xref:System.Windows.Forms.Button>která již má grafické znázornění, například nebo , a nechcete <xref:System.Windows.Forms.Control.OnPaint%2A> začlenit tuto reprezentaci do vykreslování, neměli byste volat metodu základní třídy.  
   
- Kód v <xref:System.Windows.Forms.Control.OnPaint%2A> metodě ovládacího prvku bude proveden při prvním vykreslení ovládacího prvku a při každém jeho aktualizaci. Chcete-li zajistit, aby byl ovládací prvek překreslen při každé změně velikosti, přidejte následující řádek do konstruktoru ovládacího prvku:  
+ Kód v <xref:System.Windows.Forms.Control.OnPaint%2A> metodě ovládacího prvku se spustí při prvním vykreslení ovládacího prvku a při každém aktualizaci. Chcete-li zajistit, že váš ovládací prvek je překreslen při každém jeho velikosti, přidejte následující řádek k konstruktoru ovládacího prvku:  
   
 ```vb  
 SetStyle(ControlStyles.ResizeRedraw, True)  
@@ -73,15 +73,15 @@ SetStyle(ControlStyles.ResizeRedraw, true);
 ```  
   
 > [!NOTE]
-> <xref:System.Windows.Forms.Control.Region%2A?displayProperty=nameWithType> Použijte vlastnost k implementaci ovládacího prvku, který není pravoúhlý.  
+> Pomocí <xref:System.Windows.Forms.Control.Region%2A?displayProperty=nameWithType> vlastnosti implementujte neobdélníkový ovládací prvek.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Forms.Control.Region%2A>
 - <xref:System.Windows.Forms.ControlStyles>
 - <xref:System.Drawing.Graphics>
 - <xref:System.Windows.Forms.Control.OnPaint%2A>
 - <xref:System.Windows.Forms.PaintEventArgs>
-- [Postupy: Vytvoření grafických objektů pro kreslení](../advanced/how-to-create-graphics-objects-for-drawing.md)
+- [Postupy: Vytváření grafických objektů pro kreslení](../advanced/how-to-create-graphics-objects-for-drawing.md)
 - [Základní ovládací prvky](constituent-controls.md)
 - [Typy vlastních ovládacích prvků](varieties-of-custom-controls.md)

@@ -15,60 +15,60 @@ helpviewer_keywords:
 ms.assetid: 4e508711-da92-4381-aaf8-6803075cdaa2
 topic_type:
 - apiref
-ms.openlocfilehash: 3854cb4aa3d229c87466c0a35a72447ceb235624
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 2d6e86a7f5a93b900e79907f8ee0762869d7f737
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74449991"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79177287"
 ---
 # <a name="imetadataimportenumtypedefs-method"></a>IMetaDataImport::EnumTypeDefs – metoda
-Vytvoří výčet tokenů TypeDef reprezentujících všechny typy v rámci aktuálního oboru.  
+Výčet TypeDef tokeny představující všechny typy v rámci aktuálního oboru.  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```cpp  
 HRESULT EnumTypeDefs (  
-   [out] HCORENUM   *phEnum,   
+   [out] HCORENUM   *phEnum,
    [in]  mdTypeDef  rTypeDefs[],  
-   [in]  ULONG      cMax,   
+   [in]  ULONG      cMax,
    [out] ULONG      *pcTypeDefs  
 );  
 ```  
   
 ## <a name="parameters"></a>Parametry  
  `phEnum`  
- mimo Ukazatel na nový enumerátor. Pro první volání této metody musí mít hodnotu NULL.  
+ [out] Ukazatel na nový čítač výčtu. To musí být NULL pro první volání této metody.  
   
  `rTypeDefs`  
- pro Pole použité pro ukládání tokenů TypeDef.  
+ [v] Pole používané k ukládání tokenů TypeDef.  
   
  `cMax`  
- pro Maximální velikost `rTypeDefs` pole  
+ [v] Maximální velikost `rTypeDefs` pole.  
   
  `pcTypeDefs`  
- mimo Počet tokenů TypeDef vrácených v `rTypeDefs`.  
+ [out] Počet tokenů TypeDef vrácených v `rTypeDefs`.  
   
 ## <a name="return-value"></a>Návratová hodnota  
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
-|`S_OK`|`EnumTypeDefs` byla úspěšně vrácena.|  
-|`S_FALSE`|Neexistují žádné tokeny k vytvoření výčtu. V takovém případě je `pcTypeDefs` nula.|  
+|`S_OK`|`EnumTypeDefs`úspěšně vrácena.|  
+|`S_FALSE`|Neexistují žádné tokeny výčet. V tom `pcTypeDefs` případě je nula.|  
   
 ## <a name="remarks"></a>Poznámky  
- Token TypeDef představuje typ, jako je třída nebo rozhraní, a také libovolný typ přidaný prostřednictvím mechanismu rozšiřitelnosti.  
+ TypeDef token představuje typ, jako je například třída nebo rozhraní, stejně jako jakýkoli typ přidán prostřednictvím mechanismu rozšiřitelnosti.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Hlavička:** Cor. h  
+ **Záhlaví:** Kor.h.  
   
- **Knihovna:** Zahrnuto jako prostředek v knihovně MsCorEE. dll  
+ **Knihovna:** Zahrnuto jako prostředek v souboru MsCorEE.dll  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [IMetaDataImport – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
 - [IMetaDataImport2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)

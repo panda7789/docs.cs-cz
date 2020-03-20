@@ -15,58 +15,58 @@ helpviewer_keywords:
 ms.assetid: 1e994de6-4628-459c-b967-b34be1e9fe4f
 topic_type:
 - apiref
-ms.openlocfilehash: 5d985e22ba77053127610445374b8c13ca6b97f1
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 3b8fd9876563bace52a6088747d1ca4ed26ea872
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74431701"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79175808"
 ---
 # <a name="imetadataemitdefinenestedtype-method"></a>IMetaDataEmit::DefineNestedType – metoda
-Vytvoří podpis metadat definice typu, vrátí token `mdTypeDef` pro daný typ a určí, že definovaný typ je členem typu, na který odkazuje parametr `tdEncloser`.  
+Vytvoří podpis metadat definice typu, vrátí `mdTypeDef` token pro tento typ a určuje, že definovaný typ je `tdEncloser` členem typu, na který parametr odkazuje.  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```cpp  
-HRESULT DefineNestedType (   
+HRESULT DefineNestedType (
     [in]  LPCWSTR     szTypeDef,  
-    [in]  DWORD       dwTypeDefFlags,   
-    [in]  mdToken     tkExtends,   
-    [in]  mdToken     rtkImplements[],   
-    [in]  mdTypeDef   tdEncloser,   
+    [in]  DWORD       dwTypeDefFlags,
+    [in]  mdToken     tkExtends,
+    [in]  mdToken     rtkImplements[],
+    [in]  mdTypeDef   tdEncloser,
     [out] mdTypeDef   *ptd  
 );  
 ```  
   
 ## <a name="parameters"></a>Parametry  
  `szTypeDef`  
- pro Název typu v kódování Unicode.  
+ [v] Název typu v Unicode.  
   
  `dwTypeDefFlags`  
- [in] `TypeDef` atributy. Toto je Bitová maska `CorTypeAttr` hodnot.  
+ [v] `TypeDef` atributy. Toto je bitová maska `CorTypeAttr` hodnot.  
   
  `tkExtends`  
- pro Token základní třídy. Toto je buď `mdTypeDef`, nebo token `mdTypeRef`.  
+ [v] Token základní třídy. Toto je `mdTypeDef` buď `mdTypeRef` token nebo.  
   
  `rtkImplements`[]  
- pro Pole tokenů, které určují rozhraní, které tato třída nebo rozhraní implementuje.  
+ [v] Pole tokenů, které určují rozhraní, které tato třída nebo rozhraní implementuje.  
   
  `tdEncloser`  
- pro Token ohraničujícího typu Poslední prvek pole musí být `mdTokenNil`.  
+ [v] Token ohraničujícího typu. Poslední prvek pole musí `mdTokenNil`být .  
   
  `ptd`  
- mimo Byl přiřazen token `mdTypeDef`.  
+ [out] Přiřazen `mdTypeDef` token.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Hlavička:** Cor. h  
+ **Záhlaví:** Kor.h.  
   
- **Knihovna:** Používá se jako prostředek v knihovně MSCorEE. dll.  
+ **Knihovna:** Používá se jako prostředek v souboru MSCorEE.dll  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [IMetaDataEmit – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)
 - [IMetaDataEmit2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-interface.md)

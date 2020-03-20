@@ -15,42 +15,42 @@ helpviewer_keywords:
 ms.assetid: dda867b5-1050-49ba-b01c-fcc83b7a5617
 topic_type:
 - apiref
-ms.openlocfilehash: 3f965ab215ff861c6df61de82dcbbea6b389c8da
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 3dd82588cf2dbf92fdda66fd7674c17ddc8b7306
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74426777"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79177193"
 ---
 # <a name="imetadataimportresetenum-method"></a>IMetaDataImport::ResetEnum – metoda
-Obnoví zadaný enumerátor na určenou pozici.  
+Obnoví zadaný čítač výčtu na zadanou pozici.  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```cpp  
 HRESULT ResetEnum (  
-   [in] HCORENUM    hEnum,   
+   [in] HCORENUM    hEnum,
    [in] ULONG       ulPos  
 );  
 ```  
   
 ## <a name="parameters"></a>Parametry  
  `hEnum`  
- pro Enumerátor, který má být resetován.  
+ [v] Čítač výčtu resetovat.  
   
  `ulPos`  
- pro Nová pozice, na kterou chcete umístit enumerátor.  
+ [v] Nové pozice, na které chcete umístit čítač výčtu.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Hlavička:** Cor. h  
+ **Záhlaví:** Kor.h.  
   
- **Knihovna:** Zahrnuto jako prostředek v knihovně MsCorEE. dll  
+ **Knihovna:** Zahrnuto jako prostředek v souboru MsCorEE.dll  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [IMetaDataImport – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
 - [IMetaDataImport2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)

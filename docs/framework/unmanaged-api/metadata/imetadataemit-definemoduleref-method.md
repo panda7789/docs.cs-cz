@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: f2833594-d90b-4a71-9a53-34b12470c64a
 topic_type:
 - apiref
-ms.openlocfilehash: c736eccfd5d05ec9b65e6ed26187e7c7b4387c5d
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 94261b7796166cf482a7de990551890e4722dd3b
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74431727"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79177739"
 ---
 # <a name="imetadataemitdefinemoduleref-method"></a>IMetaDataEmit::DefineModuleRef – metoda
 Vytvoří podpis metadat pro modul se zadaným názvem.  
@@ -28,29 +28,29 @@ Vytvoří podpis metadat pro modul se zadaným názvem.
 ## <a name="syntax"></a>Syntaxe  
   
 ```cpp  
-HRESULT DefineModuleRef (     
-    [in]  LPCWSTR           szName,   
-    [out] mdModuleRef       *pmur   
+HRESULT DefineModuleRef (
+    [in]  LPCWSTR           szName,
+    [out] mdModuleRef       *pmur
 );  
 ```  
   
 ## <a name="parameters"></a>Parametry  
  `szName`  
- pro Název dalšího souboru metadat, obvykle knihovna DLL. Toto je pouze název souboru. Nepoužívejte úplný název cesty.  
+ [v] Název jiného souboru metadat, obvykle DLL. Toto je pouze název souboru. Nepoužívejte úplný název cesty.  
   
  `pmur`  
- mimo Přiřazený token `mdModuleRef`.  
+ [out] Přiřazený `mdModuleRef` token.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Hlavička:** Cor. h  
+ **Záhlaví:** Kor.h.  
   
- **Knihovna:** Používá se jako prostředek v knihovně MSCorEE. dll.  
+ **Knihovna:** Používá se jako prostředek v souboru MSCorEE.dll  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [IMetaDataEmit – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)
 - [IMetaDataEmit2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-interface.md)

@@ -15,17 +15,17 @@ helpviewer_keywords:
 ms.assetid: b500a260-1d57-4953-95e1-c27063f7c8da
 topic_type:
 - apiref
-ms.openlocfilehash: e5940f229e86b46bb8c5d5b2f9920a8261359f65
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 129750644962cee3206b9e38cbeaa77d38dddd71
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74436406"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79176107"
 ---
 # <a name="iceegenaddsectionreloc-method"></a>ICeeGen::AddSectionReloc – metoda
-Přidá instrukci. přemístění do základu kódu.  
+Přidá .reloc instrukce základu kódu.  
   
- Tato metoda je zastaralá a neměla by se používat.  
+ Tato metoda je zastaralá a neměla by být použita.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -33,33 +33,33 @@ Přidá instrukci. přemístění do základu kódu.
 HRESULT AddSectionReloc (  
    [in] HCEESECTION            section,  
    [in] ULONG                  offset,  
-   [in] HCEESECTION            relativeTo,   
+   [in] HCEESECTION            relativeTo,
    [in] CeeSectionRelocType    relocType  
 );  
 ```  
   
 ## <a name="parameters"></a>Parametry  
  `section`  
- pro Část kódu v paměti, do které chcete přidat instrukci. přemístění.  
+ [v] Část kódu v paměti, do kterého chcete přidat instrukce .reloc.  
   
  `offset`  
- pro Posun oddílu  
+ [v] Posun oddílu.  
   
  `relativeTo`  
- pro Oddíl, na který `offset` odkazuje.  
+ [v] Část, na `offset` kterou se vztahuje.  
   
  `relocType`  
- pro Jedna z hodnot [CeeSectionRelocType –](../../../../docs/framework/unmanaged-api/metadata/ceesectionreloctype-enumeration.md) , která určuje druh instrukcí. přemístění, která se má přidat.  
+ [v] Jeden z [CeeSectionRelocType](../../../../docs/framework/unmanaged-api/metadata/ceesectionreloctype-enumeration.md) hodnoty označující druh .reloc instrukce přidat.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Hlavička:** Cor. h  
+ **Záhlaví:** Kor.h.  
   
- **Knihovna:** Používá se jako prostředek v knihovně MsCorEE. dll.  
+ **Knihovna:** Používá se jako prostředek v souboru MsCorEE.dll  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [ICeeGen – rozhraní](../../../../docs/framework/unmanaged-api/metadata/iceegen-interface.md)

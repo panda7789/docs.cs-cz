@@ -15,54 +15,54 @@ helpviewer_keywords:
 ms.assetid: 7dd14854-b756-4401-b167-88ca576dc8f0
 topic_type:
 - apiref
-ms.openlocfilehash: e6a732b98ae02ba2b273b45921b7de61ab4fd29f
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 9c4ed282e259aa46fc0cb0175214dc51d3d5fbee
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74432636"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79175886"
 ---
 # <a name="imetadataemitdefinecustomattribute-method"></a>IMetaDataEmit::DefineCustomAttribute – metoda
-Vytvoří definici pro vlastní atribut se zadaným podpisem metadat, který se má připojit k zadanému objektu, a získá token do této definice vlastního atributu.  
+Vytvoří definici vlastního atributu se zadaným podpisem metadat, který má být připojen k zadanému objektu, a získá token k této vlastní definici atributu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```cpp  
-HRESULT DefineCustomAttribute (   
-    [in]  mdToken     tkObj,   
-    [in]  mdToken     tkType,   
-    [in]  void const  *pCustomAttribute,   
-    [in]  ULONG       cbCustomAttribute,   
-    [out] mdCustomAttribute *pcv   
+HRESULT DefineCustomAttribute (
+    [in]  mdToken     tkObj,
+    [in]  mdToken     tkType,
+    [in]  void const  *pCustomAttribute,
+    [in]  ULONG       cbCustomAttribute,
+    [out] mdCustomAttribute *pcv
 );  
 ```  
   
 ## <a name="parameters"></a>Parametry  
  `tkObj`  
- pro Token pro položku vlastníka  
+ [v] Token pro položku vlastníka.  
   
  `tkType`  
- pro Token, který identifikuje vlastní atribut.  
+ [v] Token, který identifikuje vlastní atribut.  
   
  `pCustomAttribute`  
- pro Ukazatel na vlastní atribut.  
+ [v] Ukazatel na vlastní atribut.  
   
  `cbCustomAttribute`  
- pro Počet bajtů v `pCustomAttribute`.  
+ [v] Počet bajtů v `pCustomAttribute`.  
   
  `pcv`  
- mimo Byl přiřazen token `mdCustomAttribute`.  
+ [out] Přiřazen `mdCustomAttribute` token.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Hlavička:** Cor. h  
+ **Záhlaví:** Kor.h.  
   
- **Knihovna:** Používá se jako prostředek v knihovně MSCorEE. dll.  
+ **Knihovna:** Používá se jako prostředek v souboru MSCorEE.dll  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [IMetaDataEmit – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)
 - [IMetaDataEmit2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-interface.md)

@@ -9,138 +9,138 @@ helpviewer_keywords:
 - navigation topologies [WPF]
 - dynamically-generated topology
 ms.assetid: 5d5ee837-629a-4933-869a-186dc22ac43d
-ms.openlocfilehash: 5679bac06b87b3c4e50cbc4a238d7daf3e33a564
-ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
+ms.openlocfilehash: 08f6342095706e5ffe9479f5236457d21474152a
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75636273"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79174196"
 ---
 # <a name="navigation-topologies-overview"></a>Přehled topologií navigace
-<a name="introduction"></a>Tento přehled poskytuje Úvod do topologií navigace v WPF. Následně jsou popsány tři běžné topologie navigace s ukázkami.  
+<a name="introduction"></a>Tento přehled poskytuje úvod do topologie navigace v WPF. Následně jsou diskutovány tři běžné navigační topologie se vzorky.  
   
 > [!NOTE]
-> Před čtením tohoto tématu byste měli být obeznámeni s konceptem strukturované navigace ve WPF pomocí funkcí stránky. Další informace o obou těchto tématech najdete v tématu [Přehled strukturované navigace](structured-navigation-overview.md).  
+> Před přečtením tohoto tématu byste měli být obeznámeni s konceptem strukturované navigace v WPF pomocí funkcí stránky. Další informace o obou těchto tématech naleznete v tématu [Přehled strukturované navigace](structured-navigation-overview.md).  
   
  Toto téma obsahuje následující oddíly:  
   
-- [Topologie navigace](#Navigation_Topologies)  
+- [Navigační topologie](#Navigation_Topologies)  
   
 - [Strukturované navigační topologie](#Structured_Navigation_Topologies)  
   
 - [Navigace přes pevnou lineární topologii](#Navigation_over_a_Fixed_Linear_Topology)  
   
-- [Dynamická navigace nad pevnou hierarchickou topologií](#Dynamic_Navigation_over_a_Fixed_Hierarchical_Topology)  
+- [Dynamická navigace přes pevnou hierarchickou topologii](#Dynamic_Navigation_over_a_Fixed_Hierarchical_Topology)  
   
-- [Navigace prostřednictvím dynamicky generované topologie](#Navigation_over_a_Dynamically_Generated_Topology)  
+- [Navigace přes dynamicky generovanou topologii](#Navigation_over_a_Dynamically_Generated_Topology)  
   
-<a name="Navigation_Topologies"></a>   
-## <a name="navigation-topologies"></a>Topologie navigace  
- V WPF se navigace obvykle skládá ze stránek (<xref:System.Windows.Controls.Page>) s hypertextovými odkazy (<xref:System.Windows.Documents.Hyperlink>), které po kliknutí přejdou na jiné stránky. Stránky, na které se navigují, se identifikují pomocí identifikátorů URI (Uniform Resource Identifier) (viz [identifikátory URI balíčku v WPF](pack-uris-in-wpf.md)). Vezměte v úvahu následující jednoduchý příklad, který ukazuje stránky, hypertextové odkazy a identifikátory URI (Uniform Resource Identifier):  
+<a name="Navigation_Topologies"></a>
+## <a name="navigation-topologies"></a>Navigační topologie  
+ Ve WPF se navigace obvykle skládá<xref:System.Windows.Controls.Page>ze stránek<xref:System.Windows.Documents.Hyperlink>( ) s hypertextovými odkazy ( ), které po klepnutí přecházejí na jiné stránky. Stránky, na které se naviguje, jsou označeny identifikátory prostředků (URI) (viz [Balení identifikátorů URI v wpf).](pack-uris-in-wpf.md) Vezměte v úvahu následující jednoduchý příklad, který zobrazuje stránky, hypertextové odkazy a jednotné identifikátory prostředků (URI):  
   
  [!code-xaml[NavigationTopologiesOverviewSnippets#Page1](~/samples/snippets/csharp/VS_Snippets_Wpf/NavigationTopologiesOverviewSnippets/CS/Page1.xaml#page1)]  
   
  [!code-xaml[NavigationTopologiesOverviewSnippets#Page2](~/samples/snippets/csharp/VS_Snippets_Wpf/NavigationTopologiesOverviewSnippets/CS/Page2.xaml#page2)]  
   
- Tyto stránky jsou uspořádány do *navigační topologie* , jejíž struktura je určena podle toho, jak můžete mezi stránkami přecházet. Tato konkrétní navigační topologie je vhodná v jednoduchých scénářích, i když navigace může vyžadovat složitější topologie, některé z nich lze definovat pouze v případě, že je aplikace spuštěna.  
+ Tyto stránky jsou uspořádány v *navigační topologii,* jejíž struktura je určena tím, jak můžete procházet mezi stránkami. Tato konkrétní navigační topologie je vhodná v jednoduchých scénářích, i když navigace může vyžadovat složitější topologie, z nichž některé lze definovat pouze v případě, že je spuštěna aplikace.  
   
- V tomto tématu se dozvíte o třech běžných topologiích navigace: *pevné lineární*, *pevné hierarchické*a *dynamicky generované*. Každá navigační topologie je znázorněna s ukázkou, která má [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] jako na následujícím obrázku:  
+ Toto téma popisuje tři běžné navigační topologie: *pevné lineární*, *pevné hierarchické*a *dynamicky generované*. Každá navigační topologie je demonstrována [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] se vzorkem, který má podobný ten, který je znázorněn na následujícím obrázku:  
   
- ![Stránky úloh s datovými položkami a navigačními tlačítky.](./media/navigation-topologies-overview/navigation-topology-data-items.png)  
+ ![Stránky úkolů s datovými položkami a navigačními tlačítky.](./media/navigation-topologies-overview/navigation-topology-data-items.png)  
   
-<a name="Structured_Navigation_Topologies"></a>   
+<a name="Structured_Navigation_Topologies"></a>
 ## <a name="structured-navigation-topologies"></a>Strukturované navigační topologie  
- Existují dva široké typy topologií navigace:  
+ Existují dva široké typy navigačních topologie:  
   
-- **Pevná topologie**: definována v době kompilace a v době běhu se nemění. Pevné topologie jsou užitečné pro navigaci prostřednictvím pevné sekvence stránek lineárním nebo hierarchickém řazením.  
+- **Pevná topologie**: definována v době kompilace a nemění se za běhu. Pevné topologie jsou užitečné pro navigaci přes pevnou sekvenci stránek v lineárním nebo hierarchickém pořadí.  
   
-- **Dynamická topologie**: definuje se v době běhu na základě vstupu, který se shromažďuje od uživatele, aplikace nebo systému. Dynamické topologie jsou užitečné, když lze stránky procházet v různých sekvencích.  
+- **Dynamická topologie**: definována za běhu na základě vstupu, který je shromážděn od uživatele, aplikace nebo systému. Dynamické topologie jsou užitečné, když stránky lze procházet v různých sekvencích.  
   
  I když je možné vytvořit navigační topologie pomocí stránek, ukázky používají funkce stránky, protože poskytují další podporu, která zjednodušuje podporu pro předávání a vracení dat prostřednictvím stránek topologie.  
   
-<a name="Navigation_over_a_Fixed_Linear_Topology"></a>   
+<a name="Navigation_over_a_Fixed_Linear_Topology"></a>
 ## <a name="navigation-over-a-fixed-linear-topology"></a>Navigace přes pevnou lineární topologii  
- Pevná lineární topologie je podobná struktuře průvodce, který obsahuje jednu nebo více stránek průvodce, které jsou v pevné sekvenci. Následující obrázek ukazuje strukturu vysoké úrovně a tok průvodce s pevnou lineární topologií:  
+ Pevná lineární topologie je obdobou struktury průvodce, který má jednu nebo více stránek průvodce, které jsou navigovány v pevném pořadí. Následující obrázek znázorňuje strukturu vysoké úrovně a tok průvodce s pevnou lineární topologii:  
   
  ![Diagram, který zobrazuje pevnou lineární topologii.](./media/navigation-topologies-overview/navigation-topology-fixed-linear.png)  
   
- Typické chování pro navigaci přes pevnou lineární topologii zahrnuje následující:  
+ Typické chování pro navigaci přes pevnou lineární topologii patří následující:  
   
-- Přechod z volající stránky na stránku spouštěče, která inicializuje průvodce a přejde na první stránku průvodce. Stránka spouštěče ([!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)]bez <xref:System.Windows.Navigation.PageFunction%601>) není vyžadována, protože volající stránka může zavolat první stránku průvodce přímo. Použití stránky spouštěče může ale zjednodušit inicializaci průvodce, zejména v případě, že je inicializace složitá.  
+- Přechod ze stránky volajícího na stránku spouštěče, která inicializuje průvodce a přejde na první stránku průvodce. Stránka spouštěče [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)](a <xref:System.Windows.Navigation.PageFunction%601>-less) není vyžadována, protože volající stránka může volat přímo první stránku průvodce. Použití stránky spouštěče však může zjednodušit inicializaci průvodce, zejména pokud je inicializace složitá.  
   
-- Uživatelé mohou procházet mezi stránkami pomocí tlačítek zpět a vpřed (nebo hypertextových odkazů).  
+- Uživatelé mohou přecházet mezi stránkami pomocí tlačítek Zpět a Vpřed (nebo hypertextových odkazů).  
   
 - Uživatelé mohou procházet mezi stránkami pomocí deníku.  
   
-- Uživatelé mohou zrušit průvodce z libovolné stránky průvodce stisknutím tlačítka zrušit.  
+- Uživatelé mohou zrušit průvodce z libovolné stránky průvodce stisknutím tlačítka Storno.  
   
-- Kliknutím na tlačítko Dokončit můžete uživatelům přijmout Průvodce na poslední stránce průvodce.  
+- Uživatelé mohou průvodce přijmout na poslední stránce průvodce stisknutím tlačítka Dokončit.  
   
-- Pokud se Průvodce zruší, průvodce vrátí příslušný výsledek a nevrátí žádná data.  
+- Pokud je průvodce zrušen, vrátí odpovídající výsledek a nevrátí žádná data.  
   
-- Pokud uživatel Průvodce přijme, průvodce vrátí příslušný výsledek a vrátí shromážděná data.  
+- Pokud uživatel přijme průvodce, vrátí odpovídající výsledek a vrátí shromážděná data.  
   
-- Po dokončení průvodce (přijatý nebo zrušený) se z deníku odeberou stránky, které průvodce obsahuje. Tím se udržuje všechny instance průvodce izolované, takže se vyhnete potenciálním anomáliím dat nebo stavu.  
+- Po dokončení průvodce (přijato nebo zrušeno) budou stránky, které průvodce obsahuje, odebrány z deníku. To udržuje každou instanci průvodce izolované, čímž se zabrání potenciální data nebo státní anomálie.  
   
-<a name="Dynamic_Navigation_over_a_Fixed_Hierarchical_Topology"></a>   
-## <a name="dynamic-navigation-over-a-fixed-hierarchical-topology"></a>Dynamická navigace nad pevnou hierarchickou topologií  
- V některých aplikacích stránky umožňují navigaci na dvě nebo více dalších stránek, jak je znázorněno na následujícím obrázku: 
+<a name="Dynamic_Navigation_over_a_Fixed_Hierarchical_Topology"></a>
+## <a name="dynamic-navigation-over-a-fixed-hierarchical-topology"></a>Dynamická navigace přes pevnou hierarchickou topologii  
+ V některých aplikacích stránky umožňují navigaci na dvě nebo více dalších stránek, jak je znázorněno na následujícím obrázku:
   
  ![Diagram, který zobrazuje stránku, která může přejít na více stránek.](./media/navigation-topologies-overview/navigation-topology-multiple-pages.png)  
   
- Tato struktura je známá jako pevná hierarchická topologie a pořadí, ve kterém je hierarchie procházena, je často určeno v době spuštění aplikací nebo uživatelem. V době spuštění každá stránka v hierarchii, která umožňuje navigaci na dvě nebo více dalších stránek, shromažďuje data potřebná k určení stránky, na kterou se má přejít. Následující obrázek znázorňuje jednu z několika možných navigačních sekvencí v závislosti na předchozím obrázku:  
+ Tato struktura se označuje jako pevná hierarchická topologie a pořadí, ve kterém je hierarchie provázána, je často určeno za běhu aplikací nebo uživatelem. Za běhu každá stránka v hierarchii, která umožňuje navigaci na dvě nebo více dalších stránek, shromažďuje data potřebná k určení stránky, na kterou chcete přejít. Následující obrázek znázorňuje jednu z několika možných navigačních sekvencí na základě předchozího obrázku:  
   
- ![Diagram, který zobrazuje možnou navigační sekvenci.](./media/navigation-topologies-overview/navigation-topology-fixed-hierarchical.png)  
+ ![Diagram, který ukazuje možnou navigační sekvenci.](./media/navigation-topologies-overview/navigation-topology-fixed-hierarchical.png)  
   
- I když je pořadí, ve kterém se stránky v pevné hierarchické struktuře procházejí, určuje za běhu, činnost koncového uživatele je stejná jako činnost koncového uživatele pro pevnou lineární topologii:  
+ I když pořadí, ve kterém jsou stránky v pevné hierarchické struktuře navigovány, je určeno za běhu, uživatelské prostředí je stejné jako uživatelské prostředí pro pevnou lineární topologii:  
   
-- Přechod z volající stránky na stránku spouštěče, která inicializuje průvodce a přejde na první stránku průvodce. Stránka spouštěče ([!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)]bez <xref:System.Windows.Navigation.PageFunction%601>) není vyžadována, protože volající stránka může zavolat první stránku průvodce přímo. Použití stránky spouštěče může ale zjednodušit inicializaci průvodce, zejména v případě, že je inicializace složitá.  
+- Přechod ze stránky volajícího na stránku spouštěče, která inicializuje průvodce a přejde na první stránku průvodce. Stránka spouštěče [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)](a <xref:System.Windows.Navigation.PageFunction%601>-less) není vyžadována, protože volající stránka může volat přímo první stránku průvodce. Použití stránky spouštěče však může zjednodušit inicializaci průvodce, zejména pokud je inicializace složitá.  
   
-- Uživatelé mohou procházet mezi stránkami pomocí tlačítek zpět a vpřed (nebo hypertextových odkazů).  
+- Uživatelé mohou přecházet mezi stránkami pomocí tlačítek Zpět a Vpřed (nebo hypertextových odkazů).  
   
 - Uživatelé mohou procházet mezi stránkami pomocí deníku.  
   
-- Uživatelé mohou navigační sekvenci změnit, pokud procházejí zpět prostřednictvím deníku.  
+- Uživatelé mohou změnit navigační pořadí, pokud projdou zpět deníkem.  
   
-- Uživatelé mohou zrušit průvodce z libovolné stránky průvodce stisknutím tlačítka zrušit.  
+- Uživatelé mohou zrušit průvodce z libovolné stránky průvodce stisknutím tlačítka Storno.  
   
-- Kliknutím na tlačítko Dokončit můžete uživatelům přijmout Průvodce na poslední stránce průvodce.  
+- Uživatelé mohou průvodce přijmout na poslední stránce průvodce stisknutím tlačítka Dokončit.  
   
-- Pokud se Průvodce zruší, průvodce vrátí příslušný výsledek a nevrátí žádná data.  
+- Pokud je průvodce zrušen, vrátí odpovídající výsledek a nevrátí žádná data.  
   
-- Pokud uživatel Průvodce přijme, průvodce vrátí příslušný výsledek a vrátí shromážděná data.  
+- Pokud uživatel přijme průvodce, vrátí odpovídající výsledek a vrátí shromážděná data.  
   
-- Po dokončení průvodce (přijatý nebo zrušený) se z deníku odeberou stránky, které průvodce obsahuje. Tím se udržuje všechny instance průvodce izolované, takže se vyhnete potenciálním anomáliím dat nebo stavu.  
+- Po dokončení průvodce (přijato nebo zrušeno) budou stránky, které průvodce obsahuje, odebrány z deníku. To udržuje každou instanci průvodce izolované, čímž se zabrání potenciální data nebo státní anomálie.  
   
-<a name="Navigation_over_a_Dynamically_Generated_Topology"></a>   
-## <a name="navigation-over-a-dynamically-generated-topology"></a>Navigace prostřednictvím dynamicky generované topologie  
- V některých aplikacích je pořadí, ve kterém se dvě nebo více stránek prochází, dá určit jenom za běhu, ať už podle uživatele, aplikace nebo externích dat. Následující obrázek znázorňuje sadu stránek s neurčenou navigační sekvencí:  
+<a name="Navigation_over_a_Dynamically_Generated_Topology"></a>
+## <a name="navigation-over-a-dynamically-generated-topology"></a>Navigace přes dynamicky generovanou topologii  
+ V některých aplikacích pořadí, ve kterém jsou procházeny dvě nebo více stránek lze určit pouze za běhu, ať už uživatelem, aplikace nebo externí data. Následující obrázek znázorňuje sadu stránek s neurčenou navigační sekvencí:  
   
  ![Sada stránek s neurčenou navigační sekvencí.](./media/navigation-topologies-overview/navigation-topology-dynamically-generated.png)  
   
- Následující obrázek znázorňuje navigační sekvenci, kterou uživatel zvolil v době běhu:  
+ Následující obrázek znázorňuje navigační sekvenci, která byla vybrána uživatelem za běhu:  
   
- ![Diagram, který zobrazuje navigační sekvenci zvolenou v době běhu.](./media/navigation-topologies-overview/navigation-topology-sequence-chosen-run-time.png)  
+ ![Diagram, který zobrazuje navigační sekvenci zvolenou za běhu.](./media/navigation-topologies-overview/navigation-topology-sequence-chosen-run-time.png)  
   
- Navigační sekvence je označována jako dynamicky generovaná topologie. Pro uživatele stejně jako u ostatních topologií navigace je prostředí uživatele stejné jako u předchozích topologií:  
+ Navigační sekvence se označuje jako dynamicky generovaná topologie. Pro uživatele, stejně jako u ostatních topologie navigace, uživatelské prostředí je stejné jako pro předchozí topologie:  
   
-- Přechod z volající stránky na stránku spouštěče, která inicializuje průvodce a přejde na první stránku průvodce. Stránka spouštěče ([!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)]bez <xref:System.Windows.Navigation.PageFunction%601>) není vyžadována, protože volající stránka může zavolat první stránku průvodce přímo. Použití stránky spouštěče může ale zjednodušit inicializaci průvodce, zejména v případě, že je inicializace složitá.  
+- Přechod ze stránky volajícího na stránku spouštěče, která inicializuje průvodce a přejde na první stránku průvodce. Stránka spouštěče [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)](a <xref:System.Windows.Navigation.PageFunction%601>-less) není vyžadována, protože volající stránka může volat přímo první stránku průvodce. Použití stránky spouštěče však může zjednodušit inicializaci průvodce, zejména pokud je inicializace složitá.  
   
-- Uživatelé mohou procházet mezi stránkami pomocí tlačítek zpět a vpřed (nebo hypertextových odkazů).  
+- Uživatelé mohou přecházet mezi stránkami pomocí tlačítek Zpět a Vpřed (nebo hypertextových odkazů).  
   
 - Uživatelé mohou procházet mezi stránkami pomocí deníku.  
   
-- Uživatelé mohou zrušit průvodce z libovolné stránky průvodce stisknutím tlačítka zrušit.  
+- Uživatelé mohou zrušit průvodce z libovolné stránky průvodce stisknutím tlačítka Storno.  
   
-- Kliknutím na tlačítko Dokončit můžete uživatelům přijmout Průvodce na poslední stránce průvodce.  
+- Uživatelé mohou průvodce přijmout na poslední stránce průvodce stisknutím tlačítka Dokončit.  
   
-- Pokud se Průvodce zruší, průvodce vrátí příslušný výsledek a nevrátí žádná data.  
+- Pokud je průvodce zrušen, vrátí odpovídající výsledek a nevrátí žádná data.  
   
-- Pokud uživatel Průvodce přijme, průvodce vrátí příslušný výsledek a vrátí shromážděná data.  
+- Pokud uživatel přijme průvodce, vrátí odpovídající výsledek a vrátí shromážděná data.  
   
-- Po dokončení průvodce (přijatý nebo zrušený) se z deníku odeberou stránky, které průvodce obsahuje. Tím se udržuje všechny instance průvodce izolované, takže se vyhnete potenciálním anomáliím dat nebo stavu.  
+- Po dokončení průvodce (přijato nebo zrušeno) budou stránky, které průvodce obsahuje, odebrány z deníku. To udržuje každou instanci průvodce izolované, čímž se zabrání potenciální data nebo státní anomálie.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Controls.Page>
 - <xref:System.Windows.Navigation.PageFunction%601>

@@ -14,15 +14,15 @@ helpviewer_keywords:
 ms.assetid: dbade6c9-9d26-4a79-9fd2-46108edd12d7
 topic_type:
 - apiref
-ms.openlocfilehash: a34648bece3b14d6175168f45916ca04aeeef71d
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: ebaab57b647250823443b48d9e45921036372d5e
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73109247"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79176601"
 ---
 # <a name="asm_display_flags-enumeration"></a>ASM_DISPLAY_FLAGS – výčet
-Označuje verzi, sestavení, jazykovou verzi, podpis atd. pro sestavení, jejichž zobrazovaný název bude načten metodou [IAssemblyName::](iassemblyname-getdisplayname-method.md) GetDisplayName.  
+Označuje verzi, sestavení, jazykovou verzi, podpis a tak dále, sestavení, jehož zobrazovaný název bude načten metodou [IAssemblyName::GetDisplayName.](iassemblyname-getdisplayname-method.md)  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,29 +39,29 @@ typedef enum {
     ASM_DISPLAYF_RETARGET                = 0x80,  
     ASM_DISPLAYF_CONFIG_MASK             = 0x100,  
     ASM_DISPLAYF_MVID                    = 0x200,  
-    ASM_DISPLAYF_FULL                    =   
-                      ASM_DISPLAYF_VERSION           |   
-                      ASM_DISPLAYF_CULTURE           |   
-                      ASM_DISPLAYF_PUBLIC_KEY_TOKEN  |   
-                      ASM_DISPLAYF_RETARGET          |   
+    ASM_DISPLAYF_FULL                    =
+                      ASM_DISPLAYF_VERSION           |
+                      ASM_DISPLAYF_CULTURE           |
+                      ASM_DISPLAYF_PUBLIC_KEY_TOKEN  |
+                      ASM_DISPLAYF_RETARGET          |
                       ASM_DISPLAYF_PROCESSORARCHITECTURE  
   
 } ASM_DISPLAY_FLAGS;  
 ```  
   
 ## <a name="remarks"></a>Poznámky  
- `ASM_DISPLAYF_FULL` odráží všechny změny, které byly provedeny ve verzi objektu [IAssemblyName](iassemblyname-interface.md) . Nepředpokládá, že vrácená hodnota je neměnná.  
+ `ASM_DISPLAYF_FULL`odráží všechny změny provedené ve verzi objektu [IAssemblyName.](iassemblyname-interface.md) Nepředpokládejte, že vrácená hodnota je neměnná.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
+ **Platformy:** Viz [Systémové požadavky](../../get-started/system-requirements.md).  
   
- **Hlavička:** Fusion. h  
+ **Záhlaví:** Fusion.h  
   
- **Knihovna:** Zahrnuto jako prostředek v knihovně MsCorEE. dll  
+ **Knihovna:** Zahrnuto jako prostředek v souboru MsCorEE.dll  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [IAssemblyName – rozhraní](iassemblyname-interface.md)
-- [Výčty pro fúze](fusion-enumerations.md)
+- [Výčty fúzí](fusion-enumerations.md)

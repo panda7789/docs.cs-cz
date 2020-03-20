@@ -2,12 +2,12 @@
 title: Diagnostická trasování
 ms.date: 03/30/2017
 ms.assetid: 28e77a63-d20d-4b6a-9caf-ddad86550427
-ms.openlocfilehash: 56f79fb9140785188996cc413eca4dd530037ccd
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 76712710bf42f498ba859c7b1cd18a261387078c
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61934794"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79174417"
 ---
 # <a name="diagnostic-traces"></a>Diagnostická trasování
 Trasování jsou publikování určitých zpráv, které jsou generovány během spuštění aplikace. Při použití trasování, musí mít mechanismus pro shromažďování a zaznamenávání zpráv, které jsou odeslány. Trasovací zprávy jsou přijímány naslouchací procesy. Účelem tohoto naslouchací proces je shromažďování, ukládání a směrovat trasovací zprávy. Posluchači přímý výstup trasování příslušný cíli, jako je protokol, okno nebo textový soubor.  
@@ -23,8 +23,8 @@ Trasování jsou publikování určitých zpráv, které jsou generovány během
      <sources>  
           <source name="System.Transactions" switchValue="Warning">  
                <listeners>  
-                    <add name="tx"   
-                     type="System.Diagnostics.XmlWriterTraceListener"   
+                    <add name="tx"
+                     type="System.Diagnostics.XmlWriterTraceListener"
                      initializeData= "tx.log" />  
                </listeners>  
           </source>  
@@ -33,40 +33,40 @@ Trasování jsou publikování určitých zpráv, které jsou generovány během
 </configuration>  
 ```  
   
- <xref:System.Transactions> trasování jsou zapsány do zdroje s názvem "System.Transactions". Můžete použít `add` Chcete-li určit název a typ naslouchací proces trasování, kterou chcete použít. V konfiguraci našeho příkladu jsme s názvem "tx" naslouchací proces a přidat standardní naslouchací proces trasování rozhraní .NET Framework (<xref:System.Diagnostics.XmlWriterTraceListener>) jako typ chceme použít. Použití `initializeData` nastavit název souboru protokolu pro tuto naslouchací proces. Kromě toho můžete nahradit úplná cesta k souboru jednoduchý název.  
+ <xref:System.Transactions>trasování jsou zapsány do zdroje s názvem "System.Transactions". Můžete použít `add` Chcete-li určit název a typ naslouchací proces trasování, kterou chcete použít. V konfiguraci našeho příkladu jsme s názvem "tx" naslouchací proces a přidat standardní naslouchací proces trasování rozhraní .NET Framework (<xref:System.Diagnostics.XmlWriterTraceListener>) jako typ chceme použít. Použití `initializeData` nastavit název souboru protokolu pro tuto naslouchací proces. Kromě toho můžete nahradit úplná cesta k souboru jednoduchý název.  
   
  Každý typ zprávy trasování je přiřazena úroveň označuje její stupeň závažnosti. Úroveň trasování app domény je rovna nebo nižší než úroveň typu události, je vygenerována tuto zprávu. Úroveň trasování řídí `switchValue` nastavení v konfiguračním souboru. Úrovně, které jsou přidruženy k diagnostiky trasovací zprávy jsou definovány v následující tabulce.  
   
 |Úroveň trasování|Popis|  
 |-----------------|-----------------|  
-|Kritická|Došlo k závažné chyby, jako je následující:<br /><br /> -Chybu, která může způsobit okamžité ztrátu v uživatelské funkce.<br />-Událost, která musí správce akci, aby nedošlo ke ztrátě funkčnosti.<br />– Kód přestane reagovat.<br />-Tuto úroveň trasování může také poskytnout dostatek kontext k interpretaci dalších důležitých trasování. To vám mohou pomoci identifikovat sekvence operací, což vedlo k závažné chybě.|  
+|Kritická|Došlo k závažné chyby, jako je následující:<br /><br /> - Chyba, která může způsobit okamžitou ztrátu funkčnosti uživatele.<br />- Událost, která vyžaduje, aby správce přijal akci, aby nedošlo ke ztrátě funkčnosti.<br />- Kód visí.<br />- Tato úroveň trasování může také poskytnout dostatečný kontext pro interpretaci jiných kritických trasování. To vám mohou pomoci identifikovat sekvence operací, což vedlo k závažné chybě.|  
 |Chyba|Došlo k chybě (například neplatná konfigurace nebo v síti chování) může vést ke ztrátě funkčnosti uživatele.|  
 |Upozornění|Existuje podmínka, který lze následně vést k chybě nebo kritické chyby (například přidělení nedaří nebo blíží k omezení). Normální zpracování chyb z uživatelského kódu (například transakce byla přerušena, časové limity, ověření se nezdařilo) můžete také generovat upozornění.|  
-|Informace o|Zprávy, které jsou užitečné pro sledování a diagnostiku stavu systému, měření výkonu nebo profilování jsou generovány. Ty mohou zahrnovat transakce a zařazení životnost události, například transakcí vytváření nebo potvrzené překračování významné hranice nebo přidělování významných zdrojů. Vývojáři mohou využít pak tyto informace pro správu výkon a plánování kapacity.|  
+|Informace|Zprávy, které jsou užitečné pro sledování a diagnostiku stavu systému, měření výkonu nebo profilování jsou generovány. Ty mohou zahrnovat transakce a zařazení životnost události, například transakcí vytváření nebo potvrzené překračování významné hranice nebo přidělování významných zdrojů. Vývojáři mohou využít pak tyto informace pro správu výkon a plánování kapacity.|  
   
 ## <a name="trace-codes"></a>Trasovací kódy  
- V následující tabulce jsou uvedeny kódy trasování, které jsou generovány <xref:System.Transactions> infrastruktury. Jsou zahrnuty v tabulce Kód identifikátor trasování <xref:System.Diagnostics.EventTypeFilter.EventType%2A> výčet úrovní trasování a doplňující data obsažená v **TraceRecord** pro trasování. Kromě toho je také uložena odpovídající úroveň trasování pro trasování v **TraceRecord**.  
+ V následující tabulce jsou uvedeny kódy trasování, které jsou generovány <xref:System.Transactions> infrastruktury. Součástí tabulky jsou identifikátor kódu trasování, <xref:System.Diagnostics.EventTypeFilter.EventType%2A> úroveň výčtu pro trasování a další data obsažená v **TraceRecord** pro trasování. Kromě toho odpovídající úroveň trasování je také uložen a **TraceRecord**.  
   
 |TraceCode|Typ události|Doplňující data v TraceRecord|  
 |---------------|---------------|-------------------------------|  
-|TransactionCreated|Informace o|TransactionTraceId|  
-|TransactionPromoted|Informace o|Místní TransactionTraceId distribuované TransactionTraceId|  
-|EnlistmentCreated|Informace o|TransactionTraceId, EnlistmentTraceId, EnlistmentType (spotřeby volatile), EnlistmentOptions|  
+|TransactionCreated|Informace|TransactionTraceId|  
+|TransactionPromoted|Informace|Místní TransactionTraceId distribuované TransactionTraceId|  
+|EnlistmentCreated|Informace|TransactionTraceId, EnlistmentTraceId, EnlistmentType (spotřeby volatile), EnlistmentOptions|  
 |EnlistmentCallbackNegative|Upozornění|TransactionTraceId, EnlistmentTraceId,<br /><br /> Zpětné volání (forcerollback/bylo přerušeno/indoubt)|  
 |TransactionRollbackCalled|Upozornění|TransactionTraceId|  
 |TransactionAborted|Upozornění|TransactionTraceId|  
 |TransactionInDoubt|Upozornění|TransactionTraceId|  
-|TransactionScopeCreated|Informace o|TransactionScopeResult, což může být následující:<br /><br /> -Novou transakci.<br />-Transakce předána.<br />-Závislé transakce předána.<br />-Pomocí aktuální transakce.<br />-Žádné transakce.<br /><br /> nové aktuální TransactionTraceId|  
-|TransactionScopeDisposed|Informace o|Transactiontraceid jako obor "očekáván" aktuální transakce.|  
-|TransactionScopeIncomplete|Upozornění|Transactiontraceid jako obor "očekáván" aktuální transakce.|  
-|TransactionScopeNestedIncorrectly|Upozornění|Transactiontraceid jako obor "očekáván" aktuální transakce.|  
+|TransactionScopeCreated|Informace|TransactionScopeResult, což může být následující:<br /><br /> - Nová transakce.<br />- Transakce proběhla.<br />- Závislá transakce byla předána.<br />- Používám aktuální transakci.<br />- Žádná transakce.<br /><br /> nové aktuální TransactionTraceId|  
+|TransactionScopeDisposed|Informace|TransactionTraceId "očekávané" aktuální transakce oboru.|  
+|TransactionScopeIncomplete|Upozornění|TransactionTraceId "očekávané" aktuální transakce oboru.|  
+|TransactionScopeNestedIncorrectly|Upozornění|TransactionTraceId "očekávané" aktuální transakce oboru.|  
 |TransactionScopeCurrentTransactionChanged|Upozornění|Původní aktuální TransactionTraceId ostatní TransactionTraceId|  
-|TransactionScopeTimeout|Upozornění|Transactiontraceid jako obor "očekáván" aktuální transakce.|  
-|DependentCloneCreated|Informace o|TransactionTraceId typ závislé transakce vytvořen (RollbackIfNotComplete/BlockCommitUntilComplete)|  
-|DependentCloneComplete|Informace o|TransactionTraceId|  
-|RecoveryComplete|Informace o|Identifikátor GUID správce prostředků (z base)|  
-|Reenlist|Informace o|Identifikátor GUID správce prostředků (z base)|  
-|TransactionSerialized|Informace o|TransactionTraceId.|  
+|TransactionScopeTimeout|Upozornění|TransactionTraceId "očekávané" aktuální transakce oboru.|  
+|DependentCloneCreated|Informace|TransactionTraceId typ závislé transakce vytvořen (RollbackIfNotComplete/BlockCommitUntilComplete)|  
+|DependentCloneComplete|Informace|TransactionTraceId|  
+|RecoveryComplete|Informace|Identifikátor GUID správce prostředků (z base)|  
+|Reenlist|Informace|Identifikátor GUID správce prostředků (z base)|  
+|TransactionSerialized|Informace|TransactionTraceId.|  
 |TransactionException|Chyba|Zpráva o výjimce|  
 |InvalidOperationException|Chyba|Zpráva o výjimce|  
 |InternalError|Kritická|Zpráva o výjimce|  
@@ -134,4 +134,4 @@ Trasování jsou publikování určitých zpráv, které jsou generovány během
  `</ResourceManagerId>`  
   
 ## <a name="security-issues-for-tracing"></a>Potíže se zabezpečením pro trasování  
- Při jako správce zapnutí trasování, citlivými informacemi můžou zapíšou do protokolu trasování, který je veřejně zobrazitelné ve výchozím nastavení. Zmírnit všechny možné bezpečnostní riziko, měli byste zvážit ukládání protokol trasování v zabezpečeném umístění řídí sdílené složky a souboru systému přístupová oprávnění.
+ Pokud jako správce zapnete trasování, mohou být citlivé informace zapsány do protokolu trasování, který je ve výchozím nastavení veřejně zobrazitelný. Chcete-li zmírnit případné ohrožení zabezpečení, měli byste zvážit uložení protokolu trasování na zabezpečeném místě řízeném oprávněními pro sdílení a přístup k systému souborů.

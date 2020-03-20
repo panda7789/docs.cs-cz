@@ -1,33 +1,33 @@
 ---
-title: Netypový požadavek-odpověď
+title: Netypováodpověď na vyžádání
 ms.date: 03/30/2017
 ms.assetid: 0bf0f9d9-7caf-4d3d-8c9e-2d468cca16a5
-ms.openlocfilehash: ba1caddd8f37a37df63e2710883f3096e0989fcd
-ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
+ms.openlocfilehash: a526837b9bccf7a6287972e482a189a53ecadaf8
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74715868"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79183292"
 ---
 # <a name="untyped-requestreply"></a>Netypový požadavek/odpověď
-Tento příklad ukazuje, jak definovat kontrakty operací, které používají třídu zprávy.  
+Tato ukázka ukazuje, jak definovat operace smlouvy, které používají Message třídy.  
   
 > [!NOTE]
-> Postup nastavení a pokyny pro sestavení pro tuto ukázku najdete na konci tohoto tématu.  
+> Postup instalace a pokyny k sestavení pro tuto ukázku jsou umístěny na konci tohoto tématu.  
   
- Tato ukázka je založena na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md). Kontrakt služby definuje jednu operaci, která jako argument přijímá typ zprávy, a vrátí zprávu. Operace shromáždí všechna požadovaná data, aby vypočítala součet z těla zprávy, a pak odešle součet jako text v návratové zprávě.  
+ Tato ukázka je založena na [začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md). Servisní smlouva definuje jednu operaci, která přijímá typ zprávy jako argument a vrací zprávu. Operace shromažďuje všechna požadovaná data pro výpočet součtu z těla zprávy a potom odešle součet jako text v návratové zprávě.  
   
 ```csharp
 [OperationContract(Action = CalculatorService.RequestAction, ReplyAction = CalculatorService.ReplyAction)]  
 Message ComputeSum(Message request);  
 ```  
   
- Ve službě operace načte pole celých čísel předaných ve vstupní zprávě a pak vypočítá součet. K odeslání zprávy odpovědi ukázka vytvoří novou zprávu s příslušnou verzí a akcí zprávy a přidá vypočítanou částku jako text. Následující ukázka kódu to demonstruje.  
+ Ve službě operace načte pole celá čísla předaná ve vstupní zprávě a pak vypočítá součet. Chcete-li odeslat zprávu odpovědi, ukázka vytvoří novou zprávu s příslušnou verzí zprávy a akce a přidá vypočítaný součet jako jeho tělo. Následující ukázkový kód to ukazuje.  
   
 ```csharp
 public Message ComputeSum(Message request)  
 {  
-    //The body of the message contains a list of numbers which will be   
+    //The body of the message contains a list of numbers which will be
     //read as a int[] using GetBody<T>  
     int result = 0;  
   
@@ -37,13 +37,13 @@ public Message ComputeSum(Message request)
         result += i;  
     }  
   
-    Message response = Message.CreateMessage(request.Version,   
+    Message response = Message.CreateMessage(request.Version,
                                       ReplyAction, result);  
     return response;  
 }  
 ```  
   
- Klient používá kód generovaný [nástrojem ServiceModel Metadata Utility (Svcutil. exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) pro vytvoření proxy serveru pro vzdálenou službu. Chcete-li odeslat zprávu požadavku, klient musí mít verzi zprávy, která závisí na základním kanálu. Proto vytvoří nový <xref:System.ServiceModel.OperationContextScope> oboru proxy kanálu, který vytvořil, a vytvoří <xref:System.ServiceModel.OperationContext> se správnou verzí zprávy naplněnou vlastností `OutgoingMessageHeaders.MessageVersion`. Klient předá vstupní pole jako text zprávy požadavku a potom vyvolá `ComputeSum` na proxy serveru. Klient pak načte součet předaných vstupů přístupem k metodě `GetBody<T>` ve zprávě odpovědi. Následující ukázka kódu to demonstruje.  
+ Klient používá kód, který je generován [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) k vytvoření proxy vzdálené služby. Chcete-li odeslat zprávu požadavku, klient musí mít verzi zprávy, která závisí na podkladovém kanálu. Tím se vytvoří <xref:System.ServiceModel.OperationContextScope> nový rozsah proxy kanálu, který vytvořil, který vytvoří <xref:System.ServiceModel.OperationContext> s správnou `OutgoingMessageHeaders.MessageVersion` verzi zprávy naplněný v jeho vlastnosti. Klient předá vstupní pole jako tělo zprávy požadavku a `ComputeSum` potom vyvolá na proxy serveru. Klient pak načte součet vstupů, které předal `GetBody<T>` přístupem k metodě na odpovědi. Následující ukázkový kód to ukazuje.  
   
 ```csharp
 using (new OperationContextScope(client.InnerChannel))  
@@ -51,17 +51,17 @@ using (new OperationContextScope(client.InnerChannel))
     // Call the Sum service operation.  
     int[] values = { 1, 2, 3, 4, 5 };  
     Message request = Message.CreateMessage(  
-        OperationContext.Current.OutgoingMessageHeaders.MessageVersion,   
+        OperationContext.Current.OutgoingMessageHeaders.MessageVersion,
         RequestAction, values);  
     Message reply = client.ComputeSum(request);  
     int response = reply.GetBody<int>();  
   
-    Console.WriteLine("Sum of numbers passed (1,2,3,4,5) = {0}",   
+    Console.WriteLine("Sum of numbers passed (1,2,3,4,5) = {0}",
                                                        response);  
 }  
 ```  
   
- Tato ukázka je ukázka hostovaná na webu, takže je nutné spustit pouze klientský spustitelný soubor. Následuje ukázkový výstup na klientovi.  
+ Tato ukázka je web-hostované ukázky a proto musí být spuštěn pouze spustitelný soubor klienta. Následuje ukázkový výstup na straně klienta.  
   
 ```console  
 Prompt>Client.exe  
@@ -70,21 +70,21 @@ Sum of numbers passed (1,2,3,4,5) = 15
 Press <ENTER> to terminate client.  
 ```  
   
- Tato ukázka je ukázka hostovaná v rámci webu, proto zkontrolujte odkaz uvedený v kroku 3, kde zjistíte, jak sestavit a spustit ukázku.  
+ Tato ukázka je web-hostované ukázka, a tak zkontrolujte odkaz k dispozici v kroku 3, jak sestavit a spustit ukázku.  
   
 ### <a name="to-set-up-build-and-run-the-sample"></a>Nastavení, sestavení a spuštění ukázky  
   
-1. Ujistěte se, že jste provedli [postup jednorázového nastavení pro Windows Communication Foundation ukázky](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
+1. Ujistěte se, že jste provedli [jednorázový postup instalace pro ukázky windows communication foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
   
-2. Pokud chcete vytvořit C# edici nebo Visual Basic .NET, postupujte podle pokynů v tématu [sestavování ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
+2. Chcete-li vytvořit c# nebo Visual Basic .NET vydání řešení, postupujte podle pokynů v [sestavení windows communication foundation ukázky](../../../../docs/framework/wcf/samples/building-the-samples.md).  
   
-3. Chcete-li spustit ukázku v konfiguraci s jedním nebo více počítači, postupujte podle pokynů v části [spuštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
+3. Chcete-li spustit ukázku v konfiguraci jednoho nebo více počítačů, postupujte podle pokynů v [části Spuštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
   
 > [!IMPORTANT]
-> Ukázky už můžou být na vašem počítači nainstalované. Než budete pokračovat, vyhledejte následující (výchozí) adresář.  
->   
+> Ukázky mohou být již nainstalovány v počítači. Před pokračováním zkontrolujte následující (výchozí) adresář.  
+>
 > `<InstallDrive>:\WF_WCF_Samples`  
->   
-> Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] Samples. Tato ukázka se nachází v následujícím adresáři.  
->   
+>
+> Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a Windows Workflow Foundation (WF) Ukázky pro rozhraní .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka je umístěna v následujícím adresáři.  
+>
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Contract\Message\Untyped`  

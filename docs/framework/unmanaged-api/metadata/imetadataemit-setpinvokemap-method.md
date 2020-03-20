@@ -15,50 +15,50 @@ helpviewer_keywords:
 ms.assetid: c6bfd574-1da3-4ba7-82f2-46ca5efcbaba
 topic_type:
 - apiref
-ms.openlocfilehash: 4e2a78e2d049e952aa1be0b3a8fd640eb18d0320
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 4c68754bc44fe035fd8e7143c52895928beae395
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74440565"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79175587"
 ---
 # <a name="imetadataemitsetpinvokemap-method"></a>IMetaDataEmit::SetPinvokeMap – metoda
-Nastaví nebo změní funkce signatury PInvoke metody, jak je definováno předchozím voláním [IMetaDataEmit::D efinepinvokemap](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-definepinvokemap-method.md).  
+Nastaví nebo změní funkce pinvoke podpisu metody, jak je definováno předchozí volání [IMetaDataEmit::DefinePinvokeMap](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-definepinvokemap-method.md).  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```cpp  
-HRESULT SetPinvokeMap (   
-    [in]  mdToken      tk,   
+HRESULT SetPinvokeMap (
+    [in]  mdToken      tk,
     [in]  DWORD        dwMappingFlags,  
-    [in]  LPCWSTR      szImportName,   
-    [in]  mdModuleRef  mrImportDLL   
+    [in]  LPCWSTR      szImportName,
+    [in]  mdModuleRef  mrImportDLL
 );  
 ```  
   
 ## <a name="parameters"></a>Parametry  
  `tk`  
- pro `mdToken`, na které se vztahují informace o mapování  
+ [v] Na `mdToken` které se vztahují informace o mapování.  
   
  `dwMappingFlags`  
- pro Příznaky používané v PInvoke k mapování. Toto je Bitová maska `CorPinvokeMap` hodnot.  
+ [v] Příznaky používané PInvoke k mapování. Toto je bitová maska `CorPinvokeMap` hodnot.  
   
  `szImportName`  
- pro Název cílového exportu v nativní knihovně DLL.  
+ [v] Název cílového exportu v nativní dll.  
   
  `mrImportDLL`  
- pro Token `mdModuleRef` pro cílovou nespravovanou knihovnu DLL.  
+ [v] Token `mdModuleRef` pro cílovou nespravovanou dll.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Hlavička:** Cor. h  
+ **Záhlaví:** Kor.h.  
   
- **Knihovna:** Používá se jako prostředek v knihovně MSCorEE. dll.  
+ **Knihovna:** Používá se jako prostředek v souboru MSCorEE.dll  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [IMetaDataEmit – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)
 - [IMetaDataEmit2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-interface.md)

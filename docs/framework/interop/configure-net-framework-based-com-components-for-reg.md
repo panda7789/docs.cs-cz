@@ -8,64 +8,64 @@ helpviewer_keywords:
 - registration-free COM interop, configuring .NET-based components
 - activation, registration-free
 ms.assetid: 32f8b7c6-3f73-455d-8e13-9846895bd43b
-ms.openlocfilehash: 61f5f0f3ec9a4386fa12e7511b4a518f2b56a21c
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: dedf5ab51ab5cf9befb5bd183968388406df4e5b
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73123670"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79181466"
 ---
 # <a name="how-to-configure-net-framework-based-com-components-for-registration-free-activation"></a>Postupy: Konfigurace bezregistrační aktivace komponent využívajících rozhraní .NET Framework
-Aktivace bez registrace pro komponenty založené na .NET Framework je poněkud složitější než pro součásti modelu COM. Instalační program vyžaduje dva manifesty:  
+Aktivace bez registrace pro součásti založené na rozhraní .NET Framework je jen o něco složitější než pro komponenty MODELU COM. Nastavení vyžaduje dva manifesty:  
   
-- Aby bylo možné identifikovat spravovanou součást, musí mít aplikace modelu COM manifest aplikace ve stylu Win32.  
+- Aplikace modelu COM musí mít manifest aplikace ve stylu win32 k identifikaci spravované součásti.  
   
-- Komponenty založené na .NET Framework musí mít manifest součásti pro informace o aktivaci potřebné v době běhu.  
+- Součásti založené na rozhraní .NET Framework musí mít manifest součásti pro informace o aktivaci potřebné za běhu.  
   
- Toto téma popisuje, jak přidružit manifest aplikace k aplikaci. Přidružte manifest součásti k komponentě. a vložte manifest součásti do sestavení.  
+ Toto téma popisuje, jak přidružit manifest aplikace k aplikaci; přidružení manifestu součásti k součásti; a vložit manifest součásti do sestavy.  
   
 ### <a name="to-create-an-application-manifest"></a>Vytvoření manifestu aplikace  
   
-1. Pomocí editoru XML vytvořte (nebo upravte) manifest aplikace vlastněný aplikací modelu COM, která je v provozu s jednou nebo více spravovanými komponentami.  
+1. Pomocí editoru XML vytvořte (nebo upravte) manifest aplikace vlastněný aplikací modelu COM, která spolupracuje s jednou nebo více spravovanými součástmi.  
   
-2. Vložte následující standardní hlavičku na začátek souboru:  
+2. Na začátek souboru vložte následující standardní záhlaví:  
   
     ```xml  
     <?xml version="1.0" encoding="UTF-8" standalone="yes"?>  
     <assembly xmlns="urn:schemas-microsoft-com:asm.v1" manifestVersion="1.0">  
     ```  
   
-     Informace o prvcích manifestu a jejich atributech naleznete v tématu [manifesty aplikací](/windows/desktop/SbsCs/application-manifests).  
+     Informace o elementech manifestu a jejich atributech naleznete v [tématu Manifesty aplikací](/windows/desktop/SbsCs/application-manifests).  
   
-3. Identifikujte vlastníka manifestu. V následujícím příkladu `myComApp` verze 1 vlastní soubor manifestu.  
+3. Identifikujte vlastníka manifestu. V následujícím příkladu `myComApp` vlastní soubor manifestu verze 1.  
   
     ```xml  
     <?xml version="1.0" encoding="UTF-8" standalone="yes"?>  
     <assembly xmlns="urn:schemas-microsoft-com:asm.v1" manifestVersion="1.0">  
-      <assemblyIdentity type="win32"   
-                        name="myOrganization.myDivision.myComApp"   
-                        version="1.0.0.0"   
-                        processorArchitecture="msil"   
+      <assemblyIdentity type="win32"
+                        name="myOrganization.myDivision.myComApp"
+                        version="1.0.0.0"
+                        processorArchitecture="msil"
       />  
     ```  
   
-4. Identifikujte závislá sestavení. V následujícím příkladu `myComApp` závisí na `myManagedComp`.  
+4. Identifikujte závislá sestavení. V následujícím příkladu `myComApp` `myManagedComp`závisí na .  
   
     ```xml  
     <?xml version="1.0" encoding="UTF-8" standalone="yes"?>  
     <assembly xmlns="urn:schemas-microsoft-com:asm.v1" manifestVersion="1.0">  
-      <assemblyIdentity type="win32"   
-                        name="myOrganization.myDivision.myComApp"   
-                        version="1.0.0.0"   
-                        processorArchitecture="x86"   
+      <assemblyIdentity type="win32"
+                        name="myOrganization.myDivision.myComApp"
+                        version="1.0.0.0"
+                        processorArchitecture="x86"
                         publicKeyToken="8275b28176rcbbef"  
       />  
       <dependency>  
         <dependentAssembly>  
-          <assemblyIdentity type="win32"   
-                        name="myOrganization.myDivision.myManagedComp"   
-                        version="6.0.0.0"   
-                        processorArchitecture="X86"   
+          <assemblyIdentity type="win32"
+                        name="myOrganization.myDivision.myManagedComp"
+                        version="6.0.0.0"
+                        processorArchitecture="X86"
                         publicKeyToken="8275b28176rcbbef"  
           />  
         </dependentAssembly>  
@@ -73,22 +73,22 @@ Aktivace bez registrace pro komponenty založené na .NET Framework je poněkud 
     </assembly>  
     ```  
   
-5. Uložte a pojmenujte soubor manifestu. Název manifestu aplikace je název spustitelného souboru sestavení následovaný příponou. manifest. Například název souboru manifestu aplikace pro myComApp. exe je myComApp. exe. manifest.  
+5. Uložte a pojmenujte soubor manifestu. Název manifestu aplikace je název spustitelného souboru sestavení následovaný rozšířením manifestu .manifest. Například název souboru manifestu aplikace pro myComApp.exe je myComApp.exe.manifest.  
   
- Manifest aplikace můžete nainstalovat do stejného adresáře jako aplikace modelu COM. Případně ho můžete přidat jako prostředek do souboru. exe aplikace. Další informace najdete v tématu [o souběžných sestaveních](/windows/desktop/SbsCs/about-side-by-side-assemblies-).  
+ Manifest aplikace můžete nainstalovat do stejného adresáře jako aplikace COM. Případně jej můžete přidat jako prostředek do souboru EXE aplikace. Další informace naleznete v tématu [O souběžných sestaveních](/windows/desktop/SbsCs/about-side-by-side-assemblies-).  
   
-#### <a name="to-create-a-component-manifest"></a>Vytvoření manifestu součásti  
+#### <a name="to-create-a-component-manifest"></a>Vytvoření manifestu komponenty  
   
-1. Pomocí editoru XML vytvořte manifest součásti pro popis spravovaného sestavení.  
+1. Pomocí editoru XML vytvořte manifest součásti popisující spravované sestavení.  
   
-2. Vložte následující standardní hlavičku na začátek souboru:  
+2. Na začátek souboru vložte následující standardní záhlaví:  
   
     ```xml  
     <?xml version="1.0" encoding="UTF-8" standalone="yes"?>  
     <assembly xmlns="urn:schemas-microsoft-com:asm.v1" manifestVersion="1.0">  
     ```  
   
-3. Identifikujte vlastníka souboru. Element `<assemblyIdentity>` elementu `<dependentAssembly>` v souboru manifestu aplikace musí odpovídat jedné v manifestu součásti. V následujícím příkladu `myManagedComp` verze 1.2.3.4 vlastní soubor manifestu.  
+3. Identifikujte vlastníka souboru. Prvek `<assemblyIdentity>` prvku `<dependentAssembly>` v souboru manifestu aplikace se musí shodovat s prvkem v manifestu komponenty. V následujícím příkladu `myManagedComp` verze 1.2.3.4 vlastní soubor manifestu.  
   
     ```xml  
     <?xml version="1.0" encoding="UTF-8" standalone="yes"?>  
@@ -101,28 +101,28 @@ Aktivace bez registrace pro komponenty založené na .NET Framework je poněkud 
            />  
     ```  
   
-4. Identifikujte každou třídu v sestavení. Pomocí elementu `<clrClass>` jednoznačně Identifikujte jednotlivé třídy ve spravovaném sestavení. Element, který je dílčím prvkem `<assembly>` elementu, má atributy popsané v následující tabulce.  
+4. Identifikujte každou třídu v sestavení. Pomocí `<clrClass>` prvku jednoznačně identifikovat každou třídu ve spravovaném sestavení. Prvek, který je dílčím `<assembly>` prvkem prvku, má atributy popsané v následující tabulce.  
   
-    |Atribut|Popis|Požadováno|  
+    |Atribut|Popis|Požaduje se|  
     |---------------|-----------------|--------------|  
     |`clsid`|Identifikátor, který určuje třídu, která má být aktivována.|Ano|  
-    |`description`|Řetězec, který informuje uživatele o komponentě. Výchozí hodnota je prázdný řetězec.|Ne|  
+    |`description`|Řetězec, který informuje uživatele o součásti. Prázdný řetězec je výchozí.|Ne|  
     |`name`|Řetězec, který představuje spravovanou třídu.|Ano|  
-    |`progid`|Identifikátor, který se má použít pro aktivaci s pozdní vazbou.|Ne|  
-    |`threadingModel`|Model vláken modelu COM. Výchozí hodnota je "obojí".|Ne|  
-    |`runtimeVersion`|Určuje verzi modulu CLR (Common Language Runtime), která se má použít. Pokud tento atribut nezadáte a CLR již není načten, komponenta je načtena s nejnovějším nainstalovaným modulem CLR před modulem CLR verze 4. Pokud zadáte v 1.0.3705, v 1.1.4322 nebo v 2.0.50727, verze se automaticky vrátí k nejnovější nainstalované verzi CLR před CLR verze 4 (obvykle v 2.0.50727). Pokud je již načtena jiná verze modulu CLR a zadaná verze může být načtena souběžně v rámci procesu, je načtena zadaná verze; v opačném případě je použit načtený modul CLR. To může způsobit selhání načtení.|Ne|  
+    |`progid`|Identifikátor, který má být použit pro aktivaci s pozdní vazbou.|Ne|  
+    |`threadingModel`|Model zřetězení modelu COM. "Obojí" je výchozí hodnota.|Ne|  
+    |`runtimeVersion`|Určuje verzi clr (COMMON Language runtime), která má být používána. Pokud tento atribut nezadáte a CLR ještě není načten, je komponenta načtena s nejnovější nainstalovanou clr před CLR verze 4. Pokud zadáte v1.0.3705, v1.1.4322 nebo v2.0.50727, verze se automaticky převrátí na nejnovější nainstalovanou verzi CLR před CLR verze 4 (obvykle v2.0.50727). Pokud je již načtena jiná verze clr a zadaná verze může být načtena v procesu vedle sebe, zadaná verze je načtena. v opačném případě se použije načtený CLR. To může způsobit selhání zatížení.|Ne|  
     |`tlbid`|Identifikátor knihovny typů, která obsahuje informace o typu třídy.|Ne|  
   
-     U všech značek atributů se rozlišují velká a malá písmena. Identifikátory CLSID, ProgID, modely vláken a verze modulu runtime lze získat zobrazením exportované knihovny typů pro sestavení pomocí technologie OLE/COM ObjectViewer (Oleview. exe).  
+     Všechny značky atributů rozlišují malá a velká písmena. Identifikátory CLSID, identifikátory ProgID, modely vláken a verzi za běhu můžete získat zobrazením exportované knihovny typů pro sestavení pomocí aplikace OLE/COM ObjectViewer (Oleview.exe).  
   
-     Následující manifest komponenty identifikuje dvě třídy, `testClass1` a `testClass2`.  
+     Následující manifest komponenty identifikuje `testClass1` dvě `testClass2`třídy a .  
   
     ```xml  
     <?xml version="1.0" encoding="UTF-8" standalone="yes"?>  
     <assembly xmlns="urn:schemas-microsoft-com:asm.v1" manifestVersion="1.0">  
            <assemblyIdentity  
                         name="myOrganization.myDivision.myManagedComp"  
-                        version="1.2.3.4"   
+                        version="1.2.3.4"
                         publicKeyToken="8275b28176rcbbef"  
            />  
            <clrClass  
@@ -144,33 +144,33 @@ Aktivace bez registrace pro komponenty založené na .NET Framework je poněkud 
     </assembly>  
     ```  
   
-5. Uložte a pojmenujte soubor manifestu. Název manifestu součásti je název knihovny sestavení následovaný příponou. manifest. Například myManagedComp. dll je myManagedComp. manifest.  
+5. Uložte a pojmenujte soubor manifestu. Název manifestu komponenty je název knihovny sestavení následovaný příponou .manifest. Například myManagedComp.dll je myManagedComp.manifest.  
   
- Manifest součásti je nutné vložit jako prostředek v sestavení.  
+ Manifest součásti je nutné vložit jako prostředek do sestavy.  
   
-#### <a name="to-embed-a-component-manifest-in-a-managed-assembly"></a>Vložení manifestu součásti do spravovaného sestavení  
+#### <a name="to-embed-a-component-manifest-in-a-managed-assembly"></a>Vložení manifestu součásti do spravované sestavy  
   
 1. Vytvořte skript prostředků, který obsahuje následující příkaz:  
   
      `RT_MANIFEST 1 myManagedComp.manifest`  
   
-     V tomto příkazu je `myManagedComp.manifest` název manifestu součásti, který se má vložit. V tomto příkladu je název souboru skriptu `myresource.rc`.  
+     V tomto `myManagedComp.manifest` příkazu je název manifestu komponenty, který je vložen. V tomto příkladu je `myresource.rc`název souboru skriptu .  
   
-2. Zkompilujte skript pomocí kompilátoru prostředků Microsoft Windows (RC. exe). V příkazovém řádku zadejte následující příkaz:  
+2. Zkompilujte skript pomocí kompilátoru prostředků systému Microsoft Windows (Rc.exe). Do příkazového řádku zadejte následující příkaz:  
   
      `rc myresource.rc`  
   
-     RC. exe vytvoří soubor prostředků `myresource.res`.  
+     Rc.exe vytvoří `myresource.res` soubor prostředků.  
   
-3. Zkompilujte zdrojový soubor sestavení znovu a zadejte soubor prostředků pomocí možnosti **parametr/win32res** :  
+3. Znovu zkompilujte zdrojový soubor sestavení a zadejte soubor prostředků pomocí možnosti **/win32res:**  
   
     `/win32res:myresource.res`  
   
-     Znovu je `myresource.res` název souboru prostředků obsahujícího vložené prostředky.  
+     Opět `myresource.res` je název souboru prostředků obsahující vložené prostředky.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Bezregistrační zprostředkovatel komunikace s objekty COM](registration-free-com-interop.md)
-- [Požadavky na zprostředkovatele komunikace s objekty COM bez registrace](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/f8h7012w(v=vs.100))
+- [Požadavky na interop COM Interop bez registrace](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/f8h7012w(v=vs.100))
 - [Konfigurace komponent modelu COM pro aktivaci bez registrace](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/x65a421a(v=vs.100))
-- [Aktivace aplikace bez registrace. Komponenty založené na síti: Návod](https://docs.microsoft.com/previous-versions/dotnet/articles/ms973915(v=msdn.10))
+- [Registrace-Free Aktivace . Komponenty založené na NET: Návod](https://docs.microsoft.com/previous-versions/dotnet/articles/ms973915(v=msdn.10))

@@ -12,52 +12,52 @@ api_type:
 ms.assetid: 0c8676f8-ca0d-4998-b64d-fefac7e38912
 topic_type:
 - apiref
-ms.openlocfilehash: 017c14e9170087f3c3c9de64f50d165fc91aa297
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.openlocfilehash: ee263e8c49cd6da7278bd2299557336629720d2f
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76782407"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79178769"
 ---
 # <a name="icordebugilframe4getlocalvariableex-method"></a>ICorDebugILFrame4::GetLocalVariableEx – metoda
-[Podporované v .NET Framework 4.5.2 a novějších verzích]  
+[Podporováno v rozhraní .NET Framework 4.5.2 a novějších verzích]  
   
- Získá hodnotu zadané místní proměnné v rámci tohoto bloku zásobníku pro mezilehlé jazyky (IL) a volitelně přistupuje k proměnné přidané v profileru ReJIT instrumentace.  
+ Získá hodnotu zadané místní proměnné v tomto rámci zásobníku zprostředkující jazyk (IL) a volitelně přistupuje k proměnné přidané v profileru ReJIT instrumentace.  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```cpp
 HRESULT GetLocalVariableEx(  
-   [in] ILCodeKind flags,   
-   [in] DWORD dwIndex,   
+   [in] ILCodeKind flags,
+   [in] DWORD dwIndex,
    [out] ICorDebugValue **ppValue  
 );  
 ```  
   
 ## <a name="parameters"></a>Parametry  
  `flags`  
- pro Člen výčtu [ILCodeKind](ilcodekind-enumeration.md) , který určuje, jestli je do tohoto rámce zahrnutá proměnná přidaná v profileru ReJIT instrumentace.  
+ [v] Člen výčtu [ILCodeKind,](ilcodekind-enumeration.md) který určuje, zda je v rámci zahrnuta proměnná přidaná v instrumentaci ReJIT profileru.  
   
  `dwIndex`  
- pro Index místní proměnné v rámci bloku IL.  
+ [v] Index místní proměnné v rámci zásobníku IL.  
   
  `ppValue`  
- mimo Ukazatel na adresu objektu "ICorDebugValue", který představuje načtenou hodnotu.  
+ [out] Ukazatel na adresu objektu "ICorDebugValue", který představuje načtenou hodnotu.  
   
 ## <a name="remarks"></a>Poznámky  
- Tato metoda je podobná metodě [GetLocalVariable –](icordebugilframe-getlocalvariable-method.md) , s tím rozdílem, že volitelně přistupuje k proměnné přidané v profileru ReJIT instrumentace. Volání této metody s hodnotou `flags` `ILCODE_ORIGINAL_IL` je ekvivalentní volání [GetLocalVariable –](icordebugilframe-getlocalvariable-method.md); Pokud je metoda instrumentovaná pomocí dalších místních proměnných, k těmto proměnným nelze přidružit. `ILCODE_REJIT_IL` umožňuje ladicímu programu přístup k místním proměnným přidaným v profileru ReJIT instrumentace. Pokud není IL instrumentovat, metoda vrátí `E_INVALIDARG`.  
+ Tato metoda je podobná [GetLocalVariable](icordebugilframe-getlocalvariable-method.md) metoda, s tím rozdílem, že volitelně přistupuje k proměnné přidané v profileru ReJIT instrumentace. Volání této metody `flags` s `ILCODE_ORIGINAL_IL` hodnotou je ekvivalentní volání [GetLocalVariable](icordebugilframe-getlocalvariable-method.md); pokud je metoda instrumentována dalšími místními proměnnými, nelze k těmto proměnným získat přístup. `ILCODE_REJIT_IL`umožňuje ladicímu programu přístup k místním proměnným přidaným v instrumentaci ReJIT profileru. Pokud NENÍ vybavena nástrojem, metoda `E_INVALIDARG`vrátí .  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Hlavička:** CorDebug. idl, CorDebug. h  
+ **Záhlaví:** CorDebug.idl, CorDebug.h  
   
- **Knihovna:** CorGuids. lib  
+ **Knihovna:** CorGuids.lib  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v452plus](../../../../includes/net-current-v452plus-md.md)]  
+ **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v452plus](../../../../includes/net-current-v452plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [ICorDebugILFrame4 – rozhraní](icordebugilframe4-interface.md)
-- [Rozhraní pro ladění](debugging-interfaces.md)
-- [ReJIT: Průvodce](https://docs.microsoft.com/archive/blogs/davbr/rejit-a-how-to-guide)
+- [Debugging – rozhraní](debugging-interfaces.md)
+- [ReJIT: Návod, jak](https://docs.microsoft.com/archive/blogs/davbr/rejit-a-how-to-guide)

@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: 4723bd1c-eddb-4ed2-897a-010024a47e01
 topic_type:
 - apiref
-ms.openlocfilehash: 0a7e764d89dd42bcaf81da5cf6a16991b6b8a16e
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.openlocfilehash: 336ba38bc80fcb2649a12c78691e52c5e4d70bfe
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76793695"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79179115"
 ---
 # <a name="iclrdatatargetrequest-method"></a>ICLRDataTarget::Request – metoda
-Volá se službami CLR (Common Language Runtime) k vyžádání operace, jak jsou definované implementací.  
+Volat služby přístupu k datům cltime společného jazyka (CLR) požádat o operaci, jak je definováno implementací.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -31,44 +31,44 @@ Volá se službami CLR (Common Language Runtime) k vyžádání operace, jak jso
 HRESULT Request (  
     [in] ULONG32            reqCode,  
     [in] ULONG32            inBufferSize,  
-    [in, size_is(inBufferSize)]   
+    [in, size_is(inBufferSize)]
         BYTE                *inBuffer,  
     [in] ULONG32            outBufferSize,  
-    [out, size_is(outBufferSize)]   
+    [out, size_is(outBufferSize)]
         BYTE                *outBuffer  
 );  
 ```  
   
 ## <a name="parameters"></a>Parametry  
  `reqCode`  
- pro Definováno uživatelem.  
+ [v] Definováno uživatelem.  
   
  `inBufferSize`  
- pro Velikost vstupní vyrovnávací paměti, která se používá pro příchozí požadavek.  
+ [v] Velikost vstupní vyrovnávací paměti, která se používá pro příchozí požadavek.  
   
  `inBuffer`  
- pro Vyrovnávací paměť obsahující požadavek.  
+ [v] Vyrovnávací paměť obsahující požadavek.  
   
  `outBufferSize`  
- pro Velikost výstupní vyrovnávací paměti, která se používá pro odpověď.  
+ [v] Velikost výstupní vyrovnávací paměti, která se používá pro odpověď.  
   
  `outBuffer`  
- mimo Vyrovnávací paměť obsahující odpověď.  
+ [out] A Buffer obsahující odpověď.  
   
 ## <a name="remarks"></a>Poznámky  
- Metoda `Request` usnadňuje přidání nespecifikovaných vlastních operací. To znamená, že tato metoda poskytuje rozšiřitelnost bez nutnosti Revize definice rozhraní.  
+ Metoda `Request` usnadňuje přidání nespecifikovaných vlastních operací. To znamená, že tato metoda poskytuje rozšiřitelnost bez nutnosti revize definice rozhraní.  
   
- Tato metoda je implementována modulem pro ladění aplikace.  
+ Tato metoda je implementována zapisovače ladicí aplikace.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Hlavička:** ClrData. idl, ClrData. h  
+ **Záhlaví:** ClrData.idl, ClrData.h  
   
- **Knihovna:** CorGuids. lib  
+ **Knihovna:** CorGuids.lib  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [ICLRDataTarget – rozhraní](iclrdatatarget-interface.md)

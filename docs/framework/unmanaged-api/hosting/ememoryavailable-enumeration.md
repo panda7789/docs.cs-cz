@@ -14,15 +14,15 @@ helpviewer_keywords:
 ms.assetid: 38e72a06-dbed-473b-a59b-7e0b3ea4f2af
 topic_type:
 - apiref
-ms.openlocfilehash: aec3c5f140df7eab10ea2bfa33634a4d853adcb0
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 0073a532f680d8764ec9e76ea22326a630457043
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73134294"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79176432"
 ---
 # <a name="ememoryavailable-enumeration"></a>EMemoryAvailable – výčet
-Obsahuje hodnoty, které udávají množství volné fyzické paměti v počítači. Tyto hodnoty logicky mapují na události pro vysokou a nízkou paměť vrácenou funkcí `CreateMemoryResourceNotification` v rozhraní API systému Windows.  
+Obsahuje hodnoty, které označují množství volné fyzické paměti v počítači. Tyto hodnoty logicky mapovat na události pro `CreateMemoryResourceNotification` vysoké a nedostatku paměti vrácené z funkce v rozhraní API systému Windows.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -30,7 +30,7 @@ Obsahuje hodnoty, které udávají množství volné fyzické paměti v počíta
 typedef enum {  
     eMemoryAvailableLow     = 1,  
     eMemoryAvailableNeutral = 2,  
-    eMemoryAvailableHigh    = 3   
+    eMemoryAvailableHigh    = 3
 } EMemoryAvailable;  
 ```  
   
@@ -38,22 +38,22 @@ typedef enum {
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`eMemoryAvailableHigh`|K dispozici je dostatek fyzické paměti.|  
-|`eMemoryAvailableLow`|K dispozici je jen málo fyzické paměti.|  
+|`eMemoryAvailableHigh`|K dispozici je spousta fyzické paměti.|  
+|`eMemoryAvailableLow`|Je k dispozici velmi málo fyzické paměti.|  
 |`eMemoryAvailableNeutral`|Dostupná fyzická paměť je neutrální.|  
   
 ## <a name="remarks"></a>Poznámky  
- Tato hodnota je předána hostitelem do modulu CLR (Common Language Runtime) pomocí volání metody [ICLRMemoryNotificationCallback –:: OnMemoryNotification –](../../../../docs/framework/unmanaged-api/hosting/iclrmemorynotificationcallback-onmemorynotification-method.md) .  
+ Tato hodnota je předána hostitelem cltime jazyka společného jazyka pomocí volání [metody ICLRMemoryNotificationCallback::OnMemoryNotification.](../../../../docs/framework/unmanaged-api/hosting/iclrmemorynotificationcallback-onmemorynotification-method.md)  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Hlavička:** MSCorEE. h  
+ **Záhlaví:** MSCorEE.h  
   
- **Knihovna:** MSCorEE. dll  
+ **Knihovna:** Soubor MSCorEE.dll  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Výčty pro hostování](../../../../docs/framework/unmanaged-api/hosting/hosting-enumerations.md)
+- [Výčty hostování](../../../../docs/framework/unmanaged-api/hosting/hosting-enumerations.md)

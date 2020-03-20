@@ -5,39 +5,39 @@ helpviewer_keywords:
 - scaling [WPF], elements
 - graphics [WPF], scaling elements
 ms.assetid: 18158d94-bbe7-4f6a-814e-84d27fa748bf
-ms.openlocfilehash: 607b3a11085f746503c1b82552f1740b49d9ef5d
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: a383ad84f1db4d937469943092a03517f68777ec
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61942065"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79187440"
 ---
 # <a name="how-to-scale-an-element"></a>Postupy: Změna velikosti elementu
-Tento příklad ukazuje způsob použití <xref:System.Windows.Media.ScaleTransform> škálování elementu.  
+Tento příklad ukazuje, <xref:System.Windows.Media.ScaleTransform> jak použít měřítko prvku.  
   
- Použití <xref:System.Windows.Media.ScaleTransform.ScaleX%2A> a <xref:System.Windows.Media.ScaleTransform.ScaleY%2A> vlastnosti, které chcete změnit velikost elementu faktorem, který zadáte. Například <xref:System.Windows.Media.ScaleTransform.ScaleX%2A> hodnotu 1.5 roztáhne na 150 procento původní šířku elementu. A <xref:System.Windows.Media.ScaleTransform.ScaleY%2A> hodnota 0,5 zmenšuje výšku prvku o 50 procent.  
+ Pomocí <xref:System.Windows.Media.ScaleTransform.ScaleX%2A> vlastností a <xref:System.Windows.Media.ScaleTransform.ScaleY%2A> změňte velikost prvku podle zadaného faktoru. Například <xref:System.Windows.Media.ScaleTransform.ScaleX%2A> hodnota 1,5 roztáhne prvek na 150 procent jeho původní šířky. Hodnota <xref:System.Windows.Media.ScaleTransform.ScaleY%2A> 0,5 zmenší výšku prvku o 50 procent.  
   
- Použití <xref:System.Windows.Media.ScaleTransform.CenterX%2A> a <xref:System.Windows.Media.ScaleTransform.CenterY%2A> vlastnosti k určení bodu, který je Centrum operace škálování. Ve výchozím nastavení <xref:System.Windows.Media.ScaleTransform> je zarovnaný na střed v okamžiku (0; 0), která odpovídá levého horního rohu obdélníku. Tato akce nemá vliv přesunutí elementu a také díky tomu se zobrazí větší, protože při použití <xref:System.Windows.Media.Transform>, změníte souřadnicového prostoru, ve kterém se objekt nachází.  
+ Pomocí <xref:System.Windows.Media.ScaleTransform.CenterX%2A> vlastností a <xref:System.Windows.Media.ScaleTransform.CenterY%2A> určete bod, který je středem operace měřítka. Ve výchozím <xref:System.Windows.Media.ScaleTransform> nastavení je a vystředěna v bodě (0,0), což odpovídá levému hornímu rohu obdélníku. To má za následek přesunutí prvku a také jeho zobrazení větší, protože při použití <xref:System.Windows.Media.Transform>změníte souřadnicový prostor, ve kterém se objekt nachází.  
   
- Následující příklad používá <xref:System.Windows.Media.ScaleTransform> na dvojnásobek velikosti 50podle-50 <xref:System.Windows.Shapes.Rectangle>. <xref:System.Windows.Media.ScaleTransform> Má hodnotu 0 (výchozí) pro obě <xref:System.Windows.Media.ScaleTransform.CenterX%2A> a <xref:System.Windows.Media.ScaleTransform.CenterY%2A>.  
+ Následující příklad používá <xref:System.Windows.Media.ScaleTransform> ke zdvojnásobení velikosti 50- 50 <xref:System.Windows.Shapes.Rectangle>. Má <xref:System.Windows.Media.ScaleTransform> hodnotu 0 (výchozí) pro <xref:System.Windows.Media.ScaleTransform.CenterX%2A> <xref:System.Windows.Media.ScaleTransform.CenterY%2A>oba a .  
   
 ## <a name="example"></a>Příklad  
  [!code-xaml[transformsSample#21](~/samples/snippets/csharp/VS_Snippets_Wpf/transformsSample/CS/ScaleTransformExample.xaml#21)]  
   
- Obvykle nastavena <xref:System.Windows.Media.ScaleTransform.CenterX%2A> a <xref:System.Windows.Media.ScaleTransform.CenterY%2A> do středu objektu, který je škálovat: (<xref:System.Windows.FrameworkElement.Width%2A>/2,  <xref:System.Windows.FrameworkElement.Height%2A> /2).  
+ Obvykle nastavíte <xref:System.Windows.Media.ScaleTransform.CenterX%2A> <xref:System.Windows.Media.ScaleTransform.CenterY%2A> a do středu objektu, který<xref:System.Windows.FrameworkElement.Width%2A>je měřítko: ( /2, <xref:System.Windows.FrameworkElement.Height%2A>/2).  
   
- Následující příklad ukazuje jiné <xref:System.Windows.Shapes.Rectangle> , který se zdvojnásobí velikost; však to <xref:System.Windows.Media.ScaleTransform> má hodnotu 25 pro obě <xref:System.Windows.Media.ScaleTransform.CenterX%2A> a <xref:System.Windows.Media.ScaleTransform.CenterY%2A>, která odpovídá na střed obdélníku.  
+ Následující příklad ukazuje <xref:System.Windows.Shapes.Rectangle> jiný, který je zdvojnásoben ve velikosti; však <xref:System.Windows.Media.ScaleTransform> má hodnotu 25 <xref:System.Windows.Media.ScaleTransform.CenterX%2A> pro <xref:System.Windows.Media.ScaleTransform.CenterY%2A>oba a , který odpovídá středu obdélníku.  
   
  [!code-xaml[transformsSample#22](~/samples/snippets/csharp/VS_Snippets_Wpf/transformsSample/CS/ScaleTransformExample.xaml#22)]  
   
- Následující ilustrace ukazuje rozdíl mezi těmito dvěma <xref:System.Windows.Media.ScaleTransform> operace. Tečkovaná čára ukazuje velikost a umístění obdélníku, před Škálováním.  
+ Následující obrázek znázorňuje <xref:System.Windows.Media.ScaleTransform> rozdíl mezi dvěma operacemi. Tečkovaná čára zobrazuje velikost a umístění obdélníku před změnou měřítka.  
   
- ![2 x škáluje s různými středy](./media/wcpsdk-graphicsmm-scalecenter.gif "wcpsdk_graphicsmm_scalecenter")  
-Dvě operace ScaleTransform – identické ScaleX a ScaleY hodnoty, ale jiné centra  
+ ![2x váhy s různými středovými body](./media/wcpsdk-graphicsmm-scalecenter.gif "wcpsdk_graphicsmm_scalecenter")  
+Dvě operace ScaleTransform s identickými hodnotami ScaleX a ScaleY, ale s různými centry  
   
- Úplnou ukázku najdete v tématu [2D transformace ukázka](https://go.microsoft.com/fwlink/?LinkID=158252).  
+ Kompletní ukázku naleznete v [tématu Ukázka 2D transformací](https://github.com/Microsoft/WPF-Samples/tree/master/Graphics/2DTransforms).  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Media.Transform>
 - <xref:System.Windows.Media.ScaleTransform>

@@ -2,28 +2,28 @@
 title: Hello World se směrovací službou
 ms.date: 03/30/2017
 ms.assetid: 0f4b0d5b-6522-4ad5-9f3a-baa78316d7d1
-ms.openlocfilehash: ae0615c8cf2fa33f3bb363f77c0d06440b6afc13
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: 86a2981e8b861da9d5ccf0a34fe037f3ef419aab
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76743719"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79183637"
 ---
 # <a name="hello-world-with-the-routing-service"></a>Hello World se směrovací službou
-Tato ukázka demonstruje směrovací službu Windows Communication Foundation (WCF). Směrovací služba je součást WCF, která usnadňuje zahrnutí směrovače založeného na obsahu do vaší aplikace. Tato ukázka přizpůsobuje standardní ukázku kalkulačky WCF pro komunikaci pomocí směrovací služby. V této ukázce je klient kalkulačky nakonfigurovaný tak, aby odesílal zprávy na koncový bod vystavený směrovačem. Směrovací služba je nakonfigurovaná tak, aby přijímala všechny odeslané zprávy, a přesměruje je do koncového bodu, který odpovídá službě kalkulačky. Tedy zprávy odesílané z klienta obdrží směrovač a znovu přesměrovány do skutečné služby kalkulačky. Zprávy ze služby kalkulačky se odesílají zpět do směrovače, který je zase předává do klienta kalkulačky.
+Tato ukázka ukazuje službu směrování WCF (Windows Communication Foundation). Služba Směrování je součást WCF, která usnadňuje zahrnutí směrovače založeného na obsahu do aplikace. Tento příklad přizpůsobí standardní WCF ukázka kalkulačky komunikovat pomocí služby směrování. V této ukázce je klient kalkulačky nakonfigurován tak, aby odesílá zprávy do koncového bodu vystaveného směrovačem. Služba směrování je nakonfigurována tak, aby přijímala všechny zprávy, které jí byly odeslány, a přeposílala je do koncového bodu, který odpovídá službě Kalkulačka. Tak zprávy odeslané od klienta jsou přijímány routerem a přesměrovány na skutečnou službu Kalkulačka. Zprávy ze služby Kalkulačka jsou odesílány zpět na router, který je zase předá zpět klientovi Kalkulačky.
 
-### <a name="to-use-this-sample"></a>Použití této ukázky
+### <a name="to-use-this-sample"></a>Chcete-li použít tento vzorek
 
-1. Pomocí sady Visual Studio 2012 otevřete HelloRoutingService. sln.
+1. Pomocí Visual Studia 2012 otevřete HelloRoutingService.sln.
 
-2. Stiskněte klávesu F5 nebo CTRL + SHIFT + B.
+2. Stiskněte klávesu F5 nebo CTRL+SHIFT+B.
 
     > [!NOTE]
-    > Když stisknete klávesu F5, spustí se automaticky klient kalkulačky. Stisknete-li kombinaci kláves CTRL + SHIFT + B (sestavení), je nutné spustit následující aplikace sami.
+    > Pokud stisknete klávesu F5, klient kalkulačky se automaticky spustí. Pokud stisknete kombinaci kláves CTRL+SHIFT+B (sestavení), musíte začít sledovat aplikace sami.
     >
     > 1. Klient kalkulačky (./CalculatorClient/bin/client.exe
-    > 2. Služba kalkulačky (./CalculatorService/bin/service.exe)
-    > 3. Směrovací služba (./RoutingService/bin/RoutingService.exe)
+    > 2. Kalkulačka služby (./CalculatorService/bin/service.exe)
+    > 3. Služba směrování (./RoutingService/bin/RoutingService.exe)
 
 3. Stisknutím klávesy ENTER spusťte klienta.
 
@@ -39,24 +39,24 @@ Tato ukázka demonstruje směrovací službu Windows Communication Foundation (W
      Divide(22,7) = 3.14285714285714
     ```
 
-## <a name="configurable-via-code-or-appconfig"></a>Konfigurovatelné prostřednictvím kódu nebo souboru App. config
- Ukázková plavidla konfigurovaná pro použití souboru App. config k definování chování směrovače. Můžete také změnit název souboru App. config na něco jiného, aby nebyl rozpoznán a odkomentovat volání metody ConfigureRouterViaCode (). Kterákoli z metod má za následek stejné chování jako směrovač.
+## <a name="configurable-via-code-or-appconfig"></a>Konfigurovatelné pomocí kódu nebo App.Config
+ Ukázkové informace jsou konfigurované tak, aby k definování chování směrovače používaly soubor App.config. Můžete také změnit název souboru App.config na něco jiného tak, aby nebyl rozpoznán a odkomentovat volání metody ConfigureRouterViaCode(). Obě metody má za následek stejné chování ze směrovače.
 
 ### <a name="scenario"></a>Scénář
- Tato ukázka demonstruje směrovač, který působí jako základní čerpadlo zpráv. Směrovací služba funguje jako transparentní proxy uzel, který je nakonfigurován tak, aby předával zprávy přímo do předem nakonfigurované sady cílových koncových bodů.
+ Tato ukázka ukazuje směrovač, který funguje jako základní čerpadlo zpráv. Služba směrování funguje jako transparentní uzel proxy nakonfigurovaný tak, aby předával zprávy přímo předem nakonfigurované sadě cílových koncových bodů.
 
 ### <a name="real-world-scenario"></a>Scénář reálného světa
- Společnost Contoso chce zvýšit flexibilitu, kterou má při pojmenování, adresování, konfiguraci a zabezpečení svých služeb. K tomu přistupují základní čerpadlo zpráv před svými službami, aby fungovaly jako veřejný koncový bod. Díky tomu mohou být před svými skutečnými službami zavedeny další zabezpečení a snadněji implementují škálovaná řešení nebo správu verzí služeb později.
+ Společnost Contoso chce zvýšit flexibilitu, kterou má při pojmenovávání, adresování, konfiguraci a zabezpečení svých služeb. Chcete-li to provést, umístí základní čerpadlo zpráv před své služby, aby působily jako veřejný koncový bod. To jim umožňuje umístit další zabezpečení před jejich skutečné služby a usnadnit implementaci škálovaných řešení nebo služby správy verzí později.
 
 > [!IMPORTANT]
-> Ukázky již mohou být nainstalovány v počítači. Než budete pokračovat, vyhledejte následující (výchozí) adresář.  
->   
+> Ukázky mohou být již nainstalovány v počítači. Před pokračováním zkontrolujte následující (výchozí) adresář.  
+>
 > `<InstallDrive>:\WF_WCF_Samples`  
->   
-> Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] Samples. Tato ukázka se nachází v následujícím adresáři.  
->   
+>
+> Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a Windows Workflow Foundation (WF) Ukázky pro rozhraní .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka je umístěna v následujícím adresáři.  
+>
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\RoutingServices\HelloRoutingService`  
   
 ## <a name="see-also"></a>Viz také
 
-- [Hostování technologie AppFabric a ukázky trvalosti](https://docs.microsoft.com/previous-versions/appfabric/ff383418(v=azure.10))
+- [Ukázky hostování a perzistence appfabric](https://docs.microsoft.com/previous-versions/appfabric/ff383418(v=azure.10))

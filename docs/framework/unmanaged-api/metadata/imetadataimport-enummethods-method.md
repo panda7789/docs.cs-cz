@@ -15,61 +15,61 @@ helpviewer_keywords:
 ms.assetid: 8cc3b0c3-d97d-4f71-9e7d-ef2a92b4959a
 topic_type:
 - apiref
-ms.openlocfilehash: 8e9e08ac903423b2e121f22cc9e43a660ccfac7b
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 218b65b5899692774c434ae136a3976ecb97ea2f
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74450082"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79177311"
 ---
 # <a name="imetadataimportenummethods-method"></a>IMetaDataImport::EnumMethods – metoda
-Vytvoří výčet tokenů MethodDef představujících metody zadaného typu.  
+Výčet tokenů MethodDef představujících metody zadaného typu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```cpp  
 HRESULT EnumMethods (  
-   [in, out] HCORENUM   *phEnum,   
-   [in]  mdTypeDef      cl,   
-   [out] mdMethodDef    rMethods[],   
-   [in]  ULONG          cMax,   
+   [in, out] HCORENUM   *phEnum,
+   [in]  mdTypeDef      cl,
+   [out] mdMethodDef    rMethods[],
+   [in]  ULONG          cMax,
    [out] ULONG          *pcTokens  
 );  
 ```  
   
 ## <a name="parameters"></a>Parametry  
  `phEnum`  
- [in, out] Ukazatel na enumerátor. Pro první volání této metody musí mít hodnotu NULL.  
+ [dovnitř, ven] Ukazatel na čítač výčtu. To musí být NULL pro první volání této metody.  
   
  `cl`  
- pro Token TypeDef představující typ s metodami k vytvoření výčtu.  
+ [v] A TypeDef token představující typ s metodami pro výčet.  
   
  `rMethods`  
- mimo Pole, do kterého se mají ukládat tokeny MethodDef  
+ [out] Pole pro uložení tokenů MethodDef.  
   
  `cMax`  
- pro Maximální velikost pole MethodDef `rMethods`.  
+ [v] Maximální velikost pole MethodDef. `rMethods`  
   
  `pcTokens`  
- mimo Počet tokenů MethodDef vrácených v `rMethods`.  
+ [out] Počet tokenů MethodDef vrácených v `rMethods`.  
   
 ## <a name="return-value"></a>Návratová hodnota  
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
-|`S_OK`|`EnumMethods` byla úspěšně vrácena.|  
-|`S_FALSE`|Nejsou k dispozici žádné tokeny MethodDef pro zobrazení výčtu. V takovém případě je `pcTokens` nula.|  
+|`S_OK`|`EnumMethods`úspěšně vrácena.|  
+|`S_FALSE`|Neexistují žádné tokeny MethodDef k výčetu. V tom `pcTokens` případě je nula.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Hlavička:** Cor. h  
+ **Záhlaví:** Kor.h.  
   
- **Knihovna:** Zahrnuto jako prostředek v knihovně MsCorEE. dll  
+ **Knihovna:** Zahrnuto jako prostředek v souboru MsCorEE.dll  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [IMetaDataImport – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
 - [IMetaDataImport2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)

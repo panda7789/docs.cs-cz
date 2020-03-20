@@ -6,57 +6,57 @@ helpviewer_keywords:
 - MultipleView control pattern
 - control patterns, MultipleView
 ms.assetid: 5bf1b248-ffee-48c8-9613-0b134bbe9f6a
-ms.openlocfilehash: c9199e0ea1971c22bfc1f6334b9d2d9d73bb048c
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 9decb617e30a340d3e73e911f7848110de5599e9
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74435053"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79180160"
 ---
 # <a name="implementing-the-ui-automation-multipleview-control-pattern"></a>Implementace vzoru ovládacích prvků MultipleView pro automatizaci uživatelského rozhraní
 > [!NOTE]
-> Tato dokumentace je určena pro .NET Framework vývojářů, kteří chtějí používat spravované [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] třídy definované v oboru názvů <xref:System.Windows.Automation>. Nejnovější informace o [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]najdete v tématu [rozhraní API pro Windows Automation: automatizace uživatelského rozhraní](/windows/win32/winauto/entry-uiauto-win32).  
+> Tato dokumentace je určena pro vývojáře rozhraní [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] .NET Framework, kteří chtějí používat spravované třídy definované v oboru <xref:System.Windows.Automation> názvů. Nejnovější informace o [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]rozhraní [WINDOWS Automation API: Automatizace uživatelského rozhraní](/windows/win32/winauto/entry-uiauto-win32).  
   
- Toto téma obsahuje pokyny a konvence pro implementaci <xref:System.Windows.Automation.Provider.IMultipleViewProvider>, včetně informací o událostech a vlastnostech. Odkazy na další odkazy jsou uvedeny na konci tématu.  
+ Toto téma představuje pokyny a <xref:System.Windows.Automation.Provider.IMultipleViewProvider>konvence pro implementaci , včetně informací o událostech a vlastnostech. Odkazy na další odkazy jsou uvedeny na konci tématu.  
   
- Model ovládacího prvku <xref:System.Windows.Automation.MultipleViewPattern> slouží k podpoře ovládacích prvků, které poskytují a jsou schopny přepínat mezi různými reprezentacemi stejné sady informací nebo podřízených ovládacích prvků.  
+ Vzor <xref:System.Windows.Automation.MultipleViewPattern> ovládacího prvku se používá k podpoře ovládacích prvků, které poskytují a jsou schopny přepínat mezi více reprezentace stejné sady informací nebo podřízené ovládací prvky.  
   
- Příklady ovládacích prvků, které mohou prezentovat více zobrazení, zahrnují zobrazení seznamu (které může zobrazit jeho obsah jako miniatury, dlaždice, ikony nebo podrobnosti), grafy aplikace Microsoft Excel (výseč, čára, pruh, hodnota buňky se vzorcem), dokumenty aplikace Microsoft Word (normální, rozložení na webu, tisk rozložení, rozložení pro čtení, osnova), Microsoft Outlook kalendář (year, month, Week, Day) a Microsoft Windows Media Player skiny. Podporovaná zobrazení jsou určena vývojářem ovládacího prvku a jsou specifická pro každý ovládací prvek.  
+ Příklady ovládacích prvků, které mohou představovat více zobrazení, zahrnují zobrazení seznamu (které může zobrazovat jeho obsah jako miniatury, dlaždice, ikony nebo podrobnosti), grafy aplikace Microsoft Excel (výsečový, spojnicový, pruhový, hodnota buňky se vzorcem), dokumenty aplikace Microsoft Word (normální, rozložení webu, tisk rozložení, rozložení pro čtení, osnovu), kalendáře aplikace Microsoft Outlook (rok, měsíc, týden, den) a vzhledy programu Microsoft Windows Media Player. Podporovaná zobrazení jsou určena vývojářem ovládacího prvku a jsou specifická pro každý ovládací prvek.  
   
-<a name="Implementation_Guidelines_and_Conventions"></a>   
-## <a name="implementation-guidelines-and-conventions"></a>Pokyny a konvence implementace  
- Při implementaci modelu více ovládacích prvků zobrazení si všimněte následujících pokynů a konvencí:  
+<a name="Implementation_Guidelines_and_Conventions"></a>
+## <a name="implementation-guidelines-and-conventions"></a>Prováděcí pokyny a úmluvy  
+ Při implementaci vzor ovládacího prvku více zobrazení, poznamenejte si následující pokyny a konvence:  
   
-- <xref:System.Windows.Automation.Provider.IMultipleViewProvider> by měl být implementován také v kontejneru, který spravuje aktuální zobrazení, pokud se liší od ovládacího prvku, který poskytuje aktuální zobrazení. Například Průzkumník Windows obsahuje ovládací prvek seznamu pro aktuální obsah složky, zatímco zobrazení pro ovládací prvek je spravováno z aplikace Průzkumník Windows.  
+- <xref:System.Windows.Automation.Provider.IMultipleViewProvider>by měla být také implementována na kontejneru, který spravuje aktuální zobrazení, pokud se liší od ovládacího prvku, který poskytuje aktuální zobrazení. Průzkumník Windows například obsahuje ovládací prvek List pro aktuální obsah složky, zatímco zobrazení ovládacího prvku je spravováno z aplikace Průzkumník windows.  
   
-- Ovládací prvek, který je schopný seřadit jeho obsah, není považován za podporu více zobrazení.  
+- Ovládací prvek, který je schopen seřadit jeho obsah není považován za podporu více zobrazení.  
   
-- Kolekce zobrazení musí být identická mezi instancemi.  
+- Kolekce zobrazení musí být identické napříč instancemi.  
   
-- Názvy zobrazení musí být vhodné pro použití v Převod textu na řeč, Braillova písma a dalších aplikacích čitelných lidmi.  
+- Názvy zobrazení musí být vhodné pro použití v aplikacích Převod textu na řeč, Braillově písmu a dalších aplikacích čitelných pro člověka.  
   
-<a name="Required_Members_for_IMultipleViewProvider"></a>   
-## <a name="required-members-for-imultipleviewprovider"></a>Vyžadovaná členové pro IMultipleViewProvider  
- Pro implementaci IMultipleViewProvider jsou vyžadovány následující vlastnosti a metody.  
+<a name="Required_Members_for_IMultipleViewProvider"></a>
+## <a name="required-members-for-imultipleviewprovider"></a>Požadované členy pro iMultipleViewProvider  
+ Následující vlastnosti a metody jsou vyžadovány pro implementaci IMultipleViewProvider.  
   
-|Vyžadovaná členové|Typ člena|Poznámky|  
+|Požadované členy|Typ člena|Poznámky|  
 |----------------------|-----------------|-----------|  
-|<xref:System.Windows.Automation.Provider.IMultipleViewProvider.CurrentView%2A>|Vlastnost|Žádné|  
-|<xref:System.Windows.Automation.Provider.IMultipleViewProvider.GetSupportedViews%2A>|Metoda|Žádné|  
-|<xref:System.Windows.Automation.Provider.IMultipleViewProvider.GetViewName%2A>|Metoda|Žádné|  
-|<xref:System.Windows.Automation.Provider.IMultipleViewProvider.SetCurrentView%2A>|Metoda|Žádné|  
+|<xref:System.Windows.Automation.Provider.IMultipleViewProvider.CurrentView%2A>|Vlastnost|Žádný|  
+|<xref:System.Windows.Automation.Provider.IMultipleViewProvider.GetSupportedViews%2A>|Metoda|Žádný|  
+|<xref:System.Windows.Automation.Provider.IMultipleViewProvider.GetViewName%2A>|Metoda|Žádný|  
+|<xref:System.Windows.Automation.Provider.IMultipleViewProvider.SetCurrentView%2A>|Metoda|Žádný|  
   
- K tomuto vzoru ovládacích prvků nejsou přidruženy žádné události.  
+ Neexistují žádné události spojené s tímto vzorem ovládacího prvku.  
   
-<a name="Exceptions"></a>   
+<a name="Exceptions"></a>
 ## <a name="exceptions"></a>Výjimky  
  Zprostředkovatel musí vyvolat následující výjimky.  
   
 |Typ výjimky|Podmínka|  
 |--------------------|---------------|  
-|<xref:System.ArgumentException>|Když je volána buď <xref:System.Windows.Automation.Provider.IMultipleViewProvider.SetCurrentView%2A>, nebo <xref:System.Windows.Automation.Provider.IMultipleViewProvider.GetViewName%2A> parametr, který není členem podporované kolekce zobrazení.|  
+|<xref:System.ArgumentException>|Při <xref:System.Windows.Automation.Provider.IMultipleViewProvider.SetCurrentView%2A> volání <xref:System.Windows.Automation.Provider.IMultipleViewProvider.GetViewName%2A> buď nebo je volána s parametrem, který není členem kolekce podporovaných zobrazení.|  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Přehled vzorů ovládacích prvků pro automatizaci uživatelského rozhraní](ui-automation-control-patterns-overview.md)
 - [Podpora vzorů ovládacích prvků u zprostředkovatele automatizace uživatelského rozhraní](support-control-patterns-in-a-ui-automation-provider.md)

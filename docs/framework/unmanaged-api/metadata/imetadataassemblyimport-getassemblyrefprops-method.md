@@ -15,76 +15,76 @@ helpviewer_keywords:
 ms.assetid: 5c6b7fb4-cbca-4479-b650-ab9a99732ea0
 topic_type:
 - apiref
-ms.openlocfilehash: 4149db74adfa26df221eed5c590766a023bb105e
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 9aef471c1155070af0e9bcca14975a65bc5dc763
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74448223"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79175964"
 ---
 # <a name="imetadataassemblyimportgetassemblyrefprops-method"></a>IMetaDataAssemblyImport::GetAssemblyRefProps – metoda
-Získá sadu vlastností pro odkaz na sestavení se zadaným podpisem metadat.  
+Získá sadu vlastností pro odkaz na sestavení s zadaným podpisem metadat.  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```cpp  
 HRESULT GetAssemblyRefProps (  
-    [in]  mdAssemblyRef        mdar,   
-    [out] const void          **ppbPublicKeyOrToken,   
-    [out] ULONG                *pcbPublicKeyOrToken,   
-    [out] LPWSTR               szName,   
-    [in]  ULONG                cchName,   
-    [out] ULONG                *pchName,   
-    [out] ASSEMBLYMETADATA     *pMetaData,   
-    [out] const void           **ppbHashValue,   
-    [out] ULONG                *pcbHashValue,   
+    [in]  mdAssemblyRef        mdar,
+    [out] const void          **ppbPublicKeyOrToken,
+    [out] ULONG                *pcbPublicKeyOrToken,
+    [out] LPWSTR               szName,
+    [in]  ULONG                cchName,
+    [out] ULONG                *pchName,
+    [out] ASSEMBLYMETADATA     *pMetaData,
+    [out] const void           **ppbHashValue,
+    [out] ULONG                *pcbHashValue,
     [out] DWORD                *pdwAssemblyRefFlags  
 );  
 ```  
   
 ## <a name="parameters"></a>Parametry  
  `mdar`  
- pro Token metadat `mdAssemblyRef`, který představuje odkaz na sestavení, pro který se mají získat vlastnosti.  
+ [v] Token `mdAssemblyRef` metadat, který představuje odkaz na sestavení, pro které chcete získat vlastnosti.  
   
  `ppbPublicKeyOrToken`  
- mimo Ukazatel na veřejný klíč nebo token metadat.  
+ [out] Ukazatel na veřejný klíč nebo token metadat.  
   
  `pcbPublicKeyOrToken`  
- mimo Počet bajtů v vráceném veřejném klíči nebo tokenu.  
+ [out] Počet bajtů ve vráceném veřejném klíči nebo tokenu.  
   
  `szName`  
- mimo Jednoduchý název sestavení.  
+ [out] Jednoduchý název sestavení.  
   
  `cchName`  
- pro Velikost v rámci velkých znaků `szName`.  
+ [v] Velikost , v širokých `szName`znaků, .  
   
  `pchName`  
- mimo Ukazatel na počet velkých znaků, který je ve skutečnosti vrácen v `szName`.  
+ [out] Ukazatel na počet širokých znaků skutečně `szName`vrácených v .  
   
  `pMetaData`  
- mimo Ukazatel na strukturu AssemblyMetadata –, která obsahuje metadata sestavení.  
+ [out] Ukazatel na strukturu ASSEMBLYMETADATA, která obsahuje metadata sestavení.  
   
  `ppbHashValue`  
- mimo Ukazatel na hodnotu hash. Toto je hodnota hash pomocí algoritmu SHA-1 vlastnosti `PublicKey` odkazovaného sestavení, pokud není nastaven příznak arfFullOriginator výčtu [AssemblyRefFlags –](../../../../docs/framework/unmanaged-api/metadata/assemblyrefflags-enumeration.md) .  
+ [out] Ukazatel na hodnotu hash. Toto je algoritmus hash pomocí algoritmu `PublicKey` SHA-1 vlastnosti naváděného sestavení, pokud není nastaven příznak arfFullOriginator výčtu [AssemblyRefFlags.](../../../../docs/framework/unmanaged-api/metadata/assemblyrefflags-enumeration.md)  
   
  `pcbHashValue`  
- mimo Počet velkých znaků v vrácené hodnotě hash.  
+ [out] Počet širokých znaků ve vrácené hodnotě hash.  
   
  `pdwAssemblyRefFlags`  
- mimo Ukazatel na příznaky, které popisují metadata použitá pro sestavení. Hodnota příznaků je kombinací jedné nebo více hodnot [CorAssemblyFlags –](../../../../docs/framework/unmanaged-api/metadata/corassemblyflags-enumeration.md) .  
+ [out] Ukazatel na příznaky, které popisují metadata použitá v sestavení. Hodnota příznaků je kombinací jedné nebo více hodnot [CorAssemblyFlags.](../../../../docs/framework/unmanaged-api/metadata/corassemblyflags-enumeration.md)  
   
 ## <a name="return-value"></a>Návratová hodnota  
- Tato metoda vrátí S_OK, pokud je úspěšná; v opačném případě vrátí jeden z kódů chyb definovaných v souboru hlaviček Winerror. h.  
+ Tato metoda vrátí S_OK pokud je úspěšná; v opačném případě vrátí jeden z kódů chyb definovaných v souboru hlavičky Winerror.h.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Hlavička:** Cor. h  
+ **Záhlaví:** Kor.h.  
   
- **Knihovna:** Používá se jako prostředek v knihovně MsCorEE. dll.  
+ **Knihovna:** Používá se jako prostředek v souboru MsCorEE.dll  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [IMetaDataAssemblyImport – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyimport-interface.md)

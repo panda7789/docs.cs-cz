@@ -15,77 +15,77 @@ helpviewer_keywords:
 ms.assetid: c7dd94c6-335b-46ff-9dfe-505056db5673
 topic_type:
 - apiref
-ms.openlocfilehash: 75711b3d87699ff5db21a04351ff0acaccabb5aa
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: a7449ffc8a8ccf2db62ab3cff2f9cfaffd0c72a9
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74431857"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79175860"
 ---
 # <a name="imetadataemitdefineimportmember-method"></a>IMetaDataEmit::DefineImportMember – metoda
-Vytvoří odkaz na zadaného člena typu nebo modulu, který je definován mimo aktuální obor, a definuje token pro tento odkaz.  
+Vytvoří odkaz na zadaný člen typu nebo modulu, který je definován mimo aktuální obor a definuje token pro tento odkaz.  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```cpp  
-HRESULT DefineImportMember (   
-    [in]  IMetaDataAssemblyImport  *pAssemImport,   
-    [in]  const void               *pbHashValue,   
+HRESULT DefineImportMember (
+    [in]  IMetaDataAssemblyImport  *pAssemImport,
+    [in]  const void               *pbHashValue,
     [in]  ULONG                    cbHashValue,  
-    [in]  IMetaDataImport          *pImport,   
-    [in]  mdToken                  mbMember,   
-    [in]  IMetaDataAssemblyEmit    *pAssemEmit,   
-    [in]  mdToken                  tkParent,   
-    [out] mdMemberRef              *pmr   
+    [in]  IMetaDataImport          *pImport,
+    [in]  mdToken                  mbMember,
+    [in]  IMetaDataAssemblyEmit    *pAssemEmit,
+    [in]  mdToken                  tkParent,
+    [out] mdMemberRef              *pmr
 );  
 ```  
   
 ## <a name="parameters"></a>Parametry  
  `pAssemImport`  
- pro Rozhraní [IMetaDataAssemblyImport](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyimport-interface.md) , které představuje sestavení, ze kterého je importován cílový člen.  
+ [v] Rozhraní [IMetaDataAssemblyImport,](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyimport-interface.md) které představuje sestavení, ze kterého je importován cílový člen.  
   
  `pbHashValue`  
- pro Pole, které obsahuje hodnotu hash pro sestavení určené parametrem `pAssemImport`.  
+ [v] Pole, které obsahuje hash pro `pAssemImport`sestavení určené .  
   
  `cbHashValue`  
- pro Počet bajtů v poli `pbHashValue`.  
+ [v] Počet bajtů v `pbHashValue` poli.  
   
  `pImport`  
- pro Rozhraní [IMetaDataImport](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md) , které představuje obor metadat, ze kterého je importován cílový člen.  
+ [v] Rozhraní [IMetaDataImport,](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md) které představuje obor metadat, ze kterého je importován cílový člen.  
   
  `mbMember`  
- pro Token metadat, který určuje cílového člena. Token může být `mdMethodDef` (pro metodu člena), `mdProperty` (pro vlastnost člena) nebo `mdFieldDef` (pro pole člena).  
+ [v] Token metadat, který určuje cílový člen. Token může být `mdMethodDef` token (pro `mdProperty` metodu člena), (pro vlastnost člena) nebo `mdFieldDef` (pro členské pole) token.  
   
  `pAssemEmit`  
- pro Rozhraní [IMetaDataAssemblyEmit](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyemit-interface.md) , které představuje sestavení, do kterého je importován cílový člen.  
+ [v] Rozhraní [IMetaDataAssemblyEmit,](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyemit-interface.md) které představuje sestavení, do kterého je importován cílový člen.  
   
  `tkParent`  
- pro Token `mdTypeRef` nebo `mdModuleRef` pro typ nebo modul, v uvedeném pořadí, který vlastní cílového člena.  
+ [v] `mdModuleRef` Nebo `mdTypeRef` token pro typ nebo modul, respektive, který vlastní cílový člen.  
   
  `pmr`  
- mimo Token `mdMemberRef`, který je definován v aktuálním oboru pro odkaz na člena.  
+ [out] Token, `mdMemberRef` který je definován v aktuálním oboru pro odkaz na člena.  
   
 ## <a name="remarks"></a>Poznámky  
- Metoda `DefineImportMember` vyhledá člena, určeného parametrem `mbMember`, který je definován v jiném oboru určeném `pImport`a načte jeho vlastnosti. Tato informace používá k volání metody [IMetaDataEmit::D efinememberref](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-definememberref-method.md) v aktuálním oboru pro vytvoření odkazu na člena.  
+ Metoda `DefineImportMember` vyhledá člen, určený `mbMember`v , který je definován `pImport`v jiném oboru, určený v . a načte jeho vlastnosti. Tyto informace používá k volání [metody IMetaDataEmit::DefineMemberRef](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-definememberref-method.md) v aktuálním oboru k vytvoření odkazu na člena.  
   
- Obecně platí, že před použitím metody `DefineImportMember` musíte vytvořit v aktuálním oboru odkaz na typ nebo odkaz na modul pro nadřazenou třídu cílového člena, rozhraní nebo modul. Token metadat pro tento odkaz je pak předán v argumentu `tkParent`. Není nutné vytvářet odkaz na nadřazený člen cílového člena, pokud bude vyřešen později kompilátorem nebo linkerem. Sumarizace:  
+ Obecně platí, že `DefineImportMember` před použitím metody je nutné vytvořit v aktuálním oboru odkaz na typ nebo odkaz na modul pro nadřazenou třídu, rozhraní nebo modul cílového člena. Token metadat pro tento odkaz je `tkParent` pak předán v argumentu. Není nutné vytvořit odkaz na nadřazený cílový člen, pokud bude vyřešen později kompilátorem nebo propojovacím sítí. Shrnutí:  
   
-- Pokud je cílový člen pole nebo metoda, použijte buď metodu [IMetaDataEmit::D efinetyperefbyname](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-definetyperefbyname-method.md) , nebo [IMetaDataEmit::D efineimporttype](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-defineimporttype-method.md) pro vytvoření odkazu na typ v aktuálním oboru pro nadřazenou třídu člena nebo nadřazené rozhraní.  
+- Pokud je cílovým členem pole nebo metoda, použijte buď [IMetaDataEmit::DefineTypeRefByName](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-definetyperefbyname-method.md) nebo [Metodu IMetaDataEmit::DefineImportType](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-defineimporttype-method.md) k vytvoření odkazu na typ v aktuálním oboru pro nadřazenou třídu člena nebo nadřazené rozhraní.  
   
-- Pokud je cílový člen globální proměnnou nebo globální funkcí (tj. není členem třídy nebo rozhraní), použijte metodu [IMetaDataEmit::D efinemoduleref](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-definemoduleref-method.md) pro vytvoření odkazu na modul v aktuálním oboru pro nadřazený modul člena.  
+- Pokud cílový člen je globální proměnná nebo globální funkce (to znamená, že není členem třídy nebo rozhraní), použijte [metodu IMetaDataEmit::DefineModuleRef](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-definemoduleref-method.md) k vytvoření odkazu na modul v aktuálním oboru pro nadřazený modul člena.  
   
-- Pokud cíl cílového člena bude vyřešen později kompilátorem nebo linkerem, pak předejte `mdTokenNil` v `tkParent`. Jediným scénářem, ve kterém se to týká, je, že globální funkce nebo globální proměnná se importují ze souboru. obj, který bude nakonec propojený s aktuálním modulem a Sloučená metadata.  
+- Pokud nadřazený cílový člen bude vyřešen později kompilátorem nebo propojovacím sítí, pak předajte `mdTokenNil` `tkParent`. Jediný scénář, ve kterém to platí je, když globální funkce nebo globální proměnná je importován ze souboru OBJ, který bude nakonec propojeny do aktuálního modulu a metadata sloučena.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Hlavička:** Cor. h  
+ **Záhlaví:** Kor.h.  
   
- **Knihovna:** Používá se jako prostředek v knihovně MSCorEE. dll.  
+ **Knihovna:** Používá se jako prostředek v souboru MSCorEE.dll  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [IMetaDataEmit – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)
 - [IMetaDataEmit2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-interface.md)

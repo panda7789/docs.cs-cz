@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 7b72fa11-3866-402b-bdea-2b966b77cfe0
 topic_type:
 - apiref
-ms.openlocfilehash: f0c390509a698fdc4682ba81182d4b407d8718c9
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: ae9097725aecd21e910e49a78d81951df39e9b2d
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74448250"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79177768"
 ---
 # <a name="imetadataassemblyimportfindmanifestresourcebyname-method"></a>IMetaDataAssemblyImport::FindManifestResourceByName – metoda
 Získá ukazatel na prostředek manifestu se zadaným názvem.  
@@ -29,31 +29,31 @@ Získá ukazatel na prostředek manifestu se zadaným názvem.
   
 ```cpp
 HRESULT FindManifestResourceByName (  
-    [in]  LPCWSTR                szName,   
+    [in]  LPCWSTR                szName,
     [out] mdManifestResource     *ptkManifestResource  
-);   
+);
 ```  
   
 ## <a name="parameters"></a>Parametry  
  `szName`  
- pro Název prostředku.  
+ [v] Název prostředku.  
   
  `ptkManifestResource`  
- mimo Pole, které se používá k uložení `mdManifestResource` tokenů metadat, z nichž každý představuje prostředek manifestu.  
+ [out] Pole používané k `mdManifestResource` ukládání tokenů metadat, z nichž každý představuje prostředek manifestu.  
   
 ## <a name="remarks"></a>Poznámky  
- Metoda `FindManifestResourceByName` používá standardní pravidla zaměstnaná modulem CLR (Common Language Runtime) pro překládání odkazů.  
+ Metoda `FindManifestResourceByName` používá standardní pravidla používaná za běhu společného jazyka pro řešení odkazů.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforma:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platforma:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Hlavička:** Cor. h  
+ **Záhlaví:** Kor.h.  
   
- **Knihovna:** Používá se jako prostředek v knihovně MsCorEE. dll.  
+ **Knihovna:** Používá se jako prostředek v souboru MsCorEE.dll  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [IMetaDataAssemblyImport – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyimport-interface.md)
 - [Jak běhové prostředí vyhledává sestavení](../../../../docs/framework/deployment/how-the-runtime-locates-assemblies.md)

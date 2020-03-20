@@ -15,61 +15,61 @@ helpviewer_keywords:
 ms.assetid: b3fc1e6c-bcb6-4915-baf8-7dc0a31b8724
 topic_type:
 - apiref
-ms.openlocfilehash: 4a1de144163ec2b4952bd16b59fb1c92b706631b
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 2df53ba53c64e042abc54a1d2ac043d301acdde9
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74428294"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79177177"
 ---
 # <a name="imetadataimport2enummethodspecs-method"></a>IMetaDataImport2::EnumMethodSpecs – metoda
-Získá enumerátor pro pole tokenů MethodSpec přidružených k zadanému tokenu MethodDef nebo MemberRef.  
+Získá čítač pro pole MethodSpec tokeny přidružené k zadané MethodDef nebo MemberRef token.  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```cpp  
 HRESULT EnumMethodSpecs (  
-    [in, out] HCORENUM      *phEnum,   
+    [in, out] HCORENUM      *phEnum,
     [in]      mdToken       tk,  
     [out]     mdMethodSpec  rMethodSpecs[],  
     [in]      ULONG         cMax,  
     [out]     ULONG         *pcMethodSpecs  
-);   
+);
 ```  
   
 ## <a name="parameters"></a>Parametry  
  `phEnum`  
- [in, out] Ukazatel na enumerátor pro `rMethodSpecs`.  
+ [dovnitř, ven] Ukazatel na čítač `rMethodSpecs`výčtu pro .  
   
  `tk`  
- pro Token MemberRef nebo MethodDef, který představuje metodu, jejíž tokeny MethodSpec mají být vyčísleny. Pokud je hodnota `tk` 0 (nula), budou vyčísleny všechny tokeny MethodSpec v oboru.  
+ [v] Token MemberRef nebo MethodDef, který představuje metodu, jejíž tokeny MethodSpec mají být uvedeny ve výčtu. Pokud `tk` je hodnota 0 (nula), budou uvedeny všechny tokeny MethodSpec v oboru.  
   
  `rMethodSpecs`  
- mimo Pole tokenů MethodSpec k zobrazení výčtu.  
+ [out] Pole MethodSpec tokeny výčet.  
   
  `cMax`  
- pro Požadovaný maximální počet tokenů, které mají být umístěny v `rMethodSpecs`.  
+ [v] Požadovaný maximální počet tokenů, `rMethodSpecs`které mají být umístit v .  
   
  `pcMethodSpecs`  
- mimo Vrácený počet tokenů umístěných v `rMethodSpecs`.  
+ [out] Vrácený počet tokenů `rMethodSpecs`umístěných v .  
   
 ## <a name="return-value"></a>Návratová hodnota  
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
-|`S_OK`|`EnumMethodSpecs` byla úspěšně vrácena.|  
-|`S_FALSE`|`phEnum` nemá žádné prvky členů. V tomto případě je `pcMethodSpecs` nastaveno na hodnotu 0 (nula).|  
+|`S_OK`|`EnumMethodSpecs`úspěšně vrácena.|  
+|`S_FALSE`|`phEnum`nemá žádné členské prvky. V tomto `pcMethodSpecs` případě je nastavena na 0 (nula).|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Hlavička:** Cor. h  
+ **Záhlaví:** Kor.h.  
   
- **Knihovna:** Používá se jako prostředek v knihovně MsCorEE. dll.  
+ **Knihovna:** Používá se jako prostředek v souboru MsCorEE.dll  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [IMetaDataImport2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)
 - [IMetaDataImport – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)

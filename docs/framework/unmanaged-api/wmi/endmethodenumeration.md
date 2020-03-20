@@ -1,5 +1,5 @@
 ---
-title: EndMethodEnumeration – funkce (Reference nespravovaného rozhraní API)
+title: Funkce EndMethodEnumeration (Nespravovaný odkaz rozhraní API)
 description: Funkce EndMethodEnumeration ukončí sekvenci výčtu metody.
 ms.date: 11/06/2017
 api_name:
@@ -14,57 +14,57 @@ helpviewer_keywords:
 - EndMethodEnumeration function [.NET WMI and performance counters]
 topic_type:
 - Reference
-ms.openlocfilehash: 174cf76d4b0ddf07e67e02bff20a983dca08819a
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 63667d0668f905ded2aedd961be0d1831faf838c
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73132023"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79175002"
 ---
 # <a name="endmethodenumeration-function"></a>Funkce EndMethodEnumeration
-Ukončí sekvenci výčtu spuštěnou voláním [funkce BeginMethodEnumeration](beginmethodenumeration.md).  
+Ukončí posloupnost výčtu spuštěnou voláním [funkce BeginMethodEnumeration .](beginmethodenumeration.md)  
 
 [!INCLUDE[internalonly-unmanaged](../../../../includes/internalonly-unmanaged.md)]
-    
+
 ## <a name="syntax"></a>Syntaxe  
   
 ```cpp  
 HRESULT EndMethodEnumeration (
-   [in] int               vFunc, 
-   [in] IWbemClassObject* ptr 
-); 
+   [in] int               vFunc,
+   [in] IWbemClassObject* ptr
+);
 ```  
 
 ## <a name="parameters"></a>Parametry
 
 `vFunc`  
-pro Tento parametr se nepoužívá.
+[v] Tento parametr není použit.
 
 `ptr`  
-pro Ukazatel na instanci [IWbemClassObject](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject) .
+[v] Ukazatel na instanci [IWbemClassObject.](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject)
 
 ## <a name="return-value"></a>Návratová hodnota
 
-Následující hodnoty vrácené touto funkcí jsou definovány v souboru hlaviček *WbemCli. h* nebo je můžete definovat jako konstanty v kódu:
+Následující hodnoty vrácené touto funkcí jsou definovány v souboru *hlavičky WbemCli.h,* nebo je můžete definovat jako konstanty v kódu:
 
-|Konstanta  |Hodnota  |Popis  |
+|Trvalé  |Hodnota  |Popis  |
 |---------|---------|---------|
 |`WBEM_E_UNEXPECTED` | 0x8004101d | Došlo k vnitřní chybě. |
-|`WBEM_S_NO_ERROR` | 0,8 | Volání funkce bylo úspěšné.  |
+|`WBEM_S_NO_ERROR` | 0 | Volání funkce bylo úspěšné.  |
   
 ## <a name="remarks"></a>Poznámky
 
-Tato funkce zalomí volání metody [IWbemclassObject:: EndMethodEnumeration](/windows/desktop/api/wbemcli/nf-wbemcli-iwbemclassobject-endmethodenumeration) .
+Tato funkce zabalí volání metody [IWbemClassObject::EndMethodEnumeration.](/windows/desktop/api/wbemcli/nf-wbemcli-iwbemclassobject-endmethodenumeration)
 
-Volající zahájí sekvenci výčtu pomocí [funkce BeginMethodEnumeration](beginmethodenumeration.md)a poté zavolá [funkci NextMethod](nextmethod.md ), dokud metoda nevrátí `WBEM_S_NO_MORE_DATA`. Volající volitelně dokončí sekvenci voláním `EndMethodEnumeration`. Volající může ukončit výčet hned po volání `EndMethodEnumeration` kdykoli.
+Volající zahájí posloupnost výčtu pomocí [funkce BeginMethodEnumeration a](beginmethodenumeration.md)potom zavolá `WBEM_S_NO_MORE_DATA`funkci [NextMethod,](nextmethod.md )dokud metoda nevrátí . Volající volitelně dokončí pořadí voláním `EndMethodEnumeration`. Volající může ukončit výčtu `EndMethodEnumeration` brzy voláním kdykoli.
 
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
+ **Platformy:** Viz [Systémové požadavky](../../get-started/system-requirements.md).  
   
- **Hlavička:** WMINet_Utils. idl  
+ **Záhlaví:** WMINet_Utils.idl  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
+ **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [WMI a čítače výkonu (Reference nespravovaného rozhraní API)](index.md)
+- [Čítače služby WMI a výkonu (nespravovaný odkaz na rozhraní API)](index.md)

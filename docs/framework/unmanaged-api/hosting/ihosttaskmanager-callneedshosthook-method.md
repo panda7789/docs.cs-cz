@@ -15,58 +15,58 @@ helpviewer_keywords:
 ms.assetid: b60f1f59-9825-4b57-961f-d2979518e6a7
 topic_type:
 - apiref
-ms.openlocfilehash: f5a595651baa48553997c2cba138f4f61bd530f0
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 8b8b8521a09fa54a105e8263a471ab0467fb6ccc
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73133091"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79176289"
 ---
 # <a name="ihosttaskmanagercallneedshosthook-method"></a>IHostTaskManager::CallNeedsHostHook – metoda
-Umožňuje hostiteli určit, zda může modul CLR (Common Language Runtime) vložit zadané volání do nespravované funkce.  
+Umožňuje hostiteli určit, zda může zadaný kód CLR vřadit zadaný jazyk do nespravované funkce.  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```cpp  
 HRESULT CallNeedsHostHook (  
-    [in]  SIZE_T target,   
+    [in]  SIZE_T target,
     [out] BOOL   *pbCallNeedsHostHook  
 );  
 ```  
   
 ## <a name="parameters"></a>Parametry  
  `target`  
- pro Adresa v mapovaném souboru přenositelného spustitelného souboru (PE) nespravované funkce, která má být volána.  
+ [v] Adresa v rámci mapovaného přenosného spustitelného souboru (PE) nespravované funkce, která má být volána.  
   
  `pbCallNeedsHostHook`  
- mimo Ukazatel na logickou hodnotu, která označuje, zda hostitel vyžaduje, aby volání bylo zavěšeno.  
+ [out] Ukazatel na logickou hodnotu, která označuje, zda hostitel vyžaduje, aby volání bylo připojeno.  
   
 ## <a name="return-value"></a>Návratová hodnota  
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
-|S_OK|`CallNeedsHostHook` byla úspěšně vrácena.|  
-|HOST_E_CLRNOTAVAILABLE|Modul CLR nebyl načten do procesu, nebo je modul CLR ve stavu, ve kterém nemůže spustit spravovaný kód nebo úspěšně zpracovat volání.|  
-|HOST_E_TIMEOUT|Vypršel časový limit volání.|  
+|S_OK|`CallNeedsHostHook`úspěšně vrácena.|  
+|HOST_E_CLRNOTAVAILABLE|CLR nebyl načten do procesu nebo CLR je ve stavu, ve kterém nelze spustit spravovaný kód nebo úspěšně zpracovat volání.|  
+|HOST_E_TIMEOUT|Časový čas hovoru byl vypován.|  
 |HOST_E_NOT_OWNER|Volající nevlastní zámek.|  
-|HOST_E_ABANDONED|Událost byla zrušena při čekání na blokované vlákno nebo vlákna.|  
-|E_FAIL|Došlo k neznámé závažnosti selhání. Když metoda vrátí E_FAIL, CLR již není v rámci procesu použitelný. Následná volání metod hostování vrací HOST_E_CLRNOTAVAILABLE.|  
+|HOST_E_ABANDONED|Událost byla zrušena, zatímco na ní čekalo blokované vlákno nebo vlákno.|  
+|E_fail|Došlo k neznámému katastrofickému selhání. Když metoda vrátí E_FAIL CLR již není použitelný v rámci procesu. Následná volání metod hostování vrátí HOST_E_CLRNOTAVAILABLE.|  
   
 ## <a name="remarks"></a>Poznámky  
- Pro usnadnění optimalizace provádění kódu provede modul CLR analýzu volání vyvolání každé platformy během kompilace, aby bylo možné určit, zda lze volání vložit do řádku. `CallNeedsHostHook` umožňuje hostiteli toto rozhodnutí přepsat tím, že vyžaduje, aby se zavolalo volání nespravované funkce. Pokud hostitel vyžaduje zavěšení, modul runtime nevloží volání.  
+ Chcete-li optimalizovat spuštění kódu, CLR provede analýzu každé platformy vyvolat volání během kompilace k určení, zda volání může být vložen. `CallNeedsHostHook`umožňuje hostiteli přepsat toto rozhodnutí tím, že vyžaduje, aby volání nespravované funkce bylo připojeno. Pokud hostitel vyžaduje zavěšení, runtime není vsazení volání.  
   
- Hostitel obvykle vyžaduje zavěšení, kde musí upravit stav s plovoucí desetinnou čárkou, nebo po přijetí oznámení, že volání zadává stav, kde hostitel nemůže sledovat požadavky na paměť v modulu runtime nebo jakékoli zámky. Pokud hostitel vyžaduje, aby bylo volání zavěšeno, modul runtime upozorní hostitele přechodů do a ze spravovaného kódu pomocí volání [EnterRuntime –](../../../../docs/framework/unmanaged-api/hosting/ihosttaskmanager-enterruntime-method.md), [LeaveRuntime –](../../../../docs/framework/unmanaged-api/hosting/ihosttaskmanager-leaveruntime-method.md), [ReverseEnterRuntime –](../../../../docs/framework/unmanaged-api/hosting/ihosttaskmanager-reverseenterruntime-method.md)a [ReverseLeaveRuntime –](../../../../docs/framework/unmanaged-api/hosting/ihosttaskmanager-reverseleaveruntime-method.md).  
+ Hostitel obvykle bude vyžadovat zavěšení, kde musí upravit stav s plovoucí desetinnou desetinnou hlavou nebo po přijetí oznámení, že volání vstupuje do stavu, kdy hostitel nemůže sledovat požadavky za běhu na paměť nebo všechny přijaté zámky. Pokud hostitel vyžaduje, aby bylo volání připojeno, program runtime upozorní hostitele přechodů do a ze spravovaného kódu pomocí volání [EnterRuntime](../../../../docs/framework/unmanaged-api/hosting/ihosttaskmanager-enterruntime-method.md), [LeaveRuntime](../../../../docs/framework/unmanaged-api/hosting/ihosttaskmanager-leaveruntime-method.md), [ReverseEnterRuntime](../../../../docs/framework/unmanaged-api/hosting/ihosttaskmanager-reverseenterruntime-method.md)a [ReverseLeaveRuntime](../../../../docs/framework/unmanaged-api/hosting/ihosttaskmanager-reverseleaveruntime-method.md).  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Hlavička:** MSCorEE. h  
+ **Záhlaví:** MSCorEE.h  
   
- **Knihovna:** Zahrnuto jako prostředek v knihovně MSCorEE. dll  
+ **Knihovna:** Zahrnuto jako prostředek v souboru MSCorEE.dll  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [ICLRTask – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrtask-interface.md)
 - [ICLRTaskManager – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrtaskmanager-interface.md)

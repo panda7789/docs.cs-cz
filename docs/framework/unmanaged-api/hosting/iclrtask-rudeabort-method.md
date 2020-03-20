@@ -15,46 +15,46 @@ helpviewer_keywords:
 ms.assetid: b5785468-fcd7-4cc3-8a5d-8796337b53fc
 topic_type:
 - apiref
-ms.openlocfilehash: 69e3ecfc82985d52bd5b14e9faf2566e395b622b
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: aacf9de36dc39b63ed36b672e31f40704413d608
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73124657"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79176328"
 ---
 # <a name="iclrtaskrudeabort-method"></a>ICLRTask::RudeAbort – metoda
-Instruuje modul CLR (Common Language Runtime), aby přerušil úlohu reprezentovanou aktuální instancí [rozhraní ICLRTask](../../../../docs/framework/unmanaged-api/hosting/iclrtask-interface.md) okamžitě a bezpodmínečně.  
+Dává pokyn modulu CLR (COMMON Language runtime) k okamžitému a bezpodmínečnému přerušení úlohy reprezentované aktuální instancí [rozhraní ICLRTask.](../../../../docs/framework/unmanaged-api/hosting/iclrtask-interface.md)  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```cpp  
-HRESULT RudeAbort ();   
+HRESULT RudeAbort ();
 ```  
   
 ## <a name="return-value"></a>Návratová hodnota  
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
-|S_OK|`RudeAbort` byla úspěšně vrácena.|  
-|HOST_E_CLRNOTAVAILABLE|Modul CLR nebyl načten do procesu, nebo je modul CLR ve stavu, ve kterém nemůže spustit spravovaný kód nebo úspěšně zpracovat volání.|  
-|HOST_E_TIMEOUT|Vypršel časový limit volání.|  
+|S_OK|`RudeAbort`úspěšně vrácena.|  
+|HOST_E_CLRNOTAVAILABLE|CLR nebyl načten do procesu nebo CLR je ve stavu, ve kterém nelze spustit spravovaný kód nebo úspěšně zpracovat volání.|  
+|HOST_E_TIMEOUT|Časový čas hovoru byl vypován.|  
 |HOST_E_NOT_OWNER|Volající nevlastní zámek.|  
-|HOST_E_ABANDONED|Událost byla zrušena při čekání na blokované vlákno nebo vlákna.|  
-|E_FAIL|Došlo k neznámé chybě závažnosti. Když metoda vrátí E_FAIL, CLR již není v rámci procesu použitelný. Následná volání metod hostování vrací HOST_E_CLRNOTAVAILABLE.|  
+|HOST_E_ABANDONED|Událost byla zrušena, zatímco na ní čekalo blokované vlákno nebo vlákno.|  
+|E_fail|Došlo k neznámému katastrofickému selhání. Když metoda vrátí E_FAIL CLR již není použitelný v rámci procesu. Následná volání metod hostování vrátí HOST_E_CLRNOTAVAILABLE.|  
   
 ## <a name="remarks"></a>Poznámky  
- Hostitel volá `RudeAbort` k okamžitému přerušení úlohy. Není zaručeno provést finalizační metody a rutiny zpracování výjimek.  
+ Hostitel volá `RudeAbort` okamžitě přerušit úlohu. Finalizační metody a rutiny zpracování výjimek není zaručeno, že budou provedeny.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Hlavička:** MSCorEE. h  
+ **Záhlaví:** MSCorEE.h  
   
- **Knihovna:** Zahrnuto jako prostředek v knihovně MSCorEE. dll  
+ **Knihovna:** Zahrnuto jako prostředek v souboru MSCorEE.dll  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [ICLRTask – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrtask-interface.md)
 - [ICLRTaskManager – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrtaskmanager-interface.md)

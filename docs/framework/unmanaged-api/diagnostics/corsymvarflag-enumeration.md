@@ -14,20 +14,20 @@ helpviewer_keywords:
 ms.assetid: c3f7d307-4047-4f9a-be8c-f152fca42fd0
 topic_type:
 - apiref
-ms.openlocfilehash: 86cac53508665c3c97caaa415d8d3c38660928bb
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 21e92d8f2fb80c4c41d516ef281bf4fc8a75f4e1
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74448559"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79176640"
 ---
 # <a name="corsymvarflag-enumeration"></a>CorSymVarFlag – výčet
-Označuje, zda je proměnná vygenerována kompilátorem.  
+Označuje, zda je generována proměnná kompilátoru.  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```cpp  
-typedef enum CorSymVarFlag   
+typedef enum CorSymVarFlag
 {  
     VAR_IS_COMP_GEN = 1  
 } CorSymVarFlag;  
@@ -37,11 +37,11 @@ typedef enum CorSymVarFlag
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`VAR_IS_COMP_GEN`|Označuje, že daná proměnná je vygenerovaná kompilátorem.|  
+|`VAR_IS_COMP_GEN`|Označuje, že daná proměnná je generována kompilátorem.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Hlavička:** CorSym. idl, CorSym. h  
+ **Záhlaví:** CorSym.idl, CorSym.h  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Výčty pro úložiště symbolů diagnostiky](../../../../docs/framework/unmanaged-api/diagnostics/diagnostics-symbol-store-enumerations.md)
+- [Výčty úložiště symbolů diagnostiky](../../../../docs/framework/unmanaged-api/diagnostics/diagnostics-symbol-store-enumerations.md)

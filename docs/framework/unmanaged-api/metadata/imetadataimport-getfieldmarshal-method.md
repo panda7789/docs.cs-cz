@@ -15,46 +15,46 @@ helpviewer_keywords:
 ms.assetid: 4e2d88c6-8a3a-4fbe-900b-b4f4c06bf6bf
 topic_type:
 - apiref
-ms.openlocfilehash: 1a4f7703536bcfdae75b0bcffae8dca0734e9e0f
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 91a19e5e15dddd446208dfa3b2c32826282067eb
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74437562"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79175392"
 ---
 # <a name="imetadataimportgetfieldmarshal-method"></a>IMetaDataImport::GetFieldMarshal – metoda
-Získá ukazatel na nativní nespravovaný typ pole reprezentovaného tokenem metadat zadaného pole.  
+Získá ukazatel na nativní, nespravovaný typ pole reprezentované tokenem metadat zadaného pole.  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```cpp  
 HRESULT GetFieldMarshal (  
-   [in]  mdToken             tk,   
+   [in]  mdToken             tk,
    [out] PCCOR_SIGNATURE     *ppvNativeType,  
-   [out] ULONG               *pcbNativeType   
+   [out] ULONG               *pcbNativeType
 );  
 ```  
   
 ## <a name="parameters"></a>Parametry  
  `tk`  
- pro Token metadat, který představuje pole pro získání informací o interop marshaling.  
+ [v] Token metadat, který představuje pole získat interop zařazování informace.  
   
  `ppvNativeType`  
- mimo Ukazatel na signaturu metadat pro nativní typ pole.  
+ [out] Ukazatel na podpis metadat nativního typu pole.  
   
  `pcbNativeType`  
- mimo Velikost v bajtech `ppvNativeType`.  
+ [out] Velikost v bajtů `ppvNativeType`.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Hlavička:** Cor. h  
+ **Záhlaví:** Kor.h.  
   
- **Knihovna:** Zahrnuto jako prostředek v knihovně MsCorEE. dll  
+ **Knihovna:** Zahrnuto jako prostředek v souboru MsCorEE.dll  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [IMetaDataImport – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
 - [IMetaDataImport2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)

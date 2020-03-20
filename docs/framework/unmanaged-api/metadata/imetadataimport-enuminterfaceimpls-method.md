@@ -15,23 +15,23 @@ helpviewer_keywords:
 ms.assetid: ba6e178f-128b-4e47-a13c-b4be73eb106c
 topic_type:
 - apiref
-ms.openlocfilehash: ef7057ad19fd34750bd15d358e9c1ebb1289cd44
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.openlocfilehash: b535fdd5027a26cc4dd0eafec9883f0186773dd1
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75338054"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79175496"
 ---
 # <a name="imetadataimportenuminterfaceimpls-method"></a>IMetaDataImport::EnumInterfaceImpls – metoda
-Vytvoří výčet všech rozhraní implementovaných specifikovaným `TypeDef`. 
+Vyjmenovává všechna rozhraní implementovaná zadaným `TypeDef`rozhraním .
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```cpp  
 HRESULT EnumInterfaceImpls (  
-   [in, out]  HCORENUM       *phEnum,   
+   [in, out]  HCORENUM       *phEnum,
    [in]   mdTypeDef          td,  
-   [out]  mdInterfaceImpl    rImpls[],   
+   [out]  mdInterfaceImpl    rImpls[],
    [in]   ULONG              cMax,  
    [out]  ULONG*             pcImpls  
 );  
@@ -39,41 +39,41 @@ HRESULT EnumInterfaceImpls (
   
 ## <a name="parameters"></a>Parametry  
  `phEnum`  
- [in, out] Ukazatel na enumerátor.  
+ [dovnitř, ven] Ukazatel na čítač výčtu.  
   
  `td`  
- pro Token TypeDef, jehož tokeny MethodDef představují implementaci rozhraní, mají být vyčísleny.  
+ [v] Token TypeDef, jehož Tokeny MethodDef představující implementace rozhraní mají být uvedeny ve výčtu.  
   
  `rImpls`  
- mimo Pole použité k uložení tokenů MethodDef  
+ [out] Pole používané k ukládání tokenů MethodDef.  
   
  `cMax`  
- pro Maximální délka `rImpls` pole.  
+ [v] Maximální délka `rImpls` pole.  
   
  `pcImpls`  
- mimo Skutečný počet tokenů vrácených v `rImpls`.  
+ [out] Skutečný počet tokenů vrácených v `rImpls`.  
   
 ## <a name="return-value"></a>Návratová hodnota  
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
-|`S_OK`|`EnumInterfaceImpls` byla úspěšně vrácena.|  
-|`S_FALSE`|Nejsou k dispozici žádné tokeny MethodDef pro zobrazení výčtu. V takovém případě je `pcImpls` nastavena na hodnotu nula.|  
+|`S_OK`|`EnumInterfaceImpls`úspěšně vrácena.|  
+|`S_FALSE`|Neexistují žádné tokeny MethodDef k výčetu. V takovém `pcImpls` případě je nastavena na nulu.|  
 
 ## <a name="remarks"></a>Poznámky
 
-Výčet vrátí kolekci `mdInterfaceImpl`ch tokenů pro každé rozhraní implementované určeného `TypeDef`. Tokeny rozhraní jsou vraceny v pořadí, ve kterém byla rozhraní zadána (prostřednictvím `DefineTypeDef` nebo `SetTypeDefProps`). K vlastnostem vrácených tokenů `mdInterfaceImpl` se dá dotázat pomocí [getinterfaceimplprops –](imetadataimport-getinterfaceimplprops-method.md).
+Výčet vrátí kolekci `mdInterfaceImpl` tokenů pro každé rozhraní `TypeDef`implementované zadaným . Tokeny rozhraní jsou vráceny v pořadí, `DefineTypeDef` v `SetTypeDefProps`jakém byla rozhraní zadána (prostřednictvím nebo ). Vlastnosti vrácených `mdInterfaceImpl` tokenů lze dotazovat pomocí [GetInterfaceImplProps](imetadataimport-getinterfaceimplprops-method.md).
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Hlavička:** Cor. h  
+ **Záhlaví:** Kor.h.  
   
- **Knihovna:** Zahrnuto jako prostředek v knihovně MsCorEE. dll  
+ **Knihovna:** Zahrnuto jako prostředek v souboru MsCorEE.dll  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [IMetaDataImport – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
 - [IMetaDataImport2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)

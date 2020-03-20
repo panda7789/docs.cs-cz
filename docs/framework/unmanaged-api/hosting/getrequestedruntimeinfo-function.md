@@ -15,96 +15,96 @@ helpviewer_keywords:
 ms.assetid: 0dfd7cdc-c116-4e25-b56a-ac7b0378c942
 topic_type:
 - apiref
-ms.openlocfilehash: cd1d9e768698115bee22e35699b044e0c3526d2d
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: db721e1ef774c87de0fa7da178463d832a3da756
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73136324"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79178157"
 ---
 # <a name="getrequestedruntimeinfo-function"></a>GetRequestedRuntimeInfo – funkce
-Získá informace o verzi a adresáři modulu CLR (Common Language Runtime), který požaduje aplikace.  
+Získá informace o verzi a adresáři o clr (CLR) jazyka požadované aplikací.  
   
- Tato funkce se už nepoužívá v .NET Framework 4.  
+ Tato funkce byla v rozhraní .NET Framework 4 zastaralá.  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```cpp  
 HRESULT GetRequestedRuntimeInfo (  
-    [in]  LPCWSTR  pExe,   
-    [in]  LPCWSTR  pwszVersion,   
-    [in]  LPCWSTR  pConfigurationFile,   
-    [in]  DWORD    startupFlags,   
-    [in]  DWORD    runtimeInfoFlags,   
-    [out] LPWSTR   pDirectory,   
-    [in]  DWORD    dwDirectory,   
-    [out] DWORD   *dwDirectoryLength,   
-    [out] LPWSTR   pVersion,   
-    [in]  DWORD    cchBuffer,   
+    [in]  LPCWSTR  pExe,
+    [in]  LPCWSTR  pwszVersion,
+    [in]  LPCWSTR  pConfigurationFile,
+    [in]  DWORD    startupFlags,
+    [in]  DWORD    runtimeInfoFlags,
+    [out] LPWSTR   pDirectory,
+    [in]  DWORD    dwDirectory,
+    [out] DWORD   *dwDirectoryLength,
+    [out] LPWSTR   pVersion,
+    [in]  DWORD    cchBuffer,
     [out] DWORD   *dwlength  
 );  
 ```  
   
 ## <a name="parameters"></a>Parametry  
  `pExe`  
- pro Název aplikace  
+ [v] Název aplikace.  
   
  `pwszVersion`  
- pro Řetězec určující číslo verze modulu runtime.  
+ [v] Řetězec určující číslo verze za běhu.  
   
  `pConfigurationFile`  
- pro Název konfiguračního souboru, který je přidružený k `pExe`.  
+ [v] Název konfiguračního souboru, který je přidružen k programu `pExe`.  
   
  `startupFlags`  
- pro Jedna nebo více hodnot výčtu [STARTUP_FLAGS](../../../../docs/framework/unmanaged-api/hosting/startup-flags-enumeration.md) .  
+ [v] Jedna nebo více [STARTUP_FLAGS](../../../../docs/framework/unmanaged-api/hosting/startup-flags-enumeration.md) hodnoty výčtu.  
   
  `runtimeInfoFlags`  
- pro Jedna nebo více hodnot výčtu [RUNTIME_INFO_FLAGS](../../../../docs/framework/unmanaged-api/hosting/runtime-info-flags-enumeration.md) .  
+ [v] Jedna nebo více [hodnot RUNTIME_INFO_FLAGS](../../../../docs/framework/unmanaged-api/hosting/runtime-info-flags-enumeration.md) výčtu.  
   
  `pDirectory`  
- mimo Vyrovnávací paměť, která obsahuje cestu k adresáři modulu runtime po úspěšném dokončení.  
+ [out] Vyrovnávací paměť, která obsahuje cestu k adresáři do běhu po úspěšném dokončení.  
   
  `dwDirectory`  
- pro Délka vyrovnávací paměti adresáře.  
+ [v] Délka vyrovnávací paměti adresáře.  
   
  `dwDirectoryLength`  
- mimo Ukazatel na délku řetězce cesty k adresáři.  
+ [out] Ukazatel na délku řetězce cesty k adresáři.  
   
  `pVersion`  
- mimo Vyrovnávací paměť obsahující číslo verze modulu runtime po úspěšném dokončení.  
+ [out] Vyrovnávací paměť, která obsahuje číslo verze za běhu po úspěšném dokončení.  
   
  `cchBuffer`  
- pro Délka vyrovnávací paměti pro řetězec verze.  
+ [v] Délka vyrovnávací paměti řetězce verze.  
   
  `dwlength`  
- mimo Ukazatel na délku řetězce verze.  
+ [out] Ukazatel na délku řetězce verze.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- Tato metoda vrátí standardní kódy chyb modelu COM (Component Object Model), jak je definováno v WinError. h, kromě následujících hodnot.  
+ Tato metoda vrátí standardní kódy chybový model COM (COM), jak je definováno v souboru WinError.h, kromě následujících hodnot.  
   
 |Návratový kód|Popis|  
 |-----------------|-----------------|  
 |S_OK|Metoda byla úspěšně dokončena.|  
-|ERROR_INSUFFICIENT_BUFFER|Vyrovnávací paměť adresáře není dostatečně velká pro uložení cesty k adresáři.<br /><br /> ani<br /><br /> Vyrovnávací paměť verze není dostatečně velká pro uložení řetězce verze.|  
+|ERROR_INSUFFICIENT_BUFFER|Vyrovnávací paměť adresáře není dostatečně velká pro uložení cesty k adresáři.<br /><br /> - nebo -<br /><br /> Vyrovnávací paměť verze není dostatečně velká pro uložení řetězce verze.|  
   
 ## <a name="remarks"></a>Poznámky  
- Metoda `GetRequestedRuntimeInfo` vrátí běhové informace o verzi načtené do procesu, což nemusí nutně být v počítači nainstalovaná nejnovější verze.  
+ Metoda `GetRequestedRuntimeInfo` vrátí informace za běhu o verzi načtené do procesu, což nemusí být nutně nejnovější verze nainstalovaná v počítači.  
   
- V .NET Framework verze 2,0 můžete získat informace o nejnovější nainstalované verzi pomocí metody `GetRequestedRuntimeInfo` následujícím způsobem:  
+ V rozhraní .NET Framework verze 2.0 můžete získat informace o `GetRequestedRuntimeInfo` nejnovější nainstalované verzi pomocí metody následujícím způsobem:  
   
-- Zadejte parametry `pExe`, `pwszVersion`a `pConfigurationFile` jako null.  
+- Zadejte `pExe` `pwszVersion`parametry `pConfigurationFile` , a parametry jako null.  
   
-- Zadejte příznak RUNTIME_INFO_UPGRADE_VERSION v výčtech `RUNTIME_INFO_FLAGS` pro parametr `runtimeInfoFlags`.  
+- Zadejte příznak RUNTIME_INFO_UPGRADE_VERSION `RUNTIME_INFO_FLAGS` ve výčtech `runtimeInfoFlags` parametru.  
   
- Metoda `GetRequestedRuntimeInfo` nevrátí nejnovější verzi CLR v následujících případech:  
+ Metoda `GetRequestedRuntimeInfo` nevrací nejnovější verzi CLR za následujících okolností:  
   
-- Existuje konfigurační soubor aplikace, který určuje načtení konkrétní verze CLR. Všimněte si, že .NET Framework použije konfigurační soubor i v případě, že pro parametr `pConfigurationFile` zadáte hodnotu null.  
+- Existuje konfigurační soubor aplikace, který určuje načtení konkrétní verze CLR. Všimněte si, že rozhraní .NET Framework použije konfigurační soubor i v případě, že pro parametr zadáte hodnotu `pConfigurationFile` null.  
   
-- Metoda [CorBindToRuntimeEx –](../../../../docs/framework/unmanaged-api/hosting/corbindtoruntimeex-function.md) byla volána pro zadání dřívější verze CLR.  
+- Metoda [CorBindToRuntimeEx](../../../../docs/framework/unmanaged-api/hosting/corbindtoruntimeex-function.md) byla volána určující starší verzi CLR.  
   
 - Aplikace, která byla zkompilována pro starší verzi CLR, je aktuálně spuštěna.  
   
- Pro parametr `runtimeInfoFlags` lze současně zadat pouze jednu z konstant architektury `RUNTIME_INFO_FLAGS` výčtu:  
+ Pro `runtimeInfoFlags` parametr můžete zadat pouze jednu konstantu `RUNTIME_INFO_FLAGS` architektury výčtu současně:  
   
 - RUNTIME_INFO_REQUEST_IA64  
   
@@ -113,16 +113,16 @@ HRESULT GetRequestedRuntimeInfo (
 - RUNTIME_INFO_REQUEST_X86  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Hlavička:** MSCorEE. h  
+ **Záhlaví:** MSCorEE.h  
   
- **Knihovna:** MSCorEE. dll  
+ **Knihovna:** Soubor MSCorEE.dll  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v11plus](../../../../includes/net-current-v11plus-md.md)]  
+ **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v11plus](../../../../includes/net-current-v11plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [GetRequestedRuntimeVersion – funkce](../../../../docs/framework/unmanaged-api/hosting/getrequestedruntimeversion-function.md)
 - [GetVersionFromProcess – funkce](../../../../docs/framework/unmanaged-api/hosting/getversionfromprocess-function.md)
-- [Zastaralé funkce pro hostování CLR](../../../../docs/framework/unmanaged-api/hosting/deprecated-clr-hosting-functions.md)
+- [Zastaralé funkce hostování CLR](../../../../docs/framework/unmanaged-api/hosting/deprecated-clr-hosting-functions.md)

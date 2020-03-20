@@ -3,22 +3,22 @@ title: <sendMessageChannelCache>
 ms.date: 03/30/2017
 ms.topic: reference
 ms.assetid: 241e428e-5030-4b13-8a0a-69f05288d3d9
-ms.openlocfilehash: ac38a43b39496bdeee59a591f7b8f5bc4dd30de0
-ms.sourcegitcommit: 093571de904fc7979e85ef3c048547d0accb1d8a
+ms.openlocfilehash: b68c6d2e526eb22328806558d7c167b7f2ed0820
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70398699"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79151998"
 ---
 # <a name="sendmessagechannelcache"></a>\<sendMessageChannelCache>
-Chování služby, které umožňuje přizpůsobení úrovní sdílení mezipaměti, nastavení mezipaměti objektu pro vytváření kanálu a nastavení mezipaměti kanálu pro pracovní postupy, které odesílají zprávy do koncových bodů služby pomocí aktivit odesílání zpráv.  
+Chování služby, které umožňuje přizpůsobení úrovní sdílení mezipaměti, nastavení mezipaměti kanálu ve výrobě a nastavení mezipaměti kanálu pro pracovní postupy, které odesílají zprávy koncovým bodům služby pomocí aktivit odesílání zpráv.  
   
-[ **\<> Konfigurace**](../configuration-element.md)\
-&nbsp;&nbsp;[ **\<souborů. > ServiceModel**](system-servicemodel-of-workflow.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;[ **\<> chování**](behaviors-of-workflow.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<serviceBehaviors >** ](servicebehaviors-of-workflow.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<> chování**](behavior-of-servicebehaviors-of-workflow.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<sendMessageChannelCache >**  
+[**\<>konfigurace**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<Systému.>ServiceModel**](system-servicemodel-of-workflow.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[**\<chování>**](behaviors-of-workflow.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<serviceBehaviors>**](servicebehaviors-of-workflow.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<chování>**](behavior-of-servicebehaviors-of-workflow.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<sendMessageChannelCache>**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -28,10 +28,10 @@ Chování služby, které umožňuje přizpůsobení úrovní sdílení mezipam�
     <behavior name="String">
       <sendMessageChannelCache allowUnsafeCaching="Boolean">
         <channelSettings idleTimeout="TimeSpan"
-                         leaseTimeout="TimeSpan" 
+                         leaseTimeout="TimeSpan"
                          maxItemsInCache="Integer" />
-        <factorySettings idleTimeout="TimeSpan" 
-                         leaseTimeout="TimeSpan" 
+        <factorySettings idleTimeout="TimeSpan"
+                         leaseTimeout="TimeSpan"
                          maxItemsInCache="Integer" />
       </sendMessageChannelCache>
     </behavior>
@@ -46,40 +46,40 @@ Chování služby, které umožňuje přizpůsobení úrovní sdílení mezipam�
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|allowUnsafeCaching|Logická hodnota určující, zda chcete zapnout ukládání do mezipaměti. Pokud má služba pracovního postupu vlastní vazby nebo svého kódu vlastních chování, ukládání do mezipaměti může nezabezpečené a proto je ve výchozím nastavení zakázáno. Pokud však chcete zapnout ukládání do mezipaměti v nastavení této vlastnosti na **hodnotu true**.|  
+|allowUnsafeCaching|Logická hodnota určující, zda chcete zapnout ukládání do mezipaměti. Pokud má služba pracovního postupu vlastní vazby nebo svého kódu vlastních chování, ukládání do mezipaměti může nezabezpečené a proto je ve výchozím nastavení zakázáno. Pokud však chcete zapnout ukládání do mezipaměti při nastavení této vlastnosti na **hodnotu true**.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
   
-|Prvek|Popis|  
+|Element|Popis|  
 |-------------|-----------------|  
-|[\<channelSettings>](channelsettings.md)|Určuje nastavení mezipaměti kanálu.|  
-|[\<factorySettings>](factorysettings.md)|Určuje nastavení mezipaměti objekt pro vytváření kanálu.|  
+|[\<channelNastavení>](channelsettings.md)|Určuje nastavení mezipaměti kanálu.|  
+|[\<factoryNastavení>](factorysettings.md)|Určuje nastavení mezipaměti objekt pro vytváření kanálu.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
-|Prvek|Popis|  
+|Element|Popis|  
 |-------------|-----------------|  
-|[\<chování > \<serviceBehaviors >](behavior-of-servicebehaviors-of-workflow.md)|Určuje chování element.|  
+|[\<chování> \<serviceBehaviors>](behavior-of-servicebehaviors-of-workflow.md)|Určuje chování element.|  
   
 ## <a name="remarks"></a>Poznámky  
  Toto chování služby je určen pro pracovní postupy, které odesílání zpráv do koncových bodů služby. Tyto pracovní postupy jsou obvykle pracovní postupy klienta, ale mohou být také služby pracovního postupu, které jsou hostovány v <xref:System.ServiceModel.WorkflowServiceHost>.  
   
  Ve výchozím nastavení v pracovním postupu hostované <xref:System.ServiceModel.WorkflowServiceHost>, je mezipaměť používaná aplikací <xref:System.ServiceModel.Activities.Send> zasílání zpráv aktivity je sdílen na všechny instance pracovního postupu v <xref:System.ServiceModel.WorkflowServiceHost> (hostitele úroveň ukládání do mezipaměti). Pro klienta pracovní postup, který není hostované <xref:System.ServiceModel.WorkflowServiceHost>, mezipaměť je k dispozici pouze pro instanci pracovního postupu (ukládání do mezipaměti na úrovni instance). Ve výchozím nastavení pro všechny aktivity odeslání do svého pracovního postupu, který má koncové body definované v konfiguraci je zakázáno ukládání do mezipaměti.  
   
- Další informace o tom, jak změnit výchozí úroveň sdílení mezipaměti a nastavení mezipaměti pro objekt pro vytváření kanálu a mezipaměť kanálu, najdete v tématu [Změna úrovní sdílení mezipaměti pro aktivity odeslat](../../../wcf/feature-details/changing-the-cache-sharing-levels-for-send-activities.md).  
+ Další informace o tom, jak změnit výchozí úrovně sdílení mezipaměti a nastavení mezipaměti pro uprostředkované kanály a mezipaměti kanálů, naleznete [v tématu Změna úrovní sdílení mezipaměti pro odesílání aktivit](../../../wcf/feature-details/changing-the-cache-sharing-levels-for-send-activities.md).  
   
 ## <a name="example"></a>Příklad  
- V služby hostované pracovního postupu můžete určit nastavení objekt pro vytváření mezipaměti a kanál mezipaměti v konfiguračním souboru aplikace. Chcete-li to provést, přidejte chování služby, který obsahuje nastavení mezipaměti pro objekt pro vytváření a kanál mezipaměti a ke službě Toto chování služby. Následující příklad ukazuje obsah konfiguračního souboru, který obsahuje `MyChannelCacheBehavior` chování služby s nastavením mezipaměti pro vlastní tovární nastavení a mezipamětí kanálu. Toto chování služby se do služby přidá prostřednictvím `behaviorConfiguration` atributu.  
+ V služby hostované pracovního postupu můžete určit nastavení objekt pro vytváření mezipaměti a kanál mezipaměti v konfiguračním souboru aplikace. Chcete-li to provést, přidejte chování služby, který obsahuje nastavení mezipaměti pro objekt pro vytváření a kanál mezipaměti a ke službě Toto chování služby. Následující příklad ukazuje obsah konfiguračního `MyChannelCacheBehavior` souboru, který obsahuje chování služby s vlastním nastavením mezipaměti výroby a mezipaměti kanálů. Toto chování služby je `behaviorConfiguration` přidán do služby prostřednictvím atributu.  
   
 ```xml  
-<configuration>    
+<configuration>
   <system.serviceModel>  
-    <!-- List of other config sections here -->   
+    <!-- List of other config sections here -->
     <behaviors>  
       <serviceBehaviors>  
         <behavior name="MyChannelCacheBehavior">  
           <sendMessageChannelCache allowUnsafeCaching ="false" >  
-            <!-- Control only the host level settings -->   
+            <!-- Control only the host level settings -->
             <factorySettings maxItemsInCache = "8" idleTimeout = "00:05:00" leaseTimeout="10:00:00" />  
             <channelSettings maxItemsInCache = "32" idleTimeout = "00:05:00" leaseTimeout="00:06:00" />  
           </sendMessageChannelCache>  
@@ -93,7 +93,7 @@ Chování služby, které umožňuje přizpůsobení úrovní sdílení mezipam�
 </configuration>  
 ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.ServiceModel.Activities.SendMessageChannelCache>
 - <xref:System.ServiceModel.Activities.Configuration.SendMessageChannelCacheElement>

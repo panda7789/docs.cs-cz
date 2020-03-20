@@ -2,44 +2,44 @@
 title: Datové vazby v klientovi Windows Presentation Foundation
 ms.date: 03/30/2017
 ms.assetid: bb8c8293-5973-4aef-9b07-afeff5d3293c
-ms.openlocfilehash: 44a208cf081ef00396dfc874349dff57363c0df3
-ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
+ms.openlocfilehash: 7bc389056872841905336dcf658a07223906bf82
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74715390"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79183823"
 ---
 # <a name="data-binding-in-a-windows-presentation-foundation-client"></a>Datové vazby v klientovi Windows Presentation Foundation
-Tato ukázka demonstruje použití datových vazeb v klientu Windows Presentation Foundation (WPF). Ukázka používá službu Windows Communication Foundation (WCF), která náhodně generuje pole alb pro návrat do klienta. Každé album má název, cenu a seznam skladeb alba. Stopy alba mají název a dobu trvání. Informace, které služba vrací, jsou automaticky svázány s uživatelským rozhraním (UI) poskytovaným klientem Windows Presentation Foundation (WPF).  
+Tato ukázka ukazuje použití datové vazby v klientovi WPF (Windows Presentation Foundation). Ukázka používá službu WCF (Windows Communication Foundation), která náhodně generuje pole alb pro návrat do klienta. Každé album má název, cenu a seznam skladeb alb. Skladby alba mají název a dobu trvání. Informace vrácené službou jsou automaticky vázány na uživatelské rozhraní poskytované klientem WPF (Windows Presentation Foundation).  
   
 > [!NOTE]
-> Postup nastavení a pokyny pro sestavení pro tuto ukázku najdete na konci tohoto tématu.  
+> Postup instalace a pokyny k sestavení pro tuto ukázku jsou umístěny na konci tohoto tématu.  
   
- Datová vazba umožňuje, aby byl zdroj dat automaticky svázán s uživatelským rozhraním. Tím se zjednoduší programovací model, protože nevyžaduje, abyste programově aktualizovali jednotlivé prvky uživatelského rozhraní daty z datového objektu nebo pole datových objektů. Můžete vytvořit vazby objektu k jednomu prvku uživatelského rozhraní nebo poli k ovládacímu prvku, který přijímá více vstupů, například `ListBox`. Následující kód ukazuje, jak vytvořit vazby dat k `DataContext` prvku uživatelského rozhraní.  
+ Datová vazba umožňuje zdroj dat automaticky vázán na ui. To zjednodušuje programovací model, protože nevyžaduje programovou aktualizaci každého prvku rozhraní s daty z datového objektu nebo pole datových objektů. Objekt můžete svázat s jedním prvkem rozhraní nebo polem s ovládacím prvkem, který přebírá více vstupů, například `ListBox`. Následující kód ukazuje, jak vázat `DataContext` data na prvek ui.  
   
 ```csharp  
 // Event handler executed when call is complete  
 void client_GetAlbumListCompleted(object sender, GetAlbumListCompletedEventArgs e)  
 {  
     // This is on the UI thread, myPanel can be accessed directly  
-    myPanel.DataContext = e.Result;   
+    myPanel.DataContext = e.Result;
 }  
 ```  
   
- V předchozím příkladu je `DataContext` pro `grid` prvek rozložení s názvem `myPanel` nastavena na data vrácená metodou `GetAlbumList`. `DataContext` umožňuje elementům zdědit informace z jejich nadřazených prvků o zdroji dat, který se používá pro vazbu, a také k dalším charakteristikám vazby, jako je například cesta. Řádek kódu musí být proveden při každém aktualizování dat na serveru. Například se spustí při inicializaci okna a přidání nového alba.  
+ V předchozí ukázce `grid` je `myPanel` prvek `DataContext` rozložení pojmenovaný nastaven `GetAlbumList` na data vrácená metodou. Umožňuje `DataContext` prvky dědit informace z jejich nadřazené prvky o zdroj dat, který se používá pro vazbu, jakož i další charakteristiky vazby, jako je například cesta. Řádek kódu musí být proveden při každé aktualizaci dat na serveru. Například je spuštěn při inicializování okna a při přidání nového alba.  
   
- V následujícím ukázkovém kódu jazyka XAML `ListBox` určuje `ItemsSource="{Binding }"`.  
+ V následujícím vzorku kódu XAML `ListBox` `ItemsSource="{Binding }"`určuje .  
   
 ```xml  
-<ListBox   
+<ListBox
           ItemTemplate="{StaticResource AlbumStyle}"  
-          ItemsSource="{Binding }"   
+          ItemsSource="{Binding }"
           IsSynchronizedWithCurrentItem="true" />  
 ```  
   
- To určuje, že data vázaná na prvek uživatelského rozhraní nejvyšší úrovně jsou také svázána s tímto ovládacím prvkem (tj. polem alba). `ItemTemplate="{StaticResource AlbumStyle}"` také určuje šablonu dat, která se má použít pro každou položku v `ListBox`. Můžete také definovat datové šablony, abyste určili, jak mají být data formátována. Tyto datové šablony lze znovu použít pro jiné prvky uživatelského rozhraní v aplikaci. výhodou je, že je šablona dat definována a udržována na jednom místě.  
+ To určuje, že data vázaná na prvek hlavní úrovně ui je také vázána na tento ovládací prvek (to znamená pole alba). Kromě toho `ItemTemplate="{StaticResource AlbumStyle}"` určuje šablonu dat, která má `ListBox`být použita pro každou položku v . Můžete také definovat šablony dat a určit způsob formátování dat. Tyto šablony dat lze znovu použít pro jiné prvky uživatelského rozhraní v aplikaci, výhodou je, že šablona dat je definována a udržována na jednom místě.  
   
- Šablona `AlbumStyle` data obsahuje mřížku se dvěma `TextBlock`y vedle sebe. Jedna Určuje název alba a druhý počet stop v albu.  
+ Šablona `AlbumStyle` dat obsahuje mřížku `TextBlock`se dvěma s vedle sebe. Jeden určuje název alba a druhý počet skladeb v albu.  
   
 ```xaml  
 <DataTemplate x:Key="AlbumStyle">  
@@ -54,30 +54,30 @@ void client_GetAlbumListCompleted(object sender, GetAlbumListCompletedEventArgs 
 </DataTemplate>  
 ```  
   
- Následující kód XAML vytvoří druhý `ListBox`.  
+ Následující kód XAML vytvoří `ListBox`druhý .  
   
 ```xaml  
-<ListBox Grid.Row="2"   
-            Grid.ColumnSpan="2"   
+<ListBox Grid.Row="2"
+            Grid.ColumnSpan="2"
             ItemTemplate="{StaticResource TrackStyle}"  
             ItemsSource="{Binding Path=Tracks}" />  
 ```  
   
- Kód určuje cestu pro `ItemsSource`. To značí, že data vázaná na tento ovládací prvek nejsou data nejvyšší úrovně, ale vlastnost dat nejvyšší úrovně s názvem `Tracks`. Tato vlastnost představuje pole stop obsažených v albu. Kromě toho je určena jiná `DataTemplate` s názvem `TrackStyle`. Rozložení `TrackStyle` šablony se podobá šabloně `AlbumStyle`, ale `TextBlock`s jsou vázány na jiné vlastnosti. Důvodem je to, že dvě šablony jsou používány s různými datovými objekty.  
+ Kód určuje cestu pro `ItemsSource`. To znamená, že data vázaná na tento ovládací prvek nejsou data nejvyšší `Tracks`úrovně, ale vlastnost dat nejvyšší úrovně s názvem . Tato vlastnost představuje pole skladeb obsažených v albu. Kromě toho je `DataTemplate` `TrackStyle` zadán jiný název. Rozložení `TrackStyle` šablony je podobné rozložení `AlbumStyle` šablony, ale `TextBlock`s jsou vázány na různé vlastnosti. Důvodem je, že dvě šablony se používají s různými datovými objekty.  
   
 ### <a name="to-set-up-build-and-run-the-sample"></a>Nastavení, sestavení a spuštění ukázky  
   
-1. Ujistěte se, že jste provedli [postup jednorázového nastavení pro Windows Communication Foundation ukázky](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
+1. Ujistěte se, že jste provedli [jednorázový postup instalace pro ukázky windows communication foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
   
-2. Pokud chcete vytvořit C# edici nebo Visual Basic .NET, postupujte podle pokynů v tématu [sestavování ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
+2. Chcete-li vytvořit c# nebo Visual Basic .NET vydání řešení, postupujte podle pokynů v [sestavení windows communication foundation ukázky](../../../../docs/framework/wcf/samples/building-the-samples.md).  
   
-3. Chcete-li spustit ukázku v konfiguraci s jedním nebo více počítači, postupujte podle pokynů v části [spuštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
+3. Chcete-li spustit ukázku v konfiguraci jednoho nebo více počítačů, postupujte podle pokynů v [části Spuštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
   
 > [!IMPORTANT]
-> Ukázky už můžou být na vašem počítači nainstalované. Než budete pokračovat, vyhledejte následující (výchozí) adresář.  
->   
+> Ukázky mohou být již nainstalovány v počítači. Před pokračováním zkontrolujte následující (výchozí) adresář.  
+>
 > `<InstallDrive>:\WF_WCF_Samples`  
->   
-> Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] Samples. Tato ukázka se nachází v následujícím adresáři.  
->   
+>
+> Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a Windows Workflow Foundation (WF) Ukázky pro rozhraní .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka je umístěna v následujícím adresáři.  
+>
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Scenario\DataBinding\WPFDataBinding`  

@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Odesílání dat do aktivního podřízeného formuláře MDI'
+title: 'Postupy: Odesílání dat do aktivního podřízeného MDI'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -10,25 +10,25 @@ helpviewer_keywords:
 - Clipboard [Windows Forms], pasting
 - Clipboard [Windows Forms], getting data from
 ms.assetid: 1047d2fe-1235-46db-aad9-563aea1d743b
-ms.openlocfilehash: 0a7a2475891488d1fdd60f0db4a483c144a73f0d
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 563be8494cb84dc74b45985d3ba74e4b6a07eb8a
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69947845"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79182499"
 ---
-# <a name="how-to-send-data-to-the-active-mdi-child"></a>Postupy: Odesílání dat do aktivního podřízeného formuláře MDI
-V rámci kontextu [aplikací rozhraní MDI (Multiple Document Interface)](multiple-document-interface-mdi-applications.md)je často potřeba odeslat data do aktivního podřízeného okna, například když uživatel vloží data ze schránky do aplikace MDI.  
+# <a name="how-to-send-data-to-the-active-mdi-child"></a>Postupy: Odesílání dat do aktivního podřízeného MDI
+Často v rámci aplikace [rozhraní s více dokumenty (MDI)](multiple-document-interface-mdi-applications.md)budete muset odeslat data do aktivního podřízeného okna, například když uživatel vloží data ze schránky do aplikace MDI.  
   
 > [!NOTE]
-> Informace o ověření, které podřízené okno má fokus a který odesílá obsah do schránky, naleznete v tématu [určení aktivního podřízeného prvku MDI](how-to-determine-the-active-mdi-child.md).  
+> Informace o ověření podřízeného okna, které má fokus, a odeslání jeho obsahu do schránky naleznete v [tématu Určení aktivní podřízené podřízené služby MDI](how-to-determine-the-active-mdi-child.md).  
   
 ### <a name="to-send-data-to-the-active-mdi-child-window-from-the-clipboard"></a>Odeslání dat do aktivního podřízeného okna MDI ze schránky  
   
-1. V rámci metody zkopírujte text ve schránce do aktivního ovládacího prvku aktivního podřízeného formuláře.  
+1. V rámci metody zkopírujte text ve schránce do aktivního ovládacího prvku aktivnípodřízený formulář.  
   
     > [!NOTE]
-    > Tento příklad předpokládá, že existuje nadřazený formulář MDI (`Form1`), který obsahuje jeden nebo více podřízených oken MDI <xref:System.Windows.Forms.RichTextBox> obsahující ovládací prvek. Další informace najdete v tématu [Vytváření nadřazených formulářů MDI](how-to-create-mdi-parent-forms.md).  
+    > Tento příklad předpokládá, že existuje nadřazený formulář MDI (`Form1`), <xref:System.Windows.Forms.RichTextBox> který má jedno nebo více podřízených oken MDI obsahující chod ovládacího prvku. Další informace naleznete v [tématu Vytváření nadřazených formulářů MDI](how-to-create-mdi-parent-forms.md).  
   
     ```vb  
     Public Sub mniPaste_Click(ByVal sender As Object, _  
@@ -45,7 +45,7 @@ V rámci kontextu [aplikací rozhraní MDI (Multiple Document Interface)](multip
              If (Not theBox Is Nothing) Then  
                 ' Create a new instance of the DataObject interface.  
                 Dim data As IDataObject = Clipboard.GetDataObject()  
-                ' If the data is text, then set the text of the   
+                ' If the data is text, then set the text of the
                 ' RichTextBox to the text in the clipboard.  
                 If (data.GetDataPresent(DataFormats.Text)) Then  
                    theBox.SelectedText = data.GetData(DataFormats.Text).ToString()  
@@ -68,22 +68,22 @@ V rámci kontextu [aplikací rozhraní MDI (Multiple Document Interface)](multip
        // in this example should be a RichTextBox.  
        if (activeChild != null)  
        {  
-          try   
+          try
           {  
              RichTextBox theBox = (RichTextBox)activeChild.ActiveControl;  
              if (theBox != null)  
              {  
                 // Create a new instance of the DataObject interface.  
                 IDataObject data = Clipboard.GetDataObject();  
-                // If the data is text, then set the text of the   
+                // If the data is text, then set the text of the
                 // RichTextBox to the text in the clipboard.  
                 if (data.GetDataPresent(DataFormats.Text))  
                 {  
-                   theBox.SelectedText = data.GetData(DataFormats.Text).ToString();                 
+                   theBox.SelectedText = data.GetData(DataFormats.Text).ToString();
                 }  
              }  
           }  
-          catch   
+          catch
           {  
              MessageBox.Show("You need to select a RichTextBox.");  
           }  
@@ -91,10 +91,10 @@ V rámci kontextu [aplikací rozhraní MDI (Multiple Document Interface)](multip
     }  
     ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Aplikace MDI (Multiple-Document Interface)](multiple-document-interface-mdi-applications.md)
-- [Postupy: Vytvoření nadřazených formulářů MDI](how-to-create-mdi-parent-forms.md)
-- [Postupy: Vytvořit podřízené formuláře MDI](how-to-create-mdi-child-forms.md)
-- [Postupy: Zjistit aktivní podřízenou položku MDI](how-to-determine-the-active-mdi-child.md)
-- [Postupy: Uspořádat podřízené formuláře MDI](how-to-arrange-mdi-child-forms.md)
+- [Postupy: Vytváření nadřazených formulářů MDI](how-to-create-mdi-parent-forms.md)
+- [Postupy: Vytváření podřízených formulářů MDI](how-to-create-mdi-child-forms.md)
+- [Postupy: Určení podřízeného prvku aktivního MDI](how-to-determine-the-active-mdi-child.md)
+- [Postupy: Uspořádání podřízených formulářů MDI](how-to-arrange-mdi-child-forms.md)

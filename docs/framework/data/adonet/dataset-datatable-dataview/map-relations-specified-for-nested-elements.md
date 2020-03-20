@@ -2,21 +2,21 @@
 title: Mapování relací zadaných pro vnořené elementy
 ms.date: 03/30/2017
 ms.assetid: 24a2d3e5-4af7-4f9a-ab7a-fe6684c9e4fe
-ms.openlocfilehash: 138fbbc3ccaa90096a15fa87544e5c29f66beb08
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.openlocfilehash: cd652f51f01dcfa16a8b707f35c658043c20670d
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73040060"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79150893"
 ---
 # <a name="map-relations-specified-for-nested-elements"></a>Mapování relací zadaných pro vnořené elementy
-Schéma může zahrnovat anotaci **msdata: Relationship** pro explicitní určení mapování mezi dvěma prvky ve schématu. Dva prvky určené v **msdata: vztah** může být vnořen ve schématu, ale nemusí být. Proces mapování používá **msdata: Relationship** ve schématu k vygenerování vztahu primárního klíče/cizího klíče mezi dvěma sloupci.  
+Schéma může obsahovat anotaci **msdata:Relationship** explicitně určit mapování mezi libovolnými dvěma prvky ve schématu. Dva prvky zadané v **msdata:Relationship** lze vnořit do schématu, ale nemusí být. Proces mapování používá **msdata:Relationship** ve schématu ke generování vztahu primárního klíče nebo cizího klíče mezi těmito dvěma sloupci.  
   
- Následující příklad ukazuje schéma XML, ve kterém je element **OrderDetail** podřízeným prvkem **Order**. **Msdata: Relationship** identifikuje tuto relaci typu nadřazený-podřízený a určí, že sloupec **OrderNumber** výsledné tabulky **objednávky** souvisí se sloupcem **OrderNo** výsledné tabulky **OrderDetail** .  
+ Následující příklad ukazuje schéma XML, ve kterém **OrderDetail** element je podřízený prvek **Order**. **Msdata:Relationship** identifikuje tuto relaci nadřazený podřízený a určuje, že sloupec **OrderNumber** výsledné tabulky **Objednávka** souvisí se sloupcem **OrderNo** výsledné tabulky **OrderDetail.**  
   
 ```xml  
-<xs:schema id="MyDataSet" xmlns=""   
-            xmlns:xs="http://www.w3.org/2001/XMLSchema"   
+<xs:schema id="MyDataSet" xmlns=""
+            xmlns:xs="http://www.w3.org/2001/XMLSchema"
             xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">  
 <xs:element name="MyDataSet" msdata:IsDataSet="true">  
  <xs:complexType>  
@@ -29,10 +29,10 @@ Schéma může zahrnovat anotaci **msdata: Relationship** pro explicitní určen
        <xs:element name="OrderDetail">  
           <xs:annotation>  
            <xs:appinfo>  
-            <msdata:Relationship name="OrdODRelation"   
-                                msdata:parent="Order"   
-                                msdata:child="OrderDetail"   
-                                msdata:parentkey="OrderNumber"   
+            <msdata:Relationship name="OrdODRelation"
+                                msdata:parent="Order"
+                                msdata:child="OrderDetail"
+                                msdata:parentkey="OrderNumber"
                                 msdata:childkey="OrderNo"/>  
            </xs:appinfo>  
           </xs:annotation>  
@@ -52,29 +52,29 @@ Schéma může zahrnovat anotaci **msdata: Relationship** pro explicitní určen
 </xs:schema>  
 ```  
   
- Proces mapování schématu XML vytvoří v <xref:System.Data.DataSet>následující:  
+ Proces mapování schématu XML vytvoří v <xref:System.Data.DataSet>:  
   
-- **Objednávka** a tabulka **OrderDetail**  
+- **Objednávka** a **orderdetail** tabulka.  
   
     ```text  
     Order(OrderNumber, EmpNumber)  
     OrderDetail(OrderNo, ItemNo)  
     ```  
   
-- Vztah mezi tabulkami **Order** a **OrderDetail** . **Vnořená** vlastnost pro tento vztah je nastavena na **hodnotu true** , protože prvky **Order** a **OrderDetail** jsou vnořené ve schématu.  
+- Vztah mezi tabulkami **Order** a **OrderDetail.** **Vnořené vlastnosti** pro tento vztah je nastavena na **True,** protože **Order** a **OrderDetail** prvky jsou vnořeny do schématu.  
   
     ```text  
     ParentTable: Order  
-    ParentColumns: OrderNumber   
+    ParentColumns: OrderNumber
     ChildTable: OrderDetail  
-    ChildColumns: OrderNo   
+    ChildColumns: OrderNo
     RelationName: OrdODRelation  
     Nested: True  
     ```  
   
  Proces mapování nevytváří žádná omezení.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Generování relací datové sady ze schématu XML (XSD)](generating-dataset-relations-from-xml-schema-xsd.md)
 - [Mapování omezení schématu XML (XSD) k omezením datové sady](mapping-xml-schema-xsd-constraints-to-dataset-constraints.md)

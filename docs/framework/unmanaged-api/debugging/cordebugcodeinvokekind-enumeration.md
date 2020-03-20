@@ -10,24 +10,24 @@ api_type:
 ms.assetid: e795e6a2-1008-4a81-af88-d777888e942e
 topic_type:
 - apiref
-ms.openlocfilehash: cc839e9b2a28dc428ae7cc87c9d080c4b7612a9d
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 54332f5b3383f1c1513242a79cbd81eb8aa5c4f2
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73098883"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79179250"
 ---
 # <a name="cordebugcodeinvokekind-enumeration"></a>Výčet CorDebugCodeInvokeKind
-Popisuje, jak exportovaný funkce vyvolá spravovaný kód.  
+Popisuje, jak exportovaná funkce vyvolá spravovaný kód.  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```cpp  
 typedef enum CorDebugCodeInvokeKind  
 {  
-    CODE_INVOKE_KIND_NONE,       
-    CODE_INVOKE_KIND_RETURN,     
-    CODE_INVOKE_KIND_TAILCALL,   
+    CODE_INVOKE_KIND_NONE,
+    CODE_INVOKE_KIND_RETURN,
+    CODE_INVOKE_KIND_TAILCALL,
 } CorDebugCodeInvokeKind;  
 ```  
   
@@ -35,26 +35,26 @@ typedef enum CorDebugCodeInvokeKind
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`CODE_INVOKE_KIND_NONE`|Pokud je v této metodě vyvolán nějaký spravovaný kód, bude muset být umístěn pomocí explicitních událostí nebo zarážek později.<br /><br /> --nebo--<br /><br /> Omlouváme se, ale může se stát, že tato metoda volá jenom některé spravované kódy, protože neexistuje žádný snadný způsob, jak ji zastavit.<br /><br /> --nebo--<br /><br /> Metoda nikdy nemůže vyvolat spravovaný kód.|  
-|`CODE_INVOKE_KIND_RETURN`|Tato metoda vyvolá spravovaný kód prostřednictvím návratové instrukce. Krokování by mělo být doručeno do dalšího spravovaného kódu.|  
-|`CODE_INVOKE_KIND_TAILCALL`|Tato metoda vyvolá spravovaný kód prostřednictvím volání tail. Do spravovaného kódu by měly být doručeny jednoduché krokování a krokování prostřednictvím jakýchkoli instrukcí volání.|  
+|`CODE_INVOKE_KIND_NONE`|Pokud je touto metodou vyvolán jakýkoli spravovaný kód, bude muset být později umístěn explicitními událostmi nebo zarážkymi.<br /><br /> ...nebo--<br /><br /> Můžeme jen chybět některé spravovaného kódu, který tato metoda volá, protože neexistuje žádný snadný způsob, jak na něm zastavit.<br /><br /> ...nebo--<br /><br /> Metoda může nikdy vyvolat spravovaný kód.|  
+|`CODE_INVOKE_KIND_RETURN`|Tato metoda vyvolá spravovaný kód prostřednictvím instrukce vrácení. Krokování by mělo být doručeno k dalšímu spravovanému kódu.|  
+|`CODE_INVOKE_KIND_TAILCALL`|Tato metoda vyvolá spravovaný kód prostřednictvím volání ocasu. Jednokrokování a krokování přes všechny pokyny k volání by měly dorazit ke spravovanému kódu.|  
   
 ## <a name="remarks"></a>Poznámky  
- Tento výčet používá metoda [ICorDebugProcess6:: GetExportStepInfo –](icordebugprocess6-getexportstepinfo-method.md) k poskytnutí informací o prokrokování prostřednictvím spravovaného kódu.  
+ Tento výčet používá metoda [ICorDebugProcess6::GetExportStepInfo](icordebugprocess6-getexportstepinfo-method.md) k poskytnutí informací o krokování spravovaného kódu.  
   
 > [!NOTE]
-> Tento výčet je určený pro použití pouze v .NET Nativech scénářích ladění.  
+> Tento výčet je určen pouze pro použití v nativních scénářích ladění .NET.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
+ **Platformy:** Viz [Systémové požadavky](../../get-started/system-requirements.md).  
   
- **Hlavička:** CorDebug. idl, CorDebug. h  
+ **Záhlaví:** CorDebug.idl, CorDebug.h  
   
- **Knihovna:** CorGuids. lib  
+ **Knihovna:** CorGuids.lib  
   
- **Verze .NET Framework:** [!INCLUDE[net_46_native](../../../../includes/net-46-native-md.md)]  
+ **Verze rozhraní .NET Framework:**[!INCLUDE[net_46_native](../../../../includes/net-46-native-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Výčty pro ladění](debugging-enumerations.md)
-- [Ladění](index.md)
+- [ladění](index.md)

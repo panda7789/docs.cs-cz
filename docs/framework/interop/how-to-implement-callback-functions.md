@@ -8,35 +8,35 @@ dev_langs:
 helpviewer_keywords:
 - callback function, implementing
 ms.assetid: e55b3712-b9ea-4453-bd9a-ad5cfa2f6bfa
-ms.openlocfilehash: 23355e16127b45c26a1d950c6a8b3cc27e265781
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: b7aae1e70ac736d60bed1e79291235db1c220281
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73123890"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79181419"
 ---
 # <a name="how-to-implement-callback-functions"></a>Postupy: Implementace funkcí zpětného volání
-Následující postup a příklad ukazují, jak spravovaná aplikace, pomocí vyvolání platformy, může vytisknout hodnotu popisovače pro každé okno v místním počítači. Konkrétně postup a příklad používají funkci **EnumWindows** pro krokování seznamu oken a spravované funkce zpětného volání (pojmenované zpětné volání) k vytištění hodnoty popisovače okna.  
+Následující postup a příklad ukazují, jak spravovaná aplikace pomocí platformy invoke může vytisknout hodnotu popisovače pro každé okno v místním počítači. Konkrétně postup a příklad použít **EnumWindows** funkce krokovat seznam oken a spravované funkce zpětného volání (s názvem Zpětné volání) vytisknout hodnotu popisovače okna.  
   
 ### <a name="to-implement-a-callback-function"></a>Implementace funkce zpětného volání  
   
-1. Než budete pokračovat v implementaci, podívejte se na signaturu funkce **EnumWindows** . **EnumWindows** má následující signaturu:  
+1. Podívejte se na podpis pro funkci **EnumWindows** před přejde dále s implementací. **EnumWindows** má následující podpis:  
   
     ```cpp
     BOOL EnumWindows(WNDENUMPROC lpEnumFunc, LPARAM lParam)
     ```
   
-     Jedno potvrzení, že tato funkce vyžaduje zpětné volání, je přítomnost argumentu **lpEnumFunc** . Je běžné, že je v názvu argumentů, které přebírají ukazatel na funkci zpětného volání, v kombinaci s příponou **Func** zobrazená předpona **LP** (dlouhý ukazatel). Dokumentaci k funkcím Win32 naleznete v sadě Microsoft Platform SDK.  
+     Jedna stopa, že tato funkce vyžaduje zpětné volání je přítomnost **lpEnumFunc** argument. Je běžné vidět **lp** (dlouhý ukazatel) předponu v kombinaci s příponou **Func** v názvu argumentů, které převzít ukazatel na funkci zpětného volání. Dokumentaci k funkcím win32 naleznete v sadě Microsoft Platform SDK.  
   
-2. Vytvořte spravovanou funkci zpětného volání. Příklad deklaruje typ delegáta s názvem `CallBack`, který přijímá dva argumenty (**HWND** a **lParam**). První argument je popisovač okna. druhý argument je definován aplikací. V této verzi musí být oba argumenty celá čísla.  
+2. Vytvořte funkci spravovaného zpětného volání. Příklad deklaruje typ `CallBack`delegáta s názvem , který přebírá dva argumenty (**hwnd** a **lparam**). První argument je popisovač okna; druhý argument je definován aplikací. V této verzi musí být oba argumenty celá čísla.  
   
-     Funkce zpětného volání obecně vracejí nenulové hodnoty pro indikaci úspěšného a nulového označení selhání. Tento příklad explicitně nastaví návratovou hodnotu na **true** pro pokračování výčtu.  
+     Funkce zpětného volání obecně vrátit nenulové hodnoty označující úspěch a nula označuje selhání. Tento příklad explicitně nastaví vrácenou hodnotu na **hodnotu true,** aby bylo pokračovat ve výčtu.  
   
-3. Vytvořte delegáta a předejte ho jako argument funkci **EnumWindows** . Vyvolání platformy převede delegáta na známý formát zpětného volání automaticky.  
+3. Vytvořte delegáta a předajte jej jako argument funkci **EnumWindows.** Vyvolání platformy automaticky převede delegáta na známý formát zpětného volání.  
   
-4. Zajistěte, aby systém uvolňování paměti nedeklaroval delegáta před tím, než funkce zpětného volání dokončí svou práci. Pokud předáte delegáta jako parametr nebo předáte delegáta, který je obsažen jako pole ve struktuře, zůstane po dobu trvání volání neshromažďováno. Podobně jako v následujícím příkladu výčtu funkce zpětného volání dokončí svou práci před vrácením volání a nevyžaduje od spravovaného volajícího žádné další akce.  
+4. Ujistěte se, že systém uvolňování paměti nezíská delegáta před dokončením práce funkce zpětného volání. Když předáte delegáta jako parametr nebo předat delegáta obsaženého jako pole ve struktuře, zůstane nevybrané po dobu trvání volání. Tak, jak je tomu v následujícím příkladu výčtu, funkce zpětného volání dokončí svou práci před volání vrátí a nevyžaduje žádnou další akci spravovaného volajícího.  
   
-     Pokud se však funkce zpětného volání dá vyvolat po vrácení volání, spravované volající musí provést kroky, aby se zajistilo, že delegát zůstane neshromážděný, dokud funkce zpětného volání nedokončí. Podrobné informace o tom, jak zabránit uvolňování paměti, najdete v tématu věnovaném [vzájemnému zařazování](interop-marshaling.md) pomocí volání platforem.  
+     Pokud však funkce zpětného volání může být vyvolána po návratu volání, spravovaný volající musí podniknout kroky k zajištění, že delegát zůstane nesebrané, dokud nebude dokončena funkce zpětného volání. Podrobné informace o zabránění uvolňování paměti naleznete [v tématu Interop zařazování](interop-marshaling.md) s platformy invoke.  
   
 ## <a name="example"></a>Příklad  
   
@@ -74,16 +74,16 @@ public delegate bool CallBack(int hwnd, int lParam);
 public class EnumReportApp  
 {  
     [DllImport("user32")]  
-    public static extern int EnumWindows(CallBack x, int y);   
+    public static extern int EnumWindows(CallBack x, int y);
   
-    public static void Main()   
+    public static void Main()
     {  
         CallBack myCallBack = new CallBack(EnumReportApp.Report);  
         EnumWindows(myCallBack, 0);  
     }  
   
     public static bool Report(int hwnd, int lParam)  
-    {   
+    {
         Console.Write("Window handle is ");  
         Console.WriteLine(hwnd);  
         return true;  
@@ -127,7 +127,7 @@ int main()
 }  
 ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Funkce zpětného volání](callback-functions.md)
 - [Volání funkce DLL](calling-a-dll-function.md)

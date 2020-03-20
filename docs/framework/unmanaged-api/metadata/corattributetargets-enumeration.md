@@ -14,15 +14,15 @@ helpviewer_keywords:
 ms.assetid: 694c0fa0-7011-41a9-9dfd-f0e16ea574b5
 topic_type:
 - apiref
-ms.openlocfilehash: 5f83cb96e39b257a1d35786130cd5ed31d071de7
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 51741aa3a6d965c1e9743081628d8ad62e8fb04e
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74443879"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79176198"
 ---
 # <a name="corattributetargets-enumeration"></a>CorAttributeTargets – výčet
-Určuje prvky aplikace, na kterých je platný pro použití atributu.  
+Určuje prvky aplikace, na kterých je platný použít atribut.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -44,15 +44,15 @@ typedef enum CorAttributeTargets
     catDelegate            = 0x1000,  
     catGenericParameter    = 0x4000,  
   
-    catAll                 =   
-        catAssembly | catModule | catClass | catStruct |   
-        catEnum | catConstructor | catMethod | catProperty |   
-        catField | catEvent | catInterface | catParameter |   
+    catAll                 =
+        catAssembly | catModule | catClass | catStruct |
+        catEnum | catConstructor | catMethod | catProperty |
+        catField | catEvent | catInterface | catParameter |
         catDelegate | catGenericParameter,  
   
-    catClassMembers        =   
-        catClass | catStruct | catEnum | catConstructor |   
-        catMethod | catProperty | catField | catEvent |   
+    catClassMembers        =
+        catClass | catStruct | catEnum | catConstructor |
+        catMethod | catProperty | catField | catEvent |
         catDelegate | catInterface  
   
 } CorAttributeTargets;  
@@ -63,34 +63,34 @@ typedef enum CorAttributeTargets
 |Člen|Popis|  
 |------------|-----------------|  
 |`catAssembly`|Atribut lze použít pro sestavení.|  
-|`catModule`|Atribut lze použít pro přenos přenositelného spustitelného souboru (. dll nebo. exe).|  
+|`catModule`|Atribut lze použít u přenosného spustitelného souboru (.dll nebo .exe) modulu.|  
 |`catClass`|Atribut lze použít pro třídu.|  
-|`catStruct`|Atribut lze použít pro strukturu; To znamená typ hodnoty.|  
+|`catStruct`|Atribut lze použít na strukturu; to znamená typ hodnoty.|  
 |`catEnum`|Atribut lze použít pro výčet.|  
-|`catConstructor`|Atribut lze použít pro konstruktor.|  
-|`catMethod`|Atribut lze použít pro metodu.|  
-|`catProperty`|Atribut lze použít pro vlastnost.|  
+|`catConstructor`|Atribut lze použít na konstruktoru.|  
+|`catMethod`|Atribut lze použít na metodu.|  
+|`catProperty`|Atribut lze použít na vlastnost.|  
 |`catField`|Atribut lze použít pro pole.|  
-|`catEvent`|Atribut lze použít pro událost.|  
+|`catEvent`|Atribut lze použít na událost.|  
 |`catInterface`|Atribut lze použít na rozhraní.|  
-|`catParameter`|Atribut lze použít pro parametr.|  
+|`catParameter`|Atribut lze použít na parametr.|  
 |`catDelegate`|Atribut lze použít pro delegáta.|  
-|`catGenericParameter`|Atribut lze použít pro obecný parametr.|  
-|`catAll`|Atribut lze použít pro libovolný element aplikace.|  
-|`catClassMembers`|Atribut lze použít pro člena třídy.|  
+|`catGenericParameter`|Atribut lze použít na obecný parametr.|  
+|`catAll`|Atribut lze použít pro libovolný prvek aplikace.|  
+|`catClassMembers`|Atribut lze použít na člena třídy.|  
   
 ## <a name="remarks"></a>Poznámky  
- Hodnoty výčtu `CorAttributeTargets` lze kombinovat s bitovým nebo operací, aby bylo možné získat upřednostňovanou kombinaci.  
+ Hodnoty `CorAttributeTargets` výčtu lze kombinovat s bitovou operací OR, abyste získali upřednostňovanou kombinaci.  
   
- `CorAttributeTargets` souběžně spravovaného výčtu <xref:System.AttributeTargets?displayProperty=nameWithType>.  
+ Paralely `CorAttributeTargets` spravované <xref:System.AttributeTargets?displayProperty=nameWithType> výčtu.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Hlavička:** CorHdr. h  
+ **Záhlaví:** CorHdr.h  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Výčty pro metadata](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)

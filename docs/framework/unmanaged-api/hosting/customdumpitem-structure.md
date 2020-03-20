@@ -14,21 +14,21 @@ helpviewer_keywords:
 ms.assetid: fd9085ff-7beb-4c38-97f0-037cd8ba4f65
 topic_type:
 - apiref
-ms.openlocfilehash: ae64edd8a3a628100d4c51d0b78be1bc8d49fc17
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 154beef9398029f31dcb4d081019b9f292238af4
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73138285"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79176471"
 ---
 # <a name="customdumpitem-structure"></a>CustomDumpItem – struktura
-Popisuje položku, která se má přidat do vlastního výpisu paměti při zasílání zpráv o chybách.  
+Popisuje položku, která má být přidána do vlastního výpisu chyb v hlášení chyb.  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```cpp  
 struct {  
-    ECustomDumpItemKind itemKind;   
+    ECustomDumpItemKind itemKind;
     union {  
         UINT_PTR pReserved;  
     }  
@@ -39,21 +39,21 @@ struct {
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`itemKind`|Hodnota [ECustomDumpItemKind –](../../../../docs/framework/unmanaged-api/hosting/ecustomdumpitemkind-enumeration.md) , která určuje druh položky, která má být přidána.|  
-|`pReserved`|Aktuálně se nepoužívá. Všechny položky přidané do sjednocení nesmí být větší než velikost ukazatele. Pokud je vyžadován `struct`, je nutné jej přidělit samostatně a odkazovat na něj.|  
+|`itemKind`|Hodnota [ECustomDumpItemKind,](../../../../docs/framework/unmanaged-api/hosting/ecustomdumpitemkind-enumeration.md) která označuje druh položky, která má být přidána.|  
+|`pReserved`|Není aktuálně používán. Všechny položky přidané do unie nesmí být větší než velikost ukazatele. Pokud `struct` je požadováno, musíte ji přidělit samostatně a přejděte na něj.|  
   
 ## <a name="remarks"></a>Poznámky  
- [ICLRErrorReportingManager:: BeginCustomDump –](../../../../docs/framework/unmanaged-api/hosting/iclrerrorreportingmanager-begincustomdump-method.md) přebírá parametr typu `CustomDumpItem`.  
+ [ICLRErrorReportingManager::BeginCustomDump](../../../../docs/framework/unmanaged-api/hosting/iclrerrorreportingmanager-begincustomdump-method.md) přebírá parametr `CustomDumpItem`typu .  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Hlavička:** MSCorEE. idl  
+ **Záhlaví:** MSCorEE.idl  
   
- **Knihovna:** Zahrnuto jako prostředek v knihovně MSCorEE. dll  
+ **Knihovna:** Zahrnuto jako prostředek v souboru MSCorEE.dll  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Struktury pro hostování](../../../../docs/framework/unmanaged-api/hosting/hosting-structures.md)

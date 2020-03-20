@@ -15,21 +15,21 @@ helpviewer_keywords:
 ms.assetid: 542c7c65-dd56-4651-b76f-5db2465e4a15
 topic_type:
 - apiref
-ms.openlocfilehash: 55411f187e2ef73997633d94b37a7d5d2cfd74c9
-ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
+ms.openlocfilehash: 50d16b8036144d6ede349149fa4ae37344064d8b
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76868561"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79177017"
 ---
 # <a name="icorprofilerinfo3getfunctionenter3info-method"></a>ICorProfilerInfo3::GetFunctionEnter3Info – metoda
-Poskytuje informace o snímku zásobníku a argumentu funkce, která je hlášena v profileru funkcí [FunctionEnter3WithInfo –](functionenter3withinfo-function.md) . Tuto metodu lze volat pouze během `FunctionEnter3WithInfo` zpětného volání.  
+Poskytuje zásobníku rámce a argument informace o funkci, která je hlášena profiler funkce [FunctionEnter3WithInfo](functionenter3withinfo-function.md) funkce. Tuto metodu lze volat `FunctionEnter3WithInfo` pouze během zpětného volání.  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```cpp  
 HRESULT GetFunctionEnter3Info(  
-            [in]  FunctionID functionId,   
+            [in]  FunctionID functionId,
             [in]  COR_PRF_ELT_INFO eltInfo,  
             [out] COR_PRF_FRAME_INFO *pFrameInfo,  
             [in, out] ULONG *pcbArgumentInfo,  
@@ -39,37 +39,37 @@ HRESULT GetFunctionEnter3Info(
   
 ## <a name="parameters"></a>Parametry  
  `functionId`  
- pro `FunctionID` funkce, která se zadává.  
+ [v] Funkce, `FunctionID` která je zadána.  
   
  `eltInfo`  
- pro Neprůhledný popisovač, který představuje informace o daném snímku zásobníku. Profiler by měl poskytnout stejnou `eltInfo`, že byl dán funkcí [FunctionEnter3WithInfo –](functionenter3withinfo-function.md) .  
+ [v] Neprůhledný popisovač, který představuje informace o daném rámci zásobníku. Profiler by měl `eltInfo` poskytnout stejné, které bylo dáno [functionEnter3WithInfo](functionenter3withinfo-function.md) funkce.  
   
  `pFrameInfo`  
- mimo Neprůhledný popisovač, který představuje obecné informace o daném snímku zásobníku. Tento popisovač je platný pouze během `FunctionEnter3WithInfo` zpětného volání, ve kterém Profiler volal metodu `GetFunctionEnter3Info`.  
+ [out] Neprůhledný popisovač, který představuje obecné informace o daném rámci zásobníku. Tento popisovač je `FunctionEnter3WithInfo` platný pouze během zpětného `GetFunctionEnter3Info` volání, ve kterém profiler volal metodu.  
   
  `pcbArgumentInfo`  
- [in, out] Ukazatel na celkovou velikost [COR_PRF_FUNCTION_ARGUMENT_INFO](cor-prf-function-argument-info-structure.md) struktury (včetně všech dalších [COR_PRF_FUNCTION_ARGUMENT_RANGE](cor-prf-function-argument-range-structure.md) struktur pro rozsahy argumentů, na které odkazuje `pArgumentInfo`). Pokud zadaná velikost není dostatečná, je vrácena ERROR_INSUFFICIENT_BUFFER a očekávaná velikost je uložena v `pcbArgumentInfo`. Chcete-li volat `GetFunctionEnter3Info` pouze k načtení očekávané hodnoty pro `*pcbArgumentInfo`, nastavte `*pcbArgumentInfo`= 0 a `pArgumentInfo`= NULL.  
+ [dovnitř, ven] Ukazatel na celkovou velikost [COR_PRF_FUNCTION_ARGUMENT_INFO](cor-prf-function-argument-info-structure.md) struktury v bajtech (plus všechny další [COR_PRF_FUNCTION_ARGUMENT_RANGE](cor-prf-function-argument-range-structure.md) struktury pro `pArgumentInfo`rozsahy argumentů, na které odkazuje ). Pokud zadaná velikost nestačí, ERROR_INSUFFICIENT_BUFFER je vrácena `pcbArgumentInfo`a očekávaná velikost je uložena v . Chcete-li `GetFunctionEnter3Info` volat pouze pro `*pcbArgumentInfo`načtení očekávané hodnoty pro , nastavte `*pcbArgumentInfo`=0 a `pArgumentInfo`=NULL.  
   
  `pArgumentInfo`  
- mimo Ukazatel na [COR_PRF_FUNCTION_ARGUMENT_INFO](cor-prf-function-argument-info-structure.md) strukturu, která popisuje umístění argumentů funkce v paměti v pořadí zleva doprava.  
+ [out] Ukazatel na [COR_PRF_FUNCTION_ARGUMENT_INFO](cor-prf-function-argument-info-structure.md) struktury, která popisuje umístění argumentů funkce v paměti, v pořadí zleva doprava.  
   
 ## <a name="remarks"></a>Poznámky  
- Profiler musí přidělit dostatek místa pro `COR_PRF_FUNCTION_ARGUMENT_INFO` strukturu kontrolované funkce a musí určit velikost v parametru `pcbArgumentInfo`.  
+ Profiler musí přidělit dostatek `COR_PRF_FUNCTION_ARGUMENT_INFO` místa pro strukturu funkce, která je kontrolována `pcbArgumentInfo` a musí uvádět velikost v parametru.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Hlavička:** CorProf. idl, CorProf. h  
+ **Záhlaví:** CorProf.idl, CorProf.h  
   
- **Knihovna:** CorGuids. lib  
+ **Knihovna:** CorGuids.lib  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
+ **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [FunctionEnter3WithInfo](functionenter3withinfo-function.md)
-- [FunctionLeave3WithInfo](functionleave3withinfo-function.md)
-- [FunctionTailcall3WithInfo](functiontailcall3withinfo-function.md)
+- [FunkceEnter3WithInfo](functionenter3withinfo-function.md)
+- [FunkceLeave3WithInfo](functionleave3withinfo-function.md)
+- [FunkceTailcall3WithInfo](functiontailcall3withinfo-function.md)
 - [ICorProfilerInfo3 – rozhraní](icorprofilerinfo3-interface.md)
 - [Rozhraní pro profilaci](profiling-interfaces.md)
-- [Profilace](index.md)
+- [Profilování](index.md)

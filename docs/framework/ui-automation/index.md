@@ -6,21 +6,21 @@ f1_keywords:
 helpviewer_keywords:
 - UI Automation
 ms.assetid: e7ec856e-41ee-47b1-9d57-b75a3dad088c
-ms.openlocfilehash: 7305258570ad853afa88a231592fd4b6cd2dd74e
-ms.sourcegitcommit: feb42222f1430ca7b8115ae45e7a38fc4a1ba623
+ms.openlocfilehash: 49d2988cbad33497f2214098bcde68f7d5434b5e
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/02/2020
-ms.locfileid: "76965864"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79180026"
 ---
 # <a name="microsoft-ui-automation"></a>Microsoft UI Automation
 
 > [!NOTE]
-> Tato dokumentace je určená pro vývojáře v rozhraní .NET, kteří chtějí používat spravované třídy automatizace uživatelského rozhraní definované v oboru názvů <xref:System.Windows.Automation>. Nejnovější informace o automatizaci uživatelského rozhraní najdete v tématu [rozhraní API pro Windows Automation: automatizace uživatelského rozhraní](/windows/win32/winauto/entry-uiauto-win32).
+> Tato dokumentace je určena pro vývojáře rozhraní .NET, kteří <xref:System.Windows.Automation> chtějí používat spravované třídy automatizace uživatelského rozhraní definované v oboru názvů. Nejnovější informace o automatizaci uživatelského rozhraní naleznete v tématu [Rozhraní API pro automatizaci systému Windows: Automatizace uživatelského rozhraní](/windows/win32/winauto/entry-uiauto-win32).
 
- Automatizace uživatelského rozhraní Microsoft je rozhraní pro usnadnění přístupu pro Microsoft Windows. Řeší potřeby produktů pro usnadnění a automatizované testovací architektury tím, že poskytuje programový přístup k informacím o uživatelském rozhraní (UI). Kromě toho automatizace uživatelského rozhraní umožňuje vývojářům ovládacích prvků a aplikací zpřístupnit jejich produkty.
+ Microsoft UI Automation je architektura usnadnění pro microsoft windows. Řeší potřeby produktů asistenčních technologií a automatizovaných testovacích rámců tím, že poskytuje programový přístup k informacím o uživatelském rozhraní. Kromě toho automatizace uživatelského rozhraní umožňuje vývojářům ovládacích a aplikačních aplikací zpřístupnit své produkty.
 
- Tato dokumentace popisuje rozhraní API pro automatizaci uživatelského rozhraní pro spravovaný kód. Informace o programování pro automatizaci uživatelského rozhraní C++v nástroji najdete v tématu [automatizace uživatelského rozhraní pro aplikace Win32](/windows/desktop/winauto/windows-automation-api-portal).
+ Tato dokumentace popisuje rozhraní API automatizace uživatelského rozhraní pro spravovaný kód. Informace o programování pro automatizaci uživatelského rozhraní v jazyce C++naleznete v [tématu Automatizace uživatelského rozhraní pro aplikace Win32](/windows/desktop/winauto/windows-automation-api-portal).
 
 ## <a name="in-this-section"></a>V tomto oddílu
 
@@ -34,4 +34,4 @@ ms.locfileid: "76965864"
 
 ## <a name="related-sections"></a>Související oddíly
 
-- [Ukázky usnadnění](https://github.com/Microsoft/WPF-Samples/tree/master/Accessibility) 
+- [Ukázky přístupnosti](https://github.com/Microsoft/WPF-Samples/tree/master/Accessibility)

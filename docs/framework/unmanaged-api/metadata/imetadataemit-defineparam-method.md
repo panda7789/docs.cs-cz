@@ -15,69 +15,69 @@ helpviewer_keywords:
 ms.assetid: d86a3d14-4796-4909-9591-dfafe3de5ce4
 topic_type:
 - apiref
-ms.openlocfilehash: 5c81bc82e19bce658336e4860a61f2721e17423d
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 2807458549db02598ba05f2aa80fa6ea6fbc5a13
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74431698"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79177696"
 ---
 # <a name="imetadataemitdefineparam-method"></a>IMetaDataEmit::DefineParam – metoda
-Vytvoří definici parametru se specifikovanou signaturou pro metodu, na kterou se odkazuje pomocí zadaného tokenu, a získá token pro tuto definici parametru.  
+Vytvoří definici parametru se zadaným podpisem pro metodu, na kterou odkazuje zadaný token, a získá token pro tuto definici parametru.  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```cpp  
 HRESULT DefineParam (  
-    [in]  mdMethodDef md,   
-    [in]  ULONG       ulParamSeq,   
-    [in]  LPCWSTR     szName,   
-    [in]  DWORD       dwParamFlags,   
-    [in]  DWORD       dwCPlusTypeFlag,   
+    [in]  mdMethodDef md,
+    [in]  ULONG       ulParamSeq,
+    [in]  LPCWSTR     szName,
+    [in]  DWORD       dwParamFlags,
+    [in]  DWORD       dwCPlusTypeFlag,
     [in]  void const  *pValue,  
-    [in]  ULONG       cchValue,   
-    [out] mdParamDef  *ppd   
+    [in]  ULONG       cchValue,
+    [out] mdParamDef  *ppd
 );  
 ```  
   
 ## <a name="parameters"></a>Parametry  
  `md`  
- pro Token pro metodu, jejíž parametr je právě definován.  
+ [v] Token pro metodu, jejíž parametr je definován.  
   
  `ulParamSeq`  
- pro Pořadové číslo parametru.  
+ [v] Pořadové číslo parametru.  
   
  `szName`  
- pro Název parametru v kódování Unicode.  
+ [v] Název parametru v unicode.  
   
  `dwParamFlags`  
- pro Příznaky pro parametr Toto je Bitová maska `CorParamAttr` hodnot.  
+ [v] Příznaky parametru. Toto je bitová maska `CorParamAttr` hodnot.  
   
  `dwCPlusTypeFlag`  
- [in] `ELEMENT_TYPE_` *\** hodnoty konstanty.  
+ [v] `ELEMENT_TYPE_` pro konstantní hodnotu. *\**  
   
  `pValue`  
- pro Hodnota konstanty pro parametr  
+ [v] Konstantní hodnota parametru.  
   
  `cchValue`  
- pro Velikost `pValue`znaků Unicode.  
+ [v] Velikost znaku Unicode . `pValue`  
   
  `ppd`  
- mimo Byl přiřazen token `mdParamDef`.  
+ [out] Přiřazen `mdParamDef` token.  
   
 ## <a name="remarks"></a>Poznámky  
- Hodnoty sekvence v `ulParamSeq` začínají hodnotou 1 pro parametry. Návratová hodnota má pořadové číslo 0.  
+ Sekvenční `ulParamSeq` hodnoty v začíná 1 pro parametry. Vrácená hodnota má pořadové číslo 0.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Hlavička:** Cor. h  
+ **Záhlaví:** Kor.h.  
   
- **Knihovna:** Používá se jako prostředek v knihovně MSCorEE. dll.  
+ **Knihovna:** Používá se jako prostředek v souboru MSCorEE.dll  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [IMetaDataEmit – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)
 - [IMetaDataEmit2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-interface.md)

@@ -1,56 +1,50 @@
 ---
-title: Rozhraní .NET Framework a nesvázaná vydání
+title: Rozhraní .NET Framework a nepásmová vydání
 ms.date: 10/10/2018
 ms.assetid: 721f10fa-3189-4124-a00d-56ddabd889b3
-ms.openlocfilehash: a2dcd011548df857a1399c5bbdfe6ed33927672e
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 058bc1a5180060d3c3c6ba4ead1f074a14336b53
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75716406"
+ms.lasthandoff: 03/15/2020
+ms.locfileid: "79181567"
 ---
-# <a name="the-net-framework-and-out-of-band-releases"></a>Rozhraní .NET Framework a nesvázaná vydání
+# <a name="net-framework-and-out-of-band-releases"></a>Rozhraní .NET Framework a nepásmová vydání
 
-Rozhraní .NET Framework se vyvíjí pro různé platformy, jako jsou Windows Phone a aplikace pro Windows Store a tradiční stolní počítače a webové aplikace a maximalizuje opětovnou využitelnost kódu. Kromě regulárních verzí rozhraní .NET Framework vydáváme nové funkce OOB (out of band) z důvodu zlepšení vývoje napříč platformami nebo představení nových funkcí. Toto téma popisuje budoucí směr rozhraní .NET Framework a jeho OOB verzí.
+Rozhraní .NET Framework se vyvinulo tak, aby vyhovovalo různým platformám, jako jsou aplikace UPW a tradiční desktopové a webové aplikace, a maximalizovalo opakované použití kódu. Kromě běžných verzí rozhraní .NET Framework jsou nové funkce vydávány mimo pásmo (OOB) pro zlepšení vývoje napříč platformami nebo zavedení nových funkcí.
 
 ## <a name="advantages-of-oob-releases"></a>Výhody verzí OOB
- Dodávání nových komponent nebo aktualizací komponent OOB umožňuje společnosti Microsoft poskytovat častější aktualizace rozhraní .NET Framework. Kromě toho můžeme shromažďovat názory zákazníků a rychleji na ně reagovat.
 
- Použijete-li ve své aplikaci funkci OOB, nemusí uživatelé instalovat nejnovější verzi rozhraní .NET Framework pro spuštění aplikace, protože sestavení OOB se nasazují s vaším balíčkem aplikací.
+Odesílání nových součástí nebo aktualizace součástí mimo pásmo umožňuje společnosti Microsoft poskytovat častější aktualizace rozhraní .NET Framework. Kromě toho můžeme shromažďovat názory zákazníků a rychleji na ně reagovat.
+
+Když používáte funkci OOB ve vaší aplikaci, vaši uživatelé nemusí instalovat nejnovější verzi rozhraní .NET Framework ke spuštění aplikace, protože sestavení OOB nasadit s balíčkem aplikace.
 
 ## <a name="how-oob-packages-are-distributed"></a>Distribuce balíčků OOB
-Verze OOB pro základní komponenty modulu CLR (Common Language Runtime) jsou dodávány prostřednictvím [NuGet](https://www.nuget.org/), což je správce balíčků pro .NET. Technologie NuGet umožňuje procházet a přidávat knihovny do projektů rozhraní .NET Framework z Průzkumníku řešení v sadě Visual Studio. Správce balíčků NuGet je součástí všech edicí sady Visual Studio, počínaje verzí Visual Studio 2012. Chcete-li zjistit, zda je nainstalována sada NuGet, vyhledejte v nabídce **nástroje** sady Visual Studio **Správce balíčků NuGet** . Pokud není nainstalován:
 
-1. Na řádku nabídek sady Visual Studio vyberte **nástroje**, **rozšíření a aktualizace** (v aplikaci Visual Studio 2010 vyberte **Správce rozšíření**).
+Verze OOB pro základní komponenty CLR (COMMON Language Runtime) jsou dodávány prostřednictvím [NuGet](https://www.nuget.org/), což je správce balíčků pro rozhraní .NET. NuGet umožňuje procházet a přidávat knihovny do vašich projektů rozhraní .NET Framework snadno z visual studia. NuGet Package Manager je součástí všech edicí sady Visual Studio počínaje Visual Studio 2012. Vyhledejte **Správce balíčků NuGet** v nabídce **Nástroje** v sadě Visual Studio. Pokud není nainstalován, postupujte podle pokynů na [instalaci NuGet](/nuget/install-nuget-client-tools). Další informace o NuGet, naleznete [v části Dokumenty NuGet](/nuget).
 
-     Otevře se dialogové okno **rozšíření a aktualizace** .
+## <a name="use-a-nuget-oob-package"></a>Použití balíčku NuGet OOB
 
-2. Zvolte **online**, **Správce balíčků NuGet**a pak zvolte **Stáhnout**.
+Pokud je nainstalován Správce balíčků NuGet, můžete procházet a přidávat odkazy na balíčky NuGet pomocí Průzkumníka řešení v sadě Visual Studio:
 
-3. Po dokončení stahování restartujte aplikaci Visual Studio.
+1. Otevřete místní nabídku projektu v sadě Visual Studio a pak zvolte **Spravovat balíčky NuGet**. (Tato možnost je k dispozici také v nabídce **Projekt.)**
 
- Podrobné pokyny k instalaci najdete v tématu [instalace nugetu](/nuget/install-nuget-client-tools) na webu NuGet docs. Další informace o NuGet najdete v [dokumentaci k NuGet](/nuget).
+2. V levém podokně zvolte **Online**.
 
-## <a name="using-a-nuget-oob-package"></a>Použití balíčku NuGet OOB
- Po instalaci balíčku NuGet můžete procházet a přidávat odkazy na balíčky NuGet pomocí Průzkumníka řešení v sadě Visual Studio:
+3. Pokud chcete použít předběžné balíčky, v rozevíracím seznamu v prostředním podokně zvolte **Zahrnout předběžnou verzi** místo **Stable Only**.
 
-1. Otevřete místní nabídku projektu v aplikaci Visual Studio a pak zvolte možnost **Spravovat balíčky NuGet**. (Tato možnost je k dispozici také z nabídky **projekt** .)
+4. V pravém podokně **Search** vyhledejte balíček, který chcete použít, pomocí vyhledávacího pole. Některé balíčky společnosti Microsoft jsou označeny logem rozhraní Microsoft .NET Framework a všechny identifikují společnost Microsoft jako vydavatele.
 
-2. V levém podokně vyberte možnost **online**.
+![Správce balíčků Nuget.](./media/the-net-framework-and-out-of-band-releases/nuget-package-manager-dialog.png)
 
-3. Pokud chcete použít předprodejní balíčky, v rozevíracím seznamu v prostředním podokně vyberte možnost **Zahrnout předprodejní verze** místo **pouze stabilní**.
-
-4. V pravém podokně pomocí **vyhledávacího** pole vyhledejte balíček, který chcete použít. Některé balíčky společnosti Microsoft jsou označeny logem rozhraní Microsoft .NET Framework a všechny identifikují společnost Microsoft jako vydavatele.
-
- ![Snímek obrazovky, který zobrazuje správce balíčků NuGet.](./media/the-net-framework-and-out-of-band-releases/nuget-package-manager-dialog.png)
-
- Jak bylo zmíněno dříve, pokud nasadíte aplikaci, která používá balíček OOB, sestavení OOB bude dodáváno spolu s balíčkem aplikace.
+Jak bylo zmíněno dříve, pokud nasadíte aplikaci, která používá balíček OOB, sestavení OOB bude dodáváno spolu s balíčkem aplikace.
 
 ## <a name="types-of-oob-releases"></a>Typy verzí OOB
- Balíček OOB obvykle má jednu nebo více předprodejních verzí a stabilní verzi. Licence, která doprovází předběžnou verzi, obvykle neumožňuje opětovnou distribuci, ale umožňuje vyzkoušet balíček a poskytnout zpětnou vazbu. Zpětná vazba je součástí všech aktualizací balíčku. Konečná vydaná verze je distribuována jako stabilní balíček NuGet a obsahuje licenci, která umožňuje tento balíček NuGet distribuovat s vaší aplikací. Microsoft podporuje stabilní balíčky. Společnost Microsoft poskytuje podporu technologie IntelliSense i další typy dokumentace, jako jsou příspěvky na blogu a odpovědi na fóru pro všechny balíčky. Kromě toho může být zdrojový kód k dispozici s některými, ale ne všemi balíčky. Pro oznámení týkající se nových a aktualizovaných balíčků se můžete přihlásit k odběru [blogu .NET Framework](https://devblogs.microsoft.com/dotnet/).
 
- Pokud chcete najít jak předběžné verze, tak stabilní balíčky, vyberte **Zahrnout předprodejní verze** ve Správci balíčků NuGet.
+Balíček OOB obvykle má jednu nebo více předprodejních verzí a stabilní verzi. Licence, která doprovází předběžnou verzi, obvykle neumožňuje redistribuci, ale umožňuje vyzkoušet balíček a poskytnout zpětnou vazbu. Zpětná vazba je součástí všech aktualizací balíčku. Konečná vydaná verze je distribuována jako stabilní balíček NuGet a obsahuje licenci, která umožňuje tento balíček NuGet distribuovat s vaší aplikací. Stabilní balíčky jsou podporovány společností Microsoft. Společnost Microsoft poskytuje podporu Technologie IntelliSense a další typy dokumentace, jako jsou příspěvky na blogu a odpovědi na fórum pro všechny balíčky. Kromě toho zdrojový kód může být k dispozici s některými, ale ne všechny balíčky. V případě oznámení týkajících se nových a aktualizovaných balíčků se můžete přihlásit k odběru [blogu .NET Framework .](https://devblogs.microsoft.com/dotnet/)
 
-## <a name="see-also"></a>Viz také:
+Chcete-li najít předběžné verze a stabilní balíčky, zvolte **Zahrnout předběžné vydání** ve Správci balíčků NuGet.
+
+## <a name="see-also"></a>Viz také
 
 - [Začínáme](index.md)

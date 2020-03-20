@@ -15,54 +15,54 @@ helpviewer_keywords:
 ms.assetid: 47132dda-fa92-4bd1-ae4b-24cd9a60665a
 topic_type:
 - apiref
-ms.openlocfilehash: efc627619d9abf9cfa6010e1c0ca709989b9cad3
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: b921118f7c43edef3c07cbb34cbbd9119d36ce51
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74445463"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79177554"
 ---
 # <a name="imetadataemitsetfieldprops-method"></a>IMetaDataEmit::SetFieldProps – metoda
-Nastaví nebo aktualizuje výchozí hodnotu pro pole, na které se odkazuje pomocí zadaného tokenu pole.  
+Nastaví nebo aktualizuje výchozí hodnotu pro pole odkazované zadaným tokenem pole.  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```cpp  
 HRESULT SetFieldProps (  
-    [in]  mdFieldDef  fd,   
-    [in]  DWORD       dwFieldFlags,   
-    [in]  DWORD       dwCPlusTypeFlag,   
-    [in]  void const  *pValue,   
-    [in]  ULONG       cchValue   
+    [in]  mdFieldDef  fd,
+    [in]  DWORD       dwFieldFlags,
+    [in]  DWORD       dwCPlusTypeFlag,
+    [in]  void const  *pValue,
+    [in]  ULONG       cchValue
 );  
 ```  
   
 ## <a name="parameters"></a>Parametry  
  `fd`  
- pro Token pro cílové pole  
+ [v] Token pro cílové pole.  
   
  `dwFieldFlags`  
- pro Atributy pole Toto je Bitová maska `CorFieldAttr` hodnot.  
+ [v] Atributy pole. Toto je bitová maska `CorFieldAttr` hodnot.  
   
  `dwCPlusTypeFlag`  
- pro *\** `ELEMENT_TYPE_`pro hodnotu konstanty. Toto je `CorElementType` hodnota. Pokud konstanta není definována, nastavte tuto hodnotu na `ELEMENT_TYPE_END`.  
+ [v] Pro `ELEMENT_TYPE_` *\** konstantní hodnotu. To je `CorElementType` hodnota. Pokud konstanta není definována, nastavte `ELEMENT_TYPE_END`tuto hodnotu na .  
   
  `pValue`  
- pro Hodnota konstanty pro pole  
+ [v] Konstantní hodnota pole.  
   
  `cchValue`  
- pro Velikost `pValue`znaků Unicode.  
+ [v] Velikost znaku Unicode . `pValue`  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Hlavička:** Cor. h  
+ **Záhlaví:** Kor.h.  
   
- **Knihovna:** Používá se jako prostředek v knihovně MSCorEE. dll.  
+ **Knihovna:** Používá se jako prostředek v souboru MSCorEE.dll  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [IMetaDataEmit – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)
 - [IMetaDataEmit2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-interface.md)

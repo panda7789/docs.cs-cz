@@ -4,22 +4,22 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - Sessions
 ms.assetid: 36e1db50-008c-4b32-8d09-b56e790b8417
-ms.openlocfilehash: e364b539e355f669037983813f9e6d1e0371da1f
-ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
+ms.openlocfilehash: 85f1034999fc4cd36075c49bd8f4631bbd283679
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74715077"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79183367"
 ---
 # <a name="session"></a>Relace
-Ukázka relace ukazuje, jak implementovat kontrakt, který vyžaduje relaci. Relace poskytuje kontext pro provádění více operací. Díky tomu může služba přidružit stav k dané relaci, aby následné operace mohly používat stav předchozí operace. Tato ukázka je založená na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md), která implementuje službu kalkulačky. `ICalculator` kontrakt byl upraven, aby bylo možné provést sadu aritmetických operací a přitom zachovat běžící výsledek. Tato funkce je definována kontraktem `ICalculatorSession`. Služba udržuje stav pro klienta jako volání více operací služby za účelem provedení výpočtu. Klient může načíst aktuální výsledek voláním `Result()` a vymazat výsledek na nulu voláním `Clear()`.  
+Ukázka relace ukazuje, jak implementovat smlouvu, která vyžaduje relaci. Relace poskytuje kontext pro provádění více operací. To umožňuje službě přidružit stav k dané relaci, takže následné operace mohou použít stav předchozí operace. Tato ukázka je založena na [začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md), který implementuje kalkulačku služby. Smlouva `ICalculator` byla upravena tak, aby umožňovala provádění sady aritmetických operací při zachování průběžného výsledku. Tato funkce je definována smlouvou. `ICalculatorSession` Služba udržuje stav pro klienta jako více operací služby jsou volány k provedení výpočtu. Klient může načíst aktuální `Result()` výsledek voláním a vymazat `Clear()`výsledek na nulu voláním .  
   
- V této ukázce je klient Konzolová aplikace (. exe) a služba je hostována službou Internetová informační služba (IIS).  
+ V této ukázce je klient konzolovou aplikací (.exe) a služba je hostována internetovou informační službou (IIS).  
   
 > [!NOTE]
-> Postup nastavení a pokyny pro sestavení pro tuto ukázku najdete na konci tohoto tématu.  
+> Postup instalace a pokyny k sestavení pro tuto ukázku jsou umístěny na konci tohoto tématu.  
   
- Nastavení <xref:System.ServiceModel.SessionMode> kontraktu pro `Required` zajistí, že pokud se kontrakt zveřejní přes konkrétní vazbu, vazba podporuje relace. Pokud vazba nepodporuje relace, je vyvolána výjimka. Rozhraní `ICalculatorSession` je definováno tak, aby bylo možné volat jednu nebo více operací, což upravuje běžící výsledek, jak je znázorněno v následujícím ukázkovém kódu.  
+ <xref:System.ServiceModel.SessionMode> Nastavení smlouvy zajistit, `Required` že při smlouvy je vystavena přes konkrétní vazbu, vazba podporuje relace. Pokud vazba nepodporuje relace je vyvolána výjimka. Rozhraní `ICalculatorSession` je definováno tak, že lze volat jednu nebo více operací, které mění průběžný výsledek, jak je znázorněno v následujícím ukázkovém kódu.  
   
 ```csharp
 [ServiceContract(Namespace="http://Microsoft.ServiceModel.Samples", SessionMode=SessionMode.Required)]  
@@ -40,7 +40,7 @@ public interface ICalculatorSession
 }  
 ```  
   
- Služba používá <xref:System.ServiceModel.InstanceContextMode> <xref:System.ServiceModel.InstanceContextMode.PerSession> ke svázání daného kontextu instance služby s každou příchozí relací. Díky tomu může služba udržovat běžící výsledek pro každou relaci v místní členské proměnné.  
+ Služba používá <xref:System.ServiceModel.InstanceContextMode> of <xref:System.ServiceModel.InstanceContextMode.PerSession> svázat kontext dané instance služby na každou příchozí relaci. To umožňuje službě udržovat spuštěný výsledek pro každou relaci v místní členské proměnné.  
   
 ```csharp
 [ServiceBehavior(InstanceContextMode=InstanceContextMode.PerSession)]  
@@ -68,7 +68,7 @@ public class CalculatorService : ICalculatorSession
 }  
 ```  
   
- Když spustíte ukázku, klient provede několik požadavků na server a požádá o výsledek, který se pak zobrazí v okně konzoly klienta. V okně klienta stiskněte klávesu ENTER pro vypnutí klienta.  
+ Při spuštění ukázky klient provede několik požadavků na server a požaduje výsledek, který se pak zobrazí v okně klientské konzole. Stisknutím klávesy ENTER v okně klienta vypněte klienta.  
   
 ```console  
 (((0 + 100) - 50) * 17.65) / 2 = 441.25  
@@ -77,17 +77,17 @@ Press <ENTER> to terminate client.
   
 ### <a name="to-set-up-build-and-run-the-sample"></a>Nastavení, sestavení a spuštění ukázky  
   
-1. Ujistěte se, že jste provedli [postup jednorázového nastavení pro Windows Communication Foundation ukázky](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
+1. Ujistěte se, že jste provedli [jednorázový postup instalace pro ukázky windows communication foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
   
-2. Pokud chcete vytvořit C# edici nebo Visual Basic .NET, postupujte podle pokynů v tématu [sestavování ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
+2. Chcete-li vytvořit c# nebo Visual Basic .NET vydání řešení, postupujte podle pokynů v [sestavení windows communication foundation ukázky](../../../../docs/framework/wcf/samples/building-the-samples.md).  
   
-3. Chcete-li spustit ukázku v konfiguraci s jedním nebo více počítači, postupujte podle pokynů v části [spuštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
+3. Chcete-li spustit ukázku v konfiguraci jednoho nebo více počítačů, postupujte podle pokynů v [části Spuštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
   
 > [!IMPORTANT]
-> Ukázky už můžou být na vašem počítači nainstalované. Než budete pokračovat, vyhledejte následující (výchozí) adresář.  
->   
+> Ukázky mohou být již nainstalovány v počítači. Před pokračováním zkontrolujte následující (výchozí) adresář.  
+>
 > `<InstallDrive>:\WF_WCF_Samples`  
->   
-> Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] Samples. Tato ukázka se nachází v následujícím adresáři.  
->   
+>
+> Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a Windows Workflow Foundation (WF) Ukázky pro rozhraní .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka je umístěna v následujícím adresáři.  
+>
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Contract\Service\Session`  

@@ -15,66 +15,66 @@ helpviewer_keywords:
 ms.assetid: 3fb8e178-342b-4c89-9bcf-f7f834e6cb77
 topic_type:
 - apiref
-ms.openlocfilehash: acb772a64c8f13405f2836bb5f4f308986dce414
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 20c7a90f27defa18a5ef311d1f3a549b81fc5c40
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74447653"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79175483"
 ---
 # <a name="imetadataimportenummembers-method"></a>IMetaDataImport::EnumMembers – metoda
-Vytvoří výčet tokenů memberDef či představujících členy zadaného typu.  
+Vyjmenovává tokeny MemberDef představující členy zadaného typu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```cpp  
-HRESULT EnumMembers (   
-   [in, out]  HCORENUM    *phEnum,   
-   [in]  mdTypeDef   cl,   
-   [out] mdToken     rMembers[],   
-   [in]  ULONG       cMax,   
+HRESULT EnumMembers (
+   [in, out]  HCORENUM    *phEnum,
+   [in]  mdTypeDef   cl,
+   [out] mdToken     rMembers[],
+   [in]  ULONG       cMax,
    [out] ULONG       *pcTokens  
 );  
 ```  
   
 ## <a name="parameters"></a>Parametry  
  `phEnum`  
- [in, out] Ukazatel na enumerátor.  
+ [dovnitř, ven] Ukazatel na čítač výčtu.  
   
  `cl`  
- pro Token TypeDef představující typ, jehož členy mají být vyčísleny.  
+ [v] A TypeDef token představující typ, jehož členy mají být uvedeny.  
   
  `rMembers`  
- mimo Pole použité pro ukládání tokenů memberDef či.  
+ [out] Pole používané k uložení tokenů MemberDef.  
   
  `cMax`  
- pro Maximální velikost `rMembers` pole  
+ [v] Maximální velikost `rMembers` pole.  
   
  `pcTokens`  
- mimo Skutečný počet memberDef či tokenů vrácených v `rMembers`.  
+ [out] Skutečný počet tokenů MemberDef `rMembers`vrácených v .  
   
 ## <a name="return-value"></a>Návratová hodnota  
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
-|`S_OK`|`EnumMembers` byla úspěšně vrácena.|  
-|`S_FALSE`|Nejsou k dispozici žádné tokeny memberDef či pro zobrazení výčtu. V takovém případě je `pcTokens` nula.|  
+|`S_OK`|`EnumMembers`úspěšně vrácena.|  
+|`S_FALSE`|Neexistují žádné tokeny MemberDef pro výčet. V tom `pcTokens` případě je nula.|  
   
 ## <a name="remarks"></a>Poznámky  
- Při vytváření výčtu kolekcí členů pro třídu `EnumMembers` vrátí pouze členy (pole a metody, ale **ne** vlastnosti nebo události) definované přímo na třídu. Nevrací žádné členy, které třída dědí, a to i v případě, že třída poskytuje implementaci pro tyto zděděné členy. Chcete-li vytvořit výčet zděděných členů, volající musí explicitně procházet řetěz dědičnosti. Všimněte si, že pravidla pro řetěz dědičnosti se mohou lišit v závislosti na jazyku nebo kompilátoru, který vyvolal původní metadata.
- 
- Vlastnosti a události nejsou výčtem `EnumMembers`. K zobrazení výčtu použijte [enumproperties –](imetadataimport-enumproperties-method.md) nebo [enumevents –](imetadataimport-enumevents-method.md).
+ Při výčtu kolekce členů pro třídu vrátí `EnumMembers` pouze členy (pole a metody, ale **ne** vlastnosti nebo události) definované přímo na třídu. Nevrátí žádné členy, které zdědí třídy, i v případě, že třída poskytuje implementaci pro tyto zděděné členy. Chcete-li vytvořit výčet zděděných členů, volající musí explicitně chodit řetězce dědičnosti. Všimněte si, že pravidla pro řetězec dědičnosti se může lišit v závislosti na jazyku nebo kompilátoru, který vyzařoval původní metadata.
+
+ Vlastnosti a události nejsou výčty . `EnumMembers` Chcete-li vytvořit výčet těchto, použijte [EnumProperties](imetadataimport-enumproperties-method.md) nebo [EnumEvents](imetadataimport-enumevents-method.md).
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Hlavička:** Cor. h  
+ **Záhlaví:** Kor.h.  
   
- **Knihovna:** Zahrnuto jako prostředek v knihovně MsCorEE. dll  
+ **Knihovna:** Zahrnuto jako prostředek v souboru MsCorEE.dll  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [IMetaDataImport – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
 - [IMetaDataImport2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)

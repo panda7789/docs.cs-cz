@@ -15,50 +15,50 @@ helpviewer_keywords:
 ms.assetid: 27064ca2-4186-4433-90a7-3b297785e891
 topic_type:
 - apiref
-ms.openlocfilehash: b98fab6c6127c3f78151d3b84160d4ca0434b6cd
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: fadd1974cd4fa8a51a06700835f46df24e37d7fd
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74428243"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79175769"
 ---
 # <a name="imetadataemitdefinesecurityattributeset-method"></a>IMetaDataEmit::DefineSecurityAttributeSet – metoda
-Vytvoří sadu oprávnění zabezpečení pro připojení k objektu, na který odkazuje zadaný token.  
+Vytvoří sadu oprávnění zabezpečení připojit k objektu odkazuje zadaný token.  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```cpp  
-HRESULT DefineSecurityAttributeSet (   
-    [in]  mdToken       tkObj,   
-    [in]  COR_SECATTR   rSecAttrs[],   
-    [in]  ULONG         cSecAttrs,   
-    [out] ULONG         *pulErrorAttr   
+HRESULT DefineSecurityAttributeSet (
+    [in]  mdToken       tkObj,
+    [in]  COR_SECATTR   rSecAttrs[],
+    [in]  ULONG         cSecAttrs,
+    [out] ULONG         *pulErrorAttr
 );  
 ```  
   
 ## <a name="parameters"></a>Parametry  
  `tkObj`  
- pro Token, ke kterému jsou připojeny informace o zabezpečení.  
+ [v] Token, ke kterému jsou připojeny informace o zabezpečení.  
   
  `rSecAttrs`  
- pro Pole struktur `COR_SECATTR`.  
+ [v] Pole `COR_SECATTR` struktur.  
   
  `cSecAttrs`  
- pro Počet prvků v `rSecAttrs`.  
+ [v] Počet prvků v `rSecAttrs`.  
   
  `pulErrorAttr`  
- mimo Pokud se metoda nezdařila, určuje index v `rSecAttrs` prvku, který způsobil problém.  
+ [out] Pokud se metoda nezdaří, `rSecAttrs` určuje index v prvku, který způsobil problém.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Hlavička:** Cor. h  
+ **Záhlaví:** Kor.h.  
   
- **Knihovna:** Používá se jako prostředek v knihovně MSCorEE. dll.  
+ **Knihovna:** Používá se jako prostředek v souboru MSCorEE.dll  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [IMetaDataEmit – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)
 - [IMetaDataEmit2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-interface.md)

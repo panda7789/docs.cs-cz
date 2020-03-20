@@ -15,39 +15,39 @@ helpviewer_keywords:
 ms.assetid: c2321f17-f46f-4815-ae41-b28678753613
 topic_type:
 - apiref
-ms.openlocfilehash: 5de522c00da76e7c01369c706cb7f9e2bdad4b3b
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: f840438e175790a2b4c97302963b910f98dffb7d
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73134520"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79176562"
 ---
 # <a name="iassemblycacheitemcommit-method"></a>IAssemblyCacheItem::Commit – metoda
-Potvrdí odkaz na sestavení v mezipaměti do paměti.  
+Potvrdí odkaz na sestavení uložené v mezipaměti na paměť.  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```cpp  
 HRESULT Commit (  
-    [in] DWORD dwFlags,   
+    [in] DWORD dwFlags,
     [out, optional] ULONG *pulDisposition  
 );  
 ```  
   
 ## <a name="parameters"></a>Parametry  
  `dwFlags`  
- pro Příznaky definované v Fusion. idl  
+ [v] Příznaky definované v Fusion.idl.  
   
  `pulDisposition`  
- [out, volitelné] Hodnota, která určuje výsledek operace.  
+ [ven, nepovinné] Hodnota, která označuje výsledek operace.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
+ **Platformy:** Viz [Systémové požadavky](../../get-started/system-requirements.md).  
   
- **Hlavička:** Fusion. h  
+ **Záhlaví:** Fusion.h  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [IAssemblyCacheItem – rozhraní](iassemblycacheitem-interface.md)

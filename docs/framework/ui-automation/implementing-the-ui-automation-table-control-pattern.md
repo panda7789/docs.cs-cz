@@ -6,59 +6,59 @@ helpviewer_keywords:
 - control patterns, Table
 - TableControl pattern
 ms.assetid: 880cd85c-aa8c-4fb5-9369-45491d34bb78
-ms.openlocfilehash: 8e929f181255f6738261533fa3261187ebe3c6ff
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 0b3d000112060550734890ad3c4063a26c320b04
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74447093"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79180120"
 ---
 # <a name="implementing-the-ui-automation-table-control-pattern"></a>Implementace vzoru ovládacích prvků tabulka pro automatizaci uživatelského rozhraní
 > [!NOTE]
-> Tato dokumentace je určena pro .NET Framework vývojářů, kteří chtějí používat spravované [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] třídy definované v oboru názvů <xref:System.Windows.Automation>. Nejnovější informace o [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]najdete v tématu [rozhraní API pro Windows Automation: automatizace uživatelského rozhraní](/windows/win32/winauto/entry-uiauto-win32).  
+> Tato dokumentace je určena pro vývojáře rozhraní [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] .NET Framework, kteří chtějí používat spravované třídy definované v oboru <xref:System.Windows.Automation> názvů. Nejnovější informace o [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]rozhraní [WINDOWS Automation API: Automatizace uživatelského rozhraní](/windows/win32/winauto/entry-uiauto-win32).  
   
- Toto téma obsahuje pokyny a konvence pro implementaci <xref:System.Windows.Automation.Provider.ITableProvider>, včetně informací o vlastnostech, metodách a událostech. Odkazy na další odkazy jsou uvedeny na konci přehledu.  
+ Toto téma představuje pokyny a <xref:System.Windows.Automation.Provider.ITableProvider>konvence pro implementaci , včetně informací o vlastnostech, metodách a událostech. Odkazy na další odkazy jsou uvedeny na konci přehledu.  
   
- Vzor ovládacího prvku <xref:System.Windows.Automation.TablePattern> slouží k podpoře ovládacích prvků, které fungují jako kontejnery pro kolekci podřízených prvků. Podřízené objekty tohoto elementu musí implementovat <xref:System.Windows.Automation.Provider.ITableItemProvider> a být uspořádány do dvojrozměrného systému logických souřadnic, který lze procházet podle řádků a sloupců. Tento vzor ovládacích prvků je podobný <xref:System.Windows.Automation.Provider.IGridProvider>, s rozlišením, že jakýkoli ovládací prvek implementující <xref:System.Windows.Automation.Provider.ITableProvider> musí také zveřejnit vztah záhlaví sloupce nebo řádku pro každý podřízený element. Příklady ovládacích prvků, které implementují tento vzor ovládacích prvků, naleznete v tématu [mapování vzoru ovládacího prvku pro klienty automatizace uživatelského rozhraní](control-pattern-mapping-for-ui-automation-clients.md).  
+ Vzor <xref:System.Windows.Automation.TablePattern> ovládacího prvku se používá k podpoře ovládacích prvků, které fungují jako kontejnery pro kolekci podřízených prvků. Podřízené položky tohoto <xref:System.Windows.Automation.Provider.ITableItemProvider> prvku musí implementovat a uspořádat do dvojrozměrného logického souřadnicového systému, který lze procházet řádek a sloupec. Tento vzor ovládacího prvku <xref:System.Windows.Automation.Provider.IGridProvider>je obdobou , s <xref:System.Windows.Automation.Provider.ITableProvider> rozdílem, že všechny implementující ovládací prvek musí také vystavit sloupec nebo řádek záhlaví vztah pro každý podřízený prvek. Příklady ovládacích prvků, které implementují tento vzor ovládacího prvku, naleznete [v tématu Mapování vzorů ovládacího prvku pro klienty automatizace uživatelského rozhraní](control-pattern-mapping-for-ui-automation-clients.md).  
   
-<a name="Implementation_Guidelines_and_Conventions"></a>   
-## <a name="implementation-guidelines-and-conventions"></a>Pokyny a konvence implementace  
- Při implementaci vzoru ovládacího prvku tabulka si všimněte následujících pokynů a konvencí:  
+<a name="Implementation_Guidelines_and_Conventions"></a>
+## <a name="implementation-guidelines-and-conventions"></a>Prováděcí pokyny a úmluvy  
+ Při implementaci vzor ovládacího prvku tabulka, poznamenejte si následující pokyny a konvence:  
   
-- Přístup k obsahu jednotlivých buněk provádí dvourozměrný logický souřadnicový systém nebo pole poskytované požadovanou souběžnou implementací <xref:System.Windows.Automation.Provider.IGridProvider>.  
+- Přístup k obsahu jednotlivých buněk je prostřednictvím dvourozměrného logického souřadnicového systému nebo pole poskytovaného požadovanou souběžnou implementací <xref:System.Windows.Automation.Provider.IGridProvider>.  
   
-- Záhlaví sloupce nebo řádku může být obsaženo v objektu tabulky nebo se jedná o samostatný objekt záhlaví, který je spojen s objektem tabulky.  
+- Záhlaví sloupce nebo řádku může být obsaženo v objektu tabulky nebo může být samostatným objektem záhlaví, který je přidružen k objektu tabulky.  
   
-- Záhlaví sloupců a řádků můžou zahrnovat primární hlavičku i všechny podpůrné hlavičky.  
+- Záhlaví sloupců a řádků mohou obsahovat primární záhlaví i podpůrná záhlaví.  
   
 > [!NOTE]
-> Tento koncept bude zřejmý v tabulce aplikace Microsoft Excel, kde uživatel definoval sloupec "first name" (křestní jméno). Tento sloupec má teď dvě hlavičky – záhlaví "křestní jméno" definované uživatelem a alfanumerické označení pro daný sloupec přiřazenou aplikací.  
+> Tento koncept se projeví v tabulce aplikace Microsoft Excel, kde uživatel definoval sloupec Křestní jméno. Tento sloupec má nyní dvě záhlaví – záhlaví "Jméno" definované uživatelem a alfanumerické označení pro tento sloupec přiřazené aplikací.  
   
-- V tématu [implementace vzoru ovládacích prvků mřížka pro automatizaci uživatelského rozhraní](implementing-the-ui-automation-grid-control-pattern.md) pro související funkce mřížky.  
+- Informace o souvisejících funkcích mřížky naleznete [v tématu Implementace vzoru řízení mřížky automatizace](implementing-the-ui-automation-grid-control-pattern.md) uživatelského rozhraní.  
   
- ![Tabulka se složitými položkami záhlaví](./media/uia-tablepattern-complex-column-headers.PNG "UIA_TablePattern_Complex_Column_Headers")  
+ ![Tabulka se složitými položkami záhlaví.](./media/uia-tablepattern-complex-column-headers.PNG "UIA_TablePattern_Complex_Column_Headers")  
 Příklad tabulky se složitými záhlavími sloupců  
   
- ![Tabulka s nejednoznačnou vlastností RowOrColumnMajor](./media/uia-tablepattern-roworcolumnmajorproperty.PNG "UIA_TablePattern_RowOrColumnMajorProperty")  
+ ![Tabulka s nejednoznačným vlastnostem RowOrColumnMajor.](./media/uia-tablepattern-roworcolumnmajorproperty.PNG "UIA_TablePattern_RowOrColumnMajorProperty")  
 Příklad tabulky s nejednoznačnou vlastností RowOrColumnMajor  
   
-<a name="Required_Members_for_ITableProvider"></a>   
-## <a name="required-members-for-itableprovider"></a>Vyžadovaná členové pro ITableProvider  
+<a name="Required_Members_for_ITableProvider"></a>
+## <a name="required-members-for-itableprovider"></a>Požadované členy pro ITableProvider  
  Pro rozhraní ITableProvider jsou vyžadovány následující vlastnosti a metody.  
   
-|Vyžadovaná členové|Typ člena|Poznámky|  
+|Požadované členy|Typ člena|Poznámky|  
 |----------------------|-----------------|-----------|  
-|<xref:System.Windows.Automation.Provider.ITableProvider.RowOrColumnMajor%2A>|Vlastnost|Žádné|  
-|<xref:System.Windows.Automation.Provider.ITableProvider.GetColumnHeaders%2A>|Metoda|Žádné|  
-|<xref:System.Windows.Automation.Provider.ITableProvider.GetRowHeaders%2A>|Metoda|Žádné|  
+|<xref:System.Windows.Automation.Provider.ITableProvider.RowOrColumnMajor%2A>|Vlastnost|Žádný|  
+|<xref:System.Windows.Automation.Provider.ITableProvider.GetColumnHeaders%2A>|Metoda|Žádný|  
+|<xref:System.Windows.Automation.Provider.ITableProvider.GetRowHeaders%2A>|Metoda|Žádný|  
   
  Tento vzor ovládacího prvku nemá žádné přidružené události.  
   
-<a name="Exceptions"></a>   
+<a name="Exceptions"></a>
 ## <a name="exceptions"></a>Výjimky  
  Tento vzor ovládacího prvku nemá žádné přidružené výjimky.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Přehled vzorů ovládacích prvků pro automatizaci uživatelského rozhraní](ui-automation-control-patterns-overview.md)
 - [Podpora vzorů ovládacích prvků u zprostředkovatele automatizace uživatelského rozhraní](support-control-patterns-in-a-ui-automation-provider.md)

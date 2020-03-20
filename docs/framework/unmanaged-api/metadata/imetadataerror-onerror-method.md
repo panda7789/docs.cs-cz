@@ -15,41 +15,41 @@ helpviewer_keywords:
 ms.assetid: c1e744b8-a6fb-4d9c-a971-8babc875d8f0
 topic_type:
 - apiref
-ms.openlocfilehash: f10c55abcc044b5bbdbb940001a25f530a4688e4
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 489fa217744e41ccb5d27d088790131c15e1ee52
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74431219"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79177402"
 ---
 # <a name="imetadataerroronerror-method"></a>IMetaDataError::OnError – metoda
-Poskytuje oznámení o chybách, ke kterým došlo během sloučení metadat.  
+Poskytuje oznámení o chybách, ke kterým dochází během sloučení metadat.  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```cpp  
 HRESULT OnError (  
-    [in] HRESULT   hrError,   
+    [in] HRESULT   hrError,
     [in] mdToken   token  
 );  
 ```  
   
 ## <a name="parameters"></a>Parametry  
  `hrError`  
- pro Hodnota chyby HRESULT vrácená metodě volání.  
+ [v] Hodnota chyby HRESULT vrácená volající metodě.  
   
  `token`  
- pro Token metadat objektu kódu, který byl sloučen v okamžiku, kdy došlo k chybě.  
+ [v] Token metadat objektu kódu, který byl sloučen, když došlo k chybě.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Hlavička:** Cor. h  
+ **Záhlaví:** Kor.h.  
   
- **Knihovna:** Používá se jako prostředek v knihovně MsCorEE. dll.  
+ **Knihovna:** Používá se jako prostředek v souboru MsCorEE.dll  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [IMetaDataError – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataerror-interface.md)

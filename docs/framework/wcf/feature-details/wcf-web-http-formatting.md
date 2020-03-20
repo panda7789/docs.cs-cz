@@ -1,32 +1,32 @@
 ---
-title: Formátování WCF Web HTTP
+title: Formátování protokolu HTTP na webu WCF
 ms.date: 03/30/2017
 ms.assetid: e2414896-5463-41cd-b0a6-026a713eac2c
-ms.openlocfilehash: 884193dc26794be5e8a3c95e05be2ca43a90f6e2
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: b6c9728fe40e26977366b73337e72b1514a12a19
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64643479"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79184195"
 ---
-# <a name="wcf-web-http-formatting"></a>Formátování WCF Web HTTP
-Model programování webových služeb HTTP WCF umožňuje dynamicky určovat nejlepší formát pro operaci služby vrátit v odpovědi. Dvě metody pro zjištění odpovídající formátu jsou podporovány: automatické a explicitní.  
+# <a name="wcf-web-http-formatting"></a>Formátování protokolu HTTP na webu WCF
+Programovací model WCF Web HTTP umožňuje dynamicky určit nejlepší formát pro operaci služby vrátit jeho odpověď. Jsou podporovány dvě metody pro určení vhodného formátu: automatické a explicitní.  
   
 ## <a name="automatic-formatting"></a>Automatické formátování  
- Při povolení automatické formátování vybere nejlepší formát ke vrácení odpovědi. Určuje nejvhodnější formát kontrolou následujících akcí v pořadí:  
+ Pokud je povoleno, automatické formátování zvolí nejlepší formát, ve kterém se odpověď vrátí. Určuje nejlepší formát kontrolou následujícího, v pořadí:  
   
-1. Typy médií v hlavičce Accept zprávy požadavku.  
+1. Typy médií v záhlaví Přijmout zprávy požadavku.  
   
-2. Typ obsahu zprávy s požadavkem.  
+2. Typ obsahu zprávy požadavku.  
   
-3. Výchozí formát nastavení v operaci.  
+3. Výchozí nastavení formátu v operaci.  
   
-4. Výchozí formát nastavení WebHttpBehavior.  
+4. Výchozí nastavení formátu v webuHttpBehavior.  
   
- Pokud zpráva žádosti obsahuje hlavičku Accept infrastrukturu Windows Communication Foundation (WCF) vyhledá pro typ, který podporuje. Pokud `Accept` hlavičky určuje priority pro jeho typy médií, jsou respektovat. Pokud se nenajde žádný vhodný formát v `Accept` hlavička content-type zprávy požadavku se používá. Pokud není zadán žádný vhodný typ obsahu, je používán formát výchozí nastavení pro tuto operaci. Výchozí formát nastavená `ResponseFormat` parametr <xref:System.ServiceModel.Web.WebGetAttribute> a <xref:System.ServiceModel.Web.WebInvokeAttribute> atributy. Pokud žádná výchozí formát je uveden pro operaci, hodnota <xref:System.ServiceModel.Description.WebHttpBehavior.DefaultOutgoingResponseFormat%2A> vlastnost se používá. Automatické formátování se může spolehnout <xref:System.ServiceModel.Description.WebHttpBehavior.AutomaticFormatSelectionEnabled%2A> vlastnost. Pokud je tato vlastnost nastavena na `true`, určuje nejvhodnější formát infrastruktura WCF. Automatický výběr formátu je zakázané ve výchozím nastavení pro zpětnou kompatibilitu. Automatický výběr formátu je možné povolit programově nebo prostřednictvím konfigurace. Následující příklad ukazuje, jak povolit automatický výběr formátu v kódu.  
+ Pokud zpráva požadavku obsahuje hlavičku Přijmout, infrastruktura WCF (Windows Communication Foundation) vyhledá typ, který podporuje. Pokud `Accept` záhlaví určuje priority pro své typy médií, jsou dodrženy. Pokud v `Accept` záhlaví není nalezen žádný vhodný formát, použije se typ obsahu zprávy požadavku. Pokud není zadán žádný vhodný typ obsahu, použije se výchozí nastavení formátu pro operaci. Výchozí formát je nastaven `ResponseFormat` s <xref:System.ServiceModel.Web.WebGetAttribute> parametrem a <xref:System.ServiceModel.Web.WebInvokeAttribute> atributy. Pokud není v operaci zadán žádný výchozí <xref:System.ServiceModel.Description.WebHttpBehavior.DefaultOutgoingResponseFormat%2A> formát, použije se hodnota vlastnosti. Automatické formátování závisí na <xref:System.ServiceModel.Description.WebHttpBehavior.AutomaticFormatSelectionEnabled%2A> vlastnosti. Pokud je tato `true`vlastnost nastavena na , wcf infrastruktury určuje nejlepší formát použít. Automatický výběr formátu je ve výchozím nastavení zakázán z důvodu zpětné kompatibility. Automatický výběr formátu lze povolit programově nebo prostřednictvím konfigurace. Následující příklad ukazuje, jak povolit automatický výběr formátu v kódu.  
   
 ```csharp
-// This code assumes the service name is MyService and the service contract is IMyContract     
+// This code assumes the service name is MyService and the service contract is IMyContract
 Uri baseAddress = new Uri("http://localhost:8000");  
   
 WebServiceHost host = new WebServiceHost(typeof(MyService), baseAddress)  
@@ -47,7 +47,7 @@ try
       sep.Behaviors.Add(webBehavior);  
    }  
          // Open host to start listening for messages  
-   host.Open();        
+   host.Open();
   
   // ...  
 }  
@@ -57,7 +57,7 @@ try
   }  
 ```  
   
- Automatické formátování je také možné povolit prostřednictvím konfigurace. Můžete nastavit <xref:System.ServiceModel.Description.WebHttpBehavior.AutomaticFormatSelectionEnabled%2A> přímo na vlastnost <xref:System.ServiceModel.Description.WebHttpBehavior> nebo pomocí <xref:System.ServiceModel.Description.WebHttpEndpoint>. Následující příklad ukazuje, jak povolit výběr automatického formátu na <xref:System.ServiceModel.Description.WebHttpBehavior>.  
+ Automatické formátování lze také povolit prostřednictvím konfigurace. <xref:System.ServiceModel.Description.WebHttpBehavior.AutomaticFormatSelectionEnabled%2A> Vlastnost můžete nastavit přímo <xref:System.ServiceModel.Description.WebHttpBehavior> na nebo <xref:System.ServiceModel.Description.WebHttpEndpoint>pomocí . Následující příklad ukazuje, jak povolit automatický <xref:System.ServiceModel.Description.WebHttpBehavior>výběr formátu na .  
   
 ```xml  
 <system.serviceModel>  
@@ -77,7 +77,7 @@ try
 </system.serviceModel>  
 ```  
   
- Následující příklad ukazuje, jak povolit výběr automatického formátu pomocí <xref:System.ServiceModel.Description.WebHttpEndpoint>.  
+ Následující příklad ukazuje, jak povolit <xref:System.ServiceModel.Description.WebHttpEndpoint>automatický výběr formátu pomocí aplikace .  
   
 ```xml  
 <system.serviceModel>  
@@ -91,9 +91,9 @@ try
 ```  
   
 ## <a name="explicit-formatting"></a>Explicitní formátování  
- Jak již název napovídá, v explicitní formátování vývojáře určuje nejlepšího formátu pro použití v rámci operace kódu. Pokud je nejlepší formátu XML nebo JSON vývojář nastaví <xref:System.ServiceModel.Web.OutgoingWebResponseContext.Format%2A> buď <xref:System.ServiceModel.Web.WebMessageFormat.Xml> nebo <xref:System.ServiceModel.Web.WebMessageFormat.Json>. Pokud <xref:System.ServiceModel.Web.OutgoingWebResponseContext.Format%2A> není explicitně nastavena vlastnost a potom se používá výchozí formát operaci zopakovat.  
+ Jak název napovídá, v explicitní formátování vývojář určuje nejlepší formát pro použití v rámci kódu operace. Pokud je nejlepším formátem XML nebo <xref:System.ServiceModel.Web.OutgoingWebResponseContext.Format%2A> JSON, vývojář nastaví na jeden <xref:System.ServiceModel.Web.WebMessageFormat.Xml> nebo . <xref:System.ServiceModel.Web.WebMessageFormat.Json> Pokud <xref:System.ServiceModel.Web.OutgoingWebResponseContext.Format%2A> vlastnost není explicitně nastavena, použije se výchozí formát operace.  
   
- Následující příklad ověří formát parametru řetězce dotazu pro formát určený. Pokud byl zadán, nastaví operace formátování pomocí <xref:System.ServiceModel.Web.OutgoingWebResponseContext.Format%2A>.  
+ Následující příklad zkontroluje parametr řetězce dotazu formátu pro formát, který má být používán. Pokud byl zadán, nastaví formát operace <xref:System.ServiceModel.Web.OutgoingWebResponseContext.Format%2A>pomocí .  
   
 ```csharp
 public class Service : IService  
@@ -123,7 +123,7 @@ public class Service : IService
     }  
 ```  
   
- Pokud budete potřebovat pro podporu formátů než XML nebo JSON, definovat operaci mít návratový typ <xref:System.ServiceModel.Channels.Message>. V rámci kód operace určit vhodný formát používat a pak vytvořte <xref:System.ServiceModel.Channels.Message> pomocí jedné z následujících metod:  
+ Pokud potřebujete podporovat jiné formáty než XML nebo JSON, definujte <xref:System.ServiceModel.Channels.Message>operaci tak, aby měla návratový typ . V rámci kódu operace určete vhodný formát, <xref:System.ServiceModel.Channels.Message> který chcete použít, a pak vytvořte objekt pomocí jedné z následujících metod:  
   
 - `WebOperationContext.CreateAtom10Response`  
   
@@ -135,7 +135,7 @@ public class Service : IService
   
 - `WebOperationContext.CreateXmlResponse`  
   
- Každá z těchto metod má obsahu a vytvoří zprávu v příslušném formátu. `WebOperationContext.Current.IncomingRequest.GetAcceptHeaderElements` Metody slouží k získání seznamu formátů upřednostňované klientem v pořadí sestupný předvoleb. Následující příklad ukazuje, jak používat `WebOperationContext.Current.IncomingRequest.GetAcceptHeaderElements` k určení formátu pro použití a pak používá odpovídající vytvořit odpověď metodu pro vytvoření zprávy s odpovědí.  
+ Každá z těchto metod přebírá obsah a vytvoří zprávu s příslušným formátem. Metodu `WebOperationContext.Current.IncomingRequest.GetAcceptHeaderElements` lze použít k získání seznamu formátů preferovaných klientem v pořadí podle klesajících preferencí. Následující příklad ukazuje, `WebOperationContext.Current.IncomingRequest.GetAcceptHeaderElements` jak použít k určení formátu, který chcete použít, a potom použije příslušnou metodu create response k vytvoření zprávy odpovědi.  
   
 ```csharp
 public class Service : IService  
@@ -163,11 +163,11 @@ public class Service : IService
 }  
 ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.UriTemplate>
 - <xref:System.UriTemplateMatch>
 - [Programovací model webových služeb HTTP WCF](../../../../docs/framework/wcf/feature-details/wcf-web-http-programming-model.md)
 - [UriTemplate a UriTemplateTable](../../../../docs/framework/wcf/feature-details/uritemplate-and-uritemplatetable.md)
 - [Přehled programovacího modelu webových služeb HTTP WCF](../../../../docs/framework/wcf/feature-details/wcf-web-http-programming-model-overview.md)
-- [Programovací objektový model webových služeb HTTP WCF](../../../../docs/framework/wcf/feature-details/wcf-web-http-programming-object-model.md)
+- [Programovací objektový model WCF Web HTTP](../../../../docs/framework/wcf/feature-details/wcf-web-http-programming-object-model.md)

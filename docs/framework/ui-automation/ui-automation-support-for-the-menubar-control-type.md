@@ -6,77 +6,77 @@ helpviewer_keywords:
 - control types, Menu Bar
 - Menu Bar control type
 ms.assetid: c1202b21-c1f0-4560-853c-7b99bd73ad97
-ms.openlocfilehash: a6727b298c6289297fe049ffa4e64623bc9b711a
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.openlocfilehash: c50c5abb450ae44fcc08507354ea73f3a780afdf
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76778447"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79179640"
 ---
 # <a name="ui-automation-support-for-the-menubar-control-type"></a>Podpora automatizace uživatelského rozhraní pro typ ovládacího prvku MenuBar
 > [!NOTE]
-> Tato dokumentace je určena pro .NET Framework vývojářů, kteří chtějí používat spravované [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] třídy definované v oboru názvů <xref:System.Windows.Automation>. Nejnovější informace o [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]najdete v tématu [rozhraní API pro Windows Automation: automatizace uživatelského rozhraní](/windows/win32/winauto/entry-uiauto-win32).  
+> Tato dokumentace je určena pro vývojáře rozhraní [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] .NET Framework, kteří chtějí používat spravované třídy definované v oboru <xref:System.Windows.Automation> názvů. Nejnovější informace o [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]rozhraní [WINDOWS Automation API: Automatizace uživatelského rozhraní](/windows/win32/winauto/entry-uiauto-win32).  
   
- Toto téma poskytuje informace o podpoře [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] pro typ ovládacího prvku <xref:System.Windows.Automation.ControlType.MenuBar>. V [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]je typ ovládacího prvku sada podmínek, které musí ovládací prvek splňovat, aby bylo možné použít vlastnost <xref:System.Windows.Automation.AutomationElement.ControlTypeProperty>. Podmínky zahrnují konkrétní pokyny pro [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] stromovou strukturu, [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] hodnoty vlastností a vzory ovládacích prvků.  
+ Toto téma [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] obsahuje informace <xref:System.Windows.Automation.ControlType.MenuBar> o podpoře pro typ ovládacího prvku. V [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]programu je typ ovládacího prvku sada podmínek, které <xref:System.Windows.Automation.AutomationElement.ControlTypeProperty> musí ovládací prvek splňovat, aby bylo možné použít vlastnost. Podmínky zahrnují zvláštní [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] pokyny pro [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] stromovou strukturu, hodnoty vlastností a vzory ovládacích prvku.  
   
- Ovládací prvky panelu nabídek jsou příkladem ovládacích prvků, které implementují typ ovládacího prvku MenuBar. Řádky nabídek poskytují uživatelům možnost aktivovat příkazy a možnosti obsažené v aplikaci.  
+ Ovládací prvky panelu nabídek jsou příkladem ovládacích prvků, které implementují typ ovládacího prvku MenuBar. Panely nabídek poskytují uživatelům prostředky k aktivaci příkazů a možností obsažených v aplikaci.  
   
- Následující části definují požadovanou [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] stromovou strukturu, vlastnosti, vzory ovládacích prvků a události pro typ ovládacího prvku MenuBar. Požadavky na [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] platí pro všechny ovládací prvky seznamu bez ohledu na to, zda [!INCLUDE[TLA#tla_winclient](../../../includes/tlasharptla-winclient-md.md)], Win32 nebo model Windows Forms.  
+ Následující části definují požadovanou [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] stromovou strukturu, vlastnosti, vzorky ovládacího prvku a události pro typ ovládacího prvku MenuBar. Požadavky [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] platí pro všechny ovládací [!INCLUDE[TLA#tla_winclient](../../../includes/tlasharptla-winclient-md.md)]prvky seznamu, ať už , Win32 nebo Windows Forms.  
   
-<a name="Required_UI_Automation_Tree_Structure"></a>   
-## <a name="required-ui-automation-tree-structure"></a>Požadovaná stromová struktura automatizace uživatelského rozhraní  
- Následující tabulka znázorňuje zobrazení ovládacího prvku a zobrazení obsahu stromu [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], které se vztahují k ovládacím prvkům panelu nabídek, a popisuje, co může být obsaženo v každém zobrazení. Další informace o stromové struktuře [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] najdete v tématu [Přehled stromu automatizace uživatelského rozhraní](ui-automation-tree-overview.md).  
+<a name="Required_UI_Automation_Tree_Structure"></a>
+## <a name="required-ui-automation-tree-structure"></a>Požadovaná struktura stromu automatizace uživatelského rozhraní  
+ Následující tabulka znázorňuje zobrazení ovládacího prvku [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] a zobrazení obsahu stromu, který se nálsek a ovládací prvky panelu nabídek, a popisuje, co může být obsaženo v každém zobrazení. Další informace o [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] stromu naleznete v [tématu Přehled stromu automatizace uživatelského rozhraní](ui-automation-tree-overview.md).  
   
-|Zobrazení ovládacích prvků|Zobrazení obsahu|  
+|Zobrazení ovládacího prvku|Zobrazení obsahu|  
 |------------------|------------------|  
-|Řádku nabídek<br /><br /> -MenuItem (1 nebo více)<br />– Jiné ovládací prvky (0 nebo mnoho)|Řádku nabídek<br /><br /> -MenuItem (1 nebo více)<br />– Jiné ovládací prvky (0 nebo mnoho)|  
+|Menu<br /><br /> - MenuItem (1 nebo více)<br />- Jiné ovládací prvky (0 nebo více)|Menu<br /><br /> - MenuItem (1 nebo více)<br />- Jiné ovládací prvky (0 nebo více)|  
   
- Ovládací prvky panelu nabídek mohou obsahovat další ovládací prvky, jako jsou například textové ovládací prvky a pole se seznamem v rámci její struktury. Tyto další ovládací prvky odpovídají ostatním ovládacím prvkům uvedeným výše v zobrazení řízení a obsahu.  
+ Ovládací prvky panelu nabídek mohou obsahovat další ovládací prvky, jako jsou ovládací prvky pro úpravy a pole se seznamem v rámci své struktury. Tyto další ovládací prvky odpovídají "další ovládací prvky" uvedené výše v ovládacích prvků a zobrazení obsahu.  
   
-<a name="Required_UI_Automation_Properties"></a>   
+<a name="Required_UI_Automation_Properties"></a>
 ## <a name="required-ui-automation-properties"></a>Požadované vlastnosti automatizace uživatelského rozhraní  
- V následující tabulce jsou uvedeny vlastnosti [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], jejichž hodnota nebo definice je obzvláště relevantní pro ovládací prvky panelu nabídek. Další informace o vlastnostech [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] najdete v tématu [Vlastnosti automatizace uživatelského rozhraní pro klienty](ui-automation-properties-for-clients.md).  
+ V následující tabulce [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] jsou uvedeny vlastnosti, jejichž hodnota nebo definice jsou obzvláště důležité pro ovládací prvky panelu nabídek. Další informace [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] o vlastnostech naleznete v [tématu Vlastnosti automatizace uživatelského rozhraní pro klienty](ui-automation-properties-for-clients.md).  
   
-|[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] – vlastnost|Hodnota|Poznámky|  
+|[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]Vlastnost|Hodnota|Poznámky|  
 |------------------------------------------------------------------------------------|-----------|-----------|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.BoundingRectangleProperty>|Viz poznámky.|Hodnota vystavená touto vlastností musí zahrnovat všechny ovládací prvky obsažené v ní.|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.NameProperty>|Viz poznámky.|Ovládací prvek panelu nabídek nepotřebuje název, pokud aplikace nemá více než jeden řádek nabídek. Pokud je v aplikaci více než jeden řádek nabídek, tato vlastnost by měla být použita k vystavení rozlišujících názvů, například "formátování" nebo "sbalení".|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.BoundingRectangleProperty>|Viz poznámky.|Hodnota vystavená touto vlastností musí obsahovat všechny ovládací prvky obsažené v ní.|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.NameProperty>|Viz poznámky.|Ovládací prvek panelu nabídek nepotřebuje název, pokud aplikace nemá více než jeden řádek nabídek. Pokud je více než jeden řádek nabídek v aplikaci, pak tato vlastnost by měla být použita k vystavení rozlišovací názvy, jako je například "Formátování" nebo "Osnova."|  
 |<xref:System.Windows.Automation.AutomationElementIdentifiers.LabeledByProperty>|`Null`|Ovládací prvky panelu nabídek nikdy nemají popisek.|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.ControlTypeProperty>|Řádku nabídek|Tato hodnota je stejná pro všechny architektury uživatelského rozhraní.|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.LocalizedControlTypeProperty>|"řádek nabídky"|Lokalizovaný řetězec odpovídající typu ovládacího prvku MenuBar.|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.IsContentElementProperty>|Pravda|Ovládací prvek Panel nabídek je vždy součástí zobrazení obsahu stromu [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)].|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.IsControlElementProperty>|Pravda|Ovládací prvek Panel nabídek je vždy součástí zobrazení ovládacího prvku stromu [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)].|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.IsOffscreenProperty>|Viz poznámky.|Hodnota této vlastnosti závisí na tom, zda je ovládací prvek viditelný na obrazovce.|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.OrientationProperty>|Závislosti|Tato vlastnost zveřejňuje, zda je ovládací prvek panelu nabídek vodorovně nebo svisle.|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.IsKeyboardFocusableProperty>|Pravda|Ovládací prvky panelu nabídek jsou zaměřeny na klávesnici, protože ovládací prvky, které obsahují, mohou převzít fokus klávesnice.|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.HelpTextProperty>|Viz poznámky.|Pro ovládací prvek řádku nabídek nejsou k dispozici žádné scénáře, pokud je vyžadován text help.|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.AcceleratorKeyProperty>|`Null`|Na řádcích nabídek nejsou nikdy přístupové klávesy.|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.AccessKeyProperty>|ALT|Stisknutí klávesy ALT by mělo vždycky přenést fokus na panel nabídek v rámci aplikace.|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.ControlTypeProperty>|Menu|Tato hodnota je stejná pro všechny architektury ui.|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.LocalizedControlTypeProperty>|"panel nabídek"|Lokalizovaný řetězec odpovídající typu ovládacího prvku MenuBar.|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.IsContentElementProperty>|True|Ovládací prvek panelu nabídek je vždy [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] součástí zobrazení obsahu stromu.|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.IsControlElementProperty>|True|Ovládací prvek panelu nabídek je vždy [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] součástí ovládacího zobrazení stromu.|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.IsOffscreenProperty>|Viz poznámky.|Hodnota této vlastnosti závisí na tom, zda je ovládací prvek zobrazitelný na obrazovce.|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.OrientationProperty>|Závisí|Tato vlastnost zpřístupňuje, zda je ovládací prvek panelu nabídek vodorovný nebo svislý.|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.IsKeyboardFocusableProperty>|True|Ovládací prvky panelu nabídek lze zaostřit pomocí klávesnice, protože ovládací prvky, které obsahují, mohou zaostřovat pomocí klávesnice.|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.HelpTextProperty>|Viz poznámky.|Žádné scénáře pro, kdy je pro ovládací prvek panelu nabídek vyžadován text nápovědy.|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.AcceleratorKeyProperty>|`Null`|Panely nabídek nikdy nemají klávesy akcelerátoru.|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.AccessKeyProperty>|"ALT"|Stisknutí klávesy ALT by mělo vždy přinést fokus na řádek nabídek v aplikaci.|  
   
-<a name="Required_UI_Automation_Control_Patterns"></a>   
-## <a name="required-ui-automation-control-patterns"></a>Požadované vzory ovládacího prvku automatizace uživatelského rozhraní  
- V následující tabulce jsou uvedeny vzory ovládacích prvků [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], které musí být podporovány ovládacími prvky panelu nabídek. Další informace o vzorech ovládacích prvků naleznete v tématu [Přehled vzorů ovládacích prvků automatizace uživatelského rozhraní](ui-automation-control-patterns-overview.md).  
+<a name="Required_UI_Automation_Control_Patterns"></a>
+## <a name="required-ui-automation-control-patterns"></a>Požadované vzory řízení automatizace uživatelského rozhraní  
+ V následující tabulce [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] jsou uvedeny vzory ovládacích prvků, které musí být podporovány ovládacími prvky panelu nabídek. Další informace o vzorcích ovládacího prvku naleznete v [tématu Přehled řídicích vzorů automatizace uživatelského rozhraní](ui-automation-control-patterns-overview.md).  
   
-|Vzor ovládacího prvku|Podpora|Poznámky|  
+|Vzorek ovládacího prvku|Podpora|Poznámky|  
 |---------------------|-------------|-----------|  
-|<xref:System.Windows.Automation.Provider.IExpandCollapseProvider>|Závislosti|Pokud je možné ovládací prvek rozšířit nebo sbalit, implementujte <xref:System.Windows.Automation.Provider.IExpandCollapseProvider>.|  
-|<xref:System.Windows.Automation.Provider.IDockProvider>|Závislosti|Pokud lze ovládací prvek ukotvit do různých částí obrazovky, implementujte <xref:System.Windows.Automation.Provider.IDockProvider>.|  
-|<xref:System.Windows.Automation.Provider.ITransformProvider>|Závislosti|Pokud lze změnit velikost ovládacího prvku, otočení nebo přesunutí, musí implementovat <xref:System.Windows.Automation.Provider.ITransformProvider>.|  
+|<xref:System.Windows.Automation.Provider.IExpandCollapseProvider>|Závisí|Pokud lze ovládací prvek rozbalit <xref:System.Windows.Automation.Provider.IExpandCollapseProvider>nebo sbalit, implementujte .|  
+|<xref:System.Windows.Automation.Provider.IDockProvider>|Závisí|Pokud lze ovládací prvek ukotvit do různých <xref:System.Windows.Automation.Provider.IDockProvider>částí obrazovky, implementujte .|  
+|<xref:System.Windows.Automation.Provider.ITransformProvider>|Závisí|Pokud lze změnit velikost ovládacího prvku, otočit <xref:System.Windows.Automation.Provider.ITransformProvider>nebo přesunout, musí být implementován .|  
   
-<a name="Required_UI_Automation_Events"></a>   
+<a name="Required_UI_Automation_Events"></a>
 ## <a name="required-ui-automation-events"></a>Požadované události automatizace uživatelského rozhraní  
- V následující tabulce jsou uvedeny [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] události, které musí být podporovány všemi ovládacími prvky panelu nabídek. Další informace o událostech najdete v tématu [Přehled událostí automatizace uživatelského rozhraní](ui-automation-events-overview.md).  
+ V následující tabulce [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] jsou uvedeny události, které musí být podporovány všemi ovládacími prvky panelu nabídek. Další informace o událostech naleznete v [tématu Přehled událostí automatizace uživatelského rozhraní](ui-automation-events-overview.md).  
   
-|Událost [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]|Podpora/hodnota|Poznámky|  
+|[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]Událost|Podpora/hodnota|Poznámky|  
 |---------------------------------------------------------------------------------|--------------------|-----------|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.BoundingRectangleProperty> událost změněné vlastností.|Požadováno|Žádné|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.IsOffscreenProperty> událost změněné vlastností.|Požadováno|Žádné|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.IsEnabledProperty> událost změněné vlastností.|Požadováno|Žádné|  
-|<xref:System.Windows.Automation.ExpandCollapsePatternIdentifiers.ExpandCollapseStateProperty> událost změněné vlastností.|Závislosti|Žádné|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.AutomationFocusChangedEvent>|Požadováno|Žádné|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.StructureChangedEvent>|Požadováno|Žádné|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.BoundingRectangleProperty>událost změněná vlastnostmi.|Požaduje se|Žádný|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.IsOffscreenProperty>událost změněná vlastnostmi.|Požaduje se|Žádný|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.IsEnabledProperty>událost změněná vlastnostmi.|Požaduje se|Žádný|  
+|<xref:System.Windows.Automation.ExpandCollapsePatternIdentifiers.ExpandCollapseStateProperty>událost změněná vlastnostmi.|Závisí|Žádný|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.AutomationFocusChangedEvent>|Požaduje se|Žádný|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.StructureChangedEvent>|Požaduje se|Žádný|  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Automation.ControlType.MenuBar>
 - [Přehled typů ovládacích prvků pro automatizaci uživatelského rozhraní](ui-automation-control-types-overview.md)

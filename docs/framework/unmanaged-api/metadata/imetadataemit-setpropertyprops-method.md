@@ -15,66 +15,66 @@ helpviewer_keywords:
 ms.assetid: e2501fc8-b2bc-4dcc-9205-e3acd5a53ffe
 topic_type:
 - apiref
-ms.openlocfilehash: 0fdec87324d6efa0f911e37573093c19b93c0349
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: dc6375f3e2cff1a744a8ff2e6a6adab27bbf8af3
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74440548"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79177479"
 ---
 # <a name="imetadataemitsetpropertyprops-method"></a>IMetaDataEmit::SetPropertyProps – metoda
-Nastaví funkce uložené v metadatech pro vlastnost definovanou předchozím voláním [metody defineProperty –](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-defineproperty-method.md).  
+Nastaví funkce uložené v metadatech pro vlastnost definovanou předchozím voláním [metody DefineProperty](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-defineproperty-method.md).  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```cpp  
-HRESULT SetPropertyProps (   
-    [in]  mdProperty      pr,   
-    [in]  DWORD           dwPropFlags,   
-    [in]  DWORD           dwCPlusTypeFlag,   
-    [in]  void const      *pValue,   
-    [in]  ULONG           cchValue,   
-    [in]  mdMethodDef     mdSetter,   
-    [in]  mdMethodDef     mdGetter,   
-    [in]  mdMethodDef     rmdOtherMethods[]   
+HRESULT SetPropertyProps (
+    [in]  mdProperty      pr,
+    [in]  DWORD           dwPropFlags,
+    [in]  DWORD           dwCPlusTypeFlag,
+    [in]  void const      *pValue,
+    [in]  ULONG           cchValue,
+    [in]  mdMethodDef     mdSetter,
+    [in]  mdMethodDef     mdGetter,
+    [in]  mdMethodDef     rmdOtherMethods[]
 );  
 ```  
   
 ## <a name="parameters"></a>Parametry  
  `pr`  
- pro Token pro vlastnost, která má být změněna  
+ [v] Token pro vlastnost, která má být změněna  
   
  `dwPropFlags`  
- pro Příznaky vlastností.  
+ [v] Příznaky vlastností.  
   
  `dwCPlusTypeFlag`  
- pro Typ výchozí hodnoty vlastnosti  
+ [v] Typ výchozí hodnoty vlastnosti.  
   
  `pValue`  
- pro Výchozí hodnota vlastnosti  
+ [v] Výchozí hodnota vlastnosti.  
   
  `cchValue`  
- pro Počet znaků (Unicode) v `pValue`.  
+ [v] Počet znaků (Unicode) `pValue`v .  
   
  `mdSetter`  
- pro Metoda, která nastaví hodnotu vlastnosti.  
+ [v] Metoda, která nastaví hodnotu vlastnosti.  
   
  `mdGetter`  
- pro Metoda, která získá hodnotu vlastnosti.  
+ [v] Metoda, která získá hodnotu vlastnosti.  
   
  `rmdOtherMethods[]`  
- pro Pole dalších metod přidružených k vlastnosti. Toto pole ukončete pomocí tokenu `mdTokenNil`.  
+ [v] Pole dalších metod spojených s vlastností. Ukončete `mdTokenNil` toto pole tokenem.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Hlavička:** Cor. h  
+ **Záhlaví:** Kor.h.  
   
- **Knihovna:** Používá se jako prostředek v knihovně MSCorEE. dll.  
+ **Knihovna:** Používá se jako prostředek v souboru MSCorEE.dll  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [IMetaDataEmit – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)
 - [IMetaDataEmit2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-interface.md)

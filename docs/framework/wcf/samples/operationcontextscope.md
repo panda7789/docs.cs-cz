@@ -2,35 +2,35 @@
 title: OperationContextScope
 ms.date: 03/30/2017
 ms.assetid: 11c11108-8eb4-4d49-95a0-83285a812262
-ms.openlocfilehash: 581f75ece1a601b3baf590c1923a17a353de1ff1
-ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
+ms.openlocfilehash: ce21d9d099d893015ea828bdc3b136ab83f6d8e8
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74714609"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79183423"
 ---
 # <a name="operationcontextscope"></a>OperationContextScope
-Ukázka OperationContextScope ukazuje, jak odeslat dodatečné informace o volání Windows Communication Foundation (WCF) pomocí hlaviček. V této ukázce jsou server i klient konzolové aplikace.  
+OperationContextScope ukázka ukazuje, jak odeslat další informace o volání Windows Communication Foundation (WCF) pomocí záhlaví. V této ukázce jsou server i klient konzolové aplikace.  
   
 > [!NOTE]
-> Postup nastavení a pokyny pro sestavení pro tuto ukázku najdete na konci tohoto tématu.  
+> Postup instalace a pokyny k sestavení pro tuto ukázku jsou umístěny na konci tohoto tématu.  
   
- Ukázka předvádí, jak může klient odeslat další informace jako <xref:System.ServiceModel.Channels.MessageHeader> pomocí <xref:System.ServiceModel.OperationContextScope>. Objekt <xref:System.ServiceModel.OperationContextScope> se vytvoří jeho rozsahem na kanál. Hlavičky, které musí být přeloženy do vzdálené služby, lze přidat do kolekce <xref:System.ServiceModel.OperationContext.OutgoingMessageHeaders%2A>. Hlavičky přidané do této kolekce se dají načíst do služby přístupem <xref:System.ServiceModel.OperationContext.IncomingMessageHeaders%2A>. Jeho volání se provádí ve více kanálech a hlavičky přidané do klienta se použijí jenom na kanál, který se použil k vytvoření <xref:System.ServiceModel.OperationContextScope>.  
+ Ukázka ukazuje, jak klient může odeslat další informace jako <xref:System.ServiceModel.Channels.MessageHeader> using <xref:System.ServiceModel.OperationContextScope>. Objekt <xref:System.ServiceModel.OperationContextScope> je vytvořen oborem do kanálu. Hlavičky, které musí být přeloženy do vzdálené <xref:System.ServiceModel.OperationContext.OutgoingMessageHeaders%2A> služby lze přidat do kolekce. Záhlaví přidané do této kolekce lze načíst ve <xref:System.ServiceModel.OperationContext.IncomingMessageHeaders%2A>službě přístupem . Jeho volání jsou prováděny na více kanálech a potom záhlaví přidána do klienta platí pouze pro kanál, který byl použit k vytvoření <xref:System.ServiceModel.OperationContextScope>.  
   
 ## <a name="messageheaderreader"></a>MessageHeaderReader  
- Toto je ukázková služba, která obdrží zprávu od klienta a pokusí se vyhledat hlavičku v kolekci <xref:System.ServiceModel.OperationContext.IncomingMessageHeaders%2A>. Klient předá identifikátor GUID, který se odeslal v hlavičce, a služba načte vlastní hlavičku a pokud je k dispozici, porovná ji s identifikátorem GUID předaným jako argument klienta.  
+ Toto je ukázková služba, která obdrží zprávu od klienta <xref:System.ServiceModel.OperationContext.IncomingMessageHeaders%2A> a pokusí se vyhledat záhlaví v kolekci. Klient předá identifikátor GUID, který odeslal v záhlaví a služba načte vlastní hlavičku a pokud je k dispozici, porovná jej s identifikátorem GUID předaným jako argument klientem.  
   
 ```csharp
 public bool RetrieveHeader(string guid)  
 {  
-     MessageHeaders messageHeaderCollection =   
+     MessageHeaders messageHeaderCollection =
              OperationContext.Current.IncomingMessageHeaders;  
      String guidHeader = null;  
   
      Console.WriteLine("Trying to check if IncomingMessageHeader " +  
                " collection contains header with value {0}", guid);  
      if (messageHeaderCollection.FindHeader(  
-                       CustomHeader.HeaderName,   
+                       CustomHeader.HeaderName,
                        CustomHeader.HeaderNamespace) != -1)  
      {  
           guidHeader = messageHeaderCollection.GetHeader<String>(  
@@ -42,8 +42,8 @@ public bool RetrieveHeader(string guid)
      }  
      if (guidHeader != null)  
      {  
-          Console.WriteLine("Found header with value {0}. "+   
-         "Does it match with GUID sent as parameter: {1}",   
+          Console.WriteLine("Found header with value {0}. "+
+         "Does it match with GUID sent as parameter: {1}",
           guidHeader, guidHeader.Equals(guid));  
       }  
   
@@ -55,7 +55,7 @@ public bool RetrieveHeader(string guid)
 ```  
   
 ## <a name="messageheaderclient"></a>MessageHeaderClient  
- Toto je implementace klienta, která pro komunikaci se vzdálenou službou používá proxy generovaný nástrojem [ServiceModel Metadata Utility (Svcutil. exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) . Nejprve vytvoří dva objekty proxy `MessageHeaderReaderClient`.  
+ Toto je implementace klienta, který používá proxy generovaný [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) ke komunikaci se vzdálenou službou. Nejprve vytvoří dva `MessageHeaderReaderClient`proxy objekty .  
   
 ```csharp
 //Create two clients to the remote service.  
@@ -63,7 +63,7 @@ MessageHeaderReaderClient client1 = new MessageHeaderReaderClient();
 MessageHeaderReaderClient client2 = new MessageHeaderReaderClient();  
 ```  
   
- Klient potom vytvoří OperationContextScope a rozsahy, které `client1`. Přidá <xref:System.ServiceModel.Channels.MessageHeader> k <xref:System.ServiceModel.OperationContext.OutgoingMessageHeaders%2A> a vyvolá jedno volání na obou klientech. Zajišťuje, že hlavička bude odeslána pouze v `client1` a nikoli na `client2` kontrolou návratové hodnoty z volání `RetrieveHeader`.  
+ Klient pak vytvoří OperationContextScope a `client1`obory do . Přidá <xref:System.ServiceModel.Channels.MessageHeader> <xref:System.ServiceModel.OperationContext.OutgoingMessageHeaders%2A> a a vyvolá jedno volání na obou klientů. Zajišťuje, že záhlaví je odeslána pouze na `client1` a nikoli na `client2` kontrolou vrácená hodnota z `RetrieveHeader` volání.  
   
 ```csharp
 using (new OperationContextScope(client1.InnerChannel))  
@@ -77,7 +77,7 @@ using (new OperationContextScope(client1.InnerChannel))
     //Add the header to the OutgoingMessageHeader collection.  
     OperationContext.Current.OutgoingMessageHeaders.Add(customHeader);  
   
-    //Now call RetrieveHeader on both the proxies. Since the OperationContextScope is tied to   
+    //Now call RetrieveHeader on both the proxies. Since the OperationContextScope is tied to
     //client1's InnerChannel, the header should only be added to calls made on that client.  
     //Calls made on client2 should not be sending the header across even though the call  
     //is made in the same OperationContextScope.  
@@ -90,7 +90,7 @@ using (new OperationContextScope(client1.InnerChannel))
 }  
 ```  
   
- Tato ukázka je v místním prostředí hostovaná. Následující vzorový výstup z běhu ukázky je k dispozici:  
+ Tato ukázka je hostována samostatně. Je k dispozici následující ukázkový výstup ze spuštění vzorku:  
   
 ```console  
 Prompt> Service.exe  
@@ -115,17 +115,17 @@ Press <ENTER> to terminate client.
   
 #### <a name="to-set-up-build-and-run-the-sample"></a>Nastavení, sestavení a spuštění ukázky  
   
-1. Ujistěte se, že jste provedli [postup jednorázového nastavení pro Windows Communication Foundation ukázky](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
+1. Ujistěte se, že jste provedli [jednorázový postup instalace pro ukázky windows communication foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
   
-2. Pokud chcete vytvořit C# edici nebo Visual Basic .NET, postupujte podle pokynů v tématu [sestavování ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
+2. Chcete-li vytvořit c# nebo Visual Basic .NET vydání řešení, postupujte podle pokynů v [sestavení windows communication foundation ukázky](../../../../docs/framework/wcf/samples/building-the-samples.md).  
   
-3. Chcete-li spustit ukázku v konfiguraci s jedním nebo více počítači, postupujte podle pokynů v části [spuštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
+3. Chcete-li spustit ukázku v konfiguraci jednoho nebo více počítačů, postupujte podle pokynů v [části Spuštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
   
 > [!IMPORTANT]
-> Ukázky už můžou být na vašem počítači nainstalované. Než budete pokračovat, vyhledejte následující (výchozí) adresář.  
->   
+> Ukázky mohou být již nainstalovány v počítači. Před pokračováním zkontrolujte následující (výchozí) adresář.  
+>
 > `<InstallDrive>:\WF_WCF_Samples`  
->   
-> Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] Samples. Tato ukázka se nachází v následujícím adresáři.  
->   
+>
+> Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a Windows Workflow Foundation (WF) Ukázky pro rozhraní .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka je umístěna v následujícím adresáři.  
+>
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Services\OperationContextScope`  

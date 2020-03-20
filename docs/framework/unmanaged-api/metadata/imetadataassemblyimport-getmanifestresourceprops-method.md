@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 00be4789-ac63-4397-b2ec-1629a5c5a585
 topic_type:
 - apiref
-ms.openlocfilehash: c1792ed0f15f8cfb62567593c9694453650f0bb9
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: d87d0d46ede65cf44c84edba92fe246174088a4e
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74436314"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79177658"
 ---
 # <a name="imetadataassemblyimportgetmanifestresourceprops-method"></a>IMetaDataAssemblyImport::GetManifestResourceProps – metoda
 Získá sadu vlastností prostředku manifestu se zadaným podpisem metadat.  
@@ -29,47 +29,47 @@ Získá sadu vlastností prostředku manifestu se zadaným podpisem metadat.
   
 ```cpp  
 HRESULT GetManifestResourceProps (  
-    [in]  mdManifestResource   mdmr,   
-    [out] LPWSTR               szName,   
-    [in]  ULONG                cchName,   
-    [out] ULONG                *pchName,   
-    [out] mdToken              *ptkImplementation,   
-    [out] DWORD                *pdwOffset,   
+    [in]  mdManifestResource   mdmr,
+    [out] LPWSTR               szName,
+    [in]  ULONG                cchName,
+    [out] ULONG                *pchName,
+    [out] mdToken              *ptkImplementation,
+    [out] DWORD                *pdwOffset,
     [out] DWORD                *pdwResourceFlags  
 );  
 ```  
   
 ## <a name="parameters"></a>Parametry  
  `mdmr`  
- pro Token `mdManifestResource`, který představuje prostředek, pro který chcete získat vlastnosti.  
+ [v] Token, `mdManifestResource` který představuje prostředek, pro který chcete získat vlastnosti.  
   
  `szName`  
- mimo Název prostředku.  
+ [out] Název prostředku.  
   
  `cchName`  
- pro Velikost v rámci velkých znaků `szName`.  
+ [v] Velikost , v širokých `szName`znaků, .  
   
  `pchName`  
- mimo Ukazatel na počet velkých znaků, který je ve skutečnosti vrácen v `szName`.  
+ [out] Ukazatel na počet širokých znaků skutečně `szName`vrácených v .  
   
  `ptkImplementation`  
- mimo Ukazatel na token `mdFile` nebo token `mdAssemblyRef`, který představuje soubor nebo sestavení, v uvedeném pořadí, které obsahuje prostředek.  
+ [out] Ukazatel na `mdFile` token nebo `mdAssemblyRef` token, který představuje soubor nebo sestavení, respektive, který obsahuje prostředek.  
   
  `pdwOffset`  
- mimo Ukazatel na hodnotu, která určuje posun na začátek prostředku v rámci souboru.  
+ [out] Ukazatel na hodnotu, která určuje posun od začátku prostředku v souboru.  
   
  `pdwResourceFlags`  
- mimo Ukazatel na příznaky, které popisují metadata použitá u prostředku. Hodnota příznaků je kombinací jedné nebo více hodnot [CorManifestResourceFlags –](../../../../docs/framework/unmanaged-api/metadata/cormanifestresourceflags-enumeration.md) .  
+ [out] Ukazatel na příznaky, které popisují metadata použitá pro prostředek. Hodnota příznaky je kombinací jedné nebo více hodnot [CorManifestResourceFlags.](../../../../docs/framework/unmanaged-api/metadata/cormanifestresourceflags-enumeration.md)  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Hlavička:** Cor. h  
+ **Záhlaví:** Kor.h.  
   
- **Knihovna:** Používá se jako prostředek v knihovně MsCorEE. dll.  
+ **Knihovna:** Používá se jako prostředek v souboru MsCorEE.dll  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [IMetaDataAssemblyImport – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyimport-interface.md)

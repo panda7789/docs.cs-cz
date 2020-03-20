@@ -14,22 +14,22 @@ helpviewer_keywords:
 ms.assetid: 01f9a59b-7679-4d42-9ced-4a8981625c3d
 topic_type:
 - apiref
-ms.openlocfilehash: 37da471aaa8e9f802a8430d7b3289b375ff1b40a
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 64e0c466edcd8863244e6ed184c18422b5f66875
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73136986"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79178270"
 ---
 # <a name="cor_gc_thread_stats-structure"></a>COR_GC_THREAD_STATS – struktura
-Obsahuje statistiku jednotlivých vláken, která souvisí s uvolňováním paměti.  
+Obsahuje statistiky podle vlákna týkající se uvolňování paměti.  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```cpp  
 typedef struct _COR_GC_THREAD_STATS {  
-    ULONGLONG  PerThreadAllocation;   
-    ULONG      Flags;   
+    ULONGLONG  PerThreadAllocation;
+    ULONG      Flags;
 } COR_GC_THREAD_STATS;  
 ```  
   
@@ -37,22 +37,22 @@ typedef struct _COR_GC_THREAD_STATS {
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`PerThreadAllocation`|Počet bajtů paměti přidělených vláknu, které je přidruženo k aktuální instanci `COR_GC_THREAD_STATS`. U tohoto čísla se vymaže nula pokaždé, když dojde k uvolnění paměti bez generace.|  
-|`Flags`|Počet bajtů povýšených na vyšší generaci při nejnovějším uvolňování paměti.|  
+|`PerThreadAllocation`|Počet bajtů paměti přidělené ve vlákně, která `COR_GC_THREAD_STATS` je přidružena k aktuální instanci. Toto číslo je vymazána na nulu pokaždé, když dojde k uvolnění paměti generace nula.|  
+|`Flags`|Počet bajtů povýšen na vyšší generace na poslední uvolnění paměti.|  
   
 ## <a name="remarks"></a>Poznámky  
- [ICLRTask:: getmemstats –](../../../../docs/framework/unmanaged-api/hosting/iclrtask-getmemstats-method.md) přebírá výstupní parametr typu `COR_GC_THREAD_STATS`.  
+ [ICLRTask::GetMemStats](../../../../docs/framework/unmanaged-api/hosting/iclrtask-getmemstats-method.md) přebírá výstupní parametr `COR_GC_THREAD_STATS`typu .  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Hlavička:** GCHost. idl  
+ **Záhlaví:** GCHost.idl  
   
- **Knihovna:** Zahrnuto jako prostředek v knihovně MSCorEE. dll  
+ **Knihovna:** Zahrnuto jako prostředek v souboru MSCorEE.dll  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Struktury pro hostování](../../../../docs/framework/unmanaged-api/hosting/hosting-structures.md)
 - [IHostTask – rozhraní](../../../../docs/framework/unmanaged-api/hosting/ihosttask-interface.md)

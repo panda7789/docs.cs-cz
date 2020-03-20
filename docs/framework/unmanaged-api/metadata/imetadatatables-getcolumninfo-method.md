@@ -15,20 +15,20 @@ helpviewer_keywords:
 ms.assetid: 68c160ea-ae7d-4750-985d-a038b2c8e7d9
 topic_type:
 - apiref
-ms.openlocfilehash: 854d3ad28cc00c03e903b9e1d2ce3863e3ceef17
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: cc8aac32149fed952737d928e16a8f6efc448c79
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74436103"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79177125"
 ---
 # <a name="imetadatatablesgetcolumninfo-method"></a>IMetaDataTables::GetColumnInfo – metoda
-Načte data o zadaném sloupci v zadané tabulce.  
+Získá data o zadaném sloupci v zadané tabulce.  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```cpp  
-HRESULT GetColumnInfo (   
+HRESULT GetColumnInfo (
     [in]  ULONG        ixTbl,  
     [in]  ULONG        ixCol,  
     [out] ULONG        *poCol,  
@@ -42,59 +42,59 @@ HRESULT GetColumnInfo (
 =======
 
  `ixTbl`  
- pro Index požadované tabulky  
+ [v] Index požadované tabulky.  
   
  `ixCol`  
- pro Index požadovaného sloupce  
+ [v] Index požadovaného sloupce.  
   
  `poCol`  
- mimo Ukazatel na posun sloupce v řádku.  
+ [out] Ukazatel na posun sloupce v řádku.  
   
  `pcbCol`  
- mimo Ukazatel na velikost sloupce v bajtech.  
+ [out] Ukazatel na velikost sloupce v bajtech.  
   
  `pType`  
- mimo Ukazatel na typ hodnot ve sloupci.  
+ [out] Ukazatel na typ hodnot ve sloupci.  
   
  `ppName`  
- mimo Ukazatel na ukazatel na název sloupce.  
- 
+ [out] Ukazatel na ukazatel na název sloupce.  
+
 ## <a name="remarks"></a>Poznámky
 
-Vrácený typ sloupce spadá do rozsahu hodnot:
+Typ vráceného sloupce spadá do rozsahu hodnot:
 
-| pType                    | Popis   | Pomocná funkce                   |
+| pTyp                    | Popis   | Pomocná funkce                   |
 |--------------------------|---------------|-----------------------------------|
-| `0`..`iRidMax`<br>(0.. 63)   | Mezinárodní           | **IsRidType**<br>**IsRidOrToken** |
-| `iCodedToken`..`iCodedTokenMax`<br>(64.. 95) | Kódovaný token | **IsCodedTokenType** <br>**IsRidOrToken** |
-| `iSHORT` (96)            | Int16         | **IsFixedType**                   |
-| `iUSHORT` (97)           | UInt16        | **IsFixedType**                   |
-| `iLONG` (98)             | Datový typ Int32         | **IsFixedType**                   |
-| `iULONG` (99)            | UInt32        | **IsFixedType**                   |
-| `iBYTE` (100)            | Byte          | **IsFixedType**                   |
-| `iSTRING` (101)          | String        | **IsHeapType**                    |
-| `iGUID` (102)            | identifikátor GUID          | **IsHeapType**                    |
-| `iBLOB` (103)            | Blob          | **IsHeapType**                    |
+| `0`..`iRidMax`<br>(0..63)   | Zbavit           | **ISRIDTyp**<br>**Isridortoken** |
+| `iCodedToken`..`iCodedTokenMax`<br>(64..95) | Kódovaný token | **IsCodedTokenType** <br>**Isridortoken** |
+| `iSHORT`(96)            | Int16         | **IsFixedType**                   |
+| `iUSHORT`(97)           | UInt16        | **IsFixedType**                   |
+| `iLONG`(98)             | Int32         | **IsFixedType**                   |
+| `iULONG`(99)            | UInt32        | **IsFixedType**                   |
+| `iBYTE`(100)            | Byte          | **IsFixedType**                   |
+| `iSTRING`(101)          | Řetězec        | **IsHeapType**                    |
+| `iGUID`(102)            | Identifikátor GUID          | **IsHeapType**                    |
+| `iBLOB`(103)            | Objekt blob          | **IsHeapType**                    |
 
-Hodnoty, které jsou uloženy v *haldě* (to znamená `IsHeapType == true`), lze číst pomocí:
+Hodnoty, které jsou uloženy v `IsHeapType == true` *haldě* (to znamená) lze číst pomocí:
 
-- `iSTRING`: **IMetadataTables. GetString**
-- `iGUID`: **IMetadataTables. GETguid**
-- `iBLOB`: **IMetadataTables. Getblob**
+- `iSTRING`: **IMetadataTables.GetString**
+- `iGUID`: **IMetadataTables.GetGUID**
+- `iBLOB`: **IMetadataTables.GetBlob**
 
 > [!IMPORTANT]
-> Chcete-li použít konstanty definované v tabulce výše, zahrňte direktivu `#define _DEFINE_META_DATA_META_CONSTANTS` poskytnutou hlavičkovým souborem *cor. h* .
+> Chcete-li použít konstanty definované v tabulce `#define _DEFINE_META_DATA_META_CONSTANTS` výše, zadejte direktivu poskytnutou souborem záhlaví *cor.h.*
 
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Hlavička:** Cor. h  
+ **Záhlaví:** Kor.h.  
   
- **Knihovna:** Používá se jako prostředek v knihovně MsCorEE. dll.  
+ **Knihovna:** Používá se jako prostředek v souboru MsCorEE.dll  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [IMetaDataTables – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadatatables-interface.md)
 - [IMetaDataTables2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadatatables2-interface.md)

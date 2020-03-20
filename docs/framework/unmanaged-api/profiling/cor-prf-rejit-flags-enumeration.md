@@ -15,21 +15,21 @@ topic_type:
 - apiref
 author: davmason
 ms.author: davmason
-ms.openlocfilehash: 3b4f85072b9dcf87d696b979fa6cbf4e59393f82
-ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
+ms.openlocfilehash: 8fc5f1a488826d8adc6aecb8ef122609bebbe813
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77453036"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79177103"
 ---
 # <a name="cor_prf_rejit_flags-enumeration"></a>COR_PRF_REJIT_FLAGS – výčet
-Obsahuje hodnoty, které určují, jak by se mělo chovat rozhraní API [ICorProfilerInfo10:: RequestReJITWithInliners](icorprofilerinfo10-requestrejitwithinliners-method.md) .  
+Obsahuje hodnoty, které označují, jak by se mělo chovat rozhraní API [ICorProfilerInfo10::RequestReJITWithInliners.](icorprofilerinfo10-requestrejitwithinliners-method.md)  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```cpp  
 typedef enum  
-{      
+{
     COR_PRF_REJIT_BLOCK_INLINING = 0x1,
     COR_PRF_REJIT_INLINING_CALLBACKS    = 0x2
 } COR_PRF_REJIT_FLAGS;  
@@ -39,17 +39,17 @@ typedef enum
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`COR_PRF_REJIT_BLOCK_INLINING`| Metody ReJITted budou zablokovány, aby byly vloženy do jiných metod. |  
-|`COR_PRF_REJIT_INLINING_CALLBACKS`| Dostanou zpětná volání `GetFunctionParameters` pro všechny metody, které vloží metody požadované k ReJITted. |  
+|`COR_PRF_REJIT_BLOCK_INLINING`| ReJITted metody budou blokovány v zařadit do jiných metod. |  
+|`COR_PRF_REJIT_INLINING_CALLBACKS`| Příjem `GetFunctionParameters` zpětná volání pro všechny metody, které vinárně metody požadované reJITted. |  
 
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [podporované operační systémy .NET Core](../../../core/install/dependencies.md?pivots=os-windows).  
+ **Platformy:** Viz [operační systémy podporované rozhraním .NET Core](../../../core/install/dependencies.md?pivots=os-windows).  
   
- **Hlavička:** CorProf. idl, CorProf. h  
+ **Záhlaví:** CorProf.idl, CorProf.h  
   
- **Knihovna:** CorGuids. lib  
+ **Knihovna:** CorGuids.lib  
   
- **Verze .NET Framework:** [!INCLUDE[net_core_22](../../../../includes/net-core-22-md.md)] 
+ **Verze rozhraní .NET Framework:**[!INCLUDE[net_core_22](../../../../includes/net-core-22-md.md)]
   
 ## <a name="see-also"></a>Viz také
 

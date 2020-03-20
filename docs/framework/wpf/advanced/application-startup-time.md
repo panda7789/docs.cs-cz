@@ -8,121 +8,121 @@ helpviewer_keywords:
 - application startup [WPF]
 - performance [WPF], startup time
 ms.assetid: f0ec58d8-626f-4d8a-9873-c20f95e08b96
-ms.openlocfilehash: 8bdd70a6eaea8aff196e2156d88460a6d24b5d3f
-ms.sourcegitcommit: 2d42b7ae4252cfe1232777f501ea9ac97df31b63
+ms.openlocfilehash: 0fae3ac1769163101dcdb183f4c5c2135354b1fc
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/01/2019
-ms.locfileid: "67487178"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79145420"
 ---
 # <a name="application-startup-time"></a>Rychlejší spuštění aplikace
-Množství času, který je požadován pro spuštění aplikace WPF může značně lišit. Toto téma popisuje různé postupy pro zkrácení doby spuštění vnímaná, ve skutečnosti pro aplikace Windows Presentation Foundation (WPF).  
+Množství času, který je nutný pro wpf aplikace ke spuštění se může značně lišit. Toto téma popisuje různé techniky pro zkrácení vnímané a skutečné doby spuštění aplikace WPF (Windows Presentation Foundation).  
   
-## <a name="understanding-cold-startup-and-warm-startup"></a>Principy úplné spuštění a po teplé spuštění  
- Při spuštění aplikace poprvé po restartu systému dojde k úplné spuštění nebo při spuštění aplikace, zavřete ho a spusťte ji znovu po dlouhou dobu. Při spuštění aplikace, pokud nejsou k dispozici v seznamu Správce paměti Windows požadované stránky (kód, statická data, registru atd.), dojde k stránkování. Přístup k disku je potřeba uvést stránek v paměti.  
+## <a name="understanding-cold-startup-and-warm-startup"></a>Principy studeného spuštění a teplého spuštění  
+ Studené spuštění nastane při prvním spuštění aplikace po restartování systému nebo při spuštění aplikace, zavřete ji a potom ji znovu spustit po dlouhé době. Při spuštění aplikace, pokud požadované stránky (kód, statická data, registr, atd.) nejsou k dispozici v pohotovostním seznamu správce paměti systému Windows, dojde k chybám stránky. Přístup k disku je nutné přenést stránky do paměti.  
   
- Horké spuštění nastane, pokud většina těchto stránek pro hlavní komponenty společného jazykového modulu runtime (CLR) jsou už načtené v paměti, což šetří čas přístupu nákladné disku. To je důvod, proč spravované aplikace spouští rychleji, když je spuštěna jednou.  
+ Teplé spuštění nastane, když většina stránek pro hlavní součásti CLR (COMMON Language Runtime) jsou již načteny v paměti, což šetří nákladné čas přístupu na disk. To je důvod, proč se spravovaná aplikace spustí rychleji, když se spustí podruhé.  
   
 ## <a name="implement-a-splash-screen"></a>Implementace úvodní obrazovky  
- V případech, kde je důležité, nevyhnutelné zpoždění mezi spuštěním aplikace a zobrazení první uživatelského rozhraní, optimalizujte vnímaná spuštění pomocí *úvodní obrazovka*. Tento přístup téměř okamžitě zobrazí obrázek po spuštění aplikace uživatelem. Když je připravený k zobrazení jeho první uživatelského rozhraní aplikace, zmenšuje se na úvodní obrazovce. Počínaje rozhraním .NET Framework 3.5 SP1, můžete použít <xref:System.Windows.SplashScreen> třídu pro implementaci úvodní obrazovky. Další informace najdete v tématu [přidání úvodní obrazovky do aplikace WPF](../app-development/how-to-add-a-splash-screen-to-a-wpf-application.md).  
+ V případech, kdy je významné, nevyhnutelné zpoždění mezi spuštěním aplikace a zobrazení prvního ui, optimalizovat vnímané spuštění čas pomocí *úvodní obrazovky*. Tento přístup zobrazí obrázek téměř okamžitě po spuštění aplikace uživatelem. Když je aplikace připravena k zobrazení prvního uhlavního nastavení, úvodní obrazovka zmizí. Počínaje rozhraním .NET Framework 3.5 SP1 <xref:System.Windows.SplashScreen> můžete použít třídu k implementaci úvodní obrazovky. Další informace naleznete [v tématu Přidání úvodní obrazovky do aplikace WPF](../app-development/how-to-add-a-splash-screen-to-a-wpf-application.md).  
   
- Můžete také implementovat vlastní úvodní obrazovky pomocí nativní grafické Win32. Zobrazit vaši implementaci před <xref:System.Windows.Application.Run%2A> metoda je volána.  
+ Můžete také implementovat vlastní úvodní obrazovku pomocí nativní grafiky Win32. Zobrazí implementaci před <xref:System.Windows.Application.Run%2A> voláním metody.  
   
-## <a name="analyze-the-startup-code"></a>Analýza kódu po spuštění  
- Zjistěte příčinu pomalé úplné spuštění. Disk vstupně-výstupní operace může být zodpovědná, ale není to vždy. Obecně platí měli byste minimalizovat použití externím prostředkům, jako je například síť, webové služby nebo disk.  
+## <a name="analyze-the-startup-code"></a>Analýza spouštěcího kódu  
+ Určete důvod pomalého studeného spuštění. Disk I/O může být zodpovědný, ale to není vždy případ. Obecně byste měli minimalizovat využití externích prostředků, jako je síť, webové služby nebo disk.  
   
- Před testováním, ověřte, že žádná jiná spuštěné aplikace nebo služby použít spravovaný kód nebo kód WPF.  
+ Před testováním ověřte, zda žádné jiné spuštěné aplikace nebo služby nepoužívají spravovaný kód nebo kód WPF.  
   
- Spustit aplikaci WPF ihned po restartování a zjistit, jak dlouho trvá zobrazení. Všechny následné spuštění vaší aplikace (teplý spuštění) jsou mnohem rychlejší, úplné spuštění problém je pravděpodobně způsobeno vstupně-výstupních operací.  
+ Spusťte aplikaci WPF ihned po restartování počítače a zjistěte, jak dlouho trvá zobrazení. Pokud jsou všechny následné spuštění aplikace (teplé spuštění) mnohem rychlejší, je problém studeného spuštění s největší pravděpodobností způsoben vstupně-nevstupněm/va.  
   
- Pokud je vaše aplikace úplné spuštění problém nesouvisí s vstupně-výstupních operací, je pravděpodobné, že vaše aplikace provádí některé zdlouhavé inicializace nebo výpočet, čeká na dokončení, některé události nebo vyžaduje velké množství kompilace JIT za spuštění. Následující části popisují některé z těchto situací podrobněji.  
+ Pokud problém studeného spuštění aplikace nesouvisí s vstupně-v, je pravděpodobné, že aplikace provede zdlouhavé inicializace nebo výpočtu, čeká na dokončení některé události nebo vyžaduje hodně kompilace JIT při spuštění. Následující části popisují některé z těchto situací podrobněji.  
   
-## <a name="optimize-module-loading"></a>Optimalizace načítání modulů  
- Použití nástroje jako je například Process Explorer (Procexp.exe) a určit, které moduly Tlist.exe aplikace načte. Příkaz `Tlist <pid>` zobrazí všechny moduly, které jsou načteny procesem.  
+## <a name="optimize-module-loading"></a>Optimalizace načítání modulu  
+ Pomocí nástrojů, jako je Process Explorer (Procexp.exe) a Tlist.exe k určení, které moduly aplikace načte. Příkaz `Tlist <pid>` zobrazuje všechny moduly, které jsou načteny procesem.  
   
- Například pokud nejsou připojení k webu a objeví se, že je načten System.Web.dll a pak je-li modul v aplikaci, která odkazuje na toto sestavení. Zkontrolujte, že odkaz je nezbytné.  
+ Pokud se například nepřipojujete k webu a zjistíte, že je načten soubor System.Web.dll, je v aplikaci modul, který odkazuje na toto sestavení. Zkontrolujte, zda je odkaz nezbytný.  
   
- Pokud aplikace obsahuje více modulů, sloučit do jediného modulu. Tento přístup vyžaduje méně režie na načtení sestavení CLR. Méně sestavení také znamená, že modul CLR spravuje méně stavu.  
+ Pokud vaše aplikace obsahuje více modulů, sloučit do jednoho modulu. Tento přístup vyžaduje méně CLR zatížení sestavení režie. Méně sestavení také znamená, že CLR udržuje menší stav.  
   
-## <a name="defer-initialization-operations"></a>Odložení inicializace operací  
- Vezměte v úvahu odložení inicializace kódu až po vykreslení hlavního okna aplikace.  
+## <a name="defer-initialization-operations"></a>Odložit inicializační operace  
+ Zvažte odložení inicializačního kódu až po vykreslení hlavního okna aplikace.  
   
- Mějte na paměti, že inicializace mohou být provedeny v konstruktoru třídy, a pokud inicializační kód odkazuje na jiné třídy, může to způsobit požadovaného kaskádového efektu, ve kterém jsou spouštěny mnoho konstruktor třídy.  
+ Uvědomte si, že inicializace může být provedena uvnitř konstruktoru třídy a pokud inicializační kód odkazuje na jiné třídy, může způsobit kaskádový efekt, ve kterém je spuštěno mnoho konstruktorů třídy.  
   
-## <a name="avoid-application-configuration"></a>Vyhněte se konfigurace aplikace  
- Zvažte, jak se vyhnout konfigurace aplikace. Například pokud aplikace má požadavky na jednoduchou konfiguraci a má striktní spuštění dob, položky registru nebo jednoduchý soubor INI může být rychlejší spouštění alternativu.  
+## <a name="avoid-application-configuration"></a>Vyhněte se konfiguraci aplikace  
+ Zvažte možnost vyhnout se konfiguraci aplikace. Například pokud aplikace má jednoduché požadavky na konfiguraci a má přísné cíle času spuštění, položky registru nebo jednoduchý soubor INI může být rychlejší alternativou spuštění.  
   
-## <a name="utilize-the-gac"></a>Využívat GAC  
- Pokud sestavení není nainstalováno v globální mezipaměti sestavení (GAC), je způsobena ověření algoritmu hash sestavení se silným názvem a ověření image Ngen nativní bitové kopie sestavení je k dispozici v počítači. U všech sestavení nainstalovaná v GAC je přeskočeno ověřování silného názvu. Další informace najdete v tématu [Gacutil.exe (Global Assembly Cache Tool)](../../tools/gacutil-exe-gac-tool.md).  
+## <a name="utilize-the-gac"></a>Využijte GAC  
+ Pokud sestavení není nainstalován v globální mezipaměti sestavení (GAC), dochází ke zpoždění způsobené ověření hash sestavení se silným názvem a ověření image Ngen, pokud nativní bitová kopie pro toto sestavení je k dispozici v počítači. Ověření silného názvu je přeskočeno pro všechna sestavení nainstalovaná v gac. Další informace najdete v tématu [Gacutil.exe (Global Assembly Cache Tool)](../../tools/gacutil-exe-gac-tool.md).  
   
 ## <a name="use-ngenexe"></a>Použití nástroje Ngen.exe  
- Zvažte použití Native Image Generator (Ngen.exe) ve své aplikaci. Pomocí Ngen.exe znamená, že obchodování spotřeby procesoru pro přístup na disk, protože nativní bitové kopie generované Ngen.exe by mohla být větší než image jazyka MSIL.  
+ Zvažte použití generátoru nativního obrazu (Ngen.exe) v aplikaci. Použití programu Ngen.exe znamená obchodování spotřeby procesoru pro větší přístup k disku, protože nativní bitová kopie generovaná programem Ngen.exe bude pravděpodobně větší než bitová kopie MSIL.  
   
- Chcete-li zvýšit rychlost spuštění horké, byste měli použít Ngen.exe vždy ve své aplikaci, protože předejdete tak náklady na využití procesoru JIT kompilaci kódu aplikace.  
+ Chcete-li zlepšit teplý čas spuštění, měli byste vždy použít Ngen.exe v aplikaci, protože tím se zabrání cpu náklady na kompilaci JIT kódu aplikace.  
   
- V některých scénářích úplné spuštění pomocí Ngen.exe může být také užitečné. Je to proto, že kompilátor JIT (mscorjit.dll) nemusí být načteny.  
+ V některých scénářích studené spuštění pomocí Ngen.exe může být také užitečné. Důvodem je, že kompilátor JIT (mscorjit.dll) není třeba načíst.  
   
- S moduly lineární Ngen a JIT může mít nejhorší vliv. Toto je vzhledem k tomu mscorjit.dll musí být načten, když kompilátor JIT pracuje na vašem kódu, mnoho stránek v obrázků Ngen musí nadřazenosti a podřízenosti kompilátor JIT čtení metadat na sestavení.  
+ S moduly Ngen i JIT může mít nejhorší účinek. Důvodem je, že mscorjit.dll musí být načtena a při kompilátor jit pracuje na váš kód, mnoho stránek v ngen obrazy musí být přístupné při kompilátoru JIT čte metadata sestavení.  
   
 ### <a name="ngen-and-clickonce"></a>Ngen a ClickOnce  
- Způsob, jak máte v úmyslu nasadit vaše aplikace provést také rozdíl v okamžiku načtení. Nasazení aplikace ClickOnce nepodporuje Ngen. Pokud se rozhodnete použít Ngen.exe pro vaši aplikaci, budete muset použít jiný mechanismus nasazení, jako je například Instalační služby systému Windows.  
+ Způsob, jakým plánujete nasadit aplikaci, může také změnit dobu načítání. ClickOnce nasazení aplikace nepodporuje Ngen. Pokud se rozhodnete použít ngen.exe pro vaši aplikaci, budete muset použít jiný mechanismus nasazení, jako je například Instalační služba systému Windows.  
   
- Další informace najdete v tématu [Ngen.exe (Generátor nativních obrázků)](../../tools/ngen-exe-native-image-generator.md).  
+ Další informace naleznete v [tématu Ngen.exe (Native Image Generator)](../../tools/ngen-exe-native-image-generator.md).  
   
-### <a name="rebasing-and-dll-address-collisions"></a>Rebasing a kolize adresy knihovny DLL  
- Pokud používáte Ngen.exe, mějte na paměti, že probíhá přenesení změn může dojít, když jsou nativní bitové kopie načtena do paměti. Pokud knihovna DLL není na jeho upřednostňované základní adrese načíst, protože je už přidělená daného rozsahu adres, zavaděč Windows bude načten na jinou adresu, která může být časově náročná operace.  
+### <a name="rebasing-and-dll-address-collisions"></a>Rebasing a DLL adresy kolize  
+ Pokud používáte Ngen.exe, uvědomte si, že rebasing může dojít při nativní obrazy jsou načteny do paměti. Pokud dll není načten na jeho upřednostňované základní adresu, protože tento rozsah adres je již přidělena, zavaděč systému Windows načte ji na jinou adresu, která může být časově náročná operace.  
   
- Vám pomůže nástroj virtuální adresu výpisu paměti (Vadump.exe) zkontrolujte, jestli jsou moduly, ve kterých jsou privátní všechny stránky. Pokud je to tento případ, modul může mít se přenese se změnami do jinou adresu. Proto není možné sdílet jeho stránky.  
+ Pomocí nástroje Výpis virtuální chod adresy (Vadump.exe) můžete zkontrolovat, zda existují moduly, ve kterých jsou všechny stránky soukromé. Pokud se jedná o tento případ, modul může být rebased na jinou adresu. Proto jeho stránky nelze sdílet.  
   
- Další informace o tom, jak nastavit základní adresu najdete v tématu [Ngen.exe (Generátor nativních obrázků)](../../tools/ngen-exe-native-image-generator.md).  
+ Další informace o nastavení základní adresy naleznete v tématu [Ngen.exe (Native Image Generator).](../../tools/ngen-exe-native-image-generator.md)  
   
 ## <a name="optimize-authenticode"></a>Optimalizace Authenticode  
- Ověřování Authenticode přidává na dobu spuštění. Sestavení s podpisem Authenticode muset ověřit s certifikační autoritou (CA). Toto ověřování může být časově náročné, protože to může vyžadovat připojení k síti několikrát stáhnout aktuální seznamy odvolaných certifikátů. Je také zajišťuje, že je úplným řetězem platné certifikáty na cestě pro důvěryhodného kořenového. Tento fakt může projevit na několik sekund prodlevy při načítání sestavení.  
+ Ověření authenticode přidá k času spuštění. Sestavení podepsaná ověřením podle autentičnosti musí být ověřena certifikačním úřadem .) Toto ověření může být časově náročné, protože může vyžadovat několikrát připojení k síti ke stažení aktuálních seznamů odvolaných certifikátů. Také zajišťuje, že je celý řetězec platných certifikátů na cestě k důvěryhodnému kořenovému adresáři. To může přeložit na několik sekund zpoždění při načítání sestavení.  
   
- Zvažte instalaci certifikátu certifikační Autority v klientském počítači, nebo nepoužívejte Authenticode, pokud je to možné. Pokud víte, že vaše aplikace nemusí důkazy vydavatele, není nutné platit náklady na ověření podpisu.  
+ Zvažte instalaci certifikátu certifikační autority do klientského počítače nebo se vyhněte použití aplikace Authenticode, pokud je to možné. Pokud víte, že vaše aplikace nepotřebuje důkaz vydavatele, nemusíte platit náklady na ověření podpisu.  
   
- Spuštění v rozhraní .NET Framework 3.5, existuje možnost konfigurace, která umožňuje ověření pomocí technologie Authenticode byla vynechána. Chcete-li to provést, přidejte do souboru app.exe.config následující nastavení:  
+ Počínaje rozhraním .NET Framework 3.5 existuje možnost konfigurace, která umožňuje obejít ověření Authenticode. Chcete-li to provést, přidejte do souboru app.exe.config následující nastavení:  
   
 ```xml  
 <configuration>  
     <runtime>  
-        <generatePublisherEvidence enabled="false"/>   
+        <generatePublisherEvidence enabled="false"/>
     </runtime>  
 </configuration>  
 ```  
   
- Další informace najdete v tématu [ \<generatePublisherEvidence > Element](../../configure-apps/file-schema/runtime/generatepublisherevidence-element.md).  
+ Další informace naleznete v [ \<tématu generatePublisherEvidence> Element](../../configure-apps/file-schema/runtime/generatepublisherevidence-element.md).  
   
-## <a name="compare-performance-on-windows-vista"></a>Porovnání výkonu v systému Windows Vista  
- Správce paměti v systému Windows Vista se nazývá SuperFetch technologie. SuperFetch analyzuje vzory používání paměti průběžným monitorováním určete obsah paměti optimální pro konkrétního uživatele. Funguje neustále udržovat daný obsah za všech okolností.  
+## <a name="compare-performance-on-windows-vista"></a>Porovnat výkon v systému Windows Vista  
+ Správce paměti v systému Windows Vista má technologii nazvanou SuperFetch. SuperFetch analyzuje vzory využití paměti v průběhu času k určení optimální ho obsahu paměti pro konkrétního uživatele. Neustále pracuje na udržování tohoto obsahu po celou dobu.  
   
- Tento přístup se liší od před načtením technika používaná ve Windows XP, které automaticky načte data do paměti bez analýza vzorů využití. V čase pokud uživatel použije aplikaci WPF často v systému Windows Vista, čas úplné spuštění vaší aplikace zvýšit.  
+ Tento přístup se liší od techniky předběžného načtení používané v systému Windows XP, která předem načítá data do paměti bez analýzy vzorců využití. V průběhu času, pokud uživatel používá aplikaci WPF často v systému Windows Vista, může se zlepšit doba studeného spuštění aplikace.  
   
-## <a name="use-appdomains-efficiently"></a>Použití objektů třídy AppDomains efektivně  
- Pokud je to možné načtení sestavení do doménově neutrální kód oblasti, abyste měli jistotu, že nativní bitové kopie, pokud existuje, se používá ve všech objektů třídy AppDomains v aplikaci.  
+## <a name="use-appdomains-efficiently"></a>Efektivní používání domén aplikací  
+ Pokud je to možné, načtěte sestavení do oblasti neutrální kód domény a ujistěte se, že nativní image, pokud existuje, se používá ve všech AppDomains vytvořených v aplikaci.  
   
- Pro zajištění nejlepšího výkonu vynuťte efektivní komunikaci mezi doménami snížením volání mezi doménami. Pokud je to možné, použijte volání bez argumentů nebo primitivní typ argumentů.  
+ Pro dosažení nejlepšího výkonu vynucujte efektivní komunikaci mezi doménami snížením volání mezi doménami. Pokud je to možné, použijte volání bez argumentů nebo s argumenty primitivního typu.  
   
-## <a name="use-the-neutralresourceslanguage-attribute"></a>Použijte atribut pro NeutralResourcesLanguage  
- Použití <xref:System.Resources.NeutralResourcesLanguageAttribute> k určení pro neutrální jazykovou verzi <xref:System.Resources.ResourceManager>. Tento přístup se vyhnete vyhledávání neúspěšné sestavení.  
+## <a name="use-the-neutralresourceslanguage-attribute"></a>Použití atributu NeutralResourcesLanguage  
+ Použití <xref:System.Resources.NeutralResourcesLanguageAttribute> k určení neutrální jazykové <xref:System.Resources.ResourceManager>verze pro . Tento přístup zabraňuje neúspěšným vyhledáváním sestavení.  
   
-## <a name="use-the-binaryformatter-class-for-serialization"></a>Použití BinaryFormatter třídy pro serializaci  
- Pokud je nutné použít serializaci, použijte <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter> místo na třídě <xref:System.Xml.Serialization.XmlSerializer> třídy. <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter> Třídy je implementována v třída Library Base (BCL) v sestavení mscorlib.dll. <xref:System.Xml.Serialization.XmlSerializer> Je implementované v sestavení System.Xml.dll, což může být další knihovny DLL pro načtení.  
+## <a name="use-the-binaryformatter-class-for-serialization"></a>Pro serializaci použijte třídu BinaryFormatter.  
+ Pokud je nutné použít serializaci, použijte třídu <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter> namísto třídy. <xref:System.Xml.Serialization.XmlSerializer> Třída <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter> je implementována v knihovně základní třídy (BCL) v sestavení mscorlib.dll. Je <xref:System.Xml.Serialization.XmlSerializer> implementována v sestavení System.Xml.dll, což může být další dll načíst.  
   
- Pokud je nutné použít <xref:System.Xml.Serialization.XmlSerializer> třídy, které můžete dosáhnout lepší výkon Pokud předběžně generovat sestavení serializace.  
+ Pokud je nutné <xref:System.Xml.Serialization.XmlSerializer> použít třídu, můžete dosáhnout lepšího výkonu, pokud předgenerujete sestavení serializace.  
   
-## <a name="configure-clickonce-to-check-for-updates-after-startup"></a>Konfigurace technologie ClickOnce pro kontrolu aktualizací po spuštění  
- Pokud vaše aplikace používá ClickOnce, vyhněte se přístup k síti při spuštění tím, že nakonfigurujete ClickOnce ke kontrole lokality nasazení aktualizací po spuštění aplikace.  
+## <a name="configure-clickonce-to-check-for-updates-after-startup"></a>Konfigurace funkce ClickOnce pro kontrolu aktualizací po spuštění  
+ Pokud vaše aplikace používá ClickOnce, vyhněte se přístupu k síti při spuštění konfigurací ClickOnce ke kontrole lokality nasazení pro aktualizace po spuštění aplikace.  
   
- Pokud používáte model aplikace (XBAP) prohlížeče XAML, mějte na paměti, že kontroluje ClickOnce lokality nasazení aktualizací i v případě, XBAP, který je již v mezipaměti ClickOnce. Další informace najdete v tématu [ClickOnce – zabezpečení a nasazení](/visualstudio/deployment/clickonce-security-and-deployment).  
+ Pokud používáte model aplikace prohlížeče XAML (XBAP), mějte na paměti, že ClickOnce kontroluje lokalitu nasazení pro aktualizace i v případě, že XBAP je již v mezipaměti ClickOnce. Další informace naleznete v [tématu ClickOnce Security and Deployment](/visualstudio/deployment/clickonce-security-and-deployment).  
   
-## <a name="configure-the-presentationfontcache-service-to-start-automatically"></a>Automaticky konfigurovat službu PresentationFontCache Start  
- První aplikace WPF pro spuštění po restartování je služba PresentationFontCache. Služba ukládá do mezipaměti systémových písem, zlepšuje písma přístup a celkový výkon. Je další režií při spouštění služby a v některých prostředích řízené, zvažte možnost nakonfigurovat automatické spouštění, při restartování služby.  
+## <a name="configure-the-presentationfontcache-service-to-start-automatically"></a>Konfigurace automatického spuštění služby PresentationFontCache  
+ První wpf aplikace, která se spustí po restartu, je služba PresentationFontCache. Služba ukládá systémová písma do mezipaměti, zlepšuje přístup k písmům a zlepšuje celkový výkon. Spuštění služby je režii a v některých řízených prostředích zvažte konfiguraci služby tak, aby se automaticky spouštěla při restartování systému.  
   
-## <a name="set-data-binding-programmatically"></a>Nastavení datové vazby prostřednictvím kódu programu  
- Namísto použití XAML nastavit <xref:System.Windows.FrameworkElement.DataContext%2A> deklarativně pro hlavní okno, zvažte nastavení prostřednictvím kódu programu v <xref:System.Windows.Application.OnActivated%2A> metody.  
+## <a name="set-data-binding-programmatically"></a>Programově nastavit datovou vazbu  
+ Namísto použití XAML <xref:System.Windows.FrameworkElement.DataContext%2A> k nastavení deklarativně pro hlavní okno, <xref:System.Windows.Application.OnActivated%2A> zvažte nastavení programově v metodě.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.SplashScreen>
 - <xref:System.AppDomain>

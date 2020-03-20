@@ -4,92 +4,92 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - clients [WCF], security considerations
 ms.assetid: 44c8578c-9a5b-4acd-8168-1c30a027c4c5
-ms.openlocfilehash: f8fe5c5e0afac071ce7e036ceccd0b66351b0e1d
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.openlocfilehash: bfb980e629ffb8f8543937a1850430c9bf6e9199
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73040886"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79183136"
 ---
 # <a name="securing-clients"></a>Zabezpečení klientů
-V Windows Communication Foundation (WCF) služba Určuje požadavky na zabezpečení pro klienty. To znamená, že služba Určuje, který režim zabezpečení má být použit, a zda klient musí zadat pověření. Proces zabezpečení klienta je proto jednoduchý: použijte metadata získaná ze služby (je-li publikována) a vytvořte klienta. Metadata určují, jak nakonfigurovat klienta. Pokud služba vyžaduje, aby klient zadal přihlašovací údaje, musíte získat přihlašovací údaje, které vyhovují danému požadavku. Toto téma pojednává o procesu podrobněji. Další informace o vytváření zabezpečené služby najdete v tématu [zabezpečení služeb](securing-services.md).  
+V systému Windows Communication Foundation (WCF) služba určuje požadavky na zabezpečení klientů. To znamená, že služba určuje, jaký režim zabezpečení použít a zda klient musí poskytnout pověření. Proces zabezpečení klienta je proto jednoduchý: použijte metadata získaná ze služby (pokud je publikována) a vytvořte klienta. Metadata určují způsob konfigurace klienta. Pokud služba vyžaduje, aby klient zadat pověření, potom je nutné získat pověření, které odpovídá požadavku. Toto téma podrobněji popisuje proces. Další informace o vytvoření zabezpečené služby naleznete v tématu [Zabezpečení služeb](securing-services.md).  
   
-## <a name="the-service-specifies-security"></a>Služba určuje zabezpečení  
- Ve výchozím nastavení mají vazby WCF povolené funkce zabezpečení. (Výjimka je <xref:System.ServiceModel.BasicHttpBinding>.) Proto pokud byla služba vytvořena pomocí WCF, existuje větší pravděpodobnost, že bude implementovat zabezpečení, aby bylo zajištěno ověřování, důvěrnost a integritu. V takovém případě metadata, která služba poskytuje, indikuje, co vyžaduje k navázání zabezpečeného komunikačního kanálu. Pokud metadata služby neobsahují žádné požadavky na zabezpečení, neexistuje žádný způsob, jak do služby ukládat schéma zabezpečení, jako je například SSL (Secure Sockets Layer) (SSL) přes protokol HTTP. Pokud však služba vyžaduje, aby klient zadal přihlašovací údaje, pak musí klientský vývojář, nástroj pro nasazení nebo správce zadat skutečné přihlašovací údaje, které bude klient používat k ověření ve službě.  
+## <a name="the-service-specifies-security"></a>Služba určuje zabezpečení.  
+ Ve výchozím nastavení mají vazby WCF povolené funkce zabezpečení. (Výjimkou je <xref:System.ServiceModel.BasicHttpBinding>.) Proto pokud služba byla vytvořena pomocí WCF, je větší pravděpodobnost, že bude implementovat zabezpečení k zajištění ověřování, důvěrnost i integritu. V takovém případě metadata poskytuje bude uvádět, co vyžaduje k vytvoření zabezpečeného komunikačního kanálu. Pokud metadata služby neobsahuje žádné požadavky na zabezpečení, neexistuje žádný způsob, jak uložit schéma zabezpečení, jako je například ssl (Secure Sockets Layer) přes HTTP, na službu. Pokud však služba vyžaduje, aby klient zadával pověření, musí vývojář klienta, nasazovač nebo správce zadat skutečné pověření, které klient použije k ověření služby.  
   
 ## <a name="obtaining-metadata"></a>Získání metadat  
- Při vytváření klienta je prvním krokem získání metadat pro službu, se kterou bude klient komunikovat. To lze provést dvěma způsoby. Za prvé, pokud služba publikuje koncový bod výměny metadat (MEX) nebo zpřístupňuje jeho metadata prostřednictvím protokolu HTTP nebo HTTPS, můžete si stáhnout metadata pomocí nástroje pro dodávání [metadat (Svcutil. exe)](servicemodel-metadata-utility-tool-svcutil-exe.md), který generuje oba soubory kódu pro klienta. i konfigurační soubor. (Další informace o použití tohoto nástroje najdete v tématu [přístup ke službám pomocí klienta WCF](accessing-services-using-a-wcf-client.md).) Pokud služba nepublikuje koncový bod MEX a zároveň nezpřístupňuje jeho metadata prostřednictvím protokolu HTTP nebo HTTPS, je nutné se obrátit na tvůrce služby, který popisuje požadavky na zabezpečení a metadata.  
+ Při vytváření klienta je prvním krokem získání metadat pro službu, se kterou bude klient komunikovat. To lze provést dvěma způsoby. Za prvé, pokud služba publikuje koncový bod výměny metadat (MEX) nebo zpřístupní jeho metadata prostřednictvím protokolu HTTP nebo HTTPS, můžete stáhnout metadata pomocí [nástroje ServiceModel Metadata Utility Tool (Svcutil.exe),](servicemodel-metadata-utility-tool-svcutil-exe.md)který generuje soubory kódu pro klienta i konfigurační soubor. (Další informace o použití nástroje naleznete [v tématu Přístup ke službám pomocí klienta WCF](accessing-services-using-a-wcf-client.md).) Pokud služba nepublikuje koncový bod MEX a také nezpřístupňuje jeho metadata prostřednictvím protokolu HTTP nebo HTTPS, musíte kontaktovat tvůrce služby pro dokumentaci, která popisuje požadavky na zabezpečení a metadata.  
   
 > [!IMPORTANT]
-> Doporučuje se, aby metadata pocházejí z důvěryhodného zdroje a nebyla zfalšována. Metadata získaná pomocí protokolu HTTP se odesílají ve formátu prostého textu a můžou být poškozená. Pokud služba používá vlastnosti <xref:System.ServiceModel.Description.ServiceMetadataBehavior.HttpsGetEnabled%2A> a <xref:System.ServiceModel.Description.ServiceMetadataBehavior.HttpsGetUrl%2A>, použijte adresu URL, kterou zadal tvůrce služby ke stažení dat pomocí protokolu HTTPS.  
+> Doporučuje se, aby metadata pocházejí z důvěryhodného zdroje a aby s nimi nebylo manipulováno. Metadata načtená pomocí protokolu HTTP jsou odesílána ve prostém textu a lze s nimi manipulovat. Pokud služba používá <xref:System.ServiceModel.Description.ServiceMetadataBehavior.HttpsGetEnabled%2A> <xref:System.ServiceModel.Description.ServiceMetadataBehavior.HttpsGetUrl%2A> vlastnosti a, použijte adresu URL, kterou tvůrce služby dodal, ke stažení dat pomocí protokolu HTTPS.  
   
-## <a name="validating-security"></a>Ověřování zabezpečení  
- Zdroje metadat lze rozdělit do dvou hlavních kategorií: důvěryhodných zdrojů a nedůvěryhodných zdrojů. Pokud zdroji důvěřujete a stáhli jste kód klienta a další metadata z zabezpečeného koncového bodu MEX tohoto zdroje, můžete vytvořit klienta, zadat ho se správnými přihlašovacími údaji a spustit ho bez dalších otázek.  
+## <a name="validating-security"></a>Ověření zabezpečení  
+ Zdroje metadat lze rozdělit do dvou širokých kategorií: zdroje důvěryhodnosti a nedůvěryhodné zdroje. Pokud důvěřujete zdroji a stáhli jste kód klienta a další metadata z zabezpečeného koncového bodu MEX tohoto zdroje, můžete klienta sestavit, zadat mu správná pověření a spustit bez dalších obav.  
   
- Pokud se ale rozhodnete stáhnout klienta a metadata ze zdroje, u kterého víte trochu o, ujistěte se, že jste ověřili míry zabezpečení, které kód používá. Například nesmíte jednoduše vytvořit klienta, který do služby odesílá osobní nebo finanční informace, pokud služba nepožaduje důvěrnost a integritu (nejméně). Měli byste důvěřovat vlastníkovi služby v rozsahu, který jste ochotni zveřejnit tyto informace, protože k nim budou mít tyto informace viditelné.  
+ Pokud se však rozhodnete stáhnout klienta a metadata ze zdroje, o kterém víte málo, nezapomeňte ověřit bezpečnostní opatření, která kód používá. Nesmíte například jednoduše vytvořit klienta, který odešle vaše osobní nebo finanční informace službě, pokud služba nevyžaduje důvěrnost a integritu (přinejmenším). Měli byste důvěřovat vlastníkovi služby v rozsahu, v jakém jste ochotni tyto informace zveřejnit, protože tyto informace budou viditelné pro ně.  
   
- Pokud tedy pravidlo použijete pro kód a metadata z nedůvěryhodného zdroje, zkontrolujte kód a metadata a ujistěte se, že splňuje požadovanou úroveň zabezpečení.  
+ Je pravidlem, že při použití kódu a metadat z nedůvěryhodného zdroje, zkontrolujte kód a metadata, aby bylo zajištěno, že splňuje úroveň zabezpečení, kterou požadujete.  
   
-## <a name="setting-a-client-credential"></a>Nastavení přihlašovacích údajů klienta  
- Nastavení přihlašovacích údajů klienta v klientském počítači se skládá ze dvou kroků:  
+## <a name="setting-a-client-credential"></a>Nastavení pověření klienta  
+ Nastavení pověření klienta v klientovi se skládá ze dvou kroků:  
   
-1. Určete *typ pověření klienta* , které služba vyžaduje. Toho je možné dosáhnout jednou ze dvou metod. V případě, že máte dokumentaci od autora služby, je třeba zadat typ přihlašovacích údajů klienta (pokud existuje), který služba vyžaduje. Za druhé, pokud máte pouze konfigurační soubor generovaný nástrojem Svcutil. exe, můžete prozkoumávat jednotlivé vazby a určit, jaký typ přihlašovacích údajů je požadován.  
+1. Určete *typ pověření klienta,* který služba vyžaduje. Toho je dosaženo jednou ze dvou metod. Za prvé, pokud máte dokumentaci od tvůrce služby, měl by určit typ pověření klienta (pokud existuje) služba vyžaduje. Za druhé, pokud máte pouze konfigurační soubor generovaný nástrojem Svcutil.exe, můžete prozkoumat jednotlivé vazby k určení, jaký typ pověření je požadováno.  
   
-2. Zadejte skutečné přihlašovací údaje klienta. Vlastní přihlašovací údaje klienta se nazývají *hodnoty přihlašovacích údajů klienta* , aby je bylo možné odlišit od typu. Pokud například typ přihlašovacích údajů klienta Určuje certifikát, musíte zadat certifikát X. 509, který je vydaný certifikační autoritou, vztah důvěryhodnosti služby.  
+2. Zadejte skutečné pověření klienta. Skutečné pověření klienta se nazývá *hodnota pověření klienta* odlišit od typu. Pokud například typ pověření klienta určuje certifikát, musíte zadat certifikát X.509 vydaný certifikačním úřadem, kterému služba důvěřuje.  
   
 ### <a name="determining-the-client-credential-type"></a>Určení typu pověření klienta  
- Pokud máte konfigurační soubor vygenerovaný nástrojem Svcutil. exe, Projděte si část [> \<bindings](../configure-apps/file-schema/wcf/bindings.md) a určete, co je třeba zadat typ pověření klienta. V části jsou prvky vazby, které určují požadavky na zabezpečení. Konkrétně prověřte > prvek \<security u každé vazby. Tento element zahrnuje atribut `mode`, který můžete nastavit na jednu ze tří možných hodnot (`Message`, `Transport` nebo `TransportWithMessageCredential`). Hodnota atributu určuje režim a režim určuje, které z podřízených prvků jsou významné.  
+ Pokud máte konfigurační soubor, který je generován nástrojem Svcutil.exe, zkontrolujte [ \<oddíl vazby>](../configure-apps/file-schema/wcf/bindings.md) a zjistěte, jaký typ pověření klienta je vyžadován. V rámci oddílu jsou elementy vazby, které určují požadavky na zabezpečení. Konkrétně zkontrolujte \<> zabezpečení Element každé vazby. Tento prvek `mode` obsahuje atribut, který můžete nastavit na`Message`jednu ze tří možných hodnot ( , `Transport`, nebo `TransportWithMessageCredential`). Hodnota atributu určuje režim a režim určuje, který z podřízených prvků je významný.  
   
- Element `<security>` může obsahovat buď prvek `<transport>` nebo `<message>`, nebo obojí. Významný prvek je ten, který odpovídá režimu zabezpečení. Například následující kód určuje, že režim zabezpečení je `"Message"` a typ přihlašovacích údajů klienta pro prvek `<message>` je `"Certificate"`. V tomto případě lze prvek `<transport>` ignorovat. Element `<message>` však Určuje, že je nutné zadat certifikát X. 509.  
+ Prvek `<security>` může obsahovat `<transport>` `<message>` buď nebo element nebo obojí. Významným prvkem je ten, který odpovídá režimu zabezpečení. Například následující kód určuje, že režim `"Message"`zabezpečení je a typ `<message>` pověření `"Certificate"`klienta pro prvek je . V tomto případě `<transport>` může být prvek ignorován. `<message>` Prvek však určuje, že musí být zadán certifikát X.509.  
 
 ```xml  
 <wsHttpBinding>  
     <binding name="WSHttpBinding_ICalculator">  
        <security mode="Message">  
-           <transport clientCredentialType="Windows"   
+           <transport clientCredentialType="Windows"
                       realm="" />  
-           <message clientCredentialType="Certificate"   
+           <message clientCredentialType="Certificate"
                     negotiateServiceCredential="true"  
-                    algorithmSuite="Default"   
+                    algorithmSuite="Default"
                     establishSecurityContext="true" />  
        </security>  
     </binding>  
 </wsHttpBinding>  
 ```  
 
- Všimněte si, že pokud je atribut `clientCredentialType` nastaven na hodnotu `"Windows"`, jak je znázorněno v následujícím příkladu, nemusíte zadávat skutečnou hodnotu přihlašovacích údajů. Je to proto, že integrované zabezpečení systému Windows poskytuje skutečné přihlašovací údaje (token protokolu Kerberos) pro osobu, která spouští klienta.  
+ Všimněte si, že pokud je `clientCredentialType` atribut nastaven na `"Windows"`, jak je znázorněno v následujícím příkladu, není nutné zadat skutečnou hodnotu pověření. Důvodem je, že integrované zabezpečení systému Windows poskytuje skutečné pověření (token protokolu Kerberos) osoby, která klienta spouštějí.  
   
 ```xml  
 <security mode="Message">  
-    <transport clientCredentialType="Windows "   
+    <transport clientCredentialType="Windows "
         realm="" />  
 </security>  
 ```  
   
-### <a name="setting-the-client-credential-value"></a>Nastavení hodnoty přihlašovacích údajů klienta  
- Pokud se zjistí, že klient musí zadat přihlašovací údaje, použijte ke konfiguraci klienta odpovídající metodu. Chcete-li například nastavit certifikát klienta, použijte metodu <xref:System.ServiceModel.Security.X509CertificateInitiatorClientCredential.SetCertificate%2A>.  
+### <a name="setting-the-client-credential-value"></a>Nastavení hodnoty pověření klienta  
+ Pokud je zjištěno, že klient musí zadat pověření, použijte příslušnou metodu ke konfiguraci klienta. Chcete-li například nastavit klientský <xref:System.ServiceModel.Security.X509CertificateInitiatorClientCredential.SetCertificate%2A> certifikát, použijte metodu.  
   
- Běžným formulářem přihlašovacích údajů je certifikát X. 509. Přihlašovací údaje můžete dodat dvěma způsoby:  
+ Běžnou formou pověření je certifikát X.509. Pověření můžete zadat dvěma způsoby:  
   
-- Programováním ve vašem klientském kódu (pomocí metody `SetCertificate`).  
+- Naprogramováním ve vašem klientském `SetCertificate` kódu (pomocí metody).  
   
- Přidáním oddílu [\<behaviors >](../configure-apps/file-schema/wcf/behaviors.md) konfiguračního souboru pro klienta a pomocí elementu `clientCredentials` (viz níže).  
+ Přidáním [ \<chování>](../configure-apps/file-schema/wcf/behaviors.md) části konfiguračního souboru `clientCredentials` pro klienta a pomocí prvku (viz níže).  
   
-#### <a name="setting-a-clientcredentials-value-in-code"></a>Nastavení hodnoty \<clientCredentials > v kódu  
- Chcete-li nastavit [\<ovou hodnotu clientCredentials >](../configure-apps/file-schema/wcf/clientcredentials.md) v kódu, musíte získat přístup k vlastnosti <xref:System.ServiceModel.ClientBase%601.ClientCredentials%2A> třídy <xref:System.ServiceModel.ClientBase%601>. Vlastnost vrátí objekt <xref:System.ServiceModel.Description.ClientCredentials>, který umožňuje přístup k různým typům přihlašovacích údajů, jak je znázorněno v následující tabulce.  
+#### <a name="setting-a-clientcredentials-value-in-code"></a>Nastavení \<hodnoty> klienta Pověření v kódu  
+ Chcete-li nastavit [ \<clientCredentials>](../configure-apps/file-schema/wcf/clientcredentials.md) hodnotu <xref:System.ServiceModel.ClientBase%601.ClientCredentials%2A> v kódu, musíte získat přístup k vlastnosti třídy. <xref:System.ServiceModel.ClientBase%601> Vlastnost vrátí <xref:System.ServiceModel.Description.ClientCredentials> objekt, který umožňuje přístup k různým typům pověření, jak je znázorněno v následující tabulce.  
   
 |Vlastnost ClientCredential|Popis|Poznámky|  
 |-------------------------------|-----------------|-----------|  
-|<xref:System.ServiceModel.Description.ClientCredentials.ClientCertificate%2A>|Vrátí <xref:System.ServiceModel.Security.X509CertificateInitiatorClientCredential>.|Představuje certifikát X. 509, který poskytl klient pro ověření ke službě.|  
-|<xref:System.ServiceModel.Description.ClientCredentials.HttpDigest%2A>|Vrátí <xref:System.ServiceModel.Security.HttpDigestClientCredential>.|Představuje přihlašovací údaje protokolu HTTP Digest. Přihlašovací údaje jsou hash uživatelského jména a hesla.|  
-|<xref:System.ServiceModel.Description.ClientCredentials.IssuedToken%2A>|Vrátí <xref:System.ServiceModel.Security.IssuedTokenClientCredential>.|Představuje vlastní token zabezpečení vydaný službou tokenů zabezpečení, který se běžně používá ve federačních scénářích.|  
-|<xref:System.ServiceModel.Description.ClientCredentials.Peer%2A>|Vrátí <xref:System.ServiceModel.Security.PeerCredential>.|Představuje přihlašovací údaje partnerského vztahu pro účast v partnerské síti v doméně systému Windows.|  
-|<xref:System.ServiceModel.Description.ClientCredentials.ServiceCertificate%2A>|Vrátí <xref:System.ServiceModel.Security.X509CertificateRecipientClientCredential>.|Představuje certifikát X. 509 poskytovaný službou při vzdáleném vyjednávání.|  
-|<xref:System.ServiceModel.Description.ClientCredentials.UserName%2A>|Vrátí <xref:System.ServiceModel.Security.UserNamePasswordClientCredential>.|Představuje dvojici uživatelského jména a hesla.|  
-|<xref:System.ServiceModel.Description.ClientCredentials.Windows%2A>|Vrátí <xref:System.ServiceModel.Security.WindowsClientCredential>.|Představuje přihlašovací údaje klienta Windows (přihlašovací údaje Kerberos). Vlastnosti třídy jsou jen pro čtení.|  
+|<xref:System.ServiceModel.Description.ClientCredentials.ClientCertificate%2A>|Vrátí hodnotu<xref:System.ServiceModel.Security.X509CertificateInitiatorClientCredential>|Představuje certifikát X.509 poskytnutý klientem k ověření sám služby.|  
+|<xref:System.ServiceModel.Description.ClientCredentials.HttpDigest%2A>|Vrátí hodnotu<xref:System.ServiceModel.Security.HttpDigestClientCredential>|Představuje pověření http digest. Pověření je hash uživatelského jména a hesla.|  
+|<xref:System.ServiceModel.Description.ClientCredentials.IssuedToken%2A>|Vrátí hodnotu<xref:System.ServiceModel.Security.IssuedTokenClientCredential>|Představuje vlastní token zabezpečení vydaný službou tokenů zabezpečení, běžně používaný ve scénářích federace.|  
+|<xref:System.ServiceModel.Description.ClientCredentials.Peer%2A>|Vrátí hodnotu<xref:System.ServiceModel.Security.PeerCredential>|Představuje pověření partnera pro účast v síti peer v doméně systému Windows.|  
+|<xref:System.ServiceModel.Description.ClientCredentials.ServiceCertificate%2A>|Vrátí hodnotu<xref:System.ServiceModel.Security.X509CertificateRecipientClientCredential>|Představuje certifikát X.509 poskytovaný službou v neintegrovaném vyjednávání.|  
+|<xref:System.ServiceModel.Description.ClientCredentials.UserName%2A>|Vrátí hodnotu<xref:System.ServiceModel.Security.UserNamePasswordClientCredential>|Představuje dvojici uživatelského jména a hesla.|  
+|<xref:System.ServiceModel.Description.ClientCredentials.Windows%2A>|Vrátí hodnotu<xref:System.ServiceModel.Security.WindowsClientCredential>|Představuje pověření klienta systému Windows (pověření protokolu Kerberos). Vlastnosti třídy jsou jen pro čtení.|  
   
-#### <a name="setting-a-clientcredentials-value-in-configuration"></a>Nastavení hodnoty \<clientCredentials > v konfiguraci  
- Hodnoty přihlašovacích údajů se zadává pomocí chování koncového bodu jako podřízené prvky [> elementu \<clientCredentials](../configure-apps/file-schema/wcf/clientcredentials.md) . Použitý prvek závisí na typu pověření klienta. Například následující příklad ukazuje konfiguraci pro nastavení certifikátu X. 509 pomocí <[\<clientCertificate >](../configure-apps/file-schema/wcf/clientcertificate-of-clientcredentials-element.md).  
+#### <a name="setting-a-clientcredentials-value-in-configuration"></a>Nastavení \<hodnoty> klienta v konfiguraci  
+ Hodnoty pověření jsou určeny pomocí chování koncového bodu jako podřízené prvky [ \<clientCredentials>](../configure-apps/file-schema/wcf/clientcredentials.md) element. Použitý prvek závisí na typu pověření klienta. Například následující příklad ukazuje konfiguraci pro nastavení certifikátu X.509 pomocí <[ \<clientCertificate>](../configure-apps/file-schema/wcf/clientcertificate-of-clientcredentials-element.md).  
   
 ```xml  
 <configuration>  
@@ -98,7 +98,7 @@ V Windows Communication Foundation (WCF) služba Určuje požadavky na zabezpeč
       <endpointBehaviors>
         <behavior name="myEndpointBehavior">  
           <clientCredentials>  
-            <clientCertificate findvalue="myMachineName"   
+            <clientCertificate findvalue="myMachineName"
             storeLocation="Current" X509FindType="FindBySubjectName" />  
           </clientCredentials>  
         </behavior>
@@ -108,7 +108,7 @@ V Windows Communication Foundation (WCF) služba Určuje požadavky na zabezpeč
 </configuration>  
 ```  
   
- Chcete-li nastavit pověření klienta v konfiguraci, přidejte do konfiguračního souboru prvek [\<endpointBehaviors >](../configure-apps/file-schema/wcf/endpointbehaviors.md) . Kromě toho musí být přidaný prvek chování propojen s koncovým bodem služby pomocí atributu `behaviorConfiguration` [\<endpoint > elementu \<client >](../configure-apps/file-schema/wcf/endpoint-of-client.md) , jak je znázorněno v následujícím příkladu. Hodnota atributu `behaviorConfiguration` se musí shodovat s hodnotou atributu Behavior `name`.  
+ Chcete-li nastavit pověření klienta v konfiguraci, přidejte do konfiguračního souboru [ \<prvek endpointBehaviors>.](../configure-apps/file-schema/wcf/endpointbehaviors.md) Kromě toho musí být prvek přidané chování propojen s koncovým bodem služby pomocí `behaviorConfiguration` atributu [ \<koncového bodu> prvku>klienta, \<](../configure-apps/file-schema/wcf/endpoint-of-client.md) jak je znázorněno v následujícím příkladu. Hodnota atributu `behaviorConfiguration` musí odpovídat hodnotě `name` atributu behavior.  
 
 ```xml
 <configuration>
@@ -125,19 +125,19 @@ V Windows Communication Foundation (WCF) služba Určuje požadavky na zabezpeč
 ```
   
 > [!NOTE]
-> Některé hodnoty přihlašovacích údajů klienta nelze nastavit pomocí konfiguračních souborů aplikace, například uživatelské jméno a heslo nebo hodnoty uživatele a hesla systému Windows. Tyto hodnoty přihlašovacích údajů lze zadat pouze v kódu.  
+> Některé hodnoty pověření klienta nelze nastavit pomocí konfiguračních souborů aplikace, například uživatelského jména a hesla nebo hodnot uživatele a hesla systému Windows. Tyto hodnoty pověření lze zadat pouze v kódu.  
   
- Další informace o nastavení přihlašovacích údajů klienta najdete v tématu [Postupy: určení hodnot přihlašovacích údajů klienta](how-to-specify-client-credential-values.md).  
+ Další informace o nastavení pověření klienta naleznete v [tématu How to: Specify Client Credential Values](how-to-specify-client-credential-values.md).  
   
 > [!NOTE]
-> `ClientCredentialType` se ignoruje, pokud je `SecurityMode` nastaveno na `"TransportWithMessageCredential",`, jak je znázorněno v následující ukázkové konfiguraci.  
+> `ClientCredentialType`je ignorována, `SecurityMode` pokud `"TransportWithMessageCredential",` je nastavena tak, jak je znázorněno v následující konfiguraci ukázky.  
   
 ```xml  
 <wsHttpBinding>  
     <binding name="PingBinding">  
         <security mode="TransportWithMessageCredential"  >  
-           <message  clientCredentialType="UserName"   
-               establishSecurityContext="false"    
+           <message  clientCredentialType="UserName"
+               establishSecurityContext="false"
                negotiateServiceCredential="false" />  
            <transport clientCredentialType="Certificate"  />  
          </security>  
@@ -145,17 +145,17 @@ V Windows Communication Foundation (WCF) služba Určuje požadavky na zabezpeč
 </wsHttpBinding>  
 ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.ServiceModel.ClientBase%601.ClientCredentials%2A>
 - <xref:System.ServiceModel.ClientBase%601>
 - <xref:System.ServiceModel.Description.ClientCredentials>
 - <xref:System.ServiceModel.Description.ServiceMetadataBehavior.HttpsGetEnabled%2A>
 - <xref:System.ServiceModel.Description.ServiceMetadataBehavior.HttpsGetUrl%2A>
-- [vazby\<](../configure-apps/file-schema/wcf/bindings.md)
+- [\<vázání>](../configure-apps/file-schema/wcf/bindings.md)
 - [Editor konfigurace (SvcConfigEditor.exe)](configuration-editor-tool-svcconfigeditor-exe.md)
 - [Zabezpečení služeb](securing-services.md)
 - [Přístup ke službám pomocí klienta WCF](accessing-services-using-a-wcf-client.md)
 - [Postupy: Zadání hodnot přihlašovacích údajů klienta](how-to-specify-client-credential-values.md)
-- [Nástroj metadat modelu služby (Svcutil.exe)](servicemodel-metadata-utility-tool-svcutil-exe.md)
+- [Nástroj ServiceModel Metadata Utility (Svcutil.exe)](servicemodel-metadata-utility-tool-svcutil-exe.md)
 - [Postupy: Určení typu přihlašovacích údajů klienta](how-to-specify-the-client-credential-type.md)

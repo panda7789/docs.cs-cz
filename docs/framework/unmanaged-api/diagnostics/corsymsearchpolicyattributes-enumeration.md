@@ -14,27 +14,27 @@ helpviewer_keywords:
 ms.assetid: 03abde84-930a-49d3-bac3-23abb34a0184
 topic_type:
 - apiref
-ms.openlocfilehash: 4fd31e6b752e13a5c43198760e9a4d62a8f77d10
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 786e53d43ecde0bc3a97fadb77184d25d41430bc
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74448560"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79178352"
 ---
 # <a name="corsymsearchpolicyattributes-enumeration"></a>CorSymSearchPolicyAttributes – výčet
-Určuje zásadu, která se má použít při hledání čtečky symbolů. Tyto konstanty jsou používány metodami [ISymUnmanagedBinder2 –:: GetReaderForFile2 –](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedbinder2-getreaderforfile2-method.md) a [Isymunmanagedbinder3 –:: GetReaderFromCallback –](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedbinder3-getreaderfromcallback-method.md) .  
+Určuje zásadu, která má být použita při hledání čtečky symbolů. Tyto konstanty jsou používány metodami [ISymUnmanagedBinder2::GetReaderForFile2](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedbinder2-getreaderforfile2-method.md) a [ISymUnmanagedBinder3::GetReaderFromCallback.](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedbinder3-getreaderfromcallback-method.md)  
   
 > [!IMPORTANT]
-> Je bezpečnostním rizikem k otevření souboru programu databáze (PDB) z nedůvěryhodného zdroje.  
+> Je bezpečnostní riziko pro otevření souboru databáze programů (PDB) z nedůvěryhodného zdroje.  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```cpp  
 typedef enum CorSymSearchPolicyAttributes  
 {  
-    AllowRegistryAccess      = 0x1,       
+    AllowRegistryAccess      = 0x1,
     AllowSymbolServerAccess  = 0x2,  
-    AllowOriginalPathAccess  = 0x4,     //      
+    AllowOriginalPathAccess  = 0x4,     //
     AllowReferencePathAccess = 0x8  
 } CorSymSearchPolicyAttributes;  
 ```  
@@ -43,14 +43,14 @@ typedef enum CorSymSearchPolicyAttributes
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`AllowRegistryAccess`|Vyhledá v registru cesty pro hledání symbolů.|  
+|`AllowRegistryAccess`|Dotazuje registr na cesty pro vyhledávání symbolů.|  
 |`AllowSymbolServerAccess`|Přistupuje k serveru symbolů.|  
-|`AllowOriginalPathAccess`|Vyhledá cestu zadanou v adresáři ladění.|  
-|`AllowReferencePathAccess`|Vyhledá PDB na místě, kde se nachází soubor. exe.|  
+|`AllowOriginalPathAccess`|Prohledá cestu zadanou v adresáři Ladění.|  
+|`AllowReferencePathAccess`|Vyhledá pdb v místě, kde je soubor EXE.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Hlavička:** CorSym. idl, CorSym. h  
+ **Záhlaví:** CorSym.idl, CorSym.h  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Výčty pro úložiště symbolů diagnostiky](../../../../docs/framework/unmanaged-api/diagnostics/diagnostics-symbol-store-enumerations.md)
+- [Výčty úložiště symbolů diagnostiky](../../../../docs/framework/unmanaged-api/diagnostics/diagnostics-symbol-store-enumerations.md)

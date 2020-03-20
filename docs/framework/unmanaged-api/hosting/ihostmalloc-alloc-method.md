@@ -15,61 +15,61 @@ helpviewer_keywords:
 ms.assetid: a3007f5e-d75d-4b37-842b-704e9edced5e
 topic_type:
 - apiref
-ms.openlocfilehash: 9837e4e3428a0293c8e689b3f3e081aa07f055b2
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: dded37fdef02963f60883b289462aa6a96693b3d
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73192071"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79176302"
 ---
 # <a name="ihostmallocalloc-method"></a>IHostMAlloc::Alloc – metoda
-Požaduje, aby hostitel přidělil určenou velikost paměti z haldy.  
+Požaduje, aby hostitel přidělit zadané množství paměti z haldy.  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```cpp  
 HRESULT Alloc (  
-    [in] SIZE_T  cbSize,   
-    [in] EMemoryCriticalLevel dwCriticalLevel,   
+    [in] SIZE_T  cbSize,
+    [in] EMemoryCriticalLevel dwCriticalLevel,
     [out] void** ppMem  
 );  
 ```  
   
 ## <a name="parameters"></a>Parametry  
  `cbSize`  
- pro Velikost aktuální žádosti o přidělení paměti (v bajtech).  
+ [v] Velikost aktuálního požadavku na přidělení paměti v bajtech.  
   
  `dwCriticalLevel`  
- pro Jedna z hodnot [EMemoryCriticalLevel –](../../../../docs/framework/unmanaged-api/hosting/ememorycriticallevel-enumeration.md) , která indikuje dopad selhání přidělení.  
+ [v] Jedna z hodnot [EMemoryCriticalLevel,](../../../../docs/framework/unmanaged-api/hosting/ememorycriticallevel-enumeration.md) označující dopad selhání přidělení.  
   
  `ppMem`  
- mimo Ukazatel na přidělenou paměť nebo hodnotu null, pokud požadavek nebylo možné dokončit.  
+ [out] Ukazatel na přidělenou paměť nebo hodnotu null, pokud požadavek nelze dokončit.  
   
 ## <a name="return-value"></a>Návratová hodnota  
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
-|S_OK|`Alloc` byla úspěšně vrácena.|  
-|HOST_E_CLRNOTAVAILABLE|Modul CLR (Common Language Runtime) nebyl načten do procesu, nebo je modul CLR ve stavu, ve kterém nemůže spustit spravovaný kód nebo úspěšně zpracovat volání.|  
-|HOST_E_TIMEOUT|Vypršel časový limit volání.|  
+|S_OK|`Alloc`úspěšně vrácena.|  
+|HOST_E_CLRNOTAVAILABLE|Běžný jazyk runtime (CLR) nebyl načten do procesu nebo CLR je ve stavu, ve kterém nelze spustit spravovaný kód nebo úspěšně zpracovat volání.|  
+|HOST_E_TIMEOUT|Časový čas hovoru byl vypován.|  
 |HOST_E_NOT_OWNER|Volající nevlastní zámek.|  
-|HOST_E_ABANDONED|Událost byla zrušena při čekání na blokované vlákno nebo vlákna.|  
-|E_FAIL|Došlo k neznámé chybě závažnosti. Když metoda vrátí E_FAIL, CLR již není v rámci procesu použitelný. Následná volání metod hostování vrací HOST_E_CLRNOTAVAILABLE.|  
-|E_OUTOFMEMORY|K dokončení žádosti o přidělení není k dispozici dostatek paměti.|  
+|HOST_E_ABANDONED|Událost byla zrušena, zatímco na ní čekalo blokované vlákno nebo vlákno.|  
+|E_fail|Došlo k neznámému katastrofickému selhání. Když metoda vrátí E_FAIL CLR již není použitelný v rámci procesu. Následná volání metod hostování vrátí HOST_E_CLRNOTAVAILABLE.|  
+|E_OUTOFMEMORY|K dokončení požadavku na přidělení nebylo k dispozici dostatek paměti.|  
   
 ## <a name="remarks"></a>Poznámky  
- Modul CLR získá ukazatel rozhraní na instanci `IHostMalloc` voláním metody [IHostMemoryManager:: CreateMalloc –](../../../../docs/framework/unmanaged-api/hosting/ihostmemorymanager-createmalloc-method.md) .  
+ CLR získá ukazatel rozhraní `IHostMalloc` k instanci voláním metody [IHostMemoryManager::CreateMalloc.](../../../../docs/framework/unmanaged-api/hosting/ihostmemorymanager-createmalloc-method.md)  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Hlavička:** MSCorEE. h  
+ **Záhlaví:** MSCorEE.h  
   
- **Knihovna:** Zahrnuto jako prostředek v knihovně MSCorEE. dll  
+ **Knihovna:** Zahrnuto jako prostředek v souboru MSCorEE.dll  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [IHostMemoryManager – rozhraní](../../../../docs/framework/unmanaged-api/hosting/ihostmemorymanager-interface.md)
 - [IHostMalloc – rozhraní](../../../../docs/framework/unmanaged-api/hosting/ihostmalloc-interface.md)

@@ -12,50 +12,50 @@ api_type:
 ms.assetid: 6f60aae6-70ec-4c4c-963a-138df98c4668
 topic_type:
 - apiref
-ms.openlocfilehash: afeec3df03fc2b122ca8deb8123b79314b5e3837
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.openlocfilehash: 341a86f4c1c8367f979e193a6284bf89f1b03ca0
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76782424"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79178806"
 ---
 # <a name="icordebugilframe4enumeratelocalvariablesex-method"></a>ICorDebugILFrame4::EnumerateLocalVariablesEx – metoda
-[Podporované v .NET Framework 4.5.2 a novějších verzích]  
+[Podporováno v rozhraní .NET Framework 4.5.2 a novějších verzích]  
   
- Získá enumerátor pro místní proměnnou v rámci a volitelně zahrnuje proměnné přidané v profileru ReJIT instrumentace.  
+ Získá čítač výčtu pro místní proměnné v rámci a volitelně zahrnuje proměnné přidané v profileru ReJIT instrumentace.  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```cpp
 HRESULT EnumerateLocalVariablesEx(  
-   [in] ILCodeKind flags,   
+   [in] ILCodeKind flags,
    [out] ICorDebugValueEnum **ppValueEnum  
 );  
 ```  
   
 ## <a name="parameters"></a>Parametry  
  `flags`  
- pro Člen výčtu [ILCodeKind](ilcodekind-enumeration.md) , který určuje, jestli jsou proměnné přidané v profileru ReJIT instrumentace zahrnuté do snímku.  
+ [v] Člen výčtu [ILCodeKind,](ilcodekind-enumeration.md) který určuje, zda jsou v rámci zahrnuty proměnné přidané v instrumentaci ReJIT profileru.  
   
  `ppValueEnum`  
- mimo Ukazatel na adresu objektu "ICorDebugValueEnum", který je enumerátorem místních proměnných v tomto snímku.  
+ [out] Ukazatel na adresu objektu "ICorDebugValueEnum", který je čítatelem pro místní proměnné v tomto rámci.  
   
 ## <a name="remarks"></a>Poznámky  
- Tato metoda se podobá metodě [EnumerateLocalVariables –](icordebugilframe-enumeratelocalvariables-method.md) , s tím rozdílem, že volitelně přistupuje k proměnným přidaným v profileru ReJIT instrumentace. Nastavení `flags` na `ILCODE_ORIGINAL_IL` je ekvivalentní volání [ICorDebugILFrame:: EnumerateLocalVariables –](icordebugilframe-enumeratelocalvariables-method.md). Nastavení `flags` `ILCODE_REJIT_IL` umožňuje ladicímu programu přístup k místním proměnným přidaným v profileru ReJIT instrumentace. Pokud není proinstrumentované rozhraní IL (Intermediate Language), je výčet prázdný a metoda vrátí `S_OK`.  
+ Tato metoda je podobná [EnumerateLocalVariables](icordebugilframe-enumeratelocalvariables-method.md) metoda, s tím rozdílem, že volitelně přistupuje proměnné přidané v profileru ReJIT instrumentace. Nastavení `flags` `ILCODE_ORIGINAL_IL` je ekvivalentní volání [ICorDebugILFrame::EnumerateLocalVariables](icordebugilframe-enumeratelocalvariables-method.md). Nastavení `flags` `ILCODE_REJIT_IL` umožňuje ladicí program pro přístup k místním proměnným přidaným v instrumentaci ReJIT profileru. Pokud zprostředkující jazyk (IL) není instrumentovaný, výčet je `S_OK`prázdný a metoda vrátí .  
   
- Enumerátor nesmí obsahovat všechny místní proměnné v běžící metodě, protože některé z nich nemusí být aktivní.  
+ Čítač nemusí obsahovat všechny místní proměnné v běžící metodě, protože některé z nich nemusí být aktivní.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Hlavička:** CorDebug. idl, CorDebug. h  
+ **Záhlaví:** CorDebug.idl, CorDebug.h  
   
- **Knihovna:** CorGuids. lib  
+ **Knihovna:** CorGuids.lib  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v452plus](../../../../includes/net-current-v452plus-md.md)]  
+ **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v452plus](../../../../includes/net-current-v452plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [ICorDebugILFrame4 – rozhraní](icordebugilframe4-interface.md)
-- [Rozhraní pro ladění](debugging-interfaces.md)
-- [ReJIT: Průvodce](https://docs.microsoft.com/archive/blogs/davbr/rejit-a-how-to-guide)
+- [Debugging – rozhraní](debugging-interfaces.md)
+- [ReJIT: Návod, jak](https://docs.microsoft.com/archive/blogs/davbr/rejit-a-how-to-guide)

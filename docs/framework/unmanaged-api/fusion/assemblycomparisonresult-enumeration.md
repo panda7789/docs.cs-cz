@@ -14,32 +14,32 @@ helpviewer_keywords:
 ms.assetid: bd042f89-10b1-40ca-946e-46da082f5263
 topic_type:
 - apiref
-ms.openlocfilehash: 3d3fd88a2c1ac90f823b23d8d2bcb5b177a625c3
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: e3cdb648397ca4f4aa2326e4f2349a5a14c3edcc
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73109015"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79178295"
 ---
 # <a name="assemblycomparisonresult-enumeration"></a>AssemblyComparisonResult – výčet
-Označuje ekvivalent dvou identit sestavení, jak je určeno funkcí [CompareAssemblyIdentity –](compareassemblyidentity-function.md) .  
+Označuje rovnocennost dvou identit sestavení, jak je určeno [CompareAssemblyIdentity](compareassemblyidentity-function.md) funkce.  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```cpp  
 typedef enum _tagAssemblyComparisonResult {  
-    ACR_Unknown,   
+    ACR_Unknown,
     ACR_EquivalentFullMatch,  
     ACR_EquivalentWeakNamed,  
     ACR_EquivalentFXUnified,  
-    ACR_EquivalentUnified,    
+    ACR_EquivalentUnified,
     ACR_NonEquivalentVersion,  
-    ACR_NonEquivalent,      
+    ACR_NonEquivalent,
     ACR_EquivalentPartialMatch,  
-    ACR_EquivalentPartialWeakNamed,    
+    ACR_EquivalentPartialWeakNamed,
     ACR_EquivalentPartialUnified,  
     ACR_EquivalentPartialFXUnified,  
-    ACR_NonEquivalentPartialVersion    
+    ACR_NonEquivalentPartialVersion
 } AssemblyComparisonResult;  
 ```  
   
@@ -47,29 +47,29 @@ typedef enum _tagAssemblyComparisonResult {
   
 |Název členu|Popis|  
 |-----------------|-----------------|  
-|`ACR_EquivalentFullMatch`|Označuje, že všechna pole sestavení v porovnání se shodují.|  
-|`ACR_EquivalentFXUnified`|Označuje, že sestavení jsou považována za ekvivalentní na základě verze modulu CLR (Common Language Runtime) z sjednocení čísel verzí sestavení v .NET Framework verze 2,0.|  
-|`ACR_EquivalentPartialFXUnified`|Označuje částečnou shodu sestavení založenou na sjednocení CLR čísel verzí sestavení v .NET Framework 2,0.|  
+|`ACR_EquivalentFullMatch`|Označuje, že všechna pole sestavení v porovnání odpovídají.|  
+|`ACR_EquivalentFXUnified`|Označuje, že sestavení jsou považovány za ekvivalentní na základě sjednocení čísla verzí sestavení v rozhraní .NET Framework verze 2.0 ve verzi CLR (CLR) ve společném jazyce.|  
+|`ACR_EquivalentPartialFXUnified`|Označuje částečnou shodu sestavení na základě sjednocení CLR čísel verzí sestavení v rozhraní .NET Framework 2.0.|  
 |`ACR_EquivalentPartialMatch`|Označuje částečnou shodu sestavení.|  
-|`ACR_EquivalentPartialUnified`|Označuje částečnou shodu sestavení na základě zastaralého sjednocení čísel verzí.|  
+|`ACR_EquivalentPartialUnified`|Označuje částečnou shodu sestavení na základě staršího sjednocení čísel verzí.|  
 |`ACR_EquivalentPartialWeakNamed`|Označuje částečnou shodu jednoduše pojmenovaných sestavení.|  
-|`ACR_EquivalentUnified`|Označuje, že sestavení jsou považována za ekvivalentní na základě sjednocení čísel verzí ve starších verzích .NET Framework v rámci CLR.|  
+|`ACR_EquivalentUnified`|Označuje, že sestavení jsou považovány za ekvivalentní na základě clr sjednocení čísel verzí ve starších verzích rozhraní .NET Framework.|  
 |`ACR_EquivalentWeakNamed`|Označuje shodu mezi dvěma jednoduše pojmenovanými sestaveními, jejichž čísla verzí byla ignorována.|  
 |`ACR_NonEquivalent`|Označuje, že mezi dvěma sestaveními nedošlo k žádné shodě.|  
-|`ACR_NonEquivalentPartialVersion`|Označuje, že se dvě sestavení shodují s výjimkou jejich čísel verzí, která se shodují pouze částečně.|  
-|`ACR_NonEquivalentVersion`|Označuje, že se dvě sestavení shodují s výjimkou jejich čísel verzí, která se neshodují.|  
-|`ACR_Unknown`|Označuje, že důvod nerovnocennosti není znám.|  
+|`ACR_NonEquivalentPartialVersion`|Označuje, že dvě sestavení odpovídají s výjimkou jejich čísel verzí, které odpovídají pouze částečně.|  
+|`ACR_NonEquivalentVersion`|Označuje, že dvě sestavení odpovídají s výjimkou jejich čísla verzí, které se neshodují.|  
+|`ACR_Unknown`|Označuje, že důvod neekvivalence není znám.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
+ **Platformy:** Viz [Systémové požadavky](../../get-started/system-requirements.md).  
   
- **Hlavička:** Fusion. h  
+ **Záhlaví:** Fusion.h  
   
- **Knihovna:** Zahrnuto jako prostředek v knihovně MsCorEE. dll  
+ **Knihovna:** Zahrnuto jako prostředek v souboru MsCorEE.dll  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [CompareAssemblyIdentity – funkce](compareassemblyidentity-function.md)
-- [Výčty pro fúze](fusion-enumerations.md)
+- [Výčty fúzí](fusion-enumerations.md)

@@ -15,20 +15,20 @@ helpviewer_keywords:
 ms.assetid: 025e358c-448f-4423-a2f2-57acf437c8a5
 topic_type:
 - apiref
-ms.openlocfilehash: 3a628aec0823c5db07d31d33813a020606906163
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 0c112819ef3bc4f9a7146ee80f55202ff89d689a
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74438125"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79178319"
 ---
 # <a name="isymunmanagedwriter3openmethod2-method"></a>ISymUnmanagedWriter3::OpenMethod2 – metoda
-Otevře metodu a poskytne její skutečný posun oddílu v obrázku.  
+Otevře metodu a v obraze poskytuje její skutečný posun oddílu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```cpp  
-HRESULT OpenMethod2(   
+HRESULT OpenMethod2(
     [in] mdMethodDef method,  
     [in] ULONG32 isect,  
     [in] ULONG32 offset);  
@@ -36,21 +36,21 @@ HRESULT OpenMethod2(
   
 ## <a name="parameters"></a>Parametry  
  `method`  
- pro Token metadat pro metodu, která se má otevřít  
+ [v] Token metadat pro metodu, která má být otevřena.  
   
  `isect`  
- pro Posun oddílu v obrázku  
+ [v] Posun oddílu v obraze.  
   
  `offset`  
- pro Posun v obrázku  
+ [v] Posun v obraze.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- S_OK, pokud je metoda úspěšná; v opačném případě E_FAIL nebo nějaký jiný kód chyby.  
+ S_OK pokud je metoda úspěšná; v opačném případě E_FAIL nebo jiný kód chyby.  
   
 ## <a name="requirements"></a>Požadavky  
- **Hlavička:** CorSym. idl, CorSym. h  
+ **Záhlaví:** CorSym.idl, CorSym.h  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [ISymUnmanagedWriter3 – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter3-interface.md)
 - [OpenMethod – metoda](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-openmethod-method.md)

@@ -7,26 +7,26 @@ helpviewer_keywords:
 - listeners element for <source>
 - <listeners> element for <source>
 ms.assetid: a2991f43-b4d3-4614-a8e7-da392de9697f
-ms.openlocfilehash: d7641611e5d8257b49bc6a6abd0a2fadfde66e91
-ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
+ms.openlocfilehash: 0eee325e01b41a15a19e4f40f479596f9d70f73b
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/01/2019
-ms.locfileid: "71697293"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79153409"
 ---
-# <a name="listeners-element-for-source"></a>> prvek \<naslouchací služby pro \<zdroj >
-Přidá nebo odebere naslouchací procesy v kolekci <xref:System.Diagnostics.TraceSource.Listeners%2A> pro <xref:System.Diagnostics.TraceSource>. Naslouchací proces směruje výstup trasování do příslušného cíle, jako je protokol, okno nebo textový soubor.  
+# <a name="listeners-element-for-source"></a>\<naslouchací> Element pro \<zdrojový>
+Přidá nebo odebere posluchače v kolekci <xref:System.Diagnostics.TraceSource.Listeners%2A> pro <xref:System.Diagnostics.TraceSource>. Naslouchací proces směruje výstup trasování na příslušný cíl, například protokol, okno nebo textový soubor.  
   
-[**Konfigurace \<>** ](../configuration-element.md)  
-&nbsp;&nbsp;[ **\<System. diagnostics >** ](system-diagnostics-element.md)  
-&nbsp;&nbsp;&nbsp;&nbsp;[ **\<zdrojů >** ](sources-element.md)  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<zdroj >** ](source-element.md)  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<Listeners** >  
+[**\<>konfigurace**](../configuration-element.md)  
+&nbsp;&nbsp;[**\<system.diagnostická>**](system-diagnostics-element.md)  
+&nbsp;&nbsp;&nbsp;&nbsp;[**\<zdroje>**](sources-element.md)  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<zdrojové>**](source-element.md)  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<posluchači>**  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```xml  
-<listeners>   
+<listeners>
   <add>...</add>  
   <remove ... />  
   <clear/>  
@@ -41,39 +41,39 @@ Přidá nebo odebere naslouchací procesy v kolekci <xref:System.Diagnostics.Tra
   
 ### <a name="child-elements"></a>Podřízené elementy  
   
-|Prvek|Popis|  
+|Element|Popis|  
 |-------------|-----------------|  
-|[\<add>](add-element-for-listeners-for-source.md)|Přidá naslouchací proces do kolekce `Listeners`.|  
-|[\<remove>](remove-element-for-listeners-for-source.md)|Odebere naslouchací proces z kolekce `Listeners`.|  
-|[\<clear>](clear-element-for-listeners-for-source.md)|Vymaže kolekci `Listeners` pro zdroj trasování.|  
+|[\<přidat>](add-element-for-listeners-for-source.md)|Přidá naslouchací proces do `Listeners` kolekce.|  
+|[\<odebrat>](remove-element-for-listeners-for-source.md)|Odebere naslouchací proces z `Listeners` kolekce.|  
+|[\<jasné>](clear-element-for-listeners-for-source.md)|Vymaže kolekci `Listeners` pro zdroj trasování.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
-|Prvek|Popis|  
+|Element|Popis|  
 |-------------|-----------------|  
 |`configuration`|Kořenový prvek v každém konfiguračním souboru, který je používán modulem Common Language Runtime (CLR) a aplikacemi rozhraní .NET Framework.|  
-|`system.diagnostics`|Určuje naslouchací procesy trasování, které shromažďují, ukládají a směrují zprávy a úroveň, kde je nastaven přepínač trasování.|  
-|`sources`|Obsahuje zdroje trasování, které spouštějí trasovací zprávy.|  
-|`source`|Určuje zdroj trasování, který inicializuje trasovací zprávy.|  
+|`system.diagnostics`|Určuje posluchače trasování, které shromažďují, ukládají a směrují zprávy, a úroveň, na které je nastaven přepínač trasování.|  
+|`sources`|Obsahuje zdroje trasování, které iniciují tracing zprávy.|  
+|`source`|Určuje zdroj trasování, který iniciuje trasování zpráv.|  
   
 ## <a name="remarks"></a>Poznámky  
   
 ## <a name="configuration-file"></a>Konfigurační soubor  
- Tento element lze použít v konfiguračním souboru počítače (Machine. config) a v konfiguračním souboru aplikace.  
+ Tento prvek lze použít v konfiguračním souboru počítače (Machine.config) a v konfiguračním souboru aplikace.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje, jak použít `<listeners>` element pro přidání naslouchacího procesu trasování konzoly do zdroje `mySource` a odebrání výchozího naslouchacího procesu trasování.  
+ Následující příklad ukazuje, jak `<listeners>` použít prvek k přidání `mySource` posluchače trasování konzoly do zdroje a odebrat výchozí naslouchací proces trasování.  
   
 ```xml  
 <configuration>  
   <system.diagnostics>  
     <sources>  
-      <source name="mySource" switchName="sourceSwitch"   
+      <source name="mySource" switchName="sourceSwitch"
         switchType="System.Diagnostics.SourceSwitch">  
         <listeners>  
-          <add name="console"   
+          <add name="console"
             type="System.Diagnostics.ConsoleTraceListener">  
-            <filter type="System.Diagnostics.EventTypeFilter"   
+            <filter type="System.Diagnostics.EventTypeFilter"
               initializeData="Error"/>  
           </add>  
           <remove name="Default"/>  
@@ -87,7 +87,7 @@ Přidá nebo odebere naslouchací procesy v kolekci <xref:System.Diagnostics.Tra
 </configuration>  
 ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Diagnostics.TraceListener>
 - [Trasování a ladění schématu nastavení](index.md)

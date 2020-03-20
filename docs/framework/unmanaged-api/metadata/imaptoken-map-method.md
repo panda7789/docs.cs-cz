@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: b9b4bf2f-1098-43d6-9619-a99b4bda1940
 topic_type:
 - apiref
-ms.openlocfilehash: fd362beb9f8fd7a1f2076eb6490a96c0358520e4
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 428b022ed560648f59798154d5987d382938c280
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74432147"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79176068"
 ---
 # <a name="imaptokenmap-method"></a>IMapToken::Map – metoda
 Mapuje vztah mezi sestaveními pomocí podpisů metadat.  
@@ -29,30 +29,30 @@ Mapuje vztah mezi sestaveními pomocí podpisů metadat.
   
 ```cpp  
 HRESULT Map (  
-    [in]  mdToken tkImp,   
+    [in]  mdToken tkImp,
     [in]  mdToken tkEmit  
 );  
 ```  
   
 ## <a name="parameters"></a>Parametry  
  `tkImp`  
- pro Token metadat, který reprezentuje objekt importovaného kódu.  
+ [v] Token metadat, který představuje importovaný objekt kódu.  
   
  `tkEmit`  
- pro Token metadat, který reprezentuje objekt emitovaného kódu.  
+ [v] Token metadat, který představuje objekt emitovaného kódu.  
   
 ## <a name="remarks"></a>Poznámky  
- Když dojde ke změně tokenu během sloučení, původní token se zaznamená v importovaném (zdrojovém) oboru metadat a nový token je vymezen v oboru metadat emited (Targeting).  
+ Když dojde k opětovnému mapování tokenu během sloučení, původní token je vymezen v oboru importovaného (zdrojového) metadat a nový token je vymezen v oboru emitovaných (cílových) metadat.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Hlavička:** Cor. h  
+ **Záhlaví:** Kor.h.  
   
- **Knihovna:** Používá se jako prostředek v knihovně MsCorEE. dll.  
+ **Knihovna:** Používá se jako prostředek v souboru MsCorEE.dll  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [IMapToken – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imaptoken-interface.md)

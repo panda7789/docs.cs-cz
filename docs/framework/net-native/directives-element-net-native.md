@@ -1,24 +1,24 @@
 ---
-title: <Directives> – element (.NET Native)
+title: <Directives>Element (nativní.NET)
 ms.date: 03/30/2017
 ms.assetid: 444846f3-48d5-4341-a43e-69f7221389eb
-ms.openlocfilehash: abe2e7221e0afb984a6178b12fabc36ea24deb35
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 49c1aaf005b80a6c1c1fa382eebc2cb0dbfa4be7
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73128474"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79181046"
 ---
-# <a name="directives-element-net-native"></a>\<direktivy > elementu (.NET Native)
-Kořenový element v každém souboru direktiv modulu runtime pro .NET Native.  
+# <a name="directives-element-net-native"></a>\<Direktivy> element (nativní.NET)
+Kořenový prvek v každém souboru direktiv runtime pro nativní rozhraní .NET.  
   
- `<Directives xmlns="http://schemas.microsoft.com/netfx/2013/01/metadata">` 
+ `<Directives xmlns="http://schemas.microsoft.com/netfx/2013/01/metadata">`
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```xml  
 <Directives xmlns="http://schemas.microsoft.com/netfx/2013/01/metadata">  
-   <!-- child elements -->   
+   <!-- child elements -->
 </Directives>  
 ```  
   
@@ -26,21 +26,21 @@ Kořenový element v každém souboru direktiv modulu runtime pro .NET Native.
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|`xmlns`|Obor názvů XML. Jeho hodnota je vždy **"http://schemas.microsoft.com/netfx/2013/01/metadata"** .|  
+|`xmlns`|Obor názvů XML. Jeho hodnota je vždy **"http://schemas.microsoft.com/netfx/2013/01/metadata"**.|  
   
 ## <a name="child-elements"></a>Podřízené prvky  
   
-|Prvek|Popis|  
+|Element|Popis|  
 |-------------|-----------------|  
-|[\<> aplikace](application-element-net-native.md)|Slouží jako kontejner pro typy v rámci aplikace a členy typu, jejichž metadata jsou k dispozici pro reflexi.|  
-|[> knihovny \<](library-element-net-native.md)|Definuje sestavení, jehož podřízené typy a členové typu v době běhu vyžadují metadata.|  
+|[\<>aplikace](application-element-net-native.md)|Slouží jako kontejner pro typy pro celou aplikaci a členy typu, jejichž metadata jsou k dispozici pro reflexi.|  
+|[\<>knihovny](library-element-net-native.md)|Definuje sestavení, jehož podřízené typy a členy typu vyžadují metadata za běhu.|  
   
 ## <a name="remarks"></a>Poznámky  
- Každý soubor direktiv modulu runtime může obsahovat pouze jeden `<Directives>` element.  
+ Každý soubor direktiv runtime direktivy může obsahovat pouze jeden `<Directives>` prvek.  
   
- Element `<Directives>` může obsahovat nula nebo jeden [\<> prvek aplikace](application-element-net-native.md) a nula, jeden nebo více [knihoven\<](library-element-net-native.md) prvků.  
+ Prvek `<Directives>` může obsahovat nula nebo jeden [ \<prvek>aplikace](application-element-net-native.md) a nula, jeden nebo více [ \<prvků Library>.](library-element-net-native.md)  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Informace o konfiguračním souboru direktiv modulu runtime (rd.xml)](runtime-directives-rd-xml-configuration-file-reference.md)
 - [Elementy direktivy modulu runtime](runtime-directive-elements.md)

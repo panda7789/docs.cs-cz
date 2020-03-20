@@ -1,5 +1,5 @@
 ---
-title: Get – funkce (Reference nespravovaného rozhraní API)
+title: Get funkce (Unmanaged API Reference)
 description: Funkce Get načte zadanou hodnotu vlastnosti.
 ms.date: 11/06/2017
 api_name:
@@ -14,12 +14,12 @@ helpviewer_keywords:
 - Get function [.NET WMI and performance counters]
 topic_type:
 - Reference
-ms.openlocfilehash: 60f29b91000fd3c07efea88dcc319eb283a4af78
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 67fcfb301eebfcf4ed4fdcaa5c9ddf85c47a6073
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73120328"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79174976"
 ---
 # <a name="get-function"></a>Funkce Get
 
@@ -31,73 +31,73 @@ Načte zadanou hodnotu vlastnosti, pokud existuje.
 
 ```cpp
 HRESULT Get (
-   [in] int               vFunc, 
-   [in] IWbemClassObject* ptr, 
+   [in] int               vFunc,
+   [in] IWbemClassObject* ptr,
    [in] LPCWSTR           wszName,
    [in] LONG              lFlags,
    [out] VARIANT*         pVal,
    [out] CIMTYPE*         pvtType,
    [out] LONG*            plFlavor
-); 
+);
 ```
 
 ## <a name="parameters"></a>Parametry
 
 `vFunc`\
-pro Tento parametr se nepoužívá.
+[v] Tento parametr není použit.
 
 `ptr`\
-pro Ukazatel na instanci [IWbemClassObject](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject) .
+[v] Ukazatel na instanci [IWbemClassObject.](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject)
 
 `wszName`\
-pro Název vlastnosti.
+[v] Název vlastnosti.
 
 `lFlags`\
-pro Rezervovaný. Tento parametr musí mít hodnotu 0.
+[v] Vyhrazena. Tento parametr musí být 0.
 
 `pVal`\
-mimo Pokud se funkce vrátí úspěšně, obsahuje hodnotu vlastnosti `wszName`. Argumentu `pval` je přiřazen správný typ a hodnota kvalifikátoru.
+[out] Pokud funkce vrátí úspěšně, obsahuje hodnotu vlastnosti. `wszName` Argumentu `pval` je přiřazen správný typ a hodnota kvalifikátoru.
 
 `pvtType`\
-mimo Pokud se funkce vrátí úspěšně, obsahuje [konstantu typu CIM](/windows/win32/api/wbemcli/ne-wbemcli-cimtype_enumeration) , která označuje typ vlastnosti. Její hodnota může být také `null`. 
+[out] Pokud funkce vrátí úspěšně, obsahuje [konstantu typu CIM,](/windows/win32/api/wbemcli/ne-wbemcli-cimtype_enumeration) která označuje typ vlastnosti. Jeho hodnota může `null`být také .
 
 `plFlavor`\
-mimo Pokud se funkce vrátí úspěšně, obdrží informace o původu vlastnosti. Jeho hodnota může být `null`nebo jedna z následujících konstant WBEM_FLAVOR_TYPE definovaných v souboru hlaviček *WbemCli. h* : 
+[out] Pokud se funkce vrátí úspěšně, obdrží informace o původu vlastnosti. Jeho hodnota `null`může být , nebo jeden z následujících WBEM_FLAVOR_TYPE konstantdefinovaných v souboru hlavičky *WbemCli.h:*
 
-|Konstanta  |Hodnota  |Popis  |
+|Trvalé  |Hodnota  |Popis  |
 |---------|---------|---------|
 | `WBEM_FLAVOR_ORIGIN_SYSTEM` | 0x40 | Vlastnost je standardní systémová vlastnost. |
-| `WBEM_FLAVOR_ORIGIN_PROPAGATED` | 0x20 | Pro třídu: vlastnost je zděděna z nadřazené třídy. <br> Pro instanci: vlastnost, která byla zděděna z nadřazené třídy, nebyla upravena instancí.  |
-| `WBEM_FLAVOR_ORIGIN_LOCAL` | 0,8 | Pro třídu: vlastnost patří do odvozené třídy. <br> Pro instanci: vlastnost je upravena instancí. To znamená, že byla zadána hodnota nebo byl přidán nebo upraven kvalifikátor. |
+| `WBEM_FLAVOR_ORIGIN_PROPAGATED` | 0x20 | Pro třídu: Vlastnost je zděděna z nadřazené třídy. <br> Pro instanci: Vlastnost, zatímco zděděné z nadřazené třídy, nebyla změněna instance.  |
+| `WBEM_FLAVOR_ORIGIN_LOCAL` | 0 | Pro třídu: Vlastnost patří do odvozené třídy. <br> Pro instanci: Vlastnost je upravena instance; to znamená, že byla zadána hodnota nebo byl přidán nebo změněn kvalifikátor. |
 
 ## <a name="return-value"></a>Návratová hodnota
 
-Následující hodnoty vrácené touto funkcí jsou definovány v souboru hlaviček *WbemCli. h* nebo je můžete definovat jako konstanty v kódu:
+Následující hodnoty vrácené touto funkcí jsou definovány v souboru *hlavičky WbemCli.h,* nebo je můžete definovat jako konstanty v kódu:
 
-|Konstanta  |Hodnota  |Popis  |
+|Trvalé  |Hodnota  |Popis  |
 |---------|---------|---------|
-|`WBEM_E_FAILED` | 0x80041001 | Došlo k obecné chybě. |
-|`WBEM_E_INVALID_PARAMETER` | 0x80041008 | Jeden nebo více parametrů je neplatných. |
+|`WBEM_E_FAILED` | 0x80041001 | Došlo k obecnému selhání. |
+|`WBEM_E_INVALID_PARAMETER` | 0x80041008 | Jeden nebo více parametrů není platný. |
 |`WBEM_E_NOT_FOUND` | 0x80041002 | Zadaná vlastnost nebyla nalezena. |
-|`WBEM_E_OUT_OF_MEMORY` | 0x80041006 | K dokončení této operace není k dispozici dostatek paměti. |
-|`WBEM_S_NO_ERROR` | 0,8 | Volání funkce bylo úspěšné.  |
+|`WBEM_E_OUT_OF_MEMORY` | 0x80041006 | K dokončení operace není k dispozici dostatek paměti. |
+|`WBEM_S_NO_ERROR` | 0 | Volání funkce bylo úspěšné.  |
 
 ## <a name="remarks"></a>Poznámky
 
-Tato funkce zalomí volání metody [IWbemclassObject:: Get](/windows/desktop/api/wbemcli/nf-wbemcli-iwbemclassobject-get) .
+Tato funkce zabalí volání [metody IWbemClassObject::Get.](/windows/desktop/api/wbemcli/nf-wbemcli-iwbemclassobject-get)
 
-Funkce `Get` může také vracet systémové vlastnosti.
+Funkce `Get` může také vrátit vlastnosti systému.
 
-Argumentu `pVal` je přiřazen správný typ a hodnota kvalifikátoru a funkce [VARIANTINIT](https://docs.microsoft.com/previous-versions/windows/desktop/api/oleauto/nf-oleauto-variantinit) com.
+Argumentu `pVal` je přiřazen správný typ a hodnota pro kvalifikátor a funkci COM [VariantInit.](https://docs.microsoft.com/previous-versions/windows/desktop/api/oleauto/nf-oleauto-variantinit)
 
 ## <a name="requirements"></a>Požadavky
 
- **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).
+ **Platformy:** Viz [Systémové požadavky](../../get-started/system-requirements.md).
 
- **Hlavička:** WMINet_Utils. idl
+ **Záhlaví:** WMINet_Utils.idl
 
- **Verze .NET Framework:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]
+ **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [WMI a čítače výkonu (Reference nespravovaného rozhraní API)](index.md)
+- [Čítače služby WMI a výkonu (nespravovaný odkaz na rozhraní API)](index.md)

@@ -15,16 +15,16 @@ topic_type:
 - apiref
 author: cshung
 ms.author: andrewau
-ms.openlocfilehash: 3f6928832d822422177ebd7def142422953468a0
-ms.sourcegitcommit: 3caa92cb97e9f6c31f21769c7a3f7c4304024b39
+ms.openlocfilehash: e680a7a0dc3209d1988f6c84be0864572a74b3a4
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "71274297"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79179367"
 ---
 # <a name="clrdata_il_address_map-structure"></a>CLRDATA_IL_ADDRESS_MAP – struktura
 
-Definuje mapování IL na adresu.
+Definuje IL pro mapování adres.
 
 [!INCLUDE[debugging-api-recommended-note](../../../../includes/debugging-api-recommended-note.md)]
 
@@ -44,24 +44,23 @@ typedef struct
 
 | Člen         | Popis                                            |
 | -------------- | ------------------------------------------------------ |
-| `ilOffset`     | Posunutí IL pro rozsah obsažených adres              |
+| `ilOffset`     | Il posun pro oblast obsažené adresy              |
 | `startAddress` | Počáteční adresa rozsahu.                        |
 | `endAddress`   | Koncová adresa rozsahu.                          |
-| `type`         | Typ dat Tato hodnota se v tuto chvíli nepoužívá. |
+| `type`         | Typ dat. Tato hodnota se v současné době nepoužívá. |
 
 ## <a name="remarks"></a>Poznámky
 
-Tato struktura žije v modulu runtime a není vystavena prostřednictvím žádné hlavičky nebo souborů knihoven. Chcete-li jej použít, definujte strukturu, jak je uvedeno `CLRDATA_ADDRESS` výše, kde je 64-bit unsigned integer.
+Tato struktura žije uvnitř runtime a není vystavena prostřednictvím žádné záhlaví nebo soubory knihovny. Chcete-li jej použít, definujte `CLRDATA_ADDRESS` strukturu, jak je uvedeno výše, kde je 64bitové nepodepsané celé číslo.
 
 ## <a name="requirements"></a>Požadavky
 
-**Platformu** Viz [požadavky na systém](../../get-started/system-requirements.md).  
-**Hlaviček** Žádné  
-**Knihovna** Žádné   
-**Verze .NET Framework:** [!INCLUDE[net_current_v47plus](../../../../includes/net-current-v47plus.md)]  
+**Platformy:** Viz [Systémové požadavky](../../get-started/system-requirements.md).  
+**Záhlaví:** Žádný  
+**Knihovna:** Žádné **verze rozhraní .NET Framework:**[!INCLUDE[net_current_v47plus](../../../../includes/net-current-v47plus.md)]  
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [CLRDataSourceType Enumeration](clrdatasourcetype-enumeration.md)
-- [Ladění](index.md)
+- [Výčet clrdatasourcetype](clrdatasourcetype-enumeration.md)
+- [ladění](index.md)
 - [Struktury pro ladění](debugging-structures.md)

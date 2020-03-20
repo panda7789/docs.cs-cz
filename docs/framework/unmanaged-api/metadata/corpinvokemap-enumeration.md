@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: f14f986e-f6ce-42bc-aa23-18150c46d28c
 topic_type:
 - apiref
-ms.openlocfilehash: 17b7af7016cf88fd3ae263dd952502d515b0c833
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 8216dc3030b18428ab52fbf8385d392f81057aa0
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74441555"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79176146"
 ---
 # <a name="corpinvokemap-enumeration"></a>CorPinvokeMap – výčet
 Určuje možnosti pro volání PInvoke.  
@@ -47,7 +47,7 @@ typedef enum  CorPinvokeMap {
     pmThrowOnUnmappableCharDisabled   = 0x2000,  
     pmThrowOnUnmappableCharMask       = 0x3000,  
   
-    pmSupportsLastError = 0x0040,   
+    pmSupportsLastError = 0x0040,
   
     pmCallConvMask      = 0x0700,  
     pmCallConvWinapi    = 0x0100,  
@@ -61,40 +61,40 @@ typedef enum  CorPinvokeMap {
 } CorPinvokeMap;  
 ```  
   
-## <a name="members"></a>Members  
+## <a name="members"></a>Členové  
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`pmNoMangle`|Použijte název každého člena podle zadání.|  
-|`pmCharSetMask`|Rezervovaný.|  
-|`pmCharSetNotSpec`|Rezervovaný.|  
-|`pmCharSetAnsi`|Zařazování řetězců jako řetězce znaků s více bajty.|  
-|`pmCharSetUnicode`|Zařazování řetězců jako znaků Unicode 2 bajtů.|  
-|`pmCharSetAuto`|Pro cílový operační systém jsou automaticky zařazeny řetězce odpovídajícím způsobem. Výchozí hodnota je Unicode v systémech Windows NT, Windows 2000, Windows XP a Windows Server 2003. Výchozí hodnota je ANSI v systému Windows 98 a Windows Millennium.|  
-|`pmBestFitUseAssem`|Rezervovaný.|  
-|`pmBestFitEnabled`|Proveďte nejvhodnější mapování znaků Unicode, u kterých chybí přesná shoda v sadě znaků ANSI.|  
-|`pmBestFitDisabled`|Neprovádějte nejlepší mapování znaků Unicode. V takovém případě budou všechny nemapovatelný znaky nahrazeny znakem "?".|  
-|`pmBestFitMask`|Rezervovaný.|  
-|`pmThrowOnUnmappableCharUseAssem`|Rezervovaný.|  
-|`pmThrowOnUnmappableCharEnabled`|Vyvolat výjimku, když zařazovací modul Interop nalezne nemapovatelný znak.|  
-|`pmThrowOnUnmappableCharDisabled`|Nevyvolejte výjimku, když zařazovací modul Interop nalezne nemapovatelný znak.|  
+|`pmNoMangle`|Použijte každý název člena, jak je zadáno.|  
+|`pmCharSetMask`|Vyhrazeno.|  
+|`pmCharSetNotSpec`|Vyhrazeno.|  
+|`pmCharSetAnsi`|Řetězce marshaljako vícebajtové řetězce znaků.|  
+|`pmCharSetUnicode`|Řetězce marshal jako dvoubajtové znaky Unicode.|  
+|`pmCharSetAuto`|Automaticky zařazují řetězce vhodně pro cílový operační systém. Výchozí hodnota je Unicode v systémech Windows NT, Windows 2000, Windows XP a Windows Server 2003; Výchozí hodnota je ANSI v systémech Windows 98 a Windows ME.|  
+|`pmBestFitUseAssem`|Vyhrazeno.|  
+|`pmBestFitEnabled`|Proveďte nejvhodnější mapování znaků Unicode, které v znakové sadě ANSI nemají přesnou shodu.|  
+|`pmBestFitDisabled`|Neprovádějte nejvhodnější mapování znaků Unicode. V tomto případě budou všechny nezamísťující znaky nahrazeny znakem '?'.|  
+|`pmBestFitMask`|Vyhrazeno.|  
+|`pmThrowOnUnmappableCharUseAssem`|Vyhrazeno.|  
+|`pmThrowOnUnmappableCharEnabled`|Vyvolání výjimky, když interop zařazovač narazí na nemappable znak.|  
+|`pmThrowOnUnmappableCharDisabled`|Nevyvolávejte výjimku, když interop zařazovač narazí na nemappable znak.|  
 |`pmThrowOnUnmappableCharMask`|Vyhrazeno|  
-|`pmSupportsLastError`|Umožňuje volanému volat funkci Win32 `SetLastError` před vrácením z metody s atributy.|  
+|`pmSupportsLastError`|Povolte volavce volat funkci `SetLastError` Win32 před návratem z přiřazené metody.|  
 |`pmCallConvMask`|Vyhrazeno|  
-|`pmCallConvWinapi`|Použijte výchozí konvenci volání platformy. Ve Windows je například výchozí hodnota `StdCall` a v systém Windows CE .NET je `Cdecl`.|  
-|`pmCallConvCdecl`|Použijte konvenci volání `Cdecl`. V tomto případě volající vyčistí zásobník. To umožňuje volání funkcí s `varargs` (tj. funkce, které přijímají proměnný počet parametrů).|  
-|`pmCallConvStdcall`|Použijte konvenci volání `StdCall`. V tomto případě volaný vyčistí zásobník. Toto je výchozí konvence pro volání nespravovaných funkcí s voláním platformy.|  
-|`pmCallConvThiscall`|Použijte konvenci volání `ThisCall`. V tomto případě je prvním parametrem `this` ukazatel a je uložen v registru ECX. Další parametry jsou vloženy do zásobníku. Konvence volání `ThisCall` se používá pro volání metod u tříd exportovaných z nespravované knihovny DLL.|  
-|`pmCallConvFastcall`|Rezervovaný.|  
-|`pmMaxValue`|Rezervovaný.|  
+|`pmCallConvWinapi`|Použijte výchozí konvence volání platformy. Například v systému `StdCall` Windows výchozí je a `Cdecl`na Windows CE .NET je .|  
+|`pmCallConvCdecl`|Použijte `Cdecl` konvence volání. V tomto případě volající čistí zásobníku. To umožňuje volání `varargs` funkcí s (to znamená, že funkce, které přijímají proměnný počet parametrů).|  
+|`pmCallConvStdcall`|Použijte `StdCall` konvence volání. V tomto případě volaný čistí zásobníku. Toto je výchozí konvence pro volání nespravovaných funkcí s vyvolání platformy.|  
+|`pmCallConvThiscall`|Použijte `ThisCall` konvence volání. V tomto případě je prvním `this` parametrem ukazatel a je uložen v registru ECX. Ostatní parametry jsou tlačeny do zásobníku. Konvence `ThisCall` volání se používá k volání metod na třídy exportované z nespravované dll.|  
+|`pmCallConvFastcall`|Vyhrazeno.|  
+|`pmMaxValue`|Vyhrazeno.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Hlavička:** CorHdr. h  
+ **Záhlaví:** CorHdr.h  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Výčty pro metadata](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)

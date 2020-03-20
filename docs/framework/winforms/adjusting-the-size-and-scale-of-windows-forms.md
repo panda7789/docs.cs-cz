@@ -1,41 +1,40 @@
 ---
-title: Úprava velikosti a měřítka
+title: Nastavení velikosti a měřítka
 ms.date: 04/07/2017
 helpviewer_keywords:
 - Windows Forms, changing size
 - Windows Forms, adjusting size
 - Windows Forms, changing scale
 ms.assetid: a014d2b3-3273-4521-95e1-00171033bf58
-ms.openlocfilehash: db82e290de93fb24ccd4f3a504fe8fdfba3b2e1b
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: cc77c271e52149c3cc0f42f969030478b72cf8d1
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76739786"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79182655"
 ---
-# <a name="adjusting-the-size-and-scale-of-windows-forms"></a>Úprava velikosti a rozsahu model Windows Forms
-Toto téma obsahuje odkazy na informace o změně velikosti model Windows Forms.  
+# <a name="adjusting-the-size-and-scale-of-windows-forms"></a>Úprava velikosti a rozsahu formulářů Windows Forms
+Toto téma obsahuje odkazy na informace o velikosti formulářů Systému Windows.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Postupy: Změna velikosti Windows Forms](how-to-resize-windows-forms.md)  
- Poskytuje pokyny pro určení velikosti model Windows Forms.  
+ Obsahuje pokyny pro určení velikosti formulářů systému Windows.  
   
  [Automatická změna měřítka ve Windows Forms](automatic-scaling-in-windows-forms.md)  
- Popisuje, jak automatické škálování umožňuje, aby se formulář a jeho ovládací prvky zobrazovaly správně mezi počítači.  
+ Popisuje, jak automatické škálování umožňuje formulář a jeho ovládací prvky, které mají být zobrazeny odpovídajícím způsobem mezi počítači.  
   
- [Podpora vysokého rozlišení DPI v model Windows Forms](high-dpi-support-in-windows-forms.md)    
- Popisuje podporu model Windows Forms s vysokým rozlišením DPI a dynamickým škálováním. 
+ [Vysoká podpora DPI ve formulářích systému Windows](high-dpi-support-in-windows-forms.md) Popisuje podporu windows forms pro vysoké DPI a dynamické škálování.
   
 ## <a name="reference"></a>Referenční informace  
  <xref:System.Drawing.Size>  
- Popisuje tuto třídu a má odkazy na všechny její členy.  
+ Popisuje tuto třídu a obsahuje odkazy na všechny její členy.  
   
  <xref:System.Windows.Forms.TableLayoutPanel>  
- Popisuje tuto třídu a má odkazy na všechny její členy.  
+ Popisuje tuto třídu a obsahuje odkazy na všechny její členy.  
   
  <xref:System.Windows.Forms.FlowLayoutPanel>  
- Popisuje tuto třídu a má odkazy na všechny její členy.  
+ Popisuje tuto třídu a obsahuje odkazy na všechny její členy.  
   
 ## <a name="related-sections"></a>Související oddíly  
- [Změna vzhledu model Windows Forms](changing-the-appearance-of-windows-forms.md)  
- Obsahuje odkazy na témata, která popisují jiné způsoby, jak změnit vzhled model Windows Forms.
+ [Změna vzhledu formulářů Windows Forms](changing-the-appearance-of-windows-forms.md)  
+ Obsahuje odkazy na témata popisující jiné způsoby změny vzhledu formulářů systému Windows.

@@ -5,56 +5,56 @@ helpviewer_keywords:
 - side-by-side execution, assembly binding redirection
 - assemblies [.NET Framework], binding redirection
 ms.assetid: d266cbd8-bf91-41d1-baf0-afbc481a741f
-ms.openlocfilehash: c7b9dcb99e08a1ef2844c5811897aa87ff86f866
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 5b24d99aa23358272eecd042c40001413965d7f0
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75716557"
+ms.lasthandoff: 03/15/2020
+ms.locfileid: "79181686"
 ---
 # <a name="configuring-assembly-binding-redirection"></a>Konfigurace přesměrování vazby sestavení
-Ve výchozím nastavení používají aplikace sadu .NET Framework sestavení, která byla dodávána s verzí modulu runtime použitou ke kompilaci aplikace. Můžete použít **appliesTo** atribut na [\<assemblyBinding>](../configure-apps/file-schema/runtime/assemblybinding-element-for-runtime.md) prvku v konfiguračním souboru aplikace přesměrovat odkazy vazby sestavení na konkrétní verzi rozhraní .NET Sestavení rozhraní. Tento nepovinný atribut používá .NET Framework číslo verze k označení, na kterou verzi se vztahuje. Pokud ne **appliesTo** atribut zadán, **\<assemblyBinding>** element platí pro všechny verze rozhraní .NET Framework.  
+Ve výchozím nastavení používají aplikace sadu sestavení rozhraní .NET Framework, která byla dodána s runtime verzí používanou ke kompilaci aplikace. Atribut **appliesTo** na elementu [ \<assemblyBinding>](../configure-apps/file-schema/runtime/assemblybinding-element-for-runtime.md) v konfiguračním souboru aplikace můžete použít k přesměrování odkazů na vazbu sestavení na konkrétní verzi sestavení rozhraní .NET Framework. Tento volitelný atribut používá číslo verze rozhraní .NET Framework k označení, na kterou verzi se vztahuje. Pokud není zadán žádný atribut **appliesTo,** element ** \<assemblyBinding>** se vztahuje na všechny verze rozhraní .NET Framework.  
   
- Atribut **AppliesTo** byl představen v .NET Framework verze 1,1; ignoruje se .NET Framework verze 1,0. To znamená, že všechny **\<assemblyBinding>** prvky se použijí při použití rozhraní .NET Framework verze 1.0, i když **appliesTo** je zadán atribut.  
+ Atribut **appliesTo** byl zaveden v rozhraní .NET Framework verze 1.1; rozhraní .NET Framework verze 1.0 jej ignoruje. To znamená, že všechny ** \<elementy assemblyBinding>** jsou použity při použití rozhraní .NET Framework verze 1.0, i když je zadán atribut **appliesTo.**  
   
 > [!NOTE]
-> Použijte atribut **AppliesTo** k omezení přesměrování vazby sestavení na konkrétní verzi modulu runtime.  
+> Pomocí atributu **appliesTo** omezte přesměrování vazeb sestavení na určitou verzi běhu.  
   
- Chcete-li například přesměrovat vazbu sestavení pro sestavení .NET Framework verze 1,0, měli byste do konfiguračního souboru aplikace zahrnout následující kód XML.  
+ Chcete-li například přesměrovat vazbu sestavení pro sestavení rozhraní .NET Framework verze 1.0, zahrnete do konfiguračního souboru aplikace následující kód XML.  
   
 ```xml  
 <runtime>  
         <assemblyBinding xmlns="urn:schemas-microsoft-com:asm.v1" appliesTo="v1.0.3705">  
-            <dependentAssembly>   
+            <dependentAssembly>
                * assembly information goes here *  
             </dependentAssembly>  
        </assemblyBinding>  
 </runtime>  
 ```  
   
- **\<AssemblyBinding>** prvky jsou citlivé na pořadí. Nejdříve je třeba zadat informace o přesměrování vazby sestavení pro všechna .NET Framework sestavení verze 1,0 a následně informace o přesměrování vazby sestavení pro všechna sestavení .NET Framework verze 1,1. Nakonec zadejte informace o přesměrování vazby sestavení pro jakékoli přesměrování sestavení .NET Framework, které nepoužívá atribut **AppliesTo** , a proto platí pro všechny verze .NET Framework. V případě konfliktu v přesměrování se použije první shodný příkaz přesměrování v konfiguračním souboru.  
+ ** \<AssemblyBinding>** prvky jsou citlivé na pořadí. Nejprve byste měli zadat informace o přesměrování vazeb sestavení pro všechna sestavení rozhraní .NET Framework verze 1.0 následované informacemi o přesměrování vazby sestavení pro všechna sestavení rozhraní .NET Framework verze 1.1. Nakonec zadejte informace o přesměrování vazby sestavení pro jakékoli přesměrování sestavení rozhraní .NET Framework, které nepoužívá atribut **appliesTo** a proto se vztahuje na všechny verze rozhraní .NET Framework. V případě konfliktu v přesměrování se použije první odpovídající příkaz přesměrování v konfiguračním souboru.  
   
- Chcete-li například přesměrovat jeden odkaz na sestavení verze 1,0 .NET Framework a jiný odkaz na sestavení .NET Framework verze 1,1, použijte vzor uvedený v následujícím pseudokódu.  
+ Chcete-li například přesměrovat jeden odkaz na sestavení rozhraní .NET Framework verze 1.0 a jiný odkaz na sestavení rozhraní .NET Framework verze 1.1, použijte vzorek zobrazený v následujícím pseudokódu.  
   
 ```xml  
-<assemblyBinding xmlns="..." appliesTo="v1.0.3705">   
-  <!-- .NET Framework version 1.0 redirects here. -->   
-</assemblyBinding>   
+<assemblyBinding xmlns="..." appliesTo="v1.0.3705">
+  <!-- .NET Framework version 1.0 redirects here. -->
+</assemblyBinding>
   
-<assemblyBinding xmlns="..." appliesTo="v1.1.4322">   
-  <!-- .NET Framework version 1.1 redirects here. -->   
-</assemblyBinding>   
+<assemblyBinding xmlns="..." appliesTo="v1.1.4322">
+  <!-- .NET Framework version 1.1 redirects here. -->
+</assemblyBinding>
   
-<assemblyBinding xmlns="...">   
-  <!-- Redirects meant for all versions of the .NET Framework. -->   
+<assemblyBinding xmlns="...">
+  <!-- Redirects meant for all versions of the .NET Framework. -->
 </assemblyBinding>  
 ```  
   
 ## <a name="debugging-configuration-file-errors"></a>Ladění chyb konfiguračního souboru  
- Modul runtime analyzuje konfigurační soubory jednou při vytvoření domény aplikace a načítá kód do domény aplikace. Modul CLR (Common Language Runtime) zpracovává chyby v konfiguračním souboru tak, že položku ignoruje. Modul runtime ignoruje celý konfigurační soubor, pokud obsahuje chybně vytvořený kód XML. Pro neplatný kód XML jsou ignorovány pouze neplatné oddíly.  
+ Runtime analyzuje konfigurační soubory jednou při vytvoření domény aplikace a načte kód do této domény aplikace. Běžný jazyk runtime zpracovává chyby v konfiguračním souboru ignorováním položky. Runtime ignoruje celý konfigurační soubor, pokud obsahuje poškozený xml. V případě neplatného jazyka XML jsou ignorovány pouze neplatné oddíly.  
   
- Můžete určit, zda se konfigurační soubor používá, určením, zda dochází ke přesměrování vazby sestavení. Použijte [Prohlížeč protokolů vazby sestavení (Fuslogvw. exe)](../tools/fuslogvw-exe-assembly-binding-log-viewer.md) , chcete-li zjistit, která sestavení jsou načítána. Chcete-li zobrazit všechny vazby sestavení, je nutné nastavit položku pro **ForceLog** v registru.  
+ Můžete určit, zda konfigurační soubor se používá určením, zda dojde k přesměrování vazby sestavení. Pomocí [prohlížeče protokolů vazby sestavení (Fuslogvw.exe)](../tools/fuslogvw-exe-assembly-binding-log-viewer.md) zobrazíte, která sestavení jsou načítána. Chcete-li zobrazit všechna vazby sestavení, musíte nastavit položku pro **ForceLog** v registru.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Postupy: Povolení a zákaz automatického přesměrování vazby](../configure-apps/how-to-enable-and-disable-automatic-binding-redirection.md)

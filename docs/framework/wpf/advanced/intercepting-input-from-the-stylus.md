@@ -10,15 +10,15 @@ helpviewer_keywords:
 - ', '
 - ', '
 ms.assetid: 791bb2f0-4e5c-4569-ac3c-211996808d44
-ms.openlocfilehash: 7629843730a82584e94448ceac1ea574906876c9
-ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
+ms.openlocfilehash: 17cf42a9d6d94d6ea12399561af5647df3b4d8c2
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/09/2020
-ms.locfileid: "77095135"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79181922"
 ---
 # <a name="intercepting-input-from-the-stylus"></a>Přijetí vstupu z pera
-Architektura <xref:System.Windows.Input.StylusPlugIns> poskytuje mechanismus pro implementaci řízení nízké úrovně nad <xref:System.Windows.Input.Stylus> vstupu a vytváření objektů <xref:System.Windows.Ink.Stroke> digitálního inkoustu. Třída <xref:System.Windows.Input.StylusPlugIns.StylusPlugIn> poskytuje mechanizmus pro implementaci vlastního chování a jeho použití na datový proud dat přicházejících ze zařízení stylus pro zajištění optimálního výkonu.  
+Architektura <xref:System.Windows.Input.StylusPlugIns> poskytuje mechanismus pro implementaci nízkoúrovňové kontroly nad <xref:System.Windows.Input.Stylus> <xref:System.Windows.Ink.Stroke> vstupem a vytváření objektů digitálních inkoustů. Třída <xref:System.Windows.Input.StylusPlugIns.StylusPlugIn> poskytuje mechanismus pro implementaci vlastní chování a použít jej pro datový proud dat pocházejících ze zařízení stylus pro optimální výkon.  
   
  Toto téma obsahuje následující pododdíly:  
   
@@ -26,51 +26,51 @@ Architektura <xref:System.Windows.Input.StylusPlugIns> poskytuje mechanismus pro
   
 - [Implementace modulů plug-in stylusu](#ImplementingStylusPlugins)  
   
-- [Přidání modulu plug-in do InkCanvas](#AddingYourPluginToAnInkCanvas)  
+- [Přidání modulu plug-in na plátno inkcanvas](#AddingYourPluginToAnInkCanvas)  
   
 - [Závěr](#Conclusion)  
   
-<a name="Architecture"></a>   
+<a name="Architecture"></a>
 ## <a name="architecture"></a>Architektura  
- <xref:System.Windows.Input.StylusPlugIns.StylusPlugIn> je vývoj rozhraní API [StylusInput](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms574861(v=vs.90)) popsaných v tématu [přístup a manipulace se vstupem perem](https://docs.microsoft.com/previous-versions/ms818317(v%3dmsdn.10)).  
+ Je <xref:System.Windows.Input.StylusPlugIns.StylusPlugIn> vývoj [StylusInput](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms574861(v=vs.90)) API, popsané v [přístupu a manipulaci pero vstup](https://docs.microsoft.com/previous-versions/ms818317(v%3dmsdn.10)).  
   
- Každý <xref:System.Windows.UIElement> má vlastnost <xref:System.Windows.UIElement.StylusPlugIns%2A>, která je <xref:System.Windows.Input.StylusPlugIns.StylusPlugInCollection>. Můžete přidat <xref:System.Windows.Input.StylusPlugIns.StylusPlugIn> do vlastnosti <xref:System.Windows.UIElement.StylusPlugIns%2A> elementu pro manipulaci s <xref:System.Windows.Input.StylusPoint>mi daty při jejich generování. data <xref:System.Windows.Input.StylusPoint> se skládají ze všech vlastností podporovaných digitalizačním systémem, včetně dat <xref:System.Windows.Input.StylusPoint.X%2A> a <xref:System.Windows.Input.StylusPoint.Y%2A> bodu, a také <xref:System.Windows.Input.StylusPoint.PressureFactor%2A> dat.  
+ Každý <xref:System.Windows.UIElement> má <xref:System.Windows.UIElement.StylusPlugIns%2A> vlastnost, <xref:System.Windows.Input.StylusPlugIns.StylusPlugInCollection>která je . Můžete přidat <xref:System.Windows.Input.StylusPlugIns.StylusPlugIn> do <xref:System.Windows.UIElement.StylusPlugIns%2A> vlastnosti prvku pro <xref:System.Windows.Input.StylusPoint> manipulaci s daty při jejich generování. <xref:System.Windows.Input.StylusPoint>data se skládají ze všech vlastností podporovaných <xref:System.Windows.Input.StylusPoint.X%2A> <xref:System.Windows.Input.StylusPoint.Y%2A> systémovým digitizérem, včetně dat a bodů, stejně jako <xref:System.Windows.Input.StylusPoint.PressureFactor%2A> dat.  
   
- Objekty <xref:System.Windows.Input.StylusPlugIns.StylusPlugIn> jsou vloženy přímo do datového proudu dat přicházejících ze <xref:System.Windows.Input.Stylus> zařízení při přidání <xref:System.Windows.Input.StylusPlugIns.StylusPlugIn> do vlastnosti <xref:System.Windows.UIElement.StylusPlugIns%2A>. Pořadí, ve kterém jsou moduly plug-in přidány do kolekce <xref:System.Windows.UIElement.StylusPlugIns%2A>, určuje pořadí, ve kterém budou přijímána <xref:System.Windows.Input.StylusPoint> data. Například pokud přidáte modul plug-in filtru, který omezí vstup na určitou oblast, a pak přidáte modul plug-in, který rozpozná gesta při jejich psaní, modul plug-in, který rozpozná gesta, obdrží filtrovaná <xref:System.Windows.Input.StylusPoint> data.  
+ Vaše <xref:System.Windows.Input.StylusPlugIns.StylusPlugIn> objekty jsou vloženy přímo do <xref:System.Windows.Input.Stylus> datového proudu <xref:System.Windows.Input.StylusPlugIns.StylusPlugIn> dat <xref:System.Windows.UIElement.StylusPlugIns%2A> přicházejících ze zařízení při přidání do vlastnosti. Pořadí, ve kterém jsou přidány moduly plug-in do <xref:System.Windows.UIElement.StylusPlugIns%2A> kolekce <xref:System.Windows.Input.StylusPoint> určuje pořadí, ve kterém budou přijímat data. Pokud například přidáte modul plug-in filtru, který omezí vstup do určité oblasti, a potom přidáte modul plug-in, který rozpozná gesta při <xref:System.Windows.Input.StylusPoint> jejich zápisu, modul plug-in, který rozpozná gesta, obdrží filtrovaná data.  
   
-<a name="ImplementingStylusPlugins"></a>   
+<a name="ImplementingStylusPlugins"></a>
 ## <a name="implementing-stylus-plug-ins"></a>Implementace modulů plug-in stylusu  
- Chcete-li implementovat modul plug-in, odvodit třídu z <xref:System.Windows.Input.StylusPlugIns.StylusPlugIn>. Tato třída se používá pro datový proud dat, jak se nachází v <xref:System.Windows.Input.Stylus>. V této třídě můžete upravit hodnoty dat <xref:System.Windows.Input.StylusPoint>.  
+ Chcete-li implementovat modul plug-in, odvodit třídu z <xref:System.Windows.Input.StylusPlugIns.StylusPlugIn>. Tato třída se použije o datový proud dat, jak přichází z <xref:System.Windows.Input.Stylus>. V této třídě můžete upravit <xref:System.Windows.Input.StylusPoint> hodnoty dat.  
   
 > [!CAUTION]
-> Pokud <xref:System.Windows.Input.StylusPlugIns.StylusPlugIn> vyvolá nebo způsobí výjimku, aplikace se zavře. Měli byste důkladně otestovat ovládací prvky, které používají <xref:System.Windows.Input.StylusPlugIns.StylusPlugIn> a použít pouze ovládací prvek, pokud jste si jisti, že <xref:System.Windows.Input.StylusPlugIns.StylusPlugIn> nevyvolá výjimku.  
+> Pokud <xref:System.Windows.Input.StylusPlugIns.StylusPlugIn> vyvolá nebo způsobí výjimku, aplikace se zavře. Měli byste důkladně otestovat <xref:System.Windows.Input.StylusPlugIns.StylusPlugIn> ovládací prvky, které spotřebovávají a používat pouze ovládací prvek, pokud jste si jisti, <xref:System.Windows.Input.StylusPlugIns.StylusPlugIn> nebude vyvolat výjimku.  
   
- Následující příklad demonstruje modul plug-in, který omezuje vstup stylusu změnou <xref:System.Windows.Input.StylusPoint.X%2A> a <xref:System.Windows.Input.StylusPoint.Y%2A> hodnot v <xref:System.Windows.Input.StylusPoint>ch datech tak, jak se nachází v <xref:System.Windows.Input.Stylus>m zařízení.  
+ Následující příklad ukazuje modul plug-in, který omezuje vstup pera <xref:System.Windows.Input.StylusPoint.Y%2A> úpravou <xref:System.Windows.Input.StylusPoint> hodnot <xref:System.Windows.Input.StylusPoint.X%2A> a v <xref:System.Windows.Input.Stylus> datech při jeho vstupu ze zařízení.  
   
  [!code-csharp[AdvancedInkTopicsSamples#19](~/samples/snippets/csharp/VS_Snippets_Wpf/AdvancedInkTopicsSamples/CSharp/DynamicRenderer.cs#19)]
  [!code-vb[AdvancedInkTopicsSamples#19](~/samples/snippets/visualbasic/VS_Snippets_Wpf/AdvancedInkTopicsSamples/VisualBasic/DynamicRenderer.vb#19)]  
 [!code-csharp[AdvancedInkTopicsSamples#3](~/samples/snippets/csharp/VS_Snippets_Wpf/AdvancedInkTopicsSamples/CSharp/DynamicRenderer.cs#3)]
 [!code-vb[AdvancedInkTopicsSamples#3](~/samples/snippets/visualbasic/VS_Snippets_Wpf/AdvancedInkTopicsSamples/VisualBasic/DynamicRenderer.vb#3)]  
   
-<a name="AddingYourPluginToAnInkCanvas"></a>   
-## <a name="adding-your-plug-in-to-an-inkcanvas"></a>Přidání modulu plug-in do InkCanvas  
- Nejjednodušší způsob, jak použít vlastní modul plug-in, je implementovat třídu, která je odvozena z InkCanvas a přidat ji do vlastnosti <xref:System.Windows.UIElement.StylusPlugIns%2A>.  
+<a name="AddingYourPluginToAnInkCanvas"></a>
+## <a name="adding-your-plug-in-to-an-inkcanvas"></a>Přidání modulu plug-in na plátno inkcanvas  
+ Nejjednodušší způsob, jak použít vlastní modul plug-in je implementovat třídu, která <xref:System.Windows.UIElement.StylusPlugIns%2A> je odvozena od InkCanvas a přidat ji do vlastnosti.  
   
- Následující příklad ukazuje vlastní <xref:System.Windows.Controls.InkCanvas>, který filtruje rukopis.  
+ Následující příklad ukazuje vlastní, <xref:System.Windows.Controls.InkCanvas> který filtruje inkoust.  
   
  [!code-csharp[AdvancedInkTopicsSamples#4](~/samples/snippets/csharp/VS_Snippets_Wpf/AdvancedInkTopicsSamples/CSharp/Window1.xaml.cs#4)]  
   
- Pokud přidáte `FilterInkCanvas` do své aplikace a spustíte ji, budete si všimnout, že inkoust není omezen na oblast, dokud uživatel nedokončí tah. Důvodem je, že <xref:System.Windows.Controls.InkCanvas> má vlastnost <xref:System.Windows.Controls.InkCanvas.DynamicRenderer%2A>, která je <xref:System.Windows.Input.StylusPlugIns.StylusPlugIn> a je již členem kolekce <xref:System.Windows.UIElement.StylusPlugIns%2A>. Vlastní <xref:System.Windows.Input.StylusPlugIns.StylusPlugIn>, kterou jste přidali do kolekce <xref:System.Windows.UIElement.StylusPlugIns%2A>, obdrží data <xref:System.Windows.Input.StylusPoint> po <xref:System.Windows.Input.StylusPlugIns.DynamicRenderer> obdrží data. V důsledku toho nebudou data <xref:System.Windows.Input.StylusPoint> filtrovaná, dokud uživatel nezíská pero, aby ukončil tah. Chcete-li filtrovat rukopis, jak ho uživatel vykreslí, je nutné vložit `FilterPlugin` před <xref:System.Windows.Input.StylusPlugIns.DynamicRenderer>.  
+ Pokud přidáte `FilterInkCanvas` do aplikace a spustíte ji, zjistíte, že inkoust není omezen na oblast, dokud uživatel nedokončí tah. Důvodem <xref:System.Windows.Controls.InkCanvas> je, <xref:System.Windows.Controls.InkCanvas.DynamicRenderer%2A> že má vlastnost, která je <xref:System.Windows.Input.StylusPlugIns.StylusPlugIn> a <xref:System.Windows.UIElement.StylusPlugIns%2A> je již členem kolekce. Vlastní, <xref:System.Windows.Input.StylusPlugIns.StylusPlugIn> které jste <xref:System.Windows.UIElement.StylusPlugIns%2A> přidali <xref:System.Windows.Input.StylusPoint> do <xref:System.Windows.Input.StylusPlugIns.DynamicRenderer> kolekce obdrží data po přijetí dat. V důsledku toho <xref:System.Windows.Input.StylusPoint> nebudou data filtrována, dokud uživatel nezvedne pero a ukončí tah. Chcete-li filtrovat inkoust při nakreslování, je nutné vložit `FilterPlugin` před . <xref:System.Windows.Input.StylusPlugIns.DynamicRenderer>  
   
- Následující C# kód ukazuje vlastní <xref:System.Windows.Controls.InkCanvas>, který filtruje inkoust při vykreslování.  
+ Následující kód jazyka C# <xref:System.Windows.Controls.InkCanvas> ukazuje vlastní, který filtruje inkoust, jak je nakreslena.  
   
  [!code-csharp[AdvancedInkTopicsSamples#5](~/samples/snippets/csharp/VS_Snippets_Wpf/AdvancedInkTopicsSamples/CSharp/Window1.xaml.cs#5)]  
   
-<a name="Conclusion"></a>   
+<a name="Conclusion"></a>
 ## <a name="conclusion"></a>Závěr  
- Odvozením vlastních tříd <xref:System.Windows.Input.StylusPlugIns.StylusPlugIn> a jejich vložením do kolekcí <xref:System.Windows.Input.StylusPlugIns.StylusPlugInCollection> můžete výrazně vylepšit chování digitálního inkoustu. Máte přístup k datům <xref:System.Windows.Input.StylusPoint> při jejich vygenerování, což vám dává možnost přizpůsobit <xref:System.Windows.Input.Stylus> vstupu. Vzhledem k tomu, že máte přístup k datům <xref:System.Windows.Input.StylusPoint> na nízké úrovni, můžete implementovat shromažďování a vykreslování rukopisu s optimálním výkonem pro vaši aplikaci.  
+ Odvozením vlastních <xref:System.Windows.Input.StylusPlugIns.StylusPlugIn> tříd a jejich <xref:System.Windows.Input.StylusPlugIns.StylusPlugInCollection> vložením do kolekcí můžete výrazně zlepšit chování digitálního inkoustu. Máte přístup k <xref:System.Windows.Input.StylusPoint> datům při jejich generování, což vám <xref:System.Windows.Input.Stylus> dává možnost přizpůsobit vstup. Vzhledem k tomu, že <xref:System.Windows.Input.StylusPoint> máte takový nízkoúrovňový přístup k datům, můžete implementovat shromažďování a vykreslování inkoustu s optimálním výkonem pro vaši aplikaci.  
   
 ## <a name="see-also"></a>Viz také
 
-- [Pokročilé zpracování rukopisu](advanced-ink-handling.md)
-- [Přístup k zadávání perem a manipulace s nimi](https://docs.microsoft.com/previous-versions/ms818317(v%3dmsdn.10))
+- [Upřesnění zpracování inkoustu](advanced-ink-handling.md)
+- [Přístup ke vstupu pera a manipulace s ním](https://docs.microsoft.com/previous-versions/ms818317(v%3dmsdn.10))

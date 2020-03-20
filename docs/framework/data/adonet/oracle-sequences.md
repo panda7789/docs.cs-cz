@@ -2,35 +2,35 @@
 title: Sekvence Oracle
 ms.date: 03/30/2017
 ms.assetid: 27cd371d-8252-414d-b5b2-5d31fa44b585
-ms.openlocfilehash: 772aeda94215ccc8e1eff0e1145ed0399791197d
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: d6e6bb51b8bd317c7161500b89993be689659fad
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70794596"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79149411"
 ---
 # <a name="oracle-sequences"></a>Sekvence Oracle
-Zprostředkovatel dat .NET Framework pro Oracle poskytuje podporu pro načítání hodnot sekvence Oracle generovaných serverem po provedení vložení pomocí <xref:System.Data.OracleClient.OracleDataAdapter>.  
+Zprostředkovatel dat rozhraní .NET Framework pro oracle poskytuje podporu pro načítání hodnot klíče Oracle Sequence <xref:System.Data.OracleClient.OracleDataAdapter>generovaných serverem po provedení vložení pomocí rozhraní .  
   
- SQL Server a Oracle podporují vytváření automaticky rostoucích sloupců, které je možné určit jako primární klíče. Tyto hodnoty jsou generovány serverem při přidávání řádků do tabulky. V SQL Server nastavíte vlastnost identity sloupce. v Oracle vytvoříte sekvenci. Rozdíl mezi sloupci s automatickým navýšením v SQL Server a posloupnosti v Oracle je následující:  
+ SQL Server a Oracle podporují vytváření automaticky se rozvíjejících sloupců, které lze označit jako primární klíče. Tyto hodnoty jsou generovány serverem jako řádky jsou přidány do tabulky. V SQL Server nastavíte identity vlastnost sloupce; v oracle vytvoříte Sekvenci. Rozdíl mezi sloupci automatického přírůstku v sql serveru a sekvencemi v oracle je, že:  
   
-- V SQL Server označíte sloupec jako sloupec s automatickým přírůstkem a SQL Server automaticky generuje nové hodnoty pro sloupec při vložení nového řádku.  
+- Na serveru SQL Server označíte sloupec jako sloupec automatického přírůstku a SQL Server automaticky vygeneruje nové hodnoty pro sloupec při vložení nového řádku.  
   
-- V Oracle vytvoříte sekvenci, která generuje nové hodnoty pro sloupec v tabulce, ale neexistuje žádné přímé propojení mezi sekvencí a tabulkou nebo sloupcem. Sekvence Oracle je objekt, jako je tabulka nebo uložená procedura.  
+- V oracle vytvořit posloupnost generovat nové hodnoty pro sloupec v tabulce, ale neexistuje žádné přímé propojení mezi sekvenci a tabulka nebo sloupec. Oracle sekvence je objekt, jako je tabulka nebo uložená procedura.  
   
- Když vytvoříte sekvenci v databázi Oracle, můžete definovat její počáteční hodnotu a přírůstek mezi jejími hodnotami. Před odesláním nových řádků můžete také zadat dotaz na nové hodnoty. To znamená, že váš kód může rozpoznat klíčové hodnoty pro nové řádky předtím, než je vložíte do databáze.  
+ Při vytváření sekvence v databázi Oracle můžete definovat jeho počáteční hodnotu a přírůstek mezi jejími hodnotami. Můžete také dotaz pořadí pro nové hodnoty před odesláním nové řádky. To znamená, že váš kód může rozpoznat hodnoty klíče pro nové řádky před jejich vložením do databáze.  
   
- Další informace o vytváření sloupců s automatickým přírůstkem pomocí SQL Server a ADO.NET naleznete v tématu [načítání identity nebo Autonumber Values](retrieving-identity-or-autonumber-values.md) a [vytváření sloupců AutoIncrement](./dataset-datatable-dataview/creating-autoincrement-columns.md).  
+ Další informace o vytváření sloupců automatického přírůstku pomocí serveru SQL Server a ADO.NET naleznete v [tématu Načítání hodnot identity nebo automatického čísla](retrieving-identity-or-autonumber-values.md) a [vytváření sloupců automatického přírůstku](./dataset-datatable-dataview/creating-autoincrement-columns.md).  
   
 ## <a name="example"></a>Příklad  
- Následující C# příklad ukazuje, jak lze načíst nové hodnoty sekvence z databáze Oracle. Příklad odkazuje na pořadí v dotazu INSERT INTO použitém k odeslání nových řádků a vrátí hodnotu sekvence generovanou pomocí klauzule vracející se zavedené v Oracle10g. Tento příklad přidá řadu nevyřízených nových řádků v <xref:System.Data.DataTable> objektu pomocí ADO. Funkce automatického zvyšování hodnoty netto pro generování zástupných hodnot primárního klíče Všimněte si, že přírůstková hodnota ADO.NET vygenerovaná pro nový řádek je pouze "zástupný". To znamená, že databáze může generovat jiné hodnoty z těch, které ADO.NET generuje.  
+ Následující příklad jazyka C# ukazuje, jak můžete načíst nové sekvenční hodnoty z databáze Oracle. Příklad odkazuje na sekvenci v dotazu INSERT INTO použiték odeslání nových řádků a potom vrátí hodnotu sekvence generované pomocí klauzule RETURNING zavedené v Oracle10g. Příklad přidá řadu čekající nové řádky <xref:System.Data.DataTable> v pomocí ADO. NET je auto-přírůstek funkce generovat "zástupný" hodnoty primárního klíče. Všimněte si, že hodnota přírůstku ADO.NET generována pro nový řádek je pouze "zástupný symbol". To znamená, že databáze může generovat různé hodnoty z nich, ADO.NET generuje.  
   
- Před odesláním nedokončených vložení do databáze je v příkladu zobrazen obsah řádků. Potom kód vytvoří nový <xref:System.Data.OracleClient.OracleDataAdapter> objekt a nastaví jeho <xref:System.Data.OracleClient.OracleDataAdapter.InsertCommand%2A> <xref:System.Data.OracleClient.OracleDataAdapter.UpdateBatchSize%2A> vlastnosti a. Tento příklad také poskytuje logiku pro vrácení hodnot generovaných serverem pomocí výstupních parametrů. Pak tento příklad provede aktualizaci k odeslání nedokončených řádků a zobrazí obsah <xref:System.Data.DataTable>.  
+ Před odesláním čekající vloží do databáze, v příkladu zobrazí obsah řádků. Potom kód vytvoří nový <xref:System.Data.OracleClient.OracleDataAdapter> objekt a <xref:System.Data.OracleClient.OracleDataAdapter.InsertCommand%2A> nastaví jeho a vlastnosti. <xref:System.Data.OracleClient.OracleDataAdapter.UpdateBatchSize%2A> Příklad také poskytuje logiku vrátit hodnoty generované serverem pomocí výstupních parametrů. Potom příklad provede aktualizaci odeslat čekající řádky a zobrazí <xref:System.Data.DataTable>obsah .  
   
 ```csharp  
 public void OracleSequence(String connectionString)  
 {  
-   String insertString =   
+   String insertString =
       "INSERT INTO SequenceTest_Table (ID, OtherColumn)" +  
       "VALUES (SequenceTest_Sequence.NEXTVAL, :OtherColumn)" +  
       "RETURNING ID INTO :ID";  
@@ -75,7 +75,7 @@ public void OracleSequence(String connectionString)
       }  
       Console.WriteLine();  
   
-      cmd.CommandText =   
+      cmd.CommandText =
         "SELECT ID, OtherColumn FROM SequenceTest_Table";  
       OracleDataAdapter da = new OracleDataAdapter(cmd);  
       da.InsertCommand = new OracleCommand(insertString, conn);  
@@ -98,7 +98,7 @@ public void OracleSequence(String connectionString)
 }  
 ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Oracle a ADO.NET](oracle-and-adonet.md)
 - [Přehled ADO.NET](ado-net-overview.md)

@@ -15,35 +15,35 @@ helpviewer_keywords:
 ms.assetid: d508981f-e2b2-445b-a649-69951c22702d
 topic_type:
 - apiref
-ms.openlocfilehash: 35e3e37b1487b5dda9945402c6a3338384147f9a
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.openlocfilehash: 4489238df05edef384b4073ee738a184ff8809ff
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76792631"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79178676"
 ---
 # <a name="icordebugprocessenumerateappdomains-method"></a>ICorDebugProcess::EnumerateAppDomains – metoda
-Vytvoří výčet všech domén aplikace v tomto procesu.  
+Vyjmenovává všechny aplikační domény v tomto procesu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-``` cpp 
+``` cpp
 HRESULT EnumerateAppDomains(  
     [out] ICorDebugAppDomainEnum **ppAppDomains);  
 ```  
   
 ## <a name="parameters"></a>Parametry  
  `ppAppDomains`  
- mimo Ukazatel na adresu [ICorDebugAppDomainEnum](icordebugappdomainenum-interface.md) , která je enumerátorem pro domény aplikace v tomto procesu.  
+ [out] Ukazatel na adresu [ICorDebugAppDomainEnum,](icordebugappdomainenum-interface.md) který je čítač pro aplikační domény v tomto procesu.  
   
 ## <a name="remarks"></a>Poznámky  
- Tuto metodu lze použít před zpětným voláním [ICorDebugManagedCallback:: CreateProcess](icordebugmanagedcallback-createprocess-method.md) .  
+ Tuto metodu lze použít před [iCorDebugManagedCallback::CreateProcess](icordebugmanagedcallback-createprocess-method.md) zpětné volání.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Hlavička:** CorDebug. idl, CorDebug. h  
+ **Záhlaví:** CorDebug.idl, CorDebug.h  
   
- **Knihovna:** CorGuids. lib  
+ **Knihovna:** CorGuids.lib  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]
+ **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]

@@ -19,15 +19,15 @@ helpviewer_keywords:
 - classes [.NET Framework], authentication
 - client authentication, NTLM
 ms.assetid: 9ef65560-f596-4469-bcce-f4d5407b55cd
-ms.openlocfilehash: ca9e1b9bf6235fdaeea25b8975155af429848ae3
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: 372101763bdd84b454e6e2db3ec6cf0ebdf3f991
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71047531"
+ms.lasthandoff: 03/15/2020
+ms.locfileid: "79180704"
 ---
 # <a name="ntlm-and-kerberos-authentication"></a>Ověřování NTLM a Kerberos
-Výchozí ověřování pomocí protokolu NTLM a ověřování protokolem Kerberos používají přihlašovací údaje uživatele systému Microsoft Windows NT přidružené k volající aplikaci k pokusu o ověření u serveru. Pokud používáte jiné než výchozí ověřování NTLM, aplikace nastaví typ ověřování na NTLM a pomocí <xref:System.Net.NetworkCredential> objektu předáte uživatelské jméno, heslo a doménu do hostitele, jak je znázorněno v následujícím příkladu.  
+Výchozí ověřování NTLM a ověřování protokolem Kerberos používají k pokusu o ověření se serverem pověření uživatele systému Microsoft Windows NT přidružená k volající aplikaci. Při použití jiného než výchozího ověřování NTLM nastaví aplikace <xref:System.Net.NetworkCredential> typ ověřování na NTLM a použije objekt k předání uživatelského jména, hesla a domény hostiteli, jak je znázorněno v následujícím příkladu.  
   
 ```vb  
 Dim MyURI As String = "http://www.contoso.com/"  
@@ -39,11 +39,11 @@ WReq.Credentials = _
 ```csharp  
 String MyURI = "http://www.contoso.com/";  
 WebRequest WReq = WebRequest.Create (MyURI);  
-WReq.Credentials =   
+WReq.Credentials =
     new NetworkCredential(UserName, SecurelyStoredPassword, Domain);  
 ```  
   
- Aplikace, které se potřebují připojit k internetovým službám pomocí přihlašovacích údajů uživatele aplikace, můžou tak učinit pomocí výchozích přihlašovacích údajů uživatele, jak je znázorněno v následujícím příkladu.  
+ Aplikace, které se potřebují připojit k internetovým službám pomocí pověření uživatele aplikace, tak mohou učinit s výchozími pověřeními uživatele, jak je znázorněno v následujícím příkladu.  
   
 ```vb  
 Dim MyURI As String = "http://www.contoso.com/"  
@@ -57,12 +57,12 @@ WebRequest WReq = WebRequest.Create (MyURI);
 WReq.Credentials = CredentialCache.DefaultCredentials;  
 ```  
   
- Modul vyjednávání ověřování určuje, zda vzdálený server používá ověřování protokolem NTLM nebo Kerberos, a odešle příslušnou odpověď.  
+ Modul ověřování vyjednávání určuje, zda vzdálený server používá ověřování NTLM nebo Kerberos, a odešle příslušnou odpověď.  
   
 > [!NOTE]
-> Ověřování protokolem NTLM nefunguje prostřednictvím proxy server.  
+> Ověřování NTLM nefunguje prostřednictvím serveru proxy.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Základní ověřování a ověřování algoritmem Digest](basic-and-digest-authentication.md)
+- [Základní a digest ověřování](basic-and-digest-authentication.md)
 - [Ověřování v internetu](internet-authentication.md)

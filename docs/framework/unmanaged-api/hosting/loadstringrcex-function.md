@@ -14,72 +14,72 @@ helpviewer_keywords:
 ms.assetid: bc789636-ca14-4f07-8f77-9305874d7495
 topic_type:
 - apiref
-ms.openlocfilehash: 68332aee895f012bcf6ab6a72936c8dddc7f28a0
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: a300c2679ef11a84edb2ab89c8dea96e445c9ee3
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73122035"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79177985"
 ---
 # <a name="loadstringrcex-function"></a>LoadStringRCEx – funkce
-Přeloží hodnotu HRESULT na příslušnou chybovou zprávu pro zadanou jazykovou verzi.  
+Převede hodnotu HRESULT na příslušnou chybovou zprávu pro zadanou jazykovou verzi.  
   
- Tato funkce se už nepoužívá v .NET Framework 4.  
+ Tato funkce byla v rozhraní .NET Framework 4 zastaralá.  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```cpp  
 HRESULT LoadStringRCEx (  
-    [in]  LCID    lcid,   
-    [in]  UINT    iResouceID,   
-    [out] LPWSTR  szBuffer,   
-    [in]  int     iMax,   
-    [in]  int     bQuiet,   
+    [in]  LCID    lcid,
+    [in]  UINT    iResouceID,
+    [out] LPWSTR  szBuffer,
+    [in]  int     iMax,
+    [in]  int     bQuiet,
     [out] int    *pcwchUsed  
 );  
 ```  
   
 ## <a name="parameters"></a>Parametry  
  `lcid`  
- pro Identifikátor jazykové verze. Pass-1 pro `lcid` použít výchozí jazykovou verzi.  
+ [v] Identifikátor jazykové verze. Pass -1 `lcid` pro použití výchozí jazykové verze.  
   
  `iResourceID`  
- pro HRESULT.  
+ [v] An HRESULT.  
   
  `szBuffer`  
- mimo Vyrovnávací paměť, která obsahuje chybovou zprávu po úspěšném dokončení.  
+ [out] Vyrovnávací paměť, která obsahuje chybovou zprávu po úspěšném dokončení.  
   
  `iMax`  
- pro Velikost vyrovnávací paměti chybové zprávy.  
+ [v] Velikost vyrovnávací paměti chybové zprávy.  
   
  `bQuiet`  
- pro Přeskočen.  
+ [v] Ignorovány.  
   
  `pcwchUsed`  
- mimo Ukazatel na délku chybové zprávy.  
+ [out] Ukazatel na délku chybové zprávy.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- Tato metoda vrací standardní chybové kódy modelu COM, jak jsou definovány v WinError. h, kromě následujících hodnot.  
+ Tato metoda vrátí standardní kódy chyb COM, jak je definováno v souboru WinError.h, kromě následujících hodnot.  
   
 |Návratový kód|Popis|  
 |-----------------|-----------------|  
 |S_OK|Metoda byla úspěšně dokončena.|  
-|E_INVALIDARG|`szBuffer` je null nebo je `iMax` nula (0).|  
+|E_invalidarg|`szBuffer`je null `iMax` nebo je nula (0).|  
   
 ## <a name="remarks"></a>Poznámky  
  Pokud metoda není úspěšně dokončena, `szBuffer` obsahuje prázdný řetězec.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Hlavička:** MSCorEE. h  
+ **Záhlaví:** MSCorEE.h  
   
- **Knihovna:** MSCorEE. dll  
+ **Knihovna:** Soubor MSCorEE.dll  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Globalization.CultureInfo.LCID%2A?displayProperty=nameWithType>
 - [LoadStringRC – funkce](../../../../docs/framework/unmanaged-api/hosting/loadstringrc-function.md)
-- [Zastaralé funkce pro hostování CLR](../../../../docs/framework/unmanaged-api/hosting/deprecated-clr-hosting-functions.md)
+- [Zastaralé funkce hostování CLR](../../../../docs/framework/unmanaged-api/hosting/deprecated-clr-hosting-functions.md)

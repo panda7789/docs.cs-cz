@@ -1,6 +1,6 @@
 ---
-title: VerifyClientKey – funkce (Reference nespravovaného rozhraní API)
-description: Funkce VerifyClientKey zajišťuje správné zabezpečení klíče klienta.
+title: Funkce VerifyClientKey (Unmanaged API Reference)
+description: Funkce VerifyClientKey zajišťuje, že klientský klíč má správné zabezpečení.
 ms.date: 11/06/2017
 api_name:
 - VerifyClientKey
@@ -14,37 +14,37 @@ helpviewer_keywords:
 - VerifyClientKey function [.NET WMI and performance counters]
 topic_type:
 - Reference
-ms.openlocfilehash: 0a0680651eb192e2798ede00048599c5130e63f1
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: ebb794240494deb0c831b50e95461ec52017a215
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73107362"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79176705"
 ---
-# <a name="verifyclientkey-function"></a>VerifyClientKey – funkce
-Zajišťuje, aby měl klíč klienta správné zabezpečení.  
+# <a name="verifyclientkey-function"></a>Ověřit funkci Klíč klienta
+Zajišťuje, že klientský klíč má správné zabezpečení.  
   
 [!INCLUDE[internalonly-unmanaged](../../../../includes/internalonly-unmanaged.md)]
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```cpp  
-LONG VerifyClientKey(); 
+LONG VerifyClientKey();
 ```  
 
 ## <a name="return-value"></a>Návratová hodnota
 
-Pokud je funkce úspěšná, návratová hodnota je `ERROR_SUCCESS` (0).
+Pokud je funkce úspěšná, `ERROR_SUCCESS` vrácená hodnota je (0).
 
-Pokud dojde k chybě funkce, vrácená hodnota je nenulový kód, který je definován v *Winerror. h*.
+Pokud funkce selže, vrácená hodnota je nenulový kód chyby definovaný v *souboru WinError.h*.
 
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
+ **Platformy:** Viz [Systémové požadavky](../../get-started/system-requirements.md).  
   
- **Hlavička:** WMINet_Utils. def  
+ **Záhlaví:** WMINet_Utils.def  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
+ **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [WMI a čítače výkonu (Reference nespravovaného rozhraní API)](index.md)
+- [Čítače služby WMI a výkonu (nespravovaný odkaz na rozhraní API)](index.md)

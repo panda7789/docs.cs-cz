@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 6dc37f9d-87ee-4cb3-9216-ced600184ce8
 topic_type:
 - apiref
-ms.openlocfilehash: 501199bedec3b7a65d95c80cdef178831a65fd01
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 7648a1b3d219ee5d2b1ddc6b26f7b65c9ac85105
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74428416"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79175639"
 ---
 # <a name="imetadataemitsetfieldrva-method"></a>IMetaDataEmit::SetFieldRVA – metoda
 Nastaví hodnotu globální proměnné pro relativní virtuální adresu pole, na které odkazuje zadaný token.  
@@ -28,29 +28,29 @@ Nastaví hodnotu globální proměnné pro relativní virtuální adresu pole, n
 ## <a name="syntax"></a>Syntaxe  
   
 ```cpp  
-HRESULT SetFieldRVA (   
-    [in]  mdFieldDef  fd,   
-    [in]  ULONG       ulRVA   
+HRESULT SetFieldRVA (
+    [in]  mdFieldDef  fd,
+    [in]  ULONG       ulRVA
 );  
 ```  
   
 ## <a name="parameters"></a>Parametry  
  `fd`  
- pro Token pro cílové pole  
+ [v] Token pro cílové pole.  
   
  `ulRVA`  
- pro Adresa kódu nebo oblasti dat.  
+ [v] Adresa kódu nebo datové oblasti.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Hlavička:** Cor. h  
+ **Záhlaví:** Kor.h.  
   
- **Knihovna:** Používá se jako prostředek v knihovně MSCorEE. dll.  
+ **Knihovna:** Používá se jako prostředek v souboru MSCorEE.dll  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [IMetaDataEmit – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)
 - [IMetaDataEmit2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-interface.md)

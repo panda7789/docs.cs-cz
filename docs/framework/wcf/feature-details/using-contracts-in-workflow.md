@@ -2,36 +2,36 @@
 title: Použití kontraktů v pracovním postupu
 ms.date: 03/30/2017
 ms.assetid: 939c64e9-e7cc-4abc-b41e-27cfce1d7e50
-ms.openlocfilehash: dc2d631d8a9e588645dd60495c54799b2a2dd8a0
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 9f967d75a8e9d24fcfac8b7376a3d4840fba52f7
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64637746"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79184277"
 ---
 # <a name="using-contracts-in-workflow"></a>Použití kontraktů v pracovním postupu
-Při implementaci služby definovat několik smluv, které popisují služby a data, která odesílá a přijímá. Data je vyjádřena jako data kontraktů a kontraktů zpráv; služby WCF a pracovního postupu pomocí definice kontraktu dat kontrakt a zprávy jako součást služby popisy. Samotné služby zveřejňuje metadata (ve formě WSDL) aby bylo možné popisují operace služby. Ve službě WCF definování kontraktů služby a operace kontraktů služby a operace, které podporuje. Ale ve službě pracovního postupu, těchto smluv jsou součástí samotným obchodního procesu pomocí procesu nazývaného smlouvy odvození jsou vystaveny v metadatech.  
+Při implementaci služby definujete řadu smluv, které popisují službu a data, která odesílá a přijímá. Data jsou reprezentována jako kontrakty dat a zprávy; WCF a workflow služby používají data smlouvy a definice smlouvy zprávy jako součást popisů služeb. Samotná služba zveřejňuje metadata (ve formě WSDL) k popisu operací služby. V WCF služby smlouvy a provozní smlouvy definovat služby a operace, které podporuje. Ve službě pracovního postupu jsou však tyto smlouvy součástí samotného obchodního procesu. jsou vystaveny v metadatech procesem nazývaným odvození smlouvy.  
   
-## <a name="contract-inference"></a>Odvození kontraktu  
- Když je hostované služby pracovních postupů, pomocí <xref:System.ServiceModel.Activities.WorkflowServiceHost>, definice pracovního postupu je zkontrolován a kontrakt je generován a základě sadu zasílání zpráv aktivity v pracovním postupu nalezen. Zejména následující aktivity a vlastnosti slouží ke generování kontraktu:  
+## <a name="contract-inference"></a>Odvození smlouvy  
+ Pokud je služba pracovního <xref:System.ServiceModel.Activities.WorkflowServiceHost>postupu hostována pomocí , je zkontrolována definice pracovního postupu a smlouva je generována na základě sady aktivit zasílání zpráv nalezených v pracovním postupu. Ke generování smlouvy se používají zejména následující činnosti a vlastnosti:  
   
- <xref:System.ServiceModel.Activities.Receive> Aktivita  
+ <xref:System.ServiceModel.Activities.Receive>Činnosti  
   
 - <xref:System.ServiceModel.Activities.Receive.ServiceContractName%2A>  
   
 - <xref:System.ServiceModel.Activities.Receive.OperationName%2A>
   
-- <xref:System.ServiceModel.Activities.Receive.Action%2A>   
- 
- <xref:System.ServiceModel.Activities.SendReply> Aktivita  
+- <xref:System.ServiceModel.Activities.Receive.Action%2A>
+
+ <xref:System.ServiceModel.Activities.SendReply>Činnosti  
   
 - <xref:System.ServiceModel.Activities.SendReply.Action%2A>  
   
- <xref:System.ServiceModel.Activities.TransactedReceiveScope> Aktivita  
+ <xref:System.ServiceModel.Activities.TransactedReceiveScope>Činnosti  
   
- Konečný výsledek odvození smlouvy je popis služby pomocí stejné datové struktury jako smlouvy WCF služby a operace. Potom tyto informace slouží k vystavení WSDL pro službu pracovního postupu.  
+ Konečný výsledek odvození smlouvy je popis služby pomocí stejné datové struktury jako WCF smlouvy o službách a operacích. Tyto informace se pak používají k vystavení WSDL pro službu pracovního postupu.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Služby pracovních postupů](../../../../docs/framework/wcf/feature-details/workflow-services.md)
 - [Aktivity zasílání zpráv](../../../../docs/framework/wcf/feature-details/messaging-activities.md)

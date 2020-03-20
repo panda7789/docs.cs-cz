@@ -15,20 +15,20 @@ helpviewer_keywords:
 ms.assetid: 23682ca0-1bcf-48e6-996e-69f7ba337682
 topic_type:
 - apiref
-ms.openlocfilehash: 8b259636a8bd28abd3bba12c4a05dda3c13557e1
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.openlocfilehash: f8e92ec4f813e8810273a1514298d0739a3d2406
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76784893"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79179065"
 ---
 # <a name="icordebugappdomain3getcachedwinrttypesforiids-method"></a>ICorDebugAppDomain3::GetCachedWinRTTypesForIIDs – metoda
-Načte enumerátor pro prostředí Windows Runtime typy v mezipaměti aplikace na základě jejich identifikátorů rozhraní.  
+Získá čítač výčtu pro typy prostředí Windows Runtime uložené v mezipaměti v doméně aplikace na základě jejich identifikátorů rozhraní.  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```cpp  
-HRESULT GetCachedWinRTTypesForIIDs (   
+HRESULT GetCachedWinRTTypesForIIDs (
     [in]  ULONG32            cReqTypes,  
     [in]  GUID                *iidsToResolve,  
     [out] ICorDebugTypeEnum   **ppTypesEnum  
@@ -37,26 +37,26 @@ HRESULT GetCachedWinRTTypesForIIDs (
   
 ## <a name="parameters"></a>Parametry  
  `cReqTypes`  
- pro Počet požadovaných typů.  
+ [v] Počet požadovaných typů.  
   
  `iidsToResolve`  
- pro Ukazatel na pole, které obsahuje identifikátory rozhraní odpovídající spravovaným reprezentacím typů prostředí Windows Runtime, které mají být načteny.  
+ [v] Ukazatel na pole, které obsahuje identifikátory rozhraní odpovídající spravovaným reprezentacím typů prostředí Windows Runtime, které mají být načteny.  
   
  `ppTypesEnum`  
- mimo Ukazatel na adresu objektu rozhraní "ICorDebugTypeEnum", která umožňuje vyhodnotit výčet spravovaných reprezentace typů prostředí Windows Runtime uložených v mezipaměti, na základě identifikátorů rozhraní v `iidsToResolve`.  
+ [out] Ukazatel na adresu objektu rozhraní ICorDebugTypeEnum, který umožňuje výčet spravovaných reprezentací načtených v prostředí Windows Runtime v mezipaměti na základě identifikátorů rozhraní v `iidsToResolve`aplikaci .  
   
 ## <a name="remarks"></a>Poznámky  
- Pokud metoda nepovede načíst informace pro konkrétní identifikátor rozhraní, odpovídající položka v kolekci "ICorDebugTypeEnum" bude mít typ `ELEMENT_TYPE_END` chyby z důvodu problémů načítání dat, nebo `ELEMENT_TYPE_VOID` pro neznámé identifikátory rozhraní.  
+ Pokud se metodě nepodaří načíst informace pro konkrétní identifikátor rozhraní, odpovídající položka v kolekci `ELEMENT_TYPE_END` "ICorDebugTypeEnum" `ELEMENT_TYPE_VOID` bude mít typ chyb z důvodu problémů s načítáním dat nebo pro neznámé identifikátory rozhraní.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** prostředí Windows Runtime  
+ **Platformy:** Windows Runtime  
   
- **Hlavička:** CorDebug. idl, CorDebug. h  
+ **Záhlaví:** CorDebug.idl, CorDebug.h  
   
- **Knihovna:** CorGuids. lib  
+ **Knihovna:** CorGuids.lib  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
+ **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [ICorDebugAppDomain3 – rozhraní](icordebugappdomain3-interface.md)

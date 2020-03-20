@@ -15,68 +15,68 @@ helpviewer_keywords:
 ms.assetid: 7c9e9120-3104-42f0-86ce-19a025f20dcc
 topic_type:
 - apiref
-ms.openlocfilehash: ed193aab8beb0de1321aa1d52ec9f963b08b316c
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 7410f91a853f3a677a105dc2e12a86d723c9fad6
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74441659"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79177323"
 ---
 # <a name="imetadataimportenummemberswithname-method"></a>IMetaDataImport::EnumMembersWithName – metoda
-Vytvoří výčet tokenů memberDef či představujících členy zadaného typu se zadaným názvem.  
+Výčet tokenů MemberDef představujících členy zadaného typu se zadaným názvem.  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```cpp  
 HRESULT EnumMembersWithName (  
-   [in, out] HCORENUM    *phEnum,   
-   [in]      mdTypeDef   cl,   
-   [in]      LPCWSTR     szName,   
-   [out]     mdToken     rMembers[],   
-   [in]      ULONG       cMax,   
+   [in, out] HCORENUM    *phEnum,
+   [in]      mdTypeDef   cl,
+   [in]      LPCWSTR     szName,
+   [out]     mdToken     rMembers[],
+   [in]      ULONG       cMax,
    [out]     ULONG       *pcTokens  
 );  
 ```  
   
 ## <a name="parameters"></a>Parametry  
  `phEnum`  
- [in, out] Ukazatel na enumerátor.  
+ [dovnitř, ven] Ukazatel na čítač výčtu.  
   
  `cl`  
- pro Token TypeDef představující typ s členy pro výčet.  
+ [v] A TypeDef token představující typ s členy výčet.  
   
  `szName`  
- pro Název členu, který omezuje rozsah čítače.  
+ [v] Název člena, který omezuje rozsah čítače výčtu.  
   
  `rMembers`  
- mimo Pole, které se používá k uložení tokenů memberDef či.  
+ [out] Pole používané k uložení tokenů MemberDef.  
   
  `cMax`  
- pro Maximální velikost `rMembers` pole  
+ [v] Maximální velikost `rMembers` pole.  
   
  `pcTokens`  
- mimo Skutečný počet memberDef či tokenů vrácených v `rMembers`.  
+ [out] Skutečný počet tokenů MemberDef `rMembers`vrácených v .  
   
 ## <a name="remarks"></a>Poznámky  
- Tato metoda vytváří výčet polí a metod, ale ne vlastností nebo událostí. Na rozdíl od [IMetaDataImport:: enummembers –](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-enummembers-method.md)`EnumMembersWithName` zahodí všechny tokeny polí a členů, které nemají zadaný název.  
+ Tato metoda vyjmenovává pole a metody, ale ne vlastnosti nebo události. Na rozdíl od [IMetaDataImport::EnumMembers](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-enummembers-method.md), `EnumMembersWithName` zahodí všechny tokeny polí a členů, které nemají zadaný název.  
   
 ## <a name="return-value"></a>Návratová hodnota  
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
-|`S_OK`|`EnumTypeDefs` byla úspěšně vrácena.|  
-|`S_FALSE`|Nejsou k dispozici žádné tokeny memberDef či pro zobrazení výčtu. V takovém případě je `pcTokens` nula.|  
+|`S_OK`|`EnumTypeDefs`úspěšně vrácena.|  
+|`S_FALSE`|Neexistují žádné tokeny MemberDef pro výčet. V tom `pcTokens` případě je nula.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Hlavička:** Cor. h  
+ **Záhlaví:** Kor.h.  
   
- **Knihovna:** Zahrnuto jako prostředek v knihovně MsCorEE. dll  
+ **Knihovna:** Zahrnuto jako prostředek v souboru MsCorEE.dll  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [IMetaDataImport – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
 - [IMetaDataImport2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)

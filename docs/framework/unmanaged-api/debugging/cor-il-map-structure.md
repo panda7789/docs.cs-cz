@@ -14,22 +14,22 @@ helpviewer_keywords:
 ms.assetid: 534ebc17-963d-4b26-8375-8cd940281db3
 topic_type:
 - apiref
-ms.openlocfilehash: c37f039d9636854c464e7981693c573bd60deab9
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 4c79d0e4e37f3f884651e49c8fff6db72fac4f50
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73132346"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79179295"
 ---
 # <a name="cor_il_map-structure"></a>COR_IL_MAP – struktura
-Určuje změny relativního posunu funkce.  
+Určuje změny v relativním odsazení funkce.  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```cpp  
 typedef struct _COR_IL_MAP {  
-    ULONG32 oldOffset;   
-    ULONG32 newOffset;   
+    ULONG32 oldOffset;
+    ULONG32 newOffset;
     BOOL    fAccurate;  
 } COR_IL_MAP;  
 ```  
@@ -38,57 +38,57 @@ typedef struct _COR_IL_MAP {
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`oldOffset`|Starý posun jazyka MSIL (Microsoft Intermediate Language) vzhledem k začátku funkce.|  
+|`oldOffset`|Starý microsoft zprostředkující jazyk (MSIL) posun vzhledem k začátku funkce.|  
 |`newOffset`|Nový posun MSIL vzhledem k začátku funkce.|  
-|`fAccurate`|`true`, pokud je známé správné mapování; v opačném případě `false`.|  
+|`fAccurate`|`true`je-li známo, že mapování je přesné; v `false`opačném případě .|  
   
 ## <a name="remarks"></a>Poznámky  
- Formát mapy je následující: ladicí program předpokládá, že `oldOffset` odkazuje na posun MSIL v rámci původního neupraveného kódu jazyka MSIL. Parametr `newOffset` odkazuje na odpovídající posun MSIL v rámci nového, instrumentované kódu.  
+ Formát mapy je následující: Ladicí program bude `oldOffset` předpokládat, že odkazuje na posun MSIL v rámci původního, neupraveného kódu MSIL. Parametr `newOffset` odkazuje na odpovídající posun MSIL v rámci nového instrumentovaného kódu.  
   
- Aby krokování fungovalo správně, měli byste splnit následující požadavky:  
+ Pro krokování správně fungovat, by měly být splněny následující požadavky:  
   
-- Mapa by se měla seřadit ve vzestupném pořadí.  
+- Mapa by měla být seřazena vzestupně.  
   
-- Instrumentované kódy MSIL by se neměly přeřadit.  
+- Instrumentovaný kód MSIL by neměl být přeřazen.  
   
 - Původní kód MSIL by neměl být odebrán.  
   
-- Mapa by měla obsahovat položky pro mapování všech bodů sekvence ze souboru databáze programu (PDB).  
+- Mapa by měla obsahovat položky k mapování všech sekvenčních bodů ze souboru databáze programu (PDB).  
   
  Mapa neinterpoluje chybějící položky. Následující příklad ukazuje mapu a její výsledky.  
   
- Mapy  
+ Mapu:  
   
-- 0 staré odsazení, 0 nového posunu  
+- 0 starý posun, 0 nový posun  
   
-- 5 Old posun, 10 nových posunů  
+- 5 starý posun, 10 nových offsetů  
   
-- 9 staré posunutí, 20 nových posunů  
+- 9 starý posun, 20 nových offsetů  
   
- Důsledk  
+ Výsledky:  
   
-- Starý posun 0, 1, 2, 3 nebo 4 se namapuje na nový posun 0.  
+- Staré posun 0, 1, 2, 3 nebo 4 bude mapován na nový posun 0.  
   
-- Starý posun z 5, 6, 7 nebo 8 se namapuje na nový posun 10.  
+- Starý posun 5, 6, 7 nebo 8 bude mapován na nové posun10.  
   
-- Původní posun 9 nebo vyšší se namapuje na nový posun 20.  
+- Starý posun 9 nebo vyšší bude mapován na nový posun 20.  
   
-- Nové odsazení 0, 1, 2, 3, 4, 5, 6, 7, 8 nebo 9 bude namapováno na starý posun 0.  
+- Nové posun0, 1, 2, 3, 4, 5, 6, 7, 8 nebo 9 bude mapován na staré posun0.  
   
-- Nové posuny 10, 11, 12, 13, 14, 15, 16, 17, 18 nebo 19 budou namapovány na starý posun 5.  
+- Nový posun 10, 11, 12, 13, 14, 15, 16, 17, 18 nebo 19 bude mapován na starý posun 5.  
   
-- Nový posun o hodnotě 20 nebo vyšší bude mapován na starý posun 9.  
+- Nový posun 20 nebo vyšší bude mapován na staré posun 9.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
+ **Platformy:** Viz [Systémové požadavky](../../get-started/system-requirements.md).  
   
- **Hlavička:** CorDebug. idl, CorProf. idl  
+ **Záhlaví:** CorDebug.idl, CorProf.idl  
   
- **Knihovna:** CorGuids. lib  
+ **Knihovna:** CorGuids.lib  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Struktury pro ladění](debugging-structures.md)
-- [Ladění](index.md)
+- [ladění](index.md)

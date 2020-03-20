@@ -15,51 +15,51 @@ helpviewer_keywords:
 ms.assetid: afdb5ac9-5bf5-4b91-b7cb-f81db23d7da3
 topic_type:
 - apiref
-ms.openlocfilehash: add89fe81fccbd5e6f5ad5d27f0ab3ace489963e
-ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
+ms.openlocfilehash: 5346792cb2a1309268cb4ba48625aa559777fbaf
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76868522"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79176991"
 ---
 # <a name="icorprofilerinfo3getfunctiontailcall3info-method"></a>ICorProfilerInfo3::GetFunctionTailcall3Info – metoda
-Poskytuje rámec zásobníku funkce, která je hlášena profileru funkcí [FunctionTailcall3WithInfo –](functiontailcall3withinfo-function.md) . Tuto metodu lze volat pouze během `FunctionTailcall3WithInfo` zpětného volání.  
+Poskytuje rámec zásobníku funkce, která je hlášena profiler funkcí [FunctionTailcall3WithInfo.](functiontailcall3withinfo-function.md) Tuto metodu lze volat `FunctionTailcall3WithInfo` pouze během zpětného volání.  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```cpp  
-HRESULT GetFunctionTailcall3Info(   
-            [in]  FunctionID functionId,   
+HRESULT GetFunctionTailcall3Info(
+            [in]  FunctionID functionId,
             [in]  COR_PRF_ELT_INFO eltInfo,  
             [out] COR_PRF_FRAME_INFO *pFrameInfo);  
 ```  
   
 ## <a name="parameters"></a>Parametry  
  `functionId`  
- pro `FunctionID` funkce, která vrací.  
+ [v] Funkce, `FunctionID` která se vrací.  
   
  `eltInfo`  
- pro Neprůhledný popisovač, který představuje informace o daném snímku zásobníku. Profiler by měl poskytnout stejnou `eltInfo`, která byla přidělena profileru funkcí `FunctionTailcall3WithInfo`.  
+ [v] Neprůhledný popisovač, který představuje informace o daném rámci zásobníku. Profiler by měl `eltInfo` poskytnout stejné, které bylo `FunctionTailcall3WithInfo` dáno profiler funkce.  
   
  `pFrameInfo`  
- mimo Neprůhledný popisovač, který představuje obecné informace o daném snímku zásobníku. Tento popisovač je platný pouze během `FunctionTailcall3WithInfo` zpětného volání, ve kterém Profiler volal metodu `GetFunctionTailcall3Info`.  
+ [out] Neprůhledný popisovač, který představuje obecné informace o daném rámci zásobníku. Tento popisovač je `FunctionTailcall3WithInfo` platný pouze během zpětného `GetFunctionTailcall3Info` volání, ve kterém profiler volal metodu.  
   
 ## <a name="remarks"></a>Poznámky  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Hlavička:** CorProf. idl, CorProf. h  
+ **Záhlaví:** CorProf.idl, CorProf.h  
   
- **Knihovna:** CorGuids. lib  
+ **Knihovna:** CorGuids.lib  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
+ **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [FunctionEnter3WithInfo](functionenter3withinfo-function.md)
-- [FunctionLeave3WithInfo](functionleave3withinfo-function.md)
-- [FunctionTailcall3WithInfo](functiontailcall3withinfo-function.md)
+- [FunkceEnter3WithInfo](functionenter3withinfo-function.md)
+- [FunkceLeave3WithInfo](functionleave3withinfo-function.md)
+- [FunkceTailcall3WithInfo](functiontailcall3withinfo-function.md)
 - [ICorProfilerInfo3 – rozhraní](icorprofilerinfo3-interface.md)
 - [Rozhraní pro profilaci](profiling-interfaces.md)
-- [Profilace](index.md)
+- [Profilování](index.md)

@@ -2,25 +2,25 @@
 title: Syntaxe připojovacího řetězce
 ms.date: 05/22/2018
 ms.assetid: 0977aeee-04d1-4cce-bbed-750c77fce06e
-ms.openlocfilehash: 9e9e330b7195e5c04b6e9e2d086a04209e1c0e13
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.openlocfilehash: 3df97419391fe17ef77a3b8f24c4f0689a04602f
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73040147"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79151647"
 ---
 # <a name="connection-string-syntax"></a>Syntaxe připojovacího řetězce
-Každý .NET Framework poskytovatel dat má objekt `Connection`, který dědí z <xref:System.Data.Common.DbConnection> a také vlastnost <xref:System.Data.Common.DbConnection.ConnectionString%2A> pro konkrétního zprostředkovatele. Konkrétní syntaxi připojovacího řetězce pro každého poskytovatele je popsána v jeho vlastnosti `ConnectionString`. V následující tabulce jsou uvedeny čtyři poskytovatelé dat, kteří jsou součástí .NET Framework.  
+Každý zprostředkovatel dat rozhraní `Connection` .NET Framework <xref:System.Data.Common.DbConnection> má objekt, který <xref:System.Data.Common.DbConnection.ConnectionString%2A> dědí z, stejně jako vlastnost specifická pro zprostředkovatele. Konkrétní syntaxe připojovacího řetězce `ConnectionString` pro každého zprostředkovatele je popsána v jeho vlastnosti. V následující tabulce jsou uvedeny čtyři zprostředkovatelé dat, které jsou zahrnuty v rozhraní .NET Framework.  
   
-|Poskytovatel dat .NET Framework|Popis|  
+|Zprostředkovatel dat rozhraní .NET Framework|Popis|  
 |----------------------------------|-----------------|  
-|<xref:System.Data.SqlClient>|Poskytuje přístup k datům pro Microsoft SQL Server. Další informace o syntaxi připojovacího řetězce naleznete v tématu <xref:System.Data.SqlClient.SqlConnection.ConnectionString%2A>.|  
-|<xref:System.Data.OleDb>|Poskytuje přístup k datům pro zdroje dat, které jsou vystaveny pomocí OLE DB. Další informace o syntaxi připojovacího řetězce naleznete v tématu <xref:System.Data.OleDb.OleDbConnection.ConnectionString%2A>.|  
-|<xref:System.Data.Odbc>|Poskytuje přístup k datům pro zdroje dat, které jsou vystaveny pomocí rozhraní ODBC. Další informace o syntaxi připojovacího řetězce naleznete v tématu <xref:System.Data.Odbc.OdbcConnection.ConnectionString%2A>.|  
-|<xref:System.Data.OracleClient>|Poskytuje přístup k datům pro Oracle verze 8.1.7 nebo novější. Další informace o syntaxi připojovacího řetězce naleznete v tématu <xref:System.Data.OracleClient.OracleConnection.ConnectionString%2A>.|  
+|<xref:System.Data.SqlClient>|Poskytuje přístup k datům pro server Microsoft SQL Server. Další informace o syntaxi <xref:System.Data.SqlClient.SqlConnection.ConnectionString%2A>připojovacího řetězce naleznete v tématu .|  
+|<xref:System.Data.OleDb>|Poskytuje přístup k datům pro zdroje dat vystavené pomocí technologie OLE DB. Další informace o syntaxi <xref:System.Data.OleDb.OleDbConnection.ConnectionString%2A>připojovacího řetězce naleznete v tématu .|  
+|<xref:System.Data.Odbc>|Poskytuje přístup k datům pro zdroje dat vystavené pomocí rozhraní ODBC. Další informace o syntaxi <xref:System.Data.Odbc.OdbcConnection.ConnectionString%2A>připojovacího řetězce naleznete v tématu .|  
+|<xref:System.Data.OracleClient>|Poskytuje přístup k datům pro verzi Oracle verze 8.1.7 nebo novější. Další informace o syntaxi <xref:System.Data.OracleClient.OracleConnection.ConnectionString%2A>připojovacího řetězce naleznete v tématu .|  
   
 ## <a name="connection-string-builders"></a>Tvůrci připojovacích řetězců  
- ADO.NET 2,0 představil následující tvůrci připojovacích řetězců pro poskytovatele .NET Framework dat.  
+ ADO.NET 2.0 zavedla následující tvůrce připojovacího řetězce pro poskytovatele dat rozhraní .NET Framework.  
   
 - <xref:System.Data.SqlClient.SqlConnectionStringBuilder>  
   
@@ -30,12 +30,12 @@ Každý .NET Framework poskytovatel dat má objekt `Connection`, který dědí z
   
 - <xref:System.Data.OracleClient.OracleConnectionStringBuilder>  
   
- Tvůrci připojovacích řetězců umožňují vytvořit syntakticky platné připojovací řetězce za běhu, takže není nutné ručně zřetězit hodnoty připojovacího řetězce v kódu. Další informace najdete v tématu [tvůrci připojovacích řetězců](connection-string-builders.md).  
+ Tvůrce připojovacího řetězce umožňují vytvářet syntakticky platné připojovací řetězce za běhu, takže není nutné ručně zřetězit hodnoty připojovacího řetězce v kódu. Další informace naleznete v [tématu Connection String Builders](connection-string-builders.md).  
 
 ## <a name="windows-authentication"></a>Ověřování systému Windows  
- Pro připojení ke zdrojům dat, které ji podporují, doporučujeme použít ověřování systému Windows (někdy označované jako *integrované zabezpečení*). Syntaxe, která je zaměstnána v připojovacím řetězci, se liší podle poskytovatele. V následující tabulce jsou uvedeny syntaxe ověřování systému Windows používané s poskytovateli dat .NET Framework.  
+ Doporučujeme používat ověřování systému Windows (někdy označované jako *integrované zabezpečení)* pro připojení ke zdrojům dat, které jej podporují. Syntaxe použitá v připojovacím řetězci se liší podle zprostředkovatele. V následující tabulce je uvedena syntaxe ověřování systému Windows použitá s poskytovateli dat rozhraní .NET Framework.  
   
-|Zprostředkovatele|Syntaxe|  
+|Poskytovatel|Syntaxe|  
 |--------------|------------|  
 |`SqlClient`|`Integrated Security=true;`<br /><br /> `-- or --`<br /><br /> `Integrated Security=SSPI;`|  
 |`OleDb`|`Integrated Security=SSPI;`|  
@@ -43,15 +43,15 @@ Každý .NET Framework poskytovatel dat má objekt `Connection`, který dědí z
 |`OracleClient`|`Integrated Security=yes;`|  
   
 > [!NOTE]
-> `Integrated Security=true` vyvolá výjimku při použití s poskytovatelem `OleDb`.  
+> `Integrated Security=true`vyvolá výjimku při použití `OleDb` s poskytovatelem.  
   
-## <a name="sqlclient-connection-strings"></a>Připojovací řetězce SqlClient  
-Syntaxe připojovacího řetězce <xref:System.Data.SqlClient.SqlConnection> je dokumentována ve vlastnosti <xref:System.Data.SqlClient.SqlConnection.ConnectionString%2A?displayProperty=nameWithType>. K získání nebo nastavení připojovacího řetězce pro databázi SQL Server můžete použít vlastnost <xref:System.Data.SqlClient.SqlConnection.ConnectionString%2A>. Pokud se potřebujete připojit k dřívější verzi SQL Server, je nutné použít Zprostředkovatel dat .NET Framework pro OleDb (<xref:System.Data.OleDb>). Většina klíčových slov řetězce připojení se také mapuje na vlastnosti v <xref:System.Data.SqlClient.SqlConnectionStringBuilder>.  
+## <a name="sqlclient-connection-strings"></a>Připojovací řetězce sqlclient  
+Syntaxe připojovacího <xref:System.Data.SqlClient.SqlConnection> řetězce <xref:System.Data.SqlClient.SqlConnection.ConnectionString%2A?displayProperty=nameWithType> je popsána ve vlastnosti. <xref:System.Data.SqlClient.SqlConnection.ConnectionString%2A> Vlastnost můžete použít k získání nebo nastavení připojovacího řetězce pro databázi serveru SQL Server. Pokud se potřebujete připojit k dřívější verzi serveru SQL Server, musíte použít zprostředkovatele dat rozhraní .NET Framework pro OleDb (<xref:System.Data.OleDb>). Většina klíčových slov připojovacího řetězce také mapuje na vlastnosti v rozhraní <xref:System.Data.SqlClient.SqlConnectionStringBuilder>.  
 
 > [!IMPORTANT]
-> Výchozí nastavení pro klíčové slovo `Persist Security Info` je `false`. Nastavení na `true` nebo `yes` umožňuje získat informace citlivé na zabezpečení, včetně ID uživatele a hesla, aby bylo možné získat připojení po otevření připojení. Nechejte `Persist Security Info` nastavené na `false`, abyste zajistili, že nedůvěryhodný zdroj nemá přístup k informacím citlivého připojovacího řetězce.  
+> Výchozí nastavení klíčového `Persist Security Info` `false`slova je . Nastavení `true` nebo `yes` umožňuje informace citlivé na zabezpečení, včetně ID uživatele a hesla, získat z připojení po otevření připojení. Chcete-li `false` zajistit, aby nedůvěryhodný zdroj neměl přístup k citlivým informacím o připojovacím řetězci, nastavte `Persist Security Info` ji.  
 
-### <a name="windows-authentication-with-sqlclient"></a>Ověřování systému Windows s použitím SqlClient 
+### <a name="windows-authentication-with-sqlclient"></a>Ověřování systému Windows pomocí služby SqlClient
  Každá z následujících forem syntaxe používá ověřování systému Windows pro připojení k databázi **AdventureWorks** na místním serveru.  
   
 ```csharp  
@@ -63,85 +63,85 @@ Syntaxe připojovacího řetězce <xref:System.Data.SqlClient.SqlConnection> je 
     database=AdventureWorks;server=(local)"  
 ```  
   
-### <a name="sql-server-authentication-with-sqlclient"></a>Ověřování SQL Server s použitím SqlClient   
- Pro připojení k SQL Server se upřednostňuje ověřování systému Windows. Pokud se ale vyžaduje ověření SQL Server, použijte k zadání uživatelského jména a hesla následující syntaxi. V tomto příkladu se hvězdičky používají k vyjádření platného uživatelského jména a hesla.  
+### <a name="sql-server-authentication-with-sqlclient"></a>Ověřování serveru SQL Server pomocí služby SQLClient
+ Ověřování systému Windows je upřednostňováno pro připojení k serveru SQL Server. Pokud je však vyžadováno ověřování serveru SQL Server, zadejte uživatelské jméno a heslo pomocí následující syntaxe. V tomto příkladu hvězdičky představují platné uživatelské jméno a heslo.  
   
 ```csharp  
 "Persist Security Info=False;User ID=*****;Password=*****;Initial Catalog=AdventureWorks;Server=MySqlServer"  
 ```  
 
-Když se připojíte k Azure SQL Database nebo Azure SQL Data Warehouse a zadáte přihlašovací údaje ve formátu `user@servername`, ujistěte se, že `servername` hodnota v přihlašovacích údajích odpovídá hodnotě zadané pro `Server=`.
+Když se připojíte k Azure SQL Database nebo K Azure `user@servername`SQL Data `servername` Warehouse a zadáte přihlášení ve `Server=`formátu , ujistěte se, že hodnota v přihlášení odpovídá hodnotě stanovené pro .
 
 > [!NOTE]
-> Ověřování systému Windows má před SQL Server přihlášení přednost. Pokud zadáte obě integrované zabezpečení = true i uživatelské jméno a heslo, bude se ignorovat uživatelské jméno a heslo a použije se ověřování systému Windows.  
+> Ověřování systému Windows má přednost před přihlášením serveru SQL Server. Pokud zadáte integrované zabezpečení = true, stejně jako uživatelské jméno a heslo, uživatelské jméno a heslo budou ignorovány a bude použito ověřování systému Windows.  
 
-### <a name="connect-to-a-named-instance-of-sql-server"></a>Připojení k pojmenované instanci SQL Server
-Pro připojení k pojmenované instanci SQL Server použijte syntaxi *název serveru \* .  
+### <a name="connect-to-a-named-instance-of-sql-server"></a>Připojení k pojmenované instanci serveru SQL Server
+Chcete-li se připojit k pojmenované instanci serveru SQL Server, použijte syntaxi *názvu_serveru\název instance.*  
   
 ```csharp  
 "Data Source=MySqlServer\MSSQL1;"  
 ```  
 
-Při sestavování připojovacího řetězce můžete také nastavit vlastnost <xref:System.Data.SqlClient.SqlConnectionStringBuilder.DataSource%2A> `SqlConnectionStringBuilder` na název instance. Vlastnost <xref:System.Data.SqlClient.SqlConnection.DataSource%2A> objektu <xref:System.Data.SqlClient.SqlConnection> je určena jen pro čtení.  
+Můžete také nastavit <xref:System.Data.SqlClient.SqlConnectionStringBuilder.DataSource%2A> vlastnost `SqlConnectionStringBuilder` název instance při vytváření připojovacího řetězce. Vlastnost <xref:System.Data.SqlClient.SqlConnection.DataSource%2A> objektu <xref:System.Data.SqlClient.SqlConnection> je jen pro čtení.  
   
-### <a name="type-system-version-changes"></a>Změny typu systémové verze  
- Klíčové slovo `Type System Version` v <xref:System.Data.SqlClient.SqlConnection.ConnectionString%2A?displayProperty=nameWithType> určuje reprezentace typů SQL Server na straně klienta. Další informace o klíčovém slově `Type System Version` najdete v tématu <xref:System.Data.SqlClient.SqlConnection.ConnectionString%2A?displayProperty=nameWithType>.  
+### <a name="type-system-version-changes"></a>Změny verze systému typu  
+ Klíčové `Type System Version` slovo <xref:System.Data.SqlClient.SqlConnection.ConnectionString%2A?displayProperty=nameWithType> v a určuje reprezentaci typů serveru SQL Server na straně klienta. Další <xref:System.Data.SqlClient.SqlConnection.ConnectionString%2A?displayProperty=nameWithType> informace o `Type System Version` klíčovém slově naleznete v tématu.  
   
-## <a name="connecting-and-attaching-to-sql-server-express-user-instances"></a>Připojení a připojení k SQL Server Express uživatelské instance  
- Uživatelské instance jsou funkcí v SQL Server Express. Umožňují uživateli, který běží na místním účtu systému Windows s minimálními oprávněními pro připojení a spuštění databáze SQL Server bez nutnosti oprávnění správce. Uživatelská instance se spustí s přihlašovacími údaji uživatele Windows, ne jako službou.  
+## <a name="connecting-and-attaching-to-sql-server-express-user-instances"></a>Připojení a připojení k uživatelským instancím SQL Server Express  
+ Uživatelské instance jsou funkcí v sql server express. Umožňují uživateli s nejméně privilegovaným místním účtem systému Windows připojit a spustit databázi serveru SQL Server bez nutnosti oprávnění správce. Instance uživatele se spustí s pověřeními uživatele systému Windows, nikoli jako služba.  
   
- Další informace o práci s uživatelskými instancemi najdete v tématu [SQL Server Express uživatelské instance](./sql/sql-server-express-user-instances.md).  
+ Další informace o práci s instancemi uživatelů naleznete v tématu [SQL Server Express User Instances](./sql/sql-server-express-user-instances.md).  
   
-## <a name="using-trustservercertificate"></a>Použití TrustServerCertificate  
- Klíčové slovo `TrustServerCertificate` je platné pouze v případě, že se připojujete k instanci SQL Server s platným certifikátem. Pokud je `TrustServerCertificate` nastavená na `true`, transportní vrstva bude používat protokol SSL k šifrování kanálu a obejít procházení řetězu certifikátů za účelem ověření vztahu důvěryhodnosti.  
+## <a name="using-trustservercertificate"></a>Použití certifikátu TrustServerCertificate  
+ Klíčové `TrustServerCertificate` slovo je platné pouze při připojování k instanci serveru SQL Server s platným certifikátem. Pokud `TrustServerCertificate` je `true`nastavena na , bude transportní vrstva používat SSL k šifrování kanálu a obejít chůzi řetězce certifikátů k ověření důvěryhodnosti.  
   
 ```csharp  
 "TrustServerCertificate=true;"
 ```  
   
 > [!NOTE]
-> Pokud je `TrustServerCertificate` nastavená na `true` a šifrování je zapnuté, použije se úroveň šifrování zadaná na serveru i v případě, že je `Encrypt` v připojovacím řetězci nastavená na `false`. V opačném případě se připojení nezdaří.  
+> Pokud `TrustServerCertificate` je `true` nastavena na a šifrování je zapnuto, úroveň šifrování `Encrypt` zadaná na serveru bude použita i v případě, že je nastavena na `false` v připojovacím řetězci. Připojení se jinak nezdaří.  
   
 ### <a name="enabling-encryption"></a>Povolení šifrování  
- Pokud chcete povolit šifrování, když se na serveru nezřídí certifikát, musí být v SQL Server Configuration Manager nastavená možnost **Vynutit šifrování protokolu** a **certifikát důvěryhodného serveru** . V takovém případě bude šifrování používat certifikát serveru podepsaný svým držitelem bez ověření, pokud se na serveru nezřídí žádný ověřitelný certifikát.  
+ Chcete-li povolit šifrování v případě, že certifikát nebyl na serveru zřízen, musí být v nástroji SQL Server Configuration Manager nastaveny možnosti **Force Protocol Encryption** a Certificate serveru **Trust.** V takovém případě bude šifrování používat certifikát serveru podepsaný svým držitelem bez ověření, pokud na serveru nebyl zřízen žádný ověřitelný certifikát.  
   
- Nastavení aplikace nemůže snížit úroveň zabezpečení nakonfigurovanou v SQL Server, ale může ji případně posílit. Aplikace může vyžádat šifrování tím, že nastaví `TrustServerCertificate` a klíčová slova `Encrypt` na `true`, což zajistí, že šifrování proběhne i v případě, že nebyl zřízen certifikát serveru a nenakonfigurovalo se **šifrování protokolu** . pro klienta. Pokud ale v konfiguraci klienta `TrustServerCertificate` není povolený, je certifikát zřízeného serveru stále povinný.  
+ Nastavení aplikace nemůže snížit úroveň zabezpečení nakonfigurované ho sql server, ale může volitelně posílit. Aplikace může požádat o `TrustServerCertificate` `Encrypt` šifrování nastavením a klíčová slova na `true`, zaručující, že šifrování probíhá i v případě, že certifikát serveru nebyl zřízen a šifrování force **protocol** nebylo nakonfigurováno pro klienta. Pokud `TrustServerCertificate` však není v konfiguraci klienta povolena, je stále vyžadován zřízený certifikát serveru.  
   
- V následující tabulce jsou popsány všechny případy.  
+ Následující tabulka popisuje všechny případy.  
   
-|Vynutit nastavení klienta šifrování protokolu|Důvěřovat klientskému nastavení certifikátu serveru|Šifrovat/použít šifrování pro datový připojovací řetězec/atribut|Důvěřovat připojovacímu řetězci certifikátu serveru nebo atributu|Výsledek|  
+|Nastavení klienta force protocol encryption|Nastavení klienta certifikátu důvěryhodného serveru|Šifrovat/používat šifrování pro datový připojovací řetězec/atribut|Připojovací řetězec/atribut certifikátu důvěryhodného serveru|Výsledek|  
 |----------------------------------------------|---------------------------------------------|-------------------------------------------------------------------|-----------------------------------------------------------|------------|  
-|Ne|Není k dispozici|Ne (výchozí)|Ignorováno|Nedochází k žádnému šifrování.|  
-|Ne|Není k dispozici|Ano|Ne (výchozí)|K šifrování dochází pouze v případě, že existuje ověřitelný certifikát serveru, jinak pokus o připojení selže.|  
-|Ne|Není k dispozici|Ano|Ano|K šifrování vždy dojde, ale může používat certifikát serveru podepsaný svým držitelem.|  
-|Ano|Ne|Ignorováno|Ignorováno|K šifrování dochází pouze v případě, že existuje ověřitelný certifikát serveru. v opačném případě se pokus o připojení nezdaří.|  
-|Ano|Ano|Ne (výchozí)|Ignorováno|K šifrování vždy dojde, ale může používat certifikát serveru podepsaný svým držitelem.|  
-|Ano|Ano|Ano|Ne (výchozí)|K šifrování dochází pouze v případě, že existuje ověřitelný certifikát serveru. v opačném případě se pokus o připojení nezdaří.|  
-|Ano|Ano|Ano|Ano|K šifrování vždy dojde, ale může používat certifikát serveru podepsaný svým držitelem.|  
+|Ne|Není dostupné.|Ne (výchozí)|Ignorováno|Nedojde k žádnému šifrování.|  
+|Ne|Není dostupné.|Ano|Ne (výchozí)|K šifrování dochází pouze v případě, že existuje ověřitelný certifikát serveru, jinak se pokus o připojení nezdaří.|  
+|Ne|Není dostupné.|Ano|Ano|Šifrování vždy dochází, ale může použít certifikát serveru podepsaný svým držitelem.|  
+|Ano|Ne|Ignorováno|Ignorováno|K šifrování dochází pouze v případě, že existuje ověřitelný serverový certifikát. v opačném případě se pokus o připojení nezdaří.|  
+|Ano|Ano|Ne (výchozí)|Ignorováno|Šifrování vždy dochází, ale může použít certifikát serveru podepsaný svým držitelem.|  
+|Ano|Ano|Ano|Ne (výchozí)|K šifrování dochází pouze v případě, že existuje ověřitelný serverový certifikát. v opačném případě se pokus o připojení nezdaří.|  
+|Ano|Ano|Ano|Ano|Šifrování vždy dochází, ale může použít certifikát serveru podepsaný svým držitelem.|  
   
- Další informace najdete v tématu [použití šifrování bez ověření](/sql/relational-databases/native-client/features/using-encryption-without-validation).
+ Další informace naleznete [v tématu Použití šifrování bez ověření](/sql/relational-databases/native-client/features/using-encryption-without-validation).
   
 ## <a name="oledb-connection-strings"></a>Připojovací řetězce OleDb  
- Vlastnost <xref:System.Data.OleDb.OleDbConnection.ConnectionString%2A> <xref:System.Data.OleDb.OleDbConnection> umožňuje získat nebo nastavit připojovací řetězec pro OLE DB zdroj dat, jako je například Microsoft Access. Můžete také vytvořit připojovací řetězec `OleDb` za běhu pomocí <xref:System.Data.OleDb.OleDbConnectionStringBuilder> třídy.  
+ Vlastnost <xref:System.Data.OleDb.OleDbConnection.ConnectionString%2A> <xref:System.Data.OleDb.OleDbConnection> umožňuje získat nebo nastavit připojovací řetězec pro zdroj dat TECHNOLOGIE OLE DB, například aplikaci Microsoft Access. Můžete také vytvořit `OleDb` připojovací řetězec <xref:System.Data.OleDb.OleDbConnectionStringBuilder> za běhu pomocí třídy.  
   
 ### <a name="oledb-connection-string-syntax"></a>Syntaxe připojovacího řetězce OleDb  
- Je nutné zadat název zprostředkovatele pro připojovací řetězec <xref:System.Data.OleDb.OleDbConnection>. Následující připojovací řetězec se připojí k databázi aplikace Microsoft Access pomocí poskytovatele jet. Všimněte si, že klíčová slova `User ID` a `Password` jsou volitelná, pokud není databáze zabezpečená (výchozí).  
+ Je nutné zadat název <xref:System.Data.OleDb.OleDbConnection> zprostředkovatele pro připojovací řetězec. Následující připojovací řetězec se připojuje k databázi aplikace Microsoft Access pomocí zprostředkovatele Jet. Všimněte `User ID` si, že a `Password` klíčová slova jsou volitelné, pokud databáze není zabezpečená (výchozí).  
   
 ```csharp
 Provider=Microsoft.Jet.OLEDB.4.0; Data Source=d:\Northwind.mdb;User ID=Admin;Password=;
 ```  
   
- Pokud je databáze Jet zabezpečená pomocí zabezpečení na úrovni uživatele, musíte zadat umístění informačního souboru pracovní skupiny (. mdw). Informační soubor pracovní skupiny slouží k ověření přihlašovacích údajů prezentovaných v připojovacím řetězci.  
+ Pokud je databáze Jet zabezpečena pomocí zabezpečení na úrovni uživatele, je nutné zadat umístění informačního souboru pracovní skupiny (.mdw). Informační soubor pracovní skupiny se používá k ověření pověření uvedených v připojovacím řetězci.  
   
 ```csharp
 Provider=Microsoft.Jet.OLEDB.4.0;Data Source=d:\Northwind.mdb;Jet OLEDB:System Database=d:\NorthwindSystem.mdw;User ID=*****;Password=*****;  
 ```  
   
 > [!IMPORTANT]
-> V souboru UDL (Universal Data Link) je možné zadávat informace o připojení pro **OleDbConnection** . měli byste se ale vyhnout. Soubory UDL nejsou zašifrované a zveřejňují informace připojovacího řetězce ve formátu prostého textu. Vzhledem k tomu, že soubor UDL je externí prostředek založený na souboru, nelze jej zabezpečit pomocí .NET Framework. Soubory UDL nejsou podporovány pro **SqlClient**.  
+> Je možné zadat informace o připojení pro **OleDbConnection** v souboru Univerzální datové spojení (UDL). nicméně byste se měli vyhnout tomu. UDL soubory nejsou šifrovány a vystavit informace o připojovacím řetězci ve prostém textu. Vzhledem k tomu, že soubor UDL je externí prostředek založený na souboru pro vaši aplikaci, nelze jej zabezpečit pomocí rozhraní .NET Framework. Soubory UDL nejsou podporovány pro **sqlclient**.  
   
-### <a name="using-datadirectory-to-connect-to-accessjet"></a>Použití DataDirectory pro připojení k přístupu/jet  
- `DataDirectory` není výhradně `SqlClient`. Lze ji také použít s poskytovateli dat <xref:System.Data.OleDb> a <xref:System.Data.Odbc> .NET. Následující vzorový <xref:System.Data.OleDb.OleDbConnection> řetězec ukazuje syntaxi nutnou k připojení k souboru Northwind. mdb ve složce App_Data aplikace. Systémová databáze (System. mdw) je také uložena v tomto umístění.  
+### <a name="using-datadirectory-to-connect-to-accessjet"></a>Připojení k přístupu/jetu pomocí služby DataDirectory  
+ `DataDirectory`není výlučně `SqlClient`. Lze jej také použít <xref:System.Data.OleDb> <xref:System.Data.Odbc> s poskytovateli dat a .NET. Následující ukázkový <xref:System.Data.OleDb.OleDbConnection> řetězec ukazuje syntaxi potřebnou pro připojení k souboru Northwind.mdb umístěného ve složce app_data aplikace. Systémová databáze (System.mdw) je také uložena v tomto umístění.  
   
 ```csharp  
 "Provider=Microsoft.Jet.OLEDB.4.0;  
@@ -150,35 +150,35 @@ Jet OLEDB:System Database=|DataDirectory|\System.mdw;"
 ```  
   
 > [!IMPORTANT]
-> Určení umístění systémové databáze v připojovacím řetězci není vyžadováno, pokud databáze Access/Jet není zabezpečená. Zabezpečení je ve výchozím nastavení vypnuté a všichni uživatelé se připojují jako předdefinovaný správce s prázdným heslem. I když je zabezpečení na úrovni uživatele správně implementované, zůstane databáze Jet zranitelná vůči útokům. Proto se nedoporučuje ukládání citlivých informací v databázi Accessu nebo databázi Jet na základní slabiny svého schématu zabezpečení založeného na souborech.  
+> Určení umístění systémové databáze v připojovacím řetězci není vyžadováno, pokud databáze Access/Jet není zabezpečená. Zabezpečení je ve výchozím nastavení vypnuto a všichni uživatelé se připojují jako vestavěný uživatel správce s prázdným heslem. I v případě, že je správně implementováno zabezpečení na úrovni uživatele, databáze Jet zůstává zranitelná vůči útoku. Proto ukládání citlivých informací v databázi Access/Jet se nedoporučuje z důvodu vlastní slabiny jeho schéma zabezpečení založené na souborech.  
   
 ### <a name="connecting-to-excel"></a>Připojení k Excelu  
- Zprostředkovatel Microsoft Jet slouží k připojení k sešitu aplikace Excel. V následujícím připojovacím řetězci sada klíčového slova `Extended Properties` nastaví vlastnosti, které jsou specifické pro aplikaci Excel. "HDR = Yes;" označuje, že první řádek obsahuje názvy sloupců, ne data a "IMEX = 1;" oznamuje ovladači, aby se jako text vždy četly sloupce s mezismíšenými daty.  
+ Zprostředkovatel Microsoft Jet se používá k připojení k sešitu aplikace Excel. V následujícím připojovacím řetězci `Extended Properties` klíčové slovo nastaví vlastnosti, které jsou specifické pro aplikaci Excel. "HDR=Ano;" označuje, že první řádek obsahuje názvy sloupců, nikoli data, a "IMEX=1;" říká řidiči, aby vždy četl "smíšené" datové sloupce jako text.  
   
-```csharp 
+```csharp
 Provider=Microsoft.Jet.OLEDB.4.0;Data Source=D:\MyExcel.xls;Extended Properties=""Excel 8.0;HDR=Yes;IMEX=1""  
 ```  
   
- Všimněte si, že znak dvojité uvozovky vyžadovaný pro `Extended Properties` musí být také uzavřen v uvozovkách.  
+ Všimněte si, že znak `Extended Properties` dvojité nabídky požadovaný pro musí být také uzavřen v uvozovkách.  
   
-### <a name="data-shape-provider-connection-string-syntax"></a>Syntaxe připojovacího řetězce zprostředkovatele datových tvarů  
- Při použití poskytovatele datových tvarů Microsoft použijte `Provider` i klíčová slova `Data Provider`. Následující příklad používá poskytovatele tvaru pro připojení k místní instanci SQL Server.  
+### <a name="data-shape-provider-connection-string-syntax"></a>Syntaxe připojovacího řetězce zprostředkovatele datového obrazce  
+ Při použití `Provider` zprostředkovatele obrazce Microsoft Data Shape použijte `Data Provider` klíčová slova i klíčová slova. Následující příklad používá zprostředkovatele shape pro připojení k místní instanci serveru SQL Server.  
   
 ```csharp  
-"Provider=MSDataShape;Data Provider=SQLOLEDB;Data Source=(local);Initial Catalog=pubs;Integrated Security=SSPI;"   
+"Provider=MSDataShape;Data Provider=SQLOLEDB;Data Source=(local);Initial Catalog=pubs;Integrated Security=SSPI;"
 ```  
   
-## <a name="odbc-connection-strings"></a>Připojovací řetězce ODBC  
- Vlastnost <xref:System.Data.Odbc.OdbcConnection.ConnectionString%2A> <xref:System.Data.Odbc.OdbcConnection> umožňuje získat nebo nastavit připojovací řetězec pro OLE DB zdroj dat. Připojovací řetězce rozhraní ODBC jsou podporovány také <xref:System.Data.Odbc.OdbcConnectionStringBuilder>.  
+## <a name="odbc-connection-strings"></a>Připojovací řetězce Odbc  
+ Vlastnost <xref:System.Data.Odbc.OdbcConnection.ConnectionString%2A> <xref:System.Data.Odbc.OdbcConnection> umožňuje získat nebo nastavit připojovací řetězec pro zdroj dat TECHNOLOGIE OLE DB. Připojovací řetězce Odbc <xref:System.Data.Odbc.OdbcConnectionStringBuilder>jsou také podporovány rozhraním .  
   
- Následující připojovací řetězec používá ovladač pro text společnosti Microsoft.  
+ Následující připojovací řetězec používá textový ovladač společnosti Microsoft.  
   
 ```csharp  
 Driver={Microsoft Text Driver (*.txt; *.csv)};DBQ=d:\bin  
 ```  
   
-### <a name="using-datadirectory-to-connect-to-visual-foxpro"></a>Použití DataDirectory pro připojení k Visual FoxPro  
- Následující ukázka <xref:System.Data.Odbc.OdbcConnection> připojovacího řetězce ukazuje použití `DataDirectory` pro připojení k souboru Microsoft Visual FoxPro.  
+### <a name="using-datadirectory-to-connect-to-visual-foxpro"></a>Připojení k aplikaci Visual FoxPro pomocí služby DataDirectory  
+ Následující <xref:System.Data.Odbc.OdbcConnection> ukázka připojovacího řetězce ukazuje použití `DataDirectory` připojení k souboru Microsoft Visual FoxPro.  
   
 ```csharp  
 "Driver={Microsoft Visual FoxPro Driver};  
@@ -186,15 +186,15 @@ SourceDB=|DataDirectory|\MyData.DBC;SourceType=DBC;"
 ```  
   
 ## <a name="oracle-connection-strings"></a>Připojovací řetězce Oracle  
- Vlastnost <xref:System.Data.OracleClient.OracleConnection.ConnectionString%2A> <xref:System.Data.OracleClient.OracleConnection> umožňuje získat nebo nastavit připojovací řetězec pro OLE DB zdroj dat. <xref:System.Data.OracleClient.OracleConnectionStringBuilder> podporuje i připojovací řetězce Oracle.  
+ Vlastnost <xref:System.Data.OracleClient.OracleConnection.ConnectionString%2A> <xref:System.Data.OracleClient.OracleConnection> umožňuje získat nebo nastavit připojovací řetězec pro zdroj dat TECHNOLOGIE OLE DB. Připojovací řetězce Oracle <xref:System.Data.OracleClient.OracleConnectionStringBuilder> jsou také podporovány .  
   
-```csharp 
+```csharp
 Data Source=Oracle9i;User ID=*****;Password=*****;  
 ```  
   
- Další informace o syntaxi připojovacího řetězce ODBC najdete v tématu <xref:System.Data.OracleClient.OracleConnection.ConnectionString%2A>.  
+ Další informace o syntaxi připojovacího řetězce ROZHRANÍ ODBC naleznete v tématu <xref:System.Data.OracleClient.OracleConnection.ConnectionString%2A>.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Připojovací řetězce](connection-strings.md)
 - [Připojení ke zdroji dat](connecting-to-a-data-source.md)

@@ -9,12 +9,12 @@ helpviewer_keywords:
 - type libraries
 - registering assemblies
 ms.assetid: 5220fe58-5aaf-4e8e-8bc3-b78c63025804
-ms.openlocfilehash: 1af93ae89d027bccdd52b9cd9c49f8e620303677
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: aecd2f6894558b45898c7f22dd333617d9e2e327
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73104945"
+ms.lasthandoff: 03/15/2020
+ms.locfileid: "79180365"
 ---
 # <a name="regsvcsexe-net-services-installation-tool"></a>Regsvcs.exe (nástroj pro instalaci služeb .NET)
 Instalační nástroj .NET Services vykonává tyto akce:  
@@ -25,7 +25,7 @@ Instalační nástroj .NET Services vykonává tyto akce:
   
 - Konfiguruje služby, které jste přidali pomocí programu do vaší třídy.  
   
- Chcete-li spustit nástroj, použijte Developer Command Prompt pro Visual Studio (nebo příkazový řádek sady Visual Studio v systému Windows 7). Další informace najdete v tématu [výzvy k zadání příkazu](developer-command-prompt-for-vs.md).  
+ Chcete-li nástroj spustit, použijte příkazový řádek pro vývojáře pro sadu Visual Studio (nebo příkazový řádek sady Visual Studio v systému Windows 7). Další informace naleznete v [příkazových koncích](developer-command-prompt-for-vs.md).  
   
  V příkazovém řádku zadejte následující:  
   
@@ -34,57 +34,57 @@ Instalační nástroj .NET Services vykonává tyto akce:
 ```console  
       regsvcs [/c | /fc | /u] [/tlb:typeLibraryFile] [/extlb]  
 [/reconfig] [/componly] [/appname:applicationName]  
-[/nologo] [/quiet]assemblyFile.dll   
+[/nologo] [/quiet]assemblyFile.dll
 ```  
   
 ## <a name="parameters"></a>Parametry  
   
 |Argument|Popis|  
 |--------------|-----------------|  
-|*assemblyFile. dll*|Zdrojový soubor sestavení. Sestavení musí být podepsáno silným názvem. Další informace naleznete v tématu [podepisování sestavení silným názvem](../../standard/assembly/sign-strong-name.md).|  
+|*soubor assemblyFile.dll*|Zdrojový soubor sestavení. Sestavení musí být podepsáno silným názvem. Další informace naleznete [v tématu Podepsání sestavení se silným názvem](../../standard/assembly/sign-strong-name.md).|  
   
 |Možnost|Popis|  
 |------------|-----------------|  
 |**/appdir:** *cesta*|Určuje kořenový adresář aplikace.|  
-|**/AppName:** *ApplicationName*|Určuje název aplikace modelu COM+, která se má vyhledat nebo vytvořit.|  
+|**/appname:** *applicationName*|Určuje název aplikace modelu COM+, která se má vyhledat nebo vytvořit.|  
 |**/c**|Vytvoří cílovou aplikaci.|  
 |**/componly**|Nakonfiguruje pouze součásti; ignoruje metody a rozhraní.|  
 |**/exapp**|Určuje, že nástroj má očekávat existující aplikaci.|  
 |**/extlb**|Použije existující knihovnu typů.|  
-|**/FC**|Vyhledá nebo vytvoří cílovou aplikaci.|  
-|**/Help**|Zobrazí syntaxi příkazu a možnosti nástroje.|  
+|**/fc**|Vyhledá nebo vytvoří cílovou aplikaci.|  
+|**/nápověda**|Zobrazí syntaxi příkazu a možnosti nástroje.|  
 |**/noreconfig**|Znovu nekonfiguruje existující cílovou aplikaci.|  
 |**/nologo**|Potlačí zobrazení úvodního nápisu společnosti Microsoft.|  
-|**/parName:** *název*|Určuje název nebo ID aplikace modelu COM+, která se má vyhledat nebo vytvořit.|  
+|**/parname:** *název*|Určuje název nebo ID aplikace modelu COM+, která se má vyhledat nebo vytvořit.|  
 |**/reconfig**|Znovu nakonfiguruje existující cílovou aplikaci. Toto nastavení je výchozí.|  
-|**/TLB:** *souborKnihovnyTypů*|Určuje soubor knihovny typů instalace, který se má nainstalovat.|  
-|**přepínač**|Odinstaluje cílovou aplikaci.|  
-|**/quiet**|Určuje použití tichého režimu; potlačí zobrazování loga a zpráv o úspěchu.|  
+|**/tlb:** *soubor typelibraryfile*|Určuje soubor knihovny typů instalace, který se má nainstalovat.|  
+|**/u**|Odinstaluje cílovou aplikaci.|  
+|**/tichý**|Určuje použití tichého režimu; potlačí zobrazování loga a zpráv o úspěchu.|  
 |**/?**|Zobrazí syntaxi příkazu a možnosti nástroje.|  
   
 ## <a name="remarks"></a>Poznámky  
- Regsvcs. exe vyžaduje zdrojový soubor sestavení určený pomocí *assemblyFile. dll*. Toto sestavení musí být podepsáno silným názvem. Další informace o podepisování silným názvem naleznete v tématu [podepisování sestavení silným názvem](../../standard/assembly/sign-strong-name.md). Názvy cílové aplikace a souboru knihovny typů jsou volitelné. Argument *ApplicationName* lze vygenerovat ze zdrojového souboru sestavení a vytvoří jej pomocí Regsvcs. exe, pokud ještě neexistuje. Argument *souborKnihovnyTypů* může určovat název knihovny typů. Pokud název knihovny typů nezadáte, nástroj Regsvcs.exe použije jako výchozí název sestavení.  
+ Program Regsvcs.exe vyžaduje zdrojový soubor sestavení určený souborem *assemblyFile.dll*. Toto sestavení musí být podepsáno silným názvem. Další informace o podepisování silného názvu naleznete [v tématu Podepsání sestavení se silným názvem](../../standard/assembly/sign-strong-name.md). Názvy cílové aplikace a souboru knihovny typů jsou volitelné. Argument *applicationName* může být generován ze zdrojového souboru sestavení a bude vytvořen programem Regsvcs.exe, pokud ještě neexistuje. Argument *typelibraryfile* může určit název knihovny typů. Pokud název knihovny typů nezadáte, nástroj Regsvcs.exe použije jako výchozí název sestavení.  
   
- Pokud Regsvcs. exe zaregistruje metody komponenty, vztahuje se na ně [požadavky](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/9kc0c6st(v=vs.100)) a [požadavky propojení](../misc/link-demands.md) na tyto metody. Vzhledem k tomu, že se nástroj spouští v plně důvěryhodném prostředí, většina požadavků na oprávnění je splněna. Regsvcs. exe však nemůže registrovat součásti s metodami chráněnými požadavkem nebo odkazem na poptávku pro <xref:System.Security.Permissions.StrongNameIdentityPermission> nebo <xref:System.Security.Permissions.PublisherIdentityPermission>.  
+ Když Regsvcs.exe registruje metody komponenty, podléhá [požadavkům](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/9kc0c6st(v=vs.100)) a [požadavkům](../misc/link-demands.md) na propojení těchto metod. Vzhledem k tomu, že se nástroj spouští v plně důvěryhodném prostředí, většina požadavků na oprávnění je splněna. Program Regsvcs.exe však nemůže registrovat součásti pomocí metod <xref:System.Security.Permissions.StrongNameIdentityPermission> chráněných poptávkou nebo propojením poptávky <xref:System.Security.Permissions.PublisherIdentityPermission>pro soubor .  
   
  Pro použití Regsvcs.exe musíte mít administrátorská oprávnění na místním počítači.  
   
  Pokud Regsvcs.exe selže při provádění kterékoli z těchto akcí, zobrazí se odpovídající chybové zprávy.  
   
 ## <a name="examples"></a>Příklady  
- Následující příkaz přidá všechny veřejné třídy obsažené v `myTest.dll` do `myTargetApp` (existující aplikace COM+) a vytvoří knihovnu typů `myTest.tlb`.  
+ Následující příkaz přidá všechny veřejné `myTest.dll` třídy obsažené v `myTargetApp` (existující aplikace `myTest.tlb` modelu COM+) a vytvoří knihovnu typů.  
   
 ```console  
 regsvcs /appname:myTargetApp myTest.dll  
 ```  
   
- Následující příkaz přidá všechny veřejné třídy obsažené v `myTest.dll` do `myTargetApp` (existující aplikace COM+) a vytvoří knihovnu typů `newTest.tlb`.  
+ Následující příkaz přidá všechny veřejné `myTest.dll` třídy obsažené v `myTargetApp` (existující aplikace `newTest.tlb` modelu COM+) a vytvoří knihovnu typů.  
   
 ```console  
 regsvcs /appname:myTargetApp /tlb:newTest.tlb myTest.dll  
 ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Nástroje](index.md)
 - [Postupy: Podepsání sestavení silným názvem](../../standard/assembly/sign-strong-name.md)

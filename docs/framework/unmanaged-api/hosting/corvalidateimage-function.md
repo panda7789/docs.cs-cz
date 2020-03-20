@@ -14,20 +14,20 @@ helpviewer_keywords:
 ms.assetid: 0117e080-05f9-4772-885d-e1847230947c
 topic_type:
 - apiref
-ms.openlocfilehash: 42da5bb761ba8ce388bd41d46e8fdc4561ad0290
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 3a6da0e845fa50d090cdf0808b211a5806c40961
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73136874"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79178219"
 ---
 # <a name="_corvalidateimage-function"></a>_CorValidateImage – funkce
-Ověří bitové kopie spravovaného modulu a upozorní zavaděče operačního systému poté, co byly načteny.  
+Ověří image spravovaného modulu a upozorní zavaděč operačního systému po jejich načtení.  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```cpp  
-STDAPI _CorValidateImage (   
+STDAPI _CorValidateImage (
    [in] PVOID* ImageBase,  
    [in] LPCWSTR FileName  
 );  
@@ -35,51 +35,51 @@ STDAPI _CorValidateImage (
   
 ## <a name="parameters"></a>Parametry  
  `ImageBase`  
- pro Ukazatel na počáteční umístění obrázku, který se má ověřit jako spravovaný kód. Bitová kopie již musí být načtena do paměti.  
+ [v] Ukazatel na počáteční umístění bitové kopie k ověření jako spravovaný kód. Obraz již musí být načten do paměti.  
   
  `FileName`  
- pro Název souboru obrázku  
+ [v] Název souboru obrázku.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- Tato funkce vrací standardní hodnoty `E_INVALIDARG`, `E_OUTOFMEMORY`, `E_UNEXPECTED`a `E_FAIL`a také následující hodnoty.  
+ Tato funkce vrátí `E_INVALIDARG`standardní `E_OUTOFMEMORY` `E_UNEXPECTED`hodnoty `E_FAIL`, , a , stejně jako následující hodnoty.  
   
 |Návratová hodnota|Popis|  
 |------------------|-----------------|  
-|`STATUS_INVALID_IMAGE_FORMAT`|Obrázek je neplatný. Tato hodnota má hodnotu HRESULT 0xC000007BL.|  
-|`STATUS_SUCCESS`|Bitová kopie je platná. Tato hodnota má HRESULT 0x00000000.|  
+|`STATUS_INVALID_IMAGE_FORMAT`|Obrázek je neplatný. Tato hodnota má HRESULT 0xC000007BL.|  
+|`STATUS_SUCCESS`|Obrázek je platný. Tato hodnota má HRESULT 0x00000000L.|  
   
 ## <a name="remarks"></a>Poznámky  
- V systému Windows XP a novějších verzích zavaděč operačního systému kontroluje spravované moduly kontrolou adresáře popisovače COM v hlavičce souboru. Sada bitů označuje spravovaný modul. Pokud zavaděč zjistí spravovaný modul, načte knihovnu MsCorEE. dll a volání `_CorValidateImage`, která provádí následující akce:  
+ V systému Windows XP a novějších verzích zavaděč operačního systému kontroluje spravované moduly kontrolou bitu adresáře popisovače COM v hlavičce coff (Common object file format). Bit sady označuje spravovaný modul. Pokud zavaděč detekuje spravovaný modul, načte soubor `_CorValidateImage`MsCorEE.dll a zavolá , který provede následující akce:  
   
-- Potvrdí, že obrázek je platný spravovaný modul.  
+- Potvrzuje, že bitová kopie je platný spravovaný modul.  
   
-- Změní vstupní bod v obrázku na vstupní bod v modulu CLR (Common Language Runtime).  
+- Změní vstupní bod v obraze na vstupní bod v zaběhu společného jazyka (CLR).  
   
-- Pro 64 verze Windows upraví image, která je v paměti, díky transformaci z PE32 na PE32 + Format.  
+- U 64bitových verzí systému Windows upravuje bitovou kopii, která je v paměti, transformací z formátu PE32 na formát PE32+.  
   
-- Vrátí se zavaděč při načtení imagí spravovaného modulu.  
+- Vrátí se do zavaděče při načtení bitové kopie spravovaného modulu.  
   
- U spustitelných imagí zavaděč operačního systému pak zavolá funkci [_CorExeMain](../../../../docs/framework/unmanaged-api/hosting/corexemain-function.md) bez ohledu na vstupní bod zadaný ve spustitelném souboru. Pro Image sestavení DLL volá zavaděč funkci [_CorDllMain](../../../../docs/framework/unmanaged-api/hosting/cordllmain-function.md) .  
+ U spustitelných bitových kopií pak zavaděč operačního systému volá [funkci _CorExeMain](../../../../docs/framework/unmanaged-api/hosting/corexemain-function.md) bez ohledu na vstupní bod zadaný ve spustitelném souboru. Pro obrazy sestavení DLL zavaděč volá [_CorDllMain](../../../../docs/framework/unmanaged-api/hosting/cordllmain-function.md) funkci.  
   
- `_CorExeMain` nebo `_CorDllMain` provádí následující akce:  
+ `_CorExeMain`nebo `_CorDllMain` provede následující akce:  
   
-- Inicializuje modul CLR.  
+- Inicializuje CLR.  
   
-- Vyhledá spravovaný vstupní bod ze záhlaví CLR sestavení.  
+- Vyhledá spravovaný vstupní bod z hlavičky CLR sestavení.  
   
-- Zahájí provádění.  
+- Začíná poprava.  
   
- Zavaděč volá funkci [_CorImageUnloading](../../../../docs/framework/unmanaged-api/hosting/corimageunloading-function.md) , když jsou obrázky spravovaného modulu uvolněny. Tato funkce ale neprovede žádnou akci. pouze vrátí.  
+ Zavaděč volá [funkci _CorImageUnloading](../../../../docs/framework/unmanaged-api/hosting/corimageunloading-function.md) při uvolnění bitových kopií spravovaného modulu. Tato funkce však neprovede žádnou akci; to prostě vrátí.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Hlavička:** Cor. h  
+ **Záhlaví:** Kor.h.  
   
- **Knihovna:** Zahrnuto jako prostředek v knihovně MsCorEE. dll  
+ **Knihovna:** Zahrnuto jako prostředek v souboru MsCorEE.dll  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Globální statické funkce pro metadata](../../../../docs/framework/unmanaged-api/metadata/metadata-global-static-functions.md)

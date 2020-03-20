@@ -2,26 +2,26 @@
 title: Konfigurace služeb WCF v kódu
 ms.date: 03/30/2017
 ms.assetid: 193c725d-134f-4d31-a8f8-4e575233bff6
-ms.openlocfilehash: 5d05fe5f70f4e2b1490c728cc019430cd94ff925
-ms.sourcegitcommit: 79a2d6a07ba4ed08979819666a0ee6927bbf1b01
+ms.openlocfilehash: 4ff49b4e17ae179426cc033a955ecf2c71f2a3e1
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74569508"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79174807"
 ---
 # <a name="configuring-wcf-services-in-code"></a>Konfigurace služeb WCF v kódu
-Windows Communication Foundation (WCF) umožňuje vývojářům nakonfigurovat služby pomocí konfiguračních souborů nebo kódu.  Konfigurační soubory jsou užitečné, když po nasazení potřebujete nakonfigurovat službu. Při použití konfiguračních souborů potřebuje IT specialista aktualizovat pouze konfigurační soubor, není nutné znovu zkompilována. Konfigurační soubory ale mohou být složité a obtížné udržovat. Neexistuje žádná podpora pro ladění konfiguračních souborů a konfigurační prvky jsou odkazovány pomocí názvů, které usnadňují a obtíže při vytváření konfiguračních souborů. WCF také umožňuje nakonfigurovat služby v kódu. V dřívějších verzích WCF (4,0 a starší) konfigurace služeb v kódu byla v rámci scénářů s vlastním hostováním velmi snadná, <xref:System.ServiceModel.ServiceHost> třídy vám umožňují nakonfigurovat koncové body a chování před voláním třídy ServiceHost. Open. Ve scénářích, kde se nachází web, ale nemáte přímý přístup k třídě <xref:System.ServiceModel.ServiceHost>. Pro konfiguraci webové hostované služby jste museli vytvořit `System.ServiceModel.ServiceHostFactory`, která vytvořila <xref:System.ServiceModel.Activation.ServiceHostFactory> a provedla všechny potřebné konfigurace. Počínaje verzí .NET 4,5 nabízí WCF snazší způsob, jak v kódu nakonfigurovat služby hostované v místním prostředí i na webu.  
+Windows Communication Foundation (WCF) umožňuje vývojářům konfigurovat služby pomocí konfiguračních souborů nebo kódu.  Konfigurační soubory jsou užitečné, když služba musí být nakonfigurována po nasazení. Při použití konfiguračních souborů potřebuje odborník v IT pouze aktualizovat konfigurační soubor, není vyžadována žádná rekompilace. Konfigurační soubory však může být složité a obtížné udržovat. Neexistuje žádná podpora pro ladění konfiguračních souborů a konfigurační prvky jsou odkazovány názvy, které činí vytváření konfiguračních souborů náchylné k chybám a obtížné. WCF také umožňuje konfigurovat služby v kódu. V dřívějších verzích WCF (4.0 a starší) konfigurace služeb v kódu <xref:System.ServiceModel.ServiceHost> bylo snadné v samoobslužných scénářích, třída vám umožnila konfigurovat koncové body a chování před voláním ServiceHost.Open. Ve scénářích hostovaných na webu však nemáte <xref:System.ServiceModel.ServiceHost> přímý přístup ke třídě. Chcete-li nakonfigurovat webovou hostovanou `System.ServiceModel.ServiceHostFactory` službu, museli jste vytvořit a který vytvořil a provedl potřebnou <xref:System.ServiceModel.Activation.ServiceHostFactory> konfiguraci. Počínaje rozhraním .NET 4.5 poskytuje wcf jednodušší způsob konfigurace samoobslužných i webových hostovaných služeb v kódu.  
   
 ## <a name="the-configure-method"></a>Metoda Configure  
- Jednoduše definujte veřejnou statickou metodu s názvem `Configure` s následující signaturou ve třídě implementace služby:  
+ Jednoduše definujte veřejnou `Configure` statickou metodu volanou s následujícím podpisem ve třídě implementace služby:  
   
 ```csharp  
 public static void Configure(ServiceConfiguration config)  
 ```  
   
- Metoda Configure přebírá <xref:System.ServiceModel.ServiceConfiguration> instanci, která vývojářům umožňuje přidat koncové body a chování. Tato metoda je volána službou WCF před otevřením hostitele služby. Při definování budou všechna nastavení konfigurace služby zadaná v souboru App. config nebo Web. config ignorována.  
+ Configure Metoda trvá <xref:System.ServiceModel.ServiceConfiguration> instance, která umožňuje vývojáři přidat koncové body a chování. Tato metoda je volána WCF před otevřením hostitele služby. Pokud je definována, budou všechna nastavení konfigurace služby zadaná v souboru app.config nebo web.config ignorována.  
   
- Následující fragment kódu ukazuje, jak definovat metodu `Configure` a přidat koncový bod služby, chování koncového bodu a chování služby:  
+ Následující fragment kódu ukazuje, jak definovat `Configure` metodu a přidat koncový bod služby, chování koncového bodu a chování služby:  
   
 ```csharp  
 public class Service1 : IService1  
@@ -56,44 +56,44 @@ public class Service1 : IService1
     }  
 ```  
   
- Pokud chcete povolit protokol, jako je například https pro službu, můžete buď explicitně přidat koncový bod, který používá protokol, nebo můžete automaticky přidat koncové body voláním ServiceConfiguration. EnableProtocol (Binding), který přidá koncový bod pro každou základní adresu. kompatibilní s protokolem a všemi definovanými kontrakty služby. Následující kód ilustruje, jak použít metodu ServiceConfiguration. EnableProtocol:  
+ Chcete-li povolit protokol, jako je například https pro službu, můžete buď explicitně přidat koncový bod, který používá protokol, nebo můžete automaticky přidat koncové body voláním ServiceConfiguration.EnableProtocol(Binding), který přidá koncový bod pro každou základní adresu kompatibilní s protokolem a každou definovanou smlouvou o poskytování služeb. Následující kód ukazuje, jak používat metodu ServiceConfiguration.EnableProtocol:  
   
 ```csharp  
-public class Service1 : IService1   
-{   
-    public string GetData(int value);   
-    public static void Configure(ServiceConfiguration config)   
-    {   
-        // Enable "Add Service Reference" support   
-       config.Description.Behaviors.Add( new ServiceMetadataBehavior { HttpGetEnabled = true });   
-       // set up support for http, https, net.tcp, net.pipe   
-       config.EnableProtocol(new BasicHttpBinding());   
-       config.EnableProtocol(new BasicHttpsBinding());   
-       config.EnableProtocol(new NetTcpBinding());   
-       config.EnableProtocol(new NetNamedPipeBinding());   
-       // add an extra BasicHttpBinding endpoint at http:///basic   
-       config.AddServiceEndpoint(typeof(IService1), new BasicHttpBinding(),"basic");   
-    }   
-}   
+public class Service1 : IService1
+{
+    public string GetData(int value);
+    public static void Configure(ServiceConfiguration config)
+    {
+        // Enable "Add Service Reference" support
+       config.Description.Behaviors.Add( new ServiceMetadataBehavior { HttpGetEnabled = true });
+       // set up support for http, https, net.tcp, net.pipe
+       config.EnableProtocol(new BasicHttpBinding());
+       config.EnableProtocol(new BasicHttpsBinding());
+       config.EnableProtocol(new NetTcpBinding());
+       config.EnableProtocol(new NetNamedPipeBinding());
+       // add an extra BasicHttpBinding endpoint at http:///basic
+       config.AddServiceEndpoint(typeof(IService1), new BasicHttpBinding(),"basic");
+    }
+}
 ```  
   
- Nastavení v části <`protocolMappings`> se použijí jenom v případě, že se do <xref:System.ServiceModel.ServiceConfiguration>ho programově nepřidaly žádné koncové body aplikace. Můžete volitelně načíst konfiguraci služby z výchozího konfiguračního souboru aplikace voláním <xref:System.ServiceModel.ServiceConfiguration.LoadFromConfiguration%2A> a potom změnit nastavení. Třída <xref:System.ServiceModel.ServiceConfiguration.LoadFromConfiguration> také umožňuje načíst konfiguraci z centralizované konfigurace. Následující kód ilustruje, jak implementovat toto:  
+ Nastavení v části `protocolMappings` <> se používají pouze v případě, že žádné koncové body aplikace jsou přidány do <xref:System.ServiceModel.ServiceConfiguration> programově. Volitelně můžete načíst konfiguraci služby z <xref:System.ServiceModel.ServiceConfiguration.LoadFromConfiguration%2A> výchozího konfiguračního souboru aplikace voláním a následným změnou nastavení. Třída <xref:System.ServiceModel.ServiceConfiguration.LoadFromConfiguration> také umožňuje načíst konfiguraci z centralizované konfigurace. Následující kód ukazuje, jak implementovat toto:  
   
 ```csharp
-public class Service1 : IService1   
-{   
-    public void DoWork();   
-    public static void Configure(ServiceConfiguration config)   
-    {   
-          config.LoadFromConfiguration(ConfigurationManager.OpenMappedExeConfiguration(new ExeConfigurationFileMap { ExeConfigFilename = @"c:\sharedConfig\MyConfig.config" }, ConfigurationUserLevel.None));   
-    }   
+public class Service1 : IService1
+{
+    public void DoWork();
+    public static void Configure(ServiceConfiguration config)
+    {
+          config.LoadFromConfiguration(ConfigurationManager.OpenMappedExeConfiguration(new ExeConfigurationFileMap { ExeConfigFilename = @"c:\sharedConfig\MyConfig.config" }, ConfigurationUserLevel.None));
+    }
 }  
 ```  
   
 > [!IMPORTANT]
-> Všimněte si, že <xref:System.ServiceModel.ServiceConfiguration.LoadFromConfiguration%2A> ignoruje <`host`> nastavení v <`service`> <`system.serviceModel`. Konceptuální <`host`> se týká konfigurace hostitele, nikoli konfigurace služby a načítá se před spuštěním metody konfigurace.  
+> Všimněte <xref:System.ServiceModel.ServiceConfiguration.LoadFromConfiguration%2A> si, `host` že ignoruje `service` nastavení> `system.serviceModel` <v rámci <> značky <>. Koncepčně `host` <> je o konfiguraci hostitele, nikoli o konfiguraci služby, a načte se před spuštěním metody Configure.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Konfigurace služeb pomocí konfiguračních souborů](configuring-services-using-configuration-files.md)
 - [Konfigurace chování klienta](configuring-client-behaviors.md)

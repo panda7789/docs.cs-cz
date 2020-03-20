@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 7de6447a-a751-49d8-87e2-951cee77b536
 topic_type:
 - apiref
-ms.openlocfilehash: 6e73160fb1927560ad381dbb85d03796296ba9a4
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 8c609d730297881c0ac20dca8569f0e9492638e9
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74434287"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79175717"
 ---
 # <a name="imetadataemitgettokenfromtypespec-method"></a>IMetaDataEmit::GetTokenFromTypeSpec – metoda
 Získá token metadat pro typ se zadaným podpisem metadat.  
@@ -28,33 +28,33 @@ Získá token metadat pro typ se zadaným podpisem metadat.
 ## <a name="syntax"></a>Syntaxe  
   
 ```cpp  
-HRESULT GetTokenFromTypeSpec (   
-    [in]  PCCOR_SIGNATURE       pvSig,   
-    [in]  ULONG                 cbSig,   
-    [out] mdTypeSpec            *ptypespec   
+HRESULT GetTokenFromTypeSpec (
+    [in]  PCCOR_SIGNATURE       pvSig,
+    [in]  ULONG                 cbSig,
+    [out] mdTypeSpec            *ptypespec
 );  
 ```  
   
 ## <a name="parameters"></a>Parametry  
  `pvSig`  
- pro Podpis, který je definován.  
+ [v] Podpis je definován.  
   
  `cbSig`  
- pro Počet bajtů v `pvSig`.  
+ [v] Počet bajtů v `pvSig`.  
   
  `ptypespec`  
- mimo Byl přiřazen token `mdTypeSpec`.  
+ [out] Přiřazen `mdTypeSpec` token.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Hlavička:** Cor. h  
+ **Záhlaví:** Kor.h.  
   
- **Knihovna:** Používá se jako prostředek v knihovně MSCorEE. dll.  
+ **Knihovna:** Používá se jako prostředek v souboru MSCorEE.dll  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [IMetaDataEmit – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)
 - [IMetaDataEmit2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-interface.md)

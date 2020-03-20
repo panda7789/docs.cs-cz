@@ -3,18 +3,18 @@ title: <system.identityModel.services>
 ms.date: 03/30/2017
 ms.assetid: fa1624dd-2d74-4ae3-942e-498cee261ac5
 author: BrucePerlerMS
-ms.openlocfilehash: e9488c0681e1a5f0fe94112a36b65ec73bf9fd09
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.openlocfilehash: 57757aaec39bc5c552e7ba12c9779cb3a92a9025
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70251811"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79152501"
 ---
 # <a name="systemidentitymodelservices"></a>\<system.identityModel.services>
-Konfigurační oddíl pro ověřování pomocí protokolu WS-Federation.  
+Konfigurační část pro ověřování pomocí protokolu WS-Federation.  
   
-[ **\<> Konfigurace**](../configuration-element.md)\
-&nbsp;&nbsp; **\<> System. identityModel. Services**  
+[**\<>konfigurace**](../configuration-element.md)\
+&nbsp;&nbsp;**\<system.identityModel.services>**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -29,27 +29,27 @@ Konfigurační oddíl pro ověřování pomocí protokolu WS-Federation.
  Následující části popisují atributy, podřízené prvky a nadřazené prvky.  
   
 ### <a name="attributes"></a>Atributy  
- Žádné  
+ Žádný  
   
 ### <a name="child-elements"></a>Podřízené elementy  
   
-|Prvek|Popis|  
+|Element|Popis|  
 |-------------|-----------------|  
-|[\<federationConfiguration>](federationconfiguration.md)|Obsahuje nastavení, která konfigurují <xref:System.IdentityModel.Services.WSFederationAuthenticationModule> moduly protokolu HTTP (WSFAM) <xref:System.IdentityModel.Services.SessionAuthenticationModule> a (SAM).|  
+|[\<federationConfiguration>](federationconfiguration.md)|Obsahuje nastavení, která <xref:System.IdentityModel.Services.WSFederationAuthenticationModule> konfigurují moduly HTTP (WSFAM) a <xref:System.IdentityModel.Services.SessionAuthenticationModule> (SAM).|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
- Žádné  
+ Žádný  
   
 ## <a name="remarks"></a>Poznámky  
- `<system.identityModel.services>` Přidejte oddíl do konfiguračního souboru aplikace a poskytněte tak nastavení pro Sam a WSFAM.  
+ Přidejte `<system.identityModel.services>` oddíl do konfiguračního souboru aplikace a zadejte nastavení pro sam a wsfam.  
   
 > [!IMPORTANT]
-> <xref:System.IdentityModel.Services.ClaimsPrincipalPermission> Při použití <xref:System.IdentityModel.Services.ClaimsPrincipalPermissionAttribute> třídy nebo k poskytnutí řízení přístupu založeného na deklaracích ve vašem kódu se Správce autorizací deklarací identity<xref:System.Security.Claims.ClaimsAuthorizationManager>() a zásady, které se používají `<identityConfiguration>` k rozhodování o autorizaci, nakonfigurují prostřednictvím prvek, který je implicitně nebo explicitně odkazován z `<federationConfiguration>` prvku v této části. Další informace naleznete v **poznámkách** pod [ \<prvkem federationConfiguration >](federationconfiguration.md) .  
+> Při použití <xref:System.IdentityModel.Services.ClaimsPrincipalPermission> nebo <xref:System.IdentityModel.Services.ClaimsPrincipalPermissionAttribute> třídy k poskytování řízení přístupu na základě<xref:System.Security.Claims.ClaimsAuthorizationManager>deklarací identity ve vašem kódu, správce `<identityConfiguration>` autorizace deklarací ( ) a `<federationConfiguration>` zásady, které se používají k rozhodování o autorizaci jsou konfigurovány prostřednictvím prvku, který je implicitně nebo explicitně odkazován z prvku v této části. Další informace naleznete v **části Poznámky** v části [ \<federationConfiguration>](federationconfiguration.md) element.  
   
- Oddíl je reprezentován <xref:System.IdentityModel.Services.Configuration.SystemIdentityModelServicesSection>třídou. `<system.identityModel.services>` Kolekce podřízených `<federationConfiguration>` prvků nakonfigurovaných v oddílu je reprezentována <xref:System.IdentityModel.Services.Configuration.FederationConfigurationElementCollection> třídou.  
+ Oddíl `<system.identityModel.services>` je reprezentován <xref:System.IdentityModel.Services.Configuration.SystemIdentityModelServicesSection> třídou. Kolekce podřízených `<federationConfiguration>` prvků nakonfigurovaných <xref:System.IdentityModel.Services.Configuration.FederationConfigurationElementCollection> v části je reprezentována třídou.  
   
 ## <a name="example"></a>Příklad  
- Následující kód XML ukazuje, jak přidat `<system.identityModel.services>` oddíl do konfiguračního souboru. Nejdřív musíte přidat deklarace oddílů pro `<system.identityModel.services>` oddíl `<system.identityModel>` i oddíly. (Když přidáte `<system.identityModel.services>` oddíl, měli byste také přidat deklaraci `<system.identityModel>` pro oddíl, abyste měli jistotu, že v případě `<identityConfiguration>` potřeby může modul runtime vytvořit výchozí oddíl.) Po přidání oddílu deklarace můžete nakonfigurovat nastavení federovaného ověřování pod `<system.identityModel.services>` prvkem.  
+ Následující jazyk XML ukazuje, `<system.identityModel.services>` jak přidat oddíl do konfiguračního souboru. Nejprve je nutné přidat deklarace oddílů `<system.identityModel.services>` pro oddíl i oddíly. `<system.identityModel>` (Když přidáte `<system.identityModel.services>` oddíl, měli byste také přidat `<system.identityModel>` deklaraci pro `<identityConfiguration>` oddíl, abyste zajistili, že v případě potřeby může být výchozí oddíl vytvořen za běhu.) Po přidání deklarací oddílu můžete nakonfigurovat federovaná `<system.identityModel.services>` nastavení ověřování pod elementem.  
   
 ```xml  
 <configuration>  
@@ -62,12 +62,12 @@ Konfigurační oddíl pro ověřování pomocí protokolu WS-Federation.
   
   <system.identityModel.services>  
     <federationConfiguration>  
-      <wsFederation passiveRedirectEnabled="true"   
-        issuer="http://localhost:15839/wsFederationSTS/Issue"   
-        realm="http://localhost:50969/" reply="http://localhost:50969/"   
-        requireHttps="false"   
-        signOutReply="http://localhost:50969/SignedOutPage.html"   
-        signOutQueryString="Param1=value2&Param2=value2"   
+      <wsFederation passiveRedirectEnabled="true"
+        issuer="http://localhost:15839/wsFederationSTS/Issue"
+        realm="http://localhost:50969/" reply="http://localhost:50969/"
+        requireHttps="false"
+        signOutReply="http://localhost:50969/SignedOutPage.html"
+        signOutQueryString="Param1=value2&Param2=value2"
         persistentCookiesOnPassiveRedirects="true" />  
       <cookieHandler requireSsl="false" />  
     </federationConfiguration>  

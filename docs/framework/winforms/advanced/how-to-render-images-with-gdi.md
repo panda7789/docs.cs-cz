@@ -9,22 +9,22 @@ helpviewer_keywords:
 - images [Windows Forms], creating
 - GDI+, rendering existing images
 ms.assetid: c128b79a-3e31-47d8-9e66-3470f570a056
-ms.openlocfilehash: da637152737510847830e885fdcd065ab92f16b3
-ms.sourcegitcommit: b1cfd260928d464d91e20121f9bdba7611c94d71
+ms.openlocfilehash: fffe1f1052d7323d234985b7e752866f2e89657d
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67505758"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79182506"
 ---
 # <a name="how-to-render-images-with-gdi"></a>Postupy: Vykreslení obrázků pomocí GDI+
-Můžete použijete GDI + k vykreslování obrázků, které existují jako soubory ve svých aplikacích. To provedete tak, že vytvoříte nový objekt <xref:System.Drawing.Image> třídy (například <xref:System.Drawing.Bitmap>), vytváření <xref:System.Drawing.Graphics> objekt, který odkazuje na návrhovém povrchu, který chcete použít a volání <xref:System.Drawing.Graphics.DrawImage%2A> metodu <xref:System.Drawing.Graphics> objektu. Image bude nutné překreslit na návrhovém povrchu reprezentovaný třídou grafiky. Můžete použít Editor obrázků pro vytváření a úpravy souborů obrázků v době návrhu a vykreslení pomocí GDI + v době běhu. Další informace najdete v tématu [Editor obrázků pro ikony](/cpp/windows/image-editor-for-icons).  
+Pomocí gdi+ můžete vykreslit obrázky, které existují jako soubory ve vašich aplikacích. To provést vytvořením nového <xref:System.Drawing.Image> objektu <xref:System.Drawing.Bitmap>třídy (například ) vytvořením objektu, <xref:System.Drawing.Graphics> který odkazuje <xref:System.Drawing.Graphics.DrawImage%2A> na kreslicí plochu, kterou chcete použít, a voláním metody objektu. <xref:System.Drawing.Graphics> Obraz bude namalován na kreslicí plochu reprezentovanou grafickou třídou. Editor obrázků můžete použít k vytváření a úpravám obrazových souborů v době návrhu a jejich vykreslení pomocí rozhraní GDI+ za běhu. Další informace naleznete v [editoru obrázků pro ikony](/cpp/windows/image-editor-for-icons).  
   
-### <a name="to-render-an-image-with-gdi"></a>Aby se vykreslil obraz pomocí GDI +  
+### <a name="to-render-an-image-with-gdi"></a>Vykreslení obrazu pomocí GDI+  
   
-1. Vytvořte objekt představující obrázek, který chcete zobrazit. Tento objekt musí být členem třídy, která dědí z <xref:System.Drawing.Image>, jako například <xref:System.Drawing.Bitmap> nebo <xref:System.Drawing.Imaging.Metafile>. Příklad:  
+1. Vytvořte objekt představující obraz, který chcete zobrazit. Tento objekt musí být členem třídy, <xref:System.Drawing.Image>která <xref:System.Drawing.Bitmap> dědí z , například nebo <xref:System.Drawing.Imaging.Metafile>. Příklad je zobrazen:  
   
     ```vb  
-    ' Uses the System.Environment.GetFolderPath to get the path to the   
+    ' Uses the System.Environment.GetFolderPath to get the path to the
     ' current user's MyPictures folder.  
     Dim myBitmap as New Bitmap _  
        (System.Environment.GetFolderPath _  
@@ -32,7 +32,7 @@ Můžete použijete GDI + k vykreslování obrázků, které existují jako soub
     ```  
   
     ```csharp  
-    // Uses the System.Environment.GetFolderPath to get the path to the   
+    // Uses the System.Environment.GetFolderPath to get the path to the
     // current user's MyPictures folder.  
     Bitmap myBitmap = new Bitmap  
        (System.Environment.GetFolderPath  
@@ -40,34 +40,34 @@ Můžete použijete GDI + k vykreslování obrázků, které existují jako soub
     ```  
   
     ```cpp  
-    // Uses the System.Environment.GetFolderPath to get the path to the   
+    // Uses the System.Environment.GetFolderPath to get the path to the
     // current user's MyPictures folder.  
     Bitmap^ myBitmap = gcnew Bitmap  
        (System::Environment::GetFolderPath  
           (System::Environment::SpecialFolder::MyPictures));  
     ```  
   
-2. Vytvoření <xref:System.Drawing.Graphics> objekt, který reprezentuje na návrhovém povrchu, který chcete použít. Další informace najdete v tématu [jak: Vytváření grafických objektů pro kreslení](how-to-create-graphics-objects-for-drawing.md).  
+2. Vytvořte <xref:System.Drawing.Graphics> objekt, který představuje kreslicí plochu, kterou chcete použít. Další informace naleznete v [tématu How to: Create Graphics Objects for Drawing](how-to-create-graphics-objects-for-drawing.md).  
   
     ```vb  
-    ' Creates a Graphics object that represents the drawing surface of   
+    ' Creates a Graphics object that represents the drawing surface of
     ' Button1.  
     Dim g as Graphics = Button1.CreateGraphics  
     ```  
   
     ```csharp  
-    // Creates a Graphics object that represents the drawing surface of   
+    // Creates a Graphics object that represents the drawing surface of
     // Button1.  
     Graphics g = Button1.CreateGraphics();  
     ```  
   
     ```cpp  
-    // Creates a Graphics object that represents the drawing surface of   
+    // Creates a Graphics object that represents the drawing surface of
     // Button1.  
     Graphics^ g = button1->CreateGraphics();  
     ```  
   
-3. Volání <xref:System.Drawing.Graphics.DrawImage%2A> objektu grafiky k vykreslení obrázku. Musíte zadat obrázek, který se má a souřadnice, kde je potřeba vykreslit.  
+3. Volání <xref:System.Drawing.Graphics.DrawImage%2A> grafického objektu k vykreslení obrazu. Je nutné zadat obrázek, který má být nakreslen, i souřadnice, kde má být nakreslen.  
   
     ```vb  
     g.DrawImage(myBitmap, 1, 1)  
@@ -81,12 +81,12 @@ Můžete použijete GDI + k vykreslování obrázků, které existují jako soub
     g->DrawImage(myBitmap, 1, 1);  
     ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Začínáme s programováním grafiky](getting-started-with-graphics-programming.md)
 - [Postupy: Vytváření grafických objektů pro kreslení](how-to-create-graphics-objects-for-drawing.md)
 - [Pera, čáry a obdélníky v GDI+](pens-lines-and-rectangles-in-gdi.md)
-- [Postupy: Vykreslení textu ve formuláři Windows](how-to-draw-text-on-a-windows-form.md)
+- [Postupy: Kreslení textu v rozhraní Windows Forms](how-to-draw-text-on-a-windows-form.md)
 - [Grafika a kreslení v modelu Windows Forms](graphics-and-drawing-in-windows-forms.md)
 - [Kreslení čar nebo uzavřených obrázků](/cpp/windows/drawing-lines-or-closed-figures-image-editor-for-icons)
 - [Editor obrázků pro ikony](/cpp/windows/image-editor-for-icons)

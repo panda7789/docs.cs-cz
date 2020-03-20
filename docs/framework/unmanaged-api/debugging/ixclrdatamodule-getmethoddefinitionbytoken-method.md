@@ -1,5 +1,5 @@
 ---
-title: IXCLRDataModule::GetMethodDefinitionByToken – metoda
+title: IXCLRDataModule::Metoda GetMethodDefinitionByToken
 ms.date: 01/16/2019
 api.name:
 - IXCLRDataModule::GetMethodDefinitionByToken Method
@@ -15,16 +15,16 @@ topic_type:
 - apiref
 author: cshung
 ms.author: andrewau
-ms.openlocfilehash: 2c0cf56f108396226b7c7399f6da75e5f47d36f3
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 294c5340caf2217f9337d654a11a63a43d46febd
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67744667"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79176666"
 ---
-# <a name="ixclrdatamodulegetmethoddefinitionbytoken-method"></a>IXCLRDataModule::GetMethodDefinitionByToken – metoda
+# <a name="ixclrdatamodulegetmethoddefinitionbytoken-method"></a>IXCLRDataModule::Metoda GetMethodDefinitionByToken
 
-Získá definici metody odpovídající token daná metadata.
+Získá definici metody odpovídající daný token metadat.
 
 [!INCLUDE[debugging-api-recommended-note](../../../../includes/debugging-api-recommended-note.md)]
 
@@ -40,23 +40,23 @@ HRESULT GetMethodDefinitionByToken(
 ## <a name="parameters"></a>Parametry
 
 `token`\
-[in] Token metody.
+[v] Token metody.
 
 `methodDefinition`\
 [out] Definice metody.
 
 ## <a name="remarks"></a>Poznámky
 
-Zadaná metoda je součástí `IXCLRDataModule` rozhraní a odpovídá 25 pozice tabulce virtuální metody.
+Poskytnutá metoda je součástí `IXCLRDataModule` rozhraní a odpovídá 25.
 
 ## <a name="requirements"></a>Požadavky
 
-**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+**Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).  
 **Záhlaví:** Žádný  
 **Knihovna:** Žádný  
-**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v47plus](../../../../includes/net-current-v47plus.md)]  
- 
-## <a name="see-also"></a>Viz také:
+**Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v47plus](../../../../includes/net-current-v47plus.md)]  
 
-- [Ladění](index.md)
-- [IXCLRDataModule Interface](ixclrdatamodule-interface.md)
+## <a name="see-also"></a>Viz také
+
+- [ladění](index.md)
+- [IXCLRDataModule – rozhraní](ixclrdatamodule-interface.md)

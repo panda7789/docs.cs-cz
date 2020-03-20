@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: 2b94bda7-09ee-435d-91b9-c4e31af1896c
 topic_type:
 - apiref
-ms.openlocfilehash: c4b01b2c346d3173b2a5ecc144474d7fb1e6dce5
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: e23133176cbd703a58c92f9bf1ead530b0bbb8a8
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73138976"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79178503"
 ---
 # <a name="icordebugstringvaluegetstring-method"></a>ICorDebugStringValue::GetString – metoda
-Získá řetězec, na který odkazuje tento ICorDebugStringValue.  
+Získá řetězec odkazuje tento ICorDebugStringValue.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -31,26 +31,26 @@ Získá řetězec, na který odkazuje tento ICorDebugStringValue.
 HRESULT GetString (  
     [in] ULONG32    cchString,  
     [out] ULONG32   *pcchString,  
-    [out, size_is(cchString), length_is(*pcchString)]   
+    [out, size_is(cchString), length_is(*pcchString)]
         WCHAR       szString[]  
 );  
 ```  
   
 ## <a name="parameters"></a>Parametry  
  `cchString`  
- pro Velikost pole `szString`.  
+ [v] Velikost `szString` pole.  
   
  `pcchString`  
- mimo Ukazatel na počet znaků vrácený v poli `szString`.  
+ [out] Ukazatel na počet znaků vrácených `szString` v poli.  
   
  `szString`  
- mimo Pole, které ukládá načtený řetězec.  
+ [out] Pole, které ukládá načtený řetězec.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Hlavička:** CorDebug. idl, CorDebug. h  
+ **Záhlaví:** CorDebug.idl, CorDebug.h  
   
- **Knihovna:** CorGuids. lib  
+ **Knihovna:** CorGuids.lib  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]
+ **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]

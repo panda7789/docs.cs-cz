@@ -5,95 +5,95 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: c0e6cf23-63ac-47dd-bfe9-d5bdca826fac
-ms.openlocfilehash: fcf0d3eed95d36f7764ca048da62b589779d8d47
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.openlocfilehash: e372744eea3eed7fc3f7ee9c8bbdd711c95b586e
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70249552"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79149970"
 ---
 # <a name="query-execution"></a>Provádění dotazů
-Poté, co uživatel vytvoří dotaz LINQ, je převedena na strom příkazů. Strom příkazů je reprezentace dotazu, který je kompatibilní s Entity Framework. Strom příkazů se pak provede proti zdroji dat. Při spuštění dotazu jsou vyhodnoceny všechny výrazy dotazu (tj. všechny komponenty dotazu), včetně výrazů, které jsou použity v materializaci výsledků.  
+Po vytvoření dotazu LINQ uživatelem je převeden na strom příkazů. Strom příkazů je reprezentace dotazu, který je kompatibilní s entity framework. Strom příkazů je pak proveden proti zdroji dat. V době spuštění dotazu jsou vyhodnoceny všechny výrazy dotazu (tj. všechny součásti dotazu), včetně výrazů, které se používají při materializaci výsledku.  
   
- Výrazy dotazů na to, kde jsou spouštěny, se mohou lišit. Dotazy LINQ jsou vždy spouštěny, když je provedena iterace proměnné dotazu, nikoli při vytvoření proměnné dotazu. Tato operace se nazývá *odložené provedení*. Můžete také vynutit, aby se dotaz spustil okamžitě, což je užitečné pro ukládání výsledků dotazu do mezipaměti. Tento postup je popsán dále v tomto tématu.  
+ V jakém okamžiku jsou výrazy dotazu spuštěny se mohou lišit. Linq dotazy jsou vždy spuštěny, když je proměnná dotazu iterována, nikoli při vytvoření proměnné dotazu. To se nazývá *odložené spuštění*. Můžete také vynutit okamžité spuštění dotazu, což je užitečné pro ukládání výsledků dotazu do mezipaměti. To je popsáno dále v tomto tématu.  
   
- Když se spustí dotaz LINQ to Entities, můžou se na serveru spustit některé výrazy a některé části můžou být spuštěné místně na klientovi. Vyhodnocení výrazu na straně klienta proběhne před provedením dotazu na serveru. Pokud je výraz vyhodnocen na straně klienta, je výsledek tohoto vyhodnocení nahrazen výrazem v dotazu a dotaz je následně proveden na serveru. Vzhledem k tomu, že dotazy jsou spouštěny ve zdroji dat, přepíše konfigurace zdroje dat chování zadané v klientovi. Například zpracování hodnot null a číselná přesnost závisí na nastavení serveru. Jakékoli výjimky vyvolané při provádění dotazu na serveru jsou předány přímo do klienta.  
- 
-> [!TIP]
-> Pro pohodlné Shrnutí operátorů dotazů ve formátu tabulky, který vám umožní rychle identifikovat chování při spuštění operátoru, přečtěte si téma [klasifikace standardních operátorů dotazu podle způsobu provedeníC#()](../../../../../csharp/programming-guide/concepts/linq/classification-of-standard-query-operators-by-manner-of-execution.md).
+ Při spuštění dotazu LINQ entity, některé výrazy v dotazu může být spuštěn a některé části mohou být provedeny místně na straně klienta. Vyhodnocení výrazu na straně klienta probíhá před spuštěním dotazu na serveru. Pokud je výraz vyhodnocen na straně klienta, výsledek tohoto vyhodnocení je nahrazen výrazem v dotazu a dotaz je pak proveden na serveru. Vzhledem k tomu, že dotazy jsou spouštěny ve zdroji dat, konfigurace zdroje dat přepíše chování zadané v klientovi. Například zpracování nulové hodnoty a číselná přesnost závisí na nastavení serveru. Všechny výjimky vyvoláné během provádění dotazu na serveru jsou předány přímo klientovi.  
 
-## <a name="deferred-query-execution"></a>Odložené provádění dotazu  
- V dotazu, který vrací sekvenci hodnot, samotná proměnná dotazu nikdy nedrží výsledky dotazu a ukládá pouze příkazy dotazu. Provedení dotazu je odloženo, dokud se proměnná dotazu neopakuje v `foreach` rámci smyčky or. `For Each` Tato operace se označuje jako *odložené provádění*; To znamená, že provádění dotazů probíhá určitou dobu po sestavení dotazu. To znamená, že můžete spustit dotaz tak často, jak chcete. To je užitečné, když například máte databázi, která je aktualizována jinými aplikacemi. V aplikaci můžete vytvořit dotaz, který načte nejnovější informace a opakovaně spustí dotaz, a to tak, že se aktualizované informace pokaždé vrátí.  
+> [!TIP]
+> Pro pohodlný souhrn operátorů dotazů ve formátu tabulky, který umožňuje rychle identifikovat chování spuštění operátoru, naleznete [v tématu Klasifikace operátorů standardních dotazů podle způsobu spuštění (C#)](../../../../../csharp/programming-guide/concepts/linq/classification-of-standard-query-operators-by-manner-of-execution.md).
+
+## <a name="deferred-query-execution"></a>Odložené spuštění dotazu  
+ V dotazu, který vrací posloupnost hodnot, samotná proměnná dotazu nikdy neobsahuje výsledky dotazu a ukládá pouze příkazy dotazu. Spuštění dotazu je odloženo, dokud je proměnná `foreach` dotazu iterována ve smyčce nebo. `For Each` To se označuje jako *odložené spuštění*; to znamená, že spuštění dotazu nastane nějaký čas po vytvoření dotazu. To znamená, že můžete spustit dotaz tak často, jak chcete. To je užitečné například v případě, že máte databázi, která je aktualizována jinými aplikacemi. V aplikaci můžete vytvořit dotaz pro načtení nejnovějších informací a opakovaně spustit dotaz, vrácení aktualizovaných informací pokaždé.  
   
- Odložené spouštění umožňuje kombinovat více dotazů nebo dotaz, který se má rozšířit. Když je dotaz rozšířený, je upravený tak, aby zahrnoval nové operace, a konečné spuštění projeví změny. V následujícím příkladu první dotaz vrátí všechny produkty. Druhý dotaz rozšiřuje první pomocí `Where` a vrátí všechny produkty velikosti "L":  
+ Odložené spuštění umožňuje více dotazů, které mají být kombinovány nebo dotaz, který má být rozšířen. Při rozšíření dotazu je upraven tak, aby zahrnovala nové operace a případné spuštění bude odrážet změny. V následujícím příkladu první dotaz vrátí všechny produkty. Druhý dotaz rozšiřuje první pomocí `Where` vrátit všechny produkty velikosti "L":  
   
  [!code-csharp[DP L2E Conceptual Examples#Composing1](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DP L2E Conceptual Examples/CS/Program.cs#composing1)]
  [!code-vb[DP L2E Conceptual Examples#Composing1](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DP L2E Conceptual Examples/VB/Module1.vb#composing1)]  
   
- Po provedení dotazu budou všechny úspěšné dotazy používat operátory LINQ v paměti. Iterace nad proměnnou dotazu pomocí `foreach` příkazu nebo `For Each` nebo voláním jednoho z operátorů převodu LINQ způsobí okamžité provedení. Tyto operátory převodu zahrnují následující <xref:System.Linq.Enumerable.ToList%2A>:, <xref:System.Linq.Enumerable.ToArray%2A>, <xref:System.Linq.Enumerable.ToLookup%2A> <xref:System.Linq.Enumerable.ToDictionary%2A>a.  
+ Po spuštění dotazu budou všechny následné dotazy používat operátory LINQ v paměti. Iterace přes proměnnou dotazu pomocí `foreach` nebo `For Each` příkaz nebo voláním jednoho z operátorů převodu LINQ způsobí okamžité spuštění. Tyto operátory převodu <xref:System.Linq.Enumerable.ToList%2A> <xref:System.Linq.Enumerable.ToArray%2A>zahrnují <xref:System.Linq.Enumerable.ToLookup%2A>následující: , , a <xref:System.Linq.Enumerable.ToDictionary%2A>.  
   
-## <a name="immediate-query-execution"></a>Okamžité provedení dotazu  
- Na rozdíl od odloženého spuštění dotazů, které tvoří sekvenci hodnot, se okamžitě spustí dotazy, které vracejí hodnotu typu singleton. Příklady dotazů typu Singleton <xref:System.Linq.Enumerable.Average%2A>jsou, <xref:System.Linq.Enumerable.Count%2A>, <xref:System.Linq.Enumerable.First%2A>a <xref:System.Linq.Enumerable.Max%2A>. Tyto kroky se okamžitě spustí, protože dotaz musí vytvořit sekvenci pro výpočet výsledku typu singleton. Můžete také vynutit okamžité provedení. To je užitečné, pokud chcete výsledky dotazu ukládat do mezipaměti. Chcete-li vynutit okamžité provedení dotazu, který nevytvoří hodnotu typu Singleton, můžete zavolat <xref:System.Linq.Enumerable.ToList%2A> metodu <xref:System.Linq.Enumerable.ToDictionary%2A> , metodu nebo <xref:System.Linq.Enumerable.ToArray%2A> metodu pro dotaz nebo proměnnou dotazu. Následující příklad používá <xref:System.Linq.Enumerable.ToArray%2A> metodu k okamžitému vyhodnocení sekvence do pole.  
+## <a name="immediate-query-execution"></a>Okamžité spuštění dotazu  
+ Na rozdíl od odložené provádění dotazů, které vytvářejí posloupnost hodnot, dotazy, které vracejí hodnotu singleton jsou provedeny okamžitě. Některé příklady singleton dotazů <xref:System.Linq.Enumerable.Count%2A> <xref:System.Linq.Enumerable.First%2A>jsou <xref:System.Linq.Enumerable.Average%2A> <xref:System.Linq.Enumerable.Max%2A>, , a . Tyto spustit okamžitě, protože dotaz musí vytvořit posloupnost pro výpočet výsledku singleton. Můžete také vynutit okamžitou popravu. To je užitečné, pokud chcete uložit výsledky dotazu do mezipaměti. Chcete-li vynutit okamžité spuštění dotazu, který nevytváří <xref:System.Linq.Enumerable.ToList%2A> hodnotu <xref:System.Linq.Enumerable.ToDictionary%2A> singleton, <xref:System.Linq.Enumerable.ToArray%2A> můžete volat metodu, metodu nebo metodu v proměnné dotazu nebo dotazu. Následující příklad používá <xref:System.Linq.Enumerable.ToArray%2A> metodu okamžitě vyhodnotit sekvenci do pole.  
   
  [!code-csharp[DP L2E Examples#ToArray](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DP L2E Examples/CS/Program.cs#toarray)]
  [!code-vb[DP L2E Examples#ToArray](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DP L2E Examples/VB/Module1.vb#toarray)]  
   
- Můžete `foreach` také vynutit provádění vložením smyčky nebo `For Each` hned za výraz dotazu, ale voláním <xref:System.Linq.Enumerable.ToList%2A> nebo <xref:System.Linq.Enumerable.ToArray%2A> uložením dat do mezipaměti v jediném objektu kolekce.  
+ Můžete také vynutit `foreach` spuštění `For Each` vložením nebo smyčky bezprostředně <xref:System.Linq.Enumerable.ToList%2A> za <xref:System.Linq.Enumerable.ToArray%2A> výraz dotazu, ale voláním nebo mezipaměti všechna data v jednom objektu kolekce.  
   
 ## <a name="store-execution"></a>Spuštění úložiště  
- Obecně platí, že výrazy ve LINQ to Entities jsou vyhodnocovány na serveru a chování výrazu by nemělo být očekáváno podle sémantiky modulu CLR (Common Language Runtime), ale u zdroje dat. Existují však výjimky, například když je výraz spuštěn na klientovi. To může vést k neočekávaným výsledkům, například když je server a klient v různých časových pásmech.  
+ Obecně platí, že výrazy v LINQ entity jsou vyhodnocovány na serveru a chování výrazu by nemělo být očekáváno, že bude následovat sémantiku cltime společného jazyka (CLR), ale sémantiku zdroje dat. Existují však výjimky, například při spuštění výrazu na straně klienta. To může způsobit neočekávané výsledky, například pokud jsou server a klient v různých časových pásmech.  
   
- Některé výrazy v dotazu mohou být provedeny na klientovi. Obecně se očekává, že na serveru proběhne většina spuštění dotazu. Kromě metod, které jsou spouštěny proti elementům dotazu mapovaným na zdroj dat, jsou často výrazy v dotazu, které lze spustit místně. Místní spuštění výrazu dotazu vrací hodnotu, která se dá použít při provádění dotazu nebo vytváření výsledků.  
+ Některé výrazy v dotazu mohou být spuštěny na straně klienta. Obecně se očekává, že většina spuštění dotazu dojde na serveru. Kromě metod prováděných proti prvkům dotazu mapovaným na zdroj dat jsou často výrazy v dotazu, které lze spustit místně. Místní spuštění výrazu dotazu poskytuje hodnotu, která může být použita při provádění dotazu nebo konstrukci výsledků.  
   
- Některé operace jsou vždy spouštěny na klientovi, jako je například vazba hodnot, dílčích výrazů, poddotazů z uzavření a materializace objektů do výsledků dotazu. Čistý efekt tohoto je, že tyto prvky (například hodnoty parametrů) nelze během provádění aktualizovat. Anonymní typy mohou být sestaveny na zdroj dat, ale neměly by se předpokládat. Vložená seskupení mohou být vytvořena také ve zdroji dat, ale tato hodnota by se neměla předpokládat v každé instanci. Obecně platí, že není vhodné dělat žádné předpoklady o tom, co je na serveru vytvořeno.  
+ Některé operace jsou vždy prováděny na straně klienta, jako je například vazba hodnot, dílčí výrazy, dílčí dotazy z uzavření a materializace objektů do výsledků dotazu. Čistým důsledkem je, že tyto prvky (například hodnoty parametrů) nelze aktualizovat během provádění. Anonymní typy mohou být vytvořeny vložku na zdroj dat, ale nemělo by se předpokládat, že tak učiníte. Vložková seskupení mohou být vytvořena také ve zdroji dat, ale to by nemělo být předpokládáno v každém případě. Obecně je nejlepší neprovádět žádné předpoklady o tom, co je konstruováno na serveru.  
   
- Tato část popisuje scénáře, ve kterých je kód spouštěn místně na klientovi. Další informace o tom, jaké typy výrazů jsou spouštěny místně, naleznete [v tématu Expressions in LINQ to Entities dotazy](expressions-in-linq-to-entities-queries.md).  
+ Tato část popisuje scénáře, ve kterých je kód spuštěn místně na straně klienta. Další informace o typech výrazů jsou spouštěny místně, naleznete [v tématu Výrazy v LINQ k entitám dotazy](expressions-in-linq-to-entities-queries.md).  
   
 ### <a name="literals-and-parameters"></a>Literály a parametry  
- Místní proměnné, jako je `orderID` například proměnná v následujícím příkladu, jsou vyhodnocovány na klientovi.  
+ Místní proměnné, jako `orderID` je například proměnná v následujícím příkladu, jsou vyhodnocovány na straně klienta.  
   
  [!code-csharp[DP L2E Conceptual Examples#LiteralParameter1](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DP L2E Conceptual Examples/CS/Program.cs#literalparameter1)]
  [!code-vb[DP L2E Conceptual Examples#LiteralParameter1](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DP L2E Conceptual Examples/VB/Module1.vb#literalparameter1)]  
   
- Parametry metody jsou také vyhodnocovány na klientovi. Parametr předaný `MethodParameterExample` metodě, níže je příklad. `orderID`  
+ Parametry metody jsou také vyhodnocovány na straně klienta. Parametr `orderID` předaný `MethodParameterExample` do metody, níže, je příkladem.  
   
  [!code-csharp[DP L2E Conceptual Examples#MethodParameterExample](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DP L2E Conceptual Examples/CS/Program.cs#methodparameterexample)]
  [!code-vb[DP L2E Conceptual Examples#MethodParameterExample](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DP L2E Conceptual Examples/VB/Module1.vb#methodparameterexample)]  
   
-### <a name="casting-literals-on-the-client"></a>Přetypování literálů na klientovi  
- Přetypování `null` z na typ CLR je prováděno na klientovi:  
+### <a name="casting-literals-on-the-client"></a>Odlévání literály na klienta  
+ Přetypování z `null` typu CLR je spuštěno na straně klienta:  
   
  [!code-csharp[DP L2E Conceptual Examples#NullCastToString](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DP L2E Conceptual Examples/CS/Program.cs#nullcasttostring)]
  [!code-vb[DP L2E Conceptual Examples#NullCastToString](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DP L2E Conceptual Examples/VB/Module1.vb#nullcasttostring)]  
   
- Přetypování na typ, například s možnou <xref:System.Decimal>hodnotou null, je provedeno na klientovi:  
+ Přetypování na typ, například hodnotu null, <xref:System.Decimal>je na straně klienta spuštěno:  
   
  [!code-csharp[DP L2E Conceptual Examples#CastToNullable](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DP L2E Conceptual Examples/CS/Program.cs#casttonullable)]
  [!code-vb[DP L2E Conceptual Examples#CastToNullable](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DP L2E Conceptual Examples/VB/Module1.vb#casttonullable)]  
   
 ### <a name="constructors-for-literals"></a>Konstruktory pro literály  
- Nové typy CLR, které lze namapovat na typy konceptuálních modelů, jsou spouštěny v klientovi:  
+ Nové typy CLR, které lze mapovat na konceptuální typy modelů, jsou spouštěny na straně klienta:  
   
  [!code-csharp[DP L2E Conceptual Examples#ConstructorForLiteral](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DP L2E Conceptual Examples/CS/Program.cs#constructorforliteral)]
  [!code-vb[DP L2E Conceptual Examples#ConstructorForLiteral](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DP L2E Conceptual Examples/VB/Module1.vb#constructorforliteral)]  
   
- V klientovi se také spouštějí nová pole.  
+ Nová pole jsou také spuštěny na straně klienta.  
   
-## <a name="store-exceptions"></a>Ukládat výjimky  
- Všechny chyby úložiště, které se vyskytly při provádění dotazu, jsou předány klientovi a nejsou namapovány nebo zpracovávány.  
+## <a name="store-exceptions"></a>Výjimky úložiště  
+ Všechny chyby úložiště, ke kterým došlo při spuštění dotazu, jsou předány klientovi a nejsou mapovány nebo zpracovávány.  
   
 ## <a name="store-configuration"></a>Konfigurace úložiště  
- Když se dotaz spustí na úložišti, přepíše konfigurace úložiště všechna chování klienta a sémantika úložiště se vyjádří pro všechny operace a výrazy. To může mít za následek rozdíl mezi chováním CLR a provádění úložiště v oblastech, jako jsou například porovnání hodnoty null, pořadí identifikátorů GUID, přesnost a přesnost operací zahrnující nepřesné datové typy (například typy <xref:System.DateTime>plovoucí desetinné čárky nebo) a řetězec. Operations. Je důležité mít na paměti, že při zkoumání výsledků dotazu.  
+ Při spuštění dotazu v úložišti konfigurace úložiště přepíše všechna chování klienta a sémantiku úložiště jsou vyjádřeny pro všechny operace a výrazy. To může mít za následek rozdíl v chování mezi CLR a provádění úložiště v oblastech, jako je například null porovnání, GUID <xref:System.DateTime>řazení, přesnost a přesnost operací zahrnující chod nepřesné datové typy (například typy s plovoucí desetinnou čárkou nebo ) a operace řetězce. Je důležité mít na paměti při zkoumání výsledků dotazu.  
   
- Například následuje několik rozdílů v chování mezi CLR a SQL Server:  
+ Například jsou následující rozdíly v chování mezi CLR a SQL Server:  
   
-- Identifikátory GUID se SQL Server řadí jinak než CLR.  
+- SQL Server objednávky GUID jinak než CLR.  
   
-- Při práci s typem Decimal na SQL Server může také docházet k rozdílům v přesnosti výsledků. Důvodem jsou pevné požadavky na přesnost SQL Serverho typu Decimal. Například průměr <xref:System.Decimal> hodnot 0,0, 0,0 a 1,0 je 0.3333333333333333333333333333 v paměti na klientovi, ale 0,333333 ve Storu (na základě výchozí přesnosti pro typ Decimal SQL Server).  
+- Mohou také existovat rozdíly v přesnosti výsledků při práci s desetinným typem na serveru SQL Server. To je způsobeno požadavky na pevnou přesnost typu desetinné číslo serveru SQL Server. Například průměr <xref:System.Decimal> hodnot 0.0, 0.0 a 1.0 je 0.333333333333333333333333333333333333333333333v paměti na straně klienta, ale 0,3333333 v úložišti (na základě výchozí přesnosti pro desítkový typ serveru SQL Server).  
   
-- Některé operace porovnání řetězců jsou také zpracovávány jinak než v SQL Server než v modulu CLR. Chování porovnávání řetězců závisí na nastavení kolace na serveru.  
+- Některé operace porovnání řetězců jsou také zpracovány odlišně v SQL Server než v CLR. Chování porovnání řetězců závisí na nastavení řazení na serveru.  
   
-- Volání funkce nebo metody, pokud je součástí LINQ to Entitiesho dotazu, jsou mapována na kanonické funkce v Entity Framework, které jsou poté přeloženy do jazyka Transact-SQL a provedeny v databázi SQL Server. Existují případy, kdy chování těchto namapovaných funkcí se může lišit od implementace v knihovně základních tříd. <xref:System.String.Contains%2A>Například volání `false` metody, <xref:System.String.StartsWith%2A>a <xref:System.String.EndsWith%2A> s prázdným řetězcem jako parametr vrátí `true` při spuštění v modulu CLR, ale vrátí se při spuštění v SQL Server. Metoda <xref:System.String.EndsWith%2A> může také vracet různé výsledky, protože SQL Server považuje dva řetězce za stejné, pokud se liší pouze na konci prázdného místa, zatímco CLR je považuje za nerovnost. To je znázorněno v následujícím příkladu:  
+- Volání funkce nebo metody, pokud jsou zahrnuty v linq entity dotazu, jsou mapovány na kanonické funkce v entity framework, které jsou pak přeloženy do Transact-SQL a provedeny v databázi SQL Server. Existují případy, kdy chování těchto mapovaných funkcí exponát se může lišit od implementace v knihovnách základní třídy. Například volání <xref:System.String.Contains%2A>, <xref:System.String.StartsWith%2A>a <xref:System.String.EndsWith%2A> metody s prázdným řetězcem `true` jako parametr se vrátí při `false` spuštění v CLR, ale vrátí při spuštění v SQL Server. Metoda <xref:System.String.EndsWith%2A> může také vrátit různé výsledky, protože SQL Server považuje dva řetězce za rovné, pokud se liší pouze v koncové prázdné místo, zatímco CLR považuje za není stejné. To ilustruje následující příklad:  
   
  [!code-csharp[DP L2E Conceptual Examples#CanonicalFuncVsCLRBaseType](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DP L2E Conceptual Examples/CS/Program.cs#canonicalfuncvsclrbasetype)]
  [!code-vb[DP L2E Conceptual Examples#CanonicalFuncVsCLRBaseType](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DP L2E Conceptual Examples/VB/Module1.vb#canonicalfuncvsclrbasetype)]

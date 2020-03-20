@@ -14,59 +14,59 @@ helpviewer_keywords:
 ms.assetid: 97c2d7a6-5376-45a1-ba65-146a249147cc
 topic_type:
 - apiref
-ms.openlocfilehash: db6f39119d143d27c0d3a80a9c65565d4dfd0d39
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 9db583c7064cb910b29e84437f31143dac0d3ec9
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73140671"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79175080"
 ---
 # <a name="gethashfromfilew-function"></a>GetHashFromFileW – funkce
-Vygeneruje hodnotu hash přes obsah souboru určeného řetězcem Unicode.  
+Generuje hash nad obsahem souboru určeného řetězcem Unicode.  
   
- Tato funkce je zastaralá. Místo toho použijte metodu [ICLRStrongName:: GetHashFromFileW –](../hosting/iclrstrongname-gethashfromfilew-method.md) .  
+ Tato funkce byla zastaralá. Místo toho použijte metodu [ICLRStrongName::GetHashFromFileW.](../hosting/iclrstrongname-gethashfromfilew-method.md)  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```cpp  
-HRESULT GetHashFromFileW (   
+HRESULT GetHashFromFileW (
     [in]  LPCWSTR   wszFilePath,  
     [in, out] unsigned int   *piHashAlg,  
     [out] BYTE      *pbHash,  
     [in]  DWORD     cchHash,  
     [out] DWORD     *pchHash  
-);   
+);
 ```  
   
 ## <a name="parameters"></a>Parametry  
  `wszFilePath`  
- pro Název Unicode souboru, na který se má vypočítat hodnota hash  
+ [v] Název unicode souboru hash.  
   
  `piHashAlg`  
- [in, out] Algoritmus, který má být použit při generování hodnoty hash. Platné algoritmy jsou definovány rozhraním Win32 CryptoAPI. Je-li `piHashAlg` nastavena na hodnotu 0, je použit výchozí algoritmus CALG_SHA-1.  
+ [dovnitř, ven] Algoritmus, který se má použít při generování algoritmu hash. Platné algoritmy jsou ty, které jsou definovány Win32 CryptoAPI. Pokud `piHashAlg` je nastavena na hodnotu 0, použije se výchozí algoritmus CALG_SHA-1.  
   
  `pbHash`  
- mimo Bajtové pole obsahující vygenerovanou hodnotu hash.  
+ [out] Bajtový pole obsahující vygenerovaný hash.  
   
  `cchHash`  
- pro Maximální velikost vyrovnávací paměti, na kterou ukazuje `pbHash`.  
+ [v] Maximální velikost vyrovnávací paměti, `pbHash`na kterou se vztahuje .  
   
  `pchHash`  
- mimo Velikost `pbHash`v bajtech.  
+ [out] Velikost v bajtů `pbHash`.  
   
 ## <a name="remarks"></a>Poznámky  
- Tato funkce je stejná jako [GetHashFromFile –](gethashfromfile-function.md)s tím rozdílem, že specifikace názvu souboru je Unicode namísto ANSI.  
+ Tato funkce je stejná jako [GetHashFromFile](gethashfromfile-function.md), s tím rozdílem, že specifikace názvu souboru je Unicode místo ANSI.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
+ **Platformy:** Viz [Systémové požadavky](../../get-started/system-requirements.md).  
   
- **Hlavička:** StrongName. h  
+ **Záhlaví:** StrongName.h  
   
- **Knihovna:** Zahrnuto jako prostředek v knihovně MsCorEE. dll  
+ **Knihovna:** Zahrnuto jako prostředek v souboru MsCorEE.dll  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [GetHashFromFileW – metoda](../hosting/iclrstrongname-gethashfromfilew-method.md)
 - [GetHashFromFile – metoda](../hosting/iclrstrongname-gethashfromfile-method.md)

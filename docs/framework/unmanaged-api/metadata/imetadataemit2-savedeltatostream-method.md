@@ -15,42 +15,42 @@ helpviewer_keywords:
 ms.assetid: ecd786e8-f9a4-4190-a6ef-af18e8c6d654
 topic_type:
 - apiref
-ms.openlocfilehash: b5da781f148c23efcc909ad65e198e4f3c6fe5b5
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 7e8376f3a029b0e3ec51a1e7587dd14b3e7530ee
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74447881"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79177429"
 ---
 # <a name="imetadataemit2savedeltatostream-method"></a>IMetaDataEmit2::SaveDeltaToStream – metoda
-Uloží změny z aktuální relace úprav a pokračování do zadaného datového proudu.  
+Uloží změny z aktuální relace úprav a pokračovat do zadaného datového proudu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```cpp  
 HRESULT SaveDeltaToStream (  
-    [in] IStream     *pIStream,   
+    [in] IStream     *pIStream,
     [in] DWORD       dwSaveFlags  
 );  
 ```  
   
 ## <a name="parameters"></a>Parametry  
  `pIStream`  
- pro Ukazatel rozhraní na zapisovatelný datový proud, do kterého chcete uložit změny.  
+ [v] Ukazatel rozhraní na zapisovatelný datový proud, do kterého chcete uložit změny.  
   
  `dwSaveFlags`  
- pro Rezervovaný. Tato hodnota musí být nula.  
+ [v] Vyhrazena. Tato hodnota musí být nula.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Hlavička:** Cor. h  
+ **Záhlaví:** Kor.h.  
   
- **Knihovna:** Používá se jako prostředek v knihovně MsCorEE. dll.  
+ **Knihovna:** Používá se jako prostředek v souboru MsCorEE.dll  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [IMetaDataEmit2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-interface.md)
 - [IMetaDataEmit – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)

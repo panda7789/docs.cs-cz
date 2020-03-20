@@ -15,46 +15,46 @@ helpviewer_keywords:
 ms.assetid: 7c0af9e9-a73f-41aa-a685-b21c439e059d
 topic_type:
 - apiref
-ms.openlocfilehash: 7f2e644340a2ec7fe807830422b927ce811ddcf9
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.openlocfilehash: 77e801b048709949c384f642fc0d0ecb5d7eb512
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76790565"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79178388"
 ---
 # <a name="icorpublishprocessgetdisplayname-method"></a>ICorPublishProcess::GetDisplayName – metoda
-Získá úplnou cestu ke spustitelnému souboru pro proces, na který odkazuje tento [ICorPublishProcess](icorpublishprocess-interface.md).  
+Získá úplnou cestu spustitelný soubor pro proces odkazuje tento [ICorPublishProcess](icorpublishprocess-interface.md).  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```cpp  
 HRESULT GetDisplayName (  
-    [in]  ULONG32                    cchName,   
+    [in]  ULONG32                    cchName,
     [out] ULONG32                    *pcchName,  
-    [out, size_is(cchName), length_is(*pcchName)]   
+    [out, size_is(cchName), length_is(*pcchName)]
         WCHAR                        *szName  
 );  
 ```  
   
 ## <a name="parameters"></a>Parametry  
  `cchName`  
- pro Velikost pole `szName`.  
+ [v] Velikost `szName` pole.  
   
  `pcchName`  
- mimo Počet velkých znaků vrácených v poli `szName`.  
+ [out] Počet širokých znaků vrácených v `szName` poli.  
   
  `szName`  
- mimo Pole, do kterého se má uložit název, včetně úplné cesty spustitelného souboru. Název je zakončený hodnotou null.  
+ [out] Pole pro uložení názvu, včetně úplné cesty, spustitelného souboru. Název je ukončen nulou.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Hlavička:** CorPub. idl, CorPub. h  
+ **Záhlaví:** CorPub.idl, CorPub.h  
   
- **Knihovna:** CorGuids. lib  
+ **Knihovna:** CorGuids.lib  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [ICorPublishProcess – rozhraní](icorpublishprocess-interface.md)

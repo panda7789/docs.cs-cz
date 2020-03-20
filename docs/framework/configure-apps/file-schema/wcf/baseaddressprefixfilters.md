@@ -2,23 +2,23 @@
 title: <baseAddressPrefixFilters>
 ms.date: 03/30/2017
 ms.assetid: 8cab2a9a-c51f-4283-bb60-2ad0c274fd46
-ms.openlocfilehash: cdf3264d1631db8e61bbcc4f6febd7008099251b
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: 0673507b72690c3a5c7dcc35442c05e378dba43c
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73968716"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79153032"
 ---
-# <a name="baseaddressprefixfilters"></a>\<baseAddressPrefixFilters >
-Představuje kolekci elementů konfigurace, které určují předávací filtry, které poskytují mechanismus pro výběr příslušných vazeb Internetová informační služba (IIS) při hostování aplikace Windows Communication Foundation (WCF) ve službě IIS.  
+# <a name="baseaddressprefixfilters"></a>\<baseAddressPrefixFilters>
+Představuje kolekci konfiguračních prvků, které určují průchod filtry, které poskytují mechanismus pro výběr příslušných vazeb Internetové informační služby (IIS) při hostování aplikace WCF (Windows Communication Foundation) ve službě IIS.  
   
 > [!WARNING]
-> \<baseAddressPrefixFilters > nerozpozná "localhost"; místo toho použijte plně kvalifikovaný název počítače.  
+> \<baseAddressPrefixFilters> nerozpozná "localhost"; místo toho použijte plně kvalifikovaný název počítače.  
   
-[ **\<configuration >** ](../configuration-element.md) \
-&nbsp; &nbsp;[ **\<system. serviceModel >** ](system-servicemodel.md) \
-&nbsp;&nbsp;&nbsp;&nbsp;[ **\<serviceHostingEnvironment >** ](servicehostingenvironment.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<baseAddressPrefixFilters >**  
+[**\<>konfigurace**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<system.serviceModel>**](system-servicemodel.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[**\<serviceHostingEnvironment>**](servicehostingenvironment.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<baseAddressPrefixFilters>**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -34,35 +34,35 @@ Představuje kolekci elementů konfigurace, které určují předávací filtry,
  Následující části popisují atributy, podřízené prvky a nadřazené prvky.  
   
 ### <a name="attributes"></a>Atributy  
- Žádné  
+ Žádné.  
   
 ### <a name="child-elements"></a>Podřízené elementy  
   
-|Prvek|Popis|  
+|Element|Popis|  
 |-------------|-----------------|  
-|[\<přidat >](add-of-baseaddressprefixfilter.md)|Přidá prvek konfigurace, který určuje filtr předpony pro základní adresy používané hostitelem služby.|  
+|[\<přidat>](add-of-baseaddressprefixfilter.md)|Přidá konfigurační prvek, který určuje filtr předpony pro základní adresy používané hostitelem služby.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
-|Prvek|Popis|  
+|Element|Popis|  
 |-------------|-----------------|  
-|[\<serviceHostingEnvironment >](servicehostingenvironment.md)|Definuje typ, který hostující prostředí služby vytvoří pro konkrétní přenos.|  
+|[\<serviceHostingEnvironment>](servicehostingenvironment.md)|Definuje typ, který konsteaci prostředí hostování služby pro konkrétní přenos.|  
   
 ## <a name="remarks"></a>Poznámky  
- Filtr předpon poskytuje způsob, jak sdíleným poskytovatelům hostingu určit, které identifikátory URI bude služba používat. Umožňuje sdíleným hostitelům hostovat více aplikací s různými základními adresami pro stejné schéma ve stejné lokalitě.  
+ Filtr předpony poskytuje poskytovatelům sdíleného hostingu způsob, jak určit, které identifikátory URI mají být službou používány. Umožňuje sdíleným hostitelům hostovat více aplikací s různými základními adresami pro stejné schéma na stejném webu.  
   
- Webové stránky služby IIS jsou kontejnery pro virtuální aplikace, které obsahují virtuální adresáře. Aplikace v lokalitě je k dispozici prostřednictvím jedné nebo více vazeb služby IIS. Vazby služby IIS poskytují dvě informace: vazby protokolu a informace o vazbě. Protokol vazby (například HTTP) definuje schéma, přes které probíhá komunikace, a informace o vazbě (například IP adresa, port, hostheader) obsahuje data, která se používají pro přístup k webu.  
+ Weby služby IIS jsou kontejnery pro virtuální aplikace, které obsahují virtuální adresáře. Aplikace v lokalitě je přístupná prostřednictvím jedné nebo více vazeb služby IIS. Vazby iis poskytují dvě informace: závazný protokol a informace o vazbě. Protokol vazby (například HTTP) definuje schéma, přes které dochází ke komunikaci, a informace o vazbě (například IP adresa, port, hlavička hostitele) obsahují data použitá pro přístup k webu.  
   
- Služba IIS podporuje zadání více vazeb služby IIS pro každou lokalitu, což má za následek více základních adres pro každé schéma. Vzhledem k tomu, že služba WCF hostovaná v rámci lokality umožňuje vytvořit vazbu pouze na jednu základní adresu pro každé schéma, můžete pomocí funkce filtru předpon vybrat požadovanou základní adresu hostované služby. Příchozí základní adresy, které poskytuje služba IIS, se filtrují na základě volitelného filtru seznamu předpon.  
+ IIS podporuje určení více vazeb iis pro každou lokalitu, což má za následek více základních adres pro každé schéma. Vzhledem k tomu, že služba WCF hostovaná pod webem umožňuje vazbu pouze na jednu základní adresu pro každé schéma, můžete pomocí funkce filtru předpony vybrat požadovanou základní adresu hostované služby. Příchozí základní adresy dodané službou IIS jsou filtrovány na základě volitelného filtru seznamu předponami.  
   
- Například váš web může obsahovat následující základní adresy:
+ Web může například obsahovat následující základní adresy:
   
-``` 
+```
 http://testl.fabrikam.com/Service.svc  
 http://test2.fabrikam.com/Service.svc  
 ```  
   
- Následující konfigurační soubor můžete použít k určení filtru předpony na úrovni domény AppDomain.  
+ Následující konfigurační soubor můžete použít k určení filtru předpony na úrovni domény aplikace.  
   
 ```xml  
 <system.serviceModel>
@@ -75,14 +75,14 @@ http://test2.fabrikam.com/Service.svc
 </system.serviceModel>
 ```  
   
- V tomto příkladu jsou `net.tcp://test1.fabrikam.com:8000` a `http://test2.fabrikam.com:9000` jedinými základními adresami pro příslušné systémy, které mohou být předány.  
+ V tomto `net.tcp://test1.fabrikam.com:8000` příkladu a `http://test2.fabrikam.com:9000` jsou pouze základní adresy pro jejich příslušná schémata, které mohou být předány.  
   
- Ve výchozím nastavení, pokud není zadána předpona, jsou předány všechny adresy. Zadání předpony umožňuje předávat odpovídající základní adresu pro toto schéma.  
+ Ve výchozím nastavení není zadána předpona, jsou předány všechny adresy. Zadání předpony umožňuje pouze odpovídající základní adresu pro toto schéma, které mají být předány.  
   
 > [!NOTE]
-> Filtr nepodporuje žádné zástupné znaky. Kromě toho adres BaseAddresses poskytované službou IIS může mít adresy svázané s jinými schématy, které nejsou k dispozici v seznamu `baseAddressPrefixFilters`. Tyto adresy nejsou vyfiltrovány.  
+> Filtr nepodporuje žádné zástupné znaky. Kromě toho baseAddresses poskytované iIS může mít adresy vázané na jiná `baseAddressPrefixFilters` schémata, které nejsou k dispozici v seznamu. Tyto adresy nejsou odfiltrovány.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.ServiceModel.Configuration.BaseAddressPrefixFilterElementCollection>
 - <xref:System.ServiceModel.Configuration.ServiceHostingEnvironmentSection>

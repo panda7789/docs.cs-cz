@@ -1,25 +1,25 @@
 ---
-title: Vytváření výčtu instancí SQL Server
+title: Výčet instancí serveru SQL Server
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: ddf1c83c-9d40-45e6-b04d-9828c6cbbfdc
-ms.openlocfilehash: c59db5869ed848071611cdbf985b45dc59790d69
-ms.sourcegitcommit: 19014f9c081ca2ff19652ca12503828db8239d48
+ms.openlocfilehash: a707df533216613e34d9f357c7b9e035f73b9561
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "76979986"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79148683"
 ---
 # <a name="enumerating-instances-of-sql-server-adonet"></a>Vytváření výčtu instancí SQL Serveru (ADO.NET)
-SQL Server umožňuje aplikacím najít SQL Server instance v rámci aktuální sítě. Třída <xref:System.Data.Sql.SqlDataSourceEnumerator> zpřístupňuje tyto informace vývojáři aplikací a poskytuje <xref:System.Data.DataTable> obsahující informace o všech viditelných serverech. Tato vrácená tabulka obsahuje seznam instancí serveru dostupných v síti, které se shodují se seznamem zadaným při pokusu uživatele o vytvoření nového připojení, a rozbalí rozevírací seznam obsahující všechny dostupné servery v dialogovém okně **Vlastnosti připojení** . Zobrazené výsledky nejsou vždy dokončeny.  
+SQL Server umožňuje aplikacím najít instance serveru SQL Server v rámci aktuální sítě. Třída <xref:System.Data.Sql.SqlDataSourceEnumerator> zpřístupňuje tyto informace vývojáři <xref:System.Data.DataTable> aplikace a poskytuje informace o všech viditelných serverech. Tato vrácená tabulka obsahuje seznam instancí serveru dostupných v síti, který odpovídá seznamu poskytnutému při pokusu uživatele o vytvoření nového připojení, a rozbalí rozevírací seznam obsahující všechny dostupné servery v dialogovém okně **Vlastnosti připojení.** Zobrazené výsledky nejsou vždy úplné.  
   
 > [!NOTE]
-> Stejně jako u většiny služeb Windows je nejlepší spustit službu SQL Browser s nejmenšími možnými oprávněními. Další informace o službě SQL Browser a o tom, jak spravovat její chování, najdete v tématu SQL Server Books Online.  
+> Stejně jako u většiny služeb systému Windows je nejlepší spustit službu prohlížeče SQL s co nejmenšími oprávněními. Další informace o službě prohlížeče SQL Browser a způsob správy jejího chování naleznete v tématu SQL Server Books Online.  
   
-## <a name="retrieving-an-enumerator-instance"></a>Načítání instance enumerátoru  
- Aby bylo možné načíst tabulku obsahující informace o dostupných instancích SQL Server, je nutné nejprve načíst enumerátor pomocí vlastnosti Shared/static <xref:System.Data.Sql.SqlDataSourceEnumerator.Instance%2A>:  
+## <a name="retrieving-an-enumerator-instance"></a>Načítání instance čítače výčtu  
+ Chcete-li načíst tabulku obsahující informace o dostupných instancích serveru SQL Server, musíte nejprve načíst čítače enumerator pomocí sdílené/statické <xref:System.Data.Sql.SqlDataSourceEnumerator.Instance%2A> vlastnosti:  
   
 ```vb  
 Dim instance As System.Data.Sql.SqlDataSourceEnumerator = _  
@@ -27,11 +27,11 @@ Dim instance As System.Data.Sql.SqlDataSourceEnumerator = _
 ```  
   
 ```csharp  
-System.Data.Sql.SqlDataSourceEnumerator instance =   
+System.Data.Sql.SqlDataSourceEnumerator instance =
    System.Data.Sql.SqlDataSourceEnumerator.Instance  
 ```  
   
- Po načtení statické instance můžete zavolat metodu <xref:System.Data.Sql.SqlDataSourceEnumerator.GetDataSources%2A>, která vrátí <xref:System.Data.DataTable> obsahující informace o dostupných serverech:  
+ Po načtení statické instance můžete volat <xref:System.Data.Sql.SqlDataSourceEnumerator.GetDataSources%2A> metodu, která <xref:System.Data.DataTable> vrací obsahující informace o dostupných serverech:  
   
 ```vb  
 Dim dataTable As System.Data.DataTable = instance.GetDataSources()  
@@ -41,27 +41,27 @@ Dim dataTable As System.Data.DataTable = instance.GetDataSources()
 System.Data.DataTable dataTable = instance.GetDataSources();  
 ```  
   
- Tabulka vrácená voláním metody obsahuje následující sloupce, z nichž všechny obsahují hodnoty `string`:  
+ Tabulka vrácená z volání metody obsahuje následující sloupce, které obsahují `string` hodnoty:  
   
 |Sloupec|Popis|  
 |------------|-----------------|  
-|**ServerName**|Název serveru.|  
-|**InstanceName**|Název instance serveru. Prázdné, pokud server běží jako výchozí instance.|  
-|**Clusterované**|Označuje, zda je Server součástí clusteru.|  
-|**Verze**|Verze serveru. Příklad:<br /><br /> -9.00. x (SQL Server 2005)<br />-   10.0.xx (SQL Server 2008)<br />-   10.50.x (SQL Server 2008 R2)<br />-   11.0.xx (SQL Server 2012)|  
+|**Název_serveru**|Název serveru.|  
+|**Název_instance**|Název instance serveru. Pokud je server spuštěn jako výchozí instance, je prázdné.|  
+|**Jeseskupený**|Označuje, zda je server součástí clusteru.|  
+|**Verze**|Verze serveru. Například:<br /><br /> - 9.00.x (SQL Server 2005)<br />- 10.0.xx (SQL Server 2008)<br />- 10.50.x (SQL Server 2008 R2)<br />- 11.0.xx (SQL Server 2012)|  
   
 ## <a name="enumeration-limitations"></a>Omezení výčtu  
- Všechny dostupné servery můžou nebo nemusí být uvedené. Seznam se může lišit v závislosti na faktorech, jako jsou například časové limity a síťový provoz. To může způsobit, že se seznam bude lišit od dvou po sobě jdoucích volání. Zobrazí se pouze servery ve stejné síti. Pakety všesměrového vysílání obvykle nebudou procházet směrovači, což znamená, že se server nemusí zobrazovat, ale bude stabilní v rámci volání.  
+ Všechny dostupné servery mohou nebo nemusí být uvedeny. Seznam se může lišit v závislosti na faktorech, jako jsou časové osy a síťový provoz. To může způsobit, že seznam se liší na dvě po sobě jdoucí volání. Budou uvedeny pouze servery ve stejné síti. Všesměrové pakety obvykle nebudou procházet směrovači, což je důvod, proč se nemusí zobrazit uvedený server, ale bude stabilní napříč voláními.  
   
- Uvedené servery mohou nebo nemusí mít další informace, například `IsClustered` a verzi. To závisí na tom, jak byl seznam získán. Servery uvedené prostřednictvím služby SQL Server Browser budou mít více podrobností, než jaké jsou nalezeny prostřednictvím infrastruktury systému Windows, ve které bude uveden pouze název.  
+ Uvedené servery mohou nebo nemusí `IsClustered` mít další informace, jako je například a verze. To závisí na způsobu získání seznamu. Servery uvedené prostřednictvím služby prohlížeče SQL Server budou mít více podrobností než servery nalezené prostřednictvím infrastruktury systému Windows, která bude uvádět pouze název.  
   
 > [!NOTE]
-> Výčet serveru je k dispozici pouze při spuštění v úplném vztahu důvěryhodnosti. Sestavení spuštěná v částečně důvěryhodném prostředí ji nebudou moct používat, i když mají oprávnění <xref:System.Data.SqlClient.SqlClientPermission> CAS (Code Access Security).  
+> Výčet serveru je k dispozici pouze při spuštění v plné důvěryhodnosti. Sestavení spuštěná v částečně důvěryhodném prostředí jej nebudou moci používat, <xref:System.Data.SqlClient.SqlClientPermission> a to ani v případě, že mají oprávnění CAS (Code Access Security).  
   
- SQL Server poskytuje informace pro <xref:System.Data.Sql.SqlDataSourceEnumerator> pomocí externí služby systému Windows s názvem SQL Browser. Tato služba je ve výchozím nastavení povolená, ale správci ji můžou vypnout nebo zakázat, takže instance serveru není pro tuto třídu viditelná.  
+ SQL Server poskytuje <xref:System.Data.Sql.SqlDataSourceEnumerator> informace pro použití externí služby Windows s názvem SQL Browser. Tato služba je ve výchozím nastavení povolena, ale správci ji mohou vypnout nebo zakázat, čímž se instance serveru pro tuto třídu stane neviditelnou.  
   
 ## <a name="example"></a>Příklad  
- Následující aplikace konzoly načte informace o všech viditelných instancích SQL Server a zobrazí informace v okně konzoly.  
+ Následující konzolová aplikace načte informace o všech viditelných instancích serveru SQL Server a zobrazí informace v okně konzoly.  
   
 ```vb  
 Imports System.Data.Sql  
@@ -124,7 +124,7 @@ class Program
 }  
 ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [SQL Server a ADO.NET](index.md)
 - [Přehled ADO.NET](../ado-net-overview.md)

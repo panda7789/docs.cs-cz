@@ -1,5 +1,5 @@
 ---
-title: GetErrorInfo – funkce (odkaz na nespravované rozhraní API)
+title: GetErrorInfo (Nespravovaný odkaz na rozhraní API)
 description: Funkce GetErrorInfo načte informace o chybě z předchozího volání funkce.
 ms.date: 11/06/2017
 api_name:
@@ -14,14 +14,14 @@ helpviewer_keywords:
 - GetErrorInfo function [.NET WMI and performance counters]
 topic_type:
 - Reference
-ms.openlocfilehash: 062dc62dfe53af3bf5158cb1add0897eccc1df60
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 802ee66a5be213ac7a599b193ec6de589773ea17
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73102617"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79176809"
 ---
-# <a name="geterrorinfo-function"></a>GetErrorInfo – funkce
+# <a name="geterrorinfo-function"></a>GetErrorInfo
 Načte informace o chybě z předchozího volání funkce.  
   
 [!INCLUDE[internalonly-unmanaged](../../../../includes/internalonly-unmanaged.md)]
@@ -29,24 +29,24 @@ Načte informace o chybě z předchozího volání funkce.
 ## <a name="syntax"></a>Syntaxe  
   
 ```cpp  
-IErrorInfo* GetErrorInfo(); 
+IErrorInfo* GetErrorInfo();
 ```  
 
 ## <a name="return-value"></a>Návratová hodnota
 
-Ukazatel na objekt [IErrorInfo](https://docs.microsoft.com/previous-versions/windows/desktop/api/oaidl/nn-oaidl-ierrorinfo) , pokud je volání funkce úspěšné, nebo `null`, pokud selže.
+Ukazatel na objekt [IErrorInfo,](https://docs.microsoft.com/previous-versions/windows/desktop/api/oaidl/nn-oaidl-ierrorinfo) pokud je volání `null` funkce úspěšné nebo pokud se nezdaří.
   
 ## <a name="remarks"></a>Poznámky
 
-Tato funkce zalomí volání metody [IComThreadingInfo:: GetErrorInfo](/windows/desktop/api/objidlbase/nf-objidlbase-icomthreadinginfo-getcurrentapartmenttype) .
+Tato funkce zabalí volání metody [IComThreadingInfo::GetErrorInfo.](/windows/desktop/api/objidlbase/nf-objidlbase-icomthreadinginfo-getcurrentapartmenttype)
 
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
+ **Platformy:** Viz [Systémové požadavky](../../get-started/system-requirements.md).  
   
- **Hlavička:** WMINet_Utils. def  
+ **Záhlaví:** WMINet_Utils.def  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
+ **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [WMI a čítače výkonu (Reference nespravovaného rozhraní API)](index.md)
+- [Čítače služby WMI a výkonu (nespravovaný odkaz na rozhraní API)](index.md)

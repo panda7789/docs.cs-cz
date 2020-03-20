@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: volba tiskáren připojených k počítači uživatele'
+title: 'Postup: Volba tiskáren připojených k počítači uživatele'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -9,25 +9,25 @@ helpviewer_keywords:
 - printing [Windows Forms], choosing printers
 - printers [Windows Forms], choosing
 ms.assetid: 63c1172b-2931-4ac0-953f-37f629494bbf
-ms.openlocfilehash: 7fc2427468540ac0a1480f6140cbb34c3a0f1ab3
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: 2afbccd02ef42a78d5eac1a01841516fca27c92e
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76746507"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79182615"
 ---
 # <a name="how-to-choose-the-printers-attached-to-a-users-computer-in-windows-forms"></a>Postupy: Volba tiskáren připojených k počítači uživatele ve Windows Forms
-Uživatelé chtějí často zvolit jinou tiskárnu než výchozí tiskárnu, do které chcete tisknout. Uživatelům můžete umožnit výběr tiskárny z těch, které jsou aktuálně nainstalované, pomocí <xref:System.Windows.Forms.PrintDialog> komponenty. Prostřednictvím součásti <xref:System.Windows.Forms.PrintDialog> je <xref:System.Windows.Forms.DialogResult> součásti <xref:System.Windows.Forms.PrintDialog> zachycena a používána pro výběr tiskárny.  
+Uživatelé často chtějí zvolit jinou tiskárnu než výchozí tiskárnu, na kterou chcete tisknout. Pomocí <xref:System.Windows.Forms.PrintDialog> součásti můžete uživatelům povolit výběr tiskárny z aktuálně nainstalovaných. Prostřednictvím <xref:System.Windows.Forms.PrintDialog> <xref:System.Windows.Forms.DialogResult> komponenty je <xref:System.Windows.Forms.PrintDialog> komponenta zachycena a použita k výběru tiskárny.  
   
- V následujícím postupu je vybraný textový soubor, který se má vytisknout na výchozí tiskárně. Pak se vytvoří instance třídy <xref:System.Windows.Forms.PrintDialog>.  
+ V následujícím postupu je vybrán textový soubor, který se má vytisknout na výchozí tiskárně. Třída <xref:System.Windows.Forms.PrintDialog> je pak vytvořena instance.  
   
-### <a name="to-choose-a-printer-and-then-print-a-file"></a>Výběr tiskárny a následné tisk souboru  
+### <a name="to-choose-a-printer-and-then-print-a-file"></a>Výběr tiskárny a následné tisku souboru  
   
-1. Vyberte tiskárnu, která má být použita pomocí <xref:System.Windows.Forms.PrintDialog> součásti.  
+1. Vyberte tiskárnu, která <xref:System.Windows.Forms.PrintDialog> má být použita pomocí komponenty.  
   
-     V následujícím příkladu kódu jsou zpracovávány dvě události. V první <xref:System.Windows.Forms.Button> událost <xref:System.Windows.Forms.Control.Click> ovládacího prvku, je vytvořena instance třídy <xref:System.Windows.Forms.PrintDialog> a tiskárna vybraná uživatelem je zachycena ve vlastnosti <xref:System.Windows.Forms.DialogResult>.  
+     V následujícím příkladu kódu jsou zpracovávány dvě události. V první události <xref:System.Windows.Forms.Button> ovládacího <xref:System.Windows.Forms.Control.Click> prvku <xref:System.Windows.Forms.PrintDialog> je instance třídy a tiskárna vybraná uživatelem <xref:System.Windows.Forms.DialogResult> je zachycena ve vlastnosti.  
   
-     Ve druhé události <xref:System.Drawing.Printing.PrintDocument.PrintPage> událost <xref:System.Drawing.Printing.PrintDocument> součásti se ukázkový dokument vytiskne na určenou tiskárnu.  
+     V druhém případě, <xref:System.Drawing.Printing.PrintDocument.PrintPage> v <xref:System.Drawing.Printing.PrintDocument> případě komponenty, je na zadanou tiskárnu vytištěn ukázkový dokument.  
   
     ```vb  
     Private Sub Button1_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles Button1.Click  
@@ -37,12 +37,12 @@ Uživatelé chtějí často zvolit jinou tiskárnu než výchozí tiskárnu, do 
   
        If (result = DialogResult.OK) Then  
          PrintDocument1.Print()  
-       End If   
+       End If
   
     End Sub  
   
     Private Sub PrintDocument1_PrintPage(ByVal sender As Object, ByVal e As System.Drawing.Printing.PrintPageEventArgs) Handles PrintDocument1.PrintPage  
-       e.Graphics.FillRectangle(Brushes.Red, New Rectangle(500, 500, 500, 500))          
+       e.Graphics.FillRectangle(Brushes.Red, New Rectangle(500, 500, 500, 500))
     End Sub  
     ```  
   
@@ -58,10 +58,10 @@ Uživatelé chtějí často zvolit jinou tiskárnu než výchozí tiskárnu, do 
        }  
     }  
   
-    private void printDocument1_PrintPage(object sender,   
+    private void printDocument1_PrintPage(object sender,
     System.Drawing.Printing.PrintPageEventArgs e)  
     {  
-       e.Graphics.FillRectangle(Brushes.Red,   
+       e.Graphics.FillRectangle(Brushes.Red,
          new Rectangle(500, 500, 500, 500));  
     }  
     ```  
@@ -73,7 +73,7 @@ Uživatelé chtějí často zvolit jinou tiskárnu než výchozí tiskárnu, do 
        {  
           PrintDialog ^ printDialog1 = gcnew PrintDialog();  
           printDialog1->Document = printDocument1;  
-          System::Windows::Forms::DialogResult result =   
+          System::Windows::Forms::DialogResult result =
              printDialog1->ShowDialog();  
           if (result == DialogResult::OK)  
           {  
@@ -89,7 +89,7 @@ Uživatelé chtějí často zvolit jinou tiskárnu než výchozí tiskárnu, do 
        }  
     ```  
   
-     (Vizuální C# a vizuální C++) Vložte následující kód do konstruktoru formuláře pro registraci obslužné rutiny události.  
+     (Visual C# a Visual C++) Umístěte následující kód do konstruktoru formuláře pro registraci obslužné rutiny události.  
   
     ```csharp  
     this.printDocument1.PrintPage += new  
@@ -108,4 +108,4 @@ Uživatelé chtějí často zvolit jinou tiskárnu než výchozí tiskárnu, do 
   
 ## <a name="see-also"></a>Viz také
 
-- [Podpora tisku v modelu Windows Forms](windows-forms-print-support.md)
+- [Podpora tisku ve Windows Forms](windows-forms-print-support.md)

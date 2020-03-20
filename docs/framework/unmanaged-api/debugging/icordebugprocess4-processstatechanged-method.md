@@ -1,5 +1,5 @@
 ---
-title: ICorDebugProcess4::ProcessStateChanged Method
+title: Metoda ICorDebugProcess4::ProcessStateChanged
 ms.date: 02/07/2019
 api_name:
 - ICorDebugProcess4::ProcessStateChanged
@@ -15,16 +15,16 @@ topic_type:
 - apiref
 author: hoyosjs
 ms.author: juhoyosa
-ms.openlocfilehash: adfd563e19389642ac0ed0a3cef4aae8a32fa466
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: a6f36f5b86b4fa58ce2a4ef4aa23d527f797a5a5
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67767184"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79178633"
 ---
-# <a name="icordebugprocess4processstatechanged-method"></a>ICorDebugProcess4::ProcessStateChanged Method
+# <a name="icordebugprocess4processstatechanged-method"></a>Metoda ICorDebugProcess4::ProcessStateChanged
 
-Upozorní ICorDebug kanálu, že je vzdálený ladicí program procesu pokračovat v provádění od laděného objektu.
+Upozorní kanál ICorDebug, že ladicí program mimo proces pokračuje v provádění ladicího programu.
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -37,24 +37,24 @@ HRESULT ProcessStateChanged(
 ## <a name="parameters"></a>Parametry
 
  `eChange`\
-[in] Člen [výčet CorDebugStateChange](cordebugstatechange-enumeration.md) popisující změnu stavu spuštění procesu.
+[v] Člen [cordebugStateChange výčtu](cordebugstatechange-enumeration.md) popisující změnu ve stavu provádění procesu.
 
 ## <a name="remarks"></a>Poznámky
 
-Zadaná metoda je součástí `ICorDebugProcess4` rozhraní a odpovídá čtvrtý pozice tabulce virtuální metody.
+Poskytnutá metoda je součástí `ICorDebugProcess4` rozhraní a odpovídá čtvrtému slotu tabulky virtuální metody.
 
 ## <a name="requirements"></a>Požadavky
 
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).
+ **Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).
 
  **Záhlaví:** Žádný
 
  **Knihovna:** Žádný
- 
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v20plus-md.md)]
 
-## <a name="see-also"></a>Viz také:
+ **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v45plus](../../../../includes/net-current-v20plus-md.md)]
 
-- [ICorDebugProcess4 Interface](icordebugprocess4-interface.md)
-- [Rozhraní pro ladění](debugging-interfaces.md)
-- [Ladění](index.md)
+## <a name="see-also"></a>Viz také
+
+- [ICorDebugProcess4 – rozhraní](icordebugprocess4-interface.md)
+- [Debugging – rozhraní](debugging-interfaces.md)
+- [ladění](index.md)

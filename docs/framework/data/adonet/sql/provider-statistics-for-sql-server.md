@@ -5,50 +5,50 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 429c9d09-92ac-46ec-829a-fbff0a9575a2
-ms.openlocfilehash: b6fa4207531e86cbde8657d0c47596f22c886f89
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 5e37a04ff731a99664d636e0d4175f99214c2646
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70791868"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79174508"
 ---
 # <a name="provider-statistics-for-sql-server"></a>Statistiky zprostředkovatelů na SQL Serveru
-Počínaje verzí 2,0 .NET Framework .NET Framework Zprostředkovatel dat pro SQL Server podporuje statistiku runtime. Chcete-li vytvořit platný objekt připojení <xref:System.Data.SqlClient.SqlConnection.StatisticsEnabled%2A> , je nutné <xref:System.Data.SqlClient.SqlConnection> povolit statistiku nastavením vlastnosti objektu na `True` hodnotu. Po povolení statistik je můžete zkontrolovat jako "snímek v čase" načtením <xref:System.Collections.IDictionary> odkazu <xref:System.Data.SqlClient.SqlConnection.RetrieveStatistics%2A> prostřednictvím metody <xref:System.Data.SqlClient.SqlConnection> objektu. Seznam můžete zobrazit jako sadu položek slovníku dvojice název/hodnota. Tyto páry název/hodnota jsou neseřazené. V každém okamžiku můžete zavolat <xref:System.Data.SqlClient.SqlConnection.ResetStatistics%2A> metodu <xref:System.Data.SqlClient.SqlConnection> objektu pro resetování čítačů. Pokud není shromažďování statistických údajů povolené, výjimka se nevygeneruje. Kromě toho, pokud <xref:System.Data.SqlClient.SqlConnection.RetrieveStatistics%2A> je volána, <xref:System.Data.SqlClient.SqlConnection.StatisticsEnabled%2A> aniž by byla volána jako první, jsou načtené hodnoty počátečními hodnotami pro každou položku. Pokud povolíte statistiku, spusťte aplikaci za chvíli a pak zakažte statistiku. načtené hodnoty budou odpovídat hodnotám shromážděným do okamžiku, kdy byly statistiky zakázány. Všechny shromážděné statistické hodnoty jsou založené na jednotlivých připojeních.  
+Počínaje rozhraním .NET Framework verze 2.0 podporuje zprostředkovatel dat rozhraní .NET Framework pro SQL Server statistiky za běhu. Statistiku je nutné <xref:System.Data.SqlClient.SqlConnection.StatisticsEnabled%2A> povolit <xref:System.Data.SqlClient.SqlConnection> nastavením `True` vlastnosti objektu po vytvoření platného objektu připojení. Po povolení statistiky, můžete zkontrolovat jako "snímek v <xref:System.Collections.IDictionary> čase" <xref:System.Data.SqlClient.SqlConnection.RetrieveStatistics%2A> načtením <xref:System.Data.SqlClient.SqlConnection> odkazu prostřednictvím metody objektu. Můžete vytvořit výčet prostřednictvím seznamu jako sadu položek slovníku pár ů názvu/hodnoty. Tyto dvojice název/hodnota jsou neuspořádané. Kdykoli můžete volat metodu <xref:System.Data.SqlClient.SqlConnection.ResetStatistics%2A> objektu <xref:System.Data.SqlClient.SqlConnection> k obnovení čítačů. Pokud shromažďování statistik nebyla povolena, není generována výjimka. Kromě toho <xref:System.Data.SqlClient.SqlConnection.RetrieveStatistics%2A> pokud je <xref:System.Data.SqlClient.SqlConnection.StatisticsEnabled%2A> volána bez byly volány jako první, načtené hodnoty jsou počáteční hodnoty pro každou položku. Pokud povolíte statistiky, spusťte aplikaci na chvíli a potom zakázat statistiky, načtené hodnoty bude odrážet hodnoty shromážděné až do bodu, kde byly zakázány statistiky. Všechny shromážděné statistické hodnoty jsou pro připojení.  
   
-## <a name="statistical-values-available"></a>Statistické hodnoty k dispozici  
- V současné době je od poskytovatele Microsoft SQL Server k dispozici 18 různých položek. K dostupnému počtu položek lze získat přístup prostřednictvím <xref:System.Collections.IDictionary> vlastnosti **Count** odkazu <xref:System.Data.SqlClient.SqlConnection.RetrieveStatistics%2A>rozhraní, který vrátil. Všechny čítače pro statistiku poskytovatele používají <xref:System.Int64> typ modulu CLR (**Long** in C# a Visual Basic), což je 64 bitů ve světě. Maximální hodnota datového typu **Int64** , jak je definována hodnotou **Int64. Pole MaxValue** , je ((2 ^ 63)-1)). Pokud hodnoty pro čítače dosáhnou této maximální hodnoty, neměly by se již považovat za přesné. To znamená, že **Int64. MaxValue**-1 ((2 ^ 63)-2) je nejvýhodnější největší platná hodnota pro všechny statistiky.  
+## <a name="statistical-values-available"></a>Dostupné statistické hodnoty  
+ V současné době je k dispozici 18 různých položek od poskytovatele serveru Microsoft SQL Server. Počet položek k dispozici lze přistupovat prostřednictvím <xref:System.Collections.IDictionary> **Count** vlastnost <xref:System.Data.SqlClient.SqlConnection.RetrieveStatistics%2A>odkaz rozhraní vrácené . Všechny čítače pro statistiky zprostředkovatele <xref:System.Int64> používají typ clr **(long** v jazyce C# a Visual Basic), který je 64 bitů široký. Maximální hodnota datového typu **int64,** jak je definováno **int64. MaxValue** pole, is ((2^63)-1)). Když hodnoty čítačů dosáhnou této maximální hodnoty, neměly by být již považovány za přesné. To znamená, že **int64. MaxValue**-1((2^63)-2) je skutečně největší platnou hodnotu pro všechny statistiky.  
   
 > [!NOTE]
-> Slovník se používá pro vracení statistik poskytovatele, protože počet, názvy a pořadí vrácených statistik se může v budoucnu změnit. Aplikace by neměly spoléhat na konkrétní hodnotu nalezenou ve slovníku, ale měla by se místo toho kontrolovat, zda je tato hodnota a odpovídajícím způsobem větev.  
+> Slovník se používá pro vrácení statistiky zprostředkovatele, protože počet, názvy a pořadí vrácené statistiky se může v budoucnu změnit. Aplikace by neměly spoléhat na konkrétní hodnotu, která se nachází ve slovníku, ale místo toho by měly zkontrolovat, zda hodnota existuje a odpovídajícím způsobem větví.  
   
- Následující tabulka popisuje aktuální statistické hodnoty k dispozici. Všimněte si, že názvy klíčů pro jednotlivé hodnoty nejsou lokalizovány mezi regionální verze .NET Framework Microsoft.  
+ Následující tabulka popisuje aktuální dostupné statistické hodnoty. Všimněte si, že názvy klíčů pro jednotlivé hodnoty nejsou lokalizovány v místních verzích rozhraní Microsoft .NET Framework.  
   
 |Název klíče|Popis|  
 |--------------|-----------------|  
-|`BuffersReceived`|Vrátí počet paketů protokolu TDS (Tabular data Stream) přijatých zprostředkovatelem od SQL Server poté, co aplikace začne používat zprostředkovatele a povolila statistiku.|  
-|`BuffersSent`|Vrátí počet paketů TDS odeslaných do SQL Server zprostředkovatelem po povolení statistiky. Velké příkazy mohou vyžadovat více vyrovnávacích pamětí. Například pokud je na server odeslán velký příkaz a vyžaduje šest paketů, `ServerRoundtrips` je zvýšen o 1 a `BuffersSent` zvýšen o šest.|  
-|`BytesReceived`|Vrátí počet bajtů dat v paketech TDS přijatých poskytovatelem z SQL Server, jakmile aplikace začne používat zprostředkovatele a má povolené statistiky.|  
-|`BytesSent`|Vrátí počet bajtů dat odeslaných do SQL Server v paketech TDS po spuštění aplikace pomocí poskytovatele a povolených statistik.|  
-|`ConnectionTime`|Množství času (v milisekundách), po které bylo připojení otevřeno po povolení statistiky (celková doba připojení, pokud byla statistika povolena před otevřením připojení).|  
-|`CursorOpens`|Vrátí počet otevření kurzoru prostřednictvím připojení, jakmile aplikace začne používat poskytovatele a povolila statistiku.<br /><br /> Všimněte si, že pouze výsledky jen pro čtení nebo dopředné pomocí příkazu SELECT nejsou považovány za kurzory, a proto nemají vliv na tento čítač.|  
-|`ExecutionTime`|Vrátí kumulativní množství času (v milisekundách), které poskytovatel strávil zpracováním po povolení statistik, včetně času stráveného čekáním na odpovědi ze serveru a času stráveného prováděním kódu v samotném zprostředkovateli.<br /><br /> Třídy, které obsahují kód časování, jsou:<br /><br /> SqlConnection<br /><br /> SqlCommand<br /><br /> SqlDataReader<br /><br /> SqlDataAdapter<br /><br /> SqlTransaction<br /><br /> SqlCommandBuilder<br /><br /> Chcete-li udržet co nejzávažnější členy co nejmenší, nevypršela platnost následujících členů:<br /><br /> SqlDataReader<br /><br /> Tento operátor [] (všechna přetížení)<br /><br /> GetBoolean<br /><br /> GetChar<br /><br /> GetDateTime<br /><br /> GetDecimal<br /><br /> GetDouble<br /><br /> GetFloat<br /><br /> GetGUID –<br /><br /> GetInt16<br /><br /> GetInt32<br /><br /> GetInt64<br /><br /> GetName<br /><br /> GetOrdinal<br /><br /> GetSqlBinary<br /><br /> GetSqlBoolean<br /><br /> GetSqlByte<br /><br /> GetSqlDateTime<br /><br /> GetSqlDecimal<br /><br /> GetSqlDouble<br /><br /> GetSqlGuid<br /><br /> GetSqlInt16<br /><br /> GetSqlInt32<br /><br /> GetSqlInt64<br /><br /> GetSqlMoney<br /><br /> GetSqlSingle<br /><br /> GetSqlString<br /><br /> GetString<br /><br /> IsDBNull|  
-|`IduCount`|Vrátí celkový počet příkazů INSERT, DELETE a UPDATE provedených prostřednictvím připojení, jakmile aplikace začne používat poskytovatele a povolila statistiku.|  
-|`IduRows`|Vrátí celkový počet řádků ovlivněných příkazy INSERT, DELETE a UPDATE prováděné prostřednictvím připojení, jakmile aplikace začne používat poskytovatele a má povolené statistiky.|  
-|`NetworkServerTime`|Vrátí kumulativní množství času (v milisekundách), které poskytovatel stráví čekáním na odpovědi ze serveru, jakmile aplikace začne používat poskytovatele a má povolené statistiky.|  
-|`PreparedExecs`|Vrátí počet připravených příkazů provedených prostřednictvím připojení, jakmile aplikace začne používat poskytovatele a povolila statistiku.|  
-|`Prepares`|Vrátí počet příkazů připravených prostřednictvím připojení, jakmile aplikace začne používat poskytovatele a povolila statistiku.|  
-|`SelectCount`|Vrátí počet příkazů SELECT provedených prostřednictvím připojení, jakmile aplikace začne používat poskytovatele a povolila statistiku. To zahrnuje příkazy Fetch pro načtení řádků z kurzorů a počet příkazů SELECT je aktualizován po dosažení konce <xref:System.Data.SqlClient.SqlDataReader> .|  
-|`SelectRows`|Vrátí počet řádků vybraných po zahájení aplikace pomocí poskytovatele a povolených statistik. Tento čítač odráží všechny řádky vygenerované příkazy SQL, a to i ty, které volající skutečně nevyužil. Například zavření čtecího modulu dat před čtením celé sady výsledků by neovlivnilo počet. To zahrnuje řádky načtené z kurzorů prostřednictvím příkazů FETCH.|  
-|`ServerRoundtrips`|Vrátí počet pokusů o připojení odeslaných příkazů serveru a odeslání odpovědi zpět, jakmile aplikace začne používat poskytovatele a povolila statistiku.|  
-|`SumResultSets`|Vrátí počet sad výsledků, které byly použity poté, co aplikace začala používat poskytovatele a má povolené statistiky. Například by obsahovala sadu výsledků vrácenou klientovi. Pro kurzory se každá operace Fetch nebo Block-Fetch považuje za nezávislou sadu výsledků.|  
-|`Transactions`|Vrátí počet uživatelských transakcí spuštěných po zahájení aplikace pomocí poskytovatele a povolených statistik, včetně vrácení zpět. Pokud je připojení spuštěné s automatickým potvrzením, každý příkaz se považuje za transakci.<br /><br /> Tento čítač zvyšuje počet transakcí hned po provedení příkazu BEGIN TRAN, bez ohledu na to, zda je transakce potvrzena nebo vrácena zpět později.|  
-|`UnpreparedExecs`|Vrátí počet nepřipravených příkazů provedených prostřednictvím připojení, jakmile aplikace začne používat poskytovatele a povolila statistiku.|  
+|`BuffersReceived`|Vrátí počet paketů tabulkového datového proudu (TDS) přijatých zprostředkovatelem ze serveru SQL Server poté, co aplikace začala používat zprostředkovatele a povolila statistiky.|  
+|`BuffersSent`|Vrátí počet paketů TDS odeslaných na SQL Server zprostředkovatelem po povolení statistik. Velké příkazy mohou vyžadovat více vyrovnávacích pamětí. Například pokud velký příkaz je odeslán na server a `ServerRoundtrips` vyžaduje šest paketů, `BuffersSent` je zvýšil o jeden a je zvýšil o šest.|  
+|`BytesReceived`|Vrátí počet bajtů dat v paketech TDS přijatých zprostředkovatelem ze serveru SQL Server, jakmile aplikace začne používat zprostředkovatele a povolila statistiky.|  
+|`BytesSent`|Vrátí počet bajtů dat odeslaných na SQL Server v paketech TDS poté, co aplikace začala používat zprostředkovatele a povolila statistiky.|  
+|`ConnectionTime`|Doba (v milisekundách), po které bylo připojení otevřeno po povolení statistik (celkový čas připojení, pokud byly před otevřením připojení povoleny statistiky).|  
+|`CursorOpens`|Vrátí počet otevření kurzoru prostřednictvím připojení, jakmile aplikace začala používat zprostředkovatele a povolila statistiky.<br /><br /> Všimněte si, že jen pro čtení/předávání pouze výsledky vrácené příkazy SELECT nejsou považovány za kurzory a proto nemají vliv na tento čítač.|  
+|`ExecutionTime`|Vrátí kumulativní množství času (v milisekundách), které zprostředkovatel strávil zpracováním po povolení statistiky, včetně času stráveného čekáním na odpovědi ze serveru a času stráveného prováděním kódu v samotném zprostředkovateli.<br /><br /> Třídy, které obsahují kód časování jsou:<br /><br /> Sqlconnection<br /><br /> Sqlcommand<br /><br /> Sqldatareader<br /><br /> Sqldataadapter<br /><br /> Sqltransaction<br /><br /> SqlCommandBuilder<br /><br /> Chcete-li zachovat členy kritické pro výkon co nejmenší, nejsou načasovány následující členy:<br /><br /> Sqldatareader<br /><br /> tento[] operátor (všechna přetížení)<br /><br /> GetBoolean<br /><br /> GetChar<br /><br /> Doba platnosti getdate<br /><br /> Získat decimal<br /><br /> Získat dvojitou<br /><br /> GetFloat<br /><br /> GetGuid<br /><br /> ZískatInt16<br /><br /> GetInt32<br /><br /> ZískatInt64<br /><br /> GetName<br /><br /> Getordinal<br /><br /> GetSqlBinární<br /><br /> GetSqlBoolean<br /><br /> GetSqlByte<br /><br /> Doba aplikace GetSqlDateTime<br /><br /> GetSqlDecimal<br /><br /> GetSqlDouble<br /><br /> GetSqlGuid<br /><br /> GetSqlInt16<br /><br /> GetSqlInt32<br /><br /> GetSqlInt64<br /><br /> GetSqlMoney<br /><br /> GetSqlSingle<br /><br /> GetSqlString<br /><br /> GetString<br /><br /> Isdbnull|  
+|`IduCount`|Vrátí celkový počet příkazů INSERT, DELETE a UPDATE provedených prostřednictvím připojení, jakmile aplikace začne používat zprostředkovatele a povolila statistiky.|  
+|`IduRows`|Vrátí celkový počet řádků ovlivněných příkazy INSERT, DELETE a UPDATE provedenými prostřednictvím připojení, jakmile aplikace začne používat zprostředkovatele a povolila statistiky.|  
+|`NetworkServerTime`|Vrátí kumulativní množství času (v milisekundách), které zprostředkovatel strávil čekáním na odpovědi ze serveru, jakmile aplikace začala používat zprostředkovatele a povolila statistiky.|  
+|`PreparedExecs`|Vrátí počet připravených příkazů provedených prostřednictvím připojení, jakmile aplikace začne používat zprostředkovatele a povolila statistiky.|  
+|`Prepares`|Vrátí počet příkazů připravených prostřednictvím připojení, jakmile aplikace začala používat zprostředkovatele a povolila statistiky.|  
+|`SelectCount`|Vrátí počet příkazů SELECT provedených prostřednictvím připojení, jakmile aplikace začne používat zprostředkovatele a povolila statistiky. To zahrnuje FETCH příkazy načíst řádky z kurzory a počet <xref:System.Data.SqlClient.SqlDataReader> select příkazy je aktualizován při dosažení konce a.|  
+|`SelectRows`|Vrátí počet řádků vybraných po aplikaci začal používat zprostředkovatele a povolil statistiky. Tento čítač odráží všechny řádky generované příkazy SQL, i ty, které nebyly skutečně spotřebovány volajícím. Například zavření čtečky dat před čtením celé sady výsledků nebude mít vliv na počet. To zahrnuje řádky načtené z kurzorů prostřednictvím příkazů FETCH.|  
+|`ServerRoundtrips`|Vrátí počet, kolikrát připojení odeslané příkazy na server a dostal odpověď zpět, jakmile aplikace začala používat zprostředkovatele a povolila statistiky.|  
+|`SumResultSets`|Vrátí počet sad výsledků, které byly použity poté, co aplikace začala používat zprostředkovatele a povolila statistiky. Například to by zahrnovalo všechny sady výsledků vrácené klientovi. Pro kurzory každá operace načtení nebo načtení bloku je považována za nezávislou sadu výsledků.|  
+|`Transactions`|Vrátí počet uživatelských transakcí spuštěných po spuštění aplikace pomocí zprostředkovatele a povolil a povolil statistiky, včetně vrácení zpět. Pokud je spuštěno připojení s automatickým potvrzením, každý příkaz je považován za transakci.<br /><br /> Tento čítač zintálí počet transakcí, jakmile begin tran příkaz je proveden, bez ohledu na to, zda je transakce potvrzena nebo vrácena zpět později.|  
+|`UnpreparedExecs`|Vrátí počet nepřipravených příkazů provedených prostřednictvím připojení, jakmile aplikace začne používat zprostředkovatele a povolila statistiky.|  
   
 ### <a name="retrieving-a-value"></a>Načítání hodnoty  
- Následující aplikace konzoly ukazuje, jak povolit statistiku připojení, načíst čtyři jednotlivé statistické hodnoty a zapsat je do okna konzoly.  
+ Následující konzolová aplikace ukazuje, jak povolit statistiky připojení, načíst čtyři jednotlivé statistické hodnoty a zapsat je do okna konzoly.  
   
 > [!NOTE]
-> Následující příklad používá ukázkovou databázi **AdventureWorks** , která je součástí SQL Server. Připojovací řetězec uvedený v ukázkovém kódu předpokládá, že je databáze nainstalovaná a dostupná v místním počítači. Upravte připojovací řetězec podle potřeby pro vaše prostředí.  
+> Následující příklad používá ukázkovou databázi **AdventureWorks,** která je součástí serveru SQL Server. Připojovací řetězec uvedený v ukázkovém kódu předpokládá, že databáze je nainstalována a k dispozici v místním počítači. Podle potřeby upravte připojovací řetězec pro vaše prostředí.  
   
 ```vb  
 Option Strict On  
@@ -65,7 +65,7 @@ Module Module1
   
     Using awConnection As New SqlConnection(connectionString)  
       ' StatisticsEnabled is False by default.  
-      ' It must be set to True to start the   
+      ' It must be set to True to start the
       ' statistic collection process.  
       awConnection.StatisticsEnabled = True  
   
@@ -136,16 +136,16 @@ namespace CS_Stats_Console_GetValue
     {  
       string connectionString = GetConnectionString();  
   
-      using (SqlConnection awConnection =   
+      using (SqlConnection awConnection =
         new SqlConnection(connectionString))  
       {  
         // StatisticsEnabled is False by default.  
-        // It must be set to True to start the   
+        // It must be set to True to start the
         // statistic collection process.  
         awConnection.StatisticsEnabled = true;  
   
         string productSQL = "SELECT * FROM Production.Product";  
-        SqlDataAdapter productAdapter =   
+        SqlDataAdapter productAdapter =
           new SqlDataAdapter(productSQL, awConnection);  
   
         DataSet awDataSet = new DataSet();  
@@ -193,7 +193,7 @@ namespace CS_Stats_Console_GetValue
     {  
       // To avoid storing the connection string in your code,  
       // you can retrieve it from a configuration file.  
-      return "Data Source=localhost;Integrated Security=SSPI;" +   
+      return "Data Source=localhost;Integrated Security=SSPI;" +
         "Initial Catalog=AdventureWorks";  
     }  
   }  
@@ -201,10 +201,10 @@ namespace CS_Stats_Console_GetValue
 ```  
   
 ### <a name="retrieving-all-values"></a>Načítání všech hodnot  
- Následující aplikace konzoly ukazuje, jak povolit statistiku připojení, načíst všechny dostupné statistické hodnoty pomocí enumerátoru a zapsat je do okna konzoly.  
+ Následující konzolová aplikace ukazuje, jak povolit statistiky připojení, načíst všechny dostupné statistické hodnoty pomocí čítače výčtu a zapsat je do okna konzoly.  
   
 > [!NOTE]
-> Následující příklad používá ukázkovou databázi **AdventureWorks** , která je součástí SQL Server. Připojovací řetězec uvedený v ukázkovém kódu předpokládá, že je databáze nainstalovaná a dostupná v místním počítači. Upravte připojovací řetězec podle potřeby pro vaše prostředí.  
+> Následující příklad používá ukázkovou databázi **AdventureWorks,** která je součástí serveru SQL Server. Připojovací řetězec uvedený v ukázkovém kódu předpokládá, že databáze je nainstalována a k dispozici v místním počítači. Podle potřeby upravte připojovací řetězec pro vaše prostředí.  
   
 ```vb  
 Option Strict On  
@@ -220,7 +220,7 @@ Module Module1
   
     Using awConnection As New SqlConnection(connectionString)  
       ' StatisticsEnabled is False by default.  
-      ' It must be set to True to start the   
+      ' It must be set to True to start the
       ' statistic collection process.  
       awConnection.StatisticsEnabled = True  
   
@@ -284,11 +284,11 @@ namespace CS_Stats_Console_GetAll
     {  
       string connectionString = GetConnectionString();  
   
-      using (SqlConnection awConnection =   
+      using (SqlConnection awConnection =
         new SqlConnection(connectionString))  
       {  
         // StatisticsEnabled is False by default.  
-        // It must be set to True to start the   
+        // It must be set to True to start the
         // statistic collection process.  
         awConnection.StatisticsEnabled = true;  
   
@@ -331,14 +331,14 @@ namespace CS_Stats_Console_GetAll
     {  
       // To avoid storing the connection string in your code,  
       // you can retrieve it from a configuration file.  
-      return "Data Source=localhost;Integrated Security=SSPI;" +   
+      return "Data Source=localhost;Integrated Security=SSPI;" +
         "Initial Catalog=AdventureWorks";  
     }  
   }  
 }  
 ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [SQL Server a ADO.NET](index.md)
 - [Přehled ADO.NET](../ado-net-overview.md)

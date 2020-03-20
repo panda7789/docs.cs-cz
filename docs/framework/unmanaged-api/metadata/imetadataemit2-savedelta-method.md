@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: b95739fe-d2fa-4776-ae0d-31d9707ef799
 topic_type:
 - apiref
-ms.openlocfilehash: afb0c09c09236267be2a999ce5c130feebb52b6f
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 0ebcab7a759b64bfbb254df1c1aa339cde77d054
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74447906"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79175561"
 ---
 # <a name="imetadataemit2savedelta-method"></a>IMetaDataEmit2::SaveDelta – metoda
 Uloží změny z aktuální relace úprav a pokračování do zadaného souboru.  
@@ -29,28 +29,28 @@ Uloží změny z aktuální relace úprav a pokračování do zadaného souboru.
   
 ```cpp  
 HRESULT SaveDelta (  
-    [in] LPCWSTR     szFile,   
+    [in] LPCWSTR     szFile,
     [in] DWORD       dwSaveFlags  
 );  
 ```  
   
 ## <a name="parameters"></a>Parametry  
  `szFile`  
- pro Název souboru, pod kterým chcete uložit změny.  
+ [v] Název souboru, pod kterým chcete uložit změny.  
   
  `dwSaveFlags`  
- pro Rezervovaný. Musí mít hodnotu nula.  
+ [v] Vyhrazena. Musí být nula.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Hlavička:** Cor. h  
+ **Záhlaví:** Kor.h.  
   
- **Knihovna:** Používá se jako prostředek v knihovně MsCorEE. dll.  
+ **Knihovna:** Používá se jako prostředek v souboru MsCorEE.dll  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [IMetaDataEmit2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-interface.md)
 - [IMetaDataEmit – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)

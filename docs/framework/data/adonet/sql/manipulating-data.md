@@ -5,24 +5,24 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 51096a2e-8b38-4c4d-a523-799bfdb7ec69
-ms.openlocfilehash: a84f74bde8da9ca7e40184b76efe51cea129b66a
-ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
+ms.openlocfilehash: 70ee6041b14feb298d93ab452e16ee23607b3fcc
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77451847"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79174287"
 ---
 # <a name="manipulating-data"></a>Manipulace s daty
-Před zavedením několika aktivních sad výsledků (MARS) museli vývojáři použít k řešení určitých scénářů buď několik připojení, nebo ukazatele na straně serveru. Pokud se navíc v transakční situaci použilo víc připojení, vyžadují se vázaná připojení (s **sp_getbindtoken** a **sp_bindsession**). Následující scénáře ukazují, jak použít připojení s povoleným MARSm místo několika připojení.  
+Před zavedením více sad aktivních výsledků (MARS) museli vývojáři k vyřešení určitých scénářů použít více připojení nebo kurzory na straně serveru. Kromě toho při použití více připojení v transakční situaci, vázaná připojení (s **sp_getbindtoken** a **sp_bindsession**) byly požadovány. Následující scénáře ukazují, jak používat připojení s podporou MARS namísto více připojení.  
   
 ## <a name="using-multiple-commands-with-mars"></a>Použití více příkazů s MARS  
- Následující aplikace konzoly ukazuje, jak použít dva objekty <xref:System.Data.SqlClient.SqlDataReader> se dvěma objekty <xref:System.Data.SqlClient.SqlCommand> a jeden objekt <xref:System.Data.SqlClient.SqlConnection> s povoleným MARS.  
+ Následující aplikace konzoly ukazuje, <xref:System.Data.SqlClient.SqlDataReader> jak používat <xref:System.Data.SqlClient.SqlCommand> dva objekty se dvěma objekty a jeden <xref:System.Data.SqlClient.SqlConnection> objekt s povolenou funkcí MARS.  
   
 ### <a name="example"></a>Příklad  
- V tomto příkladu se otevře jedno připojení k databázi **AdventureWorks** . Při použití objektu <xref:System.Data.SqlClient.SqlCommand> se vytvoří <xref:System.Data.SqlClient.SqlDataReader>. Při použití čtecího modulu je otevřen druhý <xref:System.Data.SqlClient.SqlDataReader>, který používá data z první <xref:System.Data.SqlClient.SqlDataReader> jako vstup do klauzule WHERE pro druhý čtecí modul.  
+ Příklad otevře jedno připojení k databázi **AdventureWorks.** Pomocí <xref:System.Data.SqlClient.SqlCommand> objektu <xref:System.Data.SqlClient.SqlDataReader> je vytvořen. Při použití čtečky se <xref:System.Data.SqlClient.SqlDataReader> otevře druhá, pomocí <xref:System.Data.SqlClient.SqlDataReader> dat z prvního jako vstup do klauzule WHERE pro druhý čtenář.  
   
 > [!NOTE]
-> Následující příklad používá ukázkovou databázi **AdventureWorks** , která je součástí SQL Server. Připojovací řetězec uvedený v ukázkovém kódu předpokládá, že je databáze nainstalována a je k dispozici v místním počítači. Upravte připojovací řetězec podle potřeby pro vaše prostředí.  
+> Následující příklad používá ukázkovou databázi **AdventureWorks,** která je součástí serveru SQL Server. Připojovací řetězec uvedený v ukázkovém kódu předpokládá, že databáze je nainstalována a k dispozici v místním počítači. Podle potřeby upravte připojovací řetězec pro vaše prostředí.  
   
 ```vb  
 Option Strict On  
@@ -44,7 +44,7 @@ Module Module1
     Dim productCmd As SqlCommand  
     Dim productReader As SqlDataReader  
   
-    Dim vendorSQL As String = & _   
+    Dim vendorSQL As String = & _
       "SELECT VendorId, Name FROM Purchasing.Vendor"  
     Dim productSQL As String = _  
         "SELECT Production.Product.Name FROM Production.Product " & _  
@@ -108,20 +108,20 @@ static void Main()
   
   int vendorID;  
   SqlDataReader productReader = null;  
-  string vendorSQL =   
+  string vendorSQL =
     "SELECT VendorId, Name FROM Purchasing.Vendor";  
-  string productSQL =   
+  string productSQL =
     "SELECT Production.Product.Name FROM Production.Product " +  
     "INNER JOIN Purchasing.ProductVendor " +  
-    "ON Production.Product.ProductID = " +   
+    "ON Production.Product.ProductID = " +
     "Purchasing.ProductVendor.ProductID " +  
     "WHERE Purchasing.ProductVendor.VendorID = @VendorId";  
   
-  using (SqlConnection awConnection =   
+  using (SqlConnection awConnection =
     new SqlConnection(connectionString))  
   {  
     SqlCommand vendorCmd = new SqlCommand(vendorSQL, awConnection);  
-    SqlCommand productCmd =   
+    SqlCommand productCmd =
       new SqlCommand(productSQL, awConnection);  
   
     productCmd.Parameters.Add("@VendorId", SqlDbType.Int);  
@@ -157,20 +157,20 @@ static void Main()
   {  
     // To avoid storing the connection string in your code,  
     // you can retrieve it from a configuration file.  
-    return "Data Source=(local);Integrated Security=SSPI;" +   
+    return "Data Source=(local);Integrated Security=SSPI;" +
       "Initial Catalog=AdventureWorks;MultipleActiveResultSets=True";  
   }  
 }  
 ```  
   
 ## <a name="reading-and-updating-data-with-mars"></a>Čtení a aktualizace dat pomocí MARS  
- MARS umožňuje, aby se připojení používalo pro operace čtení i operace jazyka DML (data remanipulace Language) s více než jednou probíhající operací. Tato funkce eliminuje nutnost zabývat se chybami zaneprázdněnými připojením aplikace. MARS navíc může nahradit použití ukazatelů na straně serveru, což obecně spotřebovává víc prostředků. Vzhledem k tomu, že více operací může pracovat s jedním připojením, může sdílet stejný kontext transakce, což eliminuje nutnost použít **sp_getbindtoken** a **sp_bindsession** systémových uložených procedur.  
+ MARS umožňuje připojení, které mají být použity pro operace čtení a zpracování dat jazyka (DML) operace s více než jednu operaci čekající na vyřízení. Tato funkce eliminuje potřebu aplikace řešit chyby zaneprázdněnpřipojení. Kromě toho MARS může nahradit použití kurzory na straně serveru, které obecně spotřebovávají více prostředků. A konečně, protože více operací může pracovat na jedno připojení, mohou sdílet stejný kontext transakce, což eliminuje potřebu používat **sp_getbindtoken** a **sp_bindsession** systémem uložené procedury.  
   
 ### <a name="example"></a>Příklad  
- Následující aplikace konzoly ukazuje, jak použít dva objekty <xref:System.Data.SqlClient.SqlDataReader> se třemi objekty <xref:System.Data.SqlClient.SqlCommand> a jeden objekt <xref:System.Data.SqlClient.SqlConnection> s povoleným MARS. První objekt příkazu načte seznam dodavatelů, jejichž kreditní hodnocení je 5. Druhý objekt příkazu používá ID dodavatele poskytnuté z <xref:System.Data.SqlClient.SqlDataReader> k načtení druhého <xref:System.Data.SqlClient.SqlDataReader> se všemi produkty pro konkrétního dodavatele. Druhý <xref:System.Data.SqlClient.SqlDataReader>navštíví každý záznam produktu. Provede se výpočet, který určí, co by mělo být nového v rámci **OrderQty** . Třetí objekt příkazu se pak použije k aktualizaci tabulky **ProductVendor** s novou hodnotou. Celý proces probíhá v rámci jedné transakce, která je vrácena zpět na konci.  
+ Následující aplikace konzoly ukazuje, <xref:System.Data.SqlClient.SqlDataReader> jak používat <xref:System.Data.SqlClient.SqlCommand> dva objekty se třemi objekty a jeden <xref:System.Data.SqlClient.SqlConnection> objekt s povolenou funkcí MARS. První příkazový objekt načte seznam dodavatelů, jejichž úvěrový rating je 5. Druhý objekt příkazu používá ID dodavatele <xref:System.Data.SqlClient.SqlDataReader> zapředpokladu, aby načetl druhý <xref:System.Data.SqlClient.SqlDataReader> se všemi produkty pro konkrétního dodavatele. Každý záznam produktu je <xref:System.Data.SqlClient.SqlDataReader>navštíven druhým . Výpočet se provádí k určení, co by mělo být nové **OnOrderQty.** Třetí objekt příkazu se pak používá k aktualizaci **ProductVendor** tabulka s novou hodnotu. Celý tento proces probíhá v rámci jedné transakce, která je vrácena zpět na konci.  
   
 > [!NOTE]
-> Následující příklad používá ukázkovou databázi **AdventureWorks** , která je součástí SQL Server. Připojovací řetězec uvedený v ukázkovém kódu předpokládá, že je databáze nainstalována a je k dispozici v místním počítači. Upravte připojovací řetězec podle potřeby pro vaše prostředí.  
+> Následující příklad používá ukázkovou databázi **AdventureWorks,** která je součástí serveru SQL Server. Připojovací řetězec uvedený v ukázkovém kódu předpokládá, že databáze je nainstalována a k dispozici v místním počítači. Podle potřeby upravte připojovací řetězec pro vaše prostředí.  
   
 ```vb  
 Option Strict On  
@@ -211,7 +211,7 @@ Module Module1
         "FROM Purchasing.ProductVendor " & _  
         "WHERE VendorID = @VendorID"  
     Dim updateSQL As String = _  
-        "UPDATE Purchasing.ProductVendor " & _   
+        "UPDATE Purchasing.ProductVendor " & _
         "SET OnOrderQty = @OrderQty " & _  
         "WHERE ProductID = @ProductID AND VendorID = @VendorID"  
   
@@ -263,7 +263,7 @@ Module Module1
         End While  
       End Using  
   
-      Console.WriteLine("Total Records Updated: " & _   
+      Console.WriteLine("Total Records Updated: " & _
         CStr(totalRecordsUpdated))  
       updateTx.Rollback()  
       Console.WriteLine("Transaction Rolled Back")  
@@ -315,18 +315,18 @@ static void Main()
   int totalRecordsUpdated = 0;  
   
   string vendorSQL =  
-      "SELECT VendorID, Name FROM Purchasing.Vendor " +   
+      "SELECT VendorID, Name FROM Purchasing.Vendor " +
       "WHERE CreditRating = 5";  
   string prodVendSQL =  
       "SELECT ProductID, MaxOrderQty, MinOrderQty, OnOrderQty " +  
-      "FROM Purchasing.ProductVendor " +   
+      "FROM Purchasing.ProductVendor " +
       "WHERE VendorID = @VendorID";  
   string updateSQL =  
-      "UPDATE Purchasing.ProductVendor " +   
+      "UPDATE Purchasing.ProductVendor " +
       "SET OnOrderQty = @OrderQty " +  
       "WHERE ProductID = @ProductID AND VendorID = @VendorID";  
   
-  using (SqlConnection awConnection =   
+  using (SqlConnection awConnection =
     new SqlConnection(connectionString))  
   {  
     awConnection.Open();  
@@ -382,7 +382,7 @@ static void Main()
         }  
       }  
     }  
-    Console.WriteLine("Total Records Updated: " +   
+    Console.WriteLine("Total Records Updated: " +
       totalRecordsUpdated.ToString());  
     updateTx.Rollback();  
     Console.WriteLine("Transaction Rolled Back");  
@@ -395,8 +395,8 @@ private static string GetConnectionString()
 {  
   // To avoid storing the connection string in your code,  
   // you can retrieve it from a configuration file.  
-  return "Data Source=(local);Integrated Security=SSPI;" +   
-    "Initial Catalog=AdventureWorks;" +   
+  return "Data Source=(local);Integrated Security=SSPI;" +
+    "Initial Catalog=AdventureWorks;" +
     "MultipleActiveResultSets=True";  
   }  
 }  

@@ -7,68 +7,68 @@ helpviewer_keywords:
 - UI Automation, Microsoft Active Accessibility
 - Active Accessibility, UI Automation compared to
 ms.assetid: 87bee662-0a3e-4232-a421-20e7a5968321
-ms.openlocfilehash: f9fc7e2e1a6d5ee26f04b239723c6b7d4283dbce
-ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
+ms.openlocfilehash: 9a84c344ffabdaaa9d0aed68b05b7a4449776789
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75632316"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79179984"
 ---
 # <a name="ui-automation-and-microsoft-active-accessibility"></a>Automatizace uživatelského rozhraní a technologie Microsoft Active Accessibility
 > [!NOTE]
-> Tato dokumentace je určena pro .NET Framework vývojářů, kteří chtějí používat spravované [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] třídy definované v oboru názvů <xref:System.Windows.Automation>. Nejnovější informace o [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]najdete v tématu [rozhraní API pro Windows Automation: automatizace uživatelského rozhraní](/windows/win32/winauto/entry-uiauto-win32).  
+> Tato dokumentace je určena pro vývojáře rozhraní [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] .NET Framework, kteří chtějí používat spravované třídy definované v oboru <xref:System.Windows.Automation> názvů. Nejnovější informace o [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]rozhraní [WINDOWS Automation API: Automatizace uživatelského rozhraní](/windows/win32/winauto/entry-uiauto-win32).  
   
- Microsoft Active Accessibility je dřívější řešení pro zpřístupnění aplikací. [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)] je nový model přístupnosti pro Microsoft Windows a je určený pro řešení potřeb technologií pro usnadnění a automatizovaných testovacích nástrojů. [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] nabízí mnoho vylepšení nad aktivní přístupností.  
+ Microsoft Active Accessibility bylo dřívější řešení pro zpřístupnění aplikací. [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)]je nový model usnadnění pro systém Microsoft Windows a je určen k řešení potřeb produktů asistenčních technologií a automatizovaných testovacích nástrojů. [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]nabízí mnoho vylepšení oproti aktivní přístupnosti.  
   
- Toto téma obsahuje hlavní funkce [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] a vysvětluje, jak se tyto funkce liší od aktivního přístupnosti.  
+ Toto téma obsahuje [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] hlavní rysy a vysvětluje, jak se tyto funkce liší od funkce Active Accessibility.  
   
-<a name="Programming_Languages_compare"></a>   
+<a name="Programming_Languages_compare"></a>
 ## <a name="programming-languages"></a>Programovací jazyky  
-< aktivní přístupnost vychází z modelu COM (Component Object Model) s podporou duálních rozhraní a je proto programovatelné v jazycích C/C++, Microsoft Visual Basic 6,0 a skriptovacích jazycích. [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] (včetně knihovny zprostředkovatele na straně klienta pro standardní ovládací prvky) je zapsán ve spravovaném kódu a klientské aplikace automatizace uživatelského rozhraní jsou nejčastěji naprogramovány C# pomocí rozhraní nebo Visual Basic .NET. Zprostředkovatelé automatizace uživatelského rozhraní, což jsou implementace rozhraní, mohou být napsány ve spravovanémC++kódu nebo v C/.  
+<Active Accessibility je založen na modelu COM (Com) s podporou duálních rozhraní, a je proto programovatelný v jazycích C/C++, Microsoft Visual Basic 6.0 a skriptování. [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)](včetně knihovny zprostředkovatelů na straně klienta pro standardní ovládací prvky) je zapsán ve spravovaném kódu a klientské aplikace Automatizace uživatelského rozhraní jsou nejsnadněji naprogramovány pomocí jazyka C# nebo Visual Basic .NET. Zprostředkovatelé automatizace uživatelského rozhraní, což jsou implementace rozhraní, mohou být zapsáni ve spravovaném kódu nebo v jazyce C/C++.  
   
-<a name="Support_in_Windows_Presentation_Foundation_"></a>   
-## <a name="support-in-windows-presentation-foundation"></a>Podpora v Windows Presentation Foundation  
- Windows Presentation Foundation (WPF) je nový model pro vytváření uživatelských rozhraní. Prvky WPF neobsahují nativní podporu pro aktivní přístupnost; podporují ale [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], což zahrnuje přemostění podpory aktivních klientů usnadnění. Plně výhodou funkcí usnadnění, jako je bohatá podpora pro text, mohou využívat pouze klienti zapsané speciálně pro [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)].  
+<a name="Support_in_Windows_Presentation_Foundation_"></a>
+## <a name="support-in-windows-presentation-foundation"></a>Podpora v nadaci Windows Presentation Foundation  
+ Windows Presentation Foundation (WPF) je nový model pro vytváření uživatelských rozhraní. WPF prvky neobsahují nativní podporu pro aktivní usnadnění přístupu; podporují však [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], což zahrnuje překlenovací podporu pro klienty Active Accessibility. Pouze klienti napsaní speciálně pro [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] mohou plně využívat funkce usnadnění WPF, jako je například bohatá podpora textu.  
   
-<a name="Servers_and_Clients_compare"></a>   
+<a name="Servers_and_Clients_compare"></a>
 ## <a name="servers-and-clients"></a>Servery a klienti  
- V aktivním usnadnění komunikuje servery a klienti přímo do značné míry prostřednictvím implementace `IAccessible`serveru.  
+ V aplikaci Active Accessibility komunikují servery a `IAccessible`klienti přímo, převážně prostřednictvím implementace aplikace .  
   
- V [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]mezi serverem (označovaným jako poskytovatel) a klientem se nachází základní služba. Základní služba volá rozhraní implementovaná poskytovateli a poskytuje další služby, jako je například generování jedinečných identifikátorů modulu runtime pro prvky. Klientské aplikace používají funkce knihovny pro volání služby [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)].  
+ V [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], základní služba leží mezi serverem (nazývá zprostředkovatel) a klientem. Základní služba provádí volání rozhraní implementovaných zprostředkovateli a poskytuje další služby, jako je generování jedinečných identifikátorů modulu runtime pro prvky. Klientské aplikace používají funkce [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] knihovny k volání služby.  
   
- Zprostředkovatelé automatizace uživatelského rozhraní můžou poskytovat informace pro aktivní klienty usnadnění a aktivní servery pro usnadnění můžou poskytovat informace klientským aplikacím automatizace uživatelského rozhraní. Protože ale aktivní přístupnost nezveřejňuje tolik informací jako [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], nejsou tyto dva modely plně kompatibilní.  
+ Poskytovatelé automatizace uživatelského rozhraní mohou poskytovat informace klientům Active Accessibility a servery Active Accessibility mohou poskytovat informace klientským aplikacím Automatizace uživatelského rozhraní. Protože však funkce Active Accessibility nezveřejňuje tolik informací jako [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], nejsou oba modely plně kompatibilní.  
   
-<a name="UI_Elements_compare"></a>   
+<a name="UI_Elements_compare"></a>
 ## <a name="ui-elements"></a>Prvky uživatelského rozhraní  
- Aktivní přístupnost prezentuje [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)] prvky buď jako rozhraní `IAccessible`, nebo jako podřízený identifikátor. Porovnáním dvou ukazatelů `IAccessible` je obtížné určit, zda odkazují na stejný prvek.  
+ Aktivní usnadnění [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)] představuje prvky jako `IAccessible` rozhraní nebo jako podřízený identifikátor. Je obtížné porovnat `IAccessible` dva ukazatele k určení, pokud odkazují na stejný prvek.  
   
- V [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]je každý prvek reprezentován jako objekt <xref:System.Windows.Automation.AutomationElement>. Porovnání je provedeno pomocí operátoru rovnosti nebo metody <xref:System.Windows.Automation.AutomationElement.Equals%2A>, obou z nich porovnává jedinečné běhové identifikátory prvků.  
+ V [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]aplikaci je každý <xref:System.Windows.Automation.AutomationElement> prvek reprezentován jako objekt. Porovnání se provádí pomocí operátoru <xref:System.Windows.Automation.AutomationElement.Equals%2A> rovnosti nebo metody, které porovnávají jedinečné identifikátory runtime prvků.  
   
-<a name="Tree_Views_and_Navigation_compare"></a>   
+<a name="Tree_Views_and_Navigation_compare"></a>
 ## <a name="tree-views-and-navigation"></a>Stromová zobrazení a navigace  
- Prvky [!INCLUDE[TLA#tla_ui](../../../includes/tlasharptla-ui-md.md)] na obrazovce lze zobrazit jako stromovou strukturu s plochou jako kořenovým adresářem, aplikacemi jako bezprostředním podřízeným a prvky v aplikacích jako další následníky.  
+ [!INCLUDE[TLA#tla_ui](../../../includes/tlasharptla-ui-md.md)] Prvky na obrazovce lze zobrazit jako stromovou strukturu s plochou jako kořen, okna aplikace jako okamžité podřízené a prvky v rámci aplikací jako další potomci.  
   
- V aktivním usnadnění jsou ve stromové struktuře dostupné mnoho prvků automatizace, které jsou pro koncové uživatele nepodstatné. Klientské aplikace musí pohlížet na všechny prvky a určit, které jsou smysluplné.  
+ V aktivní usnadnění jsou ve stromu vystaveny mnoho prvků automatizace, které jsou pro koncové uživatele irelevantní. Klientské aplikace musí podívat na všechny prvky k určení, které jsou smysluplné.  
   
- Klientské aplikace automatizace uživatelského rozhraní se zobrazí [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)] prostřednictvím filtrovaného zobrazení. Zobrazení obsahuje pouze zajímavé prvky: ty, které uživateli poskytují informace nebo umožňují interakci. Předdefinovaná zobrazení pouze ovládacích prvků a jsou k dispozici pouze prvky obsahu; Kromě toho můžou aplikace definovat vlastní zobrazení. [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] zjednodušuje úkol s popisem [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)] uživateli a pomáhá uživatelům pracovat s aplikací.  
+ Klientské aplikace automatizace [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)] uživatelského rozhraní vidí prostřednictvím filtrované zobrazení. Zobrazení obsahuje pouze prvky zájmu: ty, které poskytují informace uživateli nebo umožňují interakci. Předdefinované zobrazení pouze ovládacíprvky a pouze prvky obsahu jsou k dispozici; kromě toho mohou aplikace definovat vlastní zobrazení. [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]zjednodušuje úlohu popisu [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)] uživatele a pomáhá uživateli komunikovat s aplikací.  
   
- Navigace mezi prvky v aktivním usnadnění je buď prostorová (například přechod na prvek, který je na obrazovce vlevo), logický (například přesunutí na další položku nabídky nebo další položka v pořadí prvků v dialogovém okně) nebo hierarchická ( například přesunutí prvního podřízeného objektu do kontejneru nebo z podřízeného na jeho nadřazený objekt. Hierarchická navigace je složitá faktem, že podřízené elementy nejsou vždy objekty, které implementují `IAccessible`.  
+ Navigace mezi prvky v aktivní přístupnosti je buď prostorová (například přesunutí na prvek, který leží vlevo na obrazovce), logická (například přesunutí na další položku nabídky nebo další položka v pořadí polí v dialogovém okně) nebo hierarchická ( například přesunutí prvního podřízeného dítěte v kontejneru nebo z podřízeného dítěte do nadřazeného dítěte). Hierarchické navigace je komplikována skutečností, že `IAccessible`podřízené prvky nejsou vždy objekty, které implementují .  
   
- V [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]všechny [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)] prvky jsou <xref:System.Windows.Automation.AutomationElement> objekty, které podporují stejné základní funkce. (Z hlediska poskytovatele jsou objekty, které implementují rozhraní zděděné z <xref:System.Windows.Automation.Provider.IRawElementProviderSimple>.) Navigace je hlavně hierarchicky: od rodičů po podřízené a z jednoho na stejné úrovni jako další. (Navigace mezi sourozenci má logický element, jak může následovat po pořadí ovládacích prvků.) Můžete přejít z libovolného počátečního bodu pomocí libovolného filtrovaného zobrazení stromu pomocí třídy <xref:System.Windows.Automation.TreeWalker>. Můžete také přejít na konkrétní podřízené položky nebo následníky pomocí <xref:System.Windows.Automation.AutomationElement.FindFirst%2A> a <xref:System.Windows.Automation.AutomationElement.FindAll%2A>; Například je velmi snadné načíst všechny prvky v dialogovém okně, které podporuje určený vzor ovládacího prvku.  
+ V [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]aplikace [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)] jsou <xref:System.Windows.Automation.AutomationElement> všechny prvky objekty, které podporují stejné základní funkce. (Z hlediska zprostředkovatele jsou objekty, které implementují <xref:System.Windows.Automation.Provider.IRawElementProviderSimple>rozhraní zděděné z .) Navigace je převážně hierarchická: od rodičů k dětem a od jednoho sourozence k druhému. (Navigace mezi sourozenci má logický prvek, protože může následovat pořadí polí.) Pomocí třídy můžete přejít z libovolného počátečního bodu pomocí <xref:System.Windows.Automation.TreeWalker> libovolného filtrovaného zobrazení stromu. Můžete také přejít na konkrétní podřízené nebo potomky pomocí <xref:System.Windows.Automation.AutomationElement.FindFirst%2A> a <xref:System.Windows.Automation.AutomationElement.FindAll%2A>; například je velmi snadné načíst všechny prvky v dialogovém okně, které podporují zadaný vzor ovládacího prvku.  
   
- Navigace v [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] je lépe konzistentní než v aktivním usnadnění. Některé prvky, jako jsou rozevírací seznamy a automaticky otevíraná okna, se v aktivním stromu přístupnosti zobrazují dvakrát a navigace z nich může mít neočekávané výsledky. Ve skutečnosti není možné správně implementovat aktivní přístupnost pro ovládací prvek matrice. [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] umožňuje přemísťovat nadřazené a přemístění, aby bylo možné element umístit kamkoli do stromu navzdory hierarchii, kterou ukládá vlastnictví systému Windows.  
+ Navigace [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] v programu je konzistentnější než v programu Aktivní přístupnost. Některé prvky, například rozevírací seznamy a automaticky otevíraná okna, se ve stromu Aktivní usnadnění zobrazí dvakrát a navigace z nich může mít neočekávané výsledky. Je ve skutečnosti nemožné správně implementovat aktivní usnadnění pro ovládací prvek výztuže. [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]umožňuje reparenting a přemístění, tak, aby prvek může být umístěn kdekoli ve stromu i přes hierarchii vynucenou vlastnictví majekcí.  
   
-<a name="Roles_and_Control_Types"></a>   
-## <a name="roles-and-control-types"></a>Role a typy ovládacích prvků  
- Aktivní přístupnost používá vlastnost `accRole` (`IAccessible::get_actRole`) k načtení popisu role elementu v [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)], jako je například ROLE_SYSTEM_SLIDER nebo ROLE_SYSTEM_MENUITEM. Role elementu je hlavním prvkem přístupnosti k dostupným funkcím. Interakce s ovládacím prvkem se dosahuje pomocí pevných metod, jako je `IAccessible::accSelect` a `IAccessible::accDoDefaultAction`. Interakce mezi klientskou aplikací a [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)] je omezená na to, co se dá udělat prostřednictvím `IAccessible`.  
+<a name="Roles_and_Control_Types"></a>
+## <a name="roles-and-control-types"></a>Role a typy ovládacích prvku  
+ Aktivní přístupnost `accRole` používá`IAccessible::get_actRole`vlastnost ( ) k načtení popisu [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)]role prvku v oblasti , například ROLE_SYSTEM_SLIDER nebo ROLE_SYSTEM_MENUITEM. Role prvku je hlavní vodítko k jeho dostupné funkce. Interakce s ovládacím prvkem je dosaženo `IAccessible::accSelect` `IAccessible::accDoDefaultAction`pomocí pevných metod, jako jsou například a . Interakce mezi klientskou aplikací [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)] a klientskou aplikací `IAccessible`je omezena na to, co lze provést prostřednictvím aplikace .  
   
- Naproti tomu [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] převážně odděluje typ ovládacího prvku prvku (popsaný vlastností <xref:System.Windows.Automation.AutomationElement.AutomationElementInformation.ControlType%2A>) z očekávané funkce. Funkčnost je určena vzory ovládacích prvků, které jsou podporovány poskytovatelem prostřednictvím jeho implementace specializovaných rozhraní. Vzory ovládacích prvků lze kombinovat, chcete-li popsat úplnou sadu funkcí podporovaných určitým [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)] prvkem. Někteří poskytovatelé jsou vyžadováni pro podporu určitého vzoru ovládacího prvku. například poskytovatel pro zaškrtávací políčko musí podporovat vzor ovládacího prvku přepínací tlačítko. Jiní poskytovatelé jsou vyžadováni k podpoře jednoho nebo více sad řídicích vzorů; například tlačítko musí podporovat buď přepínač, nebo vyvolání. Pořád ještě nepodporují žádné řídicí vzory. například podokno, které nelze přesunout, změnit jeho velikost nebo ukotvení, nemá žádné vzory ovládacích prvků.  
+ Naproti tomu [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] do značné míry odděluje typ ovládacího <xref:System.Windows.Automation.AutomationElement.AutomationElementInformation.ControlType%2A> prvku (popsaný vlastností) od jeho očekávané funkce. Funkce je určena vzory ovládacích prostředků, které jsou podporovány zprostředkovatelem prostřednictvím jeho implementace specializovaných rozhraní. Vzory ovládacího prvku lze kombinovat k popisu úplné sady [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)] funkcí podporovaných určitým prvkem. Někteří zprostředkovatelé jsou povinni podporovat konkrétní vzor ovládacího prvku; Například zprostředkovatel pro zaškrtávací políčko musí podporovat přepínací ovládací prvek. Ostatní zprostředkovatelé jsou povinni podporovat jeden nebo více sadu vzorů ovládacího prvku; například tlačítko musí podporovat buď Přepnout nebo Vyvolat. Ještě jiní podporují žádné kontrolní vzory vůbec; například podokno, které nelze přesunout, velikost nebo ukotvení, nemá žádné vzorky ovládacího prvku.  
   
- [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] podporuje vlastní ovládací prvky, které jsou označeny vlastností <xref:System.Windows.Automation.ControlType.Custom> a mohou být popsány vlastností <xref:System.Windows.Automation.AutomationElement.LocalizedControlTypeProperty>.  
+ [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]podporuje vlastní ovládací prvky, <xref:System.Windows.Automation.ControlType.Custom> které jsou identifikovány <xref:System.Windows.Automation.AutomationElement.LocalizedControlTypeProperty> vlastností a mohou být popsány vlastností.  
   
- Následující tabulka ukazuje mapování aktivních rolí přístupnosti na [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] typy ovládacích prvků.  
+ V následující tabulce je zobrazeno [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] mapování rolí aktivní usnadnění na typy ovládacích prvku.  
   
-|Role aktivního přístupnosti|typ ovládacího prvku [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]|  
+|Role aktivní přístupnosti|[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]typ ovládacího prvku|  
 |----------------------------------------------------------------------|----------------------------------------------------------------------------------------|  
 |ROLE_SYSTEM_PUSHBUTTON|Tlačítko|  
 |ROLE_SYSTEM_CLIENT|Kalendář|  
@@ -80,14 +80,14 @@ ms.locfileid: "75632316"
 |ROLE_SYSTEM_DOCUMENT|Dokument|  
 |ROLE_SYSTEM_TEXT|Upravit|  
 |ROLE_SYSTEM_GROUPING|Skupina|  
-|ROLE_SYSTEM_LIST|Záhlaví|  
+|ROLE_SYSTEM_LIST|Hlavička|  
 |ROLE_SYSTEM_COLUMNHEADER|Položka záhlaví|  
 |ROLE_SYSTEM_LINK|Hypertextový odkaz|  
-|ROLE_SYSTEM_GRAPHIC|Obrázek|  
+|ROLE_SYSTEM_GRAPHIC|Image|  
 |ROLE_SYSTEM_LIST|Seznam|  
 |ROLE_SYSTEM_LISTITEM|Položka seznamu|  
 |ROLE_SYSTEM_MENUPOPUP|Nabídka|  
-|ROLE_SYSTEM_MENUBAR|Panel nabídek|  
+|ROLE_SYSTEM_MENUBAR|Nabídek|  
 |ROLE_SYSTEM_MENUITEM|Položka nabídky|  
 |ROLE_SYSTEM_PANE|Podokno|  
 |ROLE_SYSTEM_PROGRESSBAR|Indikátor průběhu|  
@@ -96,11 +96,11 @@ ms.locfileid: "75632316"
 |ROLE_SYSTEM_SEPARATOR|Oddělovač|  
 |ROLE_SYSTEM_SLIDER|Posuvník|  
 |ROLE_SYSTEM_SPINBUTTON|Číselník|  
-|ROLE_SYSTEM_SPLITBUTTON|Tlačítko rozdělení|  
-|ROLE_SYSTEM_STATUSBAR|Stavový řádek|  
+|ROLE_SYSTEM_SPLITBUTTON|Tlačítko Rozdělit|  
+|ROLE_SYSTEM_STATUSBAR|Stavovém|  
 |ROLE_SYSTEM_PAGETABLIST|Karta|  
-|ROLE_SYSTEM_PAGETAB|Položka karty|  
-|ROLE_SYSTEM_TABLE|Tabulka|  
+|ROLE_SYSTEM_PAGETAB|Položka tabulátoru|  
+|ROLE_SYSTEM_TABLE|Table|  
 |ROLE_SYSTEM_STATICTEXT|Text|  
 |ROLE_SYSTEM_INDICATOR|Jezdec|  
 |ROLE_SYSTEM_TITLEBAR|Záhlaví|  
@@ -110,145 +110,145 @@ ms.locfileid: "75632316"
 |ROLE_SYSTEM_OUTLINEITEM|Položka stromu|  
 |ROLE_SYSTEM_WINDOW|Okno|  
   
- Další informace o různých typech ovládacích prvků naleznete v tématu [typy ovládacích prvků automatizace uživatelského rozhraní](ui-automation-control-types.md).  
+ Další informace o různých typech ovládacích prvku naleznete v [tématu Typy řízení automatizace uživatelského rozhraní](ui-automation-control-types.md).  
   
-<a name="States_and_Properties"></a>   
+<a name="States_and_Properties"></a>
 ## <a name="states-and-properties"></a>Stavy a vlastnosti  
- V aktivních Přístupnostech prvky podporují společnou sadu vlastností a některé vlastnosti (například `accState`) musí v závislosti na roli elementu popsány velmi odlišné věci. Servery musí implementovat všechny metody `IAccessible`, které vracejí vlastnost, a to i ty, které nejsou relevantní pro element.  
+ V active accessibility elementy podporují společnou sadu vlastností `accState`a některé vlastnosti (například) musí popisovat velmi odlišné věci v závislosti na roli prvku. Servery musí implementovat všechny `IAccessible` metody, které vrátí vlastnost, i ty, které nejsou relevantní pro prvek.  
   
- [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] definuje mnoho dalších vlastností, přičemž některé z nich odpovídají stavům aktivních přístupnosti. Některé jsou společné pro všechny prvky, ale jiné jsou specifické pro typy ovládacích prvků a vzory ovládacích prvků. Vlastnosti jsou odlišeny pomocí jedinečných identifikátorů a většinu vlastností lze načíst pomocí jediné metody, <xref:System.Windows.Automation.AutomationElement.GetCurrentPropertyValue%2A> nebo <xref:System.Windows.Automation.AutomationElement.GetCachedPropertyValue%2A>. Mnoho vlastností je také snadné získat z <xref:System.Windows.Automation.AutomationElement.Current%2A> a přístupových objektů vlastností <xref:System.Windows.Automation.AutomationElement.Cached%2A>.  
+ [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]definuje mnoho dalších vlastností, z nichž některé odpovídají stavům v aktivní přístupnosti. Některé jsou společné pro všechny prvky, ale jiné jsou specifické pro typy ovládacích prvků a vzory ovládacích prvků. Vlastnosti jsou rozlišeny jedinečnými identifikátory a většinu vlastností lze načíst pomocí jediné metody <xref:System.Windows.Automation.AutomationElement.GetCurrentPropertyValue%2A> nebo <xref:System.Windows.Automation.AutomationElement.GetCachedPropertyValue%2A>. Mnoho vlastností jsou také <xref:System.Windows.Automation.AutomationElement.Current%2A> snadno <xref:System.Windows.Automation.AutomationElement.Cached%2A> načíst z přístupových objektů a vlastností.  
   
- Zprostředkovatel automatizace uživatelského rozhraní nevyžaduje implementaci nepodstatných vlastností, ale může jednoduše vrátit `null` hodnotu pro jakékoli vlastnosti, které nepodporuje. Služba [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] Core taky může získat některé vlastnosti z výchozího poskytovatele Windows a ty jsou dají s vlastnostmi, které jsou explicitně implementované zprostředkovatelem.  
+ Zprostředkovatel automatizace uživatelského rozhraní nemusí implementovat irelevantní `null` vlastnosti, ale může jednoduše vrátit hodnotu pro všechny vlastnosti, které nepodporuje. [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] Základní služba může také získat některé vlastnosti od výchozího zprostředkovatele okna a ty jsou sloučeny s vlastnostmi explicitně implementovanými zprostředkovatelem.  
   
- Stejně jako podpora mnoha dalších vlastností [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] poskytují lepší výkon tím, že umožňují načíst více vlastností s jedním voláním mezi procesy.  
+ Kromě podpory mnoha dalších [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] vlastností poskytuje lepší výkon tím, že umožňuje načtení více vlastností pomocí jednoho volání mezi procesy.  
   
- Následující tabulka znázorňuje korespondenci mezi vlastnostmi ve dvou modelech.  
+ V následující tabulce je uvedena shoda mezi vlastnostmi v obou modelech.  
   
-|Přístup k vlastnosti aktivního přístupnosti|ID vlastnosti [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]|Poznámky|  
+|Přistupující objekt vlastnosti Active Accessibility|[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]ID vlastnosti|Poznámky|  
 |-----------------------------------------------------------------------------------|---------------------------------------------------------------------------------------|-------------|  
-|`get_accKeyboardShortcut`|<xref:System.Windows.Automation.AutomationElement.AccessKeyProperty> Nebo <xref:System.Windows.Automation.AutomationElement.AcceleratorKeyProperty>|`AccessKeyProperty` má přednost, pokud jsou obě přítomny.|  
+|`get_accKeyboardShortcut`|<xref:System.Windows.Automation.AutomationElement.AccessKeyProperty> nebo <xref:System.Windows.Automation.AutomationElement.AcceleratorKeyProperty>|`AccessKeyProperty`má přednost, pokud jsou přítomny obě.|  
 |`get_accName`|<xref:System.Windows.Automation.AutomationElement.NameProperty>||  
-|`get_accRole`|<xref:System.Windows.Automation.AutomationElement.ControlTypeProperty>|Viz předchozí tabulka pro mapování rolí na typy ovládacích prvků.|  
-|`get_accValue`|<xref:System.Windows.Automation.ValuePattern.ValueProperty?displayProperty=nameWithType><br /><br /> <xref:System.Windows.Automation.RangeValuePattern.ValueProperty?displayProperty=nameWithType>|Platné pouze pro typy ovládacích prvků, které podporují ValuePattern nebo RangeValuePattern. Hodnoty ovládacích RangeValue jsou normalizovány na 0-100, aby byly konzistentní s chováním MSAA. Položky hodnot používají řetězec.|  
+|`get_accRole`|<xref:System.Windows.Automation.AutomationElement.ControlTypeProperty>|Mapování rolí na typy ovládacích prvku naleznete v předchozí tabulce.|  
+|`get_accValue`|<xref:System.Windows.Automation.ValuePattern.ValueProperty?displayProperty=nameWithType><br /><br /> <xref:System.Windows.Automation.RangeValuePattern.ValueProperty?displayProperty=nameWithType>|Platí pouze pro typy ovládacích prvku, které podporují ValuePattern nebo RangeValuePattern. RangeValue hodnoty jsou normalizovány na 0-100, aby byly konzistentní s chováním MSAA. Hodnoty položky používají řetězec.|  
 |`get_accHelp`|<xref:System.Windows.Automation.AutomationElement.HelpTextProperty>||  
 |`accLocation`|<xref:System.Windows.Automation.AutomationElement.BoundingRectangleProperty>||  
-|`get_accDescription`|Nepodporováno v [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]|`accDescription` v rámci rozhraní MSAA neobsahovaly jasné specifikace, což vedlo k tomu, že poskytovatelé z této vlastnosti umísťují různé informace.|  
-|`get_accHelpTopic`|Nepodporováno v [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]||  
+|`get_accDescription`|Není podporováno v[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]|`accDescription`neměl jasnou specifikaci v rámci MSAA, což vedlo k tomu, že poskytovatelé umístili různé informace do této vlastnosti.|  
+|`get_accHelpTopic`|Není podporováno v[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]||  
   
- Následující tabulka ukazuje, které vlastnosti [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] odpovídají aktivním konstantám stavu přístupnosti.  
+ V následující tabulce [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] jsou uvedeny vlastnosti, které odpovídají konstantám stavu aktivní přístupnosti.  
   
-|Stav aktivního přístupnosti|[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] – vlastnost|Aktivuje se změna stavu?|  
+|Aktivní stav usnadnění|[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]Vlastnost|Spustí změnu stavu?|  
 |-----------------------------------------------------------------------|------------------------------------------------------------------------------------|----------------------------|  
-|STATE_SYSTEM_CHECKED|Pro zaškrtávací políčko <xref:System.Windows.Automation.TogglePattern.ToggleStateProperty><br /><br /> Pro přepínač <xref:System.Windows.Automation.SelectionItemPattern.IsSelectedProperty>|A|  
-|STATE_SYSTEM_COLLAPSED|<xref:System.Windows.Automation.ExpandCollapsePattern.ExpandCollapsePatternInformation.ExpandCollapseState%2A> = <xref:System.Windows.Automation.ExpandCollapseState.Collapsed>|A|  
-|STATE_SYSTEM_EXPANDED|<xref:System.Windows.Automation.ExpandCollapsePattern.ExpandCollapsePatternInformation.ExpandCollapseState%2A> = <xref:System.Windows.Automation.ExpandCollapseState.Expanded> nebo <xref:System.Windows.Automation.ExpandCollapseState.PartiallyExpanded>|A|  
-|STATE_SYSTEM_FOCUSABLE|<xref:System.Windows.Automation.AutomationElement.IsKeyboardFocusableProperty>|N|  
-|STATE_SYSTEM_FOCUSED|<xref:System.Windows.Automation.AutomationElement.HasKeyboardFocusProperty>|N|  
-|STATE_SYSTEM_HASPOPUP|<xref:System.Windows.Automation.ExpandCollapsePattern> pro položky nabídky|N|  
-|STATE_SYSTEM_INVISIBLE|<xref:System.Windows.Automation.AutomationElement.IsOffscreenProperty> = true a <xref:System.Windows.Automation.AutomationElement.GetClickablePoint%2A> způsobí <xref:System.Windows.Automation.NoClickablePointException>|N|  
-|STATE_SYSTEM_LINKED|<xref:System.Windows.Automation.AutomationElement.ControlTypeProperty> =<br /><br /> <xref:System.Windows.Automation.ControlType.Hyperlink>|N|  
-|STATE_SYSTEM_MIXED|<xref:System.Windows.Automation.TogglePattern.TogglePatternInformation.ToggleState%2A> = <xref:System.Windows.Automation.ToggleState.Indeterminate>|N|  
-|STATE_SYSTEM_MOVEABLE|<xref:System.Windows.Automation.TransformPattern.CanMoveProperty>|N|  
-|STATE_SYSTEM_MUTLISELECTABLE|<xref:System.Windows.Automation.SelectionPattern.CanSelectMultipleProperty>|N|  
-|STATE_SYSTEM_OFFSCREEN|<xref:System.Windows.Automation.AutomationElement.IsOffscreenProperty> = true|N|  
-|STATE_SYSTEM_PROTECTED|<xref:System.Windows.Automation.AutomationElement.IsPasswordProperty>|N|  
-|STATE_SYSTEM_READONLY|<xref:System.Windows.Automation.RangeValuePattern.IsReadOnlyProperty?displayProperty=nameWithType> a <xref:System.Windows.Automation.ValuePattern.IsReadOnlyProperty?displayProperty=nameWithType>|N|  
-|STATE_SYSTEM_SELECTABLE|<xref:System.Windows.Automation.SelectionItemPattern> se podporuje.|N|  
-|STATE_SYSTEM_SELECTED|<xref:System.Windows.Automation.SelectionItemPattern.IsSelectedProperty>|N|  
-|STATE_SYSTEM_SIZEABLE|<xref:System.Windows.Automation.TransformPattern.TransformPatternInformation.CanResize%2A>|N|  
-|STATE_SYSTEM_UNAVAILABLE|<xref:System.Windows.Automation.AutomationElement.IsEnabledProperty>|A|  
+|STATE_SYSTEM_CHECKED|U zaškrtávacího políčka<xref:System.Windows.Automation.TogglePattern.ToggleStateProperty><br /><br /> U přepínacího tlačítka<xref:System.Windows.Automation.SelectionItemPattern.IsSelectedProperty>|Ano|  
+|STATE_SYSTEM_COLLAPSED|<xref:System.Windows.Automation.ExpandCollapsePattern.ExpandCollapsePatternInformation.ExpandCollapseState%2A> = <xref:System.Windows.Automation.ExpandCollapseState.Collapsed>|Ano|  
+|STATE_SYSTEM_EXPANDED|<xref:System.Windows.Automation.ExpandCollapsePattern.ExpandCollapsePatternInformation.ExpandCollapseState%2A> = <xref:System.Windows.Automation.ExpandCollapseState.Expanded>Nebo<xref:System.Windows.Automation.ExpandCollapseState.PartiallyExpanded>|Ano|  
+|STATE_SYSTEM_FOCUSABLE|<xref:System.Windows.Automation.AutomationElement.IsKeyboardFocusableProperty>|Ne|  
+|STATE_SYSTEM_FOCUSED|<xref:System.Windows.Automation.AutomationElement.HasKeyboardFocusProperty>|Ne|  
+|STATE_SYSTEM_HASPOPUP|<xref:System.Windows.Automation.ExpandCollapsePattern>pro položky nabídky|Ne|  
+|STATE_SYSTEM_INVISIBLE|<xref:System.Windows.Automation.AutomationElement.IsOffscreenProperty>= Pravda <xref:System.Windows.Automation.AutomationElement.GetClickablePoint%2A> a příčiny<xref:System.Windows.Automation.NoClickablePointException>|Ne|  
+|STATE_SYSTEM_LINKED|<xref:System.Windows.Automation.AutomationElement.ControlTypeProperty> =<br /><br /> <xref:System.Windows.Automation.ControlType.Hyperlink>|Ne|  
+|STATE_SYSTEM_MIXED|<xref:System.Windows.Automation.TogglePattern.TogglePatternInformation.ToggleState%2A> = <xref:System.Windows.Automation.ToggleState.Indeterminate>|Ne|  
+|STATE_SYSTEM_MOVEABLE|<xref:System.Windows.Automation.TransformPattern.CanMoveProperty>|Ne|  
+|STATE_SYSTEM_MUTLISELECTABLE|<xref:System.Windows.Automation.SelectionPattern.CanSelectMultipleProperty>|Ne|  
+|STATE_SYSTEM_OFFSCREEN|<xref:System.Windows.Automation.AutomationElement.IsOffscreenProperty>= Pravda|Ne|  
+|STATE_SYSTEM_PROTECTED|<xref:System.Windows.Automation.AutomationElement.IsPasswordProperty>|Ne|  
+|STATE_SYSTEM_READONLY|<xref:System.Windows.Automation.RangeValuePattern.IsReadOnlyProperty?displayProperty=nameWithType> a <xref:System.Windows.Automation.ValuePattern.IsReadOnlyProperty?displayProperty=nameWithType>|Ne|  
+|STATE_SYSTEM_SELECTABLE|<xref:System.Windows.Automation.SelectionItemPattern>je podporován|Ne|  
+|STATE_SYSTEM_SELECTED|<xref:System.Windows.Automation.SelectionItemPattern.IsSelectedProperty>|Ne|  
+|STATE_SYSTEM_SIZEABLE|<xref:System.Windows.Automation.TransformPattern.TransformPatternInformation.CanResize%2A>|Ne|  
+|STATE_SYSTEM_UNAVAILABLE|<xref:System.Windows.Automation.AutomationElement.IsEnabledProperty>|Ano|  
   
- Následující stavy se buď neimplementovaly většinou aktivních serverů řízení dostupnosti, nebo nemusejí mít v [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]žádné ekvivalenty.  
+ Následující stavy buď nebyly implementovány většinou serverů řízení [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]aktivní přístupnosti nebo nemají žádný ekvivalent v .  
   
-|Stav aktivního přístupnosti|Poznámky|  
+|Aktivní stav usnadnění|Poznámky|  
 |-----------------------------------------------------------------------|-------------|  
-|STATE_SYSTEM_BUSY|Není k dispozici v [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]|  
-|STATE_SYSTEM_DEFAULT|Není k dispozici v [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]|  
-|STATE_SYSTEM_ANIMATED|Není k dispozici v [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]|  
-|STATE_SYSTEM_EXTSELECTABLE|Aktivní servery pro usnadnění nejsou široce implementovány.|  
-|STATE_SYSTEM_MARQUEED|Aktivní servery pro usnadnění nejsou široce implementovány.|  
-|STATE_SYSTEM_SELFVOICING|Aktivní servery pro usnadnění nejsou široce implementovány.|  
-|STATE_SYSTEM_TRAVERSED|Není k dispozici v [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]|  
-|STATE_SYSTEM_ALERT_HIGH|Aktivní servery pro usnadnění nejsou široce implementovány.|  
-|STATE_SYSTEM_ALERT_MEDIUM|Aktivní servery pro usnadnění nejsou široce implementovány.|  
-|STATE_SYSTEM_ALERT_LOW|Aktivní servery pro usnadnění nejsou široce implementovány.|  
-|STATE_SYSTEM_FLOATING|Aktivní servery pro usnadnění nejsou široce implementovány.|  
-|STATE_SYSTEM_HOTTRACKED|Není k dispozici v [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]|  
-|STATE_SYSTEM_PRESSED|Není k dispozici v [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]|  
+|STATE_SYSTEM_BUSY|Není k dispozici v[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]|  
+|STATE_SYSTEM_DEFAULT|Není k dispozici v[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]|  
+|STATE_SYSTEM_ANIMATED|Není k dispozici v[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]|  
+|STATE_SYSTEM_EXTSELECTABLE|Servery Active Accessibility nejsou široce implementovány|  
+|STATE_SYSTEM_MARQUEED|Servery Active Accessibility nejsou široce implementovány|  
+|STATE_SYSTEM_SELFVOICING|Servery Active Accessibility nejsou široce implementovány|  
+|STATE_SYSTEM_TRAVERSED|Není k dispozici v[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]|  
+|STATE_SYSTEM_ALERT_HIGH|Servery Active Accessibility nejsou široce implementovány|  
+|STATE_SYSTEM_ALERT_MEDIUM|Servery Active Accessibility nejsou široce implementovány|  
+|STATE_SYSTEM_ALERT_LOW|Servery Active Accessibility nejsou široce implementovány|  
+|STATE_SYSTEM_FLOATING|Servery Active Accessibility nejsou široce implementovány|  
+|STATE_SYSTEM_HOTTRACKED|Není k dispozici v[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]|  
+|STATE_SYSTEM_PRESSED|Není k dispozici v[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]|  
   
- Úplný seznam [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]ch identifikátorů vlastností najdete v tématu [Přehled vlastností automatizace uživatelského rozhraní](ui-automation-properties-overview.md).  
+ Úplný seznam identifikátorů vlastností [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] naleznete v [tématu Přehled vlastností automatizace uživatelského rozhraní](ui-automation-properties-overview.md).  
   
-<a name="uiautomation_events_compare"></a>   
-## <a name="events"></a>Události  
- Mechanismus událostí v [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], na rozdíl od toho, že v aktivních přístupnosti, nespoléhá na směrování událostí systému Windows (což je úzce svázáno s popisovači oken) a nevyžaduje klientskou aplikaci, aby nastavila zavěšení. Odběry událostí mohou být jemně vyladěny nejen na konkrétní události, ale pouze na konkrétní části stromu. Poskytovatelé mohou také doladit své vyvolání událostí tím, že udržují přehled o událostech, které jsou pro ně naslouchají.  
+<a name="uiautomation_events_compare"></a>
+## <a name="events"></a>Akce  
+ Mechanismus událostí [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]v aplikaci v aplikaci , na rozdíl od protokolu Active Accessibility, nespoléhá na směrování událostí systému Windows (které je úzce spojeno s popisovači oken) a nevyžaduje, aby klientská aplikace nastavila háčky. Odběry událostí lze doladit nejen na konkrétní události, ale na určité části stromu. Poskytovatelé mohou také doladit své zvyšování událostí tím, že sledují, jaké události jsou poslouchány.  
   
- Pro klienty je také snazší načíst prvky, které vyvolávají události, protože jsou předány přímo do zpětného volání události. Vlastnosti prvku jsou automaticky načteny, pokud byla žádost o mezipaměť aktivní, když se klient přihlásil k odběru události.  
+ Je také jednodušší pro klienty načíst prvky, které vyvolávají události, protože jsou předány přímo do zpětného volání události. Vlastnosti prvku jsou automaticky předběžně načteny, pokud byl požadavek mezipaměti aktivní, když se klient přihlásil k odběru události.  
   
- V následující tabulce jsou uvedeny korespondence s aktivními WinEventsmi Přístupnostmi a událostmi [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)].  
+ V následující tabulce je uvedena korespondence [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] winevents a událostí pro aktivní usnadnění přístupu.  
   
-|WinEvent|identifikátor události [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]|  
+|WinEvent|[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]identifikátor události|  
 |--------------|--------------------------------------------------------------------------------------------|  
-|EVENT_OBJECT_ACCELERATORCHANGE|Změna vlastnosti <xref:System.Windows.Automation.AutomationElement.AcceleratorKeyProperty>|  
-|EVENT_OBJECT_CONTENTSCROLLED|Změna vlastnosti <xref:System.Windows.Automation.ScrollPattern.VerticalScrollPercentProperty> nebo <xref:System.Windows.Automation.ScrollPattern.HorizontalScrollPercentProperty> na přidružených posuvníkech|  
+|EVENT_OBJECT_ACCELERATORCHANGE|<xref:System.Windows.Automation.AutomationElement.AcceleratorKeyProperty>změna vlastnosti|  
+|EVENT_OBJECT_CONTENTSCROLLED|<xref:System.Windows.Automation.ScrollPattern.VerticalScrollPercentProperty>nebo <xref:System.Windows.Automation.ScrollPattern.HorizontalScrollPercentProperty> změna vlastnosti na přidružených posuvnících|  
 |EVENT_OBJECT_CREATE|<xref:System.Windows.Automation.AutomationElement.StructureChangedEvent>|  
-|EVENT_OBJECT_DEFACTIONCHANGE|Bez ekvivalentu|  
-|EVENT_OBJECT_DESCRIPTIONCHANGE|Bez přesného ekvivalentu; Možná <xref:System.Windows.Automation.AutomationElement.HelpTextProperty> nebo <xref:System.Windows.Automation.AutomationElement.LocalizedControlTypeProperty> změnu vlastnosti|  
+|EVENT_OBJECT_DEFACTIONCHANGE|Žádný ekvivalent|  
+|EVENT_OBJECT_DESCRIPTIONCHANGE|Žádný přesný ekvivalent; možná <xref:System.Windows.Automation.AutomationElement.HelpTextProperty> <xref:System.Windows.Automation.AutomationElement.LocalizedControlTypeProperty> nebo změna majetku|  
 |EVENT_OBJECT_DESTROY|<xref:System.Windows.Automation.AutomationElement.StructureChangedEvent>|  
 |EVENT_OBJECT_FOCUS|<xref:System.Windows.Automation.AutomationElement.AutomationFocusChangedEvent>|  
-|EVENT_OBJECT_HELPCHANGE|<xref:System.Windows.Automation.AutomationElement.HelpTextProperty> změnit|  
+|EVENT_OBJECT_HELPCHANGE|<xref:System.Windows.Automation.AutomationElement.HelpTextProperty>Změnit|  
 |EVENT_OBJECT_HIDE|<xref:System.Windows.Automation.AutomationElement.StructureChangedEvent>|  
-|EVENT_OBJECT_LOCATIONCHANGE|Změna vlastnosti <xref:System.Windows.Automation.AutomationElement.BoundingRectangleProperty>|  
-|EVENT_OBJECT_NAMECHANGE|Změna vlastnosti <xref:System.Windows.Automation.AutomationElement.NameProperty>|  
+|EVENT_OBJECT_LOCATIONCHANGE|<xref:System.Windows.Automation.AutomationElement.BoundingRectangleProperty>změna vlastnosti|  
+|EVENT_OBJECT_NAMECHANGE|<xref:System.Windows.Automation.AutomationElement.NameProperty>změna vlastnosti|  
 |EVENT_OBJECT_PARENTCHANGE|<xref:System.Windows.Automation.AutomationElement.StructureChangedEvent>|  
-|EVENT_OBJECT_REORDER|Nepoužívá se konzistentně v aktivním usnadnění. V [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]není definována žádná přímo odpovídající událost.|  
+|EVENT_OBJECT_REORDER|V aktivní přístupnosti se nepoužívá konzistentně. V aplikaci [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]není definována žádná přímo odpovídající událost.|  
 |EVENT_OBJECT_SELECTION|<xref:System.Windows.Automation.SelectionItemPattern.ElementSelectedEvent>|  
 |EVENT_OBJECT_SELECTIONADD|<xref:System.Windows.Automation.SelectionItemPattern.ElementAddedToSelectionEvent>|  
 |EVENT_OBJECT_SELECTIONREMOVE|<xref:System.Windows.Automation.SelectionItemPattern.ElementRemovedFromSelectionEvent>|  
-|EVENT_OBJECT_SELECTIONWITHIN|Bez ekvivalentu|  
+|EVENT_OBJECT_SELECTIONWITHIN|Žádný ekvivalent|  
 |EVENT_OBJECT_SHOW|<xref:System.Windows.Automation.AutomationElement.StructureChangedEvent>|  
-|EVENT_OBJECT_STATECHANGE|Různé události změněné vlastností|  
-|EVENT_OBJECT_VALUECHANGE|změny <xref:System.Windows.Automation.RangeValuePattern.ValueProperty?displayProperty=nameWithType> a <xref:System.Windows.Automation.ValuePattern.ValueProperty?displayProperty=nameWithType>|  
-|EVENT_SYSTEM_ALERT|Bez ekvivalentu|  
-|EVENT_SYSTEM_CAPTUREEND|Bez ekvivalentu|  
-|EVENT_SYSTEM_CAPTURESTART|Bez ekvivalentu|  
-|EVENT_SYSTEM_CONTEXTHELPEND|Bez ekvivalentu|  
-|EVENT_SYSTEM_CONTEXTHELPSTART|Bez ekvivalentu|  
+|EVENT_OBJECT_STATECHANGE|Různé události změněné vlastnostmi|  
+|EVENT_OBJECT_VALUECHANGE|<xref:System.Windows.Automation.RangeValuePattern.ValueProperty?displayProperty=nameWithType>a <xref:System.Windows.Automation.ValuePattern.ValueProperty?displayProperty=nameWithType> změnil|  
+|EVENT_SYSTEM_ALERT|Žádný ekvivalent|  
+|EVENT_SYSTEM_CAPTUREEND|Žádný ekvivalent|  
+|EVENT_SYSTEM_CAPTURESTART|Žádný ekvivalent|  
+|EVENT_SYSTEM_CONTEXTHELPEND|Žádný ekvivalent|  
+|EVENT_SYSTEM_CONTEXTHELPSTART|Žádný ekvivalent|  
 |EVENT_SYSTEM_DIALOGEND|<xref:System.Windows.Automation.WindowPattern.WindowClosedEvent>|  
 |EVENT_SYSTEM_DIALOGSTART|<xref:System.Windows.Automation.WindowPattern.WindowOpenedEvent>|  
-|EVENT_SYSTEM_DRAGDROPEND|Bez ekvivalentu|  
-|EVENT_SYSTEM_DRAGDROPSTART|Bez ekvivalentu|  
+|EVENT_SYSTEM_DRAGDROPEND|Žádný ekvivalent|  
+|EVENT_SYSTEM_DRAGDROPSTART|Žádný ekvivalent|  
 |EVENT_SYSTEM_FOREGROUND|<xref:System.Windows.Automation.AutomationElement.AutomationFocusChangedEvent>|  
 |EVENT_SYSTEM_MENUEND|<xref:System.Windows.Automation.AutomationElement.MenuClosedEvent>|  
 |EVENT_SYSTEM_MENUPOPUPEND|<xref:System.Windows.Automation.AutomationElement.MenuClosedEvent>|  
 |EVENT_SYSTEM_MENUPOPUPSTART|<xref:System.Windows.Automation.AutomationElement.MenuOpenedEvent>|  
 |EVENT_SYSTEM_MENUSTART|<xref:System.Windows.Automation.AutomationElement.MenuOpenedEvent>|  
-|EVENT_SYSTEM_MINIMIZEEND|Změna vlastnosti <xref:System.Windows.Automation.WindowPattern.WindowVisualStateProperty>|  
-|EVENT_SYSTEM_MINIMIZESTART|Změna vlastnosti <xref:System.Windows.Automation.WindowPattern.WindowVisualStateProperty>|  
-|EVENT_SYSTEM_MOVESIZEEND|Změna vlastnosti <xref:System.Windows.Automation.AutomationElement.BoundingRectangleProperty>|  
-|EVENT_SYSTEM_MOVESIZESTART|Změna vlastnosti <xref:System.Windows.Automation.AutomationElement.BoundingRectangleProperty>|  
-|EVENT_SYSTEM_SCROLLINGEND|Změna vlastnosti <xref:System.Windows.Automation.ScrollPattern.VerticalScrollPercentProperty> nebo <xref:System.Windows.Automation.ScrollPattern.HorizontalScrollPercentProperty>|  
-|EVENT_SYSTEM_SCROLLINGSTART|Změna vlastnosti <xref:System.Windows.Automation.ScrollPattern.VerticalScrollPercentProperty> nebo <xref:System.Windows.Automation.ScrollPattern.HorizontalScrollPercentProperty>|  
-|EVENT_SYSTEM_SOUND|Bez ekvivalentu|  
-|EVENT_SYSTEM_SWITCHEND|Bez ekvivalentu, ale událost <xref:System.Windows.Automation.AutomationElement.AutomationFocusChangedEvent> signalizuje, že nová aplikace obdržela fokus.|  
-|EVENT_SYSTEM_SWITCHSTART|Bez ekvivalentu|  
-|Bez ekvivalentu|Změna vlastnosti <xref:System.Windows.Automation.MultipleViewPattern.CurrentViewProperty>|  
-|Bez ekvivalentu|Změna vlastnosti <xref:System.Windows.Automation.ScrollPattern.HorizontallyScrollableProperty>|  
-|Bez ekvivalentu|Změna vlastnosti <xref:System.Windows.Automation.ScrollPattern.VerticallyScrollableProperty>|  
-|Bez ekvivalentu|Změna vlastnosti <xref:System.Windows.Automation.ScrollPattern.HorizontalScrollPercentProperty>|  
-|Bez ekvivalentu|Změna vlastnosti <xref:System.Windows.Automation.ScrollPattern.VerticalScrollPercentProperty>|  
-|Bez ekvivalentu|Změna vlastnosti <xref:System.Windows.Automation.ScrollPattern.HorizontalViewSizeProperty>|  
-|Bez ekvivalentu|Změna vlastnosti <xref:System.Windows.Automation.ScrollPattern.VerticalViewSizeProperty>|  
-|Bez ekvivalentu|Změna vlastnosti <xref:System.Windows.Automation.TogglePattern.ToggleStateProperty>|  
-|Bez ekvivalentu|Změna vlastnosti <xref:System.Windows.Automation.WindowPattern.WindowVisualStateProperty>|  
-|Bez ekvivalentu|událost <xref:System.Windows.Automation.AutomationElement.AsyncContentLoadedEvent>|  
-|Bez ekvivalentu|<xref:System.Windows.Automation.AutomationElement.ToolTipOpenedEvent>|  
+|EVENT_SYSTEM_MINIMIZEEND|<xref:System.Windows.Automation.WindowPattern.WindowVisualStateProperty>změna vlastnosti|  
+|EVENT_SYSTEM_MINIMIZESTART|<xref:System.Windows.Automation.WindowPattern.WindowVisualStateProperty>změna vlastnosti|  
+|EVENT_SYSTEM_MOVESIZEEND|<xref:System.Windows.Automation.AutomationElement.BoundingRectangleProperty>změna vlastnosti|  
+|EVENT_SYSTEM_MOVESIZESTART|<xref:System.Windows.Automation.AutomationElement.BoundingRectangleProperty>změna vlastnosti|  
+|EVENT_SYSTEM_SCROLLINGEND|<xref:System.Windows.Automation.ScrollPattern.VerticalScrollPercentProperty>nebo <xref:System.Windows.Automation.ScrollPattern.HorizontalScrollPercentProperty> změna vlastnosti|  
+|EVENT_SYSTEM_SCROLLINGSTART|<xref:System.Windows.Automation.ScrollPattern.VerticalScrollPercentProperty>nebo <xref:System.Windows.Automation.ScrollPattern.HorizontalScrollPercentProperty> změna vlastnosti|  
+|EVENT_SYSTEM_SOUND|Žádný ekvivalent|  
+|EVENT_SYSTEM_SWITCHEND|Žádný ekvivalent, <xref:System.Windows.Automation.AutomationElement.AutomationFocusChangedEvent> ale událost signalizuje, že nová aplikace získala fokus|  
+|EVENT_SYSTEM_SWITCHSTART|Žádný ekvivalent|  
+|Žádný ekvivalent|<xref:System.Windows.Automation.MultipleViewPattern.CurrentViewProperty>změna vlastnosti|  
+|Žádný ekvivalent|<xref:System.Windows.Automation.ScrollPattern.HorizontallyScrollableProperty>změna vlastnosti|  
+|Žádný ekvivalent|<xref:System.Windows.Automation.ScrollPattern.VerticallyScrollableProperty>změna vlastnosti|  
+|Žádný ekvivalent|<xref:System.Windows.Automation.ScrollPattern.HorizontalScrollPercentProperty>změna vlastnosti|  
+|Žádný ekvivalent|<xref:System.Windows.Automation.ScrollPattern.VerticalScrollPercentProperty>změna vlastnosti|  
+|Žádný ekvivalent|<xref:System.Windows.Automation.ScrollPattern.HorizontalViewSizeProperty>změna vlastnosti|  
+|Žádný ekvivalent|<xref:System.Windows.Automation.ScrollPattern.VerticalViewSizeProperty>změna vlastnosti|  
+|Žádný ekvivalent|<xref:System.Windows.Automation.TogglePattern.ToggleStateProperty>změna vlastnosti|  
+|Žádný ekvivalent|<xref:System.Windows.Automation.WindowPattern.WindowVisualStateProperty>změna vlastnosti|  
+|Žádný ekvivalent|<xref:System.Windows.Automation.AutomationElement.AsyncContentLoadedEvent>Událost|  
+|Žádný ekvivalent|<xref:System.Windows.Automation.AutomationElement.ToolTipOpenedEvent>|  
   
-<a name="Security_compare"></a>   
-## <a name="security"></a>Zabezpečení –  
- Některé scénáře přizpůsobení `IAccessible` vyžadují zalomení základní `IAccessible` a volání do něj. To má vliv na zabezpečení, protože částečně důvěryhodná komponenta by neměla být zprostředkující v cestě kódu.  
+<a name="Security_compare"></a>
+## <a name="security"></a>Zabezpečení  
+ Některé `IAccessible` scénáře přizpůsobení vyžadují `IAccessible` obtékání základny a volání na něj. To má důsledky pro zabezpečení, protože částečně důvěryhodná součást by neměla být prostředníkem na cestě kódu.  
   
- [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] model odstraňuje nutnost volání zprostředkovatelů do jiného kódu poskytovatele. Služba [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] Core provádí veškerou nezbytnou agregaci.  
+ Model [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] odebere potřebu zprostředkovatelů volat do jiného kódu zprostředkovatele. Základní [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] služba provádí všechny potřebné agregace.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Principy automatizace uživatelského rozhraní](index.md)

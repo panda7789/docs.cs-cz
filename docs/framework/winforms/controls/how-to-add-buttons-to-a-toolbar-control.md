@@ -12,31 +12,31 @@ helpviewer_keywords:
 - examples [Windows Forms], toolbars
 - ToolBar control [Windows Forms], adding drop-down menus
 ms.assetid: 78a58a8d-1041-4e38-9219-4096fa6a5c5c
-ms.openlocfilehash: 8ab1fa8fc163ed50e51801769d40e61483e8ed5b
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 1bb6de58010e70a4edafacafe3dc00b511fc63de
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69912634"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79182342"
 ---
 # <a name="how-to-add-buttons-to-a-toolbar-control"></a>Postupy: Přidání tlačítek do ovládacího prvku ToolBar
 > [!NOTE]
-> Ovládací prvek nahrazuje a přidává funkce <xref:System.Windows.Forms.ToolBar> <xref:System.Windows.Forms.ToolBar> ovládacímu prvku. ovládací prvek je však ponechán pro zpětnou kompatibilitu i pro budoucí použití, pokud zvolíte. <xref:System.Windows.Forms.ToolStrip>  
+> Ovládací <xref:System.Windows.Forms.ToolStrip> prvek nahradí a přidá <xref:System.Windows.Forms.ToolBar> funkce ovládacího prvku; <xref:System.Windows.Forms.ToolBar> ovládací prvek je však zachován a to jak pro zpětnou kompatibilitu, tak pro budoucí použití, pokud se rozhodnete.  
   
- Nedílnou součástí <xref:System.Windows.Forms.ToolBar> ovládacího prvku jsou tlačítka, která do něj přidáte. Pomocí těchto možností lze snadno získat přístup k příkazům nabídky nebo je lze umístit do jiné oblasti uživatelského rozhraní aplikace, aby bylo možné vystavit příkazy uživatelům, kteří nejsou k dispozici ve struktuře nabídky.  
+ Nedílnou součástí ovládacího <xref:System.Windows.Forms.ToolBar> prvku jsou tlačítka, která k němu přidáte. Ty mohou být použity k poskytnutí snadného přístupu k příkazům nabídky nebo alternativně mohou být umístěny v jiné oblasti uživatelského rozhraní aplikace a zpřístupnit tak příkazy uživatelům, které nejsou k dispozici ve struktuře nabídky.  
   
- Následující příklady předpokládají, že <xref:System.Windows.Forms.ToolBar> ovládací prvek byl přidán do formuláře Windows Form (`Form1`).  
+ Níže uvedené příklady <xref:System.Windows.Forms.ToolBar> předpokládají, že ovládací prvek`Form1`byl přidán do formuláře systému Windows ( ).  
   
-### <a name="to-add-buttons-programmatically"></a>Přidání tlačítek prostřednictvím kódu programu  
+### <a name="to-add-buttons-programmatically"></a>Přidání tlačítek programově  
   
-1. V proceduře vytvořte tlačítka panelu nástrojů jejich přidáním do <xref:System.Windows.Forms.ToolBar.Buttons%2A?displayProperty=nameWithType> kolekce.  
+1. V postupu vytvořte tlačítka panelu nástrojů <xref:System.Windows.Forms.ToolBar.Buttons%2A?displayProperty=nameWithType> jejich přidáním do kolekce.  
   
-2. Zadejte nastavení vlastnosti pro individuální tlačítko předáním indexu tlačítka přes <xref:System.Windows.Forms.ToolBar.Buttons%2A> vlastnost.  
+2. Zadejte nastavení vlastností pro jednotlivé tlačítko předáním <xref:System.Windows.Forms.ToolBar.Buttons%2A> indexu tlačítka prostřednictvím vlastnosti.  
   
-     Následující příklad předpokládá, že formulář s <xref:System.Windows.Forms.ToolBar> ovládacím prvkem již byl přidán.  
+     Následující příklad předpokládá formulář s <xref:System.Windows.Forms.ToolBar> již přidaným ovládacím prvkem.  
   
     > [!NOTE]
-    > <xref:System.Windows.Forms.ToolBar.Buttons%2A?displayProperty=nameWithType> Kolekce je kolekce založená na nule, takže kód by měl odpovídajícím způsobem pokračovat.  
+    > Kolekce <xref:System.Windows.Forms.ToolBar.Buttons%2A?displayProperty=nameWithType> je kolekce na základě nula, takže kód by měl postupovat odpovídajícím způsobem.  
   
     ```vb  
     Public Sub CreateToolBarButtons()  
@@ -90,7 +90,7 @@ ms.locfileid: "69912634"
        toolBar1.Buttons[2].PartialPush = true;  
   
        // Instantiate a ContextMenu component and menu items.  
-       // Set the DropDownButton's DropDownMenu property to   
+       // Set the DropDownButton's DropDownMenu property to
        // the context menu.  
        ContextMenu cm = new ContextMenu();  
        MenuItem miOne = new MenuItem("One");  
@@ -129,7 +129,7 @@ ms.locfileid: "69912634"
           toolBar1->Buttons[2]->PartialPush = true;  
   
           // Instantiate a ContextMenu component and menu items.  
-          // Set the DropDownButton's DropDownMenu property to   
+          // Set the DropDownButton's DropDownMenu property to
           // the context menu.  
           System::Windows::Forms::ContextMenu^ cm = gcnew System::Windows::Forms::ContextMenu;  
           MenuItem^ miOne = gcnew MenuItem( "One" );  
@@ -148,10 +148,10 @@ ms.locfileid: "69912634"
        }  
     ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Forms.ToolBar>
-- [Postupy: Definování ikony pro tlačítko panelu nástrojů](how-to-define-an-icon-for-a-toolbar-button.md)
-- [Postupy: Aktivace událostí nabídky pro tlačítka panelu nástrojů](how-to-trigger-menu-events-for-toolbar-buttons.md)
-- [Přehled ovládacího prvku ToolBar](toolbar-control-overview-windows-forms.md)
-- [Ovládací prvek ToolBar](toolbar-control-windows-forms.md)
+- [Postupy: Definování ikony pro tlačítko ToolBar](how-to-define-an-icon-for-a-toolbar-button.md)
+- [Postupy: Spouštění událostí nabídky pro tlačítka panelu nástrojů](how-to-trigger-menu-events-for-toolbar-buttons.md)
+- [ToolBar – přehled ovládacího prvku](toolbar-control-overview-windows-forms.md)
+- [ToolBar – ovládací prvek](toolbar-control-windows-forms.md)

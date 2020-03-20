@@ -5,17 +5,17 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: f82aaa62-321e-4c8a-b51b-9d1114700170
-ms.openlocfilehash: df6da84dfc120e3f6c3cb0e46729ca2cecc9fe3a
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.openlocfilehash: 757a87f92d8dc6049de1844fed892d95dc57c990
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73040403"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79151517"
 ---
 # <a name="annotating-typed-datasets"></a>Zadávání poznámek k typovým datovým sadám
-Poznámky umožňují upravit názvy prvků v zadaných <xref:System.Data.DataSet>ch bez změny podkladového schématu. Změna názvů prvků v základním schématu způsobí, že zadaná **datová sada** odkazuje na objekty, které neexistují ve zdroji dat, a také ztratí odkaz na objekty, které existují ve zdroji dat.  
+Poznámky umožňují změnit názvy prvků v zadaném <xref:System.Data.DataSet> textu bez úpravy základního schématu. Změna názvů prvků v podkladovém schématu by způsobila, že zadaný **DataSet** odkazuje na objekty, které ve zdroji dat neexistují, a také ztratí odkaz na objekty, které existují ve zdroji dat.  
   
- Pomocí poznámek můžete přizpůsobit názvy objektů v zadané **datové sadě** s smysluplnými názvy, což usnadňuje čtení kódu a zadaná **datová sada** je pro klienty snazší a přitom ponechá základní schéma beze změny. Například následující prvek schématu pro tabulku **Customers** databáze **Northwind** má za následek název objektu **DataRow** **CustomersRow** a <xref:System.Data.DataRowCollection> s názvem **Customers**.  
+ Pomocí anotací můžete přizpůsobit názvy objektů v zadané **datové sadě** s smysluplnějšími názvy, čímž usnadníte čitelný kód a zadávaný **soubor DataSet** snadněji používajíte klientům, přičemž základní schéma zůstane beze změny. Například následující prvek schématu pro tabulku **Zákazníci** databáze **Northwind** by mělo za následek název <xref:System.Data.DataRowCollection> objektu **DataRow** **customersrow** a pojmenované **zákazníci**.  
   
 ```xml  
 <xs:element name="Customers">  
@@ -27,7 +27,7 @@ Poznámky umožňují upravit názvy prvků v zadaných <xref:System.Data.DataSe
 </xs:element>  
 ```  
   
- **Kolekci DataRowCollection** jména **zákazníků** jsou v kódu klienta smysluplná, **ale název objektu** **CustomersRow** je zavádějící, protože se jedná o jediný objekt. Také v běžných scénářích by se objekt odkazoval bez identifikátoru **řádku** a místo toho by se mu musel jednoduše odkazovat jako na objekt **zákazníka** . Řešením je opatřit poznámkami od schématu a identifikovat nové názvy pro objekty **DataRow** a **kolekci DataRowCollection** . Níže je uvedena verze předchozího schématu s poznámkou.  
+ A **DataRowCollection** název **customers** je smysluplné v kódu klienta, ale **Název DataRow** **CustomersRow** je zavádějící, protože je jeden objekt. Také v běžných scénářích by objekt být odkazoval se na bez identifikátor **u řádku** a místo toho by jednoduše označovány jako **objekt Zákazník.** Řešením je anotovat schéma a identifikovat nové názvy pro **DataRow** a **DataRowCollection** objekty. Následuje anotovaná verze předchozího schématu.  
   
 ```xml  
 <xs:element name="Customers" codegen:typedName="Customer" codegen:typedPlural="Customers">  
@@ -39,55 +39,55 @@ Poznámky umožňují upravit názvy prvků v zadaných <xref:System.Data.DataSe
 </xs:element>  
 ```  
   
- Zadání hodnoty **názvu** **zákazníka** bude mít za následek název objektu **DataRow** **zákazníka**. Zadáním hodnoty **TypedPlural** **zákazníkům** zachováte **kolekci DataRowCollection** jména **zákazníků**.  
+ Zadání hodnoty **typedName** **zákazníka** bude mít za následek název objektu **DataRow** **zákazníka**. Zadání **množného** čísla **Hodnota Zákazníci** zachová název **DataRowCollection** **zákazníky**.  
   
- V následující tabulce jsou uvedeny poznámky k dispozici pro použití.  
+ V následující tabulce jsou uvedeny poznámky, které jsou k dispozici pro použití.  
   
 |Poznámka|Popis|  
 |----------------|-----------------|  
-|**typ typu**|Název objektu.|  
+|**typedName**|Název objektu.|  
 |**typedPlural**|Název kolekce objektů.|  
-|**typedParent**|Název objektu, který je odkazován v nadřazené relaci.|  
-|**typedChildren**|Název metody pro vrácení objektů z podřízené relace.|  
-|**nullValue**|Hodnota, pokud je podkladová hodnota **DBNull**. Poznámky **NullValue** naleznete v následující tabulce. Výchozí hodnota je **_throw**.|  
+|**typedParent**|Název objektu, na který se odkazuje v nadřazeném vztahu.|  
+|**typedChildren**|Název metody pro vrácení objektů z podřízeného vztahu.|  
+|**nullValue**|Hodnota, pokud je základní hodnota **DBNull**. V následující tabulce naleznete poznámky **nullValue.** Výchozí hodnota je **_throw**.|  
   
- V následující tabulce jsou uvedeny hodnoty, které lze zadat pro **NullValue** anotaci.  
+ V následující tabulce jsou uvedeny hodnoty, které lze zadat pro poznámku **nullValue.**  
   
-|Hodnota nullValue|Popis|  
+|hodnota nullHodnota|Popis|  
 |---------------------|-----------------|  
-|*Nahrazující hodnota*|Zadejte hodnotu, která se má vrátit. Vrácená hodnota musí odpovídat typu elementu. Například použijte `nullValue="0"` k vrácení 0 pro pole s hodnotou null.|  
-|**_throw**|Vyvolejte výjimku. Toto nastavení je výchozí.|  
-|**_null**|Vrátí nulový odkaz nebo vyvolá výjimku, pokud se zjistil primitivní typ.|  
-|**_empty**|V případě řetězců vrátí **řetězec. Empty**, jinak vrátí objekt vytvořený z prázdného konstruktoru. Pokud je zjištěn primitivní typ, vyvolejte výjimku.|  
+|*Náhradní hodnota*|Zadejte hodnotu, která má být vrácena. Vrácená hodnota musí odpovídat typu prvku. Slouží `nullValue="0"` například k vrácení 0 pro pole s nulovým sdělovým číselně.|  
+|**_throw**|Vyvolat výjimku. Toto nastavení je výchozí.|  
+|**_null**|Vrátí nulový odkaz nebo vyvolat výjimku, pokud je zjištěn primitivní typ.|  
+|**_empty**|Pro řetězce vrátí **String.Empty**, jinak vrátí objekt vytvořený z prázdného konstruktoru. Pokud dojde k primitivní typ, vyvolat výjimku.|  
   
- V následující tabulce jsou uvedeny výchozí hodnoty pro objekty v zadané **datové sadě** a poznámky k dispozici.  
+ V následující tabulce jsou uvedeny výchozí hodnoty pro objekty v zadané **datové sadě** a dostupné poznámky.  
   
-|Objekt/metoda/událost|Výchozí|Poznámka|  
+|Objekt/Metoda/událost|Výchozí|Poznámka|  
 |---------------------------|-------------|----------------|  
-|**Objekt**|TableNameDataTable|typedPlural|  
-|**DataTable** Způsobů|NewTableNameRow<br /><br /> AddTableNameRow<br /><br /> DeleteTableNameRow|typ typu|  
-|**Kolekci DataRowCollection**|Tabulky|typedPlural|  
-|**Objekt**|TableNameRow|typ typu|  
-|**DataColumn**|DataTable. ColumnNameColumn<br /><br /> DataRow. ColumnName|typ typu|  
-|**Majetek**|PropertyName|typ typu|  
-|**Podřízená položka** Zbývá|GetChildTableNameRows|typedChildren|  
-|**Nadřazený prvek** Zbývá|TableNameRow|typedParent|  
-|**Datová sada** Událost|TableNameRowChangeEvent<br /><br /> TableNameRowChangeEventHandler|typ typu|  
+|**DataTable**|TableNameDataTable|typedPlural|  
+|**Tabulka dat** Metody|NewTableNameRow<br /><br /> AddTableNameRow<br /><br /> Odstranitnázev_řádku|typedName|  
+|**Datarowcollection**|TableName|typedPlural|  
+|**Datarow**|Název_tabulky|typedName|  
+|**Datacolumn**|Sloupec Název_sloupce DataTable.Column<br /><br /> Název_řádku_data|typedName|  
+|**Vlastnost**|PropertyName|typedName|  
+|**Dítě** Přístupové|GetChildTableNameRows|typedChildren|  
+|**Nadřazená** Přístupové|Název_tabulky|typedParent|  
+|**Datová sada** Události|TableNameRowChangeEvent<br /><br /> Obslužná rutina_události TableNameRowChangeEventHandler|typedName|  
   
- Chcete-li použít typové anotace **datové sady** , musíte zahrnout následující odkaz **xmlns** do schématu XML schématu definice jazyka (XSD). Chcete-li vytvořit XSD z databázových tabulek, přečtěte si téma <xref:System.Data.DataSet.WriteXmlSchema%2A> nebo [práce s datovými sadami v sadě Visual Studio](/visualstudio/data-tools/dataset-tools-in-visual-studio).  
+ Chcete-li použít zadané poznámky **DataSet,** musíte do schématu jazyka Xml Schema (XSD) zahrnout následující odkaz **xmlns.** Chcete-li vytvořit xsd z <xref:System.Data.DataSet.WriteXmlSchema%2A> databázových tabulek, přečtěte si další informace nebo [práce s datovými sadami v sadě Visual Studio](/visualstudio/data-tools/dataset-tools-in-visual-studio).  
   
 ```xml  
 xmlns:codegen="urn:schemas-microsoft-com:xml-msprop"  
 ```  
   
- Následuje ukázka schématu s poznámkou, které zveřejňuje tabulku **Customers (zákazníci** ) databáze **Northwind** s relací k uvedené tabulce **Orders** .  
+ Následuje ukázkové schéma s anotovanými notami, které zpřístupňuje tabulku **Zákazníci** databáze **Northwind** s vztahem k tabulce **Objednávky.**  
   
 ```xml  
 <?xml version="1.0" encoding="utf-8"?>  
-<xs:schema id="CustomerDataSet"   
+<xs:schema id="CustomerDataSet"
       xmlns:codegen="urn:schemas-microsoft-com:xml-msprop"  
-      xmlns=""   
-      xmlns:xs="http://www.w3.org/2001/XMLSchema"   
+      xmlns=""
+      xmlns:xs="http://www.w3.org/2001/XMLSchema"
       xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">  
   <xs:element name="CustomerDataSet" msdata:IsDataSet="true">  
     <xs:complexType>  
@@ -111,10 +111,10 @@ type="xs:int" minOccurs="0" />
               <xs:element name="CustomerID"  
 codegen:typedName="CustomerID"                  codegen:nullValue="" type="xs:string" minOccurs="0" />  
               <xs:element name="EmployeeID"  
-codegen:typedName="EmployeeID" codegen:nullValue="0"   
+codegen:typedName="EmployeeID" codegen:nullValue="0"
 type="xs:int" minOccurs="0" />  
               <xs:element name="OrderAdapter"  
-codegen:typedName="OrderAdapter" codegen:nullValue="1980-01-01T00:00:00"   
+codegen:typedName="OrderAdapter" codegen:nullValue="1980-01-01T00:00:00"
 type="xs:dateTime" minOccurs="0" />  
             </xs:sequence>  
           </xs:complexType>  
@@ -134,7 +134,7 @@ codegen:typedParent="Customer" codegen:typedChildren="GetOrders">
 </xs:schema>  
 ```  
   
- Následující příklad kódu používá **datovou sadu** silného typu vytvořenou z ukázkového schématu. K naplnění tabulky **Customers** používá jednu <xref:System.Data.SqlClient.SqlDataAdapter> a další <xref:System.Data.SqlClient.SqlDataAdapter> k naplnění tabulky **Orders** . **Datová sada** silného typu definuje **DataRelations**.  
+ Následující příklad kódu používá silně zadaný **DataSet** vytvořený z ukázkového schématu. Používá jeden <xref:System.Data.SqlClient.SqlDataAdapter> k naplnění tabulky <xref:System.Data.SqlClient.SqlDataAdapter> **Zákazníci** a jiný k naplnění tabulky **Objednávky.** Silně zadaný **dataset** definuje **DataRelations**.  
   
 ```vb  
 ' Assumes a valid SqlConnection object named connection.  
@@ -187,7 +187,7 @@ SqlDataAdapter customerAdapter = new SqlDataAdapter(
     "SELECT CustomerID, CompanyName, Phone FROM Customers",  
     connection);  
 SqlDataAdapter orderAdapter = new SqlDataAdapter(  
-    "SELECT OrderID, CustomerID, EmployeeID, OrderAdapter FROM Orders",   
+    "SELECT OrderID, CustomerID, EmployeeID, OrderAdapter FROM Orders",
     connection);  
   
 // Populate a strongly typed DataSet.  
@@ -198,11 +198,11 @@ orderAdapter.Fill(customers, "Orders");
 connection.Close();  
   
 // Add a strongly typed event.  
-customers.Customers.CustomerChanged += new   
+customers.Customers.CustomerChanged += new
   CustomerDataSet.CustomerChangeEventHandler(OnCustomerChanged);  
   
 // Add a strongly typed DataRow.  
-CustomerDataSet.Customer newCustomer =   
+CustomerDataSet.Customer newCustomer =
     customers.Customers.NewCustomer();  
 newCustomer.CustomerID = "NEW01";  
 newCustomer.CompanyName = "My New Company";  
@@ -222,7 +222,7 @@ protected static void OnCustomerChanged(object sender, CustomerDataSet.CustomerC
     }  
 ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Data.DataColumnCollection>
 - <xref:System.Data.DataSet>

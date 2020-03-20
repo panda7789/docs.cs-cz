@@ -8,25 +8,25 @@ helpviewer_keywords:
 - Paint event [Windows Forms], handling in Windows Forms custom control
 - OnPaint method [Windows Forms], overriding in Windows Forms custom controls
 ms.assetid: e9ca2723-0107-4540-bb21-4f5ffb4a9906
-ms.openlocfilehash: e3c48aec830cdc3ccceb8683f93e3a99ee6364e2
-ms.sourcegitcommit: b1cfd260928d464d91e20121f9bdba7611c94d71
+ms.openlocfilehash: 863726a6264f01de9f00296b4a64b9fd1bb96765
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67506194"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79182037"
 ---
 # <a name="overriding-the-onpaint-method"></a>Přepsání metody OnPaint
-Základní kroky pro přepsání jakékoli události definované v rozhraní .NET Framework jsou shodné a jsou shrnuty v následujícím seznamu.  
+Základní kroky pro přepsání jakékoli události definované v rozhraní .NET Framework jsou identické a jsou shrnuty v následujícím seznamu.  
   
-#### <a name="to-override-an-inherited-event"></a>K přepsání zděděné události  
+#### <a name="to-override-an-inherited-event"></a>Přepsání zděděné události  
   
-1. Přepsat chráněnou `On` *EventName* metody.  
+1. Přepište chráněnou `On`metodu *EventName.*  
   
-2. Volání `On` *EventName* metoda základní třídy z přepsané `On` *EventName* metodu tak, která zaregistrovaný delegáti obdrží událost.  
+2. Volání *Metody EventName* základní třídy z `On`přepsané metody *EventName,* aby registrovaní delegáti obdrželi událost. `On`  
   
- <xref:System.Windows.Forms.Control.Paint> Událostí je popsáno Zde podrobně vzhledem k tomu, že každý ovládací prvek Windows Forms musí přepsat <xref:System.Windows.Forms.Control.Paint> událost, která dědí z <xref:System.Windows.Forms.Control>. Základní <xref:System.Windows.Forms.Control> není známo, jak je potřeba vykreslit ovládací prvek odvozené třídy a neposkytuje žádnou logiku vykreslování v <xref:System.Windows.Forms.Control.OnPaint%2A> metody. <xref:System.Windows.Forms.Control.OnPaint%2A> Metodu <xref:System.Windows.Forms.Control> jednoduše odešle zprávu <xref:System.Windows.Forms.Control.Paint> události registrované události příjemcům.  
+ Událost <xref:System.Windows.Forms.Control.Paint> je popsána podrobně zde, protože každý <xref:System.Windows.Forms.Control.Paint> ovládací prvek Windows <xref:System.Windows.Forms.Control>Forms musí přepsat událost, která dědí z . Základní <xref:System.Windows.Forms.Control> třída neví, jak musí být odvozený ovládací prvek vykreslen, a <xref:System.Windows.Forms.Control.OnPaint%2A> neposkytuje žádnou logiku malování v metodě. Metoda <xref:System.Windows.Forms.Control.OnPaint%2A> <xref:System.Windows.Forms.Control> jednoduše odešle <xref:System.Windows.Forms.Control.Paint> událost registrovaným příjemcům událostí.  
   
- Pokud jste již dříve pracovali prostřednictvím ukázka v [jak: Vývoj jednoduchého ovládacího prvku Windows Forms](how-to-develop-a-simple-windows-forms-control.md), jste viděli příklad přepsání <xref:System.Windows.Forms.Control.OnPaint%2A> metody. Následující fragment kódu je převzat z této ukázky.  
+ Pokud jste pracovali prostřednictvím ukázky v [Postup: Vývoj jednoduché ho Windows](how-to-develop-a-simple-windows-forms-control.md)Forms <xref:System.Windows.Forms.Control.OnPaint%2A> Control , jste viděli příklad přepsání metody. Následující fragment kódu je převzat z této ukázky.  
   
 ```vb  
 Public Class FirstControl  
@@ -41,7 +41,7 @@ Public Class FirstControl
       ' Call methods of the System.Drawing.Graphics object.  
       e.Graphics.DrawString(Text, Font, New SolidBrush(ForeColor), RectangleF.op_Implicit(ClientRectangle))  
    End Sub  
-End Class   
+End Class
 ```  
   
 ```csharp  
@@ -52,11 +52,11 @@ public class FirstControl : Control {
       base.OnPaint(e);  
       // Call methods of the System.Drawing.Graphics object.  
       e.Graphics.DrawString(Text, Font, new SolidBrush(ForeColor), ClientRectangle);  
-   }   
-}   
+   }
+}
 ```  
   
- <xref:System.Windows.Forms.PaintEventArgs> Třída obsahuje data pro <xref:System.Windows.Forms.Control.Paint> událostí. Má dvě vlastnosti, jak je znázorněno v následujícím kódu.  
+ Třída <xref:System.Windows.Forms.PaintEventArgs> obsahuje data <xref:System.Windows.Forms.Control.Paint> pro událost. Má dvě vlastnosti, jak je znázorněno v následujícím kódu.  
   
 ```vb  
 Public Class PaintEventArgs  
@@ -68,7 +68,7 @@ Public Class PaintEventArgs
   
    Public ReadOnly Property Graphics() As System.Drawing.Graphics  
       ...  
-   End Property   
+   End Property
    ...  
 End Class  
 ```  
@@ -82,12 +82,12 @@ public class PaintEventArgs : EventArgs {
 }  
 ```  
   
- <xref:System.Windows.Forms.PaintEventArgs.ClipRectangle%2A> je obdélník, který se má namalovat a <xref:System.Windows.Forms.PaintEventArgs.Graphics%2A> vlastnost odkazuje na <xref:System.Drawing.Graphics> objektu. Třídy v <xref:System.Drawing?displayProperty=nameWithType> obor názvů jsou spravované třídy, které poskytují přístup k funkci rozhraní GDI +, nové grafické knihovny Windows. <xref:System.Drawing.Graphics> Objekt má metody pro kreslení body, řetězce, řádky, oblouky, symbol tří teček a mnoho dalších tvarů.  
+ <xref:System.Windows.Forms.PaintEventArgs.ClipRectangle%2A>je obdélník, který má <xref:System.Windows.Forms.PaintEventArgs.Graphics%2A> být malován <xref:System.Drawing.Graphics> a vlastnost odkazuje na objekt. Třídy v <xref:System.Drawing?displayProperty=nameWithType> oboru názvů jsou spravované třídy, které poskytují přístup k funkcím GDI+, nové grafické knihovny systému Windows. Objekt <xref:System.Drawing.Graphics> má metody pro kreslení bodů, řetězců, čar, oblouků, elips a mnoha dalších tvarů.  
   
- Ovládací prvek vyvolá jeho <xref:System.Windows.Forms.Control.OnPaint%2A> metoda pokaždé, když je potřeba změnit jeho vizuální zobrazení. Tato metoda vyvolá zase <xref:System.Windows.Forms.Control.Paint> událostí.  
+ Ovládací prvek vyvolá <xref:System.Windows.Forms.Control.OnPaint%2A> svou metodu vždy, když potřebuje změnit vizuální zobrazení. Tato metoda zase <xref:System.Windows.Forms.Control.Paint> vyvolá událost.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Události](../../../standard/events/index.md)
+- [Akce](../../../standard/events/index.md)
 - [Vykreslení ovládacího prvku Windows Forms](rendering-a-windows-forms-control.md)
 - [Definování události](defining-an-event-in-windows-forms-controls.md)

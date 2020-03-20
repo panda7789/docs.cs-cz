@@ -6,52 +6,52 @@ helpviewer_keywords:
 - UI Automation GridItem control pattern
 - GridItem control pattern
 ms.assetid: bffbae08-fe2a-42fd-ab84-f37187518916
-ms.openlocfilehash: 832a53e072afc5533f2eeb7feb0cc326771cf23d
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: d561587e6bb98ba857b27ba89b4c1a45ba964ffd
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74435249"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79180186"
 ---
 # <a name="implementing-the-ui-automation-griditem-control-pattern"></a>Implementace vzoru ovládacích prvků GridItem pro automatizaci uživatelského rozhraní
 > [!NOTE]
-> Tato dokumentace je určena pro .NET Framework vývojářů, kteří chtějí používat spravované [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] třídy definované v oboru názvů <xref:System.Windows.Automation>. Nejnovější informace o [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]najdete v tématu [rozhraní API pro Windows Automation: automatizace uživatelského rozhraní](/windows/win32/winauto/entry-uiauto-win32).  
+> Tato dokumentace je určena pro vývojáře rozhraní [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] .NET Framework, kteří chtějí používat spravované třídy definované v oboru <xref:System.Windows.Automation> názvů. Nejnovější informace o [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]rozhraní [WINDOWS Automation API: Automatizace uživatelského rozhraní](/windows/win32/winauto/entry-uiauto-win32).  
   
- Toto téma obsahuje pokyny a konvence pro implementaci <xref:System.Windows.Automation.Provider.IGridItemProvider>, včetně informací o vlastnostech. Odkazy na další odkazy jsou uvedeny na konci přehledu.  
+ Toto téma představuje pokyny a <xref:System.Windows.Automation.Provider.IGridItemProvider>konvence pro implementaci , včetně informací o vlastnostech. Odkazy na další odkazy jsou uvedeny na konci přehledu.  
   
- Vzor ovládacího prvku <xref:System.Windows.Automation.GridItemPattern> slouží k podpoře jednotlivých podřízených ovládacích prvků kontejnerů, které implementují <xref:System.Windows.Automation.Provider.IGridProvider>. Příklady ovládacích prvků, které implementují tento vzor ovládacích prvků, naleznete v tématu [mapování vzoru ovládacího prvku pro klienty automatizace uživatelského rozhraní](control-pattern-mapping-for-ui-automation-clients.md).  
+ Vzor <xref:System.Windows.Automation.GridItemPattern> ovládacího prvku se používá k podpoře <xref:System.Windows.Automation.Provider.IGridProvider>jednotlivých podřízených ovládacích prvků kontejnerů, které implementují . Příklady ovládacích prvků, které implementují tento vzor ovládacího prvku, naleznete [v tématu Mapování vzorů ovládacího prvku pro klienty automatizace uživatelského rozhraní](control-pattern-mapping-for-ui-automation-clients.md).  
   
-<a name="Implementation_Guidelines_and_Conventions"></a>   
-## <a name="implementation-guidelines-and-conventions"></a>Pokyny a konvence implementace  
- Při implementaci <xref:System.Windows.Automation.Provider.IGridProvider>Pamatujte na následující pokyny a konvence:  
+<a name="Implementation_Guidelines_and_Conventions"></a>
+## <a name="implementation-guidelines-and-conventions"></a>Prováděcí pokyny a úmluvy  
+ Při provádění <xref:System.Windows.Automation.Provider.IGridProvider>si poznamenejte následující pokyny a konvence:  
   
-- Souřadnice mřížky jsou vypočítány od nuly s horní levou buňkou, která má souřadnice (0, 0).  
+- Souřadnice mřížky jsou založeny na nule, přičemž levá horní buňka má souřadnice (0, 0).  
   
-- Sloučené buňky budou hlásit své <xref:System.Windows.Automation.Provider.IGridItemProvider.Row%2A> a vlastnosti <xref:System.Windows.Automation.Provider.IGridItemProvider.Column%2A> na základě jejich podkladové buňky ukotvení, jak jsou definovány zprostředkovatelem automatizace uživatelského rozhraní. Obvykle se jedná o horní a levý řádek nebo sloupec.  
+- Sloučené buňky <xref:System.Windows.Automation.Provider.IGridItemProvider.Row%2A> <xref:System.Windows.Automation.Provider.IGridItemProvider.Column%2A> budou vykazovat jejich a vlastnosti na základě jejich základní kotevní buňky definované zprostředkovatelem automatizace uživatelského rozhraní. Obvykle se bude jedná o nejvyšší a levý řádek nebo sloupec.  
   
-- <xref:System.Windows.Automation.Provider.IGridItemProvider> neposkytuje aktivní manipulaci s mřížkou, jako je například sloučení nebo rozdělení buněk.  
+- <xref:System.Windows.Automation.Provider.IGridItemProvider>nezajišťuje aktivní manipulaci s mřížkou, jako je slučování nebo dělení buněk.  
   
-- Ovládací prvky, které implementují <xref:System.Windows.Automation.Provider.IGridItemProvider>, je obvykle možné procházet (to znamená, že se klient automatizace uživatelského rozhraní může přesunout na sousedící ovládací prvky) pomocí klávesnice.  
+- Ovládací prvky, které implementují <xref:System.Windows.Automation.Provider.IGridItemProvider> lze obvykle procházet (to znamená, že klient automatizace uživatelského rozhraní můžete přesunout do sousedních ovládacích prvků) pomocí klávesnice.  
   
-<a name="Required_Members_for_IGridItemProvider"></a>   
-## <a name="required-members-for-igriditemprovider"></a>Vyžadovaná členové pro IGridItemProvider  
- Pro implementaci <xref:System.Windows.Automation.Provider.IGridItemProvider>jsou vyžadovány následující vlastnosti a metody.  
+<a name="Required_Members_for_IGridItemProvider"></a>
+## <a name="required-members-for-igriditemprovider"></a>Povinné členy pro IGridItemProvider  
+ Následující vlastnosti a metody jsou <xref:System.Windows.Automation.Provider.IGridItemProvider>vyžadovány pro implementaci .  
   
-|Vyžadovaná členové|Typ člena|Poznámky|  
+|Požadované členy|Typ člena|Poznámky|  
 |----------------------|-----------------|-----------|  
-|<xref:System.Windows.Automation.Provider.IGridItemProvider.Row%2A>|Vlastnost|Žádné|  
-|<xref:System.Windows.Automation.Provider.IGridItemProvider.Column%2A>|Vlastnost|Žádné|  
-|<xref:System.Windows.Automation.Provider.IGridItemProvider.RowSpan%2A>|Vlastnost|Žádné|  
-|<xref:System.Windows.Automation.Provider.IGridItemProvider.ColumnSpan%2A>|Vlastnost|Žádné|  
-|<xref:System.Windows.Automation.Provider.IGridItemProvider.ContainingGrid%2A>|Vlastnost|Žádné|  
+|<xref:System.Windows.Automation.Provider.IGridItemProvider.Row%2A>|Vlastnost|Žádný|  
+|<xref:System.Windows.Automation.Provider.IGridItemProvider.Column%2A>|Vlastnost|Žádný|  
+|<xref:System.Windows.Automation.Provider.IGridItemProvider.RowSpan%2A>|Vlastnost|Žádný|  
+|<xref:System.Windows.Automation.Provider.IGridItemProvider.ColumnSpan%2A>|Vlastnost|Žádný|  
+|<xref:System.Windows.Automation.Provider.IGridItemProvider.ContainingGrid%2A>|Vlastnost|Žádný|  
   
- Tento model řízení nemá žádné přidružené metody nebo události.  
+ Tento vzor ovládacího prvku nemá žádné přidružené metody nebo události.  
   
-<a name="Exceptions"></a>   
+<a name="Exceptions"></a>
 ## <a name="exceptions"></a>Výjimky  
  Tento vzor ovládacího prvku nemá žádné přidružené výjimky.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Přehled vzorů ovládacích prvků pro automatizaci uživatelského rozhraní](ui-automation-control-patterns-overview.md)
 - [Podpora vzorů ovládacích prvků u zprostředkovatele automatizace uživatelského rozhraní](support-control-patterns-in-a-ui-automation-provider.md)

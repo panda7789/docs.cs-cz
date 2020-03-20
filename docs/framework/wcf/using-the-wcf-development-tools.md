@@ -2,50 +2,50 @@
 title: Používání vývojářských nástrojů WCF
 ms.date: 03/30/2017
 ms.assetid: 054adb87-c244-4d5a-83d1-0b2b44bd454b
-ms.openlocfilehash: 8253a9136b2310deeb7c6d162a9f190c13ba02da
-ms.sourcegitcommit: a4f9b754059f0210e29ae0578363a27b9ba84b64
+ms.openlocfilehash: 82bb7e225492bcdba4d2e611de405a09571355c0
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74837724"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79183084"
 ---
 # <a name="using-the-wcf-development-tools"></a>Používání vývojářských nástrojů WCF
-Tato část popisuje vývojové nástroje sady Visual Studio, které vám můžou pomoct při vývoji WCFservice.  
+Tato část popisuje vývojové nástroje sady Visual Studio, které vám mohou pomoci při vývoji služby WCFservice.  
   
- Šablony sady Visual Studio můžete použít jako základ k rychlému vytvoření vlastní služby a pak k ladění a testování služby použít automatické hostování služby WCF a testovacího klienta WCF. Tyto nástroje společně poskytují rychlý a bezproblémové cyklus ladění a testování a brání nutnosti potvrzování modelu hostování v rané fázi.  
- 
+ Šablony sady Visual Studio můžete použít jako základ pro rychlé vytvoření vlastní služby a potom pomocí automatického hostitele služby WCF a testovacího klienta WCF k ladění a testování vaší služby. Tyto nástroje společně poskytují rychlé a bezproblémové ladění a testovací cyklus a vylučují potřebu zavázat se k hostitelskému modelu v rané fázi.  
+
  > [!NOTE]
- > Počínaje sadou Visual Studio 2017 nejsou ve výchozím nastavení nainstalovány vývojové nástroje WCF. Aby bylo možné používat tyto funkce, je nutné zajistit, aby byla v instalačním programu sady Visual Studio vybrána součást Windows Communication Foundation.
+ > Počínaje Visual Studio 2017, wcf vývojové nástroje nejsou nainstalovány ve výchozím nastavení. Chcete-li tyto funkce používat, je nutné zajistit, aby byla v instalačníslužbě sady Visual Studio vybrána součást Windows Communication Foundation.
   
 ## <a name="the-wcf-developer-tools"></a>Vývojářské nástroje WCF  
  [Šablony sady Visual Studio pro WCF](wcf-vs-templates.md)  
   
- Můžete použít předdefinované šablony projektů a položek sady Visual Studio v aplikaci Visual Studio k rychlému vytváření služeb WCF a okolních aplikací.  
+ Předdefinované šablony projektu a položek sady Visual Studio v sadě Visual Studio můžete rychle vytvářet služby WCF a okolní aplikace.  
   
  [Hostitel služby WCF (WcfSvcHost.exe)](wcf-service-host-wcfsvchost-exe.md)  
   
- Automatické hostování služby WCF (WcfSvcHost. exe) umožňuje spustit ladicí program sady Visual Studio (F5) pro automatické hostování a testování služby, kterou jste nasadili. Potom můžete službu otestovat pomocí testovacího klienta WCF (wcfTestClient. exe) nebo vašeho vlastního klienta a vyhledat a opravit případné chyby.  
+ Automatický hostitel služby WCF (WcfSvcHost.exe) umožňuje spustit ladicí program Sady Visual Studio (F5) pro automatické hostování a testování služby, kterou jste implementovali. Potom můžete otestovat službu pomocí WCF Test Client (wcfTestClient.exe) nebo vlastního klienta najít a opravit případné chyby.  
   
  [Testovací klient WCF (WcfTestClient.exe)](wcf-test-client-wcftestclient-exe.md)  
   
- Testovací klient služby WCF (WcfTestClient. exe) je nástroj grafického uživatelského rozhraní, který umožňuje zadat parametry libovolných typů, odeslat tento vstup do služby a zobrazit odpověď, kterou služba odesílá zpět. Poskytuje bezproblémové prostředí pro testování služeb při kombinaci s automatickým hostitelem služby WCF.  
+ WCF Test Client (WcfTestClient.exe) je nástroj GUI, který umožňuje zadat parametry libovolných typů, odeslat tento vstup do služby a zobrazit odpověď, kterou služba odešle zpět. Poskytuje bezproblémové testování služeb v kombinaci s automatickým hostitelem služby WCF.  
   
  [Generování tříd datových typů z XML](generating-data-type-classes-from-xml.md)  
   
- Data XML uložená ve schránce lze vložit do znakové stránky. Třídy definované v datech budou převedeny na typy kódu.  
+ Data XML uložená ve schránce lze vložit do znakové stránky. Třídy definované v datech budou převedeny na typy kódů.  
   
-## <a name="using-the-tools-without-administrator-privilege"></a>Používání nástrojů bez oprávnění správce  
- Aby uživatelé bez oprávnění správce mohli vyvíjet služby WCF, vytvoří se seznam ACL (Access Control) pro obor názvů "http://+:8731/Design_Time_Addresses" při instalaci sady Visual Studio. Seznam řízení přístupu (ACL) je nastavený na (uživatelské rozhraní), které zahrnuje všechny interaktivní uživatele přihlášené k počítači. Správci mohou přidat nebo odebrat uživatele z tohoto seznamu ACL nebo otevřít další porty. Tento seznam ACL umožňuje odesílat a přijímat data v šablonách WCF nebo WF v jejich výchozí konfiguraci. Také umožňuje uživatelům používat automatické hostování služby WCF (wcfSvcHost. exe) bez udělení oprávnění správce.  
+## <a name="using-the-tools-without-administrator-privilege"></a>Použití nástrojů bez oprávnění správce  
+ Chcete-li uživatelům bez oprávnění správce povolit vývoj služeb WCF, je běhemhttp://+:8731/Design_Time_Addressesinstalace sady Visual Studio vytvořen seznam ACL (Seznam řízení přístupu) pro obor názvů . ACL je nastavena na (UI), který zahrnuje všechny interaktivní uživatele přihlášené k počítači. Správci mohou přidávat nebo odebírat uživatele z tohoto seznamu ACL nebo otevírat další porty. Tento přístupový kód umožňuje šablonám WCF nebo WF odesílat a přijímat data ve výchozí konfiguraci. Umožňuje také uživatelům používat automatický hostitel služby WCF (wcfSvcHost.exe) bez udělení oprávnění správce.  
   
- Přístup můžete upravit pomocí nástroje Netsh. exe v systému Windows Vista pod účtem správce se zvýšenými oprávněními. Následuje příklad použití nástroje Netsh. exe.  
+ Přístup můžete upravit pomocí nástroje Netsh.exe v systému Windows Vista pod účtem správce se zvýšenými oprávněními. Následuje příklad použití souboru Netsh.exe.  
   
 ```console  
 netsh http add urlacl url=http://+:8001/MyService user=<domain>\<user>  
 ```  
   
- Další informace o nástroji Netsh. exe najdete v tématu [použití nástroje Netsh. exe a přepínačů příkazového řádku](https://docs.microsoft.com/previous-versions/tn-archive/bb490939(v=technet.10)).  
+ Další informace o nástroji Netsh.exe naleznete [v tématu Použití nástroje Netsh.exe tool a přepínačů příkazového řádku](https://docs.microsoft.com/previous-versions/tn-archive/bb490939(v=technet.10)).  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Šablony sady Visual Studio pro WCF](wcf-vs-templates.md)
 - [Hostitel služby WCF (WcfSvcHost.exe)](wcf-service-host-wcfsvchost-exe.md)

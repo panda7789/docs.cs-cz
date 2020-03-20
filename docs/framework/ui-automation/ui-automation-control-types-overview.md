@@ -5,36 +5,36 @@ helpviewer_keywords:
 - UI Automation, control types
 - control types, UI Automation
 ms.assetid: 75159ef8-bd43-4d13-acb7-1f1fe9253160
-ms.openlocfilehash: ec2dd3635f09144985df278be1d53ead675d3080
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 643c89e8f6c5e34aa1fb3c5c7c6c750c72046277
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74442624"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79179938"
 ---
 # <a name="ui-automation-control-types-overview"></a>Přehled typů ovládacích prvků pro automatizaci uživatelského rozhraní
 > [!NOTE]
-> Tato dokumentace je určena pro .NET Framework vývojářů, kteří chtějí používat spravované [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] třídy definované v oboru názvů <xref:System.Windows.Automation>. Nejnovější informace o [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]najdete v tématu [rozhraní API pro Windows Automation: automatizace uživatelského rozhraní](/windows/win32/winauto/entry-uiauto-win32).  
+> Tato dokumentace je určena pro vývojáře rozhraní [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] .NET Framework, kteří chtějí používat spravované třídy definované v oboru <xref:System.Windows.Automation> názvů. Nejnovější informace o [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]rozhraní [WINDOWS Automation API: Automatizace uživatelského rozhraní](/windows/win32/winauto/entry-uiauto-win32).  
   
- typy ovládacích prvků [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)] jsou dobře známé identifikátory, které lze použít k určení toho, jaký typ ovládacího prvku konkrétní element představuje, jako je pole se seznamem nebo tlačítko.  
+ [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)]typy ovládacích prvků jsou dobře známé identifikátory, které lze použít k označení, jaký druh ovládacího prvku představuje určitý prvek, například pole se seznamem nebo tlačítko.  
   
- Má-li dobře známý identifikátor, usnadňuje zařízením asistenční technologie určit, jaké typy ovládacích prvků jsou k dispozici v [!INCLUDE[TLA#tla_ui](../../../includes/tlasharptla-ui-md.md)] a jak pracovat s ovládacími prvky.  
+ S dobře známý identifikátor usnadňuje asistenční technologie zařízení k určení, jaké typy [!INCLUDE[TLA#tla_ui](../../../includes/tlasharptla-ui-md.md)] ovládacích prvků jsou k dispozici v a jak pracovat s ovládacími prvky.  
   
-<a name="UI_Automation_Control_Type_Requisites"></a>   
-## <a name="ui-automation-control-type-requisites"></a>Požadavky typu ovládacího prvku automatizace uživatelského rozhraní  
- typy ovládacích prvků [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)] poskytují sadu podmínek, které musí poskytovatelé splňovat. Pokud jsou splněny tyto podmínky, může ovládací prvek použít název konkrétního typu ovládacího prvku. Každý typ ovládacího prvku má podmínky pro následující:  
+<a name="UI_Automation_Control_Type_Requisites"></a>
+## <a name="ui-automation-control-type-requisites"></a>Požadavky typu automatizace uživatelského rozhraní  
+ [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)]typy ovládacích prvku poskytují sadu podmínek, které musí poskytovatelé splňovat. Pokud jsou splněny tyto podmínky, ovládací prvek můžete použít konkrétní název typu ovládacího prvku. Každý typ ovládacího prvku má podmínky pro následující:  
   
-- [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] vzory ovládacích prvků – které řídicí vzory musí být podporovány, které vzory ovládacích prvků jsou volitelné a které řídicí vzory nesmí být podporovány ovládacím prvkem.  
+- [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]ovládací vzorky – které řídicí vzorky musí být podporovány, které řídicí vzorky jsou volitelné a které řídicí vzorky nesmí být ovládacím prvkem podporovány.  
   
-- [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] hodnoty vlastností – které hodnoty vlastností jsou podporovány.  
+- [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]hodnoty vlastností – které hodnoty vlastností jsou podporovány.  
   
-- [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] stromové struktury – požadovaná [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] stromová struktura ovládacího prvku.  
+- [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]stromová struktura [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] – požadovaná stromová struktura pro ovládací prvek.  
   
- Když ovládací prvek splňuje podmínky pro určitý typ ovládacího prvku, hodnota vlastnosti <xref:System.Windows.Automation.AutomationElement.AutomationElementInformation.ControlType%2A> bude označovat, že typ ovládacího prvku.  
+ Pokud ovládací prvek splňuje podmínky pro určitý <xref:System.Windows.Automation.AutomationElement.AutomationElementInformation.ControlType%2A> typ ovládacího prvku, hodnota vlastnosti bude označovat tento typ ovládacího prvku.  
   
-<a name="Current_UI_Automation_Control_Types"></a>   
-## <a name="current-ui-automation-control-types"></a>Aktuální typy ovládacích prvků automatizace uživatelského rozhraní  
- Následující seznam obsahuje aktuální sadu [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)]ch typů ovládacích prvků:  
+<a name="Current_UI_Automation_Control_Types"></a>
+## <a name="current-ui-automation-control-types"></a>Aktuální typy ovládacích prvku automatizace uživatelského rozhraní  
+ Následující seznam obsahuje aktuální [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)] sadu typů ovládacích prvku:  
   
 - [Podpora automatizace uživatelského rozhraní pro typ ovládacího prvku tlačítko](ui-automation-support-for-the-button-control-type.md)  
   
@@ -112,6 +112,6 @@ ms.locfileid: "74442624"
   
 - [Podpora automatizace uživatelského rozhraní pro typ ovládacího prvku okno](ui-automation-support-for-the-window-control-type.md)  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Automation.ControlType>

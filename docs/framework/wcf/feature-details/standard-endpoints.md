@@ -2,21 +2,21 @@
 title: Standardní koncové body
 ms.date: 03/30/2017
 ms.assetid: 3fcb4225-addc-44f2-935d-30e4943a8812
-ms.openlocfilehash: 395d910ddabc553cca47dcdd038f44b1470b3455
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 880601664d7602e279c5d022fa37c44914a58772
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61747768"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79184408"
 ---
 # <a name="standard-endpoints"></a>Standardní koncové body
-Koncové body jsou definovány tak, že zadáte adresu, vazba a kontrakt. Další parametry, které lze nastavit v koncovém bodě zahrnují konfiguraci chování, záhlaví a identifikátory URI vychází vstříc požadavkům.  Pro některé typy koncových bodů tyto hodnoty nezměníte. Například vždy používat koncové body metadat systému exchange <xref:System.ServiceModel.Description.IMetadataExchange> kontraktu. Další koncové body, jako například <xref:System.ServiceModel.Description.WebHttpEndpoint> vždy vyžadují chování zadaný koncový bod. Použitelnost koncový bod lze zvýšit tím, že koncové body s použitím výchozích hodnot pro vlastnosti běžně používaných koncového bodu. Standardní koncové body umožňují vývojářům definovat koncový bod, který má výchozí hodnoty nebo pokud jeden nebo více vlastnosti tohoto koncového bodu se nezmění.  Tyto koncové body umožňují jeho používání takové koncového bodu bez nutnosti zadávat informace statické povahy. Standardní koncové body, je možné pro infrastrukturu a aplikaci koncové body.  
+Koncové body jsou definovány zadáním adresy, vazby a smlouvy. Mezi další parametry, které mohou být nastaveny v koncovém bodě, patří konfigurace chování, záhlaví a naslouchání identifikátorů URI.  U určitých typů koncových bodů se tyto hodnoty nemění. Například koncové body výměny metadat <xref:System.ServiceModel.Description.IMetadataExchange> vždy používají smlouvy. Jiné koncové body, <xref:System.ServiceModel.Description.WebHttpEndpoint> například vždy vyžadují zadané chování koncového bodu. Použitelnost koncového bodu lze zlepšit tím, že koncové body s výchozí hodnoty pro běžně používané vlastnosti koncového bodu. Standardní koncové body umožňují vývojáři definovat koncový bod, který má výchozí hodnoty nebo kde se nemění vlastnosti jednoho nebo více koncových bodů.  Tyto koncové body umožňují použít takový koncový bod bez nutnosti zadat informace statické povahy. Standardní koncové body lze použít pro koncové body infrastruktury a aplikace.  
   
 ## <a name="infrastructure-endpoints"></a>Koncové body infrastruktury  
- Služba může zpřístupňují koncové body se některé vlastnosti nejsou explicitně implementovaných Autor služby. Například zpřístupňuje koncový bod výměny metadat <xref:System.ServiceModel.Description.IMetadataExchange> smlouvy, ale jako služba autorem je neimplementují rozhraní, je implementováno WCF. Tyto koncové body infrastruktury mají výchozí hodnoty pro jeden nebo více vlastnosti koncového bodu, z nichž některé mohou být změnit. <xref:System.ServiceModel.Description.ServiceEndpoint.Contract%2A> Vlastnost koncový bod výměny metadat musí být <xref:System.ServiceModel.Description.IMetadataExchange>, ale lze je zadat další vlastnosti, například vazby vývojářem. Koncové body infrastruktury jsou označeny nastavení <xref:System.ServiceModel.Description.ServiceEndpoint.IsSystemEndpoint%2A> vlastnost `true`.  
+ Služba může vystavit koncové body s některými vlastnostmi, které nejsou explicitně implementovány autorem služby. Například koncový bod výměny metadat <xref:System.ServiceModel.Description.IMetadataExchange> zveřejňuje smlouvy, ale jako autor služby neimplementujete toto rozhraní, je implementována WCF. Tyto koncové body infrastruktury mají výchozí hodnoty pro jednu nebo více vlastností koncového bodu, z nichž některé mohou být neměnné. Vlastnost <xref:System.ServiceModel.Description.ServiceEndpoint.Contract%2A> koncového bodu výměny metadat <xref:System.ServiceModel.Description.IMetadataExchange>musí být , zatímco jiné vlastnosti, jako je vazba může být poskytnuta vývojář. Koncové body infrastruktury jsou <xref:System.ServiceModel.Description.ServiceEndpoint.IsSystemEndpoint%2A> identifikovány nastavením vlastnosti `true`.  
   
 ## <a name="application-endpoints"></a>Koncové body aplikace  
- Vývojáři aplikací můžete definovat vlastní standardních koncových bodů, které určují výchozí hodnoty pro adresy, vazby nebo kontraktu. Můžete definovat standardní koncový bod odvozením třídy od <xref:System.ServiceModel.Description.ServiceEndpoint> a nastavení vlastností vhodný koncový bod. Můžete zadat výchozí hodnoty pro vlastnosti, které je možné změnit. Některé vlastnosti budou mít statické hodnoty, které nelze změnit. Následující příklad ukazuje, jak implementovat standardní koncový bod.  
+ Vývojáři aplikací můžete definovat své vlastní standardní koncové body, které určují výchozí hodnoty pro adresu, vazbu nebo smlouvu. Standardní koncový bod definujete odvozením třídy z <xref:System.ServiceModel.Description.ServiceEndpoint> a nastavením příslušných vlastností koncového bodu. Můžete zadat výchozí hodnoty pro vlastnosti, které lze změnit. Některé další vlastnosti budou mít statické hodnoty, které se nemohou změnit. Následující příklad ukazuje, jak implementovat standardní koncový bod.  
   
 ```csharp
 public class CustomEndpoint : ServiceEndpoint
@@ -24,11 +24,11 @@ public class CustomEndpoint : ServiceEndpoint
     public CustomEndpoint()
         : this(string.Empty)
     { }  
-    
+
     public CustomEndpoint(string address)
         : this(address, ContractDescription.GetContract(typeof(ICalculator)))
     { }  
-    
+
     // Create the custom endpoint with a fixed binding
     public CustomEndpoint(string address, ContractDescription contract)
         : base(contract)
@@ -36,13 +36,13 @@ public class CustomEndpoint : ServiceEndpoint
         this.Binding = new BasicHttpBinding();
         this.IsSystemEndpoint = false;
     }
-    
+
     // Definition of the additional property of this endpoint
     public bool Property { get; set; }
 }
 ```
   
- Použít vlastní koncový bod definovaný uživatelem v konfiguračním souboru musí být odvozen ze třídy <xref:System.ServiceModel.Configuration.StandardEndpointElement>, odvoďte třídu z <xref:System.ServiceModel.Configuration.StandardEndpointCollectionElement%602>a zaregistrujte nový standardní koncový bod v oddílu rozšíření, v souboru machine.config nebo v souboru app.config.  <xref:System.ServiceModel.Configuration.StandardEndpointElement> Poskytuje podporu konfigurace pro standardní koncový bod, jak je znázorněno v následujícím příkladu.  
+ Chcete-li použít vlastní koncový bod definovaný uživatelem v <xref:System.ServiceModel.Configuration.StandardEndpointElement>konfiguračním <xref:System.ServiceModel.Configuration.StandardEndpointCollectionElement%602>souboru, musíte odvodit třídu z , odvodit třídu z aplikace a zaregistrovat nový standardní koncový bod v části rozšíření v souboru app.config nebo machine.config.  Poskytuje <xref:System.ServiceModel.Configuration.StandardEndpointElement> podporu konfigurace pro standardní koncový bod, jak je znázorněno v následujícím příkladu.  
   
 ```csharp
 public class CustomEndpointElement : StandardEndpointElement
@@ -103,7 +103,7 @@ public class CustomEndpointElement : StandardEndpointElement
 }
 ```  
   
- <xref:System.ServiceModel.Configuration.StandardEndpointCollectionElement%602> Poskytuje základní typ pro kolekci, která se zobrazí v části <`standardEndpoints`> oddíl konfigurace pro standardní koncový bod.  Následující příklad ukazuje implementaci této třídy.  
+ Poskytuje <xref:System.ServiceModel.Configuration.StandardEndpointCollectionElement%602> typ zálohování pro kolekci, která `standardEndpoints` se zobrazí pod <> části v konfiguraci pro standardní koncový bod.  Následující příklad ukazuje, jak implementovat tuto třídu.  
   
 ```csharp
 public class CustomEndpointCollectionElement : StandardEndpointCollectionElement<CustomEndpoint, CustomEndpointElement>
@@ -112,7 +112,7 @@ public class CustomEndpointCollectionElement : StandardEndpointCollectionElement
 }
 ```
 
-Následující příklad ukazuje, jak zaregistrovat v oddílu rozšíření, je standardní koncový bod.
+Následující příklad ukazuje, jak zaregistrovat standardní koncový bod v části rozšíření.
 
 ```xml  
 <extensions>  
@@ -123,14 +123,14 @@ Následující příklad ukazuje, jak zaregistrovat v oddílu rozšíření, je 
                 Version=1.0.0.0, Culture=neutral, PublicKeyToken=ffffffffffffffff"/>  
 ```  
   
-## <a name="configuring-a-standard-endpoint"></a>Konfigurace je standardní koncový bod  
- Standardní koncové body mohou být přidány do kódu nebo v konfiguraci.  Chcete-li přidat standardní koncový bod v kódu jednoduše vytvořit instanci typu odpovídající standardní koncový bod a přidejte ho k hostiteli služby, jak je znázorněno v následujícím příkladu:  
+## <a name="configuring-a-standard-endpoint"></a>Konfigurace standardního koncového bodu  
+ Standardní koncové body lze přidat v kódu nebo v konfiguraci.  Chcete-li přidat standardní koncový bod v kódu, jednoduše vytvořte instanci příslušného standardního typu koncového bodu a přidejte jej do hostitele služby, jak je znázorněno v následujícím příkladu:  
   
 ```csharp  
 serviceHost.AddServiceEndpoint(new CustomEndpoint());  
 ```  
   
- Chcete-li přidat standardní koncový bod v konfiguraci, přidejte <`endpoint`> element <`service`> element a všechny potřebné nastavení konfigurace v <`standardEndpoints`> element. Následující příklad ukazuje, jak přidat <xref:System.ServiceModel.Discovery.UdpDiscoveryEndpoint>, jeden z standardních koncových bodů, které se dodává s [!INCLUDE[netfx_current_long](../../../../includes/netfx-current-long-md.md)].  
+ Chcete-li přidat standardní koncový bod `endpoint` v konfiguraci, `service` přidejte <> prvek `standardEndpoints` do <> elementu a všechna potřebná nastavení konfigurace v elementu <>. Následující příklad <xref:System.ServiceModel.Discovery.UdpDiscoveryEndpoint>ukazuje, jak přidat jeden ze standardních [!INCLUDE[netfx_current_long](../../../../includes/netfx-current-long-md.md)]koncových bodů, které jsou dodávány s .  
   
 ```xml  
 <services>  
@@ -138,50 +138,50 @@ serviceHost.AddServiceEndpoint(new CustomEndpoint());
     <endpoint isSystemEndpoint="true" kind="udpDiscoveryEndpoint" />  
   </service>  
 </services>  
-<standardEndpoints>    
+<standardEndpoints>
   <udpDiscoveryEndpoint>  
      <standardEndpoint multicastAddress="soap.udp://239.255.255.250:3702" />
   </udpDiscoveryEndpoint>
 </standardEndpoints>
 ```  
   
- Typ standardního koncového bodu určena pomocí atributu kind v <`endpoint`> element. Koncový bod je nakonfigurovaný v rámci <`standardEndpoints`> element. V příkladu výše <xref:System.ServiceModel.Discovery.UdpDiscoveryEndpoint> koncový bod je přidáte a nakonfigurujete. <`udpDiscoveryEndpoint`> Obsahuje element <`standardEndpoint`>, který nastavuje <xref:System.ServiceModel.Discovery.UdpDiscoveryEndpoint.MulticastAddress%2A> vlastnost <xref:System.ServiceModel.Discovery.UdpDiscoveryEndpoint>.  
+ Typ standardního koncového bodu je určen pomocí `endpoint` atributu kind v elementu <>. Koncový bod je konfigurován `standardEndpoints` v rámci <> elementu. Ve výše uvedeném <xref:System.ServiceModel.Discovery.UdpDiscoveryEndpoint> příkladu je přidán a nakonfigurován koncový bod. Prvek `udpDiscoveryEndpoint` <> obsahuje `standardEndpoint` <>, která nastaví <xref:System.ServiceModel.Discovery.UdpDiscoveryEndpoint.MulticastAddress%2A> vlastnost <xref:System.ServiceModel.Discovery.UdpDiscoveryEndpoint>.  
   
-## <a name="standard-endpoints-shipped-with-the-net-framework"></a>Standardní koncové body, které jsou součástí rozhraní .NET Framework  
- Následující tabulka uvádí standardní koncové body, které jsou součástí [!INCLUDE[netfx_current_long](../../../../includes/netfx-current-long-md.md)].  
+## <a name="standard-endpoints-shipped-with-the-net-framework"></a>Standardní koncové body dodávané s rozhraním .NET Framework  
+ V následující tabulce jsou uvedeny [!INCLUDE[netfx_current_long](../../../../includes/netfx-current-long-md.md)]standardní koncové body dodávané s .  
   
  `Mex Endpoint`  
- Standardní koncový bod, který se používá ke zveřejnění metadat služby.  
+ Standardní koncový bod, který se používá k odhalení metadat služby.  
   
  <xref:System.ServiceModel.Discovery.AnnouncementEndpoint>  
- Je standardní koncový bod, který používá services k odesílání zprávy oznámení.  
+ Standardní koncový bod, který používá služby k odesílání zpráv oznámení.  
   
  <xref:System.ServiceModel.Discovery.DiscoveryEndpoint>  
- Je standardní koncový bod, který se používá Services k odesílání zprávy zjišťování.  
+ Standardní koncový bod, který používá služby k odesílání zpráv zjišťování.  
   
  <xref:System.ServiceModel.Discovery.UdpDiscoveryEndpoint>  
- Standardní koncový bod, který je předem nakonfigurovaný pro operace zjišťování přes vícesměrové vysílání UDP vazby.  
+ Standardní koncový bod, který je předem nakonfigurován pro operace zjišťování přes vazbu vícesměrového vysílání UDP.  
   
  <xref:System.ServiceModel.Discovery.UdpAnnouncementEndpoint>  
- Je standardní koncový bod, který používá služby pro odeslání zpráv oznámení UDP vazby.  
+ Standardní koncový bod, který používá služby k odesílání zpráv oznámení prostřednictvím vazby UDP.  
   
  <xref:System.ServiceModel.Discovery.DynamicEndpoint>  
- Standardní koncový bod, který používá protokol WS Discovery k vyhledání adresu koncového bodu dynamicky za běhu.  
+ Standardní koncový bod, který používá WS-Discovery dynamicky najít adresu koncového bodu za běhu.  
   
  <xref:System.ServiceModel.Description.ServiceMetadataEndpoint>  
- Standardní koncový bod výměny metadat.  
+ Standardní koncový bod pro výměnu metadat.  
   
  <xref:System.ServiceModel.Description.WebHttpEndpoint>  
- Standardní koncový bod s <xref:System.ServiceModel.WebHttpBinding> vazby, která automaticky přidá <xref:System.ServiceModel.Description.WebHttpBehavior> chování  
+ Standardní koncový bod <xref:System.ServiceModel.WebHttpBinding> s vazbou, <xref:System.ServiceModel.Description.WebHttpBehavior> která automaticky přidá chování  
   
  <xref:System.ServiceModel.Description.WebScriptEndpoint>  
- Standardní koncový bod s <xref:System.ServiceModel.WebHttpBinding> vazby, která automaticky přidá <xref:System.ServiceModel.Description.WebScriptEnablingBehavior> chování.  
+ Standardní koncový bod <xref:System.ServiceModel.WebHttpBinding> s vazbou, <xref:System.ServiceModel.Description.WebScriptEnablingBehavior> která automaticky přidá chování.  
   
  <xref:System.ServiceModel.Description.WebServiceEndpoint>  
- Standardní koncový bod s <xref:System.ServiceModel.WebHttpBinding> vazby.  
+ Standardní koncový bod <xref:System.ServiceModel.WebHttpBinding> s vazbou.  
   
  <xref:System.ServiceModel.Activities.WorkflowControlEndpoint>  
- Standardní koncový bod, který umožňuje zavolání operace ovládacího prvku s instancí pracovního postupu.  
+ Standardní koncový bod, který umožňuje volat operace řízení na instancích pracovního postupu.  
   
  <xref:System.ServiceModel.Activities.WorkflowHostingEndpoint>  
- Standardní koncový bod, který podporuje vytváření a záložku obnovení pracovního postupu.
+ Standardní koncový bod, který podporuje vytváření pracovních postupů a obnovení záložek.
