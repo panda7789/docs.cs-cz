@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Zobrazení palety barev pomocí komponenty ColorDialog'
+title: 'Postupy: Zobrazení palety barev pomocí součásti ColorDialog'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -14,25 +14,25 @@ helpviewer_keywords:
 - color palettes [Windows Forms], showing in ColorDialog component
 - colors [Windows Forms], showing palettes
 ms.assetid: ee050f61-dbc8-4436-ba22-51360981ab48
-ms.openlocfilehash: ff29df4ecfc90eabe8e3be0e5a6a126858799c16
-ms.sourcegitcommit: 7e129d879ddb42a8b4334eee35727afe3d437952
+ms.openlocfilehash: 0406ef7a32678bd149c0024348a7adf1f0b72926
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66053425"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79141780"
 ---
-# <a name="how-to-show-a-color-palette-with-the-colordialog-component"></a>Postupy: Zobrazení palety barev pomocí komponenty ColorDialog
-[ColorDialog](colordialog-component-windows-forms.md) komponenty paletu barev zobrazí a vrátí vlastnost obsahující barvu uživatel vybral.  
+# <a name="how-to-show-a-color-palette-with-the-colordialog-component"></a>Postupy: Zobrazení palety barev pomocí součásti ColorDialog
+Komponenta [ColorDialog](colordialog-component-windows-forms.md) zobrazí paletu barev a vrátí vlastnost obsahující barvu, kterou uživatel vybral.  
   
-### <a name="to-choose-a-color-using-the-colordialog-component"></a>Vybrat barvu pomocí komponenty ColorDialog  
+### <a name="to-choose-a-color-using-the-colordialog-component"></a>Výběr barvy pomocí komponenty ColorDialog  
   
-1. Zobrazit dialog box pomocí <xref:System.Windows.Forms.CommonDialog.ShowDialog%2A> metody.  
+1. Zobrazení dialogového okna <xref:System.Windows.Forms.CommonDialog.ShowDialog%2A> pomocí metody.  
   
-2. Použití <xref:System.Windows.Forms.DialogResult> a určí, jak bylo ukončeno dialogových oken.  
+2. Pomocí <xref:System.Windows.Forms.DialogResult> vlastnosti určete, jak bylo dialogové okno uzavřeno.  
   
-3. Použití <xref:System.Windows.Forms.ColorDialog.Color%2A> vlastnost <xref:System.Windows.Forms.ColorDialog> součást pro nastavení vybrané barvy.  
+3. Použijte <xref:System.Windows.Forms.ColorDialog.Color%2A> vlastnost komponenty <xref:System.Windows.Forms.ColorDialog> k nastavení zvolené barvy.  
   
-     V následujícím příkladu <xref:System.Windows.Forms.Button> ovládacího prvku <xref:System.Windows.Forms.Control.Click> otevře obslužné rutiny události <xref:System.Windows.Forms.ColorDialog> komponenty. Pokud barvu je zvolená a uživatel klikne na tlačítko **OK**, <xref:System.Windows.Forms.Button> barva pozadí ovládacího prvku nastavená na vybrané barvy. Příklad předpokládá, že váš formulář má <xref:System.Windows.Forms.Button> ovládacího prvku a <xref:System.Windows.Forms.ColorDialog> komponenty.  
+     V níže uvedeném <xref:System.Windows.Forms.Button> příkladu <xref:System.Windows.Forms.Control.Click> ovládací ho <xref:System.Windows.Forms.ColorDialog> ovládacího prvku otevře součást. Když je vybrána barva a **OK**uživatel <xref:System.Windows.Forms.Button> klepne na OK , je barva pozadí ovládacího prvku nastavena na vybranou barvu. Příklad předpokládá, že formulář <xref:System.Windows.Forms.Button> má <xref:System.Windows.Forms.ColorDialog> ovládací prvek a součást.  
   
     ```vb  
     Private Sub Button1_Click(ByVal sender As System.Object, _  
@@ -55,7 +55,7 @@ ms.locfileid: "66053425"
   
     ```cpp  
     private:  
-       void button1_Click(System::Object ^ sender,   
+       void button1_Click(System::Object ^ sender,
           System::EventArgs ^ e)  
        {  
           if(colorDialog1->ShowDialog() == DialogResult::OK)  
@@ -65,18 +65,18 @@ ms.locfileid: "66053425"
        }  
     ```  
   
-     (Visual C#, Visual C++) Umístěte následující kód do konstruktoru formuláře k registraci obslužné rutiny události.  
+     (Visual C#, Visual C++) Umístěte následující kód do konstruktoru formuláře pro registraci obslužné rutiny události.  
   
     ```csharp  
     this.button1.Click += new System.EventHandler(this.button1_Click);  
     ```  
   
     ```cpp  
-    this->button1->Click +=   
+    this->button1->Click +=
        gcnew System::EventHandler(this, &Form1::button1_Click);  
     ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Forms.ColorDialog>
-- [Komponenta ColorDialog](colordialog-component-windows-forms.md)
+- [ColorDialog – komponenta](colordialog-component-windows-forms.md)

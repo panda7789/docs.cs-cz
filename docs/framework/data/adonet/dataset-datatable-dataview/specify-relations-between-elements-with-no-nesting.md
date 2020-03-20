@@ -2,21 +2,21 @@
 title: Určení relací mezi elementy bez vnoření
 ms.date: 03/30/2017
 ms.assetid: e31325da-7691-4d33-acf4-99fccca67006
-ms.openlocfilehash: 3aa9976ccde426eeda1d869164409c5235a629fe
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.openlocfilehash: bee427c6cdf76792773ea827c8772b276ff29c31
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73040049"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79150815"
 ---
 # <a name="specify-relations-between-elements-with-no-nesting"></a>Určení relací mezi elementy bez vnoření
-Nejsou-li prvky vnořené, nejsou vytvořeny žádné implicitní vztahy. Můžete však explicitně zadat vztahy mezi prvky, které nejsou vnořeny pomocí anotace **msdata: Relationship** .  
+Pokud prvky nejsou vnořené, jsou vytvořeny žádné implicitní vztahy. Můžete však explicitně určit vztahy mezi prvky, které nejsou vnořeny pomocí anotace **msdata:Relationship.**  
   
- Následující příklad ukazuje schéma XML, ve kterém je zadána anotace **msdata: Relationship** mezi prvky **Order** a **OrderDetail** , které nejsou vnořené. Poznámka **msdata: Relationship** je zadána jako podřízený element elementu **Schema** .  
+ Následující příklad ukazuje schéma XML, ve kterém je zadána poznámka **msdata:Relationship** mezi prvky **Order** a **OrderDetail,** které nejsou vnořeny. Anotace **msdata:Relationship** je určena jako podřízený prvek elementu **Schéma.**  
   
 ```xml  
-<xs:schema id="MyDataSet" xmlns=""   
-             xmlns:xs="http://www.w3.org/2001/XMLSchema"   
+<xs:schema id="MyDataSet" xmlns=""
+             xmlns:xs="http://www.w3.org/2001/XMLSchema"
              xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">  
  <xs:element name="MyDataSet" msdata:IsDataSet="true">  
   <xs:complexType>  
@@ -44,27 +44,27 @@ Nejsou-li prvky vnořené, nejsou vytvořeny žádné implicitní vztahy. Může
    <xs:annotation>  
      <xs:appinfo>  
        <msdata:Relationship name="OrdOrderDetailRelation"  
-                            msdata:parent="Order"   
-                            msdata:child="OrderDetail"   
-                            msdata:parentkey="OrderNumber"   
+                            msdata:parent="Order"
+                            msdata:child="OrderDetail"
+                            msdata:parentkey="OrderNumber"
                             msdata:childkey="OrderNo"/>  
      </xs:appinfo>  
   </xs:annotation>  
 </xs:schema>  
 ```  
   
- Proces mapování schématu XSD (XML Schema Definition Language) vytvoří <xref:System.Data.DataSet> s tabulkami **Order** a **OrderDetail** a relací zadanou mezi těmito dvěma tabulkami, jak je znázorněno níže.  
+ Proces mapování schématu schématu schématu schématu schématu XML <xref:System.Data.DataSet> (XSD) vytvoří tabulky **S Order** a **OrderDetail** a relaci určenou mezi těmito dvěma tabulkami, jak je znázorněno níže.  
   
 ```text  
 RelationName: OrdOrderDetailRelation  
 ParentTable: Order  
-ParentColumns: OrderNumber   
+ParentColumns: OrderNumber
 ChildTable: OrderDetail  
-ChildColumns: OrderNo   
+ChildColumns: OrderNo
 Nested: False  
 ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Generování relací datové sady ze schématu XML (XSD)](generating-dataset-relations-from-xml-schema-xsd.md)
 - [Mapování omezení schématu XML (XSD) k omezením datové sady](mapping-xml-schema-xsd-constraints-to-dataset-constraints.md)

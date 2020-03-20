@@ -1,20 +1,18 @@
 ---
-title: Pokyny k migraci programovací model Windows Workflow Foundation (WF)
+title: Pokyny pro migraci nadace Windows Workflow Foundation (WF)
 ms.date: 06/19/2017
 ms.assetid: 1da7f5ff-5a67-44ba-b165-f3e5de008e4a
-ms.openlocfilehash: 65117453320be9cce3c135408ad0748ff6843f53
-ms.sourcegitcommit: 9c54866bcbdc49dbb981dd55be9bbd0443837aa2
+ms.openlocfilehash: 5a6ad061392631ca003e47b249cd2e331c1c68fa
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/14/2020
-ms.locfileid: "77215265"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79142469"
 ---
-# <a name="windows-workflow-foundation-wf-migration-guidance"></a>Pokyny k migraci programovací model Windows Workflow Foundation (WF)
+# <a name="windows-workflow-foundation-wf-migration-guidance"></a>Pokyny pro migraci nadace Windows Workflow Foundation (WF)
 
-Tato část obsahuje témata, která se týkají migrace pracovních postupů z předchozích verzí programovací model Windows Workflow Foundation (WF).
+Tato část obsahuje témata, která se zabývají migrací pracovních postupů z předchozích verzí služby Windows Workflow Foundation (WF).
 
-[Pokyny k migraci](migration-guidance.md)   
-Obsahuje seznam odkazů na dokumenty White Paper v tématech o migraci.
+[Pokyny pro migraci](migration-guidance.md) Obsahuje seznam odkazů na dokumenty White Paper na témata migrace.
 
-[Použití aktivit WF .NET Framework 3,0 v .NET Framework 4 s aktivitou spolupráce](net-framework-3-0-wf-in-net-framework-4-interop.md)   
-Obsahuje informace o tom, jak pomocí aktivity spolupráce vkládat aktivity .NET Framework 3,5 v rámci pracovního postupu .NET Framework 4.6.1.
+[Použití aktivit rozhraní .NET Framework 3.0 WF v rozhraní .NET Framework 4 s aktivitou Interop](net-framework-3-0-wf-in-net-framework-4-interop.md) Obsahuje informace o použití aktivity Interop k vložení aktivit rozhraní .NET Framework 3.5 do pracovního postupu rozhraní .NET Framework 4.6.1.

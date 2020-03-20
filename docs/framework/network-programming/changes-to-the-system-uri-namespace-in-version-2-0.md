@@ -1,23 +1,23 @@
 ---
-title: Změny v oboru názvů System.Uri ve verzi 2.0
+title: Změny oboru názvů System.Uri ve verzi 2.0
 ms.date: 03/30/2017
 ms.assetid: 35883fe9-2d09-4d8b-80ca-cf23a941e459
 ms.openlocfilehash: 987010b8367069e8089df3f809d23f258bb68f2b
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "61642760"
 ---
-# <a name="changes-to-the-systemuri-namespace-in-version-20"></a>Změny v oboru názvů System.Uri ve verzi 2.0
+# <a name="changes-to-the-systemuri-namespace-in-version-20"></a>Změny oboru názvů System.Uri ve verzi 2.0
 
-Bylo provedeno několik změn <xref:System.Uri?displayProperty=nameWithType> třídy. Tyto změny oprava nesprávné chování, rozšířeného použitelnost a zvýšené zabezpečení.
+Ve <xref:System.Uri?displayProperty=nameWithType> třídě bylo provedeno několik změn. Tyto změny opravily nesprávné chování, lepší použitelnost a rozšířené zabezpečení.
 
-## <a name="obsolete-and-deprecated-members"></a>Zastaralé a již zastaralé členy
+## <a name="obsolete-and-deprecated-members"></a>Zastaralí a zastaralí členové
 
  Konstruktory:
 
-- Všechny konstruktory, které mají `dontEscape` parametru.
+- Všechny konstruktory, `dontEscape` které mají parametr.
 
  Metody:
 
@@ -39,38 +39,38 @@ Bylo provedeno několik změn <xref:System.Uri?displayProperty=nameWithType> tř
 
 ## <a name="changes"></a>Změny
 
-- Pro schémata identifikátoru URI, které se ví, že není nutné část dotazu (souboru, protokolu ftp a dalších) "?" znak je vždy uvozen řídicími znaky a není považováno za začátek <xref:System.Uri.Query%2A> část.
+- U schémat URI, o kterých je známo, že nemají část dotazu (soubor, ftp a další), <xref:System.Uri.Query%2A> je znak '?' vždy uvozen a není považován za začátek dílu.
 
-- Implicitní souboru identifikátory URI (ve formátu `c:\directory\file@name.txt`), fragment znak (#) je vždy uvozen řídicími znaky, pokud je požadována úplná unescaping nebo <xref:System.Uri.LocalPath%2A> je `true`.
+- Pro implicitní soubor URI `c:\directory\file@name.txt`(formuláře ) znak fragmentu ('#') je vždy <xref:System.Uri.LocalPath%2A> uvozen, pokud není požadováno úplné neuvození nebo není `true`.
 
-- Byla odebrána podpora UNC hostname; byla přijata specifikaci IDN představující mezinárodní názvy hostitelů.
+- Podpora názvu hostitele UNC byla odebrána. byla přijata specifikace IDN pro zastupování mezinárodních názvů hostitelů.
 
-- <xref:System.Uri.LocalPath%2A> vždy vrátí řetězec zcela bez řídících znaků.
+- <xref:System.Uri.LocalPath%2A>vždy vrátí zcela unescaped řetězec.
 
-- <xref:System.Uri.ToString%2A> není unescape s uvozovacími znaky "%", "?", nebo znak "#".
+- <xref:System.Uri.ToString%2A>neunescape uvozený znak %, '?' nebo '#'.
 
-- <xref:System.Uri.Equals%2A> nyní zahrnuje <xref:System.Uri.Query%2A> část v kontrole rovnosti.
+- <xref:System.Uri.Equals%2A>nyní zahrnuje <xref:System.Uri.Query%2A> část kontroly rovnosti.
 
-- Operátory "=="a"! =" jsou přepsat a že propojení se <xref:System.Uri.Equals%2A> metody.
+- Operátory "==" a "!=" jsou <xref:System.Uri.Equals%2A> přepsány a propojeny s metodou.
 
-- <xref:System.Uri.IsLoopback%2A> nyní poskytuje konzistentní výsledky.
+- <xref:System.Uri.IsLoopback%2A>nyní vytváří konzistentní výsledky.
 
-- Identifikátor URI "`file:///path`" je již přeloženy do `file://path`.
+- Identifikátor URI`file:///path`" " již `file://path`není přeložen do .
 
-- "#" nyní považována za zakončením název hostitele. To znamená `http://contoso.com#fragment` je nyní převést na `http://contoso.com/#fragment`.
+- "#" je nyní rozpoznán jako zakončení názvu hostitele. To znamená, `http://contoso.com#fragment` že je `http://contoso.com/#fragment`nyní převeden na .
 
-- Opravili jsme chybu při kombinování základní identifikátor URI s fragmentem.
+- Byla opravena chyba při kombinování základního identifikátoru URI s fragmentem.
 
-- Chyba v <xref:System.Uri.HostNameType%2A> vyřešen.
+- Chyba je <xref:System.Uri.HostNameType%2A> opravena.
 
-- Chyba při analýze NNTP opravena.
+- Chyba v analýzě NNTP je pevná.
 
-- Identifikátor URI ve formátu HTTP:contoso.com nyní výjimku analýzy.
+- Identifikátor URI formuláře HTTP:contoso.com nyní vyvolá výjimku analýzy.
 
-- Rozhraní správně zpracovává informací o uživateli v identifikátoru URI.
+- Rozhraní Framework správně zpracovává userinfo v uri.
 
-- Komprese cesty identifikátoru URI je vyřešen tak, aby přerušení identifikátor URI nelze procházení systému souborů kořenem.
+- Komprese cesty URI je opravena tak, že přerušený identifikátor URI nemůže procházet systémem souborů nad kořenem.
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Uri?displayProperty=nameWithType>

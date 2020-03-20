@@ -1,19 +1,19 @@
 ---
-title: 'Postupy: Načtení žádosti WebResponse specifické pro protokol, která odpovídá žádosti WebRequest'
+title: 'Postupy: Načtení položky WebResponse specifické pro protokol, která odpovídá položce WebRequest'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: d8c90785-f16b-42a5-8439-ed2f731b2ba8
 ms.openlocfilehash: 0cb2d11306f52df767d8c053e8ab745696bb8e47
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "71048142"
 ---
-# <a name="how-to-retrieve-a-protocol-specific-webresponse-that-matches-a-webrequest"></a>Postupy: Načtení žádosti WebResponse specifické pro protokol, která odpovídá žádosti WebRequest
-Tento příklad ukazuje, jak načíst WebResponse specifickou pro protokol, který odpovídá WebRequest.  
+# <a name="how-to-retrieve-a-protocol-specific-webresponse-that-matches-a-webrequest"></a>Postupy: Načtení položky WebResponse specifické pro protokol, která odpovídá položce WebRequest
+Tento příklad ukazuje, jak načíst webovou odezvu specifickou pro protokol, která odpovídá požadavku WebRequest.  
   
 ## <a name="example"></a>Příklad  
   
@@ -30,8 +30,8 @@ Dim resp As WebResponse = req.GetResponse()
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
  Tento příklad vyžaduje:  
   
-- Odkazuje na obor názvů **System.NET** .  
+- Odkazy na **System.Net** oboru názvů.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Žádosti o data](requesting-data.md)

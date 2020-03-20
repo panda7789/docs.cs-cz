@@ -1,25 +1,25 @@
 ---
-title: Záložky – WF
+title: Záložky - WF
 ms.date: 03/30/2017
 ms.assetid: 9b51a346-09ae-455c-a70a-e2264ddeb9e2
-ms.openlocfilehash: a15a28cc39a4227765c238a6f2b86c72197f1a39
-ms.sourcegitcommit: 9ee6cd851b6e176a5811ea28ed0d5935c71950f9
+ms.openlocfilehash: c5bd8130ee623599e80014777baf92986c3b6969
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68868919"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79183013"
 ---
 # <a name="bookmarks"></a>Záložky
-Záložky jsou mechanismus, který umožňuje aktivitě dočkat na vstup bez držení do vlákna pracovního postupu. Když aktivita signalizuje, že čeká na podnět, může vytvořit záložku. To znamená, že spuštění aktivity by nemělo být považováno za dokončené, a to i v případě, že právě prováděná <xref:System.Activities.Bookmark>metoda (která vytvořila) vrátí.  
+Záložky jsou mechanismus, který umožňuje aktivitě pasivně čekat na vstup bez držení na vlákno pracovního postupu. Když aktivita signalizuje, že čeká na podnět, může vytvořit záložku. To znamená, že modul runtime, že provádění aktivity by neměly být považovány <xref:System.Activities.Bookmark>za úplné i v případě, že aktuálně spuštěná metoda (která vytvořila ) vrátí.  
   
 ## <a name="bookmark-basics"></a>Základy záložek  
- <xref:System.Activities.Bookmark> Představuje bod, ve kterém může být provádění obnoveno (a přes který je možné doručit vstup) v rámci instance pracovního postupu. <xref:System.Activities.Bookmark> Obvykle je předána název a externí (hostitelský nebo příponový) kód, který je zodpovědný za obnovení záložky s relevantními daty. Když je obnovený, modul runtime pracovního postupu <xref:System.Activities.BookmarkCallback> naplánuje delegáta, který byl <xref:System.Activities.Bookmark> přidružen k danému okamžiku vytvoření. <xref:System.Activities.Bookmark>  
+ A <xref:System.Activities.Bookmark> představuje bod, ve kterém lze obnovit provádění (a jehož prostřednictvím může být doručen vstup) v rámci instance pracovního postupu. Obvykle <xref:System.Activities.Bookmark> je uveden název a externí (hostitelský nebo rozšiřující) kód je zodpovědný za obnovení záložky s příslušnými daty. <xref:System.Activities.Bookmark> Při obnovení, za běhu pracovního postupu <xref:System.Activities.BookmarkCallback> naplánuje delegáta, který byl přidružen, že <xref:System.Activities.Bookmark> v době jeho vytvoření.  
   
-## <a name="bookmark-options"></a>Možnosti záložky  
- Třída určuje typ, který se má vytvořit. <xref:System.Activities.Bookmark> <xref:System.Activities.BookmarkOptions> Možné nevzájemně vyloučené hodnoty jsou <xref:System.Activities.BookmarkOptions.None>, <xref:System.Activities.BookmarkOptions.MultipleResume>a <xref:System.Activities.BookmarkOptions.NonBlocking>. Použijte <xref:System.Activities.BookmarkOptions.None>výchozí hodnotu při <xref:System.Activities.Bookmark> vytváření, která má být obnovena přesně jednou. Použijte <xref:System.Activities.BookmarkOptions.MultipleResume> při<xref:System.Activities.Bookmark> vytváření, která se dá obnovit víckrát. Použijte <xref:System.Activities.BookmarkOptions.NonBlocking> při<xref:System.Activities.Bookmark> vytváření, která nemusí být nikdy obnovena. Na rozdíl od záložek vytvořených pomocí <xref:System.Activities.BookmarkOptions>výchozího <xref:System.Activities.BookmarkOptions.NonBlocking> nastavení záložky nebrání dokončení aktivity.  
+## <a name="bookmark-options"></a>Možnosti záložek  
+ Třída <xref:System.Activities.BookmarkOptions> určuje typ vytvářeného. <xref:System.Activities.Bookmark> Možné hodnoty, které se <xref:System.Activities.BookmarkOptions.None>vzájemně <xref:System.Activities.BookmarkOptions.MultipleResume>nevylučují, jsou , a <xref:System.Activities.BookmarkOptions.NonBlocking>. Použití <xref:System.Activities.BookmarkOptions.None>, výchozí, při <xref:System.Activities.Bookmark> vytváření, který se očekává, že bude obnovena přesně jednou. Použijte <xref:System.Activities.BookmarkOptions.MultipleResume> při <xref:System.Activities.Bookmark> vytváření, které lze obnovit vícekrát. Použijte <xref:System.Activities.BookmarkOptions.NonBlocking> při <xref:System.Activities.Bookmark> vytváření, které nemusí být nikdy obnovena. Na rozdíl od záložek <xref:System.Activities.BookmarkOptions.NonBlocking> vytvořených pomocí výchozího nastavení <xref:System.Activities.BookmarkOptions>záložky nebrání dokončení aktivity.  
   
-## <a name="bookmark-resumption"></a>Pokračování záložky  
- Záložky lze obnovit pomocí kódu mimo pracovní postup pomocí jednoho z <xref:System.Activities.WorkflowApplication.ResumeBookmark%2A> přetížení. V tomto příkladu `ReadLine` je vytvořena aktivita. Po spuštění `ReadLine` aktivita <xref:System.Activities.Bookmark>vytvoří, zaregistruje zpětné volání a <xref:System.Activities.Bookmark> potom počká, až se obnoví. Když je obnovena, `ReadLine` Aktivita přiřadí data, která byla předána <xref:System.Activities.Bookmark> do svého <xref:System.Activities.Activity%601.Result%2A> argumentu.  
+## <a name="bookmark-resumption"></a>Obnovení záložky  
+ Záložky lze obnovit kódmimo pracovní postup pomocí <xref:System.Activities.WorkflowApplication.ResumeBookmark%2A> jednoho z přetížení. V tomto příkladu je vytvořena aktivita. `ReadLine` Při spuštění aktivity `ReadLine` vytvoří <xref:System.Activities.Bookmark>, zaregistruje zpětné volání a potom <xref:System.Activities.Bookmark> čeká na obnovení. Po obnovení aktivita `ReadLine` přiřadí data, která byla <xref:System.Activities.Bookmark> předána <xref:System.Activities.Activity%601.Result%2A> s jeho argument.  
   
 ```csharp  
 public sealed class ReadLine : NativeActivity<string>  
@@ -30,12 +30,12 @@ public sealed class ReadLine : NativeActivity<string>
     protected override void Execute(NativeActivityContext context)  
     {  
         // Create a Bookmark and wait for it to be resumed.  
-        context.CreateBookmark(BookmarkName.Get(context),   
+        context.CreateBookmark(BookmarkName.Get(context),
             new BookmarkCallback(OnResumeBookmark));  
     }  
   
-    // NativeActivity derived activities that do asynchronous operations by calling   
-    // one of the CreateBookmark overloads defined on System.Activities.NativeActivityContext   
+    // NativeActivity derived activities that do asynchronous operations by calling
+    // one of the CreateBookmark overloads defined on System.Activities.NativeActivityContext
     // must override the CanInduceIdle property and return true.  
     protected override bool CanInduceIdle  
     {  
@@ -51,7 +51,7 @@ public sealed class ReadLine : NativeActivity<string>
 }  
 ```  
   
- V tomto příkladu je vytvořen pracovní postup, který používá `ReadLine` aktivitu ke shromáždění jména uživatele a jeho zobrazení v okně konzoly. Hostitelská aplikace provede skutečnou práci při shromažďování vstupu a předá ji do pracovního postupu obnovením <xref:System.Activities.Bookmark>.  
+ V tomto příkladu je vytvořen `ReadLine` pracovní postup, který používá aktivitu ke shromáždění jména uživatele a jeho zobrazení v okně konzoly. Hostitelská aplikace provádí skutečnou práci shromažďování vstupu a předá jej <xref:System.Activities.Bookmark>pracovnímu postupu obnovením .  
   
 ```csharp  
 Variable<string> name = new Variable<string>  
@@ -111,7 +111,7 @@ wfApp.ResumeBookmark("UserName", Console.ReadLine());
 syncEvent.WaitOne();  
 ```  
   
- Když se <xref:System.Activities.Bookmark> aktivita spustí, vytvoří se pojmenovaná `UserName` a potom počká, až se záložka obnoví. `ReadLine` Hostitel shromáždí požadovaná data a pak obnoví <xref:System.Activities.Bookmark>. Pracovní postup obnoví, zobrazí název a pak dokončí. Všimněte si, že v souvislosti s pokračováním záložky není vyžadován žádný synchronizační kód. Může být obnovena pouze v případě, že je pracovní postup nečinný a pracovní postup není nečinný, <xref:System.Activities.WorkflowApplication.ResumeBookmark%2A> volání zablokuje, dokud pracovní postup nezůstane nečinný. <xref:System.Activities.Bookmark>  
+ Když `ReadLine` je aktivita spuštěna, <xref:System.Activities.Bookmark> `UserName` vytvoří pojmenovaný a pak čeká na záložku, která má být obnovena. Hostitel shromažďuje požadovaná data a potom <xref:System.Activities.Bookmark>obnoví . Pracovní postup se obnoví, zobrazí název a potom se dokončí. Všimněte si, že žádný kód synchronizace je vyžadován s ohledem na obnovení záložky. A <xref:System.Activities.Bookmark> lze obnovit pouze v případě, že pracovní postup je nečinný <xref:System.Activities.WorkflowApplication.ResumeBookmark%2A> a pokud pracovní postup není nečinný, volání bloky, dokud se pracovní postup stane nečinný.  
   
-## <a name="bookmark-resumption-result"></a>Výsledek pokračování záložky  
- <xref:System.Activities.WorkflowApplication.ResumeBookmark%2A>Vrátí hodnotu <xref:System.Activities.BookmarkResumptionResult> výčtu, která určuje výsledky žádosti o obnovení záložky. Možné vrácené hodnoty jsou <xref:System.Activities.BookmarkResumptionResult.Success>, <xref:System.Activities.BookmarkResumptionResult.NotReady>a <xref:System.Activities.BookmarkResumptionResult.NotFound>. Hostitelé a rozšíření mohou tuto hodnotu použít k určení, jak pokračovat.
+## <a name="bookmark-resumption-result"></a>Výsledek obnovení záložky  
+ <xref:System.Activities.WorkflowApplication.ResumeBookmark%2A>vrátí <xref:System.Activities.BookmarkResumptionResult> hodnotu výčtu označující výsledky požadavku na obnovení záložky. Možné vrácené <xref:System.Activities.BookmarkResumptionResult.Success>hodnoty <xref:System.Activities.BookmarkResumptionResult.NotReady>jsou <xref:System.Activities.BookmarkResumptionResult.NotFound>, a . Hostitelé a rozšíření můžete tuto hodnotu použít k určení, jak postupovat.

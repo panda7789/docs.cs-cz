@@ -2,30 +2,30 @@
 title: Příklad nastavení hromadného kopírování
 ms.date: 03/30/2017
 ms.assetid: d4dde6ac-b8b6-4593-965a-635c8fb2dadb
-ms.openlocfilehash: 28fa5cde1dcbaf9f38450116a56fc11d904edc1c
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.openlocfilehash: 80350d112da03c00e422432ce271ca5ea3ac58ab
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73040254"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79148839"
 ---
 # <a name="bulk-copy-example-setup"></a>Příklad nastavení hromadného kopírování
-Třídu <xref:System.Data.SqlClient.SqlBulkCopy> lze použít k zápisu dat pouze do tabulek SQL Server. Ukázky kódu uvedené v tomto tématu používají ukázkovou databázi SQL Server **AdventureWorks**. Aby nedošlo ke změně kódů stávajících tabulek, zapište data do tabulek, které je třeba vytvořit jako první.  
+Třídu <xref:System.Data.SqlClient.SqlBulkCopy> lze použít k zápisu dat pouze do tabulek serveru SQL Server. Ukázky kódu zobrazené v tomto tématu používají ukázkovou databázi serveru SQL Server **AdventureWorks**. Chcete-li se vyhnout změně existující tabulky ukázky kódu zápis dat do tabulek, které je nutné vytvořit jako první.  
   
- Tabulky **BulkCopyDemoMatchingColumns** a **BulkCopyDemoDifferentColumns** jsou založené na tabulce **AdventureWorks** **produkce. Products** . V ukázkách kódu, které používají tyto tabulky, jsou data přidána z tabulky **produkčních produktů** do jedné z těchto ukázkových tabulek. Tabulka **BulkCopyDemoDifferentColumns** se používá, když Ukázka ukazuje, jak namapovat sloupce ze zdrojových dat do cílové tabulky. **BulkCopyDemoMatchingColumns** se používá pro většinu ostatních vzorků.  
+ **BulkCopyDemoMatchingColumns** a **BulkCopyDemoDifferentColumns** tabulky jsou založeny na **AdventureWorks** **Production.Products** tabulky. Ve vzorcích kódu, které používají tyto tabulky, jsou data přidána z tabulky **Production.Products** do jedné z těchto ukázkových tabulek. **BulkCopyDemoDifferentColumns** tabulka se používá, když ukázka ukazuje, jak mapovat sloupce ze zdrojových dat do cílové tabulky; **BulkCopyDemoMatchingColumns** se používá pro většinu ostatních vzorků.  
   
- Několik ukázek kódu ukazuje, jak použít jednu <xref:System.Data.SqlClient.SqlBulkCopy> třídu k zápisu do více tabulek. Pro tyto ukázky se jako cílové tabulky používají tabulky **BulkCopyDemoOrderHeader** a **BulkCopyDemoOrderDetail** . Tyto tabulky jsou založené na tabulkách **Sales. SalesOrderHeader** a **Sales. SalesOrderDetail** v **AdventureWorks**.  
+ Několik ukázek kódu ukazuje, jak <xref:System.Data.SqlClient.SqlBulkCopy> použít jednu třídu k zápisu do více tabulek. Pro tyto ukázky **bulkcopydemoorderheader** a **bulkcopydemoorderdetail** tabulky se používají jako cílové tabulky. Tyto tabulky jsou založeny na tabulkách **Sales.SalesOrderHeader** a **Sales.SalesOrderDetail** v **adventureworks**.  
   
 > [!NOTE]
-> Ukázky kódu **SqlBulkCopy** jsou k dispozici k předvedení syntaxe pouze použití **SqlBulkCopy** . Pokud se zdrojové a cílové tabulky nacházejí ve stejné instanci SQL Server, je snazší a rychlejší použít příkaz Transact-SQL `INSERT … SELECT` ke zkopírování dat.  
+> **SqlBulkCopy** kód ukázky jsou k dispozici k předvedení syntaxe pro použití **pouze SqlBulkCopy.** Pokud jsou zdrojové a cílové tabulky umístěny ve stejné instanci serveru SQL `INSERT … SELECT` Server, je jednodušší a rychlejší zkopírovat data příkazu Transact-SQL.  
   
 ## <a name="table-setup"></a>Nastavení tabulky  
- Chcete-li vytvořit tabulky potřebné pro správné spuštění ukázek kódu, je nutné spustit následující příkazy jazyka Transact-SQL v databázi SQL Server.  
+ Chcete-li vytvořit tabulky nezbytné pro správné spuštění ukázek kódu, je nutné spustit následující příkazy Transact-SQL v databázi serveru SQL Server.  
   
 ```sql
 USE AdventureWorks  
   
-IF EXISTS (SELECT * FROM dbo.sysobjects   
+IF EXISTS (SELECT * FROM dbo.sysobjects
  WHERE id = object_id(N'[dbo].[BulkCopyDemoMatchingColumns]')  
  AND OBJECTPROPERTY(id, N'IsUserTable') = 1)  
     DROP TABLE [dbo].[BulkCopyDemoMatchingColumns]  
@@ -38,7 +38,7 @@ CREATE TABLE [dbo].[BulkCopyDemoMatchingColumns]([ProductID] [int] IDENTITY(1,1)
     [ProductID] ASC  
 ) ON [PRIMARY]) ON [PRIMARY]  
   
-IF EXISTS (SELECT * FROM dbo.sysobjects   
+IF EXISTS (SELECT * FROM dbo.sysobjects
  WHERE id = object_id(N'[dbo].[BulkCopyDemoDifferentColumns]')  
  AND OBJECTPROPERTY(id, N'IsUserTable') = 1)  
     DROP TABLE [dbo].[BulkCopyDemoDifferentColumns]  
@@ -51,7 +51,7 @@ CREATE TABLE [dbo].[BulkCopyDemoDifferentColumns]([ProdID] [int] IDENTITY(1,1) N
     [ProdID] ASC  
 ) ON [PRIMARY]) ON [PRIMARY]  
   
-IF EXISTS (SELECT * FROM dbo.sysobjects   
+IF EXISTS (SELECT * FROM dbo.sysobjects
  WHERE id = object_id(N'[dbo].[BulkCopyDemoOrderHeader]')  
  AND OBJECTPROPERTY(id, N'IsUserTable') = 1)  
     DROP TABLE [dbo].[BulkCopyDemoOrderHeader]  
@@ -64,7 +64,7 @@ CREATE TABLE [dbo].[BulkCopyDemoOrderHeader]([SalesOrderID] [int] IDENTITY(1,1) 
     [SalesOrderID] ASC  
 ) ON [PRIMARY]) ON [PRIMARY]  
   
-IF EXISTS (SELECT * FROM dbo.sysobjects   
+IF EXISTS (SELECT * FROM dbo.sysobjects
  WHERE id = object_id(N'[dbo].[BulkCopyDemoOrderDetail]')  
  AND OBJECTPROPERTY(id, N'IsUserTable') = 1)  
     DROP TABLE [dbo].[BulkCopyDemoOrderDetail]  
@@ -81,7 +81,7 @@ CREATE TABLE [dbo].[BulkCopyDemoOrderDetail]([SalesOrderID] [int] NOT NULL,
 ) ON [PRIMARY]) ON [PRIMARY]  
 ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Operace hromadného kopírování na SQL Serveru](bulk-copy-operations-in-sql-server.md)
 - [Přehled ADO.NET](../ado-net-overview.md)

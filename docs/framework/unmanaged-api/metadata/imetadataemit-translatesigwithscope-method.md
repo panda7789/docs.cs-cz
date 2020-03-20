@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 47915d33-b7bf-409e-b484-4ee1df15de22
 topic_type:
 - apiref
-ms.openlocfilehash: cea84f47a5289df4bc9c50381e18d7077b3b8dad
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 2662af41fbd2cdc3ce8a6df1e036dfc5b22ff6a3
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74440470"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79175548"
 ---
 # <a name="imetadataemittranslatesigwithscope-method"></a>IMetaDataEmit::TranslateSigWithScope – metoda
 Importuje sestavení do aktuálního oboru a získá nový podpis metadat pro sloučený obor.  
@@ -28,65 +28,65 @@ Importuje sestavení do aktuálního oboru a získá nový podpis metadat pro sl
 ## <a name="syntax"></a>Syntaxe  
   
 ```cpp  
-HRESULT TranslateSigWithScope (   
-    [in]  IMetaDataAssemblyImport   *pAssemImport,   
-    [in]  const void                *pbHashValue,   
-    [in]  ULONG                     cbHashValue,   
-    [in]  IMetaDataImport           *import,   
-    [in]  PCCOR_SIGNATURE           pbSigBlob,   
+HRESULT TranslateSigWithScope (
+    [in]  IMetaDataAssemblyImport   *pAssemImport,
+    [in]  const void                *pbHashValue,
+    [in]  ULONG                     cbHashValue,
+    [in]  IMetaDataImport           *import,
+    [in]  PCCOR_SIGNATURE           pbSigBlob,
     [in]  ULONG                     cbSigBlob,  
-    [in]  IMetaDataAssemblyEmit     *pAssemEmit,   
-    [in]  IMetaDataEmit             *emit,   
-    [out] PCOR_SIGNATURE            pvTranslatedSig,   
-    [in]  ULONG                     cbTranslatedSigMax,   
-    [out] ULONG                     *pcbTranslatedSig   
+    [in]  IMetaDataAssemblyEmit     *pAssemEmit,
+    [in]  IMetaDataEmit             *emit,
+    [out] PCOR_SIGNATURE            pvTranslatedSig,
+    [in]  ULONG                     cbTranslatedSigMax,
+    [out] ULONG                     *pcbTranslatedSig
 );  
 ```  
   
 ## <a name="parameters"></a>Parametry  
  `pAssemImport`  
- pro Rozhraní pro import sestavení (kde je definován podpis).  
+ [v] Rozhraní pro sestavení importu (kde je definován podpis).  
   
  `pbHashValue`  
- pro Objekt BLOB algoritmu hash pro sestavení.  
+ [v] Objekt blob hash pro sestavení.  
   
  `cbHashValue`  
- pro Počet bajtů v `pbHashValue`.  
+ [v] Počet bajtů v `pbHashValue`.  
   
  `import`  
- pro Rozhraní pro obor metadat pro import.  
+ [v] Rozhraní pro rozsah metadat importu.  
   
  `pbSigBlob`  
- pro Podpis, který se má importovat  
+ [v] Podpis, který má být importován.  
   
  `cbSigBlob`  
- pro Velikost `pbSigBlob`v bajtech.  
+ [v] Velikost v bajtů `pbSigBlob`.  
   
  `pAssemEmit`  
- pro Rozhraní pro export sestavení.  
+ [v] Rozhraní pro sestavení exportu.  
   
  `emit`  
- pro Rozhraní pro obor metadat pro export.  
+ [v] Rozhraní pro rozsah exportu metadat.  
   
  `pvTranslatedSig`  
- mimo Vyrovnávací paměť pro uchování přeloženého objektu BLOB signatury.  
+ [out] Vyrovnávací paměť pro uložení objektu blob přeloženého podpisu.  
   
  `cbTranslatedSigMax`  
- pro Kapacita `pvTranslatedSig`v bajtech.  
+ [v] Kapacita v bajtů . `pvTranslatedSig`  
   
  `pcbTranslatedSig`  
- mimo Počet skutečných bajtů v přeloženém podpisu.  
+ [out] Počet skutečných bajtů v přeloženém podpisu.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Hlavička:** Cor. h  
+ **Záhlaví:** Kor.h.  
   
- **Knihovna:** Používá se jako prostředek v knihovně MSCorEE. dll.  
+ **Knihovna:** Používá se jako prostředek v souboru MSCorEE.dll  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [IMetaDataAssemblyEmit – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyemit-interface.md)
 - [IMetaDataAssemblyImport – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyimport-interface.md)

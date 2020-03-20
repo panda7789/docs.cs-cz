@@ -5,17 +5,17 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: d6aa8474-7bde-48f7-949d-20dc38a1625b
-ms.openlocfilehash: 2a001ac8b3d4b8cd9618b3ced7bdf578ebae2e22
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 02d7f94259cc56513be404c5539ca7015d5f3533
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70786595"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79151530"
 ---
 # <a name="adding-data-to-a-datatable"></a>Přidání dat do datové tabulky
-Po vytvoření <xref:System.Data.DataTable> a definování struktury pomocí sloupců a omezení můžete do tabulky přidat nové řádky dat. Chcete-li přidat nový řádek, deklarujte novou proměnnou jako <xref:System.Data.DataRow>typ. Při volání <xref:System.Data.DataTable.NewRow%2A> metody je vrácen nový objekt DataRow. Objekt **DataTable** potom vytvoří objekt **DataRow** na základě struktury tabulky, jak je definováno v <xref:System.Data.DataColumnCollection>.  
+Po vytvoření <xref:System.Data.DataTable> a definování jeho struktury pomocí sloupců a omezení můžete do tabulky přidat nové řádky dat. Chcete-li přidat nový řádek, deklarujte novou proměnnou jako typ <xref:System.Data.DataRow>. Nový **Objekt DataRow** je vrácena <xref:System.Data.DataTable.NewRow%2A> při volání metody. **DataTable** pak vytvoří **Objekt DataRow** na základě struktury tabulky, <xref:System.Data.DataColumnCollection>jak je definováno .  
   
- Následující příklad ukazuje, jak vytvořit nový řádek voláním metody **NewRow** .  
+ Následující příklad ukazuje, jak vytvořit nový řádek voláním **NewRow** metoda.  
   
 ```vb  
 Dim workRow As DataRow = workTable.NewRow()  
@@ -25,7 +25,7 @@ Dim workRow As DataRow = workTable.NewRow()
 DataRow workRow = workTable.NewRow();  
 ```  
   
- Následně můžete pomocí indexu nebo názvu sloupce manipulovat s nově přidaným řádkem, jak je znázorněno v následujícím příkladu.  
+ Nově přidaný řádek pak můžete manipulovat pomocí indexu nebo názvu sloupce, jak je znázorněno v následujícím příkladu.  
   
 ```vb  
 workRow("CustLName") = "Smith"  
@@ -37,7 +37,7 @@ workRow["CustLName"] = "Smith";
 workRow[1] = "Smith";  
 ```  
   
- Po vložení dat do nového řádku je použita metoda **Add** k přidání řádku do <xref:System.Data.DataRowCollection>, který je zobrazen v následujícím kódu.  
+ Po vložení dat do nového řádku se metoda **Add** použije <xref:System.Data.DataRowCollection>k přidání řádku do následujícího kódu.  
   
 ```vb  
 workTable.Rows.Add(workRow)  
@@ -47,7 +47,7 @@ workTable.Rows.Add(workRow)
 workTable.Rows.Add(workRow);  
 ```  
   
- Můžete také zavolat metodu **Add** pro přidání nového řádku předáním pole hodnot, <xref:System.Object>jak je znázorněno v následujícím příkladu.  
+ Můžete také volat **Add** metoda přidat nový řádek předáním v poli <xref:System.Object>hodnot, zadali jako , jak je znázorněno v následujícím příkladu.  
   
 ```vb  
 workTable.Rows.Add(new Object() {1, "Smith"})  
@@ -57,9 +57,9 @@ workTable.Rows.Add(new Object() {1, "Smith"})
 workTable.Rows.Add(new Object[] {1, "Smith"});  
 ```  
   
- Předání pole hodnot, které je zadáno jako **objekt**, do metody **Add** vytvoří nový řádek v tabulce a nastaví hodnoty jejich sloupce na hodnoty v poli objektů. Všimněte si, že hodnoty v poli jsou podle pořadí, ve kterém jsou uvedeny v tabulce, porovnány se sloupci.  
+ Předáním pole hodnot zadaných jako **Object** **vytvoříte** nový řádek uvnitř tabulky a nastavíte jeho hodnoty sloupců na hodnoty v poli objektů. Všimněte si, že hodnoty v poli jsou spárovány se sloupci na základě pořadí, ve kterém se zobrazují v tabulce.  
   
- Následující příklad přidá 10 řádků do tabulky nově vytvořené **zákazníky** .  
+ Následující příklad přidá 10 řádků do nově vytvořené tabulky **Zákazníci.**  
   
 ```vb  
 Dim workRow As DataRow  
@@ -76,7 +76,7 @@ Next
 ```csharp  
 DataRow workRow;  
   
-for (int i = 0; i <= 9; i++)   
+for (int i = 0; i <= 9; i++)
 {  
   workRow = workTable.NewRow();  
   workRow[0] = i;  
@@ -85,7 +85,7 @@ for (int i = 0; i <= 9; i++)
 }  
 ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Data.DataColumnCollection>
 - <xref:System.Data.DataRow>

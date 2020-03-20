@@ -2,19 +2,19 @@
 title: 'Postupy: Vytvoření služby, která vrací libovolná data pomocí modelu programování webových služeb HTTP WCF'
 ms.date: 03/30/2017
 ms.assetid: 0283955a-b4ae-458d-ad9e-6fbb6f529e3d
-ms.openlocfilehash: 41d9f0e53401bcd6b57b04a38e76af5ddb9fb4cc
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: c85ab6725876a2d523a18c817ce3fd89f0d2285a
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73976103"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79184487"
 ---
 # <a name="how-to-create-a-service-that-returns-arbitrary-data-using-the-wcf-web-http-programming-model"></a>Postupy: Vytvoření služby, která vrací libovolná data pomocí modelu programování webových služeb HTTP WCF
-Vývojáři někdy musí mít plnou kontrolu nad tím, jak se data vracejí z operace služby. Toto je případ, kdy operace služby musí vracet data ve formátu, který není podporován službou WCF. Toto téma popisuje použití programovacího modelu webové služby HTTP WCF k vytvoření takové služby. Tato služba má jednu operaci, která vrací datový proud.  
+Někdy vývojáři musí mít plnou kontrolu nad tím, jak jsou data vrácena z operace služby. To je případ, kdy operace služby musí vrátit data ve formátu, který není podporován WCF. Toto téma popisuje použití WCF WEB HTTP programovací model k vytvoření takové služby. Tato služba má jednu operaci, která vrací datový proud.  
   
-### <a name="to-implement-the-service-contract"></a>Implementace kontraktu služby  
+### <a name="to-implement-the-service-contract"></a>K provedení smlouvy o poskytování služeb  
   
-1. Definujte kontrakt služby. Kontrakt se nazývá `IImageServer` a má jednu metodu nazvanou `GetImage`, která vrací <xref:System.IO.Stream>.  
+1. Definujte servisní smlouvu. Smlouva je `IImageServer` volána a `GetImage` má jednu metodu, která vrací <xref:System.IO.Stream>.  
   
     ```csharp  
     [ServiceContract]  
@@ -25,9 +25,9 @@ Vývojáři někdy musí mít plnou kontrolu nad tím, jak se data vracejí z op
         }  
     ```  
   
-     Vzhledem k tomu, že metoda vrací <xref:System.IO.Stream>, WCF předpokládá, že operace má úplnou kontrolu nad bajty vracené z operace služby a neplatí pro vrácená data formátování.  
+     Vzhledem k <xref:System.IO.Stream>tomu, že metoda vrátí , WCF předpokládá, že operace má úplnou kontrolu nad bajty, které jsou vráceny z operace služby a použije žádné formátování dat, která je vrácena.  
   
-2. Implementujte kontrakt služby. Kontrakt má pouze jednu operaci (`GetImage`). Tato metoda generuje rastrový obrázek a pak ho uloží do <xref:System.IO.MemoryStream> ve formátu. jpg. Tato operace pak tento datový proud vrátí volajícímu.  
+2. Implementujte servisní smlouvu. Smlouva má pouze jednu operaci (`GetImage`). Tato metoda generuje bitmapu a pak <xref:System.IO.MemoryStream> ji uložte do formátu .jpg. Operace pak vrátí tento datový proud volajícímu.  
   
     ```csharp
     public class Service : IImageServer
@@ -51,36 +51,36 @@ Vývojáři někdy musí mít plnou kontrolu nad tím, jak se data vracejí z op
     }
     ```  
   
-     Všimněte si druhého na poslední řádek kódu: `WebOperationContext.Current.OutgoingResponse.ContentType = "image/jpeg";`  
+     Všimněte si předposledního řádku kódu:`WebOperationContext.Current.OutgoingResponse.ContentType = "image/jpeg";`  
   
-     Tím se nastaví záhlaví typu obsahu na `"image/jpeg"`. I když tento příklad ukazuje, jak vrátit soubor. jpg, může být upraven tak, aby vracel libovolný typ dat, který je požadován, v jakémkoli formátu. Operace musí načíst nebo vygenerovat data a pak ji zapsat do datového proudu.  
+     Tím nastavíte záhlaví `"image/jpeg"`typu obsahu na . Přestože tato ukázka ukazuje, jak vrátit soubor JPG, lze jej upravit tak, aby vrátil libovolný typ dat, který je požadován, v libovolném formátu. Operace musí načíst nebo generovat data a pak je zapsat do datového proudu.  
   
-### <a name="to-host-the-service"></a>Hostování služby  
+### <a name="to-host-the-service"></a>Chcete-li službu hostit  
   
-1. Vytvořte konzolovou aplikaci, která bude hostovat službu.  
+1. Vytvořte konzolovou aplikaci pro hostování služby.  
   
     ```csharp
     class Program  
     {  
         static void Main(string[] args)  
         {  
-        }   
+        }
     }  
     ```  
   
-2. Vytvořte proměnnou, která bude uchovávat základní adresu pro službu v rámci metody `Main`.  
+2. Vytvořte proměnnou pro uložení základní adresy `Main` pro službu v rámci metody.  
   
     ```csharp
     string baseAddress = "http://" + Environment.MachineName + ":8000/Service";  
     ```  
   
-3. Vytvořte instanci <xref:System.ServiceModel.ServiceHost> pro službu, která určuje třídu služby a základní adresu.  
+3. Vytvořte <xref:System.ServiceModel.ServiceHost> instanci pro službu určující třídu služby a základní adresu.  
   
     ```csharp
     ServiceHost host = new ServiceHost(typeof(Service), new Uri(baseAddress));  
     ```  
   
-4. Přidejte koncový bod pomocí <xref:System.ServiceModel.WebHttpBinding> a <xref:System.ServiceModel.Description.WebHttpBehavior>.  
+4. Přidejte koncový bod <xref:System.ServiceModel.WebHttpBinding> pomocí <xref:System.ServiceModel.Description.WebHttpBehavior>a .  
   
     ```csharp  
     host.AddServiceEndpoint(typeof(IImageServer), new WebHttpBinding(), "").Behaviors.Add(new WebHttpBehavior());  
@@ -92,7 +92,7 @@ Vývojáři někdy musí mít plnou kontrolu nad tím, jak se data vracejí z op
     host.Open();  
     ```  
   
-6. Počkejte, dokud uživatel nestiskne klávesu ENTER a službu ukončí.  
+6. Počkejte, až uživatel stiskne klávesu ENTER a ukončí službu.  
   
     ```csharp
     Console.WriteLine("Service is running");  
@@ -103,9 +103,9 @@ Vývojáři někdy musí mít plnou kontrolu nad tím, jak se data vracejí z op
   
 ### <a name="to-call-the-raw-service-using-internet-explorer"></a>Volání nezpracované služby pomocí aplikace Internet Explorer  
   
-1. Spusťte službu, měli byste vidět následující výstup služby. `Service is running Press ENTER to close the host`  
+1. Spusťte službu, měli byste vidět následující výstup ze služby. `Service is running Press ENTER to close the host`  
   
-2. Otevřete Internet Explorer a zadejte `http://localhost:8000/Service/GetImage?width=50&height=40` měli byste vidět žlutý obdélník s modrou úhlopříčnou čárou prostřednictvím středu.  
+2. Otevřete aplikaci `http://localhost:8000/Service/GetImage?width=50&height=40` Internet Explorer a zadejte, měli byste vidět žlutý obdélník s modrou diagonální čárou přes střed.  
   
 ## <a name="example"></a>Příklad  
  Následuje úplný seznam kódu pro toto téma.  
@@ -173,8 +173,8 @@ namespace RawImageService
   
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
   
-- Při kompilování ukázkového referenčního kódu System. ServiceModel. dll a System. ServiceModel. Web. dll.  
+- Při kompilaci odkazu na ukázkový kód System.ServiceModel.dll a System.ServiceModel.Web.dll.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Programovací model webových služeb HTTP WCF](../../../../docs/framework/wcf/feature-details/wcf-web-http-programming-model.md)

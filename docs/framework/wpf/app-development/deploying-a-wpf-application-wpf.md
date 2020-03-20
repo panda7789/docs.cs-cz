@@ -5,121 +5,121 @@ helpviewer_keywords:
 - WPF applications [WPF], deployment
 - deployment [WPF], applications
 ms.assetid: 12cadca0-b32c-4064-9a56-e6a306dcc76d
-ms.openlocfilehash: 9d4b7dd0464960441410d8ff2a196f0912354e5f
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: 54d14503a0f65bb50f2dfb14d40af3b47d51589c
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76741941"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79186315"
 ---
 # <a name="deploy-a-wpf-application"></a>Nasazení aplikace WPF
 
-Po sestavení aplikací Windows Presentation Foundation (WPF) je nutné je nasadit. Windows a .NET Framework zahrnují několik technologií nasazení. Technologie nasazení, která se používá k nasazení aplikace WPF, závisí na typu aplikace. Toto téma poskytuje stručný přehled každé technologie nasazení a způsobu jejich použití ve spojení s požadavky nasazení každého typu aplikace WPF.
+Po spuštění aplikací Windows Presentation Foundation (WPF) je třeba je nasadit. Systém Windows a rozhraní .NET Framework zahrnují několik technologií nasazení. Technologie nasazení, která se používá k nasazení aplikace WPF, závisí na typu aplikace. Toto téma obsahuje stručný přehled jednotlivých technologií nasazení a způsob jejich použití ve spojení s požadavky na nasazení každého typu aplikace WPF.
 
-<a name="Deployment_Technologies"></a>   
+<a name="Deployment_Technologies"></a>
 ## <a name="deployment-technologies"></a>Technologie nasazení  
- Windows a .NET Framework zahrnují několik technologií nasazení, včetně:  
+ Systém Windows a rozhraní .NET Framework zahrnují několik technologií nasazení, včetně:  
   
 - Nasazení XCopy.  
   
-- Nasazení Instalační služba systému Windows.  
+- Nasazení Instalační služby systému Windows.  
   
-- Nasazení ClickOnce.  
+- ClickOnce nasazení.  
   
-<a name="XCopy_Deployment"></a>   
+<a name="XCopy_Deployment"></a>
 ### <a name="xcopy-deployment"></a>Nasazení XCopy  
- XCopy nasazování odkazuje na použití programu příkazového řádku XCopy ke kopírování souborů z jednoho umístění do druhého. Nasazení XCopy je vhodné za následujících okolností:  
+ Nasazení XCopy označuje použití programu příkazového řádku XCopy ke kopírování souborů z jednoho umístění do druhého. Nasazení XCopy je vhodné za následujících okolností:  
   
-- Aplikace je samostatná. Není nutné aktualizovat klienta, aby běžel.  
+- Aplikace je samostatná. Není nutné aktualizovat klienta ke spuštění.  
   
-- Soubory aplikace musí být přesunuty z jednoho umístění do druhého, například z umístění sestavení (místní disk, sdílená složka UNC atd.) do umístění pro publikování (web, sdílená složka UNC atd.).  
+- Soubory aplikací musí být přesunuty z jednoho umístění do jiného, například z umístění sestavení (místní disk, sdílená složka UNC a tak dále) do umístění publikování (web, sdílená složka UNC a tak dále).  
   
-- Aplikace nevyžaduje integraci prostředí (zástupce v nabídce Start, ikona pracovní plochy atd.).  
+- Aplikace nevyžaduje integraci prostředí (zástupce nabídky Start, ikona na ploše a tak dále).  
   
- I když je příkaz XCopy vhodný pro jednoduché scénáře nasazení, je omezen, pokud jsou požadovány složitější možnosti nasazení. Konkrétně použití příkazu XCopy často vystává režii při vytváření, spouštění a údržbě skriptů pro správu nasazení robustním způsobem. Kromě toho XCopy nepodporuje správu verzí, odinstalaci ani vrácení změn.  
+ Přestože XCopy je vhodný pro jednoduché scénáře nasazení, je omezena, pokud jsou požadovány složitější možnosti nasazení. Zejména pomocí XCopy často vznikne režie pro vytváření, provádění a údržbu skriptů pro správu nasazení robustním způsobem. Kromě toho XCopy nepodporuje správu verzí, odinstalace nebo vrácení zpět.  
   
-<a name="Windows_Installer"></a>   
+<a name="Windows_Installer"></a>
 ### <a name="windows-installer"></a>Instalační služba systému Windows  
- Instalační služba systému Windows umožňuje, aby se aplikace zabalí jako samostatné spustitelné soubory, které je možné snadno distribuovat klientům a spustit. Kromě toho je Instalační služba systému Windows nainstalován se systémem Windows a umožňuje integraci s plochou, v nabídce Start a na ovládacím panelu programy.  
+ Instalační služba systému Windows umožňuje sbalit aplikace jako samostatné spustitelné soubory, které lze snadno distribuovat klientům a spouštět je. Instalační služba systému Windows je navíc nainstalována se systémem Windows a umožňuje integraci s plochou, nabídkou Start a ovládacím panelem Programy.  
   
- Instalační služba systému Windows zjednodušuje instalaci a odinstalaci aplikací, ale neposkytuje vybavení pro zajištění aktuálnosti nainstalovaných aplikací z hlediska správy verzí.  
+ Instalační služba systému Windows zjednodušuje instalaci a odinstalaci aplikací, ale neposkytuje zařízení pro zajištění toho, aby nainstalované aplikace byly z hlediska správy verzí udržovány v aktuálním stavu.  
   
- Další informace o Instalační služba systému Windows najdete v tématu [nasazení Instalační služba systému Windows](/visualstudio/deployment/deploying-applications-services-and-components#create-an-installer-package-windows-desktop).
+ Další informace o Instalační službě systému Windows naleznete v tématu [Nasazení Instalační služby systému Windows](/visualstudio/deployment/deploying-applications-services-and-components#create-an-installer-package-windows-desktop).
   
-<a name="ClickOnce_Deployment"></a>   
-### <a name="clickonce-deployment"></a>ClickOnce – nasazení  
- ClickOnce umožňuje nasazení aplikace webového stylu pro jiné než webové aplikace. Aplikace se publikují na webové nebo souborové servery a nasazují se z nich. I když ClickOnce nepodporuje celou škálu funkcí klienta, které aplikace Instalační služba systému Windows instalovat, podporuje podmnožinu, která zahrnuje následující:  
+<a name="ClickOnce_Deployment"></a>
+### <a name="clickonce-deployment"></a>Nasazení clickonce  
+ ClickOnce umožňuje nasazení aplikací ve webovém stylu pro jiné než webové aplikace. Aplikace jsou publikovány a nasazeny z webových nebo souborových serverů. Přestože ClickOnce nepodporuje celou řadu klientských funkcí, které aplikace nainstalované instalačníslužbou systému Windows, podporují podmnožinu, která obsahuje následující:  
   
-- Integrace pomocí nabídky Start a ovládacích panelů programy.  
+- Integrace s nabídkou Start a ovládacím panelem Programy.  
   
 - Správa verzí, vrácení zpět a odinstalace.  
   
-- Online režim instalace, který vždy spustí aplikaci z umístění nasazení.  
+- Režim instalace online, který vždy spustí aplikaci z umístění nasazení.  
   
 - Automatické aktualizace při vydání nových verzí.  
   
 - Registrace přípon souborů.  
   
- Další informace o ClickOnce najdete v tématu [zabezpečení a nasazení ClickOnce](/visualstudio/deployment/clickonce-security-and-deployment).  
+ Další informace o clickonce naleznete v [tématu ClickOnce Security and Deployment](/visualstudio/deployment/clickonce-security-and-deployment).  
   
-<a name="Deploying_WPF_Applications"></a>   
+<a name="Deploying_WPF_Applications"></a>
 ## <a name="deploying-wpf-applications"></a>Nasazení aplikací WPF  
- Možnosti nasazení pro aplikaci WPF závisí na typu aplikace. V perspektivě nasazení má WPF tři významné typy aplikací:  
+ Možnosti nasazení pro aplikaci WPF závisí na typu aplikace. Z hlediska nasazení wpf má tři významné typy aplikací:  
   
 - Samostatné aplikace.  
   
-- [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] aplikace pouze s označením.  
+- Aplikace pouze [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] pro značky.  
   
-- Aplikace prohlížeče XAML (XBAP)  
+- Aplikace prohlížeče XAML (XBAPs).  
   
-<a name="Deploying_Standalone_Applications"></a>   
+<a name="Deploying_Standalone_Applications"></a>
 ### <a name="deploying-standalone-applications"></a>Nasazení samostatných aplikací  
- Samostatné aplikace jsou nasazeny buď pomocí ClickOnce, nebo Instalační služba systému Windows. V obou případech samostatné aplikace vyžadují úplný vztah důvěryhodnosti pro spuštění. K samostatným aplikacím, které jsou nasazeny pomocí Instalační služba systému Windows, se automaticky udělí úplný vztah důvěryhodnosti. Samostatným aplikacím, které jsou nasazeny pomocí technologie ClickOnce, se automaticky neudělí úplný vztah důvěryhodnosti. Místo toho ClickOnce zobrazí dialogové okno upozornění zabezpečení, které uživatelé musí přijmout před instalací samostatné aplikace. V případě přijetí se samostatná aplikace nainstaluje a udělí Plná důvěra. V takovém případě není samostatná aplikace nainstalována.  
+ Samostatné aplikace se nasazují pomocí ClickOnce nebo Instalační služby systému Windows. V obou směrech vyžadují samostatné aplikace ke spuštění úplnou důvěryhodnost. Úplný vztah důvěryhodnosti je automaticky udělen samostatným aplikacím, které jsou nasazeny pomocí Instalační služby systému Windows. Samostatné aplikace, které jsou nasazeny pomocí ClickOnce nejsou automaticky udělena úplná důvěryhodnost. Místo toho ClickOnce zobrazí dialogové okno upozornění zabezpečení, které uživatelé musí přijmout před instalací samostatné aplikace. Pokud je přijata, samostatná aplikace je nainstalována a udělena úplná důvěryhodnost. Pokud tomu tak není, není nainstalována samostatná aplikace.  
   
-<a name="Deploying_Markup_Only_XAML_Applications"></a>   
-### <a name="deploying-markup-only-xaml-applications"></a>Nasazení aplikací XAML pouze s označením  
- Stránky [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] pouze s označením jsou obvykle publikovány na webové servery, například HTML stránky a lze je zobrazit pomocí aplikace Internet Explorer. Stránky [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] pouze s označením jsou spouštěny v izolovaném prostoru zabezpečení s částečnou důvěryhodností s omezeními, která jsou definována sadou oprávnění zóny Internetu. To poskytuje ekvivalentní bezpečnostní izolovaný prostor (sandbox) pro webové aplikace založené na HTML.  
+<a name="Deploying_Markup_Only_XAML_Applications"></a>
+### <a name="deploying-markup-only-xaml-applications"></a>Nasazení aplikací XAML pouze pro značky  
+ Stránky pouze [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] pro označení jsou obvykle publikovány na webových serverech, jako jsou stránky HTML, a lze je zobrazit pomocí aplikace Internet Explorer. Stránky pouze [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] pro značky jsou spuštěny v izolovaném prostoru zabezpečení s částečnou důvěryhodností s omezeními, která jsou definována sadou oprávnění zóny Internet. To poskytuje ekvivalentní izolovaného prostoru zabezpečení webových aplikací založených na html.  
   
- Další informace o zabezpečení pro aplikace WPF najdete v tématu [zabezpečení](../security-wpf.md).  
+ Další informace o zabezpečení aplikací WPF naleznete v [tématu Zabezpečení](../security-wpf.md).  
   
- Do místního systému souborů lze pomocí příkazu XCopy nebo Instalační služba systému Windows nainstalovat pouze stránky [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] pouze s označením. Tyto stránky lze zobrazit pomocí aplikace Internet Explorer nebo Průzkumníka Windows.  
+ Stránky pouze [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] pro označení lze nainstalovat do místního systému souborů pomocí xcopy nebo Instalační služby systému Windows. Tyto stránky lze zobrazit pomocí aplikace Internet Explorer nebo Průzkumníka Windows.  
   
- Další informace o XAML naleznete v tématu [XAML Overview (WPF)](../../../desktop-wpf/fundamentals/xaml.md).  
+ Další informace o XAML naleznete v tématu [Přehled XAML (WPF)](../../../desktop-wpf/fundamentals/xaml.md).  
   
-<a name="Deploying_XAML_Browser_Applications"></a>   
+<a name="Deploying_XAML_Browser_Applications"></a>
 ### <a name="deploying-xaml-browser-applications"></a>Nasazení aplikací prohlížeče XAML  
- XBAP jsou zkompilované aplikace, které vyžadují nasazení následujících tří souborů:  
+ XBAPs jsou kompilované aplikace, které vyžadují nasazení následujících tří souborů:  
   
-- *ApplicationName*. exe: spustitelný soubor aplikace sestavení.  
+- *ApplicationName*.exe: Soubor aplikace spustitelného sestavení.  
   
-- *ApplicationName*. XBAP: manifest nasazení.  
+- *ApplicationName*.xbap: Manifest nasazení.  
   
-- *ApplicationName*. exe. manifest: manifest aplikace.  
+- *ApplicationName*.exe.manifest: Manifest aplikace.  
   
 > [!NOTE]
-> Další informace o nasazení a manifestech aplikací naleznete v tématu [sestavování aplikace WPF](building-a-wpf-application-wpf.md).  
+> Další informace o nasazení a manifesty aplikací naleznete [v tématu vytváření wpf aplikace](building-a-wpf-application-wpf.md).  
   
- Tyto soubory jsou vytvářeny, když je vytvořena XBAP. Další informace najdete v tématu [Postup: vytvoření nového projektu aplikace WPF Browser](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/bb628663(v=vs.100)). Podobně jako stránky [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] pouze pro označení jsou aplikace XBAP obvykle publikovány na webovém serveru a zobrazovány pomocí aplikace Internet Explorer.  
+ Tyto soubory jsou vytvářeny při xbap je sestaven. Další informace naleznete v [tématu How to: Create a New WPF Browser Application Project](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/bb628663(v=vs.100)). Podobně jako stránky [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] pouze se značkami jsou xbaps obvykle publikovány na webovém serveru a zobrazeny pomocí aplikace Internet Explorer.  
   
- Aplikace XBAP lze nasadit do klientů pomocí kterékoli z technik nasazení. Technologie ClickOnce se však doporučuje, protože poskytuje následující možnosti:  
+ XBAPs lze nasadit do klientů pomocí některé ho nasazení techniky. ClickOnce se však doporučuje, protože poskytuje následující funkce:  
   
-1. Automatické aktualizace, když je publikována nová verze.  
+1. Automatické aktualizace při publikování nové verze.  
   
-2. Oprávnění ke zvýšení oprávnění pro aplikaci XBAP běžící s úplným vztahem důvěryhodnosti.  
+2. Oprávnění ke zvýšení oprávnění pro XBAP spuštěná s úplným vztahem důvěryhodnosti.  
   
- Ve výchozím nastavení ClickOnce publikuje soubory aplikace s příponou. deploy. Může to být problematické, ale je možné ho zakázat. Další informace najdete v tématu [problémy s konfigurací serveru a klienta v nasazeních ClickOnce](/visualstudio/deployment/server-and-client-configuration-issues-in-clickonce-deployments).  
+ Ve výchozím nastavení ClickOnce publikuje soubory aplikace s příponou .deploy. To může být problematické, ale může být zakázáno. Další informace naleznete [v tématu Problémy s konfigurací serveru a klienta v tématu ClickOnce Deployments](/visualstudio/deployment/server-and-client-configuration-issues-in-clickonce-deployments).  
   
- Další informace o nasazení aplikací prohlížeče XAML (XBAP) naleznete v tématu [Přehled aplikací prohlížeče WPF XAML](wpf-xaml-browser-applications-overview.md).  
+ Další informace o nasazení aplikací prohlížeče XAML (XBAPs) naleznete v [tématu Přehled aplikací prohlížeče WPF XAML](wpf-xaml-browser-applications-overview.md).  
   
-<a name="Installing__NET_Framework_3_0"></a>   
+<a name="Installing__NET_Framework_3_0"></a>
 ## <a name="installing-the-net-framework"></a>Instalace rozhraní .NET Framework  
- Chcete-li spustit aplikaci WPF, musí být na klientovi nainstalována aplikace Microsoft .NET Framework. Internet Explorer automaticky zjišťuje, zda jsou klienti nainstalovány s .NET Framework při zobrazení aplikací hostovaných v prohlížeči WPF. Pokud .NET Framework není nainstalován, aplikace Internet Explorer vyzve uživatele k jeho instalaci.  
+ Chcete-li spustit aplikaci WPF, musí být v klientovi nainstalována architektura Microsoft .NET Framework. Aplikace Internet Explorer automaticky zjistí, zda jsou klienti nainstalováni pomocí rozhraní .NET Framework při prohlížení aplikací hostovaných v prohlížeči WPF. Pokud rozhraní .NET Framework není nainstalováno, aplikace Internet Explorer vyzve uživatele k jeho instalaci.  
   
- Aby bylo možné zjistit, zda .NET Framework nainstalováno, obsahuje aplikace Internet Explorer aplikaci zaváděcího nástroje, která je registrována jako záložní obslužná rutina MIME (Multipurpose Multipurpose Internet Mail Extensions) pro soubory obsahu s následujícími příponami:. XAML,. XPS,. XBAP. a. Application. Pokud přejdete na tyto typy souborů a .NET Framework není nainstalován v klientovi, aplikace zaváděcího nástroje požaduje oprávnění k její instalaci. Pokud není k dispozici oprávnění, .NET Framework ani aplikace nainstalována nejsou.  
+ Chcete-li zjistit, zda je nainstalována rozhraní .NET Framework, obsahuje aplikace Internet Explorer zaváděcí aplikaci, která je registrována jako záložní obslužná rutina víceúčelových rozšíření Internet Mail Extensions (MIME) pro soubory obsahu s následujícími rozšířeními: .xaml, XPS, .xbap a .application. Pokud přejdete na tyto typy souborů a rozhraní .NET Framework není v klientovi nainstalováno, aplikace zaváděcího nástroje požádá o oprávnění k jeho instalaci. Pokud oprávnění není k dispozici, není nainstalována rozhraní .NET Framework ani aplikace.  
   
- Pokud je udělené oprávnění, Internet Explorer stáhne a nainstaluje .NET Framework pomocí Microsoft Background Intelligent Transfer Service (BITS). Po úspěšné instalaci .NET Framework se původně požadovaný soubor otevře v novém okně prohlížeče.  
+ Pokud je oprávnění uděleno, aplikace Internet Explorer stáhne a nainstaluje rozhraní .NET Framework pomocí služby INTELIGENTNÍ PŘENOS NA POZADÍ společnosti Microsoft (BITS). Po úspěšné instalaci rozhraní .NET Framework je původně požadovaný soubor otevřen v novém okně prohlížeče.  
   
- Další informace najdete v tématu [nasazení .NET Framework a aplikací](../../deployment/index.md).  
+ Další informace naleznete [v tématu Nasazení rozhraní .NET Framework a aplikací](../../deployment/index.md).  
   
 ## <a name="see-also"></a>Viz také
 

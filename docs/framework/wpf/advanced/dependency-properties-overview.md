@@ -1,6 +1,6 @@
 ---
-title: Přehled vlastností závislosti
-description: Vlastnost, která je zajištěna systémem vlastností WPF, je známá jako vlastnost závislosti. Tento přehled popisuje systém vlastností WPF a možnosti vlastnosti závislosti.
+title: Přehled vlastností závislostí
+description: Vlastnost, která je zálohována systémem vlastností WPF, se označuje jako vlastnost závislosti. Tento přehled popisuje systém vlastností WPF a možnosti vlastnosti závislosti.
 ms.date: 06/06/2018
 dev_langs:
 - csharp
@@ -14,78 +14,78 @@ helpviewer_keywords:
 - dependency properties [WPF]
 - resources [WPF], references to
 ms.assetid: d119d00c-3afb-48d6-87a0-c4da4f83dee5
-ms.openlocfilehash: 5803d656d765f3f4fe3039e28b9c06202218fcfc
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: 9bf0b168633bbf9f56694e79cf81f8051f9b8ac0
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73973990"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79186385"
 ---
-# <a name="dependency-properties-overview"></a>Přehled vlastností závislosti
+# <a name="dependency-properties-overview"></a>Přehled vlastností závislostí
 
-Windows Presentation Foundation (WPF) poskytuje sadu služeb, které lze použít k rozšiřování funkcí [vlastnosti](../../../standard/base-types/common-type-system.md#Properties)typu. Souhrnně se tyto služby obvykle označují jako systém vlastností WPF. Vlastnost, která je zajištěna systémem vlastností WPF, je známá jako vlastnost závislosti. Tento přehled popisuje systém vlastností WPF a možnosti vlastnosti závislosti. To zahrnuje způsob použití existujících vlastností závislosti v jazyce XAML a v kódu. Tento přehled obsahuje taky specializované aspekty vlastností závislosti, jako jsou metadata vlastností závislosti, a postup vytvoření vlastní vlastnosti závislosti ve vlastní třídě.
+Windows Presentation Foundation (WPF) poskytuje sadu služeb, které lze použít k rozšíření funkce [vlastnosti](../../../standard/base-types/common-type-system.md#Properties)typu . Společně tyto služby jsou obvykle označovány jako wpf systém vlastností. Vlastnost, která je zálohována systémem vlastností WPF, se označuje jako vlastnost závislosti. Tento přehled popisuje systém vlastností WPF a možnosti vlastnosti závislosti. To zahrnuje použití existujících vlastností závislostí v XAML a v kódu. Tento přehled také zavádí specializované aspekty vlastností závislostí, jako jsou metadata vlastností závislostí a jak vytvořit vlastní vlastnost závislostí ve vlastní třídě.
 
 ## <a name="prerequisites"></a>Požadavky
-V tomto tématu se předpokládá, že máte základní znalosti typu .NET System a objektově orientovaného programování. Aby bylo možné postupovat podle příkladů v tomto tématu, měli byste také pochopit XAML a vědět, jak psát aplikace WPF. Další informace najdete v tématu [Návod: Moje první desktopová aplikace WPF](../getting-started/walkthrough-my-first-wpf-desktop-application.md).  
+Toto téma předpokládá, že máte některé základní znalosti systému typu .NET a objektově orientované programování. Chcete-li sledovat příklady v tomto tématu, měli byste také pochopit XAML a vědět, jak psát aplikace WPF. Další informace naleznete [v tématu Návod: Moje první desktopová aplikace WPF](../getting-started/walkthrough-my-first-wpf-desktop-application.md).  
   
-## <a name="dependency-properties-and-clr-properties"></a>Vlastnosti závislosti a vlastnosti CLR
- Ve WPF se vlastnosti obvykle zveřejňují jako standardní [vlastnosti](../../../standard/base-types/common-type-system.md#Properties)rozhraní .NET. Na základní úrovni můžete s těmito vlastnostmi pracovat přímo a nikdy neznáte, že jsou implementované jako vlastnost závislosti. Měli byste však být obeznámeni s některými nebo všemi funkcemi systému vlastností WPF, abyste mohli využít výhod těchto funkcí.
+## <a name="dependency-properties-and-clr-properties"></a>Vlastnosti závislostí a vlastnosti CLR
+ V WPF vlastnosti jsou obvykle vystaveny jako standardní [vlastnosti](../../../standard/base-types/common-type-system.md#Properties).NET . Na základní úrovni můžete komunikovat s těmito vlastnostmi přímo a nikdy nevíte, že jsou implementovány jako vlastnost závislosti. Měli byste se však seznámit s některými nebo všemi funkcemi systému vlastností WPF, abyste mohli tyto funkce využít.
 
-Účelem vlastností závislosti je poskytnout způsob, jak vypočítat hodnotu vlastnosti na základě hodnoty jiných vstupů. Tyto další vstupy můžou zahrnovat systémové vlastnosti, jako jsou například motivy a preference uživatele, mechanismy určení vlastností za běhu, jako jsou datové vazby a animace/scénáře, šablony s více podobami použití, například prostředky a styly nebo známé hodnoty. pomocí vztahů nadřazenosti a podřízenosti s dalšími prvky ve stromu elementu. Kromě toho je možné implementovat vlastnost závislosti k poskytnutí samostatného ověřování, výchozích hodnot, zpětných volání, která sledují změny v jiných vlastnostech, a systému, který může převést hodnoty vlastností na základě potenciálně běhových informací. Odvozené třídy mohou také změnit některé konkrétní charakteristiky existující vlastnosti pomocí přepsání metadat vlastností závislosti namísto přepsání skutečné implementace existujících vlastností nebo vytváření nových vlastností.
+Účelem vlastností závislostí je poskytnout způsob, jak vypočítat hodnotu vlastnosti na základě hodnoty jiných vstupů. Tyto další vstupy mohou zahrnovat vlastnosti systému, jako jsou motivy a uživatelské předvolby, mechanismy určení vlastností just-in-time, jako jsou datové vazby a animace/scénáře, šablony pro více použití, jako jsou prostředky a styly, nebo hodnoty známé prostřednictvím vztahů nadřazený-podřízený s jinými prvky ve stromu prvků. Kromě toho lze implementovat vlastnost závislosti, která poskytuje samostatné ověření, výchozí hodnoty, zpětná volání, která sledují změny jiných vlastností, a systém, který může dosáhovat hodnoty vlastností na základě potenciálně informací o běhu. Odvozené třídy můžete také změnit některé specifické charakteristiky existující vlastnosti přepsáním metadat vlastnosti závislost, spíše než přepsání skutečné implementace existujících vlastností nebo vytváření nových vlastností.
 
-V referenčních informacích k sadě SDK můžete určit, která vlastnost je vlastností závislosti, podle přítomnosti části informace o vlastnostech závislosti na spravované referenční stránce pro danou vlastnost. Oddíl informace o vlastnostech závislosti obsahuje odkaz na pole identifikátoru <xref:System.Windows.DependencyProperty> pro danou vlastnost závislosti a také obsahuje seznam možností metadat, které jsou nastaveny pro danou vlastnost, informace o přepsání jednotlivých tříd a další podrobnosti.
+V odkazu sady SDK můžete určit, která vlastnost je vlastnost závislostí podle přítomnosti části Informace o vlastnostech závislostí na spravované referenční stránce pro tuto vlastnost. Část Informace o vlastnostech závislostí <xref:System.Windows.DependencyProperty> obsahuje odkaz na pole identifikátoru pro tuto vlastnost závislosti a také seznam možností metadat, které jsou nastaveny pro tuto vlastnost, informace o přepsání na třídu a další podrobnosti.
 
-## <a name="dependency-properties-back-clr-properties"></a>Vlastnosti závislosti – vlastnosti zpětného CLR
-Vlastnosti závislostí a systém vlastností WPF – funkce rozšířené vlastnosti poskytují typ, který vrátí vlastnost, jako alternativní implementaci standardního vzoru zálohování vlastnosti s privátním polem. Název tohoto typu je <xref:System.Windows.DependencyProperty>. Dalším důležitým typem, který definuje systém vlastností WPF, je <xref:System.Windows.DependencyObject>. <xref:System.Windows.DependencyObject> definuje základní třídu, která může registrovat a vlastnit vlastnost závislosti.
+## <a name="dependency-properties-back-clr-properties"></a>Vlastnosti závislostí zpět CLR vlastnosti
+Vlastnosti závislostí a systém vlastností WPF rozšiřují funkce vlastností poskytnutím typu, který podporuje vlastnost, jako alternativní implementaci standardního vzoru zálohování vlastnosti soukromým polem. Název tohoto typu <xref:System.Windows.DependencyProperty>je . Další důležitý typ, který definuje wpf <xref:System.Windows.DependencyObject>vlastnost systému je . <xref:System.Windows.DependencyObject>definuje základní třídu, která může registrovat a vlastnit vlastnost závislosti.
 
-Následující seznam obsahuje terminologii, která se používá s vlastnostmi závislosti:
+V následujícím seznamu je uvedena terminologie, která se používá s vlastnostmi závislostí:
 
-- **Vlastnost závislosti:** Vlastnost, která je zazálohována <xref:System.Windows.DependencyProperty>.
+- **Vlastnost závislostí:** Vlastnost, která je podpořena <xref:System.Windows.DependencyProperty>.
 
-- **Identifikátor vlastnosti závislosti:** Instance <xref:System.Windows.DependencyProperty>, která se získá jako návratová hodnota při registraci vlastnosti závislosti, a pak se uloží jako statický člen třídy. Tento identifikátor se používá jako parametr pro mnoho rozhraní API, která pracují se systémem vlastností WPF.
+- **Identifikátor vlastnosti závislosti:** Instance, <xref:System.Windows.DependencyProperty> která je získána jako vrácená hodnota při registraci vlastnosti závislosti a poté uložena jako statický člen třídy. Tento identifikátor se používá jako parametr pro mnoho rozhraní API, které interagují se systémem vlastností WPF.
 
-- **CLR "Obálka":** Skutečné implementace Get a set pro vlastnost. Tyto implementace zahrnují identifikátor vlastnosti závislosti jeho použitím v <xref:System.Windows.DependencyObject.GetValue%2A> a <xref:System.Windows.DependencyObject.SetValue%2A> volání, čímž se poskytuje zálohování pro vlastnost pomocí systému vlastností WPF.
+- **CLR "obálka":** Skutečné get a set implementace pro vlastnost. Tyto implementace začlenit identifikátor vlastnosti závislosti pomocí <xref:System.Windows.DependencyObject.GetValue%2A> <xref:System.Windows.DependencyObject.SetValue%2A> v a volání, a tím poskytuje podporu pro vlastnost pomocí wpf systémvlastnosti.
 
-Následující příklad definuje vlastnost závislosti `IsSpinning` a zobrazuje vztah <xref:System.Windows.DependencyProperty> identifikátoru k vlastnosti, kterou vrátí.
+Následující příklad definuje `IsSpinning` vlastnost závislosti a zobrazuje vztah <xref:System.Windows.DependencyProperty> identifikátoru k vlastnosti, kterou podporuje.
 
 [!code-csharp[PropertiesOvwSupport#DPFormBasic](~/samples/snippets/csharp/VS_Snippets_Wpf/PropertiesOvwSupport/CSharp/page4.xaml.cs#dpformbasic)]
 [!code-vb[PropertiesOvwSupport#DPFormBasic](~/samples/snippets/visualbasic/VS_Snippets_Wpf/PropertiesOvwSupport/visualbasic/page4.xaml.vb#dpformbasic)]  
   
-Zásady vytváření názvů vlastností a pole pro jeho <xref:System.Windows.DependencyProperty> jsou důležité. Název pole je vždy název vlastnosti, kde je přípona `Property` připojena. Další informace o této konvenci a jejich příčinách najdete v tématu [vlastnosti vlastních závislostí](custom-dependency-properties.md).  
+Konvence pojmenování vlastnosti a <xref:System.Windows.DependencyProperty> její záložní pole je důležité. Název pole je vždy název vlastnosti s připojenou `Property` příponou. Další informace o této konvenci a důvodech této konvence naleznete v [tématu Vlastnosti vlastních závislostí](custom-dependency-properties.md).  
 
 ## <a name="setting-property-values"></a>Nastavení hodnot vlastností
-Vlastnosti lze nastavit buď v kódu, nebo v jazyce XAML.
+Vlastnosti můžete nastavit buď v kódu, nebo v XAML.
 
-### <a name="setting-property-values-in-xaml"></a>Nastavení hodnot vlastností v jazyce XAML 
-Následující příklad XAML Určuje barvu pozadí tlačítka jako červené. Tento příklad ukazuje případ, kde je jednoduchá řetězcová hodnota pro atribut XAML typu převáděná analyzátorem XAML WPF na typ WPF (<xref:System.Windows.Media.Color>, v <xref:System.Windows.Media.SolidColorBrush>) ve vygenerovaném kódu.
+### <a name="setting-property-values-in-xaml"></a>Nastavení hodnot vlastností v XAML
+Následující příklad XAML určuje barvu pozadí tlačítka jako červenou. Tento příklad ilustruje případ, kdy je jednoduchá hodnota řetězce pro atribut XAML typu převedena analyzátorem WPF <xref:System.Windows.Media.Color>XAML na <xref:System.Windows.Media.SolidColorBrush>typ WPF (a , prostřednictvím ) v generovaném kódu.
 
 [!code-xaml[PropertiesOvwSupport#MostBasicProperty](~/samples/snippets/csharp/VS_Snippets_Wpf/PropertiesOvwSupport/CSharp/Page1.xaml#mostbasicproperty)]
 
-XAML podporuje nejrůznější formy syntaxe pro nastavení vlastností. Která syntaxe má být použita pro konkrétní vlastnost, bude záviset na typu hodnoty, který vlastnost používá, a také na dalších faktorech, jako je přítomnost konvertoru typu. Další informace o syntaxi jazyka XAML pro nastavení vlastnosti naleznete v tématu detailed [XAML (WPF)](../../../desktop-wpf/fundamentals/xaml.md) a [syntaxe jazyka XAML](xaml-syntax-in-detail.md).
+XAML podporuje různé syntaktické formuláře pro nastavení vlastností. Syntaxe, která má být pro určitou vlastnost, bude záviset na typu hodnoty, který vlastnost používá, a také na dalších faktorech, jako je například přítomnost převaděče typu. Další informace o syntaxi XAML pro nastavení vlastností naleznete v tématu [XAML Přehled (WPF)](../../../desktop-wpf/fundamentals/xaml.md) a [Syntaxe XAML podrobně .](xaml-syntax-in-detail.md)
 
-Jako příklad syntaxe bez atributů ukazuje následující příklad XAML další pozadí tlačítka. Místo toho, aby se nastavila jednoduchá plná barva, je pozadí nastaveno na obrázek, s prvkem, který představuje tento obrázek, a zdrojem tohoto obrázku zadaného jako atribut vnořeného prvku. Toto je příklad syntaxe prvku vlastnosti.
+Jako příklad syntaxe bez atributů následující příklad XAML ukazuje další pozadí tlačítka. Tentokrát místo nastavení jednoduché plné barvy je pozadí nastaveno na obrázek, přičemž prvek reprezentující tento obraz a zdroj tohoto obrazu je určen jako atribut vnořeného prvku. Toto je příklad syntaxe prvku vlastnosti.
 
 [!code-xaml[PropertiesOvwSupport#PESyntaxProperty](~/samples/snippets/csharp/VS_Snippets_Wpf/PropertiesOvwSupport/CSharp/Page1.xaml#pesyntaxproperty)]
 
 ### <a name="setting-properties-in-code"></a>Nastavení vlastností v kódu
- Nastavení hodnot vlastností závislosti v kódu je obvykle pouze voláním implementace množiny vystavené obálkou CLR.
+ Nastavení hodnoty vlastností závislostí v kódu je obvykle pouze volání set implementace vystavené CLR "obálka".
 
 [!code-csharp[PropertiesOvwSupport#ProceduralPropertySet](~/samples/snippets/csharp/VS_Snippets_Wpf/PropertiesOvwSupport/CSharp/Page1.xaml.cs#proceduralpropertyset)]
 [!code-vb[PropertiesOvwSupport#ProceduralPropertySet](~/samples/snippets/visualbasic/VS_Snippets_Wpf/PropertiesOvwSupport/visualbasic/page1.xaml.vb#proceduralpropertyset)]
 
-Získání hodnoty vlastnosti je také v podstatě voláním implementace "Obálka":
+Získání hodnoty vlastnosti je také v podstatě volání get "obálka" implementace:
 
 [!code-csharp[PropertiesOvwSupport#ProceduralPropertyGet](~/samples/snippets/csharp/VS_Snippets_Wpf/PropertiesOvwSupport/CSharp/Page1.xaml.cs#proceduralpropertyget)]
  [!code-vb[PropertiesOvwSupport#ProceduralPropertyGet](~/samples/snippets/visualbasic/VS_Snippets_Wpf/PropertiesOvwSupport/visualbasic/page1.xaml.vb#proceduralpropertyget)]
 
-Můžete také volat rozhraní API systému vlastností <xref:System.Windows.DependencyObject.GetValue%2A> a <xref:System.Windows.DependencyObject.SetValue%2A> přímo. To není obvykle nutné v případě, že používáte existující vlastnosti (obálky jsou užitečnější a poskytují lepší expozici vlastnosti pro vývojářské nástroje), ale volání rozhraní API je vhodné pro určité scénáře.
+Můžete také volat zařízení API <xref:System.Windows.DependencyObject.GetValue%2A> <xref:System.Windows.DependencyObject.SetValue%2A> systému vlastností a přímo. To není obvykle nutné, pokud používáte existující vlastnosti (obálky jsou pohodlnější a poskytují lepší expozici vlastnosti pro vývojářské nástroje), ale volání rozhraní API přímo je vhodné pro určité scénáře.
 
-Vlastnosti lze také nastavit v jazyce XAML a následně je použít později v kódu, a to prostřednictvím kódu na pozadí. Podrobnosti najdete v tématu [Code-na pozadí a XAML v WPF](code-behind-and-xaml-in-wpf.md).
+Vlastnosti lze také nastavit v XAML a později přistupovat později v kódu, prostřednictvím kódu na pozadí. Podrobnosti naleznete v [tématu Code-Behind a XAML v WPF](code-behind-and-xaml-in-wpf.md).
 
-## <a name="property-functionality-provided-by-a-dependency-property"></a>Funkce vlastnosti poskytované vlastností závislosti
-Vlastnost závislosti poskytuje funkce, které rozšiřují funkce vlastnosti na rozdíl od vlastnosti, která je zajištěna polem. Tyto funkce často představují nebo podporují jednu z následujících specifických funkcí:
+## <a name="property-functionality-provided-by-a-dependency-property"></a>Funkce vlastností poskytovaná vlastností závislostí
+Vlastnost závislosti poskytuje funkce, které rozšiřuje funkce vlastnosti na rozdíl od vlastnosti, která je zálohována polem. Tyto funkce často představují nebo podporují jednu z následujících specifických funkcí:
 
-- [Prostředky](#resources)
+- [Materiály](#resources)
 
 - [Datová vazba](#data-binding)
 
@@ -99,104 +99,104 @@ Vlastnost závislosti poskytuje funkce, které rozšiřují funkce vlastnosti na
 
 - [Integrace návrháře WPF](#wpf-designer-integration)
 
-### <a name="resources"></a>Prostředky
-Hodnotu vlastnosti závislosti lze nastavit odkazem na prostředek. Prostředky se obvykle zadává jako hodnota vlastnosti `Resources` kořenového elementu stránky nebo aplikace (Tato umístění umožňují nejpohodlnější přístup k prostředku). Následující příklad ukazuje, jak definovat prostředek <xref:System.Windows.Media.SolidColorBrush>.
+### <a name="resources"></a>Zdroje informací
+Hodnotu vlastnosti závislosti lze nastavit odkazem na prostředek. Prostředky jsou obvykle určeny jako hodnota `Resources` vlastnosti kořenového prvku stránky nebo aplikace (tato umístění umožňují nejvhodnější přístup k prostředku). Následující příklad ukazuje, jak <xref:System.Windows.Media.SolidColorBrush> definovat prostředek.
 
 [!code-xaml[PropertiesOvwSupport#ResourcesResource](~/samples/snippets/csharp/VS_Snippets_Wpf/PropertiesOvwSupport/CSharp/page2.xaml#resourcesresource)]
 
-Po definování prostředku můžete na prostředek odkazovat a použít ho k poskytnutí hodnoty vlastnosti:
+Jakmile je prostředek definován, můžete na prostředek odkazovat a použít jej k zadání hodnoty vlastnosti:
 
 [!code-xaml[PropertiesOvwSupport#ResourcesReference](~/samples/snippets/csharp/VS_Snippets_Wpf/PropertiesOvwSupport/CSharp/page2.xaml#resourcesreference)]
 
-Na tento konkrétní prostředek se odkazuje jako na [DynamicResource Markup Extension](dynamicresource-markup-extension.md) (v jazyce WPF XAML, můžete použít buď statický, nebo dynamický odkaz na prostředek). Chcete-li použít dynamický odkaz na prostředek, musíte být nastaven na vlastnost závislosti, takže je konkrétně použití dynamického odkazu prostředku, které je povoleno systémem vlastností WPF. Další informace naleznete v tématu [prostředky XAML](xaml-resources.md).
+Tento konkrétní prostředek je odkazován jako [rozšíření dynamicResource Markup Extension](dynamicresource-markup-extension.md) (v WPF XAML můžete použít statický nebo dynamický odkaz na prostředek). Chcete-li použít odkaz na dynamický prostředek, musíte nastavit vlastnost závislosti, takže se jedná konkrétně o využití odkazu na dynamický prostředek, které je povoleno systémem vlastností WPF. Další informace naleznete v tématu [XAML Resources](xaml-resources.md).
 
 > [!NOTE]
-> Prostředky se považují za místní hodnotu, což znamená, že pokud nastavíte jinou místní hodnotu, odstraní se odkaz na prostředek. Další informace najdete v tématu [Priorita hodnoty vlastností závislosti](dependency-property-value-precedence.md).
+> Prostředky jsou považovány za místní hodnotu, což znamená, že pokud nastavíte jinou místní hodnotu, odstraníte odkaz na prostředek. Další informace naleznete v [tématu Priorita hodnoty vlastnosti závislostí](dependency-property-value-precedence.md).
 
 ### <a name="data-binding"></a>Datová vazba
-Vlastnost závislosti může odkazovat na hodnotu prostřednictvím datové vazby. Datové vazby fungují v rámci specifické syntaxe rozšíření značek v jazyce XAML nebo objektu <xref:System.Windows.Data.Binding> v kódu. S datovou vazbou je konečné určení hodnoty vlastnosti odloženo až do doby spuštění, kdy je hodnota získána ze zdroje dat.
+Vlastnost závislosti může odkazovat na hodnotu prostřednictvím datové vazby. Datová vazba funguje prostřednictvím syntaxe konkrétní horozšíření značek v XAML nebo objektu <xref:System.Windows.Data.Binding> v kódu. S datovou vazbou je určení konečné hodnoty vlastnosti odloženo až do doby spuštění, kdy je hodnota získána ze zdroje dat.
 
-Následující příklad nastaví vlastnost <xref:System.Windows.Controls.ContentControl.Content%2A> pro <xref:System.Windows.Controls.Button>pomocí vazby deklarované v jazyce XAML. Vazba používá zděděný kontext dat a <xref:System.Windows.Data.XmlDataProvider> zdroj dat (nezobrazený). Vazba sama Určuje požadovanou zdrojovou vlastnost <xref:System.Windows.Data.Binding.XPath%2A> v rámci zdroje dat.
+Následující příklad nastaví <xref:System.Windows.Controls.ContentControl.Content%2A> vlastnost <xref:System.Windows.Controls.Button>pro , pomocí vazby deklarované v XAML. Vazba používá zděděný <xref:System.Windows.Data.XmlDataProvider> kontext dat a zdroj dat (není zobrazen). Samotná vazba určuje vlastnost <xref:System.Windows.Data.Binding.XPath%2A> požadovaného zdroje v rámci zdroje dat.
 
 [!code-xaml[PropertiesOvwSupport#BasicInlineBinding](~/samples/snippets/csharp/VS_Snippets_Wpf/PropertiesOvwSupport/CSharp/page3.xaml#basicinlinebinding)]
 
 > [!NOTE]
-> Vazby jsou považovány za místní hodnotu, což znamená, že pokud nastavíte jinou místní hodnotu, budete vazbu eliminovat. Podrobnosti najdete v tématu [Priorita hodnoty vlastností závislosti](dependency-property-value-precedence.md).
+> Vazby jsou považovány za místní hodnotu, což znamená, že pokud nastavíte jinou místní hodnotu, odstraníte vazbu. Podrobnosti naleznete v [tématu Priorita hodnoty vlastnosti závislostí](dependency-property-value-precedence.md).
 
-Vlastnosti závislosti nebo třída <xref:System.Windows.DependencyObject> nepodporují nativně <xref:System.ComponentModel.INotifyPropertyChanged> pro účely vytváření oznámení o změnách v <xref:System.Windows.DependencyObject> hodnotě vlastnosti zdroje pro operace datové vazby. Další informace o tom, jak vytvořit vlastnosti pro použití v datové vazbě, které mohou nahlásit změny v cíli datové vazby, najdete v tématu [Přehled datové vazby](../data/data-binding-overview.md).
+Vlastnosti závislostí <xref:System.Windows.DependencyObject> nebo třída nejsou nativně podporují <xref:System.ComponentModel.INotifyPropertyChanged> pro účely vytváření <xref:System.Windows.DependencyObject> oznámení o změnách hodnoty vlastnosti zdroj pro operace datové vazby. Další informace o tom, jak vytvořit vlastnosti pro použití v datové vazbě, které mohou vykazovat změny cíle datové vazby, naleznete v [tématu Přehled datové vazby](../data/data-binding-overview.md).
 
 ### <a name="styles"></a>Styly
-Styly a šablony jsou dva ze scénářů hlavní motivace pro použití vlastností závislosti. Styly jsou zvláště užitečné pro nastavení vlastností, které definují [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)]aplikace. Styly jsou obvykle definovány jako prostředky v jazyce XAML. Styly spolupracují se systémem vlastností, protože obvykle obsahují "metody setter" pro konkrétní vlastnosti a také "triggery", které mění hodnotu vlastnosti na základě hodnoty v reálném čase pro jinou vlastnost.
+Styly a šablony jsou dva hlavní motivující scénáře pro použití vlastností závislostí. Styly jsou užitečné zejména pro [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)]nastavení vlastností, které definují aplikaci . Styly jsou obvykle definovány jako prostředky v XAML. Styly interagují se systémem vlastností, protože obvykle obsahují "setters" pro určité vlastnosti, stejně jako "aktivační události", které mění hodnotu vlastnosti na základě hodnoty v reálném čase pro jinou vlastnost.
 
-Následující příklad vytvoří velmi jednoduchý styl (který by byl definován uvnitř <xref:System.Windows.FrameworkElement.Resources%2A> slovníku, není zobrazen), pak použije tento styl přímo na vlastnost <xref:System.Windows.FrameworkElement.Style%2A> pro <xref:System.Windows.Controls.Button>. Metoda setter v rámci stylu nastavuje vlastnost <xref:System.Windows.Controls.Control.Background%2A> pro styl <xref:System.Windows.Controls.Button> na zelenou.
+Následující příklad vytvoří velmi jednoduchý styl (který <xref:System.Windows.FrameworkElement.Resources%2A> by byl definován uvnitř slovníku, není <xref:System.Windows.FrameworkElement.Style%2A> zobrazen), <xref:System.Windows.Controls.Button>pak použije tento styl přímo na vlastnost pro . Setter ve stylu nastaví <xref:System.Windows.Controls.Control.Background%2A> vlastnost pro <xref:System.Windows.Controls.Button> stylované na zelenou.
 
 [!code-xaml[PropertiesOvwSupport#SimpleStyleDef](~/samples/snippets/csharp/VS_Snippets_Wpf/PropertiesOvwSupport/CSharp/page3.xaml#simplestyledef)]
 
 [!code-xaml[PropertiesOvwSupport#SimpleStyle](~/samples/snippets/csharp/VS_Snippets_Wpf/PropertiesOvwSupport/CSharp/page3.xaml#simplestyle)]
 
-Další informace najdete v tématu [stylování a šablonování](../controls/styling-and-templating.md).
+Další informace naleznete [v tématu Styling a Templating](../controls/styling-and-templating.md).
 
 ### <a name="animations"></a>Animace
-Vlastnosti závislosti můžou být animované. Při použití animace a jejím spuštění funguje animovaná hodnota s vyšší prioritou než libovolná hodnota (například místní hodnota), kterou vlastnost jinak má.
+Vlastnosti závislostí lze animovat. Při použití animace a je spuštěna, animovaná hodnota pracuje s vyšší prioritou než libovolná hodnota (například místní hodnota), která jinak vlastnost má.
 
-Následující příklad animuje <xref:System.Windows.Controls.Control.Background%2A> vlastnosti <xref:System.Windows.Controls.Button> (technicky, <xref:System.Windows.Controls.Control.Background%2A> je animovaný pomocí syntaxe elementu Property k určení prázdného <xref:System.Windows.Media.SolidColorBrush> jako <xref:System.Windows.Controls.Control.Background%2A>, pak vlastnost <xref:System.Windows.Media.SolidColorBrush.Color%2A> tohoto <xref:System.Windows.Media.SolidColorBrush> je vlastnost, která je přímo animovaná).
+Následující <xref:System.Windows.Controls.Control.Background%2A> příklad animuje <xref:System.Windows.Controls.Button> na <xref:System.Windows.Controls.Control.Background%2A> vlastnost (technicky je animovaný pomocí syntaxe <xref:System.Windows.Media.SolidColorBrush> elementu <xref:System.Windows.Controls.Control.Background%2A>vlastnosti <xref:System.Windows.Media.SolidColorBrush.Color%2A> k <xref:System.Windows.Media.SolidColorBrush> určení prázdné jako , pak vlastnost, která je vlastnost, která je přímo animovaný).
 
 [!code-xaml[PropertiesOvwSupport#MiniAnimate](~/samples/snippets/csharp/VS_Snippets_Wpf/PropertiesOvwSupport/CSharp/page3.xaml#minianimate)]
 
-Další informace o animování vlastností naleznete v tématu Přehled [animace](../graphics-multimedia/animation-overview.md) a [Přehled scénářů](../graphics-multimedia/storyboards-overview.md).
+Další informace o animování vlastností naleznete v [tématu Přehled animací](../graphics-multimedia/animation-overview.md) a [Přehled scénářů](../graphics-multimedia/storyboards-overview.md).
 
 ### <a name="metadata-overrides"></a>Přepsání metadat
-Můžete změnit určité chování vlastnosti závislosti přepsáním metadat pro tuto vlastnost při odvozování od třídy, která původně registruje vlastnost závislosti. Přepsání metadat závisí na identifikátoru <xref:System.Windows.DependencyProperty>. Přepsání metadat nevyžaduje znovu implementaci vlastnosti. Změny metadat jsou zpracovávány nativním systémem vlastností. Každá třída potenciálně uchovává jednotlivá metadata pro všechny vlastnosti, které jsou zděděny ze základních tříd, na základě typu.
+Určitá chování vlastnosti závislosti můžete změnit přepsáním metadat pro tuto vlastnost, když odvozujete z třídy, která původně registruje vlastnost závislosti. Přepsání metadat závisí <xref:System.Windows.DependencyProperty> na identifikátoru. Přepsání metadat nevyžaduje opětovnou implementaci vlastnosti. Změna metadat je zpracována nativně systémem vlastností; každá třída potenciálně obsahuje jednotlivá metadata pro všechny vlastnosti, které jsou zděděny ze základních tříd, na základě typu.
 
-Následující příklad přepisuje metadata pro vlastnost závislosti <xref:System.Windows.FrameworkElement.DefaultStyleKey%2A>. Přepsání těchto metadat vlastností závislosti je součástí vzoru implementace, který vytváří ovládací prvky, které mohou používat výchozí styly z motivů.
+Následující příklad přepíše metadata vlastnosti <xref:System.Windows.FrameworkElement.DefaultStyleKey%2A>závislosti . Přepsání metadat vlastnosti této konkrétní závislosti je součástí vzoru implementace, který vytváří ovládací prvky, které mohou používat výchozí styly z motivů.
 
 [!code-csharp[PropertiesOvwSupport#OverrideMetadata](~/samples/snippets/csharp/VS_Snippets_Wpf/PropertiesOvwSupport/CSharp/page3.xaml.cs#overridemetadata)]
 [!code-vb[PropertiesOvwSupport#OverrideMetadata](~/samples/snippets/visualbasic/VS_Snippets_Wpf/PropertiesOvwSupport/visualbasic/page3.xaml.vb#overridemetadata)]
 
-Další informace o přepsání nebo získání metadat vlastností naleznete v tématu [metadata vlastnosti závislosti](dependency-property-metadata.md).
+Další informace o přepsání nebo získání metadat vlastnosti naleznete v [tématu Metadata vlastností závislostí](dependency-property-metadata.md).
 
 ### <a name="property-value-inheritance"></a>Dědičnost hodnoty vlastnosti
-Element může dědit hodnotu vlastnosti závislosti ze své nadřazené položky ve stromové struktuře objektů.
+Prvek může dědit hodnotu vlastnosti závislosti z nadřazené položky ve stromu objektů.
 
 > [!NOTE]
-> Chování dědičnosti hodnoty vlastností není globálně povoleno pro všechny vlastnosti závislosti, protože čas výpočtu dědičnosti má vliv na výkon. Dědičnost hodnoty vlastnosti je obvykle povolena pouze pro vlastnosti, kde konkrétní scénář naznačuje, že je dědičnost hodnoty vlastnosti vhodná. To, jestli vlastnost závislosti dědí, můžete zjistit tak, že v odkazu na sadu SDK prohlížíte část **informace o vlastnosti závislosti** pro tuto vlastnost závislosti.
+> Chování dědičnosti hodnoty vlastnosti není globálně povoleno pro všechny vlastnosti závislostí, protože doba výpočtu dědičnosti má určitý dopad na výkon. Dědičnost hodnoty vlastnosti je obvykle povolena pouze pro vlastnosti, kde konkrétní scénář naznačuje, že dědičnost hodnoty vlastnosti je vhodná. Můžete určit, zda vlastnost závislost dědí pohledem na **informace o vlastnosti závislostí** pro tuto vlastnost závislosti v odkazu sdk.
 
-Následující příklad ukazuje vazbu a nastavuje vlastnost <xref:System.Windows.FrameworkElement.DataContext%2A>, která určuje zdroj vazby, který nebyl zobrazen v předchozím příkladu vazby. Jakékoli následné vazby v podřízených objektech nemusejí určovat zdroj, můžou použít zděděnou hodnotu z <xref:System.Windows.FrameworkElement.DataContext%2A> v nadřazeném objektu <xref:System.Windows.Controls.StackPanel>. (Případně může podřízený objekt místo toho zvolit přímé určení vlastního <xref:System.Windows.FrameworkElement.DataContext%2A> nebo <xref:System.Windows.Data.Binding.Source%2A> v <xref:System.Windows.Data.Binding>a záměrně nepoužívat zděděnou hodnotu pro kontext dat jeho vazeb.)
+Následující příklad ukazuje vazbu a <xref:System.Windows.FrameworkElement.DataContext%2A> nastaví vlastnost, která určuje zdroj vazby, která nebyla uvedena v předchozím příkladu vazby. Všechny následné vazby v podřízených objektech nemusí určit zdroj, <xref:System.Windows.FrameworkElement.DataContext%2A> mohou použít <xref:System.Windows.Controls.StackPanel> zděděnou hodnotu z v nadřazeném objektu. (Alternativně podřízený objekt může místo toho <xref:System.Windows.FrameworkElement.DataContext%2A> zvolit <xref:System.Windows.Data.Binding.Source%2A> přímo <xref:System.Windows.Data.Binding>určit jeho vlastní nebo v , a záměrně nepoužívat zděděnou hodnotu pro kontext dat jeho vazby.)
 
 [!code-xaml[PropertiesOvwSupport#InheritanceContext](~/samples/snippets/csharp/VS_Snippets_Wpf/PropertiesOvwSupport/CSharp/page3.xaml#inheritancecontext)]
 
-Další informace najdete v tématu [Dědičnost hodnot vlastností](property-value-inheritance.md).
+Další informace naleznete v [tématu Dědičnost hodnoty nemovitosti](property-value-inheritance.md).
 
 ### <a name="wpf-designer-integration"></a>Integrace návrháře WPF
-Vlastní ovládací prvek s vlastnostmi, které jsou implementovány jako vlastnosti závislosti, obdrží vhodného návrháře WPF pro podporu sady Visual Studio. Jedním z příkladů je možnost upravovat vlastnosti přímé a připojené závislosti v okně **vlastnosti** . Další informace najdete v tématu [Přehled tvorby řízení](../controls/control-authoring-overview.md).
+Vlastní ovládací prvek s vlastnostmi, které jsou implementovány jako vlastnosti závislostí obdrží odpovídající WPF Designer pro podporu sady Visual Studio. Jedním z příkladů je možnost upravovat přímé a připojené vlastnosti závislostí s okno **Vlastnosti.** Další informace naleznete [v tématu Přehled vytváření ovládacích prvku](../controls/control-authoring-overview.md).
 
-## <a name="dependency-property-value-precedence"></a>Priorita hodnoty vlastnosti závislosti
-Po získání hodnoty vlastnosti závislosti můžete potenciálně získat hodnotu, která byla nastavena na danou vlastnost prostřednictvím jakékoli jiné vstupy založené na vlastnostech, které se účastní systému vlastností WPF. Priorita hodnoty vlastnosti závislosti existuje, takže celá řada scénářů, jak vlastnosti získají jejich hodnoty, může popracovat předvídatelným způsobem.
+## <a name="dependency-property-value-precedence"></a>Priorita hodnoty vlastnosti závislostí
+Když získáte hodnotu vlastnosti závislosti, potenciálně získáváte hodnotu, která byla nastavena na tuto vlastnost prostřednictvím některého z dalších vstupů založených na vlastnostech, které se účastní systému vlastností WPF. Priorita hodnoty vlastnosti závislostí existuje tak, aby různé scénáře pro získání vlastností jejich hodnoty mohou komunikovat předvídatelným způsobem.
 
-Vezměte v úvahu následující příklad. Příklad obsahuje styl, který se vztahuje na všechna tlačítka a jejich <xref:System.Windows.Controls.Control.Background%2A> vlastnosti, ale pak také určuje jedno tlačítko s lokálně nastavenou <xref:System.Windows.Controls.Control.Background%2A> hodnotou.
+Představte si následující příklad. Příklad obsahuje styl, který platí pro <xref:System.Windows.Controls.Control.Background%2A> všechna tlačítka a jejich vlastnosti, ale <xref:System.Windows.Controls.Control.Background%2A> pak také určuje jedno tlačítko s místně nastavenou hodnotou.
 
 > [!NOTE]
-> Dokumentace k sadě SDK používá při diskusích na vlastnosti závislosti výrazy "místní hodnota" nebo "místně nastavenou hodnotu". Místně nastavená hodnota je hodnota vlastnosti, která je nastavena přímo na instanci objektu v kódu nebo jako atribut u prvku v jazyce XAML.  
+> Dokumentace sady SDK používá při diskusi o vlastnostech závislostí občas termíny "místní hodnota" nebo "místně nastavená hodnota". Místně nastavená hodnota je hodnota vlastnosti, která je nastavena přímo na instanci objektu v kódu nebo jako atribut prvku v XAML.  
   
-V zásadě pro první tlačítko je vlastnost nastavena dvakrát, ale je použita pouze jedna hodnota: hodnota s nejvyšší prioritou. Místně nastavená hodnota má nejvyšší prioritu (kromě spuštěné animace, ale v tomto příkladu se nepoužívá žádná animace), a proto se místo hodnoty setter stylu pro pozadí na prvním tlačítku použije hodnota v místním nastavení. Druhé tlačítko nemá žádnou místní hodnotu (a nemá žádnou jinou hodnotu s vyšší prioritou než Style setter), a proto pozadí v tomto tlačítku pochází z setter Style.
+V zásadě pro první tlačítko vlastnost je nastavena dvakrát, ale platí pouze jednu hodnotu: hodnota s nejvyšší prioritou. Místně nastavená hodnota má nejvyšší prioritu (s výjimkou spuštěné animace, ale v tomto příkladu se nepoužije žádná animace) a proto se místo hodnoty nastavení stylu pro pozadí na prvním tlačítku používá místně nastavená hodnota. Druhé tlačítko nemá žádnou místní hodnotu (a žádná jiná hodnota s vyšší prioritou než setter stylu) a pozadí v tomto tlačítku tedy pochází ze setteru stylu.
 
 [!code-xaml[PropertiesOvwSupport#MiniPrecedence](~/samples/snippets/csharp/VS_Snippets_Wpf/PropertiesOvwSupport/CSharp/page3.xaml#miniprecedence)]  
 
-### <a name="why-does-dependency-property-precedence-exist"></a>Proč existuje priorita vlastnosti závislosti?
-Obvykle byste neměli chtít, aby styly vždy používaly a zakrývaly i lokálně nastavenou hodnotu jednotlivého prvku (jinak by bylo velmi obtížné použít buď styly nebo prvky obecně). Proto hodnoty, které pocházejí z stylů, pracují s nižším předchůdcem než s lokálně nastavenou hodnotou. Podrobnější výpis vlastností závislosti a umístění, ze kterého může pocházet efektivní hodnota vlastnosti závislosti, najdete v tématu [Priorita hodnoty vlastností závislosti](dependency-property-value-precedence.md).
+### <a name="why-does-dependency-property-precedence-exist"></a>Proč existuje priorita vlastnosti závislostí?
+Obvykle byste nechtěli, aby styly vždy platily a zakrývaly i místně nastavenou hodnotu jednotlivého prvku (jinak by bylo velmi obtížné použít styly nebo prvky obecně). Proto hodnoty, které pocházejí ze stylů pracovat na nižší precedens než místně nastavenou hodnotu. Podrobnější seznam vlastností závislostí a odkud může pocházet efektivní hodnota vlastnosti závislostí, naleznete v [tématu Priorita hodnoty vlastnosti závislostí](dependency-property-value-precedence.md).
 
 > [!NOTE]
-> Pro elementy WPF, které nejsou vlastnosti závislostí, je definováno několik vlastností. Po a velkými, byly vlastnosti implementovány jako vlastnosti závislosti pouze v případě, že bylo nutné podporovat alespoň jeden z scénářů, které jsou povoleny v systému vlastností: datové vazby, styly, animace, výchozí podpora hodnot, dědičnost, připojené vlastnosti nebo zneplatnění.
+> Existuje několik vlastností definovaných na WPF prvky, které nejsou vlastnosti závislostí. Z velké části byly vlastnosti implementovány jako vlastnosti závislostí pouze v případě, že bylo třeba podporovat alespoň jeden ze scénářů povolených systémem vlastností: datová vazba, styl, animace, podpora výchozí hodnoty, dědičnost, připojené vlastnosti nebo Neplatnost.
 
-## <a name="learning-more-about-dependency-properties"></a>Více informací o vlastnostech závislosti  
+## <a name="learning-more-about-dependency-properties"></a>Další informace o vlastnostech závislostí  
 
-- Připojená vlastnost je typ vlastnosti, která podporuje specializovanou syntaxi v jazyce XAML. Přidružená vlastnost často neobsahuje 1:1 korespondence s vlastností Common Language Runtime (CLR) a není nutně vlastností závislosti. Typickým účelem připojené vlastnosti je povolit podřízeným elementům nahlásit hodnoty vlastností nadřazenému prvku, i když nadřazený element a podřízený element nedisponují touto vlastností jako součást výpisu členů třídy. Jedním z primárních scénářů je povolit podřízeným elementům informování nadřazeného prvku, jak by měly být prezentovány v [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)]; Příklad naleznete v tématu <xref:System.Windows.Controls.DockPanel.Dock%2A> nebo <xref:System.Windows.Controls.Canvas.Left%2A>. Podrobnosti najdete v tématu [připojené vlastnosti – přehled](attached-properties-overview.md).
+- Připojená vlastnost je typ vlastnosti, která podporuje specializovanou syntaxi v XAML. Připojená vlastnost často nemá 1:1 korespondence s common jazyk runtime (CLR) vlastnost a není nutně závislost vlastnost. Typickým účelem připojené vlastnosti je umožnit podřízeným prvkům vykazovat hodnoty vlastností nadřazenému prvku, i když nadřazený prvek a podřízený prvek nemají tuto vlastnost jako součást výpisů členů třídy. Jedním z primárních scénářů je umožnit podřízeným [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)]prvkům informovat nadřazené prvky, jak by měly být prezentovány v ; například viz <xref:System.Windows.Controls.DockPanel.Dock%2A> nebo <xref:System.Windows.Controls.Canvas.Left%2A>. Podrobnosti naleznete [v tématu Přehled připojených vlastností](attached-properties-overview.md).
 
-- Vývojáři komponent nebo vývojáři aplikací mohou chtít vytvořit vlastní vlastnost závislosti, aby bylo možné povolit funkce, jako je například podpora datových vazeb nebo stylů, nebo pro zajištění neplatnosti a podpory pro vynucení hodnoty. Podrobnosti najdete v tématu [vlastnosti vlastních závislostí](custom-dependency-properties.md).
+- Vývojáři komponent nebo vývojáři aplikací mohou chtít vytvořit vlastní vlastnost závislosti, aby povolili funkce, jako je například podpora datové vazby nebo stylů, nebo pro podporu zneplatnění a podpory nátlaku na hodnotu. Podrobnosti naleznete [v tématu Vlastní vlastnosti závislostí](custom-dependency-properties.md).
 
-- Vlastnosti závislosti by se obecně měly považovat za veřejné vlastnosti, přístupné nebo aspoň zjistitelné jakýmkoli volajícím, který má přístup k instanci. Další informace najdete v tématu [zabezpečení vlastností závislosti](dependency-property-security.md).
+- Vlastnosti závislostí by obecně měly být považovány za veřejné vlastnosti, přístupné nebo alespoň zjistitelné libovolným volajícím, který má přístup k instanci. Další informace naleznete [v tématu Zabezpečení vlastností závislostí](dependency-property-security.md).
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Vlastní vlastnosti závislosti](custom-dependency-properties.md)
 - [Vlastnosti závislosti jen pro čtení](read-only-dependency-properties.md)

@@ -2,22 +2,22 @@
 title: Programování stromu položek modelu
 ms.date: 03/30/2017
 ms.assetid: 0229efde-19ac-4bdc-a187-c6227a7bd1a5
-ms.openlocfilehash: efda69ac568b0ad9c5fdcf4d42722c5b7dadd3f3
-ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
+ms.openlocfilehash: f14b140fdac95f3763cc5625841a725793876fa4
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74715668"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79142690"
 ---
 # <a name="programming-model-item-tree"></a>Programování stromu položek modelu
-Tato ukázka předvádí, jak navigovat <xref:System.Activities.Presentation.Model.ModelItem> stromu pomocí deklarativní datové vazby ze zobrazení stromu Windows Presentation Foundation (WPF).
+Tato ukázka ukazuje, <xref:System.Activities.Presentation.Model.ModelItem> jak procházet strom pomocí deklarativní datové vazby ze stromového zobrazení Windows Presentation Foundation (WPF).
 
 ## <a name="sample-details"></a>Podrobnosti ukázky
- <xref:System.Activities.Presentation.Model.ModelItem> strom je abstrakcí, kterou používá infrastruktura Windows Návrhář postupu provádění k vystavování dat o upravované podkladové instanci. Následující ilustrace znázorňuje různé vrstvy infrastruktury v rámci Návrhář postupu provádění.
+ Strom <xref:System.Activities.Presentation.Model.ModelItem> je abstrakce, která se používá infrastruktury Windows Workflow Designer vystavit data o základní instance upravované. Následující obrázek je znázornění různých vrstev infrastruktury v rámci Návrháře pracovních postupů.
 
- ![Diagram znázorňující architekturu Návrhář postupu provádění.](./media/programming-model-item-tree/workflow-designer-architecture.jpg)
+ ![Diagram, který zobrazuje architekturu Návrháře pracovních postupů.](./media/programming-model-item-tree/workflow-designer-architecture.jpg)
 
- <xref:System.Activities.Presentation.Model.ModelItem> se skládá z ukazatele na podkladovou hodnotu a kolekce objektů <xref:System.Activities.Presentation.Model.ModelProperty>. Objekt <xref:System.Activities.Presentation.Model.ModelProperty> se zase skládá z dat, jako jsou název a typ vlastnosti a potom ukazatel na hodnotu, která je zase další <xref:System.Activities.Presentation.Model.ModelItem>. Konvertor hodnot se používá k manipulaci s některými <xref:System.Activities.Presentation.Model.ModelItem>y vrácenými z <xref:System.Activities.Presentation.Model.ModelProperty>, aby byly správně zobrazeny ve stromovém zobrazení. Ukázka pak demonstruje, jak imperativně programovat do stromu <xref:System.Activities.Presentation.Model.ModelItem> pomocí imperativní syntaxe, jak je vidět v následujícím příkladu.
+ A <xref:System.Activities.Presentation.Model.ModelItem> se skládá z ukazatele na základní hodnotu, <xref:System.Activities.Presentation.Model.ModelProperty> stejně jako kolekce objektů. Objekt <xref:System.Activities.Presentation.Model.ModelProperty> zase skládá z dat, jako je například název a typ vlastnosti a pak ukazatel <xref:System.Activities.Presentation.Model.ModelItem>na hodnotu, která je zase jiný . Převaděč hodnot se používá k <xref:System.Activities.Presentation.Model.ModelItem>manipulaci <xref:System.Activities.Presentation.Model.ModelProperty> s některými s vrácené z a, aby se správně zobrazí ve stromovém zobrazení. Ukázka pak ukazuje, jak imperativně programovat proti stromu <xref:System.Activities.Presentation.Model.ModelItem> pomocí imperativní syntaxe, jak je vidět v následujícím příkladu.
 
 ```csharp
 ModelItem mi = wd.Context.Services.GetService<ModelService>().Root;
@@ -27,27 +27,27 @@ ModelItem justAdded = mp.Collection.Last();
 justAdded.Properties["DisplayName"].SetValue("new name");
 ```
 
-#### <a name="to-use-this-sample"></a>Použití této ukázky
+#### <a name="to-use-this-sample"></a>Chcete-li použít tento vzorek
 
-1. Otevřete řešení ProgrammingModelItemTree. sln v aplikaci Visual Studio 2010.
+1. Otevřete řešení ProgrammingModelItemTree.sln v sadě Visual Studio 2010.
 
-2. Sestavte řešení výběrem možnosti **Sestavit řešení** v nabídce **sestavení** .
+2. Vytvořte řešení výběrem **sestavení řešení** z nabídky **sestavení.**
 
-3. Stisknutím klávesy F5 spusťte aplikaci. Pak se zobrazí formulář WPF.
+3. Stisknutím klávesy F5 spusťte aplikaci. Poté se zobrazí formulář WPF.
 
-4. Kliknutím na tlačítko **Load WF** načtěte <xref:System.Activities.Presentation.Model.ModelItem> a vytvořte jeho svázání se stromovým zobrazením.
+4. Klepnutím na tlačítko **Načíst WF** načtěte tlačítko <xref:System.Activities.Presentation.Model.ModelItem> a spojte jej se stromovou zobrazení.
 
-5. Kliknutím na tlačítko **změnit strom položky modelu** se spustí předchozí kód pro přidání položky do stromu a nastavení vlastnosti.
+5. Kliknutím na tlačítko **Změnit strom položky modelu** se spustí předchozí kód pro přidání položky do stromu a nastavení vlastnosti.
 
 > [!IMPORTANT]
-> Ukázky již mohou být nainstalovány v počítači. Než budete pokračovat, vyhledejte následující (výchozí) adresář.  
->   
+> Ukázky mohou být již nainstalovány v počítači. Před pokračováním zkontrolujte následující (výchozí) adresář.  
+>
 > `<InstallDrive>:\WF_WCF_Samples`  
->   
-> Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] Samples. Tato ukázka se nachází v následujícím adresáři.  
->   
+>
+> Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a Windows Workflow Foundation (WF) Ukázky pro rozhraní .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka je umístěna v následujícím adresáři.  
+>
 > `<InstallDrive>:\WF_WCF_Samples\WF\Basic\Designer\ProgrammingModelItemTree`  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Data.IValueConverter>

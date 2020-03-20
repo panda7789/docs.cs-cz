@@ -1,31 +1,31 @@
 ---
-title: Aktivity shromažďování v WF
+title: Aktivity sběru v wf
 ms.date: 03/30/2017
 ms.assetid: 2680c3e2-9902-4968-b98d-cab776103dbe
-ms.openlocfilehash: b14d6f8bdebd349467004a8fa950927f848d0f21
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 5935b569bc46a6f38a7158049336f1e57fd8b0e5
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69935461"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79143145"
 ---
-# <a name="collection-activities-in-wf"></a>Aktivity shromažďování v WF
-Aktivity shromažďování se používají pro práci s objekty kolekce v pracovním postupu. [!INCLUDE[netfx_current_long](../../../includes/netfx-current-long-md.md)]obsahuje aktivity poskytované systémem pro přidávání a odebírání položek z kolekce, testování existence položky v kolekci a mazání kolekce. `ExistsInCollection`a `RemoveFromCollection` musímít<xref:System.Boolean>typ,který označuje výsledek. <xref:System.Activities.OutArgument%601>  
+# <a name="collection-activities-in-wf"></a>Aktivity sběru v wf
+Kolekce aktivity se používají pro práci s objekty kolekce v pracovním postupu. [!INCLUDE[netfx_current_long](../../../includes/netfx-current-long-md.md)]má systémem poskytované aktivity pro přidávání a odebírání položek z kolekce, testování existence položky v kolekci a vymazání kolekce. `ExistsInCollection`a `RemoveFromCollection` mají <xref:System.Activities.OutArgument%601> typ <xref:System.Boolean>, který označuje výsledek.  
   
 > [!IMPORTANT]
-> <xref:System.InvalidOperationException> Je-li aktivita kolekce provedena před nastavením podkladového objektu kolekce, je vyvolána a dojde k chybám aktivity.  
+> Pokud je aktivita kolekce spuštěna před nastavením základního objektu <xref:System.InvalidOperationException> kolekce, je vyvolána a chyby aktivity.  
   
-## <a name="collection-activities"></a>Aktivity shromažďování  
+## <a name="collection-activities"></a>Sběrné činnosti  
   
 |||  
 |-|-|  
 |<xref:System.Activities.Statements.AddToCollection%601>|Přidá položku do zadané kolekce.|  
-|<xref:System.Activities.Statements.ClearCollection%601>|Vymaže všechny položky ze zadané kolekce.|  
-|<xref:System.Activities.Statements.ExistsInCollection%601>|Vrátí `true` , zda položka v kolekci existuje.|  
-|<xref:System.Activities.Statements.RemoveFromCollection%601>|Odstraní položku ze zadané kolekce a vrátí `true` , zda byla položka úspěšně odebrána.|  
+|<xref:System.Activities.Statements.ClearCollection%601>|Vymaže všechny položky z zadané kolekce.|  
+|<xref:System.Activities.Statements.ExistsInCollection%601>|Vrátí, `true` pokud položka existuje v kolekci.|  
+|<xref:System.Activities.Statements.RemoveFromCollection%601>|Odebere položku ze zadané `true` kolekce a vrátí, pokud byla položka úspěšně odebrána.|  
   
-## <a name="using-collection-activities"></a>Používání aktivit shromažďování  
- Následující příklad kódu ukazuje, jak pracovat s kolekcí deklarovanou jako proměnnou pracovního postupu. Použitá kolekce je <xref:System.Collections.Generic.List%601> <xref:System.String> objektem s názvem `fruitList`.  
+## <a name="using-collection-activities"></a>Použití aktivit sběru  
+ Následující příklad kódu ukazuje, jak pracovat s kolekcí deklarovanou jako proměnná pracovního postupu. Použitá kolekce <xref:System.Collections.Generic.List%601> je <xref:System.String> objekty s názvem `fruitList`.  
   
 ```csharp  
 Variable<ICollection<string>> fruitList = new Variable<ICollection<string>>  
@@ -43,7 +43,7 @@ Activity wf = new Sequence
 {  
     Variables = { fruitList, result },  
   
-    Activities =   
+    Activities =
     {  
         new If  
         {  
@@ -225,7 +225,7 @@ Activity wf = new Sequence
 </Sequence>  
 ```  
   
- Výše uvedené ukázky kódu lze také vytvořit pomocí nástroje <xref:Microsoft.CSharp.Activities.CSharpValue%601> místo<xref:Microsoft.VisualBasic.Activities.VisualBasicValue%601>  
+ Výše uvedené ukázky kódu <xref:Microsoft.CSharp.Activities.CSharpValue%601> lze také vytvořit pomocí<xref:Microsoft.VisualBasic.Activities.VisualBasicValue%601>  
   
 ```csharp
 Variable<ICollection<string>> fruitList = new Variable<ICollection<string>>  
@@ -243,7 +243,7 @@ Activity wf = new Sequence
 {  
     Variables = { fruitList, result },  
   
-    Activities =   
+    Activities =
     {  
         new If  
         {  
@@ -425,6 +425,6 @@ Activity wf = new Sequence
 </Sequence>  
 ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Vytváření pracovních postupů, aktivit a výrazů pomocí imperativního kódu](authoring-workflows-activities-and-expressions-using-imperative-code.md)

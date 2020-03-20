@@ -2,31 +2,31 @@
 title: 'Postupy: Deserializace vlastností data instance'
 ms.date: 03/30/2017
 ms.assetid: b13a3508-1b97-4359-b336-03d85fa23bc4
-ms.openlocfilehash: e037d5f8d0b221aa0eb8fdc6eceabf6efb2dc387
-ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
+ms.openlocfilehash: 8142671fc1bc154337019e025d8443f0570106b3
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/14/2019
-ms.locfileid: "70989637"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79143080"
 ---
 # <a name="how-to-deserialize-instance-data-properties"></a>Postupy: Deserializace vlastností data instance
-Můžou nastat situace, kdy uživatel nebo správce pracovního postupu může chtít ručně zkontrolovat stav trvalé instance pracovního postupu. <xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore>poskytuje zobrazení tabulky instance, která zveřejňuje následující čtyři sloupce:  
+Mohou nastat situace, kdy uživatel nebo správce pracovního postupu může chtít ručně zkontrolovat stav instance trvalého pracovního postupu. <xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore>Poskytuje zobrazení v tabulce Instance, která zveřejňuje následující čtyři sloupce:  
   
 - ReadWritePrimitiveDataProperties  
   
 - WriteOnlyPrimitiveDataProperties  
   
-- ReadWriteComplexDataProperties  
+- Vlastnosti ReadWriteComplexDataProperties  
   
 - WriteOnlyComplexDataProperties  
   
- Vlastnosti primitivních dat odkazují na vlastnosti, jejichž typy .NET Framework jsou považovány za "Common" (například Int32 a String), zatímco vlastnosti komplexních dat odkazují na všechny ostatní typy. Přesný výčet primitivních typů najdete později v tomto příkladu kódu.  
+ Primitivní vlastnosti dat odkazují na vlastnosti, jejichž typy rozhraní .NET Framework jsou považovány za "běžné" (například Int32 a String), zatímco komplexní vlastnosti dat odkazují na všechny ostatní typy. Přesný výčet primitivních typů se nachází dále v tomto příkladu kódu.  
   
- Vlastnosti pro čtení a zápis odkazují na vlastnosti, které se vrátí zpět do modulu runtime pracovního postupu při načtení instance. Vlastnosti WriteOnly se zapisují do databáze a pak se nikdy nečtou.  
+ Vlastnosti pro čtení a zápis odkazují na vlastnosti, které jsou vráceny zpět do runtime pracovního postupu při načtení instance. WriteOnly vlastnosti jsou zapsány do databáze a pak nikdy číst znovu.  
   
- Tento příklad poskytuje kód, který umožňuje uživateli deserializovat primitivní vlastnosti dat. Při přečtení bajtového pole ze sloupce ReadWritePrimitiveDataProperties nebo WriteOnlyPrimitiveDataProperties převede tento kód binární rozsáhlý objekt (BLOB) na <xref:System.Collections.Generic.Dictionary%602> typ \<XName, objekt >, kde každá hodnota klíče dvojice představuje název vlastnosti a odpovídající hodnotu.  
+ Tento příklad obsahuje kód, který umožňuje uživateli rekonstruovat primitivní vlastnosti dat. Vzhledem k tomu, bajt ové pole čtení z ReadWritePrimitiveDataProperties nebo WriteOnlyPrimitiveDataProperties sloupec, <xref:System.Collections.Generic.Dictionary%602> tento \<kód převede binární velký objekt (BLOB) do typu XName, objekt> kde každý pár hodnoty klíče představuje název vlastnosti a jeho odpovídající hodnotu.  
   
- Tento příklad neukazuje, jak zrušit serializaci vlastností komplexních dat, protože to není momentálně podporovaná operace.  
+ Tento příklad neukazuje, jak rekonstruovat vlastnosti komplexních dat, protože se aktuálně nejedná o podporovanou operaci.  
   
 ```csharp  
 using System;  
@@ -104,7 +104,7 @@ namespace PropertyReader
                     // if the instance state is compressed using GZip algorithm  
                     if (isCompressed)  
                     {  
-                        // decompress the data using the GZip   
+                        // decompress the data using the GZip
                         using (GZipStream stream = new GZipStream(memoryStream, CompressionMode.Decompress))  
                         {  
                             // create an XmlReader object and pass it on to the helper method ReadPrimitiveDataProperties  
@@ -117,7 +117,7 @@ namespace PropertyReader
                     }  
                     else  
                     {  
-                        // if the instance data is not compressed   
+                        // if the instance data is not compressed
                         // create an XmlReader object and pass it on to the helper method ReadPrimitiveDataProperties  
                         using (XmlReader reader = XmlDictionaryReader.CreateBinaryReader(memoryStream, XmlDictionaryReaderQuotas.Max))  
                         {  

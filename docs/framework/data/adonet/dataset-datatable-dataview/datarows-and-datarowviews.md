@@ -5,19 +5,19 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 8f5eec26-b809-4aca-8778-7e202356d856
-ms.openlocfilehash: 7c76435b8a0f7a874504813d91d5eda929d08f67
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 14e7e1ccb051410c351e49afee9f2d6809264833
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70786431"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79151296"
 ---
 # <a name="datarows-and-datarowviews"></a>DataRows a DataRowViews
-Zpřístupňuje vyčíslitelné <xref:System.Data.DataRowView> kolekce objektů. <xref:System.Data.DataView> Objekty **DataRowView** zpřístupňují hodnoty jako pole objektů, která jsou indexována buď názvem, nebo odkazem na pořadové číslo sloupce v podkladové tabulce. Přístup k <xref:System.Data.DataRow> , který je zpřístupněn **DataRowView** , můžete získat pomocí <xref:System.Data.DataRowView.Row%2A> vlastnosti **DataRowView**.  
+A <xref:System.Data.DataView> zpřístupňuje výčtu <xref:System.Data.DataRowView> kolekce objektů. Objekty **DataRowView** zveřejňují hodnoty jako pole objektů, které jsou indexovány názvem nebo ordinálním odkazem na sloupec v podkladové tabulce. Můžete <xref:System.Data.DataRow> přistupovat, který je vystaven **DataRowView** pomocí <xref:System.Data.DataRowView.Row%2A> **vlastnosti DataRowView**.  
   
- Při zobrazení hodnot pomocí **DataRowView** <xref:System.Data.DataView.RowStateFilter%2A> vlastnost **DataView** určuje, která verze řádku podkladového objektu **DataRow** je vystavena. Informace o přístupu k různým verzím řádků pomocí objektu **DataRow**naleznete v tématu [stavy řádků a verze řádků](row-states-and-row-versions.md).  
+ Při zobrazení hodnot pomocí **DataRowView** <xref:System.Data.DataView.RowStateFilter%2A> , vlastnost **DataView** určuje, která verze řádku podkladového **DataRow** je vystavena. Informace o přístupu k různým verzím řádků pomocí **datarow**, naleznete v [tématu Stavy řádků a Verze řádků](row-states-and-row-versions.md).  
   
- Následující příklad kódu zobrazí všechny aktuální a původní hodnoty v tabulce.  
+ Následující příklad kódu zobrazuje všechny aktuální a původní hodnoty v tabulce.  
   
 ```vb  
 Dim catView As DataView = New DataView(catDS.Tables("Categories"))  
@@ -25,7 +25,7 @@ Console.WriteLine("Current Values:")
 WriteView(catView)  
 Console.WriteLine("Original Values:")  
 catView.RowStateFilter = DataViewRowState.ModifiedOriginal  
-WriteView(catView)      
+WriteView(catView)
   
 Public Shared Sub WriteView(thisDataView As DataView)  
   Dim rowView As DataRowView  
@@ -59,7 +59,7 @@ public static void WriteView(DataView thisDataView)
 }  
 ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Data.DataRowVersion>
 - <xref:System.Data.DataViewRowState>

@@ -1,5 +1,5 @@
 ---
-title: <section> – element
+title: <section>  – element
 ms.date: 05/01/2017
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/configSections/section
@@ -8,92 +8,92 @@ helpviewer_keywords:
 - section Element
 - <section> Element
 ms.assetid: ec7d4110-2403-47ac-8218-499bfe9d5ddb
-ms.openlocfilehash: 8785523d664294e3ca3792fb0f84d739d1f1a376
-ms.sourcegitcommit: 9c54866bcbdc49dbb981dd55be9bbd0443837aa2
+ms.openlocfilehash: 88f74c02ef627e9136e4437ffa150c36445266a3
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/14/2020
-ms.locfileid: "77215719"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79153724"
 ---
-# <a name="section-element"></a>oddíl > elementu \<
+# <a name="section-element"></a>\<prvek> oddílu
 
-Obsahuje deklaraci konfiguračního oddílu.
+Obsahuje deklaraci oddílu konfigurace.
 
-[**konfigurační >\<** ](configuration-element.md)\
-&nbsp;&nbsp;[ **\<configSections >** ](configsections-element-for-configuration.md)\
-&nbsp;&nbsp;&nbsp;&nbsp; **\<části >**
+[**\<>konfigurace**](configuration-element.md)\
+&nbsp;&nbsp;[**\<configSections>**](configsections-element-for-configuration.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;**\<>oddílu**
 
-[**konfigurační >\<** ](configuration-element.md)\
-&nbsp;&nbsp;[ **\<configSections >** ](configsections-element-for-configuration.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;\<[**oddíly**](sectiongroup-element-for-configsections.md) >\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<části** >
+[**\<>konfigurace**](configuration-element.md)\
+&nbsp;&nbsp;[**\<configSections>**](configsections-element-for-configuration.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[**\<oddílSkupina>**](sectiongroup-element-for-configsections.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<>oddílu**
 
 ## <a name="syntax"></a>Syntaxe
 
 ```xml
 <section name="section name"
          type="configuration section handler class, assembly"
-         allowDefinition="Everywhere|MachineOnly|MachineToApplication" 
+         allowDefinition="Everywhere|MachineOnly|MachineToApplication"
          allowLocation="true|false" />
 ```
 
-## <a name="required-attributes"></a>Požadované atributy
+## <a name="required-attributes"></a>Povinné atributy
 
 |           | Popis |
 | --------- | ----------- |
 | **Jméno**  | Určuje název konfiguračního oddílu. |
-| **type**  | Určuje název třídy obslužné rutiny konfiguračního oddílu, který čte oddíl z konfiguračního souboru. Hodnota typu obsahuje syntaxi "plně kvalifikované-oddíl-obslužné rutiny-název třídy", Simple-Assembly-Name ". Jednoduchý název sestavení je kořenový název souboru bez přípony souboru *. dll* . |
+| **Typ**  | Určuje název třídy obslužné rutiny konfiguračního oddílu, která čte oddíl z konfiguračního souboru. Hodnota typu má syntaxi "plně kvalifikovaný-sekce-handler-class-name, simple-assembly-name". Jednoduchý název sestavení je kořenový název souboru bez přípony *souboru DLL.* |
 
 ## <a name="optional-attributes"></a>Volitelné atributy
 
-Následující atributy platí pouze pro aplikace ASP.NET. Konfigurační systém ignoruje tyto atributy pro jiné typy aplikací.
+Následující atributy platí pouze pro ASP.NET aplikace. Konfigurační systém ignoruje tyto atributy pro jiné typy aplikací.
 
 |                     | Popis |
 | ------------------- | ----------- |
-| **allowDefinition** | Určuje, v jakém konfiguračním souboru se dá oddíl použít. Použijte jednu z následujících hodnot:<br><br>**Všude**<br>Umožňuje použití oddílu v libovolném konfiguračním souboru. Toto nastavení je výchozí.<br>**MachineOnly**<br>Umožňuje použít oddíl pouze v konfiguračním souboru počítače (*Machine. config*).<br>**MachineToApplication**<br>Umožňuje použít oddíl v konfiguračním souboru počítače nebo v konfiguračním souboru aplikace. |
-| **allowLocation**   | Určuje, zda lze oddíl použít v rámci **\<umístění >** elementu. Použijte jednu z následujících hodnot:<br><br>**true**<br>Umožňuje použití oddílu v rámci **\<umístění >** elementu. Toto nastavení je výchozí.<br>**false**<br>Nepovoluje použití oddílu v **\<umístění >** elementu. |
+| **Allowdefinition** | Určuje, ve kterém konfiguračním souboru lze oddíl použít. Použijte jednu z následujících hodnot:<br><br>**Všude**<br>Umožňuje použití oddílu v libovolném konfiguračním souboru. Toto nastavení je výchozí.<br>**Pouze stroj**<br>Umožňuje použití oddílu pouze v konfiguračním souboru počítače *(Machine.config).*<br>**Machinetoapplication**<br>Umožňuje použití oddílu v konfiguračním souboru počítače nebo v konfiguračním souboru aplikace. |
+| **allowLocation**   | Určuje, zda lze oddíl použít v rámci ** \<>** prvku umístění. Použijte jednu z následujících hodnot:<br><br>**true**<br>Umožňuje oddíl, který má být použit v rámci ** \<umístění>** prvku. Toto nastavení je výchozí.<br>**false (nepravda)**<br>Neumožňuje oddíl, který má být použit v rámci ** \<umístění>** prvek. |
 
 ## <a name="parent-elements"></a>Nadřazené prvky
 
 |     | Popis |
 | --- | ----------- |
-| [ **\<configSections >** Objekt](configsections-element-for-configuration.md) | Obsahuje konfigurační oddíl a deklarace oboru názvů. |
-| [ **>\<sectionGroup** Objekt](sectiongroup-element-for-configsections.md) | Definuje obor názvů pro konfigurační oddíly. |
+| [** \<>konfigSections** Prvek](configsections-element-for-configuration.md) | Obsahuje konfigurační oddíl a deklarace oboru názvů. |
+| [** \<sectionSkupina>** Prvek](sectiongroup-element-for-configsections.md) | Definuje obor názvů pro oddíly konfigurace. |
 
 > [!NOTE]
-> **Oddíl\<>** prvek je podřízeným prvkem buď **\<configSections >** nebo **\<sectionGroup** , ale ne obojího.
+> ** \<Oddíl>** element je podřízený prvek ** \<buď configSections>** nebo ** \<sectionGroup>,** ale ne obojí.
 
 ## <a name="child-elements"></a>Podřízené prvky
 
-Žádná
+Žádný
 
 ## <a name="remarks"></a>Poznámky
 
-Deklarace konfiguračního oddílu v podstatě definuje nový prvek konfiguračního souboru. Nový prvek obsahuje nastavení, která obslužná rutina konfiguračního oddílu (to znamená třída, která implementuje rozhraní <xref:System.Configuration.IConfigurationSectionHandler>) čte. Atributy a podřízené prvky oddílu, který definujete, závisí na obslužné rutině oddílu, kterou použijete ke čtení nastavení.
+Deklarování konfiguračního oddílu v podstatě definuje nový prvek pro konfigurační soubor. Nový prvek obsahuje nastavení, které čtení obslužné rutiny oddílu konfigurace (to znamená, že třída, která implementuje <xref:System.Configuration.IConfigurationSectionHandler> rozhraní). Atributy a podřízené prvky oddílu, který definujete, závisí na obslužné rutině oddílu, kterou používáte ke čtení nastavení.
 
-Deklarace obslužné rutiny konfiguračního oddílu v souboru *Machine. config* umožňuje použít konfigurační oddíl v libovolném konfiguračním souboru aplikace v tomto počítači, pokud atribut **AllowDefinition** neurčuje jinak.
+Deklarování obslužné rutiny oddílu konfigurace v souboru *Machine.config* umožňuje použít oddíl konfigurace v libovolném konfiguračním souboru aplikace v tomto počítači, pokud atribut **allowDefinition** neurčuje jinak.
 
 ## <a name="example"></a>Příklad
 
-Následující příklad ukazuje, jak definovat konfigurační oddíl a definovat nastavení pro tuto část:
+Následující příklad ukazuje, jak definovat konfigurační oddíl a definovat nastavení pro tento oddíl:
 
 ```xml
 <configuration>
   <configSections>
     <section name="sampleSection"
-             type="System.Configuration.SingleTagSectionHandler" 
+             type="System.Configuration.SingleTagSectionHandler"
              allowLocation="false" />
   </configSections>
-  <sampleSection setting1="Value1" 
-                 setting2="value two" 
+  <sampleSection setting1="Value1"
+                 setting2="value two"
                  setting3="third value" />
 </configuration>
 ```
 
 ## <a name="configuration-file"></a>Konfigurační soubor
 
-Tento element lze použít v konfiguračním souboru aplikace, konfiguračním souboru počítače (*Machine. config*) a souborech *Web. config* , které nejsou na úrovni adresáře aplikace.
+Tento prvek lze použít v konfiguračním souboru aplikace, konfiguračním souboru počítače *(Machine.config*) a souborech *Web.config,* které nejsou na úrovni adresáře aplikace.
 
 ## <a name="see-also"></a>Viz také
 
-- [Schéma konfiguračního souboru pro .NET Framework](index.md)
+- [Schéma konfiguračního souboru pro rozhraní .NET Framework](index.md)

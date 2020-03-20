@@ -2,18 +2,18 @@
 title: Vyvolání ověřování aktivit
 ms.date: 03/30/2017
 ms.assetid: 22bef766-c505-4fd4-ac0f-7b363b238969
-ms.openlocfilehash: b45840081f5fc142cf3ec88853dea984b204c9d0
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 1241e6445cde20a192581e8132e563e0f7ca8d93
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69934986"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79182889"
 ---
 # <a name="invoking-activity-validation"></a>Vyvolání ověřování aktivit
-Ověření aktivity poskytuje metodu pro identifikaci a hlášení chyb v konfiguraci jakékoli aktivity před jejím spuštěním. K ověření dojde, když se v Návrháři pracovních postupů upraví pracovní postup a v Návrháři pracovních postupů se zobrazí všechny chyby nebo upozornění ověřování. K ověření dojde v době spuštění pracovního postupu, a pokud dojde k nějakým chybám ověření, <xref:System.Activities.InvalidWorkflowException> je vyvolána výchozí logikou ověřování. Programovací model Windows Workflow Foundation (WF) poskytuje <xref:System.Activities.Validation.ActivityValidationServices> třídu, kterou mohou používat aplikace pracovního postupu a vývojáři nástrojů k explicitnímu ověření aktivity. Toto téma popisuje, jak použít <xref:System.Activities.Validation.ActivityValidationServices> k provedení ověření aktivity.  
+Ověření aktivity poskytuje metodu k identifikaci a hlášení chyb v konfiguraci libovolné aktivity před jejím spuštěním. K ověření dochází při změně pracovního postupu v návrháři pracovního postupu a všechny chyby ověření nebo upozornění jsou zobrazeny v návrháři pracovního postupu. K ověření dochází také v době běhu, kdy je vyvolán <xref:System.Activities.InvalidWorkflowException> pracovní postup a pokud dojde k chybám ověření, je vyvolána výchozí ověřovací logikou. Windows Workflow Foundation (WF) poskytuje třídu, <xref:System.Activities.Validation.ActivityValidationServices> kterou mohou vývojáři pracovního postupu a nástrojů použít k explicitnímu ověření aktivity. Toto téma popisuje <xref:System.Activities.Validation.ActivityValidationServices> použití k ověření aktivity.  
   
-## <a name="using-activityvalidationservices"></a>Použití zobrazíte služby ActivityValidationServices  
- <xref:System.Activities.Validation.ActivityValidationServices>má dvě <xref:System.Activities.Validation.ActivityValidationServices.Validate%2A> přetížení, která se používají k vyvolání logiky ověřování aktivity. První přetížení převezme kořenovou aktivitu k ověření a vrátí kolekci chyb ověřování a upozornění. V následujícím příkladu se používá vlastní `Add` aktivita, která má dva povinné argumenty.  
+## <a name="using-activityvalidationservices"></a>Použití služby ActivityValidationServices  
+ <xref:System.Activities.Validation.ActivityValidationServices>má <xref:System.Activities.Validation.ActivityValidationServices.Validate%2A> dvě přetížení, které se používají k vyvolání logiky ověření aktivity. První přetížení trvá kořenové aktivity, které mají být ověřeny a vrátí kolekci chyb ověření a upozornění. V následujícím příkladu `Add` se používá vlastní aktivita, která má dva požadované argumenty.  
   
 ```csharp  
 public sealed class Add : CodeActivity<int>  
@@ -31,7 +31,7 @@ public sealed class Add : CodeActivity<int>
 }  
 ```  
   
- Aktivita se používá <xref:System.Activities.Statements.Sequence>uvnitř, ale její dva požadované argumenty nejsou svázané, jak je znázorněno v následujícím příkladu. `Add`  
+ Aktivita se `Add` používá <xref:System.Activities.Statements.Sequence>uvnitř , ale jeho dva požadované argumenty nejsou vázány, jak je znázorněno v následujícím příkladu.  
   
 ```csharp  
 Variable<int> Operand1 = new Variable<int>{ Default = 10 };  
@@ -41,7 +41,7 @@ Variable<int> Result = new Variable<int>();
 Activity wf = new Sequence  
 {  
     Variables = { Operand1, Operand2, Result },  
-    Activities =   
+    Activities =
     {  
         new Add(),  
         new WriteLine  
@@ -52,7 +52,7 @@ Activity wf = new Sequence
 };  
 ```  
   
- Tento pracovní postup lze ověřit voláním <xref:System.Activities.Validation.ActivityValidationServices.Validate%2A>. <xref:System.Activities.Validation.ActivityValidationServices.Validate%2A>Vrátí kolekci všech chyb ověřování nebo upozornění obsažených v aktivitě a všech podřízených, jak je znázorněno v následujícím příkladu.  
+ Tento pracovní postup lze <xref:System.Activities.Validation.ActivityValidationServices.Validate%2A>ověřit voláním . <xref:System.Activities.Validation.ActivityValidationServices.Validate%2A>vrátí kolekci všech chyb ověření nebo upozornění obsažených aktivity a všechny podřízené, jak je znázorněno v následujícím příkladu.  
   
 ```csharp  
 ValidationResults results = ActivityValidationServices.Validate(wf);  
@@ -74,10 +74,10 @@ else
 }  
 ```  
   
- Při <xref:System.Activities.Validation.ActivityValidationServices.Validate%2A> volání tohoto ukázkového pracovního postupu se vrátí dvě chyby ověřování.  
+ Při <xref:System.Activities.Validation.ActivityValidationServices.Validate%2A> volání v tomto ukázkovém pracovním postupu jsou vráceny dvě chyby ověření.  
   
- **Chyba: Nebyla zadána hodnota pro argument požadované aktivity ' Operand2 '.**  
-**Chyba: Nebyla zadána hodnota pro argument požadované aktivity ' Operand1 '.**  Pokud byl tento pracovní postup vyvolán <xref:System.Activities.InvalidWorkflowException> , bude vyvolána výjimka, jak je znázorněno v následujícím příkladu.  
+ **Chyba: Nebyla zadána hodnota pro argument požadované aktivity Operand2.**  
+**Chyba: Nebyla zadána hodnota pro argument požadované aktivity Operand1.**  Pokud tento pracovní postup <xref:System.Activities.InvalidWorkflowException> byl vyvolán, by být vyvolána, jak je znázorněno v následujícím příkladu.  
   
 ```csharp  
 try  
@@ -90,10 +90,10 @@ catch (Exception ex)
 }  
 ```  
   
- **System. Activities. InvalidWorkflowException:**  
-**Při zpracování stromu pracovního postupu došlo k následujícím chybám:**    
-**' Přidat ': Nebyla zadána hodnota pro argument požadované aktivity ' Operand2 '.**    
-**' Přidat ': Nebyla zadána hodnota pro argument požadované aktivity ' Operand1 '.**  Aby byl tento ukázkový pracovní postup platný, musí být vázány dva požadované `Add` argumenty aktivity. V následujícím příkladu jsou dva požadované argumenty vázány na proměnné pracovního postupu spolu s výslednou hodnotou. V tomto příkladu <xref:System.Activities.Activity%601.Result%2A> je argument svázán spolu se dvěma požadovanými argumenty. <xref:System.Activities.Activity%601.Result%2A> Argument není nutné svázat a nezpůsobuje chybu ověřování, pokud není. Je odpovědností autora pracovního postupu, aby se vytvořila vazba <xref:System.Activities.Activity%601.Result%2A> , pokud se jeho hodnota používá jinde v pracovním postupu.  
+ **System.Activities.InvalidWorkflowException:**  
+**Při zpracování stromu pracovního postupu došlo k následujícím chybám:**
+**Přidání: Nebyla zadána hodnota pro argument požadované aktivity Operand2.** 
+ **'Přidat': Hodnota pro argument požadované aktivity 'Operand1' nebyla zadána.**  Aby byl tento příklad pracovního postupu platný, `Add` musí být svázány dva požadované argumenty aktivity. V následujícím příkladu jsou dva požadované argumenty vázány na proměnné pracovního postupu spolu s hodnotou výsledku. V tomto <xref:System.Activities.Activity%601.Result%2A> příkladu je argument vázán spolu se dvěma požadovanými argumenty. Argument <xref:System.Activities.Activity%601.Result%2A> není nutné být vázána a nezpůsobí chybu ověření, pokud není. Je odpovědností autora pracovního <xref:System.Activities.Activity%601.Result%2A> postupu svázat, pokud jeho hodnota je použita jinde v pracovním postupu.  
   
 ```csharp  
 new Add  
@@ -104,8 +104,8 @@ new Add
 }  
 ```  
   
-### <a name="validating-required-arguments-on-the-root-activity"></a>Ověřování požadovaných argumentů u kořenové aktivity  
- Pokud má kořenová aktivita pracovního postupu argumenty, nejsou tyto argumenty vázány, dokud není vyvolán pracovní postup a parametry jsou předány do pracovního postupu. Následující pracovní postup projde ověřením, ale výjimka je vyvolána, pokud je pracovní postup vyvolán bez předání požadovaných argumentů, jak je znázorněno v následujícím příkladu.  
+### <a name="validating-required-arguments-on-the-root-activity"></a>Ověření požadovaných argumentů v kořenové aktivitě  
+ Pokud kořenová aktivita pracovního postupu má argumenty, nejsou vázány, dokud není pracovní postup vyvolán a parametry jsou předány pracovnímu postupu. Následující pracovní postup předá ověření, ale je vyvolána výjimka, pokud je pracovní postup vyvolán bez předání požadovaných argumentů, jak je znázorněno v následujícím příkladu.  
   
 ```csharp  
 Activity wf = new Add();  
@@ -123,10 +123,10 @@ catch (Exception ex)
 }  
 ```  
   
- **System.ArgumentException: Nastavení argumentu kořenové aktivity jsou nesprávná.**  
-**Opravte tyto chyby zadáním opravy definice pracovního postupu nebo zadáním vstupních hodnot:**    
-**' Přidat ': Nebyla zadána hodnota pro argument požadované aktivity ' Operand2 '.**    
-**' Přidat ': Nebyla zadána hodnota pro argument požadované aktivity ' Operand1 '.**  Po předání správných argumentů se pracovní postup úspěšně dokončí, jak je znázorněno v následujícím příkladu.  
+ **System.ArgumentException: Nastavení argumentů kořenové aktivity je nesprávné.**  
+**Buď opravte definici pracovního postupu nebo zadejte vstupní hodnoty pro opravu těchto chyb:**
+ **"Přidat": Nebyla zadána hodnota pro argument požadované aktivity Operand2.** 
+ **'Přidat': Hodnota pro argument požadované aktivity 'Operand1' nebyla zadána.**  Po předání správných argumentů se pracovní postup úspěšně dokončí, jak je znázorněno v následujícím příkladu.  
   
 ```csharp  
 Add wf = new Add();  
@@ -152,13 +152,13 @@ catch (Exception ex)
 ```  
   
 > [!NOTE]
-> V tomto příkladu byla kořenová aktivita deklarována jako `Add` `Activity` místo v předchozím příkladu. To umožňuje `WorkflowInvoker.Invoke` metodě vracet jedno celé číslo, které představuje výsledky `Add` aktivity `out` namísto slovníku argumentů. Proměnná `wf` by mohla být také deklarována jako `Activity<int>`.  
+> V tomto příkladu byla kořenová aktivita deklarována jako `Add` místo `Activity` jako v předchozím příkladu. To umožňuje `WorkflowInvoker.Invoke` metodu vrátit jedno celé číslo, které `Add` představuje výsledky aktivity `out` namísto slovníku argumentů. Proměnná `wf` mohla být také `Activity<int>`deklarována jako .  
   
- Při ověřování kořenových argumentů je zodpovědný hostitelská aplikace, aby zajistila, že všechny požadované argumenty jsou předány při vyvolání pracovního postupu.  
+ Při ověřování kořenových argumentů je odpovědností hostitelské aplikace zajistit, aby všechny požadované argumenty byly předány při vyvolání pracovního postupu.  
   
-### <a name="invoking-imperative-code-based-validation"></a>Vyvolání imperativního ověřování na základě kódu
+### <a name="invoking-imperative-code-based-validation"></a>Vyvolání imperativního ověření na základě kódu
 
-Imperativní ověřování na základě kódu poskytuje jednoduchý způsob, jak může aktivita poskytnout ověření sama o sobě, a je k dispozici pro aktivity, <xref:System.Activities.CodeActivity>které <xref:System.Activities.AsyncCodeActivity>jsou odvozeny z, a <xref:System.Activities.NativeActivity>. Ověřovací kód, který určuje chyby ověřování nebo upozornění, se přidají do aktivity. Když je vyvoláno ověřování u aktivity, jsou tato upozornění nebo chyby obsaženy v kolekci vrácené voláním metody <xref:System.Activities.Validation.ActivityValidationServices.Validate%2A>. V následujícím příkladu `CreateProduct` je definována aktivita. Pokud je větší `Price`než, je do metadat v <xref:System.Activities.CodeActivity.CacheMetadata%2A> přepsání přidána chyba ověřování. `Cost`  
+Imperativní ověření založené na kódu poskytuje jednoduchý způsob, jak aktivita <xref:System.Activities.CodeActivity>poskytnout <xref:System.Activities.AsyncCodeActivity>ověření <xref:System.Activities.NativeActivity>o sobě a je k dispozici pro aktivity, které jsou odvozeny od , , a . Ověřovací kód, který určuje všechny chyby ověření nebo upozornění je přidán do aktivity. Při ověření je vyvolána na aktivitu, tato upozornění nebo chyby <xref:System.Activities.Validation.ActivityValidationServices.Validate%2A>jsou obsaženy v kolekci vrácené volání . V následujícím příkladu `CreateProduct` je definována aktivita. Pokud `Cost` je větší `Price`než , je k metadatům v <xref:System.Activities.CodeActivity.CacheMetadata%2A> přepsání přidána chyba ověření.  
   
 ```csharp  
 public sealed class CreateProduct : CodeActivity  
@@ -166,7 +166,7 @@ public sealed class CreateProduct : CodeActivity
     public double Price { get; set; }  
     public double Cost { get; set; }  
   
-    // [RequiredArgument] attribute will generate a validation error   
+    // [RequiredArgument] attribute will generate a validation error
     // if the Description argument is not set.  
     [RequiredArgument]  
     public InArgument<string> Description { get; set; }  
@@ -189,12 +189,12 @@ public sealed class CreateProduct : CodeActivity
 }  
 ```  
   
- V tomto příkladu je pracovní postup nakonfigurován pomocí `CreateProduct` aktivity. V tomto pracovním postupu `Cost` je větší `Price`než a požadovaný `Description` argument není nastaven. Při vyvolání ověření se vrátí následující chyby.  
+ V tomto příkladu je pracovní `CreateProduct` postup konfigurován pomocí aktivity. V tomto pracovním `Cost` postupu je `Price`větší než `Description` , a požadovaný argument není nastaven. Při vyvolání ověření jsou vráceny následující chyby.  
   
 ```csharp  
 Activity wf = new Sequence  
 {  
-    Activities =   
+    Activities =
     {  
         new CreateProduct  
         {  
@@ -229,14 +229,14 @@ else
 ```  
   
  **Chyba: Náklady musí být menší nebo rovny ceně.**  
-**Chyba: Nebyla zadána hodnota pro argument požadované aktivity Description.**    
+**Chyba: Nebyla zadána hodnota argumentu požadované aktivity "Popis".**
 > [!NOTE]
-> Vlastní autoři aktivit můžou v <xref:System.Activities.CodeActivity.CacheMetadata%2A> přepsání aktivity poskytnout logiku ověřování. Všechny výjimky, které jsou vyvolány <xref:System.Activities.CodeActivity.CacheMetadata%2A> , nejsou považovány za chyby ověřování. Tyto výjimky budou ukončeny voláním <xref:System.Activities.Validation.ActivityValidationServices.Validate%2A> a musí být zpracovány volajícím.  
+> Vlastní autoři aktivity mohou poskytnout logiku ověření v přepsání aktivity. <xref:System.Activities.CodeActivity.CacheMetadata%2A> Všechny výjimky, které <xref:System.Activities.CodeActivity.CacheMetadata%2A> jsou vyvolány z nejsou považovány za chyby ověření. Tyto výjimky budou uniknout <xref:System.Activities.Validation.ActivityValidationServices.Validate%2A> z volání a musí být zpracovány volajícím.  
   
-## <a name="using-validationsettings"></a>Použití ValidationSettings  
- Ve výchozím nastavení jsou všechny aktivity ve stromu aktivit vyhodnocovány, když je vyvoláno ověřování pomocí <xref:System.Activities.Validation.ActivityValidationServices>. <xref:System.Activities.Validation.ValidationSettings>umožňuje, aby bylo ověřování upravováno několika různými způsoby konfigurací jejích tří vlastností. <xref:System.Activities.Validation.ValidationSettings.SingleLevel%2A>Určuje, zda má validátor procházet celý strom aktivity nebo pouze použít logiku ověřování pro zadanou aktivitu. Výchozí hodnota pro tuto hodnotu je `false`. <xref:System.Activities.Validation.ValidationSettings.AdditionalConstraints%2A>Určuje další mapování omezení z typu na seznam omezení. Pro základní typ každé aktivity ve stromu aktivity, ke kterému se ověřuje, se nachází vyhledávání <xref:System.Activities.Validation.ValidationSettings.AdditionalConstraints%2A>. Pokud je nalezen seznam vyhovujících omezení, jsou pro aktivitu vyhodnocena všechna omezení v seznamu. <xref:System.Activities.Validation.ValidationSettings.OnlyUseAdditionalConstraints%2A>Určuje, zda má validátor vyhodnotit všechna omezení nebo pouze ty <xref:System.Activities.Validation.ValidationSettings.AdditionalConstraints%2A>, které jsou zadány v. Výchozí hodnota je `false`. <xref:System.Activities.Validation.ValidationSettings.AdditionalConstraints%2A>a <xref:System.Activities.Validation.ValidationSettings.OnlyUseAdditionalConstraints%2A> jsou užitečné pro autory hostitele pracovního postupu k přidání dalšího ověřování pro pracovní postupy, jako jsou například omezení zásad pro nástroje, jako je například FxCop. Další informace o omezeních naleznete v tématu [deklarativní omezení](declarative-constraints.md).  
+## <a name="using-validationsettings"></a>Použití nastavení ověření  
+ Ve výchozím nastavení jsou všechny aktivity ve stromu <xref:System.Activities.Validation.ActivityValidationServices>aktivit vyhodnocovány při vyvolání ověření aplikací . <xref:System.Activities.Validation.ValidationSettings>umožňuje přizpůsobit ověření několika různými způsoby konfigurací jeho tří vlastností. <xref:System.Activities.Validation.ValidationSettings.SingleLevel%2A>určuje, zda má validátor procházet celý strom aktivit nebo používat pouze logiku ověření pro zadanou aktivitu. Výchozí hodnota pro `false`tuto hodnotu je . <xref:System.Activities.Validation.ValidationSettings.AdditionalConstraints%2A>určuje další mapování omezení z typu na seznam omezení. Pro základní typ každé aktivity ve stromu aktivity, <xref:System.Activities.Validation.ValidationSettings.AdditionalConstraints%2A>který je ověřován, je vyhledávání do . Pokud je nalezen odpovídající seznam omezení, jsou pro aktivitu vyhodnocena všechna omezení v seznamu. <xref:System.Activities.Validation.ValidationSettings.OnlyUseAdditionalConstraints%2A>určuje, zda má validátor vyhodnotit všechna omezení <xref:System.Activities.Validation.ValidationSettings.AdditionalConstraints%2A>nebo pouze omezení uvedená v . Výchozí hodnota je `false`. <xref:System.Activities.Validation.ValidationSettings.AdditionalConstraints%2A>a <xref:System.Activities.Validation.ValidationSettings.OnlyUseAdditionalConstraints%2A> jsou užitečné pro autory hostitele pracovního postupu přidat další ověření pro pracovní postupy, jako jsou omezení zásad pro nástroje, jako je FxCop. Další informace o omezeních naleznete v tématu [Deklarativní omezení](declarative-constraints.md).  
   
- Chcete- <xref:System.Activities.Validation.ValidationSettings>li použít, nakonfigurujte požadované vlastnosti a pak ji předejte při <xref:System.Activities.Validation.ActivityValidationServices.Validate%2A>volání. V tomto příkladu je ověřen pracovní postup, který se <xref:System.Activities.Statements.Sequence> skládá z s `Add` vlastní aktivitou. `Add` Aktivita má dva povinné argumenty.  
+ Chcete-li použít <xref:System.Activities.Validation.ValidationSettings>, nakonfigurujte požadované <xref:System.Activities.Validation.ActivityValidationServices.Validate%2A>vlastnosti a předejte je ve volání . V tomto příkladu je ověřen <xref:System.Activities.Statements.Sequence> pracovní postup, který se skládá z a s vlastní `Add` aktivitou. Aktivita `Add` má dva požadované argumenty.  
   
 ```csharp  
 public sealed class Add : CodeActivity<int>  
@@ -254,7 +254,7 @@ public sealed class Add : CodeActivity<int>
 }  
 ```  
   
- Následující `Add` aktivita se používá <xref:System.Activities.Statements.Sequence>v, ale jejich dva požadované argumenty nejsou svázané.  
+ Následující `Add` aktivita <xref:System.Activities.Statements.Sequence>se používá v , ale jeho dva požadované argumenty nejsou vázány.  
   
 ```csharp  
 Variable<int> Operand1 = new Variable<int> { Default = 10 };  
@@ -264,7 +264,7 @@ Variable<int> Result = new Variable<int>();
 Activity wf = new Sequence  
 {  
     Variables = { Operand1, Operand2, Result },  
-    Activities =   
+    Activities =
     {  
         new Add(),  
         new WriteLine  
@@ -275,7 +275,7 @@ Activity wf = new Sequence
 };  
 ```  
   
- V následujícím příkladu je ověřování provedeno s <xref:System.Activities.Validation.ValidationSettings.SingleLevel%2A> nastavením na `true`, takže je ověřena pouze kořenová <xref:System.Activities.Statements.Sequence> aktivita.  
+ V následujícím příkladu se <xref:System.Activities.Validation.ValidationSettings.SingleLevel%2A> ověření `true`provádí s nastavenou na , takže je ověřena pouze kořenová <xref:System.Activities.Statements.Sequence> aktivita.  
   
 ```csharp  
 ValidationSettings settings = new ValidationSettings  
@@ -302,6 +302,6 @@ else
 }  
 ```  
   
- Tento kód zobrazí následující výstup:  
+ Tento kód zobrazuje následující výstup:  
   
- **Žádná upozornění ani chyby** I když `Add` aktivita má požadované argumenty, které nejsou vázané, ověření proběhne úspěšně, protože je vyhodnocena pouze kořenová aktivita. Tento typ ověřování je vhodný pro ověřování pouze specifických prvků ve stromu aktivity, jako je například ověření vlastnosti jedné aktivity v návrháři. Všimněte si, že pokud je tento pracovní postup vyvolán, bude vyhodnoceno úplné ověření nakonfigurované v pracovním postupu a <xref:System.Activities.InvalidWorkflowException> bude vyvolána výjimka. <xref:System.Activities.Validation.ActivityValidationServices>a <xref:System.Activities.Validation.ValidationSettings> nakonfigurujte pouze ověřování explicitně vyvolané hostitelem, nikoli ověřování, ke kterému dojde při vyvolání pracovního postupu.
+ **Žádná varování nebo chyby** I v `Add` případě, že aktivita vyžaduje argumenty, které nejsou vázány, ověření je úspěšné, protože je vyhodnocena pouze kořenová aktivita. Tento typ ověření je užitečný pro ověření pouze určitých prvků ve stromu aktivit, jako je například ověření změny vlastnosti jedné aktivity v návrháři. Všimněte si, že pokud je tento pracovní postup vyvolán, <xref:System.Activities.InvalidWorkflowException> je vyhodnoceno úplné ověření nakonfigurované v pracovním postupu a bude vyvoláno. <xref:System.Activities.Validation.ActivityValidationServices>a <xref:System.Activities.Validation.ValidationSettings> nakonfigurujte pouze ověření explicitně vyvolané hostitelem a nikoli ověření, ke kterému dochází při vyvolání pracovního postupu.

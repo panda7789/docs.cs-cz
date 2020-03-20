@@ -3,56 +3,56 @@ title: Výběr a ověření certifikátu
 ms.date: 03/30/2017
 ms.assetid: c933aca2-4cd0-4ff1-9df9-267143f25a6f
 ms.openlocfilehash: aea47360ab1bb9dad446a5a7b19a91ea688953c4
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "71048752"
 ---
 # <a name="certificate-selection-and-validation"></a>Výběr a ověření certifikátu
-Třídy podporují několik způsobů, jak vybrat a ověřit <xref:System.Security.Cryptography.X509Certificates> připojení SSL (Secure Sockets Layer). <xref:System.Net> Klient může vybrat jeden nebo více certifikátů, které se budou ověřovat na server. Server může vyžadovat, aby měl klientský certifikát pro ověřování jeden nebo více specifických atributů.  
+Třídy <xref:System.Net> podporují několik způsobů <xref:System.Security.Cryptography.X509Certificates> výběru a ověření připojení ssl (Secure Socket L). Klient může vybrat jeden nebo více certifikátů, které se ověří na serveru. Server může vyžadovat, aby klientský certifikát měl jeden nebo více specifických atributů pro ověřování.  
   
 ## <a name="definition"></a>Definice  
- Certifikát je datový proud ASCII bajtů, který obsahuje veřejný klíč, atributy (například číslo verze, sériové číslo a datum vypršení platnosti) a digitální podpis od certifikační autority. Certifikáty slouží k navázání šifrovaného připojení nebo k ověřování klienta na serveru.  
+ Certifikát je datový proud bajtů ASCII, který obsahuje veřejný klíč, atributy (například číslo verze, sériové číslo a datum vypršení platnosti) a digitální podpis od certifikační autority. Certifikáty se používají k navázání šifrovaného připojení nebo k ověření klienta na serveru.  
   
 ## <a name="client-certificate-selection-and-validation"></a>Výběr a ověření klientského certifikátu  
- Klient může vybrat jeden nebo více certifikátů pro konkrétní připojení SSL. Klientské certifikáty je možné přidružit k připojení SSL k webovému serveru nebo poštovnímu serveru SMTP. Klient přidá certifikáty do kolekce <xref:System.Security.Cryptography.X509Certificates.X509Certificate> objektů nebo <xref:System.Security.Cryptography.X509Certificates.X509Certificate2> objektů třídy. Použití e-mailu jako příklad, kolekce certifikátů je instance a <xref:System.Security.Cryptography.X509Certificates.X509CertificateCollection>) přidružená <xref:System.Net.Mail.SmtpClient.ClientCertificates%2A> k vlastnosti <xref:System.Net.Mail.SmtpClient> třídy. Třída má podobnou <xref:System.Net.HttpWebRequest.ClientCertificates%2A>vlastnost. <xref:System.Net.HttpWebRequest>  
+ Klient může vybrat jeden nebo více certifikátů pro konkrétní připojení SSL. Klientské certifikáty mohou být přidruženy k připojení SSL k webovému serveru nebo poštovnímu serveru SMTP. Klient přidá certifikáty do <xref:System.Security.Cryptography.X509Certificates.X509Certificate> kolekce <xref:System.Security.Cryptography.X509Certificates.X509Certificate2> nebo třídy objektů. Použití e-mailu jako příklad, kolekce certifikátů je instancí <xref:System.Security.Cryptography.X509Certificates.X509CertificateCollection>) přidružené k <xref:System.Net.Mail.SmtpClient.ClientCertificates%2A> vlastnosti <xref:System.Net.Mail.SmtpClient> třídy. Třída <xref:System.Net.HttpWebRequest> má podobnou <xref:System.Net.HttpWebRequest.ClientCertificates%2A> vlastnost.  
   
- Hlavním rozdílem mezi <xref:System.Security.Cryptography.X509Certificates.X509Certificate> <xref:System.Security.Cryptography.X509Certificates.X509Certificate2> třídou a je, že privátní klíč musí být umístěn v úložišti certifikátů pro <xref:System.Security.Cryptography.X509Certificates.X509Certificate> třídu.  
+ Hlavní rozdíl mezi <xref:System.Security.Cryptography.X509Certificates.X509Certificate> a <xref:System.Security.Cryptography.X509Certificates.X509Certificate2> třídy je, že soukromý klíč musí <xref:System.Security.Cryptography.X509Certificates.X509Certificate> být umístěn v úložišti certifikátů pro třídu.  
   
- I když se do kolekce přidají certifikáty a přidruží se k určitému připojení SSL, na server se neodesílají žádné certifikáty, pokud je server nepožaduje. Pokud je u připojení nastaveno více klientských certifikátů, bude na základě algoritmu, který bere v úvahu shodu mezi seznamem vystavitelů certifikátů poskytovaných serverem a názvem vystavitele certifikátu klienta, použita nejlepší z nich.  
+ I v případě, že certifikáty jsou přidány do kolekce a přidruženy k určitému připojení SSL, nebudou na server odeslány žádné certifikáty, pokud o ně server nepožádá. Pokud je pro připojení nastaveno více klientských certifikátů, bude nejlepší použit na základě algoritmu, který bere v úvahu shodu mezi seznamem vystavitelů certifikátů poskytnutých serverem a názvem vystavitele klientského certifikátu.  
   
- <xref:System.Net.Security.SslStream> Třída poskytuje ještě větší kontrolu nad metodou handshake SSL. Klient může určit delegáta pro výběr klientského certifikátu, který se má použít.  
+ Třída <xref:System.Net.Security.SslStream> poskytuje ještě větší kontrolu nad ssl handshake. Klient může určit delegáta, který vybere, který klientský certifikát má být používán.  
   
- Vzdálený server může ověřit, zda je klientský certifikát platný, aktuální a podepsaný příslušnou certifikační autoritou. Delegát může být přidán do, <xref:System.Net.ServicePointManager.ServerCertificateValidationCallback%2A> aby vynutil ověření certifikátu.  
+ Vzdálený server může ověřit, zda je klientský certifikát platný, aktuální a podepsaný příslušnou certifikační autoritou. Delegát může být přidán <xref:System.Net.ServicePointManager.ServerCertificateValidationCallback%2A> do vynucení ověření certifikátu.  
   
 ## <a name="client-certificate-selection"></a>Výběr klientského certifikátu  
- .NET Framework vybírá klientský certifikát k dispozici na serveru následujícím způsobem:  
+ Rozhraní .NET Framework vybere klientský certifikát, který se má serveru prezentovat následujícím způsobem:  
   
-1. Pokud byl na server dříve předložen klientský certifikát, certifikát se uloží do mezipaměti, když se poprvé předloží a znovu použije pro následné žádosti o certifikát klienta.  
+1. Pokud byl klientský certifikát předložen dříve serveru, je certifikát při prvním předložení uložen do mezipaměti a znovu použit pro následné žádosti o klientský certifikát.  
   
-2. Pokud je k dispozici delegát, vždy použijte výsledek z delegáta jako certifikát klienta k výběru. Pokud je to možné, zkuste použít certifikát uložený v mezipaměti, ale nepoužívejte anonymní přihlašovací údaje uložené v mezipaměti, pokud delegát vrátil hodnotu null a kolekce certifikátů není prázdná.  
+2. Pokud je přítomen delegát, vždy použijte výsledek z delegáta jako klientský certifikát pro výběr. Pokud je to možné, zkuste použít certifikát uložený v mezipaměti, ale nepoužívejte anonymní pověření uložená v mezipaměti, pokud delegát vrátil hodnotu null a kolekce certifikátů není prázdná.  
   
-3. Pokud je toto první výzvou pro klientský certifikát, rozhraní vytvoří výčet certifikátů v <xref:System.Security.Cryptography.X509Certificates.X509Certificate> nástroji <xref:System.Security.Cryptography.X509Certificates.X509Certificate2> nebo objektů tříd přidružených k danému připojení a vyhledá shodu mezi seznamem vystavitelů certifikátů, které poskytuje. název vystavitele serveru a certifikátu klienta. První certifikát, který odpovídá, se pošle na server. Pokud se žádný certifikát neshoduje nebo je kolekce certifikátů prázdná, pošle se na server anonymní přihlašovací údaje.  
+3. Pokud se jedná o první výzvu pro klientský certifikát, <xref:System.Security.Cryptography.X509Certificates.X509Certificate> rozhraní <xref:System.Security.Cryptography.X509Certificates.X509Certificate2> Framework vyjmenovává certifikáty nebo objekty třídy přidružené k připojení a hledá shodu mezi seznamem vystavitelů certifikátů poskytnutým serverem a názvem vystavitele klientského certifikátu. První certifikát, který odpovídá je odeslán na server. Pokud se žádný certifikát neshoduje nebo je kolekce certifikátů prázdná, bude na server odesláno anonymní pověření.  
   
 ## <a name="tools-for-certificate-configuration"></a>Nástroje pro konfiguraci certifikátu  
- K dispozici je řada nástrojů pro konfiguraci certifikátu klienta a serveru.  
+ Pro konfiguraci klientského a serverového certifikátu je k dispozici řada nástrojů.  
   
- Nástroj *WinHttpCertCfg. exe* lze použít ke konfiguraci klientských certifikátů. Nástroj *WinHttpCertCfg. exe* je k dispozici jako jeden z nástrojů se sadou Windows Server 2003 Resource Kit. Tento nástroj je k dispozici také jako součást nástrojů pro sadu Windows Server 2003 Resource Kit na adrese [www.Microsoft.com](https://www.microsoft.com).  
+ Nástroj *Winhttpcertcfg.exe* lze použít ke konfiguraci klientských certifikátů. Nástroj *Winhttpcertcfg.exe* je k dispozici jako jeden z nástrojů sady Windows Server 2003 Resource Kit. Tento nástroj je také k dispozici ke stažení v rámci nástroje sady Windows Server 2003 Resource Kit na [www.microsoft.com](https://www.microsoft.com).  
   
-Nástroj *Httpcfg. exe* lze použít ke konfiguraci certifikátů serveru pro <xref:System.Net.HttpListener> třídu. Nástroj *Httpcfg. exe* je k dispozici jako jeden z nástrojů podpory pro systémy windows Server 2003 a Windows XP Service Pack 2. *Httpcfg. exe* a další nástroje podpory nejsou ve výchozím nastavení nainstalovány v systému windows Server 2003 nebo Windows XP. V systému Windows Server 2003. nástroje podpory se instalují samostatně z této složky a souboru na disk CD-ROM Windows serveru 2003:  
+Nástroj *HttpCfg.exe* lze použít ke konfiguraci <xref:System.Net.HttpListener> certifikátů serveru pro třídu. Nástroj *HttpCfg.exe* je k dispozici jako jeden z nástrojů podpory pro systémy Windows Server 2003 a Windows XP Service Pack 2. *Program HttpCfg.exe* a další nástroje podpory nejsou ve výchozím nastavení nainstalovány v systému Windows Server 2003 nebo Windows XP. V systému Windows Server 2003. Nástroje podpory jsou nainstalovány odděleně od následující složky a souboru na disku CD-ROM systému Windows Server 2003:  
   
- \Support\Tools\Suptools.msi  
+ \Support\Nástroje\Suptools.msi  
   
- Pro použití s Windows XP Service Pack 2 jsou nástroje podpory Windows XP dostupné jako stahování z [www.Microsoft.com](https://www.microsoft.com).  
+ Pro použití se systémem Windows XP Service Pack 2 jsou nástroje podpory systému Windows XP k dispozici ke stažení z [www.microsoft.com](https://www.microsoft.com).  
   
- Zdrojový kód pro verzi nástroje *Httpcfg. exe* je také k dispozici jako ukázka s Windows Server SDK. Zdrojový kód k ukázce *Httpcfg. exe* je ve výchozím nastavení nainstalován s ukázkami sítě jako součást Windows SDK v následující složce:  
+ Zdrojový kód k verzi nástroje *HttpCfg.exe* je také k dispozici jako ukázka sady Windows Server SDK. Zdrojový kód do ukázky *HttpCfg.exe* je ve výchozím nastavení nainstalován s ukázkami sítě jako součást sady Windows SDK pod následující složkou:  
   
  *C:\Program Files\Microsoft SDKs\Windows\v1.0\Samples\NetDS\http\serviceconfig*  
   
- Kromě těchto nástrojů <xref:System.Security.Cryptography.X509Certificates.X509Certificate> třídy a <xref:System.Security.Cryptography.X509Certificates.X509Certificate2> poskytují metody pro načtení certifikátu ze systému souborů.  
+ Kromě těchto nástrojů, <xref:System.Security.Cryptography.X509Certificates.X509Certificate> a <xref:System.Security.Cryptography.X509Certificates.X509Certificate2> třídy poskytuje metody pro načítání certifikátu ze systému souborů.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Zabezpečení v síťovém programování](security-in-network-programming.md)
 - [Síťové programování v rozhraní .NET Framework](index.md)

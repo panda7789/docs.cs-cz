@@ -11,24 +11,24 @@ helpviewer_keywords:
 - trace listeners, <sharedListeners> element
 - sharedListeners element
 ms.assetid: de200534-19dd-4156-86cf-c50521802c4c
-ms.openlocfilehash: b419ecf451b79808e545525c7b8761175f390200
-ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
+ms.openlocfilehash: 69f15cc9583b397017ac30a0c567914495867c18
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/01/2019
-ms.locfileid: "71699292"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79153318"
 ---
-# <a name="sharedlisteners-element"></a>> prvek \<sharedListeners
-Obsahuje naslouchací procesy, na které může odkazovat jakýkoliv element source nebo Trace.  Tyto naslouchací procesy neobdrží žádné trasování ve výchozím nastavení a není možné načíst tyto naslouchací procesy v době běhu. Naslouchací procesy identifikované jako sdílené naslouchací procesy lze přidat do zdrojů nebo trasování podle názvu.  
+# <a name="sharedlisteners-element"></a>\<sharedListeners> Element
+Obsahuje naslouchací procesy, na které může odkazovat libovolný zdroj ový prvek nebo prvek trasování.  Tyto naslouchací procesy nepřijímají žádné stopy ve výchozím nastavení a není možné načíst tyto naslouchací procesy v době běhu. Naslouchací procesy identifikované jako sdílené naslouchací procesy lze přidat do zdrojů nebo trasování podle názvu.  
   
-[**Konfigurace \<>** ](../configuration-element.md)  
-&nbsp;&nbsp;[ **\<System. diagnostics >** ](system-diagnostics-element.md)  
-&nbsp;&nbsp;&nbsp;&nbsp; **\<sharedListeners >**  
+[**\<>konfigurace**](../configuration-element.md)  
+&nbsp;&nbsp;[**\<system.diagnostická>**](system-diagnostics-element.md)  
+&nbsp;&nbsp;&nbsp;&nbsp;**\<sharedListeners>**  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```xml  
-<sharedListeners>   
+<sharedListeners>
   <add>...</add>  
 </sharedListeners>  
 ```  
@@ -41,24 +41,24 @@ Obsahuje naslouchací procesy, na které může odkazovat jakýkoliv element sou
   
 ### <a name="child-elements"></a>Podřízené elementy  
   
-|Prvek|Popis|  
+|Element|Popis|  
 |-------------|-----------------|  
-|[\<add>](add-element-for-listeners-for-trace.md)|Přidá naslouchací proces do kolekce `sharedListeners`.|  
+|[\<přidat>](add-element-for-listeners-for-trace.md)|Přidá naslouchací proces do `sharedListeners` kolekce.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
-|Prvek|Popis|  
+|Element|Popis|  
 |-------------|-----------------|  
 |`Configuration`|Kořenový prvek v každém konfiguračním souboru, který je používán modulem Common Language Runtime (CLR) a aplikacemi rozhraní .NET Framework.|  
-|`system.diagnostics`|Určuje kořenový element konfiguračního oddílu ASP.NET.|  
+|`system.diagnostics`|Určuje kořenový prvek oddílu konfigurace ASP.NET.|  
   
 ## <a name="remarks"></a>Poznámky  
- Přidání naslouchacího procesu do kolekce Shared Listeners neprovádí aktivní naslouchací proces. Ještě musí být přidán do zdroje trasování nebo do trasování přidáním do kolekce `Listeners` pro daný prvek Trace. Třídy naslouchacího procesu v .NET Framework jsou odvozeny z <xref:System.Diagnostics.TraceListener> třídy.  
+ Přidání naslouchací proces sdílené posluchače kolekce neznamená, že aktivní naslouchací proces. Musí být stále přidán do zdroje trasování nebo `Listeners` trasování přidáním do kolekce pro tento prvek trasování. Třídy posluchače v rozhraní .NET Framework jsou odvozeny z třídy. <xref:System.Diagnostics.TraceListener>  
   
- Tento element lze použít v konfiguračním souboru počítače (Machine. config) a v konfiguračním souboru aplikace.  
+ Tento prvek lze použít v konfiguračním souboru počítače (Machine.config) a v konfiguračním souboru aplikace.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje způsob použití prvku `<sharedListeners>` k přidání `console` naslouchacího procesu do kolekce `Listeners` pro třídy <xref:System.Diagnostics.TraceSource> a <xref:System.Diagnostics.Trace>. Naslouchací proces trasování konzoly zapisuje trasovací informace do konzoly prostřednictvím volání buď <xref:System.Diagnostics.TraceSource> nebo <xref:System.Diagnostics.Trace>.  
+ Následující příklad ukazuje, jak `<sharedListeners>` použít prvek `console` přidat `Listeners` naslouchací proces do kolekce pro <xref:System.Diagnostics.TraceSource> a <xref:System.Diagnostics.Trace> třídy. Naslouchací proces trasování konzoly <xref:System.Diagnostics.TraceSource> <xref:System.Diagnostics.Trace>zapisuje informace o trasování do konzoly prostřednictvím volání buď nebo .  
   
 ```xml  
 <configuration>  
@@ -88,7 +88,7 @@ Obsahuje naslouchací procesy, na které může odkazovat jakýkoliv element sou
 </configuration>
 ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Diagnostics.TraceListener>
 - [Trasování a ladění schématu nastavení](index.md)

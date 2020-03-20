@@ -1,5 +1,5 @@
 ---
-title: Přehled štětců
+title: Štětce – přehled
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -7,26 +7,26 @@ dev_langs:
 helpviewer_keywords:
 - brushes [WPF], about brushes
 ms.assetid: ecea1955-420b-45c6-bf43-c1404c072c41
-ms.openlocfilehash: 18ca9b79a6ee801638a54fcb227c44e9aea21fd0
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: 7a9474b392052900952f5b677ad94b16025de8dd
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76746206"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79186581"
 ---
 # <a name="wpf-brushes-overview"></a>Přehled štětců WPF
-Vše viditelné na obrazovce je viditelné, protože bylo vykresleno štětcem. Například štětce se používá k popisu pozadí tlačítka, popředí textu a výplně tvaru. Toto téma představuje koncepty malování pomocí [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] štětce a obsahuje příklady. Štětce umožňují malovat [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)] objekty s cokoli od jednoduchých, plných barev až po složité sady vzorů a imagí.  
+Vše, co je na obrazovce viditelné, je viditelné, protože bylo namalováno štětcem. Stopa se například používá k popisu pozadí tlačítka, popředí textu a výplně obrazce. Toto téma představuje koncepty [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] malování štětcem a poskytuje příklady. Stopy umožňují malovat [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)] objekty s čímkoli od jednoduchých plných barev až po složité sady vzorků a obrazů.  
   
-<a name="paintingwithbrush"></a>   
-## <a name="painting-with-a-brush"></a>Malování pomocí štětce  
- <xref:System.Windows.Media.Brush> "vykreslí" oblast s jejími výstupy. Různé štětce mají různé typy výstupu. Některé štětce vykreslí oblast s plnou barvou, ostatními pomocí přechodu, vzorku, obrázku nebo kresby. Následující ilustrace ukazuje příklady každého z různých typů <xref:System.Windows.Media.Brush>.  
+<a name="paintingwithbrush"></a>
+## <a name="painting-with-a-brush"></a>Malování štětcem  
+ "Maluje" <xref:System.Windows.Media.Brush> oblast s jeho výstupem. Různé stopy mají různé typy výstupů. Některé stopy malují oblast plnou barvou, jiné přechodem, vzorkem, obrazem nebo výkresem. Následující obrázek znázorňuje příklady <xref:System.Windows.Media.Brush> jednotlivých typů.  
   
  ![Typy štětců](./media/graphicsmm-brushtypes.jpg "graphicsmm_brushtypes")  
-Příklady štětce  
+Příklady stopy  
   
- Většina vizuálních objektů vám umožní určit, jak se mají vykreslit. V následující tabulce jsou uvedeny některé běžné objekty a vlastnosti, se kterými můžete použít <xref:System.Windows.Media.Brush>.  
+ Většina vizuálních objektů umožňuje určit, jak jsou malované. V následující tabulce jsou uvedeny některé běžné <xref:System.Windows.Media.Brush>objekty a vlastnosti, se kterými můžete použít .  
   
-|Třída|Vlastnosti štětce|  
+|Třída|Vlastnosti stopy|  
 |-----------|----------------------|  
 |<xref:System.Windows.Controls.Border>|<xref:System.Windows.Controls.Border.BorderBrush%2A>, <xref:System.Windows.Controls.Border.Background%2A>|  
 |<xref:System.Windows.Controls.Control>|<xref:System.Windows.Controls.Control.Background%2A>, <xref:System.Windows.Controls.Control.Foreground%2A>|  
@@ -35,130 +35,130 @@ Příklady štětce
 |<xref:System.Windows.Shapes.Shape>|<xref:System.Windows.Shapes.Shape.Fill%2A>, <xref:System.Windows.Shapes.Shape.Stroke%2A>|  
 |<xref:System.Windows.Controls.TextBlock>|<xref:System.Windows.Controls.TextBlock.Background%2A>|  
   
- Následující části popisují různé typy <xref:System.Windows.Media.Brush> a poskytují příklad každého z nich.  
+ Následující části popisují <xref:System.Windows.Media.Brush> různé typy a poskytují příklad každého z nich.  
   
-<a name="paintwithsolidcolorbrush"></a>   
+<a name="paintwithsolidcolorbrush"></a>
 ## <a name="paint-with-a-solid-color"></a>Malování plnou barvou  
- <xref:System.Windows.Media.SolidColorBrush> vykreslí oblast s plným <xref:System.Windows.Media.Color>. Existuje mnoho způsobů, jak určit <xref:System.Windows.Media.SolidColorBrush.Color%2A> <xref:System.Windows.Media.SolidColorBrush>: můžete například zadat alfa, červené, modré a zelené kanály nebo použít jednu z předdefinovaných barev, kterou poskytuje třída <xref:System.Windows.Media.Colors>.  
+ A <xref:System.Windows.Media.SolidColorBrush> maluje oblast <xref:System.Windows.Media.Color>s tělesem . Existuje celá řada způsobů, jak <xref:System.Windows.Media.SolidColorBrush.Color%2A> určit <xref:System.Windows.Media.SolidColorBrush>of: například můžete zadat jeho alfa, červená, modrá a zelená kanály nebo <xref:System.Windows.Media.Colors> použít jednu z předdefinovaných barev poskytovaných třídou.  
   
- Následující příklad používá <xref:System.Windows.Media.SolidColorBrush> k vykreslování <xref:System.Windows.Shapes.Shape.Fill%2A> <xref:System.Windows.Shapes.Rectangle>. Následující ilustrace znázorňuje namalované obdélník.  
+ Následující příklad používá <xref:System.Windows.Media.SolidColorBrush> k <xref:System.Windows.Shapes.Shape.Fill%2A> malování <xref:System.Windows.Shapes.Rectangle>. Následující obrázek znázorňuje malovaný obdélník.  
   
- ![Obdélník vykreslený pomocí SolidColorBrush](./media/graphicsmm-brush-ovw-solidcolorbrush.png "graphicsmm_brush_ovw_solidcolorbrush")  
-Obdélník vykreslený pomocí SolidColorBrush  
+ ![Obdélník vybarvený pomocí solidcolorbrush](./media/graphicsmm-brush-ovw-solidcolorbrush.png "graphicsmm_brush_ovw_solidcolorbrush")  
+Obdélník vyčesaný pomocí SolidColorBrush  
   
  [!code-csharp[BrushesIntroduction_snip#GraphicsMMSolidColorBrushExampleInline](~/samples/snippets/csharp/VS_Snippets_Wpf/BrushesIntroduction_snip/CSharp/BrushTypesExample.cs#graphicsmmsolidcolorbrushexampleinline)]
  [!code-vb[BrushesIntroduction_snip#GraphicsMMSolidColorBrushExampleInline](~/samples/snippets/visualbasic/VS_Snippets_Wpf/BrushesIntroduction_snip/visualbasic/brushtypesexample.vb#graphicsmmsolidcolorbrushexampleinline)]
  [!code-xaml[BrushesIntroduction_snip#GraphicsMMSolidColorBrushExampleInline](~/samples/snippets/xaml/VS_Snippets_Wpf/BrushesIntroduction_snip/XAML/BrushTypesExample.xaml#graphicsmmsolidcolorbrushexampleinline)]  
   
- Další informace o třídě <xref:System.Windows.Media.SolidColorBrush> naleznete v tématu [Malování s plnými barvami a přechody](painting-with-solid-colors-and-gradients-overview.md).  
+ Další informace o <xref:System.Windows.Media.SolidColorBrush> třídě naleznete v tématu [Malování plnými barvami a přechody Přehled](painting-with-solid-colors-and-gradients-overview.md).  
   
-<a name="paintwithlineargradientbrush"></a>   
+<a name="paintwithlineargradientbrush"></a>
 ## <a name="paint-with-a-linear-gradient"></a>Malování lineárním přechodem  
- <xref:System.Windows.Media.LinearGradientBrush> vykreslí oblast lineárním přechodem. Lineární přechod smíchá dvě nebo více barev v rámci čáry, osu přechodu. Pomocí <xref:System.Windows.Media.GradientStop> objektů můžete určit barvy v přechodu a jejich pozice.  
+ A <xref:System.Windows.Media.LinearGradientBrush> maluje oblast s lineárním přechodem. Lineární přechod prolne dvě nebo více barev přes čáru, osu přechodu. Objekty <xref:System.Windows.Media.GradientStop> se používají k určení barev v přechodu a jejich umístění.  
   
- Následující příklad používá <xref:System.Windows.Media.LinearGradientBrush> k vykreslování <xref:System.Windows.Shapes.Shape.Fill%2A> <xref:System.Windows.Shapes.Rectangle>. Následující ilustrace znázorňuje namalované obdélník.  
+ Následující příklad používá <xref:System.Windows.Media.LinearGradientBrush> k <xref:System.Windows.Shapes.Shape.Fill%2A> malování <xref:System.Windows.Shapes.Rectangle>. Následující obrázek znázorňuje malovaný obdélník.  
   
- ![Obdélník vykreslený pomocí LinearGradientBrush](./media/graphicsmm-brush-ovw-lineargradientbrush.jpg "graphicsmm_brush_ovw_lineargradientbrush")  
-Obdélník vykreslený pomocí LinearGradientBrush  
+ ![Obdélník vybarvený pomocí LinearGradientBrush](./media/graphicsmm-brush-ovw-lineargradientbrush.jpg "graphicsmm_brush_ovw_lineargradientbrush")  
+Obdélník vyčesaný pomocí LinearGradientBrush  
   
  [!code-csharp[BrushesIntroduction_snip#GraphicsMMLinearGradientBrushExampleInline](~/samples/snippets/csharp/VS_Snippets_Wpf/BrushesIntroduction_snip/CSharp/BrushTypesExample.cs#graphicsmmlineargradientbrushexampleinline)]
  [!code-vb[BrushesIntroduction_snip#GraphicsMMLinearGradientBrushExampleInline](~/samples/snippets/visualbasic/VS_Snippets_Wpf/BrushesIntroduction_snip/visualbasic/brushtypesexample.vb#graphicsmmlineargradientbrushexampleinline)]
  [!code-xaml[BrushesIntroduction_snip#GraphicsMMLinearGradientBrushExampleInline](~/samples/snippets/xaml/VS_Snippets_Wpf/BrushesIntroduction_snip/XAML/BrushTypesExample.xaml#graphicsmmlineargradientbrushexampleinline)]  
   
- Další informace o třídě <xref:System.Windows.Media.LinearGradientBrush> naleznete v tématu [Malování s plnými barvami a přechody](painting-with-solid-colors-and-gradients-overview.md).  
+ Další informace o <xref:System.Windows.Media.LinearGradientBrush> třídě naleznete v tématu [Malování plnými barvami a přechody Přehled](painting-with-solid-colors-and-gradients-overview.md).  
   
-<a name="paintwithradialgradientbrush"></a>   
-## <a name="paint-with-a-radial-gradient"></a>Malování paprskovým přechodem  
- <xref:System.Windows.Media.RadialGradientBrush> vykreslí oblast s paprskovým přechodem. Paprskový přechod prolíná dvě nebo více barev v kruhu. Stejně jako u <xref:System.Windows.Media.LinearGradientBrush> třídy lze pomocí objektů <xref:System.Windows.Media.GradientStop> určit barvy v přechodu a jejich pozice.  
+<a name="paintwithradialgradientbrush"></a>
+## <a name="paint-with-a-radial-gradient"></a>Malování radiálním přechodem  
+ A <xref:System.Windows.Media.RadialGradientBrush> maluje oblast s radiálním přechodem. Kruhový přechod prolne dvě nebo více barev v kruhu. Stejně <xref:System.Windows.Media.LinearGradientBrush> jako u <xref:System.Windows.Media.GradientStop> třídy můžete pomocí objektů určit barvy v přechodu a jejich umístění.  
   
- Následující příklad používá <xref:System.Windows.Media.RadialGradientBrush> k vykreslování <xref:System.Windows.Shapes.Shape.Fill%2A> <xref:System.Windows.Shapes.Rectangle>. Následující ilustrace znázorňuje namalované obdélník.  
+ Následující příklad používá <xref:System.Windows.Media.RadialGradientBrush> k <xref:System.Windows.Shapes.Shape.Fill%2A> malování <xref:System.Windows.Shapes.Rectangle>. Následující obrázek znázorňuje malovaný obdélník.  
   
- ![Obdélník vykreslený pomocí RadialGradientBrush](./media/graphicsmm-brush-ovw-radialgradientbrush.jpg "graphicsmm_brush_ovw_radialgradientbrush")  
-Obdélník vykreslený pomocí RadialGradientBrush  
+ ![Obdélník vybarvený pomocí RadialGradientBrush](./media/graphicsmm-brush-ovw-radialgradientbrush.jpg "graphicsmm_brush_ovw_radialgradientbrush")  
+Obdélník vybarvený pomocí RadialGradientBrush  
   
  [!code-csharp[BrushesIntroduction_snip#GraphicsMMRadialGradientBrushExampleInline](~/samples/snippets/csharp/VS_Snippets_Wpf/BrushesIntroduction_snip/CSharp/BrushTypesExample.cs#graphicsmmradialgradientbrushexampleinline)]
  [!code-vb[BrushesIntroduction_snip#GraphicsMMRadialGradientBrushExampleInline](~/samples/snippets/visualbasic/VS_Snippets_Wpf/BrushesIntroduction_snip/visualbasic/brushtypesexample.vb#graphicsmmradialgradientbrushexampleinline)]
  [!code-xaml[BrushesIntroduction_snip#GraphicsMMRadialGradientBrushExampleInline](~/samples/snippets/xaml/VS_Snippets_Wpf/BrushesIntroduction_snip/XAML/BrushTypesExample.xaml#graphicsmmradialgradientbrushexampleinline)]  
   
- Další informace o třídě <xref:System.Windows.Media.RadialGradientBrush> naleznete v tématu [Malování s plnými barvami a přechody](painting-with-solid-colors-and-gradients-overview.md).  
+ Další informace o <xref:System.Windows.Media.RadialGradientBrush> třídě naleznete v tématu [Malování plnými barvami a přechody Přehled](painting-with-solid-colors-and-gradients-overview.md).  
   
-<a name="paintwithimage"></a>   
-## <a name="paint-with-an-image"></a>Malování s použitím obrázku  
- <xref:System.Windows.Media.ImageBrush> vykreslí oblast s <xref:System.Windows.Media.ImageSource>.  
+<a name="paintwithimage"></a>
+## <a name="paint-with-an-image"></a>Malování obrazem  
+ Vymaluje <xref:System.Windows.Media.ImageBrush> oblast <xref:System.Windows.Media.ImageSource>s .  
   
- Následující příklad používá <xref:System.Windows.Media.ImageBrush> k vykreslování <xref:System.Windows.Shapes.Shape.Fill%2A> <xref:System.Windows.Shapes.Rectangle>. Následující ilustrace znázorňuje namalované obdélník.  
+ Následující příklad používá <xref:System.Windows.Media.ImageBrush> k <xref:System.Windows.Shapes.Shape.Fill%2A> malování <xref:System.Windows.Shapes.Rectangle>. Následující obrázek znázorňuje malovaný obdélník.  
   
- ![Obdélník vybarvený ImageBrush](./media/graphicsmm-brush-ovw-imagebrush.jpg "graphicsmm_brush_ovw_imagebrush")  
-Obdélník vykreslený pomocí obrázku  
+ ![Obdélník malované ImageBrush](./media/graphicsmm-brush-ovw-imagebrush.jpg "graphicsmm_brush_ovw_imagebrush")  
+Obdélník vybarvený pomocí obrázku  
   
  [!code-csharp[BrushesIntroduction_snip#GraphicsMMImageBrushExampleInline](~/samples/snippets/csharp/VS_Snippets_Wpf/BrushesIntroduction_snip/CSharp/BrushTypesExample.cs#graphicsmmimagebrushexampleinline)]
  [!code-vb[BrushesIntroduction_snip#GraphicsMMImageBrushExampleInline](~/samples/snippets/visualbasic/VS_Snippets_Wpf/BrushesIntroduction_snip/visualbasic/brushtypesexample.vb#graphicsmmimagebrushexampleinline)]
  [!code-xaml[BrushesIntroduction_snip#GraphicsMMImageBrushExampleInline](~/samples/snippets/xaml/VS_Snippets_Wpf/BrushesIntroduction_snip/XAML/BrushTypesExample.xaml#graphicsmmimagebrushexampleinline)]  
   
- Další informace o třídě <xref:System.Windows.Media.ImageBrush> najdete v tématu [malování pomocí obrázků, kreseb a vizuálů](painting-with-images-drawings-and-visuals.md).  
+ Další informace o <xref:System.Windows.Media.ImageBrush> třídě naleznete v tématu [Malování obrázky, kresby a vizuály](painting-with-images-drawings-and-visuals.md).  
   
-<a name="paintwithdrawing"></a>   
-## <a name="paint-with-a-drawing"></a>Malování s kreslením  
- <xref:System.Windows.Media.DrawingBrush> vykreslí oblast s <xref:System.Windows.Media.Drawing>. <xref:System.Windows.Media.Drawing> může obsahovat tvary, obrázky, text a multimédia.  
+<a name="paintwithdrawing"></a>
+## <a name="paint-with-a-drawing"></a>Malování výkresem  
+ A <xref:System.Windows.Media.DrawingBrush> maluje oblast <xref:System.Windows.Media.Drawing>s . A <xref:System.Windows.Media.Drawing> může obsahovat obrazce, obrázky, text a média.  
   
- Následující příklad používá <xref:System.Windows.Media.DrawingBrush> k vykreslování <xref:System.Windows.Shapes.Shape.Fill%2A> <xref:System.Windows.Shapes.Rectangle>. Následující ilustrace znázorňuje namalované obdélník.  
+ Následující příklad používá <xref:System.Windows.Media.DrawingBrush> k <xref:System.Windows.Shapes.Shape.Fill%2A> malování <xref:System.Windows.Shapes.Rectangle>. Následující obrázek znázorňuje malovaný obdélník.  
   
- ![Obdélník vykreslený pomocí prostředek DrawingBrush](./media/graphicsmm-brush-ovw-drawingbrush.jpg "graphicsmm_brush_ovw_drawingbrush")  
-Obdélník vykreslený pomocí prostředek DrawingBrush  
+ ![Obdélník namalovaný pomocí DrawingBrush](./media/graphicsmm-brush-ovw-drawingbrush.jpg "graphicsmm_brush_ovw_drawingbrush")  
+Obdélník malované pomocí DrawingBrush  
   
  [!code-csharp[BrushesIntroduction_snip#GraphicsMMDrawingBrushExampleInline](~/samples/snippets/csharp/VS_Snippets_Wpf/BrushesIntroduction_snip/CSharp/BrushTypesExample.cs#graphicsmmdrawingbrushexampleinline)]
  [!code-vb[BrushesIntroduction_snip#GraphicsMMDrawingBrushExampleInline](~/samples/snippets/visualbasic/VS_Snippets_Wpf/BrushesIntroduction_snip/visualbasic/brushtypesexample.vb#graphicsmmdrawingbrushexampleinline)]
  [!code-xaml[BrushesIntroduction_snip#GraphicsMMDrawingBrushExampleInline](~/samples/snippets/xaml/VS_Snippets_Wpf/BrushesIntroduction_snip/XAML/BrushTypesExample.xaml#graphicsmmdrawingbrushexampleinline)]  
   
- Další informace o třídě <xref:System.Windows.Media.DrawingBrush> najdete v tématu [malování pomocí obrázků, kreseb a vizuálů](painting-with-images-drawings-and-visuals.md).  
+ Další informace o <xref:System.Windows.Media.DrawingBrush> třídě naleznete v tématu [Malování obrázky, kresby a vizuály](painting-with-images-drawings-and-visuals.md).  
   
-<a name="paintwithvisual"></a>   
-## <a name="paint-with-a-visual"></a>Malování pomocí vizuálu  
- <xref:System.Windows.Media.VisualBrush> vykreslí oblast s objektem <xref:System.Windows.Media.Visual>. Příklady vizuálních objektů zahrnují <xref:System.Windows.Controls.Button>, <xref:System.Windows.Controls.Page>a <xref:System.Windows.Controls.MediaElement>. <xref:System.Windows.Media.VisualBrush> také umožňuje projektovat obsah z jedné části aplikace do jiné oblasti. je velmi užitečné pro vytváření efektů odrazu a zvětšování částí obrazovky.  
+<a name="paintwithvisual"></a>
+## <a name="paint-with-a-visual"></a>Malování vizuálním  
+ A <xref:System.Windows.Media.VisualBrush> maluje oblast <xref:System.Windows.Media.Visual> s objektem. Příklady vizuálních <xref:System.Windows.Controls.Button>objektů: a <xref:System.Windows.Controls.Page> <xref:System.Windows.Controls.MediaElement>. A <xref:System.Windows.Media.VisualBrush> také umožňuje promítat obsah z jedné části aplikace do jiné oblasti; je to velmi užitečné pro vytváření reflexních efektů a zvětšování částí obrazovky.  
   
- Následující příklad používá <xref:System.Windows.Media.VisualBrush> k vykreslování <xref:System.Windows.Shapes.Shape.Fill%2A> <xref:System.Windows.Shapes.Rectangle>. Následující ilustrace znázorňuje namalované obdélník.  
+ Následující příklad používá <xref:System.Windows.Media.VisualBrush> k <xref:System.Windows.Shapes.Shape.Fill%2A> malování <xref:System.Windows.Shapes.Rectangle>. Následující obrázek znázorňuje malovaný obdélník.  
   
- ![Obdélník vykreslený pomocí VisualBrush](./media/graphicsmm-brush-ovw-visualbrush.jpg "graphicsmm_brush_ovw_visualbrush")  
-Obdélník vykreslený pomocí VisualBrush  
+ ![Obdélník vybarvený pomocí VisualBrush](./media/graphicsmm-brush-ovw-visualbrush.jpg "graphicsmm_brush_ovw_visualbrush")  
+Obdélník vybarvené pomocí VisualBrush  
   
  [!code-csharp[BrushesIntroduction_snip#GraphicsMMVisualBrushExampleInline](~/samples/snippets/csharp/VS_Snippets_Wpf/BrushesIntroduction_snip/CSharp/BrushTypesExample.cs#graphicsmmvisualbrushexampleinline)]
  [!code-vb[BrushesIntroduction_snip#GraphicsMMVisualBrushExampleInline](~/samples/snippets/visualbasic/VS_Snippets_Wpf/BrushesIntroduction_snip/visualbasic/brushtypesexample.vb#graphicsmmvisualbrushexampleinline)]
  [!code-xaml[BrushesIntroduction_snip#GraphicsMMVisualBrushExampleInline](~/samples/snippets/xaml/VS_Snippets_Wpf/BrushesIntroduction_snip/XAML/BrushTypesExample.xaml#graphicsmmvisualbrushexampleinline)]  
   
- Další informace o třídě <xref:System.Windows.Media.VisualBrush> najdete v tématu [malování pomocí obrázků, kreseb a vizuálů](painting-with-images-drawings-and-visuals.md).  
+ Další informace o <xref:System.Windows.Media.VisualBrush> třídě naleznete v tématu [Malování obrázky, kresby a vizuály](painting-with-images-drawings-and-visuals.md).  
   
-<a name="paintwithpredefinedbrushesandsystemcolors"></a>   
+<a name="paintwithpredefinedbrushesandsystemcolors"></a>
 ## <a name="paint-using-predefined-and-system-brushes"></a>Malování pomocí předdefinovaných a systémových štětců  
- Pro usnadnění nabízí Windows Presentation Foundation (WPF) sadu předdefinovaných a systémových štětců, které můžete použít k malování objektů.  
+ Pro větší pohodlí poskytuje program Windows Presentation Foundation (WPF) sadu předdefinovaných a systémových stop, které lze použít k malování objektů.  
   
-- Seznam dostupných předdefinovaných štětců naleznete v tématu Třída <xref:System.Windows.Media.Brushes>. Příklad ukazující použití předdefinovaného štětce naleznete v tématu [vykreslení oblasti plnou barvou](how-to-paint-an-area-with-a-solid-color.md).  
+- Seznam dostupných předdefinovaných stop na <xref:System.Windows.Media.Brushes> stopy naleznete v části Třída. Příklad, který ukazuje, jak používat předdefinovanou stopu, najdete v [tématu Malování oblasti plnou barvou](how-to-paint-an-area-with-a-solid-color.md).  
   
-- Seznam dostupných systémových štětců naleznete v tématu Třída <xref:System.Windows.SystemColors>. Příklad najdete v tématu [Malování oblasti pomocí systémového štětce](how-to-paint-an-area-with-a-system-brush.md).  
+- Seznam dostupných systémových štětců naleznete ve <xref:System.Windows.SystemColors> třídě. Příklad například viz [Malování oblasti systémovou stopou](how-to-paint-an-area-with-a-system-brush.md).  
   
-<a name="commonbrushfeatures"></a>   
+<a name="commonbrushfeatures"></a>
 ## <a name="common-brush-features"></a>Běžné funkce štětce  
- objekty <xref:System.Windows.Media.Brush> poskytují vlastnost <xref:System.Windows.Media.Brush.Opacity%2A>, která se dá použít k vytvoření štětce transparentního nebo částečně transparentního. <xref:System.Windows.Media.Brush.Opacity%2A> hodnota 0 provede štětec zcela transparentní, zatímco hodnota <xref:System.Windows.Media.Brush.Opacity%2A> 1 změní štětec zcela neprůhledný. Následující příklad používá vlastnost <xref:System.Windows.Media.Brush.Opacity%2A> k zajištění <xref:System.Windows.Media.SolidColorBrush> 25 procent neprůhledných.  
+ <xref:System.Windows.Media.Brush>objekty <xref:System.Windows.Media.Brush.Opacity%2A> poskytují vlastnost, kterou lze použít k vytvoření průhledné stopy nebo částečně průhledné. Hodnota <xref:System.Windows.Media.Brush.Opacity%2A> 0 způsobí, že stopa <xref:System.Windows.Media.Brush.Opacity%2A> bude zcela průhledná, zatímco hodnota 1 způsobí, že stopa bude zcela neprůhledná. Následující příklad používá <xref:System.Windows.Media.Brush.Opacity%2A> vlastnost, <xref:System.Windows.Media.SolidColorBrush> aby se 25 procent neprůhledné.  
   
  [!code-xaml[BrushOverviewExamples_snip#OpacityExample1XAML](~/samples/snippets/xaml/VS_Snippets_Wpf/BrushOverviewExamples_snip/XAML/OpacityExample.xaml#opacityexample1xaml)]  
   
  [!code-csharp[BrushOverviewExamples_snip#OpacityExample1CSharp](~/samples/snippets/csharp/VS_Snippets_Wpf/BrushOverviewExamples_snip/CSharp/OpacityExample.cs#opacityexample1csharp)]  
   
- Pokud štětec obsahuje barvy, které jsou částečně transparentní, hodnota neprůhlednosti barvy je kombinována po násobení s hodnotou neprůhlednosti štětce. Například pokud má štětec hodnotu neprůhlednosti 0,5 a barva použitá v štětci má také hodnotu neprůhlednosti 0,5, výstupní barva má hodnotu neprůhlednosti 0,25.  
+ Pokud stopa obsahuje barvy, které jsou částečně průhledné, hodnota krytí barvy se zkombinuje pomocí násobení s hodnotou krytí stopy. Pokud má například stopa hodnotu krytí 0,5 a barva použitá ve stopě má také hodnotu krytí 0,5, má výstupní barva hodnotu krytí 0,25.  
   
 > [!NOTE]
-> Je efektivnější změnit hodnotu neprůhlednosti štětce, než je změna neprůhlednosti celého prvku pomocí jeho vlastnosti <xref:System.Windows.UIElement.Opacity%2A?displayProperty=nameWithType>.  
+> Je efektivnější změnit hodnotu krytí stopy než změnit krytí celého prvku pomocí jeho vlastnosti. <xref:System.Windows.UIElement.Opacity%2A?displayProperty=nameWithType>  
   
- Obsah štětce můžete otáčet, škálovat, zkosit a překládat ho pomocí jeho <xref:System.Windows.Media.Brush.Transform%2A> nebo vlastností <xref:System.Windows.Media.Brush.RelativeTransform%2A>. Další informace najdete v tématu [Přehled transformace štětce](brush-transformation-overview.md).  
+ Obsah stopy můžete otáčet, měnit jejich velikost, <xref:System.Windows.Media.Brush.Transform%2A> zkosit a překládat pomocí jejích <xref:System.Windows.Media.Brush.RelativeTransform%2A> vlastností. Další informace naleznete v tématu [Přehled transformace štětce](brush-transformation-overview.md).  
   
- Vzhledem k tomu, že jsou objekty <xref:System.Windows.Media.Animation.Animatable>, mohou být objekty <xref:System.Windows.Media.Brush> animovány. Další informace najdete v tématu [Přehled animací](animation-overview.md).  
+ Protože se <xref:System.Windows.Media.Animation.Animatable> jedná <xref:System.Windows.Media.Brush> o objekty, mohou být objekty animovány. Další informace naleznete v [tématu Přehled animace](animation-overview.md).  
   
-<a name="freezable_features"></a>   
-### <a name="freezable-features"></a>Funkce Freezable  
- Vzhledem k tomu, že dědí z třídy <xref:System.Windows.Freezable>, poskytuje <xref:System.Windows.Media.Brush> třídy několik speciálních funkcí: <xref:System.Windows.Media.Brush> objektů lze deklarovat jako [prostředky](../../../desktop-wpf/fundamentals/xaml-resources-define.md), sdílet mezi více objekty a klonovat. Kromě toho mohou být všechny typy <xref:System.Windows.Media.Brush> s výjimkou <xref:System.Windows.Media.VisualBrush> vytvořeny jen pro čtení, aby se zlepšil výkon a bylo bezpečné pro přístup z více vláken.  
+<a name="freezable_features"></a>
+### <a name="freezable-features"></a>Zmrazitelné funkce  
+ Vzhledem k tomu, že dědí z <xref:System.Windows.Freezable> třídy, <xref:System.Windows.Media.Brush> třída poskytuje několik speciálních funkcí: <xref:System.Windows.Media.Brush> objekty mohou být deklarovány jako [prostředky](../../../desktop-wpf/fundamentals/xaml-resources-define.md), sdílené mezi více objektů a klonovány. Kromě toho všechny <xref:System.Windows.Media.Brush> typy <xref:System.Windows.Media.VisualBrush> kromě lze provést jen pro čtení ke zlepšení výkonu a z přístupu k vláknům.  
   
- Další informace o různých funkcích poskytovaných <xref:System.Windows.Freezable> objekty naleznete v tématu [Freezable Objects Overview](../advanced/freezable-objects-overview.md).  
+ Další informace o různých funkcích <xref:System.Windows.Freezable> poskytovaných objekty naleznete v tématu [Přehled mrazivých objektů](../advanced/freezable-objects-overview.md).  
   
- Další informace o tom, proč <xref:System.Windows.Media.VisualBrush> objekty nemůžou být zmrazené, najdete na stránce typu <xref:System.Windows.Media.VisualBrush>.  
+ Další informace o <xref:System.Windows.Media.VisualBrush> tom, proč nelze <xref:System.Windows.Media.VisualBrush> objekty zmrazit, naleznete na stránce typu.  
   
 ## <a name="see-also"></a>Viz také
 
@@ -167,8 +167,8 @@ Obdélník vykreslený pomocí VisualBrush
 - [Přehled malování plnými barvami a přechody](painting-with-solid-colors-and-gradients-overview.md)
 - [Malování pomocí obrázků, kreseb a vizuálních objektů](painting-with-images-drawings-and-visuals.md)
 - [Přehled zablokovatelných objektů](../advanced/freezable-objects-overview.md)
-- [Ukázka štětců](https://go.microsoft.com/fwlink/?LinkID=159973)
-- [Ukázka ImageBrush](https://go.microsoft.com/fwlink/?LinkID=160005)
-- [Ukázka VisualBrush](https://go.microsoft.com/fwlink/?LinkID=160049)
+- [Ukázka štětců](https://github.com/Microsoft/WPF-Samples/tree/master/Graphics/Brushes)
+- [Ukázka imagebrush](https://github.com/Microsoft/WPF-Samples/tree/master/Graphics/ImageBrush)
+- [Ukázka visualbrushu](https://github.com/Microsoft/WPF-Samples/tree/master/Graphics/VisualBrush)
 - [Témata s postupy](brushes-how-to-topics.md)
-- [Další výkonnostní doporučení](../advanced/optimizing-performance-other-recommendations.md)
+- [Další doporučení k optimalizaci výkonu](../advanced/optimizing-performance-other-recommendations.md)

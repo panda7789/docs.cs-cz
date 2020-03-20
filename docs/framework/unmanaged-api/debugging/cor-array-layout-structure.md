@@ -14,15 +14,15 @@ helpviewer_keywords:
 ms.assetid: aa20ac3d-6f60-4aa2-91c5-f3a86f82eba8
 topic_type:
 - apiref
-ms.openlocfilehash: f37bf545553045b9737b7057feed78e1f06ace4d
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: ca2d00611a7530dfb0d1c2a27123947bdf69820d
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73099468"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79179343"
 ---
 # <a name="cor_array_layout-structure"></a>COR_ARRAY_LAYOUT – struktura
-Poskytuje informace o rozložení objektu pole v paměti.  
+Obsahuje informace o rozložení objektu pole v paměti.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -32,10 +32,10 @@ typedef struct COR_ARRAY_LAYOUT {
     CorElementType componentType;  
     ULONG32 firstElementOffset;  
     ULONG32 elementSize;  
-    ULONG32 countOffset;   
-    ULONG32 rankSize;   
-    ULONG32 numRanks;   
-    ULONG32 rankOffset;   
+    ULONG32 countOffset;
+    ULONG32 rankSize;
+    ULONG32 numRanks;
+    ULONG32 rankOffset;
 } COR_ARRAY_LAYOUT;  
 ```  
   
@@ -44,29 +44,29 @@ typedef struct COR_ARRAY_LAYOUT {
 |Člen|Popis|  
 |------------|-----------------|  
 |`componentID`|Identifikátor typu objektů, které pole obsahuje.|  
-|`componentType`|Hodnota výčtu CorElementType –, která určuje, zda je komponenta odkaz na uvolňování paměti, třídu hodnot nebo primitivní.|  
-|`firstElementOffset`|Posun k prvnímu prvku v poli.|  
+|`componentType`|Hodnota výčtu CorElementType, která označuje, zda je komponenta odkaz emitovaného, třída hodnoty nebo primitivní.|  
+|`firstElementOffset`|Posun na první prvek v poli.|  
 |`elementSize`|Velikost každého prvku.|  
 |`countOffset`|Posun k počtu prvků v poli.|  
-|`rankSize`|Velikost rozměru (v bajtech).|  
-|`numRanks`|Počet pořadí v poli.|  
-|`rankOffset`|Posun, ve kterém je začátek pořadí.|  
+|`rankSize`|Velikost pořadí v bajtů.|  
+|`numRanks`|Počet řad v poli.|  
+|`rankOffset`|Posun, při kterém začínají hodnosti.|  
   
 ## <a name="remarks"></a>Poznámky  
- Pole `rankSize` určuje velikost rozměru v multidimenzionálním poli. Je přesně pro jednorozměrná pole.  
+ Toto `rankSize` pole určuje velikost pořadí ve vícerozměrném poli. Je také přesná i pro jednorozměrná pole.  
   
- Hodnota `numRanks` je 1 pro jednorozměrné pole a `N` v multidimenzionálním poli dimenzí `N`.  
+ Hodnota `numRanks` je 1 pro jednorozměrné `N` pole a pro vícerozměrné pole dimenzí. `N`  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
+ **Platformy:** Viz [Systémové požadavky](../../get-started/system-requirements.md).  
   
- **Hlavička:** CorDebug. idl, CorDebug. h  
+ **Záhlaví:** CorDebug.idl, CorDebug.h  
   
- **Knihovna:** CorGuids. lib  
+ **Knihovna:** CorGuids.lib  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
+ **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Struktury pro ladění](debugging-structures.md)
-- [Ladění](index.md)
+- [ladění](index.md)

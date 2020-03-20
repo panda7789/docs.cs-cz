@@ -2,29 +2,29 @@
 title: Zabezpečení přenosu WS
 ms.date: 03/30/2017
 ms.assetid: 33a20358-5e1b-458a-a6a9-15753bc7b99b
-ms.openlocfilehash: 2b83dba2912e65ec78536b9a7051759be573b3ab
-ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
+ms.openlocfilehash: 221bf2e0d304e93242bb5fea6854c1c9bb72aec2
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74714581"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79143457"
 ---
 # <a name="ws-transport-security"></a>Zabezpečení přenosu WS
-Tato ukázka demonstruje použití zabezpečení přenosu SSL s <xref:System.ServiceModel.WSHttpBinding> vazbou. Ve výchozím nastavení vazba `wsHttpBinding` poskytuje komunikaci pomocí protokolu HTTP. Pokud je nakonfigurovaná pro zabezpečení přenosu, vazba podporuje komunikaci pomocí protokolu HTTPS. Tato ukázka je založená na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md) , která implementuje službu kalkulačky. `wsHttpBinding` je zadaný a nakonfigurovaný v konfiguračních souborech aplikací pro klienta a službu.  
+Tento příklad ukazuje použití zabezpečení přenosu SSL s vazbou. <xref:System.ServiceModel.WSHttpBinding> Ve výchozím `wsHttpBinding` nastavení poskytuje vazba komunikaci HTTP. Při konfiguraci pro zabezpečení přenosu podporuje vazba komunikaci HTTPS. Tato ukázka je založena na [Začínáme,](../../../../docs/framework/wcf/samples/getting-started-sample.md) který implementuje službu kalkulačky. Je `wsHttpBinding` zadán a nakonfigurován v konfiguračních souborech aplikace pro klienta a službu.  
   
 > [!NOTE]
-> Postup nastavení a pokyny pro sestavení pro tuto ukázku najdete na konci tohoto tématu.  
+> Postup nastavení a sestavení pokyny pro tuto ukázku jsou umístěny na konci tohoto tématu.  
   
 > [!IMPORTANT]
-> Ukázky už můžou být na vašem počítači nainstalované. Než budete pokračovat, vyhledejte následující (výchozí) adresář.  
->   
+> Ukázky mohou být již nainstalovány v počítači. Před pokračováním zkontrolujte následující (výchozí) adresář.  
+>
 > `<InstallDrive>:\WF_WCF_Samples`  
->   
-> Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] Samples. Tato ukázka se nachází v následujícím adresáři.  
->   
+>
+> Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a Windows Workflow Foundation (WF) Ukázky pro rozhraní .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka je umístěna v následujícím adresáři.  
+>
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Binding\WS\wsTransportSecurity`  
   
- Kód programu v ukázce je stejný jako u služby [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md) . Před vytvořením a spuštěním ukázky musíte vytvořit certifikát a přiřadit ho pomocí Průvodce certifikátem webového serveru. Definice koncového bodu a definice vazby v nastavení konfiguračního souboru umožňují režim `Transport` zabezpečení, jak je znázorněno v následující ukázkové konfiguraci klienta.  
+ Kód programu v ukázce je shodný se službou [Začínáme.](../../../../docs/framework/wcf/samples/getting-started-sample.md) Před sestavením a spuštěním ukázky je nutné vytvořit certifikát a přiřadit jej pomocí Průvodce certifikátem webového serveru. Definice koncového bodu a definice vazby `Transport` v nastavení konfiguračního souboru umožňují režim zabezpečení, jak je znázorněno v následující ukázkové konfiguraci pro klienta.  
   
 ```xml  
 <system.serviceModel>  
@@ -49,16 +49,16 @@ Tato ukázka demonstruje použití zabezpečení přenosu SSL s <xref:System.Ser
   </system.serviceModel>  
 ```  
   
- Zadaná adresa používá schéma https://. Konfigurace vazby nastaví režim zabezpečení na `Transport`. V souboru Web. config služby musí být zadaný stejný režim zabezpečení.  
+ Zadaná adresa používá schéma https://. Konfigurace vazby nastaví `Transport`režim zabezpečení na . Stejný režim zabezpečení musí být zadán v souboru Web.config služby.  
   
- Vzhledem k tomu, že certifikát použitý v této ukázce je testovací certifikát vytvořený pomocí nástroje MakeCert. exe, zobrazí se výstraha zabezpečení při pokusu o přístup k protokolu https: adresa, například https://localhost/servicemodelsamples/service.svc, z prohlížeče. Aby mohl klient služby Windows Communication Foundation (WCF) pracovat s testovacím certifikátem, byl do klienta přidán nějaký další kód pro potlačení výstrahy zabezpečení. Tento kód a doprovodná třída nejsou při použití produkčních certifikátů vyžadovány.  
+ Vzhledem k tomu, že certifikát použitý v této ukázce je testovací certifikát vytvořený pomocí programu Makecert.exe, zobrazí se při pokusu o přístup k adrese https: adresa, například https://localhost/servicemodelsamples/service.svc, z prohlížeče. Chcete-li umožnit klientovi Windows Communication Foundation (WCF) pracovat s certifikátem test na místě, některé další kód byl přidán do klienta potlačit výstrahu zabezpečení. Tento kód a doprovodná třída se nevyžadují při použití produkčních certifikátů.  
 
 ```csharp
 // This code is required only for test certificates like those created by Makecert.exe.  
 PermissiveCertificatePolicy.Enact("CN=ServiceModelSamples-HTTPS-Server");  
 ```
 
- Při spuštění ukázky se v okně konzoly klienta zobrazí požadavky na operace a odpovědi. V okně klienta stiskněte klávesu ENTER pro vypnutí klienta.  
+ Při spuštění ukázky jsou v okně klientské konzole zobrazeny požadavky na operaci a odpovědi. Stisknutím klávesy ENTER v okně klienta vypněte klienta.  
   
 ```console  
 Add(100,15.99) = 115.99  
@@ -71,16 +71,16 @@ Press <ENTER> to terminate client.
   
 ### <a name="to-set-up-build-and-run-the-sample"></a>Nastavení, sestavení a spuštění ukázky  
   
-1. Pomocí následujícího příkazu nainstalujte ASP.NET 4,0.  
+1. Nainstalujte ASP.NET 4.0 pomocí následujícího příkazu.  
   
     ```console  
     %windir%\Microsoft.NET\Framework\v4.0.XXXXX\aspnet_regiis.exe /i /enable  
     ```  
   
-2. Ujistěte se, že jste provedli [postup jednorázového nastavení pro Windows Communication Foundation ukázky](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
+2. Ujistěte se, že jste provedli [jednorázový postup instalace pro ukázky windows communication foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
   
-3. Ujistěte se, že jste provedli [pokyny k instalaci certifikátu serveru Internetová informační služba (IIS)](../../../../docs/framework/wcf/samples/iis-server-certificate-installation-instructions.md).  
+3. Zkontrolujte, zda jste provedli [pokyny k instalaci certifikátu serveru Internetové informační služby (IIS)](../../../../docs/framework/wcf/samples/iis-server-certificate-installation-instructions.md).  
   
-4. Pokud chcete vytvořit C# edici nebo Visual Basic .NET, postupujte podle pokynů v tématu [sestavování ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
+4. Chcete-li vytvořit c# nebo Visual Basic .NET vydání řešení, postupujte podle pokynů v [sestavení windows communication foundation ukázky](../../../../docs/framework/wcf/samples/building-the-samples.md).  
   
-5. Chcete-li spustit ukázku v konfiguraci s jedním nebo více počítači, postupujte podle pokynů v části [spuštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
+5. Chcete-li spustit ukázku v konfiguraci jednoho nebo více počítačů, postupujte podle pokynů v [části Spuštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  

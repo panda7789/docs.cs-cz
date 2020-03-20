@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: 9544b711-e669-4eaf-8630-ee862e5e4489
 topic_type:
 - apiref
-ms.openlocfilehash: 6b5b3b3b5a3613668f4470f48083ae010cc9d336
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 0bfbfec930c193ea05a01bd5bd9f46d2ec6714b1
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74445250"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79175288"
 ---
 # <a name="imetadataimport2getmethodspecprops-method"></a>IMetaDataImport2::GetMethodSpecProps – metoda
-Získá podpis metadat metody, na kterou odkazuje zadaný token MethodSpec.  
+Získá podpis metadat metody odkazuje zadaný token MethodSpec.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -31,34 +31,34 @@ Získá podpis metadat metody, na kterou odkazuje zadaný token MethodSpec.
 HRESULT GetMethodSpecProps (  
    [in]  mdMethodSpec     mi,  
    [out] mdToken          *tkParent,  
-   [out] PCCOR_SIGNATURE  *ppvSigBlob,   
+   [out] PCCOR_SIGNATURE  *ppvSigBlob,
    [out] ULONG            *pcbSigBlob  
-);   
+);
 ```  
   
 ## <a name="parameters"></a>Parametry  
  `mi`  
- pro Token MethodSpec, který představuje instanci metody.  
+ [v] A MethodSpec token, který představuje instanci metody.  
   
  `tkParent`  
- mimo Ukazatel na token MethodDef nebo MethodRef, který představuje definici metody.  
+ [out] Ukazatel na token MethodDef nebo MethodRef, který představuje definici metody.  
   
  `ppvSigBlob`  
- mimo Ukazatel na binární podpis metadat metody.  
+ [out] Ukazatel na podpis binárních metadat metody.  
   
  `pcbSigBlob`  
- mimo Velikost `ppvSigBlob`v bajtech.  
+ [out] Velikost v bajtů `ppvSigBlob`.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Hlavička:** Cor. h  
+ **Záhlaví:** Kor.h.  
   
- **Knihovna:** Používá se jako prostředek v knihovně MsCorEE. dll.  
+ **Knihovna:** Používá se jako prostředek v souboru MsCorEE.dll  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [IMetaDataImport2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)
 - [IMetaDataImport – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)

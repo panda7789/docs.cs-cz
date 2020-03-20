@@ -8,24 +8,24 @@ helpviewer_keywords:
 - webRequestModules element
 - <webRequestModules> element
 ms.assetid: 1263de11-3e0a-4f94-97c9-710b2ae53817
-ms.openlocfilehash: e119d9ce1f8bb6f07f8050612550db459a2f065c
-ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
+ms.openlocfilehash: 7f2805283f89e6165d336b3e593d34054e02115d
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/01/2019
-ms.locfileid: "71697466"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79154540"
 ---
-# <a name="webrequestmodules-element-network-settings"></a>\<element > webRequestModules (nastavení sítě)
-Určuje moduly, které se použijí k vyžádání informací od hostitelů v síti.  
+# <a name="webrequestmodules-element-network-settings"></a>\<webRequestModules> Element (nastavení sítě)
+Určuje moduly, které mají být používány k vyžádání informací od síťových hostitelů.  
   
-[**Konfigurace \<>** ](../configuration-element.md)  
-&nbsp;&nbsp;[ **\<System. NET >** ](system-net-element-network-settings.md)  
-&nbsp;&nbsp;&nbsp;&nbsp;\<webRequestModules >  
+[**\<>konfigurace**](../configuration-element.md)  
+&nbsp;&nbsp;[**\<system.net>**](system-net-element-network-settings.md)  
+&nbsp;&nbsp;&nbsp;&nbsp;\<webRequestModules>  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```xml  
-<webRequestModules>   
+<webRequestModules>
 </webRequestModules>  
 ```  
   
@@ -39,26 +39,26 @@ Určuje moduly, které se použijí k vyžádání informací od hostitelů v s�
   
 |**Element**|**Popis**|  
 |-----------------|---------------------|  
-|[add](add-element-for-webrequestmodules-network-settings.md)|Přidá do aplikace vlastní modul webové žádosti.|  
-|[jejich](clear-element-for-webrequestmodules-network-settings.md)|Odebere z aplikace všechny registrované moduly webových požadavků.|  
-|[remove](remove-element-for-webrequestmodules-network-settings.md)|Odebere z aplikace vlastní modul webové žádosti.|  
+|[Přidat](add-element-for-webrequestmodules-network-settings.md)|Přidá do aplikace vlastní modul webového požadavku.|  
+|[Jasné](clear-element-for-webrequestmodules-network-settings.md)|Odebere z aplikace všechny registrované moduly webových požadavků.|  
+|[Odebrat](remove-element-for-webrequestmodules-network-settings.md)|Odebere z aplikace vlastní modul webového požadavku.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
 |**Element**|**Popis**|  
 |-----------------|---------------------|  
-|[system.net](system-net-element-network-settings.md)|Obsahuje nastavení, která určují, jak se .NET Framework připojí k síti.|  
+|[system.net](system-net-element-network-settings.md)|Obsahuje nastavení, která určují, jak se rozhraní .NET Framework připojuje k síti.|  
   
 ## <a name="remarks"></a>Poznámky  
- Element `webRequestModules` registruje následníky <xref:System.Net.WebRequest> třídy za účelem zpracování žádostí o informace na síťové hostitele. Moduly webových požadavků musí implementovat rozhraní <xref:System.Net.IWebRequestCreate>.  
+ Prvek `webRequestModules` registruje následníky <xref:System.Net.WebRequest> třídy pro zpracování požadavků na informace pro síťové hostitele. Moduly webových požadavků <xref:System.Net.IWebRequestCreate> musí implementovat rozhraní.  
   
- .NET Framework obsahuje moduly webových požadavků pro identifikátory URI, které začínají `http://`, `https://`a `file://`. Výchozí moduly můžete přepsat pouze tím, že do konfiguračního souboru zaregistrujete vlastní modul.  
+ Rozhraní .NET Framework obsahuje moduly webových `http://`požadavků `https://`pro `file://`identifikátory URI, které začínají na rozhraní , a . Výchozí moduly můžete přepsat pouze registrací vlastního modulu v konfiguračním souboru.  
   
 ## <a name="configuration-files"></a>Konfigurační soubory  
- Tento element lze použít v konfiguračním souboru aplikace nebo v konfiguračním souboru počítače (Machine. config).  
+ Tento prvek lze použít v konfiguračním souboru aplikace nebo v konfiguračním souboru počítače (Machine.config).  
   
 ## <a name="example"></a>Příklad  
- Následující příklad registruje výchozí modul HTTP. Hodnoty pro Version a PublicKeyToken byste měli nahradit správnými hodnotami pro zadaný modul.  
+ Následující příklad registruje výchozí modul HTTP. Hodnoty Version a PublicKeyToken byste měli nahradit správnými hodnotami pro zadaný modul.  
   
 ```xml  
 <configuration>  
@@ -73,7 +73,7 @@ Určuje moduly, které se použijí k vyžádání informací od hostitelů v s�
 </configuration>  
 ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Net.WebRequest>
 - <xref:System.Net.IWebRequestCreate>

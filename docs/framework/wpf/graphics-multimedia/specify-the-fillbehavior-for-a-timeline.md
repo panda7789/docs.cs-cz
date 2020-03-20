@@ -5,28 +5,28 @@ helpviewer_keywords:
 - FillBehavior property for inactive timelines [WPF]
 - Timelines [WPF], FillBehavior property
 ms.assetid: db805f59-d513-4dac-af15-47005dae3199
-ms.openlocfilehash: 9f03c5b8d4585c32e0a9f119649dd15a23523033
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 1f54f2c1bb49bb7a0301f112a109194ab1a8658e
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61973664"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79141170"
 ---
 # <a name="how-to-specify-the-fillbehavior-for-a-timeline-that-has-reached-the-end-of-its-active-period"></a>Postupy: Určení FillBehavior pro časovou osu, která dosáhla konce aktivního období
-Tento příklad ukazuje, jak určit <xref:System.Windows.Media.Animation.Timeline.FillBehavior%2A> pro neaktivní <xref:System.Windows.Media.Animation.Timeline> animované vlastnosti.  
+Tento příklad ukazuje, <xref:System.Windows.Media.Animation.Timeline.FillBehavior%2A> jak určit <xref:System.Windows.Media.Animation.Timeline> pro neaktivní animované vlastnosti.  
   
 ## <a name="example"></a>Příklad  
- <xref:System.Windows.Media.Animation.Timeline.FillBehavior%2A> Vlastnost <xref:System.Windows.Media.Animation.Timeline> Určuje, co se stane hodnotou animované vlastnosti, když není právě animovat, to znamená, když <xref:System.Windows.Media.Animation.Timeline> je neaktivní, ale jeho nadřazený objekt <xref:System.Windows.Media.Animation.Timeline> se nachází uvnitř jeho aktivní nebo období uchování. Například nemá animované vlastnosti zůstávají na jeho konci hodnota po ukončení animace nebo to udělá vrátit zpět na hodnotu byl před zahájením animace?  
+ Vlastnost <xref:System.Windows.Media.Animation.Timeline.FillBehavior%2A> <xref:System.Windows.Media.Animation.Timeline> určuje, co se stane s hodnotou animované vlastnosti, když není animována, to znamená, když <xref:System.Windows.Media.Animation.Timeline> je neaktivní, ale jeho nadřazený <xref:System.Windows.Media.Animation.Timeline> je uvnitř jeho aktivní nebo pozdržet období. Například zůstane animovaná vlastnost na své koncové hodnotě po ukončení animace nebo se vrátí zpět na hodnotu, kterou měla před zahájením animace?  
   
- Následující příklad používá <xref:System.Windows.Media.Animation.DoubleAnimation> pro animaci <xref:System.Windows.FrameworkElement.Width%2A> dvou obdélníků. Každý používá jiný <xref:System.Windows.Media.Animation.Timeline> objektu.  
+ Následující příklad používá <xref:System.Windows.Media.Animation.DoubleAnimation> k animaci <xref:System.Windows.FrameworkElement.Width%2A> dvou obdélníků. Každý obdélník používá <xref:System.Windows.Media.Animation.Timeline> jiný objekt.  
   
- Jeden <xref:System.Windows.Media.Animation.Timeline> má <xref:System.Windows.Media.Animation.Timeline.FillBehavior%2A> , která je nastavena na <xref:System.Windows.Media.Animation.FillBehavior.Stop>, což způsobí, že šířku obdélníku do zpátky na jeho bez animací hodnotu v případě <xref:System.Windows.Media.Animation.Timeline> skončí. Druhý <xref:System.Windows.Media.Animation.Timeline> má <xref:System.Windows.Media.Animation.Timeline.FillBehavior%2A> z <xref:System.Windows.Media.Animation.FillBehavior.HoldEnd>, což způsobí, že šířka zůstat na jeho konci hodnotu v případě <xref:System.Windows.Media.Animation.Timeline> skončí.  
+ Jeden <xref:System.Windows.Media.Animation.Timeline> <xref:System.Windows.Media.Animation.Timeline.FillBehavior%2A> má, který <xref:System.Windows.Media.Animation.FillBehavior.Stop>je nastaven na , což způsobí, že šířka obdélníku <xref:System.Windows.Media.Animation.Timeline> vrátit zpět do své neanimované hodnoty po skončení. Druhý <xref:System.Windows.Media.Animation.Timeline> má <xref:System.Windows.Media.Animation.Timeline.FillBehavior%2A> a <xref:System.Windows.Media.Animation.FillBehavior.HoldEnd>, což způsobí, že šířka <xref:System.Windows.Media.Animation.Timeline> zůstane na jeho koncové hodnotě při ukončení.  
   
  [!code-xaml[timingbehaviors_snip#FillBehaviorWholePage](~/samples/snippets/csharp/VS_Snippets_Wpf/timingbehaviors_snip/CSharp/FillBehaviorExample.xaml#fillbehaviorwholepage)]  
   
- Úplnou ukázku najdete v tématu [animace příkladu Galerie](https://go.microsoft.com/fwlink/?LinkID=159969).  
+ Kompletní ukázku naleznete v galerii [příkladů animace](https://github.com/Microsoft/WPF-Samples/tree/master/Animation/AnimationExamples).  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Media.Animation.DoubleAnimation>
 - <xref:System.Windows.FrameworkElement.Width%2A>
@@ -35,4 +35,4 @@ Tento příklad ukazuje, jak určit <xref:System.Windows.Media.Animation.Timelin
 - <xref:System.Windows.Media.Animation.FillBehavior.Stop>
 - <xref:System.Windows.Media.Animation.FillBehavior.HoldEnd>
 - [Přehled animace](animation-overview.md)
-- [Animace a časování témata s postupy](animation-and-timing-how-to-topics.md)
+- [Postupy: Témata animace a časování](animation-and-timing-how-to-topics.md)

@@ -14,39 +14,39 @@ helpviewer_keywords:
 ms.assetid: b4367214-6dac-4280-aa11-fd487ff30bc4
 topic_type:
 - apiref
-ms.openlocfilehash: 30e3a88140c8a438001e8428df4c5ee879c83376
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 4932e1fd6294f4a01264e982835dd0707324082a
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73136912"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79178233"
 ---
 # <a name="_corimageunloading-function"></a>_CorImageUnloading – funkce
-Upozorní zavaděče na Nenačtené bitové kopie spravovaného modulu.  
+Upozorní zavaděč při uvolnění bitové kopie spravovaného modulu.  
   
- Tato funkce není implementována. Při volání Vrátí E_NOTIMPL.  
+ Tato funkce není implementována. Pokud je volána, vrátí E_NOTIMPL.  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```cpp  
-STDAPI (VOID) _CorImageUnloading(   
+STDAPI (VOID) _CorImageUnloading(
    [in] PVOID* ImageBase  
 );  
 ```  
   
 ## <a name="parameters"></a>Parametry  
  `ImageBase`  
- pro Ukazatel na počáteční umístění obrázku, který má být uvolněn.  
+ [v] Ukazatel na počáteční umístění obrázku k uvolnění.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Hlavička:** Cor. h  
+ **Záhlaví:** Kor.h.  
   
- **Knihovna:** Zahrnuto jako prostředek v knihovně MsCorEE. dll  
+ **Knihovna:** Zahrnuto jako prostředek v souboru MsCorEE.dll  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Globální statické funkce pro metadata](../../../../docs/framework/unmanaged-api/metadata/metadata-global-static-functions.md)

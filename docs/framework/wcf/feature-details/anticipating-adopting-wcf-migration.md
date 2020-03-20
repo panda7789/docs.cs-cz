@@ -1,19 +1,19 @@
 ---
-title: 'Očekávání přechodu na Windows Communication Foundation: usnadnění budoucí migrace'
+title: 'Očekávání přechodu na Windows Communication Foundation: Usnadnění budoucí migrace'
 ms.date: 03/30/2017
 ms.assetid: f49664d9-e9e0-425c-a259-93f0a569d01b
-ms.openlocfilehash: 09bbb11c58992f0fabcb822f5f3d88fef273bea9
-ms.sourcegitcommit: 9b1ac36b6c80176fd4e20eb5bfcbd9d56c3264cf
+ms.openlocfilehash: 995bdaaaba96bf8697ea75c1f1a17fa8e51ec2d5
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67425275"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79185474"
 ---
-# <a name="anticipating-adopting-the-windows-communication-foundation-easing-future-migration"></a>Očekávání přechodu na Windows Communication Foundation: usnadnění budoucí migrace
-Aby jednodušší budoucí migrace z nové aplikace ASP.NET na WCF, postupujte podle předchozí doporučení, jakož i následující doporučení.  
+# <a name="anticipating-adopting-the-windows-communication-foundation-easing-future-migration"></a>Očekávání přechodu na Windows Communication Foundation: Usnadnění budoucí migrace
+Chcete-li zajistit snadnější budoucí migraci nových aplikací ASP.NET do WCF, postupujte podle předchozích doporučení a následující doporučení.  
   
 ## <a name="protocols"></a>Protokoly  
- Zakážete podporu protokolu SOAP 1.2 ASP.NET 2.0:  
+ Zakažte ASP.NET 2.0 podpora soap 1.2:  
   
 ```xml  
 <configuration>  
@@ -21,31 +21,31 @@ Aby jednodušší budoucí migrace z nové aplikace ASP.NET na WCF, postupujte p
       <webServices >  
           <protocols>  
            <remove name="HttpSoap12"/>  
-          </protocols>    
+          </protocols>
       </webServices>  
-     </system.web>   
+     </system.web>
 </configuration>  
 ```  
   
- Tím se doporučuje, protože vyžaduje zprávy, které odpovídají různé protokoly, jako je protokol SOAP 1.1 a SOAP 1.2, přejděte pomocí různých koncových bodů WCF. Pokud webového rozhraní ASP.NET 2.0, služba je nakonfigurována pro podporu protokolu SOAP 1.1 a SOAP 1.2, což je výchozí konfigurace, pak jej nelze migrovat vpřed na jednom koncovém bodu WCF na původní adrese, která by byla jistě být kompatibilní se všemi ASP.NET Web existující klienti služby. Také výběrem SOAP 1.2 místo 1.1 více vážně omezí zákazníků služby.  
+ To je vhodné, protože WCF vyžaduje zprávy, které odpovídají různým protokolům, jako je SOAP 1.1 a SOAP 1.2, pro použití různých koncových bodů. Pokud je webová služba ASP.NET 2.0 nakonfigurována tak, aby podporovala rozhraní SOAP 1.1 i SOAP 1.2, což je výchozí konfigurace, nelze ji migrovat dopředu na jeden koncový bod WCF na původní adrese, která by byla jistě kompatibilní se všemi ASP.NET web stávajících klientů služby. Také výběr SOAP 1.2 namísto 1.1 bude více vážně omezit klientelu služby.  
   
-## <a name="service-development"></a>Vývoj služby  
- WCF umožňuje definování kontraktů služby s použitím <xref:System.ServiceModel.ServiceContractAttribute> rozhraní nebo tříd. Doporučujeme použít atribut rozhraní, nikoli třída, protože to uděláte tak vytvoří definici kontraktu, která může být libovolný počet tříd různě implementována. Technologie ASP.NET 2.0 podporuje možnost použít <xref:System.Web.Services.WebService> atribut rozhraní, stejně jako třídy. Jak již bylo zmíněno, existuje ale vadu v technologii ASP.NET 2.0, podle kterého parametru Namespace <xref:System.Web.Services.WebService> atribut nemá žádný vliv při použití atributu na rozhraní namísto třídy. Protože je obecně vhodné změnit obor názvů služby z výchozí hodnoty `http://tempuri.org`, pomocí parametru Namespace <xref:System.Web.Services.WebService> atribut, jeden by měl pokračovat definování webových služeb ASP.NET s použitím <xref:System.ServiceModel.ServiceContractAttribute> Atribut rozhraní nebo tříd.  
+## <a name="service-development"></a>Vývoj služeb  
+ WCF umožňuje definovat servisní smlouvy <xref:System.ServiceModel.ServiceContractAttribute> použitím buď rozhraní nebo třídy. Doporučuje se použít atribut rozhraní spíše než na třídu, protože tím vytvoří definici smlouvy, která může být různě implementována libovolným počtem tříd. ASP.NET 2.0 podporuje možnost <xref:System.Web.Services.WebService> použití atributu rozhraní i tříd. Však jak již bylo zmíněno, je vada v ASP.NET 2.0, podle kterého Namespace parametr <xref:System.Web.Services.WebService> atribut nemá žádný vliv, pokud je tento atribut použit rozhraní spíše než třídy. Vzhledem k tomu, `http://tempuri.org`že je obecně vhodné změnit obor názvů služby z <xref:System.Web.Services.WebService> výchozí hodnoty , pomocí parametru Obor <xref:System.ServiceModel.ServiceContractAttribute> názvů atributu, je třeba pokračovat v definování ASP.NET webových služeb použitím atributu buď na rozhraní, nebo na třídy.  
   
-- Metody, které jsou definovány těchto rozhraní je možné máte jako malým množstvím kódu. Požádejte svou práci do jiné třídy delegáta. Nový typ služby WCF pak rovněž delegovat práci nepotřebují důležité do těchto tříd.  
+- Mají co nejméně kódu v metodách, kterými jsou definovány tyto rozhraní. Nechte je delegovat svou práci na jiné třídy. Nové typy služeb WCF pak mohou také delegovat svou věcnou práci na tyto třídy.  
   
-- Zadat explicitní názvy pro operace využívání služby `MessageName` parametr <xref:System.Web.Services.WebMethodAttribute>.  
+- Zadejte explicitní názvy pro operace `MessageName` služby <xref:System.Web.Services.WebMethodAttribute>pomocí parametru .  
   
     ```csharp  
     [WebMethod(MessageName="ExplicitName")]  
     string Echo(string input);  
     ```  
   
-     To je důležité, protože se liší od výchozí názvy poskytnutých WCF výchozí názvy pro operace v technologii ASP.NET. Poskytnutím explicitní názvy neměli spoléhat na výchozí hodnoty.  
+     Je to důležité, protože výchozí názvy operací v ASP.NET se liší od výchozích názvů poskytnutých WCF. Poskytnutím explicitních názvů se vyhnete spoléhání se na výchozí názvy.  
   
-- Neprovádějte implementaci operace služby rozhraní ASP.NET Web s polymorfní metody, protože WCF nepodporuje implementaci operace s polymorfní metody.  
+- Neimplementujte operace ASP.NET webové služby pomocí polymorfních metod, protože WCF nepodporuje implementaci operací pomocí polymorfních metod.  
   
-- Použití <xref:System.Web.Services.Protocols.SoapDocumentMethodAttribute> zadat explicitní hodnoty záhlaví SOAPAction HTTP, pomocí které protokolu HTTP se budou směrovat požadavky do metody.  
+- Slouží <xref:System.Web.Services.Protocols.SoapDocumentMethodAttribute> k zadání explicitních hodnot pro hlavičky SOAPAction HTTP, kterými budou požadavky HTTP směrovány na metody.  
   
     ```csharp  
     [WebMethod]  
@@ -53,26 +53,26 @@ Aby jednodušší budoucí migrace z nové aplikace ASP.NET na WCF, postupujte p
     string Echo(string input);  
     ```  
   
-     Tento postup zajistí obejde museli spoléhat na výchozí hodnoty SOAPAction používané technologie ASP.NET a WCF se stejné.  
+     Vezmeme-li tento přístup bude obcházení museli spoléhat na výchozí SOAPAction hodnoty používané ASP.NET a WCF jsou stejné.  
   
-- Vyhněte se použití rozšíření SOAP. Pokud rozšíření SOAP, pak určete, zda je účely, pro které jsou právě považovány za funkce, která je již poskytované WCF. Pokud se ve skutečnosti je to tento případ, pak zvažte možnost, které nejsou hned přijmout WCF.  
+- Nepoužívejte rozšíření SOAP. Pokud soap rozšíření jsou požadovány, pak určit, zda účel, pro který jsou považovány za je funkce, která je již k dispozici WCF. Pokud tomu tak skutečně je, pak přehodnotit volbu nepřijmout WCF hned.  
   
-## <a name="state-management"></a>Správa stavu  
- Vyhněte se nutnosti udržovat stav služby. Pouze nemá zachování stavu vést k ohrožení škálovatelnost aplikace, ale stav mechanismy správy technologie ASP.NET a WCF jsou velmi odlišné, i když WCF podporovat mechanismy ASP.NET v režim kompatibility ASP.NET.  
+## <a name="state-management"></a>Správa státu  
+ Vyhněte se nutnosti udržovat stav ve službách. Nejen, že udržování stavu mají tendenci ohrozit škálovatelnost aplikace, ale mechanismy správy stavu ASP.NET a WCF jsou velmi odlišné, i když WCF podporuje ASP.NET mechanismy v režimu kompatibility ASP.NET.  
   
 ## <a name="exception-handling"></a>Zpracování výjimek  
- Při navrhování struktury datové typy na odeslané a přijaté službou, také návrh struktury tak, aby představují různé typy výjimek, které mohou nastat v rámci služby, že jedna možná budete chtít sdělit do klienta.  
+ Při navrhování struktury datových typů, které mají být odeslány a přijaty službou, také návrhové struktury představují různé typy výjimek, které mohou nastat v rámci služby, které by bylo možné chtít předat klientovi.  
   
 ```csharp  
 [Serializable]  
 [XmlRoot(Namespace="ExplicitNamespace", IsNullable=true)]  
-public partial class AnticipatedException 
-{ 
+public partial class AnticipatedException
+{
     private string anticipatedExceptionInformationField;  
 
-    public string AnticipatedExceptionInformation 
+    public string AnticipatedExceptionInformation
     {  
-        get {   
+        get {
             return this.anticipatedExceptionInformationField;  
         }  
         set {  
@@ -82,7 +82,7 @@ public partial class AnticipatedException
 }  
 ```  
   
- Umožnit takové třídy sami serializaci do formátu XML:  
+ Poznejte těmto třídám možnost serializovat se do XML:  
   
 ```csharp  
 public XmlNode ToXML()  
@@ -101,7 +101,7 @@ public XmlNode ToXML()
 }  
 ```  
   
- Třídy pak umožňuje zadejte podrobnosti pro explicitně vyvolána <xref:System.Web.Services.Protocols.SoapException> instancí:  
+ Třídy pak lze poskytnout podrobnosti pro <xref:System.Web.Services.Protocols.SoapException> explicitně vyvolána instance:  
   
 ```csharp  
 AnticipatedException exception = new AnticipatedException();  
@@ -113,17 +113,17 @@ throw new SoapException(
      exception.ToXML());  
 ```  
   
- Tyto třídy výjimek bude snadno opakovaně použitelné s WCF <xref:System.ServiceModel.FaultException%601> třídy k vyvolání nové `FaultException<AnticipatedException>(anticipatedException);`  
+ Tyto třídy výjimek budou snadno opakovaně použitelné <xref:System.ServiceModel.FaultException%601> s třídou WCF, aby vyvolaly novou`FaultException<AnticipatedException>(anticipatedException);`  
   
 ## <a name="security"></a>Zabezpečení  
  Následují některá doporučení zabezpečení.  
   
-- Vyhněte se použití profilů ASP.NET 2.0, jako je použití by omezit použití režim integrace ASP.NET Pokud služby byl migrován a WCF.  
+- Nepoužívejte ASP.NET profily 2.0, protože jejich použití by omezilo použití režimu integrace ASP.NET, pokud by služba byla migrována do WCF.  
   
-- Vyhněte se použití seznamů ACL pro řízení přístupu ke službám, jako rozhraní ASP.NET Web services podporuje seznamy řízení přístupu pomocí Internetové informační služby (IIS), WCF nepodporuje, protože rozhraní ASP.NET Web services závisí na službě IIS pro hostování a WCF nutně nemusí být hostovaná ve službě IIS.  
+- Nepoužívejte přístupové sítě ACL k řízení přístupu ke službám, protože ASP.NET webové služby podporují seznamu ACL používající internetové informační služby (IIS), wcf nikoli – protože ASP.NET webové služby závisí na službě IIS pro hostování a wcf nemusí být nutně hostován ve službě IIS.  
   
-- Zvažte použití zprostředkovatele rolí ASP.NET 2.0 pro ověřování přístupu k prostředkům služby.  
+- Zvažte použití ASP.NET 2.0 zprostředkovatelé rolí pro autorizaci přístupu k prostředkům služby.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Očekávání přechodu na Windows Communication Foundation: Usnadnění budoucí integrace](../../../../docs/framework/wcf/feature-details/anticipating-adopting-the-wcf-easing-future-integration.md)

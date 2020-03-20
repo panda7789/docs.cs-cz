@@ -2,18 +2,18 @@
 title: Interoperabilní odkazy na objekty
 ms.date: 04/15/2019
 ms.assetid: cb8da4c8-08ca-4220-a16b-e04c8f527f1b
-ms.openlocfilehash: ada9084f6ac3c97dc641571c0cb8379a2fac68a8
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 0927f217a1666f8f27ca9c3e68f80a96b9c0f2b1
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61918967"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79184709"
 ---
 # <a name="interoperable-object-references"></a>Interoperabilní odkazy na objekty
-Ve výchozím nastavení <xref:System.Runtime.Serialization.DataContractSerializer> serializuje objekty podle hodnoty. Můžete použít <xref:System.Runtime.Serialization.DataContractAttribute.IsReference%2A> vlastnost dáte pokyn, aby serializátor kontraktu dat pro zachování odkazy na objekty při serializaci objektů.  
+Ve výchozím <xref:System.Runtime.Serialization.DataContractSerializer> nastavení serializuje objekty podle hodnoty. <xref:System.Runtime.Serialization.DataContractAttribute.IsReference%2A> Vlastnost můžete použít k pokynu serializátoru kontraktu dat k zachování odkazů na objekty při serializaci objektů.  
   
 ## <a name="generated-xml"></a>Vygenerovaný kód XML  
- Jako příklad vezměte v úvahu následující objekt:  
+ Jako příklad zvažte následující objekt:  
   
 ```csharp  
 [DataContract]  
@@ -26,12 +26,12 @@ public class X
     public SomeClass B = someInstance;  
 }  
   
-public class SomeClass   
+public class SomeClass
 {  
 }  
 ```  
   
- S <xref:System.Runtime.Serialization.DataContractSerializer.PreserveObjectReferences%2A> nastavena na `false` (výchozí), je vygenerována následující kód XML:  
+ S <xref:System.Runtime.Serialization.DataContractSerializer.PreserveObjectReferences%2A> nastavenou na `false` (výchozí) se vygeneruje následující XML:  
   
 ```xml  
 <X>  
@@ -40,7 +40,7 @@ public class SomeClass
 </X>  
 ```  
   
- S <xref:System.Runtime.Serialization.DataContractSerializer.PreserveObjectReferences%2A> nastavena na `true`, je vygenerována následující kód XML:  
+ S <xref:System.Runtime.Serialization.DataContractSerializer.PreserveObjectReferences%2A> nastavenou na `true`, je generován následující XML:  
   
 ```xml  
 <X>  
@@ -49,41 +49,41 @@ public class SomeClass
 </X>  
 ```  
   
- Však <xref:System.Runtime.Serialization.XsdDataContractExporter> nepopisuje `id` a `ref` atributů v jeho schématu, i když `preserveObjectReferences` je nastavena na `true`.  
+ Však <xref:System.Runtime.Serialization.XsdDataContractExporter> `id` nepopisuje atributy `ref` a v jeho schématu, `preserveObjectReferences` i když je `true`vlastnost nastavena na .  
   
-## <a name="using-isreference"></a>Pomocí IsReference  
- Chcete-li vygenerovat odkaz na informace o objektu, který je platný podle schématu, které aplikaci popisuje, použijte <xref:System.Runtime.Serialization.DataContractAttribute> atribut na typ a nastavte <xref:System.Runtime.Serialization.DataContractAttribute.IsReference%2A> příznak `true`. Následující příklad upravuje třída `X` v předchozím příkladu tak, že přidáte `IsReference`:  
+## <a name="using-isreference"></a>Použití odkazu IsReference  
+ Chcete-li generovat informace o odkazu na objekt, které jsou platné <xref:System.Runtime.Serialization.DataContractAttribute> podle schématu, které <xref:System.Runtime.Serialization.DataContractAttribute.IsReference%2A> jej `true`popisuje, použijte atribut pro typ a nastavte příznak na . Následující příklad upravuje třídu `X` v předchozím příkladu přidáním `IsReference`:  
   
 ```csharp
 [DataContract(IsReference=true)]
-public class X   
+public class X
 {  
-     SomeClass someInstance = new SomeClass(); 
+     SomeClass someInstance = new SomeClass();
      [DataMember]
      public SomeClass A = someInstance;
-     [DataMember] 
+     [DataMember]
      public SomeClass B = someInstance;
 }
   
-public class SomeClass 
-{   
+public class SomeClass
+{
 }  
 ````
 
- Vygenerovaný kód XML je následující:  
+ Vygenerovaný xml je následující:  
 
 ```xml
 <X>  
     <A id="1">
         <Value>contents of A</Value>  
-    </A> 
+    </A>
     <B ref="1"></B>  
 </X>
 ```  
   
- Pomocí `IsReference` zajišťuje dodržování předpisů na zprávu verzemi. Bez toho při generování typ ze schématu, XML výstupu, není nutně kompatibilní se schématem původně předpokládá, že typ. Jinými slovy i když `id` a `ref` atributy byly serializován, původní schématu může mít zavřené tyto atributy (nebo všechny) ze které se vyskytují v kódu XML. S `IsReference` použít na datový člen, člen nadále získat renomé jako *označím* při odbavovaná.  
+ Použití `IsReference` zajišťuje dodržování předpisů při zakopnutí zpráv. Bez něj, když je typ generován ze schématu, výstup XML pro tento typ není nutně kompatibilní se schématem původně předpokládal. Jinými slovy, `id` i `ref` když atributy a byly serializovány, původní schéma mohlo zabránit výskytu těchto atributů (nebo všech atributů) v XML. Při `IsReference` použití na datový člen člen i nadále rozpoznán jako *odkazovatelný* při zaokrouhlení.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Runtime.Serialization.DataContractAttribute>
 - <xref:System.Runtime.Serialization.CollectionDataContractAttribute>

@@ -1,20 +1,20 @@
 ---
-title: 'Postupy: vytvoření služby WCF, která komunikuje přes objekty WebSockets'
+title: 'Postupy: Vytvoření služby WCF, která komunikuje přes WebSockets'
 ms.date: 03/30/2017
 ms.assetid: bafbbd89-eab8-4e9a-b4c3-b7b0178e12d8
-ms.openlocfilehash: 8f8cf715269fd0ed67e2265eee4139a509f70cd1
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: d420ac8fcb98ddec195093be8ae25be37443da4e
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73977129"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79184980"
 ---
-# <a name="how-to-create-a-wcf-service-that-communicates-over-websockets"></a>Postupy: vytvoření služby WCF, která komunikuje přes objekty WebSockets
-Služby a Klienti WCF mohou pomocí vazby <xref:System.ServiceModel.NetHttpBinding> komunikovat přes objekty WebSockets.  WebSockets se použijí, když <xref:System.ServiceModel.NetHttpBinding> určí kontrakt služby, který definuje kontrakt zpětného volání. Toto téma popisuje, jak implementovat službu WCF a klienta, který používá <xref:System.ServiceModel.NetHttpBinding> ke komunikaci přes objekty WebSockets.  
+# <a name="how-to-create-a-wcf-service-that-communicates-over-websockets"></a>Postupy: Vytvoření služby WCF, která komunikuje přes WebSockets
+WCF služby a <xref:System.ServiceModel.NetHttpBinding> klienti mohou použít vazbu ke komunikaci přes WebSockets.  WebSockets bude použit, <xref:System.ServiceModel.NetHttpBinding> když určuje servisní smlouvy definuje smlouvu zpětného volání. Toto téma popisuje, jak implementovat službu <xref:System.ServiceModel.NetHttpBinding> WCF a klienta, který používá ke komunikaci přes WebSockets.  
   
 ### <a name="define-the-service"></a>Definování služby  
   
-1. Definování kontraktu zpětného volání  
+1. Definování smlouvy zpětného volání  
   
     ```csharp  
     [ServiceContract]  
@@ -25,9 +25,9 @@ Služby a Klienti WCF mohou pomocí vazby <xref:System.ServiceModel.NetHttpBindi
         }  
     ```  
   
-     Tato smlouva bude implementována klientskou aplikací, aby mohla služba odesílat zprávy zpět klientovi.  
+     Tato smlouva bude implementována klientskou aplikací, aby služba mohla odesílat zprávy zpět klientovi.  
   
-2. Definujte kontrakt služby a zadejte `IStockQuoteCallback` rozhraní jako kontrakt zpětného volání.  
+2. Definujte servisní smlouvu `IStockQuoteCallback` a zadejte rozhraní jako kontrakt zpětného volání.  
   
     ```csharp  
     [ServiceContract(CallbackContract = typeof(IStockQuoteCallback))]  
@@ -38,7 +38,7 @@ Služby a Klienti WCF mohou pomocí vazby <xref:System.ServiceModel.NetHttpBindi
         }  
     ```  
   
-3. Implementujte kontrakt služby.  
+3. Implementujte servisní smlouvu.  
   
     ```csharp
     public class StockQuoteService : IStockQuoteService  
@@ -59,17 +59,17 @@ Služby a Klienti WCF mohou pomocí vazby <xref:System.ServiceModel.NetHttpBindi
     }  
     ```  
   
-     Operace služby `StartSendingQuotes` je implementována jako asynchronní volání. Kanál zpětného volání načteme pomocí `OperationContext` a pokud je kanál otevřený, vytvoříme na kanálu zpětného volání asynchronní volání.  
+     Operace `StartSendingQuotes` služby je implementována jako asynchronní volání. Načteme kanál zpětného `OperationContext` volání pomocí a pokud je kanál otevřený, provedeme asynchronní volání kanálu zpětného volání.  
   
 4. Konfigurace služby  
   
     ```xml  
     <configuration>  
         <appSettings>  
-          <add key="aspnet:UseTaskFriendlySynchronizationContext" value="true" />        
+          <add key="aspnet:UseTaskFriendlySynchronizationContext" value="true" />
         </appSettings>  
         <system.web>  
-          <compilation debug="true" targetFramework="4.5" />        
+          <compilation debug="true" targetFramework="4.5" />
         </system.web>  
         <system.serviceModel>  
             <protocolMapping>  
@@ -90,9 +90,9 @@ Služby a Klienti WCF mohou pomocí vazby <xref:System.ServiceModel.NetHttpBindi
     </configuration>  
     ```  
   
-     Konfigurační soubor služby spoléhá na výchozí koncové body WCF. Oddíl `<protocolMapping>` slouží k určení, že `NetHttpBinding` má být použit pro výchozí koncové body.  
+     Konfigurační soubor služby závisí na výchozíkoncové body WCF. Oddíl `<protocolMapping>` se používá k `NetHttpBinding` určení, že by měl být použit pro výchozí vytvořené koncové body.  
   
-### <a name="define-the-client"></a>Definování klienta  
+### <a name="define-the-client"></a>Definovat klienta  
   
 1. Implementujte kontrakt zpětného volání.  
   
@@ -106,7 +106,7 @@ Služby a Klienti WCF mohou pomocí vazby <xref:System.ServiceModel.NetHttpBindi
             }  
     ```  
   
-     Operace kontraktu zpětného volání je implementována jako asynchronní metoda.  
+     Operace smlouvy zpětného volání je implementována jako asynchronní metoda.  
   
     1. Implementujte kód klienta.  
   
@@ -117,7 +117,7 @@ Služby a Klienti WCF mohou pomocí vazby <xref:System.ServiceModel.NetHttpBindi
             {  
                 var context = new InstanceContext(new CallbackHandler());  
                 var client = new StockQuoteServiceReference.StockQuoteServiceClient(context);  
-                client.StartSendingQuotes();              
+                client.StartSendingQuotes();
                 Console.ReadLine();  
             }  
   
@@ -131,14 +131,14 @@ Služby a Klienti WCF mohou pomocí vazby <xref:System.ServiceModel.NetHttpBindi
         }  
         ```  
   
-         Hodnota CallbackHandler se tady opakuje pro přehlednost. Klientská aplikace vytvoří novou funkci InstanceContext a určí implementaci rozhraní zpětného volání. V dalším kroku se vytvoří instance třídy proxy, která posílá odkaz na nově vytvořenou třídu InstanceContext. Když klient zavolá službu, služba zavolá klienta pomocí zadaného kontraktu zpětného volání.  
+         CallbackHandler se opakuje zde pro přehlednost. Klientská aplikace vytvoří nový InstanceContext a určuje implementaci rozhraní zpětného volání. Dále vytvoří instanci třídy proxy, která odesílá odkaz na nově vytvořený InstanceContext. Když klient volá službu, služba zavolá klientovi pomocí zadané smlouvy zpětného volání.  
   
     2. Konfigurace klienta  
   
         ```xml  
         <?xml version="1.0" encoding="utf-8" ?>  
         <configuration>  
-            <startup>   
+            <startup>
                 <supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.5" />  
             </startup>  
             <system.serviceModel>  
@@ -158,10 +158,10 @@ Služby a Klienti WCF mohou pomocí vazby <xref:System.ServiceModel.NetHttpBindi
         </configuration>  
         ```  
   
-         V konfiguraci klienta nemusíte nic dělat, stačí zadat koncový bod na straně klienta pomocí `NetHttpBinding`.  
+         Není nic zvláštního, co musíte udělat v konfiguraci klienta, `NetHttpBinding`stačí zadat koncový bod na straně klienta pomocí .  
   
 ## <a name="example"></a>Příklad  
- Následuje kompletní kód, který se používá v tomto tématu.  
+ Následuje úplný kód použitý v tomto tématu.  
   
 ```csharp  
 // IStockQuoteService.cs  
@@ -233,10 +233,10 @@ namespace Server
   
 <configuration>  
     <appSettings>  
-      <add key="aspnet:UseTaskFriendlySynchronizationContext" value="true" />        
+      <add key="aspnet:UseTaskFriendlySynchronizationContext" value="true" />
     </appSettings>  
     <system.web>  
-      <compilation debug="true" targetFramework="4.5" />        
+      <compilation debug="true" targetFramework="4.5" />
     </system.web>  
     <system.serviceModel>  
         <protocolMapping>  
@@ -279,7 +279,7 @@ namespace Client
         {  
             var context = new InstanceContext(new CallbackHandler());  
             var client = new StockQuoteServiceReference.StockQuoteServiceClient(context);  
-            client.StartSendingQuotes();              
+            client.StartSendingQuotes();
             Console.ReadLine();  
         }  
   
@@ -298,7 +298,7 @@ namespace Client
 <!--App.config -->  
 <?xml version="1.0" encoding="utf-8" ?>  
 <configuration>  
-    <startup>   
+    <startup>
         <supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.5" />  
     </startup>  
     <system.serviceModel>  
@@ -318,7 +318,7 @@ namespace Client
 </configuration>  
 ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Synchronní a asynchronní operace](../../../../docs/framework/wcf/synchronous-and-asynchronous-operations.md)
-- [Používání NetHttpBinding](../../../../docs/framework/wcf/feature-details/using-the-nethttpbinding.md)
+- [Používání vazeb NetHttpBinding](../../../../docs/framework/wcf/feature-details/using-the-nethttpbinding.md)

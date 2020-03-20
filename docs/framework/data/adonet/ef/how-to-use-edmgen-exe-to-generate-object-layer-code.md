@@ -1,47 +1,47 @@
 ---
-title: 'Postupy: použití EdmGen. exe ke generování kódu objektové vrstvy'
+title: 'Postupy: Použití EdmGen.exe pro generování kódu na objektové vrstvě'
 ms.date: 03/30/2017
 ms.assetid: c44d2ebe-f66f-42cb-9741-4a3f0c2dcffb
-ms.openlocfilehash: 9182f815a502488f955f64f6c19aad7865d0c7c6
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.openlocfilehash: 1dbd2e25d5f9795af4f80e079c6a0b807666743d
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73039987"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79150555"
 ---
-# <a name="how-to-use-edmgenexe-to-generate-object-layer-code"></a>Postupy: použití EdmGen. exe ke generování kódu objektové vrstvy
-V tomto tématu se dozvíte, jak pomocí nástroje [generátoru EDM (EdmGen. exe)](edm-generator-edmgen-exe.md) vygenerovat kód objektové vrstvy založený na souboru. csdl.  
+# <a name="how-to-use-edmgenexe-to-generate-object-layer-code"></a>Postupy: Použití EdmGen.exe pro generování kódu na objektové vrstvě
+Toto téma ukazuje, jak pomocí nástroje [EDMGen.exe](edm-generator-edmgen-exe.md) generátor u generovat kód objektové vrstvy na základě souboru .csdl.  
   
-### <a name="to-generate-object-layer-code-for-the-school-model-for-a-visual-basic-project-using-edmgenexe"></a>Generování kódu objektové vrstvy pro školní model pro projekt Visual Basic pomocí nástroje EdmGen. exe  
+### <a name="to-generate-object-layer-code-for-the-school-model-for-a-visual-basic-project-using-edmgenexe"></a>Generování kódu objektové vrstvy pro školní model pro projekt jazyka Visual Basic pomocí edmgen.exe  
   
-1. Vytvořte školní databázi. Další informace najdete v tématu [vytvoření ukázkové školní databáze](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb399731(v=vs.100)).  
+1. Vytvořte školní databázi. Další informace naleznete [v tématu Vytvoření ukázkové databáze školy](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb399731(v=vs.100)).  
   
-2. Vygenerujte školní model nebo získejte soubor School. csdl. Další informace naleznete v tématu [How to: use EdmGen. exe ke generování modelu a mapování souborů](how-to-use-edmgen-exe-to-generate-the-model-and-mapping-files.md).  
+2. Vygenerujte model školy nebo získejte soubor School.csdl. Další informace naleznete v [tématu How to: Use EdmGen.exe to Generate the Model and Mapping Files](how-to-use-edmgen-exe-to-generate-the-model-and-mapping-files.md).  
   
-3. Na příkazovém řádku spusťte následující příkaz bez konců řádků:  
+3. Na příkazovém řádku proveďte následující příkaz bez zakonců řádků:  
   
     ```console  
-    "%windir%\Microsoft.NET\Framework\v4.0.30319\edmgen.exe" /mode:EntityClassGeneration   
+    "%windir%\Microsoft.NET\Framework\v4.0.30319\edmgen.exe" /mode:EntityClassGeneration
     /incsdl:.\School.csdl /outobjectlayer:.\School.Objects.vb /language:VB  
     ```  
   
-### <a name="to-generate-object-layer-code-for-the-school-model-for-a-c-project-using-edmgenexe"></a>Generování kódu vrstvy objektu pro školní model pro C# projekt pomocí EdmGen. exe  
+### <a name="to-generate-object-layer-code-for-the-school-model-for-a-c-project-using-edmgenexe"></a>Generování kódu objektové vrstvy pro školní model pro projekt Jazyka C# pomocí programu EdmGen.exe  
   
-1. Vytvořte školní databázi. Další informace najdete v tématu [vytvoření ukázkové školní databáze](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb399731(v=vs.100)).  
+1. Vytvořte školní databázi. Další informace naleznete [v tématu Vytvoření ukázkové databáze školy](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb399731(v=vs.100)).  
   
-2. Vygenerujte školní model nebo získejte soubor School. csdl. Další informace naleznete v tématu [How to: use EdmGen. exe ke generování modelu a mapování souborů](how-to-use-edmgen-exe-to-generate-the-model-and-mapping-files.md).  
+2. Vygenerujte model školy nebo získejte soubor School.csdl. Další informace naleznete v [tématu How to: Use EdmGen.exe to Generate the Model and Mapping Files](how-to-use-edmgen-exe-to-generate-the-model-and-mapping-files.md).  
   
-3. Na příkazovém řádku spusťte následující příkaz bez konců řádků:  
+3. Na příkazovém řádku proveďte následující příkaz bez zakonců řádků:  
   
     ```console  
-    "%windir%\Microsoft.NET\Framework\v4.0.30319\edmgen.exe" /mode:EntityClassGeneration   
+    "%windir%\Microsoft.NET\Framework\v4.0.30319\edmgen.exe" /mode:EntityClassGeneration
     /incsdl:.\School.csdl /outobjectlayer:.\School.Objects.cs /language:CSharp  
     ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Modelování a mapování](modeling-and-mapping.md)
-- [Postupy: ruční konfigurace Entity Frameworkho projektu](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb738546(v=vs.100))
-- [ADO.NET model EDM (Entity Data Model) nástroje](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb399249(v=vs.100))
-- [Postupy: předběžné generování zobrazení pro zlepšení výkonu dotazů](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb896240(v=vs.100))
+- [Postup: Ruční konfigurace projektu entity frameworku](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb738546(v=vs.100))
+- [nástroje datového modelu ADO.NET entity](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb399249(v=vs.100))
+- [Postup: Předběžná generování zobrazení pro zlepšení výkonu dotazu](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb896240(v=vs.100))
 - [Postupy: Použití EdmGen.exe pro generování modelu a souborů mapování](how-to-use-edmgen-exe-to-generate-the-model-and-mapping-files.md)

@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: cd93a48d-1fed-4706-bec6-a05dc3b64fbd
 topic_type:
 - apiref
-ms.openlocfilehash: 7a93bbe0d7a9d9e6ff7505bbc215efa79176ad1f
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: fd7f149e806727d849cdceb3ffbc5dc7392fcf1d
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74440447"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79177413"
 ---
 # <a name="imetadataemit2setgenericparamprops-method"></a>IMetaDataEmit2::SetGenericParamProps – metoda
 Nastaví hodnoty vlastností pro definici obecného parametru, na kterou odkazuje zadaný token.  
@@ -29,40 +29,40 @@ Nastaví hodnoty vlastností pro definici obecného parametru, na kterou odkazuj
   
 ```cpp  
 HRESULT SetGenericParamProps (  
-    [in] mdGenericParam   gp,   
-    [in] DWORD            dwParamFlags,   
-    [in] LPCWSTR          szName,   
-    [in] DWORD            reserved,   
+    [in] mdGenericParam   gp,
+    [in] DWORD            dwParamFlags,
+    [in] LPCWSTR          szName,
+    [in] DWORD            reserved,
     [in] mdToken          rtkConstraints[]  
 );  
 ```  
   
 ## <a name="parameters"></a>Parametry  
  `gp`  
- pro Token pro definici obecného parametru, pro který chcete nastavit hodnoty.  
+ [v] Token pro definici obecného parametru, pro který chcete nastavit hodnoty.  
   
  `dwParamFlags`  
- pro Hodnota výčtu [CorGenericParamAttr –](../../../../docs/framework/unmanaged-api/metadata/corgenericparamattr-enumeration.md) , která popisuje typ obecného parametru.  
+ [v] Hodnota [CorGenericParamAttr](../../../../docs/framework/unmanaged-api/metadata/corgenericparamattr-enumeration.md) výčtu, který popisuje typ pro obecný parametr.  
   
  `szName`  
- pro Volitelné. Název parametru, pro který chcete nastavit hodnoty.  
+ [v] Volitelné. Název parametru, pro který chcete nastavit hodnoty.  
   
  `reserved`  
- pro Vyhrazeno pro budoucí rozšíření.  
+ [v] Vyhrazeno pro budoucí rozšiřitelnost.  
   
  `rtkConstraints`  
- pro Volitelné. Pole s nulovým zakončením v poli omezení typu. Členy pole musí být token metadat `mdTypeDef`, `mdTypeRef`nebo `mdTypeSpec`.  
+ [v] Volitelné. Pole typu s nulovým ukončem. Členové pole musí `mdTypeDef` `mdTypeRef`být `mdTypeSpec` token , nebo metadat.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Hlavička:** Cor. h  
+ **Záhlaví:** Kor.h.  
   
- **Knihovna:** Používá se jako prostředek v knihovně MsCorEE. dll.  
+ **Knihovna:** Používá se jako prostředek v souboru MsCorEE.dll  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [IMetaDataEmit2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-interface.md)
 - [IMetaDataEmit – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)

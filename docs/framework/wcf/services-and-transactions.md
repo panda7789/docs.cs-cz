@@ -4,21 +4,21 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - service contracts [WCF], designing services and transactions
 ms.assetid: 864813ff-2709-4376-912d-f5c8d318c460
-ms.openlocfilehash: 9110198fa64e43c20e1e6ba0dcf158dddeac93a6
-ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
+ms.openlocfilehash: 4c59b83448f5a2c448843c12dae99c442441441f
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72321140"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79143275"
 ---
 # <a name="services-and-transactions"></a>Služby a transakce
-Aplikace Windows Communication Foundation (WCF) mohou iniciovat transakci v rámci klienta a koordinovat transakci v rámci operace služby. Klienti mohou iniciovat transakci a vyvolat několik operací služby a zajistit, že operace služby jsou buď potvrzené, nebo vracené zpět jako jedna jednotka.  
+Aplikace WCF (Windows Communication Foundation) můžete zahájit transakci z klienta a koordinovat transakci v rámci operace služby. Klienti mohou zahájit transakci a vyvolat několik operací služby a zajistit, aby operace služby byly potvrzeny nebo vráceny zpět jako jedna jednotka.  
   
- Můžete povolit chování transakce v kontraktu služby zadáním <xref:System.ServiceModel.ServiceBehaviorAttribute> a nastavením vlastností <xref:System.ServiceModel.ServiceBehaviorAttribute.TransactionIsolationLevel%2A> a <xref:System.ServiceModel.OperationBehaviorAttribute.TransactionScopeRequired%2A> pro operace služby, které vyžadují transakce klienta. Parametr <xref:System.ServiceModel.OperationBehaviorAttribute.TransactionAutoComplete%2A> určuje, zda transakce, ve které je metoda spuštěna, je automaticky dokončena, pokud nejsou vyvolány žádné neošetřené výjimky. Další informace o těchto atributech naleznete v tématu [atributy transakce ServiceModel](./feature-details/servicemodel-transaction-attributes.md).  
+ Chování transakce v servisní smlouvě můžete povolit <xref:System.ServiceModel.ServiceBehaviorAttribute> zadáním <xref:System.ServiceModel.ServiceBehaviorAttribute.TransactionIsolationLevel%2A> <xref:System.ServiceModel.OperationBehaviorAttribute.TransactionScopeRequired%2A> a nastavením vlastností a vlastností pro operace služeb, které vyžadují transakce klienta. Parametr <xref:System.ServiceModel.OperationBehaviorAttribute.TransactionAutoComplete%2A> určuje, zda je transakce, ve které se metoda provádí, automaticky dokončena, pokud nejsou vyvolány žádné neošetřené výjimky. Další informace o těchto atributech naleznete v tématu [ServiceModel Transaction Attributes](./feature-details/servicemodel-transaction-attributes.md).  
   
- Práce, která je prováděna v operacích služby a spravovaná správcem prostředků, jako je například protokolování aktualizací databáze, je součástí transakce klienta.  
+ Práce, která se provádí v operacích služby a spravuje správce prostředků, jako je například protokolování aktualizací databáze, je součástí transakce klienta.  
   
- Následující příklad ukazuje použití atributů <xref:System.ServiceModel.ServiceBehaviorAttribute> a <xref:System.ServiceModel.OperationBehaviorAttribute> pro řízení chování transakce na straně služby.  
+ Následující ukázka ukazuje použití <xref:System.ServiceModel.ServiceBehaviorAttribute> <xref:System.ServiceModel.OperationBehaviorAttribute> atributy a k řízení chování transakcí na straně služby.  
   
 ```csharp
 [ServiceBehavior(TransactionIsolationLevel = System.Transactions.IsolationLevel.Serializable)]  
@@ -32,7 +32,7 @@ public class CalculatorService: ICalculatorLog
         return n1 + n2;  
     }  
   
-    [OperationBehavior(TransactionScopeRequired = true,   
+    [OperationBehavior(TransactionScopeRequired = true,
                                TransactionAutoComplete = true)]  
     public double Subtract(double n1, double n2)  
     {  
@@ -40,7 +40,7 @@ public class CalculatorService: ICalculatorLog
         return n1 - n2;  
     }  
   
-    [OperationBehavior(TransactionScopeRequired = true,   
+    [OperationBehavior(TransactionScopeRequired = true,
                                        TransactionAutoComplete = true)]  
     public double Multiply(double n1, double n2)  
     {  
@@ -48,7 +48,7 @@ public class CalculatorService: ICalculatorLog
         return n1 * n2;  
     }  
   
-    [OperationBehavior(TransactionScopeRequired = true,   
+    [OperationBehavior(TransactionScopeRequired = true,
                                        TransactionAutoComplete = true)]  
     public double Divide(double n1, double n2)  
     {  
@@ -59,13 +59,13 @@ public class CalculatorService: ICalculatorLog
 }  
 ```  
   
- Můžete povolit transakce a tok transakce konfigurací vazeb klienta a služby k použití protokolu WS-AtomicTransaction a nastavením prvku [\<transactionFlow >](../configure-apps/file-schema/wcf/transactionflow.md) na hodnotu `true`, jak je znázorněno v následujícím příkladu. rozšířeného.  
+ Transakce a tok transakcí můžete povolit konfigurací vazby klienta a služby pro použití protokolu WS-AtomicTransaction a nastavením `true` [ \<](../configure-apps/file-schema/wcf/transactionflow.md) prvku transactionFlow>na , jak je znázorněno v následující ukázkové konfiguraci.  
   
 ```xml  
 <client>  
-    <endpoint address="net.tcp://localhost/ServiceModelSamples/service"   
-          binding="netTcpBinding"   
-          bindingConfiguration="netTcpBindingWSAT"   
+    <endpoint address="net.tcp://localhost/ServiceModelSamples/service"
+          binding="netTcpBinding"
+          bindingConfiguration="netTcpBindingWSAT"
           contract="Microsoft.ServiceModel.Samples.ICalculatorLog" />  
 </client>  
   
@@ -78,7 +78,7 @@ public class CalculatorService: ICalculatorLog
 </bindings>  
 ```  
   
- Klienti mohou zahájit transakci vytvořením <xref:System.Transactions.TransactionScope> a vyvoláním operací služby v rámci rozsahu transakce.  
+ Klienti mohou zahájit transakci <xref:System.Transactions.TransactionScope> vytvořením a vyvoláním operací služby v rámci transakce.  
   
 ```csharp
 using (TransactionScope ts = new TransactionScope(TransactionScopeOption.RequiresNew))  
@@ -88,7 +88,7 @@ using (TransactionScope ts = new TransactionScope(TransactionScopeOption.Require
 }  
 ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Podpora transakcí v System.ServiceModel](./feature-details/transactional-support-in-system-servicemodel.md)
 - [Modely transakcí](./feature-details/transaction-models.md)

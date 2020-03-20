@@ -8,26 +8,26 @@ helpviewer_keywords:
 - colors [Windows Forms], transforming with color matrices
 - colors [Windows Forms], shearing
 ms.assetid: 0a424171-5b8b-45c4-afef-e9720a6c3e22
-ms.openlocfilehash: b390caf644b86de0001387b2c3f41503fd34759a
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: 825e5a90ebb0d9df3b894ce7bd353e917b676939
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65593207"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79142391"
 ---
 # <a name="how-to-shear-colors"></a>Postupy: Zkosení barev
-Zkosení zvyšuje nebo snižuje složku barvy podle zadaného množství úměrná jiné součásti barvy. Představte si třeba transformace, kde se hodnota červené zvýší o polovinu hodnota modré. V takové transformace barvu (0.2, 0,5, 1) by se mohla stát (0,7, 0,5, 1). Nová hodnota červené je 0.2 + (1/2)(1) = 0,7.  
+Zkosení zvětšuje nebo zmenšuje barevnou složku o částku úměrnou jiné barevné složce. Zvažte například transformaci, kde je červená komponenta zvýšena o polovinu hodnoty modré součásti. Při takové transformaci by se barva (0,2, 0,5, 1) stala (0,7, 0,5, 1). Nová červená složka je 0,2 + (1/2)(1) = 0,7.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad vytvoří <xref:System.Drawing.Image> objekt ze souboru ColorBars4.bmp. Potom kód použije transformace zkosení je popsáno v předchozím odstavci každý pixel na obrázku.  
+ Následující příklad vytvoří <xref:System.Drawing.Image> objekt ze souboru ColorBars4.bmp. Pak kód použije zkosení transformace popsané v předchozím odstavci na každý obrazový bod v obraze.  
   
- Následující obrázek znázorňuje původní obrázek na levé straně a zkosené image na pravé straně: 
+ Následující obrázek znázorňuje původní obrázek vlevo a střižený obrázek vpravo:
   
- ![Dvě pole s barevné pruhy – souběžně ilustrující původní bitové kopie a zkosené bitové kopie.](./media/how-to-shear-colors/original-image-sheared-image.png)  
+ ![Dva čtverce s barevnými pruhy vedle sebe ilustrující původní obraz a stočený obraz.](./media/how-to-shear-colors/original-image-sheared-image.png)  
   
- Následující tabulka uvádí vektory barvu pro čtyři pruhy před a po transformaci zkosení.  
+ V následující tabulce jsou uvedeny vektory barev pro čtyři pruhy před a po transformaci zkosení.  
   
-|Původní|Stříhanou|  
+|Původní|Sazený|  
 |--------------|-------------|  
 |(0, 0, 1, 1)|(0.5, 0, 1, 1)|  
 |(0.5, 1, 0.5, 1)|(0.75, 1, 0.5, 1)|  
@@ -38,9 +38,9 @@ Zkosení zvyšuje nebo snižuje složku barvy podle zadaného množství úměrn
  [!code-vb[System.Drawing.Misc3#9](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.Misc3/VB/Form1.vb#9)]  
   
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
- V předchozím příkladu je určený k použití pomocí Windows Forms a vyžaduje <xref:System.Windows.Forms.PaintEventArgs> `e`, což je parametr <xref:System.Windows.Forms.Control.Paint> obslužné rutiny události. Nahraďte `ColorBars.bmp` image název a cesta platné ve vašem systému.  
+ Předchozí příklad je určen pro použití s windows <xref:System.Windows.Forms.PaintEventArgs> `e`forms a vyžaduje <xref:System.Windows.Forms.Control.Paint> , což je parametr obslužné rutiny události. Nahraďte `ColorBars.bmp` název obrázku a cestu platnou v systému.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Drawing.Imaging.ColorMatrix>
 - <xref:System.Drawing.Imaging.ImageAttributes>

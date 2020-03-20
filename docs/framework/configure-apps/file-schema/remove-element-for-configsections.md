@@ -7,20 +7,20 @@ helpviewer_keywords:
 - remove Element
 - <remove> Element
 ms.assetid: ae4d82e0-e8fe-468c-81ab-46d63c4d66a8
-ms.openlocfilehash: 99d67bd621390789993caa4862e5ce379135eb92
-ms.sourcegitcommit: 9c54866bcbdc49dbb981dd55be9bbd0443837aa2
+ms.openlocfilehash: 6991e3f73ac180fc690ec48e1a0d15f40c915733
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/14/2020
-ms.locfileid: "77215394"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79154527"
 ---
-# <a name="remove-element-for-configsections"></a>\<odebrat > element pro \<configSections >
+# <a name="remove-element-for-configsections"></a>\<odebrat prvek \<> pro> konfiguračních oddílů
 
-Odebere předdefinovanou sekci nebo skupinu oddílů.
+Odebere předdefinovaný oddíl nebo skupinu oddílů.
 
-[**konfigurační >\<** ](configuration-element.md)\
-&nbsp;&nbsp;[ **\<configSections >** ](configsections-element-for-configuration.md)\
-&nbsp;&nbsp;&nbsp;&nbsp; **\<odebrat >**
+[**\<>konfigurace**](configuration-element.md)\
+&nbsp;&nbsp;[**\<configSections>**](configsections-element-for-configuration.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;**\<odebrat>**
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -32,27 +32,27 @@ Odebere předdefinovanou sekci nebo skupinu oddílů.
 
 |           | Popis |
 | --------- | ----------- |
-| **Jméno**  | Požadovaný atribut.<br><br>Určuje název oddílu nebo skupiny oddílů, které se mají odebrat. |
+| **Jméno**  | Požadovaný atribut.<br><br>Určuje název oddílu nebo skupiny oddílů, které chcete odebrat. |
 
-## <a name="parent-element"></a>Nadřazený element
+## <a name="parent-element"></a>Nadřazený prvek
 
 |     | Popis |
 | --- | ----------- |
-| [ **\<configSections >** Objekt](configsections-element-for-configuration.md) | Obsahuje konfigurační oddíl a deklarace oboru názvů. |
+| [** \<>konfigSections** Prvek](configsections-element-for-configuration.md) | Obsahuje konfigurační oddíl a deklarace oboru názvů. |
 
 ## <a name="child-elements"></a>Podřízené prvky
 
-Žádná
+Žádný
 
 ## <a name="remarks"></a>Poznámky
 
-Pomocí elementu **\<remove >** můžete odebrat oddíly a skupiny oddílů z vaší aplikace, které byly definovány na vyšší úrovni v hierarchii konfiguračního souboru.
+Prvek ** \<odebrat>** můžete použít k odebrání oddílů a skupin oddílů z aplikace, které byly definovány na vyšší úrovni v hierarchii konfiguračních souborů.
 
 ## <a name="example"></a>Příklad
 
-Následující příklad ukazuje, jak použít **\<odebrat >** elementu v konfiguračním souboru aplikace k odebrání oddílu dříve definovaného v konfiguračním souboru počítače.
+Následující příklad ukazuje, jak použít prvek ** \<remove>** v konfiguračním souboru aplikace k odebrání oddílu dříve definovaného v konfiguračním souboru počítače.
 
-Následující kód konfiguračního souboru počítače deklaruje oddíl **\<sampleSection >** :
+Následující kód konfiguračního souboru stroje deklaruje ** \<ukázku oddíluOddíl>**:
 
 ```xml
 <!-- Machine.config file -->
@@ -61,13 +61,13 @@ Následující kód konfiguračního souboru počítače deklaruje oddíl **\<sa
     <section name="sampleSection"
              type="System.Configuration.SingleTagSectionHandler" />
   </configSections>
-  <sampleSection setting1="Value1" 
-                 setting2="value two" 
+  <sampleSection setting1="Value1"
+                 setting2="value two"
                  setting3="third value" />
 </configuration>
 ```
 
-Následující kód konfiguračního souboru aplikace odebere oddíl **\<sampleSection >** . Po odebrání nemůže aplikace načíst nastavení v **\<sampleSection >** .
+Následující kód konfiguračního souboru aplikace odebere ** \<ukázkový oddíl section>.** Po odebrání aplikace nemůže načíst nastavení v ** \<sampleSection>**.
 
 ```xml
 <!-- Application configuration file -->
@@ -80,8 +80,8 @@ Následující kód konfiguračního souboru aplikace odebere oddíl **\<sampleS
 
 ## <a name="configuration-file"></a>Konfigurační soubor
 
-Tento element lze použít v konfiguračním souboru aplikace, konfiguračním souboru počítače (*Machine. config*) a souborech *Web. config* , které nejsou na úrovni adresáře aplikace.
+Tento prvek lze použít v konfiguračním souboru aplikace, konfiguračním souboru počítače *(Machine.config*) a souborech *Web.config,* které nejsou na úrovni adresáře aplikace.
 
 ## <a name="see-also"></a>Viz také
 
-- [Schéma konfiguračního souboru pro .NET Framework](index.md)
+- [Schéma konfiguračního souboru pro rozhraní .NET Framework](index.md)

@@ -3,21 +3,21 @@ title: <securityTokenHandlerConfiguration>
 ms.date: 03/30/2017
 ms.assetid: 28724cc6-020c-4a06-9a1f-d7594f315019
 author: BrucePerlerMS
-ms.openlocfilehash: 330e52bd73a8032e4073fe434c852e5bdf8e1d47
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.openlocfilehash: e3e65820fa4dc341371d4f67689a288cd3f63951
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70251890"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79152564"
 ---
 # <a name="securitytokenhandlerconfiguration"></a>\<securityTokenHandlerConfiguration>
 Poskytuje konfiguraci pro kolekci obslužných rutin tokenů.  
   
-[ **\<> Konfigurace**](../configuration-element.md)\
-&nbsp;&nbsp;[ **\<System. identityModel >** ](system-identitymodel.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;[ **\<identityConfiguration >** ](identityconfiguration.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<securityTokenHandlers >** ](securitytokenhandlers.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<securityTokenHandlerConfiguration >**  
+[**\<>konfigurace**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<system.identityModel>**](system-identitymodel.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[**\<identityKonfigurace>**](identityconfiguration.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<securityTokenHandlers>**](securitytokenhandlers.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<securityTokenHandlerConfiguration>**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,36 +40,36 @@ Poskytuje konfiguraci pro kolekci obslužných rutin tokenů.
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|saveBootstrapContext|Určuje, zda mají být do tokenu relace zahrnuty tokeny Bootstrap. Hodnotu lze také nastavit pro kolekci obslužných rutin tokenů nastavením `saveBootstrapContext` atributu [ \<v elementu IdentityConfiguration >](identityconfiguration.md) . Hodnota nastavená v kolekci obslužných rutin tokenu Přepisuje hodnotu nastavenou ve službě.|  
-|maximumClockSkew|A <xref:System.TimeSpan> určuje maximální povolený časový posun. Určuje maximální povolený časový posun při provádění operací závislých na čase, jako je například ověření doby platnosti přihlašovací relace. Výchozí hodnota je 5 minut, "00:05:00". Další informace o tom, jak zadat <xref:System.TimeSpan> hodnoty, najdete v tématu [hodnoty TimeSpan](../windows-workflow-foundation/index.md). Maximální hodinový posun lze také nastavit na úrovni služby nastavením `maximumClockSkew` atributu [ \<u prvku IdentityConfiguration >](identityconfiguration.md) . Hodnota nastavená v kolekci obslužných rutin tokenu Přepisuje hodnotu nastavenou ve službě.|  
+|saveBootstrapContext|Určuje, zda mají být tokeny bootstrap zahrnuty do tokenu relace. Hodnota může být také nastavena na kolekci obslužné rutiny tokenu nastavením atributu `saveBootstrapContext` na elementu [ \<identityConfiguration>.](identityconfiguration.md) Hodnota nastavená v kolekci obslužné rutiny tokenu přepíše hodnotu nastavenou ve službě.|  
+|maximumClockSkew|A, <xref:System.TimeSpan> který určuje maximální povolené hodiny zkosení. Řídí maximální povolené hodiny zkosení při provádění operací citlivých na čas, jako je například ověření doby vypršení platnosti relace přihlášení. Výchozí hodnota je 5 minut, "00:05:00". Další informace o zadávání <xref:System.TimeSpan> hodnot naleznete v tématu [Timespan Values](../windows-workflow-foundation/index.md). Maximální zkosení hodin může být také `maximumClockSkew` nastaveno na úrovni služby nastavením atributu na elementu [ \<identityConfiguration>.](identityconfiguration.md) Hodnota nastavená v kolekci obslužné rutiny tokenu přepíše hodnotu nastavenou ve službě.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
   
-|Prvek|Popis|  
+|Element|Popis|  
 |-------------|-----------------|  
-|[\<audienceUris>](audienceuris.md)|Určuje sadu identifikátorů URI, které jsou přijatelné identifikátory této předávající strany. Volitelný parametr.|  
-|[\<caches>](caches.md)|Registruje mezipaměti používané pro tokeny relací a detekci opětovného přehrání tokenu. Lze zadat na úrovni služby nebo v kolekci obslužných rutin tokenu zabezpečení. Volitelný parametr.|  
-|[\<certificateValidation>](certificatevalidation.md)|Určuje nastavení, které obslužné rutiny tokenů používají k ověření certifikátů. Lze zadat na úrovni služby nebo v kolekci obslužných rutin tokenu zabezpečení. Tato nastavení jsou přepsána, pokud je konkrétní obslužná rutina nakonfigurována pomocí vlastního validátoru. Volitelný parametr.|  
-|[\<issuerNameRegistry>](issuernameregistry.md)|Konfiguruje registr názvu vystavitele, který jsou používány obslužnými rutinami v kolekci obslužných rutin tokenů. Volitelný parametr.|  
-|[\<issuerTokenResolver>](issuertokenresolver.md)|Registruje překladač tokenů vystavitele, který jsou používány obslužnými rutinami v kolekci obslužných rutin tokenu. Překladač tokenů vystavitele se používá k překladu podpisového tokenu na příchozích tokenech a zprávách. Volitelný parametr.|  
-|[\<serviceTokenResolver>](servicetokenresolver.md)|Registruje překladač tokenů služby, který jsou používány obslužnými rutinami v kolekci obslužných rutin tokenu. Překladač tokenů služby se používá k překladu šifrovacího tokenu na příchozích tokenech a zprávách. Volitelný parametr.|  
-|[\<tokenReplayDetection>](tokenreplaydetection.md)|Umožňuje detekci opětovného přehrání tokenu a určuje dobu vypršení platnosti tokenů. Lze zadat na úrovni služby nebo v kolekci obslužných rutin tokenu zabezpečení. Volitelný parametr.|  
+|[\<audienceUris>](audienceuris.md)|Určuje sadu identifikátorů URI, které jsou přijatelnými identifikátory této předávající strany. Nepovinný parametr.|  
+|[\<>mezipamětí](caches.md)|Registruje mezipaměti používané pro tokeny relace a detekci opětovného přehrání tokenů. Lze zadat na úrovni služby nebo na kolekci obslužné rutiny tokenu zabezpečení. Nepovinný parametr.|  
+|[\<>ověření certifikátu](certificatevalidation.md)|Řídí nastavení, která obslužné rutiny tokenů používají k ověření certifikátů. Lze zadat na úrovni služby nebo na kolekci obslužné rutiny tokenu zabezpečení. Tato nastavení jsou přepsána, pokud je konkrétní obslužná rutina nakonfigurována s vlastním validátorem. Nepovinný parametr.|  
+|[\<>issuerNameRegistry](issuernameregistry.md)|Konfiguruje registr názvů vystavitele, který používají obslužné rutiny v kolekci obslužné rutiny tokenu. Nepovinný parametr.|  
+|[\<>překladače tokenu](issuertokenresolver.md)|Registruje překladač tokenů vystavitelů, který používají obslužné rutiny v kolekci obslužné rutiny tokenu. Překladač tokenů vystavithonu se používá k vyřešení podpisového tokenu na příchozích tokenech a zprávách. Nepovinný parametr.|  
+|[\<serviceTokenResolver>](servicetokenresolver.md)|Registruje překladač tokenů služby, který používají obslužné rutiny v kolekci obslužné rutiny tokenu. Překládání tokenů služby se používá k překladu šifrovacího tokenu na příchozích tokenech a zprávách. Nepovinný parametr.|  
+|[\<tokenReplayDetection>](tokenreplaydetection.md)|Povolí detekci opětovného přehrání tokenů a určuje dobu vypršení platnosti tokenů. Lze zadat na úrovni služby nebo na kolekci obslužné rutiny tokenu zabezpečení. Nepovinný parametr.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
-|Prvek|Popis|  
+|Element|Popis|  
 |-------------|-----------------|  
-|[\<securityTokenHandlers>](securitytokenhandlers.md)|Určuje kolekci obslužných rutin tokenů zabezpečení, které jsou registrovány u koncového bodu.|  
+|[\<securityTokenHandlers>](securitytokenhandlers.md)|Určuje kolekci obslužných rutin tokenů zabezpečení, které jsou registrovány s koncovým bodem.|  
   
 ## <a name="remarks"></a>Poznámky  
- Tato část poskytuje hodnoty <xref:System.IdentityModel.Tokens.SecurityTokenHandlerConfiguration> vlastností objektu. Nastavení konfigurovaná v této části přepíší ty, které jsou ve službě nakonfigurované. Některá z těchto nastavení lze naopak přepsat nastavením, která jsou zadána při přidání obslužné rutiny do kolekce obslužné rutiny tokenu zabezpečení.  
+ Tato část obsahuje hodnoty <xref:System.IdentityModel.Tokens.SecurityTokenHandlerConfiguration> vlastností objektu. Nastavení nakonfigurovaná v této části přepisují nastavení nakonfigurovaná ve službě. Některá z těchto nastavení mohou být zase přepsána nastaveními, která jsou určena při přidání obslužné rutiny do kolekce obslužné rutiny tokenu zabezpečení.  
   
 ## <a name="example"></a>Příklad  
   
 ```xml  
 <system.identityModel>  
   <identityConfiguration>  
-    <securityTokenHandlers>   
+    <securityTokenHandlers>
       <securityTokenHandlerConfiguration>  
   
         <audienceUris>  

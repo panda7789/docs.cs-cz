@@ -1,5 +1,5 @@
 ---
-title: DataMemberFieldEditor – třída
+title: Třída DataMemberFieldEditor
 ms.date: 03/30/2017
 ms.technology: dotnet-winforms
 api_name:
@@ -11,16 +11,16 @@ api_type:
 ms.assetid: 27ae39b7-3491-40f9-9b33-2de798f123ad
 topic_type:
 - apiref
-ms.openlocfilehash: 6d57fa30c9221b2b9405b2e146af54b2d6458962
-ms.sourcegitcommit: 9c54866bcbdc49dbb981dd55be9bbd0443837aa2
+ms.openlocfilehash: 8539cea6697cee5b008be18192d9dee52842d8bd
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/14/2020
-ms.locfileid: "77215704"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79156035"
 ---
-# <a name="datamemberfieldeditor-class"></a>DataMemberFieldEditor – třída
+# <a name="datamemberfieldeditor-class"></a>Třída DataMemberFieldEditor
 
-Poskytuje uživatelské rozhraní pro úpravu vlastností objektů vázaných na data zobrazením všech vlastností objektu `DataSource`, ze kterého se má vybrat zdroj hodnoty.  
+Poskytuje uživatelské rozhraní pro úpravy vlastností objektů vázaných `DataSource` na data tím, že uvádí všechny vlastnosti objektu, ze kterého má být zdroj hodnoty vynalezen.  
   
 ## <a name="syntax"></a>Syntaxe
   
@@ -29,17 +29,17 @@ internal class DataMemberFieldEditor : UITypeEditor
 ```
 
 > [!WARNING]
-> Třída `DataMemberFieldEditor` je interní a není určena pro použití přímo v kódu.
-> 
-> Společnost Microsoft v žádné situaci nepodporuje použití této třídy v produkční aplikaci.
+> Třída `DataMemberFieldEditor` je interní a není určena pro použití přímo ve vašem kódu.
+>
+> Společnost Microsoft nepodporuje použití této třídy v produkční aplikaci za žádných okolností.
 
 ## <a name="requirements"></a>Požadavky
 
-**Obor názvů:** <xref:System.Windows.Forms.Design?displayProperty=nameWithType>  
+**Obor názvů:**<xref:System.Windows.Forms.Design?displayProperty=nameWithType>  
   
-**Sestavení:** System. Design (v System. Design. dll)  
+**Sestava:** System.Design (v souboru System.Design.dll)  
   
-**Verze .NET Framework:** K dispozici od verze 2,0.  
+**Verze rozhraní .NET Framework:** K dispozici od 2.0.  
   
 ## <a name="see-also"></a>Viz také
 

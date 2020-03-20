@@ -9,19 +9,19 @@ helpviewer_keywords:
 - trace sources
 - <sources> element
 ms.assetid: c727b2e2-423a-4463-a223-013f40ff16a3
-ms.openlocfilehash: a903d009f2056e65414c1792494fbbd20e224413
-ms.sourcegitcommit: 7f8eeef060ddeb2cabfa52843776faf652c5a1f5
+ms.openlocfilehash: 2a76816ee73f516b3c7544877a77531acaa8e09c
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74088820"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79153266"
 ---
-# <a name="sources-element"></a>> elementu \<zdrojů
-Určuje zdroje trasování, které spouštějí trasovací zprávy.  
+# <a name="sources-element"></a>\<zdroje> Element
+Určuje zdroje trasování, které iniciují zprávy trasování.  
 
-[ **\<configuration >** ](../configuration-element.md) \
-&nbsp;&nbsp;[ **\<System. diagnostics >** ](system-diagnostics-element.md)\
-&nbsp;&nbsp;&nbsp;&nbsp; **\<zdrojů >**
+[**\<>konfigurace**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<system.diagnostická>**](system-diagnostics-element.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;**\<zdroje>**
 
 ## <a name="syntax"></a>Syntaxe  
   
@@ -35,37 +35,37 @@ Určuje zdroje trasování, které spouštějí trasovací zprávy.
  Následující části popisují atributy, podřízené prvky a nadřazené prvky.  
   
 ### <a name="attributes"></a>Atributy  
- Žádné  
+ Žádné.  
   
 ### <a name="child-elements"></a>Podřízené elementy  
   
-|Prvek|Popis|  
+|Element|Popis|  
 |-------------|-----------------|  
-|[zdrojový > \<](source-element.md)|Požadovaný element.<br /><br /> Určuje zdroj trasování, který inicializuje trasovací zprávy.|  
+|[\<zdrojové>](source-element.md)|Požadovaný element.<br /><br /> Určuje zdroj trasování, který iniciuje trasování zpráv.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
-|Prvek|Popis|  
+|Element|Popis|  
 |-------------|-----------------|  
 |`configuration`|Kořenový prvek v každém konfiguračním souboru, který je používán modulem Common Language Runtime (CLR) a aplikacemi rozhraní .NET Framework.|  
-|`system.diagnostics`|Určuje naslouchací procesy trasování, které shromažďují, ukládají a směrují zprávy a úroveň, kde je nastaven přepínač trasování.|  
+|`system.diagnostics`|Určuje posluchače trasování, které shromažďují, ukládají a směrují zprávy, a úroveň, na které je nastaven přepínač trasování.|  
   
 ## <a name="remarks"></a>Poznámky  
- Tento element lze použít v konfiguračním souboru počítače (Machine. config) a v konfiguračním souboru aplikace.  
+ Tento prvek lze použít v konfiguračním souboru počítače (Machine.config) a v konfiguračním souboru aplikace.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje, jak použít element `<sources>` k přidání `mySource` zdroje trasování a k nastavení úrovně pro zdrojový přepínač s názvem `sourceSwitch`. Je přidán naslouchací proces trasování konzoly, který zapisuje trasovací informace do konzoly.  
+ Následující příklad ukazuje, jak `<sources>` pomocí prvku přidat `mySource` zdroj trasování a nastavit `sourceSwitch`úroveň pro zdrojový přepínač s názvem . Je přidán naslouchací proces trasování konzoly, který zapisuje informace o trasování do konzoly.  
   
 ```xml  
 <configuration>  
    <system.diagnostics>  
       <sources>  
-         <source name="mySource" switchName="sourceSwitch"   
+         <source name="mySource" switchName="sourceSwitch"
             switchType="System.Diagnostics.SourceSwitch"  >  
             <listeners>  
-               <add name="console"   
+               <add name="console"
                   type="System.Diagnostics.ConsoleTraceListener" >  
-                  <filter type="System.Diagnostics.EventTypeFilter"   
+                  <filter type="System.Diagnostics.EventTypeFilter"
                      initializeData="Error" />  
                </add>  
                <remove name="Default" />  
@@ -74,12 +74,12 @@ Určuje zdroje trasování, které spouštějí trasovací zprávy.
       </sources>  
       <switches>  
          <add name="sourceSwitch" value="Warning" />  
-      </switches>    
-   </system.diagnostics>   
+      </switches>
+   </system.diagnostics>
 </configuration>  
 ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Diagnostics.TraceListener>
 - <xref:System.Diagnostics.DefaultTraceListener>
@@ -88,4 +88,4 @@ Určuje zdroje trasování, které spouštějí trasovací zprávy.
 - <xref:System.Diagnostics.EventLogTraceListener>
 - <xref:System.Diagnostics.XmlWriterTraceListener>
 - [Trasování a ladění schématu nastavení](index.md)
-- [zdrojový > \<](source-element.md)
+- [\<zdrojové>](source-element.md)

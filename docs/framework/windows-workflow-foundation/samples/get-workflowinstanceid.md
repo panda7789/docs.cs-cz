@@ -2,23 +2,23 @@
 title: Získání WorkflowInstanceId
 ms.date: 03/30/2017
 ms.assetid: bd7eea3b-1c28-4b84-9a67-003bc553aa81
-ms.openlocfilehash: 37dc0cac9c6ac69b9e430677a9c8cf3f47b200eb
-ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
+ms.openlocfilehash: 8cb83fcf15b814b0ca6f7f95f1a9b8eec70185cb
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74716023"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79142729"
 ---
 # <a name="get-workflowinstanceid"></a>Získání WorkflowInstanceId
-Tato ukázka předvádí, jak použít vlastní aktivitu `GetWorkflowInstanceId` k vrácení ID instance pracovního postupu.  
+Tato ukázka ukazuje, jak použít `GetWorkflowInstanceId` vlastní aktivitu, chcete-li vrátit ID instance pracovního postupu.  
   
 ## <a name="demonstrates"></a>Demonstruje  
- Vývoj vlastních aktivit, jak získat přístup k instanci pracovního postupu.  
+ Vlastní vývoj aktivit, jak získat přístup k instanci pracovního postupu.  
   
-## <a name="discussion"></a>Účely  
- Získání ID instance spuštěného pracovního postupu vyžaduje zápis kódu. Chcete-li napsat plně deklarativní pracovní postup, budete potřebovat aktivitu, která může vrátit ID instance pracovního postupu, aby mohla být na aktivitu odkazována v pracovním postupu, aby poskytovala plně deklarativní prostředí pro vytváření pracovních postupů. Řada scénářů vyžaduje přístup k ID instance: několik příkladů je pro účely protokolování nebo auditování nebo pro korelaci na úrovni aplikace poskytnutím ID instance back klientovi pro budoucí přidružení (například pomocí této aktivity uvnitř Aktivita SendReply).  
+## <a name="discussion"></a>Diskuse  
+ Získání ID instance spuštěného pracovního postupu vyžaduje psaní kódu. Pokud chcete napsat plně deklarativní pracovní postup, potřebujete aktivitu, která může vrátit ID instance pracovního postupu, aby na aktivitu bylo možné odkazovat v pracovním postupu a poskytnout tak plně deklarativní prostředí pro vytváření pracovního postupu. Mnoho scénářů vyžaduje přístup k ID instance: několik příkladů je pro účely protokolování nebo auditování nebo pro korelaci na úrovni aplikace poskytnutím ID instance zpět klientovi pro budoucí přidružení (například pomocí této aktivity uvnitř SendReply).  
   
- `GetWorkflowInstanceId` je implementován jako <xref:System.Activities.CodeActivity%601>, protože musí vracet hodnotu typu <xref:System.Guid>a musí mít přístup k <xref:System.Activities.CodeActivityContext> pro získání ID instance pracovního postupu. Jeho implementace je poměrně základní.  
+ `GetWorkflowInstanceId`je implementována jako, <xref:System.Activities.CodeActivity%601> protože musí <xref:System.Guid>vrátit hodnotu typu <xref:System.Activities.CodeActivityContext> a musí mít přístup k získání ID instance pracovního postupu. Jeho realizace je poměrně základní.  
   
 ```csharp  
 public sealed class GetWorkflowInstanceId : CodeActivity<Guid>  
@@ -31,10 +31,10 @@ public sealed class GetWorkflowInstanceId : CodeActivity<Guid>
 ```  
   
 > [!IMPORTANT]
-> Ukázky už můžou být na vašem počítači nainstalované. Než budete pokračovat, vyhledejte následující (výchozí) adresář.  
->   
+> Ukázky mohou být již nainstalovány v počítači. Před pokračováním zkontrolujte následující (výchozí) adresář.  
+>
 > `<InstallDrive>:\WF_WCF_Samples`  
->   
-> Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] Samples. Tato ukázka se nachází v následujícím adresáři.  
->   
+>
+> Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a Windows Workflow Foundation (WF) Ukázky pro rozhraní .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka je umístěna v následujícím adresáři.  
+>
 > `<InstallDrive>:\WF_WCF_Samples\WF\Scenario\ActivityLibrary\GetWorkflowInstanceId`

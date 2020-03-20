@@ -2,43 +2,43 @@
 title: Otázky zabezpečení a užitečné tipy pro trasování
 ms.date: 03/30/2017
 ms.assetid: 88bc2880-ecb9-47cd-9816-39016a07076f
-ms.openlocfilehash: d1b2c13cacc792ecedacfc3ede7c38e072841263
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 5ced4f3a3a5e83564703db88b28ee2b3c6eeb1a0
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64600040"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79185711"
 ---
 # <a name="security-concerns-and-useful-tips-for-tracing"></a>Otázky zabezpečení a užitečné tipy pro trasování
-Toto téma popisuje, jak můžete chránit citlivé informace z vystaven i užitečné tipy při použití webového hostitele.  
+Toto téma popisuje, jak můžete chránit citlivé informace před vystavením, stejně jako užitečné tipy při používání WebHost.  
   
-## <a name="using-a-custom-trace-listener-with-webhost"></a>Vlastní naslouchací pomocí webového hostitele  
- Pokud vytváříte vlastní naslouchací proces trasování, byste měli vědět o možnosti, že trasování může dojít ke ztrátě v případě hostované webové služby. Dojde k recyklování WebHost vypne živý proces při má duplicitní. Však dva procesy však musí mít přístup ke stejným prostředkům nechystáte nějakou dobu, což závisí na typu naslouchacího procesu. V tomto případě, `XmlWriterTraceListener` vytvoří nový soubor trasování pro druhý proces; zatímco spravuje více procesů v rámci stejné relace trasování událostí pro Windows a poskytuje přístup ke stejnému souboru. Pokud vlastní naslouchací proces neposkytuje podobné funkce, když je soubor uzamčen dva procesy může dojít ke ztrátě trasování.  
+## <a name="using-a-custom-trace-listener-with-webhost"></a>Použití vlastního naslouchací procestras s WebHost  
+ Pokud píšete vlastní naslouchací proces trasování, měli byste si být vědomi možnosti, že trasování může dojít ke ztrátě v případě služby hostované na webu. Když WebHost recykluje, vypne živý proces, zatímco duplicitní převezme. Oba procesy však musí mít stále přístup ke stejnému prostředku po určitou dobu, což je závislé na typu naslouchací proces. V tomto případě `XmlWriterTraceListener` , vytvoří nový soubor trasování pro druhý proces; zatímco trasování událostí systému Windows spravuje více procesů v rámci stejné relace a poskytuje přístup ke stejnému souboru. Pokud vlastní naslouchací proces neposkytuje podobné funkce, trasování může být ztracena, když je soubor uzamčen dvěma procesy.  
   
- Jste měli také něco vědět, že vlastní naslouchací můžete trasování a posílání zpráv na lince, například vzdálenou databázi. Jako modul pro nasazení aplikace měli byste nakonfigurovat vlastní naslouchací procesy s ovládacím prvkem odpovídající přístup. Také byste měli použít ovládací prvek zabezpečení v žádné osobní údaje, které mohou být zveřejněny ve vzdáleném umístění.  
+ Měli byste si také být vědomi toho, že vlastní naslouchací proces trasování můžete odesílat trasování a zprávy na lince, například do vzdálené databáze. Jako nasazovač aplikací byste měli nakonfigurovat vlastní naslouchací procesy s příslušným řízením přístupu. Měli byste také použít ovládací prvek zabezpečení pro všechny osobní informace, které mohou být vystaveny na vzdáleném místě.  
   
 ## <a name="logging-sensitive-information"></a>Protokolování citlivých informací  
- Trasování neobsahovala záhlaví zpráv, když je zpráva v oboru. Když je povoleno trasování, osobní údaje v hlavičkách specifické pro aplikace, jako je řetězec dotazu; a základní informace, jako je číslo platební karty, může být viditelné v protokolech. Nástroje pro nasazení aplikace je zodpovědná za řízení přístupu na soubory konfigurace a sledování. Pokud nechcete, aby tento druh informací viditelný, měli zakázat trasování nebo odfiltrovat část dat, pokud chcete sdílet protokoly trasování.  
+ Trasování obsahují záhlaví zpráv, pokud je zpráva v oboru. Je-li vektorizace povolena, osobní informace v záhlavích specifických pro aplikaci, například v řetězci dotazu; a informace o těle, jako je číslo kreditní karty, mohou být viditelné v protokolech. Nasazovač aplikací je zodpovědný za vynucení řízení přístupu na konfigurační a trasovací soubory. Pokud nechcete, aby byl tento druh informací viditelný, měli byste zakázat trasování nebo odfiltrovat část dat, pokud chcete sdílet protokoly trasování.  
   
- Následující tipy vám mohou pomoci při zabránit neúmyslnému zveřejnění obsahu souboru trasování:  
+ Následující tipy vám mohou pomoci zabránit neúmyslnému vystavení obsahu trasovacího souboru:  
   
-- Ujistěte se, že v protokolu, které soubory jsou chráněné pomocí řízení přístupu obsahuje seznam (ACL) ve webového hostitele i scénáře hostování na vlastním serveru.  
+- Ujistěte se, že soubory protokolu jsou chráněny seznamy řízení přístupu (ACL) ve scénářích WebHost i self-host.  
   
-- Zvolte příponu souboru, která nelze zpracovat v snadno pomocí nějaké webové žádosti. Například přípona souboru .xml není bezpečná volba. Příručka věnovaná IIS zobrazíte seznam přípon, které se dají obsluhovat můžete zkontrolovat.  
+- Zvolte příponu souboru, kterou nelze snadno obsluhovat pomocí webového požadavku. Například přípona souboru XML není bezpečnou volbou. V průvodci správou iis najdete seznam rozšíření, která lze obsluhovat.  
   
-- Zadejte absolutní cestu k umístění souboru protokolu, který by měla být mimo virtuální kořenový adresář webového hostitele veřejného adresáře tak, aby přistupuje pomocí webového prohlížeče třetí strana.  
+- Zadejte absolutní cestu pro umístění souboru protokolu, která by měla být mimo veřejný adresář WebHost vroot, aby se zabránilo jeho přístupu externí stranou pomocí webového prohlížeče.  
   
- Ve výchozím nastavení klíče a identifikovatelné osobní údaje (PII) jako je například uživatelské jméno a heslo nejsou protokolovány v trasování a nezpůsobuje protokolování zpráv. Správce počítače, ale můžete použít `enableLoggingKnownPII` atribut `machineSettings` prvek souboru Machine.config tak, aby povolovala aplikace spuštěné na počítači pro přihlášení známého identifikovatelné osobní údaje (PII) následujícím způsobem:  
+ Ve výchozím nastavení nejsou klíče a osobní údaje (PII), jako je uživatelské jméno a heslo, zaznamenány v trasování a protokolovaných zprávách. Správce počítače však může `enableLoggingKnownPII` atribut v `machineSettings` elementu souboru Machine.config použít k povolení aplikací spuštěných v počítači k protokolování známých osobně identifikovatelných informací (PII) následujícím způsobem:  
   
 ```xml  
 <configuration>  
    <system.ServiceModel>  
       <machineSettings enableLoggingKnownPii="Boolean"/>  
    </system.ServiceModel>  
-</configuration>   
+</configuration>
 ```  
   
- Pak můžete použít nástroje pro nasazení aplikace `logKnownPii` atributu v souboru App.config nebo Web.config povolení protokolování identifikovatelné osobní údaje následujícím způsobem:  
+ Nasazovač aplikací pak `logKnownPii` může použít atribut v souboru App.config nebo Web.config k povolení protokolování pii následujícím způsobem:  
   
 ```xml  
 <system.diagnostics>  
@@ -55,9 +55,9 @@ Toto téma popisuje, jak můžete chránit citlivé informace z vystaven i užit
 </system.diagnostics>  
 ```  
   
- Pouze, pokud jsou obě nastavení `true` je povoleno protokolování identifikovatelné osobní údaje. Kombinací dvou přepínače umožňuje flexibilitu pro přihlášení známého PII pro každou aplikaci.  
+ Pouze v případě, že obě nastavení jsou `true` pii protokolování povoleno. Kombinace dvou přepínačů umožňuje flexibilitu protokolovat známé pii pro každou aplikaci.  
   
- Byste měli vědět, že pokud zadáte dvě nebo více vlastních zdrojů v konfiguračním souboru, se čtou jenom atributy první zdroj. Další se ignorují. To znamená, že pro následující App.config soubor, identifikovatelné osobní údaje se neprotokolují pro oba zdroje i v případě, že je explicitně povoleno protokolování identifikovatelné osobní údaje pro druhý zdroj.  
+ Měli byste si být vědomi toho, že pokud zadáte dva nebo více vlastních zdrojů v konfiguračním souboru, budou přečteny pouze atributy prvního zdroje. Ostatní jsou ignorovány. To znamená, že pro následující soubor App.config, PII není zaznamenána pro oba zdroje, i když protokolování PII je explicitně povolena pro druhý zdroj.  
   
 ```xml  
 <system.diagnostics>  
@@ -70,7 +70,7 @@ Toto téma popisuje, jak můžete chránit citlivé informace z vystaven i užit
                 initializeData="c:\logs\messages.svclog" />  
           </listeners>  
       </source>  
-      <source name="System.ServiceModel"   
+      <source name="System.ServiceModel"
          logKnownPii="true">  
          <listeners>  
             <add name="xml" />  
@@ -80,16 +80,16 @@ Toto téma popisuje, jak můžete chránit citlivé informace z vystaven i užit
 </system.diagnostics>  
 ```  
   
- Pokud `<machineSettings enableLoggingKnownPii="Boolean"/>` existuje element mimo souboru Machine.config, systém vyvolá <xref:System.Configuration.ConfigurationErrorsException>.  
+ Pokud `<machineSettings enableLoggingKnownPii="Boolean"/>` prvek existuje mimo soubor Machine.config, systém <xref:System.Configuration.ConfigurationErrorsException>vyvolá .  
   
- Změny jsou platné pouze při spuštění nebo restartování aplikace. Událost se protokoluje při spuštění oba atributy jsou nastavena na hodnotu `true`. Pokud je také zaznamenána událost `logKnownPii` je nastavena na `true` ale `enableLoggingKnownPii` je `false`.  
+ Změny jsou účinné pouze při spuštění nebo restartování aplikace. Událost je zaznamenána při spuštění, pokud `true`jsou oba atributy nastaveny na . Událost je také zaznamenána, `logKnownPii` pokud je nastavena na, `true` ale `enableLoggingKnownPii` je `false`.  
   
- Další informace o protokolování identifikovatelné osobní údaje, najdete v části [bezpečnostní uzamčení PII](../../../../../docs/framework/wcf/samples/pii-security-lockdown.md) vzorku.  
+ Další informace o protokolování pii naleznete v tématu [PII Security Lockdown](../../../../../docs/framework/wcf/samples/pii-security-lockdown.md) sample.  
   
- Správce počítače a nástroje pro nasazení aplikace by měly využít extrémně opatrní při používání těchto dvou přepínače. Pokud je povoleno protokolování identifikovatelné osobní údaje, jsou protokolovány zabezpečení klíčů a identifikovatelné osobní údaje. Pokud je zakázaná, specifické pro aplikaci a citlivá data zaprotokolována v záhlaví zprávy a texty. Podrobnější informace o ochraně osobních údajů a ochranu identifikovatelné osobní údaje z vystaven, naleznete v tématu [ochrana osobních údajů uživatelů](https://go.microsoft.com/fwlink/?LinkID=94647).  
+ Správce počítače a nasazovač aplikací by měli být při použití těchto dvou přepínačů velmi opatrní. Pokud je povoleno protokolování PII, jsou zaznamenány bezpečnostní klíče a pii. Pokud je zakázána, citlivá data a data specifická pro aplikaci jsou stále protokolována v záhlavích a tělech zpráv. Podrobnější diskusi o ochraně osobních údajů a ochraně osobních údajů před odhalením naleznete [v tématu Ochrana osobních údajů uživatelů](https://docs.microsoft.com/previous-versions/dotnet/articles/aa480490(v=msdn.10)).  
   
- Navíc je IP adresa odesílatele zprávy zaprotokolována jednou za připojení pro přenosy tohoto připojení objektově orientovaného a jednou za jinak byla odeslána zpráva. To se provádí bez souhlasu odesílatele. Protokolování se však pouze dochází na úrovni informace nebo podrobné trasování, které nejsou výchozí nebo doporučená úrovní trasování v produkčním prostředí, s výjimkou živé ladění.  
+ Kromě toho ip adresa odesílatele zprávy je zaznamenána jednou za připojení pro přenosy orientované na připojení a jednou za zprávu odeslanou jinak. To se provádí bez souhlasu odesílatele. K tomuto protokolování však dochází pouze na úrovních informace nebo podrobné trasování, které nejsou výchozí nebo doporučené úrovně trasování v produkčním prostředí, s výjimkou živéladění.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Trasování](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)

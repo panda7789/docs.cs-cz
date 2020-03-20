@@ -5,19 +5,19 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 2ea85959-e763-4669-8bd9-46a9dab894bd
-ms.openlocfilehash: 0f87b1b730eecf0edad75bd87ca8b491b96e1d2b
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 159b23eb4ef5ca38ebce6e488080d315ec3be081
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70784706"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79151179"
 ---
 # <a name="defining-primary-keys"></a>Definování primárních klíčů
-Tabulka databáze běžně obsahuje sloupec nebo skupinu sloupců, které jednoznačně identifikují jednotlivé řádky v tabulce. Tato identifikace sloupce nebo skupiny sloupců se nazývá primární klíč.  
+Databázová tabulka má obvykle sloupec nebo skupinu sloupců, které jednoznačně identifikují každý řádek v tabulce. Tento identifikační sloupec nebo skupina sloupců se nazývá primární klíč.  
   
- <xref:System.Data.DataColumn> Pokud identifikujete jeden <xref:System.Data.DataTable.PrimaryKey%2A> jako pro <xref:System.Data.DataTable>, tabulka automaticky nastaví <xref:System.Data.DataColumn.AllowDBNull%2A> vlastnost sloupce na **hodnotu false** a <xref:System.Data.DataColumn.Unique%2A> vlastnost na **hodnotu true**. U primárních klíčů ve více sloupcích je automaticky nastavená pouze vlastnost **AllowDBNull** na **hodnotu false**.  
+ Když identifikujete <xref:System.Data.DataColumn> jeden <xref:System.Data.DataTable.PrimaryKey%2A> jako <xref:System.Data.DataTable>for , tabulka <xref:System.Data.DataColumn.AllowDBNull%2A> automaticky nastaví vlastnost sloupce <xref:System.Data.DataColumn.Unique%2A> na **false** a vlastnost **true**. U primárních klíčů s více sloupci je automaticky nastavena na **hodnotu false**pouze vlastnost **AllowDBNull** .  
   
- Vlastnost<xref:System.Data.DataTable> **PrimaryKey** typu přijímá jako hodnotu pole jednoho nebo více objektů **DataColumn** , jak je znázorněno v následujících příkladech. První příklad definuje jeden sloupec jako primární klíč.  
+ **Vlastnost PrimaryKey** <xref:System.Data.DataTable> přijímá jako svou hodnotu pole jednoho nebo více objektů **DataColumn,** jak je znázorněno v následujících příkladech. První příklad definuje jeden sloupec jako primární klíč.  
   
 ```vb  
 workTable.PrimaryKey = New DataColumn() {workTable.Columns("CustID")}  
@@ -54,7 +54,7 @@ workTable.PrimaryKey = keyColumn
 ```  
   
 ```csharp  
-workTable.PrimaryKey = new DataColumn[] {workTable.Columns["CustLName"],   
+workTable.PrimaryKey = new DataColumn[] {workTable.Columns["CustLName"],
                                          workTable.Columns["CustFName"]};  
   
 // Or  
@@ -65,7 +65,7 @@ keyColumn[1] = workTable.Columns["CustFName"];
 workTable.PrimaryKey = keyColumn;  
 ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Data.DataTable>
 - [Definice schématu datové tabulky](datatable-schema-definition.md)

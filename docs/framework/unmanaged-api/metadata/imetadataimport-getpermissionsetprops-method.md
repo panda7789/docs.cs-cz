@@ -15,50 +15,50 @@ helpviewer_keywords:
 ms.assetid: 9855f0e4-12c0-4d3d-ab5d-d6bc52d25eae
 topic_type:
 - apiref
-ms.openlocfilehash: a020a0343eecceb4a85ebbddffe323c7f7bdca3d
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 5faf1a6ae89045b2ef17fab789ee6e5bf23eecf2
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74437112"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79175340"
 ---
 # <a name="imetadataimportgetpermissionsetprops-method"></a>IMetaDataImport::GetPermissionSetProps – metoda
-Získá metadata přidružená k <xref:System.Security.PermissionSet?displayProperty=nameWithType> reprezentované zadaným tokenem oprávnění.  
+Získá metadata spojená <xref:System.Security.PermissionSet?displayProperty=nameWithType> s reprezentované zadaným tokenem oprávnění.  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```cpp  
 HRESULT GetPermissionSetProps (  
    [in]  mdPermission      pm,  
-   [out] DWORD             *pdwAction,   
-   [out] void const        **ppvPermission,   
+   [out] DWORD             *pdwAction,
+   [out] void const        **ppvPermission,
    [out] ULONG             *pcbPermission  
 );  
 ```  
   
 ## <a name="parameters"></a>Parametry  
  `pm`  
- pro Token metadat oprávnění, který představuje sadu oprávnění k získání vlastností metadat pro.  
+ [v] Token metadat oprávnění, který představuje sadu oprávnění pro získání vlastností metadat.  
   
  `pdwAction`  
- mimo Ukazatel na sadu oprávnění.  
+ [out] Ukazatel na sadu oprávnění.  
   
  `ppvPermission`  
- mimo Ukazatel na binární podpis metadat sady oprávnění.  
+ [out] Ukazatel na podpis binárních metadat sady oprávnění.  
   
  `pcbPermission`  
- mimo Velikost v bajtech `ppvPermission`.  
+ [out] Velikost v bajtů `ppvPermission`.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Hlavička:** Cor. h  
+ **Záhlaví:** Kor.h.  
   
- **Knihovna:** Zahrnuto jako prostředek v knihovně MsCorEE. dll  
+ **Knihovna:** Zahrnuto jako prostředek v souboru MsCorEE.dll  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Security.PermissionSet>
 - [IMetaDataImport – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)

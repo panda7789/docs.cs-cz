@@ -16,52 +16,52 @@ helpviewer_keywords:
 - typography [WPF], text decorations
 - baseline type [WPF]
 ms.assetid: cf3cb4e7-782a-4be7-b2d4-e0935e21e4e0
-ms.openlocfilehash: d586eef8d1308070da38a0a54c63c3ba64d30c8b
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: cf3b3c3bcb75153a0be4f7ced03b38134b79a930
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61776610"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79185926"
 ---
 # <a name="how-to-create-a-text-decoration"></a>Postupy: Vytvoření dekorace textu
-A <xref:System.Windows.TextDecoration> objekt je vizuální dekoru můžete přidat do textu. Existují čtyři druhy dekorace textu: podtržení, Směrný plán, přeškrtnutí a přeškrtnutí. Následující příklad ukazuje umístění dekorace textu vzhledem k textu.  
+Objekt <xref:System.Windows.TextDecoration> je vizuální ozdoba, kterou můžete přidat k textu. Existují čtyři typy textových dekorací: podtržení, účaří, přeškrtávací a nadčár. Následující příklad ukazuje umístění textových dekorací vzhledem k textu.  
   
- ![Diagram typů dekorace textu](./media/how-to-create-a-text-decoration/text-decoration-types.gif)  
+ ![Diagram typů textových dekorací](./media/how-to-create-a-text-decoration/text-decoration-types.gif)  
   
- Pro přidání do textové dekorace textu, vytvořte <xref:System.Windows.TextDecoration> objekt a upravit její vlastnosti. Použití <xref:System.Windows.TextDecoration.Location%2A> vlastnosti a určit, kde dekorace textu se zobrazí, jako je například podtržení. Použití <xref:System.Windows.TextDecoration.Pen%2A> vlastnosti k určení vzhledu textové dekorace, jako je například plné barvy nebo barevný přechod. Pokud nezadáte hodnotu <xref:System.Windows.TextDecoration.Pen%2A> vlastnost dekorace výchozí hodnoty na stejnou barvu jako text. Po definování <xref:System.Windows.TextDecoration> objektu, přidejte ji tak <xref:System.Windows.TextDecorations> kolekce objektu požadovaný text.  
+ Chcete-li k textu přidat <xref:System.Windows.TextDecoration> textovou ozdobu, vytvořte objekt a upravte jeho vlastnosti. Pomocí <xref:System.Windows.TextDecoration.Location%2A> vlastnosti určete, kde se zobrazí dekorace textu, například podtržení. <xref:System.Windows.TextDecoration.Pen%2A> Vlastnost í slouží k určení vzhledu dekorace textu, například plné výplně nebo barvy přechodu. Pokud nezadáte hodnotu vlastnosti, <xref:System.Windows.TextDecoration.Pen%2A> dekorace budou mít výchozí hodnotu stejné barvy jako text. Po definování objektu <xref:System.Windows.TextDecoration> jej přidejte <xref:System.Windows.TextDecorations> do kolekce požadovaného textového objektu.  
   
- Následující příklad ukazuje dekorace textu, který byl navržen štětec lineárního přechodu a přerušované pera.  
+ Následující příklad ukazuje textovou výzdobu, která byla stylizována s lineárním přechodem stopy a přerušované pero.  
   
- ![Dekorace textu pomocí lineárního přechodu podtržení](./media/how-to-create-a-text-decoration/text-decoration-gradient.png)  
+ ![Dekorace textu s lineárním přechodem podtržení](./media/how-to-create-a-text-decoration/text-decoration-gradient.png)  
   
- <xref:System.Windows.Documents.Hyperlink> Je objekt, který vám umožní hostitele hypertextové odkazy do plovoucího obsahu toku na úrovni vložení obsahu elementu. Ve výchozím nastavení <xref:System.Windows.Documents.Hyperlink> používá <xref:System.Windows.TextDecoration> zobrazíte podtržení. <xref:System.Windows.TextDecoration> objekty lze vytvořit instanci, náročné na výkon, zejména v případě, že budete mít mnoho <xref:System.Windows.Documents.Hyperlink> objekty. Pokud provedete převážně <xref:System.Windows.Documents.Hyperlink> prvky, možná budete chtít zvážit zobrazující podtržení jenom v případě, že se aktivuje událost, například <xref:System.Windows.ContentElement.MouseEnter> událostí.  
+ Objekt <xref:System.Windows.Documents.Hyperlink> je prvek obsahu toku na úrovni vložky, který umožňuje hostovat hypertextové odkazy v rámci obsahu toku. Ve výchozím <xref:System.Windows.Documents.Hyperlink> nastavení <xref:System.Windows.TextDecoration> používá objekt k zobrazení podtržení. <xref:System.Windows.TextDecoration>objekty mohou být náročné na výkon k vytvoření <xref:System.Windows.Documents.Hyperlink> instance, zejména pokud máte mnoho objektů. Pokud provedete rozsáhlé <xref:System.Windows.Documents.Hyperlink> použití prvků, můžete zvážit zobrazení podtržení pouze při <xref:System.Windows.ContentElement.MouseEnter> aktivaci události, jako je například událost.  
   
- V následujícím příkladu je dynamický podtržení pro odkaz "My MSN" – zobrazí se jenom v případě <xref:System.Windows.ContentElement.MouseEnter> událost se aktivuje.  
+ V následujícím příkladu je podtržení pro odkaz "Moje MSN" <xref:System.Windows.ContentElement.MouseEnter> dynamické – zobrazí se pouze při aktivaci události.  
   
- ![Zobrazení TextDecorations hypertextových odkazů](./media/how-to-create-a-text-decoration/text-decorations-hyperlinks.png)  
-   
- Další informace najdete v tématu [podtržený zadejte hypertextového odkazu](how-to-specify-whether-a-hyperlink-is-underlined.md).  
+ ![Hypertextové odkazy zobrazující textdekorace](./media/how-to-create-a-text-decoration/text-decorations-hyperlinks.png)  
+
+ Další informace naleznete [v tématu Určení, zda je hypertextový odkaz podtržený](how-to-specify-whether-a-hyperlink-is-underlined.md).  
   
 ## <a name="example"></a>Příklad  
- V následujícím příkladu kódu používá textové dekorace podtržení výchozí písmo hodnotu.  
+ V následujícím příkladu kódu používá dekorace podtržení textu výchozí hodnotu písma.  
   
  [!code-csharp[TextDecorationSnippets#TextDecorationSnippets1](~/samples/snippets/csharp/VS_Snippets_Wpf/TextDecorationSnippets/CSharp/Window1.xaml.cs#textdecorationsnippets1)]
  [!code-vb[TextDecorationSnippets#TextDecorationSnippets1](~/samples/snippets/visualbasic/VS_Snippets_Wpf/TextDecorationSnippets/visualbasic/window1.xaml.vb#textdecorationsnippets1)]
  [!code-xaml[TextDecorationSnippets#TextDecorationSnippets1](~/samples/snippets/csharp/VS_Snippets_Wpf/TextDecorationSnippets/CSharp/Window1.xaml#textdecorationsnippets1)]  
   
- V následujícím příkladu kódu je vytvořen textové dekorace podtržení s štětec jednotné barvy pro pero.  
+ V následujícím příkladu kódu je dekorace podtržení textu vytvořena s plnou barevnou stopou pro pero.  
   
  [!code-csharp[TextDecorationSnippets#TextDecorationSnippets2](~/samples/snippets/csharp/VS_Snippets_Wpf/TextDecorationSnippets/CSharp/Window1.xaml.cs#textdecorationsnippets2)]
  [!code-vb[TextDecorationSnippets#TextDecorationSnippets2](~/samples/snippets/visualbasic/VS_Snippets_Wpf/TextDecorationSnippets/visualbasic/window1.xaml.vb#textdecorationsnippets2)]
  [!code-xaml[TextDecorationSnippets#TextDecorationSnippets2](~/samples/snippets/csharp/VS_Snippets_Wpf/TextDecorationSnippets/CSharp/Window1.xaml#textdecorationsnippets2)]  
   
- V následujícím příkladu kódu je vytvořen textové dekorace podtržení s přerušované pera štětec lineárního přechodu.  
+ V následujícím příkladu kódu je vytvořena dekorace podtržení textu s lineárním přechodem pro přerušované pero.  
   
  [!code-csharp[TextDecorationSnippets#TextDecorationSnippets3](~/samples/snippets/csharp/VS_Snippets_Wpf/TextDecorationSnippets/CSharp/Window1.xaml.cs#textdecorationsnippets3)]
  [!code-vb[TextDecorationSnippets#TextDecorationSnippets3](~/samples/snippets/visualbasic/VS_Snippets_Wpf/TextDecorationSnippets/visualbasic/window1.xaml.vb#textdecorationsnippets3)]
  [!code-xaml[TextDecorationSnippets#TextDecorationSnippets3](~/samples/snippets/csharp/VS_Snippets_Wpf/TextDecorationSnippets/CSharp/Window1.xaml#textdecorationsnippets3)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.TextDecoration>
 - <xref:System.Windows.Documents.Hyperlink>

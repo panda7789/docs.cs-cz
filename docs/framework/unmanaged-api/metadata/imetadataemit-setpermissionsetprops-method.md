@@ -15,54 +15,54 @@ helpviewer_keywords:
 ms.assetid: 8eaee971-40bf-45e2-a3d8-6e57674213b6
 topic_type:
 - apiref
-ms.openlocfilehash: 53a75b8e7edd15cd233577e0a3714fb5d981495f
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: de4cfdf2a9353eebdebaf4df9e481d06d776ff04
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74432326"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79177491"
 ---
 # <a name="imetadataemitsetpermissionsetprops-method"></a>IMetaDataEmit::SetPermissionSetProps – metoda
-Nastaví nebo aktualizuje funkce signatury metadat sady oprávnění definované předchozím voláním [IMetaDataEmit::D efinepermissionset](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-definepermissionset-method.md).  
+Nastaví nebo aktualizuje funkce podpisu metadat sady oprávnění definované předchozím voláním [IMetaDataEmit::DefinePermissionSet](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-definepermissionset-method.md).  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```cpp  
-HRESULT SetPermissionSetProps (   
-    [in]  mdToken         tk,   
-    [in]  DWORD           dwAction,   
-    [in]  void const      *pvPermission,   
-    [in]  ULONG           cbPermission,   
-    [out] mdPermission    *ppm   
+HRESULT SetPermissionSetProps (
+    [in]  mdToken         tk,
+    [in]  DWORD           dwAction,
+    [in]  void const      *pvPermission,
+    [in]  ULONG           cbPermission,
+    [out] mdPermission    *ppm
 );  
 ```  
   
 ## <a name="parameters"></a>Parametry  
  `tk`  
- pro Token metadat, který představuje objekt, který má být upraven.  
+ [v] Token metadat, který představuje objekt, který má být dekorován.  
   
  `dwAction`  
- pro Hodnota [CorDeclSecurity –](../../../../docs/framework/unmanaged-api/metadata/cordeclsecurity-enumeration.md) , která určuje typ deklarativního zabezpečení, který se má použít.  
+ [v] Hodnota [CorDeclSecurity,](../../../../docs/framework/unmanaged-api/metadata/cordeclsecurity-enumeration.md) která určuje typ deklarativního zabezpečení, které má být použito.  
   
  `pvPermission`  
- pro Objekt BLOB oprávnění  
+ [v] Oprávnění BLOB.  
   
  `cbPermission`  
- pro Velikost `pvPermission`v bajtech.  
+ [v] Velikost v bajtů `pvPermission`.  
   
  `ppm`  
- mimo Token metadat `mdPermission`, který představuje aktualizovaná oprávnění.  
+ [out] Token `mdPermission` metadat, který představuje aktualizovaná oprávnění.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Hlavička:** Cor. h  
+ **Záhlaví:** Kor.h.  
   
- **Knihovna:** Používá se jako prostředek v knihovně MSCorEE. dll.  
+ **Knihovna:** Používá se jako prostředek v souboru MSCorEE.dll  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [IMetaDataEmit – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)
 - [IMetaDataEmit2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-interface.md)

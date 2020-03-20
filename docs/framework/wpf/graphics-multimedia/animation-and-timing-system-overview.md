@@ -5,84 +5,84 @@ helpviewer_keywords:
 - timing system [WPF]
 - animation [WPF]
 ms.assetid: 172cd5a8-a333-4c81-9456-fafccc19f382
-ms.openlocfilehash: f64431e7804ba6e068a3d05f512c6ead089d7712
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: d0ac2a8160a1e6f9bcdb333593ec207954b391aa
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62020338"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79187709"
 ---
 # <a name="animation-and-timing-system-overview"></a>Animace a časování přehledu systému
-Toto téma popisuje, jak používá systém časování animace, <xref:System.Windows.Media.Animation.Timeline>, a <xref:System.Windows.Media.Animation.Clock> třídy pro animaci vlastnosti.  
+Toto téma popisuje, jak systém <xref:System.Windows.Media.Animation.Timeline>časování <xref:System.Windows.Media.Animation.Clock> používá animace , a třídy animovat vlastnosti.  
   
-<a name="prerequisites"></a>   
+<a name="prerequisites"></a>
 ## <a name="prerequisites"></a>Požadavky  
- V tomto tématu informace o tom, byste měli používat [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] animace pro animaci vlastnosti, jak je popsáno v [přehled animace](animation-overview.md). Pomáhá také se seznámit s vlastností závislosti; Další informace najdete v tématu [přehled vlastností závislosti](../advanced/dependency-properties-overview.md).  
+ Chcete-li porozumět tomuto tématu, měli byste být schopni animovat vlastnosti pomocí [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] animací, jak je popsáno v [přehledu animací](animation-overview.md). Pomáhá také seznámit se s vlastnostmi závislostí; Další informace naleznete v tématu [Přehled vlastností závislostí](../advanced/dependency-properties-overview.md).  
   
-<a name="timelinesandclocks"></a>   
+<a name="timelinesandclocks"></a>
 ## <a name="timelines-and-clocks"></a>Časové osy a hodiny  
- [Přehled animace](animation-overview.md) jak je popsáno <xref:System.Windows.Media.Animation.Timeline> reprezentuje segment, data a animaci je typ <xref:System.Windows.Media.Animation.Timeline> , která vytváří výstupní hodnoty. Sama o sobě <xref:System.Windows.Media.Animation.Timeline>, nebude dělat nic jiného než jenom popisují segment čas. Je na časové ose <xref:System.Windows.Media.Animation.Clock> objekt, který odvádí skutečnou práci. Obdobně animace není animace ve skutečnosti vlastností: třídu animace popisuje způsob výpočtu výstupní hodnoty, ale je <xref:System.Windows.Media.Animation.Clock> , který byl vytvořen pro animaci, která řídí výstup animace a platí pro vlastnosti.  
+ [Přehled animace](animation-overview.md) popsal, <xref:System.Windows.Media.Animation.Timeline> jak představuje segment času a animace je <xref:System.Windows.Media.Animation.Timeline> typ, který vytváří výstupní hodnoty. Samo o <xref:System.Windows.Media.Animation.Timeline>sobě, , nedělá nic jiného, než jen popsat segment času. Je to objekt časové <xref:System.Windows.Media.Animation.Clock> osy, který dělá skutečnou práci. Podobně animace není ve skutečnosti animovat vlastnosti: třída animace popisuje, jak by <xref:System.Windows.Media.Animation.Clock> měly být vypočteny výstupní hodnoty, ale je to, který byl vytvořen pro animaci, která řídí výstup animace a použije ji na vlastnosti.  
   
- A <xref:System.Windows.Media.Animation.Clock> je speciální typ objektu, který udržuje s časováním běhový stav pro <xref:System.Windows.Media.Animation.Timeline>. Poskytuje tři bits informace, které jsou nezbytné pro animace a časování systému: <xref:System.Windows.Media.Animation.Clock.CurrentTime%2A>, <xref:System.Windows.Media.Animation.Clock.CurrentProgress%2A>, a <xref:System.Windows.Media.Animation.Clock.CurrentState%2A>. A <xref:System.Windows.Media.Animation.Clock> určuje jeho aktuální čas, průběhu a stavu pomocí chování časování popsal jeho <xref:System.Windows.Media.Animation.Timeline>: <xref:System.Windows.Media.Animation.Timeline.Duration%2A>, <xref:System.Windows.Media.Animation.Timeline.RepeatBehavior%2A>, <xref:System.Windows.Media.Animation.Timeline.AutoReverse%2A>, a tak dále.  
+ A <xref:System.Windows.Media.Animation.Clock> je zvláštní typ objektu, který udržuje časování <xref:System.Windows.Media.Animation.Timeline>související s časem stavu pro . Poskytuje tři bity informací, které jsou nezbytné pro <xref:System.Windows.Media.Animation.Clock.CurrentTime%2A> <xref:System.Windows.Media.Animation.Clock.CurrentProgress%2A>animaci a časování systému: , , a <xref:System.Windows.Media.Animation.Clock.CurrentState%2A>. A <xref:System.Windows.Media.Animation.Clock> určuje jeho aktuální čas, průběh a stav pomocí chování <xref:System.Windows.Media.Animation.Timeline>časování popsané jeho : <xref:System.Windows.Media.Animation.Timeline.Duration%2A>, <xref:System.Windows.Media.Animation.Timeline.RepeatBehavior%2A>, <xref:System.Windows.Media.Animation.Timeline.AutoReverse%2A>, a tak dále.  
   
- Ve většině případů <xref:System.Windows.Media.Animation.Clock> se automaticky vytvoří pro vaši časovou osu. Když animace s použitím <xref:System.Windows.Media.Animation.Storyboard> nebo <xref:System.Windows.Media.Animation.Animatable.BeginAnimation%2A> metody hodiny automaticky vytvořené pro časové osy a animace a použít pro jejich cílové vlastnosti. Můžete také vytvořit <xref:System.Windows.Media.Animation.Clock> explicitně pomocí <xref:System.Windows.Media.Animation.Timeline.CreateClock%2A> metodu vaše <xref:System.Windows.Media.Animation.Timeline>. <xref:System.Windows.Media.MediaTimeline.CreateClock%2A?displayProperty=nameWithType> Metoda vytvoří hodiny odpovídající typu <xref:System.Windows.Media.Animation.Timeline> na kterém je volána. Pokud <xref:System.Windows.Media.Animation.Timeline> obsahuje podřízených časových os, vytvoří <xref:System.Windows.Media.Animation.Clock> objekty pro ně i. Výsledná <xref:System.Windows.Media.Animation.Clock> objekty jsou uspořádány do stromové struktury, které odpovídají struktury <xref:System.Windows.Media.Animation.Timeline> objekty stromové struktury, ze které je vytvořen.  
+ Ve většině případů <xref:System.Windows.Media.Animation.Clock> se pro vaši časovou osu vytvoří automaticky. Při animaci pomocí <xref:System.Windows.Media.Animation.Storyboard> metody <xref:System.Windows.Media.Animation.Animatable.BeginAnimation%2A> nebo metody se hodiny automaticky vytvoří pro vaše časové osy a animace a použijí se na jejich cílové vlastnosti. Můžete také vytvořit <xref:System.Windows.Media.Animation.Clock> explicitně <xref:System.Windows.Media.Animation.Timeline.CreateClock%2A> pomocí metody <xref:System.Windows.Media.Animation.Timeline>. Metoda <xref:System.Windows.Media.MediaTimeline.CreateClock%2A?displayProperty=nameWithType> vytvoří hodiny příslušného typu <xref:System.Windows.Media.Animation.Timeline> pro, na kterém je volána. Pokud <xref:System.Windows.Media.Animation.Timeline> obsahuje podřízené časové <xref:System.Windows.Media.Animation.Clock> osy, vytvoří objekty pro ně také. Výsledné <xref:System.Windows.Media.Animation.Clock> objekty jsou uspořádány ve stromech, které odpovídají struktuře stromu <xref:System.Windows.Media.Animation.Timeline> objektů, ze kterého jsou vytvořeny.  
   
- Existují různé druhy hodiny pro různé typy časové osy. Následující tabulka ukazuje <xref:System.Windows.Media.Animation.Clock> typy, které odpovídají na některé z různých <xref:System.Windows.Media.Animation.Timeline> typy.  
+ Existují různé typy hodin pro různé typy časových os. V následující tabulce <xref:System.Windows.Media.Animation.Clock> jsou uvedeny typy, <xref:System.Windows.Media.Animation.Timeline> které odpovídají některé z různých typů.  
   
-|Typ osy|Typ hodin|Účel hodiny|  
+|Typ časové osy|Typ hodin|Účel hodin|  
 |-------------------|----------------|-------------------|  
-|Animace (dědí z <xref:System.Windows.Media.Animation.AnimationTimeline>)|<xref:System.Windows.Media.Animation.AnimationClock>|Vygeneruje výstupní hodnoty pro vlastnost závislosti.|  
+|Animace (dědí <xref:System.Windows.Media.Animation.AnimationTimeline>z)|<xref:System.Windows.Media.Animation.AnimationClock>|Generuje výstupní hodnoty pro vlastnost závislosti.|  
 |<xref:System.Windows.Media.MediaTimeline>|<xref:System.Windows.Media.MediaClock>|Zpracuje mediální soubor.|  
-|<xref:System.Windows.Media.Animation.ParallelTimeline>|<xref:System.Windows.Media.Animation.ClockGroup>|Skupiny a jeho podřízených ovládacích prvků <xref:System.Windows.Media.Animation.Clock> objekty|  
-|<xref:System.Windows.Media.Animation.Storyboard>|<xref:System.Windows.Media.Animation.ClockGroup>|Skupiny a jeho podřízených ovládacích prvků <xref:System.Windows.Media.Animation.Clock> objekty|  
+|<xref:System.Windows.Media.Animation.ParallelTimeline>|<xref:System.Windows.Media.Animation.ClockGroup>|Seskupí <xref:System.Windows.Media.Animation.Clock> a řídí podřízené objekty.|  
+|<xref:System.Windows.Media.Animation.Storyboard>|<xref:System.Windows.Media.Animation.ClockGroup>|Seskupí <xref:System.Windows.Media.Animation.Clock> a řídí podřízené objekty.|  
   
- Můžete použít libovolný <xref:System.Windows.Media.Animation.AnimationClock> objektů, vytvoříte pro vlastnosti závislosti kompatibilní s použitím <xref:System.Windows.Media.Animation.IAnimatable.ApplyAnimationClock%2A> metody.  
+ Pomocí metody <xref:System.Windows.Media.Animation.AnimationClock> můžete použít všechny objekty, které <xref:System.Windows.Media.Animation.IAnimatable.ApplyAnimationClock%2A> vytvoříte, na kompatibilní vlastnosti závislostí.  
   
- Ve scénářích náročné na výkon, jako je například velký počet podobné objekty animace Správa vlastních <xref:System.Windows.Media.Animation.Clock> použití může poskytnout přinese zlepšení výkonu.  
+ Ve scénářích náročných na výkon, jako je například animace <xref:System.Windows.Media.Animation.Clock> velkého počtu podobných objektů, správa vlastní použití může poskytnout výhody výkonu.  
   
-<a name="timemanager"></a>   
-## <a name="clocks-and-the-time-manager"></a>Hodiny a správce čas  
- Když animace objektů v [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)], je čas správce, který spravuje <xref:System.Windows.Media.MediaPlayer.Clock%2A> objekty vytvořené pro vaše časové osy. Správce čas je kořen stromu <xref:System.Windows.Media.MediaPlayer.Clock%2A> objektů a řídí tok čas ve stromové struktuře.  Správce čas se automaticky vytvoří pro každou [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikace a je viditelný pro vývojáře aplikací. Správce čas "značky" tolikrát, kolikrát za sekundu; skutečný počet taktů, ke kterým dochází každou sekundu se liší v závislosti na dostupných systémových prostředků. Během jedna z těchto značek, vypočítá čas správce stavu všech <xref:System.Windows.Media.Animation.ClockState.Active> <xref:System.Windows.Media.Animation.Clock> objekty ve stromové struktuře časování.  
+<a name="timemanager"></a>
+## <a name="clocks-and-the-time-manager"></a>Hodiny a správce času  
+ Když animujete [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]objekty v aplikaci , <xref:System.Windows.Media.MediaPlayer.Clock%2A> je to správce času, který spravuje objekty vytvořené pro vaše časové osy. Správce času je kořen stromu <xref:System.Windows.Media.MediaPlayer.Clock%2A> objektů a řídí tok času v tomto stromu.  Správce času je automaticky [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] vytvořen pro každou aplikaci a je pro vývojáře aplikace neviditelný. Správce času "zaškrtne" mnohokrát za sekundu; skutečný počet značek, ke kterým dochází každou sekundu, se liší v závislosti na dostupných systémových prostředcích. Během každého z těchto značek správce času vypočítá stav <xref:System.Windows.Media.Animation.ClockState.Active> <xref:System.Windows.Media.Animation.Clock> všech objektů ve stromu časování.  
   
- Následující ilustrace znázorňuje vztah mezi správce čas a <xref:System.Windows.Media.Animation.AnimationClock>a vlastnost animovaný závislostí.  
+ Následující obrázek znázorňuje vztah mezi <xref:System.Windows.Media.Animation.AnimationClock>správcem času a aplikacea a vlastností animované závislosti.  
   
- ![Součásti systému časování](./media/graphicsmm-clocks-1clock1prop.png "graphicsmm_clocks_1clock1prop")  
-Animace vlastností  
+ ![Součásti časovacího systému](./media/graphicsmm-clocks-1clock1prop.png "graphicsmm_clocks_1clock1prop")  
+Animace vlastnosti  
   
- Správce čas značek, aktualizuje čas každý <xref:System.Windows.Media.Animation.ClockState.Active> <xref:System.Windows.Media.Animation.Clock> v aplikaci. Pokud <xref:System.Windows.Media.Animation.Clock> je <xref:System.Windows.Media.Animation.AnimationClock>, použije <xref:System.Windows.Media.Animation.AnimationTimeline.GetCurrentValue%2A> metodu <xref:System.Windows.Media.Animation.AnimationTimeline> ze které byla vytvořena pro výpočet aktuálním výstupní hodnota. <xref:System.Windows.Media.Animation.AnimationClock> Poskytuje <xref:System.Windows.Media.Animation.AnimationTimeline> s aktuálním místním časem, vstupní hodnota, která je obvykle základní hodnoty vlastnosti a určení výchozí hodnotu. Při načtení hodnoty animovaného pomocí vlastnosti <xref:System.Windows.DependencyObject.GetValue%2A> metody nebo její přistupující objekt CLR, získáte výstup jeho <xref:System.Windows.Media.Animation.AnimationClock>.  
+ Když správce času zaškrtne, aktualizuje <xref:System.Windows.Media.Animation.ClockState.Active> <xref:System.Windows.Media.Animation.Clock> čas každého v aplikaci. Pokud <xref:System.Windows.Media.Animation.Clock> je <xref:System.Windows.Media.Animation.AnimationClock>, používá <xref:System.Windows.Media.Animation.AnimationTimeline.GetCurrentValue%2A> metodu, <xref:System.Windows.Media.Animation.AnimationTimeline> ze které byl vytvořen pro výpočet jeho aktuální výstupní hodnoty. Dodává <xref:System.Windows.Media.Animation.AnimationClock> <xref:System.Windows.Media.Animation.AnimationTimeline> s aktuální místní čas, vstupní hodnota, která je obvykle základní hodnota vlastnosti a výchozí cílovou hodnotu. Při načtení hodnoty animované vlastnosti <xref:System.Windows.DependencyObject.GetValue%2A> pomocí metody nebo jeho clr přistupujícího objektu, získáte výstup jeho <xref:System.Windows.Media.Animation.AnimationClock>.  
   
-#### <a name="clock-groups"></a>Hodiny skupiny  
- Předchozí část popisuje, jak jsou různé druhy <xref:System.Windows.Media.Animation.Clock> objekty pro různé druhy časové osy. Následující ilustrace znázorňuje vztah mezi správce čas <xref:System.Windows.Media.Animation.ClockGroup>, <xref:System.Windows.Media.Animation.AnimationClock>a vlastnost animovaný závislostí. A <xref:System.Windows.Media.Animation.ClockGroup> pro časové osy, které skupiny jiné časové osy, jako je vytvořen <xref:System.Windows.Media.Animation.Storyboard> třídu, která seskupuje animace a jiné časové osy.  
+#### <a name="clock-groups"></a>Skupiny hodin  
+ Předchozí část popisuje, jak existují různé <xref:System.Windows.Media.Animation.Clock> typy objektů pro různé typy časových os. Následující obrázek znázorňuje vztah mezi <xref:System.Windows.Media.Animation.ClockGroup>správcem času, vlastností , a <xref:System.Windows.Media.Animation.AnimationClock>animovaná závislost. A <xref:System.Windows.Media.Animation.ClockGroup> se vytvoří pro časové osy, <xref:System.Windows.Media.Animation.Storyboard> které seskupují jiné časové osy, jako je například třída, která seskupuje animace a další časové osy.  
   
- ![Součásti systému časování](./media/graphicsmm-clocks-2clock1clockgroup2prop.png "graphicsmm_clocks_2clock1clockgroup2prop")  
-ClockGroup  
+ ![Součásti časovacího systému](./media/graphicsmm-clocks-2clock1clockgroup2prop.png "graphicsmm_clocks_2clock1clockgroup2prop")  
+Hodinová skupina  
   
 #### <a name="composition"></a>Složení  
- Je možné přidružit více hodiny s jedinou vlastností, v takovém případě každý používá hodiny hodnota výstupního předchozím hodiny jako jeho základní hodnoty. Následující obrázek znázorňuje tři <xref:System.Windows.Media.Animation.AnimationClock> objekty použité na stejnou vlastnost. Clock1 používá základní hodnotou animované vlastnosti jako vstup a používá ji generovat výstup. Clock2 převezme výstup z Clock1 jako vstup a používá ke generování výstupu. Clock3 převezme výstup z Clock2 jako vstup a používá ke generování výstupu. Několik hodin. ovlivňují stejnou vlastnost současně, jsou označeny v řetězu složení.  
+ Je možné přidružit více hodin s jednou vlastností, v takovém případě každý hodiny používá výstupní hodnotu předchozí hodiny jako jeho základní hodnotu. Následující obrázek <xref:System.Windows.Media.Animation.AnimationClock> znázorňuje tři objekty aplikované na stejnou vlastnost. Clock1 používá základní hodnotu animované vlastnosti jako jeho vstup a používá jej ke generování výstupu. Clock2 bere výstup z Clock1 jako jeho vstup a používá jej ke generování výstupu. Clock3 trvá výstup z Clock2 jako jeho vstup a používá jej ke generování výstupu. Pokud více hodin ovlivnit stejnou vlastnost současně, jsou řekl, aby byl v řetězci složení.  
   
- ![Součásti systému časování](./media/graphicsmm-clocks-2clock1prop.png "graphicsmm_clocks_2clock1prop")  
-Řetězec sestavení  
+ ![Součásti časovacího systému](./media/graphicsmm-clocks-2clock1prop.png "graphicsmm_clocks_2clock1prop")  
+Kompoziční řetězec  
   
- Všimněte si, že i když je vytvořen vztah mezi vstup a výstup <xref:System.Windows.Media.Animation.AnimationClock> objekty v řetězci složení jejich chování časování neovlivní; <xref:System.Windows.Media.Animation.Clock> objekty (včetně <xref:System.Windows.Media.Animation.AnimationClock> objekty) jsou hierarchické závislá na jejich nadřazené <xref:System.Windows.Media.Animation.Clock> objekty.  
+ Všimněte si, že i když je <xref:System.Windows.Media.Animation.AnimationClock> vytvořen vztah mezi vstup a výstup objektů v řetězci složení, jejich chování časování nejsou ovlivněny; <xref:System.Windows.Media.Animation.Clock> objekty <xref:System.Windows.Media.Animation.AnimationClock> (včetně objektů) mají hierarchickou <xref:System.Windows.Media.Animation.Clock> závislost na svých nadřazených objektech.  
   
- Použít stejnou vlastnost několik hodin, použijte <xref:System.Windows.Media.Animation.HandoffBehavior.Compose> <xref:System.Windows.Media.Animation.HandoffBehavior> při použití <xref:System.Windows.Media.Animation.Storyboard>, animace, nebo <xref:System.Windows.Media.Animation.AnimationClock>.  
+ Chcete-li použít více hodin na <xref:System.Windows.Media.Animation.HandoffBehavior.Compose> <xref:System.Windows.Media.Animation.HandoffBehavior> stejnou vlastnost, použijte při použití <xref:System.Windows.Media.Animation.Storyboard>, animace nebo <xref:System.Windows.Media.Animation.AnimationClock>.  
   
-#### <a name="ticks-and-event-consolidation"></a>Značky a konsolidaci událostí  
- Kromě výpočet výstupní hodnoty času manager provede další práci pokaždé, když ho značek: Určuje stav každé hodiny a vyvolává události podle potřeby.  
+#### <a name="ticks-and-event-consolidation"></a>Značky a konsolidace událostí  
+ Kromě výpočtu výstupních hodnot provádí správce času další práci pokaždé, když zaškrtne: určuje stav jednotlivých hodin a podle potřeby vyvolá události.  
   
- Zatímco značky docházet často, je možné pro mnoho věcí, které se provedou mezi značkami. Například <xref:System.Windows.Media.Animation.Clock> může zastavit, spustit a zastavit znovu, v takovém případě jeho <xref:System.Windows.Media.Animation.Clock.CurrentState%2A> hodnota se změnily třikrát. Teoreticky vzato <xref:System.Windows.Media.Animation.Clock.CurrentStateInvalidated> události může být vyvolána více než jednou v jedné značky, ale modul časování konsoliduje události, tak, aby <xref:System.Windows.Media.Animation.Clock.CurrentStateInvalidated> událost může být vyvolána nejvýše jednou za značek. To platí pro všechny události časování: každého typu maximálně jednu událost je aktivována pro danou <xref:System.Windows.Media.Animation.Clock> objektu.  
+ Zatímco klíšťata se vyskytují často, je možné, že se mezi klíšťaty stane spousta věcí. Může být <xref:System.Windows.Media.Animation.Clock> například zastavena, spuštěna a zastavena <xref:System.Windows.Media.Animation.Clock.CurrentState%2A> znovu, v takovém případě se jeho hodnota třikrát změní. Teoreticky <xref:System.Windows.Media.Animation.Clock.CurrentStateInvalidated> by událost mohla být vyvolána vícekrát v jednom tiku; však modul časování konsoliduje události, tak, aby <xref:System.Windows.Media.Animation.Clock.CurrentStateInvalidated> událost může být vyvolána maximálně jednou za značku. To platí pro všechny události časování: maximálně jedna událost <xref:System.Windows.Media.Animation.Clock> každého typu je aktivována pro daný objekt.  
   
- Při <xref:System.Windows.Media.Animation.Clock> přepíná stavy a vrátí zpět do původního stavu mezi značkami (jako je například změna z <xref:System.Windows.Media.Animation.ClockState.Active> k <xref:System.Windows.Media.Animation.ClockState.Stopped> a zpět <xref:System.Windows.Media.Animation.ClockState.Active>), i přesto dochází ke související události.  
+ Když <xref:System.Windows.Media.Animation.Clock> přepne stavy a vrátí se zpět do <xref:System.Windows.Media.Animation.ClockState.Active> původního stavu mezi značkami (například přechod z <xref:System.Windows.Media.Animation.ClockState.Stopped> a zpět na <xref:System.Windows.Media.Animation.ClockState.Active>), stále dochází k přidružené události.  
   
- Další informace o události časování, najdete v článku [Přehled událostí časování](timing-events-overview.md).  
+ Další informace o událostech časování naleznete v tématu [Přehled událostí časování](timing-events-overview.md).  
   
-<a name="currentvaluesbasevaluesofproperties"></a>   
+<a name="currentvaluesbasevaluesofproperties"></a>
 ## <a name="current-values-and-base-values-of-properties"></a>Aktuální hodnoty a základní hodnoty vlastností  
- Animovatelné vlastnosti může mít dvě hodnoty: základní hodnoty a aktuální hodnotu. Při nastavení vlastnosti pomocí její přistupující objekt CLR nebo <xref:System.Windows.DependencyObject.SetValue%2A> metody, nastavte jeho základní hodnoty. Pokud není vlastnost animovat, jsou základní a aktuální hodnoty stejné.  
+ Animovatelná vlastnost může mít dvě hodnoty: základní hodnotu a aktuální hodnotu. Když nastavíte vlastnost pomocí jeho <xref:System.Windows.DependencyObject.SetValue%2A> přístupového objektu CLR nebo metody, nastavíte její základní hodnotu. Pokud vlastnost není animována, její základní a aktuální hodnoty jsou stejné.  
   
- Při animovat vlastnost, <xref:System.Windows.Media.Animation.AnimationClock> nastaví vlastnosti *aktuální* hodnotu. Načítání hodnoty vlastnosti prostřednictvím její přistupující objekt CLR nebo <xref:System.Windows.DependencyObject.GetValue%2A> metoda vrátí výstup <xref:System.Windows.Media.Animation.AnimationClock> při <xref:System.Windows.Media.Animation.AnimationClock> je <xref:System.Windows.Media.Animation.ClockState.Active> nebo <xref:System.Windows.Media.Animation.ClockState.Filling>. Základní hodnota vlastnosti můžete načíst pomocí <xref:System.Windows.Media.Animation.IAnimatable.GetAnimationBaseValue%2A> metody.  
+ Když animujete vlastnost, nastaví <xref:System.Windows.Media.Animation.AnimationClock> *aktuální* hodnotu vlastnosti. Načítání hodnoty vlastnosti prostřednictvím jeho přístupový <xref:System.Windows.DependencyObject.GetValue%2A> objekt CLR nebo <xref:System.Windows.Media.Animation.AnimationClock> metoda <xref:System.Windows.Media.Animation.AnimationClock> <xref:System.Windows.Media.Animation.ClockState.Active> vrátí <xref:System.Windows.Media.Animation.ClockState.Filling>výstup when is nebo . Základní hodnotu vlastnosti můžete načíst <xref:System.Windows.Media.Animation.IAnimatable.GetAnimationBaseValue%2A> pomocí metody.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Přehled animace](animation-overview.md)
 - [Přehled událostí časování](timing-events-overview.md)

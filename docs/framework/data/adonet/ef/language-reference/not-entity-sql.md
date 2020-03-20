@@ -1,16 +1,16 @@
 ---
-title: '! MĚNÍ (Entity SQL)'
+title: '! (NE) (Entita SQL)'
 ms.date: 03/30/2017
 ms.assetid: a1447a34-df06-4393-93c3-0612ebd41abc
-ms.openlocfilehash: 7755219c5238f78e59332c508643fe2ae1f5096f
-ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
+ms.openlocfilehash: 0b69d4cb64adc1f9232631d50ec42af0d1ba47e3
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72319522"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79150126"
 ---
-# <a name="-not-entity-sql"></a>! MĚNÍ (Entity SQL)
-Negace výrazu `Boolean`.  
+# <a name="-not-entity-sql"></a>! (NE) (Entita SQL)
+Neguje `Boolean` výraz.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -18,24 +18,24 @@ Negace výrazu `Boolean`.
 NOT boolean_expression  
 -- or  
 ! boolean_expression  
-``` 
+```
   
-## <a name="arguments"></a>Arguments  
+## <a name="arguments"></a>Argumenty  
  `boolean_expression`  
  Libovolný platný výraz, který vrací logickou hodnotu.  
   
 ## <a name="remarks"></a>Poznámky  
- Vykřičník (!) má stejnou funkci jako operátor NOT.  
+ Vykřičník (!) má stejné funkce jako operátor NOT.  
   
 ## <a name="example"></a>Příklad  
- Následující Entity SQL dotaz používá operátor NOT pro negaci výrazu `Boolean`. Dotaz je založen na modelu prodeje společnosti AdventureWorks. Chcete-li zkompilovat a spustit tento dotaz, postupujte podle následujících kroků:  
+ Následující dotaz ENTITY SQL používá operátor NOT `Boolean` k negování výrazu. Dotaz je založen na adventureworks prodejní model. Chcete-li tento dotaz zkompilovat a spustit, postupujte takto:  
   
-1. Použijte postup v tématu [Postup: provedení dotazu, který vrátí výsledky StructuralType](../how-to-execute-a-query-that-returns-structuraltype-results.md).  
+1. Postupujte podle postupu v [části Postup: Spusťte dotaz, který vrací výsledky typu StructuralType](../how-to-execute-a-query-that-returns-structuraltype-results.md).  
   
-2. Předat následující dotaz jako argument metodě `ExecuteStructuralTypeQuery`:  
+2. Předat následující dotaz jako argument `ExecuteStructuralTypeQuery` metodě:  
   
  [!code-sql[DP EntityServices Concepts#NOT](~/samples/snippets/tsql/VS_Snippets_Data/dp entityservices concepts/tsql/entitysql.sql#not)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Reference k Entity SQL](entity-sql-reference.md)

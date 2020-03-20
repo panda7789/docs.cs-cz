@@ -9,15 +9,15 @@ helpviewer_keywords:
 - sockets, code examples
 - asynchronous server sockets
 ms.assetid: 13624cd3-f5c5-4950-8cda-31273b1fa6d1
-ms.openlocfilehash: 555b0661bf68a7461f87bf2895e47284a03c41a6
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: 8a9a3cb26968c548aa971bac548313a459c2fdf6
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71048960"
+ms.lasthandoff: 03/15/2020
+ms.locfileid: "79180901"
 ---
 # <a name="asynchronous-server-socket-example"></a>Příklad asynchronního serverového soketu
-Následující ukázkový program vytvoří server, který přijímá žádosti o připojení od klientů. Server je sestaven pomocí asynchronního soketu, takže spuštění serverové aplikace není pozastavené, když čeká na připojení z klienta. Aplikace přijme řetězec z klienta, zobrazí řetězec v konzole nástroje a potom vrátí řetězec zpátky klientovi. Řetězec z klienta musí obsahovat řetězec "\<EOF >" k signalizaci konce zprávy.  
+Následující ukázkový program vytvoří server, který přijímá požadavky na připojení od klientů. Server je sestaven s asynchronním soketem, takže spuštění serverové aplikace není pozastaveno, zatímco čeká na připojení z klienta. Aplikace obdrží řetězec od klienta, zobrazí řetězec na konzole a pak vrátí řetězec zpět klientovi. Řetězec od klienta musí obsahovat řetězec "EOF\<>" signalizovat konec zprávy.  
   
 ```vb  
 Imports System  
@@ -45,9 +45,9 @@ Public Class AsynchronousSocketListener
     Public Shared allDone As New ManualResetEvent(False)  
   
     ' This server waits for a connection and then uses  asychronous operations to  
-    ' accept the connection, get data from the connected client,   
+    ' accept the connection, get data from the connected client,
     ' echo that data back to the connected client.  
-    ' It then disconnects from the client and waits for another client.   
+    ' It then disconnects from the client and waits for another client.
     Public Shared Sub Main()  
         ' Establish the local endpoint for the socket.  
         Dim ipHostInfo As IPHostEntry = Dns.GetHostEntry(Dns.GetHostName())  
@@ -94,18 +94,18 @@ Public Class AsynchronousSocketListener
         Dim state As StateObject = CType(ar.AsyncState, StateObject)  
         Dim handler As Socket = state.workSocket  
   
-        ' Read data from the client socket.   
+        ' Read data from the client socket.
         Dim bytesRead As Integer = handler.EndReceive(ar)  
   
         If bytesRead > 0 Then  
             ' There  might be more data, so store the data received so far.  
             state.sb.Append(Encoding.ASCII.GetString(state.buffer, 0, bytesRead))  
   
-            ' Check for end-of-file tag. If it is not there, read   
+            ' Check for end-of-file tag. If it is not there, read
             ' more data.  
             content = state.sb.ToString()  
             If content.IndexOf("<EOF>") > -1 Then  
-                ' All the data has been read from the   
+                ' All the data has been read from the
                 ' client. Display it on the console.  
                 Console.WriteLine("Read {0} bytes from socket. " + vbLf + " Data : {1}", content.Length, content)  
                 ' Echo the data back to the client.  
@@ -157,7 +157,7 @@ public class StateObject {
     // Receive buffer.  
     public byte[] buffer = new byte[BufferSize];  
 // Received data string.  
-    public StringBuilder sb = new StringBuilder();    
+    public StringBuilder sb = new StringBuilder();
 }  
   
 public class AsynchronousSocketListener {  
@@ -190,7 +190,7 @@ public class AsynchronousSocketListener {
   
                 // Start an asynchronous socket to listen for connections.  
                 Console.WriteLine("Waiting for a connection...");  
-                listener.BeginAccept(   
+                listener.BeginAccept(
                     new AsyncCallback(AcceptCallback),  
                     listener );  
   
@@ -230,7 +230,7 @@ public class AsynchronousSocketListener {
         StateObject state = (StateObject) ar.AsyncState;  
         Socket handler = state.workSocket;  
   
-        // Read data from the client socket.   
+        // Read data from the client socket.
         int bytesRead = handler.EndReceive(ar);  
   
         if (bytesRead > 0) {  
@@ -238,11 +238,11 @@ public class AsynchronousSocketListener {
             state.sb.Append(Encoding.ASCII.GetString(  
                 state.buffer, 0, bytesRead));  
   
-            // Check for end-of-file tag. If it is not there, read   
+            // Check for end-of-file tag. If it is not there, read
             // more data.  
             content = state.sb.ToString();  
             if (content.IndexOf("<EOF>") > -1) {  
-                // All the data has been read from the   
+                // All the data has been read from the
                 // client. Display it on the console.  
                 Console.WriteLine("Read {0} bytes from socket. \n Data : {1}",  
                     content.Length, content );  
@@ -289,7 +289,7 @@ public class AsynchronousSocketListener {
 }  
 ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Příklad asynchronního klientského soketu](asynchronous-client-socket-example.md)
 - [Použití asynchronního serverového soketu](using-an-asynchronous-server-socket.md)

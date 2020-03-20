@@ -9,61 +9,61 @@ helpviewer_keywords:
 - documents [WPF], annotations
 - sticky notes [WPF]
 ms.assetid: 716bf474-29bd-4c74-84a4-8e0744bdad62
-ms.openlocfilehash: b82c7e7300ebc295ca06d565c2fb5f6f2b28e92c
-ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
+ms.openlocfilehash: 433fee08d44720640d3f9d1bf2511a6a267eb58e
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75636507"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79145459"
 ---
 # <a name="annotations-overview"></a>Přehled poznámek
-Zápis poznámek nebo komentářů k dokumentům je taková maloobchodech aktivita, kterou pro udělení máme skoro. Tyto poznámky nebo komentáře jsou "poznámky", které přidáváme do dokumentu k označení informací, nebo k zdůraznění položek, které vás zajímají za účelem pozdějšího odkazu. I když píšete poznámky k tištěným dokumentům snadno a maloobchodech, možnost přidávat osobní komentáře k elektronickým dokumentům je obvykle velmi omezená, pokud je k dispozici vůbec.  
+Psaní poznámek nebo komentářů na papírových dokumentech je tak běžná činnost, že ji téměř považujeme za samozřejmou. Tyto poznámky nebo komentáře jsou "poznámky", které přidáme do dokumentu, abychom označili informace nebo zvýraznili položky, které by je zajímaly, pro pozdější použití. Ačkoli psaní poznámek o tištěných dokumentech je snadné a běžné, schopnost přidávat osobní komentáře k elektronickým dokumentům je obvykle velmi omezená, pokud je vůbec k dispozici.  
   
- Toto téma posuzuje několik běžných typů poznámek, konkrétně rychlé poznámky a světla, a ukazuje, jak rozhraní Microsoft anotace usnadňuje tyto typy poznámek v aplikacích prostřednictvím Windows Presentation Foundation (WPF ) ovládací prvky zobrazení dokumentu.  Ovládací prvky pro zobrazení dokumentu WPF, které podporují poznámky, zahrnují <xref:System.Windows.Controls.FlowDocumentReader> a <xref:System.Windows.Controls.FlowDocumentScrollViewer>a také ovládací prvky odvozené od <xref:System.Windows.Controls.Primitives.DocumentViewerBase>, jako jsou <xref:System.Windows.Controls.DocumentViewer> a <xref:System.Windows.Controls.FlowDocumentPageViewer>.  
+ Toto téma popisuje několik běžných typů poznámek, konkrétně rychlé poznámky a zvýraznění, a ilustruje, jak rozhraní Microsoft Anotations Framework usnadňuje tyto typy poznámek v aplikacích prostřednictvím nadace Windows Presentation Foundation (WPF ) ovládací prvky pro zobrazení dokumentu.  WPF ovládací prvky zobrazení dokumentu, <xref:System.Windows.Controls.FlowDocumentReader> <xref:System.Windows.Controls.FlowDocumentScrollViewer>které podporují poznámky patří <xref:System.Windows.Controls.Primitives.DocumentViewerBase> a <xref:System.Windows.Controls.DocumentViewer> <xref:System.Windows.Controls.FlowDocumentPageViewer>, stejně jako ovládací prvky odvozené z například a .  
 
-<a name="caf1_type_stickynotes"></a>   
+<a name="caf1_type_stickynotes"></a>
 ## <a name="sticky-notes"></a>Rychlé poznámky  
- Typická rychlá Poznámka obsahuje informace napsané na malém barevném papíru, který je pak zablokovaný do dokumentu. Digitální rychlé poznámky poskytují podobné funkce pro elektronické dokumenty, ale díky flexibilní flexibilitě můžete zahrnout mnoho dalších typů obsahu, jako je například zadaný text, rukopisné poznámky (například tahy perem tabletu) nebo webové odkazy.  
+ Typická poznámka obsahuje informace napsané na malém kousku barevného papíru, který je pak "přilepená" na dokument. Digitální rychlé poznámky poskytují podobné funkce pro elektronické dokumenty, ale s větší flexibilitou zahrnout mnoho dalších typů obsahu, jako je například zadaný text, ručně psané poznámky (například tablet PC "inkoust" tahy) nebo webové odkazy.  
   
- Následující ilustrace znázorňuje některé příklady zvýraznění, text v rychlé poznámce a rukopisné poznámky k rychlé poznámce.  
+ Následující obrázek znázorňuje některé příklady poznámek poznámky zvýraznění, textové rychlé poznámky a poznámky rychlé poznámky.  
   
- ![Zvýrazňovat, text a rukopisné poznámky k rychlé poznámce.](./media/caf-stickynote.jpg "CAF_StickyNote")  
+ ![Zvýrazňte poznámky s lepkavou poznámkou pro text a inkoust.](./media/caf-stickynote.jpg "CAF_StickyNote")  
   
- Následující příklad ukazuje metodu, kterou můžete použít k povolení podpory poznámek ve vaší aplikaci.  
+ Následující příklad ukazuje metodu, kterou můžete použít k povolení podpory poznámky ve vaší aplikaci.  
   
  [!code-csharp[DocViewerAnnotationsXml#DocViewXmlStartAnnotations](~/samples/snippets/csharp/VS_Snippets_Wpf/DocViewerAnnotationsXml/CSharp/Window1.xaml.cs#docviewxmlstartannotations)]
  [!code-vb[DocViewerAnnotationsXml#DocViewXmlStartAnnotations](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DocViewerAnnotationsXml/visualbasic/window1.xaml.vb#docviewxmlstartannotations)]  
   
-<a name="caf1_type_callouts"></a>   
-## <a name="highlights"></a>Hlavní body  
- Lidé používají kreativní metody k upoutání pozornosti na zajímavé položky, když označí dokument papíru, jako je například podtržení, zvýraznění, směřující slova ve větě nebo kreslení značek nebo zápisů na okraji.  Zvýrazněné poznámky v rozhraní Microsoft anotace poskytují podobnou funkci pro označení informací zobrazených v ovládacích prvcích zobrazení dokumentů WPF.  
+<a name="caf1_type_callouts"></a>
+## <a name="highlights"></a>Nejzajímavější body  
+ Lidé používají kreativní metody, aby upozornili na zajímavé položky, když označí papírový dokument, jako je podtržení, zvýraznění, kroužení slov ve větě nebo kreslení značek nebo zápisů na okraji.  Zvýraznění poznámek v rozhraní Microsoft Anotations Framework poskytuje podobnou funkci pro označování informací zobrazených v ovládacích prvcích zobrazení dokumentů WPF.  
   
- Následující ilustrace znázorňuje příklad poznámky zvýraznění.  
+ Následující obrázek znázorňuje příklad zvýraznění poznámky.  
   
- ![Zvýraznit poznámku](./media/caf-callouts.png "CAF_Callouts")  
+ ![Zvýraznění poznámky](./media/caf-callouts.png "CAF_Callouts")  
   
- Uživatelé obvykle vytvářejí poznámky tak, že nejprve vyberou nějaký text nebo položku zájmu a potom kliknutím pravým tlačítkem zobrazí <xref:System.Windows.Controls.ContextMenu> možností poznámek.  Následující příklad ukazuje [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] můžete použít k deklaraci <xref:System.Windows.Controls.ContextMenu> s směrovanými příkazy, ke kterým mají uživatelé přístup, aby mohli vytvářet a spravovat poznámky.  
+ Uživatelé obvykle vytvářejí poznámky tak, že nejprve vybere nějaký text nebo položku, která je předmětem zájmu, a potom klepnutím pravým tlačítkem myši zobrazíte možnosti <xref:System.Windows.Controls.ContextMenu> poznámky.  Následující příklad [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] ukazuje, jak můžete <xref:System.Windows.Controls.ContextMenu> deklarovat příkazy s směrovcí, ke kterým mají uživatelé přístup k vytváření a správě anotací.  
   
  [!code-xaml[DocViewerAnnotationsXps#CreateDeleteAnnotations](~/samples/snippets/csharp/VS_Snippets_Wpf/DocViewerAnnotationsXps/CSharp/Window1.xaml#createdeleteannotations)]  
   
-<a name="caf1_framework_data_anchoring"></a>   
-## <a name="data-anchoring"></a>Ukotvení dat  
- Rozhraní anotace váže poznámky k datům, která uživatel vybere, nikoli pouze k pozici v zobrazení zobrazení. Proto pokud se dokument zobrazí změny, například když uživatel posune nebo změní velikost okna zobrazení, Poznámka zůstane s výběrem dat, ke kterému je vázáno. Například následující obrázek znázorňuje poznámku, kterou uživatel vytvořil na výběr textu. Při změně zobrazení dokumentu (posouvání, změna velikosti, škálování nebo jiné přesunutí) se zvýrazněná Poznámka přesune s výběrem původní data.  
+<a name="caf1_framework_data_anchoring"></a>
+## <a name="data-anchoring"></a>Kotvení dat  
+ Architektura anotací váže poznámky k datům, která uživatel vybere, nikoli pouze na pozici v zobrazení zobrazení. Proto pokud se změní zobrazení dokumentu, například když uživatel posouvá nebo mění velikost okna zobrazení, poznámky zůstane s výběrem dat, ke kterému je vázán. Například následující obrázek znázorňuje poznámku, kterou uživatel vytvořil při výběru textu. Když se zobrazení dokumentu změní (posune, změní velikost, změní velikost, změní velikost nebo se jinak přesune), zvýraznění se přesune s původním výběrem dat.  
   
- ![Ukotvení dat poznámek](./media/caf-dataanchoring.png "CAF_DataAnchoring")  
+ ![Ukotvení dat poznámky](./media/caf-dataanchoring.png "CAF_DataAnchoring")  
   
-<a name="matching_annotations_with_annotated_objects"></a>   
-## <a name="matching-annotations-with-annotated-objects"></a>Porovnávací poznámky s poznámkami objektů  
- Poznámky můžete porovnávat s odpovídajícími objekty s poznámkami. Zvažte například jednoduchou aplikaci pro čtení dokumentů, která obsahuje podokno komentáře. Podokno komentáře může být seznam, ve kterém se zobrazí text ze seznamu poznámek, které jsou ukotveny k dokumentu. Pokud uživatel vybere položku v seznamu, aplikace se zobrazí v dokumentu, na který je ukotven odpovídající objekt poznámky.  
+<a name="matching_annotations_with_annotated_objects"></a>
+## <a name="matching-annotations-with-annotated-objects"></a>Porovnávání poznámk s objekty s poznámkami  
+ Poznámky můžete porovnat s odpovídajícími objekty s anotací. Zvažte například jednoduchou aplikaci pro čtení dokumentů, která má podokno poznámek. Podokno poznámek může být seznam, který zobrazuje text ze seznamu poznámek ukotvených v dokumentu. Pokud uživatel vybere položku v seznamu, aplikace se zobrazí do zobrazení odstavce v dokumentu, ke kterému je odpovídající objekt poznámky ukotven.  
   
- Následující příklad ukazuje, jak implementovat obslužnou rutinu události takového seznamu, který slouží jako podokno komentáře.  
+ Následující příklad ukazuje, jak implementovat obslužnou rutinu události takového seznamu, který slouží jako podokno poznámek.  
   
  [!code-csharp[FlowDocumentAnnotatedViewer#Handler](~/samples/snippets/csharp/VS_Snippets_Wpf/FlowDocumentAnnotatedViewer/CSharp/Window1.xaml.cs#handler)]
  [!code-vb[FlowDocumentAnnotatedViewer#Handler](~/samples/snippets/visualbasic/VS_Snippets_Wpf/FlowDocumentAnnotatedViewer/visualbasic/window1.xaml.vb#handler)]  
   
- Další ukázkový scénář zahrnuje aplikace, které umožňují výměnu poznámek a rychlých poznámek mezi čtečkami dokumentů prostřednictvím e-mailu. Tato funkce umožňuje těmto aplikacím procházet čtečku na stránku, která obsahuje poznámku, která se právě vyměňují.  
+ Další příklad scénáře zahrnuje aplikace, které umožňují výměnu poznámek a rychlé poznámky mezi čtečkami dokumentů prostřednictvím e-mailu. Tato funkce umožňuje těmto aplikacím přejít čtenáře na stránku, která obsahuje poznámku, která je právě vyměňována.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Controls.Primitives.DocumentViewerBase>
 - <xref:System.Windows.Controls.DocumentViewer>
@@ -75,4 +75,4 @@ Zápis poznámek nebo komentářů k dokumentům je taková maloobchodech aktivi
 - [ContextMenu – přehled](../controls/contextmenu-overview.md)
 - [Přehled příkazů](commanding-overview.md)
 - [Přehled toku dokumentů](flow-document-overview.md)
-- [Postupy: Přidání příkazu do nabídky MenuItem](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms741839(v=vs.90))
+- [Postup: Přidání příkazu do položky MenuItem](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms741839(v=vs.90))

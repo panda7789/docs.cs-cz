@@ -3,24 +3,24 @@ title: <customTrackingQueries>
 ms.date: 03/30/2017
 ms.topic: reference
 ms.assetid: 4e9e732d-911d-45a3-a569-4b5e9cd1ffbe
-ms.openlocfilehash: 398b018ce407aee0687c95037753f3affa07aa9b
-ms.sourcegitcommit: 093571de904fc7979e85ef3c048547d0accb1d8a
+ms.openlocfilehash: 6901244009956a499458858bf73f8fd83ec52e13
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70398783"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79152258"
 ---
 # <a name="customtrackingqueries"></a>\<customTrackingQueries>
 Představuje kolekci dotazů, které se používají ke sledování událostí, které definujete své kód aktivity. Dotaz, je nezbytné pro sledování účastníka přihlásit k odběru vlastní sledování záznamů.  
   
- Další informace o sledování dotazů profilů najdete v tématu [sledování profilů](../../../windows-workflow-foundation/tracking-profiles.md) .  
+ Další informace o sledování profilových dotazů naleznete v [tématu Sledování profilů](../../../windows-workflow-foundation/tracking-profiles.md)  
   
-[ **\<> Konfigurace**](../configuration-element.md)\
-&nbsp;&nbsp;[ **\<souborů. > ServiceModel**](system-servicemodel-of-workflow.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;[ **\<sledování >** ](tracking.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<Profil TrackingProfile >** ](trackingprofile.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<> pracovního postupu**](workflow.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<customTrackingQueries >**  
+[**\<>konfigurace**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<Systému.>ServiceModel**](system-servicemodel-of-workflow.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[**\<sledování>**](tracking.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<trackingProfil>**](trackingprofile.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<>pracovního postupu**](workflow.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<customTrackingQueries>**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -29,7 +29,7 @@ Představuje kolekci dotazů, které se používají ke sledování událostí, 
   <trackingProfile name="Name">
     <workflow>
       <customTrackingQueries>
-        <customTrackingQuery activityName="String" 
+        <customTrackingQuery activityName="String"
                              name="String" />
       </customTrackingQueries>
     </workflow>
@@ -41,21 +41,21 @@ Představuje kolekci dotazů, které se používají ke sledování událostí, 
  Následující části popisují atributy, podřízené prvky a nadřazené prvky.  
   
 ### <a name="attributes"></a>Atributy  
- Žádné  
+ Žádné.  
   
 ### <a name="child-elements"></a>Podřízené elementy  
   
-|Prvek|Popis|  
+|Element|Popis|  
 |-------------|-----------------|  
-|[\<customTrackingQuery>](customtrackingquery.md)|Dotaz, který se používá ke sledování událostí, které definujete své kód aktivity.|  
+|[\<vlastní>trackingquery](customtrackingquery.md)|Dotaz, který se používá ke sledování událostí, které definujete své kód aktivity.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
-|Prvek|Popis|  
+|Element|Popis|  
 |-------------|-----------------|  
-|[\<workflow>](workflow.md)|Prvek konfigurace, který obsahuje všechny dotazy pro konkrétní pracovní postup identifikovaný vlastností **ID definice aktivity**|  
+|[\<>pracovního postupu](workflow.md)|Konfigurační prvek, který obsahuje všechny dotazy pro konkrétní pracovní postup identifikovaný vlastností **activityDefinitionId.**|  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.ServiceModel.Activities.Tracking.Configuration.CustomTrackingQueryElementCollection?displayProperty=nameWithType>
 - <xref:System.Activities.Tracking.CustomTrackingQuery?displayProperty=nameWithType>

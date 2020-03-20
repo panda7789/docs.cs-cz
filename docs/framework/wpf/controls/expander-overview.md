@@ -8,57 +8,57 @@ helpviewer_keywords:
 - controls [WPF], Expander
 - Expander control [WPF], about Expander control
 ms.assetid: 877bf425-0e54-49ec-8fd2-13a211377abb
-ms.openlocfilehash: ddf6ee550e0eb6af5af44d032e85ecd5b735b951
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 892d972a5704d50e91d04e05d6fdea7180a3155d
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62054923"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79187115"
 ---
 # <a name="expander-overview"></a>Přehled rozšíření
-<xref:System.Windows.Controls.Expander> Ovládacího prvku poskytuje způsob, jak zadat obsah v rozšiřitelné oblasti, která se podobá okno a obsahuje hlavičku.  
+Ovládací <xref:System.Windows.Controls.Expander> prvek poskytuje způsob, jak poskytnout obsah v rozbalitelné oblasti, která se podobá okno a obsahuje záhlaví.  
 
-<a name="CreatinganExpanderinXAML"></a>   
-## <a name="creating-a-simple-expander"></a>Vytvoření jednoduché rozšíření  
- Následující příklad ukazuje, jak vytvořit jednoduchou <xref:System.Windows.Controls.Expander> ovládacího prvku. Tento příklad vytvoří <xref:System.Windows.Controls.Expander> vypadá podobně jako na předchozím obrázku.  
+<a name="CreatinganExpanderinXAML"></a>
+## <a name="creating-a-simple-expander"></a>Vytvoření jednoduchého expandéru  
+ Následující příklad ukazuje, jak <xref:System.Windows.Controls.Expander> vytvořit jednoduchý ovládací prvek. Tento příklad <xref:System.Windows.Controls.Expander> vytvoří, který vypadá jako předchozí ilustrace.  
   
  [!code-xaml[ExpanderExample#2](~/samples/snippets/csharp/VS_Snippets_Wpf/ExpanderExample/CSharp/Page1.xaml#2)]  
   
- <xref:System.Windows.Controls.ContentControl.Content%2A> a <xref:System.Windows.Controls.HeaderedContentControl.Header%2A> ze <xref:System.Windows.Controls.Expander> může také obsahovat například složitým obsahem <xref:System.Windows.Controls.RadioButton> a <xref:System.Windows.Controls.Image> objekty.  
+ A <xref:System.Windows.Controls.ContentControl.Content%2A> <xref:System.Windows.Controls.HeaderedContentControl.Header%2A> a <xref:System.Windows.Controls.Expander> může také obsahovat komplexní <xref:System.Windows.Controls.RadioButton> <xref:System.Windows.Controls.Image> obsah, jako jsou a objekty.  
   
-<a name="SettingtheDirectionoftheExpandingWindow"></a>   
-## <a name="setting-the-direction-of-the-expanding-content-area"></a>Nastavení směr rozbalení oblast obsahu  
- Můžete nastavit oblast obsahu <xref:System.Windows.Controls.Expander> ovládacího prvku v jednom ze čtyř směrů (<xref:System.Windows.Controls.ExpandDirection.Down>, <xref:System.Windows.Controls.ExpandDirection.Up>, <xref:System.Windows.Controls.ExpandDirection.Left>, nebo <xref:System.Windows.Controls.ExpandDirection.Right>) s použitím <xref:System.Windows.Controls.ExpandDirection> vlastnost. Když oblasti obsahu je sbalena, pouze <xref:System.Windows.Controls.Expander> <xref:System.Windows.Controls.HeaderedContentControl.Header%2A> a zobrazí jeho přepínacího tlačítka. A <xref:System.Windows.Controls.Button> ovládací prvek, který zobrazí směrové šipky se používá jako přepínací tlačítko pro rozbalení a sbalení oblasti obsahu. Po rozbalení <xref:System.Windows.Controls.Expander> pokusí zobrazit veškerý jeho obsah v oblasti jako okna.  
+<a name="SettingtheDirectionoftheExpandingWindow"></a>
+## <a name="setting-the-direction-of-the-expanding-content-area"></a>Nastavení směru rozbalovací oblasti obsahu  
+ Pomocí <xref:System.Windows.Controls.ExpandDirection> vlastnosti můžete nastavit <xref:System.Windows.Controls.Expander> oblast obsahu ovládacího prvku<xref:System.Windows.Controls.ExpandDirection.Down>tak, <xref:System.Windows.Controls.ExpandDirection.Left>aby <xref:System.Windows.Controls.ExpandDirection.Right>se rozbalila v jednom ze čtyř směrů ( , <xref:System.Windows.Controls.ExpandDirection.Up>, , nebo ). Když je oblast obsahu sbalená, zobrazí se pouze <xref:System.Windows.Controls.Expander> <xref:System.Windows.Controls.HeaderedContentControl.Header%2A> přepínací tlačítko a a. Ovládací <xref:System.Windows.Controls.Button> prvek, který zobrazuje směrovou šipku, se používá jako přepínací tlačítko pro rozbalení nebo sbalení oblasti obsahu. Po rozbalení <xref:System.Windows.Controls.Expander> se pokusí zobrazit veškerý obsah v oblasti podobné oknu.  
   
-<a name="SettingSizeDimensionsonanExpanderinaPanel"></a>   
-## <a name="controlling-the-size-of-an-expander-in-a-panel"></a>Řízení velikosti rozšíření v panelu  
- Pokud <xref:System.Windows.Controls.Expander> je ovládací prvek uvnitř rozložení ovládacího prvku, který dědí z <xref:System.Windows.Controls.Panel>, jako například <xref:System.Windows.Controls.StackPanel>, nezadávejte <xref:System.Windows.FrameworkElement.Height%2A> na <xref:System.Windows.Controls.Expander> při <xref:System.Windows.Controls.Expander.ExpandDirection%2A> je nastavena na <xref:System.Windows.Controls.ExpandDirection.Down> nebo <xref:System.Windows.Controls.ExpandDirection.Up>. Podobně, nezadávejte <xref:System.Windows.FrameworkElement.Width%2A> na <xref:System.Windows.Controls.Expander> při <xref:System.Windows.Controls.Expander.ExpandDirection%2A> je nastavena na <xref:System.Windows.Controls.ExpandDirection.Left> nebo <xref:System.Windows.Controls.ExpandDirection.Right>.  
+<a name="SettingSizeDimensionsonanExpanderinaPanel"></a>
+## <a name="controlling-the-size-of-an-expander-in-a-panel"></a>Ovládání velikosti expandéru v panelu  
+ Pokud <xref:System.Windows.Controls.Expander> je ovládací prvek uvnitř ovládacího <xref:System.Windows.Controls.Panel>prvku <xref:System.Windows.Controls.StackPanel>rozložení, který <xref:System.Windows.FrameworkElement.Height%2A> dědí <xref:System.Windows.Controls.Expander> z <xref:System.Windows.Controls.Expander.ExpandDirection%2A> , například , nezadávejte na při vlastnosti je nastavena <xref:System.Windows.Controls.ExpandDirection.Down> na nebo <xref:System.Windows.Controls.ExpandDirection.Up>. Podobně nezadávejte na <xref:System.Windows.FrameworkElement.Width%2A> <xref:System.Windows.Controls.Expander> když <xref:System.Windows.Controls.Expander.ExpandDirection%2A> je vlastnost nastavena na <xref:System.Windows.Controls.ExpandDirection.Left> nebo <xref:System.Windows.Controls.ExpandDirection.Right>.  
   
- Pokud nastavíte velikost dimenze na <xref:System.Windows.Controls.Expander> ovládacího prvku ve směru, rozšířené obsah se zobrazí, <xref:System.Windows.Controls.Expander> přebírá řízení oblasti, která používá obsah a zobrazí ohraničení kolem něj. I když je sbalený obsah zobrazí ohraničení. Chcete-li nastavit velikost rozšířené oblasti obsahu, nastavte rozměry na obsah <xref:System.Windows.Controls.Expander>, nebo pokud chcete, aby posouvání na funkce, které se <xref:System.Windows.Controls.ScrollViewer> , který obklopuje obsah.  
+ Pokud nastavíte rozměrovou <xref:System.Windows.Controls.Expander> dimenzi ovládacího prvku ve směru, <xref:System.Windows.Controls.Expander> ve které je zobrazen rozbalené holce, převezme kontrolu nad oblastí, která je obsahem používána, a zobrazí kolem něj ohraničení. Ohraničení se zobrazí i při sbalení obsahu. Chcete-li nastavit velikost rozšířené oblasti obsahu, nastavte rozměry <xref:System.Windows.Controls.Expander>velikosti na obsah , nebo <xref:System.Windows.Controls.ScrollViewer> pokud chcete možnost posouvání, na které obklopuje obsah.  
   
- Když <xref:System.Windows.Controls.Expander> ovládací prvek je po posledním prvku v <xref:System.Windows.Controls.DockPanel>, [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] automaticky nastaví <xref:System.Windows.Controls.Expander> dimenze na zbývající části <xref:System.Windows.Controls.DockPanel>. Chcete-li toto výchozí chování zakázat, nastavte <xref:System.Windows.Controls.DockPanel.LastChildFill%2A> vlastnost <xref:System.Windows.Controls.DockPanel> objektu `false`, nebo zajistěte, aby <xref:System.Windows.Controls.Expander> není po posledním prvku v <xref:System.Windows.Controls.DockPanel>.  
+ Pokud <xref:System.Windows.Controls.Expander> je ovládací prvek posledním <xref:System.Windows.Controls.DockPanel> [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] prvkem v <xref:System.Windows.Controls.Expander> aplikaci <xref:System.Windows.Controls.DockPanel>, automaticky nastaví kóty tak, aby se rovnaly zbývající ploše . Chcete-li <xref:System.Windows.Controls.DockPanel.LastChildFill%2A> tomuto výchozímu chování <xref:System.Windows.Controls.DockPanel> zabránit, nastavte vlastnost objektu na `false`položku <xref:System.Windows.Controls.Expander> nebo se ujistěte, že se nejedná o poslední prvek v . <xref:System.Windows.Controls.DockPanel>  
   
-<a name="CreatingScrollableContent"></a>   
-## <a name="creating-scrollable-content"></a>Vytváření Posouvatelným obsahem  
- Pokud obsah je příliš velký pro velikost oblasti obsahu, můžete zabalit obsah <xref:System.Windows.Controls.Expander> v <xref:System.Windows.Controls.ScrollViewer> negace posouvatelným obsahem. <xref:System.Windows.Controls.Expander> Ovládací prvek automaticky neposkytuje funkce umožňující posouvání. Následující ilustrace ukazuje <xref:System.Windows.Controls.Expander> ovládací prvek, který obsahuje <xref:System.Windows.Controls.ScrollViewer> ovládacího prvku.  
+<a name="CreatingScrollableContent"></a>
+## <a name="creating-scrollable-content"></a>Vytváření rolovacího obsahu  
+ Pokud je obsah příliš velký pro velikost oblasti obsahu, můžete <xref:System.Windows.Controls.Expander> zalomit obsah v za účelem <xref:System.Windows.Controls.ScrollViewer> poskytnutí rolovacího obsahu. Ovládací <xref:System.Windows.Controls.Expander> prvek neposkytuje automaticky možnost posouvání. Následující obrázek <xref:System.Windows.Controls.Expander> znázorňuje <xref:System.Windows.Controls.ScrollViewer> ovládací prvek, který obsahuje ovládací prvek.  
   
- **Rozšíření v prvku ScrollViewer**  
+ **Expander v ScrollViewer**  
   
- ![Snímek obrazovky zobrazující rozšíření s posuvník.](./media/expander-overview/expander-scrollbar-control.jpg)  
+ ![Snímek obrazovky, který zobrazuje rozbalovací panel s posuvníkem](./media/expander-overview/expander-scrollbar-control.jpg)  
   
- Když umístíte <xref:System.Windows.Controls.Expander> v ovládacím prvku <xref:System.Windows.Controls.ScrollViewer>, nastavte <xref:System.Windows.Controls.ScrollViewer> dimenze vlastnost, která odpovídá směr, ve kterém <xref:System.Windows.Controls.Expander> otevře obsah na velikost <xref:System.Windows.Controls.Expander> obsahu oblasti. Například, pokud jste nastavili <xref:System.Windows.Controls.Expander.ExpandDirection%2A> vlastnost <xref:System.Windows.Controls.Expander> k <xref:System.Windows.Controls.ExpandDirection.Down> (oblasti obsahu otevře dolů), nastavit <xref:System.Windows.FrameworkElement.Height%2A> vlastnost <xref:System.Windows.Controls.ScrollViewer> ovládacího prvku na požadované výšku oblasti obsahu. Pokud nastavíte dimenze výšce místo na samotný, obsah <xref:System.Windows.Controls.ScrollViewer> nerozpozná toto nastavení a proto neposkytuje posouvatelným obsahem.  
+ Když umístíte <xref:System.Windows.Controls.Expander> ovládací <xref:System.Windows.Controls.ScrollViewer>prvek do <xref:System.Windows.Controls.ScrollViewer> aplikace , nastavte vlastnost dimenze, <xref:System.Windows.Controls.Expander> která odpovídá směru, <xref:System.Windows.Controls.Expander> ve kterém se obsah otevírá velikosti oblasti obsahu. Pokud například nastavíte <xref:System.Windows.Controls.Expander.ExpandDirection%2A> vlastnost <xref:System.Windows.Controls.Expander> <xref:System.Windows.Controls.ExpandDirection.Down> na to (oblast obsahu <xref:System.Windows.FrameworkElement.Height%2A> se otevře <xref:System.Windows.Controls.ScrollViewer> dolů), nastavte vlastnost ovládacího prvku na požadovanou výšku pro oblast obsahu. Pokud místo toho nastavíte rozměr <xref:System.Windows.Controls.ScrollViewer> výšky na samotném obsahu, nerozpozná toto nastavení, a proto neposkytuje rolovací obsah.  
   
- Následující příklad ukazuje, jak vytvořit <xref:System.Windows.Controls.Expander> ovládací prvek, který se složitým obsahem, který obsahuje <xref:System.Windows.Controls.ScrollViewer> ovládacího prvku. Tento příklad vytvoří <xref:System.Windows.Controls.Expander> , který je jako na obrázku na začátku tohoto oddílu.  
+ Následující příklad ukazuje, jak <xref:System.Windows.Controls.Expander> vytvořit ovládací prvek, který <xref:System.Windows.Controls.ScrollViewer> má komplexní obsah a který obsahuje ovládací prvek. Tento příklad <xref:System.Windows.Controls.Expander> vytvoří, který je jako ilustrace na začátku tohoto oddílu.  
   
  [!code-csharp[ExpanderRichContent#1](~/samples/snippets/csharp/VS_Snippets_Wpf/ExpanderRichContent/CSharp/Window1.xaml.cs#1)]
  [!code-vb[ExpanderRichContent#1](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ExpanderRichContent/VisualBasic/Window1.xaml.vb#1)]
  [!code-xaml[ExpanderRichContent#1](~/samples/snippets/csharp/VS_Snippets_Wpf/ExpanderRichContent/CSharp/Window1.xaml#1)]  
   
-<a name="UsingtheAlignmentProperties"></a>   
-## <a name="using-the-alignment-properties"></a>Pomocí vlastností zarovnání  
- Je možné zarovnat obsah tak, že nastavíte <xref:System.Windows.Controls.Control.HorizontalContentAlignment%2A> a <xref:System.Windows.Controls.Control.VerticalContentAlignment%2A> vlastnosti <xref:System.Windows.Controls.Expander> ovládacího prvku. Při nastavování těchto vlastností zarovnání platí pro hlavičku a také rozšířené obsah.  
+<a name="UsingtheAlignmentProperties"></a>
+## <a name="using-the-alignment-properties"></a>Použití vlastností trasy  
+ Obsah můžete zarovnat <xref:System.Windows.Controls.Control.HorizontalContentAlignment%2A> nastavením <xref:System.Windows.Controls.Control.VerticalContentAlignment%2A> vlastností ovládacího <xref:System.Windows.Controls.Expander> prvku. Když nastavíte tyto vlastnosti, zarovnání se vztahuje na záhlaví a také na rozbalené ho.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Controls.Expander>
 - <xref:System.Windows.Controls.ExpandDirection>

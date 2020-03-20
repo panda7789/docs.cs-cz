@@ -5,37 +5,37 @@ helpviewer_keywords:
 - typography [WPF], animations
 - animation [WPF], text
 ms.assetid: eec3d26c-0a21-420f-8012-671621c47089
-ms.openlocfilehash: 38aa432fecc5b5e10d8eb90be9c1c596728ed613
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: ed2f3beb904f724ac93e2c4033aa6b2eb3fa1290
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61776885"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79174625"
 ---
 # <a name="how-to-apply-animations-to-text"></a>Postupy: Použití animací na text
-Animace lze změnit vzhled textu ve vaší aplikaci a zobrazení. Následující příklady používají různé typy animací ovlivnit zobrazení textu v <xref:System.Windows.Controls.TextBlock> ovládacího prvku.  
+Animace mohou změnit zobrazení a vzhled textu v aplikaci. Následující příklady používají různé typy animací ovlivnit zobrazení <xref:System.Windows.Controls.TextBlock> textu v ovládacím prvku.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad používá <xref:System.Windows.Media.Animation.DoubleAnimation> pro animaci šířka textový blok. Hodnotu šířky změní z šířka textový blok na 0 průběhu 10 sekund a pak vrátí šířku hodnoty a pokračuje. Tento typ animace vytvoří částicový efekt vymazání.  
+ Následující příklad používá <xref:System.Windows.Media.Animation.DoubleAnimation> k animaci šířky textového bloku. Hodnota šířky se změní z šířky textového bloku na 0 po dobu trvání 10 sekund a potom obrátí hodnoty šířky a pokračuje. Tento typ animace vytvoří efekt vymazání.  
   
  [!code-xaml[TextAnimationSample#TextAnimationSample1](~/samples/snippets/csharp/VS_Snippets_Wpf/TextAnimationSample/CS/Window1.xaml#textanimationsample1)]  
   
- Následující příklad používá <xref:System.Windows.Media.Animation.DoubleAnimation> do animace krytí textový blok. Hodnota neprůhlednosti změní z 1.0 na 0 průběhu 5 sekund a potom vrátí hodnoty neprůhlednosti a pokračuje.  
+ Následující příklad používá <xref:System.Windows.Media.Animation.DoubleAnimation> k animaci krytí textového bloku. Hodnota krytí se změní z 1,0 na 0 po dobu trvání 5 sekund a potom obrátí hodnoty krytí a pokračuje.  
   
  [!code-xaml[TextAnimationSample#TextAnimationSample2](~/samples/snippets/csharp/VS_Snippets_Wpf/TextAnimationSample/CS/Window1.xaml#textanimationsample2)]  
   
- Následující diagram znázorňuje vliv <xref:System.Windows.Controls.TextBlock> změna jeho neprůhlednost z ovládacího prvku `1.00` k `0.00` během 5 sekund intervalu definovaném <xref:System.Windows.Media.Animation.Timeline.Duration%2A>.  
+ Následující diagram znázorňuje <xref:System.Windows.Controls.TextBlock> vliv ovládacího prvku, `1.00` `0.00` který mění jeho krytí z <xref:System.Windows.Media.Animation.Timeline.Duration%2A>na během intervalu 5 sekund definovaného .  
   
- ![Změna průhlednosti z 1,00 0,00 text.](./media/how-to-apply-animations-to-text/faded-text-opacity-change.png)  
-   
- Následující příklad používá <xref:System.Windows.Media.Animation.ColorAnimation> pro animaci barvu popředí bloku textu. Hodnota barvy popředí změní z jednu barvu na barvu druhé průběhu 5 sekund a potom obrátí hodnot barev a bude pokračovat.  
+ ![Krytí změny textu z 1.00 na 0.00.](./media/how-to-apply-animations-to-text/faded-text-opacity-change.png)  
+
+ Následující příklad používá <xref:System.Windows.Media.Animation.ColorAnimation> k animaci barvy popředí textového bloku. Hodnota barvy popředí se změní z jedné barvy na druhou po dobu trvání 5 sekund a potom obrátí hodnoty barev a pokračuje.  
   
  [!code-xaml[TextAnimationSample#TextAnimationSample3](~/samples/snippets/csharp/VS_Snippets_Wpf/TextAnimationSample/CS/Window1.xaml#textanimationsample3)]  
   
- Následující příklad používá <xref:System.Windows.Media.Animation.DoubleAnimation> obměna textový blok. Textový blok provede úplné otočení průběhu 20 sekund a poté pokračuje opakovat otočení.  
+ Následující příklad používá <xref:System.Windows.Media.Animation.DoubleAnimation> k otočení textového bloku. Textový blok provádí úplné otočení po dobu 20 sekund a potom pokračuje v opakování otočení.  
   
  [!code-xaml[TextAnimationSample#TextAnimationSample4](~/samples/snippets/csharp/VS_Snippets_Wpf/TextAnimationSample/CS/Window1.xaml#textanimationsample4)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Přehled animace](../graphics-multimedia/animation-overview.md)

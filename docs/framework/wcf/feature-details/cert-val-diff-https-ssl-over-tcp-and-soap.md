@@ -7,47 +7,47 @@ dev_langs:
 helpviewer_keywords:
 - certificates [WCF], validation differences
 ms.assetid: 953a219f-4745-4019-9894-c70704f352e6
-ms.openlocfilehash: 0ab343da821e8994ac3a652bfc55db261d5e48f6
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 0e82d1898bec7cda474a5a92958b5af1b30c9de7
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61857646"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79185411"
 ---
 # <a name="certificate-validation-differences-between-https-ssl-over-tcp-and-soap-security"></a>Rozdíly v ověřování certifikátů mezi zabezpečeními HTTPS, SSL přes TCP a SOAP
-Můžete certifikátů ve Windows Communication Foundation (WCF) se zabezpečením vrstvy zpráv (protokolu SOAP) kromě zabezpečení přenosové vrstvy (TLS) přes HTTP (HTTPS) nebo TCP. Toto téma popisuje rozdíly v způsob, jakým tyto certifikáty se ověřují.  
+Certifikáty v systému Windows Communication Foundation (WCF) můžete používat se zabezpečením vrstvy zpráv (SOAP) kromě zabezpečení tls (transportní vrstvy) přes PROTOKOL HTTP (HTTPS) nebo TCP. Toto téma popisuje rozdíly ve způsobu ověřování těchto certifikátů.  
   
-## <a name="validation-of-https-client-certificates"></a>Ověřování klientských certifikátů protokolu HTTPS  
- Při použití protokolu HTTPS pro komunikaci mezi klientem a službou, certifikát, který klient používá k ověření ve službě musí podporovat řetězce důvěryhodnosti. To znamená ho musí být propojeny s důvěryhodné kořenové certifikační autority. Pokud ne, vyvolá vrstvy protokolu HTTP <xref:System.Net.WebException> se zprávou "vzdálený server vrátil chybu: (403) zakázán." Vyvolá tuto výjimku jako WCF <xref:System.ServiceModel.Security.MessageSecurityException>.  
+## <a name="validation-of-https-client-certificates"></a>Ověření klientských certifikátů HTTPS  
+ Při použití protokolu HTTPS ke komunikaci mezi klientem a službou musí certifikát, který klient používá k ověření služby, podporovat důvěryhodnost řetězce. To znamená, že musí zřetězit důvěryhodnou kořenovou certifikační autoritu. Pokud tomu tak není, <xref:System.Net.WebException> vrstva HTTP vyvolá se zprávou "Vzdálený server vrátil chybu: (403) Zakázáno." WCF zobrazí tuto <xref:System.ServiceModel.Security.MessageSecurityException>výjimku jako .  
   
-## <a name="validation-of-https-service-certificates"></a>Ověření certifikátů služby protokolu HTTPS  
- Při použití protokolu HTTPS pro komunikaci mezi klientem a službou, certifikát, který se ověřuje na serveru musí podporovat řetězce důvěryhodnosti ve výchozím nastavení. To znamená ho musí být propojeny s důvěryhodné kořenové certifikační autority. Pokud chcete zobrazit, jestli certifikát byl odvolán je provedena žádná kontrola online. Toto chování můžete přepsat tak, že zaregistrujete <xref:System.Net.Security.RemoteCertificateValidationCallback> zpětné volání, jak je znázorněno v následujícím kódu.  
+## <a name="validation-of-https-service-certificates"></a>Ověření certifikátů služby HTTPS  
+ Při použití protokolu HTTPS ke komunikaci mezi klientem a službou musí certifikát, který server ověřuje, ve výchozím nastavení podporovat důvěryhodnost řetězce. To znamená, že musí zřetězit důvěryhodnou kořenovou certifikační autoritu. Není provedena žádná online kontrola, která by zjistila, zda byl certifikát odvolán. Toto chování můžete přepsat registrací zpětného <xref:System.Net.Security.RemoteCertificateValidationCallback> volání, jak je znázorněno v následujícím kódu.  
   
- [!code-csharp[c_CertificateValidationDifferences#1](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_certificatevalidationdifferences/cs/source.cs#1)] 
+ [!code-csharp[c_CertificateValidationDifferences#1](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_certificatevalidationdifferences/cs/source.cs#1)]
  [!code-vb[c_CertificateValidationDifferences#1](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_certificatevalidationdifferences/vb/source.vb#1)]  
   
- kde podpis pro `ValidateServerCertificate` vypadá takto:  
+ pokud `ValidateServerCertificate` je podpis pro:  
   
  [!code-csharp[c_CertificateValidationDifferences#2](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_certificatevalidationdifferences/cs/source.cs#2)]
  [!code-vb[c_CertificateValidationDifferences#2](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_certificatevalidationdifferences/vb/source.vb#2)]  
   
- Implementace `ValidateServerCertificate` můžete provést žádné kontroly, které vývojář aplikace klienta považuje za nutné ověřit certifikát služby.  
+ Implementace `ValidateServerCertificate` může provádět všechny kontroly, které vývojář klientské aplikace považuje za nezbytné k ověření certifikátu služby.  
   
-## <a name="validation-of-client-certificates-in-ssl-over-tcp-or-soap-security"></a>Ověřování klientských certifikátů SSL přes TCP a SOAP zabezpečení  
- Při použití vrstvy SSL (Secure Sockets) přes protokol TCP nebo zabezpečení zpráv (protokolu SOAP), klientské certifikáty se ověřují podle <xref:System.ServiceModel.Security.X509ClientCertificateAuthentication.CertificateValidationMode%2A> hodnotu vlastnosti <xref:System.ServiceModel.Security.X509ClientCertificateAuthentication> třídy. Vlastnost je nastavena na jednu z <xref:System.ServiceModel.Security.X509CertificateValidationMode> hodnoty. Kontrola odvolání se provádí podle hodnoty <xref:System.ServiceModel.Security.X509ClientCertificateAuthentication.RevocationMode%2A> hodnotu vlastnosti <xref:System.ServiceModel.Security.X509ClientCertificateAuthentication> třídy. Vlastnost je nastavena na jednu z <xref:System.Security.Cryptography.X509Certificates.X509RevocationMode> hodnoty.  
+## <a name="validation-of-client-certificates-in-ssl-over-tcp-or-soap-security"></a>Ověření klientských certifikátů v protokolu SSL přes zabezpečení PROTOKOLU TCP nebo SOAP  
+ Při použití ssl (Secure Sockets Layer) přes TCP nebo zabezpečení zprávy (SOAP) jsou klientské certifikáty ověřeny podle hodnoty <xref:System.ServiceModel.Security.X509ClientCertificateAuthentication.CertificateValidationMode%2A> vlastnosti <xref:System.ServiceModel.Security.X509ClientCertificateAuthentication> třídy. Vlastnost je nastavena na <xref:System.ServiceModel.Security.X509CertificateValidationMode> jednu z hodnot. Kontrola odvolání se provádí podle hodnot <xref:System.ServiceModel.Security.X509ClientCertificateAuthentication.RevocationMode%2A> hodnoty hodnoty <xref:System.ServiceModel.Security.X509ClientCertificateAuthentication> vlastnosti třídy. Vlastnost je nastavena na <xref:System.Security.Cryptography.X509Certificates.X509RevocationMode> jednu z hodnot.  
   
  [!code-csharp[c_CertificateValidationDifferences#3](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_certificatevalidationdifferences/cs/source.cs#3)]
  [!code-vb[c_CertificateValidationDifferences#3](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_certificatevalidationdifferences/vb/source.vb#3)]  
   
-## <a name="validation-of-service-certificate-in-ssl-over-tcp-and-soap-security"></a>Ověřovací certifikát služby v SSL přes TCP a SOAP zabezpečení  
- Při použití protokolu SSL přes TCP a (SOAP) zabezpečení zpráv, služba certifikáty se ověřují podle <xref:System.ServiceModel.Security.X509ServiceCertificateAuthentication.CertificateValidationMode%2A> hodnotu vlastnosti <xref:System.ServiceModel.Security.X509ServiceCertificateAuthentication> třídy. Vlastnost je nastavena na jednu z <xref:System.ServiceModel.Security.X509CertificateValidationMode> hodnoty.  
+## <a name="validation-of-service-certificate-in-ssl-over-tcp-and-soap-security"></a>Ověření certifikátu služby v protokolu SSL přes zabezpečení PROTOKOLU TCP a SOAP  
+ Při použití protokolu SSL přes zabezpečení zpráv TCP nebo (SOAP) <xref:System.ServiceModel.Security.X509ServiceCertificateAuthentication.CertificateValidationMode%2A> jsou certifikáty služby ověřeny podle hodnoty vlastnosti <xref:System.ServiceModel.Security.X509ServiceCertificateAuthentication> třídy. Vlastnost je nastavena na <xref:System.ServiceModel.Security.X509CertificateValidationMode> jednu z hodnot.  
   
- Kontrola odvolání se provádí podle hodnoty <xref:System.ServiceModel.Security.X509ServiceCertificateAuthentication.RevocationMode%2A> hodnotu vlastnosti <xref:System.ServiceModel.Security.X509ServiceCertificateAuthentication> třídy. Vlastnost je nastavena na jednu z <xref:System.Security.Cryptography.X509Certificates.X509RevocationMode> hodnoty.  
+ Kontrola odvolání se provádí podle hodnot <xref:System.ServiceModel.Security.X509ServiceCertificateAuthentication.RevocationMode%2A> hodnoty hodnoty <xref:System.ServiceModel.Security.X509ServiceCertificateAuthentication> vlastnosti třídy. Vlastnost je nastavena na <xref:System.Security.Cryptography.X509Certificates.X509RevocationMode> jednu z hodnot.  
   
  [!code-csharp[c_CertificateValidationDifferences#4](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_certificatevalidationdifferences/cs/source.cs#4)]
  [!code-vb[c_CertificateValidationDifferences#4](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_certificatevalidationdifferences/vb/source.vb#4)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Net.Security.RemoteCertificateValidationCallback>
 - [Práce s certifikáty](../../../../docs/framework/wcf/feature-details/working-with-certificates.md)

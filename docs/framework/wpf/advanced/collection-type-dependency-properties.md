@@ -10,54 +10,54 @@ helpviewer_keywords:
 - dependency properties [WPF]
 - collection-type properties [WPF]
 ms.assetid: 99f96a42-3ab7-4f64-a16b-2e10d654e97c
-ms.openlocfilehash: 039ae0cb314eba2f1bb3e5b39f2127a5e694f334
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: e783ce4b95b52b86671181dfe4b316d4b91d8fc6
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73974160"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79141534"
 ---
 # <a name="collection-type-dependency-properties"></a>Vlastnosti závislostí typu kolekce
-Toto téma poskytuje pokyny a navrhované vzory pro implementaci vlastnosti závislosti, kde typ vlastnosti je typ kolekce.  
+Toto téma obsahuje pokyny a navrhované vzory pro implementaci vlastnosti závislosti, kde je typ vlastnosti typ kolekce.  
 
-<a name="implementing"></a>   
-## <a name="implementing-a-collection-type-dependency-property"></a>Implementace vlastnosti závislostí typu kolekce  
- Pro vlastnost závislosti obecně platí, že následující způsob implementace je definovat obálku vlastností CLR, kde je tato vlastnost zajištěna pomocí identifikátoru <xref:System.Windows.DependencyProperty>, nikoli pole nebo jiné konstrukce. Při implementaci vlastnosti typu kolekce budete postupovat podle stejného vzoru. Nicméně vlastnost typu kolekce zavádí složitou složitost na vzor vždy, když typ, který je obsažen v kolekci, je sám <xref:System.Windows.DependencyObject> nebo <xref:System.Windows.Freezable> odvozenou třídou.  
+<a name="implementing"></a>
+## <a name="implementing-a-collection-type-dependency-property"></a>Implementace vlastnosti závislosti typu kolekce  
+ Pro vlastnost závislosti obecně je vzor implementace, který budete postupovat, je, že definujete obálku <xref:System.Windows.DependencyProperty> vlastnosti CLR, kde je tato vlastnost zálohována identifikátorem spíše než polem nebo jinou konstrukcí. Postupujte podle stejného vzoru při implementaci vlastnosti typu kolekce. Vlastnost typu kolekce však zavádí některé složitosti vzoru vždy, když typ, který <xref:System.Windows.DependencyObject> je <xref:System.Windows.Freezable> obsažen v kolekci je sám nebo odvozené třídy.  
   
-<a name="initializing"></a>   
-## <a name="initializing-the-collection-beyond-the-default-value"></a>Inicializuje se kolekce nad rámec výchozí hodnoty.  
- Při vytváření vlastnosti závislosti neurčíte výchozí hodnotu vlastnosti jako počáteční hodnotu pole. Místo toho zadáte výchozí hodnotu prostřednictvím metadat vlastnosti závislostí. Pokud je vlastnost typem odkazu, výchozí hodnota zadaná v metadatech vlastnosti závislosti není výchozí hodnotou pro instanci. místo toho je výchozí hodnota, která se vztahuje na všechny instance daného typu. Proto musíte mít pozor, abyste nepoužívali statickou kolekci v jednotném definování metadat vlastnosti kolekce jako pracovní výchozí hodnotu pro nově vytvořené instance daného typu. Místo toho je nutné zajistit, aby byla hodnota kolekce záměrně nastavena na jedinečnou kolekci (instance) jako součást logiky konstruktoru třídy. V opačném případě budete mít vytvořenou neúmyslnou třídu singleton.  
+<a name="initializing"></a>
+## <a name="initializing-the-collection-beyond-the-default-value"></a>Inicializace kolekce nad rámec výchozí hodnoty  
+ Při vytváření vlastnosti závislosti nezadáte výchozí hodnotu vlastnosti jako počáteční hodnotu pole. Místo toho zadáte výchozí hodnotu prostřednictvím metadat vlastnosti závislosti. Pokud je vaše vlastnost typ odkazu, výchozí hodnota zadaná v metadatech vlastnosti závislostí není výchozí hodnotou pro instanci. místo toho se jedná o výchozí hodnotu, která se vztahuje na všechny instance typu. Proto musíte být opatrní, abyste nepoužívali jedinečnou statickou kolekci definovanou metadaty vlastností kolekce jako pracovní výchozí hodnotu pro nově vytvořené instance vašeho typu. Místo toho je nutné se ujistit, že záměrně nastavit hodnotu kolekce na jedinečnou kolekci (instance) jako součást logiky konstruktoru třídy. V opačném případě vytvoříte neúmyslnou třídu singleton.  
   
- Vezměte v úvahu následující příklad. Následující část příkladu ukazuje definici pro třídu `Aquarium`, která obsahuje chybu s výchozí hodnotou. Třída definuje vlastnost závislosti typu kolekce `AquariumObjects`, která používá obecný typ <xref:System.Collections.Generic.List%601> s omezením typu <xref:System.Windows.FrameworkElement>. V <xref:System.Windows.DependencyProperty.Register%28System.String%2CSystem.Type%2CSystem.Type%2CSystem.Windows.PropertyMetadata%29> volání vlastnosti závislosti vytvoří metadata výchozí hodnotu jako nový obecný <xref:System.Collections.Generic.List%601>.
+ Představte si následující příklad. Následující část příkladu ukazuje definici `Aquarium`třídy , která obsahuje chybu s výchozí hodnotou. Třída definuje vlastnost `AquariumObjects`závislosti typu kolekce , která <xref:System.Collections.Generic.List%601> používá <xref:System.Windows.FrameworkElement> obecný typ s omezením typu. Ve <xref:System.Windows.DependencyProperty.Register%28System.String%2CSystem.Type%2CSystem.Type%2CSystem.Windows.PropertyMetadata%29> volání vlastnosti závislost metadata vytvoří výchozí hodnotu jako nový <xref:System.Collections.Generic.List%601>obecný .
 
 > [!WARNING]
-> Následující kód se nesprávně chová.
+> Následující kód se nechová správně.
 
  [!code-csharp[PropertiesOvwSupport2#CollectionProblemDefinition](~/samples/snippets/csharp/VS_Snippets_Wpf/PropertiesOvwSupport2/CSharp/page.xaml.cs#collectionproblemdefinition)]
  [!code-vb[PropertiesOvwSupport2#CollectionProblemDefinition](~/samples/snippets/visualbasic/VS_Snippets_Wpf/PropertiesOvwSupport2/visualbasic/page.xaml.vb#collectionproblemdefinition)]  
   
- Nicméně, pokud jste kód právě opustili, jak je znázorněno, bude pro všechny instance `Aquarium`sdílena výchozí hodnota v jednom seznamu. Pokud jste spustili následující testovací kód, který je určen k zobrazení, jak byste vytvořili instanci dvou samostatných `Aquarium` instancí a přidáte do každého z nich jednu jinou `Fish`, zobrazí se výsledek překvapivé:  
+ Pokud jste však kód opustili, jak je znázorněno, je `Aquarium`tato výchozí hodnota jednoho seznamu sdílena pro všechny instance aplikace . Pokud jste spustili následující testovací kód, který má ukázat, jak `Aquarium` byste vytvořit konkretizovat dvě samostatné instance a přidat jeden jiný pro `Fish` každou z nich, uvidíte překvapivý výsledek:  
   
  [!code-csharp[PropertiesOvwSupport#CollectionProblemTestCode](~/samples/snippets/csharp/VS_Snippets_Wpf/PropertiesOvwSupport/CSharp/page4.xaml.cs#collectionproblemtestcode)]
  [!code-vb[PropertiesOvwSupport#CollectionProblemTestCode](~/samples/snippets/visualbasic/VS_Snippets_Wpf/PropertiesOvwSupport/visualbasic/page4.xaml.vb#collectionproblemtestcode)]  
   
- Místo každé kolekce s počtem jedna kolekce má počet dvou. Důvodem je, že každá `Aquarium` přidala svůj `Fish` do výchozí kolekce hodnot, která je výsledkem jednoho volání konstruktoru v metadatech a je proto sdílena mezi všemi instancemi. Tato situace je téměř nikdy nežádoucí.  
+ Namísto každé kolekce s počtem jednoho, každá kolekce má počet dvou! Důvodem je, že každý `Aquarium` přidal jeho `Fish` do výchozí kolekce hodnot, které vyplývá z jednoho konstruktoru volání v metadatech a je proto sdílena mezi všechny instance. Tato situace je téměř nikdy to, co chcete.  
   
- Chcete-li tento problém vyřešit, je nutné nastavit hodnotu vlastnosti závislosti kolekce na jedinečnou instanci jako součást volání konstruktoru třídy. Vzhledem k tomu, že vlastnost je vlastnost závislosti jen pro čtení, použijte metodu <xref:System.Windows.DependencyObject.SetValue%28System.Windows.DependencyPropertyKey%2CSystem.Object%29> k jejímu nastavení pomocí <xref:System.Windows.DependencyPropertyKey>, který je přístupný pouze v rámci třídy.  
+ Chcete-li tento problém vyřešit, je nutné obnovit hodnotu vlastnosti závislosti kolekce na jedinečnou instanci jako součást volání konstruktoru třídy. Vzhledem k tomu, <xref:System.Windows.DependencyObject.SetValue%28System.Windows.DependencyPropertyKey%2CSystem.Object%29> <xref:System.Windows.DependencyPropertyKey> že vlastnost je jen pro čtení vlastnost závislosti, použijte metodu k nastavení, pomocí který je přístupný pouze v rámci třídy.  
   
  [!code-csharp[PropertiesOvwSupport#CollectionProblemCtor](~/samples/snippets/csharp/VS_Snippets_Wpf/PropertiesOvwSupport/CSharp/page4.xaml.cs#collectionproblemctor)]
  [!code-vb[PropertiesOvwSupport#CollectionProblemCtor](~/samples/snippets/visualbasic/VS_Snippets_Wpf/PropertiesOvwSupport/visualbasic/page4.xaml.vb#collectionproblemctor)]  
   
- Pokud teď znovu spustíte stejný testovací kód, mohli byste zobrazit očekávané výsledky, kde každá `Aquarium` podporovala vlastní jedinečnou kolekci.  
+ Nyní, pokud jste spustili stejný testovací kód znovu, můžete `Aquarium` zobrazit další očekávané výsledky, kde každý podporoval svou vlastní jedinečnou kolekci.  
   
- Pokud se rozhodnete, že máte vlastnost kolekce pro čtení i zápis, měla by se v tomto vzoru mírně variace. V takovém případě můžete zavolat přístup k veřejné sadě z konstruktoru k provedení inicializace, což by stále volalo nonkey podpis <xref:System.Windows.DependencyObject.SetValue%28System.Windows.DependencyProperty%2CSystem.Object%29> v rámci nastavené obálky s použitím identifikátoru Public <xref:System.Windows.DependencyProperty>.  
+ Pokud jste zvolili, aby byla vlastnost kolekce pro čtení a zápis, došlo by k nepatrné změně v tomto vzoru. V takovém případě můžete volat přístupový odkaz veřejné sady z konstruktoru provést inicializaci, <xref:System.Windows.DependencyObject.SetValue%28System.Windows.DependencyProperty%2CSystem.Object%29> která by stále volání <xref:System.Windows.DependencyProperty> podpisu neklíč v rámci obálky sady, pomocí veřejného identifikátoru.  
   
-## <a name="reporting-binding-value-changes-from-collection-properties"></a>Vytváření sestav – změny hodnot vazeb z vlastností kolekce  
- Vlastnost kolekce, která je sám vlastností závislosti, neoznamuje automaticky změny jejích podvlastností. Pokud vytváříte vazby do kolekce, může to zabránit vazbě při vytváření sestav, čímž dojde k neověřování některých scénářů datové vazby. Nicméně pokud použijete typ kolekce <xref:System.Windows.FreezableCollection%601> jako typ kolekce, pak se změny podvlastností na obsažené prvky v kolekci správně nahlásí a vazba funguje podle očekávání.  
+## <a name="reporting-binding-value-changes-from-collection-properties"></a>Vykazování změn hodnoty vazby z vlastností kolekce  
+ Vlastnost kolekce, která je sama o sobě vlastnost závislostí není automaticky hlásit změny jeho podvlastnosti. Pokud vytváříte vazby do kolekce, to může zabránit vazby z vykazování změny, tedy zrušení některých scénářů datové vazby. Pokud však použijete <xref:System.Windows.FreezableCollection%601> typ kolekce jako typ kolekce, pak dílčí vlastnost změny obsažené prvky v kolekci jsou správně hlášeny a vazba funguje podle očekávání.  
   
- Chcete-li povolit vazbu podvlastností v kolekci objektů závislosti, vytvořte vlastnost Collection jako typ <xref:System.Windows.FreezableCollection%601>s omezením typu pro tuto kolekci na jakoukoli <xref:System.Windows.DependencyObject> odvozenou třídu.  
+ Chcete-li povolit vazbu podvlastnosti v kolekci <xref:System.Windows.FreezableCollection%601>objektů závislostí, vytvořte <xref:System.Windows.DependencyObject> vlastnost kolekce jako typ s omezením typu pro tuto kolekci pro libovolnou odvozenou třídu.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.FreezableCollection%601>
 - [XAML a vlastní třídy pro WPF](xaml-and-custom-classes-for-wpf.md)

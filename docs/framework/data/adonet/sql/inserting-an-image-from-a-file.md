@@ -5,20 +5,20 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 35900aa2-5615-4174-8212-ba184c6b82fb
-ms.openlocfilehash: d47f5b7eaf6b5f6a3174982e6b4cf43859c031a5
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 94ec554ca2dc5ed4eb6792b9b42ae6f1b856f51e
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70794147"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79148605"
 ---
 # <a name="inserting-an-image-from-a-file"></a>Vložení obrázku ze souboru
-Binární rozsáhlý objekt (BLOB) můžete zapsat do databáze jako binární nebo znaková data v závislosti na typu pole ve zdroji dat. Objekt BLOB je obecný termín, který odkazuje `text` `ntext`na typy dat, `image` a, které obvykle obsahují dokumenty a obrázky.  
+Binární velký objekt (BLOB) můžete zapsat do databáze jako binární nebo znaková data v závislosti na typu pole ve zdroji dat. OBJEKT BLOB je obecný `text`termín, `ntext`který `image` odkazuje na , a datové typy, které obvykle obsahují dokumenty a obrázky.  
   
- Chcete-li do databáze zapsat hodnotu objektu BLOB, vydejte příslušný příkaz INSERT nebo UPDATE a předejte hodnotu objektu BLOB jako vstupní parametr (viz téma [Konfigurace parametrů a datových typů parametrů](../configuring-parameters-and-parameter-data-types.md)). Pokud je objekt BLOB uložený jako text, například SQL Server `text` pole, můžete objekt BLOB předat jako parametr řetězce. Pokud je objekt BLOB uložen v binárním formátu, například SQL Server `image` pole, můžete předat pole typu `byte` jako binární parametr.  
+ Chcete-li do databáze zapsat hodnotu BLOB, vydejte příslušný příkaz INSERT nebo UPDATE a předejte hodnotu BLOB jako vstupní parametr (viz [Konfigurace parametrů a datových typů parametrů).](../configuring-parameters-and-parameter-data-types.md) Pokud je objekt BLOB uložen jako text, například pole serveru `text` SQL, můžete předat objekt BLOB jako parametr řetězce. Pokud je objekt BLOB uložen v binárním `image` formátu, například v `byte` poli serveru SQL Server, můžete předat pole typu jako binární parametr.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad kódu přidá informace o zaměstnancích zaměstnanců do tabulky Employees v databázi Northwind. Fotografie zaměstnance je čtena ze souboru a přidána do pole fotografie v tabulce, což je pole obrázku.  
+ Následující příklad kódu přidá informace o zaměstnancích do tabulky Zaměstnanci v databázi Northwind. Fotografie zaměstnance je přečtena ze souboru a přidána do pole Fotografie v tabulce, což je pole obrázku.  
   
 ```vb  
 Public Shared Sub AddEmployee( _  
@@ -39,7 +39,7 @@ Public Shared Sub AddEmployee( _
     "INSERT INTO Employees (LastName, FirstName, Title, " & _  
     "HireDate, ReportsTo, Photo) " & _  
     "Values(@LastName, @FirstName, @Title, " & _  
-    "@HireDate, @ReportsTo, @Photo)", connection)   
+    "@HireDate, @ReportsTo, @Photo)", connection)
   
   command.Parameters.Add("@LastName",  _  
     SqlDbType.NVarChar, 20).Value = lastName  
@@ -77,12 +77,12 @@ End Function
   
 ```csharp  
 public static void AddEmployee(  
-  string lastName,   
-  string firstName,   
-  string title,   
-  DateTime hireDate,   
-  int reportsTo,   
-  string photoFilePath,   
+  string lastName,
+  string firstName,
+  string title,
+  DateTime hireDate,
+  int reportsTo,
+  string photoFilePath,
   string connectionString)  
 {  
   byte[] photo = GetPhoto(photoFilePath);  
@@ -94,17 +94,17 @@ public static void AddEmployee(
     "INSERT INTO Employees (LastName, FirstName, " +  
     "Title, HireDate, ReportsTo, Photo) " +  
     "Values(@LastName, @FirstName, @Title, " +  
-    "@HireDate, @ReportsTo, @Photo)", connection);   
+    "@HireDate, @ReportsTo, @Photo)", connection);
   
-  command.Parameters.Add("@LastName",    
+  command.Parameters.Add("@LastName",
      SqlDbType.NVarChar, 20).Value = lastName;  
-  command.Parameters.Add("@FirstName",   
+  command.Parameters.Add("@FirstName",
       SqlDbType.NVarChar, 10).Value = firstName;  
-  command.Parameters.Add("@Title",       
+  command.Parameters.Add("@Title",
       SqlDbType.NVarChar, 30).Value = title;  
-  command.Parameters.Add("@HireDate",   
+  command.Parameters.Add("@HireDate",
        SqlDbType.DateTime).Value = hireDate;  
-  command.Parameters.Add("@ReportsTo",   
+  command.Parameters.Add("@ReportsTo",
       SqlDbType.Int).Value = reportsTo;  
   
   command.Parameters.Add("@Photo",  
@@ -130,7 +130,7 @@ public static byte[] GetPhoto(string filePath)
 }  
 ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Použití příkazů pro změny dat](../using-commands-to-modify-data.md)
 - [Načítání binárních dat](../retrieving-binary-data.md)

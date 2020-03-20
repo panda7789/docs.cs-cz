@@ -4,21 +4,21 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - Tracing and logging
 ms.assetid: a4f39bfc-3c5e-4d51-a312-71c5c3ce0afd
-ms.openlocfilehash: 448eef6ea147b725600b774026155acc1fca6d36
-ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
+ms.openlocfilehash: 9ffb7a99540b953fc93a22d2296caf86f294d25d
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/09/2020
-ms.locfileid: "77094862"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79143821"
 ---
 # <a name="tracing-and-message-logging"></a>Trasování a protokolování zpráv
-Tato ukázka demonstruje, jak povolit trasování a protokolování zpráv. Výsledné trasování a protokoly zpráv se zobrazují pomocí [nástroje Service Trace Viewer (SvcTraceViewer. exe)](../../../../docs/framework/wcf/service-trace-viewer-tool-svctraceviewer-exe.md). Tato ukázka je založena na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md).  
+Tato ukázka ukazuje, jak povolit trasování a protokolování zpráv. Výsledné trasování a protokoly zpráv jsou zobrazeny pomocí [nástroje Service Trace Viewer Tool (SvcTraceViewer.exe)](../../../../docs/framework/wcf/service-trace-viewer-tool-svctraceviewer-exe.md). Tato ukázka je založena na [začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md).  
   
 > [!NOTE]
-> Postup nastavení a pokyny pro sestavení pro tuto ukázku najdete na konci tohoto tématu.  
+> Postup instalace a pokyny k sestavení pro tuto ukázku jsou umístěny na konci tohoto tématu.  
   
 ## <a name="tracing"></a>Trasování  
- Windows Communication Foundation (WCF) používá mechanismus trasování definovaný v oboru názvů <xref:System.Diagnostics>. V tomto trasovacím modelu jsou data trasování vytvořena pomocí zdrojů trasování, které aplikace implementuje. Jednotlivé zdroje jsou označeny názvem. Trasovat příjemce: Vytvoření posluchačů trasování pro zdroje trasování, pro které chtějí získat informace. Chcete-li přijímat data trasování, je nutné vytvořit naslouchací proces pro zdroj trasování. V rámci služby WCF to můžete udělat přidáním následujícího kódu do konfiguračního souboru služby nebo klienta nastavením zdroje trasování Service Model `switchValue`:  
+ Windows Communication Foundation (WCF) používá mechanismus <xref:System.Diagnostics> trasování definované v oboru názvů. V tomto modelu trasování trasovací data je vytvářena zdroje trasování, které aplikace implementují. Každý zdroj je identifikován názvem. Trace spotřebitelé vytvořit naslouchací procesy trasování pro zdroje trasování, pro které chtějí načíst informace. Chcete-li přijímat data trasování, musíte vytvořit naslouchací proces pro zdroj trasování. V WCF to lze provést přidáním následujícího kódu do konfiguračního souboru služby `switchValue`nebo klienta nastavením zdroje trasování modelu služby :  
   
 ```xml  
 <system.diagnostics>  
@@ -43,25 +43,25 @@ Tato ukázka demonstruje, jak povolit trasování a protokolování zpráv. Výs
 </system.diagnostics>  
 ```  
   
- Další informace o zdrojích trasování naleznete v části zdroj trasování v tématu [Konfigurace trasování](../../../../docs/framework/wcf/diagnostics/tracing/configuring-tracing.md) .  
+ Další informace o zdrojích trasování naleznete v části Zdroj trasování v tématu [Konfigurace trasování.](../../../../docs/framework/wcf/diagnostics/tracing/configuring-tracing.md)  
   
-## <a name="activity-tracing-and-propagation"></a>Trasování aktivit a šíření  
- Nastavení `ActivityTracing` povoleno a `propagateActivity` nastaveno na `true` v `system.ServiceModel` zdrojích trasování pro klienta i službu poskytují korelaci trasování v rámci logických jednotek zpracování (aktivity), napříč aktivitami v rámci koncových bodů (prostřednictvím přenosů aktivit) a napříč aktivitami zahrnujícími více koncových bodů (prostřednictvím šíření ID aktivit).  
+## <a name="activity-tracing-and-propagation"></a>Sledování a šíření aktivit  
+ Povolení `ActivityTracing` a `propagateActivity` nastavení `true` ve `system.ServiceModel` zdrojích trasování pro klienta i službu poskytují korelaci trasování v rámci logických jednotek zpracování (aktivity), napříč aktivitami v rámci koncových bodů (prostřednictvím přenosů aktivit) a napříč aktivitami zahrnujícími více koncových bodů (prostřednictvím šíření ID aktivity).  
   
- Tyto tři mechanismy (aktivity, přenosy a šíření) vám mohou pomoci najít hlavní příčinu chyby rychleji pomocí nástroje Prohlížeč trasování služby. Další informace najdete v tématu [použití prohlížeče trasování služby pro zobrazení korelačních trasování a odstraňování potíží](../../../../docs/framework/wcf/diagnostics/tracing/using-service-trace-viewer-for-viewing-correlated-traces-and-troubleshooting.md).  
+ Tyto tři mechanismy (aktivity, přenosy a šíření) vám mohou pomoci rychleji vyhledat hlavní příčinu chyby pomocí nástroje Prohlížeč trasování služby. Další informace naleznete [v tématu Použití prohlížeče trasování služby pro zobrazení korelovaných trasování a řešení potíží](../../../../docs/framework/wcf/diagnostics/tracing/using-service-trace-viewer-for-viewing-correlated-traces-and-troubleshooting.md).  
   
- Je možné roztáhnout trasování, které poskytuje ServiceModel, vytvořením trasování aktivity definované uživatelem. Trasování uživatelsky definované aktivity umožňuje uživateli vytvářet aktivity trasování pro:  
+ Je možné rozšířit trasování, které je poskytováno ServiceModel vytvořením uživatelem definované trasování aktivity. Uživatelem definované trasování aktivit umožňuje uživateli vytvářet aktivity trasování do:  
   
-- Seskupí trasování do logických pracovních jednotek.  
+- Seskupit trasování do logických jednotek práce.  
   
-- Korelujte aktivity prostřednictvím přenosů a šíření.  
+- Korelovat aktivity prostřednictvím přenosů a šíření.  
   
-- Snížit náklady na výkon trasování WCF (například náklady na místo na disku souboru protokolu).  
+- Směřovat náklady na výkon trasování WCF (například náklady na místo na disku souboru protokolu).  
   
- Další informace o uživatelsky definovaném trasování aktivit najdete v ukázce [rozšíření trasování](../../../../docs/framework/wcf/samples/extending-tracing.md) .  
+ Další informace o trasování aktivity definované uživatelem naleznete v tématu [Rozšíření trasování](../../../../docs/framework/wcf/samples/extending-tracing.md) ukázka.  
   
 ## <a name="message-logging"></a>Protokolování zpráv  
- Protokolování zpráv lze povolit v klientech i službě jakékoli aplikace WCF. Chcete-li povolit protokolování zpráv, musíte do klienta nebo služby přidat následující kód:  
+ Protokolování zpráv lze povolit v klientovi i ve službě libovolné aplikace WCF. Chcete-li povolit protokolování zpráv, je nutné přidat do klienta nebo služby následující kód:  
   
 ```xml  
 <configuration>  
@@ -79,9 +79,9 @@ Tato ukázka demonstruje, jak povolit trasování a protokolování zpráv. Výs
 </configuration>  
 ```  
   
- Při záznamu zprávy je typ trasování závislý na tom, zda je sledován v klientovi nebo na serveru. Například zpráva "Přidat", která je odeslána klientovi, je sledována pod kategorií "TransportWrite" na klientovi, zatímco stejná zpráva je sledována pod kategorií "TransportRead" ve službě.  
+ Při zaznamenání zprávy, typ trasování závisí na tom, zda je trasována na straně klienta nebo serveru. Například zpráva "Přidat", která je odeslána klientovi je sledována v rámci kategorie "TransportWrite" na straně klienta, zatímco stejná zpráva je sledována v rámci kategorie "TransportRead" ve službě.  
   
- Nakonfigurujte naslouchací proces trasování tak, že do části <xref:System.Diagnostics> souboru App. config nebo souboru Web. config služby klienta přidáte následující kód:  
+ Nakonfigurujte naslouchací proces trasování přidáním následujícího kódu do <xref:System.Diagnostics> části souboru App.config klienta nebo souboru Web.config služby:  
   
 ```xml  
 <system.diagnostics>  
@@ -106,33 +106,33 @@ Tato ukázka demonstruje, jak povolit trasování a protokolování zpráv. Výs
   </system.diagnostics>  
 ```  
   
- Zprávy jsou protokolovány ve formátu XML v cílovém adresáři zadaném v konfiguračním souboru.  
+ Zprávy jsou protokolovány ve formátu XML v cílovém adresáři určeném v konfiguračním souboru.  
   
 > [!NOTE]
-> Trasovací soubory se nevytvoří bez prvotního vytvoření adresáře protokolu. Ujistěte se, že adresář C:\logs\ existuje, nebo zadejte alternativní adresář protokolování v konfiguraci naslouchacího procesu. Další informace najdete v úvodních pokynech k nastavení na konci tohoto dokumentu.  
+> Trasovací soubory nejsou vytvořeny bez počátečního vytvoření adresáře protokolu. Ujistěte se, že adresář C:\logs\ existuje, nebo zadejte alternativní adresář protokolování v konfiguraci naslouchacího procesu. Další informace naleznete v pokynech k počátečnímu nastavení na konci tohoto dokumentu.  
   
- Další informace o protokolování zpráv najdete v tématu [Konfigurace protokolování zpráv](../../../../docs/framework/wcf/diagnostics/configuring-message-logging.md) .  
+ Další informace o protokolování zpráv naleznete v tématu [Konfigurace protokolování zpráv.](../../../../docs/framework/wcf/diagnostics/configuring-message-logging.md)  
   
 #### <a name="to-set-up-build-and-run-the-sample"></a>Nastavení, sestavení a spuštění ukázky  
   
-1. Ujistěte se, že jste provedli [postup jednorázového nastavení pro Windows Communication Foundation ukázky](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
+1. Ujistěte se, že jste provedli [jednorázový postup instalace pro ukázky windows communication foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
   
-2. Před spuštěním ukázky trasování a protokolování zpráv vytvořte adresář C:\logs\, ve kterém bude služba zapisovat soubory. svclog do. Název tohoto adresáře je definovaný v konfiguračním souboru jako cesta pro trasování a zprávy, které se mají protokolovat a které je možné změnit. Udělte síťové službě uživatele přístup pro zápis do adresáře Logs.  
+2. Před spuštěním ukázky Trasování a Protokolování zpráv vytvořte adresář C:\logs\ pro službu, do které bude zapisovat soubory Svclog. Název tohoto adresáře je definován v konfiguračním souboru jako cesta pro trasování a zprávy, které mají být zaznamenány a lze je změnit. Poučte uživateli síťovou službu přístup k adresáři protokolů.  
   
-3. Pokud chcete vytvořit C#edici, C++nebo Visual Basic .NET, postupujte podle pokynů v tématu [sestavování ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
+3. Chcete-li vytvořit c#, C++ nebo Visual Basic .NET vydání řešení, postupujte podle pokynů v [sestavení windows communication foundation ukázky](../../../../docs/framework/wcf/samples/building-the-samples.md).  
   
-4. Chcete-li spustit ukázku v konfiguraci s jedním nebo více počítači, postupujte podle pokynů v části [spuštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
+4. Chcete-li spustit ukázku v konfiguraci jednoho nebo mezi počítači, postupujte podle pokynů v [části Spuštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
   
 > [!IMPORTANT]
-> Ukázky již mohou být nainstalovány v počítači. Než budete pokračovat, vyhledejte následující (výchozí) adresář.  
->   
+> Ukázky mohou být již nainstalovány v počítači. Před pokračováním zkontrolujte následující (výchozí) adresář.  
+>
 > `<InstallDrive>:\WF_WCF_Samples`  
->   
-> Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] Samples. Tato ukázka se nachází v následujícím adresáři.  
->   
+>
+> Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a Windows Workflow Foundation (WF) Ukázky pro rozhraní .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka je umístěna v následujícím adresáři.  
+>
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Management\TracingAndLogging`  
   
 ## <a name="see-also"></a>Viz také
 
 - [Trasování](../../../../docs/framework/wcf/diagnostics/tracing/index.md)
-- [Ukázky monitorování technologie AppFabric](https://docs.microsoft.com/previous-versions/appfabric/ff383407(v=azure.10))
+- [Vzorky monitorování appfabricu](https://docs.microsoft.com/previous-versions/appfabric/ff383407(v=azure.10))
