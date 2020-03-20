@@ -5,21 +5,21 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: fa360c46-e5f8-411e-a711-46997771133d
-ms.openlocfilehash: 1dbaa159314bf7bb05ff75287f601f619834fd7c
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 2e7fb97e5c0cb42deff43c411f47e8d30e2257ef
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70794622"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79149385"
 ---
 # <a name="paging-through-a-query-result"></a>Stránkování prostřednictvím výsledku dotazu
-Stránkování prostřednictvím výsledku dotazu je proces vrácení výsledků dotazu v menších podmnožinách dat nebo na stránkách. To je běžný postup pro zobrazení výsledků pro uživatele v malých, snadno ovladatelném bloku.  
+Stránkování prostřednictvím výsledku dotazu je proces vrácení výsledků dotazu v menších podmnožinech dat nebo stránek. Toto je běžný postup pro zobrazení výsledků uživateli v malých, snadno spravovat bloky.  
   
- Objekt **DataAdapter** poskytuje zařízení pro vrácení pouze stránky dat prostřednictvím přetížení metody **Fill** . To však nemusí být nejlepší volbou pro stránkování prostřednictvím velkých výsledků dotazu, protože ačkoliv modul **DataAdapter** vyplní cíl <xref:System.Data.DataTable> nebo <xref:System.Data.DataSet> pouze požadované záznamy, prostředky, které mají vracet celý dotaz, jsou stále používány. . Chcete-li vrátit stránku dat ze zdroje dat bez použití prostředků, které vrátí celý dotaz, zadejte další kritéria pro dotaz, který zmenší počet vrácených řádků pouze na ty, které jsou požadovány.  
+ **DataAdapter** poskytuje zařízení pro vrácení pouze stránku dat, prostřednictvím přetížení **Fill** metody. To však nemusí být nejlepší volbou pro stránkování prostřednictvím velkých výsledků dotazu, protože přestože **DataAdapter** vyplňuje cíl <xref:System.Data.DataTable> nebo <xref:System.Data.DataSet> pouze požadované záznamy, prostředky pro vrácení celého dotazu jsou stále používány. Chcete-li vrátit stránku dat ze zdroje dat bez použití prostředků k vrácení celého dotazu, zadejte další kritéria pro dotaz, která snižují řádky vrácené pouze na ty, které jsou požadovány.  
   
- Chcete-li použít metodu **Fill** k vrácení stránky dat, zadejte parametr **startRecord** pro první záznam na stránce dat a parametr **MaxRecords** pro počet záznamů na stránce dat.  
+ Chcete-li použít metodu **Fill** k vrácení stránky dat, zadejte parametr **startRecord** pro první záznam na stránce dat a parametr **maxRecords** pro počet záznamů na stránce dat.  
   
- Následující příklad kódu ukazuje, jak použít metodu **Fill** k vrácení první stránky výsledku dotazu, kde je velikost stránky pět záznamů.  
+ Následující příklad kódu ukazuje, jak použít **fill** metodu vrátit první stránku výsledku dotazu, kde velikost stránky je pět záznamů.  
   
 ```vb  
 Dim currentIndex As Integer = 0  
@@ -46,7 +46,7 @@ DataSet dataSet = new DataSet();
 adapter.Fill(dataSet, currentIndex, pageSize, "Orders");  
 ```  
   
- V předchozím příkladu je **datová sada** vyplněna pouze pěti záznamy, ale celá tabulka **Orders** je vrácena. Chcete-li **datovou sadu** vyplnit pomocí těchto pěti záznamů, ale vrátit pouze pět záznamů, použijte klauzuli TOP a WHERE v příkazu jazyka SQL, jako v následujícím příkladu kódu.  
+ V předchozím příkladu **dataset** je vyplněna pouze pět záznamů, ale je vrácena celá tabulka **Objednávky.** Chcete-li vyplnit **DataSet** s těmito pěti záznamů, ale vrátí pouze pět záznamů, použijte TOP a WHERE klauzule v příkazu SQL, jako v následujícím příkladu kódu.  
   
 ```vb  
 Dim pageSize As Integer = 5  
@@ -57,13 +57,13 @@ Dim adapter As SqlDataAdapter = _
   New SqlDataAdapter(orderSQL, connection)  
   
 Dim dataSet As DataSet = New DataSet()  
-adapter.Fill(dataSet, "Orders")   
+adapter.Fill(dataSet, "Orders")
 ```  
   
 ```csharp  
 int pageSize = 5;  
   
-string orderSQL = "SELECT TOP " + pageSize +   
+string orderSQL = "SELECT TOP " + pageSize +
   " * FROM Orders ORDER BY OrderID";  
 SqlDataAdapter adapter = new SqlDataAdapter(orderSQL, connection);  
   
@@ -71,7 +71,7 @@ DataSet dataSet = new DataSet();
 adapter.Fill(dataSet, "Orders");  
 ```  
   
- Všimněte si, že pokud je výsledkem stránkování přes dotaz, je nutné zachovat jedinečný identifikátor, který řádky seřadí, aby bylo možné předat jedinečné ID do příkazu, který vrátí další stránku záznamů, jak je znázorněno v následujícím příkladu kódu.  
+ Všimněte si, že při stránkování prostřednictvím výsledků dotazu tímto způsobem je nutné zachovat jedinečný identifikátor, který objednávky řádků, aby bylo možné předat jedinečné ID příkazu vrátit další stránku záznamů, jak je znázorněno v následujícím příkladu kódu.  
   
 ```vb  
 Dim lastRecord As String = _  
@@ -79,11 +79,11 @@ Dim lastRecord As String = _
 ```  
   
 ```csharp  
-string lastRecord =   
+string lastRecord =
   dataSet.Tables["Orders"].Rows[pageSize - 1]["OrderID"].ToString();  
 ```  
   
- Chcete-li vrátit další stránku záznamů pomocí přetížení metody **Fill** , která přijímá parametry **startRecord** a **MaxRecords** , zvyšte aktuální index záznamu velikostí stránky a vyplňte tabulku. Pamatujte, že databázový server vrátí výsledky celého dotazu, i když do **datové sady**se přidá jenom jedna stránka záznamů. V následujícím příkladu kódu jsou před vyplněním další stránky dat vymazány řádky tabulky. Je možné, že budete chtít zachovat určitý počet vrácených řádků v místní mezipaměti pro omezení cest k databázovému serveru.  
+ Chcete-li vrátit další stránku záznamů pomocí přetížení **Fill** metoda, která přebírá **startRecord** a **maxRecords** parametry, převáděj aktuální index záznamu o velikost stránky a vyplňte tabulku. Nezapomeňte, že databázový server vrátí výsledky celého dotazu, i když je do **datové sady**přidána pouze jedna stránka záznamů . V následujícím příkladu kódu jsou řádky tabulky vymazány před vyplněním další stránky dat. Můžete chtít zachovat určitý počet vrácených řádků v místní mezipaměti snížit cesty na databázový server.  
   
 ```vb  
 currentIndex = currentIndex + pageSize  
@@ -101,7 +101,7 @@ dataSet.Tables["Orders"].Rows.Clear();
 adapter.Fill(dataSet, currentIndex, pageSize, "Orders");  
 ```  
   
- Chcete-li vrátit další stránku záznamů, aniž by měl databázový server vracet celý dotaz, zadejte omezující kritéria do příkazu SELECT. Vzhledem k tomu, že předchozí příklad zachovává poslední vrácenou položku, můžete ji použít v klauzuli WHERE k určení počátečního bodu pro dotaz, jak je znázorněno v následujícím příkladu kódu.  
+ Chcete-li vrátit další stránku záznamů bez nutnosti, aby databázový server vrátil celý dotaz, zadejte omezující kritéria do příkazu SELECT. Vzhledem k tomu, že předchozí příklad zachoval poslední vrácený záznam, můžete jej použít v klauzuli WHERE k určení výchozího bodu pro dotaz, jak je znázorněno v následujícím příkladu kódu.  
   
 ```vb  
 orderSQL = "SELECT TOP " & pageSize & _  
@@ -114,7 +114,7 @@ adapter.Fill(dataSet, "Orders")
 ```  
   
 ```csharp  
-orderSQL = "SELECT TOP " + pageSize +   
+orderSQL = "SELECT TOP " + pageSize +
   " * FROM Orders WHERE OrderID > " + lastRecord + " ORDER BY OrderID";  
 adapter.SelectCommand.CommandText = orderSQL;  
   
@@ -123,7 +123,7 @@ dataSet.Tables["Orders"].Rows.Clear();
 adapter.Fill(dataSet, "Orders");  
 ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Adaptéry a čtečky dat](dataadapters-and-datareaders.md)
 - [Přehled ADO.NET](ado-net-overview.md)

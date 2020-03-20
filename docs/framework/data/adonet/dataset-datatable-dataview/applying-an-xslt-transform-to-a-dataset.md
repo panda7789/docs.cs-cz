@@ -5,18 +5,18 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 09f2e4ee-1d08-4ba8-8936-83394fee319d
-ms.openlocfilehash: 2641637d176b411108aeb2fa00ef4268584e9cb3
-ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
+ms.openlocfilehash: 3f066f29b99ade6e92a263110fed8079208567b5
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/03/2019
-ms.locfileid: "71834275"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79151491"
 ---
 # <a name="applying-an-xslt-transform-to-a-dataset"></a>Použití transformace XSLT u datové sady
 
-Metoda **WriteXml** <xref:System.Data.DataSet> umožňuje napsat obsah **datové sady** jako XML data. Běžným úkolem je pak transformovat tento kód XML do jiného formátu pomocí transformací XSL (XSLT). Synchronizace **datové sady** s <xref:System.Xml.XmlDataDocument> však umožňuje použít šablonu stylů XSLT na obsah **datové sady** , aniž by bylo nutné nejprve zapsat obsah **datové sady** jako XML data pomocí **WriteXml**.  
+Metoda **WriteXml** <xref:System.Data.DataSet> umožňuje zapsat obsah **datasady** jako data XML. Běžnou úlohou je pak transformovat tento XML do jiného formátu pomocí XSL transformace (XSLT). Synchronizace **dataset** <xref:System.Xml.XmlDataDocument> s však umožňuje použít šablonu stylů XSLT na obsah **DataSet** bez nutnosti nejprve zapsat obsah **DataSet** jako data XML pomocí **WriteXml**.  
   
- Následující příklad naplní **datovou sadu** tabulkami a relacemi, synchronizuje **datovou sadu** s **objektu XmlDataDocument**a zapíše část **datové sady** jako soubor HTML pomocí šablony stylů XSLT. Níže jsou uvedené obsah šablony stylů XSLT:
+ Následující příklad naplní **dataset** tabulkami a relacemi, synchronizuje **datovou sadu** s **xmldatadocumentem**a zapíše část **DataSet** jako soubor HTML pomocí šablony stylů XSLT. Obsah šablony stylů XSLT je následující:
   
 ```xml  
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">  
@@ -57,10 +57,10 @@ Metoda **WriteXml** <xref:System.Data.DataSet> umožňuje napsat obsah **datové
 </xsl:stylesheet>  
 ```  
   
- Následující kód vyplní **datovou sadu** a použije šablonu stylů XSLT.  
+ Následující kód vyplní **DataSet** a použije šablonu stylů XSLT.  
   
 > [!NOTE]
-> Pokud aplikujete šablonu stylů XSLT na **datovou sadu** , která obsahuje vztahy, dosáhnete nejlepšího výkonu, pokud nastavíte **vnořenou** vlastnost <xref:System.Data.DataRelation> na **hodnotu true** pro každou vnořenou relaci. Díky tomu můžete použít šablony stylů XSLT, které implementují přirozené křížové zpracování pro navigaci v hierarchii a transformují data, a to na rozdíl od použití osy umístění XPath s náročnou výkonem (například předcházející na stejné úrovni a po sobě jdoucí na stejné úrovni). výrazy testu tabulkového uzlu) pro navigaci. Další informace o vnořených relacích najdete v tématu [vnořování datových vztahů](nesting-datarelations.md).  
+> Pokud aplikujete šablonu stylů XSLT na **datovou sadu,** která obsahuje vztahy, dosáhnete nejlepšího výkonu, pokud pro každou vnořenou relaci nastavíte **vnořenou** vlastnost na <xref:System.Data.DataRelation> **hodnotu true.** To umožňuje používat šablony stylů XSLT, které implementují přirozené zpracování shora dolů k navigaci v hierarchii a transformaci dat, na rozdíl od použití os umístění XPath s vysokým i min. výkonu (například předcházející na stejné úrovni a na stejné úrovni ve stylu testovacích výrazů uzlu listu) pro navigaci. Další informace o vnořených vztazích naleznete v [tématu Vnoření datových vztahů](nesting-datarelations.md).  
   
 ```vb  
 ' Assumes connection is a valid SqlConnection.  
@@ -80,7 +80,7 @@ dataSet.Relations.Add("CustOrders", _
 dataSet.Tables("Customers").Columns("CustomerID"), _  
 dataSet.Tables("Orders").Columns("CustomerID")).Nested = true  
   
-Dim xmlDoc As XmlDataDocument = New XmlDataDocument(dataSet)   
+Dim xmlDoc As XmlDataDocument = New XmlDataDocument(dataSet)
   
 Dim xslTran As XslTransform = New XslTransform  
 xslTran.Load("transform.xsl")  
@@ -112,19 +112,19 @@ custDS.Relations.Add("CustOrders",
   custDS.Tables["Customers"].Columns["CustomerID"],  
                      custDS.Tables["Orders"].Columns["CustomerID"]).Nested = true;  
   
-XmlDataDocument xmlDoc = new XmlDataDocument(custDS);   
+XmlDataDocument xmlDoc = new XmlDataDocument(custDS);
   
 XslTransform xslTran = new XslTransform();  
 xslTran.Load("transform.xsl");  
   
-XmlTextWriter writer = new XmlTextWriter("xslt_output.html",   
+XmlTextWriter writer = new XmlTextWriter("xslt_output.html",
   System.Text.Encoding.UTF8);  
   
 xslTran.Transform(xmlDoc, null, writer);  
 writer.Close();  
 ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Synchronizace datové sady a datového dokumentu XML](dataset-and-xmldatadocument-synchronization.md)
 - [Přehled ADO.NET](../ado-net-overview.md)

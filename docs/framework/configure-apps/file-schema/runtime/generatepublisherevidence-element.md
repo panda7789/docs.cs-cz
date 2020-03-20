@@ -5,24 +5,24 @@ helpviewer_keywords:
 - generatePublisherEvidence element
 - <generatePublisherEvidence> element
 ms.assetid: 7d208f50-e8d5-4a42-bc1a-1cf3590706a8
-ms.openlocfilehash: b04ef53d6e9c3d954b0925ea8634b3d220b36af7
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 24a5ea02992a5bce681b5bab4fb7f75505bd225d
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73116575"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79154111"
 ---
-# <a name="generatepublisherevidence-element"></a>\<element > generatePublisherEvidence
-Určuje, zda modul runtime vytvoří <xref:System.Security.Policy.Publisher> legitimace pro zabezpečení přístupu kódu (CAS).  
+# <a name="generatepublisherevidence-element"></a>\<generatePublisherEvidence> Element
+Určuje, zda runtime <xref:System.Security.Policy.Publisher> vytvoří důkazy pro zabezpečení přístupu kódu (CAS).  
   
-[ **\<configuration >** ](../configuration-element.md) \
-&nbsp;&nbsp;[ **\<runtime >** ](runtime-element.md)\
-&nbsp;&nbsp;&nbsp;&nbsp; **\<generatePublisherEvidence >**  
+[**\<>konfigurace**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<>za běhu**](runtime-element.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;**\<generatePublisherEvidence>**  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```xml  
-<generatePublisherEvidence    
+<generatePublisherEvidence
    enabled="true|false"/>  
 ```  
   
@@ -33,21 +33,21 @@ Určuje, zda modul runtime vytvoří <xref:System.Security.Policy.Publisher> leg
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|`enabled`|Požadovaný atribut.<br /><br /> Určuje, zda modul runtime vytvoří <xref:System.Security.Policy.Publisher> legitimace.|  
+|`enabled`|Požadovaný atribut.<br /><br /> Určuje, zda soubor <xref:System.Security.Policy.Publisher> runtime vytvoří důkazy.|  
   
 ## <a name="enabled-attribute"></a>Atribut enabled  
   
 |Hodnota|Popis|  
 |-----------|-----------------|  
-|`false`|Nevytváří <xref:System.Security.Policy.Publisher> legitimace.|  
-|`true`|Vytvoří legitimaci <xref:System.Security.Policy.Publisher>. Toto nastavení je výchozí.|  
+|`false`|Nevytváří <xref:System.Security.Policy.Publisher> důkazy.|  
+|`true`|Vytváří <xref:System.Security.Policy.Publisher> důkazy. Toto nastavení je výchozí.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
- Žádné  
+ Žádné.  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
-|Prvek|Popis|  
+|Element|Popis|  
 |-------------|-----------------|  
 |`configuration`|Kořenový prvek v každém konfiguračním souboru, který je používán modulem Common Language Runtime (CLR) a aplikacemi rozhraní .NET Framework.|  
 |`runtime`|Obsahuje informace o možnostech inicializace modulu runtime.|  
@@ -55,18 +55,18 @@ Určuje, zda modul runtime vytvoří <xref:System.Security.Policy.Publisher> leg
 ## <a name="remarks"></a>Poznámky  
   
 > [!NOTE]
-> V .NET Framework 4 a novějších, nemá tento prvek žádný vliv na časy načtení sestavení. Další informace najdete v části "zjednodušení zásad zabezpečení" v článku [změny zabezpečení](../../../security/security-changes.md).  
+> V rozhraní .NET Framework 4 a novější tento prvek nemá žádný vliv na doby načítání sestavení. Další informace naleznete v části Zjednodušení zásad zabezpečení v části [Změny zabezpečení](../../../security/security-changes.md).  
   
- Modul CLR (Common Language Runtime) se pokusí ověřit podpis Authenticode v době načítání a vytvořit <xref:System.Security.Policy.Publisher> legitimaci pro sestavení. Ve výchozím nastavení ale většina aplikací nepotřebuje <xref:System.Security.Policy.Publisher> legitimace. Standardní zásady CAS nespoléhají na <xref:System.Security.Policy.PublisherMembershipCondition>. Měli byste se vyhnout zbytečnému počátečnímu nákladům souvisejícím s ověřováním podpisu vydavatele, pokud se vaše aplikace nespustí na počítači s vlastními zásadami CAS, nebo má za následek splnění požadavků pro <xref:System.Security.Permissions.PublisherIdentityPermission> v prostředí s částečným vztahem důvěryhodnosti. (Požadavky na oprávnění identity jsou vždycky úspěšné v prostředí s plnou důvěryhodností.)  
+ Běžný jazyk runtime (CLR) se pokusí ověřit podpis Authenticode v době načítání k vytvoření <xref:System.Security.Policy.Publisher> legitimace pro sestavení. Ve výchozím nastavení však většina aplikací nepotřebujete <xref:System.Security.Policy.Publisher> důkazy. Standardní zásady CAS nezávisí na <xref:System.Security.Policy.PublisherMembershipCondition>. Měli byste se vyhnout zbytečným nákladům na spuštění spojeným s ověřením podpisu vydavatele, pokud se <xref:System.Security.Permissions.PublisherIdentityPermission> aplikace nespustí v počítači s vlastními zásadami CAS nebo pokud nemá v úmyslu uspokojit požadavky v prostředí s částečnou důvěryhodností. (Požadavky na oprávnění identity vždy úspěšné v prostředí s plnou důvěryhodností.)  
   
 > [!NOTE]
-> Pro zlepšení výkonu při spuštění doporučujeme, aby služby používaly `<generatePublisherEvidence>` element.  Použití tohoto prvku může také pomoci zabránit prodlevám, které mohou způsobit časový limit a zrušení spuštění služby.  
+> Doporučujeme, aby `<generatePublisherEvidence>` služby používat prvek ke zlepšení výkonu při spuštění.  Pomocí tohoto prvku můžete také pomoci vyhnout se zpoždění, které může způsobit časový odčasový čas a zrušení spuštění služby.  
   
 ## <a name="configuration-file"></a>Konfigurační soubor  
- Tento element lze použít pouze v konfiguračním souboru aplikace.  
+ Tento prvek lze použít pouze v konfiguračním souboru aplikace.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje, jak pomocí elementu `<generatePublisherEvidence>` zakázat kontrolu zásad vydavatele CAS pro aplikaci.  
+ Následující příklad ukazuje, jak `<generatePublisherEvidence>` pomocí prvku zakázat kontrolu zásad vydavatele CAS pro aplikaci.  
   
 ```xml  
 <configuration>  
@@ -76,7 +76,7 @@ Určuje, zda modul runtime vytvoří <xref:System.Security.Policy.Publisher> leg
 </configuration>  
 ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Schéma nastavení běhového prostředí](index.md)
 - [Schéma konfiguračního souboru](../index.md)

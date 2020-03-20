@@ -2,32 +2,32 @@
 title: Mapování klíčových omezení schématu XML (XSD) k omezením datové sady
 ms.date: 03/30/2017
 ms.assetid: 22664196-f270-4ebc-a169-70e16a83dfa1
-ms.openlocfilehash: 670c07dd83e880b79c1ccf0c5af00d253b83f827
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.openlocfilehash: 5ebf333b065157fa9497cc1471a45698663638e5
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73040068"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79150932"
 ---
 # <a name="map-key-xml-schema-xsd-constraints-to-dataset-constraints"></a>Mapování klíčových omezení schématu XML (XSD) k omezením datové sady
-Ve schématu můžete zadat omezení klíče pro element nebo atribut pomocí elementu **Key** . Element nebo atribut, u kterého je zadáno omezení klíče, musí mít jedinečné hodnoty v libovolné instanci schématu a nesmí mít hodnoty null.  
+Ve schématu můžete určit omezení klíče pro prvek nebo atribut pomocí **klíčového** prvku. Prvek nebo atribut, na kterém je zadáno omezení klíče, musí mít jedinečné hodnoty v libovolné instanci schématu a nemůže mít hodnoty null.  
   
- Omezení klíče je podobné omezení UNIQUE s tím rozdílem, že sloupec, na kterém je definováno omezení klíče, nemůže mít hodnoty null.  
+ Omezení klíče je podobné jedinečnému omezení s tím rozdílem, že sloupec, ve kterém je definováno omezení klíče, nemůže mít nulové hodnoty.  
   
- Následující tabulka popisuje atributy **msdata** , které lze zadat v elementu **Key** .  
+ Následující tabulka popisuje atributy **msdata,** které můžete zadat v **elementu klíče.**  
   
 |Název atributu|Popis|  
 |--------------------|-----------------|  
-|**msdata: Constraint**|Pokud je tento atribut zadán, použije se jako název omezení jeho hodnota. V opačném případě atribut **Name** poskytuje hodnotu názvu omezení.|  
-|**msdata: PrimaryKey**|Pokud je k dispozici `PrimaryKey="true"`, vlastnost omezení **IsPrimaryKey** je nastavena na **hodnotu true**, čímž se nastaví jako primární klíč. Vlastnost **AllowDBNull** sloupce je nastavena na **hodnotu false**, protože primární klíče nemohou mít hodnoty null.|  
+|**msdata:ConstraintName**|Pokud je tento atribut zadán, jeho hodnota se používá jako název omezení. V opačném případě atribut **name** poskytuje hodnotu názvu omezení.|  
+|**msdata:Primární klíč**|Pokud `PrimaryKey="true"` je k dispozici, je vlastnost omezení **IsPrimaryKey** nastavena na **hodnotu true**, čímž se jedná o primární klíč. Vlastnost sloupec **AllowDBNull** je nastavena na **hodnotu false**, protože primární klíče nemohou mít hodnoty null.|  
   
- Při převádění schématu, ve kterém je zadáno omezení klíče, proces mapování vytvoří v tabulce jedinečné omezení s vlastností **AllowDBNull** Column nastavenou na **hodnotu false** pro každý sloupec v omezení. Vlastnost **IsPrimaryKey** jedinečného omezení je také nastavena na **hodnotu false** , pokud jste nezadali `msdata:PrimaryKey="true"` u elementu **Key** . Toto je stejné jako jedinečné omezení ve schématu, ve kterém `PrimaryKey="true"`.  
+ Při převodu schématu, ve kterém je zadáno omezení klíče, vytvoří proces mapování jedinečné omezení v tabulce s vlastností sloupce **AllowDBNull** nastavenou na **hodnotu false** pro každý sloupec v omezení. Vlastnost **IsPrimaryKey** jedinečného omezení je také nastavena `msdata:PrimaryKey="true"` na **hodnotu false,** pokud jste nezadali prvek **klíče.** Toto je totožné s jedinečným `PrimaryKey="true"`omezením ve schématu, ve kterém .  
   
- V následujícím příkladu schématu **klíč** elementu určuje omezení klíče u elementu **CustomerID** .  
+ V následujícím příkladu schématu určuje prvek **klíče** omezení klíče pro prvek **CustomerID.**  
   
 ```xml  
 <xs:schema id="cod"  
-            xmlns:xs="http://www.w3.org/2001/XMLSchema"   
+            xmlns:xs="http://www.w3.org/2001/XMLSchema"
             xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">  
   <xs:element name="Customers">  
     <xs:complexType>  
@@ -51,16 +51,16 @@ Ve schématu můžete zadat omezení klíče pro element nebo atribut pomocí el
      <xs:field xpath="CustomerID" />  
     </xs:key>  
  </xs:element>  
-</xs:schema>   
+</xs:schema>
 ```  
   
- **Klíčový** prvek určuje, že hodnoty podřízeného prvku **KódZákazníka** elementu **Customers** musí mít jedinečné hodnoty a nesmí mít hodnoty null. V rámci překladu schématu XML Schema Definition Language (XSD) vytvoří proces mapování následující tabulku:  
+ Klíčový **key** prvek určuje, že hodnoty podřízeného prvku **CustomerID** prvku **Customers** musí mít jedinečné hodnoty a nemohou mít hodnoty null. Při překladu schématu jazyka definice schématu XML (XSD) vytvoří proces mapování následující tabulku:  
   
 ```text  
 Customers(CustomerID, CompanyName, Phone)  
 ```  
   
- Mapování schématu XML také vytvoří **UniqueConstraint** ve sloupci **KódZákazníka** , jak je znázorněno na následujícím <xref:System.Data.DataSet>. (Pro jednoduchost se zobrazí pouze příslušné vlastnosti.)  
+ Mapování schématu XML také vytvoří **UniqueConstraint** na **CustomerID** sloupec, jak <xref:System.Data.DataSet>je znázorněno v následujícím . (Pro jednoduchost jsou zobrazeny pouze relevantní vlastnosti.)  
   
 ```text  
       DataSetName: MyDataSet  
@@ -70,15 +70,15 @@ TableName: customers
       Unique: True  
   ConstraintName: KeyCustID  
       Table: customers  
-      Columns: CustomerID   
+      Columns: CustomerID
       IsPrimaryKey: True  
 ```  
   
- V **datové sadě** , která je generována, vlastnost **IsPrimaryKey** třídy **UniqueConstraint** je nastavena na **hodnotu true** , protože schéma určuje `msdata:PrimaryKey="true"` v elementu **Key** .  
+ V **dataset,** který je generován, **IsPrimaryKey** vlastnost **UniqueConstraint** je nastavena na **hodnotu true,** protože schéma určuje `msdata:PrimaryKey="true"` v **elementu klíče.**  
   
- Hodnota vlastnosti **Constraint** objektu **UniqueConstraint** v **datové sadě** je hodnota atributu **msdata: Constraint** uvedená v elementu **Key** ve schématu.  
+ Hodnota vlastnosti **ConstraintName** **vlastnosti UniqueConstraint** v **datové sadě** je hodnota atributu **msdata:ConstraintName** zadaného v elementu **klíče** ve schématu.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Mapování omezení schématu XML (XSD) k omezením datové sady](mapping-xml-schema-xsd-constraints-to-dataset-constraints.md)
 - [Generování relací datové sady ze schématu XML (XSD)](generating-dataset-relations-from-xml-schema-xsd.md)

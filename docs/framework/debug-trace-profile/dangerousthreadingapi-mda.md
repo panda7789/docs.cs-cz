@@ -10,34 +10,34 @@ helpviewer_keywords:
 - Suspend method
 - threading [.NET Framework], managed debugging assistants
 ms.assetid: 3e5efbc5-92e4-4229-b31f-ce368a1adb96
-ms.openlocfilehash: 4e7e858dfb85eeccbadb23da60d081d1407e89d8
-ms.sourcegitcommit: 9c54866bcbdc49dbb981dd55be9bbd0443837aa2
+ms.openlocfilehash: d3fe7d11657c2f9edd1fea7ff639f878f993d6b1
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/14/2020
-ms.locfileid: "77216675"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79174768"
 ---
 # <a name="dangerousthreadingapi-mda"></a>dangerousThreadingAPI – pomocník spravovaného ladění (MDA)
-Pokud je metoda <xref:System.Threading.Thread.Suspend%2A?displayProperty=nameWithType> volána v jiném vlákně, než je aktuální vlákno, je aktivována aplikace `dangerousThreadingAPI` Managed Debugging Assistant (MDA).  
+Spravovaný `dangerousThreadingAPI` pomocník pro ladění (MDA) <xref:System.Threading.Thread.Suspend%2A?displayProperty=nameWithType> je aktivován, když je metoda volána v jiném vlákně než aktuálnívlákno.  
   
 ## <a name="symptoms"></a>Příznaky  
- Aplikace nereaguje nebo nereaguje na neomezenou dobu. Data systému nebo aplikací mohou být ponechána v nepředvídatelném stavu dočasně nebo i po vypnutí aplikace. Některé operace nejsou dokončeny podle očekávání.  
+ Aplikace neodpovídá nebo přestane reagovat neomezeně dlouho. Data systému nebo aplikace mohou být dočasně ponechána v nepředvídatelném stavu nebo dokonce i po vypnutí aplikace. Některé operace nejsou dokončeny podle očekávání.  
   
- Příznaky se můžou výrazně lišit v důsledku náhodnosti podstaty problému.  
+ Příznaky se mohou značně lišit v důsledku náhodnosti vlastní problému.  
   
 ## <a name="cause"></a>Příčina  
- Vlákno je asynchronně pozastaveno jiným vláknem pomocí metody <xref:System.Threading.Thread.Suspend%2A>. Neexistuje žádný způsob, jak určit, kdy je bezpečné pozastavit jiné vlákno, které může být uprostřed operace. Pozastavení vlákna může mít za následek poškození dat nebo rozdělení invariant. Má-li být vlákno umístěno do pozastaveného stavu a nikdy se neobnovilo pomocí metody <xref:System.Threading.Thread.Resume%2A>, může aplikace zavěsit data aplikace bez omezení a pravděpodobně je poškodit. Tyto metody byly označeny jako zastaralé.  
+ Podproces je asynchronně pozastavena jiným vláknem <xref:System.Threading.Thread.Suspend%2A> pomocí metody. Neexistuje žádný způsob, jak určit, kdy je bezpečné pozastavit jiné vlákno, které může být uprostřed operace. Pozastavení podprocesu může mít za následek poškození dat nebo přerušení invariants. Pokud podproces být umístěn do pozastaveného stavu <xref:System.Threading.Thread.Resume%2A> a nikdy obnovena pomocí metody, aplikace může zavěsit neomezeně dlouho a případně poškodit data aplikace. Tyto metody byly označeny jako zastaralé.  
   
- Pokud jsou prvky synchronizace uloženy cílovým vláknem, zůstanou při pozastavení uchovávány. To může vést k zablokování by mělo jiné vlákno, například vlákno, které provádí <xref:System.Threading.Thread.Suspend%2A>, pokus o získání zámku na primitivním rozhraní. V takové situaci se problém projeví jako zablokování.  
+ Pokud synchronizační primitiva jsou drženy cílovým vláknem, zůstávají drženy během pozastavení. To může vést k zablokování by měl jiný podproces, například vlákno provádějící <xref:System.Threading.Thread.Suspend%2A>, pokus o získání zámku na primitivní. V této situaci problém projevuje jako zablokování.  
   
 ## <a name="resolution"></a>Řešení  
- Vyhněte se návrhům, které vyžadují použití <xref:System.Threading.Thread.Suspend%2A> a <xref:System.Threading.Thread.Resume%2A>. Pro spolupráci mezi vlákny použijte prvky synchronizace, například <xref:System.Threading.Monitor>, <xref:System.Threading.ReaderWriterLock>, <xref:System.Threading.Mutex>nebo příkaz C# `lock`. Pokud je nutné použít tyto metody, omezte časový interval a minimalizujte množství kódu, který se spustí, když je vlákno v pozastaveném stavu.  
+ Vyhněte se návrhům, které vyžadují použití <xref:System.Threading.Thread.Suspend%2A> a <xref:System.Threading.Thread.Resume%2A>. Pro spolupráci mezi vlákny použijte synchronizační <xref:System.Threading.ReaderWriterLock> <xref:System.Threading.Mutex>primitiva, například <xref:System.Threading.Monitor>, , nebo c# `lock` příkaz. Pokud je nutné použít tyto metody, snížit časové okno a minimalizovat množství kódu, který se spustí, zatímco vlákno je v pozastaveném stavu.  
   
-## <a name="effect-on-the-runtime"></a>Vliv na modul runtime  
- Tento MDA nemá žádný vliv na CLR. Oznamuje pouze data o nebezpečných operacích vláken.  
+## <a name="effect-on-the-runtime"></a>Vliv na běhový čas  
+ Tento MDA nemá žádný vliv na CLR. Pouze hlásí data o nebezpečných operacích podprocesu.  
   
 ## <a name="output"></a>Výstup  
- MDA identifikuje nebezpečnou metodu vláken, která způsobila, že je aktivována.  
+ MDA identifikuje nebezpečnou metodu threadingu, která způsobila jeho aktivaci.  
   
 ## <a name="configuration"></a>Konfigurace  
   
@@ -50,7 +50,7 @@ Pokud je metoda <xref:System.Threading.Thread.Suspend%2A?displayProperty=nameWit
 ```  
   
 ## <a name="example"></a>Příklad  
- Následující příklad kódu ukazuje volání metody <xref:System.Threading.Thread.Suspend%2A>, která způsobuje aktivaci `dangerousThreadingAPI`.  
+ Následující příklad kódu ukazuje volání <xref:System.Threading.Thread.Suspend%2A> metody, která způsobuje `dangerousThreadingAPI`aktivaci .  
   
 ```csharp
 using System.Threading;  
@@ -59,7 +59,7 @@ void FireMda()
 Thread t = new Thread(delegate() { Thread.Sleep(1000); });  
     t.Start();  
     // The following line activates the MDA.  
-    t.Suspend();   
+    t.Suspend();
     t.Resume();  
     t.Join();  
 }  

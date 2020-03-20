@@ -2,25 +2,25 @@
 title: Postup konfiguračního kanálu
 ms.date: 03/30/2017
 ms.assetid: 3b749493-bd8a-4ccb-893e-5948901a1486
-ms.openlocfilehash: 1a236f1812d3124e83702a97e1877b7fec10be64
-ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
+ms.openlocfilehash: 0f00ba5e217420fe416100071d380e413c3df118
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74715494"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79183952"
 ---
 # <a name="configuration-channel-factory"></a>Postup konfiguračního kanálu
-Tato ukázka pokrývá použití <xref:System.ServiceModel.Configuration.ConfigurationChannelFactory%601>. <xref:System.ServiceModel.Configuration.ConfigurationChannelFactory%601> umožňuje centrální správu konfigurace klienta WCF. To může být užitečné také ve scénářích, kdy je konfigurace vybrána nebo změněna po dobu načtení domény aplikace.
+Tento vzorek zahrnuje použití <xref:System.ServiceModel.Configuration.ConfigurationChannelFactory%601>. Umožňuje <xref:System.ServiceModel.Configuration.ConfigurationChannelFactory%601> centrální správu konfigurace klienta WCF. To může být také užitečné ve scénářích, ve kterých je konfigurace vybrána nebo změněna po čase načítání domény aplikace.
 
 ## <a name="demonstrates"></a>Demonstruje
  <xref:System.ServiceModel.Configuration.ConfigurationChannelFactory%601>
 
-## <a name="discussion"></a>Účely
- V této ukázce se dozvíte, jak pomocí <xref:System.ServiceModel.Configuration.ConfigurationChannelFactory%601> přidat konkrétní konfigurační soubor do klientské aplikace, aniž byste museli použít výchozí konfigurační soubor aplikace.
+## <a name="discussion"></a>Diskuse
+ Tato ukázka ukazuje, jak přidat <xref:System.ServiceModel.Configuration.ConfigurationChannelFactory%601> konkrétní konfigurační soubor do klientské aplikace, aniž byste museli používat výchozí konfigurační soubor aplikace.
 
- Vzorek se skládá ze dvou projektů. Prvním projektem je jednoduchá služba, která se používá k odpovědi na zprávy přicházející od klientů. Druhý projekt je klientská aplikace, která vytváří dva <xref:System.ServiceModel.Configuration.ConfigurationChannelFactory%601> objekty pomocí <xref:System.Configuration.ExeConfigurationFileMap> pro konfigurační soubor test. config a používá je ke komunikaci se službou. Oba klienti komunikují se službou pomocí konfigurace zadané v souboru Test. config.
+ Vzorek se skládá ze dvou projektů. První projekt je jednoduchá služba, která běží odpovědět na zprávy přicházející od klientů. Druhý projekt je klientská aplikace, <xref:System.ServiceModel.Configuration.ConfigurationChannelFactory%601> která <xref:System.Configuration.ExeConfigurationFileMap> vytvoří dva objekty pomocí konfiguračního souboru Test.config a používá je ke komunikaci se službou. Oba klienti komunikují se službou pomocí konfigurace zadané v souboru Test.config.
 
- Následující kód přidá vlastní konfigurační soubor do klientské aplikace.
+ Následující kód přidá do klientské aplikace vlastní konfigurační soubor.
 
 ```csharp
 ExeConfigurationFileMap fileMap = new ExeConfigurationFileMap();
@@ -35,19 +35,19 @@ ICalculatorChannel client1 = factory1.CreateChannel();
 
 1. Otevřete Visual Studio 2012 s oprávněními správce.
 
-2. Klikněte pravým tlačítkem na řešení ConfigurationChannelFactory (2 projekty) a pak vyberte **vlastnosti**.
+2. Klepněte pravým tlačítkem myši na řešení ConfigurationChannelFactory (2 projekty) a potom vyberte **příkaz Vlastnosti**.
 
-3. V nabídce **běžné vlastnosti**vyberte možnost **projekt po spuštění**a pak klikněte na **více projektů po spuštění**.
+3. V **pole Společné vlastnosti**vyberte **možnost Projekt po spuštění**a klepněte na tlačítko Více projektů **po spuštění**.
 
-4. Přesuňte projekt **služby** na začátek seznamu a **akci ' Start '** a poté přesuňte **klientský** projekt za projekt **služby** , a to také pomocí **akce ' spustit '** , takže se **klientský** projekt spustí po projektu **služby** .
+4. Přesuňte projekt **služby** na začátek seznamu s **akcí "Start"** a potom přesuňte projekt **klienta** po projektu **služby,** také s **akcí "Start"**, takže projekt **klienta** je proveden po projektu **služby.**
 
-5. Klikněte na **OK**a potom stisknutím klávesy F5 (nebo CTRL + F5) spusťte ukázku.
+5. Klepněte na **tlačítko OK**a potom spusťte ukázku stisknutím klávesy F5 (nebo CTRL+F5).
 
 > [!IMPORTANT]
-> Ukázky už můžou být na vašem počítači nainstalované. Než budete pokračovat, vyhledejte následující (výchozí) adresář.  
->   
+> Ukázky mohou být již nainstalovány v počítači. Před pokračováním zkontrolujte následující (výchozí) adresář.  
+>
 > `<InstallDrive>:\WF_WCF_Samples`  
->   
-> Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] Samples. Tato ukázka se nachází v následujícím adresáři.  
->   
+>
+> Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a Windows Workflow Foundation (WF) Ukázky pro rozhraní .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka je umístěna v následujícím adresáři.  
+>
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Services\ConfigurationChannelFactory`

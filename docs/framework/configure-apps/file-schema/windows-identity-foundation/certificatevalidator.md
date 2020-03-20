@@ -3,21 +3,21 @@ title: <certificateValidator>
 ms.date: 03/30/2017
 ms.assetid: 86161897-c20f-4ad8-9d7f-050c247251bf
 author: BrucePerlerMS
-ms.openlocfilehash: 30f81dd5948a7d366c1116cffd347c85a396f5ae
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.openlocfilehash: 3f3d79d3567c1714a79423b7767ce3f454b9d52d
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70252115"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79152785"
 ---
-# <a name="certificatevalidator"></a>\<certificateValidator >
-Určuje vlastní typ pro ověření certifikátu. Tento typ se používá pouze v případě `certificateValidationMode` , že je atribut [ \<prvku certificateValidation >](certificatevalidation.md) nastaven na hodnotu "Custom".  
+# <a name="certificatevalidator"></a>\<certifikátValidator>
+Určuje vlastní typ pro ověření certifikátu. Tento typ se používá `certificateValidationMode` pouze v případě, že atribut [ \<certifikátuValidation>](certificatevalidation.md) element je nastaven na "Vlastní".  
   
-[ **\<> Konfigurace**](../configuration-element.md)\
-&nbsp;&nbsp;[ **\<System. identityModel >** ](system-identitymodel.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;[ **\<identityConfiguration >** ](identityconfiguration.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<certificateValidation >** ](certificatevalidation.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<certificateValidator >**  
+[**\<>konfigurace**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<system.identityModel>**](system-identitymodel.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[**\<identityKonfigurace>**](identityconfiguration.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<>ověření certifikátu**](certificatevalidation.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<certifikátValidator>**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,16 +39,16 @@ Určuje vlastní typ pro ověření certifikátu. Tento typ se používá pouze 
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|– typ|Určuje vlastní typ, který je odvozen od <xref:System.IdentityModel.Selectors.X509CertificateValidator> třídy. Pro použití tohoto typu nastavte [ atributcertificateValidation>elementuna"Custom"\<](certificatevalidation.md) `certificateValidationMode` . Další informace o tom, jak zadat `type` atribut, naleznete v tématu odkazy na [vlastní typ](../windows-workflow-foundation/index.md). Volitelný parametr.|  
+|type|Určuje vlastní typ, který je <xref:System.IdentityModel.Selectors.X509CertificateValidator> odvozen od třídy. Nastavte `certificateValidationMode` atribut [ \<certifikátuValidation>](certificatevalidation.md) elementu na "Vlastní" pro použití tohoto typu. Další informace o tom, `type` jak zadat atribut, naleznete v [tématu Vlastní odkazy na typ](../windows-workflow-foundation/index.md). Nepovinný parametr.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
- Žádné  
+ Žádný  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
-|Prvek|Popis|  
+|Element|Popis|  
 |-------------|-----------------|  
-|[\<certificateValidation>](certificatevalidation.md)|Určuje nastavení, které obslužné rutiny tokenů používají k ověření certifikátů.|  
+|[\<>ověření certifikátu](certificatevalidation.md)|Řídí nastavení, která obslužné rutiny tokenů používají k ověření certifikátů.|  
   
 ## <a name="example"></a>Příklad  
   
@@ -56,6 +56,6 @@ Určuje vlastní typ pro ověření certifikátu. Tento typ se používá pouze 
 <certificateValidation certificateValidationMode="Custom"  
                        revocationMode="Online"  
                        trustedStoreLocation="LocalMachine">  
-    <certificateValidator type="MyNamespace.CustomValidator, MyAssembly" />    
-</certificateValidation>        
+    <certificateValidator type="MyNamespace.CustomValidator, MyAssembly" />
+</certificateValidation>
 ```

@@ -5,25 +5,25 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: b54f491d-196b-4279-876c-76b83ec0442c
-ms.openlocfilehash: eace5ce9a84d99cb2526896cca36a9e2a13fd5f2
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: 1b2b451eb1ea6a1a49ce1ba8cc1edef1fe72d01b
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76742693"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79184357"
 ---
 # <a name="transport-security-with-basic-authentication"></a>Zabezpečení přenosu se základním ověřováním
-Následující ilustrace znázorňuje službu Windows Communication Foundation (WCF) a klienta. Server potřebuje platný certifikát X. 509, který se dá použít pro SSL (Secure Sockets Layer) (SSL), a klienti musí důvěřovat certifikátu serveru. Kromě toho webová služba už používá implementaci SSL, kterou je možné použít. Další informace o povolení základního ověřování na Internetová informační služba (IIS) najdete v článku <https://docs.microsoft.com/iis/configuration/system.webserver/security/authentication/basicauthentication>.  
+Následující obrázek znázorňuje službu WCF (Windows Communication Foundation) a klienta. Server potřebuje platný certifikát X.509, který lze použít pro ssl (Secure Sockets L), a klienti musí důvěřovat certifikátu serveru. Dále webová služba již má implementaci SSL, kterou lze použít. Další informace o povolení základního ověřování v Internetové <https://docs.microsoft.com/iis/configuration/system.webserver/security/authentication/basicauthentication>informační službě (IIS) naleznete v tématu .  
   
- ![Snímek obrazovky, který zobrazuje zabezpečení přenosu pomocí základního ověřování.](./media/transport-security-with-basic-authentication/transport-security-basic-authentication.gif)  
+ ![Snímek obrazovky, který zobrazuje zabezpečení přenosu se základním ověřováním.](./media/transport-security-with-basic-authentication/transport-security-basic-authentication.gif)  
   
 |Charakteristika|Popis|  
 |--------------------|-----------------|  
 |Režim zabezpečení|Přenos|  
-|Vzájemná funkční spolupráce|S existujícími klienty a službami webové služby|  
-|Ověřování (Server)<br /><br /> Ověřování (klient)|Ano (pomocí HTTPS)<br /><br /> Ano (pomocí uživatelského jména a hesla)|  
+|Vzájemná funkční spolupráce|Se stávajícími klienty a službami webových služeb|  
+|Ověřování (server)<br /><br /> Ověřování (klient)|Ano (pomocí protokolu HTTPS)<br /><br /> Ano (přes uživatelské jméno/heslo)|  
 |Integrita|Ano|  
-|Chovávat|Ano|  
+|Důvěrnost|Ano|  
 |Přenos|HTTPS|  
 |Vazba|<xref:System.ServiceModel.WSHttpBinding>|  
   
@@ -34,14 +34,14 @@ Následující ilustrace znázorňuje službu Windows Communication Foundation (
   
 - Vytvořte službu pomocí zadané konfigurace, ale nedefinujte žádné koncové body.  
   
-### <a name="code"></a>Kód  
- Následující kód ukazuje, jak vytvořit koncový bod služby, který používá uživatelské jméno a heslo domény systému Windows pro přenos zabezpečení. Všimněte si, že služba vyžaduje pro ověření klienta certifikát X. 509. Další informace najdete v tématu [práce s certifikáty](../../../../docs/framework/wcf/feature-details/working-with-certificates.md) a [Postupy: Konfigurace portu s certifikátem SSL](../../../../docs/framework/wcf/feature-details/how-to-configure-a-port-with-an-ssl-certificate.md).  
+### <a name="code"></a>kód  
+ Následující kód ukazuje, jak vytvořit koncový bod služby, který používá uživatelské jméno a heslo domény systému Windows pro zabezpečení přenosu. Všimněte si, že služba vyžaduje certifikát X.509 k ověření klientovi. Další informace naleznete v [tématu Práce s certifikáty](../../../../docs/framework/wcf/feature-details/working-with-certificates.md) a [postup: Konfigurace portu s certifikátem SSL](../../../../docs/framework/wcf/feature-details/how-to-configure-a-port-with-an-ssl-certificate.md).  
   
  [!code-csharp[C_SecurityScenarios#1](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_securityscenarios/cs/source.cs#1)]
  [!code-vb[C_SecurityScenarios#1](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_securityscenarios/vb/source.vb#1)]  
   
 ## <a name="configuration"></a>Konfigurace  
- Následující nakonfiguruje službu tak, aby používala základní ověřování s zabezpečením na úrovni přenosu:  
+ Následující konfigurace služby pro použití základní ověřování se zabezpečením na úrovni přenosu:  
   
 ```xml  
 <?xml version="1.0" encoding="utf-8"?>  
@@ -59,9 +59,9 @@ Následující ilustrace znázorňuje službu Windows Communication Foundation (
         <services>  
             <service name="BasicAuthentication.Calculator">  
                 <endpoint address="https://localhost/Calculator"  
-                          binding="wsHttpBinding"   
+                          binding="wsHttpBinding"
                           bindingConfiguration="UsernameWithTransport"  
-                          name="BasicEndpoint"   
+                          name="BasicEndpoint"
                           contract="BasicAuthentication.ICalculator" />  
             </service>  
         </services>  
@@ -71,8 +71,8 @@ Následující ilustrace znázorňuje službu Windows Communication Foundation (
   
 ## <a name="client"></a>Klient  
   
-### <a name="code"></a>Kód  
- Následující kód ukazuje kód klienta, který obsahuje uživatelské jméno a heslo. Všimněte si, že uživatel musí zadat platné uživatelské jméno a heslo systému Windows. Zde není zobrazen kód pro vrácení uživatelského jména a hesla. Použijte dialogové okno nebo jiné rozhraní k dotazování uživatele na informace.  
+### <a name="code"></a>kód  
+ Následující kód zobrazuje kód klienta, který obsahuje uživatelské jméno a heslo. Všimněte si, že uživatel musí zadat platné uživatelské jméno systému Windows a heslo. Zde není zobrazen kód pro vrácení uživatelského jména a hesla. Pomocí dialogového okna nebo jiného rozhraní můžete uživatele dotazovat na informace.  
   
 > [!NOTE]
 > Uživatelské jméno a heslo lze nastavit pouze pomocí kódu.  
@@ -84,7 +84,7 @@ Následující ilustrace znázorňuje službu Windows Communication Foundation (
  Následující kód ukazuje konfiguraci klienta.  
   
 > [!NOTE]
-> Konfiguraci nelze použít k nastavení uživatelského jména a hesla. Zde uvedená konfigurace musí být rozšířena pomocí kódu pro nastavení uživatelského jména a hesla.  
+> Konfiguraci nelze použít k nastavení uživatelského jména a hesla. Zde zobrazená konfigurace musí být rozšířena pomocí kódu pro nastavení uživatelského jména a hesla.  
   
 ```xml  
 <?xml version="1.0" encoding="utf-8"?>  
@@ -100,9 +100,9 @@ Následující ilustrace znázorňuje službu Windows Communication Foundation (
       </wsHttpBinding>  
     </bindings>  
     <client>  
-      <endpoint address="https://machineName/Calculator"   
+      <endpoint address="https://machineName/Calculator"
                 binding="wsHttpBinding"  
-                bindingConfiguration="WSHttpBinding_ICalculator"   
+                bindingConfiguration="WSHttpBinding_ICalculator"
                 contract="ICalculator"  
                 name="WSHttpBinding_ICalculator" />  
     </client>  
@@ -117,5 +117,5 @@ Následující ilustrace znázorňuje službu Windows Communication Foundation (
 - [Práce s certifikáty](../../../../docs/framework/wcf/feature-details/working-with-certificates.md)
 - [Postupy: Konfigurace portu s certifikátem SSL](../../../../docs/framework/wcf/feature-details/how-to-configure-a-port-with-an-ssl-certificate.md)
 - [Přehled zabezpečení](../../../../docs/framework/wcf/feature-details/security-overview.md)
-- [\<clientCredentials >](../../../../docs/framework/configure-apps/file-schema/wcf/clientcredentials.md)
-- [Model zabezpečení pro Windows Server App Fabric](https://docs.microsoft.com/previous-versions/appfabric/ee677202(v=azure.10))
+- [\<>klientaPověření](../../../../docs/framework/configure-apps/file-schema/wcf/clientcredentials.md)
+- [Model zabezpečení pro infrastrukturu aplikací pro Windows Server](https://docs.microsoft.com/previous-versions/appfabric/ee677202(v=azure.10))

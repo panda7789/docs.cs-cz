@@ -15,49 +15,49 @@ helpviewer_keywords:
 ms.assetid: ee518bda-3296-482e-a7b7-e9d51dd1a181
 topic_type:
 - apiref
-ms.openlocfilehash: 3ab24ab869e1f2cff9beafe50e6982ba2e7cf0aa
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 34b7cebfa063a3ad077b74a753fd37ba67ff53a5
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74436703"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79175314"
 ---
 # <a name="imetadataimportgettypespecfromtoken-method"></a>IMetaDataImport::GetTypeSpecFromToken – metoda
-Získá binární podpis metadat specifikace typu reprezentované zadaným tokenem.  
+Získá podpis binární metadata specifikace typu reprezentované zadaný token.  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```cpp  
-HRESULT GetTypeSpecFromToken (   
-   [in]  mdTypeSpec            typespec,   
-   [out] PCCOR_SIGNATURE       *ppvSig,   
+HRESULT GetTypeSpecFromToken (
+   [in]  mdTypeSpec            typespec,
+   [out] PCCOR_SIGNATURE       *ppvSig,
    [out] ULONG                 *pcbSig  
 );  
 ```  
   
 ## <a name="parameters"></a>Parametry  
  `typespec`  
- pro Token token TypeSpec přidružený k požadované signatuře metadat  
+ [v] Token TypeSpec přidružený k požadovanému podpisu metadat.  
   
  `ppvSig`  
- mimo Ukazatel na binární podpis metadat.  
+ [out] Ukazatel na podpis binárních metadat.  
   
  `pcbSig`  
- mimo Velikost podpisu metadat v bajtech.  
+ [out] Velikost podpisu metadat v bajtech.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- HRESULT, který indikuje úspěch nebo neúspěch. Selhání lze otestovat pomocí makra, které SELHALo.  
+ HRESULT, který označuje úspěch nebo neúspěch. Chyby lze testovat s makro FAILED.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Hlavička:** Cor. h  
+ **Záhlaví:** Kor.h.  
   
- **Knihovna:** Zahrnuto jako prostředek v knihovně MsCorEE. dll  
+ **Knihovna:** Zahrnuto jako prostředek v souboru MsCorEE.dll  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [IMetaDataImport – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
 - [IMetaDataImport2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)

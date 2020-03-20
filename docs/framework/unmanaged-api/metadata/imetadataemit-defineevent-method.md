@@ -15,70 +15,70 @@ helpviewer_keywords:
 ms.assetid: cf064bac-9a9f-41c5-9e1d-108ff7af3afe
 topic_type:
 - apiref
-ms.openlocfilehash: 6966d0ad2fefd8401b19d8e8dcf7776799a066b2
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: a9598be850604f16ee8cc62187e1fed7ecf3a7e4
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74432562"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79175847"
 ---
 # <a name="imetadataemitdefineevent-method"></a>IMetaDataEmit::DefineEvent – metoda
-Vytvoří definici události se zadaným podpisem metadat a získá token této definice události.  
+Vytvoří definici události se zadaným podpisem metadat a získá token pro tuto definici události.  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```cpp  
-HRESULT DefineEvent (   
-    [in]  mdTypeDef    td,   
-    [in]  LPCWSTR      szEvent,   
-    [in]  DWORD        dwEventFlags,   
-    [in]  mdToken      tkEventType,   
-    [in]  mdMethodDef  mdAddOn,   
-    [in]  mdMethodDef  mdRemoveOn,   
-    [in]  mdMethodDef  mdFire,   
-    [in]  mdMethodDef  rmdOtherMethods[],   
-    [out] mdEvent      *pmdEvent   
+HRESULT DefineEvent (
+    [in]  mdTypeDef    td,
+    [in]  LPCWSTR      szEvent,
+    [in]  DWORD        dwEventFlags,
+    [in]  mdToken      tkEventType,
+    [in]  mdMethodDef  mdAddOn,
+    [in]  mdMethodDef  mdRemoveOn,
+    [in]  mdMethodDef  mdFire,
+    [in]  mdMethodDef  rmdOtherMethods[],
+    [out] mdEvent      *pmdEvent
 );  
 ```  
   
 ## <a name="parameters"></a>Parametry  
  `td`  
- pro Token pro cílovou třídu nebo rozhraní. Jedná se o token `mdTypeDef` nebo `mdTypeDefNil`.  
+ [v] Token pro cílovou třídu nebo rozhraní. Toto je `mdTypeDef` `mdTypeDefNil` buď nebo token.  
   
  `szEvent`  
- pro Název události.  
+ [v] Název události.  
   
  `dwEventFlags`  
- pro Příznaky události.  
+ [v] Příznaky události.  
   
  `tkEventType`  
- pro Token pro třídu Event Toto je `mdTypeDef`, `mdTypeRef`nebo token `mdTokenNil`.  
+ [v] Token pro třídu události. Toto `mdTypeDef`je `mdTypeRef`, a `mdTokenNil` nebo token.  
   
  `mdAddOn`  
- pro Metoda použitá k přihlášení k odběru události nebo hodnota null.  
+ [v] Metoda použitá k přihlášení k odběru události nebo null.  
   
  `mdRemoveOn`  
- pro Metoda použitá k odhlášení odběru události nebo hodnota null.  
+ [v] Metoda použitá k odhlášení z odběru události nebo null.  
   
  `mdFire`  
- pro Použitá metoda (odvozenou třídou) k vyvolání události.  
+ [v] Metoda použitá (odvozenou třídou) k navojení události.  
   
  `rmdOtherMethods[]`  
- pro Pole tokenů pro jiné metody přidružené k události. Pole je ukončeno pomocí `mdMethodDefNil`ho tokenu.  
+ [v] Pole tokenů pro jiné metody přidružené k události. Pole je ukončeno `mdMethodDefNil` tokenem.  
   
  `pmdEvent`  
- mimo Token metadat přiřazený k události  
+ [out] Token metadat přiřazený k události.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Hlavička:** Cor. h  
+ **Záhlaví:** Kor.h.  
   
- **Knihovna:** Používá se jako prostředek v knihovně MSCorEE. dll.  
+ **Knihovna:** Používá se jako prostředek v souboru MSCorEE.dll  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [IMetaDataEmit – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)
 - [IMetaDataEmit2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-interface.md)

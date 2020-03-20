@@ -10,16 +10,16 @@ api_location:
 api_type:
 - Assembly
 author: stevewhims
-ms.openlocfilehash: fd0ffb982c22b0a8b6cb5dd677faafb9921bf5d9
-ms.sourcegitcommit: 9a97c76e141333394676bc5d264c6624b6f45bcf
+ms.openlocfilehash: 39a14a3df5059cc47cd4879e4d4ba351cc7b655b
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75741018"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79156113"
 ---
 # <a name="coreresponsedata-class"></a>CoreResponseData – třída
 
-Třída `CoreResponseData` představuje analýzu hlaviček protokolu HTTP a textu odpovědi.
+Třída `CoreResponseData` představuje analýzu hlavičky HTTP a tělo odpovědi.
 
 ## <a name="syntax"></a>Syntaxe
   
@@ -28,14 +28,14 @@ internal class CoreResponseData
 ```
 
 > [!WARNING]
-> Toto rozhraní API je interní a není určeno pro použití přímo v kódu. Místo toho byste k připojení síťového kódu měli použít <xref:System.Diagnostics.DiagnosticSource>. Viz [uživatelská příručka pro DiagnosticSource](https://github.com/dotnet/runtime/blob/master/src/libraries/System.Diagnostics.DiagnosticSource/src/DiagnosticSourceUsersGuide.md).
-> 
-> Společnost Microsoft v žádné situaci nepodporuje použití této třídy v produkční aplikaci.
+> Toto rozhraní API je interní a není určen pro použití přímo ve vašem kódu. Místo toho byste <xref:System.Diagnostics.DiagnosticSource> měli použít připojit síťový kód. Viz [DiagnosticSource Uživatelská příručka](https://github.com/dotnet/runtime/blob/master/src/libraries/System.Diagnostics.DiagnosticSource/src/DiagnosticSourceUsersGuide.md).
+>
+> Společnost Microsoft nepodporuje použití této třídy v produkční aplikaci za žádných okolností.
 
 ## <a name="requirements"></a>Požadavky
 
-**Obor názvů:** <xref:System.Net>
+**Obor názvů:**<xref:System.Net>
 
-**Sestavení:** Systém (v System. dll)
+**Sestava:** Systém (v souboru System.dll)
 
-**Verze .NET Framework:** K dispozici od verze 2,0.
+**Verze rozhraní .NET Framework:** K dispozici od 2.0.

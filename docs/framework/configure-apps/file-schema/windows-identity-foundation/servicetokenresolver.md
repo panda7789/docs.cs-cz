@@ -3,22 +3,22 @@ title: <serviceTokenResolver>
 ms.date: 03/30/2017
 ms.assetid: 6e9001e1-e064-4f47-84b2-46225c177746
 author: BrucePerlerMS
-ms.openlocfilehash: 30a53c11b551623311f7ca3f957143fc702568a1
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.openlocfilehash: 0983380e553acfe246d6b987784d818b8ae85b17
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70251851"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79152577"
 ---
-# <a name="servicetokenresolver"></a>\<serviceTokenResolver>
-Registruje překladač tokenů služby, který jsou používány obslužnými rutinami v kolekci obslužných rutin tokenu. Překladač tokenů služby se používá k překladu šifrovacího tokenu na příchozích tokenech a zprávách.  
+# <a name="servicetokenresolver"></a>\<> serviceTokenResolver
+Registruje překladač tokenů služby, který používají obslužné rutiny v kolekci obslužné rutiny tokenu. Překládání tokenů služby se používá k překladu šifrovacího tokenu na příchozích tokenech a zprávách.  
   
-[ **\<> Konfigurace**](../configuration-element.md)\
-&nbsp;&nbsp;[ **\<System. identityModel >** ](system-identitymodel.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;[ **\<identityConfiguration >** ](identityconfiguration.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<securityTokenHandlers >** ](securitytokenhandlers.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<securityTokenHandlerConfiguration >** ](securitytokenhandlerconfiguration.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<serviceTokenResolver >**  
+[**\<>konfigurace**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<system.identityModel>**](system-identitymodel.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[**\<identityKonfigurace>**](identityconfiguration.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<securityTokenHandlers>**](securitytokenhandlers.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<securityTokenHandlerConfiguration>**](securitytokenhandlerconfiguration.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<serviceTokenResolver>**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -42,28 +42,27 @@ Registruje překladač tokenů služby, který jsou používány obslužnými ru
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|– typ|Určuje typ překladače tokenu služby. Buď typ, nebo typ, který je odvozen <xref:System.IdentityModel.Selectors.SecurityTokenResolver> od třídy. <xref:System.IdentityModel.Selectors.SecurityTokenResolver> Další informace o tom, jak zadat `type` atribut, naleznete v tématu [odkazy na vlastní typ]. Povinný parametr.|  
+|type|Určuje typ překládání tokenu služby. <xref:System.IdentityModel.Selectors.SecurityTokenResolver> Typ nebo typ, který je <xref:System.IdentityModel.Selectors.SecurityTokenResolver> odvozen z třídy. Další informace o tom, `type` jak zadat atribut, naleznete v tématu [Vlastní odkazy typu]. Povinná hodnota.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
- Žádné  
+ Žádný  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
-|Prvek|Popis|  
+|Element|Popis|  
 |-------------|-----------------|  
 |[\<securityTokenHandlerConfiguration>](securitytokenhandlerconfiguration.md)|Poskytuje konfiguraci pro kolekci obslužných rutin tokenů zabezpečení.|  
   
 ## <a name="remarks"></a>Poznámky  
- Překladač tokenů služby se dá použít k vyřešení šifrovacího tokenu u příchozích tokenů a zpráv. Používá se k načtení klíče, který by se měl použít k dešifrování příchozích tokenů. Je nutné zadat `type` atribut. Zadaný typ může být buď <xref:System.IdentityModel.Selectors.SecurityTokenResolver> nebo vlastní typ, který je odvozen <xref:System.IdentityModel.Selectors.SecurityTokenResolver> od třídy.  
+ Překládání tokenů služby lze vyřešit šifrovací token na příchozí tokeny a zprávy. Používá se k načtení klíče, který by měl být použit k dešifrování příchozích tokenů. Je nutné `type` zadat atribut. Zadaný typ může <xref:System.IdentityModel.Selectors.SecurityTokenResolver> být buď nebo vlastní <xref:System.IdentityModel.Selectors.SecurityTokenResolver> typ, který je odvozen z třídy.  
   
- Některé obslužné rutiny tokenů umožňují zadat nastavení překladače tokenu služby v konfiguraci. Nastavení pro obslužné rutiny jednotlivých tokenů přepíší ty zadané v kolekci obslužných rutin tokenu zabezpečení.  
+ Některé obslužné rutiny tokenů umožňují určit nastavení překladače tokenů služby v konfiguraci. Nastavení na obslužné rutiny jednotlivých tokenů přepsat ty zadané v kolekci obslužné rutiny tokenu zabezpečení.  
   
 > [!NOTE]
-> Určení prvku jako podřízeného prvku [ \<prvku IdentityConfiguration >](identityconfiguration.md) je zastaralé, ale stále se podporuje z důvodu zpětné kompatibility. `<serviceTokenResolver>` Nastavení na `<securityTokenHandlerConfiguration>` elementu přepíší tyto prvky `<identityConfiguration>` na elementu.  
+> Určení `<serviceTokenResolver>` prvku jako podřízeného prvku [ \<identityKonfigurace>](identityconfiguration.md) element ubírala, ale je stále podporována z důvodu zpětné kompatibility. Nastavení na `<securityTokenHandlerConfiguration>` prvek přepsat ty `<identityConfiguration>` na prvek.  
   
 ## <a name="example"></a>Příklad  
   
 ```xml  
 <serviceTokenResolver type="MyNamespace.CustomTokenResolver, MyAssembly" />  
 ```
- 

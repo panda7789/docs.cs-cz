@@ -3,16 +3,16 @@ title: Konfigurační schéma pro Windows Identity Foundation
 ms.date: 03/30/2017
 ms.assetid: 4d4f6d76-49a5-4bad-b345-097b2e2844e9
 author: BrucePerlerMS
-ms.openlocfilehash: 8dc58f3dc68ee226228056e457914c9dfa53cca5
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.openlocfilehash: 14d596ae77019932d169e1a84732fb8522bfc46c
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70251981"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79152720"
 ---
 # <a name="windows-identity-foundation-configuration-schema"></a>Konfigurační schéma pro Windows Identity Foundation
 
-Témata v této části poskytují informace o schématu konfigurace Windows Identity Foundation (WIF). Můžete také nakonfigurovat aplikaci tak, aby používala WIF prostřednictvím tříd zveřejněných v rámci rozhraní. Tyto třídy jsou popsány v oddílech, které jsou považovány za relevantní prvky ve schématu. Následuje příklad základní struktury značek XML zveřejněné schématem konfigurace WIF. Atributy jsou vynechány. Zvýrazněné komentáře označují hlavní součásti schématu.  
+Témata v této části obsahují informace o schématu konfigurace Windows Identity Foundation (WIF). Můžete také nakonfigurovat aplikaci pro použití WIF prostřednictvím tříd vystavených rozhraní. Tyto třídy jsou uvedeny v částech, které zacházejí s příslušnými prvky ve schématu. Následující text ukazuje základní strukturu značek XML vystavenou schématu konfigurace Rozhraní WIF. Atributy jsou vynechány. Zvýrazněné komentáře označují hlavní součásti schématu.  
   
 ```xml  
 <configuration>  
@@ -23,23 +23,23 @@ Témata v této části poskytují informace o schématu konfigurace Windows Ide
                 <sessionSecurityTokenCache />  
                 <tokenReplayCache />  
             </caches>  
-      
+
             <certificateValidation>  
-                <certificateValidator />   
+                <certificateValidator />
             </certificateValidation>  
-      
+
             <claimsAuthenticationManager />  
-      
+
             <claimsAuthorizationManager>  
                 <optionalConfigurationElement>  
             </claimsAuthorizationManager>  
-      
+
             <claimTypeRequired>  
-                <claimType />   
+                <claimType />
             </claimTypeRequired>  
-      
+
             <tokenReplayDetection />  
-      
+
             <!-- Security Token Handler Collection Configuration -->  
             <securityTokenHandlers>  
                 <add>  
@@ -47,9 +47,9 @@ Témata v této části poskytují informace o schématu konfigurace Windows Ide
                          the following or a custom element -->  
                     <samlSecurityTokenHandlerRequirement>  
                         <nameClaimType>  
-                        <roleClaimType>   
+                        <roleClaimType>
                     </samlSecurityTokenHandlerRequirement>  
-      
+
                     <sessionSecurityTokenHandlerRequirement />  
                     <x509SecurityTokenHandlerRequirement />  
                     <userNameSecurityTokenHandlerRequirement />  
@@ -62,16 +62,16 @@ Témata v této části poskytují informace o schématu konfigurace Windows Ide
                         <clear>  
                         <remove>  
                     </audienceUris>  
-      
+
                     <caches>  
                         <sessionSecurityTokenCache />  
                         <tokenReplayCache />  
                     </caches>  
-      
+
                     <certificateValidation>  
-                        <certificateValidator>   
+                        <certificateValidator>
                     </certificateValidation>  
-      
+
                     <issuerNameRegistry>  
                         <!-- Can take an optional configuration element which can be   
                              the <trustedIssuers> element to configure a configuration-based  
@@ -82,7 +82,7 @@ Témata v této části poskytují informace o schématu konfigurace Windows Ide
                             <remove>  
                         </trustedIssuers>  
                     </issuerNameRegistry>  
-      
+
                     <issuerTokenResolver />  
                     <serviceTokenResolver />  
                     <tokenReplayDetection />  
@@ -90,7 +90,7 @@ Témata v této části poskytují informace o schématu konfigurace Windows Ide
             </securityTokenHandlers>  
         </identityConfiguration>  
     </system.identityModel>  
-      
+
     <system.identityModel.services>  
         <!-- Federation Authentication Configuration -->  
         <federatedAuthentication>  
@@ -98,11 +98,11 @@ Témata v této části poskytují informace o schématu konfigurace Windows Ide
                 <chunkedCookieHandler />  
                 <customCookieHandler />  
             </cookieHandler>  
-      
+
             <serviceCertificate>  
                 <certificateReference>  
             </serviceCertificate>  
-      
+
             <wsFederation />  
         </federatedAuthentication>  
     </system.identityModel.services>  
@@ -111,6 +111,6 @@ Témata v této části poskytují informace o schématu konfigurace Windows Ide
   
 ## <a name="in-this-section"></a>V tomto oddílu  
 
-System. IdentityModel > poskytuje konfiguraci pro povolení možností WIF v aplikacích. [ \<](system-identitymodel.md)  
+[ \<system.identityModel>](system-identitymodel.md) Poskytuje konfiguraci pro povolení možností WIF v aplikacích.  
   
-[System. IdentityModel. Services > poskytuje konfiguraci pro pasivní federaci pomocí WIF. \<](system-identitymodel-services.md) Konfiguruje modul SAM (Session Authentication Module) a modul federovaného ověřování (WSFAM).
+[ \<system.identityModel.services>](system-identitymodel-services.md) Poskytuje konfiguraci pro pasivní federaci pomocí WIF. Konfiguruje modul ověřování relací (SAM) a federovaný ověřovací modul (WSFAM).

@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 1c090153-fd5f-46c7-9cff-39a78d992c8f
 topic_type:
 - apiref
-ms.openlocfilehash: ae682c354a7a5188611b103008a3e18f8d821260
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: dd1d6f1da6e49837eebd9356500f403c199b011b
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74431938"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79177855"
 ---
 # <a name="imetadataassemblyemitsetexportedtypeprops-method"></a>IMetaDataAssemblyEmit::SetExportedTypeProps – metoda
 Upraví zadanou `ExportedType` strukturu metadat.  
@@ -29,7 +29,7 @@ Upraví zadanou `ExportedType` strukturu metadat.
   
 ```cpp  
 HRESULT SetExportedTypeProps (  
-    [in] mdExportedType   ct,   
+    [in] mdExportedType   ct,
     [in] mdToken          tkImplementation,  
     [in] mdTypeDef        tkTypeDef,  
     [in] DWORD            dwExportedTypeFlags  
@@ -38,29 +38,29 @@ HRESULT SetExportedTypeProps (
   
 ## <a name="parameters"></a>Parametry  
  `ct`  
- pro Token metadat, který určuje `ExportedType` strukturu metadat, která se má upravit.  
+ [v] Token metadat, který určuje `ExportedType` strukturu metadat, která má být změněna.  
   
  `tkImplementation`  
- pro Token typu `File`, `AssemblyRef`nebo `ExportedType`, který určuje, jak je tento typ implementován.  
+ [v] Token typu `File`, `AssemblyRef`, `ExportedType`nebo , který určuje, jak je tento typ implementován.  
   
  `tkTypeDef`  
- pro Token `TypeDef`, na který se odkazuje v souboru kódu.  
+ [v] Token `TypeDef` odkazovaný v souboru kódu.  
   
  `dwExportedTypeFlags`  
- pro Bitová kombinace hodnot, které určují atributy typu.  
+ [v] Bitová kombinace hodnot, které určují atributy typu.  
   
 ## <a name="remarks"></a>Poznámky  
- Chcete-li vytvořit `ExportedType` struktury metadat, použijte metodu [IMetaDataAssemblyEmit::D efineexportedtype](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyemit-defineexportedtype-method.md) .  
+ Chcete-li `ExportedType` vytvořit strukturu metadat, použijte metodu [IMetaDataAssemblyEmit::DefineExportedType.](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyemit-defineexportedtype-method.md)  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Hlavička:** Cor. h  
+ **Záhlaví:** Kor.h.  
   
- **Knihovna:** Používá se jako prostředek v knihovně MsCorEE. dll.  
+ **Knihovna:** Používá se jako prostředek v souboru MsCorEE.dll  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [IMetaDataAssemblyEmit – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyemit-interface.md)

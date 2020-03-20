@@ -2,19 +2,19 @@
 title: Konfigurace serializace ve službě pracovních postupů
 ms.date: 03/30/2017
 ms.assetid: aa70b290-a2ee-4c3c-90ea-d0a7665096ae
-ms.openlocfilehash: 0e0f03a30aa8e8679cf849aa75948e0bc2314fe5
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: f894f2e044e35bb278f975ef2385a6b22a8bea49
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61857476"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79185337"
 ---
 # <a name="configuring-serialization-in-a-workflow-service"></a>Konfigurace serializace ve službě pracovních postupů
-Služby pracovních postupů jsou služby Windows Communication Foundation (WCF) a tak mají možnost používat buď <xref:System.Runtime.Serialization.DataContractSerializer> (výchozí) nebo <xref:System.Xml.Serialization.XmlSerializer>. Při psaní mimo pracovní postup služby typu serializátoru je zadán u kontraktu služby nebo operace. Při vytváření služby pracovního postupu WCF nezadáte těchto smluv v kódu, ale místo toho jsou generovány v době běhu podle odvození kontraktu. Další informace o odvození smlouvy najdete v tématu [použití kontraktů v pracovním postupu](../../../../docs/framework/wcf/feature-details/using-contracts-in-workflow.md).  Serializátoru, který je určen pomocí <xref:System.ServiceModel.Activities.Receive.SerializerOption%2A> vlastnost. To může být nastavit v návrháři, jak je znázorněno na následujícím obrázku.  
+Pracovní postupy služby jsou Windows Communication Foundation (WCF) <xref:System.Runtime.Serialization.DataContractSerializer> služby a tak <xref:System.Xml.Serialization.XmlSerializer>mají možnost použít (výchozí) nebo . Při zápisu služeb bez pracovního postupu je typ serializátoru, který chcete použít, určen ve smlouvě o službě nebo operaci. Při vytváření služeb pracovního postupu WCF nezadáte tyto smlouvy v kódu, ale spíše jsou generovány za běhu podle odvození smlouvy. Další informace o odvození smlouvy naleznete v [tématu Použití smluv v pracovním postupu](../../../../docs/framework/wcf/feature-details/using-contracts-in-workflow.md).  Serializátor je <xref:System.ServiceModel.Activities.Receive.SerializerOption%2A> určen pomocí vlastnosti. To lze nastavit v návrháři, jak je znázorněno na následujícím obrázku.  
   
  ![Nastavení vlastnosti SerializerOption v okně Vlastnosti.](./media/configuring-serialization-in-a-workflow-service/setting-serializer-property.png)  
   
- Serializátor můžete nastavit také v kódu, jak je znázorněno v následujícím příkladu  
+ Serializátor lze také nastavit v kódu, jak je znázorněno v následujícím příkladu,  
   
 ```csharp  
 Receive approveExpense = new Receive  
@@ -27,15 +27,15 @@ Receive approveExpense = new Receive
             };  
 ```  
   
-  Známé typy se dá nastavit na také služby pracovního postupu. Další informace o známé typy najdete v tématu [známé typy kontraktů dat](data-contract-known-types.md). Známé typy se dá nastavit v Návrháři nebo v kódu. K určení známých typů v návrháři, klikněte na tlačítko se třemi tečkami vedle vlastnosti KnownTypes v **okno vlastností** pro <xref:System.ServiceModel.Activities.Receive> aktivity, jak je znázorněno na následujícím obrázku.   
+  Známé typy lze zadat také ve službách pracovního postupu. Další informace o známých typech naleznete v [tématu Data Contract Known Types](data-contract-known-types.md). Známé typy lze zadat v návrháři nebo v kódu. Chcete-li určit známé typy v návrháři, klepněte na tlačítko se třemi tečkami vedle vlastnosti KnownTypes v **okně Vlastnosti** pro aktivitu, <xref:System.ServiceModel.Activities.Receive> jak je znázorněno na následujícím obrázku.
   
- ![Snímek obrazovky dialogového okna Vlastnosti KnownTypes.](./media/configuring-serialization-in-a-workflow-service/known-types-properties.png)  
+ ![Snímek obrazovky s dialogovým oknem vlastnosti KnownTypes](./media/configuring-serialization-in-a-workflow-service/known-types-properties.png)  
   
- Zobrazí se Editor typu kolekce, která umožňuje hledat a zadejte známých typů.  
+ Zobrazí se Editor kolekcí typů, který umožňuje vyhledávat a zadávat známé typy.  
   
- ![Snímek obrazovky Editor typu kolekce.](./media/configuring-serialization-in-a-workflow-service/type-collection-editor.gif)  
+ ![Snímek obrazovky editoru kolekcí typů](./media/configuring-serialization-in-a-workflow-service/type-collection-editor.gif)  
   
- Klikněte na tlačítko **přidat nový typ** propojit a pomocí rozevíracího seznamu ji můžete vybrat nebo vyhledejte typ můžete přidat do kolekce známých typů. K určení známé typy kódu používá <xref:System.ServiceModel.Activities.Receive.KnownTypes%2A> vlastnost, jak je znázorněno v následujícím příkladu.  
+ Klikněte na odkaz **Přidat nový typ** a pomocí rozevíracího pole vyberte nebo vyhledejte typ, který chcete přidat do kolekce známých typů. Chcete-li určit známé <xref:System.ServiceModel.Activities.Receive.KnownTypes%2A> typy v kódu, použijte vlastnost, jak je znázorněno v následujícím příkladu.  
   
 ```csharp
 Receive approveExpense = new Receive  

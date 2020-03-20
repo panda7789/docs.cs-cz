@@ -16,47 +16,47 @@ helpviewer_keywords:
 ms.assetid: 1cf4ca8e-d9bb-4633-9adf-5e24315bf87a
 topic_type:
 - apiref
-ms.openlocfilehash: a7fed8cb70785f0ccfcadf1e16181db303ac98e0
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.openlocfilehash: 0b210f105495fa3f5595adbcb0805e1d1fb62310
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76789184"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79179223"
 ---
 # <a name="createcoreclrdebugtarget-function"></a>CreateCoreClrDebugTarget – funkce
-Vytvoří připojení k proxy serveru ladicího programu, který běží na vzdáleném počítači, a vrátí objekt [ICoreClrDebugTarget](icoreclrdebugtarget-interface.md) , který lze použít k dotazování na spuštěné procesy a načtených modulech runtime na vzdáleném počítači.  
+Vytvoří připojení k proxy ladicího programu, který je spuštěn ve vzdáleném počítači, a vrátí objekt [ICoreClrDebugTarget,](icoreclrdebugtarget-interface.md) který lze použít k dotazování spuštěných procesů a načtených runčasech ve vzdáleném počítači.  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```cpp  
 HRESULT CreateCoreClrDebugTarget (  
-       [in]  DWORD    dwAddress,   
+       [in]  DWORD    dwAddress,
        [out] ICoreClrDebugTarget**     ppTarget  
 );  
 ```  
   
 ## <a name="parameters"></a>Parametry  
  `dwAddress`  
- pro Adresa IPv4 vzdáleného cílového počítače.  
+ [v] Adresa IPv4 vzdáleného cílového počítače.  
   
  `ppTarget`  
- mimo Ukazatel na ukazatel na objekt [ICoreClrDebugTarget](icoreclrdebugtarget-interface.md) , který se vytvoří.  
+ [out] Ukazatel na ukazatel na objekt [ICoreClrDebugTarget,](icoreclrdebugtarget-interface.md) který bude vytvořen.  
   
 ## <a name="return-value"></a>Návratová hodnota  
  S_OK  
- Počet CLRs v procesu byl úspěšně zjištěn a odpovídající pole popisovače a cesty byly správně vyplněny.  
+ Počet CLRs v procesu byl úspěšně určen a odpovídající popisovač a pole cesty byly správně vyplněny.  
   
  E_OUTOFMEMORY  
- Nelze přidělit dostatek paměti pro `ppTarget`.  
+ Nelze přidělit dostatek `ppTarget`paměti pro .  
   
- E_FAIL (nebo jiné návratové kódy E_)  
- Další chyby.  
+ E_FAIL (nebo jiné E_ návratové kódy)  
+ Další selhání.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Hlavička:** CoreClrRemoteDebuggingInterfaces. h  
+ **Záhlaví:** CoreClrRemoteDebuggingInterfaces.h  
   
- **Library:** mscordbi_macx86.dll  
+ **Knihovna:** mscordbi_macx86.dll  
   
- **Verze .NET Framework:** 3,5 SP1
+ **Verze rozhraní .NET Framework:** 3.5 SP1

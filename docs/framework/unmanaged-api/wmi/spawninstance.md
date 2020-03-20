@@ -1,5 +1,5 @@
 ---
-title: SpawnInstance – funkce (Reference nespravovaného rozhraní API)
+title: Funkce SpawnInstance (Nespravovaný odkaz na rozhraní API)
 description: Funkce SpawnInstance vytvoří novou instanci třídy.
 ms.date: 11/06/2017
 api_name:
@@ -14,15 +14,15 @@ helpviewer_keywords:
 - SpawnInstance function [.NET WMI and performance counters]
 topic_type:
 - Reference
-ms.openlocfilehash: f93b4fbd5429ed2bdae8fb707e61df024cd8fd6e
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: a15eb8123c1ee807444bdb4c6fe71cdccc08f434
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73107518"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79176718"
 ---
-# <a name="spawninstance-function"></a>SpawnInstance – funkce
-Vytvoří novou instanci třídy.    
+# <a name="spawninstance-function"></a>SpawnInstance
+Vytvoří novou instanci třídy.
   
 [!INCLUDE[internalonly-unmanaged](../../../../includes/internalonly-unmanaged.md)]
   
@@ -30,52 +30,52 @@ Vytvoří novou instanci třídy.
   
 ```cpp  
 HRESULT SpawnInstance (
-   [in] int                  vFunc, 
-   [in] IWbemClassObject*    ptr, 
+   [in] int                  vFunc,
+   [in] IWbemClassObject*    ptr,
    [in] LONG                 lFlags,
-   [out] IWbemClassObject**  ppNewInstance); 
+   [out] IWbemClassObject**  ppNewInstance);
 ```  
 
 ## <a name="parameters"></a>Parametry
 
 `vFunc`  
-pro Tento parametr se nepoužívá.
+[v] Tento parametr není použit.
 
 `ptr`  
-pro Ukazatel na instanci [IWbemClassObject](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject) .
+[v] Ukazatel na instanci [IWbemClassObject.](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject)
 
 `lFlags`  
-pro Rezervovaný. Tento parametr musí mít hodnotu 0.
+[v] Vyhrazena. Tento parametr musí být 0.
 
 `ppNewInstance`  
-mimo Přijme ukazatel na novou instanci třídy. Pokud dojde k chybě, nový objekt se nevrátí a `ppNewInstance` zůstane beze změny.
+[out] Obdrží ukazatel na novou instanci třídy. Pokud dojde k chybě, nový objekt není `ppNewInstance` vrácena a je ponechána beze změny.
 
 ## <a name="return-value"></a>Návratová hodnota
 
-Následující hodnoty vrácené touto funkcí jsou definovány v souboru hlaviček *WbemCli. h* nebo je můžete definovat jako konstanty v kódu:
+Následující hodnoty vrácené touto funkcí jsou definovány v souboru *hlavičky WbemCli.h,* nebo je můžete definovat jako konstanty v kódu:
 
-|Konstanta  |Hodnota  |Popis  |
+|Trvalé  |Hodnota  |Popis  |
 |---------|---------|---------|
-| `WBEM_E_INCOMPLETE_CLASS` | 0x80041020 | `ptr` není platnou definicí třídy a nelze vytvořit nové instance. Buď je neúplný, nebo nebyl zaregistrován u správy systému Windows voláním [PutClassWmi](putclasswmi.md). |
-| `WBEM_E_OUT_OF_MEMORY` | 0x80041006 | K dokončení této operace není k dispozici dostatek paměti. |
+| `WBEM_E_INCOMPLETE_CLASS` | 0x80041020 | `ptr`není platnou definicí třídy a nemůže vytvořit nové instance. Buď je neúplný, nebo nebyl aregistrován pomocí správy systému Windows voláním [PutClassWmi](putclasswmi.md). |
+| `WBEM_E_OUT_OF_MEMORY` | 0x80041006 | K dokončení operace není k dispozici dostatek paměti. |
 | `WBEM_E_INVALID_PARAMETER` | 0x80041008 | `ppNewClass` je `null`. |
-| `WBEM_S_NO_ERROR` | 0,8 | Volání funkce bylo úspěšné.  |
+| `WBEM_S_NO_ERROR` | 0 | Volání funkce bylo úspěšné.  |
   
 ## <a name="remarks"></a>Poznámky
 
-Tato funkce zalomí volání metody [IWbemclassObject:: SpawnInstance](/windows/desktop/api/wbemcli/nf-wbemcli-iwbemclassobject-spawninstance) .
+Tato funkce zabalí volání metody [IWbemClassObject::SpawnInstance.](/windows/desktop/api/wbemcli/nf-wbemcli-iwbemclassobject-spawninstance)
 
-`ptr` musí být definicí třídy získaná ze správy systému Windows. (Všimněte si, že vytvoření instance z instance je podporováno, ale vrácená instance je prázdná.) Tuto definici třídy pak můžete použít k vytvoření nových instancí. Pokud máte v úmyslu zapsat instanci do správy systému Windows, je třeba zadat volání funkce [PutInstanceWmi](putinstancewmi.md) .
+`ptr`musí být definice třídy získaná ze správy systému Windows. (Všimněte si, že tření instance z instance je podporována, ale vrácená instance je prázdná.) Potom použijete tuto definici třídy k vytvoření nových instancí. Volání funkce [PutInstanceWmi](putinstancewmi.md) je vyžadováno, pokud máte v úmyslu zapsat instanci do správy systému Windows.
 
-Nový objekt vrácený v `ppNewClass` automaticky se stal podtřídou aktuálního objektu. Toto chování nelze přepsat. Neexistuje žádná jiná metoda, pomocí které by bylo možné vytvořit podtřídy (odvozené třídy).
+Nový objekt vrácený automaticky `ppNewClass` se stane podtřídou aktuálního objektu. Toto chování nelze přepsat. Neexistuje žádná jiná metoda, kterou lze vytvořit podtřídy (odvozené třídy).
 
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
+ **Platformy:** Viz [Systémové požadavky](../../get-started/system-requirements.md).  
   
- **Hlavička:** WMINet_Utils. idl  
+ **Záhlaví:** WMINet_Utils.idl  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
+ **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [WMI a čítače výkonu (Reference nespravovaného rozhraní API)](index.md)
+- [Čítače služby WMI a výkonu (nespravovaný odkaz na rozhraní API)](index.md)

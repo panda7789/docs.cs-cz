@@ -5,77 +5,77 @@ helpviewer_keywords:
 - UI Automation, providers
 - providers, UI Automation
 ms.assetid: 859557b8-51e1-4d15-92e8-318d2dcdb2f7
-ms.openlocfilehash: 98208f1e1fa1b540bf3880e33478854128505233
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.openlocfilehash: 1f780ffc37b0aff93a3358c1980d271fe10c1321
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76778786"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79179880"
 ---
 # <a name="ui-automation-providers-overview"></a>Přehled zprostředkovatelů automatizace uživatelského rozhraní
 > [!NOTE]
-> Tato dokumentace je určena pro .NET Framework vývojářů, kteří chtějí používat spravované [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] třídy definované v oboru názvů <xref:System.Windows.Automation>. Nejnovější informace o [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]najdete v tématu [rozhraní API pro Windows Automation: automatizace uživatelského rozhraní](/windows/win32/winauto/entry-uiauto-win32).  
+> Tato dokumentace je určena pro vývojáře rozhraní [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] .NET Framework, kteří chtějí používat spravované třídy definované v oboru <xref:System.Windows.Automation> názvů. Nejnovější informace o [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]rozhraní [WINDOWS Automation API: Automatizace uživatelského rozhraní](/windows/win32/winauto/entry-uiauto-win32).  
   
- Zprostředkovatelé automatizace uživatelského rozhraní umožňují ovládacím prvkům komunikovat s klientskými aplikacemi pro automatizaci uživatelského rozhraní. Obecně platí, že každý ovládací prvek nebo jiný jedinečný prvek v [!INCLUDE[TLA#tla_ui](../../../includes/tlasharptla-ui-md.md)] představuje poskytovatel. Zprostředkovatel zpřístupňuje informace o elementu a volitelně implementuje vzory ovládacích prvků, které umožňují klientské aplikaci pracovat s ovládacím prvkem.  
+ Zprostředkovatelé automatizace uživatelského rozhraní umožňují ovládacím prvkům komunikovat s klientskými aplikacemi automatizace uživatelského rozhraní. Obecně platí, že každý ovládací [!INCLUDE[TLA#tla_ui](../../../includes/tlasharptla-ui-md.md)] prvek nebo jiný odlišný prvek v a je reprezentován zprostředkovatelem. Zprostředkovatel zveřejňuje informace o prvku a volitelně implementuje vzory ovládacích prvků, které umožňují klientské aplikaci pracovat s ovládacím prvkem.  
   
- Klientské aplikace obvykle nepotřebují pracovat přímo s poskytovateli. Většina standardních ovládacích prvků v aplikacích, které používají rozhraní Win32, model Windows Forms nebo [!INCLUDE[TLA#tla_winclient](../../../includes/tlasharptla-winclient-md.md)], je automaticky vystavena [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] systému. Aplikace, které implementují vlastní ovládací prvky, mohou také implementovat poskytovatele [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] pro tyto ovládací prvky a klientské aplikace nemusí provádět žádné zvláštní kroky, aby k nim měli přístup.  
+ Klientské aplikace obvykle nemusí pracovat přímo s poskytovateli. Většina standardních ovládacích prvků v aplikacích, které [!INCLUDE[TLA#tla_winclient](../../../includes/tlasharptla-winclient-md.md)] používají Win32, [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] Windows Forms nebo architektury jsou automaticky vystaveny systému. Aplikace, které implementují [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] vlastní ovládací prvky, mohou také implementovat zprostředkovatele pro tyto ovládací prvky a klientské aplikace nemusí provádět žádné zvláštní kroky k získání přístupu k nim.  
   
- Toto téma poskytuje přehled o tom, jak vývojáři řízení implementují poskytovatele [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], zejména pro ovládací prvky v model Windows Forms a v systému Win32.  
+ Toto téma obsahuje přehled o [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] tom, jak vývojáři ovládacích prvků implementují zprostředkovatele, zejména pro ovládací prvky ve Windows Forms a Win32 windows.  
   
-<a name="Types_of_Providers"></a>   
-## <a name="types-of-providers"></a>Typy zprostředkovatelů  
- Zprostředkovatelé automatizace uživatelského rozhraní spadají do dvou kategorií: poskytovatelé na straně klienta a poskytovatelé na straně serveru.  
+<a name="Types_of_Providers"></a>
+## <a name="types-of-providers"></a>Typy poskytovatelů  
+ Zprostředkovatelé automatizace uživatelského rozhraní spadají do dvou kategorií: zprostředkovatelé na straně klienta a zprostředkovatelé na straně serveru.  
   
 ### <a name="client-side-providers"></a>Poskytovatelé na straně klienta  
- Poskytovatelé na straně klienta jsou implementováni pomocí klientů automatizace uživatelského rozhraní ke komunikaci s aplikací, která nepodporuje, nebo neplně podporuje [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]. Poskytovatelé na straně klienta obvykle komunikují se serverem napříč hranicí procesu odesíláním a přijímáním zpráv systému Windows.  
+ Zprostředkovatelé na straně klienta jsou implementovány klienty Automatizace uživatelského rozhraní ke [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]komunikaci s aplikací, která nepodporuje nebo plně nepodporuje . Zprostředkovatelé na straně klienta obvykle komunikují se serverem přes hranice procesu odesíláním a přijímáním zpráv systému Windows.  
   
- Vzhledem k tomu, že zprostředkovatelé automatizace uživatelského rozhraní pro ovládací prvky v aplikacích Win32, model Windows Forms nebo [!INCLUDE[TLA2#tla_winclient](../../../includes/tla2sharptla-winclient-md.md)] jsou dodávány jako součást operačního systému, klientské aplikace zřídka musí implementovat své vlastní zprostředkovatele a tento přehled je nepokrývá.  
+ Vzhledem k tomu, že zprostředkovatelé automatizace [!INCLUDE[TLA2#tla_winclient](../../../includes/tla2sharptla-winclient-md.md)] uživatelského rozhraní pro ovládací prvky v systému Win32, Windows Forms nebo aplikací jsou dodávány jako součást operačního systému, klientské aplikace zřídka mají implementovat své vlastní zprostředkovatele a tento přehled nepokrývá je dále.  
   
-### <a name="server-side-providers"></a>Poskytovatelé na straně serveru  
- Poskytovatelé na straně serveru jsou implementováni vlastními ovládacími prvky nebo aplikacemi, které jsou založeny na jiném uživatelském rozhraní než Win32, model Windows Forms nebo [!INCLUDE[TLA2#tla_winclient](../../../includes/tla2sharptla-winclient-md.md)].  
+### <a name="server-side-providers"></a>Zprostředkovatelé na straně serveru  
+ Zprostředkovatelé na straně serveru jsou implementováni vlastními ovládacími prvky nebo aplikacemi, [!INCLUDE[TLA2#tla_winclient](../../../includes/tla2sharptla-winclient-md.md)]které jsou založeny na jiném rámci rozhraní ui než Win32, Windows Forms nebo .  
   
- Poskytovatelé na straně serveru komunikují s klientskými aplikacemi napříč hranicí procesu vyvoláním rozhraní pro systém [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] Core, který zase obsluhuje požadavky od klientů.  
+ Zprostředkovatelé na straně serveru komunikují s klientskými aplikacemi [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] přes hranice procesu tím, že vystavují rozhraní základnímu systému, který zase obsluhuje požadavky klientů.  
   
-<a name="AutomationProviderConcepts"></a>   
-## <a name="ui-automation-provider-concepts"></a>Koncepce zprostředkovatele automatizace uživatelského rozhraní  
- Tato část poskytuje stručné vysvětlení některých klíčových konceptů, které potřebujete pochopit, aby bylo možné implementovat zprostředkovatele automatizace uživatelského rozhraní.  
+<a name="AutomationProviderConcepts"></a>
+## <a name="ui-automation-provider-concepts"></a>Koncepty zprostředkovatelů automatizace uživatelského rozhraní  
+ Tato část obsahuje stručné vysvětlení některých klíčových konceptů, které je třeba pochopit, aby bylo možné implementovat zprostředkovatele automatizace uživatelského rozhraní.  
   
 ### <a name="elements"></a>Elementy  
- prvky [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] jsou části [!INCLUDE[TLA#tla_ui](../../../includes/tlasharptla-ui-md.md)], které jsou viditelné pro klienty automatizace uživatelského rozhraní. Mezi příklady patří okna aplikace, podokna, tlačítka, popisy tlačítek, seznamy a položky seznamu.  
+ [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]prvky jsou [!INCLUDE[TLA#tla_ui](../../../includes/tlasharptla-ui-md.md)] kusy, které jsou viditelné pro klienty automatizace uživatelského rozhraní. Mezi příklady patří okna aplikací, podokna, tlačítka, popisky, seznamy a položky seznamu.  
   
 ### <a name="navigation"></a>Navigace  
- prvky [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] jsou zpřístupněny klientům jako [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] strom. [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] sestaví strom tak, že přejdete z jednoho prvku na jiný. Navigace je povolena poskytovateli pro každý prvek, z nichž každá může ukazovat na nadřazenou položku, na stejné úrovni a na podřízené objekty.  
+ [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]prvky jsou klientům [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] vystaveny jako strom. [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]vytvoří strom přechodem z jednoho prvku do druhého. Navigace je povolena zprostředkovateli pro každý prvek, z nichž každý může překážet na nadřazené, na stejné úrovni a podřízené objekty.  
   
- Další informace o zobrazení klienta stromu [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] najdete v tématu [Přehled stromu automatizace uživatelského rozhraní](ui-automation-tree-overview.md).  
+ Další informace o zobrazení klienta ve stromu [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] naleznete v [tématu Přehled automatizace uživatelského rozhraní](ui-automation-tree-overview.md).  
   
 ### <a name="views"></a>Zobrazení  
- Klient nástroje může zobrazit strom [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] ve třech hlavních zobrazeních, jak je znázorněno v následující tabulce.  
+ Klient může zobrazit [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] strom ve třech hlavních zobrazeních, jak je znázorněno v následující tabulce.  
   
 |||  
 |-|-|  
-|Nezpracované zobrazení|Obsahuje všechny prvky.|  
-|Zobrazení ovládacích prvků|Obsahuje prvky, které jsou ovládacími prvky.|  
-|Zobrazení Content (Obsah)|Obsahuje prvky, které mají obsah.|  
+|Nezpracovaná zobrazení|Obsahuje všechny prvky.|  
+|Zobrazení ovládacího prvku|Obsahuje prvky, které jsou ovládací prvky.|  
+|Zobrazení obsahu|Obsahuje prvky, které mají obsah.|  
   
- Další informace o klientských zobrazeních [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] stromu najdete v tématu [Přehled stromu automatizace uživatelského rozhraní](ui-automation-tree-overview.md).  
+ Další informace o klientských [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] zobrazeních stromu naleznete v [tématu Přehled stromu automatizace uživatelského rozhraní](ui-automation-tree-overview.md).  
   
- Je zodpovědný za implementaci poskytovatele k definování elementu jako obsahu elementu nebo ovládacího prvku. Prvky ovládacího prvku mohou nebo nemusí být zároveň prvky obsahu, ale všechny prvky obsahu jsou ovládací prvky.  
+ Je odpovědností implementace zprostředkovatele definovat prvek jako prvek obsahu nebo prvek ovládacího prvku. Ovládací prvky mohou nebo nemusí být také prvky obsahu, ale všechny prvky obsahu jsou prvky ovládacího prvku.  
   
-### <a name="frameworks"></a>Architektury  
- Rozhraní je komponenta, která spravuje podřízené ovládací prvky, testování přístupů a vykreslování v oblasti obrazovky. Například okno Win32, často označované jako HWND, může sloužit jako rozhraní, které obsahuje více [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] prvků, jako je například panel nabídek, stavový řádek a tlačítka.  
+### <a name="frameworks"></a>Rozhraní  
+ Rozhraní framework je součást, která spravuje podřízené ovládací prvky, testování přístupů a vykreslování v oblasti obrazovky. Například okno Win32, často označované jako HWND, může sloužit [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] jako rámec, který obsahuje více prvků, jako je například řádek nabídek, stavový řádek a tlačítka.  
   
- Ovládací prvky kontejnerů Win32, jako jsou seznamy a stromová zobrazení, se považují za rozhraní, protože obsahují svůj vlastní kód pro vykreslování podřízených položek a pro ně provádí testování na základě volání. Naproti tomu [!INCLUDE[TLA2#tla_winclient](../../../includes/tla2sharptla-winclient-md.md)] seznam není rozhraním, protože vykreslování a testování volání je zpracováváno pomocí okna obsahující [!INCLUDE[TLA2#tla_winclient](../../../includes/tla2sharptla-winclient-md.md)].  
+ Ovládací prvky kontejneru Win32, jako jsou seznamy a stromová zobrazení jsou považovány za rámce, protože obsahují vlastní kód pro vykreslování podřízených položek a provádění testování přístupů na nich. Naproti tomu [!INCLUDE[TLA2#tla_winclient](../../../includes/tla2sharptla-winclient-md.md)] seznam není rámec, protože vykreslování a testování [!INCLUDE[TLA2#tla_winclient](../../../includes/tla2sharptla-winclient-md.md)] přístupů je zpracováváno obsahující okno.  
   
- [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)] v aplikaci lze vytvořit v různých architekturách. Například okno aplikace HWND může obsahovat Dynamic HTML (DHTML), který zase obsahuje komponentu, jako je pole se seznamem v HWND.  
+ V [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)] aplikaci mohou být tvořeny různými rámci. Okno aplikace HWND může například obsahovat dynamické HTML (DHTML), které zase obsahuje komponentu, jako je například pole se seznamem v HWND.  
   
-### <a name="fragments"></a>Fragmenty  
- Fragment je úplný podstrom prvků z konkrétního rozhraní. Element v kořenovém uzlu podstromu se nazývá kořen fragmentu. Kořen fragmentu nemá nadřazený objekt, ale je hostovaný v jiném rozhraní, obvykle v okně Win32 (HWND).  
+### <a name="fragments"></a>Fragments  
+ Fragment je úplný podstrom prvků z určitého rámce. Prvek v kořenovém uzlu podstromu se nazývá kořen ový fragment. Kořen fragmentu nemá nadřazený, ale je hostován v rámci jiného rámce, obvykle okno Win32 (HWND).  
   
 ### <a name="hosts"></a>Hostitelé  
- Kořenový uzel každého fragmentu musí být hostovaný v elementu, obvykle v okně Win32 (HWND). Výjimkou je plocha, která není hostovaná v žádném jiném elementu. Hostitel vlastního ovládacího prvku je HWND samotného ovládacího prvku, nikoli okna aplikace nebo jiné okno, které může obsahovat skupiny ovládacích prvků nejvyšší úrovně.  
+ Kořenový uzel každého fragmentu musí být hostován v elementu, obvykle v okně Win32 (HWND). Výjimkou je plocha, která není hostována v žádném jiném prvku. Hostitel vlastní ovládací prvek je HWND samotného ovládacího prvku, nikoli okno aplikace nebo jiné okno, které může obsahovat skupiny ovládacích prvků nejvyšší úrovně.  
   
- Hostitel fragmentu hraje důležitou roli při poskytování [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] Services. Umožňuje navigaci do kořenového adresáře fragmentů a poskytuje některé výchozí vlastnosti, aby je vlastní zprostředkovatel nemusel implementovat.  
+ Hostitel fragmentu hraje důležitou roli [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] při poskytování služeb. Umožňuje navigaci do kořenového adresáře fragmentu a poskytuje některé výchozí vlastnosti tak, aby je vlastní zprostředkovatel nemusel implementovat.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Implementace zprostředkovatele automatizace uživatelského rozhraní na straně serveru](server-side-ui-automation-provider-implementation.md)

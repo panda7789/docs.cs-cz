@@ -9,64 +9,64 @@ helpviewer_keywords:
 - XML documentation, creating using CodeDOM
 - Code Document Object Model, generating XML documentation
 ms.assetid: e3b80484-36b9-41dd-9d21-a2f9a36381dc
-ms.openlocfilehash: cdd1f173274b6bd33c4a67ed8eb0974c4c8e8e70
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: a0ccb469a43c3a21a76eaf24fa7ce7b490dd5c4a
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73130179"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79180513"
 ---
 # <a name="how-to-create-an-xml-documentation-file-using-codedom"></a>Postupy: Vytváření souborů dokumentace XML pomocí modelu CodeDOM
-CodeDOM lze použít k vytvoření kódu, který generuje dokumentaci XML. Proces zahrnuje vytvoření grafu CodeDOM, který obsahuje dokumentační komentáře XML, generování kódu a kompilování generovaného kódu s možností kompilátoru, která vytvoří výstup dokumentace XML.  
+CodeDOM lze použít k vytvoření kódu, který generuje dokumentaci XML. Proces zahrnuje vytvoření grafu CodeDOM, který obsahuje komentáře dokumentace XML, generování kódu a kompilaci generovaného kódu s možností kompilátoru, který vytvoří výstup dokumentace XML.  
   
-### <a name="to-create-a-codedom-graph-that-contains-xml-documentation-comments"></a>Vytvoření grafu CodeDOM, který obsahuje dokumentační komentáře XML  
+### <a name="to-create-a-codedom-graph-that-contains-xml-documentation-comments"></a>Vytvoření grafu CodeDOM, který obsahuje komentáře k dokumentaci XML  
   
-1. Vytvořte <xref:System.CodeDom.CodeCompileUnit> obsahující graf CodeDOM pro ukázkovou aplikaci.  
+1. Vytvořte <xref:System.CodeDom.CodeCompileUnit> obsahující codedom graf pro ukázkovou aplikaci.  
   
-2. Použijte konstruktor <xref:System.CodeDom.CodeCommentStatement.%23ctor%2A> s parametrem `docComment` nastaveným na `true` k vytvoření prvků komentáře XML dokumentace a textu.  
+2. Pomocí <xref:System.CodeDom.CodeCommentStatement.%23ctor%2A> konstruktoru `docComment` s parametrem nastaveným pro `true` vytvoření prvků komentářů a textu dokumentace XML.  
   
      [!code-csharp[CodeDomHelloWorldSample#4](../../../samples/snippets/csharp/VS_Snippets_CLR/CodeDomHelloWorldSample/cs/program.cs#4)]
      [!code-vb[CodeDomHelloWorldSample#4](../../../samples/snippets/visualbasic/VS_Snippets_CLR/CodeDomHelloWorldSample/vb/program.vb#4)]  
   
-### <a name="to-generate-the-code-from-the-codecompileunit"></a>Generování kódu z CodeCompileUnit  
+### <a name="to-generate-the-code-from-the-codecompileunit"></a>Chcete-li generovat kód z CodeCompileUnit  
   
-1. K vygenerování kódu a vytvoření zdrojového souboru, který se má zkompilovat, použijte metodu <xref:System.CodeDom.Compiler.CodeDomProvider.GenerateCodeFromCompileUnit%2A>.  
+1. Pomocí <xref:System.CodeDom.Compiler.CodeDomProvider.GenerateCodeFromCompileUnit%2A> metody vygenerujte kód a vytvořte zdrojový soubor, který má být kompilován.  
   
      [!code-csharp[CodeDomHelloWorldSample#5](../../../samples/snippets/csharp/VS_Snippets_CLR/CodeDomHelloWorldSample/cs/program.cs#5)]
      [!code-vb[CodeDomHelloWorldSample#5](../../../samples/snippets/visualbasic/VS_Snippets_CLR/CodeDomHelloWorldSample/vb/program.vb#5)]  
   
-### <a name="to-compile-the-code-and-generate-the-documentation-file"></a>Pro zkompilování kódu a generování souboru dokumentace  
+### <a name="to-compile-the-code-and-generate-the-documentation-file"></a>Kompilace kódu a generování souboru dokumentace  
   
-1. Přidejte možnost kompilátoru **/doc** do vlastnosti <xref:System.CodeDom.Compiler.CompilerParameters.CompilerOptions%2A> objektu <xref:System.CodeDom.Compiler.CompilerParameters> a předejte objekt metodě <xref:System.CodeDom.Compiler.CodeDomProvider.CompileAssemblyFromFile%2A>, abyste vytvořili soubor dokumentace XML při kompilování kódu.  
+1. Přidejte možnost kompilátoru <xref:System.CodeDom.Compiler.CompilerParameters.CompilerOptions%2A> <xref:System.CodeDom.Compiler.CompilerParameters> **/doc** do vlastnosti objektu a předajte objekt metodě <xref:System.CodeDom.Compiler.CodeDomProvider.CompileAssemblyFromFile%2A> a vytvořte soubor dokumentace XML při kompilaci kódu.  
   
      [!code-csharp[CodeDomHelloWorldSample#6](../../../samples/snippets/csharp/VS_Snippets_CLR/CodeDomHelloWorldSample/cs/program.cs#6)]
      [!code-vb[CodeDomHelloWorldSample#6](../../../samples/snippets/visualbasic/VS_Snippets_CLR/CodeDomHelloWorldSample/vb/program.vb#6)]  
   
 ## <a name="example"></a>Příklad  
- Následující příklad kódu vytvoří graf CodeDOM s komentáři k dokumentaci, vygeneruje soubor kódu z grafu a zkompiluje soubor a vytvoří přidružený soubor dokumentace XML.  
+ Následující příklad kódu vytvoří graf CodeDOM s poznámkami v dokumentaci, vygeneruje soubor kódu z grafu a zkompiluje soubor a vytvoří přidružený soubor dokumentace XML.  
   
  [!code-csharp[CodeDomHelloWorldSample#1](../../../samples/snippets/csharp/VS_Snippets_CLR/CodeDomHelloWorldSample/cs/program.cs#1)]
  [!code-vb[CodeDomHelloWorldSample#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/CodeDomHelloWorldSample/vb/program.vb#1)]  
   
- Příklad kódu vytvoří následující dokumentaci XML v souboru HelloWorldDoc. XML.  
+ Příklad kódu vytvoří následující dokumentaci XML v souboru HelloWorldDoc.xml.  
   
 ```xml  
-<?xml version="1.0" ?>   
+<?xml version="1.0" ?>
 <doc>  
   <assembly>  
-    <name>HelloWorld</name>   
+    <name>HelloWorld</name>
   </assembly>  
   <members>  
     <member name="T:Samples.Class1">  
       <summary>  
-        Create a Hello World application.   
-        <seealso cref="M:Samples.Class1.Main" />   
+        Create a Hello World application.
+        <seealso cref="M:Samples.Class1.Main" />
       </summary>  
     </member>  
     <member name="M:Samples.Class1.Main">  
       <summary>  
-        Main method for HelloWorld application.   
-        <para>Add a new paragraph to the description.</para>   
+        Main method for HelloWorld application.
+        <para>Add a new paragraph to the description.</para>
       </summary>  
     </member>  
   </members>  
@@ -75,10 +75,10 @@ CodeDOM lze použít k vytvoření kódu, který generuje dokumentaci XML. Proce
   
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
   
-- Tento příklad kódu vyžaduje úspěšné provedení sady oprávnění `FullTrust`.  
+- Tento příklad kódu `FullTrust` vyžaduje oprávnění nastavena úspěšně spustit.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Dokumentace kódu s XML](../../visual-basic/programming-guide/program-structure/documenting-your-code-with-xml.md)
-- [Dokumentační komentáře XML](../../csharp/programming-guide/xmldoc/index.md)
+- [Komentáře k dokumentaci XML](../../csharp/programming-guide/xmldoc/index.md)
 - [Dokumentace XML](/cpp/ide/xml-documentation-visual-cpp)

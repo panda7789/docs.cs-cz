@@ -15,56 +15,56 @@ helpviewer_keywords:
 ms.assetid: 8844d0dd-730e-4592-8a7b-c1462d312c70
 topic_type:
 - apiref
-ms.openlocfilehash: 06b81615565a04db7d6cfef4da9b5372a85afd68
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 6a4489d094974eb872b39824ceb185b0cbe48625
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74450344"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79177832"
 ---
 # <a name="imetadataassemblyimportenumassemblyrefs-method"></a>IMetaDataAssemblyImport::EnumAssemblyRefs – metoda
-Vytvoří výčet instancí `mdAssemblyRef`, které jsou definovány v manifestu sestavení.  
+Vyjmenovává `mdAssemblyRef` instance, které jsou definovány v manifestu sestavení.  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```cpp  
 HRESULT EnumAssemblyRefs (  
-    [in, out] HCORENUM        *phEnum,   
-    [out]     mdAssemblyRef   rAssemblyRefs[],   
-    [in]      ULONG           cMax,   
+    [in, out] HCORENUM        *phEnum,
+    [out]     mdAssemblyRef   rAssemblyRefs[],
+    [in]      ULONG           cMax,
     [out]     ULONG           *pcTokens  
 );  
 ```  
   
 ## <a name="parameters"></a>Parametry  
  `phEnum`  
- [in, out] Ukazatel na enumerátor. Při prvním volání metody `EnumAssemblyRefs` musí být hodnota null.  
+ [dovnitř, ven] Ukazatel na čítač výčtu. To musí být hodnota `EnumAssemblyRefs` null při první volání metody.  
   
  `rAssemblyRefs`  
- mimo Výčet `mdAssemblyRef` tokeny metadat  
+ [out] Výčet tokenů `mdAssemblyRef` metadat.  
   
  `cMax`  
- pro Maximální počet tokenů, které lze umístit do pole `rAssemblyRefs`.  
+ [v] Maximální počet tokenů, které mohou `rAssemblyRefs` být umístěny v poli.  
   
  `pcTokens`  
- mimo Počet tokenů skutečně umístěných v `rAssemblyRefs`.  
+ [out] Počet tokenů skutečně umístěných v `rAssemblyRefs`.  
   
 ## <a name="return-value"></a>Návratová hodnota  
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
-|`S_OK`|`EnumAssemblyRefs` byla úspěšně vrácena.|  
-|`S_FALSE`|Neexistují žádné tokeny k vytvoření výčtu. V takovém případě je `pcTokens` nastavena na hodnotu nula.|  
+|`S_OK`|`EnumAssemblyRefs`úspěšně vrácena.|  
+|`S_FALSE`|Neexistují žádné tokeny výčet. V tomto `pcTokens` případě je nastavena na nulu.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Hlavička:** Cor. h  
+ **Záhlaví:** Kor.h.  
   
- **Knihovna:** Používá se jako prostředek v knihovně MsCorEE. dll.  
+ **Knihovna:** Používá se jako prostředek v souboru MsCorEE.dll  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [IMetaDataAssemblyImport – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyimport-interface.md)

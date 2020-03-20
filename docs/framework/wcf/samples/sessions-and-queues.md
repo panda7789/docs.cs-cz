@@ -2,35 +2,35 @@
 title: Relace a fronty
 ms.date: 03/30/2017
 ms.assetid: 47d7c5c2-1e6f-4619-8003-a0ff67dcfbd6
-ms.openlocfilehash: 719212d908b9d5b5207dd5b4e7701ef903de31a0
-ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
+ms.openlocfilehash: 8a342b185c7965e9ee0ff9941a09e00fc392ad4b
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74715070"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79144096"
 ---
 # <a name="sessions-and-queues"></a>Relace a fronty
-Tato ukázka předvádí, jak odeslat a přijmout sadu souvisejících zpráv v komunikaci ve frontě prostřednictvím přenosu služby Řízení front zpráv (MSMQ). V této ukázce se používá vazba `netMsmqBinding`. Služba je samoobslužná Konzolová aplikace, která vám umožní sledovat službu přijímající zprávy zařazené do fronty.  
+Tato ukázka ukazuje, jak odesílat a přijímat sadu souvisejících zpráv ve frontové komunikaci prostřednictvím přenosu služby Řízení front zpráv (MSMQ). Tato ukázka `netMsmqBinding` používá vazbu. Služba je aplikace konzoly s vlastním hostitelem, která umožňuje sledovat službu přijímající zprávy ve frontě.  
   
 > [!NOTE]
-> Postup nastavení a pokyny pro sestavení pro tuto ukázku najdete na konci tohoto tématu.  
+> Postup instalace a pokyny k sestavení pro tuto ukázku jsou umístěny na konci tohoto tématu.  
   
 > [!IMPORTANT]
-> Ukázky už můžou být na vašem počítači nainstalované. Než budete pokračovat, vyhledejte následující (výchozí) adresář.  
->   
+> Ukázky mohou být již nainstalovány v počítači. Před pokračováním zkontrolujte následující (výchozí) adresář.  
+>
 > `<InstallDrive>:\WF_WCF_Samples`  
->   
-> Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] Samples. Tato ukázka se nachází v následujícím adresáři.  
->   
+>
+> Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a Windows Workflow Foundation (WF) Ukázky pro rozhraní .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka je umístěna v následujícím adresáři.  
+>
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Binding\Net\MSMQ\Session`  
   
- V komunikaci ve frontě klient komunikuje se službou pomocí fronty. Klient přesněji odesílá zprávy do fronty. Služba přijímá zprávy z fronty. Službu a klient proto nemusí běžet současně, aby bylo možné komunikovat pomocí fronty.  
+ Ve frontové komunikaci klient komunikuje se službou pomocí fronty. Přesněji řečeno, klient odesílá zprávy do fronty. Služba přijímá zprávy z fronty. Služba a klient proto nemusí být spuštěny současně komunikovat pomocí fronty.  
   
- V některých případech klient odesílá sadu zpráv, které jsou vzájemně propojené ve skupině. Pokud se zprávy musí zpracovávat společně nebo v zadaném pořadí, můžete k jejich seskupení použít frontu pro zpracování v rámci jedné přijímající aplikace. To je důležité hlavně v případě, že je na skupině serverů několik přijímajících aplikací a je nutné zajistit, aby byla skupina zpráv zpracována stejnou přijímající aplikací. Relace ve frontě jsou mechanizmus, který slouží k posílání a přijímání souvisejících sad zpráv, které musí zpracovat všechny najednou. Relace ve frontě vyžadují transakci, která se projeví v tomto modelu.  
+ V některých případě klient odešle sadu zpráv, které spolu vzájemně souvisejí ve skupině. Pokud zprávy musí být zpracovány společně nebo v zadaném pořadí, fronta může být použita k jejich seskupení, pro zpracování jednou přijímající aplikací. To je obzvláště důležité v případě, že existuje několik přijímajících aplikací na skupině serverů a je nutné zajistit, aby skupina zpráv byla zpracována stejnou přijímající aplikací. Relace ve frontě jsou mechanismus používaný k odesílání a přijímání související sady zpráv, které musí být zpracovány najednou. Relace ve frontě vyžadují k zobrazení tohoto vzoru transakci.  
   
- V ukázce pošle klient několik zpráv do služby jako součást relace v rámci oboru jedné transakce.  
+ V ukázce klient odešle několik zpráv do služby jako součást relace v rámci jedné transakce.  
   
- Kontrakt služby je `IOrderTaker`, který definuje jednosměrnou službu, která je vhodná pro použití s frontami. <xref:System.ServiceModel.SessionMode> použitá v kontraktu uvedené v následujícím ukázkovém kódu označují, že zprávy jsou součástí relace.  
+ Servisní smlouva `IOrderTaker`je , která definuje jednosměrnou službu, která je vhodná pro použití s frontami. Použité <xref:System.ServiceModel.SessionMode> ve smlouvě uvedené v následujícím ukázkovém kódu označuje, že zprávy jsou součástí relace.  
 
 ```csharp
 [ServiceContract(Namespace = "http://Microsoft.ServiceModel.Samples", SessionMode=SessionMode.Required)]  
@@ -47,7 +47,7 @@ public interface IOrderTaker
 }  
 ```
 
- Služba definuje operace služeb takovým způsobem, že první operace zařadí v transakci, ale neprovede automatické dokončení transakce. Následující operace také zařadí do stejné transakce, ale neprovádí se automaticky. Poslední operace v relaci automaticky dokončí transakci. Proto se stejná transakce používá pro několik vyvolání operací v kontraktu služby. Pokud některá z operací vyvolá výjimku, transakce se vrátí zpět a relace se vrátí zpět do fronty. Po úspěšném dokončení poslední operace se transakce potvrdí. Služba používá `PerSession` jako <xref:System.ServiceModel.InstanceContextMode> pro příjem všech zpráv v relaci ve stejné instanci služby.  
+ Služba definuje operace služby tak, že první operace zařadí do transakce, ale nedokončí automaticky transakci. Následné operace také zařadit do stejné transakce, ale není automaticky dokončit. Poslední operace v relaci automaticky dokončí transakci. Stejná transakce se tedy používá pro několik vyvolání operace v servisní smlouvě. Pokud některá z operací vyvolat výjimku, pak transakce vrátí zpět a relace je umístěn zpět do fronty. Po úspěšném dokončení poslední operace je transakce potvrzena. Služba používá `PerSession` jako <xref:System.ServiceModel.InstanceContextMode> přijímat všechny zprávy v relaci na stejné instanci služby.  
 
 ```csharp
 [ServiceBehavior(InstanceContextMode=InstanceContextMode.PerSession)]  
@@ -55,7 +55,7 @@ public class OrderTakerService : IOrderTaker
 {  
     PurchaseOrder po;  
   
-    [OperationBehavior(TransactionScopeRequired = true,   
+    [OperationBehavior(TransactionScopeRequired = true,
                                  TransactionAutoComplete = false)]  
     public void OpenPurchaseOrder(string customerId)  
     {  
@@ -63,16 +63,16 @@ public class OrderTakerService : IOrderTaker
         po = new PurchaseOrder(customerId);  
     }  
   
-    [OperationBehavior(TransactionScopeRequired = true,   
+    [OperationBehavior(TransactionScopeRequired = true,
                                   TransactionAutoComplete = false)]  
     public void AddProductLineItem(string productId, int quantity)  
     {  
         po.AddProductLineItem(productId, quantity);  
-        Console.WriteLine("Product " + productId + " quantity " +   
+        Console.WriteLine("Product " + productId + " quantity " +
                             quantity + " added to purchase order");  
     }  
   
-    [OperationBehavior(TransactionScopeRequired = true,   
+    [OperationBehavior(TransactionScopeRequired = true,
                                   TransactionAutoComplete = true)]  
     public void EndPurchaseOrder()  
     {  
@@ -83,7 +83,7 @@ public class OrderTakerService : IOrderTaker
 }  
 ```
 
- Služba je hostována svým hostitelem. Při použití přenosu služby MSMQ musí být použitá fronta předem vytvořená. To lze provést ručně nebo prostřednictvím kódu. V této ukázce služba obsahuje kód <xref:System.Messaging> pro kontrolu existence fronty a v případě potřeby ji vytvoří. Název fronty se načte z konfiguračního souboru pomocí třídy <xref:System.Configuration.ConfigurationManager.AppSettings%2A>.  
+ Služba je hostována samostatně. Při použití přenosu služby MSMQ musí být použitá fronta vytvořena předem. To lze provést ručně nebo prostřednictvím kódu. V této ukázce služba obsahuje <xref:System.Messaging> kód pro kontrolu existence fronty a v případě potřeby ji vytvoří. Název fronty se čte z konfiguračního souboru pomocí třídy. <xref:System.Configuration.ConfigurationManager.AppSettings%2A>  
 
 ```csharp
 // Host the service within this EXE console application.  
@@ -109,12 +109,12 @@ public static void Main()
         Console.ReadLine();  
   
         // Close the ServiceHost to shutdown the service.  
-        serviceHost.Close();   
+        serviceHost.Close();
     }  
 }  
 ```
 
- Název fronty MSMQ je zadán v oddílu appSettings konfiguračního souboru. Koncový bod pro službu je definován v oddílu System. serviceModel konfiguračního souboru a určuje `netMsmqBinding` vazby.  
+ Název fronty služby MSMQ je určen v části appSettings konfiguračního souboru. Koncový bod pro službu je definován v části system.serviceModel konfiguračního souboru a určuje vazbu. `netMsmqBinding`  
   
 ```xml  
 <appSettings>  
@@ -138,7 +138,7 @@ public static void Main()
 <system.serviceModel>  
 ```  
   
- Klient vytvoří obor transakce. Všechny zprávy v relaci jsou odesílány do fronty v rámci oboru transakce, což způsobuje, že se bude považovat za atomickou jednotku, ve které všechny zprávy jsou úspěšné nebo neúspěšné. Transakce je potvrzena voláním <xref:System.Transactions.TransactionScope.Complete%2A>.  
+ Klient vytvoří obor transakce. Všechny zprávy v relaci jsou odesílány do fronty v rámci oboru transakce, což způsobuje, že je považován za atomické jednotky, kde všechny zprávy úspěšné nebo neúspěšné. Transakce je potvrzena <xref:System.Transactions.TransactionScope.Complete%2A>voláním .  
 
 ```csharp
 //Create a transaction scope.  
@@ -162,7 +162,7 @@ using (TransactionScope scope = new TransactionScope(TransactionScopeOption.Requ
     client.EndPurchaseOrder();  
   
     //Closing the client gracefully closes the connection and cleans up resources.  
-    client.Close();                  
+    client.Close();
   
     // Complete the transaction.  
     scope.Complete();  
@@ -170,11 +170,11 @@ using (TransactionScope scope = new TransactionScope(TransactionScopeOption.Requ
 ```
 
 > [!NOTE]
-> Pro všechny zprávy v relaci lze použít pouze jednu transakci a všechny zprávy v relaci je nutné před potvrzením transakce odeslat. Ukončení klienta ukončí relaci. Proto musí být klient před dokončením transakce uzavřen, aby odesílal všechny zprávy v relaci do fronty.  
+> Pro všechny zprávy v relaci můžete použít pouze jednu transakci a všechny zprávy v relaci musí být odeslány před potvrzením transakce. Zavření klienta ukončí relaci. Proto musí být klient uzavřen před dokončením transakce odeslat všechny zprávy v relaci do fronty.  
   
- Když spustíte ukázku, aktivity klienta a služby se zobrazí v oknech konzoly služby i klienta. Můžete vidět, že služba přijímá zprávy z klienta. V každém okně konzoly stiskněte klávesu ENTER a ukončete službu a klienta. Počítejte s tím, že protože se používá služba zařazování do fronty, klient a služba nemusí být spuštěny ve stejnou dobu. Můžete spustit klienta, vypnout ho a pak spustit službu a nadále přijímat zprávy.  
+ Při spuštění ukázky jsou aktivity klienta a služby zobrazeny v systému Windows služby i klientské konzole. Můžete vidět službu přijímat zprávy od klienta. Stisknutím klávesy ENTER v každém okně konzoly vypněte službu a klienta. Všimněte si, že vzhledem k tomu, že je používána frontová služba, klient a služba nemusí být spuštěny současně. Můžete spustit klienta, vypnout a potom spustit službu a stále přijímá jeho zprávy.  
   
- Na straně klienta.  
+ Na klienta.  
   
 ```console  
 Purchase Order created  
@@ -185,7 +185,7 @@ Closing the purchase order
 Press <ENTER> to terminate client.  
 ```  
   
- Ve službě.  
+ Na bohoslužbě.  
   
 ```console  
 The service is ready.  
@@ -207,17 +207,17 @@ Purchase Order: 7c86fef0-2306-4c51-80e6-bcabcc1a6e5e
   
 ### <a name="to-set-up-build-and-run-the-sample"></a>Nastavení, sestavení a spuštění ukázky  
   
-1. Ujistěte se, že jste provedli [postup jednorázového nastavení pro Windows Communication Foundation ukázky](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
+1. Ujistěte se, že jste provedli [jednorázový postup instalace pro ukázky windows communication foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
   
-2. Pokud chcete vytvořit C#edici, C++nebo Visual Basic .NET, postupujte podle pokynů v tématu [sestavování ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
+2. Chcete-li vytvořit c#, C++ nebo Visual Basic .NET vydání řešení, postupujte podle pokynů v [sestavení windows communication foundation ukázky](../../../../docs/framework/wcf/samples/building-the-samples.md).  
   
-3. Chcete-li spustit ukázku v konfiguraci s jedním nebo více počítači, postupujte podle pokynů v části [spuštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
+3. Chcete-li spustit ukázku v konfiguraci jednoho nebo více počítačů, postupujte podle pokynů v [části Spuštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
   
- Ve výchozím nastavení je u <xref:System.ServiceModel.NetMsmqBinding>povolena možnost zabezpečení přenosu. Existují dvě důležité vlastnosti zabezpečení přenosu ve službě MSMQ, konkrétně <xref:System.ServiceModel.MsmqTransportSecurity.MsmqAuthenticationMode%2A> a <xref:System.ServiceModel.MsmqTransportSecurity.MsmqProtectionLevel%2A>`.` ve výchozím nastavení je režim ověřování nastaven na `Windows` a úroveň ochrany je nastavena na `Sign`. Aby služba MSMQ poskytovala funkci ověřování a podepisování, musí být součástí domény a musí být nainstalovaná možnost integrace služby Active Directory pro službu MSMQ. Pokud tuto ukázku spustíte na počítači, který nesplňuje tato kritéria, zobrazí se chyba.  
+ Ve výchozím <xref:System.ServiceModel.NetMsmqBinding>nastavení je povoleno zabezpečení přenosu. Existují dvě relevantní vlastnosti zabezpečení přenosu služby <xref:System.ServiceModel.MsmqTransportSecurity.MsmqAuthenticationMode%2A> <xref:System.ServiceModel.MsmqTransportSecurity.MsmqProtectionLevel%2A> `.` MSMQ a ve `Windows` výchozím nastavení je režim `Sign`ověřování nastaven na a úroveň ochrany je nastavena na hodnotu . Aby služba MSMQ poskytovala funkci ověřování a podepisování, musí být součástí domény a musí být nainstalována možnost integrace služby Active Directory pro službu MSMQ. Pokud spustíte tuto ukázku v počítači, který nesplňuje tato kritéria, zobrazí se chyba.  
   
-### <a name="to-run-the-sample-on-a-computer-joined-to-a-workgroup-or-without-active-directory-integration"></a>Spuštění ukázky na počítači připojeném k pracovní skupině nebo bez integrace služby Active Directory  
+### <a name="to-run-the-sample-on-a-computer-joined-to-a-workgroup-or-without-active-directory-integration"></a>Spuštění ukázky v počítači připojovat se k pracovní skupině nebo bez integrace služby Active Directory  
   
-1. Pokud počítač není součástí domény nebo nemáte nainstalovanou integraci služby Active Directory, vypněte zabezpečení přenosu nastavením režimu ověřování a úrovně ochrany na `None`, jak je znázorněno v následující ukázkové konfiguraci.  
+1. Pokud počítač není součástí domény nebo není nainstalována integrace služby Active Directory, vypněte zabezpečení `None` přenosu nastavením režimu ověřování a úrovně ochrany na úroveň uvedenou v následující ukázkové konfiguraci.  
   
     ```xml  
     <system.serviceModel>  
@@ -237,7 +237,7 @@ Purchase Order: 7c86fef0-2306-4c51-80e6-bcabcc1a6e5e
               binding="netMsmqBinding"  
               bindingConfiguration="Binding1"  
            contract="Microsoft.ServiceModel.Samples.IOrderTaker" />  
-          <!-- The mex endpoint is exposed at-->      
+          <!-- The mex endpoint is exposed at-->
           <!--http://localhost:8000/ServiceModelSamples/service/mex. -->  
           <endpoint address="mex"  
                     binding="mexHttpBinding"  
@@ -264,7 +264,7 @@ Purchase Order: 7c86fef0-2306-4c51-80e6-bcabcc1a6e5e
       </system.serviceModel>  
     ```  
   
-2. Před spuštěním ukázky se ujistěte, že jste změnili konfiguraci na serveru i v klientovi.  
+2. Před spuštěním ukázky se ujistěte, že změníte konfiguraci na serveru i na klientovi.  
   
     > [!NOTE]
-    > Nastavení režimu zabezpečení na `None` je ekvivalentem nastavení <xref:System.ServiceModel.MsmqTransportSecurity.MsmqAuthenticationMode%2A>, <xref:System.ServiceModel.MsmqTransportSecurity.MsmqProtectionLevel%2A>a `Message` zabezpečení na `None`.  
+    > Nastavení režimu `None` zabezpečení na <xref:System.ServiceModel.MsmqTransportSecurity.MsmqAuthenticationMode%2A> <xref:System.ServiceModel.MsmqTransportSecurity.MsmqProtectionLevel%2A>nastavení `Message` je `None`ekvivalentní nastavení a zabezpečení .  

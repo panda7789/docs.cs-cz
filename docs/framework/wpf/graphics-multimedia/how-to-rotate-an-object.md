@@ -8,17 +8,17 @@ helpviewer_keywords:
 - graphics [WPF], rotating objects [WPF]
 - rotating objects [WPF]
 ms.assetid: ee3466cd-e66f-4e8f-8a5a-71d77bc1e390
-ms.openlocfilehash: d1c4700a5dc8f6ed99043552999d8f014116da8f
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 02d8144c28b7a4e54fb86fea5abb694cf7af34af
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61804164"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79185969"
 ---
 # <a name="how-to-rotate-an-object"></a>Postupy: Otočení objektu
-Tento příklad ukazuje, jak otočení objektu. V příkladu se nejdřív vytvoří <xref:System.Windows.Media.RotateTransform> a určuje jeho <xref:System.Windows.Media.RotateTransform.Angle%2A> ve stupních.  
+Tento příklad ukazuje, jak otočit objekt. Příklad nejprve <xref:System.Windows.Media.RotateTransform> vytvoří a pak <xref:System.Windows.Media.RotateTransform.Angle%2A> určuje jeho ve stupních.  
   
- V následujícím příkladu se otočí <xref:System.Windows.Shapes.Polyline> objektu 45 stupňů o jeho levého horního rohu.  
+ Následující příklad otočí <xref:System.Windows.Shapes.Polyline> objekt o 45 stupňů kolem levého horního rohu.  
   
 ## <a name="example"></a>Příklad  
  [!code-xaml[Transforms_snip#RotatePolylineAboutTopLeft](~/samples/snippets/csharp/VS_Snippets_Wpf/Transforms_snip/CS/RotateTransformExample.xaml#rotatepolylineabouttopleft)]  
@@ -26,25 +26,25 @@ Tento příklad ukazuje, jak otočení objektu. V příkladu se nejdřív vytvo�
  [!code-csharp[Transforms_Procedural_snip#RotatePolylineAboutTopLeft](~/samples/snippets/csharp/VS_Snippets_Wpf/Transforms_Procedural_snip/CSharp/RotateTransformExample.cs#rotatepolylineabouttopleft)]
  [!code-vb[Transforms_Procedural_snip#RotatePolylineAboutTopLeft](~/samples/snippets/visualbasic/VS_Snippets_Wpf/Transforms_Procedural_snip/VisualBasic/RotateTransformExample.vb#rotatepolylineabouttopleft)]  
   
- <xref:System.Windows.Media.RotateTransform.CenterX%2A> a <xref:System.Windows.Media.RotateTransform.CenterY%2A> vlastnosti <xref:System.Windows.Media.RotateTransform> určete bod, o tom, které je objekt otočen. Tato středový bod je vyjádřen v souřadnicového prostoru elementu, který je transformovat. Ve výchozím nastavení otočení platí pro (0; 0), což je levého horního rohu objekt, který má transformovat.  
+ <xref:System.Windows.Media.RotateTransform.CenterX%2A> Vlastnosti <xref:System.Windows.Media.RotateTransform.CenterY%2A> a <xref:System.Windows.Media.RotateTransform> určete bod, ve kterém je objekt otočen. Tento středový bod je vyjádřen v souřadnicovém prostoru prvku, který je transformován. Ve výchozím nastavení je otočení aplikováno na (0,0), což je levý horní roh objektu, který má být transformován.  
   
- Následující příklad otočí <xref:System.Windows.Shapes.Polyline> objektu 45 stupňů po směru hodinových ručiček kolem bodu (25,50).  
+ Další příklad otočí <xref:System.Windows.Shapes.Polyline> objekt ve směru hodinových ručiček o 45 stupňů kolem bodu (25,50).  
   
  [!code-xaml[Transforms_snip#RotatePolylineAboutCenter](~/samples/snippets/csharp/VS_Snippets_Wpf/Transforms_snip/CS/RotateTransformExample.xaml#rotatepolylineaboutcenter)]  
   
  [!code-csharp[Transforms_Procedural_snip#RotatePolylineAboutCenter](~/samples/snippets/csharp/VS_Snippets_Wpf/Transforms_Procedural_snip/CSharp/RotateTransformExample.cs#rotatepolylineaboutcenter)]
  [!code-vb[Transforms_Procedural_snip#RotatePolylineAboutCenter](~/samples/snippets/visualbasic/VS_Snippets_Wpf/Transforms_Procedural_snip/VisualBasic/RotateTransformExample.vb#rotatepolylineaboutcenter)]  
   
- Následující obrázek znázorňuje výsledkem použití <xref:System.Windows.Media.Transform> dvěma objekty.  
+ Následující obrázek znázorňuje <xref:System.Windows.Media.Transform> výsledky použití a na dva objekty.  
   
- ![45 stupňů rotace s různými středy](./media/wcpsdk-graphicsmm-rotatetransform45degrees.gif "wcpsdk_graphicsmm_rotatetransform45degrees")  
-Dva objekty, které otáčet 45 stupňů z různých rotačních centra  
+ ![Otočení o 45 stupňů s různými středovými body](./media/wcpsdk-graphicsmm-rotatetransform45degrees.gif "wcpsdk_graphicsmm_rotatetransform45degrees")  
+Dva objekty, které se otáčejí o 45 stupňů od různých rotačních středů  
   
- <xref:System.Windows.Shapes.Polyline> v předchozích příkladech je <xref:System.Windows.UIElement>. Při použití <xref:System.Windows.Media.Transform> k <xref:System.Windows.UIElement.RenderTransform%2A> vlastnost <xref:System.Windows.UIElement>, můžete použít <xref:System.Windows.UIElement.RenderTransformOrigin%2A> vlastnosti a určit původ pro každý <xref:System.Windows.Media.Transform> , která se vztahují na prvek. Vzhledem k tomu, <xref:System.Windows.UIElement.RenderTransformOrigin%2A> vlastnost relativních souřadnic, center elementu, který můžete využít transformace, i, pokud neznáte jeho velikost. Další informace a příklad najdete v tématu [určení počátku transformace použitím relativní hodnoty](how-to-specify-the-origin-of-a-transform-by-using-relative-values.md).  
+ V <xref:System.Windows.Shapes.Polyline> předchozích příkladech <xref:System.Windows.UIElement>je . Při použití <xref:System.Windows.Media.Transform> <xref:System.Windows.UIElement.RenderTransform%2A> vlastnosti <xref:System.Windows.UIElement>, můžete použít <xref:System.Windows.UIElement.RenderTransformOrigin%2A> vlastnost k určení původu <xref:System.Windows.Media.Transform> pro každý, který použijete na prvek. Vzhledem <xref:System.Windows.UIElement.RenderTransformOrigin%2A> k tomu, že vlastnost používá relativní souřadnice, můžete použít transformaci na střed prvku i v případě, že neznáte jeho velikost. Další informace a příklad [najdete v tématu Určení počátku transformace pomocí relativních hodnot](how-to-specify-the-origin-of-a-transform-by-using-relative-values.md).  
   
- Úplnou ukázku najdete v tématu [2D transformace ukázka](https://go.microsoft.com/fwlink/?LinkID=158252).  
+ Kompletní ukázku naleznete v [tématu Ukázka 2D transformací](https://github.com/Microsoft/WPF-Samples/tree/master/Graphics/2DTransforms).  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Media.Transform>
 - [Přehled transformace](transforms-overview.md)

@@ -3,20 +3,20 @@ title: <claimsAuthenticationManager>
 ms.date: 03/30/2017
 ms.assetid: 6d30a450-6d13-4671-81a8-77e0204500c5
 author: BrucePerlerMS
-ms.openlocfilehash: c901daf4d442a206345301795c7a4bdc076329cd
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.openlocfilehash: a54fc2cea84bb9d08a9725d846fe38efd7b5475a
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70252094"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79152746"
 ---
 # <a name="claimsauthenticationmanager"></a>\<claimsAuthenticationManager>
-Zaregistruje Správce ověřování deklarací identity pro příchozí deklarace identity.  
+Registruje správce ověřování deklarací identity pro příchozí deklarace identity.  
   
-[ **\<> Konfigurace**](../configuration-element.md)\
-&nbsp;&nbsp;[ **\<System. identityModel >** ](system-identitymodel.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;[ **\<identityConfiguration >** ](identityconfiguration.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<Komponenty ClaimsAuthenticationManager >**  
+[**\<>konfigurace**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<system.identityModel>**](system-identitymodel.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[**\<identityKonfigurace>**](identityconfiguration.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<claimsAuthenticationManager>**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,28 +37,28 @@ Zaregistruje Správce ověřování deklarací identity pro příchozí deklarac
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|– typ|Určuje vlastní typ, který je odvozen od <xref:System.Security.Claims.ClaimsAuthenticationManager> třídy. Další informace o tom, jak zadat `type` atribut, naleznete v tématu [odkazy na vlastní typ].|  
+|type|Určuje vlastní typ, který je <xref:System.Security.Claims.ClaimsAuthenticationManager> odvozen od třídy. Další informace o tom, `type` jak zadat atribut, naleznete v tématu [Vlastní odkazy typu].|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
- `type` Pokud neexistuje žádný atribut, nebo <xref:System.Security.Claims.ClaimsAuthenticationManager> `type` Pokud atribut `<claimsAuthenticationManager>` odkazuje na třídu, element nebere podřízené prvky. třídy odvozené z <xref:System.Security.Claims.ClaimsAuthenticationManager> mohou však definovat podřízené prvky konfigurace.  
+ Pokud neexistuje `type` žádný atribut nebo `type` pokud atribut <xref:System.Security.Claims.ClaimsAuthenticationManager> odkazuje `<claimsAuthenticationManager>` na třídu, prvek nepřijímá podřízené prvky; třídy odvozené <xref:System.Security.Claims.ClaimsAuthenticationManager> z však můžete definovat podřízené konfigurační prvky.  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
-|Prvek|Popis|  
+|Element|Popis|  
 |-------------|-----------------|  
-|[\<identityConfiguration>](identityconfiguration.md)|Určuje nastavení identity na úrovni služby.|  
+|[\<identityKonfigurace>](identityconfiguration.md)|Určuje nastavení identity na úrovni služby.|  
   
 ## <a name="remarks"></a>Poznámky  
- Výchozí chování poskytované prostřednictvím <xref:System.Security.Claims.ClaimsAuthenticationManager> třídy vychází z příchozích deklarací identity. Pokud není `type` zadán žádný atribut nebo `type` Pokud atribut `<claimsAuthenticationManager>` specifikuje <xref:System.Security.Claims.ClaimsAuthenticationManager> třídu, element nepřijímá podřízené prvky. Můžete určit `type` atribut pro registraci typu odvozeného <xref:System.Security.Claims.ClaimsAuthenticationManager> od třídy pro implementaci vlastního chování. Odvozené třídy mohou podporovat konfiguraci prostřednictvím podřízených prvků `<claimsAuthenticationManager>` prvku <xref:System.Security.Claims.ClaimsAuthenticationManager.LoadCustomConfiguration%2A> přepsáním metody pro zpracování těchto elementů. Schéma definované pro podřízené prvky je až do návrháře třídy.  
+ Výchozí chování poskytované prostřednictvím <xref:System.Security.Claims.ClaimsAuthenticationManager> třídy odráží příchozí deklarace identity. Pokud `type` není zadán žádný `type` atribut nebo <xref:System.Security.Claims.ClaimsAuthenticationManager> pokud atribut `<claimsAuthenticationManager>` určuje třídu, prvek nepřevezme podřízené prvky. Můžete zadat `type` atribut pro registraci typu <xref:System.Security.Claims.ClaimsAuthenticationManager> odvozeného od třídy k implementaci vlastního chování. Odvozené třídy mohou podporovat konfiguraci prostřednictvím podřízených prvků `<claimsAuthenticationManager>` prvku přepsáním <xref:System.Security.Claims.ClaimsAuthenticationManager.LoadCustomConfiguration%2A> metody zpracování těchto prvků. Schéma definované pro podřízené prvky je na návrháři třídy.  
   
- `<claimsAuthenticationManager>` Prvek<xref:System.IdentityModel.Configuration.IdentityConfiguration.ClaimsAuthenticationManager%2A?displayProperty=nameWithType> nastaví vlastnost.  
+ Element `<claimsAuthenticationManager>` nastaví <xref:System.IdentityModel.Configuration.IdentityConfiguration.ClaimsAuthenticationManager%2A?displayProperty=nameWithType> vlastnost.  
   
 ## <a name="example"></a>Příklad  
   
 ```xml  
 <system.identityModel>  
     <identityConfiguration name="MyIdentity">  
-      <claimsAuthenticationManager type="MyNamespace.CustomClaimsAuthenticationManager, MyAssembly"/>          
+      <claimsAuthenticationManager type="MyNamespace.CustomClaimsAuthenticationManager, MyAssembly"/>
     </identityConfiguration>  
 </system.identityModel>  
 ```

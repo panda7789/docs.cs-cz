@@ -2,48 +2,48 @@
 title: Asynchronní komunikace
 ms.date: 03/30/2017
 ms.assetid: 128dc092-9eb2-4e33-9470-9a7f62b60df6
-ms.openlocfilehash: 28b325a6bd870282577a2989b616628d52262deb
-ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
+ms.openlocfilehash: e1bc63b5d3178b8e98350dedd8eb0791e0e35589
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74711863"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79142873"
 ---
 # <a name="asynchronous-communication"></a>Asynchronní komunikace
-Tato ukázka předvádí, jak je komunikace mezi dvěma různými programovací model Windows Workflow Foundation (WF) ve výchozím nastavení prováděna asynchronně.  
+Tato ukázka ukazuje, jak se ve výchozím nastavení provádí komunikace mezi dvěma různými službami Nadace pracovních postupů systému Windows (WF).  
   
 ## <a name="demonstrates"></a>Demonstruje  
- Asynchronní komunikace mezi [!INCLUDE[wf1](../../../../includes/wf1-md.md)] službami.  
+ Asynchronní komunikace [!INCLUDE[wf1](../../../../includes/wf1-md.md)] mezi službami.  
   
-## <a name="discussion"></a>Účely  
- V této ukázce se dozvíte, jak se provádí asynchronní komunikace mezi [!INCLUDE[wf1](../../../../includes/wf1-md.md)] aplikacemi pomocí aktivit zasílání zpráv poskytovaných .NET Framework.  
+## <a name="discussion"></a>Diskuse  
+ Tato ukázka ukazuje, [!INCLUDE[wf1](../../../../includes/wf1-md.md)] jak se komunikace mezi aplikacemi provádí asynchronně pomocí zasílání zpráv aktivity poskytované rozhraní .NET Framework.  
   
- Tato ukázka se skládá z následujících tří projektů.  
+ Tento příklad se skládá z následujících tří projektů.  
   
- CreditCheckService  
- Tato služba obdrží kreditní skóre konkrétní osoby nebo hodnotu položky, která má být získána, a pak rozhodne, zda je daný kredit dán osobě.  
+ Služba CreditCheckService  
+ Tato služba obdrží kreditní skóre určité osoby nebo hodnotu položky, kterou chcete získat, a poté rozhodne, zda je úvěr dané osobě poskytnut.  
   
- RentalApprovalService  
- Tato služba obdrží aplikaci od osoby, která je v potřebě nějakého kreditu. Tato služba komunikuje asynchronně s `CreditCheckService` pro rozhodování, zda je aplikace pro kredit platná.  
+ Služba RentalApprovalService  
+ Tato služba obdrží žádost od osoby, která potřebuje nějaký kredit. Tato služba komunikuje asynchronně s `CreditCheckService` rozhodnout, zda je platná aplikace úvěru.  
   
  Klient  
- Klient komunikuje synchronně s `RentalApprovalService`, aby bylo možné zjistit, zda je kredit schválen.  
+ Klient synchronně komunikuje s tím, `RentalApprovalService` zda je úvěr schválen.  
   
 #### <a name="to-set-up-build-and-run-the-sample"></a>Nastavení, sestavení a spuštění ukázky  
   
-1. Klikněte pravým tlačítkem na řešení **AsynchronousCommunication** a vyberte **vlastnosti**.  
+1. Klepněte pravým tlačítkem myši na řešení **AsynchronousCommunication** a vyberte příkaz **Vlastnosti**.  
   
-2. V možnosti **společné vlastnosti**vyberte možnost **projekt po spuštění**a vyberte možnost **více projektů po spuštění**.  
+2. V **pole Common Properties**vyberte možnost Projekt po **spuštění**a **vyberte možnost Více projektů po spuštění**.  
   
-3. Přesuňte **RentalApprovalService** na první pozici v seznamu, za kterou následuje **CreditCheckService**a pak na **klienta**. Nastavte akci **spuštění** na všech třech projektech.  
+3. Přesuňte **RentalApprovalService** na první pozici v seznamu, následovanou **CreditCheckService**, následovanou **Klientem**. Nastavte akci **Zahájení** u všech tří projektů.  
   
-4. Klikněte na **OK**a stisknutím klávesy F5 spusťte ukázku.  
+4. Klepněte na tlačítko **OK**a spusťte ukázku stisknutím klávesy F5.  
   
 > [!IMPORTANT]
-> Ukázky už můžou být na vašem počítači nainstalované. Než budete pokračovat, vyhledejte následující (výchozí) adresář.  
->   
+> Ukázky mohou být již nainstalovány v počítači. Před pokračováním zkontrolujte následující (výchozí) adresář.  
+>
 > `<InstallDrive>:\WF_WCF_Samples`  
->   
-> Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] Samples. Tato ukázka se nachází v následujícím adresáři.  
->   
+>
+> Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a Windows Workflow Foundation (WF) Ukázky pro rozhraní .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka je umístěna v následujícím adresáři.  
+>
 > `<InstallDrive>:\WF_WCF_Samples\WF\Scenario\Services\AsynchronousCommunication`

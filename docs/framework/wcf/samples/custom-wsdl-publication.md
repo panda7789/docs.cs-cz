@@ -2,32 +2,32 @@
 title: Vlastní publikování WSDL
 ms.date: 03/30/2017
 ms.assetid: 3b3e8103-2c95-4db3-a05b-46aa8e9d4d29
-ms.openlocfilehash: 173deaf280c052b76e6937b2cec44ebdeafc57f9
-ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
+ms.openlocfilehash: ae6d5fdf243d5000090e993bd3353c6180d0ccaa
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74714920"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79145056"
 ---
 # <a name="custom-wsdl-publication"></a>Vlastní publikování WSDL
-Tato ukázka předvádí, jak:  
+Tato ukázka ukazuje, jak:  
   
-- Implementujte <xref:System.ServiceModel.Description.IWsdlExportExtension?displayProperty=nameWithType> pro vlastní atribut <xref:System.ServiceModel.Description.IContractBehavior?displayProperty=nameWithType> pro export vlastností atributu jako anotace WSDL.  
+- Implementujte <xref:System.ServiceModel.Description.IWsdlExportExtension?displayProperty=nameWithType> na <xref:System.ServiceModel.Description.IContractBehavior?displayProperty=nameWithType> vlastní atribut exportovat atribut vlastnosti jako poznámky WSDL.  
   
-- Implementujte <xref:System.ServiceModel.Description.IWsdlImportExtension?displayProperty=nameWithType> pro import vlastních poznámek WSDL.  
+- Implementovat <xref:System.ServiceModel.Description.IWsdlImportExtension?displayProperty=nameWithType> importovat vlastní WSDL poznámky.  
   
-- Implementujte <xref:System.ServiceModel.Description.IServiceContractGenerationExtension?displayProperty=nameWithType> a <xref:System.ServiceModel.Description.IOperationContractGenerationExtension?displayProperty=nameWithType> na vlastní chování kontraktu a chování vlastní operace, abyste naimportovali importované poznámky jako komentáře v CodeDom pro importovanou smlouvu a operaci.  
+- <xref:System.ServiceModel.Description.IServiceContractGenerationExtension?displayProperty=nameWithType> Implementovat <xref:System.ServiceModel.Description.IOperationContractGenerationExtension?displayProperty=nameWithType> a na vlastní chování smlouvy a vlastní operace chování, respektive psát importované poznámky jako komentáře v CodeDom pro importované smlouvy a operace.  
   
-- Použijte <xref:System.ServiceModel.Description.MetadataExchangeClient?displayProperty=nameWithType> ke stažení souboru WSDL, <xref:System.ServiceModel.Description.WsdlImporter?displayProperty=nameWithType> pro Import WSDL pomocí vlastního programu pro Import WSDL, a <xref:System.ServiceModel.Description.ServiceContractGenerator?displayProperty=nameWithType> k vygenerování kódu klienta Windows Communication Foundation (WCF) s poznámkami WSDL jako///a komentáři v C# a Visual Basic.  
+- Pomocí <xref:System.ServiceModel.Description.MetadataExchangeClient?displayProperty=nameWithType> ke stažení WSDL, <xref:System.ServiceModel.Description.WsdlImporter?displayProperty=nameWithType> a importovat WSDL pomocí vlastního wsdl import a <xref:System.ServiceModel.Description.ServiceContractGenerator?displayProperty=nameWithType> generovat Windows Communication Foundation (WCF) klientský kód s WSDL poznámky jako /// a ''' komentáře v Jazyce C# a Visual Basic.  
   
 > [!NOTE]
-> Postup nastavení a pokyny pro sestavení pro tuto ukázku najdete na konci tohoto tématu.  
+> Postup instalace a pokyny k sestavení pro tuto ukázku jsou umístěny na konci tohoto tématu.  
   
-## <a name="service"></a>Service  
- Služba v této ukázce je označena dvěma vlastními atributy. První, `WsdlDocumentationAttribute`, přijímá řetězec v konstruktoru a lze jej použít pro poskytnutí rozhraní kontraktu nebo operace s řetězcem, který popisuje jeho použití. Druhý `WsdlParamOrReturnDocumentationAttribute`lze použít pro návrat hodnoty nebo parametry k popisu těchto hodnot v operaci. Následující příklad ukazuje kontrakt služby, `ICalculator`, popsaný pomocí těchto atributů.  
+## <a name="service"></a>Služba  
+ Služba v této ukázce je označena dvěma vlastními atributy. První , `WsdlDocumentationAttribute`přijímá řetězec v konstruktoru a lze použít k poskytnutí rozhraní smlouvy nebo operace s řetězcem, který popisuje jeho použití. Druhý , `WsdlParamOrReturnDocumentationAttribute`lze použít k vrácení hodnot nebo parametrů k popisu těchto hodnot v operaci. Následující příklad ukazuje servisní `ICalculator`smlouvu , popsanou pomocí těchto atributů.  
   
 ```csharp  
-// Define a service contract.      
+// Define a service contract.
 [ServiceContract(Namespace="http://Microsoft.ServiceModel.Samples")]  
 // Document it.  
 [WsdlDocumentation("The ICalculator contract performs basic calculation services.")]  
@@ -37,7 +37,7 @@ public interface ICalculator
     [WsdlDocumentation("The Add operation adds two numbers and returns the result.")]  
     [return:WsdlParamOrReturnDocumentation("The result of adding the two arguments together.")]  
     double Add(  
-      [WsdlParamOrReturnDocumentation("The first value to add.")]double n1,   
+      [WsdlParamOrReturnDocumentation("The first value to add.")]double n1,
       [WsdlParamOrReturnDocumentation("The second value to add.")]double n2  
     );  
   
@@ -45,7 +45,7 @@ public interface ICalculator
     [WsdlDocumentation("The Subtract operation subtracts the second argument from the first.")]  
     [return:WsdlParamOrReturnDocumentation("The result of the second argument subtracted from the first.")]  
     double Subtract(  
-      [WsdlParamOrReturnDocumentation("The value from which the second is subtracted.")]double n1,   
+      [WsdlParamOrReturnDocumentation("The value from which the second is subtracted.")]double n1,
       [WsdlParamOrReturnDocumentation("The value that is subtracted from the first.")]double n2  
     );  
   
@@ -53,7 +53,7 @@ public interface ICalculator
     [WsdlDocumentation("The Multiply operation multiplies two values.")]  
     [return:WsdlParamOrReturnDocumentation("The result of multiplying the first and second arguments.")]  
     double Multiply(  
-      [WsdlParamOrReturnDocumentation("The first value to multiply.")]double n1,   
+      [WsdlParamOrReturnDocumentation("The first value to multiply.")]double n1,
       [WsdlParamOrReturnDocumentation("The second value to multiply.")]double n2  
     );  
   
@@ -61,15 +61,15 @@ public interface ICalculator
     [WsdlDocumentation("The Divide operation returns the value of the first argument divided by the second argument.")]  
     [return:WsdlParamOrReturnDocumentation("The result of dividing the first argument by the second.")]  
     double Divide(  
-      [WsdlParamOrReturnDocumentation("The numerator.")]double n1,   
+      [WsdlParamOrReturnDocumentation("The numerator.")]double n1,
       [WsdlParamOrReturnDocumentation("The denominator.")]double n2  
     );  
 }  
 ```  
   
- `WsdlDocumentationAttribute` implementuje <xref:System.ServiceModel.Description.IContractBehavior> a <xref:System.ServiceModel.Description.IOperationBehavior>, takže instance atributů jsou přidány do odpovídajících <xref:System.ServiceModel.Description.ContractDescription> nebo <xref:System.ServiceModel.Description.OperationDescription> při otevření služby. Atribut také implementuje <xref:System.ServiceModel.Description.IWsdlExportExtension>. Když je volána <xref:System.ServiceModel.Description.IWsdlExportExtension.ExportContract%28System.ServiceModel.Description.WsdlExporter%2CSystem.ServiceModel.Description.WsdlContractConversionContext%29>, <xref:System.ServiceModel.Description.WsdlExporter>, která se používá k exportu metadat a <xref:System.ServiceModel.Description.WsdlContractConversionContext> obsahující objekty popisu služby, jsou předány jako parametry, které umožňují úpravu exportovaných metadat.  
+ Implements `WsdlDocumentationAttribute` <xref:System.ServiceModel.Description.IContractBehavior> a <xref:System.ServiceModel.Description.IOperationBehavior>, tak atribut instance jsou <xref:System.ServiceModel.Description.ContractDescription> přidány <xref:System.ServiceModel.Description.OperationDescription> do odpovídající nebo při otevření služby. Atribut také implementuje <xref:System.ServiceModel.Description.IWsdlExportExtension>. Při <xref:System.ServiceModel.Description.IWsdlExportExtension.ExportContract%28System.ServiceModel.Description.WsdlExporter%2CSystem.ServiceModel.Description.WsdlContractConversionContext%29> volání, <xref:System.ServiceModel.Description.WsdlExporter> který se používá k exportu <xref:System.ServiceModel.Description.WsdlContractConversionContext> metadat a který obsahuje objekty popisu služby jsou předány jako parametry umožňující změnu exportovaných metadat.  
   
- V této ukázce, v závislosti na tom, zda má objekt kontextu exportu <xref:System.ServiceModel.Description.ContractDescription> nebo <xref:System.ServiceModel.Description.OperationDescription>, je komentář extrahován z atributu pomocí vlastnosti text a je přidán do prvku poznámky WSDL, jak je znázorněno v následujícím kódu.  
+ V této ukázce, v závislosti <xref:System.ServiceModel.Description.ContractDescription> na <xref:System.ServiceModel.Description.OperationDescription>tom, zda export kontextu objekt má nebo , komentář je extrahován z atributu pomocí vlastnosti text a je přidán do wsdl anotace prvek, jak je znázorněno v následujícím kódu.  
   
 ```csharp
 public void ExportContract(WsdlExporter exporter, WsdlContractConversionContext context)
@@ -108,7 +108,7 @@ public void ExportContract(WsdlExporter exporter, WsdlContractConversionContext 
 }
 ```  
   
- Je-li exportována operace, používá ukázka reflexe k získání jakékoli `WsdlParamOrReturnDocumentationAttribute` hodnoty pro parametry a návratové hodnoty a přidává je do prvků poznámky WSDL pro tuto operaci následujícím způsobem.  
+ Pokud je operace exportována, ukázka používá `WsdlParamOrReturnDocumentationAttribute` reflexe k získání všech hodnot pro parametry a vrácené hodnoty a přidá je do prvků poznámky WSDL pro tuto operaci následujícím způsobem.  
   
 ```csharp
 // Get returns information  
@@ -144,7 +144,7 @@ for (int i = 0; i < args.Length; i++)
   
 ```xml  
 <services>  
-  <service   
+  <service
       name="Microsoft.ServiceModel.Samples.CalculatorService"  
       behaviorConfiguration="CalculatorServiceBehavior">  
     <!-- ICalculator is exposed at the base address provided by host: http://localhost/servicemodelsamples/service.svc  -->  
@@ -170,12 +170,12 @@ for (int i = 0; i < args.Length; i++)
 ```  
   
 ## <a name="svcutil-client"></a>Klient Svcutil  
- Tato ukázka nepoužívá Svcutil. exe. Smlouva je k dispozici v souboru generatedClient.cs tak, aby po ukázce předvedla vlastní import a generování kódu WSDL, službu lze vyvolat. Chcete-li pro tento příklad použít následující vlastní Import WSDL, můžete spustit Svcutil. exe a zadat možnost `/svcutilConfig` a poskytnout tak cestu ke konfiguračnímu souboru klienta použitému v této ukázce, který odkazuje na knihovnu `WsdlDocumentation.dll`. Chcete-li načíst `WsdlDocumentationImporter`, Svuctil. exe však musí být schopna vyhledat a načíst knihovnu `WsdlDocumentation.dll`, což znamená, že je registrována v globální mezipaměti sestavení (GAC), v cestě nebo je ve stejném adresáři jako Svcutil. exe. Pro základní vzorek, jako je to nejjednodušší, je zkopírovat Svcutil. exe a konfigurační soubor klienta do stejného adresáře jako `WsdlDocumentation.dll` a spustit ho odtud.  
+ Tato ukázka nepoužívá Svcutil.exe. Smlouva je k dispozici v souboru generatedClient.cs tak, aby po ukázka ukazuje vlastní WSDL import a generování kódu, služby lze vyvolat. Chcete-li použít následující vlastní WSDL import pro tento příklad, můžete spustit `/svcutilConfig` Svcutil.exe a zadat možnost, která poskytuje `WsdlDocumentation.dll` cestu ke konfiguračnímu souboru klienta použitému v této ukázce, který odkazuje na knihovnu. Chcete-li `WsdlDocumentationImporter`však načíst program , musí být program Svuctil.exe schopen vyhledat a načíst knihovnu, `WsdlDocumentation.dll` což znamená, že je registrován v globální mezipaměti sestavení v cestě nebo je ve stejném adresáři jako svcutil.exe. Pro základní vzorek, jako je tento, nejjednodušší věc udělat, je zkopírovat Svcutil.exe `WsdlDocumentation.dll` a konfigurační soubor klienta do stejného adresáře jako a spustit jej odtud.  
   
-## <a name="the-custom-wsdl-importer"></a>Vlastní Import WSDL  
- Vlastní objekt <xref:System.ServiceModel.Description.IWsdlImportExtension> `WsdlDocumentationImporter` také implementuje <xref:System.ServiceModel.Description.IContractBehavior> a <xref:System.ServiceModel.Description.IOperationBehavior> pro přidání do importovaných ServiceEndpoints a <xref:System.ServiceModel.Description.IServiceContractGenerationExtension> a <xref:System.ServiceModel.Description.IOperationContractGenerationExtension> k vyvolání pro úpravu generování kódu při vytváření kontraktu nebo kódu operace.  
+## <a name="the-custom-wsdl-importer"></a>Vlastní wsdl import  
+ Vlastní <xref:System.ServiceModel.Description.IWsdlImportExtension> objekt `WsdlDocumentationImporter` také <xref:System.ServiceModel.Description.IContractBehavior> implementuje <xref:System.ServiceModel.Description.IOperationBehavior> a má být přidán <xref:System.ServiceModel.Description.IServiceContractGenerationExtension> do <xref:System.ServiceModel.Description.IOperationContractGenerationExtension> importovaných ServiceEndpoints a má být vyvolán k úpravě generování kódu při vytváření smlouvy nebo operace.  
   
- Nejprve ukázka v metodě <xref:System.ServiceModel.Description.IWsdlImportExtension.ImportContract%28System.ServiceModel.Description.WsdlImporter%2CSystem.ServiceModel.Description.WsdlContractConversionContext%29> určuje, zda je anotace WSDL na úrovni smlouvy nebo operace, a přidá samu sebe jako chování v příslušném oboru a předá importovaná text poznámky do konstruktoru.  
+ Nejprve v <xref:System.ServiceModel.Description.IWsdlImportExtension.ImportContract%28System.ServiceModel.Description.WsdlImporter%2CSystem.ServiceModel.Description.WsdlContractConversionContext%29> metodě ukázka určuje, zda je anotace WSDL na úrovni smlouvy nebo operace a přidá se jako chování v příslušném oboru a předá importovaný text poznámky svému konstruktoru.  
   
 ```csharp
 public void ImportContract(WsdlImporter importer, WsdlContractConversionContext context)  
@@ -202,7 +202,7 @@ public void ImportContract(WsdlImporter importer, WsdlContractConversionContext 
 }  
 ```  
   
- Po vygenerování kódu pak systém vyvolá metody <xref:System.ServiceModel.Description.IServiceContractGenerationExtension.GenerateContract%28System.ServiceModel.Description.ServiceContractGenerationContext%29> a <xref:System.ServiceModel.Description.IOperationContractGenerationExtension.GenerateOperation%28System.ServiceModel.Description.OperationContractGenerationContext%29> a předává příslušné kontextové informace. Ukázka formátuje vlastní anotace WSDL a vkládá je jako komentáře do CodeDom.  
+ Potom při generování kódu, systém vyvolá <xref:System.ServiceModel.Description.IServiceContractGenerationExtension.GenerateContract%28System.ServiceModel.Description.ServiceContractGenerationContext%29> a <xref:System.ServiceModel.Description.IOperationContractGenerationExtension.GenerateOperation%28System.ServiceModel.Description.OperationContractGenerationContext%29> metody, předávání příslušné informace o kontextu. Ukázka zformátuje vlastní poznámky WSDL a vloží je jako komentáře do CodeDom.  
   
 ```csharp
 public void GenerateContract(ServiceContractGenerationContext context)  
@@ -219,12 +219,12 @@ public void GenerateOperation(OperationContractGenerationContext context)
 ```  
   
 ## <a name="the-client-application"></a>Klientská aplikace  
- Klientská aplikace načte vlastní Import WSDL zadáním do konfiguračního souboru aplikace.  
+ Klientská aplikace načte vlastní import WSDL zadáním v konfiguračním souboru aplikace.  
   
 ```xml  
 <client>  
-  <endpoint address="http://localhost/servicemodelsamples/service.svc"   
-  binding="wsHttpBinding"   
+  <endpoint address="http://localhost/servicemodelsamples/service.svc"
+  binding="wsHttpBinding"
   contract="ICalculator" />  
   <metadata>  
     <wsdlImporters>  
@@ -234,57 +234,57 @@ public void GenerateOperation(OperationContractGenerationContext context)
 </client>  
 ```  
   
- Po určení vlastního dovozce načte systém metadat WCF vlastní dovozce do libovolného <xref:System.ServiceModel.Description.WsdlImporter> vytvořeného pro tento účel. Tato ukázka používá <xref:System.ServiceModel.Description.MetadataExchangeClient> ke stažení metadat, <xref:System.ServiceModel.Description.WsdlImporter> správně nakonfigurovanou pro import metadat pomocí vlastního importu, který ukázka vytvoří, a <xref:System.ServiceModel.Description.ServiceContractGenerator> pro zkompilování upravených informací o kontraktu do obou Visual Basic i C# klientského kódu, který lze použít v sadě Visual Studio pro podporu technologie IntelliSense nebo KOMPILACI do XML dokumentace.  
+ Po zadání vlastního dovozce načte systém metadat WCF vlastní <xref:System.ServiceModel.Description.WsdlImporter> importér do všech vytvořených pro tento účel. Tato ukázka <xref:System.ServiceModel.Description.MetadataExchangeClient> používá ke stažení <xref:System.ServiceModel.Description.WsdlImporter> metadata, správně nakonfigurován pro import metadat pomocí <xref:System.ServiceModel.Description.ServiceContractGenerator> vlastního importu vzorku vytvoří a zkompilovat upravené informace o smlouvě do jazyka Visual Basic a C# klientský kód, který lze použít v sadě Visual Studio pro podporu Intellisense nebo kompilovány do dokumentace XML.  
   
 ```csharp
 /// From WSDL Documentation:  
-///   
-/// <summary>The ICalculator contract performs basic calculation   
-/// services.</summary>   
-///   
+///
+/// <summary>The ICalculator contract performs basic calculation
+/// services.</summary>
+///
 [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "3.0.0.0")]  
 [System.ServiceModel.ServiceContractAttribute(Namespace="http://Microsoft.ServiceModel.Samples", ConfigurationName="ICalculator")]  
 public interface ICalculator  
 {  
   
     /// From WSDL Documentation:  
-    ///   
-    /// <summary>The Add operation adds two numbers and returns the   
-    /// result.</summary><returns>The result of adding the two arguments   
-    /// together.</returns><param name="n1">The first value to add.</param><param   
-    /// name="n2">The second value to add.</param>   
-    ///   
+    ///
+    /// <summary>The Add operation adds two numbers and returns the
+    /// result.</summary><returns>The result of adding the two arguments
+    /// together.</returns><param name="n1">The first value to add.</param><param
+    /// name="n2">The second value to add.</param>
+    ///
     [System.ServiceModel.OperationContractAttribute(Action="http://Microsoft.ServiceModel.Samples/ICalculator/Add", ReplyAction="http://Microsoft.ServiceModel.Samples/ICalculator/AddResponse")]  
     double Add(double n1, double n2);  
   
     /// From WSDL Documentation:  
-    ///   
-    /// <summary>The Subtract operation subtracts the second argument from the   
-    /// first.</summary><returns>The result of the second argument subtracted from the   
-    /// first.</returns><param name="n1">The value from which the second is   
-    /// subtracted.</param><param name="n2">The value that is subtracted from the   
-    /// first.</param>   
-    ///   
+    ///
+    /// <summary>The Subtract operation subtracts the second argument from the
+    /// first.</summary><returns>The result of the second argument subtracted from the
+    /// first.</returns><param name="n1">The value from which the second is
+    /// subtracted.</param><param name="n2">The value that is subtracted from the
+    /// first.</param>
+    ///
     [System.ServiceModel.OperationContractAttribute(Action="http://Microsoft.ServiceModel.Samples/ICalculator/Subtract", ReplyAction="http://Microsoft.ServiceModel.Samples/ICalculator/SubtractResponse")]  
     double Subtract(double n1, double n2);  
   
     /// From WSDL Documentation:  
-    ///   
-    /// <summary>The Multiply operation multiplies two values.</summary><returns>The   
-    /// result of multiplying the first and second arguments.</returns><param   
-    /// name="n1">The first value to multiply.</param><param name="n2">The second value   
-    /// to multiply.</param>   
-    ///   
+    ///
+    /// <summary>The Multiply operation multiplies two values.</summary><returns>The
+    /// result of multiplying the first and second arguments.</returns><param
+    /// name="n1">The first value to multiply.</param><param name="n2">The second value
+    /// to multiply.</param>
+    ///
     [System.ServiceModel.OperationContractAttribute(Action="http://Microsoft.ServiceModel.Samples/ICalculator/Multiply", ReplyAction="http://Microsoft.ServiceModel.Samples/ICalculator/MultiplyResponse")]  
     double Multiply(double n1, double n2);  
   
     /// From WSDL Documentation:  
-    ///   
-    /// <summary>The Divide operation returns the value of the first argument divided   
-    /// by the second argument.</summary><returns>The result of dividing the first   
-    /// argument by the second.</returns><param name="n1">The numerator.</param><param   
-    /// name="n2">The denominator.</param>   
-    ///   
+    ///
+    /// <summary>The Divide operation returns the value of the first argument divided
+    /// by the second argument.</summary><returns>The result of dividing the first
+    /// argument by the second.</returns><param name="n1">The numerator.</param><param
+    /// name="n2">The denominator.</param>
+    ///
     [System.ServiceModel.OperationContractAttribute(Action="http://Microsoft.ServiceModel.Samples/ICalculator/Divide", ReplyAction="http://Microsoft.ServiceModel.Samples/ICalculator/DivideResponse")]  
     double Divide(double n1, double n2);  
 }  
@@ -292,17 +292,17 @@ public interface ICalculator
   
 #### <a name="to-set-up-build-and-run-the-sample"></a>Nastavení, sestavení a spuštění ukázky  
   
-1. Ujistěte se, že jste provedli [postup jednorázového nastavení pro Windows Communication Foundation ukázky](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
+1. Ujistěte se, že jste provedli [jednorázový postup instalace pro ukázky windows communication foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
   
-2. Pokud chcete vytvořit C# edici nebo Visual Basic .NET, postupujte podle pokynů v tématu [sestavování ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
+2. Chcete-li vytvořit c# nebo Visual Basic .NET vydání řešení, postupujte podle pokynů v [sestavení windows communication foundation ukázky](../../../../docs/framework/wcf/samples/building-the-samples.md).  
   
-3. Chcete-li spustit ukázku v konfiguraci s jedním nebo více počítači, postupujte podle pokynů v části [spuštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
+3. Chcete-li spustit ukázku v konfiguraci jednoho nebo více počítačů, postupujte podle pokynů v [části Spuštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
   
 > [!IMPORTANT]
-> Ukázky už můžou být na vašem počítači nainstalované. Než budete pokračovat, vyhledejte následující (výchozí) adresář.  
->   
+> Ukázky mohou být již nainstalovány v počítači. Před pokračováním zkontrolujte následující (výchozí) adresář.  
+>
 > `<InstallDrive>:\WF_WCF_Samples`  
->   
-> Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] Samples. Tato ukázka se nachází v následujícím adresáři.  
->   
+>
+> Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a Windows Workflow Foundation (WF) Ukázky pro rozhraní .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka je umístěna v následujícím adresáři.  
+>
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Extensibility\Metadata\WsdlDocumentation`  

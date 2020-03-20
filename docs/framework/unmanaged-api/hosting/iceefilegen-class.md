@@ -14,20 +14,20 @@ helpviewer_keywords:
 ms.assetid: 90368606-506e-40df-be1f-8d595159203f
 topic_type:
 - apiref
-ms.openlocfilehash: 6914437b9b238c1d82cf4cc8a480a15dd8dda7ad
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 8f9761cc8bc881cd694f5d9620e5c4ab5987a2ed
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73126808"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79176393"
 ---
 # <a name="iceefilegen-class"></a>ICeeFileGen – třída
-Poskytuje funkce pro vytvoření nativního přenositelného spustitelného souboru (PE). Rozhraní bude obvykle použito kompilátory k vygenerování jejich zkompilovaného výstupního spustitelného souboru.  
+Poskytuje funkce pro vytvoření nativního přenosného spustitelného souboru (PE). Rozhraní bude obvykle používán kompilátory ke generování jejich kompilovaný výstup spustitelný soubor.  
   
 > [!NOTE]
-> `ICeeFileGen` podporuje infrastrukturu .NET Framework a není určena pro použití přímo v kódu.  
+> `ICeeFileGen`podporuje infrastrukturu rozhraní .NET Framework a není určen k použití přímo z vašeho kódu.  
   
- Toto rozhraní se už nepoužívá a v budoucí verzi se odebere.  
+ Toto rozhraní bylo zastaralé a bude odebráno v budoucí verzi.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -149,7 +149,7 @@ public:
         HCEESECTION section, ULONG num, ULONG size, ULONG offset = 0);  
   
     virtual HRESULT EmitMetaDataEx (HCEEFILE ceeFile,  
-        IMetaDataEmit *emitter);   
+        IMetaDataEmit *emitter);
   
     virtual HRESULT EmitLibraryNameEx (HCEEFILE ceeFile,  
         IMetaDataEmit *emitter);  
@@ -235,12 +235,12 @@ public:
 ```  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Hlavička:** ICeeFileGen –. h  
+ **Záhlaví:** ICeeFileGen.h  
   
- **Verze .NET Framework:** 1,0  
+ **Verze rozhraní .NET Framework:** 1.0  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Rozhraní pro hostování](../../../../docs/framework/unmanaged-api/hosting/hosting-interfaces.md)

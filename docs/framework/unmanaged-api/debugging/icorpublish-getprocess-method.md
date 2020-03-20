@@ -15,44 +15,44 @@ helpviewer_keywords:
 ms.assetid: c5143805-2eb7-45b8-85ed-c8fb34df1084
 topic_type:
 - apiref
-ms.openlocfilehash: 0368349e6c6a566cb569738bf3bda40eb9f5de96
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.openlocfilehash: 46f047dbec7ff008873540806b76ffe7085086b5
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76790736"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79178425"
 ---
 # <a name="icorpublishgetprocess-method"></a>ICorPublish::GetProcess – metoda
-Získá instanci [ICorPublishProcess](icorpublishprocess-interface.md) , která představuje proces se zadaným identifikátorem.  
+Získá [instanci ICorPublishProcess,](icorpublishprocess-interface.md) která představuje proces se zadaným identifikátorem.  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```cpp  
 HRESULT GetProcess(  
-    [in] unsigned              pid,   
+    [in] unsigned              pid,
     [out] ICorPublishProcess   **ppProcess  
 );  
 ```  
   
 ## <a name="parameters"></a>Parametry  
  `pid`  
- pro Identifikátor procesu  
+ [v] Identifikátor procesu.  
   
  `ppProcess`  
- mimo Ukazatel na adresu `ICorPublishProcess` instance, která představuje proces.  
+ [out] Ukazatel na adresu `ICorPublishProcess` instance, která představuje proces.  
   
 ## <a name="remarks"></a>Poznámky  
- `GetProcess` dojde k chybě, pokud proces neexistuje nebo se nejedná o spravovaný proces, který může ladit aktuální uživatel.  
+ `GetProcess`pokud proces neexistuje nebo se nejedná o spravovaný proces, který může být odladěn aktuálním uživatelem.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Hlavička:** CorPub. idl, CorPub. h  
+ **Záhlaví:** CorPub.idl, CorPub.h  
   
- **Knihovna:** CorGuids. lib  
+ **Knihovna:** CorGuids.lib  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [ICorPublish – rozhraní](icorpublish-interface.md)

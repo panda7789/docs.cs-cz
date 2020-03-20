@@ -1,5 +1,5 @@
 ---
-title: ResetSecurity – funkce (Reference nespravovaného rozhraní API)
+title: Funkce ResetSecurity (nespravovaný odkaz na rozhraní API)
 description: Funkce ResetSecurity přiřadí aktuálnímu vláknu token zosobnění.
 ms.date: 11/06/2017
 api_name:
@@ -14,15 +14,15 @@ helpviewer_keywords:
 - ResetSecurity function [.NET WMI and performance counters]
 topic_type:
 - Reference
-ms.openlocfilehash: 95d91eac21e82e55af2f5e9ab181b770832f5ad0
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: ce74494455c6cc7fe382a4ea4ef2ff0c4e98c61b
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73120212"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79174859"
 ---
-# <a name="resetsecurity-function"></a>ResetSecurity – funkce
-Přiřadí zadaný token zosobnění aktuálnímu vláknu.   
+# <a name="resetsecurity-function"></a>Funkce ResetSecurity
+Přiřadí zadaný token zosobnění aktuálnímu vláknu.
   
 [!INCLUDE[internalonly-unmanaged](../../../../includes/internalonly-unmanaged.md)]
   
@@ -31,27 +31,27 @@ Přiřadí zadaný token zosobnění aktuálnímu vláknu.
 ```cpp  
 HRESULT ResetSecurity (
    [in] HANDLE token
-); 
+);
 ```  
 
 ## <a name="parameters"></a>Parametry
 
 `token`  
-pro Token zosobnění, který má být přidružen k aktuálnímu vláknu. Její hodnota může být `null`. 
+[v] Token zosobnění přidružit k aktuální vlákno. Jeho hodnota `null`může být .
 
 ## <a name="return-value"></a>Návratová hodnota
 
-Pokud je funkce úspěšná, návratová hodnota je `S_OK` (0).
+Pokud je funkce úspěšná, `S_OK` vrácená hodnota je (0).
 
-Pokud dojde k chybě funkce, vrácená hodnota je nenulový kód chyby. Chcete-li získat rozšířené informace o chybě, zavolejte funkci [GetErrorInfo](geterrorinfo.md) .
+Pokud funkce selže, vrácená hodnota je nenulový kód chyby. Chcete-li získat rozšířené informace o chybě, zavolejte funkci [GetErrorInfo.](geterrorinfo.md)
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
+ **Platformy:** Viz [Systémové požadavky](../../get-started/system-requirements.md).  
   
- **Hlavička:** WMINet_Utils. idl  
+ **Záhlaví:** WMINet_Utils.idl  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
+ **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [WMI a čítače výkonu (Reference nespravovaného rozhraní API)](index.md)
+- [Čítače služby WMI a výkonu (nespravovaný odkaz na rozhraní API)](index.md)

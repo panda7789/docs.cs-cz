@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 25ca7623-5a55-4f09-b44a-36b03d142278
 topic_type:
 - apiref
-ms.openlocfilehash: 82302124828a2dab73b445128d7d847e112edd36
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 15b58e01d4ce99f19f510c760819471b84380b45
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74448219"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79177762"
 ---
 # <a name="imetadataassemblyimportgetexportedtypeprops-method"></a>IMetaDataAssemblyImport::GetExportedTypeProps – metoda
 Získá sadu vlastností exportovaného typu se zadaným podpisem metadat.  
@@ -29,47 +29,47 @@ Získá sadu vlastností exportovaného typu se zadaným podpisem metadat.
   
 ```cpp  
 HRESULT GetExportedTypeProps (  
-    [in]  mdExportedType    mdct,   
-    [out] LPWSTR            szName,   
-    [in]  ULONG             cchName,   
-    [out] ULONG             *pchName,   
-    [out] mdToken           *ptkImplementation,   
-    [out] mdTypeDef         *ptkTypeDef,   
+    [in]  mdExportedType    mdct,
+    [out] LPWSTR            szName,
+    [in]  ULONG             cchName,
+    [out] ULONG             *pchName,
+    [out] mdToken           *ptkImplementation,
+    [out] mdTypeDef         *ptkTypeDef,
     [out] DWORD             *pdwExportedTypeFlags  
 );  
 ```  
   
 ## <a name="parameters"></a>Parametry  
  `mdct`  
- pro Token metadat `mdExportedType`, který představuje exportovaný typ.  
+ [v] Token `mdExportedType` metadat, který představuje exportovaný typ.  
   
  `szName`  
- mimo Název exportovaného typu.  
+ [out] Název exportovaného typu.  
   
  `cchName`  
- pro Velikost `szName`v různých znacích.  
+ [v] Velikost . `szName`  
   
  `pchName`  
- mimo Počet skutečně vrácených znaků v `szName`  
+ [out] Počet širokých znaků skutečně vrácených`szName`  
   
  `ptkImplementation`  
- mimo Token metadat `mdFile`, `mdAssemblyRef`nebo `mdExportedType`, který obsahuje nebo umožňuje přístup k vlastnostem exportovaného typu.  
+ [out] Token `mdFile` `mdAssemblyRef`, `mdExportedType` nebo metadata, který obsahuje nebo umožňuje přístup k vlastnostem exportovaného typu.  
   
  `ptkTypeDef`  
- mimo Ukazatel na token `mdTypeDef`, který představuje typ v souboru.  
+ [out] Ukazatel na `mdTypeDef` token, který představuje typ v souboru.  
   
  `pdwExportedTypeFlags`  
- mimo Ukazatel na příznaky, které popisují metadata použitá pro exportovaný typ. Hodnota příznaků může být jedna nebo víc hodnot [CorTypeAttr –](../../../../docs/framework/unmanaged-api/metadata/cortypeattr-enumeration.md) .  
+ [out] Ukazatel na příznaky, které popisují metadata použitá pro exportovaný typ. Hodnota příznaky může být jeden nebo více [CorTypeAttr](../../../../docs/framework/unmanaged-api/metadata/cortypeattr-enumeration.md) hodnoty.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Hlavička:** Cor. h  
+ **Záhlaví:** Kor.h.  
   
- **Knihovna:** Používá se jako prostředek v knihovně MsCorEE. dll.  
+ **Knihovna:** Používá se jako prostředek v souboru MsCorEE.dll  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [IMetaDataAssemblyImport – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyimport-interface.md)

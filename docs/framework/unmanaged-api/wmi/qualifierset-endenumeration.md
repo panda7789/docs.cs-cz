@@ -1,5 +1,5 @@
 ---
-title: QualifierSet_EndEnumeration – funkce (Reference nespravovaného rozhraní API)
+title: QualifierSet_EndEnumeration funkce (Nespravovaný odkaz na rozhraní API)
 description: Funkce QualifierSet_EndEnumeration ukončí výčet.
 ms.date: 11/06/2017
 api_name:
@@ -14,15 +14,15 @@ helpviewer_keywords:
 - QualifierSet_EndEnumeration function [.NET WMI and performance counters]
 topic_type:
 - Reference
-ms.openlocfilehash: 82627fa416f71e123ed2c03bae4584e4433310eb
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: c606580ff2e02c5659c14b134b1a17a65651952b
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73127280"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79176744"
 ---
-# <a name="qualifierset_endenumeration-function"></a>QualifierSet_EndEnumeration – funkce
-Ukončí výčet zahájený voláním funkce [QualifierSet_BeginEnumeration](qualifierset-beginenumeration.md) .  
+# <a name="qualifierset_endenumeration-function"></a>QualifierSet_EndEnumeration funkce
+Ukončí výčet, který byl zahájen voláním [funkce QualifierSet_BeginEnumeration.](qualifierset-beginenumeration.md)  
 
 [!INCLUDE[internalonly-unmanaged](../../../../includes/internalonly-unmanaged.md)]
   
@@ -30,41 +30,40 @@ Ukončí výčet zahájený voláním funkce [QualifierSet_BeginEnumeration](qua
   
 ```cpp  
 HRESULT QualifierSet_EndEnumeration (
-   [in] int                  vFunc, 
+   [in] int                  vFunc,
    [in] IWbemQualifierSet*   ptr
-); 
+);
 ```  
 
 ## <a name="parameters"></a>Parametry
 
 `vFunc`  
-pro Tento parametr se nepoužívá.
+[v] Tento parametr není použit.
 
-`ptr`   
-pro Ukazatel na instanci [IWbemQualifierSet](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemqualifierset) .
+`ptr`[v] Ukazatel na instanci [IWbemQualifierSet.](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemqualifierset)
 
 ## <a name="return-value"></a>Návratová hodnota
 
-Následující hodnota vrácená touto funkcí je definována v souboru hlaviček *WbemCli. h* nebo ji můžete definovat jako konstantu v kódu:
+Následující hodnota vrácená touto funkcí je definována v souboru *hlavičky WbemCli.h* nebo ji můžete definovat jako konstantu v kódu:
 
-|Konstanta  |Hodnota  |Popis  |
+|Trvalé  |Hodnota  |Popis  |
 |---------|---------|---------|
-|`WBEM_S_NO_ERROR` | 0,8 | Volání funkce bylo úspěšné.  |
+|`WBEM_S_NO_ERROR` | 0 | Volání funkce bylo úspěšné.  |
   
 ## <a name="remarks"></a>Poznámky
 
-Tato funkce zalomí volání metody [IWbemQualifierSet:: funkce EndEnumeration](/windows/desktop/api/wbemcli/nf-wbemcli-iwbemqualifierset-endenumeration) .
+Tato funkce zalomí volání [metody IWbemQualifierSet::EndEnumeration.](/windows/desktop/api/wbemcli/nf-wbemcli-iwbemqualifierset-endenumeration)
 
-Toto volání se doporučuje, ale není povinné. Okamžitě uvolňuje prostředky spojené s výčtem.
+Toto volání je doporučeno, ale není vyžadováno. Okamžitě uvolní prostředky přidružené k výčtu.
 
 ## <a name="requirements"></a>Požadavky  
 
-**Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
+**Platformy:** Viz [Systémové požadavky](../../get-started/system-requirements.md).  
   
-**Hlavička:** WMINet_Utils. idl  
+**Záhlaví:** WMINet_Utils.idl  
   
-**Verze .NET Framework:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
+**Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [WMI a čítače výkonu (Reference nespravovaného rozhraní API)](index.md)
+- [Čítače služby WMI a výkonu (nespravovaný odkaz na rozhraní API)](index.md)

@@ -8,19 +8,19 @@ helpviewer_keywords:
 - ThrowUnobservedTaskExceptions element
 - <ThrowUnobservedTaskExceptions> element
 ms.assetid: cea7e588-8b8d-48d2-9ad5-8feaf3642c18
-ms.openlocfilehash: 99eef6b8c264e21df7f4ecf9fc79dc607d484a0a
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: de5a686bcbd88fc52173b488103f033575623d62
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73115423"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79153812"
 ---
-# <a name="throwunobservedtaskexceptions-element"></a>\<element > ThrowUnobservedTaskExceptions
-Určuje, zda výjimky neošetřených úloh mají ukončit běžící proces.  
+# <a name="throwunobservedtaskexceptions-element"></a>\<Prvek> nepozorovaných úloh
+Určuje, zda mají neošetřené výjimky úloh ukončit spuštěný proces.  
   
-[ **\<configuration >** ](../configuration-element.md) \
-&nbsp;&nbsp;[ **\<runtime >** ](runtime-element.md)\
-&nbsp;&nbsp;&nbsp;&nbsp; **\<ThrowUnobservedTaskExceptions >**  
+[**\<>konfigurace**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<>za běhu**](runtime-element.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;**\<ThrowUnobservedTaskExceptions>**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -36,59 +36,59 @@ Určuje, zda výjimky neošetřených úloh mají ukončit běžící proces.
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|`enabled`|Požadovaný atribut.<br /><br /> Určuje, zda mají být neošetřené výjimky úloh ukončeny spuštěným procesem.|  
+|`enabled`|Požadovaný atribut.<br /><br /> Určuje, zda mají neošetřené výjimky úloh ukončit spuštěný proces.|  
   
 ## <a name="enabled-attribute"></a>Atribut enabled  
   
 |Hodnota|Popis|  
 |-----------|-----------------|  
-|`false`|Neukončí běžící proces pro neošetřenou výjimku úlohy. Toto nastavení je výchozí.|  
-|`true`|Ukončí běžící proces pro neošetřenou výjimku úlohy.|  
+|`false`|Neukončí spuštěný proces pro výjimku neošetřené úlohy. Toto nastavení je výchozí.|  
+|`true`|Ukončí spuštěný proces pro výjimku neošetřených úloh.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
- Žádné  
+ Žádné.  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
-|Prvek|Popis|  
+|Element|Popis|  
 |-------------|-----------------|  
 |`configuration`|Kořenový prvek v každém konfiguračním souboru, který je používán modulem Common Language Runtime (CLR) a aplikacemi rozhraní .NET Framework.|  
 |`runtime`|Obsahuje informace o možnostech inicializace modulu runtime.|  
 |||  
   
 ## <a name="remarks"></a>Poznámky  
- Pokud nebyla pozorována výjimka, která je přidružena k <xref:System.Threading.Tasks.Task>, není k dispozici žádná <xref:System.Threading.Tasks.Task.Wait%2A> operace, nadřazený objekt není připojen a vlastnost <xref:System.Threading.Tasks.Task.Exception%2A?displayProperty=nameWithType> nebyla přečtena. výjimka úlohy je považována za nepozorovanou.  
+ Pokud nebyla dodržena <xref:System.Threading.Tasks.Task> výjimka, která je <xref:System.Threading.Tasks.Task.Wait%2A> přidružena k a, neexistuje <xref:System.Threading.Tasks.Task.Exception%2A?displayProperty=nameWithType> žádná operace, nadřazená možnost není připojena a vlastnost nebyla přečtena, je výjimka úkolu považována za nedodrženou.  
   
- V .NET Framework 4 ve výchozím nastavení, pokud je <xref:System.Threading.Tasks.Task> s nepozorovanou výjimkou uvolňování paměti, finalizační metoda vyvolá výjimku a ukončí proces. Ukončení procesu je určeno časováním uvolňování paměti a dokončením.  
+ V rozhraní .NET Framework 4 ve <xref:System.Threading.Tasks.Task> výchozím nastavení, pokud a, který má nepozorované výjimky je uvolněna, finalizační metoda vyvolá výjimku a ukončí proces. Ukončení procesu je určena načasování uvolňování paměti a dokončení.  
   
- Aby vývojáři usnadnili psaní asynchronního kódu založeného na úlohách, .NET Framework 4,5 mění toto výchozí chování pro nepozorované výjimky. Nepozorované výjimky stále způsobují vyvolání události <xref:System.Threading.Tasks.TaskScheduler.UnobservedTaskException>, ale ve výchozím nastavení se proces neukončí. Místo toho je výjimka po vyvolání události ignorována bez ohledu na to, zda obslužná rutina události tuto výjimku dobere.  
+ Chcete-li usnadnit vývojářům psát asynchronní kód na základě úkolů, rozhraní .NET Framework 4.5 změní toto výchozí chování pro nepozorované výjimky. Nepozorované výjimky <xref:System.Threading.Tasks.TaskScheduler.UnobservedTaskException> stále způsobit událost, která má být vyvolána, ale ve výchozím nastavení proces neukončí. Místo toho je výjimka ignorována po vyvolání události, bez ohledu na to, zda obslužná rutina události dodržuje výjimku.  
   
- V .NET Framework 4,5 lze pomocí [elementu\<ThrowUnobservedTaskExceptions >](throwunobservedtaskexceptions-element.md) v konfiguračním souboru aplikace povolit .NET Framework 4 chování při vyvolání výjimky.  
+ V rozhraní .NET Framework 4.5 můžete použít [ \<prvek> ThrowUnobservedTaskExceptions](throwunobservedtaskexceptions-element.md) v konfiguračním souboru aplikace k povolení chování rozhraní .NET Framework 4 vyvolání výjimky.  
   
- Chování výjimky můžete určit také jedním z následujících způsobů:  
+ Chování výjimek můžete také určit jedním z následujících způsobů:  
   
-- Nastavením proměnné prostředí `COMPlus_ThrowUnobservedTaskExceptions` (`set COMPlus_ThrowUnobservedTaskExceptions=1`).  
+- Nastavením proměnné `COMPlus_ThrowUnobservedTaskExceptions` prostředí`set COMPlus_ThrowUnobservedTaskExceptions=1`( ).  
   
-- Nastavením hodnoty DWORD registru ThrowUnobservedTaskExceptions = 1 v HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\\. NETFramework klíč.  
+- Nastavením hodnoty DWORD registru ThrowUnobservedTaskExceptions = 1 v\\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft . NETFramework.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje, jak povolit vyvolávání výjimek v úlohách pomocí konfiguračního souboru aplikace.  
+ Následující příklad ukazuje, jak povolit vyvolání výjimek v úlohách pomocí konfiguračního souboru aplikace.  
   
 ```xml  
-<configuration>   
-    <runtime>   
-        <ThrowUnobservedTaskExceptions enabled="true"/>   
-    </runtime>   
+<configuration>
+    <runtime>
+        <ThrowUnobservedTaskExceptions enabled="true"/>
+    </runtime>
 </configuration>  
 ```  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje, jak je vyvolána nepozorovaná výjimka z úlohy. Kód musí být spuštěn jako vydaný program pro správné fungování.  
+ Následující příklad ukazuje, jak je vyvolána nepozorovaná výjimka z úkolu. Kód musí být spuštěn jako uvolněný program, aby fungoval správně.  
   
  [!code-csharp[ThrowUnobservedTaskExceptions#1](../../../../../samples/snippets/csharp/VS_Snippets_CLR/throwunobservedtaskexceptions/cs/program.cs#1)]
  [!code-vb[ThrowUnobservedTaskExceptions#1](../../../../../samples/snippets/visualbasic/VS_Snippets_CLR/throwunobservedtaskexceptions/vb/program.vb#1)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Schéma nastavení běhového prostředí](index.md)
 - [Schéma konfiguračního souboru](../index.md)

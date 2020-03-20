@@ -5,23 +5,23 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 7ab93b89-1221-427c-84ad-04803b3c64b4
-ms.openlocfilehash: 4ac0216ce2965d555f7283ba66a085ea9d7cac3c
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: e18c23e9bbec97a64110aba6eb7241761ecece06
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70783839"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79149554"
 ---
 # <a name="getschema-and-schema-collections"></a>Příkaz GetSchema a kolekce schémat
-Třídy **připojení** v každém z .NET Framework spravovaných zprostředkovatelé implementují metodu **GetSchema** , která se používá k načtení informací o schématu o databázi, která je aktuálně připojená, a informace o schématu vrácené z  **Metoda GetSchema** je dodávána ve formě <xref:System.Data.DataTable>. Metoda **GetSchema** je přetížená metoda, která poskytuje volitelné parametry pro určení kolekce schématu, která se má vrátit, a omezení množství vrácených informací.  
+Třídy **Connection** v každém zprostředkovateli spravované ho rozhraní .NET Framework implementují metodu **GetSchema,** která se používá k načtení informací o schématu o databázi, <xref:System.Data.DataTable>která je aktuálně připojena, a informace o schématu vrácené z metody **GetSchema** jsou dodávány ve formě . **Metoda GetSchema** je přetížená metoda, která poskytuje volitelné parametry pro určení kolekce schématu vrátit a omezení množství vrácených informací.  
   
-## <a name="specifying-the-schema-collections"></a>Určení kolekcí schémat  
- Prvním volitelným parametrem metody **GetSchema** je název kolekce, který je určen jako řetězec. Existují dva typy kolekcí schémat: společné kolekce schémat, které jsou společné pro všechny poskytovatele, a konkrétní kolekce schémat, které jsou specifické pro každého poskytovatele.  
+## <a name="specifying-the-schema-collections"></a>Určení kolekcí schématu  
+ První volitelný parametr metody **GetSchema** je název kolekce, který je určen jako řetězec. Existují dva typy kolekcí schématu: společné kolekce schématu, které jsou společné pro všechny zprostředkovatele a konkrétní kolekce schématu, které jsou specifické pro každého zprostředkovatele.  
   
- Můžete zadat dotaz na .NET Framework spravovaného poskytovatele a určit seznam podporovaných kolekcí schémat voláním metody **GetSchema** bez argumentů nebo s názvem kolekce schématu "MetaDataCollections". Tato akce vrátí <xref:System.Data.DataTable> seznam podporovaných kolekcí schémat, počet omezení, která jednotlivé požadavky podporují, a počet částí identifikátorů, které používají.  
+ Můžete dotaz zprostředkovatele spravovaného rozhraní .NET Framework určit seznam podporovaných kolekcí schématu voláním **GetSchema** metoda bez argumentů nebo s názvem kolekce schématu "MetaDataCollections". Tím se <xref:System.Data.DataTable> vrátí seznam podporovaných kolekcí schématu, počet omezení, které podporují, a počet částí identifikátoru, které používají.  
   
-### <a name="retrieving-schema-collections-example"></a>Příklad načítání kolekcí schémat  
- Následující příklady ukazují, jak použít <xref:System.Data.SqlClient.SqlConnection.GetSchema%2A> metodu .NET Framework Zprostředkovatel dat pro třídu SQL Server <xref:System.Data.SqlClient.SqlConnection> k načtení informací o schématu o všech tabulkách obsažených v ukázkové databázi **AdventureWorks** :  
+### <a name="retrieving-schema-collections-example"></a>Příklad načítání kolekcí schématu  
+ Následující příklady ukazují, jak <xref:System.Data.SqlClient.SqlConnection.GetSchema%2A> použít metodu zprostředkovatele dat rozhraní <xref:System.Data.SqlClient.SqlConnection> .NET Framework pro třídu SQL Server k načtení informací o schématu o všech tabulkách obsažených v ukázkové databázi **AdventureWorks:**  
   
 ```vb  
 Imports System.Data.SqlClient  
@@ -42,7 +42,7 @@ Module Module1
    End Sub  
   
    Private Function GetConnectionString() As String  
-      ' To avoid storing the connection string in your code,    
+      ' To avoid storing the connection string in your code,
       ' you can retrieve it from a configuration file.  
       Return "Data Source=(local);Database=AdventureWorks;" _  
          & "Integrated Security=true;"  
@@ -104,7 +104,7 @@ class Program
 }  
 ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Načítání informací o databázovém schématu](retrieving-database-schema-information.md)
 - [Přehled ADO.NET](ado-net-overview.md)

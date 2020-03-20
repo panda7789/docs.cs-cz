@@ -1,36 +1,36 @@
 ---
-title: Dotazy na jednu tabulku (LINQ to DataSet)
+title: Jednotalové dotazy (LINQ to DataSet)
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: 0b74bcf8-3f87-449f-bff7-6bcb0d69d212
-ms.openlocfilehash: 1f4462f617eb81d30f893b52bdc674e1eee8961c
-ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
+ms.openlocfilehash: 7bb8d8e19ac9cf36eabc061ceba9c649b8a4cc00
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75634765"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79148969"
 ---
-# <a name="single-table-queries-linq-to-dataset"></a>Dotazy na jednu tabulku (LINQ to DataSet)
-Dotazy LINQ (Language-Integrated Query) fungují na zdrojích dat, které implementují rozhraní <xref:System.Collections.Generic.IEnumerable%601> nebo rozhraní <xref:System.Linq.IQueryable%601>. Třída <xref:System.Data.DataTable> neimplementuje žádné rozhraní, takže je nutné volat metodu <xref:System.Data.DataTableExtensions.AsEnumerable%2A>, pokud chcete použít <xref:System.Data.DataTable> jako zdroj v klauzuli `From` dotazu LINQ.  
+# <a name="single-table-queries-linq-to-dataset"></a>Jednotalové dotazy (LINQ to DataSet)
+Dotazy integrovaného jazyka (LINQ) pracují na zdrojích dat, které implementují <xref:System.Collections.Generic.IEnumerable%601> rozhraní nebo <xref:System.Linq.IQueryable%601> rozhraní. Třída <xref:System.Data.DataTable> neimplementuje žádné rozhraní, takže <xref:System.Data.DataTableExtensions.AsEnumerable%2A> je nutné volat <xref:System.Data.DataTable> metodu, pokud `From` chcete použít jako zdroj v klauzuli dotazu LINQ.  
   
- Následující příklad načte všechny online objednávky z tabulky SalesOrderHeader a vypíše ID objednávky, datum objednávky a číslo objednávky do konzoly.  
+ Následující příklad získá všechny online objednávky z tabulky SalesOrderHeader a vyveze ID objednávky, datum objednávky a číslo objednávky do konzoly.  
   
  [!code-csharp[DP LINQ to DataSet Examples#Where1](../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DP LINQ to DataSet Examples/CS/Program.cs#where1)]  
- [!code-vb[DP LINQ to DataSet Examples#Where1](../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DP LINQ to DataSet Examples/VB/Module1.vb#where1)] 
+ [!code-vb[DP LINQ to DataSet Examples#Where1](../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DP LINQ to DataSet Examples/VB/Module1.vb#where1)]
   
- Místní dotaz na proměnnou je inicializován pomocí výrazu dotazu, který pracuje na jednom nebo více zdrojích informací pomocí jednoho nebo více zdrojů pro dotazování buď ze standardních operátorů dotazu, nebo v případě LINQ to DataSet operátory specifické pro <xref:System.Data.DataSet> třídy. Výraz dotazu v předchozím příkladu používá dva ze standardních operátorů dotazu: `Where` a `Select`.  
+ Dotaz místní proměnné je inicializován výrazem dotazu, který pracuje s jedním nebo více zdroji informací použitím jednoho nebo více operátorů dotazů <xref:System.Data.DataSet> ze standardních operátorů dotazů nebo v případě LINQ to DataSet operátorů specifických pro danou třídu. Výraz dotazu v předchozím příkladu používá dva `Where` `Select`standardní operátory dotazu: a .  
   
- Klauzule `Where` filtruje sekvenci na základě podmínky, v tomto případě je `OnlineOrderFlag` nastavena na `true`. Operátor `Select` přiděluje a vrací vyčíslitelné objekt, který zachycuje argumenty předané do operátoru. V tomto příkladu je vytvořen anonymní typ se třemi vlastnostmi: `SalesOrderID`, `OrderDate`a `SalesOrderNumber`. Hodnoty těchto tří vlastností jsou nastaveny na hodnoty `SalesOrderID`, `OrderDate`a `SalesOrderNumber` sloupců z tabulky `SalesOrderHeader`.  
+ Klauzule `Where` filtruje sekvenci na základě `OnlineOrderFlag` podmínky, `true`v tomto případě je nastavena na . Operátor `Select` přiděluje a vrací výčtový objekt, který zachycuje argumenty předané operátoru. V tomto výše uvedeném příkladu je `SalesOrderID`vytvořen `OrderDate`anonymní `SalesOrderNumber`typ se třemi vlastnostmi: , a . Hodnoty těchto tří vlastností jsou nastaveny `SalesOrderID` `OrderDate`na `SalesOrderNumber` hodnoty , `SalesOrderHeader` a sloupce z tabulky.  
   
- `foreach` cyklus potom vytvoří výčet vyčíslitelného objektu vráceného `Select` a výsledkem výsledků dotazu. Vzhledem k tomu, že je dotaz typu <xref:System.Linq.Enumerable>, který implementuje <xref:System.Collections.Generic.IEnumerable%601>, vyhodnocování dotazu je odloženo, dokud se proměnná dotazu neprojde pomocí `foreach` smyčky. Odložené vyhodnocování dotazů umožňuje uchovávat dotazy jako hodnoty, které lze vyhodnotit několikrát, pokaždé, když se zaměří na potenciálně odlišné výsledky.  
+ Smyčka `foreach` pak vytvoří výčet výčtu výčtu objektu vráceného `Select` a výnosy výsledky dotazu. Vzhledem k <xref:System.Linq.Enumerable> tomu, že <xref:System.Collections.Generic.IEnumerable%601>dotaz je typ, který implementuje , je vyhodnocení `foreach` dotazu odloženo, dokud není proměnná dotazu iterována pomocí smyčky. Odložené vyhodnocení dotazu umožňuje dotazy, které mají být uchovávány jako hodnoty, které mohou být vyhodnoceny vícekrát, pokaždé, když dává potenciálně odlišné výsledky.  
   
- Metoda <xref:System.Data.DataRowExtensions.Field%2A> poskytuje přístup k hodnotám sloupců <xref:System.Data.DataRow> a <xref:System.Data.DataRowExtensions.SetField%2A> (neuvedené v předchozím příkladu) nastaví hodnoty sloupce v <xref:System.Data.DataRow>. Metoda <xref:System.Data.DataRowExtensions.Field%2A> a metoda <xref:System.Data.DataRowExtensions.SetField%2A> zpracovávají typy s možnou hodnotou null, takže nemusíte explicitně kontrolovat hodnoty null. Obě metody jsou obecné metody, což znamená, že nemusíte přetypování návratový typ. Můžete použít již existující přistupující objekt Column v <xref:System.Data.DataRow> (například `o["OrderDate"]`), ale v takovém případě by to vyžadovalo přetypování návratového objektu na příslušný typ.  Pokud sloupec může mít hodnotu null, je nutné ověřit, zda je hodnota null pomocí metody <xref:System.Data.DataRow.IsNull%2A>. Další informace naleznete v tématu [generické metody Field a SetField](generic-field-and-setfield-methods-linq-to-dataset.md).  
+ Metoda <xref:System.Data.DataRowExtensions.Field%2A> poskytuje přístup k hodnotám <xref:System.Data.DataRow> sloupců a a <xref:System.Data.DataRowExtensions.SetField%2A> (není uvedeno v <xref:System.Data.DataRow>předchozím příkladu) nastaví hodnoty sloupců v . <xref:System.Data.DataRowExtensions.Field%2A> Metody i <xref:System.Data.DataRowExtensions.SetField%2A> metody zpracovávají typy s možnou hodnotou null, takže není třeba explicitně kontrolovat hodnoty null. Obě metody jsou obecné metody, také, což znamená, že není třeba přetypovat návratový typ. Můžete použít již existující přistupující objekt sloupce v <xref:System.Data.DataRow> (například `o["OrderDate"]`), ale přitom by vyžadovalo přetypovat návratový objekt na příslušný typ.  Pokud je sloupec nullable, musíte zkontrolovat, zda je <xref:System.Data.DataRow.IsNull%2A> hodnota null pomocí metody. Další informace naleznete [v tématu Obecné pole a Metody SetField](generic-field-and-setfield-methods-linq-to-dataset.md).  
   
- Všimněte si, že datový typ zadaný v obecném parametru `T` metody <xref:System.Data.DataRowExtensions.Field%2A> a metoda <xref:System.Data.DataRowExtensions.SetField%2A> se musí shodovat s typem zdrojové hodnoty nebo bude vyvolána <xref:System.InvalidCastException>. Zadaný název sloupce musí také odpovídat názvu sloupce v <xref:System.Data.DataSet> nebo bude vyvolána <xref:System.ArgumentException>. V obou případech je výjimka vyvolána při spuštění dotazu při spuštění výčtu dat.  
+ Všimněte si, že datový `T` typ <xref:System.Data.DataRowExtensions.Field%2A> zadaný <xref:System.Data.DataRowExtensions.SetField%2A> v obecném parametru metody <xref:System.InvalidCastException> a metody musí odpovídat typu podkladové hodnoty nebo bude vyvolána. Zadaný název sloupce musí také odpovídat <xref:System.Data.DataSet> názvu <xref:System.ArgumentException> sloupce v nebo bude vyvolána. V obou případech je výjimka vyvolána při spuštění při spuštění dotazu.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Dotazy na křížovou tabulku](cross-table-queries-linq-to-dataset.md)
 - [Dotazy na typové datové sady](querying-typed-datasets.md)

@@ -15,47 +15,47 @@ helpviewer_keywords:
 ms.assetid: b6b95c04-0f2c-4fcc-a8bc-3b1dcbdba731
 topic_type:
 - apiref
-ms.openlocfilehash: 01be6c30e16e4abdd6002fc8207b33a9c76a2eef
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 9587bbe8f087fd9a51bba67492af1d5acb53ae4a
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74448752"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79176094"
 ---
 # <a name="iceegencomputepointer-method"></a>ICeeGen::ComputePointer – metoda
-Určuje vyrovnávací paměť pro zadaný oddíl kódu.  
+Určuje vyrovnávací paměť pro zadaný kód části.  
   
- Tato metoda je zastaralá a neměla by se používat.  
+ Tato metoda je zastaralá a neměla by být použita.  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```cpp  
 HRESULT ComputePointer (  
     [in]  HCEESECTION  section,  
-    [in]  ULONG        RVA,   
+    [in]  ULONG        RVA,
     [out] UCHAR        **lpBuffer  
 );  
 ```  
   
 ## <a name="parameters"></a>Parametry  
  `section`  
- pro Oddíl kódu, pro který se má vrátit vyrovnávací paměť  
+ [v] Část kódu, pro kterou chcete vrátit vyrovnávací paměť.  
   
  `RVA`  
- pro Relativní virtuální adresa metody, pro kterou se má získat ukazatel  
+ [v] Relativní virtuální adresa metody, pro kterou chcete získat ukazatel.  
   
  `lpBuffer`  
- mimo Ukazatel na vrácenou vyrovnávací paměť.  
+ [out] Ukazatel na vrácenou vyrovnávací paměť.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Hlavička:** Cor. h  
+ **Záhlaví:** Kor.h.  
   
- **Knihovna:** Používá se jako prostředek v knihovně MsCorEE. dll.  
+ **Knihovna:** Používá se jako prostředek v souboru MsCorEE.dll  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [ICeeGen – rozhraní](../../../../docs/framework/unmanaged-api/metadata/iceegen-interface.md)

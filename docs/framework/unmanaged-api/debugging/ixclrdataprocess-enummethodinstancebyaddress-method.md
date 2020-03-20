@@ -1,5 +1,5 @@
 ---
-title: IXCLRDataProcess::EnumMethodInstanceByAddress Method
+title: IXCLRDataProcess::Metoda EnumMethodInstanceByAddress
 ms.date: 01/16/2019
 api.name:
 - IXCLRDataProcess::EnumMethodInstanceByAddress Method
@@ -15,16 +15,16 @@ topic_type:
 - apiref
 author: cshung
 ms.author: andrewau
-ms.openlocfilehash: 89b89a0cb056a0515bf0859069455a73f62aae4a
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: afc5fc377dd45d5e8d4d2d7b3385ca0524df69e1
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67769613"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79176653"
 ---
-# <a name="ixclrdataprocessenummethodinstancebyaddress-method"></a>IXCLRDataProcess::EnumMethodInstanceByAddress Method
+# <a name="ixclrdataprocessenummethodinstancebyaddress-method"></a>IXCLRDataProcess::Metoda EnumMethodInstanceByAddress
 
-Vytvoří výčet metodu instance tohoto procesu začínající na posun adresy.
+Vyjmenovává instance metody tohoto procesu počínaje posunem adresy.
 
 [!INCLUDE[debugging-api-recommended-note](../../../../includes/debugging-api-recommended-note.md)]
 
@@ -40,24 +40,22 @@ HRESULT EnumMethodInstanceByAddress(
 ## <a name="parameters"></a>Parametry
 
 `handle`\
-[in] Popisovač pro vytváření výčtu instancí metody.
+[v] Popisovač pro výčet instance metody.
 
 `mod`\
-[out] Instance výčtu metody.
+[out] Instance výčtové metody.
 
 ## <a name="remarks"></a>Poznámky
 
-Zadaná metoda je součástí `IXCLRDataProcess` rozhraní a odpovídá 28 pozice tabulce virtuální metody.
+Poskytnutá metoda je součástí `IXCLRDataProcess` rozhraní a odpovídá 28.
 
 ## <a name="requirements"></a>Požadavky
 
-**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).   
-**Záhlaví:** Žádné   
-**Knihovna:** Žádné   
-**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v47plus](../../../../includes/net-current-v47plus.md)]   
- 
-## <a name="see-also"></a>Viz také:
+**Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).
+**Záhlaví:** Žádná **knihovna:** Žádné **verze rozhraní .NET Framework:**[!INCLUDE[net_current_v47plus](../../../../includes/net-current-v47plus.md)]
 
-- [CLRDataSourceType Enumeration](clrdatasourcetype-enumeration.md)
-- [Ladění](index.md)
-- [IXCLRDataProcess Interface](ixclrdataprocess-interface.md)
+## <a name="see-also"></a>Viz také
+
+- [Výčet clrdatasourcetype](clrdatasourcetype-enumeration.md)
+- [ladění](index.md)
+- [IXCLRDataProcess – rozhraní](ixclrdataprocess-interface.md)

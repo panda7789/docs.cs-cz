@@ -9,43 +9,43 @@ helpviewer_keywords:
 - styles [WPF], GroupBox
 - templates [WPF], GroupBox
 ms.assetid: 33df7037-0a1b-476f-b9d0-41566a777699
-ms.openlocfilehash: e5befffc86f26176da4accfc01239a08d4978713
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 474cda0abc6a18c015836c749c78f4d33aa5abd8
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74283767"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79187482"
 ---
 # <a name="groupbox-styles-and-templates"></a>GroupBox – styly a šablony
-<a name="introduction"></a>Toto téma popisuje styly a šablony pro ovládací prvek <xref:System.Windows.Controls.GroupBox>. Výchozí <xref:System.Windows.Controls.ControlTemplate> můžete změnit tak, aby měl ovládací prvek jedinečný vzhled. Další informace najdete v tématu [Vytvoření šablony pro ovládací prvek](../../../desktop-wpf/themes/how-to-create-apply-template.md).  
+<a name="introduction"></a>Toto téma popisuje styly a <xref:System.Windows.Controls.GroupBox> šablony ovládacího prvku. Můžete upravit výchozí <xref:System.Windows.Controls.ControlTemplate> prvek, aby ovládací prvek jedinečný vzhled. Další informace naleznete [v tématu Vytvoření šablony ovládacího prvku](../../../desktop-wpf/themes/how-to-create-apply-template.md).  
   
-<a name="groupbox_parts"></a>   
-## <a name="groupbox-parts"></a>Části Skupinový rámeček  
- Ovládací prvek <xref:System.Windows.Controls.GroupBox> neobsahuje žádné pojmenované části.  
+<a name="groupbox_parts"></a>
+## <a name="groupbox-parts"></a>Součásti GroupBox  
+ Ovládací <xref:System.Windows.Controls.GroupBox> prvek nemá žádné pojmenované části.  
   
-<a name="groupbox_states"></a>   
-## <a name="groupbox-states"></a>Stavy rámečku  
- V následující tabulce jsou uvedeny vizuální stavy pro ovládací prvek <xref:System.Windows.Controls.GroupBox>.  
+<a name="groupbox_states"></a>
+## <a name="groupbox-states"></a>Stavy GroupBox  
+ V následující tabulce jsou uvedeny stavy vizuálu ovládacího <xref:System.Windows.Controls.GroupBox> prvku.  
   
-|Název VisualState|Název VisualStateGroup|Popis|  
+|Název VisualState|Název visualstategroup|Popis|  
 |-|-|-|  
-|Platný|ValidationStates|Ovládací prvek používá třídu <xref:System.Windows.Controls.Validation> a vlastnost <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> připojena je `false`.|  
-|InvalidFocused|ValidationStates|Vlastnost <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> připojena je `true` má ovládací prvek fokus.|  
-|InvalidUnfocused|ValidationStates|Vlastnost <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> připojena je `true` má ovládací prvek fokus.|  
+|Platné|Stavy ověření|Ovládací prvek <xref:System.Windows.Controls.Validation> používá třídu a <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> `false`připojené vlastnosti je .|  
+|Neplatnéfocené|Stavy ověření|Připojená <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> vlastnost `true` má ovládací prvek má fokus.|  
+|Neplatnýnezaostřený|Stavy ověření|Připojená <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> vlastnost `true` má ovládací prvek nemá fokus.|  
   
-<a name="groupbox_controltemplate_example"></a>   
-## <a name="groupbox-controltemplate-example"></a>Skupinový ControlTemplate – příklad  
- Následující příklad ukazuje, jak definovat <xref:System.Windows.Controls.ControlTemplate> pro ovládací prvek <xref:System.Windows.Controls.GroupBox>.  
+<a name="groupbox_controltemplate_example"></a>
+## <a name="groupbox-controltemplate-example"></a>Příklad šablony ovládacího prvku GroupBox  
+ Následující příklad ukazuje, jak <xref:System.Windows.Controls.ControlTemplate> definovat <xref:System.Windows.Controls.GroupBox> pro ovládací prvek.  
   
  [!code-xaml[ControlTemplateExamples#GroupBox](~/samples/snippets/csharp/VS_Snippets_Wpf/ControlTemplateExamples/CS/resources/groupbox.xaml#groupbox)]  
   
- <xref:System.Windows.Controls.ControlTemplate> používá jeden nebo více následujících prostředků.  
+ Používá <xref:System.Windows.Controls.ControlTemplate> jeden nebo více z následujících prostředků.  
   
  [!code-xaml[ControlTemplateExamples#Resources](~/samples/snippets/csharp/VS_Snippets_Wpf/ControlTemplateExamples/CS/resources/shared.xaml#resources)]  
   
- Úplnou ukázku najdete v tématu [stylování s ControlTemplates Sample](https://github.com/Microsoft/WPF-Samples/tree/master/Styles%20&%20Templates/IntroToStylingAndTemplating).  
+ Kompletní ukázku naleznete [v tématu Styling s ukázkou řídicích šablon](https://github.com/Microsoft/WPF-Samples/tree/master/Styles%20&%20Templates/IntroToStylingAndTemplating).  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.FrameworkElement.Style%2A>
 - <xref:System.Windows.Controls.ControlTemplate>

@@ -3,38 +3,38 @@ title: Mezipaměti PNRP
 ms.date: 03/30/2017
 ms.assetid: 270068d9-1b6b-4eb9-9e14-e02326bb88df
 ms.openlocfilehash: 3ed3e11e702c8933b500421de5654b212cdd80d8
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "64622993"
 ---
 # <a name="pnrp-caches"></a>Mezipaměti PNRP
-Sdílené mezipaměti protokolu PNRP (Name Resolution) jsou místní kolekce koncových bodů algorithmically vybrané sdílené udržuje na partnerský uzel.  
+Peer Name Resolution Protocol (PNRP) mezipaměti jsou místní kolekce algoritmicky vybraných koncových bodů rovnocenných souborů udržovaných na druhé straně.  
   
 ## <a name="pnrp-cache-initialization"></a>Inicializace mezipaměti PNRP  
- Inicializace mezipaměti PNRP nebo Peer název záznamu kolekce, při spuštění partnerský uzel, uzel můžete použít následující metody:  
+ Chcete-li inicializovat mezipaměť PNRP nebo kolekci záznamů jmen partnera při spuštění partnerského uzlu, uzel může použít následující metody:  
   
-- Trvalá mezipaměť položky, které byly k dispozici, pokud byl vypnutý uzel se načítají z úložiště na pevném disku.  
+- Trvalé položky mezipaměti, které byly přítomny při vypnutí uzlu, jsou načteny z úložiště pevného disku.  
   
-- Pokud aplikace používá infrastrukturu P2P spolupráce, spolupráce informace jsou k dispozici v Správce kontaktů pro tento uzel.  
+- Pokud aplikace používá infrastrukturu spolupráce P2P, informace o spolupráci jsou k dispozici ve Správci kontaktů pro tento uzel.  
   
-## <a name="scaling-peer-name-resolution-with-a-multi-level-cache"></a>Škálování Peer Name Resolution s více úrovně mezipaměti  
- Pokud chcete zachovat velikosti mezipaměti PNRP malý, použijte partnerské uzly na více mezipamětí, ve kterém každá úroveň obsahuje maximální počet položek. Každá úroveň v mezipaměti představuje desetina menší část prostoru číslo PNRP ID (2<sup>256</sup>). Nejnižší úrovni v mezipaměti obsahuje místně registrované ID PNRP a jiné ID PNRP, které jsou číselně blízko ho. Jako úroveň mezipaměti je vyplněna maximálně 20 položek, vytvoří se nové nižší úrovni. Maximální počet úrovní v mezipaměti je v řádu log10 (celkový počet ID PNRP v cloudu). Například pro globálního cloudu s ID 100 milionů PNRP, nejsou maximálně 8 (=log10(100,000,000)) úrovně v mezipaměti a podobně jako počet segmentů směrování se přeložit PNRP ID během překladu názvů. Tento mechanismus umožňuje distribuovaná zatřiďovací tabulku, pro který dá vyřešit libovolného ID PNRP přesměrovací zprávy s požadavkem na protokolu PNRP na nejbližší partnera, dokud nebude nalezen partnera s odpovídající CPA.  
+## <a name="scaling-peer-name-resolution-with-a-multi-level-cache"></a>Změna velikosti rezoluce názvů partnera pomocí víceúrovňové mezipaměti  
+ Chcete-li zachovat velikosti mezipamětí PNRP malé, partnerské uzly používají víceúrovňovou mezipaměť, ve které každá úroveň obsahuje maximální počet položek. Každá úroveň v mezipaměti představuje o desetinu menší část číselného místa ID PNRP (2<sup>256).</sup> Nejnižší úroveň v mezipaměti obsahuje místně registrované ID PNRP a další ID PNRP, které jsou číselně blízko. Jako úroveň mezipaměti je vyplněna maximálně 20 položek, je vytvořena nová nižší úroveň. Maximální počet úrovní v mezipaměti je v pořadí log10(Celkový počet ID PNRP v cloudu). Například pro globální cloud se 100 miliony ID PNRP nejsou v mezipaměti více než 8 (=log10(100 000 000)) a podobný počet směrování k vyřešení ID PNRP během překladu názvů. Tento mechanismus umožňuje distribuované hash tabulky, pro které lze vyřešit libovolné ID PNRP předáním zprávy PNRP požadavku na nejbližší partner, dokud peer s odpovídající CPA je nalezen.  
   
- K zajištění, zda rozlišení dokončí, pokaždé, když uzel přidá položku do nejnižší úroveň mezipaměti, ho floods kopii položky pro všechny uzly v rámci poslední úroveň mezipaměti.  
+ Chcete-li zajistit, že rozlišení může dokončit, pokaždé, když uzel přidá položku na nejnižší úroveň své mezipaměti, zaplaví kopii položky do všech uzlů v rámci poslední úrovně mezipaměti.  
   
- Položky mezipaměti se aktualizují v čase. Položky mezipaměti, které jsou zastaralé, jsou odebrány z mezipaměti. Výsledkem je, že je distribuovaná zatřiďovací tabulku ID PNRP podle aktivní koncové body, na rozdíl od DNS, ve kterém záznamy adres a protokolu DNS poskytují žádná záruka, že uzel přidružené k adresám je aktivně v síti.  
+ Položky mezipaměti jsou aktualizovány v průběhu času. Položky mezipaměti, které jsou zastaralé, jsou odebrány z mezipaměti. Výsledkem je, že distribuovaná tabulka hash ID PNRP je založena na aktivních koncových bodech, na rozdíl od DNS, ve kterém záznamy adres a protokol DNS neposkytují žádnou záruku, že uzel přidružený k adrese je aktivně v síti.  
   
-## <a name="other-pnrp-caches"></a>Jiných mezipaměti PNRP  
- Jiného úložiště trvalých dat se o místní mezipaměti.  Kromě jiných objektů potřebných pro aktivitu protokolu PNRP může obsahovat záznamy související s PNRP cloudu nebo spolupráci relace, který je bezpečně publikovat a synchronizaci mezi všemi členy v cloudu. Toto replikované úložiště představuje zobrazení dat skupiny, které by se měly stejný pro všechny členy skupiny. Technicky vzato tyto objekty nejsou záznamy samo o sobě, ale místo toho aplikace, přítomnost a datový objekt určený pro místní mezipaměti. Použití cloudu PNRP zajišťuje, že objekty se rozšíří do všech uzlů v relaci spolupráce nebo v cloudu PNRP.  Záznam replikace mezi členy cloudu používá protokol SSL pro šifrování a integritu dat.  
+## <a name="other-pnrp-caches"></a>Další mezipaměti PNRP  
+ Dalším trvalým úložištěm dat je místní mezipaměť.  Kromě ostatníobjekty potřebné pro aktivitu PNRP může zahrnovat záznamy spojené s cloudem PNRP nebo relace spolupráce, která je bezpečně publikována a synchronizována mezi všemi členy cloudu. Toto replikované úložiště představuje zobrazení dat skupiny, která by měla být stejná pro všechny členy skupiny. Technicky tyto objekty nejsou záznamy jako takové, ale spíše aplikace, přítomnost a data objektu určené pro místní mezipaměti. Použití cloudu PNRP zajišťuje, že objekty jsou šířeny do všech uzlů v relaci spolupráce nebo Cloud PNRP.  Záznam replikace mezi členy cloudu používá SSL k zajištění šifrování a integrity dat.  
   
- Poté, co partnerský uzel připojí do cloudu, nedostávají automaticky data z místní mezipaměti od partnera hostitele, ke kterému jsou připojit; mají k odběru na hostitele partnera a získat aktualizace v aplikaci, prezentace a data objektu. Po počáteční synchronizaci partnerské uzly pravidelně synchronizovat své replikované úložiště Ujistěte se, že všichni členové skupiny konzistentně stejného zobrazení.  Spolupráce relace nebo aplikace v rámci relace spolupráci mohou také provádět má stejnou funkci.  
+ Když se partner připojí ke cloudu, automaticky neobdrží data místní mezipaměti z partnerského partnera hostitele, ke kterému se připojují; musí se přihlásit k odběru partnerského partnera hostitele, aby mohli přijímat aktualizace v aplikacích, přítomnosti a objektových datech. Po počáteční synchronizaci partneři pravidelně synchronizují replikovaná úložiště, aby zajistili, že všichni členové skupiny mají konzistentně stejné zobrazení.  Relaci spolupráce nebo aplikace v rámci relace spolupráce může také provádět stejnou funkci.  
   
- Po relaci spolupráce pro cloud, můžete aplikace zaregistrovat partnerské uzly a začněte publikováním svých informací pomocí zabezpečení určené obor cloudu. Poté, co partnerský uzel připojí do cloudu, bezpečnostní mechanismy pro cloud se použijí na partnera, že mu poskytneme oboru, ve kterém se zúčastnit.  Záznamy můžete publikovat v rámci oboru cloudu pak bezpečně. Mějte na paměti, obor cloudu nemusí být stejné jako spolupráci oboru aplikace.  
+ Po zahájení relace spolupráce pro cloud, aplikace můžete zaregistrovat partnery a začít publikovat jejich informace pomocí zabezpečení definovaného rozsahem cloudu. Když se druhá strana připojí ke cloudu, mechanismy zabezpečení pro cloud se použijí na druhou úroveň, což mu dává obor, ve kterém se má účastnit.  Jeho záznamy pak mohou být bezpečně publikovány v rámci cloudu. Všimněte si, že rozsah cloudu nemusí být stejný jako rozsah aplikace spolupráce.  
   
- Partnerské uzly můžete zaregistrovat zájem přijímají se objekty z dalších partnerských uzlů. Při aktualizaci objektu spolupráci aplikaci zasláno oznámení a nový objekt je předán všichni předplatitelé aplikace. Sdílené ve skupině chatovací aplikaci můžete například zaregistrovat zájem příjem informací o aplikaci, která pošle ho všechny konverzace záznamy jako data aplikací.  Umožní vám to sledovat činnost chat v rámci cloudu.  
+ Partneři mohou zaregistrovat zájem o příjem objektů od jiných partnerů. Při aktualizaci objektu je aplikace pro spolupráci upozorněna a nový objekt je předán všem odběratelům aplikace. Například partner v aplikaci skupinového chatu může zaregistrovat zájem o příjem informací o aplikaci, které mu odešlou všechny záznamy chatu jako data aplikace.  To mu umožňuje sledovat aktivitu chatu v cloudu.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Net.PeerToPeer>

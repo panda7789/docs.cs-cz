@@ -13,23 +13,23 @@ helpviewer_keywords:
 - trace switches, conditional writes based on switches
 - WriteIf method
 ms.assetid: f3a93fa7-1717-467d-aaff-393e5c9828b4
-ms.openlocfilehash: 21df0e8129505e50e6b7f29c4f4f5aea94f380e3
-ms.sourcegitcommit: 9c54866bcbdc49dbb981dd55be9bbd0443837aa2
+ms.openlocfilehash: 9903a0357d1d8ceade21b590fd54c8cab517f134
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/14/2020
-ms.locfileid: "77217471"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79174742"
 ---
 # <a name="how-to-add-trace-statements-to-application-code"></a>Postupy: Přidání příkazů trasování do kódu aplikace
-Metody používané nejčastěji pro trasování jsou metody pro zápis výstupu do naslouchacího procesu: **Write**, **WriteIf**, **WriteLine**, **WriteLineIf**, **Assert**a **selžou**. Tyto metody lze rozdělit do dvou kategorií: **Write**, **WriteLine**a **selhat** výstup vysílat nepodmíněně, zatímco **WriteIf**, **WriteLineIf**a **Assert** otestujete logickou podmínku a nezapisujete nebo nepřepíšete na základě hodnoty podmínky. **WriteIf** a **WriteLineIf** vygenerují výstup, pokud je podmínka `true`, **a vygeneruje výstup, pokud** je podmínka `false`.  
+Nejčastěji používané metody pro trasování jsou metody pro zápis výstupu do posluchačů: **Write**, **WriteIf**, **WriteLine**, **WriteLineIf**, **Assert**a **Fail**. Tyto metody lze rozdělit do dvou kategorií: **Write**, **WriteLine**a **Fail** všechny vyzařovat výstup bezpodmínečně, zatímco **WriteIf**, **WriteLineIf**a **Assert** test boolean podmínku a zápis nebo nezapisovat na základě hodnoty podmínky. **WriteIf** a **WriteLineIf** emitovat `true`výstup, pokud je podmínka , `false`a **Assert** vyzařuje výstup, pokud je podmínka .  
   
- Při navrhování strategie trasování a ladění byste měli myslet na to, jak chcete, aby výstup vypadal. Vícenásobné příkazy **zápisu** vyplněné nesouvisejícími informacemi vytvoří protokol, který se obtížně přečte. Na druhé straně použití příkazu **WriteLine** k vložení souvisejících příkazů na samostatné řádky může být obtížné odlišit informace, které patří dohromady. Obecně platí, že pokud chcete kombinovat informace z více zdrojů k vytvoření jedné informativní zprávy, **použijte příkaz** WriteLine a použijte příkaz **WriteLine** , pokud chcete vytvořit jednu, úplnou zprávu.  
+ Při navrhování strategie trasování a ladění byste měli přemýšlet o tom, jak má výstup vypadat. Více **Write** příkazy vyplněné nesouvisející informace vytvoří protokol, který je obtížné číst. Na druhou stranu pomocí **WriteLine** umístit související příkazy na samostatné řádky může být obtížné rozlišit, jaké informace patří dohromady. Obecně použijte více **Příkazů Zápisu,** pokud chcete kombinovat informace z více zdrojů k vytvoření jedné informativní zprávy a použijte příkaz **WriteLine,** pokud chcete vytvořit jednu úplnou zprávu.  
   
-### <a name="to-write-a-complete-line"></a>Zápis kompletního řádku  
+### <a name="to-write-a-complete-line"></a>Napsání úplného řádku  
   
 1. Volání <xref:System.Diagnostics.Trace.WriteLine%2A> nebo <xref:System.Diagnostics.Trace.WriteLineIf%2A> metody.  
   
-     Znak návratu na začátek řádku je připojen ke konci zprávy, který tato metoda vrátí, takže další zpráva vrácená funkcí **Write**, **WriteIf**, **WriteLine**nebo **WriteLineIf** zahájí následující řádek:  
+     Návrat řádku je připojen na konec zprávy tato metoda vrátí tak, aby další zpráva vrácena **Write**, **WriteIf**, **WriteLine**, nebo **WriteLineIf** začne na následujícím řádku:  
   
     ```vb  
     Dim errorFlag As Boolean = False  
@@ -40,7 +40,7 @@ Metody používané nejčastěji pro trasování jsou metody pro zápis výstupu
     ```csharp  
     bool errorFlag = false;  
     System.Diagnostics.Trace.WriteLine ("Error in AppendData procedure.");  
-    System.Diagnostics.Trace.WriteLineIf(errorFlag,   
+    System.Diagnostics.Trace.WriteLineIf(errorFlag,
        "Error in AppendData procedure.");  
     ```  
   
@@ -48,7 +48,7 @@ Metody používané nejčastěji pro trasování jsou metody pro zápis výstupu
   
 1. Volání <xref:System.Diagnostics.Trace.Write%2A> nebo <xref:System.Diagnostics.Trace.WriteIf%2A> metody.  
   
-     Další zpráva vydaná **zápisem**, **WriteIf**, **WriteLine**nebo **WriteLineIf** začne na stejném řádku jako zpráva vložená příkazem **Write** nebo **WriteIf** :  
+     Další zpráva vyznaná **Write**, **WriteIf**, **WriteLine**nebo **WriteLineIf** začne na stejném řádku jako zpráva vyznaná příkazem **Write** nebo **WriteIf:**  
   
     ```vb  
     Dim errorFlag As Boolean = False  
@@ -59,15 +59,15 @@ Metody používané nejčastěji pro trasování jsou metody pro zápis výstupu
   
     ```csharp  
     bool errorFlag = false;  
-    System.Diagnostics.Trace.WriteIf(errorFlag,   
+    System.Diagnostics.Trace.WriteIf(errorFlag,
        "Error in AppendData procedure.");  
     System.Diagnostics.Debug.WriteIf(errorFlag, "Transaction abandoned.");  
     Trace.Write("Invalid value for data request");  
     ```  
   
-### <a name="to-verify-that-certain-conditions-exist-either-before-or-after-you-execute-a-method"></a>Ověření, že některé podmínky existují buď před, nebo po provedení metody  
+### <a name="to-verify-that-certain-conditions-exist-either-before-or-after-you-execute-a-method"></a>Ověření, zda existují určité podmínky před nebo po provedení metody  
   
-1. Zavolejte metodu <xref:System.Diagnostics.Trace.Assert%2A>.  
+1. Volání <xref:System.Diagnostics.Trace.Assert%2A> metody.  
   
     ```vb  
     Dim i As Integer = 4  
@@ -80,7 +80,7 @@ Metody používané nejčastěji pro trasování jsou metody pro zápis výstupu
     ```  
   
     > [!NOTE]
-    > Můžete použít **Assert** jak pro trasování, tak pro ladění. Tento příklad vypíše zásobník volání do libovolného naslouchacího procesu v kolekci **posluchačů** . Další informace naleznete v tématu [kontrolní výrazy ve spravovaném kódu](/visualstudio/debugger/assertions-in-managed-code) a <xref:System.Diagnostics.Debug.Assert%2A?displayProperty=nameWithType>.  
+    > Assert můžete **použít** s trasování a ladění. Tento příklad výstupy zásobníku volání na všechny naslouchací proces v **listeners** kolekce. Další informace naleznete [v tématu Assertions in Managed Code](/visualstudio/debugger/assertions-in-managed-code) and <xref:System.Diagnostics.Debug.Assert%2A?displayProperty=nameWithType>.  
   
 ## <a name="see-also"></a>Viz také
 

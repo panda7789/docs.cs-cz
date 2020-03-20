@@ -2,55 +2,55 @@
 title: 'Vlastní kodér zpráv: Vlastní kodér textu'
 ms.date: 03/30/2017
 ms.assetid: 68ff5c74-3d33-4b44-bcae-e1d2f5dea0de
-ms.openlocfilehash: ae9d7f3d24e70c5cc74378eaaaa224910ada8d25
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.openlocfilehash: 88aeeb4f1d09795b768441d2a572d959f27e0226
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75347937"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79145108"
 ---
 # <a name="custom-message-encoder-custom-text-encoder"></a>Vlastní kodér zpráv: Vlastní kodér textu
 
-Tato ukázka předvádí, jak implementovat vlastní kodér textových zpráv pomocí Windows Communication Foundation (WCF).
+Tato ukázka ukazuje, jak implementovat vlastní kodér textových zpráv pomocí Windows Communication Foundation (WCF).
 
 > [!WARNING]
-> Ukázky už můžou být na vašem počítači nainstalované. Než budete pokračovat, vyhledejte následující (výchozí) adresář.
-> 
+> Ukázky mohou být již nainstalovány v počítači. Před pokračováním zkontrolujte následující (výchozí) adresář.
+>
 > `<InstallDrive>:\WF_WCF_Samples`
-> 
-> Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] Samples. Tato ukázka se nachází v následujícím adresáři.
-> 
+>
+> Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a Windows Workflow Foundation (WF) Ukázky pro rozhraní .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka je umístěna v následujícím adresáři.
+>
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Extensibility\MessageEncoder\Text`
 
-<xref:System.ServiceModel.Channels.TextMessageEncodingBindingElement> WCF podporuje pouze kódování Unicode UTF-8, UTF-16 a big-endian. Kodér pro vlastní textovou zprávu v této ukázce podporuje všechna kódování znaků podporovaná platformou, která se můžou vyžadovat pro interoperabilitu. Ukázka se skládá z programu klientské konzoly (. exe), knihovny služeb (. dll) hostované službou Internetová informační služba (IIS) a knihovnou kodéru textové zprávy (. dll). Služba implementuje kontrakt definující způsob komunikace požadavek-odpověď. Kontrakt je definován rozhraním `ICalculator`, které zpřístupňuje matematické operace (sčítání, odčítání, násobení a dělení). Klient provádí synchronní požadavky na určitou matematickou operaci a služba odpovídá výsledku. Klient i služba používají `CustomTextMessageEncoder` místo výchozího <xref:System.ServiceModel.Channels.TextMessageEncodingBindingElement>.
+WCF <xref:System.ServiceModel.Channels.TextMessageEncodingBindingElement> podporuje pouze Kódování Unicode UTF-8, UTF-16 a big-endian. Kodér vlastních textových zpráv v této ukázce podporuje všechna kódování znaků podporovaná platformou, která mohou být vyžadována pro interoperabilitu. Ukázka se skládá z programu klientské konzole (.exe), knihovny služeb (.dll) hostované Internetovou informační službou (IIS) a knihovny kodérů textových zpráv (.dll). Služba implementuje smlouvu, která definuje vzor komunikace požadavek odpověď. Kontrakt je definován `ICalculator` rozhraním, které zpřístupňuje matematické operace (Přidat, Odečíst, Násobit a Rozdělit). Klient provádí synchronní požadavky na danou operaci matematiky a odpovědi služby s výsledkem. Klient i služba `CustomTextMessageEncoder` používá místo <xref:System.ServiceModel.Channels.TextMessageEncodingBindingElement>výchozí .
 
-Implementace vlastního kodéru se skládá z objektu pro vytváření kodéru zpráv, kodér zprávy, elementu vazby kódování zprávy a obslužné rutiny konfigurace a znázorňuje následující:
+Vlastní implementace kodéru se skládá z továrny kodéru zpráv, kodéru zpráv, prvku vazby kódování zpráv a obslužné rutiny konfigurace a ukazuje následující:
 
-- Vytváření vlastního kodéru a továrny kodéru
+- Vytvoření zakázkové továrny na kodér a kodér.
 
 - Vytvoření prvku vazby pro vlastní kodér.
 
-- Použití vlastní konfigurace vazeb pro integraci vlastních elementů vazby.
+- Použití vlastní konfigurace vazby pro integraci vlastních prvků vazby.
 
-- Vývoj vlastní obslužné rutiny konfigurace umožňující konfiguraci souboru vlastního elementu vazby.
+- Vývoj vlastní obslužné rutiny konfigurace umožňující konfiguraci souboru prvku vlastní vazby.
 
 ## <a name="to-set-up-build-and-run-the-sample"></a>Nastavení, sestavení a spuštění ukázky
 
-1. Pomocí následujícího příkazu nainstalujte ASP.NET 4,0.
+1. Nainstalujte ASP.NET 4.0 pomocí následujícího příkazu.
 
     ```console
     %windir%\Microsoft.NET\Framework\v4.0.XXXXX\aspnet_regiis.exe /i /enable
     ```
 
-2. Ujistěte se, že jste provedli [postup jednorázového nastavení pro Windows Communication Foundation ukázky](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).
+2. Ujistěte se, že jste provedli [jednorázový postup instalace pro ukázky windows communication foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).
 
-3. Při sestavování řešení postupujte podle pokynů v tématu [sestavování ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).
+3. Chcete-li vytvořit řešení, postupujte podle pokynů v [sestavení windows communication foundation ukázky](../../../../docs/framework/wcf/samples/building-the-samples.md).
 
-4. Chcete-li spustit ukázku v konfiguraci s jedním nebo více počítači, postupujte podle pokynů v části [spuštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).
+4. Chcete-li spustit ukázku v konfiguraci jednoho nebo více počítačů, postupujte podle pokynů v [části Spuštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).
 
-## <a name="message-encoder-factory-and-the-message-encoder"></a>Objekt pro vytváření a kodér zpráv
+## <a name="message-encoder-factory-and-the-message-encoder"></a>Továrna kodéru zpráv a kodér zpráv
 
-Po otevření <xref:System.ServiceModel.ServiceHost> nebo kanálu klienta `CustomTextMessageBindingElement` vytvoří součást doba návrhu `CustomTextMessageEncoderFactory`. Objekt pro vytváření vytvoří `CustomTextMessageEncoder`. Kodér zpráv funguje v režimu streamování i v režimu vyrovnávací paměti. Používá <xref:System.Xml.XmlReader> a <xref:System.Xml.XmlWriter> ke čtení a zápisu zpráv v uvedeném pořadí. Na rozdíl od optimalizovaných čtecích zařízení XML a zapisovačů WCF podporujících jenom UTF-8, UTF-16 a big-endian Unicode tyto čtečky a zapisovače podporují všechna kódování podporovaná platformou.
+Při <xref:System.ServiceModel.ServiceHost> otevření kanálu nebo klienta vytvoří `CustomTextMessageBindingElement` součást `CustomTextMessageEncoderFactory`času návrhu . Factory vytvoří `CustomTextMessageEncoder`. Kodér zpráv pracuje jak v režimu streamování, tak v režimu ve vyrovnávací paměti. Používá <xref:System.Xml.XmlReader> a <xref:System.Xml.XmlWriter> číst a psát zprávy v uvedeném pořadí. Na rozdíl od optimalizovaných čteček XML a zapisovačů WCF, které podporují pouze UTF-8, UTF-16 a big-endian Unicode, tyto čtečky a spisovatelé podporují všechny kódování podporované platformou.
 
 Následující příklad kódu ukazuje CustomTextMessageEncoder.
 
@@ -80,7 +80,7 @@ public class CustomTextMessageEncoder : MessageEncoder
 
     public override string MediaType
     {
-        get 
+        get
         {
             return factory.MediaType;
         }
@@ -88,14 +88,14 @@ public class CustomTextMessageEncoder : MessageEncoder
 
     public override MessageVersion MessageVersion
     {
-        get 
+        get
         {
             return this.factory.MessageVersion;
         }
     }
 
     public override Message ReadMessage(ArraySegment<byte> buffer, BufferManager bufferManager, string contentType)
-    {   
+    {
         byte[] msgContents = new byte[buffer.Count];
         Array.Copy(buffer.Array, buffer.Offset, msgContents, 0, msgContents.Length);
         bufferManager.ReturnBuffer(buffer.Array);
@@ -138,7 +138,7 @@ public class CustomTextMessageEncoder : MessageEncoder
 }
 ```
 
-Následující příklad kódu ukazuje, jak vytvořit objekt pro vytváření kodéru zpráv.
+Následující příklad kódu ukazuje, jak vytvořit továrnu kodéru zpráv.
 
 ```csharp
 public class CustomTextMessageEncoderFactory : MessageEncoderFactory
@@ -159,16 +159,16 @@ public class CustomTextMessageEncoderFactory : MessageEncoderFactory
 
     public override MessageEncoder Encoder
     {
-        get 
-        { 
+        get
+        {
             return this.encoder;
         }
     }
 
     public override MessageVersion MessageVersion
     {
-        get 
-        { 
+        get
+        {
             return this.version;
         }
     }
@@ -191,13 +191,13 @@ public class CustomTextMessageEncoderFactory : MessageEncoderFactory
 }
 ```
 
-## <a name="message-encoding-binding-element"></a>Element vazby kódování zprávy
+## <a name="message-encoding-binding-element"></a>Element vazby kódování zpráv
 
-Prvky vazby umožňují konfiguraci zásobníku run-time služby WCF. Chcete-li použít vlastní kodér zpráv v aplikaci WCF, je vyžadován prvek vazby, který vytvoří objekt pro vytváření kodéru zpráv s odpovídajícím nastavením na příslušné úrovni v zásobníku run-time.
+Elementy vazby umožňují konfiguraci zásobníku wcf za běhu. Chcete-li použít vlastní kodér zpráv v aplikaci WCF, je vyžadován element vazby, který vytvoří továrnu kodérů zpráv s příslušným nastavením na příslušné úrovni v zásobníku za běhu.
 
-`CustomTextMessageBindingElement` je odvozen ze <xref:System.ServiceModel.Channels.BindingElement> základní třídy a dědí z třídy <xref:System.ServiceModel.Channels.MessageEncodingBindingElement>. To umožňuje jiným komponentám WCF rozpoznat tento prvek vazby jako prvek vazby kódování zprávy. Implementace <xref:System.ServiceModel.Channels.MessageEncodingBindingElement.CreateMessageEncoderFactory%2A> vrátí instanci odpovídajícího objektu pro vytváření kodéru zpráv s příslušným nastavením.
+Odvozuje `CustomTextMessageBindingElement` ze <xref:System.ServiceModel.Channels.BindingElement> základní třídy a <xref:System.ServiceModel.Channels.MessageEncodingBindingElement> dědí z třídy. To umožňuje ostatním komponentám WCF rozpoznat tento element vazby jako prvek vazby kódování zpráv. Implementace <xref:System.ServiceModel.Channels.MessageEncodingBindingElement.CreateMessageEncoderFactory%2A> vrátí instanci továrny odpovídající hoké kodéru zpráv s příslušným nastavením.
 
-`CustomTextMessageBindingElement` zpřístupňuje nastavení pro `MessageVersion`, `ContentType`a `Encoding` prostřednictvím vlastností. Kodér podporuje verze Soap11Addressing i Soap12Addressing1. Výchozí hodnota je Soap11Addressing1. Výchozí hodnota `ContentType` je "text/XML". Vlastnost `Encoding` umožňuje nastavit hodnotu požadovaného kódování znaků. Ukázkový klient a služba používá kódování znaků ISO-8859-1 (Latin1), které není podporováno <xref:System.ServiceModel.Channels.TextMessageEncodingBindingElement> služby WCF.
+Zpřístupňuje `CustomTextMessageBindingElement` nastavení `MessageVersion` `ContentType`pro `Encoding` , a prostřednictvím vlastností. Kodér podporuje verze Soap11Addressing a Soap12Addressing1. Výchozí hodnota je Soap11Addressing1. Výchozí hodnota `ContentType` je "text/xml". Vlastnost `Encoding` umožňuje nastavit hodnotu požadovaného kódování znaků. Ukázkový klient a služba používá kódování znaků ISO-8859-1 (Latin1), <xref:System.ServiceModel.Channels.TextMessageEncodingBindingElement> které wcf nepodporuje.
 
 Následující kód ukazuje, jak programově vytvořit vazbu pomocí vlastního kodéru textových zpráv.
 
@@ -210,18 +210,18 @@ bindingElements.Add(httpBindingElement);
 CustomBinding binding = new CustomBinding(bindingElements);
 ```
 
-## <a name="adding-metadata-support-to-the-message-encoding-binding-element"></a>Přidání podpory metadat k elementu vazby kódování zprávy
+## <a name="adding-metadata-support-to-the-message-encoding-binding-element"></a>Přidání podpory metadat do prvku vazby kódování zpráv
 
-Jakýkoli typ, který je odvozen od <xref:System.ServiceModel.Channels.MessageEncodingBindingElement>, zodpovídá za aktualizaci verze vazby SOAP v dokumentu WSDL vygenerovaného pro službu. To se provádí implementací metody `ExportEndpoint` v rozhraní <xref:System.ServiceModel.Description.IWsdlExportExtension> a následnou úpravou vygenerovaného prvku WSDL. V této ukázce používá `CustomTextMessageBindingElement` logiku exportu WSDL z `TextMessageEncodingBindingElement`.
+Jakýkoli typ, který <xref:System.ServiceModel.Channels.MessageEncodingBindingElement> je odvozen od je zodpovědný za aktualizaci verze soap vazby v dokumentu WSDL generované pro službu. To se provádí implementací `ExportEndpoint` <xref:System.ServiceModel.Description.IWsdlExportExtension> metody na rozhraní a potom úpravou generované WSDL. V této ukázce `CustomTextMessageBindingElement` používá logiku `TextMessageEncodingBindingElement`exportu WSDL z .
 
-V této ukázce je konfigurace klienta konfigurována ručně. Svcutil. exe nemůžete použít k vygenerování konfigurace klienta, protože `CustomTextMessageBindingElement` neexportuje kontrolní výraz zásad pro popsání jeho chování. Obecně byste měli implementovat rozhraní <xref:System.ServiceModel.Description.IPolicyExportExtension> pro vlastní element vazby pro export kontrolního výrazu vlastní zásady, který popisuje chování nebo funkce implementované prvkem vazby. Příklad exportu kontrolního výrazu zásady pro vlastní prvek vazby naleznete v ukázce [Transport: UDP](../../../../docs/framework/wcf/samples/transport-udp.md) .
+Pro tuto ukázku je konfigurace klienta ručně nakonfigurována. Svcutil.exe nelze použít ke generování konfigurace `CustomTextMessageBindingElement` klienta, protože neexportuje kontrolní výraz zásady k popisu jeho chování. Obecně byste měli <xref:System.ServiceModel.Description.IPolicyExportExtension> implementovat rozhraní na vlastní prvek vazby exportovat vlastní kontrolní výraz zásady, který popisuje chování nebo schopnosti implementované elementem vazby. Příklad, jak exportovat kontrolní výraz zásady pro vlastní prvek vazby, naleznete v části [Transport: UDP.](../../../../docs/framework/wcf/samples/transport-udp.md)
 
-## <a name="message-encoding-binding-configuration-handler"></a>Obslužná rutina konfigurace vazby kódování zprávy
-V předchozí části se dozvíte, jak programově používat vlastní kodér textových zpráv. `CustomTextMessageEncodingBindingSection` implementuje obslužnou rutinu konfigurace, která umožňuje určit použití vlastního kodéru textových zpráv v rámci konfiguračního souboru. Třída `CustomTextMessageEncodingBindingSection` je odvozena od <xref:System.ServiceModel.Configuration.BindingElementExtensionElement> třídy. Vlastnost `BindingElementType` informuje konfigurační systém typu elementu vazby, který má být pro tento oddíl vytvořen.
+## <a name="message-encoding-binding-configuration-handler"></a>Obslužná rutina konfigurace vazby kódování zpráv
+V předchozí části se ukazuje, jak používat vlastní kód textové zprávy programově. Implementuje `CustomTextMessageEncodingBindingSection` obslužnou rutinu konfigurace, která umožňuje určit použití vlastního kodéru textových zpráv v konfiguračním souboru. Třída `CustomTextMessageEncodingBindingSection` je odvozena <xref:System.ServiceModel.Configuration.BindingElementExtensionElement> od třídy. Vlastnost `BindingElementType` informuje konfigurační systém o typu prvku vazby, který má být pro tuto část vytvořit.
 
-Všechna nastavení definovaná pomocí `CustomTextMessageBindingElement` jsou vystavena jako vlastnosti v `CustomTextMessageEncodingBindingSection`. <xref:System.Configuration.ConfigurationPropertyAttribute> pomáhá při mapování atributů elementů konfigurace na vlastnosti a nastavení výchozích hodnot, pokud atribut není nastaven. Poté, co jsou hodnoty z konfigurace načteny a aplikovány na vlastnosti typu, je volána metoda <xref:System.ServiceModel.Configuration.BindingElementExtensionElement.CreateBindingElement%2A>, která převede vlastnosti na konkrétní instanci elementu vazby.
+Všechna nastavení definovaná `CustomTextMessageBindingElement` písmenem jsou vystaveny `CustomTextMessageEncodingBindingSection`jako vlastnosti v rozhraní . Pomáhá <xref:System.Configuration.ConfigurationPropertyAttribute> při mapování atributů konfiguračního prvku na vlastnosti a nastavení výchozích hodnot, pokud atribut není nastaven. Po hodnoty z konfigurace jsou načteny a použity <xref:System.ServiceModel.Configuration.BindingElementExtensionElement.CreateBindingElement%2A> na vlastnosti typu, metoda je volána, která převede vlastnosti na konkrétní instance prvku vazby.
 
-Tato obslužná rutina konfigurace mapuje následující reprezentace v App. config nebo Web. config pro službu nebo klienta.
+Tato obslužná rutina konfigurace se mapuje na následující reprezentaci v souboru App.config nebo Web.config pro službu nebo klienta.
 
 ```xml
 <customTextMessageEncoding encoding="utf-8" contentType="text/xml" messageVersion="Soap11Addressing1" />
@@ -234,8 +234,8 @@ Chcete-li použít tuto obslužnou rutinu konfigurace, musí být zaregistrován
 ```xml
 <extensions>
     <bindingElementExtensions>
-        <add name="customTextMessageEncoding" type=" 
-Microsoft.ServiceModel.Samples.CustomTextMessageEncodingBindingSection, 
+        <add name="customTextMessageEncoding" type="
+Microsoft.ServiceModel.Samples.CustomTextMessageEncodingBindingSection,
                   CustomTextMessageEncoder" />
     </bindingElementExtensions>
 </extensions>

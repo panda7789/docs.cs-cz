@@ -15,59 +15,59 @@ helpviewer_keywords:
 ms.assetid: 2576c449-388d-4434-a0e1-9f53991e11b6
 topic_type:
 - apiref
-ms.openlocfilehash: 5214298c6ad9594548ab45ed583cb5b14ce1f30d
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: e855868d18fc6cffdd5d92cfa401606caf45b76c
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74441762"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79177563"
 ---
 # <a name="imetadataemitsetclasslayout-method"></a>IMetaDataEmit::SetClassLayout – metoda
-Dokončí rozložení polí pro třídu, která byla definována před voláním [metody definetypedef –](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-definetypedef-method.md).  
+Dokončí rozložení polí pro třídu, která byla definována předchozím voláním [metody DefineTypeDef](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-definetypedef-method.md).  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```cpp  
 HRESULT SetClassLayout (  
-    [in]  mdTypeDef           td,   
-    [in]  DWORD               dwPackSize,   
-    [in]  COR_FIELD_OFFSET    rFieldOffsets[],   
-    [in]  ULONG               ulClassSize   
+    [in]  mdTypeDef           td,
+    [in]  DWORD               dwPackSize,
+    [in]  COR_FIELD_OFFSET    rFieldOffsets[],
+    [in]  ULONG               ulClassSize
 );  
 ```  
   
 ## <a name="parameters"></a>Parametry  
  `td`  
- pro Token `mdTypeDef`, který určuje třídu, která má být rozložena.  
+ [v] Token, `mdTypeDef` který určuje třídu, která má být rozložena.  
   
  `dwPackSize`  
- pro Velikost balení: 1, 2, 4, 8 nebo 16 bajtů. Velikost balení je počet bajtů mezi sousedními poli.  
+ [v] Velikost balení: 1, 2, 4, 8 nebo 16 bajtů. Velikost balení je počet bajtů mezi sousedními poli.  
   
  `rFieldOffsets`  
- pro Pole struktur [COR_FIELD_OFFSET](../../../../docs/framework/unmanaged-api/metadata/cor-field-offset-structure.md) , z nichž každý určuje pole třídy a posun pole v rámci třídy. Ukončete pole pomocí `mdTokenNil`.  
+ [v] Pole [COR_FIELD_OFFSET](../../../../docs/framework/unmanaged-api/metadata/cor-field-offset-structure.md) struktur, z nichž každá určuje pole třídy a posun pole v rámci třídy. Ukončete `mdTokenNil`pole pomocí .  
   
  `ulClassSize`  
- pro Velikost třídy (v bajtech).  
+ [v] Velikost třídy v bajtech.  
   
 ## <a name="remarks"></a>Poznámky  
- Třída je zpočátku definována voláním metody [IMetaDataEmit::D efinetypedef](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-definetypedef-method.md) a zadáním jednoho ze tří rozložení pro pole třídy: Automatic, sekvenční nebo Explicit. Normálně byste použili automatické rozložení a umožnili modulu runtime zvolit nejlepší způsob rozložení polí.  
+ Třída je zpočátku definována voláním metody [IMetaDataEmit::DefineTypeDef](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-definetypedef-method.md) a určením jednoho ze tří rozložení pro pole třídy: automatické, sekvenční nebo explicitní. Za normálních okolností byste použili automatické rozložení a nechali za běhu zvolit nejlepší způsob rozložení polí.  
   
- Můžete však chtít, aby pole byla rozložena podle uspořádání, které používá nespravovaný kód. V takovém případě vyberte buď sekvenční nebo explicitní rozložení, a volání `SetClassLayout` pro dokončení rozložení polí:  
+ Můžete však chtít pole rozložena podle uspořádání, které používá nespravovaný kód. V takovém případě zvolte sekvenční nebo explicitní rozložení a volání `SetClassLayout` k dokončení rozložení polí:  
   
-- Sekvenční rozložení: Určete velikost balení. Pole je zarovnáno podle jeho přirozené velikosti nebo velikosti balení, podle toho, co je výsledkem menšího posunu pole. Nastavte `rFieldOffsets` a `ulClassSize` na nulu.  
+- Sekvenční rozložení: Zadejte velikost balení. Pole je zarovnáno podle jeho přirozené velikosti nebo velikosti balení, podle toho, která hodnota má menší posun pole. `rFieldOffsets` Nastaveno `ulClassSize` na nulu.  
   
-- Explicitní rozložení: buď zadejte posunutí jednotlivých polí, nebo zadejte velikost třídy a velikost balení.  
+- Explicitní rozložení: Buď určete posun každého pole, nebo určete velikost třídy a velikost balení.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Hlavička:** Cor. h  
+ **Záhlaví:** Kor.h.  
   
- **Knihovna:** Používá se jako prostředek v knihovně MSCorEE. dll.  
+ **Knihovna:** Používá se jako prostředek v souboru MSCorEE.dll  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [IMetaDataEmit – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)
 - [IMetaDataEmit2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-interface.md)

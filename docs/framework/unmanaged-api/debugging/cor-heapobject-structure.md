@@ -14,23 +14,23 @@ helpviewer_keywords:
 ms.assetid: a92fdf95-492b-49ae-a741-2186e5c1d7c5
 topic_type:
 - apiref
-ms.openlocfilehash: 270360a8950197eca14e02a60554659e5ac7b91c
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: efb3d913e1d8ef0c486d7e5e1d9777ae7d88bc71
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73099081"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79179338"
 ---
 # <a name="cor_heapobject-structure"></a>COR_HEAPOBJECT – struktura
-Poskytuje informace o objektu na spravované haldě.  
+Obsahuje informace o objektu na spravované haldě.  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```cpp  
 typedef struct _COR_HEAPOBJECT {  
-    CORDB_ADDRESS address;    
-    ULONG64 size;             
-    COR_TYPEID type;          
+    CORDB_ADDRESS address;
+    ULONG64 size;
+    COR_TYPEID type;
 } COR_HEAPOBJECT;  
 ```  
   
@@ -40,29 +40,29 @@ typedef struct _COR_HEAPOBJECT {
 |------------|-----------------|  
 |`address`|Adresa objektu v paměti.|  
 |`size`|Celková velikost objektu v bajtech.|  
-|`type`|Token [COR_TYPEID](cor-typeid-structure.md) , který představuje typ objektu.|  
+|`type`|Token [COR_TYPEID,](cor-typeid-structure.md) který představuje typ objektu.|  
   
 ## <a name="remarks"></a>Poznámky  
- instance `COR_HEAPOBJECT` lze načíst vytvořením výčtu objektu rozhraní [ICorDebugHeapEnum –](icordebugheapenum-interface.md) , který je vyplněn voláním metody [ICorDebugProcess5:: EnumerateHeap –](icordebugprocess5-enumerateheap-method.md) .  
+ `COR_HEAPOBJECT`instance lze načíst výčetem objektu rozhraní [ICorDebugHeapEnum,](icordebugheapenum-interface.md) který je naplněn voláním metody [ICorDebugProcess5::EnumerateHeap.](icordebugprocess5-enumerateheap-method.md)  
   
- Instance `COR_HEAPOBJECT` poskytuje informace buď o živém objektu na spravované haldě, nebo o objektu, který není rootem žádného objektu, ale ještě nebyl shromážděn systémem uvolňování paměti.  
+ Instance `COR_HEAPOBJECT` poskytuje informace o živém objektu na spravované haldě nebo o objektu, který není zakořeněn žádným objektem, ale ještě nebyl shromážděn systémem uvolňování paměti.  
   
- Pro lepší výkon je pole `COR_HEAPOBJECT.address` `CORDB_ADDRESS` hodnota, nikoli hodnota rozhraní ICorDebugValue, která se používá v podstatě rozhraní API pro ladění. Chcete-li získat objekt ICorDebugValue pro danou adresu objektu, můžete předat `CORDB_ADDRESS` hodnotu metodě [ICorDebugProcess5:: GetObject](icordebugprocess5-getobject-method.md) .  
+ Pro lepší výkon `COR_HEAPOBJECT.address` pole `CORDB_ADDRESS` je hodnota spíše než hodnota rozhraní ICorDebugValue používá ve velké části ladění rozhraní API. Chcete-li získat objekt ICorDebugValue pro danou adresu `CORDB_ADDRESS` objektu, můžete předat hodnotu metodě [ICorDebugProcess5::GetObject.](icordebugprocess5-getobject-method.md)  
   
- Pro lepší výkon je pole `COR_HEAPOBJECT.type` `COR_TYPEID` hodnota, nikoli hodnota rozhraní ICorDebugType, která se používá v podstatě rozhraní API pro ladění. Chcete-li získat objekt ICorDebugType pro daný typ ID, můžete předat `COR_TYPEID` hodnotu metodě [ICorDebugProcess5:: GetTypeForTypeID –](icordebugprocess5-gettypefortypeid-method.md) .  
+ Pro lepší výkon `COR_HEAPOBJECT.type` pole `COR_TYPEID` je hodnota spíše než hodnota rozhraní ICorDebugType používá ve velké části ladění rozhraní API. Chcete-li získat objekt ICorDebugType pro dané ID `COR_TYPEID` typu, můžete předat hodnotu metodě [ICorDebugProcess5::GetTypeForTypeID.](icordebugprocess5-gettypefortypeid-method.md)  
   
- Struktura `COR_HEAPOBJECT` zahrnuje rozhraní COM s vypočítáným odkazem. Pokud načtete instanci `COR_HEAPOBJECT` z čítače voláním metody [ICorDebugHeapEnum –:: Next](icordebugheapenum-next-method.md) , je nutné odkaz vydat následně.  
+ `COR_HEAPOBJECT` Struktura obsahuje referenční rozhraní COM. Pokud načtete `COR_HEAPOBJECT` instanci z čítače výčtu voláním Metody [ICorDebugHeapEnum::Next,](icordebugheapenum-next-method.md) musíte následně uvolnit odkaz.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
+ **Platformy:** Viz [Systémové požadavky](../../get-started/system-requirements.md).  
   
- **Hlavička:** CorDebug. idl, CorDebug. h  
+ **Záhlaví:** CorDebug.idl, CorDebug.h  
   
- **Knihovna:** CorGuids. lib  
+ **Knihovna:** CorGuids.lib  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
+ **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Struktury pro ladění](debugging-structures.md)
-- [Ladění](index.md)
+- [ladění](index.md)

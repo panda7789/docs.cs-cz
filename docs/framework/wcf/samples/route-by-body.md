@@ -2,25 +2,25 @@
 title: Trasa podle textu
 ms.date: 03/30/2017
 ms.assetid: 07a6fc3b-c360-42e0-b663-3d0f22cf4502
-ms.openlocfilehash: 5b6a9ec6c862e501e6d04c27391a601a7cf6e66a
-ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
+ms.openlocfilehash: c3f4b19e646a6a9716d2264a3969b339208c60a1
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74716374"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79144185"
 ---
 # <a name="route-by-body"></a>Trasa podle textu
-Tato ukázka předvádí, jak implementovat službu, která přijímá objekty zpráv s jakoukoli akcí SOAP. Tato ukázka je založená na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md) , která implementuje službu kalkulačky. Služba implementuje jednu operaci `Calculate`, která přijímá parametr žádosti <xref:System.ServiceModel.Channels.Message> a vrátí odpověď <xref:System.ServiceModel.Channels.Message>.  
+Tato ukázka ukazuje, jak implementovat službu, která přijímá objekty zprávy s jakoukoli akcí SOAP. Tato ukázka je založena na [Začínáme,](../../../../docs/framework/wcf/samples/getting-started-sample.md) který implementuje službu kalkulačky. Služba implementuje `Calculate` jednu operaci, <xref:System.ServiceModel.Channels.Message> která přijímá <xref:System.ServiceModel.Channels.Message> parametr požadavku a vrací odpověď.  
   
- V této ukázce je klient Konzolová aplikace (. exe) a služba je hostovaná ve službě IIS.  
+ V této ukázce je klient konzolovou aplikací (.exe) a služba je hostována ve službě IIS.  
   
 > [!NOTE]
-> Postup nastavení a pokyny pro sestavení pro tuto ukázku najdete na konci tohoto tématu.  
+> Postup instalace a pokyny k sestavení pro tuto ukázku jsou umístěny na konci tohoto tématu.  
   
- Ukázka znázorňuje odeslání zprávy na základě obsahu těla. Integrovaný mechanismus odeslání zprávy modelu služby Windows Communication Foundation (WCF) je založen na akcích zprávy. Existuje však mnoho existujících webových služeb, které definují všechny své operace pomocí akce = "". Není možné vytvořit službu založenou na jazyce WSDL, která zajišťuje odesílání zpráv s požadavky na základě informací o akci. Tato ukázka demonstruje kontrakt služby, který je založen na jazyce WSDL (WSDL je obsažen v souboru Service. WSDL, který je součástí ukázky). Kontrakt služby je kalkulačka, podobně jako ta, která se používá v [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md). `[OperationContract]` však určuje `Action=""` pro všechny operace.  
+ Ukázka ukazuje odeslání zprávy na základě obsahu těla. Vestavěný Windows Communication Foundation (WCF) mechanismus odesílání zpráv modelu služby je založen na akcích zprávy. Existuje však mnoho existujících webových služeb, které definují všechny své operace s Action="". Není možné vytvořit službu založenou na WSDL, která udržuje odesílání zpráv požadavků na základě informací akce. Tato ukázka ukazuje servisní smlouvy, která je založena na WSDL (WSDL je obsažen v Service.wsdl, který je součástí vzorku). Servisní smlouva je Kalkulačka, podobná té, která se používá v [začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md). Nicméně `[OperationContract]` určuje `Action=""` pro všechny operace.  
   
 ```csharp  
-[ServiceContract(Namespace = "http://Microsoft.ServiceModel.Samples"),    
+[ServiceContract(Namespace = "http://Microsoft.ServiceModel.Samples"),
                  XmlSerializerFormat, DispatchByBodyBehavior]  
     public interface ICalculator  
     {  
@@ -35,17 +35,17 @@ Tato ukázka předvádí, jak implementovat službu, která přijímá objekty z
     }  
 ```  
   
- U kontraktu vyžaduje služba `DispatchByBodyBehavior` vlastní chování odeslání, aby bylo možné mezi operacemi odesílat zprávy. Toto chování při odeslání inicializuje selektor `DispatchByBodyElementOperationSelector` vlastní operace s tabulkou názvů operací, na které se odkazuje pomocí QName odpovídajících prvků obálky. `DispatchByBodyElementOperationSelector` se podívá na počáteční značku prvního podřízeného objektu a vybere operaci s výše zmíněnou tabulkou.  
+ Dané smlouvy, služba vyžaduje vlastní `DispatchByBodyBehavior` odeslání chování povolit zprávy, které mají být odesílány mezi operacemi. Toto chování odeslání inicializuje `DispatchByBodyElementOperationSelector` vlastní selektor operace s tabulkou názvů operací zakódovaných QName příslušných prvků obálky. `DispatchByBodyElementOperationSelector`vyhledá počáteční značku první podřízené položky těla a vybere operaci pomocí výše uvedené tabulky.  
   
- Klient používá proxy automaticky generovaný ze třídy WSDL exportované službou pomocí [nástroje Svcutil. exe](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md).  
+ Klient používá proxy automaticky generovaný z WSDL exportované službou pomocí [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md).  
   
 ```console  
 svcutil.exe  /n:http://Microsoft.ServiceModel.Samples,Microsoft.ServiceModel.Samples /uxs http://localhost/servicemodelsamples/service.svc?wsdl /out:generatedProxy.cs  
 ```  
   
- Fakt, že akce všech operací nejsou prázdné, nemá žádný vliv na kód klienta, s výjimkou parametrů akce v automaticky generovaném proxy serveru.  
+ Skutečnost, že akce všech operací jsou prázdné nemá žádný vliv na kód klienta, s výjimkou Action parametry v automaticky generované proxy.  
   
- Kód klienta provádí několik výpočtů. Při spuštění ukázky se v okně konzoly klienta zobrazí požadavky na operace a odpovědi. V okně klienta stiskněte klávesu ENTER pro vypnutí klienta.  
+ Kód klienta provádí několik výpočtů. Při spuštění ukázky jsou v okně klientské konzole zobrazeny požadavky na operaci a odpovědi. Stisknutím klávesy ENTER v okně klienta vypněte klienta.  
   
 ```console
 Add(100, 15.99) = 115.99  
@@ -58,17 +58,17 @@ Press <ENTER> to terminate client.
   
 ### <a name="to-set-up-build-and-run-the-sample"></a>Nastavení, sestavení a spuštění ukázky  
   
-1. Ujistěte se, že jste provedli [postup jednorázového nastavení pro Windows Communication Foundation ukázky](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
+1. Ujistěte se, že jste provedli [jednorázový postup instalace pro ukázky windows communication foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
   
-2. Při sestavování řešení postupujte podle pokynů v tématu [sestavování ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
+2. Chcete-li vytvořit řešení, postupujte podle pokynů v [sestavení windows communication foundation ukázky](../../../../docs/framework/wcf/samples/building-the-samples.md).  
   
-3. Chcete-li spustit ukázku v konfiguraci s jedním nebo více počítači, postupujte podle pokynů v části [spuštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
+3. Chcete-li spustit ukázku v konfiguraci jednoho nebo více počítačů, postupujte podle pokynů v [části Spuštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
   
 > [!IMPORTANT]
-> Ukázky už můžou být na vašem počítači nainstalované. Než budete pokračovat, vyhledejte následující (výchozí) adresář.  
->   
+> Ukázky mohou být již nainstalovány v počítači. Před pokračováním zkontrolujte následující (výchozí) adresář.  
+>
 > `<InstallDrive>:\WF_WCF_Samples`  
->   
-> Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] Samples. Tato ukázka se nachází v následujícím adresáři.  
->   
+>
+> Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a Windows Workflow Foundation (WF) Ukázky pro rozhraní .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka je umístěna v následujícím adresáři.  
+>
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Extensibility\Interop\RouteByBody`  
