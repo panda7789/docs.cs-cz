@@ -5,19 +5,19 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 8f5eec26-b809-4aca-8778-7e202356d856
-ms.openlocfilehash: 7c76435b8a0f7a874504813d91d5eda929d08f67
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 14e7e1ccb051410c351e49afee9f2d6809264833
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70786431"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79151296"
 ---
-# <a name="datarows-and-datarowviews"></a><span data-ttu-id="47f99-102">DataRows a DataRowViews</span><span class="sxs-lookup"><span data-stu-id="47f99-102">DataRows and DataRowViews</span></span>
-<span data-ttu-id="47f99-103">Zpřístupňuje vyčíslitelné <xref:System.Data.DataRowView> kolekce objektů. <xref:System.Data.DataView></span><span class="sxs-lookup"><span data-stu-id="47f99-103">A <xref:System.Data.DataView> exposes an enumerable collection of <xref:System.Data.DataRowView> objects.</span></span> <span data-ttu-id="47f99-104">Objekty **DataRowView** zpřístupňují hodnoty jako pole objektů, která jsou indexována buď názvem, nebo odkazem na pořadové číslo sloupce v podkladové tabulce.</span><span class="sxs-lookup"><span data-stu-id="47f99-104">The **DataRowView** objects expose values as object arrays that are indexed by either the name or the ordinal reference of the column in the underlying table.</span></span> <span data-ttu-id="47f99-105">Přístup k <xref:System.Data.DataRow> , který je zpřístupněn **DataRowView** , můžete získat pomocí <xref:System.Data.DataRowView.Row%2A> vlastnosti **DataRowView**.</span><span class="sxs-lookup"><span data-stu-id="47f99-105">You can access the <xref:System.Data.DataRow> that is exposed by the **DataRowView** by using the <xref:System.Data.DataRowView.Row%2A> property of the **DataRowView**.</span></span>  
+# <a name="datarows-and-datarowviews"></a><span data-ttu-id="e991f-102">DataRows a DataRowViews</span><span class="sxs-lookup"><span data-stu-id="e991f-102">DataRows and DataRowViews</span></span>
+<span data-ttu-id="e991f-103">A <xref:System.Data.DataView> zpřístupňuje výčtu <xref:System.Data.DataRowView> kolekce objektů.</span><span class="sxs-lookup"><span data-stu-id="e991f-103">A <xref:System.Data.DataView> exposes an enumerable collection of <xref:System.Data.DataRowView> objects.</span></span> <span data-ttu-id="e991f-104">Objekty **DataRowView** zveřejňují hodnoty jako pole objektů, které jsou indexovány názvem nebo ordinálním odkazem na sloupec v podkladové tabulce.</span><span class="sxs-lookup"><span data-stu-id="e991f-104">The **DataRowView** objects expose values as object arrays that are indexed by either the name or the ordinal reference of the column in the underlying table.</span></span> <span data-ttu-id="e991f-105">Můžete <xref:System.Data.DataRow> přistupovat, který je vystaven **DataRowView** pomocí <xref:System.Data.DataRowView.Row%2A> **vlastnosti DataRowView**.</span><span class="sxs-lookup"><span data-stu-id="e991f-105">You can access the <xref:System.Data.DataRow> that is exposed by the **DataRowView** by using the <xref:System.Data.DataRowView.Row%2A> property of the **DataRowView**.</span></span>  
   
- <span data-ttu-id="47f99-106">Při zobrazení hodnot pomocí **DataRowView** <xref:System.Data.DataView.RowStateFilter%2A> vlastnost **DataView** určuje, která verze řádku podkladového objektu **DataRow** je vystavena.</span><span class="sxs-lookup"><span data-stu-id="47f99-106">When you view values by using a **DataRowView**, the <xref:System.Data.DataView.RowStateFilter%2A> property of the **DataView** determines which row version of the underlying **DataRow** is exposed.</span></span> <span data-ttu-id="47f99-107">Informace o přístupu k různým verzím řádků pomocí objektu **DataRow**naleznete v tématu [stavy řádků a verze řádků](row-states-and-row-versions.md).</span><span class="sxs-lookup"><span data-stu-id="47f99-107">For information about accessing different row versions using a **DataRow**, see [Row States and Row Versions](row-states-and-row-versions.md).</span></span>  
+ <span data-ttu-id="e991f-106">Při zobrazení hodnot pomocí **DataRowView** <xref:System.Data.DataView.RowStateFilter%2A> , vlastnost **DataView** určuje, která verze řádku podkladového **DataRow** je vystavena.</span><span class="sxs-lookup"><span data-stu-id="e991f-106">When you view values by using a **DataRowView**, the <xref:System.Data.DataView.RowStateFilter%2A> property of the **DataView** determines which row version of the underlying **DataRow** is exposed.</span></span> <span data-ttu-id="e991f-107">Informace o přístupu k různým verzím řádků pomocí **datarow**, naleznete v [tématu Stavy řádků a Verze řádků](row-states-and-row-versions.md).</span><span class="sxs-lookup"><span data-stu-id="e991f-107">For information about accessing different row versions using a **DataRow**, see [Row States and Row Versions](row-states-and-row-versions.md).</span></span>  
   
- <span data-ttu-id="47f99-108">Následující příklad kódu zobrazí všechny aktuální a původní hodnoty v tabulce.</span><span class="sxs-lookup"><span data-stu-id="47f99-108">The following code example displays all the current and original values in a table.</span></span>  
+ <span data-ttu-id="e991f-108">Následující příklad kódu zobrazuje všechny aktuální a původní hodnoty v tabulce.</span><span class="sxs-lookup"><span data-stu-id="e991f-108">The following code example displays all the current and original values in a table.</span></span>  
   
 ```vb  
 Dim catView As DataView = New DataView(catDS.Tables("Categories"))  
@@ -25,7 +25,7 @@ Console.WriteLine("Current Values:")
 WriteView(catView)  
 Console.WriteLine("Original Values:")  
 catView.RowStateFilter = DataViewRowState.ModifiedOriginal  
-WriteView(catView)      
+WriteView(catView)
   
 Public Shared Sub WriteView(thisDataView As DataView)  
   Dim rowView As DataRowView  
@@ -59,11 +59,11 @@ public static void WriteView(DataView thisDataView)
 }  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="47f99-109">Viz také:</span><span class="sxs-lookup"><span data-stu-id="47f99-109">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="e991f-109">Viz také</span><span class="sxs-lookup"><span data-stu-id="e991f-109">See also</span></span>
 
 - <xref:System.Data.DataRowVersion>
 - <xref:System.Data.DataViewRowState>
 - <xref:System.Data.DataView>
 - <xref:System.Data.DataRowView>
-- [<span data-ttu-id="47f99-110">Zobrazení dat</span><span class="sxs-lookup"><span data-stu-id="47f99-110">DataViews</span></span>](dataviews.md)
-- [<span data-ttu-id="47f99-111">Přehled ADO.NET</span><span class="sxs-lookup"><span data-stu-id="47f99-111">ADO.NET Overview</span></span>](../ado-net-overview.md)
+- [<span data-ttu-id="e991f-110">Zobrazení dat</span><span class="sxs-lookup"><span data-stu-id="e991f-110">DataViews</span></span>](dataviews.md)
+- [<span data-ttu-id="e991f-111">Přehled ADO.NET</span><span class="sxs-lookup"><span data-stu-id="e991f-111">ADO.NET Overview</span></span>](../ado-net-overview.md)
