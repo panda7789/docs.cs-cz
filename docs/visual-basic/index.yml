@@ -1,31 +1,31 @@
 ### YamlMime:Landing
-title: Dokumentace k Visual Basic
-summary: Visual Basic je navržena tak, aby vám pomohla při tvorbě typově bezpečných a objektově orientovaných aplikací. Visual Basic je rychlý a snadný způsob, jak vytvářet aplikace .NET.
+title: Dokumentace jazyka Visual Basic
+summary: Visual Basic je navržen tak, aby vám pomohl produktivně vytvářet typově bezpečné a objektově orientované aplikace. Visual Basic je rychlý a snadný způsob vytváření aplikací .NET.
 metadata:
-  title: Visual Basic dokumentů – Začínáme, kurzy, reference.
-  description: Naučte se Visual Basic programování v .NET – pro zahájení vývojářů, vývojářům nově Visual Basic a zkušeností Visual Basic vývojářů.
+  title: Visual Basic docs - začínáme, výukové programy, reference.
+  description: Naučte se programování jazyka V rozhraní .NET – pro začínající vývojáře, vývojáře nové v jazyce Visual Basic a zkušené vývojáře jazyka Visual Basic
   ms.topic: landing-page
   ms.date: 11/27/2019
   ms.openlocfilehash: 9019ed13a6e9a02710ec063a6538a406f4940e21
-  ms.sourcegitcommit: a4f9b754059f0210e29ae0578363a27b9ba84b64
+  ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 12/05/2019
+  ms.lasthandoff: 03/15/2020
   ms.locfileid: "74838335"
 landingContent:
 - title: Začínáme
   linkLists:
   - linkListType: get-started
     links:
-    - text: Vytvoření aplikace Hello World s využitím .NET Core
+    - text: Vytvoření aplikace "Hello World" s rozhraním .NET Core
       url: ../core/tutorials/vb-with-visual-studio.md
-    - text: Sestavení knihovny tříd pomocí .NET Standard
+    - text: Vytvoření knihovny tříd pomocí standardu .NET Standard
       url: ../core/tutorials/vb-library-with-visual-studio.md
-    - text: Další materiály a zdroje informací
+    - text: Další zdroje
       url: getting-started/additional-resources.md
-    - text: Postupy
+    - text: Názorné postupy
       url: walkthroughs.md
-- title: Visual Basic základy
+- title: Základy jazyka Visual Basic
   linkLists:
   - linkListType: overview
     links:
@@ -35,7 +35,7 @@ landingContent:
     links:
     - text: Struktura programu a pravidla týkající se kódu
       url: programming-guide/program-structure/program-structure-and-code-conventions.md
-    - text: Vývoj aplikací pomocí Visual Basic
+    - text: Vývoj aplikací pomocí jazyka Visual Basic
       url: developing-apps/index.md
     - text: Struktura programu a pravidla týkající se kódu
       url: programming-guide/program-structure/program-structure-and-code-conventions.md
@@ -47,19 +47,19 @@ landingContent:
   linkLists:
   - linkListType: how-to-guide
     links:
-    - text: model Windows Forms vlastní Delegáti a události
+    - text: Vlastní delegáti a události ve Windows Forms
       url: https://social.technet.microsoft.com/wiki/contents/articles/53470.vb-net-windows-forms-custom-delegates-and-events.aspx
-    - text: Úprava hodnot databázové tabulky prostřednictvím ovládacího prvku WPF DataGrid
+    - text: Úprava hodnot tabulky databáze pomocí WPF DataGrid
       url: https://social.msdn.microsoft.com/Forums/vstudio/10a3dd61-7dcc-48f3-a6e0-f7386d06f9f1/edit-database-table-values-via-wpf-datagrid-visual-basic?forum=wpf
-    - text: 'Model Windows Forms ListView: zkoumání podrobností zobrazení pomocí SQL Server'
+    - text: 'Zobrazení seznamu formulářů systému Windows: Zkoumání zobrazení podrobností pomocí serveru SQL Server'
       url: https://social.technet.microsoft.com/wiki/contents/articles/53356.windows-forms-listview-examining-detail-view-with-sql-server.aspx
-    - text: Postup otevření sešitu aplikace Excel 2016 pomocí OleDbConnection
+    - text: Jak otevřít sešit Excelu 2016 přes OleDbConnection
       url: https://social.msdn.microsoft.com/Forums/vstudio/70a45808-9aaf-4320-a5fc-04cbbabf6e4d/how-to-open-excel-2016-workbook-through-oledbconnection?forum=vbgeneral
-- title: Visual Basic – reference jazyka
+- title: Referenční dokumentace jazyka Visual Basic
   linkLists:
   - linkListType: reference
     links:
-    - text: Referenční dokumentace jazyka
+    - text: Referenční informace k jazyku
       url: language-reference/index.md
     - text: Klíčová slova
       url: language-reference/keywords/index.md

@@ -2,18 +2,18 @@
 title: 'Postupy: Seskupování souborů podle přípony (LINQ)'
 ms.date: 07/20/2015
 ms.assetid: 904dc6d7-7162-4655-a7f4-5785d669bc5a
-ms.openlocfilehash: 67beec0d3681bf7f0b04d9a402566076fd27ceba
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.openlocfilehash: 4d2c51fa62b3ec144bc5ad51b4a9f8305476645e
+ms.sourcegitcommit: 43d10ef65f0f1fd6c3b515e363bde11a3fcd8d6d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75347484"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78267025"
 ---
-# <a name="how-to-group-files-by-extension-linq-visual-basic"></a><span data-ttu-id="9a739-102">Postupy: seskupování souborů podle přípony (LINQ) (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="9a739-102">How to: Group Files by Extension (LINQ) (Visual Basic)</span></span>
-<span data-ttu-id="9a739-103">Tento příklad ukazuje, jak lze LINQ použít k provádění pokročilých operací seskupení a řazení v seznamech souborů nebo složek.</span><span class="sxs-lookup"><span data-stu-id="9a739-103">This example shows how LINQ can be used to perform advanced grouping and sorting operations on lists of files or folders.</span></span> <span data-ttu-id="9a739-104">Ukazuje také výstup stránky v okně konzoly pomocí metod <xref:System.Linq.Enumerable.Skip%2A> a <xref:System.Linq.Enumerable.Take%2A>.</span><span class="sxs-lookup"><span data-stu-id="9a739-104">It also shows how to page output in the console window by using the <xref:System.Linq.Enumerable.Skip%2A> and <xref:System.Linq.Enumerable.Take%2A> methods.</span></span>  
+# <a name="how-to-group-files-by-extension-linq-visual-basic"></a><span data-ttu-id="8af64-102">Postup: Seskupení souborů podle rozšíření (LINQ) (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="8af64-102">How to: Group Files by Extension (LINQ) (Visual Basic)</span></span>
+<span data-ttu-id="8af64-103">Tento příklad ukazuje, jak linq lze použít k provádění rozšířené seskupení a řazení operace v seznamech souborů nebo složek.</span><span class="sxs-lookup"><span data-stu-id="8af64-103">This example shows how LINQ can be used to perform advanced grouping and sorting operations on lists of files or folders.</span></span> <span data-ttu-id="8af64-104">Také ukazuje, jak stránkovat výstup v <xref:System.Linq.Enumerable.Skip%2A> okně <xref:System.Linq.Enumerable.Take%2A> konzoly pomocí a metody.</span><span class="sxs-lookup"><span data-stu-id="8af64-104">It also shows how to page output in the console window by using the <xref:System.Linq.Enumerable.Skip%2A> and <xref:System.Linq.Enumerable.Take%2A> methods.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="9a739-105">Příklad</span><span class="sxs-lookup"><span data-stu-id="9a739-105">Example</span></span>  
- <span data-ttu-id="9a739-106">Následující dotaz ukazuje, jak seskupit obsah zadaného stromu adresářů podle přípony názvu souboru.</span><span class="sxs-lookup"><span data-stu-id="9a739-106">The following query shows how to group the contents of a specified directory tree by the file name extension.</span></span>  
+## <a name="example"></a><span data-ttu-id="8af64-105">Příklad</span><span class="sxs-lookup"><span data-stu-id="8af64-105">Example</span></span>  
+ <span data-ttu-id="8af64-106">Následující dotaz ukazuje, jak seskupit obsah zadaného adresářového stromu podle přípony názvu souboru.</span><span class="sxs-lookup"><span data-stu-id="8af64-106">The following query shows how to group the contents of a specified directory tree by the file name extension.</span></span>  
   
 ```vb  
 Module GroupByExtension  
@@ -39,7 +39,7 @@ Module GroupByExtension
         ' page the display with good performance.  
         Dim groupByExtList = queryGroupByExt.ToList()  
   
-        ' Display one group at a time. If the number of   
+        ' Display one group at a time. If the number of
         ' entries is greater than the number of lines  
         ' in the console window, then page the output.  
         Dim trimLength = startFolder.Length  
@@ -91,12 +91,12 @@ Module GroupByExtension
 End Module  
 ```  
   
- <span data-ttu-id="9a739-107">Výstup z tohoto programu může být dlouhý v závislosti na podrobnostech místního systému souborů a nastavení, na které je `startFolder`.</span><span class="sxs-lookup"><span data-stu-id="9a739-107">The output from this program can be long, depending on the details of the local file system and what the `startFolder` is set to.</span></span> <span data-ttu-id="9a739-108">Pokud chcete povolit zobrazení všech výsledků, tento příklad ukazuje, jak stránky procházet výsledky.</span><span class="sxs-lookup"><span data-stu-id="9a739-108">To enable viewing of all results, this example shows how to page through results.</span></span> <span data-ttu-id="9a739-109">Stejné postupy můžete použít pro Windows a webové aplikace.</span><span class="sxs-lookup"><span data-stu-id="9a739-109">The same techniques can be applied to Windows and Web applications.</span></span> <span data-ttu-id="9a739-110">Všimněte si, že vzhledem k tomu, že kód stránky má položky ve skupině, je nutná vnořená `For Each` smyčka.</span><span class="sxs-lookup"><span data-stu-id="9a739-110">Notice that because the code pages the items in a group, a nested `For Each` loop is required.</span></span> <span data-ttu-id="9a739-111">K dispozici je také některá další logika, která umožňuje vypočítat aktuální pozici v seznamu a umožnit uživateli zastavit stránkování a ukončit program.</span><span class="sxs-lookup"><span data-stu-id="9a739-111">There is also some additional logic to compute the current position in the list, and to enable the user to stop paging and exit the program.</span></span> <span data-ttu-id="9a739-112">V tomto konkrétním případě se stránkovací dotaz spustí proti výsledkům uloženým v mezipaměti z původního dotazu.</span><span class="sxs-lookup"><span data-stu-id="9a739-112">In this particular case, the paging query is run against the cached results from the original query.</span></span> <span data-ttu-id="9a739-113">V jiných kontextech, jako je například LINQ to SQL, taková mezipaměť není nutná.</span><span class="sxs-lookup"><span data-stu-id="9a739-113">In other contexts, such as LINQ to SQL, such caching is not required.</span></span>  
+ <span data-ttu-id="8af64-107">Výstup z tohoto programu může být dlouhý, v závislosti na `startFolder` podrobnostech místního systému souborů a na tom, na co je nastaven.</span><span class="sxs-lookup"><span data-stu-id="8af64-107">The output from this program can be long, depending on the details of the local file system and what the `startFolder` is set to.</span></span> <span data-ttu-id="8af64-108">Chcete-li povolit zobrazení všech výsledků, tento příklad ukazuje, jak stránkovat výsledky.</span><span class="sxs-lookup"><span data-stu-id="8af64-108">To enable viewing of all results, this example shows how to page through results.</span></span> <span data-ttu-id="8af64-109">Stejné techniky lze použít pro systém Windows a webové aplikace.</span><span class="sxs-lookup"><span data-stu-id="8af64-109">The same techniques can be applied to Windows and Web applications.</span></span> <span data-ttu-id="8af64-110">Všimněte si, že vzhledem k tomu, `For Each` že kód stránky položky ve skupině, vnořené smyčky je vyžadována.</span><span class="sxs-lookup"><span data-stu-id="8af64-110">Notice that because the code pages the items in a group, a nested `For Each` loop is required.</span></span> <span data-ttu-id="8af64-111">K dispozici je také některé další logiku vypočítat aktuální pozici v seznamu a umožnit uživateli zastavit stránkování a ukončovat program.</span><span class="sxs-lookup"><span data-stu-id="8af64-111">There is also some additional logic to compute the current position in the list, and to enable the user to stop paging and exit the program.</span></span> <span data-ttu-id="8af64-112">V tomto konkrétním případě je stránkovací dotaz spuštěn proti výsledky uložené v mezipaměti z původního dotazu.</span><span class="sxs-lookup"><span data-stu-id="8af64-112">In this particular case, the paging query is run against the cached results from the original query.</span></span> <span data-ttu-id="8af64-113">V jiných kontextech, jako je například LINQ na SQL, takové ukládání do mezipaměti není vyžadováno.</span><span class="sxs-lookup"><span data-stu-id="8af64-113">In other contexts, such as LINQ to SQL, such caching is not required.</span></span>  
   
-## <a name="compile-the-code"></a><span data-ttu-id="9a739-114">Kompilace kódu</span><span class="sxs-lookup"><span data-stu-id="9a739-114">Compile the code</span></span>  
-<span data-ttu-id="9a739-115">Vytvořte projekt konzolové aplikace Visual Basic s příkazem `Imports` pro obor názvů System. Linq.</span><span class="sxs-lookup"><span data-stu-id="9a739-115">Create a Visual Basic console application project, with an `Imports` statement for the System.Linq namespace.</span></span>
+## <a name="compile-the-code"></a><span data-ttu-id="8af64-114">Kompilace kódu</span><span class="sxs-lookup"><span data-stu-id="8af64-114">Compile the code</span></span>  
+<span data-ttu-id="8af64-115">Vytvořte projekt aplikace konzoly `Imports` jazyka s příkazem pro obor názvů System.Linq.</span><span class="sxs-lookup"><span data-stu-id="8af64-115">Create a Visual Basic console application project, with an `Imports` statement for the System.Linq namespace.</span></span>
   
-## <a name="see-also"></a><span data-ttu-id="9a739-116">Viz také:</span><span class="sxs-lookup"><span data-stu-id="9a739-116">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="8af64-116">Viz také</span><span class="sxs-lookup"><span data-stu-id="8af64-116">See also</span></span>
 
-- [<span data-ttu-id="9a739-117">LINQ to Objects (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="9a739-117">LINQ to Objects (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/linq-to-objects.md)
-- [<span data-ttu-id="9a739-118">LINQ a souborové adresáře (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="9a739-118">LINQ and File Directories (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/linq-and-file-directories.md)
+- [<span data-ttu-id="8af64-117">LINQ na objekty (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="8af64-117">LINQ to Objects (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/linq-to-objects.md)
+- [<span data-ttu-id="8af64-118">Linq a adresáře souborů (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="8af64-118">LINQ and File Directories (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/linq-and-file-directories.md)

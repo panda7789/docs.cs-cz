@@ -2,22 +2,22 @@
 title: Refaktoring pomocí čisté funkce
 ms.date: 07/20/2015
 ms.assetid: af0ea62f-4f57-4868-b624-a85524055935
-ms.openlocfilehash: ce07622a030f291bbbee54dc342562ffecd3258c
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.openlocfilehash: 3a0365c79b8283fef242ecf8f2b68ea4de780049
+ms.sourcegitcommit: 43d10ef65f0f1fd6c3b515e363bde11a3fcd8d6d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75341660"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78266934"
 ---
-# <a name="refactoring-using-a-pure-function-visual-basic"></a><span data-ttu-id="3543a-102">Refaktoring pomocí funkce Pure (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="3543a-102">Refactoring Using a Pure Function (Visual Basic)</span></span>
-<span data-ttu-id="3543a-103">Následující příklad [refaktoruje předchozí příklad refaktoringu pomocí metody rozšíření (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/refactoring-using-an-extension-method.md)pro použití funkce Pure v tomto příkladu, kód pro nalezení textu odstavce je přesunut do metody pure static `ParagraphText`.</span><span class="sxs-lookup"><span data-stu-id="3543a-103">The following example refactors the previous example, [Refactoring Using an Extension Method (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/refactoring-using-an-extension-method.md), to use a pure function In this example, the code to find the text of a paragraph is moved to the pure static method `ParagraphText`.</span></span>  
+# <a name="refactoring-using-a-pure-function-visual-basic"></a><span data-ttu-id="366f7-102">Refaktoring pomocí čisté funkce (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="366f7-102">Refactoring Using a Pure Function (Visual Basic)</span></span>
+<span data-ttu-id="366f7-103">Následující příklad refaktoruje předchozí příklad [Refaktoring Pomocí metody rozšíření (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/refactoring-using-an-extension-method.md), chcete-li použít čistou funkci V tomto `ParagraphText`příkladu je kód pro nalezení textu odstavce přesunut na čistě statickou metodu .</span><span class="sxs-lookup"><span data-stu-id="366f7-103">The following example refactors the previous example, [Refactoring Using an Extension Method (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/refactoring-using-an-extension-method.md), to use a pure function In this example, the code to find the text of a paragraph is moved to the pure static method `ParagraphText`.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="3543a-104">Příklad</span><span class="sxs-lookup"><span data-stu-id="3543a-104">Example</span></span>  
- <span data-ttu-id="3543a-105">Tento příklad zpracovává dokument WordprocessingML a načítá uzly odstavců z dokumentu WordprocessingML.</span><span class="sxs-lookup"><span data-stu-id="3543a-105">This example processes a WordprocessingML document, retrieving the paragraph nodes from a WordprocessingML document.</span></span> <span data-ttu-id="3543a-106">Určuje také styl každého odstavce.</span><span class="sxs-lookup"><span data-stu-id="3543a-106">It also identifies the style of each paragraph.</span></span> <span data-ttu-id="3543a-107">Tento příklad sestaví na předchozích příkladech v tomto kurzu.</span><span class="sxs-lookup"><span data-stu-id="3543a-107">This example builds on the previous examples in this tutorial.</span></span> <span data-ttu-id="3543a-108">Refaktoring Code se volá v komentářích v následujícím kódu.</span><span class="sxs-lookup"><span data-stu-id="3543a-108">The refactored code is called out in comments in the code below.</span></span>  
+## <a name="example"></a><span data-ttu-id="366f7-104">Příklad</span><span class="sxs-lookup"><span data-stu-id="366f7-104">Example</span></span>  
+ <span data-ttu-id="366f7-105">Tento příklad zpracuje dokument WordprocessingML, načtení odstavcových uzlů z dokumentu WordprocessingML.</span><span class="sxs-lookup"><span data-stu-id="366f7-105">This example processes a WordprocessingML document, retrieving the paragraph nodes from a WordprocessingML document.</span></span> <span data-ttu-id="366f7-106">Také identifikuje styl každého odstavce.</span><span class="sxs-lookup"><span data-stu-id="366f7-106">It also identifies the style of each paragraph.</span></span> <span data-ttu-id="366f7-107">Tento příklad vychází z předchozích příkladů v tomto kurzu.</span><span class="sxs-lookup"><span data-stu-id="366f7-107">This example builds on the previous examples in this tutorial.</span></span> <span data-ttu-id="366f7-108">Refaktorovaný kód je volán v komentářích v níže uvedeném kódu.</span><span class="sxs-lookup"><span data-stu-id="366f7-108">The refactored code is called out in comments in the code below.</span></span>  
   
- <span data-ttu-id="3543a-109">Pokyny k vytvoření zdrojového dokumentu pro tento příklad najdete v tématu [vytvoření zdrojového dokumentu XML pro Office Open (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/creating-the-source-office-open-xml-document.md).</span><span class="sxs-lookup"><span data-stu-id="3543a-109">For instructions for creating the source document for this example, see [Creating the Source Office Open XML Document (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/creating-the-source-office-open-xml-document.md).</span></span>  
+ <span data-ttu-id="366f7-109">Pokyny k vytvoření zdrojového dokumentu v tomto příkladu naleznete [v tématu Vytvoření dokumentu Open XML (Visual Basic) zdrojové sady Office](../../../../visual-basic/programming-guide/concepts/linq/creating-the-source-office-open-xml-document.md).</span><span class="sxs-lookup"><span data-stu-id="366f7-109">For instructions for creating the source document for this example, see [Creating the Source Office Open XML Document (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/creating-the-source-office-open-xml-document.md).</span></span>  
   
- <span data-ttu-id="3543a-110">Tento příklad používá třídy ze sestavení WindowsBase.</span><span class="sxs-lookup"><span data-stu-id="3543a-110">This example uses classes from the WindowsBase assembly.</span></span> <span data-ttu-id="3543a-111">Používá typy v oboru názvů <xref:System.IO.Packaging?displayProperty=nameWithType>.</span><span class="sxs-lookup"><span data-stu-id="3543a-111">It uses types in the <xref:System.IO.Packaging?displayProperty=nameWithType> namespace.</span></span>  
+ <span data-ttu-id="366f7-110">Tento příklad používá třídy z sestavení WindowsBase.</span><span class="sxs-lookup"><span data-stu-id="366f7-110">This example uses classes from the WindowsBase assembly.</span></span> <span data-ttu-id="366f7-111">Používá typy v <xref:System.IO.Packaging?displayProperty=nameWithType> oboru názvů.</span><span class="sxs-lookup"><span data-stu-id="366f7-111">It uses types in the <xref:System.IO.Packaging?displayProperty=nameWithType> namespace.</span></span>  
   
 ```vb  
 Imports <xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main">  
@@ -144,10 +144,10 @@ Module Module1
             Console.WriteLine("StyleName:{0} >{1}<", p.StyleName, p.Text)  
         Next  
     End Sub  
-End Module   
+End Module
 ```  
   
- <span data-ttu-id="3543a-112">Tento příklad vytvoří stejný výstup jako před refaktoringem:</span><span class="sxs-lookup"><span data-stu-id="3543a-112">This example produces the same output as before the refactoring:</span></span>  
+ <span data-ttu-id="366f7-112">Tento příklad vytváří stejný výstup jako před refaktoring:</span><span class="sxs-lookup"><span data-stu-id="366f7-112">This example produces the same output as before the refactoring:</span></span>  
   
 ```console  
 StyleName:Heading1 >Parsing WordprocessingML with LINQ to XML<  
@@ -167,13 +167,13 @@ StyleName:Normal ><
 StyleName:Code >Hello World<  
 ```  
   
-### <a name="next-steps"></a><span data-ttu-id="3543a-113">Další kroky</span><span class="sxs-lookup"><span data-stu-id="3543a-113">Next Steps</span></span>  
- <span data-ttu-id="3543a-114">Následující příklad ukazuje, jak projekt XML do jiného tvaru:</span><span class="sxs-lookup"><span data-stu-id="3543a-114">The next example shows how to project XML into a different shape:</span></span>  
+### <a name="next-steps"></a><span data-ttu-id="366f7-113">Další kroky</span><span class="sxs-lookup"><span data-stu-id="366f7-113">Next Steps</span></span>  
+ <span data-ttu-id="366f7-114">Následující příklad ukazuje, jak promítat XML do jiného tvaru:</span><span class="sxs-lookup"><span data-stu-id="366f7-114">The next example shows how to project XML into a different shape:</span></span>  
   
-- [<span data-ttu-id="3543a-115">Projektování XML v jiném obrazci (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="3543a-115">Projecting XML in a Different Shape (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/projecting-xml-in-a-different-shape.md)  
+- [<span data-ttu-id="366f7-115">Promítání XML v jiném obrazci (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="366f7-115">Projecting XML in a Different Shape (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/projecting-xml-in-a-different-shape.md)  
   
-## <a name="see-also"></a><span data-ttu-id="3543a-116">Viz také:</span><span class="sxs-lookup"><span data-stu-id="3543a-116">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="366f7-116">Viz také</span><span class="sxs-lookup"><span data-stu-id="366f7-116">See also</span></span>
 
-- [<span data-ttu-id="3543a-117">Kurz: manipulace s obsahem v dokumentu WordprocessingML (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="3543a-117">Tutorial: Manipulating Content in a WordprocessingML Document (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/tutorial-manipulating-content-in-a-wordprocessingml-document.md)
-- [<span data-ttu-id="3543a-118">Refaktoring pomocí metody rozšíření (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="3543a-118">Refactoring Using an Extension Method (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/refactoring-using-an-extension-method.md)
-- [<span data-ttu-id="3543a-119">Refaktoring na čistě funkce (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="3543a-119">Refactoring Into Pure Functions (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/refactoring-into-pure-functions.md)
+- [<span data-ttu-id="366f7-117">Kurz: Manipulace s obsahem v dokumentu WordprocessingML (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="366f7-117">Tutorial: Manipulating Content in a WordprocessingML Document (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/tutorial-manipulating-content-in-a-wordprocessingml-document.md)
+- [<span data-ttu-id="366f7-118">Refaktoring pomocí metody rozšíření (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="366f7-118">Refactoring Using an Extension Method (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/refactoring-using-an-extension-method.md)
+- [<span data-ttu-id="366f7-119">Refaktoring do čistých funkcí (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="366f7-119">Refactoring Into Pure Functions (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/refactoring-into-pure-functions.md)
