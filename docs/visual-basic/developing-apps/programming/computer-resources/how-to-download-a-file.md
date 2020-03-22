@@ -9,53 +9,53 @@ helpviewer_keywords:
 - files [Visual Basic], transferring
 ms.assetid: ac479f81-c0e2-4b99-af73-217f446b73da
 ms.openlocfilehash: 4923feb46ff638de9514a4d70fc00367491a6f44
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/22/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "74345625"
 ---
 # <a name="how-to-download-a-file-in-visual-basic"></a>Postupy: Stažení souboru v jazyce Visual Basic
 
-Metodu <xref:Microsoft.VisualBasic.Devices.Network.DownloadFile%2A> lze použít ke stažení vzdáleného souboru a jeho uložení do konkrétního umístění. Pokud je parametr `ShowUI` nastaven na hodnotu `True`, zobrazí se dialogové okno s informacemi o průběhu stahování a umožňující uživatelům zrušit operaci. Ve výchozím nastavení nejsou přepsány existující soubory se stejným názvem. Pokud chcete přepsat existující soubory, nastavte parametr `overwrite` na hodnotu `True`.
+Metodu <xref:Microsoft.VisualBasic.Devices.Network.DownloadFile%2A> lze použít ke stažení vzdáleného souboru a jeho uložení do určitého umístění. Pokud `ShowUI` je parametr `True`nastaven na , zobrazí se dialogové okno, které ukazuje průběh stahování a umožňuje uživatelům operaci zrušit. Ve výchozím nastavení nejsou existující soubory se stejným názvem přepsány. Pokud chcete přepsat existující soubory, `overwrite` nastavte `True`parametr na .
 
 Následující podmínky mohou způsobit výjimku:
 
-- Název jednotky není platný (<xref:System.ArgumentException>).
+- Název jednotky není<xref:System.ArgumentException>platný ( ).
 
-- Nebylo zadáno nezbytné ověřování (<xref:System.UnauthorizedAccessException> nebo <xref:System.Security.SecurityException>).
+- Nebylo zadáno nezbytné<xref:System.UnauthorizedAccessException> ověření <xref:System.Security.SecurityException>( nebo ).
 
-- Server nereaguje v rámci zadaného `connectionTimeout` (<xref:System.TimeoutException>).
+- Server nereaguje v rámci `connectionTimeout` <xref:System.TimeoutException>zadaného ( ).
 
-- Tento požadavek byl zamítnut webovým serverem (<xref:System.Net.WebException>).
+- Požadavek je webem zamítnut<xref:System.Net.WebException>( ).
 
 [!INCLUDE[note_settings_general](~/includes/note-settings-general-md.md)]
 
 > [!IMPORTANT]
-> Nečiňte rozhodnutí o obsahu souboru na základě jeho názvu. Například soubor Form1. vb nemusí být Visual Basic zdrojový soubor. Před použitím dat ve své aplikaci ověřte všechny vstupy. Soubor nemusí mít obsah, jaký očekáváte, a metody pro čtení z tohoto souboru mohou selhat.
+> Nečiňte rozhodnutí o obsahu souboru na základě jeho názvu. Například soubor Form1.vb nemusí být zdrojový soubor jazyka Visual Basic. Před použitím dat ve své aplikaci ověřte všechny vstupy. Soubor nemusí mít obsah, jaký očekáváte, a metody pro čtení z tohoto souboru mohou selhat.
 
 ### <a name="to-download-a-file"></a>Stažení souboru
 
-- Použijte metodu `DownloadFile` ke stažení souboru, určení umístění cílového souboru jako řetězce nebo identifikátoru URI a určení umístění, kam chcete soubor uložit. Tento příklad stáhne soubor `WineList.txt` z `http://www.cohowinery.com/downloads` a uloží ho do `C:\Documents and Settings\All Users\Documents`:
+- Pomocí `DownloadFile` této metody stáhněte soubor, zadejte umístění cílového souboru jako řetězec nebo identifikátor URI a umístění, ve kterém má být soubor ukládán. Tento příklad stáhne `WineList.txt` `http://www.cohowinery.com/downloads` soubor z a `C:\Documents and Settings\All Users\Documents`uloží jej do :
 
   [!code-vb[VbResourceTasks#9](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbResourceTasks/VB/Class1.vb#9)]
 
-### <a name="to-download-a-file-specifying-a-time-out-interval"></a>Stažení souboru s určením intervalu časového limitu
+### <a name="to-download-a-file-specifying-a-time-out-interval"></a>Stažení souboru určením časového intervalu
 
-- Použijte metodu `DownloadFile` ke stažení souboru, určení umístění cílového souboru jako řetězce nebo identifikátoru URI, určení umístění, do kterého se má soubor uložit, a určení intervalu časového limitu v milisekundách (výchozí hodnota je 1000). Tento příklad stáhne soubor `WineList.txt` z `http://www.cohowinery.com/downloads` a uloží jej do `C:\Documents and Settings\All Users\Documents`a určí časový limit 500 milisekund:
+- Pomocí `DownloadFile` metody stáhněte soubor, určení umístění cílového souboru jako řetězec nebo IDENTIFIKÁTOR URI, určení umístění, ve kterém chcete soubor uložit, a určení časového limitu v milisekundách (výchozí hodnota je 1000). Tento příklad stáhne `WineList.txt` `http://www.cohowinery.com/downloads` soubor z a `C:\Documents and Settings\All Users\Documents`uloží jej do aplikace , a zadává interval časového intervalu 500 milisekund:
 
   [!code-vb[VbResourceTasks#10](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbResourceTasks/VB/Class1.vb#10)]
 
-### <a name="to-download-a-file-supplying-a-user-name-and-password"></a>Stažení souboru a zadání uživatelského jména a hesla
+### <a name="to-download-a-file-supplying-a-user-name-and-password"></a>Stažení souboru zadáním uživatelského jména a hesla
 
-- Použijte metodu `DownLoadFile` ke stažení souboru, určení umístění cílového souboru jako řetězce nebo identifikátoru URI a určení umístění, kam chcete soubor uložit, uživatelské jméno a heslo. Tento příklad stáhne soubor `WineList.txt` z `http://www.cohowinery.com/downloads` a uloží jej do `C:\Documents and Settings\All Users\Documents`s uživatelským jménem `anonymous` a prázdným heslem.
+- Pomocí `DownLoadFile` této metody stáhněte soubor, zadejte umístění cílového souboru jako řetězec nebo identifikátor URI a umístění, do kterého chcete soubor uložit, uživatelské jméno a heslo. Tento příklad stáhne `WineList.txt` `http://www.cohowinery.com/downloads` soubor z a `C:\Documents and Settings\All Users\Documents`uloží jej `anonymous` do aplikace s uživatelským jménem a prázdným heslem.
 
   [!code-vb[VbResourceTasks#11](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbResourceTasks/VB/Class1.vb#11)]
 
   > [!IMPORTANT]
-  > Protokol FTP používaný metodou `DownLoadFile` odesílá informace, včetně hesel, do prostého textu a neměl by se používat k přenosu citlivých informací.
+  > Protokol FTP používaný `DownLoadFile` metodou odesílá informace, včetně hesel, ve formátu prostého textu a neměl by být používán pro přenos citlivých informací.
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:Microsoft.VisualBasic.Devices.Network>
 - <xref:Microsoft.VisualBasic.Devices.Network.DownloadFile%2A>

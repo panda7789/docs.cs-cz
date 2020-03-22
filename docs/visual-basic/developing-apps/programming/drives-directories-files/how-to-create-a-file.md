@@ -6,15 +6,15 @@ helpviewer_keywords:
 - files [Visual Basic], creating
 ms.assetid: 0253bb6d-5519-4a50-b882-b93ef5cca0d9
 ms.openlocfilehash: 20533ec01d3198d499312ed0c15ec8cca2ff70bd
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/22/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "74348798"
 ---
 # <a name="how-to-create-a-file-in-visual-basic"></a>Postupy: Vytvoření souboru v jazyce Visual Basic
 
-Tento příklad vytvoří prázdný textový soubor v zadané cestě pomocí metody <xref:System.IO.File.Create%2A> ve třídě <xref:System.IO.File>.  
+Tento příklad vytvoří prázdný textový soubor na <xref:System.IO.File.Create%2A> zadané <xref:System.IO.File> cestě pomocí metody ve třídě.  
   
 ## <a name="example"></a>Příklad  
 
@@ -22,7 +22,7 @@ Tento příklad vytvoří prázdný textový soubor v zadané cestě pomocí met
   
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
 
- K zápisu do souboru použijte proměnnou `file`.  
+ Použijte `file` proměnnou k zápisu do souboru.  
   
 ## <a name="robust-programming"></a>Robustní programování  
 
@@ -30,13 +30,13 @@ Tento příklad vytvoří prázdný textový soubor v zadané cestě pomocí met
   
  Následující podmínky mohou způsobit výjimku:  
   
-- Název cesty je poškozen. Například obsahuje neplatné znaky nebo je pouze mezera (<xref:System.ArgumentException>).  
+- Název cesty je poškozen. Obsahuje například neplatné znaky nebo je<xref:System.ArgumentException>pouze prázdné znaky ( ).  
   
-- Cesta je určena jen pro čtení (<xref:System.IO.IOException>).  
+- Cesta je jen pro<xref:System.IO.IOException>čtení ( ).  
   
-- Název cesty je `Nothing` (<xref:System.ArgumentNullException>).  
+- Název cesty `Nothing` je<xref:System.ArgumentNullException>( ).  
   
-- Název cesty je příliš dlouhý (<xref:System.IO.PathTooLongException>).  
+- Název cesty je příliš<xref:System.IO.PathTooLongException>dlouhý ( ).  
   
 - Cesta je neplatná (<xref:System.IO.DirectoryNotFoundException>).  
   
@@ -44,15 +44,15 @@ Tento příklad vytvoří prázdný textový soubor v zadané cestě pomocí met
   
 ## <a name="net-framework-security"></a>Zabezpečení rozhraní .NET Framework  
 
- <xref:System.Security.SecurityException> může být vyvolána v prostředích s částečnou důvěryhodností.  
+ A <xref:System.Security.SecurityException> může být vyvolána v prostředí s částečnou důvěryhodností.  
   
- Volání metody <xref:System.IO.File.Create%2A> vyžaduje <xref:System.Security.Permissions.FileIOPermission>.  
+ Volání <xref:System.IO.File.Create%2A> metody vyžaduje <xref:System.Security.Permissions.FileIOPermission>.  
   
- Pokud uživatel nemá oprávnění k vytvoření souboru, je vyvolána <xref:System.UnauthorizedAccessException>.  
+ Je <xref:System.UnauthorizedAccessException> vyvolána, pokud uživatel nemá oprávnění k vytvoření souboru.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.IO>
 - <xref:System.IO.File.Create%2A>
 - [Používání knihoven z částečně důvěryhodného kódu](../../../../framework/misc/using-libraries-from-partially-trusted-code.md)
-- [Základy zabezpečení přístupu ke kódu](../../../../framework/misc/code-access-security-basics.md)
+- [Základy zabezpečení přístupu kódu](../../../../framework/misc/code-access-security-basics.md)

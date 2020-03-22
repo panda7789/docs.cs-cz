@@ -8,47 +8,47 @@ helpviewer_keywords:
 - event logs, writing to
 ms.assetid: cadbc8c1-87af-4746-934e-55b79a4f6e2b
 ms.openlocfilehash: 511bb8fb16851872c1a16ae7627ed0fc6594337c
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/22/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "74352051"
 ---
 # <a name="how-to-write-to-an-application-event-log-visual-basic"></a>Postupy: Zápis do protokolu událostí aplikace (Visual Basic)
 
-Objekty `My.Application.Log` a `My.Log` lze použít k zápisu informací o událostech, ke kterým dojde v aplikaci. Tento příklad ukazuje, jak nakonfigurovat naslouchací proces protokolu událostí tak, `My.Application.Log` zapisuje trasovací informace do protokolu událostí aplikace.
+Objekty a `My.Application.Log` `My.Log` můžete použít k zápisu informací o událostech, ke kterým dochází ve vaší aplikaci. Tento příklad ukazuje, jak nakonfigurovat `My.Application.Log` naslouchací proces protokolu událostí, takže zapíše informace o trasování do protokolu událostí aplikace.
 
-Do protokolu zabezpečení nelze zapisovat. Aby bylo možné zapisovat do systémového protokolu, musíte být členem účtu LocalSystem nebo správce.
+Do protokolu zabezpečení nelze zapisovat. Chcete-li zapisovat do systémového protokolu, musíte být členem účtu LocalSystem nebo Administrator.
 
-Chcete-li zobrazit protokol událostí, můžete použít **Průzkumník serveru** nebo **Windows Prohlížeč událostí**. Další informace najdete v tématu [události ETW v .NET Framework](../../../../framework/performance/etw-events.md).
+Chcete-li zobrazit protokol událostí, můžete použít **Průzkumníka serveru** nebo **Prohlížeč událostí systému Windows**. Další informace naleznete [v tématu ETW Události v rozhraní .NET Framework](../../../../framework/performance/etw-events.md).
 
-## <a name="to-add-and-configure-the-event-log-listener"></a>Přidání a konfigurace naslouchacího procesu protokolu událostí
+## <a name="to-add-and-configure-the-event-log-listener"></a>Přidání a konfigurace posluchače protokolu událostí
 
-1. V **Průzkumník řešení** klikněte pravým tlačítkem na soubor App. config a vyberte **otevřít**.
+1. Klepněte pravým tlačítkem myši na soubor app.config v **Průzkumníku řešení** a zvolte **Otevřít**.
 
-    \- nebo-
+    \-nebo -
 
-    Pokud soubor App. config neexistuje,
+    Pokud není k dispozici žádný soubor app.config,
 
-    1. V nabídce **projekt** klikněte na příkaz **Přidat novou položku**.
+    1. V nabídce **Projekt** zvolte **Přidat novou položku**.
 
-    2. V dialogovém okně **Přidat novou položku** vyberte možnost **konfigurační soubor aplikace**.
+    2. V dialogovém okně **Přidat novou položku** zvolte **Konfigurační soubor aplikace**.
 
-    3. Klikněte na tlačítko **Přidat**.
+    3. Klikněte na **Přidat**.
 
-2. V konfiguračním souboru aplikace vyhledejte část `<listeners>`.
+2. Vyhledejte `<listeners>` oddíl v konfiguračním souboru aplikace.
 
-    Část `<listeners>` najdete v části `<source>` s názvem "DefaultSource", který je vnořen do oddílu `<system.diagnostics>`, který je vnořený pod oddílem `<configuration>` nejvyšší úrovně.
+    Oddíl najdete `<listeners>` v `<source>` sekci s atributem název "DefaultSource", který `<system.diagnostics>` je vnořen pod oddíl, který je vnořen pod oddíl nejvyšší úrovně. `<configuration>`
 
-3. Přidejte tento prvek do tohoto `<listeners>` části:
+3. Přidejte tento `<listeners>` prvek do tohoto oddílu:
 
     ```xml
     <add name="EventLog"/>
     ```
 
-4. Vyhledejte část `<sharedListeners>` v části `<system.diagnostics>` v části `<configuration>` nejvyšší úrovně.
+4. Vyhledejte `<sharedListeners>` oddíl v `<system.diagnostics>` části v části `<configuration>` nejvyšší úrovně.
 
-5. Přidejte tento prvek do tohoto `<sharedListeners>` části:
+5. Přidejte tento `<sharedListeners>` prvek do tohoto oddílu:
 
     ```xml
     <add name="EventLog"
@@ -56,18 +56,18 @@ Chcete-li zobrazit protokol událostí, můžete použít **Průzkumník serveru
          initializeData="APPLICATION_NAME"/>
     ```
 
-    Nahraďte `APPLICATION_NAME` názvem vaší aplikace.
+    Nahraďte `APPLICATION_NAME` název aplikace.
 
     > [!NOTE]
-    > Aplikace obvykle zapisuje pouze chyby do protokolu událostí. Informace o filtrování výstupu protokolu naleznete v tématu [Návod: filtrování výstupu my. Application. log](../../../../visual-basic/developing-apps/programming/log-info/walkthrough-filtering-my-application-log-output.md).
+    > Aplikace obvykle zapisuje pouze chyby do protokolu událostí. Informace o výstupu protokolu filtrování naleznete [v tématu Návod: Filtrování výstupu my.Application.Log](../../../../visual-basic/developing-apps/programming/log-info/walkthrough-filtering-my-application-log-output.md).
 
-## <a name="to-write-event-information-to-the-event-log"></a>Zápis informací o události do protokolu událostí
+## <a name="to-write-event-information-to-the-event-log"></a>Zápis informací o událostech do protokolu událostí
 
-Pomocí metody `My.Application.Log.WriteEntry` nebo `My.Application.Log.WriteException` zapište informace do protokolu událostí. Další informace naleznete v tématu [How to: Write log messages](../../../../visual-basic/developing-apps/programming/log-info/how-to-write-log-messages.md) and [to: log Exceptions](../../../../visual-basic/developing-apps/programming/log-info/how-to-log-exceptions.md).
+Pomocí `My.Application.Log.WriteEntry` metody `My.Application.Log.WriteException` or zapište informace do protokolu událostí. Další informace naleznete v [tématu How to: Write Log Messages](../../../../visual-basic/developing-apps/programming/log-info/how-to-write-log-messages.md) and [How to: Log Exceptions](../../../../visual-basic/developing-apps/programming/log-info/how-to-log-exceptions.md).
 
-Po nakonfigurování naslouchacího procesu protokolu událostí pro sestavení obdrží všechny zprávy, které `My.Application.Log` zápisy z tohoto sestavení.
+Po konfiguraci posluchače protokolu událostí pro sestavení obdrží `My.Application.Log` všechny zprávy, které zapisuje z tohoto sestavení.
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:Microsoft.VisualBasic.Logging.Log?displayProperty=nameWithType>
 - <xref:Microsoft.VisualBasic.Logging.Log.WriteEntry%2A>

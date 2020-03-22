@@ -8,39 +8,39 @@ helpviewer_keywords:
 - serial ports, sending strings to
 ms.assetid: 6ebf46cd-b2d0-4b2c-9a1f-be177b22ad52
 ms.openlocfilehash: b2051451142a7818a3b7d1bc564c5ae36b2579fe
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/22/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "74345590"
 ---
 # <a name="how-to-send-strings-to-serial-ports-in-visual-basic"></a>Postupy: Odesílání řetězců na sériové porty v jazyce Visual Basic
 
-V tomto tématu se dozvíte, jak pomocí `My.Computer.Ports` odeslat řetězce na sériové porty počítače v Visual Basic.  
+Toto téma popisuje `My.Computer.Ports` použití k odesílání řetězců do sériových portů počítače v jazyce Visual Basic.  
   
 ## <a name="example"></a>Příklad  
 
- Tento příklad odešle řetězec na sériový port COM1. V počítači možná budete muset použít jiný sériový port.  
+ Tento příklad odešle řetězec do sériového portu COM1. V počítači může být nutné použít jiný sériový port.  
   
- K získání odkazu na port použijte metodu `My.Computer.Ports.OpenSerialPort`. Další informace najdete v tématu <xref:Microsoft.VisualBasic.Devices.Ports.OpenSerialPort%2A>.  
+ Pomocí `My.Computer.Ports.OpenSerialPort` metody získat odkaz na port. Další informace naleznete v tématu <xref:Microsoft.VisualBasic.Devices.Ports.OpenSerialPort%2A>.  
   
- `Using` blok umožňuje aplikaci zavřít sériový port, i když generuje výjimku. Veškerý kód, který zpracovává sériový port, by měl být uveden v rámci tohoto bloku nebo v rámci `Try...Catch...Finally`ho bloku.  
+ Blok `Using` umožňuje aplikaci zavřít sériový port i v případě, že generuje výjimku. Veškerý kód, který manipuluje se sériovým portem, `Try...Catch...Finally` by se měl objevit v tomto bloku nebo v rámci bloku.  
   
- Metoda <xref:System.IO.Ports.SerialPort.WriteLine%2A> odesílá data do sériového portu.  
+ Metoda <xref:System.IO.Ports.SerialPort.WriteLine%2A> odešle data do sériového portu.  
   
  [!code-vb[VbVbalrMyComputer#33](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyComputer/VB/Class2.vb#33)]  
   
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
   
-- Tento příklad předpokládá, že počítač používá `COM1`.  
+- Tento příklad předpokládá, že `COM1`počítač používá .  
   
 ## <a name="robust-programming"></a>Robustní programování  
 
- Tento příklad předpokládá, že počítač používá `COM1`; pro větší flexibilitu by měl kód uživateli dovolit vybrat požadovaný sériový port ze seznamu dostupných portů. Další informace najdete v tématu [Postup: zobrazení dostupných sériových portů](../../../../visual-basic/developing-apps/programming/computer-resources/how-to-show-available-serial-ports.md).  
+ Tento příklad předpokládá, že `COM1`počítač používá ; pro větší flexibilitu by měl kód umožnit uživateli vybrat požadovaný sériový port ze seznamu dostupných portů. Další informace naleznete v [tématu How to: Show Available Serial Ports](../../../../visual-basic/developing-apps/programming/computer-resources/how-to-show-available-serial-ports.md).  
   
- V tomto příkladu se používá blok `Using` k zajištění toho, že aplikace uzavře port, i když vyvolá výjimku. Další informace naleznete v tématu [using – příkaz](../../../../visual-basic/language-reference/statements/using-statement.md).  
+ Tento příklad `Using` používá blok a ujistěte se, že aplikace zavře port, i když vyvolá výjimku. Další informace naleznete [v tématu Using Statement](../../../../visual-basic/language-reference/statements/using-statement.md).  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:Microsoft.VisualBasic.Devices.Ports>
 - <xref:System.IO.Ports.SerialPort?displayProperty=nameWithType>

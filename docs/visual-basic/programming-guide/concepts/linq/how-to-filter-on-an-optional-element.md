@@ -1,22 +1,22 @@
 ---
-title: 'Postupy: filtrování volitelného prvku'
+title: 'Postupy: Filtrování volitelného elementu'
 ms.date: 07/20/2015
 ms.assetid: a74b76ad-6889-4185-a189-d6ef2c63841e
-ms.openlocfilehash: e67cb58710d49a19f322b3555efa96ac69b9f654
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 6db377ae30582ef010d5af467e88c52b008483ed
+ms.sourcegitcommit: 43d10ef65f0f1fd6c3b515e363bde11a3fcd8d6d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74353042"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78267051"
 ---
-# <a name="how-to-filter-on-an-optional-element-visual-basic"></a>Postupy: filtrování volitelného prvku (Visual Basic)
-Někdy je vhodné vyfiltrovat element, i když si nejste jistí, že existuje v dokumentu XML. Hledání by mělo být provedeno, aby v případě, že konkrétní prvek nemá podřízený element, neaktivovali výjimku odkazu s hodnotou null filtrováním. V následujícím příkladu `Child5` element nemá podřízený element `Type`, ale dotaz se stále provádí správně.  
+# <a name="how-to-filter-on-an-optional-element-visual-basic"></a>Postup: Filtrování volitelného prvku (Visual Basic)
+Někdy chcete filtrovat prvek, i když si nejste jisti, že existuje v dokumentu XML. Hledání by měla být provedena tak, aby pokud konkrétní prvek nemá podřízený prvek, nespustíte výjimku nulového odkazu filtrováním pro něj. V následujícím příkladu `Child5` prvek nemá `Type` podřízený prvek, ale dotaz se stále provádí správně.  
   
 ## <a name="example"></a>Příklad  
- V tomto příkladu se používá metoda rozšíření <xref:System.Xml.Linq.Extensions.Elements%2A>.  
+ Tento příklad <xref:System.Xml.Linq.Extensions.Elements%2A> používá metodu rozšíření.  
   
 ```vb  
-Dim root As XElement = _   
+Dim root As XElement = _
     <Root>  
         <Child1>  
             <Text>Child One Text</Text>  
@@ -48,7 +48,7 @@ For Each str In cList
 Next  
 ```  
   
- Tento kód generuje následující výstup:  
+ Výsledkem tohoto kódu je následující výstup:  
   
 ```console  
 Child One Text  
@@ -57,7 +57,7 @@ Child Four Text
 ```  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje stejný dotaz pro XML, který je v oboru názvů. Další informace najdete v tématu [obory názvů Overview (LINQ to XML) (Visual Basic)](namespaces-overview-linq-to-xml.md).  
+ Následující příklad ukazuje stejný dotaz pro jazyk XML, který je v oboru názvů. Další informace naleznete [v tématu Přehled oborů názvů (LINQ to XML) (Visual Basic).](namespaces-overview-linq-to-xml.md)  
   
 ```vb  
 Imports <xmlns='http://www.adatum.com'>  
@@ -98,7 +98,7 @@ Module Module1
 End Module  
 ```  
   
- Tento kód generuje následující výstup:  
+ Výsledkem tohoto kódu je následující výstup:  
   
 ```console  
 Child One Text  
@@ -106,7 +106,7 @@ Child Two Text
 Child Four Text  
 ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Xml.Linq.XElement.Attribute%2A?displayProperty=nameWithType>
 - <xref:System.Xml.Linq.XContainer.Elements%2A?displayProperty=nameWithType>
@@ -115,5 +115,5 @@ Child Four Text
 - [Vlastnost osy podřízeného XML](../../../../visual-basic/language-reference/xml-axis/xml-child-axis-property.md)
 - [Vlastnost osy atributu XML](../../../../visual-basic/language-reference/xml-axis/xml-attribute-axis-property.md)
 - [Vlastnost hodnoty XML](../../../../visual-basic/language-reference/xml-axis/xml-value-property.md)
-- [Přehled standardních operátorů dotazů (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/standard-query-operators-overview.md)
-- [Operace projekce (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/projection-operations.md)
+- [Standardní operátory dotazů – přehled (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/standard-query-operators-overview.md)
+- [Projekční operace (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/projection-operations.md)

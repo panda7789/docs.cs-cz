@@ -8,55 +8,55 @@ helpviewer_keywords:
 - I/O [Visual Basic], copying files
 ms.assetid: 88e2145c-d414-45a5-ad03-6f5d58ecca26
 ms.openlocfilehash: e9a14e1f3743979548b92a3db653d09a470a1875
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/22/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "74348833"
 ---
 # <a name="how-to-create-a-copy-of-a-file-in-a-different-directory-in-visual-basic"></a>Postupy: Vytvoření kopie souboru v jiném adresáři v jazyce Visual Basic
 
-Metoda `My.Computer.FileSystem.CopyFile` umožňuje kopírování souborů. Jeho parametry poskytují možnost přepsat stávající soubory, přejmenovat soubor, zobrazit průběh operace a umožnit uživateli zrušit operaci.  
+Metoda `My.Computer.FileSystem.CopyFile` umožňuje kopírovat soubory. Jeho parametry umožňují přepsat existující soubory, přejmenovat soubor, zobrazit průběh operace a umožnit uživateli operaci zrušit.  
   
-### <a name="to-copy-a-text-file-to-another-folder"></a>Zkopírování textového souboru do jiné složky  
+### <a name="to-copy-a-text-file-to-another-folder"></a>Kopírování textového souboru do jiné složky  
   
-- Použijte metodu `CopyFile` ke zkopírování souboru, určení zdrojového souboru a cílového adresáře. Parametr `overwrite` umožňuje určit, jestli se mají přepsat existující soubory. Následující příklady kódu ukazují, jak použít `CopyFile`.  
+- Pomocí `CopyFile` této metody zkopírujte soubor a určete zdrojový soubor a cílový adresář. Parametr `overwrite` umožňuje určit, zda chcete přepsat existující soubory. Následující příklady kódu ukazují, `CopyFile`jak používat .  
   
      [!code-vb[VbFileIOMisc#24](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbFileIOMisc/VB/Class1.vb#24)]  
   
 ## <a name="robust-programming"></a>Robustní programování  
 
- Následující podmínky mohou způsobit vyvolání výjimky:  
+ Následující podmínky mohou způsobit, že bude vyvolána výjimka:  
   
-- Cesta není platná z některého z následujících důvodů: Jedná se o řetězec o nulové délce, obsahuje pouze prázdné znaky, obsahuje neplatné znaky nebo se jedná o cestu k zařízení (začíná na \\\\.\\) (<xref:System.ArgumentException>).  
+- Cesta není platná z jednoho z následujících důvodů: jedná se o řetězec nulové délky, obsahuje pouze prázdné znaky, \\ \\\\obsahuje neplatné znaky nebo se jedná o cestu zařízení (začíná na . ) (<xref:System.ArgumentException>).  
   
-- Systém nemůže načíst absolutní cestu (<xref:System.ArgumentException>).  
+- Systém nemohl načíst absolutní<xref:System.ArgumentException>cestu ( ).  
   
-- Cesta není platná, protože je `Nothing` (<xref:System.ArgumentNullException>).  
+- Cesta není platná, protože `Nothing` <xref:System.ArgumentNullException>je ( ).  
   
-- Zdrojový soubor není platný nebo neexistuje (<xref:System.IO.FileNotFoundException>).  
+- Zdrojový soubor není platný nebo neexistuje<xref:System.IO.FileNotFoundException>( ).  
   
-- Kombinovaná cesta odkazuje na existující adresář (<xref:System.IO.IOException>).  
+- Kombinovaná cesta odkazuje na existující<xref:System.IO.IOException>adresář ( ).  
   
-- Cílový soubor existuje a `overwrite` je nastavená na `False` (<xref:System.IO.IOException>).  
+- Cílový soubor existuje `overwrite` a je `False` <xref:System.IO.IOException>nastaven na ( ).  
   
-- Uživatel nemá dostatečná oprávnění pro přístup k souboru (<xref:System.IO.IOException>).  
+- Uživatel nemá dostatečná oprávnění pro přístup<xref:System.IO.IOException>k souboru ( ).  
   
-- Soubor v cílové složce se stejným názvem se používá (<xref:System.IO.IOException>).  
+- Soubor v cílové složce se stejným názvem<xref:System.IO.IOException>se používá ( ).  
   
-- Název souboru nebo složky v cestě obsahuje dvojtečku (:) nebo má neplatný formát (<xref:System.NotSupportedException>).  
+- Název souboru nebo složky v cestě obsahuje dvojtečku (:) nebo je v neplatném formátu (<xref:System.NotSupportedException>).  
   
-- `ShowUI` je nastavená na `True`, `onUserCancel` je nastavená na `ThrowException`a uživatel operaci zrušil (<xref:System.OperationCanceledException>).  
+- `ShowUI`je `True`nastavena `onUserCancel` na `ThrowException`, je nastavena na ,<xref:System.OperationCanceledException>a uživatel zrušil operaci ( ).  
   
-- `ShowUI` je nastavená na `True`, `onUserCancel` je nastavená na `ThrowException`a dojde k nespecifikované vstupně-výstupní chybě (<xref:System.OperationCanceledException>).  
+- `ShowUI`je `True`nastavena `onUserCancel` na `ThrowException`, je nastavena na , a<xref:System.OperationCanceledException>dojde k nespecifikované chybě vstupně-out ( ).  
   
-- Cesta překračuje maximální povolenou délku systému (<xref:System.IO.PathTooLongException>).  
+- Cesta překračuje maximální délku definovanou<xref:System.IO.PathTooLongException>systémem ( ).  
   
-- Uživatel nemá požadované oprávnění (<xref:System.UnauthorizedAccessException>).  
+- Uživatel nemá požadované oprávnění<xref:System.UnauthorizedAccessException>( ).  
   
-- Uživatel nemá potřebná oprávnění k zobrazení cesty (<xref:System.Security.SecurityException>).  
+- Uživatel nemá potřebná oprávnění k<xref:System.Security.SecurityException>zobrazení cesty ( ).  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:Microsoft.VisualBasic.FileIO.FileSystem>
 - <xref:Microsoft.VisualBasic.FileIO.FileSystem.CopyFile%2A>

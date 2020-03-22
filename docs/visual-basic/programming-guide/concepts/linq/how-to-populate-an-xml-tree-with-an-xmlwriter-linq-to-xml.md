@@ -1,25 +1,25 @@
 ---
-title: 'Postupy: naplnění stromu XML pomocí funkce XmlWriter (LINQ to XML)'
+title: 'Postup: Naplnění stromu XML jazykem XMLWriter (LINQ to XML)'
 ms.date: 07/20/2015
 ms.assetid: 5792a0eb-94ee-440d-b601-58cca8c0ee0b
-ms.openlocfilehash: ec44f6e21453a1333f842030bae0c4f80dedb9c3
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: fecf57eac570a9ca57dd1fe2f7a0b54cd78c33b5
+ms.sourcegitcommit: 43d10ef65f0f1fd6c3b515e363bde11a3fcd8d6d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74333762"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78266999"
 ---
-# <a name="how-to-populate-an-xml-tree-with-an-xmlwriter-linq-to-xml-visual-basic"></a>Postupy: naplnění stromu XML pomocí funkce XmlWriter (LINQ to XML) (Visual Basic)
-Jedním ze způsobů, jak naplnit strom XML, je použít <xref:System.Xml.Linq.XContainer.CreateWriter%2A> k vytvoření <xref:System.Xml.XmlWriter>a pak zapisovat do <xref:System.Xml.XmlWriter>. Do stromu XML se naplní všechny uzly, které jsou zapsány do <xref:System.Xml.XmlWriter>.  
+# <a name="how-to-populate-an-xml-tree-with-an-xmlwriter-linq-to-xml-visual-basic"></a>Postup: Naplnění stromu XML pomocí xmlwriteru (LINQ to XML) (Visual Basic)
+Jedním ze způsobů, jak naplnit strom XML, je použít <xref:System.Xml.Linq.XContainer.CreateWriter%2A> k vytvoření <xref:System.Xml.XmlWriter>a následnému zápisu do souboru <xref:System.Xml.XmlWriter>. Strom XML je naplněn všemi uzly, <xref:System.Xml.XmlWriter>které jsou zapsány do .  
   
- Tuto metodu byste obvykle použili při použití [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] s jinou třídou, která očekává zápis do <xref:System.Xml.XmlWriter>, jako je například <xref:System.Xml.Xsl.XslCompiledTransform>.  
+ Tuto metodu byste obvykle použili při použití [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] s jinou <xref:System.Xml.XmlWriter>třídou, která očekává zápis do , například <xref:System.Xml.Xsl.XslCompiledTransform>.  
   
 ## <a name="example"></a>Příklad  
- Jedním z možných použití <xref:System.Xml.Linq.XContainer.CreateWriter%2A> je při vyvolání transformace XSLT. Tento příklad vytvoří strom XML, vytvoří <xref:System.Xml.XmlReader> ze stromu XML, vytvoří nový dokument a potom vytvoří <xref:System.Xml.XmlWriter> k zápisu do nového dokumentu. Poté vyvolá transformaci XSLT, která předává <xref:System.Xml.XmlReader> a <xref:System.Xml.XmlWriter>. Po úspěšném dokončení transformace se nový strom XML naplní výsledky transformace.  
+ Jedním z <xref:System.Xml.Linq.XContainer.CreateWriter%2A> možných použití pro je při vyvolání transformace XSLT. Tento příklad vytvoří strom XML, vytvoří ze <xref:System.Xml.XmlReader> stromu XML, vytvoří <xref:System.Xml.XmlWriter> nový dokument a potom vytvoří pro zápis do nového dokumentu. Potom vyvolá xslt transformace, předávání <xref:System.Xml.XmlReader> <xref:System.Xml.XmlWriter>a . Po úspěšném dokončení transformace je nový strom XML naplněn výsledky transformace.  
   
 ```vb  
 Dim xslMarkup As XDocument = _  
-    <?xml version='1.0'?>   
+    <?xml version='1.0'?>
     <xsl:stylesheet xmlns:xsl='http://www.w3.org/1999/XSL/Transform' version='1.0'>  
         <xsl:template match='/Parent'>  
             <Root>  
@@ -53,7 +53,7 @@ End Using
 Console.WriteLine(newTree)  
 ```  
   
- Tento příklad vytvoří následující výstup:  
+ Tento příklad vytváří následující výstup:  
   
 ```xml  
 <Root>  
@@ -62,7 +62,7 @@ Console.WriteLine(newTree)
 </Root>  
 ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Xml.Linq.XContainer.CreateWriter%2A>
 - <xref:System.Xml.XmlWriter>

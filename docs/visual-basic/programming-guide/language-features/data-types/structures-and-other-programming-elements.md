@@ -8,18 +8,18 @@ helpviewer_keywords:
 - arrays [Visual Basic], structure elements
 - nested structures [Visual Basic]
 ms.assetid: 0f849313-ccd2-4c9a-acb9-69de6751c088
-ms.openlocfilehash: 309d0e5214897675e1758bd98b964392b379ca1b
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 73d3f999e95c484dff3f5409f2cdb9032b64fe38
+ms.sourcegitcommit: 43d10ef65f0f1fd6c3b515e363bde11a3fcd8d6d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74346123"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78266856"
 ---
 # <a name="structures-and-other-programming-elements-visual-basic"></a>Struktury a ostatní programovací elementy (Visual Basic)
-Struktury můžete používat ve spojení s poli, objekty a procedurami a také mezi sebou. Interakce používají stejnou syntaxi, protože tyto prvky používají samostatně.  
+Můžete použít struktury ve spojení s matice, objekty a postupy, stejně jako mezi sebou navzájem. Interakce používají stejnou syntaxi jako tyto prvky samostatně.  
   
 > [!NOTE]
-> V deklaraci struktury nelze inicializovat žádné prvky struktury. Hodnoty lze přiřadit pouze k prvkům proměnné, které byly deklarovány jako typ struktury.  
+> Nelze inicializovat žádný z prvků struktury v deklaraci struktury. Hodnoty lze přiřadit pouze prvkům proměnné, která byla deklarována jako typ struktury.  
   
 ## <a name="structures-and-arrays"></a>Struktury a pole  
  Struktura může obsahovat pole jako jeden nebo více jeho prvků. Toto dokládá následující příklad.  
@@ -30,10 +30,10 @@ Public Structure systemInfo
     Public memory As Long  
     Public diskDrives() As String  
     Public purchaseDate As Date  
-End Structure   
+End Structure
 ```  
   
- Přístup k hodnotám pole v rámci struktury je stejný způsob, jakým přistupujete k vlastnosti objektu. Toto dokládá následující příklad.  
+ Přístup k hodnotám pole v rámci struktury stejným způsobem, jakým přistupujete k vlastnosti na objektu. Toto dokládá následující příklad.  
   
 ```vb  
 Dim mySystem As systemInfo  
@@ -47,7 +47,7 @@ mySystem.diskDrives(0) = "1.44 MB"
 Dim allSystems(100) As systemInfo  
 ```  
   
- Pro přístup k součástem této architektury dat se řiďte stejná pravidla. Toto dokládá následující příklad.  
+ Postupujte podle stejných pravidel pro přístup k součástem této architektury dat. Toto dokládá následující příklad.  
   
 ```vb  
 ReDim allSystems(5).diskDrives(3)  
@@ -66,7 +66,7 @@ Protected Structure userInput
 End Structure  
 ```  
   
- Místo `Object`byste měli v takové deklaraci použít konkrétní třídu objektu.  
+ Měli byste použít konkrétní třídu objektu `Object`v takové deklaraci, nikoli .  
   
 ## <a name="structures-and-procedures"></a>Struktury a postupy  
  Strukturu můžete předat jako argument procedury. Toto dokládá následující příklad.  
@@ -81,9 +81,9 @@ Public Sub fillSystem(ByRef someSystem As systemInfo)
 End Sub  
 ```  
   
- Předchozí příklad předá strukturu *odkazem*, což umožňuje, aby procedura změnila své prvky tak, aby se změny projevily v volajícím kódu. Pokud chcete chránit strukturu pro takovou úpravu, předejte ji podle hodnoty.  
+ Předchozí příklad předá strukturu *odkazem*, který umožňuje postup upravit jeho prvky tak, aby změny projeví v volajícíkód. Pokud chcete chránit strukturu proti takové úpravě, předat ji podle hodnoty.  
   
- Můžete také vrátit strukturu z `Function`ho postupu. Toto dokládá následující příklad.  
+ Můžete také vrátit strukturu `Function` z postupu. Toto dokládá následující příklad.  
   
 ```vb  
 Dim allSystems(100) As systemInfo  
@@ -96,7 +96,7 @@ Function findByDate(ByVal searchDate As Date) As systemInfo
 End Function  
 ```  
   
-## <a name="structures-within-structures"></a>Struktury ve strukturách  
+## <a name="structures-within-structures"></a>Struktury v rámci struktur  
  Struktury mohou obsahovat jiné struktury. Toto dokládá následující příklad.  
   
 ```vb  
@@ -118,11 +118,11 @@ ReDim allSystems(1).diskDrives(3)
 allSystems(1).diskDrives(0).type = "Floppy"  
 ```  
   
- Tento postup můžete použít také k zapouzdření struktury definované v jednom modulu v rámci struktury definované v jiném modulu.  
+ Tuto techniku můžete také použít k zapouzdření struktury definované v jednom modulu v rámci struktury definované v jiném modulu.  
   
- Struktury mohou obsahovat jiné struktury s libovolnou hloubkou.  
+ Struktury mohou obsahovat jiné struktury do libovolné hloubky.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Datové typy](../../../../visual-basic/programming-guide/language-features/data-types/index.md)
 - [Základní datové typy](../../../../visual-basic/programming-guide/language-features/data-types/elementary-data-types.md)
@@ -133,4 +133,4 @@ allSystems(1).diskDrives(0).type = "Floppy"
 - [Postupy: Definice struktury](../../../../visual-basic/programming-guide/language-features/data-types/how-to-declare-a-structure.md)
 - [Proměnné struktury](../../../../visual-basic/programming-guide/language-features/data-types/structure-variables.md)
 - [Struktury a třídy](../../../../visual-basic/programming-guide/language-features/data-types/structures-and-classes.md)
-- [Příkaz Structure](../../../../visual-basic/language-reference/statements/structure-statement.md)
+- [Structure – příkaz](../../../../visual-basic/language-reference/statements/structure-statement.md)

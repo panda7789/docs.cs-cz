@@ -1,13 +1,13 @@
 ---
 ms.openlocfilehash: acd87c6ad5de3621cc90e5f3e1566592a4eb7e46
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "61747069"
 ---
 
-Pokud chcete použít jako oddělovač úvodní znak podtržítka, je nutné přidat následující prvek do projektu jazyka Visual Basic (\*.vbproj) souboru:
+Chcete-li použít znak podtržítka jako úvodní oddělovač,\*musíte do souboru projektu jazyka Visual Basic (.vbproj) přidat následující prvek:
 
 ```xml
 <PropertyGroup>
@@ -15,4 +15,4 @@ Pokud chcete použít jako oddělovač úvodní znak podtržítka, je nutné př
 </PropertyGroup>
 ```
 
-Další informace najdete v části [nastavení verze jazyka Visual Basic](../docs/visual-basic/language-reference/configure-language-version.md).
+Další informace naleznete [v nastavení jazykové verze jazyka Jazyka](../docs/visual-basic/language-reference/configure-language-version.md).

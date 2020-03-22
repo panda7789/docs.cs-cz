@@ -5,28 +5,28 @@ helpviewer_keywords:
 - My.Computer.Info object [Visual Basic], tasks
 ms.assetid: 13c145bc-5c85-4fea-a5dd-2ca8681a0252
 ms.openlocfilehash: fd5b49cd053d70e752352e2b050f9202564ee7d7
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/22/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "74348125"
 ---
 # <a name="getting-information-about-the-computer-visual-basic"></a>Získání informací o počítači (Visual Basic)
 
-Objekt `My.Computer.Info` poskytuje vlastnosti pro získání informací o paměti počítače, načtených sestavení, názvu a operačním systému.
+Objekt `My.Computer.Info` poskytuje vlastnosti pro získání informací o paměti počítače, načtených sestaveních, názvu a operačním systému.
 
 ## <a name="remarks"></a>Poznámky
 
-Tato tabulka obsahuje úlohy, které se běžně provádějí prostřednictvím objektu `My.Computer.Info` a odkazují na témata, která demonstrují, jak se mají provést.
+V této tabulce jsou uvedeny `My.Computer.Info` úkoly běžně prováděné prostřednictvím objektu a odkazuje na témata, která ukazují, jak provádět každý.
 
-|Pro|Další informace naleznete v tématu|
+|Akce|Seznamte se s |
 |---|---|
-|Určete, kolik virtuálních adresních prostorů je k dispozici pro počítač, na kterém je aplikace nainstalována.|<xref:Microsoft.VisualBasic.Devices.ComputerInfo.TotalVirtualMemory%2A>|
-|Určete typ platformy počítače, na kterém je aplikace spuštěná.|<xref:Microsoft.VisualBasic.Devices.ComputerInfo.OSPlatform%2A>|
-|Určete operační systém počítače, na kterém je aplikace spuštěná.|<xref:Microsoft.VisualBasic.Devices.ComputerInfo.OSFullName%2A>|
-|Určení aktualizací Service Pack, které byly nainstalovány v počítači, na kterém běží aplikace|<xref:Microsoft.VisualBasic.Devices.ComputerInfo.OSVersion%2A>|
-|Určete nainstalovanou `UICulture` v počítači, na kterém je aplikace spuštěná.|<xref:Microsoft.VisualBasic.Devices.ComputerInfo.InstalledUICulture%2A>|
+|Určení, kolik virtuálního adresového prostoru je k dispozici pro počítač, ve kterém je aplikace nainstalována|<xref:Microsoft.VisualBasic.Devices.ComputerInfo.TotalVirtualMemory%2A>|
+|Určení typu platformy počítače, na kterém je aplikace spuštěna|<xref:Microsoft.VisualBasic.Devices.ComputerInfo.OSPlatform%2A>|
+|Určení operačního systému počítače, ve kterém je aplikace spuštěna|<xref:Microsoft.VisualBasic.Devices.ComputerInfo.OSFullName%2A>|
+|Zjištění aktualizací Service Pack, které byly nainstalovány v počítači, ve kterém je aplikace spuštěna|<xref:Microsoft.VisualBasic.Devices.ComputerInfo.OSVersion%2A>|
+|Určete `UICulture` nainstalovanou v počítači, ve kterém je aplikace spuštěna.|<xref:Microsoft.VisualBasic.Devices.ComputerInfo.InstalledUICulture%2A>|
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:Microsoft.VisualBasic.Devices.ServerComputer.Info%2A>

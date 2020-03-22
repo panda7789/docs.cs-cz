@@ -7,47 +7,47 @@ helpviewer_keywords:
 - My.Resources object
 ms.assetid: 8371ce2c-e1c7-476b-a86d-9afc2614b6b7
 ms.openlocfilehash: afd19877d053cb414f08761cda4e461d88f9e21c
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/22/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "74345602"
 ---
 # <a name="how-to-receive-strings-from-serial-ports-in-visual-basic"></a>Postupy: Příjem řetězců ze sériových portů v jazyce Visual Basic
 
-Toto téma popisuje, jak použít `My.Computer.Ports` k přijímání řetězců ze sériových portů počítače v Visual Basic.  
+Toto téma popisuje `My.Computer.Ports` použití pro příjem řetězců ze sériových portů počítače v jazyce Visual Basic.  
   
 ### <a name="to-receive-strings-from-the-serial-port"></a>Příjem řetězců ze sériového portu  
   
-1. Inicializujte návratový řetězec.  
+1. Inicializovat návratový řetězec.  
   
      [!code-vb[VbVbalrMyComputer#38](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyComputer/VB/Class2.vb#38)]  
   
-2. Určete, který sériový port by měl poskytnout řetězce. V tomto příkladu se předpokládá, že je `COM1`.  
+2. Určete, který sériový port by měl poskytovat řetězce. Tento příklad předpokládá, `COM1`že je .  
   
-3. K získání odkazu na port použijte metodu `My.Computer.Ports.OpenSerialPort`. Další informace najdete v tématu <xref:Microsoft.VisualBasic.Devices.Ports.OpenSerialPort%2A>.  
+3. Pomocí `My.Computer.Ports.OpenSerialPort` metody získat odkaz na port. Další informace naleznete v tématu <xref:Microsoft.VisualBasic.Devices.Ports.OpenSerialPort%2A>.  
   
-     `Try...Catch...Finally` blok umožňuje aplikaci zavřít sériový port, i když generuje výjimku. Veškerý kód, který zpracovává sériový port, by měl být uveden v rámci tohoto bloku.  
+     Blok `Try...Catch...Finally` umožňuje aplikaci zavřít sériový port i v případě, že generuje výjimku. Veškerý kód, který manipuluje se sériovým portem, by se měl objevit v tomto bloku.  
   
      [!code-vb[VbVbalrMyComputer#39](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyComputer/VB/Class2.vb#39)]  
   
-4. Vytvořte smyčku `Do` pro čtení řádků textu, dokud nejsou k dispozici žádné další řádky.  
+4. Vytvořte `Do` smyčku pro čtení řádků textu, dokud nebudou k dispozici žádné další řádky.  
   
      [!code-vb[VbVbalrMyComputer#40](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyComputer/VB/Class2.vb#40)]  
   
-5. Pomocí metody <xref:System.IO.Ports.SerialPort.ReadLine> si můžete přečíst další dostupný řádek textu ze sériového portu.  
+5. Pomocí <xref:System.IO.Ports.SerialPort.ReadLine> této metody můžete číst další dostupný řádek textu ze sériového portu.  
   
      [!code-vb[VbVbalrMyComputer#41](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyComputer/VB/Class2.vb#41)]  
   
-6. Pomocí příkazu `If` určete, zda <xref:System.IO.Ports.SerialPort.ReadLine> metoda vrátí `Nothing` (což znamená, že není k dispozici žádný další text). Pokud vrátí `Nothing`, ukončete smyčku `Do`.  
+6. Pomocí `If` příkazu určete, zda <xref:System.IO.Ports.SerialPort.ReadLine> metoda vrátí `Nothing` (což znamená, že není k dispozici žádný další text). Pokud se `Nothing`vrátí , `Do` ukončete smyčku.  
   
      [!code-vb[VbVbalrMyComputer#42](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyComputer/VB/Class2.vb#42)]  
   
-7. Přidejte do příkazu `If` blok `Else` pro zpracování případu, pokud je řetězec skutečně čten. Blok připojí řetězec ze sériového portu do návratového řetězce.  
+7. Přidejte `Else` blok `If` do příkazu pro zpracování případu, pokud je řetězec skutečně přečten. Blok připojí řetězec ze sériového portu k vratný řetězec.  
   
      [!code-vb[VbVbalrMyComputer#43](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyComputer/VB/Class2.vb#43)]  
   
-8. Vrátí řetězec.  
+8. Vraťte řetězec.  
   
      [!code-vb[VbVbalrMyComputer#44](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyComputer/VB/Class2.vb#44)]  
   
@@ -55,19 +55,19 @@ Toto téma popisuje, jak použít `My.Computer.Ports` k přijímání řetězců
 
  [!code-vb[VbVbalrMyComputer#37](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyComputer/VB/Class2.vb#37)]  
   
- Tento příklad kódu je také k dispozici jako fragment kódu technologie IntelliSense. Ve výběru fragmentu kódu se nachází v **Možnosti připojení a sítě**. Další informace naleznete v tématu [fragmenty kódu](/visualstudio/ide/code-snippets).  
+ Tento příklad kódu je také k dispozici jako fragment kódu IntelliSense. Ve výběru fragmentu kódu je umístěn v **konektivitě a síti**. Další informace naleznete v [tématu Fragmenty kódu](/visualstudio/ide/code-snippets).  
   
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
 
- Tento příklad předpokládá, že počítač používá `COM1`.  
+ Tento příklad předpokládá, že `COM1`počítač používá .  
   
 ## <a name="robust-programming"></a>Robustní programování  
 
- Tento příklad předpokládá, že počítač používá `COM1`. Pro větší flexibilitu by měl kód uživateli dovolit vybrat požadovaný sériový port ze seznamu dostupných portů. Další informace najdete v tématu [Postup: zobrazení dostupných sériových portů](../../../../visual-basic/developing-apps/programming/computer-resources/how-to-show-available-serial-ports.md).  
+ Tento příklad předpokládá, že `COM1`počítač používá . Pro větší flexibilitu by měl kód umožnit uživateli vybrat požadovaný sériový port ze seznamu dostupných portů. Další informace naleznete v [tématu How to: Show Available Serial Ports](../../../../visual-basic/developing-apps/programming/computer-resources/how-to-show-available-serial-ports.md).  
   
- V tomto příkladu se používá blok `Try...Catch...Finally` k ujištění, že aplikace zavírá port a zachytává všechny výjimky časového limitu. Další informace najdete v tématu [Try... Zachytit... Finally – příkaz](../../../../visual-basic/language-reference/statements/try-catch-finally-statement.md).  
+ Tento příklad `Try...Catch...Finally` používá blok ujistěte se, že aplikace zavře port a zachytit všechny výjimky časového výpadku. Další informace naleznete v [tématu Try... Chytit... Finally prohlášení](../../../../visual-basic/language-reference/statements/try-catch-finally-statement.md).  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:Microsoft.VisualBasic.Devices.Ports>
 - <xref:System.IO.Ports.SerialPort?displayProperty=nameWithType>

@@ -8,46 +8,46 @@ helpviewer_keywords:
 - ports, serial port availability
 ms.assetid: eaf2ee5a-8103-4e10-a205-ed1d4db120ba
 ms.openlocfilehash: c7e5f797c1d098a3b2d01745b949ed50375ea7e8
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/22/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "74345578"
 ---
 # <a name="how-to-show-available-serial-ports-in-visual-basic"></a>Postupy: Zobrazení dostupných sériových portů v jazyce Visual Basic
 
-Toto téma popisuje, jak použít `My.Computer.Ports` k zobrazení dostupných sériových portů počítače v Visual Basic.  
+Toto téma popisuje, `My.Computer.Ports` jak zobrazit dostupné sériové porty počítače v jazyce Visual Basic.  
   
- Pokud chcete uživateli dovolit vybrat, který port se má použít, názvy sériových portů se umístí do ovládacího prvku <xref:System.Windows.Forms.ListBox>.  
+ Chcete-li uživateli povolit výběr portu, který má použít, jsou názvy sériových portů umístěny do ovládacího <xref:System.Windows.Forms.ListBox> prvku.  
   
 ## <a name="example"></a>Příklad  
 
- Tento příklad projde všemi řetězci, které vrací vlastnost `My.Computer.Ports.SerialPortNames`. Tyto řetězce jsou názvy dostupných sériových portů v počítači.  
+ Tento příklad smyčky přes všechny řetězce, které vrátí `My.Computer.Ports.SerialPortNames` vlastnost. Tyto řetězce jsou názvy dostupných sériových portů v počítači.  
   
- Obvykle uživatel vybere, který sériový port by měla aplikace používat ze seznamu dostupných portů. V tomto příkladu jsou názvy sériových portů uloženy v ovládacím prvku <xref:System.Windows.Forms.ListBox>. Další informace naleznete v tématu [ovládací prvek ListBox](../../../../framework/winforms/controls/listbox-control-windows-forms.md).  
+ Uživatel obvykle vybere sériový port, který má aplikace použít, ze seznamu dostupných portů. V tomto příkladu jsou názvy <xref:System.Windows.Forms.ListBox> sériových portů uloženy v ovládacím prvku. Další informace naleznete v tématu [ListBox Control](../../../../framework/winforms/controls/listbox-control-windows-forms.md).  
   
  [!code-vb[VbVbalrMyComputer#45](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyComputer/VB/Class2.vb#45)]  
   
- Tento příklad kódu je také k dispozici jako fragment kódu technologie IntelliSense. Ve výběru fragmentu kódu se nachází v **Možnosti připojení a sítě**. Další informace naleznete v tématu [fragmenty kódu](/visualstudio/ide/code-snippets).  
+ Tento příklad kódu je také k dispozici jako fragment kódu IntelliSense. Ve výběru fragmentu kódu je umístěn v **konektivitě a síti**. Další informace naleznete v [tématu Fragmenty kódu](/visualstudio/ide/code-snippets).  
   
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
 
  Tento příklad vyžaduje:  
   
-- Odkaz na projekt System. Windows. Forms. dll.  
+- Odkaz na soubor System.Windows.Forms.dll.  
   
-- Přístup k členům oboru názvů <xref:System.Windows.Forms>. Pokud plně nekvalifikujete názvy členů v kódu, přidejte `Imports` příkaz. Další informace naleznete v tématu [příkaz Imports (obor názvů a typ rozhraní .NET)](../../../../visual-basic/language-reference/statements/imports-statement-net-namespace-and-type.md).  
+- Přístup k členům <xref:System.Windows.Forms> oboru názvů. Přidejte `Imports` příkaz, pokud nejste plně kvalifikační jména členů ve vašem kódu. Další informace naleznete [v tématu Imports Statement (Obor názvů.NET a Typ).](../../../../visual-basic/language-reference/statements/imports-statement-net-namespace-and-type.md)  
   
-- Má-li formulář <xref:System.Windows.Forms.ListBox> ovládací prvek s názvem `ListBox1`.  
+- Že formulář má <xref:System.Windows.Forms.ListBox> ovládací `ListBox1`prvek s názvem .  
   
 ## <a name="robust-programming"></a>Robustní programování  
 
- K zobrazení dostupných názvů sériového portu není nutné používat ovládací prvek <xref:System.Windows.Forms.ListBox>. Místo toho můžete použít <xref:System.Windows.Forms.ComboBox> nebo jiný ovládací prvek. Pokud aplikace nepotřebuje odpověď od uživatele, můžete k zobrazení informací použít ovládací prvek <xref:System.Windows.Forms.TextBox>.  
+ Není třeba použít <xref:System.Windows.Forms.ListBox> ovládací prvek k zobrazení dostupných názvů sériových portů. Místo toho můžete <xref:System.Windows.Forms.ComboBox> použít nebo jiný ovládací prvek. Pokud aplikace nepotřebuje odpověď od uživatele, můžete použít <xref:System.Windows.Forms.TextBox> ovládací prvek k zobrazení informací.  
   
 > [!NOTE]
-> Názvy portů vrácené `My.Computer.Ports.SerialPortNames` můžou být při spuštění ve Windows 98 nesprávné. Chcete-li zabránit chybám aplikace, použijte zpracování výjimek, jako je například příkaz `Try...Catch...Finally` nebo příkaz `Using` při použití názvů portů k otevření portů.  
+> Názvy portů `My.Computer.Ports.SerialPortNames` vrácené může být nesprávné při spuštění v systému Windows 98. Chcete-li zabránit chybám aplikace, použijte `Try...Catch...Finally` zpracování `Using` výjimek, jako je například příkaz nebo příkaz, při použití názvů portů k otevření portů.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:Microsoft.VisualBasic.Devices.Ports>
 - [Postupy: Vytáčení čísel na modemech připojených k sériovým portům](../../../../visual-basic/developing-apps/programming/computer-resources/how-to-dial-modems-attached-to-serial-ports.md)

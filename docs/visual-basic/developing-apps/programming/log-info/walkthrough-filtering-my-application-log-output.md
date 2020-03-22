@@ -7,35 +7,35 @@ helpviewer_keywords:
 - application event logs, output filtering
 ms.assetid: 2c0a457a-38a4-49e1-934d-a51320b7b4ca
 ms.openlocfilehash: f18556bbe1ca2d77925482319246d403892d31ef
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/22/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "74353590"
 ---
 # <a name="walkthrough-filtering-myapplicationlog-output-visual-basic"></a>Návod: Filtrování výstupu My.Application.Log (Visual Basic)
 
-Tento návod ukazuje, jak změnit výchozí filtrování protokolu pro objekt `My.Application.Log`, aby bylo možné určit, jaké informace jsou předány z objektu `Log` posluchačům a jaké informace jsou zapsány posluchači. Chování protokolování můžete změnit i po sestavení aplikace, protože informace o konfiguraci jsou uložené v konfiguračním souboru aplikace.
+Tento návod ukazuje, jak změnit výchozí filtrování `My.Application.Log` protokolu pro objekt, chcete-li `Log` řídit, jaké informace jsou předávány z objektu naslouchacím procesům a jaké informace jsou napsány posluchači. Chování protokolování můžete změnit i po vytvoření aplikace, protože informace o konfiguraci jsou uloženy v konfiguračním souboru aplikace.
 
 ## <a name="getting-started"></a>Začínáme
 
-Každé zprávě, která `My.Application.Log` zápisy, má přidruženou úroveň závažnosti, které mechanismy filtrování používají k řízení výstupu protokolu. Tato ukázková aplikace používá metody `My.Application.Log` k zápisu několika zpráv protokolu s různou úrovní závažnosti.
+Každá zpráva, která `My.Application.Log` zapíše má přidruženou úroveň závažnosti, které mechanismy filtrování použít k řízení výstupu protokolu. Tato ukázková `My.Application.Log` aplikace používá metody k zápisu několika zpráv protokolu s různými úrovněmi závažnosti.
 
-#### <a name="to-build-the-sample-application"></a>Sestavení ukázkové aplikace
+#### <a name="to-build-the-sample-application"></a>Vytvoření ukázkové aplikace
 
-1. Otevřete nový Visual Basic projekt aplikace systému Windows.
+1. Otevřete nový projekt aplikace jazyka Visual Basic pro Systém Windows.
 
-2. Přidejte tlačítko s názvem Button1 do formuláře Form1.
+2. Přidejte tlačítko s názvem Button1 do formuláře1.
 
-3. V obslužné rutině události <xref:System.Windows.Forms.Control.Click> pro Button1 přidejte následující kód:
+3. V <xref:System.Windows.Forms.Control.Click> obslužné rutině události button1 přidejte následující kód:
 
      [!code-vb[VbVbcnMyApplicationLogFiltering#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnMyApplicationLogFiltering/VB/Form1.vb#1)]
 
 4. Spusťte aplikaci v ladicím programu.
 
-5. Stiskněte **Button1**.
+5. Stiskněte **tlačítko1**.
 
-     Aplikace zapíše do výstupu ladění a souboru protokolu aplikace následující informace.
+     Aplikace zapíše následující informace do ladicího výstupu aplikace a souboru protokolu.
 
      `DefaultSource Information: 0 : In Button1_Click`
 
@@ -43,58 +43,58 @@ Každé zprávě, která `My.Application.Log` zápisy, má přidruženou úrove�
 
 6. Zavřete aplikaci.
 
-     Informace o tom, jak zobrazit okno výstup ladění aplikace, naleznete v tématu [okno výstup](/visualstudio/ide/reference/output-window). Informace o umístění souboru protokolu aplikace naleznete v tématu [Návod: zjištění, kam aplikace My. Application. Log zapisuje informace](../../../../visual-basic/developing-apps/programming/log-info/walkthrough-determining-where-my-application-log-writes-information.md).
+     Informace o tom, jak zobrazit výstupní okno ladění aplikace, naleznete v [tématu Output Window](/visualstudio/ide/reference/output-window). Informace o umístění souboru protokolu aplikace naleznete v [tématu Návod: Určení, kde my.Application.Log zapisuje informace](../../../../visual-basic/developing-apps/programming/log-info/walkthrough-determining-where-my-application-log-writes-information.md).
 
     > [!NOTE]
-    > Ve výchozím nastavení aplikace při zavření aplikace vyprázdní výstup souboru protokolu.
+    > Ve výchozím nastavení aplikace vyprázdní výstup souboru protokolu při ukončení aplikace.
 
-     Ve výše uvedeném příkladu druhé volání metody <xref:Microsoft.VisualBasic.Logging.Log.WriteEntry%2A> a volání metody <xref:Microsoft.VisualBasic.Logging.Log.WriteException%2A> vytvoří výstup protokolu, zatímco první a poslední volání metody `WriteEntry`. Důvodem je, že úrovně závažnosti `WriteEntry` a `WriteException` jsou "informace" a "Chyba", které jsou povoleny ve výchozím filtrování protokolu `My.Application.Log` objektu. Nicméně události s úrovněmi závažnosti "Start" a "Stop" znemožňují výstup protokolu z výroby.
+     Ve výše uvedeném příkladu <xref:Microsoft.VisualBasic.Logging.Log.WriteEntry%2A> druhé volání metody <xref:Microsoft.VisualBasic.Logging.Log.WriteException%2A> a volání metody vytvoří výstup protokolu, zatímco `WriteEntry` první a poslední volání metody není. Důvodem je, že `WriteEntry` úrovně `WriteException` závažnosti a jsou "Informace" a "Chyba", které jsou povoleny výchozí filtrování protokolu objektu. `My.Application.Log` Události s úrovněmi závažnosti "Start" a "Stop" však brání vytváření výstupu protokolu.
 
-## <a name="filtering-for-all-myapplicationlog-listeners"></a>Filtrování pro všechny naslouchací procesy my. Application. log
+## <a name="filtering-for-all-myapplicationlog-listeners"></a>Filtrování pro všechny posluchače my.Application.Log
 
-Objekt `My.Application.Log` používá <xref:System.Diagnostics.SourceSwitch> pojmenované `DefaultSwitch` k řízení, které zprávy přecházejí z `WriteEntry` a `WriteException` metod do protokolů naslouchacího procesu. V konfiguračním souboru aplikace můžete nakonfigurovat `DefaultSwitch` nastavením jeho hodnoty na jednu z hodnot výčtu <xref:System.Diagnostics.SourceLevels>. Ve výchozím nastavení je jeho hodnota "informace".
+Objekt `My.Application.Log` používá <xref:System.Diagnostics.SourceSwitch> pojmenovaný `DefaultSwitch` k řízení, které `WriteEntry` zprávy `WriteException` předá z a metody naslouchací procesy protokolu. V konfiguračním souboru aplikace můžete nakonfigurovat `DefaultSwitch` <xref:System.Diagnostics.SourceLevels> nastavením její hodnoty na jednu z hodnot výčtu. Ve výchozím nastavení je jeho hodnota "Informace".
 
-Tato tabulka zobrazuje úroveň závažnosti, která je vyžadována pro protokol k zápisu zprávy do posluchačů s ohledem na konkrétní `DefaultSwitch` nastavení.
+Tato tabulka ukazuje úroveň závažnosti požadovanou pro Protokol napsat zprávu `DefaultSwitch` posluchačům, dané konkrétní nastavení.
 
 |Hodnota DefaultSwitch|Závažnost zprávy požadovaná pro výstup|
 |---|---|
 |`Critical`|`Critical`|
 |`Error`|`Critical` nebo `Error`|
-|`Warning`|`Critical`, `Error`nebo `Warning`|
-|`Information`|`Critical`, `Error`, `Warning`nebo `Information`|
-|`Verbose`|`Critical`, `Error`, `Warning`, `Information`nebo `Verbose`|
-|`ActivityTracing`|`Start`, `Stop`, `Suspend`, `Resume`nebo `Transfer`|
+|`Warning`|`Critical`, `Error`, nebo`Warning`|
+|`Information`|`Critical`, `Error` `Warning`, , nebo`Information`|
+|`Verbose`|`Critical`, `Error` `Warning`, `Information`, , nebo`Verbose`|
+|`ActivityTracing`|`Start`, `Stop` `Suspend`, `Resume`, , nebo`Transfer`|
 |`All`|Všechny zprávy jsou povoleny.|
-|`Off`|Všechny zprávy jsou zablokované.|
+|`Off`|Všechny zprávy jsou blokovány.|
 
 > [!NOTE]
-> Metody `WriteEntry` a `WriteException` mají přetížení, které neurčují úroveň závažnosti. Implicitní úroveň závažnosti pro přetížení `WriteEntry` je "informace" a implicitní úroveň závažnosti pro `WriteException` přetížení je "Error".
+> A `WriteEntry` `WriteException` metody mají přetížení, které neurčuje úroveň závažnosti. Implicitní úroveň závažnosti `WriteEntry` pro přetížení je "Informace" a implicitní úroveň závažnosti pro `WriteException` přetížení je "Chyba".
 
-Tato tabulka vysvětluje výstup protokolu zobrazený v předchozím příkladu: výchozí `DefaultSwitch` nastavení "informace", pouze druhé volání metody `WriteEntry` a volání metody `WriteException` vyprodukuje výstup protokolu.
+Tato tabulka vysvětluje výstup protokolu zobrazený v předchozím `DefaultSwitch` příkladu: s výchozím nastavením `WriteEntry` "Informace", pouze `WriteException` druhé volání metody a volání metody vytvoří výstup protokolu.
 
-#### <a name="to-log-only-activity-tracing-events"></a>Chcete-li protokolovat pouze události trasování aktivit
+#### <a name="to-log-only-activity-tracing-events"></a>Protokolovat pouze události trasování aktivit
 
-1. V **Průzkumník řešení** klikněte pravým tlačítkem na soubor App. config a vyberte **otevřít**.
+1. Klepněte pravým tlačítkem myši na soubor app.config v **Průzkumníku řešení** a vyberte **příkaz Otevřít**.
 
      -nebo-
 
-     Pokud neexistuje žádný soubor App. config:
+     Pokud není k dispozici žádný soubor app.config:
 
-    1. V nabídce **projekt** klikněte na příkaz **Přidat novou položku**.
+    1. V nabídce **Projekt** zvolte **Přidat novou položku**.
 
-    2. V dialogovém okně **Přidat novou položku** vyberte možnost **konfigurační soubor aplikace**.
+    2. V dialogovém okně **Přidat novou položku** zvolte **Konfigurační soubor aplikace**.
 
-    3. Klikněte na tlačítko **Přidat**.
+    3. Klikněte na **Přidat**.
 
-2. Vyhledejte část `<switches>`, která je v části `<system.diagnostics>`, která je v části `<configuration>` nejvyšší úrovně.
+2. Vyhledejte `<switches>` oddíl, který `<system.diagnostics>` je v části, která `<configuration>` je v části nejvyšší úrovně.
 
-3. Vyhledejte prvek, který přidá `DefaultSwitch` do kolekce přepínačů. Měl by vypadat podobně jako tento element:
+3. Najít prvek, `DefaultSwitch` který přidá do kolekce přepínačů. Mělo by vypadat podobně jako tento prvek:
 
      `<add name="DefaultSwitch" value="Information" />`
 
-4. Změňte hodnotu atributu `value` na "ActivityTracing".
+4. Změňte hodnotu `value` atributu na "ActivityTracing".
 
-5. Obsah souboru App. config by měl vypadat podobně jako následující kód XML:
+5. Obsah souboru app.config by měl být podobný následujícímu xml:
 
     ```xml
     <?xml version="1.0" encoding="utf-8" ?>
@@ -125,9 +125,9 @@ Tato tabulka vysvětluje výstup protokolu zobrazený v předchozím příkladu:
 
 6. Spusťte aplikaci v ladicím programu.
 
-7. Stiskněte **Button1**.
+7. Stiskněte **tlačítko1**.
 
-     Aplikace zapíše do výstupu ladění a souboru protokolu aplikace následující informace:
+     Aplikace zapíše následující informace do ladicího výstupu aplikace a do souboru protokolu:
 
      `DefaultSource Start: 4 : Entering Button1_Click`
 
@@ -135,38 +135,38 @@ Tato tabulka vysvětluje výstup protokolu zobrazený v předchozím příkladu:
 
 8. Zavřete aplikaci.
 
-9. Změňte hodnotu atributu `value` zpět na "informace".
+9. Změňte hodnotu `value` atributu zpět na "Informace".
 
     > [!NOTE]
-    > Ovládací prvky nastavení `DefaultSwitch` přepínač pouze `My.Application.Log`. Nemění způsob, jakým se chovají .NET Framework <xref:System.Diagnostics.Trace?displayProperty=nameWithType> a třídy <xref:System.Diagnostics.Debug?displayProperty=nameWithType>.
+    > Nastavení `DefaultSwitch` přepínače `My.Application.Log`ovládá pouze . Nezmění způsob, jakým se <xref:System.Diagnostics.Trace?displayProperty=nameWithType> chová <xref:System.Diagnostics.Debug?displayProperty=nameWithType> rozhraní .NET Framework a třídy.
 
-## <a name="individual-filtering-for-myapplicationlog-listeners"></a>Individuální filtrování pro naslouchací procesy my. Application. log
+## <a name="individual-filtering-for-myapplicationlog-listeners"></a>Individuální filtrování pro posluchače my.Application.Log
 
-Předchozí příklad ukazuje, jak změnit filtrování pro všechny `My.Application.Log` výstup. Tento příklad ukazuje, jak filtrovat jednotlivé naslouchací procesy protokolů. Ve výchozím nastavení má aplikace dva naslouchací procesy, které zapisují do výstupu ladění aplikace a do souboru protokolu.
+Předchozí příklad ukazuje, jak změnit filtrování `My.Application.Log` pro všechny výstupy. Tento příklad ukazuje, jak filtrovat naslouchací proces protokolu. Ve výchozím nastavení má aplikace dva naslouchací procesy, které zapisují do ladicího výstupu aplikace a souboru protokolu.
 
-Konfigurační soubor řídí chování naslouchacího procesu protokolu tím, že každé z nich může mít filtr, který je podobný přepínači pro `My.Application.Log`. Naslouchací proces protokolu vytvoří zprávu pouze v případě, že je závažnost zprávy povolena pomocí `DefaultSwitch` protokolu i filtru naslouchacího procesu protokolu.
+Konfigurační soubor řídí chování posluchačů protokolu tím, že umožňuje každému z nich `My.Application.Log`mít filtr, který je podobný přepínači pro . Naslouchací proces protokolu bude výstup zprávy pouze v případě, `DefaultSwitch` že závažnost zprávy je povoleno protokolu a naslouchací filtr posluchače protokolu.
 
-Tento příklad ukazuje, jak nakonfigurovat filtrování pro nový naslouchací proces ladění a přidat ho do objektu `Log`. Výchozí naslouchací proces ladění by měl být odebrán z objektu `Log`, takže je zřejmé, že zprávy ladění pocházejí z nového naslouchacího procesu ladění.
+Tento příklad ukazuje, jak nakonfigurovat filtrování pro nový naslouchací proces ladění a přidat jej do objektu. `Log` Výchozí naslouchací proces `Log` ladění by měl být odebrán z objektu, takže je jasné, že ladicí zprávy pocházejí z nového procesu ladění.
 
-#### <a name="to-log-only-activity-tracing-events"></a>Do protokolu pouze události trasování aktivity
+#### <a name="to-log-only-activity-tracing-events"></a>Protokolovat pouze události trasování aktivit
 
-1. V **Průzkumník řešení** klikněte pravým tlačítkem na soubor App. config a vyberte **otevřít**.
+1. Klepněte pravým tlačítkem myši na soubor app.config v **Průzkumníku řešení** a zvolte **Otevřít**.
 
      \-nebo-
 
-     Pokud neexistuje žádný soubor App. config:
+     Pokud není k dispozici žádný soubor app.config:
 
-    1. V nabídce **projekt** klikněte na příkaz **Přidat novou položku**.
+    1. V nabídce **Projekt** zvolte **Přidat novou položku**.
 
-    2. V dialogovém okně **Přidat novou položku** vyberte možnost **konfigurační soubor aplikace**.
+    2. V dialogovém okně **Přidat novou položku** zvolte **Konfigurační soubor aplikace**.
 
-    3. Klikněte na tlačítko **Přidat**.
+    3. Klikněte na **Přidat**.
 
-2. Klikněte pravým tlačítkem na soubor App. config v **Průzkumník řešení**. Klikněte na tlačítko **otevřít**.
+2. Klepněte pravým tlačítkem myši na soubor app.config v **Průzkumníku řešení**. Zvolte **Otevřít**.
 
-3. Vyhledejte část `<listeners>` v části `<source>` s atributem `name` "DefaultSource", který je v části `<sources>`. Část `<sources>` je pod oddílem `<system.diagnostics>` v části `<configuration>` nejvyšší úrovně.
+3. Vyhledejte `<listeners>` oddíl v `<source>` části `name` s atributem "DefaultSource", `<sources>` který je pod oddílem. Sekce `<sources>` je pod `<system.diagnostics>` částí, v horní `<configuration>` části.
 
-4. Přidejte tento prvek do oddílu `<listeners>`:
+4. Přidejte tento `<listeners>` prvek do oddílu:
 
     ```xml
     <!-- Remove the default debug listener. -->
@@ -175,9 +175,9 @@ Tento příklad ukazuje, jak nakonfigurovat filtrování pro nový naslouchací 
     <add name="NewDefault"/>
     ```
 
-5. Vyhledejte část `<sharedListeners>` v části `<system.diagnostics>` v části `<configuration>` nejvyšší úrovně.
+5. Vyhledejte `<sharedListeners>` oddíl v `<system.diagnostics>` části v části `<configuration>` nejvyšší úrovně.
 
-6. Přidejte tento prvek do tohoto `<sharedListeners>` části:
+6. Přidejte tento `<sharedListeners>` prvek do tohoto oddílu:
 
     ```xml
     <add name="NewDefault"
@@ -190,9 +190,9 @@ Tento příklad ukazuje, jak nakonfigurovat filtrování pro nový naslouchací 
     </add>
     ```
 
-     Filtr <xref:System.Diagnostics.EventTypeFilter> přebírá jednu z <xref:System.Diagnostics.SourceLevels> hodnot výčtu jako atribut `initializeData`.
+     Filtr <xref:System.Diagnostics.EventTypeFilter> přebírá jednu <xref:System.Diagnostics.SourceLevels> z hodnot výčtu jako svůj `initializeData` atribut.
 
-7. Obsah souboru App. config by měl vypadat podobně jako následující kód XML:
+7. Obsah souboru app.config by měl být podobný následujícímu xml:
 
     ```xml
     <?xml version="1.0" encoding="utf-8" ?>
@@ -235,7 +235,7 @@ Tento příklad ukazuje, jak nakonfigurovat filtrování pro nový naslouchací 
 
 8. Spusťte aplikaci v ladicím programu.
 
-9. Stiskněte **Button1**.
+9. Stiskněte **tlačítko1**.
 
      Aplikace zapíše do souboru protokolu aplikace následující informace:
 
@@ -243,15 +243,15 @@ Tento příklad ukazuje, jak nakonfigurovat filtrování pro nový naslouchací 
 
      `Default Error: 2 : Error in the application.`
 
-     Aplikace zapisuje méně informací do výstupu ladění aplikace z důvodu přísnějšího filtrování.
+     Aplikace zapíše méně informací do výstupu ladění aplikace z důvodu více omezující filtrování.
 
      `Default Error   2   Error`
 
 10. Zavřete aplikaci.
 
-Další informace o změně nastavení protokolu po nasazení najdete v tématu [práce s protokoly aplikací](../../../../visual-basic/developing-apps/programming/log-info/working-with-application-logs.md).
+Další informace o změně nastavení protokolu po nasazení naleznete v [tématu Práce s protokoly aplikací](../../../../visual-basic/developing-apps/programming/log-info/working-with-application-logs.md).
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Návod: Zjištění, kam objekt My.Application.Log zapisuje informace](../../../../visual-basic/developing-apps/programming/log-info/walkthrough-determining-where-my-application-log-writes-information.md)
 - [Návod: Změna místa, kam objekt My.Application.Log zapisuje informace](../../../../visual-basic/developing-apps/programming/log-info/walkthrough-changing-where-my-application-log-writes-information.md)

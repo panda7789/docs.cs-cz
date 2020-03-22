@@ -22,19 +22,19 @@ helpviewer_keywords:
 - MyBase keyword [Visual Basic], relationship to similar programming elements
 ms.assetid: f8e241ae-b1ed-4886-9aa0-08c632154029
 ms.openlocfilehash: a21dfeb12e8d99f5f8b8afede084846711c299ab
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74347339"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79400846"
 ---
 # <a name="me-my-mybase-and-myclass-in-visual-basic"></a>Me, My, MyBase a MyClass v jazyce Visual Basic
-`Me`, `My`, `MyBase`a `MyClass` v Visual Basic mají podobné názvy, ale různé účely. Toto téma popisuje každou z těchto entit, aby je bylo možné odlišit.  
+`Me`, `My` `MyBase`, `MyClass` a v jazyce Visual Basic mají podobné názvy, ale různé účely. Toto téma popisuje každou z těchto entit za účelem jejich rozlišení.  
   
-## <a name="me"></a>Mně  
- Klíčové slovo `Me` poskytuje způsob, jak odkazovat na konkrétní instanci třídy nebo struktury, ve které je kód aktuálně spuštěn. `Me` se chová jako buď proměnná objektu, nebo proměnná struktury odkazující na aktuální instanci. Použití `Me` je zvláště užitečné pro předávání informací o aktuálně vykonávané instanci třídy nebo struktury na proceduru v jiné třídě, struktuře nebo modulu.  
+## <a name="me"></a>Já  
+ Klíčové `Me` slovo poskytuje způsob, jak odkazovat na konkrétní instanci třídy nebo struktury, ve kterém je aktuálně spuštěn kód. `Me`chová se jako proměnná objektu nebo proměnná struktury odkazující na aktuální instanci. Použití `Me` je zvláště užitečné pro předávání informací o aktuálně spuštěné instanci třídy nebo struktury do procedury v jiné třídě, struktuře nebo modulu.  
   
- Předpokládejme například, že v modulu máte následující proceduru.  
+ Předpokládejme například, že máte následující postup v modulu.  
   
 ```vb  
 Sub ChangeFormColor(FormName As Form)  
@@ -43,21 +43,21 @@ Sub ChangeFormColor(FormName As Form)
 End Sub  
 ```  
   
- Tento postup můžete zavolat a předat aktuální instanci <xref:System.Windows.Forms.Form> třídy jako argument pomocí následujícího příkazu.  
+ Tento postup můžete volat a předat <xref:System.Windows.Forms.Form> aktuální instanci třídy jako argument pomocí následujícího příkazu.  
   
 ```vb  
 ChangeFormColor(Me)  
 ```  
   
 ## <a name="my"></a>Moje  
- Funkce `My` poskytuje snadný a intuitivní přístup k řadě tříd .NET Framework a umožňuje uživatelům Visual Basic interakci s počítačem, aplikací, nastavením, prostředky a tak dále.  
+ Tato `My` funkce poskytuje snadný a intuitivní přístup k řadě tříd rozhraní .NET Framework, což umožňuje uživateli jazyka Visual Basic pracovat s počítačem, aplikací, nastavením, prostředky a tak dále.  
   
 ## <a name="mybase"></a>MyBase  
- Klíčové slovo `MyBase` se chová jako proměnná objektu odkazující na základní třídu aktuální instance třídy. `MyBase` se běžně používá pro přístup ke členům základních tříd, které jsou přepsány nebo vrženy v odvozené třídě. `MyBase.New` slouží k explicitnímu volání konstruktoru základní třídy z konstruktoru odvozené třídy.  
+ Klíčové `MyBase` slovo se chová jako proměnná objektu odkazující na základní třídu aktuální instance třídy. `MyBase`Se běžně používá pro přístup k členům základní třídy, které jsou přepsány nebo stínovány v odvozené třídě. `MyBase.New`se používá k explicitnímu volání konstruktoru základní třídy z konstruktoru odvozené třídy.  
   
-## <a name="myclass"></a>MyClass  
- Klíčové slovo `MyClass` se chová jako proměnná objektu odkazující na aktuální instanci třídy, jak je původně implementována. `MyClass` je podobná `Me`, ale všechna volání metody jsou považována za, jako kdyby byla metoda `NotOverridable`.  
+## <a name="myclass"></a>Myclass  
+ Klíčové `MyClass` slovo se chová jako proměnná objektu odkazující na aktuální instanci třídy, jak bylo původně implementováno. `MyClass`je podobná `Me`, ale všechny volání metod na něm `NotOverridable`jsou považovány, jako by metoda byla .  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Základní informace o dědičnosti](../../../visual-basic/programming-guide/language-features/objects-and-classes/inheritance-basics.md)

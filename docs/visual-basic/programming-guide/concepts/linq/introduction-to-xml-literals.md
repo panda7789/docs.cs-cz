@@ -1,23 +1,23 @@
 ---
-title: Úvod do literálů XML v jazyce Visual Basic2
+title: Úvod k literálům XML v jazyce Visual Basic2
 ms.date: 07/20/2015
 ms.assetid: 94fc0e03-978e-4c08-ab6c-0dc3c1e64f10
-ms.openlocfilehash: 5355a3c0f01bb247e38e52816693ee47d7d50556
-ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
+ms.openlocfilehash: 9f5c54574e51c537d9ea58d307afda10736d0d88
+ms.sourcegitcommit: 43d10ef65f0f1fd6c3b515e363bde11a3fcd8d6d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/03/2019
-ms.locfileid: "71834993"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78266947"
 ---
-# <a name="introduction-to-xml-literals-in-visual-basic"></a>Úvod do literálů XML v Visual Basic
-Tato část poskytuje informace o vytváření stromů XML v Visual Basic.  
+# <a name="introduction-to-xml-literals-in-visual-basic"></a>Úvod k literálům XML v jazyce Visual Basic
+Tato část obsahuje informace o vytváření stromů XML v jazyce Visual Basic.  
   
- Informace o použití výsledků dotazů LINQ jako obsahu stromu XML naleznete v tématu [funkční konstrukce (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/functional-construction-linq-to-xml.md).  
+ Informace o použití výsledků dotazů LINQ jako obsahu pro strom XML naleznete v tématu [Funkční konstrukce (LINQ na XML) (Visual Basic).](../../../../visual-basic/programming-guide/concepts/linq/functional-construction-linq-to-xml.md)  
   
- Další informace o literálech XML v Visual Basic najdete v tématu [přehled LINQ to XML v Visual Basic](../../../../visual-basic/programming-guide/language-features/xml/overview-of-linq-to-xml.md).  
+ Další informace o literálech XML v jazyce Visual Basic naleznete v [tématu Přehled LINQ na XML v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/xml/overview-of-linq-to-xml.md).  
   
 ## <a name="creating-xml-trees"></a>Vytváření stromů XML  
- Následující příklad ukazuje, jak vytvořit <xref:System.Xml.Linq.XElement>, v tomto případě `contacts`:  
+ Následující příklad <xref:System.Xml.Linq.XElement>ukazuje, jak vytvořit , `contacts`v tomto případě :  
   
 ```vb  
 Dim contacts As XElement = _  
@@ -35,42 +35,42 @@ Dim contacts As XElement = _
     </Contacts>  
 ```  
   
-### <a name="creating-an-xelement-with-simple-content"></a>Vytvoření XElement s jednoduchým obsahem  
- Můžete vytvořit <xref:System.Xml.Linq.XElement> obsahující jednoduchý obsah, a to následujícím způsobem:  
+### <a name="creating-an-xelement-with-simple-content"></a>Vytvoření prvku XElement s jednoduchým obsahem  
+ Můžete vytvořit, <xref:System.Xml.Linq.XElement> který obsahuje jednoduchý obsah, takto:  
   
 ```vb  
 Dim n as XElement = <Customer>Adventure Works</Customer>  
-Console.WriteLine(n)   
+Console.WriteLine(n)
 ```  
   
- Tento příklad vytvoří následující výstup:  
+ Tento příklad vytváří následující výstup:  
   
 ```xml  
 <Customer>Adventure Works</Customer>  
 ```  
   
 ### <a name="creating-an-empty-element"></a>Vytvoření prázdného prvku  
- Prázdné <xref:System.Xml.Linq.XElement> můžete vytvořit následujícím způsobem:  
+ Můžete vytvořit prázdný <xref:System.Xml.Linq.XElement>, takto:  
   
 ```vb  
 Dim n As XElement = <Customer/>  
 Console.WriteLine(n)  
 ```  
   
- Tento příklad vytvoří následující výstup:  
+ Tento příklad vytváří následující výstup:  
   
 ```xml  
 <Customer />  
 ```  
   
 ### <a name="using-embedded-expressions"></a>Použití vložených výrazů  
- Důležitou funkcí literálů XML je, že umožňují vložené výrazy. Vložené výrazy umožňují vyhodnotit výraz a vložit výsledky výrazu do stromu XML. Pokud je výraz vyhodnocen jako typ <xref:System.Xml.Linq.XElement>, element je vložen do stromu. Pokud se výraz vyhodnotí jako typ <xref:System.Xml.Linq.XAttribute>, do stromu se vloží atribut. Prvky a atributy lze vložit do stromu pouze v případě, že jsou platné.  
+ Důležitou vlastností literálů XML je, že umožňují vložené výrazy. Vložené výrazy umožňují vyhodnotit výraz a vložit výsledky výrazu do stromu XML. Pokud výraz vyhodnotí typ <xref:System.Xml.Linq.XElement>, prvek je vložen do stromu. Pokud výraz vyhodnotí typ <xref:System.Xml.Linq.XAttribute>, atribut je vložen do stromu. Prvky a atributy můžete vložit do stromu pouze tam, kde jsou platné.  
   
- Je důležité si uvědomit, že do vloženého výrazu může přejít pouze jeden výraz. Nelze vložit více příkazů. Pokud výraz překračuje jeden řádek, je nutné použít znak pro pokračování řádku.  
+ Je důležité si uvědomit, že pouze jeden výraz může přejít do vloženého výrazu. Nelze vložit více příkazů. Pokud výraz přesahuje jeden řádek, musíte použít znak pokračování řádku.  
   
- Použijete-li vložený výraz pro přidání existujících uzlů (včetně prvků) a atributů do nového stromu XML a pokud již existující uzly jsou nadřazené, uzly budou klonovány. Nově klonované uzly jsou připojeny k novému stromu XML. Pokud existující uzly nejsou nadřazené, uzly jsou jednoduše připojeny k novému stromu XML. Příklad ukazuje poslední příklad v tomto tématu.  
+ Pokud použijete vložený výraz k přidání existujících uzlů (včetně prvků) a atributů do nového stromu XML a pokud jsou existující uzly již nadřazené, uzly jsou klonovány. Nově klonované uzly jsou připojeny k nové stromu XML. Pokud existující uzly nejsou nadřazené, uzly jsou jednoduše připojeny k novému stromu XML. Poslední příklad v tomto tématu ukazuje toto.  
   
- Následující příklad používá vložený výraz pro vložení elementu do stromu:  
+ Následující příklad používá vložený výraz k vložení prvku do stromu:  
   
 ```vb  
 xmlTree1 As XElement = _  
@@ -84,7 +84,7 @@ Dim xmlTree2 As XElement = _
 Console.WriteLine(xmlTree2)  
 ```  
   
- Tento příklad vytvoří následující výstup:  
+ Tento příklad vytváří následující výstup:  
   
 ```xml  
 <Root>  
@@ -93,7 +93,7 @@ Console.WriteLine(xmlTree2)
 ```  
   
 ### <a name="using-embedded-expressions-for-content"></a>Použití vložených výrazů pro obsah  
- Můžete použít vložený výraz k poskytnutí obsahu prvku:  
+ Vložený výraz můžete použít k dodání obsahu prvku:  
   
 ```vb  
 Dim str As String  
@@ -102,14 +102,14 @@ Dim root As XElement = <Root><%= str %></Root>
 Console.WriteLine(root)  
 ```  
   
- Tento příklad vytvoří následující výstup:  
+ Tento příklad vytváří následující výstup:  
   
 ```xml  
 <Root>Some content</Root>  
 ```  
   
 ### <a name="using-a-linq-query-in-an-embedded-expression"></a>Použití dotazu LINQ ve vloženém výrazu  
- Výsledky dotazu LINQ můžete použít pro obsah elementu:  
+ Výsledky dotazu LINQ můžete použít pro obsah prvku:  
   
 ```vb  
 Dim arr As Integer() = {1, 2, 3}  
@@ -122,7 +122,7 @@ Dim n As XElement = _
 Console.WriteLine(n)  
 ```  
   
- Tento příklad vytvoří následující výstup:  
+ Tento příklad vytváří následující výstup:  
   
 ```xml  
 <Root>  
@@ -133,7 +133,7 @@ Console.WriteLine(n)
 ```  
   
 ### <a name="using-embedded-expressions-for-node-names"></a>Použití vložených výrazů pro názvy uzlů  
- Vložené výrazy lze také použít pro výpočet názvů atributů, hodnot atributů, názvů prvků a hodnot elementů:  
+ Vložené výrazy můžete také použít k výpočtu názvů atributů, hodnot atributů, názvů prvků a hodnot elementů:  
   
 ```vb  
 Dim eleName As String = "ele"  
@@ -149,7 +149,7 @@ Dim n As XElement = _
 Console.WriteLine(n)  
 ```  
   
- Tento příklad vytvoří následující výstup:  
+ Tento příklad vytváří následující výstup:  
   
 ```xml  
 <Root att="aValue">  
@@ -157,8 +157,8 @@ Console.WriteLine(n)
 </Root>  
 ```  
   
-### <a name="cloning-vs-attaching"></a>Klonování vs. připojování  
- Jak bylo zmíněno dříve, pokud použijete vložený výraz pro přidání existujících uzlů (včetně prvků) a atributů do nového stromu XML, pokud již existující uzly jsou nadřazené, uzly budou klonovány a nově naklonované uzly jsou připojeny k novému stromu XML. Pokud existující uzly nejsou nadřazené, jsou jednoduše připojeny k novému stromu XML.  
+### <a name="cloning-vs-attaching"></a>Klonování vs. připojení  
+ Jak již bylo zmíněno dříve, pokud použijete vložený výraz k přidání existujících uzlů (včetně prvků) a atributů do nového stromu XML, pokud jsou existující uzly již nadřazené, uzly jsou klonovány a nově klonované uzly jsou připojeny k nové stromu XML. Pokud existující uzly nejsou nadřazené, jsou jednoduše připojeny k nové stromu XML.  
   
 ```vb  
 ' Create a tree with a child element.  
@@ -188,13 +188,13 @@ Console.WriteLine("Child2 was {0}", _
     "attached", "cloned"))  
 ```  
   
- Tento příklad vytvoří následující výstup:  
+ Tento příklad vytváří následující výstup:  
   
 ```console  
 Child1 was cloned  
 Child2 was attached  
 ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Vytváření stromů XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/creating-xml-trees.md)
