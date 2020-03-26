@@ -12,14 +12,16 @@ helpviewer_keywords:
 - case statement [C#]
 - default keyword [C#]
 ms.assetid: 44bae8b8-8841-4d85-826b-8a94277daecb
-ms.openlocfilehash: e5580e81b9175cd95491fdba724bacbffa692a5e
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 49b3836f17e91ae8de10d68e97fd662aae80d1ff
+ms.sourcegitcommit: 99b153b93bf94d0fecf7c7bcecb58ac424dfa47c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75345391"
+ms.lasthandoff: 03/25/2020
+ms.locfileid: "80249315"
 ---
 # <a name="switch-c-reference"></a>přepínač (odkaz C#)
+
+Tento článek `switch` se vztahuje na prohlášení. Informace o `switch` výrazu (zavedeném v c# 8.0) naleznete v článku o [ `switch` výrazech](../operators/switch-expression.md) v části [výrazy a operátory.](../operators/index.md)
 
 `switch`je příkaz výběru, který vybere *jeden oddíl přepínače,* který se provede ze seznamu kandidátů na základě shody vzoru s *výrazem shody*.
 
@@ -106,7 +108,7 @@ Případ `default` určuje oddíl přepínače, který má být proveden, `case`
 
 Případ `default` se může objevit v `switch` libovolném pořadí v příkazu. Bez ohledu na jeho pořadí ve zdrojovém kódu je `case` vždy vyhodnocena jako poslední, poté, co byly vyhodnoceny všechny popisky.
 
-## <a name="a-namepattern--pattern-matching-with-the-switch-statement"></a><a name="pattern" />Porovnávání vzorů `switch` s příkazem
+## <a name="pattern-matching-with-the-switch-statement"></a><a name="pattern" />Porovnávání vzorů `switch` s příkazem
 
 Každý `case` příkaz definuje vzor, který, pokud odpovídá výrazu shody, způsobí, že jeho část obsahující přepínač bude spuštěna. Všechny verze jazyka C# podporují konstantní vzor. Zbývající vzorky jsou podporovány počínaje C# 7.0.
 
@@ -183,7 +185,7 @@ Bez porovnávání vzorů může být tento kód zapsán následujícím způsob
 
 [!code-csharp[type-pattern2#1](~/samples/snippets/csharp/language-reference/keywords/switch/type-pattern2.cs#1)]
 
-## <a name="a-namewhen--the-case-statement-and-the-when-clause"></a><a name="when" />Prohlášení `case` a `when` doložka
+## <a name="the-case-statement-and-the-when-clause"></a><a name="when" />Prohlášení `case` a `when` doložka
 
 Počínaje C# 7.0, protože case příkazy nemusí být vzájemně `when` vylučovat, můžete přidat klauzule určit další podmínku, která musí být splněna pro případ prohlášení vyhodnotit na true. Klauzule `when` může být libovolný výraz, který vrací logickou hodnotu.
 

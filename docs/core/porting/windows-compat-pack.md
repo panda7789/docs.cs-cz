@@ -3,12 +3,12 @@ title: Použití sady Windows Compatibility Pack k portu kódu do jádra rozhran
 description: Informace o nástroji Compatibility Pack pro systém Windows a o tom, jak ji můžete použít k portování existujícího kódu rozhraní .NET Framework do jádra .NET Core.
 author: terrajobst
 ms.date: 12/07/2018
-ms.openlocfilehash: 91a653b2345d414c18ebdb6e8b7d6d49bbdbb83e
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 166259ca37a2005d67f6c545e4843a940f05fb71
+ms.sourcegitcommit: b75a45f0cfe012b71b45dd9bf723adf32369d40c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "76733608"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80228640"
 ---
 # <a name="use-the-windows-compatibility-pack-to-port-code-to-net-core"></a>Použití sady Windows Compatibility Pack k portu kódu do jádra rozhraní .NET
 
@@ -40,7 +40,7 @@ Poskytuje přibližně 20 000 oken API, včetně pouze systémových oken a tak�
 - Ukládání do mezipaměti prostředí Windows Runtime
 - Služby systému Windows
 
-Další informace naleznete ve [specifikaci sady Compatibility Pack](https://github.com/dotnet/designs/blob/master/accepted/compat-pack/compat-pack.md).
+Další informace naleznete ve [specifikaci sady Compatibility Pack](https://github.com/dotnet/designs/blob/master/accepted/2018/compat-pack/compat-pack.md).
 
 ## <a name="get-started"></a>Začínáme
 

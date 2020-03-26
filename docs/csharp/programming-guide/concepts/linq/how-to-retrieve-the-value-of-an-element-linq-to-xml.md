@@ -2,17 +2,17 @@
 title: Jak načíst hodnotu prvku (LINQ do XML) (C#)
 ms.date: 07/20/2015
 ms.assetid: 4228c007-07c9-4cf2-a45b-e7074c109581
-ms.openlocfilehash: 6f2d355eac9914cd4c03d3a4521992b346b92f0b
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 17a7dac464e1ec40db357194000f5745cdf2f3a8
+ms.sourcegitcommit: 99b153b93bf94d0fecf7c7bcecb58ac424dfa47c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79168684"
+ms.lasthandoff: 03/25/2020
+ms.locfileid: "80249204"
 ---
 # <a name="how-to-retrieve-the-value-of-an-element-linq-to-xml-c"></a>Jak načíst hodnotu prvku (LINQ do XML) (C#)
 Toto téma ukazuje, jak získat hodnotu prvků. Existují dva hlavní způsoby, jak to udělat. Jedním ze způsobů <xref:System.Xml.Linq.XElement> je <xref:System.Xml.Linq.XAttribute> obsazení nebo na požadovaný typ. Explicitní operátor převodu pak převede obsah prvku nebo atributu na zadaný typ a přiřadí jej proměnné. Případně můžete využít <xref:System.Xml.Linq.XElement.Value%2A?displayProperty=nameWithType> ubytování nebo <xref:System.Xml.Linq.XAttribute.Value%2A?displayProperty=nameWithType> ubytovací zařízení.  
   
- S C#, nicméně, casting je obecně lepší přístup. Pokud přetypování prvku nebo atributu na typ s možnou hodnotou null, kód je jednodušší psát při načítání hodnoty prvku (nebo atribut), který může nebo nemusí existovat. Poslední příklad v tomto tématu ukazuje toto. Však nelze nastavit obsah prvku prostřednictvím přetypování, jak můžete prostřednictvím <xref:System.Xml.Linq.XElement.Value%2A?displayProperty=nameWithType> vlastnosti.  
+ S C#, nicméně, casting je obecně lepší přístup. Pokud přetypování prvku nebo atributu na typ hodnoty s možnou hodnotou, kterou lze použít s nulou, je jednodušší zapisovat kód při načítání hodnoty elementu (nebo atributu), který může nebo nemusí existovat. Poslední příklad v tomto tématu ukazuje toto. Však nelze nastavit obsah prvku prostřednictvím přetypování, jak můžete prostřednictvím <xref:System.Xml.Linq.XElement.Value%2A?displayProperty=nameWithType> vlastnosti.  
   
 ## <a name="example"></a>Příklad  
  Chcete-li načíst hodnotu prvku, <xref:System.Xml.Linq.XElement> stačí přetypovat objekt na požadovaný typ. Vždy můžete přetypovat prvek do řetězce takto:  
@@ -67,7 +67,7 @@ Value of e:abcde
 ```  
   
 ## <a name="example"></a>Příklad  
- Někdy se pokusíte načíst hodnotu prvku, i když si nejste jisti, že existuje. V tomto případě při přiřazení přetypovaného prvku typu `string` s možnou hodnotou null (jeden nebo jeden z typů s možnou `null`hodnotou null v rozhraní .NET Framework), pokud prvek neexistuje, je přiřazená proměnná nastavena pouze na . Následující kód ukazuje, že když prvek může nebo nemusí existovat, je <xref:System.Xml.Linq.XElement.Value%2A> jednodušší použít přetypování než použít vlastnost.  
+ Někdy se pokusíte načíst hodnotu prvku, i když si nejste jisti, že existuje. V tomto případě při přiřazení přetypovaného prvku k typu odkazu s možnou hodnotou s možnou hodnotou null nebo typu hodnoty s možnou hodnotou, pokud prvek neexistuje, je přiřazená proměnná pouze nastavena na `null`. Následující kód ukazuje, že když prvek může nebo nemusí existovat, je <xref:System.Xml.Linq.XElement.Value%2A> jednodušší použít přetypování než použít vlastnost.  
   
 ```csharp  
 XElement root = new XElement("Root",  

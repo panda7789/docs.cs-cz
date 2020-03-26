@@ -4,12 +4,12 @@ description: Tento rozšířený kurz poskytuje úvod do typů odkazů s možnou
 ms.date: 02/19/2019
 ms.technology: csharp-null-safety
 ms.custom: mvc
-ms.openlocfilehash: b00050c1d151b95e330f94eb9393a4031e47d5a8
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 54cf9d812999cae837483b48cdedd89d9dc40fc9
+ms.sourcegitcommit: 99b153b93bf94d0fecf7c7bcecb58ac424dfa47c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "78240064"
+ms.lasthandoff: 03/25/2020
+ms.locfileid: "80249126"
 ---
 # <a name="tutorial-express-your-design-intent-more-clearly-with-nullable-and-non-nullable-reference-types"></a>Kurz: Vyjádřete svůj záměr návrhu jasněji s typy odkazů s možnou a nulovou hodnotou.
 
@@ -72,7 +72,7 @@ Aplikace, kterou vytvoříte, provede následující kroky:
 1. Kontaktuje respondenty, dokud velikost dokončeného průzkumu nedosáhne čísla cíle.
 1. Zapíše důležité statistiky o odpovědích na průzkum.
 
-## <a name="build-the-survey-with-nullable-and-non-nullable-types"></a>Sestavení průzkumu s typy s možnou hodnotou null a nenulovatelné
+## <a name="build-the-survey-with-nullable-and-non-nullable-reference-types"></a>Sestavení průzkumu s typy odkazů s možnou hodnotou null a nenulovatelné
 
 První kód, který napíšete, vytvoří průzkum. Budete psát třídy pro modelování otázky průzkumu a spuštění průzkumu. Průzkum má tři typy otázek, které se vyznačují formátem odpovědi: Ano/Ne odpovědi, počet odpovědí a textové odpovědi. Vytvořte `public SurveyQuestion` třídu:
 

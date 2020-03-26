@@ -8,12 +8,12 @@ helpviewer_keywords:
 - troubleshooting graphics rendering [WPF]
 - graphics [WPF], rendering
 ms.assetid: f4b41b42-327d-407c-b398-3ed5f505df8b
-ms.openlocfilehash: 85e32c99674cc95f670a4cb483b55865b996cb31
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 642dfdd784af4b85672cf5b0c8e60079763f4c47
+ms.sourcegitcommit: 267d092663aba36b6b2ea853034470aea493bfae
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79186415"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80112281"
 ---
 # <a name="graphics-rendering-registry-settings"></a>Nastavení registru pro vykreslení grafiky
 Toto téma obsahuje [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] přehled nastavení registru [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] vykreslování grafiky, které ovlivňují aplikace.  
@@ -33,7 +33,7 @@ Toto téma obsahuje [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharp
 |Nastavení|Popis|  
 |-------------|-----------------|  
 |**Zakázat možnost hardwarové akcelerace**|Určuje, zda má být povolena hardwarová akcelerace.|  
-|**Maximální hodnota vícenásobného vzorku**|Určuje stupeň vícenásobného vzorkování pro vymýšce 3D obsahu.|  
+|**Maximální hodnota vícenásobného vzorku**|Určuje stupeň vícenásobného vzorkování pro vyhlazení 3D obsahu.|  
 |**Požadované datum ovladače videa**|Určuje, zda systém zakáže hardwarovou akceleraci ovladačů vydaných před listopadem 2004.|  
 |**Použít možnost referenčního rastrování**|Určuje, [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] zda má být používán referenční rastrovač.|  
   
@@ -57,7 +57,7 @@ Toto téma obsahuje [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharp
 |------------------|----------------|  
 |`HKEY_CURRENT_USER\SOFTWARE\Microsoft\Avalon.Graphics\MaxMultisampleType`|DWORD|  
   
- **Maximální hodnota vícenásobného vzorku** umožňuje upravit maximální množství vymýšce 3D obsahu. Tuto úroveň slouží k zakázání režimu vymýšce v systému Windows Vista.  
+ **Maximální hodnota vícenásobného vzorku** umožňuje upravit maximální množství vyhlazení 3D obsahu. Tato úroveň slouží k zakázání 3D vyhlazení v systému Windows Vista.  
   
  **Maximální hodnota vícenásobného vzorku** je hodnota DWORD, která se pohybuje od 0 do 16. Hodnota 0 určuje, že vícenásobné vyhlazení 3D obsahu by mělo být zakázáno a hodnota 16 se pokusí použít až 16x vícenásobné vyhlazení, pokud je grafická karta podporována. Mějte na paměti, že nastavení této hodnoty klíče registru v počítačích používajících ovladače XPDM způsobí, že aplikace budou používat velké množství další grafické paměti, sníží výkon 3D vykreslování a může zavést chyby a stabilitu vykreslování. Problémy.  
   

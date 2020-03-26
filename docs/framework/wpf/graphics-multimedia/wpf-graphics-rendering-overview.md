@@ -8,12 +8,12 @@ helpviewer_keywords:
 - graphics [WPF], rendering
 - rendering graphics [WPF]
 ms.assetid: 6dec9657-4d8c-4e46-8c54-40fb80008265
-ms.openlocfilehash: c82b2c4599f14f55b51587407a7d96b3e2be9d5f
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 9d58aa973f7de6c073611e13f2889913ff26dd55
+ms.sourcegitcommit: 267d092663aba36b6b2ea853034470aea493bfae
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79186597"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80111917"
 ---
 # <a name="wpf-graphics-rendering-overview"></a>Přehled vykreslování grafiky WPF
 Toto téma obsahuje [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] přehled vizuální vrstvy. Zaměřuje se na roli <xref:System.Windows.Media.Visual> třídy pro podporu [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] vykreslování v modelu.  
@@ -54,7 +54,7 @@ Toto téma obsahuje [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharp
  Jedná <xref:System.Windows.Media.DrawingVisual> se o zjednodušenou třídu výkresu, která slouží k vykreslení obrazců, obrázků nebo textu. Tato třída je považována za zjednodušenou, protože neposkytuje rozložení nebo zpracování událostí, což zlepšuje jeho výkon za běhu. Z tohoto důvodu jsou kresby ideální pro pozadí a kliparty. Slouží <xref:System.Windows.Media.DrawingVisual> k vytvoření vlastního vizuálního objektu. Další informace naleznete [v tématu Použití objektů DrawingVisual](using-drawingvisual-objects.md).  
   
 ### <a name="viewport3dvisual-class"></a>Viewport3DVisual třída  
- Poskytuje <xref:System.Windows.Media.Media3D.Viewport3DVisual> most mezi <xref:System.Windows.Media.Visual> 2D <xref:System.Windows.Media.Media3D.Visual3D> a objekty. Třída <xref:System.Windows.Media.Media3D.Visual3D> je základní třídou pro všechny 3D vizuální prvky. Vyžaduje, <xref:System.Windows.Media.Media3D.Viewport3DVisual> abyste definovali hodnotu <xref:System.Windows.Media.Media3D.Viewport3DVisual.Camera%2A> a hodnotu. <xref:System.Windows.Media.Media3D.Viewport3DVisual.Viewport%2A> Kamera umožňuje zobrazit scénu. Výřez stanoví, kde se projekce mapuje na 2D povrch. Další informace o 3D v najdete v [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] [tématu Přehled 3D grafiky](3-d-graphics-overview.md).  
+ Poskytuje <xref:System.Windows.Media.Media3D.Viewport3DVisual> most mezi <xref:System.Windows.Media.Visual> 2D <xref:System.Windows.Media.Media3D.Visual3D> a objekty. Třída <xref:System.Windows.Media.Media3D.Visual3D> je základní třídou pro všechny 3D vizuální prvky. Vyžaduje, <xref:System.Windows.Media.Media3D.Viewport3DVisual> abyste definovali hodnotu <xref:System.Windows.Media.Media3D.Viewport3DVisual.Camera%2A> a hodnotu. <xref:System.Windows.Media.Media3D.Viewport3DVisual.Viewport%2A> Kamera umožňuje zobrazit scénu. Výřez stanoví, kde se projekce mapuje na 2D povrch. Další informace o 3D v tématu [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]Přehled [3D grafiky](3-d-graphics-overview.md).  
   
 ### <a name="containervisual-class"></a>Kontejnervizuální třída  
  Třída <xref:System.Windows.Media.ContainerVisual> se používá jako kontejner pro <xref:System.Windows.Media.Visual> kolekci objektů. Třída <xref:System.Windows.Media.DrawingVisual> je odvozena <xref:System.Windows.Media.ContainerVisual> od třídy, což umožňuje obsahovat kolekci vizuálních objektů.  

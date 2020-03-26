@@ -1,15 +1,15 @@
 ---
 title: out modifikátor parametrů - C# Reference
-ms.date: 03/26/2019
+ms.date: 03/19/2020
 helpviewer_keywords:
 - parameters [C#], out
 - out parameters [C#]
-ms.openlocfilehash: f963188d77685bb81f7dc9fb3794e343114fe3c0
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: c713aa929673e51e8e9986c536bae782121c7756
+ms.sourcegitcommit: 99b153b93bf94d0fecf7c7bcecb58ac424dfa47c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79173559"
+ms.lasthandoff: 03/25/2020
+ms.locfileid: "80249341"
 ---
 # <a name="out-parameter-modifier-c-reference"></a>out – modifikátor parametrů (Referenční dokumentace jazyka C#)
 Klíčové `out` slovo způsobí, že argumenty, které mají být předány odkazem. Vytvoří formální parametr alias pro argument, který musí být proměnná. Jinými slovy, každá operace na parametr je provedena na argument. Je to jako klíčové slovo `ref` [ref,](ref.md) s tím rozdílem, že vyžaduje, aby proměnná byla inicializována před předáním. Je také jako [v](in-parameter-modifier.md) klíčové `in` slovo, s tím rozdílem, že neumožňuje volané metody změnit hodnotu argumentu. Chcete-li `out` použít parametr, definice metody a volající `out` metoda musí explicitně použít klíčové slovo. Například:  
@@ -46,6 +46,12 @@ Klíčová `out` slova a `in`klíčová `ref`slova nelze použít pro následuj�
 - Asynchronní metody, které definujete pomocí [asynchronního](./async.md) modifikátoru.  
   
 - Iterátor metody, které zahrnují výnos `yield break` výnos [return](./yield.md) nebo příkaz.  
+
+Kromě toho mají [rozšiřující metody](../../programming-guide/classes-and-structs/extension-methods.md) následující omezení:
+
+- Keywoard `out` nelze použít na první argument metody rozšíření.
+- Klíčové `ref` slovo nelze použít na první argument metody rozšíření, pokud argument není struktura, nebo obecný typ není omezena být struktura.
+- Klíčové `in` slovo nelze použít, pokud první argument není struktura. Klíčové `in` slovo nelze použít u žádného obecného typu, a to ani v případě, že je omezeno na strukturu.
 
 ## <a name="declaring-out-parameters"></a>Deklarování `out` parametrů
 

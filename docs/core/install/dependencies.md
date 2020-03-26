@@ -5,12 +5,12 @@ author: leecow
 ms.author: leecow
 ms.date: 12/04/2019
 zone_pivot_groups: operating-systems-set-one
-ms.openlocfilehash: ca86b3c158bb38c1293cd4303dcf4c00ea9175b1
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 023b8fdf029dd6b17fe2186296d87dd7507c60b5
+ms.sourcegitcommit: 34dc3c0d0d0a1cc418abff259d9daa8078d00b81
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "78157804"
+ms.lasthandoff: 03/19/2020
+ms.locfileid: "79546559"
 ---
 # <a name="net-core-dependencies-and-requirements"></a>.NET Základní závislosti a požadavky
 
@@ -41,6 +41,8 @@ Další informace o podporovaných operačních systémech, distribucích a zás
 
 # <a name="net-core-30"></a>[.NET Core 3.0](#tab/netcore30)
 
+*Rozhraní .NET Core 3.0 je momentálně mimo podporu. Další informace naleznete v [zásadách základní podpory rozhraní .NET](https://dotnet.microsoft.com/platform/support/policy/dotnet-core).*
+
 Pomocí rozhraní .NET Core 3.0 jsou podporovány následující verze systému Windows:
 
 > [!NOTE]
@@ -56,6 +58,8 @@ Pomocí rozhraní .NET Core 3.0 jsou podporovány následující verze systému 
 Další informace o podporovaných operačních systémech, distribucích a zásadách životního cyklu [rozhraní .NET Core 3.0 naleznete v tématu .NET Core 3.0 Supported OS Versions](https://github.com/dotnet/core/blob/master/release-notes/3.0/3.0-supported-os.md).
 
 # <a name="net-core-22"></a>[.NET Core 2.2](#tab/netcore22)
+
+*Rozhraní .NET Core 2.2 je momentálně mimo podporu. Další informace naleznete v [zásadách základní podpory rozhraní .NET](https://dotnet.microsoft.com/platform/support/policy/dotnet-core).*
 
 Pomocí rozhraní .NET Core 2.2 jsou podporovány následující verze systému Windows:
 
@@ -132,7 +136,7 @@ Výše uvedené požadavky jsou také vyžadovány, pokud narazíte na jednu z n
 | Red Hat Enterprise Linux       | 6, 7, 8               | x64 |
 | CentOS                         | 7+                    | x64 |
 | Oracle Linux                   | 7+                    | x64 |
-| Fedora                         | 29+                   | x64 |
+| Fedora                         | 30+                   | x64 |
 | Debian                         | 9+                    | x64, ARM32, ARM64 |
 | Ubuntu                         | 16.04+                | x64, ARM32, ARM64 |
 | Linux mincovna                     | 18+                   | x64 |
@@ -148,6 +152,8 @@ Další informace o instalaci rozhraní .NET Core 3.1 na ARM64 (jádro 4.14+) na
 > Podpora ARM64 vyžaduje linuxové jádro 4.14 nebo vyšší. Některé linuxové distribuce splňují tento požadavek, zatímco jiné ne. Například Ubuntu 18.04 je podporováno, ale Ubuntu 16.04 není.
 
 # <a name="net-core-30"></a>[.NET Core 3.0](#tab/netcore30)
+
+*Rozhraní .NET Core 3.0 je momentálně mimo podporu. Další informace naleznete v [zásadách základní podpory rozhraní .NET](https://dotnet.microsoft.com/platform/support/policy/dotnet-core).*
 
 .NET Core 3.0 zachází s Linuxem jako s jediným operačním systémem. Existuje jeden linuxový build (na architekturu čipů) pro podporované distribuce Linuxu.
 
@@ -174,6 +180,8 @@ Další informace o podporovaných operačních systémech, distribucích a zás
 Další informace o instalaci rozhraní .NET Core 3.0 na ARM64 naleznete [v tématu Instalace rozhraní .NET Core 3.0 na Linuxarm64](https://gist.github.com/richlander/467813274cea8abc624553ee72b28213).
 
 # <a name="net-core-22"></a>[.NET Core 2.2](#tab/netcore22)
+
+*Rozhraní .NET Core 2.2 je momentálně mimo podporu. Další informace naleznete v [zásadách základní podpory rozhraní .NET](https://dotnet.microsoft.com/platform/support/policy/dotnet-core).*
 
 .NET Core 2.2 zachází s Linuxem jako s jediným operačním systémem. Existuje jeden linuxový build (na architekturu čipů) pro podporované distribuce Linuxu.
 
@@ -211,7 +219,7 @@ Další informace o podporovaných operačních systémech, distribucích a zás
 | Red Hat Enterprise Linux       |  6, 7, 8                | x64 |
 | CentOS                         |  7+                     | x64 |
 | Oracle Linux                   |  7+                     | x64 |
-| Fedora                         |  29+                    | x64 |
+| Fedora                         |  30+                    | x64 |
 | Debian                         |  9                      | x64, ARM32 |
 | Ubuntu                         |  16.04, 18.04, 19.04, 19.10    | x64, ARM32 |
 | Linux mincovna                     |  17+                    | x64 |

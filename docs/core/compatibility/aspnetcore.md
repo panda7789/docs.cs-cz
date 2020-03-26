@@ -2,15 +2,15 @@
 title: ASP.NET Zásadní změny
 titleSuffix: ''
 description: Uvádí nejnovější změny v ASP.NET jádru.
-ms.date: 01/10/2020
+ms.date: 03/25/2020
 author: scottaddie
 ms.author: scaddie
-ms.openlocfilehash: c54735cd53fb9cb48eb84045791ccc559fe683cd
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: eb80be54da8ac0b15d854304e53a7ade7f42da1b
+ms.sourcegitcommit: e48a54ebe62e874500a7043f6ee0b77a744d55b4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "77093172"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80291718"
 ---
 # <a name="aspnet-core-breaking-changes"></a>ASP.NET Zásadní změny
 
@@ -18,7 +18,6 @@ ASP.NET Core poskytuje funkce vývoje webových aplikací používané rozhraní
 
 Na této stránce jsou popsány následující změny:
 
-- [HTTP: Prohlížeč SameSite změny dopad ověřování](#http-browser-samesite-changes-impact-authentication)
 - [Byla odebrána zastaralá antiforgerií, CORS, diagnostika, MVC a směrovací api](#obsolete-antiforgery-cors-diagnostics-mvc-and-routing-apis-removed)
 - [Ověřování: Vyřazení Google+](#authentication-google-deprecated-and-replaced)
 - [Ověřování: Vlastnost HttpContext.Authentication byla odebrána.](#authentication-httpcontextauthentication-property-removed)
@@ -27,6 +26,7 @@ Na této stránce jsou popsány následující změny:
 - [Autorizace: AddAuthorization přetížení přesunuta do jiného sestavení](#authorization-addauthorization-overload-moved-to-different-assembly)
 - [Autorizace: IAllowAnonymous odebrán z AuthorizationFilterContext.Filters](#authorization-iallowanonymous-removed-from-authorizationfiltercontextfilters)
 - [Autorizace: Implementace IAuthorizationPolicyProvider vyžadují novou metodu](#authorization-iauthorizationpolicyprovider-implementations-require-new-method)
+- [Azure: Odebrané balíčky integrace Azure s předponou Microsoftu](#azure-microsoft-prefixed-azure-integration-packages-removed)
 - [Ukládání do mezipaměti: CompactOnMemoryPressure vlastnost odstraněna](#caching-compactonmemorypressure-property-removed)
 - [Ukládání do mezipaměti: Microsoft.Extensions.Caching.SqlServer používá nový balíček SqlClient](#caching-microsoftextensionscachingsqlserver-uses-new-sqlclient-package)
 - [Ukládání do mezipaměti: ResponseCaching "pubternal" typy změněny na vnitřní](#caching-responsecaching-pubternal-types-changed-to-internal)
@@ -36,6 +36,7 @@ Na této stránce jsou popsány následující změny:
 - [Hostování: Přesměrování HTTPS povoleno pro mimoprocesové aplikace služby IIS](#hosting-https-redirection-enabled-for-iis-out-of-process-apps)
 - [Hosting: IHostingEnvironment a IApplicationLifetime typy nahrazeny](#hosting-ihostingenvironment-and-iapplicationlifetime-types-marked-obsolete-and-replaced)
 - [Hostování: Objekt Usvého zprostředkovatele objectpoolu odebrán ze závislostí WebHostBuilder](#hosting-objectpoolprovider-removed-from-webhostbuilder-dependencies)
+- [HTTP: Prohlížeč SameSite změny dopad ověřování](#http-browser-samesite-changes-impact-authentication)
 - [HTTP: VýchozíhttpContext rozšiřitelnost odebrána](#http-defaulthttpcontext-extensibility-removed)
 - [HTTP: Pole HeaderNames byla změněna na statickou jen pro čtení.](#http-headernames-constants-changed-to-static-readonly)
 - [HTTP: Změny infrastruktury těla odezvy](#http-response-body-infrastructure-changes)
@@ -66,9 +67,20 @@ Na této stránce jsou popsány následující změny:
 - [SignalR: Konstruktory HubConnectionContext byly změněny.](#signalr-hubconnectioncontext-constructors-changed)
 - [SignalR: Změna názvu klientského balíčku JavaScript](#signalr-javascript-client-package-name-changed)
 - [Signalizátor: Zastaralá api](#signalr-usesignalr-and-useconnections-methods-marked-obsolete)
+- [SignalR: UseSignalR a UseConnections metody odebrány](#signalr-usesignalr-and-useconnections-methods-removed)
 - [SPAServices a NodeServices označené jako zastaralé](#spas-spaservices-and-nodeservices-marked-obsolete)
 - [SPAServices a NodeServices konzola logger záložní změna](#spas-spaservices-and-nodeservices-no-longer-fall-back-to-console-logger)
 - [Cílový rámec: Rozhraní .NET Framework není podporováno.](#target-framework-net-framework-support-dropped)
+
+## <a name="aspnet-core-50"></a>ASP.NET jádro 5.0
+
+[!INCLUDE[Azure: Microsoft-prefixed Azure integration packages removed](~/includes/core-changes/aspnetcore/5.0/azure-integration-packages-removed.md)]
+
+***
+
+[!INCLUDE[SignalR: UseSignalR and UseConnections methods removed](~/includes/core-changes/aspnetcore/5.0/signalr-usesignalr-useconnections-removed.md)]
+
+***
 
 ## <a name="aspnet-core-31"></a>ASP.NET jádro 3.1
 

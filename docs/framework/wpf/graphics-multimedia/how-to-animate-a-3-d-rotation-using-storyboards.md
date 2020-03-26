@@ -1,27 +1,27 @@
 ---
-title: 'Postupy: Animace trojrozměrného otočení pomocí scénářů'
+title: 'Postup: Animace 3D rotace pomocí scénářů'
 ms.date: 03/30/2017
 helpviewer_keywords:
 - Storyboards [WPF]
-- 3-D translations [WPF], animating [WPF], with Storyboards
-- animation [WPF], 3-D translations [WPF], with Storyboards
+- 3D translations [WPF], animating [WPF], with Storyboards
+- animation [WPF], 3D translations [WPF], with Storyboards
 ms.assetid: 1020e44e-e21e-49a8-be53-53cbc1910e83
-ms.openlocfilehash: 03b01205f1a31426a01b09533b350682c384df4b
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 088f1a33cfc73a706ffed55ffff6494adaf8fca4
+ms.sourcegitcommit: 267d092663aba36b6b2ea853034470aea493bfae
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62024752"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80112208"
 ---
-# <a name="how-to-animate-a-3-d-rotation-using-storyboards"></a>Postupy: Animace trojrozměrného otočení pomocí scénářů
-Následující příklad ukazuje, jak 3D objekt otočit při jeho "wobbles" podle animace <xref:System.Windows.Media.Media3D.AxisAngleRotation3D.Angle%2A> a <xref:System.Windows.Media.Media3D.AxisAngleRotation3D.Axis%2A> vlastnosti <xref:System.Windows.Media.Media3D.AxisAngleRotation3D> objektu. To <xref:System.Windows.Media.Media3D.AxisAngleRotation3D> objekt určuje transformace otočení 3D objektu a tak animace vlastností vytvoří efekt otočení přání. Ve scénáři <xref:System.Windows.Media.Animation.DoubleAnimation> je použít pro animaci <xref:System.Windows.Media.Media3D.AxisAngleRotation3D.Angle%2A> vlastnost při <xref:System.Windows.Media.Animation.Vector3DAnimation> je použít pro animaci <xref:System.Windows.Media.Media3D.AxisAngleRotation3D.Axis%2A> vlastnost.  
+# <a name="how-to-animate-a-3d-rotation-using-storyboards"></a>Postup: Animace 3D rotace pomocí scénářů
+Následující příklad ukazuje, jak provést 3D objekt otočit, zatímco se "zakolísá" animací <xref:System.Windows.Media.Media3D.AxisAngleRotation3D.Angle%2A> a <xref:System.Windows.Media.Media3D.AxisAngleRotation3D.Axis%2A> vlastnosti objektu. <xref:System.Windows.Media.Media3D.AxisAngleRotation3D> Tento <xref:System.Windows.Media.Media3D.AxisAngleRotation3D> objekt určuje rotační transformaci 3D objektu, a proto animace jeho vlastností vytvoří efekt otočení touhy. V storyboard, <xref:System.Windows.Media.Animation.DoubleAnimation> se používá k <xref:System.Windows.Media.Media3D.AxisAngleRotation3D.Angle%2A> animaci vlastnost i <xref:System.Windows.Media.Media3D.AxisAngleRotation3D.Axis%2A> min. <xref:System.Windows.Media.Animation.Vector3DAnimation>  
   
 ## <a name="example"></a>Příklad  
  [!code-xaml[Animation3DGallery_snip#Rotate3DUsingAxisAngleRotation3DExampleWholePage](~/samples/snippets/csharp/VS_Snippets_Wpf/Animation3DGallery_snip/CS/Rotat3DUsingAxisAngleRotation3DExample.xaml#rotate3dusingaxisanglerotation3dexamplewholepage)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Animace trojrozměrného otočení pomocí Rotation3DAnimation](how-to-animate-a-3-d-rotation-using-rotation3danimation.md)
-- [Animace trojrozměrné rotace pomocí klíčových snímků (Rotation3DAnimationUsingKeyFrames)](how-to-animate-a-3-d-rotation-using-key-frames.md)
+- [Animace 3D natočení pomocí funkce Rotation3DAnimation](how-to-animate-a-3-d-rotation-using-rotation3danimation.md)
+- [Animace 3D natočení pomocí klíčových snímků (Rotation3DAnimationUsingKeyFrames)](how-to-animate-a-3-d-rotation-using-key-frames.md)
 - [Přehled 3D grafiky](3-d-graphics-overview.md)
 - [Přehled scénářů](storyboards-overview.md)

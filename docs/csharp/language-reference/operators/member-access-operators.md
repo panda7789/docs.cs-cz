@@ -1,5 +1,5 @@
 ---
-title: Operátory přístupu k členům – odkaz jazyka C#
+title: Operátory přístupu členů a výrazy – odkaz jazyka C#
 description: Další informace o operátory Jazyka C#, které můžete použít pro přístup k členům typu.
 ms.date: 09/18/2019
 author: pkulikov
@@ -32,25 +32,25 @@ helpviewer_keywords:
 - hat operator [C#]
 - .. operator [C#]
 - range operator [C#]
-ms.openlocfilehash: 4d4bc0c192912b5fa87a8e91bc5ba0e1d4ce3598
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: da2ca4517bd007678d74ae9b76e10cad4c2696b4
+ms.sourcegitcommit: 34dc3c0d0d0a1cc418abff259d9daa8078d00b81
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79399509"
+ms.lasthandoff: 03/19/2020
+ms.locfileid: "79546637"
 ---
-# <a name="member-access-operators-c-reference"></a>Operátory přístupu k členům (odkaz C#)
+# <a name="member-access-operators-and-expressions-c-reference"></a>Operátory přístupu k členům a výrazy (odkaz C#)
 
-Při přístupu k členu typu můžete použít následující operátory:
+Při přístupu k členu typu můžete použít následující operátory a výrazy:
 
-- (členský přístup) : přístup k členovi oboru názvů nebo typu [ `.` ](#member-access-operator-)
+- (členský přístup) : přístup k členovi oboru názvů nebo typu [ `.` ](#member-access-expression-)
 - [(element pole nebo přístup k indexeru): pro přístup k prvku pole nebo indexeru typu `[]` ](#indexer-operator-)
 - [a `?[]` (operátory s nulovým podmíněným podmínkou): provádět operaci přístupu k členu nebo prvku pouze v případě, že operand není `?.` ](#null-conditional-operators--and-)null
-- (vyvolání) : volání přístupné metody nebo vyvolání delegáta [ `()` ](#invocation-operator-)
+- (vyvolání) : volání přístupné metody nebo vyvolání delegáta [ `()` ](#invocation-expression-)
 - (index od konce): označuje, že pozice prvku je od konce sekvence [ `^` ](#index-from-end-operator-)
 - (rozsah) : určení rozsahu indexů, které můžete použít k získání rozsahu sekvenčních prvků [ `..` ](#range-operator-)
 
-## <a name="member-access-operator-"></a>Operátor přístupu člena .
+## <a name="member-access-expression-"></a>Výraz přístupu člena .
 
 `.` Token se používá pro přístup k členu oboru názvů nebo typu, jak ukazují následující příklady:
 
@@ -109,7 +109,7 @@ void TraceMethod() {}
 
 ## <a name="null-conditional-operators--and-"></a>Operátory s nulovým podmíněným podmínkami?. A? []
 
-K dispozici v C# 6 a novější, operátor s `?.`nulovou podmíněnou podmínkou použije přístup [člena](#member-access-operator-), nebo přístup k [elementu](#indexer-operator-), `?[]`, operace na jeho operand pouze v případě, že operand vyhodnotí na non-null; v opačném `null`případě vrátí . To je
+K dispozici v C# 6 a novější, operátor s `?.`nulovou podmíněnou podmínkou použije přístup [člena](#member-access-expression-), nebo přístup k [elementu](#indexer-operator-), `?[]`, operace na jeho operand pouze v případě, že operand vyhodnotí na non-null; v opačném `null`případě vrátí . To je
 
 - Pokud `a` je `null`vyhodnocena `a?.x` `a?[x]` , `null`výsledek nebo je .
 - Pokud `a` je vyhodnocena na `a?.x` non-null, výsledek `a?[x]` nebo `a.x` `a[x]`je stejný jako výsledek nebo , v uvedeném pořadí.
@@ -150,7 +150,7 @@ if (handler != null)
 }
 ```
 
-## <a name="invocation-operator-"></a>Operátor vyvolání ()
+## <a name="invocation-expression-"></a>Výraz vyvolání ()
 
 Pomocí závorek `()`, můžete volat [metodu](../../programming-guide/classes-and-structs/methods.md) nebo vyvolat [delegáta](../../programming-guide/delegates/index.md).
 

@@ -9,12 +9,12 @@ helpviewer_keywords:
 - ink [WPF], custom-rendering
 - classes [WPF], InkCanvas
 ms.assetid: 65c978a7-0ee0-454f-ac7f-b1bd2efecac5
-ms.openlocfilehash: 3cf0d98c40e71a380b218c76d6e52d00cdd05342
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 0ceb831057a9a92aa7319d2004f04d7cf5ac820e
+ms.sourcegitcommit: 267d092663aba36b6b2ea853034470aea493bfae
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79186355"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80111826"
 ---
 # <a name="custom-rendering-ink"></a>Inkoust vlastního vykreslení
 Vlastnost <xref:System.Windows.Ink.Stroke.DrawingAttributes%2A> tahu umožňuje určit vzhled tahu, například jeho velikost, barvu a tvar, ale mohou nastat časy, kdy <xref:System.Windows.Ink.Stroke.DrawingAttributes%2A> chcete vzhled přizpůsobit nad rámec toho, co umožňuje. Vzhled inkoustu můžete přizpůsobit vykreslením vzhledu vzduchového štětce, olejové barvy a mnoha dalších efektů. Windows Presentation Foundation (WPF) umožňuje vlastní vykreslení inkoustu <xref:System.Windows.Input.StylusPlugIns.DynamicRenderer> <xref:System.Windows.Ink.Stroke> implementací vlastní a objekt.  
@@ -62,7 +62,7 @@ Vlastnost <xref:System.Windows.Ink.Stroke.DrawingAttributes%2A> tahu umožňuje 
   
  Třída <xref:System.Windows.Ink.Stroke> může také provádět testování přístupů. Můžete také implementovat vlastní algoritmus testování <xref:System.Windows.Ink.Stroke.HitTest%2A> přístupů přepsáním metody v aktuální třídě.  
   
- Následující kód jazyka C# <xref:System.Windows.Ink.Stroke> ukazuje vlastní <xref:System.Windows.Input.StylusPoint> třídu, která vykresluje data jako 3D tah.  
+ Následující kód Jazyka C# <xref:System.Windows.Ink.Stroke> ukazuje vlastní <xref:System.Windows.Input.StylusPoint> třídu, která vykresluje data jako 3D tah.  
   
  [!code-csharp[AdvancedInkTopicsSamples#19](~/samples/snippets/csharp/VS_Snippets_Wpf/AdvancedInkTopicsSamples/CSharp/DynamicRenderer.cs#19)]
  [!code-vb[AdvancedInkTopicsSamples#19](~/samples/snippets/visualbasic/VS_Snippets_Wpf/AdvancedInkTopicsSamples/VisualBasic/DynamicRenderer.vb#19)]  

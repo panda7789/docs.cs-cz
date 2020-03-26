@@ -20,12 +20,12 @@ helpviewer_keywords:
 - pointer increment [C#]
 - pointer decrement [C#]
 - pointer comparison [C#]
-ms.openlocfilehash: 7c95fe07220a78b388a5c6850e4123feb029d951
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: fd25cd419f8c3bfe905850e6a252f4a8cf65478c
+ms.sourcegitcommit: 2514f4e3655081dcfe1b22470c0c28500f952c42
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79399544"
+ms.lasthandoff: 03/18/2020
+ms.locfileid: "79507097"
 ---
 # <a name="pointer-related-operators-c-reference"></a>Operátory související s ukazatelem (odkaz C#
 
@@ -42,7 +42,7 @@ Informace o typech ukazatelů naleznete v tématu [Pointer types](../../programm
 > [!NOTE]
 > Každá operace s ukazateli vyžaduje [nebezpečný](../keywords/unsafe.md) kontext. Kód, který obsahuje nebezpečné bloky, [`-unsafe`](../compiler-options/unsafe-compiler-option.md) musí být zkompilován s možností kompilátoru.
 
-## <a name="address-of-operator-"></a>Adresa operátora&amp;
+## <a name="address-of-operator-amp"></a><a name="address-of-operator-"></a>Adresa operátora&amp;
 
 Unární `&` operátor vrátí adresu svého operandu:
 
@@ -70,7 +70,7 @@ Binární `*` operátor vypočítá [součin](arithmetic-operators.md#multiplica
 
 ## <a name="pointer-member-access-operator--"></a>Operátor přístupu člena ukazatele ->
 
-Operátor `->` kombinuje [dereference ukazatele](#pointer-indirection-operator-) a [přístup členů](member-access-operators.md#member-access-operator-). To znamená, `x` pokud je `T*` ukazatel `y` typu a je `T`přístupný člen typu , výraz formuláře
+Operátor `->` kombinuje [dereference ukazatele](#pointer-indirection-operator-) a [přístup členů](member-access-operators.md#member-access-expression-). To znamená, `x` pokud je `T*` ukazatel `y` typu a je `T`přístupný člen typu , výraz formuláře
 
 ```csharp
 x->y
@@ -96,7 +96,7 @@ Následující příklad ukazuje, jak získat přístup k `[]` prvkům pole s uk
 
 [!code-csharp[pointer element access](snippets/PointerOperators.cs#ElementAccess)]
 
-Příklad používá [ `stackalloc` operátor](stackalloc.md) přidělit blok paměti v zásobníku.
+V předchozím příkladu [ `stackalloc` výraz](stackalloc.md) přiděluje blok paměti v zásobníku.
 
 > [!NOTE]
 > Operátor přístupu prvku ukazatele nekontroluje chyby mimo rozsah.
@@ -192,5 +192,5 @@ Další informace naleznete v následujících částech [specifikace jazyka C#]
 - [Typy ukazatelů](../../programming-guide/unsafe-code-pointers/pointer-types.md)
 - [nebezpečné klíčové slovo](../keywords/unsafe.md)
 - [pevné klíčové slovo](../keywords/fixed-statement.md)
-- [Operátor stackalloc](stackalloc.md)
+- [stackalloc](stackalloc.md)
 - [sizeof – operátor](sizeof.md)

@@ -6,12 +6,12 @@ f1_keywords:
 - fixed
 helpviewer_keywords:
 - fixed keyword [C#]
-ms.openlocfilehash: e527e8a54a739391d18b180532372b5b70f34d37
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 53bee82bf24a847b0b21ed2375d09a6303d4fe48
+ms.sourcegitcommit: 2514f4e3655081dcfe1b22470c0c28500f952c42
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75713525"
+ms.lasthandoff: 03/18/2020
+ms.locfileid: "79507188"
 ---
 # <a name="fixed-statement-c-reference"></a>fixed – příkaz (Referenční dokumentace jazyka C#)
 
@@ -62,7 +62,7 @@ fixed (byte* ps = srcarray, pd = dstarray)
 }
 ```
 
-Můžete přidělit paměť v zásobníku, kde není předmětem uvolňování paměti a proto není nutné připnout. Chcete-li, že pomocí [ `stackalloc` operátoru](../operators/stackalloc.md).
+Můžete přidělit paměť v zásobníku, kde není předmětem uvolňování paměti a proto není nutné připnout. Chcete-li to provést, použijte [ `stackalloc` výraz](../operators/stackalloc.md).
 
 ## <a name="c-language-specification"></a>specifikace jazyka C#
 

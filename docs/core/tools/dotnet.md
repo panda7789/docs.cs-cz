@@ -2,12 +2,12 @@
 title: dotnet, příkaz
 description: Další informace o příkazu dotnet (obecný ovladač pro rozhraní příkazu .NET Core CLI) a jeho použití.
 ms.date: 02/13/2020
-ms.openlocfilehash: da37c5cc3b019851e245fa3f65ae9dfb8a3fef54
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 8692d419afd528bf49e1dc7dc1a7a5fd698b363b
+ms.sourcegitcommit: 07123a475af89b6da5bb6cc51ea40ab1e8a488f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79398893"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80134077"
 ---
 # <a name="dotnet-command"></a>dotnet, příkaz
 
@@ -193,8 +193,14 @@ Příkaz | Funkce
 Příkaz | Funkce
 --- | ---
 [dotnet nuget delete](dotnet-nuget-delete.md) | Odstraní nebo odřadí seznam balíčku ze serveru.
-[dotnet nuget locals](dotnet-nuget-locals.md) | Vymaže nebo zobrazí seznam místních prostředků NuGet, jako je například mezipaměť http-request, dočasná mezipaměť nebo globální balíček pro celý počítač.
 [dotnet nuget push](dotnet-nuget-push.md) | Odešle balíček na server a publikuje jej.
+[dotnet nuget locals](dotnet-nuget-locals.md) | Vymaže nebo zobrazí seznam místních prostředků NuGet, jako je například mezipaměť http-request, dočasná mezipaměť nebo globální balíček pro celý počítač.
+[dotnet nuget přidat zdroj](dotnet-nuget-add-source.md) | Přidá zdroj NuGet.
+[dotnet nuget zakázat zdroj](dotnet-nuget-disable-source.md) | Zakáže zdroj NuGet.
+[dotnet nuget povolit zdroj](dotnet-nuget-enable-source.md) | Povolí zdroj NuGet.
+[Zdroj seznamu nugetu dotnet](dotnet-nuget-list-source.md) | Zobrazí seznam všech nakonfigurovaných zdrojů NuGet.
+[dotnet nuget odebrat zdroj](dotnet-nuget-remove-source.md) | Odebere zdroj NuGet.
+[Zdroj aktualizace dotnet nuget](dotnet-nuget-update-source.md) | Aktualizuje zdroj NuGet.
 
 ### <a name="global-tool-path-and-local-tools-commands"></a>Příkazy globálních nástrojů, cest nástrojů a místních nástrojů
 
@@ -254,6 +260,10 @@ dotnet myapp.dll
 - `DOTNET_SERVICING`
 
   Určuje umístění indexu obsluhy, který má sdílený hostitel použít při načítání za běhu.
+
+- `DOTNET_NOLOGO`
+
+  Určuje, zda se při prvním spuštění zobrazí uvítání a telemetrické zprávy .NET Core. Nastaví `true` ztlumení těchto zpráv `true` `1`(hodnoty `yes` , nebo `false` přijaté) nebo `false` `0`na `no` povolit (hodnoty , nebo přijaté). Pokud není nastavena, `false` výchozí je a zprávy se zobrazí při prvním spuštění. Všimněte si, že tento příznak `DOTNET_CLI_TELEMETRY_OPTOUT` nemá žádný vliv na telemetrii (viz pro odhlášení odesílání telemetrie).
 
 - `DOTNET_CLI_TELEMETRY_OPTOUT`
 

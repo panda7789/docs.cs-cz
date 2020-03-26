@@ -5,16 +5,16 @@ helpviewer_keywords:
 - interfaces [C#]
 - C# language, interfaces
 ms.assetid: 2feda177-ce11-432d-81b4-d50f5f35fd37
-ms.openlocfilehash: f4ee269f41e79562c113a7627816f797b083095e
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: bb1b812fdbf1d521ed3fd86e23f430bcd04d00f6
+ms.sourcegitcommit: 99b153b93bf94d0fecf7c7bcecb58ac424dfa47c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "79157075"
+ms.lasthandoff: 03/25/2020
+ms.locfileid: "80249178"
 ---
 # <a name="interfaces-c-programming-guide"></a>Rozhraní (Průvodce programováním v C#)
 
-Rozhraní obsahuje definice pro skupinu souvisejících funkcí, které musí implementovat neabstraktní [třída](../../language-reference/keywords/class.md) nebo [struktura.](../../language-reference/builtin-types/struct.md) Rozhraní může `static` definovat metody, které musí mít implementaci. Rozhraní může poskytovat výchozí implementaci pro některé nebo všechny jeho členy deklarované instance. Rozhraní nesmí deklarovat data instance, jako jsou pole, automaticky implementované vlastnosti nebo události podobné vlastnosti.
+Rozhraní obsahuje definice pro skupinu souvisejících funkcí, které musí implementovat neabstraktní [třída](../../language-reference/keywords/class.md) nebo [struktura.](../../language-reference/builtin-types/struct.md) Rozhraní může `static` definovat metody, které musí mít implementaci. Počínaje C# 8.0 rozhraní může definovat výchozí implementaci pro členy. Rozhraní nesmí deklarovat data instance, jako jsou pole, automaticky implementované vlastnosti nebo události podobné vlastnosti.
 
 Pomocí rozhraní můžete například zahrnout chování z více zdrojů ve třídě. Tato schopnost je důležité v jazyce C#, protože jazyk nepodporuje více dědičnosti tříd. Kromě toho je nutné použít rozhraní, pokud chcete simulovat dědičnost pro struktury, protože nemohou ve skutečnosti dědit z jiné struktury nebo třídy.
 
@@ -54,7 +54,7 @@ Rozhraní má následující vlastnosti:
 - Rozhraní nelze vytvořit instanci přímo. Jeho členy jsou implementovány libovolnou třídu nebo strukturu, která implementuje rozhraní.
 - Třída nebo struktura může implementovat více rozhraní. Třída může dědit základní třídu a také implementovat jedno nebo více rozhraní.
 
-## <a name="BKMK_RelatedSections"></a>Související oddíly
+## <a name="related-sections"></a><a name="BKMK_RelatedSections"></a>Související oddíly
 
 - [Vlastnosti rozhraní](../classes-and-structs/interface-properties.md)  
 - [Indexery v rozhraních](../indexers/indexers-in-interfaces.md)  
@@ -65,7 +65,7 @@ Rozhraní má následující vlastnosti:
 - [Polymorfismus](../classes-and-structs/polymorphism.md)  
 - [Abstraktní a uzavřené třídy a jejich členové](../classes-and-structs/abstract-and-sealed-classes-and-class-members.md)  
 - [Vlastnosti](../classes-and-structs/properties.md)  
-- [Akce](../events/index.md)  
+- [Události](../events/index.md)  
 - [Indexery](../indexers/index.md)  
   
 ## <a name="see-also"></a>Viz také

@@ -3,12 +3,12 @@ title: Zpracování nulových hodnot ve výrazech dotazu (LINQ v c#)
 description: Zjistěte, jak zpracovat hodnoty null ve výrazech dotazu LINQ v c#.
 ms.date: 12/01/2016
 ms.assetid: ac63ae8b-724d-4251-9334-528f4e884ae7
-ms.openlocfilehash: c9a3aaec05fa029a8db66826bdcb4a1d106176e3
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 3da490b72bd518df7be8c14b34655af8c6f84929
+ms.sourcegitcommit: 99b153b93bf94d0fecf7c7bcecb58ac424dfa47c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "73736857"
+ms.lasthandoff: 03/25/2020
+ms.locfileid: "80249302"
 ---
 # <a name="handle-null-values-in-query-expressions"></a>Zpracování hodnot Null ve výrazech dotazů
 
@@ -24,7 +24,7 @@ V předchozím příkladu `where` klauzule filtruje všechny prvky null v pořad
 
 ## <a name="example"></a>Příklad
 
-V join klauzuli, pokud pouze jeden z porovnávacích klíčů je typ hodnoty s možnou hodnotou s hodnotou null, můžete přetypovat druhý na typ s hodnotou null ve výrazu dotazu. V následujícím příkladu `EmployeeID` předpokládejme, že se `int?`jedná o sloupec, který obsahuje hodnoty typu :
+V join klauzuli, pokud pouze jeden z porovnávacích klíčů je typ hodnoty s možnou hodnotou s hodnotou, můžete přetypovat druhý na typ hodnoty s hodnotou null ve výrazu dotazu. V následujícím příkladu `EmployeeID` předpokládejme, že se `int?`jedná o sloupec, který obsahuje hodnoty typu :
 
 [!code-csharp[csProgGuideLINQ#83](~/samples/snippets/csharp/concepts/linq/how-to-handle-null-values-in-query-expressions_2.cs)]
 

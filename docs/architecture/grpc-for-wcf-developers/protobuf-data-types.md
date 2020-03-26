@@ -2,12 +2,12 @@
 title: Scalární datové typy Protobuf - gRPC pro vývojáře WCF
 description: Seznamte se se základními a dobře známými datovými typy, které Protobuf a gRPC podporují v .NET Core.
 ms.date: 09/09/2019
-ms.openlocfilehash: a40f51fa32ddb97ba417ec01f31e1f0187f0d544
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: ea3b53426ecf6f50f3bae22a537e227b07248508
+ms.sourcegitcommit: 99b153b93bf94d0fecf7c7bcecb58ac424dfa47c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79148124"
+ms.lasthandoff: 03/25/2020
+ms.locfileid: "80249432"
 ---
 # <a name="protobuf-scalar-data-types"></a>Skalární datové typy protobuf
 
@@ -125,7 +125,7 @@ V následující tabulce je uveden úplný seznam typů obálky s jejich ekvival
 | `uint?`   | `google.protobuf.UInt32Value` |
 | `ulong?`  | `google.protobuf.UInt64Value` |
 
-Známé typy `Timestamp` a `Duration` jsou reprezentovány v .NET jako třídy, takže není potřeba verze s možnou hodnotou null. Ale je důležité zkontrolovat null na vlastnosti těchto typů při `DateTimeOffset` převodu do nebo `TimeSpan`.
+Známé typy `Timestamp` a `Duration` jsou reprezentovány v .NET jako třídy. V C# 8 a dále můžete použít typy odkazů s možnou hodnotou null. Ale je důležité zkontrolovat null na vlastnosti těchto typů při `DateTimeOffset` převodu do nebo `TimeSpan`.
 
 ## <a name="decimals"></a>Desetinná místa
 

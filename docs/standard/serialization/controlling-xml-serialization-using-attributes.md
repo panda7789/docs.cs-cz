@@ -15,21 +15,21 @@ helpviewer_keywords:
 - serialization, examples
 - serialization, attributes
 ms.assetid: 47d4c39d-30e1-4c7b-8a2e-301325390647
-ms.openlocfilehash: d4e30984a232b17d1f40e300655c519ec1a6e191
-ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
+ms.openlocfilehash: e11152dc626b1e3619b9ecbc04d8a237ca9f13d3
+ms.sourcegitcommit: 99b153b93bf94d0fecf7c7bcecb58ac424dfa47c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "78159907"
+ms.lasthandoff: 03/25/2020
+ms.locfileid: "80248040"
 ---
 # <a name="controlling-xml-serialization-using-attributes"></a>Řízení serializace XML pomocí atributů
 
-Atributy lze použít k řízení XML serializace objektu nebo k vytvoření alternativní datový proud XML ze stejné sady tříd. Další informace o vytvoření alternativního datového proudu XML naleznete v tématu [How to: zadejte název alternativního prvku pro datový proud XML](how-to-specify-an-alternate-element-name-for-an-xml-stream.md).
+Atributy lze použít k řízení XML serializace objektu nebo k vytvoření alternativní datový proud XML ze stejné sady tříd. Další podrobnosti o vytvoření alternativního datového proudu XML najdete v [tématu Postup: Zadání názvu alternativního prvku datového proudu XML](how-to-specify-an-alternate-element-name-for-an-xml-stream.md).
 
 > [!NOTE]
-> Pokud XML vygenerované musí odpovídat části 5 dokumentu konsorcium World Wide Web (W3C) s názvem [Simple Object Access Protocol (SOAP) 1,1](https://www.w3.org/TR/2000/NOTE-SOAP-20000508/), použijte atributy uvedené v [atributech, které řídí serializaci kódovaných SOAP](attributes-that-control-encoded-soap-serialization.md).
+> Pokud musí generovaný kód XML odpovídat části 5 dokumentu W3C (World Wide Web Consortium) s názvem [Simple Object Access Protocol (SOAP) 1.1](https://www.w3.org/TR/2000/NOTE-SOAP-20000508/), použijte atributy uvedené v části [Atributy, které řídí kódovanou serializaci SOAP](attributes-that-control-encoded-soap-serialization.md).
 
-Ve výchozím nastavení je název elementu XML určen název třída nebo člen. V jednoduché třídě s názvem `Book`, pole s názvem `ISBN` vytvoří značku XML elementu \<ISBN >, jak je znázorněno v následujícím příkladu.
+Ve výchozím nastavení je název elementu XML určen název třída nebo člen. V jednoduché třídě `Book`s názvem `ISBN` pole s názvem \<vytvoří značku elementu XML ISBN>, jak je znázorněno v následujícím příkladu.
 
 ```vb
 Public Class Book
@@ -66,7 +66,7 @@ public class TaxRates {
 }
 ```
 
-Další informace o atributech naleznete v tématu [Attributes](../../../docs/standard/attributes/index.md). Seznam atributů, které řídí serializace XML, naleznete v tématu [atributy, které řídí serializaci XML](attributes-that-control-xml-serialization.md).
+Další informace o atributech naleznete v [tématu Atributy](../../../docs/standard/attributes/index.md). Seznam atributů, které řídí serializaci XML, naleznete v [tématu Atributy, které řídí serializaci XML](attributes-that-control-xml-serialization.md).
 
 ## <a name="controlling-array-serialization"></a>Řízení serializace pole
 
@@ -241,7 +241,7 @@ Serializovanou instanci může vypadat takto.
 </Group>
 ```
 
-Jiný způsob k rozlišení dvou datové proudy XML je použít nástroj definici schématu XML ke generování soubory dokumentů schématu XML (XSD) z zkompilovaný kód. (Další informace o použití tohoto nástroje naleznete v tématu [Nástroj definice schématu XML a serializace XML](the-xml-schema-definition-tool-and-xml-serialization.md).) Pokud není použit žádný atribut na pole, schéma popisuje prvek následujícím způsobem.
+Jiný způsob k rozlišení dvou datové proudy XML je použít nástroj definici schématu XML ke generování soubory dokumentů schématu XML (XSD) z zkompilovaný kód. (Další podrobnosti o použití nástroje naleznete v [tématu Nástroj pro definici schématu XML a Serializace XML](the-xml-schema-definition-tool-and-xml-serialization.md).) Pokud není pro pole použit žádný atribut, schéma popisuje prvek následujícím způsobem.
 
 ```xml
 <xs:element minOccurs="0" maxOccurs ="1" name="Employees" type="ArrayOfEmployee" />
@@ -300,7 +300,7 @@ public class Group {
 Pokud tato třída je kompilována a nástroj pro definici schématu XML se používá ke generování jeho schématu, by najít následující XML popisující `Group`.
 
 ```xml
-<xs:element name="NewGroupName" type="NewTypeName">
+<xs:element name="NewGroupName" type="NewTypeName" />
 ```
 
 Naopak, pokud byly k serializaci instancí třídy pouze `NewGroupName` bude nalezen v dokumentu XML.
@@ -317,8 +317,8 @@ Mohou nastat situace, když veřejné vlastnosti nebo pole nemusí být serializ
 
 ## <a name="see-also"></a>Viz také
 
-- [Seznam atributů řídících serializaci XML](attributes-that-control-xml-serialization.md)
-- [Seznam atributů řídících serializaci zakódovanou v protokolu SOAP](attributes-that-control-encoded-soap-serialization.md)
+- [Atributy, které řídí serializaci XML](attributes-that-control-xml-serialization.md)
+- [Atributy, které řídí serializaci zakódovanou v protokolu SOAP](attributes-that-control-encoded-soap-serialization.md)
 - [Představení serializace XML](introducing-xml-serialization.md)
 - [Příklady serializace XML](examples-of-xml-serialization.md)
 - [Postupy: Zadání alternativního názvu elementu pro XML stream](how-to-specify-an-alternate-element-name-for-an-xml-stream.md)

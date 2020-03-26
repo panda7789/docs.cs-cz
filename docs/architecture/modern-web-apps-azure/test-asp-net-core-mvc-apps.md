@@ -4,12 +4,12 @@ description: Architekt moderní webové aplikace s ASP.NET core a Azure | Testov
 author: ardalis
 ms.author: wiwagn
 ms.date: 12/04/2019
-ms.openlocfilehash: 2b347442c4a9b7b6cf912ec461248f901dc45417
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: fa87fdba830398786cce8951d353e86bc4ff7491
+ms.sourcegitcommit: 267d092663aba36b6b2ea853034470aea493bfae
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79147488"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80111046"
 ---
 # <a name="test-aspnet-core-mvc-apps"></a>Testování aplikací ASP.NET Core MVC
 
@@ -145,7 +145,7 @@ public IActionResult GetImage(int id)
 
 `_logger`a `_imageService` jsou oba injekčně jako závislosti. Nyní můžete otestovat, že stejné ID, které je `_imageService`předáno metodě akce, je předáno a že výsledné bajty jsou vráceny jako součást FileResult. Můžete také otestovat, že protokolování chyb `NotFound` se děje podle očekávání a že výsledek je vrácena, pokud chybí obrázek, za předpokladu, že je důležité chování aplikace (to znamená, že nejen dočasný kód vývojář přidal k diagnostice problému). Skutečná logika souboru byla přesunuta do samostatné implementační služby a byla rozšířena tak, aby vrátila výjimku specifickou pro aplikaci pro případ chybějícího souboru. Tuto implementaci můžete otestovat nezávisle pomocí integračního testu.
 
-Ve většině případů budete chtít použít globální obslužné rutiny výjimek ve vašich řadičích, takže množství logiky v nich by mělo být minimální a pravděpodobně nestojí za testování částí. Většinu testování akcí řadiče byste měli provést `TestServer` pomocí funkčních testů a třídy popsané níže.
+Ve většině případů budete chtít použít globální obslužné rutiny výjimek ve vašich řadičích, takže množství logiky v nich by mělo být minimální a pravděpodobně nestojí za testování částí. Proveďte většinu testování akcí řadiče pomocí `TestServer` funkčních testů a třídy popsané níže.
 
 ## <a name="integration-testing-aspnet-core-apps"></a>Testování integrace ASP.NET základní aplikace
 
@@ -153,7 +153,7 @@ Většina testů integrace ve vašich ASP.NET základních aplikacích by měla 
 
 ## <a name="functional-testing-aspnet-core-apps"></a>Funkční testování ASP.NET základní aplikace
 
-Pro ASP.NET základní `TestServer` aplikace, třída umožňuje funkční testy poměrně snadno psát. `TestServer` Nakonfigurujete `WebHostBuilder` pomocí (nebo `HostBuilder`) přímo (jako obvykle `WebApplicationFactory` pro vaši aplikaci) nebo s typem (k dispozici od verze 2.1). Měli byste se pokusit co nejvíce spárovat testovacího hostitele s hostitelem produkčního prostředí, takže vaše testy budou postupovat podobně jako aplikace v produkčním prostředí. Třída `WebApplicationFactory` je užitečná pro konfiguraci Kořenové kořenové stránky Obsahu serveru TestServer, který používá ASP.NET Core k vyhledání statického prostředku, jako je zobrazení.
+Pro ASP.NET základní `TestServer` aplikace, třída umožňuje funkční testy poměrně snadno psát. `TestServer` Nakonfigurujete `WebHostBuilder` pomocí (nebo `HostBuilder`) přímo (jako obvykle `WebApplicationFactory` pro vaši aplikaci) nebo s typem (k dispozici od verze 2.1). Pokuste se co nejpřesněji přizpůsobit testovacího hostitele vašemu produkčnímu hostiteli, aby vaše testy vyvíjely chování podobné tomu, co bude aplikace dělat v produkčním prostředí. Třída `WebApplicationFactory` je užitečná pro konfiguraci Kořenové kořenové stránky Obsahu serveru TestServer, který používá ASP.NET Core k vyhledání statického prostředku, jako je zobrazení.
 
 Jednoduché funkční testy můžete vytvořit vytvořením testovací třídy, která implementuje IClassFixture\<WebApplicationFactory\<TEntry>> kde TEntry je třída startupvaší webové aplikace. S tímto na místě, testovací svítidlo můžete vytvořit klienta pomocí metody CreateClient výroby:
 
@@ -290,7 +290,7 @@ namespace Microsoft.eShopWeb.FunctionalTests.WebRazorPages
 }
 ```
 
-Tento funkční test vykonává plnou ASP.NET Core MVC / Razor Pages aplikační zásobník, včetně všech middleware, filtry, pojiva, atd., které mohou být na místě. Ověří, že daná trasa ("/" vrátí kód stavu očekávaného úspěchu a výstup HTML. Činí tak bez nastavení skutečného webového serveru, a tak se vyhýbá velké části křehkosti, kterou může zažít použití skutečného webového serveru pro testování (například problémy s nastavením brány firewall). Funkční testy, které běží proti TestServer jsou obvykle pomalejší než integrace a testování částí, ale jsou mnohem rychlejší než testy, které by běžely přes síť na testovací webový server. Měli byste použít funkční testy k zajištění front-end zásobníku aplikace funguje podle očekávání. Tyto testy jsou užitečné zejména při zjištění duplicity v řadičích nebo stránkách a řešíte duplikaci přidáním filtrů. V ideálním případě toto refaktoring nezmění chování aplikace a sada funkčních testů ověří tento případ.
+Tento funkční test vykonává plnou ASP.NET Core MVC / Razor Pages aplikační zásobník, včetně všech middleware, filtry, pojiva, atd., které mohou být na místě. Ověří, že daná trasa ("/" vrátí kód stavu očekávaného úspěchu a výstup HTML. Činí tak bez nastavení skutečného webového serveru, a tak se vyhýbá velké části křehkosti, kterou může zažít použití skutečného webového serveru pro testování (například problémy s nastavením brány firewall). Funkční testy, které běží proti TestServer jsou obvykle pomalejší než integrace a testování částí, ale jsou mnohem rychlejší než testy, které by běžely přes síť na testovací webový server. Pomocí funkčních testů můžete zajistit, aby front-endový zásobník vaší aplikace fungoval podle očekávání. Tyto testy jsou užitečné zejména při zjištění duplicity v řadičích nebo stránkách a řešíte duplikaci přidáním filtrů. V ideálním případě toto refaktoring nezmění chování aplikace a sada funkčních testů ověří tento případ.
 
 > ### <a name="references--test-aspnet-core-mvc-apps"></a>Reference – Testování ASP.NET aplikace Core MVC
 >

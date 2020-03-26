@@ -1,18 +1,18 @@
 ---
 title: ref klíčové slovo - C# Reference
-ms.date: 03/26/2019
+ms.date: 03/19/2020
 f1_keywords:
 - ref_CSharpKeyword
 - ref
 helpviewer_keywords:
 - parameters [C#], ref
 - ref keyword [C#]
-ms.openlocfilehash: 05f0bd8566851678203a3f064b96bfff7dee18b6
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 61ee0e320f85925e4d804a6032e01c0485a31451
+ms.sourcegitcommit: 99b153b93bf94d0fecf7c7bcecb58ac424dfa47c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79399362"
+ms.lasthandoff: 03/25/2020
+ms.locfileid: "80249328"
 ---
 # <a name="ref-c-reference"></a>ref (Referenční dokumentace jazyka C#)
 
@@ -59,7 +59,13 @@ Metody však mohou být přetíženy, `ref` `in`pokud `out` má jedna metoda , n
  Klíčová `out` slova a `ref`klíčová `in`slova nelze použít pro následující typy metod:  
   
 - Asynchronní metody, které definujete pomocí [asynchronního](async.md) modifikátoru.  
-- Iterátor metody, které zahrnují výnos `yield break` výnos [return](yield.md) nebo příkaz.  
+- Iterátor metody, které zahrnují výnos `yield break` výnos [return](yield.md) nebo příkaz.
+
+Kromě toho mají [rozšiřující metody](../../programming-guide/classes-and-structs/extension-methods.md) následující omezení:
+
+- Keywoard `out` nelze použít na první argument metody rozšíření.
+- Klíčové `ref` slovo nelze použít na první argument metody rozšíření, pokud argument není struktura, nebo obecný typ není omezena být struktura.
+- Klíčové `in` slovo nelze použít, pokud první argument není struktura. Klíčové `in` slovo nelze použít u žádného obecného typu, a to ani v případě, že je omezeno na strukturu.
 
 ## <a name="passing-an-argument-by-reference-an-example"></a>Předání argumentu odkazem: Příklad
 

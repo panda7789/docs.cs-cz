@@ -3,12 +3,12 @@ title: Vytvoření klienta REST pomocí rozhraní .NET Core
 description: Tento kurz vás naučí řadu funkcí v .NET Core a jazyk C#.
 ms.date: 01/09/2020
 ms.assetid: 51033ce2-7a53-4cdd-966d-9da15c8204d2
-ms.openlocfilehash: 5796df2d2fd8c4d9aaca783d720448c90858c067
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 0105db519f7accec6bf8bfbafdc6a67a444b1074
+ms.sourcegitcommit: 99b153b93bf94d0fecf7c7bcecb58ac424dfa47c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79156854"
+ms.lasthandoff: 03/25/2020
+ms.locfileid: "80249165"
 ---
 # <a name="rest-client"></a>Klient REST
 
@@ -163,7 +163,7 @@ Tato funkce usnadňuje vytváření typů, které pracují pouze s podmnožinou 
 
 Teď, když jste vytvořili typ, pojďme ho rekonstruovat.
 
-Dále použijete serializátor k převodu JSON na objekty Jazyka C#. Nahraďte <xref:System.Net.Http.HttpClient.GetStringAsync(System.String)> volání `ProcessRepositories` v metodě následujícími třemi řádky:
+Dále použijete serializátor k převodu JSON na objekty Jazyka C#. Nahraďte <xref:System.Net.Http.HttpClient.GetStringAsync(System.String)> volání `ProcessRepositories` v metodě následujícími řádky:
 
 ```csharp
 var streamTask = client.GetStreamAsync("https://api.github.com/orgs/dotnet/repos");
@@ -288,23 +288,16 @@ Jako poslední krok přidáme informace pro poslední operaci push. Tyto informa
 2016-02-08T21:27:00Z
 ```
 
-Tento formát nedodržuje žádný ze <xref:System.DateTime> standardních formátů .NET. Z tohoto důvodu budete muset napsat vlastní metodu převodu. Také pravděpodobně nechcete, aby byl nezpracovaný `Repository` řetězec vystaven uživatelům třídy. Atributy mohou pomoci řídit, že také. Nejprve `public` definujte vlastnost, která bude obsahovat řetězcovou `Repository` reprezentaci data a času ve vaší třídě a `LastPush` `readonly` vlastnost, která vrací formátovaný řetězec, který představuje vrácené datum:
+Tento formát je v koordinovaném čase (UTC), <xref:System.DateTime> takže <xref:System.DateTime.Kind%2A> získáte <xref:System.DateTimeKind.Utc>hodnotu, jejíž vlastnost je . Pokud dáváte přednost datu reprezentovanému ve vašem časovém pásmu, budete muset napsat vlastní metodu převodu. Nejprve `public` definujte vlastnost, která bude obsahovat reprezentaci `Repository` UTC `LastPush` `readonly` data a času ve vaší třídě a vlastnost, která vrací datum převedené na místní čas:
 
 ```csharp
 [JsonPropertyName("pushed_at")]
-public string JsonDate { get; set; }
+public DateTime LastPushUtc { get; set; }
 
-public DateTime LastPush =>
-    DateTime.ParseExact(JsonDate, "yyyy-MM-ddTHH:mm:ssZ", CultureInfo.InvariantCulture);
+public DateTime LastPush => LastPushUtc.ToLocalTime();
 ```
 
-Projděme si nové konstrukce, které jsme právě definovali. Vlastnost `LastPush` je definována pomocí člena s `get` *výrazem pro* přistupujícího objektu. Neexistuje žádný `set` přistupující odkaz. Vynechání přistupujícího objektu `set` je způsob, jakým definujete vlastnost jen pro *čtení* v c#. (Ano, můžete vytvořit vlastnosti *pouze pro zápis* v c#, ale jejich hodnota je omezená.) Metoda <xref:System.DateTime.ParseExact(System.String,System.String,System.IFormatProvider)> analyzuje řetězec a vytvoří <xref:System.DateTime> objekt pomocí zadaný formát data a přidá `DateTime` další `CultureInfo` metadata k použití objektu. Pokud se operace analýzy nezdaří, přistupující objekt vlastnosti vyvolá výjimku.
-
-Chcete-li <xref:System.Globalization.CultureInfo.InvariantCulture>použít , budete <xref:System.Globalization> muset přidat `using` obor `repo.cs`názvů do direktiv v :
-
-```csharp
-using System.Globalization;
-```
+Projděme si nové konstrukce, které jsme právě definovali. Vlastnost `LastPush` je definována pomocí člena s `get` *výrazem pro* přistupujícího objektu. Neexistuje žádný `set` přistupující odkaz. Vynechání přistupujícího objektu `set` je způsob, jakým definujete vlastnost jen pro *čtení* v c#. (Ano, můžete vytvořit vlastnosti *pouze pro zápis* v c#, ale jejich hodnota je omezená.)
 
 Nakonec přidejte ještě jeden výstupní příkaz do konzoly a jste připraveni vytvořit a spustit tuto aplikaci znovu:
 

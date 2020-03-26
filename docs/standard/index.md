@@ -5,16 +5,16 @@ author: cartermp
 ms.date: 12/27/2019
 ms.technology: dotnet-standard
 ms.assetid: bbfe6465-329d-4982-869d-472e7ef85d93
-ms.openlocfilehash: ce76448b69a002216125192f75d24b38e7582260
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: b7856cbb12ac78830ceace6ad44214ca32444a82
+ms.sourcegitcommit: b75a45f0cfe012b71b45dd9bf723adf32369d40c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "76730777"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80228804"
 ---
 # <a name="net-guide"></a>Průvodce technologií .NET
 
-Průvodce .NET poskytuje informace o rozhraní .NET. V závislosti na vaší obeznámenosti s rozhraním .NET můžete prozkoumat různé části této příručky a další chody, například [.NET Core](../core/index.md) nebo [.NET Framework](../framework/index.md).
+Průvodce .NET poskytuje informace o rozhraní .NET. V závislosti na vaší obeznámenosti s rozhraním .NET můžete prozkoumat různé části této příručky a další chody, například [.NET Core](../core/index.md) nebo [.NET Framework](../framework/index.yml).
 
 ## <a name="new-to-net"></a>Novinka v rozhraní .NET
 
@@ -38,14 +38,14 @@ Pokud s rozhraním .NET Standard tečujete, podívejte se na [soubor .NET Standa
 
 Chcete-li přenést balíček aplikace, služby, součásti nebo nugetu na rozhraní .NET Standard nebo .NET Core, přečtěte [si informace o portu na .NET Core z rozhraní .NET Framework](../core/porting/index.md). Nástroje pro rozhraní .NET Standard a .NET Core jsou sdíleny, takže obsah je relevantní pro přenos do obou architektur.
 
-## <a name="net-concepts"></a>Koncepty rozhraní .NET
+## <a name="net-concepts"></a>Koncepty technologie .NET
 
 Další informace o hlavních konceptech rozhraní .NET naleznete v následujících tématech:
 
-* [Architektonické součásti .NET](components.md)
+* [Součásti architektury technologie .NET](components.md)
 * [.NET Standard](net-standard.md)
 * [Nativní interoperabilita](native-interop/index.md)
-* [Uvolněné](garbage-collection/index.md)
+* [Uvolnění paměti](garbage-collection/index.md)
 * [Základní typy v rozhraní .NET](base-types/index.md)
 * [Kolekce](collections/index.md)
 * [Data, časy a časová pásma](datetime/index.md)
@@ -57,6 +57,6 @@ Informace o třech hlavních jazycích .NET naleznete v následujících témate
 * [Průvodce jazykem F#](../fsharp/index.yml)
 * [Průvodce jazykem Visual Basic](../visual-basic/index.yml)
 
-## <a name="api-reference"></a>API – referenční informace
+## <a name="api-reference"></a>referenční dokumentace k rozhraní API
 
 Podrobné informace o všech rozhraních API, které jsou k dispozici v rozhraní .NET, naleznete v [tématu .NET API reference](../../api/index.md).

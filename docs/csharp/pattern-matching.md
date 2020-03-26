@@ -4,12 +4,12 @@ description: 'Informace o vzorodpovídající výrazy v C #'
 ms.date: 04/10/2019
 ms.technology: csharp-fundamentals
 ms.assetid: 1e575c32-2e2b-4425-9dca-7d118f3ed15b
-ms.openlocfilehash: 0c302499543c90bd01427e2791435968d580f644
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: bb6baf3771024d02b2027f81fd35b8be4872cf6e
+ms.sourcegitcommit: 99b153b93bf94d0fecf7c7bcecb58ac424dfa47c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79170381"
+ms.lasthandoff: 03/25/2020
+ms.locfileid: "80249230"
 ---
 # <a name="pattern-matching"></a>Porovnávání vzorů
 
@@ -106,7 +106,7 @@ Nakonec můžete přidat `null` případ, abyste zajistili, `null`že argument n
 
 [!code-csharp[NullCase](../../samples/snippets/csharp/PatternMatching/GeometricUtilities.cs#10_NullCase "Add null case")]
 
-Zvláštní chování pro `null` vzorek je zajímavé, protože konstanta `null` ve vzorku nemá typ, ale může být převedena na libovolný typ odkazu nebo typ s možnou hodnotou null. Spíše než `null` převést na libovolný typ, `null` jazyk definuje, že hodnota nebude odpovídat žádný typ vzor, bez ohledu na typ kompilace proměnné. Toto chování `switch` je nový vzorek `is` typu `is` na základě `false` konzistentní s příkazem: příkazy vždy vrátit, když je `null`zaškrtnutá hodnota . Je to také jednodušší: jakmile zkontrolujete typ, nepotřebujete další kontrolu null. Můžete vidět, že z toho, že neexistují žádné nulové kontroly v některém z bloků případu výše uvedených vzorků: nejsou nutné, protože odpovídající vzor typu zaručuje hodnotu bez nuly.
+Zvláštní chování pro `null` vzorek je zajímavé, protože konstanta `null` ve vzorku nemá typ, ale může být převedena na libovolný typ odkazu nebo typ hodnoty s hodnotou s možnou hodnotou, kterou lze hodnotit. Spíše než `null` převést na libovolný typ, `null` jazyk definuje, že hodnota nebude odpovídat žádný typ vzor, bez ohledu na typ kompilace proměnné. Toto chování `switch` je nový vzorek `is` typu `is` na základě `false` konzistentní s příkazem: příkazy vždy vrátit, když je `null`zaškrtnutá hodnota . Je to také jednodušší: jakmile zkontrolujete typ, nepotřebujete další kontrolu null. Můžete vidět, že z toho, že neexistují žádné nulové kontroly v některém z bloků případu výše uvedených vzorků: nejsou nutné, protože odpovídající vzor typu zaručuje hodnotu bez nuly.
 
 ## <a name="var-declarations-in-case-expressions"></a>`var`deklarace `case` ve výrazech
 

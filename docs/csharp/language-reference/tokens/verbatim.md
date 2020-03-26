@@ -8,12 +8,12 @@ helpviewer_keywords:
 - '@ special character [C#]'
 - '@ language element [C#]'
 ms.assetid: 89bc7e53-85f5-478a-866d-1cca003c4e8c
-ms.openlocfilehash: a3446eceb0d3c415e36ea1d2c7d8d6d34f65350d
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: b37f77273e767a5e5292e7707933892f57811d2a
+ms.sourcegitcommit: e48a54ebe62e874500a7043f6ee0b77a744d55b4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75712413"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80291764"
 ---
 # <a name="-c-reference"></a>@ (Odkaz na C#)
 
@@ -23,7 +23,7 @@ Speciální `@` znak slouží jako doslovný identifikátor. Může být použit
 
    [!code-csharp[verbatim1](../../../../samples/snippets/csharp/language-reference/keywords/verbatim1.cs#1)]
 
-1. Chcete-li označit, že literál řetězce má být interpretován doslovně. Znak `@` v této instanci definuje *doslovný řetězec literál*. Jednoduché sekvence escape (například `"\\"` pro zpětné lomítko), šestnáctkové sekvence `"\x0041"` escape (například pro velké A) a `"\u0041"` sekvence escape Unicode (například pro velké A) jsou interpretovány doslova. Pouze uvozovky`""`escape sekvence ( ) není interpretován doslovně; vytvoří jednu uvozovku. Navíc v případě doslovné [interpolované řetězce](interpolated.md) složená závorka escape sekvence (`{{` a `}}`) nejsou interpretovány doslovně; vytvářejí znaky s jednou závorkou. Následující příklad definuje dvě identické cesty k souborům, jednu pomocí literálu normálního řetězce a druhou pomocí doslovného literálu řetězce. Toto je jeden z více běžných použití doslovných řetězcových literál.
+1. Chcete-li označit, že literál řetězce má být interpretován doslovně. Znak `@` v této instanci definuje *doslovný řetězec literál*. Jednoduché sekvence escape (například `"\\"` pro zpětné lomítko), šestnáctkové sekvence `"\x0041"` escape (například pro velké A) a `"\u0041"` sekvence escape Unicode (například pro velké A) jsou interpretovány doslova. Pouze uvozovky`""`escape sekvence ( ) není interpretován doslovně; vytvoří jednu dvojitou uvozovku. Navíc v případě doslovné [interpolované řetězce](interpolated.md) složená závorka escape sekvence (`{{` a `}}`) nejsou interpretovány doslovně; vytvářejí znaky s jednou závorkou. Následující příklad definuje dvě identické cesty k souborům, jednu pomocí literálu normálního řetězce a druhou pomocí doslovného literálu řetězce. Toto je jeden z více běžných použití doslovných řetězcových literál.
 
    [!code-csharp[verbatim2](../../../../samples/snippets/csharp/language-reference/keywords/verbatim1.cs#2)]
 

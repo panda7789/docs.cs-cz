@@ -2,12 +2,12 @@
 title: Implementace objektů hodnot
 description: Architektura mikroslužeb .NET pro kontejnerizované aplikace .NET | Získejte do podrobností a možností implementovat objekty hodnoty pomocí nových funkcí entity framework.
 ms.date: 01/30/2020
-ms.openlocfilehash: 4ace5c141b1cbd2dcfefb7ea7165a4006b130479
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 919b23f7c1a0cd0aec8c4417f3af98469a0743dd
+ms.sourcegitcommit: 99b153b93bf94d0fecf7c7bcecb58ac424dfa47c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "77502515"
+ms.lasthandoff: 03/25/2020
+ms.locfileid: "80249419"
 ---
 # <a name="implement-value-objects"></a>Implementace hodnotových objektů
 
@@ -295,7 +295,7 @@ public class Address
 
 - Nelze volat `ModelBuilder.Entity<T>()` na vlastněné typy (aktuálně záměrné).
 
-- Žádná podpora pro volitelné (to znamená, nullable) vlastněné typy, které jsou mapovány s vlastníkem ve stejné tabulce (to znamená pomocí rozdělení tabulky). Důvodem je, že mapování se provádí pro každou vlastnost, nemáme samostatný sentinel pro null komplexní hodnotu jako celek.
+- Žádná podpora pro volitelné (to znamená, nullable) vlastněné typy, které jsou mapovány s vlastníkem ve stejné tabulce (to znamená pomocí rozdělení tabulky). Důvodem je, že mapování se provádí pro každou vlastnost, nemáme samostatný sentinel pro komplexní hodnotu null jako celek.
 
 - Žádná podpora mapování dědičnosti pro vlastněné typy, ale měli byste být schopni mapovat dva typy listů stejné hierarchie dědičnosti jako různé vlastněné typy. EF Core nebude důvod o tom, že jsou součástí stejné hierarchie.
 

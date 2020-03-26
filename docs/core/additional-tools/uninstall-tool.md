@@ -3,12 +3,12 @@ title: Nástroj odinstalace
 description: Přehled nástroje .NET Core Uninstall Tool, což je nástroj s průvodcem, který umožňuje řízené vyčištění sad SDK jádra .NET a runčase.
 author: sfoslund
 ms.date: 01/06/2020
-ms.openlocfilehash: bd20cba133cbb754dcca48e48b76a391a9efacba
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 816aef6ab8bc0e51bb8befb14fde60513d4fadfc
+ms.sourcegitcommit: 2514f4e3655081dcfe1b22470c0c28500f952c42
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "78847022"
+ms.lasthandoff: 03/18/2020
+ms.locfileid: "79507318"
 ---
 # <a name="net-core-uninstall-tool"></a>Nástroj pro odinstalaci .NET Core
 
@@ -44,6 +44,9 @@ Následující kroky ukazují doporučený postup pro spuštění nástroje pro 
 ### <a name="step-1---display-installed-net-core-sdks-and-runtimes"></a>Krok 1 – Zobrazení nainstalovaných sad SDK .NET Core A RunTimes
 
 Příkaz `dotnet-core-uninstall list` obsahuje seznam nainstalovaných sad SDK jádra .NET a dob běhu, které lze pomocí tohoto nástroje odebrat. Některé sady SDK a runtimes mohou být vyžadovány sadou Visual Studio a zobrazí se s poznámkou, proč se nedoporučuje je odinstalovat.
+
+> [!NOTE]
+> Výstup příkazu `dotnet-core-uninstall list` nebude odpovídat seznamu nainstalovaných verzí ve `dotnet --info` výstupu ve většině případů. Konkrétně tento nástroj nebude zobrazovat verze nainstalované soubory ZIP nebo spravované aplikací Visual Studio (libovolná verze nainstalovaná v sadě Visual Studio 2019 16.3 nebo novější). Jedním ze způsobů, jak zkontrolovat, zda je verze `Add or Remove Programs`spravována visual studio je zobrazit v aplikaci , kde Visual Studio spravované verze jsou označeny jako takové v jejich zobrazované názvy.
 
 **seznam odinstalace dotnet-core-uninstall**
 

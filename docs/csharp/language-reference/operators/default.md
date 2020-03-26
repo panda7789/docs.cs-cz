@@ -1,25 +1,30 @@
 ---
-title: výchozí operátor – odkaz jazyka C#
-description: Vytvoření výchozí hodnoty typu pomocí výchozího operátoru
-ms.date: 08/01/2019
+title: výchozí výrazy hodnot – odkaz jazyka C#
+description: Použití výrazů výchozí hodnoty k získání výchozí hodnoty typu
+ms.date: 03/13/2020
+f1_keywords:
+- default_CSharpKeyword
+- default
 helpviewer_keywords:
 - default keyword [C#]
-ms.openlocfilehash: 0d37fe952e71e74f014872231a2e58663dea9d18
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 2adfd8d24066e9dad50c3c18407d3ade71b4b68e
+ms.sourcegitcommit: 2514f4e3655081dcfe1b22470c0c28500f952c42
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79399481"
+ms.lasthandoff: 03/18/2020
+ms.locfileid: "79507175"
 ---
-# <a name="default-operator-c-reference"></a>výchozí operátor (odkaz C# )
+# <a name="default-value-expressions-c-reference"></a>výchozí výrazy hodnot (odkaz C#
 
-Operátor `default` vytvoří [výchozí hodnotu](../builtin-types/default-values.md) typu. Argument pro `default` operátor musí být název typu nebo parametr typu.
-
-Následující příklad ukazuje použití `default` operátoru:
-
-[!code-csharp-interactive[default of T](snippets/DefaultOperator.cs#WithOperand)]
+Výchozí hodnota výrazu vytváří [výchozí hodnotu](../builtin-types/default-values.md) typu. Existují dva druhy výchozích výrazů hodnoty: [volání výchozího operátora](#default-operator) a [výchozí literál](#default-literal).
 
 `default` Klíčové slovo můžete také použít jako výchozí popisek případu v rámci [ `switch` příkazu](../keywords/switch.md).
+
+## <a name="default-operator"></a>default – operátor
+
+Argument pro `default` operátor musí být název typu nebo parametr typu, jak ukazuje následující příklad:
+
+[!code-csharp-interactive[default of T](snippets/DefaultOperator.cs#WithOperand)]
 
 ## <a name="default-literal"></a>výchozí literál
 

@@ -8,12 +8,12 @@ helpviewer_keywords:
 - struct type [C#]
 - structure type [C#]
 ms.assetid: ff3dd9b7-dc93-4720-8855-ef5558f65c7c
-ms.openlocfilehash: b85d0df086f3ca65ed995594dd374286e1c3ba5c
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: b126706ff9c881e5c2d5cc7ee4833ac8896e3fcc
+ms.sourcegitcommit: 2514f4e3655081dcfe1b22470c0c28500f952c42
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "78847726"
+ms.lasthandoff: 03/18/2020
+ms.locfileid: "79507240"
 ---
 # <a name="structure-types-c-reference"></a>Typy struktur (odkaz C#
 
@@ -43,7 +43,7 @@ Při návrhu typu struktury máte stejné možnosti jako u typu [třídy,](../ke
 
 V C# je nutné inicializovat deklarované proměnné před ji lze použít. Vzhledem k tomu, `null` že proměnná typu struktury nemůže být (pokud se nejedná o proměnnou [typu hodnoty s možnou hodnotou s možnou hodnotou),](nullable-value-types.md)je nutné vytvořit instanci odpovídajícího typu. Existuje několik způsobů, jak to udělat.
 
-Obvykle konsitujete typ struktury voláním příslušného [`new`](../operators/new-operator.md) konstruktoru s operátorem. Každý typ struktury má alespoň jeden konstruktor. To je implicitní konstruktor bez parametrů, který vytváří [výchozí hodnotu](default-values.md) typu. Můžete také použít [výchozí](../operators/default.md) operátor nebo literál k vytvoření výchozí hodnoty typu.
+Obvykle konsitujete typ struktury voláním příslušného [`new`](../operators/new-operator.md) konstruktoru s operátorem. Každý typ struktury má alespoň jeden konstruktor. To je implicitní konstruktor bez parametrů, který vytváří [výchozí hodnotu](default-values.md) typu. Výchozí [výraz hodnoty](../operators/default.md) můžete také použít k vytvoření výchozí hodnoty typu.
 
 Pokud jsou přístupná všechna pole instance typu struktury, můžete ji `new` také vytvořit bez operátora. V takovém případě je nutné inicializovat všechna pole instance před prvním použitím instance. Následující příklad ukazuje, jak to udělat:
 

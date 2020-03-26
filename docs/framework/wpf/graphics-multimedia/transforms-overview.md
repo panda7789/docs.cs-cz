@@ -3,24 +3,24 @@ title: Přehled transformace
 ms.date: 03/30/2017
 helpviewer_keywords:
 - transformations [WPF], about transformations
-- classes [WPF], 2-D transform
-- transform classes [WPF], 2-D
-- 2-D transform classes
+- classes [WPF], 2D transform
+- transform classes [WPF], 2D
+- 2D transform classes
 - FrameworkElement objects [WPF], rotating
 - FrameworkElement objects [WPF], skewing
 - FrameworkElement objects [WPF], translating
 - Transforms [WPF], about Transforms
 - FrameworkElement objects [WPF], scaling
 ms.assetid: 8f153d5e-ed61-4aa5-a7cd-286f0c427a13
-ms.openlocfilehash: 49fb0109e1d7db065f7e241955f30cb038699020
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: c5f29404a301eb023ff24b2890531dede6440ec4
+ms.sourcegitcommit: 267d092663aba36b6b2ea853034470aea493bfae
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79187471"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80111956"
 ---
 # <a name="transforms-overview"></a>Přehled transformace
-Toto téma popisuje, jak používat <xref:System.Windows.Media.Transform> 2D třídy otáčet, měnit <xref:System.Windows.FrameworkElement> velikost (překládat) a zkosit objekty.  
+Toto téma popisuje, jak <xref:System.Windows.Media.Transform> používat 2D třídy k otáčení, <xref:System.Windows.FrameworkElement> škálování, přesouvání (překládání) a zkosení objektů.  
 
 <a name="whatIsATransformSection"></a>
 ## <a name="what-is-a-transform"></a>Co je transformace?  
@@ -31,7 +31,7 @@ Toto téma popisuje, jak používat <xref:System.Windows.Media.Transform> 2D tř
   
  V následující tabulce je [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] uvedena struktura matice.  
   
-### <a name="a-2-d-transformation-matrix"></a>Dvoudtransformační matice  
+### <a name="a-2d-transformation-matrix"></a>2D transformační matice  
   
 ||||  
 |-|-|-|  
@@ -142,7 +142,7 @@ LayoutTransform slouží k otočení tlačítka
   
  [!code-xaml[Transforms_snip#GraphicsMMAnimatedRotateButtonExampleWholePage](~/samples/snippets/csharp/VS_Snippets_Wpf/Transforms_snip/CS/ButtonAnimatedRotateTransformExample.xaml#graphicsmmanimatedrotatebuttonexamplewholepage)]  
   
- Kompletní ukázku naleznete v [tématu Ukázka 2D transformací](https://github.com/Microsoft/WPF-Samples/tree/master/Graphics/2DTransforms). Další informace o animacích naleznete v přehledu [animací](animation-overview.md).  
+ Kompletní ukázku naleznete v tématu [2D transformace Ukázka](https://github.com/Microsoft/WPF-Samples/tree/master/Graphics/2DTransforms). Další informace o animacích naleznete v přehledu [animací](animation-overview.md).  
   
 <a name="freezable_features"></a>
 ## <a name="freezable-features"></a>Zmrazitelné funkce  

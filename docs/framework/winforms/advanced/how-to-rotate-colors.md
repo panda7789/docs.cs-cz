@@ -8,46 +8,46 @@ helpviewer_keywords:
 - colors [Windows Forms], rotating
 - examples [Windows Forms], rotating colors
 ms.assetid: e2e4c300-159c-4f4a-9b56-103b0f7cbc05
-ms.openlocfilehash: d251a223fca50eebc3a959ea694242992c4a1dbe
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: 8d2717dd7b819e963126072279b361fda02188bc
+ms.sourcegitcommit: 267d092663aba36b6b2ea853034470aea493bfae
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65590321"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80111332"
 ---
 # <a name="how-to-rotate-colors"></a>Postupy: Otáčení barev
-Otočení v four-dimensional barevný prostor je obtížné vizualizace. Můžeme provádět to usnadňuje vizualizaci otočení souhlasit a udržovat jeden barevným opraveno. Předpokládejme, že jsme souhlas zachovat alfa pevně nastavena na 1 (úplně neprůhledné). Potom jsme vizualizace trojrozměrného barevný prostor pomocí červené, zelené a modré osy, jak je znázorněno na následujícím obrázku.  
+Rotace ve čtyřrozměrném barevném prostoru je obtížné vizualizovat. Můžeme usnadnit vizualizaci rotace tím, že souhlasís tím, aby jedna z barevných složek pevné. Předpokládejme, že se dohodneme na zachování alfa komponenty pevné na 1 (plně neprůhledné). Pak můžeme vizualizovat trojrozměrný barevný prostor s červenými, zelenými a modrými osami, jak je znázorněno na následujícím obrázku.  
   
- ![Obrázek, na kterém otočení pomocí červené, zelené a modré osy.](./media/how-to-rotate-colors/rotation-red-green-blue-axes.gif)  
+ ![Obrázek znázorňovaný otočením s červenými, zelenými a modrými osami.](./media/how-to-rotate-colors/rotation-red-green-blue-axes.gif)  
   
- Barvu můžete představit jako bod v 3D prostoru. Například bod (1, 0, 0) v prostoru představuje červenou barvu a bod (0, 1, 0) v prostoru představuje zelenou barvu.  
+ Barvu lze považovat za bod ve 3D prostoru. Například bod (1, 0, 0) v prostoru představuje červenou barvu a bod (0, 1, 0) v prostoru představuje zelenou barvu.  
   
- Následující obrázek znázorňuje prostřednictvím úhel 60 stupňů v rovině červenou a zelenou význam otočení barev (1, 0, 0). Otočení paralelně roviny k rovině červenou a zelenou můžete představit jako otočení o modrá osu.  
+ Následující obrázek znázorňuje, co znamená otočit barvu (1, 0, 0) pod úhlem 60 stupňů v červenozelené rovině. Otočení v rovině rovnoběžné s červeno-zelenou rovinou lze považovat za rotaci kolem modré osy.  
   
- ![Obrázek, na kterém otočení o modrá osu.](./media/how-to-rotate-colors/rotation-about-blue-axis.gif)  
+ ![Obrázek znázorňuje otočení kolem modré osy.](./media/how-to-rotate-colors/rotation-about-blue-axis.gif)  
   
- Následující obrázek znázorňuje způsob inicializace matice barev k provedení rotace o každé ze tří OS souřadnic (červená, zelená, modrá):  
+ Následující obrázek znázorňuje, jak inicializovat matici barev, aby se provedla rotace kolem každé ze tří os souřadnic (červená, zelená, modrá):  
   
- ![Inicializujte matice barev k provedení rotace o tři osy.](./media/how-to-rotate-colors/rotation-about-three-axes.gif)  
+ ![Inicializovat matici barev, abyste provedli otočení asi tři osy.](./media/how-to-rotate-colors/rotation-about-three-axes.gif)  
   
 ## <a name="example"></a>Příklad  
- Následující příklad používá image, která je všechny jednu barvu (1, 0, 0.6) a platí otočení 60 stupňů o modrá osu. Úhel otočení je, jež navýšení kapacity v rovině, který je paralelní k rovině červenou a zelenou.  
+ Následující příklad přebírá obraz, který je všechny jednu barvu (1, 0, 0,6) a použije otočení o 60 stupňů kolem modré osy. Úhel natočení je vymet v rovině, která je rovnoběžná s červenozelenou rovinou.  
   
- Následující obrázek znázorňuje původní obrázek nalevo a obrázek otočí barvu na pravé straně:  
+ Následující obrázek znázorňuje původní obrázek vlevo a obrázek otočený o barvy vpravo:  
   
- ![Obrázek, který ukazuje původní image a image barva otočen.](./media/how-to-rotate-colors/original-color-rotated-images.png)  
+ ![Obrázek znázorňuje původní obraz a barevně otočený obraz.](./media/how-to-rotate-colors/original-color-rotated-images.png)  
   
- Následující obrázek znázorňuje vizualizace otáčení barev provést v následujícím kódu:
+ Následující obrázek znázorňuje vizualizaci otáčení barev provedenou v následujícím kódu:
   
- ![Obrázek, který zobrazuje vizualizaci otočení barev.](./media/how-to-rotate-colors/visualization-color-rotation.gif)  
+ ![Obrázek znázorňuje vizualizaci otáčení barev.](./media/how-to-rotate-colors/visualization-color-rotation.gif)  
   
  [!code-csharp[System.Drawing.RotateColors#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.RotateColors/CS/Form1.cs#1)]
  [!code-vb[System.Drawing.RotateColors#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.RotateColors/VB/Form1.vb#1)]  
   
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
- V předchozím příkladu je určený k použití pomocí Windows Forms a vyžaduje <xref:System.Windows.Forms.PaintEventArgs> `e`, což je parametr <xref:System.Windows.Forms.Control.Paint> obslužné rutiny události. Nahraďte `RotationInput.bmp` název a cesta platné ve vašem systému.  
+ Předchozí příklad je určen pro použití s windows <xref:System.Windows.Forms.PaintEventArgs> `e`forms a vyžaduje <xref:System.Windows.Forms.Control.Paint> , což je parametr obslužné rutiny události. Nahraďte `RotationInput.bmp` název souboru obrázku a cestu platnou v systému.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Drawing.Imaging.ColorMatrix>
 - <xref:System.Drawing.Imaging.ImageAttributes>

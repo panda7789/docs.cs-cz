@@ -3,12 +3,12 @@ title: Vytváření typů mixinu pomocí výchozích metod rozhraní
 description: Pomocí výchozích členů rozhraní můžete rozšířit rozhraní s volitelnými výchozími implementacemi pro implementátory.
 ms.technology: csharp-advanced-concepts
 ms.date: 10/04/2019
-ms.openlocfilehash: aaf8d34e27c9c56d95560656eb7a7b24b152c053
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: ee0536ef51f9bea3e6851be23cc19fa28cc6916b
+ms.sourcegitcommit: 07123a475af89b6da5bb6cc51ea40ab1e8a488f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "78240103"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80134375"
 ---
 # <a name="tutorial-mix-functionality-in-when-creating-classes-using-interfaces-with-default-interface-methods"></a>Kurz: Kombinace funkcí při vytváření tříd pomocí rozhraní s výchozími metodami rozhraní
 
@@ -117,7 +117,7 @@ Tento scénář zobrazuje základní rozhraní bez implementace. Přidání meto
 
 [!code-csharp[Enumeration for power status](~/samples/snippets/csharp/tutorials/mixins-with-interfaces/ILight.cs?name=SnippetPowerStatus)]
 
-Výchozí implementace předpokládá napájení střídavého proudu:
+Výchozí implementace nepředpokládá žádnou moc:
 
 [!code-csharp[Report a default power status](~/samples/snippets/csharp/tutorials/mixins-with-interfaces/ILight.cs?name=SnippetILightInterface)]
 

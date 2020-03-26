@@ -8,19 +8,19 @@ helpviewer_keywords:
 - geometry classes [WPF]
 - graphics [WPF], geometry classes
 ms.assetid: 9fba8934-98b7-4af6-82f6-f4ef887f963a
-ms.openlocfilehash: 1329f26e588b90fcd25052fb805058915b8825e3
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: ff42e59edd9d98b0b52dc3bdd3ace0c35df60878
+ms.sourcegitcommit: 267d092663aba36b6b2ea853034470aea493bfae
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79186477"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80112372"
 ---
 # <a name="geometry-overview"></a>Přehled geometrie
 Tento přehled popisuje, jak [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] <xref:System.Windows.Media.Geometry> používat třídy k popisu obrazců. Toto téma také kontrastuje <xref:System.Windows.Media.Geometry> rozdíly <xref:System.Windows.Shapes.Shape> mezi objekty a prvky.  
 
 <a name="wcpsdk_graphics_geometry_introduction"></a>
 ## <a name="what-is-a-geometry"></a>Co je geometrie?  
- Třída <xref:System.Windows.Media.Geometry> a třídy, které z <xref:System.Windows.Media.EllipseGeometry>ní <xref:System.Windows.Media.PathGeometry>jsou <xref:System.Windows.Media.CombinedGeometry>odvozeny, například , , a , umožňují popsat geometrii obrazce 2D. Tyto geometrické popisy mají mnoho použití, jako je definování tvaru malovat na obrazovku nebo definování hit-test a klip oblastí. K definování cesty animace můžete dokonce použít geometrii.  
+ Třída <xref:System.Windows.Media.Geometry> a třídy, které z <xref:System.Windows.Media.EllipseGeometry>ní <xref:System.Windows.Media.PathGeometry>jsou <xref:System.Windows.Media.CombinedGeometry>odvozeny, například , , a , umožňují popsat geometrii 2D tvaru. Tyto geometrické popisy mají mnoho použití, jako je definování tvaru malovat na obrazovku nebo definování hit-test a klip oblastí. K definování cesty animace můžete dokonce použít geometrii.  
   
  <xref:System.Windows.Media.Geometry>objekty mohou být jednoduché, například obdélníky a kružnice nebo složené, vytvořené ze dvou nebo více objektů geometrie.  Složitější geometrie lze vytvořit <xref:System.Windows.Media.PathGeometry> pomocí <xref:System.Windows.Media.StreamGeometry> tříd a, které umožňují popsat oblouky a křivky.  
   
@@ -28,7 +28,7 @@ Tento přehled popisuje, jak [!INCLUDE[TLA#tla_winclient](../../../../includes/t
   
 <a name="wcpsdk_graphics_geometry_geometryandshapes"></a>
 ## <a name="geometries-vs-shapes"></a>Geometrie vs. tvary  
- A <xref:System.Windows.Media.Geometry> <xref:System.Windows.Shapes.Shape> třídy se zdají podobné v tom, <xref:System.Windows.Media.EllipseGeometry> že <xref:System.Windows.Shapes.Ellipse> oba popisují 2D tvary (porovnat a například), ale existují důležité rozdíly.  
+ <xref:System.Windows.Media.Geometry> Třídy <xref:System.Windows.Shapes.Shape> a vypadají podobně v tom, že <xref:System.Windows.Media.EllipseGeometry> <xref:System.Windows.Shapes.Ellipse> oba popisují 2D tvary (například porovnání a například), ale existují důležité rozdíly.  
   
  Pro jednoho <xref:System.Windows.Media.Geometry> třídy dědí <xref:System.Windows.Freezable> z <xref:System.Windows.Shapes.Shape> třídy, <xref:System.Windows.FrameworkElement>zatímco třída dědí z . Vzhledem k <xref:System.Windows.Shapes.Shape> tomu, že se jedná o prvky, mohou objekty vykreslit samy sebe a účastnit se systému rozložení, zatímco <xref:System.Windows.Media.Geometry> objekty nemohou.  
   

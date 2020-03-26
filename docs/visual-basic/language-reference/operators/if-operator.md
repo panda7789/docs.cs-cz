@@ -11,16 +11,16 @@ helpviewer_keywords:
 - conditional operator [Visual Basic]
 - If Operator [Visual Basic]
 ms.assetid: dd56c9df-7cd4-442c-9ba6-20c70ee44c8f
-ms.openlocfilehash: 6d25519dac31dc91f8560fd3252ba3e2622de370
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 3b45a5afe331bd00c2b92f8c305351b77bc319cf
+ms.sourcegitcommit: 99b153b93bf94d0fecf7c7bcecb58ac424dfa47c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74331006"
+ms.lasthandoff: 03/25/2020
+ms.locfileid: "80249484"
 ---
 # <a name="if-operator-visual-basic"></a>If – operátor (Visual Basic)
 
-Nástroj používá k podmíněnému vrácení jedné ze dvou hodnot hodnocení krátkodobého okruhu. Operátor `If` lze volat se třemi argumenty nebo dvěma argumenty.
+Používá vyhodnocení zkratu podmíněně vrátit jednu ze dvou hodnot. Operátor `If` lze volat se třemi argumenty nebo se dvěma argumenty.
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -28,43 +28,43 @@ Nástroj používá k podmíněnému vrácení jedné ze dvou hodnot hodnocení 
 If( [argument1,] argument2, argument3 )
 ```
 
-## <a name="if-operator-called-with-three-arguments"></a>If volal operátor se třemi argumenty
+## <a name="if-operator-called-with-three-arguments"></a>Pokud operátor volal se třemi argumenty
 
-Když je `If` volána pomocí tří argumentů, první argument musí být vyhodnocen na hodnotu, která může být převedena jako `Boolean`. Tato `Boolean` hodnota určuje, který z dalších dvou argumentů bude vyhodnocen a vrácen. Následující seznam platí pouze v případě, že je operátor `If` volán pomocí tří argumentů.
+Při `If` volání pomocí tří argumentů, první argument musí vyhodnotit na `Boolean`hodnotu, která může být přetypována jako . Tato `Boolean` hodnota určí, který z dalších dvou argumentů je vyhodnocen a vrácen. Následující seznam platí pouze `If` v případě, že operátor je volána pomocí tří argumentů.
 
 ### <a name="parts"></a>Součásti
 
-|Termín|Definice|
+|Označení|Definice|
 |---|---|
-|`argument1`|Požadováno. `Boolean`. Určuje, který z dalších argumentů má být vyhodnocen a vrácen.|
-|`argument2`|Požadováno. `Object`. Vyhodnoceno a vráceno, pokud `argument1` vyhodnocuje jako `True`.|
-|`argument3`|Požadováno. `Object`. Vyhodnoceno a vráceno, pokud `argument1` vyhodnocuje jako `False` nebo pokud `argument1` je`Boolean` proměnná s [možnou hodnotou null](../../../visual-basic/programming-guide/language-features/data-types/nullable-value-types.md) , která je vyhodnocena jako [Nothing](../../../visual-basic/language-reference/nothing.md).|
+|`argument1`|Povinná hodnota. `Boolean`. Určuje, které z ostatních argumentů vyhodnotit a vrátit.|
+|`argument2`|Povinná hodnota. `Object`. Vyhodnotit a `argument1` vrátit, `True`pokud vyhodnotí na .|
+|`argument3`|Povinná hodnota. `Object`. Vyhodnotit a `argument1` vrátit, `False` pokud `argument1` vyhodnotí nebo pokud je [Nullable](../../../visual-basic/programming-guide/language-features/data-types/nullable-value-types.md) `Boolean` proměnná, která vyhodnotí [Nothing](../../../visual-basic/language-reference/nothing.md).|
 
-Operátor `If`, který se nazývá se třemi argumenty, funguje jako `IIf` funkce s tím rozdílem, že používá testování pomocí krátkého okruhu. Funkce `IIf` vždy vyhodnocuje všechny tři argumenty, zatímco operátor `If`, který má tři argumenty, vyhodnocuje pouze dva z nich. Vyhodnotí se první argument `If` a výsledek se přetypování jako `Boolean` hodnota, `True` nebo `False`. Pokud je hodnota `True`, vyhodnotí se `argument2` a vrátí se její hodnota, ale `argument3` není vyhodnocena. Pokud je hodnota výrazu `Boolean` `False`, je vyhodnocen `argument3` a jeho hodnota je vrácena, ale `argument2` není vyhodnocena. Následující příklady ilustrují použití `If`, když se používají tři argumenty:
+Operátor, `If` který je volán se `IIf` třemi argumenty funguje jako funkce s tím rozdílem, že používá vyhodnocení zkratu. Funkce `IIf` vždy vyhodnotí všechny tři své argumenty, zatímco `If` operátor, který má tři argumenty vyhodnotí pouze dva z nich. První `If` argument je vyhodnocen a `Boolean` výsledek `True` je `False`přetypován jako hodnota nebo . Pokud je `True`hodnota `argument2` , je vyhodnocena `argument3` a její hodnota je vrácena, ale není vyhodnocena. Pokud `Boolean` je `False`hodnota výrazu `argument3` , je vyhodnocena `argument2` a jeho hodnota je vrácena, ale není vyhodnocena. Následující příklady ilustrují použití při `If` použití tří argumentů:
 
 [!code-vb[VbVbalrOperators#100](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class4.vb#100)]
 
-Následující příklad znázorňuje hodnotu vyhodnocování krátkodobého okruhu. Příklad ukazuje dva pokusy o dělení `number` proměnných podle proměnných `divisor` kromě případů, kdy je `divisor` nula. V takovém případě by měl být vrácen 0 a žádný pokus o provedení dělení, protože by došlo k chybě za běhu. Vzhledem k tomu, že výraz `If` používá testování pomocí krátkého okruhu, vyhodnocuje buď druhý, nebo třetí argument v závislosti na hodnotě prvního argumentu. Pokud je první argument true, dělitel není nula a je bezpečné vyhodnotit druhý argument a provést dělení. Pokud je první argument false, je vyhodnocen pouze třetí argument a je vrácena hodnota 0. Proto pokud je dělitel 0, není proveden žádný pokus o provedení dělení a žádné výsledky chyby. Vzhledem k tomu, že `IIf` nepoužívá vyhodnocování krátkých okruhů, je druhý argument vyhodnocen i v případě, že je první argument nepravdivý. Tím dojde k chybě dělení nulou v době běhu.
+Následující příklad ilustruje hodnotu hodnocení zkratu. Příklad ukazuje dva pokusy `number` o `divisor` rozdělení `divisor` proměnné proměnnou s výjimkou případů, kdy je nula. V takovém případě by měla být vrácena 0 a žádný pokus by měla být provedena k provedení dělení, protože by došlo k chybě za běhu. Vzhledem `If` k tomu, že výraz používá vyhodnocení zkratu, vyhodnotí druhý nebo třetí argument v závislosti na hodnotě prvního argumentu. Pokud je splněn první argument, dělitel není nula a je bezpečné vyhodnotit druhý argument a provést dělení. Pokud je první argument false, je vyhodnocen pouze třetí argument a je vrácena 0. Proto při dělitel je 0, žádný pokus o provedení dělení a žádné výsledky chyby. Však `IIf` protože nepoužívá vyhodnocení zkratu, druhý argument je vyhodnocena i v případě, že první argument je false. To způsobí chybu dělení časem.
 
 [!code-vb[VbVbalrOperators#101](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class4.vb#101)]
 
-## <a name="if-operator-called-with-two-arguments"></a>If volal operátor se dvěma argumenty
+## <a name="if-operator-called-with-two-arguments"></a>Pokud operátor volal se dvěma argumenty
 
-První argument pro `If` lze vynechat. To umožňuje operátorovi zavolat pouze pomocí dvou argumentů. Následující seznam platí pouze v případě, že je operátor `If` volán se dvěma argumenty.
+První argument `If` lze vynechat. To umožňuje operátoru volat pomocí pouze dva argumenty. Následující seznam platí pouze `If` v případě, že operátor je volána se dvěma argumenty.
 
 ### <a name="parts"></a>Součásti
 
-|Termín|Definice|
+|Označení|Definice|
 |---|---|
-|`argument2`|Požadováno. `Object`. Musí se jednat o odkaz nebo typ s možnou hodnotou null. Vyhodnoceno a vráceno, když se vyhodnotí jako cokoli jiného než `Nothing`.|
-|`argument3`|Požadováno. `Object`. Vyhodnoceno a vráceno, pokud `argument2` vyhodnocuje jako `Nothing`.|
+|`argument2`|Povinná hodnota. `Object`. Musí se jednat o odkaz nebo hodnotu s možnou hodnotou, jejíž hodnotu lze hodnotit. Vyhodnocena a vrácena, `Nothing`když se vyhodnotí na něco jiného než .|
+|`argument3`|Povinná hodnota. `Object`. Vyhodnotit a `argument2` vrátit, `Nothing`pokud vyhodnotí na .|
 
-Při vynechání argumentu `Boolean` musí být prvním argumentem odkaz nebo typ s možnou hodnotou null. Pokud je první argument vyhodnocen jako `Nothing`, je vrácena hodnota druhého argumentu. Ve všech ostatních případech je vrácena hodnota prvního argumentu. Následující příklad ukazuje, jak Toto vyhodnocení funguje:
+Pokud `Boolean` je argument vynechán, první argument musí být odkaz nebo typ hodnoty s hodnotou, kterou lze hodnotit. Pokud první argument vyhodnotí `Nothing`, je vrácena hodnota druhého argumentu. Ve všech ostatních případech je vrácena hodnota první argument. Následující příklad ukazuje, jak toto hodnocení funguje:
 
 [!code-vb[VbVbalrOperators#102](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class4.vb#102)]
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:Microsoft.VisualBasic.Interaction.IIf%2A>
 - [Typy hodnot s povolenou hodnotou Null](../../programming-guide/language-features/data-types/nullable-value-types.md)
-- [Nothing](../nothing.md)
+- [Nic](../nothing.md)

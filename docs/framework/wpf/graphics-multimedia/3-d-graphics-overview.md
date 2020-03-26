@@ -5,46 +5,46 @@ dev_langs:
 - csharp
 - vb
 helpviewer_keywords:
-- 3-D graphics [WPF]
-- graphics [WPF], 3-D
+- 3D graphics [WPF]
+- graphics [WPF], 3D
 ms.assetid: 67f31ed4-e36b-4b02-9889-dcce245d7afc
-ms.openlocfilehash: 725a6dc8e4b4a7b474a7dd85c87cdedd93ba09c6
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: e4918f7737bbe57a4f29c6c5cff1099f4f21674b
+ms.sourcegitcommit: e48a54ebe62e874500a7043f6ee0b77a744d55b4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79186964"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80291809"
 ---
-# <a name="3-d-graphics-overview"></a>Přehled 3D grafiky
-<a name="introduction"></a>Funkce 3D v [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] aplikaci umožňuje vývojářům kreslit, transformovat a animovat 3D grafiku v kódu značek i procedurálního kódu. Vývojáři mohou kombinovat 2D a 3D grafiku a vytvářet bohaté ovládací prvky, poskytovat složité ilustrace dat nebo vylepšovat uživatelské prostředí rozhraní aplikace. 3-D podpora [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] v není navržena tak, aby poskytovala plnohodnotnou platformu pro vývoj her. Toto téma obsahuje přehled 3D funkcí [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] v grafickém systému.  
+# <a name="3d-graphics-overview"></a>Přehled 3D grafiky
+<a name="introduction"></a>Funkce 3D umožňuje [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] vývojářům kreslit, transformovat a animovat 3D grafiku v kódu značek i procedurálního kódu. Vývojáři mohou kombinovat 2D a 3D grafiku a vytvářet tak bohaté ovládací prvky, poskytovat složité ilustrace dat nebo vylepšovat uživatelské prostředí rozhraní aplikace. 3D podpora [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] v oblasti není navržena tak, aby poskytovala plnohodnotnou platformu pro vývoj her. Toto téma obsahuje přehled 3D [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] funkcí v grafickém systému.  
 
 <a name="threed_in_2d"></a>
-## <a name="3-d-in-a-2-d-container"></a>3D ve 2D kontejneru  
- Obsah 3D grafiky v aplikaci [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] je <xref:System.Windows.Controls.Viewport3D>zapouzdřen v elementu , který se může účastnit dvourozměrné struktury prvků. Grafický systém zachází <xref:System.Windows.Controls.Viewport3D> jako dvou-dimenzionální vizuální [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]prvek, stejně jako mnoho jiných v . <xref:System.Windows.Controls.Viewport3D>funguje jako okno – výřez – do trojrozměrné scény. Přesněji řečeno, je to povrch, na kterém je promítána 3D scéna.  
+## <a name="3d-in-a-2d-container"></a>3D ve 2D kontejneru  
+ Obsah 3D [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] grafiky v aplikaci je <xref:System.Windows.Controls.Viewport3D>zapouzdřen v elementu , který se může účastnit dvourozměrné struktury prvků. Grafický systém zachází <xref:System.Windows.Controls.Viewport3D> jako dvou-dimenzionální vizuální [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]prvek, stejně jako mnoho jiných v . <xref:System.Windows.Controls.Viewport3D>funguje jako okno – výřez – do trojrozměrné scény. Přesněji řečeno, je to povrch, na kterém je promítána 3D scéna.  
   
- V konvenční 2D aplikaci <xref:System.Windows.Controls.Viewport3D> použijte stejně jako jiný prvek kontejneru, jako je Grid nebo Canvas.  I když <xref:System.Windows.Controls.Viewport3D> můžete použít s jinými 2D nakreslenými objekty ve stejném grafu scény, nelze interproniknout 2D a 3D objekty v rámci <xref:System.Windows.Controls.Viewport3D>.  Toto téma se zaměří na to, <xref:System.Windows.Controls.Viewport3D>jak nakreslit 3D grafiku uvnitř rozhraní .  
+ V konvenční 2D aplikaci použijte <xref:System.Windows.Controls.Viewport3D> jako jiný prvek kontejneru, jako je Grid nebo Canvas.  I když <xref:System.Windows.Controls.Viewport3D> můžete použít s jinými 2D nakreslenými objekty ve stejném grafu <xref:System.Windows.Controls.Viewport3D>scény, nelze interproniknout 2D a 3D objekty v rámci .  Toto téma se zaměří na to, <xref:System.Windows.Controls.Viewport3D>jak nakreslit 3D grafiku uvnitř rozhraní .  
   
 <a name="coord_space"></a>
-## <a name="3-d-coordinate-space"></a>Prostor ový souřadnicový prostor  
- Souřadnicový [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] systém pro 2D grafiku vyhledá počátek v levém horním rohu oblasti vykreslování (obvykle na obrazovce). V 2D systému postupují kladné hodnoty osy x doprava a kladné hodnoty osy y postupují směrem dolů.  V prostorovém souřadnicovém systému je však počátek umístěn ve středu oblasti vykreslování, přičemž kladné hodnoty osy x směřují doprava, ale kladné hodnoty osy y postupují nahoru a kladné hodnoty osy z postupují směrem ven od počátku. , směrem k divákovi.  
+## <a name="3d-coordinate-space"></a>3D souřadný prostor  
+ Souřadnicový [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] systém pro 2D grafiku vyhledá počátek v levém horním rohu oblasti vykreslování (obvykle na obrazovce). Ve 2D systému postupují kladné hodnoty osy x doprava a kladné hodnoty osy y postupují dolů.  Ve 3D souřadnicovém systému je však počátek umístěn ve středu oblasti vykreslování, přičemž kladné hodnoty osy x směřují doprava, ale kladné hodnoty osy y postupují nahoru a kladné hodnoty osy z postupují směrem ven od počátku, směrem k divákovi.  
   
  ![Souřadné systémy](./media/coordsystem-1.png "CoordSystem-1")  
 Konvenční reprezentace 2D a 3D souřadnicových systémů  
   
- Prostor definovaný těmito osami je stacionární referenční [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]rámec pro prostorové objekty v . Při vytváření modelů v tomto prostoru a vytváření světel a kamer pro jejich zobrazení je užitečné odlišit tento stacionární referenční rámec neboli "světový prostor" od místního referenčního rámce, který vytvoříte pro každý model, když na něj použijete transformace. Nezapomeňte také, že objekty ve světovém prostoru mohou vypadat úplně jinak, nebo nemusí být viditelné vůbec, v závislosti na nastavení světla a kamery, ale pozice kamery nemění umístění objektů ve světovém prostoru.  
+ Prostor definovaný těmito osami je stacionární referenční [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]rámec pro 3D objekty v . Při vytváření modelů v tomto prostoru a vytváření světel a kamer pro jejich zobrazení je užitečné odlišit tento stacionární referenční rámec neboli "světový prostor" od místního referenčního rámce, který vytvoříte pro každý model, když na něj použijete transformace. Nezapomeňte také, že objekty ve světovém prostoru mohou vypadat úplně jinak, nebo nemusí být viditelné vůbec, v závislosti na nastavení světla a kamery, ale pozice kamery nemění umístění objektů ve světovém prostoru.  
   
 <a name="cameras"></a>
 ## <a name="cameras-and-projections"></a>Kamery a projekce  
- Vývojáři, kteří pracují ve 2-D, jsou zvyklí na umístění kreslicích primitivů na dvourozměrné obrazovce. Když vytváříte 3D scénu, je důležité si uvědomit, že skutečně vytváříte 2D reprezentaci 3D objektů. Vzhledem k tomu, že 3D scéna vypadá odlišně v závislosti na pohledu diváka, musíte tento úhel pohledu určit. Třída <xref:System.Windows.Media.Media3D.Camera> umožňuje zadat tento úhel pohledu pro 3D scénu.  
+ Vývojáři, kteří pracují ve 2D, jsou zvyklí na umístění kresličových primitivů na dvourozměrné obrazovce. Když vytváříte 3D scénu, je důležité si uvědomit, že skutečně vytváříte 2D reprezentaci 3D objektů. Vzhledem k tomu, že 3D scéna vypadá odlišně v závislosti na pohledu diváka, musíte tento úhel pohledu určit. Třída <xref:System.Windows.Media.Media3D.Camera> umožňuje určit tento úhel pohledu pro 3D scénu.  
   
- Dalším způsobem, jak pochopit, jak je 3D scéna reprezentována na 2D povrchu, je popsat scénu jako projekci na zobrazovací plochu. Umožňuje <xref:System.Windows.Media.Media3D.ProjectionCamera> zadat různé projekce a jejich vlastnosti, abyste změnili způsob, jakým divák vidí 3D modely. A <xref:System.Windows.Media.Media3D.PerspectiveCamera> určuje projekci, která zkracuje scénu.  Jinými <xref:System.Windows.Media.Media3D.PerspectiveCamera> slovy poskytuje mizející bod perspektivy.  Můžete určit polohu kamery v souřadnicovém prostoru scény, směr a zorné pole kamery a vektor, který definuje směr "nahoru" ve scéně. Následující diagram znázorňuje <xref:System.Windows.Media.Media3D.PerspectiveCamera>'s projekce.  
+ Dalším způsobem, jak pochopit, jak je 3D scéna reprezentována na 2D povrchu, je popis scény jako projekce na zobrazovací plochu. Umožňuje <xref:System.Windows.Media.Media3D.ProjectionCamera> určit různé projekce a jejich vlastnosti, abyste změnili způsob, jakým divák vidí 3D modely. A <xref:System.Windows.Media.Media3D.PerspectiveCamera> určuje projekci, která zkracuje scénu.  Jinými <xref:System.Windows.Media.Media3D.PerspectiveCamera> slovy poskytuje mizející bod perspektivy.  Můžete určit polohu kamery v souřadnicovém prostoru scény, směr a zorné pole kamery a vektor, který definuje směr "nahoru" ve scéně. Následující diagram znázorňuje <xref:System.Windows.Media.Media3D.PerspectiveCamera>'s projekce.  
   
  <xref:System.Windows.Media.Media3D.ProjectionCamera.NearPlaneDistance%2A> Vlastnosti <xref:System.Windows.Media.Media3D.ProjectionCamera.FarPlaneDistance%2A> a <xref:System.Windows.Media.Media3D.ProjectionCamera> vlastnosti omezují rozsah projekce kamery. Vzhledem k tomu, že kamery mohou být umístěny kdekoli ve scéně, je možné, že kamera je skutečně umístěna uvnitř modelu nebo velmi blízko modelu, což ztěžuje správné rozlišení objektů.  <xref:System.Windows.Media.Media3D.ProjectionCamera.NearPlaneDistance%2A>umožňuje určit minimální vzdálenost od kamery, za kterou nebudou objekty nakresleny.  Naopak umožňuje <xref:System.Windows.Media.Media3D.ProjectionCamera.FarPlaneDistance%2A> určit vzdálenost od kamery, za kterou nebudou objekty nakresleny, což zajistí, že objekty příliš daleko, aby byly rozpoznatelné, nebudou zahrnuty do scény.  
   
  ![Nastavení kamery](./media/coordsystem-6.png "CoordSystem-6")  
 Poloha kamery  
   
- <xref:System.Windows.Media.Media3D.OrthographicCamera>určuje ortogonu prostorového modelu na 2D vizuální povrch. Stejně jako ostatní kamery určuje polohu, směr zobrazení a směr "nahoru". Na <xref:System.Windows.Media.Media3D.PerspectiveCamera>rozdíl <xref:System.Windows.Media.Media3D.OrthographicCamera> od , však popisuje projekce, která nezahrnuje perspektivní zkrácení. Jinými slovy, popisuje zobrazení box, <xref:System.Windows.Media.Media3D.OrthographicCamera> jehož strany jsou rovnoběžné, místo toho, jehož strany se setkají v bodě na kameru. Následující obrázek ukazuje stejný model <xref:System.Windows.Media.Media3D.PerspectiveCamera> <xref:System.Windows.Media.Media3D.OrthographicCamera>jako zobrazení pomocí a .  
+ <xref:System.Windows.Media.Media3D.OrthographicCamera>určuje ortogonu 3D modelu na 2D vizuální povrch. Stejně jako ostatní kamery určuje polohu, směr zobrazení a směr "nahoru". Na <xref:System.Windows.Media.Media3D.PerspectiveCamera>rozdíl <xref:System.Windows.Media.Media3D.OrthographicCamera> od , však popisuje projekce, která nezahrnuje perspektivní zkrácení. Jinými slovy, popisuje zobrazení box, <xref:System.Windows.Media.Media3D.OrthographicCamera> jehož strany jsou rovnoběžné, místo toho, jehož strany se setkají v bodě na kameru. Následující obrázek ukazuje stejný model <xref:System.Windows.Media.Media3D.PerspectiveCamera> <xref:System.Windows.Media.Media3D.OrthographicCamera>jako zobrazení pomocí a .  
   
  ![Ortografická a perspektivní projekce](./media/camera-projections4.png "Camera_projections4")  
 Perspektivní a ortografické projekce  
@@ -59,9 +59,9 @@ Perspektivní a ortografické projekce
   
  <xref:System.Windows.Media.Media3D.Model3D>je abstraktní základní třída, která představuje obecný 3D objekt. Chcete-li vytvořit 3D scénu, potřebujete některé objekty k zobrazení a <xref:System.Windows.Media.Media3D.Model3D>objekty, které tvoří graf scény, jsou odvozeny z aplikace . V současné [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] době podporuje modelování <xref:System.Windows.Media.Media3D.GeometryModel3D>geometrie s . Vlastnost <xref:System.Windows.Media.Media3D.GeometryModel3D.Geometry%2A> tohoto modelu trvá základní mřížky.  
   
- Chcete-li vytvořit model, začněte vytvořením primitivní nebo sítě. 3D primitivje cejek je kolekce vrcholů, které tvoří jednu 3D entitu. Většina 3D systémů poskytuje primitiva modelovaná na nejjednodušším uzavřeném obrázku: trojúhelníkdefinovaný třemi vrcholy.  Vzhledem k tomu, že tři body trojúhelníku jsou koplanární, můžete pokračovat v přidávání trojúhelníků, aby bylo možné modelovat složitější tvary nazývané ok.  
+ Chcete-li vytvořit model, začněte vytvořením primitivní nebo sítě. 3D primitiva je kolekce vrcholů, které tvoří jednu 3D entitu. Většina 3D systémů poskytuje primitiva modelovaná na nejjednodušším uzavřeném obrázku: trojúhelníku definovaném třemi vrcholy.  Vzhledem k tomu, že tři body trojúhelníku jsou koplanární, můžete pokračovat v přidávání trojúhelníků, aby bylo možné modelovat složitější tvary nazývané ok.  
   
- [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] 3D systém v současné <xref:System.Windows.Media.Media3D.MeshGeometry3D> době poskytuje třídu, která umožňuje zadat libovolnou geometrii; v současné době nepodporuje předdefinované 3D primitivy, jako jsou koule a kubické formy. Začněte <xref:System.Windows.Media.Media3D.MeshGeometry3D> vytvářet zadáním seznamu vrcholů trojúhelníku jako jeho <xref:System.Windows.Media.Media3D.MeshGeometry3D.Positions%2A> vlastnosti. Každý vrchol je určen <xref:System.Windows.Media.Media3D.Point3D>jako .  (V [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)], zadejte tuto vlastnost jako seznam čísel seskupených do trojek, které představují souřadnice každého vrcholu.) V závislosti na geometrii se síť může skládat z mnoha trojúhelníků, z nichž některé sdílejí stejné rohy (vrcholy). Chcete-li síť nakreslit správně, informace o potřebách, [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] které vrcholy jsou sdíleny trojúhelníky. Tyto informace zadáte zadáním seznamu indexů trojúhelníku <xref:System.Windows.Media.Media3D.MeshGeometry3D.TriangleIndices%2A> s vlastností. Tento seznam určuje pořadí, ve kterém <xref:System.Windows.Media.Media3D.MeshGeometry3D.Positions%2A> body zadané v seznamu určí trojúhelník.  
+ [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] 3D systém v současné <xref:System.Windows.Media.Media3D.MeshGeometry3D> době poskytuje třídu, která umožňuje určit libovolnou geometrii; v současné době nepodporuje předdefinovaná 3D primitiva, jako jsou koule a kubické formy. Začněte <xref:System.Windows.Media.Media3D.MeshGeometry3D> vytvářet zadáním seznamu vrcholů trojúhelníku jako jeho <xref:System.Windows.Media.Media3D.MeshGeometry3D.Positions%2A> vlastnosti. Každý vrchol je určen <xref:System.Windows.Media.Media3D.Point3D>jako .  (V [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)], zadejte tuto vlastnost jako seznam čísel seskupených do trojek, které představují souřadnice každého vrcholu.) V závislosti na geometrii se síť může skládat z mnoha trojúhelníků, z nichž některé sdílejí stejné rohy (vrcholy). Chcete-li síť nakreslit správně, informace o potřebách, [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] které vrcholy jsou sdíleny trojúhelníky. Tyto informace zadáte zadáním seznamu indexů trojúhelníku <xref:System.Windows.Media.Media3D.MeshGeometry3D.TriangleIndices%2A> s vlastností. Tento seznam určuje pořadí, ve kterém <xref:System.Windows.Media.Media3D.MeshGeometry3D.Positions%2A> body zadané v seznamu určí trojúhelník.  
   
  [!code-xaml[basic3d#Basic3DXAML3DN3](~/samples/snippets/xaml/VS_Snippets_Wpf/Basic3D/XAML/Window1.xaml#basic3dxaml3dn3)]  
   
@@ -71,7 +71,7 @@ Perspektivní a ortografické projekce
   
  Vlastnost <xref:System.Windows.Media.Media3D.MeshGeometry3D.TextureCoordinates%2A> určuje kolekci <xref:System.Windows.Point>s, která říká grafickému systému, jak mapovat souřadnice, které určují, jak je textura přitahována k vrcholům sítě. <xref:System.Windows.Media.Media3D.MeshGeometry3D.TextureCoordinates%2A>jsou určeny jako hodnota mezi nulou a 1 včetně.  Stejně <xref:System.Windows.Media.Media3D.MeshGeometry3D.Normals%2A> jako u vlastnosti může grafický systém vypočítat výchozí souřadnice textury, ale můžete nastavit různé souřadnice textury pro řízení mapování textury, která obsahuje například část opakujícího se vzorku. Další informace o souřadnicích textury naleznete v následujících tématech nebo v sadáčkové sadě Direct3D SDK.  
   
- Následující příklad ukazuje, jak vytvořit jednu plochu modelu datové krychle v procedurálním kódu. Všimněte si, že můžete nakreslit celou krychli jako jeden GeometryModel3D; Tento příklad nakreslí plochu krychle jako odlišný model, aby bylo možné později aplikovat samostatné textury na každou plochu.  
+ Následující příklad ukazuje, jak vytvořit jednu plochu modelu datové krychle v procedurálním kódu. Můžete nakreslit celou krychli jako jeden GeometryModel3D; Tento příklad nakreslí plochu krychle jako odlišný model, aby bylo možné později aplikovat samostatné textury na každou plochu.  
   
  [!code-csharp[3doverview#3DOverview3DN6](~/samples/snippets/csharp/VS_Snippets_Wpf/3DOverview/CSharp/Window1.xaml.cs#3doverview3dn6)]
  [!code-vb[3doverview#3DOverview3DN6](~/samples/snippets/visualbasic/VS_Snippets_Wpf/3DOverview/visualbasic/window1.xaml.vb#3doverview3dn6)]  
@@ -79,10 +79,10 @@ Perspektivní a ortografické projekce
  [!code-csharp[3doverview#3DOverview3DN7](~/samples/snippets/csharp/VS_Snippets_Wpf/3DOverview/CSharp/Window1.xaml.cs#3doverview3dn7)]
  [!code-vb[3doverview#3DOverview3DN7](~/samples/snippets/visualbasic/VS_Snippets_Wpf/3DOverview/visualbasic/window1.xaml.vb#3doverview3dn7)]  
   
-<a name="materials"></a>
+<a name="materials"></a>'
 ## <a name="applying-materials-to-the-model"></a>Použití materiálů na model  
   
- Aby síť vypadala jako trojrozměrný objekt, musí mít aplikovanou texturu, aby pokrývala povrch definovaný jejími vrcholy a trojúhelníky, aby mohla být osvětlena a promítána kamerou. Ve 2D použijete <xref:System.Windows.Media.Brush> třídu k aplikování barev, vzorků, přechodů nebo jiného vizuálního obsahu na oblasti obrazovky.  Vzhled 3D objektů je však funkcí modelu osvětlení, nikoli pouze barvy nebo vzoru, které se na ně aplikují. Objekty reálného světa odrážejí světlo odlišně v závislosti na kvalitě jejich povrchů: lesklé a lesklé povrchy nevypadají stejně jako drsné nebo matné povrchy a zdá se, že některé objekty absorbují světlo, zatímco jiné září. Na objekty s 3D objekty můžete aplikovat všechny stejné stopy, které můžete aplikovat na dvoud objekty, ale nemůžete je aplikovat přímo.  
+ Aby síť vypadala jako trojrozměrný objekt, musí mít aplikovanou texturu, aby pokrývala povrch definovaný jejími vrcholy a trojúhelníky, aby mohla být osvětlena a promítána kamerou. Ve 2D použijete <xref:System.Windows.Media.Brush> třídu k aplikování barev, vzorků, přechodů nebo jiného vizuálního obsahu na oblasti obrazovky.  Vzhled 3D objektů je však funkcí modelu osvětlení, nikoli pouze barvy nebo vzoru, které se na ně aplikují. Objekty reálného světa odrážejí světlo odlišně v závislosti na kvalitě jejich povrchů: lesklé a lesklé povrchy nevypadají stejně jako drsné nebo matné povrchy a zdá se, že některé objekty absorbují světlo, zatímco jiné září. Na 3D objekty můžete aplikovat všechny stejné stopy, které můžete aplikovat na 2D objekty, ale nemůžete je aplikovat přímo.  
   
  Chcete-li definovat charakteristiky povrchu [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] modelu, používá abstraktní třídu. <xref:System.Windows.Media.Media3D.Material> Konkrétní podtřídy Materiálu určit některé charakteristiky vzhledu povrchu modelu a každý také poskytuje Brush vlastnost, do které můžete předat SolidColorBrush, TileBrush nebo VisualBrush.  
   
@@ -99,15 +99,13 @@ Perspektivní a ortografické projekce
  Následující příklady kódu ukazují, jak aplikovat plnou barvu a kresbu jako stopy na 3D modely.  
   
  [!code-xaml[basic3d#Basic3DXAML3DN5](~/samples/snippets/xaml/VS_Snippets_Wpf/Basic3D/XAML/Window1.xaml#basic3dxaml3dn5)]  
-  
- [!code-xaml[3doverview#3DOverview3DN9](~/samples/snippets/csharp/VS_Snippets_Wpf/3DOverview/CSharp/app.xaml#3doverview3dn9)]  
-  
- [!code-csharp[3doverview#3DOverview3DN8](~/samples/snippets/csharp/VS_Snippets_Wpf/3DOverview/CSharp/Window1.xaml.cs#3doverview3dn8)]
- [!code-vb[3doverview#3DOverview3DN8](~/samples/snippets/visualbasic/VS_Snippets_Wpf/3DOverview/visualbasic/window1.xaml.vb#3doverview3dn8)]  
+  ' [!code-xaml[3doverview#3DOverview3DN9](~/samples/snippets/csharp/VS_Snippets_Wpf/3DOverview/CSharp/app.xaml#3doverview3dn9)]  
+ ' [!code-csharp[3doverview#3DOverview3DN8](~/samples/snippets/csharp/VS_Snippets_Wpf/3DOverview/CSharp/Window1.xaml.cs#3doverview3dn8)]
+  [!code-vb[3doverview#3DOverview3DN8](~/samples/snippets/visualbasic/VS_Snippets_Wpf/3DOverview/visualbasic/window1.xaml.vb#3doverview3dn8)]  
   
 <a name="lights"></a>
 ## <a name="illuminating-the-scene"></a>Osvětlení scény  
- Světla v 3D grafice dělají to, co dělají v reálném světě: zviditelní povrchy. Více k věci, světla určují, která část scény bude zahrnuta do projekce. Světelné objekty vytvářejí [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] různé světelné a stínové efekty a jsou modelovány podle chování různých reálných světel. Do scény musíte zahrnout alespoň jedno světlo, jinak nebudou viditelné žádné modely.  
+ Světla ve 3D grafice dělají to, co světla dělají v reálném světě: zviditelní povrchy. Více k věci, světla určují, která část scény bude zahrnuta do projekce. Světelné objekty vytvářejí [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] různé světelné a stínové efekty a jsou modelovány podle chování různých reálných světel. Zahrňte do scény alespoň jedno světlo, jinak nebudou viditelné žádné modely.  
   
  Ze základní třídy jsou <xref:System.Windows.Media.Media3D.Light>odvozena následující světla :  
   
@@ -134,7 +132,7 @@ Perspektivní a ortografické projekce
   
 <a name="transforms"></a>
 ## <a name="transforming-models"></a>Transformace modelů  
- Když vytváříte modely, mají určité umístění ve scéně. Chcete-li tyto modely přesunout ve scéně, otočit je nebo změnit jejich velikost, není praktické měnit vrcholy, které definují samotné modely.  Místo toho, stejně jako v 2D, můžete použít transformace na modely.  
+ Když vytváříte modely, mají určité umístění ve scéně. Chcete-li tyto modely přesunout ve scéně, otočit je nebo změnit jejich velikost, není praktické měnit vrcholy, které definují samotné modely.  Místo toho, stejně jako ve 2D, použijete transformace na modely.  
   
  Každý objekt modelu <xref:System.Windows.Media.Media3D.Model3D.Transform%2A> má vlastnost, se kterou můžete přesunout, přeorientovat nebo změnit velikost modelu.  Když aplikujete transformaci, efektivně odsadíte všechny body modelu podle jakéhokoli vektoru nebo hodnoty určené transformací. Jinými slovy jste transformovali souřadnicový prostor, ve kterém je definován model ("modelový prostor"), ale nezměnili jste hodnoty, které tvoří geometrii modelu v souřadnicovém systému celé scény ("světový prostor").  
   
@@ -142,9 +140,9 @@ Perspektivní a ortografické projekce
   
 <a name="animations"></a>
 ## <a name="animating-models"></a>Animace modelů  
- 3D [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] implementace se účastní stejného časování a animační systém jako 2-D grafiky. Jinými slovy, animovat 3D scénu, animovat vlastnosti svých modelů. Je možné animovat vlastnosti primitiv přímo, ale je obvykle jednodušší animovat transformace, které mění pozici nebo vzhled modelů. Vzhledem k tomu, <xref:System.Windows.Media.Media3D.Model3DGroup> že transformace lze použít na objekty i jednotlivé modely, je možné použít jednu sadu animací na podřízenou model3DGroup a jinou sadu animací na skupinu podřízených objektů. Animací vlastností osvětlení scény můžete také dosáhnout různých vizuálních efektů. Nakonec se můžete rozhodnout animovat samotnou projekci animací polohy kamery nebo zorného pole. Základní informace o [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] systému časování a animace naleznete v tématech [Přehled animací](animation-overview.md), [Přehled scénářů](storyboards-overview.md)a [Přehled mrazivých objektů.](../advanced/freezable-objects-overview.md)  
+ 3D [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] implementace se účastní stejného časování a animačního systému jako 2D grafika. Jinými slovy, animovat 3D scénu, animovat vlastnosti svých modelů. Je možné animovat vlastnosti primitiv přímo, ale je obvykle jednodušší animovat transformace, které mění pozici nebo vzhled modelů. Vzhledem k tomu, <xref:System.Windows.Media.Media3D.Model3DGroup> že transformace lze použít na objekty i jednotlivé modely, je možné použít jednu sadu animací na podřízenou model3DGroup a jinou sadu animací na skupinu podřízených objektů. Animací vlastností osvětlení scény můžete také dosáhnout různých vizuálních efektů. Nakonec se můžete rozhodnout animovat samotnou projekci animací polohy kamery nebo zorného pole. Základní informace o [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] systému časování a animace naleznete v tématech [Přehled animací](animation-overview.md), [Přehled scénářů](storyboards-overview.md)a [Přehled mrazivých objektů.](../advanced/freezable-objects-overview.md)  
   
- Chcete-li animovat objekt v [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]aplikaci , vytvořte časovou osu, definujte animaci (což je opravdu změna hodnoty některé vlastnosti v čase) a určete vlastnost, na kterou se má animace použít. Vzhledem k tomu, že všechny objekty v 3D scéně jsou podřízené objekty <xref:System.Windows.Controls.Viewport3D>, vlastnosti, na které se zaměřují všechny animace, které chcete použít na scénu, jsou vlastnosti Viewport3D.  
+ Chcete-li animovat objekt v [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]aplikaci , vytvořte časovou osu, definujte animaci (což je opravdu změna hodnoty některé vlastnosti v čase) a určete vlastnost, na kterou se má animace použít. Vzhledem k tomu, že všechny <xref:System.Windows.Controls.Viewport3D>objekty ve 3D scéně jsou podřízené objekty , vlastnosti, na které se zaměřují všechny animace, které chcete na scénu aplikovat, jsou vlastnosti Funkce Viewport3D.  
   
  Předpokládejme, že chcete, aby se model zachvěl na místě. Můžete použít a <xref:System.Windows.Media.Media3D.RotateTransform3D> na model a animovat osu jeho natočení z jednoho vektoru do druhého. Následující příklad kódu ukazuje použití Vector3DAnimation na Axis vlastnost transformace Rotation3D, za předpokladu, že RotateTransform3D být jedním z několika transformací aplikovaných na model s TransformGroup.  
   
@@ -161,7 +159,7 @@ Perspektivní a ortografické projekce
  [!code-vb[3doverview#3DOverview3DN5](~/samples/snippets/visualbasic/VS_Snippets_Wpf/3DOverview/visualbasic/window1.xaml.vb#3doverview3dn5)]  
   
 <a name="animations1"></a>
-## <a name="add-3-d-content-to-the-window"></a>Přidání 3D obsahu do okna  
+## <a name="add-3d-content-to-the-window"></a>Přidání 3D obsahu do okna  
  Chcete-li vykreslení scény, <xref:System.Windows.Media.Media3D.Model3DGroup>přidejte modely <xref:System.Windows.Media.Media3D.Model3DGroup> a <xref:System.Windows.Media.Media3D.ModelVisual3D.Content%2A> světla <xref:System.Windows.Media.Media3D.ModelVisual3D>do a , pak nastavte jako . Přidejte <xref:System.Windows.Media.Media3D.ModelVisual3D> do <xref:System.Windows.Controls.Viewport3D.Children%2A> kolekce <xref:System.Windows.Controls.Viewport3D>. Přidejte kamery <xref:System.Windows.Controls.Viewport3D> nastavením jeho vlastnosti. <xref:System.Windows.Controls.Viewport3D.Camera%2A>  
   
  Nakonec přidejte <xref:System.Windows.Controls.Viewport3D> do okna. Pokud <xref:System.Windows.Controls.Viewport3D> je zahrnuta jako obsah prvku rozložení, jako je plátno, zadejte <xref:System.Windows.FrameworkElement.Height%2A> <xref:System.Windows.FrameworkElement.Width%2A> velikost Viewport3D nastavením jeho a vlastnosti (zděděné z <xref:System.Windows.FrameworkElement>).  

@@ -1,6 +1,6 @@
 ---
-title: Kódování znaků v rozhraní .NET
-description: Informace o kódování a dekódování znaků v rozhraní .NET.
+title: Použití tříd kódování znaků v rozhraní .NET
+description: Přečtěte si, jak používat třídy kódování znaků v rozhraní .NET.
 ms.date: 12/22/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -11,76 +11,53 @@ helpviewer_keywords:
 - encoding, choosing
 - encoding, fallback strategy
 ms.assetid: bf6d9823-4c2d-48af-b280-919c5af66ae9
-ms.openlocfilehash: 3cd461d8c56c3f31bf3ffe04acf239ecd32fe328
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 063cac1de6634125d7dabad9d627bceff877e567
+ms.sourcegitcommit: 34dc3c0d0d0a1cc418abff259d9daa8078d00b81
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "75711438"
+ms.lasthandoff: 03/19/2020
+ms.locfileid: "79546734"
 ---
-# <a name="character-encoding-in-net"></a>Kódování znaků v rozhraní .NET
+# <a name="how-to-use-character-encoding-classes-in-net"></a>Použití tříd kódování znaků v rozhraní .NET
 
-Znaky jsou abstraktní entity, které mohou být reprezentovány mnoha různými způsoby. Kódování znaků je systém, který spáruje každý znak v podporované znakové sadě s nějakou hodnotou, která představuje tento znak. Například Morseův kód je kódování znaků, které spáruje každý znak v římské abecedě se vzorem tekcí a pomlček, které jsou vhodné pro přenos přes telegrafní linky. Kódování znaků pro počítače spáruje každý znak v podporované znakové sadě s číselnou hodnotou, která představuje tento znak. Kódování znaků má dvě odlišné součásti:
+Tento článek vysvětluje, jak používat třídy, které rozhraní .NET poskytuje kódování a dekódování textu pomocí různých schémat kódování. Pokyny předpokládají, že jste si přečetli [Úvod do kódování znaků v rozhraní .NET](character-encoding-introduction.md).
 
-- Kodér, který převádí posloupnost znaků do posloupnosti číselných hodnot (bajtů).
+## <a name="encoders-and-decoders"></a>Kodéry a dekodéry
 
-- Dekodér, který převádí posloupnost bajtů do posloupnosti znaků.
+Rozhraní .NET poskytuje kódování tříd, které kódují a dekódují text pomocí různých kódovacích systémů. <xref:System.Text.UTF8Encoding> Například třída popisuje pravidla pro kódování a dekódování z UTF-8. Rozhraní .NET používá kódování UTF-16 <xref:System.Text.UnicodeEncoding> (reprezentované třídou) pro `string` instance. Kodéry a dekodéry jsou k dispozici pro další schémata kódování.
 
-Kódování znaků popisuje pravidla, podle kterých kodér a dekodér pracují. <xref:System.Text.UTF8Encoding> Například třída popisuje pravidla pro kódování a dekódování z 8bitového formátu transformace Unicode (UTF-8), který používá jeden až čtyři bajty k reprezentaci jednoho znaku Unicode. Kódování a dekódování může také zahrnovat ověření. Například <xref:System.Text.UnicodeEncoding> třída kontroluje všechny náhradníky, abyste se ujistili, že představují platné náhradní páry. (Náhradní pár se skládá ze znaku s bodem kódu, který se pohybuje od U + D800 do U + DBFF následovaný znakem s bodem kódu, který se pohybuje od U + DC00 do U + DFFF.)  Záložní strategie určuje, jak kodér zpracovává neplatné znaky nebo jak dekodér zpracovává neplatné bajty.
+Kódování a dekódování může také zahrnovat ověření. Například <xref:System.Text.UnicodeEncoding> třída kontroluje `char` všechny instance v oblasti náhradní, abyste se ujistili, že jsou v platných náhradních párech. Záložní strategie určuje, jak kodér zpracovává neplatné znaky nebo jak dekodér zpracovává neplatné bajty.
 
 > [!WARNING]
 > Třídy kódování .NET poskytují způsob ukládání a převodu dat znaků. Neměly by být použity k ukládání binárních dat ve formě řetězce. V závislosti na použitém kódování může převod binárních dat do formátu řetězce s třídami kódování zavést neočekávané chování a vytvořit nepřesná nebo poškozená data. Chcete-li převést binární data <xref:System.Convert.ToBase64String%2A?displayProperty=nameWithType> na řetězec formuláře, použijte metodu.
 
-Rozhraní .NET používá kódování UTF-16 <xref:System.Text.UnicodeEncoding> (reprezentované třídou) k reprezentaci znaků a řetězců. Aplikace, které cílí na modul runtime společného jazyka, používají kodéry k mapování reprezentací znaků Unicode podporovaných běžným jazykovým runtimem na jiná schémata kódování. Používají dekodéry k mapování znaků z kódování bez kódování Unicode na Unicode.
-
-Toto téma se skládá z následujících částí:
-
-- [Kódování v rozhraní .NET](../../../docs/standard/base-types/character-encoding.md#Encodings)
-
-- [Výběr třídy kódování](../../../docs/standard/base-types/character-encoding.md#Selecting)
-
-- [Použití objektu kódování](../../../docs/standard/base-types/character-encoding.md#Using)
-
-- [Výběr záložní strategie](../../../docs/standard/base-types/character-encoding.md#FallbackStrategy)
-
-- [Implementace vlastní záložní strategie](../../../docs/standard/base-types/character-encoding.md#Custom)
-
-<a name="Encodings"></a>
-
-## <a name="encodings-in-net"></a>Kódování v rozhraní .NET
-
 Všechny třídy kódování znaků v <xref:System.Text.Encoding?displayProperty=nameWithType> rozhraní .NET dědí z třídy, což je abstraktní třída, která definuje funkce společné pro všechna kódování znaků. Chcete-li získat přístup k jednotlivým objektům kódování implementovaným v rozhraní .NET, postupujte takto:
 
-- Použijte statické vlastnosti <xref:System.Text.Encoding> třídy, které vracejí objekty, které představují standardní kódování znaků, které jsou k dispozici v rozhraní .NET (ASCII, UTF-7, UTF-8, UTF-16 a UTF-32). Například <xref:System.Text.Encoding.Unicode%2A?displayProperty=nameWithType> vlastnost vrátí <xref:System.Text.UnicodeEncoding> objekt. Každý objekt používá náhradní záložní ke zpracování řetězců, které nelze zakódovat a bajtů, které nelze dekódovat. (Další informace naleznete v části [Náhradní záložní.)](../../../docs/standard/base-types/character-encoding.md#Replacement)
+- Použijte statické vlastnosti <xref:System.Text.Encoding> třídy, které vracejí objekty, které představují standardní kódování znaků, které jsou k dispozici v rozhraní .NET (ASCII, UTF-7, UTF-8, UTF-16 a UTF-32). Například <xref:System.Text.Encoding.Unicode%2A?displayProperty=nameWithType> vlastnost vrátí <xref:System.Text.UnicodeEncoding> objekt. Každý objekt používá náhradní záložní ke zpracování řetězců, které nelze zakódovat a bajtů, které nelze dekódovat. Další informace naleznete v tématu [Náhradní záložní](../../../docs/standard/base-types/character-encoding.md#Replacement).
 
-- Volání konstruktoru třídy kódování. Objekty pro kódování ASCII, UTF-7, UTF-8, UTF-16 a UTF-32 lze vytvořit instanci tímto způsobem. Ve výchozím nastavení každý objekt používá náhradní záložní pro zpracování řetězců, které nelze zakódovat a bajtů, které nelze dekódovat, ale můžete určit, že by měla být vyvolána výjimka místo. (Další informace naleznete v části [Náhradní záložní](../../../docs/standard/base-types/character-encoding.md#Replacement) a [záložní výjimky.)](../../../docs/standard/base-types/character-encoding.md#Exception)
+- Volání konstruktoru třídy kódování. Objekty pro kódování ASCII, UTF-7, UTF-8, UTF-16 a UTF-32 lze vytvořit instanci tímto způsobem. Ve výchozím nastavení každý objekt používá náhradní záložní pro zpracování řetězců, které nelze zakódovat a bajtů, které nelze dekódovat, ale můžete určit, že by měla být vyvolána výjimka místo. Další informace naleznete v [tématech Náhradní záložní](../../../docs/standard/base-types/character-encoding.md#Replacement) a [výjimka záložní](../../../docs/standard/base-types/character-encoding.md#Exception).
 
-- Volání <xref:System.Text.Encoding.%23ctor%28System.Int32%29?displayProperty=nameWithType> konstruktoru a předat celé číslo, které představuje kódování. Standardní kódování objekty používají náhradní záložní a znakové stránky a dvoubajtové znakové sady (DBCS) kódování objektů použít nejvhodnější záložní pro zpracování řetězců, které nemohou kódovat a bajty, které nemohou dekódovat. (Další informace naleznete v části [Nejvhodnější záložní.)](../../../docs/standard/base-types/character-encoding.md#BestFit)
+- Volání <xref:System.Text.Encoding.%23ctor%28System.Int32%29?displayProperty=nameWithType> konstruktoru a předat celé číslo, které představuje kódování. Standardní kódování objekty používají náhradní záložní a znakové stránky a dvoubajtové znakové sady (DBCS) kódování objektů použít nejvhodnější záložní pro zpracování řetězců, které nemohou kódovat a bajty, které nemohou dekódovat. Další informace naleznete v tématu [Best-fit fallback](../../../docs/standard/base-types/character-encoding.md#BestFit).
 
 - Volání <xref:System.Text.Encoding.GetEncoding%2A?displayProperty=nameWithType> metody, která vrací všechny standardní, znakové stránky nebo kódování DBCS k dispozici v rozhraní .NET. Přetížení umožňují určit záložní objekt pro kodér i dekodér.
 
-> [!NOTE]
-> Standard Unicode přiřadí bod kódu (číslo) a název každému znaku v každém podporovaném skriptu. Například znak "A" je reprezentován kódovým bodem U + 0041 a názvem "Velké písmeno latinky A". Kódování UTF (Unicode Transformation Format) definuje způsoby kódování tohoto bodu kódu do sekvence jednoho nebo více bajtů. Schéma kódování Unicode zjednodušuje vývoj aplikací připravených pro svět, protože umožňuje reprezentování znaků z libovolné znakové sady v jednom kódování. Vývojáři aplikací již nemusí sledovat schéma kódování, které bylo použito k vytvoření znaků pro určitý jazyk nebo systém zápisu, a data mohou být sdílena mezi systémy mezinárodně bez poškození.
->
-> Rozhraní .NET podporuje tři kódování definovaná standardem Unicode: UTF-8, UTF-16 a UTF-32. Další informace naleznete v tématu Unicode Standard na [domovské stránce Unicode](https://www.unicode.org/).
+Informace o všech kódováních dostupných v rozhraní .NET můžete načíst voláním <xref:System.Text.Encoding.GetEncodings%2A?displayProperty=nameWithType> metody. Rozhraní .NET podporuje schémata kódování znaků uvedená v následující tabulce.
 
-Informace o všech kódováních dostupných v rozhraní .NET můžete načíst voláním <xref:System.Text.Encoding.GetEncodings%2A?displayProperty=nameWithType> metody. Síť .NET podporuje systémy kódování znaků uvedené v následující tabulce.
-
-|Kódování|Třída|Popis|Výhody/nevýhody|
-|--------------|-----------|-----------------|-------------------------------|
-|ASCII|<xref:System.Text.ASCIIEncoding>|Zakóduje omezený rozsah znaků pomocí dolních sedmi bitů bajtu.|Vzhledem k tomu, že toto kódování podporuje pouze hodnoty znaků od U + 0000 až U + 007F, ve většině případů je nedostatečná pro internacionalizované aplikace.|
-|UTF-7|<xref:System.Text.UTF7Encoding>|Představuje znaky jako sekvence 7bitových znaků ASCII. Znaky Unicode, které nejsou součástí ASCII, jsou reprezentovány řídicí sekvencí znaků ASCII.|UTF-7 podporuje protokoly, jako jsou protokoly e-mailu a diskusních skupin. UTF-7 však není příliš bezpečný nebo robustní. V některých případech může změna jednoho bitu radikálně změnit interpretaci celého řetězce UTF-7. V ostatních případech mohou různé řetězce UTF-7 kódovat stejný text. Pro sekvence, které obsahují znaky bez ASCII, UTF-7 vyžaduje více místa než UTF-8 a kódování/dekódování je pomalejší. V důsledku toho byste měli použít UTF-8 namísto UTF-7, pokud je to možné.|
-|UTF-8|<xref:System.Text.UTF8Encoding>|Představuje každý bod kódu Unicode jako posloupnost jednoho až čtyř bajtů.|UTF-8 podporuje velikosti 8bitových dat a dobře spolupracuje s mnoha stávajícími operačními systémy. Pro rozsah znaků ASCII je UTF-8 shodný s kódováním ASCII a umožňuje širší sadu znaků. Pro skripty CJK čínština a japonština (CJK) však může UTF-8 vyžadovat tři bajty pro každý znak a může potenciálně způsobit větší velikosti dat než UTF-16. Všimněte si, že někdy množství dat ASCII, jako jsou značky HTML, odůvodňuje zvětšenou velikost rozsahu CJK.|
-|UTF-16|<xref:System.Text.UnicodeEncoding>|Představuje každý bod kódu Unicode jako posloupnost jednoho nebo dvou 16bitových čísel. Nejběžnější znaky Unicode vyžadují pouze jeden bod kódu UTF-16, ačkoli doplňkové znaky Unicode (U + 10000 a vyšší) vyžadují dva body náhradního kódu UTF-16. Jsou podporovány objednávky bajtů little-endian i big-endian.|Kódování UTF-16 používá běžný jazyk runtime <xref:System.Char> k <xref:System.String> reprezentaci a hodnotám a používá `WCHAR` se operačním systémem Windows k reprezentaci hodnot.|
-|UTF-32|<xref:System.Text.UTF32Encoding>|Představuje každý bod kódu Unicode jako 32bitové celé číslo. Jsou podporovány objednávky bajtů little-endian i big-endian.|Kódování UTF-32 se používá, když se aplikace chtějí vyhnout chování náhradního bodu kódu kódování UTF-16 v operačních systémech, pro které je kódovaný prostor příliš důležitý. Jednotlivé glyfy vykreslené na displeji mohou být stále kódovány více než jedním znakem UTF-32.|
-|Kódování ANSI/ISO||Poskytuje podporu pro různé znakové stránky. V operačních systémech Windows se znakové stránky používají k podpoře určitého jazyka nebo skupiny jazyků. Tabulka se seznamem znakových stránek podporovaných <xref:System.Text.Encoding> rozhraním .NET naleznete v části Třída. Objekt kódování pro určitou znakovou stránku <xref:System.Text.Encoding.GetEncoding%28System.Int32%29?displayProperty=nameWithType> můžete načíst voláním metody.|Znaková stránka obsahuje 256 bodů kódu a je založen na nule. Ve většině znakových stránek představují body kódu 0 až 127 znakovou sadu ASCII a body kódu 128 až 255 se mezi znakovými stránkami výrazně liší. Například znaková stránka 1252 obsahuje znaky pro systémy psaní latinky, včetně angličtiny, němčiny a francouzštiny. Posledních 128 bodů kódu v znakové stránce 1252 obsahují znaky zvýraznění. Znaková stránka 1253 obsahuje kódy znaků, které jsou požadovány v řeckém systému zápisu. Posledních 128 bodů kódu v znakové stránce 1253 obsahuje řecké znaky. V důsledku toho aplikace, která spoléhá na znakové stránky ANSI nelze uložit řečtina a němčina ve stejném textovém proudu, pokud obsahuje identifikátor, který označuje odkazované znakové stránky.|
-|Dvoubajtové znakové sady (DBCS)||Podporuje jazyky, jako je čínština, japonština a korejština, které obsahují více než 256 znaků. V DBCS dvojice bodů kódu (dvojitý bajt) představuje každý znak. Vlastnost <xref:System.Text.Encoding.IsSingleByte%2A?displayProperty=nameWithType> vrátí `false` kódování DBCS. Kódovací objekt pro konkrétní soubor DBCS můžete <xref:System.Text.Encoding.GetEncoding%28System.Int32%29?displayProperty=nameWithType> načíst voláním metody.|V DBCS dvojice bodů kódu (dvojitý bajt) představuje každý znak. Když aplikace zpracovává data DBCS, první bajt znaku DBCS (úvodní bajt) je zpracován v kombinaci s bajtem trail, který bezprostředně následuje. Vzhledem k tomu, že jeden pár dvoubajtových bodů kódu může představovat různé znaky v závislosti na znakové stránce, toto schéma stále neumožňuje kombinaci dvou jazyků, například japonštiny a čínštiny, ve stejném datovém proudu.|
+|Třída kódování|Popis|
+|--------------|-----------|
+|[Ascii](xref:System.Text.ASCIIEncoding)|Zakóduje omezený rozsah znaků pomocí dolních sedmi bitů bajtu. Vzhledem k tomu, že toto kódování podporuje pouze hodnoty znaků od U + 0000 až U + 007F, ve většině případů je nedostatečná pro internacionalizované aplikace.|
+|[UTF-7](xref:System.Text.UTF7Encoding)|Představuje znaky jako sekvence 7bitových znaků ASCII. Znaky Unicode, které nejsou součástí ASCII, jsou reprezentovány řídicí sekvencí znaků ASCII. UTF-7 podporuje protokoly, jako je e-mail a diskusní skupina. UTF-7 však není příliš bezpečný nebo robustní. V některých případech může změna jednoho bitu radikálně změnit interpretaci celého řetězce UTF-7. V ostatních případech mohou různé řetězce UTF-7 kódovat stejný text. Pro sekvence, které obsahují znaky bez ASCII, UTF-7 vyžaduje více místa než UTF-8 a kódování/dekódování je pomalejší. V důsledku toho byste měli použít UTF-8 namísto UTF-7, pokud je to možné.|
+|[UTF-8](xref:System.Text.UTF8Encoding)|Představuje každý bod kódu Unicode jako posloupnost jednoho až čtyř bajtů. UTF-8 podporuje velikosti 8bitových dat a dobře spolupracuje s mnoha stávajícími operačními systémy. Pro rozsah znaků ASCII je UTF-8 shodný s kódováním ASCII a umožňuje širší sadu znaků. Pro skripty CJK čínština a japonština (CJK) však může UTF-8 vyžadovat tři bajty pro každý znak a může způsobit větší velikosti dat než UTF-16. Někdy množství dat ASCII, jako jsou značky HTML, odůvodňuje zvětšenou velikost rozsahu CJK.|
+|[UTF-16](xref:System.Text.UnicodeEncoding)|Představuje každý bod kódu Unicode jako posloupnost jednoho nebo dvou 16bitových čísel. Nejběžnější znaky Unicode vyžadují pouze jeden bod kódu UTF-16, ačkoli doplňkové znaky Unicode (U + 10000 a vyšší) vyžadují dva body náhradního kódu UTF-16. Jsou podporovány objednávky bajtů little-endian i big-endian. Kódování UTF-16 používá běžný jazyk runtime <xref:System.Char> k <xref:System.String> reprezentaci a hodnotám a používá `WCHAR` se operačním systémem Windows k reprezentaci hodnot.|
+|[UTF-32](xref:System.Text.UTF32Encoding)|Představuje každý bod kódu Unicode jako 32bitové celé číslo. Jsou podporovány objednávky bajtů little-endian i big-endian. Kódování UTF-32 se používá, když se aplikace chtějí vyhnout chování náhradního bodu kódu kódování UTF-16 v operačních systémech, pro které je kódovaný prostor příliš důležitý. Jednotlivé glyfy vykreslené na displeji mohou být stále kódovány více než jedním znakem UTF-32.|
+|Kódování ANSI/ISO|Poskytuje podporu pro různé znakové stránky. V operačních systémech Windows se znakové stránky používají k podpoře určitého jazyka nebo skupiny jazyků. Tabulka se seznamem znakových stránek podporovaných <xref:System.Text.Encoding> rozhraním .NET naleznete v části Třída. Objekt kódování pro určitou znakovou stránku <xref:System.Text.Encoding.GetEncoding%28System.Int32%29?displayProperty=nameWithType> můžete načíst voláním metody. Znaková stránka obsahuje 256 bodů kódu a je založen na nule. Ve většině znakových stránek představují body kódu 0 až 127 znakovou sadu ASCII a body kódu 128 až 255 se mezi znakovými stránkami výrazně liší. Například znaková stránka 1252 obsahuje znaky pro systémy psaní latinky, včetně angličtiny, němčiny a francouzštiny. Posledních 128 bodů kódu v znakové stránce 1252 obsahují znaky zvýraznění. Znaková stránka 1253 obsahuje kódy znaků, které jsou požadovány v řeckém systému zápisu. Posledních 128 bodů kódu v znakové stránce 1253 obsahuje řecké znaky. V důsledku toho aplikace, která spoléhá na znakové stránky ANSI nelze uložit řečtina a němčina ve stejném textovém proudu, pokud obsahuje identifikátor, který označuje odkazované znakové stránky.|
+|Dvoubajtové znakové sady (DBCS)|Podporuje jazyky, jako je čínština, japonština a korejština, které obsahují více než 256 znaků. V DBCS dvojice bodů kódu (dvojitý bajt) představuje každý znak. Vlastnost <xref:System.Text.Encoding.IsSingleByte%2A?displayProperty=nameWithType> vrátí `false` kódování DBCS. Kódovací objekt pro konkrétní soubor DBCS můžete <xref:System.Text.Encoding.GetEncoding%28System.Int32%29?displayProperty=nameWithType> načíst voláním metody. Když aplikace zpracovává data DBCS, první bajt znaku DBCS (úvodní bajt) je zpracován v kombinaci s bajtem trail, který bezprostředně následuje. Vzhledem k tomu, že jeden pár dvoubajtových bodů kódu může představovat různé znaky v závislosti na znakové stránce, toto schéma stále neumožňuje kombinaci dvou jazyků, například japonštiny a čínštiny, ve stejném datovém proudu.|
 
 Tato kódování umožňují pracovat se znaky Unicode i s kódováními, která se nejčastěji používají ve starších aplikacích. Kromě toho můžete vytvořit vlastní kódování definováním třídy, <xref:System.Text.Encoding> která je odvozena od a přepsání majedly jeho členů.
 
-### <a name="platform-notes-net-core"></a>Poznámky k platformě: .NET Core
+## <a name="net-core-encoding-support"></a>Podpora kódování jádra .NET
 
-Ve výchozím nastavení rozhraní .NET Core nezpřístupní žádné kódování znakové stránky než znaková stránka 28591 a kódování Unicode, například UTF-8 a UTF-16. Můžete však přidat kódování znakové stránky nalezené ve standardních aplikacích pro Windows, které cílí na rozhraní .NET do vaší aplikace. Úplné informace naleznete <xref:System.Text.CodePagesEncodingProvider> v tématu.
+Ve výchozím nastavení rozhraní .NET Core nezpřístupní žádné kódování znakové stránky než znaková stránka 28591 a kódování Unicode, například UTF-8 a UTF-16. Můžete však přidat kódování znakové stránky nalezené ve standardních aplikacích pro Windows, které cílí na rozhraní .NET do vaší aplikace. Další informace naleznete <xref:System.Text.CodePagesEncodingProvider> v tématu.
 
 <a name="Selecting"></a>
 
@@ -285,6 +262,7 @@ Následující kód pak konkretizovat `CustomMapper` objekt a předá jeho insta
 
 ## <a name="see-also"></a>Viz také
 
+- [Úvod k kódování znaků v rozhraní .NET](character-encoding-introduction.md)
 - <xref:System.Text.Encoder>
 - <xref:System.Text.Decoder>
 - <xref:System.Text.DecoderFallback>

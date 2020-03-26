@@ -12,12 +12,12 @@ helpviewer_keywords:
 - assemblies [.NET Framework]
 - version boundaries
 - type boundaries
-ms.openlocfilehash: f85fef37ac952c91ac73570f26d80d8a46f4eedf
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: b61d079a86bdd4a809d44ad128f19a7b358c8384
+ms.sourcegitcommit: b75a45f0cfe012b71b45dd9bf723adf32369d40c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "78156502"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80228681"
 ---
 # <a name="assemblies-in-net"></a>Sestavení v .NET
 
@@ -104,7 +104,7 @@ V c#, můžete použít dvě verze stejného sestavení v jedné aplikaci. Dalš
 |[Generování dynamických metod a sestavení](../../../docs/framework/reflection-and-codedom/emitting-dynamic-methods-and-assemblies.md)|Jak vytvořit dynamická sestavení.|
 |[Jak runtime vyhledá sestavení](../../../docs/framework/deployment/how-the-runtime-locates-assemblies.md)|Jak rozhraní .NET Framework řeší odkazy na sestavení za běhu.|
 
-## <a name="reference"></a>Referenční informace
+## <a name="reference"></a>Odkaz
 
 <xref:System.Reflection.Assembly?displayProperty=nameWithType>
 
@@ -116,3 +116,4 @@ V c#, můžete použít dvě verze stejného sestavení v jedné aplikaci. Dalš
 - [Postup: Načtení a uvolnění sestavení](load-unload.md)
 - [Postup: Použití a ladění použitelnosti sestavení v rozhraní .NET Core](unloadability.md)
 - [Postup: Určení, zda je soubor sestavením](identify.md)
+- [Postup: Kontrola obsahu sestavení pomocí nástroje MetadataLoadContext](inspect-contents-using-metadataloadcontext.md)

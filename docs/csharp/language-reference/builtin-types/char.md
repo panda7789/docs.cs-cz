@@ -7,12 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - char data type [C#]
 ms.assetid: b51cf4fb-124c-4067-af48-afbac122b228
-ms.openlocfilehash: c4e29e6437edfe549b36a04a2050f63caa0d3d2a
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 8727e47e13082e8550fb174c92139dfd5c17ec36
+ms.sourcegitcommit: 07123a475af89b6da5bb6cc51ea40ab1e8a488f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "78846519"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80134330"
 ---
 # <a name="char-c-reference"></a>char (odkaz C#)
 
@@ -59,3 +59,4 @@ Další informace naleznete [v](~/_csharplang/spec/types.md#integral-types) čá
 - [Typy hodnot](value-types.md)
 - [Řetězce](../../programming-guide/strings/index.md)
 - <xref:System.Text.Rune?displayProperty=nameWithType>
+- [Kódování znaků v rozhraní .NET](../../../standard/base-types/character-encoding-introduction.md)

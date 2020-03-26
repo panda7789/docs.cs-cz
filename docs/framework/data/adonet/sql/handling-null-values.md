@@ -5,18 +5,18 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: f18b288f-b265-4bbe-957f-c6833c0645ef
-ms.openlocfilehash: c64f11c00174981925342f1493ef0b809a57ecb0
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: c45c6672983866df6c47ec84981cc7bd11637c0c
+ms.sourcegitcommit: 99b153b93bf94d0fecf7c7bcecb58ac424dfa47c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79148644"
+ms.lasthandoff: 03/25/2020
+ms.locfileid: "80249074"
 ---
 # <a name="handling-null-values"></a>Zpracování hodnot null
 Hodnota null v relační databázi se používá, pokud je hodnota ve sloupci neznámá nebo chybí. Null není prázdný řetězec (pro datové typy znaku nebo datetime) ani nulová hodnota (pro číselné datové typy). Specifikace ANSI SQL-92 uvádí, že null musí být stejné pro všechny datové typy, takže všechny hodnoty null jsou zpracovány konzistentně. Obor <xref:System.Data.SqlTypes> názvů poskytuje null sémantiku <xref:System.Data.SqlTypes.INullable> implementací rozhraní. Každý z datových <xref:System.Data.SqlTypes> typů `IsNull` v aplikaci má svou vlastní vlastnost a hodnotu, `Null` kterou lze přiřadit k instanci tohoto datového typu.  
   
 > [!NOTE]
-> Rozhraní .NET Framework verze 2.0 zavedla podporu pro typy s možnou hodnotou null, která umožňuje programátorům rozšířit typ hodnoty tak, aby představoval všechny hodnoty základního typu. Tyto clr nullable typy představují <xref:System.Nullable> instanci struktury. Tato funkce je užitečná zejména v případě, že jsou typy hodnot zabaleny a nezabaleny, což poskytuje rozšířenou kompatibilitu s typy objektů. Clr nulltypy nejsou určeny pro ukládání databáze nulls, protože ANSI SQL null `null` se `Nothing` nechová stejným způsobem jako odkaz (nebo v jazyce Visual Basic). Pro práci s databázemi ANSI <xref:System.Data.SqlTypes> SQL null <xref:System.Nullable>hodnoty, použijte nulls spíše než . Další informace o práci s typy clr s možnou hodnotou null v jazyce Visual Basic naleznete v [tématech Typy hodnot s možnou hodnotou Null](../../../../visual-basic/programming-guide/language-features/data-types/nullable-value-types.md)a C# naleznete v [tématech Typy hodnot S možnou hodnotou Null](../../../../csharp/language-reference/builtin-types/nullable-value-types.md).  
+> Rozhraní .NET Framework verze 2.0 zavedla podporu pro typy hodnot s hodnotou s hodnotou s hodnotou, které umožňují programátorům rozšířit typ hodnoty tak, aby představoval všechny hodnoty základního typu. Tyto clr null hodnoty typy představují <xref:System.Nullable> instanci struktury. Tato funkce je užitečná zejména v případě, že jsou typy hodnot zabaleny a nezabaleny, což poskytuje rozšířenou kompatibilitu s typy objektů. Clr null typy hodnot nejsou určeny pro ukládání databáze nulls, protože ANSI SQL `null` null `Nothing` se nechová stejným způsobem jako odkaz (nebo v jazyce Visual Basic). Pro práci s databázemi ANSI <xref:System.Data.SqlTypes> SQL null <xref:System.Nullable>hodnoty, použijte nulls spíše než . Další informace o práci s typy s hodnotou CLR s možnou hodnotou null v jazyce Visual Basic naleznete v [tématech Typy hodnot s možnou hodnotou Null](../../../../visual-basic/programming-guide/language-features/data-types/nullable-value-types.md)a C# naleznete v [tématech Typy hodnot S možnou hodnotou Null](../../../../csharp/language-reference/builtin-types/nullable-value-types.md).  
   
 ## <a name="nulls-and-three-valued-logic"></a>Null a logika se třemi hodnotami  
  Povolení hodnot null v definicích sloupců zavádí do aplikace logiku se třemi hodnotami. Porovnání lze vyhodnotit na jednu ze tří podmínek:  

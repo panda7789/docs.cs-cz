@@ -2,12 +2,12 @@
 title: dotnet test, příkaz
 description: Dotnet test příkaz se používá k provedení testů částí v daném projektu.
 ms.date: 02/27/2020
-ms.openlocfilehash: bac2f0e613c34bc9f657551a5eac4038207a93ed
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: a11814f9fdc6326e681a09d7d2654b968014f318
+ms.sourcegitcommit: 2514f4e3655081dcfe1b22470c0c28500f952c42
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "78847895"
+ms.lasthandoff: 03/18/2020
+ms.locfileid: "79507305"
 ---
 # <a name="dotnet-test"></a>dotnet test
 
@@ -51,7 +51,7 @@ Testovací projekty určují testovací `<PackageReference>` běh pomocí běžn
 
   Použijte vlastní testovací adaptéry ze zadané cesty v testovacím běhu.
 
-- **`-blame`**
+- **`--blame`**
 
   Spustí testy v režimu obviňování. Tato možnost je užitečná při izolování problémových testů, které způsobují selhání testovacího hostitele. Vytvoří výstupní soubor v aktuálním adresáři jako *Sequence.xml,* který zachycuje pořadí spuštění testů před selháním.
 

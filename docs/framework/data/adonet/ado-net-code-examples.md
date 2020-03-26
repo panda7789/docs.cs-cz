@@ -5,15 +5,16 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: c119657a-9ce6-4940-91e4-ac1d5f0d9584
-ms.openlocfilehash: 8a0a7c6166bb4cfc8064faa20056fda16b593e81
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 6e0c34e1db50030c78db295f26fcc25b431d3dde
+ms.sourcegitcommit: 267d092663aba36b6b2ea853034470aea493bfae
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79151764"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80111800"
 ---
 # <a name="adonet-code-examples"></a>ADO.NET příklady kódu
-Výpisy kódu v tomto tématu ukazují, jak načíst data z databáze pomocí následujících technologií ADO.NET:
+
+Výpisy kódu na této stránce ukazují, jak načíst data z databáze pomocí následujících technologií ADO.NET:
 
 - ADO.NET poskytovatelé dat:
 

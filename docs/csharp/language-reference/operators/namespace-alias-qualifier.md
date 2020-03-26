@@ -10,12 +10,12 @@ helpviewer_keywords:
 - namespace [C#]
 - global keyword [C#]
 ms.assetid: 698b5a73-85cf-4e0e-9e8e-6496887f8527
-ms.openlocfilehash: a18e52ea05d49bf2b3a468923f1433f09fff9a8b
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 84c418627462f83630fe5072a0b0e2089f6588f6
+ms.sourcegitcommit: 2514f4e3655081dcfe1b22470c0c28500f952c42
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75712673"
+ms.lasthandoff: 03/18/2020
+ms.locfileid: "79507123"
 ---
 # <a name="-operator-c-reference"></a>:: operátor (odkaz C#)
 
@@ -56,7 +56,7 @@ Kvalifikátor `::` aliasu oboru názvů použijte pro přístup k členovi alias
   > [!NOTE]
   > Klíčové `global` slovo je alias globálního oboru názvů pouze v případě, `::` že se jedná o identifikátor kvalifikátoru na levostranné straně.
 
-Můžete také použít [operátor `.` přístupu člena](member-access-operators.md#member-access-operator-) pro přístup k členu aliasovaného oboru názvů. Operátor se `.` však také používá pro přístup k členu typu. Kvalifikátor `::` zajišťuje, že jeho levý identifikátor vždy odkazuje na alias oboru názvů, i když existuje typ nebo obor názvů se stejným názvem.
+Token můžete také použít pro přístup k členu aliasovaného oboru názvů. [ `.` ](member-access-operators.md#member-access-expression-) Token se `.` však také používá pro přístup k členu typu. Kvalifikátor `::` zajišťuje, že jeho levý identifikátor vždy odkazuje na alias oboru názvů, i když existuje typ nebo obor názvů se stejným názvem.
 
 ## <a name="c-language-specification"></a>specifikace jazyka C#
 

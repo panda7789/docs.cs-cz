@@ -8,12 +8,12 @@ helpviewer_keywords:
 - graphics [WPF], rotating objects [WPF]
 - rotating objects [WPF]
 ms.assetid: ee3466cd-e66f-4e8f-8a5a-71d77bc1e390
-ms.openlocfilehash: 02d8144c28b7a4e54fb86fea5abb694cf7af34af
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: e17d3b7b9986b477df198480129edaf4c139c6bc
+ms.sourcegitcommit: 267d092663aba36b6b2ea853034470aea493bfae
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79185969"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80112060"
 ---
 # <a name="how-to-rotate-an-object"></a>Postupy: Otočení objektu
 Tento příklad ukazuje, jak otočit objekt. Příklad nejprve <xref:System.Windows.Media.RotateTransform> vytvoří a pak <xref:System.Windows.Media.RotateTransform.Angle%2A> určuje jeho ve stupních.  
@@ -42,7 +42,7 @@ Dva objekty, které se otáčejí o 45 stupňů od různých rotačních střed�
   
  V <xref:System.Windows.Shapes.Polyline> předchozích příkladech <xref:System.Windows.UIElement>je . Při použití <xref:System.Windows.Media.Transform> <xref:System.Windows.UIElement.RenderTransform%2A> vlastnosti <xref:System.Windows.UIElement>, můžete použít <xref:System.Windows.UIElement.RenderTransformOrigin%2A> vlastnost k určení původu <xref:System.Windows.Media.Transform> pro každý, který použijete na prvek. Vzhledem <xref:System.Windows.UIElement.RenderTransformOrigin%2A> k tomu, že vlastnost používá relativní souřadnice, můžete použít transformaci na střed prvku i v případě, že neznáte jeho velikost. Další informace a příklad [najdete v tématu Určení počátku transformace pomocí relativních hodnot](how-to-specify-the-origin-of-a-transform-by-using-relative-values.md).  
   
- Kompletní ukázku naleznete v [tématu Ukázka 2D transformací](https://github.com/Microsoft/WPF-Samples/tree/master/Graphics/2DTransforms).  
+ Kompletní ukázku naleznete v tématu [2D transformace Ukázka](https://github.com/Microsoft/WPF-Samples/tree/master/Graphics/2DTransforms).  
   
 ## <a name="see-also"></a>Viz také
 

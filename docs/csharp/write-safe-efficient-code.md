@@ -4,12 +4,12 @@ description: Nedávná vylepšení jazyka C# umožňují psát ověřitelný bez
 ms.date: 10/23/2018
 ms.technology: csharp-advanced-concepts
 ms.custom: mvc
-ms.openlocfilehash: d4a7916b80e15c7f00fa0a7da213ed0593e0959d
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: bb53264f61192c042da469ba687da6c472e8c6d4
+ms.sourcegitcommit: 2514f4e3655081dcfe1b22470c0c28500f952c42
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "78239973"
+ms.lasthandoff: 03/18/2020
+ms.locfileid: "79506980"
 ---
 # <a name="write-safe-and-efficient-c-code"></a>Napište bezpečný a efektivní kód Jazyka C#
 
@@ -72,7 +72,7 @@ Postupujte podle tohoto doporučení vždy, když záměr návrhu je vytvořit n
 
 ## <a name="declare-readonly-members-when-a-struct-cant-be-immutable"></a>Deklarovat členy pouze pro čtení, když struktura nemůže být neměnná
 
-V C# 8.0 a novější, když struct typ je proměnlivý, měli byste `readonly`deklarovat členy, které nezpůsobují mutace být . Například následující je proměnlivá varianta struktury 3D bodů:
+V C# 8.0 a novější, když struct typ je proměnlivý, měli byste `readonly`deklarovat členy, které nezpůsobují mutace být . Zvažte jinou aplikaci, která potřebuje strukturu 3D bodů, ale musí podporovat proměnlivost. Následující verze struktury 3D bodů `readonly` přidá modifikátor pouze těm členům, kteří strukturu nemění. Postupujte podle tohoto příkladu, když váš návrh musí podporovat změny struktury některými členy, ale stále chcete výhody vynucení pouze pro čtení u některých členů:
 
 ```csharp
 public struct Point3D
@@ -214,13 +214,13 @@ Toto chování usnadňuje `in` přijmout parametry v průběhu času ve velkých
 
 Označení `in` parametru lze také použít s typy odkazů nebo číselnými hodnotami. Nicméně, výhody v obou případech jsou minimální, pokud existují.
 
-## <a name="never-use-mutable-structs-as-in-in-argument"></a>Nikdy nepoužívejte proměnlivé struktury `in` jako argument
+## <a name="avoid-mutable-structs-as-an-in-argument"></a>Vyhněte se proměnlivým `in` strukturám jako argumentu
 
 Výše popsané techniky vysvětlují, jak se vyhnout kopiím vrácením odkazů a předávání mů e-li odkazovat. Tyto techniky fungují nejlépe, když `readonly struct` jsou typy argumentů deklarovány jako typy. V opačném případě musí kompilátor vytvořit **obranné kopie** v mnoha situacích k vynucení pouze pro čtení všech argumentů. Vezměme si následující příklad, který vypočítá vzdálenost 3D bodu od počátku:
 
 [!code-csharp[InArgument](../../samples/snippets/csharp/safe-efficient-code/ref-readonly-struct/Program.cs#InArgument "Specifying an in argument")]
 
-Struktura `Point3D` *není* jen pro čtení struktury. Existuje šest různých volání přístupu vlastností v těle této metody. Při prvním vyšetření jste si možná mysleli, že tyto přístupy jsou bezpečné. Koneckonců, `get` přistupující objekt by neměl měnit stav objektu. Ale neexistuje žádné jazykové pravidlo, které by to vynucova. Je to jen běžná konvence. Libovolný typ může `get` implementovat přistupujícího pole, které upravilo vnitřní stav. Bez záruky některých jazyků musí kompilátor vytvořit dočasnou kopii argumentu před voláním libovolného člena. Dočasné úložiště je vytvořeno v zásobníku, hodnoty argumentu jsou zkopírovány do dočasného úložiště a hodnota `this` je zkopírována do zásobníku pro každý přístup člena jako argument. V mnoha situacích tyto kopie poškodit výkon natolik, že pass-by-value je rychlejší než pass-by-readonly-reference, pokud typ argumentu `readonly struct`není .
+Struktura `Point3D` *není* jen pro čtení struktury. Existuje šest různých volání přístupu vlastností v těle této metody. Při prvním vyšetření jste si možná mysleli, že tyto přístupy jsou bezpečné. Koneckonců, `get` přistupující objekt by neměl měnit stav objektu. Ale neexistuje žádné jazykové pravidlo, které by to vynucova. Je to jen běžná konvence. Libovolný typ může `get` implementovat přistupujícího pole, které upravilo vnitřní stav. Bez záruky některých jazyků musí kompilátor vytvořit dočasnou kopii argumentu před voláním libovolného člena, který není označen modifikátorem. `readonly` Dočasné úložiště je vytvořeno v zásobníku, hodnoty argumentu jsou zkopírovány do dočasného úložiště a hodnota `this` je zkopírována do zásobníku pro každý přístup člena jako argument. V mnoha situacích tyto kopie poškodit výkon natolik, že pass-by-value je rychlejší než pass-by-readonly-reference, pokud typ argumentu `readonly struct` není a a metoda volá členy, které nejsou označeny `readonly`. Pokud označíte všechny metody, které nemění `readonly`stav struktury jako , kompilátor může bezpečně určit, že stav struktury není změněn a obranná kopie není potřeba.
 
 Místo toho, pokud výpočet vzdálenosti používá neměnnou strukturu, `ReadonlyPoint3D`, dočasné objekty nejsou potřeba:
 

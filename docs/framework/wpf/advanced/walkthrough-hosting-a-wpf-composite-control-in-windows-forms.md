@@ -5,12 +5,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - hosting WPF content in Windows Forms [WPF]
 ms.assetid: 0ac41286-4c1b-4b17-9196-d985cb844ce1
-ms.openlocfilehash: e3326f654e05ef7d487a76f076f8ad0da3637096
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 88efab8adf36989938ba5aa887a28b41eb8820f3
+ms.sourcegitcommit: e48a54ebe62e874500a7043f6ee0b77a744d55b4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79187250"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80291625"
 ---
 # <a name="walkthrough-hosting-a-wpf-composite-control-in-windows-forms"></a>Návod: Hostování kompozitního ovládacího prvku WPF v rozhraní Windows Forms
 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]poskytuje bohaté prostředí pro vytváření aplikací. Pokud však máte značnou investici do kódu windows forms, může být [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] efektivnější rozšířit stávající aplikaci Windows Forms s spíše než přepsat od začátku. Běžným scénářem je, když chcete vložit jeden [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] nebo více ovládacích prvků implementovaných v rámci aplikace Windows Forms. Další informace o přizpůsobení ovládacích prvků WPF naleznete v [tématu Přizpůsobení ovládacího prvku](../controls/control-customization.md).  
@@ -185,7 +185,7 @@ namespace MyControls
 
 Následující obrázek znázorňuje složený ovládací prvek WPF hostovaný v aplikaci Windows Forms."  
 
- ![Scteenshot, který zobrazuje ovládací prvek Windows Form Hosting Avalon.](./media/walkthrough-hosting-a-wpf-composite-control-in-windows-forms/windows-form-hosting-avalon-control.png)  
+ ![Snímek obrazovky, který zobrazuje ovládací prvek Avalon ve formuláři systému Windows.](./media/walkthrough-hosting-a-wpf-composite-control-in-windows-forms/windows-form-hosting-avalon-control.png)  
   
 ### <a name="creating-the-project"></a>Vytvoření projektu  
  Zahájení projektu:  
@@ -329,4 +329,4 @@ Následující obrázek znázorňuje složený ovládací prvek WPF hostovaný v
 - <xref:System.Windows.Forms.Integration.WindowsFormsHost>
 - [Návrh kódu XAML v sadě Visual Studio](/visualstudio/xaml-tools/designing-xaml-in-visual-studio)
 - [Návod: Hostování složeného ovládacího prvku Windows Forms v subsystému WPF](walkthrough-hosting-a-windows-forms-composite-control-in-wpf.md)
-- [Návod: Hostování kompozitního ovládacího prvku 3D WPF v rozhraní Windows Forms](walkthrough-hosting-a-3-d-wpf-composite-control-in-windows-forms.md)
+- [Návod: Hostování kompozitového ovládacího prvku 3D WPF ve formulářích systému Windows](walkthrough-hosting-a-3-d-wpf-composite-control-in-windows-forms.md)

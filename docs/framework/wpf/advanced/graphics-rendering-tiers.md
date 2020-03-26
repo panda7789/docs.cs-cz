@@ -8,12 +8,12 @@ helpviewer_keywords:
 - graphics rendering tiers [WPF]
 - graphics [WPF], rendering tiers
 ms.assetid: 08dd1606-02a2-4122-9351-c0afd2ec3a70
-ms.openlocfilehash: 3c21ae3d00aa9f1b48a89650430b89ceccb2a1b7
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 05847271cf82739a6a0b609771043c02a7ffc0e9
+ms.sourcegitcommit: e48a54ebe62e874500a7043f6ee0b77a744d55b4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79186017"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80291593"
 ---
 # <a name="graphics-rendering-tiers"></a>Vrstvy vykreslování grafiky
 Úroveň vykreslování definuje úroveň grafických hardwarových [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] schopností a výkonu pro zařízení, které spouští aplikaci.  
@@ -45,7 +45,7 @@ ms.locfileid: "79186017"
 ### <a name="rendering-tier-0"></a>Úroveň vykreslování 0  
  Hodnota úrovně vykreslování 0 znamená, že pro aplikaci v zařízení není k dispozici žádná hardwarová akcelerace grafiky. Na této úrovni úrovně byste měli předpokládat, že všechny grafiky budou vykresleny softwarem bez hardwarové akcelerace. Funkce této úrovně odpovídá verzi DirectX, která je menší než 9.0.  
   
-### <a name="rendering-tier-1-and-rendering-tier-2"></a>Vykreslovací úroveň 1 a úroveň vykreslování 2  
+### <a name="rendering-tier-1-and-rendering-tier-2"></a>Vykreslovací úroveň 1 a úroveň vykreslování 2
   
 > [!NOTE]
 > Počínaje rozhraním .NET Framework 4 byla úroveň vykreslování 1 předefinována tak, aby zahrnovala pouze grafický hardware, který podporuje rozhraní DirectX 9.0 nebo vyšší. Grafický hardware, který podporuje Rozhraní DirectX 7 nebo 8, je nyní definován jako úroveň vykreslování 0.  
@@ -57,7 +57,7 @@ ms.locfileid: "79186017"
 |Funkce|Vrstva 1|Vrstva 2|  
 |-------------|------------|------------|  
 |Verze DirectX|Musí být větší nebo rovna 9.0.|Musí být větší nebo rovna 9.0.|  
-|Video RAM|Musí být větší nebo rovna 60 MB.|Musí být větší nebo rovna 120MB.|  
+|Video RAM|Musí být větší nebo rovna 60 MB.|Musí být větší nebo rovna 120 MB.|  
 |Shader obrazových bodů|Úroveň verze musí být větší nebo rovna 2.0.|Úroveň verze musí být větší nebo rovna 2.0.|  
 |Shader vrcholů|Žádný požadavek.|Úroveň verze musí být větší nebo rovna 2.0.|  
 |Jednotky s více texturami|Žádný požadavek.|Počet jednotek musí být větší nebo roven 4.|  
@@ -72,7 +72,7 @@ ms.locfileid: "79186017"
 |Mapování 3D MIP|[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]pokusí se použít mapování MIP při vykreslování 3D obsahu. Mapování MIP zlepšuje kvalitu vykreslování textury, <xref:System.Windows.Controls.Viewport3D>když textura zabírá menší zorné pole v .|  
 |Kruhové přechody|Při podpoře se vyhněte použití <xref:System.Windows.Media.RadialGradientBrush> na velkých objektech.|  
 |Výpočty 3D osvětlení|[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]provádí osvětlení na vrchol, což znamená, že intenzita světla musí být vypočtena v každém vrcholu pro každý materiál aplikovaný na síť.|  
-|Vykreslování textu|Vykreslování písem subpixelpoužívá na grafickém hardwaru dostupné shaderů pixelů.|  
+|Vykreslování textu|Vykreslování písem Subpixel používá na grafickém hardwaru dostupné shadery pixelů.|  
   
  Následující funkce a možnosti jsou hardwarově akcelerovány pouze pro vykreslování úrovně 2:  
   
@@ -101,7 +101,7 @@ ms.locfileid: "79186017"
 |Nastavení|Popis|  
 |-------------|-----------------|  
 |**Zakázat možnost hardwarové akcelerace**|Určuje, zda má být povolena hardwarová akcelerace.|  
-|**Maximální hodnota vícenásobného vzorku**|Určuje stupeň vícenásobného vzorkování pro vymýšce 3D obsahu.|  
+|**Maximální hodnota vícenásobného vzorku**|Určuje stupeň vícenásobného vzorkování pro vyhlazení 3D obsahu.|  
 |**Požadované datum ovladače videa**|Určuje, zda systém zakáže hardwarovou akceleraci ovladačů vydaných před listopadem 2004.|  
 |**Použít možnost referenčního rastrování**|Určuje, [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] zda má být používán referenční rastrovač.|  
   
@@ -124,7 +124,7 @@ ms.locfileid: "79186017"
   
  Při spuštění nástroje DirectX Diagnostic Tool obsahuje hlavní okno sadu karet, které umožňují zobrazit a diagnostikovat informace související s rozhraním DirectX. Karta **Systém** například poskytuje systémové informace o počítači a určuje verzi rozhraní DirectX nainstalovanou v počítači.  
   
- ![Screenhot: Diagnostický nástroj DirectX](./media/directxdiagnostictool-01.png "DirectXDiagnosticTool_01")  
+ ![Snímek obrazovky: Nástroj pro diagnostiku DirectX](./media/directxdiagnostictool-01.png "DirectXDiagnosticTool_01")  
 Hlavní okno diagnostického nástroje DirectX  
   
 ## <a name="see-also"></a>Viz také

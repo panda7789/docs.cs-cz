@@ -3,19 +3,21 @@ title: Instalace .NET Core na openSUSE 15 - správce balíčků - .NET Core
 description: Pomocí správce balíčků nainstalujte .NET Core SDK a runtime na openSUSE 15.
 author: thraka
 ms.author: adegeo
-ms.date: 12/26/2019
-ms.openlocfilehash: aaece5e3554ab567cf82c23265c8fba1656298d8
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.date: 03/17/2020
+ms.openlocfilehash: 3b5f51161dad4b0d7851421810506d6ed9f676f9
+ms.sourcegitcommit: 07123a475af89b6da5bb6cc51ea40ab1e8a488f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "76920770"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80134235"
 ---
 # <a name="opensuse-15-package-manager---install-net-core"></a>openSUSE 15 Správce balíčků - Instalace .NET Core
 
 [!INCLUDE [package-manager-switcher](./includes/package-manager-switcher.md)]
 
-Tento článek popisuje, jak pomocí správce balíčků nainstalovat .NET Core na openSUSE 15. Pokud instalujete runtime, doporučujeme nainstalovat [ASP.NET core runtime](#install-the-aspnet-core-runtime), protože zahrnuje rozhraní .NET Core i ASP.NET Core runtime.
+Tento článek popisuje, jak pomocí správce balíčků nainstalovat .NET Core na openSUSE 15.
+
+[!INCLUDE [package-manager-intro-sdk-vs-runtime](includes/package-manager-intro-sdk-vs-runtime.md)]
 
 ## <a name="register-microsoft-key-and-feed"></a>Registrace klíče Microsoft a informačního kanálu
 
@@ -32,7 +34,7 @@ Otevřete terminál a spusťte následující příkazy.
 ```bash
 sudo zypper install libicu
 sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
-wget -q https://packages.microsoft.com/config/opensuse/15/prod.repo
+wget https://packages.microsoft.com/config/opensuse/15/prod.repo
 sudo mv prod.repo /etc/zypp/repos.d/microsoft-prod.repo
 sudo chown root:root /etc/zypp/repos.d/microsoft-prod.repo
 ```

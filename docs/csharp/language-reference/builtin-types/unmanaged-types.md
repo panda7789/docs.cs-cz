@@ -3,12 +3,12 @@ title: Nespravované typy – odkaz jazyka C#
 ms.date: 09/06/2019
 helpviewer_keywords:
 - unmanaged type [C#]
-ms.openlocfilehash: 8a4599514115aa21f17c32848ce203fea704072e
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 9dd2ab4e044b8a86bfe72a6fcf2481b8e1e80bf4
+ms.sourcegitcommit: 2514f4e3655081dcfe1b22470c0c28500f952c42
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "78846458"
+ms.lasthandoff: 03/18/2020
+ms.locfileid: "79507227"
 ---
 # <a name="unmanaged-types-c-reference"></a>Nespravované typy (odkaz Jazyka C#)
 
@@ -39,4 +39,4 @@ Další informace naleznete v části [Typy ukazatelů](~/_csharplang/spec/unsaf
 - [Typy ukazatelů](../../programming-guide/unsafe-code-pointers/pointer-types.md)
 - [Typy související s Memory a Span](../../../standard/memory-and-spans/index.md)
 - [sizeof – operátor](../operators/sizeof.md)
-- [Operátor stackalloc](../operators/stackalloc.md)
+- [stackalloc](../operators/stackalloc.md)

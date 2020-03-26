@@ -2,12 +2,12 @@
 title: dotnet publikovat, příkaz
 description: Příkaz publikování dotnet publikuje projekt nebo řešení .NET Core do adresáře.
 ms.date: 02/24/2020
-ms.openlocfilehash: c34618409c9a539043c84c7e03daa8aa249d64f6
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: ed5b87b3343210ca81486ef4b9a9d70d1b534464
+ms.sourcegitcommit: 267d092663aba36b6b2ea853034470aea493bfae
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79146552"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80110968"
 ---
 # <a name="dotnet-publish"></a>dotnet publish
 
@@ -168,5 +168,5 @@ Výstup `dotnet publish` příkazu je připraven k nasazení do hostitelského s
 - [Publikování aplikací .NET Core pomocí rozhraní CLI jádra ROZHRANÍ .NET](../deploying/deploy-with-cli.md)
 - [Cílové architektury](../../standard/frameworks.md)
 - [Katalog IDentifier (RID) modulu runtime](../rid-catalog.md)
-- [Práce s macOS Catalina Notarization](../install/macos-notarization-issues.md) Další informace naleznete v následujících zdrojích:
+- [Práce s macOS Catalina Notarization](../install/macos-notarization-issues.md)
 - [Adresářová struktura publikované aplikace](/aspnet/core/hosting/directory-structure)

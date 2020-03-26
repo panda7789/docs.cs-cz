@@ -3,14 +3,14 @@ title: Rozhraní příkazového řádku .NET Core
 titleSuffix: ''
 description: Přehled rozhraní .NET Core CLI a jeho funkcí.
 ms.date: 02/13/2020
-ms.openlocfilehash: 45a40063f70a621e807abf5e01ceecb125aecd7c
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: ac5988bacbef41326f2501a2cff6c3f5aa0be798
+ms.sourcegitcommit: 267d092663aba36b6b2ea853034470aea493bfae
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "79399117"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80110838"
 ---
-# <a name="net-core-cli-overview"></a>Přehled rozhraní CLI jádra .NET
+# <a name="net-core-cli-overview"></a>Přehled rozhraní .NET Core CLI
 
 **Tento článek se týká:** ✔️ .NET Core 2.1 SDK a novější verze
 
@@ -95,11 +95,11 @@ Příkaz provede akci. Například `dotnet build` vytvoří kód. `dotnet publis
 
 ### <a name="arguments"></a>Argumenty
 
-Argumenty, které předáte na příkazovém řádku, jsou argumenty do volaný příkaz. Například při `dotnet publish my_app.csproj`spuštění `my_app.csproj` argument označuje projekt publikovat a je `publish` předán příkazu.
+Argumenty, které předáte na příkazovém řádku, jsou argumenty do volaný příkaz. Například při spuštění `dotnet publish my_app.csproj`argument `my_app.csproj` označuje projekt publikovat a je `publish` předán příkazu.
 
 ### <a name="options"></a>Možnosti
 
-Možnosti, které předáte na příkazovém řádku, jsou možnosti vyvolaný příkaz. Například při `dotnet publish --output /build_output`spuštění `--output` , možnost a jeho `publish` hodnota jsou předány příkazu.
+Možnosti, které předáte na příkazovém řádku, jsou možnosti vyvolaný příkaz. Například při spuštění `dotnet publish --output /build_output`, `--output` možnost a jeho hodnota `publish` jsou předány příkazu.
 
 ## <a name="see-also"></a>Viz také
 

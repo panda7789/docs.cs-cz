@@ -7,12 +7,12 @@ helpviewer_keywords:
 - common language runtime, about
 - common language runtime, overview
 ms.assetid: 29848c96-fc36-462d-8072-ba223a40b697
-ms.openlocfilehash: de9cbdab5d5786b9d59d23ba675fa3f78f807716
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: ace42738118cde4bcda4b78607d7bdb045d3501e
+ms.sourcegitcommit: 99b153b93bf94d0fecf7c7bcecb58ac424dfa47c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "79181597"
+ms.lasthandoff: 03/25/2020
+ms.locfileid: "80248918"
 ---
 # <a name="overview-of-net-framework"></a>Přehled rozhraní .NET Framework
 
@@ -31,7 +31,7 @@ Rozhraní .NET Framework je technologie, která podporuje vytváření a spoušt
 - Chcete-li vytvořit veškerou komunikaci na oborové standardy, aby bylo zajištěno, že kód založený na rozhraní .NET Framework integruje s jiným kódem.
 
 > [!NOTE]
-> Obecný úvod do rozhraní .NET Framework pro uživatele i vývojáře naleznete v [tématu Začínáme](index.md).
+> Obecný úvod do rozhraní .NET Framework pro uživatele i vývojáře najdete v tématu [Začínáme](index.md).
 
 Rozhraní .NET Framework se skládá z běžného jazyka runtime (CLR) a knihovny tříd rozhraní .NET Framework. Běžný jazyk runtime je základem rozhraní .NET Framework. Představte si runtime jako agenta, který spravuje kód v době spuštění, poskytuje základní služby, jako je správa paměti, správa vláken a vzdálená komunikace, a zároveň vynucuje přísnou bezpečnost typů a další formy přesnosti kódu, které podporují zabezpečení a robustnost. Ve skutečnosti je koncept správy kódu základním principem běhu. Kód, který cílí na runtime, se označuje jako spravovaný kód, zatímco kód, který necílí na runtime, se označuje jako nespravovaný kód. Knihovna tříd je komplexní, objektově orientovaná kolekce opakovaně použitelných typů, které používáte k vývoji aplikací od tradičních aplikací příkazového řádku nebo grafického uživatelského rozhraní (GUI) až po aplikace založené na nejnovějších inovacích poskytovaných ASP.NET, jako je web Formuláře a webové služby XML.
 
@@ -71,7 +71,7 @@ Knihovna tříd rozhraní .NET Framework je kolekce opakovaně použitelných ty
 
 Například třídy kolekce rozhraní .NET Framework implementují sadu rozhraní pro vývoj vlastních tříd kolekce. Vaše třídy kolekce se hladce prolnou s třídami v rozhraní .NET Framework.
 
-Jak byste očekávali od knihovny tříd orientovaných na objekty, typy rozhraní .NET Framework umožňují provádět řadu běžných programovacích úloh, včetně úloh, jako je správa řetězců, shromažďování dat, připojení k databázi a přístup k souborům. Kromě těchto běžných úkolů obsahuje knihovna tříd typy, které podporují různé specializované scénáře vývoje. Pomocí rozhraní .NET Framework můžete vyvíjet následující typy aplikací a služeb:
+Jak byste očekávali od knihovny tříd orientovaných na objekty, typy rozhraní .NET Framework umožňují provádět řadu běžných programovacích úloh, včetně správy řetězců, shromažďování dat, připojení k databázi a přístupu k souborům. Kromě těchto běžných úkolů obsahuje knihovna tříd typy, které podporují různé specializované scénáře vývoje. Pomocí rozhraní .NET Framework můžete vyvíjet následující typy aplikací a služeb:
 
 - Konzolové aplikace. Viz [Aplikace konzoly ve vytváření .](../../standard/building-console-apps.md)
 
@@ -96,4 +96,4 @@ Windows Forms třídy jsou komplexní sada opakovaně použitelných typů, kter
 - [Průvodce vývojem](../development-guide.md)
 - [Nástroje](../tools/index.md)
 - [Ukázky a výukové programy rozhraní .NET](../../samples-and-tutorials/index.md)
-- [Prohlížeč rozhraní .NET API](../../../api/index.md)
+- [Prohlížeč rozhraní API pro .NET](../../../api/index.md)

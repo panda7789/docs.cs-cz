@@ -3,12 +3,12 @@ title: Upgrade polí API pro typy odkazů s možnou hodnotou null s atributy, kt
 description: Naučte se používat popisné atributy AllowNull, DisallowNull, MaybeNull, NotNull a další plně popsat stav null vašich api.
 ms.technology: csharp-null-safety
 ms.date: 07/31/2019
-ms.openlocfilehash: a4b1f851bcbe27dd4884d45eb6d1209ab54271d1
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: ca04db800271b9b01b5b9f1482dd5a0db2cc1c35
+ms.sourcegitcommit: 99b153b93bf94d0fecf7c7bcecb58ac424dfa47c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79170360"
+ms.lasthandoff: 03/25/2020
+ms.locfileid: "80249242"
 ---
 # <a name="update-libraries-to-use-nullable-reference-types-and-communicate-nullable-rules-to-callers"></a>Aktualizace knihoven za účelem použití typů odkazů s možnou hodnotou null a komunikace pravidel s možnou hodnotou null volajícím
 
@@ -30,7 +30,7 @@ Aktualizace knihovny pro odkazy s možnou `?` hodnotou null vyžaduje více než
 
 Tahle práce chce čas. Začněme se strategiemi, aby vaše knihovna nebo aplikace byla upozorněna na nulu a zároveň vyvažovala další požadavky a dodávky. Uvidíte, jak vyvážit probíhající vývoj, který umožňuje typy odkazů s možnou hodnotou null. Dozvíte se výzvy pro definice obecných typů. Naučíte se použít atributy k popisu před a po podmínkách na jednotlivých api.
 
-## <a name="choose-a-nullable-strategy"></a>Zvolte strategii, jejíž hodnotu lze zrušit
+## <a name="choose-a-strategy-for-nullable-reference-types"></a>Zvolte strategii pro typy odkazů s možnou hodnotou null.
 
 První volbou je, zda null typy odkazů by měly být zapnuty nebo vypnuty ve výchozím nastavení. Máte dvě strategie:
 
@@ -41,7 +41,7 @@ První strategie funguje nejlépe, když přidáváte další funkce do knihovny
 
 Po této první strategii postupujte takto:
 
-1. Povolte typy s možnou hodnotou null pro celý projekt přidáním `<Nullable>enable</Nullable>` prvku do souborů *csproj.*
+1. Povolte typy odkazů s možnou `<Nullable>enable</Nullable>` hodnotou null pro celý projekt přidáním prvku do souborů *csproj.*
 1. Přidejte `#nullable disable` pragma do každého zdrojového souboru v projektu.
 1. Při práci na každém souboru odeberte pragmu a zřete všechna varování.
 
@@ -129,7 +129,7 @@ Předchozí příklad ukazuje, co hledat při `AllowNull` přidávání atributu
 
 Nejčastěji budete potřebovat tento atribut pro `in` `out`vlastnosti `ref` , nebo , a argumenty. Atribut `AllowNull` je nejlepší volbou, pokud je proměnná obvykle non-null, ale je třeba povolit `null` jako předběžnou podmínku.
 
-Kontrast, který se `DisallowNull`scénáře pro použití : Tento atribut slouží k určení, `null`že vstupní proměnná typu null by neměla být . Zvažte vlastnost, kde `null` je výchozí hodnota, ale klienti ji mohou nastavit pouze na hodnotu, která není null. Uvažujte následující kód:
+Kontrast, který se `DisallowNull`scénáře pro použití : Tento atribut slouží k určení, že `null`vstupní proměnná typu odkazu s možnou hodnotou null by neměla být . Zvažte vlastnost, kde `null` je výchozí hodnota, ale klienti ji mohou nastavit pouze na hodnotu, která není null. Uvažujte následující kód:
 
 ```csharp
 public string ReviewComment
@@ -189,7 +189,7 @@ public T Find<T>(IEnumerable<T> sequence, Func<T, bool> match)
 
 Předchozí kód informuje volající, že smlouva znamená typ s nulou, ale vrácená hodnota *může* být ve skutečnosti null.  Použijte `MaybeNull` atribut, pokud by vaše rozhraní API mělo být typu s nulovým hodnotou, `null` obvykle parametr obecného typu, ale mohou existovat instance, kde by měl být vrácen.
 
-Můžete také určit, že vrácená hodnota nebo `out` nebo `ref` argument není null, i když typ je typ s možnou hodnotou null. Zvažte metodu, která zajišťuje, že pole je dostatečně velké pro uložení několika prvků. Pokud vstupní argument nemá kapacitu, rutina by přidělit nové pole a zkopírovat všechny existující prvky do něj. Pokud je `null`vstupní argument , rutina by přidělit nové úložiště. Pokud je dostatečná kapacita, rutina nedělá nic:
+Můžete také určit, že vrácená hodnota nebo `out` nebo `ref` argument není null, i když typ je typ odkazu s možnou hodnotou null. Zvažte metodu, která zajišťuje, že pole je dostatečně velké pro uložení několika prvků. Pokud vstupní argument nemá kapacitu, rutina by přidělit nové pole a zkopírovat všechny existující prvky do něj. Pokud je `null`vstupní argument , rutina by přidělit nové úložiště. Pokud je dostatečná kapacita, rutina nedělá nic:
 
 ```csharp
 public void EnsureCapacity<T>(ref T[] storage, int size)
@@ -219,7 +219,7 @@ Můžete zadat bezpodmínečné postconditions pomocí následujících atribut�
 
 ## <a name="specify-conditional-post-conditions-notnullwhen-maybenullwhen-and-notnullifnotnull"></a>Určete podmíněné `NotNullWhen`post-podmínky: , `MaybeNullWhen`a`NotNullIfNotNull`
 
-Pravděpodobně jste obeznámeni `string` s <xref:System.String.IsNullOrEmpty(System.String)?DisplayProperty=nameWithType>metodou . Tato metoda `true` vrátí, pokud je argument null nebo prázdný řetězec. Je to forma null-check: Volající nemusí null-zkontrolovat argument, pokud metoda `false`vrátí . Chcete-li metodu, jako je tato nullable aware, byste nastavit argument `NotNullWhen` na typ s hodnotou null a přidat atribut:
+Pravděpodobně jste obeznámeni `string` s <xref:System.String.IsNullOrEmpty(System.String)?DisplayProperty=nameWithType>metodou . Tato metoda `true` vrátí, pokud je argument null nebo prázdný řetězec. Je to forma null-check: Volající nemusí null-zkontrolovat argument, pokud metoda `false`vrátí . Chcete-li metodu, jako je tato nullable aware, byste nastavit argument `NotNullWhen` na typ odkazu s hodnotou null a přidat atribut:
 
 ```csharp
 bool IsNullOrEmpty([NotNullWhen(false)]string? value);

@@ -4,12 +4,12 @@ description: V tomto kurzu se dozvíte, jak kontejnerizovat aplikaci .NET Core s
 ms.date: 01/09/2020
 ms.topic: tutorial
 ms.custom: mvc
-ms.openlocfilehash: e1904430a591b0e74a69d50a53869a130fc0a248
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 8be12792e4a9e8511dba87e657f700cc4ec97a16
+ms.sourcegitcommit: 34dc3c0d0d0a1cc418abff259d9daa8078d00b81
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "78157827"
+ms.lasthandoff: 03/19/2020
+ms.locfileid: "79546572"
 ---
 # <a name="tutorial-containerize-a-net-core-app"></a>Kurz: Kontejnerize aplikace .NET Core
 
@@ -26,8 +26,8 @@ Naučíte se:
 
 Porozumíte sestavení a nasazení úloh kontejneru Dockeru pro aplikaci .NET Core. *Platforma Dockeru* používá *modul Dockeru* k rychlému vytváření a balení aplikací jako *imitace Dockeru*. Tyto image jsou zapsány ve formátu *Dockerfile* k nasazení a spuštění ve vrstvené kontejneru.
 
-> [!TIP]
-> Pokud pracujete s existující aplikací ASP.NET Core, přečtěte si informace o tom, [jak kontejnerizovat ASP.NET základní aplikace.](/aspnet/core/host-and-deploy/docker/building-net-docker-images)
+> [!WARNING]
+> **Tento kurz není pro aplikace ASP.NET Core.** Pokud používáte ASP.NET Core, přečtěte [si naučte se, jak kontejnerizovat ASP.NET základní aplikace](/aspnet/core/host-and-deploy/docker/building-net-docker-images) kurzu.
 
 ## <a name="prerequisites"></a>Požadavky
 

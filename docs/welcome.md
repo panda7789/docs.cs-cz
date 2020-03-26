@@ -3,12 +3,12 @@ title: Vítejte na .NET
 description: Začínáme s řady technologií .NET.
 ms.date: 12/03/2019
 ms.custom: updateeachrelease
-ms.openlocfilehash: 20332f4dcc0664287873a27e0064a4765b1ecde7
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: bfc9b55f06a5830c13df52f992d2630f1f45d8be
+ms.sourcegitcommit: b75a45f0cfe012b71b45dd9bf723adf32369d40c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "77124218"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80228786"
 ---
 # <a name="welcome-to-net"></a>Vítejte na .NET
 
@@ -44,11 +44,11 @@ Tato dokumentace popisuje šíři rozhraní .NET napříč platformami a jazyky.
 
 - [Průvodce rozhraním .NET](standard/index.md)
 - [Základní příručka rozhraní .NET](core/index.md)
-- [Průvodce rozhraním .NET Framework](framework/index.md)
+- [Průvodce rozhraním .NET Framework](framework/index.yml)
 - [Průvodce C#](csharp/index.yml)
 - [Průvodce F#](fsharp/index.yml)
 - [Průvodce visual basicem](visual-basic/index.yml)
-- [Průvodce ML.NET](machine-learning/index.yml)
+- [ML.NET průvodce](machine-learning/index.yml)
 - [.NET for Apache Spark](spark/index.yml)
 - [Architektura aplikace .NET](architecture/index.yml)
 

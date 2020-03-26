@@ -8,12 +8,12 @@ helpviewer_keywords:
 - events [Windows Forms], defining within Windows Forms custom controls
 - custom controls [Windows Forms], events using code
 ms.assetid: d89f1096-8061-42e2-a855-a1f053f1940a
-ms.openlocfilehash: 6799b229de8e8eb49dd3b8bbaffe0d08a32b7208
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: a4738373b10fbcb1d2406406d30f10b795aeb914
+ms.sourcegitcommit: b75a45f0cfe012b71b45dd9bf723adf32369d40c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79142287"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80228845"
 ---
 # <a name="defining-an-event-in-windows-forms-controls"></a>Definování události v ovládacím prvku Windows Forms
 Podrobnosti o definování vlastních událostí naleznete v [tématu Události](../../../standard/events/index.md). Pokud definujete událost, která nemá žádná přidružená data, použijte <xref:System.EventArgs>základní <xref:System.EventHandler> typ pro data události a použijte jako delegát události. Vše, co zbývá udělat, je definovat `On`člen události a chráněnou metodu *EventName,* která vyvolává událost.  
@@ -71,7 +71,7 @@ public class FlashTrackBar : Control {
    // changed. Derived controls can override this method.
    protected virtual void OnValueChanged(EventArgs e)
    {  
-       ValueChanged?.Invoke(this, e);  
+       onValueChanged?.Invoke(this, e);  
    }  
 }  
 ```  
@@ -79,4 +79,4 @@ public class FlashTrackBar : Control {
 ## <a name="see-also"></a>Viz také
 
 - [Události v ovládacích prvcích Windows Forms](events-in-windows-forms-controls.md)
-- [Akce](../../../standard/events/index.md)
+- [Události](../../../standard/events/index.md)

@@ -3,19 +3,21 @@ title: Instalace .NET Core na SLES 12 - správce balíčků - .NET Core
 description: Pomocí správce balíčků nainstalujte na sles 12 .NET Core SDK a runtime.
 author: thraka
 ms.author: adegeo
-ms.date: 12/04/2019
-ms.openlocfilehash: a6c10c6b11bc57ae4bbe814c66c563b85ce3c22b
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.date: 03/17/2020
+ms.openlocfilehash: 8358107c682274fc2b75bf72689eaa4b168a86c5
+ms.sourcegitcommit: 07123a475af89b6da5bb6cc51ea40ab1e8a488f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "76920740"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80134221"
 ---
 # <a name="sles-12-package-manager---install-net-core"></a>SLES 12 Správce balíčků - instalace jádra .NET
 
 [!INCLUDE [package-manager-switcher](./includes/package-manager-switcher.md)]
 
-Tento článek popisuje, jak pomocí správce balíčků nainstalovat .NET Core na SLES 12. Pokud instalujete runtime, doporučujeme nainstalovat [ASP.NET core runtime](#install-the-aspnet-core-runtime), protože zahrnuje rozhraní .NET Core i ASP.NET Core runtime.
+Tento článek popisuje, jak pomocí správce balíčků nainstalovat .NET Core na SLES 12.
+
+[!INCLUDE [package-manager-intro-sdk-vs-runtime](includes/package-manager-intro-sdk-vs-runtime.md)]
 
 ## <a name="register-microsoft-key-and-feed"></a>Registrace klíče Microsoft a informačního kanálu
 

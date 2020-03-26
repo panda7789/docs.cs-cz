@@ -3,12 +3,12 @@ title: Telemetrie sady .NET Core SDK
 description: Seznamte se s telemetrickými funkcemi sady .NET Core SDK, které shromažďují informace o využití pro analýzu, která data jsou shromažďována a jak je zakázat.
 author: KathleenDollard
 ms.date: 08/27/2019
-ms.openlocfilehash: 9d5d7ff09ade89712f2fbbe35224851bb1c28b4c
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: a79b791abc99331ff39f5e281ee0fdc62b258989
+ms.sourcegitcommit: 2514f4e3655081dcfe1b22470c0c28500f952c42
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "78156683"
+ms.lasthandoff: 03/18/2020
+ms.locfileid: "79507279"
 ---
 # <a name="net-core-sdk-telemetry"></a>Telemetrie sady .NET Core SDK
 
@@ -45,6 +45,8 @@ The .NET Core tools collect usage data in order to help us improve your experien
 
 Read more about .NET Core CLI Tools telemetry: https://aka.ms/dotnet-cli-telemetry
 ```
+
+Chcete-li zakázat tuto zprávu a uvítací `DOTNET_NOLOGO` zprávu `true`jádra .NET Core, nastavte proměnnou prostředí na . Všimněte si, že tato proměnná nemá žádný vliv na telemetrické odhlásit.
 
 ## <a name="data-points"></a>Datové body
 

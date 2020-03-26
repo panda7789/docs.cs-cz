@@ -6,19 +6,19 @@ helpviewer_keywords:
 - .NET Framework, getting started
 - getting started [.NET Framework]
 ms.assetid: c693fd34-88fe-4d90-b332-19eeadf3b7e7
-ms.openlocfilehash: 0fffbb2f1b58d8ba65d9c5ca8b7c8edc583af2da
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: cd27f2fb893def9e186504cc9973bae71473f005
+ms.sourcegitcommit: 99b153b93bf94d0fecf7c7bcecb58ac424dfa47c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "79400013"
+ms.lasthandoff: 03/25/2020
+ms.locfileid: "80248905"
 ---
 # <a name="get-started-with-net-framework"></a>Začínáme s rozhraním .NET Framework
 
 Rozhraní .NET Framework je prostředí pro spuštění za běhu, které spravuje aplikace, které cílí na rozhraní .NET Framework. Skládá se ze společného jazyka runtime, který poskytuje správu paměti a další systémové služby, a rozsáhlé knihovny tříd, který umožňuje programátorům využít robustní, spolehlivý kód pro všechny hlavní oblasti vývoje aplikací.
 
 > [!NOTE]
-> Rozhraní .NET Framework je k dispozici pouze v systémech Windows. [Pomocí rozhraní .NET Core](../../core/index.md) můžete spouštět aplikace ve Windows, MacOS a Linuxu.
+> Rozhraní .NET Framework je k dispozici pouze v systémech Windows. [Pomocí rozhraní .NET Core](../../core/index.md) můžete vyvíjet a spouštět aplikace ve Windows, MacOS a Linuxu.
 
 ## <a name="what-is-net-framework"></a>Co je rozhraní .NET Framework?
 
@@ -85,7 +85,7 @@ Další informace o vývoji aplikací, které cílí na rozhraní .NET Framework
 
 ## <a name="see-also"></a>Viz také
 
-- [Průvodce rozhraním .NET Framework](../index.md)
+- [Průvodce rozhraním .NET Framework](../index.yml)
 - [Co je nového](../whats-new/index.md)
-- [Prohlížeč rozhraní API .NET](../../../api/index.md)
+- [Prohlížeč rozhraní API pro .NET](../../../api/index.md)
 - [Průvodce vývojem](../development-guide.md)

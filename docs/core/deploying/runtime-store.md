@@ -2,12 +2,12 @@
 title: Úložiště balíčků modulu runtime
 description: Zjistěte, jak pomocí úložiště balíčků runtime cílit manifesty používané jádrem .NET Core.
 ms.date: 08/12/2017
-ms.openlocfilehash: 7a833ed95147608c6fb403f8f0dec179d2a73833
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: ba3182b682e8a47397ac09ed46afe25190d34e5f
+ms.sourcegitcommit: 07123a475af89b6da5bb6cc51ea40ab1e8a488f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "77448955"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80134265"
 ---
 # <a name="runtime-package-store"></a>Úložiště balíčků modulu runtime
 
@@ -41,7 +41,7 @@ Prvním krokem je vytvoření *manifestu úložiště balíčků,* který obsahu
 ```xml
 <Project Sdk="Microsoft.NET.Sdk">
   <ItemGroup>
-    <PackageReference Include="<NUGET_PACKAGE>" Version="<VERSION>" />
+    <PackageReference Include="NUGET_PACKAGE" Version="VERSION" />
     <!-- Include additional packages here -->
   </ItemGroup>
 </Project>

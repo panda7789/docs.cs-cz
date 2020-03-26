@@ -7,12 +7,12 @@ dev_langs:
 - vb
 ms.technology: dotnet-standard
 ms.assetid: 2dbed1bc-86f5-43cd-9a57-adbb1c5efba4
-ms.openlocfilehash: e1f419dd57c1e90d7ebb57ef572f338a34d1c509
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 03751fa3758c239cb9eea5fe826dff66c1c1605b
+ms.sourcegitcommit: 99b153b93bf94d0fecf7c7bcecb58ac424dfa47c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "73423640"
+ms.lasthandoff: 03/25/2020
+ms.locfileid: "80249575"
 ---
 # <a name="language-independence-and-language-independent-components"></a>Jazyková nezávislost a jazykově nezávislé komponenty
 
@@ -51,7 +51,7 @@ V tomto článku:
 
   * [Vlastnosti](#properties)
 
-  * [Akce](#events)
+  * [Události](#events)
 
   * [Přetížení](#overloads)
 
@@ -165,11 +165,11 @@ Konstruktory | [Konstruktory](#constructors) | Konstruktor objektu nesmí být v
 Výčty | [Výčty](#enumerations) | Základní typ výčtu musí být vestavěný typ celého čísla CLS, název pole bude "value__" a `RTSpecialName`toto pole bude označeno . |  7
 Výčty | [Výčty](#enumerations) | Existují dva odlišné druhy výčtů, označené přítomností nebo nepřítomností vlastního atributu [System.FlagsAttribute](xref:System.FlagsAttribute) (viz Knihovna oddílu IV). Jeden představuje pojmenované celé číslo hodnoty; ostatní představuje pojmenované bitové příznaky, které lze kombinovat pro generování nepojmenované hodnoty. Hodnota an `enum` není omezena na zadané hodnoty. |  8
 Výčty | [Výčty](#enumerations) | Literálová statická pole výčtu musí mít typ výčtu samotného. |  9
-Akce | [Akce](#events) | Metody, které implementují `SpecialName` událost, musí být označeny v metadatech. |29
-Akce | [Akce](#events) | Přístupnost události a jejích přistupujících objektů musí být totožná. |30
-Akce | [Akce](#events) | Metody `add` `remove` a metody události musí být buď přítomny, nebo chybí. |31
-Akce | [Akce](#events) | Metody `add` `remove` a pro událost musí mít jeden parametr, jehož typ definuje typ události a který musí být odvozen od [System.Delegate](xref:System.Delegate). |32
-Akce | [Akce](#events) | Události musí dodržovat konkrétní vzor pojmenování. Atribut SpecialName uvedený v pravidle CLS 29 bude při porovnávání příslušných názvů ignorován a musí dodržovat pravidla identifikátorů.  |33
+Události | [Události](#events) | Metody, které implementují `SpecialName` událost, musí být označeny v metadatech. |29
+Události | [Události](#events) | Přístupnost události a jejích přistupujících objektů musí být totožná. |30
+Události | [Události](#events) | Metody `add` `remove` a metody události musí být buď přítomny, nebo chybí. |31
+Události | [Události](#events) | Metody `add` `remove` a pro událost musí mít jeden parametr, jehož typ definuje typ události a který musí být odvozen od [System.Delegate](xref:System.Delegate). |32
+Události | [Události](#events) | Události musí dodržovat konkrétní vzor pojmenování. Atribut SpecialName uvedený v pravidle CLS 29 bude při porovnávání příslušných názvů ignorován a musí dodržovat pravidla identifikátorů.  |33
 Výjimky | [Výjimky](#exceptions) | Objekty, které jsou vyvolány musí být typu [System.Exception](xref:System.Exception) nebo typu dědit z něj. Metody kompatibilní se standardem CLS však nejsou nutné k blokování šíření jiných typů výjimek. | 40
 Obecné | [Pravidla dodržování předpisů CLS](#cls-compliance-rules) | Pravidla CLS platí pouze pro ty části typu, které jsou přístupné nebo viditelné mimo definující sestavu. | 1
 Obecné | [Pravidla dodržování předpisů CLS](#cls-compliance-rules) | Členové typů, které nejsou kompatibilní se standardem CLS, nesmějí být označeni jako kompatibilní se standardem CLS. | 2
@@ -2058,7 +2058,7 @@ Vlastnosti v typech kompatibilních se standardem CLS se musí řídit těmito p
 
 * Pokud vlastnost má getter a setter, musí být oba virtuální, statické nebo obě instance. Kompilátor Jazyka C# automaticky vynucuje toto pravidlo prostřednictvím syntaxe definice vlastnosti.
 
-### <a name="events"></a>Akce
+### <a name="events"></a>Události
 
 Událost je definována svým názvem a typem. Typ události je delegát, který se používá k označení události. Například `DbConnection.StateChange` událost je typu `StateChangeEventHandler`. Kromě samotné události poskytují implementaci události tři metody s názvy založenými na `SpecialName` názvu události a jsou označeny jako v metadatech sestavení:
 

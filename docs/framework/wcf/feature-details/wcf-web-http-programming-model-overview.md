@@ -2,12 +2,12 @@
 title: Přehled modelu webového programování HTTP služby WCF
 ms.date: 03/30/2017
 ms.assetid: 381fdc3a-6e6c-4890-87fe-91cca6f4b476
-ms.openlocfilehash: fb6ef0fdcefbc6ceec75ce30db3abf5896d85c61
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 9f2350b58e3cb33613ebc8e2c3cda1e234bcde25
+ms.sourcegitcommit: e48a54ebe62e874500a7043f6ee0b77a744d55b4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79184188"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80291736"
 ---
 # <a name="wcf-web-http-programming-model-overview"></a>Přehled modelu webového programování HTTP služby WCF
 Programovací model WCF (Windows Communication Foundation) WEB HTTP poskytuje základní prvky potřebné k vytvoření webových služeb HTTP s WCF. Služby WCF WEB HTTP jsou navrženy tak, aby k nim přistupovaly co nejširší spektrum možných klientů, včetně webových prohlížečů, a mají následující jedinečné požadavky:  
@@ -135,7 +135,7 @@ interface ICustomer
   
  To znamená, že programovací model WCF WEB HTTP může zpracovávat libovolný typ dat, ale může být programování proti <xref:System.IO.Stream>.  
   
- Rozhraní .NET Framework 3.5 poskytuje podporu pro data JSON (AJAX) a také pro zdroje Syndication (včetně ATOM a RSS). Další informace o těchto funkcích naleznete v [tématu WCF Web HTTP Formátování](../../../../docs/framework/wcf/feature-details/wcf-web-http-formatting.md)[WCF Syndication Overview](../../../../docs/framework/wcf/feature-details/wcf-syndication-overview.md) a AJAX Integrace a Podpora [JSON](../../../../docs/framework/wcf/feature-details/ajax-integration-and-json-support.md).  
+ Rozhraní .NET Framework 3.5 poskytuje podporu pro data JSON (AJAX) a také pro zdroje Syndication (včetně ATOM a RSS). Další informace o těchto funkcích naleznete [v tématech WCF Web HTTP Formatting](../../../../docs/framework/wcf/feature-details/wcf-web-http-formatting.md), [WCF Syndication Overview](../../../../docs/framework/wcf/feature-details/wcf-syndication-overview.md)a [AJAX Integration and JSON Support](../../../../docs/framework/wcf/feature-details/ajax-integration-and-json-support.md).  
   
 ## <a name="wcf-web-http-programming-model-and-security"></a>WCF WEB HTTP programovací model a zabezpečení  
 

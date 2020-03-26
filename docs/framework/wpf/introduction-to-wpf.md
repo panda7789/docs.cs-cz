@@ -7,12 +7,12 @@ ms.assetid: b8d7cf43-d1f2-4f3d-adb0-4f3a6428edc0
 dev_langs:
 - csharp
 - vb
-ms.openlocfilehash: 511ea04a522804b4b2ea2ff173d6cdd738e5c7bc
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 759c1ca20ac139ef856df08ec42fb259fc3920d1
+ms.sourcegitcommit: 267d092663aba36b6b2ea853034470aea493bfae
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79186225"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80112008"
 ---
 # <a name="wpf-overview"></a>Přehled grafického subsystému WPF (Windows Presentation Foundation)
 
@@ -543,7 +543,7 @@ Protože tento styl <xref:System.Windows.Controls.Button> cílí na všechny ovl
 
 Další informace naleznete v [tématu Styly a šablony](../../desktop-wpf/fundamentals/styles-templates-overview.md).
 
-### <a name="resources"></a>Zdroje informací
+### <a name="resources"></a>Prostředky
 
 Ovládací prvky v aplikaci by měly sdílet stejný vzhled, který může zahrnovat cokoli od písem a barev pozadí až po šablony ovládacích prvků, šablony dat a styly. Podporu WPF pro prostředky uživatelského rozhraní můžete použít k zapouzdření těchto prostředků do jednoho umístění pro opakované použití.
 

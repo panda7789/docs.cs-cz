@@ -12,12 +12,12 @@ helpviewer_keywords:
 - Internet, security
 - security [.NET Framework], Internet
 - permissions [.NET Framework], Internet
-ms.openlocfilehash: 81ac469f75f925ea00c02ff94ade0e8793e7efff
-ms.sourcegitcommit: 34dc3c0d0d0a1cc418abff259d9daa8078d00b81
+ms.openlocfilehash: d1218e5db2ee4fc0ec044c6e0aa16187390708b0
+ms.sourcegitcommit: 07123a475af89b6da5bb6cc51ea40ab1e8a488f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/19/2020
-ms.locfileid: "79546708"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80134391"
 ---
 # <a name="transport-layer-security-tls-best-practices-with-the-net-framework"></a>Osvědčené postupy zabezpečení transportní vrstvy (TLS) s rozhraním .NET Framework
 
@@ -121,7 +121,7 @@ WCF framework automaticky vybere nejvyšší protokol, který je k dispozici až
 
 ### <a name="for-net-framework-35---452-and-not-wcf"></a>Pro rozhraní .NET Framework 3.5 - 4.5.2 a ne wcf
 
-Doporučujeme upgradovat aplikaci na .NET Framework 4.7 nebo novější verze. Pokud nelze provést upgrade, postupujte podle následujících kroků. V určitém okamžiku v budoucnu může selhat vaše aplikace, dokud upgradovat na rozhraní .NET Framework 4.7 nebo novější verze.
+Doporučujeme upgradovat aplikaci na .NET Framework 4.7 nebo novější verze. Pokud nelze provést upgrade, postupujte podle následujících kroků.
 
 Nastavte klíče registru [SchUseStrongCrypto](#schusestrongcrypto) a [SystemDefaultTlsVersions](#systemdefaulttlsversions) na hodnotu 1. Viz [Konfigurace zabezpečení prostřednictvím registru systému Windows](#configuring-security-via-the-windows-registry). Rozhraní .NET Framework verze 3.5 podporuje příznak pouze v `SchUseStrongCrypto` případě, že je předána explicitní hodnota TLS.
 

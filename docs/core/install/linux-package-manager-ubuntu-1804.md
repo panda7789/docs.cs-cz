@@ -3,19 +3,21 @@ title: Instalace rozhraní .NET Core do správce balíčků Ubuntu 18.04 - .NET 
 description: Pomocí správce balíčků nainstalujte do Ubuntu 18.04 .NET Core SDK a runtime.
 author: thraka
 ms.author: adegeo
-ms.date: 12/04/2019
-ms.openlocfilehash: e36116d357b8fcd5ced328a574e12c558dd9e2f2
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.date: 03/17/2020
+ms.openlocfilehash: 6265e9b3299af9b4178dbb5d5da057f98d75a63b
+ms.sourcegitcommit: 07123a475af89b6da5bb6cc51ea40ab1e8a488f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "76920695"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80134154"
 ---
 # <a name="ubuntu-1804-package-manager---install-net-core"></a>Ubuntu 18.04 Správce balíčků - Instalace .NET Core
 
 [!INCLUDE [package-manager-switcher](./includes/package-manager-switcher.md)]
 
-Tento článek popisuje, jak pomocí správce balíčků nainstalovat .NET Core na Ubuntu 18.04. Pokud instalujete runtime, doporučujeme nainstalovat [ASP.NET core runtime](#install-the-aspnet-core-runtime), protože zahrnuje rozhraní .NET Core i ASP.NET Core runtime.
+Tento článek popisuje, jak pomocí správce balíčků nainstalovat .NET Core na Ubuntu 18.04.
+
+[!INCLUDE [package-manager-intro-sdk-vs-runtime](includes/package-manager-intro-sdk-vs-runtime.md)]
 
 ## <a name="register-microsoft-key-and-feed"></a>Registrace klíče Microsoft a informačního kanálu
 
@@ -30,7 +32,7 @@ Stačí to provést jednou na jednom počítači.
 Otevřete terminál a spusťte následující příkazy.
 
 ```bash
-wget -q https://packages.microsoft.com/config/ubuntu/18.04/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
+wget https://packages.microsoft.com/config/ubuntu/18.04/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
 sudo dpkg -i packages-microsoft-prod.deb
 ```
 
@@ -101,9 +103,9 @@ Pokud to nepomůže, můžete spustit ruční instalaci pomocí následujících
 
 ```bash
 sudo apt-get install -y gpg
-wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor -o microsoft.asc.gpg
+wget -O- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor -o microsoft.asc.gpg
 sudo mv microsoft.asc.gpg /etc/apt/trusted.gpg.d/
-wget -q https://packages.microsoft.com/config/ubuntu/18.04/prod.list
+wget https://packages.microsoft.com/config/ubuntu/18.04/prod.list
 sudo mv prod.list /etc/apt/sources.list.d/microsoft-prod.list
 sudo chown root:root /etc/apt/trusted.gpg.d/microsoft.asc.gpg
 sudo chown root:root /etc/apt/sources.list.d/microsoft-prod.list

@@ -4,42 +4,42 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - imaging
 - graphics [Windows Forms], categories
-- 2-D vector graphics
+- 2D vector graphics
 - vector graphics
 - typography
 ms.assetid: 068c0ef3-f6ee-4d58-a7b6-eb2531ead408
-ms.openlocfilehash: a69fa7a1ccad353c879731de05dc47f0d6ae8795
-ms.sourcegitcommit: b1cfd260928d464d91e20121f9bdba7611c94d71
+ms.openlocfilehash: fa7391ef0f7170ddb9d9d24aa5a1a03635bf46e0
+ms.sourcegitcommit: e48a54ebe62e874500a7043f6ee0b77a744d55b4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67505229"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80291730"
 ---
 # <a name="three-categories-of-graphics-services"></a>Tři kategorie grafických služeb
-Nabídky grafiky ve Windows Forms spadají do následujících tří hlavních kategorií:  
+Grafické nabídky ve Windows Forms spadají do následujících tří širokých kategorií:  
   
-- Dvourozměrné (2-D) vektorové grafiky  
+- Dvourozměrná (2D) vektorová grafika  
   
-- Vytvoření bitové kopie  
+- Zobrazovací  
   
 - Typografie  
   
-## <a name="2-d-vector-graphics"></a>2D vektorová grafika  
- Primitiv; jsou dvojrozměrná vektorová grafika například čáry, křivky a údaje. která jsou určena pomocí sady bodů na systém souřadnic. Například rovné čáry je určená jeho dva koncové body a je určen bod poskytuje místo jeho levého horního rohu a dvojici čísel poskytuje svou šířku a výšku obdélníku. Jednoduché cesta je určena pole body, které jsou spojeny čarami přímo. Bézierovy křivky je sofistikované křivky určené čtyři kontrolní body.  
+## <a name="2d-vector-graphics"></a>2D vektorová grafika  
+ Dvourozměrná vektorová grafika, například čáry, křivky a obrázky, jsou primitiva, která jsou určena sadami bodů v souřadnicovém systému. Například přímka je určena dvěma koncovými body a obdélník je určen bodem, který udává umístění levého horního rohu a dvojici čísel udávajících jeho šířku a výšku. Jednoduchá cesta je určena polem bodů, které jsou spojeny rovnými čarami. Bézierova křivka je sofistikovaná křivka určená čtyřmi řídicími body.  
   
- Rozhraní GDI + poskytuje třídy a struktury, které ukládají informace o primitiv v samotné, třídy, které ukládají informace o tom, jak bude vykreslen primitiv a třídy, které se dělají výkresu. Například <xref:System.Drawing.Rectangle> struktura ukládá umístění a velikost obdélník; <xref:System.Drawing.Pen> třídy ukládá informace o barvu čáry, šířku čáry a styl čáry; a <xref:System.Drawing.Graphics> třída obsahuje metody pro kreslení čáry, obdélníky, cesty, a Další údaje. Existuje také několik <xref:System.Drawing.Brush> uzavřeny třídy, které ukládají informace o tom, obrázky a cesty bude vyplněn barev nebo vzorů.  
+ GDI+ poskytuje třídy a struktury, které ukládají informace o samotných primitivech, třídy, které ukládají informace o tom, jak budou primitiva nakreslena, a třídy, které ve skutečnosti provádějí výkres. Struktura například <xref:System.Drawing.Rectangle> ukládá umístění a velikost obdélníku; třída <xref:System.Drawing.Pen> ukládá informace o barvě čáry, šířce čáry a stylu čáry; a <xref:System.Drawing.Graphics> třída má metody pro kreslení čar, obdélníků, cest a dalších obrázků. Existuje také <xref:System.Drawing.Brush> několik tříd, které ukládají informace o tom, jak budou uzavřené obrázky a cesty vyplněny barvami nebo vzory.  
   
- Můžete zaznamenat bitovou kopii vektoru, což je sekvence příkazů grafiky, do metasouboru. Poskytuje rozhraní GDI + <xref:System.Drawing.Imaging.Metafile> třídy pro zaznamenání, zobrazení a uložení metasoubory. S <xref:System.Drawing.Imaging.MetafileHeader> a <xref:System.Drawing.Imaging.MetaHeader> třídy, můžete si prohlédnout data uložená v hlavičce metasouboru.  
+ Můžete zaznamenat vektorový obraz, což je posloupnost grafických příkazů, v metasouboru. GDI+ poskytuje <xref:System.Drawing.Imaging.Metafile> třídu pro nahrávání, zobrazování a ukládání metasouborů. Pomocí <xref:System.Drawing.Imaging.MetafileHeader> tříd <xref:System.Drawing.Imaging.MetaHeader> a můžete zkontrolovat data uložená v záhlaví metasouboru.  
   
-## <a name="imaging"></a>Vytvoření bitové kopie  
- Některé typy obrázků je obtížné nebo nemožné zobrazit pomocí technik vektorovou grafiku. Například je obtížné určit jako kolekce čar a křivek obrázků na tlačítka na panelu nástrojů a obrázky, které se zobrazují jako ikony. Ve vysokém rozlišení digitální fotografie přeplněném baseballu stadionem je dál složitější vytvořit s technikami vektoru. Image tohoto typu se ukládají jako rastrové obrázky, což jsou pole čísla, která představují barvy jednotlivé tečky na obrazovce. Poskytuje rozhraní GDI + <xref:System.Drawing.Bitmap> třídu pro zobrazení, zpracování a ukládání bitmap.  
+## <a name="imaging"></a>Zobrazovací  
+ Některé druhy obrázků jsou obtížné nebo nemožné zobrazit s technikami vektorové grafiky. Například obrázky na panelu nástrojů tlačítka a obrázky, které se zobrazí jako ikony je obtížné určit jako kolekce čar a křivek. Digitální fotografie přeplněného baseballového stadionu s vysokým rozlišením je ještě obtížnější vytvořit pomocí vektorových technik. Obrazy tohoto typu jsou uloženy jako bitmapy, což jsou pole čísel, která představují barvy jednotlivých tesek na obrazovce. GDI+ poskytuje <xref:System.Drawing.Bitmap> třídu pro zobrazení, manipulaci a ukládání bitmap.  
   
 ## <a name="typography"></a>Typografie  
- Typografie je zobrazení textu v různých písma, velikosti a styly. Rozhraní GDI + poskytuje rozsáhlou podporu pro tento složitý úkol. Jedním z nových funkcí v rozhraní GDI + je vyhlazení subpixel, která poskytuje textu vykresleného v displeje hladší vzhled.  
+ Typografie je zobrazení textu v různých písmech, velikostech a stylech. GDI+ poskytuje rozsáhlou podporu pro tento složitý úkol. Jednou z nových funkcí v GDI+ je subpixelové vyhlazení, které dává textu vykreslenému na lcd obrazovce hladší vzhled.  
   
- Kromě toho také nabízí možnost kreslení textu pomocí GDI možnosti ve Windows Forms jeho <xref:System.Windows.Forms.TextRenderer> třídy.  
+ Kromě toho Windows Forms nabízí možnost kreslit text s <xref:System.Windows.Forms.TextRenderer> funkcemi GDI ve své třídě.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Přehled grafiky](graphics-overview-windows-forms.md)
 - [Informace o spravovaném kódu GDI+](about-gdi-managed-code.md)

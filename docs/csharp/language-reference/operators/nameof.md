@@ -1,34 +1,34 @@
 ---
-title: nameof operátor - c# odkaz
+title: nameof expression - C# odkaz
 ms.date: 07/12/2019
 f1_keywords:
 - nameof_CSharpKeyword
 - nameof
 helpviewer_keywords:
-- nameof operator [C#]
+- nameof expression [C#]
 ms.assetid: 33601bf3-cc2c-4496-846d-f9679bccf2a7
-ms.openlocfilehash: ffbc801acf61bf72db1c88912dc2142a478fa280
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 5a68161be7bb03122d2a63ccef4365c5853862b2
+ms.sourcegitcommit: 2514f4e3655081dcfe1b22470c0c28500f952c42
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "78846269"
+ms.lasthandoff: 03/18/2020
+ms.locfileid: "79507136"
 ---
-# <a name="nameof-operator-c-reference"></a>nameof operátor (odkaz C# )
+# <a name="nameof-expression-c-reference"></a>nameof expression (odkaz C# )
 
-Operátor `nameof` získá název proměnné, typu nebo člena jako řetězcovou konstantu:
+Výraz `nameof` vytvoří název proměnné, typu nebo člena jako řetězcovou konstantu:
 
-[!code-csharp-interactive[nameof operator](snippets/NameOfOperator.cs#Examples)]
+[!code-csharp-interactive[nameof expression](snippets/NameOfOperator.cs#Examples)]
 
 Jak ukazuje předchozí příklad, v případě typu a oboru názvů není produkovaný název obvykle [plně kvalifikovaný](~/_csharplang/spec/basic-concepts.md#fully-qualified-names).
 
-Operátor `nameof` je vyhodnocován v době kompilace a nemá žádný vliv v době běhu.
+Výraz `nameof` je vyhodnocován v době kompilace a nemá žádný vliv v době běhu.
 
-Pomocí operátoru `nameof` můžete vytvořit kód pro kontrolu argumentů, který bude moci být udržovatelný:
+Výraz můžete `nameof` použít k tomu, aby byl kód pro kontrolu argumentů více udržovatelný:
 
 [!code-csharp[nameof and argument check](snippets/NameOfOperator.cs#ExceptionMessage)]
 
-Operátor `nameof` je k dispozici v C# 6 a novější.
+Výraz `nameof` je k dispozici v C# 6 a novější.
 
 ## <a name="c-language-specification"></a>specifikace jazyka C#
 

@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: a8146db1fb54d63d4716b879ce793f7d817cef59
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 64e854b06895ca54a9ab9870b85868788a731c00
+ms.sourcegitcommit: 34dc3c0d0d0a1cc418abff259d9daa8078d00b81
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75937303"
+ms.lasthandoff: 03/19/2020
+ms.locfileid: "79549609"
 ---
 ### <a name="shared-framework-assemblies-removed-from-microsoftaspnetcoreapp"></a>Sdílený rámec: Sestavení odebraná z microsoft.aspNetCore.App
 
@@ -36,7 +36,7 @@ Odkaz na `Microsoft.AspNetCore.App` již nevyžaduje `<PackageReference>` prvek 
 
 Další informace naleznete [v tématu dotnet/aspnetcore#3612](https://github.com/dotnet/aspnetcore/issues/3612).
 
-Entity Framework Core dodává jako balíčky NuGet. Tato změna zarovná model expedice se všemi ostatními knihovnami přístupu k datům v rozhraní .NET. Poskytuje entity Framework Core nejjednodušší cestu k pokračování inovace při podpoře různých platforem .NET. Přesunutí jádra entity frameworku ze sdíleného rozhraní nemá žádný vliv na jeho stav jako knihovny vyvinuté společností Microsoft, podporované a opravitelné. [Zásady podpory .NET Core](https://www.microsoft.com/net/platform/support-policy) nadále pokrývají.
+Entity Framework Core dodává jako balíčky NuGet. Tato změna zarovná model expedice se všemi ostatními knihovnami přístupu k datům v rozhraní .NET. Poskytuje entity Framework Core nejjednodušší cestu k pokračování inovace při podpoře různých platforem .NET. Přesunutí jádra entity frameworku ze sdíleného rozhraní nemá žádný vliv na jeho stav jako knihovny vyvinuté společností Microsoft, podporované a opravitelné. [Zásady podpory .NET Core](https://dotnet.microsoft.com/platform/support/policy/dotnet-core) nadále pokrývají.
 
 Json.NET a Core entity nadále pracují s ASP.NET Core. Nebudou však zahrnuty do sdíleného rámce.
 
@@ -67,7 +67,7 @@ Další informace naleznete [v tématu Stop vyrábějící balíčky pro sestave
 
 #### <a name="category"></a>Kategorie
 
-Jádro ASP.NET
+ASP.NET Core
 
 #### <a name="affected-apis"></a>Ovlivněná rozhraní API
 

@@ -2,12 +2,12 @@
 title: Samostatně hostované gRPC aplikace - gRPC pro vývojáře WCF
 description: Nasazení ASP.NET aplikací Core gRPC jako samoobslužných služeb.
 ms.date: 09/02/2019
-ms.openlocfilehash: 00fb1453e19a02469f80af79672e0c1f72c7280f
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 69f70e4077247fd07eba7abeee82f257dd1f4f90
+ms.sourcegitcommit: 267d092663aba36b6b2ea853034470aea493bfae
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79147799"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80110903"
 ---
 # <a name="self-hosted-grpc-applications"></a>Samoobslužné gRPC aplikace
 
@@ -152,7 +152,7 @@ sudo journalctl -u myapp
 > [!TIP]
 > Pokud máte na hostiteli k dispozici prostředí GUI, je k dispozici několik grafických prohlížečů protokolů pro Linux, jako jsou *QJournalctl* a *gnome-logs*.
 
-Další informace o dotazování `systemd` deníku z příkazového řádku pomocí naleznete `journalctl`na stránkách [man](https://manpages.debian.org/buster/systemd/journalctl.1).
+Další informace o dotazování `systemd` deníku z příkazového řádku pomocí naleznete `journalctl`na stránkách [.](https://manpages.debian.org/buster/systemd/journalctl.1)
 
 ## <a name="https-certificates-for-self-hosted-applications"></a>Certifikáty HTTPS pro samoobslužné aplikace
 

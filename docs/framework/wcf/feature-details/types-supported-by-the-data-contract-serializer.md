@@ -4,73 +4,73 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - serialization [WCF], supported types
 ms.assetid: 7381b200-437a-4506-9556-d77bf1bc3f34
-ms.openlocfilehash: aeb7a8e61d6bbba4391610d43083e5b65bca81f8
-ms.sourcegitcommit: d6e27023aeaffc4b5a3cb4b88685018d6284ada4
+ms.openlocfilehash: f3eedda6c9493688680099f4b07810aebf69ff8a
+ms.sourcegitcommit: 99b153b93bf94d0fecf7c7bcecb58ac424dfa47c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67664069"
+ms.lasthandoff: 03/25/2020
+ms.locfileid: "80249458"
 ---
 # <a name="types-supported-by-the-data-contract-serializer"></a>Typy podporované serializátorem kontraktu dat
 
-Windows Communication Foundation (WCF) používá <xref:System.Runtime.Serialization.DataContractSerializer> jako výchozí web serializace převést data na XML a převést zpět na data XML. <xref:System.Runtime.Serialization.DataContractSerializer> Slouží k serializaci *kontraktu dat* typy. Ale podporuje mnoho jiných typů, které si lze představit jako kontrakt implicitní data. Následuje úplný seznam typů, které lze serializovat:
+Windows Communication Foundation (WCF) používá <xref:System.Runtime.Serialization.DataContractSerializer> jako výchozí serializační modul k převodu dat do xml a k převodu XML zpět na data. Je <xref:System.Runtime.Serialization.DataContractSerializer> určen k serializaci typů *kontraktů dat.* Podporuje však mnoho dalších typů, které si lze myslet jako s implicitní smlouvy dat. Následuje úplný seznam typů, které lze serializovat:
 
-- Všechny veřejně viditelné typy, které mají konstruktor, který nemá žádné parametry.
+- Všechny veřejně viditelné typy, které mají konstruktor, který nemá parametry.
 
-- Typy kontraktů dat. Toto jsou typy, ke kterému <xref:System.Runtime.Serialization.DataContractAttribute> byl použit atribut. Nové vlastní typy, které představují obchodní objekty by měl obvykle vytvořit, protože data typy kontraktů. Další informace najdete v tématu [kontraktů dat pomocí](../../../../docs/framework/wcf/feature-details/using-data-contracts.md) a [Serializovatelné typy](../../../../docs/framework/wcf/feature-details/serializable-types.md).
+- Typy kontraktů dat. Jedná se o <xref:System.Runtime.Serialization.DataContractAttribute> typy, na které byl atribut použit. Nové vlastní typy, které představují obchodní objekty by měly být obvykle vytvořeny jako typy kontraktů dat. Další informace naleznete [v tématu Using Data Contracts](../../../../docs/framework/wcf/feature-details/using-data-contracts.md) and [Serializable Types](../../../../docs/framework/wcf/feature-details/serializable-types.md).
 
-- Typy kolekcí. Toto jsou typy, které představují seznam data. Může jít o pravidelných polí typy nebo typy kolekcí, jako například <xref:System.Collections.ArrayList> a <xref:System.Collections.Generic.Dictionary%602>. <xref:System.Runtime.Serialization.CollectionDataContractAttribute> Atribut lze použít k přizpůsobení serializaci z těchto typů, ale není potřeba. Další informace najdete v tématu [typy kolekcí v kontraktech dat](../../../../docs/framework/wcf/feature-details/collection-types-in-data-contracts.md).
+- Typy kolekce. Jedná se o typy, které představují seznamy dat. Mohou to být pravidelná pole typů nebo <xref:System.Collections.ArrayList> typů <xref:System.Collections.Generic.Dictionary%602>kolekcí, například a . Atribut <xref:System.Runtime.Serialization.CollectionDataContractAttribute> lze přizpůsobit serializace těchto typů, ale není vyžadováno. Další informace naleznete [v tématu Typy kolekce v datových kontraktech](../../../../docs/framework/wcf/feature-details/collection-types-in-data-contracts.md).
 
-- Výčtové typy. Výčty, včetně příznaku výčty jsou serializovatelné. Volitelně může být označena výčtové typy <xref:System.Runtime.Serialization.DataContractAttribute> atribut, v takovém případě musí být označené každého člena, který se účastní serializace <xref:System.Runtime.Serialization.EnumMemberAttribute> atribut. Členy, které nejsou označené nejsou serializována. Další informace najdete v tématu [výčtové typy v kontraktech dat](../../../../docs/framework/wcf/feature-details/enumeration-types-in-data-contracts.md).
+- Typy výčtu. Výčty, včetně výčtů příznaku, jsou serializovatelné. Volitelně mohou být typy výčtu <xref:System.Runtime.Serialization.DataContractAttribute> označeny atributem, v takovém případě musí být <xref:System.Runtime.Serialization.EnumMemberAttribute> každý člen, který se účastní serializace, označen atributem. Členy, které nejsou označeny nejsou serializovány. Další informace naleznete [v tématu Typy výčtu v datových kontraktech](../../../../docs/framework/wcf/feature-details/enumeration-types-in-data-contracts.md).
 
-- Primitivní typy rozhraní .NET framework. Následující typy, které jsou součástí rozhraní .NET Framework lze všechny serializovat a jsou považovány za jednoduché typy: <xref:System.Byte>, <xref:System.SByte>, <xref:System.Int16>, <xref:System.Int32>, <xref:System.Int64>, <xref:System.UInt16>, <xref:System.UInt32>, <xref:System.UInt64>, <xref:System.Single>, <xref:System.Double>, <xref:System.Boolean>, <xref:System.Char>, <xref:System.Decimal>, <xref:System.Object>, a <xref:System.String>.
+- Primitivní typy rozhraní .NET Framework. Následující typy integrované do rozhraní .NET Framework lze serializovat a <xref:System.Byte>jsou <xref:System.SByte> <xref:System.Int16>považovány <xref:System.Int32> <xref:System.Int64>za <xref:System.UInt16> <xref:System.UInt32>primitivní <xref:System.UInt64> <xref:System.Single>typy: , , , , , , , <xref:System.Double> <xref:System.Boolean>, <xref:System.Char> <xref:System.Decimal>, , <xref:System.Object>, , , , , a <xref:System.String>.
 
-- Jiné primitivní typy. Tyto typy nejsou primitivních elementů v rozhraní .NET Framework, ale jsou považovány za primitivy ve formuláři serializovaná XML. Tyto typy jsou <xref:System.DateTime>, <xref:System.DateTimeOffset>, <xref:System.TimeSpan>, <xref:System.Guid>, <xref:System.Uri>, <xref:System.Xml.XmlQualifiedName>a pole <xref:System.Byte>.
+- Jiné primitivní typy. Tyto typy nejsou primitivy v rozhraní .NET Framework, ale jsou považovány za primitiva v serializovaném formuláři XML. Jedná se <xref:System.DateTime> <xref:System.DateTimeOffset>o <xref:System.TimeSpan> <xref:System.Byte>, <xref:System.Uri> <xref:System.Xml.XmlQualifiedName>, , <xref:System.Guid>, , a pole .
 
   > [!NOTE]
-  > Na rozdíl od jiných primitivní typy <xref:System.DateTimeOffset> není známý typ ve výchozím nastavení. Další informace najdete v tématu [známé typy kontraktů dat.](../../../../docs/framework/wcf/feature-details/data-contract-known-types.md)).
+  > Na rozdíl od <xref:System.DateTimeOffset> jiných primitivních typů není ve výchozím nastavení známým typem. Další informace naleznete v [tématu Data Contract Známé typy](../../../../docs/framework/wcf/feature-details/data-contract-known-types.md)).
 
-- Typy označené <xref:System.SerializableAttribute> atribut. Do této kategorie patří mnoho typů, které jsou zahrnuty v knihovně základních tříd rozhraní .NET Framework. <xref:System.Runtime.Serialization.DataContractSerializer> Plně podporuje tento serializace programovací model, který se používá ve vzdálené komunikace rozhraní .NET Framework, <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter>a <xref:System.Runtime.Serialization.Formatters.Soap.SoapFormatter>, včetně podpory pro <xref:System.Runtime.Serialization.ISerializable> rozhraní.
+- Typy označené <xref:System.SerializableAttribute> atributem. Do této kategorie spadá mnoho typů zahrnutých do knihovny základních tříd rozhraní .NET Framework. Plně <xref:System.Runtime.Serialization.DataContractSerializer> podporuje tento programovací model serializace, který byl používán <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter>vzdálené <xref:System.Runtime.Serialization.Formatters.Soap.SoapFormatter>komunikace rozhraní .NET Framework, a , včetně podpory <xref:System.Runtime.Serialization.ISerializable> pro rozhraní.
 
-- Typy, které představují nezpracovaná XML nebo typy, které představují relačních dat ADO.NET. <xref:System.Xml.XmlElement> a pole <xref:System.Xml.XmlNode> typy jsou podporované jako způsob reprezentace XML přímo. Kromě toho typy, které implementují <xref:System.Xml.Serialization.IXmlSerializable> rozhraní jsou podporované. zahrnuje to související <xref:System.Xml.Serialization.XmlSchemaProviderAttribute> atribut a <xref:System.Xml.Linq.XDocument> a <xref:System.Xml.Linq.XElement> typy. ADO.NET<xref:System.Data.DataTable> typ a <xref:System.Data.DataSet> typu (stejně jako jeho typu odvozené třídy) implementují <xref:System.Xml.Serialization.IXmlSerializable> rozhraní a proto se vejde do této kategorie. Další informace najdete v tématu [typy XML a ADO.NET v kontraktech dat](../../../../docs/framework/wcf/feature-details/xml-and-ado-net-types-in-data-contracts.md).
+- Typy, které představují nezpracovaná XML nebo typy, které představují ADO.NET relační data. A <xref:System.Xml.XmlElement> pole <xref:System.Xml.XmlNode> typů jsou podporovány jako způsob, jak reprezentovat XML přímo. Kromě toho typy, <xref:System.Xml.Serialization.IXmlSerializable> které implementují rozhraní <xref:System.Xml.Serialization.XmlSchemaProviderAttribute> jsou podporovány, včetně související atribut a <xref:System.Xml.Linq.XDocument> a <xref:System.Xml.Linq.XElement> typy. Typ<xref:System.Data.DataTable> ADO.NET a <xref:System.Data.DataSet> typ (stejně jako jeho zadané odvozené <xref:System.Xml.Serialization.IXmlSerializable> třídy) všechny implementovat rozhraní a proto se vejde do této kategorie. Další informace naleznete v tématu [XML a ADO.NET typy v datových kontraktech](../../../../docs/framework/wcf/feature-details/xml-and-ado-net-types-in-data-contracts.md).
 
-## <a name="limitations-of-using-certain-types-in-partial-trust-mode"></a>Omezení používání určitých typů v částečné důvěryhodnosti režimu
+## <a name="limitations-of-using-certain-types-in-partial-trust-mode"></a>Omezení používání určitých typů v režimu částečné důvěryhodnosti
 
-Následuje seznam omezení při použití určitých typů ve scénářích s částečnou důvěryhodností režimu:
+Následuje seznam omezení při použití určitých typů ve scénářích režimu částečné důvěryhodnosti:
 
-- K serializaci nebo deserializaci typ, který implementuje <xref:System.Runtime.Serialization.ISerializable> částečně důvěryhodným kódem pomocí <xref:System.Runtime.Serialization.DataContractSerializer> vyžaduje <xref:System.Security.Permissions.SecurityPermissionAttribute.SerializationFormatter%2A> a <xref:System.Security.Permissions.SecurityPermissionAttribute.UnmanagedCode%2A> oprávnění.
+- Chcete-li serializovat nebo rekonstruovat typ, <xref:System.Runtime.Serialization.ISerializable> který implementuje <xref:System.Runtime.Serialization.DataContractSerializer> v <xref:System.Security.Permissions.SecurityPermissionAttribute.SerializationFormatter%2A> částečně <xref:System.Security.Permissions.SecurityPermissionAttribute.UnmanagedCode%2A> důvěryhodném kódu pomocí vyžaduje a oprávnění.
 
-- Při spouštění kódu WCF v [částečném vztahu důvěryhodnosti](../../../../docs/framework/wcf/feature-details/partial-trust.md) režimu, serializace a deserializace `readonly` pole (obojí `public` a `private`) se nepodporuje. Je to proto, že generovaný jazyk IL nejde ověřit a proto vyžaduje zvýšenou úroveň oprávnění.
+- Při spuštění kódu WCF v režimu [částečné důvěryhodnosti](../../../../docs/framework/wcf/feature-details/partial-trust.md) není serializace a deserializace `readonly` polí (jak a `public` `private`) podporována. Důvodem je, že generované IL je neověřitelné a proto vyžaduje zvýšená oprávnění.
 
-- Jak <xref:System.Runtime.Serialization.DataContractSerializer> a <xref:System.Xml.Serialization.XmlSerializer> jsou podporovány v prostředí s částečnou důvěryhodností. Nicméně použití <xref:System.Runtime.Serialization.DataContractSerializer> podléhá následující podmínky:
+- A <xref:System.Runtime.Serialization.DataContractSerializer> jsou <xref:System.Xml.Serialization.XmlSerializer> podporovány v prostředí částečné důvěryhodnosti. Použití <xref:System.Runtime.Serialization.DataContractSerializer> však podléhá následujícím podmínkám:
 
-  - Všechny serializovatelný `[DataContract]` typy musejí být veřejné.
+  - Všechny serializovatelné `[DataContract]` typy musí být veřejné.
 
-  - Všechny serializovatelný `[DataMember]` pole nebo vlastnosti v `[DataContract]` typ musí být veřejný a čtení a zápisu. Serializace a deserializace `readonly` polí není podporováno při spouštění v částečně důvěryhodné aplikaci WCF.
+  - Všechna serializovatelná `[DataMember]` pole nebo `[DataContract]` vlastnosti typu musí být veřejné a číst i zapisovat. Serializace a deserializace `readonly` polí není podporována při spuštění WCF v částečně důvěryhodné aplikaci.
 
-  - `[Serializable]` / `ISerializable]` Programovacího modelu není podporován v částečném vztahu důvěryhodnosti prostředí.
+  - Programovací `[Serializable]` / `ISerializable]` model není podporován v prostředí částečné důvěryhodnosti.
 
-  - Známé typy musí být zadán v kódu nebo konfigurace na úrovni počítače (`Machine.config`). Známé typy nelze zadat v konfigurace na úrovni aplikace z bezpečnostních důvodů.
+  - Známé typy musí být zadány v`Machine.config`konfiguraci kódu nebo na úrovni počítače ( ). Známé typy nelze zadat v konfiguraci na úrovni aplikace z bezpečnostních důvodů.
 
-- Typy, které implementují <xref:System.Runtime.Serialization.IObjectReference> vyvolání výjimky v částečně důvěryhodném prostředí, protože <xref:System.Runtime.Serialization.IObjectReference.GetRealObject%2A> metoda vyžaduje oprávnění zabezpečení `[SecurityPermission(SecurityAction.LinkDemand, Flags=SecurityPermissionFlag.SerializationFormatter)]`.
+- Typy, <xref:System.Runtime.Serialization.IObjectReference> které implementují vyvolat výjimku <xref:System.Runtime.Serialization.IObjectReference.GetRealObject%2A> v částečně důvěryhodném prostředí, protože metoda vyžaduje oprávnění `[SecurityPermission(SecurityAction.LinkDemand, Flags=SecurityPermissionFlag.SerializationFormatter)]`zabezpečení .
 
 ## <a name="additional-notes-on-serialization"></a>Další poznámky k serializaci
 
-Následující pravidla platí také pro typy podporované serializátorem kontraktu dat:
+Následující pravidla platí také pro typy podporované serializátorem kontraktů dat:
 
-- Obecné typy jsou plně podporované serializátorem kontraktu dat.
+- Obecné typy jsou plně podporovány serializátorem kontraktů dat.
 
-- Typy s možnou hodnotou Null jsou plně podporované serializátorem kontraktu dat.
+- Typy hodnot s možnou hodnotou s nulou jsou plně podporovány serializátorem kontraktů dat.
 
-- Typy rozhraní se považují buď jako <xref:System.Object> nebo v případě rozhraní pro kolekce, jako typy kolekcí.
+- Typy rozhraní jsou považovány <xref:System.Object> buď jako nebo, v případě rozhraní kolekce, jako typy kolekcí.
 
-- Struktury a třídy jsou podporovány.
+- Podporovány jsou struktury i třídy.
 
-- <xref:System.Runtime.Serialization.DataContractSerializer> Nepodporuje programovací model používaný <xref:System.Xml.Serialization.XmlSerializer> a webových služeb ASP.NET. Konkrétně se nepodporuje atributů, jako je <xref:System.Xml.Serialization.XmlElementAttribute> a <xref:System.Xml.Serialization.XmlAttributeAttribute>. Povolení podpory pro tento model programování, musí být WCF přepnout do použít <xref:System.Xml.Serialization.XmlSerializer> místo <xref:System.Runtime.Serialization.DataContractSerializer>.
+- Programovací <xref:System.Runtime.Serialization.DataContractSerializer> model používaný a ASP.NET <xref:System.Xml.Serialization.XmlSerializer> webových služeb. Zejména nepodporuje atributy jako <xref:System.Xml.Serialization.XmlElementAttribute> a <xref:System.Xml.Serialization.XmlAttributeAttribute>. Chcete-li povolit podporu pro tento programovací model, WCF musí být přepnuty použít <xref:System.Xml.Serialization.XmlSerializer> místo . <xref:System.Runtime.Serialization.DataContractSerializer>
 
-- <xref:System.DBNull> Typ je zpracováván zvláštním způsobem. Jde o typ singleton, a po deserializace deserializátor respektuje jednoznačné omezení a všechny body `DBNull` odkazy na instanci typu singleton. Protože `DBNull` je serializovatelný typ., se vyžaduje <xref:System.Security.Permissions.SecurityPermissionAttribute.SerializationFormatter%2A> oprávnění.
+- Typ <xref:System.DBNull> je ošetřen zvláštním způsobem. Jedná se o typ singleton a při deserializaci deserializátor respektuje `DBNull` omezení singleton a odkazuje na všechny odkazy na instanci singleton. Protože `DBNull` je serializovatelný typ, <xref:System.Security.Permissions.SecurityPermissionAttribute.SerializationFormatter%2A> vyžaduje oprávnění.
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Typy XML a ADO.NET v kontraktech dat](../../../../docs/framework/wcf/feature-details/xml-and-ado-net-types-in-data-contracts.md)
 - [Použití kontraktů dat](../../../../docs/framework/wcf/feature-details/using-data-contracts.md)

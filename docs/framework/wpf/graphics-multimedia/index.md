@@ -12,12 +12,12 @@ helpviewer_keywords:
 - graphics features [WPF]
 - transition effects [WPF]
 ms.assetid: 1817d9dc-3d6c-46cb-afc8-63b0bae35e37
-ms.openlocfilehash: 56a69c10a420e399478a0d617d30380ff5217e9c
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 8636afcc5b63b71dc729812a7f3eb4945ba49494
+ms.sourcegitcommit: 267d092663aba36b6b2ea853034470aea493bfae
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79186734"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80112034"
 ---
 # <a name="graphics-and-multimedia"></a>Grafika a multimédia
 
@@ -57,9 +57,9 @@ Bylo provedeno několik změn týkajících se grafiky a animací.
 
 WPF obsahuje podporu pro vysoce kvalitní 2D grafiku. Funkce zahrnuje stopy, geometrie, obrazy, tvary a transformace. Další informace naleznete v [tématu Graphics](graphics.md). Vykreslování grafických prvků je založeno na <xref:System.Windows.Media.Visual> třídě. Struktura vizuálních objektů na obrazovce je popsána vizuálním stromem. Další informace naleznete v [tématu Přehled vykreslení grafiky WPF](wpf-graphics-rendering-overview.md).
 
-### <a name="2-d-shapes"></a>Dvoudobrazní tvary
+### <a name="2d-shapes"></a>2D obrazce
 
-WPF poskytuje knihovnu běžně používaných vektorových dvojd obrazců, jako jsou obdélníky a elipsy, které ukazují následující obrázek.
+WPF poskytuje knihovnu běžně používaných vektorově kreslených 2D tvarů, jako jsou obdélníky a elipsy, které ukazují následující obrázek.
 
 ![Diagram znázorňující elipsy a obdélníky.](./media/index/two-deminsional-shapes-ellipses-rectangles.png)
 
@@ -99,17 +99,17 @@ Následující obrázek znázorňuje výstup [!INCLUDE[TLA2#tla_xaml](../../../.
 
 Další informace naleznete [v tématu Obrazce a základní výkres v přehledu WPF](shapes-and-basic-drawing-in-wpf-overview.md). Úvodní ukázka viz [Ukázka prvků tvarů](https://github.com/Microsoft/WPF-Samples/tree/master/Graphics/ShapeElements).
 
-### <a name="2-d-geometries"></a>2D geometrie
+### <a name="2d-geometries"></a>2D geometrie
 
-Pokud nejsou dostatečné 2D obrazce, které poskytuje WPF, můžete použít podporu WPF pro geometrie a cesty k vytvoření vlastní. Následující obrázek znázorňuje, jak můžete pomocí geometrií vytvářet tvary jako stopu výkresu a oříznout další prvky WPF.
+Pokud 2D obrazce, které poskytuje WPF, nejsou dostatečné, můžete použít podporu WPF pro geometrie a cesty k vytvoření vlastní. Následující obrázek znázorňuje, jak můžete pomocí geometrií vytvářet tvary jako stopu výkresu a oříznout další prvky WPF.
 
 ![Snímek obrazovky znázorňující, jak můžete k vytváření obrazců použít geometrie.](./media/index/use-geometries-create-shapes.png)
 
 Další informace naleznete v [tématu Přehled geometrie](geometry-overview.md). Úvodní vzorek viz [Vzorek geometrie](https://github.com/Microsoft/WPF-Samples/tree/master/Graphics/Geometry).
 
-### <a name="2-d-effects"></a>2D efekty
+### <a name="2d-effects"></a>2D efekty
 
-WPF poskytuje knihovnu 2D třídy, které můžete použít k vytvoření různých efektů. Funkce 2D vykreslování WPF umožňuje malovat [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] prvky, které mají přechody, rastrové obrázky, výkresy a videa; a manipulovat s nimi pomocí otočení, změny velikosti a zkosení. Následující obrázek uvádí příklad mnoha efektů, kterých můžete dosáhnout pomocí stop WPF.
+WPF poskytuje knihovnu 2D tříd, které můžete použít k vytvoření různých efektů. Schopnost 2D vykreslování [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] WPF umožňuje malovat prvky, které mají přechody, rastrové obrázky, výkresy a videa; a manipulovat s nimi pomocí otočení, změny velikosti a zkosení. Následující obrázek uvádí příklad mnoha efektů, kterých můžete dosáhnout pomocí stop WPF.
 
 ![Obrázek znázorňující různé stopy WPF a prvky malby.](./media/index/brushes-paint-elements.png)
 
@@ -117,13 +117,13 @@ Další informace naleznete v tématu [Přehled stop y WPF](wpf-brushes-overview
 
 <a name="rendering"></a>
 
-## <a name="3-d-rendering"></a>3D vykreslování
+## <a name="3d-rendering"></a>3D vykreslování
 
-WPF poskytuje sadu funkcí 3D vykreslování, které se integrují s [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)]podporou 2D grafiky ve WPF, abyste mohli vytvořit více vzrušujícího rozložení a vizualizace dat. Na jednom konci spektra wpf umožňuje vykreslit 2D obrazy na povrchy 3D tvarů, které ukazují následující obrázek.
+WPF poskytuje sadu funkcí 3D vykreslování, které se integrují [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)]s podporou 2D grafiky ve WPF, abyste mohli vytvořit více vzrušujícího rozložení a vizualizace dat. Na jednom konci spektra umožňuje WPF vykreslit 2D obrazy na povrchy 3D tvarů, což ukazuje následující obrázek.
 
-![Snímek obrazovky s ukázkou znázorňující 3D obrazce s různými texturami](./media/index/visual-three-dimensional-shape.png)
+![Snímek obrazovky s ukázkou 3D obrazců s různými texturami](./media/index/visual-three-dimensional-shape.png)
 
-Další informace naleznete [v tématu Přehled 3D grafiky](3-d-graphics-overview.md). Úvodní vzorek viz [vzorek 3D pevných látek](https://go.microsoft.com/fwlink/?LinkID=159964).
+Další informace naleznete v tématu [Přehled 3D grafiky](3-d-graphics-overview.md). Úvodní vzorek viz [3D vzorek těles](https://go.microsoft.com/fwlink/?LinkID=159964).
 
 <a name="animation"></a>
 

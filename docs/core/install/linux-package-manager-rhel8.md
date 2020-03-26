@@ -3,19 +3,21 @@ title: Instalace .NET Core na Linux RHEL 8 správce balíčků - .NET Core
 description: Pomocí správce balíčků nainstalujte sadu .NET Core SDK a runtime na RHEL 8.
 author: thraka
 ms.author: adegeo
-ms.date: 12/03/2019
-ms.openlocfilehash: 054494a9b77e1c7803e42c947e067d3eb290f73c
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.date: 03/17/2020
+ms.openlocfilehash: b564a386eb67b6e414a832ad3bca10d3d09022bd
+ms.sourcegitcommit: 07123a475af89b6da5bb6cc51ea40ab1e8a488f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "78849808"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80134197"
 ---
 # <a name="rhel-8-package-manager---install-net-core"></a>Správce balíčků RHEL 8 – instalace jádra .NET
 
 [!INCLUDE [package-manager-switcher](includes/package-manager-switcher.md)]
 
 Tento článek popisuje, jak pomocí správce balíčků nainstalovat .NET Core na RHEL 8.
+
+[!INCLUDE [package-manager-intro-sdk-vs-runtime](includes/package-manager-intro-sdk-vs-runtime.md)]
 
 ## <a name="register-your-red-hat-subscription"></a>Registrace předplatného Red Hatu
 

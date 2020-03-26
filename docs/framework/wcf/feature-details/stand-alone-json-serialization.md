@@ -2,12 +2,12 @@
 title: Samostatná serializace JSON pomocí datacontractjsonserializer
 ms.date: 03/30/2017
 ms.assetid: 312bd7b2-1300-4b12-801e-ebe742bd2287
-ms.openlocfilehash: 36945f2d42f22ef3aa4f27bcbe403466f124a279
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 614776a905ec319624f76876762c25bfca15a357
+ms.sourcegitcommit: 99b153b93bf94d0fecf7c7bcecb58ac424dfa47c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79184413"
+ms.lasthandoff: 03/25/2020
+ms.locfileid: "80249445"
 ---
 # <a name="stand-alone-json-serialization-using-datacontractjsonserializer"></a>Samostatná serializace JSON pomocí datacontractjsonserializer
 
@@ -42,7 +42,7 @@ V následující tabulce je uvedena shoda mezi typy .NET a JSON/JavaScript, poku
 |Kolekce, slovníky a pole|Pole|V tomto tématu najdete v části Kolekce, Slovníky a Pole.|
 |Komplexní typy (s použitým <xref:System.Runtime.Serialization.DataContractAttribute> nebo <xref:System.SerializableAttribute> aplikovaným)|Komplexní typ|Datové členy se stanou členy komplexního typu JavaScript.|
 |Komplexní typy implementace <xref:System.Runtime.Serialization.ISerializable> rozhraní)|Komplexní typ|Stejné jako u jiných <xref:System.Runtime.Serialization.ISerializable> typů komplex, ale některé typy nejsou podporovány – viz iSerializable Support část rozšířené informace části tohoto tématu.|
-|`Null`hodnota pro libovolný typ|Null|Nullable typy jsou také podporovány a mapování JSON stejným způsobem jako typy s nulou.|
+|`Null`hodnota pro libovolný typ|Null|Nullable typy hodnot jsou také podporovány a mapování JSON stejným způsobem jako typy hodnot, které nesmožno null.|
 
 ### <a name="enumerations-and-json"></a>Výčty a JSON
 

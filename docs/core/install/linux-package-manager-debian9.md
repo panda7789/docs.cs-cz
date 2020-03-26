@@ -3,19 +3,21 @@ title: Instalace .NET Core na Debian 9 - správce balíčků - .NET Core
 description: Pomocí správce balíčků nainstalujte na Debian 9 .NET Core SDK a runtime.
 author: thraka
 ms.author: adegeo
-ms.date: 12/04/2019
-ms.openlocfilehash: 32b152ff9be5135cf0ca7f8914bc9ee4f78000be
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.date: 03/17/2020
+ms.openlocfilehash: cfe28d04edfac97938612537986498636c141be0
+ms.sourcegitcommit: 07123a475af89b6da5bb6cc51ea40ab1e8a488f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "76920840"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80134296"
 ---
 # <a name="debian-9-package-manager---install-net-core"></a>Správce balíčků Debianu 9 – instalace rozhraní .NET Core
 
 [!INCLUDE [package-manager-switcher](./includes/package-manager-switcher.md)]
 
-Tento článek popisuje, jak pomocí správce balíčků nainstalovat .NET Core na Debian 9. Pokud instalujete runtime, doporučujeme nainstalovat [ASP.NET core runtime](#install-the-aspnet-core-runtime), protože zahrnuje rozhraní .NET Core i ASP.NET Core runtime.
+Tento článek popisuje, jak pomocí správce balíčků nainstalovat .NET Core na Debian 9.
+
+[!INCLUDE [package-manager-intro-sdk-vs-runtime](includes/package-manager-intro-sdk-vs-runtime.md)]
 
 ## <a name="register-microsoft-key-and-feed"></a>Registrace klíče Microsoft a informačního kanálu
 
@@ -30,9 +32,9 @@ Stačí to provést jednou na jednom počítači.
 Otevřete terminál a spusťte následující příkazy.
 
 ```bash
-wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.asc.gpg
+wget -O- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.asc.gpg
 sudo mv microsoft.asc.gpg /etc/apt/trusted.gpg.d/
-wget -q https://packages.microsoft.com/config/debian/9/prod.list
+wget https://packages.microsoft.com/config/debian/9/prod.list
 sudo mv prod.list /etc/apt/sources.list.d/microsoft-prod.list
 sudo chown root:root /etc/apt/trusted.gpg.d/microsoft.asc.gpg
 sudo chown root:root /etc/apt/sources.list.d/microsoft-prod.list

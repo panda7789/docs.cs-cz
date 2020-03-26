@@ -2,29 +2,31 @@
 title: Nástroj Contract-First
 ms.date: 03/30/2017
 ms.assetid: 0a880690-f460-4475-a5f4-9f91ce08fcc6
-ms.openlocfilehash: 7ddc3b2c733c73808d17b6e0f45129cc19d7527c
-ms.sourcegitcommit: 4735bb7741555bcb870d7b42964d3774f4897a6e
+ms.openlocfilehash: 36e1a3e19f802ca5b74cf50f5bcd57c167e31e33
+ms.sourcegitcommit: e48a54ebe62e874500a7043f6ee0b77a744d55b4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66380374"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80291707"
 ---
 # <a name="contract-first-tool"></a>Nástroj Contract-First
-Kontrakty služeb často potřebují vytvořit z existujících služeb. V rozhraní .NET Framework 4.5 můžete třídy kontraktu dat automaticky vytvořen z existujících služeb pomocí nástroj pro upřednostnění kontraktu. Pokud chcete použít nástroj pro upřednostnění kontraktu, musí být soubor definice schématu XML (XSD) stažen místně; Nástroj nemůže importovat kontrakty vzdálených dat přes protokol HTTP.
+Smlouvy o poskytování služeb je často nutné vytvořit ze stávajících služeb. V rozhraní .NET Framework 4.5 a novějších lze třídy kontraktů dat automaticky vytvořit z existujících služeb pomocí nástroje první smlouvy. Chcete-li použít nástroj pro vytvoření smlouvy, musí být soubor definice schématu XML (XSD) stažen místně; nástroj nemůže importovat smlouvy o vzdálených datech přes protokol HTTP.
 
- Nástroj contract-first je integrována do sady Visual Studio 2012 jako úloha sestavení. Soubory kódu generovaných úkol sestavení se vytvoří pokaždé, když sestavení projektu tak, aby projekt můžete snadno přijmout změny v základní kontrakt služby.
+ Nástroj první smlouvy je integrován do Sady Visual Studio 2012 jako úkol sestavení. Soubory kódu generované úlohou sestavení jsou vytvořeny při každém sestavení projektu, takže projekt může snadno přijmout změny v základní smlouvě o poskytování služeb.
 
- Schéma typů, které můžete importovat nástroj contract-first, patří:
+ Typy schématu, které lze importovat nástroj první smlouvy patří následující:
 
 ```xml
 <xsd:complexType>
-<xsd:simpleType>
+ <xsd:simpleType>
+ </xsd:simpleType>
+</xsd:complexType>
 ```
 
- Jednoduché typy nebude vytvořen, pokud jsou například primitiv `Int16` nebo `String`; komplexní typy nebudou generovány, pokud jsou typu `Collection`. Typy nebude vygenerováno také v případě, že jsou součástí jiného `xsd:complexType`. V těchto případech typy bude odkazovat na existující typy v projektu místo.
+ Jednoduché typy nebudou generovány, pokud jsou `Int16` primitivy, jako jsou nebo `String`; komplexní typy nebudou generovány, pokud `Collection`jsou typu . Typy také nebudou generovány, pokud jsou `xsd:complexType`součástí jiného . Ve všech těchto případech typy budou odkazovat na existující typy v projektu místo.
 
-## <a name="adding-a-data-contract-to-a-project"></a>Přidání kontraktu dat do projektu
- Předtím, než je možné nástroj pro upřednostnění kontraktu, musí kontrakt služby (XSD) přidat do projektu. Pro účely tohoto přehledu se použije pro ilustraci stavící do funkce následující smlouvy. Tato definice služby je malou podmnožinu kontrakt služby používá rozhraní API Bingu pro vyhledávání.
+## <a name="adding-a-data-contract-to-a-project"></a>Přidání datové smlouvy do projektu
+ Před použitím nástroje první smlouvy musí být do projektu přidána servisní smlouva (XSD). Pro účely tohoto přehledu bude následující smlouva použita k ilustraci funkcí na prvním místě smlouvy. Tato definice služby je malá podmnožina smlouvy o poskytování služeb používané rozhraní matná rozhraní API pro vyhledávání Bingu.
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -56,73 +58,73 @@ Kontrakty služeb často potřebují vytvořit z existujících služeb. V rozhr
 </xs:schema>
 ```
 
- Chcete-li přidat výše kontraktu služby do projektu, klikněte pravým tlačítkem na projekt a vyberte **přidat nový...** . Vyberte definici schématu WCF podokně šablon dialogového okna a pojmenujte nový soubor SampleContract.xsd. Zkopírujte a vložte výše uvedený kód do zobrazení kódu nového souboru.
+ Chcete-li do projektu přidat výše uvedenou servisní smlouvu, klepněte pravým tlačítkem myši na projekt a vyberte přidat **nový...**. Vyberte definici schématu v podokně WCF dialogového okna Šablony a pojmenujte nový soubor SampleContract.xsd. Zkopírujte a vložte výše uvedený kód do zobrazení kódu nového souboru.
 
-## <a name="configuring-contract-first-options"></a>Konfigurace možností upřednostnění kontraktu
- Možnosti kontraktem lze nastavit v nabídce vlastnosti projektu WCF. Chcete-li povolit rozvoje prvního kontraktu, vyberte **povolit XSD jako jazyk definice typu** zaškrtávací políčko na stránce WCF v okně Vlastnosti projektu.
+## <a name="configuring-contract-first-options"></a>Konfigurace možností na prvním místě smlouvy
+ Možnosti první smlouvy lze nakonfigurovat v nabídce Vlastnosti projektu WCF. Chcete-li povolit vývoj na prvním místě smlouvy, zaškrtněte políčko **Povolit XSD jako jazyk definice typu** na stránce WCF v okně vlastností projektu.
 
- ![Snímek obrazovky s možností WCF pomocí rozvoje prvního kontraktu povolena.](./media/contract-first-tool/contract-first-options.png)
+ ![Snímek obrazovky s možnostmi WCF s povoleným vývojem na prvním místě smlouvy.](./media/contract-first-tool/contract-first-options.png)
 
- Konfigurace rozšířených vlastností, klikněte na tlačítko Upřesnit.
+ Chcete-li konfigurovat upřesňující vlastnosti, klepněte na tlačítko Upřesnit.
 
- ![Nastavení generování kódu kontraktu dialogové okno Upřesnit.](./media/contract-first-tool/advanced-contract-settings.png)
+ ![Dialogové okno Upřesnit nastavení generování kódu smlouvy.](./media/contract-first-tool/advanced-contract-settings.png)
 
- Toto nastavení lze nakonfigurovat pro generování kódu ze smluv. Nastavení se dá nakonfigurovat jenom pro všechny soubory v projektu. v tuto chvíli nelze konfigurovat pro jednotlivé soubory nastavení.
+ Následující upřesňující nastavení lze nakonfigurovat pro generování kódu ze smluv. Nastavení lze nakonfigurovat pouze pro všechny soubory v projektu; nastavení nelze v tuto chvíli nakonfigurovat pro jednotlivé soubory.
 
-- **Serializátor režimu**: Toto nastavení určuje, které serializátor se používá k přečtení soubory kontraktu služby. Když **serializátor XML** zaškrtnuto, **typy kolekcí** a **znovu použít typy** je zakázaná. Tyto možnosti platí pouze pro **serializátor kontraktu dat**.
+- **Serializační režim**: Toto nastavení určuje, který serializátor se používá pro čtení souborů servisní smlouvy. Pokud je vybrán **serializátor XML,** jsou zakázány možnosti **Typy kolekcí** a **Typy opakovaného použití.** Tyto možnosti platí pouze pro **serializátor smlouvy dat**.
 
-- **Znovu použít typy**: Toto nastavení určuje, které knihovny se používají pro znovuvyužití typů. Toto nastavení platí, pouze pokud **serializátor režimu** je nastavena na **serializátor kontraktu dat**.
+- **Znovu použít typy**: Toto nastavení určuje, které knihovny se používají pro opakované použití typu. Toto nastavení platí pouze v případě, že je **režim serializátoru** nastaven na **serializátor smlouvy s daty**.
 
-- **Typ kolekce**: Toto nastavení určuje plně kvalifikovaný nebo sestavením kvalifikovaný typ má být použit pro datový typ kolekce. Toto nastavení platí, pouze pokud **serializátor režimu** je nastavena na **serializátor kontraktu dat**.
+- **Typ kolekce**: Toto nastavení určuje plně kvalifikovaný typ nebo typ s kvalifikací sestavení, který má být použit pro datový typ kolekce. Toto nastavení platí pouze v případě, že je **režim serializátoru** nastaven na **serializátor smlouvy s daty**.
 
-- **Typ slovníku**: Toto nastavení určuje plně kvalifikovaný nebo sestavením kvalifikovaný typ má být použit pro datový typ slovníku.
+- **Typ slovníku**: Toto nastavení určuje plně kvalifikovaný typ nebo typ s kvalifikací sestavení, který se má použít pro datový typ slovníku.
 
-- **EnableDataBinding**: Toto nastavení určuje, jestli se má implementovat <xref:System.ComponentModel.INotifyPropertyChanged> rozhraní pro všechny datové typy pro implementaci datové vazby.
+- **EnableDataBinding**: Toto nastavení určuje, zda má být implementováno <xref:System.ComponentModel.INotifyPropertyChanged> rozhraní na všech datových typech k implementaci datové vazby.
 
-- **Vyloučených typů**: Toto nastavení určuje seznam plně kvalifikovaný nebo sestavením kvalifikovaný typy, které se mají vyloučit z odkazovaných sestavení. Toto nastavení platí, pouze pokud **serializátor režimu** je nastavena na **serializátor kontraktu dat**.
+- **ExcludedTypes**:Toto nastavení určuje seznam plně kvalifikovaných typů nebo typů kvalifikovaných pro sestavení, které mají být vyloučeny z odkazovaných sestav. Toto nastavení platí pouze v případě, že je **režim serializátoru** nastaven na **serializátor smlouvy s daty**.
 
-- **GenerateInternalTypes**: Toto nastavení určuje, jestli se mají generovat třídy, které jsou označeny jako vnitřní. Toto nastavení platí, pouze pokud **serializátor režimu** je nastavena na **serializátor kontraktu dat**.
+- **GenerateInternalTypes**: Toto nastavení určuje, zda mají být generovány třídy, které jsou označeny jako interní. Toto nastavení platí pouze v případě, že je **režim serializátoru** nastaven na **serializátor smlouvy s daty**.
 
-- **GenerateSerializableTypes**: Toto nastavení určuje, jestli se mají generovat třídy s <xref:System.SerializableAttribute> atribut. Toto nastavení platí, pouze pokud **serializátor režimu** je nastavena na **serializátor kontraktu dat**.
+- **GenerateSerializableTypes**: Toto nastavení určuje, <xref:System.SerializableAttribute> zda se mají generovat třídy s atributem. Toto nastavení platí pouze v případě, že je **režim serializátoru** nastaven na **serializátor smlouvy s daty**.
 
-- **ImportXMLTypes**: Toto nastavení určuje, jestli se má nakonfigurovat serializátor kontraktu dat. Chcete-li použít <xref:System.SerializableAttribute> atribut třídy bez <xref:System.Runtime.Serialization.DataContractAttribute> atribut.  Toto nastavení platí, pouze pokud **serializátor režimu** je nastavena na **serializátor kontraktu dat**.
+- **ImportXMLTypes**: Toto nastavení určuje, zda má být <xref:System.SerializableAttribute> nakonfigurován serializátor datové smlouvy tak, aby atribut použil na třídy bez atributu. <xref:System.Runtime.Serialization.DataContractAttribute>  Toto nastavení platí pouze v případě, že je **režim serializátoru** nastaven na **serializátor smlouvy s daty**.
 
-- **SupportFx35TypedDataSets**: Toto nastavení určuje, jestli se mají poskytnout dodatečné funkce pro typové datové sady vytvořené pro rozhraní .NET Framework 3.5. Když **serializátor režimu** je nastavena na **serializátor XML**, <xref:System.Data.Design.TypedDataSetSchemaImporterExtensionFx35> rozšíření se přidají do programu pro import schématu XML, když je tato hodnota nastavena na hodnotu True. Při **serializátor režimu** je nastavena na **serializátor kontraktu dat**, typ <xref:System.DateTimeOffset> budou vyloučeny z odkazů, pokud tato hodnota nastavena na hodnotu False, tak, aby <xref:System.DateTimeOffset> se vždy vygeneruje pro starší verze rozhraní framework.
+- **SupportFx35TypedDataSets**: Toto nastavení určuje, zda má být poskytnuta další funkce pro zadané datové sady vytvořené pro rozhraní .NET Framework 3.5. Pokud je **režim serializátoru** <xref:System.Data.Design.TypedDataSetSchemaImporterExtensionFx35> nastaven na **serializátor XML**, bude rozšíření přidáno do importu schématu XML, pokud je tato hodnota nastavena na hodnotu True. Pokud **serializační režim** je nastavena na <xref:System.DateTimeOffset> **serializátor smlouvy dat**, typ bude vyloučen z <xref:System.DateTimeOffset> odkazy, pokud je tato hodnota nastavena na False, tak, aby a je vždy generována pro starší verze architektury.
 
 - **InputXsdFiles**: Toto nastavení určuje seznam vstupních souborů. Každý soubor musí obsahovat platné schéma XML.
 
-- **Jazyk**: Toto nastavení určuje jazyk kódu generovaného kontraktu. Nastavení musí být rozpoznat podle <xref:System.CodeDom.Compiler.CodeDomProvider>.
+- **Jazyk**: Toto nastavení určuje jazyk generovaného kódu smlouvy. Nastavení musí být rozpoznatelné podle <xref:System.CodeDom.Compiler.CodeDomProvider>.
 
-- **NamespaceMappings**: Toto nastavení určuje mapování z cílové obory názvů XSD u oborů názvů CLR. Každé mapování by měl použijte následující formát:
+- **NamespaceMappings**: Toto nastavení určuje mapování z cílových oborů názvů XSD na obory názvů CLR. Každé mapování by mělo používat následující formát:
 
     ```xml
-    "<Schema Namespace>, <CLR Namespace>"
+    "Schema Namespace, CLR Namespace"
     ```
 
      Serializátor XML přijímá pouze jedno mapování v následujícím formátu:
 
     ```xml
-    "*, <CLR Namespace>"
+    "*, CLR Namespace"
     ```
 
-- **OutputDirectory**: Toto nastavení určuje adresář, ve kterém se soubory kódu vygeneruje.
+- **OutputDirectory**: Toto nastavení určuje adresář, ve kterém budou generovány soubory kódu.
 
- Nastavení se použije ke generování typů kontraktu služby z kontraktu služby soubory při sestavení projektu.
+ Nastavení bude použito ke generování typů servisních smluv ze souborů servisní smlouvy při vytváření projektu.
 
-## <a name="using-contract-first-development"></a>Pomocí rozvoje prvního kontraktu
- Po přidání kontraktu služby do projektu a potvrdíte nastavení sestavení, sestavte projekt stisknutím kombinace kláves **F6**. Typy definované v kontraktu služby pak bude k dispozici pro použití v projektu.
+## <a name="using-contract-first-development"></a>Použití vývoje na prvním místě smlouvy
+ Po přidání smlouvy o poskytování služeb do projektu a potvrzení nastavení sestavení vytvořte projekt stisknutím **klávesy F6**. Typy definované ve smlouvě o poskytování služeb pak budou k dispozici pro použití v projektu.
 
- Pokud chcete použít typy definované v kontraktu služby, přidejte odkaz na `ContractTypes` v aktuálním oboru názvů:
+ Chcete-li použít typy definované ve smlouvě `ContractTypes` o poskytování služeb, přidejte odkaz pod aktuální obor názvů:
 
 ```csharp
 using MyProjectNamespace.ContractTypes;
 ```
 
- Typy definované v kontraktu služby pak bude možné přeložit v projektu, jak je znázorněno níže:
+ Typy definované v servisní smlouvě pak budou v projektu řešitelné, jak je znázorněno níže:
 
- ![Třída SearchRequest zobrazení v IntelliSense po zadání prvních pár písmen.](./media/contract-first-tool/service-contract-types.png)
+ ![SearchRequest třída zobrazena v IntelliSense po zadání prvních několik písmen.](./media/contract-first-tool/service-contract-types.png)
 
- Typy generované nástrojem jsou vytvořeny v souboru GeneratedXSDTypes.cs. Soubor je vytvořen \<adresáře projektu > /obj/\<konfiguraci sestavení > /XSDGeneratedCode/ adresáře ve výchozím nastavení. Ukázka schématu na začátku tohoto tématu je převést následujícím způsobem:
+ Typy generované nástrojem jsou vytvořeny v souboru GeneratedXSDTypes.cs. Soubor je vytvořen \<v adresáři projektu\<>/obj/ konfigurace sestavení>/XSDGeneratedCode/ adresáře ve výchozím nastavení. Ukázkové schéma na začátku tohoto článku je převedeno takto:
 
 ```csharp
 //------------------------------------------------------------------------------
@@ -341,8 +343,8 @@ namespace TestXSD3.ContractTypes
 }
 ```
 
-## <a name="errors-and-warnings"></a>Chyby a upozornění
- Sestavování chyby a upozornění se zobrazí chyby a upozornění při parsování schématu XSD.
+## <a name="errors-and-warnings"></a>Chyby a varování
+ Chyby a upozornění při analýzách schématu XSD se zobrazí jako chyby sestavení a upozornění.
 
 ## <a name="interface-inheritance"></a>Dědičnost rozhraní
- Není možné použít dědičnost rozhraní s rozvoje prvního kontraktu; To je konzistentní se způsobem rozhraní chovají v jiných operacích. Pokud chcete používat rozhraní, které dědí základní rozhraní, použijte dva samostatné koncové body. První koncový bod používá zděděná smlouvy a druhý implementuje základní rozhraní.
+ Není možné použít dědičnost rozhraní s vývojem první smlouvy; To je v souladu se způsobem, jakým se rozhraní chovají v jiných operacích. Chcete-li použít rozhraní, které dědí základní rozhraní, použijte dva samostatné koncové body. První koncový bod používá zděděnou smlouvu a druhý koncový bod implementuje základní rozhraní.

@@ -7,12 +7,12 @@ helpviewer_keywords:
 - fully qualified names [C#]
 - namespaces [C#], how to use
 ms.assetid: 1fe8bf39-addc-438a-bd9e-86410e32381d
-ms.openlocfilehash: 5193fc7aaae83cbc0c75e81835244eaaaece69a5
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 0947e597da93d6db1c5965b3685a509961778586
+ms.sourcegitcommit: 2514f4e3655081dcfe1b22470c0c28500f952c42
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75700195"
+ms.lasthandoff: 03/18/2020
+ms.locfileid: "79507045"
 ---
 # <a name="using-namespaces-c-programming-guide"></a>Použití oborů názvů (Programovací příručka Jazyka C#)
 
@@ -42,7 +42,7 @@ Obory názvů jsou v rámci programů jazyka C# používány dvěma způsoby. Za
   
 ## <a name="using-namespaces-to-control-scope"></a>Použití oborů názvů k řízení oboru
 
- Klíčové `namespace` slovo se používá k deklarování oboru. Možnost vytvářet obory v rámci projektu pomáhá organizovat kód a umožňuje vytvářet globálně jedinečné typy. V následujícím příkladu je `SampleClass` třída s názvem definována ve dvou oborech názvů, jeden vnořený uvnitř druhého. [Operátor přístupu `.` člena](../../language-reference/operators/member-access-operators.md#member-access-operator-) se používá k rozlišení, která metoda získá volání.  
+ Klíčové `namespace` slovo se používá k deklarování oboru. Možnost vytvářet obory v rámci projektu pomáhá organizovat kód a umožňuje vytvářet globálně jedinečné typy. V následujícím příkladu je `SampleClass` třída s názvem definována ve dvou oborech názvů, jeden vnořený uvnitř druhého. [ `.` Token](../../language-reference/operators/member-access-operators.md#member-access-expression-) se používá k rozlišení, která metoda se nazývá.  
   
  [!code-csharp[csProgGuideNamespaces#8](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideNamespaces/CS/Namespaces.cs#8)]  
   
@@ -93,7 +93,7 @@ Obory názvů jsou v rámci programů jazyka C# používány dvěma způsoby. Za
 ## <a name="see-also"></a>Viz také
 
 - [Programovací příručka jazyka C#](../index.md)
-- [Obory názvů](./index.md)
-- [. Operátor](../../language-reference/operators/member-access-operators.md#member-access-operator-)
+- [Jmenné prostory](./index.md)
+- [Výraz přístupu člena](../../language-reference/operators/member-access-operators.md#member-access-expression-)
 - [:: operátor](../../language-reference/operators/namespace-alias-qualifier.md)
 - [externí alias](../../language-reference/keywords/extern-alias.md)

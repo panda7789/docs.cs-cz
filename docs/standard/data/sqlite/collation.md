@@ -1,43 +1,43 @@
 ---
 title: Kolace
 ms.date: 12/13/2019
-description: Naučte se vytvořit vlastní sekvenci seřazení.
-ms.openlocfilehash: 9cc574a75c8f5347dd9bb44e36af72e50afa57b4
-ms.sourcegitcommit: cbdc0f4fd39172b5191a35200c33d5030774463c
+description: Přečtěte si, jak vytvořit vlastní posloupnost řazení.
+ms.openlocfilehash: b93c82a4ace154b8293b05effa8f9e9294fa7708
+ms.sourcegitcommit: 2514f4e3655081dcfe1b22470c0c28500f952c42
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75777386"
+ms.lasthandoff: 03/18/2020
+ms.locfileid: "79506538"
 ---
 # <a name="collation"></a>Kolace
 
-Při porovnávání textových hodnot s určením pořadí a rovnosti používá SQLite sekvence. Můžete určit, kterou kolaci použít při vytváření sloupců nebo operací v dotazech SQL. SQLite obsahuje tři sekvence řazení ve výchozím nastavení.
+Kompletování sekvence jsou používány SQLite při porovnávání text hodnoty k určení pořadí a rovnosti. Můžete určit, které řazení se má použít při vytváření sloupců nebo operací v dotazech SQL. SQLite obsahuje ve výchozím nastavení tři kompletační sekvence.
 
 | Kolace | Popis                               |
 | --------- | ----------------------------------------- |
-| RTRIM     | Ignoruje koncovou mezeru.               |
-| BEZPŘÍPADU    | Nerozlišuje velká a malá písmena pro znaky ASCII A – Z |
-| TVARU    | Rozlišuje velká a malá písmena. Porovná bajty přímo   |
+| RTRIM     | Ignoruje koncové prázdné znaky.               |
+| ŽÁDNÝ PŘÍPAD    | Necitlivé malá a velká písmena pro znaky ASCII A-Z |
+| Binární    | Case-sensitive. Porovnává přímo bajty   |
 
-## <a name="custom-collation"></a>Vlastní kolace
+## <a name="custom-collation"></a>Vlastní řazení
 
-Můžete také definovat vlastní řadicí sekvence nebo přepsat vestavěné objekty pomocí <xref:Microsoft.Data.Sqlite.SqliteConnection.CreateCollation%2A>. Následující příklad ukazuje, jak přepsat kolaci případu pro podporu znaků Unicode. [Úplný ukázkový kód](https://github.com/dotnet/samples/blob/master/snippets/standard/data/sqlite/CollationSample/Program.cs) je k dispozici na GitHubu.
+Můžete také definovat vlastní řazení sekvence nebo přepsat vestavěné ty <xref:Microsoft.Data.Sqlite.SqliteConnection.CreateCollation%2A>pomocí . Následující příklad ukazuje přepsání nocase řazení pro podporu znaků Unicode. [Úplný ukázkový kód](https://github.com/dotnet/samples/blob/master/snippets/standard/data/sqlite/CollationSample/Program.cs) je k dispozici na GitHubu.
 
 [!code-csharp[](../../../../samples/snippets/standard/data/sqlite/CollationSample/Program.cs?name=snippet_Collation)]
 
-## <a name="like-operator"></a>Like – operátor
+## <a name="like-operator"></a>Stejně jako operátor
 
-Operátor LIKE v SQLite nedodržuje kolace. Výchozí implementace má stejnou sémantiku jako řazení v případě případu. Rozlišuje velká a malá písmena pro znaky ASCII A až Z.
+Operátor LIKE v SQLite nectí kolace. Výchozí implementace má stejnou sémantiku jako kolace NOCASE. Je pouze malá a velká písmena pro znaky ASCII A až Z.
 
-Pomocí následujícího příkazu pragma můžete snadno vytvořit rozlišování velkých a malých písmen jako operátor:
+Můžete snadno provést operátor like rozlišování velkých a malých písmen pomocí následujícího příkazu pragma:
 
 ```sql
-PRAGMA case_sensitive_like = 0
+PRAGMA case_sensitive_like = 1
 ```
 
-Podrobnosti o přepsání implementace operátoru LIKE najdete v tématu [uživatelsky definované funkce](user-defined-functions.md) .
+Viz [Uživatelem definované funkce](user-defined-functions.md) podrobnosti o přepsání implementace operátoru LIKE.
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 * [Uživatelsky definované funkce](user-defined-functions.md)
 * [Syntaxe SQL](https://www.sqlite.org/lang.html)

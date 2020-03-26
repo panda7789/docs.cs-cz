@@ -5,12 +5,12 @@ ms.date: 12/18/2019
 helpviewer_keywords:
 - default [C#]
 - parameterless constructor [C#]
-ms.openlocfilehash: 93b6079b9a3bbf6d537094cab9dfb305ace7f6bf
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 5e34d291ec15c738f3bc9409df321ede454b6710
+ms.sourcegitcommit: 2514f4e3655081dcfe1b22470c0c28500f952c42
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "77625862"
+ms.lasthandoff: 03/18/2020
+ms.locfileid: "79507253"
 ---
 # <a name="default-values-of-c-types-c-reference"></a>Výchozí hodnoty typů jazyka C# (odkaz jazyka C#)
 
@@ -27,7 +27,7 @@ V následující tabulce jsou uvedeny výchozí hodnoty typů jazyka C#:
 |[Struct](struct.md)|Hodnota vytvořená nastavením všech polí typu hodnoty na jejich výchozí `null`hodnoty a všechna pole typu odkazu na .|
 |Jakýkoli [typ hodnoty s možnou hodnotou null](nullable-value-types.md)|Instance, pro <xref:System.Nullable%601.HasValue%2A> kterou `false` je <xref:System.Nullable%601.Value%2A> vlastnost a vlastnost není definována. Tato výchozí hodnota je také známá jako *hodnota null* typu hodnoty s možnou hodnotou, kterou lze hodnotit.|
 
-Pomocí [výchozího operátoru](../operators/default.md) můžete vytvořit výchozí hodnotu typu, jak ukazuje následující příklad:
+Pomocí [ `default` operátoru](../operators/default.md#default-operator) můžete vytvořit výchozí hodnotu typu, jak ukazuje následující příklad:
 
 ```csharp
 int a = default(int);

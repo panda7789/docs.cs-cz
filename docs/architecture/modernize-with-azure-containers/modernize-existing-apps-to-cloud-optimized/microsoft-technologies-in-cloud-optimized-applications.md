@@ -2,12 +2,12 @@
 title: Technologie Microsoftu v aplikacích optimalizovaných pro cloud
 description: Modernizace stávajících aplikací .NET pomocí Azure Cloudu a kontejnerů Windows | Technologie Microsoftu v aplikacích optimalizovaných pro cloud
 ms.date: 04/28/2018
-ms.openlocfilehash: 915aa99d2331c5b9c46eabef3335fb809baa9370
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: c5222ba13258f9c8a40ca3b9ce240aeb9f41da63
+ms.sourcegitcommit: 34dc3c0d0d0a1cc418abff259d9daa8078d00b81
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "68676994"
+ms.lasthandoff: 03/19/2020
+ms.locfileid: "79546507"
 ---
 # <a name="microsoft-technologies-in-cloud-optimized-applications"></a>Technologie Microsoftu v cloudových aplikacích
 
@@ -19,7 +19,7 @@ Následující seznam popisuje nástroje, technologie a řešení, které jsou r
 
 - **Spravovaný cloud**: Když zvolíte možnost spravovaného cloudu, můžete se vyhnout nákladům a složitosti správy a podpory základní infrastruktury, virtuálních počítačů, oprav operačních systémů a konfigurace sítě. Pokud se rozhodnete migrovat pomocí služby IaaS, jste zodpovědní za všechny tyto úkoly a za související náklady. V možnosti spravovaného cloudu spravujete jenom aplikace a služby, které vyvíjíte. Poskytovatel cloudových služeb obvykle spravuje vše ostatní. Příklady spravovaných cloudových služeb v Azure zahrnují [Azure SQL Database](https://azure.microsoft.com/services/sql-database), Azure [Redis Cache](https://azure.microsoft.com/services/cache/), Azure [Cosmos DB](https://azure.microsoft.com/services/cosmos-db/), Azure [Storage](https://azure.microsoft.com/services/storage/), Azure Database [for MySQL](https://azure.microsoft.com/services/mysql/), [Azure Database for PostgreSQL](https://azure.microsoft.com/services/postgresql/), [Azure Active Directory](https://azure.microsoft.com/services/active-directory/)a spravované výpočetní služby, jako jsou [škálovací sady virtuálních montoslužeb](https://azure.microsoft.com/services/virtual-machine-scale-sets/)pro virtuální počítače , [Azure App Service](https://azure.microsoft.com/services/app-service/)a [Azure Kubernetes Service](https://azure.microsoft.com/services/container-service/).
 
-- **Vývoj aplikací**: Můžete si vybrat z mnoha jazyků při vytváření aplikací, které běží v kontejnerech. Tato příručka se zaměřuje na [rozhraní .NET](https://www.microsoft.com/net), ale můžete vyvíjet aplikace založené na kontejnerech pomocí jiných jazyků, jako je Node.js, Python, Jaro/Java nebo Go.
+- **Vývoj aplikací**: Můžete si vybrat z mnoha jazyků při vytváření aplikací, které běží v kontejnerech. Tato příručka se zaměřuje na [rozhraní .NET](https://dotnet.microsoft.com), ale můžete vyvíjet aplikace založené na kontejnerech pomocí jiných jazyků, jako je Node.js, Python, Jaro/Java nebo Go.
 
 - **Monitorování, telemetrie, protokolování a auditování**: Možnost monitorování a auditování aplikací a kontejnerů spuštěných v cloudu je důležitá pro všechny aplikace optimalizované pro cloud. [Azure Application Insights](https://azure.microsoft.com/services/application-insights/) a [Microsoft Operations Management Suite](https://www.microsoft.com/cloud-platform/operations-management-suite) jsou hlavní nástroje Microsoftu, které poskytují monitorování a auditování aplikací optimalizovaných pro cloud.
 

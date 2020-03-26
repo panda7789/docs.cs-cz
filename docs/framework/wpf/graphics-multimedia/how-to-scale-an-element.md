@@ -5,12 +5,12 @@ helpviewer_keywords:
 - scaling [WPF], elements
 - graphics [WPF], scaling elements
 ms.assetid: 18158d94-bbe7-4f6a-814e-84d27fa748bf
-ms.openlocfilehash: a383ad84f1db4d937469943092a03517f68777ec
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 34d954f68747be9eedc0ef71634e0c18b411d260
+ms.sourcegitcommit: 267d092663aba36b6b2ea853034470aea493bfae
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79187440"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80112047"
 ---
 # <a name="how-to-scale-an-element"></a>Postupy: Změna velikosti elementu
 Tento příklad ukazuje, <xref:System.Windows.Media.ScaleTransform> jak použít měřítko prvku.  
@@ -35,7 +35,7 @@ Tento příklad ukazuje, <xref:System.Windows.Media.ScaleTransform> jak použít
  ![2x váhy s různými středovými body](./media/wcpsdk-graphicsmm-scalecenter.gif "wcpsdk_graphicsmm_scalecenter")  
 Dvě operace ScaleTransform s identickými hodnotami ScaleX a ScaleY, ale s různými centry  
   
- Kompletní ukázku naleznete v [tématu Ukázka 2D transformací](https://github.com/Microsoft/WPF-Samples/tree/master/Graphics/2DTransforms).  
+ Kompletní ukázku naleznete v tématu [2D transformace Ukázka](https://github.com/Microsoft/WPF-Samples/tree/master/Graphics/2DTransforms).  
   
 ## <a name="see-also"></a>Viz také
 

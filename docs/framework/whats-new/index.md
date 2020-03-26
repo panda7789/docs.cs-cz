@@ -8,12 +8,12 @@ dev_langs:
 helpviewer_keywords:
 - what's new [.NET Framework]
 ms.assetid: 1d971dd7-10fc-4692-8dac-30ca308fc0fa
-ms.openlocfilehash: fa7138127379b069b646c4b2488d1973a3ddd628
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: d5657f4081577b2a27bc3c2f6880784015c56060
+ms.sourcegitcommit: 99b153b93bf94d0fecf7c7bcecb58ac424dfa47c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "79143314"
+ms.lasthandoff: 03/25/2020
+ms.locfileid: "80249692"
 ---
 # <a name="whats-new-in-net-framework"></a>Co je nového v rozhraní .NET Framework
 
@@ -427,7 +427,7 @@ Můžete přidat SameSite <xref:System.Web.Security.FormsAuthentication> <xref:S
       <forms cookieSameSite="Lax">
          <!-- ...   -->
       </forms>
-   <authentication />
+   </authentication>
    <sessionState cookieSameSite="Lax"></sessionState>
 </system.web>
 ```
@@ -500,7 +500,7 @@ Základní tok enklávy vždy šifrované je:
 Počínaje rozhraním .NET Framework 4.7.2 může <xref:System.Windows.Xps.Packaging.IXpsFixedPageReader.ResourceDictionaries> diagnostický pomocník vyhledat ty, které byly vytvořeny z daného zdroje Uri.(Tato funkce je určena diagnostickými asistenty, nikoli produkčními aplikacemi.) Diagnostický asistent, jako je například visual studio "Upravit a pokračovat" zařízení umožňuje jeho uživateli upravit ResourceDictionary s úmyslem, že změny se použijí na spuštěné aplikace. Jedním z kroků v dosažení tohoto je nalezení všech ResourceDictionaries, které spuštěná aplikace vytvořila ze slovníku, který je upravován. Aplikace může například deklarovat ResourceDictionary, jehož obsah je zkopírován z daného zdroje URI:
 
 ```xml
-<ResourceDictionary Source="MyRD.xaml">
+<ResourceDictionary Source="MyRD.xaml" />
 ```
 
 Diagnostický pomocník, který uetuje původní značky v *MyRD.xaml* můžete použít novou funkci k vyhledání slovníku.Tato funkce je implementována <xref:System.Windows.Diagnostics.ResourceDictionaryDiagnostics.GetResourceDictionariesForSource%2A?displayProperty=nameWithType>novou statickou metodou . Diagnostický asistent volá novou metodu pomocí absolutní Uri, který identifikuje původní značky, jak je znázorněno na následujícím kódu:
@@ -1256,7 +1256,7 @@ Rozhraní .NET Framework 4.6.1 obsahuje nové funkce v následujících oblastec
 
 - [Windows Workflow Foundation](#WWF461)
 
-- [Profilování](#Profile461)
+- [Profilace](#Profile461)
 
 - [Ngen](#NGEN461)
 
@@ -1954,7 +1954,7 @@ V rozhraní .NET Framework 4.5 byly do jazyků Jazyka C# a Visual Basic přidán
 
 <a name="tools" />
 
-### <a name="tools"></a>nástroje
+### <a name="tools"></a>Nástroje
 
 V rozhraní .NET Framework 4.5 umožňuje generátor souborů prostředků (Resgen.exe) vytvořit soubor Resw pro použití v aplikacích pro Windows 8.x Store ze souboru .resources vloženého do sestavení rozhraní .NET Framework. Další informace naleznete v [tématu Resgen.exe (Resource File Generator).](../tools/resgen-exe-resource-file-generator.md)
 

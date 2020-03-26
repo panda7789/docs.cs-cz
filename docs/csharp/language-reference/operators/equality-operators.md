@@ -15,12 +15,12 @@ helpviewer_keywords:
 - inequality operator [C#]
 - not equals operator [C#]
 - '!= operator [C#]'
-ms.openlocfilehash: 079522b18afdf86a942d502672174516d45d37fc
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 7dd3e544dc03fb94577892b42aecd1a15a6621ac
+ms.sourcegitcommit: 267d092663aba36b6b2ea853034470aea493bfae
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79399565"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80110916"
 ---
 # <a name="equality-operators-c-reference"></a>Operátory rovnosti (odkaz C#)
 
@@ -83,7 +83,7 @@ Následující příklad ukazuje použití operátoru: `!=`
 
 ## <a name="operator-overloadability"></a>Přetížení obsluhy
 
-Uživatelem definovaný typ může `==` `!=` [přetížit](operator-overloading.md) operátory a. Pokud typ přetíží jeden ze dvou operátorů, musí také přetížení jiný.
+Uživatelem definovaný typ může `==` `!=` [přetížit](operator-overloading.md) operátory a. Pokud typ přetíží jeden ze dvou operátorů, musí také přetížení druhý.
 
 ## <a name="c-language-specification"></a>specifikace jazyka C#
 

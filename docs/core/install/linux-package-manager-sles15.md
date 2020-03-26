@@ -3,19 +3,21 @@ title: Instalace .NET Core na SLES 15 - správce balíčků - .NET Core
 description: Pomocí správce balíčků nainstalujte na sles 15 .NET Core SDK a runtime.
 author: thraka
 ms.author: adegeo
-ms.date: 12/04/2019
-ms.openlocfilehash: f48c131b4250bd04fffc0d815a3500732caacb7c
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.date: 03/17/2020
+ms.openlocfilehash: b86b97bf17165f2f7a70e80ff581750ba39be375
+ms.sourcegitcommit: 07123a475af89b6da5bb6cc51ea40ab1e8a488f0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "76921035"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80134179"
 ---
 # <a name="sles-15-package-manager---install-net-core"></a>SLES 15 Správce balíčků - instalace jádra .NET
 
 [!INCLUDE [package-manager-switcher](./includes/package-manager-switcher.md)]
 
-Tento článek popisuje, jak pomocí správce balíčků nainstalovat .NET Core na SLES 15. Pokud instalujete runtime, doporučujeme nainstalovat [ASP.NET core runtime](#install-the-aspnet-core-runtime), protože zahrnuje rozhraní .NET Core i ASP.NET Core runtime.
+Tento článek popisuje, jak pomocí správce balíčků nainstalovat .NET Core na SLES 15.
+
+[!INCLUDE [package-manager-intro-sdk-vs-runtime](includes/package-manager-intro-sdk-vs-runtime.md)]
 
 ## <a name="register-microsoft-key-and-feed"></a>Registrace klíče Microsoft a informačního kanálu
 

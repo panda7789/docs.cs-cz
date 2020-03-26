@@ -6,12 +6,12 @@ helpviewer_keywords:
 - C# language, about C# language
 - Visual C#, about
 ms.assetid: 0a2dff4e-cd84-42ff-8141-e89889b24081
-ms.openlocfilehash: d2fd879203932ea3f2211e38a2efdd626928962b
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 828543b95ed82f465c92212748c6250b7fc84051
+ms.sourcegitcommit: 99b153b93bf94d0fecf7c7bcecb58ac424dfa47c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75713915"
+ms.lasthandoff: 03/25/2020
+ms.locfileid: "80249380"
 ---
 # <a name="introduction-to-the-c-language-and-the-net-framework"></a>Úvod do jazyka C# a rozhraní .NET Framework
 
@@ -22,7 +22,7 @@ C# je elegantní a typově bezpečný objektově orientovaný jazyk, který výv
   
 ## <a name="c-language"></a>jazyk C#
 
-Syntaxe jazyka C# je vysoce expresivní, ale je také jednoduchá a snadno se učí. Syntaxe složené závorky jazyka C# bude okamžitě rozpoznatelná pro všechny osoby obeznámené s c, c++ nebo javou. Vývojáři, kteří znají některý z těchto jazyků jsou obvykle schopni začít pracovat produktivně v jazyce C# ve velmi krátkém čase. Syntaxe jazyka C# zjednodušuje mnoho složitostí jazyka C++ a poskytuje výkonné funkce, jako jsou typy hodnot s možnou hodnotou null, výčty, delegáty, výrazy lambda a přímý přístup do paměti. C# podporuje obecné metody a typy, které poskytují zvýšenou bezpečnost typů a výkon a iterátory, které umožňují implementátorům tříd kolekce definovat vlastní iterace chování, které jsou jednoduché použití podle klientského kódu. Výrazy linq (Language Integrated Query) činí z dotazu silného typu konstrukci jazyka první třídy.  
+Syntaxe jazyka C# je vysoce expresivní, ale je také jednoduchá a snadno se učí. Syntaxe složené závorky jazyka C# bude okamžitě rozpoznatelná pro všechny osoby obeznámené s c, c++ nebo javou. Vývojáři, kteří znají některý z těchto jazyků jsou obvykle schopni začít pracovat produktivně v jazyce C# ve velmi krátkém čase. Syntaxe jazyka C# zjednodušuje mnoho složitostí jazyka C++ a poskytuje výkonné funkce, jako jsou typy s možnou hodnotou null, výčty, delegáty, výrazy lambda a přímý přístup do paměti. C# podporuje obecné metody a typy, které poskytují zvýšenou bezpečnost typů a výkon a iterátory, které umožňují implementátorům tříd kolekce definovat vlastní iterace chování, které jsou jednoduché použití podle klientského kódu. Výrazy linq (Language Integrated Query) činí z dotazu silného typu konstrukci jazyka první třídy.  
   
  Jako objektově orientovaný jazyk c# podporuje koncepty zapouzdření, dědičnosti a polymorfismu. Všechny proměnné a metody, `Main` včetně metody, vstupníbod aplikace, jsou zapouzdřeny v rámci definice třídy. Třída může dědit přímo z jedné nadřazené třídy, ale může implementovat libovolný počet rozhraní. Metody, které přepsat virtuální metody v `override` nadřazené třídě vyžadují klíčové slovo jako způsob, jak se vyhnout náhodnému předefinování. V C# struct je jako odlehčené třídy; jedná se o typ přidělený zásobníkem, který může implementovat rozhraní, ale nepodporuje dědičnost.  
   

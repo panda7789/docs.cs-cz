@@ -3,12 +3,12 @@ title: Začínáme s jazykem C# a nástrojem Visual Studio Code
 description: Naučte se, jak vytvořit a ladit první aplikaci .NET Core v jazyce C# pomocí kódu sady Visual Studio.
 author: kendrahavens
 ms.date: 12/05/2018
-ms.openlocfilehash: 8eaf1ba2314dcab96db615a8691afed82c5011a7
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 49a1271f2bf74224e189e70bebf0d22c49408e5d
+ms.sourcegitcommit: 267d092663aba36b6b2ea853034470aea493bfae
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79398879"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80111059"
 ---
 # <a name="get-started-with-c-and-visual-studio-code"></a>Začínáme s jazykem C# a nástrojem Visual Studio Code
 
