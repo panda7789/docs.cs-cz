@@ -8,31 +8,31 @@ helpviewer_keywords:
 - transformations [WPF], about transformations
 - transformations [WPF]
 - graphics [WPF], transformations
-- transform classes [WPF], 2-D
+- transform classes [WPF], 2D
 - scaling objects [WPF]
 - translating objects [WPF]
-- 2-D transform classes
+- 2D transform classes
 - rotating objects [WPF]
 - Transforms [WPF]
 - Transforms [WPF], about Transforms
 ms.assetid: 712b543f-d8b2-4dcf-ba2c-f7921c61c6fd
-ms.openlocfilehash: a0b5268d1c7e319a6144a7d551dca45bdc3e64aa
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 26956b8ae692d6092a1c81643b94d05e297ef130
+ms.sourcegitcommit: 267d092663aba36b6b2ea853034470aea493bfae
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61925988"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80111904"
 ---
-# <a name="transformations"></a><span data-ttu-id="16f19-102">Transformace</span><span class="sxs-lookup"><span data-stu-id="16f19-102">Transformations</span></span>
-<span data-ttu-id="16f19-103">Transformace se používají k otočení, škálování, přeložit nebo zkosení <xref:System.Windows.FrameworkElement> objekty.</span><span class="sxs-lookup"><span data-stu-id="16f19-103">Transforms are used to rotate, scale, translate, or skew <xref:System.Windows.FrameworkElement> objects.</span></span>  
+# <a name="transformations"></a><span data-ttu-id="9123d-102">Transformace</span><span class="sxs-lookup"><span data-stu-id="9123d-102">Transformations</span></span>
+<span data-ttu-id="9123d-103">Transformace se používají k otáčení, škálování, překladu nebo zkosení <xref:System.Windows.FrameworkElement> objektů.</span><span class="sxs-lookup"><span data-stu-id="9123d-103">Transforms are used to rotate, scale, translate, or skew <xref:System.Windows.FrameworkElement> objects.</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="16f19-104">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="16f19-104">In This Section</span></span>  
- [<span data-ttu-id="16f19-105">Přehled transformace</span><span class="sxs-lookup"><span data-stu-id="16f19-105">Transforms Overview</span></span>](transforms-overview.md)  
- [<span data-ttu-id="16f19-106">Témata s postupy</span><span class="sxs-lookup"><span data-stu-id="16f19-106">How-to Topics</span></span>](transformations-how-to-topics.md)  
+## <a name="in-this-section"></a><span data-ttu-id="9123d-104">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="9123d-104">In This Section</span></span>  
+ [<span data-ttu-id="9123d-105">Přehled transformace</span><span class="sxs-lookup"><span data-stu-id="9123d-105">Transforms Overview</span></span>](transforms-overview.md)  
+ [<span data-ttu-id="9123d-106">Témata s postupy</span><span class="sxs-lookup"><span data-stu-id="9123d-106">How-to Topics</span></span>](transformations-how-to-topics.md)  
   
-## <a name="see-also"></a><span data-ttu-id="16f19-107">Viz také:</span><span class="sxs-lookup"><span data-stu-id="16f19-107">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="9123d-107">Viz také</span><span class="sxs-lookup"><span data-stu-id="9123d-107">See also</span></span>
 
 - <xref:System.Windows.Media.Transform>
-- [<span data-ttu-id="16f19-108">Grafika a multimédia</span><span class="sxs-lookup"><span data-stu-id="16f19-108">Graphics and Multimedia</span></span>](index.md)
-- [<span data-ttu-id="16f19-109">Přehled vykreslování grafiky WPF</span><span class="sxs-lookup"><span data-stu-id="16f19-109">WPF Graphics Rendering Overview</span></span>](wpf-graphics-rendering-overview.md)
-- [<span data-ttu-id="16f19-110">Rozložení</span><span class="sxs-lookup"><span data-stu-id="16f19-110">Layout</span></span>](../advanced/layout.md)
+- [<span data-ttu-id="9123d-108">Grafika a multimédia</span><span class="sxs-lookup"><span data-stu-id="9123d-108">Graphics and Multimedia</span></span>](index.md)
+- [<span data-ttu-id="9123d-109">Přehled vykreslování grafiky WPF</span><span class="sxs-lookup"><span data-stu-id="9123d-109">WPF Graphics Rendering Overview</span></span>](wpf-graphics-rendering-overview.md)
+- [<span data-ttu-id="9123d-110">Rozložení</span><span class="sxs-lookup"><span data-stu-id="9123d-110">Layout</span></span>](../advanced/layout.md)

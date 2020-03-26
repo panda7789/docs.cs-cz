@@ -8,17 +8,17 @@ helpviewer_keywords:
 - events [Windows Forms], defining within Windows Forms custom controls
 - custom controls [Windows Forms], events using code
 ms.assetid: d89f1096-8061-42e2-a855-a1f053f1940a
-ms.openlocfilehash: 6799b229de8e8eb49dd3b8bbaffe0d08a32b7208
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: a4738373b10fbcb1d2406406d30f10b795aeb914
+ms.sourcegitcommit: b75a45f0cfe012b71b45dd9bf723adf32369d40c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79142287"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80228845"
 ---
-# <a name="defining-an-event-in-windows-forms-controls"></a><span data-ttu-id="8ea03-102">Definování události v ovládacím prvku Windows Forms</span><span class="sxs-lookup"><span data-stu-id="8ea03-102">Defining an Event in Windows Forms Controls</span></span>
-<span data-ttu-id="8ea03-103">Podrobnosti o definování vlastních událostí naleznete v [tématu Události](../../../standard/events/index.md).</span><span class="sxs-lookup"><span data-stu-id="8ea03-103">For details about defining custom events, see [Events](../../../standard/events/index.md).</span></span> <span data-ttu-id="8ea03-104">Pokud definujete událost, která nemá žádná přidružená data, použijte <xref:System.EventArgs>základní <xref:System.EventHandler> typ pro data události a použijte jako delegát události.</span><span class="sxs-lookup"><span data-stu-id="8ea03-104">If you define an event that does not have any associated data, use the base type for event data, <xref:System.EventArgs>, and use <xref:System.EventHandler> as the event delegate.</span></span> <span data-ttu-id="8ea03-105">Vše, co zbývá udělat, je definovat `On`člen události a chráněnou metodu *EventName,* která vyvolává událost.</span><span class="sxs-lookup"><span data-stu-id="8ea03-105">All that remains to do is to define an event member and a protected `On`*EventName* method that raises the event.</span></span>  
+# <a name="defining-an-event-in-windows-forms-controls"></a><span data-ttu-id="ea66e-102">Definování události v ovládacím prvku Windows Forms</span><span class="sxs-lookup"><span data-stu-id="ea66e-102">Defining an Event in Windows Forms Controls</span></span>
+<span data-ttu-id="ea66e-103">Podrobnosti o definování vlastních událostí naleznete v [tématu Události](../../../standard/events/index.md).</span><span class="sxs-lookup"><span data-stu-id="ea66e-103">For details about defining custom events, see [Events](../../../standard/events/index.md).</span></span> <span data-ttu-id="ea66e-104">Pokud definujete událost, která nemá žádná přidružená data, použijte <xref:System.EventArgs>základní <xref:System.EventHandler> typ pro data události a použijte jako delegát události.</span><span class="sxs-lookup"><span data-stu-id="ea66e-104">If you define an event that does not have any associated data, use the base type for event data, <xref:System.EventArgs>, and use <xref:System.EventHandler> as the event delegate.</span></span> <span data-ttu-id="ea66e-105">Vše, co zbývá udělat, je definovat `On`člen události a chráněnou metodu *EventName,* která vyvolává událost.</span><span class="sxs-lookup"><span data-stu-id="ea66e-105">All that remains to do is to define an event member and a protected `On`*EventName* method that raises the event.</span></span>  
   
- <span data-ttu-id="8ea03-106">Následující fragment kódu ukazuje, `FlashTrackBar` jak vlastní ovládací `ValueChanged`prvek definuje vlastní událost .</span><span class="sxs-lookup"><span data-stu-id="8ea03-106">The following code fragment shows how the `FlashTrackBar` custom control defines a custom event, `ValueChanged`.</span></span> <span data-ttu-id="8ea03-107">Úplný kód ukázky `FlashTrackBar` naleznete v tématu [Postup: Vytvoření ovládacího prvku formulářů systému Windows, který ukazuje průběh](how-to-create-a-windows-forms-control-that-shows-progress.md).</span><span class="sxs-lookup"><span data-stu-id="8ea03-107">For the complete code for the `FlashTrackBar` sample, see the [How to: Create a Windows Forms Control That Shows Progress](how-to-create-a-windows-forms-control-that-shows-progress.md).</span></span>  
+ <span data-ttu-id="ea66e-106">Následující fragment kódu ukazuje, `FlashTrackBar` jak vlastní ovládací `ValueChanged`prvek definuje vlastní událost .</span><span class="sxs-lookup"><span data-stu-id="ea66e-106">The following code fragment shows how the `FlashTrackBar` custom control defines a custom event, `ValueChanged`.</span></span> <span data-ttu-id="ea66e-107">Úplný kód ukázky `FlashTrackBar` naleznete v tématu [Postup: Vytvoření ovládacího prvku formulářů systému Windows, který ukazuje průběh](how-to-create-a-windows-forms-control-that-shows-progress.md).</span><span class="sxs-lookup"><span data-stu-id="ea66e-107">For the complete code for the `FlashTrackBar` sample, see the [How to: Create a Windows Forms Control That Shows Progress](how-to-create-a-windows-forms-control-that-shows-progress.md).</span></span>  
   
 ```vb  
 Option Explicit  
@@ -71,12 +71,12 @@ public class FlashTrackBar : Control {
    // changed. Derived controls can override this method.
    protected virtual void OnValueChanged(EventArgs e)
    {  
-       ValueChanged?.Invoke(this, e);  
+       onValueChanged?.Invoke(this, e);  
    }  
 }  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="8ea03-108">Viz také</span><span class="sxs-lookup"><span data-stu-id="8ea03-108">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="ea66e-108">Viz také</span><span class="sxs-lookup"><span data-stu-id="ea66e-108">See also</span></span>
 
-- [<span data-ttu-id="8ea03-109">Události v ovládacích prvcích Windows Forms</span><span class="sxs-lookup"><span data-stu-id="8ea03-109">Events in Windows Forms Controls</span></span>](events-in-windows-forms-controls.md)
-- [<span data-ttu-id="8ea03-110">Akce</span><span class="sxs-lookup"><span data-stu-id="8ea03-110">Events</span></span>](../../../standard/events/index.md)
+- [<span data-ttu-id="ea66e-109">Události v ovládacích prvcích Windows Forms</span><span class="sxs-lookup"><span data-stu-id="ea66e-109">Events in Windows Forms Controls</span></span>](events-in-windows-forms-controls.md)
+- [<span data-ttu-id="ea66e-110">Události</span><span class="sxs-lookup"><span data-stu-id="ea66e-110">Events</span></span>](../../../standard/events/index.md)

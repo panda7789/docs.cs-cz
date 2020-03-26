@@ -1,0 +1,130 @@
+### YamlMime:Landing
+title: Dokumentace rozhraní .NET Framework
+summary: Přečtěte si o rozhraní .NET Framework, vývojové platformě pro vytváření aplikací pro web, Windows a Microsoft Azure.
+metadata:
+  title: Dokumentace rozhraní .NET Framework
+  description: Najděte informace o rozhraní .NET Framework, vývojové platformě pro vytváření aplikací pro web, Windows a Microsoft Azure.
+  ms.topic: landing-page
+  ms.custom: updateeachrelease
+  f1_keywords:
+  - f61f02f2-2f20-483d-8f56-a9c8f3a54986
+  helpviewer_keywords:
+  - .NET Framework guide
+  ms.date: 03/23/2020
+  ms.openlocfilehash: 5f362cff359800b0bffd2283819824b8660cfa24
+  ms.sourcegitcommit: b75a45f0cfe012b71b45dd9bf723adf32369d40c
+  ms.translationtype: MT
+  ms.contentlocale: cs-CZ
+  ms.lasthandoff: 03/24/2020
+  ms.locfileid: "80229285"
+landingContent:
+- title: Další informace o rozhraní .NET Framework
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: .NET Framework – přehled
+      url: get-started/overview.md
+    - text: Systémové požadavky
+      url: get-started/system-requirements.md
+  - linkListType: concept
+    links:
+    - text: Starší verze rozhraní .NET Framework
+      url: /previous-versions/dotnet/
+  - linkListType: deploy
+    links:
+    - text: Průvodce nasazením pro vývojáře
+      url: deployment/deployment-guide-for-developers.md
+- title: Nainstalovat .NET Framework
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Průvodce instalací
+      url: install/index.md
+  - linkListType: concept
+    links:
+    - text: Rozhraní .NET Framework & verze operačního systému Windows
+      url: migration-guide/versions-and-dependencies.md
+  - linkListType: how-to-guide
+    links:
+    - text: Určení nainstalovaných verzí
+      url: migration-guide/how-to-determine-which-versions-are-installed.md
+    - text: Instalace rozhraní .NET Framework ve Windows 10
+      url: install/on-windows-10.md
+    - text: Instalace rozhraní .NET Framework 3.5
+      url: install/dotnet-35-windows-10.md
+    - text: Instalace vývojářského balíčku nebo redistribuovatelného
+      url: install/guide-for-developers.md
+    - text: Poradce při potížích s blokovanými instalacemi
+      url: install/troubleshoot-blocked-installations-and-uninstallations.md
+- title: Vytváření aplikací služeb pro Windows
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Úvod do aplikací služeb windows
+      url: windows-services/introduction-to-windows-service-applications.md
+  - linkListType: tutorial
+    links:
+    - text: Vytvoření aplikace služby pro Windows
+      url: windows-services/walkthrough-creating-a-windows-service-application-in-the-component-designer.md
+  - linkListType: how-to-guide
+    links:
+    - text: Instalace a odinstalace služeb systému Windows
+      url: windows-services/how-to-install-and-uninstall-services.md
+- title: Vytváření aplikací pro Windows Forms
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Přehled formulářů Windows
+      url: winforms/index.md
+  - linkListType: tutorial
+    links:
+    - text: Začínáme s nástrojem Návrhář formulářů
+      url: /visualstudio/designers/walkthrough-windows-forms-designer
+    - text: Vytvoření aplikace pro Windows Forms z příkazového řádku
+      url: winforms/how-to-create-a-windows-forms-application-from-the-command-line.md
+  - linkListType: how-to-guide
+    links:
+    - text: Přidání a odebrání položek z ovládacích prvků ComboBox, ListBox a CheckedListBox
+      url: winforms/controls/add-and-remove-items-from-a-wf-combobox.md
+    - text: Volání ovládacích prvků bezpečná pro přístup z více vláken
+      url: winforms/controls/how-to-make-thread-safe-calls-to-windows-forms-controls.md
+- title: Vytváření aplikací WPF
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Přehled WPF
+      url: wpf/index.md
+  - linkListType: tutorial
+    links:
+    - text: Vytvoření první aplikace WPF v Sadě Visual Studio
+      url: wpf/getting-started/walkthrough-my-first-wpf-desktop-application.md
+- title: Práce s daty pomocí ADO.NET
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Přehled ADO.NET
+      url: data/adonet/ado-net-overview.md
+  - linkListType: tutorial
+    links:
+    - text: Vývoj na prvním modelu pomocí entity Frameworku
+      url: /ef/ef6/modeling/designer/workflows/model-first
+    - text: Vývoj první databáze pomocí entity Framework
+      url: /ef/ef6/modeling/designer/workflows/database-first
+  - linkListType: concept
+    links:
+    - text: Připojovací řetězce a konfigurační soubory
+      url: data/adonet/connection-strings-and-configuration-files.md
+    - text: Sdružování připojení serveru SQL Server
+      url: data/adonet/sql-server-connection-pooling.md
+  - linkListType: how-to-guide
+    links:
+    - text: Načtení dat pomocí datareaderu
+      url: data/adonet/retrieving-data-using-a-datareader.md
+    - text: Přidání dat do datatable
+      url: data/adonet/dataset-datatable-dataview/adding-data-to-a-datatable.md
+  - linkListType: reference
+    links:
+    - text: Syntaxe připojovacího řetězce
+      url: data/adonet/connection-string-syntax.md
+    - text: Ukázkové databáze serveru SQL Server
+      url: data/adonet/sql/linq/downloading-sample-databases.md
