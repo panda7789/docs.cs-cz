@@ -1,7 +1,7 @@
 - name: Referenční dokumentace jazyka XAML
   href: index.md
   items:
-    - name: 'Jazykové funkce oboru názvů jazyka XAML (x:)'
+    - name: 'Jazykové funkce kompatibility značek (mc:)'
       href: namespace-language-features.md
       items:
         - name: Funkce jazyka XAML 2009 (nikoli WPF)
@@ -59,8 +59,6 @@
           href: xml-language-handling.md
         - name: "Práce s\_atributem xml:space v\_jazyce XAML"
           href: xml-space-handling.md
-    - name: "Typy migrované z\_prostředí WPF do oboru názvů System.Xaml"
-      href: types-migrated-from-wpf-to-system.md
     - name: Principy struktur a koncepcí datových proudů uzlů XAML
       href: understanding-xaml-node-stream-structures-and-concepts.md
     - name: "Třída XAMLServices a základní čtení a zápis v\_jazyku XAML"

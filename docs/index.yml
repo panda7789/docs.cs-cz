@@ -11,28 +11,28 @@ metadata:
   author: BillWagner
   ms.author: wiwagn
   ms.date: 12/19/2019
-  ms.openlocfilehash: 6b23ab2f0214f23d45499fcf8ab7c3f2771be15c
-  ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+  ms.openlocfilehash: f0660cf23bcbc6520d7b0d853e1b214dee785300
+  ms.sourcegitcommit: b75a45f0cfe012b71b45dd9bf723adf32369d40c
   ms.translationtype: HT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 03/16/2020
-  ms.locfileid: "79416324"
+  ms.lasthandoff: 03/24/2020
+  ms.locfileid: "80228558"
 highlightedContent:
   items:
-  - title: Úvod do jazyka C#. Rychlý interaktivní začátek.
+  - title: Úvod do jazyka C#. Rychlý interaktivní začátek
     itemType: get-started
     url: csharp/tutorials/intro-to-csharp/hello-world.yml
   - title: Vytvořte si svou první konzolovou aplikaci.
     itemType: tutorial
     url: core/get-started.md
-  - title: Vytvořte si svou první webovou aplikaci.
+  - title: Vytvořte svou první aplikaci.
     itemType: learn
     url: https://dotnet.microsoft.com/learn/aspnet/hello-world-tutorial/intro
-  - title: Co je nového v dokumentaci pro .NET
+  - title: Co je nového v dokumentaci .NET
     itemType: whats-new
     url: whats-new/index.yml
 conceptualContent:
-  title: 'Technologie .NET: Bezplatná. Pro různé platformy. Open source.'
+  title: '.NET: Bezplatná. Mutliplatformní: Open source.'
   summary: 'Vývojářská platforma pro vytváření všech vašich aplikací: webových, mobilních, desktopových, herních, aplikací IoT a dalších. Podporovaná v systémech Windows, Linux a macOS.'
   items:
   - title: Opensourcová technologie .NET
@@ -80,7 +80,7 @@ conceptualContent:
     - url: standard/components.md
       itemType: concept
       text: Součásti architektury technologie .NET
-    - url: framework/index.md
+    - url: framework/index.yml
       itemType: overview
       text: Aplikace pro .NET Framework (Windows)
   - title: Vývoj aplikací .NET
@@ -219,16 +219,16 @@ additionalContent:
   - title: Části s referenčními informacemi k rozhraním API
     summary: Hledejte v referenční dokumentaci k rozhraním .NET API uspořádané podle vašich zájmů.
     items:
-    - title: Reference k rozhraní .NET Core API
+    - title: Referenční informace k rozhraní API pro .NET Core
       summary: Referenční dokumentace k rozhraní API pro .NET Core
       url: https://docs.microsoft.com/dotnet/api/?view=netcore-3.1
-    - title: Reference k rozhraní .NET Framework API
+    - title: Referenční informace k rozhraní API pro .NET Framework
       summary: Referenční dokumentace k rozhraní API pro .NET Framework
       url: https://docs.microsoft.com/dotnet/api/?view=netframework-4.8
     - title: Reference k rozhraní ASP.NET Core API
       summary: Referenční dokumentace k rozhraní API pro ASP.NET Core
       url: https://docs.microsoft.com/dotnet/api/?view=aspnetcore-3.1
-    - title: Reference k rozhraní ML.NET API
+    - title: Referenční dokumentace k rozhraní ML.NET API
       summary: Referenční dokumentace k rozhraní API pro ML.NET
       url: https://docs.microsoft.com/dotnet/api/?view=ml-dotnet
     - title: Reference k rozhraní .NET for Apache Spark API
