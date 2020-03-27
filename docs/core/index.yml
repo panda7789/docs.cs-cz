@@ -1,0 +1,125 @@
+### YamlMime:Landing
+title: Základní dokumentace rozhraní .NET
+summary: Další informace o .NET Core, open source, univerzální vývojové rozhraní pro vytváření aplikací pro více platforem.
+metadata:
+  title: Základní dokumentace rozhraní .NET
+  description: .NET Core je open source, univerzální vývojová platforma pro vytváření aplikací pro různé platformy.
+  ms.topic: landing-page
+  ms.date: 03/25/2020
+  ms.openlocfilehash: b11a41587e2b9eba2df744da3d8c19baa0936fb2
+  ms.sourcegitcommit: 59e36e65ac81cdd094a5a84617625b2a0ff3506e
+  ms.translationtype: MT
+  ms.contentlocale: cs-CZ
+  ms.lasthandoff: 03/27/2020
+  ms.locfileid: "80351706"
+landingContent:
+- title: Informace o .NET Core
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Úvod do rozhraní .NET Core
+      url: introduction.md
+    - text: Přehled .NET Core
+      url: about.md
+    - text: Přehled sady .NET Core SDK
+      url: sdk.md
+  - linkListType: get-started
+    links:
+    - text: Začínáme s rozhraním .NET Core
+      url: get-started.md
+  - linkListType: concept
+    links:
+    - text: Zásady základní podpory rozhraní .NET
+      url: https://dotnet.microsoft.com/platform/support/policy/dotnet-core
+  - linkListType: whats-new
+    links:
+    - text: Co je nového v .NET Core 3.1
+      url: whats-new/dotnet-core-3-1.md
+    - text: Co je nového v .NET Core 3.0
+      url: whats-new/dotnet-core-3-0.md
+- title: Instalace .NET Core
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Vyberte, kterou verzi .NET Core chcete použít.
+      url: versions/selection.md
+  - linkListType: download
+    links:
+    - text: Soubory ke stažení .NET Core
+      url: https://dotnet.microsoft.com/download/dotnet-core
+  - linkListType: how-to-guide
+    links:
+    - text: Instalace sady .NET Core SDK
+      url: install/sdk.md
+    - text: Instalace runtime jádra .NET
+      url: install/runtime.md
+    - text: Instalace pomocí Správce balíčků pro Linux
+      url: install/linux-package-manager-ubuntu-1904.md
+    - text: Kontrola nainstalovaných verzí
+      url: install/how-to-detect-installed-versions.md
+  - linkListType: reference
+    links:
+    - text: Závislostí sady .NET Core SDK a runtime
+      url: install/dependencies.md
+- title: Začínáme s rozhraním .NET Core
+  linkLists:
+  - linkListType: video
+    links:
+    - text: 'Výuka: Hello World za 10 minut'
+      url: https://dotnet.microsoft.com/learn/dotnet/hello-world-tutorial/intro
+  - linkListType: tutorial
+    links:
+    - text: Vytvoření aplikace Hello World v kódu Visual Studia
+      url: tutorials/with-visual-studio-code.md
+    - text: Vytvoření aplikace Hello World v Visual Studiu
+      url: tutorials/with-visual-studio.md
+    - text: Kontejnerizace aplikace .NET Core
+      url: docker/build-container.md
+  - linkListType: deploy
+    links:
+    - text: Publikování aplikací
+      url: deploying/index.md
+- title: Migrace z rozhraní .NET Framework
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Přizpůsobení z .NET Framework na .NET Core
+      url: porting/index.md
+- title: Použití rozhraní .NET Core z příkazového řádku
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Rozhraní příkazového řádku .NET Core
+      url: tools/index.md
+  - linkListType: tutorial
+    links:
+    - text: Začínáme používat cli
+      url: tutorials/cli-create-console-app.md
+  - linkListType: deploy
+    links:
+    - text: Publikování aplikací
+      url: deploying/deploy-with-cli.md
+  - linkListType: reference
+    links:
+    - text: dotnet new
+      url: tools/dotnet-new.md
+    - text: dotnet publish
+      url: tools/dotnet-publish.md
+- title: Testování částí s jádrem .NET
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Testování částí ve standardu .NET Core a .NET Standard
+      url: testing/index.md
+  - linkListType: tutorial
+    links:
+    - text: Test kódu Jazyka C# pomocí dotnet test a xUnit
+      url: testing/unit-testing-with-dotnet-test.md
+    - text: Jednotkový test s NUnit
+      url: testing/unit-testing-with-nunit.md
+    - text: Test částí s MSTest
+      url: testing/unit-testing-with-mstest.md
+  - linkListType: concept
+    links:
+    - text: Doporučené postupy pro psaní testů částí
+      url: testing/unit-testing-best-practices.md
