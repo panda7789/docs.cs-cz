@@ -9,7 +9,7 @@
       href: grpc-for-wcf-developers/
     - name: Modernizace stávajících aplikací .NET pomocí cloudu Azure a kontejnerů Windows
       href: modernize-with-azure-containers/
-    - name: Životní cyklus kontejnerizované aplikace Dockeru s platformou a nástroji Microsoft
+    - name: Životní cyklus kontejnerizovaných aplikací Dockeru s platformou a nástroji Microsoft
       href: containerized-lifecycle/
     - name: 'Mikroslužby .NET: Architektura pro kontejnerizované aplikace .NET'
       href: microservices/

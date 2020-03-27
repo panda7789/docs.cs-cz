@@ -35,11 +35,13 @@
       href: how-to-guides/ubuntu-instructions.md
     - name: Sestavení aplikace ve Windows
       href: how-to-guides/windows-instructions.md
-- name: Referenční informace
+    - name: Instalace interaktivních poznámkových bloků do Azure HDInsight
+      href: how-to-guides/hdinsight-notebook-installation.md
+- name: Odkaz
   items:
-    - name: Referenční materiály k rozhraní API
+    - name: Referenční dokumentace ke knihovně API
       href: 'https://docs.microsoft.com/dotnet/api/?view=spark-dotnet'
-- name: Zdroje
+- name: Prostředky
   items:
     - name: Přehled prostředků
       href: resources/index.md

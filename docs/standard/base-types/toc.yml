@@ -30,13 +30,13 @@
         - name: Provádění operací formátování
           href: performing-formatting-operations.md
           items:
-            - name: 'Postupy: Zarovnání čísla úvodními nulami'
+            - name: 'Postupy: Vyplnění čísla úvodními nulami'
               href: how-to-pad-a-number-with-leading-zeros.md
             - name: 'Postupy: Extrahování dne v týdnu z konkrétního data'
               href: how-to-extract-the-day-of-the-week-from-a-specific-date.md
             - name: 'Postupy: Definování a používání vlastních poskytovatelů číselného formátu'
               href: how-to-define-and-use-custom-numeric-format-providers.md
-            - name: 'Postupy: Hodnoty data a času round-trip'
+            - name: 'Postupy: Hodnoty data a doby odezvy'
               href: how-to-round-trip-date-and-time-values.md
             - name: "Postupy: Zobrazení milisekund v\_hodnotách data a\_času"
               href: how-to-display-milliseconds-in-date-and-time-values.md
@@ -116,8 +116,10 @@
                   href: how-to-strip-invalid-characters-from-a-string.md
                 - name: Ověření platnosti e-mailového formátu řetězců
                   href: how-to-verify-that-strings-are-in-valid-email-format.md
-        - name: Kódování znaků v rozhraní .NET
-          href: character-encoding.md
+    - name: Kódování znaků v rozhraní .NET
+      href: character-encoding-introduction.md
+    - name: Jak používat třídy kódování znaků
+      href: character-encoding.md
     - name: Analýza řetězců
       href: parsing-strings.md
       items:

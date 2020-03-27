@@ -102,7 +102,7 @@
           items:
             - name: Hledání elementu podle názvu
               href: how-to-find-an-element-by-its-name.md
-            - name: Přepsání logického stromu
+            - name: Přetížení logického stromu
               href: how-to-override-the-logical-tree.md
     - name: Systém vlastností WPF
       href: properties-wpf.md
@@ -187,7 +187,7 @@
           href: focus-overview.md
         - name: Nastavení stylů pro fokus v ovládacích prvcích a FocusVisualStyle
           href: styling-for-focus-in-controls-and-focusvisualstyle.md
-        - name: 'Návod: Vytvoření první aplikace'
+        - name: 'Návod: Vytvoření první dotykové aplikace'
           href: walkthrough-creating-your-first-touch-application.md
         - name: – postupy
           href: input-and-commands-how-to-topics.md
@@ -228,7 +228,7 @@
                   href: handwriting-recognition.md
                 - name: Uložení inkoustu
                   href: storing-ink.md
-                - name: 'Model inkoustových objektů: Windows Forms a COM vzhledem k platformě WPF'
+                - name: 'Model objektů rukopisu: Windows Forms a COM vs. WPF'
                   href: the-ink-object-model-windows-forms-and-com-versus-wpf.md
                 - name: Upřesnění zpracování inkoustu
                   href: advanced-ink-handling.md
@@ -250,7 +250,7 @@
                   href: how-to-add-custom-data-to-ink-data.md
                 - name: Smazání rukopisu na vlastním ovládacím prvku
                   href: how-to-erase-ink-on-a-custom-control.md
-                - name: Rozlišení gest aplikací
+                - name: Rozpoznání gest aplikace
                   href: how-to-recognize-application-gestures.md
                 - name: Přetažení rukopisu
                   href: how-to-drag-and-drop-ink.md
@@ -286,7 +286,7 @@
               href: how-to-retrieve-data-in-a-particular-data-format.md
             - name: Uložení několika datových formátů do datového objektu
               href: how-to-store-multiple-data-formats-in-a-data-object.md
-    - name: Zdroje
+    - name: Prostředky
       href: resources-wpf.md
       items:
         - name: Zdroje XAML
@@ -332,7 +332,7 @@
               href: flow-document-overview.md
             - name: Přehled modelu obsahu TextElement
               href: textelement-content-model-overview.md
-            - name: Přehled tabulek
+            - name: Přehled tabulky
               href: table-overview.md
             - name: – postupy
               href: flow-content-elements-how-to-topics.md
@@ -481,6 +481,8 @@
     - name: Migrace a interoperabilita
       href: migration-and-interoperability.md
       items:
+        - name: Migrace z WPF 3.X na WPF 4.5
+          href: types-migrated-from-wpf-to-system.md
         - name: Vzájemná spolupráce subsystémů WPF a Windows Forms
           href: wpf-and-windows-forms-interoperation.md
           items:
@@ -494,23 +496,23 @@
               href: windows-forms-and-wpf-property-mapping.md
             - name: Řešení potíží s hybridními aplikacemi
               href: troubleshooting-hybrid-applications.md
-            - name: 'Návod: Hostování ovládacího prvku Windows Forms v subsystému WPF'
+            - name: 'Návod: Hostování ovládacího prvku Windows Forms ve WPF'
               href: walkthrough-hosting-a-windows-forms-control-in-wpf.md
-            - name: 'Návod: Hostování ovládacího prvku Windows Forms v objektu WPF použitím kódu XAML'
+            - name: 'Návod: Hostování ovládacího prvku Windows Forms ve WPF pomocí XAML'
               href: walkthrough-hosting-a-windows-forms-control-in-wpf-by-using-xaml.md
-            - name: 'Návod: Hostování složeného ovládacího prvku Windows Forms v subsystému WPF'
+            - name: 'Návod: Hostování složeného ovládacího prvku Windows Forms ve WPF'
               href: walkthrough-hosting-a-windows-forms-composite-control-in-wpf.md
-            - name: 'Návod: Hostování ovládacího prvku ActiveX v objektu WPF'
+            - name: 'Návod: Hostování ovládacího prvku ActiveX ve WPF'
               href: walkthrough-hosting-an-activex-control-in-wpf.md
             - name: 'Postupy: Povolení vizuálních stylů v hybridní aplikaci'
               href: how-to-enable-visual-styles-in-a-hybrid-application.md
-            - name: 'Návod: Uspořádání ovládacích prvků Windows Forms v subsystému WPF'
+            - name: 'Návod: Uspořádání ovládacích prvků Windows Forms ve WPF'
               href: walkthrough-arranging-windows-forms-controls-in-wpf.md
             - name: 'Návod: Připojení k datům v hybridních aplikacích'
               href: walkthrough-binding-to-data-in-hybrid-applications.md
-            - name: 'Návod: Hostování kompozitního ovládacího prvku 3D WPF v rozhraní Windows Forms'
+            - name: 'Návod: Hostování složeného ovládacího prvku WPF 3D ve Windows Forms'
               href: walkthrough-hosting-a-3-d-wpf-composite-control-in-windows-forms.md
-            - name: 'Návod: Hostování kompozitního ovládacího prvku WPF v rozhraní Windows Forms'
+            - name: 'Návod: Hostování složeného ovládacího prvku WPF ve Windows Forms'
               href: walkthrough-hosting-a-wpf-composite-control-in-windows-forms.md
             - name: 'Návod: Mapování vlastností použitím ovládacího prvku ElementHost'
               href: walkthrough-mapping-properties-using-the-elementhost-control.md
@@ -527,18 +529,18 @@
               href: sharing-message-loops-between-win32-and-wpf.md
             - name: Hostování obsahu Win32 v platformě WPF
               href: hosting-win32-content-in-wpf.md
-            - name: 'Návod: Hostování ovládacího prvku Win32 v subsystému WPF'
+            - name: 'Návod: Hostování ovládacího prvku Win32 ve WPF'
               href: walkthrough-hosting-a-win32-control-in-wpf.md
-            - name: 'Návod: Hostování obsahu WPF v Win32'
+            - name: 'Návod: Hostování obsahu WPF ve Win32'
               href: walkthrough-hosting-wpf-content-in-win32.md
-            - name: 'Návod: Hostování hodin WPF v systému Win32'
+            - name: 'Návod: Hostování hodin WPF ve Win32'
               href: walkthrough-hosting-a-wpf-clock-in-win32.md
         - name: "Vzájemná spolupráce grafického subsystému WPF a\_systému Direct3D9"
           href: wpf-and-direct3d9-interoperation.md
           items:
             - name: Předpokládaný výkon pro Direct3D9 a interoperabilitu WPF
               href: performance-considerations-for-direct3d9-and-wpf-interoperability.md
-            - name: 'Návod: Vytvoření obsahu Direct3D9 pro hostování v objektu WPF'
+            - name: 'Návod: Vytvoření obsahu Direct3D9 pro hostování ve WPF'
               href: walkthrough-creating-direct3d9-content-for-hosting-in-wpf.md
             - name: 'Návod: Hostování obsahu Direct3D9 ve WPF'
               href: walkthrough-hosting-direct3d9-content-in-wpf.md
