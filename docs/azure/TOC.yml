@@ -1,0 +1,16 @@
+- name: Azure pro vývojáře na platformě .NET
+  href: index.yml
+  items:
+    - name: Seznámení s Azure a .NET
+      href: intro.md
+    - name: Migrace do Azure
+      expanded: true
+      items:
+        - name: Volba možnosti hostování Azure
+          href: ./migration/choose.md
+        - name: Migrace webové aplikace nebo služby .NET do Azure App Service
+          href: ./migration/app-service.md
+        - name: Migrace aplikace ASP.NET do virtuálního počítače Azure
+          href: ./migration/vm.md
+        - name: Migrace databáze SQL Serveru do Azure
+          href: ./migration/sql.md

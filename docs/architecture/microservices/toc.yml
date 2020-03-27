@@ -65,7 +65,7 @@
       items:
         - name: Pracovní postup vývoje aplikací Dockeru
           href: docker-application-development-process/docker-app-development-workflow.md
-    - name: Návrh a vývoj aplikací .NET založených na více kontejnerech a mikroslužbách
+    - name: Návrh a vývoj aplikací .NET založených na více kontejnerech a založených na mikroslužbách
       href: multi-container-microservice-net-applications/index.md
       items:
         - name: Návrh aplikace orientované na mikroslužby
