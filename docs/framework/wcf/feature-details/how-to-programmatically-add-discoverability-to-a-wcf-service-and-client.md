@@ -2,15 +2,15 @@
 title: 'Postupy: Programové přidání možností rozpoznání do klienta a služby WCF'
 ms.date: 03/30/2017
 ms.assetid: 4f7ae7ab-6fc8-4769-9730-c14d43f7b9b1
-ms.openlocfilehash: dd96bc168413eef99260a5251e74971aa1309ff4
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: bf89c793cbd72a0a3980e6ec8e42c688dcedec26
+ms.sourcegitcommit: 59e36e65ac81cdd094a5a84617625b2a0ff3506e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79184889"
+ms.lasthandoff: 03/27/2020
+ms.locfileid: "80344968"
 ---
 # <a name="how-to-programmatically-add-discoverability-to-a-wcf-service-and-client"></a>Postupy: Programové přidání možností rozpoznání do klienta a služby WCF
-Toto téma vysvětluje, jak zjistit službu WCF (Windows Communication Foundation). Je založen na vzorku [Self-Host.](https://go.microsoft.com/fwlink/?LinkId=145523)  
+Toto téma vysvětluje, jak zjistit službu WCF (Windows Communication Foundation). Je založen na vzorku [Self-Host.](https://docs.microsoft.com/dotnet/framework/wcf/samples/self-host)  
   
 ### <a name="to-configure-the-existing-self-host-service-sample-for-discovery"></a>Konfigurace existující ukázky služby Samoobslužné služby pro zjišťování  
   
@@ -124,7 +124,7 @@ Toto téma vysvětluje, jak zjistit službu WCF (Windows Communication Foundatio
   
      Tato metoda používá adresu koncového bodu vrácenou z `FindCalculatorServiceAddress` k volání služby kalkulačky.  
   
-11. Uvnitř `InvokeCalculatorService` metody vytvořte instanci třídy. `CalculatorServiceClient` Tato třída je definována ukázkou [vlastního hostitele.](https://go.microsoft.com/fwlink/?LinkId=145523) To bylo generováno pomocí Svcutil.exe.  
+11. Uvnitř `InvokeCalculatorService` metody vytvořte instanci třídy. `CalculatorServiceClient` Tato třída je definována ukázkou [vlastního hostitele.](https://docs.microsoft.com/dotnet/framework/wcf/samples/self-host) To bylo generováno pomocí Svcutil.exe.  
   
     ```csharp  
     // Create a client  
@@ -220,7 +220,7 @@ Toto téma vysvětluje, jak zjistit službu WCF (Windows Communication Foundatio
     ```  
   
 ## <a name="example"></a>Příklad  
- Následuje seznam kódu pro tuto ukázku. Vzhledem k tomu, že tento kód je založen na [ukázce vlastního hostitele,](https://go.microsoft.com/fwlink/?LinkId=145523) jsou uvedeny pouze ty soubory, které jsou změněny. Další informace o ukázce vlastního hostitele naleznete v [tématu Pokyny k instalaci](https://go.microsoft.com/fwlink/?LinkId=145522).  
+ Následuje seznam kódu pro tuto ukázku. Vzhledem k tomu, že tento kód je založen na [ukázce vlastního hostitele,](https://docs.microsoft.com/dotnet/framework/wcf/samples/self-host) jsou uvedeny pouze ty soubory, které jsou změněny. Další informace o ukázce vlastního hostitele naleznete v [tématu Pokyny k instalaci](https://docs.microsoft.com/dotnet/framework/wcf/samples/set-up-instructions).  
   
 ```csharp  
 // Service.cs  

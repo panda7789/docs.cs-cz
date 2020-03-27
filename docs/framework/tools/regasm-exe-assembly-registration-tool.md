@@ -7,12 +7,12 @@ helpviewer_keywords:
 - Regasm.exe
 - registering assemblies
 ms.assetid: e190e342-36ef-4651-a0b4-0e8c2c0281cb
-ms.openlocfilehash: 45b4c6c08d3afb948444a8c97dc32bd41f2615ce
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 0a1658e57f4a236e4bdd29c3ca224275c25ea727
+ms.sourcegitcommit: 59e36e65ac81cdd094a5a84617625b2a0ff3506e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "73104953"
+ms.lasthandoff: 03/27/2020
+ms.locfileid: "80345010"
 ---
 # <a name="regasmexe-assembly-registration-tool"></a>Regasm.exe (nástroj registrace sestavení)
 
@@ -54,7 +54,7 @@ regasm assemblyFile [options]
 
 Možnost **/regfile** můžete použít ke generování souboru REG, který obsahuje položky registru namísto provádění změn přímo do registru. Registr lze na počítači aktualizovat importováním souboru .reg pomocí nástroje Editor registru (Regedit.exe). Soubor .reg neobsahuje žádné aktualizace registru, které lze provést pomocí funkcí registru definovaných uživatelem.  Všimněte si, že **možnost /regfile** vydává pouze položky registru pro spravované třídy.  Tato možnost nevyzařuje položky `TypeLibID` `InterfaceID`pro s nebo s.
 
-Když zadáte **/tlb** možnost, Regasm.exe generuje a registruje knihovnu typů popisující typy nalezené v sestavení. Nástroj Regasm.exe umístí vytvořenou knihovnu typů do aktuálního pracovního adresáře nebo do adresáře určeného pro výstupní soubor. Vytváření knihovny typů pro sestavení, které odkazuje na jiné sestavení, může způsobit vytvoření několika knihoven typů najednou. Knihovnu typů můžete použít k poskytování informací o typu vývojovým nástrojům, jako je Visual Studio. Možnost **/tlb** byste neměli používat, pokud bylo sestavení, které registrujete, vytvořeno importem knihovny typů ([Tlbimp.exe](tlbimp-exe-type-library-importer.md)). Knihovnu typů nelze exportovat ze sestavení, které bylo importováno z knihovny typů. Použití **možnosti /tlb** má stejný účinek jako použití type library exporter ([Tlbexp.exe](tlbexp-exe-type-library-exporter.md)) a Regasm.exe s výjimkou, že tlbexp.exe neregistruje knihovnu typů, kterou vytváří.  Pokud použijete možnost **/tlb** k registraci knihovny typů, můžete použít možnost **/tlb** s parametrem **/unregister** pro zrušení registrace knihovny typů. Použitím obou možností společně dojde ke zrušení registrace knihovny typů a položek rozhraní, čímž lze značně pročistit registr.
+Když zadáte **/tlb** možnost, Regasm.exe generuje a registruje knihovnu typů popisující typy nalezené v sestavení. Nástroj Regasm.exe umístí vytvořenou knihovnu typů do aktuálního pracovního adresáře nebo do adresáře určeného pro výstupní soubor. Vytváření knihovny typů pro sestavení, které odkazuje na jiné sestavení, může způsobit vytvoření několika knihoven typů najednou. Knihovnu typů můžete použít k poskytování informací o typu vývojovým nástrojům, jako je Visual Studio. Možnost **/tlb** byste neměli používat, pokud bylo sestavení, které registrujete, vytvořeno importem knihovny typů ([Tlbimp.exe](tlbimp-exe-type-library-importer.md)). Knihovnu typů nelze exportovat ze sestavení, které bylo importováno z knihovny typů. Použití **možnosti /tlb** má stejný účinek jako použití type library exporter ([Tlbexp.exe](tlbexp-exe-type-library-exporter.md)) a Regasm.exe s výjimkou, že tlbexp.exe neregistruje knihovnu typů, kterou vytváří.  Pokud použijete možnost **/tlb** k registraci knihovny typů, můžete použít možnost **/tlb** s parametrem **/unregister** k zrušení registrace knihovny typů. Použitím obou možností společně dojde ke zrušení registrace knihovny typů a položek rozhraní, čímž lze značně pročistit registr.
 
 Při registraci sestavení pro použití modelem COM nástroj Regasm.exe přidá položky do registru místního počítače. Přesněji řečeno vytvoří klíče registru závislé na verzi, které dovolují v počítači paralelně spustit více verzí stejného sestavení. Při první registraci sestavení je pro sestavení vytvořen jeden klíč na nejvyšší úrovni a je vytvořen jedinečný podklíč pro konkrétní verzi. Při každé registraci nové verze sestavení nástroj Regasm.exe vytvoří podklíč pro novou verzi.
 
@@ -85,7 +85,7 @@ regasm myTest.dll /tlb:myTest.tlb
 ## <a name="see-also"></a>Viz také
 
 - [Nástroje](index.md)
-- [Tlbexp.exe (exportér knihovny typů)](tlbexp-exe-type-library-exporter.md)
-- [Tlbimp.exe (importér knihovny typů)](tlbimp-exe-type-library-importer.md)
+- [Tlbexp.exe (Exportér knihovny typů)](tlbexp-exe-type-library-exporter.md)
+- [Tlbimp.exe (Importér knihovny typů)](tlbimp-exe-type-library-importer.md)
 - [Registrování sestav pomocí modelu COM](../interop/registering-assemblies-with-com.md)
-- [Příkazové řádky](developer-command-prompt-for-vs.md)
+- [Příkazová zobrazení](developer-command-prompt-for-vs.md)

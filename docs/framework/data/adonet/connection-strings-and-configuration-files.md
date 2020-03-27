@@ -5,14 +5,15 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 37df2641-661e-407a-a3fb-7bf9540f01e8
-ms.openlocfilehash: 30198930a260b7370d061e85efe4935e88ad4d8a
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 8862aa34c2d2677f5bc3e737c01cc61036c243e1
+ms.sourcegitcommit: 59e36e65ac81cdd094a5a84617625b2a0ff3506e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79151624"
+ms.lasthandoff: 03/27/2020
+ms.locfileid: "80345059"
 ---
 # <a name="connection-strings-and-configuration-files"></a>Připojovací řetězce a konfigurační soubory
+
 Vložení připojovacích řetězců do kódu aplikace může vést k ohrožení zabezpečení a problémům s údržbou. Nešifrované připojovací řetězce zkompilované do zdrojového kódu aplikace lze zobrazit pomocí nástroje [Ildasm.exe (IL Disassembler).](../../tools/ildasm-exe-il-disassembler.md) Navíc pokud se připojovací řetězec někdy změní, musí být aplikace znovu zkompilována. Z těchto důvodů doporučujeme ukládat připojovací řetězce do konfiguračního souboru aplikace.  
   
 ## <a name="working-with-application-configuration-files"></a>Práce s konfiguračními soubory aplikace  
@@ -125,9 +126,9 @@ Vložení připojovacích řetězců do kódu aplikace může vést k ohrožení
 <configProtectedData defaultProvider="RsaProtectedConfigurationProvider">  
   <providers>  
     <add name="RsaProtectedConfigurationProvider"
-      type="System.Configuration.RsaProtectedConfigurationProvider, ... />  
+      type="System.Configuration.RsaProtectedConfigurationProvider" />  
     <add name="DataProtectionConfigurationProvider"
-      type="System.Configuration.DpapiProtectedConfigurationProvider, ... />  
+      type="System.Configuration.DpapiProtectedConfigurationProvider" />  
   </providers>  
 </configProtectedData>  
 ```  

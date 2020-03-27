@@ -3,12 +3,12 @@ title: Možnost volby mezi rozhraním .NET Core a rozhraním .NET Framework pro 
 description: Průvodce, na které implementaci rozhraní .NET byste měli zvážit při vytváření serverové aplikace v rozhraní .NET.
 author: cartermp
 ms.date: 06/19/2018
-ms.openlocfilehash: 0b6bf4c2eb66aa4de497923a0a16b65a955ba6fc
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 393d6d89fb299e87edf55cf50991537e8afe9753
+ms.sourcegitcommit: 59e36e65ac81cdd094a5a84617625b2a0ff3506e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "78159972"
+ms.lasthandoff: 03/27/2020
+ms.locfileid: "80344150"
 ---
 # <a name="choosing-between-net-core-and-net-framework-for-server-apps"></a>Volba mezi .NET Core a .NET Framework pro serverové aplikace
 
@@ -105,7 +105,7 @@ Některé platformy Microsoftu nebo třetích stran nepodporují .NET Core. Něk
 - [Vyberte si mezi ASP.NET a ASP.NET Core](/aspnet/core/choose-aspnet-framework)
 - [Cílení ASP.NET Core na .NET Framework](/aspnet/core#aspnet-core-targeting-net-framework)
 - [Cílové architektury](frameworks.md)
-- [Základní příručka rozhraní .NET](../core/index.md)
+- [Základní příručka rozhraní .NET](../core/index.yml)
 - [Přenesení z rozhraní .NET Framework do jádra rozhraní .NET](../core/porting/index.md)
 - [Úvod k .NET a Dockeru](../core/docker/introduction.md)
 - [Přehled součástí rozhraní .NET](components.md)

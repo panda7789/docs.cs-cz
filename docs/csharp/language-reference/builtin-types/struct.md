@@ -1,6 +1,6 @@
 ---
 title: Typy struktur – odkaz jazyka C#
-ms.date: 02/24/2020
+ms.date: 03/26/2020
 f1_keywords:
 - struct_CSharpKeyword
 helpviewer_keywords:
@@ -8,12 +8,12 @@ helpviewer_keywords:
 - struct type [C#]
 - structure type [C#]
 ms.assetid: ff3dd9b7-dc93-4720-8855-ef5558f65c7c
-ms.openlocfilehash: b126706ff9c881e5c2d5cc7ee4833ac8896e3fcc
-ms.sourcegitcommit: 2514f4e3655081dcfe1b22470c0c28500f952c42
+ms.openlocfilehash: 6a2c97b93a8f6d1d62bd8a96865a4fe6587f55d3
+ms.sourcegitcommit: 59e36e65ac81cdd094a5a84617625b2a0ff3506e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/18/2020
-ms.locfileid: "79507240"
+ms.lasthandoff: 03/27/2020
+ms.locfileid: "80345133"
 ---
 # <a name="structure-types-c-reference"></a>Typy struktur (odkaz C#
 
@@ -24,6 +24,24 @@ ms.locfileid: "79507240"
 Typy struktur mají *hodnotu sémantiku*. To znamená, že proměnná typu struktury obsahuje instanci typu. Ve výchozím nastavení jsou hodnoty proměnných zkopírovány při přiřazení, předání argumentu metodě a vrácení výsledku metody. V případě proměnné typu struktura je zkopírována instance typu. Další informace naleznete v [tématu Value types](value-types.md).
 
 Obvykle se používají typy struktury k návrhu malé typy zaměřené na data, které poskytují malé nebo žádné chování. Například .NET používá typy struktury představují číslo [(celé číslo](integral-numeric-types.md) i [skutečné](floating-point-numeric-types.md)), [logická hodnota](bool.md), [znak Unicode](char.md), [instance time](xref:System.DateTime). Pokud se zaměřujete na chování typu, zvažte definování [třídy](../keywords/class.md). Typy tříd mají *referenční sémantiku*. To znamená, že proměnná typu třídy obsahuje odkaz na instanci typu, nikoli samotnou instanci.
+
+Vzhledem k tomu, že typy struktur mají hodnotovou sémantiku, doporučujeme definovat *neměnné* typy struktur.
+
+## <a name="readonly-struct"></a>`readonly`Struct
+
+Počínaje C# 7.2, pomocí `readonly` modifikátoru deklarovat, že typ struktury je neměnný:
+
+[!code-csharp[readonly struct](snippets/StructType.cs#ReadonlyStruct)]
+
+Všechny datové členy `readonly` struktury musí být jen pro čtení takto:
+
+- Každá deklarace pole musí mít [ `readonly` modifikátor.](../keywords/readonly.md)
+- Každá vlastnost, včetně automaticky implementovaných, musí být jen pro čtení
+
+To zaručuje, že žádný `readonly` člen struktury modifikuje stav struktury.
+
+> [!NOTE]
+> Ve `readonly` struktuře může datový člen proměnlivého typu odkazu stále zmutovat svůj vlastní stav. Například nelze nahradit <xref:System.Collections.Generic.List%601> instanci, ale můžete do ní přidat nové prvky.
 
 ## <a name="limitations-with-the-design-of-a-structure-type"></a>Omezení s návrhem typu konstrukce
 
@@ -63,9 +81,11 @@ Pro všechny typy struktury existují [převody zabalení a rozbalení](../../pr
 
 Další informace naleznete v části [Structs](~/_csharplang/spec/structs.md) ve [specifikaci jazyka C#](~/_csharplang/spec/introduction.md).
 
+Další informace `readonly` o strukturách naleznete v [poznámce k návrhu funkce](~/_csharplang/proposals/csharp-7.2/readonly-ref.md#readonly-structs).
+
 ## <a name="see-also"></a>Viz také
 
 - [Referenční dokumentace k jazyku C#](../index.md)
 - [Pokyny pro návrh - Výběr mezi třídou a strukturou](../../../standard/design-guidelines/choosing-between-class-and-struct.md)
 - [Pokyny pro návrh - Design Struct](../../../standard/design-guidelines/struct.md)
-- [Třídy a struktury](../../programming-guide/classes-and-structs/index.md)
+- [Třídy a struktury](../../programming-guide/classes-and-structs/index.md)

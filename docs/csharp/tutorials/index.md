@@ -2,12 +2,12 @@
 title: Kurzy k jazyku C#
 description: Prozkoumejte tyto kurzy jazyka C#, kde se dozvíte, jak vytvářet programy jazyka C# a naučit se funkce jazyka C#.
 ms.date: 10/25/2018
-ms.openlocfilehash: 8adbec3311c7a0e88475734312ecc3621042c3f3
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 57d2471ef8ad06eb821a1d1d88210dfbb8dc732e
+ms.sourcegitcommit: 59e36e65ac81cdd094a5a84617625b2a0ff3506e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "75346802"
+ms.lasthandoff: 03/27/2020
+ms.locfileid: "80345095"
 ---
 # <a name="c-tutorials"></a>Kurzy k jazyku C#
 
@@ -56,7 +56,7 @@ Všechny úvodní kurzy následující lekci Hello World jsou k dispozici ve va�
 
 ## <a name="general-tutorials"></a>Obecné návody
 
-Následující kurzy umožňují vytvářet programy jazyka C# pomocí [rozhraní .NET Core](../../core/index.md):
+Následující kurzy umožňují vytvářet programy jazyka C# pomocí [rozhraní .NET Core](../../core/index.yml):
 
 * [Konzolová aplikace](console-teleprompter.md): demonstruje vstupně-to, strukturu aplikace konzoly a základy asynchronního programovacího modelu založeného na úlohách.
 * [REST Client](console-webapiclient.md): demonstruje webovou komunikaci, serializaci JSON a objektově orientované funkce v jazyce C#.

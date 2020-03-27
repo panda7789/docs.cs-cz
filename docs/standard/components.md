@@ -4,12 +4,12 @@ description: Popisuje architektonické součásti rozhraní .NET, jako je např�
 author: cartermp
 ms.date: 08/23/2017
 ms.technology: dotnet-standard
-ms.openlocfilehash: 4329830d6cec5032517ea3fa02cb24dd7322e23f
-ms.sourcegitcommit: e48a54ebe62e874500a7043f6ee0b77a744d55b4
+ms.openlocfilehash: 027fdb4cec47550f88f6930a4bbdff4ab5cdfb36
+ms.sourcegitcommit: 59e36e65ac81cdd094a5a84617625b2a0ff3506e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80291787"
+ms.lasthandoff: 03/27/2020
+ms.locfileid: "80344168"
 ---
 # <a name="net-architectural-components"></a>Součásti architektury technologie .NET
 
@@ -38,7 +38,7 @@ Existují čtyři primární implementace rozhraní .NET, které společnost Mic
 
 .NET Core je implementace napříč platformami rozhraní .NET a je navržena tak, aby zpracovávala úlohy serveru a cloudu ve velkém měřítku. Běží na Windows, macOS a Linux. Implementuje standard .NET, takže kód, který cílí na standard .NET, může být spuštěn na jádru .NET. [ASP.NET Core](https://dotnet.microsoft.com/learn/aspnet/what-is-aspnet-core), [Windows Forms](../framework/winforms/windows-forms-overview.md)a Windows Presentation [Foundation (WPF)](../framework/wpf/index.md) jsou spuštěny na rozhraní .NET Core.
 
-Další informace o jádru .NET najdete v [příručce .NET Core Guide](../core/index.md) a [výběr mezi rozhraním .NET Core a rozhraní .NET Framework pro serverové aplikace](choosing-core-framework-server.md).
+Další informace o jádru .NET najdete v [příručce .NET Core Guide](../core/index.yml) a [výběr mezi rozhraním .NET Core a rozhraní .NET Framework pro serverové aplikace](choosing-core-framework-server.md).
 
 ### <a name="net-framework"></a>.NET Framework
 
@@ -107,8 +107,8 @@ Oficiální dokumenty ISO/IEC jsou k dispozici na stránce ISO/IEC [Publicly Ava
 
 - [Volba mezi .NET Core a .NET Framework pro serverové aplikace](choosing-core-framework-server.md)
 - [.NET Standard](net-standard.md)
-- [Základní příručka rozhraní .NET](../core/index.md)
-- [Průvodce rozhraním .NET Framework](../framework/index.yml)
+- [Základní příručka rozhraní .NET](../core/index.yml)
+- [Průvodce rámcem rozhraní .NET](../framework/index.yml)
 - [Průvodce C#](../csharp/index.yml)
 - [Průvodce F#](../fsharp/index.yml)
 - [Průvodce visual basicem](../visual-basic/index.yml)

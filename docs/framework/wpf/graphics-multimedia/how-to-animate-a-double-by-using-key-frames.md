@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Animace dvojice pomocí klíčových snímků'
+title: 'Postupy: Animace dvojice použitím klíčových snímků'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -9,34 +9,34 @@ helpviewer_keywords:
 - animation [WPF], Doubles with key frames
 - key frames [WPF], animating Doubles with
 ms.assetid: 3a1a7dba-7694-4907-8a2f-3408baebfa82
-ms.openlocfilehash: 73cbeab8aee566313bad8e8a18a5500374287de0
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 9eab794cc8411230226cddc97beaa13c1bdd9405
+ms.sourcegitcommit: 59e36e65ac81cdd094a5a84617625b2a0ff3506e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62010199"
+ms.lasthandoff: 03/27/2020
+ms.locfileid: "80344942"
 ---
-# <a name="how-to-animate-a-double-by-using-key-frames"></a>Postupy: Animace dvojice pomocí klíčových snímků
-Tento příklad ukazuje, jak animovat hodnotu vlastnosti, která přijímá <xref:System.Double> použitím klíčových snímků.  
+# <a name="how-to-animate-a-double-by-using-key-frames"></a>Postupy: Animace dvojice použitím klíčových snímků
+Tento příklad ukazuje, jak animovat hodnotu <xref:System.Double> vlastnosti, která trvá pomocí klíčových snímků.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad přesune obdélník obrazovce. V příkladu se používá <xref:System.Windows.Media.Animation.DoubleAnimationUsingKeyFrames> třídy pro animaci <xref:System.Windows.Media.TranslateTransform.X%2A> vlastnost <xref:System.Windows.Media.TranslateTransform> u <xref:System.Windows.Shapes.Rectangle>. Tuto animaci, která se stále opakuje, používá tři klíčové snímky následujícím způsobem:  
+ Následující příklad přesune obdélník přes obrazovku. Příklad používá <xref:System.Windows.Media.Animation.DoubleAnimationUsingKeyFrames> třídu k <xref:System.Windows.Media.TranslateTransform.X%2A> animaci <xref:System.Windows.Media.TranslateTransform> vlastnosti <xref:System.Windows.Shapes.Rectangle>aplikované na . Tato animace, která se opakuje neomezeně dlouho, používá tři klíčové snímky následujícím způsobem:  
   
-1. Během první tři sekundy, používá instanci <xref:System.Windows.Media.Animation.LinearDoubleKeyFrame> třídy přesunout obdélník podél cesty stabilní rychlostí z jeho výchozí pozice na 500 pozici. Lineární klíčových snímků, jako jsou <xref:System.Windows.Media.Animation.LinearDoubleKeyFrame> Vytvoření hladkého lineárního přechodu mezi hodnotami.  
+1. Během prvních tří sekund používá instanci <xref:System.Windows.Media.Animation.LinearDoubleKeyFrame> třídy k přesunutí obdélníku podél cesty stabilní rychlostí od počáteční polohy do polohy 500. Lineární klíčové <xref:System.Windows.Media.Animation.LinearDoubleKeyFrame> snímky, jako je vytvoření hladkého lineárního přechodu mezi hodnotami.  
   
-2. Na konci čtvrtý druhý používá instanci <xref:System.Windows.Media.Animation.DiscreteDoubleKeyFrame> třídy náhle obdélník přesunout na další pozici. Diskrétní klíčových snímků, jako jsou <xref:System.Windows.Media.Animation.DiscreteDoubleKeyFrame> vytvořit i s náhlými rozdíly mezi jednotlivými hodnotami. V tomto příkladu obdélníku je počáteční pozice a se pak náhle objeví na 500 pozici.  
+2. Na konci čtvrté sekundy, používá instance <xref:System.Windows.Media.Animation.DiscreteDoubleKeyFrame> třídy náhle přesunout obdélník na další pozici. Diskrétní klíčové snímky, <xref:System.Windows.Media.Animation.DiscreteDoubleKeyFrame> jako je vytvoření náhlých skoků mezi hodnotami. V tomto příkladu obdélník je na výchozí pozici a pak se náhle objeví na pozici 500.  
   
-3. Do dvou sekund konečná používá instanci <xref:System.Windows.Media.Animation.SplineDoubleKeyFrame> třídy přesunout obdélník zpět na počáteční pozici. Klíčové snímky SpLine, jako jsou <xref:System.Windows.Media.Animation.SplineDoubleKeyFrame> vytvoříte proměnné přechod mezi hodnotami podle hodnoty <xref:System.Windows.Media.Animation.SplineDoubleKeyFrame.KeySpline%2A> vlastnost. V tomto příkladu obdélník začíná přesunutím pomalu a pak zrychluje exponenciálně na konci časového úseku.  
+3. V posledních dvou sekundách používá <xref:System.Windows.Media.Animation.SplineDoubleKeyFrame> instanci třídy k přesunutí obdélníku zpět do výchozí polohy. Klíčové snímky spline, jako je <xref:System.Windows.Media.Animation.SplineDoubleKeyFrame> vytvoření proměnné přechodu mezi hodnotami podle hodnoty vlastnosti. <xref:System.Windows.Media.Animation.SplineDoubleKeyFrame.KeySpline%2A> V tomto příkladu obdélník začíná pohybem pomalu a pak urychluje exponenciálně ke konci časového segmentu.  
   
  [!code-csharp[keyframes_snip#AltDoubleAnimationUsingKeyFramesWholePage](~/samples/snippets/csharp/VS_Snippets_Wpf/keyframes_snip/CSharp/AltDoubleAnimationUsingKeyFramesExample.cs#altdoubleanimationusingkeyframeswholepage)]
  [!code-vb[keyframes_snip#AltDoubleAnimationUsingKeyFramesWholePage](~/samples/snippets/visualbasic/VS_Snippets_Wpf/keyframes_snip/visualbasic/altdoubleanimationusingkeyframesexample.vb#altdoubleanimationusingkeyframeswholepage)]
  [!code-xaml[keyframes_snip#AltDoubleAnimationUsingKeyFramesWholePage](~/samples/snippets/xaml/VS_Snippets_Wpf/keyframes_snip/XAML/AltDoubleAnimationUsingKeyFramesExample.xaml#altdoubleanimationusingkeyframeswholepage)]  
   
- Úplnou ukázku najdete v tématu [klíčový snímek animace ukázka](https://go.microsoft.com/fwlink/?LinkID=160012).  
+ Kompletní ukázku naleznete v tématu [Ukázka animace klíčových snímků](https://github.com/microsoft/WPF-Samples/tree/master/Animation/KeyFrameAnimation).  
   
- Pro zajištění konzistence s další příklady animace, kód verze tohoto příkladu použijte <xref:System.Windows.Media.Animation.Storyboard> objektu, který chcete použít <xref:System.Windows.Media.Animation.DoubleAnimationUsingKeyFrames>. Můžete také při použití jedné animace v kódu, je jednodušší použít <xref:System.Windows.Media.Animation.Animatable.BeginAnimation%2A> metoda namísto použití <xref:System.Windows.Media.Animation.Storyboard>. Příklad najdete v tématu [animace vlastnosti bez pomoci scénáře](how-to-animate-a-property-without-using-a-storyboard.md).  
+ Pro konzistenci s jinými příklady animace, verze <xref:System.Windows.Media.Animation.Storyboard> kódu v <xref:System.Windows.Media.Animation.DoubleAnimationUsingKeyFrames>tomto příkladu použít objekt použít . Alternativně při použití jedné animace v kódu, je <xref:System.Windows.Media.Animation.Animatable.BeginAnimation%2A> jednodušší použít <xref:System.Windows.Media.Animation.Storyboard>metodu namísto použití . Například viz [Animate vlastnost bez použití storyboardu](how-to-animate-a-property-without-using-a-storyboard.md).  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Media.Animation.DoubleAnimationUsingKeyFrames>
 - <xref:System.Windows.Shapes.Rectangle>

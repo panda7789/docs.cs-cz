@@ -5,16 +5,16 @@ author: cartermp
 ms.date: 12/27/2019
 ms.technology: dotnet-standard
 ms.assetid: bbfe6465-329d-4982-869d-472e7ef85d93
-ms.openlocfilehash: b7856cbb12ac78830ceace6ad44214ca32444a82
-ms.sourcegitcommit: b75a45f0cfe012b71b45dd9bf723adf32369d40c
+ms.openlocfilehash: f6496ae38827da5d00c8b278011a9c373afe0e76
+ms.sourcegitcommit: 59e36e65ac81cdd094a5a84617625b2a0ff3506e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80228804"
+ms.lasthandoff: 03/27/2020
+ms.locfileid: "80344090"
 ---
 # <a name="net-guide"></a>Průvodce technologií .NET
 
-Průvodce .NET poskytuje informace o rozhraní .NET. V závislosti na vaší obeznámenosti s rozhraním .NET můžete prozkoumat různé části této příručky a další chody, například [.NET Core](../core/index.md) nebo [.NET Framework](../framework/index.yml).
+Průvodce .NET poskytuje informace o rozhraní .NET. V závislosti na vaší obeznámenosti s rozhraním .NET můžete prozkoumat různé části této příručky a další chody, například [.NET Core](../core/index.yml) nebo [.NET Framework](../framework/index.yml).
 
 ## <a name="new-to-net"></a>Novinka v rozhraní .NET
 

@@ -4,12 +4,12 @@ ms.date: 08/02/2017
 helpviewer_keywords:
 - Main method [C#], return values
 ms.assetid: c2f5a1d8-1676-4bea-bc7e-44a97e72d5bc
-ms.openlocfilehash: eaa78c33613093bb0e108870669392d07d346a95
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 3d97ab2b3f53179cb184f2ad3944ea29ff5566a2
+ms.sourcegitcommit: 59e36e65ac81cdd094a5a84617625b2a0ff3506e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "77503998"
+ms.lasthandoff: 03/27/2020
+ms.locfileid: "80345117"
 ---
 # <a name="main-return-values-c-programming-guide"></a>Main() vrácené hodnoty (Průvodce programováním Jazyka C#)
 
@@ -25,7 +25,7 @@ Pokud se návratová hodnota z `Main` `void` nepoužívá, vrácení umožňuje 
 
 ## <a name="example"></a>Příklad
 
-Tento příklad používá nástroje příkazového řádku [.NET Core.](../../../core/index.md) Pokud nejste obeznámeni s nástroji příkazového řádku .NET Core, můžete se o nich dozvědět v tomto [tématu Začínáme](../../../core/tutorials/cli-create-console-app.md).
+Tento příklad používá nástroje příkazového řádku [.NET Core.](../../../core/index.yml) Pokud nejste obeznámeni s nástroji příkazového řádku .NET Core, můžete se o nich dozvědět v tomto [tématu Začínáme](../../../core/tutorials/cli-create-console-app.md).
 
 Metodu `Main` v *program.cs* upravte takto:
 
@@ -99,5 +99,5 @@ Pokud vstupní bod aplikace `Task` `Task<int>`vrátí a , kompilátor vygeneruje
 
 - [Programovací příručka jazyka C#](../index.md)
 - [Odkaz jazyka C#](../index.md)
-- [Argumenty Main() a příkazového řádku](index.md)
+- [Hlavní() a Argumenty příkazového řádku](index.md)
 - [Jak zobrazit argumenty příkazového řádku](./how-to-display-command-line-arguments.md)

@@ -3,12 +3,12 @@ title: Vítejte na .NET
 description: Začínáme s řady technologií .NET.
 ms.date: 12/03/2019
 ms.custom: updateeachrelease
-ms.openlocfilehash: bfc9b55f06a5830c13df52f992d2630f1f45d8be
-ms.sourcegitcommit: b75a45f0cfe012b71b45dd9bf723adf32369d40c
+ms.openlocfilehash: f5673f91545b98fb706d8f1cc03ef7746f1b19b8
+ms.sourcegitcommit: 59e36e65ac81cdd094a5a84617625b2a0ff3506e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80228786"
+ms.lasthandoff: 03/27/2020
+ms.locfileid: "80345310"
 ---
 # <a name="welcome-to-net"></a>Vítejte na .NET
 
@@ -35,7 +35,7 @@ Informace o nejnovějších funkcích přidaných do implementací rozhraní .NE
 
 - [Co je nového v .NET Core](core/whats-new/index.md)
 - [Novinky v rozhraní .NET Framework](framework/whats-new/index.md)
-- [Co je nového v C #](csharp/whats-new/index.md)
+- [Co je nového v jazyce C#](csharp/whats-new/index.md)
 - [Co je nového v jazyce Visual Basic](visual-basic/getting-started/whats-new.md)
 
 ## <a name="documentation"></a>Dokumentace
@@ -43,8 +43,8 @@ Informace o nejnovějších funkcích přidaných do implementací rozhraní .NE
 Tato dokumentace popisuje šíři rozhraní .NET napříč platformami a jazyky. Můžete začít pracovat s rozhraním .NET a jejími jazyky v některé z následujících částí:
 
 - [Průvodce rozhraním .NET](standard/index.md)
-- [Základní příručka rozhraní .NET](core/index.md)
-- [Průvodce rozhraním .NET Framework](framework/index.yml)
+- [Základní příručka rozhraní .NET](core/index.yml)
+- [Průvodce rámcem rozhraní .NET](framework/index.yml)
 - [Průvodce C#](csharp/index.yml)
 - [Průvodce F#](fsharp/index.yml)
 - [Průvodce visual basicem](visual-basic/index.yml)

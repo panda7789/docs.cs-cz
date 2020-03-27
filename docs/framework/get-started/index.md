@@ -6,19 +6,19 @@ helpviewer_keywords:
 - .NET Framework, getting started
 - getting started [.NET Framework]
 ms.assetid: c693fd34-88fe-4d90-b332-19eeadf3b7e7
-ms.openlocfilehash: cd27f2fb893def9e186504cc9973bae71473f005
-ms.sourcegitcommit: 99b153b93bf94d0fecf7c7bcecb58ac424dfa47c
+ms.openlocfilehash: 8708fbd21967c5acb548e0e77ba5d9e060336c50
+ms.sourcegitcommit: 59e36e65ac81cdd094a5a84617625b2a0ff3506e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/25/2020
-ms.locfileid: "80248905"
+ms.lasthandoff: 03/27/2020
+ms.locfileid: "80345047"
 ---
 # <a name="get-started-with-net-framework"></a>Začínáme s rozhraním .NET Framework
 
 Rozhraní .NET Framework je prostředí pro spuštění za běhu, které spravuje aplikace, které cílí na rozhraní .NET Framework. Skládá se ze společného jazyka runtime, který poskytuje správu paměti a další systémové služby, a rozsáhlé knihovny tříd, který umožňuje programátorům využít robustní, spolehlivý kód pro všechny hlavní oblasti vývoje aplikací.
 
 > [!NOTE]
-> Rozhraní .NET Framework je k dispozici pouze v systémech Windows. [Pomocí rozhraní .NET Core](../../core/index.md) můžete vyvíjet a spouštět aplikace ve Windows, MacOS a Linuxu.
+> Rozhraní .NET Framework je k dispozici pouze v systémech Windows. [Pomocí rozhraní .NET Core](../../core/index.yml) můžete vyvíjet a spouštět aplikace ve Windows, MacOS a Linuxu.
 
 ## <a name="what-is-net-framework"></a>Co je rozhraní .NET Framework?
 
@@ -80,7 +80,7 @@ Další informace o vývoji aplikací, které cílí na rozhraní .NET Framework
 | [Rozhraní .NET Framework a nepásmová vydání](the-net-framework-and-out-of-band-releases.md) | Popisuje neintegrované verze rozhraní .NET Framework a jejich použití ve vaší aplikaci. |
 | [Systémové požadavky](system-requirements.md) | Uvádí požadavky na hardware a software pro spuštění rozhraní .NET Framework. |
 | [.NET Core a open source](net-core-and-open-source.md) | Popisuje rozhraní .NET Core ve vztahu k rozhraní .NET Framework a přístup k projektům open source .NET Core. |
-| [Základní dokumentace rozhraní .NET](../../core/index.md) | Obsahuje dokumentaci ke koncepčním a referenčním dokumentům rozhraní API pro službu .NET Core. |
+| [Základní dokumentace rozhraní .NET](../../core/index.yml) | Obsahuje dokumentaci ke koncepčním a referenčním dokumentům rozhraní API pro službu .NET Core. |
 | [.NET Standard](../../standard/net-standard.md) | Popisuje .NET Standard, specifikace s verzí, kterou jednotlivé implementace rozhraní .NET podporují, aby bylo zaručeno, že konzistentní sada rozhraní API je k dispozici na více platformách.
 
 ## <a name="see-also"></a>Viz také

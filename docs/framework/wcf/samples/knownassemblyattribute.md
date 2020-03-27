@@ -2,12 +2,12 @@
 title: KnownAssemblyAttribute
 ms.date: 03/30/2017
 ms.assetid: b3bc7f31-95ff-46e1-8308-d206ec426f6e
-ms.openlocfilehash: 1a94acde3d0726808deebcae1437e7318f5392df
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 3aacc7c73167771a632bb31164f2c551d60ce8f0
+ms.sourcegitcommit: 59e36e65ac81cdd094a5a84617625b2a0ff3506e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79183562"
+ms.lasthandoff: 03/27/2020
+ms.locfileid: "80345237"
 ---
 # <a name="knownassemblyattribute"></a>KnownAssemblyAttribute
 Tato ukázka ukazuje, jak serializace a deserializace procesy lze přizpůsobit pomocí třídy. <xref:System.Runtime.Serialization.DataContractResolver> Tato ukázka ukazuje, jak dynamicky přidat známé typy během serializace a deserializace.  
@@ -356,11 +356,11 @@ Lists combined:
   
 5. Pokud aplikace nefunguje správně, postupujte takto a ujistěte se, že vaše prostředí bylo správně nastaveno:  
   
-6. Ujistěte se, že jste provedli [jednorázovou proceduru nastavení pro ukázky windows communication foundation](https://go.microsoft.com/fwlink/?LinkId=150774).  
+6. Ujistěte se, že jste provedli [jednorázovou proceduru nastavení pro ukázky windows communication foundation](https://docs.microsoft.com/dotnet/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples).  
   
-7. Chcete-li vytvořit řešení, postupujte podle pokynů v [sestavení windows communication foundation ukázka](https://go.microsoft.com/fwlink/?LinkId=150775).  
+7. Chcete-li vytvořit řešení, postupujte podle pokynů v [sestavení windows communication foundation ukázka](https://docs.microsoft.com/dotnet/framework/wcf/samples/building-the-samples).  
   
-8. Chcete-li spustit ukázku v konfiguraci jednoho nebo více počítačů, postupujte podle pokynů v [části Spuštění ukázek Windows Communication Foundation](https://go.microsoft.com/fwlink/?LinkId=150776).  
+8. Chcete-li spustit ukázku v konfiguraci jednoho nebo více počítačů, postupujte podle pokynů v [části Spuštění ukázek Windows Communication Foundation](https://docs.microsoft.com/dotnet/framework/wcf/samples/running-the-samples).  
   
 > [!IMPORTANT]
 > Ukázky mohou být již nainstalovány v počítači. Před pokračováním zkontrolujte následující (výchozí) adresář.  

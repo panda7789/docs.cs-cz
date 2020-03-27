@@ -4,12 +4,12 @@ description: Nedávná vylepšení jazyka C# umožňují psát ověřitelný bez
 ms.date: 10/23/2018
 ms.technology: csharp-advanced-concepts
 ms.custom: mvc
-ms.openlocfilehash: bb53264f61192c042da469ba687da6c472e8c6d4
-ms.sourcegitcommit: 2514f4e3655081dcfe1b22470c0c28500f952c42
+ms.openlocfilehash: 365320fef5a2f9cd123086c1baed9a786ede9f05
+ms.sourcegitcommit: 59e36e65ac81cdd094a5a84617625b2a0ff3506e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/18/2020
-ms.locfileid: "79506980"
+ms.lasthandoff: 03/27/2020
+ms.locfileid: "80345085"
 ---
 # <a name="write-safe-and-efficient-c-code"></a>Napište bezpečný a efektivní kód Jazyka C#
 
@@ -21,7 +21,7 @@ Tento článek se zaměřuje na techniky pro efektivní správu zdrojů. Jednou 
 
 Tento článek se zaměřuje na následující techniky správy zdrojů:
 
-- Deklarovat a vyjádřit, že typ je **neměnný** a [`in`](language-reference/keywords/in-parameter-modifier.md) umožňuje kompilátoru uložit kopie při použití parametrů. [`readonly struct`](language-reference/keywords/readonly.md#readonly-struct-example)
+- Deklarovat a [`readonly struct`](language-reference/builtin-types/struct.md#readonly-struct) vyjádřit, že typ je **neměnný**. To umožňuje kompilátoru uložit [`in`](language-reference/keywords/in-parameter-modifier.md) obranné kopie při použití parametrů.
 - Pokud typ nemůže být neměnný, `struct` `readonly` deklarujte členy, kteří označují, že člen nemění stav.
 - Použijte [`ref readonly`](language-reference/keywords/ref.md#reference-return-values) return, pokud je `struct` vrácená <xref:System.IntPtr.Size?displayProperty=nameWithType> hodnota větší než a doba trvání úložiště je větší než metoda vracející hodnotu.
 - Pokud je velikost `readonly struct` a <xref:System.IntPtr.Size?displayProperty=nameWithType>větší než , měli `in` byste ji předat jako parametr z důvodů výkonu.

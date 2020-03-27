@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - custom element
 ms.assetid: e62056c6-b351-40eb-afc0-cc13fc44e45e
-ms.openlocfilehash: 04360a796b18cf1e414f1f84bff247a1e9d8ef9c
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 0d765a9789ad566428b1fbda6c0863b10b98c363
+ms.sourcegitcommit: 59e36e65ac81cdd094a5a84617625b2a0ff3506e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79155151"
+ms.lasthandoff: 03/27/2020
+ms.locfileid: "80345066"
 ---
 # <a name="custom-element-for-singletagsectionhandler"></a>Vlastní prvek pro SingleTagSectionHandler
 
@@ -22,7 +22,7 @@ konfigurace &nbsp; &nbsp;>[** \<**](configuration-element.md) * \<sekceNázev>*
 ## <a name="syntax"></a>Syntaxe
 
 ```xml
-<sectionName key="value" key2="value2" ... />
+<sectionName key="value" key2="value2" />
 ```
 
 ## <a name="attributes"></a>Atributy

@@ -1,18 +1,18 @@
 ---
 title: klíčové slovo jen pro čtení – odkaz jazyka C#
-ms.date: 06/21/2018
+ms.date: 03/26/2020
 f1_keywords:
 - readonly_CSharpKeyword
 - readonly
 helpviewer_keywords:
 - readonly keyword [C#]
 ms.assetid: 2f8081f6-0de2-4903-898d-99696c48d2f4
-ms.openlocfilehash: 165b6287e1610e013b289601e1535a08fdd3b5c9
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 344d5e54fcd500e283c52fa7953c6366823f13f0
+ms.sourcegitcommit: 59e36e65ac81cdd094a5a84617625b2a0ff3506e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79399355"
+ms.lasthandoff: 03/27/2020
+ms.locfileid: "80345153"
 ---
 # <a name="readonly-c-reference"></a>readonly – modifikátor (Referenční dokumentace jazyka C#)
 
@@ -28,7 +28,7 @@ Klíčové `readonly` slovo je modifikátor, který lze použít ve čtyřech ko
   > [!WARNING]
   > Externě viditelný typ, který obsahuje externě viditelné pole jen pro čtení, které je proměnlivým typem odkazu, může být chybou zabezpečení a může vyvolat upozornění [CA2104](/visualstudio/code-quality/ca2104) : "Nedeklarujte proměnlivé typy odkazů pouze pro čtení."
 
-- V [ `readonly struct` definici](#readonly-struct-example) `readonly` označuje, `struct` že je neměnný.
+- V `readonly struct` definici `readonly` typu označuje, že typ struktury je neměnný. Další informace naleznete [ `readonly` v](../builtin-types/struct.md#readonly-struct) části struktura [typy struktury](../builtin-types/struct.md) článku.
 - V [ `readonly` definici](#readonly-member-examples) `readonly` člena označuje, že `struct` člen člena struktury vnitřní stav.
 - V [ `ref readonly` metodě](#ref-readonly-return-example)return `readonly` modifikátor označuje, že metoda vrátí odkaz a zápisy nejsou povoleny pro tento odkaz.
 
@@ -71,28 +71,6 @@ p2.y = 66;        // Error
 zobrazí se chybová zpráva kompilátoru:
 
 **Pole jen pro čtení nelze přiřadit (s výjimkou konstruktoru nebo proměnné inicializátoru)**
-
-## <a name="readonly-struct-example"></a>Příklad struktury jen pro čtení
-
-Modifikátor `readonly` `struct` na definici deklaruje, že struktura je **neměnná**. Každé pole instance `struct` musí `readonly`být označeno , jak je znázorněno v následujícím příkladu:
-
-[!code-csharp[readonly struct example](~/samples/snippets/csharp/keywords/ReadonlyKeywordExamples.cs#ReadonlyStruct)]
-
-Předchozí příklad používá [pouze pro čtení auto vlastnosti](../../properties.md#read-only) deklarovat jeho úložiště. To dává kompilátoru `readonly` pokyn k vytvoření záložních polí pro tyto vlastnosti. Pole můžete `readonly` také deklarovat přímo:
-
-```csharp
-public readonly struct Point
-{
-    public readonly double X;
-    public readonly double Y;
-
-    public Point(double x, double y) => (X, Y) = (x, y);
-
-    public override string ToString() => $"({X}, {Y})";
-}
-```
-
-Přidání pole, `readonly` které není označeno, generuje chybu kompilátoru `CS8340`: "Pole instancí struktur jen pro čtení musí být jen pro čtení."
 
 ## <a name="readonly-member-examples"></a>Příklady členů pouze pro Čtení
 
@@ -144,6 +122,7 @@ public string Message { readonly get; set; }
 Modifikátor `readonly` `ref return` na označuje, že vrácený odkaz nelze změnit. Následující příklad vrátí odkaz na původ. Používá `readonly` modifikátor k označení, že volající nelze změnit původ:
 
 [!code-csharp[readonly struct example](~/samples/snippets/csharp/keywords/ReadonlyKeywordExamples.cs#ReadonlyReturn)]
+
 Vrácený typ nemusí být `readonly struct`. Libovolný typ, který `ref` může být `ref readonly`vrácena může být vrácena .
 
 ## <a name="c-language-specification"></a>specifikace jazyka C#

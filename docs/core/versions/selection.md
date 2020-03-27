@@ -3,13 +3,13 @@ title: Vyberte, kterou verzi .NET Core chcete použít.
 description: Zjistěte, jak rozhraní .NET Core automaticky vyhledá a vybere verze za běhu pro váš program. Kromě toho tento článek vás naučí, jak vynutit konkrétní verzi.
 author: thraka
 ms.author: adegeo
-ms.date: 06/26/2019
-ms.openlocfilehash: 55f04ce81f63753831fca8fa2e44811c44049733
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.date: 03/24/2020
+ms.openlocfilehash: 26aecdf2bf3ebd033e80eec26159eb9fa3cd54dd
+ms.sourcegitcommit: 59e36e65ac81cdd094a5a84617625b2a0ff3506e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79398823"
+ms.lasthandoff: 03/27/2020
+ms.locfileid: "80345163"
 ---
 # <a name="select-the-net-core-version-to-use"></a>Vyberte verzi .NET Core, kterou chcete použít.
 
@@ -45,7 +45,7 @@ Následující příklad ukazuje syntaxi *global.json:*
 ``` json
 {
   "sdk": {
-    "version": "2.0.0"
+    "version": "3.0.0"
   }
 }
 ```
@@ -63,54 +63,59 @@ Další informace o výběru verze sady SDK naleznete v části [Odpovídající
 Sestavení projektu proti rozhraní API definované v **zástupný název cílového rámce** (TFM). V souboru projektu zadáte [cílovou architekturu.](../../standard/frameworks.md) Nastavte `TargetFramework` prvek v souboru projektu, jak je znázorněno v následujícím příkladu:
 
 ``` xml
-<TargetFramework>netcoreapp2.0</TargetFramework>
+<TargetFramework>netcoreapp3.0</TargetFramework>
 ```
 
 Můžete vytvořit projekt proti více TFM. Nastavení více cílových rozhraní je běžnější pro knihovny, ale lze provést také s aplikacemi. Zadáte `TargetFrameworks` vlastnost (množné `TargetFramework`číslo). Cílové rámce jsou středník-oddělené, jak je znázorněno v následujícím příkladu:
 
 ``` xml
-<TargetFrameworks>netcoreapp2.0;net47</TargetFrameworks>
+<TargetFrameworks>netcoreapp3.0;net47</TargetFrameworks>
 ```
 
-Daná sada SDK podporuje pevnou sadu rámců, která je omezena na cílovou architekturu runtime, se kterým je dodávána. Například sada .NET Core 2.0 SDK obsahuje runtime .NET Core 2.0, což je implementace cílového `netcoreapp2.0` rozhraní. Sada .NET Core 2.0 `netcoreapp1.0`SDK podporuje , `netcoreapp1.1`a , a `netcoreapp2.0` ale ne `netcoreapp2.1` (nebo vyšší). Nainstalujete .NET Core 2.1 SDK sestavit pro `netcoreapp2.1`.
+Daná sada SDK podporuje pevnou sadu rámců, která je omezena na cílovou architekturu runtime, se kterým je dodávána. Například sada .NET Core 3.0 SDK obsahuje runtime .NET Core 3.0, což je implementace cílového `netcoreapp3.0` rozhraní. Sada .NET Core 3.0 `netcoreapp2.1`SDK podporuje , `netcoreapp2.2`, `netcoreapp3.0`, ale ne `netcoreapp3.1` (nebo vyšší). Nainstalujete .NET Core 3.1 SDK sestavit pro `netcoreapp3.1`.
 
-.NET Standardní cílové architektury jsou také omezeny na cílové rozhraní runtime SDK dodává s. Sada .NET Core 2.0 SDK `netstandard2.0`je omezena na .
+.NET Standardní cílové architektury jsou také omezeny na cílové rozhraní runtime SDK dodává s. Sada .NET Core 3.1 SDK `netstandard2.1`je omezena na . Další informace naleznete v tématu [.NET Standard](../../standard/net-standard.md).
 
 ## <a name="framework-dependent-apps-roll-forward"></a>Aplikace závislé na rámci se posunou vpřed
 
 Při spuštění aplikace ze [`dotnet run`](../tools/dotnet-run.md)zdroje s , z [`dotnet myapp.dll`](../tools/dotnet.md#description)nasazení závislé na [**rozhraní**](../deploying/index.md#publish-runtime-dependent) s , nebo z [**spustitelného souboru závislého na rozhraní**](../deploying/index.md#publish-runtime-dependent) s `myapp.exe`, `dotnet` spustitelný soubor je **hostitelem** pro aplikaci.
 
-Hostitel zvolí nejnovější verzi opravy nainstalovanou v počítači. Pokud jste například `netcoreapp2.0` zadali v `2.0.4` souboru projektu a je nejnovější `2.0.4` nainstalovaný soubor .NET, použije se tento čas.
+Hostitel zvolí nejnovější verzi opravy nainstalovanou v počítači. Pokud jste například `netcoreapp3.0` zadali v `3.0.4` souboru projektu a je nejnovější `3.0.4` nainstalovaný soubor .NET, použije se tento čas.
 
-Pokud není `2.0.*` nalezena žádná přijatelná verze, použije se nová `2.*` verze. Pokud jste například `netcoreapp2.0` zadali a je nainstalována pouze `2.1.0` aplikace, aplikace se spustí pomocí `2.1.0` runtime. Toto chování se označuje jako "dílčí verze roll-forward." Nižší verze také nebudou považovány za. Pokud není nainstalován žádný přijatelný běh, aplikace nebude spuštěna.
+Pokud není `3.0.*` nalezena žádná přijatelná verze, použije se nová `3.*` verze. Pokud jste například `netcoreapp3.0` zadali a je nainstalována pouze `3.1.0` aplikace, aplikace se spustí pomocí `3.1.0` runtime. Toto chování se označuje jako "dílčí verze roll-forward." Nižší verze také nebudou považovány za. Pokud není nainstalován žádný přijatelný běh, aplikace nebude spuštěna.
 
-Několik příkladů použití ukazují chování, pokud cíl 2.0:
+Několik příkladů použití ukazují chování, pokud cíl 3.0:
 
-- 2.0 je specifikováno. 2.0.5 je nejvyšší nainstalovaná verze opravy. 2.0.5.
-- 2.0 je specifikováno. Nejsou nainstalovány verze 2.0.*. 1.1.1 je nejvyšší doba běhu nainstalována. Zobrazí se chybová zpráva.
-- 2.0 je specifikováno. Nejsou nainstalovány verze 2.0.*. 2.2.2 je nejvyšší nainstalovaná verze runtime 2.x. 2.2.2.
-- 2.0 je specifikováno. Nejsou nainstalovány žádné verze 2.x. 3.0.0. Zobrazí se chybová zpráva.
+- ✔️ 3.0. 3.0.5 je nejvyšší nainstalovaná verze opravy. 3.0.5.
+- ❌3.0 je specifikováno. Nejsou nainstalovány verze 3.0.*. 2.1.1 je nejvyšší doba běhu nainstalována. Zobrazí se chybová zpráva.
+- ✔️ 3.0. Nejsou nainstalovány verze 3.0.*. 3.1.0 je nejvyšší nainstalovaná runtime verze. 3.1.0.
+- ❌2.0 je specifikováno. Nejsou nainstalovány žádné verze 2.x. 3.0.0 je nejvyšší doba běhu nainstalována. Zobrazí se chybová zpráva.
 
 Dílčí verze roll-forward má jeden vedlejší účinek, který může ovlivnit koncové uživatele. Představte si následující scénář:
 
-1. Aplikace určuje, že je vyžadována verze 2.0.
-2. Při spuštění verze 2.0.* není nainstalována, ale 2.2.2 je. Bude použita verze 2.2.2.
-3. Později uživatel nainstaluje 2.0.5 a spustí aplikaci znovu, 2.0.5 bude nyní použit.
+1. Aplikace určuje, že je vyžadována verze 3.0.
+2. Při spuštění verze 3.0.* není nainstalována, ale 3.1.0 je. Bude použita verze 3.1.0.
+3. Později uživatel nainstaluje 3.0.5 a spustí aplikaci znovu, 3.0.5 bude nyní použit.
 
-Je možné, že 2.0.5 a 2.2.2 se chovají odlišně, zejména pro scénáře, jako je serializace binárních dat.
+Je možné, že 3.0.5 a 3.1.0 se chovají odlišně, zejména pro scénáře, jako je serializace binárních dat.
 
 ## <a name="self-contained-deployments-include-the-selected-runtime"></a>Samostatná nasazení zahrnují vybranou dobu běhu
 
 Aplikaci můžete publikovat jako [**samostatnou distribuci**](../deploying/index.md#publish-self-contained). Tento přístup sdružuje runtime .NET Core a knihovny s vaší aplikací. Samostatná nasazení nemají závislost na prostředí chodu runtime. Výběr verze runtime probíhá v době publikování, nikoli v době spuštění.
 
-Proces publikování vybere nejnovější verzi opravy dané řady runtime. Například `dotnet publish` vybere .NET Core 2.0.4, pokud se jedná o nejnovější verzi opravy v rodině runtime .NET Core 2.0. Cílový rámec (včetně nejnovějších nainstalovaných oprav zabezpečení) je zabalen s aplikací.
+Proces publikování vybere nejnovější verzi opravy dané řady runtime. Například `dotnet publish` vybere .NET Core 3.0.4, pokud se jedná o nejnovější verzi opravy v rodině runtime .NET Core 3.0. Cílový rámec (včetně nejnovějších nainstalovaných oprav zabezpečení) je zabalen s aplikací.
 
 Je to chyba, pokud není splněna minimální verze zadaná pro aplikaci. `dotnet publish`váže na nejnovější verzi opravy runtime (v rámci dané řady hlavních verzí major.minor). `dotnet publish`nepodporuje sémantiku .forward-forward `dotnet run`sémantiku . Další informace o opravách a samostatných nasazeních naleznete v článku o [výběru oprav za běhu](../deploying/runtime-patch-selection.md) při nasazování aplikací .NET Core.
 
 Samostatná nasazení mohou vyžadovat konkrétní verzi opravy. Můžete přepsat minimální runtime patch verze (na vyšší nebo nižší verze) v souboru projektu, jak je znázorněno v následujícím příkladu:
 
 ``` xml
-<RuntimeFrameworkVersion>2.0.4</RuntimeFrameworkVersion>
+<RuntimeFrameworkVersion>3.0.4</RuntimeFrameworkVersion>
 ```
 
 Prvek `RuntimeFrameworkVersion` přepíše zásady výchozí verze. Pro samostatná nasazení `RuntimeFrameworkVersion` určuje verze *přesného* rozhraní runtime framework. Pro aplikace závislé na `RuntimeFrameworkVersion` rámci určuje *minimální* požadovanou verzi rozhraní runtime framework.
+
+## <a name="see-also"></a>Viz také
+
+- [Stáhněte a nainstalujte rozhraní .NET Core](../install/index.md).
+- [Odebrání sady .NET Core Runtime a sady SDK](remove-runtime-sdk-versions.md).

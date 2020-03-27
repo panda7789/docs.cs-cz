@@ -4,12 +4,12 @@ description: Naučte se používat nástroj .NET Portability Analyzer k vyhodnoc
 ms.date: 09/13/2019
 ms.technology: dotnet-standard
 ms.assetid: 0375250f-5704-4993-a6d5-e21c499cea1e
-ms.openlocfilehash: e0a5c791926b36fe5a35c5446471c3dcdb75cd7b
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 397d9f08a0dd28f80d653ac5044d6acfa2418727
+ms.sourcegitcommit: 59e36e65ac81cdd094a5a84617625b2a0ff3506e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "72774381"
+ms.lasthandoff: 03/27/2020
+ms.locfileid: "80344301"
 ---
 # <a name="the-net-portability-analyzer"></a>Analyzátor přenosové možnosti rozhraní .NET
 
@@ -19,7 +19,7 @@ Po převodu projektu na cílnovou platformu, jako je .NET Core, můžete použí
 
 ## <a name="common-targets"></a>Společné cíle
 
-- [.NET Core](../../core/index.md): Má modulární návrh, zaměstnává vedle sebe a zaměřuje se na scénáře napříč platformami. Vedle sebe umožňuje přijmout nové verze .NET Core bez přerušení jiných aplikací. Pokud je vaším cílem přenést aplikaci na rozhraní .NET Core podporující různé platformy, je to doporučený cíl.
+- [.NET Core](../../core/index.yml): Má modulární návrh, zaměstnává vedle sebe a zaměřuje se na scénáře napříč platformami. Vedle sebe umožňuje přijmout nové verze .NET Core bez přerušení jiných aplikací. Pokud je vaším cílem přenést aplikaci na rozhraní .NET Core podporující různé platformy, je to doporučený cíl.
 - . [NET Standard](../../standard/net-standard.md): Zahrnuje rozhraní API standardu .NET, která jsou k dispozici ve všech implementacích rozhraní .NET. Pokud je vaším cílem, aby vaše knihovna běžet na všech platformách podporovaných rozhraním .NET, je to doporučeno cíl.
 - [ASP.NET Core](/aspnet/core): Moderní webový rámec postavený na .NET Core. Pokud je vaším cílem přenést webovou aplikaci do služby .NET Core pro podporu více platforem, je to doporučený cíl.
 - Rozšíření .NET Core + [Platform Extensions](../../core/porting/windows-compat-pack.md): Kromě sady Windows Compatibility Pack obsahuje rozhraní .NET Core API, která poskytuje mnoho dostupných technologií rozhraní .NET Framework. Toto je doporučený cíl pro přenesení aplikace z rozhraní .NET Framework do .NET Core ve Windows.

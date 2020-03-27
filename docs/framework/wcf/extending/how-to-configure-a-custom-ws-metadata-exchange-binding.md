@@ -5,12 +5,12 @@ helpviewer_keywords:
 - WS-Metadata Exchange [WCF]
 - WS-Metadata Exchange [WCF], configuring a custom binding
 ms.assetid: cdba4d73-da64-4805-bc56-9822becfd1e4
-ms.openlocfilehash: 4e0c583eeef4bf068c08b273c833506ce80cbc3a
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 9676ae4053553b84488602627b28790aae22eff6
+ms.sourcegitcommit: 59e36e65ac81cdd094a5a84617625b2a0ff3506e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79185598"
+ms.lasthandoff: 03/27/2020
+ms.locfileid: "80345285"
 ---
 # <a name="how-to-configure-a-custom-ws-metadata-exchange-binding"></a>Postupy: Konfigurace vlastních vazeb protokolu WS-Metadata Exchange
 Toto téma vám vysvětlí, jak nakonfigurovat vlastní vazby výměny ws-metadata. Windows Communication Foundation (WCF) obsahuje čtyři systémem definované vazby metadat, ale můžete publikovat metadata pomocí libovolné vazby, které chcete. Toto téma vám ukáže, jak `wsHttpBinding`publikovat metadata pomocí . Tato vazba poskytuje možnost vystavení metadat bezpečným způsobem. Kód v tomto článku je založen na [začínáme](../samples/getting-started-sample.md).  
@@ -32,8 +32,8 @@ Toto téma vám vysvětlí, jak nakonfigurovat vlastní vazby výměny ws-metada
 2. Přidejte `behaviorConfiguration` atribut k výrobníznačce, která odkazuje na toto nové chování:  
   
     ```xml  
-    <service        name="Microsoft.ServiceModel.Samples.CalculatorService"  
-    behaviorConfiguration="CalculatorServiceBehavior">
+    <service name="Microsoft.ServiceModel.Samples.CalculatorService"  
+    behaviorConfiguration="CalculatorServiceBehavior" />
     ```  
   
 3. Přidejte koncový bod metadat určující mex `wsHttpBinding` jako adresu, <xref:System.ServiceModel.Description.IMetadataExchange> jako vazbu a jako smlouvu:  

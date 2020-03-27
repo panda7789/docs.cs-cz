@@ -1,14 +1,14 @@
 ---
 title: Co je model builder a jak to funguje?
 description: Jak používat ML.NET Model Builder automaticky trénovat model strojového učení
-ms.date: 01/07/2020
+ms.date: 03/25/2020
 ms.custom: overview, mlnet-tooling
-ms.openlocfilehash: cff4601843ec9ca7201ea7dbdbfbcfa18f50e46e
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 9cf66455109908ebd9fc10e62cf4f067609b57d9
+ms.sourcegitcommit: 59e36e65ac81cdd094a5a84617625b2a0ff3506e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "79399222"
+ms.lasthandoff: 03/27/2020
+ms.locfileid: "80344769"
 ---
 # <a name="what-is-model-builder-and-how-does-it-work"></a>Co je model builder a jak to funguje?
 
@@ -23,7 +23,7 @@ K používání modelového tvůrce nepotřebujete odborné znalosti strojového
 > [!NOTE]
 > Tvůrce modelů je momentálně ve verzi Preview.
 
-## <a name="scenarios"></a>Scénáře
+## <a name="scenario"></a>Scénář
 
 Můžete přinést mnoho různých scénářů model builder, generovat model strojového učení pro vaši aplikaci.
 
@@ -38,47 +38,41 @@ Scénář je popis typu předpověď, kterou chcete provést pomocí dat. Např�
 
 V Tvůrce modelů je třeba vybrat scénář. Typ scénáře závisí na typu předpověď, kterou se pokoušíte provést.
 
-#### <a name="predict-a-category-when-there-are-only-two-categories"></a>Předpovědět kategorii (pokud existují pouze dvě kategorie)
+#### <a name="text-classification"></a>Klasifikace textu
 
-Binární klasifikace se používá ke kategorizaci dat do dvou kategorií (ano/ne, pass/fail; true/false; positive/negative).
+Klasifikace se používá ke kategorizaci dat do kategorií.
 
 ![Diagram znázorňující příklady binární klasifikace včetně detekce podvodů, zmírnění rizika a screeningu aplikací](media/binary-classification-examples.png)
 
-Analýzu mínění lze použít k předvídání pozitivního nebo negativního mínění zpětné vazby od zákazníků. Je to příklad úlohy binární klasifikace strojového učení.
-
-Pokud váš scénář vyžaduje klasifikaci do dvou kategorií, můžete použít tuto šablonu s vlastní datovou sadou.
-
-#### <a name="predict-a-category-when-there-are-three-or-more-categories"></a>Předvídání kategorie (pokud existují tři nebo více kategorií)
-
-Klasifikace více tříd lze kategorizovat data do tří nebo více tříd.
-
 ![Příklady klasifikace více tříd, včetně klasifikace dokumentů a produktů, směrování lístků podpory a stanovení priorit problémů zákazníků](media/multiclass-classification-examples.png)
 
-Klasifikace problémů slouží ke kategorizaci zpětné vazby od zákazníků (například na GitHubu) pomocí názvu a popisu problému. Je to příklad vícetřídní klasifikace úlohy strojového učení.
-
-Pokud chcete data zařadit do kategorií do tří nebo více kategorií, můžete použít šablonu klasifikace problémů pro váš scénář.
-
-#### <a name="predict-a-number"></a>Předpovědět číslo
+#### <a name="value-prediction"></a>Predikce hodnoty
 
 Regrese se používá k předvídání čísel.
 
 ![Diagram znázorňující příklady regresní ceny, jako je predikce cen, prognóza prodeje a prediktivní údržba](media/regression-examples.png)
 
-Cenová předpověď může být použita k předvídání cen domů pomocí umístění, velikosti a dalších charakteristik domu. Je to příklad úlohy regrese strojového učení.
-
-Šablonu předpovědi ceny můžete použít pro váš scénář, pokud chcete předpovědět číselnou hodnotu s vlastní datovou sadou.
-
-#### <a name="classify-images-into-categories"></a>Klasifikace obrázků do kategorií
-
-Tento scénář je zvláštní případ klasifikace více tříd, kde vstupní data, která mají být kategorizována, je sada bitových kopií.
+#### <a name="image-classification"></a>Klasifikace obrázků
 
 Klasifikace obrázků lze použít k identifikaci obrázků různých kategorií. Například různé typy terénu nebo zvířat nebo výrobní vady.
 
-Šablonu klasifikace obrázků můžete použít pro váš scénář, pokud máte sadu obrázků a chcete je klasifikovat do různých kategorií.
+Scénář klasifikace obrázků můžete použít, pokud máte sadu obrázků a chcete je klasifikovat do různých kategorií.
 
-#### <a name="custom-scenario"></a>Vlastní scénář
+#### <a name="recommendation"></a>Doporučení
 
-Vlastní scénář umožňuje ručně zvolit scénář.
+Scénář doporučení předpovídá seznam navržených položek pro konkrétního uživatele na základě toho, jak podobné jsou jejich to se mi líbí a nelíbí ostatním uživatelům.
+
+Scénář doporučení můžete použít, pokud máte sadu uživatelů a sadu "produktů", jako jsou položky k nákupu, filmy, knihy nebo televizní pořady, spolu se sadou "hodnocení" uživatelů těchto produktů.
+
+## <a name="environment"></a>Prostředí
+
+Model strojového učení můžete trénovat místně na počítači nebo v cloudu v Azure.
+
+Při místním trénování pracujete v rámci omezení prostředků počítače (procesor, paměť a disk). Když trénujete v cloudu, můžete vertikálně navýšit kapacitu prostředků tak, aby splňovaly požadavky vašeho scénáře, zejména pro velké datové sady.
+
+Místní školení je podporováno pro všechny scénáře.
+
+Azure školení je podporována pro klasifikaci obrázků.
 
 ## <a name="data"></a>Data
 
@@ -113,14 +107,15 @@ Pro scénář předpověď ceny domu by funkce mohly být:
 
 Pokud ještě nemáte vlastní data, vyzkoušejte jednu z těchto datových sad:
 
-|Scénář|Úloha ML|Data|Popisek|Funkce|
+|Scénář|Příklad|Data|Popisek|Funkce|
 |-|-|-|-|-|
-|Predikce cen|Regrese|[údaje o jízdném taxislužby](https://github.com/dotnet/machinelearning-samples/blob/master/datasets/taxi-fare-train.csv)|Jízdné|Doba jízdy, vzdálenost|
-|Detekce anomálií|binární klasifikace|[údaje o prodeji produktů](https://github.com/dotnet/machinelearning-samples/blob/master/samples/csharp/getting-started/AnomalyDetection_Sales/SpikeDetection/Data/product-sales.csv)|Prodej produktů|Month|
-|Analýza mínění|binární klasifikace|[údaje o komentářích k webovým stránkám](https://raw.githubusercontent.com/dotnet/machinelearning/master/test/data/wikipedia-detox-250-line-data.tsv)|Popisek (0 při negativním sentimentu, 1 pozitivní)|Komentář, rok|
-|Odhalování podvodů|binární klasifikace|[Údaje o kreditní kartě](https://github.com/dotnet/machinelearning-samples/blob/master/samples/csharp/getting-started/BinaryClassification_CreditCardFraudDetection/CreditCardFraudDetection.Trainer/assets/input/creditcardfraud-dataset.zip)|Třída (1 v případě podvodného, 0 jinak)|Částka, V1-V28 (anonymizované funkce)|
-|Klasifikace textu|klasifikace více tříd|[Data problému GitHubu](https://github.com/dotnet/machinelearning-samples/blob/master/samples/csharp/end-to-end-apps/MulticlassClassification-GitHubLabeler/GitHubLabeler/Data/corefx-issues-train.tsv)|Oblast|Název, popis|
-|Klasifikace obrázků|klasifikace více tříd|[Květiny obrázky](http://download.tensorflow.org/example_images/flower_photos.tgz)|Typ květiny: sedmikráska, pampeliška, růže, slunečnice, tulipány|Samotná obrazová data|
+|Classification|Předvídání prodejních anomálií|[údaje o prodeji produktů](https://github.com/dotnet/machinelearning-samples/blob/master/samples/csharp/getting-started/AnomalyDetection_Sales/SpikeDetection/Data/product-sales.csv)|Prodej produktů|Month|
+||Předpovědět mínění o komentářích k webovým stránkám|[údaje o komentářích k webovým stránkám](https://raw.githubusercontent.com/dotnet/machinelearning/master/test/data/wikipedia-detox-250-line-data.tsv)|Popisek (0 při negativním sentimentu, 1 pozitivní)|Komentář, rok|
+||Předpovídat podvodné transakce kreditní kartou|[Údaje o kreditní kartě](https://github.com/dotnet/machinelearning-samples/blob/master/samples/csharp/getting-started/BinaryClassification_CreditCardFraudDetection/CreditCardFraudDetection.Trainer/assets/input/creditcardfraud-dataset.zip)|Třída (1 v případě podvodného, 0 jinak)|Částka, V1-V28 (anonymizované funkce)|
+||Předvídejte typ problému v úložišti GitHub|[Data problému GitHubu](https://github.com/dotnet/machinelearning-samples/blob/master/samples/csharp/end-to-end-apps/MulticlassClassification-GitHubLabeler/GitHubLabeler/Data/corefx-issues-train.tsv)|Oblast|Název, popis|
+|Predikce hodnoty|Předpovědět cenu jízdného taxi|[údaje o jízdném taxislužby](https://github.com/dotnet/machinelearning-samples/blob/master/datasets/taxi-fare-train.csv)|Jízdné|Doba jízdy, vzdálenost|
+|Klasifikace obrázků|Předpovědět kategorii problému|[obrázky květin](http://download.tensorflow.org/example_images/flower_photos.tgz)|Typ květiny: sedmikráska, pampeliška, růže, slunečnice, tulipány|Samotná obrazová data|
+|Doporučení|Předvídejte filmy, které se někomu budou líbit|[hodnocení filmů](http://files.grouplens.org/datasets/movielens/ml-latest-small.zip)|Uživatelé, Filmy|Ratings|
 
 ## <a name="train"></a>Trénování
 
@@ -153,7 +148,7 @@ Tato čísla jsou pouze vodítkem. Přesná délka tréninku závisí na:
 - počet prvků (sloupců), které se používají jako vstup do modelu
 - typ sloupců
 - úloha ML
-- výkon procesoru, disku a paměti stroje používaného pro trénování
+- výkon procesoru, disku a paměti počítače používaného pro trénování
 
 ## <a name="evaluate"></a>Vyhodnotit
 
@@ -165,13 +160,13 @@ Tvůrce modelů rozdělí trénovací data do trénovací sady a testovací sady
 
 Scénář se mapuje na úlohu strojového učení. Každý úkol ML má vlastní sadu metrik hodnocení.
 
-#### <a name="regression-for-example-price-prediction"></a>Regrese (například Cenová předpověď)
+#### <a name="value-prediction"></a>Predikce hodnoty
 
-Výchozí metrika pro regresní problémy je RSquared, hodnota RSquared rozsahy mezi 0 a 1. 1 je nejlepší možná hodnota, nebo jinými slovy, čím blíže hodnota RSquared na 1, tím lépe váš model je výkon.
+Výchozí metrika pro problémy s předpovědí hodnot je RSquared, hodnota RSquared rozsahy mezi 0 a 1. 1 je nejlepší možná hodnota, nebo jinými slovy, čím blíže hodnota RSquared na 1, tím lépe váš model je výkon.
 
-Další metriky hlášené, jako je absolutní ztráta, kvadratická ztráta a ztráta RMS, jsou další metriky, které lze použít k pochopení toho, jak si váš model vede, a k jeho porovnání s jinými regresními modely.
+Další metriky hlášené, jako je absolutní ztráta, kvasitová ztráta a ztráta RMS jsou další metriky, které lze použít k pochopení toho, jak si model vede, a jeho porovnání s jinými modely předpovědi hodnot.
 
-#### <a name="binary-classification-for-example-sentiment-analysis"></a>Binární klasifikace (například analýza mínění)
+#### <a name="classification-2-categories"></a>Klasifikace (2 kategorie)
 
 Výchozí metrika pro problémy s klasifikací je přesnost. Přesnost definuje podíl správné předpovědi modelu je dělat přes testovací datové sady. Čím blíže k 100% nebo 1,0, tím lépe.
 
@@ -179,7 +174,7 @@ Další hlášené metriky, například AUC (Plocha pod křivkou), která měř�
 
 Další metriky, jako je skóre F1, lze použít k řízení rovnováhy mezi přesností a odvoláním.
 
-#### <a name="multi-class-classification-for-example-issue-classification-image-classification"></a>Klasifikace více tříd (například klasifikace vydání, klasifikace obrázků)
+#### <a name="classification-3-categories"></a>Klasifikace (3+ kategorie)
 
 Výchozí metrika pro klasifikaci více tříd je Mikro přesnost. Čím blíže je mikropřesnost na 100% nebo 1,0, tím lepší je.
 
@@ -196,7 +191,7 @@ Další informace naleznete v tématu [metriky vyhodnocení modelu](resources/me
 
 Pokud skóre výkonu modelu není tak dobré, jak chcete, můžete:
 
-- Trénujte delší dobu. S více času, automatizovaný strojové učení motor vyzkoušet další algoritmy a nastavení.
+- Trénujte delší dobu. S více času, automatizované strojové učení motor experimenty s více algoritmy a nastavení.
 
 - Přidejte další data. Někdy množství dat není dostatečná pro trénování vysoce kvalitní model strojového učení.
 
