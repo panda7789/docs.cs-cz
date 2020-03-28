@@ -3,18 +3,28 @@
 - name: Přehled
   expanded: true
   items:
-    - name: rozhraní API
-      items:
-        - name: Rozhraní ML.NET API
-          href: how-does-mldotnet-work.md
     - name: Model Builder a rozhraní příkazového řádku
       items:
         - name: Nástroj ML.NET Model Builder
           href: automate-training-with-model-builder.md
         - name: Rozhraní příkazového řádku ML.NET
           href: automate-training-with-cli.md
+    - name: rozhraní API
+      items:
+        - name: Rozhraní ML.NET API
+          href: how-does-mldotnet-work.md
 - name: Kurzy
   items:
+    - name: Model Builder a rozhraní příkazového řádku
+      items:
+        - name: Předpovídání cen (Model Builder a regrese)
+          href: tutorials/predict-prices-with-model-builder.md
+        - name: Analýza mínění pomocí rozhraní příkazového řádku ML.NET
+          href: tutorials/sentiment-analysis-cli.md
+        - name: Analýza mínění v Razor Pages (Model Builder a binární klasifikace)
+          href: tutorials/sentiment-analysis-model-builder.md
+        - name: Kategorizace porušení stavu (Model Builder a vícetřídová klasifikace)
+          href: tutorials/health-violation-classification-model-builder.md
     - name: rozhraní API
       items:
         - name: Přehled
@@ -41,16 +51,6 @@
           href: tutorials/object-detection-onnx.md
         - name: Klasifikace mínění pomocí TensorFlow (klasifikace textu)
           href: tutorials/text-classification-tf.md
-    - name: Model Builder a rozhraní příkazového řádku
-      items:
-        - name: Předpovídání cen (Model Builder a regrese)
-          href: tutorials/predict-prices-with-model-builder.md
-        - name: Analýza mínění pomocí rozhraní příkazového řádku ML.NET
-          href: tutorials/sentiment-analysis-cli.md
-        - name: Analýza mínění v Razor Pages (Model Builder a binární klasifikace)
-          href: tutorials/sentiment-analysis-model-builder.md
-        - name: Kategorizace porušení stavu (Model Builder a vícetřídová klasifikace)
-          href: tutorials/health-violation-classification-model-builder.md
     - name: Infer.NET
       items:
         - name: Pravděpodobnostní programování s Infer.NET
@@ -69,6 +69,16 @@
       href: resources/improve-machine-learning-model-ml-net.md
 - name: Návody
   items:
+    - name: Model Builder a rozhraní příkazového řádku
+      items:
+        - name: Načtení dat do Model Builderu
+          href: how-to-guides/load-data-model-builder.md
+        - name: Instalace nástroje Model Builder
+          href: how-to-guides/install-model-builder.md
+        - name: Instalace rozhraní příkazového řádku
+          href: how-to-guides/install-ml-net-cli.md
+        - name: Použití rozhraní API pro automatizované strojové učení
+          href: how-to-guides/how-to-use-the-automl-api.md
     - name: rozhraní API
       items:
         - name: Načtení dat
@@ -97,16 +107,6 @@
               href: how-to-guides/serve-model-serverless-azure-functions-ml-net.md
             - name: Nasazení modelu do webového rozhraní API
               href: how-to-guides/serve-model-web-api-ml-net.md
-    - name: Model Builder a rozhraní příkazového řádku
-      items:
-        - name: Načtení dat do Model Builderu
-          href: how-to-guides/load-data-model-builder.md
-        - name: Instalace nástroje Model Builder
-          href: how-to-guides/install-model-builder.md
-        - name: Instalace rozhraní příkazového řádku
-          href: how-to-guides/install-ml-net-cli.md
-        - name: Použití rozhraní API pro automatizované strojové učení
-          href: how-to-guides/how-to-use-the-automl-api.md
 - name: Odkaz
   items:
     - name: Reference k rozhraní ML.NET API

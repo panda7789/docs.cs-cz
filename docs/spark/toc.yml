@@ -21,6 +21,8 @@
       href: tutorials/batch-processing.md
     - name: Strukturované streamování
       href: tutorials/streaming.md
+    - name: Analýza mínění
+      href: tutorials/ml-sentiment-analysis.md
 - name: Návody
   items:
     - name: Ladění aplikace
