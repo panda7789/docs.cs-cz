@@ -1,6 +1,8 @@
-- name: Průvodce platformou .NET Core
-  href: index.md
-- name: O platformě .NET Core
+- name: Dokumentace k .NET Core
+  href: index.yml
+- name: Úvod do .NET Core
+  href: introduction.md
+- name: Přehled .NET Core
   href: about.md
 - name: Instalace
   items:
