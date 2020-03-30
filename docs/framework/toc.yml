@@ -1,4 +1,4 @@
-- name: Průvodce rozhraním .NET Framework
+- name: Dokumentace k .NET Framework
   href: index.yml
 - name: Přehled rozhraní .NET Framework
   href: get-started/overview.md
