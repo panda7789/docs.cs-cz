@@ -2,32 +2,35 @@
 title: Úvod a přehled .NET Core
 description: .NET Core je modulární, vysoce výkonná implementace rozhraní .NET pro vytváření aplikací pro Windows, Linux a macOS. Další informace o .NET Core pro started a) začínáme.
 author: richlander
-ms.date: 03/25/2020
+ms.date: 03/26/2020
 ms.custom: updateeachrelease
-ms.openlocfilehash: edd3864d3c3c5c0e9fd8c26ee806ffc9e100423d
-ms.sourcegitcommit: 59e36e65ac81cdd094a5a84617625b2a0ff3506e
+ms.openlocfilehash: a20cdda5cbd366d04e7ee9e8df3d1b15d10c1f4a
+ms.sourcegitcommit: a9b8945630426a575ab0a332e568edc807666d1b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "80351699"
+ms.lasthandoff: 03/30/2020
+ms.locfileid: "80391158"
 ---
 # <a name="introduction-to-net-core"></a>Úvod do rozhraní .NET Core
 
-[.NET Core](about.md) je [open-source](https://github.com/dotnet/runtime/blob/master/LICENSE.TXT), univerzální vývojová platforma spravovaná společností Microsoft a komunitou .NET na [GitHubu](https://github.com/dotnet/core). Je to multiplatformní (podporující Windows, macOS a Linux) a dá se použít k vytváření aplikací pro zařízení, cloud a IoT.
+[.NET Core](about.md) je [open-source,](https://github.com/dotnet/runtime/blob/master/LICENSE.TXT)univerzální vývojová platforma. Můžete vytvářet aplikace .NET Core pro procesory Windows, macOS a Linux pro procesory x64, x86, ARM32 a ARM64 pomocí více programovacích jazyků. Architektury a rozhraní API jsou k dispozici pro [cloud](/aspnet/core/), [IoT](/archive/msdn-magazine/2019/august/net-core-cross-platform-iot-programming-with-net-core-3-0), [klientské ui](/dotnet/desktop-wpf/overview/index)a [strojové učení](/dotnet/machine-learning/).
+
+[Stáhněte si sdk jádra .NET a](https://dotnet.microsoft.com/download) vyzkoušejte v počítači .NET Core. Nejnovější verze je [.NET Core 3.1](https://devblogs.microsoft.com/dotnet/announcing-net-core-3-1/).
 
 ## <a name="download-net-core"></a>Stáhnout jádro rozhraní .NET
 
-Stáhněte si [sdk .NET Core SDK](https://dotnet.microsoft.com/download) a vyzkoušejte .NET Core na počítači se systémem Windows, macOS nebo Linux. Pokud dáváte přednost použití kontejnerů Dockeru, navštivte [centrum .NET Core Docker Hub](https://hub.docker.com/_/microsoft-dotnet-core/).
+Jádro .NET můžete získat následujícími způsoby:
 
-## <a name="net-core-31"></a>.NET Jádro 3.1
-
-Nejnovější verze je .NET Core 3.1. 3.1 zahrnuje drobná vylepšení oproti .NET Core 3.0, ale .NET Core 3.1 je [dlouhodobě podporovaná verze](https://dotnet.microsoft.com/platform/support/policy/dotnet-core). Další informace o verzi .NET Core 3.1 naleznete [v tématu Co je nového v rozhraní .NET Core 3.1](./whats-new/dotnet-core-3-1.md).
-
-Pokud hledáte jinou verzi rozhraní .NET Core, všechny verze jsou k dispozici na [.NET Core ke stažení](https://dotnet.microsoft.com/download/dotnet-core).
+* [Instalační programy pro Windows a macOS](https://dotnet.microsoft.com/download)
+* [Balíčky linuxu](https://docs.microsoft.com/dotnet/core/install/linux-package-managers)
+* [Kontejnery Dockeru](https://hub.docker.com/_/microsoft-dotnet-core/)
+* [Zipy a dehtové kuličky](https://dotnet.microsoft.com/download/dotnet-core/3.1)
+* [Instalace skriptů](https://dotnet.microsoft.com/download/dotnet-core/scripts)
+* [Poznámky k verzi](https://github.com/dotnet/core/tree/master/release-notes)
 
 ## <a name="create-your-first-application"></a>Vytvoření první aplikace
 
-Po instalaci sady .NET Core SDK otevřete příkazový řádek. Chcete-li `dotnet` vytvořit a spustit aplikaci jazyka C#, zadejte následující příkazy:
+Po instalaci sady .NET Core SDK otevřete příkazový řádek. K vytvoření a spuštění aplikace použijte následující příkazy:
 
 ```dotnetcli
 dotnet new console
@@ -40,13 +43,16 @@ Měl by se zobrazit následující výstup:
 Hello World!
 ```
 
+## <a name="contribute"></a>Přispět
+
+.NET Core je otevřená platforma. Všichni jsou vítáni k účasti.
+
+* Soubor problémy s produkty a otázky na [Developer Community](https://developercommunity.visualstudio.com/spaces/61/index.html).
+* Příspěvky na produkt by měly být provedeny v jednom z úložišť projektů, jako je [dotnet/runtime](https://github.com/dotnet/runtime), [dotnet/sdk](https://github.com/dotnet/sdk), [dotnet/rosyln](https://github.com/dotnet/roslyn)nebo [aspnetcore](https://github.com/dotnet/aspnetcore). Další informace naleznete [v tématu úložiště jádra .NET](https://github.com/dotnet/core/blob/master/Documentation/core-repos.md).
+
 ## <a name="support"></a>Podpora
 
-.NET Core je [podporován společností Microsoft](https://dotnet.microsoft.com/platform/support/policy) v systémech Windows, macOS a Linux. Je aktualizován pro zabezpečení a kvalitu několikrát do roka, obvykle měsíčně.
-
-Binární distribuce .NET Core jsou sestavené a testované na serverech spravovaných společností Microsoft v Azure a podporované stejně jako všechny produkty společnosti Microsoft.
-
-[Red Hat podporuje .NET Core](http://redhatloves.net/) na Red Hat Enterprise Linux (RHEL). Red Hat staví .NET Core ze zdroje a zpřístupňuje jej v [Red Hat Software Collections](https://developers.redhat.com/products/softwarecollections/overview/). Red Hat a Microsoft spolupracují, aby zajistily, že .NET Core funguje dobře na RHEL.
+.NET Core je podporován společností Microsoft v systémech Windows, macOS a Linux a Red Hat na Red Hat Enterprise Linux.
 
 ## <a name="next-steps"></a>Další kroky
 

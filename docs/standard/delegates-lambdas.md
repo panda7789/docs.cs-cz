@@ -6,12 +6,12 @@ ms.author: wiwagn
 ms.date: 06/20/2016
 ms.technology: dotnet-standard
 ms.assetid: fe2e4b4c-6483-4106-a4b4-a33e2e306591
-ms.openlocfilehash: 0abcc73e31eab89c422513acf778bc8bd092e788
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 34bfa4c6007ec771f784e927675f4e24d52e194f
+ms.sourcegitcommit: a9b8945630426a575ab0a332e568edc807666d1b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "75345544"
+ms.lasthandoff: 03/30/2020
+ms.locfileid: "80391231"
 ---
 # <a name="delegates-and-lambdas"></a>Delegáty a výrazy lambda
 
@@ -46,9 +46,9 @@ public class Program
 
 Za účelem zjednodušení procesu vývoje obsahuje rozhraní .NET sadu typů delegátů, které mohou programátoři znovu použít a nemusí vytvářet nové typy. Jedná `Func<>`se `Action<>` `Predicate<>`o , a , a mohou být použity na různých místech v rámci rozhraní API .NET bez nutnosti definovat nové typy delegátů. Samozřejmě, tam jsou některé rozdíly mezi těmito třemi, jak uvidíte v jejich podpisy, které většinou mají co do činění s tím, jak byly určeny k použití:
 
-* `Action<>`se používá, když je potřeba provést akci pomocí argumentů delegáta.
-* `Func<>`se obvykle používá, když máte transformace na skladě, to znamená, že je třeba transformovat argumenty delegáta do jiného výsledku. Projekce jsou toho ukázkovým příkladem.
-* `Predicate<>`se používá, když potřebujete zjistit, zda argument splňuje podmínku delegáta. To může být také `Func<T, bool>`napsáno jako .
+* `Action<>`se používá, když je potřeba provést akci pomocí argumentů delegáta. Metoda zapouzdřuje nevrátí hodnotu.
+* `Func<>`se obvykle používá, když máte transformace na skladě, to znamená, že je třeba transformovat argumenty delegáta do jiného výsledku. Projekce jsou toho ukázkovým příkladem. Metoda, kterou zapouzdřuje vrátí zadanou hodnotu.
+* `Predicate<>`se používá, když potřebujete zjistit, zda argument splňuje podmínku delegáta. Může být také zapsán `Func<T, bool>`jako , což znamená, že metoda vrátí logickou hodnotu.
 
 Nyní můžeme vzít náš příklad výše a `Func<>` přepsat jej pomocí delegáta namísto vlastního typu. Program bude pokračovat v spuštění přesně stejný.
 
