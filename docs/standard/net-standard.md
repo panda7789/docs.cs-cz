@@ -5,12 +5,12 @@ ms.date: 02/13/2020
 ms.technology: dotnet-standard
 ms.custom: updateeachrelease
 ms.assetid: c044882c-af15-45f2-96d1-534557a5ee9b
-ms.openlocfilehash: 00b40b771a8608bad7e3f992e3c99367ff6bb131
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: e6e573056132c25b912ff1eb76b9b055f6e47cfe
+ms.sourcegitcommit: 2ff49dcf9ddf107d139b4055534681052febad62
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "77452588"
+ms.lasthandoff: 03/31/2020
+ms.locfileid: "80438220"
 ---
 # <a name="net-standard"></a>.NET Standard
 
@@ -100,7 +100,7 @@ Správa verzí standardu .NET je důležitá pro použití. Vzhledem k tomu, .NE
 - Používejte knihovny, které jsou závislé na stejné verzi .NET Standard nebo nižší.
 - Pokud najdete knihovnu, která závisí na vyšší verzi .NET Standard, musíte buď přijmout stejnou verzi, nebo se rozhodnout tuto knihovnu nepoužívat.
 
-## <a name="targeting-net-standard"></a>Cílení na standard .NET
+## <a name="target-net-standard"></a>Cílový standard .NET
 
 Standardní [knihovny .NET](../core/tutorials/libraries.md) můžete vytvářet `netstandard` pomocí kombinace frameworku a metabalíčku NETStandard.Library. Můžete zobrazit příklady [cílení na standard .NET pomocí nástrojů .NET Core](../core/packages.md).
 
@@ -118,7 +118,7 @@ Pokud potřebujete jenom využívat knihovny .NET Standard 2.0 ve vašich projek
 
 ## <a name="comparison-to-portable-class-libraries"></a>Porovnání s přenosnými knihovnami tříd
 
-.NET Standard je náhradou za [knihovny přenosných tříd (PCL).](./cross-platform/cross-platform-development-with-the-portable-class-library.md) Standard .NET standard vylepšuje prostředí vytváření přenosných knihoven tím, že vytváří standardní bcl a v důsledku toho vytváří větší jednotnost v implementacích .NET. Knihovna, která cílí na standard .NET, je PCL nebo "PCL založený na standardu.NET". Stávající PCL s jsou "PCL založené na profilech".
+.NET Standard je náhradou za [knihovny přenosných tříd (PCL).](./cross-platform/cross-platform-development-with-the-portable-class-library.md) .NET Standard vylepšuje prostředí vytváření přenosných knihoven tím, že vytváří standardní bcl a v důsledku toho vytváří větší jednotnost v implementacích rozhraní .NET. Knihovna, která cílí na standard .NET, je PCL nebo "PCL založený na standardu.NET". Stávající PCL s jsou "PCL založené na profilech".
 
 Profily .NET Standard a PCL byly vytvořeny pro podobné účely, ale také se liší klíčovými způsoby.
 
@@ -130,7 +130,7 @@ Rozdíly:
 
 - .NET Standard je kurátorská sada rozhraní API, zatímco profily PCL jsou definovány průsečíky existujících platforem.
 - .NET Standardní lineárské verze, zatímco profily PCL nikoli.
-- Profily PCL představují platformy společnosti Microsoft, zatímco standard .NET je nezávislá na platformě.
+- Profily PCL představují platformy společnosti Microsoft, zatímco rozhraní .NET Standard je nezávislá na platformě.
 
 ### <a name="pcl-compatibility"></a>Kompatibilita s PCL
 
@@ -143,7 +143,7 @@ Kompatibilita pcl založené na profilu je poskytována balíčkem [Microsoft.NE
 
 Pcl založené na profilu `netstandard` jsou zabaleny tak, jak jsou snadněji spotřebovávat než obvykle balené pcl založené na profilu. `netstandard`balení je kompatibilní se stávajícími uživateli.
 
-Můžete zobrazit sadu profilů PCL, které jsou kompatibilní se standardem .NET:
+Můžete zobrazit sadu profilů PCL, které jsou kompatibilní se standardem .NET Standard:
 
 | Profil PCL | .NET Standard | Platformy PCL
 |:-----------:|:-------------:|------------------------------------------------------------------------------

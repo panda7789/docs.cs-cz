@@ -6,12 +6,12 @@ ms.author: luquinta
 ms.date: 11/21/2019
 ms.topic: tutorial
 ms.custom: mvc,mlnet-tooling
-ms.openlocfilehash: e94313277a025d482105a6d78b6608d4df442c43
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 6a36989f9453208e436ef8a4db2d4440aa0a1382
+ms.sourcegitcommit: 2ff49dcf9ddf107d139b4055534681052febad62
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "79185844"
+ms.lasthandoff: 03/31/2020
+ms.locfileid: "80438193"
 ---
 # <a name="tutorial-classify-the-severity-of-restaurant-health-violations-with-model-builder"></a>Kurz: Klasifikujte závažnost porušení stavu restaurace s Model Builder
 
@@ -150,6 +150,6 @@ Blahopřejeme! Úspěšně jste vytvořili model strojového učení, abyste kat
 
 Další informace o tématech uvedených v tomto kurzu naleznete v následujících zdrojích:
 
-- [Scénáře tvůrce modelů](../automate-training-with-model-builder.md#scenarios)
+- [Scénáře tvůrce modelů](../automate-training-with-model-builder.md#scenario)
 - [Klasifikace více tříd](../resources/glossary.md#multiclass-classification)
 - [Metriky modelu klasifikace více tříd](../resources/metrics.md#evaluation-metrics-for-multi-class-classification)

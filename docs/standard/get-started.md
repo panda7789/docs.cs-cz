@@ -5,12 +5,12 @@ author: cartermp
 ms.date: 01/21/2020
 ms.technology: dotnet-standard
 ms.assetid: 81c07080-acdf-4aef-a66d-0ab52fab2c04
-ms.openlocfilehash: af0ce454a986f22dfb00888cab6e34901930c5a9
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: f1d5854d8bddea21bbb8a0a7fa032c9fbd15f3d5
+ms.sourcegitcommit: 2ff49dcf9ddf107d139b4055534681052febad62
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "77124257"
+ms.lasthandoff: 03/31/2020
+ms.locfileid: "80438182"
 ---
 # <a name="get-started"></a>Začínáme
 
@@ -18,21 +18,23 @@ Existuje několik způsobů, jak začít s rozhraním .NET. Vzhledem k tomu, že
 
 ## <a name="get-started-using-net-languages"></a>Začínáme používat jazyky .NET
 
-* Články [začínáme v c#](../csharp/getting-started/index.md) a [kurzy jazyka C# poskytují způsoby,](../csharp/tutorials/index.md) jak začít způsobem zaměřeným na C#.
+Výukové lekce začínáme v jazycích C#, Visual Basic a F#, najdete v tématu:
 
-* Kurzy [Začínáme f#](../fsharp/get-started/index.md) pokrývají tři primární způsoby, jak můžete použít F#: s Visual Studio, Visual Studio Code nebo nástroje příkazového řádku.
-
-* Články [Začínáme v jazyce Visual Basic](../visual-basic/getting-started/index.md) poskytují vodítka pro použití jazyka Visual Basic v sadě Visual Studio.
+* [Začínáme v C#](../csharp/getting-started/index.md)
+* [C# výukové programy](../csharp/tutorials/index.md)
+* [F# začínáme výukové programy](../fsharp/get-started/index.md)
+* [Začínáme v jazyce Visual Basic](../visual-basic/getting-started/index.md)
 
 ## <a name="get-started-using-net-core"></a>Začínáme používat rozhraní .NET Core
 
-* [Začínáme s rozhraním .NET Core](../core/get-started.md) a poskytuje přehled článků, které ukazují, jak začít s rozhraním .NET Core v různých operačních systémech a pomocí různých nástrojů.
+Pokyny specifické pro rozhraní .NET core naleznete v těchto tématech:
 
-* [Kurzy .NET Core](../core/tutorials/index.md) podrobně popisují, jak můžete začít s rozhraním .NET Core pomocí operačního systému a nástrojů, které si vyberete.
+* [Začínáme s rozhraním .NET Core](../core/get-started.md)
+* [Kurzy jádra .NET](../core/tutorials/index.md)
 
 ## <a name="get-started-using-net-standard"></a>Začínáme používat standard .NET
 
-* Úvodní kurz najdete v tématu [Vytvoření knihovny .NET Standard v sadě Visual Studio](../core/tutorials/library-with-visual-studio.md).
+Úvodní kurz najdete v tématu [Vytvoření knihovny .NET Standard v sadě Visual Studio](../core/tutorials/library-with-visual-studio.md).
 
 ## <a name="get-started-using-net-core-on-docker"></a>Začínáme používat rozhraní .NET Core v Dockeru
 
