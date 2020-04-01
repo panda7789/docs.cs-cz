@@ -18,12 +18,12 @@ helpviewer_keywords:
 - isolated storage, types
 - user authentication, isolated storage
 ms.assetid: 14812988-473f-44ae-b75f-fd5c2f21fb7b
-ms.openlocfilehash: 99e1f3f96465d05c100a0dbb2bc5218810c33754
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: d85625b99603c0bd81346cf2076b8efe0e1bba42
+ms.sourcegitcommit: 79b0dd8bfc63f33a02137121dd23475887ecefda
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "78159426"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80523885"
 ---
 # <a name="types-of-isolation"></a>Typy izolace
 Přístup k izolovanému úložišti je vždy omezen na uživatele, který jej vytvořil. K implementaci tohoto typu izolace používá soubor RUNTIME společného jazyka stejnou představu o identitě uživatele, kterou rozpozná operační systém, což je identita přidružená k procesu, ve kterém je kód spuštěn při otevření úložiště. Tato identita je ověřená identita uživatele, ale zosobnění může způsobit dynamickou změnu identity aktuálního uživatele.  
@@ -32,7 +32,7 @@ Přístup k izolovanému úložišti je vždy omezen na uživatele, který jej v
   
 - Identita domény představuje důkaz aplikace, která v případě webové aplikace může být úplná adresa URL. U kódu hostovaného prostředím může být identita domény založena na cestě k adresáři aplikace. Pokud například spustitelný soubor běží z cesty C:\Office\MyApp.exe, bude identita domény C:\Office\MyApp.exe.  
   
-- Identita sestavení je důkazem sestavení. To může pocházet z kryptografického digitálního podpisu, což může být [silný název](../assembly/strong-named.md)sestavení , vydavatel softwaru sestavení nebo jeho identita url. Pokud má sestavení silný název i identitu vydavatele softwaru, použije se identita vydavatele softwaru. Pokud sestavení pochází z Internetu a je nepodepsané, identita adresy URL se používá. Další informace o sestaveních a silných názvech naleznete v [tématu Programování pomocí sestavení](../assembly/program.md).  
+- Identita sestavení je důkazem sestavení. To může pocházet z kryptografického digitálního podpisu, což může být [silný název](../assembly/strong-named.md)sestavení , vydavatel softwaru sestavení nebo jeho identita url. Pokud má sestavení silný název i identitu vydavatele softwaru, použije se identita vydavatele softwaru. Pokud sestavení pochází z Internetu a je nepodepsané, identita adresy URL se používá. Další informace o sestaveních a silných názvech naleznete v [tématu Programování pomocí sestavení](/dotnet/standard/assembly/index).  
   
 - Roamingová úložiště se přesouvají s uživatelem, který má cestovní profil uživatele. Soubory jsou zapsány do síťového adresáře a stahovány do libovolného počítače, ke které se uživatel přihlásí. Další informace o cestovních <xref:System.IO.IsolatedStorage.IsolatedStorageScope.Roaming?displayProperty=nameWithType>uživatelských profilech naleznete v tématu .  
   
@@ -73,7 +73,7 @@ Přístup k izolovanému úložišti je vždy omezen na uživatele, který jej v
   
 <a name="UserDomainAssembly"></a>
 ## <a name="isolation-by-user-domain-and-assembly"></a>Izolace podle uživatele, domény a sestavení  
- Pokud vaše aplikace používá sestavení jiného výrobce, které vyžaduje úložiště soukromých dat, můžete použít izolované úložiště k ukládání soukromých dat. Izolace podle uživatele, domény a sestavení zajišťuje, že pouze kód v daném sestavení přístup k datům a pouze v případě, že sestavení je používáno aplikací, která byla spuštěna při vytvoření úložiště sestavení a pouze v případě, že uživatel, pro kterého bylo úložiště vytvořeno, spustí Aplikace. Izolace podle uživatele, domény a sestavení udržuje sestavení jiného výrobce z úniku dat do jiných aplikací. Tento typ izolace by měla být výchozí volbou, pokud víte, že chcete použít izolované úložiště, ale nejste si jisti, jaký typ izolace použít. Volání statické <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetStore%2A> metody <xref:System.IO.IsolatedStorage.IsolatedStorageFile> a předávání v uživateli, <xref:System.IO.IsolatedStorage.IsolatedStorageScope> doméně a sestavení vrátí úložiště s tímto druhem izolace.  
+ Pokud vaše aplikace používá sestavení jiného výrobce, které vyžaduje úložiště soukromých dat, můžete použít izolované úložiště k ukládání soukromých dat. Izolace podle uživatele, domény a sestavení zajišťuje, že pouze kód v daném sestavení přístup k datům a pouze v případě, že sestavení je používán o aplikaci, která byla spuštěna při sestavení vytvořil úložiště a pouze v případě, že uživatel, pro kterého byl vytvořen úložiště spustí aplikaci. Izolace podle uživatele, domény a sestavení udržuje sestavení jiného výrobce z úniku dat do jiných aplikací. Tento typ izolace by měla být výchozí volbou, pokud víte, že chcete použít izolované úložiště, ale nejste si jisti, jaký typ izolace použít. Volání statické <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetStore%2A> metody <xref:System.IO.IsolatedStorage.IsolatedStorageFile> a předávání v uživateli, <xref:System.IO.IsolatedStorage.IsolatedStorageScope> doméně a sestavení vrátí úložiště s tímto druhem izolace.  
   
  Následující příklad kódu načte úložiště izolované uživatelem, doménou a sestavením. Úložiště lze přistupovat prostřednictvím objektu. `isoFile`  
   

@@ -16,14 +16,15 @@ helpviewer_keywords:
 - namespaces [.NET Framework], types
 - types, about types
 ms.assetid: 53c57c96-83e1-4ee3-9543-9ac832671a89
-ms.openlocfilehash: c574719da9b89b468b92b042e1f2b5b10fbe3c0d
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: ec078ea89befedd26ce205c724193935dd08b82a
+ms.sourcegitcommit: 79b0dd8bfc63f33a02137121dd23475887ecefda
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "79400489"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80523962"
 ---
-# <a name="common-type-system"></a>Obecný systém typů
+# <a name="common-type-system"></a>Běžný typový systém
+
 Společný systém typů definuje, jak jsou typy deklarovány, používány a spravovány v prostředí common language runtime a je také důležitou součástí podpory runtime pro integraci mezi jazyky. Systém běžného typu provádí následující funkce:  
   
 - Vytvoří rámec, který pomáhá povolit integraci mezi jazyky, bezpečnost typů a provádění vysoce výkonných kódů.  
@@ -32,20 +33,10 @@ Společný systém typů definuje, jak jsou typy deklarovány, používány a sp
   
 - Definuje pravidla, která musí jazyky dodržovat, což pomáhá zajistit, aby objekty napsané v různých jazycích mohly vzájemně komunikovat.  
   
-- Poskytuje knihovnu, která obsahuje primitivní <xref:System.Boolean>datové <xref:System.Byte> <xref:System.Char>typy <xref:System.Int32>(například , , , a <xref:System.UInt64>) používané při vývoji aplikací.  
+- Poskytuje knihovnu, která obsahuje primitivní <xref:System.Boolean>datové <xref:System.Byte> <xref:System.Char>typy <xref:System.Int32>(například , , , a <xref:System.UInt64>) používané při vývoji aplikací.
   
- Toto téma obsahuje následující oddíly:  
-  
-- [Typy v rozhraní .NET](#types_in_the_net_framework)  
-  
-- [Definice typů](#type_definitions)  
-  
-- [Členy typu](#type_members)  
-  
-- [Charakteristika typových členů](#characteristics_of_type_members)  
-  
-<a name="types_in_the_net_framework"></a>
-## <a name="types-in-net"></a>Typy v rozhraní .NET  
+## <a name="types-in-net"></a>Typy v rozhraní .NET
+
  Všechny typy v rozhraní .NET jsou typy hodnot nebo typy odkazů.  
   
  Typy hodnot jsou datové typy, jejichž objekty jsou reprezentovány skutečnou hodnotou objektu. Pokud je instanci typu hodnoty přiřazena proměnné, je této proměnné přidělena nová kopie hodnoty.  
@@ -54,18 +45,18 @@ Společný systém typů definuje, jak jsou typy deklarovány, používány a sp
   
  Běžný systém typů v rozhraní .NET podporuje následujících pět kategorií typů:  
   
-- [Třídy](#Classes)  
+- [Třídy](#classes)  
   
-- [Struktury](#Structures)  
+- [Struktury](#structures)  
   
-- [Výčty](#Enumerations)  
+- [Výčty](#enumerations)  
   
-- [Rozhraní](#Interfaces)  
+- [Rozhraní](#interfaces)  
   
-- [Delegáty](#Delegates)  
+- [Delegáty](#delegates)  
   
-<a name="Classes"></a>
-### <a name="classes"></a>Třídy  
+### <a name="classes"></a>Třídy
+
  Třída je typ odkazu, který lze odvodit přímo z jiné <xref:System.Object?displayProperty=nameWithType>třídy a který je implicitně odvozen z . Třída definuje operace, které může objekt (což je instance třídy) provádět (metody, události nebo vlastnosti) a data, která objekt obsahuje (pole). Přestože třída obecně obsahuje definici a implementaci (na rozdíl od rozhraní, například, které obsahují pouze definici bez implementace), může mít jeden nebo více členů, které nemají žádnou implementaci.  
   
  Následující tabulka popisuje některé charakteristiky, které může mít třída. Každý jazyk, který podporuje runtime poskytuje způsob, jak označit, že člen třídy nebo třídy má jednu nebo více z těchto vlastností. Jednotlivé programovací jazyky, které cílí na rozhraní .NET, však nemusí zpřístupnit všechny tyto vlastnosti.  
@@ -79,14 +70,14 @@ Společný systém typů definuje, jak jsou typy deklarovány, používány a sp
 |exportovány nebo neexportovány|Označuje, zda je třída viditelná mimo sestavení, ve kterém je definována. Tato charakteristika platí pouze pro třídy nejvyšší úrovně a nikoli pro vnořené třídy.|  
   
 > [!NOTE]
-> Třída může být také vnořena do nadřazené třídy nebo struktury. Vnořené třídy mají také vlastnosti členů. Další informace naleznete v [tématu Vnořené typy](#NestedTypes).  
+> Třída může být také vnořena do nadřazené třídy nebo struktury. Vnořené třídy mají také vlastnosti členů. Další informace naleznete v [tématu Vnořené typy](#nested-types).  
   
  Členové třídy, které nemají žádnou implementaci, jsou abstraktní členy. Třída, která má jeden nebo více abstraktních členů, je sama abstraktní; nové instance nelze vytvořit. Některé jazyky, které cílí na runtime, umožňují označit třídu jako abstraktní, i když žádný z jeho členů není abstraktní. Abstraktní třídu můžete použít, pokud chcete zapouzdřit základní sadu funkcí, které odvozené třídy mohou dědit nebo přepsat, pokud je to vhodné. Třídy, které nejsou abstraktní, jsou označovány jako konkrétní třídy.  
   
  Třída může implementovat libovolný počet rozhraní, ale může dědit pouze <xref:System.Object?displayProperty=nameWithType>z jedné základní třídy kromě , ze které všechny třídy dědí implicitně. Všechny třídy musí mít alespoň jeden konstruktor, který inicializuje nové instance třídy. Pokud explicitně nedefinujete konstruktor, většina kompilátorů automaticky poskytne konstruktor bez parametrů.  
   
-<a name="Structures"></a>
-### <a name="structures"></a>Struktury  
+### <a name="structures"></a>Struktury
+
  Struktura je typ hodnoty, který je <xref:System.ValueType?displayProperty=nameWithType>implicitně odvozen z <xref:System.Object?displayProperty=nameWithType>, který je odvozen z . Struktura je velmi užitečná pro reprezentaci hodnot, jejichž požadavky na paměť jsou malé, a pro předávání hodnot jako parametrů podle hodnoty metodám, které mají parametry silného typu. V rozhraní .NET jsou<xref:System.Boolean>všechny <xref:System.Byte> <xref:System.Char>primitivní <xref:System.DateTime> <xref:System.Decimal>datové <xref:System.Double> <xref:System.Int16>typy <xref:System.Int32> <xref:System.Int64>( <xref:System.SByte> <xref:System.Single>, <xref:System.UInt16> <xref:System.UInt32>, <xref:System.UInt64>, , , , , , , , , a ) definovány jako struktury.  
   
  Stejně jako třídy, struktury definovat data (pole struktury) a operace, které lze provést na tato data (metody struktury). To znamená, že můžete volat metody na struktury, <xref:System.Object?displayProperty=nameWithType> včetně <xref:System.ValueType?displayProperty=nameWithType> virtuální metody definované na a třídy a všechny metody definované na typ hodnoty sám. Jinými slovy, struktury mohou mít pole, vlastnosti a události, stejně jako statické a nestatické metody. Můžete vytvořit instance struktur, předat je jako parametry, uložit je jako místní proměnné nebo je uložit do pole jiného typu hodnoty nebo typu odkazu. Struktury mohou také implementovat rozhraní.  
@@ -95,9 +86,9 @@ Společný systém typů definuje, jak jsou typy deklarovány, používány a sp
   
  Pro každý typ hodnoty, za běhu společného jazyka poskytuje odpovídající zabalený typ, což je třída, která má stejný stav a chování jako typ hodnoty. Instance typu hodnoty je zabalena, když je předána metodě, <xref:System.Object?displayProperty=nameWithType>která přijímá parametr typu . Je unboxed (to znamená, převedeny z instance třídy zpět na instanci typu hodnoty) při ovládacíprvek vrátí z volání metody, která přijímá typ hodnoty jako parametr odkaz. Některé jazyky vyžadují použití speciální syntaxe, pokud je vyžadován typ v rámečku; ostatní automaticky používají typ v rámečku, když je to potřeba. Když definujete typ hodnoty, definujete typ zabalený i nezabalený.  
   
-<a name="Enumerations"></a>
-### <a name="enumerations"></a>Výčty  
- Výčt (výčt) je typ hodnoty, který <xref:System.Enum?displayProperty=nameWithType> dědí přímo z a který poskytuje alternativní názvy pro hodnoty základníprimitivní typ. Typ výčtu má název, základní typ, který musí být jedním z předdefinovaných podepsaných <xref:System.Byte> <xref:System.Int32>nebo <xref:System.UInt64>nepodepsaných celočíselných typů (například , , nebo ) a sadu polí. Pole jsou statická literálová pole, z nichž každé představuje konstantu. Stejnou hodnotu lze přiřadit k více polím. V takovém případě je nutné označit jednu z hodnot jako primární hodnotu výčtu pro převod odrazu a převod řetězce.  
+### <a name="enumerations"></a>Výčty
+
+ Výčet je typ hodnoty, který dědí přímo z <xref:System.Enum?displayProperty=nameWithType> a který poskytuje alternativní názvy pro hodnoty základní primitivní typ. Typ výčtu má název, základní typ, který musí být jedním z předdefinovaných podepsaných <xref:System.Byte> <xref:System.Int32>nebo <xref:System.UInt64>nepodepsaných celočíselných typů (například , , nebo ) a sadu polí. Pole jsou statická literálová pole, z nichž každé představuje konstantu. Stejnou hodnotu lze přiřadit k více polím. V takovém případě je nutné označit jednu z hodnot jako primární hodnotu výčtu pro převod odrazu a převod řetězce.  
   
  Můžete přiřadit hodnotu základního typu výčtu a naopak (žádný přetypování je vyžadováno runtime). Můžete vytvořit instanci výčtu a volat <xref:System.Enum?displayProperty=nameWithType>metody , stejně jako všechny metody definované na základní typ výčtu. Některé jazyky však nemusí nechat předat výčet jako parametr, pokud je vyžadována instance základního typu (nebo naopak).  
   
@@ -120,9 +111,9 @@ Společný systém typů definuje, jak jsou typy deklarovány, používány a sp
   
  [!code-csharp[Conceptual.Types.Enum#1](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.types.enum/cs/example.cs#1)]
  [!code-vb[Conceptual.Types.Enum#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.types.enum/vb/example.vb#1)]  
-  
-<a name="Interfaces"></a>
-### <a name="interfaces"></a>Rozhraní  
+
+### <a name="interfaces"></a>Rozhraní
+
  Rozhraní definuje smlouvu, která určuje vztah "může udělat" nebo "má" vztah. Rozhraní se často používají k implementaci funkce, jako je <xref:System.IComparable> například porovnání a řazení <xref:System.IComparable%601> (a rozhraní), testování <xref:System.IEquatable%601> rovnosti (rozhraní) <xref:System.Collections.IEnumerable> <xref:System.Collections.Generic.IEnumerable%601> nebo výčet položek v kolekci (a rozhraní). Rozhraní mohou mít vlastnosti, metody a události, které jsou všechny abstraktní členy; to znamená, že i když rozhraní definuje členy a jejich podpisy, ponechá na typu, který implementuje rozhraní k definování funkce každého člena rozhraní. To znamená, že všechny třídy nebo struktury, která implementuje rozhraní musí dodávat definice pro abstraktní členy deklarované v rozhraní. Rozhraní může vyžadovat všechny implementující třídy nebo struktury také implementovat jedno nebo více dalších rozhraní.  
   
  Následující omezení platí pro rozhraní:  
@@ -136,14 +127,14 @@ Společný systém typů definuje, jak jsou typy deklarovány, používány a sp
 - Rozhraní mohou definovat pouze členy instance. Nemohou definovat statické členy.  
   
  Každý jazyk musí obsahovat pravidla pro mapování implementace na rozhraní, které vyžaduje člena, protože více než jedno rozhraní může deklarovat člena se stejným podpisem a tito členové mohou mít samostatné implementace.  
-  
-<a name="Delegates"></a>
-### <a name="delegates"></a>Delegáty  
+
+### <a name="delegates"></a>Delegáty
+
  Delegáti jsou typy odkazů, které slouží k účelu podobnému ukazatelům funkce v jazyce C++. Používají se pro obslužné rutiny událostí a funkce zpětného volání v rozhraní .NET. Na rozdíl od ukazatelů funkce delegáti jsou zabezpečené, ověřitelné a typ bezpečné. Typ delegáta může představovat libovolnou metodu instance nebo statickou metodu, která má kompatibilní podpis.  
   
- Parametr delegáta je kompatibilní s odpovídajícím parametrem metody, pokud je typ parametru delegáta více omezující než typ parametru metody, protože to zaručuje, že argument předaný delegátovi může být bezpečně předán metodou.  
+ Parametr delegáta je kompatibilní s odpovídajícím parametrem metody, pokud je typ parametru delegáta více omezující než typ parametru metody, protože to zaručuje, že argument předaný delegátovi může být bezpečně předán metodě.  
   
- Podobně návratový typ delegáta je kompatibilní s návratovým typem metody, pokud je návratový typ metody více omezující než návratový typ delegáta, protože to zaručuje, že vrácená hodnota metody může být bezpečně přetypována na return typu delegáta.  
+ Podobně návratový typ delegáta je kompatibilní s návratovým typem metody, pokud je návratový typ metody více omezující než návratový typ delegáta, protože to zaručuje, že vrácená hodnota metody může být bezpečně přetypována na návratový typ delegáta.  
   
  Například delegát, který má parametr <xref:System.Collections.IEnumerable> typu a <xref:System.Object> návratový typ může představovat <xref:System.Object> metodu, která <xref:System.Collections.IEnumerable>má parametr typu a vrácenou hodnotu typu . Další informace a ukázkový <xref:System.Delegate.CreateDelegate%28System.Type%2CSystem.Object%2CSystem.Reflection.MethodInfo%29?displayProperty=nameWithType>kód naleznete v tématu .  
   
@@ -163,8 +154,8 @@ Společný systém typů definuje, jak jsou typy deklarovány, používány a sp
 > [!NOTE]
 > Není nutné používat tyto metody pro delegáty obslužné rutiny událostí v jazyce C#, C++ a Visual Basic, protože tyto jazyky poskytují syntaxi pro přidání a odebrání obslužných rutin událostí.  
 
-<a name="type_definitions"></a>
-## <a name="type-definitions"></a>Definice typů  
+## <a name="type-definitions"></a>Definice typů
+
  Definice typu zahrnuje následující:  
   
 - Všechny atributy definované na typu.  
@@ -187,7 +178,7 @@ Společný systém typů definuje, jak jsou typy deklarovány, používány a sp
 ### <a name="type-accessibility"></a>Přístupnost typu  
  Všechny typy mají modifikátor, který řídí jejich usnadnění přístupu z jiných typů. Následující tabulka popisuje přístupy typu podporované modulem runtime.  
   
-|Přístupnost|Popis|  
+|Usnadnění|Popis|  
 |-------------------|-----------------|  
 |public|Typ je přístupný všemi sestaveními.|  
 |sestavení|Typ je přístupný pouze z jeho sestavení.|  
@@ -222,24 +213,24 @@ Společný systém typů definuje, jak jsou typy deklarovány, používány a sp
   
  Typ může implementovat libovolný počet rozhraní. Chcete-li implementovat rozhraní, typ musí implementovat všechny virtuální členy tohoto rozhraní. Virtuální metoda může být implementována odvozeným typem a může být vyvolána staticky nebo dynamicky.  
 
-<a name="type_members"></a>
-## <a name="type-members"></a>Členy typu  
+## <a name="type-members"></a>Členové typu
+
  Runtime umožňuje definovat členy typu, který určuje chování a stav typu. Mezi členy typu patří následující:  
   
-- [Pole](#Fields)  
+- [Pole](#fields)  
   
-- [Vlastnosti](#Properties)  
+- [Vlastnosti](#properties)  
   
-- [Metody](#Methods)  
+- [Metody](#methods)  
   
-- [Konstruktory](#Constructors)  
+- [Konstruktory](#constructors)  
   
-- [Akce](#Events)  
+- [Události](#events)  
   
-- [Vnořené typy](#NestedTypes)  
-  
-<a name="Fields"></a>
-### <a name="fields"></a>Fields (Pole)  
+- [Vnořené typy](#nested-types)  
+
+### <a name="fields"></a>Fields (Pole)
+
  Pole popisuje a obsahuje část stavu typu. Pole mohou být libovolného typu podporovaného modulem runtime. Nejčastěji pole jsou `private` buď `protected`nebo , tak, aby byly přístupné pouze z v rámci třídy nebo z odvozené třídy. Pokud hodnotu pole lze změnit z mimo jeho typ, obvykle se používá přistupující objekt sady vlastností. Veřejně exponovaná pole jsou obvykle jen pro čtení a mohou být dvou typů:  
   
 - Konstanty, jejichž hodnota je přiřazena v době návrhu. Jedná se o statické členy třídy, i `static` `Shared` když nejsou definovány pomocí (v jazyce Visual Basic).  
@@ -250,42 +241,42 @@ Společný systém typů definuje, jak jsou typy deklarovány, používány a sp
   
  [!code-csharp[Conceptual.Types.Members.Fields#1](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.types.members.fields/cs/example.cs#1)]
  [!code-vb[Conceptual.Types.Members.Fields#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.types.members.fields/vb/example.vb#1)]  
-  
-<a name="Properties"></a>
-### <a name="properties"></a>Vlastnosti  
+
+### <a name="properties"></a>Vlastnosti
+
  Vlastnost pojmenuje hodnotu nebo stav typu a definuje metody pro získání nebo nastavení hodnoty vlastnosti. Vlastnosti mohou být primitivní typy, kolekce primitivních typů, uživatelem definované typy nebo kolekce uživatelem definovaných typů. Vlastnosti se často používají k udržení veřejné rozhraní typu nezávislé na skutečné reprezentaci typu. To umožňuje vlastnosti odrážet hodnoty, které nejsou přímo uloženy ve třídě (například když vlastnost vrátí vypočítanou hodnotu) nebo provést ověření před hodnoty jsou přiřazeny k soukromým polím. Následující příklad ilustruje druhý vzor.  
   
  [!code-csharp[Conceptual.Types.Members.Properties#1](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.types.members.properties/cs/example.cs#1)]
  [!code-vb[Conceptual.Types.Members.Properties#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.types.members.properties/vb/example.vb#1)]  
   
  Kromě zahrnutí samotné vlastnosti, zprostředkující jazyk Společnosti Microsoft (MSIL) pro `get_`typ, který obsahuje čitelnou vlastnost, obsahuje metodu *propertyname* a MSIL pro typ, který obsahuje zapisovatelnou vlastnost, obsahuje metodu `set_` *propertyname.*  
-  
-<a name="Methods"></a>
-### <a name="methods"></a>Metody  
+
+### <a name="methods"></a>Metody
+
  Metoda popisuje operace, které jsou k dispozici na typu. Podpis metody určuje povolené typy všech jejích parametrů a její vrácené hodnoty.  
   
  Ačkoli většina metod definuje přesný počet parametrů požadovaných pro volání metod, některé metody podporují proměnný počet parametrů. Konečný deklarovaný parametr těchto <xref:System.ParamArrayAttribute> metod je označen atributem. Kompilátory jazyka obvykle poskytují `params` klíčové slovo, `ParamArray` například v jazyce <xref:System.ParamArrayAttribute> C# a v jazyce Visual Basic, které umožňuje explicitní použití zbytečné.  
-  
-<a name="Constructors"></a>
-### <a name="constructors"></a>Konstruktory  
+
+### <a name="constructors"></a>Konstruktory
+
  Konstruktor je zvláštní druh metody, která vytváří nové instance třídy nebo struktury. Jako každá jiná metoda může konstruktor obsahovat parametry; konstruktory však nemají žádnou vrácenou `void`hodnotu (to znamená, že vrátí).  
   
  Pokud zdrojový kód pro třídu explicitně nedefinuje konstruktor, kompilátor obsahuje konstruktor bez parametrů. Pokud však zdrojový kód pro třídu definuje pouze parametrizované konstruktory, kompilátory jazyka a jazyka C# negenerují konstruktor bez parametrů.  
   
  Pokud zdrojový kód pro strukturu definuje konstruktory, musí být parametrizovány; struktura nemůže definovat konstruktor bez parametrů a kompilátory negenerují konstruktory bez parametrů pro struktury nebo jiné typy hodnot. Všechny typy hodnot mají implicitní konstruktor bez parametrů. Tento konstruktor je implementován běžným jazykem runtime a inicializuje všechna pole struktury na jejich výchozí hodnoty.  
-  
-<a name="Events"></a>
-### <a name="events"></a>Akce  
+
+### <a name="events"></a>Události
+
  Událost definuje incident, na který lze odpovědět, a definuje metody pro přihlášení k odběru, odhlášení z odběru a vyvolání události. Události se často používají k informování jiných typů změn stavu. Další informace naleznete v tématu [Události](../../../docs/standard/events/index.md).  
-  
-<a name="NestedTypes"></a>
-### <a name="nested-types"></a>Vnořené typy  
+
+### <a name="nested-types"></a>Vnořené typy
+
  Vnořený typ je typ, který je členem jiného typu. Vnořené typy by měly být pevně spojeny s jejich obsahující typ a nesmí být užitečné jako typ pro obecné účely. Vnořené typy jsou užitečné, když deklarující typ používá a vytváří instance vnořeného typu a použití vnořeného typu není vystaveno ve veřejných členech.  
   
  Vnořené typy jsou matoucí pro některé vývojáře a by neměly být veřejně viditelné, pokud existuje přesvědčivý důvod pro viditelnost. V dobře navržené knihovně by vývojáři měli zřídka používat vnořené typy k vytváření instancí objektů nebo deklarování proměnných.  
 
-<a name="characteristics_of_type_members"></a>
-## <a name="characteristics-of-type-members"></a>Charakteristika typových členů  
+## <a name="characteristics-of-type-members"></a>Charakteristiky typových členů
+
  Společný typový systém umožňuje členům typu mít různé vlastnosti; jazyky však nejsou nutné pro podporu všech těchto vlastností. Následující tabulka popisuje charakteristiky členů.  
   
 |Charakteristika|Může se vztahovat na|Popis|  
@@ -306,7 +297,7 @@ Společný systém typů definuje, jak jsou typy deklarovány, používány a sp
 > [!NOTE]
 > Návratový typ není považován za součást podpisu metody. To znamená, že metody nemohou být přetíženy, pokud se liší pouze podle návratového typu.  
   
-### <a name="inheriting-overriding-and-hiding-members"></a>Dědění, přepsání a skrytí členů  
+### <a name="inherit-override-and-hide-members"></a>Dědit, přepsat a skrýt členy  
  Odvozený typ zdědí všechny členy svého základního typu; to znamená, že tyto členy jsou definovány na a k dispozici odvozený typ. Chování nebo vlastnosti zděděných členů lze upravit dvěma způsoby:  
   
 - Odvozený typ může skrýt zděděný člen definováním nového člena se stejným podpisem. To může být provedeno, aby dříve veřejný člen soukromé nebo definovat nové `final`chování pro zděděné metody, která je označena jako .  
@@ -315,6 +306,6 @@ Společný systém typů definuje, jak jsou typy deklarovány, používány a sp
   
 ## <a name="see-also"></a>Viz také
 
-- [Prohlížeč rozhraní API .NET](/dotnet/api)
+- [Prohlížeč rozhraní .NET API](/dotnet/api)
 - [CLR (Common Language Runtime)](../../../docs/standard/clr.md)
 - [Převod typů v rozhraní .NET](../../../docs/standard/base-types/type-conversion.md)

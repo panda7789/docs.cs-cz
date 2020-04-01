@@ -2,12 +2,12 @@
 title: Terminologie Dockeru
 description: Architektura mikroslužeb .NET pro kontejnerizované aplikace .NET | Terminologie Dockeru
 ms.date: 01/30/2020
-ms.openlocfilehash: 5ffc7e791df8cbc999c6ababf62670bae46e1d5e
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: fdcc5ec3603579c36d7339bd3ff651713b8eba88
+ms.sourcegitcommit: 79b0dd8bfc63f33a02137121dd23475887ecefda
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "77502841"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80523336"
 ---
 # <a name="docker-terminology"></a>Terminologie Dockeru
 
@@ -17,7 +17,9 @@ V této části jsou uvedeny termíny a definice, které byste měli znát, než
 
 **Dockerfile**: Textový soubor, který obsahuje pokyny pro vytvoření image Dockeru. Je to jako dávkový skript, první řádek uvádí základní obraz začít a pak postupujte podle pokynů k instalaci požadovaných programů, kopírování souborů a tak dále, dokud se dostanete pracovní prostředí, které potřebujete.
 
-**Sestavení**: Akce vytváření image kontejneru na základě informací a kontextu poskytované jeho Dockerfile, plus další soubory ve složce, kde je vytvořena image. Můžete vytvářet image pomocí příkazu **docker docker sestavení.**
+**Sestavení**: Akce vytváření image kontejneru na základě informací a kontextu poskytované jeho Dockerfile, plus další soubory ve složce, kde je vytvořena image. Můžete vytvářet image pomocí příkazu Docker:
+
+> `docker build`
 
 **Kontejner**: Instance image Dockeru. Kontejner představuje spuštění jedné aplikace, procesu nebo služby. Skládá se z obsahu image Dockeru, prostředí spuštění a standardní sady instrukcí. Při škálování služby vytvoříte více instancí kontejneru ze stejné bitové kopie. Nebo dávková úloha můžete vytvořit více kontejnerů ze stejného obrázku, předávání různých parametrů pro každou instanci.
 
@@ -25,7 +27,7 @@ V této části jsou uvedeny termíny a definice, které byste měli znát, než
 
 **Značka**: Značka nebo popisek, který můžete použít na obrázky, aby bylo možné identifikovat různé obrázky nebo verze stejného obrázku (v závislosti na čísle verze nebo cílovém prostředí).
 
-**Vícestupňové sestavení**: Je funkce, protože Docker 17.05 nebo vyšší, který pomáhá snížit velikost konečné image. V několika větách, s vícestupňovým sestavením můžete použít například velkou základní bitovou kopii obsahující sdk, pro kompilaci a publikování aplikace a následné použití složky publikování s malou základní bitovou kopii pouze za běhu, abyste vytvořili mnohem menší konečnou bitovou kopii
+**Vícestupňové sestavení**: Je funkce, protože Docker 17.05 nebo vyšší, který pomáhá snížit velikost konečné image. V několika větách, s vícestupňové sestavení můžete použít, například, velké základní image, obsahující SDK, pro kompilaci a publikování aplikace a pak pomocí složky publikování s malou bitovou kopii pouze za běhu, k vytvoření mnohem menší konečné image.
 
 **Úložiště (úložiště)**: Kolekce souvisejících imitek Dockeru, označená značkou, která označuje verzi bitové kopie. Některá repo repo obsahují více variant určitého obrázku, například obrázek obsahující sady SDK (těžší), obrázek obsahující pouze runtimes (světlejší) atd. Tyto varianty mohou být označeny značkami. Jediné repo může obsahovat varianty platformy, jako je například bitová kopie Linuxu a bitová kopie systému Windows.
 

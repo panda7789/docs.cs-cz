@@ -6,12 +6,12 @@ dev_langs:
 author: thraka
 ms.author: adegeo
 ms.date: 01/27/2020
-ms.openlocfilehash: ccb987944af29c170b8d960d7112a13078b67dd1
-ms.sourcegitcommit: e48a54ebe62e874500a7043f6ee0b77a744d55b4
+ms.openlocfilehash: 7e879a44bd8056ac8753c1e86464fe14fd6b9e50
+ms.sourcegitcommit: 79b0dd8bfc63f33a02137121dd23475887ecefda
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80291552"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80523585"
 ---
 # <a name="whats-new-in-net-core-30"></a>Co je nového v .NET Core 3.0
 
@@ -108,7 +108,7 @@ Chcete-li publikovat spustitelný soubor `PublishSingleFile` s jedním souborem,
 dotnet publish -r win10-x64 -p:PublishSingleFile=true
 ```
 
-Další informace o publikování na jednom souboru naleznete v [návrhovém dokumentu sdružených souborů s jedním souborem](https://github.com/dotnet/designs/blob/master/accepted/2020/single-file/design_3_0.md).
+Další informace o publikování na jednom souboru naleznete v [návrhovém dokumentu sdružených souborů s jedním souborem](https://github.com/dotnet/designs/blob/master/accepted/2020/single-file/design.md).
 
 ### <a name="assembly-linking"></a>Propojení sestavy
 

@@ -18,16 +18,16 @@ helpviewer_keywords:
 - comparing strings
 - strings [.NET Framework],comparing
 ms.assetid: b9f0bf53-e2de-4116-8ce9-d4f91a1df4f7
-ms.openlocfilehash: c88776ea9d8ba17d86767b704e8b0eaff5b6cb89
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: e633b6c1d03a3d1cd70e277395da10f70f315f16
+ms.sourcegitcommit: 79b0dd8bfc63f33a02137121dd23475887ecefda
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "75711477"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80523976"
 ---
 # <a name="best-practices-for-using-strings-in-net"></a>Doporučené postupy pro použití řetězců v rozhraní .NET
 
-.NET poskytuje rozsáhlou podporu pro vývoj lokalizovaných a globalizovaných aplikací a usnadňuje použití konvencí aktuální jazykové verze nebo konkrétní jazykové verze při provádění běžných operací, jako je řazení a zobrazování řetězců. Ale řazení nebo porovnávání řetězců není vždy operace citlivá na jazykovou verzi. Například řetězce, které jsou používány interně aplikací obvykle by měly být zpracovány identicky ve všech kulturách. Když jsou interpretována kulturně nezávislá řetězcová data, jako jsou značky XML, značky HTML, uživatelská jména, cesty k souborům a názvy systémových objektů, jako by byla citlivá na jazykovou verzi, kód aplikace může podléhat jemným chybám, nízkému výkonu a v některých případech bezpečnostních otázek.
+.NET poskytuje rozsáhlou podporu pro vývoj lokalizovaných a globalizovaných aplikací a usnadňuje použití konvencí aktuální jazykové verze nebo konkrétní jazykové verze při provádění běžných operací, jako je řazení a zobrazování řetězců. Ale řazení nebo porovnávání řetězců není vždy operace citlivá na jazykovou verzi. Například řetězce, které jsou používány interně aplikací obvykle by měly být zpracovány identicky ve všech kulturách. Pokud jsou jazykově nezávislá řetězcová data, například značky XML, značky HTML, uživatelská jména, cesty k souborům a názvy systémových objektů interpretována, interpretována tak, jako by byla citlivá na jazykovou verzi, může být kód aplikace vystaven jemným chybám, nízkému výkonu a v některých případech problémům se zabezpečením.
 
 Toto téma zkoumá metody řazení, porovnávání a pouzdře řetězce v rozhraní .NET, představuje doporučení pro výběr vhodné metody zpracování řetězců a poskytuje další informace o metodách zpracování řetězců. Zkoumá také, jak jsou formátovaná data, jako jsou číselná data a data a čas, zpracována pro zobrazení a pro ukládání.
 
@@ -199,7 +199,7 @@ Po zralé úvaze má invariantní jazyková verze velmi málo vlastností, kter�
 
 Následující tabulka popisuje mapování z kontextu sémantického řetězce na člen výčtu: <xref:System.StringComparison>
 
-|Data|Chování|Odpovídající System.StringComparison<br /><br /> hodnota|
+|Data|Chování|Odpovídající System.StringComparison<br /><br /> value|
 |----------|--------------|-----------------------------------------------------|
 |Vnitřní identifikátory rozlišující malá a velká písmena.<br /><br /> Identifikátory rozlišující malá a velká písmena ve standardech, jako je XML a HTTP.<br /><br /> Nastavení související se zabezpečením rozlišují malá a velká písmena.|Nejazykový identifikátor, kde se přesně shodují bajty.|<xref:System.StringComparison.Ordinal>|
 |Vnitřní identifikátory bez rozlišování velkých a malých písmen.<br /><br /> Identifikátory bez rozlišování velkých a malých písmen ve standardech, jako je XML a HTTP.<br /><br /> Cesty k souborům.<br /><br /> Klíče a hodnoty registru.<br /><br /> Proměnné prostředí.<br /><br /> Identifikátory prostředků (například názvy popisovačů).<br /><br /> Nastavení související se zabezpečením bez rozlišování velkých a malých písmen.|Nejazykový identifikátor, pokud je případ irelevantní; zejména data uložená ve většině systémových služeb systému Windows.|<xref:System.StringComparison.OrdinalIgnoreCase>|
@@ -350,7 +350,3 @@ Pokud však nahradíte <xref:System.Globalization.CultureInfo.CurrentCulture%2A?
 08.09.1890 06:47
 18.02.1905 15:12
 ```
-
-## <a name="see-also"></a>Viz také
-
-- [Práce s řetězci](manipulating-strings.md)

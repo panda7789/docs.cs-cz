@@ -7,12 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - parameters [C#], ref
 - ref keyword [C#]
-ms.openlocfilehash: 61ee0e320f85925e4d804a6032e01c0485a31451
-ms.sourcegitcommit: 99b153b93bf94d0fecf7c7bcecb58ac424dfa47c
+ms.openlocfilehash: 8d04f888befae2cad815c88a0d27bd836f458c63
+ms.sourcegitcommit: 79b0dd8bfc63f33a02137121dd23475887ecefda
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/25/2020
-ms.locfileid: "80249328"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80523778"
 ---
 # <a name="ref-c-reference"></a>ref (Referenční dokumentace jazyka C#)
 
@@ -25,7 +25,7 @@ Klíčové `ref` slovo označuje hodnotu, která je předána odkazem. Použív�
 
 ## <a name="passing-an-argument-by-reference"></a>Předání argumentu odkazem
 
-Při použití v seznamu parametrů metody `ref` klíčové slovo označuje, že argument je předán odkazem, nikoli hodnotou. Klíčové `ref` slovo vytvoří formální parametr alias pro argument, který musí být proměnnou. Jinými slovy, každá operace na parametr je provedena na argument. Pokud například volající předá výraz místní proměnné nebo přístupový výraz prvku pole a volaná metoda nahradí objekt, na který odkazuje parametr ref, pak místní proměnná volajícího nebo element pole nyní odkazuje na nový objekt, když metoda vrátí.
+Při použití v seznamu parametrů metody `ref` klíčové slovo označuje, že argument je předán odkazem, nikoli hodnotou. Klíčové `ref` slovo vytvoří formální parametr alias pro argument, který musí být proměnnou. Jinými slovy, každá operace na parametr je provedena na argument. Například pokud volající předá výraz místní proměnné nebo výraz přístupu prvku pole a volaná metoda nahradí objekt, na který odkazuje ref parametr, pak volajícího místní proměnné nebo pole element nyní odkazuje na nový objekt, když metoda vrátí.
 
 > [!NOTE]
 > Nepleťte si koncept předávání odkazem s pojmem typy odkazů. Tyto dva pojmy nejsou stejné. Parametr metody lze upravit `ref` bez ohledu na to, zda se jedná o typ hodnoty nebo typ odkazu. Neexistuje žádné zabalení typu hodnoty, pokud je předán odkazem.  
@@ -63,7 +63,7 @@ Metody však mohou být přetíženy, `ref` `in`pokud `out` má jedna metoda , n
 
 Kromě toho mají [rozšiřující metody](../../programming-guide/classes-and-structs/extension-methods.md) následující omezení:
 
-- Keywoard `out` nelze použít na první argument metody rozšíření.
+- Klíčové `out` slovo nelze použít na první argument metody rozšíření.
 - Klíčové `ref` slovo nelze použít na první argument metody rozšíření, pokud argument není struktura, nebo obecný typ není omezena být struktura.
 - Klíčové `in` slovo nelze použít, pokud první argument není struktura. Klíčové `in` slovo nelze použít u žádného obecného typu, a to ani v případě, že je omezeno na strukturu.
 

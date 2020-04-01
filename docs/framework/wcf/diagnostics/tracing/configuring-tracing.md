@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - tracing [WCF]
 ms.assetid: 82922010-e8b3-40eb-98c4-10fc05c6d65d
-ms.openlocfilehash: d8b216bf5497cf2a1faa2fa24ba1d8b3102f6f10
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: aca3b5c54bff9c2b4c5380c04dd0da162215b088
+ms.sourcegitcommit: 79b0dd8bfc63f33a02137121dd23475887ecefda
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79185742"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80523305"
 ---
 # <a name="configuring-tracing"></a>Konfigurace trasování
 Toto téma popisuje, jak můžete povolit trasování, konfigurovat zdroje trasování k vyzařování trasování a nastavit úrovně trasování, nastavit trasování aktivity a šíření pro podporu korelace trasování od začátku do konce a nastavit posluchače trasování pro přístup k trasování.  
@@ -38,7 +38,7 @@ Toto téma popisuje, jak můžete povolit trasování, konfigurovat zdroje traso
 <configuration>  
    <system.diagnostics>  
       <sources>  
-            <source name="System.ServiceModel"
+         <source name="System.ServiceModel"
                     switchValue="Information, ActivityTracing"  
                     propagateActivity="true">  
             <listeners>  
@@ -183,6 +183,6 @@ Toto téma popisuje, jak můžete povolit trasování, konfigurovat zdroje traso
 ## <a name="see-also"></a>Viz také
 
 - [Trasování](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)
-- [Správa a diagnostika](../../../../../docs/framework/wcf/diagnostics/index.md)
+- [Administrativa a diagnostika](../../../../../docs/framework/wcf/diagnostics/index.md)
 - [Postupy: Vytváření a inicializace naslouchacích procesů trasování](../../../debug-trace-profile/how-to-create-and-initialize-trace-listeners.md)
 - [Vytvoření vlastního posluchače tracelisteneru](https://docs.microsoft.com/archive/msdn-magazine/2006/april/clr-inside-out-extending-system-diagnostics)

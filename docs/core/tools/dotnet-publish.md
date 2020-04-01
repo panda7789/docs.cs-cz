@@ -2,12 +2,12 @@
 title: dotnet publikovat, příkaz
 description: Příkaz publikování dotnet publikuje projekt nebo řešení .NET Core do adresáře.
 ms.date: 02/24/2020
-ms.openlocfilehash: ed5b87b3343210ca81486ef4b9a9d70d1b534464
-ms.sourcegitcommit: 267d092663aba36b6b2ea853034470aea493bfae
+ms.openlocfilehash: 7e57a7b3cfe72653cc64c90055735795e4616260
+ms.sourcegitcommit: 79b0dd8bfc63f33a02137121dd23475887ecefda
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "80110968"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80523771"
 ---
 # <a name="dotnet-publish"></a>dotnet publish
 
@@ -94,9 +94,21 @@ Výstup `dotnet publish` příkazu je připraven k nasazení do hostitelského s
 
 - **`-o|--output <OUTPUT_DIRECTORY>`**
 
-  Určuje cestu pro výstupní adresář. Pokud není zadán, výchozí hodnota *./bin/[configuration]/[framework]/publish/* pro spustitelný soubor ový soubor a binární soubory mezi platformami. Výchozí hodnota je *./bin/[configuration]/[framework]/[runtime]/publish/* pro samostatný spustitelný soubor.
+  Určuje cestu pro výstupní adresář.
+  
+  Pokud není zadán, je výchozí *[project_file_folder]./bin/[konfigurace]/[framework]/publish/* pro spustitelný modul závislý na spustitelném modulu a binární soubory mezi platformami. Ve výchozím nastavení je *[project_file_folder]/bin/[configuration]/[framework]/[runtime]/publish/* pro samostatný spustitelný soubor.
 
-  Pokud je cesta relativní, je vygenerovaný výstupní adresář relativní k umístění souboru projektu, nikoli k aktuálnímu pracovnímu adresáři.
+  - Sada .NET Core 3.x SDK a novější
+  
+    Pokud je při publikování projektu zadána relativní cesta, je vygenerovaný výstupní adresář relativní vzhledem k aktuálnímu pracovnímu adresáři, nikoli k umístění souboru projektu.
+
+    Pokud je při publikování řešení zadána relativní cesta, veškerý výstup pro všechny projekty přejde do zadané složky vzhledem k aktuálnímu pracovnímu adresáři. Chcete-li vytvořit výstup publikování jít do samostatných složek pro `PublishDir` každý projekt, `--output` zadejte relativní cestu pomocí msbuild vlastnost místo možnosti. Například `dotnet publish -p:PublishDir=.\publish` odešle výstup publikování pro `publish` každý projekt do složky ve složce, která obsahuje soubor projektu.
+
+  - Sada SDK rozhraní .NET Core 2.x
+  
+    Pokud je při publikování projektu zadána relativní cesta, je vygenerovaný výstupní adresář relativní vzhledem k umístění souboru projektu, nikoli k aktuálnímu pracovnímu adresáři.
+
+    Pokud je při publikování řešení zadána relativní cesta, výstup každého projektu přejde do samostatné složky vzhledem k umístění souboru projektu. Pokud je při publikování řešení zadána absolutní cesta, veškerý výstup publikování pro všechny projekty přejde do zadané složky.
 
 - **`--self-contained [true|false]`**
 

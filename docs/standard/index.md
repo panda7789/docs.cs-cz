@@ -5,12 +5,12 @@ author: cartermp
 ms.date: 12/27/2019
 ms.technology: dotnet-standard
 ms.assetid: bbfe6465-329d-4982-869d-472e7ef85d93
-ms.openlocfilehash: f6496ae38827da5d00c8b278011a9c373afe0e76
-ms.sourcegitcommit: 59e36e65ac81cdd094a5a84617625b2a0ff3506e
+ms.openlocfilehash: 6cca7330c10317129072b94c3973f5dec575363a
+ms.sourcegitcommit: 79b0dd8bfc63f33a02137121dd23475887ecefda
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "80344090"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80523900"
 ---
 # <a name="net-guide"></a>Průvodce technologií .NET
 
@@ -46,7 +46,6 @@ Další informace o hlavních konceptech rozhraní .NET naleznete v následujíc
 * [.NET Standard](net-standard.md)
 * [Nativní interoperabilita](native-interop/index.md)
 * [Uvolnění paměti](garbage-collection/index.md)
-* [Základní typy v rozhraní .NET](base-types/index.md)
 * [Kolekce](collections/index.md)
 * [Data, časy a časová pásma](datetime/index.md)
 * [Asynchronní programování](async.md)
@@ -57,6 +56,6 @@ Informace o třech hlavních jazycích .NET naleznete v následujících témate
 * [Průvodce jazykem F#](../fsharp/index.yml)
 * [Průvodce jazykem Visual Basic](../visual-basic/index.yml)
 
-## <a name="api-reference"></a>referenční dokumentace k rozhraní API
+## <a name="api-reference"></a>API – referenční informace
 
 Podrobné informace o všech rozhraních API, které jsou k dispozici v rozhraní .NET, naleznete v [tématu .NET API reference](../../api/index.md).

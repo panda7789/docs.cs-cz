@@ -11,12 +11,12 @@ helpviewer_keywords:
 - calendars [.NET Framework], displaying dates
 - displaying date and time data
 ms.assetid: ed324eff-4aff-4a76-b6c0-04e6c0d8f5a9
-ms.openlocfilehash: 455996d091f92367667e7077a4524898cd8face6
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 8d02b74f63ec5b6260679ae4cea04791681ec238
+ms.sourcegitcommit: 79b0dd8bfc63f33a02137121dd23475887ecefda
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "73138757"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80523918"
 ---
 # <a name="how-to-display-dates-in-non-gregorian-calendars"></a>Postupy: Zobrazování dat v jiném než gregoriánském kalendáři
 Typy <xref:System.DateTime> <xref:System.DateTimeOffset> a používají gregoriánský kalendář jako výchozí kalendář. To znamená, že volání `ToString` metody hodnoty data a času zobrazí řetězcovou reprezentaci tohoto data a času v gregoriánském kalendáři, i když toto datum a čas byly vytvořeny pomocí jiného kalendáře. To je znázorněno v následujícím příkladu, který používá dva různé způsoby, jak vytvořit hodnotu data a času s perským <xref:System.DateTime.ToString%2A> kalendářem, ale stále zobrazuje tyto hodnoty data a času v gregoriánském kalendáři při volání metody. Tento příklad odráží dvě běžně používané, ale nesprávné techniky pro zobrazení data v určitém kalendáři.  
@@ -81,8 +81,4 @@ Typy <xref:System.DateTime> <xref:System.DateTimeOffset> a používají gregori�
   
 - `DisplayDate`, přetížená veřejná metoda, která je <xref:System.DateTime> předána dvěma parametry: a nebo <xref:System.DateTimeOffset> hodnota vyjádřená v kalendáři reprezentovaném objektem; `CalendarUtility` a jazykovou verzi, jejíž formátovací pravidla mají být použita. Jeho chování při vrácení řetězcové reprezentace data závisí na tom, zda je cílový kalendář podporován jazykovou verzí, jejíž pravidla formátování mají být použita.  
   
- Bez ohledu na kalendář použitý <xref:System.DateTime> <xref:System.DateTimeOffset> k vytvoření hodnoty nebo v tomto příkladu je tato hodnota obvykle vyjádřena jako gregoriánské datum. Důvodem je, že <xref:System.DateTime> a <xref:System.DateTimeOffset> typy nezachovávají žádné informace kalendáře. Interně jsou reprezentovány jako počet značek, které uplynuly od půlnoci 1. Výklad tohoto čísla závisí na kalendáři. Pro většinu kultur je výchozím kalendářem gregoriánský kalendář.  
-  
-## <a name="see-also"></a>Viz také
-
-- [Provádění operací formátování](../../../docs/standard/base-types/performing-formatting-operations.md)
+ Bez ohledu na kalendář použitý <xref:System.DateTime> <xref:System.DateTimeOffset> k vytvoření hodnoty nebo v tomto příkladu je tato hodnota obvykle vyjádřena jako gregoriánské datum. Důvodem je, že <xref:System.DateTime> a <xref:System.DateTimeOffset> typy nezachovávají žádné informace kalendáře. Interně jsou reprezentovány jako počet značek, které uplynuly od půlnoci 1. Výklad tohoto čísla závisí na kalendáři. Pro většinu kultur je výchozím kalendářem gregoriánský kalendář.

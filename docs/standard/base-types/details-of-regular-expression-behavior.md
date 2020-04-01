@@ -9,12 +9,12 @@ helpviewer_keywords:
 - regular expressions, behavior
 - .NET Framework regular expressions, behavior
 ms.assetid: 0ee1a6b8-caac-41d2-917f-d35570021b10
-ms.openlocfilehash: 504e315dda4e76f56a88d97149b1515b6743668b
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 288bf4256670d34c600e23618b62ad81866daadf
+ms.sourcegitcommit: 79b0dd8bfc63f33a02137121dd23475887ecefda
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "77124348"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80523841"
 ---
 # <a name="details-of-regular-expression-behavior"></a>Podrobnosti o chování regulárních výrazů
 
@@ -87,7 +87,7 @@ Modul regulárních výrazů rozhraní .NET Framework je backtrackingový matche
 
      Další informace o kontrolních výrazech negativního dopředného vyhledávání naleznete v [tématu Seskupování konstrukcí](../../../docs/standard/base-types/grouping-constructs-in-regular-expressions.md).
 
-- Podmíněné `(?(` *expression*`)`vyhodnocení: výraz `(?(`*ano*`|`*ne* `)` a *název*`)`*ano*`|`*ne*`)`, kde *výraz* je podvýraz, který se má shodovat, *název* je název zachytávající skupiny, *ano* je řetězec, který odpovídá, pokud je *výraz* spárován nebo *název* je platná, neprázdná zachycená skupina a *ne* je dílčívýraz, který se shoduje, pokud *výraz *není spárovánnebo *název* není platnou, neprázdnou zachycenou skupinou. Tato funkce umožňuje motoru prohledávat pomocí více než jeden alternativní vzorek, v závislosti na výsledku předchozí shody dílčího výrazu nebo výsledek kontrolnívýraz s nulovou šířkou. To umožňuje výkonnější formu zpětného odkazu, který umožňuje například odpovídající podvýraz na základě toho, zda byl spárován předchozí dílčí výraz. Regulární výraz v následujícím příkladu odpovídá odstavcům, které jsou určeny pro veřejné i interní použití. Odstavce určené pouze pro vnitřní `<PRIVATE>` použití začínají tagem. Vzor regulárního výrazu `^(?<Pvt>\<PRIVATE\>\s)?(?(Pvt)((\w+\p{P}?\s)+)|((\w+\p{P}?\s)+))\r?$` používá podmíněné vyhodnocení k přiřazení obsahu odstavců určených pro veřejné a interní použití k oddělení zachytávacích skupin. Tyto odstavce pak mohou být zpracovány odlišně.
+- Podmíněné `(?(`vyhodnocení: *výraz*`)`*ano*`|`*ne* `)` a `(?(` *název*`)`*ano ne*`|`*no*`)`, kde *výraz* je podvýraz, který se má shodovat, *název* je název zachytávající skupiny, *ano* je řetězec, který odpovídá, pokud je *výraz* spárován nebo *název* je platná, neprázdná zachycená skupina a *ne* je dílčívýraz, který odpovídá, pokud *výraz* není spárován nebo *název* není platná, neprázdná zachycená skupina. Tato funkce umožňuje motoru prohledávat pomocí více než jeden alternativní vzorek, v závislosti na výsledku předchozí shody dílčího výrazu nebo výsledek kontrolnívýraz s nulovou šířkou. To umožňuje výkonnější formu zpětného odkazu, který umožňuje například odpovídající podvýraz na základě toho, zda byl spárován předchozí dílčí výraz. Regulární výraz v následujícím příkladu odpovídá odstavcům, které jsou určeny pro veřejné i interní použití. Odstavce určené pouze pro vnitřní `<PRIVATE>` použití začínají tagem. Vzor regulárního výrazu `^(?<Pvt>\<PRIVATE\>\s)?(?(Pvt)((\w+\p{P}?\s)+)|((\w+\p{P}?\s)+))\r?$` používá podmíněné vyhodnocení k přiřazení obsahu odstavců určených pro veřejné a interní použití k oddělení zachytávacích skupin. Tyto odstavce pak mohou být zpracovány odlišně.
 
      [!code-csharp[Conceptual.RegularExpressions.Design#4](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regularexpressions.design/cs/conditional1.cs#4)]
      [!code-vb[Conceptual.RegularExpressions.Design#4](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regularexpressions.design/vb/conditional1.vb#4)]
@@ -151,9 +151,8 @@ Modul regulárních výrazů rozhraní .NET Framework je backtrackingový matche
 |[Bezpečnost vlákna](../../../docs/standard/base-types/thread-safety-in-regular-expressions.md)|Obsahuje informace o bezpečnosti podprocesu regulárních výrazů a vysvětluje, kdy byste měli synchronizovat přístup k objektům regulárních výrazů.|
 |[.NET Framework – regulární výrazy](../../../docs/standard/base-types/regular-expressions.md)|Poskytuje přehled aspektu programovacího jazyka regulárních výrazů.|
 |[Model objektu regulárního výrazu](../../../docs/standard/base-types/the-regular-expression-object-model.md)|Obsahuje informace a příklady kódu znázorňující, jak používat třídy regulárních výrazů.|
-|[Příklady regulárních výrazů](../../../docs/standard/base-types/regular-expression-examples.md)|Obsahuje příklady kódu, které ilustrují použití regulárních výrazů v běžných aplikacích.|
 |[Jazyk regulárních výrazů – stručná referenční dokumentace](../../../docs/standard/base-types/regular-expression-language-quick-reference.md)|Obsahuje informace o sadě znaků, operátorů a konstrukcí, které lze použít k definování regulárních výrazů.|
 
-## <a name="reference"></a>Referenční informace
+## <a name="reference"></a>Odkaz
 
 - <xref:System.Text.RegularExpressions?displayProperty=nameWithType>

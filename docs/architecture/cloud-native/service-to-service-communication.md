@@ -3,12 +3,12 @@ title: Komunikace mezi službami
 description: Zjistěte, jak back-end cloud nativní mikroslužby komunikovat s ostatními back-end mikroslužeb.
 author: robvet
 ms.date: 09/09/2019
-ms.openlocfilehash: a5124b8b83f62ff17b1230ead63db26e0c1f2a5b
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 926be3c2eb4513c89ebcd1f31dceb7d58639dc6f
+ms.sourcegitcommit: 79b0dd8bfc63f33a02137121dd23475887ecefda
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79401597"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80523552"
 ---
 # <a name="service-to-service-communication"></a>Komunikace mezi službami
 
@@ -144,7 +144,7 @@ Obrázek 4-14 popisuje architekturu fronty service bus na vysoké úrovni.
 
 Na předchozím obrázku si poznamenejte vztah mezi bodem a bodem. Dvě instance stejného zprostředkovatele zařazují zprávy do jedné fronty služby Service Bus. Každá zpráva je spotřebována pouze jednou ze tří instancí příjemce na pravé straně. Dále diskutujeme o tom, jak implementovat zasílání zpráv, kde mohou mít všichni různí spotřebitelé zájem o stejnou zprávu.
 
-## <a name="events"></a>Akce
+## <a name="events"></a>Události
 
 Řízení front zpráv je efektivní způsob implementace komunikace, kde může výrobce asynchronně odeslat spotřebiteli zprávu. Co se však stane, když *mnoho různých spotřebitelů* má zájem o stejnou zprávu? Vyhrazená fronta zpráv pro každého spotřebitele by se dobře neškálovat a bylo by obtížné je spravovat.
 
@@ -232,4 +232,4 @@ Pro aplikace nativní pro cloud, které musí streamovat velký počet událost�
 
 >[!div class="step-by-step"]
 >[Předchozí](front-end-communication.md)
->[další](rest-grpc.md)
+>[další](grpc.md)
