@@ -10,12 +10,12 @@ helpviewer_keywords:
 - Collections classes
 - collections [.NET Framework]
 ms.assetid: 60cc581f-1db5-445b-ba04-a173396bf872
-ms.openlocfilehash: 3ca340e19d7340d7bea133fa62c6d8bbc3c0512a
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: ec14cf30159dda1f2c67ef0c0f5f0a3e52000c45
+ms.sourcegitcommit: 961ec21c22d2f1d55c9cc8a7edf2ade1d1fd92e3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "78160388"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80588645"
 ---
 # <a name="collections-and-data-structures"></a>Kolekce a datové struktury
 Podobná data mohou být často zpracovány efektivněji při ukládání a manipulaci jako kolekce. Třídu <xref:System.Array?displayProperty=nameWithType> nebo třídy v <xref:System.Collections>oblasti <xref:System.Collections.Generic> <xref:System.Collections.Concurrent>, , System.Collections.Immutable namespaces můžete přidat, odebrat a upravit buď jednotlivé prvky nebo rozsah prvků v kolekci.  
@@ -30,7 +30,7 @@ Podobná data mohou být často zpracovány efektivněji při ukládání a mani
   
 - **Možnost výčet kolekce**  
   
-     Kolekce rozhraní .NET <xref:System.Collections.IEnumerable?displayProperty=nameWithType> Framework <xref:System.Collections.Generic.IEnumerable%601?displayProperty=nameWithType> implementují nebo umožňují, aby byla kolekce iterována. Čítač výčtu si lze myslet jako pohyblivý ukazatel na libovolný prvek v kolekci. [Foreach, v](../../csharp/language-reference/keywords/foreach-in.md) prohlášení a [pro každý ... Další příkaz](../../visual-basic/language-reference/statements/for-each-next-statement.md) použít čítač <xref:System.Collections.IEnumerable.GetEnumerator%2A> výčtu vystavené metodou a skrýt složitost manipulace s čítač výčtu. Kromě toho všechny kolekce, <xref:System.Collections.Generic.IEnumerable%601?displayProperty=nameWithType> která implementuje je považován za *dotazovatelný typ* a může být dotazován s LINQ. Linq dotazy poskytují společný vzor pro přístup k datům. Jsou obvykle stručnější a čitelnější než `foreach` standardní smyčky a poskytují možnosti filtrování, řazení a seskupování. Linq dotazy můžete také zlepšit výkon. Další informace naleznete [v tématech LINQ to Objects (C#)](../../csharp/programming-guide/concepts/linq/linq-to-objects.md), [LINQ to Objects (Visual Basic),](../../visual-basic/programming-guide/concepts/linq/linq-to-objects.md) [Parallel LINQ (PLINQ)](../../../docs/standard/parallel-programming/parallel-linq-plinq.md), [Introduction to LINQ Queries (C#)](../../csharp/programming-guide/concepts/linq/introduction-to-linq-queries.md)a [Basic Query Operations (Visual Basic).](../../visual-basic/programming-guide/concepts/linq/basic-query-operations.md)  
+     Kolekce rozhraní .NET <xref:System.Collections.IEnumerable?displayProperty=nameWithType> Framework <xref:System.Collections.Generic.IEnumerable%601?displayProperty=nameWithType> implementují nebo umožňují, aby byla kolekce iterována. Čítač výčtu si lze myslet jako pohyblivý ukazatel na libovolný prvek v kolekci. [Foreach, v](../../csharp/language-reference/keywords/foreach-in.md) prohlášení a [pro každý ... Další příkaz](../../visual-basic/language-reference/statements/for-each-next-statement.md) použít čítač <xref:System.Collections.IEnumerable.GetEnumerator%2A> výčtu vystavené metodou a skrýt složitost manipulace s čítač výčtu. Kromě toho všechny kolekce, <xref:System.Collections.Generic.IEnumerable%601?displayProperty=nameWithType> která implementuje je považován za *dotazovatelný typ* a může být dotazován s LINQ. Linq dotazy poskytují společný vzor pro přístup k datům. Jsou obvykle stručnější a čitelnější než `foreach` standardní smyčky a poskytují možnosti filtrování, řazení a seskupování. Linq dotazy můžete také zlepšit výkon. Další informace naleznete [v tématech LINQ to Objects (C#)](../../csharp/programming-guide/concepts/linq/linq-to-objects.md), [LINQ to Objects (Visual Basic),](../../visual-basic/programming-guide/concepts/linq/linq-to-objects.md) [Parallel LINQ (PLINQ)](../../../docs/standard/parallel-programming/introduction-to-plinq.md), [Introduction to LINQ Queries (C#)](../../csharp/programming-guide/concepts/linq/introduction-to-linq-queries.md)a [Basic Query Operations (Visual Basic).](../../visual-basic/programming-guide/concepts/linq/basic-query-operations.md)  
   
 - **Možnost zkopírovat obsah kolekce do pole**  
   
@@ -80,11 +80,11 @@ Podobná data mohou být často zpracovány efektivněji při ukládání a mani
 |[Porovnávání a řazení v kolekcích](../../../docs/standard/collections/comparisons-and-sorts-within-collections.md)|Popisuje použití porovnání rovnosti a řazení porovnání v kolekcích.|  
 |[Typy řazených kolekcí](../../../docs/standard/collections/sorted-collection-types.md)|Popisuje výkon a charakteristiky seřazených kolekcí.|  
 |[Typy kolekce Hashtable a Dictionary](../../../docs/standard/collections/hashtable-and-dictionary-collection-types.md)|Popisuje funkce obecných a neobecných typů slovníků založených na hash.|  
-|[Kolekce se zabezpečenými vlákny](../../../docs/standard/collections/thread-safe/index.md)|Popisuje typy kolekcí, jako <xref:System.Collections.Concurrent.BlockingCollection%601?displayProperty=nameWithType> je například a <xref:System.Collections.Concurrent.ConcurrentBag%601?displayProperty=nameWithType> které podporují bezpečný a efektivní souběžný přístup z více vláken.|  
+|[Kolekce bezpečné pro přístup z více vláken](../../../docs/standard/collections/thread-safe/index.md)|Popisuje typy kolekcí, jako <xref:System.Collections.Concurrent.BlockingCollection%601?displayProperty=nameWithType> je například a <xref:System.Collections.Concurrent.ConcurrentBag%601?displayProperty=nameWithType> které podporují bezpečný a efektivní souběžný přístup z více vláken.|  
 |System.Collections.Neměnný|Zavádí neměnné kolekce a poskytuje odkazy na typy kolekce.|  
   
 <a name="BKMK_Reference"></a>
-## <a name="reference"></a>Referenční informace  
+## <a name="reference"></a>Odkaz  
  <xref:System.Array?displayProperty=nameWithType>  
  <xref:System.Collections?displayProperty=nameWithType>  
  <xref:System.Collections.Concurrent?displayProperty=nameWithType>  

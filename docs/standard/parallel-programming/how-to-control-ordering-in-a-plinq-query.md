@@ -8,12 +8,12 @@ dev_langs:
 helpviewer_keywords:
 - PLINQ queries, how to control ordering
 ms.assetid: c67eccc7-004d-4b2f-987e-919cbbd62ef7
-ms.openlocfilehash: d38c039fa99433d9476d62c1e96dff7e306fd766
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 86011cff71fabed5e47e085f91b1759238638c9a
+ms.sourcegitcommit: 961ec21c22d2f1d55c9cc8a7edf2ade1d1fd92e3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "73123124"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80588493"
 ---
 # <a name="how-to-control-ordering-in-a-plinq-query"></a>Postupy: Řazení ovládacích prvků v PLINQ dotazu
 Tyto příklady ukazují, jak řídit řazení v dotazu <xref:System.Linq.ParallelEnumerable.AsOrdered%2A> PLINQ pomocí metody rozšíření.  
@@ -46,4 +46,4 @@ Tyto příklady ukazují, jak řídit řazení v dotazu <xref:System.Linq.Parall
 ## <a name="see-also"></a>Viz také
 
 - <xref:System.Linq.ParallelEnumerable>
-- [Paralelní LINQ (PLINQ)](../../../docs/standard/parallel-programming/parallel-linq-plinq.md)
+- [Paralelní LINQ (PLINQ)](../../../docs/standard/parallel-programming/introduction-to-plinq.md)

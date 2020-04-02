@@ -2,12 +2,12 @@
 title: dotnet publikovat, příkaz
 description: Příkaz publikování dotnet publikuje projekt nebo řešení .NET Core do adresáře.
 ms.date: 02/24/2020
-ms.openlocfilehash: 7e57a7b3cfe72653cc64c90055735795e4616260
-ms.sourcegitcommit: 79b0dd8bfc63f33a02137121dd23475887ecefda
+ms.openlocfilehash: 0e18220443f3713c86c257fcf401b98ddd716ebc
+ms.sourcegitcommit: 961ec21c22d2f1d55c9cc8a7edf2ade1d1fd92e3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/01/2020
-ms.locfileid: "80523771"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80588272"
 ---
 # <a name="dotnet-publish"></a>dotnet publish
 
@@ -38,7 +38,23 @@ dotnet publish [-h|--help]
 - Soubor *.runtimeconfig.json,* který určuje sdílený runtime, který aplikace očekává, stejně jako další možnosti konfigurace pro runtime (například typ uvolňování paměti).
 - Závislosti aplikace, které jsou zkopírovány z mezipaměti NuGet do výstupní složky.
 
-Výstup `dotnet publish` příkazu je připraven k nasazení do hostitelského systému (například server, PC, Mac, notebook) pro spuštění. Je to jediný oficiálně podporovaný způsob, jak připravit aplikaci pro nasazení. V závislosti na typu nasazení, který projekt určuje, může nebo nemusí mít hostitelský systém na něm nainstalovanou sdílenou runtime .NET Core.
+Výstup `dotnet publish` příkazu je připraven k nasazení do hostitelského systému (například server, PC, Mac, notebook) pro spuštění. Je to jediný oficiálně podporovaný způsob, jak připravit aplikaci pro nasazení. V závislosti na typu nasazení, který projekt určuje, může nebo nemusí mít hostitelský systém na něm nainstalovanou sdílenou runtime .NET Core. Další informace naleznete v [tématu Publish .NET Core apps with the .NET Core CLI](../deploying/deploy-with-cli.md).
+
+### <a name="msbuild"></a>MSBuild
+
+Příkaz `dotnet publish` volá MSBuild, který `Publish` vyvolá cíl. Všechny parametry `dotnet publish` předané jsou předány MSBuild. A `-c` `-o` parametry mapovat na MSBuild `Configuration` a `OutputPath` vlastnosti, v uvedeném pořadí.
+
+Příkaz `dotnet publish` přijímá možnosti MSBuild, `-p` například `-l` pro nastavení vlastností a definování protokolování. Vlastnost MSBuild můžete například nastavit pomocí formátu: `-p:<NAME>=<VALUE>`. Můžete také nastavit vlastnosti související s publikováním odkazem na soubor *PubXML,* například:
+
+```dotnetcli
+dotnet publish -p:PublishProfile=Properties\PublishProfiles\FolderProfile.pubxml
+```
+
+Další informace najdete v následujících materiálech:
+
+- [Odkaz na příkazový řádek MSBuild](/visualstudio/msbuild/msbuild-command-line-reference)
+- [Visual Studio publikuje profily (.pubxml) pro nasazení aplikace ASP.NET Core](/aspnet/core/host-and-deploy/visual-studio-publish-profiles)
+- [dotnet msbuild](dotnet-msbuild.md)
 
 ## <a name="arguments"></a>Argumenty
 
@@ -112,7 +128,9 @@ Výstup `dotnet publish` příkazu je připraven k nasazení do hostitelského s
 
 - **`--self-contained [true|false]`**
 
-  Publikuje zaběhu .NET Core s vaší aplikací, takže runtime nemusí být nainstalován v cílovém počítači. Ve `true` výchozím nastavení je zadán identifikátor za běhu. Další informace naleznete v tématu [publikování a](../deploying/index.md) publikování [aplikací .NET Core pomocí rozhraní .NET Core .](../deploying/deploy-with-cli.md)
+  Publikuje zaběhu .NET Core s vaší aplikací, takže runtime nemusí být nainstalován v cílovém počítači. Výchozí `true` hodnota je, pokud je zadán identifikátor modulu runtime a projekt je spustitelný projekt (nikoli projekt knihovny). Další informace naleznete v tématu [publikování a](../deploying/index.md) publikování [aplikací .NET Core pomocí rozhraní .NET Core .](../deploying/deploy-with-cli.md)
+
+  Pokud je tato možnost `true` použita bez zadání nebo `false`, výchozí je `true`. V takovém případě nedávejte řešení nebo argument `--self-contained`projektu `true` ihned po , protože nebo `false` se očekává v této pozici.
 
 - **`--no-self-contained`**
 
@@ -182,3 +200,6 @@ Výstup `dotnet publish` příkazu je připraven k nasazení do hostitelského s
 - [Katalog IDentifier (RID) modulu runtime](../rid-catalog.md)
 - [Práce s macOS Catalina Notarization](../install/macos-notarization-issues.md)
 - [Adresářová struktura publikované aplikace](/aspnet/core/hosting/directory-structure)
+- [Odkaz na příkazový řádek MSBuild](/visualstudio/msbuild/msbuild-command-line-reference)
+- [Visual Studio publikuje profily (.pubxml) pro nasazení aplikace ASP.NET Core](/aspnet/core/host-and-deploy/visual-studio-publish-profiles)
+- [dotnet msbuild](dotnet-msbuild.md)

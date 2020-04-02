@@ -7,12 +7,12 @@ helpviewer_keywords:
 - threading [.NET]
 - threading [.NET], multiple threads
 ms.assetid: 5baac3aa-e603-4fa6-9f89-0f2c1084e6b1
-ms.openlocfilehash: ad36789579b95e0129e402765194b9f5e45a4cc1
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: e29c131f8459179d0641ac9a0cb8234fbba0e7d0
+ms.sourcegitcommit: 961ec21c22d2f1d55c9cc8a7edf2ade1d1fd92e3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "73127507"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80588434"
 ---
 # <a name="threads-and-threading"></a>Závity a závity
 
@@ -37,7 +37,7 @@ Pokud program provádí operace, které lze provést paralelně, může být cel
 
 ## <a name="how-to-use-multithreading-in-net"></a>Použití multithreadingu v rozhraní .NET
 
-Počínaje rozhraním .NET Framework 4 je doporučeným způsobem využití multithreadingu použití [paralelní knihovny úloh (TPL)](../parallel-programming/task-parallel-library-tpl.md) a [paralelních LINQ (PLINQ).](../parallel-programming/parallel-linq-plinq.md) Další informace naleznete [v tématu Paralelní programování](../parallel-programming/index.md).
+Počínaje rozhraním .NET Framework 4 je doporučeným způsobem využití multithreadingu použití [paralelní knihovny úloh (TPL)](../parallel-programming/task-parallel-library-tpl.md) a [paralelních LINQ (PLINQ).](../parallel-programming/introduction-to-plinq.md) Další informace naleznete [v tématu Paralelní programování](../parallel-programming/index.md).
 
 TPL i PLINQ spoléhají <xref:System.Threading.ThreadPool> na závity. Třída <xref:System.Threading.ThreadPool?displayProperty=nameWithType> poskytuje aplikaci .NET s fondem pracovních podprocesů. Můžete také použít vlákna fondu vláken. Další informace naleznete [v tématu Fond spravovaných vláken](the-managed-thread-pool.md).
 

@@ -10,12 +10,12 @@ helpviewer_keywords:
 - Collections classes
 - grouping data in collections, selecting collection class
 ms.assetid: ba049f9a-ce87-4cc4-b319-3f75c8ddac8a
-ms.openlocfilehash: fb03200c810290c970f7aa56a0e15d385aca7ca8
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 621d64183c1cacc14c2d432e4eef43f4d3ba5474
+ms.sourcegitcommit: 961ec21c22d2f1d55c9cc8a7edf2ade1d1fd92e3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "75711347"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80588317"
 ---
 # <a name="selecting-a-collection-class"></a>Výběr třídy kolekce
 
@@ -79,11 +79,11 @@ Ujistěte se, že si pečlivě vyberete třídu kolekce. Použití nesprávného
 ## <a name="linq-to-objects-and-plinq"></a>LINQ k objektům a PLINQ  
  LINQ to Objects umožňuje vývojářům používat dotazy LINQ pro přístup k objektům v paměti, pokud typ objektu implementuje <xref:System.Collections.IEnumerable> nebo <xref:System.Collections.Generic.IEnumerable%601>. LINQ dotazy poskytují společný vzor pro přístup k datům, jsou obvykle `foreach` stručnější a čitelnější než standardní smyčky a poskytují možnosti filtrování, řazení a seskupování. Další informace naleznete [v tématu LINQ na objekty (C#)](../../csharp/programming-guide/concepts/linq/linq-to-objects.md) a [LINQ na objekty (Visual Basic).](../../visual-basic/programming-guide/concepts/linq/linq-to-objects.md)  
   
- PLINQ poskytuje paralelní implementaci LINQ na objekty, které mohou nabídnout rychlejší provádění dotazů v mnoha scénářích, a to prostřednictvím efektivnějšího využití vícejádrových počítačů. Další informace naleznete [v tématu Paralelní LINQ (PLINQ)](../../../docs/standard/parallel-programming/parallel-linq-plinq.md).  
+ PLINQ poskytuje paralelní implementaci LINQ na objekty, které mohou nabídnout rychlejší provádění dotazů v mnoha scénářích, a to prostřednictvím efektivnějšího využití vícejádrových počítačů. Další informace naleznete [v tématu Paralelní LINQ (PLINQ)](../../../docs/standard/parallel-programming/introduction-to-plinq.md).  
   
 ## <a name="see-also"></a>Viz také
 
 - <xref:System.Collections>
 - <xref:System.Collections.Specialized>
 - <xref:System.Collections.Generic>
-- [Kolekce se zabezpečenými vlákny](../../../docs/standard/collections/thread-safe/index.md)
+- [Kolekce bezpečné pro přístup z více vláken](../../../docs/standard/collections/thread-safe/index.md)

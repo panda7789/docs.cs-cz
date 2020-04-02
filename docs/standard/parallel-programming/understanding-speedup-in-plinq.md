@@ -8,12 +8,12 @@ dev_langs:
 helpviewer_keywords:
 - PLINQ queries, performance tuning
 ms.assetid: 53706c7e-397d-467a-98cd-c0d1fd63ba5e
-ms.openlocfilehash: 07b5027d560a4caccc6c0a516c3f70c11df6be83
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 60df814e18f473d84c260511292666c524fda7b7
+ms.sourcegitcommit: 961ec21c22d2f1d55c9cc8a7edf2ade1d1fd92e3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "73139902"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80588078"
 ---
 # <a name="understanding-speedup-in-plinq"></a>Porozumění zrychlení v PLINQ
 Primárním účelem PLINQ je urychlit provádění linq na objekty dotazů spuštěním delegáty dotazu paralelně na vícejádrových počítačích. PLINQ funguje nejlépe při zpracování každého prvku ve zdrojové kolekci je nezávislý, bez sdíleného stavu zapojených mezi jednotlivé delegáty. Tyto operace jsou běžné v LINQ na objekty a PLINQ a jsou často nazývány "*nádherně paralelní*", protože se snadno hodí k plánování na více vláknech. Ne všechny dotazy se však skládají výhradně z nádherně paralelních operací; ve většině případů dotaz zahrnuje některé operátory, které buď nelze paralelizovat, nebo které zpomalují paralelní spuštění. A i s dotazy, které jsou zcela nádherně paralelní, PLINQ musí stále rozdělit zdroj dat a naplánovat práci na vláknech a obvykle sloučit výsledky po dokončení dotazu. Všechny tyto operace přidat výpočetní náklady na paralelizaci; tyto náklady na přidání paralelizace se nazývají *režie*. Chcete-li dosáhnout optimálního výkonu v dotazu PLINQ, cílem je maximalizovat součásti, které jsou nádherně paralelní a minimalizovat součásti, které vyžadují režii. Tento článek obsahuje informace, které vám pomohou psát plinq dotazy, které jsou co nejúčinnější, zatímco stále přináší správné výsledky.  
@@ -84,4 +84,4 @@ Primárním účelem PLINQ je urychlit provádění linq na objekty dotazů spu�
   
 ## <a name="see-also"></a>Viz také
 
-- [Paralelní LINQ (PLINQ)](../../../docs/standard/parallel-programming/parallel-linq-plinq.md)
+- [Paralelní LINQ (PLINQ)](../../../docs/standard/parallel-programming/introduction-to-plinq.md)

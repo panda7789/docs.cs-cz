@@ -8,12 +8,12 @@ dev_langs:
 helpviewer_keywords:
 - PLINQ queries, merge options
 ms.assetid: e8f7be3b-88de-4f33-ab14-dc008e76c1ba
-ms.openlocfilehash: 18f233ac4c5afa63ec31e83d5fff8f0a57f9146f
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 623466e0e960ea991ae92e5de432171b70bad1d2
+ms.sourcegitcommit: 961ec21c22d2f1d55c9cc8a7edf2ade1d1fd92e3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "74203990"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80588623"
 ---
 # <a name="merge-options-in-plinq"></a>Možnosti sloučení v PLINQ
 Při provádění dotazu jako paralelní, PLINQ rozdělí zdrojovou sekvenci tak, aby více vláken může pracovat na různých částech současně, obvykle v samostatných vláknech. Pokud mají být výsledky spotřebovány v jednom `foreach` vlákně, například ve smyčce (v`For Each` jazyce Visual Basic), musí být výsledky z každého vlákna sloučeny zpět do jedné sekvence. Druh sloučení, který provádí PLINQ závisí na operátory, které jsou k dispozici v dotazu. Například operátory, které ukládají nové pořadí na výsledky musí vyrovnávací paměti všechny prvky ze všech vláken. Z hlediska náročné vlákno (což je také uživatel aplikace) plně do vyrovnávací paměti dotaz může spustit znatelnou dobu před tím, než vytvoří svůj první výsledek. Ostatní operátory jsou ve výchozím nastavení částečně uloženy do vyrovnávací paměti; přinášejí své výsledky v dávkách. Jeden operátor, <xref:System.Linq.ParallelEnumerable.ForAll%2A> není ve výchozím nastavení do vyrovnávací paměti. Poskytuje všechny prvky ze všech vláken okamžitě.  
@@ -65,5 +65,5 @@ Při provádění dotazu jako paralelní, PLINQ rozdělí zdrojovou sekvenci tak
   
 ## <a name="see-also"></a>Viz také
 
-- [Paralelní LINQ (PLINQ)](../../../docs/standard/parallel-programming/parallel-linq-plinq.md)
+- [Paralelní LINQ (PLINQ)](../../../docs/standard/parallel-programming/introduction-to-plinq.md)
 - [Postupy: Určení možností sloučení v PLINQ](../../../docs/standard/parallel-programming/how-to-specify-merge-options-in-plinq.md)

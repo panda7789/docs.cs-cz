@@ -8,12 +8,12 @@ dev_langs:
 helpviewer_keywords:
 - PLINQ queries, order preservation
 ms.assetid: 10d202bc-19e1-4b5c-bbf1-9a977322a9ca
-ms.openlocfilehash: 5b067fa277816e6105d37047c6c4996a4cbb9b5a
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 0e9b4510757fc0f98b2edfbe1c656cdb5f6bce72
+ms.sourcegitcommit: 961ec21c22d2f1d55c9cc8a7edf2ade1d1fd92e3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "73138224"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80588639"
 ---
 # <a name="order-preservation-in-plinq"></a>Zachování pořadí v PLINQ
 V PLINQ, cílem je maximalizovat výkon při zachování správnosti. Dotaz by měl běžet co nejrychleji, ale stále vytvářet správné výsledky. V některých případech správnost vyžaduje, aby bylo zachováno pořadí zdrojové sekvence; však řazení může být výpočtově nákladné. Proto ve výchozím nastavení PLINQ nezachová pořadí zdrojové sekvence. V tomto ohledu PLINQ [!INCLUDE[vbtecdlinq](../../../includes/vbtecdlinq-md.md)]podobá , ale je na rozdíl od LINQ na objekty, které zachovávají řazení.  
@@ -122,5 +122,5 @@ V PLINQ, cílem je maximalizovat výkon při zachování správnosti. Dotaz by m
   
 ## <a name="see-also"></a>Viz také
 
-- [Paralelní LINQ (PLINQ)](../../../docs/standard/parallel-programming/parallel-linq-plinq.md)
+- [Paralelní LINQ (PLINQ)](../../../docs/standard/parallel-programming/introduction-to-plinq.md)
 - [Paralelní programování](../../../docs/standard/parallel-programming/index.md)

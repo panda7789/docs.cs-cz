@@ -7,29 +7,30 @@ helpviewer_keywords:
 - XML Schema Definition tool
 - serialization, XML Schema Definition tool
 ms.assetid: 3c03f855-f931-47ff-bbc6-50c0367a16e4
-ms.openlocfilehash: e855d3fdee5e8f37af8eaa362ecfdeea6e054bf6
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: b51b9a0112893d9a7838155f4af051e7079c8cdd
+ms.sourcegitcommit: 961ec21c22d2f1d55c9cc8a7edf2ade1d1fd92e3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64645041"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80588391"
 ---
 # <a name="the-xml-schema-definition-tool-and-xml-serialization"></a>Nástroj definice schématu XML a serializace XML
-Nástroj definici schématu XML ([nástroj definici schématu XML (Xsd.exe)](../../../docs/standard/serialization/xml-schema-definition-tool-xsd-exe.md)) je nainstalováno rozhraní .NET Framework nástroje jako součást sady Windows® Software Development Kit (SDK). Nástroj je určen především ke dvěma účelům:  
+
+Nástroj Definice schématu XML ([Nástroj pro definici schématu XML (Xsd.exe)](../../../docs/standard/serialization/xml-schema-definition-tool-xsd-exe.md)) je nainstalován společně&reg; s nástroji rozhraní .NET Framework jako součást sady Windows Software Development Kit (SDK). Nástroj je určen především ke dvěma účelům:  
   
-- Chcete-li generovat buď C# nebo Visual Basic souborů třídy, které odpovídají konkrétní jazyk (XSD) schématu definice schématu XML. Nástroj přebírá schématu XML jako argument a uloží soubor, který obsahuje mnoho třída, která je, když serializované pomocí <xref:System.Xml.Serialization.XmlSerializer>, odpovídat schématu. Informace o tom, jak pomocí nástroje pro generování třídy, které odpovídají konkrétní schématu naleznete v tématu [jak: Použijte nástroj definici schématu XML ke generování třídy a dokumentů schématu XML](../../../docs/standard/serialization/xml-schema-def-tool-gen.md).  
+- Chcete-li generovat buď C# nebo Visual Basic souborů třídy, které odpovídají konkrétní jazyk (XSD) schématu definice schématu XML. Nástroj přebírá schématu XML jako argument a uloží soubor, který obsahuje mnoho třída, která je, když serializované pomocí <xref:System.Xml.Serialization.XmlSerializer>, odpovídat schématu. Informace o použití nástroje ke generování tříd, které odpovídají určitému schématu, naleznete v [tématu Postup: Pomocí nástroje definice schématu XML vygenerujte třídy a dokumenty schématu XML](../../../docs/standard/serialization/xml-schema-def-tool-gen.md).  
   
-- Generovat dokument schématu XML ze souboru .dll nebo .exe souboru. Chcete-li zobrazit schéma sadu souborů, které máte vytvořen nebo ten, který byl upraven, s atributy, předejte knihovna DLL nebo EXE jako argument nástroj pro generování schématu XML. Informace o tom, jak pomocí nástroje pro generování schématu dokument XML z sadu tříd, naleznete v tématu [jak: Použijte nástroj definici schématu XML ke generování třídy a dokumentů schématu XML](../../../docs/standard/serialization/xml-schema-def-tool-gen.md).  
+- Generovat dokument schématu XML ze souboru .dll nebo .exe souboru. Chcete-li zobrazit schéma sadu souborů, které máte vytvořen nebo ten, který byl upraven, s atributy, předejte knihovna DLL nebo EXE jako argument nástroj pro generování schématu XML. Informace o použití nástroje ke generování dokumentu schématu XML ze sady tříd naleznete v tématu [Postup: Pomocí nástroje definice schématu XML vygenerujte třídy a dokumenty schématu XML](../../../docs/standard/serialization/xml-schema-def-tool-gen.md).  
   
- Další informace o tomto nástroji a ostatním uživatelům, naleznete v tématu [nástroje](../../../docs/framework/tools/index.md). Informace o možnostech tento nástroj najdete v tématu [nástroj definici schématu XML (Xsd.exe)](../../../docs/standard/serialization/xml-schema-definition-tool-xsd-exe.md).  
+Další informace o použití nástroje naleznete v tématu [Xml Schema Definition Tool (Xsd.exe).](../../../docs/standard/serialization/xml-schema-definition-tool-xsd-exe.md)  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Data.DataSet>
 - [Představení serializace XML](../../../docs/standard/serialization/introducing-xml-serialization.md)
-- [Nástroj XML Schema Definition (Xsd.exe)](../../../docs/standard/serialization/xml-schema-definition-tool-xsd-exe.md)
+- [Nástroje definice schématu XML (Xsd.exe)](../../../docs/standard/serialization/xml-schema-definition-tool-xsd-exe.md)
 - <xref:System.Xml.Serialization.XmlSerializer>
 - [Postupy: Serializace objektu](../../../docs/standard/serialization/how-to-serialize-an-object.md)
 - [Postupy: Deserializace objektu](../../../docs/standard/serialization/how-to-deserialize-an-object.md)
-- [Postupy: Použijte nástroj definici schématu XML ke generování třídy a dokumentech schémat XML.](../../../docs/standard/serialization/xml-schema-def-tool-gen.md)
+- [Postupy: Generování tříd a dokumentace ke schématu XML pomocí nástroje XML Schema Definition](../../../docs/standard/serialization/xml-schema-def-tool-gen.md)
 - [Podpora vazby schématu XML](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/sh1e66zd(v=vs.100))

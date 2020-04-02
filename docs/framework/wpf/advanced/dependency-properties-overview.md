@@ -14,22 +14,22 @@ helpviewer_keywords:
 - dependency properties [WPF]
 - resources [WPF], references to
 ms.assetid: d119d00c-3afb-48d6-87a0-c4da4f83dee5
-ms.openlocfilehash: 9bf0b168633bbf9f56694e79cf81f8051f9b8ac0
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 1df75814c45a6f1c245d43e2390b8a6ce692a779
+ms.sourcegitcommit: 961ec21c22d2f1d55c9cc8a7edf2ade1d1fd92e3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79186385"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80587799"
 ---
 # <a name="dependency-properties-overview"></a>Přehled vlastností závislostí
 
-Windows Presentation Foundation (WPF) poskytuje sadu služeb, které lze použít k rozšíření funkce [vlastnosti](../../../standard/base-types/common-type-system.md#Properties)typu . Společně tyto služby jsou obvykle označovány jako wpf systém vlastností. Vlastnost, která je zálohována systémem vlastností WPF, se označuje jako vlastnost závislosti. Tento přehled popisuje systém vlastností WPF a možnosti vlastnosti závislosti. To zahrnuje použití existujících vlastností závislostí v XAML a v kódu. Tento přehled také zavádí specializované aspekty vlastností závislostí, jako jsou metadata vlastností závislostí a jak vytvořit vlastní vlastnost závislostí ve vlastní třídě.
+Windows Presentation Foundation (WPF) poskytuje sadu služeb, které lze použít k rozšíření funkce [vlastnosti](../../../standard/base-types/common-type-system.md#properties)typu . Společně tyto služby jsou obvykle označovány jako wpf systém vlastností. Vlastnost, která je zálohována systémem vlastností WPF, se označuje jako vlastnost závislosti. Tento přehled popisuje systém vlastností WPF a možnosti vlastnosti závislosti. To zahrnuje použití existujících vlastností závislostí v XAML a v kódu. Tento přehled také zavádí specializované aspekty vlastností závislostí, jako jsou metadata vlastností závislostí a jak vytvořit vlastní vlastnost závislostí ve vlastní třídě.
 
 ## <a name="prerequisites"></a>Požadavky
 Toto téma předpokládá, že máte některé základní znalosti systému typu .NET a objektově orientované programování. Chcete-li sledovat příklady v tomto tématu, měli byste také pochopit XAML a vědět, jak psát aplikace WPF. Další informace naleznete [v tématu Návod: Moje první desktopová aplikace WPF](../getting-started/walkthrough-my-first-wpf-desktop-application.md).  
   
 ## <a name="dependency-properties-and-clr-properties"></a>Vlastnosti závislostí a vlastnosti CLR
- V WPF vlastnosti jsou obvykle vystaveny jako standardní [vlastnosti](../../../standard/base-types/common-type-system.md#Properties).NET . Na základní úrovni můžete komunikovat s těmito vlastnostmi přímo a nikdy nevíte, že jsou implementovány jako vlastnost závislosti. Měli byste se však seznámit s některými nebo všemi funkcemi systému vlastností WPF, abyste mohli tyto funkce využít.
+ V WPF vlastnosti jsou obvykle vystaveny jako standardní [vlastnosti](../../../standard/base-types/common-type-system.md#properties).NET . Na základní úrovni můžete komunikovat s těmito vlastnostmi přímo a nikdy nevíte, že jsou implementovány jako vlastnost závislosti. Měli byste se však seznámit s některými nebo všemi funkcemi systému vlastností WPF, abyste mohli tyto funkce využít.
 
 Účelem vlastností závislostí je poskytnout způsob, jak vypočítat hodnotu vlastnosti na základě hodnoty jiných vstupů. Tyto další vstupy mohou zahrnovat vlastnosti systému, jako jsou motivy a uživatelské předvolby, mechanismy určení vlastností just-in-time, jako jsou datové vazby a animace/scénáře, šablony pro více použití, jako jsou prostředky a styly, nebo hodnoty známé prostřednictvím vztahů nadřazený-podřízený s jinými prvky ve stromu prvků. Kromě toho lze implementovat vlastnost závislosti, která poskytuje samostatné ověření, výchozí hodnoty, zpětná volání, která sledují změny jiných vlastností, a systém, který může dosáhovat hodnoty vlastností na základě potenciálně informací o běhu. Odvozené třídy můžete také změnit některé specifické charakteristiky existující vlastnosti přepsáním metadat vlastnosti závislost, spíše než přepsání skutečné implementace existujících vlastností nebo vytváření nových vlastností.
 
@@ -99,7 +99,7 @@ Vlastnost závislosti poskytuje funkce, které rozšiřuje funkce vlastnosti na 
 
 - [Integrace návrháře WPF](#wpf-designer-integration)
 
-### <a name="resources"></a>Zdroje informací
+### <a name="resources"></a>Prostředky
 Hodnotu vlastnosti závislosti lze nastavit odkazem na prostředek. Prostředky jsou obvykle určeny jako hodnota `Resources` vlastnosti kořenového prvku stránky nebo aplikace (tato umístění umožňují nejvhodnější přístup k prostředku). Následující příklad ukazuje, jak <xref:System.Windows.Media.SolidColorBrush> definovat prostředek.
 
 [!code-xaml[PropertiesOvwSupport#ResourcesResource](~/samples/snippets/csharp/VS_Snippets_Wpf/PropertiesOvwSupport/CSharp/page2.xaml#resourcesresource)]
@@ -186,7 +186,7 @@ V zásadě pro první tlačítko vlastnost je nastavena dvakrát, ale platí pou
 Obvykle byste nechtěli, aby styly vždy platily a zakrývaly i místně nastavenou hodnotu jednotlivého prvku (jinak by bylo velmi obtížné použít styly nebo prvky obecně). Proto hodnoty, které pocházejí ze stylů pracovat na nižší precedens než místně nastavenou hodnotu. Podrobnější seznam vlastností závislostí a odkud může pocházet efektivní hodnota vlastnosti závislostí, naleznete v [tématu Priorita hodnoty vlastnosti závislostí](dependency-property-value-precedence.md).
 
 > [!NOTE]
-> Existuje několik vlastností definovaných na WPF prvky, které nejsou vlastnosti závislostí. Z velké části byly vlastnosti implementovány jako vlastnosti závislostí pouze v případě, že bylo třeba podporovat alespoň jeden ze scénářů povolených systémem vlastností: datová vazba, styl, animace, podpora výchozí hodnoty, dědičnost, připojené vlastnosti nebo Neplatnost.
+> Existuje několik vlastností definovaných na WPF prvky, které nejsou vlastnosti závislostí. Z velké části vlastnosti byly implementovány jako vlastnosti závislostí pouze v případě, že bylo třeba podporovat alespoň jeden ze scénářů povolených systémem vlastností: datové vazby, styling, animace, výchozí podpora hodnoty, dědičnost, připojené vlastnosti nebo zneplatnění.
 
 ## <a name="learning-more-about-dependency-properties"></a>Další informace o vlastnostech závislostí  
 

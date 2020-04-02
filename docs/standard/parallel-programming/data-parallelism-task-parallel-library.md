@@ -8,12 +8,12 @@ dev_langs:
 helpviewer_keywords:
 - parallelism, data
 ms.assetid: 3f05f33f-f1da-4b16-81c2-9ceff1bef449
-ms.openlocfilehash: 72696a41cd3b71f47fdcf43e4ece70ebeb7d34d1
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: f0910ae928e94b487df5a3dfd456ee9d7c0fb7df
+ms.sourcegitcommit: 961ec21c22d2f1d55c9cc8a7edf2ade1d1fd92e3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "73123162"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80587600"
 ---
 # <a name="data-parallelism-task-parallel-library"></a>Datový paralelismus (Task Parallel Library)
 *Paralelismus dat* odkazuje na scénáře, ve kterých se provádí stejná operace souběžně (to znamená paralelně) na prvky ve zdrojové kolekci nebo matici. V paralelních operacích dat je zdrojová kolekce rozdělena na oddíly tak, aby více vláken může pracovat s různými segmenty současně.  
@@ -35,7 +35,7 @@ ms.locfileid: "73123162"
   
  Další informace naleznete [v tématu Vzory pro paralelní programování: Principy a použití paralelních vzorů s rozhraním .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=19222).  
   
- Paralelismus dat s deklarativní syntaxí nebo syntaxí podobný dotazu je podporován plinq. Další informace naleznete [v tématu Paralelní LINQ (PLINQ)](../../../docs/standard/parallel-programming/parallel-linq-plinq.md).  
+ Paralelismus dat s deklarativní syntaxí nebo syntaxí podobný dotazu je podporován plinq. Další informace naleznete [v tématu Paralelní LINQ (PLINQ)](../../../docs/standard/parallel-programming/introduction-to-plinq.md).  
   
 ## <a name="related-topics"></a>Související témata  
   

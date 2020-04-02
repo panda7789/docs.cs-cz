@@ -8,27 +8,30 @@ dev_langs:
 helpviewer_keywords:
 - PLINQ queries, introduction to
 ms.assetid: eaa720d8-8999-4eb7-8df5-3c19ca61cad0
-ms.openlocfilehash: ed1b2df57c118a0ebb6b5ffa4326b3e2eac81dec
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: e9ef72c2691a4dbb9c68202b29e0f5c77dcdaa74
+ms.sourcegitcommit: 961ec21c22d2f1d55c9cc8a7edf2ade1d1fd92e3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "75632360"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80588184"
 ---
 # <a name="introduction-to-plinq"></a>Úvod do PLINQ
 
+Paralelní LINQ (PLINQ) je paralelní implementace [jazykově integrovaného dotazu (LINQ)](../../csharp/programming-guide/concepts/linq/index.md) vzor. PLINQ implementuje úplnou sadu linq standardní operátory dotazů jako metody rozšíření pro obor <xref:System.Linq> názvů a má další operátory pro paralelní operace. PLINQ kombinuje jednoduchost a čitelnost syntaxe LINQ s výkonem paralelního programování.
+
+> [!TIP]
+> Pokud nejste obeznámeni s LINQ, je vybaven jednotný model pro dotazování libovolný zdroj výčtu dat v typu bezpečným způsobem. LINQ to Objects je název pro dotazy LINQ, které jsou <xref:System.Collections.Generic.List%601> spuštěny proti in-memory kolekce, jako jsou pole. Tento článek předpokládá, že máte základní znalosti LINQ. Další informace naleznete v [tématu Language-Integrated Query (LINQ)](../../csharp/programming-guide/concepts/linq/index.md).
+
 ## <a name="what-is-a-parallel-query"></a>Co je paralelní dotaz?
 
-Jazykově integrovaný dotaz (LINQ) byl zaveden v rozhraní .NET Framework 3.5. Obsahuje jednotný model pro dotazování libovolného <xref:System.Collections.IEnumerable?displayProperty=nameWithType> zdroje nebo <xref:System.Collections.Generic.IEnumerable%601?displayProperty=nameWithType> zdroje dat způsobem, který je bezpečný pro daný typ. LINQ to Objects je název pro dotazy LINQ, které jsou <xref:System.Collections.Generic.List%601> spuštěny proti in-memory kolekce, jako jsou pole. Tento článek předpokládá, že máte základní znalosti LINQ. Další informace naleznete v [tématu Jazyk integrovaný dotaz (LINQ) - C#](../../csharp/programming-guide/concepts/linq/index.md) nebo [jazykintegrovaný dotaz (LINQ) - Visual Basic](../../visual-basic/programming-guide/concepts/linq/index.md).
-
-Paralelní LINQ (PLINQ) je paralelní implementace vzoru LINQ. Dotaz PLINQ v mnoha ohledech se podobá non paralelní LINQ na objekty dotazu. PLINQ dotazy, stejně jako sekvenční LINQ <xref:System.Collections.IEnumerable> dotazy, pracovat na libovolné v paměti nebo <xref:System.Collections.Generic.IEnumerable%601> zdroj dat a mají odložené spuštění, což znamená, že nezačnou provádění, dokud není uveden výčet dotazu. Hlavním rozdílem je, že PLINQ se snaží plně využít všech procesorů v systému. Provede to rozdělením zdroje dat do segmentů a následným spuštěním dotazu v každém segmentu v samostatných pracovních vláknech paralelně na více procesorech. V mnoha případech paralelní spuštění znamená, že dotaz běží výrazně rychleji.
+Dotaz PLINQ v mnoha ohledech se podobá non paralelní LINQ na objekty dotazu. PLINQ dotazy, stejně jako sekvenční LINQ <xref:System.Collections.IEnumerable> dotazy, pracovat na libovolné v paměti nebo <xref:System.Collections.Generic.IEnumerable%601> zdroj dat a mají odložené spuštění, což znamená, že nezačnou provádění, dokud není uveden výčet dotazu. Hlavním rozdílem je, že PLINQ se snaží plně využít všech procesorů v systému. Provede to rozdělením zdroje dat do segmentů a následným spuštěním dotazu v každém segmentu v samostatných pracovních vláknech paralelně na více procesorech. V mnoha případech paralelní spuštění znamená, že dotaz běží výrazně rychleji.
 
 Prostřednictvím paralelního provádění MŮŽE PLINQ dosáhnout významné zlepšení výkonu oproti staršímu <xref:System.Linq.ParallelEnumerable.AsParallel%2A> kódu pro určité druhy dotazů, často pouhým přidáním operace dotazu do zdroje dat. Paralelismus však můžete zavést své vlastní složitosti a ne všechny operace dotazu spustit rychleji v PLINQ. Ve skutečnosti paralelizace ve skutečnosti zpomaluje určité dotazy. Proto byste měli pochopit, jak problémy, jako je řazení ovlivnit paralelní dotazy. Další informace naleznete [v tématu Principy zrychlení v PLINQ](../../../docs/standard/parallel-programming/understanding-speedup-in-plinq.md).
 
 > [!NOTE]
 > Tato dokumentace používá lambda výrazy definovat delegáty v PLINQ. Pokud nejste obeznámeni s lambda výrazy v jazyce C# nebo Visual Basic, naleznete [lambda výrazy v PLINQ a TPL](../../../docs/standard/parallel-programming/lambda-expressions-in-plinq-and-tpl.md).
 
-Zbývající část tohoto článku poskytuje přehled hlavní plinq třídy a popisuje, jak vytvořit plinq dotazy. Každá část obsahuje odkazy na podrobnější informace a příklady kódu.
+Zbývající část tohoto článku poskytuje přehled hlavní PLINQ třídy a popisuje, jak vytvořit plinq dotazy. Každá část obsahuje odkazy na podrobnější informace a příklady kódu.
 
 ## <a name="the-parallelenumerable-class"></a>The ParallelEnumerable Class
 
@@ -134,5 +137,5 @@ V mnoha případech může být dotaz paralelizován, ale režie nastavení para
 
 ## <a name="see-also"></a>Viz také
 
-- [Paralelní LINQ (PLINQ)](../../../docs/standard/parallel-programming/parallel-linq-plinq.md)
+- [Paralelní LINQ (PLINQ)](../../../docs/standard/parallel-programming/introduction-to-plinq.md)
 - [Principy zrychlení v PLINQ](../../../docs/standard/parallel-programming/understanding-speedup-in-plinq.md)

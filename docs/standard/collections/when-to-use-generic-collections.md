@@ -6,15 +6,15 @@ helpviewer_keywords:
 - collections [.NET Framework], generic
 - generic collections [.NET Framework]
 ms.assetid: e7b868b1-11fe-4ac5-bed3-de68aca47739
-ms.openlocfilehash: 7d59259c1cab6842ef62888bf5326225394d8d44
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 131787c30e5249111f86f2793981e2b75e8f3862
+ms.sourcegitcommit: 961ec21c22d2f1d55c9cc8a7edf2ade1d1fd92e3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "75711204"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80588533"
 ---
 # <a name="when-to-use-generic-collections"></a>Kdy použít generické kolekce
-Obecně se doporučuje používat obecné kolekce, protože získáte okamžitou výhodu bezpečnosti typů, aniž byste museli odvodit ze základního typu kolekce a implementovat členy specifické pro typ. Obecné typy kolekce také obecně provádět lépe než odpovídající typy neobecných kolekcí (a lepší než typy, které jsou odvozeny z typů neobecné základní kolekce) při kolekce prvky jsou typy hodnot, protože s obecnými typy je není třeba box prvky.  
+Obecně se doporučuje používat obecné kolekce, protože získáte okamžitou výhodu bezpečnosti typů, aniž byste museli odvodit ze základního typu kolekce a implementovat členy specifické pro typ. Obecné typy kolekce také obecně provádět lépe než odpovídající typy neobecných kolekcí (a lepší než typy, které jsou odvozeny z neobecných typů základní kolekce) při kolekce prvky jsou typy hodnot, protože s obecnými typy není nutné zabalení prvků.  
   
  Pro programy, které cílí na rozhraní .NET Framework 4 <xref:System.Collections.Concurrent> nebo novější, byste měli použít obecné třídy kolekce v oboru názvů, když může současně přidávat nebo odebírat položky z kolekce více vláken.  
   
@@ -44,7 +44,7 @@ Obecně se doporučuje používat obecné kolekce, protože získáte okamžitou
 - <xref:System.Collections.Concurrent.ConcurrentBag%601>umožňuje rychlé vkládání a odstraňování neuspořádaných prvků.  
   
 ## <a name="linq-to-objects"></a>LINQ na objekty  
- Funkce LINQ to Objects umožňuje používat dotazy LINQ pro přístup k objektům v <xref:System.Collections.IEnumerable?displayProperty=nameWithType> paměti, pokud typ objektu implementuje rozhraní nebo. <xref:System.Collections.Generic.IEnumerable%601?displayProperty=nameWithType> Linq dotazy poskytují společný vzor pro přístup k datům; jsou obvykle stručnější a čitelnější `foreach` než standardní smyčky; a poskytují možnosti filtrování, řazení a seskupování. Linq dotazy můžete také zlepšit výkon. Další informace naleznete v [tématech LINQ to Objects (C#)](../../csharp/programming-guide/concepts/linq/linq-to-objects.md), [LINQ to Objects (Visual Basic)](../../visual-basic/programming-guide/concepts/linq/linq-to-objects.md)a [Parallel LINQ (PLINQ).](../../../docs/standard/parallel-programming/parallel-linq-plinq.md)  
+ Funkce LINQ to Objects umožňuje používat dotazy LINQ pro přístup k objektům v <xref:System.Collections.IEnumerable?displayProperty=nameWithType> paměti, pokud typ objektu implementuje rozhraní nebo. <xref:System.Collections.Generic.IEnumerable%601?displayProperty=nameWithType> Linq dotazy poskytují společný vzor pro přístup k datům; jsou obvykle stručnější a čitelnější `foreach` než standardní smyčky; a poskytují možnosti filtrování, řazení a seskupování. Linq dotazy můžete také zlepšit výkon. Další informace naleznete v [tématech LINQ to Objects (C#)](../../csharp/programming-guide/concepts/linq/linq-to-objects.md), [LINQ to Objects (Visual Basic)](../../visual-basic/programming-guide/concepts/linq/linq-to-objects.md)a [Parallel LINQ (PLINQ).](../../../docs/standard/parallel-programming/introduction-to-plinq.md)  
   
 ## <a name="additional-functionality"></a>Další funkce  
  Některé obecné typy mají funkce, které nejsou nalezeny v neobecných typech kolekcí. Například <xref:System.Collections.Generic.List%601> třída, která odpovídá neobecné <xref:System.Collections.ArrayList> třídě, má řadu metod, které přijímají obecné <xref:System.Predicate%601> delegáty, jako je například delegát, který umožňuje zadat metody pro vyhledávání v seznamu, <xref:System.Action%601> delegát, který představuje metody, které působí na každý prvek seznamu, a <xref:System.Converter%602> delegát, který umožňuje definovat převody mezi typy.  

@@ -12,12 +12,12 @@ helpviewer_keywords:
 - Collections classes
 - generic collections
 ms.assetid: f5d4c6a4-0d7b-4944-a9fb-3b12d9ebfd55
-ms.openlocfilehash: 1004a2f9a0594d9150d147dec1e16b56205e0d13
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: dc590d712a49ea27fcc61181e0b8c9b3349e74e5
+ms.sourcegitcommit: 961ec21c22d2f1d55c9cc8a7edf2ade1d1fd92e3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "75711399"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80588342"
 ---
 # <a name="commonly-used-collection-types"></a>Běžně používané typy kolekcí
 Typy kolekcí jsou běžné varianty kolekcí dat, jako jsou tabulky hash, fronty, zásobníky, tašky, slovníky a seznamy.  
@@ -28,7 +28,7 @@ Typy kolekcí jsou běžné varianty kolekcí dat, jako jsou tabulky hash, front
   
  Kolekce se mohou lišit v závislosti na způsobu uložení prvků, způsobu jejich řazení, způsobu provádění vyhledávání a způsobu porovnání. Třída <xref:System.Collections.Queue> a <xref:System.Collections.Generic.Queue%601> obecná třída poskytují seznamy first-in-first-out, zatímco <xref:System.Collections.Stack> třída a <xref:System.Collections.Generic.Stack%601> obecná třída poskytují seznamy last-in-first-out. Třída <xref:System.Collections.SortedList> a <xref:System.Collections.Generic.SortedList%602> obecná třída poskytují seřazené verze <xref:System.Collections.Hashtable> třídy a <xref:System.Collections.Generic.Dictionary%602> obecné třídy. Prvky <xref:System.Collections.Hashtable> nebo nebo <xref:System.Collections.Generic.Dictionary%602> jsou přístupné pouze klíč prvku, ale prvky <xref:System.Collections.SortedList> <xref:System.Collections.ObjectModel.KeyedCollection%602> nebo nebo jsou přístupné buď klíč nebo index prvku. Indexy ve všech kolekcích jsou založeny na nule, s výjimkou <xref:System.Array>, který umožňuje pole, která nejsou založeny na nule.  
   
- Funkce LINQ to Objects umožňuje používat dotazy LINQ pro přístup k objektům v <xref:System.Collections.IEnumerable> <xref:System.Collections.Generic.IEnumerable%601>paměti, pokud typ objektu implementuje nebo . Linq dotazy poskytují společný vzor pro přístup k datům; jsou obvykle stručnější a čitelnější `foreach` než standardní smyčky; a poskytují možnosti filtrování, řazení a seskupování. Linq dotazy můžete také zlepšit výkon. Další informace naleznete v [tématech LINQ to Objects (C#)](../../csharp/programming-guide/concepts/linq/linq-to-objects.md), [LINQ to Objects (Visual Basic)](../../visual-basic/programming-guide/concepts/linq/linq-to-objects.md)a [Parallel LINQ (PLINQ).](../../../docs/standard/parallel-programming/parallel-linq-plinq.md)  
+ Funkce LINQ to Objects umožňuje používat dotazy LINQ pro přístup k objektům v <xref:System.Collections.IEnumerable> <xref:System.Collections.Generic.IEnumerable%601>paměti, pokud typ objektu implementuje nebo . Linq dotazy poskytují společný vzor pro přístup k datům; jsou obvykle stručnější a čitelnější `foreach` než standardní smyčky; a poskytují možnosti filtrování, řazení a seskupování. Linq dotazy můžete také zlepšit výkon. Další informace naleznete v [tématech LINQ to Objects (C#)](../../csharp/programming-guide/concepts/linq/linq-to-objects.md), [LINQ to Objects (Visual Basic)](../../visual-basic/programming-guide/concepts/linq/linq-to-objects.md)a [Parallel LINQ (PLINQ).](../../../docs/standard/parallel-programming/introduction-to-plinq.md)  
   
 ## <a name="related-topics"></a>Související témata  
   
@@ -39,7 +39,7 @@ Typy kolekcí jsou běžné varianty kolekcí dat, jako jsou tabulky hash, front
 |[Typy řazených kolekcí](../../../docs/standard/collections/sorted-collection-types.md)|Popisuje třídy, které poskytují funkce řazení pro seznamy a sady.|  
 |[Obecné typy](../../../docs/standard/generics/index.md)|Popisuje funkci obecných typů, včetně obecných kolekcí, delegátů a rozhraní poskytovaných rozhraním .NET Framework. Obsahuje odkazy na dokumentaci k funkcím pro c#, visual basic a visual c++ a na podpůrné technologie, jako je reflexe.|  
   
-## <a name="reference"></a>Referenční informace  
+## <a name="reference"></a>Odkaz  
  <xref:System.Collections?displayProperty=nameWithType>  
   
  <xref:System.Collections.Generic?displayProperty=nameWithType>  

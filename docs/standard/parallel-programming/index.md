@@ -5,12 +5,12 @@ ms.technology: dotnet-standard
 helpviewer_keywords:
 - parallel programming
 ms.assetid: 4d83c690-ad2d-489e-a2e0-b85b898a672d
-ms.openlocfilehash: ae129ef0cb2b331c1eb0220282f21fec6f6fb77d
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 75f5ded48acfb82b0327ead3880ee23e6ef4bc2f
+ms.sourcegitcommit: 961ec21c22d2f1d55c9cc8a7edf2ade1d1fd92e3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "73134148"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80588155"
 ---
 # <a name="parallel-programming-in-net"></a>Paralelní programování v .NET
 
@@ -27,7 +27,7 @@ Následující obrázek poskytuje přehled na vysoké úrovni architektury paral
 |Technologie|Popis|
 |----------------|-----------------|
 |[Task Parallel Library (TPL)](../../../docs/standard/parallel-programming/task-parallel-library-tpl.md)|Poskytuje dokumentaci <xref:System.Threading.Tasks.Parallel?displayProperty=nameWithType> pro třídu, která `For` `ForEach` zahrnuje paralelní verze a <xref:System.Threading.Tasks.Task?displayProperty=nameWithType> smyčky a také pro třídu, která představuje upřednostňovaný způsob vyjádření asynchronních operací.|
-|[Paralelní LINQ (PLINQ)](../../../docs/standard/parallel-programming/parallel-linq-plinq.md)|Paralelní implementace LINQ to Objects, která v mnoha scénářích výrazně zvyšuje výkon.|
+|[Paralelní LINQ (PLINQ)](../../../docs/standard/parallel-programming/introduction-to-plinq.md)|Paralelní implementace LINQ to Objects, která v mnoha scénářích výrazně zvyšuje výkon.|
 |[Datové struktury pro paralelní programování](../../../docs/standard/parallel-programming/data-structures-for-parallel-programming.md)|Obsahuje odkazy na dokumentaci pro třídy kolekce bezpečné pro přístup z více vláken, typy zjednodušené synchronizace a typy pro opožděnou inicializaci.|
 |[Paralelní diagnostické nástroje](../../../docs/standard/parallel-programming/parallel-diagnostic-tools.md)|Obsahuje odkazy na dokumentaci pro okna ladicího programu sady VisualStudio pro úlohy a paralelní zásobníky a pro [vizualizér souběžnosti](/visualstudio/profiling/concurrency-visualizer).|
 |[Vlastní dělicí metody pro PLINQ a TPL](../../../docs/standard/parallel-programming/custom-partitioners-for-plinq-and-tpl.md)|Popisuje, jak pracují rozdělovače a jak nakonfigurovat výchozí rozdělovače nebo vytvořit nový rozdělovač.|
@@ -38,4 +38,4 @@ Následující obrázek poskytuje přehled na vysoké úrovni architektury paral
 ## <a name="see-also"></a>Viz také
 
 - [Přehled asynchronizací](../async.md)
-- [Dělení na spravovaná vlákna](../threading/index.md)
+- [Spravované podprocesy](../threading/index.md)

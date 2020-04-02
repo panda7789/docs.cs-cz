@@ -6,12 +6,12 @@ helpviewer_keywords:
 - threading [.NET Framework], about threading
 - managed threading
 ms.assetid: 9b5ec2cd-121b-4d49-b075-222cf26f2344
-ms.openlocfilehash: 1d487edff2cdc2e63f81963bfaa1f68a06e5b36e
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 14159ff9a6ca39108aec14b0ad46004e95fa3cf2
+ms.sourcegitcommit: 961ec21c22d2f1d55c9cc8a7edf2ade1d1fd92e3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "75936847"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80588433"
 ---
 # <a name="using-threads-and-threading"></a>Použití vláken a dělení na vlákna
 
@@ -20,7 +20,7 @@ Pomocí rozhraní .NET můžete psát aplikace, které provádějí více operac
 Aplikace, které používají vícevláknové práce, lépe reagují na vstup uživatele, protože uživatelské rozhraní zůstává aktivní, protože úlohy náročné na procesor se provádějí v samostatných vláknech. Multithreading je také užitečné při vytváření škálovatelných aplikací, protože můžete přidat vlákna jako zvyšuje zatížení.
 
 > [!NOTE]
-> Pokud potřebujete větší kontrolu nad chováním vláken aplikace, můžete spravovat vlákna sami. Počínaje rozhraním .NET Framework 4 je však programování s <xref:System.Threading.Tasks.Parallel?displayProperty=nameWithType> více <xref:System.Threading.Tasks.Task?displayProperty=nameWithType> vlákny značně zjednodušeno pomocí tříd a, Paralelní <xref:System.Collections.Concurrent?displayProperty=nameWithType> [LINQ (PLINQ),](../parallel-programming/parallel-linq-plinq.md)nové třídy souběžné kolekce v oboru názvů a nový programovací model, který je založen na konceptu úloh y spíše než na vláknech. Další informace naleznete [v tématu Paralelní programování](../parallel-programming/index.md) a paralelní [knihovna úloh (TPL).](../parallel-programming/task-parallel-library-tpl.md)
+> Pokud potřebujete větší kontrolu nad chováním vláken aplikace, můžete spravovat vlákna sami. Počínaje rozhraním .NET Framework 4 je však programování s <xref:System.Threading.Tasks.Parallel?displayProperty=nameWithType> více <xref:System.Threading.Tasks.Task?displayProperty=nameWithType> vlákny značně zjednodušeno pomocí tříd a, Paralelní <xref:System.Collections.Concurrent?displayProperty=nameWithType> [LINQ (PLINQ),](../parallel-programming/introduction-to-plinq.md)nové třídy souběžné kolekce v oboru názvů a nový programovací model, který je založen na konceptu úloh y spíše než na vláknech. Další informace naleznete [v tématu Paralelní programování](../parallel-programming/index.md) a paralelní [knihovna úloh (TPL).](../parallel-programming/task-parallel-library-tpl.md)
 
 ## <a name="how-to-create-and-start-a-new-thread"></a>Postup: Vytvoření a spuštění nového vlákna
 

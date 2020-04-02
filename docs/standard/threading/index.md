@@ -6,18 +6,18 @@ helpviewer_keywords:
 - threading [.NET Framework], about threading
 - managed threading
 ms.assetid: 7b46a7d9-c6f1-46d1-a947-ae97471bba87
-ms.openlocfilehash: d6b8a0a4e16aa3169888958fa1376bfa61526dbd
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: c5ca102dc98e50067d39d2f0c51a6ff75e342e9f
+ms.sourcegitcommit: 961ec21c22d2f1d55c9cc8a7edf2ade1d1fd92e3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "73137933"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80588655"
 ---
 # <a name="managed-threading"></a>Dělení na spravovaná vlákna
 Bez ohledu na to, zda vyvíjíte pro počítače s jedním nebo několika procesory, chcete, aby aplikace poskytovala nejcitlivější interakci s uživatelem, a to i v případě, že aplikace aktuálně provádí jinou práci. Použití více vláken provádění je jedním z nejvýkonnějších způsobů, jak udržet aplikaci reagovat na uživatele a zároveň využít procesor u nebo dokonce během událostí uživatele. Zatímco tato část představuje základní koncepty zřetězení, zaměřuje se na spravované koncepty vláken a použití spravovaného podprocesu.  
   
 > [!NOTE]
-> Počínaje rozhraním .NET Framework 4 je programování s více <xref:System.Threading.Tasks.Parallel?displayProperty=nameWithType> <xref:System.Threading.Tasks.Task?displayProperty=nameWithType> vlákny značně zjednodušeno pomocí tříd a, Paralelní <xref:System.Collections.Concurrent?displayProperty=nameWithType> [LINQ (PLINQ),](../../../docs/standard/parallel-programming/parallel-linq-plinq.md)nové třídy souběžné kolekce v oboru názvů a nový programovací model, který je založen na konceptu úloh spíše než zřetěze. Další informace naleznete [v tématu Paralelní programování](../../../docs/standard/parallel-programming/index.md).  
+> Počínaje rozhraním .NET Framework 4 je programování s více <xref:System.Threading.Tasks.Parallel?displayProperty=nameWithType> <xref:System.Threading.Tasks.Task?displayProperty=nameWithType> vlákny značně zjednodušeno pomocí tříd a, Paralelní <xref:System.Collections.Concurrent?displayProperty=nameWithType> [LINQ (PLINQ),](../../../docs/standard/parallel-programming/introduction-to-plinq.md)nové třídy souběžné kolekce v oboru názvů a nový programovací model, který je založen na konceptu úloh spíše než zřetěze. Další informace naleznete [v tématu Paralelní programování](../../../docs/standard/parallel-programming/index.md).  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Základy dělení na spravovaná vlákna](../../../docs/standard/threading/managed-threading-basics.md)  
@@ -32,7 +32,7 @@ Bez ohledu na to, zda vyvíjíte pro počítače s jedním nebo několika proces
  [Objekty a prvky zřetězení](../../../docs/standard/threading/threading-objects-and-features.md)  
  Popisuje spravované třídy, které můžete použít k synchronizaci aktivit vláken a dat objektů, ke které se přistupuje v různých vláknech, a poskytuje přehled vláken fondu vláken.  
   
-## <a name="reference"></a>Referenční informace  
+## <a name="reference"></a>Odkaz  
  <xref:System.Threading>  
  Obsahuje třídy pro použití a synchronizaci spravovaných vláken.  
   
@@ -58,5 +58,5 @@ Bez ohledu na to, zda vyvíjíte pro počítače s jedním nebo několika proces
  [Paralelní programování](../../../docs/standard/parallel-programming/index.md)  
  Popisuje paralelní programovací knihovny, které zjednodušují použití více vláken v aplikacích.  
   
- [Paralelní LINQ (PLINQ)](../../../docs/standard/parallel-programming/parallel-linq-plinq.md)  
+ [Paralelní LINQ (PLINQ)](../../../docs/standard/parallel-programming/introduction-to-plinq.md)  
  Popisuje systém pro paralelní spouštění dotazů, aby bylo možné využívat více procesorů.

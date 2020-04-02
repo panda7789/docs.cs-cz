@@ -8,12 +8,12 @@ dev_langs:
 helpviewer_keywords:
 - PLINQ queries, how to use merge options
 ms.assetid: 0f33b527-e91a-4550-a39a-e63e396fd831
-ms.openlocfilehash: 40abe2f101f6fa23d804ef30e27d642a36908196
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: e98ede3664a8815c60a490239a789c69fa557895
+ms.sourcegitcommit: 961ec21c22d2f1d55c9cc8a7edf2ade1d1fd92e3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "73139266"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80588563"
 ---
 # <a name="how-to-specify-merge-options-in-plinq"></a>Postupy: Určení možností sloučení v PLINQ
 Tento příklad ukazuje, jak určit možnosti sloučení, které se budou vztahovat na všechny následné operátory v dotazu PLINQ. Není třeba explicitně nastavit možnosti sloučení, ale to může zlepšit výkon. Další informace o možnostech sloučení naleznete [v tématu Sloučit možnosti v plinq](../../../docs/standard/parallel-programming/merge-options-in-plinq.md).  
@@ -32,4 +32,4 @@ Tento příklad ukazuje, jak určit možnosti sloučení, které se budou vztaho
 ## <a name="see-also"></a>Viz také
 
 - <xref:System.Linq.ParallelMergeOptions>
-- [Paralelní LINQ (PLINQ)](../../../docs/standard/parallel-programming/parallel-linq-plinq.md)
+- [Paralelní LINQ (PLINQ)](../../../docs/standard/parallel-programming/introduction-to-plinq.md)

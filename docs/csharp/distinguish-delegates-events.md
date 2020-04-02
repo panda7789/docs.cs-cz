@@ -4,12 +4,12 @@ description: Zjistěte rozdíl mezi delegáty a událostmi a kdy použít každo
 ms.date: 06/20/2016
 ms.technology: csharp-fundamentals
 ms.assetid: 0fdc8629-2fdb-4a7c-a433-5b9d04eaf911
-ms.openlocfilehash: 04738ac2dd82da9c577e88598d0bb737a93333c1
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 4179330fe5e88da5d5034a150a057f63e31b178b
+ms.sourcegitcommit: 961ec21c22d2f1d55c9cc8a7edf2ade1d1fd92e3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79146175"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80588263"
 ---
 # <a name="distinguishing-delegates-and-events"></a>Rozlišování delegátů a událostí
 
@@ -37,6 +37,11 @@ Ovládací prvky uživatelského rozhraní stále fungují správně, i když ne
 Dalším aspektem je prototyp metody, který byste chtěli pro metodu delegáta. Jak jste viděli, delegáti používané pro události všechny mají prázdný návratový typ. Také jste viděli, že existují idiomy k vytvoření obslužné rutiny událostí, které předávají informace zpět zdrojům událostí prostřednictvím úpravy vlastností objektu argumentu události. Zatímco tyto idiomy fungují, nejsou tak přirozené jako vrácení hodnoty z metody.
 
 Všimněte si, že tyto dvě heuristiky mohou být často oba přítomny: Pokud vaše metoda delegáta vrátí hodnotu, bude pravděpodobně nějakým způsobem ovlivnit algoritmus.
+
+## <a name="events-have-private-invocation"></a>Události mají soukromé vyvolání
+
+Jiné třídy než ve kterém je událost obsažena můžete pouze přidat a odebrat posluchače událostí; pouze třída obsahující událost může vyvolat událost. Události jsou obvykle členy veřejné třídy.
+Pro srovnání delegáti jsou často předávané jako parametry a uloženy jako soukromé členy třídy, pokud jsou uloženy vůbec.
 
 ## <a name="event-listeners-often-have-longer-lifetimes"></a>Posluchači událostí mají často delší životnost
 
