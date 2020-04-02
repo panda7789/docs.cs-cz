@@ -1,9 +1,0 @@
-- name: Atributy
-  href: index.md
-  items:
-    - name: Použití atributů
-      href: applying-attributes.md
-    - name: Zápis vlastních atributů
-      href: writing-custom-attributes.md
-    - name: Načítání informací uložených v atributech
-      href: retrieving-information-stored-in-attributes.md
