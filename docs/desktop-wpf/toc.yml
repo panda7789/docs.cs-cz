@@ -1,7 +1,9 @@
 - name: Windows Presentation Foundation pro .NET Core
-  href: overview/index.md
+  href: index.yml
 - name: Začínáme
   items:
+    - name: Přehled
+      href: overview/index.md
     - name: Vytvoření aplikace WPF
       href: 'https://docs.microsoft.com/visualstudio/get-started/csharp/tutorial-wpf?toc=/dotnet/desktop-wpf/toc.json&bc=/dotnet/breadcrumb/toc.json'
 - name: Migrace
