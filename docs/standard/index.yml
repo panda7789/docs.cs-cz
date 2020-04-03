@@ -1,0 +1,159 @@
+### YamlMime:Landing
+title: Dokumentace pro .NET
+summary: Další informace o .NET, open source vývojářské platformě pro vytváření mnoha různých typů aplikací.
+metadata:
+  title: Dokumentace pro .NET
+  description: Další informace o .NET, open source vývojářské platformě pro vytváření mnoha různých typů aplikací.
+  ms.topic: landing-page
+  ms.date: 03/27/2020
+  ms.openlocfilehash: 5984996b59cfb89e5f165bf966722093c0992eea
+  ms.sourcegitcommit: 1c1a1f9ec0bd1efb3040d86a79f7ee94e207cca5
+  ms.translationtype: MT
+  ms.contentlocale: cs-CZ
+  ms.lasthandoff: 04/03/2020
+  ms.locfileid: "80636078"
+landingContent:
+- title: Další informace o rozhraní .NET
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Prohlídka technologie .NET
+      url: tour.md
+    - text: Co je .NET?
+      url: https://dotnet.microsoft.com/learn/dotnet/what-is-dotnet
+  - linkListType: concept
+    links:
+    - text: .NET Standard
+      url: net-standard.md
+    - text: .NET Core
+      url: ../core/about.md
+    - text: Cílové architektury
+      url: frameworks.md
+    - text: Common Language Runtime (CLR)
+      url: clr.md
+    - text: Možnost volby mezi rozhraním .NET Core a rozhraním .NET Framework pro serverové aplikace
+      url: choosing-core-framework-server.md
+  - linkListType: whats-new
+    links:
+    - text: Co je nového ve standardu .NET
+      url: whats-new/whats-new-in-dotnet-standard.md
+    - text: Co je nového v .NET Core
+      url: ../core/whats-new/dotnet-core-3-1.md
+- title: Serializace dat
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Serializace a deserializace json
+      url: serialization/system-text-json-overview.md
+  - linkListType: how-to-guide
+    links:
+    - text: 'Serializace a deserializace JSON pomocí C #'
+      url: serialization/system-text-json-how-to.md
+    - text: Migrace z Newtonsoft.Json na System.Text.Json
+      url: serialization/system-text-json-migrate-from-newtonsoft-how-to.md
+    - text: Napište vlastní převaděče pro serializaci JSON
+      url: serialization/system-text-json-converters-how-to.md
+  - linkListType: sample
+    links:
+    - text: Příklady serializace XML
+      url: serialization/examples-of-xml-serialization.md
+- title: Formátování a převod dat, čísel a řetězců
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Číselné formátovací řetězce
+      url: base-types/standard-numeric-format-strings.md
+    - text: Formátovací řetězce data a času
+      url: base-types/standard-date-and-time-format-strings.md
+    - text: Složené formátování
+      url: base-types/composite-formatting.md
+    - text: Převod časů mezi časovými pásmy
+      url: datetime/converting-between-time-zones.md
+    - text: Oříznutí a odebrání znaků z řetězců
+      url: base-types/trimming.md
+    - text: Regulární výrazy v rozhraní .NET
+      url: base-types/regular-expressions.md
+  - linkListType: how-to-guide
+    links:
+    - text: Převést řetězce na DateTime
+      url: base-types/parsing-datetime.md
+    - text: Pad číslo s úvodními nulami
+      url: base-types/how-to-pad-a-number-with-leading-zeros.md
+    - text: Zobrazení milisekund v hodnotách data a času
+      url: base-types/how-to-display-milliseconds-in-date-and-time-values.md
+  - linkListType: reference
+    links:
+    - text: Jazyk regulárních výrazů
+      url: base-types/regular-expression-language-quick-reference.md
+- title: Třídy návrhu a knihovny
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Pokyny pro návrh
+      url: design-guidelines/index.md
+  - linkListType: concept
+    links:
+    - text: Zásady vytváření názvů
+      url: design-guidelines/general-naming-conventions.md
+    - text: Konvence velkých písmen
+      url: design-guidelines/capitalization-conventions.md
+- title: Použití událostí a výjimek
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Doporučené postupy pro výjimky
+      url: exceptions/best-practices-for-exceptions.md
+    - text: Zpracování a vyvolávání událostí
+      url: events/index.md
+  - linkListType: how-to-guide
+    links:
+    - text: Použití bloku try-catch k zachycení výjimek
+      url: exceptions/how-to-use-the-try-catch-block-to-catch-exceptions.md
+    - text: Zvýšení a využití událostí
+      url: events/how-to-raise-and-consume-events.md
+- title: Vstup/výstup souborů a streamů
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Vstup/výstup souborů a streamů
+      url: io/index.md
+    - text: Formáty cest souborů v systému Windows
+      url: io/file-path-formats.md
+  - linkListType: how-to-guide
+    links:
+    - text: Zápis textu do souboru
+      url: io/how-to-write-text-to-a-file.md
+    - text: Čtení textu ze souboru
+      url: io/how-to-read-text-from-a-file.md
+    - text: Komprese a extrahování souborů
+      url: io/how-to-compress-and-extract-files.md
+    - text: Otevření a připojení k souboru protokolu
+      url: io/how-to-open-and-append-to-a-log-file.md
+- title: Správa využití paměti
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Základy uvolňování paměti
+      url: garbage-collection/fundamentals.md
+    - text: Implementace metody Dispose
+      url: garbage-collection/implementing-dispose.md
+- title: Další informace o paralelním programování
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Paralelní programování v .NET
+      url: parallel-programming/index.md
+  - linkListType: concept
+    links:
+    - text: Task Parallel Library (TPL)
+      url: parallel-programming/task-parallel-library-tpl.md
+    - text: Asynchronní programování založené na úlohách
+      url: parallel-programming/task-based-asynchronous-programming.md
+    - text: Zrušení úkolu
+      url: parallel-programming/task-cancellation.md
+  - linkListType: how-to-guide
+    links:
+    - text: Napsat jednoduchý paralelní program pomocí Parallel.ForEach
+      url: parallel-programming/how-to-write-a-simple-parallel-foreach-loop.md
+    - text: Vrácení hodnoty z úkolu
+      url: parallel-programming/how-to-return-a-value-from-a-task.md
