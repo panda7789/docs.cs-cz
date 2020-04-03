@@ -14,12 +14,12 @@ helpviewer_keywords:
 - dependency properties [WPF]
 - resources [WPF], references to
 ms.assetid: d119d00c-3afb-48d6-87a0-c4da4f83dee5
-ms.openlocfilehash: 1df75814c45a6f1c245d43e2390b8a6ce692a779
-ms.sourcegitcommit: 961ec21c22d2f1d55c9cc8a7edf2ade1d1fd92e3
+ms.openlocfilehash: 542e0a84e4c5cfc3750c33fe29cb40d3643e91e3
+ms.sourcegitcommit: 1c1a1f9ec0bd1efb3040d86a79f7ee94e207cca5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2020
-ms.locfileid: "80587799"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80636029"
 ---
 # <a name="dependency-properties-overview"></a>Přehled vlastností závislostí
 
@@ -128,7 +128,7 @@ Vlastnosti závislostí <xref:System.Windows.DependencyObject> nebo třída nejs
 ### <a name="styles"></a>Styly
 Styly a šablony jsou dva hlavní motivující scénáře pro použití vlastností závislostí. Styly jsou užitečné zejména pro [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)]nastavení vlastností, které definují aplikaci . Styly jsou obvykle definovány jako prostředky v XAML. Styly interagují se systémem vlastností, protože obvykle obsahují "setters" pro určité vlastnosti, stejně jako "aktivační události", které mění hodnotu vlastnosti na základě hodnoty v reálném čase pro jinou vlastnost.
 
-Následující příklad vytvoří velmi jednoduchý styl (který <xref:System.Windows.FrameworkElement.Resources%2A> by byl definován uvnitř slovníku, není <xref:System.Windows.FrameworkElement.Style%2A> zobrazen), <xref:System.Windows.Controls.Button>pak použije tento styl přímo na vlastnost pro . Setter ve stylu nastaví <xref:System.Windows.Controls.Control.Background%2A> vlastnost pro <xref:System.Windows.Controls.Button> stylované na zelenou.
+Následující příklad vytvoří jednoduchý styl (který by <xref:System.Windows.FrameworkElement.Resources%2A> byl definován uvnitř slovníku, není zobrazen), pak použije tento styl přímo na <xref:System.Windows.FrameworkElement.Style%2A> vlastnost pro <xref:System.Windows.Controls.Button>. Setter ve stylu nastaví <xref:System.Windows.Controls.Control.Background%2A> vlastnost pro <xref:System.Windows.Controls.Button> stylované na zelenou.
 
 [!code-xaml[PropertiesOvwSupport#SimpleStyleDef](~/samples/snippets/csharp/VS_Snippets_Wpf/PropertiesOvwSupport/CSharp/page3.xaml#simplestyledef)]
 
@@ -146,7 +146,7 @@ Následující <xref:System.Windows.Controls.Control.Background%2A> příklad an
 Další informace o animování vlastností naleznete v [tématu Přehled animací](../graphics-multimedia/animation-overview.md) a [Přehled scénářů](../graphics-multimedia/storyboards-overview.md).
 
 ### <a name="metadata-overrides"></a>Přepsání metadat
-Určitá chování vlastnosti závislosti můžete změnit přepsáním metadat pro tuto vlastnost, když odvozujete z třídy, která původně registruje vlastnost závislosti. Přepsání metadat závisí <xref:System.Windows.DependencyProperty> na identifikátoru. Přepsání metadat nevyžaduje opětovnou implementaci vlastnosti. Změna metadat je zpracována nativně systémem vlastností; každá třída potenciálně obsahuje jednotlivá metadata pro všechny vlastnosti, které jsou zděděny ze základních tříd, na základě typu.
+Určitá chování vlastnosti závislosti můžete změnit přepsáním metadat pro tuto vlastnost, když odvozujete z třídy, která původně registruje vlastnost závislosti. Přepsání metadat závisí <xref:System.Windows.DependencyProperty> na identifikátoru. Přepsání metadat nevyžaduje opětovné provedení vlastnosti. Změna metadat je zpracována nativně systémem vlastností; každá třída potenciálně obsahuje jednotlivá metadata pro všechny vlastnosti, které jsou zděděny ze základních tříd, na základě typu.
 
 Následující příklad přepíše metadata vlastnosti <xref:System.Windows.FrameworkElement.DefaultStyleKey%2A>závislosti . Přepsání metadat vlastnosti této konkrétní závislosti je součástí vzoru implementace, který vytváří ovládací prvky, které mohou používat výchozí styly z motivů.
 
@@ -183,7 +183,7 @@ V zásadě pro první tlačítko vlastnost je nastavena dvakrát, ale platí pou
 [!code-xaml[PropertiesOvwSupport#MiniPrecedence](~/samples/snippets/csharp/VS_Snippets_Wpf/PropertiesOvwSupport/CSharp/page3.xaml#miniprecedence)]  
 
 ### <a name="why-does-dependency-property-precedence-exist"></a>Proč existuje priorita vlastnosti závislostí?
-Obvykle byste nechtěli, aby styly vždy platily a zakrývaly i místně nastavenou hodnotu jednotlivého prvku (jinak by bylo velmi obtížné použít styly nebo prvky obecně). Proto hodnoty, které pocházejí ze stylů pracovat na nižší precedens než místně nastavenou hodnotu. Podrobnější seznam vlastností závislostí a odkud může pocházet efektivní hodnota vlastnosti závislostí, naleznete v [tématu Priorita hodnoty vlastnosti závislostí](dependency-property-value-precedence.md).
+Obvykle byste nechtěli, aby styly vždy platily a zakrývaly i místně nastavenou hodnotu jednotlivého prvku (jinak by bylo obtížné použít styly nebo prvky obecně). Proto hodnoty, které pocházejí ze stylů pracovat na nižší precedens než místně nastavenou hodnotu. Podrobnější seznam vlastností závislostí a odkud může pocházet efektivní hodnota vlastnosti závislostí, naleznete v [tématu Priorita hodnoty vlastnosti závislostí](dependency-property-value-precedence.md).
 
 > [!NOTE]
 > Existuje několik vlastností definovaných na WPF prvky, které nejsou vlastnosti závislostí. Z velké části vlastnosti byly implementovány jako vlastnosti závislostí pouze v případě, že bylo třeba podporovat alespoň jeden ze scénářů povolených systémem vlastností: datové vazby, styling, animace, výchozí podpora hodnoty, dědičnost, připojené vlastnosti nebo zneplatnění.
@@ -194,7 +194,7 @@ Obvykle byste nechtěli, aby styly vždy platily a zakrývaly i místně nastave
 
 - Vývojáři komponent nebo vývojáři aplikací mohou chtít vytvořit vlastní vlastnost závislosti, aby povolili funkce, jako je například podpora datové vazby nebo stylů, nebo pro podporu zneplatnění a podpory nátlaku na hodnotu. Podrobnosti naleznete [v tématu Vlastní vlastnosti závislostí](custom-dependency-properties.md).
 
-- Vlastnosti závislostí by obecně měly být považovány za veřejné vlastnosti, přístupné nebo alespoň zjistitelné libovolným volajícím, který má přístup k instanci. Další informace naleznete [v tématu Zabezpečení vlastností závislostí](dependency-property-security.md).
+- Vlastnosti závislostí jsou veřejné vlastnosti, přístupné nebo alespoň zjistitelné libovolným volajícím, který má přístup k instanci. Další informace naleznete [v tématu Zabezpečení vlastností závislostí](dependency-property-security.md).
 
 ## <a name="see-also"></a>Viz také
 

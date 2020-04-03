@@ -1,19 +1,19 @@
 ---
 title: příkaz lock - odkaz Jazyka C#
 description: Použití příkazu lock jazyka C# k synchronizaci přístupu podprocesu ke sdílenému prostředku
-ms.date: 10/01/2018
+ms.date: 04/02/2020
 f1_keywords:
 - lock_CSharpKeyword
 - lock
 helpviewer_keywords:
 - lock keyword [C#]
 ms.assetid: 656da1a4-707e-4ef6-9c6e-6d13b646af42
-ms.openlocfilehash: 467881dd36c97b6b18b7f31d4e4af25152b0d012
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 2f2d42ae02a07a5e1b82cefd004f4d03b2a16dff
+ms.sourcegitcommit: 1c1a1f9ec0bd1efb3040d86a79f7ee94e207cca5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75713391"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80635385"
 ---
 # <a name="lock-statement-c-reference"></a>příkaz lock (odkaz C# )
 
@@ -48,13 +48,15 @@ Vzhledem k tomu, kód používá [try... finally](try-finally.md) blokovat, zám
 
 Nelze použít operátor [await](../operators/await.md) v textu příkazu. `lock`
 
-## <a name="remarks"></a>Poznámky
+## <a name="guidelines"></a>Pokyny
 
 Při synchronizaci přístupu podprocesu ke sdílenému prostředku, `private readonly object balanceLock = new object();`zámek na vyhrazené instance objektu (například) nebo jiné instance, která je nepravděpodobné, že bude použit jako objekt zámku nesouvisející části kódu. Vyhněte se použití stejné instance objektu zámku pro různé sdílené prostředky, protože by mohlo vést k zablokování nebo konflikty zámku. Zejména se vyhněte použití následující jako zámek objekty:
 
 - `this`, protože jej mohou volající používat jako zámek.
 - <xref:System.Type>instance, protože ty mohou být získány [typem operátoru](../operators/type-testing-and-cast.md#typeof-operator) nebo odrazem.
 - řetězcové instance, včetně řetězcových literál, protože mohou být [internovány](/dotnet/api/system.string.intern#remarks).
+
+Podržte zámek tak krátkou dobu, jak je to možné snížit konflikty zámku.
 
 ## <a name="example"></a>Příklad
 
@@ -68,9 +70,9 @@ Další informace naleznete v části [příkazu zámku](~/_csharplang/spec/stat
 
 ## <a name="see-also"></a>Viz také
 
+- [Referenční dokumentace k jazyku C#](../index.md)
+- [Klíčová slova jazyka C#](index.md)
 - <xref:System.Threading.Monitor?displayProperty=nameWithType>
 - <xref:System.Threading.SpinLock?displayProperty=nameWithType>
 - <xref:System.Threading.Interlocked?displayProperty=nameWithType>
-- [Referenční dokumentace k jazyku C#](../index.md)
-- [Klíčová slova jazyka C#](index.md)
 - [Přehled primitiv synchronizace](../../../standard/threading/overview-of-synchronization-primitives.md)

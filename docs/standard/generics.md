@@ -4,12 +4,12 @@ description: Zjistěte, jak obecné typy fungují jako šablony kódu, které um
 author: kuhlenh
 ms.author: wiwagn
 ms.date: 10/09/2018
-ms.openlocfilehash: 0188e620a45462e7cc31391406ade9d57b1b0220
-ms.sourcegitcommit: 961ec21c22d2f1d55c9cc8a7edf2ade1d1fd92e3
+ms.openlocfilehash: f51d69088b0d5c798f3aa3a6c1f5b62b3ea81d39
+ms.sourcegitcommit: 1c1a1f9ec0bd1efb3040d86a79f7ee94e207cca5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2020
-ms.locfileid: "80588485"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80635274"
 ---
 # <a name="generic-types-overview"></a>Obecný přehled typů
 
@@ -17,9 +17,9 @@ Vývojáři používají obecné typy po celou dobu v rozhraní .NET, implicitn�
 
 Nejprve zavedena v rozhraní .NET Framework 2.0, obecné typy jsou v podstatě "šablona kódu", který umožňuje vývojářům definovat datové struktury [bezpečné pro typ](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/hbzz1a9a(v=vs.100)) bez potvrzení skutečného datového typu. Například <xref:System.Collections.Generic.List%601> je [obecná kolekce,](xref:System.Collections.Generic) která může být deklarována a použita s libovolným typem, například `List<int>`, `List<string>`nebo `List<Person>`.
 
-Chcete-li pochopit, proč jsou generika užitečná, podívejme se na <xref:System.Collections.ArrayList>konkrétní třídu před a po přidání generik: . V rozhraní .NET Framework `ArrayList` 1.0 <xref:System.Object>byly prvky typu . To znamenalo, že každý přidaný prvek `Object`byl tiše převeden na . Totéž by se stalo při čtení prvků ze seznamu. Tento proces se označuje jako [zabalení a rozbalení](../csharp/programming-guide/types/boxing-and-unboxing.md)a má vliv na výkon. Více než to však neexistuje žádný způsob, jak určit typ dat v seznamu v době kompilace. To je pro některé křehké kód. Obecné typy řeší tento problém definováním typu dat, která budou obsahovat jednotlivé instance seznamu. Můžete například přidávat pouze celá čísla `List<int>` a přidávat pouze `List<Person>`osoby do .
+Chcete-li pochopit, proč jsou generika užitečná, podívejme se na <xref:System.Collections.ArrayList>konkrétní třídu před a po přidání generik: . V rozhraní .NET Framework `ArrayList` 1.0 <xref:System.Object>byly prvky typu . Všechny prvky přidané do kolekce byl `Object`tiše převedeny na . Totéž by se stalo při čtení prvků ze seznamu. Tento proces se označuje jako [zabalení a rozbalení](../csharp/programming-guide/types/boxing-and-unboxing.md)a má vliv na výkon. Kromě výkonu však neexistuje žádný způsob, jak určit typ dat v seznamu v době kompilace, což je pro některé křehké kód. Obecné typy řeší tento problém definováním typu dat, která budou obsahovat jednotlivé instance seznamu. Můžete například přidávat pouze celá čísla `List<int>` a přidávat pouze `List<Person>`osoby do .
 
-Obecné typy jsou také k dispozici za běhu. To znamená, že runtime ví, jaký typ datové struktury používáte, a může ji efektivněji ukládat do paměti.
+Obecné typy jsou také k dispozici za běhu. Runtime ví, jaký typ datové struktury používáte, a může ji efektivněji ukládat do paměti.
 
 Následující příklad je malý program, který ilustruje efektivitu znalosti typu datové struktury za běhu:
 

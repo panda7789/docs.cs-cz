@@ -1,7 +1,7 @@
 ---
 title: Operátory přístupu členů a výrazy – odkaz jazyka C#
 description: Další informace o operátory Jazyka C#, které můžete použít pro přístup k členům typu.
-ms.date: 09/18/2019
+ms.date: 03/31/2020
 author: pkulikov
 f1_keywords:
 - ._CSharpKeyword
@@ -32,12 +32,12 @@ helpviewer_keywords:
 - hat operator [C#]
 - .. operator [C#]
 - range operator [C#]
-ms.openlocfilehash: da2ca4517bd007678d74ae9b76e10cad4c2696b4
-ms.sourcegitcommit: 34dc3c0d0d0a1cc418abff259d9daa8078d00b81
+ms.openlocfilehash: a132e527deadcffb4826c1965987fc09da470a09
+ms.sourcegitcommit: 1c1a1f9ec0bd1efb3040d86a79f7ee94e207cca5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/19/2020
-ms.locfileid: "79546637"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80635304"
 ---
 # <a name="member-access-operators-and-expressions-c-reference"></a>Operátory přístupu k členům a výrazy (odkaz C#)
 
@@ -130,6 +130,12 @@ Následující příklad ukazuje použití `?.` a `?[]` operátory:
 
 Předchozí příklad také používá [operátor `??` null-coalescing](null-coalescing-operator.md) k určení alternativního výrazu k vyhodnocení v `null`případě, že výsledek operace s nulovou podmínkou je .
 
+Pokud `a.x` `a[x]` nebo je typu `T`hodnoty, kterou `a?.x` `a?[x]` nelze hodnotu null , nebo je odpovídající `T?` [hodovatelný typ hodnoty s možnou hodnotou .](../builtin-types/nullable-value-types.md) Pokud potřebujete výraz typu `T`, použijte operátor `??` null-coalescing na výraz s nulovým podmínkou, jak ukazuje následující příklad:
+
+[!code-csharp-interactive[null-conditional with null-coalescing](snippets/MemberAccessOperators.cs#NullConditionalWithNullCoalescing)]
+
+V předchozím příkladu pokud nepoužíváte `??` operátor, `numbers?.Length < 2` vyhodnotí, `numbers` `null` `false` kdy je .
+
 Operátor `?.` přístupu podmíněného člena null je také označován jako operátor Elvis.
 
 ### <a name="thread-safe-delegate-invocation"></a>Vyvolání delegáta bezpečného pro přístup z více vláken
@@ -214,4 +220,4 @@ Další informace o indexech a rozsahech naleznete v [poznámce k návrhu funkce
 - [Referenční dokumentace k jazyku C#](../index.md)
 - [Operátory jazyka C#](index.md)
 - [?? (operátor null-coalescing)](null-coalescing-operator.md)
-- [:: operátor](namespace-alias-qualifier.md)
+- [:: – operátor](namespace-alias-qualifier.md)

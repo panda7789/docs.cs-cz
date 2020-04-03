@@ -20,12 +20,12 @@ helpviewer_keywords:
 - .NET Framework regular expressions
 - strings [.NET Framework], regular expressions
 ms.assetid: 521b3f6d-f869-42e1-93e5-158c54a6895d
-ms.openlocfilehash: 99a70fa1b56a45087ee380d063c66326976f5b41
-ms.sourcegitcommit: 79b0dd8bfc63f33a02137121dd23475887ecefda
+ms.openlocfilehash: 819310891192833f0c71d0104fceec11b1b25375
+ms.sourcegitcommit: 1c1a1f9ec0bd1efb3040d86a79f7ee94e207cca5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/01/2020
-ms.locfileid: "80523786"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80635726"
 ---
 # <a name="net-regular-expressions"></a>Regulární výrazy .NET
 
@@ -99,7 +99,7 @@ Třída <xref:System.String> zahrnuje celou řadu metod pro vyhledání nebo nah
   
  Metoda <xref:System.Text.RegularExpressions.Regex.Matches%2A?displayProperty=nameWithType> je zavolána pomocí možností regulárního výrazu, které jsou nastaveny jako <xref:System.Text.RegularExpressions.RegexOptions.IgnoreCase?displayProperty=nameWithType>. Operace shody proto rozlišuje velká a malá písmena a příklad vyhodnotí podřetězec „Tento tento“ jako zdvojené slovo.  
   
- Vstupní řetězec obsahuje podřetězec „tento? Tento“. Z důvodu výskytu otazníku však nedojde k vyhodnocení výrazu jako zdvojeného slova.  
+ Vstupní řetězec obsahuje podřetězec "this? Tento“. Z důvodu výskytu otazníku však nedojde k vyhodnocení výrazu jako zdvojeného slova.  
   
 ### <a name="example-3-dynamically-build-a-culture-sensitive-regular-expression"></a>Příklad 3: Dynamicky vytvářet regulární výraz citlivý na jazykovou verzi  
 
@@ -134,7 +134,7 @@ Třída <xref:System.String> zahrnuje celou řadu metod pro vyhledání nebo nah
 |[Podrobnosti k chování regulárních výrazů](details-of-regular-expression-behavior.md)|Obsahuje informace o možnostech a chování regulárních výrazů rozhraní .NET.|
 |[Použití regulárních výrazů v sadě Visual Studio](/visualstudio/ide/using-regular-expressions-in-visual-studio)||
   
-## <a name="reference"></a>Odkaz  
+## <a name="reference"></a>Referenční informace  
 
 - <xref:System.Text.RegularExpressions?displayProperty=nameWithType>  
 - <xref:System.Text.RegularExpressions.Regex?displayProperty=nameWithType>  

@@ -16,12 +16,12 @@ helpviewer_keywords:
 - namespaces [.NET Framework], types
 - types, about types
 ms.assetid: 53c57c96-83e1-4ee3-9543-9ac832671a89
-ms.openlocfilehash: ec078ea89befedd26ce205c724193935dd08b82a
-ms.sourcegitcommit: 79b0dd8bfc63f33a02137121dd23475887ecefda
+ms.openlocfilehash: f079613f790121c000a312132e7135121ca721a6
+ms.sourcegitcommit: 1c1a1f9ec0bd1efb3040d86a79f7ee94e207cca5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/01/2020
-ms.locfileid: "80523962"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80635900"
 ---
 # <a name="common-type-system"></a>Běžný typový systém
 
@@ -78,7 +78,7 @@ Společný systém typů definuje, jak jsou typy deklarovány, používány a sp
   
 ### <a name="structures"></a>Struktury
 
- Struktura je typ hodnoty, který je <xref:System.ValueType?displayProperty=nameWithType>implicitně odvozen z <xref:System.Object?displayProperty=nameWithType>, který je odvozen z . Struktura je velmi užitečná pro reprezentaci hodnot, jejichž požadavky na paměť jsou malé, a pro předávání hodnot jako parametrů podle hodnoty metodám, které mají parametry silného typu. V rozhraní .NET jsou<xref:System.Boolean>všechny <xref:System.Byte> <xref:System.Char>primitivní <xref:System.DateTime> <xref:System.Decimal>datové <xref:System.Double> <xref:System.Int16>typy <xref:System.Int32> <xref:System.Int64>( <xref:System.SByte> <xref:System.Single>, <xref:System.UInt16> <xref:System.UInt32>, <xref:System.UInt64>, , , , , , , , , a ) definovány jako struktury.  
+ Struktura je typ hodnoty, který je <xref:System.ValueType?displayProperty=nameWithType>implicitně odvozen z <xref:System.Object?displayProperty=nameWithType>, který je odvozen z . Struktura je užitečná pro reprezentaci hodnot, jejichž požadavky na paměť jsou malé, a pro předávání hodnot jako parametrů podle hodnoty metodám, které mají parametry silného typu. V rozhraní .NET jsou<xref:System.Boolean>všechny <xref:System.Byte> <xref:System.Char>primitivní <xref:System.DateTime> <xref:System.Decimal>datové <xref:System.Double> <xref:System.Int16>typy <xref:System.Int32> <xref:System.Int64>( <xref:System.SByte> <xref:System.Single>, <xref:System.UInt16> <xref:System.UInt32>, <xref:System.UInt64>, , , , , , , , , a ) definovány jako struktury.  
   
  Stejně jako třídy, struktury definovat data (pole struktury) a operace, které lze provést na tato data (metody struktury). To znamená, že můžete volat metody na struktury, <xref:System.Object?displayProperty=nameWithType> včetně <xref:System.ValueType?displayProperty=nameWithType> virtuální metody definované na a třídy a všechny metody definované na typ hodnoty sám. Jinými slovy, struktury mohou mít pole, vlastnosti a události, stejně jako statické a nestatické metody. Můžete vytvořit instance struktur, předat je jako parametry, uložit je jako místní proměnné nebo je uložit do pole jiného typu hodnoty nebo typu odkazu. Struktury mohou také implementovat rozhraní.  
   

@@ -2,15 +2,16 @@
 title: Výběr kodéru zprávy
 ms.date: 03/30/2017
 ms.assetid: 2204d82d-d962-4922-a79e-c9a231604f19
-ms.openlocfilehash: a306896af7a73d43956638981908c12d86126a9f
-ms.sourcegitcommit: 59e36e65ac81cdd094a5a84617625b2a0ff3506e
+ms.openlocfilehash: d93d7039d034262cd47edd437d5d7d8d63890f02
+ms.sourcegitcommit: 1c1a1f9ec0bd1efb3040d86a79f7ee94e207cca5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "80345259"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80635780"
 ---
-# <a name="choosing-a-message-encoder"></a>Výběr kodéru zprávy
-Toto téma popisuje kritéria pro výběr mezi kodéry zpráv, které jsou zahrnuty v Systému Windows Communication Foundation (WCF): binární, text a mechanismus optimalizace přenosu zpráv (MTOM).  
+# <a name="choose-a-message-encoder"></a>Volba kodéru zpráv
+
+Tento článek popisuje kritéria pro výběr mezi kodéry zpráv, které jsou zahrnuty v Systému Windows Communication Foundation (WCF): binární, text a mechanismus optimalizace přenosu zpráv (MTOM).  
   
  V WCF určíte, jak přenášet data v síti mezi koncovými body pomocí *vazby*, která se skládá z posloupnosti *elementů vazby*. Kodér zpráv je reprezentován elementem vazby kódování zprávy v zásobníku vazby. Vazba obsahuje prvky vazby volitelného protokolu, jako je například element vazby vazby zabezpečení nebo element vazby spolehlivého zasílání zpráv, prvek vazby kódování požadované zprávy a povinný prvek vazby přenosu.  
   
@@ -33,7 +34,7 @@ Toto téma popisuje kritéria pro výběr mezi kodéry zpráv, které jsou zahrn
 |Faktor|Popis|Kodéry, které podporují tento faktor|  
 |------------|-----------------|---------------------------------------|  
 |Podporované znakové sady|<xref:System.ServiceModel.Channels.TextMessageEncodingBindingElement>a <xref:System.ServiceModel.Channels.MtomMessageEncodingBindingElement> podporují pouze kódování UTF8 a UTF16 Unicode *(big-endian* a *little-endian).* Pokud jsou požadována jiná kódování, například UTF7 nebo ASCII, musí být použit vlastní kodér. Ukázkový vlastní kodér najdete [v tématu Vlastní kodér zpráv](https://docs.microsoft.com/dotnet/framework/wcf/samples/custom-message-encoder-custom-text-encoder).|Text|  
-|Kontrolní|Kontrola je schopnost zkoumat zprávy během přenosu. Kódování textu, s nebo bez použití SOAP, umožňují zprávy, které mají být kontrolovány a analyzovány mnoha aplikacemi bez použití specializovaných nástrojů. Všimněte si, že použití zabezpečení přenosu na úrovni zprávy nebo přenosu ovlivňuje vaši schopnost kontrolovat zprávy. Důvěrnost chrání zprávu před kontrolou a integrita chrání zprávu před změnou.|Text|  
+|Kontrolní|Kontrola je schopnost zkoumat zprávy během přenosu. Kódování textu, s nebo bez použití SOAP, umožňují zprávy, které mají být kontrolovány a analyzovány mnoha aplikacemi bez použití specializovaných nástrojů. Použití zabezpečení přenosu na úrovni zprávy nebo přenosu ovlivňuje vaši schopnost kontrolovat zprávy. Důvěrnost chrání zprávu před kontrolou a integrita chrání zprávu před změnou.|Text|  
 |Spolehlivost|Spolehlivost je odolnost kodéru k chybám přenosu. Spolehlivost lze také poskytnout ve zprávě, přenosu nebo aplikační vrstvě. Všechny standardní kodéry WCF předpokládají, že jiná vrstva poskytuje spolehlivost. Kodér má malou schopnost zotavit se z chyby přenosu.|Žádný|  
 |Jednoduchost|Jednoduchost představuje snadnost, s jakou můžete vytvářet kodéry a dekodéry pro specifikaci kódování. Kódování textu jsou obzvláště výhodné pro jednoduchost a kódování textu POX má další výhodu, že nevyžaduje podporu pro zpracování SOAP.|Text (POX)|  
 |Velikost|Kódování určuje množství režie uložené na obsah. Velikost kódovaných zpráv přímo souvisí s maximální propustností operací služby. Binární kódování jsou obecně kompaktnější než kódování textu. Pokud je velikost zprávy na prémii, zvažte také kompresi obsahu zprávy během kódování. Komprese však zvyšuje náklady na zpracování pro odesílatele zprávy i příjemce.|binární|  

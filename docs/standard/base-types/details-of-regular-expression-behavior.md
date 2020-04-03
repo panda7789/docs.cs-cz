@@ -9,12 +9,12 @@ helpviewer_keywords:
 - regular expressions, behavior
 - .NET Framework regular expressions, behavior
 ms.assetid: 0ee1a6b8-caac-41d2-917f-d35570021b10
-ms.openlocfilehash: 288bf4256670d34c600e23618b62ad81866daadf
-ms.sourcegitcommit: 79b0dd8bfc63f33a02137121dd23475887ecefda
+ms.openlocfilehash: 0273d16028315452e35f83086dbc134d6fcb66c6
+ms.sourcegitcommit: 1c1a1f9ec0bd1efb3040d86a79f7ee94e207cca5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/01/2020
-ms.locfileid: "80523841"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80635989"
 ---
 # <a name="details-of-regular-expression-behavior"></a>Podrobnosti o chování regulárních výrazů
 
@@ -71,7 +71,7 @@ Modul regulárních výrazů rozhraní .NET Framework je backtrackingový matche
 
      Další informace o kontrolních výrazech pozitivního dopředného vyhledávání naleznete v [tématu Seskupování konstrukcí](../../../docs/standard/base-types/grouping-constructs-in-regular-expressions.md).
 
-- Negativní dopředné vyhledávání: `(?!` *podvýraz*`)`. Tato funkce přidává možnost odpovídat výrazu pouze v případě, že dílčí výraz neodpovídá. To je obzvláště silný pro prořezávání hledání, protože je často jednodušší poskytnout výraz pro případ, který by měl být odstraněn, než výraz pro případy, které musí být zahrnuty. Například je obtížné napsat výraz pro slova, která nezačínají na "non". Následující příklad používá negativní dopředné vyhledávání k jejich vyloučení.
+- Negativní dopředné vyhledávání: `(?!` *podvýraz*`)`. Tato funkce přidává možnost odpovídat výrazu pouze v případě, že dílčí výraz neodpovídá. To je silný pro prořezávání hledání, protože je často jednodušší poskytnout výraz pro případ, který by měl být odstraněn, než výraz pro případy, které musí být zahrnuty. Například je obtížné napsat výraz pro slova, která nezačínají na "non". Následující příklad používá negativní dopředné vyhledávání k jejich vyloučení.
 
      [!code-csharp[Conceptual.RegularExpressions.Design#3](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regularexpressions.design/cs/lookahead2.cs#3)]
      [!code-vb[Conceptual.RegularExpressions.Design#3](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regularexpressions.design/vb/lookahead2.vb#3)]
@@ -153,6 +153,6 @@ Modul regulárních výrazů rozhraní .NET Framework je backtrackingový matche
 |[Model objektu regulárního výrazu](../../../docs/standard/base-types/the-regular-expression-object-model.md)|Obsahuje informace a příklady kódu znázorňující, jak používat třídy regulárních výrazů.|
 |[Jazyk regulárních výrazů – stručná referenční dokumentace](../../../docs/standard/base-types/regular-expression-language-quick-reference.md)|Obsahuje informace o sadě znaků, operátorů a konstrukcí, které lze použít k definování regulárních výrazů.|
 
-## <a name="reference"></a>Odkaz
+## <a name="reference"></a>Referenční informace
 
 - <xref:System.Text.RegularExpressions?displayProperty=nameWithType>

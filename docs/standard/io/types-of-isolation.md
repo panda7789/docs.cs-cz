@@ -18,12 +18,12 @@ helpviewer_keywords:
 - isolated storage, types
 - user authentication, isolated storage
 ms.assetid: 14812988-473f-44ae-b75f-fd5c2f21fb7b
-ms.openlocfilehash: d85625b99603c0bd81346cf2076b8efe0e1bba42
-ms.sourcegitcommit: 79b0dd8bfc63f33a02137121dd23475887ecefda
+ms.openlocfilehash: 9bbd2c3cdca9b2eaee268738bf99189b0be78eba
+ms.sourcegitcommit: 1c1a1f9ec0bd1efb3040d86a79f7ee94e207cca5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/01/2020
-ms.locfileid: "80523885"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80635735"
 ---
 # <a name="types-of-isolation"></a>Typy izolace
 Přístup k izolovanému úložišti je vždy omezen na uživatele, který jej vytvořil. K implementaci tohoto typu izolace používá soubor RUNTIME společného jazyka stejnou představu o identitě uživatele, kterou rozpozná operační systém, což je identita přidružená k procesu, ve kterém je kód spuštěn při otevření úložiště. Tato identita je ověřená identita uživatele, ale zosobnění může způsobit dynamickou změnu identity aktuálního uživatele.  
@@ -48,7 +48,7 @@ Přístup k izolovanému úložišti je vždy omezen na uživatele, který jej v
   
  ![Diagram, který zobrazuje izolaci podle uživatele a sestavení.](./media/types-of-isolation/isolated-storage-types.gif)  
   
- Všimněte si, že s výjimkou roamingových úložišť je izolované úložiště vždy implicitně izolováno počítačem, protože používá úložiště, která jsou pro daný počítač místní.  
+ S výjimkou roamingových úložišť je izolované úložiště vždy implicitně izolováno počítačem, protože používá úložiště, která jsou pro daný počítač místní.  
   
 > [!IMPORTANT]
 > Izolované úložiště není dostupné pro aplikace pro Windows 8.x Store. Místo toho použijte třídy `Windows.Storage` dat aplikace v oborech názvů zahrnutých v rozhraní API prostředí Windows Runtime k ukládání místních dat a souborů. Další informace naleznete v [tématu Data aplikací](https://docs.microsoft.com/previous-versions/windows/apps/hh464917(v=win.10)) v Centru pro vývoj systému Windows.  

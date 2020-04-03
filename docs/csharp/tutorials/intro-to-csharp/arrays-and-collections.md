@@ -3,12 +3,12 @@ title: Práce s kolekcemi – úvod do kurzu Jazyka C#
 description: Naučte se C# tak, že prozkoumáte kolekci Seznam v tomto kurzu.
 ms.date: 10/13/2017
 ms.custom: mvc
-ms.openlocfilehash: 25d20de2eae8ad1f544fa17553c173a6141ae464
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 554a4601157a7d4b873c22a46ee72b6601fc36d7
+ms.sourcegitcommit: 1c1a1f9ec0bd1efb3040d86a79f7ee94e207cca5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79156686"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80635655"
 ---
 # <a name="learn-to-manage-data-collections-using-the-generic-list-type"></a>Naučte se spravovat kolekce dat pomocí obecného typu seznamu
 
@@ -230,4 +230,4 @@ S každou iteraci smyčky, budete mít poslední dvě celá čísla v seznamu, j
 
 Gratulujeme, jste dokončili seznam tutorial. Můžete pokračovat s [úvod do tříd](introduction-to-classes.md) kurzu ve vlastním vývojovém prostředí.
 
-Další informace o práci `List` s typem naleznete v tématu [průvodce .NET](../../../standard/index.md) o [kolekcích](../../../standard/collections/index.md). Dozvíte se také o mnoha dalších typech kolekcí.
+Další informace o práci `List` s typem naleznete v článku [s průvodcem .NET](../../../standard/index.yml) o [kolekcích](../../../standard/collections/index.md). Dozvíte se také o mnoha dalších typech kolekcí.

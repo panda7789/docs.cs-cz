@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - custom element
 ms.assetid: e62056c6-b351-40eb-afc0-cc13fc44e45e
-ms.openlocfilehash: 0d765a9789ad566428b1fbda6c0863b10b98c363
-ms.sourcegitcommit: 59e36e65ac81cdd094a5a84617625b2a0ff3506e
+ms.openlocfilehash: a40f35838655f6021af0b2e966335803ec8c16b4
+ms.sourcegitcommit: 1c1a1f9ec0bd1efb3040d86a79f7ee94e207cca5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "80345066"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80635403"
 ---
 # <a name="custom-element-for-singletagsectionhandler"></a>Vlastní prvek pro SingleTagSectionHandler
 
@@ -61,7 +61,7 @@ Následující příklad deklaruje vlastní prvek s názvem <xref:System.Configu
 
 ## <a name="configuration-file"></a>Konfigurační soubor
 
-Tento prvek lze použít v konfiguračním souboru aplikace, konfiguračním souboru počítače *(Machine.config*) a souborech *Web.config,* které nejsou na úrovni adresáře aplikace.
+Tento prvek lze použít v konfiguračním souboru aplikace, konfiguračním souboru počítače *(Machine.config)* a souborech *Web.config,* které nejsou na úrovni adresáře aplikace.
 
 ## <a name="see-also"></a>Viz také
 

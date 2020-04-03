@@ -12,17 +12,17 @@ helpviewer_keywords:
 - Collections classes
 - generic collections
 ms.assetid: f5d4c6a4-0d7b-4944-a9fb-3b12d9ebfd55
-ms.openlocfilehash: dc590d712a49ea27fcc61181e0b8c9b3349e74e5
-ms.sourcegitcommit: 961ec21c22d2f1d55c9cc8a7edf2ade1d1fd92e3
+ms.openlocfilehash: 04ad3c8d8ea076e881e27e295d87572a51cbc128
+ms.sourcegitcommit: 1c1a1f9ec0bd1efb3040d86a79f7ee94e207cca5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2020
-ms.locfileid: "80588342"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80635967"
 ---
 # <a name="commonly-used-collection-types"></a>Běžně používané typy kolekcí
 Typy kolekcí jsou běžné varianty kolekcí dat, jako jsou tabulky hash, fronty, zásobníky, tašky, slovníky a seznamy.  
   
- Kolekce jsou založeny <xref:System.Collections.ICollection> na <xref:System.Collections.IList> rozhraní, <xref:System.Collections.IDictionary> rozhraní, rozhraní nebo jejich obecné protějšky. Rozhraní <xref:System.Collections.IList> a <xref:System.Collections.IDictionary> rozhraní jsou odvozeny <xref:System.Collections.ICollection> z rozhraní; proto všechny kolekce jsou založeny na <xref:System.Collections.ICollection> rozhraní přímo nebo nepřímo. V kolekcích založených <xref:System.Collections.IList> na rozhraní <xref:System.Array> <xref:System.Collections.ArrayList>(například , , <xref:System.Collections.Generic.List%601>nebo ) <xref:System.Collections.Concurrent.ConcurrentQueue%601>nebo <xref:System.Collections.Stack> <xref:System.Collections.Concurrent.ConcurrentStack%601> přímo <xref:System.Collections.Generic.LinkedList%601>na <xref:System.Collections.ICollection> rozhraní (například <xref:System.Collections.Queue>, , nebo ), každý prvek obsahuje pouze hodnotu. V kolekcích založených <xref:System.Collections.IDictionary> na rozhraní <xref:System.Collections.Hashtable> (například <xref:System.Collections.SortedList> a <xref:System.Collections.Generic.SortedList%602> třídy, <xref:System.Collections.Concurrent.ConcurrentDictionary%602> <xref:System.Collections.Generic.Dictionary%602> a obecné třídy) nebo třídy, každý prvek obsahuje klíč a hodnotu.  Třída <xref:System.Collections.ObjectModel.KeyedCollection%602> je jedinečná, protože se jedná o seznam hodnot s klíči vloženými do hodnot, a proto se chová jako seznam a jako slovník.  
+ Kolekce jsou založeny <xref:System.Collections.ICollection> na <xref:System.Collections.IList> rozhraní, <xref:System.Collections.IDictionary> rozhraní, rozhraní nebo jejich obecné protějšky. Rozhraní <xref:System.Collections.IList> a <xref:System.Collections.IDictionary> rozhraní jsou odvozeny <xref:System.Collections.ICollection> z rozhraní; proto všechny kolekce jsou založeny na <xref:System.Collections.ICollection> rozhraní přímo nebo nepřímo. V kolekcích založených <xref:System.Collections.IList> na rozhraní <xref:System.Array> <xref:System.Collections.ArrayList>(například , , <xref:System.Collections.Generic.List%601>nebo ) nebo přímo na <xref:System.Collections.ICollection> rozhraní <xref:System.Collections.Queue>(například , <xref:System.Collections.Concurrent.ConcurrentQueue%601> <xref:System.Collections.Stack>, <xref:System.Collections.Concurrent.ConcurrentStack%601>, nebo <xref:System.Collections.Generic.LinkedList%601>), každý prvek obsahuje pouze hodnotu. V kolekcích založených <xref:System.Collections.IDictionary> na rozhraní <xref:System.Collections.Hashtable> (například <xref:System.Collections.SortedList> a <xref:System.Collections.Generic.SortedList%602> třídy, <xref:System.Collections.Concurrent.ConcurrentDictionary%602> <xref:System.Collections.Generic.Dictionary%602> a obecné třídy) nebo třídy, každý prvek obsahuje klíč a hodnotu.  Třída <xref:System.Collections.ObjectModel.KeyedCollection%602> je jedinečná, protože se jedná o seznam hodnot s klíči vloženými do hodnot, a proto se chová jako seznam a jako slovník.  
   
  Obecné kolekce jsou nejlepším řešením pro silné psaní. Pokud však váš jazyk nepodporuje <xref:System.Collections> obecné typy, obor názvů <xref:System.Collections.CollectionBase>obsahuje <xref:System.Collections.ReadOnlyCollectionBase>základní <xref:System.Collections.DictionaryBase>kolekce, například , , a , které jsou abstraktní základní třídy, které lze rozšířit k vytvoření tříd kolekce, které jsou silně zadali. Pokud je vyžadován efektivní přístup k kolekci s více <xref:System.Collections.Concurrent> vlákny, použijte obecné kolekce v oboru názvů.  
   
@@ -39,7 +39,7 @@ Typy kolekcí jsou běžné varianty kolekcí dat, jako jsou tabulky hash, front
 |[Typy řazených kolekcí](../../../docs/standard/collections/sorted-collection-types.md)|Popisuje třídy, které poskytují funkce řazení pro seznamy a sady.|  
 |[Obecné typy](../../../docs/standard/generics/index.md)|Popisuje funkci obecných typů, včetně obecných kolekcí, delegátů a rozhraní poskytovaných rozhraním .NET Framework. Obsahuje odkazy na dokumentaci k funkcím pro c#, visual basic a visual c++ a na podpůrné technologie, jako je reflexe.|  
   
-## <a name="reference"></a>Odkaz  
+## <a name="reference"></a>Referenční informace  
  <xref:System.Collections?displayProperty=nameWithType>  
   
  <xref:System.Collections.Generic?displayProperty=nameWithType>  

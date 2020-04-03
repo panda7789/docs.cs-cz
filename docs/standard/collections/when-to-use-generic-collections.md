@@ -6,15 +6,16 @@ helpviewer_keywords:
 - collections [.NET Framework], generic
 - generic collections [.NET Framework]
 ms.assetid: e7b868b1-11fe-4ac5-bed3-de68aca47739
-ms.openlocfilehash: 131787c30e5249111f86f2793981e2b75e8f3862
-ms.sourcegitcommit: 961ec21c22d2f1d55c9cc8a7edf2ade1d1fd92e3
+ms.openlocfilehash: bbf8ec7f61981332b6984488b369fee62959b92a
+ms.sourcegitcommit: 1c1a1f9ec0bd1efb3040d86a79f7ee94e207cca5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2020
-ms.locfileid: "80588533"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80635887"
 ---
-# <a name="when-to-use-generic-collections"></a>Kdy použít generické kolekce
-Obecně se doporučuje používat obecné kolekce, protože získáte okamžitou výhodu bezpečnosti typů, aniž byste museli odvodit ze základního typu kolekce a implementovat členy specifické pro typ. Obecné typy kolekce také obecně provádět lépe než odpovídající typy neobecných kolekcí (a lepší než typy, které jsou odvozeny z neobecných typů základní kolekce) při kolekce prvky jsou typy hodnot, protože s obecnými typy není nutné zabalení prvků.  
+# <a name="when-to-use-generic-collections"></a>Kdy použít obecné kolekce
+
+Použití obecných kolekcí poskytuje automatickou výhodu bezpečnosti typů bez nutnosti odvodit z typu základní kolekce a implementovat členy specifické pro typ. Obecné typy kolekce také obecně provádět lépe než odpovídající typy neobecných kolekcí (a lepší než typy, které jsou odvozeny z neobecných typů základní kolekce) při kolekce prvky jsou typy hodnot, protože s obecnými typy, není nutné zabalení prvků.  
   
  Pro programy, které cílí na rozhraní .NET Framework 4 <xref:System.Collections.Concurrent> nebo novější, byste měli použít obecné třídy kolekce v oboru názvů, když může současně přidávat nebo odebírat položky z kolekce více vláken.  
   
@@ -24,7 +25,7 @@ Obecně se doporučuje používat obecné kolekce, protože získáte okamžitou
   
 - <xref:System.Collections.Generic.Dictionary%602>a <xref:System.Collections.Concurrent.ConcurrentDictionary%602> jsou obecné třídy, které odpovídají <xref:System.Collections.Hashtable>.  
   
-- <xref:System.Collections.ObjectModel.Collection%601>je obecná třída, která <xref:System.Collections.CollectionBase>odpovídá . <xref:System.Collections.ObjectModel.Collection%601>lze použít jako základní třídu, ale na rozdíl od <xref:System.Collections.CollectionBase>, není abstraktní. Díky tomu je mnohem jednodušší použití.  
+- <xref:System.Collections.ObjectModel.Collection%601>je obecná třída, která <xref:System.Collections.CollectionBase>odpovídá . <xref:System.Collections.ObjectModel.Collection%601>lze použít jako základní třídu, ale na rozdíl od <xref:System.Collections.CollectionBase>, není abstraktní, což usnadňuje použití.  
   
 - <xref:System.Collections.ObjectModel.ReadOnlyCollection%601>je obecná třída, která <xref:System.Collections.ReadOnlyCollectionBase>odpovídá . <xref:System.Collections.ObjectModel.ReadOnlyCollection%601>není abstraktní a má konstruktor, který usnadňuje vystavit <xref:System.Collections.Generic.List%601> existující jako kolekci jen pro čtení.  
   

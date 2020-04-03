@@ -5,15 +5,16 @@ helpviewer_keywords:
 - WS-Metadata Exchange [WCF]
 - WS-Metadata Exchange [WCF], configuring a custom binding
 ms.assetid: cdba4d73-da64-4805-bc56-9822becfd1e4
-ms.openlocfilehash: 9676ae4053553b84488602627b28790aae22eff6
-ms.sourcegitcommit: 59e36e65ac81cdd094a5a84617625b2a0ff3506e
+ms.openlocfilehash: 6459e3f0cf0ab72af8027bd6802a0e7aa574aece
+ms.sourcegitcommit: 1c1a1f9ec0bd1efb3040d86a79f7ee94e207cca5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "80345285"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80635788"
 ---
 # <a name="how-to-configure-a-custom-ws-metadata-exchange-binding"></a>Postupy: Konfigurace vlastních vazeb protokolu WS-Metadata Exchange
-Toto téma vám vysvětlí, jak nakonfigurovat vlastní vazby výměny ws-metadata. Windows Communication Foundation (WCF) obsahuje čtyři systémem definované vazby metadat, ale můžete publikovat metadata pomocí libovolné vazby, které chcete. Toto téma vám ukáže, jak `wsHttpBinding`publikovat metadata pomocí . Tato vazba poskytuje možnost vystavení metadat bezpečným způsobem. Kód v tomto článku je založen na [začínáme](../samples/getting-started-sample.md).  
+
+Tento článek vysvětluje, jak nakonfigurovat vlastní vazby výměny ws-metadata. Windows Communication Foundation (WCF) obsahuje čtyři systémem definované vazby metadat, ale můžete publikovat metadata pomocí libovolné vazby, které chcete. Tento článek ukazuje, jak publikovat `wsHttpBinding`metadata pomocí . Tato vazba poskytuje možnost vystavení metadat bezpečným způsobem. Kód v tomto článku je založen na [začínáme](../samples/getting-started-sample.md).  
   
 ### <a name="using-a-configuration-file"></a>Použití konfiguračního souboru  
   

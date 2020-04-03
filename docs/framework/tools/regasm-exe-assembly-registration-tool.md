@@ -7,12 +7,12 @@ helpviewer_keywords:
 - Regasm.exe
 - registering assemblies
 ms.assetid: e190e342-36ef-4651-a0b4-0e8c2c0281cb
-ms.openlocfilehash: 0a1658e57f4a236e4bdd29c3ca224275c25ea727
-ms.sourcegitcommit: 59e36e65ac81cdd094a5a84617625b2a0ff3506e
+ms.openlocfilehash: 5eeed43f3d60bd5e443226a16963557546d81e7c
+ms.sourcegitcommit: 1c1a1f9ec0bd1efb3040d86a79f7ee94e207cca5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "80345010"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80635404"
 ---
 # <a name="regasmexe-assembly-registration-tool"></a>Regasm.exe (nástroj registrace sestavení)
 
@@ -36,7 +36,7 @@ regasm assemblyFile [options]
 
 |Možnost|Popis|
 |------------|-----------------|
-|**/codebase**|Vytvoří položku základu kódu v registru. Položka základu kódu určuje cestu k souboru sestavení, které není nainstalováno v globální mezipaměti sestavení (GAC). Tuto možnost byste neměli zadávat, pokud následně instalujete sestavení, které budete registrovat do globální mezipaměti sestavení (GAC). Argument *assemblyFile,* který zadáte pomocí možnosti **/codebase,** musí být [sestavení se silným názvem](../../standard/assembly/strong-named.md).|
+|**/codebase**|Vytvoří položku základu kódu v registru. Položka Základ u kódu určuje cestu k souboru pro sestavení, které není nainstalováno v globální mezipaměti sestavení. Tuto možnost nezadávejte, pokud následně nainstalujete sestavení, které registrujete, do globální mezipaměti sestavení. Argument *assemblyFile,* který zadáte pomocí možnosti **/codebase,** musí být [sestavení se silným názvem](../../standard/assembly/strong-named.md).|
 |**/registrováno**|Určuje, že tento nástroj bude odkazovat pouze na knihovny typů, které již byly zaregistrovány.|
 |**/asmpath:adresář**|Určuje adresář obsahující odkazy na sestavení. Musí být použit s **parametrem /regfile.**|
 |**/nologo**|Potlačí zobrazení úvodního nápisu společnosti Microsoft.|
@@ -52,11 +52,11 @@ regasm assemblyFile [options]
 
 ## <a name="remarks"></a>Poznámky
 
-Možnost **/regfile** můžete použít ke generování souboru REG, který obsahuje položky registru namísto provádění změn přímo do registru. Registr lze na počítači aktualizovat importováním souboru .reg pomocí nástroje Editor registru (Regedit.exe). Soubor .reg neobsahuje žádné aktualizace registru, které lze provést pomocí funkcí registru definovaných uživatelem.  Všimněte si, že **možnost /regfile** vydává pouze položky registru pro spravované třídy.  Tato možnost nevyzařuje položky `TypeLibID` `InterfaceID`pro s nebo s.
+Možnost **/regfile** můžete použít ke generování souboru REG, který obsahuje položky registru namísto provádění změn přímo do registru. Registr lze na počítači aktualizovat importováním souboru .reg pomocí nástroje Editor registru (Regedit.exe). Soubor REG neobsahuje žádné aktualizace registru, které lze provést pomocí uživatelem definovaných funkcí registru. Možnost **/regfile** vydává pouze položky registru pro spravované třídy. Tato možnost nevyzařuje položky `TypeLibID` `InterfaceID`pro s nebo s.
 
-Když zadáte **/tlb** možnost, Regasm.exe generuje a registruje knihovnu typů popisující typy nalezené v sestavení. Nástroj Regasm.exe umístí vytvořenou knihovnu typů do aktuálního pracovního adresáře nebo do adresáře určeného pro výstupní soubor. Vytváření knihovny typů pro sestavení, které odkazuje na jiné sestavení, může způsobit vytvoření několika knihoven typů najednou. Knihovnu typů můžete použít k poskytování informací o typu vývojovým nástrojům, jako je Visual Studio. Možnost **/tlb** byste neměli používat, pokud bylo sestavení, které registrujete, vytvořeno importem knihovny typů ([Tlbimp.exe](tlbimp-exe-type-library-importer.md)). Knihovnu typů nelze exportovat ze sestavení, které bylo importováno z knihovny typů. Použití **možnosti /tlb** má stejný účinek jako použití type library exporter ([Tlbexp.exe](tlbexp-exe-type-library-exporter.md)) a Regasm.exe s výjimkou, že tlbexp.exe neregistruje knihovnu typů, kterou vytváří.  Pokud použijete možnost **/tlb** k registraci knihovny typů, můžete použít možnost **/tlb** s parametrem **/unregister** k zrušení registrace knihovny typů. Použitím obou možností společně dojde ke zrušení registrace knihovny typů a položek rozhraní, čímž lze značně pročistit registr.
+Když zadáte **/tlb** možnost, Regasm.exe generuje a registruje knihovnu typů popisující typy nalezené v sestavení. Nástroj Regasm.exe umístí vytvořenou knihovnu typů do aktuálního pracovního adresáře nebo do adresáře určeného pro výstupní soubor. Vytváření knihovny typů pro sestavení, které odkazuje na jiné sestavení, může způsobit vytvoření několika knihoven typů najednou. Knihovnu typů můžete použít k poskytování informací o typu vývojovým nástrojům, jako je Visual Studio. Nepoužívejte možnost **/tlb,** pokud bylo sestavení, které registrujete, vytvořeno importem knihovny typů ([Tlbimp.exe](tlbimp-exe-type-library-importer.md)). Knihovnu typů nelze exportovat ze sestavení, které bylo importováno z knihovny typů. Použití **možnosti /tlb** má stejný účinek jako použití type library exporter ([Tlbexp.exe](tlbexp-exe-type-library-exporter.md)) a Regasm.exe s výjimkou, že tlbexp.exe neregistruje knihovnu typů, kterou vytváří.  Pokud použijete možnost **/tlb** k registraci knihovny typů, můžete použít možnost **/tlb** s parametrem **/unregister** k zrušení registrace knihovny typů. Použitím obou možností společně dojde ke zrušení registrace knihovny typů a položek rozhraní, čímž lze značně pročistit registr.
 
-Při registraci sestavení pro použití modelem COM nástroj Regasm.exe přidá položky do registru místního počítače. Přesněji řečeno vytvoří klíče registru závislé na verzi, které dovolují v počítači paralelně spustit více verzí stejného sestavení. Při první registraci sestavení je pro sestavení vytvořen jeden klíč na nejvyšší úrovni a je vytvořen jedinečný podklíč pro konkrétní verzi. Při každé registraci nové verze sestavení nástroj Regasm.exe vytvoří podklíč pro novou verzi.
+Při registraci sestavení pro použití modelem COM nástroj Regasm.exe přidá položky do registru místního počítače. Přesněji řečeno vytvoří klíče registru závislé na verzi, které dovolují v počítači paralelně spustit více verzí stejného sestavení. Při první registraci sestavení je pro sestavení vytvořen jeden klíč nejvyšší úrovně a pro konkrétní verzi je vytvořen jedinečný podklíč. Při každé registraci nové verze sestavení nástroj Regasm.exe vytvoří podklíč pro novou verzi.
 
 Jako příklad lze uvést registraci spravované komponenty, myComp.dll, verze 1.0.0.0 pro použití modelem COM. Později zaregistrujete myComp.dll verze 2.0.0.0. Je možné určit, že všechny klientské aplikace modelu COM v počítači používají myComp.dll verze 2.0.0.0 a rozhodnout o zrušení registrace myComponent.dll verze 1.0.0.0. Toto schéma registru umožňuje zrušit registraci myComp.dll verze 1.0.0.0, protože je odebrán pouze podklíč verze 1.0.0.0.
 

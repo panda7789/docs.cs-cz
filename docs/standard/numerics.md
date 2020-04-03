@@ -11,12 +11,12 @@ helpviewer_keywords:
 - numerics
 - BigInteger
 ms.assetid: dfebc18e-acde-4510-9fa7-9a0f4aa3bd11
-ms.openlocfilehash: 89d3eb709bb22913b9539d6ad384384ee701385f
-ms.sourcegitcommit: 79b0dd8bfc63f33a02137121dd23475887ecefda
+ms.openlocfilehash: 3e9c817006930a36ebdce5c5965d78f1721c7056
+ms.sourcegitcommit: 1c1a1f9ec0bd1efb3040d86a79f7ee94e207cca5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/01/2020
-ms.locfileid: "80523290"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80635146"
 ---
 # <a name="numerics-in-net"></a>Číslovky v technologii .NET
 
@@ -64,7 +64,7 @@ Každý typ s plovoucí desetinnou desetinnou desetinnou hodem podporuje sadu st
 
 Můžete také pracovat s jednotlivými <xref:System.Double> <xref:System.Single> bity a <xref:System.BitConverter?displayProperty=nameWithType> hodnoty pomocí třídy. Struktura <xref:System.Decimal?displayProperty=nameWithType> má své vlastní <xref:System.Decimal.GetBits%2A?displayProperty=nameWithType> <xref:System.Decimal.%23ctor%28System.Int32%5B%5D%29?displayProperty=nameWithType>metody a , pro práci s jednotlivé bity desetinné hodnoty, stejně jako vlastní sadu metod pro provádění některých dalších matematických operací.
   
-Typy <xref:System.Double> <xref:System.Single> a jsou určeny k použití pro hodnoty, které jsou svou povahou nepřesné (například vzdálenost mezi dvěma hvězdičkami) a pro aplikace, ve kterých není vyžadován vysoký stupeň přesnosti a malá chyba zaokrouhlení. Typ byste <xref:System.Decimal?displayProperty=nameWithType> měli použít pro případy, ve kterých je vyžadována větší přesnost a chyby zaokrouhlení by měly být minimalizovány.
+Typy <xref:System.Double> <xref:System.Single> a jsou určeny k použití pro hodnoty, které jsou svou povahou nepřesné (například vzdálenost mezi dvěma hvězdičkami) a pro aplikace, ve kterých není vyžadován vysoký stupeň přesnosti a malá chyba zaokrouhlení. Typ <xref:System.Decimal?displayProperty=nameWithType> použijte pro případy, ve kterých je vyžadována větší přesnost a chyby zaokrouhlení by měly být minimalizovány.
 
 > [!NOTE]
 > Typ <xref:System.Decimal> nevylučuje potřebu zaokrouhlení. Spíše minimalizuje chyby z důvodu zaokrouhlení.

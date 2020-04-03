@@ -12,16 +12,16 @@ helpviewer_keywords:
 - time [.NET Framework], round-trip values
 - formatting strings [.NET Framework], round-trip values
 ms.assetid: b609b277-edc6-4c74-b03e-ea73324ecbdb
-ms.openlocfilehash: 4fc38b6b852f8a7b8f268fd9e8624bdf350744c8
-ms.sourcegitcommit: 79b0dd8bfc63f33a02137121dd23475887ecefda
+ms.openlocfilehash: 3aa615dc7d7d1d49dce4897f8508b5210b364fc0
+ms.sourcegitcommit: 1c1a1f9ec0bd1efb3040d86a79f7ee94e207cca5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/01/2020
-ms.locfileid: "80523822"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80635140"
 ---
 # <a name="how-to-round-trip-date-and-time-values"></a>Postupy: Hodnoty data a doby odezvy
 
-V mnoha aplikacích je hodnota data a času určena k jednoznačné identifikaci jednoho bodu v čase. Toto téma ukazuje, jak <xref:System.DateTime> uložit <xref:System.DateTimeOffset> a obnovit hodnotu, hodnotu a hodnotu data a času s informacemi o časovém pásmu tak, aby obnovená hodnota identifikovala stejný čas jako uložená hodnota.
+V mnoha aplikacích je hodnota data a času určena k jednoznačné identifikaci jednoho bodu v čase. Tento článek ukazuje, jak <xref:System.DateTime> uložit a <xref:System.DateTimeOffset> obnovit hodnotu, hodnotu a hodnotu data a času s informacemi o časovém pásmu tak, aby obnovená hodnota identifikovala stejný čas jako uložená hodnota.
 
 ## <a name="round-trip-a-datetime-value"></a>Round-trip datetime hodnota
 
@@ -38,7 +38,7 @@ Následující příklad ukazuje, jak round-trip hodnotu. <xref:System.DateTime>
 [!code-csharp[Formatting.HowTo.RoundTrip#1](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.HowTo.RoundTrip/cs/RoundTrip.cs#1)]
 [!code-vb[Formatting.HowTo.RoundTrip#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.HowTo.RoundTrip/vb/RoundTrip.vb#1)]
 
-Při zaoblení <xref:System.DateTime> hodnoty tato technika úspěšně zachová čas pro všechny místní a univerzální časy. Pokud je například <xref:System.DateTime> místní hodnota uložena v systému v americkém tichomořském standardním časovém pásmu a obnovena v systému v centrálním časovém pásmu USA, bude obnovené datum a čas o dvě hodiny později než původní čas, což odráží časový rozdíl mezi oběma časovými pásmy. Tato technika však nemusí být nutně přesná pro nespecifikované časy. Všechny <xref:System.DateTime> hodnoty, <xref:System.DateTime.Kind%2A> <xref:System.DateTimeKind.Unspecified> jejichž vlastnost je považována za místní časy. Pokud tomu tak není, <xref:System.DateTime> nebude úspěšně identifikovat správný bod v čase. Řešení pro toto omezení je pevně spárovat hodnotu data a času s jeho časové pásmo pro uložení a obnovení operace.
+Při zaoblení <xref:System.DateTime> hodnoty tato technika úspěšně zachová čas pro všechny místní a univerzální časy. Pokud je například <xref:System.DateTime> místní hodnota uložena v systému v americkém tichomořském standardním časovém pásmu a obnovena v systému v centrálním časovém pásmu USA, bude obnovené datum a čas o dvě hodiny později než původní čas, což odráží časový rozdíl mezi oběma časovými pásmy. Tato technika však nemusí být nutně přesná pro nespecifikované časy. Všechny <xref:System.DateTime> hodnoty, <xref:System.DateTime.Kind%2A> <xref:System.DateTimeKind.Unspecified> jejichž vlastnost je považována za místní časy. Pokud to není místní čas, <xref:System.DateTime> není úspěšně identifikovat správný bod v čase. Řešení pro toto omezení je pevně spárovat hodnotu data a času s jeho časové pásmo pro uložení a obnovení operace.
 
 ## <a name="round-trip-a-datetimeoffset-value"></a>Round-trip a DateTimeOffset hodnota
 
@@ -72,7 +72,7 @@ Tato technika vždy jednoznačně identifikuje <xref:System.DateTimeOffset> hodn
 
 5. Přetypovat (v jazyce C#) nebo převést (v jazyce Visual Basic) rekonstruovaný objekt na objekt příslušného typu.
 
-Následující příklad ukazuje, jak round-trip objekt, který ukládá informace o datu a čase a časové pásmo.
+Následující příklad ukazuje, jak round-trip objekt, který ukládá časové pásmo a datum a čas informace.
 
 [!code-csharp[Formatting.HowTo.RoundTrip#4](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.HowTo.RoundTrip/cs/RoundTrip.cs#4)]
 [!code-vb[Formatting.HowTo.RoundTrip#4](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.HowTo.RoundTrip/vb/RoundTrip.vb#4)]

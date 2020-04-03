@@ -3,12 +3,12 @@ title: Slovníček k technologii .NET
 description: Zjistěte význam vybraných termínů použitých v dokumentaci k rozhraní .NET.
 ms.date: 01/22/2019
 ms.technology: dotnet-standard
-ms.openlocfilehash: ed4dceed1a3f39c5c4ce7a278efc37bb38ed0d94
-ms.sourcegitcommit: 59e36e65ac81cdd094a5a84617625b2a0ff3506e
+ms.openlocfilehash: d8f16579ea4dcbc9260aac83e16d3fbd30db519c
+ms.sourcegitcommit: 1c1a1f9ec0bd1efb3040d86a79f7ee94e207cca5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "80344195"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80635573"
 ---
 # <a name="net-glossary"></a>Slovníček k technologii .NET
 
@@ -155,7 +155,7 @@ Další informace o mono, naleznete [v dokumentaci Mono](https://www.mono-projec
 
 Zastřešující termín pro [standard .NET](#net-standard) a všechny implementace a [úlohy .NET.](#implementation-of-net) Vždy plně kapitalizovaný, nikdy ".Net".
 
-Zobrazit [průvodce .NET](index.md)
+Podívejte se na [průvodce .NET](index.yml)
 
 ## <a name="net-core"></a>.NET Core
 
@@ -273,7 +273,7 @@ Implementace rozhraní .NET, která se používá pro vytváření moderních ap
 
 ## <a name="see-also"></a>Viz také
 
-- [Průvodce rozhraním .NET](index.md)
+- [Průvodce rozhraním .NET](index.yml)
 - [Průvodce rámcem rozhraní .NET](../framework/index.yml)
 - [.NET Core](../core/index.yml)
 - [přehled ASP.NET](/aspnet/index#pivot=aspnet)

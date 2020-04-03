@@ -7,18 +7,18 @@ dev_langs:
 helpviewer_keywords:
 - Popup control [WPF], specifying custom position
 ms.assetid: 28c24f39-d3aa-4ee2-b950-384b4a5dab92
-ms.openlocfilehash: ea8d73c51dd018608b95104f00bf341ff434225c
-ms.sourcegitcommit: 59e36e65ac81cdd094a5a84617625b2a0ff3506e
+ms.openlocfilehash: b48dedc044b418062642af5c5bb40afab78a3c97
+ms.sourcegitcommit: 1c1a1f9ec0bd1efb3040d86a79f7ee94e207cca5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "80344956"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80635754"
 ---
 # <a name="how-to-specify-a-custom-popup-position"></a>Postupy: Určení vlastního překryvného umístění
 Tento příklad ukazuje, jak určit <xref:System.Windows.Controls.Primitives.Popup> vlastní pozici <xref:System.Windows.Controls.Primitives.Popup.Placement%2A> ovládacího <xref:System.Windows.Controls.Primitives.PlacementMode.Custom>prvku, když je vlastnost nastavena na .  
   
 ## <a name="example"></a>Příklad  
- Pokud <xref:System.Windows.Controls.Primitives.Popup.Placement%2A> je vlastnost <xref:System.Windows.Controls.Primitives.PlacementMode.Custom>nastavena <xref:System.Windows.Controls.Primitives.Popup> na , volá <xref:System.Windows.Controls.Primitives.CustomPopupPlacementCallback> definovanou instanci delegáta. Tento delegát vrátí sadu možných bodů, které jsou relativní k levému hornímu <xref:System.Windows.Controls.Primitives.Popup>rohu cílové oblasti a levému hornímu rohu . Umístění <xref:System.Windows.Controls.Primitives.Popup> dochází v bodě, který poskytuje nejlepší viditelnost.  
+ Pokud <xref:System.Windows.Controls.Primitives.Popup.Placement%2A> je vlastnost <xref:System.Windows.Controls.Primitives.PlacementMode.Custom>nastavena <xref:System.Windows.Controls.Primitives.Popup> na , volá <xref:System.Windows.Controls.Primitives.CustomPopupPlacementCallback> definovanou instanci delegáta. Tento delegát vrátí sadu možných bodů, které jsou relativní k levému hornímu rohu <xref:System.Windows.Controls.Primitives.Popup>cílové oblasti a levému hornímu rohu . Umístění <xref:System.Windows.Controls.Primitives.Popup> dochází v bodě, který poskytuje nejlepší viditelnost.  
   
  Následující příklad ukazuje, jak definovat <xref:System.Windows.Controls.Primitives.Popup> pozici a <xref:System.Windows.Controls.Primitives.Popup.Placement%2A> nastavením vlastnosti na <xref:System.Windows.Controls.Primitives.PlacementMode.Custom>. Také ukazuje, jak vytvořit <xref:System.Windows.Controls.Primitives.CustomPopupPlacementCallback> a přiřadit delegáta, aby bylo možné umístit <xref:System.Windows.Controls.Primitives.Popup>.  Delegát zpětného volání <xref:System.Windows.Controls.Primitives.CustomPopupPlacement> vrátí dva objekty.  Pokud <xref:System.Windows.Controls.Primitives.Popup> je skryt okrajem obrazovky v <xref:System.Windows.Controls.Primitives.Popup> první poloze, je umístěn na druhé pozici.  
   
@@ -35,5 +35,5 @@ Tento příklad ukazuje, jak určit <xref:System.Windows.Controls.Primitives.Pop
 ## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Controls.Primitives.Popup>
-- [Přehled překryvných objektů](popup-overview.md)
-- [– postupy](popup-how-to-topics.md)
+- [Místní okno – přehled](popup-overview.md)
+- [Články s postupy](popup-how-to-topics.md)

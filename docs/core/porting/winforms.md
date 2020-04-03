@@ -3,13 +3,13 @@ title: Port aplikace Windows Forms na jádro .NET Core
 description: Naučí vás portovat aplikaci .NET Framework Windows Forms do .NET Core pro Windows.
 author: Thraka
 ms.author: adegeo
-ms.date: 03/01/2019
-ms.openlocfilehash: dbd522851faa0a4fe435199914a034ee230d3455
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.date: 01/24/2020
+ms.openlocfilehash: 80b4bb225d6a6748743d91a4c70e8b09c10cc94b
+ms.sourcegitcommit: 1c1a1f9ec0bd1efb3040d86a79f7ee94e207cca5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "76116021"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80635516"
 ---
 # <a name="how-to-port-a-windows-forms-desktop-app-to-net-core"></a>Jak portovat desktopovou aplikaci pro Windows Forms do jádra .NET Core
 
@@ -26,7 +26,7 @@ V tomto článku se různé názvy používají k identifikaci typů souborů po
 
 ## <a name="prerequisites"></a>Požadavky
 
-- [Visual Studio 2019](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2019) pro všechny návrháře práce, které chcete udělat.
+- [Visual Studio 2019 16.5 Náhled 1](https://visualstudio.microsoft.com/thank-you-downloading-visual-studio/?sku=community&ch=pre&rel=16) nebo novější pro jakoukoli práci návrháře, kterou chcete dělat. Doporučujeme aktualizovat na nejnovější [verzi aplikace Visual Studio preview](https://visualstudio.microsoft.com/vs/preview/)
 
   Nainstalujte následující úlohy sady Visual Studio:
   - Vývoj stolních počítačů .NET
@@ -34,10 +34,11 @@ V tomto článku se různé názvy používají k identifikaci typů souborů po
 
 - Pracovní Windows Forms projektu v řešení, které se staví a běží bez problémů.
 - Projekt kódovaný v c#.
-- [.NET Core](https://dotnet.microsoft.com/download/dotnet-core) 3.0 nebo novější.
 
 > [!NOTE]
-> **Visual Studio 2017** nepodporuje projekty .NET Core 3.0. **Visual Studio 2019** podporuje projekty .NET Core 3.0, ale ještě nepodporuje vizuální návrháře pro projekty .NET Core 3.0 Windows Forms. Chcete-li použít vizuální návrháře, musíte mít projekt .NET Windows Forms v řešení, které sdílí soubory formulářů s projektem .NET Core.
+> Projekty .NET Core 3.0 jsou podporovány pouze v **sadě Visual Studio 2019** nebo novější verzi. Počínaje **Visual Studio 2019 verze 16.5 Náhled 1**, návrhář .NET Core Windows Forms je také podporována.
+>
+> Pokud chcete návrháře povolit, **přejděte** > na Nástroje**Možnosti** > **prostředí** > **Preview a** vyberte možnost Použít **návrháře Windows Forms pro aplikace .NET Core.**
 
 ### <a name="consider"></a>Zvážit
 
@@ -58,10 +59,6 @@ Při přenosu aplikace .NET Framework Windows Forms je třeba zvážit několik 
 01. Aktualizujte balíčky NuGet používané vaším projektem.
 
     Je vždy vhodné použít nejnovější verze balíčků NuGet před jakoukoli migrací. Pokud vaše aplikace odkazuje na všechny balíčky NuGet, aktualizujte je na nejnovější verzi. Ujistěte se, že vaše aplikace úspěšně sestavení. Po upgradu, pokud existují nějaké chyby balíčku, downgrade balíček na nejnovější verzi, která nepřeruší váš kód.
-
-01. Visual Studio 2019 ještě nepodporuje Návrhář e-uskutečně pro .NET Core 3.0
-
-    V současné době je třeba zachovat existující soubor projektu .NET Framework Windows Forms, pokud chcete použít Návrhář e-aplikací Z aplikace Visual Studio.
 
 ## <a name="create-a-new-sdk-project"></a>Vytvoření nového projektu sady SDK
 

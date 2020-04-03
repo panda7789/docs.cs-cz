@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - tracing [WCF]
 ms.assetid: 82922010-e8b3-40eb-98c4-10fc05c6d65d
-ms.openlocfilehash: aca3b5c54bff9c2b4c5380c04dd0da162215b088
-ms.sourcegitcommit: 79b0dd8bfc63f33a02137121dd23475887ecefda
+ms.openlocfilehash: c5079237ff4c97dd9ef164061dc5e7499c1d6e38
+ms.sourcegitcommit: 1c1a1f9ec0bd1efb3040d86a79f7ee94e207cca5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/01/2020
-ms.locfileid: "80523305"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80636000"
 ---
 # <a name="configuring-tracing"></a>Konfigurace trasování
 Toto téma popisuje, jak můžete povolit trasování, konfigurovat zdroje trasování k vyzařování trasování a nastavit úrovně trasování, nastavit trasování aktivity a šíření pro podporu korelace trasování od začátku do konce a nastavit posluchače trasování pro přístup k trasování.  
@@ -157,7 +157,7 @@ Toto téma popisuje, jak můžete povolit trasování, konfigurovat zdroje traso
 |Chyba|"Negativní" události: události, které označují neočekávané zpracování nebo chybový stav.|Došlo k neočekávanému zpracování. Aplikace nebyla schopna provést úlohu podle očekávání. Aplikace je však stále v provozu.|Všechny výjimky jsou protokolovány.|Správci<br /><br /> Vývojáři aplikací|  
 |Upozornění|"Negativní" události: události, které označují neočekávané zpracování nebo chybový stav.|Došlo k možnému problému nebo může dojít, ale aplikace stále funguje správně. Však nemusí nadále pracovat správně.|- Aplikace přijímá více požadavků, než její nastavení omezení umožňuje.<br />- Přijímací fronta se blíží maximální nakonfigurované kapacitě.<br />- Časový limit byl překročen.<br />- Pověření jsou odmítnuta.|Správci<br /><br /> Vývojáři aplikací|  
 |Informace|"Pozitivní" události: události, které označují úspěšné milníky|Důležité a úspěšné milníky spuštění aplikace, bez ohledu na to, zda aplikace pracuje správně nebo ne.|Obecně platí, že jsou generovány zprávy užitečné pro sledování a diagnostiku stavu systému, měření výkonu nebo profilování. Tyto informace můžete použít pro plánování kapacity a řízení výkonu:<br /><br /> - Kanály jsou vytvořeny.<br />- Jsou vytvořeny naslouchací procesy koncového bodu.<br />- Zpráva zadává/opouští dopravu.<br />- Bezpečnostní token je načten.<br />- Nastavení konfigurace je přečteno.|Správci<br /><br /> Vývojáři aplikací<br /><br /> Vývojáři produktů.|  
-|Verbose|"Pozitivní" události: události, které označují úspěšné milníky.|Jsou emitovány události nízké úrovně pro uživatelský kód i obsluhu.|Obecně lze tuto úroveň použít pro ladění nebo optimalizaci aplikací.<br /><br /> - Rozumím záhlaví zprávy.|Správci<br /><br /> Vývojáři aplikací<br /><br /> Vývojáři produktů.|  
+|Verbose|"Pozitivní" události: události, které označují úspěšné milníky.|Jsou emitovány události nižší úrovně pro uživatelský kód i obsluhu.|Obecně lze tuto úroveň použít pro ladění nebo optimalizaci aplikací.<br /><br /> - Rozumím záhlaví zprávy.|Správci<br /><br /> Vývojáři aplikací<br /><br /> Vývojáři produktů.|  
 |Aktivitatrasuje||Tok událostí mezi aktivitami zpracování a součástmi.|Tato úroveň umožňuje správcům a vývojářům korelovat aplikace ve stejné doméně aplikace:<br /><br /> - Stopy pro hranice aktivity, jako je například start/stop.<br />- Stopy pro převody.|Všechny|  
 |Všechny||Aplikace může fungovat správně. Všechny události jsou emitovány.|Všechny předchozí události.|Všechny|  
   

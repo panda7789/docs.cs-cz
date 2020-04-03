@@ -9,16 +9,16 @@ helpviewer_keywords:
 - task parallelism in .NET
 - parallel programming, task parallelism
 ms.assetid: 6b3ecd79-dec9-4ce1-abf4-62e5392a59c6
-ms.openlocfilehash: 7189c478e132a41971a364b833f0fabda6ff84d4
-ms.sourcegitcommit: 961ec21c22d2f1d55c9cc8a7edf2ade1d1fd92e3
+ms.openlocfilehash: f61bbf10bbeef736f66710f50e621c3619355a1d
+ms.sourcegitcommit: 1c1a1f9ec0bd1efb3040d86a79f7ee94e207cca5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2020
-ms.locfileid: "80588400"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80635806"
 ---
 # <a name="how-to-use-parallelinvoke-to-execute-parallel-operations"></a>Postupy: Použití Parallel.Invoke k vykonávání paralelních operací
 
-Tento příklad ukazuje, jak paralelizovat <xref:System.Threading.Tasks.Parallel.Invoke%2A> operace pomocí v paralelní knihovně úloh. Tři operace jsou prováděny na sdíleném zdroji dat. Vzhledem k tomu, že žádná z operací upravuje zdroj, mohou být provedeny paralelně přímočarým způsobem.
+Tento příklad ukazuje, jak paralelizovat <xref:System.Threading.Tasks.Parallel.Invoke%2A> operace pomocí v paralelní knihovně úloh. Tři operace jsou prováděny na sdíleném zdroji dat. Operace mohou být prováděny paralelně přímočarým způsobem, protože žádný z nich neupravuje zdroj.
 
 > [!NOTE]
 > Tato dokumentace používá k definování delegátů v TPL lambda výrazy. Pokud nejste obeznámeni s lambda výrazy v jazyce C# nebo Visual Basic, naleznete [lambda výrazy v PLINQ a TPL](../../../docs/standard/parallel-programming/lambda-expressions-in-plinq-and-tpl.md).
@@ -28,9 +28,9 @@ Tento příklad ukazuje, jak paralelizovat <xref:System.Threading.Tasks.Parallel
 [!code-csharp[TPL_Parallel#06](../../../samples/snippets/csharp/VS_Snippets_Misc/tpl_parallel/cs/parallelinvoke.cs#06)]
 [!code-vb[TPL_Parallel#06](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpl_parallel/vb/parallelinvoke.vb#06)]
 
-Všimněte <xref:System.Threading.Tasks.Parallel.Invoke%2A>si, že s , jednoduše vyjádřit, které akce, které chcete spustit souběžně a modul runtime zpracovává všechny podrobnosti plánování vláken, včetně škálování automaticky na počet jader v hostitelském počítači.
+Pomocí <xref:System.Threading.Tasks.Parallel.Invoke%2A>aplikace jednoduše vyjádříte, které akce chcete spustit souběžně, a modul runtime zpracovává všechny podrobnosti o plánování vláken, včetně automatického škálování na počet jader v hostitelském počítači.
 
-Tento příklad paralelizuje operace, nikoli data. Jako alternativní přístup můžete paralelizovat linq dotazy pomocí PLINQ a spouštět dotazy postupně. Případně můžete paralelizovat data pomocí PLINQ. Další možností je paralelizovat dotazy i úkoly. Přestože výsledná režie může snížit výkon v hostitelských počítačích s relativně málo procesory, by škálovat mnohem lépe v počítačích s mnoha procesory.
+Tento příklad paralelizuje operace, nikoli data. Jako alternativní přístup můžete paralelizovat linq dotazy pomocí PLINQ a spouštět dotazy postupně. Případně můžete paralelizovat data pomocí PLINQ. Další možností je paralelizovat dotazy i úkoly. Přestože výsledná režie může snížit výkon v hostitelských počítačích s relativně málo procesory, škálování lepší v počítačích s mnoha procesory.
 
 ## <a name="compile-the-code"></a>Kompilace kódu
 

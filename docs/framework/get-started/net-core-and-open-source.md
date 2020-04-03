@@ -2,12 +2,12 @@
 title: .NET Core a open source
 ms.date: 03/30/2017
 ms.assetid: e6bd4655-ce37-4003-8462-468a6fe2c40f
-ms.openlocfilehash: a8f44eedddc4424b39f7aedceb4bb8f02c6feb42
-ms.sourcegitcommit: 59e36e65ac81cdd094a5a84617625b2a0ff3506e
+ms.openlocfilehash: bed5bb6aad5f3e651f7c4c0651a2365f17eb8a0b
+ms.sourcegitcommit: 1c1a1f9ec0bd1efb3040d86a79f7ee94e207cca5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "80345036"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80635297"
 ---
 # <a name="net-core-and-open-source"></a>.NET Core a open source
 
@@ -15,7 +15,7 @@ Tento článek obsahuje stručný přehled toho, co je jádro .NET Core, a ukazu
 
 ## <a name="what-is-net-core"></a>Co je jádro .NET?  
 
-.NET Core je implementace .NET Standard pro obecné účely, modulární, napříč platformami a otevřeným zdrojovým kódem. Obsahuje mnoho stejných rozhraní API jako rozhraní .NET Framework (ale .NET Core je menší sada) a obsahuje komponenty runtime, framework, kompilátor a nástroje, které podporují různé operační systémy a cíle čipů. Implementace .NET Core byla primárně řízena úlohami ASP.NET Core, ale také potřebou a touhou mít modernější implementaci. Lze jej použít ve scénářích zařízení, cloudu a vložené/IoT.  
+.NET Core je implementace .NET Standard pro obecné účely, modulární, napříč platformami a otevřeným zdrojovým kódem. Obsahuje mnoho stejných rozhraní API jako rozhraní .NET Framework (ale .NET Core je menší sada) a zahrnuje komponenty runtime, framework, kompilátor a nástroje, které podporují různé operační systémy a cíle čipů. Implementace .NET Core byla primárně řízena úlohami ASP.NET Core, ale také potřebou a touhou mít modernější implementaci. Lze jej použít ve scénářích zařízení, cloudu a vložené/IoT.  
   
 Chcete-li začít s rozhraním .NET Core, navštivte .NET tutorial [Hello World za 10 minut](https://dotnet.microsoft.com/learn/dotnet/hello-world-tutorial/intro).  
   
@@ -25,9 +25,9 @@ Hlavní charakteristiky .NET Core jsou:
   
 - **Open source:** .NET Core je jedním z mnoha projektů pod správou [.NET Foundation](https://www.dotnetfoundation.org/) a je k dispozici na [GitHubu](https://github.com/).  S .NET Core jako open source projekt podporuje transparentnější proces vývoje a podporuje aktivní a angažovanou komunitu.  
   
-- **Flexibilní nasazení:** existují dva hlavní způsoby nasazení aplikace: nasazení závislé na rámci nebo samostatné nasazení. S nasazením závislým na rámci jsou nainstalovány pouze vaše aplikace a závislosti třetích stran a vaše aplikace závisí na celosystémové verzi .NET Core, která má být k dispozici.  S samostatné nasazení verze .NET Core používá k sestavení aplikace je také nasazenspolu s vaší aplikace a závislosti třetích stran a lze spustit vedle sebe s jinými verzemi.    Další informace naleznete v tématu [.NET Core Application Deployment](../../core/deploying/index.md).
+- **Flexibilní nasazení:** existují dva hlavní způsoby nasazení aplikace: nasazení závislé na rámci nebo samostatné nasazení. S nasazením závislým na rámci jsou nainstalovány pouze vaše aplikace a závislosti třetích stran a vaše aplikace závisí na celosystémové verzi .NET Core, která má být k dispozici. S samostatné nasazení verze .NET Core používá k sestavení aplikace je také nasazenspolu s vaší aplikace a závislosti třetích stran a lze spustit vedle sebe s jinými verzemi. Další informace naleznete v tématu [.NET Core Application Deployment](../../core/deploying/index.md).
 
-- **Modulární:** .NET Core je modulární, protože je vydána prostřednictvím NuGet v menších montážních balíčků. Spíše než jeden velký sestavení, které obsahuje většinu základních funkcí, .NET Core je k dispozici jako menší balíčky zaměřené na funkce. To umožňuje agilnější vývojový model pro nás a umožňuje optimalizovat aplikaci tak, aby zahrnovala pouze balíčky NuGet, které potřebujete. Mezi výhody menší plochy aplikace patří přísnější zabezpečení, nižší servis, lepší výkon a nižší náklady v modelu platby za co použít.  
+- **Modulární:** .NET Core je modulární, protože je vydána prostřednictvím NuGet v menších montážních balíčků. Spíše než jeden velký sestavení, které obsahuje většinu základních funkcí, .NET Core je k dispozici jako menší, funkce zaměřené balíčky. Tato modularita umožňuje agilnější vývojový model pro nás a umožňuje optimalizovat aplikaci tak, aby zahrnovala pouze balíčky NuGet, které potřebujete. Mezi výhody menší plochy aplikace patří přísnější zabezpečení, nižší servis, lepší výkon a nižší náklady v modelu platby za co použít.  
   
 ## <a name="the-net-core-platform"></a>Platforma .NET Core
   
