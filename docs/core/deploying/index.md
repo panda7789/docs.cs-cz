@@ -1,13 +1,13 @@
 ---
 title: Publikování aplikací
 description: Přečtěte si o způsobech publikování aplikace .NET Core. .NET Core můžete publikovat aplikace specifické pro platformu nebo aplikace pro různé platformy. Aplikaci můžete publikovat jako samostatnou nebo závislou na běhu. Každý režim ovlivňuje způsob, jakým uživatel spouští vaši aplikaci.
-ms.date: 01/31/2020
-ms.openlocfilehash: 3b9c3b7f29af12477874b7a31ef0de4750719de0
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.date: 04/01/2020
+ms.openlocfilehash: a4e5f9fe048d40c751f582bd49732cb903202db4
+ms.sourcegitcommit: 45cced471d59d5dac3f0c92abc9d4849716098a2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "79399061"
+ms.lasthandoff: 04/04/2020
+ms.locfileid: "80665540"
 ---
 # <a name="net-core-application-publishing-overview"></a>Přehled publikování aplikace .NET Core
 
@@ -15,7 +15,7 @@ Aplikace, které vytvoříte pomocí .NET Core, lze publikovat ve dvou různých
 
 Publikování aplikace jako *samostatné* vytvoří aplikaci, která obsahuje běh .NET Core runtime a knihovny a vaše aplikace a její závislosti. Uživatelé aplikace ji mohou spustit v počítači, ve které není nainstalován anainstalován runtime .NET Core.
 
-Publikování aplikace jako *závislé na běhu* vytvoří aplikaci, která zahrnuje pouze samotnou aplikaci a její závislosti. Uživatelé aplikace musí samostatně nainstalovat runtime .NET Core.
+Publikování aplikace jako *závislé na běhu* (dříve označované jako závislé na *rámci*) vytvoří aplikaci, která zahrnuje pouze samotnou aplikaci a její závislosti. Uživatelé aplikace musí samostatně nainstalovat runtime .NET Core.
 
 Oba režimy publikování ve výchozím nastavení vytvářejí spustitelný soubor specifický pro platformu. Aplikace závislé na modulu runtime lze vytvořit bez spustitelného souboru a tyto aplikace jsou napříč platformami.
 

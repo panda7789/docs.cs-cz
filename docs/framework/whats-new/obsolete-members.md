@@ -7,12 +7,12 @@ helpviewer_keywords:
 - members, obsolete in .NET Framework
 - obsolete members [.NET Framework]
 ms.assetid: 0ee25062-4071-4d3c-a552-87a75d3ecd34
-ms.openlocfilehash: 4a4da6bb36371fe5e2b14084d40df88e44dd17fa
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 2e77f871f41dda2f7dd1a080ca6f3b696852b5ad
+ms.sourcegitcommit: 45cced471d59d5dac3f0c92abc9d4849716098a2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "75901322"
+ms.lasthandoff: 04/04/2020
+ms.locfileid: "80665571"
 ---
 # <a name="obsolete-members-in-net-framework"></a>Zastaralé členy v rozhraní .NET Framework
 
@@ -491,7 +491,7 @@ Tento článek neuvádí členy zastaralých typů. Seznam zastaralých typů na
 > |<xref:System.Net.ServicePointManager?displayProperty=nameWithType>|<xref:System.Net.ServicePointManager.CertificatePolicy%2A>|<xref:System.Net.ServicePointManager.CertificatePolicy%2A>je pro tento typ zastaralý. Místo toho použijte <xref:System.Net.ServicePointManager.ServerCertificateValidationCallback%2A?displayProperty=nameWithType>.|
 > |<xref:System.Net.WebClient?displayProperty=nameWithType>|<xref:System.Net.WebClient.AllowReadStreamBuffering%2A>|První zastaralé v rozhraní .NET Framework 4.5.<br /><br /> Použití tohoto člena generuje chybu kompilátoru.<br /><br /> Toto rozhraní API podporuje infrastrukturu rozhraní .NET Framework a není určeno k použití přímo z vašeho kódu.|
 > |<xref:System.Net.WebClient?displayProperty=nameWithType>|<xref:System.Net.WebClient.AllowWriteStreamBuffering%2A>|První zastaralé v rozhraní .NET Framework 4.5.<br /><br /> Použití tohoto člena generuje chybu kompilátoru.<br /><br /> Toto rozhraní API podporuje infrastrukturu rozhraní .NET Framework a není určeno k použití přímo z vašeho kódu.|
-> |<xref:System.Net.WebClient?displayProperty=nameWithType>|<xref:System.Net.WebClient.OnWriteStreamClosed%2A>|První zastaralé v rozhraní .NET Framework 4.5.<br /><br /> Použití tohoto člena generuje chybu kompilátoru.<br /><br /> Toto rozhraní API podporuje infrastrukturu rozhraní .NET Framework a není určeno k použití přímo z vašeho kódu.|
+> |<xref:System.Net.WebClient?displayProperty=nameWithType>|`System.Net.WebClient.OnWriteStreamClosed`|První zastaralé v rozhraní .NET Framework 4.5.<br /><br /> Použití tohoto člena generuje chybu kompilátoru.<br /><br /> Toto rozhraní API podporuje infrastrukturu rozhraní .NET Framework a není určeno k použití přímo z vašeho kódu.|
 > |<xref:System.Net.WebClient?displayProperty=nameWithType>|<xref:System.Net.WebClient.WriteStreamClosed>|První zastaralé v rozhraní .NET Framework 4.5.<br /><br /> Použití tohoto člena generuje chybu kompilátoru.<br /><br /> Toto rozhraní API podporuje infrastrukturu rozhraní .NET Framework a není určeno k použití přímo z vašeho kódu.|
 > |<xref:System.Net.WebProxy?displayProperty=nameWithType>|<xref:System.Net.WebProxy.GetDefaultProxy%2A>|Tato metoda byla zastaralá. Ve výchozím nastavení použijte vybraný proxy server.|
 > |<xref:System.Net.WebRequest?displayProperty=nameWithType>|<xref:System.Net.WebRequest.CreatorInstance%2A>|První zastaralé v rozhraní .NET Framework 4.5.<br /><br /> Použití tohoto člena generuje chybu kompilátoru.<br /><br /> Toto rozhraní API podporuje infrastrukturu rozhraní .NET Framework a není určeno k použití přímo z vašeho kódu.|
