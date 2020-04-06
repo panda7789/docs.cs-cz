@@ -290,6 +290,8 @@
       href: deploying/creating-nuget-packages.md
     - name: Samostatné nasazení – dopředné posunutí modulu runtime
       href: deploying/runtime-patch-selection.md
+    - name: Odebrání nechtěných součástí a zachování pouze samostatně nasaditelných součástí a spustitelných souborů
+      href: deploying/trim-self-contained.md
     - name: Úložiště balíčků modulu runtime
       href: deploying/runtime-store.md
 - name: Docker
