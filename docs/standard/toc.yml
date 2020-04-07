@@ -1,16 +1,15 @@
-- name: Průvodce rozhraním .NET Standard
-  href: index.md
-- name: Začínáme s technologií .NET
+- name: Dokumentace pro .NET
+  href: index.yml
+- name: Začínáme s .NET
   href: get-started.md
 - name: Prohlídka technologie .NET
   href: tour.md
-- name: Architektonické součásti technologie .NET
+- name: Součásti architektury technologie .NET
   href: components.md
-- name: .NET Standard
+- name: Přehled rozhraní .NET Standard
   href: net-standard.md
-  items:
-    - name: Novinky v rozhraní .NET Standard
-      href: whats-new/whats-new-in-dotnet-standard.md
+- name: Novinky v rozhraní .NET Standard
+  href: whats-new/whats-new-in-dotnet-standard.md
 - name: Cílové architektury
   href: frameworks.md
 - name: Slovníček k technologii .NET
@@ -19,44 +18,250 @@
   href: library-guidance/
 - name: Volba mezi .NET Core a .NET Framework pro serverové aplikace
   href: choosing-core-framework-server.md
-- name: Co je spravovaný kód?
-  href: managed-code.md
+- name: Spravovaný kód
   items:
+    - name: Co je spravovaný kód?
+      href: managed-code.md
     - name: Automatická správa paměti
       href: automatic-memory-management.md
 - name: Common Language Runtime (CLR)
   href: clr.md
 - name: Jazyková nezávislost
-  href: language-independence.md
   items:
-    - name: Jazyková nezávislost a jazykově nezávislé komponenty
+    - name: Přehled
+      href: language-independence.md
+    - name: Komponenty nezávislé na jazyce
       href: language-independence-and-language-independent-components.md
 - name: Knihovny architektury
-  href: framework-libraries.md
   items:
+    - name: Přehled
+      href: framework-libraries.md
     - name: Přehled knihovny tříd
       href: class-library-overview.md
-    - name: Základní typy
-      href: base-types/
+    - name: Práce se základními typy
+      items:
+        - name: Obecný systém typů
+          href: base-types/common-type-system.md
+        - name: Převod typů v rozhraní .NET
+          href: base-types/type-conversion.md
+        - name: Tabulky převodu typů
+          href: base-types/conversion-tables.md
+        - name: 'Formáty čísel, kalendářních dat a dalších typů'
+          items:
+            - name: Přehled
+              href: base-types/formatting-types.md
+            - name: Standardní řetězce formátu čísla
+              href: base-types/standard-numeric-format-strings.md
+            - name: Vlastní řetězce číselného formátu
+              href: base-types/custom-numeric-format-strings.md
+            - name: Standardní řetězce formátu data a času
+              href: base-types/standard-date-and-time-format-strings.md
+            - name: Vlastní řetězce formátu data a času
+              href: base-types/custom-date-and-time-format-strings.md
+            - name: Standardní řetězce formátu TimeSpan
+              href: base-types/standard-timespan-format-strings.md
+            - name: Vlastní řetězce formátu TimeSpan
+              href: base-types/custom-timespan-format-strings.md
+            - name: Vytvoření výčtu řetězců formátu
+              href: base-types/enumeration-format-strings.md
+            - name: Složené formátování
+              href: base-types/composite-formatting.md
+            - name: Postupy
+              items:
+                - name: Vyplnění čísla úvodními nulami
+                  href: base-types/how-to-pad-a-number-with-leading-zeros.md
+                - name: Extrahování dne v týdnu z data
+                  href: base-types/how-to-extract-the-day-of-the-week-from-a-specific-date.md
+                - name: Používání vlastních poskytovatelů číselného formátu
+                  href: base-types/how-to-define-and-use-custom-numeric-format-providers.md
+                - name: Hodnoty data a doby odezvy
+                  href: base-types/how-to-round-trip-date-and-time-values.md
+                - name: "Zobrazení milisekund v\_hodnotách data a\_času"
+                  href: base-types/how-to-display-milliseconds-in-date-and-time-values.md
+                - name: Zobrazování dat v jiném než gregoriánském kalendáři
+                  href: base-types/how-to-display-dates-in-non-gregorian-calendars.md
+        - name: Manipulace s řetězci
+          items:
+            - name: Doporučené postupy pro používání řetězců
+              href: base-types/best-practices-strings.md
+            - name: Základní operace s řetězci
+              items:
+                - name: Přehled
+                  href: base-types/basic-string-operations.md
+                  displayName: string operations
+                - name: Vytváření nových řetězců
+                  href: base-types/creating-new.md
+                - name: Ořezávání a odebrání znaků
+                  href: base-types/trimming.md
+                - name: Doplnění řetězců
+                  href: base-types/padding.md
+                - name: Porovnávání řetězců
+                  href: base-types/comparing.md
+                - name: Změna velikosti písmen
+                  href: base-types/changing-case.md
+                - name: Používání třídy StringBuilder
+                  href: base-types/stringbuilder.md
+                - name: "Postupy: Základní manipulace s\_řetězci"
+                  href: base-types/basic-manipulations.md
+            - name: Regulární výrazy v rozhraní .NET
+              items:
+                - name: Přehled
+                  href: base-types/regular-expressions.md
+                  displayName: regular expressions
+                - name: Referenční dokumentace jazyka
+                  items:
+                    - name: Přehled
+                      href: base-types/regular-expression-language-quick-reference.md
+                    - name: Řídicí znaky
+                      href: base-types/character-escapes-in-regular-expressions.md
+                    - name: Třídy znaků
+                      href: base-types/character-classes-in-regular-expressions.md
+                    - name: Kotvy
+                      href: base-types/anchors-in-regular-expressions.md
+                    - name: Seskupovací konstrukce
+                      href: base-types/grouping-constructs-in-regular-expressions.md
+                    - name: Kvantifikátory
+                      href: base-types/quantifiers-in-regular-expressions.md
+                    - name: Konstrukce zpětných odkazů
+                      href: base-types/backreference-constructs-in-regular-expressions.md
+                    - name: Konstrukce alternace
+                      href: base-types/alternation-constructs-in-regular-expressions.md
+                    - name: Náhrady
+                      href: base-types/substitutions-in-regular-expressions.md
+                    - name: Možnosti regulárních výrazů
+                      href: base-types/regular-expression-options.md
+                    - name: Různé konstrukce
+                      href: base-types/miscellaneous-constructs-in-regular-expressions.md
+                - name: Doporučené postupy pro regulární výrazy
+                  href: base-types/best-practices.md
+                - name: Model objektu regulárního výrazu
+                  href: base-types/the-regular-expression-object-model.md
+                - name: Chování regulárních výrazů
+                  items:
+                    - name: Přehled
+                      href: base-types/details-of-regular-expression-behavior.md
+                    - name: Zpětné navracení
+                      href: base-types/backtracking-in-regular-expressions.md
+                    - name: Kompilace a opětovné používání
+                      href: base-types/compilation-and-reuse-in-regular-expressions.md
+                    - name: Bezpečnost vlákna
+                      href: base-types/thread-safety-in-regular-expressions.md
+                - name: Příklady
+                  items:
+                    - name: Vyhledávání odkazů HREF
+                      href: base-types/regular-expression-example-scanning-for-hrefs.md
+                    - name: Změny formátů kalendářních dat
+                      href: base-types/regular-expression-example-changing-date-formats.md
+                    - name: Extrahování protokolu a čísla portu z adresy URL
+                      href: base-types/how-to-extract-a-protocol-and-port-number-from-a-url.md
+                    - name: Odstranění neplatných znaků z řetězce
+                      href: base-types/how-to-strip-invalid-characters-from-a-string.md
+                    - name: Ověření platnosti e-mailového formátu řetězců
+                      href: base-types/how-to-verify-that-strings-are-in-valid-email-format.md
+        - name: Kódování znaků v rozhraní .NET
+          href: base-types/character-encoding-introduction.md
+        - name: Jak používat třídy kódování znaků
+          href: base-types/character-encoding.md
+        - name: Parsování řetězců
+          items:
+            - name: Přehled
+              href: base-types/parsing-strings.md
+            - name: Parsování číselných řetězců
+              href: base-types/parsing-numeric.md
+            - name: "Parsování řetězců s\_hodnotami data a\_času"
+              href: base-types/parsing-datetime.md
+            - name: Parsování jiných řetězců
+              href: base-types/parsing-other.md
 - name: Knihovny tříd .NET
   href: class-libraries.md
 - name: Analyzátory
-  href: analyzers/index.md
   items:
+    - name: Přehled
+      href: analyzers/index.md
+      displayName: analyzers
     - name: Analyzátor rozhraní API
       href: analyzers/api-analyzer.md
     - name: Analyzátor přenositelnosti
       href: analyzers/portability-analyzer.md
     - name: Analyzátor architektury
       href: analyzers/framework-analyzer.md
-- name: Zpracování a vyvolání výjimek
-  href: exceptions/
+- name: Ošetření výjimek
+  items:
+    - name: Přehled
+      href: exceptions/index.md
+      displayName: exceptions
+    - name: Třída a vlastnosti výjimky
+      href: exceptions/exception-class-and-properties.md
+    - name: Postupy
+      items:
+        - name: Zachycení výjimek pomocí bloku try-catch
+          href: exceptions/how-to-use-the-try-catch-block-to-catch-exceptions.md
+        - name: Používání specifických výjimek v bloku catch
+          href: exceptions/how-to-use-specific-exceptions-in-a-catch-block.md
+        - name: Explicitní generování výjimek
+          href: exceptions/how-to-explicitly-throw-exceptions.md
+        - name: Vytváření uživatelem definovaných výjimek
+          href: exceptions/how-to-create-user-defined-exceptions.md
+        - name: Vytváření uživatelem definovaných výjimek s lokalizovanými zprávami výjimek
+          href: exceptions/how-to-create-localized-exception-messages.md
+        - name: Používání bloků finally
+          href: exceptions/how-to-use-finally-blocks.md
+    - name: Používání obslužných rutin uživatelem filtrovaných výjimek
+      href: exceptions/using-user-filtered-exception-handlers.md
+    - name: Ošetření výjimek vzájemné spolupráce COM
+      href: exceptions/handling-com-interop-exceptions.md
+    - name: Osvědčené postupy
+      href: exceptions/best-practices-for-exceptions.md
 - name: Sestavení v .NET
   href: assembly/
-- name: Kolekce paměti
-  href: garbage-collection/
+- name: Správa paměti
+  items:
+    - name: Vyčištění nespravovaných prostředků
+      items:
+        - name: Přehled
+          href: garbage-collection/unmanaged.md
+          displayName: 'unmanaged resources, memory management'
+        - name: Implementace metody Dispose
+          href: garbage-collection/implementing-dispose.md
+        - name: Použití objektů implementujících rozhraní IDisposable
+          href: garbage-collection/using-objects.md
+    - name: Uvolnění paměti
+      items:
+        - name: Přehled
+          href: garbage-collection/index.md
+          displayName: garbage collection
+        - name: Základy
+          href: garbage-collection/fundamentals.md
+        - name: Halda pro velké objekty
+          href: garbage-collection/large-object-heap.md
+        - name: Uvolňování paměti a výkon
+          href: garbage-collection/performance.md
+        - name: Vyvolané kolekce
+          href: garbage-collection/induced.md
+        - name: Režimy latence
+          href: garbage-collection/latency.md
+        - name: Optimalizace pro sdílené hostování webů
+          href: garbage-collection/optimization-for-shared-web-hosting.md
+        - name: Oznámení o uvolňování paměti
+          href: garbage-collection/notifications.md
+        - name: Sledování prostředků domény aplikace
+          href: garbage-collection/app-domain-resource-monitoring.md
+        - name: Slabé odkazy
+          href: garbage-collection/weak-references.md
 - name: Obecné typy
-  href: generics.md
+  items:
+    - name: Přehled
+      href: generics/index.md
+    - name: Úvod k obecným typům
+      href: generics.md
+    - name: Obecné kolekce na platformě .NET
+      href: generics/collections.md
+    - name: Obecné delegáty pro manipulaci s poli a seznamy
+      href: generics/delegates-for-manipulating-arrays-and-lists.md
+    - name: Obecná rozhraní
+      href: generics/interfaces.md
+    - name: Kovariance a kontravariance
+      href: generics/covariance-and-contravariance.md
 - name: Delegáty a výrazy lambda
   href: delegates-lambdas.md
 - name: LINQ
@@ -64,27 +269,169 @@
 - name: Obecný systém typů a specifikace CLS (Common Language Specification)
   href: common-type-system.md
 - name: 'Paralelní zpracování, souběžnost a asynchronní programování'
-  href: parallel-processing-and-concurrency.md
   items:
+    - name: Přehled
+      href: parallel-processing-and-concurrency.md
+      displayName: 'Parallel processing, concurrency, async'
     - name: Asynchronní programování
-      href: async.md
       items:
+        - name: Přehled
+          href: async.md
         - name: Asynchronní programování podrobněji
           href: async-in-depth.md
         - name: Vzory asynchronního programování
           href: asynchronous-programming-patterns/
     - name: Paralelní programování
-      href: parallel-programming/
+      items:
+        - name: Přehled
+          href: parallel-programming/index.md
+        - name: Task Parallel Library (TPL)
+          href: parallel-programming/task-parallel-library-tpl.md
+          items:
+            - name: Datový paralelismus
+              href: parallel-programming/data-parallelism-task-parallel-library.md
+              items:
+                - name: 'Postupy: Zápis jednoduché smyčky Parallel.For'
+                  href: parallel-programming/how-to-write-a-simple-parallel-for-loop.md
+                - name: 'Postupy: Zápis jednoduché smyčky Parallel.ForEach'
+                  href: parallel-programming/how-to-write-a-simple-parallel-foreach-loop.md
+                - name: 'Postupy: Zápis smyčky Parallel.For pomocí proměnných v místním vláknu'
+                  href: parallel-programming/how-to-write-a-parallel-for-loop-with-thread-local-variables.md
+                - name: 'Postupy: Zápis smyčky Parallel.ForEach pomocí proměnných v místním oddílu'
+                  href: parallel-programming/how-to-write-a-parallel-foreach-loop-with-partition-local-variables.md
+                - name: 'Postupy: Zrušení smyček Parallel.For nebo ForEach'
+                  href: parallel-programming/how-to-cancel-a-parallel-for-or-foreach-loop.md
+                - name: 'Postupy: Zpracování výjimek v paralelních smyčkách'
+                  href: parallel-programming/how-to-handle-exceptions-in-parallel-loops.md
+                - name: 'Postupy: Zrychlení malých smyček'
+                  href: parallel-programming/how-to-speed-up-small-loop-bodies.md
+                - name: 'Postupy: Procházení adresářů se soubory pomocí paralelní třídy'
+                  href: parallel-programming/how-to-iterate-file-directories-with-the-parallel-class.md
+            - name: Asynchronní programování založené na úlohách
+              href: parallel-programming/task-based-asynchronous-programming.md
+              items:
+                - name: Řetězení úloh pomocí úloh pokračování
+                  href: parallel-programming/chaining-tasks-by-using-continuation-tasks.md
+                - name: "Připojené a\_odpojené podřízené úlohy"
+                  href: parallel-programming/attached-and-detached-child-tasks.md
+                - name: Zrušení úlohy
+                  href: parallel-programming/task-cancellation.md
+                - name: Zpracování výjimek
+                  href: parallel-programming/exception-handling-task-parallel-library.md
+                - name: 'Postupy: Použití algoritmu Parallel.Invoke k provádění paralelních operací'
+                  href: parallel-programming/how-to-use-parallel-invoke-to-execute-parallel-operations.md
+                - name: 'Postupy: Vrácení hodnoty z úlohy'
+                  href: parallel-programming/how-to-return-a-value-from-a-task.md
+                - name: 'Postupy: Zrušení úlohy a podřízených elementů'
+                  href: parallel-programming/how-to-cancel-a-task-and-its-children.md
+                - name: 'Postupy: Vytváření předvypočítaných úloh'
+                  href: parallel-programming/how-to-create-pre-computed-tasks.md
+                - name: 'Postupy: Procházení binárního stromu s paralelními úlohami'
+                  href: parallel-programming/how-to-traverse-a-binary-tree-with-parallel-tasks.md
+                - name: 'Postupy: Rozbalení vnořené úlohy'
+                  href: parallel-programming/how-to-unwrap-a-nested-task.md
+                - name: 'Postupy: Zabránění připojení podřízené úlohy ke své nadřazené úloze'
+                  href: parallel-programming/how-to-prevent-a-child-task-from-attaching-to-its-parent.md
+            - name: Tok dat
+              href: parallel-programming/dataflow-task-parallel-library.md
+              items:
+                - name: 'Postupy: Zápis zpráv do bloku toku dat a čtení zpráv z bloku toku dat'
+                  href: parallel-programming/how-to-write-messages-to-and-read-messages-from-a-dataflow-block.md
+                - name: 'Postupy: Implementace vzoru toku dat producent–příjemce'
+                  href: parallel-programming/how-to-implement-a-producer-consumer-dataflow-pattern.md
+                - name: 'Postupy: Provádění akcí po přijetí dat do bloku toku dat'
+                  href: parallel-programming/how-to-perform-action-when-a-dataflow-block-receives-data.md
+                - name: 'Návod: Vytvoření kanálu toku dat'
+                  href: parallel-programming/walkthrough-creating-a-dataflow-pipeline.md
+                - name: 'Postupy: Zrušení propojení bloků toku dat'
+                  href: parallel-programming/how-to-unlink-dataflow-blocks.md
+                - name: 'Návod: Použití toku dat ve formulářové aplikaci Windows'
+                  href: parallel-programming/walkthrough-using-dataflow-in-a-windows-forms-application.md
+                - name: 'Postupy: Zrušení bloku toku dat'
+                  href: parallel-programming/how-to-cancel-a-dataflow-block.md
+                - name: 'Návod: Vytvoření bloku toku dat vlastního typu'
+                  href: parallel-programming/walkthrough-creating-a-custom-dataflow-block-type.md
+                - name: 'Postupy: Načítání dat z více zdrojů pomocí třídy JoinBlock'
+                  href: parallel-programming/how-to-use-joinblock-to-read-data-from-multiple-sources.md
+                - name: 'Postupy: Určení stupně paralelního zpracování v bloku toku dat'
+                  href: parallel-programming/how-to-specify-the-degree-of-parallelism-in-a-dataflow-block.md
+                - name: 'Postupy: Určení plánovače úloh v bloku toku dat'
+                  href: parallel-programming/how-to-specify-a-task-scheduler-in-a-dataflow-block.md
+                - name: 'Návod: Zvýšení efektivity díky použití tříd BatchBlock a BatchedJoinBlock'
+                  href: parallel-programming/walkthrough-using-batchblock-and-batchedjoinblock-to-improve-efficiency.md
+            - name: Použití TPL s dalšími asynchronními vzory
+              href: parallel-programming/using-tpl-with-other-asynchronous-patterns.md
+              items:
+                - name: TPL a tradiční asynchronní programování v .NET Framework
+                  href: parallel-programming/tpl-and-traditional-async-programming.md
+                - name: 'Postupy: Zalomení vzoru EAP v úloze'
+                  href: parallel-programming/how-to-wrap-eap-patterns-in-a-task.md
+            - name: Potenciální nástrahy datového a funkčního paralelismu
+              href: parallel-programming/potential-pitfalls-in-data-and-task-parallelism.md
+        - name: Paralelní LINQ (PLINQ)
+          items:
+            - name: Úvod do PLINQ
+              href: parallel-programming/introduction-to-plinq.md
+            - name: Porozumění zrychlení v PLINQ
+              href: parallel-programming/understanding-speedup-in-plinq.md
+            - name: Zachování pořadí v PLINQ
+              href: parallel-programming/order-preservation-in-plinq.md
+            - name: Možnosti sloučení v PLINQ
+              href: parallel-programming/merge-options-in-plinq.md
+            - name: Potenciální nástrahy PLINQ
+              href: parallel-programming/potential-pitfalls-with-plinq.md
+            - name: 'Postupy: Vytvoření a provedení jednoduchého dotazu PLINQ'
+              href: parallel-programming/how-to-create-and-execute-a-simple-plinq-query.md
+            - name: 'Postupy: Řazení ovládacích prvků v PLINQ dotazu'
+              href: parallel-programming/how-to-control-ordering-in-a-plinq-query.md
+            - name: 'Postupy: Kombinování paralelních a sekvenčních LINQ dotazů'
+              href: parallel-programming/how-to-combine-parallel-and-sequential-linq-queries.md
+            - name: 'Postupy: Zpracování výjimek v dotazu PLINQ'
+              href: parallel-programming/how-to-handle-exceptions-in-a-plinq-query.md
+            - name: 'Postupy: Zrušení dotazu PLINQ'
+              href: parallel-programming/how-to-cancel-a-plinq-query.md
+            - name: 'Postupy: Psaní vlastní agregační funkce pro PLINQ'
+              href: parallel-programming/how-to-write-a-custom-plinq-aggregate-function.md
+            - name: 'Postupy: Určení režimu spouštění v PLINQ'
+              href: parallel-programming/how-to-specify-the-execution-mode-in-plinq.md
+            - name: 'Postupy: Určení možností sloučení v PLINQ'
+              href: parallel-programming/how-to-specify-merge-options-in-plinq.md
+            - name: 'Postupy: Procházení adresářů se soubory pomocí jazyka PLINQ'
+              href: parallel-programming/how-to-iterate-file-directories-with-plinq.md
+            - name: 'Postupy: Měření výkonu dotazu PLINQ'
+              href: parallel-programming/how-to-measure-plinq-query-performance.md
+            - name: Ukázková data pro PLINQ
+              href: parallel-programming/plinq-data-sample.md
+        - name: Datové struktury pro paralelní programování
+          href: parallel-programming/data-structures-for-parallel-programming.md
+        - name: Paralelní diagnostické nástroje
+          href: parallel-programming/parallel-diagnostic-tools.md
+        - name: Vlastní dělicí metody pro PLINQ a TPL
+          items:
+            - name: Přehled
+              href: parallel-programming/custom-partitioners-for-plinq-and-tpl.md
+              displayName: custom partitioners
+            - name: 'Postupy: Implementace dynamických oddílů'
+              href: parallel-programming/how-to-implement-dynamic-partitions.md
+            - name: 'Postupy: Implementace rozdělovače pro statické dělení'
+              href: parallel-programming/how-to-implement-a-partitioner-for-static-partitioning.md
+        - name: Výrazy lambda v PLINQ a TPL
+          href: parallel-programming/lambda-expressions-in-plinq-and-tpl.md
+        - name: Další čtení
+          href: parallel-programming/for-further-reading-parallel-programming.md
     - name: Dělení na vlákna
       href: threading/
 - name: Typy související s Memory a Span
-  href: memory-and-spans/index.md
   items:
+    - name: Přehled
+      href: memory-and-spans/index.md
     - name: Pokyny k používání Memory<T> a Span<T>
       href: memory-and-spans/memory-t-usage-guidelines.md
 - name: Nativní interoperabilita
-  href: native-interop/index.md
   items:
+    - name: Přehled
+      href: native-interop/index.md
+      displayName: Native interop
     - name: P/Invoke
       href: native-interop/pinvoke.md
     - name: Zařazování typů
@@ -97,46 +444,266 @@
       href: native-interop/best-practices.md
     - name: Znakové sady a zařazování
       href: native-interop/charset.md
-    - name: Zprostředkovatel komunikace s objekty COM
-      href: native-interop/cominterop.md
+    - name: zprostředkovatel komunikace s objekty COM
       items:
+        - name: Přehled
+          href: native-interop/cominterop.md
+          displayName: COM interop
         - name: Obálky COM
-          href: native-interop/com-wrappers.md
           items:
+            - name: Přehled
+              href: native-interop/com-wrappers.md
+              displayName: COM wrappers
             - name: Obálka volatelná za běhu
               href: native-interop/runtime-callable-wrapper.md
             - name: Obálka volatelná aplikacemi COM
               href: native-interop/com-callable-wrapper.md
         - name: Kvalifikace typů .NET pro interoperabilitu COM
           href: native-interop/qualify-net-types-for-interoperation.md
-    - name: Použití atributů spolupráce
+    - name: Použití atributů interoperability
       href: native-interop/apply-interop-attributes.md
     - name: Výjimky
       href: native-interop/exceptions-interoperability.md
 - name: Kolekce a datové struktury
-  href: collections/
+  items:
+    - name: Přehled
+      href: collections/index.md
+      displayName: 'collections, data structures'
+    - name: Výběr třídy kolekce
+      href: collections/selecting-a-collection-class.md
+    - name: Běžně používané typy kolekcí
+      href: collections/commonly-used-collection-types.md
+    - name: Kdy použít obecné kolekce
+      href: collections/when-to-use-generic-collections.md
+    - name: Porovnávání a řazení v kolekcích
+      href: collections/comparisons-and-sorts-within-collections.md
+    - name: Typy řazených kolekcí
+      href: collections/sorted-collection-types.md
+    - name: Typy Hashtable a Dictionary
+      href: collections/hashtable-and-dictionary-collection-types.md
+    - name: Kolekce bezpečné pro přístup z více vláken
+      href: collections/thread-safe/
 - name: Číslovky v technologii .NET
   href: numerics.md
 - name: 'Data, časy a časová pásma'
   href: datetime/
 - name: Události
-  href: events/
+  items:
+    - name: Přehled
+      href: events/index.md
+      displayName: events
+    - name: Vyvolání a zpracování událostí
+      href: events/how-to-raise-and-consume-events.md
+    - name: Zpracování více událostí pomocí vlastností událostí
+      href: events/how-to-handle-multiple-events-using-event-properties.md
+    - name: Zpracování událostí v aplikaci Web Forms
+      href: events/how-to-consume-events-in-a-web-forms-application.md
+    - name: Návrhový vzor Pozorovatel
+      items:
+        - name: Přehled
+          href: events/observer-design-pattern.md
+          displayName: Observer design pattern
+        - name: Osvědčené postupy
+          href: events/observer-design-pattern-best-practices.md
+        - name: 'Postupy: Implementace poskytovatele'
+          href: events/how-to-implement-a-provider.md
+        - name: 'Postupy: Implementace pozorovatele'
+          href: events/how-to-implement-an-observer.md
 - name: Proces spravovaného spouštění
   href: managed-execution-process.md
 - name: Metadata a komponenty popisující samy sebe
   href: metadata-and-self-describing-components.md
-- name: Sestavování konzolových aplikací
+- name: Vytváření konzolových aplikací
   href: building-console-apps.md
-- name: Základy vytváření aplikací
-  href: application-essentials.md
-- name: I/O souborů a proudů
-  href: io/index.md
+- name: Vstup/výstup souborů a streamů
+  items:
+    - name: Přehled
+      href: io/index.md
+    - name: Formáty cesty k souborům v systémech Windows
+      href: io/file-path-formats.md
+    - name: Obecné vstupně-výstupní úlohy
+      href: io/common-i-o-tasks.md
+      items:
+        - name: 'Postupy: Kopírování adresářů'
+          href: io/how-to-copy-directories.md
+        - name: 'Postupy: Vytvoření výčtu adresářů a souborů'
+          href: io/how-to-enumerate-directories-and-files.md
+        - name: 'Postupy: Čtení a zápis do nově vytvořeného datového souboru'
+          href: io/how-to-read-and-write-to-a-newly-created-data-file.md
+        - name: 'Postupy: Otevření a připojení k souboru protokolu'
+          href: io/how-to-open-and-append-to-a-log-file.md
+        - name: 'Postupy: Zápis textu do souboru'
+          href: io/how-to-write-text-to-a-file.md
+        - name: 'Postupy: Čtení textu ze souboru'
+          href: io/how-to-read-text-from-a-file.md
+        - name: 'Postupy: Čtení znaků z řetězce'
+          href: io/how-to-read-characters-from-a-string.md
+        - name: 'Postupy: Zápis znaků do řetězce'
+          href: io/how-to-write-characters-to-a-string.md
+        - name: 'Postupy: Přidávání a odebírání položek seznamu řízení přístupu'
+          href: io/how-to-add-or-remove-access-control-list-entries.md
+        - name: 'Postupy: Komprese a extrahování souborů'
+          href: io/how-to-compress-and-extract-files.md
+        - name: Skládání streamů
+          href: io/composing-streams.md
+        - name: "Postupy: Převádění mezi datovými proudy rozhraní .NET Framework a\_datovými proudy prostředí Windows Runtime"
+          href: io/how-to-convert-between-dotnet-streams-and-winrt-streams.md
+    - name: Asynchronní souborový vstup-výstup
+      href: io/asynchronous-file-i-o.md
+    - name: Zpracování vstupně-výstupních chyb
+      href: io/handling-io-errors.md
+    - name: Izolované úložiště
+      href: io/isolated-storage.md
+      items:
+        - name: Typy izolace
+          href: io/types-of-isolation.md
+        - name: 'Postupy: Získávání úložišť pro izolované úložiště'
+          href: io/how-to-obtain-stores-for-isolated-storage.md
+        - name: 'Postupy: Vytvoření výčtu úložišť pro izolované úložiště'
+          href: io/how-to-enumerate-stores-for-isolated-storage.md
+        - name: 'Postupy: Odstraňování úložišť v izolovaném úložišti'
+          href: io/how-to-delete-stores-in-isolated-storage.md
+        - name: 'Postupy: Příprava na vyčerpání volného prostoru pomocí izolovaného úložiště'
+          href: io/how-to-anticipate-out-of-space-conditions-with-isolated-storage.md
+        - name: 'Postupy: Vytváření souborů a adresářů v izolovaném úložišti'
+          href: io/how-to-create-files-and-directories-in-isolated-storage.md
+        - name: 'Postupy: Hledání existujících souborů a adresářů v izolovaném úložišti'
+          href: io/how-to-find-existing-files-and-directories-in-isolated-storage.md
+        - name: 'Postupy: Čtení a zápis do souborů v izolovaném úložišti'
+          href: io/how-to-read-and-write-to-files-in-isolated-storage.md
+        - name: 'Postupy: Odstraňování souborů a adresářů v izolovaném úložišti'
+          href: io/how-to-delete-files-and-directories-in-isolated-storage.md
+    - name: Kanály
+      href: io/pipe-operations.md
+      items:
+        - name: 'Postupy: Místní meziprocesová komunikace pomocí anonymních kanálů'
+          href: io/how-to-use-anonymous-pipes-for-local-interprocess-communication.md
+        - name: 'Postupy: Meziprocesová síťová komunikace pomocí pojmenovaných kanálů'
+          href: io/how-to-use-named-pipes-for-network-interprocess-communication.md
+    - name: Kanály
+      href: io/pipelines.md
+    - name: Práce s vyrovnávacími paměťmi
+      href: io/buffers.md
+    - name: Soubory mapované paměti
+      href: io/memory-mapped-files.md
 - name: Globalizace a lokalizace
   href: globalization-localization/
 - name: Atributy
-  href: attributes/
+  items:
+    - name: Přehled
+      href: attributes/index.md
+      displayName: attributes
+    - name: Použití atributů
+      href: attributes/applying-attributes.md
+    - name: Psaní vlastních atributů
+      href: attributes/writing-custom-attributes.md
+    - name: Načtení informací uložených v atributech
+      href: attributes/retrieving-information-stored-in-attributes.md
 - name: "Pokyny k\_návrhu architektury"
-  href: design-guidelines/
+  items:
+    - name: Přehled
+      href: design-guidelines/index.md
+    - name: Pokyny k pojmenování
+      href: design-guidelines/naming-guidelines.md
+      items:
+        - name: Konvence pro malá a velká písmena
+          href: design-guidelines/capitalization-conventions.md
+        - name: Obecné konvence pojmenování
+          href: design-guidelines/general-naming-conventions.md
+        - name: Názvy sestavení a knihoven DLL
+          href: design-guidelines/names-of-assemblies-and-dlls.md
+        - name: Názvy oborů názvů
+          href: design-guidelines/names-of-namespaces.md
+        - name: 'Názvy tříd, struktur a rozhraní'
+          href: design-guidelines/names-of-classes-structs-and-interfaces.md
+        - name: Názvy členů typu
+          href: design-guidelines/names-of-type-members.md
+        - name: Parametry pojmenování
+          href: design-guidelines/naming-parameters.md
+        - name: Prostředky pojmenování
+          href: design-guidelines/naming-resources.md
+    - name: "Pokyny k\_návrhu typu"
+      href: design-guidelines/type.md
+      items:
+        - name: Volba mezi třídou a strukturou
+          href: design-guidelines/choosing-between-class-and-struct.md
+        - name: Návrh abstraktní třídy
+          href: design-guidelines/abstract-class.md
+        - name: Návrh statické třídy
+          href: design-guidelines/static-class.md
+        - name: Návrh rozhraní
+          href: design-guidelines/interface.md
+        - name: Návrh struktury
+          href: design-guidelines/struct.md
+        - name: Návrh výčtu
+          href: design-guidelines/enum.md
+        - name: Vnořené typy
+          href: design-guidelines/nested-types.md
+    - name: "Pokyny k\_návrhu člena"
+      href: design-guidelines/member.md
+      items:
+        - name: Přetížení člena
+          href: design-guidelines/member-overloading.md
+        - name: Návrh vlastnosti
+          href: design-guidelines/property.md
+        - name: Návrh konstruktoru
+          href: design-guidelines/constructor.md
+        - name: Návrh události
+          href: design-guidelines/event.md
+        - name: Návrh pole
+          href: design-guidelines/field.md
+        - name: Metody rozšíření
+          href: design-guidelines/extension-methods.md
+        - name: Přetížení operátoru
+          href: design-guidelines/operator-overloads.md
+        - name: Návrh parametru
+          href: design-guidelines/parameter-design.md
+    - name: Návrh pro rozšiřitelnost
+      href: design-guidelines/designing-for-extensibility.md
+      items:
+        - name: Nezapečetěné třídy
+          href: design-guidelines/unsealed-classes.md
+        - name: Chránění členové
+          href: design-guidelines/protected-members.md
+        - name: Události a zpětná volání
+          href: design-guidelines/events-and-callbacks.md
+        - name: Virtuální členové
+          href: design-guidelines/virtual-members.md
+        - name: Abstrakce (abstraktní typy a rozhraní)
+          href: design-guidelines/abstractions-abstract-types-and-interfaces.md
+        - name: Základní třídy pro implementaci abstrakcí
+          href: design-guidelines/base-classes-for-implementing-abstractions.md
+        - name: Zapečetění
+          href: design-guidelines/sealing.md
+    - name: "Pokyny k\_návrhu výjimek"
+      href: design-guidelines/exceptions.md
+      items:
+        - name: Vyvolání výjimek
+          href: design-guidelines/exception-throwing.md
+        - name: Použití standardních typů výjimek
+          href: design-guidelines/using-standard-exception-types.md
+        - name: Výjimky a výkon
+          href: design-guidelines/exceptions-and-performance.md
+    - name: Pokyny k používání
+      href: design-guidelines/usage-guidelines.md
+      items:
+        - name: Pole
+          href: design-guidelines/arrays.md
+        - name: Atributy
+          href: design-guidelines/attributes.md
+        - name: Kolekce
+          href: design-guidelines/guidelines-for-collections.md
+        - name: Serializace
+          href: design-guidelines/serialization.md
+        - name: Použití System.Xml
+          href: design-guidelines/system-xml-usage.md
+        - name: Operátory rovnosti
+          href: design-guidelines/equality-operators.md
+    - name: Obecné vzory návrhu
+      href: design-guidelines/common-design-patterns.md
+      items:
+        - name: Vlastnosti závislosti
+          href: design-guidelines/dependency-properties.md
 - name: Microsoft.Data.Sqlite
   href: data/sqlite/
 - name: Dokumenty a data XML
@@ -144,6 +711,113 @@
 - name: Zabezpečení
   href: security/
 - name: Serializace
-  href: serialization/
-- name: Vývoj pro různé platformy
-  href: cross-platform/
+  items:
+    - name: Přehled
+      href: serialization/index.md
+    - name: Serializace JSON
+      items:
+        - name: Přehled
+          href: serialization/system-text-json-overview.md
+          displayName: json serialization
+        - name: Postup serializace a deserializace JSON
+          href: serialization/system-text-json-how-to.md
+        - name: Postup zápisu vlastních převaděčů
+          href: serialization/system-text-json-converters-how-to.md
+        - name: Postup migrace z Newtonsoft.Json
+          href: serialization/system-text-json-migrate-from-newtonsoft-how-to.md
+    - name: Binární serializace
+      items:
+        - name: Přehled
+          href: serialization/binary-serialization.md
+          displayName: binary serialization
+        - name: Koncepty serializace
+          href: serialization/serialization-concepts.md
+        - name: Základní serializace
+          href: serialization/basic-serialization.md
+        - name: Selektivní serializace
+          href: serialization/selective-serialization.md
+        - name: Vlastní serializace
+          href: serialization/custom-serialization.md
+        - name: Kroky v procesu serializace
+          href: serialization/steps-in-the-serialization-process.md
+        - name: Serializace tolerantní k verzím
+          href: serialization/version-tolerant-serialization.md
+        - name: Pokyny pro serializaci
+          href: serialization/serialization-guidelines.md
+        - name: 'Postupy: Rozdělení serializovaných dat do bloků'
+          href: serialization/how-to-chunk-serialized-data.md
+        - name: 'Postupy: Určení, zda lze objekt .NET Standard serializovat'
+          href: serialization/how-to-determine-if-netstandard-object-is-serializable.md
+        - name: Ukázky
+          href: serialization/samples-binary.md
+    - name: Serializace XML a SOAP
+      items:
+        - name: Přehled
+          href: serialization/xml-and-soap-serialization.md
+        - name: Serializace XML podrobně
+          href: serialization/introducing-xml-serialization.md
+        - name: Příklady
+          href: serialization/examples-of-xml-serialization.md
+        - name: Nástroj definice schématu XML
+          href: serialization/the-xml-schema-definition-tool-and-xml-serialization.md
+        - name: Řízení serializace XML pomocí atributů
+          href: serialization/controlling-xml-serialization-using-attributes.md
+        - name: 'Atributy, které řídí serializaci XML'
+          href: serialization/attributes-that-control-xml-serialization.md
+        - name: Serializace XML pomocí webových služeb XML
+          href: serialization/xml-serialization-with-xml-web-services.md
+        - name: 'Atributy, které řídí serializaci zakódovanou v protokolu SOAP'
+          href: serialization/attributes-that-control-encoded-soap-serialization.md
+        - name: Postupy
+          items:
+            - name: Serializace objektu
+              href: serialization/how-to-serialize-an-object.md
+            - name: Deserializace objektu
+              href: serialization/how-to-deserialize-an-object.md
+            - name: Generování tříd a dokumentů schématu XML pomocí nástroje definice schématu XML
+              href: serialization/xml-schema-def-tool-gen.md
+            - name: Řízení serializace odvozených tříd
+              href: serialization/how-to-control-serialization-of-derived-classes.md
+            - name: Zadání alternativního názvu elementu pro XML stream
+              href: serialization/how-to-specify-an-alternate-element-name-for-an-xml-stream.md
+            - name: Kvalifikace názvů elementů a atributů XML
+              href: serialization/how-to-qualify-xml-element-and-xml-attribute-names.md
+            - name: Serializace objektu jako XML streamu zakódovaného v protokolu SOAP
+              href: serialization/how-to-serialize-an-object-as-a-soap-encoded-xml-stream.md
+            - name: Přepsání serializace XML zakódované v protokolu SOAP
+              href: serialization/how-to-override-encoded-soap-xml-serialization.md
+        - name: Elementy serializace XML
+          items:
+            - name: System.XML.Serialization
+              href: serialization/system-xml-serialization-element.md
+            - name: dateTimeSerialization
+              href: serialization/datetimeserialization-element.md
+            - name: schemaImporterExtensions
+              href: serialization/schemaimporterextensions-element.md
+            - name: Přidání elementu pro schemaImporterExtensions
+              href: serialization/add-element-for-schemaimporterextensions.md
+            - name: xmlSerializer
+              href: serialization/xmlserializer-element.md
+        - name: Nástroje
+          items:
+            - name: Nástroj generátoru serializace XML (Sgen.exe)
+              href: serialization/xml-serializer-generator-tool-sgen-exe.md
+            - name: Nástroj definice schématu XML (Xsd.exe)
+              href: serialization/xml-schema-definition-tool-xsd-exe.md
+        - name: Ukázky
+          href: serialization/samples-xml.md
+- name: Vývoj pro více platforem
+  items:
+    - name: Přehled
+      href: cross-platform/index.md
+      displayName: cross platform
+    - name: Přenosná knihovna tříd
+      href: cross-platform/cross-platform-development-with-the-portable-class-library.md
+    - name: "Použití knihovny přenosných tříd spolu s\_modelem MVVM"
+      href: cross-platform/using-portable-class-library-with-model-view-view-model.md
+    - name: Prostředky aplikací pro knihovny cílené na více platforem
+      href: cross-platform/app-resources-for-libraries-that-target-multiple-platforms.md
+    - name: "Podpora aplikací pro Microsoft Store a\_ Windows Runtime v\_rozhraní .NET Framework"
+      href: cross-platform/support-for-windows-store-apps-and-windows-runtime.md
+    - name: Předání identifikátoru URI do prostředí Windows Runtime
+      href: cross-platform/passing-a-uri-to-the-windows-runtime.md
