@@ -4,12 +4,12 @@ ms.date: 08/02/2017
 helpviewer_keywords:
 - Main method [C#], return values
 ms.assetid: c2f5a1d8-1676-4bea-bc7e-44a97e72d5bc
-ms.openlocfilehash: 3d97ab2b3f53179cb184f2ad3944ea29ff5566a2
-ms.sourcegitcommit: 59e36e65ac81cdd094a5a84617625b2a0ff3506e
+ms.openlocfilehash: 7061b6c1988da9f6dfac115ee555a914531df863
+ms.sourcegitcommit: f87ad41b8e62622da126aa928f7640108c4eff98
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "80345117"
+ms.lasthandoff: 04/07/2020
+ms.locfileid: "80805925"
 ---
 # <a name="main-return-values-c-programming-guide"></a>Main() vrácené hodnoty (Průvodce programováním Jazyka C#)
 
@@ -21,11 +21,11 @@ Může také vrátit `int`:
 
  [!code-csharp[csProgGuideMain#13](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideMain/CS/Class3.cs#13)]
 
-Pokud se návratová hodnota z `Main` `void` nepoužívá, vrácení umožňuje mírně jednodušší kód. Vrácení celého čísla však umožňuje programu sdělit informace o stavu jiným programům nebo skriptům, které vyvolávají spustitelný soubor. Vrácená hodnota `Main` z je považována za ukončovací kód procesu. Pokud `void` je `Main` vrácena z ukončovací kód bude implicitně `0`. Následující příklad ukazuje, jak `Main` lze získat přístup k vrácené hodnotě z.
+Pokud se návratová hodnota z `Main` `void` nepoužívá, vrácení umožňuje mírně jednodušší kód. Vrácení celého čísla však umožňuje programu sdělit informace o stavu jiným programům nebo skriptům, které vyvolávají spustitelný soubor. Vrácená hodnota `Main` z je považována za ukončovací kód procesu. Pokud `void` je `Main`vrácena z , ukončovací kód bude implicitně `0`. Následující příklad ukazuje, jak `Main` lze získat přístup k vrácené hodnotě z.
 
 ## <a name="example"></a>Příklad
 
-Tento příklad používá nástroje příkazového řádku [.NET Core.](../../../core/index.yml) Pokud nejste obeznámeni s nástroji příkazového řádku .NET Core, můžete se o nich dozvědět v tomto [tématu Začínáme](../../../core/tutorials/cli-create-console-app.md).
+Tento příklad používá nástroje příkazového řádku [.NET Core.](../../../core/index.yml) Pokud nejste obeznámeni s nástroji příkazového řádku .NET Core, můžete se o nich dozvědět v tomto [článku s informacemi](../../../core/tutorials/cli-create-console-app.md)o začátku .
 
 Metodu `Main` v *program.cs* upravte takto:
 
@@ -37,7 +37,7 @@ Aplikaci můžete sestavit pomocí příkazu [dotnet CLI.](../../../core/tools/d
 
 Dále vytvořte skript Powershellu pro spuštění aplikace a zobrazení výsledku. Vložte následující kód do textového `test.ps1` souboru a uložte jej jako ve složce, která obsahuje projekt. Spusťte skript powershellu zadáním `test.ps1` na výzvu powershellu.
 
-Vzhledem k tomu, že kód vrátí nulu, dávkový soubor bude hlásit úspěch. Pokud však změníte MainReturnValTest.cs vrátíte nenulovou hodnotu a potom program znovu zkompilujete, následné spuštění skriptu prostředí PowerShell oznámí chybu.
+Vzhledem k tomu, že kód vrátí nulu, dávkový soubor bude hlásit úspěch. Pokud však změníte MainReturnValTest.cs vrátíte nenulovou hodnotu a potom program znovu zkompilujete, následné spuštění skriptu prostředí PowerShell nahlásí chybu.
 
 ```dotnetcli
 dotnet run

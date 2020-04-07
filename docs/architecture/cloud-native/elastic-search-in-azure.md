@@ -2,13 +2,13 @@
 title: Elastické vyhledávání v aplikacích nativních pro cloud
 description: Přečtěte si o přidávání funkcí elastického vyhledávání do aplikací nativních pro cloud.
 author: robvet
-ms.date: 01/22/2020
-ms.openlocfilehash: 1bce255b6315006b11e0b6ac77040300f67ed984
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.date: 03/02/2020
+ms.openlocfilehash: da6b9402cf266f5a298b05cf837805b2377bc75a
+ms.sourcegitcommit: f87ad41b8e62622da126aa928f7640108c4eff98
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79141286"
+ms.lasthandoff: 04/07/2020
+ms.locfileid: "80805559"
 ---
 # <a name="elasticsearch-in-a-cloud-native-app"></a>Elastické vyhledávání v aplikaci nativní pro cloud
 
@@ -44,11 +44,9 @@ Tato kapitola představila podrobný pohled na data v cloudových nativních sys
 
 - [Vzor získávání událostí](https://docs.microsoft.com/azure/architecture/patterns/event-sourcing)
 
-- [RDBMSs vs. NoSQL databáze: Přehled](https://maxivak.com/rdbms-vs-nosql-databases/)
-
 - [Proč není RDBMS Partition Tolerantní v Cap ověnčené teoretiku a proč je k dispozici?](https://stackoverflow.com/questions/36404765/why-isnt-rdbms-partition-tolerant-in-cap-theorem-and-why-is-it-available)
 
-- [Materialized View](https://docs.microsoft.com/azure/architecture/patterns/materialized-view)
+- [Zhmotněný pohled](https://docs.microsoft.com/azure/architecture/patterns/materialized-view)
 
 - [Vše, co opravdu potřebujete vědět o open source databázích](https://www.ibm.com/blogs/systems/all-you-really-need-to-know-about-open-source-databases/)
 

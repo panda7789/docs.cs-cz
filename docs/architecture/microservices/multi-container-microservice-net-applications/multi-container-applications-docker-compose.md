@@ -2,12 +2,12 @@
 title: Definování vícekontejnerové aplikace pomocí docker-compose.yml
 description: Jak určit složení mikroslužeb pro vícekontejnerovou aplikaci s docker-compose.yml.
 ms.date: 01/30/2020
-ms.openlocfilehash: 9143801fbbffbdc5b795a232b3333edf71f05c7c
-ms.sourcegitcommit: 79b0dd8bfc63f33a02137121dd23475887ecefda
+ms.openlocfilehash: 66775b573c46041475e9cddc622bbde78ae44bc4
+ms.sourcegitcommit: f87ad41b8e62622da126aa928f7640108c4eff98
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/01/2020
-ms.locfileid: "80523655"
+ms.lasthandoff: 04/07/2020
+ms.locfileid: "80805602"
 ---
 # <a name="defining-your-multi-container-application-with-docker-composeyml"></a>Definování vícekontejnerové aplikace pomocí docker-compose.yml
 
@@ -177,7 +177,7 @@ Můžete použít jeden soubor docker-compose.yml jako ve zjednodušených pří
 
 Ve výchozím nastavení compose čte dva soubory, docker-compose.yml a volitelný docker-compose.override.yml soubor. Jak je znázorněno na obrázku 6-11, když používáte Visual Studio a povolení podpory Dockeru, Visual Studio také vytvoří další soubor docker-compose.vs.debug.g.yml pro ladění aplikace, můžete se podívat na tento soubor ve složce obj\\Docker\\ v hlavní složce řešení.
 
-![Snímek obrazovky se soubory v projektu vytvoření dockeru](./media/multi-container-applications-docker-compose/docker-compose-file-visual-studio.png)
+![Soubory v dockeru tvoří projekt.](./media/multi-container-applications-docker-compose/docker-compose-file-visual-studio.png)
 
 **Obrázek 6-11**. soubory z docker-compose ve Visual Studiu 2019
 
@@ -448,22 +448,22 @@ ENTRYPOINT ["dotnet", "run"]
 
 Dockerfile jako je tento bude fungovat. Můžete však podstatně optimalizovat obrázky, zejména produkční obrázky.
 
-V kontejneru a mikroslužeb modelu neustále spouštíkontejnery. Typický způsob použití kontejnerů nerestartuje kontejner spánku, protože kontejner je na jedno použití. Orchestratory (jako Kubernetes a Azure Service Fabric) jednoduše vytvořit nové instance ibi. To znamená, že budete muset optimalizovat předkompilací aplikace, když je sestavena, takže proces vytváření instancí bude rychlejší. Při spuštění kontejneru by měl být připraven ke spuštění. Neměli byste obnovovat a kompilovat za běhu, pomocí `dotnet restore` a `dotnet build` příkazy z dotnet CLI, které, jak vidíte v mnoha blogu o .NET Core a Docker.
+V kontejneru a mikroslužeb modelu neustále spouštíkontejnery. Typický způsob použití kontejnerů nerestartuje kontejner spánku, protože kontejner je na jedno použití. Orchestratory (jako Kubernetes a Azure Service Fabric) jednoduše vytvořit nové instance ibi. To znamená, že budete muset optimalizovat předkompilací aplikace, když je sestavena, takže proces vytváření instancí bude rychlejší. Při spuštění kontejneru by měl být připraven ke spuštění. Neobnovujte a nekompilujte `dotnet restore` za `dotnet build` běhu pomocí příkazů a příkazových příkazů příkazu příkazu, jak se může zobrazit v příspěvcích blogu o .NET Core a Dockeru.
 
 Tým .NET odvádí důležitou práci, aby vytvořil rozhraní .NET Core a ASP.NET Core jako rámec optimalizovaný pro kontejner. Nejen, že je .NET Core lehký rámec s malou paměťovou stopu; tým se zaměřil na optimalizované image Dockeru pro tři hlavní scénáře a publikoval je v registru Docker Hub u *dotnet/core*, počínaje verzí 2.1:
 
-1. **Vývoj**: Kde je prioritou schopnost rychle iterate a ladění změn a kde velikost je sekundární.
+1. **Vývoj**: Prioritou je schopnost rychle iterate a ladění změn a kde velikost je sekundární.
 
-2. **Sestavení**: Prioritou je kompilace aplikace a zahrnuje binární soubory a další závislosti pro optimalizaci binárních souborů.
+2. **Sestavení**: Prioritou je kompilace aplikace a bitová kopie obsahuje binární soubory a další závislosti pro optimalizaci binárních souborů.
 
-3. **Výroba**: Kde je fokus rychlé nasazení a spuštění kontejnerů, takže tyto obrázky jsou omezeny na binární soubory a obsah potřebný ke spuštění aplikace.
+3. **Produkční :** Fokus je rychlé nasazení a spuštění kontejnerů, takže tyto obrázky jsou omezeny na binární soubory a obsah potřebný ke spuštění aplikace.
 
-K dosažení tohoto cíle poskytuje tým .NET čtyři základní varianty v [dotnet/core](https://hub.docker.com/_/microsoft-dotnet-core/) (v Docker Hubu):
+Tým .NET poskytuje čtyři základní varianty v [dotnet/core](https://hub.docker.com/_/microsoft-dotnet-core/) (v Docker Hubu):
 
 1. **sdk**: pro vývoj a sestavení scénářů
 1. **aspnet**: pro ASP.NET produkční scénáře
 1. **runtime**: pro produkční scénáře rozhraní .NET
-1. **runtime-deps**: pro produkční scénáře [samostatných aplikací](../../../core/deploying/index.md#publish-self-contained).
+1. **runtime-deps**: pro produkční scénáře [samostatných aplikací](../../../core/deploying/index.md#publish-self-contained)
 
 Pro rychlejší spuštění, runtime obrázky také\_automaticky nastavit aspnetcore adresy URL na port 80 a použít Ngen vytvořit nativní image cache sestavení.
 

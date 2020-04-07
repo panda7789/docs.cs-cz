@@ -2,12 +2,12 @@
 title: Použití zjednodušených vzorů CQRS a DDD v mikroslužbě
 description: Architektura mikroslužeb .NET pro kontejnerizované aplikace .NET | Seznamte se s celkovým vztahem mezi vzory CQRS a DDD.
 ms.date: 10/08/2018
-ms.openlocfilehash: f42b553fd30fdffdc6e325b11740fe9162aab7c8
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: e4e36bafff39f5f30d6371ed7c113322a85c3362
+ms.sourcegitcommit: f87ad41b8e62622da126aa928f7640108c4eff98
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "71834305"
+ms.lasthandoff: 04/07/2020
+ms.locfileid: "80805588"
 ---
 # <a name="apply-simplified-cqrs-and-ddd-patterns-in-a-microservice"></a>Použití zjednodušených vzorů CQRS a DDD v mikroslužbě
 
@@ -17,9 +17,9 @@ CQRS je architektonický vzor, který odděluje modely pro čtení a zápis dat.
 
 - Příkazy. Ty mění stav systému.
 
-CQS je jednoduchý koncept – jedná se o metody v rámci stejného objektu jsou dotazy nebo příkazy. Každá metoda vrátí stav nebo mutuje stav, ale ne obojí. Dokonce i jeden objekt vzoru úložiště může být v souladu s CQS. CQS lze považovat za základní princip pro CQRS.
+CQS je jednoduchý koncept: jedná se o metody v rámci stejného objektu jsou dotazy nebo příkazy. Každá metoda vrátí stav nebo mutuje stav, ale ne obojí. Dokonce i jeden objekt vzoru úložiště může být v souladu s CQS. CQS lze považovat za základní princip pro CQRS.
 
-[Oddělení odpovědnosti za velení a dotazy (CQRS)](https://martinfowler.com/bliki/CQRS.html) byl zaveden Gregem Youngem a silně podporován Udi Dahanem a dalšími. Je založen na principu CQS, i když je podrobnější. Lze jej považovat za vzor založený na příkazy a události plus volitelně na asynchronní zprávy. V mnoha případech CQRS souvisí s pokročilejší scénáře, jako je mít jinou fyzickou databázi pro čtení (dotazy) než pro zápisy (aktualizace). Kromě toho více vyvinutý systém CQRS může implementovat [Event-Sourcing (ES)](https://martinfowler.com/eaaDev/EventSourcing.html) pro databázi aktualizací, takže by se místo ukládání dat aktuálního stavu ukládala pouze události v modelu domény. To však není přístup použitý v této příručce; používáme nejjednodušší přístup CQRS, který se skládá pouze z oddělení dotazů od příkazů.
+[Oddělení odpovědnosti za velení a dotazy (CQRS)](https://martinfowler.com/bliki/CQRS.html) byl zaveden Gregem Youngem a silně podporován Udi Dahanem a dalšími. Je založen na principu CQS, i když je podrobnější. Lze jej považovat za vzor založený na příkazy a události plus volitelně na asynchronní zprávy. V mnoha případech CQRS souvisí s pokročilejší scénáře, jako je mít jinou fyzickou databázi pro čtení (dotazy) než pro zápisy (aktualizace). Kromě toho více vyvinutý systém CQRS může implementovat [Event-Sourcing (ES)](https://martinfowler.com/eaaDev/EventSourcing.html) pro databázi aktualizací, takže by se místo ukládání dat aktuálního stavu ukládala pouze události v modelu domény. Tento přístup se však v této příručce nepoužívá. Tato příručka používá nejjednodušší přístup CQRS, který se skládá pouze oddělení dotazů z příkazů.
 
 Aspekt oddělení CQRS je dosaženo seskupením dotazů v jedné vrstvě a příkazy v jiné vrstvě. Každá vrstva má svůj vlastní datový model (všimněte si, že říkáme model, ne nutně jiná databáze) a je sestaven a používá vlastní kombinaci vzorů a technologií. Ještě důležitější je, že dvě vrstvy může být v rámci stejné vrstvy nebo mikroslužeb, jako v příkladu (řazení mikroslužeb) pro tuto příručku. Nebo mohou být implementovány v různých mikroslužeb nebo procesů, takže mohou být optimalizovány a škálovat samostatně bez ovlivnění navzájem.
 

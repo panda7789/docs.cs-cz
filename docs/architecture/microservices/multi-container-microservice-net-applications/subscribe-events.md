@@ -2,12 +2,12 @@
 title: Přihlášení k odběru událostí
 description: Architektura mikroslužeb .NET pro kontejnerizované aplikace .NET | Seznamte se s podrobnostmi publikování a předplatného integračních událostí.
 ms.date: 01/30/2020
-ms.openlocfilehash: 3bfcdb1766a15b1a8e8deab46055f14e1791c2cc
-ms.sourcegitcommit: 79b0dd8bfc63f33a02137121dd23475887ecefda
+ms.openlocfilehash: 7e78970933fdad27d2be74e7d498b0797fc09bc0
+ms.sourcegitcommit: f87ad41b8e62622da126aa928f7640108c4eff98
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/01/2020
-ms.locfileid: "80523594"
+ms.lasthandoff: 04/07/2020
+ms.locfileid: "80805493"
 ---
 # <a name="subscribing-to-events"></a>Přihlášení k odběru událostí
 
@@ -95,9 +95,9 @@ Při publikování událostí integrace prostřednictvím systému distribuovan�
 
 V podstatě můžete použít mikroslužeb k vytváření škálovatelných a vysoce dostupných systémů. Zjednodušení poněkud, cap teorém říká, že nelze vytvořit (distribuované) databáze (nebo mikroslužbu, která vlastní svůj model), který je neustále k dispozici, silně konzistentní *a* tolerantní k libovolnému oddílu. Je nutné zvolit dvě z těchto tří vlastností.
 
-V architekturách založených na mikroslužbách byste měli zvolit dostupnost a toleranci a měli byste deemphasize silné konzistence. Proto ve většině moderních aplikací založených na mikroslužbách obvykle nechcete používat distribuované transakce ve zasílání zpráv, stejně jako při implementaci [distribuovaných transakcí](https://docs.microsoft.com/previous-versions/windows/desktop/ms681205(v=vs.85)) založených na koordinátoru DTC (Windows Distributed Transaction Coordinator) se [službou MSMQ](https://msdn.microsoft.com/library/windows/desktop/ms711472(v=vs.85).aspx).
+V architekturách založených na mikroslužbách byste měli zvolit dostupnost a toleranci a měli byste de-zdůraznit silnou konzistenci. Proto ve většině moderních aplikací založených na mikroslužbách obvykle nechcete používat distribuované transakce ve zasílání zpráv, stejně jako při implementaci [distribuovaných transakcí](https://docs.microsoft.com/previous-versions/windows/desktop/ms681205(v=vs.85)) založených na koordinátoru DTC (Windows Distributed Transaction Coordinator) se [službou MSMQ](https://msdn.microsoft.com/library/windows/desktop/ms711472(v=vs.85).aspx).
 
-Vraťme se k původnímu problému a jeho příkladu. Pokud dojde k chybě služby po aktualizaci databáze (v tomto \_případě hned za řádek kódu s kontextem. SaveChangesAsync()), ale před publikováním události integrace může být celkový systém nekonzistentní. To může být důležité pro podnikání, v závislosti na konkrétní obchodní operace, kterou máte co do činění s.
+Vraťme se k původnímu problému a jeho příkladu. Pokud dojde k chybě služby po aktualizaci databáze (v tomto `_context.SaveChangesAsync()`případě hned za řádek kódu s ), ale před publikováním události integrace, celkový systém může být nekonzistentní. To může být důležité pro podnikání, v závislosti na konkrétní obchodní operace, kterou máte co do činění s.
 
 Jak již bylo zmíněno dříve v části architektura, můžete mít několik přístupů pro řešení tohoto problému:
 
@@ -109,7 +109,7 @@ Jak již bylo zmíněno dříve v části architektura, můžete mít několik p
 
 V tomto scénáři pomocí úplné události Sourcing (ES) vzor je *the* jedním z nejlepších přístupů, ne-li nejlepší. V mnoha scénářích aplikace však nemusí být možné implementovat úplný systém ES. ES znamená ukládání pouze události domény v transakční databázi, namísto ukládání aktuálních dat stavu. Ukládání pouze události domény může mít velké výhody, jako je například mít historii vašeho systému k dispozici a je schopen určit stav systému v každém okamžiku v minulosti. Implementace úplného systému ES však vyžaduje, abyste přezákladňovali většinu systému a zavedli mnoho dalších složitostí a požadavků. Například byste chtěli použít databázi speciálně vyrobenou pro získávání událostí, jako je [například úložiště událostí](https://eventstore.org/), nebo databázi orientovanou na dokumenty, jako je Azure Cosmos DB, MongoDB, Cassandra, CouchDB nebo RavenDB. ES je skvělý přístup k tomuto problému, ale není nejjednodušší řešení, pokud jste již obeznámeni s event sourcing.
 
-Možnost použít dolování transakční protokol zpočátku vypadá velmi transparentní. Chcete-li však použít tento přístup, mikroslužby musí být spojeny s protokolem transakcí RDBMS, jako je například protokol transakcí serveru SQL Server. To pravděpodobně není žádoucí. Další nevýhodou je, že aktualizace nižší úrovně zaznamenané v transakčním protokolu nemusí být na stejné úrovni jako události integrace na vysoké úrovni. Pokud ano, proces zpětného inženýrství těchto operací transakční protokol může být obtížné.
+Možnost použít dolování protokolu transakcí zpočátku vypadá průhledně. Chcete-li však použít tento přístup, mikroslužby musí být spojeny s protokolem transakcí RDBMS, jako je například protokol transakcí serveru SQL Server. To pravděpodobně není žádoucí. Další nevýhodou je, že aktualizace nižší úrovně zaznamenané v transakčním protokolu nemusí být na stejné úrovni jako události integrace na vysoké úrovni. Pokud ano, proces zpětného inženýrství těchto operací transakční protokol může být obtížné.
 
 Vyvážený přístup je kombinací transakční databázové tabulky a zjednodušeného vzoru ES. Můžete použít stav, jako je například "připraven o publikování události", který nastavíte v původní události, když ji potvrdíte do tabulky událostí integrace. Potom se pokusíte publikovat událost do sběrnice událostí. Pokud akce publikování události úspěšné, spustíte jinou transakci ve službě původu a přesunout stav z "připraven o publikování události" na "událost již byla publikována."
 
@@ -157,9 +157,9 @@ Pro jednoduchost eShopOnContainers ukázka používá první přístup (bez dal�
 
 Následující kód ukazuje, jak můžete vytvořit jednu transakci zahrnující více objektů DbContext – jeden kontext související s původní data jsou aktualizovány a druhý kontext související s integrationeventlog tabulky.
 
-Všimněte si, že transakce v ukázkovém kódu níže nebude odolná, pokud připojení k databázi mají nějaký problém v době, kdy je spuštěn kód. K tomu může dojít v cloudových systémech, jako je Azure SQL DB, které můžou přesouvat databáze mezi servery. Implementace odolných transakcí ve více kontextech najdete v [části Implementing resilient Entity Framework Core SQL connections](../implement-resilient-applications/implement-resilient-entity-framework-core-sql-connections.md) dále v této příručce.
+Transakce v ukázkovém kódu níže nebude odolná, pokud mají připojení k databázi nějaký problém v době, kdy je kód spuštěn. K tomu může dojít v cloudových systémech, jako je Azure SQL DB, které můžou přesouvat databáze mezi servery. Implementace odolných transakcí ve více kontextech najdete v [části Implementing resilient Entity Framework Core SQL connections](../implement-resilient-applications/implement-resilient-entity-framework-core-sql-connections.md) dále v této příručce.
 
-Pro přehlednost následující příklad ukazuje celý proces v jedné části kódu. Implementace eShopOnContainers je však ve skutečnosti refaktorována a rozdělí tuto logiku do více tříd, takže je snadnější udržovat.
+Pro přehlednost následující příklad ukazuje celý proces v jedné části kódu. Implementace eShopOnContainers je však refaktorována a rozděluje tuto logiku do více tříd, takže je snadnější udržovat.
 
 ```csharp
 // Update Product from the Catalog microservice
@@ -285,7 +285,7 @@ Obslužná rutina události musí ověřit, zda produkt existuje v některé z i
 
 ## <a name="idempotency-in-update-message-events"></a>Idempotence v událostech zpráv aktualizace
 
-Důležitým aspektem události zprávy aktualizace je, že selhání v libovolném okamžiku v komunikaci by měla způsobit zprávu opakovat. V opačném případě se úloha na pozadí může pokusit publikovat událost, která již byla publikována, a vytvořit tak spor. Musíte se ujistit, že aktualizace jsou idempotentní nebo že poskytují dostatek informací, abyste zajistili, že můžete zjistit duplikát, zahodit je a odeslat zpět pouze jednu odpověď.
+Důležitým aspektem události zprávy aktualizace je, že selhání v libovolném okamžiku v komunikaci by měla způsobit zprávu opakovat. V opačném případě se úloha na pozadí může pokusit publikovat událost, která již byla publikována, a vytvořit tak spor. Ujistěte se, že aktualizace jsou idempotentní nebo že poskytují dostatek informací, abyste zajistili, že můžete zjistit duplikát, zahodit je a odeslat zpět pouze jednu odpověď.
 
 Jak již bylo uvedeno dříve, idempotence znamená, že operace může být provedena vícekrát bez změny výsledku. V prostředí zasílání zpráv, jako při komunikaci událostí, událost je idempotentní, pokud může být doručena vícekrát beze změny výsledku pro mikroslužbu příjemce. To může být nezbytné z důvodu povahy samotné události nebo z důvodu způsobu, jakým systém zpracovává událost. Idempotence zprávy je důležité v každé aplikaci, která používá zasílání zpráv, nikoli pouze v aplikacích, které implementují vzor sběrnice událostí.
 
@@ -293,7 +293,7 @@ Příkladem idempotentní operace je příkaz SQL, který vkládá data do tabul
 
 Je možné navrhnout idempotentní zprávy. Můžete například vytvořit událost s nápisem "nastavit cenu produktu na 25 USD" namísto "přidat 5 USD k ceně produktu". Můžete bezpečně zpracovat první zprávu libovolný počet opakování a výsledek bude stejný. To neplatí pro druhou zprávu. Ale i v prvním případě možná nebudete chtít zpracovat první událost, protože systém mohl také odeslat novější událost změny ceny a novou cenu byste přepsali.
 
-Dalším příkladem může být událost dokončená pořadí, která se šíří více odběratelům. Je důležité, aby informace o objednávce byly aktualizovány v jiných systémech pouze jednou, i když existují duplicitní události zprávy pro stejnou událost dokončení objednávky.
+Dalším příkladem může být událost dokončená pořadí, která se šíří více odběratelům. Je důležité, aby informace o objednávce byly aktualizovány v jiných systémech pouze jednou, a to i v případě, že existují duplicitní události zprávy pro stejnou událost dokončenou objednávkou.
 
 Je vhodné mít nějaký druh identity na událost, takže můžete vytvořit logiku, která vynucuje, že každá událost je zpracována pouze jednou na příjemce.
 
@@ -310,7 +310,7 @@ Můžete se ujistit, že události zprávy jsou odesílány a zpracovávány pou
 
 ### <a name="deduplicating-message-events-at-the-eventhandler-level"></a>Odstranění duplicitních událostí zpráv na úrovni EventHandler
 
-Jedním ze způsobů, jak zajistit, že událost je zpracována pouze jednou libovolným příjemcem je implementací určité logiky při zpracování událostí zprávy v obslužných rutinách událostí. Například to je přístup používaný v aplikaci eShopOnContainers, jak můžete vidět ve [zdrojovém kódu třídy UserCheckoutAcceptedIntegrationEventHandler,](https://github.com/dotnet-architecture/eShopOnContainers/blob/master/src/Services/Ordering/Ordering.API/Application/IntegrationEvents/EventHandling/UserCheckoutAcceptedIntegrationEventHandler.cs) když obdrží událost integrace UserCheckoutAcceptedIntegrationEvent. (V tomto případě jsme zabalit CreateOrderCommand s IdentifiedCommand, pomocí eventMsg.RequestId jako identifikátor, před odesláním do obslužné rutiny příkazu).
+Jedním ze způsobů, jak zajistit, aby událost byla zpracována pouze jednou libovolným příjemcem, je implementace určité logiky při zpracování událostí zprávy v obslužných rutinách událostí. Například to je přístup používaný v aplikaci eShopOnContainers, jak můžete vidět ve [zdrojovém kódu třídy UserCheckoutAcceptedIntegrationEventHandler,](https://github.com/dotnet-architecture/eShopOnContainers/blob/master/src/Services/Ordering/Ordering.API/Application/IntegrationEvents/EventHandling/UserCheckoutAcceptedIntegrationEventHandler.cs) když obdrží událost integrace UserCheckoutAcceptedIntegrationEvent. (V tomto případě jsme zabalit CreateOrderCommand s IdentifiedCommand, pomocí eventMsg.RequestId jako identifikátor, před odesláním do obslužné rutiny příkazu).
 
 ### <a name="deduplicating-messages-when-using-rabbitmq"></a>Odstranění duplicitzpráv při používání funkce RabbitMQ
 

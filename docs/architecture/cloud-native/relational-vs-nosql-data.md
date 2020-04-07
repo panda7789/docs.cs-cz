@@ -1,16 +1,16 @@
 ---
-title: Relační vs. NoSQL data
+title: Relační data vs. data NoSQL
 description: Další informace o relačních datech a noSQL datech v cloudových nativních aplikacích
 author: robvet
 ms.date: 01/22/2020
-ms.openlocfilehash: 04693e30ba3848f1e51f1c69a75be5f18ead4cf1
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 3fb3dcc3a87e278c05f3e15d261245f4d61453d1
+ms.sourcegitcommit: f87ad41b8e62622da126aa928f7640108c4eff98
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79141416"
+ms.lasthandoff: 04/07/2020
+ms.locfileid: "80805804"
 ---
-# <a name="relational-vs-nosql-data"></a>Relační vs. NoSQL data
+# <a name="relational-vs-nosql-data"></a>Relační data vs. data NoSQL
 
 [!INCLUDE [book-preview](../../../includes/book-preview.md)]
 
@@ -110,7 +110,7 @@ Na předchozím obrázku si všimněte, jak každý sedí na společné infrastr
 Tyto funkce jsou důležité zejména pro organizace, které zřčují velký počet databází, ale mají omezené prostředky pro jejich správu.
 Databázi Azure můžete zřídit během několika minut výběrem množství procesorových jader, paměti a základního úložiště. Databázi můžete škálovat průběžně a dynamicky upravovat prostředky s malými až žádnými prostoji.
 
-## <a name="azure-sql-database"></a>Databáze SQL Azure
+## <a name="azure-sql-database"></a>Azure SQL Database
 
 Vývojové týmy s odbornými znalostmi v Microsoft SQL Serveru by měly zvážit [Azure SQL Database](https://docs.microsoft.com/azure/sql-database/). Jedná se o plně spravovanou relační databázi jako službu (DBaaS) založenou na databázovém stroji serveru Microsoft SQL Server. Služba sdílí mnoho funkcí v místní verzi SQL Serveru a spouští nejnovější stabilní verzi databázového stroje SQL Server.
 
@@ -275,7 +275,7 @@ Podrobný přehled o mechanice za databázemi NewSQL najdete v článku [DASH: F
 
 Jedním z časově náročnějších úkolů je migrace dat z jedné datové platformy na jinou. [Služba migrace dat Azure](https://azure.microsoft.com/services/database-migration/) může pomoci urychlit takové úsilí. Může migrovat data z několika externích databázových zdrojů do datových platforem Azure s minimálními prostoji. Cílové platformy zahrnují následující služby:
 
-- Databáze SQL Azure
+- Azure SQL Database
 - Azure Database for MySQL
 - Azure Database for MariaDB
 - Azure Database for PostgreSQL
@@ -284,5 +284,5 @@ Jedním z časově náročnějších úkolů je migrace dat z jedné datové pla
 Služba poskytuje doporučení, která vás provedou změnami potřebnými k provedení migrace, malé i velké.
 
 >[!div class="step-by-step"]
->[Předchozí](Database-per-microservice.md)
+>[Předchozí](database-per-microservice.md)
 >[další](azure-caching.md)

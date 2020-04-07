@@ -3,12 +3,12 @@ title: Zvýšený přístup pro příkazy dotnet
 description: Seznamte se s doporučenými postupy pro příkazy dotnet, které vyžadují zvýšený přístup.
 author: wli3
 ms.date: 06/26/2019
-ms.openlocfilehash: 4aff9badfa8ad9b83adc4496d4ebd6df29252e36
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: f99e0b257772e0a73d4945f1129997d1d3308ed2
+ms.sourcegitcommit: f87ad41b8e62622da126aa928f7640108c4eff98
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "78156761"
+ms.lasthandoff: 04/07/2020
+ms.locfileid: "80805788"
 ---
 # <a name="elevated-access-for-dotnet-commands"></a>Zvýšený přístup pro příkazy dotnet
 
@@ -18,6 +18,7 @@ Následující příkazy lze spustit se zvýšenými oprávněními:
 
 - `dotnet tool`příkazy, jako je [například instalace nástroje dotnet](dotnet-tool-install.md).
 - `dotnet run --no-build`
+- `dotnet-core-uninstall`
 
 Nedoporučujeme spouštět další příkazy se zvýšenými oprávněními. Zejména nedoporučujeme zvýšení s příkazy, které používají MSBuild, například [dotnet obnovení](dotnet-restore.md), [dotnet sestavení](dotnet-build.md)a [dotnet spustit](dotnet-run.md). Primární problém je problémy se správou oprávnění, když uživatel přechází tam a zpět mezi kořenovým a omezeným účtem po vydání příkazů dotnet. Jako uživatele s omezeným přístupem můžete zjistit, že nemáte přístup k souboru vytvořenému kořenovým uživatelem. Existují způsoby, jak tuto situaci vyřešit, ale oni jsou zbytečné se dostat do na prvním místě.
 

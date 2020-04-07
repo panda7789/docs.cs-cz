@@ -2,12 +2,12 @@
 title: Implementace objektů hodnot
 description: Architektura mikroslužeb .NET pro kontejnerizované aplikace .NET | Získejte do podrobností a možností implementovat objekty hodnoty pomocí nových funkcí entity framework.
 ms.date: 01/30/2020
-ms.openlocfilehash: 919b23f7c1a0cd0aec8c4417f3af98469a0743dd
-ms.sourcegitcommit: 99b153b93bf94d0fecf7c7bcecb58ac424dfa47c
+ms.openlocfilehash: 4a8a92a8dabcf09654ecd0e5dea2a7df25d7abf7
+ms.sourcegitcommit: f87ad41b8e62622da126aa928f7640108c4eff98
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/25/2020
-ms.locfileid: "80249419"
+ms.lasthandoff: 04/07/2020
+ms.locfileid: "80805734"
 ---
 # <a name="implement-value-objects"></a>Implementace hodnotových objektů
 
@@ -133,7 +133,7 @@ Můžete vidět, jak tato implementace objektu hodnoty Address nemá žádnou id
 
 Bez ID pole ve třídě, které mají být použity entity Framework (EF) nebylo možné až EF Core 2.0, což výrazně pomáhá implementovat lepší hodnotu objekty bez ID. To je přesně vysvětlení další části.
 
-To by mohlo být argumentoval, že hodnota objekty, je neměnný, by měl být jen pro čtení (to znamená, že mají vlastnosti pouze pro získání), a to je opravdu pravda. Však hodnoty objekty jsou obvykle serializovány a rekonstruovat projít fronty zpráv a právě jen pro čtení zastaví deserializer z přiřazení hodnot, takže jsme jen ponechat jako soukromou sadu, která je jen pro čtení dost být praktické.
+To by mohlo být argumentoval, že hodnota objekty, je neměnný, by měl být jen pro čtení (to znamená, že mají vlastnosti pouze pro získání), a to je opravdu pravda. Však hodnoty objekty jsou obvykle serializovány a rekonstruovat projít fronty zpráv a je jen pro čtení zastaví deserializer z přiřazení hodnot, takže jsme jen tak nechat jako `private set`, což je jen pro čtení dost být praktické.
 
 ## <a name="how-to-persist-value-objects-in-the-database-with-ef-core-20-and-later"></a>Jak zachovat hodnotové objekty v databázi s EF Core 2.0 a novější
 
@@ -186,7 +186,7 @@ Podle konvence je vytvořen stínový primární klíč pro vlastněný typ a bu
 
 Je důležité si uvědomit, že vlastněné typy nejsou nikdy zjištěny podle konvence v EF Core, takže je nutné deklarovat explicitně.
 
-V eShopOnContainers, na OrderingContext.cs v rámci OnModelCreating() metoda, jsou více konfigurace infrastruktury se používá. Jeden z nich souvisí s entitou Objednávka.
+V eShopOnContainers, v souboru `OnModelCreating()` OrderingContext.cs v rámci metody, jsou použity více konfigurací infrastruktury. Jeden z nich souvisí s entitou Objednávka.
 
 ```csharp
 // Part of the OrderingContext.cs class at the Ordering.Infrastructure project
@@ -226,7 +226,7 @@ public void Configure(EntityTypeBuilder<Order> orderConfiguration)
 
 V předchozím kódu `orderConfiguration.OwnsOne(o => o.Address)` metoda určuje, `Address` že vlastnost je vlastněnou entitou `Order` typu.
 
-Ve výchozím nastavení ef základní konvence název sloupce databáze pro `EntityProperty_OwnedEntityProperty`vlastnosti typu vlastní entity jako . `Address` Proto se v `Orders` tabulce s názvy `Address_Street` `Address_City` (a tak dále `State`pro `Country` `ZipCode`, a ).
+Ve výchozím nastavení ef základní konvence název sloupce databáze pro `EntityProperty_OwnedEntityProperty`vlastnosti typu vlastní entity jako . `Address` Proto se v `Orders` tabulce s názvy `Address_Street` `Address_City` (a tak dále `State`pro `Country`, `ZipCode`a ).
 
 Můžete připojit plynulou metodu `Property().HasColumnName()` přejmenovat tyto sloupce. V případě, `Address` kdy je veřejná vlastnost, mapování by bylo následující:
 

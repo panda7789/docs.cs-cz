@@ -4,15 +4,16 @@ ms.date: 03/19/2020
 helpviewer_keywords:
 - parameters [C#], out
 - out parameters [C#]
-ms.openlocfilehash: c713aa929673e51e8e9986c536bae782121c7756
-ms.sourcegitcommit: 99b153b93bf94d0fecf7c7bcecb58ac424dfa47c
+ms.openlocfilehash: 57308992268e1285cfeb82b28e2abf213e7a831b
+ms.sourcegitcommit: f87ad41b8e62622da126aa928f7640108c4eff98
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/25/2020
-ms.locfileid: "80249341"
+ms.lasthandoff: 04/07/2020
+ms.locfileid: "80805867"
 ---
 # <a name="out-parameter-modifier-c-reference"></a>out – modifikátor parametrů (Referenční dokumentace jazyka C#)
-Klíčové `out` slovo způsobí, že argumenty, které mají být předány odkazem. Vytvoří formální parametr alias pro argument, který musí být proměnná. Jinými slovy, každá operace na parametr je provedena na argument. Je to jako klíčové slovo `ref` [ref,](ref.md) s tím rozdílem, že vyžaduje, aby proměnná byla inicializována před předáním. Je také jako [v](in-parameter-modifier.md) klíčové `in` slovo, s tím rozdílem, že neumožňuje volané metody změnit hodnotu argumentu. Chcete-li `out` použít parametr, definice metody a volající `out` metoda musí explicitně použít klíčové slovo. Například:  
+
+Klíčové `out` slovo způsobí, že argumenty, které mají být předány odkazem. Vytvoří formální parametr alias pro argument, který musí být proměnná. Jinými slovy, každá operace na parametr je provedena na argument. Je to jako klíčové slovo `ref` [ref,](ref.md) s tím rozdílem, že vyžaduje, aby proměnná byla inicializována před předáním. Je také jako [v](in-parameter-modifier.md) klíčové `in` slovo, s tím rozdílem, že neumožňuje volané metody změnit hodnotu argumentu. Chcete-li `out` použít parametr, definice metody a volající `out` metoda musí explicitně použít klíčové slovo. Příklad:  
   
 [!code-csharp-interactive[cs-out-keyword](../../../../samples/snippets/csharp/language-reference/keywords/in-ref-out-modifier/OutParameterModifier.cs#1)]  
 
@@ -49,13 +50,13 @@ Klíčová `out` slova a `in`klíčová `ref`slova nelze použít pro následuj�
 
 Kromě toho mají [rozšiřující metody](../../programming-guide/classes-and-structs/extension-methods.md) následující omezení:
 
-- Keywoard `out` nelze použít na první argument metody rozšíření.
+- Klíčové `out` slovo nelze použít na první argument metody rozšíření.
 - Klíčové `ref` slovo nelze použít na první argument metody rozšíření, pokud argument není struktura, nebo obecný typ není omezena být struktura.
 - Klíčové `in` slovo nelze použít, pokud první argument není struktura. Klíčové `in` slovo nelze použít u žádného obecného typu, a to ani v případě, že je omezeno na strukturu.
 
 ## <a name="declaring-out-parameters"></a>Deklarování `out` parametrů
 
-Deklarování `out` metody s argumenty je klasické řešení vrátit více hodnot. Počínaje C# 7.0, zvažte [řazené kolekce členů](../../tuples.md) pro podobné scénáře. Následující příklad `out` používá k vrácení tři proměnné s voláním jedné metody. Všimněte si, že třetí argument je přiřazen k hodnotě null. To umožňuje metody vrátit hodnoty volitelně.  
+Deklarování `out` metody s argumenty je klasické řešení vrátit více hodnot. Počínaje C# 7.0, zvažte [řazené kolekce členů](../../tuples.md) pro podobné scénáře. Následující příklad `out` používá k vrácení tři proměnné s voláním jedné metody. Třetí argument je přiřazen k hodnotě null. To umožňuje metody vrátit hodnoty volitelně.  
   
 [!code-csharp-interactive[cs-out-keyword](../../../../samples/snippets/csharp/language-reference/keywords/in-ref-out-modifier/OutParameterModifier.cs#3)]  
 

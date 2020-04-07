@@ -3,12 +3,12 @@ title: Začínáme s jazykem C# a nástrojem Visual Studio Code
 description: Naučte se, jak vytvořit a ladit první aplikaci .NET Core v jazyce C# pomocí kódu sady Visual Studio.
 author: kendrahavens
 ms.date: 12/05/2018
-ms.openlocfilehash: 49a1271f2bf74224e189e70bebf0d22c49408e5d
-ms.sourcegitcommit: 267d092663aba36b6b2ea853034470aea493bfae
+ms.openlocfilehash: 6722b97cee5ca3672c9dddece6e61f4d13de05a9
+ms.sourcegitcommit: f87ad41b8e62622da126aa928f7640108c4eff98
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "80111059"
+ms.lasthandoff: 04/07/2020
+ms.locfileid: "80805812"
 ---
 # <a name="get-started-with-c-and-visual-studio-code"></a>Začínáme s jazykem C# a nástrojem Visual Studio Code
 
@@ -34,7 +34,7 @@ Začněme s jednoduchým programem "Hello World" na .NET Core:
 
 2. Inicializovat projekt Jazyka C#:
 
-    - Otevřete integrovaný terminál z visual studio kódu výběrem **zobrazit** > **integrovaný terminál** z hlavní nabídky.
+    - Otevřete terminál z visual studio kód výběrem **Zobrazit** > **terminál** z hlavní nabídky.
     - Do okna terminálu `dotnet new console`zadejte příkaz .
     - Tento příkaz vytvoří *Program.cs* soubor ve složce s jednoduchým programem "Hello World", který je již napsán, spolu s souborem projektu C# s názvem *HelloWorld.csproj*.
 
@@ -56,7 +56,7 @@ Začněme s jednoduchým programem "Hello World" na .NET Core:
 
 Můžete také sledovat krátké instruktážní video pro další nastavení nápovědy pro [Windows](https://channel9.msdn.com/Blogs/dotnet/Get-started-with-VS-Code-using-CSharp-and-NET-Core), [macOS](https://channel9.msdn.com/Blogs/dotnet/Get-started-with-VS-Code-using-CSharp-and-NET-Core-on-MacOS)nebo [Linux](https://channel9.msdn.com/Blogs/dotnet/Get-started-with-VS-Code-Csharp-dotnet-Core-Ubuntu).
 
-## <a name="debug"></a>Ladění
+## <a name="debug"></a>Ladit
 
 1. Otevřete *Program.cs* kliknutím na něj. Při prvním otevření souboru C# v kódu sady Visual Studio [omnisharp](https://www.omnisharp.net/) načte v editoru.
 

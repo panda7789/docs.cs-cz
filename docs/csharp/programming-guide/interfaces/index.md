@@ -5,12 +5,12 @@ helpviewer_keywords:
 - interfaces [C#]
 - C# language, interfaces
 ms.assetid: 2feda177-ce11-432d-81b4-d50f5f35fd37
-ms.openlocfilehash: bb1b812fdbf1d521ed3fd86e23f430bcd04d00f6
-ms.sourcegitcommit: 99b153b93bf94d0fecf7c7bcecb58ac424dfa47c
+ms.openlocfilehash: 5e39279183f7e3745c9373df246d14d69d5ff99b
+ms.sourcegitcommit: f87ad41b8e62622da126aa928f7640108c4eff98
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/25/2020
-ms.locfileid: "80249178"
+ms.lasthandoff: 04/07/2020
+ms.locfileid: "80805904"
 ---
 # <a name="interfaces-c-programming-guide"></a>Rozhraní (Průvodce programováním v C#)
 
@@ -59,7 +59,7 @@ Rozhraní má následující vlastnosti:
 - [Vlastnosti rozhraní](../classes-and-structs/interface-properties.md)  
 - [Indexery v rozhraních](../indexers/indexers-in-interfaces.md)  
 - [Jak implementovat události rozhraní](../events/how-to-implement-interface-events.md)
-- [Třídy a struky](../classes-and-structs/index.md)  
+- [Třídy a struktury](../classes-and-structs/index.md)  
 - [Dědičnost](../classes-and-structs/inheritance.md)  
 - [Metody](../classes-and-structs/methods.md)  
 - [Polymorfismus](../classes-and-structs/polymorphism.md)  

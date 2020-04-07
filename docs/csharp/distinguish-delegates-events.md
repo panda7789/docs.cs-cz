@@ -1,21 +1,21 @@
 ---
-title: Rozlišování delegátů a událostí
+title: Delegáti vs. události
 description: Zjistěte rozdíl mezi delegáty a událostmi a kdy použít každou z těchto funkcí .NET Core.
 ms.date: 06/20/2016
 ms.technology: csharp-fundamentals
 ms.assetid: 0fdc8629-2fdb-4a7c-a433-5b9d04eaf911
-ms.openlocfilehash: 4179330fe5e88da5d5034a150a057f63e31b178b
-ms.sourcegitcommit: 961ec21c22d2f1d55c9cc8a7edf2ade1d1fd92e3
+ms.openlocfilehash: 51d982c9b5b16a5fc28ede5f0318bc100bb33b68
+ms.sourcegitcommit: f87ad41b8e62622da126aa928f7640108c4eff98
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2020
-ms.locfileid: "80588263"
+ms.lasthandoff: 04/07/2020
+ms.locfileid: "80805766"
 ---
 # <a name="distinguishing-delegates-and-events"></a>Rozlišování delegátů a událostí
 
 [Předchozí](modern-events.md)
 
-Vývojáři, kteří jsou na platformě .NET Core noví, `delegates` se často `events`potýkají s problémy při rozhodování mezi návrhem založeným na návrhu a návrhem založeným na . Jedná se o obtížný koncept, protože dva jazykové funkce jsou velmi podobné. Události jsou dokonce sestaveny pomocí jazykové podpory pro delegáty.
+Vývojáři, kteří jsou na platformě .NET Core noví, `delegates` se často `events`potýkají s problémy při rozhodování mezi návrhem založeným na návrhu a návrhem založeným na . Výběr delegátů nebo událostí je často obtížné, protože dva funkce jazyka jsou podobné. Události jsou dokonce sestaveny pomocí jazykové podpory pro delegáty.
 
 Oba nabízejí scénář pozdní vazby: umožňují scénáře, kde komponenta komunikuje voláním metody, která je známa pouze za běhu. Oba podporují metody jednoho a více odběratelů. Může se vám to líbit jako podpora jednoho vysílání a vícesměrového vysílání. Oba podporují podobnou syntaxi pro přidávání a odebírání obslužných rutin. Nakonec vyvolání události a volání delegáta použít přesně stejnou syntaxi volání metody. I oba podporují `Invoke()` stejnou syntaxi metody `?.` pro použití s operátorem.
 
@@ -45,7 +45,7 @@ Pro srovnání delegáti jsou často předávané jako parametry a uloženy jako
 
 ## <a name="event-listeners-often-have-longer-lifetimes"></a>Posluchači událostí mají často delší životnost
 
-To je o něco slabší ospravedlnění. Můžete však zjistit, že návrhy založené na událostech jsou přirozenější, když zdroj události bude vyvolávat události po dlouhou dobu. Můžete zobrazit příklady tohoto pro ovládací prvky uživatelského rozhraní v mnoha systémech. Jakmile se přihlásíte k odběru události, zdroj události může vyvolat události po celou dobu životnosti programu.
+Že posluchači událostí mají delší životnost, je o něco slabší odůvodnění. Můžete však zjistit, že návrhy založené na událostech jsou přirozenější, když zdroj události bude vyvolávat události po dlouhou dobu. Můžete zobrazit příklady návrhu založeného na událostech pro ovládací prvky uživatelského rozhraní v mnoha systémech. Jakmile se přihlásíte k odběru události, zdroj události může vyvolat události po celou dobu životnosti programu.
 (Z odběru se můžete odhlásit, když je již nepotřebujete.)
 
 Kontrast, že s mnoha návrhy založené na delegáta, kde delegát se používá jako argument k metodě a delegát se nepoužívá po této metody vrátí.

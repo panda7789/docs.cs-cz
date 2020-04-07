@@ -7,12 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - parameters [C#], ref
 - ref keyword [C#]
-ms.openlocfilehash: 8d04f888befae2cad815c88a0d27bd836f458c63
-ms.sourcegitcommit: 79b0dd8bfc63f33a02137121dd23475887ecefda
+ms.openlocfilehash: d54d932ca96f1966ecc05a532a2468b7e16fac46
+ms.sourcegitcommit: f87ad41b8e62622da126aa928f7640108c4eff98
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/01/2020
-ms.locfileid: "80523778"
+ms.lasthandoff: 04/07/2020
+ms.locfileid: "80805845"
 ---
 # <a name="ref-c-reference"></a>ref (Referenční dokumentace jazyka C#)
 
@@ -87,7 +87,7 @@ Referenční vrácená hodnota je `ref` definována pomocí klíčového slova:
 public ref decimal GetCurrentPrice()
 ```
 
-- Mezi `return` token a proměnná `return` vrácena v příkazu v metodě. Například:
+- Mezi `return` token a proměnná `return` vrácena v příkazu v metodě. Příklad:
 
 ```csharp
 return ref DecimalArray[0];
@@ -117,7 +117,7 @@ Můžete přistupovat k hodnotě odkazem stejným způsobem. V některých pří
 ref VeryLargeStruct reflocal = ref veryLargeStruct;
 ```
 
-Všimněte si, že `ref` v obou příkladech musí být klíčové slovo použito na obou místech nebo kompilátor generuje chybu CS8172, "Nelze inicializovat proměnnou odkazu s hodnotou."
+V obou příkladech musí být `ref` klíčové slovo použito na obou místech nebo kompilátor generuje chybu CS8172, "Nelze inicializovat proměnnou odkazu s hodnotou."
 
 Počínaje C# 7.3, iterace `foreach` proměnná příkazu může být ref místní nebo ref pro čtení místní proměnné. Další informace naleznete v článku [foreach prohlášení.](foreach-in.md)
 
@@ -145,8 +145,8 @@ Cílem zachování `ref struct` typu jako proměnné přidělené zásobníku za
 
 - Nemůžete box. `ref struct` Nelze přiřadit `ref struct` typ proměnné typu `object`, `dynamic`nebo typu rozhraní.
 - `ref struct`typy nelze implementovat rozhraní.
-- Nelze deklarovat `ref struct` jako člen pole třídy nebo normální struktury. To zahrnuje deklarování automaticky implementované vlastnosti, která vytvoří kompilátor generované doprovodné pole.
-- Nelze deklarovat místní `ref struct` proměnné, které jsou typy v asynchronní metody. Můžete deklarovat je v <xref:System.Threading.Tasks.Task>synchronní metody, které vracejí nebo <xref:System.Threading.Tasks.Task%601> `Task`-like typy.
+- Nelze deklarovat `ref struct` jako člen pole třídy nebo normální struktury. To zahrnuje deklarování automaticky implementované vlastnosti, která vytvoří záložní pole generované kompilátorem.
+- Nelze deklarovat místní `ref struct` proměnné, které jsou typy v asynchronní metody. Můžete deklarovat je v <xref:System.Threading.Tasks.Task>synchronní metody, které vracejí , <xref:System.Threading.Tasks.Task%601>nebo `Task`-like typy.
 - Nelze deklarovat `ref struct` místní proměnné v iterátorech.
 - Proměnné nelze `ref struct` zachytit ve výrazech lambda nebo místních funkcích.
 

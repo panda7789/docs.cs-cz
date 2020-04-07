@@ -6,12 +6,12 @@ helpviewer_keywords:
 - C# language, about C# language
 - Visual C#, about
 ms.assetid: 0a2dff4e-cd84-42ff-8141-e89889b24081
-ms.openlocfilehash: 828543b95ed82f465c92212748c6250b7fc84051
-ms.sourcegitcommit: 99b153b93bf94d0fecf7c7bcecb58ac424dfa47c
+ms.openlocfilehash: 9feca97b141b08d418f6833374cbe3c7a0c26d66
+ms.sourcegitcommit: f87ad41b8e62622da126aa928f7640108c4eff98
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/25/2020
-ms.locfileid: "80249380"
+ms.lasthandoff: 04/07/2020
+ms.locfileid: "80805784"
 ---
 # <a name="introduction-to-the-c-language-and-the-net-framework"></a>Úvod do jazyka C# a rozhraní .NET Framework
 
@@ -22,7 +22,7 @@ C# je elegantní a typově bezpečný objektově orientovaný jazyk, který výv
   
 ## <a name="c-language"></a>jazyk C#
 
-Syntaxe jazyka C# je vysoce expresivní, ale je také jednoduchá a snadno se učí. Syntaxe složené závorky jazyka C# bude okamžitě rozpoznatelná pro všechny osoby obeznámené s c, c++ nebo javou. Vývojáři, kteří znají některý z těchto jazyků jsou obvykle schopni začít pracovat produktivně v jazyce C# ve velmi krátkém čase. Syntaxe jazyka C# zjednodušuje mnoho složitostí jazyka C++ a poskytuje výkonné funkce, jako jsou typy s možnou hodnotou null, výčty, delegáty, výrazy lambda a přímý přístup do paměti. C# podporuje obecné metody a typy, které poskytují zvýšenou bezpečnost typů a výkon a iterátory, které umožňují implementátorům tříd kolekce definovat vlastní iterace chování, které jsou jednoduché použití podle klientského kódu. Výrazy linq (Language Integrated Query) činí z dotazu silného typu konstrukci jazyka první třídy.  
+Syntaxe jazyka C# je vysoce expresivní, ale je také jednoduchá a snadno se učí. Syntaxe složené závorky jazyka C# bude okamžitě rozpoznatelná pro všechny osoby obeznámené s c, c++ nebo javou. Vývojáři, kteří znají některý z těchto jazyků jsou obvykle schopni začít pracovat produktivně v jazyce C# v krátkém čase. Syntaxe jazyka C# zjednodušuje mnoho složitostí jazyka C++ a poskytuje výkonné funkce, jako jsou typy s možnou hodnotou null, výčty, delegáty, výrazy lambda a přímý přístup do paměti. C# podporuje obecné metody a typy, které poskytují zvýšenou bezpečnost typů a výkon a iterátory, které umožňují implementátorům tříd kolekce definovat vlastní iterace chování, které jsou jednoduché použití podle klientského kódu. Výrazy linq (Language Integrated Query) činí z dotazu silného typu konstrukci jazyka první třídy.  
   
  Jako objektově orientovaný jazyk c# podporuje koncepty zapouzdření, dědičnosti a polymorfismu. Všechny proměnné a metody, `Main` včetně metody, vstupníbod aplikace, jsou zapouzdřeny v rámci definice třídy. Třída může dědit přímo z jedné nadřazené třídy, ale může implementovat libovolný počet rozhraní. Metody, které přepsat virtuální metody v `override` nadřazené třídě vyžadují klíčové slovo jako způsob, jak se vyhnout náhodnému předefinování. V C# struct je jako odlehčené třídy; jedná se o typ přidělený zásobníkem, který může implementovat rozhraní, ale nepodporuje dědičnost.  
   
@@ -60,9 +60,9 @@ Syntaxe jazyka C# je vysoce expresivní, ale je také jednoduchá a snadno se u�
   
  ![Ze zdrojového kódu Jazyka C# do spuštění počítače](./media/introduction-to-the-csharp-language-and-the-net-framework/net-architecture-relationships.png)  
   
- Jazyková interoperabilita je klíčovou funkcí rozhraní .NET Framework. Vzhledem k tomu, že il kód vytvořený kompilátorem jazyka C# odpovídá společné specifikaci typu (CTS), může kód IL generovaný z jazyka C# pracovat s kódem, který byl vygenerován z verzí jazyka .NET jazyka Visual Basic, Visual C++ nebo některého z více než 20 dalších jazyků kompatibilních s CTS. Jedno sestavení může obsahovat více modulů napsaných v různých jazycích .NET a typy mohou odkazovat na sebe stejně jako kdyby byly napsány ve stejném jazyce.  
+ Jazyková interoperabilita je klíčovou funkcí rozhraní .NET Framework. Vzhledem k tomu, že il kód vytvořený kompilátorem jazyka C# odpovídá společné specifikaci typu (CTS), může kód IL generovaný z jazyka C# pracovat s kódem, který byl vygenerován z verzí jazyka .NET jazyka Visual Basic, Visual C++ nebo některého z více než 20 dalších jazyků kompatibilních s CTS. Jedno sestavení může obsahovat více modulů napsaných v různých jazycích .NET a typy se mohou vzájemně odkazovat, jako by byly napsány ve stejném jazyce.  
   
- Kromě služeb běhu obsahuje rozhraní .NET Framework také rozsáhlou knihovnu více než 4000 tříd uspořádaných do oborů názvů, které poskytují širokou škálu užitečných funkcí pro vše od vstupu a výstupu až po manipulaci s řetězci až po XML analýzy, na ovládací prvky Windows Forms. Typická aplikace Jazyka C# používá knihovnu tříd rozhraní .NET Framework k rozsáhlému zpracování běžných "instalatérských" domácích práce.  
+ Kromě služeb běhu obsahuje rozhraní .NET Framework také rozsáhlou knihovnu více než 4000 tříd uspořádaných do oborů názvů, které poskytují širokou škálu užitečných funkcí pro vše od vstupu a výstupu až po manipulaci s řetězci až po analýzu XML až po ovládací prvky Windows Forms. Typická aplikace Jazyka C# používá knihovnu tříd rozhraní .NET Framework k rozsáhlému zpracování běžných "instalatérských" domácích práce.  
   
  Další informace o rozhraní .NET Framework naleznete v [tématu Přehled rozhraní Microsoft .NET Framework](../../framework/get-started/overview.md).  
   
