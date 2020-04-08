@@ -2,12 +2,12 @@
 title: Definování vícekontejnerové aplikace pomocí docker-compose.yml
 description: Jak určit složení mikroslužeb pro vícekontejnerovou aplikaci s docker-compose.yml.
 ms.date: 01/30/2020
-ms.openlocfilehash: 66775b573c46041475e9cddc622bbde78ae44bc4
-ms.sourcegitcommit: f87ad41b8e62622da126aa928f7640108c4eff98
+ms.openlocfilehash: 029fad8bb912457872dd5817a2f76aed57dc53c6
+ms.sourcegitcommit: 2b3b2d684259463ddfc76ad680e5e09fdc1984d2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "80805602"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80888225"
 ---
 # <a name="defining-your-multi-container-application-with-docker-composeyml"></a>Definování vícekontejnerové aplikace pomocí docker-compose.yml
 
@@ -201,7 +201,7 @@ Typický případ použití je při definování více compose souborů, takže 
 
 **Obrázek 6-12**. Více souborů docker-compose přepsání hodnot v základním souboru docker-compose.yml
 
-Můžete kombinovat více docker-compose*.yml soubory pro zpracování různých prostředí. Začínáte se základním souborem docker-compose.yml. Tento základní soubor musí obsahovat základní nebo statické nastavení konfigurace, které se nemění v závislosti na prostředí. Například eShopOnContainers má následující docker-compose.yml soubor (zjednodušené s menším počtem služeb) jako základní soubor.
+Můžete kombinovat více docker-compose*.yml soubory pro zpracování různých prostředí. Začínáte se základním souborem docker-compose.yml. Tento základní soubor obsahuje základní nebo statické nastavení konfigurace, které se nemění v závislosti na prostředí. Například aplikace eShopOnContainers má následující soubor docker-compose.yml (zjednodušený s menším počtem služeb) jako základní soubor.
 
 ```yml
 #docker-compose.yml (Base)

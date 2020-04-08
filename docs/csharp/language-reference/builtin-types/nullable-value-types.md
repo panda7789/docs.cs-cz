@@ -4,19 +4,19 @@ description: Informace o typech hodnot s možnou hodnotou c# s možnou hodnotou 
 ms.date: 11/04/2019
 helpviewer_keywords:
 - nullable value types [C#]
-ms.openlocfilehash: a84b3d60269491846b783e5046a84a1d14e258a1
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: c13ef6a091ec6aebd4608c5ed8d2c03b067c7312
+ms.sourcegitcommit: 2b3b2d684259463ddfc76ad680e5e09fdc1984d2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79399586"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80888069"
 ---
 # <a name="nullable-value-types-c-reference"></a>Typy hodnot s hodnotou Null (odkaz jazyka C# )
 
 `T?` *Typ hodnoty s možnou hodnotou null* představuje všechny hodnoty jeho [základního typu](value-types.md) `T` hodnoty a další [hodnotu null.](../keywords/null.md) Můžete například přiřadit `bool?` libovolnou z následujících tří `true` `false`hodnot `null`proměnné: , , nebo . Základní typ `T` hodnoty nemůže být samotný typ hodnoty s možnou hodnotou s možnou hodnotou.
 
 > [!NOTE]
-> C# 8.0 zavádí funkci typů odkazů s možnou hodnotou null. Další informace naleznete v [tématu Nullable reference types](../../nullable-references.md). Null hodnoty typy jsou k dispozici počínaje C# 2.
+> C# 8.0 zavádí funkci typů odkazů s možnou hodnotou null. Další informace naleznete v [tématu Nullable reference types](nullable-reference-types.md). Null hodnoty typy jsou k dispozici počínaje C# 2.
 
 Libovolný typ hodnoty s možnou <xref:System.Nullable%601?displayProperty=nameWithType> hodnotou null je instancí obecné struktury. Můžete odkazovat na typ hodnoty s `T` možnou hodnotou s hodnotou `Nullable<T>` `T?`s hodnotou s podkladovým typem v některém z následujících zaměnitelných formulářů: nebo .
 
@@ -24,7 +24,7 @@ Typ hodnoty s možnou hodnotou s možnou hodnotou s možnou hodnotou, pokud pot�
 
 ## <a name="declaration-and-assignment"></a>Prohlášení a postoupení
 
-Jako typ hodnoty je implicitně převoditelný na odpovídající typ hodnoty s hodnotou s hodnotou s hodnotou, můžete přiřadit hodnotu proměnné typu hodnoty s hodnotou s možnou hodnotou, jako byste to udělali pro jeho základní typ hodnoty. Můžete také přiřadit `null` hodnotu. Například:
+Jako typ hodnoty je implicitně převoditelný na odpovídající typ hodnoty s hodnotou s hodnotou s hodnotou, můžete přiřadit hodnotu proměnné typu hodnoty s hodnotou s možnou hodnotou, jako byste to udělali pro jeho základní typ hodnoty. Můžete také přiřadit `null` hodnotu. Příklad:
 
 [!code-csharp[declare and assign](snippets/NullableValueTypes.cs#Declaration)]
 
@@ -68,7 +68,7 @@ Typ `T` hodnoty s hodnotou, který neshovuje, je implicitně převoditelný na o
 
 ## <a name="lifted-operators"></a>Zdvižené operátory
 
-Předdefinované unární a binární [operátory](../operators/index.md) nebo všechny přetížené `T` operátory, které jsou podporovány `T?`typem hodnoty jsou také podporovány odpovídající typ hodnoty s možnou hodnotou null . Tito provozovatelé, také známí jako `null` *zdvižené obsluhy*, vyrábějí, pokud se jedná `null`o jeden nebo oba operandy ; v opačném případě operátor používá obsažené hodnoty svých operandů k výpočtu výsledku. Například:
+Předdefinované unární a binární [operátory](../operators/index.md) nebo všechny přetížené `T` operátory, které jsou podporovány `T?`typem hodnoty jsou také podporovány odpovídající typ hodnoty s možnou hodnotou null . Tito provozovatelé, také známí jako `null` *zdvižené obsluhy*, vyrábějí, pokud se jedná `null`o jeden nebo oba operandy ; v opačném případě operátor používá obsažené hodnoty svých operandů k výpočtu výsledku. Příklad:
 
 [!code-csharp[lifted operators](snippets/NullableValueTypes.cs#LiftedOperator)]
 
@@ -120,7 +120,7 @@ Kód uvedený v následujícím příkladu můžete použít k určení, zda je 
 [!code-csharp-interactive[whether an instance is of a nullable type](snippets/NullableValueTypes.cs#IsInstanceNullable)]
 
 > [!NOTE]
-> Metody popsané v této části nejsou použitelné v případě [typů odkazů s možnou hodnotou null](../../nullable-references.md).
+> Metody popsané v této části nejsou použitelné v případě [typů odkazů s možnou hodnotou null](nullable-reference-types.md).
 
 ## <a name="c-language-specification"></a>specifikace jazyka C#
 
@@ -139,4 +139,4 @@ Další informace naleznete v následujících částech [specifikace jazyka C#]
 - <xref:System.Nullable%601?displayProperty=nameWithType>
 - <xref:System.Nullable?displayProperty=nameWithType>
 - <xref:System.Nullable.GetUnderlyingType%2A?displayProperty=nameWithType>
-- [Odkazové typy s možnou hodnotou null](../../nullable-references.md)
+- [Odkazové typy s možnou hodnotou null](nullable-reference-types.md)

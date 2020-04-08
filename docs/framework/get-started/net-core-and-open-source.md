@@ -2,12 +2,12 @@
 title: .NET Core a open source
 ms.date: 03/30/2017
 ms.assetid: e6bd4655-ce37-4003-8462-468a6fe2c40f
-ms.openlocfilehash: bed5bb6aad5f3e651f7c4c0651a2365f17eb8a0b
-ms.sourcegitcommit: 1c1a1f9ec0bd1efb3040d86a79f7ee94e207cca5
+ms.openlocfilehash: 4d9d42304c58c631020d8b12bec5c038bc0c07ab
+ms.sourcegitcommit: 2b3b2d684259463ddfc76ad680e5e09fdc1984d2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/03/2020
-ms.locfileid: "80635297"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80888238"
 ---
 # <a name="net-core-and-open-source"></a>.NET Core a open source
 
@@ -23,7 +23,7 @@ Hlavní charakteristiky .NET Core jsou:
   
 - **Multiplatformní:** .NET Core poskytuje klíčové funkce pro implementaci funkcí aplikace, které potřebujete, a znovu použít tento kód bez ohledu na cíl vaší platformy. V současné době podporuje tři hlavní operační systémy (OS): Windows, Linux a macOS. Můžete psát aplikace a knihovny, které běží nezměněné v podporovaných operačních systémech. Seznam podporovaných operačních systémů naleznete na webu [.NET Core roadmap](https://github.com/dotnet/core/blob/master/roadmap.md).
   
-- **Open source:** .NET Core je jedním z mnoha projektů pod správou [.NET Foundation](https://www.dotnetfoundation.org/) a je k dispozici na [GitHubu](https://github.com/).  S .NET Core jako open source projekt podporuje transparentnější proces vývoje a podporuje aktivní a angažovanou komunitu.  
+- **Open source:** .NET Core je jedním z mnoha projektů pod správou [.NET Foundation](https://www.dotnetfoundation.org/) a je k dispozici na [GitHubu](https://github.com/). Jako open source projekt .NET Core podporuje transparentnější proces vývoje a aktivní a angažovanou komunitu.  
   
 - **Flexibilní nasazení:** existují dva hlavní způsoby nasazení aplikace: nasazení závislé na rámci nebo samostatné nasazení. S nasazením závislým na rámci jsou nainstalovány pouze vaše aplikace a závislosti třetích stran a vaše aplikace závisí na celosystémové verzi .NET Core, která má být k dispozici. S samostatné nasazení verze .NET Core používá k sestavení aplikace je také nasazenspolu s vaší aplikace a závislosti třetích stran a lze spustit vedle sebe s jinými verzemi. Další informace naleznete v tématu [.NET Core Application Deployment](../../core/deploying/index.md).
 

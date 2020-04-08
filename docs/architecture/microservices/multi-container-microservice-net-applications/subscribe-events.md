@@ -2,12 +2,12 @@
 title: Přihlášení k odběru událostí
 description: Architektura mikroslužeb .NET pro kontejnerizované aplikace .NET | Seznamte se s podrobnostmi publikování a předplatného integračních událostí.
 ms.date: 01/30/2020
-ms.openlocfilehash: 7e78970933fdad27d2be74e7d498b0797fc09bc0
-ms.sourcegitcommit: f87ad41b8e62622da126aa928f7640108c4eff98
+ms.openlocfilehash: 426dcebe175e9db9a02bcdb2f21ad039154a7bda
+ms.sourcegitcommit: 2b3b2d684259463ddfc76ad680e5e09fdc1984d2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "80805493"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80888212"
 ---
 # <a name="subscribing-to-events"></a>Přihlášení k odběru událostí
 
@@ -93,7 +93,7 @@ V pokročilejší mikroslužeb, jako při použití přístupů CQRS, `CommandHa
 
 Při publikování událostí integrace prostřednictvím systému distribuovaného zasílání zpráv, jako je sběrnice událostí, máte problém atomicky aktualizovat původní databázi a publikování události (to znamená, že obě operace dokončena nebo žádná z nich). Například ve zjednodušeném příkladu zobrazeném dříve kód potvrdí data do databáze při změně ceny produktu a poté publikuje zprávu ProductPriceChangedIntegrationEvent. Zpočátku může vypadat nezbytné, aby tyto dvě operace byly provedeny atomicky. Pokud však používáte distribuovanou transakci zahrnující databázi a zprostředkovatele zpráv, stejně jako ve starších systémech, jako je [služba Microsoft Message Queuing (MSMQ),](https://msdn.microsoft.com/library/windows/desktop/ms711472(v=vs.85).aspx)nedoporučujeme to z důvodů popsaných [teorém emistorem CAP](https://www.quora.com/What-Is-CAP-Theorem-1).
 
-V podstatě můžete použít mikroslužeb k vytváření škálovatelných a vysoce dostupných systémů. Zjednodušení poněkud, cap teorém říká, že nelze vytvořit (distribuované) databáze (nebo mikroslužbu, která vlastní svůj model), který je neustále k dispozici, silně konzistentní *a* tolerantní k libovolnému oddílu. Je nutné zvolit dvě z těchto tří vlastností.
+V podstatě můžete použít mikroslužeb k vytváření škálovatelných a vysoce dostupných systémů. Zjednodušení poněkud, cap teorém říká, že nelze vytvořit (distribuované) databáze (nebo mikroslužeb, která vlastní svůj model), který je neustále k dispozici, silně konzistentní *a* tolerantní k libovolnému oddílu. Je nutné zvolit dvě z těchto tří vlastností.
 
 V architekturách založených na mikroslužbách byste měli zvolit dostupnost a toleranci a měli byste de-zdůraznit silnou konzistenci. Proto ve většině moderních aplikací založených na mikroslužbách obvykle nechcete používat distribuované transakce ve zasílání zpráv, stejně jako při implementaci [distribuovaných transakcí](https://docs.microsoft.com/previous-versions/windows/desktop/ms681205(v=vs.85)) založených na koordinátoru DTC (Windows Distributed Transaction Coordinator) se [službou MSMQ](https://msdn.microsoft.com/library/windows/desktop/ms711472(v=vs.85).aspx).
 
@@ -151,7 +151,7 @@ O druhý přístup: použijete Tabulka EventLog jako fronty a vždy použít pra
 
 **Obrázek 6-23**. Nedělitnost při publikování událostí do sběrnice událostí s mikroslužbou pracovního procesu
 
-Pro jednoduchost eShopOnContainers ukázka používá první přístup (bez dalších procesů nebo kontrolní mikroslužeb) plus sběrnice událostí. EShopOnContainers však nezpracovává všechny možné případy selhání. V reálné aplikaci nasazené do cloudu, musíte přijmout skutečnost, že problémy nakonec vzniknou a musíte implementovat tuto logiku kontroly a opětovného odeslání. Použití tabulky jako fronty může být efektivnější než první přístup, pokud máte tuto tabulku jako jediný zdroj událostí při jejich publikování (s pracovníkem) prostřednictvím sběrnice událostí.
+Pro jednoduchost eShopOnContainers ukázka používá první přístup (bez dalších procesů nebo kontrolní mikroslužeb) plus sběrnice událostí. Ukázka eShopOnContainers však nezpracovává všechny možné případy selhání. V reálné aplikaci nasazené do cloudu, musíte přijmout skutečnost, že problémy nakonec vzniknou a musíte implementovat tuto logiku kontroly a opětovného odeslání. Použití tabulky jako fronty může být efektivnější než první přístup, pokud máte tuto tabulku jako jediný zdroj událostí při jejich publikování (s pracovníkem) prostřednictvím sběrnice událostí.
 
 ### <a name="implementing-atomicity-when-publishing-integration-events-through-the-event-bus"></a>Implementace nedělitosti při publikování událostí integrace prostřednictvím sběrnice událostí
 
@@ -293,7 +293,7 @@ Příkladem idempotentní operace je příkaz SQL, který vkládá data do tabul
 
 Je možné navrhnout idempotentní zprávy. Můžete například vytvořit událost s nápisem "nastavit cenu produktu na 25 USD" namísto "přidat 5 USD k ceně produktu". Můžete bezpečně zpracovat první zprávu libovolný počet opakování a výsledek bude stejný. To neplatí pro druhou zprávu. Ale i v prvním případě možná nebudete chtít zpracovat první událost, protože systém mohl také odeslat novější událost změny ceny a novou cenu byste přepsali.
 
-Dalším příkladem může být událost dokončená pořadí, která se šíří více odběratelům. Je důležité, aby informace o objednávce byly aktualizovány v jiných systémech pouze jednou, a to i v případě, že existují duplicitní události zprávy pro stejnou událost dokončenou objednávkou.
+Dalším příkladem může být událost dokončená pořadím, která je rozšířena na více odběratelů. Aplikace musí zajistit, aby informace o objednávce byly aktualizovány v jiných systémech pouze jednou, a to i v případě, že existují duplicitní události zprávy pro stejnou událost dokončenou objednávkou.
 
 Je vhodné mít nějaký druh identity na událost, takže můžete vytvořit logiku, která vynucuje, že každá událost je zpracována pouze jednou na příjemce.
 
@@ -310,7 +310,7 @@ Můžete se ujistit, že události zprávy jsou odesílány a zpracovávány pou
 
 ### <a name="deduplicating-message-events-at-the-eventhandler-level"></a>Odstranění duplicitních událostí zpráv na úrovni EventHandler
 
-Jedním ze způsobů, jak zajistit, aby událost byla zpracována pouze jednou libovolným příjemcem, je implementace určité logiky při zpracování událostí zprávy v obslužných rutinách událostí. Například to je přístup používaný v aplikaci eShopOnContainers, jak můžete vidět ve [zdrojovém kódu třídy UserCheckoutAcceptedIntegrationEventHandler,](https://github.com/dotnet-architecture/eShopOnContainers/blob/master/src/Services/Ordering/Ordering.API/Application/IntegrationEvents/EventHandling/UserCheckoutAcceptedIntegrationEventHandler.cs) když obdrží událost integrace UserCheckoutAcceptedIntegrationEvent. (V tomto případě jsme zabalit CreateOrderCommand s IdentifiedCommand, pomocí eventMsg.RequestId jako identifikátor, před odesláním do obslužné rutiny příkazu).
+Jedním ze způsobů, jak zajistit, aby událost byla zpracována pouze jednou libovolným příjemcem, je implementace určité logiky při zpracování událostí zprávy v obslužných rutinách událostí. Například to je přístup používaný v aplikaci eShopOnContainers, jak můžete vidět ve [zdrojovém kódu třídy UserCheckoutAcceptedIntegrationEventHandler,](https://github.com/dotnet-architecture/eShopOnContainers/blob/master/src/Services/Ordering/Ordering.API/Application/IntegrationEvents/EventHandling/UserCheckoutAcceptedIntegrationEventHandler.cs) když obdrží `UserCheckoutAcceptedIntegrationEvent` integrační událost. (V tomto případě `CreateOrderCommand` je zabalen `IdentifiedCommand`a , `eventMsg.RequestId` pomocí identifikátor, před odesláním do obslužné rutiny příkazu).
 
 ### <a name="deduplicating-messages-when-using-rabbitmq"></a>Odstranění duplicitzpráv při používání funkce RabbitMQ
 
