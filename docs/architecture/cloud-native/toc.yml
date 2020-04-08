@@ -44,10 +44,8 @@
         - name: Komunikační infrastruktura Service Mesh
           href: service-mesh-communication-infrastructure.md
     - name: Distribuovaná data
-      href: null
+      href: database-per-microservice.md
       items:
-        - name: Samostatná databáze pro každou mikroslužbu
-          href: database-per-microservice.md
         - name: Relační data vs. data NoSQL
           href: relational-vs-nosql-data.md
         - name: Ukládání do mezipaměti v nativní cloudové aplikaci
