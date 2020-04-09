@@ -2,12 +2,12 @@
 title: Události domény. návrh a realizace
 description: Architektura mikroslužeb .NET pro kontejnerizované aplikace .NET | Získejte podrobný přehled událostí domény, což je klíčový koncept pro navázání komunikace mezi agregacemi.
 ms.date: 10/08/2018
-ms.openlocfilehash: 3bba18d4a77b47abee55c16bae8a64ed27ac9aba
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: e03abba66945a6434f6a81eaa9f50d53998f346c
+ms.sourcegitcommit: e3cbf26d67f7e9286c7108a2752804050762d02d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "74884225"
+ms.lasthandoff: 04/09/2020
+ms.locfileid: "80988713"
 ---
 # <a name="domain-events-design-and-implementation"></a>Doménové události: Návrh a implementace
 
@@ -71,7 +71,7 @@ Na druhou stranu, pokud používáte události domény, můžete vytvořit jemn�
 2. Přijměte příkaz v obslužné rutině příkazu.
    - Proveďte transakci jednoho agregace.
    - (Nepovinné) Raise domain events for side effects (například OrderStartedDomainEvent).
-3. Zpracování událostí domény (v rámci aktuálního procesu), který provede otevřený počet vedlejších účinků ve více agregaci nebo akce aplikace. Například:
+3. Zpracování událostí domény (v rámci aktuálního procesu), který provede otevřený počet vedlejších účinků ve více agregaci nebo akce aplikace. Příklad:
    - Ověřte nebo vytvořte kupujícího a způsob platby.
    - Vytvořte a odešlete související integrační událost do sběrnice událostí, abyste rozšířili stavy napříč mikroslužbami nebo spustili externí akce, jako je odeslání e-mailu kupujícímu.
    - Zvládejte další nežádoucí účinky.
@@ -124,7 +124,7 @@ Pokud jde o všudypřítomný jazyk domény, protože událost je něco, co se s
 
 Jak již bylo uvedeno dříve, důležitou charakteristikou událostí je, že vzhledem k tomu, že událost je něco, co se stalo v minulosti, nemělo by se to měnit. Proto musí být neměnné třídy. V předchozím kódu se zobrazí, že vlastnosti jsou jen pro čtení. Neexistuje žádný způsob, jak aktualizovat objekt, můžete nastavit hodnoty pouze při jeho vytvoření.
 
-Je důležité zdůraznit, že pokud by události domény byly zpracovány asynchronně pomocí fronty, která vyžadovala serializaci a deserializaci objektů události, vlastnosti by musely být "soukromé sady" namísto jen pro čtení, takže by byl deserializátor mohou přiřadit hodnoty při dequeuing. To to není problém v objednávání mikroslužby, jako domain event pub/sub je implementována synchronně pomocí MediatR.
+Je důležité zdůraznit, že pokud by události domény byly zpracovány asynchronně pomocí fronty, která vyžadovala serializaci a deserializaci objektů události, vlastnosti by musely být "soukromé sady" namísto jen pro čtení, takže deserializátor by mohl přiřadit hodnoty při dequeuing. To to není problém v objednávání mikroslužby, jako domain event pub/sub je implementována synchronně pomocí MediatR.
 
 ### <a name="raise-domain-events"></a>Zvýšit události domény
 

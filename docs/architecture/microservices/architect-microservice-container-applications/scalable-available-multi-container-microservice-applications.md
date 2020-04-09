@@ -2,12 +2,12 @@
 title: Orchestrace mikroslužeb a vícekontejnerových aplikací pro vysokou škálovatelnost a dostupnost
 description: Seznamte se s možnostmi orchestrace mikroslužeb a aplikací s více kontejnery pro vysokou škálovatelnost a dostupnost a možnosti Azure Dev Spaces při vývoji životního cyklu aplikací Kubernetes.
 ms.date: 01/30/2020
-ms.openlocfilehash: ea204941a461794fbeeb2482aa11973b79437027
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 8a67235109bed806caa7d9caa2bc26fd4fe9daca
+ms.sourcegitcommit: e3cbf26d67f7e9286c7108a2752804050762d02d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "77628498"
+ms.lasthandoff: 04/09/2020
+ms.locfileid: "80988905"
 ---
 # <a name="orchestrate-microservices-and-multi-container-applications-for-high-scalability-and-availability"></a>Orchestrace mikroslužeb a vícekontejnerových aplikací pro vysokou škálovatelnost a dostupnost
 
@@ -21,7 +21,7 @@ Obrázek 4-23 znázorňuje nasazení do clusteru aplikace složené z více mikr
 
 Pro každou instanci služby se používá jeden kontejner. Kontejnery Dockeru jsou "jednotky nasazení" a kontejner je instancí dockeru. Hostitel zpracovává mnoho kontejnerů. Vypadá to jako logický přístup. Ale jak se vyrovnáváte zatížení, směrování a orchestrace těchto složených aplikací?
 
-Prostý Docker Engine v jednom hostiteli Dockersplňuje potřeby správy jednotlivých instancí bitové kopie na jednom hostiteli, ale nedosahuje, pokud jde o správu více kontejnerů nasazených na více hostitelích pro složitější distribuované aplikace. Ve většině případů potřebujete platformu pro správu, která automaticky spustí kontejnery, horizontální navýšení kapacity kontejnerů s více instancemi na bitovou kopii, pozastaví je nebo v případě potřeby vypne a v ideálním případě také řídí, jak přistupují k prostředkům, jako je síť a data. Úložiště.
+Prostý Docker Engine v jednom hostiteli Dockersplňuje potřeby správy jednotlivých instancí bitové kopie na jednom hostiteli, ale nedosahuje, pokud jde o správu více kontejnerů nasazených na více hostitelích pro složitější distribuované aplikace. Ve většině případů potřebujete platformu pro správu, která automaticky spustí kontejnery, horizontální navýšení kapacity kontejnerů s více instancemi na bitovou kopii, pozastaví je nebo v případě potřeby vypne a v ideálním případě také řídí, jak přistupují k prostředkům, jako je síť a úložiště dat.
 
 Chcete-li jít nad rámec správy jednotlivých kontejnerů nebo velmi jednoduché složené aplikace a přejít k větší podnikové aplikace s mikroslužeb, musíte přejít na orchestraci a clustering platformy.
 
@@ -29,7 +29,7 @@ Z hlediska architektury a vývoje, pokud vytváříte velké podniky složené z
 
 **Klastry a orchestrátory.** Když potřebujete škálovat aplikace napříč mnoha hostiteli Dockeru, jako když je velká aplikace založená na mikroslužbách, je důležité, abyste mohli spravovat všechny tyto hostitele jako jeden cluster abstrahováním složitosti základní platformy. To je to, co poskytují clustery kontejnerů a orchestrátory. Kubernetes je příkladem orchestrátoru a je k dispozici v Azure prostřednictvím služby Azure Kubernetes.
 
-**Plánovače.** *Plánování* znamená mít možnost správce spouštět kontejnery v clusteru, takže také poskytují ui. Plánovač clusteru má několik odpovědností: efektivně používat prostředky clusteru, nastavit omezení poskytovaná uživatelem, efektivně načíst kontejnery pro vyrovnávání zatížení mezi uzly nebo hostiteli a být robustní proti chybám při poskytování vysokých Dostupnost.
+**Plánovače.** *Plánování* znamená mít možnost správce spouštět kontejnery v clusteru, takže také poskytují ui. Plánovač clusteru má několik odpovědností: efektivně používat prostředky clusteru, nastavit omezení poskytovaná uživatelem, efektivně načíst kontejnery pro vyrovnávání zatížení mezi uzly nebo hostiteli a být robustní proti chybám při poskytování vysoké dostupnosti.
 
 Koncepty clusteru a plánovače úzce souvisejí, takže produkty poskytované různými dodavateli často poskytují obě sady možností. V následujícím seznamu jsou uvedeny nejdůležitější možnosti platformy a softwaru, které máte pro clustery a plánovače. Tyto orchestrátory jsou obecně nabízeny ve veřejných cloudech, jako je Azure.
 
@@ -48,7 +48,7 @@ Několik dodavatelů cloudu nabízí podporu kontejnerů Dockeru a clustery Dock
 
 Cluster Kubernetes sdružuje více hostitelů Dockeru a zveřejňuje je jako jednoho virtuálního hostitele Dockeru, takže do clusteru můžete nasadit více kontejnerů a škálovat kapacitu s libovolným počtem instancí kontejnerů. Cluster bude zpracovávat všechny komplexní správy instalatérské, jako je škálovatelnost, zdraví a tak dále.
 
-AKS poskytuje způsob, jak zjednodušit vytváření, konfiguraci a správu clusteru virtuálních počítačů v Azure, které jsou předem nakonfigurované pro spouštění kontejnerizovaných aplikací. AKS využívá optimalizovanou konfiguraci oblíbených nástrojů pro plánování a orchestraci s otevřeným zdrojovým kódem a umožňuje vám využívat vaše stávající dovednosti nebo čerpat z rozsáhlého a rostoucího množství odborných znalostí komunity k nasazení a správě aplikací založených na kontejnerech v Microsoft Azure. .
+AKS poskytuje způsob, jak zjednodušit vytváření, konfiguraci a správu clusteru virtuálních počítačů v Azure, které jsou předem nakonfigurované pro spouštění kontejnerizovaných aplikací. Pomocí optimalizované konfigurace oblíbených nástrojů pro plánování a orchestraci s otevřeným zdrojovým kódem vám AKS umožňuje využít vaše stávající dovednosti nebo využít velké a rostoucí množství odborných znalostí komunity k nasazení a správě aplikací založených na kontejnerech v Microsoft Azure.
 
 Služba Azure Kubernetes optimalizuje konfiguraci oblíbených nástrojů a technologií s otevřeným zdrojovým kódem Dockeru speciálně pro Azure. Získáte otevřené řešení, které nabízí přenositelnost pro kontejnery i konfiguraci aplikace. Vyberete velikost, počet hostitelů a nástroje orchestrator a AKS zpracovává všechno ostatní.
 
@@ -56,7 +56,7 @@ Služba Azure Kubernetes optimalizuje konfiguraci oblíbených nástrojů a tech
 
 **Obrázek 4-24**. Zjednodušená struktura a topologie kubernetes
 
-Na obrázku 4-24 můžete vidět strukturu clusteru Kubernetes, kde hlavní uzel (VM) řídí většinu koordinace clusteru a můžete nasadit kontejnery do ostatních uzlů, které jsou spravovány jako jeden fond z hlediska aplikace a umožňuje můžete škálovat na tisíce nebo dokonce desítky tisíc kontejnerů.
+Na obrázku 4-24 můžete vidět strukturu clusteru Kubernetes, kde hlavní uzel (VM) řídí většinu koordinace clusteru a můžete nasadit kontejnery do ostatních uzlů, které jsou spravovány jako jeden fond z hlediska aplikace a umožňuje škálovat na tisíce nebo dokonce desítky tisíc kontejnerů.
 
 ## <a name="development-environment-for-kubernetes"></a>Vývojové prostředí pro Kubernetes
 
@@ -104,7 +104,7 @@ V podstatě můžete nastavit sdílený dev prostor v Azure. Každý vývojář 
 
 Azure Dev Spaces poskytuje koncept prostoru, který umožňuje pracovat v relativní izolaci a bez strachu z porušení práce vašeho týmu. Každý vývojový prostor je součástí hierarchické struktury, která umožňuje přepsat jednu mikroslužbu (nebo více) z hlavního dev prostoru "top" s vlastní mikroslužeb probíhá.
 
-Tato funkce je založena na předponach adresURL, takže při použití libovolné předpony dev mezery v adrese URL je požadavek obsluhován z cílové mikroslužby, pokud existuje v prostoru pro vývoj, jinak je předán do první instance cílové mikroslužby nalezené v hierarchii , nakonec se dostat do hlavního dev prostoru v horní části.
+Tato funkce je založena na předpony URL, takže při použití libovolné předpony dev mezery v adrese url, požadavek je obsluhován z cílové mikroslužby, pokud existuje v prostoru pro vývoj, jinak je předán a první instance cílové mikroslužby nalezené v hierarchii, nakonec se dostanete do hlavního dev prostoru v horní části.
 
 Pokud chcete získat praktické zobrazení konkrétního příkladu, podívejte se [na wiki stránku eShopOnContainers na webu Azure Dev Spaces](https://github.com/dotnet-architecture/eShopOnContainers/wiki/Azure-Dev-Spaces).
 

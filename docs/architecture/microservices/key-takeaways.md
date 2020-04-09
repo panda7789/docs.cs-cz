@@ -2,12 +2,12 @@
 title: Základní poznatky
 description: Získejte klíčové stánek s jídlem z .NET Microservices Architecture pro containerized .NET Aplikace průvodce/e-book, chcete-li mít rychlý přehled o vysoké úrovni problémy spojené s použitím architektury mikroslužeb, jako jsou výhody a nevýhody, DDD vzory pro návrh a vývoj, stejně jako odolnost proti chybám, zabezpečení a použití orchestrátorů.
 ms.date: 10/19/2018
-ms.openlocfilehash: 3b8b7be9b3903c64221cba7c6abdb1e38f5d944f
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 0e793a76fa59d6c131422480071d85ab3f18102c
+ms.sourcegitcommit: e3cbf26d67f7e9286c7108a2752804050762d02d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "70296025"
+ms.lasthandoff: 04/09/2020
+ms.locfileid: "80988775"
 ---
 # <a name="key-takeaways"></a>Klíčové stánek s jídlem
 
@@ -23,7 +23,7 @@ Jako shrnutí a klíčové stánek s jídlem, následující jsou nejdůležitě
 
 **Návrh řízený doménou a SOA.** Vzory architektury mikroslužeb jsou odvozeny od architektury orientované na služby (SOA) a návrhu řízeného doménou (DDD). Při navrhování a vývoji mikroslužeb pro prostředí s vyvíjejícími se obchodními potřebami a pravidly je důležité zvážit přístupy a vzory DDD.
 
-**Mikroslužeb výzvy.** Mikroslužby nabízejí mnoho výkonných funkcí, jako je nezávislé nasazení, silné hranice subsystému a rozmanitost technologií. Vyvolávají však také mnoho nových výzev souvisejících s vývojem distribuovaných aplikací, jako jsou roztříštěné a nezávislé datové modely, odolná komunikace mezi mikroslužbami, konečná konzistence a provozní složitost, která je výsledkem agregace protokolování a monitorování informací z více mikroslužeb. Tyto aspekty zavádějí mnohem vyšší úroveň složitosti než tradiční monolitická aplikace. V důsledku toho jsou vhodné pouze konkrétní scénáře pro aplikace založené na mikroslužbách. Patří mezi ně velké a složité aplikace s více vyvíjejícími se subsystémy. V těchto případech stojí za to investovat do složitější softwarové architektury, protože poskytne lepší dlouhodobou flexibilitu a údržbu aplikací.
+**Mikroslužeb výzvy.** Mikroslužby nabízejí mnoho výkonných funkcí, jako je nezávislé nasazení, silné hranice subsystému a rozmanitost technologií. Však také vyvolávají mnoho nových výzev souvisejících s vývojem distribuovaných aplikací, jako jsou fragmentované a nezávislé datové modely, odolná komunikace mezi mikroslužbami, konečná konzistence a provozní složitost, která je výsledkem agregace protokolování a monitorování informací z více mikroslužeb. Tyto aspekty zavádějí mnohem vyšší úroveň složitosti než tradiční monolitická aplikace. V důsledku toho jsou vhodné pouze konkrétní scénáře pro aplikace založené na mikroslužbách. Patří mezi ně velké a složité aplikace s více vyvíjejícími se subsystémy. V těchto případech stojí za to investovat do složitější softwarové architektury, protože poskytne lepší dlouhodobou flexibilitu a údržbu aplikací.
 
 **Kontejnery pro každou aplikaci.** Kontejnery jsou vhodné pro mikroslužby, ale může být také užitečné pro monolitické aplikace založené na tradiční rozhraní .NET Framework, při použití kontejnerů systému Windows. Výhody používání Dockeru, jako je řešení mnoha problémů s nasazením a produkčních a poskytování nejmodernějších prostředí Pro vývoj a testování, platí pro mnoho různých typů aplikací.
 

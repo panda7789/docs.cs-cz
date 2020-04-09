@@ -2,12 +2,12 @@
 title: Implementace vzoru Circuit Breaker
 description: Zjistěte, jak implementovat schéma jističe jako doplňkový systém opakování protokolu Http.
 ms.date: 03/03/2020
-ms.openlocfilehash: a79c6fcca1e29f3c30d697cb369060d59a72c121
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: bebe0b4a622db928175f78f8d3e303d3d7adf170
+ms.sourcegitcommit: e3cbf26d67f7e9286c7108a2752804050762d02d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "78847242"
+ms.lasthandoff: 04/09/2020
+ms.locfileid: "80988882"
 ---
 # <a name="implement-the-circuit-breaker-pattern"></a>Implementace systému jističe
 
@@ -132,7 +132,7 @@ public class CartController : Controller
 }
 ```
 
-Zde je shrnutí. Zásada opakování se několikrát pokusí vytvořit požadavek HTTP a získá chyby PROTOKOLU HTTP. Když počet opakování dosáhne maximální počet nastavený pro zásady jistič (v tomto případě 5), aplikace vyvolá BrokenCircuitException. Výsledkem je přátelská zpráva, jak je znázorněno na obrázku 8-6.
+Tady je shrnutí. Zásada opakování se několikrát pokusí vytvořit požadavek HTTP a získá chyby PROTOKOLU HTTP. Když počet opakování dosáhne maximální počet nastavený pro zásady jistič (v tomto případě 5), aplikace vyvolá BrokenCircuitException. Výsledkem je přátelská zpráva, jak je znázorněno na obrázku 8-6.
 
 ![Snímek obrazovky s webovou aplikací MVC s nefunkční chybou služby košíku](./media/implement-circuit-breaker-pattern/basket-service-inoperative.png)
 

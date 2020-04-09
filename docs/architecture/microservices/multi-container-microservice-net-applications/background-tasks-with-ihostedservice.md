@@ -2,12 +2,12 @@
 title: Implementace úloh na pozadí v mikroslužbách pomocí služby IHostedService a třídy BackgroundService
 description: Architektura mikroslužeb .NET pro kontejnerizované aplikace .NET | Seznamte se s novými možnostmi použití služeb IHostedService a BackgroundService k implementaci úloh na pozadí v mikroslužbách .NET Core.
 ms.date: 01/30/2020
-ms.openlocfilehash: fab67c816e90c69a4d593422b4974cb9b8819807
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: fd26d0444312d3525ad95b2273f28a6ceaa27911
+ms.sourcegitcommit: e3cbf26d67f7e9286c7108a2752804050762d02d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "77502316"
+ms.lasthandoff: 04/09/2020
+ms.locfileid: "80988333"
 ---
 # <a name="implement-background-tasks-in-microservices-with-ihostedservice-and-the-backgroundservice-class"></a>Implementace úloh na pozadí v mikroslužbách pomocí služby IHostedService a třídy BackgroundService
 
@@ -178,7 +178,7 @@ public class GracePeriodManagerService : BackgroundService
                                      IEventBus eventBus,
                                      ILogger<GracePeriodManagerService> logger)
     {
-        //Constructor’s parameters validations...
+        // Constructor's parameters validations...
     }
 
     protected override async Task ExecuteAsync(CancellationToken stoppingToken)
@@ -206,7 +206,7 @@ public class GracePeriodManagerService : BackgroundService
 }
 ```
 
-V tomto konkrétním případě pro eShopOnContainers, je to provádění aplikační metody, která je dotazování databázové tabulky hledá objednávky s určitým stavem a při použití změn, je publikování integračních událostí prostřednictvím sběrnice událostí (pod ním může být pomocí RabbitMQ nebo Azure Service Bus).
+V tomto konkrétním případě pro eShopOnContainers je provádění aplikační metody, která je dotazování databázové tabulky hledá objednávky s určitým stavem a při použití změn, je publikování událostí integrace prostřednictvím sběrnice událostí (pod ním může být pomocí RabbitMQ nebo Azure Service Bus).
 
 Samozřejmě, můžete spustit jakýkoli jiný obchodní pozadí úkol, místo toho.
 
@@ -249,6 +249,6 @@ Rozhraní `IHostedService` poskytuje pohodlný způsob, jak spustit úlohy na po
 - **Ukázka generického hostitele pomocí ASP.NET Core 2.1** \
   <https://github.com/aspnet/Hosting/tree/release/2.1/samples/GenericHostSample>
 
->[!div class="step-by-step"]
->[Předchozí](test-aspnet-core-services-web-apps.md)
->[další](implement-api-gateways-with-ocelot.md)
+> [!div class="step-by-step"]
+> [Předchozí](test-aspnet-core-services-web-apps.md)
+> [další](implement-api-gateways-with-ocelot.md)

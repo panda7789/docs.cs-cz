@@ -3,12 +3,12 @@ title: O autorizaci v mikroslužbách a webových aplikacích v technologii .NET
 description: Zabezpečení v .NET Microservices a webových aplikací – získat přehled o hlavních možnostech autorizace v ASP.NET základní aplikace – založené na rolích a na zásadách.
 author: mjrousos
 ms.date: 01/30/2020
-ms.openlocfilehash: f6b69faceac9a9b4819212cc04f89080f3ddad56
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 27936a33ea2bb46cedb9d10ee47a2117e1843e14
+ms.sourcegitcommit: e3cbf26d67f7e9286c7108a2752804050762d02d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "77501770"
+ms.lasthandoff: 04/09/2020
+ms.locfileid: "80988203"
 ---
 # <a name="about-authorization-in-net-microservices-and-web-applications"></a>O autorizaci v mikroslužbách a webových aplikacích v technologii .NET
 

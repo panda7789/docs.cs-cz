@@ -3,18 +3,18 @@ title: Definování aplikací nativních pro cloud
 description: Seznamte se se základními pilíři, které poskytují základy pro cloudové systémy
 author: robvet
 ms.date: 08/20/2019
-ms.openlocfilehash: 27191a67b2964ac2e1636a4d7dc55d5314b78439
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 756a2565bd77fcef19a5f15579987836ff0e75a4
+ms.sourcegitcommit: e3cbf26d67f7e9286c7108a2752804050762d02d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79401569"
+ms.lasthandoff: 04/09/2020
+ms.locfileid: "80989087"
 ---
 # <a name="defining-cloud-native"></a>Definování nativního cloudu
 
 [!INCLUDE [book-preview](../../../includes/book-preview.md)]
 
-Přestaňte s tím, co děláte, a napište 10 kolegů. Požádejte je, aby definovali termín "Cloud Native". Je velká šance, že dostanete osm různých odpovědí. Zajímavé je, že za šest měsíců, jak se budou vyvíjet technologie a postupy nativní pro cloud, se budou vyvíjet i jejich definice.
+Přestaňte s tím, co děláte, a napište desítce svých kolegů. Požádejte je, aby definovali termín "Cloud Native". Je velká šance, že dostanete osm různých odpovědí.
 
 Cloud nativní je především o změně způsobu, jakým přemýšlíme o konstrukci kritických podnikových systémů.
 
@@ -96,7 +96,7 @@ V knize [Beyond the Twelve-Factor App](https://content.pivotal.io/blog/beyond-t
 |    |  Nový faktor | Vysvětlení  |
 | :-------- | :-------- | :-------- |
 | 13 | Rozhraní API jako první | Udělejte všechno službou. Předpokládejme, že váš kód bude spotřebován front-endovým klientem, bránou nebo jinou službou. |
-| 14 | Telemetrická data | Na pracovní stanici máte hluboké viditelnosti do aplikace a její chování. V cloudu ne. Ujistěte se, že váš návrh obsahuje shromažďování monitorování, specifické pro doménu a data stavu/systému. |
+| 14 | Telemetrie | Na pracovní stanici máte hluboké viditelnosti do aplikace a její chování. V cloudu ne. Ujistěte se, že váš návrh obsahuje shromažďování monitorování, specifické pro doménu a data stavu/systému. |
 | 15 | Ověřování/ autorizace  | Implementujte identitu od začátku. Zvažte [funkce RBAC (řízení přístupu na základě rolí),](https://docs.microsoft.com/azure/role-based-access-control/overview) které jsou k dispozici ve veřejných cloudách.  |
 
 Budeme odkazovat na mnoho z 12 + faktory v této kapitole a v celé knize.
@@ -179,7 +179,7 @@ Platforma Microsoft .NET Core je vynikající volbou. Svobodný a open source, m
 
 .NET Core spravuje Microsoft a komunita .NET na GitHubu.
 
-## <a name="containers"></a>Kontejnery
+## <a name="containers"></a>Containers
 
 V dnešní době je přirozené slyšet termín *kontejner* uvedený v každém rozhovoru o *cloud nativní*. V knize [Cloud Nativní vzory](https://www.manning.com/books/cloud-native-patterns), autor Cornelia Davis poznamenává, že "Kontejnery jsou velkým umožňujícím cloud-nativní software." Cloud Native Computing Foundation umisťuje kontejnerizaci mikroslužeb jako první krok v jejich [mapě Trail native cloud](https://raw.githubusercontent.com/cncf/trailmap/master/CNCF_TrailMap_latest.png) – pokyny pro podniky, které začínají svou cestu nativní pro cloud.
 
@@ -223,7 +223,7 @@ Obrázek 1-6 ukazuje úlohy správy, které poskytují orchestrátory kontejneru
 
 Následující tabulka popisuje běžné úlohy orchestrace.
 
-|  Úlohy | Vysvětlení  |
+|  Úkoly | Vysvětlení  |
 | :-------- | :-------- |
 | Plánování | Automaticky zřazují instance kontejnerů.|
 | Afinita/anti-afinita | Zřizování kontejnerů v blízkosti nebo daleko od sebe, což pomáhá dostupnosti a výkonu. |
@@ -278,7 +278,7 @@ Dodavatelé cloudu poskytují řešení API pro komunikaci s jejich proprietárn
 
 Podpůrné služby jsou podrobně popsány kapitola 5, *Cloud-nativní vzory dat*a kapitola 4, *Cloud-nativní komunikační vzory*.
 
-## <a name="automation"></a>Automatizace
+## <a name="automation"></a>Automation
 
 Jak jste viděli, cloudové nativní systémy využívají mikroslužeb, kontejnerů a modernínávrh systému k dosažení rychlosti a flexibility. Ale to je jen část příběhu. Jak zřazujete cloudová prostředí, na kterých tyto systémy běží? Jak rychle nasazujete funkce a aktualizace aplikací? Jak završujete celý obraz?
 

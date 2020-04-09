@@ -2,18 +2,18 @@
 title: Použití databází NoSQL jako infrastruktury trvalosti
 description: Pochopit použití databází NoSql obecně a Azure Cosmos DB zejména jako možnost implementovat trvalost.
 ms.date: 01/30/2020
-ms.openlocfilehash: 7da4141d9aadc4aaa265ac97d328bc4b7569a0cb
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 9c51e48d82aa0cf0234275f09df43f7a654f0ca8
+ms.sourcegitcommit: e3cbf26d67f7e9286c7108a2752804050762d02d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "77502378"
+ms.lasthandoff: 04/09/2020
+ms.locfileid: "80988437"
 ---
 # <a name="use-nosql-databases-as-a-persistence-infrastructure"></a>Použití databází NoSQL jako infrastruktury trvalosti
 
 Při použití NoSQL databáze pro databázi infrastruktury data, obvykle nepoužíváte ORM jako entity framework core. Místo toho použijete rozhraní API poskytované modulem NoSQL, jako je Azure Cosmos DB, MongoDB, Cassandra, RavenDB, CouchDB nebo Tabulky úložiště Azure.
 
-Pokud však používáte databázi NoSQL, zejména databázi orientovanou na dokumenty, jako je Azure Cosmos DB, CouchDB nebo RavenDB, způsob, jakým navrhujete model s agregáty DDD, je částečně podobný tomu, jak to můžete udělat v EF Core, pokud jde o identifikaci agregační kořeny, třídy podřízených entit a třídy hodnotových objektů. Ale nakonec výběr databáze bude mít vliv na váš návrh.
+Pokud však používáte databázi NoSQL, zejména databázi orientovanou na dokumenty, jako je Azure Cosmos DB, CouchDB nebo RavenDB, způsob návrhu modelu s agregacemi DDD je částečně podobný tomu, jak to můžete provést v EF Core, pokud jde o identifikaci agregačních kořenů, tříd podřízených entit a tříd hodnotových objektů. Ale nakonec výběr databáze bude mít vliv na váš návrh.
 
 Při použití databáze orientované na dokumenty implementujete agregaci jako jeden dokument serializovaný v JSON nebo jiném formátu. Použití databáze je však transparentní z hlediska kódu modelu domény. Při použití databáze NoSQL stále používáte třídy entit a agregační kořenové třídy, ale s větší flexibilitou než při použití EF Core, protože perzistence není relační.
 
@@ -64,7 +64,7 @@ Při použití modelu\# C k implementaci agregace, které mají být použity ro
 // C# EXAMPLE OF AN ORDER AGGREGATE BEING PERSISTED WITH AZURE COSMOS DB API
 // *** Domain Model Code ***
 // Aggregate: Create an Order object with its child entities and/or value objects.
-// Then, use AggregateRoot’s methods to add the nested objects so invariants and
+// Then, use AggregateRoot's methods to add the nested objects so invariants and
 // logic is consistent across the nested properties (value objects and entities).
 
 Order orderAggregate = new Order
@@ -156,7 +156,7 @@ Další porovnání mezi jednoduše pomocí MongoDB versus Cosmos DB v cloudu, n
 
 V eShopOnContainers používáme rozhraní MongoDB API, protože naší prioritou bylo zásadně mít konzistentní prostředí pro vývoj a testování pomocí databáze NoSQL, která by mohla fungovat i s Azure Cosmos DB.
 
-Pokud ale plánujete používat rozhraní MongoDB API pro přístup k Azure Cosmos DB v Azure pro produkční aplikace, měli byste analyzovat rozdíly ve schopnostech a výkonu při použití rozhraní MongoDB API pro přístup k databázím Azure Cosmos DB ve srovnání s použitím nativních Rozhraní API DB Azure Cosmos. Pokud je to podobné, můžete použít MongoDB API a získáte výhodu podpory dvou databázových strojů NoSQL současně.
+Pokud ale plánujete používat rozhraní MongoDB API pro přístup k Azure Cosmos DB v Azure pro produkční aplikace, měli byste analyzovat rozdíly ve schopnostech a výkonu při použití rozhraní API MongoDB pro přístup k databázím Azure Cosmos DB ve srovnání s použitím nativního rozhraní API Azure Cosmos DB. Pokud je to podobné, můžete použít MongoDB API a získáte výhodu podpory dvou databázových strojů NoSQL současně.
 
 Clustery MongoDB můžete také použít jako produkční databázi v cloudu Azure také se [službou MongoDB Azure Service](https://www.mongodb.com/scale/mongodb-azure-service). Ale to není služba PaaS poskytovaná společností Microsoft. V tomto případě Azure právě hostuje toto řešení pocházející z MongoDB.
 

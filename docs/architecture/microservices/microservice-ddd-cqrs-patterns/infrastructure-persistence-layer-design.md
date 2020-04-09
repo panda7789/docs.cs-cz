@@ -2,12 +2,12 @@
 title: Návrh vrstvy trvalosti infrastruktury
 description: Architektura mikroslužeb .NET pro kontejnerizované aplikace .NET | Prozkoumejte vzor úložiště v návrhu vrstvy trvalosti infrastruktury.
 ms.date: 10/08/2018
-ms.openlocfilehash: e10c8c1569089d5c8274df655ad7a12f2ebb7c22
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 1b2665e81ade60affa84563121c04bca08537f07
+ms.sourcegitcommit: e3cbf26d67f7e9286c7108a2752804050762d02d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "78846806"
+ms.lasthandoff: 04/09/2020
+ms.locfileid: "80988476"
 ---
 # <a name="design-the-infrastructure-persistence-layer"></a>Návrh vrstvy trvalosti infrastruktury
 
@@ -37,7 +37,7 @@ Je důležité znovu zdůraznit, že byste měli definovat pouze jedno úložiš
 
 **Obrázek 7-17**. Vztah mezi úložišti, agregacemi a databázovými tabulkami
 
-Výše uvedený diagram znázorňuje vztahy mezi vrstvami domény a infrastruktury: Agregace kupujícího závisí na iBuyerRepository a Agregaci pořadí závisí na rozhraních IOrderRepository, tato rozhraní jsou implementována ve vrstvě infrastruktury podle odpovídající úložiště, které závisí na UnitOfWork, také implementována tam, že přistupuje k tabulkám v datové vrstvě.
+Výše uvedený diagram znázorňuje vztahy mezi vrstvami domény a infrastruktury: Agregace kupujícího závisí na IBuyerRepository a Agregace pořadí závisí na rozhraní IOrderRepository, tato rozhraní jsou implementovány ve vrstvě infrastruktury odpovídajícími úložišti, které závisí na UnitOfWork, také implementováno tam, že přistupuje k tabulkám v datové vrstvě.
 
 ### <a name="enforce-one-aggregate-root-per-repository"></a>Vynucení jednoho agregačního kořenového adresáře na úložiště
 
@@ -78,7 +78,7 @@ public interface IRepository<T> where T : IAggregateRoot
 
 Vzor úložiště umožňuje snadno otestovat aplikaci pomocí testování částí. Nezapomeňte, že testy částí pouze otestovat váš kód, nikoli infrastruktury, takže abstrakce úložiště usnadnit dosažení tohoto cíle.
 
-Jak je uvedeno v předchozí části, doporučujeme definovat a umístit rozhraní úložiště do vrstvy modelu domény, aby aplikační vrstva, jako je mikroslužba webového rozhraní API, nezávisela přímo na vrstvě infrastruktury, do které jste implementovali třídy skutečného úložiště. Tímto způsobem a pomocí vkládání závislostí v řadičích webového rozhraní API můžete implementovat mock repozitáře, které vracejí falešná data namísto dat z databáze. Tento přístup oddělený umožňuje vytvářet a spouštět testy částí, které zaměřují logiku vaší aplikace bez nutnosti připojení k databázi.
+Jak je uvedeno v předchozí části, doporučujeme definovat a umístit rozhraní úložiště ve vrstvě modelu domény tak, aby aplikační vrstva, jako je například mikroslužba webového rozhraní API, nezávisela přímo na vrstvě infrastruktury, kde jste implementovali skutečné třídy úložiště. Tímto způsobem a pomocí vkládání závislostí v řadičích webového rozhraní API můžete implementovat mock repozitáře, které vracejí falešná data namísto dat z databáze. Tento přístup oddělený umožňuje vytvářet a spouštět testy částí, které zaměřují logiku vaší aplikace bez nutnosti připojení k databázi.
 
 Připojení k databázím může selhat a co je důležitější, spuštění stovky testů proti databázi je špatné ze dvou důvodů. Za prvé, to může trvat dlouhou dobu, protože velký počet testů. Za druhé, záznamy databáze může změnit a ovlivnit výsledky testů tak, aby nemusí být konzistentní. Testování proti databázi není testování částí, ale test integrace. Měli byste mít mnoho testů částí spuštěna rychle, ale méně testů integrace proti databázím.
 

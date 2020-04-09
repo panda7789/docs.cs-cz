@@ -2,12 +2,12 @@
 title: Ověřování na straně klienta (ověřování v prezentačních vrstvách)
 description: Architektura mikroslužeb .NET pro kontejnerizované aplikace .NET | Prozkoumejte klíčové koncepty ověřování na straně klienta.
 ms.date: 10/08/2018
-ms.openlocfilehash: 4e72dcafafc3144a75afe1fd23a4a779f5667459
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 44c1e9fa280b19fcee87d4d1cdfcaa2ab9462f27
+ms.sourcegitcommit: e3cbf26d67f7e9286c7108a2752804050762d02d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "70295995"
+ms.lasthandoff: 04/09/2020
+ms.locfileid: "80988698"
 ---
 # <a name="client-side-validation-validation-in-the-presentation-layers"></a>Ověřování na straně klienta (ověřování v prezentačních vrstvách)
 

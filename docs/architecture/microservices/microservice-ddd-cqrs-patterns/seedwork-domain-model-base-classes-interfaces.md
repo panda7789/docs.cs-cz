@@ -2,12 +2,12 @@
 title: Seedwork (opakovaně použitelné základní třídy a rozhraní pro doménový model)
 description: Architektura mikroslužeb .NET pro kontejnerizované aplikace .NET | Pomocí konceptu seedwork jako výchozí bod pro spuštění implementace pro model domény orientované na DDD.
 ms.date: 10/08/2018
-ms.openlocfilehash: ab0aadc28dbd1175c75b04dadca29b7b0947f29b
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 545be2723ba468a5fd65f81978799328234ca113
+ms.sourcegitcommit: e3cbf26d67f7e9286c7108a2752804050762d02d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "76116567"
+ms.lasthandoff: 04/09/2020
+ms.locfileid: "80988307"
 ---
 # <a name="seedwork-reusable-base-classes-and-interfaces-for-your-domain-model"></a>Seedwork (opakovaně použitelné základní třídy a rozhraní pro doménový model)
 

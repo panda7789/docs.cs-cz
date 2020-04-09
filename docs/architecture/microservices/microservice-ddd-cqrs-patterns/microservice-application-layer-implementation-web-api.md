@@ -2,12 +2,12 @@
 title: Implementace aplikační vrstvy mikroslužby pomocí webového rozhraní API
 description: Seznamte se s vkládáním závislostí a vzory mediátorů a podrobnostmi jejich implementace v aplikační vrstvě webového rozhraní API.
 ms.date: 01/30/2020
-ms.openlocfilehash: a88f3bfd11ea06df085ca82ed7265cb37006fc31
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 76562d87b09a18e4a4ecb7625a2e823bc1ccff78
+ms.sourcegitcommit: e3cbf26d67f7e9286c7108a2752804050762d02d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "77502449"
+ms.lasthandoff: 04/09/2020
+ms.locfileid: "80988463"
 ---
 # <a name="implement-the-microservice-application-layer-using-the-web-api"></a>Implementace aplikační vrstvy mikroslužeb pomocí webového rozhraní API
 
@@ -101,7 +101,7 @@ public void ConfigureServices(IServiceCollection services)
 }
 ```
 
-Nejběžnější vzor při registraci typů v kontejneru IoC je zaregistrovat dvojici typů – rozhraní a jeho související implementace třídy. Potom při vyžádání objektu z kontejneru IoC prostřednictvím libovolného konstruktoru, požádáte o objekt určitého typu rozhraní. Například v předchozím příkladu poslední řádek uvádí, že když některý z vašich konstruktorů mají závislost na IMyCustomRepository (rozhraní nebo abstrakce), kontejner IoC vloží instanci implementace MyCustomSQLServerRepository Třída.
+Nejběžnější vzor při registraci typů v kontejneru IoC je zaregistrovat dvojici typů – rozhraní a jeho související implementace třídy. Potom při vyžádání objektu z kontejneru IoC prostřednictvím libovolného konstruktoru, požádáte o objekt určitého typu rozhraní. Například v předchozím příkladu poslední řádek uvádí, že když některý z konstruktorů mají závislost na IMyCustomRepository (rozhraní nebo abstrakce), kontejner IoC vloží instanci třídy implementace MyCustomSQLServerRepository.
 
 #### <a name="use-the-scrutor-library-for-automatic-types-registration"></a>Použití knihovny Scrutor pro automatickou registraci typů
 

@@ -2,12 +2,12 @@
 title: Modernizace existujících aplikací .NET pomocí Azure Cloudu a kontejnerů Windows (2. vydání)
 description: Naučte se zvedat a přesouvat a modernizovat stávající aplikace do cloudu Azure a kontejnerů pomocí této elektronické knihy.
 ms.date: 04/28/2018
-ms.openlocfilehash: 9439de84dd46ac3153d951378764d10184c33a52
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 95a5870254481a4c6c9eed82b5be5e1eb10be346
+ms.sourcegitcommit: e3cbf26d67f7e9286c7108a2752804050762d02d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "77628374"
+ms.lasthandoff: 04/09/2020
+ms.locfileid: "80987943"
 ---
 # <a name="modernize-existing-net-applications-with-azure-cloud-and-windows-containers-2nd-edition"></a>Modernizace stávajících aplikací .NET pomocí cloudu Azure a kontejnerů S Windows (2. vydání)
 
@@ -56,7 +56,7 @@ Když se rozhodnete modernizovat webové aplikace nebo služby a přesunout je d
 
 ## <a name="about-this-guide"></a>O této příručce
 
-Tato příručka se zaměřuje především na počáteční modernizaci stávajících webových aplikací microsoft .NET Framework nebo aplikací orientovaných na služby, což znamená akci přesunutí úlohy do novějšího nebo modernějšího prostředí bez výrazné změny kódu aplikace. a základní architekturu.
+Tato příručka se zaměřuje především na počáteční modernizaci existujících webových aplikací microsoft .NET Framework nebo aplikací orientovaných na služby, což znamená akci přesunutí úlohy do novějšího nebo modernějšího prostředí bez výrazné změny kódu aplikace a základní architektury.
 
 Tato příručka také upozorňuje na výhody přesunutí aplikací do cloudu a částečné modernizace aplikací pomocí konkrétní sady nových technologií a přístupů, jako jsou Kontejnery Windows a související výpočetní platformy v Azure podporující kontejnery Windows.
 
@@ -105,7 +105,7 @@ Tabulka 1-1 popisuje hlavní výhody a důvody pro výběr každého přístupu 
 
 Aplikace rozhraní .NET Framework byly původně spuštěny s rozhraním .NET Framework verze 1.0, která byla vydána koncem roku 2001. Společnosti pak přešly k novějším verzím (například 2.0, 3.5 a .NET 4.x). Většina těchto aplikací byla spuštěna na systémech Windows Server a Internet Information Server (IIS) a používala relační databázi, například SQL Server, Oracle, MySQL nebo jakýkoli jiný rdbms.
 
-Většina existujících aplikací .NET může být v dnešní době založena na rozhraní .NET Framework 4.x nebo dokonce na rozhraní .NET Framework 3.5 a používat webové architektury jako ASP.NET MVC, ASP.NET Web Forms, ASP.NET Web API, Windows Communication Foundation (WCF), ASP.NET SignalR a ASP.NET Web Pages . Tyto zavedené technologie rozhraní .NET Framework závisí na systému Windows. Tuto závislost je důležité zvážit, pokud jednoduše migrujete starší aplikace a chcete provést minimální změny infrastruktury aplikací.
+Většina existujících aplikací .NET může být v dnešní době založena na rozhraní .NET Framework 4.x nebo dokonce na rozhraní .NET Framework 3.5 a používat webové architektury jako ASP.NET MVC, ASP.NET Web Forms, ASP.NET Web API, Windows Communication Foundation (WCF), ASP.NET SignalR a ASP.NET webPages. Tyto zavedené technologie rozhraní .NET Framework závisí na systému Windows. Tuto závislost je důležité zvážit, pokud jednoduše migrujete starší aplikace a chcete provést minimální změny infrastruktury aplikací.
 
 Obrázek 1–2 znázorňuje primární technologie a styly architektury používané na každé ze tří úrovní splatnosti cloudu:
 

@@ -9,12 +9,12 @@ helpviewer_keywords:
 - interoperation with unmanaged code, marshaling
 - marshaling behavior
 ms.assetid: c0a9bcdf-3df8-4db3-b1b6-abbdb2af809a
-ms.openlocfilehash: 18282d14540027e4fae4fe152d3867ad8c223c37
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: f7df323dacfbee3361fe75d831f1e87df328b194
+ms.sourcegitcommit: e3cbf26d67f7e9286c7108a2752804050762d02d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79181485"
+ms.lasthandoff: 04/09/2020
+ms.locfileid: "80989217"
 ---
 # <a name="default-marshaling-behavior"></a>Výchozí chování zařazování
 Interop zařazování pracuje na pravidla, která určují, jak se chovají data spojená s parametry metody, jak prochází mezi spravované a nespravované paměti. Tato předdefinovaná pravidla řídí takové zařazovací aktivity jako transformace datového typu, zda volaný může změnit data předávaná a vrátit tyto změny volajícímu a za jakých okolností zařazování poskytuje optimalizace výkonu.  
@@ -172,7 +172,7 @@ internal class DelegateTest {
   
  Formátovaný typ je komplexní typ, který obsahuje informace, které explicitně řídí rozložení svých členů v paměti. Informace o rozložení člena jsou <xref:System.Runtime.InteropServices.StructLayoutAttribute> k dispozici pomocí atributu. Rozložení může být jedna <xref:System.Runtime.InteropServices.LayoutKind> z následujících hodnot výčtu:  
   
-- **LayoutKind.Automatic**  
+- **LayoutKind.Auto**  
   
      Označuje, že běžný jazyk runtime je zdarma ke snížení pořadí členů typu pro efektivitu. Však při zadání typu hodnoty do nespravovaného kódu, rozložení členů je předvídatelné. Pokus o zařazovací takové struktury automaticky způsobí výjimku.  
   

@@ -2,12 +2,12 @@
 title: Pracovní postup vývoje vnitřní smyčky pro aplikace Dockeru
 description: Naučte se pracovní postup "vnitřní smyčka" pro vývoj aplikací Dockeru.
 ms.date: 02/15/2019
-ms.openlocfilehash: 3d2fc889d22dbf02acccfbf9231ad98fca224cff
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 615cfd08f46609c4e100ea3e72b541fe2c1ae62a
+ms.sourcegitcommit: e3cbf26d67f7e9286c7108a2752804050762d02d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75936801"
+ms.lasthandoff: 04/09/2020
+ms.locfileid: "80989009"
 ---
 # <a name="inner-loop-development-workflow-for-docker-apps"></a>Pracovní postup vývoje vnitřní smyčky pro aplikace Dockeru
 
@@ -150,7 +150,7 @@ Můžete vytvořit vlastní základní image Dockeru od začátku, jak je vysvě
 Pro každou vlastní službu, která obsahuje vaši aplikaci, budete muset vytvořit související obrázek. Pokud se vaše aplikace skládá z jedné služby nebo webové aplikace, budete potřebovat jen jeden obrázek.
 
 > [!NOTE]
-> Vezmeme-li v úvahu "vnější smyčku Pracovního postupu DevOps", budou obrázky vytvořeny automatizovaným procesem sestavení při každém nabízení zdrojového kódu do úložiště Git (průběžná integrace), takže obrázky budou vytvořeny v tomto globálním prostředí z vašeho zdrojový kód.
+> Vezmeme-li v úvahu "vnější smyčka DevOps workflow", budou obrázky vytvořeny automatizovaným procesem sestavení při každém nabízení zdrojového kódu do úložiště Git (průběžná integrace), takže obrázky budou vytvořeny v tomto globálním prostředí z vašeho zdrojového kódu.
 >
 > Ale předtím, než budeme uvažovat o tom, že vnější smyčka trasy, musíme zajistit, že aplikace Docker je skutečně funguje správně tak, aby nebyly push kód, který nemusí fungovat správně do systému správy zdrojového kódu (Git, atd.).
 >

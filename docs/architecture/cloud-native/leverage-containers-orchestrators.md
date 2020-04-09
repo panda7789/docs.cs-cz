@@ -1,75 +1,75 @@
 ---
 title: Využití kontejnerů a orchestrátorů
-description: Využití kontejnerů Docker a orchestrace Kubernetes v Azure
+description: Využití kontejnerů Dockeru a orchestrátorů Kubernetes v Azure
 ms.date: 06/30/2019
-ms.openlocfilehash: 7b136ed2760ea471f42ff82d20298ff8714c6dee
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 44b2fff8c9c88717d83e41a421b9817e2cc68135
+ms.sourcegitcommit: e3cbf26d67f7e9286c7108a2752804050762d02d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73087233"
+ms.lasthandoff: 04/09/2020
+ms.locfileid: "80989035"
 ---
 # <a name="leveraging-containers-and-orchestrators"></a>Využití kontejnerů a orchestrátorů
 
 [!INCLUDE [book-preview](../../../includes/book-preview.md)]
 
-Kontejnery a orchestrace jsou navržené tak, aby se vyřešily běžné problémy monolitické nasazení.
+Kontejnery a orchestratory jsou navrženy tak, aby řešily problémy společné pro monolitické přístupy nasazení.
 
-## <a name="challenges-with-monolithic-deployments"></a>Problémy s nasazeními monolitické
+## <a name="challenges-with-monolithic-deployments"></a>Výzvy s monolitickými nasazeními
 
-Většina aplikací je tradičně nasazená jako jediná jednotka. Takové aplikace jsou označovány jako monolitu. Tento obecný přístup k nasazení aplikací jako samostatných jednotek i v případě, že se skládají z několika modulů nebo sestavení, se označuje jako monolitické architektura, jak je znázorněno na obrázku 3-1.
+Většina aplikací byla tradičně nasazena jako jedna jednotka. Tyto žádosti se označují jako monolit. Tento obecný přístup nasazení aplikací jako jednotlivých jednotek, i když jsou složeny z více modulů nebo sestavení, se označuje jako monolitická architektura, jak je znázorněno na obrázku 3-1.
 
-![Architektura monolitické](./media/monolithic-architecture.png)
+![Monolitická architektura.](./media/monolithic-architecture.png)
 
-**Obrázek 3-1**. Architektura monolitické
+**Obrázek 3-1**. Monolitická architektura.
 
-I když mají výhodu jednoduchosti, monolitické architektury čelí několika problémům:
+Ačkoli mají výhodu jednoduchosti, monolitické architektury čelí řadě výzev:
 
 ### <a name="deployments"></a>Nasazení
 
-Nasazení do aplikací monolitické obvykle vyžaduje restartování celé aplikace, i když se nahrazuje jenom jeden malý modul. V závislosti na počtu počítačů, které hostují aplikaci, to může způsobit výpadky během nasazení.
+Nasazení do monolitických aplikací obvykle vyžaduje restartování celé aplikace, i když je nahrazen pouze jeden malý modul. V závislosti na počtu počítačů hostujících aplikaci to může mít za následek prostoje během nasazení.
 
-### <a name="hosting"></a>Hosting
+### <a name="hosting"></a>Hostování
 
-Aplikace monolitické se hostují výhradně na jedné instanci počítače. To může vyžadovat hardware s vyššími schopnostmi, než bude potřeba kterýkoli modul v distribuované aplikaci. Také pokud se některá z částí aplikace stal kritickým bodem, musí být celá aplikace nasazena do dalších uzlů počítače, aby bylo možné horizontální navýšení kapacity.
+Monolitické aplikace jsou hostovány výhradně na jedné instanci počítače. To může vyžadovat vyšší možnosti hardwaru, než jakýkoli modul v distribuované aplikaci by potřeboval. Také pokud se některá část aplikace stane kritickým bodem, celá aplikace musí být nasazena do dalších uzlů počítače, aby bylo možné horizontální navýšení kapacity.
 
 ### <a name="environment"></a>Prostředí
 
-Aplikace monolitické jsou obvykle nasazeny do existujícího hostitelského prostředí (operační systém, nainstalovaná rozhraní atd.). Toto prostředí nemusí odpovídat prostředí, ve kterém se aplikace vyvinula nebo otestovala. Nekonzistence v prostředí aplikace představují společný zdroj problémů pro nasazení monolitické.
+Monolitické aplikace se obvykle nasazují do existujícího hostitelského prostředí (operační systém, nainstalované architektury atd.). Toto prostředí nemusí odpovídat prostředí, ve kterém byla aplikace vyvinuta nebo testována. Nekonzistence v prostředí aplikace jsou běžným zdrojem problémů pro monolitické nasazení.
 
-### <a name="coupling"></a>Potrubí
+### <a name="coupling"></a>Tažné
 
-Aplikace monolitické pravděpodobně budou mít velkou flexibilitu mezi různými částmi aplikace a mezi aplikací a jejím prostředím. Díky tomu může být obtížné rozložit konkrétní službu nebo se k ní zabývat později, aby se zvýšila její škálovatelnost nebo swap v jiné implementaci. Toto propojení také vede k většímu množství možných dopadů na změny systému, což vyžaduje rozsáhlé testování ve větších aplikacích.
+Monolitické aplikace budou mít pravděpodobně velké spojení mezi různými částmi aplikace a mezi aplikací a jejím prostředím. To může ztížit pozdější faktor mimo určitou službu nebo obavy, aby se zvýšila její škálovatelnost nebo se vyměnila v alternativní implementaci. Tato spojka také vede k mnohem větším potenciálním dopadům na změny systému, což vyžaduje rozsáhlé testování ve větších aplikacích.
 
 ### <a name="technology-choice"></a>Volba technologie
 
-Aplikace monolitické jsou sestavené a nasazené jako jednotka. Tato možnost nabízí jednoduchost a jednotnost, ale může být překážkou pro inovace. I když může být nová funkce nebo modul v systému vhodnější pro pokročilejší platformu nebo architekturu, je pravděpodobné, že bude vytvořen pomocí aktuálního přístupu aplikace v zájmu konzistence a také snadného vývoje a nasazení.
+Monolitické aplikace jsou sestaveny a nasazeny jako celek. To nabízí jednoduchost a jednotnost, ale může být překážkou pro inovace. I když nová funkce nebo modul v systému může být vhodnější pro modernější platformu nebo rámec, je pravděpodobné, že bude sestaven pomocí aktuálního přístupu aplikace z důvodu konzistence a snadnost vývoje a nasazení.
 
-## <a name="what-are-the-benefits-of-containers-and-orchestrators"></a>Jaké jsou výhody kontejnerů a orchestrací?
+## <a name="what-are-the-benefits-of-containers-and-orchestrators"></a>Jaké jsou výhody kontejnerů a orchestrátorů?
 
-Docker je nejoblíbenější platforma pro správu a vytváření imagí kontejnerů a umožňuje rychlou práci s kontejnery v systémech Linux a Windows. Kontejnery poskytují samostatné, ale reprodukovatelná aplikační prostředí, která se spouštějí stejným způsobem na jakémkoli systému. Díky tomu jsou ideální pro vývoj a hostování aplikací a komponent aplikací v cloudových nativních aplikacích. Kontejnery jsou izolované od sebe, takže dva kontejnery na stejném hostiteli můžou mít různé verze softwaru a dokonce i operační systém, a to bez závislostí způsobujících konflikty.
+Docker je nejoblíbenější platforma pro správu kontejnerů a zobrazování a umožňuje rychlou práci s kontejnery na Linuxu a Windows. Kontejnery poskytují samostatné, ale reprodukovatelné aplikační prostředí, které běží stejným způsobem v libovolném systému. Díky tomu jsou ideální pro vývoj a hostování aplikací a součástí aplikací v aplikacích nativních pro cloud. Kontejnery jsou od sebe izolovány, takže dva kontejnery na stejném hostitelském hardwaru mohou mít nainstalovány různé verze softwaru a dokonce i operační systém, aniž by došlo ke konfliktům závislostí.
 
-A co více kontejnerů jsou definovány jednoduchými soubory, které lze zkontrolovat do správy zdrojového kódu. Na rozdíl od úplných serverů, dokonce i virtuálních počítačů, které často vyžadují ruční práci na použití aktualizací nebo instalaci dalších služeb, může infrastruktura kontejnerů snadno řídit verzí. Proto aplikace sestavené pro spouštění v kontejnerech je možné vyvíjet, testovat a nasazovat pomocí automatizovaných nástrojů jako součást kanálu sestavení.
+A co víc, kontejnery jsou definovány jednoduchými soubory, které lze zkontrolovat do správy zdrojového kódu. Na rozdíl od úplných serverů, dokonce i virtuálních počítačů, které často vyžadují ruční práci k instalaci aktualizací nebo instalaci dalších služeb, může být kontejnerová infrastruktura snadno řízena verzí. Aplikace vytvořené pro spuštění v kontejnerech tedy mohou být vyvíjeny, testovány a nasazovány pomocí automatizovaných nástrojů jako součást kanálu sestavení.
 
-Kontejnery jsou neměnné. Jakmile budete mít definici kontejneru, můžete tento kontejner znovu vytvořit a spustí se přesně stejným způsobem. Tato neměnnosti se zapůjčuje do návrhu založeného na komponentách. Pokud se některé části aplikace nemění tak často jako jiné, proč je možné znovu nasadit celou aplikaci, když můžete jenom nasadit části, které se mění nejčastěji? Různé funkce a průřezové aspekty aplikace je možné rozdělit na samostatné jednotky. Obrázek 3-2 ukazuje, jak může aplikace monolitické využít výhod kontejnerů a mikroslužeb pomocí delegování určitých funkcí nebo funkcí. Zbývající funkce samotné aplikace také byly kontejnery.
+Kontejnery jsou neměnné. Jakmile budete mít definici kontejneru, můžete znovu vytvořit tento kontejner a bude fungovat přesně stejným způsobem. Tato neměnnost se hodí k návrhu založenému na komponentách. Pokud se některé části aplikace nemění tak často jako jiné, proč znovu nasadit celou aplikaci, když můžete jen nasadit součásti, které se mění nejčastěji? Různé funkce a průřezové obavy aplikace lze rozdělit do samostatných jednotek. Obrázek 3-2 ukazuje, jak monolitické aplikace můžete využít kontejnery a mikroslužeb delegováním určité funkce nebo funkce. Zbývající funkce v samotné aplikaci byla také kontejnerizována.
 
-![rozdělení aplikace monolitické, aby používala mikroslužby v back-endu.](./media/breaking-up-monolith-with-backend-microservices.png)
-**obrázek 3-2**. Rozdělení aplikace monolitické pro použití mikroslužeb v back-endu.
+![Rozdělení monolitické aplikace pro použití mikroslužeb v back-endu. ](./media/breaking-up-monolith-with-backend-microservices.png)
+ **Obrázek 3-2**. Rozdělení monolitické aplikace pro použití mikroslužeb v back-endu.
 
-Cloudové nativní aplikace sestavené pomocí samostatných kontejnerů využívají výhod nasazení aplikace v případě potřeby co nejvíc nebo i trochu. Jednotlivé služby můžou být hostované na uzlech s prostředky, které jsou vhodné pro každou službu. Prostředí, ve kterém je každá služba spuštěná, je neměnné, dá se sdílet mezi vývojem, testováním a výrobou a dá se snadno používat ve verzi. Propojení mezi různými oblastmi aplikace probíhá explicitně jako volání nebo zprávy mezi službami, nikoli závislosti na kompilaci v rámci monolitu. A libovolná část celkové aplikace může zvolit technologii, která dává smysl pro tuto funkci nebo schopnost, a to bez nutnosti provádět změny ve zbývající části aplikace.
+Cloudové nativní aplikace vytvořené pomocí samostatných kontejnerů těží ze schopnosti nasadit tolik nebo tak málo aplikace podle potřeby. Jednotlivé služby mohou být hostovány na uzlech s prostředky odpovídajícími každé službě. Prostředí, ve které je každá služba spuštěna, je neměnné, lze je sdílet mezi dev, test em a výrobou a lze je snadno verzi. Párování mezi různými oblastmi aplikace dochází explicitně jako volání nebo zprávy mezi službami, nikoli závislosti v době kompilace v rámci monolitu. A jakákoli v dané části celkové aplikace si můžete vybrat technologii, která dává největší smysl pro tuto funkci nebo schopnost, aniž by bylo nutné změnit zbytek aplikace.
 
 ## <a name="what-are-the-scaling-benefits"></a>Jaké jsou výhody škálování?
 
-Služby postavené na kontejnerech můžou využívat výhody škálování poskytované nástroji pro orchestraci, jako je Kubernetes. Kontejnery návrhu se týkají pouze samotných. Jakmile začnete mít více kontejnerů, které potřebují společně spolupracovat, může být vhodné je uspořádat na vyšší úrovni. Uspořádání velkého počtu kontejnerů a jejich sdílených závislostí, jako je například konfigurace sítě, je místo, kde nástroje pro orchestraci docházejí, aby ušetřily den. Kubernetes je platforma pro orchestraci kontejnerů navržená pro automatizaci nasazení, škálování a správy kontejnerových aplikací. Vytvoří vrstvu abstrakce nad skupinami kontejnerů a uspořádá je do *lusků*. Lusky se spouštějí na pracovních počítačích, které jsou označovány jako *uzly*. Celá uspořádaná skupina se označuje jako *cluster*. Obrázek 3-3 ukazuje různé komponenty clusteru Kubernetes.
+Služby postavené na kontejnerech můžou využívat výhody škálování poskytované nástroji orchestrace, jako je Kubernetes. Podle návrhu kontejnery vědí jen o sobě. Jakmile začnete mít více kontejnerů, které potřebují spolupracovat, může být vhodné je uspořádat na vyšší úrovni. Uspořádání velkého počtu kontejnerů a jejich sdílených závislostí, jako je například konfigurace sítě, je místo, kde nástroje orchestrace přicházejí k uložení dne! Kubernetes je platforma orchestrace kontejnerů navržená k automatizaci nasazení, škálování a správy kontejnerizovaných aplikací. Vytvoří vrstvu abstrakce nad skupinami kontejnerů a uspořádá je do *podů*. Pody běží na pracovních počítačích označované jako *uzly*. Celá organizovaná skupina se označuje jako *cluster*. Obrázek 3-3 znázorňuje různé součásti clusteru Kubernetes.
 
-![součásti clusteru Kubernetes.](./media/kubernetes-cluster-components.png)
-**obrázek 3-3**. Součásti clusteru Kubernetes.
+![Komponenty clusteru Kubernetes. ](./media/kubernetes-cluster-components.png)
+ **Obrázek 3-3**. Komponenty clusteru Kubernetes.
 
-Kubernetes má integrovanou podporu pro škálování clusterů tak, aby splňovala požadavky. V kombinaci s dodanými mikroslužbami poskytuje cloudové nativní aplikace s možností rychle a efektivně reagovat na špičky v poptávce s dalšími prostředky, když jsou a tam, kde jsou potřeba.
+Kubernetes má integrovanou podporu pro škálování clusterů tak, aby splňovaly požadavky. V kombinaci s kontejnerovými mikroslužbami to poskytuje cloudové nativní aplikace s možností rychle a efektivně reagovat na špičky v poptávce s dalšími prostředky, kdy a kde jsou potřeba.
 
-### <a name="declarative-versus-imperative"></a>Deklarativní versus imperativní
+### <a name="declarative-versus-imperative"></a>Deklarativní versus imperativ
 
-Kubernetes podporuje deklarativní i imperativní konfiguraci objektů. Nepodmíněný přístup zahrnuje spuštění různých příkazů, které oznamují Kubernetes, co dělat v každém kroku jak. *Spusťte* tuto bitovou kopii. *Odstraňte* tento pod. *Zveřejněte* tento port. V případě deklarativního přístupu použijete konfigurační soubor, který popisuje, *co chcete* , místo *abyste mohli dělat* a Kubernetes vyhodnotit, co se má udělat, abyste dosáhli požadovaného koncového stavu. Pokud jste cluster již nakonfigurovali pomocí imperativních příkazů, můžete vyexportovat deklarativní manifest pomocí `kubectl get svc SERVICENAME -o yaml > service.yaml`. Tím se vytvoří soubor manifestu, jako je tento:
+Kubernetes podporuje deklarativní i imperativní konfiguraci objektu. Imperativní přístup zahrnuje spuštění různých příkazů, které kubernetes říkají, co má dělat na každém kroku cesty. *Spusťte* tento obrázek. *Odstraňte* tento pod. *Vystavit* tento port. S deklarativní přístup, použijte konfigurační soubor, který *popisuje, co chcete* místo *toho, co dělat* a Kubernetes zjistí, co dělat k dosažení požadovaného koncového stavu. Pokud jste již nakonfigurovali cluster pomocí imperativních `kubectl get svc SERVICENAME -o yaml > service.yaml`příkazů, můžete exportovat deklarativní manifest pomocí aplikace . To bude produkovat soubor manifestu, jako je tento:
 
 ```yaml
 apiVersion: v1
@@ -97,69 +97,69 @@ status:
   loadBalancer: {}
 ```
 
-Při použití deklarativní konfigurace můžete zobrazit náhled změn, které budou provedeny před jejich potvrzením, pomocí `kubectl diff -f FOLDERNAME` ve složce, ve které jsou umístěny konfigurační soubory. Až si opravdu chcete změny použít, spusťte `kubectl apply -f FOLDERNAME`. Přidejte `-R` k rekurzivnímu zpracování hierarchie složek.
+Při použití deklarativní konfigurace můžete zobrazit náhled změn, `kubectl diff -f FOLDERNAME` které budou provedeny před jejich potvrzením pomocí proti složce, kde jsou umístěny konfigurační soubory. Jakmile si budete jisti, že chcete `kubectl apply -f FOLDERNAME`změny použít, spusťte aplikaci . Přidejte `-R` k rekurzivnímu zpracování hierarchie složek.
 
-Kromě služeb můžete použít deklarativní konfiguraci pro jiné funkce Kubernetes, jako jsou například *nasazení*. Deklarativní nasazení používají řadiče nasazení k aktualizaci prostředků clusteru. Nasazení se používají k zavedení nových změn, horizontálnímu navýšení kapacity pro podporu většího zatížení nebo návrat k předchozí revizi. Pokud je cluster nestabilní, deklarativní nasazení poskytuje mechanismus pro automatické převedení clusteru zpátky do požadovaného stavu.
+Kromě služeb můžete použít deklarativní konfiguraci pro jiné funkce Kubernetes, jako je například *nasazení*. Deklarativní nasazení používají řadiče nasazení k aktualizaci prostředků clusteru. Nasazení se používají k zavedení nových změn, škálování nahoru pro podporu většízatížení nebo vrátit zpět k předchozí revizi. Pokud je cluster nestabilní, deklarativní nasazení poskytují mechanismus pro automatické převedení clusteru zpět do požadovaného stavu.
 
-Použití deklarativní konfigurace umožňuje, aby infrastruktura byla reprezentovaná jako kód, který se dá vrátit se změnami, a zároveň používat verzi společně s kódem aplikace. To poskytuje vylepšené řízení změn a lepší podporu pro průběžné nasazování pomocí sestavení a nasazení kanálu vázaného na změny správy zdrojového kódu.
+Použití deklarativní konfigurace umožňuje infrastruktury, které mají být reprezentovány jako kód, který lze se změnami a verzí vedle kódu aplikace. To poskytuje lepší řízení změn a lepší podporu pro průběžné nasazení pomocí kanálu sestavení a nasazení vázané na změny správy zdrojového kódu.
 
-## <a name="what-scenarios-are-ideal-for-containers-and-orchestrators"></a>Jaké scénáře jsou ideální pro kontejnery a orchestraci?
+## <a name="what-scenarios-are-ideal-for-containers-and-orchestrators"></a>Jaké scénáře jsou ideální pro kontejnery a orchestrátory?
 
-Následující scénáře jsou ideální pro používání kontejnerů a orchestrací.
+Následující scénáře jsou ideální pro použití kontejnerů a orchestrátory.
 
-### <a name="applications-requiring-high-uptime-and-scalability"></a>Aplikace vyžadující vysokou dobu provozu a škálovatelnost
+### <a name="applications-requiring-high-uptime-and-scalability"></a>Aplikace vyžadující vysokou dostupnost a škálovatelnost
 
-Jednotlivé aplikace, které mají vysoké požadavky na provozuschopnost a škálovatelnost, jsou ideálními kandidáty pro nativní cloudové architektury pomocí mikroslužeb, kontejnerů a orchestrací. Tyto aplikace je možné vyvíjet v kontejnerech pomocí prostředí s použitím verzí, které je možné před tím, než budete moct začít používat, a můžou být nasazené do produkčního prostředí s nulovými výpadky. Použití clusterů Kubernetes zajišťuje, aby takové aplikace mohly také škálovat na vyžádání a automaticky obnovovat při selhání uzlu.
+Jednotlivé aplikace, které mají požadavky na vysokou dostupnost a škálovatelnost, jsou ideálními kandidáty pro architektury nativní pro cloud pomocí mikroslužeb, kontejnerů a orchestrátorů. Tyto aplikace mohou být vyvinuty v kontejnerech pomocí prostředí s verzí, lze rozsáhle testovat před odchodem do produkčního prostředí a mohou být nasazeny do produkčního prostředí s nulovými prostoji. Použití clusterů Kubernetes zajišťuje, že tyto aplikace mohou také škálovat na vyžádání a automaticky se zotavit z selhání uzlů.
 
 ### <a name="large-numbers-of-applications"></a>Velký počet aplikací
 
-Organizace, které nasazují a musí následně uchovávat velký počet aplikací, přináší výhody kontejnerů a orchestrací. V rámci nastavení kontejnerových prostředí a clusterů Kubernetes jsou primárně pevné náklady. Nasazení, údržba a aktualizace jednotlivých aplikací má cenu, která se liší v závislosti na počtu aplikací, které musí být zachovány. Nad rámec určitého poměrně malého počtu aplikací je složitá složitost údržby vlastních aplikací ručně a náklady na implementaci řešení s využitím kontejnerů a orchestrací.
+Organizace, které nasazují a musí následně udržovat velký počet aplikací těžit z kontejnerů a orchestrátory. Počáteční úsilí při nastavování kontejnerizovaných prostředí a clusterů Kubernetes je především fixní náklady. Nasazení, údržba a aktualizace jednotlivých aplikací má náklady, které se liší podle počtu aplikací, které musí být udržovány. Kromě určitépoměrně malý počet aplikací, složitost údržby vlastních aplikací ručně přesahuje náklady na implementaci řešení pomocí kontejnerů a orchestrátory.
 
-## <a name="when-should-you-avoid-using-containers-and-orchestrators"></a>Kdy byste se měli vyhnout použití kontejnerů a orchestrací?
+## <a name="when-should-you-avoid-using-containers-and-orchestrators"></a>Kdy byste se měli vyhnout použití kontejnerů a orchestrátorů?
 
-Pokud nebudete nebo nebudete moct sestavovat aplikaci po dvanácti zásadách aplikace, bude pravděpodobně lepší vycházet z předcházení kontejnerům a orchestraci. V těchto případech může být nejlepší přesunout vpřed s hostující platformou založenou na virtuálním počítači, nebo potenciálně nějaký hybridní systém, ve kterém můžete určité části funkcí vypnout do samostatných kontejnerů nebo i bez serveru.
+Pokud nejste ochotni nebo schopni vytvořit aplikaci podle principů twelve-factor app, budete pravděpodobně lépe vyhnout kontejnery a orchestrátory. V těchto případech může být nejlepší pokročit s hostitelskou platformou založenou na virtuálním zařízení nebo případně s nějakým hybridním systémem, ve kterém můžete oddělit určité části funkcí do samostatných kontejnerů nebo dokonce bezserverových funkcí.
 
-## <a name="development-resources"></a>Prostředky pro vývoj
+## <a name="development-resources"></a>Rozvojové zdroje
 
-V této části se zobrazuje krátký seznam vývojářských prostředků, které vám můžou pomoci začít s používáním kontejnerů a orchestrací pro vaši další aplikaci. Pokud hledáte pokyny k návrhu aplikace architektury mikroslužeb nativního pro Cloud, přečtěte si tohoto doprovodného pomocníka [.NET mikroslužby: architektura pro kontejnery aplikací .NET](https://aka.ms/microservicesebook).
+Tato část zobrazuje krátký seznam prostředků pro vývoj, které vám mohou pomoci začít používat kontejnery a orchestrátory pro další aplikaci. Pokud hledáte návod, jak navrhnout aplikaci architektury mikroslužeb nativní pro cloud, přečtěte si doprovod této knihy [.NET Microservices: Architektura pro kontejnerizované aplikace .NET](https://aka.ms/microservicesebook).
 
-### <a name="local-kubernetes-development"></a>Vývoj místních Kubernetes
+### <a name="local-kubernetes-development"></a>Místní vývoj Kubernetes
 
-Kubernetes nasazení poskytují skvělou hodnotu v produkčním prostředí, ale můžete je také spouštět místně. I když je v podstatě možné pracovat na jednotlivých aplikacích nebo mikroslužbách nezávisle, je možné, že budete mít schopnost spustit celý systém místně stejně jako při nasazení do produkčního prostředí. Existuje několik způsobů, jak toho dosáhnout, z nichž dva jsou Minikube a Docker Desktop. Visual Studio také poskytuje nástroje pro vývoj v Docker.
+Nasazení Kubernetes poskytují velkou hodnotu v produkčním prostředí, ale můžete je také spustit místně. I když většinu času je dobré mít možnost pracovat na jednotlivých aplikacích nebo mikroslužeb nezávisle, někdy je dobré mít možnost spustit celý systém místně stejně jako se spustí při nasazení do produkčního prostředí. Existuje několik způsobů, jak toho dosáhnout, z nichž dva jsou Minikube a Docker Desktop. Visual Studio také poskytuje nástroje pro vývoj Dockeru.
 
-### <a name="minikube"></a>Minikube
+### <a name="minikube"></a>Minikube (Minikube)
 
-Co je Minikube? Projekt Minikube říká "Minikube implementuje místní Kubernetes cluster na macOS, Linux a Windows." Jeho primárními cíli je "nejlepší nástroj pro vývoj místních aplikací Kubernetes a podpora všech Kubernetes funkcí, které odpovídají." Instalace Minikube je oddělená od Docker, ale Minikube podporuje jiné hypervisory než Docker Desktop podporuje. Minikube aktuálně podporuje následující funkce Kubernetes:
+Co je Minikube? Projekt Minikube říká: "Minikube implementuje místní cluster Kubernetes v systémech macOS, Linux a Windows." Jeho hlavním cílem je "být nejlepším nástrojem pro vývoj místních aplikací Kubernetes a podporovat všechny funkce Kubernetes, které se hodí." Instalace Minikube je oddělená od Dockeru, ale Minikube podporuje různé hypervisory, než podporuje Docker Desktop. Minikube aktuálně podporuje následující funkce Kubernetes:
 
 - DNS
-- NodePorts
-- ConfigMaps a tajné klíče
+- Porty uzlů
+- ConfigMapy a tajné klíče
 - Řídicí panely
-- Moduly runtime kontejnerů: Docker, RKT, CRI-O a kontejnery
-- Povolení síťového rozhraní kontejneru (CNI)
+- Kontejnerové runtimes: Docker, rkt, CRI-O a kontejnery
+- Povolení rozhraní kontejnerové sítě (CNI)
 - Příchozí přenos dat
 
-Po instalaci Minikube je můžete rychle začít používat spuštěním příkazu `minikube start`, který stáhne image a spustí místní cluster Kubernetes. Po spuštění clusteru s ním budete pracovat pomocí standardních příkazů Kubernetes `kubectl`.
+Po instalaci Minikube, můžete rychle začít `minikube start` používat spuštěním příkazu, který stáhne obrázek a spustit místní Kubernetes clusteru. Po spuštění clusteru s ním budete pracovat pomocí standardních příkazů Kubernetes. `kubectl`
 
-### <a name="docker-desktop"></a>Docker Desktop
+### <a name="docker-desktop"></a>Desktop Dockeru
 
-S Kubernetes můžete také pracovat přímo z Docker desktopu ve Windows. Tato možnost je jediná, pokud používáte kontejnery Windows a je skvělou volbou pro kontejnery jiné než Windows. Standardní aplikace Docker Desktop Configuration se používá ke konfiguraci Kubernetes spuštěného z Docker desktopu.
+Můžete také pracovat s Kubernetes přímo z Docker Desktop v systému Windows. Toto je vaše jediná možnost, pokud používáte kontejnery Windows, a je skvělou volbou i pro kontejnery, které nejsou windows. Standardní konfigurační aplikace Docker Desktop se používá ke konfiguraci Kubernetes spuštěných z Docker Desktop.
 
-![Konfigurace Kubernetes v Docker desktopu](./media/docker-desktop-kubernetes.png)
+![Konfigurace Kubernetes v Docker Desktop](./media/docker-desktop-kubernetes.png)
 
-**Obrázek 3-4**. Konfigurace Kubernetes v Docker desktopu.
+**Obrázek 3-4**. Konfigurace Kubernetes v Docker Desktop.
 
-Docker Desktop už je nejoblíbenějším nástrojem pro místní konfiguraci a spouštění kontejnerových aplikací. Při práci s Docker desktopem se můžete místně vyvíjet na základě stejné sady imagí kontejnerů Docker, které nasadíte do produkčního prostředí. Docker Desktop je navržený tak, aby vytvořil, otestoval a dodal aplikace s podporou kontejnerů v místním prostředí. Po odeslání imagí do registru imagí, jako je Azure Container Registry nebo Docker Hub, služby, jako je Azure Kubernetes Service (AKS), spravují aplikaci v produkčním prostředí.
+Docker Desktop je již nejoblíbenější nástroj pro konfiguraci a spuštění kontejnerizovaných aplikací místně. Při práci s Docker Desktop, můžete vyvíjet místně proti přesně stejnou sadu iobrazek kontejneru Dockeru, které budete nasadit do produkčního prostředí. Docker Desktop je navržen tak, aby "sestavení, testování a odeslání" kontejnerizované aplikace místně. Jakmile jsou bitové kopie odeslány do registru bitových kopií, jako je Azure Container Registry nebo Docker Hub, pak služby jako Azure Kubernetes Service (AKS) spravovat aplikaci v produkčním prostředí.
 
-### <a name="visual-studio-docker-tooling"></a>Nástroje Docker sady Visual Studio
+### <a name="visual-studio-docker-tooling"></a>Nástroje Pro docker u sady Visual Studio
 
-Visual Studio podporuje vývoj Docker pro webové aplikace. Když vytvoříte novou ASP.NET Core aplikaci, budete mít možnost ji nakonfigurovat s podporou Docker jako součást procesu vytváření projektu, jak je znázorněno na obrázku 3-5.
+Visual Studio podporuje vývoj Dockeru pro webové aplikace. Když vytvoříte novou ASP.NET základní aplikaci, budete mít možnost ji nakonfigurovat s podporou Dockeru jako součást procesu vytváření projektu, jak je znázorněno na obrázku 3-5.
 
-![Povolit podporu Docker pro Visual Studio](./media/visual-studio-enable-docker-support.png)
+![Podpora Pro tekutá zařízení Visual Studio](./media/visual-studio-enable-docker-support.png)
 
-**Obrázek 3-5**. Povolit podporu Docker pro Visual Studio
+**Obrázek 3-5**. Podpora Pro tekutá zařízení Visual Studio
 
-Když je vybraná tato možnost, projekt se vytvoří s `Dockerfile` v jeho kořenovém adresáři, který se dá použít k sestavení a hostování aplikace v kontejneru Docker. Na obrázku 3-6 se zobrazuje příklad souboru Dockerfile.
+Když je vybrána tato možnost, `Dockerfile` projekt je vytvořen s v jeho kořenovém adresáři, který lze použít k vytvoření a hostování aplikace v kontejneru Dockeru. Příklad Dockerfile je znázorněn na obrázku 3-6.
 
 ```docker
 FROM mcr.microsoft.com/dotnet/core/aspnet:3.0-stretch-slim AS base
@@ -184,35 +184,35 @@ COPY --from=publish /app .
 ENTRYPOINT ["dotnet", "WebApplication3.dll"]
 ```
 
-**Obrázek 3-6**. Souboru Dockerfile vygenerované v aplikaci Visual Studio
+**Obrázek 3-6**. Visual Studio generované Dockerfile
 
-Výchozí chování při spuštění aplikace je nakonfigurováno pro použití Docker. Obrázek 3-7 ukazuje různé možnosti spuštění, které jsou k dispozici z nového projektu ASP.NET Core vytvořeného pomocí přidání podpory Docker.
+Výchozí chování při spuštění aplikace je nakonfigurován pro použití Dockeru také. Obrázek 3-7 ukazuje různé možnosti spuštění, které jsou k dispozici z nového projektu ASP.NET Core vytvořeného s přidanou podporou Dockeru.
 
-![Možnosti spuštění aplikace Visual Studio Docker](./media/visual-studio-docker-run-options.png)
+![Možnosti spuštění dockeru visual studia](./media/visual-studio-docker-run-options.png)
 
-**Obrázek 3-7**. Možnosti spuštění aplikace Visual Studio Docker
+**Obrázek 3-7**. Možnosti spuštění dockeru visual studia
 
-Kromě místního vývoje [Azure dev Spaces](https://docs.microsoft.com/azure/dev-spaces/) poskytuje vývojářům pohodlný způsob, jak v rámci Azure pracovat s vlastními konfiguracemi Kubernetes. Jak vidíte na obrázku 3-7, můžete také spustit aplikaci v Azure Dev Spaces.
+Kromě místního vývoje poskytuje [Azure Dev Spaces](https://docs.microsoft.com/azure/dev-spaces/) pohodlný způsob, jak může více vývojářů pracovat s vlastními konfiguracemi Kubernetes v rámci Azure. Jak můžete vidět na obrázku 3-7, můžete také spustit aplikaci v Azure Dev Spaces.
 
-Pokud nepřidáte do vaší aplikace ASP.NET Core podporu Docker při jejím vytváření, můžete ji kdykoli přidat později. V Průzkumník řešení sady Visual Studio klikněte pravým tlačítkem myši na projekt a vyberte přidat **podporu > Docker**, jak je znázorněno na obrázku 3-8.
+Pokud nepřidáte podporu Dockeru do aplikace ASP.NET Core, můžete ji vždy přidat později. V Průzkumníku řešení Visual Studia klikněte pravým tlačítkem myši na projekt a vyberte **Přidat** > **podporu Dockeru**, jak je znázorněno na obrázku 3-8.
 
-![Přidat podporu Docker pro Visual Studio](./media/visual-studio-add-docker-support.png)
+![Visual Studio přidat podporu Dockeru](./media/visual-studio-add-docker-support.png)
 
-**Obrázek 3-8**. Přidat podporu Docker pro Visual Studio
+**Obrázek 3-8**. Visual Studio přidat podporu Dockeru
 
-Kromě podpory Docker můžete také přidat podporu orchestrace kontejnerů, která je také znázorněna na obrázku 3-8. Ve výchozím nastavení nástroj Orchestrator používá Kubernetes a Helm. Po zvolení nástroje Orchestrator se do kořenového adresáře projektu přidá soubor `azds.yaml` a přidá se složka `charts` obsahující grafy Helm, které slouží ke konfiguraci a nasazení aplikace do Kubernetes. Obrázek 3-9 ukazuje výsledné soubory v novém projektu.
+Kromě podpory Dockeru můžete také přidat podporu orchestrace kontejnerů, která je také znázorněna na obrázku 3-8. Ve výchozím nastavení orchestrátor používá Kubernetes a Helm. Po výběru orchestrator, `azds.yaml` soubor je přidán do kořenového `charts` adresáře projektu a je přidána složka obsahující Helm grafy slouží ke konfiguraci a nasazení aplikace kubernetes. Obrázek 3-9 znázorňuje výsledné soubory v novém projektu.
 
-![Přidání podpory nástroje Orchestrator pro Visual Studio](./media/visual-studio-add-orchestrator-support.png)
+![Visual Studio přidat orchestrator podporu](./media/visual-studio-add-orchestrator-support.png)
 
-**Obrázek 3-9**. Přidání podpory nástroje Orchestrator pro Visual Studio
+**Obrázek 3-9**. Visual Studio přidat orchestrator podporu
 
-## <a name="references"></a>Reference
+## <a name="references"></a>Odkazy
 
 - [Co je Kubernetes?](https://blog.newrelic.com/engineering/what-is-kubernetes/)
-- [Instalace Kubernetes pomocí Minikube](https://kubernetes.io/docs/setup/learning-environment/minikube/)
+- [Instalace Kubernetes s Minikube](https://kubernetes.io/docs/setup/learning-environment/minikube/)
 - [MiniKube vs Docker Desktop](https://medium.com/containers-101/local-kubernetes-for-windows-minikube-vs-docker-desktop-25a1c6d3b766)
 - [Visual Studio Tools for Docker](https://docs.microsoft.com/dotnet/standard/containerized-lifecycle-architecture/design-develop-containerized-apps/visual-studio-tools-for-docker)
 
 >[!div class="step-by-step"]
 >[Předchozí](scale-applications.md)
->[Další](leverage-serverless-functions.md)
+>[další](leverage-serverless-functions.md)

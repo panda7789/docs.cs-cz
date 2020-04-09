@@ -4,12 +4,12 @@ description: Architekt moderní webové aplikace s ASP.NET core a Azure | Práce
 author: ardalis
 ms.author: wiwagn
 ms.date: 12/04/2019
-ms.openlocfilehash: 5a38ca94b6df676858e7cb058272e450aaf1572e
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: b706332b28aec669a841f510046aa7b185be1373
+ms.sourcegitcommit: e3cbf26d67f7e9286c7108a2752804050762d02d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "78241036"
+ms.lasthandoff: 04/09/2020
+ms.locfileid: "80987839"
 ---
 # <a name="working-with-data-in-aspnet-core-apps"></a>Práce s daty v základních aplikacích ASP.NET
 
@@ -130,7 +130,7 @@ var brandsWithItems = await _context.CatalogBrands
 Můžete zahrnout více relací a můžete také zahrnout podvztahy pomocí ThenInclude. EF Core spustí jeden dotaz k načtení výsledné sady entit. Alternativně můžete zahrnout navigační vlastnosti navigačnívlastnosti předáním '.. -oddělený řetězec `.Include()` k metodě rozšíření, například takto:
 
 ```csharp
-    .Include(“Items.Products”)
+    .Include("Items.Products")
 ```
 
 Kromě logiky zapouzdření filtrování může specifikace určit tvar dat, která mají být vrácena, včetně vlastností, které mají být naplněny. Ukázka eShopOnWeb obsahuje několik specifikací, které demonstrují zapouzdření dychtivých informací o načítání v rámci specifikace. Můžete vidět, jak se specifikace používá jako součást dotazu zde:
@@ -282,7 +282,7 @@ První DbContext je \_catalogContext a druhý DbContext \_je v rámci integratio
 
 Zatímco EF Core je skvělou volbou pro správu trvalosti a z větší části zapouzdřuje podrobnosti o databázi od vývojářů aplikací, není to jediná volba. Další populární open-source alternativou je [Dapper](https://github.com/StackExchange/Dapper), takzvaný mikro-ORM. Mikro-ORM je lehký, méně plnohodnotný nástroj pro mapování objektů na datové struktury. V případě Dapper, jeho cíle návrhu se zaměřují na výkon, spíše než plně zapouzdření základní dotazy, které používá k načtení a aktualizaci dat. Vzhledem k tomu, že není abstraktní SQL od vývojáře, Dapper je "blíže ke kovu" a umožňuje vývojářům psát přesné dotazy, které chtějí použít pro danou operaci přístupu k datům.
 
-EF Core má dvě významné funkce, které poskytuje, které ji oddělují od Dapper, ale také přidat k jeho výkonu režie. První je překlad z výrazů LINQ do SQL. Tyto překlady jsou uloženy do mezipaměti, ale i tak je režie při jejich provádění poprvé. Druhým je sledování změn na entity (tak, aby efektivní příkazy aktualizace mohou být generovány). Toto chování lze vypnout pro konkrétní dotazy pomocí rozšíření AsNotTracking. EF Core také generuje SQL dotazy, které jsou obvykle velmi efektivní a v každém případě dokonale přijatelné z hlediska výkonu, ale pokud potřebujete jemnou kontrolu nad přesnýdotaz, který má být proveden, můžete předat vlastní SQL (nebo spustit uloženou proceduru) pomocí EF Jádro taky. V tomto případě Dapper stále překonává EF Core, ale jen mírně. Julie Lerman představuje některé údaje o výkonu ve svém článku MSDN z května 2016 [Dapper, Entity Framework a Hybridní aplikace](https://docs.microsoft.com/archive/msdn-magazine/2016/may/data-points-dapper-entity-framework-and-hybrid-apps). Další srovnávací údaje o výkonnosti pro různé metody přístupu k datům lze nalézt na [webu Dapper](https://github.com/StackExchange/Dapper).
+EF Core má dvě významné funkce, které poskytuje, které ji oddělují od Dapper, ale také přidat k jeho výkonu režie. První je překlad z výrazů LINQ do SQL. Tyto překlady jsou uloženy do mezipaměti, ale i tak je režie při jejich provádění poprvé. Druhým je sledování změn na entity (tak, aby efektivní příkazy aktualizace mohou být generovány). Toto chování lze vypnout pro konkrétní dotazy pomocí rozšíření AsNotTracking. EF Core také generuje dotazy SQL, které jsou obvykle velmi efektivní a v každém případě dokonale přijatelné z hlediska výkonu, ale pokud potřebujete jemné řízení nad přesný dotaz, který má být proveden, můžete předat vlastní SQL (nebo spustit uloženou proceduru) pomocí EF Core, taky. V tomto případě Dapper stále překonává EF Core, ale jen mírně. Julie Lerman představuje některé údaje o výkonu ve svém článku MSDN z května 2016 [Dapper, Entity Framework a Hybridní aplikace](https://docs.microsoft.com/archive/msdn-magazine/2016/may/data-points-dapper-entity-framework-and-hybrid-apps). Další srovnávací údaje o výkonnosti pro různé metody přístupu k datům lze nalézt na [webu Dapper](https://github.com/StackExchange/Dapper).
 
 Chcete-li zjistit, jak se syntaxe pro Dapper liší od EF Core, zvažte tyto dvě verze stejné metody pro načítání seznamu položek:
 

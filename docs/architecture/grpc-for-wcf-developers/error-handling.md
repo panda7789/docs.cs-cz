@@ -1,33 +1,33 @@
 ---
-title: Zpracování chyb – gRPC pro vývojáře WCF
+title: Zpracování chyb - gRPC pro vývojáře WCF
 description: Témata týkající se zpracování chyb v gRPC. Obsahuje tabulku nejčastěji používaných stavových kódů.
 ms.date: 09/02/2019
-ms.openlocfilehash: c380c651f854adc97e8b2ead36d30c3b83662aac
-ms.sourcegitcommit: 771c554c84ba38cbd4ac0578324ec4cfc979cf2e
+ms.openlocfilehash: 64a2355a8bd608c074f9bc420312b23aba0c1fb2
+ms.sourcegitcommit: e3cbf26d67f7e9286c7108a2752804050762d02d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/21/2020
-ms.locfileid: "77542790"
+ms.lasthandoff: 04/09/2020
+ms.locfileid: "80988944"
 ---
 # <a name="error-handling"></a>Zpracování chyb
 
-Windows Communication Foundation (WCF) používá <xref:System.ServiceModel.FaultException%601> a [FaultContract](xref:System.ServiceModel.FaultContractAttribute) k poskytování podrobných informací o chybách, včetně podpory standardu SOAP chyb.
+Windows Communication Foundation (WCF) používá <xref:System.ServiceModel.FaultException%601> a [FaultContract](xref:System.ServiceModel.FaultContractAttribute) poskytnout podrobné informace o chybě, včetně podpory standardu chyba SOAP.
 
-Aktuální verze gRPC bohužel neobsahuje sofistikovanější nalezené pomocí WCF a má pouze omezené integrované zpracování chyb na základě jednoduchých stavových kódů a metadat. V následující tabulce je Stručná příručka k nejčastěji používaným stavovým kódům:
+Bohužel, aktuální verze gRPC postrádá sofistikovanost nalezenou s WCF a má pouze omezené vestavěné zpracování chyb na základě jednoduchých stavových kódů a metadat. Následující tabulka obsahuje stručný průvodce nejčastěji používanými stavovými kódy:
 
 | Kód stavu | Problém |
 | ----------- | ------- |
-| `GRPC_STATUS_UNIMPLEMENTED` | Metoda nebyla zapsána. |
+| `GRPC_STATUS_UNIMPLEMENTED` | Metoda nebyla napsána. |
 | `GRPC_STATUS_UNAVAILABLE` | Problém s celou službou. |
 | `GRPC_STATUS_UNKNOWN` | Neplatná odpověď. |
 | `GRPC_STATUS_INTERNAL` | Problém s kódováním/dekódováním. |
-| `GRPC_STATUS_UNAUTHENTICATED` | Ověřování se nezdařilo. |
-| `GRPC_STATUS_PERMISSION_DENIED` | Ověření se nepovedlo. |
-| `GRPC_STATUS_CANCELLED` | Volání bylo zrušeno, obvykle volající. |
+| `GRPC_STATUS_UNAUTHENTICATED` | Ověření se nezdařilo. |
+| `GRPC_STATUS_PERMISSION_DENIED` | Autorizace se nezdařila. |
+| `GRPC_STATUS_CANCELLED` | Hovor byl zrušen, obvykle volajícím. |
 
-## <a name="raise-errors-in-aspnet-core-grpc"></a>Vyvolávání chyb v ASP.NET Core gRPC
+## <a name="raise-errors-in-aspnet-core-grpc"></a>Zvýšení chyb v ASP.NET Core gRPC
 
-Služba ASP.NET Core gRPC může odeslat chybovou odpověď vyvoláním `RpcException`, kterou může klient zachytit, jako kdyby byl ve stejném procesu. `RpcException` musí zahrnovat stavový kód a popis a může volitelně zahrnovat metadata a delší zprávu o výjimce. Metadata lze použít k odesílání podpůrných dat, podobně jako `FaultContract` objekty mohou pro chyby WCF přenášet další data.
+Služba ASP.NET Core gRPC může odeslat odpověď `RpcException`na chybu vyvoláním , který může být zachycen klientem, jako by byl ve stejném procesu. Musí `RpcException` obsahovat stavový kód a popis a volitelně může obsahovat metadata a delší zprávu o výjimce. Metadata lze použít k odeslání podpůrných dat, podobně jako `FaultContract` objekty mohou přenášet další data pro chyby WCF.
 
 ```csharp
 public async Task<GetPortfolioResponse> GetPortfolio(GetPortfolioRequest request, ServerCallContext context)
@@ -44,9 +44,9 @@ public async Task<GetPortfolioResponse> GetPortfolio(GetPortfolioRequest request
 }
 ```
 
-## <a name="catch-errors-in-grpc-clients"></a>Zachycení chyb v klientech gRPC
+## <a name="catch-errors-in-grpc-clients"></a>Zachytávat chyby v klientech gRPC
 
-Stejně jako klienti WCF můžou zachytit chyby <xref:System.ServiceModel.FaultException%601>, klient gRPC může zachytit `RpcException` a zpracovávat chyby. Vzhledem k tomu, že `RpcException` není obecný typ, nemůžete zachytávání různých typů chyb v různých blocích. Můžete ale použít C#funkci *filtry výjimek* pro deklaraci samostatných `catch`ch bloků pro různé stavové kódy, jak je znázorněno v následujícím příkladu:
+Stejně jako WCF <xref:System.ServiceModel.FaultException%601> klienti mohou zachytit chyby, `RpcException` gRPC klient může zachytit zpracování chyb. Protože `RpcException` není obecný typ, nelze zachytit různé typy chyb v různých blocích. Ale můžete použít C# *filtry výjimek* funkce deklarovat samostatné `catch` bloky pro různé stavové kódy, jak je znázorněno v následujícím příkladu:
 
 ```csharp
 try
@@ -65,12 +65,12 @@ catch (RpcException)
 ```
 
 > [!IMPORTANT]
-> Když zadáte další metadata pro chyby, nezapomeňte zdokumentovat příslušné klíče a hodnoty v dokumentaci k rozhraní API nebo v komentářích v souboru `.proto`.
+> Pokud zadáte další metadata pro chyby, nezapomeňte zdokumentovat příslušné klíče a hodnoty `.proto` v dokumentaci k rozhraní API nebo v komentářích v souboru.
 
-## <a name="grpc-richer-error-model"></a>model gRPC bohatých chyb
+## <a name="grpc-richer-error-model"></a>gRPC bohatší chybový model
 
-Google vyvinul [model rozsáhlejších chyb](https://cloud.google.com/apis/design/errors#error_model) , který je více podobný jako [FaultContract](xref:System.ServiceModel.FaultContractAttribute)WCF, ale tento model C# ještě není podporovaný. V současné době je dostupná jenom pro jazyky přejít, Java, Python a C++.
+Google vyvinul [bohatší chybový model,](https://cloud.google.com/apis/design/errors#error_model) který je spíše jako [WCF FaultContract](xref:System.ServiceModel.FaultContractAttribute), ale tento model není podporován v C# dosud. V současné době je k dispozici pouze pro Go, Java, Python a C++.
 
 >[!div class="step-by-step"]
 >[Předchozí](metadata.md)
->[Další](ws-protocols.md)
+>[další](ws-protocols.md)

@@ -2,12 +2,12 @@
 title: Nasazení existujících aplikací .NET jako kontejnery Windows
 description: Modernizace stávajících aplikací .NET pomocí Azure Cloudu a kontejnerů Windows | Nasazení existujících aplikací .NET jako kontejnerů Windows
 ms.date: 04/29/2018
-ms.openlocfilehash: 28568ca363bfc8100f78b100f8a7f0242c4f04c9
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: c99c2e756320fc886203efcbf98a81e571d907e5
+ms.sourcegitcommit: e3cbf26d67f7e9286c7108a2752804050762d02d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "73089561"
+ms.lasthandoff: 04/09/2020
+ms.locfileid: "80987969"
 ---
 # <a name="deploy-existing-net-apps-as-windows-containers"></a>Nasazení existujících aplikací .NET jako kontejnery Windows
 

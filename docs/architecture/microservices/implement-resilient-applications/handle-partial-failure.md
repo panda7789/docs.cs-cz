@@ -2,18 +2,18 @@
 title: Zpracování částečného selhání
 description: Zjistěte, jak řádně zpracovat částečné chyby. Mikroslužba nemusí být plně funkční, ale stále může být schopen provést některé užitečné práce.
 ms.date: 10/16/2018
-ms.openlocfilehash: f00e5349df74b543deb6ac941c751cb130b3837c
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 0300719360e1a2500db0af8454c91fdfe2e5b09b
+ms.sourcegitcommit: e3cbf26d67f7e9286c7108a2752804050762d02d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "73733004"
+ms.lasthandoff: 04/09/2020
+ms.locfileid: "80988867"
 ---
 # <a name="handle-partial-failure"></a>Zpracování částečné poruchy
 
 V distribuovaných systémech, jako jsou aplikace založené na mikroslužbách, existuje stále přítomné riziko částečného selhání. Například jeden mikroslužbu/kontejner může selhat nebo nemusí být k dispozici reagovat na krátkou dobu, nebo jeden virtuální počítač nebo server může dojít k chybě. Vzhledem k tomu, že klienti a služby jsou samostatné procesy, služba nemusí být schopna včas reagovat na požadavek klienta. Služba může být přetížena a reagovat velmi pomalu na požadavky nebo jednoduše není přístupná na krátkou dobu z důvodu problémů se sítí.
 
-Zvažte například stránku Podrobnosti objednávky z ukázkové aplikace eShopOnContainers. Pokud řazení mikroslužby nereaguje, když se uživatel pokusí odeslat objednávku, chybná implementace klientského procesu (webová aplikace MVC) – například pokud by kód klienta používal synchronní rpc bez časového omezení – by blokoval podprocesy po neomezenou dobu čeká na odpověď. Kromě vytvoření špatné uživatelské prostředí, každé nereagující čekání spotřebovává nebo blokuje vlákno a vlákna jsou velmi cenné ve vysoce škálovatelné aplikace. Pokud existuje mnoho blokovaných vláken, nakonec může dojít k běhu aplikace. V takovém případě aplikace může být globálně nereagující namísto jen částečně neodpovídá, jak je znázorněno na obrázku 8-1.
+Zvažte například stránku Podrobnosti objednávky z ukázkové aplikace eShopOnContainers. Pokud řazení mikroslužby nereaguje, když se uživatel pokusí odeslat objednávku, chybná implementace klientského procesu (webová aplikace MVC) – například pokud by kód klienta používal synchronní rpc bez časového omezení – by blokoval podprocesy neomezeně dlouho čekající na odpověď. Kromě vytvoření špatné uživatelské prostředí, každé nereagující čekání spotřebovává nebo blokuje vlákno a vlákna jsou velmi cenné ve vysoce škálovatelné aplikace. Pokud existuje mnoho blokovaných vláken, nakonec může dojít k běhu aplikace. V takovém případě aplikace může být globálně nereagující namísto jen částečně neodpovídá, jak je znázorněno na obrázku 8-1.
 
 ![Diagram zobrazující částečné chyby.](./media/handle-partial-failure/partial-failures-diagram.png)
 

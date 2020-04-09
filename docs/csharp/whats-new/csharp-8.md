@@ -1,13 +1,13 @@
 ---
 title: Co je nového v C# 8.0 - C# Guide
 description: Získejte přehled o nových funkcích dostupných v c# 8.0.
-ms.date: 09/20/2019
-ms.openlocfilehash: 0013f621268e2a4f1b916b226d83d18c68445ed1
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.date: 04/07/2020
+ms.openlocfilehash: 1a005750751129969f2d1e9caf156330dbe61cb2
+ms.sourcegitcommit: e3cbf26d67f7e9286c7108a2752804050762d02d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79399677"
+ms.lasthandoff: 04/09/2020
+ms.locfileid: "80989204"
 ---
 # <a name="whats-new-in-c-80"></a>Co je nového v C# 8.0
 
@@ -25,6 +25,7 @@ C# 8.0 přidává do jazyka C# následující funkce a vylepšení:
 - [Jednorázové ref struktury](#disposable-ref-structs)
 - [Odkazové typy s možnou hodnotou null](#nullable-reference-types)
 - [Asynchronní datové proudy](#asynchronous-streams)
+- [Asynchronní jednorázové](#asynchronous-disposable)
 - [Indexy a rozsahy](#indices-and-ranges)
 - [Přiřazení null-coalescing](#null-coalescing-assignment)
 - [Nespravované konstruované typy](#unmanaged-constructed-types)
@@ -392,6 +393,10 @@ await foreach (var number in GenerateSequence())
 ```
 
 Můžete zkusit asynchronní proudy sami v našem kurzu o [vytváření a využívání asynchronních proudů](../tutorials/generate-consume-asynchronous-stream.md). Ve výchozím nastavení jsou prvky datového proudu zpracovány v zachyceném kontextu. Pokud chcete zakázat zachycení kontextu, použijte <xref:System.Threading.Tasks.TaskAsyncEnumerableExtensions.ConfigureAwait%2A?displayProperty=nameWithType> metodu rozšíření. Další informace o kontextech synchronizace a zachycení aktuálního kontextu naleznete v článku o [využití asynchronního vzoru založeného na úlohách](../../standard/asynchronous-programming-patterns/consuming-the-task-based-asynchronous-pattern.md).
+
+## <a name="asynchronous-disposable"></a>Asynchronní jednorázové
+
+Počínaje C# 8.0 jazyk podporuje asynchronní jednorázové typy, které implementují <xref:System.IAsyncDisposable?displayProperty=nameWithType> rozhraní. Operand výrazu `using` může implementovat buď <xref:System.IDisposable> nebo <xref:System.IAsyncDisposable>. `IAsyncDisposable`V případě , kompilátor generuje `await` kód <xref:System.Threading.Tasks.Task> vrácené z <xref:System.IAsyncDisposable.DisposeAsync%2A?displayProperty=nameWithType>. Další informace naleznete v [ `using` prohlášení](../language-reference/keywords/using-statement.md).
 
 ## <a name="indices-and-ranges"></a>Indexy a rozsahy
 

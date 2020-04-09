@@ -3,12 +3,12 @@ title: Navrhování cloudových nativních aplikací .NET pro Azure
 description: Průvodce pro vytváření cloudnativních aplikací využívajících kontejnery, mikroslužby a funkce Bez serveru Azure.
 author: ardalis
 ms.date: 03/07/2019
-ms.openlocfilehash: 7f14a690d0153edc43f0ce7f4e91c9e9cd2c6858
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: cf3be07f0d37aacf4f0252ef2f4d922b7be93eee
+ms.sourcegitcommit: e3cbf26d67f7e9286c7108a2752804050762d02d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "71696778"
+ms.lasthandoff: 04/09/2020
+ms.locfileid: "80989061"
 ---
 # <a name="architecting-cloud-native-net-applications-for-azure"></a>Navrhování cloudových nativních aplikací .NET pro Azure
 
@@ -26,7 +26,7 @@ One Microsoft Way
 
 Redmond, Washington 98052-6399
 
-Autorská práva © 2019 společností Microsoft Corporation
+Copyright &copy; 2019 od společnosti Microsoft Corporation
 
 Všechna práva vyhrazena. Žádná část obsahu této knihy nesmí být reprodukována nebo přenášena v jakékoli formě nebo jakýmkoli způsobem bez písemného souhlasu vydavatele.
 
@@ -46,7 +46,7 @@ Autoři:
 
 > **Steve "ardalis" Smith** - softwarový architekt a trenér - [Ardalis.com](https://ardalis.com)
 >
-> **Rob Vettor** - Microsoft - Hlavní architekt cloudového systému / ARCHITEKT IP - [RobVettor.com](https://robvettor.com)
+> **Rob Vettor** - Microsoft - hlavní architekt cloudového systému / ARCHITEKT IP - [thinkingincloudnative.com](http://thinkingincloudnative.com/about/)
 
 Účastníci a recenzenti:
 

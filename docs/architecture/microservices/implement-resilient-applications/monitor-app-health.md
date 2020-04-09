@@ -2,12 +2,12 @@
 title: Monitorování stavu
 description: Prozkoumejte jeden způsob implementace monitorování stavu.
 ms.date: 03/02/2020
-ms.openlocfilehash: d3d2bc72cf29b3d1ac93191e7ff2bd827c9ee68d
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 88354ae0ae59dbfbe40dbe1b25320f8f93d042ce
+ms.sourcegitcommit: e3cbf26d67f7e9286c7108a2752804050762d02d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79401709"
+ms.lasthandoff: 04/09/2020
+ms.locfileid: "80988853"
 ---
 # <a name="health-monitoring"></a>Monitorování stavu
 
@@ -257,7 +257,7 @@ public void ConfigureServices(IServiceCollection services)
 public void Configure(IApplicationBuilder app, IHostingEnvironment env)
 {
     //…
-    app.UseHealthChecksUI(config=> config.UIPath = “/hc-ui”);
+    app.UseHealthChecksUI(config=> config.UIPath = "/hc-ui");
     //…
 }
 ```

@@ -1,85 +1,85 @@
 ---
 title: Úvod k aplikacím nativním pro cloud
-description: Další informace o computingu nativního cloudu
+description: Další informace o cloudově nativním výpočetním techniku
 author: robvet
 ms.date: 08/26/2019
-ms.openlocfilehash: 1d3679c7f1ab940d7ab3e194c200483b63276883
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: c9ffd34ec3deb04abddbbf85a9e5a6ed2b57c8f9
+ms.sourcegitcommit: e3cbf26d67f7e9286c7108a2752804050762d02d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73087238"
+ms.lasthandoff: 04/09/2020
+ms.locfileid: "80989048"
 ---
 # <a name="introduction-to-cloud-native-applications"></a>Úvod k aplikacím nativním pro cloud
 
 [!INCLUDE [book-preview](../../../includes/book-preview.md)]
 
-Druhý den, v kanceláři, pracuje na "dalších velkých věcí".
+Další den, v kanceláři, pracuje na "další velké věci."
 
-Vaše cellphoneové prstence. Je to uživatelsky přívětivý náborový pracovník – ten, který se na nové úlohy zavolá dvakrát denně.
+Zazvoní ti mobil. Je to tvůj přátelský náborář, ten, co ti dvakrát denně volá kvůli nové práci.
 
-V tuto chvíli se ale liší: spuštění, jmění a dostatek finančních prostředků.
+Ale tentokrát je to jiné: Start-up, spravedlnost a spousta finančních prostředků.
 
-Zmínka o cloudových a špičkových technologiích vás na hraničních zařízeních nabízí.
+Zmínka o cloudu a špičkové technologii vás posouvá přes okraj.
 
-Rychle předejte pár týdnů a teď jste nový zaměstnanec v relaci návrhu, která je navržena jako hlavní elektronického obchodování aplikace. Chystáte se dokončit s dalšími hlavními elektronického obchodování servery.
+Rychlý posun vpřed několik týdnů a vy jste nyní nový zaměstnanec v návrhu zasedání architekta hlavní eCommerce aplikace. Budete kompletní s dalšími předními eCommerce stránky.
 
-Jak ho budete sestavovat?
+Jak to postavíš?
 
-Pokud budete postupovat podle pokynů v posledních 15 letech, pravděpodobně sestavíte systém uvedený na obrázku 1,1.
+Pokud se budete řídit pokyny z posledních 15 let, budete s největší pravděpodobností stavět systém uvedený na obrázku 1.1.
 
-![Tradiční design monolitické](./media/monolithic-design.png)
+![Tradiční monolitický design](./media/monolithic-design.png)
 
-**Obrázek 1-1**. Tradiční design monolitické
+**Obrázek 1-1**. Tradiční monolitický design
 
-Vytvoříte velkou základní aplikaci obsahující všechny vaše doménové logiky. Obsahuje i moduly, jako je identita, katalog, řazení a další. Základní aplikace komunikuje s velkou relační databází. Jádro zpřístupňuje funkce přes rozhraní HTML.
+Vytvořit velké základní aplikace obsahující všechny logiky domény. Obsahuje moduly, jako je identita, katalog, řazení a další. Základní aplikace komunikuje s velkou relační databází. Jádro poskytuje funkce prostřednictvím rozhraní HTML.
 
-Blahopřejeme!  Právě jste vytvořili aplikaci monolitické.
+Blahopřejeme!  Právě jste vytvořili monolitickou aplikaci.
 
-Ne vše je chybné. Monolitů nabízí několik různých výhod. Například jsou jednoduché...
+Ne všechno je špatné. Monolity nabízejí některé zřetelné výhody. Například, oni jsou přímočaré ...
 
-- Sestavení
+- sestavení
 - test
-- nasazení
-- Poradce
-- měřítko
+- Nasazení
+- troubleshoot
+- scale
 
-Mnoho úspěšných aplikací, které dnes existovaly, bylo vytvořeno jako monolitů. Aplikace je vybrána a nadále se vyvíjí, iterace po iteraci přidá další a další funkce.
+Mnoho úspěšných aplikací, které existují dnes byly vytvořeny jako monolity. Aplikace je hit a nadále se vyvíjí, iterace po iteraci, přidání další a další funkce.
 
-V určitém okamžiku ale začnete Uncomfortable. Narazíte na ztrátu řízení aplikace. V době, kdy je to možné, se nepůjde rozroste a nakonec zadáte stav známý jako v případě výpadku **strach**.
+V určitém okamžiku se však začnete cítit nepříjemně. Zjistíte, že ztrácíte kontrolu nad aplikací. Jak plyne čas, pocit se stává intenzivnější a nakonec vstoupíte do stavu známého jako **cyklus strachu**.
 
-- Aplikace se stala, takže ji nikdo nerozumí.
-- Nejste se obávat provádění změn – každá změna má nezamýšlené a nákladné vedlejší účinky.
-- Nové funkce nebo opravy se stávají podniknout, časově náročné a náročné na implementaci.
-- Každá verze je tak malá, protože může vyžadovat úplné nasazení celé aplikace.
-- Jedna nestabilní součást může způsobit selhání celého systému.
-- Nové technologie a architektury nejsou možností.
-- Je obtížné implementovat metodologie agilního doručování.
-- Nastavení eroze architektury v nástroji jako základ kódu se zhoršila s nikdy nekonečnými "speciálními případy".
-- Konzultanti vás upozorní, že ji přepsat.
+- Aplikace se stala tak nesmírně komplikovanou, že jí nikdo nerozumí.
+- Bojíte se změn - každá změna má nezamýšlené a nákladné vedlejší účinky.
+- Nové funkce / opravy se stávají složitými, časově náročnými a nákladnými implementací.
+- Každá verze tak malá, jak to může být vyžaduje úplné nasazení celé aplikace.
+- Jedna nestabilní součást může srazit celý systém.
+- Nové technologie a rámce nepřichází v úvahu.
+- Je obtížné implementovat agilní metodiky doručování.
+- Architektonická eroze nastává jako základ kódu, který se zhoršuje s nekonečnými "zvláštními případy".
+- Konzultanti vám řeknou, abyste to přepsali.
 
-Řada organizací vyřešila cyklus monolitické strach tím, že přijímá cloudový nativní přístup k vytváření systémů. Obrázek 1-2 ukazuje stejný systém sestavený s použitím techniků a postupů nativních pro Cloud.
+Mnoho organizací se zabývalo monolitickým cyklem strachu přijetím cloudově nativního přístupu k budování systémů. Obrázek 1-2 ukazuje stejný systém vytvořený s použitím technik a postupů nativních pro cloud.
 
-![Návrh nativního cloudu](./media/cloud-native-design.png)
+![Návrh nativní pro cloud](./media/cloud-native-design.png)
 
-**Obrázek 1-2**. Návrh nativního cloudu
+**Obrázek 1-2**. Návrh nativní pro cloud
 
-Všimněte si, jak se aplikace rozloží v rámci sady malých izolovaných mikroslužeb. Každá služba je samostatně obsažená a zapouzdřuje svůj vlastní kód, data a závislosti. Každá je nasazena v kontejneru softwaru a spravovaná nástrojem kontejner Orchestrator. Místo velké relační databáze je každá služba vlastníkem vlastního úložiště dat, což závisí na závislosti na potřebách dat. Všimněte si, že některé služby závisí na relační databázi, ale v databázích NoSQL. Jedna služba ukládá svůj stav do distribuované mezipaměti. Všimněte si, jak všechny trasy přenosů prostřednictvím služby brány rozhraní API zodpovídá za směrování provozu do základních back-endové služby a vynucování mnoha otázek pro průřezy. Nejdůležitější je, že aplikace plně využívá možnosti škálovatelnosti a odolnosti zjištěné v moderních cloudových platformách.
+Všimněte si, jak se aplikace rozloží napříč sadou malých izolovaných mikroslužeb. Každá služba je samostatná a zapouzdřuje svůj vlastní kód, data a závislosti. Každý je nasazen v kontejneru softwaru a spravuje orchestrátor kontejneru. Namísto velké relační databáze, každá služba vlastní úložiště dat, typ, který se liší v závislosti na potřebách dat. Všimněte si, jak některé služby závisí na relační databáze, ale jiné na NoSQL databází. Jedna služba ukládá svůj stav v distribuované mezipaměti. Všimněte si, jak všechny dopravní trasy prostřednictvím služby brány rozhraní API, která je zodpovědná za směrování provozu do základní back-endové služby a vynucování mnoho průřezové obavy. A co je nejdůležitější, aplikace plně využívá funkce škálovatelnosti a odolnosti, které se nacházejí v moderních cloudových platformách.
 
-### <a name="cloud-native-computing"></a>Nativní výpočetní prostředí pro Cloud
+### <a name="cloud-native-computing"></a>Cloud-nativní výpočetní technika
 
-Hmm... Právě jsme použili termín "*Cloud Native*". Nejdřív jste si mysleli, že "co přesně to znamená?" Jiný obor Buzzword concocted dodavatelé softwaru o uvedení na trh? "
+Hmm... Právě jsme použili termín "*Cloud Native*". Nejprve jste si mysleli, že by mohlo být: "Co přesně to znamená?" Další průmyslové módní slovo vymyšlené dodavateli softwaru na trh více věcí?"
 
-Naštěstí je mnohem odlišná a snad tato kniha vám pomůže vás posvědčit.
+Naštěstí je to daleko jiné a doufejme, že tato kniha vám pomůže přesvědčit.
 
-Cloudový nativní se v krátké době stal vývojovým trendem v softwarovém odvětví. Je to nový způsob, jak si představit informace o vytváření rozsáhlých, složitých systémů, přístupu, který plně využívá moderní postupy pro vývoj softwaru, technologie a cloudovou infrastrukturu. Přístup mění způsob návrhu, implementace, nasazení a zprovoznění systémů.
+Během krátké doby se rodák z cloudu stal hnacím trendem v softwarovém průmyslu. Je to nový způsob, jak přemýšlet o budování velkých a složitých systémů, což je přístup, který plně využívá moderní postupy vývoje softwaru, technologie a cloudovou infrastrukturu. Přístup mění způsob, jakým navrhujete, implementujete, nasazujete a zprovozňujete systémy.
 
-Na rozdíl od souvislého hypeu, který je v našem odvětví, je cloudový nativní Cloud "*for-Real*". Vezměte v úvahu [Cloud Native Computing Foundation](https://www.cncf.io/) (CNCF), konsorcium více než 300 hlavních společností s Chartou pro vytváření cloudových všudypřítomných computingu napříč technologiemi a cloudových zásobníků. Jako jedna z nejvíc neužitečných Open Source skupin je hostitelem mnoha nejrychlejších open source projektů v GitHubu. Zahrnují projekty, jako jsou [Kubernetes](https://kubernetes.io/), [Prometheus](https://prometheus.io/), [Helm](https://helm.sh/), [zástupné](https://www.envoyproxy.io/)a [gRPC](https://grpc.io/).
+Na rozdíl od neustálého humbuku, který pohání náš průmysl, cloud nativní je "*pro-real*". Vezměme si [Cloud Native Computing Foundation](https://www.cncf.io/) (CNCF), konsorcium více než 300 velkých korporací s chartou, která činí cloudově nativní výpočetní techniku všudypřítomnou napříč technologiemi a cloudovými zásobníky. Jako jedna z nejvlivnějších open source skupin hostí mnoho nejrychleji rostoucích open source projektů v GitHubu. Patří mezi ně projekty jako [Kubernetes](https://kubernetes.io/), [Prometheus](https://prometheus.io/), [Helm](https://helm.sh/), [Envoy](https://www.envoyproxy.io/)a [gRPC](https://grpc.io/).
 
-CNCF podporuje ekosystém open source a neutrálního dodavatele. Po tomto vedoucím předvedeme zásady, vzory a osvědčené postupy pro Cloud, které jsou nezávislá technologií. Ve stejnou chvíli probereme služby a infrastrukturu, které jsou k dispozici v cloudu Microsoft Azure pro vytváření nativních systémů cloudu.
+CNCF podporuje ekosystém open-source a vendor-neutrality. V návaznosti na toto vodítko uvádíme zásady, vzory a osvědčené postupy, které jsou agnostik emitované do cloudu. Současně diskutujeme o službách a infrastruktuře, které jsou dostupné v cloudu Microsoft Azure pro vytváření cloudových nativních systémů.
 
-Takže co přesně je cloudová nativní? Nasaďte se zpátky, uvolněte a sdělte nám, jak vám pomůžeme prozkoumat tento nový svět.
+Takže, co přesně je Cloud Native? Sednout si, relaxovat a dovolte nám, abychom vám pomohli prozkoumat tento nový svět.
 
 >[!div class="step-by-step"]
 >[Předchozí](index.md)
->[Další](definition.md)
+>[další](definition.md)

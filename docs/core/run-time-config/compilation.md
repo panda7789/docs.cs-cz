@@ -3,12 +3,12 @@ title: Nastavení konfigurace kompilace
 description: Přečtěte si o nastavení za běhu, které konfigurují, jak kompilátor JIT funguje pro aplikace .NET Core.
 ms.date: 11/27/2019
 ms.topic: reference
-ms.openlocfilehash: adf1f01dba7387b89ee56784e33653d6a132c0e3
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: ac51aa13254b2f2b1fdd8d1dd9c52559831a1659
+ms.sourcegitcommit: e3cbf26d67f7e9286c7108a2752804050762d02d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "77092886"
+ms.lasthandoff: 04/09/2020
+ms.locfileid: "80989113"
 ---
 # <a name="run-time-configuration-options-for-compilation"></a>Možnosti konfigurace za běhu pro kompilaci
 
@@ -19,7 +19,7 @@ ms.locfileid: "77092886"
   - Druhá vrstva generuje optimalizovaný kód na pozadí ("optimalizace JIT").
 - V rozhraní .NET Core 3.0 a novější je ve výchozím nastavení povolena vrstvená kompilace.
 - V rozhraních .NET Core 2.1 a 2.2 je vrstvená kompilace ve výchozím nastavení zakázána.
-- Další informace naleznete v [průvodci vrstvenou kompilací](https://github.com/dotnet/runtime/blob/master/docs/design/features/tiered-compilation-guide.md).
+- Další informace naleznete v [průvodci vrstvenou kompilací](https://github.com/dotnet/runtime/blob/master/docs/design/features/tiered-compilation.md).
 
 | | Název nastavení | Hodnoty |
 | - | - | - |

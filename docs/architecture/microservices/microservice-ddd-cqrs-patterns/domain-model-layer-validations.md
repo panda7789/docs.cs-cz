@@ -2,12 +2,12 @@
 title: Návrh ověřování ve vrstvě doménového modelu
 description: Architektura mikroslužeb .NET pro kontejnerizované aplikace .NET | Pochopit klíčové pojmy ověření modelu domény.
 ms.date: 10/08/2018
-ms.openlocfilehash: 98ccc5df84c9f6f402ecbee83b077c806d6a76fc
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: d2efc5f3b3267c4573409952791c6e883a01aae2
+ms.sourcegitcommit: e3cbf26d67f7e9286c7108a2752804050762d02d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75899670"
+ms.lasthandoff: 04/09/2020
+ms.locfileid: "80988502"
 ---
 # <a name="design-validations-in-the-domain-model-layer"></a>Ověření návrhu ve vrstvě modelu domény
 
@@ -57,7 +57,7 @@ Datové poznámky, jako jsou atributy Povinné nebo MaxLength, lze použít ke k
 
 Data anotace <xref:System.ComponentModel.DataAnnotations.IValidatableObject> a rozhraní lze stále použít pro ověření modelu během vazby modelu, před vyvolání akce řadiče jako obvykle, ale tento model má být ViewModel nebo DTO a to je MVC nebo ROZHRANÍ rozhraní se týká není problém modelu domény.
 
-Po odstranění koncepčního rozdílu můžete stále používat datové `IValidatableObject` poznámky a ve třídě entity pro ověření, pokud vaše akce obdrží parametr objektu třídy entity, což se nedoporučuje. V takovém případě dojde k ověření při vazbě modelu, těsně před vyvoláním akce a můžete zkontrolovat vlastnost ModelState.IsValid řadiče, chcete-li zkontrolovat výsledek, ale pak znovu dojde k řadiči, nikoli před uchováním objektu entity v DbContext, stejně jako tomu bylo od EF 4.x.
+Po odstranění koncepčního rozdílu můžete stále používat datové `IValidatableObject` poznámky a ve třídě entity pro ověření, pokud vaše akce obdrží parametr objektu třídy entity, což se nedoporučuje. V takovém případě dojde k ověření při vazby modelu, těsně před vyvolání akce a můžete zkontrolovat řadič modelState.IsValid vlastnost zkontrolovat výsledek, ale pak znovu se to stane v řadiči, ne před uchování objektu entity v DbContext, jako tomu bylo od EF 4.x.
 
 Stále můžete implementovat vlastní ověření ve třídě entity pomocí `IValidatableObject.Validate` datových anotací a metody přepsáním metody SaveChanges společnosti DbContext.
 

@@ -2,12 +2,12 @@
 title: Návrh doménového modelu mikroslužby
 description: Architektura mikroslužeb .NET pro kontejnerizované aplikace .NET | Seznamte se s klíčovými koncepty při navrhování modelu domény orientovaného na DDD.
 ms.date: 01/30/2020
-ms.openlocfilehash: 628fb5c76362ec8f48367b3d69d16ea6ebd24f09
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 64860d75dca645904e973a4b8927a716a1603394
+ms.sourcegitcommit: e3cbf26d67f7e9286c7108a2752804050762d02d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "77502322"
+ms.lasthandoff: 04/09/2020
+ms.locfileid: "80988411"
 ---
 # <a name="design-a-microservice-domain-model"></a>Návrh modelu domény mikroslužeb
 

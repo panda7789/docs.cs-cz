@@ -4,12 +4,12 @@ description: Architekt moderní webové aplikace s ASP.NET core a Azure | vývoj
 author: ardalis
 ms.author: wiwagn
 ms.date: 12/04/2019
-ms.openlocfilehash: a18b4dfc60c7d3971136f73f333b7225735710b3
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 3de70af23206b0ae0525541b3d2cb480dc5bb882
+ms.sourcegitcommit: e3cbf26d67f7e9286c7108a2752804050762d02d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "77503955"
+ms.lasthandoff: 04/09/2020
+ms.locfileid: "80987904"
 ---
 # <a name="develop-aspnet-core-mvc-apps"></a>Vývoj aplikací ASP.NET Core MVC
 
@@ -51,7 +51,7 @@ app.UseEndpoints(endpoints =>
 
 V tomto příkladu byla do směrovací tabulky přidána trasa s názvem "výchozí". Definuje šablonu trasy se zástupnými symboly pro _kontroler_, _akci_a _id_. Řadič a zástupné symboly akce mají výchozí zadané ("Home" a "Index", v uvedeném pořadí) a zástupný symbol id je volitelný (na základě "?" na něj aplikovaný). Konvence definované zde uvádí, že první část požadavku by měla odpovídat názvu řadiče, druhá část akce a pak v případě potřeby třetí část bude představovat id parametr. Konvenční trasy jsou obvykle definovány na jednom místě pro aplikaci, například v Configure metoda ve třídě Startup.
 
-Atribut trasy jsou použity pro řadiče a akce přímo, nikoli určené globálně. To má tu výhodu, že je mnohem více zjistitelné, když se díváte na určitou metodu, ale znamená to, že informace o směrování nejsou uchovávány na jednom místě v aplikaci. Pomocí tras atributů můžete snadno zadat více tras pro danou akci a také kombinovat trasy mezi řadiči a akcemi. Například:
+Atribut trasy jsou použity pro řadiče a akce přímo, nikoli určené globálně. To má tu výhodu, že je mnohem více zjistitelné, když se díváte na určitou metodu, ale znamená to, že informace o směrování nejsou uchovávány na jednom místě v aplikaci. Pomocí tras atributů můžete snadno zadat více tras pro danou akci a také kombinovat trasy mezi řadiči a akcemi. Příklad:
 
 ```csharp
 [Route("Home")]

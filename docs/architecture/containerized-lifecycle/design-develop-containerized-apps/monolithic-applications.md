@@ -2,12 +2,12 @@
 title: Monolitické aplikace
 description: Seznamte se s základními koncepty pro kontejnerizaci monolitických aplikací.
 ms.date: 02/15/2019
-ms.openlocfilehash: 8664153ee2e9d1d253164e43ac13105f6dbf476c
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 3c186f6a300588816916886927f93e0c06ebd6bc
+ms.sourcegitcommit: e3cbf26d67f7e9286c7108a2752804050762d02d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "72771034"
+ms.lasthandoff: 04/09/2020
+ms.locfileid: "80988983"
 ---
 # <a name="monolithic-applications"></a>Monolitické aplikace
 
@@ -67,7 +67,7 @@ Chcete-li se dozvědět o tom, jak "zvednout a posunout" monolitické aplikace s
 
 Buď proto, že chcete získat rychlé ověření kontejneru nasazeného do Azure, nebo proto, že aplikace je jednoduše aplikace s jedním kontejnerem, Azure App Services poskytuje skvělý způsob, jak poskytovat škálovatelné služby s jedním kontejnerem.
 
-Používání služby Azure App Service je intuitivní a můžete rychle začít pracovat, protože poskytuje skvělou integraci Gitu, která umožňuje vzít váš kód, sestavit ho v Microsoft Visual Studiu a přímo ho nasadit do Azure. Ale tradičně (bez Dockeru), pokud jste potřebovali další funkce, architektury nebo závislosti, které nejsou podporované ve Službách aplikací, musíte na to počkat, dokud tým Azure neaktualizuje tyto závislosti ve službě App Service nebo přejde na jiné služby, jako je Service Fabric, cloudové služby nebo dokonce prosté virtuální počítače, pro které máte další kontrolu a můžete nainstalovat požadovanou komponentu nebo architekturu pro vaši aplikaci.
+Používání služby Azure App Service je intuitivní a můžete rychle začít pracovat, protože poskytuje skvělou integraci Gitu, která umožňuje vzít váš kód, sestavit ho v Microsoft Visual Studiu a přímo ho nasadit do Azure. Ale tradičně (bez Dockeru), pokud potřebujete další možnosti, architektury nebo závislosti, které nejsou podporované ve službách App Services, musíte na to počkat, dokud tým Azure neaktualizuje tyto závislosti ve službě App Service nebo přejde na jiné služby, jako je Service Fabric, Cloud Services nebo dokonce prosté virtuální počítače, pro které máte další kontrolu a můžete nainstalovat požadovanou komponentu nebo architekturu pro vaši aplikaci.
 
 Teď, jak je znázorněno na obrázku 4-4, při použití Visual Studia 2017, podpora kontejnerů ve službě Azure App Service vám dává možnost zahrnout vše, co chcete v prostředí aplikace. Pokud jste do aplikace přidali závislost, protože ji spouštěte v kontejneru, získáte možnost zahrnutí těchto závislostí do image Dockerfile nebo Dockeru.
 
@@ -75,7 +75,7 @@ Teď, jak je znázorněno na obrázku 4-4, při použití Visual Studia 2017, po
 
 **Obrázek 4-4**. Publikování kontejneru do služby Azure App Service z aplikací a kontejnerů Visual Studia
 
-Obrázek 4-4 také ukazuje, že tok publikování tlačí image prostřednictvím registru kontejnerů, což může být Registr kontejnerů Azure (registr v blízkosti vašich nasazení v Azure a zabezpečené skupinami a účty Služby Azure Active Directory) nebo jakýkoli jiný registr Dockeru jako je Docker Hub nebo místní registry.
+Obrázek 4-4 také ukazuje, že tok publikování tlačí image prostřednictvím registru kontejnerů, což může být Registr kontejnerů Azure (registr v blízkosti vašich nasazení v Azure a zabezpečené skupinami a účty Služby Azure Active Directory) nebo jakýkoli jiný registr Docker, jako je Docker Hub nebo místní registry.
 
 >[!div class="step-by-step"]
 >[Předchozí](common-container-design-principles.md)

@@ -2,12 +2,12 @@
 title: Kroky ve vývoji DevOps vnější smyčky pro aplikaci Dockeru
 description: Naučte se kroky pro "vnější smyčku" pracovního postupu DevOps
 ms.date: 02/15/2019
-ms.openlocfilehash: 735f92c00cd6279649ec3b0c35cfb00543f21a8c
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: fdda1b6a2deb08ed97867583fcc8048d4dba880c
+ms.sourcegitcommit: e3cbf26d67f7e9286c7108a2752804050762d02d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75936784"
+ms.lasthandoff: 04/09/2020
+ms.locfileid: "80988970"
 ---
 # <a name="steps-in-the-outer-loop-devops-workflow-for-a-docker-application"></a>Kroky ve vývoji DevOps vnější smyčky pro aplikaci Dockeru
 
@@ -27,7 +27,7 @@ Tento krok je podrobně vysvětlen v kapitole 4, ale pro rekapitulaci, zde je m�
 
 V tomto kroku musíte mít systém správy verzí shromáždit konsolidovanou verzi všech kódů pocházejících z různých vývojářů v týmu.
 
-I když se správa zdrojového kódu (SCC) a správa zdrojového kódu mohou většině vývojářů jevit jako druhořadé povahy, při vytváření aplikací Dockeru v životním cyklu DevOps je důležité zdůraznit, že s aplikací nesmíte odesílat ibližové image Dockeru. přímo do globálního registru Docker (jako je Azure Container Registry nebo Docker Hub) z počítače vývojáře. Naopak image Dockeru, které mají být uvolněny a nasazeny do produkčního prostředí, musí být vytvořeny výhradně na zdrojovém kódu, který je integrován do globálního sestavení nebo kanálu CI na základě úložiště zdrojového kódu (například Git).
+I když řízení zdrojového kódu (SCC) a správa zdrojového kódu se může zdát druhé povahy pro většinu vývojářů, při vytváření aplikací Dockeru v životním cyklu DevOps, je důležité zdůraznit, že nesmíte odesílat ibližování Dockeru s aplikací přímo do globálního registru Dockeru (jako je Azure Container Registry nebo Docker Hub) z počítače vývojáře. Naopak image Dockeru, které mají být uvolněny a nasazeny do produkčního prostředí, musí být vytvořeny výhradně na zdrojovém kódu, který je integrován do globálního sestavení nebo kanálu CI na základě úložiště zdrojového kódu (například Git).
 
 Místní bitové kopie, generované vývojáři, by měly být používány pouze jimi při testování v rámci svých vlastních počítačů. To je důvod, proč je důležité mít kanál DevOps aktivován z kódu SCC.
 
@@ -100,7 +100,7 @@ S těmito úlohami Visual Studio Team Services, sestavení Linux-Docker Host/VM 
 
 Většina aplikací Dockeru se obvykle skládá z více kontejnerů, nikoli z jednoho kontejneru. Dobrým příkladem je aplikace orientovaná na mikroslužby, pro kterou byste měli jeden kontejner na mikroslužbu. Ale i bez přísné dodržování vzorců přístupu mikroslužeb je pravděpodobné, že vaše aplikace Dockeru by se skládala z více kontejnerů nebo služeb.
 
-Proto po sestavení kontejnerů aplikace v kanálu CI, je také nutné nasadit, integrovat a otestovat aplikaci jako celek se všemi jeho kontejnery v rámci integrace hostitele Dockeru nebo dokonce do testovacího clusteru, do kterého jsou vaše kontejnery Distribuované.
+Proto po sestavení kontejnerů aplikace v kanálu CI, je také nutné nasadit, integrovat a otestovat aplikaci jako celek se všemi jeho kontejnery v rámci integrace hostitele Dockeru nebo dokonce do testovacího clusteru, do kterého jsou distribuovány vaše kontejnery.
 
 Pokud používáte jednoho hostitele, můžete použít příkazy Dockeru, jako je docker-compose k sestavení a nasazení souvisejících kontejnerů k testování a ověřování prostředí Dockeru v jednom virtuálním provozu. Ale pokud pracujete s clusteru orchestrator, jako je DC/OS, Kubernetes nebo Docker Swarm, musíte nasadit kontejnery prostřednictvím jiného mechanismu nebo orchestrátoru, v závislosti na vybraném clusteru nebo plánovače.
 
@@ -122,7 +122,7 @@ Po otestování a ověření ibitých bitových kopií Dockeru je budete chtít 
 
 Podobně jako kód aplikace uložený ve vašem úložišti SCC (Git, atd.) je vaším "zdrojem pravdy", registr Dockeru je vaším "zdrojem pravdy" pro binární aplikaci nebo bity, které mají být nasazeny do qa nebo produkčního prostředí.
 
-Obvykle můžete chtít mít privátní úložiště pro vlastní image buď v privátním úložišti v registru kontejnerů Azure nebo v místním registru, jako je Důvěryhodný registr Dockeru, nebo v registru veřejného cloudu s omezeným přístupem (například Docker Hub), i když v tomto posledním případě, pokud váš kód není open source, musíte důvěřovat zabezpečení dodavatele. Ať tak či onak, metoda, `docker push` kterou používáte, je podobná a je založena na příkazu, jak je znázorněno na obrázku 5-4.
+Obvykle můžete chtít mít privátní úložiště pro vlastní image buď v soukromém úložišti v registru kontejnerů Azure nebo v místním registru, jako je Důvěryhodný registr Dockeru, nebo v registru veřejného cloudu s omezeným přístupem (jako je Docker Hub), i když v tomto posledním případě, pokud váš kód není open source, musíte důvěřovat zabezpečení dodavatele. Ať tak či onak, metoda, `docker push` kterou používáte, je podobná a je založena na příkazu, jak je znázorněno na obrázku 5-4.
 
 ![Diagram znázorňující nabízení vlastních irek do registru kontejnerů.](./media/docker-application-outer-loop-devops-workflow/docker-push-custom-images.png)
 
@@ -140,9 +140,9 @@ Pomocí úloh Dockeru můžete nabízenou sadu ibi `docker-compose.yml` služeb 
 
 ## <a name="step-4-cd-deploy"></a>Krok 4: CD, nasazení
 
-Neměnnost iobrazek Dockeru zajišťuje opakovatelné nasazení s tím, co je vyvinuto, testováno prostřednictvím CI a spuštěno v produkčním prostředí. Po publikování iontů Dockeru aplikace v registru Dockeru (privátní nebo veřejné) je můžete nasadit do několika prostředí, která můžete mít (produkční prostředí, qa, staging atd.) z kanálu CD pomocí Azure DevOps Services úlohy kanálu nebo Azure DevOps Services Release Management.
+Neměnnost iobrazek Dockeru zajišťuje opakovatelné nasazení s tím, co je vyvinuto, testováno prostřednictvím CI a spuštěno v produkčním prostředí. Po publikování iontů Dockeru aplikace v registru Dockeru (privátní nebo veřejné) je můžete nasadit do několika prostředí, která můžete mít (produkční, qa, staging atd.) z kanálu CD pomocí úloh kanálu Azure DevOps Services nebo Azure DevOps Services Release Management.
 
-V tomto okamžiku však závisí na tom, jaký druh aplikace Dockeru nasazujete. Nasazení jednoduché aplikace (z hlediska složení a nasazení) jako monolitické aplikace obsahující několik kontejnerů nebo služeb a nasazených na několik serverů nebo virtuálních počítače se liší od nasazení složitější aplikace, jako je aplikace orientovaná na mikroslužby s možnostmi hyperškálování. Tyto dva scénáře jsou vysvětleny v následujících částech.
+V tomto okamžiku však závisí na tom, jaký druh aplikace Dockeru nasazujete. Nasazení jednoduché aplikace (z hlediska složení a nasazení) jako monolitické aplikace zahrnující několik kontejnerů nebo služeb a nasazené na několik serverů nebo virtuálních počítačích se liší od nasazení složitější aplikace, jako je aplikace orientovaná na mikroslužby s možnostmi hyperškálování. Tyto dva scénáře jsou vysvětleny v následujících částech.
 
 ### <a name="deploying-composed-docker-applications-to-multiple-docker-environments"></a>Nasazení komponujících aplikací Dockeru do více prostředí Dockeru
 
@@ -170,7 +170,7 @@ Prostřednictvím šablon Azure DevOps Services můžete vytvořit novou bitovou
 
 **Obrázek 5-8**. Konfigurace úloh y Azure DevOps Services Docker Compose ze správy verzí služby Azure DevOps Services
 
-Mějte však na paměti, že scénář znázorněný na obrázku 5-6 a implementovaný na obrázku 5-8 je jednoduchý (nasazuje se do jednoho hostitelů a virtuálních zařízení Dockeru a bude existovat jeden kontejner nebo instance na bitovou kopii) a pravděpodobně by měl být použit pouze pro vývoj nebo testování Scénáře. Ve většině podnikových produkčních scénářů byste chtěli mít vysokou dostupnost (HA) a snadno spravovat škálovatelnost pomocí vyrovnávání zatížení napříč více uzly, servery a virtuálními počítači a "inteligentní převzetí služeb při selhání", takže pokud server nebo uzel selže, jeho služby a kontejnery bude přesunuta na jiný hostitelský server nebo virtuální ho d). V takovém případě potřebujete pokročilejší technologie, jako jsou clustery kontejnerů, orchestrátory a plánovače. Způsob nasazení do těchto clusterů je tedy zpracováním pokročilých scénářů vysvětlených v další části.
+Mějte však na paměti, že scénář znázorněný na obrázku 5-6 a implementovaný na obrázku 5-8 je jednoduchý (nasazuje se do jednoho hostitelů a virtuálních zařízení dockeru a bude existovat jeden kontejner nebo instance na bitovou kopii) a pravděpodobně by měl být použit pouze pro scénáře vývoje nebo testování. Ve většině podnikových produkčních scénářů byste chtěli mít vysokou dostupnost (HA) a snadno spravovat škálovatelnost pomocí vyrovnávání zatížení napříč více uzly, servery a virtuálními počítači a "inteligentní převzetí služeb při selhání", takže pokud server nebo uzel selže, jeho služby a kontejnery budou přesunuty na jiný hostitelský server nebo virtuální počítač. V takovém případě potřebujete pokročilejší technologie, jako jsou clustery kontejnerů, orchestrátory a plánovače. Způsob nasazení do těchto clusterů je tedy zpracováním pokročilých scénářů vysvětlených v další části.
 
 ### <a name="deploying-docker-applications-to-docker-clusters"></a>Nasazení aplikací Dockeru do clusterů Dockeru
 
@@ -178,7 +178,7 @@ Povaha distribuovaných aplikací vyžaduje výpočetní prostředky, které jso
 
 Kontejnery můžete nasadit ručně do těchto clusterů z nástroje cli nebo webového uživatelského uživatelského okna, ale měli byste si tento druh ruční práce vyhradit na účely testování nebo správy na místě, jako je škálování nebo monitorování.
 
-Z hlediska cd-rom a konkrétně služby Azure DevOps Services můžete spustit speciálně provedené úlohy nasazení z prostředí Azure DevOps Services Release Management, které nasadí vaše kontejnerizované aplikace do distribuovaných clusterů v kontejneru služby, jak je znázorněno na obrázku 5-9.
+Z hlediska CD a konkrétně služby Azure DevOps Services můžete spustit speciálně provedené úlohy nasazení z prostředí Azure DevOps Services Release Management, které nasadí kontejnerizované aplikace do distribuovaných clusterů ve službě Container Service, jak je znázorněno na obrázku 5-9.
 
 ![Diagram znázorňující krok nasazení disku CD-ROM do orchestrátorů.](./media/docker-application-outer-loop-devops-workflow/cd-deploy-to-orchestrators.png)
 
@@ -200,7 +200,7 @@ Obrázek 5-11 ukazuje, jak můžete upravit úlohu Nasazení do Kubernetes s odd
 
 ## <a name="step-5-run-and-manage"></a>Krok 5: Spuštění a správa
 
-Vzhledem k tomu, že provoz a správa aplikací na úrovni podnikové výroby je sama o sobě hlavním tématem a vzhledem k typu operací a lidem pracujícím na této úrovni (it operace) a velké oblasti působnosti této oblasti je celá další kapitola věnována vysvětlit.
+Vzhledem k tomu, že provoz a správa aplikací na úrovni podnikové výroby je sama o sobě hlavním tématem a vzhledem k typu operací a lidem pracujícím na této úrovni (it operace) a velké oblasti působnosti této oblasti je celá další kapitola věnována jeho vysvětlení.
 
 ## <a name="step-6-monitor-and-diagnose"></a>Krok 6: Monitorování a diagnostika
 

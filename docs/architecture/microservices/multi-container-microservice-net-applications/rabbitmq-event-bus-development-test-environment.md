@@ -2,18 +2,18 @@
 title: Implementace sběrnice událostí pomocí RabbitMQ pro vývojové nebo testovací prostředí
 description: Architektura mikroslužeb .NET pro kontejnerizované aplikace .NET | Pomocí funkce RabbitMQ implementujte zasílání zpráv sběrnice událostí pro události integrace pro vývojová nebo testovací prostředí.
 ms.date: 10/02/2018
-ms.openlocfilehash: ba1cea9384893955ae0743ac8d6a34c350224cd5
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 12e37fabfe915b4d2089d27f7852528a9a037d3c
+ms.sourcegitcommit: e3cbf26d67f7e9286c7108a2752804050762d02d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "74711202"
+ms.lasthandoff: 04/09/2020
+ms.locfileid: "80988294"
 ---
 # <a name="implementing-an-event-bus-with-rabbitmq-for-the-development-or-test-environment"></a>Implementace sběrnice událostí pomocí RabbitMQ pro vývojové nebo testovací prostředí
 
 Měli bychom začít tím, že pokud vytvoříte vlastní sběrnici událostí založenou na RabbitMQ spuštěné v kontejneru, jako aplikace eShopOnContainers, by měla být použita pouze pro vývoj a testovací prostředí. Neměli byste jej používat pro produkční prostředí, pokud jej nevytváříte jako součást servisní sběrnice připravené k výrobě. Jednoduché vlastní sběrnice událostí může chybět mnoho důležitých funkcí připravených pro produkční prostředí, které má komerční servisní sběrnice.
 
-Jedna z vlastní implementace sběrnice událostí v eShopOnContainers je v podstatě knihovna pomocí rozhraní API RabbitMQ (Existuje další implementace založená na Azure Service Bus).
+Jedna z vlastních implementací sběrnice událostí v eShopOnContainers je v podstatě knihovna pomocí Rozhraní API RabbitMQ. (Je tu další implementace založená na Azure Service Bus.)
 
 Implementace sběrnice událostí s RabbitMQ umožňuje mikroslužeb přihlásit k odběru událostí, publikovat události a přijímat události, jak je znázorněno na obrázku 6-21.
 
@@ -122,6 +122,6 @@ Pro produkční scénáře zkontrolujte další prostředky níže, specifické 
 - **Hromadná doprava** \
   <https://masstransit-project.com/>
   
->[!div class="step-by-step"]
->[Předchozí](integration-event-based-microservice-communications.md)
->[další](subscribe-events.md)
+> [!div class="step-by-step"]
+> [Předchozí](integration-event-based-microservice-communications.md)
+> [další](subscribe-events.md)

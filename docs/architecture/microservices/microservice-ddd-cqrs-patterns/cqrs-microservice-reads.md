@@ -2,12 +2,12 @@
 title: Implementace čtení nebo dotazů v mikroslužbě CQRS
 description: Architektura mikroslužeb .NET pro kontejnerizované aplikace .NET | Pochopit implementaci dotazů straně CQRS na objednávání mikroslužby v eShopOnContainers pomocí Dapper.
 ms.date: 10/08/2018
-ms.openlocfilehash: 235b0e471a17e2a37a883a111cf499b7837f3ea1
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 49f42a5035bab38f800f3ec5ea24b01fde0d2964
+ms.sourcegitcommit: e3cbf26d67f7e9286c7108a2752804050762d02d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "73972077"
+ms.lasthandoff: 04/09/2020
+ms.locfileid: "80988749"
 ---
 # <a name="implement-readsqueries-in-a-cqrs-microservice"></a>Implementovat čtení nebo dotazy v mikroslužbě CQRS
 
@@ -49,7 +49,7 @@ Při použití Dapper v kódu, můžete <xref:System.Data.SqlClient.SqlConnectio
 
 ## <a name="dynamic-versus-static-viewmodels"></a>Dynamické versus statické ViewModels
 
-Při vracení ViewModels ze serverové aplikace do klientských aplikací, můžete přemýšlet o těchto ViewModels jako DTO (Objekty přenosu dat), které se mohou lišit od interní chložských entit modelu entity, protože ViewModels uchovávat data tak, jak klientské aplikace Potřeby. Proto v mnoha případech můžete agregovat data pocházející z více entit domény a sestavit ViewModels přesně podle toho, jak klientská aplikace potřebuje tato data.
+Při vracení ViewModels z klientské aplikace na straně serveru, můžete si myslet, že tyto ViewModels jako DTO (objekty přenosu dat), které se mohou lišit od interní chložských entit modelu entity, protože ViewModels uchovávat data tak, jak klientská aplikace potřebuje. Proto v mnoha případech můžete agregovat data pocházející z více entit domény a sestavit ViewModels přesně podle toho, jak klientská aplikace potřebuje tato data.
 
 Tyto ViewModels nebo DTO lze explicitně definovat (jako `OrderSummary` třídy držitele dat), jako je třída zobrazená v pozdějším fragmentu kódu, nebo můžete vrátit dynamické ViewModels nebo dynamické DTO jednoduše na základě atributů vrácených dotazy jako dynamický typ.
 

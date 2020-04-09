@@ -2,12 +2,12 @@
 title: Návody a přehled technických začátků
 description: Modernizace existujících aplikací .NET pomocí Azure Cloudu a kontejnerů Windows | Přehled návodů a technických začátků
 ms.date: 04/28/2018
-ms.openlocfilehash: 190b33c4307b09bab0543d481e66ac9328074a0d
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: cff418d9b6e931a3082d8a2f8b818e7275139578
+ms.sourcegitcommit: e3cbf26d67f7e9286c7108a2752804050762d02d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "69660888"
+ms.lasthandoff: 04/09/2020
+ms.locfileid: "80987866"
 ---
 # <a name="walkthroughs-and-technical-get-started-overview"></a>Návody a přehled technických začátků
 
@@ -204,11 +204,11 @@ K dispozici mohou být různé informace o nasazení aplikací eShopModernizing 
 
 ### <a name="benefits"></a>Výhody
 
-Služba Azure Container Instances usnadňuje vytváření a správu kontejnerů Dockeru v Azure, aniž byste museli zřizovat virtuální počítače nebo používat službu vyšší úrovně. S ACI můžete přímo nasadit kontejner Windows v Azure a vystavit ho na internet s plně kvalifikovaným názvem domény (FQDN) během několika sekund (za předpokladu, že máte image kontejneru Windows připravenv registru Dockeru, jako je Docker Hub nebo Azure Container registru).
+Služba Azure Container Instances usnadňuje vytváření a správu kontejnerů Dockeru v Azure, aniž byste museli zřizovat virtuální počítače nebo používat službu vyšší úrovně. S ACI můžete přímo nasadit kontejner Windows v Azure a vystavit ho na internet s plně kvalifikovaným názvem domény (FQDN) během několika sekund (za předpokladu, že máte image kontejneru Windows připraven v registru Docker, jako je Docker Hub nebo Azure Container Registry).
 
 ### <a name="considerations"></a>Požadavky
 
-Nasazení kontejnerů Windows s úplnou rozhraním .NET Framework / ASP.NET nebo SQL Server do instancí kontejnerů Azure (ACI) není tak rychlé jako nasazení na běžném hostiteli Dockeru (jako je Windows Server 2016 s kontejnery Windows), protože bitová kopie Dockeru se musí stáhnout (vytáhnout z registru Dockeru) pokaždé a velikosti bitové kopie kontejneru SQL (15,1 GB) a image kontejneru ASP.NET (13,9 GB) jsou výrazně velké, nicméně je to mnohem levnější než udržování vlastního hostitele dockeru (trvale on-line Windows Server 2016 s virtuálním počítačem s windows containers v Azure) nemluvě o celém orchestrátoru, jako je Kubernetes v Azure (AKS), což je na druhou stranu skvělá volba pro produkční nasazení.
+Nasazení kontejnerů Windows s úplnou rozhraním .NET Framework / ASP.NET nebo SQL Server do instancí kontejnerů Azure (ACI) není tak rychlé jako nasazení na běžném hostiteli Dockeru (jako je Windows Server 2016 s kontejnery Windows), protože bitová kopie Dockeru se musí stáhnout (vytáhnout z registru Dockeru) pokaždé a velikosti bitové kopie kontejneru SQL (15,1 GB) a image kontejneru ASP.NET (13,9 GB) jsou výrazně velké, je však mnohem levnější než údržba vlastního hostitele dockeru (trvale on-line Windows Server 2016 s virtuálním počítačem Windows Containers v Azure) nemluvě o celém orchestrátoru, jako je Kubernetes v Azure (AKS), což je na druhou stranu skvělá volba pro produkční nasazení.
 
 Jako hlavní závěr pomocí Azure Container Instances je velmi přesvědčivá možnost pro scénáře pro vývoj a testování a pro kanály CI/CD.
 
@@ -254,7 +254,7 @@ Cílem tohoto návodu je naučit se nasadit aplikaci založenou na kontejneru Wi
 
 ### <a name="benefits"></a>Výhody
 
-Nasazení do clusteru v Kubernetes má mnoho výhod. Největší výhodou je, že získáte prostředí připravené k produkčnímu prostředí, ve kterém můžete škálovat aplikaci na základě počtu instancí kontejneru, které chcete použít (vnitřní škálovatelnost v existujících uzlech), a na základě počtu uzlů nebo virtuálních počítačů v clusteru ( globální škálovatelnost clusteru).
+Nasazení do clusteru v Kubernetes má mnoho výhod. Největší výhodou je, že získáte prostředí připravené k produkčnímu prostředí, ve kterém můžete škálovat na základě počtu instancí kontejneru, které chcete použít (vnitřní škálovatelnost v existujících uzlech), a na základě počtu uzlů nebo virtuálních počítačů v clusteru (globální škálovatelnost clusteru).
 
 Azure Container Service optimalizuje oblíbené open source nástroje a technologie speciálně pro Azure. Získáte otevřené řešení, které nabízí přenositelnost, a to jak pro vaše kontejnery a pro konfiguraci aplikace. Vyberete velikost, počet hostitelů a orchestrator nástroje kontejnerové služby zpracovává vše ostatní.
 

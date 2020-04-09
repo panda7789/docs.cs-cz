@@ -6,12 +6,12 @@ dev_langs:
 author: thraka
 ms.author: adegeo
 ms.date: 01/27/2020
-ms.openlocfilehash: 7e879a44bd8056ac8753c1e86464fe14fd6b9e50
-ms.sourcegitcommit: 79b0dd8bfc63f33a02137121dd23475887ecefda
+ms.openlocfilehash: be5c26c81480dc2854b849dd7f2b1c46ee3e526a
+ms.sourcegitcommit: e3cbf26d67f7e9286c7108a2752804050762d02d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/01/2020
-ms.locfileid: "80523585"
+ms.lasthandoff: 04/09/2020
+ms.locfileid: "80989165"
 ---
 # <a name="whats-new-in-net-core-30"></a>Co je nového v .NET Core 3.0
 
@@ -140,7 +140,7 @@ Další informace o nástroji IL Linker naleznete v [dokumentaci](https://aka.ms
 
 ### <a name="tiered-compilation"></a>Vrstvená kompilace
 
-[Vrstvená kompilace](https://github.com/dotnet/runtime/blob/master/docs/design/features/tiered-compilation-guide.md) (TC) je ve výchozím nastavení zapnuta s rozhraním .NET Core 3.0. Tato funkce umožňuje modulu runtime více adaptivně používat kompilátor just-in-time (JIT) k dosažení lepšího výkonu.
+[Vrstvená kompilace](https://github.com/dotnet/runtime/blob/master/docs/design/features/tiered-compilation.md) (TC) je ve výchozím nastavení zapnuta s rozhraním .NET Core 3.0. Tato funkce umožňuje modulu runtime více adaptivně používat kompilátor just-in-time (JIT) k dosažení lepšího výkonu.
 
 Hlavní výhodou vrstvené kompilace je poskytnout dva způsoby jitting metody: v nižší kvalitě, ale rychlejší úroveň nebo vyšší kvalita, ale pomalejší úroveň. Kvalita se týká toho, jak dobře je metoda optimalizována. TC pomáhá zlepšit výkon aplikace při průchodu různými fázemi provádění, od spuštění až po ustálený stav. Když je vrstvená kompilace zakázána, každá metoda je zkompilována jedním způsobem, který je zaujatý k výkonu ustáleného stavu oproti výkonu při spuštění.
 
@@ -506,11 +506,11 @@ Byla přidána api, která umožňují přístup k určitým pokynům procesoru 
 
 V případě potřeby začaly knihovny .NET používat tyto pokyny ke zlepšení výkonu.
 
-Další informace naleznete v tématu [.NET Platform Dependent Intrinsics](https://github.com/dotnet/designs/blob/master/accepted/platform-intrinsics.md).
+Další informace naleznete [v tématu .NET Platform-Dependent Intrinsics](https://github.com/dotnet/designs/blob/master/accepted/2018/platform-intrinsics.md).
 
 ### <a name="improved-net-core-version-apis"></a>Vylepšená rozhraní API základní verze rozhraní .NET
 
-Počínaje rozhraním .NET Core 3.0 nyní rozhraní API verze s rozhraním .NET Core vrátí informace, které očekáváte. Například:
+Počínaje rozhraním .NET Core 3.0 nyní rozhraní API verze s rozhraním .NET Core vrátí informace, které očekáváte. Příklad:
 
 ```csharp
 System.Console.WriteLine($"Environment.Version: {System.Environment.Version}");
