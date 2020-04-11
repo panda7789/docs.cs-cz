@@ -32,12 +32,12 @@ helpviewer_keywords:
 - uint keyword [C#]
 - long keyword [C#]
 - ulong keyword [C#]
-ms.openlocfilehash: 394a809a9a2f45f4aee652d0eca892f62f0f2e54
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 4b2506f48c3e72ff838a07087c8c5d9ea63bb46c
+ms.sourcegitcommit: 43cbde34970f5f38f30c43cd63b9c7e2e83717ae
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "77093198"
+ms.lasthandoff: 04/11/2020
+ms.locfileid: "81121472"
 ---
 # <a name="integral-numeric-types--c-reference"></a>Integrální číselné typy (odkaz C#)
 
@@ -118,7 +118,7 @@ var longVariable = (long)42;
 
 ## <a name="conversions"></a>Převody
 
-Libovolný integrální číselný typ můžete převést na jakýkoli jiný integrální číselný typ. Pokud cílový typ může uložit všechny hodnoty typu zdroje, převod je implicitní. V opačném případě je nutné použít [operátor `()` přetypádka](../operators/type-testing-and-cast.md#cast-operator-) k vyvolání explicitní převod. Další informace naleznete [v tématu Předdefinované číselné převody](numeric-conversions.md).
+Libovolný integrální číselný typ můžete převést na jakýkoli jiný integrální číselný typ. Pokud cílový typ může uložit všechny hodnoty typu zdroje, převod je implicitní. V opačném případě je třeba použít [výraz přetypování](../operators/type-testing-and-cast.md#cast-expression) k provedení explicitní převod. Další informace naleznete [v tématu Předdefinované číselné převody](numeric-conversions.md).
 
 ## <a name="c-language-specification"></a>specifikace jazyka C#
 
@@ -132,5 +132,5 @@ Další informace naleznete v následujících částech [specifikace jazyka C#]
 - [Referenční dokumentace k jazyku C#](../index.md)
 - [Typy hodnot](value-types.md)
 - [Typy s plovoucí desetinnou tálicí](floating-point-numeric-types.md)
-- [Standardní číselné formátovací řetězce](../../../standard/base-types/standard-numeric-format-strings.md)
+- [Standardní řetězce formátu čísla](../../../standard/base-types/standard-numeric-format-strings.md)
 - [Číslovky v technologii .NET](../../../standard/numerics.md)

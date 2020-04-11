@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - null-forgiving operator [C#]
 - '! operator [C#]'
-ms.openlocfilehash: 36bfa46cebd2b35c4985dfc23dbe84f8f5dc9201
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 658043f8d5e149064f6da328657b2ccef9b5da94
+ms.sourcegitcommit: 43cbde34970f5f38f30c43cd63b9c7e2e83717ae
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "78846294"
+ms.lasthandoff: 04/11/2020
+ms.locfileid: "81121447"
 ---
 # <a name="-null-forgiving-operator-c-reference"></a>! (null-odpouštějící) operátor (C# odkaz)
 
@@ -19,7 +19,7 @@ K dispozici v C# 8.0 a `!` novější unární přípona operátor je operátor 
 
 Operátor null odpouštějící nemá žádný vliv v době běhu. Ovlivňuje pouze analýzu statického toku kompilátoru změnou stavu null výrazu. Za běhu výraz `x!` vyhodnotí výsledek základní `x`výraz .
 
-Další informace o funkci typů odkazů s možnou hodnotou null naleznete v [tématu Nullable reference types](../../nullable-references.md).
+Další informace o funkci typů odkazů s možnou hodnotou null naleznete v [tématu Nullable reference types](../builtin-types/nullable-reference-types.md).
 
 ## <a name="examples"></a>Příklady
 

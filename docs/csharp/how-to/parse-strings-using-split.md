@@ -9,12 +9,12 @@ helpviewer_keywords:
 - parse strings
 ms.assetid: 729c2923-4169-41c6-9c90-ef176c1e2953
 ms.custom: mvc
-ms.openlocfilehash: b46429f3b55658e1f2a7d21eed714c1d02236c57
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: fb11ff59705188f9425beedfbbbf3c244d21f587
+ms.sourcegitcommit: 43cbde34970f5f38f30c43cd63b9c7e2e83717ae
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "73973224"
+ms.lasthandoff: 04/11/2020
+ms.locfileid: "81121500"
 ---
 # <a name="how-to-parse-strings-using-stringsplit-c-guide"></a>Jak analyzovat řetězce pomocí String.Split (C# Guide)
 
@@ -48,7 +48,7 @@ Po sobě jdoucí instance libovolného oddělovače vytvoří prázdný řetěze
   
 [!code-csharp-interactive[split strings using strings as separators](../../../samples/snippets/csharp/how-to/strings/ParseStringsUsingSplit.cs#5)]
 
-Tyto ukázky můžete vyzkoušet tak, že se podíváte na kód v našem [úložišti GitHub](https://github.com/dotnet/samples/tree/master/snippets/csharp/how-to/strings). Nebo si můžete stáhnout ukázky [jako zip soubor](https://github.com/dotnet/samples/raw/master/snippets/csharp/how-to/strings.zip).
+Tyto ukázky můžete vyzkoušet tak, že se podíváte na kód v našem [úložišti GitHub](https://github.com/dotnet/docs/tree/master/samples/snippets/csharp/how-to/strings). Nebo si můžete stáhnout ukázky [jako zip soubor](../../../samples/snippets/csharp/how-to/strings.zip).
 
 ## <a name="see-also"></a>Viz také
 

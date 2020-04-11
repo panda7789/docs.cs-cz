@@ -2,77 +2,78 @@
 title: Odstraňování potíží s instalací
 ms.date: 03/30/2017
 ms.assetid: 1644f885-c408-4d5f-a5c7-a1a907bc8acd
-ms.openlocfilehash: becf2576528dc0011a77597b3665d77f6907a3cc
-ms.sourcegitcommit: 32a575bf4adccc901f00e264f92b759ced633379
+ms.openlocfilehash: 2cd9ced4f0780b1a6f63e4a5833e20ac91870121
+ms.sourcegitcommit: 43cbde34970f5f38f30c43cd63b9c7e2e83717ae
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74802424"
+ms.lasthandoff: 04/11/2020
+ms.locfileid: "81121584"
 ---
-# <a name="troubleshooting-setup-issues"></a>Odstraňování potíží s instalací
-Toto téma popisuje, jak řešit problémy s nastavením Windows Communication Foundation (WCF).  
+# <a name="troubleshoot-setup-issues"></a>Poradce při potížích s instalací
+
+Tento článek popisuje, jak řešit problémy Windows Communication Foundation (WCF).  
   
-## <a name="some-windows-communication-foundation-registry-keys-are-not-repaired-by-performing-an-msi-repair-operation-on-the-net-framework-30"></a>Některé klíče registru Windows Communication Foundation nelze opravit pomocí operace opravy MSI v .NET Framework 3,0  
+## <a name="some-windows-communication-foundation-registry-keys-are-not-repaired-by-performing-an-msi-repair-operation-on-the-net-framework-30"></a>Některé klíče registru Windows Communication Foundation nejsou opraveny provedením operace opravy MSI v rozhraní .NET Framework 3.0  
  Pokud odstraníte některý z následujících klíčů registru:  
   
 - HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\ServiceModelService 3.0.0.0  
   
-- HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Services\ServiceModelOperation 3.0.0.0  
+- HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\ServiceModelOperation 3.0.0.0  
   
 - HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\ServiceModelEndpoint 3.0.0.0  
   
 - HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\SMSvcHost 3.0.0.0  
   
-- 3\.0.0.0 mostu HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Services\MSDTC  
+- HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\MSDTC Bridge 3.0.0  
   
- Klíče se znovu nevytvoří, pokud spustíte opravu pomocí instalačního programu .NET Framework 3,0 spuštěného v apletu **Přidat nebo odebrat programy** v **Ovládacích panelech**. Aby bylo možné znovu vytvořit tyto klíče správně, musí uživatel odinstalovat a znovu nainstalovat .NET Framework 3,0.  
+ Klíče nejsou znovu vytvořeny, pokud spustíte opravu pomocí instalačního programu rozhraní .NET Framework 3.0 spuštěného z ovládacího **panelu** **Přidat nebo odebrat programy** . Chcete-li znovu vytvořit tyto klíče správně, musí uživatel odinstalovat a znovu nainstalovat rozhraní .NET Framework 3.0.  
   
-## <a name="wmi-service-corruption-blocks-installation-of-the-windows-communication-foundation-wmi-provider-during-installation-of-net-framework-30-package"></a>Poškození služby WMI blokuje instalaci zprostředkovatele Windows Communication Foundation WMI během instalace balíčku .NET Framework 3,0  
- Poškození služby WMI může zablokovat instalaci zprostředkovatele rozhraní WMI Windows Communication Foundation. Během instalace nemůže instalační program Windows Communication Foundation zaregistrovat soubor WCF. mof pomocí komponenty Mofcomp. exe. Níže je seznam příznaků:  
+## <a name="wmi-service-corruption-blocks-installation-of-the-windows-communication-foundation-wmi-provider-during-installation-of-net-framework-30-package"></a>Poškození služby WMI Blokuje instalace zprostředkovatele wmi služby Windows Communication Foundation během instalace balíčku rozhraní .NET Framework 3.0  
+ Poškození služby WMI může blokovat instalaci zprostředkovatele wmi služby WMI služby Windows Communication Foundation. Během instalace instalační program Windows Communication Foundation nemůže zaregistrovat soubor WCF.mof pomocí součásti mofcomp.exe. Následuje seznam příznaků:  
   
-1. Instalace .NET Framework 3,0 byla úspěšně dokončena, ale zprostředkovatel WMI služby WCF není zaregistrován.  
+1. Instalace rozhraní .NET Framework 3.0 byla úspěšně dokončena, ale zprostředkovatel wmi wcf není zaregistrován.  
   
-2. V protokolu událostí aplikace se zobrazí chybová událost, která odkazuje na problémy s registrací zprostředkovatele WMI pro WCF nebo spuštěním Mofcomp. exe.  
+2. V protokolu událostí aplikace se zobrazí chybová událost, která odkazuje na problémy s registrací zprostředkovatele služby WMI pro wcf nebo spuštění mofcomp.exe.  
   
-3. Soubor protokolu instalace s názvem dd_wcf_retCA * v adresáři% Temp% uživatele obsahuje odkazy na selhání registrace zprostředkovatele WMI WCF.  
+3. Soubor protokolu instalace s názvem dd_wcf_retCA* v adresáři %temp% uživatele obsahuje odkazy na selhání registrace zprostředkovatele wcf wmi.  
   
-4. V protokolu událostí nebo v souboru protokolu trasování instalace může být uvedena výjimka, například jedna z následujících možností:  
+4. Výjimka, například jedna, může být uvedena následující v protokolu událostí nebo v souboru protokolu trasování instalace:  
   
-     ServiceModelReg [11:09:59:046]: System. ApplicationException: Neočekávaný výsledek 3 provádění E:\WINDOWS\system32\wbem\mofcomp.exe s "E:\WINDOWS\Microsoft.NET\Framework\v3.0\Windows Communication Foundation\ServiceModel.mof"  
-  
-     nebo:  
-  
-     ServiceModelReg [07:19:33:843]: System. TypeInitializationException: inicializátor typu pro: System. Management. ManagementPath vyvolal výjimku. ---> System. Runtime. InteropServices. COMException (0x80040154): načtení objektu pro vytváření tříd modelu COM pro komponentu s identifikátorem CLSID {CF4CC405-E2C5-4DDD-B3CE-5E7582D8C9FA} se nezdařilo z důvodu následující chyby: 80040154.  
+     ServiceModelReg [11:09:59:046]: System.ApplicationException: Neočekávaný výsledek 3 spuštění E:\WINDOWS\system32\wbem\mofcomp.exe s "E:\WINDOWS\Microsoft.NET\Framework\v3.0\Windows Communication Foundation\ServiceModel.mof"  
   
      nebo:  
   
-     ServiceModelReg [07:19:32:750]: System. IO. FileNotFoundException: nelze načíst soubor nebo sestavení ' C:\WINDOWS\system32\wbem\mofcomp.exe ' nebo některou z jeho závislostí. Systém nemůže najít zadaný soubor.  
+     ServiceModelReg [07:19:33:843]: System.TypeInitializationException: Typ inicializátoru pro 'System.Management.ManagementPath' vyvolal výjimku. ---> System.Runtime.InteropServices.COMException (0x80040154): Načítání továrny třídy COM pro komponenty s CLSID {CF4CC405-E2C5-4DDD-B3CE-5E7582D8C9FA} se nezdařilo z důvodu následující chyby: 80040154.  
   
-     Název souboru: ' C:\WINDOWS\system32\wbem\mofcomp.exe  
+     nebo:  
   
- Aby bylo možné vyřešit dříve popsané potíže, je nutné provést následující kroky.  
+     ServiceModelReg [07:19:32:750]: System.IO.FileNotFoundException: Nelze načíst soubor nebo sestavení C:\WINDOWS\system32\wbem\mofcomp.exe nebo jednu z jeho závislostí. Systém nemůže najít zadaný soubor.  
   
-1. Spusťte [WMI Diagnosis Utility verze 2,0,](https://go.microsoft.com/fwlink/?LinkId=94685) abyste mohli opravit službu WMI. Další informace o použití tohoto nástroje najdete v článku o [WMI Diagnosis Utility](https://docs.microsoft.com/previous-versions/tn-archive/ff404265(v%3dmsdn.10)) .  
+     Název souboru: 'C:\WINDOWS\system32\wbem\mofcomp.exe  
   
- Opravte instalaci .NET Framework 3,0 pomocí apletu **Přidat nebo odebrat programy** umístěného v **Ovládacích panelech**nebo odinstalujte nebo přeinstalujte .NET Framework 3,0.  
+ Chcete-li vyřešit problém popsaný výše, je třeba je vyřešit následující kroky.  
   
-## <a name="repairing-net-framework-30-after-net-framework-35-installation-removes-configuration-elements-introduced-by-net-framework-35-in-machineconfig"></a>Oprava .NET Framework 3,0 po instalaci .NET Framework 3,5 Odebere prvky konfigurace zavedené .NET Framework 3,5 v souboru Machine. config.  
- Pokud po instalaci .NET Framework 3,5 provádíte opravu .NET Framework 3,0, odeberou se konfigurační prvky, které zavádějí .NET Framework 3,5 v souboru Machine. config. Soubor Web. config však zůstává beze změn. Alternativním řešením je opravit .NET Framework 3,5 po tomto protokolu ARP nebo použít [Nástroj pro registraci služby pracovního postupu (WFServicesReg. exe)](workflow-service-registration-tool-wfservicesreg-exe.md) s přepínačem `/c`.  
+1. Spusťte [nástroj pro diagnostiku služby WMI a](https://www.microsoft.com/download/details.aspx?id=7684) opravte službu WMI. Další informace o použití tohoto nástroje naleznete v tématu [WMI Diagnosis Utility](https://docs.microsoft.com/previous-versions/tn-archive/ff404265(v%3dmsdn.10)).  
   
- [Nástroj pro registraci služby pracovního postupu (WFServicesReg. exe)](workflow-service-registration-tool-wfservicesreg-exe.md) najdete na adrese%windir%\Microsoft.Net\Framework\v3.5\ nebo%windir%\Microsoft.NET\framework64\v3.5\  
+ Opravte instalaci rozhraní .NET Framework 3.0 pomocí apletu **Přidat nebo odebrat programy** umístěného v **Ovládacích panelech**nebo odinstalujte/přeinstalujte rozhraní .NET Framework 3.0.  
   
-## <a name="configure-iis-properly-for-wcfwf-webhost-after-installing-net-framework-35"></a>Správná konfigurace IIS pro WCF/WF webhost po instalaci .NET Framework 3,5  
- Pokud se .NET Framework 3,5 instalace nepodaří nakonfigurovat další nastavení konfigurace služby IIS související s WCF, zaznamená chybu v protokolu instalace a pokračuje. Všechny pokusy o spuštění aplikací WorkflowServices selžou, protože chybí požadovaná nastavení konfigurace. Například načtení služby XOML nebo rules může selhat.  
+## <a name="repairing-net-framework-30-after-net-framework-35-installation-removes-configuration-elements-introduced-by-net-framework-35-in-machineconfig"></a>Oprava rozhraní .NET Framework 3.0 po instalaci rozhraní .NET Framework 3.5 odebere konfigurační prvky zavedené rozhraním .NET Framework 3.5 v souboru machine.config  
+ Pokud po instalaci rozhraní .NET Framework 3.5 opravíte rozhraní .NET Framework 3.0, budou odebrány konfigurační prvky zavedené rozhraním .NET Framework 3.5 v souboru machine.config. Web.config však zůstane beze změny. Řešení je opravit rozhraní .NET Framework 3.5 po tomto přes ARP nebo použijte [Nástroj pro registraci služby WorkFlow (WFServicesReg.exe)](workflow-service-registration-tool-wfservicesreg-exe.md) s přepínačem. `/c`  
   
- Pokud chcete tento problém vyřešit, použijte [Nástroj pro registraci služby pracovního postupu (WFServicesReg. exe)](workflow-service-registration-tool-wfservicesreg-exe.md) s přepínačem `/c` a správně nakonfigurujte mapy skriptů služby IIS v počítači. [Nástroj pro registraci služby pracovního postupu (WFServicesReg. exe)](workflow-service-registration-tool-wfservicesreg-exe.md) najdete na adrese%windir%\Microsoft.Net\Framework\v3.5\ nebo%windir%\Microsoft.NET\framework64\v3.5\  
+ [Nástroj pro registraci služby WorkFlow (WFServicesReg.exe)](workflow-service-registration-tool-wfservicesreg-exe.md) naleznete na adrese %windir%\Microsoft.NET\framework\v3.5\ nebo %windir%\Microsoft.NET\framework64\v3.5\  
   
-## <a name="could-not-load-type-systemservicemodelactivationhttpmodule-from-assembly-systemservicemodel-version-3000-cultureneutral-publickeytokenb77a5c561934e089"></a>Typ System. ServiceModel. Activation. HttpModule nelze načíst ze sestavení System. ServiceModel, verze 3.0.0.0, Culture = neutral, PublicKeyToken = b77a5c561934e089.  
- K této chybě dochází, pokud je nainstalovaná .NET Framework 4 a pak je povolená aktivace WCF protokolu HTTP. Problém vyřešíte spuštěním následujícího příkazového řádku z Developer Command Prompt v rámci sady Visual Studio:  
+## <a name="configure-iis-properly-for-wcfwf-webhost-after-installing-net-framework-35"></a>Konfigurace služby IIS správně pro webhosting WCF/WF po instalaci rozhraní .NET Framework 3.5  
+ Pokud se instalaci rozhraní .NET Framework 3.5 nepodaří nakonfigurovat další nastavení konfigurace služby IIS související s protokolem WCF, zaznamená chybu v protokolu instalace a pokračuje. Jakýkoli pokus o spuštění aplikací WorkflowServices se nezdaří, protože chybí požadované nastavení konfigurace. Například načítání xoml nebo pravidla služby může selhat.  
+  
+ Chcete-li tento problém vyřešit, použijte [nástroj pro registraci služby WorkFlow (WFServicesReg.exe)](workflow-service-registration-tool-wfservicesreg-exe.md) s přepínačem `/c` pro správnou konfiguraci map skriptů služby IIS v počítači. [Nástroj pro registraci služby WorkFlow (WFServicesReg.exe)](workflow-service-registration-tool-wfservicesreg-exe.md) naleznete na adrese %windir%\Microsoft.NET\framework\v3.5\ nebo %windir%\Microsoft.NET\framework64\v3.5\  
+  
+## <a name="could-not-load-type-systemservicemodelactivationhttpmodule-from-assembly-systemservicemodel-version-3000-cultureneutral-publickeytokenb77a5c561934e089"></a>Nelze načíst typ System.ServiceModel.Activation.HttpModule z sestavení System.ServiceModel, verze 3.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089.  
+ K této chybě dochází, pokud je nainstalována rozhraní .NET Framework 4 a potom je povolena aktivace protokolu HTTP WCF. Chcete-li tento problém vyřešit, spusťte následující příkazový řádek z příkazového řádku pro vývojáře pro sady Visual Studio:  
   
 ```console
 aspnet_regiis.exe -i -enable  
 ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Pokyny k instalaci](./samples/set-up-instructions.md)

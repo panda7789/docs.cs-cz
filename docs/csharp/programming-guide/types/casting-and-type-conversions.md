@@ -9,12 +9,12 @@ helpviewer_keywords:
 - casting [C#]
 - converting types [C#]
 ms.assetid: 568df58a-d292-4b55-93ba-601578722878
-ms.openlocfilehash: 252d509617ab5dbc53b282bac52e356396d82fab
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: ae8f18deff5e96d7e475df8814ad64b38d14d585
+ms.sourcegitcommit: 43cbde34970f5f38f30c43cd63b9c7e2e83717ae
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75711893"
+ms.lasthandoff: 04/11/2020
+ms.locfileid: "81121392"
 ---
 # <a name="casting-and-type-conversions-c-programming-guide"></a>Převody přetypování a typu (Průvodce programováním jazyka C#)
 
@@ -29,7 +29,7 @@ i = "Hello"; // error CS0029: Cannot implicitly convert type 'string' to 'int'
   
 - **Implicitní převody**: Není vyžadována žádná speciální syntaxe, protože převod je typově bezpečný a žádná data nebudou ztracena. Příklady zahrnují převody z menších na větší integrální typy a převody z odvozených tříd na základní třídy.  
   
-- **Explicitní převody (přetypáty):** Explicitní převody vyžadují [operátor `()`přetypádka ](../../language-reference/operators/type-testing-and-cast.md#cast-operator-). Obsazení je vyžadováno v případě, že informace mohou být ztraceny v převodu nebo pokud převod nemusí být úspěšný z jiných důvodů. Mezi typické příklady patří číselný převod na typ, který má menší přesnost nebo menší rozsah, a převod instance základní třídy na odvozenou třídu.  
+- **Explicitní převody (přetypování):** Explicitní převody vyžadují [výraz přetypování](../../language-reference/operators/type-testing-and-cast.md#cast-expression). Obsazení je vyžadováno v případě, že informace mohou být ztraceny v převodu nebo pokud převod nemusí být úspěšný z jiných důvodů. Mezi typické příklady patří číselný převod na typ, který má menší přesnost nebo menší rozsah, a převod instance základní třídy na odvozenou třídu.  
   
 - **Uživatelem definované převody**: Uživatelem definované převody jsou prováděny speciálními metodami, které můžete definovat tak, aby bylo možné povolit explicitní a implicitní převody mezi vlastními typy, které nemají vztah třídy odvozené základní třídy. Další informace naleznete v [tématu User-defined operátory převodu](../../language-reference/operators/user-defined-conversion-operators.md).  
   
@@ -92,7 +92,7 @@ Další informace naleznete v části [Převody](~/_csharplang/spec/conversions.
 
 - [Programovací příručka jazyka C#](../index.md)
 - [Typy](./index.md)
-- [() operátor obsazení](../../language-reference/operators/type-testing-and-cast.md#cast-operator-)
+- [Výraz přetypování](../../language-reference/operators/type-testing-and-cast.md#cast-expression)
 - [Operátory převodu definované uživatelem](../../language-reference/operators/user-defined-conversion-operators.md)
 - [Převod zobecněného typu](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/yy580hbd(v=vs.120))
 - [Jak převést řetězec na číslo](./how-to-convert-a-string-to-a-number.md)

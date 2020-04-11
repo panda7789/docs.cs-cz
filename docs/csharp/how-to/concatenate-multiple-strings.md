@@ -7,12 +7,12 @@ helpviewer_keywords:
 - concatenating strings [C#]
 - strings [C#], concatenation
 ms.assetid: 8e16736f-4096-4f3f-be0f-9d4c3ff63520
-ms.openlocfilehash: 9a0640a7ce73fa8454442cd301157bf5c265f9de
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 87ec5104f36d0c6cce12037e70dacf2752ef5e62
+ms.sourcegitcommit: 43cbde34970f5f38f30c43cd63b9c7e2e83717ae
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75713900"
+ms.lasthandoff: 04/11/2020
+ms.locfileid: "81121056"
 ---
 # <a name="how-to-concatenate-multiple-strings-c-guide"></a>Jak zřetězit více řetězců (Průvodce C#)
 
@@ -51,7 +51,7 @@ Nakonec můžete použít [LINQ](../programming-guide/concepts/linq/index.md) a 
 
 [!code-csharp-interactive[string concatenation using LINQ expressions](../../../samples/snippets/csharp/how-to/strings/Concatenate.cs#6)]  
 
-Tyto ukázky můžete vyzkoušet tak, že se podíváte na kód v našem [úložišti GitHub](https://github.com/dotnet/samples/tree/master/snippets/csharp/how-to/strings). Nebo si můžete stáhnout ukázky [jako zip soubor](https://github.com/dotnet/samples/raw/master/snippets/csharp/how-to/strings.zip).
+Tyto ukázky můžete vyzkoušet na [ukázkový kód](https://github.com/dotnet/docs/tree/master/samples/snippets/csharp/how-to/strings). Nebo si můžete stáhnout ukázky [jako soubor zip](../../../samples/snippets/csharp/how-to/strings.zip).
 
 ## <a name="see-also"></a>Viz také
 

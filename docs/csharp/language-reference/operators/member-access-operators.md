@@ -32,12 +32,12 @@ helpviewer_keywords:
 - hat operator [C#]
 - .. operator [C#]
 - range operator [C#]
-ms.openlocfilehash: a132e527deadcffb4826c1965987fc09da470a09
-ms.sourcegitcommit: 1c1a1f9ec0bd1efb3040d86a79f7ee94e207cca5
+ms.openlocfilehash: 90066b1e9c219f66fc0c76423679e81aa3fa6770
+ms.sourcegitcommit: 43cbde34970f5f38f30c43cd63b9c7e2e83717ae
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/03/2020
-ms.locfileid: "80635304"
+ms.lasthandoff: 04/11/2020
+ms.locfileid: "81120986"
 ---
 # <a name="member-access-operators-and-expressions-c-reference"></a>Operátory přístupu k členům a výrazy (odkaz C#)
 
@@ -170,7 +170,7 @@ Závorky můžete také použít při vyvolání [`new`](new-operator.md) [konst
 
 Závorky můžete také použít k úpravě pořadí, ve kterém chcete vyhodnotit operace ve výrazu. Další informace naleznete v tématu [C# operátory](index.md).
 
-[Výrazy přetypování](type-testing-and-cast.md#cast-operator-), které provádějí explicitní převody typů, také používají závorky.
+[Výrazy přetypování](type-testing-and-cast.md#cast-expression), které provádějí explicitní převody typů, také používají závorky.
 
 ## <a name="index-from-end-operator-"></a>Index od koncového operátora ^
 

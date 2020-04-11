@@ -18,12 +18,12 @@ helpviewer_keywords:
 - floating-point numbers [C#], float keyword
 - double data type [C#]
 - decimal keyword [C#]
-ms.openlocfilehash: 95b7f266654bbbcdcd0f81e3aa11cfc94af9f0e5
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: a277215d438b5f6b0bbbef72e5e0121b6ce41990
+ms.sourcegitcommit: 43cbde34970f5f38f30c43cd63b9c7e2e83717ae
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "77215239"
+ms.lasthandoff: 04/11/2020
+ms.locfileid: "81121485"
 ---
 # <a name="floating-point-numeric-types-c-reference"></a>Číselné typy s plovoucí desetinnou desetinnou desetinnou desetinnou desetinnou desetinnou tázkou (odkaz Jazyka C#
 
@@ -107,7 +107,7 @@ Console.WriteLine(m);  // output: 1500000
 
 ## <a name="conversions"></a>Převody
 
-Existuje pouze jeden implicitní převod mezi číselnými typy s plovoucí desetinnou desetinnou hodnotou: z `float` na `double`. Můžete však převést libovolný typ s plovoucí desetinnou tácek na jakýkoli jiný typ s plovoucí desetinnou tácek s [explicitním přetypátkem](../operators/type-testing-and-cast.md#cast-operator-). Další informace naleznete [v tématu Předdefinované číselné převody](numeric-conversions.md).
+Existuje pouze jeden implicitní převod mezi číselnými typy s plovoucí desetinnou desetinnou hodnotou: z `float` na `double`. Můžete však převést libovolný typ s plovoucí desetinnou tácek na jakýkoli jiný typ s plovoucí desetinnou tácek s [explicitním přetypátkem](../operators/type-testing-and-cast.md#cast-expression). Další informace naleznete [v tématu Předdefinované číselné převody](numeric-conversions.md).
 
 ## <a name="c-language-specification"></a>specifikace jazyka C#
 
@@ -122,6 +122,6 @@ Další informace naleznete v následujících částech [specifikace jazyka C#]
 - [Referenční dokumentace k jazyku C#](../index.md)
 - [Typy hodnot](value-types.md)
 - [Integrální typy](integral-numeric-types.md)
-- [Standardní číselné formátovací řetězce](../../../standard/base-types/standard-numeric-format-strings.md)
+- [Standardní řetězce formátu čísla](../../../standard/base-types/standard-numeric-format-strings.md)
 - [Číslovky v technologii .NET](../../../standard/numerics.md)
 - <xref:System.Numerics.Complex?displayProperty=nameWithType>

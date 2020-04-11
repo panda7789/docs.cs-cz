@@ -6,12 +6,12 @@ helpviewer_keywords:
 - strings [C#], searching with String methods
 - strings [C#], searching with regular expressions
 ms.assetid: fb1d9a6d-598d-4a35-bd5f-b86012edcb2b
-ms.openlocfilehash: 15ea77d13a93d88bd996a22b6fe1aaad81df572d
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: f3e6d95eb4a01d48fac5b5e2c951b9c346206004
+ms.sourcegitcommit: 43cbde34970f5f38f30c43cd63b9c7e2e83717ae
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "74959699"
+ms.lasthandoff: 04/11/2020
+ms.locfileid: "81121491"
 ---
 # <a name="how-to-search-strings"></a>Jak hledat řetězce
 
@@ -72,7 +72,7 @@ Následující kód používá regulární výrazy k ověření formátu každé
 
 Tento jediný vyhledávací vzor odpovídá mnoha platným řetězcům. Regulární výrazy je lepší vyhledat nebo ověřit proti vzorek, spíše než jeden textový řetězec.
 
-Tyto ukázky můžete vyzkoušet tak, že se podíváte na kód v našem [úložišti GitHub](https://github.com/dotnet/samples/tree/master/snippets/csharp/how-to/strings). Nebo si můžete stáhnout ukázky [jako zip soubor](https://github.com/dotnet/samples/raw/master/snippets/csharp/how-to/strings.zip).
+Tyto ukázky můžete vyzkoušet tak, že se podíváte na kód v našem [úložišti GitHub](https://github.com/dotnet/docs/tree/master/samples/snippets/csharp/how-to/strings). Nebo si můžete stáhnout ukázky [jako zip soubor](../../../samples/snippets/csharp/how-to/strings.zip).
 
 ## <a name="see-also"></a>Viz také
 

@@ -10,12 +10,12 @@ helpviewer_keywords:
 - implicit keyword [C#]
 - conversion operator [C#]
 - user-defined conversion [C#]
-ms.openlocfilehash: b6061492cc1a4f756196fb8a9050b68651431e38
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: b59fc27be31f1a38e2a6c3cabd82598933b5ed53
+ms.sourcegitcommit: 43cbde34970f5f38f30c43cd63b9c7e2e83717ae
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "78847261"
+ms.lasthandoff: 04/11/2020
+ms.locfileid: "81121408"
 ---
 # <a name="user-defined-conversion-operators-c-reference"></a>Uživatelem definované operátory převodu (odkaz C#
 
@@ -23,7 +23,7 @@ Uživatelem definovaný typ může definovat vlastní implicitní nebo explicitn
 
 Implicitní převody nevyžadují speciální syntaxi, která má být vyvolána a může dojít v různých situacích, například v přiřazení a volání metod. Předdefinované c# implicitní převody vždy úspěšné a nikdy vyvolat výjimku. Uživatelem definované implicitní převody by se měly chovat také tímto způsobem. Pokud vlastní převod může vyvolat výjimku nebo ztratit informace, definujte ji jako explicitní převod.
 
-Uživatelem definované převody nejsou považovány za [is](type-testing-and-cast.md#is-operator) a [jako](type-testing-and-cast.md#as-operator) operátory. Pomocí [operátoru přetypádka ()](type-testing-and-cast.md#cast-operator-) vyvoláte explicitní převod definovaný uživatelem.
+Uživatelem definované převody nejsou považovány za [is](type-testing-and-cast.md#is-operator) a [jako](type-testing-and-cast.md#as-operator) operátory. Výraz [přetypování](type-testing-and-cast.md#cast-expression) slouží k vyvolání uživatelem definovaného explicitního převodu.
 
 Pomocí `operator` klíčových slov a `implicit` nebo `explicit` definujte implicitní nebo explicitní převod. Typ, který definuje převod, musí být typ zdroje nebo cílový typ tohoto převodu. Převod mezi dvěma uživatelem definovanými typy lze definovat v jednom z těchto dvou typů.
 

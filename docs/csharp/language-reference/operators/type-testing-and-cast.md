@@ -1,5 +1,5 @@
 ---
-title: Operátory testování typů a přetypování – odkaz C#
+title: Operátory testování typů a výraz přetypování – odkaz Jazyka C#
 description: Další informace o operátory Jazyka C#, které můžete použít ke kontrole typu výsledku výrazu a převést jej na jiný typ v případě potřeby.
 ms.date: 06/21/2019
 author: pkulikov
@@ -18,20 +18,20 @@ helpviewer_keywords:
 - cast expression [C#]
 - () operator [C#]
 - typeof operator [C#]
-ms.openlocfilehash: 2dc215a91c55be15e8eee488f0030f41e3492af5
-ms.sourcegitcommit: 2514f4e3655081dcfe1b22470c0c28500f952c42
+ms.openlocfilehash: 5a4f1d4c0c2ddd0d3967e15090d8f8c1ac42f83e
+ms.sourcegitcommit: 43cbde34970f5f38f30c43cd63b9c7e2e83717ae
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/18/2020
-ms.locfileid: "79507084"
+ms.lasthandoff: 04/11/2020
+ms.locfileid: "81121420"
 ---
-# <a name="type-testing-and-cast-operators-c-reference"></a>Operátory testování typů a přetypování (odkaz C#
+# <a name="type-testing-operators-and-cast-expression-c-reference"></a>Operátory testování typů a výraz přetypování (odkaz C#
 
-K provedení kontroly typu nebo převodu typu můžete použít následující operátory:
+K provedení kontroly typu nebo převodu typu můžete použít následující operátory a výrazy:
 
 - [je operátor](#is-operator): kontrola, zda je typ runtime výrazu kompatibilní s daným typem
 - [jako operátor](#as-operator): explicitně převést výraz na daný typ, pokud je jeho typ runtime kompatibilní s tímto typem
-- [operátor obsazení ()](#cast-operator-): provést explicitní převod
+- [výraz přetypování](#cast-expression): provedení explicitního převodu
 - [typeof operátor](#typeof-operator): <xref:System.Type?displayProperty=nameWithType> získat instanci pro typ
 
 ## <a name="is-operator"></a>je operátor
@@ -76,7 +76,7 @@ Další informace o vzoru typu a dalších podporovaných vzorech naleznete v [t
 
 ## <a name="as-operator"></a>jako operátor
 
-Operátor `as` explicitně převede výsledek výrazu na daný odkaz nebo typ hodnoty s hodnotou, kterou lze hodnotit s hodnotou s hodnotou s možnou hodnotou. Pokud převod není možný, `as` operátor `null`vrátí . Na rozdíl od `as` [operátoru přetypádka ()](#cast-operator-)operátor nikdy nevyvolá výjimku.
+Operátor `as` explicitně převede výsledek výrazu na daný odkaz nebo typ hodnoty s hodnotou, kterou lze hodnotit s hodnotou s hodnotou s možnou hodnotou. Pokud převod není možný, `as` operátor `null`vrátí . Na rozdíl od `as` [výrazu přetypování](#cast-expression)operátor nikdy vyvolá výjimku.
 
 Vyjádření formuláře
 
@@ -92,7 +92,7 @@ E is T ? (T)(E) : (T)null
 
 kromě `E` toho, že se vyhodnocuje pouze jednou.
 
-Operátor `as` považuje pouze odkaz, null, zabalení a unboxing převody. `as` Operátor nelze použít k provedení převodu definovaného uživatelem. Chcete-li to provést, použijte [operátor přetypádka ()](#cast-operator-).
+Operátor `as` považuje pouze odkaz, null, zabalení a unboxing převody. `as` Operátor nelze použít k provedení převodu definovaného uživatelem. Chcete-li to provést, použijte [výraz přetypování](#cast-expression).
 
 Následující příklad ukazuje použití operátoru: `as`
 
@@ -101,7 +101,7 @@ Následující příklad ukazuje použití operátoru: `as`
 > [!NOTE]
 > Jak ukazuje předchozí příklad, je třeba porovnat `as` výsledek `null` výrazu s ke kontrole, zda je převod úspěšný. Počínaje C# 7.0, můžete použít [operátor is](#type-testing-with-pattern-matching) jak k testování, pokud je převod úspěšný, a pokud je úspěšný, přiřadit jeho výsledek nové proměnné.
 
-## <a name="cast-operator-"></a>Operátor přetypápku ()
+## <a name="cast-expression"></a>Výraz přetypování
 
 Výraz přetypování `(T)E` formuláře provádí explicitní převod výsledku `E` `T`výrazu na typ . Pokud neexistuje žádný explicitní převod `E` z `T`typu typu na typ , dojde k chybě v době kompilace. V době běhu explicitní převod nemusí být úspěšné a výraz přetypování může vyvolat výjimku.
 

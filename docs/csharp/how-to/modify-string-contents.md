@@ -3,12 +3,12 @@ title: Jak upravit obsah řetězce - Průvodce C#
 ms.date: 02/26/2018
 helpviewer_keywords:
 - strings [C#], modifying
-ms.openlocfilehash: ecedd9a9027aa925c753f8e187d611b19d3db991
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 260e4022c514db0cee3c1459b9d746a1c8e2addd
+ms.sourcegitcommit: 43cbde34970f5f38f30c43cd63b9c7e2e83717ae
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "77543258"
+ms.lasthandoff: 04/11/2020
+ms.locfileid: "81121126"
 ---
 # <a name="how-to-modify-string-contents-in-c"></a>Jak upravit obsah řetězce v C\#
 
@@ -70,7 +70,7 @@ Vzhledem k tomu, že řetězce jsou neměnné, všechny předchozí příklady v
 
 Řetězec v pevném bloku s nebezpečným kódem můžete upravit, ale **důrazně** se nedoporučuje upravovat obsah řetězce po vytvoření řetězce. Tím se věci rozbijí nepředvídatelným způsobem. Například pokud někdo internuje řetězec, který má stejný obsah jako vy, dostanou vaši kopii a nebude očekávat, že jste upravovali jeho řetězec vůbec.
 
-Tyto ukázky můžete vyzkoušet tak, že se podíváte na kód v našem [úložišti GitHub](https://github.com/dotnet/samples/tree/master/snippets/csharp/how-to/strings). Nebo si můžete stáhnout ukázky [jako zip soubor](https://github.com/dotnet/samples/raw/master/snippets/csharp/how-to/strings.zip).
+Tyto ukázky můžete vyzkoušet tak, že se podíváte na kód v našem [úložišti GitHub](https://github.com/dotnet/docs/tree/master/samples/snippets/csharp/how-to/strings). Nebo si můžete stáhnout ukázky [jako zip soubor](../../../samples/snippets/csharp/how-to/strings.zip).
 
 ## <a name="see-also"></a>Viz také
 

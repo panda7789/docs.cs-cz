@@ -2,12 +2,12 @@
 title: dotnet test, příkaz
 description: Dotnet test příkaz se používá k provedení testů částí v daném projektu.
 ms.date: 02/27/2020
-ms.openlocfilehash: a11814f9fdc6326e681a09d7d2654b968014f318
-ms.sourcegitcommit: 2514f4e3655081dcfe1b22470c0c28500f952c42
+ms.openlocfilehash: 359e4522b26e2b59092d55eea3fca575d2afaf1f
+ms.sourcegitcommit: 43cbde34970f5f38f30c43cd63b9c7e2e83717ae
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/18/2020
-ms.locfileid: "79507305"
+ms.lasthandoff: 04/11/2020
+ms.locfileid: "81121039"
 ---
 # <a name="dotnet-test"></a>dotnet test
 
@@ -85,7 +85,7 @@ Testovací projekty určují testovací `<PackageReference>` běh pomocí běžn
 
 - **`l|--logger <LoggerUri/FriendlyName>`**
 
-  Určuje protokolovací nástroj pro výsledky testů.
+  Určuje protokolovací nástroj pro výsledky testů. Na rozdíl od MSBuild, dotnet test nepřijímá zkratky: `-l "console;v=d"` `-l "console;verbosity=detailed"`místo použití .
 
 - **`--no-build`**
 
@@ -121,7 +121,7 @@ Testovací projekty určují testovací `<PackageReference>` běh pomocí běžn
 
 - **`-v|--verbosity <LEVEL>`**
 
-  Nastaví úroveň podrobností příkazu. Povolené hodnoty `q[uiet]` `m[inimal]`jsou `n[ormal]` `d[etailed]`, `diag[nostic]`, , a .
+  Nastaví úroveň podrobností příkazu. Povolené hodnoty `q[uiet]` `m[inimal]`jsou `n[ormal]` `d[etailed]`, `diag[nostic]`, , a . Výchozí formát je `minimal`. Další informace naleznete v tématu <xref:Microsoft.Build.Framework.LoggerVerbosity>.
 
 - `RunSettings`Argumenty
 
@@ -145,10 +145,16 @@ Testovací projekty určují testovací `<PackageReference>` běh pomocí běžn
   dotnet test ~/projects/test1/test1.csproj
   ```
 
-- Spusťte testy v projektu v aktuálním adresáři a vygenerujte soubor výsledků testů ve formátu trx:
+- Spusťte testy v projektu v aktuálním adresáři a vygenerujte soubor výsledků testu ve formátu trx:
 
   ```dotnetcli
   dotnet test --logger trx
+  ```
+
+- Spusťte testy v projektu v aktuálním adresáři a protokolujte s podrobnou podrobností do konzoly:
+
+  ```dotnetcli
+  dotnet test --logger "console;verbosity=detailed"
   ```
 
 ## <a name="filter-option-details"></a>Podrobnosti o možnosti filtru
@@ -192,3 +198,4 @@ Další informace a příklady použití filtrace testů selektivních testů č
 
 - [Rámce a cíle](../../standard/frameworks.md)
 - [Katalog IDentifier (RID) modulu .NET Core Runtime](../rid-catalog.md)
+- [Předávání argumentů runsettings prostřednictvím příkazového řádku](https://github.com/Microsoft/vstest-docs/blob/master/docs/RunSettingsArguments.md)

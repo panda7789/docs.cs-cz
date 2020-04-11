@@ -7,12 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - operator keyword [C#]
 - operator overloading [C#]
-ms.openlocfilehash: ec67d8ec5c0b102ea0b2434119c99f93a0bbe8dd
-ms.sourcegitcommit: 2514f4e3655081dcfe1b22470c0c28500f952c42
+ms.openlocfilehash: 18da3a22d22f338d2f319d394d50d08e4d35e7eb
+ms.sourcegitcommit: 43cbde34970f5f38f30c43cd63b9c7e2e83717ae
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/18/2020
-ms.locfileid: "79507110"
+ms.lasthandoff: 04/11/2020
+ms.locfileid: "81121432"
 ---
 # <a name="operator-overloading-c-reference"></a>Přetížení operátoru (odkaz C#)
 
@@ -41,7 +41,7 @@ Následující tabulka obsahuje informace o přetížení operátorů jazyka C#:
 |[x + y](addition-operator.md), [x - y](subtraction-operator.md), x [ \* y](arithmetic-operators.md#multiplication-operator-), x / [y](arithmetic-operators.md#division-operator-), x [% y](arithmetic-operators.md#remainder-operator-), x & [y](boolean-logical-operators.md#logical-and-operator-), x [&#124; y](boolean-logical-operators.md#logical-or-operator-), x ^ [y](boolean-logical-operators.md#logical-exclusive-or-operator-), [x \< \< y](bitwise-and-shift-operators.md#left-shift-operator-), [x >> y](bitwise-and-shift-operators.md#right-shift-operator-), x [== y](equality-operators.md#equality-operator-), x [!= y](equality-operators.md#inequality-operator-), x [ \< y](comparison-operators.md#less-than-operator-), x y , x > [y](comparison-operators.md#greater-than-operator-), [ \<x = y](comparison-operators.md#less-than-or-equal-operator-), x >= [y](comparison-operators.md#greater-than-or-equal-operator-)|Tyto binární operátory mohou být přetíženy. Některé operátory musí být přetíženy ve dvojicích; Další informace naleznete v poznámce, která následuje po této tabulce.|
 |[x && y](boolean-logical-operators.md#conditional-logical-and-operator-), [x &#124;&#124; y](boolean-logical-operators.md#conditional-logical-or-operator-)|Podmíněné logické operátory nemohou být přetíženy. Pokud však typ s přetíženým `&` <code>&#124;</code> `&&` [ `true` a `false` operátory](true-false-operators.md) také určitým způsobem přetíží operátor nebo, operátor nebo <code>&#124;&#124;</code> může být vyhodnocen pro operandy tohoto typu. Další informace naleznete v části [Uživatelem definované podmíněné logické operátory](~/_csharplang/spec/expressions.md#user-defined-conditional-logical-operators) [specifikace jazyka C#](~/_csharplang/spec/introduction.md).|
 |[a&#91;i&#93;](member-access-operators.md#indexer-operator-)|Přístup k prvkům není považován za přetížený operátor, ale můžete definovat [indexer](../../programming-guide/indexers/index.md).|
-|[(T)x](type-testing-and-cast.md#cast-operator-)|Operátor přetypování nemůže být přetížen, ale můžete definovat nové operátory převodu. Další informace naleznete v [tématu User-defined operátory převodu](user-defined-conversion-operators.md).|
+|[(T)x](type-testing-and-cast.md#cast-expression)|Operátor přetypování nemůže být přetížen, ale můžete definovat převody vlastního typu, které lze provést výrazem přetypování. Další informace naleznete v [tématu User-defined operátory převodu](user-defined-conversion-operators.md).|
 |[+=](arithmetic-operators.md#compound-assignment), [-=](arithmetic-operators.md#compound-assignment) [ \* ](arithmetic-operators.md#compound-assignment), [/=](arithmetic-operators.md#compound-assignment) [%=](arithmetic-operators.md#compound-assignment), [&=](boolean-logical-operators.md#compound-assignment), , [^=](boolean-logical-operators.md#compound-assignment) [ \< \< ](bitwise-and-shift-operators.md#compound-assignment) [,&#124;=](boolean-logical-operators.md#compound-assignment), ,[>>=](bitwise-and-shift-operators.md#compound-assignment)|Operátory složeného přiřazení nelze explicitně přetížit. Však při přetížení binární operátor, odpovídající složené přiřazení operátor, pokud existuje, je také implicitně přetížené. Například `+=` je vyhodnocenpomocí `+`, které mohou být přetíženy.|
 |[^x](member-access-operators.md#index-from-end-operator-), [x = y](assignment-operator.md), [x.y](member-access-operators.md#member-access-expression-), [c ? t : f](conditional-operator.md), x [?? y](null-coalescing-operator.md), x [?? = y](null-coalescing-operator.md), [x.. y](member-access-operators.md#range-operator-), [x->y](pointer-related-operators.md#pointer-member-access-operator--) [=>](lambda-operator.md), , [f(x)](member-access-operators.md#invocation-expression-), [as](type-testing-and-cast.md#as-operator), [await](await.md), [checked](../keywords/checked.md), [unchecked](../keywords/unchecked.md), [default](default.md), [delegate](delegate-operator.md), [is](type-testing-and-cast.md#is-operator), [nameof](nameof.md), [new](new-operator.md), [sizeof](sizeof.md), [stackalloc](stackalloc.md), [typeof](type-testing-and-cast.md#typeof-operator)|Tyto operátory nelze přetížit.|
 

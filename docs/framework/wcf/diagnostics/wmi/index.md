@@ -2,12 +2,12 @@
 title: Diagnostika prostřednictvím rozhraní WMI (Windows Management Instrumentation)
 ms.date: 03/30/2017
 ms.assetid: fe48738d-e31b-454d-b5ec-24c85c6bf79a
-ms.openlocfilehash: 0c803e3988f7a63980d991190db87c263c992b80
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: b14f9401266bdf7edccd7dca12cb818cdd2cb348
+ms.sourcegitcommit: 43cbde34970f5f38f30c43cd63b9c7e2e83717ae
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79185679"
+ms.lasthandoff: 04/11/2020
+ms.locfileid: "81121551"
 ---
 # <a name="using-windows-management-instrumentation-for-diagnostics"></a>Diagnostika prostřednictvím rozhraní WMI (Windows Management Instrumentation)
 Windows Communication Foundation (WCF) zveřejňuje kontrolní data služby za běhu prostřednictvím wcf windows management instrumentace (WMI) zprostředkovatele.  
@@ -152,10 +152,11 @@ Whoami /user
 ## <a name="accessing-remote-wmi-object-instances"></a>Přístup ke vzdáleným instancím objektů služby WMI  
  Pokud potřebujete přístup k instancíw WMI WCF ve vzdáleném počítači, musíte povolit ochranu osobních údajů paketů v nástrojích, které používáte pro přístup. Následující část popisuje, jak jich dosáhnout pomocí wmi CIM Studio, Windows Management Instrumentation Tester a .NET SDK 2.0.  
   
-### <a name="wmi-cim-studio"></a>WMI CIM Studio  
- Pokud jste nainstalovali [nástroje pro správu služby WMI](https://go.microsoft.com/fwlink/?LinkId=95185), můžete k instancím služby WMI použít aplikaci WMI CIM Studio. Nástroje jsou v následující složce  
+### <a name="wmi-cim-studio"></a>WMI CIM Studio
+
+Pokud jste nainstalovali nástroje pro správu služby WMI, můžete k instancím služby WMI použít aplikaci WMI CIM Studio. Nástroje jsou v následující složce:
   
- **%windir%\Program Files\Nástroje WMI\\**  
+*%windir%\Program Files\Nástroje WMI\\*
   
 1. V okně **Připojit k oboru názvů:** zadejte **root\ServiceModel** a klepněte na **tlačítko OK.**  
   

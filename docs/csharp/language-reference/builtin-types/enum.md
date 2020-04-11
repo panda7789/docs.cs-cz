@@ -11,12 +11,12 @@ helpviewer_keywords:
 - enumeration type [C#]
 - bit flags [C#]
 ms.assetid: bbeb9a0f-e9b3-41ab-b0a6-c41b1a08974c
-ms.openlocfilehash: ab5eb1679f846bf0e25d90a4d0e0a71f0bdb0096
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 15f5e9ccb1396277229ba935381812700f63ece8
+ms.sourcegitcommit: 43cbde34970f5f38f30c43cd63b9c7e2e83717ae
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "78847703"
+ms.lasthandoff: 04/11/2020
+ms.locfileid: "81121159"
 ---
 # <a name="enumeration-types-c-reference"></a>Typy výčtu (odkaz Jazyka C#)
 
@@ -66,7 +66,7 @@ Počínaje C# 7.3, můžete `System.Enum` použít v omezení základní třídy
 
 ## <a name="conversions"></a>Převody
 
-Pro libovolný typ výčtu existují explicitní převody mezi typem výčtu a jeho základním integrálním typem. Pokud [přetypovat](../operators/type-testing-and-cast.md#cast-operator-) hodnotu výčtu na jeho základní typ, výsledkem je přidružená integrální hodnota člena výčtu.
+Pro libovolný typ výčtu existují explicitní převody mezi typem výčtu a jeho základním integrálním typem. Pokud [přetypovat](../operators/type-testing-and-cast.md#cast-expression) hodnotu výčtu na jeho základní typ, výsledkem je přidružená integrální hodnota člena výčtu.
 
 [!code-csharp[enum conversions](snippets/EnumType.cs#Conversions)]
 
@@ -88,7 +88,7 @@ Další informace naleznete v následujících částech [specifikace jazyka C#]
 ## <a name="see-also"></a>Viz také
 
 - [Referenční dokumentace k jazyku C#](../index.md)
-- [Formátové řetězce výčtu](../../../standard/base-types/enumeration-format-strings.md)
+- [Vytvoření výčtu řetězců formátu](../../../standard/base-types/enumeration-format-strings.md)
 - [Pokyny pro návrh - Výčet](../../../standard/design-guidelines/enum.md)
 - [Pokyny pro návrh – konvence pojmenování výčtu](../../../standard/design-guidelines/names-of-classes-structs-and-interfaces.md#naming-enumerations)
 - [příkaz switch](../keywords/switch.md)

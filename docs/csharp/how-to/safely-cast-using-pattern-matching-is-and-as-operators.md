@@ -6,12 +6,12 @@ helpviewer_keywords:
 - cast operators [C#], as and is operators
 - as operator [C#]
 - is operator [C#]
-ms.openlocfilehash: 34c34865a2feece5fe037daeb035292aafd015b9
-ms.sourcegitcommit: 99b153b93bf94d0fecf7c7bcecb58ac424dfa47c
+ms.openlocfilehash: 60e69a8ef55484e3b04f1674c35a1c5dadfa3b7c
+ms.sourcegitcommit: 43cbde34970f5f38f30c43cd63b9c7e2e83717ae
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/25/2020
-ms.locfileid: "80249354"
+ms.lasthandoff: 04/11/2020
+ms.locfileid: "81121000"
 ---
 # <a name="how-to-safely-cast-by-using-pattern-matching-and-the-is-and-as-operators"></a>Jak bezpečně obsazení pomocí porovnávání vzorů a je a jako operátory
 
@@ -37,4 +37,4 @@ Pokud chcete otestovat, zda je proměnná daný typ, ale nepřiřaďte ji nové 
 
 Jak můžete vidět porovnáním tohoto kódu s kódem porovnávání vzorů, syntaxe porovnávání vzorů poskytuje robustnější funkce kombinací testu a přiřazení v jednom příkazu. Pokud je to možné, použijte syntaxi porovnávání vzorů.
 
-Tyto ukázky můžete vyzkoušet tak, že se podíváte na kód v našem [úložišti GitHub](https://github.com/dotnet/samples/tree/master/snippets/csharp/how-to/safelycast). Nebo si můžete stáhnout ukázky [jako zip soubor](https://github.com/dotnet/samples/raw/master/snippets/csharp/how-to/safelycast.zip).
+Tyto ukázky můžete vyzkoušet tak, že se podíváte na kód v našem [úložišti GitHub](https://github.com/dotnet/docs/tree/master/samples/snippets/csharp/how-to/safelycast). Nebo si můžete stáhnout ukázky [jako zip soubor](../../../samples/snippets/csharp/how-to/safelycast.zip).

@@ -8,16 +8,16 @@ helpviewer_keywords:
 - numeric conversions [C#], explicit
 - conversions [C#], implicit numeric
 - conversions [C#], explicit numeric
-ms.openlocfilehash: 5380e8480c39d1940df13b2ecb50a0f394367388
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: b7d53e508e4d585c746a3cc61824cdace7707deb
+ms.sourcegitcommit: 43cbde34970f5f38f30c43cd63b9c7e2e83717ae
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79399600"
+ms.lasthandoff: 04/11/2020
+ms.locfileid: "81121454"
 ---
 # <a name="built-in-numeric-conversions-c-reference"></a>Předdefinované číselné převody (odkaz C#)
 
-C# poskytuje sadu [integrální](integral-numeric-types.md) a [plovoucí desetinnou desetinnou desetinnou](floating-point-numeric-types.md) desetinnou hodnotu číselné typy. Existuje převod mezi libovolnými dvěma číselnými typy, implicitními nebo explicitními. Operátor [přetypovacího `()` vysílání](../operators/type-testing-and-cast.md#cast-operator-) je nutné použít k vyvolání explicitního převodu.
+C# poskytuje sadu [integrální](integral-numeric-types.md) a [plovoucí desetinnou desetinnou desetinnou](floating-point-numeric-types.md) desetinnou hodnotu číselné typy. Existuje převod mezi libovolnými dvěma číselnými typy, implicitními nebo explicitními. K explicitnímu převodu je nutné použít [výraz přetypování.](../operators/type-testing-and-cast.md#cast-expression)
 
 ## <a name="implicit-numeric-conversions"></a>Implicitní číselné převody
 
