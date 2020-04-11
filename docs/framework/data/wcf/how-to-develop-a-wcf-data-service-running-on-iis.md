@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: vývoj datové služby WCF běžící v rámci služby IIS'
+title: 'Postupy: Vývoj datové služby WCF ve službě IIS'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -9,99 +9,99 @@ helpviewer_keywords:
 - WCF Data Services, deploying
 - WCF Data Services, hosting
 ms.assetid: f6f768c5-4989-49e3-a36f-896ab4ded86e
-ms.openlocfilehash: 5c75425783d3468ac42ef7cb32cd9c93e812192a
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.openlocfilehash: 8a1a0c2c55267940463e2c9ab82bb52345269260
+ms.sourcegitcommit: 43cbde34970f5f38f30c43cd63b9c7e2e83717ae
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75338340"
+ms.lasthandoff: 04/11/2020
+ms.locfileid: "81121604"
 ---
-# <a name="how-to-develop-a-wcf-data-service-running-on-iis"></a><span data-ttu-id="63fd1-102">Postupy: vývoj datové služby WCF běžící v rámci služby IIS</span><span class="sxs-lookup"><span data-stu-id="63fd1-102">How to: Develop a WCF data service running on IIS</span></span>
+# <a name="how-to-develop-a-wcf-data-service-running-on-iis"></a><span data-ttu-id="753a7-102">Postup: Vývoj datové služby WCF spuštěné ve službě IIS</span><span class="sxs-lookup"><span data-stu-id="753a7-102">How to: Develop a WCF data service running on IIS</span></span>
 
-<span data-ttu-id="63fd1-103">V tomto tématu se dozvíte, jak pomocí WCF Data Services vytvořit datovou službu založenou na ukázkové databázi Northwind, jejímž hostitelem je webová aplikace ASP.NET, která běží na Internetová informační služba (IIS).</span><span class="sxs-lookup"><span data-stu-id="63fd1-103">This topic shows how to use WCF Data Services to create a data service that is based on the Northwind sample database that is hosted by an ASP.NET Web application that is running on Internet Information Services (IIS).</span></span> <span data-ttu-id="63fd1-104">Příklad toho, jak vytvořit stejnou datovou službu Northwind jako ASP.NET webovou aplikaci, která běží na vývojovém serveru ASP.NET, najdete v tématu [rychlý start WCF Data Services](quickstart-wcf-data-services.md).</span><span class="sxs-lookup"><span data-stu-id="63fd1-104">For an example of how to create the same Northwind data service as an ASP.NET Web application that runs on the ASP.NET Development Server, see the [WCF Data Services quickstart](quickstart-wcf-data-services.md).</span></span>
+<span data-ttu-id="753a7-103">Tento článek ukazuje, jak pomocí služby WCF Data Services vytvořit datovou službu založenou na ukázkové databázi Northwind, která je hostovaná ASP.NET webovou aplikaci spuštěnou v Internetové informační službě (IIS).</span><span class="sxs-lookup"><span data-stu-id="753a7-103">This article shows how to use WCF Data Services to create a data service that's based on the Northwind sample database that's hosted by an ASP.NET Web app running on Internet Information Services (IIS).</span></span> <span data-ttu-id="753a7-104">Příklad, jak vytvořit stejnou datovou službu Northwind jako ASP.NET webovou aplikaci, která běží na ASP.NET vývojovém serveru, naleznete v [rychlém startu služby WCF Data Services](quickstart-wcf-data-services.md).</span><span class="sxs-lookup"><span data-stu-id="753a7-104">For an example of how to create the same Northwind data service as an ASP.NET Web app that runs on the ASP.NET Development Server, see the [WCF Data Services quickstart](quickstart-wcf-data-services.md).</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="63fd1-105">Chcete-li vytvořit datovou službu Northwind, je nutné mít nainstalovanou ukázkovou databázi Northwind na místním počítači.</span><span class="sxs-lookup"><span data-stu-id="63fd1-105">To create the Northwind data service, you must have installed the Northwind sample database on the local computer.</span></span> <span data-ttu-id="63fd1-106">Pokud si chcete stáhnout tuto ukázkovou databázi, přečtěte si část [databáze pro stahování a ukázkové databáze pro SQL Server](https://go.microsoft.com/fwlink/?linkid=24758).</span><span class="sxs-lookup"><span data-stu-id="63fd1-106">To download this sample database, see the download page, [Sample Databases for SQL Server](https://go.microsoft.com/fwlink/?linkid=24758).</span></span>
+> <span data-ttu-id="753a7-105">Chcete-li vytvořit datovou službu Northwind, nejprve nainstalujte ukázkovou databázi Northwind do místního počítače.</span><span class="sxs-lookup"><span data-stu-id="753a7-105">To create the Northwind data service, first install the Northwind sample database on the local computer.</span></span> <span data-ttu-id="753a7-106">Chcete-li databázi nainstalovat, spusťte skript Transact-SQL z [ukázkových databází Northwind a pubs pro microsoft sql server](https://github.com/Microsoft/sql-server-samples/tree/master/samples/databases/northwind-pubs).</span><span class="sxs-lookup"><span data-stu-id="753a7-106">To install the database, run the Transact-SQL script from [Northwind and pubs sample databases for Microsoft SQL Server](https://github.com/Microsoft/sql-server-samples/tree/master/samples/databases/northwind-pubs).</span></span>
 
-<span data-ttu-id="63fd1-107">V tomto tématu se dozvíte, jak vytvořit datovou službu pomocí poskytovatele Entity Framework.</span><span class="sxs-lookup"><span data-stu-id="63fd1-107">This topic shows how to create a data service by using the Entity Framework provider.</span></span> <span data-ttu-id="63fd1-108">Další poskytovatelé datových služeb jsou k dispozici.</span><span class="sxs-lookup"><span data-stu-id="63fd1-108">Other data services providers are available.</span></span> <span data-ttu-id="63fd1-109">Další informace najdete v tématu [poskytovatelé Data Services](data-services-providers-wcf-data-services.md).</span><span class="sxs-lookup"><span data-stu-id="63fd1-109">For more information, see [Data Services Providers](data-services-providers-wcf-data-services.md).</span></span>
+<span data-ttu-id="753a7-107">Tento článek ukazuje, jak vytvořit datovou službu pomocí zprostředkovatele Entity Framework.</span><span class="sxs-lookup"><span data-stu-id="753a7-107">This article shows how to create a data service by using the Entity Framework provider.</span></span> <span data-ttu-id="753a7-108">K dispozici jsou i další poskytovatelé datových služeb.</span><span class="sxs-lookup"><span data-stu-id="753a7-108">Other data services providers are available.</span></span> <span data-ttu-id="753a7-109">Další informace naleznete v tématu [Poskytovatelé datových služeb](data-services-providers-wcf-data-services.md).</span><span class="sxs-lookup"><span data-stu-id="753a7-109">For more information, see [Data Services Providers](data-services-providers-wcf-data-services.md).</span></span>
 
-<span data-ttu-id="63fd1-110">Po vytvoření služby je nutné výslovně poskytnout přístup k prostředkům datové služby.</span><span class="sxs-lookup"><span data-stu-id="63fd1-110">After you create the service, you must explicitly provide access to data service resources.</span></span> <span data-ttu-id="63fd1-111">Další informace najdete v tématu [Postup: povolení přístupu k datové službě](how-to-enable-access-to-the-data-service-wcf-data-services.md).</span><span class="sxs-lookup"><span data-stu-id="63fd1-111">For more information, see [How to: Enable Access to the Data Service](how-to-enable-access-to-the-data-service-wcf-data-services.md).</span></span>
+<span data-ttu-id="753a7-110">Po vytvoření služby je nutné explicitně poskytnout přístup k prostředkům datové služby.</span><span class="sxs-lookup"><span data-stu-id="753a7-110">After you create the service, you must explicitly provide access to data service resources.</span></span> <span data-ttu-id="753a7-111">Další informace naleznete v [tématu How to: Enable Access to the Data Service](how-to-enable-access-to-the-data-service-wcf-data-services.md).</span><span class="sxs-lookup"><span data-stu-id="753a7-111">For more information, see [How to: Enable Access to the Data Service](how-to-enable-access-to-the-data-service-wcf-data-services.md).</span></span>
 
-## <a name="create-the-aspnet-web-application-that-runs-on-iis"></a><span data-ttu-id="63fd1-112">Vytvoření webové aplikace v ASP.NET, která běží na službě IIS</span><span class="sxs-lookup"><span data-stu-id="63fd1-112">Create the ASP.NET web application that runs on IIS</span></span>
+## <a name="create-the-aspnet-web-application-that-runs-on-iis"></a><span data-ttu-id="753a7-112">Vytvoření ASP.NET webové aplikace spuštěné ve službě IIS</span><span class="sxs-lookup"><span data-stu-id="753a7-112">Create the ASP.NET web application that runs on IIS</span></span>
 
-1. <span data-ttu-id="63fd1-113">V aplikaci Visual Studio v nabídce **soubor** vyberte **Nový** > **projekt**.</span><span class="sxs-lookup"><span data-stu-id="63fd1-113">In Visual Studio, on the **File** menu, select **New** > **Project**.</span></span>
+1. <span data-ttu-id="753a7-113">V sadě Visual Studio vyberte v nabídce **Soubor** **položku Nový** > **projekt**.</span><span class="sxs-lookup"><span data-stu-id="753a7-113">In Visual Studio, on the **File** menu, select **New** > **Project**.</span></span>
 
-2. <span data-ttu-id="63fd1-114">V dialogovém okně **Nový projekt** vyberte > **Webová** kategorie **instalované** > [**Visual C#**  nebo **Visual Basic**].</span><span class="sxs-lookup"><span data-stu-id="63fd1-114">In the **New Project** dialog box, select the **Installed** > [**Visual C#** or **Visual Basic**] > **Web** category.</span></span>
+2. <span data-ttu-id="753a7-114">V dialogovém okně **Nový projekt** vyberte > **kategorii Web** **nainstalované** > [**Visual C#** nebo **Visual Basic].**</span><span class="sxs-lookup"><span data-stu-id="753a7-114">In the **New Project** dialog box, select the **Installed** > [**Visual C#** or **Visual Basic**] > **Web** category.</span></span>
 
-3. <span data-ttu-id="63fd1-115">Vyberte šablonu **webové aplikace ASP.NET** .</span><span class="sxs-lookup"><span data-stu-id="63fd1-115">Select the **ASP.NET Web Application** template.</span></span>
+3. <span data-ttu-id="753a7-115">Vyberte šablonu **webové aplikace ASP.NET.**</span><span class="sxs-lookup"><span data-stu-id="753a7-115">Select the **ASP.NET Web Application** template.</span></span>
 
-4. <span data-ttu-id="63fd1-116">Jako název projektu zadejte `NorthwindService`.</span><span class="sxs-lookup"><span data-stu-id="63fd1-116">Enter `NorthwindService` as the name of the project.</span></span>
+4. <span data-ttu-id="753a7-116">Zadejte `NorthwindService` jako název projektu.</span><span class="sxs-lookup"><span data-stu-id="753a7-116">Enter `NorthwindService` as the name of the project.</span></span>
 
-5. <span data-ttu-id="63fd1-117">Klikněte na tlačítko **OK**.</span><span class="sxs-lookup"><span data-stu-id="63fd1-117">Click **OK**.</span></span>
+5. <span data-ttu-id="753a7-117">Klikněte na tlačítko **OK**.</span><span class="sxs-lookup"><span data-stu-id="753a7-117">Click **OK**.</span></span>
 
-6. <span data-ttu-id="63fd1-118">V nabídce **projekt** vyberte **vlastnosti NorthwindService**.</span><span class="sxs-lookup"><span data-stu-id="63fd1-118">On the **Project** menu, select **NorthwindService Properties**.</span></span>
+6. <span data-ttu-id="753a7-118">V nabídce **Project** vyberte **možnost NorthwindService Properties**.</span><span class="sxs-lookup"><span data-stu-id="753a7-118">On the **Project** menu, select **NorthwindService Properties**.</span></span>
 
-7. <span data-ttu-id="63fd1-119">Vyberte kartu **Web** a pak vyberte **použít místní webový server služby IIS**.</span><span class="sxs-lookup"><span data-stu-id="63fd1-119">Select the **Web** tab, and then select **Use Local IIS Web Server**.</span></span>
+7. <span data-ttu-id="753a7-119">Vyberte kartu **Web** a potom vyberte **Použít místní webový server služby IIS**.</span><span class="sxs-lookup"><span data-stu-id="753a7-119">Select the **Web** tab, and then select **Use Local IIS Web Server**.</span></span>
 
-8. <span data-ttu-id="63fd1-120">Klikněte na **vytvořit virtuální adresář** a pak klikněte na **OK**.</span><span class="sxs-lookup"><span data-stu-id="63fd1-120">Click **Create Virtual Directory** and then click **OK**.</span></span>
+8. <span data-ttu-id="753a7-120">Klepněte na tlačítko **Vytvořit virtuální adresář** a potom klepněte na tlačítko **OK**.</span><span class="sxs-lookup"><span data-stu-id="753a7-120">Click **Create Virtual Directory** and then click **OK**.</span></span>
 
-9. <span data-ttu-id="63fd1-121">Z příkazového řádku s oprávněními správce spusťte jeden z následujících příkazů (v závislosti na operačním systému):</span><span class="sxs-lookup"><span data-stu-id="63fd1-121">From the command prompt with administrator privileges, execute one of the following commands (depending on the operating system):</span></span>
+9. <span data-ttu-id="753a7-121">Z příkazového řádku s oprávněními správce spusťte jeden z následujících příkazů (v závislosti na operačním systému):</span><span class="sxs-lookup"><span data-stu-id="753a7-121">From the command prompt with administrator privileges, execute one of the following commands (depending on the operating system):</span></span>
 
-    - <span data-ttu-id="63fd1-122">32bitové systémy:</span><span class="sxs-lookup"><span data-stu-id="63fd1-122">32-bit systems:</span></span>
+    - <span data-ttu-id="753a7-122">32bitové systémy:</span><span class="sxs-lookup"><span data-stu-id="753a7-122">32-bit systems:</span></span>
 
         ```console
         "%windir%\Microsoft.NET\Framework\v3.0\Windows Communication Foundation\ServiceModelReg.exe" -i
         ```
 
-    - <span data-ttu-id="63fd1-123">64bitové systémy:</span><span class="sxs-lookup"><span data-stu-id="63fd1-123">64-bit systems:</span></span>
+    - <span data-ttu-id="753a7-123">64bitové systémy:</span><span class="sxs-lookup"><span data-stu-id="753a7-123">64-bit systems:</span></span>
 
         ```console
         "%windir%\Microsoft.NET\Framework64\v3.0\Windows Communication Foundation\ServiceModelReg.exe" -i
         ```
 
-     <span data-ttu-id="63fd1-124">Tím se zajistí, že se v počítači zaregistruje Windows Communication Foundation (WCF).</span><span class="sxs-lookup"><span data-stu-id="63fd1-124">This makes sure that Windows Communication Foundation (WCF) is registered on the computer.</span></span>
+     <span data-ttu-id="753a7-124">Tím zajistíte, že windows communication foundation (WCF) je registrována v počítači.</span><span class="sxs-lookup"><span data-stu-id="753a7-124">This makes sure that Windows Communication Foundation (WCF) is registered on the computer.</span></span>
 
-10. <span data-ttu-id="63fd1-125">Z příkazového řádku s oprávněními správce spusťte jeden z následujících příkazů (v závislosti na operačním systému):</span><span class="sxs-lookup"><span data-stu-id="63fd1-125">From the command prompt with administrator privileges, execute one of the following commands (depending on the operating system):</span></span>
+10. <span data-ttu-id="753a7-125">Z příkazového řádku s oprávněními správce spusťte jeden z následujících příkazů (v závislosti na operačním systému):</span><span class="sxs-lookup"><span data-stu-id="753a7-125">From the command prompt with administrator privileges, execute one of the following commands (depending on the operating system):</span></span>
 
-    - <span data-ttu-id="63fd1-126">32bitové systémy:</span><span class="sxs-lookup"><span data-stu-id="63fd1-126">32-bit systems:</span></span>
+    - <span data-ttu-id="753a7-126">32bitové systémy:</span><span class="sxs-lookup"><span data-stu-id="753a7-126">32-bit systems:</span></span>
 
         ```console
         "%windir%\Microsoft.NET\Framework\v4.0.30319\aspnet_regiis.exe" -i -enable
         ```
 
-    - <span data-ttu-id="63fd1-127">64bitové systémy:</span><span class="sxs-lookup"><span data-stu-id="63fd1-127">64-bit systems:</span></span>
+    - <span data-ttu-id="753a7-127">64bitové systémy:</span><span class="sxs-lookup"><span data-stu-id="753a7-127">64-bit systems:</span></span>
 
         ```console
         "%windir%\Microsoft.NET\Framework64\v4.0.30319\aspnet_regiis.exe" -i -enable
         ```
 
-     <span data-ttu-id="63fd1-128">Tím se zajistí, aby služba IIS běžela správně po instalaci WCF do počítače.</span><span class="sxs-lookup"><span data-stu-id="63fd1-128">This makes sure that IIS runs correctly after WCF has been installed on the computer.</span></span> <span data-ttu-id="63fd1-129">Možná budete muset restartovat taky službu IIS.</span><span class="sxs-lookup"><span data-stu-id="63fd1-129">You might have to also restart IIS.</span></span>
+     <span data-ttu-id="753a7-128">Tím zajistíte, že iis běží správně po wcf byl nainstalován v počítači.</span><span class="sxs-lookup"><span data-stu-id="753a7-128">This makes sure that IIS runs correctly after WCF has been installed on the computer.</span></span> <span data-ttu-id="753a7-129">Bude pravděpodobně nutné restartovat službu IIS.</span><span class="sxs-lookup"><span data-stu-id="753a7-129">You might have to also restart IIS.</span></span>
 
-11. <span data-ttu-id="63fd1-130">Když je aplikace ASP.NET spuštěna v IIS7, je nutné provést také následující kroky:</span><span class="sxs-lookup"><span data-stu-id="63fd1-130">When the ASP.NET application runs on IIS7, you must also perform the following steps:</span></span>
+11. <span data-ttu-id="753a7-130">Při spuštění ASP.NET aplikace v systému IIS7 je nutné provést také následující kroky:</span><span class="sxs-lookup"><span data-stu-id="753a7-130">When the ASP.NET application runs on IIS7, you must also perform the following steps:</span></span>
 
-    1. <span data-ttu-id="63fd1-131">Otevřete Správce služby IIS a v části **výchozí webový server**přejděte na aplikaci inSlužba.</span><span class="sxs-lookup"><span data-stu-id="63fd1-131">Open IIS Manager and navigate to the PhotoService application under **Default Web Site**.</span></span>
+    1. <span data-ttu-id="753a7-131">Otevřete Správce služby IIS a přejděte do aplikace PhotoService v části **Výchozí web**.</span><span class="sxs-lookup"><span data-stu-id="753a7-131">Open IIS Manager and navigate to the PhotoService application under **Default Web Site**.</span></span>
 
-    2. <span data-ttu-id="63fd1-132">V **zobrazení funkcí**poklikejte na **ověřování**.</span><span class="sxs-lookup"><span data-stu-id="63fd1-132">In **Features View**, double-click **Authentication**.</span></span>
+    2. <span data-ttu-id="753a7-132">V **zobrazení funkcí**poklepejte na **položku Ověřování**.</span><span class="sxs-lookup"><span data-stu-id="753a7-132">In **Features View**, double-click **Authentication**.</span></span>
 
-    3. <span data-ttu-id="63fd1-133">Na stránce **ověřování** vyberte **anonymní ověřování**.</span><span class="sxs-lookup"><span data-stu-id="63fd1-133">On the **Authentication** page, select **Anonymous Authentication**.</span></span>
+    3. <span data-ttu-id="753a7-133">Na stránce **Ověřování** vyberte **možnost Anonymní ověřování**.</span><span class="sxs-lookup"><span data-stu-id="753a7-133">On the **Authentication** page, select **Anonymous Authentication**.</span></span>
 
-    4. <span data-ttu-id="63fd1-134">V podokně **Akce** klikněte na **Upravit** a nastavte objekt zabezpečení, pod kterým se budou anonymní uživatelé připojovat k webu.</span><span class="sxs-lookup"><span data-stu-id="63fd1-134">In the **Actions** pane, click **Edit** to set the security principal under which anonymous users will connect to the site.</span></span>
+    4. <span data-ttu-id="753a7-134">V podokně **Akce** klikněte na **Upravit** a nastavte zaregistrovaný objekt zabezpečení, pod kterým se anonymní uživatelé připojí k webu.</span><span class="sxs-lookup"><span data-stu-id="753a7-134">In the **Actions** pane, click **Edit** to set the security principal under which anonymous users will connect to the site.</span></span>
 
-    5. <span data-ttu-id="63fd1-135">V dialogovém okně **Upravit pověření anonymního ověřování** vyberte možnost **identita fondu aplikací**.</span><span class="sxs-lookup"><span data-stu-id="63fd1-135">In the **Edit Anonymous Authentication Credentials** dialog box, select **Application pool identity**.</span></span>
+    5. <span data-ttu-id="753a7-135">V dialogovém okně **Upravit anonymní ověřovací pověření** vyberte **identitu fondu aplikací**.</span><span class="sxs-lookup"><span data-stu-id="753a7-135">In the **Edit Anonymous Authentication Credentials** dialog box, select **Application pool identity**.</span></span>
 
     > [!IMPORTANT]
-    > <span data-ttu-id="63fd1-136">Když použijete účet síťové služby, udělíte anonymním uživatelům všechna přístupová práva k interní síti, která jsou přidružená k tomuto účtu.</span><span class="sxs-lookup"><span data-stu-id="63fd1-136">When you use the Network Service account, you grant anonymous users all the internal network access associated with that account.</span></span>
+    > <span data-ttu-id="753a7-136">Používáte-li účet síťové služby, udělíte anonymním uživatelům veškerý interní přístup k síti přidružený k tomuto účtu.</span><span class="sxs-lookup"><span data-stu-id="753a7-136">When you use the Network Service account, you grant anonymous users all the internal network access associated with that account.</span></span>
 
-12. <span data-ttu-id="63fd1-137">Pomocí SQL Server Management Studio, nástroje Sqlcmd. exe nebo editoru Transact-SQL v aplikaci Visual Studio spusťte následující příkaz Transact-SQL pro instanci SQL Server s připojenou databází Northwind:</span><span class="sxs-lookup"><span data-stu-id="63fd1-137">By using SQL Server Management Studio, the sqlcmd.exe utility, or the Transact-SQL Editor in Visual Studio, execute the following Transact-SQL command against the instance of SQL Server that has the Northwind database attached:</span></span>
+12. <span data-ttu-id="753a7-137">Pomocí SQL Server Management Studio, sqlcmd.exe nástroj nebo Transact-SQL Editor v sadě Visual Studio, spusťte následující příkaz Transact-SQL proti instanci SQL Server, který má připojenou databázi Northwind:</span><span class="sxs-lookup"><span data-stu-id="753a7-137">By using SQL Server Management Studio, the sqlcmd.exe utility, or the Transact-SQL Editor in Visual Studio, execute the following Transact-SQL command against the instance of SQL Server that has the Northwind database attached:</span></span>
 
     ```sql
     CREATE LOGIN [NT AUTHORITY\NETWORK SERVICE] FROM WINDOWS;
     GO
     ```
 
-    <span data-ttu-id="63fd1-138">Tím se vytvoří přihlášení v instanci SQL Server pro účet systému Windows, který se používá ke spouštění služby IIS.</span><span class="sxs-lookup"><span data-stu-id="63fd1-138">This creates a login in the SQL Server instance for the Windows account used to run IIS.</span></span> <span data-ttu-id="63fd1-139">To umožňuje službě IIS připojit se k instanci SQL Server.</span><span class="sxs-lookup"><span data-stu-id="63fd1-139">This enables IIS to connect to the SQL Server instance.</span></span>
+    <span data-ttu-id="753a7-138">Tím se vytvoří přihlášení v instanci serveru SQL Server pro účet systému Windows používaný ke spuštění služby IIS.</span><span class="sxs-lookup"><span data-stu-id="753a7-138">This creates a login in the SQL Server instance for the Windows account used to run IIS.</span></span> <span data-ttu-id="753a7-139">To umožňuje službě IIS připojit se k instanci serveru SQL Server.</span><span class="sxs-lookup"><span data-stu-id="753a7-139">This enables IIS to connect to the SQL Server instance.</span></span>
 
-13. <span data-ttu-id="63fd1-140">S připojenou databází Northwind spusťte následující příkazy jazyka Transact-SQL:</span><span class="sxs-lookup"><span data-stu-id="63fd1-140">With the Northwind database attached, execute the following Transact-SQL commands:</span></span>
+13. <span data-ttu-id="753a7-140">S připojenou databází Northwind proveďte následující příkazy Transact-SQL:</span><span class="sxs-lookup"><span data-stu-id="753a7-140">With the Northwind database attached, execute the following Transact-SQL commands:</span></span>
 
     ```sql
     USE Northwind
@@ -118,50 +118,50 @@ ms.locfileid: "75338340"
     GO
     ```
 
-    <span data-ttu-id="63fd1-141">Tím se uděluje oprávnění k novému přihlášení, které službě IIS umožňuje číst data a zapisovat data do databáze Northwind.</span><span class="sxs-lookup"><span data-stu-id="63fd1-141">This grants rights to the new login, which enables IIS to read data from and write data to the Northwind database.</span></span>
+    <span data-ttu-id="753a7-141">To uděluje práva na nové přihlášení, které umožňuje službě IIS číst data z databáze Northwind a zapisovat je.</span><span class="sxs-lookup"><span data-stu-id="753a7-141">This grants rights to the new login, which enables IIS to read data from and write data to the Northwind database.</span></span>
 
-## <a name="define-the-data-model"></a><span data-ttu-id="63fd1-142">Definování datového modelu</span><span class="sxs-lookup"><span data-stu-id="63fd1-142">Define the data model</span></span>
+## <a name="define-the-data-model"></a><span data-ttu-id="753a7-142">Definování datového modelu</span><span class="sxs-lookup"><span data-stu-id="753a7-142">Define the data model</span></span>
 
-1. <span data-ttu-id="63fd1-143">V **Průzkumník řešení**klikněte pravým tlačítkem myši na název projektu ASP.NET a potom klikněte na **Přidat** > **Nová položka**.</span><span class="sxs-lookup"><span data-stu-id="63fd1-143">In **Solution Explorer**, right-click the name of the ASP.NET project, and then click **Add** > **New Item**.</span></span>
+1. <span data-ttu-id="753a7-143">V **Průzkumníku řešení**klikněte pravým tlačítkem myši na název projektu ASP.NET a potom klikněte na **přidat** > **novou položku**.</span><span class="sxs-lookup"><span data-stu-id="753a7-143">In **Solution Explorer**, right-click the name of the ASP.NET project, and then click **Add** > **New Item**.</span></span>
 
-2. <span data-ttu-id="63fd1-144">V dialogovém okně **Přidat novou položku** vyberte **ADO.NET model EDM (Entity Data Model)** .</span><span class="sxs-lookup"><span data-stu-id="63fd1-144">In the **Add New Item** dialog box, select **ADO.NET Entity Data Model**.</span></span>
+2. <span data-ttu-id="753a7-144">V dialogovém okně **Přidat novou položku** vyberte **ADO.NET datový model entity**.</span><span class="sxs-lookup"><span data-stu-id="753a7-144">In the **Add New Item** dialog box, select **ADO.NET Entity Data Model**.</span></span>
 
-3. <span data-ttu-id="63fd1-145">Pro název datového modelu zadejte `Northwind.edmx`.</span><span class="sxs-lookup"><span data-stu-id="63fd1-145">For the name of the data model, type `Northwind.edmx`.</span></span>
+3. <span data-ttu-id="753a7-145">Pro název datového modelu `Northwind.edmx`zadejte .</span><span class="sxs-lookup"><span data-stu-id="753a7-145">For the name of the data model, type `Northwind.edmx`.</span></span>
 
-4. <span data-ttu-id="63fd1-146">V průvodci model EDM (Entity Data Model) vyberte **Generovat z databáze**a pak klikněte na **Další**.</span><span class="sxs-lookup"><span data-stu-id="63fd1-146">In the Entity Data Model Wizard, select **Generate from Database**, and then click **Next**.</span></span>
+4. <span data-ttu-id="753a7-146">V Průvodci datovým modelem entity vyberte **Generovat z databáze**a klepněte na tlačítko **Další**.</span><span class="sxs-lookup"><span data-stu-id="753a7-146">In the Entity Data Model Wizard, select **Generate from Database**, and then click **Next**.</span></span>
 
-5. <span data-ttu-id="63fd1-147">Pomocí jednoho z následujících kroků připojte datový model k databázi a potom klikněte na tlačítko **Další**:</span><span class="sxs-lookup"><span data-stu-id="63fd1-147">Connect the data model to the database by doing one of the following steps, and then click **Next**:</span></span>
+5. <span data-ttu-id="753a7-147">Připojte datový model k databázi jedním z následujících kroků a potom klepněte na tlačítko **Další**:</span><span class="sxs-lookup"><span data-stu-id="753a7-147">Connect the data model to the database by doing one of the following steps, and then click **Next**:</span></span>
 
-    - <span data-ttu-id="63fd1-148">Pokud již nemáte nakonfigurované připojení k databázi, klikněte na tlačítko **nové připojení** a vytvořte nové připojení.</span><span class="sxs-lookup"><span data-stu-id="63fd1-148">If you do not have a database connection already configured, click **New Connection** and create a new connection.</span></span> <span data-ttu-id="63fd1-149">Další informace naleznete v tématu [How to: Create Connections to SQL Server databases](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/s4yys16a(v=vs.90)).</span><span class="sxs-lookup"><span data-stu-id="63fd1-149">For more information, see [How to: Create Connections to SQL Server Databases](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/s4yys16a(v=vs.90)).</span></span> <span data-ttu-id="63fd1-150">Tato instance SQL Server musí mít připojenou ukázkovou databázi Northwind.</span><span class="sxs-lookup"><span data-stu-id="63fd1-150">This SQL Server instance must have the Northwind sample database attached.</span></span>
+    - <span data-ttu-id="753a7-148">Pokud již nemáte nakonfigurované připojení k databázi, klepněte na tlačítko **Nové připojení** a vytvořte nové připojení.</span><span class="sxs-lookup"><span data-stu-id="753a7-148">If you do not have a database connection already configured, click **New Connection** and create a new connection.</span></span> <span data-ttu-id="753a7-149">Další informace naleznete v [tématu How to: Create Connections to SQL Server Databases](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/s4yys16a(v=vs.90)).</span><span class="sxs-lookup"><span data-stu-id="753a7-149">For more information, see [How to: Create Connections to SQL Server Databases](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/s4yys16a(v=vs.90)).</span></span> <span data-ttu-id="753a7-150">Tato instance serveru SQL Server musí mít připojenu ukázkovou databázi Northwind.</span><span class="sxs-lookup"><span data-stu-id="753a7-150">This SQL Server instance must have the Northwind sample database attached.</span></span>
 
-         <span data-ttu-id="63fd1-151">\- nebo –</span><span class="sxs-lookup"><span data-stu-id="63fd1-151">\- or -</span></span>
+         <span data-ttu-id="753a7-151">\-nebo -</span><span class="sxs-lookup"><span data-stu-id="753a7-151">\- or -</span></span>
 
-    - <span data-ttu-id="63fd1-152">Pokud máte připojení k databázi, které je už nakonfigurované pro připojení k databázi Northwind, vyberte toto připojení ze seznamu připojení.</span><span class="sxs-lookup"><span data-stu-id="63fd1-152">If you have a database connection already configured to connect to the Northwind database, select that connection from the list of connections.</span></span>
+    - <span data-ttu-id="753a7-152">Pokud máte již nakonfigurované připojení k databázi Northwind, vyberte toto připojení ze seznamu připojení.</span><span class="sxs-lookup"><span data-stu-id="753a7-152">If you have a database connection already configured to connect to the Northwind database, select that connection from the list of connections.</span></span>
 
-6. <span data-ttu-id="63fd1-153">Na poslední stránce průvodce zaškrtněte políčka pro všechny tabulky v databázi a zrušte zaškrtnutí políček u zobrazení a uložených procedur.</span><span class="sxs-lookup"><span data-stu-id="63fd1-153">On the final page of the wizard, select the check boxes for all tables in the database, and clear the check boxes for views and stored procedures.</span></span>
+6. <span data-ttu-id="753a7-153">Na poslední stránce průvodce zaškrtněte políčka pro všechny tabulky v databázi a zrušte zaškrtnutí políček pro zobrazení a uložené procedury.</span><span class="sxs-lookup"><span data-stu-id="753a7-153">On the final page of the wizard, select the check boxes for all tables in the database, and clear the check boxes for views and stored procedures.</span></span>
 
-7. <span data-ttu-id="63fd1-154">Kliknutím na tlačítko **Dokončit** zavřete průvodce.</span><span class="sxs-lookup"><span data-stu-id="63fd1-154">Click **Finish** to close the wizard.</span></span>
+7. <span data-ttu-id="753a7-154">Chcete-li průvodce zavřít, klepněte na tlačítko **Dokončit.**</span><span class="sxs-lookup"><span data-stu-id="753a7-154">Click **Finish** to close the wizard.</span></span>
 
-## <a name="create-the-data-service"></a><span data-ttu-id="63fd1-155">Vytvoření datové služby</span><span class="sxs-lookup"><span data-stu-id="63fd1-155">Create the data service</span></span>
+## <a name="create-the-data-service"></a><span data-ttu-id="753a7-155">Vytvoření datové služby</span><span class="sxs-lookup"><span data-stu-id="753a7-155">Create the data service</span></span>
 
-1. <span data-ttu-id="63fd1-156">V **Průzkumník řešení**klikněte pravým tlačítkem myši na název projektu ASP.NET a potom klikněte na **Přidat** > **Nová položka**.</span><span class="sxs-lookup"><span data-stu-id="63fd1-156">In **Solution Explorer**, right-click the name of your ASP.NET project, and then click **Add** > **New Item**.</span></span>
+1. <span data-ttu-id="753a7-156">V **Průzkumníku řešení**klikněte pravým tlačítkem myši na název projektu ASP.NET a potom klikněte na **přidat** > **novou položku**.</span><span class="sxs-lookup"><span data-stu-id="753a7-156">In **Solution Explorer**, right-click the name of your ASP.NET project, and then click **Add** > **New Item**.</span></span>
 
-2. <span data-ttu-id="63fd1-157">V dialogovém okně **Přidat novou položku** vyberte **WCF Data Service**.</span><span class="sxs-lookup"><span data-stu-id="63fd1-157">In the **Add New Item** dialog box, select **WCF Data Service**.</span></span>
+2. <span data-ttu-id="753a7-157">V dialogovém okně **Přidat novou položku** vyberte **datovou službu WCF**.</span><span class="sxs-lookup"><span data-stu-id="753a7-157">In the **Add New Item** dialog box, select **WCF Data Service**.</span></span>
 
-   ![Šablona položky datové služby WCF v aplikaci Visual Studio 2015](./media/wcf-data-service-item-template.png)
+   ![Šablona položky datové služby WCF v Sadě Visual Studio 2015](./media/wcf-data-service-item-template.png)
 
    > [!NOTE]
-   > <span data-ttu-id="63fd1-159">Šablona **WCF Data Service** je k dispozici v aplikaci visual Studio 2015, ale ne v aplikaci visual Studio 2017 nebo novější.</span><span class="sxs-lookup"><span data-stu-id="63fd1-159">The **WCF Data Service** template is available in Visual Studio 2015, but not in Visual Studio 2017 or later.</span></span>
+   > <span data-ttu-id="753a7-159">Šablona **WCF Data Service** je k dispozici ve Visual Studiu 2015, ale ne v Visual Studiu 2017 nebo novějším.</span><span class="sxs-lookup"><span data-stu-id="753a7-159">The **WCF Data Service** template is available in Visual Studio 2015, but not in Visual Studio 2017 or later.</span></span>
 
-3. <span data-ttu-id="63fd1-160">Jako název služby zadejte `Northwind`.</span><span class="sxs-lookup"><span data-stu-id="63fd1-160">For the name of the service, enter `Northwind`.</span></span>
+3. <span data-ttu-id="753a7-160">Pro název služby zadejte `Northwind`.</span><span class="sxs-lookup"><span data-stu-id="753a7-160">For the name of the service, enter `Northwind`.</span></span>
 
-     <span data-ttu-id="63fd1-161">Visual Studio vytvoří kód XML a soubory kódu pro novou službu.</span><span class="sxs-lookup"><span data-stu-id="63fd1-161">Visual Studio creates the XML markup and code files for the new service.</span></span> <span data-ttu-id="63fd1-162">Ve výchozím nastavení se otevře okno Editor kódu.</span><span class="sxs-lookup"><span data-stu-id="63fd1-162">By default, the code-editor window opens.</span></span> <span data-ttu-id="63fd1-163">V **Průzkumník řešení**má služba název, Northwind a příponu. svc.cs nebo. svc. vb.</span><span class="sxs-lookup"><span data-stu-id="63fd1-163">In **Solution Explorer**, the service has the name, Northwind, and the extension .svc.cs or .svc.vb.</span></span>
+     <span data-ttu-id="753a7-161">Visual Studio vytvoří xml značky a soubory kódu pro novou službu.</span><span class="sxs-lookup"><span data-stu-id="753a7-161">Visual Studio creates the XML markup and code files for the new service.</span></span> <span data-ttu-id="753a7-162">Ve výchozím nastavení se otevře okno editoru kódu.</span><span class="sxs-lookup"><span data-stu-id="753a7-162">By default, the code-editor window opens.</span></span> <span data-ttu-id="753a7-163">V **Průzkumníku řešení**má služba název Northwind a rozšíření .svc.cs nebo .svc.vb.</span><span class="sxs-lookup"><span data-stu-id="753a7-163">In **Solution Explorer**, the service has the name, Northwind, and the extension .svc.cs or .svc.vb.</span></span>
 
-4. <span data-ttu-id="63fd1-164">V kódu pro datovou službu nahraďte komentář `/* TODO: put your data source class name here */` v definici třídy definující datovou službu s typem, který je kontejnerem entit datového modelu, který je v tomto případě `NorthwindEntities`.</span><span class="sxs-lookup"><span data-stu-id="63fd1-164">In the code for the data service, replace the comment `/* TODO: put your data source class name here */` in the definition of the class that defines the data service with the type that is the entity container of the data model, which in this case is `NorthwindEntities`.</span></span> <span data-ttu-id="63fd1-165">Definice třídy by měla vypadat takto:</span><span class="sxs-lookup"><span data-stu-id="63fd1-165">The class definition should look this the following:</span></span>
+4. <span data-ttu-id="753a7-164">V kódu datové služby nahraďte komentář `/* TODO: put your data source class name here */` v definici třídy, která definuje datovou službu typem, který je `NorthwindEntities`kontejnerem entity datového modelu, což je v tomto případě .</span><span class="sxs-lookup"><span data-stu-id="753a7-164">In the code for the data service, replace the comment `/* TODO: put your data source class name here */` in the definition of the class that defines the data service with the type that is the entity container of the data model, which in this case is `NorthwindEntities`.</span></span> <span data-ttu-id="753a7-165">Definice třídy by měla vypadat takto:</span><span class="sxs-lookup"><span data-stu-id="753a7-165">The class definition should look this the following:</span></span>
 
      [!code-csharp[Astoria Quickstart Service#ServiceDefinition](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria_quickstart_service/cs/northwind.svc.cs#servicedefinition)]
      [!code-vb[Astoria Quickstart Service#ServiceDefinition](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria_quickstart_service/vb/northwind.svc.vb#servicedefinition)]
 
-## <a name="see-also"></a><span data-ttu-id="63fd1-166">Viz také:</span><span class="sxs-lookup"><span data-stu-id="63fd1-166">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="753a7-166">Viz také</span><span class="sxs-lookup"><span data-stu-id="753a7-166">See also</span></span>
 
-- [<span data-ttu-id="63fd1-167">Vystavení dat jako služby</span><span class="sxs-lookup"><span data-stu-id="63fd1-167">Exposing Your Data as a Service</span></span>](exposing-your-data-as-a-service-wcf-data-services.md)
+- [<span data-ttu-id="753a7-167">Vystavení dat jako služby</span><span class="sxs-lookup"><span data-stu-id="753a7-167">Exposing Your Data as a Service</span></span>](exposing-your-data-as-a-service-wcf-data-services.md)
