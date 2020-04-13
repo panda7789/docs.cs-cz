@@ -1595,7 +1595,7 @@
         - name: Operátory a výrazy přístupu členů
           href: language-reference/operators/member-access-operators.md
           displayName: '., [], ?., ?[], (), indexer, null-conditional, Elvis, invocation, ^, index from end, hat, .., range'
-        - name: Operátory pro testování typů a přetypování
+        - name: Operátory pro testování typů a výrazy přetypování
           href: language-reference/operators/type-testing-and-cast.md
           displayName: 'is operator, is keyword, as operator, as keyword, typeof, (), explicit, conversion'
         - name: Operátory převodu definované uživatelem
