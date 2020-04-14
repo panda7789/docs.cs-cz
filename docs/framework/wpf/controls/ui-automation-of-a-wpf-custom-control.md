@@ -10,12 +10,12 @@ helpviewer_keywords:
 - custom controls [WPF], improving accessibility
 - UI Automation [WPF], using with custom controls
 ms.assetid: 47b310fc-fbd5-4ce2-a606-22d04c6d4911
-ms.openlocfilehash: 9c33d0e5da70820041ba2a2881082d9f7d179fc5
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 97db94215220ac2a68e0395bd63b7a874a745a48
+ms.sourcegitcommit: 7980a91f90ae5eca859db7e6bfa03e23e76a1a50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79187500"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "81243242"
 ---
 # <a name="ui-automation-of-a-wpf-custom-control"></a>Automatizace uživatelského rozhraní vlastního ovládacího prvku WPF
 [!INCLUDE[TLA#tla_uiautomation](../../../../includes/tlasharptla-uiautomation-md.md)]poskytuje jediné, generalizované rozhraní, které mohou klienti automatizace použít ke kontrole nebo provozu uživatelských rozhraní různých platforem a architektur. [!INCLUDE[TLA2#tla_uiautomation](../../../../includes/tla2sharptla-uiautomation-md.md)]umožňuje kódu zajištění kvality (testování) a aplikacím pro usnadnění přístupu, jako jsou programy pro čtení z obrazovky, prozkoumat prvky uživatelského rozhraní a simulovat interakci uživatele s nimi z jiného kódu. Informace o [!INCLUDE[TLA2#tla_uiautomation](../../../../includes/tla2sharptla-uiautomation-md.md)] všech platformách najdete v tématu Usnadnění přístupu.  
@@ -144,7 +144,7 @@ Public Class RangePeer2
 End Class  
 ```  
   
-Příklad implementace naleznete [c#](https://github.com/dotnet/samples/tree/master/snippets/csharp/VS_Snippets_Wpf/CustomControlNumericUpDown/CSharp) nebo [visual basic](https://github.com/dotnet/samples/tree/master/snippets/visualbasic/VS_Snippets_Wpf/CustomControlNumericUpDown/visualbasic) zdrojový kód, který implementuje a spotřebovává NumericUpDown vlastní ovládací prvek.  
+Příklad implementace naleznete [c#](https://github.com/dotnet/docs/tree/master/samples/snippets/csharp/VS_Snippets_Wpf/CustomControlNumericUpDown/CSharp) nebo [visual basic](https://github.com/dotnet/docs/tree/master/samples/snippets/visualbasic/VS_Snippets_Wpf/CustomControlNumericUpDown/visualbasic) zdrojový kód, který implementuje a spotřebovává NumericUpDown vlastní ovládací prvek.  
   
 ### <a name="raise-events"></a>Zvýšit události  
  Klienti automatizace se mohou přihlásit k odběru událostí automatizace. Vlastní ovládací prvky musí hlásit <xref:System.Windows.Automation.Peers.AutomationPeer.RaiseAutomationEvent%2A> změny stavu ovládacího prvku voláním metody. Podobně při změně hodnoty vlastnosti <xref:System.Windows.Automation.Peers.AutomationPeer.RaisePropertyChangedEvent%2A> volání metody. Následující kód ukazuje, jak získat peer objekt z v rámci řídicího kódu a volání metody pro zvýšení události. Jako optimalizace kód určuje, zda existují všechny posluchače pro tento typ události. Vyvolání události pouze v případě, že jsou posluchači vyhnout zbytečné režie a pomáhá ovládací prvek zůstat responzivní.  
@@ -156,5 +156,5 @@ Příklad implementace naleznete [c#](https://github.com/dotnet/samples/tree/mas
 
 - [Přehled automatizace uživatelského rozhraní](../../ui-automation/ui-automation-overview.md)
 - [Implementace zprostředkovatele automatizace uživatelského rozhraní na straně serveru](../../ui-automation/server-side-ui-automation-provider-implementation.md)
-- [Vlastní ovládací prvek NumericUpDown (C#) na GitHubu](https://github.com/dotnet/samples/tree/master/snippets/csharp/VS_Snippets_Wpf/CustomControlNumericUpDown/CSharp)  
-- [Vlastní ovládací prvek NumericUpDown (Visual Basic) na GitHubu](https://github.com/dotnet/samples/tree/master/snippets/visualbasic/VS_Snippets_Wpf/CustomControlNumericUpDown/visualbasic)
+- [Vlastní ovládací prvek NumericUpDown (C#) na GitHubu](https://github.com/dotnet/docs/tree/master/samples/snippets/csharp/VS_Snippets_Wpf/CustomControlNumericUpDown/CSharp)  
+- [Vlastní ovládací prvek NumericUpDown (Visual Basic) na GitHubu](https://github.com/dotnet/docs/tree/master/samples/snippets/visualbasic/VS_Snippets_Wpf/CustomControlNumericUpDown/visualbasic)

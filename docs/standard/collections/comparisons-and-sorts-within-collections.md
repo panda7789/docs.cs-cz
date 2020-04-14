@@ -12,12 +12,12 @@ helpviewer_keywords:
 - Equals method
 - collections [.NET Framework], comparisons
 ms.assetid: 5e4d3b45-97f0-423c-a65f-c492ed40e73b
-ms.openlocfilehash: 3360652f22ed39ccfd99f9863052fe584b78562f
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: b1c6be08dad37afe9e6627b15d93453aa23f6408
+ms.sourcegitcommit: 7980a91f90ae5eca859db7e6bfa03e23e76a1a50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "78159257"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "81242696"
 ---
 # <a name="comparisons-and-sorts-within-collections"></a>Porovnávání a řazení v kolekcích
 Třídy <xref:System.Collections> provádět porovnání v téměř všechny procesy, které se podílejí na správě kolekcí, zda hledání prvku odebrat nebo vrácení hodnoty páru klíč a hodnota.  
@@ -32,7 +32,7 @@ Třídy <xref:System.Collections> provádět porovnání v téměř všechny pro
   
 - Pokud typ T <xref:System.IEquatable%601>neimplementuje , <xref:System.Object.Equals%2A?displayProperty=nameWithType> se používá.  
   
- Kromě toho některé přetížení konstruktoru pro kolekce <xref:System.Collections.Generic.IEqualityComparer%601> slovníku přijmout implementaci, která se používá k porovnání klíčů pro rovnost. Například viz <xref:System.Collections.Generic.Dictionary%602.%23ctor%2A?displayProperty=nameWithType> konstruktor.  
+ Kromě toho některé přetížení konstruktoru pro kolekce <xref:System.Collections.Generic.IEqualityComparer%601> slovníku přijmout implementaci, která se používá k porovnání klíčů pro rovnost. Například viz <xref:System.Collections.Generic.Dictionary%602.%23ctor%2A> konstruktor.  
   
 <a name="BKMK_Determiningsortorder"></a>
 ## <a name="determining-sort-order"></a>Určení pořadí řazení  

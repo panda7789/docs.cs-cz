@@ -6,12 +6,12 @@ ms.author: cesardl
 ms.date: 12/23/2019
 ms.custom: mvc,mlnet-tooling
 ms.topic: tutorial
-ms.openlocfilehash: 2243aad0e787a3a594bde3dfa9884f104eab74e8
-ms.sourcegitcommit: 34dc3c0d0d0a1cc418abff259d9daa8078d00b81
+ms.openlocfilehash: 832124e6d027b240c4d06692ee87c84f57b982d3
+ms.sourcegitcommit: 7980a91f90ae5eca859db7e6bfa03e23e76a1a50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/19/2020
-ms.locfileid: "79546689"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "81243333"
 ---
 # <a name="analyze-sentiment-using-the-mlnet-cli"></a>Analýza mínění pomocí rozhraní příkazového řádku ML.NET
 
@@ -45,14 +45,14 @@ Můžete buď spustit vygenerované projekty kódu Jazyka `dotnet run` C# z Visu
 
 Budeme používat existující datovou sadu použitou pro scénář analýzy mínění, což je úloha strojového učení s binární klasifikací. Můžete použít vlastní datovou sadu podobným způsobem a model a kód budou generovány za vás.
 
-1. Stáhněte si [soubor zip datové sady UCI Sentiment Labeled Sentences (viz citace v následující poznámce)](https://archive.ics.uci.edu/ml/machine-learning-databases/00331/sentiment%20labelled%20sentences.zip)a rozbalte jej v libovolné složce, kterou zvolíte.
+1. Stáhněte si [soubor zip datové sady UCI Sentiment Labeled Sentences (viz citace v následující poznámce)](http://archive.ics.uci.edu/ml/machine-learning-databases/00331/sentiment%20labelled%20sentences.zip)a rozbalte jej v libovolné složce, kterou zvolíte.
 
     > [!NOTE]
     > Datové sady tohoto kurzu používá datovou sadu ze skupiny na jednotlivé popisky pomocí deep features, Kotzias et al,. KDD 2015 a hostované v Úložišti strojového učení UCI - Dua, D. a Karra Taniskidou, E. (2017). Úložiště strojového učeníhttp://archive.ics.uci.edu/mlUCI [ ]. Irvine, KALIFORNIE: Kalifornská univerzita, Škola informací a informatiky.
 
 2. Zkopírujte `yelp_labelled.txt` soubor do libovolné složky, `/cli-test`kterou jste dříve vytvořili (například ).
 
-3. Otevřete upřednostňovaný příkazový řádek a přesuňte se do složky, do které jste soubor datové sady zkopírovali. Například:
+3. Otevřete upřednostňovaný příkazový řádek a přesuňte se do složky, do které jste soubor datové sady zkopírovali. Příklad:
 
     ```console
     cd /cli-test
@@ -223,7 +223,7 @@ Můžete použít podobný "ML model bodovací kód" ke spuštění modelu v apl
 
 Například můžete přímo přesunout tento kód do libovolné desktopové aplikace systému Windows, jako je **WPF** a **WinForms** a spustit model stejným způsobem, než tomu bylo v konzolové aplikaci.
 
-Způsob implementace těchto řádků kódu pro spuštění modelu ML by však měl být optimalizován (tj. ukládat soubor modelu do mezipaměti a načíst jej jednou) a mít objekty singleton namísto jejich vytváření při každém požadavku, zejména pokud vaše aplikace musí být škálovatelná, například webové aplikace nebo distribuované služby, jak je vysvětleno v následující části.
+Způsob implementace těchto řádků kódu pro spuštění modelu ML by však měl být optimalizován (tj. ukládat soubor modelu do mezipaměti a načíst jej jednou) a mít objekty singleton namísto jejich vytváření při každém požadavku, zejména pokud vaše aplikace musí být škálovatelná, například webová aplikace nebo distribuovaná služba, jak je vysvětleno v následující části.
 
 ### <a name="running-mlnet-models-in-scalable-aspnet-core-web-apps-and-services-multi-threaded-apps"></a>Spuštění ML.NET modelů v škálovatelných ASP.NET webových aplikací a služeb Core (aplikace s více vlákny)
 

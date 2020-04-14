@@ -1,5 +1,5 @@
 ---
-title: Vlastní číselné formátovací řetězce
+title: Vlastní řetězce číselného formátu
 ms.date: 06/25/2018
 ms.technology: dotnet-standard
 dev_langs:
@@ -16,14 +16,14 @@ helpviewer_keywords:
 - formatting numbers [.NET Framework]
 - format specifiers, custom numeric format strings
 ms.assetid: 6f74fd32-6c6b-48ed-8241-3c2b86dea5f4
-ms.openlocfilehash: 1eb9c3c189d7bba3a12fdcd0c3d600a66bf819ca
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 5961cce4601a89b34708b7090207edfed63b5b08
+ms.sourcegitcommit: 7980a91f90ae5eca859db7e6bfa03e23e76a1a50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "75348299"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "81242982"
 ---
-# <a name="custom-numeric-format-strings"></a>Vlastní číselné formátovací řetězce
+# <a name="custom-numeric-format-strings"></a>Vlastní řetězce číselného formátu
 
 Lze vytvořit vlastní číselný formátovací řetězec, který se skládá z jednoho nebo několika vlastních číselných specifikátorů pro definování formátování číselných dat. Vlastní číselný formátovací řetězec je libovolný formátovací řetězec, který není [standardním číselným formátovacím řetězcem](../../../docs/standard/base-types/standard-numeric-format-strings.md).
 
@@ -265,7 +265,7 @@ Bez ohledu na formátovací řetězec, <xref:System.Single> pokud <xref:System.D
 
 Nastavení v ovládacím panelu **Místní a jazykové možnosti** ovlivňují výsledný řetězec vytvořený operací formátování. Tato nastavení se používají k <xref:System.Globalization.NumberFormatInfo> inicializaci objektu přidruženého k aktuální jazykové verzi vlákna a aktuální jazyková verze vlákna poskytuje hodnoty používané k řízení formátování. Počítače, které používají různá nastavení, generují různé výsledné řetězce.
 
-Kromě toho pokud <xref:System.Globalization.CultureInfo.%23ctor%28System.String%29?displayProperty=nameWithType> použijete konstruktor k vytvoření <xref:System.Globalization.CultureInfo> instance nového objektu, který představuje stejnou jazykovou verzi jako aktuální jazyková verze systému, <xref:System.Globalization.CultureInfo> budou na nový objekt použita všechna vlastní nastavení vytvořená položkou **Místní a jazykové možnosti** v Ovládacích panelech. <xref:System.Globalization.CultureInfo.%23ctor%28System.String%2CSystem.Boolean%29?displayProperty=nameWithType> Konstruktor můžete použít k <xref:System.Globalization.CultureInfo> vytvoření objektu, který neodráží vlastní nastavení systému.
+Kromě toho pokud <xref:System.Globalization.CultureInfo.%23ctor%28System.String%29> použijete konstruktor k vytvoření <xref:System.Globalization.CultureInfo> instance nového objektu, který představuje stejnou jazykovou verzi jako aktuální jazyková verze systému, <xref:System.Globalization.CultureInfo> budou na nový objekt použita všechna vlastní nastavení vytvořená položkou **Místní a jazykové možnosti** v Ovládacích panelech. <xref:System.Globalization.CultureInfo.%23ctor%28System.String%2CSystem.Boolean%29> Konstruktor můžete použít k <xref:System.Globalization.CultureInfo> vytvoření objektu, který neodráží vlastní nastavení systému.
 
 ### <a name="rounding-and-fixed-point-format-strings"></a>Zaokrouhlení a formátovací řetězce s pevnou hodem
 
@@ -289,7 +289,7 @@ Následující příklad ukazuje dva vlastní číselné formátovací řetězce
 
 - <xref:System.Globalization.NumberFormatInfo?displayProperty=nameWithType>
 - [Typy formátování](../../../docs/standard/base-types/formatting-types.md)
-- [Standardní řetězce číselného formátu](../../../docs/standard/base-types/standard-numeric-format-strings.md)
-- [Postupy: Zarovnání čísla úvodními nulami](../../../docs/standard/base-types/how-to-pad-a-number-with-leading-zeros.md)
+- [Standardní číselné formátovací řetězce](../../../docs/standard/base-types/standard-numeric-format-strings.md)
+- [Postupy: Vyplnění čísla úvodními nulami](../../../docs/standard/base-types/how-to-pad-a-number-with-leading-zeros.md)
 - [Ukázka: Nástroj pro formátování WinForms .NET (C#)](https://docs.microsoft.com/samples/dotnet/samples/winforms-formatting-utility-cs)
 - [Ukázka: Nástroj pro formátování WinForms .NET (Visual Basic)](https://docs.microsoft.com/samples/dotnet/samples/winforms-formatting-utility-vb)

@@ -13,12 +13,12 @@ helpviewer_keywords:
 - runtime, language interoperability
 - common language runtime, language interoperability
 ms.assetid: 4f0b77d0-4844-464f-af73-6e06bedeafc6
-ms.openlocfilehash: 689ca9f7278dcf91b12bc62b5255a968388bb9f8
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 725884d8ab6d6d9009ad1cdd7bc185889cd5e485
+ms.sourcegitcommit: 7980a91f90ae5eca859db7e6bfa03e23e76a1a50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "79400531"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "81243060"
 ---
 # <a name="language-independence-and-language-independent-components"></a>Jazyková nezávislost a jazykově nezávislé komponenty
 
@@ -57,7 +57,7 @@ V tomto článku:
 
   - [Vlastnosti](#properties)
 
-  - [Akce](#events)
+  - [Události](#events)
 
   - [Přetížení](#overloads)
 
@@ -76,7 +76,7 @@ V tomto článku:
 Tato část popisuje pravidla pro vytvoření součásti kompatibilní se standardem CLS. Úplný seznam pravidel naleznete v oddílu I, článku 11 [normy ECMA-335 Standard: Common Language Infrastructure](https://www.ecma-international.org/publications/standards/Ecma-335.htm).
 
 > [!NOTE]
-> Specifikace společného jazyka popisuje každé pravidlo pro dodržování specifikace CLS, protože se vztahuje na spotřebitele (vývojáři, kteří programově přistupují k součásti, která je kompatibilní se specifikací CLS), architektury (vývojáři, kteří používají kompilátor jazyka k vytvoření Knihovny kompatibilní se standardem CLS) a rozšiřující zařízení (vývojáři, kteří vytvářejí nástroj, jako je například kompilátor jazyka nebo analyzátor kódu, který vytváří součásti kompatibilní se standardem CLS). Tento článek se zaměřuje na pravidla, která se vztahují na rámce. Všimněte si však, že některá pravidla, která platí pro rozšiřující zařízení, se mohou vztahovat také na sestavení, která jsou vytvořena pomocí reflection.emit.
+> Specifikace společného jazyka popisuje každé pravidlo pro dodržování specifikace CLS, protože se vztahuje na spotřebitele (vývojáři, kteří programově přistupují k součásti, která je kompatibilní se specifikací CLS), architektury (vývojáři, kteří používají kompilátor jazyka k vytvoření knihoven kompatibilních se specifikací CLS) a extendery (vývojáři, kteří vytvářejí nástroj, jako je kompilátor jazyka nebo analyzátor kódu, který vytváří komponenty kompatibilní se specifikací CLS). Tento článek se zaměřuje na pravidla, která se vztahují na rámce. Všimněte si však, že některá pravidla, která platí pro rozšiřující zařízení, se mohou vztahovat také na sestavení, která jsou vytvořena pomocí reflection.emit.
 
 Chcete-li navrhnout komponentu, která je jazykově nezávislá, stačí použít pravidla pro dodržování předpisů CLS na veřejné rozhraní komponenty. Vaše soukromá implementace nemusí odpovídat specifikaci.
 
@@ -105,8 +105,8 @@ Pravidla pro dodržování předpisů cls jsou uvedeny v následující tabulce.
 
 |Kategorie|Seznamte se s |Pravidlo|Číslo pravidla|
 |--------------|---------|----------|-----------------|
-|Přístupnost|[Přístupnost členů](#MemberAccess)|Usnadnění přístupu se nesmí změnit při přepsání zděděných metod, s `family-or-assembly`výjimkou přepsání metody zděděné z jiného sestavení s usnadněním přístupu . V tomto případě musí mít `family`přepsání přístupnost .|10|
-|Přístupnost|[Přístupnost členů](#MemberAccess)|Viditelnost a přístupnost typů a členů musí být takové, aby typy v podpisu kteréhokoli člena byly viditelné a přístupné vždy, když je člen sám viditelný a přístupný. Například veřejná metoda, která je viditelná mimo jeho sestavení, nesmí mít argument, jehož typ je viditelný pouze v rámci sestavení. Viditelnost a přístupnost typů tvořících instanci obecný typ použitý v podpisu každého člena musí být viditelná a přístupná vždy, když je člen sám viditelný a přístupný. Například instance obecný typ přítomný v podpisu člena, který je viditelný mimo jeho sestavení nesmí mít obecný argument, jehož typ je viditelný pouze v rámci sestavení.|12|
+|Usnadnění|[Přístupnost členů](#MemberAccess)|Usnadnění přístupu se nesmí změnit při přepsání zděděných metod, s `family-or-assembly`výjimkou přepsání metody zděděné z jiného sestavení s usnadněním přístupu . V tomto případě musí mít `family`přepsání přístupnost .|10|
+|Usnadnění|[Přístupnost členů](#MemberAccess)|Viditelnost a přístupnost typů a členů musí být takové, aby typy v podpisu kteréhokoli člena byly viditelné a přístupné vždy, když je člen sám viditelný a přístupný. Například veřejná metoda, která je viditelná mimo jeho sestavení, nesmí mít argument, jehož typ je viditelný pouze v rámci sestavení. Viditelnost a přístupnost typů tvořících instanci obecný typ použitý v podpisu každého člena musí být viditelná a přístupná vždy, když je člen sám viditelný a přístupný. Například instance obecný typ přítomný v podpisu člena, který je viditelný mimo jeho sestavení nesmí mít obecný argument, jehož typ je viditelný pouze v rámci sestavení.|12|
 |Pole|[Pole](#arrays)|Pole musí mít prvky s typem kompatibilním se standardem CLS a všechny rozměry pole musí mít dolní hranice nula. Pouze skutečnost, že položka je pole a typ prvku pole musí být nutné rozlišovat mezi přetížení. Při přetížení je založena na dvou nebo více typů pole typy prvků musí být pojmenovány typy.|16|
 |Atributy|[Atributy](#attributes)|Atributy musí být <xref:System.Attribute?displayProperty=nameWithType>typu nebo typu, který z něj dědí.|41|
 |Atributy|[Atributy](#attributes)|Cls umožňuje pouze podmnožinu kódování vlastní atributy. V těchto kódováních se zobrazí pouze typy (viz <xref:System.Type?displayProperty=nameWithType>oddíl <xref:System.String?displayProperty=nameWithType> <xref:System.Char?displayProperty=nameWithType>IV): <xref:System.Int32?displayProperty=nameWithType>, <xref:System.Int64?displayProperty=nameWithType> <xref:System.Single?displayProperty=nameWithType>, <xref:System.Double?displayProperty=nameWithType> <xref:System.Boolean?displayProperty=nameWithType>, <xref:System.Byte?displayProperty=nameWithType> <xref:System.Int16?displayProperty=nameWithType>, , , , , , , a jakýkoli typ výčtu založený na typu základního celočíselné číslo cls.|34|
@@ -116,11 +116,11 @@ Pravidla pro dodržování předpisů cls jsou uvedeny v následující tabulce.
 |Výčty|[Výčty](#enums)|Základní typ výčtu musí být vestavěný typ celého čísla CLS, název pole bude "value__" a `RTSpecialName`toto pole bude označeno .|7|
 |Výčty|[Výčty](#enums)|Existují dva různé druhy výčtů, označené přítomností nebo <xref:System.FlagsAttribute?displayProperty=nameWithType> nepřítomností vlastního atributu (viz Partition IV Library). Jeden představuje pojmenované celé číslo hodnoty; ostatní představuje pojmenované bitové příznaky, které lze kombinovat pro generování nepojmenované hodnoty. Hodnota an `enum` není omezena na zadané hodnoty.|8|
 |Výčty|[Výčty](#enums)|Literálová statická pole výčtu musí mít typ výčtu samotného.|9|
-|Akce|[Akce](#events)|Metody, které implementují `SpecialName` událost, musí být označeny v metadatech.|29|
-|Akce|[Akce](#events)|Přístupnost události a jejích přistupujících objektů musí být totožná.|30|
-|Akce|[Akce](#events)|Metody `add` `remove` a metody události musí být buď přítomny, nebo chybí.|31|
-|Akce|[Akce](#events)|Metody `add` `remove` a pro událost musí mít jeden parametr, jehož typ definuje typ události <xref:System.Delegate?displayProperty=nameWithType>a který musí být odvozen od písmene a).|32|
-|Akce|[Akce](#events)|Události musí dodržovat konkrétní vzor pojmenování. Atribut `SpecialName` uvedený v pravidle CLS 29 se při porovnávání názvů ignoruje a musí dodržovat pravidla identifikátorů.|33|
+|Události|[Události](#events)|Metody, které implementují `SpecialName` událost, musí být označeny v metadatech.|29|
+|Události|[Události](#events)|Přístupnost události a jejích přistupujících objektů musí být totožná.|30|
+|Události|[Události](#events)|Metody `add` `remove` a metody události musí být buď přítomny, nebo chybí.|31|
+|Události|[Události](#events)|Metody `add` `remove` a pro událost musí mít jeden parametr, jehož typ definuje typ události <xref:System.Delegate?displayProperty=nameWithType>a který musí být odvozen od písmene a).|32|
+|Události|[Události](#events)|Události musí dodržovat konkrétní vzor pojmenování. Atribut `SpecialName` uvedený v pravidle CLS 29 se při porovnávání názvů ignoruje a musí dodržovat pravidla identifikátorů.|33|
 |Výjimky|[Výjimky](#exceptions)|Objekty, které jsou vyvolány musí být typu <xref:System.Exception?displayProperty=nameWithType> nebo typu dědit z něj. Metody kompatibilní se standardem CLS však nejsou nutné k blokování šíření jiných typů výjimek.|40|
 |Obecné|[Dodržování předpisů CLS: pravidla](#Rules)|Pravidla CLS platí pouze pro ty části typu, které jsou přístupné nebo viditelné mimo definující sestavu.|1|
 |Obecné|[Dodržování předpisů CLS: pravidla](#Rules)|Členové typů, které nejsou kompatibilní se standardem CLS, nesmějí být označeni jako kompatibilní se standardem CLS.|2|
@@ -434,7 +434,7 @@ Vlastnosti v typech kompatibilních se standardem CLS se musí řídit těmito p
 
 <a name="events"></a>
 
-### <a name="events"></a>Akce
+### <a name="events"></a>Události
 
 Událost je definována svým názvem a typem. Typ události je delegát, který se používá k označení události. Například <xref:System.AppDomain.AssemblyResolve?displayProperty=nameWithType> událost je typu <xref:System.ResolveEventHandler>. Kromě samotné události poskytují implementaci události tři metody s názvy založenými na `SpecialName` názvu události a jsou označeny jako v metadatech sestavení:
 
@@ -527,7 +527,7 @@ Následující příklad definuje `DescriptionAttribute` třídu, která <xref:S
 
 ## <a name="the-clscompliantattribute-attribute"></a>Atribut CLSCompliantAttribute
 
-Atribut <xref:System.CLSCompliantAttribute> se používá k označení, zda prvek programu je v souladu se specifikací společného jazyka. Konstruktor <xref:System.CLSCompliantAttribute.%23ctor%28System.Boolean%29?displayProperty=nameWithType> obsahuje jeden povinný `isCompliant`parametr , který označuje, zda je prvek programu kompatibilní se standardem CLS.
+Atribut <xref:System.CLSCompliantAttribute> se používá k označení, zda prvek programu je v souladu se specifikací společného jazyka. Konstruktor <xref:System.CLSCompliantAttribute.%23ctor%28System.Boolean%29> obsahuje jeden povinný `isCompliant`parametr , který označuje, zda je prvek programu kompatibilní se standardem CLS.
 
 V době kompilace kompilátor zjistí nekompatibilní prvky, které jsou považovány za kompatibilní se standardem CLS a vydává upozornění. Kompilátor nevydává upozornění pro typy nebo členy, které jsou explicitně deklarovány jako nekompatibilní.
 
@@ -565,7 +565,7 @@ Následující příklad používá <xref:System.CLSCompliantAttribute> atribut 
 [!code-csharp[Conceptual.CLSCompliant#35](../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.clscompliant/cs/indicator3.cs#35)]
 [!code-vb[Conceptual.CLSCompliant#35](../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.clscompliant/vb/indicator3.vb#35)]
 
-Pokud vyvíjíte aplikaci, nikoli knihovnu (to znamená, že nevystavujete typy nebo členy, které mohou využívat jiní vývojáři aplikací), dodržování předpisů CLS pro prvky programu, které vaše aplikace využívá, je zajímavé pouze v případě, že je váš jazyk nepodporuje . V takovém případě kompilátor jazyka vygeneruje chybu při pokusu o použití prvku, který není kompatibilní se standardem CLS.
+Pokud vyvíjíte aplikaci, nikoli knihovnu (to znamená, že nevystavujete typy nebo členy, které můžou využívat jiní vývojáři aplikací), je dodržování předpisů cls pro prvky programu, které vaše aplikace využívá, zajímavé pouze v případě, že je váš jazyk nepodporuje. V takovém případě kompilátor jazyka vygeneruje chybu při pokusu o použití prvku, který není kompatibilní se standardem CLS.
 
 <a name="CrossLang"></a>
 

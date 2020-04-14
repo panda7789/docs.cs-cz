@@ -2,63 +2,66 @@
 title: Sledování SQL
 ms.date: 03/30/2017
 ms.assetid: bcaebeb1-b9e5-49e8-881b-e49af66fd341
-ms.openlocfilehash: 88f44e5362684f755695aab154842fad2274134d
-ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
+ms.openlocfilehash: 72bfcaac2903b3e7fa5679422ad4feaa79e93211
+ms.sourcegitcommit: 7980a91f90ae5eca859db7e6bfa03e23e76a1a50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/09/2020
-ms.locfileid: "77094589"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "81243177"
 ---
 # <a name="sql-tracking"></a>Sledování SQL
-Tato ukázka předvádí, jak napsat vlastního účastníka sledování SQL, který zapisuje záznamy sledování do databáze SQL. Programovací model Windows Workflow Foundation (WF) poskytuje sledování pracovního postupu, které vám umožní získat přehled o spuštění instance pracovního postupu. Sledovací modul Sledování generuje záznamy sledování pracovních postupů během provádění pracovního postupu. Další informace o sledování pracovního postupu najdete v tématu [sledování a trasování pracovních postupů](../workflow-tracking-and-tracing.md).
 
-#### <a name="to-use-this-sample"></a>Použití této ukázky
+Tato ukázka ukazuje, jak napsat vlastní SQL sledování účastníka, který zapisuje záznamy sledování do databáze SQL. Windows Workflow Foundation (WF) poskytuje sledování pracovního postupu pro získání přehledu o provádění instance pracovního postupu. Doba sledování runtime vyzařuje záznamy sledování pracovního postupu během provádění pracovního postupu. Další informace o sledování pracovního postupu naleznete v [tématu Sledování pracovního postupu a trasování](../workflow-tracking-and-tracing.md).
 
-1. Ověřte, že máte nainstalované SQL Server 2008 SQL Server 2008 Express nebo novější. Skripty, které jsou součástí ukázky, předpokládají použití instance SQL Express na místním počítači. Pokud máte jinou instanci, před spuštěním ukázky prosím upravte skripty související s databází.
+## <a name="use-the-sample"></a>Použijte vzorek
 
-2. Vytvořte databázi sledování SQL Server spuštěním Trackingsetup. cmd v adresáři Scripts (\WF\Basic\Tracking\SqlTracking\CS\Scripts). Tím se vytvoří databáze s názvem TrackingSample.
+1. Ověřte, zda máte nainstalován server SQL Server 2008, SQL Server 2008 Express nebo novější. Skripty zabalené s ukázkou předpokládají použití instance SQL Express v místním počítači. Pokud máte jinou instanci, upravte před spuštěním ukázky skripty související s databází.
 
-    > [!NOTE]
-    > Skript vytvoří databázi ve výchozí instanci serveru SQL Express. Pokud ho chcete nainstalovat do jiné instance databáze, upravte skript Trackingsetup. cmd.
+2. Databázi sledování serveru SQL Server vytvořte spuštěním souboru Trackingsetup.cmd v adresáři skriptů (\WF\Basic\Tracking\SqlTracking\CS\Scripts). Tím se vytvoří databáze s názvem TrackingSample.
 
-3. Otevřete SqlTrackingSample. sln v aplikaci Visual Studio 2010.
+   > [!NOTE]
+   > Skript vytvoří databázi na výchozí instanci SQL Express. Pokud ji chcete nainstalovat do jiné instance databáze, upravte skript Trackingsetup.cmd.
 
-4. Stisknutím kláves CTRL+SHIFT+B řešení sestavíte.
+3. Otevřete sqltrackingsample.sln v sadě Visual Studio 2010.
 
-5. Stisknutím klávesy F5 spusťte aplikaci.
+4. Řešení sestavte stisknutím **klávesy Ctrl**+**Shift**+**B.**
 
-     Otevře se okno prohlížeče a zobrazí se výpis adresáře pro aplikaci.
+5. Stisknutím **klávesy F5** spusťte aplikaci.
 
-6. V prohlížeči klikněte na StockPriceService. xamlx.
+   Otevře se okno prohlížeče a zobrazí výpis adresáře pro aplikaci.
+
+6. V prohlížeči klikněte na Soubor StockPriceService.xamlx.
 
 7. Prohlížeč zobrazí stránku StockPriceService, která obsahuje adresu WSDL místní služby. Zkopírujte tuto adresu.
 
-     Příklad adresy WSDL místní služby je `http://localhost:65193/StockPriceService.xamlx?wsdl`.
+   Příkladem adresy WSDL místní služby je `http://localhost:65193/StockPriceService.xamlx?wsdl`.
 
-8. Pomocí Průzkumníka souborů spusťte testovacího klienta WCF (WcfTestClient. exe). Je umístěn v adresáři Microsoft Visual Studio 10.0 \ Common7\IDE.
+8. Pomocí Průzkumníka souborů spusťte testovacího klienta WCF (WcfTestClient.exe). Je umístěn v *adresáři Microsoft Visual Studio 10.0\Common7\IDE*.
 
-9. V testovacím klientovi WCF klikněte na nabídku **soubor** a vyberte **Přidat službu**. Do textového pole vložte adresu místní služby. Kliknutím na tlačítko **OK** zavřete dialogové okno.
+9. V testovacím klientovi WCF klepněte na **nabídku Soubor** a vyberte **Přidat službu**. Vložte adresu místní služby do textového pole. Klepnutím na **tlačítko OK** zavřete dialogové okno.
 
-10. V testovacím klientovi WCF poklikejte na **GetStockPrice**. Tím se otevře operace `GetStockPrice`, která přijímá jeden parametr, zadáte hodnotu `Contoso` a kliknete na **vyvolat**.
+10. V testovacím klientovi WCF poklepejte na **příkaz GetStockPrice**. Tím se `GetStockPrice` otevře operace, která přebírá `Contoso` jeden parametr, zadejte hodnotu a klepněte na tlačítko **Vyvolat**.
 
-11. Vypouštěné záznamy sledování se zapisují do SQL Database. Chcete-li zobrazit záznamy sledování, otevřete databázi TrackingSample ve službě SQL Management Studio a přejděte do tabulky. Další informace o SQL Server Management Studio najdete v tématu [Úvod do SQL Server Management Studio](/sql/ssms/sql-server-management-studio-ssms). SQL Server 2008 Management Studio Express si můžete stáhnout [tady](https://www.microsoft.com/download/details.aspx?id=7593). Spuštění dotazu SELECT v tabulkách zobrazuje data v záznamech sledování uložených v příslušných tabulkách.
+11. Vyzařované záznamy sledování jsou zapsány do databáze SQL. Chcete-li zobrazit záznamy sledování, otevřete databázi TrackingSample v aplikaci SQL Management Studio a přejděte do tabulek. Spuštěním výběrového dotazu v tabulkách se zobrazí data v rámci záznamů sledování uložených v příslušných tabulkách.
 
-#### <a name="to-uninstall-the-sample"></a>Odinstalace ukázky
+   Další informace o aplikaci SQL Server Management Studio naleznete [v tématu Introducing SQL Server Management Studio](/sql/ssms/sql-server-management-studio-ssms). Stáhněte si SQL Server Management Studio [zde](https://aka.ms/ssmsfullsetup).
 
-1. Spusťte skript theTrackingcleanup. cmd v ukázkovém adresáři (\WF\Basic\Tracking\SqlTracking).
+## <a name="uninstall-the-sample"></a>Odinstalace ukázky
+
+1. Spusťte skript Trackingcleanup.cmd v ukázkovém adresáři (*\WF\Basic\Tracking\SqlTracking*).
 
     > [!NOTE]
-    > Trackingcleanup. cmd se pokusí odstranit databázi v místním počítači SQL Express. Pokud používáte jinou instanci systému SQL Server, upravte Trackingcleanup. cmd.
+    > Trackingcleanup.cmd pokusí odstranit databázi v místním počítači SQL Express. Pokud používáte jinou instanci serveru SQL, upravte Trackingcleanup.cmd.
 
 > [!IMPORTANT]
-> Ukázky již mohou být nainstalovány v počítači. Než budete pokračovat, vyhledejte následující (výchozí) adresář.
+> Ukázky mohou být již nainstalovány v počítači. Před pokračováním zkontrolujte následující (výchozí) adresář.
 >
 > `<InstallDrive>:\WF_WCF_Samples`
 >
-> Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] Samples. Tato ukázka se nachází v následujícím adresáři.
+> Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a Windows Workflow Foundation (WF) Ukázky pro rozhraní .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka je umístěna v následujícím adresáři.
 >
 > `<InstallDrive>:\WF_WCF_Samples\WF\Basic\Tracking\SqlTracking`
 
 ## <a name="see-also"></a>Viz také
 
-- [Ukázky monitorování technologie AppFabric](https://docs.microsoft.com/previous-versions/appfabric/ff383407(v=azure.10))
+- [Vzorky monitorování appfabricu](https://docs.microsoft.com/previous-versions/appfabric/ff383407(v=azure.10))

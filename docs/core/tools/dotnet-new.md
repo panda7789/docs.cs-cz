@@ -1,13 +1,13 @@
 ---
 title: dotnet nový příkaz
 description: Nový příkaz dotnet vytvoří nové projekty .NET Core založené na zadané šabloně.
-ms.date: 02/13/2020
-ms.openlocfilehash: d3c609419596b123f5bfb3ca85cf292a61154a70
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.date: 04/10/2020
+ms.openlocfilehash: 1b1a6efa7bf2753b6c23cc7af1e26867f8632b96
+ms.sourcegitcommit: 7980a91f90ae5eca859db7e6bfa03e23e76a1a50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79399124"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "81242878"
 ---
 # <a name="dotnet-new"></a>dotnet new
 
@@ -198,7 +198,7 @@ Každá šablona projektu může mít k dispozici další možnosti. Základní 
 
 ***
 
-### <a name="wpf"></a>wpf, wpflib, wpfcustomcontrollib, wpfusercontrollib
+### <a name="wpf-wpflib-wpfcustomcontrollib-wpfusercontrollib"></a><a name="wpf"></a>wpf, wpflib, wpfcustomcontrollib, wpfusercontrollib
 
 - **`-f|--framework <FRAMEWORK>`**
 
@@ -216,7 +216,7 @@ Každá šablona projektu může mít k dispozici další možnosti. Základní 
 
 ***
 
-### <a name="winforms"></a>winforms, winformslib
+### <a name="winforms-winformslib"></a><a name="winforms"></a>winforms, winformslib
 
 - **`--langVersion <VERSION_NUMBER>`**
 
@@ -230,7 +230,7 @@ Každá šablona projektu může mít k dispozici další možnosti. Základní 
 
 ***
 
-### <a name="web-others"></a>pracovník, grpc
+### <a name="worker-grpc"></a><a name="web-others"></a>pracovník, grpc
 
 - **`-f|--framework <FRAMEWORK>`**
 
@@ -246,7 +246,7 @@ Každá šablona projektu může mít k dispozici další možnosti. Základní 
 
 ***
 
-### <a name="test"></a>mstest, xunit
+### <a name="mstest-xunit"></a><a name="test"></a>mstest, xunit
 
 - **`-f|--framework <FRAMEWORK>`**
 
@@ -306,7 +306,7 @@ Každá šablona projektu může mít k dispozici další možnosti. Základní 
 
 ***
 
-### <a name="namespace"></a>viewimports, proto
+### <a name="viewimports-proto"></a><a name="namespace"></a>viewimports, proto
 
 - **`-na|--namespace <NAMESPACE_NAME>`**
 
@@ -413,7 +413,7 @@ Každá šablona projektu může mít k dispozici další možnosti. Základní 
 
 ***
 
-### <a name="web-options"></a>mvc, webapp
+### <a name="mvc-webapp"></a><a name="web-options"></a>mvc, webapp
 
 - **`-au|--auth <AUTHENTICATION_TYPE>`**
 
@@ -497,9 +497,13 @@ Každá šablona projektu může mít k dispozici další možnosti. Základní 
 
   Zahrnuje BrowserLink v projektu. Možnost není k dispozici v .NET Core 2.2 a 3.1 SDK.
 
+- **`-rrc|--razor-runtime-compilation`**
+
+  Určuje, zda je projekt nakonfigurován pro použití [kompilace razor runtime](/aspnet/core/mvc/views/view-compilation#runtime-compilation) v sestaveních ladění. Možnost je k dispozici od .NET Core 3.1 SDK.
+
 ***
 
-### <a name="spa"></a>úhlové, reagovat
+### <a name="angular-react"></a><a name="spa"></a>úhlové, reagovat
 
 - **`-au|--auth <AUTHENTICATION_TYPE>`**
 

@@ -1,5 +1,5 @@
 ---
-title: 'Postup: převod řetězců na DateTime'
+title: Převést řetězce na DateTime
 description: Naučte se techniky analyzovat řetězce, které představují data a časy k vytvoření DateTime z řetězce data a času.
 ms.date: 02/15/2018
 ms.technology: dotnet-standard
@@ -14,14 +14,14 @@ helpviewer_keywords:
 - base types, parsing strings
 - DateTime object
 - time strings
-ms.openlocfilehash: 9555304e570226b2ed3b040735cf099b5a018f93
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 4b3f0bdb3ade784f929718a3350ed3dec0c572f1
+ms.sourcegitcommit: 7980a91f90ae5eca859db7e6bfa03e23e76a1a50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "78156540"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "81242644"
 ---
-# <a name="parsing-date-and-time-strings-in-net"></a>Analýza řetězců data a času v rozhraní .NET
+# <a name="parse-date-and-time-strings-in-net"></a>Analyzovat řetězce data a času v rozhraní .NET
 
 Analýza řetězců pro jejich převod <xref:System.DateTime> na objekty vyžaduje zadání informací o tom, jak jsou kalendářní data a časy reprezentovány jako text. Různé jazykové verze používají různé objednávky pro den, měsíc a rok. Některé časové reprezentace používají 24hodinový čas, jiné určují "AM" a "PM". Některé aplikace potřebují pouze datum. Jiní potřebují jen čas. Ještě jiní musí specifikovat datum i čas. Metody, které převádějí řetězce na <xref:System.DateTime> objekty, umožňují poskytnout podrobné informace o očekávaných formátech a prvcích data a času, které vaše aplikace potřebuje. Existují tři dílčí úkoly pro správný <xref:System.DateTime>převod textu na :
 
@@ -56,7 +56,7 @@ Následující příklad ilustruje použití <xref:System.DateTime.Parse%2A?disp
 > Všechny ukázky jazyka C# v tomto článku spustit v prohlížeči. Stisknutím tlačítka **Spustit** zobrazíte výstup. Můžete je také upravit a experimentovat sami.
 
 > [!NOTE]
-> Tyto příklady jsou k dispozici v úložišti dokumentů GitHub pro [C#](https://github.com/dotnet/samples/tree/master/snippets/csharp/how-to/conversions) i [Visual Basic](https://github.com/dotnet/samples/tree/master/snippets/visualbasic/how-to/conversions). Nebo můžete stáhnout projekt jako soubor zip pro [C#](https://github.com/dotnet/samples/raw/master/snippets/csharp/how-to/conversions.zip) nebo [Visual Basic](https://github.com/dotnet/samples/raw/master/snippets/visualbasic/how-to/conversions.zip).
+> Tyto příklady jsou k dispozici v úložišti dokumentů GitHub pro [C#](https://github.com/dotnet/docs/tree/master/samples/snippets/csharp/how-to/conversions) i [Visual Basic](https://github.com/dotnet/docs/tree/master/samples/snippets/visualbasic/how-to/conversions). Nebo můžete stáhnout projekt jako soubor zip pro [C#](https://github.com/dotnet/docs/blob/master/samples/snippets/csharp/how-to/conversions.zip) nebo [Visual Basic](https://github.com/dotnet/docs/blob/master/samples/snippets/visualbasic/how-to/conversions.zip).
 
 [!code-csharp-interactive[Parsing.DateAndTime#1](../../../samples/snippets/csharp/how-to/conversions/StringToDateTime.cs#1)]
 [!code-vb[Parsing.DateAndTime#1](../../../samples/snippets/visualbasic/how-to/conversions/Program.vb#1)]
@@ -88,6 +88,6 @@ Každé přetížení <xref:System.DateTime.Parse%2A> a <xref:System.DateTime.Pa
 
 - [Analýza řetězců](parsing-strings.md)
 - [Typy formátování](formatting-types.md)
-- [Převod typů v rozhraní .NET](type-conversion.md)
+- [Převod typu v rozhraní .NET](type-conversion.md)
 - [Standardní formáty data a času](standard-date-and-time-format-strings.md)
-- [Vlastní formátovací řetězce data a času](custom-date-and-time-format-strings.md)
+- [Vlastní řetězce formátu data a času](custom-date-and-time-format-strings.md)

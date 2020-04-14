@@ -3,12 +3,12 @@ title: Jak upravit obsah řetězce - Průvodce C#
 ms.date: 02/26/2018
 helpviewer_keywords:
 - strings [C#], modifying
-ms.openlocfilehash: 260e4022c514db0cee3c1459b9d746a1c8e2addd
-ms.sourcegitcommit: 43cbde34970f5f38f30c43cd63b9c7e2e83717ae
+ms.openlocfilehash: f31fa94501ac2120e22e229dfc11babb8b8cc0f3
+ms.sourcegitcommit: 7980a91f90ae5eca859db7e6bfa03e23e76a1a50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/11/2020
-ms.locfileid: "81121126"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "81242852"
 ---
 # <a name="how-to-modify-string-contents-in-c"></a>Jak upravit obsah řetězce v C\#
 
@@ -58,7 +58,7 @@ Metoda <xref:System.Text.StringBuilder.ToString%2A?displayProperty=nameWithType>
 
 Můžete vytvořit pole znaků z řetězce, upravit obsah pole a pak vytvořit nový řetězec z upraveného obsahu pole.
 
-Následující příklad ukazuje, jak nahradit sadu znaků v řetězci. Nejprve používá <xref:System.String.ToCharArray?displayProperty=nameWithName> metodu k vytvoření pole znaků. Používá metodu <xref:System.String.IndexOf%2A> k nalezení počátečního indexu slova "liška". Další tři znaky jsou nahrazeny jiným slovem. Nakonec je z aktualizovaného pole znaků vytvořen nový řetězec.
+Následující příklad ukazuje, jak nahradit sadu znaků v řetězci. Nejprve používá <xref:System.String.ToCharArray?displayProperty=nameWithType> metodu k vytvoření pole znaků. Používá metodu <xref:System.String.IndexOf%2A> k nalezení počátečního indexu slova "liška". Další tři znaky jsou nahrazeny jiným slovem. Nakonec je z aktualizovaného pole znaků vytvořen nový řetězec.
 
 [!code-csharp-interactive[replace creates a new string](../../../samples/snippets/csharp/how-to/strings/ModifyStrings.cs#6)]
 

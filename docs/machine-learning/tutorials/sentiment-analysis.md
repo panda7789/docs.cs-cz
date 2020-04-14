@@ -4,12 +4,12 @@ description: Tento kurz ukazuje, jak vytvořit konzolovou aplikaci .NET Core, kt
 ms.date: 09/30/2019
 ms.topic: tutorial
 ms.custom: mvc
-ms.openlocfilehash: 47b9a9fe37cbcacab3797ed7fb1398b0c524d746
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: c6e13cfca93c54648b1a0423c5983013d3e2a1a0
+ms.sourcegitcommit: 7980a91f90ae5eca859db7e6bfa03e23e76a1a50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "78241127"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "81243294"
 ---
 # <a name="tutorial-analyze-sentiment-of-website-comments-with-binary-classification-in-mlnet"></a>Kurz: Analýza mínění komentářů na webových stránkách s binární klasifikací v ML.NET
 
@@ -32,7 +32,7 @@ Zdrojový kód pro tento kurz najdete v úložišti [dotnet/samples.](https://gi
 
 - [Visual Studio 2017 verze 15.6 nebo novější](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2019) s nainstalovanou úlohou pro vývoj napříč platformami ".NET Core"
 
-- [Datová sada vět mínění UCI](https://archive.ics.uci.edu/ml/machine-learning-databases/00331/sentiment%20labelled%20sentences.zip) (soubor ZIP)
+- [Datová sada vět mínění UCI](http://archive.ics.uci.edu/ml/machine-learning-databases/00331/sentiment%20labelled%20sentences.zip) (soubor ZIP)
 
 ## <a name="create-a-console-application"></a>Vytvoření konzolové aplikace
 
@@ -49,7 +49,7 @@ Zdrojový kód pro tento kurz najdete v úložišti [dotnet/samples.](https://gi
 > [!NOTE]
 > Datové sady pro tento kurz jsou ze skupiny na jednotlivé popisky pomocí deep funkce, Kotzias et. Al. KDD 2015 a hostované v Úložišti strojového učení UCI - Dua, D. a Karra Taniskidou, E. (2017). Úložiště strojového učeníhttp://archive.ics.uci.edu/mlUCI [ ]. Irvine, KALIFORNIE: Kalifornská univerzita, Škola informací a informatiky.
 
-1. Stáhnout [UCI Sentiment označené věty soubor ZIP](https://archive.ics.uci.edu/ml/machine-learning-databases/00331/sentiment%20labelled%20sentences.zip)soubor zip a rozbalit.
+1. Stáhnout [UCI Sentiment označené věty soubor ZIP](http://archive.ics.uci.edu/ml/machine-learning-databases/00331/sentiment%20labelled%20sentences.zip)soubor zip a rozbalit.
 
 2. Zkopírujte `yelp_labelled.txt` soubor do *datového adresáře,* který jste vytvořili.
 
@@ -131,7 +131,7 @@ Připravíte aplikaci a pak načtete data:
 
     [!code-csharp[LoadData](~/samples/snippets/machine-learning/SentimentAnalysis/csharp/Program.cs#LoadData "loading dataset")]
 
-    [LoadFromTextFile()](xref:Microsoft.ML.TextLoaderSaverCatalog.LoadFromTextFile%60%601%28Microsoft.ML.DataOperationsCatalog,System.String,System.Char,System.Boolean,System.Boolean,System.Boolean,System.Boolean%29) definuje schéma dat a čte v souboru. Přebírá proměnné cesty dat a vrátí `IDataView`.
+    Metoda [LoadFromTextFile()](xref:Microsoft.ML.TextLoaderSaverCatalog.LoadFromTextFile%60%601%28Microsoft.ML.DataOperationsCatalog,System.String,System.Char,System.Boolean,System.Boolean,System.Boolean,System.Boolean%29) definuje schéma dat a čte v souboru. Přebírá proměnné cesty dat a vrátí `IDataView`.
 
 ### <a name="split-the-dataset-for-model-training-and-testing"></a>Rozdělení datové sady pro trénování a testování modelu
 
@@ -141,7 +141,7 @@ Při přípravě modelu použijete část datové sady k jeho trénování a č�
 
     [!code-csharp[SplitData](~/samples/snippets/machine-learning/SentimentAnalysis/csharp/Program.cs#SplitData "Split the Data")]
 
-    Předchozí kód používá [TrainTestSplit()](xref:Microsoft.ML.DataOperationsCatalog.TrainTestSplit%2A) metoda rozdělit načtené datové sady do datových sad train a test a vrátit je ve třídě [TrainTestData.](xref:Microsoft.ML.DataOperationsCatalog.TrainTestData) Zadejte procento dat testovací `testFraction`sady s parametrem. Výchozí hodnota je 10 %, v tomto případě použijete 20 % k vyhodnocení více dat.
+    Předchozí kód používá [TrainTestSplit()](xref:Microsoft.ML.DataOperationsCatalog.TrainTestSplit%2A) metoda rozdělit načtené datové sady do datových <xref:Microsoft.ML.DataOperationsCatalog.TrainTestData> sad train a test a vrátit je ve třídě. Zadejte procento dat testovací `testFraction`sady s parametrem. Výchozí hodnota je 10 %, v tomto případě použijete 20 % k vyhodnocení více dat.
 
 2. Vraťte `splitDataView` na konci `LoadData()` metody:
 

@@ -11,15 +11,16 @@ helpviewer_keywords:
 - linear gradient brush [WPF]
 - typography [WPF], outline effects
 ms.assetid: 4aa3cf6e-1953-4f26-8230-7c1409e5f28d
-ms.openlocfilehash: d0ce46b9895589fd4635b567136204368a6431ad
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 86bfa396a2aa44eb511c014687501d60e170a396
+ms.sourcegitcommit: 7980a91f90ae5eca859db7e6bfa03e23e76a1a50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79186862"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81278922"
 ---
-# <a name="how-to-create-outlined-text"></a>Postupy: Vytvoření textu osnovy
-Ve většině případů při přidávání ozdoby do [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] textových řetězců v aplikaci, používáte text z hlediska kolekce samostatných znaků nebo glyfů. Můžete například vytvořit stopu lineárního přechodu <xref:System.Windows.Controls.Control.Foreground%2A> a <xref:System.Windows.Controls.TextBox> aplikovat ji na vlastnost objektu. Když zobrazíte nebo upravíte textové pole, stopa lineárního přechodu se automaticky aplikuje na aktuální sadu znaků v textovém řetězci.  
+# <a name="how-to-create-outlined-text"></a>Postup: Vytvoření textu s obrysy
+
+Ve většině případů při přidávání ozdoby do textových řetězců v aplikaci [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] používáte text z hlediska kolekce samostatných znaků nebo glyfů. Můžete například vytvořit stopu lineárního přechodu <xref:System.Windows.Controls.Control.Foreground%2A> a <xref:System.Windows.Controls.TextBox> aplikovat ji na vlastnost objektu. Když zobrazíte nebo upravíte textové pole, stopa lineárního přechodu se automaticky aplikuje na aktuální sadu znaků v textovém řetězci.  
   
  ![Text zobrazený s lineární modře přechodem](./media/how-to-create-outlined-text/text-linear-gradient.jpg)
   
@@ -35,7 +36,7 @@ Ve většině případů při přidávání ozdoby do [!INCLUDE[TLA#tla_winclien
   
  ![Text s obrazovou stopou aplikovanou na tah](./media/how-to-create-outlined-text/image-brush-application.jpg)
   
- Je také možné upravit obdélník ohraničovacího rámečku nebo zvýraznění převedeného textu. Následující příklad ilustruje způsob vytváření vizuálních efektů úpravou tahu a zvýraznění převedeného textu.  
+ Je také možné upravit obdélník ohraničovacího rámečku nebo zvýraznění převedeného textu. Následující příklad ilustruje způsob, jak vytvořit vizuální efekty úpravou tahu a zvýraznění převedeného textu.  
   
  ![Text s obrazovou stopou aplikovanou na tah a zvýraznění](./media/how-to-create-outlined-text/image-brush-text-application.jpg)
 
@@ -45,14 +46,14 @@ Ve většině případů při přidávání ozdoby do [!INCLUDE[TLA#tla_winclien
  [!code-csharp[OutlineTextControlViewer#CreateText](~/samples/snippets/csharp/VS_Snippets_Wpf/OutlineTextControlViewer/CSharp/OutlineTextControl.cs#createtext)]
  [!code-vb[OutlineTextControlViewer#CreateText](~/samples/snippets/visualbasic/VS_Snippets_Wpf/OutlineTextControlViewer/visualbasic/outlinetextcontrol.vb#createtext)]  
   
- Chcete-li zobrazit načtené <xref:System.Windows.Media.Geometry> objekty, musíte <xref:System.Windows.Media.DrawingContext> získat přístup k objektu, který zobrazuje převedený text. V těchto příkladech kódu se to provádí vytvořením vlastního objektu ovládacího prvku, který je odvozen z třídy, která podporuje vykreslování definovanou uživatelem.  
+ Chcete-li zobrazit načtené <xref:System.Windows.Media.Geometry> objekty, musíte <xref:System.Windows.Media.DrawingContext> získat přístup k objektu, který zobrazuje převedený text. V těchto příkladech kódu je tento přístup dosažen vytvořením vlastního objektu ovládacího prvku, který je odvozen z třídy, která podporuje uživatelem definované vykreslování.  
   
  Chcete-li zobrazit <xref:System.Windows.Media.Geometry> objekty ve vlastním ovládacím prvku, zadejte přepsání <xref:System.Windows.UIElement.OnRender%2A> metody. Vaše potlačená metoda <xref:System.Windows.Media.DrawingContext.DrawGeometry%2A> by měla <xref:System.Windows.Media.Geometry> použít metodu k nakreslení objektů.  
   
  [!code-csharp[OutlineTextControlViewer#OnRender](~/samples/snippets/csharp/VS_Snippets_Wpf/OutlineTextControlViewer/CSharp/OutlineTextControl.cs#onrender)]
  [!code-vb[OutlineTextControlViewer#OnRender](~/samples/snippets/visualbasic/VS_Snippets_Wpf/OutlineTextControlViewer/visualbasic/outlinetextcontrol.vb#onrender)]  
   
-  Zdroj ukázkového objektu vlastního uživatelského ovládacího prvku naleznete [v tématu OutlineTextControl.cs pro c#](https://github.com/dotnet/samples/blob/master/snippets/csharp/VS_Snippets_Wpf/OutlineTextControlViewer/CSharp/OutlineTextControl.cs) a [outlineTextControl.vb pro jazyk Visual Basic](https://github.com/dotnet/samples/blob/master/snippets/visualbasic/VS_Snippets_Wpf/OutlineTextControlViewer/visualbasic/outlinetextcontrol.vb).
+  Zdroj ukázkového objektu vlastního uživatelského ovládacího prvku naleznete [v tématu OutlineTextControl.cs pro c#](https://github.com/dotnet/docs/tree/master/samples/snippets/csharp/VS_Snippets_Wpf/OutlineTextControlViewer/CSharp/OutlineTextControl.cs) a [outlineTextControl.vb pro jazyk Visual Basic](https://github.com/dotnet/docs/blob/master/samples/snippets/visualbasic/VS_Snippets_Wpf/OutlineTextControlViewer/visualbasic/outlinetextcontrol.vb).
   
 ## <a name="see-also"></a>Viz také
 

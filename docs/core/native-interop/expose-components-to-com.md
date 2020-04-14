@@ -9,12 +9,12 @@ helpviewer_keywords:
 ms.assetid: 21271167-fe7f-46ba-a81f-a6812ea649d4
 author: jkoritzinsky
 ms.author: jekoritz
-ms.openlocfilehash: 98d303c99693a8aadb23da509a700772db69c0e0
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 17d85b9e9734fae0bb69f94da8c08669216ab0ae
+ms.sourcegitcommit: 7980a91f90ae5eca859db7e6bfa03e23e76a1a50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79146655"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "81242865"
 ---
 # <a name="exposing-net-core-components-to-com"></a>Vystavení komponent .NET Core modelu COM
 
@@ -40,7 +40,7 @@ Prvním krokem je vytvoření knihovny.
 
 2. Otevřete `Class1.cs`.
 3. Přidat `using System.Runtime.InteropServices;` do horní části souboru.
-4. Vytvořte rozhraní `IServer`s názvem . Například:
+4. Vytvořte rozhraní `IServer`s názvem . Příklad:
 
    ```csharp
    using System;
@@ -92,5 +92,7 @@ V úložišti dotnet/samples na GitHubu je ukázka plně [funkčního serveru CO
 ## <a name="additional-notes"></a>Další poznámky
 
 Na rozdíl od rozhraní .NET Framework neexistuje v rozhraní .NET Core žádná podpora pro generování knihovny typů COM (TLB) ze sestavení .NET Core. Pokyny je buď ručně napsat soubor IDL nebo hlavičky C/C++ pro nativní deklarace rozhraní COM.
+
+[Samostatná nasazení](../deploying/index.md#publish-self-contained) součástí modelu COM nejsou podporována. Podporována jsou pouze nasazení součástí modelu COM [závislá na modulu runtime.](../deploying/index.md#publish-runtime-dependent)
 
 Navíc načítání rozhraní .NET Framework a .NET Core do stejného procesu má diagnostická omezení. Primárním omezením je ladění spravovaných součástí, protože není možné ladit rozhraní .NET Framework i .NET Core současně. Kromě toho dvě instance runtime nesdílejí spravovaná sestavení. To znamená, že není možné sdílet skutečné typy .NET napříč dvěma moduly runtimes a místo toho musí být všechny interakce omezeny na vystavené kontrakty rozhraní COM.

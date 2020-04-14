@@ -2,12 +2,12 @@
 title: 'Přenos: Součinnost TCP ve WSE 3.0'
 ms.date: 03/30/2017
 ms.assetid: 5f7c3708-acad-4eb3-acb9-d232c77d1486
-ms.openlocfilehash: 55c59fe3a677d3aea8de62ae714e1007cfcbb86a
-ms.sourcegitcommit: 43cbde34970f5f38f30c43cd63b9c7e2e83717ae
+ms.openlocfilehash: f799f3b6968f31472acc7752846bab34351648db
+ms.sourcegitcommit: 7980a91f90ae5eca859db7e6bfa03e23e76a1a50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/11/2020
-ms.locfileid: "81121286"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81278896"
 ---
 # <a name="transport-wse-30-tcp-interoperability"></a>Přenos: Součinnost TCP ve WSE 3.0
 Ukázka přenosu interoperability protokolu WSE 3.0 TCP ukazuje, jak implementovat duplexní relaci Protokolu TCP jako vlastní přenos WCF (Windows Communication Foundation). Také ukazuje, jak můžete použít rozšiřitelnost vrstvy kanálu k rozhraní přes drát s existujícími nasazenými systémy. Následující kroky ukazují, jak vytvořit tento vlastní přenos WCF:  
@@ -39,7 +39,7 @@ Ukázka přenosu interoperability protokolu WSE 3.0 TCP ukazuje, jak implementov
   
  Jakmile <xref:System.ServiceModel.Channels.Message> je kódován do bajtů, musí být přenášen na drátě. To vyžaduje systém pro definování hranic zprávy. WSE 3.0 používá verzi [DIME](https://docs.microsoft.com/archive/msdn-magazine/2002/december/sending-files-attachments-and-soap-messages-via-dime) jako protokol rámování. `WriteData`zapouzdřuje logiku rámování pro zalomení bajtu[] do sady záznamů DIME.  
   
- Logika pro příjem zpráv je velmi podobná. Hlavní složitost je zpracování skutečnost, že čtení soketu může vrátit méně bajtů, než byly požadovány. Chcete-li přijmout `WseTcpDuplexSessionChannel` zprávu, přečte bajty z drátu, dekóduje rámdime a pak použije <xref:System.ServiceModel.Channels.MessageEncoder> <xref:System.ServiceModel.Channels.Message>pro přeměnu bajta na .  
+ Logika pro příjem zpráv je podobná. Hlavní složitost je zpracování skutečnost, že čtení soketu může vrátit méně bajtů, než byly požadovány. Chcete-li přijmout `WseTcpDuplexSessionChannel` zprávu, přečte bajty z drátu, dekóduje rámdime a pak použije <xref:System.ServiceModel.Channels.MessageEncoder> <xref:System.ServiceModel.Channels.Message>pro přeměnu bajta na .  
   
  Základna `WseTcpDuplexSessionChannel` předpokládá, že obdrží připojený soket. Základní třída zpracovává vypnutí soketu. Existují tři místa, která rozhraní s uzavření mašketu:  
   
@@ -47,7 +47,7 @@ Ukázka přenosu interoperability protokolu WSE 3.0 TCP ukazuje, jak implementov
   
 - On[Begin]Close -- zavřete zásuvku elegantně (soft close).  
   
-- Relace. CloseOutputSession -- vypnutí odchozídatový proud (polovina zavřít).  
+- Relace. CloseOutputSession -- vypnutí odchozí datový proud (polovina zavřít).  
   
 ## <a name="channel-factory"></a>Vytvoření postupu kanálu  
  Dalším krokem při psaní přenosu TCP je <xref:System.ServiceModel.Channels.IChannelFactory> vytvoření implementace pro klientské kanály.  
@@ -170,7 +170,7 @@ Symbols:
         CONTOSO  
 ```  
   
-#### <a name="to-set-up-build-and-run-the-sample"></a>Nastavení, sestavení a spuštění ukázky  
+## <a name="set-up-build-and-run-the-sample"></a>Nastavení, sestavení a spuštění ukázky  
   
 1. Chcete-li spustit tuto ukázku, musíte mít [nainstalovánvylepšení webových služeb (WSE) 3.0 pro microsoft .NET](https://www.microsoft.com/download/details.aspx?id=14089) a ukázku WSE. `TcpSyncStockService`
   
@@ -179,7 +179,7 @@ Symbols:
   
 1. Po instalaci `TcpSyncStockService` ukázky postupujte takto:  
   
-    1. Otevřete `TcpSyncStockService` v sadě Visual Studio (Všimněte si, že ukázka TcpSyncStockService je nainstalována s WSE 3.0. Není součástí kódu této ukázky).  
+    1. Otevřete `TcpSyncStockService` v sadě Visual Studio. (Ukázka TcpSyncStockService je nainstalována s WSE 3.0. Není součástí kódu tohoto vzorku.)  
   
     2. Nastavte projekt Služby StockService jako počáteční projekt.  
   

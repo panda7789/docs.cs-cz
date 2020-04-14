@@ -12,16 +12,16 @@ helpviewer_keywords:
 - inline option constructs
 - options parameter
 ms.assetid: c82dc689-7e82-4767-a18d-cd24ce5f05e9
-ms.openlocfilehash: a53d7517485d2a0b02b6f11928f478a7da3f9503
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: bf352d6494a823d4f7b24eb2876d9bffa5877b2b
+ms.sourcegitcommit: 7980a91f90ae5eca859db7e6bfa03e23e76a1a50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "73972105"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "81242774"
 ---
 # <a name="regular-expression-options"></a>Možnosti regulárních výrazů
 
-Ve výchozím nastavení je porovnání vstupního řetězce s libovolnými literálovými znaky ve vzorku regulárního výrazu rozlišováno malá a velká písmena, prázdné místo ve vzoru regulárního výrazu je interpretováno jako literálové prázdné znaky a zachycující skupiny v regulárním výrazu jsou pojmenovány implicitně i explicitně. Tyto a několik dalších aspektů výchozího chování regulárních výrazů můžete upravit zadáním možností regulárních výrazů. Tyto možnosti, které jsou uvedeny v následující tabulce, mohou být zahrnuty do řádku <xref:System.Text.RegularExpressions.Regex?displayProperty=nameWithType> jako součást vzoru regulárního <xref:System.Text.RegularExpressions.RegexOptions?displayProperty=nameWithType> výrazu, nebo mohou být dodány do konstruktoru třídy nebo statické metody porovnávání vzorů jako hodnotu výčtu.
+Ve výchozím nastavení je porovnání vstupního řetězce s libovolnými literálovými znaky ve vzoru regulárního výrazu rozlišováno malá a velká písmena, prázdné místo ve vzoru regulárního výrazu je interpretováno jako prázdné znaky a zachytávající skupiny v regulárním výrazu jsou pojmenovány implicitně i explicitně. Tyto a několik dalších aspektů výchozího chování regulárních výrazů můžete upravit zadáním možností regulárních výrazů. Tyto možnosti, které jsou uvedeny v následující tabulce, mohou být zahrnuty do řádku <xref:System.Text.RegularExpressions.Regex?displayProperty=nameWithType> jako součást vzoru regulárního <xref:System.Text.RegularExpressions.RegexOptions?displayProperty=nameWithType> výrazu, nebo mohou být dodány do konstruktoru třídy nebo statické metody porovnávání vzorů jako hodnotu výčtu.
 
 |Člen RegexOptions|Vsazený znak|Účinek|
 |-------------------------|----------------------|------------|
@@ -40,7 +40,7 @@ Ve výchozím nastavení je porovnání vstupního řetězce s libovolnými lite
 
 Možnosti regulárních výrazů můžete určit jedním ze tří způsobů:
 
-- V `options` parametru <xref:System.Text.RegularExpressions.Regex?displayProperty=nameWithType> konstruktoru třídy`Shared` nebo statické ( v jazyce <xref:System.Text.RegularExpressions.Regex.%23ctor%28System.String%2CSystem.Text.RegularExpressions.RegexOptions%29?displayProperty=nameWithType> <xref:System.Text.RegularExpressions.Regex.Match%28System.String%2CSystem.String%2CSystem.Text.RegularExpressions.RegexOptions%29?displayProperty=nameWithType>Visual Basic) metoda porovnávání vzorů, například nebo . Parametr `options` je bitová nebo <xref:System.Text.RegularExpressions.RegexOptions?displayProperty=nameWithType> kombinace výčtových hodnot.
+- V `options` parametru <xref:System.Text.RegularExpressions.Regex?displayProperty=nameWithType> konstruktoru třídy`Shared` nebo statické ( v jazyce <xref:System.Text.RegularExpressions.Regex.%23ctor%28System.String%2CSystem.Text.RegularExpressions.RegexOptions%29> <xref:System.Text.RegularExpressions.Regex.Match%28System.String%2CSystem.String%2CSystem.Text.RegularExpressions.RegexOptions%29?displayProperty=nameWithType>Visual Basic) metoda porovnávání vzorů, například nebo . Parametr `options` je bitová nebo <xref:System.Text.RegularExpressions.RegexOptions?displayProperty=nameWithType> kombinace výčtových hodnot.
 
   Když jsou možnosti <xref:System.Text.RegularExpressions.Regex> dodávány `options` do instance pomocí parametru konstruktoru <xref:System.Text.RegularExpressions.RegexOptions?displayProperty=nameWithType> třídy, jsou vlastnosti přiřazeny možnosti. <xref:System.Text.RegularExpressions.RegexOptions?displayProperty=nameWithType> Vlastnost však neodráží možnosti vřádků v samotném vzoru regulárního výrazu.
 
@@ -264,7 +264,7 @@ V následujících případech však prázdné znaky v regulárním výrazu nejs
 
 - Prázdné místo není povoleno v závorkách kvantifikátoru, `{`například *n*`}`, `{` *n*`,}`a `{` *n*`,`*m*`}`. Například vzor `\d{1, 3}` regulárního výrazu neodpovídá všem sekvencí číslic od jedné do tří číslic, protože obsahuje nevýrazný znak.
 
-- Prázdné znaky není povoleno v rámci sekvence znaků, který zavádí prvek jazyka. Například:
+- Prázdné znaky není povoleno v rámci sekvence znaků, který zavádí prvek jazyka. Příklad:
 
   - `(?:` *Podvýraz* `)` elementu jazyka představuje skupinu bez `(?:` zachycení a část prvku nemůže mít vložené mezery. `(? :` *Podvýraz* `)` vzoru vyvolá <xref:System.ArgumentException> čas za běhu, protože modul regulárních výrazů `( ?:`nemůže analyzovat vzorek a *dílčí výraz* `)` vzoru se neshoduje s *dílčím výrazem*.
 

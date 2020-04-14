@@ -6,12 +6,12 @@ ms.topic: tutorial
 ms.custom: mvc
 ms.author: luquinta
 author: luisquintanilla
-ms.openlocfilehash: 026421d7b1b2a0e39118ae712780ca7fc8f6e444
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 962c40ea0536d6b6057d936cfc4b95a49ddadbf8
+ms.sourcegitcommit: 7980a91f90ae5eca859db7e6bfa03e23e76a1a50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "76921258"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "81243281"
 ---
 # <a name="tutorial-forecast-bike-rental-service-demand-with-time-series-analysis-and-mlnet"></a>Kurz: Prognóza poptávky po půjčovně kol s analýzou časových řad a ML.NET
 
@@ -60,7 +60,7 @@ Algoritmus použitý v tomto kurzu je [single spectrum analysis(SSA)](http://ssa
 1. Stáhněte [databázový soubor *DailyDemand.mdf* ](https://github.com/dotnet/machinelearning-samples/raw/master/samples/csharp/getting-started/Forecasting_BikeSharingDemand/BikeDemandForecasting/Data/DailyDemand.mdf) a uložte jej do *datového* adresáře.
 
 > [!NOTE]
-> Data použitá v tomto kurzu pochází z [datové sady Sdílení kol UCI](https://archive.ics.uci.edu/ml/datasets/bike+sharing+dataset). Fanaee-T, Hadi a Gama, Joao, "Event labeling kombinující detektory souborů a znalosti pozadí", Pokrok v umělé inteligenci (2013): s. 1-15, Springer Berlin Heidelberg, [Web Link](https://link.springer.com/article/10.1007%2Fs13748-013-0040-3).
+> Data použitá v tomto kurzu pochází z [datové sady Sdílení kol UCI](http://archive.ics.uci.edu/ml/datasets/bike+sharing+dataset). Fanaee-T, Hadi a Gama, Joao, "Event labeling kombinující detektory souborů a znalosti pozadí", Pokrok v umělé inteligenci (2013): s. 1-15, Springer Berlin Heidelberg, [Web Link](https://link.springer.com/article/10.1007%2Fs13748-013-0040-3).
 
 Původní datová sada obsahuje několik sloupců odpovídajících sezónnosti a počasí. Pro stručnost a protože algoritmus použitý v tomto kurzu vyžaduje pouze hodnoty z jednoho číselného sloupce, původní datová sada byla zhuštěna tak, aby zahrnovala pouze následující sloupce:
 
@@ -287,4 +287,4 @@ Zdrojový kód pro tento kurz najdete v úložišti [dotnet/machinelearning-samp
 ## <a name="next-steps"></a>Další kroky
 
 - [Úlohy strojového učení v ML.NET](../resources/tasks.md)
-- [Zpřesnění modelu](../resources/improve-machine-learning-model-ml-net.md)
+- [Vylepšení přesnosti modelu](../resources/improve-machine-learning-model-ml-net.md)

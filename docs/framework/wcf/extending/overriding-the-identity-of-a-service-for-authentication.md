@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: d613a22b-07d7-41a4-bada-1adc653b9b5d
-ms.openlocfilehash: e7273c1e140e52eb37a30b6cabeb9e9a83a6fa2d
-ms.sourcegitcommit: 43cbde34970f5f38f30c43cd63b9c7e2e83717ae
+ms.openlocfilehash: 5649ef4cc05c9c16b1f8f626ba5e2e584b0e52eb
+ms.sourcegitcommit: 7980a91f90ae5eca859db7e6bfa03e23e76a1a50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/11/2020
-ms.locfileid: "81121562"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81278909"
 ---
 # <a name="override-the-identity-of-a-service-for-authentication"></a>Přepsat identitu služby pro ověřování
 
@@ -47,12 +47,12 @@ Obvykle není třeba nastavit identitu ve službě, protože výběr typu pově�
   
 - Pokud používáte protokol Kerberos direct (označovaný také jako "one-shot"), ověřování se nezdaří.  
   
-### <a name="using-the-identity-element-in-configuration"></a>Použití \<prvku> identity v konfiguraci  
- Pokud změníte typ pověření klienta ve`,` vazbě dříve zobrazené certifikátu, pak vygenerovaný WSDL obsahuje certifikát Base64 serializovaný X.509 pro hodnotu identity, jak je znázorněno v následujícím kódu. Toto je výchozí nastavení pro všechny typy pověření klienta než Windows.  
+### <a name="use-the-identity-element-in-configuration"></a>Použití \<prvku> identity v konfiguraci  
+ Pokud změníte typ pověření klienta ve `Certificate`vazbě dříve zobrazené na , pak generované WSDL obsahuje Base64 serializované X.509 certifikát pro hodnotu identity, jak je znázorněno v následujícím kódu. Toto je výchozí nastavení pro všechny typy pověření klienta než Windows.  
 
  Můžete změnit hodnotu výchozí identity služby nebo změnit typ identity `identity` pomocí <> prvek v konfiguraci nebo nastavením identity v kódu. Následující konfigurační kód nastaví identitu dns `contoso.com`systému názvů domén s hodnotou .  
 
-### <a name="setting-identity-programmatically"></a>Programové nastavení identity  
+### <a name="set-identity-programmatically"></a>Programově nastavit identitu  
  Vaše služba nemusí explicitně zadat identitu, protože WCF ji automaticky určuje. WCF však umožňuje zadat identitu na koncový bod, v případě potřeby. Následující kód přidá nový koncový bod služby s určitou identitou DNS.  
   
  [!code-csharp[C_Identity#5](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_identity/cs/source.cs#5)]

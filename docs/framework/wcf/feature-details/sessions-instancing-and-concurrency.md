@@ -2,12 +2,12 @@
 title: Relace, vytváření instancí a souběžnost
 ms.date: 03/30/2017
 ms.assetid: 50797a3b-7678-44ed-8138-49ac1602f35b
-ms.openlocfilehash: a7466d819e15f3bfe8def2d9407dcf2c6e0c7346
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 19dedddadad2f27acdeeaceb2c186a731fa79c32
+ms.sourcegitcommit: 7980a91f90ae5eca859db7e6bfa03e23e76a1a50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79184446"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "81243112"
 ---
 # <a name="sessions-instancing-and-concurrency"></a>Relace, vytváření instancí a souběžnost
 *Relace* je korelace všech zpráv odeslaných mezi dvěma koncovými body. *Instance* označuje řízení životnosti uživatelem definovaných objektů služby a jejich souvisejících <xref:System.ServiceModel.InstanceContext> objektů. *Souběžnost* je termín daný řízení počtu podprocesů provádějících <xref:System.ServiceModel.InstanceContext> ve stejnou dobu.  
@@ -63,7 +63,7 @@ public class CalculatorService : ICalculatorInstance
 ### <a name="well-known-singleton-services"></a>Známé singleton služby  
  Jedna varianta na objekty služby jedné instance je někdy užitečná: můžete vytvořit objekt služby sami a vytvořit hostitele služby pomocí tohoto objektu. Chcete-li tak učinit, <xref:System.ServiceModel.ServiceBehaviorAttribute.InstanceContextMode%2A?displayProperty=nameWithType> musíte <xref:System.ServiceModel.InstanceContextMode.Single> také nastavit vlastnost nebo je vyvolána výjimka při otevření hostitele služby.  
   
- Pomocí <xref:System.ServiceModel.ServiceHost.%23ctor%28System.Object%2CSystem.Uri%5B%5D%29?displayProperty=nameWithType> konstruktoru vytvořit takovou službu. Poskytuje alternativu k implementaci <xref:System.ServiceModel.Dispatcher.IInstanceContextInitializer?displayProperty=nameWithType> vlastní, pokud chcete poskytnout konkrétní instance objektu pro použití službou singleton. Toto přetížení můžete použít, když je obtížné vytvořit typ implementace služby (například pokud neimplementuje public konstruktor bez parametrů).  
+ Pomocí <xref:System.ServiceModel.ServiceHost.%23ctor%28System.Object%2CSystem.Uri%5B%5D%29> konstruktoru vytvořit takovou službu. Poskytuje alternativu k implementaci <xref:System.ServiceModel.Dispatcher.IInstanceContextInitializer?displayProperty=nameWithType> vlastní, pokud chcete poskytnout konkrétní instance objektu pro použití službou singleton. Toto přetížení můžete použít, když je obtížné vytvořit typ implementace služby (například pokud neimplementuje public konstruktor bez parametrů).  
   
  Všimněte si, že když je objekt k dispozici tohoto konstruktoru, některé funkce související s Windows Communication Foundation (WCF) instance chování pracovat jinak. Například volání <xref:System.ServiceModel.InstanceContext.ReleaseServiceInstance%2A?displayProperty=nameWithType> nemá žádný vliv, když je k dispozici instance objektu singleton. Podobně je ignorována jakákoli jiná instance release mechanism. Vždy <xref:System.ServiceModel.ServiceHost> se chová, jako <xref:System.ServiceModel.OperationBehaviorAttribute.ReleaseInstanceMode%2A?displayProperty=nameWithType> by vlastnost <xref:System.ServiceModel.ReleaseInstanceMode.None?displayProperty=nameWithType> je nastavena na pro všechny operace.  
   

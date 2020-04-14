@@ -13,12 +13,12 @@ helpviewer_keywords:
 - application development [.NET Framework], globalization
 - culture, globalization
 ms.assetid: 4e919934-6b19-42f2-b770-275a4fae87c9
-ms.openlocfilehash: fe03bbdd7d037a9f1fb4985b62b447c6ef9c6535
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: c08f4309d7673d7e7fb1c6bd84307e4323411d9e
+ms.sourcegitcommit: 7980a91f90ae5eca859db7e6bfa03e23e76a1a50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "79174781"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "81242683"
 ---
 # <a name="globalization"></a>Globalizace
 
@@ -336,9 +336,9 @@ Obecně nevytvářejte žádné předpoklady o hodnotách určitých <xref:Syste
 
 - Rozhraní .NET podporuje náhradní jazykové verze. To umožňuje definovat novou vlastní jazykovou verzi, která doplňuje existující standardní jazykové verze nebo zcela nahrazuje existující standardní jazykovou verzi.
 
-- V systémech Windows může uživatel přizpůsobit nastavení specifická pro jazykovou verzi pomocí ovládacího panelu **Oblast a jazyk.** Při vytváření instanci <xref:System.Globalization.CultureInfo> objektu můžete určit, zda odráží tyto uživatelské <xref:System.Globalization.CultureInfo.%23ctor%28System.String%2CSystem.Boolean%29?displayProperty=nameWithType> úpravy voláním konstruktoru. Obvykle pro aplikace koncových uživatelů byste měli respektovat uživatelské předvolby tak, aby uživateli byla nabídnuta data ve formátu, který očekává.
+- V systémech Windows může uživatel přizpůsobit nastavení specifická pro jazykovou verzi pomocí ovládacího panelu **Oblast a jazyk.** Při vytváření instanci <xref:System.Globalization.CultureInfo> objektu můžete určit, zda odráží tyto uživatelské <xref:System.Globalization.CultureInfo.%23ctor%28System.String%2CSystem.Boolean%29> úpravy voláním konstruktoru. Obvykle pro aplikace koncových uživatelů byste měli respektovat uživatelské předvolby tak, aby uživateli byla nabídnuta data ve formátu, který očekává.
 
 ## <a name="see-also"></a>Viz také
 
 - [Globalizace a lokalizace](../../../docs/standard/globalization-localization/index.md)
-- [Doporučené postupy pro používání řetězců](../../../docs/standard/base-types/best-practices-strings.md)
+- [Doporučené postupy pro použití řetězců](../../../docs/standard/base-types/best-practices-strings.md)

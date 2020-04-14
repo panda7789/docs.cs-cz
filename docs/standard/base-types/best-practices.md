@@ -10,12 +10,12 @@ helpviewer_keywords:
 - .NET Framework regular expressions, best practices
 - regular expressions, best practices
 ms.assetid: 618e5afb-3a97-440d-831a-70e4c526a51c
-ms.openlocfilehash: 9b09f5a2505888c6154a58a3512c94c51f89295b
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: ff04b4950f48f2ba06f60b65cc3a46f1295711f3
+ms.sourcegitcommit: 7980a91f90ae5eca859db7e6bfa03e23e76a1a50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "77124419"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "81243151"
 ---
 # <a name="best-practices-for-regular-expressions-in-net"></a>Doporučené postupy pro regulární výrazy v rozhraní .NET
 
@@ -219,7 +219,7 @@ Pokud regulární výraz zpracovává vstup, který téměř odpovídá vzoru re
 
 Časový interval regulárního výrazu definuje časové období, po které bude modul regulárních výrazů hledat jednu shodu před časovým intervalem. Výchozí časový limit je <xref:System.Text.RegularExpressions.Regex.InfiniteMatchTimeout?displayProperty=nameWithType>, což znamená, že regulární výraz nebude časový limit. Tuto hodnotu můžete přepsat a definovat interval časového intervalu následujícím způsobem:
 
-- Poskytnutím hodnoty časového času při vytváření instancí objektu <xref:System.Text.RegularExpressions.Regex> voláním konstruktoru. <xref:System.Text.RegularExpressions.Regex.%23ctor%28System.String%2CSystem.Text.RegularExpressions.RegexOptions%2CSystem.TimeSpan%29?displayProperty=nameWithType>
+- Poskytnutím hodnoty časového času při vytváření instancí objektu <xref:System.Text.RegularExpressions.Regex> voláním konstruktoru. <xref:System.Text.RegularExpressions.Regex.%23ctor%28System.String%2CSystem.Text.RegularExpressions.RegexOptions%2CSystem.TimeSpan%29>
 
 - Voláním statické metody porovnávání <xref:System.Text.RegularExpressions.Regex.Match%28System.String%2CSystem.String%2CSystem.Text.RegularExpressions.RegexOptions%2CSystem.TimeSpan%29?displayProperty=nameWithType> vzorů, například nebo <xref:System.Text.RegularExpressions.Regex.Replace%28System.String%2CSystem.String%2CSystem.String%2CSystem.Text.RegularExpressions.RegexOptions%2CSystem.TimeSpan%29?displayProperty=nameWithType>, která obsahuje `matchTimeout` parametr.
 

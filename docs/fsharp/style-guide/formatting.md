@@ -1,49 +1,49 @@
 ---
 title: Pravidla formátování kódu F#
-description: Přečtěte si pokyny F# pro formátování kódu.
+description: Naučte se pokyny pro formátování kódu F#.
 ms.date: 11/04/2019
-ms.openlocfilehash: 895c8211731b47bd4c59d762d5806cfc1bfe232d
-ms.sourcegitcommit: 7f8eeef060ddeb2cabfa52843776faf652c5a1f5
+ms.openlocfilehash: 2086b515b8ec9b69a44e2e65ca06fb320670dff2
+ms.sourcegitcommit: 7980a91f90ae5eca859db7e6bfa03e23e76a1a50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74089317"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81278935"
 ---
 # <a name="f-code-formatting-guidelines"></a>Pravidla formátování kódu F#
 
-Tento článek obsahuje pokyny, jak formátovat kód tak, aby byl váš F# kód:
+Tento článek nabízí pokyny pro formátování kódu tak, aby váš kód F#je:
 
-* Obecně zobrazené jako čitelnější
-* Je v souladu s konvencemi použitými nástroji formátování v aplikaci Visual Studio a dalšími editory
-* Podobně jako u jiného kódu online
+* Obecně považováno za čitelnější
+* Je v souladu s konvencemi používanými nástroji pro formátování v sadě Visual Studio a dalšími editory.
+* Podobně jako u jiných kódů online
 
-Tyto pokyny jsou založené na [komplexní příručce k F# formátování konvencí](https://github.com/dungpa/fantomas/blob/master/docs/FormattingConventions.md) [Anh-Phan](https://github.com/dungpa).
+Tyto pokyny jsou [založeny](https://github.com/dungpa/fantomas/blob/master/docs/FormattingConventions.md) na komplexní průvodce F # Formátování konvence [Anh-Dung Phan](https://github.com/dungpa).
 
 ## <a name="general-rules-for-indentation"></a>Obecná pravidla pro odsazení
 
-F#ve výchozím nastavení používá významné prázdné znaky. Následující pokyny jsou určené k tomu, aby poskytovaly pokyny, jak juggle některé problémy, které může způsobit.
+F# používá významné prázdné místo ve výchozím nastavení. Následující pokyny mají poskytnout vodítko, jak žonglovat s některými výzvami, které to může vést.
 
 ### <a name="using-spaces"></a>Použití mezer
 
-Pokud je požadováno odsazení, je nutné použít mezery, nikoli tabulátory. Vyžaduje se aspoň jedna mezera. Vaše organizace může vytvořit standardy kódování, které určují počet mezer, které se mají použít pro odsazení; dvě, tři nebo čtyři mezery odsazení na každé úrovni, kde dochází k odsazení, je typický.
+Pokud je vyžadováno odsazení, je nutné použít mezery, nikoli tabulátory. Je vyžadována alespoň jedna mezera. Vaše organizace může vytvořit standardy kódování, které určují počet mezer, které se mají použít pro odsazení; typické jsou dvě, tři nebo čtyři mezery odsazení na každé úrovni, kde dochází k odsazení.
 
-**Pro odsazení doporučujeme 4 mezery.**
+**Doporučujeme 4 mezery pro odsazení.**
 
-To znamená, že odsazení programů je subjektivní. Variace jsou OK, ale první pravidlo, které byste měli dodržovat, je *konzistence odsazení*. Vyberte všeobecně přijatý styl odsazení a používejte ho systematicky v rámci vašeho základu kódu.
+To znamená, že odsazení programů je subjektivní záležitostí. Varianty jsou v pořádku, ale první pravidlo, které byste měli dodržovat, je *konzistence odsazení*. Zvolte obecně přijímaný styl odsazení a používejte jej systematicky v celém základu kódu.
 
-## <a name="formatting-white-space"></a>Formátování mezer
+## <a name="formatting-white-space"></a>Formátování prázdného místa
 
-F#je mezera bez rozlišení. I když je většina sémantických míst z prázdných znaků krytá správným odsazením, je potřeba zvážit několik dalších věcí.
+F# je citlivé na prázdné místo. Ačkoli většina sémantiky z prázdného místa jsou pokryty správné odsazení, existují některé další věci, aby zvážila.
 
 ### <a name="formatting-operators-in-arithmetic-expressions"></a>Formátování operátorů v aritmetických výrazech
 
-Vždy používat prázdné znaky kolem binárních aritmetických výrazů:
+Vždy používejte prázdné místo kolem binárních aritmetické výrazy:
 
 ```fsharp
 let subtractThenAdd x = x - 1 + 3
 ```
 
-Unární operátory `-` by měly vždy mít hodnotu, na kterou se negace okamžitě sleduje:
+Unární `-` operátory by měly mít vždy hodnotu, kterou jsou negovat okamžitě následovat:
 
 ```fsharp
 // OK
@@ -53,18 +53,18 @@ let negate x = -x
 let negateBad x = - x
 ```
 
-Přidání prázdného znaku za operátorem `-` může vést k nejasnostem pro ostatní.
+Přidání prázdného znaku `-` za operátor může vést k nejasnostem pro ostatní.
 
-V souhrnu je důležité vždycky:
+Stručně řečeno, je důležité vždy:
 
-* Obklopit binární operátory s prázdným znakem
-* Po unárním operátoru nikdy nemá koncový znak mezer.
+* Surround binární operátory s bílým prostorem
+* Nikdy nemít koncové prázdné místo za unární operátor
 
-Základní pravidlo pro binární aritmetické operátory je obzvláště důležité. Selhání při obklopení binárního operátoru `-`, pokud se kombinace s určitými možnostmi formátování může vést k interpretaci jako unární `-`.
+Binární aritmetické operátor vodítko je obzvláště důležité. Pokud neobklopí binární `-` operátor, v kombinaci s určitými možnostmi formátování, `-`může vést k jeho interpretaci jako unární .
 
-### <a name="surround-a-custom-operator-definition-with-white-space"></a>Ohraničení vlastní definice operátoru s mezerami
+### <a name="surround-a-custom-operator-definition-with-white-space"></a>Obklíčení vlastní definice operátora mezerami
 
-Pro obklopení definice operátoru vždy použít prázdné znaky:
+K obklopení definice operátora vždy používejte prázdné místo:
 
 ```fsharp
 // OK
@@ -74,11 +74,11 @@ let ( !> ) x f = f x
 let (!>) x f = f x
 ```
 
-Pro jakýkoli vlastní operátor, který začíná na `*` a který má více než jeden znak, je nutné přidat prázdné znaky na začátek definice, aby nedocházelo k nejednoznačnosti kompilátoru. Z tohoto důvodu doporučujeme jednoduše obklopit definice všech operátorů jediným prázdným znakem.
+Pro všechny vlastní operátor, který začíná `*` a který má více než jeden znak, je třeba přidat prázdné místo na začátek definice, aby se zabránilo nejednoznačnosti kompilátoru. Z tohoto důvodu doporučujeme jednoduše obklopit definice všech operátorů s jedním znakem prázdného místa.
 
-### <a name="surround-function-parameter-arrows-with-white-space"></a>Obklopit šipky parametrů funkce s mezerami
+### <a name="surround-function-parameter-arrows-with-white-space"></a>Šipky parametrů prostorové funkce s bílým prostorem
 
-Při definování signatury funkce použijte prázdné místo kolem symbolu `->`:
+Při definování podpisu funkce použijte prázdné místo `->` kolem symbolu:
 
 ```fsharp
 // OK
@@ -88,9 +88,9 @@ type MyFun = int -> int -> string
 type MyFunBad = int->int->string
 ```
 
-### <a name="surround-function-arguments-with-white-space"></a>Uzavřít argumenty funkce s mezerami
+### <a name="surround-function-arguments-with-white-space"></a>Argumenty prostorové funkce s mezerami
 
-Při definování funkce použijte prázdné znaky kolem každého argumentu.
+Při definování funkce použijte prázdné místo kolem každého argumentu.
 
 ```fsharp
 // OK
@@ -102,7 +102,7 @@ let myFunBad (a:decimal)(b)c = a + b + c
 
 ### <a name="place-parameters-on-a-new-line-for-very-long-member-definitions"></a>Umístit parametry na nový řádek pro velmi dlouhé definice členů
 
-Pokud máte hodně dlouhé definice členů, umístěte parametry na nové řádky a odsadíte je jeden obor.
+Pokud máte velmi dlouhou definici člena, umístěte parametry na nové řádky a odsaďte je o jeden obor.
 
 ```fsharp
 type C() =
@@ -113,7 +113,7 @@ type C() =
         // ... the body of the method follows
 ```
 
-To platí také pro konstruktory:
+To platí i pro konstruktory:
 
 ```fsharp
 type C(
@@ -123,11 +123,11 @@ type C(
     // ... the body of the class follows
 ```
 
-### <a name="type-annotations"></a>Anotace typu
+### <a name="type-annotations"></a>Zadání poznámky
 
-#### <a name="right-pad-function-argument-type-annotations"></a>Poznámky k typu argumentu funkce pravého panelu
+#### <a name="right-pad-function-argument-type-annotations"></a>Poznámky typu argumentu funkce pravého panelu
 
-Při definování argumentů s anotacemi typu použijte prázdné místo za symbolem `:`:
+Při definování argumentů s textovými poznámkami použijte `:` za symbolem prázdné místo:
 
 ```fsharp
 // OK
@@ -137,9 +137,9 @@ let complexFunction (a: int) (b: int) c = a + b + c
 let complexFunctionBad (a :int) (b :int) (c:int) = a + b + c
 ```
 
-#### <a name="surround-return-type-annotations-with-white-space"></a>Obklopit anotace návratového typu s prázdným znakem
+#### <a name="surround-return-type-annotations-with-white-space"></a>Surround návratové poznámky s mezerami
 
-V poznámce v funkci nebo v anotaci typu hodnoty (návratový typ v případě funkce) použijte prázdné místo před a za `:` symbolem:
+V anotaci let-bound funkce nebo typu hodnoty (návratový typ v případě `:` funkce) použijte prázdné místo před a za symbolem:
 
 ```fsharp
 // OK
@@ -153,14 +153,14 @@ let myFunBad (a: decimal) b c:decimal = a + b + c
 
 ## <a name="formatting-blank-lines"></a>Formátování prázdných řádků
 
-* Samostatné definice funkcí a tříd na nejvyšší úrovni se dvěma prázdnými řádky.
-* Definice metod uvnitř třídy jsou oddělené jedním prázdným řádkem.
-* Můžete použít nadbytečné prázdné řádky k oddělení skupin souvisejících funkcí. Prázdné řádky mohou být vynechány mezi svazků souvisejících LINERS (například sadou fiktivních implementací).
-* Používejte prázdné řádky ve funkcích a používejte k označení logických oddílů.
+* Oddělte definice funkcí nejvyšší úrovně a tříd dvěma prázdnými řádky.
+* Definice metod uvnitř třídy jsou odděleny jedním prázdným řádkem.
+* Extra prázdné řádky mohou být použity (střídmě) k oddělení skupin souvisejících funkcí. Prázdné řádky mohou být vynechány mezi hromadou souvisejících one-liners (například sada fiktivní implementace).
+* K označení logických oddílů používejte prázdné řádky ve funkcích střídmě.
 
 ## <a name="formatting-comments"></a>Formátování komentářů
 
-Obecně preferovat více komentářů s dvojitým lomítkem přes komentáře bloku ve stylu ML.
+Obecně preferují více double-lomítko komentáře přes ML-styl bloku komentáře.
 
 ```fsharp
 // Prefer this style of comments when you want
@@ -172,7 +172,7 @@ Obecně preferovat více komentářů s dvojitým lomítkem přes komentáře bl
 *)
 ```
 
-Vložené komentáře by měly být velkými písmeny první písmeno.
+Vsazené komentáře by měly první písmeno uvázat velkými písmeny.
 
 ```fsharp
 let f x = x + 1 // Increment by one.
@@ -180,9 +180,9 @@ let f x = x + 1 // Increment by one.
 
 ## <a name="naming-conventions"></a>Zásady vytváření názvů
 
-### <a name="use-camelcase-for-class-bound-expression-bound-and-pattern-bound-values-and-functions"></a>Použití camelCase pro hodnoty a funkce vázané na výrazy vázané na výraz a na vzor
+### <a name="use-camelcase-for-class-bound-expression-bound-and-pattern-bound-values-and-functions"></a>Použití camelCase pro hodnoty a funkce vázané na třídy, výrazy a se vzorkem
 
-Je běžné a přijatelné F# styly pro použití CamelCase pro všechny názvy, které jsou svázané jako lokální proměnné nebo v porovnání vzorů a definic funkcí.
+Je běžné a přijaté F# styl používat camelCase pro všechny názvy vázané jako místní proměnné nebo ve vzorových shod ách a definicích funkcí.
 
 ```fsharp
 // OK
@@ -211,7 +211,7 @@ type MyClass() =
 
 ### <a name="use-camelcase-for-module-bound-public-functions"></a>Použití camelCase pro veřejné funkce vázané na modul
 
-Když je funkce vázaná na modul součástí veřejného rozhraní API, měla by používat camelCase:
+Pokud je funkce vázaná na modul součástí veřejného rozhraní API, měla by používat camelCase:
 
 ```fsharp
 module MyAPI =
@@ -220,13 +220,13 @@ module MyAPI =
     let publicFunctionTwo param1 param2 param3 = ...
 ```
 
-### <a name="use-camelcase-for-internal-and-private-module-bound-values-and-functions"></a>Použití camelCase pro interní a privátní hodnoty a funkce vázané na modul
+### <a name="use-camelcase-for-internal-and-private-module-bound-values-and-functions"></a>Použití camelCase pro interní a soukromé modul-vázané hodnoty a funkce
 
-Použijte camelCase pro hodnoty vázané na modul, včetně následujících:
+Použijte camelCase pro hodnoty vázané na soukromé moduly, včetně následujících:
 
-* Funkce ad hoc ve skriptech
+* Ad hoc funkce ve skriptech
 
-* Hodnoty, které tvoří interní implementaci modulu nebo typu
+* Hodnoty tvořící interní implementaci modulu nebo typu
 
 ```fsharp
 let emailMyBossTheLatestResults =
@@ -235,7 +235,7 @@ let emailMyBossTheLatestResults =
 
 ### <a name="use-camelcase-for-parameters"></a>Použití camelCase pro parametry
 
-Všechny parametry by měly používat camelCase v souladu s konvencemi vytváření názvů .NET.
+Všechny parametry by měly používat camelCase v souladu s konvencemi pojmenování .NET.
 
 ```fsharp
 module MyModule =
@@ -247,7 +247,7 @@ type MyClass() =
 
 ### <a name="use-pascalcase-for-modules"></a>Použití PascalCase pro moduly
 
-Všechny moduly (na nejvyšší úrovni, interní, privátní, vnořený) by měly používat PascalCase.
+Všechny moduly (nejvyšší úrovně, interní, soukromé, vnořené) by měly používat PascalCase.
 
 ```fsharp
 module MyTopLevelModule
@@ -261,7 +261,7 @@ module Helpers =
 
 ### <a name="use-pascalcase-for-type-declarations-members-and-labels"></a>Použití PascalCase pro deklarace typu, členy a popisky
 
-Třídy, rozhraní, struktury, výčty, delegáti, záznamy a rozlišené sjednocení by měly být pojmenovány pomocí PascalCase. Členy v rámci typů a popisků pro záznamy a rozlišené sjednocení by měly také používat PascalCase.
+Třídy, rozhraní, struktury, výčty, delegáty, záznamy a discriminated sjednocení by měly být pojmenovány s PascalCase. Členové v rámci typů a popisků pro záznamy a diskriminované sjednocení by také měly používat PascalCase.
 
 ```fsharp
 type IMyInterface =
@@ -279,19 +279,19 @@ type SchoolPerson =
     | Administrator
 ```
 
-### <a name="use-pascalcase-for-constructs-intrinsic-to-net"></a>Použití PascalCase pro vnitřní konstrukce pro .NET
+### <a name="use-pascalcase-for-constructs-intrinsic-to-net"></a>Použití PascalCase pro konstrukce vnitřní .NET
 
-Obory názvů, výjimky, události a názvy projektů a`.dll` by měly také používat PascalCase. Nejenom to dělá, že se spotřeba z jiných jazyků .NET u spotřebitelů stane přirozenější, je taky v souladu se zásadami vytváření názvů .NET, u kterých se pravděpodobně setkáte.
+Obory názvů, výjimky, události`.dll` a názvy projektů/ projektů by měly také používat PascalCase. Nejen, že to, aby spotřeba z jiných jazyků .NET cítit přirozenější pro spotřebitele, je také konzistentní s .NET konvence pojmenování, které se pravděpodobně setkáte.
 
 ### <a name="avoid-underscores-in-names"></a>Vyhněte se podtržítkům v názvech
 
-Historicky některé F# knihovny používaly v názvech podtržítka. Nejedná se ale o již široce přijatelné částečně, protože je v konfliktu se zásadami vytváření názvů .NET. V takovém případě F# někteří programátoři v rámci historických důvodů používají podtržítka, částečně a tolerance a respektování jsou důležité. Uvědomte si však, že styl je často nepodobný jiným uživatelům, kteří mají možnost zvolit, zda se má použít.
+Historicky některé knihovny F# používají podtržítka v názvech. To však již není široce přijímané, částečně proto, že je v konfliktu s konvencemi pojmenování .NET. To znamená, že někteří programátoři F# používají silně podtržítka, částečně z historických důvodů, a tolerance a respekt je důležité. Uvědomte si však, že styl je často nelíbí jiní, kteří mají na výběr o tom, zda jej použít.
 
-Některé výjimky zahrnují spolupráci s nativními komponentami, kde podtržítka jsou velmi společná.
+Některé výjimky zahrnují spolupráci s nativními součástmi, kde jsou podtržítka velmi častá.
 
-### <a name="use-standard-f-operators"></a>Použití standardních F# operátorů
+### <a name="use-standard-f-operators"></a>Použití standardních operátorů Jazyka F#
 
-Následující operátory jsou definovány ve F# standardní knihovně a měly by být použity místo definování ekvivalentů. Použití těchto operátorů se doporučuje, protože je v úmyslu zvýšit čitelnost a idiomatickou kódu. Vývojáři s pozadím v OCaml nebo jiným funkčním programovacím jazykem můžou být zvyklí na různé idiomy. Následující seznam shrnuje doporučené F# operátory.
+Následující operátory jsou definovány ve standardní knihovně F# a měly by být použity namísto definování ekvivalentů. Pomocí těchto operátorů se doporučuje, protože má tendenci kód čitelnější a idiomatický. Vývojáři se zázemím v OCamlu nebo jiném funkčním programovacím jazyce mohou být zvyklí na různé idiomy. Následující seznam shrnuje doporučené operátory F#.
 
 ```fsharp
 x |> f // Forward pipeline
@@ -311,23 +311,23 @@ x &&& y // Bitwise and, also for working with “flags” enumeration
 x ^^^ y // Bitwise xor, also for working with “flags” enumeration
 ```
 
-### <a name="use-prefix-syntax-for-generics-foot-in-preference-to-postfix-syntax-t-foo"></a>Použijte syntaxi prefixu pro obecné typy (`Foo<T>`) v Předvolby na syntaxi přípony (`T Foo`).
+### <a name="use-prefix-syntax-for-generics-foot-in-preference-to-postfix-syntax-t-foo"></a>Použijte syntaxi předpony`Foo<T>`pro obecné typy (`T Foo`) v předu přechodové syntaxi ( )
 
-F#dědí jak styl přípona ML obecných typů pojmenování (například `int list`), tak i prefix .NET (například `list<int>`). Preferovat styl rozhraní .NET, s výjimkou pěti specifických typů:
+F# zdědí jak postfix ML styl pojmenování `int list`obecných typů (například) stejně `list<int>`jako předpona .NET styl (například). Preferujte styl .NET, s výjimkou pěti konkrétních typů:
 
-1. Pro F# seznamy použijte formát přípony: `int list` místo `list<int>`.
-2. Pro F# možnosti použijte formát přípony: `int option` místo `option<int>`.
-3. Pro F# možnosti hodnoty použijte formát přípony: `int voption` místo `voption<int>`.
-4. Pro F# pole použijte syntaktický název `int[]` místo `int array` nebo `array<int>`.
-5. U referenčních buněk použijte `int ref` místo `ref<int>` nebo `Ref<int>`.
+1. Pro seznamy F# použijte formulář `int list` přípony: spíše než `list<int>`.
+2. Pro možnosti Jazyka F# použijte `int option` formulář `option<int>`přípony: nikoli .
+3. Pro možnosti hodnoty F# použijte `int voption` formulář `voption<int>`přípony: spíše než .
+4. Pro pole F# použijte syntaktický název `int[]` spíše než `int array` nebo `array<int>`.
+5. Pro referenční buňky použijte `int ref` spíše než `ref<int>` nebo `Ref<int>`.
 
-U všech ostatních typů použijte formulář předpony.
+Pro všechny ostatní typy použijte formulář předpony.
 
 ## <a name="formatting-tuples"></a>Formátování řazených kolekcí členů
 
-Instance řazené kolekce členů by měla být v závorkách a oddělovací čárky v rámci by měly být následovány jedním mezerou, například: `(1, 2)`, `(x, y, z)`.
+Kontinalizovat n-tice by měla být závorka a za vymezujícími čárky uvnitř by měla následovat jedna mezera, například: `(1, 2)`, `(x, y, z)`.
 
-Při porovnávání vzorů řazených kolekcí členů je obvykle přijatelné vynechat závorky:
+Běžně se přijímá vynechat závorky v porovnávání vzorů řazených kolekcí členů:
 
 ```fsharp
 let (x, y) = z // Destructuring
@@ -340,7 +340,7 @@ match x, y with
 | x, y -> 1
 ```
 
-V případě, že řazená kolekce členů je návratovou hodnotou funkce, je také obvykle přijato, aby se vynechal závorky:
+Je také běžně přijímán vynechat závorky, pokud n-tice je vrácená hodnota funkce:
 
 ```fsharp
 // OK
@@ -350,11 +350,11 @@ let update model msg =
     | _ -> model, [ msg ]
 ```
 
-V souhrnu dáváte přednost vytváření instancí řazené kolekce členů v závorkách, ale při použití řazených kolekcí členů nebo návratové hodnoty je považována za jemné, aby nedošlo k závorce.
+V souhrnu upřednostňujte instance n-tice v závorce, ale při použití řazených kolekcí členů pro porovnávání vzorků nebo vrácené hodnoty se považuje za vpořádku, aby se zabránilo závorkám.
 
-## <a name="formatting-discriminated-union-declarations"></a>Formátování deklarací rozlišených sjednocení
+## <a name="formatting-discriminated-union-declarations"></a>Formátování discriminated unie prohlášení
 
-Odsadit `|` v definici typu o 4 mezery:
+Odsazení `|` v definici typu podle 4 mezer:
 
 ```fsharp
 // OK
@@ -370,9 +370,9 @@ type Volume =
 | ImperialPint of float
 ```
 
-## <a name="formatting-discriminated-unions"></a>Formátování rozlišených sjednocení
+## <a name="formatting-discriminated-unions"></a>Formátování diskriminovaných sjednocení
 
-Instance rozlišených sjednocení, která se rozdělí mezi více řádků, by měla obsahovat obsažená data nový obor s odsazením:
+Instanci s discriminated sjednocení, které se rozdělí na více řádků by měl dát obsažená data nový obor s odsazení:
 
 ```fsharp
 let tree1 =
@@ -381,7 +381,7 @@ let tree1 =
          BinaryNode(BinaryValue 3, BinaryValue 4))
 ```
 
-Pravá kulatá závorka může být také na novém řádku:
+Uzavírací závorky mohou být také na novém řádku:
 
 ```fsharp
 let tree1 =
@@ -393,7 +393,7 @@ let tree1 =
 
 ## <a name="formatting-record-declarations"></a>Formátování deklarací záznamů
 
-Odsadit `{` v definici typu o 4 mezery a spusťte seznam polí na stejném řádku:
+Odsazení `{` v definici typu o 4 mezery a zahájení seznamu polí na stejném řádku:
 
 ```fsharp
 // OK
@@ -419,7 +419,7 @@ type PostalAddress =
     }
 ```
 
-Umístění počátečního tokenu na nový řádek a uzavírací token na novém řádku je vhodnější, pokud deklarujete implementace rozhraní nebo členy záznamu:
+Umístění počátečního tokenu na nový řádek a uzavírací token na nový řádek je vhodnější, pokud deklarujete implementace rozhraní nebo členy v záznamu:
 
 ```fsharp
 // Declaring additional members on PostalAddress
@@ -428,7 +428,7 @@ type PostalAddress =
         Address: string
         City: string
         Zip: string
-    } with
+    }
     member x.ZipAndCity = sprintf "%s %s" x.Zip x.City
 
 type MyRecord =
@@ -440,13 +440,13 @@ type MyRecord =
 
 ## <a name="formatting-records"></a>Formátování záznamů
 
-Krátké záznamy můžete zapsat na jeden řádek:
+Krátké záznamy mohou být zapsány v jednom řádku:
 
 ```fsharp
 let point = { X = 1.0; Y = 0.0 }
 ```
 
-Záznamy, které mají delší dobu, by měly používat nové řádky pro popisky:
+Záznamy, které jsou delší, by měly pro popisky používat nové řádky:
 
 ```fsharp
 let rainbow =
@@ -454,10 +454,10 @@ let rainbow =
       Lackeys = ["Zippy"; "George"; "Bungle"] }
 ```
 
-Umístění otevřeného tokenu na nový řádek, obsah se na kartách na jednom rozsahu a uzavírací token na novém řádku je vhodnější, pokud jste:
+Umístění počátečního tokenu na nový řádek, obsah s kartami přes jeden obor a uzavírací token na novém řádku je vhodnější, pokud jste:
 
-* Přesouvání záznamů kolem kódu s různými rozsahy odsazení
-* Rozpotrubním do funkce
+* Přesouvání záznamů v kódu s různými obory odsazení
+* Jejich potrubí do funkce
 
 ```fsharp
 let rainbow =
@@ -487,13 +487,13 @@ let foo a =
         })
 ```
 
-Stejná pravidla platí pro prvky list a Array.
+Stejná pravidla platí pro prvky seznamu a pole.
 
-## <a name="formatting-copy-and-update-record-expressions"></a>Formátování výrazů záznamu kopírování a aktualizace
+## <a name="formatting-copy-and-update-record-expressions"></a>Formátování výrazů záznamů kopírování a aktualizace
 
-Výraz záznamu kopie a aktualizace je stále záznam, takže podobné pokyny platí.
+Výraz záznamu kopírování a aktualizace je stále záznam, takže platí podobné pokyny.
 
-Krátké výrazy se můžou vejít na jeden řádek:
+Krátké výrazy se vejdou na jeden řádek:
 
 ```fsharp
 let point2 = { point with X = 1; Y = 2 }
@@ -508,7 +508,7 @@ let rainbow2 =
         Lackeys = ["Zippy"; "George"; "Bungle"] }
 ```
 
-Stejně jako u pokynů k záznamům můžete chtít pro složené závorky vyhradit samostatné řádky a odsadit jeden obor vpravo pomocí výrazu. Všimněte si, že v některých zvláštních případech, jako je například zabalení hodnoty s volitelnou bez závorek, bude pravděpodobně nutné zachovat složené závorky na jednom řádku:
+A stejně jako vodítko záznamu můžete chtít vyhradit samostatné řádky pro závorky a odsazení jednoho oboru vpravo s výrazem. Všimněte si, že v některých zvláštních případech, jako je například obtékání hodnoty s volitelným bez závorek, může být nutné zachovat ortézu na jednom řádku:
 
 ```fsharp
 type S = { F1: int; F2: string }
@@ -527,16 +527,16 @@ let newState =
 
 ## <a name="formatting-lists-and-arrays"></a>Formátování seznamů a polí
 
-Zápis `x :: l` s mezerami kolem operátoru `::` (`::` je vpony operátor, takže je uzavřený mezerami).
+Pište `x :: l` s mezerami kolem operátoru `::` (`::` je infix operátor, tedy obklopen mezerami).
 
-Seznam a pole deklarované na jednom řádku by měly mít mezeru za levou závorkou a před pravou závorkou:
+Seznam a pole deklarovaná na jednom řádku by měla mít mezeru za otevírací závorkou a před uzavírací závorkou:
 
 ```fsharp
 let xs = [ 1; 2; 3 ]
 let ys = [| 1; 2; 3; |]
 ```
 
-Vždy používejte alespoň jednu mezeru mezi dvěma různými operátory podobnými závorce. Ponechte například mezeru mezi `[` a `{`.
+Vždy používejte alespoň jednu mezeru mezi dvěma odlišnými operátory složených závorek. Ponechte například mezeru `[` mezi `{`a a .
 
 ```fsharp
 // OK
@@ -554,9 +554,9 @@ Vždy používejte alespoň jednu mezeru mezi dvěma různými operátory podobn
  { IngredientName = "Lemon"; Quantity = 1 }]
 ```
 
-Pro seznamy nebo pole řazených kolekcí členů platí stejné zásady.
+Stejné pokyny platí pro seznamy nebo pole řazených kolekcí členů.
 
-Seznamy a pole, které jsou rozdělené mezi více řádků, následují podobně jako záznamy:
+Seznamy a pole, které se rozdělí na více řádků, se řídí podobným pravidlem jako záznamy:
 
 ```fsharp
 let pascalsTriangle =
@@ -573,9 +573,9 @@ let pascalsTriangle =
     |]
 ```
 
-A stejně jako u záznamů deklarujete levou a pravou hranatou závorku na vlastním řádku, čímž usnadníte přesouvání kódu a natékání do funkcí.
+A stejně jako u záznamů, deklarování otevírací a uzavírací závorky na vlastní lince usnadní přesun kódu a potrubí do funkcí.
 
-Při generování polí a seznamů programově preferovat `->` přes `do ... yield` při každém vygenerování hodnoty:
+Při programovém generování polí a `->` seznamů upřednostňujte při `do ... yield` vždy generování hodnoty:
 
 ```fsharp
 // Preferred
@@ -585,7 +585,7 @@ let squares = [ for x in 1..10 -> x*x ]
 let squares' = [ for x in 1..10 do yield x*x ]
 ```
 
-Starší verze F# jazyka požadovaly určení `yield` v situacích, kdy mohou být data vygenerována podmíněně, nebo mohou být vyhodnoceny po sobě jdoucí výrazy. Preferovat vynechání těchto klíčových slov `yield`, pokud není nutné kompilovat F# se starší jazykovou verzí:
+Starší verze jazyka F# vyžaduje `yield` zadání v situacích, kdy data mohou být generovány podmíněně nebo mohou být po sobě jdoucí výrazy, které mají být vyhodnoceny. Preferujte vynechání `yield` těchto klíčových slov, pokud není nutné zkompilovat se starší jazykovou verzí Jazyka F#:
 
 ```fsharp
 // Preferred
@@ -615,17 +615,17 @@ let daysOfWeek' includeWeekend =
     ]
 ```
 
-V některých případech může `do...yield` pomoci při čitelnosti. V takovém případě by se měly vzít v úvahu i tyto případy.
+V některých `do...yield` případech může pomoci v čitelnosti. Tyto případy, i když subjektivní, by měly být vzaty v úvahu.
 
-## <a name="formatting-if-expressions"></a>Formátování výrazů if
+## <a name="formatting-if-expressions"></a>Formátování, pokud výrazy
 
-Odsazení podmíněných hodnot závisí na velikosti výrazů, které je tvoří. Pokud `cond`, `e1` a `e2` jsou krátké, stačí je napsat na jeden řádek:
+Odsazení podmínek závisí na velikosti výrazů, které je tvoří. Pokud `cond` `e1` , `e2` a jsou krátké, jednoduše je napište na jeden řádek:
 
 ```fsharp
 if cond then e1 else e2
 ```
 
-Pokud je `cond`, `e1` nebo `e2` delší, ale ne víceřádkové:
+Pokud `cond`buď `e1` `e2` , nebo jsou delší, ale ne víceřádkové:
 
 ```fsharp
 if cond
@@ -633,7 +633,7 @@ then e1
 else e2
 ```
 
-Pokud je některý z těchto výrazů víceřádkový:
+Pokud některý z výrazů jsou víceřádkové:
 
 ```fsharp
 if cond then
@@ -642,7 +642,7 @@ else
     e2
 ```
 
-Více podmíněných typů s `elif` a `else` jsou odsazeny ve stejném oboru jako `if`:
+Více podmínek `elif` `else` s a jsou odsazeny ve stejném oboru jako `if`:
 
 ```fsharp
 if cond1 then e1
@@ -651,7 +651,7 @@ elif cond3 then e3
 else e4
 ```
 
-### <a name="pattern-matching-constructs"></a>Konstrukce pro porovnávání vzorů
+### <a name="pattern-matching-constructs"></a>Konstrukce odpovídající vzorek
 
 Použijte `|` pro každou klauzuli shody bez odsazení. Pokud je výraz krátký, můžete zvážit použití jednoho řádku, pokud je každý dílčí výraz také jednoduchý.
 
@@ -669,7 +669,7 @@ match l with
     | [] -> failwith "Couldn't find David"
 ```
 
-Pokud je výraz napravo od šipky porovnávání se vzorci příliš velký, přesuňte jej na následující řádek, odsadíte jeden krok z `match`/`|`.
+Pokud je výraz vpravo od šipky pro porovnávání vzorků příliš velký, přesuňte `match` / `|`jej na následující řádek, odsazený o jeden krok od .
 
 ```fsharp
 match lam with
@@ -681,7 +681,7 @@ match lam with
 
 ```
 
-Porovnávání vzorů anonymních funkcí, počínaje `function`, by nemělo být obvykle příliš daleko odsazené. Například odsazení jednoho oboru je následující:
+Porovnávání vzorů anonymních `function`funkcí počínaje písmenem a) by obecně nemělo být odsazeno příliš daleko. Například odsazení jednoho oboru následujícím je v pořádku:
 
 ```fsharp
 lambdaList
@@ -691,7 +691,7 @@ lambdaList
     | Var v -> 1)
 ```
 
-Porovnávání vzorů ve funkcích definovaných `let` nebo `let rec` by mělo být po začátku `let`odsazené o 4 mezery, i když se používá klíčové slovo `function`:
+Porovnávání vzorů ve `let` `let rec` funkcích definovaných nebo by `let`mělo být `function` odsazeno 4 mezery po spuštění , i když je použito klíčové slovo:
 
 ```fsharp
 let rec sizeLambda acc = function
@@ -702,9 +702,9 @@ let rec sizeLambda acc = function
 
 Nedoporučujeme zarovnávat šipky.
 
-## <a name="formatting-trywith-expressions"></a>Výrazy try/with formátování
+## <a name="formatting-trywith-expressions"></a>Formátování try/s výrazy
 
-Porovnávání vzorů u typu výjimky by mělo být odsazeno na stejné úrovni jako `with`.
+Porovnávání vzorů u typu výjimky by mělo `with`být odsazeno na stejné úrovni jako .
 
 ```fsharp
 try
@@ -719,11 +719,11 @@ with
     printfn "A second that was a multiple of 3"
 ```
 
-## <a name="formatting-function-parameter-application"></a>Formátování aplikace parametrů funkce
+## <a name="formatting-function-parameter-application"></a>Aplikace parametru funkce formátování
 
-Obecně platí, že většina parametrů funkce je provedena na stejném řádku.
+Obecně platí, že většina aplikace parametrů funkce se provádí na stejném řádku.
 
-Pokud chcete použít parametry pro funkci na novém řádku, odsadit je podle jednoho oboru.
+Pokud chcete použít parametry na funkci na novém řádku, odsaďte je jedním oborem.
 
 ```fsharp
 // OK
@@ -743,7 +743,7 @@ let printVolumes x =
         (convertVolumeImperialPint x)
 ```
 
-Stejné pokyny platí pro výrazy lambda jako argumenty funkce. Pokud tělo výrazu lambda, tělo může mít jiný řádek, který je odsazený o jeden obor.
+Stejné pokyny platí pro lambda výrazy jako argumenty funkce. Pokud tělo výrazu lambda, tělo může mít jiný řádek, odsazené podle jednoho oboru
 
 ```fsharp
 let printListWithOffset a list1 =
@@ -759,13 +759,13 @@ let printListWithOffset a list1 =
         list1
 ```
 
-Pokud je však tělo výrazu lambda více než jeden řádek, zvažte jejich vyhodnocování do samostatné funkce namísto použití konstruktoru víceřádkové konstrukce jako jediného argumentu funkce.
+Pokud je však tělo výrazu lambda více než jeden řádek, zvažte jeho započítávání do samostatné funkce, nikoli víceřádkovou konstrukci použitou jako jeden argument pro funkci.
 
-### <a name="formatting-infix-operators"></a>Formátování operátorů vpony
+### <a name="formatting-infix-operators"></a>Formátování infix operátorů
 
-Jednotlivé operátory oddělte mezerami. Zřejmou výjimkou z tohoto pravidla jsou operátory `!` a `.`.
+Oddělte operátory mezerami. Zřejmé výjimky z tohoto `!` `.` pravidla jsou a operátory.
 
-Výrazy vpony jsou v pořádku až seznamu na stejném sloupci:
+Výrazy infix jsou v pořádku pro sestavu ve stejném sloupci:
 
 ```fsharp
 acc +
@@ -779,7 +779,7 @@ let function1 arg1 arg2 arg3 arg4 =
 
 ### <a name="formatting-pipeline-operators"></a>Formátování operátorů kanálu
 
-`|>` operátory kanálu by měly přecházet pod výrazy, na kterých pracují.
+Operátory kanálu `|>` by měly přejít pod výrazy, na kterých pracují.
 
 ```fsharp
 // Preferred approach
@@ -802,9 +802,9 @@ let methods2 = System.AppDomain.CurrentDomain.GetAssemblies()
             |> Array.concat
 ```
 
-### <a name="formatting-modules"></a>Formátování modulů
+### <a name="formatting-modules"></a>Formátovací moduly
 
-Kód v místním modulu musí být odsazený relativně vzhledem k modulu, ale kód v modulu nejvyšší úrovně by neměl být odsazený. Elementy oboru názvů není nutné odsazovat.
+Kód v místním modulu musí být odsazen vzhledem k modulu, ale kód v modulu nejvyšší úrovně by neměl být odsazen. Prvky oboru názvů nemusí být odsazeny.
 
 ```fsharp
 // A is a top-level module.
@@ -822,9 +822,9 @@ module A2 =
     let function2 a b = a*a - b*b
 ```
 
-### <a name="formatting-object-expressions-and-interfaces"></a>Formátování výrazů objektů a rozhraní
+### <a name="formatting-object-expressions-and-interfaces"></a>Formátování výrazů a rozhraní objektů
 
-Výrazy objektu a rozhraní by měly být zarovnány stejným způsobem s `member` odsazovat po 4 mezerách.
+Objektové výrazy a rozhraní by měly `member` být zarovnány stejným způsobem jako odsazení po 4 mezerách.
 
 ```fsharp
 let comparer =
@@ -836,9 +836,9 @@ let comparer =
               reversed.CompareTo (rev s2) }
 ```
 
-### <a name="formatting-white-space-in-expressions"></a>Formátování mezer ve výrazech
+### <a name="formatting-white-space-in-expressions"></a>Formátování prázdného místa ve výrazech
 
-Vyhněte se nadbytečnému F# prázdnému prostoru ve výrazech.
+Vyhněte se cizí prázdné místo ve výrazech F#.
 
 ```fsharp
 // OK
@@ -848,7 +848,7 @@ spam (ham.[1])
 spam ( ham.[ 1 ] )
 ```
 
-Pojmenované argumenty by neměly mít také prostor obklopující `=`:
+Pojmenované argumenty by také neměly mít prostor obklopující `=`:
 
 ```fsharp
 // OK
@@ -860,7 +860,7 @@ let makeStreamReader x = new System.IO.StreamReader(path = x)
 
 ## <a name="formatting-attributes"></a>Formátování atributů
 
-[Atributy](../language-reference/attributes.md) jsou umístěné nad konstrukcí:
+[Atributy](../language-reference/attributes.md) jsou umístěny nad konstrukcí:
 
 ```fsharp
 [<SomeAttribute>]
@@ -876,9 +876,9 @@ type MyRecord =
       Label2: string }
 ```
 
-### <a name="formatting-attributes-on-parameters"></a>Formátování atributů u parametrů
+### <a name="formatting-attributes-on-parameters"></a>Formátování atributů parametrů
 
-Atributy mohou být také umístěny v parametrech. V takovém případě umístěte na stejný řádek jako parametr a před název:
+Atributy mohou být také umístí na parametry. V tomto případě umístěte na stejný řádek jako parametr a před název:
 
 ```fsharp
 // Defines a class that takes an optional value as input defaulting to false.
@@ -888,7 +888,7 @@ type C() =
 
 ### <a name="formatting-multiple-attributes"></a>Formátování více atributů
 
-Je-li pro konstrukci, která není parametrem, použita více atributů, měly by být umístěny tak, že na každý řádek je jeden atribut:
+Pokud je na konstrukci, která není parametrem, použito více atributů, měly by být umístěny tak, aby byl jeden atribut na řádek:
 
 ```fsharp
 [<Struct>]
@@ -898,11 +898,11 @@ type MyRecord =
       Label2: string }
 ```
 
-Při použití na parametr se musí nacházet na stejném řádku a oddělené oddělovačem `;`.
+Při použití na parametr musí být na stejném řádku `;` a odděleny oddělovačem.
 
-## <a name="formatting-literals"></a>Formátování literálů
+## <a name="formatting-literals"></a>Formátování literál
 
-literály používající atribut `Literal` by měly umístit atribut na svůj vlastní řádek a používat PascalCase pojmenování: [ F# ](../language-reference/literals.md)
+[F# literály](../language-reference/literals.md) `Literal` pomocí atributu by měl umístit atribut na vlastní řádek a používat PascalCase pojmenování:
 
 ```fsharp
 [<Literal>]

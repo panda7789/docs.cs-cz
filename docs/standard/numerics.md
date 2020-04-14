@@ -11,12 +11,12 @@ helpviewer_keywords:
 - numerics
 - BigInteger
 ms.assetid: dfebc18e-acde-4510-9fa7-9a0f4aa3bd11
-ms.openlocfilehash: 3e9c817006930a36ebdce5c5965d78f1721c7056
-ms.sourcegitcommit: 1c1a1f9ec0bd1efb3040d86a79f7ee94e207cca5
+ms.openlocfilehash: ec5d4c088d3a954a4670891e3bb115c73e6cfdcf
+ms.sourcegitcommit: 7980a91f90ae5eca859db7e6bfa03e23e76a1a50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/03/2020
-ms.locfileid: "80635146"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "81242761"
 ---
 # <a name="numerics-in-net"></a>Číslovky v technologii .NET
 
@@ -62,7 +62,7 @@ Oba <xref:System.Single> <xref:System.Double> a typy podporují speciální hodn
 
 Každý typ s plovoucí desetinnou desetinnou desetinnou hodem podporuje sadu standardních aritmetických operátorů. Třída <xref:System.Math?displayProperty=nameWithType> poskytuje metody pro širší sadu matematických funkcí. .NET Core 2.0 a <xref:System.MathF?displayProperty=nameWithType> novější obsahuje třídu, která <xref:System.Single> poskytuje metody, které přijímají argumenty typu.
 
-Můžete také pracovat s jednotlivými <xref:System.Double> <xref:System.Single> bity a <xref:System.BitConverter?displayProperty=nameWithType> hodnoty pomocí třídy. Struktura <xref:System.Decimal?displayProperty=nameWithType> má své vlastní <xref:System.Decimal.GetBits%2A?displayProperty=nameWithType> <xref:System.Decimal.%23ctor%28System.Int32%5B%5D%29?displayProperty=nameWithType>metody a , pro práci s jednotlivé bity desetinné hodnoty, stejně jako vlastní sadu metod pro provádění některých dalších matematických operací.
+Můžete také pracovat s jednotlivými <xref:System.Double> <xref:System.Single> bity a <xref:System.BitConverter?displayProperty=nameWithType> hodnoty pomocí třídy. Struktura <xref:System.Decimal?displayProperty=nameWithType> má své vlastní <xref:System.Decimal.GetBits%2A?displayProperty=nameWithType> <xref:System.Decimal.%23ctor%28System.Int32%5B%5D%29>metody a , pro práci s jednotlivé bity desetinné hodnoty, stejně jako vlastní sadu metod pro provádění některých dalších matematických operací.
   
 Typy <xref:System.Double> <xref:System.Single> a jsou určeny k použití pro hodnoty, které jsou svou povahou nepřesné (například vzdálenost mezi dvěma hvězdičkami) a pro aplikace, ve kterých není vyžadován vysoký stupeň přesnosti a malá chyba zaokrouhlení. Typ <xref:System.Decimal?displayProperty=nameWithType> použijte pro případy, ve kterých je vyžadována větší přesnost a chyby zaokrouhlení by měly být minimalizovány.
 
@@ -95,4 +95,4 @@ Typy s podporou SIMD jsou implementovány tak, aby je bylo možné použít s ha
 
 ## <a name="see-also"></a>Viz také
 
-- [Standardní řetězce formátu čísla](base-types/standard-numeric-format-strings.md)
+- [Standardní číselné formátovací řetězce](base-types/standard-numeric-format-strings.md)

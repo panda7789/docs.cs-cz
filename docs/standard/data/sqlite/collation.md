@@ -2,12 +2,12 @@
 title: Kolace
 ms.date: 12/13/2019
 description: Přečtěte si, jak vytvořit vlastní posloupnost řazení.
-ms.openlocfilehash: b93c82a4ace154b8293b05effa8f9e9294fa7708
-ms.sourcegitcommit: 2514f4e3655081dcfe1b22470c0c28500f952c42
+ms.openlocfilehash: 9879846cc191a62c4cb47a0fbaa47c59153ba61c
+ms.sourcegitcommit: 7980a91f90ae5eca859db7e6bfa03e23e76a1a50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/18/2020
-ms.locfileid: "79506538"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "81242969"
 ---
 # <a name="collation"></a>Kolace
 
@@ -21,7 +21,7 @@ Kompletování sekvence jsou používány SQLite při porovnávání text hodnot
 
 ## <a name="custom-collation"></a>Vlastní řazení
 
-Můžete také definovat vlastní řazení sekvence nebo přepsat vestavěné ty <xref:Microsoft.Data.Sqlite.SqliteConnection.CreateCollation%2A>pomocí . Následující příklad ukazuje přepsání nocase řazení pro podporu znaků Unicode. [Úplný ukázkový kód](https://github.com/dotnet/samples/blob/master/snippets/standard/data/sqlite/CollationSample/Program.cs) je k dispozici na GitHubu.
+Můžete také definovat vlastní řazení sekvence nebo přepsat vestavěné ty <xref:Microsoft.Data.Sqlite.SqliteConnection.CreateCollation%2A>pomocí . Následující příklad ukazuje přepsání nocase řazení pro podporu znaků Unicode. [Úplný ukázkový kód](https://github.com/dotnet/docs/blob/master/samples/snippets/standard/data/sqlite/CollationSample/Program.cs) je k dispozici na GitHubu.
 
 [!code-csharp[](../../../../samples/snippets/standard/data/sqlite/CollationSample/Program.cs?name=snippet_Collation)]
 

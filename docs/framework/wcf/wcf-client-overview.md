@@ -7,18 +7,19 @@ dev_langs:
 helpviewer_keywords:
 - clients [WCF], architecture
 ms.assetid: f60d9bc5-8ade-4471-8ecf-5a07a936c82d
-ms.openlocfilehash: 7905d540e0f06dd2863cf80381210307e3021918
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: c12579062b04cfb46e14d5c3d734a7c155f8d654
+ms.sourcegitcommit: 7980a91f90ae5eca859db7e6bfa03e23e76a1a50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79183061"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81278883"
 ---
-# <a name="wcf-client-overview"></a>Klienti WCF – přehled
+# <a name="wcf-client-overview"></a>Přehled klienta WCF
+
 Tato část popisuje, co klientské aplikace dělají, jak konfigurovat, vytvářet a používat klienta WCF (Windows Communication Foundation) a jak zabezpečit klientské aplikace.  
   
 ## <a name="using-wcf-client-objects"></a>Použití objektů klienta WCF  
- Klientská aplikace je spravovaná aplikace, která ke komunikaci s jinou aplikací používá klienta WCF. Chcete-li vytvořit klientskou aplikaci pro službu WCF, je třeba následující kroky:  
+ Klientská aplikace je spravovaná aplikace, která ke komunikaci s jinou aplikací používá klienta WCF. Vytvoření klientské aplikace pro službu WCF vyžaduje následující kroky:  
   
 1. Získejte servisní smlouvu, vazby a informace o adrese pro koncový bod služby.  
   
@@ -28,7 +29,7 @@ Tato část popisuje, co klientské aplikace dělají, jak konfigurovat, vytvá�
   
 4. Zavřete objekt klienta WCF.  
   
- Následující části popisují tyto kroky a poskytují stručný úvod k následujícím otázkám:  
+Následující části popisují tyto kroky a poskytují stručný úvod k následujícím otázkám:  
   
 - Zpracování chyb.  
   
@@ -70,7 +71,7 @@ svcutil /language:vb /out:ClientCode.vb /config:app.config http://computerName/M
   
  Tuto třídu lze vytvořit jako místní objekt pomocí jednoho z konstruktorů, nakonfigurován a `ISampleService`poté použít pro připojení ke službě typu .  
   
- Doporučujeme nejprve vytvořit objekt klienta WCF a potom jej použít a zavřít uvnitř jednoho bloku try/catch. Neměli `using` byste používat`Using` příkaz (v jazyce Visual Basic), protože může maskovat výjimky v určitých režimech selhání. Další informace naleznete v následujících částech a [také použití zavřít a přerušit uvolnění prostředků klienta WCF](./samples/use-close-abort-release-wcf-client-resources.md).  
+ Doporučujeme nejprve vytvořit objekt klienta WCF a potom jej použít a zavřít uvnitř jednoho bloku try/catch. Nepoužívejte `using` příkaz (v`Using` jazyce Visual Basic), protože může maskovat výjimky v určitých režimech selhání. Další informace naleznete v následujících částech a [také použití zavřít a přerušit uvolnění prostředků klienta WCF](./samples/use-close-abort-release-wcf-client-resources.md).  
   
 ### <a name="contracts-bindings-and-addresses"></a>Smlouvy, vazby a adresy  
  Před vytvořením objektu klienta WCF je nutné nakonfigurovat objekt klienta. Konkrétně musí mít *koncový bod* služby k použití. Koncový bod je kombinace smlouvy o poskytování služeb, vazby a adresy. (Další informace o koncových bodech naleznete [v tématu Koncové body: Adresy, vazby a smlouvy](./feature-details/endpoints-addresses-bindings-and-contracts.md).) Tyto informace jsou obvykle umístěny v [ \<koncovém bodě>](../configure-apps/file-schema/wcf/endpoint-of-client.md) prvek v konfiguračním souboru klientské aplikace, jako je například ten, který generuje nástroj Svcutil.exe, a je načten automaticky při vytváření objektu klienta. Oba typy klientů WCF mají také přetížení, které umožňují programově zadat tyto informace.  
@@ -79,7 +80,7 @@ svcutil /language:vb /out:ClientCode.vb /config:app.config http://computerName/M
   
  [!code-xml[C_GeneratedCodeFiles#19](../../../samples/snippets/csharp/VS_Snippets_CFX/c_generatedcodefiles/common/client.exe.config#19)]  
   
- Tento konfigurační soubor určuje `<client>` cílový koncový bod v elementu. Další informace o použití více cílových <xref:System.ServiceModel.ClientBase%601.%23ctor%2A?displayProperty=nameWithType> koncových bodů naleznete v tématu <xref:System.ServiceModel.ChannelFactory%601.%23ctor%2A?displayProperty=nameWithType> nebo konstruktory.  
+ Tento konfigurační soubor určuje `<client>` cílový koncový bod v elementu. Další informace o použití více cílových <xref:System.ServiceModel.ClientBase%601.%23ctor%2A> koncových bodů naleznete v tématu <xref:System.ServiceModel.ChannelFactory%601.%23ctor%2A> nebo konstruktory.  
   
 ## <a name="calling-operations"></a>Volání operací  
  Jakmile máte objekt klienta vytvořené a nakonfigurované, vytvořte try/catch bloku, volání operací stejným způsobem, jako byste měli v případě, že objekt byl místní a zavřete objekt klienta WCF. Když klientská aplikace volá první operaci, WCF automaticky otevře základní kanál a základní kanál je uzavřen při recyklaci objektu. (Případně můžete také explicitně otevřít a zavřít kanál před nebo po volání jiných operací.)  
@@ -127,7 +128,7 @@ Namespace Microsoft.ServiceModel.Samples
 End Interface  
 ```  
   
- Operace můžete volat vytvořením objektu klienta WCF a voláním jeho metod, jak ukazuje následující příklad kódu. Všimněte si, že otevření, volání a zavření objektu klienta WCF dochází v rámci jednoho try/catch bloku. Další informace naleznete [v tématu Přístup ke službám pomocí klienta WCF](./feature-details/accessing-services-using-a-client.md) a [použití zavřít a přerušit uvolnění prostředků klienta WCF](./samples/use-close-abort-release-wcf-client-resources.md).  
+ Operace můžete volat vytvořením objektu klienta WCF a voláním jeho metod, jak ukazuje následující příklad kódu. Otevření, volání a zavření objektu klienta WCF dochází v rámci jednoho try/catch bloku. Další informace naleznete [v tématu Přístup ke službám pomocí klienta WCF](./feature-details/accessing-services-using-a-client.md) a [použití zavřít a přerušit uvolnění prostředků klienta WCF](./samples/use-close-abort-release-wcf-client-resources.md).  
   
  [!code-csharp[C_GeneratedCodeFiles#20](../../../samples/snippets/csharp/VS_Snippets_CFX/c_generatedcodefiles/cs/proxycode.cs#20)]  
   

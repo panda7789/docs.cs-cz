@@ -1,5 +1,5 @@
 ---
-title: Standardní číselné formátovací řetězce
+title: Standardní řetězce formátu čísla
 ms.date: 06/10/2018
 ms.technology: dotnet-standard
 dev_langs:
@@ -16,14 +16,14 @@ helpviewer_keywords:
 - standard numeric format strings
 - formatting numbers [.NET Framework]
 - format specifiers, standard numeric format strings
-ms.openlocfilehash: 04ac99c6b5100c3749eefc219e51b4d0084bef06
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 9b0c784a1c7b6b428636a1a4c99ec8e2bb76a9e0
+ms.sourcegitcommit: 7980a91f90ae5eca859db7e6bfa03e23e76a1a50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "79400321"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "81242709"
 ---
-# <a name="standard-numeric-format-strings"></a>Standardní číselné formátovací řetězce
+# <a name="standard-numeric-format-strings"></a>Standardní řetězce formátu čísla
 
 Řetězce standardního číselného formátu se používají pro formátování běžných číselných typů. Standardní číselný formátovací `Axx`řetězec má podobu , kde:
 
@@ -355,7 +355,7 @@ Následující příklad formátuje <xref:System.Int32> hodnoty pomocí specifik
 
 Nastavení v ovládacím panelu **Místní a jazykové možnosti** ovlivňují výsledný řetězec vytvořený operací formátování. Tato nastavení se používají k <xref:System.Globalization.NumberFormatInfo> inicializaci objektu přidruženého k aktuální jazykové verzi vlákna, který poskytuje hodnoty používané k řízení formátování. Počítače, které používají různá nastavení, generují různé výsledné řetězce.
 
-Kromě toho pokud <xref:System.Globalization.CultureInfo.%23ctor%28System.String%29?displayProperty=nameWithType> konstruktor slouží k vytvoření instance <xref:System.Globalization.CultureInfo> nový objekt, který představuje stejnou jazykovou verzi jako aktuální jazykovou verzi systému, všechny <xref:System.Globalization.CultureInfo> vlastní nastavení stanovené **položky regionální a jazykové možnosti** v ovládacím panelu budou použity na nový objekt. <xref:System.Globalization.CultureInfo.%23ctor%28System.String%2CSystem.Boolean%29?displayProperty=nameWithType> Konstruktor můžete použít k <xref:System.Globalization.CultureInfo> vytvoření objektu, který neodráží vlastní nastavení systému.
+Kromě toho pokud <xref:System.Globalization.CultureInfo.%23ctor%28System.String%29> konstruktor slouží k vytvoření instance <xref:System.Globalization.CultureInfo> nový objekt, který představuje stejnou jazykovou verzi jako aktuální jazykovou verzi systému, všechny <xref:System.Globalization.CultureInfo> vlastní nastavení stanovené **položky regionální a jazykové možnosti** v ovládacím panelu budou použity na nový objekt. <xref:System.Globalization.CultureInfo.%23ctor%28System.String%2CSystem.Boolean%29> Konstruktor můžete použít k <xref:System.Globalization.CultureInfo> vytvoření objektu, který neodráží vlastní nastavení systému.
 
 ### <a name="numberformatinfo-properties"></a>Vlastnosti objektu NumberFormatInfo
 
@@ -384,9 +384,9 @@ Následující příklad formátuje číselnou integrální hodnotu a hodnotu s 
 ## <a name="see-also"></a>Viz také
 
 - <xref:System.Globalization.NumberFormatInfo>
-- [Vlastní řetězce číselného formátu](../../../docs/standard/base-types/custom-numeric-format-strings.md)
+- [Vlastní číselné formátovací řetězce](../../../docs/standard/base-types/custom-numeric-format-strings.md)
 - [Typy formátování](../../../docs/standard/base-types/formatting-types.md)
-- [Postupy: Zarovnání čísla úvodními nulami](../../../docs/standard/base-types/how-to-pad-a-number-with-leading-zeros.md)
+- [Postupy: Vyplnění čísla úvodními nulami](../../../docs/standard/base-types/how-to-pad-a-number-with-leading-zeros.md)
 - [Složené formátování](../../../docs/standard/base-types/composite-formatting.md)
 - [Ukázka: Nástroj pro formátování WinForms .NET (C#)](https://docs.microsoft.com/samples/dotnet/samples/winforms-formatting-utility-cs)
 - [Ukázka: Nástroj pro formátování WinForms .NET (Visual Basic)](https://docs.microsoft.com/samples/dotnet/samples/winforms-formatting-utility-vb)

@@ -7,12 +7,12 @@ helpviewer_keywords:
 - placing popups [WPF]
 - positioning popups [WPF]
 ms.assetid: fbf642e9-f670-4efd-a7af-a67468a1c8e1
-ms.openlocfilehash: 063b309ebaf0944787ce40725eed250e59f09dff
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 1c377e62ffd334638031baee4d4831ac5a31acf3
+ms.sourcegitcommit: 7980a91f90ae5eca859db7e6bfa03e23e76a1a50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79176757"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "81243255"
 ---
 # <a name="popup-placement-behavior"></a>Chování při umístění překryvného objektu
 Ovládací <xref:System.Windows.Controls.Primitives.Popup> prvek zobrazí obsah v samostatném okně, které plave nad aplikací. Pomocí vlastností <xref:System.Windows.Controls.Primitives.Popup> <xref:System.Windows.Controls.Primitives.Popup.PlacementTarget%2A>, <xref:System.Windows.Controls.Primitives.Popup.Placement%2A> <xref:System.Windows.Controls.Primitives.Popup.PlacementRectangle%2A> <xref:System.Windows.Controls.Primitives.Popup.HorizontalOffset%2A>, a <xref:System.Windows.Controls.Primitives.Popup.VerticalOffset%2A> můžete určit umístění vzhledem k ovládacímu prvku, myši nebo obrazovce.  Tyto vlastnosti spolupracují, aby vám poskytly flexibilitu při určování polohy <xref:System.Windows.Controls.Primitives.Popup>rozhraní .  
@@ -205,4 +205,4 @@ Ovládací <xref:System.Windows.Controls.Primitives.Popup> prvek zobrazí obsah 
   
 ## <a name="see-also"></a>Viz také
 
-- [Ukázka umístění místního umístění](https://github.com/dotnet/samples/tree/master/snippets/csharp/VS_Snippets_Wpf/PopupPositionSnippet/CS)
+- [Ukázka umístění místního umístění](https://github.com/dotnet/docs/tree/master/samples/snippets/csharp/VS_Snippets_Wpf/PopupPositionSnippet/CS)

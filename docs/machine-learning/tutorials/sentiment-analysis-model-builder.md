@@ -6,18 +6,18 @@ author: luisquintanilla
 ms.author: luquinta
 ms.topic: tutorial
 ms.custom: mvc,mlnet-tooling
-ms.openlocfilehash: 98c9f28ca4ce6365ed4cf4ff1566a33dbe8f35ca
-ms.sourcegitcommit: 2ff49dcf9ddf107d139b4055534681052febad62
+ms.openlocfilehash: 7761240055c90ae9c713b1c460e9e83316d256f9
+ms.sourcegitcommit: 7980a91f90ae5eca859db7e6bfa03e23e76a1a50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/31/2020
-ms.locfileid: "80438233"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81278948"
 ---
 # <a name="tutorial-analyze-sentiment-of-website-comments-in-a-web-application-using-mlnet-model-builder"></a>Kurz: Analýza mínění komentářů na webových stránkách ve webové aplikaci pomocí ML.NET Model Builder
 
 Naučte se analyzovat mínění z komentářů v reálném čase uvnitř webové aplikace.
 
-Tento kurz ukazuje, jak vytvořit aplikaci ASP.NET Core Razor Pages, která klasifikuje mínění z komentářů na webu v reálném čase.
+Tento kurz vám ukáže, jak vytvořit aplikaci ASP.NET Core Razor Pages, která klasifikuje mínění z komentářů na webu v reálném čase.
 
 V tomto kurzu se naučíte:
 
@@ -103,9 +103,9 @@ Doba potřebná pro vyškolení modelu je úměrná množství dat. Tvůrce mode
 
 ## <a name="evaluate-the-model"></a>Vyhodnocení modelu
 
-Výsledkem tréninkového kroku bude jeden model, který měl nejlepší výkon. V kroku vyhodnocení nástroje Tvůrce modelů bude výstupní část obsahovat algoritmus používaný nejvýkonnějším modelem v položce **Nejlepší model** spolu s metrikami v **kategorii Nejlepší přesnost modelu**. Kromě toho souhrnná tabulka obsahující prvních pět modelů a jejich metriky.
+Výsledkem kroku školení bude jeden model, který má nejlepší výkon. V kroku vyhodnocení nástroje Tvůrce modelů bude výstupní část obsahovat algoritmus používaný nejvýkonnějším modelem v položce **Nejlepší model** spolu s metrikami v **kategorii Nejlepší přesnost modelu**. Dále se zobrazí souhrnná tabulka obsahující prvních pět modelů a jejich metriky.
 
-Pokud nejste spokojeni s metrikami přesnosti, některé jednoduché způsoby, jak se pokusit zlepšit přesnost modelu, jsou prodloužení doby pro trénování modelu nebo použití více dat. V opačném případě vyberte odkaz **kódu,** který chcete přesunout do posledního kroku v nástroji Tvůrce modelů.
+Pokud nejste spokojeni s metrikami přesnosti, některé jednoduché způsoby, jak se pokusit zlepšit přesnost modelu, je prodloužit dobu pro trénování modelu nebo použití více dat. V opačném případě vyberte odkaz **kódu,** který chcete přesunout do posledního kroku v nástroji Tvůrce modelů.
 
 ## <a name="add-the-code-to-make-predictions"></a>Přidání kódu pro předpověď
 
@@ -124,7 +124,7 @@ V důsledku procesu školení budou vytvořeny dva projekty.
 
 ### <a name="configure-the-predictionengine-pool"></a>Konfigurace fondu PredictionEngine
 
-Chcete-li provést jednu předpověď, [`PredictionEngine`](xref:Microsoft.ML.PredictionEngine%602)musíte vytvořit . [`PredictionEngine`](xref:Microsoft.ML.PredictionEngine%602)není bezpečný pro přístup z více vláken. Navíc je nutné vytvořit instanci všude, kde je potřeba v rámci aplikace. Jak vaše aplikace roste, tento proces může být nezvladatelný. Pro zvýšení výkonu a bezpečnosti podprocesů použijte `PredictionEnginePool` kombinaci vkládání [`ObjectPool`](xref:Microsoft.Extensions.ObjectPool.ObjectPool%601) závislostí a služby, která vytvoří objekty [`PredictionEngine`](xref:Microsoft.ML.PredictionEngine%602) pro použití v celé aplikaci.
+Chcete-li provést jednu předpověď, <xref:Microsoft.ML.PredictionEngine%602>musíte vytvořit . <xref:Microsoft.ML.PredictionEngine%602>není bezpečný pro přístup z více vláken. Kromě toho budete muset vytvořit instanci všude, kde je potřeba v rámci aplikace. Jak vaše aplikace roste, tento proces může být nezvladatelný. Pro zvýšení výkonu a bezpečnosti podprocesů použijte `PredictionEnginePool` kombinaci vkládání <xref:Microsoft.Extensions.ObjectPool.ObjectPool%601> závislostí a služby, která vytvoří objekty <xref:Microsoft.ML.PredictionEngine%602> pro použití v celé aplikaci.
 
 1. Nainstalujte *balíček Microsoft.Extensions.ML* NuGet:
 
@@ -277,7 +277,7 @@ Výsledky vrácené `OnGetAnalyzeSentiment` bude dynamicky zobrazí na `Index` w
 
 ## <a name="run-the-application"></a>Spuštění aplikace
 
-Nyní, když je vaše aplikace nastavena, spusťte aplikaci, která by měla být spuštěna ve vašem prohlížeči.
+Nyní, když je aplikace nastavena, spusťte aplikaci, která by se měla spustit ve vašem prohlížeči.
 
 Když se aplikace spustí, zadejte *Model Builder je v pohodě!* do textové oblasti. Zobrazený předpokládaný názor by neměl být *toxický*.
 

@@ -2,12 +2,12 @@
 title: dotnet publikovat, příkaz
 description: Příkaz publikování dotnet publikuje projekt nebo řešení .NET Core do adresáře.
 ms.date: 02/24/2020
-ms.openlocfilehash: 0e18220443f3713c86c257fcf401b98ddd716ebc
-ms.sourcegitcommit: 961ec21c22d2f1d55c9cc8a7edf2ade1d1fd92e3
+ms.openlocfilehash: 26dda33d04f3f7a23805627708b55233ef4e87ef
+ms.sourcegitcommit: 7980a91f90ae5eca859db7e6bfa03e23e76a1a50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2020
-ms.locfileid: "80588272"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "81242839"
 ---
 # <a name="dotnet-publish"></a>dotnet publish
 
@@ -23,7 +23,8 @@ ms.locfileid: "80588272"
 dotnet publish [<PROJECT>|<SOLUTION>] [-c|--configuration]
     [-f|--framework] [--force] [--interactive] [--manifest]
     [--no-build] [--no-dependencies] [--no-restore] [--nologo]
-    [-o|--output] [-r|--runtime] [--self-contained]
+    [-o|--output] [-p:PublishReadyToRun] [-p:PublishSingleFile]
+    [-p:PublishTrimmed] [-r|--runtime] [--self-contained]
     [--no-self-contained] [-v|--verbosity] [--version-suffix]
 
 dotnet publish [-h|--help]
@@ -114,6 +115,12 @@ Další informace najdete v následujících materiálech:
   
   Pokud není zadán, je výchozí *[project_file_folder]./bin/[konfigurace]/[framework]/publish/* pro spustitelný modul závislý na spustitelném modulu a binární soubory mezi platformami. Ve výchozím nastavení je *[project_file_folder]/bin/[configuration]/[framework]/[runtime]/publish/* pro samostatný spustitelný soubor.
 
+  Pokud je ve webovém projektu výstupní složka ve `dotnet publish` složce projektu, následné příkazy vedou k vnořeným výstupním složkám. Pokud je například složka projektu *myproject*a složka publikování výstupu je *myproject/publish* `dotnet publish` a spustíte se dvakrát, druhé spuštění umístí soubory obsahu, například *.config* a *.json* files in *myproject/publish/publish*. Chcete-li se vyhnout vnoření složek publikování, zadejte složku publikování, která není přímo ve složce projektu, nebo vylučte složku publikování z projektu. Chcete-li vyloučit složku publikování s názvem *publishoutput*, přidejte do `PropertyGroup` prvku v souboru *.csproj* následující prvek:
+
+  ```xml
+  <DefaultItemExcludes>$(DefaultItemExcludes);publishoutput**</DefaultItemExcludes>
+  ```
+
   - Sada .NET Core 3.x SDK a novější
   
     Pokud je při publikování projektu zadána relativní cesta, je vygenerovaný výstupní adresář relativní vzhledem k aktuálnímu pracovnímu adresáři, nikoli k umístění souboru projektu.
@@ -125,6 +132,26 @@ Další informace najdete v následujících materiálech:
     Pokud je při publikování projektu zadána relativní cesta, je vygenerovaný výstupní adresář relativní vzhledem k umístění souboru projektu, nikoli k aktuálnímu pracovnímu adresáři.
 
     Pokud je při publikování řešení zadána relativní cesta, výstup každého projektu přejde do samostatné složky vzhledem k umístění souboru projektu. Pokud je při publikování řešení zadána absolutní cesta, veškerý výstup publikování pro všechny projekty přejde do zadané složky.
+
+- **`-p:PublishReadyToRun`**
+
+  Zkompiluje sestavení aplikací ve formátu ReadyToRun (R2R). R2R je forma kompilace před časem (AOT). Další informace naleznete v tématu [ReadyToRun images](../whats-new/dotnet-core-3-0.md#readytorun-images). K dispozici od .NET Core 3.0 SDK.
+
+  Doporučujeme zadat tuto možnost v profilu publikování, nikoli na příkazovém řádku. Další informace naleznete v tématu [MSBuild](#msbuild).
+
+- **`-p:PublishSingleFile`**
+
+  Nabalí aplikaci do spustitelného souboru pro jeden soubor specifický pro platformu. Spustitelný soubor je samorozbalovací a obsahuje všechny závislosti (včetně nativní), které jsou nutné ke spuštění aplikace. Při prvním spuštění aplikace se aplikace extrahuje do adresáře na základě názvu aplikace a identifikátoru sestavení. Při opětovném spuštění aplikace je spuštění rychlejší. Aplikace nemusí extrahovat sám podruhé, pokud se používá nová verze. K dispozici od .NET Core 3.0 SDK.
+
+  Další informace o publikování na jednom souboru naleznete v [návrhovém dokumentu sdružených souborů s jedním souborem](https://github.com/dotnet/designs/blob/master/accepted/2020/single-file/design.md).
+
+  Doporučujeme zadat tuto možnost v profilu publikování, nikoli na příkazovém řádku. Další informace naleznete v tématu [MSBuild](#msbuild).
+
+- **`-p:PublishTrimmed`**
+
+  Ořízne nepoužívané knihovny, aby se zmenšila velikost nasazení aplikace při publikování samostatného spustitelného souboru. Další informace naleznete [v tématu Oříznutí samostatných nasazení a spustitelných souborů](../deploying/trim-self-contained.md). K dispozici od .NET Core 3.0 SDK.
+
+  Doporučujeme zadat tuto možnost v profilu publikování, nikoli na příkazovém řádku. Další informace naleznete v tématu [MSBuild](#msbuild).
 
 - **`--self-contained [true|false]`**
 
@@ -203,3 +230,4 @@ Další informace najdete v následujících materiálech:
 - [Odkaz na příkazový řádek MSBuild](/visualstudio/msbuild/msbuild-command-line-reference)
 - [Visual Studio publikuje profily (.pubxml) pro nasazení aplikace ASP.NET Core](/aspnet/core/host-and-deploy/visual-studio-publish-profiles)
 - [dotnet msbuild](dotnet-msbuild.md)
+- [ILLInk.Tasks](https://aka.ms/dotnet-illink)

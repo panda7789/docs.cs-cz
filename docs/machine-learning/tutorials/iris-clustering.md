@@ -5,12 +5,12 @@ author: pkulikov
 ms.date: 11/15/2019
 ms.topic: tutorial
 ms.custom: mvc, title-hack-0516
-ms.openlocfilehash: 174907adac5741d5cc7d02cb134921debc586061
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 03ce1a5f3ef4d4da01f848cac0c520a5a6aaf4bf
+ms.sourcegitcommit: 7980a91f90ae5eca859db7e6bfa03e23e76a1a50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "78241088"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "81242787"
 ---
 # <a name="tutorial-categorize-iris-flowers-using-k-means-clustering-with-mlnet"></a>Kurz: Kategorizovat iris květiny pomocí k-prostředky shlukování s ML.NET
 
@@ -53,7 +53,7 @@ Vzhledem k tomu, že nevíte, do které skupiny každá květina patří, zvolí
 
 ## <a name="prepare-the-data"></a>Příprava dat
 
-1. Stáhněte si datovou sadu [iris.data](https://github.com/dotnet/machinelearning/blob/master/test/data/iris.data) a uložte ji do složky *Data,* kterou jste vytvořili v předchozím kroku. Další informace o datové sadě duhovky naleznete na stránce [Iris flower data set](https://en.wikipedia.org/wiki/Iris_flower_data_set) Wikipedia a na stránce Iris Data [Set,](https://archive.ics.uci.edu/ml/datasets/Iris) která je zdrojem datové sady.
+1. Stáhněte si datovou sadu [iris.data](https://github.com/dotnet/machinelearning/blob/master/test/data/iris.data) a uložte ji do složky *Data,* kterou jste vytvořili v předchozím kroku. Další informace o datové sadě duhovky naleznete na stránce [Iris flower data set](https://en.wikipedia.org/wiki/Iris_flower_data_set) Wikipedia a na stránce Iris Data [Set,](http://archive.ics.uci.edu/ml/datasets/Iris) která je zdrojem datové sady.
 
 1. V **Průzkumníku řešení**klepněte pravým tlačítkem myši na soubor *iris.data* a vyberte **příkaz Vlastnosti**. V části **Upřesnit**změňte hodnotu **Kopírovat do výstupního adresáře** na **Kopírovat, pokud je novější**.
 
@@ -61,7 +61,7 @@ Datový soubor *iris.data* obsahuje pět sloupců, které představují:
 
 - sepal délka v centimetrech
 - šířka sepalu v centimetrech
-- délka okvětních plodů v centimetrech
+- délka okvětního lístku v centimetrech
 - šířka okvětních plodů v centimetrech
 - typ iris květu
 

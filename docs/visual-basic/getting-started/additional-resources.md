@@ -8,12 +8,12 @@ helpviewer_keywords:
 - Help, Visual Basic Web sites
 - Visual Basic, videos
 ms.assetid: 9bfb42e9-327f-439b-935e-8884f6aca80c
-ms.openlocfilehash: 9e55910573b3aa3aecf9082f1b77659a45f883a1
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 560ef4f99ca451c3b48f23988519313eed26dcb3
+ms.sourcegitcommit: 7980a91f90ae5eca859db7e6bfa03e23e76a1a50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "73196982"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "81243203"
 ---
 # <a name="additional-resources"></a>Další zdroje
 
@@ -32,7 +32,7 @@ Následující weby poskytují pokyny a mohou vám pomoci najít odpovědi na b�
 
 |zprostředkovatele identity|Popis|
 |----------|----------------|
-|[Ukázky dokumentace jazyka Visual Basic](https://github.com/dotnet/samples/tree/master/snippets/visualbasic)|Obsahuje ukázky použité v rámci dokumentace jazyka Visual Basic a .NET.|
+|[Ukázky dokumentace jazyka Visual Basic](https://github.com/dotnet/docs/tree/master/samples/snippets/visualbasic)|Obsahuje ukázky použité v rámci dokumentace jazyka Visual Basic a .NET.|
 
 ### <a name="forums"></a>Fóra
 

@@ -11,12 +11,12 @@ helpviewer_keywords:
 - encoding, choosing
 - encoding, fallback strategy
 ms.assetid: bf6d9823-4c2d-48af-b280-919c5af66ae9
-ms.openlocfilehash: 063cac1de6634125d7dabad9d627bceff877e567
-ms.sourcegitcommit: 34dc3c0d0d0a1cc418abff259d9daa8078d00b81
+ms.openlocfilehash: 1a294a577d10b3e621871b168344f2b0610693dd
+ms.sourcegitcommit: 7980a91f90ae5eca859db7e6bfa03e23e76a1a50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/19/2020
-ms.locfileid: "79546734"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "81242735"
 ---
 # <a name="how-to-use-character-encoding-classes-in-net"></a>Použití tříd kódování znaků v rozhraní .NET
 
@@ -37,7 +37,7 @@ Všechny třídy kódování znaků v <xref:System.Text.Encoding?displayProperty
 
 - Volání konstruktoru třídy kódování. Objekty pro kódování ASCII, UTF-7, UTF-8, UTF-16 a UTF-32 lze vytvořit instanci tímto způsobem. Ve výchozím nastavení každý objekt používá náhradní záložní pro zpracování řetězců, které nelze zakódovat a bajtů, které nelze dekódovat, ale můžete určit, že by měla být vyvolána výjimka místo. Další informace naleznete v [tématech Náhradní záložní](../../../docs/standard/base-types/character-encoding.md#Replacement) a [výjimka záložní](../../../docs/standard/base-types/character-encoding.md#Exception).
 
-- Volání <xref:System.Text.Encoding.%23ctor%28System.Int32%29?displayProperty=nameWithType> konstruktoru a předat celé číslo, které představuje kódování. Standardní kódování objekty používají náhradní záložní a znakové stránky a dvoubajtové znakové sady (DBCS) kódování objektů použít nejvhodnější záložní pro zpracování řetězců, které nemohou kódovat a bajty, které nemohou dekódovat. Další informace naleznete v tématu [Best-fit fallback](../../../docs/standard/base-types/character-encoding.md#BestFit).
+- Volání <xref:System.Text.Encoding.%23ctor%28System.Int32%29> konstruktoru a předat celé číslo, které představuje kódování. Standardní kódování objekty používají náhradní záložní a znakové stránky a dvoubajtové znakové sady (DBCS) kódování objektů použít nejvhodnější záložní pro zpracování řetězců, které nemohou kódovat a bajty, které nemohou dekódovat. Další informace naleznete v tématu [Best-fit fallback](../../../docs/standard/base-types/character-encoding.md#BestFit).
 
 - Volání <xref:System.Text.Encoding.GetEncoding%2A?displayProperty=nameWithType> metody, která vrací všechny standardní, znakové stránky nebo kódování DBCS k dispozici v rozhraní .NET. Přetížení umožňují určit záložní objekt pro kodér i dekodér.
 

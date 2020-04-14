@@ -3,12 +3,12 @@ title: Interpretace ML.NET modelů pomocí generalizovaných aditivních modelů
 description: Použití generalizovaných aditivních modelů a funkcí tvarů pro interpretaci modelu v ML.NET
 ms.date: 01/30/2020
 ms.custom: mvc,how-to
-ms.openlocfilehash: 6df19eff4fec98c5815a9f8f4d8e4e9a80cba6ed
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 29eac7a609ada57283a7c5b55b935e30709930dd
+ms.sourcegitcommit: 7980a91f90ae5eca859db7e6bfa03e23e76a1a50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "77092470"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "81243125"
 ---
 # <a name="use-generalized-additive-models-and-shape-functions-for-model-interpretability-in-mlnet"></a>Použití generalizovaných aditivních modelů a funkcí tvarů pro interpretaci modelu v ML.NET
 
@@ -50,4 +50,4 @@ for (int i = 0; i < myFeatureBins.Length; i++)
 
 ![Graf funkce tvarových modelů generalizovaných aditivních modelů](./media/use-gams-for-model-explainability/gam-shape-function-graph.png)
 
-Ukázku, jak trénovat model GAM a zkontrolovat a interpretovat výsledky, naleznete [v úložišti GitHub dotnet/machinelearning](https://github.com/dotnet/machinelearning/blob/master/docs/samples/Microsoft.ML.Samples/Dynamic/GeneralizedAdditiveModels.cs).
+Příklad, jak trénovat model GAM a zkontrolovat a interpretovat výsledky, naleznete v [binární klasifikace trenér vzorku](https://github.com/dotnet/machinelearning/blob/master/docs/samples/Microsoft.ML.Samples/Dynamic/Trainers/BinaryClassification/Gam.cs).

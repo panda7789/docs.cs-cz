@@ -8,14 +8,14 @@ helpviewer_keywords:
 - controls [WPF], authoring overview
 - authoring overview for controls [WPF]
 ms.assetid: 3d864748-cff0-4e63-9b23-d8e5a635b28f
-ms.openlocfilehash: d5dd2d962c554b860fb6f68110945d56c4ee03ab
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 2326520039085beb5f5294e23db67b67f9d7d7da
+ms.sourcegitcommit: 7980a91f90ae5eca859db7e6bfa03e23e76a1a50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79400153"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "81243268"
 ---
-# <a name="control-authoring-overview"></a>Přehled řízeného vytváření
+# <a name="control-authoring-overview"></a>Přehled vytváření ovládacích prvku
 
 Rozšiřitelnost modelu ovládacího [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] prvku výrazně snižuje potřebu vytvořit nový ovládací prvek. V některých případech však může být stále nutné vytvořit vlastní ovládací prvek. Toto téma popisuje funkce, které minimalizují potřebu vytvořit vlastní ovládací [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]prvek a různé modely vytváření ovládacích prvků v aplikaci . Toto téma také ukazuje, jak vytvořit nový ovládací prvek.
 
@@ -264,7 +264,7 @@ Prostředky, které jsou specifické pro motiv, jsou uloženy ve slovníku prost
 
 Není nutné definovat zdroj pro každý motiv. Pokud zdroj není definován pro konkrétní motiv, pak `Classic.xaml` ovládací prvek zkontroluje pro zdroj. Pokud prostředek není definován v souboru, který odpovídá aktuálnímu motivu nebo v `Classic.xaml`, ovládací prvek používá `generic.xaml`obecný prostředek, který je v souboru slovníku prostředků s názvem .  Soubor `generic.xaml` je umístěn ve stejné složce jako soubory slovníku prostředků specifické pro motivy. Přestože `generic.xaml` neodpovídá určitému motivu systému Windows, stále se jedná o slovník na úrovni motivu.
 
-C# nebo [Visual Basic](https://github.com/dotnet/samples/tree/master/snippets/visualbasic/VS_Snippets_Wpf/CustomControlNumericUpDown/visualbasic) NumericUpDown vlastní ovládací prvek s motiva a ui automatizace podporu vzorku obsahuje dva slovníky prostředků pro `NumericUpDown` ovládací prvek: jeden je v generic.xaml a druhý je v Luna.NormalColor.xaml. [C#](https://github.com/dotnet/samples/tree/master/snippets/csharp/VS_Snippets_Wpf/CustomControlNumericUpDown/CSharp)
+C# nebo [Visual Basic](https://github.com/dotnet/docs/tree/master/samples/snippets/visualbasic/VS_Snippets_Wpf/CustomControlNumericUpDown/visualbasic) NumericUpDown vlastní ovládací prvek s motiva a ui automatizace podporu vzorku obsahuje dva slovníky prostředků pro `NumericUpDown` ovládací prvek: jeden je v generic.xaml a druhý je v Luna.NormalColor.xaml. [C#](https://github.com/dotnet/docs/tree/master/samples/snippets/csharp/VS_Snippets_Wpf/CustomControlNumericUpDown/CSharp)
 
 Pokud vložíte <xref:System.Windows.Controls.ControlTemplate> některý ze souborů slovníku prostředků specifických pro motiv, musíte vytvořit statický <xref:System.Windows.DependencyProperty.OverrideMetadata%28System.Type%2CSystem.Windows.PropertyMetadata%29> konstruktor <xref:System.Windows.FrameworkElement.DefaultStyleKey%2A>pro ovládací prvek a volat metodu na , jak je znázorněno v následujícím příkladu.
 

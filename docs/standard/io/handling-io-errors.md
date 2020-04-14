@@ -11,12 +11,12 @@ helpviewer_keywords:
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 51eb0e758f1ae8fb41c842ef9b32a9f8928af9ac
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: c592039b3b12eedcfceda45c2f54403a8e04b5d5
+ms.sourcegitcommit: 7980a91f90ae5eca859db7e6bfa03e23e76a1a50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "73120745"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "81242670"
 ---
 # <a name="handling-io-errors-in-net"></a>Zpracování vstupně-v.I chyb v rozhraní .NET
 
@@ -39,7 +39,7 @@ Vzhledem k tomu, že systém souborů je prostředek operačního systému, vstu
 
 Například v operačním systému Windows se volání metody, `ERROR_FILE_NOT_FOUND` které vrací kód chyby <xref:System.IO.FileNotFoundException>(nebo 0x02) mapuje na a a kód chyby `ERROR_PATH_NOT_FOUND` (nebo 0x03) mapuje na <xref:System.IO.DirectoryNotFoundException>.
 
-Přesné podmínky, za kterých operační systém vrací konkrétní kódy chyb, jsou však často nedokumentované nebo špatně zdokumentované. V důsledku toho může dojít k neočekávaným výjimkám. Například proto, že pracujete s adresářem, nikoli se souborem, očekáváte, že poskytnutí neplatné cesty k adresáři <xref:System.IO.DirectoryInfo.%23ctor%2A?displayProperty=nameWithType> konstruktoru <xref:System.IO.DirectoryNotFoundException>vyvolá . Nicméně, to může <xref:System.IO.FileNotFoundException>také hodit .
+Přesné podmínky, za kterých operační systém vrací konkrétní kódy chyb, jsou však často nedokumentované nebo špatně zdokumentované. V důsledku toho může dojít k neočekávaným výjimkám. Například proto, že pracujete s adresářem, nikoli se souborem, očekáváte, že poskytnutí neplatné cesty k adresáři <xref:System.IO.DirectoryInfo.%23ctor%2A> konstruktoru <xref:System.IO.DirectoryNotFoundException>vyvolá . Nicméně, to může <xref:System.IO.FileNotFoundException>také hodit .
 
 ## <a name="exception-handling-in-io-operations"></a>Zpracování výjimek v vstupně-va operacích
 
@@ -65,7 +65,7 @@ Jako základní třída pro výjimky v oboru <xref:System.IO> názvů je také v
 > [!IMPORTANT]
 > Vzhledem k tomu, že <xref:System.IO.IOException> je <xref:System.IO> základní třída jiných typů `catch` výjimek v oboru názvů, měli byste zpracovat v bloku po zpracování ostatních výjimek souvisejících s vstupně-va.
 
-Kromě toho počínaje rozhraním .NET Core 2.1 bylo odebráno ověření správnosti cesty (například aby se zajistilo, že v cestě nejsou neplatné znaky) a runtime vyvolá výjimku mapovanou z kódu chyby operačního systému, nikoli z vlastního ověřovacího kódu. Nejpravděpodobnější výjimka, která má být <xref:System.IO.IOException>vyvolána v tomto případě je , i když jakýkoli jiný typ výjimky může být také vyvolána.
+Kromě toho počínaje .NET Core 2.1, ověření kontroly správnosti cesty (například k zajištění, že neplatné znaky nejsou k dispozici v cestě) byly odebrány a runtime vyvolá výjimku mapována z kódu chyby operačního systému, nikoli z jeho vlastní ověřovací kód. Nejpravděpodobnější výjimka, která má být <xref:System.IO.IOException>vyvolána v tomto případě je , i když jakýkoli jiný typ výjimky může být také vyvolána.
 
 Všimněte si, že v kódu zpracování <xref:System.IO.IOException> výjimek byste měli vždy zpracovat poslední. Jinak, protože je základní třídy všech ostatních výjimek vi, catch bloky odvozené třídy nebudou vyhodnoceny.
 
