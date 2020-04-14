@@ -80,8 +80,6 @@
       href: how-to-clear-bindings.md
     - name: Hledání elementů generovaných šablonou DataTemplate
       href: how-to-find-datatemplate-generated-elements.md
-    - name: Vytvoření vazby k webové službě
-      href: how-to-bind-to-a-web-service.md
 - name: Datová vazba s LINQ to XML
   items:
     - name: Přehled
