@@ -2,12 +2,12 @@
 title: Pracovní postup vývoje aplikací Dockeru
 description: Seznamte se s podrobnostmi pracovního postupu pro vývoj aplikací založených na Dockeru. Začněte krok za krokem a získejte do některých podrobností pro optimalizaci dockerfiles a zakončujte zjednodušeným pracovním postupem, který je k dispozici při použití sady Visual Studio.
 ms.date: 01/30/2020
-ms.openlocfilehash: c58ea2436027968143777a19286a1a0a72107717
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 2f380c840e186c345f9222aa6b0cf1097a74874e
+ms.sourcegitcommit: c91110ef6ee3fedb591f3d628dc17739c4a7071e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79401639"
+ms.lasthandoff: 04/15/2020
+ms.locfileid: "81389200"
 ---
 # <a name="development-workflow-for-docker-apps"></a>Pracovní postup vývoje aplikací Dockeru
 
@@ -286,7 +286,7 @@ Výsledný soubor je pak:
  7  COPY . .
  8  RUN dotnet restore /ignoreprojectextensions:.dcproj
  9  WORKDIR /src/src/Services/Catalog/Catalog.API
-10  RUN dotnet publish Catalog.API.csproj -c Release -0 /app
+10  RUN dotnet publish Catalog.API.csproj -c Release -o /app
 11
 12  FROM base AS final
 13  WORKDIR /app
@@ -479,7 +479,7 @@ Po spuštění příkazu docker-compose up se aplikace a související kontejner
 
 #### <a name="using-visual-studio"></a>Pomocí sady Visual Studio
 
-Spuštění aplikace s více kontejnery pomocí Visual Studia 2019 nemůže být jednodušší. Stačí stisknout **Ctrl-F5** spustit nebo **F5** ladit, jako obvykle, nastavení **docker-compose** projektu jako spuštění projektu.  Visual Studio zpracovává všechny potřebné nastavení, takže můžete vytvořit zarážky jako obvykle a ladit, co se nakonec stane nezávislými procesy spuštěnými na "vzdálených serverech", s ladicím programem již připojeným. jen tak.
+Spuštění aplikace s více kontejnery pomocí Visual Studia 2019 nemůže být jednodušší. Stačí stisknout **Ctrl-F5** spustit nebo **F5** ladit, jako obvykle, nastavení **docker-compose** projektu jako spuštění projektu.  Visual Studio zpracovává všechny potřebné nastavení, takže můžete vytvořit zarážky jako obvykle a ladit, co se nakonec stane nezávislými procesy spuštěnými na "vzdálených serverech", s ladicím programem, který je již připojen, stejně jako to.
 
 Jak již bylo zmíněno dříve, pokaždé, když přidáte podporu řešení Docker u projektu v rámci řešení, tento projekt je nakonfigurován v globálním (řešení úrovni) docker-compose.yml souboru, který umožňuje spustit nebo ladit celé řešení najednou. Visual Studio spustí jeden kontejner pro každý projekt, který má povolenou podporu řešení Dockeru a provede všechny interní kroky za vás (dotnet publish, docker build atd.).
 
@@ -487,7 +487,7 @@ Pokud se chcete podívat na všechny dřiny, podívejte se na soubor:
 
 `{root solution folder}\obj\Docker\docker-compose.vs.debug.g.yml`
 
-Důležitým bodem je, jak je znázorněno na obrázku 5-12, v Sadě Visual Studio 2019 je další příkaz **Docker** u akce klíče F5. Tato možnost umožňuje spustit nebo ladit aplikaci s více kontejnery spuštěním všech kontejnerů, které jsou definovány v souborech docker-compose.yml na úrovni řešení. Možnost ladění řešení s více kontejnery znamená, že můžete nastavit několik zarážek, každou zarážku v jiném projektu (kontejneru) a při ladění z aplikace Visual Studio se zastavíte u zarážek definovaných v různých projektech a spuštěných na různých nádobách.
+Důležitým bodem je, jak je znázorněno na obrázku 5-12, v Sadě Visual Studio 2019 je další příkaz **Docker** u akce klíče F5. Tato možnost umožňuje spustit nebo ladit aplikaci s více kontejnery spuštěním všech kontejnerů, které jsou definovány v souborech docker-compose.yml na úrovni řešení. Možnost ladit řešení s více kontejnery znamená, že můžete nastavit několik zarážek, každý zarážka v jiném projektu (kontejner) a při ladění z Visual Studio se zastaví na zarážky definované v různých projektech a běží na různých kontejnerech.
 
 ![Snímek obrazovky panelu nástrojů ladění se spuštěným projektem docker-compose](./media/docker-app-development-workflow/debug-toolbar-docker-compose-project.png)
 

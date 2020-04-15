@@ -2,12 +2,12 @@
 title: Koncepty programování (C#)
 ms.date: 07/20/2015
 ms.assetid: 3227afd5-4794-484b-b83b-0f1f94a0476b
-ms.openlocfilehash: 3fcb1ca76c49919b00b74d955b7aadaa2e882f2a
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 5349bfad5ed4601089f449af47cba0e32dc2f908
+ms.sourcegitcommit: c91110ef6ee3fedb591f3d628dc17739c4a7071e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "70168346"
+ms.lasthandoff: 04/15/2020
+ms.locfileid: "81389574"
 ---
 # <a name="programming-concepts-c"></a>Koncepty programování (C#)
 Tato část vysvětluje koncepty programování v jazyce C#.  
@@ -19,7 +19,6 @@ Tato část vysvětluje koncepty programování v jazyce C#.
 |[Sestavení v .NET](../../../standard/assembly/index.md)|Popisuje způsob vytváření a používání sestavení.|  
 |[Asynchronní programování s asynchronní a await (C#)](./async/index.md)|Popisuje, jak psát asynchronní řešení pomocí [asynchronní](../../language-reference/keywords/async.md) a [await](../../language-reference/operators/await.md) klíčová slova v C#. Obsahuje návod.|  
 |[Atributy (C#)](./attributes/index.md)|Popisuje, jak poskytnout další informace o programovacích prvcích, jako jsou typy, pole, metody a vlastnosti pomocí atributů.|  
-|[Informace o volajícím (C#)](./caller-information.md)|Popisuje, jak získat informace o volajícím metody. Tyto informace zahrnují cestu k souboru a číslo řádku zdrojového kódu a jméno člena volajícího.|  
 |[Kolekce (C#)](./collections.md)|Popisuje některé typy kolekcí poskytovaných rozhraním .NET Framework. Ukazuje, jak používat jednoduché kolekce a kolekce párů klíč/hodnota.|  
 |[Kovariance a kontravariance (C#)](./covariance-contravariance/index.md)|Ukazuje, jak povolit implicitní převod parametrů obecného typu v rozhraních a delegátech.|  
 |[Stromy výrazů (C#)](./expression-trees/index.md)|Vysvětluje, jak můžete pomocí stromů výrazů povolit dynamickou úpravu spustitelného kódu.|  

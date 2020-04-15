@@ -7,12 +7,12 @@ helpviewer_keywords:
 - concatenating strings [C#]
 - strings [C#], concatenation
 ms.assetid: 8e16736f-4096-4f3f-be0f-9d4c3ff63520
-ms.openlocfilehash: 87ec5104f36d0c6cce12037e70dacf2752ef5e62
-ms.sourcegitcommit: 43cbde34970f5f38f30c43cd63b9c7e2e83717ae
+ms.openlocfilehash: bbdeba4ee3526140de29ac0d7c97e9a593729d47
+ms.sourcegitcommit: c91110ef6ee3fedb591f3d628dc17739c4a7071e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/11/2020
-ms.locfileid: "81121056"
+ms.lasthandoff: 04/15/2020
+ms.locfileid: "81389524"
 ---
 # <a name="how-to-concatenate-multiple-strings-c-guide"></a>Jak zřetězit více řetězců (Průvodce C#)
 
@@ -37,13 +37,13 @@ V některých výrazech je snazší zřetězit řetězce pomocí interpolace ře
 
 Další metodou pro zřetězení <xref:System.String.Format%2A?displayProperty=nameWithType>řetězců je . Tato metoda funguje dobře při vytváření řetězce z malého počtu řetězců komponent.
 
-V ostatních případech může být kombinování řetězců ve smyčce, kde nevíte, kolik zdrojových řetězců kombinujete a skutečný počet zdrojových řetězců může být poměrně velký. Třída <xref:System.Text.StringBuilder> byla navržena pro tyto scénáře. Následující kód používá <xref:System.Text.StringBuilder.Append%2A> metodu <xref:System.Text.StringBuilder> třídy ke zřetězení řetězců.  
+V ostatních případech může být kombinování řetězců ve smyčce, kde nevíte, kolik zdrojových řetězců kombinujete a skutečný počet zdrojových řetězců může být velký. Třída <xref:System.Text.StringBuilder> byla navržena pro tyto scénáře. Následující kód používá <xref:System.Text.StringBuilder.Append%2A> metodu <xref:System.Text.StringBuilder> třídy ke zřetězení řetězců.  
   
 [!code-csharp-interactive[string concatenation using string builder](../../../samples/snippets/csharp/how-to/strings/Concatenate.cs#4)]  
 
 Můžete si přečíst více o [důvodech, `StringBuilder` proč zvolit zřetězení řetězců nebo třídu](xref:System.Text.StringBuilder#StringAndSB).
 
-Další možností pro připojení řetězců z <xref:System.String.Concat%2A?displayProperty=nameWithType> kolekce je použití metody. Použijte <xref:System.String.Join%2A?displayProperty=nameWithType> metodu, pokud by měly být zdrojové řetězce odděleny delimetrem. Následující kód kombinuje pole slov pomocí obou metod:
+Další možností pro připojení řetězců z <xref:System.String.Concat%2A?displayProperty=nameWithType> kolekce je použití metody. Metodu použijte, <xref:System.String.Join%2A?displayProperty=nameWithType> pokud by měly být zdrojové řetězce odděleny oddělovačem. Následující kód kombinuje pole slov pomocí obou metod:
 
 [!code-csharp-interactive[concatenation of string collection](../../../samples/snippets/csharp/how-to/strings/Concatenate.cs#5)]
 

@@ -2,16 +2,19 @@
 title: Nástroje definice schématu XML (Xsd.exe)
 ms.date: 03/30/2017
 ms.assetid: a6e6e65c-347f-4494-9457-653bf29baac2
-ms.openlocfilehash: cd017eb1866fff2ce8fd7a858b184351ef13e815
-ms.sourcegitcommit: 961ec21c22d2f1d55c9cc8a7edf2ade1d1fd92e3
+ms.openlocfilehash: 6ec99e77db4215184547ea2bbbe0d1ff8ad3c286
+ms.sourcegitcommit: c91110ef6ee3fedb591f3d628dc17739c4a7071e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2020
-ms.locfileid: "80588353"
+ms.lasthandoff: 04/15/2020
+ms.locfileid: "81389776"
 ---
 # <a name="xml-schema-definition-tool-xsdexe"></a>Nástroje definice schématu XML (Xsd.exe)
 
 Nástroj pro definici schématu XML (Xsd.exe) generuje schématu XML nebo běžné language runtime třídy z XDR, XML a XSD souborů nebo ze třídy v sestavení modulu runtime.
+
+Nástroj Definice schématu XML (Xsd.exe) se obvykle nachází v následující cestě:\
+_C:\\Programové\\soubory (x86)\\Microsoft\\SDKs Windows {version}\\bin\\NETFX {version} Nástroje\\_
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -126,7 +129,7 @@ xsd /p:GenerateSchemaFromType.xml ConsoleApplication1.exe
 
 Je třeba zadat pouze jeden z následujících možností `<generateSchemas>` elementu.
 
-|Element|Popis|
+|Prvek|Popis|
 |-------------|-----------------|
 |\<montážní>|Určuje sestavení, které chcete vytvořit schéma z.|
 |\<typ>|Určuje typ v sestavení, které chcete vytvořit schéma pro nalezen.|
@@ -145,7 +148,7 @@ Chcete-li generovat soubor s kódem, použijte `<generateClasses>` elementu. Ná
 
  Možnosti pro můžete nastavit `<generateClasses>` element patří následující.
 
-|Element|Popis|
+|Prvek|Popis|
 |-------------|-----------------|
 |\<> prvku|Určuje element v souboru XSD pro generování kódu pro.|
 |\<> rozšíření|Určuje typu odvozeného z <xref:System.Xml.Serialization.Advanced.SchemaImporterExtension> třídy.|
@@ -170,7 +173,7 @@ V následující tabulce jsou uvedeny atributy, které lze také použít s `<ge
 
 Možnosti pro můžete nastavit `<generateDataSet>` element patří následující.
 
-|Element|Popis|
+|Prvek|Popis|
 |-------------|-----------------|
 |\<> schématu|Určuje soubor schématu XML pro generování kódu pro. Více souborů schématu XML lze zadat \<pomocí více prvků> schématu.|
 

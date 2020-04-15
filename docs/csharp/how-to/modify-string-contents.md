@@ -3,12 +3,12 @@ title: Jak upravit obsah řetězce - Průvodce C#
 ms.date: 02/26/2018
 helpviewer_keywords:
 - strings [C#], modifying
-ms.openlocfilehash: f31fa94501ac2120e22e229dfc11babb8b8cc0f3
-ms.sourcegitcommit: 7980a91f90ae5eca859db7e6bfa03e23e76a1a50
+ms.openlocfilehash: 8e9bbe76c689d3c3f9f238ca9dd95cc7fcf98b18
+ms.sourcegitcommit: c91110ef6ee3fedb591f3d628dc17739c4a7071e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "81242852"
+ms.lasthandoff: 04/15/2020
+ms.locfileid: "81389517"
 ---
 # <a name="how-to-modify-string-contents-in-c"></a>Jak upravit obsah řetězce v C\#
 
@@ -16,7 +16,7 @@ Tento článek ukazuje několik technik `string` k výrobě `string`úpravou exi
 
 [!INCLUDE[interactive-note](~/includes/csharp-interactive-note.md)]
 
-V tomto článku je demonstrováno několik technik. Můžete nahradit existující text. Můžete hledat vzorky a nahradit odpovídající text jiným textem. Řetězec můžete považovat za posloupnost znaků. Můžete také použít metody pohodlí, které odstraňují prázdné znaky. Měli byste zvolit techniky, které nejvíce odpovídají vašemu scénáři.
+V tomto článku je demonstrováno několik technik. Můžete nahradit existující text. Můžete hledat vzorky a nahradit odpovídající text jiným textem. Řetězec můžete považovat za posloupnost znaků. Můžete také použít metody pohodlí, které odstraňují prázdné znaky. Vyberte si techniky, které nejvíce odpovídají vašemu scénáři.
 
 ## <a name="replace-text"></a>Nahrazení textu
 
@@ -48,7 +48,7 @@ Pomocí metody můžete z řetězce <xref:System.String.Remove%2A?displayPropert
 
 [Regulární výrazy](../../standard/base-types/regular-expressions.md) můžete použít k nahrazení vzorů shody textu novým textem, případně definovaným vzorkem. Následující příklad používá <xref:System.Text.RegularExpressions.Regex?displayProperty=nameWithType> třídu k nalezení vzoru ve zdrojovém řetězci a jeho nahrazení správnými velkými písmeny. Metoda <xref:System.Text.RegularExpressions.Regex.Replace(System.String,System.String,System.Text.RegularExpressions.MatchEvaluator,System.Text.RegularExpressions.RegexOptions)?displayProperty=nameWithType> přebírá funkci, která poskytuje logiku nahrazení jako jeden z jeho argumentů. V tomto příkladu `LocalReplaceMatchCase` je tato funkce **místní funkcí** deklarovanou uvnitř ukázkové metody. `LocalReplaceMatchCase`používá <xref:System.Text.StringBuilder?displayProperty=nameWithType> třídu k sestavení náhradního řetězce s vlastními velkými písmeny.
 
-Regulární výrazy jsou nejužitečnější pro vyhledávání a nahrazování textu, který následuje za vzorkem, spíše než známý text. Další podrobnosti naleznete v tématu [Jak hledat řetězce.](search-strings.md) Vyhledávací vzor, "\s" hledá slovo "the" následovaný znakem prázdnémezery. Tato část vzoru zajišťuje, že neodpovídá "tam" ve zdrojovém řetězci. Další informace o prvcích jazyka regulárních výrazů naleznete v [tématu Jazyk regulárních výrazů – stručný přehled](../../standard/base-types/regular-expression-language-quick-reference.md).
+Regulární výrazy jsou nejužitečnější pro vyhledávání a nahrazování textu, který následuje za vzorkem, spíše než známý text. Další informace naleznete v tématu [Jak vyhledávat řetězce](search-strings.md). Vyhledávací vzor, "\s" hledá slovo "the" následovaný znakem prázdnémezery. Tato část vzoru zajišťuje, že neodpovídá "tam" ve zdrojovém řetězci. Další informace o prvcích jazyka regulárních výrazů naleznete v [tématu Jazyk regulárních výrazů – stručný přehled](../../standard/base-types/regular-expression-language-quick-reference.md).
 
 [!code-csharp-interactive[replace creates a new string](../../../samples/snippets/csharp/how-to/strings/ModifyStrings.cs#5)]
 

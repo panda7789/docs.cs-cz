@@ -7,12 +7,12 @@ helpviewer_keywords:
 - deploying [WCF Data Services
 - developing applications [WCF Data Services]
 ms.assetid: 6557c0e3-5aea-4f6e-bc14-77ad317a168b
-ms.openlocfilehash: 61527e51ea4d28cfe4589f6bed32b3c505443c22
-ms.sourcegitcommit: 43cbde34970f5f38f30c43cd63b9c7e2e83717ae
+ms.openlocfilehash: 4591175da5078a194bfe69884701e5432a0c38a3
+ms.sourcegitcommit: c91110ef6ee3fedb591f3d628dc17739c4a7071e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/11/2020
-ms.locfileid: "81121174"
+ms.lasthandoff: 04/15/2020
+ms.locfileid: "81389733"
 ---
 # <a name="develop-and-deploy-wcf-data-services"></a>Vývoj a nasazení datových služeb WCF
 
@@ -42,7 +42,7 @@ Při vývoji wcf datové služby jako ASP.NET aplikace nebo ASP.NET webu pomocí
 
 1. **Místní server služby IIS**
 
-     Pokud vytvoříte datovou službu, která je ASP.NET aplikace nebo ASP.NET webu spuštěného v internetové informační službě (IIS), doporučujeme vyvíjet a testovat datovou službu pomocí služby IIS v místním počítači. Spuštění datové služby ve službě IIS usnadňuje sledování požadavků HTTP během ladění. Zároveň vám to umožňuje předem stanovit práva, jež služba IIS potřebuje pro přístup k souborům, databázím a jiným prostředkům vyžadovaným datovou službou. Chcete-li spustit datovou službu ve službě IIS, musíte zajistit, aby byly služby IIS i WCF (Windows Communication Foundation) správně nainstalovány a nakonfigurovány, a udělit přístup k účtům služby IIS v systému souborů a databázích. Další informace naleznete v [tématu How to: Develop a WCF Data Service Running on IIS](how-to-develop-a-wcf-data-service-running-on-iis.md).
+     Pokud vytvoříte datovou službu, která je ASP.NET aplikace nebo ASP.NET webu spuštěného v internetové informační službě (IIS), doporučujeme vyvíjet a testovat datovou službu pomocí služby IIS v místním počítači. Spuštění datové služby ve službě IIS usnadňuje sledování požadavků HTTP během ladění. Zároveň vám to umožňuje předem stanovit práva, jež služba IIS potřebuje pro přístup k souborům, databázím a jiným prostředkům vyžadovaným datovou službou. Chcete-li spustit datovou službu ve službě IIS, zkontrolujte, zda jsou služby IIS i WCF (Windows Communication Foundation) správně nainstalovány a nakonfigurovány, a udělte přístup k účtům služby IIS v systému souborů a databázích. Další informace naleznete v [tématu How to: Develop a WCF Data Service Running on IIS](how-to-develop-a-wcf-data-service-running-on-iis.md).
 
     > [!NOTE]
     > Chcete-li, aby vývojový prostředí bylo možné nakonfigurovat místní server služby IIS, je nutné spustit aplikaci Visual Studio s právy správce.
@@ -61,7 +61,7 @@ Při vývoji wcf datové služby jako ASP.NET aplikace nebo ASP.NET webu pomocí
 
     - Tento server neobsahuje nadstandardní funkce služby IIS, jako je například ověřování.
 
-    - Tento server nemůže zpracovat blokové datové proudy HTTP, které jsou odesílány jako výchozí klientem služby WCF Data Services při přístupu k velkým binárním datům z datové služby. Další informace naleznete v tématu [Streaming Provider](streaming-provider-wcf-data-services.md).
+    - Tento server nemůže zpracovat blokové datové proudy HTTP, které jsou ve výchozím nastavení odesílány klientem služby WCF Data Services při přístupu k velkým binárním datům z datové služby. Další informace naleznete v tématu [Streaming Provider](streaming-provider-wcf-data-services.md).
 
     - Tento server má problémy`.`se zpracováním znaku tečka ( ) v adrese URL, i když tento znak je podporován WCF datové služby v klíčových hodnot.
 
@@ -74,11 +74,11 @@ Při vývoji wcf datové služby jako ASP.NET aplikace nebo ASP.NET webu pomocí
 
 ### <a name="development-tips"></a>Tipy pro vývoj
 
-Při vývoji datových služeb je vhodné zvážit následující faktory:
+Při vývoji datové služby zvažte následující:
 
-- Určete požadavky na zabezpečení datové služby a to, zda chcete uživatele ověřovat nebo omezit přístup pro konkrétní uživatele. Další informace naleznete [v tématu Zabezpečení služby WCF Data Services](securing-wcf-data-services.md).
+- Pokud plánujete ověřit uživatele nebo omezit přístup pro konkrétní uživatele, určete požadavky na zabezpečení datové služby. Další informace naleznete [v tématu Zabezpečení služby WCF Data Services](securing-wcf-data-services.md).
 
-- Při ladění datové služby může být velmi užitečný kontrolní program HTTP, který umožňuje kontrolovat obsah zpráv požadavků a odpovědí. K inspekci požadavků HTTP a odpovědí z datové služby lze využít jakýkoli síťový analyzátor paketů, který zobrazuje surové pakety.
+- Kontrolní program HTTP může být užitečný při ladění datové služby tím, že vám umožní zkontrolovat obsah zpráv požadavků a odpovědí. K inspekci požadavků HTTP a odpovědí z datové služby lze využít jakýkoli síťový analyzátor paketů, který zobrazuje surové pakety.
 
 - Při ladění datové služby můžete chtít získat další informace o chybě z datové služby než během běžného provozu. Další informace o chybě z datové služby můžete <xref:System.Data.Services.DataServiceConfiguration> `true` získat nastavením <xref:System.ServiceModel.Description.ServiceDebugBehavior.IncludeExceptionDetailInFaults%2A> <xref:System.Data.Services.DataServiceConfiguration.UseVerboseErrors%2A> vlastnosti <xref:System.ServiceModel.Description.ServiceDebugBehavior> v to a `true`nastavením vlastnosti atributu ve třídě datové služby na . Další informace naleznete v příspěvku [Ladění WCF Data Services](https://docs.microsoft.com/archive/blogs/phaniraj/debugging-wcf-data-services). Můžete také povolit trasování v WCF zobrazit výjimky vyvolané ve vrstvě zasílání zpráv HTTP. Další informace naleznete [v tématu Konfigurace trasování](../../wcf/diagnostics/tracing/configuring-tracing.md).
 
@@ -119,7 +119,7 @@ Služba WCF Data Service nabízí flexibilitu při výběru procesu, který je h
 
 ### <a name="deployment-considerations"></a>Důležité informace o nasazení
 
-Při nasazování datových služeb je vhodné zvážit následující faktory:
+Při nasazování datové služby zvažte následující skutečnosti:
 
 - Při nasazení datové služby, která používá zprostředkovatele Entity Framework pro přístup k databázi serveru SQL Server, může být také muset šířit datové struktury, data nebo obojí s nasazením datové služby. Visual Studio můžete automaticky vytvářet skripty (.sql soubory) k tomu v cílové databázi a tyto skripty mohou být zahrnuty do balíčku nasazení webu ASP.NET aplikace. Další informace naleznete v [tématu How to: Deploy a Database With a Web Application Project](https://docs.microsoft.com/previous-versions/dd465343(v=vs.100)). U webu ASP.NET to lze provést pomocí **Průvodce publikováním databáze** v sadě Visual Studio. Další informace naleznete [v tématu Publishing a SQL Database](https://docs.microsoft.com/previous-versions/aspnet/bb907585(v=vs.100)).
 

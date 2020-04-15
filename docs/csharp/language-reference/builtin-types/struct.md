@@ -1,6 +1,6 @@
 ---
 title: Typy struktur – odkaz jazyka C#
-ms.date: 03/26/2020
+ms.date: 04/14/2020
 f1_keywords:
 - struct_CSharpKeyword
 helpviewer_keywords:
@@ -8,12 +8,12 @@ helpviewer_keywords:
 - struct type [C#]
 - structure type [C#]
 ms.assetid: ff3dd9b7-dc93-4720-8855-ef5558f65c7c
-ms.openlocfilehash: 6a2c97b93a8f6d1d62bd8a96865a4fe6587f55d3
-ms.sourcegitcommit: 59e36e65ac81cdd094a5a84617625b2a0ff3506e
+ms.openlocfilehash: 8013aab5580ac007875debc78208532a2d0ad1dc
+ms.sourcegitcommit: c91110ef6ee3fedb591f3d628dc17739c4a7071e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "80345133"
+ms.lasthandoff: 04/15/2020
+ms.locfileid: "81388995"
 ---
 # <a name="structure-types-c-reference"></a>Typy struktur (odkaz C#
 
@@ -42,6 +42,35 @@ To zaručuje, že žádný `readonly` člen struktury modifikuje stav struktury.
 
 > [!NOTE]
 > Ve `readonly` struktuře může datový člen proměnlivého typu odkazu stále zmutovat svůj vlastní stav. Například nelze nahradit <xref:System.Collections.Generic.List%601> instanci, ale můžete do ní přidat nové prvky.
+
+## <a name="readonly-instance-members"></a>`readonly`členové instance
+
+Počínaje C# 8.0, můžete také `readonly` použít modifikátor deklarovat, že člen instance nemění stav struktury. Pokud nelze deklarovat `readonly`celý typ `readonly` struktury jako , použijte modifikátor označit členy instance, které nemění stav struktury. Ve `readonly` struktuře je každý člen `readonly`instance implicitně .
+
+V `readonly` rámci člena instance nelze přiřadit pole instance struktury. `readonly` Člen však může volat`readonly` nečlena. V takovém případě kompilátor vytvoří kopii instance struktury`readonly` a volá nečlen na této kopii. V důsledku toho původní instance struktury není změněn.
+
+`readonly` Modifikátor obvykle použijete na následující druhy členů instance:
+
+- Metody:
+
+  [!code-csharp[readonly method](snippets/StructType.cs#ReadonlyMethod)]
+
+  `readonly` Modifikátor můžete také použít na metody, <xref:System.Object?displayProperty=nameWithType>které přepíší metody deklarované v :
+
+  [!code-csharp[readonly override](snippets/StructType.cs#ReadonlyOverride)]
+
+- vlastnosti a indexery:
+
+  [!code-csharp[readonly property get](snippets/StructType.cs#ReadonlyProperty)]
+
+  Pokud potřebujete použít `readonly` modifikátor pro oba přístupové objekty vlastnosti nebo indexeru, použijte jej v deklaraci vlastnosti nebo indexeru.
+
+  > [!NOTE]
+  > Kompilátor deklaruje `get` přistupující `readonly`objekt automaticky [implementované vlastnosti](../../programming-guide/classes-and-structs/auto-implemented-properties.md) jako , bez ohledu na přítomnost `readonly` modifikátoru v deklaraci vlastnosti.
+
+`readonly` Modifikátor nelze použít na statické členy typu struktury.
+
+Kompilátor může použít `readonly` modifikátor pro optimalizace výkonu. Další informace naleznete v [tématu Zápis bezpečné a efektivní kód jazyka C#](../../write-safe-efficient-code.md).
 
 ## <a name="limitations-with-the-design-of-a-structure-type"></a>Omezení s návrhem typu konstrukce
 
@@ -81,7 +110,10 @@ Pro všechny typy struktury existují [převody zabalení a rozbalení](../../pr
 
 Další informace naleznete v části [Structs](~/_csharplang/spec/structs.md) ve [specifikaci jazyka C#](~/_csharplang/spec/introduction.md).
 
-Další informace `readonly` o strukturách naleznete v [poznámce k návrhu funkce](~/_csharplang/proposals/csharp-7.2/readonly-ref.md#readonly-structs).
+Další informace o funkcích zavedených v c# 7.2 a novějších naleznete v následujících poznámkách k návrhu funkce:
+
+- [Struktury jen pro čtení](~/_csharplang/proposals/csharp-7.2/readonly-ref.md#readonly-structs)
+- [Členy instance Readonly](~/_csharplang/proposals/csharp-8.0/readonly-instance-members.md)
 
 ## <a name="see-also"></a>Viz také
 

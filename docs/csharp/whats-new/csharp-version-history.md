@@ -3,12 +3,12 @@ title: Historie průvodce C# - C#
 description: Jak tento jazyk vypadal v jeho nejranějších verzích a jak se od té doby vyvíjel?
 author: erikdietrich
 ms.date: 04/08/2020
-ms.openlocfilehash: d9f50a7df7966f81366acb706d719cbdd40a45fa
-ms.sourcegitcommit: e3cbf26d67f7e9286c7108a2752804050762d02d
+ms.openlocfilehash: f321b9c742fed6fb1efaf8fbb1914c203dd6391b
+ms.sourcegitcommit: c91110ef6ee3fedb591f3d628dc17739c4a7071e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2020
-ms.locfileid: "80989191"
+ms.lasthandoff: 04/15/2020
+ms.locfileid: "81389113"
 ---
 # <a name="the-history-of-c"></a>Historie C\#
 
@@ -120,7 +120,7 @@ Dynamická vazba vám dává potenciál pro chyby, ale také velkou sílu v rám
 C# verze 5.0, vydané s Visual Studio 2012, byla cílená verze jazyka. Téměř veškeré úsilí pro tuto verzi šlo do jiného průkopnického jazykového konceptu: `async` a `await` model pro asynchronní programování.  Zde je seznam hlavních funkcí:
 
 - [Asynchronní členové](../async.md)
-- [Atributy informací o volajícím](../programming-guide/concepts/caller-information.md)
+- [Atributy informací o volajícím](../language-reference/attributes/caller-information.md)
 
 ### <a name="see-also"></a>Viz také
 

@@ -3,16 +3,16 @@ title: Přehled sady SDK základního projektu .NET
 description: Další informace o sadách SDK projektu .NET Core.
 ms.date: 02/02/2020
 ms.topic: conceptual
-ms.openlocfilehash: 32e14993326c6f17d6470249fe5a545180348631
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: d0ac01dca31dffea482745126e00c34b1da20774
+ms.sourcegitcommit: c91110ef6ee3fedb591f3d628dc17739c4a7071e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79399173"
+ms.lasthandoff: 04/15/2020
+ms.locfileid: "81389671"
 ---
 # <a name="net-core-project-sdks"></a>Sady SDK core aplikace .NET
 
-.NET Core projekty jsou spojeny s sadou pro vývoj softwaru (SDK). Každý projekt SDK je sada [cílů](/visualstudio/msbuild/msbuild-targets) MSBuild a přidružené [úkoly,](/visualstudio/msbuild/msbuild-tasks) které jsou zodpovědné za kompilaci, balení a publikování kódu.
+.NET Core projekty jsou spojeny s sadou pro vývoj softwaru (SDK). Každý *projekt SDK* je sada [cílů](/visualstudio/msbuild/msbuild-targets) MSBuild a přidružené [úkoly,](/visualstudio/msbuild/msbuild-tasks) které jsou zodpovědné za kompilaci, balení a publikování kódu. Projekt, který odkazuje na projekt SDK je někdy označován jako *projekt ve stylu sady SDK*.
 
 ## <a name="available-sdks"></a>Dostupné sady SDK
 
@@ -76,7 +76,7 @@ Odkazování na sdk jedním z těchto způsobů výrazně zjednodušuje soubory 
 
 Můžete vidět plně rozšířený projekt jako MSBuild vidí po SDK a jeho `dotnet msbuild -preprocess` cíle jsou zahrnuty pomocí příkazu. [Předprocesový](/visualstudio/msbuild/msbuild-command-line-reference#preprocess) přepínač [`dotnet msbuild`](../tools/dotnet-msbuild.md) příkazu zobrazuje, které soubory jsou importovány, jejich zdroje a jejich příspěvky k sestavení, aniž by skutečně stavěly projekt.
 
-Pokud projekt má více cílových architektur, zaměřte výsledky příkazu pouze na jeden rámec zadáním jako vlastnost MSBuild. Například:
+Pokud projekt má více cílových architektur, zaměřte výsledky příkazu pouze na jeden rámec zadáním jako vlastnost MSBuild. Příklad:
 
 `dotnet msbuild -property:TargetFramework=netcoreapp2.0 -preprocess:output.xml`
 
@@ -86,11 +86,11 @@ Výchozí zahrnuje a vylučuje pro kompilaci položky a vložené prostředky js
 
 V následující tabulce je uvedeno, který prvek a které globs jsou [zahrnuty](https://en.wikipedia.org/wiki/Glob_(programming)) a vyloučeny do sady .NET Core SDK:
 
-| Element           | Zahrnout glob                              | Vyloučit glob                                                  | Odstranit glob              |
+| Prvek           | Zahrnout glob                              | Vyloučit glob                                                  | Odstranit glob              |
 |-------------------|-------------------------------------------|---------------------------------------------------------------|--------------------------|
-| Kompilaci           | \*\*/\*.cs (nebo jiná jazyková rozšíření) | \*\*/\*.user;  \*\*/\*. \*proj;  \* \* /.sln; \*  \* \* / \*.vssscc  | Není dostupné.                      |
-| Vložený prostředek  | \*\*/\*.resx                              | \*\*/\*.user; \*\*/\*. \*proj; \* \* /.sln; \* \* \* / \*.vssscc     | Není dostupné.                      |
-| Žádný              | \*\*/\*                                   | \*\*/\*.user; \*\*/\*. \*proj; \* \* /.sln; \* \* \* / \*.vssscc     | \*\*/\*.cs; \* \* /.resx \* |
+| Kompilaci           | \*\*/\*.cs (nebo jiná jazyková rozšíření) | \*\*/\*.user;  \*\*/\*. \*proj;  \* \* /.sln; \*  \* \* / \*.vssscc  | –                      |
+| Vložený prostředek  | \*\*/\*.resx                              | \*\*/\*.user; \*\*/\*. \*proj; \* \* /.sln; \* \* \* / \*.vssscc     | –                      |
+| Žádná              | \*\*/\*                                   | \*\*/\*.user; \*\*/\*. \*proj; \* \* /.sln; \* \* \* / \*.vssscc     | \*\*/\*.cs; \* \* /.resx \* |
 
 > [!NOTE]
 > A `./bin` `./obj` složky, které jsou `$(BaseOutputPath)` `$(BaseIntermediateOutputPath)` reprezentovány vlastnostmi a MSBuild, jsou ve výchozím nastavení vyloučeny z globs. Nezahrnuje jsou reprezentovány `$(DefaultItemExcludes)`vlastností .

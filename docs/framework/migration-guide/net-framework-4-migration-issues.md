@@ -5,33 +5,35 @@ helpviewer_keywords:
 - .NET Framework 4, migration
 - application compatibility
 ms.assetid: df478548-8c05-4de2-8ba7-adcdbe1c2a60
-ms.openlocfilehash: 0045d2cc0c53d17b07502948088ceec009baba5b
-ms.sourcegitcommit: 43cbde34970f5f38f30c43cd63b9c7e2e83717ae
+ms.openlocfilehash: 200acea81b9f00c659ddceae011430983e2b5f5b
+ms.sourcegitcommit: c91110ef6ee3fedb591f3d628dc17739c4a7071e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/11/2020
-ms.locfileid: "81121521"
+ms.lasthandoff: 04/15/2020
+ms.locfileid: "81389713"
 ---
 # <a name="net-framework-4-migration-issues"></a>Problémy s migrací rozhraní .NET Framework 4
 
-Toto téma popisuje problémy s migrací mezi rozhraním .NET Framework verze 3.5 Service Pack 1 a rozhraním .NET Framework verze 4, včetně oprav, změn dodržování standardů a zabezpečení a změn na základě zpětné vazby od zákazníků. Většina těchto změn nevyžaduje žádné programové změny v aplikacích. Ty, které mohou zahrnovat změny, naleznete v části Doporučené změny v tabulce. Významné změny jsou rozděleny podle oblasti, například ASP.NET a Windows Presentation Foundation (WPF).
+Tento článek popisuje problémy s migrací mezi rozhraními .NET Framework verze 3.5 Service Pack 1 a rozhraní .NET Framework verze 4, včetně oprav, změn dodržování standardů a zabezpečení a změn na základě zpětné vazby od zákazníků. Většina těchto změn nevyžaduje žádné programové změny v aplikacích. Ty, které mohou zahrnovat změny, naleznete v části **Doporučené změny** v tabulce. Významné změny jsou rozděleny podle oblasti, například ASP.NET a Windows Presentation Foundation (WPF).
 
-Přehled problémů v tomto tématu na vyšší úrovni naleznete v [Průvodci migrací k rozhraní .NET Framework 4](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ff657133%28v=vs.100%29).
+Přehled problémů v tomto článku na vyšší úrovni naleznete v [tématu Migration Guide to .NET Framework 4](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ff657133%28v=vs.100%29).
 
-Informace o nových funkcích naleznete [v tématu What's New v rozhraní .NET Framework 4](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ms171868%28v=vs.100%29).
+Informace o nových funkcích naleznete [v tématu What's New in .NET Framework 4](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ms171868%28v=vs.100%29).
 
 ## <a name="aspnet-and-web"></a>ASP.NET a Web
 
-Jmenné <xref:System.Web>prostory: , <xref:System.Web.Mobile>, <xref:System.Web.Security>, <xref:System.Web.UI.WebControls>; sestavení: System.Web (v souboru System.Web.dll)
+Jmenné <xref:System.Web>prostory: , <xref:System.Web.Mobile>, <xref:System.Web.Security>,<xref:System.Web.UI.WebControls>
 
-| Funkce | Rozdíly od 3,5 SP1 | Doporučené změny |
-| ------- | ------------------------ | ------------------- |
+Sestava: System.Web (v souboru System.Web.dll)
+
+| Funkce  | Rozdíly od 3,5 SP1 | Doporučené změny |
+| -------- | ------------------------ | ------------------- |
 | **Soubory definic prohlížeče** | Soubory definic prohlížeče byly aktualizovány tak, aby obsahovaly informace o nových a aktualizovaných prohlížečích a zařízeních. Starší prohlížeče a zařízení, jako je Netscape Navigator, byly odstraněny a byly přidány novější prohlížeče a zařízení, jako je Google Chrome a Apple iPhone.<br><br>Pokud aplikace obsahuje vlastní definice prohlížeče, které dědí z jedné z definic prohlížeče, které byly odebrány, zobrazí se chyba.<br><br>Objekt <xref:System.Web.HttpBrowserCapabilities> (který je vystaven `Request.Browse` vlastností stránky) je řízen soubory definice prohlížeče. Proto informace, které jsou vráceny přístupem k vlastnosti tohoto objektu v ASP.NET 4 může lišit od informace, která byla vrácena v dřívější verzi ASP.NET. | Pokud vaše aplikace závisí na starých definičních souborech prohlížeče, můžete je zkopírovat z následující složky:<br><br>*Windows\\\\Microsoft.NET\\Framework v2.0.50727\\CONFIG\\prohlížeče*<br><br>Zkopírujte soubory do * \\\\* odpovídající složky CONFIG Browsers pro ASP.NET 4. Po zkopírování souborů spusťte nástroj příkazového řádku [Aspnet_regbrowsers.exe.](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms229858(v=vs.90)) Další informace naleznete [https://www.asp.net/mobile](/aspnet/mobile/overview) na webu. |
 | **Podřízené aplikace spuštěné pod smíšenými verzemi ASP.NET** | ASP.NET 4 aplikace, které jsou konfigurovány jako podřízené aplikace, které používají starší verze ASP.NET může selhat ke spuštění z důvodu chyby konfigurace nebo kompilace. Konkrétní chyba, ke které dojde, závisí na tom, zda je aplikace spuštěna v rámci služby IIS 6.0 nebo ve službě IIS 7 nebo IIS 7.5. | Můžete provést změny v konfiguračních souborech ohrožených aplikací tak, aby konfigurační systém správně rozpoznal ASP.NET 4 aplikace. Informace o změnách, které je nutné provést, naleznete v části ASP.NET 4 Podřízených aplikací, které se nespustí, pokud jsou pod ASP.NET aplikace mise 2.0 nebo ASP.NET 3.5 v dokumentu [ASP.NET 4 Nejnovější změny](/aspnet/whitepapers/aspnet4/breaking-changes) na webu ASP.NET. |
-| **Změny ID klienta** | Nové `clientIDMode` nastavení v ASP.NET 4 umožňuje určit, `id` jak ASP.NET generuje atribut pro elementy HTML. V předchozích verzích ASP.NET bylo výchozí `AutoID` chování `clientIDMode`ekvivalentní nastavení aplikace . Výchozí nastavení je `Predictable`nyní . Další informace naleznete [v tématu ASP.NET Identifikace ovládacího prvku webového serveru](https://docs.microsoft.com/previous-versions/aspnet/1d04y8ss%28v=vs.100%29). | Pokud používáte Visual Studio k upgradu aplikace z ASP.NET 2.0 nebo ASP.NET 3.5, nástroj automaticky přidá nastavení do souboru Web.config, který zachová chování předchozích verzí rozhraní .NET Framework. Pokud však inovujete aplikaci změnou fondu aplikací ve službách IIS tak, aby cílil na rozhraní .NET Framework 4, ASP.NET ve výchozím nastavení použije nový režim. Chcete-li zakázat nový režim ID klienta, přidejte do souboru Web.config následující nastavení:<br><br>`<pages clientIDMode="AutoID" />` |
+| **Změny ID klienta** | Nové `clientIDMode` nastavení v ASP.NET 4 umožňuje určit, `id` jak ASP.NET generuje atribut pro elementy HTML. V předchozích verzích ASP.NET bylo výchozí `AutoID` chování `clientIDMode`ekvivalentní nastavení aplikace . Výchozí nastavení je `Predictable`nyní . Další informace naleznete [v tématu ASP.NET Identifikace ovládacího prvku webového serveru](https://docs.microsoft.com/previous-versions/aspnet/1d04y8ss%28v=vs.100%29). | Pokud používáte visual studio k upgradu aplikace z ASP.NET 2.0 nebo ASP.NET 3.5, nástroj automaticky přidá nastavení do souboru Web.config, který zachová chování předchozích verzí rozhraní .NET Framework. Pokud však inovujete aplikaci změnou fondu aplikací ve službách IIS na cílovou aplikaci .NET Framework 4, ASP.NET ve výchozím nastavení použije nový režim. Chcete-li zakázat nový režim ID klienta, přidejte do souboru Web.config následující nastavení:<br><br>`<pages clientIDMode="AutoID" />` |
 | **Zabezpečení přístupu kódu (CAS)** | ASP.NET 2.0 NET funkce, které byly přidány v ASP.NET 3.5 použít .NET Framework 1.1 a .NET Framework 2.0 kód zabezpečení (CAS) model. Provádění CAS v ASP.NET 4 však bylo podstatně přepracováno. V důsledku toho může dojít k selhání ASP.NET aplikací s částečnou důvěryhodností, které spoléhají na důvěryhodný kód spuštěný v globální mezipaměti sestavení, s různými výjimkami zabezpečení. Aplikace s částečnou důvěryhodností, které spoléhají na rozsáhlé změny zásad CAS počítače, mohou také selhat a vyvolat výjimky zabezpečení. | Částečné důvěryhodnosti ASP.NET 4 aplikacím můžete vrátit k chování ASP.NET 1.1 `legacyCasModel` a 2.0 pomocí nového atributu v konfiguračním elementu, `trust` jak je znázorněno v následujícím příkladu:<br><br>`<trust level= "Medium" legacyCasModel="true" />`<br><br>Důležité: Návrat ke staršímu modelu CAS může představovat snížené zabezpečení.<br><br>Další informace o novém modelu zabezpečení přístupu kódu ASP.NET 4 naleznete [v tématu Zabezpečení přístupu ke kódu v ASP.NET 4 aplikace](https://docs.microsoft.com/previous-versions/dd984947(v=vs.100)). |
-| **Konfigurační soubory** | Kořenové konfigurační soubory (soubor machine.config a kořenový soubor Web.config) pro rozhraní .NET Framework a ASP.NET 4 byly aktualizovány tak, aby zahrnovaly většinu často používaných konfiguračních informací, které byly nalezeny v souborech Web.config aplikace v ASP.NET 3.5. Vzhledem ke složitosti spravovaných konfiguračních systémů služby IIS 7 a IIS 7.5 může provoz ASP.NET 3,5 aplikací pod ASP.NET 4 a v rámci služby IIS 7 a IIS 7.5 způsobit chyby ASP.NET nebo iis. | Upgradujte ASP.NET 3,5 aplikací na ASP.NET 4 pomocí nástrojů pro upgrade projektu v sadě Visual Studio. Visual Studio 2010 automaticky upraví soubor Web.config aplikace ASP.NET 3.5 tak, aby obsahoval aobsahuje příslušná nastavení pro ASP.NET 4.<br><br>Můžete však spustit ASP.NET 3.5 aplikace pomocí rozhraní .NET Framework 4 bez rekompilace. V takovém případě bude pravděpodobně nutné ručně upravit soubor Web.config aplikace před spuštěním aplikace v rámci rozhraní .NET Framework 4 a iIS 7 nebo IIS 7.5. Konkrétní změna, kterou musíte provést, závisí na kombinaci softwaru, se kterým pracujete, včetně verzí aktualizace Service Pack (SP). Informace o možných kombinacích softwaru, které jsou touto změnou ovlivněny, a o řešení problémů s určitými kombinacemi naleznete v části Chyby konfigurace související s novou ASP.NET kořenovou konfigurací 4 v dokumentu [ASP.NET 4 nejnovější změny](/aspnet/whitepapers/aspnet4/breaking-changes) na webu ASP.NET. |
-| **Vykreslování ovládací** | V předchozích verzích ASP.NET některé ovládací prvky vyzařují značky, které nelze zakázat. Ve výchozím nastavení se tento typ značek již negeneruje v ASP.NET 4. Změny vykreslování ovlivní následující ovládací prvky:<br><br>* `Image` Ovládací `ImageButton` prvky a `border="0"` již vykreslují atribut.<br>* `BaseValidator` Třídy a ověřovací ovládací prvky, které jsou odvozeny z něj již vykreslovat červený text ve výchozím nastavení.<br>* `HtmlForm` Ovládací prvek nevykresluje `name` atribut.<br>* `Table` Ovládací prvek již `border="0"` vykreslí atribut.<br><br>Ovládací prvky, které nejsou určeny `Label` pro vstup uživatele `disabled="disabled"` (například `Enabled` ovládací prvek) již vykreslují atribut, pokud je jejich vlastnost nastavena na `false` (nebo pokud dědí toto nastavení z ovládacího prvku kontejneru). | Pokud používáte Visual Studio k upgradu aplikace z ASP.NET 2.0 nebo ASP.NET 3.5, nástroj automaticky přidá nastavení do souboru Web.config, který zachová starší vykreslování. Pokud však inovujete aplikaci změnou fondu aplikací ve službách IIS tak, aby cílil na rozhraní .NET Framework 4, ASP.NET ve výchozím nastavení použije nový režim vykreslování. Chcete-li zakázat nový režim vykreslování, přidejte do souboru Web.config následující nastavení:<br><br>`<pages controlRenderingCompatibilityVersion="3.5" />` |
+| **Konfigurační soubory** | Kořenové konfigurační soubory (soubor machine.config a kořenový soubor Web.config) pro rozhraní .NET Framework a ASP.NET 4 byly aktualizovány tak, aby zahrnovaly většinu často používaných konfiguračních informací, které byly nalezeny v souborech Web.config aplikace v ASP.NET 3.5. Vzhledem ke složitosti spravovaných konfiguračních systémů služby IIS 7 a IIS 7.5 může provoz ASP.NET 3,5 aplikací pod ASP.NET 4 a v rámci služby IIS 7 a IIS 7.5 způsobit chyby ASP.NET nebo iis. | Upgradujte ASP.NET 3,5 aplikací na ASP.NET 4 pomocí nástrojů pro upgrade projektu v sadě Visual Studio. Visual Studio 2010 automaticky upraví soubor Web.config aplikace ASP.NET 3.5 tak, aby obsahoval aobsahuje příslušná nastavení pro ASP.NET 4.<br><br>Můžete však spustit ASP.NET 3.5 aplikací pomocí rozhraní .NET Framework 4 bez rekompilace. V takovém případě bude pravděpodobně nutné ručně upravit soubor Web.config aplikace před spuštěním aplikace v rámci rozhraní .NET Framework 4 a iis 7 nebo IIS 7.5. Konkrétní změna, kterou musíte provést, závisí na kombinaci softwaru, se kterým pracujete, včetně verzí aktualizace Service Pack (SP). Informace o možných kombinacích softwaru, které jsou touto změnou ovlivněny, a o řešení problémů s určitými kombinacemi naleznete v části Chyby konfigurace související s novou ASP.NET kořenovou konfigurací 4 v dokumentu [ASP.NET 4 nejnovější změny](/aspnet/whitepapers/aspnet4/breaking-changes) na webu ASP.NET. |
+| **Vykreslování ovládací** | V předchozích verzích ASP.NET některé ovládací prvky vyzařují značky, které nelze zakázat. Ve výchozím nastavení se tento typ značek již negeneruje v ASP.NET 4. Změny vykreslování ovlivní následující ovládací prvky:<br><br>* `Image` Ovládací `ImageButton` prvky a `border="0"` již vykreslují atribut.<br>* `BaseValidator` Třídy a ověřovací ovládací prvky, které jsou odvozeny z něj již vykreslovat červený text ve výchozím nastavení.<br>* `HtmlForm` Ovládací prvek nevykresluje `name` atribut.<br>* `Table` Ovládací prvek již `border="0"` vykreslí atribut.<br><br>Ovládací prvky, které nejsou určeny `Label` pro vstup uživatele `disabled="disabled"` (například `Enabled` ovládací prvek) již vykreslují atribut, pokud je jejich vlastnost nastavena na `false` (nebo pokud dědí toto nastavení z ovládacího prvku kontejneru). | Pokud používáte Visual Studio k upgradu aplikace z ASP.NET 2.0 nebo ASP.NET 3.5, nástroj automaticky přidá nastavení do souboru Web.config, který zachová starší vykreslování. Pokud však inovujete aplikaci změnou fondu aplikací ve službách IIS na cílovou aplikaci .NET Framework 4, ASP.NET ve výchozím nastavení použije nový režim vykreslování. Chcete-li zakázat nový režim vykreslování, přidejte do souboru Web.config následující nastavení:<br><br>`<pages controlRenderingCompatibilityVersion="3.5" />` |
 | **Obslužné rutiny událostí ve výchozích dokumentech** | ASP.NET 4 vykreslí hodnotu `form` `action` atributu elementu HTML jako prázdný řetězec, když je požadavek na adresu URL bez rozšíření, která má namapovaný výchozí dokument. V dřívějších verzích ASP.NET `http://contoso.com` by požadavek na požadavek default.aspx. V tomto dokumentu `form` by byla počáteční značka vykreslena jako v následujícím příkladu:<br><br>`<form action="Default.aspx" />`<br><br>V ASP.NET 4, `http://contoso.com` požadavek také výsledkem požadavek default.aspx, ale `form` ASP.NET nyní vykreslí otevírací značku HTML jako v následujícím příkladu:<br><br>`<form action="" />`<br><br>Pokud `action` je atributem prázdný řetězec, `DefaultDocumentModule` vytvoří objekt služby IIS podřízený požadavek na soubor Default.aspx. Za většiny podmínek je tento podřízený požadavek transparentní pro kód aplikace a stránka Default.aspx se spouští normálně. Potenciální interakce mezi spravovaným kódem a integrovaným režimem služby IIS 7 nebo IIS 7.5 však může způsobit, že spravované stránky ASPX přestanou během podřízenéžádosti správně fungovat. Pokud nastanou následující podmínky, podřízený požadavek na výchozí dokument ASPX bude mít za následek chybu nebo neočekávané chování:<br><br>* Stránka ASPX je odeslána do `form` prohlížeče `action` s atributem prvku nastaveným na "".<br>* Formulář je zaúčtován zpět do ASP.NET.<br>* Spravovaný modul HTTP přečte určitou část těla entity, například `Request.Form` nebo `Request.Params`. To způsobí, že tělo entity požadavku POST číst do spravované paměti. V důsledku toho není tělo entity již k dispozici pro žádné moduly nativního kódu, které jsou spuštěny v integrovaném režimu služby IIS 7 nebo IIS 7.5.<br>* Objekt `DefaultDocumentModule` služby IIS se nakonec spustí a vytvoří podřízený požadavek do dokumentu Default.aspx. Protože však tělo entity již bylo přečteno částí spravovaného kódu, není k dispozici žádné tělo entity, které by bylo možné odeslat podřízenému požadavku.<br>* Při spuštění kanálu HTTP pro podřízený požadavek, obslužná rutina pro soubory ASPX spustí během fáze spuštění obslužné rutiny.<br><br>Vzhledem k tomu, že neexistuje žádné tělo entity, neexistují žádné proměnné formuláře a žádný stav zobrazení. Proto nejsou k dispozici žádné informace pro obslužnou rutinu stránky ASPX k určení, jaká událost (pokud existuje) by měla být vyvolána. V důsledku toho žádný z obslužné rutiny události postback pro ovlivněné stránky ASPX spustit. | Informace o způsobech řešení problémů, které mohou vzniknout v důsledku této změny, naleznete v tématu "Obslužné rutiny událostí nemusí být vyvolány ve výchozím dokumentu ve službě IIS 7 nebo iis 7.5 integrovaný režim" v dokumentu [ASP.NET 4 Nejnovější změny](/aspnet/whitepapers/aspnet4/breaking-changes) na webu ASP.NET. |
 | **Algoritmus hash** | ASP.NET používá algoritmy šifrování i hašování k zabezpečení dat, jako jsou soubory cookie ověřování formulářů a stav zobrazení. Ve výchozím nastavení ASP.NET <xref:System.Security.Cryptography.HMACSHA256> 4 používá algoritmus pro operace hash na cookies a stav zobrazení. Starší verze ASP.NET používaly <xref:System.Security.Cryptography.HMACSHA1> starší algoritmus. | Pokud spouštěte aplikace, které kombinují ASP.NET 2.0 a ASP.NET 4, kde data, jako jsou soubory cookie <xref:System.Security.Cryptography.HMACSHA1> ověřování pomocí formulářů, musí fungovat ve verzích rozhraní .NET Framework, nakonfigurujte webovou aplikaci ASP.NET 4 tak, aby používala starší algoritmus přidáním následujícího nastavení do souboru Web.config:<br><br>`<machineKey validation="SHA1" />` |
 | **Hostování ovládacích prvků v Internet Exploreru** | Ovládací prvky windows forms již nelze hostovat v aplikaci Internet Explorer, protože existují lepší řešení pro hostování ovládacích prvků na webu. Proto sestavení IEHost.dll a IEExec.exe byly odebrány z rozhraní .NET Framework. | Pro vývoj vlastních ovládacích prvku ve webových aplikacích můžete použít následující technologie:<br><br>* Můžete vytvořit aplikaci Silverlight a nakonfigurovat ji tak, aby běžela mimo prohlížeč. Další informace naleznete [v tématu Podpora mimo prohlížeč](https://docs.microsoft.com/previous-versions/windows/silverlight/dotnet-windows-silverlight/dd550721%28v=vs.95%29).<br>* Můžete vytvořit aplikaci prohlížeče XAML (XBAP) využít wpf schopnosti (vyžaduje rozhraní .NET Framework na klientských počítačích). Další informace naleznete v tématu [Přehled prohlížečů WPF XAML](../wpf/app-development/wpf-xaml-browser-applications-overview.md). |
@@ -42,12 +44,12 @@ Jmenné <xref:System.Web>prostory: , <xref:System.Web.Mobile>, <xref:System.Web.
 | **Mobilní sestavení v souboru Web.config** | V předchozích verzích ASP.NET byl odkaz na sestavení System.Web.Mobile.dll zahrnut do kořenového `system.web` / `compilation`souboru Web.config v `assemblies` části pod . Chcete-li zlepšit výkon, odkaz na toto sestavení byla odebrána.<br><br>Poznámka: Sestava System.Web.Mobile.dll a ASP.NET mobilní ovládací prvky jsou součástí ASP.NET 4, ale jsou zastaralé. | Pokud chcete použít typy z tohoto sestavení, přidejte odkaz na sestavení v kořenovém souboru Web.config nebo v souboru Web.config aplikace. |
 | **Ukládání výstupu do mezipaměti** | V ASP.NET 1.0, chyba způsobila `Location="ServerAndClient"` cache stránky, které určené jako výstup&euro;"cache nastavení vyzařovat hlavičku `Vary:*` HTTP v odpovědi. To mělo za následek sdělit prohlížečům klienta, aby nikdy do mezipaměti stránky místně. V ASP.NET 1.1 <xref:System.Web.HttpCachePolicy.SetOmitVaryStar%2A> byla přidána metoda, která může `Vary:*` být volána za účelem potlačení záhlaví. Zprávy o chybách však naznačují, `SetOmitVaryStar` že vývojáři nejsou vědomi existující chování.<br><br>V ASP.NET 4 `Vary:*` je hlavička HTTP již vyzařována z odpovědí, které určují následující direktivu:<br><br>`<%@ OutputCache Location="ServerAndClient" %>`<br><br>V důsledku toho <xref:System.Web.HttpCachePolicy.SetOmitVaryStar%2A> metoda již není potřeba k `Vary:*` potlačení záhlaví. V aplikacích, které pro `Location` atribut určují "ServerAndClient", budou stránky v <xref:System.Web.HttpCachePolicy.SetOmitVaryStar%2A>prohlížeči uložit do mezipaměti, aniž by bylo nutné volat . | Pokud stránky v aplikaci `Vary:*`musí <xref:System.Web.HttpResponse.AppendHeader%2A> vyzařovat , zavolejte metodu, jak je znázorněno v následujícím příkladu:<br><br>`System.Web.HttpResponse.AppendHeader("Vary","*");`<br><br>Případně můžete změnit hodnotu výstupního atributu `Location` ukládání do mezipaměti na "Server". |
 | **Analýza stránky** | Analyzátor stránek pro ASP.NET webových stránek (soubory aspx) a uživatelské ovládací prvky (.ascx soubory) je přísnější v ASP.NET 4 než v dřívějších verzích ASP.NET a označí více značek jako neplatné než v předchozích verzích. | Zkontrolujte chybové zprávy, které jsou vytvářeny při spuštění stránky a opravit chyby, které vyplývají z neplatné značky. |
-| **Typy pasů** | Podpora služby Passport integrovaná do ASP.NET 2.0 je zastaralá a není podporována kvůli změnám v souboru Passport (nyní Live ID SDK). V důsledku toho jsou nyní <xref:System.Web.Security> typy související se `ObsoleteAttribute` službou Passport in označeny atributem. | Změňte libovolný kód, který používá <xref:System.Web.Security> typy služby <xref:System.Web.Security.PassportIdentity>Passport v oboru názvů (například) k použití sady Windows Live ID SDK. |
+| **Typy pasů** | Podpora služby Passport integrovaná do ASP.NET 2.0 je zastaralá a není podporována kvůli změnám v souboru Passport (nyní Live ID SDK). V důsledku toho jsou nyní <xref:System.Web.Security> typy související se `ObsoleteAttribute` službou Passport in označeny atributem. | Změňte libovolný kód, který <xref:System.Web.Security> používá typy služby Passport v oboru názvů <xref:System.Web.Security.PassportIdentity>(například) k použití sady Windows Live ID SDK. |
 | **Informace pathinfo ve vlastnosti FilePath** | ASP.NET 4 již `PathInfo` neobsahuje hodnotu vrácené <xref:System.Web.HttpRequest.FilePath>hodnoty <xref:System.Web.HttpRequest.AppRelativeCurrentExecutionFilePath>z <xref:System.Web.HttpRequest.CurrentExecutionFilePath>vlastností, jako jsou například , a . Místo toho `PathInfo` jsou informace <xref:System.Web.HttpRequest.PathInfo>k dispozici v . Představte si například následující fragment adresy URL:<br><br>`/testapp/Action.mvc/SomeAction`<br><br>V dřívějších verzích <xref:System.Web.HttpRequest> ASP.NET mají vlastnosti následující hodnoty:<br><br>* <xref:System.Web.HttpRequest.FilePath>: `/testapp/Action.mvc/SomeAction`<br>* <xref:System.Web.HttpRequest.PathInfo>: (prázdné)<br><br>V ASP.NET <xref:System.Web.HttpRequest> 4 mají vlastnosti místo toho následující hodnoty:<br><br>* <xref:System.Web.HttpRequest.FilePath>: `/testapp/Action.mvc`<br>* <xref:System.Web.HttpRequest.PathInfo>: `SomeAction` | Zkontrolujte kód pro místa, kde <xref:System.Web.HttpRequest> můžete spoléhat na vlastnosti třídy vrátit informace o cestě; změňte kód tak, aby odrážel změny v tom, jak jsou vráceny informace o cestě. |
 | **Žádost o ověření** | Chcete-li zlepšit ověření žádosti, ověření žádosti ASP.NET je vyvolána dříve v životním cyklu požadavku. V důsledku toho je ověření požadavku spuštěno pro požadavky, které nejsou pro soubory ASPX, například pro volání webové služby a pro vlastní obslužné rutiny. Ověření požadavku bude také aktivní, pokud jsou v kanálu zpracování požadavků spuštěny vlastní moduly HTTP.<br><br>V důsledku této změny mohou požadavky na jiné prostředky než soubory ASPX vyvolat chyby ověření požadavku. Vlastní kód, který běží v kanálu požadavku (například vlastní moduly HTTP) může také vyvolat chyby ověření požadavku. | V případě potřeby se můžete vrátit ke starému chování, kdy pouze stránky ASPX aktivují ověření žádosti pomocí následujícího nastavení v konfiguračním souboru webu:<br><br>`<httpRuntime requestValidationMode="2.0" />`<br><br>Upozornění: Pokud se vrátíte ke starému chování, ujistěte se, že veškerý kód v existujících obslužných rutinách, modulech a dalších vlastních kódech provádí kontroly potenciálně nebezpečných vstupů HTTP, které by mohly být vektory útoku XSS. |
 | **Směrování** | Pokud vytvoříte web systému souborů v sadě Visual Studio 2010 a web je ve složce, která obsahuje tečku (.) v názvu složky, směrování adres URL nebude fungovat spolehlivě. Z některých virtuálních cest je vrácena chyba HTTP 404. K tomu dochází, protože Visual Studio 2010 spustí Visual Studio Development Server pomocí nesprávné cesty pro kořenový virtuální adresář. | * Na stránce **Vlastnosti** webu založeného na souborech změňte atribut **Virtuální cesta** na "/".<br><br>-nebo-<br><br>* Místo projektu webu vytvořte projekt webové aplikace. Projekty webových aplikací nemají tento problém a směrování adres URL funguje i v případě, že složka projektu má tečku v názvu.<br><br>-nebo-<br><br>* Vytvořte web založený na protokolu HTTP, který je hostován ve službě IIS. Weby hostované službou IIS mohou mít tečky ve virtuální cestě i ve složce souborů projektu. |
 | **Weby SharePoint** | Pokud se pokusíte spustit web ASP.NET 4, který je nasazen jako podřízený web služby `WSS_Minimal`SharePoint, který obsahuje vlastní úroveň částečné důvěryhodnosti s názvem , zobrazí se následující chyba:<br><br>`Could not find permission set named 'ASP.Net'.` | V současné době nejsou žádné verze sharepointu kompatibilní s ASP.NET. V důsledku toho byste se neměli pokoušet spustit web ASP.NET 4 jako podřízený web služby SharePoint. |
-| **Standardy XHTML 1.1** | Chcete-li povolit dodržování předpisů XHTML 1.1 pro nové weby, ASP.NET ovládací prvky v rozhraní .NET Framework 4 vygeneruje kód HTML kompatibilní s XHTML 1.1. Toto vykreslování je povoleno pomocí `<system.Web>` následující možnosti v souboru Web.config uvnitř prvku:<br><br>`<pages controlRenderingCompatibilityVersion="4.0"/>`<br><br>Tato možnost je ve výchozím nastavení nastavena na hodnotu 4.0. Webové projekty, které jsou upgradovány z visual studio 2008 mají 3,5 nastavení povoleno kompatibility. | Žádné. |
+| **Standardy XHTML 1.1** | Chcete-li povolit dodržování předpisů XHTML 1.1 pro nové weby, ASP.NET ovládací prvky v rozhraní .NET Framework 4 vygenerují html kompatibilní s XHTML 1.1. Toto vykreslování je povoleno pomocí `<system.Web>` následující možnosti v souboru Web.config uvnitř prvku:<br><br>`<pages controlRenderingCompatibilityVersion="4.0"/>`<br><br>Tato možnost je ve výchozím nastavení nastavena na hodnotu 4.0. Webové projekty, které jsou upgradovány z visual studio 2008 mají 3,5 nastavení povoleno kompatibility. | Žádné. |
 
 ## <a name="core"></a>Jádro
 
@@ -63,7 +65,9 @@ Jmenné <xref:System.Web>prostory: , <xref:System.Web.Mobile>, <xref:System.Web.
 
 ### <a name="date-and-time"></a>Datum a čas
 
-Obor názvů: <xref:System>; sestava: mscorlib (v mscorlib.dll)
+Namespace:<xref:System>
+
+Sestava: mscorlib (v mscorlib.dll)
 
 | Funkce | Rozdíly od 3,5 SP1 | Doporučené změny |
 | ------- | ------------------------ | ------------------- |
@@ -74,19 +78,23 @@ Obor názvů: <xref:System>; sestava: mscorlib (v mscorlib.dll)
 
 Seznam nových neutrálních a specifických kultur naleznete [v tématu Co je nového v globalizaci a lokalizaci](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/dd997383%28v=vs.100%29).
 
-Obor názvů: <xref:System.Globalization>; sestava: mscorlib (v mscorlib.dll)
+Namespace:<xref:System.Globalization>
+
+Sestava: mscorlib (v mscorlib.dll)
 
 | Funkce | Rozdíly od 3,5 SP1 | Doporučené změny |
 | ------- | ------------------------ | ------------------- |
-| **Názvy kultur** | Následující změny názvů ovlivňují německou, divehi a africkou kulturu:<br><br>* <xref:System.Globalization.CultureAndRegionInfoBuilder.CurrencyEnglishName>: Název měny pro německou (Switizerland) (de-CH) jazykovou verzi se změnil z "sFr". na "Fr".<br>* <xref:System.Globalization.DateTimeFormatInfo.LongDatePattern>: Dlouhé datum vzor pro Divehi (Maledivy) (dv-MV) kultura se změnila z "dd/MMMM/yyyy" na "dd/MM/yyyy".<br>* <xref:System.Globalization.DateTimeFormatInfo.PMDesignator>: P.M. označení afrikánštiny (Jižní Afrika) (af-ZA) kultury se změnilo z "nm" na "PM". | Poznámka: změny názvu jazykové verze. |
+| **Názvy kultur** | Následující změny názvů ovlivňují německou, divehi a africkou kulturu:<br><br>* <xref:System.Globalization.CultureAndRegionInfoBuilder.CurrencyEnglishName>: Název měny pro německou (švýcarskou) (de-CH) jazykovou verzi se změnil z "sFr". na "Fr".<br>* <xref:System.Globalization.DateTimeFormatInfo.LongDatePattern>: Dlouhé datum vzor pro Divehi (Maledivy) (dv-MV) kultura se změnila z "dd/MMMM/yyyy" na "dd/MM/yyyy".<br>* <xref:System.Globalization.DateTimeFormatInfo.PMDesignator>: P.M. označení afrikánštiny (Jižní Afrika) (af-ZA) kultury se změnilo z "nm" na "PM". | Poznámka: změny názvu jazykové verze. |
 | **Parametr LCID** | Chcete-li být konzistentní s očekávaným chováním v nastavení serveru `LCID` automatizace, CLR již předává aktuální jazykovou verzi pro parametr nespravované aplikace založené na modelu COM. Místo toho, to projde 1033 (en-us) pro kulturu. | Nejsou nutné žádné změny s výjimkou nativních aplikací, které vyžadují zadanou jazykovou verzi. |
 | **Zastaralé typy kultur** | Typy <xref:System.Globalization.CultureTypes> <xref:System.Globalization.CultureTypes> a jazyková verze jsou nyní zastaralé.<br><br>Pro zpětnou <xref:System.Globalization.CultureTypes> kompatibilitu nyní vrátí neutrální a konkrétní jazykové verze, <xref:System.Globalization.CultureTypes> které byly součástí předchozího rozhraní .NET Framework a nyní vrátí prázdný seznam. | Použijte jiné hodnoty <xref:System.Globalization.CultureTypes> výčtu. |
-| **Načítání jazykové verze** | Počínaje Windows 7, rozhraní .NET Framework 4 načte informace o jazykové verzi z operačního systému namísto ukládání samotných dat. Kromě toho rozhraní .NET Framework synchronizuje se systémem Windows pro řazení a pouzdře dat. | Žádné. |
+| **Načítání jazykové verze** | Počínaje Windows 7, .NET Framework 4 načte informace o jazykové verzi z operačního systému namísto ukládání samotných dat. Rozhraní .NET Framework se navíc synchronizuje se systémem Windows pro řazení a pouzdře dat. | Žádné. |
 | **Standardy Unicode 5.1** | Rozhraní .NET Framework nyní podporuje všechny znaky Unicode 5.1 – přidání přibližně 1400 znaků. Mezi další znaky patří nové symboly, šipky, diakritika, interpunkce, matematické symboly, tahy CJK a ideografy, další malayalamské a telugské číselné znaky a různé znaky Myanmaru, latinky, arabštiny, řečtiny, mongolštiny a cyrilice. Následující nové skripty jsou podporovány s Unicode 5.1: Sundanese, Lepcha, Ol Chiki, Vai, Saurashtra, Kayah Li, Rejang, Gurmukhi, Odia, Tamil, Telugu a Malayalam znaky a Cham. | Žádné. |
 
 ### <a name="exceptions"></a>Výjimky
 
-Jmenné <xref:System>prostory: , <xref:System.Runtime.ExceptionServices>; sestava: mscorlib (v mscorlib.dll)
+Jmenné <xref:System>prostory: ,<xref:System.Runtime.ExceptionServices>
+
+Sestava: mscorlib (v mscorlib.dll)
 
 | Funkce | Rozdíly od 3,5 SP1 | Doporučené změny |
 | ------- | ------------------------ | ------------------- |
@@ -95,7 +103,9 @@ Jmenné <xref:System>prostory: , <xref:System.Runtime.ExceptionServices>; sestav
 
 ### <a name="reflection"></a>Reflexe
 
-Obor názvů: <xref:System.Reflection>; sestava: mscorlib (v mscorlib.dll)
+Namespace:<xref:System.Reflection>
+
+Sestava: mscorlib (v mscorlib.dll)
 
 | Funkce | Rozdíly od 3,5 SP1 | Doporučené změny |
 | ------- | ------------------------ | ------------------- |
@@ -108,7 +118,9 @@ Obor názvů: <xref:System.Reflection>; sestava: mscorlib (v mscorlib.dll)
 
 ### <a name="interoperability"></a>Interoperabilita
 
-Obor názvů: <xref:System.Runtime.InteropServices>; sestava: mscorlib (v mscorlib.dll)
+Namespace:<xref:System.Runtime.InteropServices>
+
+Sestava: mscorlib (v mscorlib.dll)
 
 | Funkce | Rozdíly od 3,5 SP1 | Doporučené změny |
 | ------- | ------------------------ | ------------------- |
@@ -125,7 +137,9 @@ Tato část popisuje problémy s migrací pro použití datových sad a klientů
 
 Následující tabulka popisuje vylepšení funkcí, které dříve měly omezení nebo jiné problémy.
 
-Jmenné <xref:System.Data>prostory: , <xref:System.Data.Objects.DataClasses>, <xref:System.Data.SqlClient>; sestavy: System.Data (v souboru System.Data.dll), System.Data.Entity (v souboru System.Data.Entity.dll)
+Jmenné <xref:System.Data>prostory: , <xref:System.Data.Objects.DataClasses>,<xref:System.Data.SqlClient>
+
+Sestavy: System.Data (v souboru System.Data.dll), System.Data.Entity (v souboru System.Data.Entity.dll)
 
 | Funkce | Rozdíly od 3,5 SP1 |
 | ------- | ------------------------ |
@@ -140,7 +154,9 @@ Jmenné <xref:System.Data>prostory: , <xref:System.Data.Objects.DataClasses>, <x
 
 Následující tabulka popisuje vylepšení funkcí, které dříve měly omezení nebo jiné problémy.
 
-Jmenné <xref:System.Data>prostory: , <xref:System.Data.Objects>, <xref:System.Data.Objects.DataClasses>; sestava: System.Data.Entity (v souboru System.Data.Entity.dll)
+Jmenné <xref:System.Data>prostory: , <xref:System.Data.Objects>,<xref:System.Data.Objects.DataClasses>
+
+Sestavení: System.Data.Entity (v souboru System.Data.Entity.dll)
 
 | Funkce | Rozdíly od 3,5 SP1 |
 | ------- | ------------------------ |
@@ -153,18 +169,22 @@ Jmenné <xref:System.Data>prostory: , <xref:System.Data.Objects>, <xref:System.D
 
 Následující tabulka popisuje vylepšení funkcí, které dříve měly omezení nebo jiné problémy.
 
-Obor názvů: <xref:System.Data.Linq>; sestava: System.Data.Linq (v souboru System.Data.Linq.dll)
+Namespace:<xref:System.Data.Linq>
+
+Sestava: System.Data.Linq (v souboru System.Data.Linq.dll)
 
 | Funkce | Rozdíly od 3,5 SP1 |
 | ------- | ------------------------ |
 | **Události** | Kolekce <xref:System.Data.Linq.EntitySet%601> nyní vyvolá <xref:System.Data.Linq.EntitySet%601.ListChanged> událost pro přidání a <xref:System.Data.Linq.EntitySet%601> odebrání operace, pokud je uvolněna, kromě zvýšení události při načtení kolekce. |
-| **Dotazy** | `Skip(0)`již není ignorována v linq na dotazy SQL. V důsledku toho dotazy, které mají tuto metodu může chovat odlišně. Například v některých `OrderBy` případech klauzule je vyžadována `Skip(0)`s <xref:System.NotSupportedException> , `OrderBy` a dotaz nyní vyvolá výjimku, pokud klauzule nebyla zahrnuta. |
+| **Dotazy** | `Skip(0)`již není ignorována v linq na dotazy SQL. V důsledku toho dotazy, které mají tuto metodu může chovat odlišně. Například v některých `OrderBy` případech klauzule `Skip(0)`je vyžadována s <xref:System.NotSupportedException> , a `OrderBy` dotaz nyní vyvolá výjimku, pokud klauzule nebyla zahrnuta. |
 
 ### <a name="wcf-data-services"></a>WCF Data Services
 
 Následující tabulka popisuje vylepšení funkcí, které dříve měly omezení nebo jiné problémy.
 
-Jmenné <xref:System.Data.Services>prostory: , <xref:System.Data.Services.Client>, <xref:System.Data.Services.Common>, <xref:System.Data.Services.Providers>; sestavy: System.Data.Services (v systému.Data.Services.dll), System.Data.Services.Client (v systému.Data.Services.Client.dll)
+Jmenné <xref:System.Data.Services>prostory: , <xref:System.Data.Services.Client>, <xref:System.Data.Services.Common>,<xref:System.Data.Services.Providers>
+
+Sestavení: System.Data.Services (v systému.Data.Services.dll), System.Data.Services.Client (v systému.Data.Services.Client.dll)
 
 | Funkce | Rozdíly od 3,5 SP1 |
 | ------- | ------------------------ |
@@ -191,21 +211,25 @@ Následující tabulka popisuje vylepšení funkcí, které dříve měly omezen
 
 ### <a name="applications"></a>Aplikace
 
-Jmenné <xref:System.Windows>prostory: , <xref:System.Windows.Controls>; sestavení: PresentationFramework (v PresentationFramework.dll)
+Jmenné <xref:System.Windows>prostory: ,<xref:System.Windows.Controls>
+
+Sestavení: PresentationFramework (v PresentationFramework.dll)
 
 | Funkce | Rozdíly od 3,5 SP1 | Doporučené změny |
 | ------- | ------------------------ | ------------------- |
 | **Zpracování výjimek** | Chcete-li povolit chyby, které <xref:System.Reflection.TargetInvocationException> mají být <xref:System.Exception.InnerException> zjištěny dříve, WPF vyvolá a nastaví vlastnost na kritické výjimky, <xref:System.NullReferenceException>jako je například , <xref:System.OutOfMemoryException>, <xref:System.StackOverflowException>a <xref:System.Security.SecurityException>, místo zachycení původní výjimky. | Žádné. |
 | **Propojené zdroje** | Chcete-li usnadnit propojení, soubory prostředků (například obrázky), které jsou umístěny v jiném umístění než struktury složek projektu použít soubor prostředků úplnou cestu namísto pouze jeho název souboru jako ID prostředku při vytvoření aplikace. Aplikace bude moci najít soubory za běhu. | Žádné. |
-| **Aplikace s částečnou důvěryhodností** | Z bezpečnostních důvodů aplikace založené na systému Windows, <xref:System.Windows.Controls.WebBrowser> které <xref:System.Windows.Controls.Frame> běží v částečném <xref:System.Security.SecurityException> vztahu důvěryhodnosti a obsahují ovládací prvek nebo ovládací prvek, který obsahuje HTML vyvolá při vytvoření ovládacího prvku.<br><br>Aplikace prohlížeče vyvolá výjimku a zobrazí zprávu, pokud jsou splněny všechny následující podmínky:<br><br>* Aplikace běží ve Firefoxu.<br>* Aplikace je spuštěna v částečnédůvěře v zóně Internet z nedůvěryhodných webů.<br>* Aplikace obsahuje <xref:System.Windows.Controls.WebBrowser> ovládací <xref:System.Windows.Controls.Frame> prvek nebo ovládací prvek, který obsahuje HTML.<br><br>Všimněte si, že aplikace, které běží z důvěryhodných serverů nebo ze zóny intranetu, nebudou ovlivněny. | V aplikacích prohlížeče můžete tuto změnu usnadnit provedením jedné z následujících akcí:<br><br>* Spusťte aplikaci prohlížeče v plné důvěře.<br>* Mají zákazníci přidat aplikace stránky do zóny důvěryhodných serverů.<br>* Mají zákazníci spustit aplikaci v aplikaci Internet Explorer. |
+| **Aplikace s částečnou důvěryhodností** | Z bezpečnostních důvodů aplikace založené na systému Windows, <xref:System.Windows.Controls.WebBrowser> které <xref:System.Windows.Controls.Frame> běží v částečném <xref:System.Security.SecurityException> vztahu důvěryhodnosti a obsahují ovládací prvek nebo ovládací prvek, který obsahuje HTML vyvolá při vytvoření ovládacího prvku.<br><br>Aplikace prohlížeče vyvolá výjimku a zobrazí zprávu, pokud jsou splněny všechny následující podmínky:<br><br>* Aplikace běží ve Firefoxu.<br>* Aplikace je spuštěna v částečnédůvěře v zóně Internet z nedůvěryhodných webů.<br>* Aplikace obsahuje <xref:System.Windows.Controls.WebBrowser> ovládací <xref:System.Windows.Controls.Frame> prvek nebo ovládací prvek, který obsahuje HTML.<br><br>Aplikace, které běží z důvěryhodných serverů nebo ze zóny intranetu, nebudou ovlivněny. | V aplikacích prohlížeče můžete tuto změnu usnadnit provedením jedné z následujících akcí:<br><br>* Spusťte aplikaci prohlížeče v plné důvěře.<br>* Mají zákazníci přidat aplikace stránky do zóny důvěryhodných serverů.<br>* Mají zákazníci spustit aplikaci v aplikaci Internet Explorer. |
 | **Slovníky prostředků** | Chcete-li zlepšit slovníky prostředků na úrovni motivu a zabránit jejich změně, zmrazivatelné prostředky, které jsou definovány ve slovníku prostředků a sloučeny do slovníku na úrovni motivu, jsou nyní vždy označeny jako zmrazené a jsou neměnné. Toto je očekávané chování pro freezable prostředky. | Aplikace, které upravují prostředek, který je definován ve sloučeném slovníku na úrovni motivu, by měly prostředek klonovat a upravovat klonohovou kopii. Alternativně prostředek může být `x:Shared="false"` označen <xref:System.Windows.ResourceDictionary> tak, aby vytvoří novou kopii při každém dotazování prostředku. |
 | **Windows 7** | Chcete-li, aby aplikace WPF fungovaly lépe v systému Windows 7, byla provedena následující vylepšení, která opravují chování okna:<br><br>* Dock a gesta státy nyní fungují podle očekávání na základě interakcí s uživatelem.<br>* Příkazy na hlavním panelu **Kaskádová okna, Zobrazit skládaná okna**a **Zobrazit okna vedle sebe** mají nyní správné chování a aktualizují příslušné vlastnosti.<br>* `Top`Vlastnosti `Width`, `Height` `Left`a pro maximalizované nebo minimalizované okno nyní obsahují správné umístění obnovení okna namísto jiných hodnot v závislosti na monitoru. | Žádné. |
 | **Styl a průhlednost systému Windows** | Je <xref:System.InvalidOperationException> vyvolána, pokud se <xref:System.Windows.Window.WindowStyle> pokusíte nastavit <xref:System.Windows.WindowStyle> <xref:System.Windows.Window.AllowsTransparency> na `true` <xref:System.Windows.WindowState> hodnotu jinou než kdy je a je <xref:System.Windows.WindowState>. | Pokud je nutné <xref:System.Windows.Window.WindowStyle> <xref:System.Windows.Window.AllowsTransparency> změnit `true`when is , můžete `SetWindowLongPtr` volat funkci Win32. |
-| **Prohlížeč souborů ve formátu XPS** | WPF neobsahuje sadu Microsoft XML Paper Specification Essentials Pack (XPSEP). XPSEP je součástí systému Windows 7 a Windows Vista.<br><br>V počítači se systémem Windows XP bez nainstalovaného rozhraní .NET Framework 3.5 SP1 <xref:System.Windows.Controls.PrintDialog> bude tisk pomocí rozhraní WPF API jiné než v počítači spoléhat na rozhraní WINSPOOL. Některé možnosti tiskárny nebudou hlášeny a některá nastavení tiskárny nebudou během tisku použita. | V případě potřeby nainstalujte [sadu Microsoft XML Paper Specification Essentials Pack](https://www.microsoft.com/en-us/download/details.aspx?id=11816). |
+| **Prohlížeč souborů ve formátu XPS** | WPF neobsahuje sadu Microsoft XML Paper Specification Essentials Pack (XPSEP). XPSEP je součástí systému Windows 7 a Windows Vista.<br><br>V počítači se systémem Windows XP bez nainstalovaného rozhraní .NET Framework 3.5 SP1 bude tisk pomocí rozhraní WPF API jiných než těch, které jsou v počítači, <xref:System.Windows.Controls.PrintDialog> spoléhat na rozhraní WINSPOOL. Některé možnosti tiskárny nebudou hlášeny a některá nastavení tiskárny nebudou během tisku použita. | V případě potřeby nainstalujte [sadu Microsoft XML Paper Specification Essentials Pack](https://www.microsoft.com/en-us/download/details.aspx?id=11816). |
 
 ### <a name="controls"></a>Ovládací prvky
 
-Jmenné <xref:System.Windows>prostory: , <xref:System.Windows.Controls>, <xref:System.Windows.Data>, <xref:System.Windows.Input>; sestavení: PresentationFramework (in PresentationFramework.dll), PresentationCore (in PresentationCore.dll), WindowsBase (v souboru WindowsBase.dll)
+Jmenné <xref:System.Windows>prostory: , <xref:System.Windows.Controls>, <xref:System.Windows.Data>,<xref:System.Windows.Input>
+
+Sestavení: PresentationFramework (v presentationframework.dll), PresentationCore (v PresentationCore.dll), WindowsBase (v souboru WindowsBase.dll)
 
 | Funkce | Rozdíly od 3,5 SP1 | Doporučené změny |
 | ------- | ------------------------ | ------------------- |
@@ -216,12 +240,14 @@ Jmenné <xref:System.Windows>prostory: , <xref:System.Windows.Controls>, <xref:S
 | **Nabídky** | Chcete-li povolit text ClearType v rozbalovacích <xref:System.Windows.Controls.ControlTemplate> líacích <xref:System.Windows.Controls.MenuItem> nabídek, byly provedeny změny třídy a ovládacího prvku a dalších ovládacích prvků. | Aplikace by neměly spoléhat na vizuální strukturu šablon ovládacích prvku. Součástí veřejné zakázky <xref:System.Windows.Controls.ControlTemplate> jsou pouze uvedené části. Pokud aplikace musí najít určitý <xref:System.Windows.Controls.ControlTemplate>objekt v , vyhledejte vizuální strom pro určitý typ namísto spoléhání se na pevné umístění objektu ve stromu. |
 | **Navigaci** | Pokud <xref:System.Windows.Controls.Frame> přímo přejde do umístění, <xref:System.Windows.Navigation.NavigatingCancelEventArgs.IsNavigationInitiator> `true` vlastnost je po počáteční navigaci. Tato změna zabraňuje další události jsou vyvolány během spuštění scénáře. | Žádné. |
 | **Automaticky otevíraná okna** | Delegát <xref:System.Windows.Controls.Primitives.CustomPopupPlacementCallback> může být nyní volána vícekrát během průchodu rozložení namísto pouze jednou. | Pokud <xref:System.Windows.Controls.Primitives.CustomPopupPlacementCallback> delegát vypočítá pozici na <xref:System.Windows.Controls.Primitives.Popup> základě své předchozí pozice, přepočítejte pozici `popupSize`pouze `targetSize`v `offset` případě, že se změní hodnoty , nebo parametry. |
-| **Hodnoty vlastností** | Metoda <xref:System.Windows.DependencyObject.SetCurrentValue%2A> nyní umožňuje nastavit vlastnost na efektivní hodnotu, i když nadále respektuje všechny vazby, styl nebo aktivační událost, která ovlivňuje vlastnost. | Autoři ovládacího <xref:System.Windows.DependencyObject.SetCurrentValue%2A> prvku by měli použít vždy, když se hodnota vlastnosti změní jako vedlejší účinek některé jiné akce, včetně manipulace s uživatelem. |
+| **Hodnoty vlastností** | Metoda <xref:System.Windows.DependencyObject.SetCurrentValue%2A> nyní umožňuje nastavit vlastnost na efektivní hodnotu, i když nadále respektovat všechny vazby, styl nebo aktivační událost, která ovlivňuje vlastnost. | Autoři ovládacího <xref:System.Windows.DependencyObject.SetCurrentValue%2A> prvku by měli použít vždy, když se hodnota vlastnosti změní jako vedlejší účinek některé jiné akce, včetně manipulace s uživatelem. |
 | **Textová** | Z hlediska zabezpečení <xref:System.Windows.Forms.TextBoxBase.Copy%2A> a <xref:System.Windows.Forms.TextBoxBase.Cut%2A> metody tiše nezdaří, pokud jsou volány v částečném vztahu důvěryhodnosti.<br><br>Kromě toho programové provádění <xref:System.Windows.Input.ApplicationCommands.Copy> <xref:System.Windows.Input.ApplicationCommands.Cut> nebo vlastnost na ovládací <xref:System.Windows.Controls.Primitives.TextBoxBase> prvek, který dědí z bude blokován v částečném vztahu důvěryhodnosti. Příkazy kopírování a vyjmutí iniciované uživatelem, například klepnutí na tlačítko, jehož <xref:System.Windows.Controls.Primitives.ButtonBase.Command> vlastnost je vázána na jeden z těchto příkazů, však budou fungovat. Standardní kopírování a vyjmutí klávesových zkratek a kontextové nabídky bude stále fungovat jako dříve v částečnédůvěře. | Spojte <xref:System.Windows.Input.ApplicationCommands.Copy> <xref:System.Windows.Input.ApplicationCommands.Cut> příkaz nebo s akcí iniciotou uživatelem, například klepnutí na tlačítko. |
 
 ### <a name="graphics"></a>Grafika
 
-Jmenné <xref:System.Windows>prostory: <xref:System.Windows.Input> <xref:System.Windows.Media.Effects>, <xref:System.Windows.Controls>, <xref:System.Windows.Data>, ; sestavení: PresentationFramework (in PresentationFramework.dll), PresentationCore (in PresentationCore.dll), WindowsBase (v souboru WindowsBase.dll)
+Jmenné <xref:System.Windows>prostory: , <xref:System.Windows.Controls>, <xref:System.Windows.Data>, <xref:System.Windows.Input>,<xref:System.Windows.Media.Effects>
+
+Sestavení: PresentationFramework (v presentationframework.dll), PresentationCore (v PresentationCore.dll), WindowsBase (v souboru WindowsBase.dll)
 
 | Funkce | Rozdíly od 3,5 SP1 | Doporučené změny |
 | ------- | ------------------------ | ------------------- |
@@ -231,7 +257,9 @@ Jmenné <xref:System.Windows>prostory: <xref:System.Windows.Input> <xref:System.
 
 ### <a name="input"></a>Vstup
 
-Jmenné <xref:System.Windows>prostory: , <xref:System.Windows.Controls>, <xref:System.Windows.Data>, <xref:System.Windows.Input>; sestavení: PresentationFramework (in PresentationFramework.dll), PresentationCore (in PresentationCore.dll), WindowsBase (v souboru WindowsBase.dll)
+Jmenné <xref:System.Windows>prostory: , <xref:System.Windows.Controls>, <xref:System.Windows.Data>,<xref:System.Windows.Input>
+
+Sestavení: PresentationFramework (v presentationframework.dll), PresentationCore (v PresentationCore.dll), WindowsBase (v souboru WindowsBase.dll)
 
 | Funkce | Rozdíly od 3,5 SP1 | Doporučené změny |
 | ------- | ------------------------ | ------------------- |
@@ -242,7 +270,9 @@ Jmenné <xref:System.Windows>prostory: , <xref:System.Windows.Controls>, <xref:S
 
 ### <a name="ui-automation"></a>automatizace uživatelského rozhraní
 
-Obor <xref:System.Windows>názvů: <xref:System.Windows.Automation.Peers> <xref:System.Windows.Automation.Provider>, <xref:System.Windows.Controls> <xref:System.Windows.Data>, <xref:System.Windows.Input>, , ; sestavení: PresentationFramework (v PresentationFramework.dll), PresentationCore (v PresentationCore.dll), UIAutomationProvider (v UIAutomationProvider.dll), WindowsBase (v souboru WindowsBase.dll)
+<xref:System.Windows>Obor názvů: <xref:System.Windows.Automation.Peers> <xref:System.Windows.Automation.Provider>, <xref:System.Windows.Controls> <xref:System.Windows.Data>, , , , ,<xref:System.Windows.Input>
+
+Sestavení: PresentationFramework (v PresentationFramework.dll), PresentationCore (v PresentationCore.dll), UIAutomationProvider (v UIAutomationProvider.dll), WindowsBase (v souboru WindowsBase.dll)
 
 | Funkce | Rozdíly od 3,5 SP1 | Doporučené změny |
 | ------- | ------------------------ | ------------------- |
@@ -255,7 +285,9 @@ Obor <xref:System.Windows>názvů: <xref:System.Windows.Automation.Peers> <xref:
 
 ### <a name="xaml"></a>XAML
 
-Jmenné <xref:System.Windows>prostory: <xref:System.Windows.Input> <xref:System.Windows.Markup>, <xref:System.Windows.Controls>, <xref:System.Windows.Data>, ; sestavení: PresentationFramework (in PresentationFramework.dll), PresentationCore (in PresentationCore.dll), WindowsBase (v souboru WindowsBase.dll)
+Jmenné <xref:System.Windows>prostory: , <xref:System.Windows.Controls>, <xref:System.Windows.Data>, <xref:System.Windows.Input>,<xref:System.Windows.Markup>
+
+Sestavení: PresentationFramework (v presentationframework.dll), PresentationCore (v PresentationCore.dll), WindowsBase (v souboru WindowsBase.dll)
 
 | Funkce | Rozdíly od 3,5 SP1 | Doporučené změny |
 | ------- | ------------------------ | ------------------- |
@@ -268,21 +300,25 @@ Jmenné <xref:System.Windows>prostory: <xref:System.Windows.Input> <xref:System.
 
 ### <a name="schema-and-transforms"></a>Schéma a transformace
 
-Jmenné <xref:System.Xml.Linq>prostory: ; <xref:System.Xml.Schema>, <xref:System.Xml.XPath>; sestavení: System.Xml (v souboru System.Xml.dll), System.Xml.Linq (v souboru System.Xml.Linq.dll)
+Jmenné <xref:System.Xml.Linq>prostory: ; <xref:System.Xml.Schema>,<xref:System.Xml.XPath>
+
+Sestavení: System.Xml (v souboru System.Xml.dll), System.Xml.Linq (v souboru System.Xml.Linq.dll)
 
 | Funkce | Rozdíly od 3,5 SP1 |
 | ------- | ------------------------ |
 | **Schémata chameleonů** | Chcete-li zabránit poškození dat, chameleon schémata jsou nyní klonovány správně, pokud jsou součástí více schémat.<br><br>Schémata chameleonjsou schémata, která nemají cílový obor názvů, a pokud jsou zahrnuty v jiném xsd, převezmou cílový obor názvů importujícího schématu. Často se používají k zahrnutí běžných typů do schématu. |
 | **ID funkce** | [Funkce ID](/sql/xquery/functions-on-sequences-id) XSLT nyní vrací správnou hodnotu <xref:System.Xml.XmlReader> namísto null, když je objekt předán XLST.<br><br>Pokud uživatel vytvořil <xref:System.Xml.XmlReader> objekt z linq na třídu XML pomocí <xref:System.Xml.Linq.XNode.CreateReader%2A> metody a tento <xref:System.Xml.XmlReader> objekt byl předán `id` XSLT, všechny instance funkce v XSLT dříve vrátil null. Toto není povolená vrácená hodnota `id` pro funkci. |
 | **Atribut Obor názvů** | Chcete-li zabránit <xref:System.Xml.XPath.XPathNavigator> poškození dat, objekt nyní `x:xmlns` vrátí místní název atributu správně. |
-| **Deklarace oboru názvů** | Objekt <xref:System.Xml.XmlReader> v podstromu již nevytváří duplicitní deklarace oboru názvů v rámci jednoho elementu XML. |
+| **Deklarace oboru názvů** | Objekt <xref:System.Xml.XmlReader> v podstromu již nevytváří duplicitní deklarace oboru názvů v rámci jednoho prvku XML. |
 | **Ověření schématu** | Chcete-li zabránit chybné ověření schématu, <xref:System.Xml.Schema.XmlSchemaSet> třída umožňuje schémata XSD správně a konzistentně. Tato schémata mohou zahrnovat další schémata; `A.xsd` může například `B.xsd`obsahovat , `C.xsd`které mohou zahrnovat . Kompilace některého z těchto způsobí, že tento graf závislostí, které mají být provázány. |
 | **Funkce skriptu** | [Funkce k dispozici funkce](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ms256124(v=vs.100)) již `false` nesprávně vrátí, pokud je funkce skutečně k dispozici. |
 | **Identifikátory URI** | Metoda <xref:System.Xml.Linq.XElement.Load%2A> nyní vrátí správné BaseURI v linq dotazy. |
 
 ### <a name="validation"></a>Ověřování
 
-Jmenné <xref:System.Xml.Linq>prostory: ; <xref:System.Xml.Schema>, <xref:System.Xml.XPath>; sestavení: System.Xml (v souboru System.Xml.dll), System.Xml.Linq (v souboru System.Xml.Linq.dll)
+Jmenné <xref:System.Xml.Linq>prostory: ; <xref:System.Xml.Schema>,<xref:System.Xml.XPath>
+
+Sestavení: System.Xml (v souboru System.Xml.dll), System.Xml.Linq (v souboru System.Xml.Linq.dll)
 
 | Funkce | Rozdíly od 3,5 SP1 |
 | ------- | ------------------------ |
@@ -291,7 +327,9 @@ Jmenné <xref:System.Xml.Linq>prostory: ; <xref:System.Xml.Schema>, <xref:System
 
 ### <a name="writing"></a>Psaní
 
-Jmenné <xref:System.Xml.Linq>prostory: ; <xref:System.Xml.Schema>, <xref:System.Xml.XPath>; sestavení: System.Xml (v souboru System.Xml.dll), System.Xml.Linq (v souboru System.Xml.Linq.dll)
+Jmenné <xref:System.Xml.Linq>prostory: ; <xref:System.Xml.Schema>,<xref:System.Xml.XPath>
+
+Sestavení: System.Xml (v souboru System.Xml.dll), System.Xml.Linq (v souboru System.Xml.Linq.dll)
 
 | Funkce | Rozdíly od 3,5 SP1 |
 | ------- | ------------------------ |
@@ -301,7 +339,7 @@ Jmenné <xref:System.Xml.Linq>prostory: ; <xref:System.Xml.Schema>, <xref:System
 ## <a name="see-also"></a>Viz také
 
 - [Nové typy a členy v rozhraní .NET Framework 4](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ff641764%28v=vs.100%29)
-- [Průvodce migrací k rozhraní .NET Framework 4](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ff657133%28v=vs.100%29)
+- [Průvodce migrací na rozhraní .NET Framework 4](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ff657133%28v=vs.100%29)
 - [Co je nového v rozhraní .NET Framework 4](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ms171868%28v=vs.100%29)
 - [Kompatibilita verzí v rozhraní .NET Framework](version-compatibility.md)
 - [Migrace řešení Sady Office do rozhraní .NET Framework 4](/visualstudio/vsto/migrating-office-solutions-to-the-dotnet-framework-4-or-later)

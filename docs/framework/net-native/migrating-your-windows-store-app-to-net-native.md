@@ -2,12 +2,12 @@
 title: Migrace aplikace pro Windows Store do .NET Native
 ms.date: 03/30/2017
 ms.assetid: 4153aa18-6f56-4a0a-865b-d3da743a1d05
-ms.openlocfilehash: 36f9ac4647b349ff379869f3415a5fb9e55228e3
-ms.sourcegitcommit: 7980a91f90ae5eca859db7e6bfa03e23e76a1a50
+ms.openlocfilehash: 987669fc51eeaf7e3bdef3e91a2f1ce23164a055
+ms.sourcegitcommit: c91110ef6ee3fedb591f3d628dc17739c4a7071e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "81241942"
+ms.lasthandoff: 04/15/2020
+ms.locfileid: "81389705"
 ---
 # <a name="migrate-your-windows-store-app-to-net-native"></a>Migrace aplikace pro Windows Store do nativní ho storu .NET
 
@@ -85,7 +85,7 @@ V nativním rozhraní .NET:
 
 - <xref:System.Reflection.RuntimeReflectionExtensions.GetRuntimeProperties%2A?displayProperty=nameWithType>a <xref:System.Reflection.RuntimeReflectionExtensions.GetRuntimeEvents%2A?displayProperty=nameWithType> zahrnout skryté členy do základních tříd a proto mohou být přepsány bez explicitních přepsání. To platí také pro jiné metody [RuntimeReflectionExtensions.GetRuntime*.](xref:System.Reflection.RuntimeReflectionExtensions)
 
-- <xref:System.Type.MakeArrayType%2A?displayProperty=nameWithType>a <xref:System.Type.MakeByRefType%2A?displayProperty=nameWithType> neselhat při pokusu o vytvoření určité kombinace (například pole byrefs).
+- <xref:System.Type.MakeArrayType%2A?displayProperty=nameWithType>a <xref:System.Type.MakeByRefType%2A?displayProperty=nameWithType> neselhat při pokusu o vytvoření určité kombinace `byref` (například pole objektů).
 
 - Reflexe nelze použít k vyvolání členů, které mají parametry ukazatele.
 
@@ -117,7 +117,7 @@ V následujících částech jsou uvedeny nepodporované scénáře a api pro ob
 
 - Pokud přepíšete <xref:System.ValueType.Equals%2A?displayProperty=nameWithType> <xref:System.ValueType.GetHashCode%2A?displayProperty=nameWithType> metody a pro typ hodnoty, nevolejte implementace základní třídy. V rozhraní .NET pro aplikace pro Windows Store tyto metody spoléhají na reflexi. V době kompilace .NET Native generuje implementaci, která nespoléhá na odraz za běhu. To znamená, že pokud tyto dvě metody nepřepíšete, budou fungovat podle očekávání, protože nativní rozhraní .NET generuje implementaci v době kompilace. Však přepsání těchto metod, ale volání implementace základní třídy výsledky výjimky.
 
-- Typy hodnot větší než jeden megabajt nejsou podporovány.
+- Typy hodnot větší než 1 MB nejsou podporovány.
 
 - Typy hodnot nemůže mít konstruktor bez parametrů v .NET Native. (C# a Visual Basic zakázat konstruktory bez parametrů na typy hodnot. Ty však mohou být vytvořeny v IL.)
 
@@ -225,7 +225,7 @@ V nativním rozhraní .NET:
 - <xref:System.Runtime.InteropServices.UnmanagedType.SafeArray?displayProperty=nameWithType>
 - <xref:System.Runtime.InteropServices.VarEnum?displayProperty=nameWithType>
 
- <xref:System.Runtime.InteropServices.UnmanagedType.Struct?displayProperty=nameWithType>je podporována, ale vyvolá výjimku v některých scénářích, například při použití s [variantami IDispatch](https://docs.microsoft.com/previous-versions/windows/desktop/api/oaidl/nn-oaidl-idispatch) nebo byref.
+ <xref:System.Runtime.InteropServices.UnmanagedType.Struct?displayProperty=nameWithType>je podporována, ale vyvolá výjimku v některých scénářích, například při použití s [IDispatch](https://docs.microsoft.com/previous-versions/windows/desktop/api/oaidl/nn-oaidl-idispatch) nebo `byref` varianty.
 
  Mezi zastaralá api pro podporu [IDispatch](https://docs.microsoft.com/previous-versions/windows/desktop/api/oaidl/nn-oaidl-idispatch) patří:
 
@@ -324,7 +324,7 @@ Nativní rozhraní .NET však nepodporuje následující:
 
 - Implementace rozhraní <xref:System.Runtime.InteropServices.ICustomQueryInterface?displayProperty=nameWithType> spravovaného typu
 
-- Implementace rozhraní [IDispatch](https://docs.microsoft.com/previous-versions/windows/desktop/api/oaidl/nn-oaidl-idispatch) na spravovaném <xref:System.Runtime.InteropServices.ComDefaultInterfaceAttribute?displayProperty=nameWithType> typu prostřednictvím atributu. Všimněte si však, že nelze `IDispatch`volat objekty COM prostřednictvím a spravovaný objekt nelze implementovat `IDispatch`.
+- Implementace rozhraní [IDispatch](https://docs.microsoft.com/previous-versions/windows/desktop/api/oaidl/nn-oaidl-idispatch) na spravovaném <xref:System.Runtime.InteropServices.ComDefaultInterfaceAttribute?displayProperty=nameWithType> typu prostřednictvím atributu. Nelze však volat objekty `IDispatch`COM prostřednictvím aplikace a `IDispatch`spravovaný objekt nelze implementovat .
 
 Použití reflexe k vyvolání metody vyvolání platformy není podporováno. Toto omezení můžete obejít zabalením volání metody v jiné metodě a pomocí reflexe místo toho volat obálku.
 
@@ -332,7 +332,7 @@ Použití reflexe k vyvolání metody vyvolání platformy není podporováno. T
 
 ### <a name="other-differences-from-net-apis-for-windows-store-apps"></a>Další rozdíly oproti rozhraním API .NET pro aplikace pro Windows Store
 
-V této části jsou uvedeny zbývající rozhraní API, která nejsou podporována v nativním rozhraní .NET. Největší sada nepodporovaných api jsou Windows Communication Foundation (WCF) API.
+V této části jsou uvedeny zbývající rozhraní API, která nejsou podporována v nativním rozhraní .NET. Největší sada nepodporovaných api je Windows Communication Foundation (WCF) API.
 
 **DataAnnotations (System.ComponentModel.DataAnnotations)**
 

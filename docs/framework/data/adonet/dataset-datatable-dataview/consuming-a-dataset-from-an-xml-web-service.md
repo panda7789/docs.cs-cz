@@ -5,14 +5,15 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 9edd6b71-0fa5-4649-ae1d-ac1c12541019
-ms.openlocfilehash: d835ffe7a10492ee731de8e5301e6d34545f9c32
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: d7328949e3eb4822b1a645bb5f0c1866f01ecb0a
+ms.sourcegitcommit: c91110ef6ee3fedb591f3d628dc17739c4a7071e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79151387"
+ms.lasthandoff: 04/15/2020
+ms.locfileid: "81389748"
 ---
-# <a name="consuming-a-dataset-from-an-xml-web-service"></a>Spotřebování datové sady z webové služby XML
+# <a name="consume-a-dataset-from-an-xml-web-service"></a>Využití datové sady z webové služby XML
+
 Byl <xref:System.Data.DataSet> navržen s odpojeným designem, částečně pro usnadnění pohodlného přenosu dat přes internet. **DataSet** je "serializovatelný" v tom, že může být zadán jako vstup nebo výstup z webových služeb XML bez dalšího kódování potřebného k vysílání datového souboru **z** webové služby XML do klienta a zpět. **DataSet** je implicitně převedena na datový proud XML pomocí formátu DiffGram, odeslána po síti a pak rekonstruována z datového proudu XML jako **dataset** na přijímacím konci. To vám dává velmi jednoduchou a flexibilní metodu pro přenos a vrácení relačních dat pomocí webových služeb XML. Další informace o formátu DiffGram naleznete v [tématu DiffGrams](diffgrams.md).  
   
  Následující příklad ukazuje, jak vytvořit webovou službu XML a klienta, kteří používají **DataSet** k přenosu relačních dat (včetně změněných dat) a vyřešit všechny aktualizace zpět do původního zdroje dat.  
@@ -20,7 +21,7 @@ Byl <xref:System.Data.DataSet> navržen s odpojeným designem, částečně pro 
 > [!NOTE]
 > Při vytváření webové služby XML doporučujeme vždy zvážit důsledky zabezpečení. Informace o zabezpečení webové služby XML naleznete v [tématu Zabezpečení webových služeb XML vytvořených pomocí ASP.NET](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/w67h0dw7(v=vs.100)).  
   
-### <a name="to-create-an-xml-web-service-that-returns-and-consumes-a-dataset"></a>Vytvoření webové služby XML, která vrací a spotřebovává datovou sadu  
+## <a name="create-an-xml-web-service"></a>Vytvoření webové služby XML
   
 1. Vytvořte webovou službu XML.  
   
@@ -189,9 +190,11 @@ Byl <xref:System.Data.DataSet> navržen s odpojeným designem, částečně pro 
   
 3. Vytvořte klienta webové služby XML.  
   
-     Chcete-li, aby aplikace Visual Studio vygenerovala třídu proxy webové služby, jednoduše vytvořte projekt klienta a v okně Průzkumník řešení klepněte pravým tlačítkem myši na projekt, klepněte na tlačítko **Přidat webový odkaz**a vyberte webovou službu ze seznamu dostupných webových služeb (to může vyžadovat zadání adresy koncového bodu webové služby, pokud webová služba není k dispozici v aktuálním řešení nebo v aktuálním počítači.) Pokud vytvoříte proxy služby XML sami (jak je popsáno v předchozím kroku), můžete jej importovat do klientského kódu a využívat metody webové služby XML. Následující ukázkový kód importuje knihovnu proxy, volá **GetCustomers** získat seznam zákazníků, přidá nového zákazníka a vrátí **DataSet** s aktualizacemi **UpdateCustomers**.  
+     Pokud chcete, aby visual studio generovat proxy webové služby třídy pro vás, jednoduše vytvořit projekt klienta a v okně Průzkumník řešení, klepněte pravým tlačítkem myši na projekt a potom vyberte **přidat** > **odkaz na službu**. V dialogovém okně **Přidat odkaz na službu** vyberte **Upřesnit**a pak vyberte **Přidat webový odkaz**. Vyberte webovou službu ze seznamu dostupných webových služeb (to může vyžadovat zadání adresy koncového bodu webové služby, pokud webová služba není k dispozici v aktuálním řešení nebo v aktuálním počítači). Pokud vytvoříte proxy služby XML sami (jak je popsáno v předchozím kroku), můžete jej importovat do klientského kódu a využívat metody webové služby XML.
+
+     Následující ukázkový kód importuje knihovnu proxy, volá **GetCustomers** získat seznam zákazníků, přidá nového zákazníka a vrátí **DataSet** s aktualizacemi **UpdateCustomers**.  
   
-     Všimněte si, že příklad předá **DataSet** vrácené **DataSet.GetChanges** **updateCustomers,** protože pouze upravené řádky musí být **předány UpdateCustomers**. **UpdateCustomers** vrátí vyřešenou **datovou sadu**, kterou pak můžete **sloučit** do existující **sady DataSet** a začlenit vyřešené změny a všechny informace o chybě řádku z aktualizace. Následující kód předpokládá, že jste použili Visual Studio k vytvoření webového odkazu a že jste přejmenovali webový odkaz na DsSample v dialogovém okně **Přidat webový odkaz.**  
+     Příklad předá **DataSet** vrácené **DataSet.GetChanges** **updateCustomers** protože pouze upravené řádky musí být **předány UpdateCustomers**. **UpdateCustomers** vrátí vyřešenou **datovou sadu**, kterou pak můžete **sloučit** do existující **sady DataSet** a začlenit vyřešené změny a všechny informace o chybě řádku z aktualizace. Následující kód předpokládá, že jste použili Visual Studio k vytvoření webového odkazu a že jste přejmenovali webový odkaz na DsSample v dialogovém okně **Přidat webový odkaz.**  
   
     ```vb  
     Imports System  

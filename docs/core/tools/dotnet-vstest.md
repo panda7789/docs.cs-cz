@@ -2,12 +2,12 @@
 title: dotnet vstest, příkaz
 description: Dotnet vstest příkaz vytvoří projekt a všechny jeho závislosti.
 ms.date: 02/27/2020
-ms.openlocfilehash: 88e5b6a8966d78d0746f9ea5ccbccab142a2e0f6
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 4941a6d08d45953039eb406a30f0ff984128ba1c
+ms.sourcegitcommit: c91110ef6ee3fedb591f3d628dc17739c4a7071e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "78156930"
+ms.lasthandoff: 04/15/2020
+ms.locfileid: "81389634"
 ---
 # <a name="dotnet-vstest"></a>dotnet vstest
 
@@ -20,11 +20,11 @@ ms.locfileid: "78156930"
 ## <a name="synopsis"></a>Synopse
 
 ```dotnetcli
-dotnet vstest [<TEST_FILE_NAMES>] [--Settings] [--Tests]
-    [--TestAdapterPath] [--Platform] [--Framework] [--Parallel]
-    [--TestCaseFilter] [--logger] [-lt|--ListTests]
-    [--ParentProcessId] [--Port] [--Diag] [--Blame]
-    [--InIsolation] [[--] <args>...]] [-?|--Help]
+dotnet vstest [<TEST_FILE_NAMES>] [--Blame] [--Diag]
+    [--Framework] [--InIsolation] [-lt|--ListTests] [--logger]
+    [--Parallel] [--ParentProcessId] [--Platform] [--Port]
+    [--ResultsDirectory] [--Settings] [--TestAdapterPath]
+    [--TestCaseFilter] [--Tests] [[--] <args>...]] [-?|--Help]
 ```
 
 ## <a name="description"></a>Popis
@@ -39,37 +39,25 @@ Příkaz `dotnet-vstest` spustí `VSTest.Console` aplikaci příkazového řádk
 
 ## <a name="options"></a>Možnosti
 
-- **`--Settings <Settings File>`**
+- **`--Blame`**
 
-  Nastavení, které se má použít při spuštění testů.
+  Spustí testy v režimu obviňování. Tato možnost je užitečná při izolaci problémových testů, které způsobují selhání testovacího hostitele. Vytvoří výstupní soubor v aktuálním adresáři jako *Sequence.xml,* který zachycuje pořadí spuštění testů před selháním.
 
-- **`--Tests <Test Names>`**
+- **`--Diag <Path to log file>`**
 
-  Spusťte testy s názvy, které odpovídají zadaným hodnotám. Oddělte více hodnot čárkou.
-
-- **`--TestAdapterPath`**
-
-  Při testovacím běhu použijte vlastní testovací adaptéry z dané cesty (pokud existuje).
-
-- **`--Platform <Platform type>`**
-
-  Architektura cílové platformy používaná pro spuštění testu. Platné hodnoty `x86` `x64`jsou `ARM`, a .
+  Povolí podrobné protokoly pro testovací platformu. Protokoly jsou zapsány do dodaný soubor.
 
 - **`--Framework <Framework Version>`**
 
   Cílová verze rozhraní .NET Framework použitá pro spuštění testu. Příklady platných `.NETFramework,Version=v4.6` hodnot `.NETCoreApp,Version=v1.0`jsou nebo . Další podporované `Framework40`hodnoty `Framework45` `FrameworkCore10`jsou `FrameworkUap10`, , a .
 
-- **`--Parallel`**
+- **`--InIsolation`**
 
-  Spouštět testy paralelně. Ve výchozím nastavení jsou k dispozici všechna dostupná jádra v počítači. Zadejte explicitní počet jader `MaxCpuCount` nastavením `RunConfiguration` vlastnosti pod uzlevě v souboru *runsettings.*
+  Spustí testy v izolovaném procesu. Díky *vstest.console.exe* proces méně pravděpodobné, že bude zastaven a na chybu v testech, ale testy mohou běžet pomaleji.
 
-- **`--TestCaseFilter <Expression>`**
+- **`-lt|--ListTests <File Name>`**
 
-  Spusťte testy, které odpovídají danému výrazu. `<Expression>`je ve `<property>Operator<value>[|&<Expression>]`formátu , kde `=`Operator `!=`je `~`jedním z , , nebo . Operátor `~` má sémantiku "obsahuje" a `DisplayName`je použitelný pro vlastnosti řetězce, jako je . Závorky `()` se používají k seskupení podvýrazů.
-
-- **`-?|--Help`**
-
-  Vytiskne krátkou nápovědu pro příkaz.
+  Zobrazí seznam všech zjištěných testů z daného testovacího kontejneru.
 
 - **`--logger <Logger Uri/FriendlyName>`**
 
@@ -93,29 +81,45 @@ Příkaz `dotnet-vstest` spustí `VSTest.Console` aplikaci příkazového řádk
     /logger:trx [;LogFileName=<Defaults to unique file name>]
     ```
 
-- **`-lt|--ListTests <File Name>`**
+- **`--Parallel`**
 
-  Zobrazí seznam všech zjištěných testů z daného testovacího kontejneru.
+  Spouštět testy paralelně. Ve výchozím nastavení jsou k dispozici všechna dostupná jádra v počítači. Zadejte explicitní počet jader `MaxCpuCount` nastavením `RunConfiguration` vlastnosti pod uzlevě v souboru *runsettings.*
 
 - **`--ParentProcessId <ParentProcessId>`**
 
   ID procesu nadřazeného procesu odpovědného za spuštění aktuálního procesu.
 
+- **`--Platform <Platform type>`**
+
+  Architektura cílové platformy používaná pro spuštění testu. Platné hodnoty `x86` `x64`jsou `ARM`, a .
+
 - **`--Port <Port>`**
 
   Určuje port pro připojení soketu a příjem zpráv o událostech.
 
-- **`--Diag <Path to log file>`**
+- **`--ResultsDirectory:<PathToResulsDirectory>`**
 
-  Povolí podrobné protokoly pro testovací platformu. Protokoly jsou zapsány do dodaný soubor.
+  Pokud neexistuje, bude adresář výsledků testu vytvořen v zadané cestě.
 
-- **`--Blame`**
+- **`--Settings <Settings File>`**
 
-  Spustí testy v režimu obviňování. Tato možnost je užitečná při izolaci problémových testů, které způsobují selhání testovacího hostitele. Vytvoří výstupní soubor v aktuálním adresáři jako *Sequence.xml,* který zachycuje pořadí spuštění testů před selháním.
+  Nastavení, které se má použít při spuštění testů.
 
-- **`--InIsolation`**
+- **`--TestAdapterPath`**
 
-  Spustí testy v izolovaném procesu. Díky *vstest.console.exe* proces méně pravděpodobné, že bude zastaven a na chybu v testech, ale testy mohou běžet pomaleji.
+  Při testovacím běhu použijte vlastní testovací adaptéry z dané cesty (pokud existuje).
+
+- **`--TestCaseFilter <Expression>`**
+
+  Spusťte testy, které odpovídají danému výrazu. `<Expression>`je ve `<property>Operator<value>[|&<Expression>]`formátu , kde `=`Operator `!=`je `~`jedním z , , nebo . Operátor `~` má sémantiku "obsahuje" a `DisplayName`je použitelný pro vlastnosti řetězce, jako je . Závorky `()` se používají k seskupení podvýrazů. Další informace naleznete v tématu [TestCase filtr](https://github.com/Microsoft/vstest-docs/blob/master/docs/filter.md).
+
+- **`--Tests <Test Names>`**
+
+  Spusťte testy s názvy, které odpovídají zadaným hodnotám. Oddělte více hodnot čárkou.
+
+- **`-?|--Help`**
+
+  Vytiskne krátkou nápovědu pro příkaz.
 
 - **`@<file>`**
 
@@ -156,3 +160,7 @@ Běh `TestMethod1` `TestMethod2` a testy:
 ```dotnetcli
 dotnet vstest /Tests:TestMethod1,TestMethod2
 ```
+
+## <a name="see-also"></a>Viz také
+
+- [VSTest.Console.exe – možnosti příkazového řádku](/visualstudio/test/vstest-console-options)

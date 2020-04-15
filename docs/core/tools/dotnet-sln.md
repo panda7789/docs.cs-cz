@@ -2,12 +2,12 @@
 title: dotnet sln, příkaz
 description: Příkaz dotnet-sln poskytuje vhodnou možnost přidání, odebrání a seznamu projektů v souboru řešení.
 ms.date: 02/14/2020
-ms.openlocfilehash: b2455c04a46b2a10b8142d8ddc2d8129f2154b27
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 615e25e30a63b6ca36d9898cfcde565053830572
+ms.sourcegitcommit: c91110ef6ee3fedb591f3d628dc17739c4a7071e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "77543479"
+ms.lasthandoff: 04/15/2020
+ms.locfileid: "81389640"
 ---
 # <a name="dotnet-sln"></a>dotnet sln
 
@@ -175,8 +175,20 @@ dotnet sln [<SOLUTION_FILE>] remove [-h|--help]
   dotnet sln todo.sln add **/*.csproj
   ```
 
+- Přidejte více projektů Jazyka C# do řešení pomocí globbing vzor (pouze Windows PowerShell):
+
+  ```dotnetcli
+  dotnet sln todo.sln add (ls **/*.csproj)
+  ```
+
 - Odebrání více projektů Jazyka C# z řešení pomocí globbing ového vzoru (pouze Unix/Linux):
 
   ```dotnetcli
   dotnet sln todo.sln remove **/*.csproj
+  ```
+
+- Odeberte více projektů jazyka C# z řešení pomocí globbing vzor (pouze windows powershellu):
+
+  ```dotnetcli
+  dotnet sln todo.sln remove (ls **/*.csproj)
   ```

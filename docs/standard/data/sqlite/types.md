@@ -1,63 +1,64 @@
 ---
 title: Typy dat
 ms.date: 12/13/2019
-description: Popisuje podporované typy dat a některá omezení, která jsou kolem nich.
-ms.openlocfilehash: ae70cb91a5a6d9cfed45a5a47dda25a70362871e
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+description: Popisuje podporované datové typy a některá omezení kolem nich.
+ms.openlocfilehash: a11ff382f80cd979506d6195c299c8234c3eb8ea
+ms.sourcegitcommit: c91110ef6ee3fedb591f3d628dc17739c4a7071e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75447179"
+ms.lasthandoff: 04/15/2020
+ms.locfileid: "81389045"
 ---
 # <a name="data-types"></a>Typy dat
 
-SQLite má pouze čtyři primitivní datové typy: INTEGER, REAL, TEXT a BLOB. Rozhraní API, která vracejí hodnoty databáze jako `object`, se vždy vrátí k jednomu z těchto čtyř typů. Další typy rozhraní .NET jsou podporovány společností Microsoft. data. sqlite, ale hodnoty jsou nakonec přiřazeny mezi tyto typy a jeden ze čtyř primitivních typů.
+SQLite má pouze čtyři primitivní datové typy: INTEGER, REAL, TEXT a BLOB. Api, které vracejí databázové hodnoty jako `object` vždy vrátí pouze jeden z těchto čtyř typů. Další typy .NET jsou podporovány Microsoft.Data.Sqlite, ale hodnoty jsou nakonec vykonaný mezi těmito typy a jeden ze čtyř primitivních typů.
 
 | .NET           | SQLite  | Poznámky                                                       |
 | -------------- | ------- | ------------------------------------------------------------- |
-| Boolean        | INTEGER | `0` Nebo `1`                                                    |
-| Byte           | INTEGER |                                                               |
-| Byte[]         | BLOB    |                                                               |
+| Logická hodnota        | CELÉ ČÍSLO | `0` nebo `1`                                                    |
+| Byte           | CELÉ ČÍSLO |                                                               |
+| Bajt[]         | Blob    |                                                               |
 | Char           | TEXT    | UTF-8                                                         |
-| Datum a čas       | TEXT    | RRRR-MM-DD HH: mm: ss. FFFFFFF                                   |
-| DateTimeOffset | TEXT    | RRRR-MM-DD HH: mm: ss. FFFFFFFzzz                                |
-| Desetinné číslo        | TEXT    | Formát `0.0###########################`. REAL by byl ztrátou. |
+| DateTime       | TEXT    | yyyy-MM-dd HH:mm:ss. FFFFFFF                                   |
+| DateTimeOffset | TEXT    | yyyy-MM-dd HH:mm:ss. FFFFFFFzzz                                |
+| Desetinné číslo        | TEXT    | `0.0###########################`Formát. REAL by byl ztrátový. |
 | Double         | REÁLNÉ    |                                                               |
-| identifikátor GUID           | TEXT    | 00000000-0000-0000-0000-000000000000                          |
-| Int16          | INTEGER |                                                               |
-| Int32          | INTEGER |                                                               |
-| Int64          | INTEGER |                                                               |
-| SByte          | INTEGER |                                                               |
-| Jednoduché         | REÁLNÉ    |                                                               |
-| String         | TEXT    | UTF-8                                                         |
-| TimeSpan       | TEXT    | d. hh: mm: ss. fffffff                                            |
-| UInt16         | INTEGER |                                                               |
-| UInt64         | INTEGER | Přetečení velkých hodnot                                         |
+| Identifikátor GUID           | TEXT    | 00000000-0000-0000-0000-000000000000                          |
+| Int16          | CELÉ ČÍSLO |                                                               |
+| Int32          | CELÉ ČÍSLO |                                                               |
+| Int64          | CELÉ ČÍSLO |                                                               |
+| SByte          | CELÉ ČÍSLO |                                                               |
+| Single         | REÁLNÉ    |                                                               |
+| Řetězec         | TEXT    | UTF-8                                                         |
+| TimeSpan       | TEXT    | d.hh:mm:ss.fffffff                                            |
+| UInt16         | CELÉ ČÍSLO |                                                               |
+| UInt32         | CELÉ ČÍSLO |                                                               |
+| UInt64         | CELÉ ČÍSLO | Přetečení velkých hodnot                                         |
 
 ## <a name="alternative-types"></a>Alternativní typy
 
-Některé typy rozhraní .NET lze číst z alternativních typů SQLite. Parametry lze také nakonfigurovat pro použití těchto alternativních typů. Další informace najdete v tématu [parametry](parameters.md#alternative-types).
+Některé typy .NET lze číst z alternativních typů SQLite. Parametry lze také nakonfigurovat pro použití těchto alternativních typů. Další informace naleznete v tématu [Parametry](parameters.md#alternative-types).
 
 | .NET           | SQLite  | Poznámky          |
 | -------------- | ------- | ---------------- |
-| Char           | INTEGER | UTF-16           |
-| Datum a čas       | REÁLNÉ    | Hodnota juliánského dne |
+| Char           | CELÉ ČÍSLO | UTF-16           |
+| DateTime       | REÁLNÉ    | Hodnota juliánského dne |
 | DateTimeOffset | REÁLNÉ    | Hodnota juliánského dne |
-| identifikátor GUID           | BLOB    |                  |
+| Identifikátor GUID           | Blob    |                  |
 | TimeSpan       | REÁLNÉ    | Ve dnech          |
 
-Například následující dotaz přečte hodnotu TimeSpan z REÁLNÉho sloupce v sadě výsledků dotazu.
+Například následující dotaz přečte hodnotu TimeSpan ze sloupce REAL v sadě výsledků.
 
 [!code-csharp[](../../../../samples/snippets/standard/data/sqlite/DateAndTimeSample/Program.cs?name=snippet_AlternativeType)]
 
 ## <a name="column-types"></a>Typy sloupců
 
-SQLite používá dynamický typ systému, kde je typ hodnoty spojen s vlastní hodnotou a nikoli sloupcem, kde je uložen. Můžete použít libovolný název typu sloupce, který chcete. Microsoft. data. sqlite nepoužije pro tyto názvy žádnou další sémantiku.
+SQLite používá systém dynamického typu, kde je typ hodnoty spojen se samotnou hodnotou a nikoli se sloupcem, kde je uložena. Můžete použít jakýkoli název typu sloupce, který chcete. Microsoft.Data.Sqlite nebude používat žádné další sémantiku na tyto názvy.
 
-Název typu sloupce má vliv na [spřažení typů](https://www.sqlite.org/datatype3.html#type_affinity). Jednou z běžných gotcha je, že použití typu sloupce STRING se pokusí převést hodnoty na celé číslo nebo reálné, což může vést k neočekávaným výsledkům. Doporučujeme použít pouze čtyři primitivní názvy typů SQLite: INTEGER, REAL, TEXT a BLOB.
+Název typu sloupce má vliv na [spřažení typu](https://www.sqlite.org/datatype3.html#type_affinity). Jeden společný gotcha je, že pomocí typu sloupce STRING se pokusí převést hodnoty na INTEGER nebo REAL, což může vést k neočekávaným výsledkům. Doporučujeme používat pouze čtyři primitivní názvy typů SQLite: INTEGER, REAL, TEXT a BLOB.
 
-SQLite umožňuje zadat omezující vlastnosti typu, jako je délka, přesnost a škálování, ale databázový stroj je neuplatňuje. Vaše aplikace zodpovídá za vynucování těchto.
+SQLite umožňuje zadat omezující podmínky typu jako délka, přesnost a měřítko, ale nejsou vynuceny databázovým strojem. Vaše aplikace je zodpovědná za jejich vynucení.
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [DataTypes v SQLite](https://www.sqlite.org/datatype3.html)
+- [Datové typy v SQLite](https://www.sqlite.org/datatype3.html)

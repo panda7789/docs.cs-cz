@@ -9,14 +9,14 @@ helpviewer_keywords:
 - parse strings
 ms.assetid: 729c2923-4169-41c6-9c90-ef176c1e2953
 ms.custom: mvc
-ms.openlocfilehash: fb11ff59705188f9425beedfbbbf3c244d21f587
-ms.sourcegitcommit: 43cbde34970f5f38f30c43cd63b9c7e2e83717ae
+ms.openlocfilehash: cf8307517213b54041b272843232eb595660b2e9
+ms.sourcegitcommit: c91110ef6ee3fedb591f3d628dc17739c4a7071e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/11/2020
-ms.locfileid: "81121500"
+ms.lasthandoff: 04/15/2020
+ms.locfileid: "81389506"
 ---
-# <a name="how-to-parse-strings-using-stringsplit-c-guide"></a>Jak analyzovat řetězce pomocí String.Split (C# Guide)
+# <a name="how-to-parse-strings-using-stringsplit-in-c"></a>Jak analyzovat řetězce pomocí String.Split v C\#
 
 Metoda <xref:System.String.Split%2A?displayProperty=nameWithType> vytvoří pole podřetězců rozdělením vstupního řetězce na základě jednoho nebo více oddělovačů. Často se jedná o nejjednodušší způsob, jak oddělit řetězec na hranice slov. Používá se také k rozdělení řetězců na jiné konkrétní znaky nebo řetězce.
 
@@ -26,11 +26,11 @@ Následující kód rozdělí společnou frázi do pole řetězců pro každé s
 
 [!code-csharp-interactive[split strings on word boundaries](../../../samples/snippets/csharp/how-to/strings/ParseStringsUsingSplit.cs#1)]
 
-Každá instance znaku oddělovače vytvoří hodnotu ve vráceném poli. Po sobě jdoucí oddělovací znaky vytvářejí prázdný řetězec jako hodnotu ve vráceném poli.  To můžete vidět v následujícím příkladu, který používá mezeru jako oddělovač:
+Každá instance znaku oddělovače vytvoří hodnotu ve vráceném poli. Po sobě jdoucí oddělovací znaky vytvářejí prázdný řetězec jako hodnotu ve vráceném poli. Můžete vidět, jak je vytvořen prázdný řetězec v následujícím příkladu, který používá znak mezery jako oddělovač.
 
 [!code-csharp-interactive[split strings with repeated separators](../../../samples/snippets/csharp/how-to/strings/ParseStringsUsingSplit.cs#2)]
 
-Toto chování usnadňuje formáty, jako jsou soubory csv (comma separated) představující tabulková data. Po sobě jdoucí čárky představují prázdný sloupec.
+Toto chování usnadňuje formáty, jako jsou soubory csv oddělené čárkami (CSV), které představují tabulková data. Po sobě jdoucí čárky představují prázdný sloupec.
 
 Můžete předat volitelný <xref:System.StringSplitOptions.RemoveEmptyEntries?displayProperty=nameWithType> parametr vyloučit všechny prázdné řetězce ve vráceném poli. Pro složitější zpracování vrácené kolekce můžete použít [LINQ](../programming-guide/concepts/linq/index.md) k manipulaci s výsledkovou sekvencí.
 

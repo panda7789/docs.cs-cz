@@ -6,12 +6,12 @@ helpviewer_keywords:
 - types [C#], built-in
 - built-in C# types
 ms.assetid: 54f901f2-bf2f-472c-ae8d-73e8ecfc57fe
-ms.openlocfilehash: 4f748373350ed0596a5f1d595c273243ae3227c3
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: bf8823c6674b1ff3f0028a50df8ce8d0f803cfc1
+ms.sourcegitcommit: c91110ef6ee3fedb591f3d628dc17739c4a7071e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "77095307"
+ms.lasthandoff: 04/15/2020
+ms.locfileid: "81389496"
 ---
 # <a name="built-in-types-c-reference"></a>Předdefinované typy (odkaz C#
 
@@ -46,6 +46,8 @@ V předchozích tabulkách je každé klíčové slovo c# z levého sloupce alia
 int a = 123;
 System.Int32 b = 123;
 ```
+
+Klíčové [`void`](void.md) slovo představuje nepřítomnost typu. Použijete jej jako návratový typ metody, která nevrací hodnotu.
 
 ## <a name="see-also"></a>Viz také
 

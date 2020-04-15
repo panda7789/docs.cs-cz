@@ -2,12 +2,12 @@
 title: Co je nového v C# 8.0 - C# Guide
 description: Získejte přehled o nových funkcích dostupných v c# 8.0.
 ms.date: 04/07/2020
-ms.openlocfilehash: 1a005750751129969f2d1e9caf156330dbe61cb2
-ms.sourcegitcommit: e3cbf26d67f7e9286c7108a2752804050762d02d
+ms.openlocfilehash: 2998beb378c68bead7f34e2a0963c40cf610a442
+ms.sourcegitcommit: c91110ef6ee3fedb591f3d628dc17739c4a7071e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2020
-ms.locfileid: "80989204"
+ms.lasthandoff: 04/15/2020
+ms.locfileid: "81389092"
 ---
 # <a name="whats-new-in-c-80"></a>Co je nového v C# 8.0
 
@@ -76,7 +76,7 @@ Kompilátor vás upozorní, když potřebuje vytvořit obrannou kopii.  Vlastnos
 public readonly double Distance => Math.Sqrt(X * X + Y * Y);
 ```
 
-Všimněte `readonly` si, že modifikátor je nezbytné pro vlastnost jen pro čtení. Kompilátor nepředpokládá, `get` že přístupové objektů nemění stav; musíte deklarovat `readonly` explicitně. Automaticky implementované vlastnosti jsou výjimkou; kompilátor bude považovat všechny automaticky implementované gettery za jen pro čtení, takže zde není nutné přidávat `readonly` modifikátor do vlastností `X` a. `Y`
+Všimněte `readonly` si, že modifikátor je nezbytné pro vlastnost jen pro čtení. Kompilátor nepředpokládá, `get` že přístupové objektů nemění stav; musíte deklarovat `readonly` explicitně. Automaticky implementované vlastnosti jsou výjimkou; kompilátor bude považovat všechny automaticky implementované gettery `readonly`jako , takže `readonly` zde není `X` `Y` třeba přidávat modifikátor do vlastností a.
 
 Kompilátor vynucuje pravidlo, že `readonly` členové nemění stav. Následující metoda nebude kompilovat, `readonly` pokud odebrat modifikátor:
 
@@ -88,7 +88,9 @@ public readonly void Translate(int xOffset, int yOffset)
 }
 ```
 
-Tato funkce umožňuje určit záměr návrhu, aby ho kompilátor mohl vynutit, a provést optimalizace na základě tohoto záměru. Další informace o členech readonly se [`readonly`](../language-reference/keywords/readonly.md#readonly-member-examples)dozvíte v článku s odkazy na jazyk na .
+Tato funkce umožňuje určit záměr návrhu, aby ho kompilátor mohl vynutit, a provést optimalizace na základě tohoto záměru.
+
+Další informace naleznete [ `readonly` ](../language-reference/builtin-types/struct.md#readonly-instance-members) v části členové instance v článku [Typy struktury.](../language-reference/builtin-types/struct.md)
 
 ## <a name="default-interface-methods"></a>Výchozí metody rozhraní
 

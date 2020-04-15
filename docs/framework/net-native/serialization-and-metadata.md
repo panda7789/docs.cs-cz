@@ -2,12 +2,12 @@
 title: Serializace a metadata
 ms.date: 03/30/2017
 ms.assetid: 619ecf1c-1ca5-4d66-8934-62fe7aad78c6
-ms.openlocfilehash: 7c6fe241fbf92f52abfa0eb66c37bff4d227b4e5
-ms.sourcegitcommit: 7980a91f90ae5eca859db7e6bfa03e23e76a1a50
+ms.openlocfilehash: cc9adf0e6627ef3190e74fea5d4f0f3afd581811
+ms.sourcegitcommit: c91110ef6ee3fedb591f3d628dc17739c4a7071e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "81241916"
+ms.lasthandoff: 04/15/2020
+ms.locfileid: "81389222"
 ---
 # <a name="serialization-and-metadata"></a>Serializace a metadata
 
@@ -15,7 +15,7 @@ Pokud vaše aplikace serializuje a reserializuje objekty, bude pravděpodobně n
   
 - Serializátory třetích stran založené na reflexi. Ty vyžadují změny souboru direktiv runtime a jsou popsány v další části.  
   
-- Serializátory založené na nereflexi nalezené v knihovně tříd rozhraní .NET Framework. Ty mohou vyžadovat změny souboru direktiv runtime a jsou popsány v části [Microsoft serializers.](#Microsoft)  
+- Serializátory založené na odrazu nalezené v knihovně tříd rozhraní .NET Framework. Ty mohou vyžadovat změny souboru direktiv runtime a jsou popsány v části [Microsoft serializers.](#Microsoft)  
   
 <a name="ThirdParty"></a>
 ## <a name="third-party-serializers"></a>Serializátory jiných výrobců
@@ -59,13 +59,13 @@ Pokud vaše aplikace serializuje a reserializuje objekty, bude pravděpodobně n
   
  [!code-csharp[ProjectN#7](../../../samples/snippets/csharp/VS_Snippets_CLR/projectn/cs/serialize1.cs#7)]  
   
- Do souboru direktiv direktiv runtime je nutné přidat následující položky, například následující:  
+Do souboru direktiv runtime přidejte následující položky, například následující:  
   
 ```xml  
 <Type Name="t" Browse="Required Public" />  
 ```  
   
- Informace o syntaxi použité v [ \<](type-element-net-native.md)příkladu naleznete v tématu Typ> Element .  
+Informace o syntaxi použité v [ \<](type-element-net-native.md)příkladu naleznete v tématu Typ> Element .  
   
 ## <a name="see-also"></a>Viz také
 

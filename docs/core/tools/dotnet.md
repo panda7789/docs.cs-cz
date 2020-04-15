@@ -2,12 +2,12 @@
 title: dotnet, příkaz
 description: Další informace o příkazu dotnet (obecný ovladač pro rozhraní příkazu .NET Core CLI) a jeho použití.
 ms.date: 02/13/2020
-ms.openlocfilehash: 8692d419afd528bf49e1dc7dc1a7a5fd698b363b
-ms.sourcegitcommit: 07123a475af89b6da5bb6cc51ea40ab1e8a488f0
+ms.openlocfilehash: 9446808d7f23d762c7a3c8a58252664fc5dade5b
+ms.sourcegitcommit: c91110ef6ee3fedb591f3d628dc17739c4a7071e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80134077"
+ms.lasthandoff: 04/15/2020
+ms.locfileid: "81389600"
 ---
 # <a name="dotnet-command"></a>dotnet, příkaz
 
@@ -57,7 +57,7 @@ Příkaz `dotnet` má dvě funkce:
 
 - Spouští aplikace .NET Core.
 
-  Určíte cestu k `.dll` souboru aplikace pro spuštění aplikace. Například `dotnet myapp.dll` spustí `myapp` aplikaci. Informace o možnostech nasazení najdete v tématu [Nasazení aplikace .NET Core.](../deploying/index.md)
+  Určíte cestu k `.dll` souboru aplikace pro spuštění aplikace.  Spuštění aplikace znamená najít a spustit vstupní bod, což je v `Main` případě konzolových aplikací metoda. Například `dotnet myapp.dll` spustí `myapp` aplikaci. Informace o možnostech nasazení najdete v tématu [Nasazení aplikace .NET Core.](../deploying/index.md)
 
 ## <a name="options"></a>Možnosti
 
@@ -77,7 +77,7 @@ Následující možnosti `dotnet` jsou samy o sobě. Například, `dotnet --info
 
 - **`--list-runtimes`**
 
-  Vytiskne seznam nainstalovaných runčasů jádra .NET.
+  Vytiskne seznam nainstalovaných runčasů jádra .NET. Verze sady X86 sady SDK obsahuje pouze za běhu x86 a verze sady SDK x64 uvádí pouze za běhu x64.
 
 - **`--list-sdks`**
 
@@ -169,8 +169,8 @@ Chování posunout vpřed lze také nakonfigurovat ve vlastnosti souboru projekt
 | [dotnet publish](dotnet-publish.md)           | Publikuje aplikaci závislou na rozhraní .NET nebo samostatnou aplikaci. |
 | [dotnet restore](dotnet-restore.md)           | Obnoví závislosti pro danou aplikaci.                  |
 | [dotnet run](dotnet-run.md)                   | Spustí aplikaci ze zdroje.                                   |
-| [dotnet run](dotnet-sln.md)                   | Možnosti pro přidání, odebrání a seznam projektů v souboru řešení.       |
-| [dotnet restore](dotnet-store.md)               | Ukládá sestavení v runtime balíček úložiště.                     |
+| [dotnet sln](dotnet-sln.md)                   | Možnosti pro přidání, odebrání a seznam projektů v souboru řešení.       |
+| [dotnet store](dotnet-store.md)               | Ukládá sestavení v runtime balíček úložiště.                     |
 | [dotnet test](dotnet-test.md)                 | Spustí testy pomocí testovacího běhu.                                     |
 
 ### <a name="project-references"></a>Odkazy na projekty
@@ -195,12 +195,12 @@ Příkaz | Funkce
 [dotnet nuget delete](dotnet-nuget-delete.md) | Odstraní nebo odřadí seznam balíčku ze serveru.
 [dotnet nuget push](dotnet-nuget-push.md) | Odešle balíček na server a publikuje jej.
 [dotnet nuget locals](dotnet-nuget-locals.md) | Vymaže nebo zobrazí seznam místních prostředků NuGet, jako je například mezipaměť http-request, dočasná mezipaměť nebo globální balíček pro celý počítač.
-[dotnet nuget přidat zdroj](dotnet-nuget-add-source.md) | Přidá zdroj NuGet.
-[dotnet nuget zakázat zdroj](dotnet-nuget-disable-source.md) | Zakáže zdroj NuGet.
-[dotnet nuget povolit zdroj](dotnet-nuget-enable-source.md) | Povolí zdroj NuGet.
-[Zdroj seznamu nugetu dotnet](dotnet-nuget-list-source.md) | Zobrazí seznam všech nakonfigurovaných zdrojů NuGet.
-[dotnet nuget odebrat zdroj](dotnet-nuget-remove-source.md) | Odebere zdroj NuGet.
-[Zdroj aktualizace dotnet nuget](dotnet-nuget-update-source.md) | Aktualizuje zdroj NuGet.
+[dotnet nuget add source](dotnet-nuget-add-source.md) | Přidá zdroj NuGet.
+[dotnet nuget disable source](dotnet-nuget-disable-source.md) | Zakáže zdroj NuGet.
+[dotnet nuget enable source](dotnet-nuget-enable-source.md) | Povolí zdroj NuGet.
+[dotnet nuget list source](dotnet-nuget-list-source.md) | Zobrazí seznam všech nakonfigurovaných zdrojů NuGet.
+[dotnet nuget remove source](dotnet-nuget-remove-source.md) | Odebere zdroj NuGet.
+[dotnet nuget update source](dotnet-nuget-update-source.md) | Aktualizuje zdroj NuGet.
 
 ### <a name="global-tool-path-and-local-tools-commands"></a>Příkazy globálních nástrojů, cest nástrojů a místních nástrojů
 

@@ -2,12 +2,12 @@
 title: dotnet obnovit, příkaz
 description: Pomocí příkazu dotnet restore se dozvíte, jak obnovit závislosti a nástroje specifické pro projekt.
 ms.date: 02/27/2020
-ms.openlocfilehash: e74027ba70ddf6905a12f9691caeb0a406428ad6
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 3b336e1aa097f83280de6faeef51793345520530
+ms.sourcegitcommit: c91110ef6ee3fedb591f3d628dc17739c4a7071e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "78157021"
+ms.lasthandoff: 04/15/2020
+ms.locfileid: "81389648"
 ---
 # <a name="dotnet-restore"></a>dotnet restore
 
@@ -21,9 +21,10 @@ ms.locfileid: "78157021"
 
 ```dotnetcli
 dotnet restore [<ROOT>] [--configfile] [--disable-parallel]
-    [--force] [--ignore-failed-sources] [--no-cache]
-    [--no-dependencies] [--packages] [-r|--runtime]
-    [-s|--source] [-v|--verbosity] [--interactive]
+    [-f|--force] [--force-evaluate] [--ignore-failed-sources]
+    [--interactive] [--lock-file-path] [--locked-mode]
+    [--no-cache] [--no-dependencies] [--packages] [-r|--runtime]
+    [-s|--source] [--use-lockfile] [-v|--verbosity]
 
 dotnet restore [-h|--help]
 ```
@@ -92,6 +93,10 @@ Někdy může být nepohodlné `dotnet restore` spustit implicitně. Například
 
   Vynutí vyřešení všech závislostí, i když bylo poslední obnovení úspěšné. Zadání tohoto příznaku je stejné jako odstranění souboru *project.assets.json.*
 
+- **`--force-evaluate`**
+
+  Vynutí obnovení přehodnotit všechny závislosti i v případě, že soubor zámku již existuje.
+
 - **`-h|--help`**
 
   Vytiskne krátkou nápovědu pro příkaz.
@@ -99,6 +104,18 @@ Někdy může být nepohodlné `dotnet restore` spustit implicitně. Například
 - **`--ignore-failed-sources`**
 
   Pouze upozornit na zdroje selhání, pokud existují balíčky splňující požadavek na verzi.
+
+- **`--interactive`**
+
+  Umožňuje příkazu zastavit a čekat na vstup uživatele nebo akci (například k dokončení ověřování). Od .NET Core 2.1.400.
+
+- **`--lock-file-path <LOCK_FILE_PATH>`**
+
+  Výstupní umístění, kde je zapsán soubor zámku projektu. Ve výchozím nastavení se jedná *o soubor PROJECT_ROOT\packages.lock.json*.
+
+- **`--locked-mode`**
+
+  Nepovoluj aktualizaci souboru zámku projektu.
 
 - **`--no-cache`**
 
@@ -120,13 +137,13 @@ Někdy může být nepohodlné `dotnet restore` spustit implicitně. Například
 
   Určuje zdroj balíčku NuGet, který se má použít během operace obnovení. Toto nastavení přepíše všechny zdroje zadané v souborech *nuget.config.* Zadáním této možnosti vícekrát lze poskytnout více zdrojů.
 
-- **`--verbosity <LEVEL>`**
+- **`--use-lockfile`**
+
+  Umožňuje generovat a používat soubor zámku projektu s obnovením.
+
+- **`-v|--verbosity <LEVEL>`**
 
   Nastaví úroveň podrobností příkazu. Povolené hodnoty `q[uiet]` `m[inimal]`jsou `n[ormal]` `d[etailed]`, `diag[nostic]`, , a . Výchozí hodnota `minimal`je .
-
-- **`--interactive`**
-
-  Umožňuje příkazu zastavit a čekat na vstup uživatele nebo akci (například k dokončení ověřování). Od .NET Core 2.1.400.
 
 ## <a name="examples"></a>Příklady
 

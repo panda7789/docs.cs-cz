@@ -1,15 +1,15 @@
 ---
 title: Napište bezpečný a efektivní kód Jazyka C#
 description: Nedávná vylepšení jazyka C# umožňují psát ověřitelný bezpečný kód, který výkon dříve spojen s nebezpečným kódem.
-ms.date: 10/23/2018
+ms.date: 03/17/2020
 ms.technology: csharp-advanced-concepts
 ms.custom: mvc
-ms.openlocfilehash: 365320fef5a2f9cd123086c1baed9a786ede9f05
-ms.sourcegitcommit: 59e36e65ac81cdd094a5a84617625b2a0ff3506e
+ms.openlocfilehash: dc697d822c4d471d2b67ce074ab9af8fc2724b23
+ms.sourcegitcommit: c91110ef6ee3fedb591f3d628dc17739c4a7071e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "80345085"
+ms.lasthandoff: 04/15/2020
+ms.locfileid: "81389683"
 ---
 # <a name="write-safe-and-efficient-c-code"></a>Napište bezpečný a efektivní kód Jazyka C#
 
@@ -22,7 +22,7 @@ Tento článek se zaměřuje na techniky pro efektivní správu zdrojů. Jednou 
 Tento článek se zaměřuje na následující techniky správy zdrojů:
 
 - Deklarovat a [`readonly struct`](language-reference/builtin-types/struct.md#readonly-struct) vyjádřit, že typ je **neměnný**. To umožňuje kompilátoru uložit [`in`](language-reference/keywords/in-parameter-modifier.md) obranné kopie při použití parametrů.
-- Pokud typ nemůže být neměnný, `struct` `readonly` deklarujte členy, kteří označují, že člen nemění stav.
+- Pokud typ nemůže být neměnný, `struct` [`readonly`](language-reference/builtin-types/struct.md#readonly-instance-members) deklarujte členy, kteří označují, že člen nemění stav.
 - Použijte [`ref readonly`](language-reference/keywords/ref.md#reference-return-values) return, pokud je `struct` vrácená <xref:System.IntPtr.Size?displayProperty=nameWithType> hodnota větší než a doba trvání úložiště je větší než metoda vracející hodnotu.
 - Pokud je velikost `readonly struct` a <xref:System.IntPtr.Size?displayProperty=nameWithType>větší než , měli `in` byste ji předat jako parametr z důvodů výkonu.
 - Nikdy předat `struct` jako `in` parametr, pokud je `readonly` deklarován s `readonly` modifikátornebo metoda volá pouze členy struktury. Porušení tohoto pokynu může negativně ovlivnit výkon a může vést k obskurní chování.
@@ -113,7 +113,7 @@ public struct Point3D
 
 Předchozí ukázka zobrazuje mnoho umístění, kde `readonly` můžete použít modifikátor: metody, vlastnosti a přístupové objekty vlastností. Pokud používáte automaticky implementované vlastnosti, `readonly` kompilátor `get` přidá modifikátor do přistupujícího objektu pro vlastnosti čtení a zápisu. Kompilátor přidá `readonly` modifikátor automaticky implementované deklarace vlastností pro vlastnosti s pouze přistupujícím objektem. `get`
 
-Přidání `readonly` modifikátor u členů, které nemutují stav poskytuje dvě související výhody. Nejprve kompilátor vynucuje váš záměr. Tento člen nemůže mutovat stav struktury, ani nemůže získat přístup k členu, který není také označen `readonly`. Za druhé kompilátor nevytvoří obranné `in` kopie parametrů při `readonly` přístupu k členu. Kompilátor může tuto optimalizaci bezpečně provést, protože zaručuje, že `struct` člen není změněn. `readonly`
+Přidání `readonly` modifikátor u členů, které nemutují stav poskytuje dvě související výhody. Nejprve kompilátor vynucuje váš záměr. Ten člen nemůže zmutovat stav struktury. Za druhé kompilátor nevytvoří obranné `in` kopie parametrů při `readonly` přístupu k členu. Kompilátor může tuto optimalizaci bezpečně provést, protože zaručuje, že `struct` člen není změněn. `readonly`
 
 ## <a name="use-ref-readonly-return-statements-for-large-structures-when-possible"></a>Použít `ref readonly return` příkazy pro velké struktury, pokud je to možné
 

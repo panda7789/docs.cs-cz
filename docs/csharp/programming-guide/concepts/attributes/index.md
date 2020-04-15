@@ -1,12 +1,12 @@
 ---
 title: Atributy (C#)
 ms.date: 04/26/2018
-ms.openlocfilehash: 2a07035ea97bb0ff1a8f4793fe8a30d3a42c34a7
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 62424163303417746a67707d9ef34185954db316
+ms.sourcegitcommit: c91110ef6ee3fedb591f3d628dc17739c4a7071e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "79399747"
+ms.lasthandoff: 04/15/2020
+ms.locfileid: "81389544"
 ---
 # <a name="attributes-c"></a>Atributy (C#)
 
@@ -95,7 +95,7 @@ Následující příklad ukazuje, jak použít atributy metody, parametry metody
 [!code-csharp[Applying attributes to different code elements](../../../../../samples/snippets/csharp/attributes/AttributesOverview.cs#6)]
 
 > [!NOTE]
-> Bez ohledu na cíle, na kterých `ValidatedContract` `return` je definována jako platná, cíl musí být určen, i když `ValidatedContract` byly definovány použít pouze pro vrácené hodnoty. Jinými slovy kompilátor nebude `AttributeUsage` používat informace k vyřešení nejednoznačných cílů atributů. Další informace naleznete v tématu [AttributeUsage (C#)](attributeusage.md).
+> Bez ohledu na cíle, na kterých `ValidatedContract` `return` je definována jako platná, cíl musí být určen, i když `ValidatedContract` byly definovány použít pouze pro vrácené hodnoty. Jinými slovy kompilátor nebude `AttributeUsage` používat informace k vyřešení nejednoznačných cílů atributů. Další informace naleznete v tématu [AttributeUsage (C#)](../../../language-reference/attributes/general.md).
 
 ## <a name="common-uses-for-attributes"></a>Běžné použití atributů
 
@@ -121,7 +121,7 @@ Další informace naleznete v tématu:
 - [Přístup k atributům pomocí reflexe (C#)](accessing-attributes-by-using-reflection.md)  
 - [Jak vytvořit sjednocení C/C++ pomocí atributů (C#)](how-to-create-a-c-cpp-union-by-using-attributes.md)  
 - [Běžné atributy (C#)](common-attributes.md)  
-- [Informace o volajícím (C#)](../caller-information.md)  
+- [Informace o volajícím (C#)](../../../language-reference/attributes/caller-information.md)  
 
 ## <a name="see-also"></a>Viz také
 

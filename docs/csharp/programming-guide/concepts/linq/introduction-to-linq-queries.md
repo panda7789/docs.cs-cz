@@ -7,12 +7,12 @@ helpviewer_keywords:
 - LINQ, deferred execution
 - queries [LINQ], about LINQ queries
 ms.assetid: 37895c02-268c-41d5-be39-f7d936fa88a8
-ms.openlocfilehash: 7fbdfa8656e3c4832226370dc6efe56964e14934
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 5a9d97ff14f087ddfc55986bf77f18492cbf8a04
+ms.sourcegitcommit: c91110ef6ee3fedb591f3d628dc17739c4a7071e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79168502"
+ms.lasthandoff: 04/15/2020
+ms.locfileid: "81389581"
 ---
 # <a name="introduction-to-linq-queries-c"></a>Úvod do dotazů LINQ (C#)
 Dotaz *query* je výraz, který načítá data ze zdroje dat. Dotazy jsou obvykle vyjádřeny ve specializovaném dotazovacím jazyce. Pro různé typy zdrojů dat byly v průběhu času vyvinuty různé jazyky, například SQL pro relační databáze a XQuery pro XML. Proto vývojáři museli naučit nový dotazovací jazyk pro každý typ zdroje dat nebo formátu dat, které musí podporovat. LINQ zjednodušuje tuto situaci tím, že nabízí konzistentní model pro práci s daty napříč různými druhy zdrojů dat a formátů. V dotazu LINQ vždy pracujete s objekty. Stejné základní vzorky kódování se používají k dotazování a transformaci dat v dokumentech XML, databázích SQL, ADO.NET datových sadách, kolekcích .NET a jakémkoli jiném formátu, pro který je k dispozici zprostředkovatel LINQ.  
@@ -41,7 +41,7 @@ Dotaz *query* je výraz, který načítá data ze zdroje dat. Dotazy jsou obvykl
   
  [!code-csharp[CsLINQGettingStarted#2](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsLINQGettingStarted/CS/Class1.cs#2)]  
   
- Pomocí [!INCLUDE[vbtecdlinq](~/includes/vbtecdlinq-md.md)]aplikace nejprve vytvoříte mapování relačních objektů v době návrhu ručně nebo pomocí [nástrojů LINQ to SQL Tools v sadě Visual Studio](/visualstudio/data-tools/linq-to-sql-tools-in-visual-studio2) v sadě Visual Studio. Napíšete dotazy proti objekty a za [!INCLUDE[vbtecdlinq](~/includes/vbtecdlinq-md.md)] běhu zpracovává komunikaci s databází. V následujícím příkladu `Customers` představuje konkrétní tabulku v databázi a typ <xref:System.Linq.IQueryable%601>výsledku <xref:System.Collections.Generic.IEnumerable%601>dotazu , odvozuje od .  
+ Pomocí [!INCLUDE[vbtecdlinq](~/includes/vbtecdlinq-md.md)]aplikace nejprve vytvoříte mapování vztahů s objekty v době návrhu ručně nebo pomocí [nástrojů LINQ to SQL Tools v sadě Visual Studio](/visualstudio/data-tools/linq-to-sql-tools-in-visual-studio2). Napíšete dotazy proti objekty a za [!INCLUDE[vbtecdlinq](~/includes/vbtecdlinq-md.md)] běhu zpracovává komunikaci s databází. V následujícím příkladu `Customers` představuje konkrétní tabulku v databázi a typ <xref:System.Linq.IQueryable%601>výsledku <xref:System.Collections.Generic.IEnumerable%601>dotazu , odvozuje od .  
   
 ```csharp  
 Northwnd db = new Northwnd(@"c:\northwnd.mdf");  
@@ -58,7 +58,7 @@ IQueryable<Customer> custQuery =
 > [!NOTE]
 > Typy, <xref:System.Collections.ArrayList> jako je například, které podporují neobecné <xref:System.Collections.IEnumerable> rozhraní lze také použít jako zdroj dat LINQ. Další informace naleznete v [tématu Jak dotaz ArrayList s LINQ (C#)](./how-to-query-an-arraylist-with-linq.md).  
   
-## <a name="query"></a>Dotaz  
+## <a name="the-query"></a><a name="query"></a>Dotaz  
  Dotaz určuje, jaké informace se mají načíst ze zdroje dat nebo zdrojů. Volitelně dotaz také určuje, jak by měly být tyto informace seřazeny, seskupeny a tvarovány před vrácením. Dotaz je uložen v proměnné dotazu a inicializován s výrazem dotazu. Chcete-li usnadnit psaní dotazů, C# zavedla novou syntaxi dotazu.  
   
  Dotaz v předchozím příkladu vrátí všechna sudá čísla z celočíselné pole. Výraz dotazu obsahuje tři `from` `where` klauzule: , a `select`. (Pokud jste obeznámeni s SQL, budete si všimli, že řazení klauzulí je obráceno z pořadí v SQL.) Klauzule `from` určuje zdroj dat, `where` klauzule použije filtr `select` a klauzule určuje typ vrácených prvků. Tyto a další klauzule dotazu jsou podrobně popsány v části [Jazyk integrovaný dotaz (LINQ).](../../../linq/index.md) Pro tuto chvíli je důležité, že v LINQ proměnné dotazu sám neprovede žádnou akci a vrátí žádná data. Pouze ukládá informace, které je nutné k vytvoření výsledků při spuštění dotazu v určitém pozdějším okamžiku. Další informace o tom, jak jsou dotazy vytvářeny na pozadí, naleznete v [tématu Přehled standardních operátorů dotazů (C#).](./standard-query-operators-overview.md)  
