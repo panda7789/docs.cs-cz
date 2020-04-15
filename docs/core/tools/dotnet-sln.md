@@ -2,181 +2,193 @@
 title: dotnet sln, příkaz
 description: Příkaz dotnet-sln poskytuje vhodnou možnost přidání, odebrání a seznamu projektů v souboru řešení.
 ms.date: 02/14/2020
-ms.openlocfilehash: b2455c04a46b2a10b8142d8ddc2d8129f2154b27
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 615e25e30a63b6ca36d9898cfcde565053830572
+ms.sourcegitcommit: c91110ef6ee3fedb591f3d628dc17739c4a7071e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "77543479"
+ms.lasthandoff: 04/15/2020
+ms.locfileid: "81389640"
 ---
-# <a name="dotnet-sln"></a><span data-ttu-id="7468d-103">dotnet sln</span><span class="sxs-lookup"><span data-stu-id="7468d-103">dotnet sln</span></span>
+# <a name="dotnet-sln"></a><span data-ttu-id="80089-103">dotnet sln</span><span class="sxs-lookup"><span data-stu-id="80089-103">dotnet sln</span></span>
 
-<span data-ttu-id="7468d-104">**Tento článek se týká:** ✔️ .NET Core 2.x SDK a novější verze</span><span class="sxs-lookup"><span data-stu-id="7468d-104">**This article applies to:** ✔️ .NET Core 2.x SDK and later versions</span></span>
+<span data-ttu-id="80089-104">**Tento článek se týká:** ✔️ .NET Core 2.x SDK a novější verze</span><span class="sxs-lookup"><span data-stu-id="80089-104">**This article applies to:** ✔️ .NET Core 2.x SDK and later versions</span></span>
 
-## <a name="name"></a><span data-ttu-id="7468d-105">Name (Název)</span><span class="sxs-lookup"><span data-stu-id="7468d-105">Name</span></span>
+## <a name="name"></a><span data-ttu-id="80089-105">Name (Název)</span><span class="sxs-lookup"><span data-stu-id="80089-105">Name</span></span>
 
-<span data-ttu-id="7468d-106">`dotnet sln`- Uvádí nebo upravuje projekty v souboru řešení .NET Core.</span><span class="sxs-lookup"><span data-stu-id="7468d-106">`dotnet sln` - Lists or modifies the projects in a .NET Core solution file.</span></span>
+<span data-ttu-id="80089-106">`dotnet sln`- Uvádí nebo upravuje projekty v souboru řešení .NET Core.</span><span class="sxs-lookup"><span data-stu-id="80089-106">`dotnet sln` - Lists or modifies the projects in a .NET Core solution file.</span></span>
 
-## <a name="synopsis"></a><span data-ttu-id="7468d-107">Synopse</span><span class="sxs-lookup"><span data-stu-id="7468d-107">Synopsis</span></span>
+## <a name="synopsis"></a><span data-ttu-id="80089-107">Synopse</span><span class="sxs-lookup"><span data-stu-id="80089-107">Synopsis</span></span>
 
 ```dotnetcli
 dotnet sln [<SOLUTION_FILE>] [command] [-h|--help]
 ```
 
-## <a name="description"></a><span data-ttu-id="7468d-108">Popis</span><span class="sxs-lookup"><span data-stu-id="7468d-108">Description</span></span>
+## <a name="description"></a><span data-ttu-id="80089-108">Popis</span><span class="sxs-lookup"><span data-stu-id="80089-108">Description</span></span>
 
-<span data-ttu-id="7468d-109">Příkaz `dotnet sln` poskytuje pohodlný způsob, jak vypsat a upravit projekty v souboru řešení.</span><span class="sxs-lookup"><span data-stu-id="7468d-109">The `dotnet sln` command provides a convenient way to list and modify projects in a solution file.</span></span>
+<span data-ttu-id="80089-109">Příkaz `dotnet sln` poskytuje pohodlný způsob, jak vypsat a upravit projekty v souboru řešení.</span><span class="sxs-lookup"><span data-stu-id="80089-109">The `dotnet sln` command provides a convenient way to list and modify projects in a solution file.</span></span>
 
-<span data-ttu-id="7468d-110">Chcete-li `dotnet sln` použít příkaz, musí již existovat soubor řešení.</span><span class="sxs-lookup"><span data-stu-id="7468d-110">To use the `dotnet sln` command, the solution file must already exist.</span></span> <span data-ttu-id="7468d-111">Pokud ho potřebujete vytvořit, použijte nový příkaz [dotnet,](dotnet-new.md) jako v následujícím příkladu:</span><span class="sxs-lookup"><span data-stu-id="7468d-111">If you need to create one, use the [dotnet new](dotnet-new.md) command, as in the following example:</span></span>
+<span data-ttu-id="80089-110">Chcete-li `dotnet sln` použít příkaz, musí již existovat soubor řešení.</span><span class="sxs-lookup"><span data-stu-id="80089-110">To use the `dotnet sln` command, the solution file must already exist.</span></span> <span data-ttu-id="80089-111">Pokud ho potřebujete vytvořit, použijte nový příkaz [dotnet,](dotnet-new.md) jako v následujícím příkladu:</span><span class="sxs-lookup"><span data-stu-id="80089-111">If you need to create one, use the [dotnet new](dotnet-new.md) command, as in the following example:</span></span>
 
 ```dotnetcli
 dotnet new sln
 ```
 
-## <a name="arguments"></a><span data-ttu-id="7468d-112">Argumenty</span><span class="sxs-lookup"><span data-stu-id="7468d-112">Arguments</span></span>
+## <a name="arguments"></a><span data-ttu-id="80089-112">Argumenty</span><span class="sxs-lookup"><span data-stu-id="80089-112">Arguments</span></span>
 
 - **`SOLUTION_FILE`**
 
-  <span data-ttu-id="7468d-113">Soubor řešení, který chcete použít.</span><span class="sxs-lookup"><span data-stu-id="7468d-113">The solution file to use.</span></span> <span data-ttu-id="7468d-114">Pokud je tento argument vynechán, příkaz prohledá aktuální adresář.</span><span class="sxs-lookup"><span data-stu-id="7468d-114">If this argument is omitted, the command searches the current directory for one.</span></span> <span data-ttu-id="7468d-115">Pokud nenalezne žádný soubor řešení nebo více souborů řešení, příkaz se nezdaří.</span><span class="sxs-lookup"><span data-stu-id="7468d-115">If it finds no solution file or multiple solution files, the command fails.</span></span>
+  <span data-ttu-id="80089-113">Soubor řešení, který chcete použít.</span><span class="sxs-lookup"><span data-stu-id="80089-113">The solution file to use.</span></span> <span data-ttu-id="80089-114">Pokud je tento argument vynechán, příkaz prohledá aktuální adresář.</span><span class="sxs-lookup"><span data-stu-id="80089-114">If this argument is omitted, the command searches the current directory for one.</span></span> <span data-ttu-id="80089-115">Pokud nenalezne žádný soubor řešení nebo více souborů řešení, příkaz se nezdaří.</span><span class="sxs-lookup"><span data-stu-id="80089-115">If it finds no solution file or multiple solution files, the command fails.</span></span>
 
-## <a name="options"></a><span data-ttu-id="7468d-116">Možnosti</span><span class="sxs-lookup"><span data-stu-id="7468d-116">Options</span></span>
+## <a name="options"></a><span data-ttu-id="80089-116">Možnosti</span><span class="sxs-lookup"><span data-stu-id="80089-116">Options</span></span>
 
 - **`-h|--help`**
 
-  <span data-ttu-id="7468d-117">Vytiskne popis použití příkazu.</span><span class="sxs-lookup"><span data-stu-id="7468d-117">Prints out a description of how to use the command.</span></span>
+  <span data-ttu-id="80089-117">Vytiskne popis použití příkazu.</span><span class="sxs-lookup"><span data-stu-id="80089-117">Prints out a description of how to use the command.</span></span>
 
-## <a name="commands"></a><span data-ttu-id="7468d-118">Příkazy</span><span class="sxs-lookup"><span data-stu-id="7468d-118">Commands</span></span>
+## <a name="commands"></a><span data-ttu-id="80089-118">Příkazy</span><span class="sxs-lookup"><span data-stu-id="80089-118">Commands</span></span>
 
 ### `list`
 
-<span data-ttu-id="7468d-119">Zobrazí seznam všech projektů v souboru řešení.</span><span class="sxs-lookup"><span data-stu-id="7468d-119">Lists all projects in a solution file.</span></span>
+<span data-ttu-id="80089-119">Zobrazí seznam všech projektů v souboru řešení.</span><span class="sxs-lookup"><span data-stu-id="80089-119">Lists all projects in a solution file.</span></span>
 
-#### <a name="synopsis"></a><span data-ttu-id="7468d-120">Synopse</span><span class="sxs-lookup"><span data-stu-id="7468d-120">Synopsis</span></span>
+#### <a name="synopsis"></a><span data-ttu-id="80089-120">Synopse</span><span class="sxs-lookup"><span data-stu-id="80089-120">Synopsis</span></span>
 
 ```dotnetcli
 dotnet sln list [-h|--help]
 ```
 
-#### <a name="arguments"></a><span data-ttu-id="7468d-121">Argumenty</span><span class="sxs-lookup"><span data-stu-id="7468d-121">Arguments</span></span>
+#### <a name="arguments"></a><span data-ttu-id="80089-121">Argumenty</span><span class="sxs-lookup"><span data-stu-id="80089-121">Arguments</span></span>
 
 - **`SOLUTION_FILE`**
 
-  <span data-ttu-id="7468d-122">Soubor řešení, který chcete použít.</span><span class="sxs-lookup"><span data-stu-id="7468d-122">The solution file to use.</span></span> <span data-ttu-id="7468d-123">Pokud je tento argument vynechán, příkaz prohledá aktuální adresář.</span><span class="sxs-lookup"><span data-stu-id="7468d-123">If this argument is omitted, the command searches the current directory for one.</span></span> <span data-ttu-id="7468d-124">Pokud nenalezne žádný soubor řešení nebo více souborů řešení, příkaz se nezdaří.</span><span class="sxs-lookup"><span data-stu-id="7468d-124">If it finds no solution file or multiple solution files, the command fails.</span></span>
+  <span data-ttu-id="80089-122">Soubor řešení, který chcete použít.</span><span class="sxs-lookup"><span data-stu-id="80089-122">The solution file to use.</span></span> <span data-ttu-id="80089-123">Pokud je tento argument vynechán, příkaz prohledá aktuální adresář.</span><span class="sxs-lookup"><span data-stu-id="80089-123">If this argument is omitted, the command searches the current directory for one.</span></span> <span data-ttu-id="80089-124">Pokud nenalezne žádný soubor řešení nebo více souborů řešení, příkaz se nezdaří.</span><span class="sxs-lookup"><span data-stu-id="80089-124">If it finds no solution file or multiple solution files, the command fails.</span></span>
 
-#### <a name="options"></a><span data-ttu-id="7468d-125">Možnosti</span><span class="sxs-lookup"><span data-stu-id="7468d-125">Options</span></span>
+#### <a name="options"></a><span data-ttu-id="80089-125">Možnosti</span><span class="sxs-lookup"><span data-stu-id="80089-125">Options</span></span>
 
 - **`-h|--help`**
 
-  <span data-ttu-id="7468d-126">Vytiskne popis použití příkazu.</span><span class="sxs-lookup"><span data-stu-id="7468d-126">Prints out a description of how to use the command.</span></span>
+  <span data-ttu-id="80089-126">Vytiskne popis použití příkazu.</span><span class="sxs-lookup"><span data-stu-id="80089-126">Prints out a description of how to use the command.</span></span>
   
 ### `add`
 
-<span data-ttu-id="7468d-127">Přidá jeden nebo více projektů do souboru řešení.</span><span class="sxs-lookup"><span data-stu-id="7468d-127">Adds one or more projects to the solution file.</span></span>
+<span data-ttu-id="80089-127">Přidá jeden nebo více projektů do souboru řešení.</span><span class="sxs-lookup"><span data-stu-id="80089-127">Adds one or more projects to the solution file.</span></span>
 
-#### <a name="synopsis"></a><span data-ttu-id="7468d-128">Synopse</span><span class="sxs-lookup"><span data-stu-id="7468d-128">Synopsis</span></span>
+#### <a name="synopsis"></a><span data-ttu-id="80089-128">Synopse</span><span class="sxs-lookup"><span data-stu-id="80089-128">Synopsis</span></span>
 
 ```dotnetcli
 dotnet sln [<SOLUTION_FILE>] add [--in-root] [-s|--solution-folder] <PROJECT_PATH> [<PROJECT_PATH>...]
 dotnet sln add [-h|--help]
 ```
 
-#### <a name="arguments"></a><span data-ttu-id="7468d-129">Argumenty</span><span class="sxs-lookup"><span data-stu-id="7468d-129">Arguments</span></span>
+#### <a name="arguments"></a><span data-ttu-id="80089-129">Argumenty</span><span class="sxs-lookup"><span data-stu-id="80089-129">Arguments</span></span>
 
 - **`SOLUTION_FILE`**
 
-  <span data-ttu-id="7468d-130">Soubor řešení, který chcete použít.</span><span class="sxs-lookup"><span data-stu-id="7468d-130">The solution file to use.</span></span> <span data-ttu-id="7468d-131">Pokud není zadán, příkaz vyhledá aktuální adresář pro jeden a selže, pokud existuje více souborů řešení.</span><span class="sxs-lookup"><span data-stu-id="7468d-131">If it is unspecified, the command searches the current directory for one and fails if there are multiple solution files.</span></span>
+  <span data-ttu-id="80089-130">Soubor řešení, který chcete použít.</span><span class="sxs-lookup"><span data-stu-id="80089-130">The solution file to use.</span></span> <span data-ttu-id="80089-131">Pokud není zadán, příkaz vyhledá aktuální adresář pro jeden a selže, pokud existuje více souborů řešení.</span><span class="sxs-lookup"><span data-stu-id="80089-131">If it is unspecified, the command searches the current directory for one and fails if there are multiple solution files.</span></span>
 
 - **`PROJECT_PATH`**
 
-  <span data-ttu-id="7468d-132">Cesta k projektu nebo projekty přidat do řešení.</span><span class="sxs-lookup"><span data-stu-id="7468d-132">The path to the project or projects to add to the solution.</span></span> <span data-ttu-id="7468d-133">Unix/Linux shell [globbing vzor](https://en.wikipedia.org/wiki/Glob_(programming)) expanze jsou `dotnet sln` zpracovány správně příkazem.</span><span class="sxs-lookup"><span data-stu-id="7468d-133">Unix/Linux shell [globbing pattern](https://en.wikipedia.org/wiki/Glob_(programming)) expansions are processed correctly by the `dotnet sln` command.</span></span>
+  <span data-ttu-id="80089-132">Cesta k projektu nebo projekty přidat do řešení.</span><span class="sxs-lookup"><span data-stu-id="80089-132">The path to the project or projects to add to the solution.</span></span> <span data-ttu-id="80089-133">Unix/Linux shell [globbing vzor](https://en.wikipedia.org/wiki/Glob_(programming)) expanze jsou `dotnet sln` zpracovány správně příkazem.</span><span class="sxs-lookup"><span data-stu-id="80089-133">Unix/Linux shell [globbing pattern](https://en.wikipedia.org/wiki/Glob_(programming)) expansions are processed correctly by the `dotnet sln` command.</span></span>
 
-#### <a name="options"></a><span data-ttu-id="7468d-134">Možnosti</span><span class="sxs-lookup"><span data-stu-id="7468d-134">Options</span></span>
+#### <a name="options"></a><span data-ttu-id="80089-134">Možnosti</span><span class="sxs-lookup"><span data-stu-id="80089-134">Options</span></span>
 
 - **`-h|--help`**
 
-  <span data-ttu-id="7468d-135">Vytiskne popis použití příkazu.</span><span class="sxs-lookup"><span data-stu-id="7468d-135">Prints out a description of how to use the command.</span></span>
+  <span data-ttu-id="80089-135">Vytiskne popis použití příkazu.</span><span class="sxs-lookup"><span data-stu-id="80089-135">Prints out a description of how to use the command.</span></span>
 
 - **`--in-root`**
 
-  <span data-ttu-id="7468d-136">Umístí projekty do kořenového adresáře řešení, nikoli do vytvoření složky řešení.</span><span class="sxs-lookup"><span data-stu-id="7468d-136">Places the projects in the root of the solution, rather than creating a solution folder.</span></span> <span data-ttu-id="7468d-137">K dispozici od .NET Core 3.0 SDK.</span><span class="sxs-lookup"><span data-stu-id="7468d-137">Available since .NET Core 3.0 SDK.</span></span>
+  <span data-ttu-id="80089-136">Umístí projekty do kořenového adresáře řešení, nikoli do vytvoření složky řešení.</span><span class="sxs-lookup"><span data-stu-id="80089-136">Places the projects in the root of the solution, rather than creating a solution folder.</span></span> <span data-ttu-id="80089-137">K dispozici od .NET Core 3.0 SDK.</span><span class="sxs-lookup"><span data-stu-id="80089-137">Available since .NET Core 3.0 SDK.</span></span>
 
 - **`-s|--solution-folder`**
 
-  <span data-ttu-id="7468d-138">Cílová cesta ke složce řešení, do které chcete přidat projekty.</span><span class="sxs-lookup"><span data-stu-id="7468d-138">The destination solution folder path to add the projects to.</span></span> <span data-ttu-id="7468d-139">K dispozici od .NET Core 3.0 SDK.</span><span class="sxs-lookup"><span data-stu-id="7468d-139">Available since .NET Core 3.0 SDK.</span></span>
+  <span data-ttu-id="80089-138">Cílová cesta ke složce řešení, do které chcete přidat projekty.</span><span class="sxs-lookup"><span data-stu-id="80089-138">The destination solution folder path to add the projects to.</span></span> <span data-ttu-id="80089-139">K dispozici od .NET Core 3.0 SDK.</span><span class="sxs-lookup"><span data-stu-id="80089-139">Available since .NET Core 3.0 SDK.</span></span>
 
 ### `remove`
 
-<span data-ttu-id="7468d-140">Odebere projekt nebo více projektů ze souboru řešení.</span><span class="sxs-lookup"><span data-stu-id="7468d-140">Removes a project or multiple projects from the solution file.</span></span>
+<span data-ttu-id="80089-140">Odebere projekt nebo více projektů ze souboru řešení.</span><span class="sxs-lookup"><span data-stu-id="80089-140">Removes a project or multiple projects from the solution file.</span></span>
 
-#### <a name="synopsis"></a><span data-ttu-id="7468d-141">Synopse</span><span class="sxs-lookup"><span data-stu-id="7468d-141">Synopsis</span></span>
+#### <a name="synopsis"></a><span data-ttu-id="80089-141">Synopse</span><span class="sxs-lookup"><span data-stu-id="80089-141">Synopsis</span></span>
 
 ```dotnetcli
 dotnet sln [<SOLUTION_FILE>] remove <PROJECT_PATH> [<PROJECT_PATH>...]
 dotnet sln [<SOLUTION_FILE>] remove [-h|--help]
 ```
 
-#### <a name="arguments"></a><span data-ttu-id="7468d-142">Argumenty</span><span class="sxs-lookup"><span data-stu-id="7468d-142">Arguments</span></span>
+#### <a name="arguments"></a><span data-ttu-id="80089-142">Argumenty</span><span class="sxs-lookup"><span data-stu-id="80089-142">Arguments</span></span>
 
 - **`SOLUTION_FILE`**
 
-  <span data-ttu-id="7468d-143">Soubor řešení, který chcete použít.</span><span class="sxs-lookup"><span data-stu-id="7468d-143">The solution file to use.</span></span> <span data-ttu-id="7468d-144">Pokud je ponecháno neurčeno, příkaz hledá aktuální adresář pro jeden a selže, pokud existuje více souborů řešení.</span><span class="sxs-lookup"><span data-stu-id="7468d-144">If is left unspecified, the command searches the current directory for one and fails if there are multiple solution files.</span></span>
+  <span data-ttu-id="80089-143">Soubor řešení, který chcete použít.</span><span class="sxs-lookup"><span data-stu-id="80089-143">The solution file to use.</span></span> <span data-ttu-id="80089-144">Pokud je ponecháno neurčeno, příkaz hledá aktuální adresář pro jeden a selže, pokud existuje více souborů řešení.</span><span class="sxs-lookup"><span data-stu-id="80089-144">If is left unspecified, the command searches the current directory for one and fails if there are multiple solution files.</span></span>
 
 - **`PROJECT_PATH`**
 
-  <span data-ttu-id="7468d-145">Cesta k projektu nebo projekty přidat do řešení.</span><span class="sxs-lookup"><span data-stu-id="7468d-145">The path to the project or projects to add to the solution.</span></span> <span data-ttu-id="7468d-146">Unix/Linux shell [globbing vzor](https://en.wikipedia.org/wiki/Glob_(programming)) expanze jsou `dotnet sln` zpracovány správně příkazem.</span><span class="sxs-lookup"><span data-stu-id="7468d-146">Unix/Linux shell [globbing pattern](https://en.wikipedia.org/wiki/Glob_(programming)) expansions are processed correctly by the `dotnet sln` command.</span></span>
+  <span data-ttu-id="80089-145">Cesta k projektu nebo projekty přidat do řešení.</span><span class="sxs-lookup"><span data-stu-id="80089-145">The path to the project or projects to add to the solution.</span></span> <span data-ttu-id="80089-146">Unix/Linux shell [globbing vzor](https://en.wikipedia.org/wiki/Glob_(programming)) expanze jsou `dotnet sln` zpracovány správně příkazem.</span><span class="sxs-lookup"><span data-stu-id="80089-146">Unix/Linux shell [globbing pattern](https://en.wikipedia.org/wiki/Glob_(programming)) expansions are processed correctly by the `dotnet sln` command.</span></span>
 
-#### <a name="options"></a><span data-ttu-id="7468d-147">Možnosti</span><span class="sxs-lookup"><span data-stu-id="7468d-147">Options</span></span>
+#### <a name="options"></a><span data-ttu-id="80089-147">Možnosti</span><span class="sxs-lookup"><span data-stu-id="80089-147">Options</span></span>
 
 - **`-h|--help`**
 
-  <span data-ttu-id="7468d-148">Vytiskne popis použití příkazu.</span><span class="sxs-lookup"><span data-stu-id="7468d-148">Prints out a description of how to use the command.</span></span>
+  <span data-ttu-id="80089-148">Vytiskne popis použití příkazu.</span><span class="sxs-lookup"><span data-stu-id="80089-148">Prints out a description of how to use the command.</span></span>
 
-## <a name="examples"></a><span data-ttu-id="7468d-149">Příklady</span><span class="sxs-lookup"><span data-stu-id="7468d-149">Examples</span></span>
+## <a name="examples"></a><span data-ttu-id="80089-149">Příklady</span><span class="sxs-lookup"><span data-stu-id="80089-149">Examples</span></span>
 
-- <span data-ttu-id="7468d-150">Seznam projektů v řešení:</span><span class="sxs-lookup"><span data-stu-id="7468d-150">List the projects in a solution:</span></span>
+- <span data-ttu-id="80089-150">Seznam projektů v řešení:</span><span class="sxs-lookup"><span data-stu-id="80089-150">List the projects in a solution:</span></span>
 
   ```dotnetcli
   dotnet sln todo.sln list
   ```
 
-- <span data-ttu-id="7468d-151">Přidejte projekt Jazyka C# do řešení:</span><span class="sxs-lookup"><span data-stu-id="7468d-151">Add a C# project to a solution:</span></span>
+- <span data-ttu-id="80089-151">Přidejte projekt Jazyka C# do řešení:</span><span class="sxs-lookup"><span data-stu-id="80089-151">Add a C# project to a solution:</span></span>
 
   ```dotnetcli
   dotnet sln add todo-app/todo-app.csproj
   ```
 
-- <span data-ttu-id="7468d-152">Odeberte projekt Jazyka C# z řešení:</span><span class="sxs-lookup"><span data-stu-id="7468d-152">Remove a C# project from a solution:</span></span>
+- <span data-ttu-id="80089-152">Odeberte projekt Jazyka C# z řešení:</span><span class="sxs-lookup"><span data-stu-id="80089-152">Remove a C# project from a solution:</span></span>
 
   ```dotnetcli
   dotnet sln remove todo-app/todo-app.csproj
   ```
 
-- <span data-ttu-id="7468d-153">Přidejte více projektů jazyka C# do kořenového adresáře řešení:</span><span class="sxs-lookup"><span data-stu-id="7468d-153">Add multiple C# projects to the root of a solution:</span></span>
+- <span data-ttu-id="80089-153">Přidejte více projektů jazyka C# do kořenového adresáře řešení:</span><span class="sxs-lookup"><span data-stu-id="80089-153">Add multiple C# projects to the root of a solution:</span></span>
 
   ```dotnetcli
   dotnet sln todo.sln add todo-app/todo-app.csproj back-end/back-end.csproj --in-root
   ```
 
-- <span data-ttu-id="7468d-154">Přidejte do řešení více projektů jazyka C#:</span><span class="sxs-lookup"><span data-stu-id="7468d-154">Add multiple C# projects to a solution:</span></span>
+- <span data-ttu-id="80089-154">Přidejte do řešení více projektů jazyka C#:</span><span class="sxs-lookup"><span data-stu-id="80089-154">Add multiple C# projects to a solution:</span></span>
 
   ```dotnetcli
   dotnet sln todo.sln add todo-app/todo-app.csproj back-end/back-end.csproj
   ```
 
-- <span data-ttu-id="7468d-155">Odeberte z řešení více projektů jazyka C#:</span><span class="sxs-lookup"><span data-stu-id="7468d-155">Remove multiple C# projects from a solution:</span></span>
+- <span data-ttu-id="80089-155">Odeberte z řešení více projektů jazyka C#:</span><span class="sxs-lookup"><span data-stu-id="80089-155">Remove multiple C# projects from a solution:</span></span>
 
   ```dotnetcli
   dotnet sln todo.sln remove todo-app/todo-app.csproj back-end/back-end.csproj
   ```
 
-- <span data-ttu-id="7468d-156">Přidejte do řešení více projektů Jazyka C# pomocí globbingového vzoru (pouze Unix/Linux):</span><span class="sxs-lookup"><span data-stu-id="7468d-156">Add multiple C# projects to a solution using a globbing pattern (Unix/Linux only):</span></span>
+- <span data-ttu-id="80089-156">Přidejte do řešení více projektů Jazyka C# pomocí globbingového vzoru (pouze Unix/Linux):</span><span class="sxs-lookup"><span data-stu-id="80089-156">Add multiple C# projects to a solution using a globbing pattern (Unix/Linux only):</span></span>
 
   ```dotnetcli
   dotnet sln todo.sln add **/*.csproj
   ```
 
-- <span data-ttu-id="7468d-157">Odebrání více projektů Jazyka C# z řešení pomocí globbing ového vzoru (pouze Unix/Linux):</span><span class="sxs-lookup"><span data-stu-id="7468d-157">Remove multiple C# projects from a solution using a globbing pattern (Unix/Linux only):</span></span>
+- <span data-ttu-id="80089-157">Přidejte více projektů Jazyka C# do řešení pomocí globbing vzor (pouze Windows PowerShell):</span><span class="sxs-lookup"><span data-stu-id="80089-157">Add multiple C# projects to a solution using a globbing pattern (Windows PowerShell only):</span></span>
+
+  ```dotnetcli
+  dotnet sln todo.sln add (ls **/*.csproj)
+  ```
+
+- <span data-ttu-id="80089-158">Odebrání více projektů Jazyka C# z řešení pomocí globbing ového vzoru (pouze Unix/Linux):</span><span class="sxs-lookup"><span data-stu-id="80089-158">Remove multiple C# projects from a solution using a globbing pattern (Unix/Linux only):</span></span>
 
   ```dotnetcli
   dotnet sln todo.sln remove **/*.csproj
+  ```
+
+- <span data-ttu-id="80089-159">Odeberte více projektů jazyka C# z řešení pomocí globbing vzor (pouze windows powershellu):</span><span class="sxs-lookup"><span data-stu-id="80089-159">Remove multiple C# projects from a solution using a globbing pattern (Windows PowerShell only):</span></span>
+
+  ```dotnetcli
+  dotnet sln todo.sln remove (ls **/*.csproj)
   ```
