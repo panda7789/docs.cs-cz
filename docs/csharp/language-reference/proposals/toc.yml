@@ -74,6 +74,8 @@
           href: ../../../../_csharplang/proposals/csharp-8.0/ranges.md
         - name: Příkazy using na základě vzorů a deklarace using
           href: ../../../../_csharplang/proposals/csharp-8.0/using.md
+        - name: Statické místní funkce
+          href: ../../../../_csharplang/proposals/csharp-8.0/static-local-functions.md
         - name: Přiřazení sloučení s hodnotou null
           href: ../../../../_csharplang/proposals/csharp-8.0/null-coalescing-assignment.md
         - name: Členy instance Readonly
