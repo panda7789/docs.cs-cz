@@ -2,12 +2,12 @@
 title: Protokoly zabezpečení verze 1.0
 ms.date: 03/30/2017
 ms.assetid: ee3402d2-1076-410b-a3cb-fae0372bd7af
-ms.openlocfilehash: 2014e1f6f8fefa89ed44bd820c3712617ff51470
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 0b86d870350d8728134cd2b42bbeb232183535bc
+ms.sourcegitcommit: 927b7ea6b2ea5a440c8f23e3e66503152eb85591
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79184515"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81463809"
 ---
 # <a name="security-protocols-version-10"></a>Protokoly zabezpečení verze 1.0
 Protokoly zabezpečení webových služeb poskytují mechanismy zabezpečení webových služeb, které pokrývají všechny existující požadavky na zabezpečení podnikových zpráv. Tato část popisuje podrobnosti wcf (Windows Communication Foundation) verze <xref:System.ServiceModel.Channels.SecurityBindingElement>1.0 (implementované v ) pro následující protokoly zabezpečení webových služeb.  
@@ -45,7 +45,7 @@ Protokoly zabezpečení webových služeb poskytují mechanismy zabezpečení we
 |KerberosOverTransport|Windows|X509|Přenos|  
 |VydánoTokenOverTransport|Federovaní|X509|Přenos|  
 |SspiNegotiatedOverTransport|Windows Sspi vyjednané|Windows Sspi vyjednané|Přenos|  
-|AnonymousForCertificate|Žádný|X509|Zpráva|  
+|AnonymousForCertificate|Žádná|X509|Zpráva|  
 |UserNameForCertificate|Uživatelské jméno/heslo|X509|Zpráva|  
 |Vzájemná certifikát|X509|X509|Zpráva|  
 |Vzájemná certifikátDuplex|X509|X509|Zpráva|  
@@ -53,7 +53,7 @@ Protokoly zabezpečení webových služeb poskytují mechanismy zabezpečení we
 |Kerberos|Windows|Windows|Zpráva|  
 |Vydaný token|Federovaní|Federovaní|Zpráva|  
 |SspiNegotiated|Windows Sspi vyjednané|Windows Sspi vyjednané|Zpráva|  
-|AnonymníForSslNegotiated|Žádný|X509, TLS-Nego|Zpráva|  
+|AnonymníForSslNegotiated|Žádná|X509, TLS-Nego|Zpráva|  
 |UserNameForSslNegotiated|Uživatelské jméno/heslo|X509, TLS-Nego|Zpráva|  
 |MutualSslNegotiated|X509|X509, TLS-Nego|Zpráva|  
 |VydánoTokenForSslNegotiated|Federovaní|X509, TLS-Nego|Zpráva|  
@@ -62,7 +62,7 @@ Protokoly zabezpečení webových služeb poskytují mechanismy zabezpečení we
   
  WCF využívá WS-SecureConversation poskytovat podporu zabezpečené relace k ochraně více zpráv výměny mezi aplikacemi.  Podrobnosti o implementaci najdete níže v části Zabezpečené relace.  
   
- Kromě režimů ověřování poskytuje WCF nastavení pro řízení běžných ochranných mechanismů, které se vztahují na většinu režimů ověřování založených na zabezpečení zpráv, například: pořadí podpisu versus operace šifrování, algoritmické sady, odvození klíče a potvrzení podpisu.  
+ Kromě režimů ověřování poskytuje WCF nastavení pro řízení běžných mechanismů ochrany, které se vztahují na většinu režimů ověřování založených na zabezpečení zpráv, například: pořadí podpisu versus operace šifrování, sady algoritmů, odvození klíče a potvrzení podpisu.  
   
  V tomto dokumentu se používají následující předpony a obory názvů.  
   
@@ -137,7 +137,7 @@ Protokoly zabezpečení webových služeb poskytují mechanismy zabezpečení we
  Přítomnost časového razítka <xref:System.ServiceModel.Channels.SecurityBindingElement.IncludeTimestamp%2A> je řízena pomocí vlastnosti třídy. <xref:System.ServiceModel.Channels.SecurityBindingElement> WCF vždy serializuje wsse:TimeStamp s wsse:Created a wsse:Expires fields. Wsse:TimeStamp je vždy podepsánpři podepisování se používá.  
   
 ### <a name="22-protection-order"></a>2.2 Ochranný příkaz  
- WCF podporuje pořadí ochrany zpráv "Podepsat před šifrovat" a "Šifrovat před podpisem" (zásady zabezpečení 1.1). "Podepsat před šifrováním" se doporučuje z důvodů, včetně: zprávy chráněné šifrovat před podpisem jsou otevřeny útokům nahrazení podpisu, pokud není použit mechanismus WS-Security 1.1 SignatureConfirmation a podpis přes šifrovaný obsah auditování je obtížnější.  
+ WCF podporuje pořadí ochrany zpráv "Podepsat před šifrovat" a "Šifrovat před podpisem" (zásady zabezpečení 1.1). "Podepsat před šifrováním" se doporučuje z důvodů, včetně: zprávy chráněné šifrovat před značkou jsou otevřeny útokům nahrazení podpisu, pokud ws-security 1.1 SignatureConfirmation mechanismus je použit a podpis přes šifrovaný obsah ztěžuje auditování.  
   
 ### <a name="23-signature-protection"></a>2.3 Ochrana proti podpisu  
  Při šifrování před značkou se doporučuje chránit podpis, aby se zabránilo útoky hrubou silou pro hádání šifrovaného obsahu nebo podpisového klíče (zejména při použití vlastního tokenu se slabým klíčem).  
@@ -250,7 +250,7 @@ sp:IncludeToken='http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeTok
   <wsu:Timestamp u:Id="_0">  
   ...  
   </wsu:Timestamp>  
-  <wsse:UsernameToken ... >  
+  <wsse:UsernameToken>  
   ...  
   </wsse:UsernameToken>  
 </wsse:Security>  
@@ -437,7 +437,7 @@ Namespace='http://www.w3.org/2005/08/addressing' />
   <wsu:Timestamp>  
   ...  
   </wsu:Timestamp>  
-  <saml:Assertion ...>  
+  <saml:Assertion>  
   ...  
   </saml:Assertion>  
   <ds:Signature>  
@@ -947,7 +947,7 @@ Ochrana tokenu: False
   
  Šifrovat podpis: True  
   
- Výše uvedené režimy ověřování se liší pouze podpůrné tokeny, které používají. AnonymousForCertificate nemá žádné podpůrné tokeny, MutualCertificate WSS 1.1 má certifikát X509 klienta jako podpůrný tokeny, UserNameForCertificate má token UserName jako podepsaný podpůrný token a IssuedTokenForCertificate má vydaný token jako podpůrný token.  
+ Výše uvedené režimy ověřování se liší pouze podpůrné tokeny, které používají. AnonymousForCertificate nemá žádné podpůrné tokeny, MutualCertificate WSS 1.1 má certifikát X509 klienta jako podpůrný token, UserNameForCertificate má token UserName token jako podepsaný podpůrný token a IssuedTokenForCertificate má vydaný token jako podpůrný token.  
   
  Zásada  
   
@@ -1856,7 +1856,7 @@ Ochrana tokenu: False
         <wsp:Policy>  
           <sp:ProtectionToken>  
             <wsp:Policy>  
-              <mssp:SslContextToken sp:IncludeToken='http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeToken/AlwaysToRecipient' />  
+              <mssp:SslContextToken sp:IncludeToken='http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeToken/AlwaysToRecipient'>  
                 <wsp:Policy>  
                   <sp:RequireDerivedKeys />
                 </wsp:Policy>  

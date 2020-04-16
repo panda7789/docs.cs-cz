@@ -2,12 +2,12 @@
 title: Protokoly zasílání zpráv
 ms.date: 03/30/2017
 ms.assetid: 5b20bca7-87b3-4c8f-811b-f215b5987104
-ms.openlocfilehash: d35cd496db32e1a2886f7ca06e7a3d0964f9c9b5
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 814347c77b54c4450aabf0a4f3966df223360663
+ms.sourcegitcommit: 927b7ea6b2ea5a440c8f23e3e66503152eb85591
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79184586"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81463835"
 ---
 # <a name="messaging-protocols"></a>Protokoly zasílání zpráv
 
@@ -283,7 +283,7 @@ Pro odpovědi odeslané přes samostatné požadavky http, ws-am tvrzení je
 </wsam:Addressing>
 ```
 
-Použití následujícího výrazu, který má předmět zásad koncového bodu [WS-PA] na koncové body, které používají WSDL 1.1 SOAP 1.x HTTP vazby vyžaduje dvě samostatné konverzovat HTTP připojení, které mají být použity pro zprávy proudící od respondéru do respondéru a respondér na žadateli, v uvedeném pořadí.
+Použití následující ho výrazu, který má předmět zásad koncového bodu [WS-PA] na koncové body, které používají WSDL 1.1 SOAP 1.x HTTP vazby vyžaduje dvě samostatné konverzní http připojení, které mají být použity pro zprávy přetékající od respondéru k respondéru a respondér na žadateli, resp.
 
 ```xml
 <cdp:CompositeDuplex/>
@@ -566,7 +566,7 @@ Koncový bod WCF nakonfigurovaný pro použití mtom bude vždy odesílat zpráv
 WCF používá následující kontrolní výraz zásad k označení využití mtom podle koncového bodu:
 
 ```xml
-<wsoma:OptimizedMimeSerialization ... />
+<wsoma:OptimizedMimeSerialization />
 ```
 
 - R4211: Předchozí výraz zásad má předmět zásad koncového bodu a určuje, že všechny zprávy odeslané a přijaté z koncového bodu musí být optimalizovány pomocí MTOM.

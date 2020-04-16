@@ -2,28 +2,29 @@
 title: Dotnet nuget zdroj aktualizace příkaz
 description: Dotnet nuget update source command updates a existing source in your NuGet configuration files.
 ms.date: 03/20/2020
-ms.openlocfilehash: 38335e07f91850756c7671413e1193c2578e7e7e
-ms.sourcegitcommit: 07123a475af89b6da5bb6cc51ea40ab1e8a488f0
+ms.openlocfilehash: 42b1aec95cdd57e53f966400f6692a3d0150c16c
+ms.sourcegitcommit: 927b7ea6b2ea5a440c8f23e3e66503152eb85591
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80148545"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81463481"
 ---
-# <a name="dotnet-nuget-update-source"></a>Zdroj aktualizace dotnet nuget
+# <a name="dotnet-nuget-update-source"></a>dotnet nuget update source
 
 **Tento článek se týká:** ✔️ .NET Core 3.1.200 SDK a novější verze
 
-## <a name="name"></a>Name (Název)
+## <a name="name"></a>Název
 
 `dotnet nuget update source`- Aktualizace nuget zdroj.
 
 ## <a name="synopsis"></a>Synopse
 
 ```dotnetcli
-dotnet nuget update source <NAME> [--source] [--username]
-    [--password] [--store-password-in-clear-text] [--valid-authentication-types]
-    [--configfile]
-dotnet nuget update source [-h|--help]
+dotnet nuget update source <NAME> [--source <SOURCE>] [--username <USER>]
+    [--password <PASSWORD>] [--store-password-in-clear-text]
+    [--valid-authentication-types <TYPES>] [--configfile <FILE>]
+
+dotnet nuget update source -h|--help
 ```
 
 ## <a name="description"></a>Popis
@@ -38,15 +39,15 @@ Příkaz `dotnet nuget update source` aktualizuje existující zdroj v konfigura
 
 ## <a name="options"></a>Možnosti
 
-- **`--configfile`**
+- **`--configfile <FILE>`**
 
   Konfigurační soubor NuGet. Pokud je zadán, budou použita pouze nastavení z tohoto souboru. Pokud není zadán, bude použita hierarchie konfiguračních souborů z aktuálního adresáře. Další informace naleznete [v tématu Common NuGet Configurations](https://docs.microsoft.com/nuget/consume-packages/configuring-nuget-behavior).
 
-- **`-p|--password`**
+- **`-p|--password <PASSWORD>`**
 
   Heslo, které se má použít při připojování k ověřenému zdroji.
 
-- **`-s|--source`**
+- **`-s|--source <SOURCE>`**
 
   Cesta ke zdroji balíčku.
 
@@ -54,11 +55,11 @@ Příkaz `dotnet nuget update source` aktualizuje existující zdroj v konfigura
 
   Umožňuje ukládání pověření zdroje přenosných balíčků zakázáním šifrování hesel.
 
-- **`-u|--username`**
+- **`-u|--username <USER>`**
 
   Uživatelské jméno, které má být použito při připojování k ověřenému zdroji.
 
-- **`--valid-authentication-types`**
+- **`--valid-authentication-types <TYPES>`**
 
   Seznam platných typů ověřování pro tento zdroj oddělený čárkou. Nastavte tuto `basic` možnost na, pokud server inzeruje NTLM nebo Negotiate a vaše přihlašovací údaje musí být odeslány pomocí základnímechanismus, například při použití PAT s místní Azure DevOps Server. Mezi další `negotiate`platné `kerberos` `ntlm`hodnoty `digest`patří , , a , ale tyto hodnoty pravděpodobně nebudou užitečné.
 

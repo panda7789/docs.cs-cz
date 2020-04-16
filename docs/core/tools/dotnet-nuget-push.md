@@ -3,27 +3,31 @@ title: dotnet nuget push, příkaz
 description: Příkaz push dotnet nuget odešle balíček na server a publikuje jej.
 author: karann-msft
 ms.date: 02/14/2020
-ms.openlocfilehash: d4ef8e58908fe488c712debff3b313ac0908b43e
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 96f8d008c8306a0782d5149360a24bb4097a1ec4
+ms.sourcegitcommit: 927b7ea6b2ea5a440c8f23e3e66503152eb85591
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "77503658"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81463521"
 ---
 # <a name="dotnet-nuget-push"></a>dotnet nuget push
 
 **Tento článek se týká:** ✔️ .NET Core 2.x SDK a novější verze
 
-## <a name="name"></a>Name (Název)
+## <a name="name"></a>Název
 
 `dotnet nuget push`- Odešle balíček na server a publikuje jej.
 
 ## <a name="synopsis"></a>Synopse
 
 ```dotnetcli
-dotnet nuget push [<ROOT>] [-d|--disable-buffering] [--force-english-output] [--interactive] [-k|--api-key] [-n|--no-symbols]
-    [--no-service-endpoint] [-s|--source] [--skip-duplicate] [-sk|--symbol-api-key] [-ss|--symbol-source] [-t|--timeout]
-dotnet nuget push [-h|--help]
+dotnet nuget push [<ROOT>] [-d|--disable-buffering] [--force-english-output]
+    [--interactive] [-k|--api-key <API_KEY>] [-n|--no-symbols]
+    [--no-service-endpoint] [-s|--source <SOURCE>] [--skip-duplicate]
+    [-sk|--symbol-api-key <API_KEY>] [-ss|--symbol-source <SOURCE>]
+    [-t|--timeout <TIMEOUT>]
+
+dotnet nuget push -h|--help
 ```
 
 ## <a name="description"></a>Popis

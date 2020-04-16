@@ -2,28 +2,32 @@
 title: dotnet nový příkaz
 description: Nový příkaz dotnet vytvoří nové projekty .NET Core založené na zadané šabloně.
 ms.date: 04/10/2020
-ms.openlocfilehash: 1b1a6efa7bf2753b6c23cc7af1e26867f8632b96
-ms.sourcegitcommit: 7980a91f90ae5eca859db7e6bfa03e23e76a1a50
+ms.openlocfilehash: 4ad0d7e54f93582237ed9457b562957018916d36
+ms.sourcegitcommit: 927b7ea6b2ea5a440c8f23e3e66503152eb85591
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "81242878"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81463616"
 ---
 # <a name="dotnet-new"></a>dotnet new
 
 **Tento článek se týká:** ✔️ .NET Core 2.0 SDK a novější verze
 
-## <a name="name"></a>Name (Název)
+## <a name="name"></a>Název
 
 `dotnet new`- Vytvoří nový projekt, konfigurační soubor nebo řešení založené na zadané šabloně.
 
 ## <a name="synopsis"></a>Synopse
 
 ```dotnetcli
-dotnet new <TEMPLATE> [--dry-run] [--force] [-i|--install] [-lang|--language] [-n|--name]
-    [--nuget-source] [-o|--output] [-u|--uninstall] [--update-apply] [--update-check] [Template options]
-dotnet new <TEMPLATE> [-l|--list] [--type]
-dotnet new [-h|--help]
+dotnet new <TEMPLATE> [--dry-run] [--force] [-i|--install {PATH|NUGET_ID}]
+    [-lang|--language {C#|F#|VB}] [-n|--name <OUTPUT_NAME>]
+    [--nuget-source <SOURCE>] [-o|--output <OUTPUT_DIRECTORY>]
+    [-u|--uninstall] [--update-apply] [--update-check] [Template options]
+
+dotnet new <TEMPLATE> [-l|--list] [--type <TYPE>]
+
+dotnet new -h|--help
 ```
 
 ## <a name="description"></a>Popis
@@ -121,7 +125,7 @@ Příkaz volá [modul šablony](https://github.com/dotnet/templating) k vytvoře
 
   Název vytvořeného výstupu. Pokud není zadán žádný název, bude použit název aktuálního adresáře.
 
-- **`--nuget-source`**
+- **`--nuget-source <SOURCE>`**
 
   Určuje zdroj NuGet, který se má použít během instalace. K dispozici od .NET Core 2.1 SDK.
 
@@ -129,9 +133,9 @@ Příkaz volá [modul šablony](https://github.com/dotnet/templating) k vytvoře
 
   Umístění pro umístění generovaného výstupu. Výchozí je aktuální adresář.
 
-- **`--type`**
+- **`--type <TYPE>`**
 
-  Filtruje šablony založené na dostupných typech. Předdefinované hodnoty jsou "projekt", "položka" nebo "jiné".
+  Filtruje šablony založené na dostupných typech. Předdefinované hodnoty `project` `item`jsou `other`, , nebo .
 
 - **`-u|--uninstall [PATH|NUGET_ID]`**
 

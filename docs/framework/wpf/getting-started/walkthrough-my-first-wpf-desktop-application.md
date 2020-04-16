@@ -11,16 +11,16 @@ helpviewer_keywords:
 ms.assetid: b96bed40-8946-4285-8fe4-88045ab854ed
 ms.topic: tutorial
 ms.custom: mvc,vs-dotnet
-ms.openlocfilehash: 65b6fe31e86380162e90820c2cf118a9d1b96b4a
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: facb9ebebd9ce1904886a946277185ac2c2e4bc4
+ms.sourcegitcommit: 927b7ea6b2ea5a440c8f23e3e66503152eb85591
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79186589"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81463927"
 ---
 # <a name="tutorial-create-your-first-wpf-application-in-visual-studio-2019"></a>Kurz: Vytvoření první aplikace WPF v Sadě Visual Studio 2019
 
-Tento článek ukazuje, jak vyvinout desktopovou aplikaci WPF (Windows Presentation Foundation), která obsahuje prvky, které jsou společné pro většinu aplikací WPF: značky Xml (XAML), kód na pozadí, definice aplikací, ovládací prvky, rozložení, datové vazby a styly. K vývoji aplikace budete používat Visual Studio.
+Tento článek ukazuje, jak vyvinout desktopovou aplikaci WPF (Windows Presentation Foundation), která obsahuje prvky, které jsou společné pro většinu aplikací WPF: značky Xml (XAML) extensible Application Markup Language (XAML), kód na pozadí, definice aplikací, ovládací prvky, rozložení, datové vazby a styly. K vývoji aplikace budete používat Visual Studio.
 
 V tomto kurzu se naučíte:
 > [!div class="checklist"]
@@ -293,11 +293,11 @@ V této části aktualizujete hlavní nastavení domovské stránky pomocí obr�
 
 1. V *`ExpenseItHome.xaml`*, přidejte <xref:System.Windows.Controls.Grid.ColumnDefinitions%2A> další sloupec <xref:System.Windows.Controls.ColumnDefinition.Width%2A> s pevnou 230 pixelů:
 
-    [!code-xaml[ExpenseIt#11](~/samples/snippets/csharp/VS_Snippets_Wpf/ExpenseIt/CSharp/ExpenseIt9/ExpenseItHome.xaml?highlight=52-55)]
+    [!code-xaml[ExpenseIt#11](~/samples/snippets/csharp/VS_Snippets_Wpf/ExpenseIt/CSharp/ExpenseIt9/ExpenseItHome.xaml?highlight=2#NewColumn)]
 
 2. Přidejte další <xref:System.Windows.Controls.Grid.RowDefinitions%2A>řádek do , pro celkem čtyři řádky:
 
-    [!code-xaml[ExpenseIt#11b](~/samples/snippets/csharp/VS_Snippets_Wpf/ExpenseIt/CSharp/ExpenseIt9/ExpenseItHome.xaml?highlight=57-62)]
+    [!code-xaml[ExpenseIt#11b](~/samples/snippets/csharp/VS_Snippets_Wpf/ExpenseIt/CSharp/ExpenseIt9/ExpenseItHome.xaml?highlight=2#NewRows)]
 
 3. Přesuňte ovládací prvky do <xref:System.Windows.Controls.Grid.Column%2A?displayProperty=nameWithType> druhého sloupce nastavením vlastnosti na 1 v každém ze tří ovládacích prvků (Border, ListBox a Button).
 
@@ -471,7 +471,7 @@ Následující obrázek znázorňuje `ExpenseIt` obě stránky aplikace s použi
 > [!NOTE]
 > Tato ukázka ukazuje konkrétní funkci WPF a nedodržuje všechny osvědčené postupy pro věci, jako je zabezpečení, lokalizace a usnadnění přístupu. Komplexní pokrytí WPF a osvědčených postupů pro vývoj aplikací .NET najdete v následujících tématech:
 >
-> - [Přístupnost](../../ui-automation/accessibility-best-practices.md)
+> - [Usnadnění](../../ui-automation/accessibility-best-practices.md)
 > - [Zabezpečení](../security-wpf.md)
 > - [WPF globalizace a lokalizace](../advanced/wpf-globalization-and-localization-overview.md)
 > - [WPF výkon](../advanced/optimizing-wpf-application-performance.md)

@@ -2,12 +2,12 @@
 title: Rozšíření hostitele služby pracovního postupu
 ms.date: 03/30/2017
 ms.assetid: c0e8f7bb-cb13-49ec-852f-b85d7c23972f
-ms.openlocfilehash: 776fc78cd3f5b012dd40576fe56f71835e949708
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: eb35b9211bc55ee66f5bb5600ef86f40d4145191
+ms.sourcegitcommit: 927b7ea6b2ea5a440c8f23e3e66503152eb85591
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79184161"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81464002"
 ---
 # <a name="workflow-service-host-extensibility"></a>Rozšíření hostitele služby pracovního postupu
 [!INCLUDE[netfx_current_long](../../../../includes/netfx-current-long-md.md)]poskytuje <xref:System.ServiceModel.Activities.WorkflowServiceHost> třídu pro hostování služeb pracovního postupu. Tato třída se používá, když vlastní hostování služby pracovního postupu ve spravované aplikaci nebo služby systému Windows. Tato třída se také používá při hostování služby pracovního postupu s Internetovou informační službou (IIS) nebo službou aktivace procesů systému Windows (WAS). Třída <xref:System.ServiceModel.Activities.WorkflowServiceHost> poskytuje body rozšíření, které umožňují přidávat vlastní rozšíření, změnit chování nečinnosti a hostovat pracovní postupy neslužby (pracovní postupy, které nepoužívají aktivity zasílání zpráv).  
@@ -43,6 +43,7 @@ host.Description.Behaviors.Add(new WorkflowUnhandledExceptionBehavior { Action =
           <workflowUnhandledExceptionBehavior action="Abandon" />
         </behavior>  
       </serviceBehaviors>  
+</behaviors>
 ```  
   
 ## <a name="hosting-non-service-workflows"></a>Hostování pracovních postupů, které nejsou službami  

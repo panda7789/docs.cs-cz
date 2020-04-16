@@ -2,12 +2,12 @@
 title: Objemná data a vysílání datových proudů
 ms.date: 03/30/2017
 ms.assetid: ab2851f5-966b-4549-80ab-c94c5c0502d2
-ms.openlocfilehash: 91e53f66fb0f2f94a315c318eb0b203d78427bae
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 4b6275a27fb1e09ecac1f8f00f56068a80a214ef
+ms.sourcegitcommit: 927b7ea6b2ea5a440c8f23e3e66503152eb85591
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79184683"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81464083"
 ---
 # <a name="large-data-and-streaming"></a>Objemná data a vysílání datových proudů
 
@@ -17,13 +17,13 @@ Windows Communication Foundation (WCF) je komunikační infrastruktura založen�
  Chcete-li poskytnout základní informace o následující informace pro WCF, tato část zdůrazňuje některé obecné obavy a důležité informace pro kódování, binární data a streamování, které se obecně vztahují na infrastruktury připojených systémů.  
   
 ### <a name="encoding-data-text-vs-binary"></a>Kódování dat: Text vs. binární  
- Mezi běžně vyjádřené obavy vývojářů patří dojem, že XML má ve srovnání s binárními formáty značnou režii vzhledem k opakující se povaze počátečních a koncových značek, že kódování číselných hodnot je považováno za výrazně větší protože jsou vyjádřeny v textových hodnotách a že binární data nemohou být efektivně vyjádřena, protože musí být speciálně zakódována pro vložení do textového formátu.  
+ Mezi běžně vyjádřené obavy vývojářů patří dojem, že jazyk XML má ve srovnání s binárními formáty významnou režii z důvodu opakující se povahy počátečních a koncových značek, že kódování číselných hodnot je považováno za výrazně větší, protože jsou vyjádřeny v textových hodnotách, a že binární data nelze efektivně vyjádřit, protože musí být speciálně zakódována pro vložení do textového formátu.  
   
- Zatímco mnohé z těchto a podobných obav jsou platné, skutečný rozdíl mezi xml-text kódované zprávy v prostředí webových služeb XML a binární kódované zprávy ve staršívzdálené procedury volání (RPC) prostředí je často mnohem méně významný než počáteční úvaha by mohla naznačovat.  
+ Zatímco mnoho z těchto a podobných obav jsou platné, skutečný rozdíl mezi xml-text kódované zprávy v prostředí webových služeb XML a binární kódované zprávy ve staršívzdálené procedury volání (RPC) prostředí je často mnohem méně významné, než počáteční úvahy může naznačovat.  
   
  Zatímco xml-text kódované zprávy jsou transparentní a "lidské čitelné", binární zprávy jsou často poměrně obskurní ve srovnání a obtížné dekódovat bez nástrojů. Tento rozdíl v čitelnosti vede jeden přehlédnout, že binární zprávy také často nesou vložková metadata v datové části, která přidává režii stejně jako u textových zpráv XML. To platí zejména pro binární formáty, které mají za cíl poskytnout volné párování a dynamické vyvolání schopnosti.  
   
- Binární formáty však běžně nesou takové popisné informace metadat v "záhlaví", které také deklaruje rozložení dat pro následující datové záznamy. Datová část pak následuje po této společné deklaraci bloku metadat s minimální další režii. Naproti tomu XML uzavře každou datovou položku do prvku nebo atributu tak, aby ohraničující metadata byla průběžně zahrnuta pro každý serializovaný objekt datové části. V důsledku toho je velikost jednoho serializovaného objektu datové části podobná při porovnávání textu s binárními reprezentacemi, protože některá popisná metadata musí být vyjádřena pro obě, ale binární formát těží z popisu sdílených metadat s každým dalším popisem metadat s každým dalším objekt datové části, který je přenesen z důvodu nižší celkové režie.  
+ Binární formáty však běžně nesou takové popisné informace metadat v "záhlaví", které také deklaruje rozložení dat pro následující datové záznamy. Datová část pak následuje po této společné deklaraci bloku metadat s minimální další režii. Naproti tomu XML uzavře každou datovou položku do prvku nebo atributu tak, aby ohraničující metadata byla průběžně zahrnuta pro každý serializovaný objekt datové části. V důsledku toho je velikost jednoho serializovaného datového objektu podobná při porovnávání textu s binárními reprezentacemi, protože některá popisná metadata musí být vyjádřena pro obě, ale binární formát těží z popisu sdílených metadat s každým dalším objektem datové části, který je přenesen z důvodu nižší celkové režie.  
   
  Přesto pro některé datové typy, jako jsou čísla, může být nevýhoda použití pevné velikosti, binární číselné reprezentace, jako je například 128bitový desetinný typ namísto prostého textu, jako reprezentace prostého textu může být o několik bajtů menší. Textová data mohou mít také výhody velikosti z obvykle flexibilnějších voleb kódování textu XML, zatímco některé binární formáty mohou být ve výchozím nastavení nastaveny na 16bitový nebo dokonce 32bitový unicode, což se nevztahuje na binární formát XML .NET.  
   
@@ -32,7 +32,7 @@ Windows Communication Foundation (WCF) je komunikační infrastruktura založen�
  Jasnou výhodou textových zpráv XML je, že jsou založeny na standardech a nabízejí nejširší výběr možností interoperability a podpory platformy. Další informace naleznete v části Kódování dále v tomto tématu.  
   
 ### <a name="binary-content"></a>Binární obsah  
- Jednou z oblastí, kde binární kódování jsou lepší než text-založené kódování, pokud jde o výsledné velikosti zprávy jsou velké binární datové položky, jako jsou obrázky, videa, zvukové klipy, nebo jakoukoli jinou formu neprůhledných, binární data, která musí být vyměněny mezi službami a jejich Spotřebitelé. Chcete-li tyto typy dat přizpůsobit textu XML, je běžným přístupem jejich kódování pomocí kódování Base64.  
+ Jednou z oblastí, kde binární kódování jsou lepší než textová kódování z hlediska výsledné velikosti zprávy jsou velké binární datové položky, jako jsou obrázky, videa, zvukové klipy nebo jakoukoli jinou formu neprůhledných binárních dat, které musí být vyměňovány mezi službami a jejich příjemci. Chcete-li tyto typy dat přizpůsobit textu XML, je běžným přístupem jejich kódování pomocí kódování Base64.  
   
  V řetězci kódu Base64 představuje každý znak 6 bitů původních 8bitových dat, což má za následek poměr režii kódování 4:3 pro Base64, nepočítaje další formátovací znaky (návratový/řádkový kanál) obvykle přidané podle konvence. Zatímco význam rozdílů mezi xml a binární kódování obvykle závisí na scénáři, zvýšení velikosti více než 33 % při přenosu datové části 500 MB je obvykle nepřijatelné.  
   
@@ -45,7 +45,7 @@ Windows Communication Foundation (WCF) je komunikační infrastruktura založen�
 ### <a name="large-data-content"></a>Velký obsah dat  
  Drát-stopa stranou, výše uvedené 500-MB užitečné zatížení také představuje velkou místní výzvu pro službu a klienta. Ve výchozím nastavení wcf zpracovává zprávy v *režimu ve vyrovnávací paměti*. To znamená, že celý obsah zprávy je přítomen v paměti před odesláním nebo po přijetí. I když je to dobrá strategie pro většinu scénářů a nezbytné pro zasílání zpráv funkce, jako jsou digitální podpisy a spolehlivé doručení, velké zprávy by mohly vyčerpat prostředky systému.  
   
- Strategie pro řešení velkých datových částí je streamování. Zatímco zprávy, zejména ty vyjádřené v XML, jsou běžně považovány za relativně kompaktní datové balíčky, zpráva může mít velikost více gigabajtů a podobat nepřetržitý datový proud více než datový balíček. Když jsou data přenášena v režimu streamování namísto režimu ve vyrovnávací paměti, odesílatel zpřístupní obsah textu zprávy příjemci ve formě datového proudu a infrastruktura zpráv průběžně předává data od odesílatele k příjemci, jakmile se stane K dispozici.  
+ Strategie pro řešení velkých datových částí je streamování. Zatímco zprávy, zejména ty vyjádřené v XML, jsou běžně považovány za relativně kompaktní datové balíčky, zpráva může mít velikost více gigabajtů a podobat nepřetržitý datový proud více než datový balíček. Při přenosu dat v režimu streamování namísto režimu ve vyrovnávací paměti odesílatele zpřístupní obsah textu zprávy příjemci ve formě datového proudu a infrastruktura zpráv průběžně předává data od odesílatele příjemci k příjemci, jakmile budou k dispozici.  
   
  Nejběžnější scénář, ve kterém dochází k tak velkým přenosům datového obsahu, jsou přenosy binárních datových objektů, které:  
   
@@ -70,7 +70,7 @@ Windows Communication Foundation (WCF) je komunikační infrastruktura založen�
 |-----------------------------|-----------------|  
 |<xref:System.ServiceModel.Channels.TextMessageEncodingBindingElement>|Kodér textových zpráv je výchozí kodér pro všechny vazby založené na protokolu HTTP a vhodnou volbou pro všechny vlastní vazby, kde interoperabilita je nejvyšší obavy. Tento kodér čte a zapisuje standardní soap 1.1/SOAP 1.2 textové zprávy bez zvláštního zpracování pro binární data. Pokud <xref:System.ServiceModel.Channels.MessageVersion?displayProperty=nameWithType> je vlastnost zprávy nastavena na <xref:System.ServiceModel.Channels.MessageVersion.None?displayProperty=nameWithType>, obálka soap obálky je vynechána z výstupu a pouze obsah textu zprávy je serializován.|  
 |<xref:System.ServiceModel.Channels.MtomMessageEncodingBindingElement>|Kodér zpráv MTOM je textový kodér, který implementuje speciální zpracování binárních dat a ve výchozím nastavení se nepoužívá v žádné ze standardních vazeb, protože se jedná výhradně o nástroj pro optimalizaci případ od případu. Pokud zpráva obsahuje binární data, která překračuje prahovou hodnotu, kde kódování MTOM poskytuje výhodu, data jsou externalizována do části MIME následující obálky zprávy. Další informace o povolení mtom dále v této části naleznete v části Povolení mtom.|  
-|<xref:System.ServiceModel.Channels.BinaryMessageEncodingBindingElement>|Binární kodér zpráv je výchozí kodér pro vazby Net* a vhodnou volbou vždy, když jsou obě komunikující strany založeny na WCF. Kodér binárních zpráv používá binární formát XML .NET, binární reprezentaci specifickou pro microsoftpro informační sady XML (Infosets), která obvykle poskytuje menší nároky než ekvivalentní reprezentace XML 1.0 a kóduje binární data jako bajt Proudu.|  
+|<xref:System.ServiceModel.Channels.BinaryMessageEncodingBindingElement>|Binární kodér zpráv je výchozí kodér pro vazby Net* a vhodnou volbou vždy, když jsou obě komunikující strany založeny na WCF. Kodér binárních zpráv používá binární formát XML .NET, binární reprezentaci specifickou pro microsoft pro informační sady XML (Infosets), která obvykle poskytuje menší nároky než ekvivalentní reprezentace XML 1.0 a kóduje binární data jako datový proud bajtů.|  
   
  Kódování textových zpráv je obvykle nejlepší volbou pro všechny komunikační cesty, která vyžaduje interoperabilitu, zatímco binární kódování zpráv je nejlepší volbou pro všechny ostatní komunikační cesty. Binární kódování zpráv obvykle poskytuje menší velikosti zpráv ve srovnání s textem pro jednu zprávu a postupně ještě menší velikosti zpráv po dobu trvání relace komunikace. Na rozdíl od kódování textu binární kódování nemusí používat speciální zpracování pro binární data, jako je například použití Base64, ale představuje bajty jako bajty.  
   
@@ -88,7 +88,7 @@ Windows Communication Foundation (WCF) je komunikační infrastruktura založen�
       </wsHttpBinding>  
     </bindings>  
      …  
-<system.serviceModel>  
+</system.serviceModel>  
 ```  
   
  Jak již bylo zmíněno dříve, rozhodnutí o použití kódování MTOM závisí na objemu dat, který odesíláte. Také protože MTOM je povolena na úrovni vazby, povolení MTOM ovlivňuje všechny operace na daný koncový bod.  
@@ -134,7 +134,7 @@ class MyData
   
 - Šifrování závisí na digitálních podpisech a ověřte, zda byla data správně rekonstruována.  
   
-- Spolehlivé relace musí ukládat zprávy do vyrovnávací paměti pro opětovné doručení v klientovi, pokud dojde ke ztrátě zprávy při přenosu a musí obsahovat zprávy ve službě před jejich předáním do implementace služby, aby se zachovalo pořadí zpráv v případě, že jsou přijaty zprávy mimo pořadí.  
+- Spolehlivé relace musí vyrovnávací paměti odeslané zprávy na straně klienta pro opětovné doručení, pokud zpráva dojde ke ztrátě při přenosu a musí obsahovat zprávy ve službě před předáním do implementace služby zachovat pořadí zpráv v případě, že zprávy jsou přijímány mimo pořadí.  
   
  Z důvodu těchto funkčních omezení můžete pro streamování používat pouze možnosti zabezpečení na úrovni přenosu a nelze zapnout spolehlivé relace. Streamování je k dispozici pouze s následujícími vazbami definovanými systémem:  
   
@@ -153,7 +153,7 @@ class MyData
  Streamování také není k dispozici při použití přenosu kanálu <xref:System.ServiceModel.NetPeerTcpBinding>Peer, takže není k dispozici s .  
   
 #### <a name="streaming-and-sessions"></a>Streamování a relace  
- Při streamování volání pomocí vazby založené na relaci může dojít k neočekávanému chování. Všechna volání streamování jsou prováděny prostřednictvím jednoho kanálu (kanál datagram), který nepodporuje relace i v případě, že se používá vazba je nakonfigurován pro použití relací. Pokud více klientů provádět volání streamování stejného objektu služby přes vazbu založenou na relaci a režim souběžnosti objektu služby je nastavena na jednu a jeho instance kontextový režim je nastavena na PerSession, všechna volání musí projít kanálem datagram a tak pouze jeden volání zpracováno současně. Jeden nebo více klientů pak může časový mzda. Tento problém můžete vyřešit nastavením režimu kontextu instance objektu služby na PerCall nebo Souběžnost na Více.  
+ Při streamování volání pomocí vazby založené na relaci může dojít k neočekávanému chování. Všechna volání streamování jsou prováděny prostřednictvím jednoho kanálu (kanál datagram), který nepodporuje relace i v případě, že se používá vazba je nakonfigurován pro použití relací. Pokud více klientů provádět volání streamování stejného objektu služby přes vazbu založenou na relaci a režim souběžnosti objektu služby je nastavena na jednu a jeho instance kontextový režim je nastavena na PerSession, všechna volání musí projít kanálem datagram, a tak pouze jedno volání je zpracována najednou. Jeden nebo více klientů pak může časový mzda. Tento problém můžete vyřešit nastavením režimu kontextu instance objektu služby na PerCall nebo Souběžnost na Více.  
   
 > [!NOTE]
 > MaxConcurrentSessions nemá žádný vliv v tomto případě, protože je k dispozici pouze jedna "relace".  
@@ -178,7 +178,7 @@ class MyData
       </basicHttpBinding>  
     </bindings>  
      …  
-<system.serviceModel>  
+</system.serviceModel>  
 ```  
   
  Při vytváření instancí vazby v kódu, `TransferMode` je nutné nastavit příslušnou vlastnost vazby (nebo prvek vazby přenosu, pokud komponujete vlastní vazbu) na jednu z výše uvedených hodnot.  
@@ -225,7 +225,7 @@ public class UploadStreamMessage
   
  Při příjmu zprávy WCF vytvoří datový proud přes base64 kódované obsahu textu zprávy (nebo příslušné části MIME, pokud používáte MTOM) a datový proud dosáhne EOF po čtení obsahu.  
   
- Streamování na úrovni přenosu funguje také s jakýmkoli jiným typem smlouvy zprávy (seznamy parametrů, argumenty kontraktů dat a kontrakt explicitní zprávy), ale protože serializace a deserializace těchto zadaných zpráv vyžaduje ukládání do vyrovnávací paměti serializátorem , použití těchto smluvních variant není vhodné.  
+ Streamování na úrovni přenosu funguje také s jiným typem smlouvy zprávy (seznamy parametrů, argumenty smlouvy dat a explicitní zprávy smlouvy), ale protože serializace a deserializace těchto zadaných zpráv vyžaduje ukládání do vyrovnávací paměti serializátorem, pomocí takové varianty smlouvy není vhodné.  
   
 ### <a name="special-security-considerations-for-large-data"></a>Zvláštní důležité informace o zabezpečení pro velká data  
  Všechny vazby umožňují omezit velikost příchozích zpráv, aby se zabránilo útokům odmítnutí služby. Například <xref:System.ServiceModel.BasicHttpBinding>zpřístupňuje [Vlastnost System.ServiceModel.BasicHttpBinding.MaxReceivedMessageSize,](xref:System.ServiceModel.HttpBindingBase.MaxReceivedMessageSize%2A) která ohraničuje velikost příchozí zprávy a proto také ohraničuje maximální množství paměti, ke které se při zpracování zprávy přistupuje. Tato jednotka je nastavena v bajtů s výchozí hodnotou 65 536 bajtů.  

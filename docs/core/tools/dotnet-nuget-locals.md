@@ -3,18 +3,18 @@ title: dotnet nuget locals, příkaz
 description: Dotnet nuget locals příkaz vymaže nebo uvádí místní nugetové prostředky, jako je například mezipaměť požadavků http, dočasná mezipaměť nebo globální složky globálních balíčků pro celý počítač.
 author: karann-msft
 ms.date: 02/14/2020
-ms.openlocfilehash: 3fdd7d946b08b4c18cfaeb65013de259b927a7fa
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 5b421b5058528a93c7be58eef2932937cc9cc12d
+ms.sourcegitcommit: 927b7ea6b2ea5a440c8f23e3e66503152eb85591
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "77503692"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81463536"
 ---
 # <a name="dotnet-nuget-locals"></a>dotnet nuget locals
 
 **Tento článek se týká:** ✔️ .NET Core 2.x SDK a novější verze
 
-## <a name="name"></a>Name (Název)
+## <a name="name"></a>Název
 
 `dotnet nuget locals`- Vymaže nebo zobrazí seznam místních prostředků NuGet.
 
@@ -22,7 +22,8 @@ ms.locfileid: "77503692"
 
 ```dotnetcli
 dotnet nuget locals <CACHE_LOCATION> [(-c|--clear)|(-l|--list)] [--force-english-output]
-dotnet nuget locals [-h|--help]
+
+dotnet nuget locals -h|--help
 ```
 
 ## <a name="description"></a>Popis

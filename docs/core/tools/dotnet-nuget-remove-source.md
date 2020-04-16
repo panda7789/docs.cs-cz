@@ -2,26 +2,27 @@
 title: dotnet nuget odebrat zdroj ový příkaz
 description: Dotnet nuget odebrat zdroj příkaz odebere existující zdroj z konfiguračních souborů NuGet.
 ms.date: 03/20/2020
-ms.openlocfilehash: 65c97b98ab50121fb4ebc184da65f021c16e0634
-ms.sourcegitcommit: 07123a475af89b6da5bb6cc51ea40ab1e8a488f0
+ms.openlocfilehash: b259873e1885644b272136fa31414410bdfd9f27
+ms.sourcegitcommit: 927b7ea6b2ea5a440c8f23e3e66503152eb85591
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80148538"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81463494"
 ---
-# <a name="dotnet-nuget-remove-source"></a>dotnet nuget odebrat zdroj
+# <a name="dotnet-nuget-remove-source"></a>dotnet nuget remove source
 
 **Tento článek se týká:** ✔️ .NET Core 3.1.200 SDK a novější verze
 
-## <a name="name"></a>Name (Název)
+## <a name="name"></a>Název
 
 `dotnet nuget remove source`- Odeberte zdroj NuGet.
 
 ## <a name="synopsis"></a>Synopse
 
 ```dotnetcli
-dotnet nuget remove source <NAME> [--configfile]
-dotnet nuget remove source [-h|--help]
+dotnet nuget remove source <NAME> [--configfile <FILE>]
+
+dotnet nuget remove source -h|--help
 ```
 
 ## <a name="description"></a>Popis

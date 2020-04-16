@@ -2,18 +2,18 @@
 title: dotnet nástroj obnovit, příkaz
 description: Příkaz obnovení nástroje dotnet nainstaluje do počítače místní nástroje .NET Core, které jsou v oboru pro aktuální adresář.
 ms.date: 02/14/2020
-ms.openlocfilehash: 0d1e67ec809ddd725721698cc741f9acc99e1ce7
-ms.sourcegitcommit: c91110ef6ee3fedb591f3d628dc17739c4a7071e
+ms.openlocfilehash: a518c2d45bbe9522bddfed4bbef61b30f1ad634b
+ms.sourcegitcommit: 927b7ea6b2ea5a440c8f23e3e66503152eb85591
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/15/2020
-ms.locfileid: "81389617"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81463331"
 ---
 # <a name="dotnet-tool-restore"></a>dotnet tool restore
 
 **Tento článek se týká:** ✔️ .NET Core 3.0 SDK a novější verze
 
-## <a name="name"></a>Name (Název)
+## <a name="name"></a>Název
 
 `dotnet tool restore`- Nainstaluje do počítače místní nástroje .NET Core, které jsou v oboru pro aktuální adresář.
 
@@ -21,11 +21,12 @@ ms.locfileid: "81389617"
 
 ```dotnetcli
 dotnet tool restore <PACKAGE_NAME>
-    [--configfile] [--add-source] [tool-manifest]
-    [--disable-parallel] [--ignore-failed-sources]
-    [--no-cache] [--interactive] [-v|--verbosity]
+    [--configfile <FILE>] [--add-source <SOURCE>]
+    [tool-manifest <PATH_TO_MANIFEST_FILE>] [--disable-parallel]
+    [--ignore-failed-sources] [--no-cache] [--interactive]
+    [-v|--verbosity <LEVEL>]
 
-dotnet tool restore <-h|--help>
+dotnet tool restore -h|--help
 ```
 
 ## <a name="description"></a>Popis

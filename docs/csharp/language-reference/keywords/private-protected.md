@@ -2,12 +2,12 @@
 title: privátní chráněné - C# Reference
 ms.date: 11/15/2017
 author: sputier
-ms.openlocfilehash: 01a8b716ce87a63a50a92a25b2842f7bb12d4c9f
-ms.sourcegitcommit: 07123a475af89b6da5bb6cc51ea40ab1e8a488f0
+ms.openlocfilehash: 03fa90582d096919f2e6546fae2fde28e486fe41
+ms.sourcegitcommit: 927b7ea6b2ea5a440c8f23e3e66503152eb85591
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80134355"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81463045"
 ---
 # <a name="private-protected-c-reference"></a>privátní chráněné (C# Reference)
 
@@ -18,7 +18,7 @@ Kombinace `private protected` klíčových slov je modifikátor přístupu člen
 
 ## <a name="example"></a>Příklad
 
-Soukromý chráněný člen základní třídy je přístupný z odvozených typů v jeho obsahující sestavení pouze v případě, že statický typ proměnné je odvozený typ třídy. Zvažte například následující segment kódu:  
+Soukromý chráněný člen základní třídy je přístupný z odvozených typů v jeho obsahující sestavení pouze v případě, že statický typ proměnné je odvozený typ třídy. Zvažte například následující segment kódu:
 
 ```csharp
 public class BaseClass
@@ -34,7 +34,7 @@ public class DerivedClass1 : BaseClass
 
         // Error CS1540, because myValue can only be accessed by
         // classes derived from BaseClass.
-        // baseObject.myValue = 5;  
+        // baseObject.myValue = 5;
 
         // OK, accessed through the current derived class instance
         myValue = 5;
@@ -43,8 +43,8 @@ public class DerivedClass1 : BaseClass
 ```
 
 ```csharp
-// Assembly2.cs  
-// Compile with: /reference:Assembly1.dll  
+// Assembly2.cs
+// Compile with: /reference:Assembly1.dll
 class DerivedClass2 : BaseClass
 {
     void Access()
@@ -58,13 +58,16 @@ class DerivedClass2 : BaseClass
 
 Tento příklad obsahuje `Assembly1.cs` dva `Assembly2.cs`soubory a .
 První soubor obsahuje třídu `BaseClass`public base a typ z `DerivedClass1`něj odvozený . `BaseClass`vlastní soukromý chráněný člen `myValue`, `DerivedClass1` který se pokusí o přístup dvěma způsoby. První pokus o `myValue` přístup prostřednictvím instance `BaseClass` způsobí chybu. Pokus o jeho použití jako zděděného člena v aplikaci však `DerivedClass1` bude úspěšný.
+
 V druhém souboru pokus `myValue` o přístup jako `DerivedClass2` zděděný člen způsobí chybu, protože je přístupný pouze odvozené typy v Assembly1.
 
-Členy struktury nelze `private protected` zdědit, protože strukturu nelze zdědit.  
+Pokud `Assembly1.cs` obsahuje <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> tento `Assembly2`název , `DerivedClass1` odvozené třídy bude mít přístup k členům `private protected` deklarované v `BaseClass`. `InternalsVisibleTo`zviditelní `private protected` členy odvozených tříd v jiných sestaveních.
+
+Členy struktury nelze `private protected` zdědit, protože strukturu nelze zdědit.
 
 ## <a name="c-language-specification"></a>specifikace jazyka C#
 
-[!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
+[!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]
 
 ## <a name="see-also"></a>Viz také
 
@@ -74,7 +77,7 @@ V druhém souboru pokus `myValue` o přístup jako `DerivedClass2` zděděný č
 - [Modifikátory přístupu](access-modifiers.md)
 - [Úrovně přístupnosti](accessibility-levels.md)
 - [Modifikátory](index.md)
-- [Veřejné](public.md)
-- [Soukromé](private.md)
-- [Vnitřní](internal.md)
+- [public](public.md)
+- [private](private.md)
+- [internal](internal.md)
 - [Obavy o zabezpečení interních virtuálních klíčových slov](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/heyd8kky(v=vs.100))

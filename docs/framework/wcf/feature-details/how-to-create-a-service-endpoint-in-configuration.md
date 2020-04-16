@@ -2,12 +2,12 @@
 title: 'Postupy: Vytvoření koncového bodu služby v konfiguraci'
 ms.date: 06/16/2016
 ms.assetid: f474e25d-2a27-4f31-84c5-395c442b8e70
-ms.openlocfilehash: 9687d9537d6f166a02b79261743050168f677261
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 5935f798004de3ec049b9c9f0300675e1660f462
+ms.sourcegitcommit: 927b7ea6b2ea5a440c8f23e3e66503152eb85591
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79185000"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81464133"
 ---
 # <a name="how-to-create-a-service-endpoint-in-configuration"></a>Postupy: Vytvoření koncového bodu služby v konfiguraci
 Koncové body poskytují klientům přístup k funkcím, které služba WCF (Windows Communication Foundation) nabízí. Můžete definovat jeden nebo více koncových bodů pro službu pomocí kombinace relativní a absolutní adresy koncového bodu, nebo pokud nedefinujete žádné koncové body služby, modul runtime poskytuje některé ve výchozím nastavení pro vás. Toto téma ukazuje, jak přidat koncové body pomocí konfiguračního souboru, který obsahuje relativní i absolutní adresy.  
@@ -25,10 +25,8 @@ Koncové body poskytují klientům přístup k funkcím, které služba WCF (Win
   
   <system.serviceModel>  
     <services>  
-    <!-- This section is optional with the default configuration introduced  
-         in .NET Framework 4. -->  
-      <service  
-          name="Microsoft.ServiceModel.Samples.CalculatorService">  
+    <!-- This section is optional with the default configuration introduced in .NET Framework 4. -->  
+      <service name="Microsoft.ServiceModel.Samples.CalculatorService">  
         <host>  
           <baseAddresses>  
             <add baseAddress="http://localhost:8000/ServiceModelSamples/service"/>  

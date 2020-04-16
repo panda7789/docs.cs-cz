@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - security [WCF], protocols
 ms.assetid: 57ffcbea-807c-4e43-a41c-44b3db8ed2af
-ms.openlocfilehash: b9faa4b7422419af9283ab52325e878db3d6f19f
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 86e0c77b899ad590b9958fea3a050ad0e660bb43
+ms.sourcegitcommit: 927b7ea6b2ea5a440c8f23e3e66503152eb85591
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79184508"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81463790"
 ---
 # <a name="security-protocols"></a>Protokoly zabezpečení
 Protokoly zabezpečení webových služeb poskytují mechanismy zabezpečení webových služeb, které pokrývají všechny existující požadavky na zabezpečení podnikových zpráv. Tato část popisuje podrobnosti wcf (Windows Communication <xref:System.ServiceModel.Channels.SecurityBindingElement>Foundation) (implementované v ) pro následující protokoly zabezpečení webových služeb.  
@@ -47,7 +47,7 @@ Protokoly zabezpečení webových služeb poskytují mechanismy zabezpečení we
 |KerberosOverTransport|Windows|X509|Přenos|  
 |VydánoTokenOverTransport|Federovaní|X509|Přenos|  
 |SspiNegotiatedOverTransport|Windows Sspi vyjednané|Windows Sspi vyjednané|Přenos|  
-|AnonymousForCertificate|Žádný|X509|Zpráva|  
+|AnonymousForCertificate|Žádná|X509|Zpráva|  
 |UserNameForCertificate|Uživatelské jméno/heslo|X509|Zpráva|  
 |Vzájemná certifikát|X509|X509|Zpráva|  
 |Vzájemná certifikátDuplex|X509|X509|Zpráva|  
@@ -55,7 +55,7 @@ Protokoly zabezpečení webových služeb poskytují mechanismy zabezpečení we
 |Kerberos|Windows|Windows|Zpráva|  
 |Vydaný token|Federovaní|Federovaní|Zpráva|  
 |SspiNegotiated|Windows Sspi vyjednané|Windows Sspi vyjednané|Zpráva|  
-|AnonymníForSslNegotiated|Žádný|X509, TLS-Nego|Zpráva|  
+|AnonymníForSslNegotiated|Žádná|X509, TLS-Nego|Zpráva|  
 |UserNameForSslNegotiated|Uživatelské jméno/heslo|X509, TLS-Nego|Zpráva|  
 |MutualSslNegotiated|X509|X509, TLS-Nego|Zpráva|  
 |VydánoTokenForSslNegotiated|Federovaní|X509, TLS-Nego|Zpráva|  
@@ -64,7 +64,7 @@ Protokoly zabezpečení webových služeb poskytují mechanismy zabezpečení we
   
  WCF využívá WS-SecureConversation poskytovat podporu zabezpečené relace k ochraně více zpráv výměny mezi aplikacemi.  Podrobnosti o implementaci najdete níže v části Zabezpečené relace.  
   
- Kromě režimů ověřování poskytuje WCF nastavení pro řízení běžných ochranných mechanismů, které se vztahují na většinu režimů ověřování založených na zabezpečení zpráv, například: pořadí podpisu versus operace šifrování, algoritmické sady, odvození klíče a potvrzení podpisu.  
+ Kromě režimů ověřování poskytuje WCF nastavení pro řízení běžných mechanismů ochrany, které se vztahují na většinu režimů ověřování založených na zabezpečení zpráv, například: pořadí podpisu versus operace šifrování, sady algoritmů, odvození klíče a potvrzení podpisu.  
   
  V tomto dokumentu se používají následující předpony a obory názvů.  
   
@@ -139,7 +139,7 @@ Protokoly zabezpečení webových služeb poskytují mechanismy zabezpečení we
  Přítomnost časového razítka <xref:System.ServiceModel.Channels.SecurityBindingElement.IncludeTimestamp%2A> je řízena pomocí vlastnosti třídy. <xref:System.ServiceModel.Channels.SecurityBindingElement> WCF vždy serializuje wsse:TimeStamp s wsse:Created a wsse:Expires fields. Wsse:TimeStamp je vždy podepsánpři podepisování se používá.  
   
 ### <a name="22-protection-order"></a>2.2 Ochranný příkaz  
- WCF podporuje pořadí ochrany zpráv "Podepsat před šifrovat" a "Šifrovat před podpisem" (zásady zabezpečení 1.2). "Podepsat před šifrováním" se doporučuje z důvodů, včetně: zprávy chráněné šifrovat před podpisem jsou otevřeny útokům nahrazení podpisu, pokud není použit mechanismus WS-Security 1.1 SignatureConfirmation a podpis přes šifrovaný obsah auditování je obtížnější.  
+ WCF podporuje pořadí ochrany zpráv "Podepsat před šifrovat" a "Šifrovat před podpisem" (zásady zabezpečení 1.2). "Podepsat před šifrováním" se doporučuje z důvodů, včetně: zprávy chráněné šifrovat před značkou jsou otevřeny útokům nahrazení podpisu, pokud ws-security 1.1 SignatureConfirmation mechanismus je použit a podpis přes šifrovaný obsah ztěžuje auditování.  
   
 ### <a name="23-signature-protection"></a>2.3 Ochrana proti podpisu  
  Při šifrování před značkou se doporučuje chránit podpis, aby se zabránilo útoky hrubou silou pro hádání šifrovaného obsahu nebo podpisového klíče (zejména při použití vlastního tokenu se slabým klíčem).  
@@ -235,7 +235,76 @@ Protokoly zabezpečení webových služeb poskytují mechanismy zabezpečení we
  Zásada  
   
 ```xml  
-<wsp:Policy wsu:Id="IssuedTokenOverTransport_policy"><wsp:ExactlyOne><wsp:All><sp:TransportBinding xmlns:sp="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702"><wsp:Policy><sp:TransportToken><wsp:Policy><sp:HttpsToken/></wsp:Policy></sp:TransportToken><sp:AlgorithmSuite><wsp:Policy><sp:Basic256/></wsp:Policy></sp:AlgorithmSuite><sp:Layout><wsp:Policy><sp:Strict/></wsp:Policy></sp:Layout><sp:IncludeTimestamp/></wsp:Policy></sp:TransportBinding><sp:EndorsingSupportingTokens xmlns:sp="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702"><wsp:Policy><sp:IssuedToken sp:IncludeToken="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702/IncludeToken/AlwaysToRecipient"><Issuer xmlns="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702"><Address xmlns="http://www.w3.org/2005/08/addressing">http://www.w3.org/2005/08/addressing/anonymous</Address><Metadata xmlns="http://www.w3.org/2005/08/addressing"><Metadata xmlns="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><wsx:MetadataSection xmlns=""><wsx:MetadataReference><Address xmlns="http://www.w3.org/2005/08/addressing"> ... </Address><Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity"><Dns> ...  </Dns></Identity></wsx:MetadataReference></wsx:MetadataSection></Metadata></Metadata></Issuer><sp:RequestSecurityTokenTemplate><trust:KeyType xmlns:trust="http://docs.oasis-open.org/ws-sx/ws-trust/200512">http://docs.oasis-open.org/ws-sx/ws-trust/200512/SymmetricKey</trust:KeyType></sp:RequestSecurityTokenTemplate><wsp:Policy><sp:RequireInternalReference/></wsp:Policy></sp:IssuedToken><sp:SignedParts><sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing"/></sp:SignedParts></wsp:Policy></sp:EndorsingSupportingTokens><sp:Wss11 xmlns:sp="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702"><wsp:Policy><sp:MustSupportRefKeyIdentifier/><sp:MustSupportRefIssuerSerial/><sp:MustSupportRefThumbprint/><sp:MustSupportRefEncryptedKey/></wsp:Policy></sp:Wss11><sp:Trust13 xmlns:sp="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702"><wsp:Policy><sp:MustSupportIssuedTokens/><sp:RequireClientEntropy/><sp:RequireServerEntropy/></wsp:Policy></sp:Trust13><wsaw:UsingAddressing/></wsp:All></wsp:ExactlyOne></wsp:Policy  
+<wsp:Policy wsu:Id="IssuedTokenOverTransport_policy">
+ <wsp:ExactlyOne>
+  <wsp:All>
+   <sp:TransportBinding xmlns:sp="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702">
+    <wsp:Policy>
+     <sp:TransportToken>
+      <wsp:Policy>
+       <sp:HttpsToken />
+      </wsp:Policy>
+     </sp:TransportToken>
+     <sp:AlgorithmSuite>
+      <wsp:Policy>
+       <sp:Basic256 />
+      </wsp:Policy>
+     </sp:AlgorithmSuite>
+     <sp:Layout>
+      <wsp:Policy>
+       <sp:Strict/>
+      </wsp:Policy>
+     </sp:Layout>
+     <sp:IncludeTimestamp/>
+    </wsp:Policy>
+   </sp:TransportBinding>
+   <sp:EndorsingSupportingTokens xmlns:sp="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702">
+    <wsp:Policy>
+     <sp:IssuedToken sp:IncludeToken="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702/IncludeToken/AlwaysToRecipient">
+      <Issuer xmlns="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702">
+       <Address xmlns="http://www.w3.org/2005/08/addressing">http://www.w3.org/2005/08/addressing/anonymous</Address>
+       <Metadata xmlns="http://www.w3.org/2005/08/addressing">
+        <Metadata xmlns="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+         <wsx:MetadataSection xmlns="">
+          <wsx:MetadataReference>
+           <Address xmlns="http://www.w3.org/2005/08/addressing"> ... </Address>
+           <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
+            <Dns> ...  </Dns>
+           </Identity>
+          </wsx:MetadataReference>
+         </wsx:MetadataSection>
+        </Metadata>
+       </Metadata>
+      </Issuer>
+      <sp:RequestSecurityTokenTemplate>
+       <trust:KeyType xmlns:trust="http://docs.oasis-open.org/ws-sx/ws-trust/200512">http://docs.oasis-open.org/ws-sx/ws-trust/200512/SymmetricKey</trust:KeyType>
+      </sp:RequestSecurityTokenTemplate>
+      <wsp:Policy>
+       <sp:RequireInternalReference/>
+      </wsp:Policy>
+     </sp:IssuedToken>
+     <sp:SignedParts>
+      <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing"/>
+     </sp:SignedParts>
+    </wsp:Policy>
+   </sp:EndorsingSupportingTokens>
+   <sp:Wss11 xmlns:sp="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702">
+    <wsp:Policy>
+     <sp:MustSupportRefKeyIdentifier/><sp:MustSupportRefIssuerSerial/>
+     <sp:MustSupportRefThumbprint/><sp:MustSupportRefEncryptedKey/>
+    </wsp:Policy>
+   </sp:Wss11>
+   <sp:Trust13 xmlns:sp="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702">
+    <wsp:Policy>
+     <sp:MustSupportIssuedTokens/>
+     <sp:RequireClientEntropy/>
+     <sp:RequireServerEntropy/>
+    </wsp:Policy>
+   </sp:Trust13>
+   <wsaw:UsingAddressing/>
+  </wsp:All>
+ </wsp:ExactlyOne>
+</wsp:Policy>
 ```  
   
  Rozložení záhlaví zabezpečení  
@@ -416,7 +485,7 @@ Ochrana tokenu: False
   
  Šifrovat podpis: True  
   
- Výše uvedené režimy ověřování se liší pouze podpůrné tokeny, které používají. AnonymousForCertificate nemá žádné podpůrné tokeny, MutualCertificate WSS 1.1 má certifikát X509 klienta jako podpůrný tokeny, UserNameForCertificate má token UserName jako podepsaný podpůrný token a IssuedTokenForCertificate má vydaný token jako podpůrný token.  
+ Výše uvedené režimy ověřování se liší pouze podpůrné tokeny, které používají. AnonymousForCertificate nemá žádné podpůrné tokeny, MutualCertificate WSS 1.1 má certifikát X509 klienta jako podpůrný token, UserNameForCertificate má token UserName token jako podepsaný podpůrný token a IssuedTokenForCertificate má vydaný token jako podpůrný token.  
   
 #### <a name="324-anonymousforcertificate"></a>3.2.4 AnonymousForCertificate  
  V tomto režimu ověřování je klient anonymní a služba je ověřena pomocí certifikátu X.509. Použitá vazba je instancí třídy symetrické vazby popsané v po.3.4.2.  

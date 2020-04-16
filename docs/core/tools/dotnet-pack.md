@@ -2,28 +2,32 @@
 title: dotnet pack, příkaz
 description: Příkaz dotnet pack vytvoří balíčky NuGet pro váš projekt .NET Core.
 ms.date: 02/14/2020
-ms.openlocfilehash: 865262f1eb314f9b7e8ee713c573a965e89ded93
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 3b9c46ecd5d67519728896b0018e27fb41ebd861
+ms.sourcegitcommit: 927b7ea6b2ea5a440c8f23e3e66503152eb85591
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "77503654"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81463500"
 ---
 # <a name="dotnet-pack"></a>dotnet pack
 
 **Tento článek se týká:** ✔️ .NET Core 2.x SDK a novější verze
 
-## <a name="name"></a>Name (Název)
+## <a name="name"></a>Název
 
 `dotnet pack`- Zabalí kód do balíčku NuGet.
 
 ## <a name="synopsis"></a>Synopse
 
 ```dotnetcli
-dotnet pack [<PROJECT>|<SOLUTION>] [-c|--configuration] [--force] [--include-source] [--include-symbols] [--interactive]
-    [--no-build] [--no-dependencies] [--no-restore] [--nologo] [-o|--output] [--runtime] [-s|--serviceable]
-    [-v|--verbosity] [--version-suffix]
-dotnet pack [-h|--help]
+dotnet pack [<PROJECT>|<SOLUTION>] [-c|--configuration <CONFIGURATION>]
+    [--force] [--include-source] [--include-symbols] [--interactive]
+    [--no-build] [--no-dependencies] [--no-restore] [--nologo]
+    [-o|--output <OUTPUT_DIRECTORY>] [--runtime <RUNTIME_IDENTIFIER>]
+    [-s|--serviceable] [-v|--verbosity <LEVEL>]
+    [--version-suffix <VERSION_SUFFIX>]
+
+dotnet pack -h|--help
 ```
 
 ## <a name="description"></a>Popis
@@ -38,6 +42,9 @@ Pokud chcete vygenerovat balíček, který obsahuje symboly ladění, máte k di
 NuGet závislosti zabalené projektu jsou přidány do souboru *.nuspec,* takže jsou správně vyřešeny při instalaci balíčku. Odkazy na projekt nejsou zabaleny uvnitř projektu. V současné době musíte mít balíček na projekt, pokud máte závislosti mezi projekty.
 
 Ve výchozím `dotnet pack` nastavení nejprve vytvoří projekt. Pokud se chcete tomuto chování `--no-build` vyhnout, předejte tuto možnost. Tato možnost je často užitečné ve scénářích sestavení průběžné integrace (CI), kde víte, že kód byl dříve sestaven.
+
+> [!NOTE]
+> V některých případech nelze provést implicitní sestavení. K tomu `GeneratePackageOnBuild` může dojít, když je nastavena, aby se zabránilo cyklické závislosti mezi sestavení a pack cíle. Sestavení může také selhat, pokud je uzamčen soubor nebo jiný problém.
 
 Můžete zadat MSBuild vlastnosti příkazu `dotnet pack` pro proces balení. Další informace naleznete [v tématu Vlastnosti metadat NuGet](csproj.md#nuget-metadata-properties) a [odkaz na příkazový řádek msbuildu](/visualstudio/msbuild/msbuild-command-line-reference). [Příklady](#examples) část ukazuje, jak používat přepínač MSBuild -p pro několik různých scénářů.
 

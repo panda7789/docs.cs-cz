@@ -1,17 +1,17 @@
 ---
 title: where (omezení obecného typu) - C# Reference
-ms.date: 04/12/2018
+ms.date: 04/15/2020
 f1_keywords:
 - whereconstraint
 - whereconstraint_CSharpKeyword
 helpviewer_keywords:
 - where (generic type constraint) [C#]
-ms.openlocfilehash: d236420c5019f7529b729155b13df50807dc1dab
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 5a56b8058735d3ca786520a82424c79d1975bfc4
+ms.sourcegitcommit: 927b7ea6b2ea5a440c8f23e3e66503152eb85591
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "77626708"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81463015"
 ---
 # <a name="where-generic-type-constraint-c-reference"></a>where (omezení obecného typu) (Referenční dokumentace jazyka C#)
 
@@ -24,13 +24,17 @@ Můžete například deklarovat `MyGenericClass`obecnou třídu , `T` tak, <xref
 > [!NOTE]
 > Další informace o where klauzule ve výrazu dotazu naleznete v tématu [kde klauzule](where-clause.md).
 
-Klauzule `where` může také obsahovat omezení základní třídy. Omezení základní třídy uvádí, že typ, který má být použit jako argument typu pro tento obecný typ, má zadanou třídu jako základní třídu (nebo je to základní třída), která má být použita jako argument typu pro tento obecný typ. Pokud je použito omezení základní třídy, musí se zobrazit před ostatními omezeními tohoto parametru typu. Některé typy jsou zakázány jako omezení <xref:System.Object> <xref:System.Array>základní <xref:System.ValueType>třídy: , a . Před C# 7.3 <xref:System.Enum> <xref:System.Delegate>, <xref:System.MulticastDelegate> , a byly také zakázány jako omezení základní třídy. Následující příklad ukazuje typy, které lze nyní zadat jako základní třídu:
+Klauzule `where` může také obsahovat omezení základní třídy. Omezení základní třídy uvádí, že typ, který má být použit jako argument typu pro tento obecný typ, má zadanou třídu jako základní třídu nebo je tou základní třídou. Pokud je použito omezení základní třídy, musí se zobrazit před ostatními omezeními tohoto parametru typu. Některé typy jsou zakázány jako omezení <xref:System.Object> <xref:System.Array>základní <xref:System.ValueType>třídy: , a . Před C# 7.3 <xref:System.Delegate>, <xref:System.MulticastDelegate> <xref:System.Enum>, a byly také zakázány jako omezení základní třídy. Následující příklad ukazuje typy, které lze nyní zadat jako základní třídu:
 
 [!code-csharp[using an interface constraint](~/samples/snippets/csharp/keywords/GenericWhereConstraints.cs#2)]
+
+V kontextu s možnou hodnotou null v c# 8.0 a novější, nullability typu základní třídy je vynuceno. Pokud základní třída nepodléhá hodnotě `Base`null (například ), argument typu musí být nenulovatelný. Pokud je základní třída null `Base?`(například ), argument typu může být buď typ odkazu s možnou hodnotou null nebo nenulelný. Kompilátor vydá upozornění, pokud je argument typu typ typ s možnou hodnotou null, pokud základní třída nepodléhá hodnotě null.
 
 Klauzule `where` může určit, že `class` typ `struct`je nebo nebo . Omezení `struct` odebere potřebu určit omezení základní `System.ValueType`třídy . Typ `System.ValueType` nelze použít jako omezení základní třídy. Následující příklad ukazuje `class` omezení `struct` a omezení:
 
 [!code-csharp[using the class and struct constraints](~/samples/snippets/csharp/keywords/GenericWhereConstraints.cs#3)]
+
+V kontextu s možnou hodnotou null v `class` c# 8.0 a novější, omezení vyžaduje typ, který má být typ nenulelného odkazu. Chcete-li povolit typy `class?` odkazů s možnou hodnotou null, použijte omezení, které umožňuje typy odkazů s možnou i nenulovatelné.
 
 Klauzule `where` může `notnull` obsahovat omezení. Omezení `notnull` omezuje parametr typu na typy s možnou nulou. Tento typ může být [typ hodnoty](../builtin-types/value-types.md) nebo typ odkazu s nemožnou hodnotou. Omezení `notnull` je k dispozici počínaje C# 8.0 pro kód zkompilovaný v [ `nullable enable` kontextu](../../nullable-references.md#nullable-contexts). Na rozdíl od jiných omezení, pokud `notnull` argument typu porušuje omezení, kompilátor vygeneruje upozornění namísto chyby. Upozornění jsou generovány `nullable enable` pouze v kontextu.
 
@@ -43,7 +47,7 @@ Klauzule `where` může také `unmanaged` obsahovat omezení. Omezení `unmanage
 
 [!code-csharp[using the unmanaged constraint](~/samples/snippets/csharp/keywords/GenericWhereConstraints.cs#4)]
 
-Klauzule `where` může také obsahovat `new()`omezení konstruktoru , . Toto omezení umožňuje vytvořit instanci parametru `new` typu pomocí operátoru. [New() Constraint](new-constraint.md) umožňuje kompilátoru vědět, že jakýkoli argument typu zadaný musí mít přístupný konstruktor bez parametrů. Například:
+Klauzule `where` může také obsahovat `new()`omezení konstruktoru , . Toto omezení umožňuje vytvořit instanci parametru `new` typu pomocí operátoru. [New() Constraint](new-constraint.md) umožňuje kompilátoru vědět, že jakýkoli argument typu zadaný musí mít přístupný konstruktor bez parametrů. Příklad:
 
 [!code-csharp[using the new constraint](~/samples/snippets/csharp/keywords/GenericWhereConstraints.cs#5)]
 

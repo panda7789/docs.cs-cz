@@ -2,12 +2,12 @@
 title: Standardní koncové body
 ms.date: 03/30/2017
 ms.assetid: 3fcb4225-addc-44f2-935d-30e4943a8812
-ms.openlocfilehash: 880601664d7602e279c5d022fa37c44914a58772
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 48924e06457cf9f91ce4f900bb38de4d22bfc550
+ms.sourcegitcommit: 927b7ea6b2ea5a440c8f23e3e66503152eb85591
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79184408"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81463779"
 ---
 # <a name="standard-endpoints"></a>Standardní koncové body
 Koncové body jsou definovány zadáním adresy, vazby a smlouvy. Mezi další parametry, které mohou být nastaveny v koncovém bodě, patří konfigurace chování, záhlaví a naslouchání identifikátorů URI.  U určitých typů koncových bodů se tyto hodnoty nemění. Například koncové body výměny metadat <xref:System.ServiceModel.Description.IMetadataExchange> vždy používají smlouvy. Jiné koncové body, <xref:System.ServiceModel.Description.WebHttpEndpoint> například vždy vyžadují zadané chování koncového bodu. Použitelnost koncového bodu lze zlepšit tím, že koncové body s výchozí hodnoty pro běžně používané vlastnosti koncového bodu. Standardní koncové body umožňují vývojáři definovat koncový bod, který má výchozí hodnoty nebo kde se nemění vlastnosti jednoho nebo více koncových bodů.  Tyto koncové body umožňují použít takový koncový bod bez nutnosti zadat informace statické povahy. Standardní koncové body lze použít pro koncové body infrastruktury a aplikace.  
@@ -121,6 +121,8 @@ Následující příklad ukazuje, jak zaregistrovat standardní koncový bod v �
           name="customStandardEndpoint"  
           type="CustomEndpointCollectionElement, Example.dll,  
                 Version=1.0.0.0, Culture=neutral, PublicKeyToken=ffffffffffffffff"/>  
+      </standardEndpointExtensions>
+</extensions>  
 ```  
   
 ## <a name="configuring-a-standard-endpoint"></a>Konfigurace standardního koncového bodu  

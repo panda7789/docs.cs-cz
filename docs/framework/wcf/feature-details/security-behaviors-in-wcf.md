@@ -2,12 +2,12 @@
 title: Chování zabezpečení ve WCF
 ms.date: 03/30/2017
 ms.assetid: 513232c0-39fd-4409-bda6-5ebd5e0ea7b0
-ms.openlocfilehash: f56bbd66aa61b8db9d6e720fb3a67ddbbf5e267e
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 9f96abac0f5f32279c5579dd01c3dd7f2dc1786c
+ms.sourcegitcommit: 927b7ea6b2ea5a440c8f23e3e66503152eb85591
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79184538"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81464050"
 ---
 # <a name="security-behaviors-in-wcf"></a>Chování zabezpečení ve WCF
 V systému Windows Communication Foundation (WCF) chování změnit chování za běhu na úrovni služby nebo na úrovni koncového bodu. (Další informace o chování obecně naleznete v [tématu Určení chování za běhu služby](../../../../docs/framework/wcf/specifying-service-run-time-behavior.md).) *Chování zabezpečení* umožňuje kontrolu nad pověřeními, ověřováním, autorizací a protokoly auditování. Chování můžete použít buď programováním, nebo prostřednictvím konfigurace. Toto téma se zaměřuje na konfiguraci následujících chování souvisejících s funkcemi zabezpečení:  
@@ -112,6 +112,7 @@ V systému Windows Communication Foundation (WCF) chování změnit chování za
    </clientCredentials>  
   </behavior>  
  </endpointBehaviors>  
+</behaviors>  
 ```  
   
 #### <a name="clientcertificate-element"></a>\<klientCertificate> Element  
@@ -135,6 +136,9 @@ V systému Windows Communication Foundation (WCF) chování změnit chování za
       <issuerChannelBehaviors>  
          <add issuerAddress="http://www.contoso.com"  
                behaviorConfiguration="clientBehavior1" />
+      </issuerChannelBehaviors>  
+   </issuedToken>  
+</clientCredentials>
 ```  
   
 #### <a name="servicecertificate-element"></a>\<serviceCertificate> Element  
@@ -191,15 +195,15 @@ V systému Windows Communication Foundation (WCF) chování změnit chování za
  Pomocí [ \<>serviceSecurityAudit](../../../../docs/framework/configure-apps/file-schema/wcf/servicesecurityaudit.md) určete protokol zapsaný do protokolu a jaké typy událostí se mají protokolovat. Další informace naleznete v [tématu Auditování](../../../../docs/framework/wcf/feature-details/auditing-security-events.md).  
   
 ```xml  
-<system.serviceModel>  
-<serviceBehaviors>  
+<behaviors>
+ <serviceBehaviors>  
   <behavior name="NewBehavior">  
     <serviceSecurityAudit auditLogLocation="Application"
              suppressAuditFailure="true"  
              serviceAuthorizationAuditLevel="Success"
              messageAuthenticationAuditLevel="Success" />  
-    </behavior>  
-  </serviceBehaviors>  
+  </behavior>  
+ </serviceBehaviors>  
 </behaviors>  
 ```  
   

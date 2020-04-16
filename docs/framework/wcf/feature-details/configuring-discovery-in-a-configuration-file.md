@@ -2,12 +2,12 @@
 title: Konfigurace zjišťování v konfiguračním souboru
 ms.date: 03/30/2017
 ms.assetid: b9884c11-8011-4763-bc2c-c526b80175d0
-ms.openlocfilehash: b2e604f6168e4adff36bfb0c22861124743b358d
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 934b04b51b9954cf943f57f33250951048e5671b
+ms.sourcegitcommit: 927b7ea6b2ea5a440c8f23e3e66503152eb85591
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79185333"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81464209"
 ---
 # <a name="configuring-discovery-in-a-configuration-file"></a>Konfigurace zjišťování v konfiguračním souboru
 Existují čtyři hlavní skupiny nastavení konfigurace používané při zjišťování. Toto téma bude stručně popsat každý a zobrazit příklady, jak je nakonfigurovat. V návaznosti na každou sekci bude odkaz na podrobnější dokumentaci o každé oblasti.  
@@ -26,6 +26,7 @@ Existují čtyři hlavní skupiny nastavení konfigurace používané při zjiš
           </serviceDiscovery>  
         </behavior>  
       </serviceBehaviors>  
+</behaviors>  
 ```  
   
  Jakmile zadáte chování, odkaz ujte `service` jej z> prvku <, jak je znázorněno v následující ukázce.  
@@ -41,7 +42,8 @@ Existují čtyři hlavní skupiny nastavení konfigurace používané při zjiš
          <!-- Discovery Endpoints -->  
          <endpoint kind="udpDiscoveryEndpoint" />  
         </service>  
-    </service>  
+    </services>  
+</system.serviceModel>  
 ```  
   
  Aby služba byla zjistitelná, musíte také přidat koncový bod zjišťování, výše <xref:System.ServiceModel.Discovery.UdpDiscoveryEndpoint> uvedený příklad přidá standardní koncový bod.  
@@ -62,6 +64,7 @@ Existují čtyři hlavní skupiny nastavení konfigurace používané při zjiš
    <service name="AnnouncementListener">  
       <endpoint kind="udpAnnouncementEndpoint" />  
    </service>  
+</services>
 ```  
   
  Chování <xref:System.ServiceModel.Discovery.EndpointDiscoveryBehavior> se používá k povolení nebo zakázání zjišťování konkrétního koncového bodu.  Následující příklad konfiguruje službu se dvěma koncovými body aplikace, jeden s povoleným zjišťováním a druhý se zakázaným zjišťováním. Pro každý koncový <xref:System.ServiceModel.Discovery.EndpointDiscoveryBehavior> bod je přidáno chování.  
@@ -87,7 +90,7 @@ Existují čtyři hlavní skupiny nastavení konfigurace používané při zjiš
         <endpoint kind="udpDiscoveryEndpoint" />  
       </service>  
    </services>  
-    <behaviors>  
+   <behaviors>  
       <serviceBehaviors>  
         <behavior name="helloWorldServiceBehavior">  
           <serviceDiscovery />  
@@ -102,6 +105,7 @@ Existují čtyři hlavní skupiny nastavení konfigurace používané při zjiš
         </behavior>  
      </endpointBehaviors>  
    </behaviors>  
+</system.serviceModel>  
 ```  
   
  Chování <xref:System.ServiceModel.Discovery.EndpointDiscoveryBehavior> lze také přidat vlastní metadata do metadat koncového bodu vrácené službou. Následující příklad ukazuje, jak to provést.  
@@ -163,7 +167,9 @@ Existují čtyři hlavní skupiny nastavení konfigurace používané při zjiš
           </discoveryClient>  
           <textMessageEncoding messageVersion="Soap11"/>  
           <httpTransport />  
-        </binding>  
+      </binding>
+   </customBinding>
+</bindings>  
 ```  
   
  Na tuto vlastní konfiguraci vazby musí odkazovat koncový bod klienta:  
@@ -174,7 +180,7 @@ Existují čtyři hlavní skupiny nastavení konfigurace používané při zjiš
                 binding="customBinding"  
                 bindingConfiguration="discoBindingConfiguration"  
                 contract="IHelloWorldService" />  
-    </client>  
+</client>  
 ```  
   
  Další informace o kritériích hledání naleznete v [tématech Hledání zjišťování a Kritéria hledání](../../../../docs/framework/wcf/feature-details/discovery-find-and-findcriteria.md). Další informace o zjišťování a vazby prvků [naleznete, WCF Discovery Přehled](../../../../docs/framework/wcf/feature-details/wcf-discovery-overview.md)  
@@ -223,7 +229,8 @@ Existují čtyři hlavní skupiny nastavení konfigurace používané při zjiš
             maxReceivedMessageSize="8192"  
             maxBufferPoolSize="262144"/>  
         </standardEndpoint>  
-      </udpDiscoveryEndpoint>  
+      </udpDiscoveryEndpoint>
+</standardEndpoints>
 ```  
   
  Po přidání standardní konfigurace koncového bodu se odkazujte `endpoint` na konfiguraci v <> element u každého koncového bodu, jak je znázorněno na následující ukázce.  

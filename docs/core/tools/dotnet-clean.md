@@ -2,27 +2,30 @@
 title: dotnet clean, příkaz
 description: Příkaz dotnet clean vyčistí aktuální adresář.
 ms.date: 02/14/2020
-ms.openlocfilehash: 186f1ea07718a8e178f88c3d079cf6e2f1f8660b
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: a59922feba75e940a5cee2dfeb500f4f86372870
+ms.sourcegitcommit: 927b7ea6b2ea5a440c8f23e3e66503152eb85591
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "77503751"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81463704"
 ---
 # <a name="dotnet-clean"></a>dotnet clean
 
 **Tento článek se týká:** ✔️ .NET Core 2.x SDK a novější verze
 
-## <a name="name"></a>Name (Název)
+## <a name="name"></a>Název
 
 `dotnet clean`- Čistí výstup projektu.
 
 ## <a name="synopsis"></a>Synopse
 
 ```dotnetcli
-dotnet clean [<PROJECT>|<SOLUTION>] [-c|--configuration] [-f|--framework] [--interactive]
-    [--nologo] [-o|--output] [-r|--runtime] [-v|--verbosity]
-dotnet clean [-h|--help]
+dotnet clean [<PROJECT>|<SOLUTION>] [-c|--configuration <CONFIGURATION>]
+    [-f|--framework <FRAMEWORK>] [--interactive]
+    [--nologo] [-o|--output <OUTPUT_DIRECTORY>]
+    [-r|--runtime <RUNTIME_IDENTIFIER>] [-v|--verbosity <LEVEL>]
+
+dotnet clean -h|--help
 ```
 
 ## <a name="description"></a>Popis

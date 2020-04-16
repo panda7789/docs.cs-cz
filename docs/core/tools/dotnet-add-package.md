@@ -2,24 +2,31 @@
 title: dotnet přidat balíček, příkaz
 description: Příkaz "dotnet add package" poskytuje vhodnou možnost přidání odkazu na balíček NuGet do projektu.
 ms.date: 02/14/2020
-ms.openlocfilehash: 8121539a50d2ac2837693ccc35581f7fde1d1fc1
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 24a25cdab2aab30d52f8407adfda437f47437290
+ms.sourcegitcommit: 927b7ea6b2ea5a440c8f23e3e66503152eb85591
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79146603"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81463758"
 ---
 # <a name="dotnet-add-package"></a>dotnet add package
 
 **Tento článek se týká:** ✔️ .NET Core 2.x SDK a novější verze
 
-## <a name="name"></a>Name (Název)
+## <a name="name"></a>Název
 
 `dotnet add package`- Přidá odkaz na balíček do souboru projektu.
 
 ## <a name="synopsis"></a>Synopse
 
-`dotnet add [<PROJECT>] package <PACKAGE_NAME> [-h|--help] [-f|--framework] [--interactive] [-n|--no-restore] [--package-directory] [-s|--source] [-v|--version]`
+```dotnetcli
+dotnet add [<PROJECT>] package <PACKAGE_NAME>
+    [-f|--framework <FRAMEWORK>] [--interactive]
+    [-n|--no-restore] [--package-directory <PACKAGE_DIRECTORY>]
+    [-s|--source <SOURCE>] [-v|--version <VERSION>]
+
+dotnet add package -h|--help
+```
 
 ## <a name="description"></a>Popis
 

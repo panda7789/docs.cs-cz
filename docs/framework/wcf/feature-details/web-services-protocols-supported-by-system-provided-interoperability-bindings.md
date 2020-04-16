@@ -6,12 +6,12 @@ helpviewer_keywords:
 - Web services protocols
 - Windows Communication Foundation, Web service protocols
 ms.assetid: 1f7fc4ff-30fe-4e46-adda-91caad3b06c6
-ms.openlocfilehash: a1e67401a09370a46bc7a3e8546c95467bc18b67
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 25efda74d205a36332a801e91ddc508796f7df5d
+ms.sourcegitcommit: 927b7ea6b2ea5a440c8f23e3e66503152eb85591
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79184147"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81463993"
 ---
 # <a name="web-services-protocols-supported-by-system-provided-interoperability-bindings"></a>Protokoly webových služeb podporované vazbami vzájemné spolupráce poskytnutými systémem
 Windows Communication Foundation (WCF) je vytvořen a spolupracuje s webovými službami, které podporují sadu specifikací označovaných jako specifikace webových služeb. Pro zjednodušení konfigurace služby pro osvědčené postupy interoperability zavádí WCF tři <xref:System.ServiceModel.BasicHttpBinding?displayProperty=nameWithType>interoperabilní systémová vazba: , <xref:System.ServiceModel.WSHttpBinding?displayProperty=nameWithType>, a <xref:System.ServiceModel.WSDualHttpBinding?displayProperty=nameWithType>. Pro interoperabilitu se standardy Organizace pro rozvoj strukturovaných informačních standardů (OASIS) <xref:System.ServiceModel.WS2007HttpBinding?displayProperty=nameWithType>obsahuje WCF jednu interoperabilní systémovou vazbu: . Pro publikování metadat WCF obsahuje dvě interoperabilní systémem poskytované vazby: [ \<mexHttpBinding>](../../../../docs/framework/configure-apps/file-schema/wcf/mexhttpbinding.md) a [ \<mexHttpsBinding>](../../../../docs/framework/configure-apps/file-schema/wcf/mexhttpsbinding.md). Toto téma uvádí specifikace, které podporují interoperabilní vazby poskytované systémem.  
@@ -76,7 +76,7 @@ Windows Communication Foundation (WCF) je vytvořen a spolupracuje s webovými s
        <message issuedKeyType="Symmetric"
                 issuedTokenType="http://docs.oasis-open.org/wss/oasis-wss-saml-token-profile-1.1#SAMLV1.1">  
          <issuerMetadata address =
-         'http://localhost/FederationSample/HomeRealmSTS/STS.svc/mex'>  
+         'http://localhost/FederationSample/HomeRealmSTS/STS.svc/mex'/>  
        </message>  
      </security>  
   </binding>  

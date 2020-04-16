@@ -2,25 +2,27 @@
 title: dotnet sln, příkaz
 description: Příkaz dotnet-sln poskytuje vhodnou možnost přidání, odebrání a seznamu projektů v souboru řešení.
 ms.date: 02/14/2020
-ms.openlocfilehash: 615e25e30a63b6ca36d9898cfcde565053830572
-ms.sourcegitcommit: c91110ef6ee3fedb591f3d628dc17739c4a7071e
+ms.openlocfilehash: 231287477d986f9ec4a5404cc5278e76c297faa4
+ms.sourcegitcommit: 927b7ea6b2ea5a440c8f23e3e66503152eb85591
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/15/2020
-ms.locfileid: "81389640"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81463402"
 ---
 # <a name="dotnet-sln"></a>dotnet sln
 
 **Tento článek se týká:** ✔️ .NET Core 2.x SDK a novější verze
 
-## <a name="name"></a>Name (Název)
+## <a name="name"></a>Název
 
 `dotnet sln`- Uvádí nebo upravuje projekty v souboru řešení .NET Core.
 
 ## <a name="synopsis"></a>Synopse
 
 ```dotnetcli
-dotnet sln [<SOLUTION_FILE>] [command] [-h|--help]
+dotnet sln [<SOLUTION_FILE>] [command]
+
+dotnet sln [command] -h|--help
 ```
 
 ## <a name="description"></a>Popis
@@ -76,7 +78,7 @@ Přidá jeden nebo více projektů do souboru řešení.
 #### <a name="synopsis"></a>Synopse
 
 ```dotnetcli
-dotnet sln [<SOLUTION_FILE>] add [--in-root] [-s|--solution-folder] <PROJECT_PATH> [<PROJECT_PATH>...]
+dotnet sln [<SOLUTION_FILE>] add [--in-root] [-s|--solution-folder <PATH>] <PROJECT_PATH> [<PROJECT_PATH>...]
 dotnet sln add [-h|--help]
 ```
 
@@ -100,7 +102,7 @@ dotnet sln add [-h|--help]
 
   Umístí projekty do kořenového adresáře řešení, nikoli do vytvoření složky řešení. K dispozici od .NET Core 3.0 SDK.
 
-- **`-s|--solution-folder`**
+- **`-s|--solution-folder <PATH>`**
 
   Cílová cesta ke složce řešení, do které chcete přidat projekty. K dispozici od .NET Core 3.0 SDK.
 

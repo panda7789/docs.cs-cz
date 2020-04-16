@@ -2,18 +2,18 @@
 title: dotnet nástroj spustit, příkaz
 description: Příkaz spuštění nástroje dotnet vyvolá místní nástroj.
 ms.date: 02/14/2020
-ms.openlocfilehash: a088cd0b7f4bba014234a8189a42a63aa6d88f4e
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: f79c239363e8b3abbd55c54dd1912443e6777fb7
+ms.sourcegitcommit: 927b7ea6b2ea5a440c8f23e3e66503152eb85591
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "78847843"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81463330"
 ---
-# <a name="dotnet-tool-run"></a>spuštění nástroje dotnet
+# <a name="dotnet-tool-run"></a>dotnet tool run
 
 **Tento článek se týká:** ✔️ .NET Core 3.0 SDK a novější verze
 
-## <a name="name"></a>Name (Název)
+## <a name="name"></a>Název
 
 `dotnet tool run`- Vyvolá místní nástroj.
 
@@ -22,7 +22,7 @@ ms.locfileid: "78847843"
 ```dotnetcli
 dotnet tool run <COMMAND NAME>
 
-dotnet tool run <-h|--help>
+dotnet tool run -h|--help
 ```
 
 ## <a name="description"></a>Popis

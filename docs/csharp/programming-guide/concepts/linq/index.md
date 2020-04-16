@@ -2,18 +2,18 @@
 title: Dotaz integrovaný jazykem (LINQ) (C#)
 ms.date: 02/02/2017
 ms.assetid: 19dd1782-905b-4a9d-a3e9-618453037fa2
-ms.openlocfilehash: 07a9d68c042d524ee9faba8122b406a81e816378
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: a2e53d6c7f4d24fd57b1f91c1428b8341386b6f9
+ms.sourcegitcommit: 927b7ea6b2ea5a440c8f23e3e66503152eb85591
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "73418244"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81463901"
 ---
 # <a name="language-integrated-query-linq"></a>LINQ (Language Integrated Query)
 
 Jazykintegrovaný dotaz (LINQ) je název pro sadu technologií založených na integraci dotazovacích funkcí přímo do jazyka C#. Dotazy na data jsou tradičně vyjádřeny jako jednoduché řetězce bez kontroly typu v době kompilace nebo podpory technologie IntelliSense. Kromě toho se musíte naučit jiný dotazovací jazyk pro každý typ zdroje dat: databáze SQL, dokumenty XML, různé webové služby a tak dále. S LINQ dotaz je prvotřídní jazyk konstrukce, stejně jako třídy, metody, události. Můžete psát dotazy proti silně zadaným kolekcíobjektů pomocí klíčových slov jazyka a známé operátory. Řada technologií LINQ poskytuje konzistentní prostředí dotazů pro objekty (LINQ na objekty), relační databáze (LINQ to SQL) a XML (LINQ na XML).
 
-Pro vývojáře, který píše dotazy, nejviditelnější "jazykově integrované" část LINQ je výraz dotazu. Výrazy dotazu jsou zapsány v syntaxi deklarativního *dotazu*. Pomocí syntaxe dotazu můžete provádět operace filtrování, řazení a seskupování na zdrojích dat s minimem kódu. Stejné vzory výrazů základnídotaz použít k dotazování a transformaci dat v databázích SQL, Datových sadách ADO .NET, dokumentech XML a datových proudech a kolekcích .NET.
+Pro vývojáře, který píše dotazy, nejviditelnější "jazykově integrované" část LINQ je výraz dotazu. Výrazy dotazu jsou zapsány v syntaxi deklarativního *dotazu*. Pomocí syntaxe dotazu můžete provádět operace filtrování, řazení a seskupování na zdrojích dat s minimem kódu. Stejné vzory výrazů základnídotaz použít k dotazování a transformaci dat v databázích SQL, ADO.NET datových sad, xml dokumentů a datových proudů a .NET kolekce.
 
 Můžete psát dotazy LINQ v jazyce C# pro sql server databáze, dokumenty XML, <xref:System.Collections.IEnumerable> ADO.NET <xref:System.Collections.Generic.IEnumerable%601> datové sady a všechny kolekce objektů, které podporuje nebo obecné rozhraní. Podpora LINQ je také poskytována třetími stranami pro mnoho webových služeb a dalších implementací databází.
 

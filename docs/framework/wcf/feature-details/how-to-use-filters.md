@@ -2,12 +2,12 @@
 title: 'Postupy: Používání filtrů'
 ms.date: 03/30/2017
 ms.assetid: f2c7255f-c376-460e-aa20-14071f1666e5
-ms.openlocfilehash: f99c2af623dacac3ebe46422815a7f42e2a4df2c
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 34ea961b0ef5db51efcae0b86f2c06171d6d756c
+ms.sourcegitcommit: 927b7ea6b2ea5a440c8f23e3e66503152eb85591
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79184819"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81464105"
 ---
 # <a name="how-to-use-filters"></a>Postupy: Používání filtrů
 Toto téma popisuje základní kroky potřebné k vytvoření konfigurace směrování, která používá více filtrů. V tomto příkladu zprávy jsou směrovány na dvě implementace kalkulačky služby, regularCalc a zaokrouhleníCalc. Obě implementace podporují stejné operace; jedna služba však zaokrouhluje všechny výpočty na nejbližší celočíselnou hodnotu před vrácením. Klientská aplikace musí být schopna určit, zda má být používána verze zaokrouhlení služby. Pokud není vyjádřena žádná předvolba služby, je zpráva vyrovnána zatížením mezi dvěma službami. Operace vystavené oběma službami jsou:  
@@ -24,7 +24,7 @@ Toto téma popisuje základní kroky potřebné k vytvoření konfigurace směro
   
 ### <a name="determine-unique-data"></a>Určení jedinečných dat  
   
-1. Vzhledem k tomu, že obě implementace služby zpracovávají stejné operace a jsou v podstatě identické než data, která vracejí, základní data obsažená ve zprávách odeslaných z klientských aplikací nejsou dostatečně jedinečná, aby vám umožnila určit, jak směrovat Požadavek. Ale pokud klientská aplikace přidá jedinečnou hodnotu záhlaví zprávy, pak můžete tuto hodnotu použít k určení, jak by měla být zpráva směrována.  
+1. Vzhledem k tomu, že obě implementace služby zpracovávají stejné operace a jsou v podstatě identické než data, která vracejí, základní data obsažená ve zprávách odeslaných z klientských aplikací nejsou dostatečně jedinečná, aby vám umožnila určit, jak směrovat požadavek. Ale pokud klientská aplikace přidá jedinečnou hodnotu záhlaví zprávy, pak můžete tuto hodnotu použít k určení, jak by měla být zpráva směrována.  
   
      V tomto příkladu pokud klientská aplikace potřebuje zprávu, která má být zpracována kalkulačkou zaokrouhlení, přidá vlastní záhlaví pomocí následujícího kódu:  
   
@@ -35,7 +35,7 @@ Toto téma popisuje základní kroky potřebné k vytvoření konfigurace směro
   
      Nyní můžete použít filtr XPath ke kontrole zpráv pro toto záhlaví a směrovat zprávy obsahující záhlaví do služby roundCalc.  
   
-2. Služba Směrování navíc zpřístupňuje dva koncové body virtuální služby, které lze použít s filtry EndpointName, EndpointAddress nebo PrefixEndpointAddress k jedinečnému směrování příchozích zpráv do konkrétní implementace kalkulačky na základě koncového bodu. klientská žádost odešle žádost.  
+2. Navíc služba Směrování zpřístupňuje dva koncové body virtuální služby, které lze použít s filtry EndpointName, EndpointAddress nebo PrefixEndpointAddress k jedinečnému směrování příchozích zpráv do konkrétní implementace kalkulačky na základě koncového bodu, do kterého klientská aplikace odešle požadavek.  
   
 ### <a name="define-endpoints"></a>Definování koncových bodů  
   
@@ -180,7 +180,7 @@ Toto téma popisuje základní kroky potřebné k vytvoření konfigurace směro
                 <add filterName="XPathFilter" endpointName="roundingCalcEndpoint" priority="2"/>  
               </entries>  
             </table>  
-          <filterTables>  
+          </filterTables>  
     </routing>  
     ```  
   

@@ -2,24 +2,28 @@
 title: Dotnet list reference příkaz
 description: Příkaz odkazu na seznam dotnet poskytuje vhodnou možnost vypsat odkazy na projekty.
 ms.date: 02/14/2020
-ms.openlocfilehash: 43c4dbc94b33e717c6ba0a1c1c5317ac006f5bba
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: c0ea46298123e69ae527870e50d204d8fcf5cc85
+ms.sourcegitcommit: 927b7ea6b2ea5a440c8f23e3e66503152eb85591
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "77503714"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81463648"
 ---
 # <a name="dotnet-list-reference"></a>dotnet list reference
 
 **Tento článek se týká:** ✔️ .NET Core 2.x SDK a novější verze
 
-## <a name="name"></a>Name (Název)
+## <a name="name"></a>Název
 
 `dotnet list reference`- Uvádí odkazy mezi projekty.
 
 ## <a name="synopsis"></a>Synopse
 
-`dotnet list [<PROJECT>|<SOLUTION>] reference [-h|--help]`
+```dotnetcli
+dotnet list [<PROJECT>|<SOLUTION>] reference
+
+dotnet list -h|--help
+```
 
 ## <a name="description"></a>Popis
 

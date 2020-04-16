@@ -8,12 +8,12 @@ helpviewer_keywords:
 - WCF, federation
 - federation [WCF]
 ms.assetid: 2f1e646f-8361-48d4-9d5d-1b961f31ede4
-ms.openlocfilehash: 86c679af77f2b7b1960e7489e0e6e61b811e1bad
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 9616a5afb88e46bb5d69f1cd253c854cc1684d9f
+ms.sourcegitcommit: 927b7ea6b2ea5a440c8f23e3e66503152eb85591
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79185227"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81464188"
 ---
 # <a name="federation"></a>metadata
 Toto téma obsahuje stručný přehled konceptu federovaného zabezpečení. Popisuje také podporu Windows Communication Foundation (WCF) pro nasazení federovaných architektur zabezpečení. Ukázková aplikace, která demonstruje federaci, naleznete [v tématu Federation Sample](../../../../docs/framework/wcf/samples/federation-sample.md).  
@@ -26,7 +26,7 @@ Toto téma obsahuje stručný přehled konceptu federovaného zabezpečení. Pop
 ### <a name="elements-of-a-federated-security-architecture"></a>Prvky architektury federovaného zabezpečení  
  Federovaná architektura zabezpečení má tři klíčové prvky, jak je popsáno v následující tabulce.  
   
-|Element|Popis|  
+|Prvek|Popis|  
 |-------------|-----------------|  
 |Doména/sféra|Jedna jednotka správy nebo důvěry v zabezpečení. Typická doména může zahrnovat jednu organizaci.|  
 |metadata|Kolekce domén, které vytvořily vztah důvěryhodnosti. Úroveň důvěryhodnosti se může lišit, ale obvykle zahrnuje ověřování a téměř vždy zahrnuje autorizaci. Typická federace může zahrnovat několik organizací, které vytvořily vztah důvěryhodnosti pro sdílený přístup k sadě prostředků.|  
@@ -58,7 +58,7 @@ Toto téma obsahuje stručný přehled konceptu federovaného zabezpečení. Pop
   
  Alternativním přístupem, který řeší výše uvedené nevýhody, je využití federovaného zabezpečení. V tomto přístupu organizace A a B vytvořit vztah důvěryhodnosti a zaměstnávat službu tokenů zabezpečení (STS) povolit zprostředkování zavedeného vztahu důvěryhodnosti.  
   
- Ve federované architektuře zabezpečení uživatelé z organizace A vědí, že pokud chtějí získat přístup k webové službě v organizaci B, musí předložit platný token zabezpečení z STS v organizaci B, který ověřuje a autorizuje jejich přístup k konkrétní službu.  
+ Ve federované architektuře zabezpečení uživatelé z organizace A vědí, že pokud chtějí získat přístup k webové službě v organizaci B, musí předložit platný token zabezpečení z STS v organizaci B, který ověřuje a autorizuje jejich přístup ke konkrétní službě.  
   
  Při kontaktování STS B, uživatelé obdrží jinou úroveň dereference ze zásady spojené s STS. Musí předložit platný token zabezpečení z STS A (to znamená, že správa důvěryhodnosti klienta) před STS B může vydat token zabezpečení. Toto je důsledek vztahu důvěryhodnosti vytvořeného mezi oběma organizacemi a znamená, že organizace B nemusí spravovat identity pro uživatele z organizace A. V praxi MÁ STS B `issuerAddress` obvykle `issuerMetadataAddress`null a . Další informace naleznete v [tématu How to: Configure a Local Issuer](../../../../docs/framework/wcf/feature-details/how-to-configure-a-local-issuer.md). V takovém případě klient konzultuje místní zásady k vyhledání STS A. Tato konfigurace se nazývá *federace domácí sféry* a lépe se škáluje, protože STS B nemusí udržovat informace o STS A.  
   
@@ -222,7 +222,7 @@ operationRequirementType="FederationSample.MyServiceOperationRequirement, MyServ
 #### <a name="sts-a"></a>STS A  
  Následující obrázek znázorňuje STS A.  
   
- ![Federace](../../../../docs/framework/wcf/feature-details/media/sts-b.gif "STS_B")  
+ ![metadata](../../../../docs/framework/wcf/feature-details/media/sts-b.gif "STS_B")  
   
  Podobně jako STS B, STS A je také webová služba, která vydává tokeny zabezpečení a zpřístupňuje jeden koncový bod pro tento účel. Používá však jinou`wsHttpBinding`vazbu ( ) a vyžaduje, `emailAddress` aby uživatelé předložili platný cardspace s deklarací. V reakci na to vydává tokeny SAML s deklarací. `userAuthenticated` To je deklarativně zadáno v konfiguraci služby.  
   
@@ -240,7 +240,7 @@ operationRequirementType="FederationSample.MyServiceOperationRequirement, MyServ
                        storeLocation="LocalMachine"
                        storeName="My" />  
        </identity>  
-    <endpoint>  
+    </endpoint>  
   </service>  
 </services>  
   

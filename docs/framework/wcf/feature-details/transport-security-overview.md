@@ -5,18 +5,18 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 00959326-aa9d-44d0-af61-54933d4adc7f
-ms.openlocfilehash: f30b2c587d7f9b21c1f19fa1c3943621fc2607cd
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 6796ca0b16e65a07735aec075d63b0cdfe38d080
+ms.sourcegitcommit: 927b7ea6b2ea5a440c8f23e3e66503152eb85591
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79184343"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81464016"
 ---
 # <a name="transport-security-overview"></a>Přehled zabezpečení přenosu
 Mechanismy zabezpečení přenosu v nadaci Windows Communication Foundation (WCF) závisí na použité vazbě a přenosu. Například při použití <xref:System.ServiceModel.WSHttpBinding> třídy je přenos HTTP a primární mechanismus pro zabezpečení přenosu je SSL (Secure Sockets Layer) přes HTTP, běžně nazývané HTTPS. Toto téma popisuje hlavní mechanismy zabezpečení přenosu používané v systému WCF poskytovány vazby.  
   
 > [!NOTE]
-> Pokud je zabezpečení SSL používáno s rozhraním .NET Framework 3.5 a novějším, klient WCF používá zprostředkující certifikáty v úložišti certifikátů i zprostředkující certifikáty přijaté během vyjednávání SSL k ověření řetězu certifikátů Certifikát. Rozhraní .NET Framework 3.0 používá pouze zprostředkující certifikáty nainstalované v místním úložišti certifikátů.  
+> Při použití zabezpečení SSL s rozhraním .NET Framework 3.5 a novějším klient WCF používá zprostředkující certifikáty v úložišti certifikátů i zprostředkující certifikáty přijaté během vyjednávání SSL k ověření řetězu certifikátů na certifikátu služby. Rozhraní .NET Framework 3.0 používá pouze zprostředkující certifikáty nainstalované v místním úložišti certifikátů.  
   
 > [!WARNING]
 > Při použití zabezpečení přenosu <xref:System.Threading.Thread.CurrentPrincipal%2A?displayProperty=nameWithType> může být vlastnost přepsána. Chcete-li tomu zabránit, nastavte <xref:System.ServiceModel.Description.ServiceAuthorizationBehavior.PrincipalPermissionMode%2A?displayProperty=nameWithType> na . <xref:System.ServiceModel.Description.PrincipalPermissionMode.None?displayProperty=nameWithType> <xref:System.ServiceModel.Description.ServiceAuthorizationBehavior>je chování služby, které lze nastavit v popisu služby.  
@@ -46,7 +46,7 @@ Mechanismy zabezpečení přenosu v nadaci Windows Communication Foundation (WCF
   
  Následující části popisují další typy pověření klienta.  
   
-#### <a name="basic"></a>Basic  
+#### <a name="basic"></a>Základní  
  To odpovídá základní metodě ověřování ve službě IIS. Při použití tohoto režimu musí být server IIS nakonfigurován pomocí uživatelských účtů systému Windows a příslušných oprávnění systému souborů NTFS. Další informace o službě IIS 6.0 naleznete [v tématu Povolení základního ověřování a konfigurace názvu sféry](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc785293(v=ws.10)). Další informace o službě IIS 7.0 naleznete [v tématu Konfigurace základního ověřování (IIS 7).](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc772009(v=ws.10))  
   
 #### <a name="certificate"></a>Certifikát  
@@ -101,7 +101,7 @@ Mechanismy zabezpečení přenosu v nadaci Windows Communication Foundation (WCF
    <clientCredentials>  
      <clientCertificate findValue= "101010101010101010101010101010000000000"
       storeLocation="LocalMachine" storeName="My"
-      X509FindType="FindByThumbPrint"/>  
+      X509FindType="FindByThumbPrint">  
      </clientCertificate>  
    </clientCredentials>  
  </behavior>  

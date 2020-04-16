@@ -2,26 +2,27 @@
 title: dotnet nuget povolit zdrojový příkaz
 description: Dotnet nuget povolit zdrojový příkaz umožňuje existující zdroj v konfiguračních souborech NuGet.
 ms.date: 03/20/2020
-ms.openlocfilehash: 1f18e7db6a6c8631bb432676dd97dabfad5b0ab8
-ms.sourcegitcommit: 07123a475af89b6da5bb6cc51ea40ab1e8a488f0
+ms.openlocfilehash: 38fb5917361bd7952fef9c31ed897fb81f005155
+ms.sourcegitcommit: 927b7ea6b2ea5a440c8f23e3e66503152eb85591
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80148559"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81463563"
 ---
-# <a name="dotnet-nuget-enable-source"></a>dotnet nuget povolit zdroj
+# <a name="dotnet-nuget-enable-source"></a>dotnet nuget enable source
 
 **Tento článek se týká:** ✔️ .NET Core 3.1.200 SDK a novější verze
 
-## <a name="name"></a>Name (Název)
+## <a name="name"></a>Název
 
 `dotnet nuget enable source`- Povolte zdroj NuGet.
 
 ## <a name="synopsis"></a>Synopse
 
 ```dotnetcli
-dotnet nuget enable source <NAME> [--configfile]
-dotnet nuget enable source [-h|--help]
+dotnet nuget enable source <NAME> [--configfile <FILE>]
+
+dotnet nuget enable source -h|--help
 ```
 
 ## <a name="description"></a>Popis
@@ -36,7 +37,7 @@ Příkaz `dotnet nuget enable source` povolí existující zdroj v konfiguračn�
 
 ## <a name="options"></a>Možnosti
 
-- **`--configfile`**
+- **`--configfile <FILE>`**
 
   Konfigurační soubor NuGet. Pokud je zadán, budou použita pouze nastavení z tohoto souboru. Pokud není zadán, bude použita hierarchie konfiguračních souborů z aktuálního adresáře. Další informace naleznete [v tématu Common NuGet Configurations](https://docs.microsoft.com/nuget/consume-packages/configuring-nuget-behavior).
 

@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 640676b6-c75a-4ff7-aea4-b1a1524d71b2
-ms.openlocfilehash: 02e0403f9ae5bb437145fa3a015edc69b884c4d0
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 4e91580035d4de23ae90cd0d59a08f321ae70a1c
+ms.sourcegitcommit: 927b7ea6b2ea5a440c8f23e3e66503152eb85591
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79185020"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81464140"
 ---
 # <a name="how-to-create-a-security-context-token-for-a-secure-session"></a>Postupy: Vytvoření tokenu kontextu zabezpečení pro zabezpečenou relaci
 Pomocí stavového tokenu kontextu zabezpečení (SCT) v zabezpečené relaci může relace odolat recyklované službě. Například při bezstavové SCT se používá v zabezpečené relaci a Internetové informační služby (IIS) je resetován, pak dojde ke ztrátě dat relace, která je přidružena ke službě. Tato data relace obsahuje mezipaměť tokenů SCT. Takže při příštím klient odešle službu bezstavové SCT, je vrácena chyba, protože klíč, který je spojen s SCT nelze načíst. Pokud se však používá stavové SCT, pak klíč, který je spojen s SCT je obsažen v SCT. Vzhledem k tomu, že klíč je obsažen v SCT a tedy obsažené ve zprávě, zabezpečené relace není ovlivněna služby recyklované. Ve výchozím nastavení Windows Communication Foundation (WCF) používá bezstavové SCT s v zabezpečené relaci. Toto téma podrobně popisuje, jak používat stavové st v zabezpečené relaci.  
@@ -32,6 +32,7 @@ Pomocí stavového tokenu kontextu zabezpečení (SCT) v zabezpečené relaci m�
   
         ```xml  
         <customBinding>  
+        </customBinding>
         ```  
   
     2. Přidejte [ \<podřízený](../../configure-apps/file-schema/wcf/bindings.md) prvek vazby>do [ \<>vlastní vazby ](../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md).  
@@ -40,6 +41,7 @@ Pomocí stavového tokenu kontextu zabezpečení (SCT) v zabezpečené relaci m�
   
         ```xml  
         <binding name="StatefulSCTSecureSession">  
+        </binding>
         ```  
   
     3. Zadejte režim ověřování pro zprávy odeslané do a z této služby přidáním [ \<>podřízeného](../../../../docs/framework/configure-apps/file-schema/wcf/security-of-custombinding.md) prvku zabezpečení do [ \<>vlastní vazby ](../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md).  
@@ -48,7 +50,8 @@ Pomocí stavového tokenu kontextu zabezpečení (SCT) v zabezpečené relaci m�
   
         ```xml  
         <security authenticationMode="SecureConversation"  
-                  requireSecurityContextCancellation="false">  
+                  requireSecurityContextCancellation="false">
+        </security>
         ```  
   
     4. Určete, jak je klient ověřen při vytvoření zabezpečené relace přidáním [ \<secureConversationBootstrap>](../../../../docs/framework/configure-apps/file-schema/wcf/secureconversationbootstrap.md) podřízený prvek do [ \<>zabezpečení ](../../../../docs/framework/configure-apps/file-schema/wcf/security-of-custombinding.md).  
@@ -103,7 +106,7 @@ Pomocí stavového tokenu kontextu zabezpečení (SCT) v zabezpečené relaci m�
         <security
             requireSecurityContextCancellation="false">  
               <secureConversationBootstrap />  
-      </security>  
+        </security>  
     <httpTransport />  
   </binding>  
 </customBinding>  

@@ -9,12 +9,12 @@ helpviewer_keywords:
 - I/O [.NET], Pipelines
 author: rick-anderson
 ms.author: riande
-ms.openlocfilehash: b18b2bf31787fa58e614cd4f057fba9037fe8ad8
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 8822e731ae805e83d4072c5bd78dff3fcf9a31a1
+ms.sourcegitcommit: 927b7ea6b2ea5a440c8f23e3e66503152eb85591
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "77627549"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81462512"
 ---
 # <a name="systemiopipelines-in-net"></a>System.IO.Pipelines v rozhraní .NET
 
@@ -172,7 +172,7 @@ Je často efektivní znovu použít `Pipe` objekt. Chcete-li obnovit <xref:Syste
 * První argument určuje, kolik paměti bylo spotřebováno.
 * Druhý argument určuje, jak velká část vyrovnávací paměti byla pozorována.
 
-Označení dat jako spotřebovaných znamená, že potrubí může vrátit paměť do podkladového fondu vyrovnávacích pamětí. Označení dat jako pozorovaných určuje, co `PipeReader.ReadAsync` dělá další volání. Označení všeho jako pozorované znamená, že další volání `PipeReader.ReadAsync` se nevrátí, dokud nebude do kanálu zapsáno více dat. Jakákoli jiná hodnota provede další `PipeReader.ReadAsync` volání okamžitě vrátit s pozorované *a* nepozorované data, ale data, která již byla spotřebována.
+Označení dat jako spotřebovaných znamená, že potrubí může vrátit paměť do podkladového fondu vyrovnávacích pamětí. Označení dat jako pozorovaných určuje, co `PipeReader.ReadAsync` dělá další volání. Označení všeho jako pozorované znamená, že další volání `PipeReader.ReadAsync` se nevrátí, dokud nebude do kanálu zapsáno více dat. Jakákoli jiná hodnota provede další `PipeReader.ReadAsync` volání okamžitě vrátit s pozorované *a* nepozorované data, ale ne data, která již byla spotřebována.
 
 ### <a name="read-streaming-data-scenarios"></a>Čtení scénářů streamování dat
 

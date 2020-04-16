@@ -2,12 +2,12 @@
 title: 'Postupy: Verze služby'
 ms.date: 03/30/2017
 ms.assetid: 4287b6b3-b207-41cf-aebe-3b1d4363b098
-ms.openlocfilehash: 3cd52e1f52a93e408ebed846894cc5686652cc91
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: f1178a0bedfe8665d7b3ec463e99183809538c28
+ms.sourcegitcommit: 927b7ea6b2ea5a440c8f23e3e66503152eb85591
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79184845"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81464118"
 ---
 # <a name="how-to-service-versioning"></a>Postupy: Verze služby
 Toto téma popisuje základní kroky potřebné k vytvoření konfigurace směrování, která směruje zprávy do různých verzí stejné služby. V tomto příkladu jsou zprávy směrovány do dvou `roundingCalc` různých verzí služby kalkulačky (v1) a `regularCalc` (v2). Obě implementace podporují stejné operace; starší služba , `roundingCalc`však zaokrouhlí všechny výpočty na nejbližší celočíselnou hodnotu před vrácením. Klientská aplikace musí být schopna určit, `regularCalc` zda má používat novější službu.  
@@ -25,7 +25,7 @@ Toto téma popisuje základní kroky potřebné k vytvoření konfigurace směro
   
 - Dělení  
   
- Vzhledem k tomu, že obě implementace služby zpracovávají stejné operace a jsou v podstatě identické než data, která vracejí, základní data obsažená ve zprávách odeslaných z klientských aplikací nejsou dostatečně jedinečná, aby vám umožnila určit, jak směrovat Požadavek. Filtry akcí nelze například použít, protože výchozí akce pro obě služby jsou stejné.  
+ Vzhledem k tomu, že obě implementace služby zpracovávají stejné operace a jsou v podstatě identické než data, která vracejí, základní data obsažená ve zprávách odeslaných z klientských aplikací nejsou dostatečně jedinečná, aby vám umožnila určit, jak směrovat požadavek. Filtry akcí nelze například použít, protože výchozí akce pro obě služby jsou stejné.  
   
  To lze vyřešit několika způsoby, například vystavení konkrétní koncový bod na směrovači pro každou verzi služby nebo přidání vlastního prvku záhlaví do zprávy k označení verze služby.  Každý z těchto přístupů umožňuje jednoznačně směrovat příchozí zprávy do určité verze služby, ale využití jedinečného obsahu zpráv je upřednostňovanou metodou rozlišování mezi požadavky na různé verze služby.  
   
@@ -90,7 +90,7 @@ messageHeadersElement.Add(MessageHeader.CreateHeader("CalcVer", "http://my.custo
            messages that do not contain the custom header-->  
        <filter name="XPathFilterNoHeader" filterType="XPath"  
                filterData="count(sm:header()/custom:CalcVer)=0"/>  
-    </filters  
+    </filters>
     ```  
   
     > [!NOTE]

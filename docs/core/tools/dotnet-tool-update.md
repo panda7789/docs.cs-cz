@@ -2,37 +2,37 @@
 title: dotnet nástroj aktualizovat, příkaz
 description: Příkaz aktualizace nástroje dotnet aktualizuje zadaný nástroj .NET Core v počítači.
 ms.date: 02/14/2020
-ms.openlocfilehash: 497b052a8b9cfa9dca8d80316075fe7565d6b35a
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 6176846dbe8e2a91d9c6959dede15718d8f983b2
+ms.sourcegitcommit: 927b7ea6b2ea5a440c8f23e3e66503152eb85591
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "78847817"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81463301"
 ---
 # <a name="dotnet-tool-update"></a>dotnet tool update
 
 **Tento článek se týká:** ✔️ .NET Core 2.1 SDK a novější verze
 
-## <a name="name"></a>Name (Název)
+## <a name="name"></a>Název
 
 `dotnet tool update`- Aktualizuje zadaný [nástroj .NET Core v](global-tools.md) počítači.
 
 ## <a name="synopsis"></a>Synopse
 
 ```dotnetcli
-dotnet tool update <PACKAGE_NAME> <-g|--global>
-    [--configfile] [--framework] [-v|--verbosity]
-    [--add-source]
+dotnet tool update <PACKAGE_NAME> -g|--global
+    [--configfile <FILE>] [--framework <FRAMEWORK>]
+    [-v|--verbosity <LEVEL>] [--add-source <SOURCE>]
 
-dotnet tool update <PACKAGE_NAME> <--tool-path>
-    [--configfile] [--framework] [-v|--verbosity]
-    [--add-source]
+dotnet tool update <PACKAGE_NAME> --tool-path <PATH>
+    [--configfile <FILE>] [--framework <FRAMEWORK>]
+    [-v|--verbosity <LEVEL>] [--add-source <SOURCE>]
 
 dotnet tool update <PACKAGE_NAME>
-    [--configfile] [--framework] [-v|--verbosity]
-    [--add-source]
+    [--configfile <FILE>] [--framework <FRAMEWORK>]
+    [-v|--verbosity <LEVEL>] [--add-source <SOURCE>]
 
-dotnet tool update <-h|--help>
+dotnet tool update -h|--help
 ```
 
 ## <a name="description"></a>Popis

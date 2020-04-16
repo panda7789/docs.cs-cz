@@ -2,31 +2,31 @@
 title: Příkaz odinstalovat nástroj dotnet
 description: Příkaz odinstalace nástroje dotnet odinstaluje zadaný nástroj .NET Core z vašeho počítače.
 ms.date: 02/14/2020
-ms.openlocfilehash: 82799404c40baa3a39f4e2a5fdb414fb745ef448
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 0416f91019a49e17f1be14a1d928ad1fafaa736c
+ms.sourcegitcommit: 927b7ea6b2ea5a440c8f23e3e66503152eb85591
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "78847830"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81463315"
 ---
 # <a name="dotnet-tool-uninstall"></a>dotnet tool uninstall
 
 **Tento článek se týká:** ✔️ .NET Core 2.1 SDK a novější verze
 
-## <a name="name"></a>Name (Název)
+## <a name="name"></a>Název
 
 `dotnet tool uninstall`- Odinstaluje zadaný [nástroj .NET Core](global-tools.md) z vašeho počítače.
 
 ## <a name="synopsis"></a>Synopse
 
 ```dotnetcli
-dotnet tool uninstall <PACKAGE_NAME> <-g|--global>
+dotnet tool uninstall <PACKAGE_NAME> -g|--global
 
-dotnet tool uninstall <PACKAGE_NAME> <--tool-path>
+dotnet tool uninstall <PACKAGE_NAME> --tool-path <PATH>
 
 dotnet tool uninstall <PACKAGE_NAME>
 
-dotnet tool uninstall <-h|--help>
+dotnet tool uninstall -h|--help
 ```
 
 ## <a name="description"></a>Popis

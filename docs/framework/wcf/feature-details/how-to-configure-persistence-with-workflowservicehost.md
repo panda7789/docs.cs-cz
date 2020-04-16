@@ -2,12 +2,12 @@
 title: 'Postupy: Konfigurace trvalosti pomocí WorkflowServiceHost'
 ms.date: 03/30/2017
 ms.assetid: e31cd4df-13a3-4a9a-9be8-5243e0055356
-ms.openlocfilehash: 2974b6bcbb94c5b54d91025aeabe7c2d2e94c7e8
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 4bfa66a895ae9af9cb87ff110dc82c8a8a922b49
+ms.sourcegitcommit: 927b7ea6b2ea5a440c8f23e3e66503152eb85591
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79185059"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81463838"
 ---
 # <a name="how-to-configure-persistence-with-workflowservicehost"></a>Postupy: Konfigurace trvalosti pomocí WorkflowServiceHost
 Toto téma popisuje, jak nakonfigurovat funkci úložiště instancí pracovního <xref:System.ServiceModel.Activities.WorkflowServiceHost> postupu SQL tak, aby umožňovala trvalost pro pracovní postupy hostované v aplikaci pomocí konfiguračního souboru. Před použitím funkce ÚLOŽIŠTĚ instancí pracovního postupu SQL je nutné vytvořit databázi SQL, která se používá k uchování instancí pracovního postupu. Další informace naleznete v [tématu How to: Enable SQL Persistence for Workflows and Workflow Services](../../../../docs/framework/windows-workflow-foundation/how-to-enable-sql-persistence-for-workflows-and-workflow-services.md).  
@@ -26,7 +26,7 @@ Toto téma popisuje, jak nakonfigurovat funkci úložiště instancí pracovníh
                  instanceLockedExceptionAction="NoRetry | SimpleRetry | AggressiveRetry"  
                  hostLockRenewalPeriod="00:00:30"
                  runnableInstancesDetectionPeriod="00:00:05">  
-            <sqlWorkflowInstanceStore/>  
+            </sqlWorkflowInstanceStore>  
         </behavior>  
     </serviceBehaviors>  
     ```  

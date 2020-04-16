@@ -2,31 +2,31 @@
 title: příkaz seznam nástrojů dotnet
 description: Příkaz seznamu nástrojů dotnet obsahuje seznam nástrojů .NET Core nainstalovaných v počítači.
 ms.date: 02/14/2020
-ms.openlocfilehash: def3c345a775e5a65ec3d37718d207c80ca7ceee
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 28f9155407d1238f8b0960b69b34ea329ca0e8e6
+ms.sourcegitcommit: 927b7ea6b2ea5a440c8f23e3e66503152eb85591
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "78847869"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81463351"
 ---
 # <a name="dotnet-tool-list"></a>dotnet tool list
 
 **Tento článek se týká:** ✔️ .NET Core 2.1 SDK a novější verze
 
-## <a name="name"></a>Name (Název)
+## <a name="name"></a>Název
 
 `dotnet tool list`- Zobrazí seznam všech [nástrojů .NET Core](global-tools.md) zadaného typu aktuálně nainstalovaného v počítači.
 
 ## <a name="synopsis"></a>Synopse
 
 ```dotnetcli
-dotnet tool list <-g|--global>
+dotnet tool list -g|--global
 
-dotnet tool list <--tool-path>
+dotnet tool list --tool-path <PATH>
 
 dotnet tool list
 
-dotnet tool list <-h|--help>
+dotnet tool list -h|--help
 ```
 
 ## <a name="description"></a>Popis
