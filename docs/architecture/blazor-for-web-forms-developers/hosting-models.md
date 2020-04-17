@@ -1,93 +1,93 @@
 ---
-title: Modely hostování aplikací Blazor
-description: Seznamte se s různými způsoby hostování aplikace v Blazor, včetně prohlížeče na webovém sestavení nebo na serveru.
+title: Blazor app hosting modely
+description: Naučte se různé způsoby hostování aplikace Blazor, a to i v prohlížeči na WebAssembly nebo na serveru.
 author: danroth27
 ms.author: daroth
 ms.date: 09/11/2019
-ms.openlocfilehash: 5bf55fa686691acc25508d3d9a6dfaf8aca321ca
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 77a022b01efba01038790c9601ea03f315a28fdf
+ms.sourcegitcommit: d9470d8b2278b33108332c05224d86049cb9484b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73088048"
+ms.lasthandoff: 04/17/2020
+ms.locfileid: "81607929"
 ---
-# <a name="blazor-app-hosting-models"></a>Modely hostování aplikací Blazor
+# <a name="blazor-app-hosting-models"></a>Blazor app hosting modely
 
 [!INCLUDE [book-preview](../../../includes/book-preview.md)]
 
-Aplikace Blazor se dají hostovat ve službě IIS stejně jako aplikace webových formulářů ASP.NET. Aplikace Blazor lze také hostovat jedním z následujících způsobů:
+Aplikace Blazor mohou být hostovány ve službě IIS stejně jako aplikace ASP.NET webových formulářů. Aplikace Blazor mohou být také hostovány jedním z následujících způsobů:
 
-- Klientská strana v prohlížeči na webovém sestavení.
+- Na straně klienta v prohlížeči na WebAssembly.
 - Na straně serveru v aplikaci ASP.NET Core.
 
-## <a name="blazor-webassembly-apps"></a>Blazor aplikace WebAssembly
+## <a name="blazor-webassembly-apps"></a>Aplikace Blazor WebAssembly
 
-Blazor aplikace WebAssembly se spouštějí přímo v prohlížeči v prostředí .NET runtime založeném na WebAssembly. Blazor aplikace WebAssembly funguje podobným způsobem jako front-endové rozhraní JavaScript, jako je například úhlová nebo reakce. Ale namísto psaní JavaScriptu napíšete C#. Modul runtime .NET se stáhne spolu s aplikací společně se sestavením aplikace a všemi požadovanými závislostmi. Nevyžadují se žádné moduly plug-in a doplňky prohlížeče.
+Aplikace Blazor WebAssembly se spouštějí přímo v prohlížeči na runtime .NET založeném na webové sestavě. Aplikace Blazor WebAssembly fungují podobně jako front-end javascriptové architektury jako Angular nebo React. Nicméně, místo psaní JavaScript upíšete C #. Běh .NET runtime se stáhne s aplikací spolu s sestavení aplikace a všechny požadované závislosti. Nejsou vyžadovány žádné pluginy prohlížeče nebo rozšíření.
 
-Stažená sestavení jsou běžná sestavení .NET, podobně jako byste použili v jakékoli jiné aplikaci .NET. Vzhledem k tomu, že modul runtime podporuje .NET Standard, můžete použít existující knihovny .NET Standard s vaší aplikací Blazor WebAssembly. Tato sestavení se ale pořád spustí v izolovaném prostoru zabezpečení prohlížeče. Některé funkce mohou vyvolat <xref:System.PlatformNotSupportedException>, jako je například pokus o přístup k systému souborů nebo otevírání libovolných síťových připojení.
+Stažená sestavení jsou normální sestavení rozhraní .NET, stejně jako v jakékoli jiné aplikaci .NET. Vzhledem k tomu, že runtime podporuje standard .NET, můžete použít existující knihovny .NET Standard s aplikací Blazor WebAssembly. Tato sestavení se však budou stále spouštět v izolovaném prostoru zabezpečení prohlížeče. Některé funkce mohou <xref:System.PlatformNotSupportedException>vyvolat , jako je pokus o přístup k systému souborů nebo otevření libovolných síťových připojení.
 
-Po načtení aplikace se spustí modul runtime .NET a nasměruje se na sestavení aplikace. Spustí se logika spouštění aplikace a vykreslí se kořenové součásti. Blazor vypočítá aktualizace uživatelského rozhraní na základě vykresleného výstupu z komponent. Budou se pak použít aktualizace modelu DOM.
+Když se aplikace načte, spustí se zaběhu .NET a zobrazí se na sestavení aplikace. Spustí se logika spuštění aplikace a vykreslí se kořenové součásti. Blazor vypočítá aktualizace ui na základě vykresleného výstupu z komponent. Aktualizace DOM jsou pak použity.
 
 ![Blazor WebAssembly](media/hosting-models/blazor-webassembly.png)
 
-Blazor aplikace WebAssembly spouštějí čistě na straně klienta. Takové aplikace je možné nasadit do statických řešení hostování webů, jako jsou stránky GitHub nebo hostování statických webů Azure. Na serveru vůbec není vyžadováno rozhraní .NET. Přímý odkaz na části aplikace obvykle vyžaduje řešení směrování na serveru. Řešení směrování přesměrovává požadavky do kořenového adresáře aplikace. Toto přesměrování můžete například zpracovat pomocí pravidel pro přepis adres URL ve službě IIS.
+Aplikace Blazor WebAssembly běží čistě na straně klienta. Takové aplikace se dá nasadit do řešení pro hostování statických webů, jako jsou stránky GitHub nebo Azure Static Web Hosting. Rozhraní .NET není na serveru vůbec vyžadováno. Přímé propojení s částmi aplikace obvykle vyžaduje řešení směrování na serveru. Řešení směrování přesměruje požadavky do kořenového adresáře aplikace. Toto přesměrování lze například zpracovat pomocí pravidel přepisování adres URL ve službě IIS.
 
-Pokud chcete získat všechny výhody Blazor a plného zásobníku pro web .NET, hostování vaší aplikace Blazor WebAssembly pomocí ASP.NET Core. Pomocí .NET na straně klienta i serveru můžete snadno sdílet kód a sestavovat aplikaci pomocí jedné konzistentní sady jazyků, rozhraní a nástrojů. Blazor poskytuje praktické šablony pro nastavení řešení, které obsahuje aplikaci Blazor WebAssembly a projekt hostitele ASP.NET Core. Po sestavení řešení jsou sestavené statické soubory z aplikace Blazor hostovány aplikací ASP.NET Core s již nastaveným záložním směrováním.
+Chcete-li získat všechny výhody blazoru a vývoji webu .NET v plném zásobníku, hostujte svou aplikaci Blazor WebAssembly s ASP.NET Core. Pomocí rozhraní .NET na straně klienta i serveru můžete snadno sdílet kód a vytvářet aplikaci pomocí jedné konzistentní sady jazyků, architektur a nástrojů. Blazor poskytuje pohodlné šablony pro nastavení řešení, které obsahuje jak aplikaci Blazor WebAssembly, tak ASP.NET hostitelský projekt Core. Když je řešení sestaveno, vytvořené statické soubory z aplikace Blazor jsou hostovány aplikací ASP.NET Core s již nastaveným záložním směrováním.
 
-## <a name="blazor-server-apps"></a>Serverové aplikace Blazor
+## <a name="blazor-server-apps"></a>Aplikace Blazor Server
 
-Navrácení z diskuze [architektury Blazor](architecture-comparison.md#blazor) , kterou komponenty Blazor, vykreslují výstup do zprostředkující abstrakce s názvem `RenderTree`. Blazor Framework pak porovná, co bylo vykresleno s dříve vykreslenou. Rozdíly jsou aplikovány na model DOM. Komponenty Blazor jsou odděleny od způsobu použití jejich vykresleného výstupu. V důsledku toho nemusí být samotné komponenty spouštěny ve stejném procesu jako proces aktualizace uživatelského rozhraní. Ve skutečnosti je nemusíte spouštět na stejném počítači.
+Připomeňme si z diskuse [o architektuře Blazor,](architecture-comparison.md#blazor) že komponenty Blazor uváznou svůj výstup do mezilehlé abstrakce nazývané `RenderTree`. Architektura Blazor pak porovnává to, co bylo vykresleno, s tím, co bylo dříve vykresleno. Rozdíly jsou použity na DOM. Komponenty Blazor jsou odděleny od způsobu použití jejich vykresleného výstupu. V důsledku toho samotné součásti nemusí běžet ve stejném procesu jako proces aktualizace uj. Ve skutečnosti ani nemusí běžet na stejném stroji.
 
-V aplikacích Blazor Server se komponenty na serveru spouštějí místo na straně klienta v prohlížeči. Události uživatelského rozhraní, které se vyskytují v prohlížeči, se odesílají na server přes připojení v reálném čase. Události jsou odesílány do správných instancí součásti. Komponenty vykreslí a vypočtené rozdíly uživatelského rozhraní jsou serializovány a odesílány do prohlížeče, kde jsou aplikovány na model DOM.
+V aplikacích Blazor Server jsou komponenty spuštěny na serveru namísto klienta v prohlížeči. Události ui, ke kterým dochází v prohlížeči jsou odesílány na server přes připojení v reálném čase. Události jsou odesílány do instance správné součásti. Vykreslování součástí a vypočtené rozdíl ui je serializován a odeslán do prohlížeče, kde je použita na DOM.
 
 ![Blazor Server](media/hosting-models/blazor-server.png)
 
-Model hostování serveru Blazor může být známý při použití ASP.NET AJAX a ovládacího prvku <xref:System.Web.UI.UpdatePanel>. Ovládací prvek `UpdatePanel` zpracovává použití částečných aktualizací stránky v reakci na události triggeru na stránce. Když se aktivuje, `UpdatePanel` požádá o částečnou aktualizaci a pak ji použije bez nutnosti aktualizovat stránku. Stav uživatelského rozhraní je spravován pomocí `ViewState`. Aplikace Blazor serveru se mírně liší v tom, že aplikace vyžaduje aktivní připojení k klientovi. Kromě toho je veškerý stav uživatelského rozhraní udržován na serveru. Kromě těchto rozdílů jsou tyto dva modely koncepčně podobné.
+Hostingový model Blazor Server může znít povědomě, <xref:System.Web.UI.UpdatePanel> pokud jste použili ASP.NET AJAX a ovládací prvek. Ovládací `UpdatePanel` prvek zpracovává použití částečné aktualizace stránky v reakci na události aktivační události na stránce. Při aktivaci `UpdatePanel` požaduje částečnou aktualizaci a pak ji použije bez nutnosti aktualizace stránky. Stav ui je spravován `ViewState`pomocí . Aplikace Blazor Server se mírně liší v tom, že aplikace vyžaduje aktivní spojení s klientem. Kromě toho je na serveru udržován veškerý stav ui. Kromě těchto rozdílů jsou oba modely koncepčně podobné.
 
-## <a name="how-to-choose-the-right-blazor-hosting-model"></a>Jak vybrat správný model hostování Blazor
+## <a name="how-to-choose-the-right-blazor-hosting-model"></a>Jak si vybrat ten správný model hostingu Blazor
 
-Jak je popsáno v [dokumentaci modelu hostování Blazor](https://docs.microsoft.com/aspnet/core/blazor/hosting-models#server-side), různé modely hostování Blazor mají různé kompromisy.
+Jak je popsáno v [blazorhostingovém modelu dokumentů](/aspnet/core/blazor/hosting-models), různé modely hostingu Blazor mají různé kompromisy.
 
-Model hostování WebAssembly Blazor má následující výhody:
+Hostingový model Blazor WebAssembly má následující výhody:
 
-- Neexistuje žádná závislost na straně serveru .NET. Aplikace po stažení do klienta plně funguje.
-- Prostředky a možnosti klienta jsou plně využité.
-- Práce je ze serveru převedena na klienta.
-- Pro hostování aplikace není vyžadován ASP.NET Core webový server. Jsou možné scénáře nasazení bez serveru (například poskytování aplikace z CDN).
+- Neexistuje žádná závislost na straně serveru .NET. Aplikace je plně funkční po stažení do klienta.
+- Klientské prostředky a možnosti jsou plně využity.
+- Práce je převedena ze serveru na klienta.
+- K hostování aplikace není vyžadován ASP.NET webový server Core. Scénáře nasazení bez serveru jsou možné (například obsluha aplikace z CDN).
 
-Downsides modelu hostování Blazor WebAssembly je:
+Nevýhody hostingového modelu Blazor WebAssembly jsou:
 
 - Možnosti prohlížeče omezují aplikaci.
-- Je vyžadován klientský hardware a software (například podpora WebAssembly).
-- Velikost ke stažení je větší a aplikace trvá déle, než se načtou.
-- Podpora modulu runtime .NET a nástrojů je méně vyspělá. Existují například omezení pro [.NET Standard](../../standard/net-standard.md) podporu a ladění.
+- Je vyžadován schopný hardware a software klienta (například podpora webassemblyu).
+- Velikost stahování je větší a načítání aplikací trvá déle.
+- Doba běhu .NET a podpora nástrojů je méně vyspělá. Například existují omezení v [.NET Standard](../../standard/net-standard.md) podporu a ladění.
 
-Naopak model hostování serveru Blazor nabízí následující výhody:
+Naopak model hostingu Blazor Server nabízí následující výhody:
 
-- Velikost ke stažení je mnohem menší než u aplikace na straně klienta a aplikace se načítá mnohem rychleji.
-- Aplikace plně využívá možnosti serveru, včetně použití jakýchkoli rozhraní API kompatibilních s .NET Core.
-- Rozhraní .NET Core na serveru se používá ke spuštění aplikace, takže stávající nástroje .NET, jako je ladění, fungují podle očekávání.
-- Podporují se tenké klienty. Například aplikace na straně serveru fungují s prohlížeči, které nepodporují WebAssembly a na zařízeních s omezením prostředků.
-- Základ pro .NET/C# kód aplikace, včetně kódu komponenty aplikace, není obsluhován klientům.
+- Velikost stahování je mnohem menší než aplikace na straně klienta a aplikace se načte mnohem rychleji.
+- Aplikace plně využívá možnosti serveru, včetně použití všech rozhraní API kompatibilních s jádrem .NET.
+- Jádro .NET na serveru se používá ke spuštění aplikace, takže existující nástroje .NET, jako je ladění, fungují podle očekávání.
+- Tenké klienti jsou podporovány. Aplikace na straně serveru například pracují s prohlížeči, které nepodporují webovou sestavu, a na zařízeních s omezenými prostředky.
+- Základ kódu aplikace .NET/C#, včetně kódu komponenty aplikace, se klientům nezobrazuje.
 
-Downsides pro model hostování serveru Blazor:
+Nevýhody modelu hostingu Blazor Server jsou:
 
-- Vyšší latence uživatelského rozhraní. Každá interakce uživatele zahrnuje směrování sítě.
-- Neexistuje žádná podpora offline. Pokud připojení klienta neproběhne úspěšně, aplikace přestane fungovat.
-- Pro aplikace s mnoha uživateli je škálovatelnost náročná. Server musí spravovat více připojení klientů a zpracovávat stav klienta.
-- Pro obsluhu aplikace je vyžadován ASP.NET Core Server. Scénáře nasazení bez serveru nejsou možné. Nemůžete například obsluhovat aplikaci ze sítě CDN.
+- Vyšší latence ui. Každá interakce uživatele zahrnuje síťový směrování.
+- Neexistuje žádná offline podpora. Pokud se připojení klienta nezdaří, aplikace přestane fungovat.
+- Škálovatelnost je náročná pro aplikace s mnoha uživateli. Server musí spravovat více klientských připojení a zpracovávat stav klienta.
+- K poskytování aplikace je vyžadován ASP.NET základní server. Scénáře nasazení bez serveru nejsou možné. Aplikaci například nelze obsluhovat z sítě CDN.
 
-Předchozí seznam kompromisů může být zastrašování, ale váš hostující model lze později změnit. Bez ohledu na vybraný model hostování Blazor je model komponent *stejný*. V zásadě lze použít stejné součásti s modelem hostování. Kód vaší aplikace se nezmění. je však dobrým zvykem zavést abstrakce, aby komponenty zůstaly hostující model-nezávislá. Abstrakce umožňují, aby vaše aplikace snadněji přijímala jiný model hostování.
+Předchozí seznam kompromisů může být zastrašující, ale váš model hostování může být později změněn. Bez ohledu na vybraný model hostování Blazor je model *komponenty stejný*. V zásadě lze stejné komponenty použít s jedním modelem hostování. Kód aplikace se nezmění. je však vhodné zavést abstrakce tak, aby vaše komponenty zůstat hostování modelu agnostik. Abstrakce umožňují vaší aplikaci snadněji přijmout jiný model hostování.
 
 ## <a name="deploy-your-app"></a>Nasazení aplikace
 
-Aplikace webových formulářů ASP.NET se obvykle hostují ve službě IIS na počítači nebo v clusteru s Windows serverem. Aplikace Blazor můžou také:
+ASP.NET aplikace webových formulářů jsou obvykle hostovány ve službě IIS v počítači nebo clusteru se systémem Windows Server. Aplikace Blazor mohou také:
 
-- Být hostovány službou IIS, buď jako statické soubory, nebo jako aplikace ASP.NET Core.
-- Využijte flexibilitu ASP.NET Core pro hostování na různých platformách a serverových infrastrukturách. Můžete například hostovat aplikaci Blazor pomocí [Nginx](/aspnet/core/host-and-deploy/linux-nginx) nebo [Apache](/aspnet/core/host-and-deploy/linux-apache) v systému Linux. Další informace o tom, jak publikovat a nasazovat aplikace Blazor, najdete v dokumentaci k [hostování a nasazení](/aspnet/core/host-and-deploy/blazor/) Blazor.
+- Hostujte ve službě IIS, buď jako statické soubory, nebo jako ASP.NET aplikace Core.
+- Využijte ASP.NET flexibilitu core, aby bylo hostováno na různých platformách a serverových infrastrukturách. Můžete například hostovat aplikaci Blazor pomocí [Nginx](/aspnet/core/host-and-deploy/linux-nginx) nebo [Apache](/aspnet/core/host-and-deploy/linux-apache) na Linuxu. Další informace o tom, jak publikovat a nasazovat aplikace Blazor, najdete v dokumentaci k [hostování a nasazení](/aspnet/core/host-and-deploy/blazor/) Blazor.
 
-V další části se podíváme na to, jak se nastavují projekty pro Blazor aplikace pro WebAssembly a Blazor Server.
+V další části se podíváme na to, jak jsou nastaveny projekty pro aplikace Blazor WebAssembly a Blazor Server.
 
 >[!div class="step-by-step"]
 >[Předchozí](architecture-comparison.md)
->[Další](project-structure.md)
+>[další](project-structure.md)

@@ -4,12 +4,12 @@ description: Architekt moderní webové aplikace s ASP.NET core a Azure | Proces
 author: ardalis
 ms.author: wiwagn
 ms.date: 01/30/2019
-ms.openlocfilehash: 7a641c1b6665af6e9e78ef182174b360041d74aa
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 640cfebea3c70314be4a597bc07b0dc6854f5848
+ms.sourcegitcommit: d9470d8b2278b33108332c05224d86049cb9484b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "77450037"
+ms.lasthandoff: 04/17/2020
+ms.locfileid: "81607890"
 ---
 # <a name="development-process-for-azure"></a>Proces vývoje pro Azure
 
@@ -58,13 +58,13 @@ Vytvořte službu Azure App Service, kde budete nasadit svou aplikaci. Vytvořte
 
 Proces sestavení CI provede automatické sestavení vždy, když je do úložiště správy zdrojového kódu projektu potvrzen nový kód. To vám dává okamžitou zpětnou vazbu, že kód sestaví (a v ideálním případě projde automatizované testy) a může být potenciálně nasazen. Toto sestavení CI vytvoří artefakt balíčku nasazení webu a publikuje jej pro spotřebu procesem disku CD.This CI build will produce a web deploy package artifact and publish it for consumption by YOUR CD process.
 
-[Definování procesu sestavení CI](https://docs.microsoft.com/azure/devops/build-release/apps/aspnet/build-aspnet-core#ci)
+[Definování procesu sestavení CI](https://docs.microsoft.com/azure/devops/pipelines/ecosystems/dotnet-core)
 
 Ujistěte se, že povolit průběžnou integraci, takže systém bude fronty sestavení vždy, když někdo z vašeho týmu potvrdí nový kód. Otestujte sestavení a ověřte, zda vytváří balíček nasazení webu jako jeden z jeho artefaktů.
 
 Když sestavení proběhne úspěšně, proces cd nasadí výsledky vašeho sestavení CI do webové aplikace Azure. Chcete-li to nakonfigurovat, vytvořte a nakonfigurujte *verzi*, která se nasadí do služby Azure App Service.
 
-[Definování procesu vydání disku CD](https://docs.microsoft.com/azure/devops/build-release/apps/aspnet/build-aspnet-core#cd)
+[Nasazení webové aplikace Azure](https://docs.microsoft.com/azure/devops/pipelines/targets/webapp)
 
 Jakmile je kanál CI/CD nakonfigurován, můžete jednoduše provést aktualizace webové aplikace a potvrdit je do správy zdrojového kódu, aby byly nasazeny.
 

@@ -6,18 +6,18 @@ dev_langs:
 author: thraka
 ms.author: adegeo
 ms.date: 12/04/2019
-ms.openlocfilehash: 323a2390f079c17b81db01e4e3787916251943bf
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: b52615a3fb288a6ca0622deb83f4db3c8e3587fb
+ms.sourcegitcommit: d9470d8b2278b33108332c05224d86049cb9484b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "78156553"
+ms.lasthandoff: 04/17/2020
+ms.locfileid: "81607903"
 ---
 # <a name="whats-new-in-net-core-31"></a>Co je nového v .NET Core 3.1
 
 Tento článek popisuje, co je nového v rozhraní .NET Core 3.1. Tato verze obsahuje menší vylepšení .NET Core 3.0, se zaměřením na malé, ale důležité opravy. Nejdůležitější funkcí o .NET Core 3.1 je, že se jedná o [vydání dlouhodobé podpory (LTS).](#long-term-support)
 
-Pokud používáte Visual Studio 2019, musíte aktualizovat na [Visual Studio 2019 verze 16.4](https://visualstudio.microsoft.com/downloads/) pro práci s projekty .NET Core 3.1. Další informace o tom, co je nového v Sadě Visual Studio, najdete [v tématu Co je nového ve Visual Studiu 2019 verze 16.4](/visualstudio/releases/2019/release-notes#whats-new-in-visual-studio-2019-version-164).
+Pokud používáte Visual Studio 2019, musíte aktualizovat na [Visual Studio 2019 verze 16.4 nebo novější,](https://visualstudio.microsoft.com/downloads/) abyste pracovali s projekty .NET Core 3.1. Informace o novince ve Visual Studiu verze 16.4 najdete [v tématu Co je nového ve Visual Studiu 2019 verze 16.4](/visualstudio/releases/2019/release-notes-v16.4#whats-new-in-visual-studio-2019-version-164).
 
 Visual Studio pro Mac také podporuje a obsahuje .NET Core 3.1 v Visual Studiu pro Mac 8.4.
 

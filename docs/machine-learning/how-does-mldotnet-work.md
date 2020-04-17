@@ -4,12 +4,12 @@ description: ML.NET vám dává možnost přidat strojové učení do aplikací 
 ms.date: 11/5/2019
 ms.topic: overview
 ms.custom: mvc
-ms.openlocfilehash: 169250adf81992ad0025e78eb9c8f151107bcf40
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 0929005e02ad9b43636213735f8c7232aa6d4f42
+ms.sourcegitcommit: d9470d8b2278b33108332c05224d86049cb9484b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "79185854"
+ms.lasthandoff: 04/17/2020
+ms.locfileid: "81607768"
 ---
 # <a name="what-is-mlnet-and-how-does-it-work"></a>Co je ML.NET a jak funguje?
 
@@ -105,7 +105,7 @@ Pojďme se hlouběji ponořit do těchto pojmů.
 
 Model ML.NET je objekt, který obsahuje transformace k provedení na vstupní data k dosažení předpokládaného výstupu.
 
-### <a name="basic"></a>Basic
+### <a name="basic"></a>Základní
 
 Nejzákladnějším modelem je dvourozměrná lineární regrese, kde jedno souvislé množství je úměrné jinému, jako ve výše uvedeném příkladu ceny domu.
 
@@ -230,7 +230,7 @@ Vstupní data můžete transformovat do předpovědi hromadně nebo jeden vstup 
     var price = predEngine.Predict(size);
 ```
 
-Metoda `CreatePredictionEngine()` trvá vstupní třídy a výstupní třídy. Názvy polí nebo atributy kódu určují názvy datových sloupců použitých během trénování a predikce modelu. Můžete si přečíst o [Jak provést jednu předpověď](./how-to-guides/single-predict-model-ml-net.md) v části Návody.
+Metoda `CreatePredictionEngine()` trvá vstupní třídy a výstupní třídy. Názvy polí nebo atributy kódu určují názvy datových sloupců použitých během trénování a predikce modelu. Další informace naleznete v [tématu Make predictions with a trained model](how-to-guides/machine-learning-model-predictions-ml-net.md).
 
 ### <a name="data-models-and-schema"></a>Datové modely a schémata
 

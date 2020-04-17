@@ -5,12 +5,12 @@ ms.date: 11/07/2019
 author: luisquintanilla
 ms.author: luquinta
 ms.custom: mvc,how-to
-ms.openlocfilehash: b6801b7de5a17257be706f77a7a67aa87df96524
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 3f1ca48ab29b04931961b52743bb6c7fab70b06d
+ms.sourcegitcommit: d9470d8b2278b33108332c05224d86049cb9484b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "79398928"
+ms.lasthandoff: 04/17/2020
+ms.locfileid: "81608072"
 ---
 # <a name="deploy-a-model-in-an-aspnet-core-web-api"></a>Nasazení modelu v ASP.NET základního webového rozhraní API
 
@@ -18,7 +18,7 @@ Naučte se, jak sloužit předem vyškolený ML.NET model strojového učení na
 
 ## <a name="prerequisites"></a>Požadavky
 
-- [Visual Studio 2017 verze 15.6 nebo novější](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2017) s nainstalovanou úlohou "Vývoj napříč platformami..NET Core.Core.Platform development".
+- [Visual Studio 2019](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2019) nebo novější nebo Visual Studio 2017 verze 15.6 nebo novější s nainstalovanou úlohou "Vývoj napříč platformami..NET Core cross-platform".
 - Powershell.
 - Předem vycvičený model. Použijte [kurz ML.NET analýzy mínění](../tutorials/sentiment-analysis.md) k vytvoření vlastního modelu nebo ke stažení tohoto [předem vytrénovaného modelu strojového učení analýzy mínění](https://github.com/dotnet/samples/blob/master/machine-learning/models/sentimentanalysis/sentiment_model.zip)
 
@@ -102,7 +102,7 @@ Je třeba vytvořit některé třídy pro vaše vstupní data a předpovědi. P�
 
 Chcete-li provést jednu předpověď, [`PredictionEngine`](xref:Microsoft.ML.PredictionEngine%602)musíte vytvořit . [`PredictionEngine`](xref:Microsoft.ML.PredictionEngine%602)není bezpečný pro přístup z více vláken. Navíc je nutné vytvořit instanci všude, kde je potřeba v rámci aplikace. Jak vaše aplikace roste, tento proces může být nezvladatelný. Pro zvýšení výkonu a bezpečnosti podprocesů použijte `PredictionEnginePool` kombinaci vkládání [`ObjectPool`](xref:Microsoft.Extensions.ObjectPool.ObjectPool%601) závislostí a služby, která vytvoří objekty [`PredictionEngine`](xref:Microsoft.ML.PredictionEngine%602) pro použití v celé aplikaci.
 
-Následující odkaz obsahuje další informace, pokud se chcete dozvědět více o [vkládání závislostí v ASP.NET Core](https://docs.microsoft.com/aspnet/core/fundamentals/dependency-injection?view=aspnetcore-2.1).
+Následující odkaz obsahuje další informace, pokud se chcete dozvědět více o [vkládání závislostí v ASP.NET Core](/aspnet/core/fundamentals/dependency-injection?view=aspnetcore-2.1).
 
 1. Otevřete *Startup.cs* třídu a přidejte do horní části souboru následující příkaz using:
 

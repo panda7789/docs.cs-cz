@@ -2,87 +2,87 @@
 title: Šablony Visual Studia pro WCF
 ms.date: 03/30/2017
 ms.assetid: 6a608575-3535-4190-89da-911e24c8374f
-ms.openlocfilehash: ec73036921632bc855e79239f1fc578587de7ca3
-ms.sourcegitcommit: 32a575bf4adccc901f00e264f92b759ced633379
+ms.openlocfilehash: 13183ad5f05350c34eebd025eca3faa7d97644f8
+ms.sourcegitcommit: d9470d8b2278b33108332c05224d86049cb9484b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74802343"
+ms.lasthandoff: 04/17/2020
+ms.locfileid: "81608020"
 ---
 # <a name="wcf-visual-studio-templates"></a>Šablony Visual Studia pro WCF
-Šablony sady Visual Studio pro Windows Communication Foundation (WCF) jsou předdefinované šablony projektů a položek, které můžete použít v aplikaci Visual Studio k rychlému vytváření služeb WCF a okolních aplikací.  
+Windows Communication Foundation (WCF) Visual Studio šablony jsou předdefinované projekt a šablony položek, které můžete použít v sadě Visual Studio rychle vytvářet služby WCF a okolní aplikace.  
   
-## <a name="using-the-wcf-templates"></a>Používání šablon WCF  
- Šablony sady Visual Studio pro WCF poskytují základní strukturu tříd pro vývoj služeb. Konkrétně tyto šablony poskytují základní definice pro kontrakt služby, kontrakt dat, implementaci služby a konfiguraci. Tyto šablony můžete použít k vytvoření jednoduché služby s minimální interakcí kódu, jakož i stavebního bloku pro pokročilejší služby.  
+## <a name="using-the-wcf-templates"></a>Použití šablon WCF  
+ Šablony WCF Visual Studio poskytují základní strukturu tříd pro vývoj služeb. Konkrétně tyto šablony poskytují základní definice pro servisní smlouvy, smlouvy o datech, implementace služby a konfigurace. Tyto šablony můžete použít k vytvoření jednoduché služby s minimální interakcí kódu, stejně jako stavební blok pro pokročilejší služby.  
   
-### <a name="wcf-service-library-project-template"></a>Šablona projektu knihovny služby WCF  
- Šablona projektu knihovny služby WCF je k dispozici v dialogovém okně Nový projekt v **části C#Visual \WCF** a **Visual Basic\WCF**.  
+### <a name="wcf-service-library-project-template"></a>Šablona projektu knihovny služeb WCF  
+ Šablona projektu Knihovna služeb WCF je k dispozici v novém dialogovém okně projektu v části **Visual C#\WCF** a **Visual Basic\WCF**.  
   
- Když vytváříte nový projekt pomocí šablony **služby WCF** , nový projekt automaticky obsahuje následující tři soubory:  
+ Když vytvoříte nový projekt pomocí šablony **služby WCF,** nový projekt automaticky obsahuje následující tři soubory:  
   
-- Soubor kontraktu služby (IService1.cs nebo IService1. vb). Soubor kontraktu služby je rozhraní, které používá atributy služby WCF. Tento soubor poskytuje definici jednoduché služby, která vám ukáže, jak definovat vaše služby, a obsahuje operace založené na parametrech a ukázku jednoduchého kontraktu dat. Toto je výchozí soubor zobrazený v editoru kódu po vytvoření projektu služby WCF.  
+- Soubor servisní smlouvy (IService1.cs nebo IService1.vb). Soubor smlouvy o poskytování služeb je rozhraní, které má atributy služby WCF. Tento soubor poskytuje definici jednoduché služby, která vám ukáže, jak definovat služby, a zahrnuje operace založené na parametrech a ukázku jednoduché datové smlouvy. Toto je výchozí soubor zobrazený v editoru kódu po vytvoření projektu služby WCF.  
   
-- Soubor implementace služby (Service1.cs nebo Service1. vb). Implementační soubor služby implementuje kontrakt definovaný v souboru kontraktu služby.  
+- Soubor implementace služby (Service1.cs nebo Service1.vb). Soubor implementace služby implementuje smlouvu definovanou v souboru servisní smlouvy.  
   
-- Konfigurační soubor aplikace (App. config). Konfigurační soubor poskytuje základní prvky modelu služby WCF s zabezpečenou vazbou HTTP. Zahrnuje taky koncový bod pro službu a umožňuje výměnu metadat.  
+- Konfigurační soubor aplikace (App.config). Konfigurační soubor poskytuje základní prvky modelu služby WCF se zabezpečenou vazbou HTTP. Obsahuje také koncový bod pro službu a umožňuje výměnu metadat.  
   
 > [!NOTE]
-> Visual Studio je nakonfigurované tak, aby rozpoznal soubor App. config jako konfigurační soubor pro projekt, když je spuštěný pomocí [hostitele služby WCF (WcfSvcHost. exe)](wcf-service-host-wcfsvchost-exe.md), který je výchozí konfigurací. Pokud hostete knihovnu služby ve spustitelném souboru, je nutné přesunout konfigurační kód do konfiguračního souboru spustitelného souboru, protože konfigurační soubory pro knihovny DLL nejsou platné.  
+> Visual Studio je nakonfigurováno tak, aby rozpoznalo soubor App.config jako konfigurační soubor projektu při spuštění pomocí [hostitele služby WCF (WcfSvcHost.exe),](wcf-service-host-wcfsvchost-exe.md)což je výchozí konfigurace. Pokud hostujete knihovnu služeb ve spustitelném souboru, je třeba přesunout konfigurační kód do konfiguračního souboru spustitelného souboru, protože konfigurační soubory pro knihovny DLL nejsou platné.  
   
 ### <a name="wcf-service-application-template"></a>Šablona aplikace služby WCF  
- Šablona aplikace služby WCF je k dispozici v dialogovém okně Nový projekt v **části C#Visual \WCF** a **Visual Basic\WCF**.  
+ Šablona aplikace služby WCF je k dispozici v dialogovém okně Nový projekt v části **Visual C#\WCF** a **Visual Basic\WCF**.  
   
- Když vytváříte nový projekt pomocí šablony **služby webové aplikace WCF** , projekt obsahuje následující čtyři soubory:  
+ Při vytváření nového projektu pomocí šablony **WCF webové aplikační služby** projekt obsahuje následující čtyři soubory:  
   
-- Soubor hostitele služby (Service1. svc).  
+- Soubor hostitele služby (service1.svc).  
   
-- Soubor kontraktu služby (IService1.cs nebo IService1. vb).  
+- Soubor servisní smlouvy (IService1.cs nebo IService1.vb).  
   
-- Soubor implementace služby (Service1.svc.cs nebo Service1. svc. vb).  
+- Soubor implementace služby (Service1.svc.cs nebo Service1.svc.vb).  
   
-- Soubor webové konfigurace (Web. config).  
+- Webový konfigurační soubor (Web.config).  
   
- Šablona automaticky vytvoří web (který se má nasadit do virtuálního adresáře) a hostuje službu.  
+ Šablona automaticky vytvoří web (který má být nasazen do virtuálního adresáře) a bude v něm hostuje službu.  
   
 ### <a name="wcf-web-site-template"></a>Šablona webu WCF  
- Šablona webu WCF je k dispozici v dialogovém okně Nový projekt v části **Visual C#\Web Site\WCF Service** a **Visual Basic\Web Site\WCF Service**. Tím se vytvoří stejné soubory jako v šabloně aplikace služby WCF, ale uspořádají se, jako by se jednalo o ASP.NET Web. Vytvoří se App_Code a App_Data složky.  
+ Šablona webu WCF je k dispozici v dialogovém okně Nový projekt v části **Visual C#\Web Site\WCF Service** a **Visual Basic\Web Site\WCF Service**. Tím se vytvoří stejné soubory jako šablona aplikace služby WCF, ale uspořádá ji, jako by se jednalo o ASP.NET webu. jsou vytvořeny App_Code a App_Data složky.  
   
-### <a name="wcf-service-item-template"></a>Šablona položky služby WCF  
- Šablona položky služby WCF je vlastní šablona, která poskytuje rychlý způsob, jak přidat služby WCF do stávajících projektů sady Visual Studio.  
+### <a name="wcf-service-item-template"></a>Šablona předmětu servisu WCF  
+ Šablona služby WCF je vlastní šablona, která poskytuje rychlý způsob, jak přidat služby WCF do existujících projektů sady Visual Studio.  
   
- Chcete-li použít tuto šablonu, přejděte do podokna **Průzkumník řešení** , klikněte pravým tlačítkem myši na název projektu, přejděte na položku **Přidat**a poté klikněte na možnost **Nová položka** . tím otevřete dialogové okno **Přidat novou položku** .  
+ Chcete-li použít tuto šablonu, přejděte do podokna **Průzkumník řešení,** klikněte pravým tlačítkem myši na název projektu, přejděte na **Přidat**a potom klepnutím na tlačítko **Nová položka** spusťte dialogové okno Přidat **novou položku.**  
   
- Rozhraní služby a implementační soubory jsou umístěny do kořenové složky projektu.  
+ Rozhraní služby a soubory implementace jsou umístěny ve složce kořenového projektu.  
   
- Šablona se pokusí sloučit konfigurační oddíl nové služby do stávajícího konfiguračního souboru, pokud jsou kompatibilní typy.  
+ Šablona se pokusí sloučit část konfigurace nové služby do existujícího konfiguračního souboru, pokud jsou kompatibilní typy.  
   
- Soubor hostitele služby (Service1. svc) se vytvoří také v případě, že existující projekt je webový projekt.  
+ Soubor hostitele služby (service1.svc) je také vytvořen, pokud je existující projekt webový projekt.  
   
-### <a name="wcf-wf-service-project-and-item-template"></a>Projekt a Šablona položky služby WCF WF.  
- Tyto šablony vytvářejí služby WCF, které hostují službu pracovního postupu, což je pracovní postup, který je možné použít jako webovou službu. Pro XAML nebo imperativní programovací modely existují samostatné šablony. Pomocí šablon můžete vytvořit pracovní postup sekvenčního nebo stavového stroje. Další informace o těchto typech pracovního postupu najdete v tématu [Postupy: vytvoření pracovního postupu](../windows-workflow-foundation/how-to-create-a-workflow.md). Další informace o vytváření projektů pracovních postupů najdete v tématu [vytváření starších projektů pracovních postupů](/visualstudio/workflow-designer/developing-applications-with-the-workflow-designer).  
+### <a name="wcf-wf-service-project-and-item-template"></a>Projekt služby WF wcf a šablona položky.  
+ Tyto šablony vytvářejí služby WCF, které jsou hostiteli služby pracovního postupu, což je pracovní postup, ke kterému lze přistupovat jako k webové službě. Existují samostatné šablony pro xaml nebo imperativní programovací modely. Pomocí šablon můžete vytvořit sekvenční pracovní postup nebo pracovní postup stavového počítače. Další informace o těchto typech pracovního postupu naleznete v [tématu How to: Create a Workflow](../windows-workflow-foundation/how-to-create-a-workflow.md). Další informace o vytváření projektů pracovního postupu naleznete v [tématu Vytváření starších projektů pracovního postupu](/visualstudio/workflow-designer/developing-applications-with-the-workflow-designer).  
   
- Návrhář sady Visual Studio je při použití pracovních postupů typu XOML místo na základě kódu rychlejší reagovat. Pracovní postup XOML je výchozí typ pracovního postupu, který se má vytvořit.  
+ Návrhář visual studio je citlivější při použití pracovních postupů typu XOML namísto pracovních postupů založených na kódu. Pracovní postup XOML je výchozí typ pracovního postupu, který má být vytvořen.  
   
-### <a name="wcf-syndication-service-library-template"></a>Šablona knihovny syndikací služby WCF  
- Tato šablona vám umožní zveřejnit váš informační kanál ve formátu RSS nebo ATOM jako služba WCF. Další informace najdete v tématu [Syndikace WCF](./feature-details/wcf-syndication.md).  
+### <a name="wcf-syndication-service-library-template"></a>Šablona knihovny syndikační služby WCF  
+ Tato šablona umožňuje vystavit informační kanál ve formátu RSS nebo ATOM jako službu WCF. Další informace naleznete v tématu [WCF Syndication](./feature-details/wcf-syndication.md).  
   
 #### <a name="changing-the-address-of-the-feed"></a>Změna adresy informačního kanálu  
- Šablona syndikace používá během provádění Internet Explorer. Když kliknete pravým tlačítkem myši na projekt v **Průzkumníku řešení** v aplikaci Visual Studio, vyberte možnost **vlastnosti**, poté vyberte kartu **ladění** a můžete zobrazit výchozí adresu šablony. Aplikace Internet Explorer se pokusí otevřít informační kanál na této adrese.  
+ Šablona syndikace používá aplikaci Internet Explorer během provádění. Po kliknutí pravým tlačítkem myši na projekt v **Průzkumníkovi řešení** v sadě Visual Studio vyberte **vlastnosti**, vyberte kartu **Ladění** a zobrazí se výchozí adresa šablony. Aplikace Internet Explorer se pokusí otevřít informační kanál na této adrese.  
   
- Změníte-li adresu kanálu, je nutné také změnit adresu na kartě **ladění** . Pokud to neuděláte, pokusí se Internet Explorer otevřít informační kanál na výchozí adrese a selhat.  
+ Pokud změníte adresu zdroje, musíte také změnit adresu na kartě **Ladění.** Pokud tak neučiníte, aplikace Internet Explorer se pokusí otevřít informační kanál na výchozí adrese a nezdaří se.  
   
-### <a name="ajax-enabled-wcf-service-item-template"></a>Šablona položky služby WCF s povoleným AJAX  
- Tato šablona zveřejňuje ovládací prvek AJAX jako službu WCF. Další informace o ovládacích prvcích AJAX naleznete v [dokumentaci k ovládacímu prvku AJAX](https://docs.microsoft.com/aspnet/ajax/).  
+### <a name="ajax-enabled-wcf-service-item-template"></a>Šablona předmětu servisu WCF povolena technologií AJAX  
+ Tato šablona zpřístupňuje ovládací prvek AJAX jako službu WCF. Další informace o ovládacích prvcích AJAX naleznete v [dokumentaci k ovládacímu prvku AJAX](/aspnet/ajax/).  
   
-### <a name="silverlight-enabled-wcf-service-item-template"></a>Šablona položky služby WCF s povolenou technologií Silverlight  
- Tato šablona vytvoří webovou službu, která poskytuje data pro klienta Silverlight nebo front-end. Šablonu lze přidat do projektu webu nebo webové aplikace, chcete-li vytvořit službu WCF, která zahrnuje kód a konfiguraci služby, které podporují komunikaci s klientem Silverlight. Pak můžete použít **Přidat odkaz na službu** k přidání klientského proxy serveru k klientovi a k výměně dat mezi klientem Silverlight a službou WCF s podporou technologie Silverlight.  
+### <a name="silverlight-enabled-wcf-service-item-template"></a>Šablona předmětu služby WCF s podporou programu Silverlight  
+ Tato šablona vytvoří webovou službu, která poskytuje data klientovi Silverlight nebo front-endu. Šablonu lze přidat do webového serveru nebo projektu webové aplikace a vytvořit tak službu WCF, která zahrnuje kód služby a konfiguraci, která podporuje komunikaci s klientem Programu Silverlight. Potom můžete použít **add service reference** přidat klienta proxy služby do klienta a vyměňovat data mezi klientem Silverlight a službou WCF s podporou Silverlight.  
   
- Chcete-li získat přístup k této šabloně, klikněte pravým tlačítkem myši na projekt webu nebo webové aplikace v **Průzkumník řešení**, klikněte na možnost **Přidat novou položku**a klikněte na možnost **Služba WCF s podporou technologie Silverlight**.  
+ Chcete-li získat přístup k této šabloně, klepněte pravým tlačítkem myši na webový server nebo projekt webové aplikace v **Průzkumníku řešení**, klepněte na tlačítko **Přidat novou položku**a klepněte na příkaz **WCF service s podporou programu Silverlight**.  
   
 > [!NOTE]
-> Služba WCF s podporou technologie Silverlight zpřístupňuje koncový bod `basicHttpBinding` bez povolení nastavení zabezpečení. Proto mohou být informace o službě získány všemi klienty, kteří se k této službě připojují. Zprávy vyměňované mezi službou a klientem nejsou také podepsány nebo zašifrovány. Pro správné zabezpečení koncového bodu byste měli použít ověřování ASP.NET, HTTPS nebo jiné mechanismy.  
+> Služba WCF s podporou programu `basicHttpBinding` Silverlight zpřístupňuje koncový bod bez povolení nastavení zabezpečení. Proto informace o službě mohou získat všichni klienti, kteří se k této službě připojují. Zprávy vyměňované mezi službou a klientem také nejsou podepsány nebo šifrovány. Chcete-li správně zabezpečit koncový bod, měli byste použít ASP.NET ověřování, HTTPS nebo jiné mechanismy.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Hostitel služby WCF (WcfSvcHost.exe)](wcf-service-host-wcfsvchost-exe.md)
 - [Testovací klient WCF (WcfTestClient.exe)](wcf-test-client-wcftestclient-exe.md)

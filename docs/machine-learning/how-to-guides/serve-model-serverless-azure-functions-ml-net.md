@@ -5,12 +5,12 @@ ms.date: 02/21/2020
 author: luisquintanilla
 ms.author: luquinta
 ms.custom: mvc, how-to
-ms.openlocfilehash: 33afd568bb12b855a3888bec31f2e9bbc3c720da
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 2f340805200a14e0e145ffe1bf20f8059df63555
+ms.sourcegitcommit: d9470d8b2278b33108332c05224d86049cb9484b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "77628667"
+ms.lasthandoff: 04/17/2020
+ms.locfileid: "81608046"
 ---
 # <a name="deploy-a-model-to-azure-functions"></a>Nasazení modelu do Azure Functions
 
@@ -21,7 +21,7 @@ Zjistěte, jak nasadit předem trénovaný model ML.NET strojového učení pro 
 
 ## <a name="prerequisites"></a>Požadavky
 
-- [Visual Studio 2017 verze 15.6 nebo novější](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2017) s úlohou ".NET Core pro vývoj napříč platformami" a "Vývoj Azure".
+- [Visual Studio 2019](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2019) nebo novější nebo Visual Studio 2017 verze 15.6 nebo novější s nainstalovanými úlohami "Vývoj napříč platformami.NET Core" a "Azure Development".
 - [Nástroje pro funkce Azure](/azure/azure-functions/functions-develop-vs#check-your-tools-version)
 - PowerShell
 - Předem vycvičený model. Použijte [kurz ML.NET analýzy mínění](../tutorials/sentiment-analysis.md) k vytvoření vlastního modelu nebo ke stažení tohoto [předem vytrénovaného modelu strojového učení analýzy mínění](https://github.com/dotnet/samples/blob/master/machine-learning/models/sentimentanalysis/sentiment_model.zip)

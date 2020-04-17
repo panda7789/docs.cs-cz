@@ -4,12 +4,12 @@ description: Přečtěte si, jak přenést znalosti z existujícího modelu Tens
 ms.date: 01/30/2020
 ms.topic: tutorial
 ms.custom: mvc, title-hack-0612
-ms.openlocfilehash: 1e5478f53c82f36ddafe19e3659e2234ff9687b4
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: be21a94f571a1676d2a4bce2196dec34bf008121
+ms.sourcegitcommit: d9470d8b2278b33108332c05224d86049cb9484b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "78241023"
+ms.lasthandoff: 04/17/2020
+ms.locfileid: "81607568"
 ---
 # <a name="tutorial-generate-an-mlnet-image-classification-model-from-a-pre-trained-tensorflow-model"></a>Kurz: Generování modelu klasifikace obrazu ML.NET z předem vytrénovaného modelu TensorFlow
 
@@ -17,7 +17,7 @@ Přečtěte si, jak přenést znalosti z existujícího modelu TensorFlow do nov
 
 Model TensorFlow byl trénován tak, aby klasifikoval obrázky do tisíce kategorií. Model ML.NET využívá část modelu TensorFlow ve svém potrubí k trénování modelu pro klasifikaci obrázků do 3 kategorií.
 
-Trénování modelu [klasifikace obrázků](https://en.wikipedia.org/wiki/Outline_of_object_recognition) od začátku vyžaduje nastavení milionů parametrů, tuny označených trénovacích dat a obrovské množství výpočetních prostředků (stovky hodin GPU). I když není tak efektivní jako školení vlastní model od nuly, přenos učení vám umožní zástupce tohoto procesu tím, že pracuje s tisíci obrázků vs miliony označených obrázků a vybudovat vlastní model poměrně rychle (do hodiny na stroji bez GPU). Tento kurz škáluje tento proces ještě dále, pomocí pouze tucet tréninkových obrázků.
+Trénování modelu [klasifikace obrázků](https://en.wikipedia.org/wiki/Outline_of_object_recognition) od začátku vyžaduje nastavení milionů parametrů, tuny označených trénovacích dat a obrovské množství výpočetních prostředků (stovky hodin GPU). I když není tak efektivní jako školení vlastní model od nuly, přenos učení vám umožní zástupce tohoto procesu tím, že pracuje s tisíci obrázků vs miliony označených obrázků a vytvořit vlastní model poměrně rychle (do hodiny na stroji bez GPU). Tento kurz škáluje tento proces ještě dále, pomocí pouze tucet tréninkových obrázků.
 
 V tomto kurzu se naučíte:
 > [!div class="checklist"]
@@ -37,7 +37,7 @@ Pro účely tohoto kurzu použijete část modelu TensorFlow - trénovaný pro k
 
 ## <a name="prerequisites"></a>Požadavky
 
-* [Visual Studio 2017 verze 15.6 nebo novější](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2017) s nainstalovanou úlohou "Vývoj napříč platformami..NET Core.Core.Platform development".
+* [Visual Studio 2019](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2019) nebo novější nebo Visual Studio 2017 verze 15.6 nebo novější s nainstalovanou úlohou "Vývoj napříč platformami..NET Core cross-platform".
 * [Adresář prostředků kurzu . SOUBOR ZIP](https://github.com/dotnet/samples/blob/master/machine-learning/tutorials/TransferLearningTF/image-classifier-assets.zip)
 * [Model strojového učení InceptionV1](https://storage.googleapis.com/download.tensorflow.org/models/inception5h.zip)
 

@@ -4,12 +4,12 @@ titleSuffix: ''
 description: Informace o technologiích rozhraní .NET Framework, které nejsou k dispozici na jádru rozhraní .NET
 author: cartermp
 ms.date: 04/30/2019
-ms.openlocfilehash: bd2488de653ecdfed261100b4c9019bea58fcab3
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 7dfec63870950f12ec933ebf09041b3c8ce2cbb5
+ms.sourcegitcommit: d9470d8b2278b33108332c05224d86049cb9484b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "77092938"
+ms.lasthandoff: 04/17/2020
+ms.locfileid: "81607794"
 ---
 # <a name="net-framework-technologies-unavailable-on-net-core"></a>Technologie rozhraní .NET Framework nejsou v jádru rozhraní .NET k dispozici
 
@@ -29,7 +29,7 @@ Vzdálené komunikace .NET byly identifikovány jako problematická architektura
 
 Pro komunikaci mezi procesy zvažte mechanismy meziprocesové komunikace (IPC) jako <xref:System.IO.Pipes> alternativu <xref:System.IO.MemoryMappedFiles.MemoryMappedFile> k vzdálené komunikace, jako je například třída nebo třída.
 
-Napříč počítači použijte jako alternativu síťové řešení. Pokud možno použijte protokol prostého textu s nízkou režií, například HTTP. [Kestrel webový server](https://docs.microsoft.com/aspnet/core/fundamentals/servers/kestrel), webový server používaný ASP.NET Core, je zde možnost. Zvažte také <xref:System.Net.Sockets> použití pro scénáře založené na síti, mezi počítači. Další možnosti naleznete [v tématu .NET Open Source Developer Projects: Messaging](https://github.com/Microsoft/dotnet/blob/master/dotnet-developer-projects.md#messaging).
+Napříč počítači použijte jako alternativu síťové řešení. Pokud možno použijte protokol prostého textu s nízkou režií, například HTTP. [Kestrel webový server](/aspnet/core/fundamentals/servers/kestrel), webový server používaný ASP.NET Core, je zde možnost. Zvažte také <xref:System.Net.Sockets> použití pro scénáře založené na síti, mezi počítači. Další možnosti naleznete [v tématu .NET Open Source Developer Projects: Messaging](https://github.com/Microsoft/dotnet/blob/master/dotnet-developer-projects.md#messaging).
 
 ## <a name="code-access-security-cas"></a>Zabezpečení přístupu kódu (CAS)
 

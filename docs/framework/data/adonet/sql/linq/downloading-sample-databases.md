@@ -3,12 +3,12 @@ title: Získání ukázkových databází serveru SQL Server pro ukázky kódu A
 description: Stáhněte si ukázkové databáze serveru SQL Server použité v ukázkách kódu v dokumentaci ADO.NET, stejně jako sql server a nástroje pro správu
 ms.date: 01/11/2019
 ms.assetid: ef9d69a1-9461-43fe-94bb-7c836754bcb5
-ms.openlocfilehash: 19d659cbe8f39d27b71dc59c738355f12fce92a0
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 3449f502834f449f5023bd52457d45ffaf9b0fa1
+ms.sourcegitcommit: d9470d8b2278b33108332c05224d86049cb9484b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79148384"
+ms.lasthandoff: 04/17/2020
+ms.locfileid: "81607981"
 ---
 # <a name="get-the-sample-databases-for-adonet-code-samples"></a>Získat ukázkové databáze pro ukázky kódu ADO.NET
 
@@ -54,7 +54,7 @@ Pokud chcete zobrazit nebo upravit databázi, kterou jste stáhli, můžete pou�
 
 [Stažení SQL Server Management Studia (SSMS)](/sql/ssms/download-sql-server-management-studio-ssms)
 
-Můžete také zobrazit a spravovat databáze v integrovaném vývojovém prostředí sady Visual Studio (IDE). V [sadě Visual Studio](https://www.visualstudio.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=button+cta&utm_content=download+vs2017)se připojte k databázi z **průzkumníka objektů serveru SQL Server**nebo vytvořte datové připojení k databázi v **Průzkumníkovi serveru**. Otevřete tato podokna průzkumníků z nabídky **Zobrazení.**
+Můžete také zobrazit a spravovat databáze v integrovaném vývojovém prostředí sady Visual Studio (IDE). V [sadě Visual Studio](https://www.visualstudio.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=button+cta&utm_content=download+vs2019)se připojte k databázi z **průzkumníka objektů serveru SQL Server**nebo vytvořte datové připojení k databázi v **Průzkumníkovi serveru**. Otevřete tato podokna průzkumníků z nabídky **Zobrazení.**
 
 ## <a name="get-sql-server-express"></a><a name="get_sql"></a>Získat SQL Server Express
 
@@ -62,7 +62,7 @@ SQL Server Express je bezplatná edice sql serveru základní úrovně, kterou m
   
 [Edice SQL Server Express](https://www.microsoft.com/sql-server/sql-server-editions-express)
 
-Pokud používáte [Visual Studio](https://www.visualstudio.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=button+cta&utm_content=download+vs2017), SQL Server Express LocalDB je součástí bezplatné verze Společenství sady Visual Studio, stejně jako professional a vyšší edice.  
+Pokud používáte [Visual Studio](https://www.visualstudio.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=button+cta&utm_content=download+vs2019), SQL Server Express LocalDB je součástí bezplatné verze Společenství sady Visual Studio, stejně jako professional a vyšší edice.  
 
 ## <a name="see-also"></a>Viz také
 

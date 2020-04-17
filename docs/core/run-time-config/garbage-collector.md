@@ -3,12 +3,12 @@ title: Nastavení konfigurace systému uvolňování paměti
 description: Informace o nastavení za běhu pro konfiguraci, jak systém uvolňování paměti spravuje paměť pro aplikace .NET Core.
 ms.date: 01/09/2020
 ms.topic: reference
-ms.openlocfilehash: 044083d69601f5092724a46d358b2ee5673d428d
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: dfb641eeda03d1acaa4771bd6253fcb33c4082a6
+ms.sourcegitcommit: d9470d8b2278b33108332c05224d86049cb9484b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "76733515"
+ms.lasthandoff: 04/17/2020
+ms.locfileid: "81607807"
 ---
 # <a name="run-time-configuration-options-for-garbage-collection"></a>Možnosti konfigurace za běhu pro uvolňování paměti
 
@@ -117,8 +117,8 @@ Další informace o některých z těchto nastavení naleznete v [tématu Middle
 
 - Omezuje počet hromad vytvořených systémem uvolňování paměti.
 - Platí pouze pro uvolnění paměti serveru.
-- Pokud je povolena spřažení procesoru GC, což je výchozí, nastavení `n` spřažení haldy `n` GC haldy/vlákna na první procesory. (Pomocí nastavení spřažení nebo spřažení rozsahů určete přesně, které procesory chcete spárovat.)
-- Pokud je zakázána spřažení procesoru GC, toto nastavení omezuje počet hromad GC.
+- Pokud je [povolena spřažení procesoru GC,](#systemgcnoaffinitizecomplus_gcnoaffinitize) což je výchozí, nastavení `n` spřažení haldy `n` GC haldy/vlákna na první procesory. (Pomocí nastavení [spřažení nebo](#systemgcheapaffinitizemaskcomplus_gcheapaffinitizemask) [spřažení rozsahů určete](#systemgcgcheapaffinitizerangescomplus_gcheapaffinitizeranges) přesně, které procesory chcete spárovat.)
+- Pokud je [zakázána spřažení procesoru GC,](#systemgcnoaffinitizecomplus_gcnoaffinitize) toto nastavení omezuje počet hromad GC.
 - Další informace naleznete v [poznámkách GCHeapCount](../../framework/configure-apps/file-schema/runtime/gcheapcount-element.md#remarks).
 
 | | Název nastavení | Hodnoty | Zavedená verze |
@@ -145,7 +145,7 @@ Příklad:
 ### <a name="systemgcheapaffinitizemaskcomplus_gcheapaffinitizemask"></a>System.GC.HeapAffinitizeMask/COMPlus_GCHeapAffinitizeMask
 
 - Určuje přesné procesory, které by měly používat vlákna systému uvolňování paměti.
-- Pokud je spřažení procesoru zakázáno nastavením `System.GC.NoAffinitize` na `true`, bude toto nastavení ignorováno.
+- Pokud je [zakázána spřažení procesoru GC,](#systemgcnoaffinitizecomplus_gcnoaffinitize) bude toto nastavení ignorováno.
 - Platí pouze pro uvolnění paměti serveru.
 - Hodnota je bitová maska, která definuje procesory, které jsou k dispozici pro proces. Například desetinná hodnota 1023 (nebo šestnáctkové hodnoty 0x3FF nebo 3FF, pokud používáte proměnnou prostředí) je 0011 1111 1111 v binárním zápisu. To určuje, že má být použito prvních 10 procesorů. Chcete-li zadat dalších 10 procesorů, tedy procesorů 10-19, zadejte desetinnou hodnotu 1047552 (nebo šestnáctkovou hodnotu 0xFFC00 nebo FFC00), což odpovídá binární hodnotě 1111 1111 1100 0000 0000.
 
@@ -170,9 +170,9 @@ Příklad:
 ### <a name="systemgcgcheapaffinitizerangescomplus_gcheapaffinitizeranges"></a>System.GC.GCHeapAffinitizeRanges/COMPlus_GCHeapAffinitizeRanges
 
 - Určuje seznam procesorů, které mají být používány pro vlákna systému uvolňování paměti.
-- Toto nastavení `System.GC.HeapAffinitizeMask`je podobné aplikaci , kromě toho, že umožňuje zadat více než 64 procesorů.
+- Toto nastavení je podobné [System.GC.HeapAffinitizeMask](#systemgcheapaffinitizemaskcomplus_gcheapaffinitizemask), kromě toho umožňuje zadat více než 64 procesorů.
 - Pro operační systémy Windows předponu číslo procesoru nebo rozsah s odpovídající [skupinou procesoru](/windows/win32/procthread/processor-groups), například "0:1-10,0:12,1:50-52,1:70".
-- Pokud je spřažení procesoru zakázáno nastavením `System.GC.NoAffinitize` na `true`, bude toto nastavení ignorováno.
+- Pokud je [zakázána spřažení procesoru GC,](#systemgcnoaffinitizecomplus_gcnoaffinitize) bude toto nastavení ignorováno.
 - Platí pouze pro uvolnění paměti serveru.
 - Další informace najdete [v tématu Lepší konfigurace procesoru pro GC na počítačích s procesory > 64](https://devblogs.microsoft.com/dotnet/making-cpu-configuration-better-for-gc-on-machines-with-64-cpus/) na blogu Maoni Stephens.
 
@@ -205,7 +205,7 @@ Příklad:
 
 | | Název nastavení | Hodnoty | Zavedená verze |
 | - | - | - | - |
-| **runtimeconfig.json** | Není dostupné. | Není dostupné. | Není dostupné. |
+| **runtimeconfig.json** | – | – | – |
 | **Proměnná prostředí** | `COMPlus_GCCpuGroup` | `0`- zakázáno<br/>`1`- povoleno | .NET Jádro 1.0 |
 | **app.config pro rozhraní .NET Framework** | [Skupina GCCpu](../../framework/configure-apps/file-schema/runtime/gccpugroup-element.md) | `false`- zakázáno<br/>`true`- povoleno |  |
 
@@ -239,6 +239,11 @@ Příklad:
 ### <a name="systemgcheaphardlimitcomplus_gcheaphardlimit"></a>System.GC.HeapHardLimit/COMPlus_GCHeapHardLimit
 
 - Určuje maximální velikost potvrzení v bajtech pro hromadu GC a účetnictví gc.
+- Toto nastavení platí pouze pro 64bitové počítače.
+- Výchozí hodnota, která platí pouze v určitých případech, je menší 20 MB nebo 75 % limitu paměti v kontejneru. Výchozí hodnota se použije v případě, že:
+
+  - Proces je spuštěn uvnitř kontejneru, který má zadaný limit paměti.
+  - [System.GC.HeapHardLimitPercent](#systemgcheaphardlimitpercentcomplus_gcheaphardlimitpercent) není nastavena.
 
 | | Název nastavení | Hodnoty | Zavedená verze |
 | - | - | - | - |
@@ -262,7 +267,14 @@ Příklad:
 
 ### <a name="systemgcheaphardlimitpercentcomplus_gcheaphardlimitpercent"></a>System.GC.HeapHardLimitPercent/COMPlus_GCHeapHardLimitPercent
 
-- Určuje využití haldy GC jako procento celkové paměti.
+- Určuje povolené využití haldy GC jako procento celkové fyzické paměti.
+- Pokud [System.GC.HeapHardLimit](#systemgcheaphardlimitcomplus_gcheaphardlimit) je také nastavena, toto nastavení je ignorována.
+- Toto nastavení platí pouze pro 64bitové počítače.
+- Pokud je proces spuštěn uvnitř kontejneru, který má zadaný limit paměti, procento se vypočítá jako procento tohoto limitu paměti.
+- Výchozí hodnota, která platí pouze v určitých případech, je menší 20 MB nebo 75 % limitu paměti v kontejneru. Výchozí hodnota se použije v případě, že:
+
+  - Proces je spuštěn uvnitř kontejneru, který má zadaný limit paměti.
+  - [System.GC.HeapHardLimit](#systemgcheaphardlimitcomplus_gcheaphardlimit) není nastaven.
 
 | | Název nastavení | Hodnoty | Zavedená verze |
 | - | - | - | - |
@@ -331,7 +343,7 @@ Soubor projektu:
 
 | | Název nastavení | Hodnoty | Zavedená verze |
 | - | - | - | - |
-| **runtimeconfig.json** | Není dostupné. | Není dostupné. | Není dostupné. |
+| **runtimeconfig.json** | – | – | – |
 | **Proměnná prostředí** | `COMPlus_GCLargePages` | `0`- zakázáno<br/>`1`- povoleno | .NET Core 3.0 |
 
 ## <a name="large-objects"></a>Velké objekty
@@ -344,7 +356,7 @@ Soubor projektu:
 
 | | Název nastavení | Hodnoty | Zavedená verze |
 | - | - | - | - |
-| **runtimeconfig.json** | Není dostupné. | Není dostupné. | Není dostupné. |
+| **runtimeconfig.json** | – | – | – |
 | **Proměnná prostředí** | `COMPlus_gcAllowVeryLargeObjects` | `1`- povoleno<br/> `0`- zakázáno | .NET Jádro 1.0 |
 | **app.config pro rozhraní .NET Framework** | [gcAllowVeryLargeObjects](../../framework/configure-apps/file-schema/runtime/gcallowverylargeobjects-element.md) | `1`- povoleno<br/> `0`- zakázáno | .NET Framework 4.5 |
 
@@ -386,5 +398,5 @@ Příklad:
 
 | | Název nastavení | Hodnoty | Zavedená verze |
 | - | - | - | - |
-| **runtimeconfig.json** | Není dostupné. | Není dostupné. | Není dostupné. |
+| **runtimeconfig.json** | – | – | – |
 | **Proměnná prostředí** | `COMPlus_GCName` | *string_path* | .NET Core 2.0 |

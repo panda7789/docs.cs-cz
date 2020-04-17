@@ -2,12 +2,12 @@
 title: Dodatky k formátu csproj pro .NET Core
 description: Informace o rozdílech mezi existujícími a .NET Core csproj soubory
 ms.date: 04/08/2019
-ms.openlocfilehash: 9d9e212c9531828a8c2dd51fdd7488c17be41ba2
-ms.sourcegitcommit: 07123a475af89b6da5bb6cc51ea40ab1e8a488f0
+ms.openlocfilehash: fadc6de43f522129970e48bc72914cf187fe3f82
+ms.sourcegitcommit: d9470d8b2278b33108332c05224d86049cb9484b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80134057"
+ms.lasthandoff: 04/17/2020
+ms.locfileid: "81607703"
 ---
 # <a name="additions-to-the-csproj-format-for-net-core"></a>Dodatky k formátu csproj pro .NET Core
 
@@ -70,11 +70,11 @@ Hlavním důvodem je snížení nepořádku v souboru projektu. Výchozí hodnot
 
 V následující tabulce je uvedeno, který prvek a které globs jsou [zahrnuty](https://en.wikipedia.org/wiki/Glob_(programming)) i vyloučeny do sady SDK:
 
-| Element           | Zahrnout glob                              | Vyloučit glob                                                  | Odstranit glob              |
+| Prvek           | Zahrnout glob                              | Vyloučit glob                                                  | Odstranit glob              |
 |-------------------|-------------------------------------------|---------------------------------------------------------------|----------------------------|
-| Kompilaci           | \*\*/\*.cs (nebo jiná jazyková rozšíření) | \*\*/\*.user;  \*\*/\*. \*proj;  \* \* /.sln; \*  \* \* / \*.vssscc  | Není dostupné.                      |
-| Vložený prostředek  | \*\*/\*.resx                              | \*\*/\*.user; \*\*/\*. \*proj; \* \* /.sln; \* \* \* / \*.vssscc     | Není dostupné.                      |
-| Žádný              | \*\*/\*                                   | \*\*/\*.user; \*\*/\*. \*proj; \* \* /.sln; \* \* \* / \*.vssscc     | \*\*/\*.cs; \* \* /.resx \*   |
+| Kompilaci           | \*\*/\*.cs (nebo jiná jazyková rozšíření) | \*\*/\*.user;  \*\*/\*. \*proj;  \* \* /.sln; \*  \* \* / \*.vssscc  | –                      |
+| Vložený prostředek  | \*\*/\*.resx                              | \*\*/\*.user; \*\*/\*. \*proj; \* \* /.sln; \* \* \* / \*.vssscc     | –                      |
+| Žádná              | \*\*/\*                                   | \*\*/\*.user; \*\*/\*. \*proj; \* \* /.sln; \* \* \* / \*.vssscc     | \*\*/\*.cs; \* \* /.resx \*   |
 
 > [!NOTE]
 > **Vyloučit glob** vždy `./bin` vylučuje `./obj` a složky, `$(BaseOutputPath)` které `$(BaseIntermediateOutputPath)` jsou reprezentovány vlastnostmi MSBuild. Jako celek jsou všechna vyloučení `$(DefaultItemExcludes)`reprezentována .
@@ -145,7 +145,7 @@ Prvek `<PackageReference>` položky určuje [závislost NuGet v projektu](/nuget
 
 #### <a name="version"></a>Version
 
-Požadovaný `Version` atribut určuje verzi balíčku, který má být obnoven. Atribut respektuje pravidla [nuget verze schématu.](/nuget/reference/package-versioning#version-ranges-and-wildcards) Výchozí chování je minimální verze, včetně shoda. Například zadání `Version="1.2.3"` je ekvivalentní NuGet `[1.2.3, )` zápisu a znamená, že vyřešený balíček bude mít verzi 1.2.3, pokud je k dispozici nebo větší jinak.
+Požadovaný `Version` atribut určuje verzi balíčku, který má být obnoven. Atribut respektuje pravidla [nuget verze rozsahu](/nuget/concepts/package-versioning#version-ranges) schématu. Výchozí chování je minimální verze, včetně shoda. Například zadání `Version="1.2.3"` je ekvivalentní NuGet `[1.2.3, )` zápisu a znamená, že vyřešený balíček bude mít verzi 1.2.3, pokud je k dispozici nebo větší jinak.
 
 #### <a name="includeassets-excludeassets-and-privateassets"></a>Zahrnout majetek, vyloučit majetek a privateassets
 

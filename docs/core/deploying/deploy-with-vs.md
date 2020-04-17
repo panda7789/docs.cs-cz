@@ -6,12 +6,12 @@ dev_langs:
 - csharp
 - vb
 ms.custom: vs-dotnet
-ms.openlocfilehash: 11a322278ce3ff38964fe2fa389e0b4a58897ec4
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: f2299ac807c845dab482306cc4c710560bb7f1e7
+ms.sourcegitcommit: d9470d8b2278b33108332c05224d86049cb9484b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "77449020"
+ms.lasthandoff: 04/17/2020
+ms.locfileid: "81607859"
 ---
 # <a name="deploy-net-core-apps-with-visual-studio"></a>Nasazení aplikací .NET Core pomocí Sady Visual Studio
 
@@ -75,9 +75,9 @@ Nasazení nasazení závislé na rozhraní s jednou nebo více závislostmi tře
 
 1. Pokud `Newtonsoft.Json` je již v systému nainstalován, přidejte jej do projektu výběrem projektu v pravém podokně na kartě **Spravovat balíčky pro řešení.**
 
-Nasazení závislé na rámci se závislostmi třetích stran je pouze tak přenosné jako jeho závislosti třetích stran. Pokud například knihovna jiného výrobce podporuje jenom macOS, aplikace není přenosná do systémů Windows. K tomu dochází, pokud závislost jiného výrobce sama o sobě závisí na nativním kódu. Dobrým příkladem je [Kestrel server](https://docs.microsoft.com/aspnet/core/fundamentals/servers/kestrel), který vyžaduje nativní závislost na [libuv](https://github.com/libuv/libuv). Při vytvoření FDD pro aplikaci s tímto druhem závislosti třetí strany, publikovaný výstup obsahuje složku pro každý [identifikátor runtime (RID),](../rid-catalog.md) který podporuje nativní závislost (a která existuje v jeho balíčku NuGet).
+Nasazení závislé na rámci se závislostmi třetích stran je pouze tak přenosné jako jeho závislosti třetích stran. Pokud například knihovna jiného výrobce podporuje jenom macOS, aplikace není přenosná do systémů Windows. K tomu dochází, pokud závislost jiného výrobce sama o sobě závisí na nativním kódu. Dobrým příkladem je [Kestrel server](/aspnet/core/fundamentals/servers/kestrel), který vyžaduje nativní závislost na [libuv](https://github.com/libuv/libuv). Při vytvoření FDD pro aplikaci s tímto druhem závislosti třetí strany, publikovaný výstup obsahuje složku pro každý [identifikátor runtime (RID),](../rid-catalog.md) který podporuje nativní závislost (a která existuje v jeho balíčku NuGet).
 
-## <a name="simpleSelf"></a>Samostatné nasazení bez závislostí třetích stran
+## <a name="self-contained-deployment-without-third-party-dependencies"></a><a name="simpleSelf"></a>Samostatné nasazení bez závislostí třetích stran
 
 Nasazení samostatného nasazení bez závislostí třetích stran zahrnuje vytvoření projektu, úpravu souboru *csproj,* sestavení, testování a publikování aplikace. Jednoduchý příklad napsaný v C# ilustruje proces. Začnete vytvořením, kódováním a testováním projektu stejně jako nasazení závislé na rámci:
 

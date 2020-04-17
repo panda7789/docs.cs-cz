@@ -4,12 +4,12 @@ description: Přečtěte si, jak nainstalovat rozhraní .NET pro Apache Spark do
 ms.date: 03/13/2020
 ms.topic: conceptual
 ms.custom: mvc,how-to
-ms.openlocfilehash: 32047efcde093a3752bdd59baa88896d1547b93e
-ms.sourcegitcommit: 34dc3c0d0d0a1cc418abff259d9daa8078d00b81
+ms.openlocfilehash: 953bffe5f6ec56cd0adf4224afd2eedfe0001aa9
+ms.sourcegitcommit: d9470d8b2278b33108332c05224d86049cb9484b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/19/2020
-ms.locfileid: "79546747"
+ms.lasthandoff: 04/17/2020
+ms.locfileid: "81607412"
 ---
 # <a name="install-net-for-apache-spark-on-jupyter-notebooks-on-azure-hdinsight-spark-clusters"></a>Instalace rozhraní .NET pro Apache Spark na poznámkové bloky Jupyter v clusterech Azure HDInsight Spark
 
@@ -24,7 +24,7 @@ Chcete-li povolit rozhraní .NET pro Apache Spark prostřednictvím prostředí 
 
 ## <a name="prerequisites"></a>Požadavky
 
-Pokud ještě nemáte, vytvořte cluster [Azure HDInsight Spark.](https://docs.microsoft.com/azure/hdinsight/spark/apache-spark-jupyter-spark-sql-use-portal#create-an-hdinsight-spark-cluster)
+Pokud ještě nemáte, vytvořte cluster [Azure HDInsight Spark.](https://docs.microsoft.com/azure/hdinsight/spark/apache-spark-jupyter-spark-sql-use-portal#create-an-apache-spark-cluster-in-hdinsight)
 
 1. Navštivte [portál Azure](https://portal.azure.com) a vyberte **+ Vytvořit prostředek**.
 
@@ -70,7 +70,7 @@ Na webu Azure Portal vyberte **cluster HDInsight Spark,** který jste vytvořili
    |Vlastnost  |Popis  |
    |---------|---------|
    | Typ skriptu | Vlastní |
-   | Name (Název) | *Instalace rozhraní .NET pro interaktivní poznámkové bloky Apache Spark* |
+   | Název | *Instalace rozhraní .NET pro interaktivní poznámkové bloky Apache Spark* |
    | Bash skript URI | Identifikátor URI, do `install-interactive-notebook.sh`kterého jste nahráli . |
    | Typ uzlu| Vedoucí a pracovník |
    | Parametry | .NET pro verzi Apache Spark. Můžete zkontrolovat [.NET pro Apache Spark verze](https://github.com/dotnet/spark/releases). Například, pokud chcete nainstalovat Sparkdotnet verze 0.6.0 `0.6.0`pak by to bylo .

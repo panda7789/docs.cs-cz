@@ -5,12 +5,12 @@ author: briacht
 ms.date: 09/30/2019
 ms.custom: mvc, title-hack-0516
 ms.topic: tutorial
-ms.openlocfilehash: a221289d0c232863f03a275c26dce835f2878bf7
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: a1d7ef6226580fd3172b5714f9d7358298ba6668
+ms.sourcegitcommit: d9470d8b2278b33108332c05224d86049cb9484b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "78241101"
+ms.lasthandoff: 04/17/2020
+ms.locfileid: "81607994"
 ---
 # <a name="tutorial-build-a-movie-recommender-using-matrix-factorization-with-mlnet"></a>Kurz: Vytvořte film doporučující pomocí matice faktorizace s ML.NET
 
@@ -38,11 +38,11 @@ K dokončení úkolu a všech dalších ML.NET úkolu použijete následující 
 
 ## <a name="prerequisites"></a>Požadavky
 
-* [Visual Studio 2017 verze 15.6 nebo novější](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2017) s nainstalovanou úlohou "Vývoj napříč platformami..NET Core.Core.Platform development".
+* [Visual Studio 2019](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2019) nebo novější nebo Visual Studio 2017 verze 15.6 nebo novější s nainstalovanou úlohou "Vývoj napříč platformami..NET Core cross-platform".
 
 ## <a name="select-the-appropriate-machine-learning-task"></a>Výběr příslušného úkolu strojového učení
 
-Existuje několik způsobů, jak přistupovat k problémům s doporučeními, jako je doporučení seznamu filmů nebo doporučení seznamu souvisejících produktů, ale v tomto případě předevíte, jaké hodnocení (1-5) uživatel poskytne určitému filmu a doporučí tento film, pokud je vyšší než definovaná prahová hodnota (čím vyšší je hodnocení, tím vyšší je pravděpodobnost, že se uživateli bude určitý film líbit).
+Existuje několik způsobů, jak přistupovat k problémům s doporučeními, jako je například doporučení seznamu filmů nebo doporučení seznamu souvisejících produktů, ale v tomto případě předevíte, jaké hodnocení (1-5) uživatel poskytne určitému filmu, a doporučí tento film, pokud je vyšší než definovaná prahová hodnota (čím vyšší je hodnocení, tím vyšší je pravděpodobnost, že uživatel bude mít rád konkrétní film).
 
 ## <a name="create-a-console-application"></a>Vytvoření konzolové aplikace
 
@@ -462,7 +462,7 @@ Algoritmus faktorizace matice s kolaborativním filtrováním je pouze jedním p
 
 Jedním z běžných problémů při filtrování spolupráce je problém studeného startu, který je, když máte nového uživatele bez předchozích dat, ze kterých by bylo možné vyvodit závěry. Tento problém je často vyřešen tím, že žádá nové uživatele, aby vytvořili profil a například hodnotili filmy, které viděli v minulosti. Zatímco tato metoda klade určitou zátěž pro uživatele, poskytuje některá počáteční data pro nové uživatele bez historie hodnocení.
 
-## <a name="resources"></a>Zdroje informací
+## <a name="resources"></a>Zdroje a prostředky
 
 Data použitá v tomto kurzu jsou odvozena z [MovieLens Dataset](http://files.grouplens.org/datasets/movielens/).
 

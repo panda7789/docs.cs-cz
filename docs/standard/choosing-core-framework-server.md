@@ -1,16 +1,16 @@
 ---
-title: Možnost volby mezi rozhraním .NET Core a rozhraním .NET Framework pro serverové aplikace
+title: Volba mezi .NET Core a .NET Framework pro serverové aplikace
 description: Průvodce, na které implementaci rozhraní .NET byste měli zvážit při vytváření serverové aplikace v rozhraní .NET.
 author: cartermp
 ms.date: 06/19/2018
-ms.openlocfilehash: 393d6d89fb299e87edf55cf50991537e8afe9753
-ms.sourcegitcommit: 59e36e65ac81cdd094a5a84617625b2a0ff3506e
+ms.openlocfilehash: 885a7fb3419eafa5d88ef621cf6ad04a8d48bb59
+ms.sourcegitcommit: d9470d8b2278b33108332c05224d86049cb9484b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "80344150"
+ms.lasthandoff: 04/17/2020
+ms.locfileid: "81607490"
 ---
-# <a name="choosing-between-net-core-and-net-framework-for-server-apps"></a>Volba mezi .NET Core a .NET Framework pro serverové aplikace
+# <a name="choose-between-net-core-and-net-framework-for-server-apps"></a>Volba mezi .NET Core a .NET Framework pro serverové aplikace
 
 Existují dvě podporované implementace pro vytváření aplikací na straně serveru s rozhraním .NET: Rozhraní .NET Framework a .NET Core. Oba sdílejí mnoho stejných součástí a můžete sdílet kód mezi dvěma. Existují však zásadní rozdíly mezi těmito dvěma a vaše volba závisí na tom, co chcete dosáhnout.  Tento článek obsahuje pokyny k použití.
 
@@ -47,7 +47,7 @@ K dispozici je mnoho infrastrukturních platforem. [Azure Service Fabric](https:
 
 Další informace o architektuře mikroslužeb naleznete v tématu [.NET Microservices. Architektura pro kontejnerizované aplikace .NET](../architecture/microservices/index.md).
 
-### <a name="containers"></a>Kontejnery
+### <a name="containers"></a>Containers
 
 Kontejnery se běžně používají ve spojení s architekturou mikroslužeb. Kontejnery lze také kontejnerizovat webové aplikace nebo služby, které postupují podle jakéhokoli vzoru architektury. Rozhraní .NET Framework lze použít v kontejnerech systému Windows, ale modularita a zjednodušená povaha .NET Core je lepší volbou pro kontejnery. Při vytváření a nasazování kontejneru je velikost jeho image mnohem menší s rozhraním .NET Core než u rozhraní .NET Framework. Vzhledem k tomu, že je napříč platformami, můžete například nasadit serverové aplikace do kontejnerů Linux Dockeru.
 
@@ -103,7 +103,7 @@ Některé platformy Microsoftu nebo třetích stran nepodporují .NET Core. Něk
 ## <a name="see-also"></a>Viz také
 
 - [Vyberte si mezi ASP.NET a ASP.NET Core](/aspnet/core/choose-aspnet-framework)
-- [Cílení ASP.NET Core na .NET Framework](/aspnet/core#aspnet-core-targeting-net-framework)
+- [Cílení ASP.NET Core na .NET Framework](/aspnet/core/introduction-to-aspnet-core#aspnet-core-targeting-net-framework)
 - [Cílové architektury](frameworks.md)
 - [Základní příručka rozhraní .NET](../core/index.yml)
 - [Přenesení z rozhraní .NET Framework do jádra rozhraní .NET](../core/porting/index.md)
