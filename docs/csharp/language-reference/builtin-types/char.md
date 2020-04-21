@@ -7,12 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - char data type [C#]
 ms.assetid: b51cf4fb-124c-4067-af48-afbac122b228
-ms.openlocfilehash: 8727e47e13082e8550fb174c92139dfd5c17ec36
-ms.sourcegitcommit: 07123a475af89b6da5bb6cc51ea40ab1e8a488f0
+ms.openlocfilehash: a07cae6e607bb6cda965240c669c655207632298
+ms.sourcegitcommit: 465547886a1224a5435c3ac349c805e39ce77706
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80134330"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81739057"
 ---
 # <a name="char-c-reference"></a>char (odkaz C#)
 

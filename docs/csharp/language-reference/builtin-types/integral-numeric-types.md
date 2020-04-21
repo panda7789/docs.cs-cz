@@ -32,12 +32,12 @@ helpviewer_keywords:
 - uint keyword [C#]
 - long keyword [C#]
 - ulong keyword [C#]
-ms.openlocfilehash: 4b2506f48c3e72ff838a07087c8c5d9ea63bb46c
-ms.sourcegitcommit: 43cbde34970f5f38f30c43cd63b9c7e2e83717ae
+ms.openlocfilehash: 51ea64065ea8422e5885022105545780bc916f06
+ms.sourcegitcommit: 465547886a1224a5435c3ac349c805e39ce77706
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/11/2020
-ms.locfileid: "81121472"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81739008"
 ---
 # <a name="integral-numeric-types--c-reference"></a>Integrální číselné typy (odkaz C#)
 
@@ -109,7 +109,7 @@ byte b = 300;   // CS0031: Constant value '300' cannot be converted to a 'byte'
 
 Jak ukazuje předchozí příklad, pokud hodnota literálu není v rozsahu cílového typu, dojde k chybě kompilátoru [CS0031.](../../misc/cs0031.md)
 
-Přetypovat můžete také převést hodnotu reprezentovanou literálem celéčíslo na typ jiný než určený typ literálu:
+Přetypovat můžete také převést hodnotu reprezentovanou literálem celého čísla na jiný typ než určený typ literálu:
 
 ```csharp
 var signedByte = (sbyte)42;

@@ -3,18 +3,18 @@ title: Začínáme se službou Azure File Storage s využitím F#
 description: Ukládejte data souborů do cloudu pomocí Azure File Storage a připojte svou cloudovou sdílenou složku z virtuálního počítače Azure nebo z lokální aplikace s Windows.
 author: sylvanc
 ms.date: 09/20/2016
-ms.openlocfilehash: 2088442e05ba36b388a3324942ebbf8c7eb263dd
-ms.sourcegitcommit: d9470d8b2278b33108332c05224d86049cb9484b
+ms.openlocfilehash: 1b38ee53f2f73f7b7f4ee12f712f487cb726d41e
+ms.sourcegitcommit: 465547886a1224a5435c3ac349c805e39ce77706
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/17/2020
-ms.locfileid: "81607464"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81739589"
 ---
 # <a name="get-started-with-azure-file-storage-using-f"></a>Začínáme s úložištěm souborů Azure pomocí F\#
 
 Úložiště Azure File je služba, která nabízí sdílené složky v cloudu přes standardní [protokol SMB (Server Message Block)](https://msdn.microsoft.com/library/windows/desktop/aa365233.aspx). Podporují se SMB 2.1 i SMB 3.0. S Azure File Storage můžete rychle a bez nákladných přepisů migrovat starší aplikace, které spoléhají na sdílené složky, do Azure. Aplikace běžící v cloudových službách nebo virtuálních počítačích Azure nebo spuštěné z lokálních klientů můžou připojit sdílenou složku v cloudu stejným způsobem, jako desktopová aplikace připojí typickou sdílenou složku SMB. Potom může sdílenou složku File Storage připojit a používat libovolný počet aplikací.
 
-Koncepční přehled ukládání souborů naleznete [v průvodci .NET pro ukládání souborů](https://docs.microsoft.com/azure/storage/storage-dotnet-how-to-use-files).
+Koncepční přehled úložiště souborů naleznete [v průvodci .NET pro ukládání souborů](https://docs.microsoft.com/azure/storage/storage-dotnet-how-to-use-files).
 
 ## <a name="prerequisites"></a>Požadavky
 
@@ -41,7 +41,7 @@ Pro účely kurzu zadáte připojovací řetězec do skriptu takto:
 
 [!code-fsharp[FileStorage](~/samples/snippets/fsharp/azure/file-storage.fsx#L11-L11)]
 
-To se však **nedoporučuje** u skutečných projektů. Klíč účtu úložiště je podobný kořenovému heslu vašeho účtu úložiště. Vždy klíč účtu úložiště pečlivě chraňte. Nedávejte ho jiným uživatelům, nezakódovávejte ho ani ho neukládejte do souboru ve formátu prostého textu, který je přístupný ostatním uživatelům. Klíč můžete znovu vygenerovat pomocí portálu Azure Portal, pokud se domníváte, že byl ohrožen.
+To se však **nedoporučuje** u skutečných projektů. Klíč účtu úložiště je podobný kořenovému heslu vašeho účtu úložiště. Vždy klíč účtu úložiště pečlivě chraňte. Nedávejte ho jiným uživatelům, nezakódovávejte ho ani ho neukládejte do souboru ve formátu prostého textu, který je přístupný ostatním uživatelům. Klíč můžete znovu vygenerovat pomocí portálu Azure, pokud se domníváte, že byl ohrožen.
 
 Pro skutečné aplikace je nejlepší způsob, jak udržovat připojovací řetězec úložiště, v konfiguračním souboru. Chcete-li načíst připojovací řetězec z konfiguračního souboru, můžete to provést takto:
 
@@ -73,7 +73,7 @@ Tento příklad ukazuje, jak vytvořit sdílenou složku, pokud ještě neexistu
 
 ## <a name="create-a-root-directory-and-a-subdirectory"></a>Vytvoření kořenového adresáře a podadresáře
 
-Zde získáte kořenový adresář a dílčí adresář kořenového adresáře. Můžete vytvořit obojí, pokud již neexistují.
+Zde získáte kořenový adresář a získat podadresář kořenového adresáře. Můžete vytvořit obojí, pokud již neexistují.
 
 [!code-fsharp[FileStorage](~/samples/snippets/fsharp/azure/file-storage.fsx#L41-L43)]
 
@@ -127,13 +127,13 @@ Stejným způsobem můžete kopírovat objekt blob do souboru. Pokud je zdrojov�
 
 Azure Storage Analytics podporuje metriky pro úložiště souborů. S údaji z metriky můžete sledovat žádosti a diagnostikovat potíže.
 
-Metriky pro úložiště souborů můžete povolit z [webu Azure Portal](https://portal.azure.com)nebo to můžete udělat z F#, takto:
+Metriky úložiště souborů můžete povolit z [webu Azure Portal](https://portal.azure.com), nebo to můžete udělat z F#, takto:
 
 [!code-fsharp[FileStorage](~/samples/snippets/fsharp/azure/file-storage.fsx#L126-L140)]
 
 ## <a name="next-steps"></a>Další kroky
 
-Další informace o úložišti Azure File jsou dostupné na těchto odkazech.
+Další informace o úložišti souborů Azure najdete v těchto odkazech.
 
 ### <a name="conceptual-articles-and-videos"></a>Koncepční články a videa
 
@@ -146,7 +146,7 @@ Další informace o úložišti Azure File jsou dostupné na těchto odkazech.
 - [Použití nástroje AzCopy s Microsoft Azure Storage](https://docs.microsoft.com/azure/storage/storage-use-azcopy)
 - [Vytváření, stahování a vytváření objektů BLOB s rozhraním příkazového příkazového příkazu Azure](https://docs.microsoft.com/azure/storage/blobs/storage-quickstart-blobs-cli#create-and-manage-file-shares)
 
-### <a name="reference"></a>Referenční informace
+### <a name="reference"></a>Odkaz
 
 - [Klientská knihovna úložiště pro odkaz .NET](https://msdn.microsoft.com/library/azure/mt347887.aspx)
 - [REST API služby File – referenční informace](/rest/api/storageservices/fileservices/File-Service-REST-API)

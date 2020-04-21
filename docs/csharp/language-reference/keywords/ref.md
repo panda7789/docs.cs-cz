@@ -1,18 +1,18 @@
 ---
 title: ref klíčové slovo - C# Reference
-ms.date: 03/19/2020
+ms.date: 04/21/2020
 f1_keywords:
 - ref_CSharpKeyword
 - ref
 helpviewer_keywords:
 - parameters [C#], ref
 - ref keyword [C#]
-ms.openlocfilehash: d54d932ca96f1966ecc05a532a2468b7e16fac46
-ms.sourcegitcommit: f87ad41b8e62622da126aa928f7640108c4eff98
+ms.openlocfilehash: 494a46040d6cc33c5284449779fae89705fd29c2
+ms.sourcegitcommit: 465547886a1224a5435c3ac349c805e39ce77706
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "80805845"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81738829"
 ---
 # <a name="ref-c-reference"></a>ref (Referenční dokumentace jazyka C#)
 
@@ -21,7 +21,7 @@ Klíčové `ref` slovo označuje hodnotu, která je předána odkazem. Použív�
 - V podpisu metody a volání metody předat argument metodě odkazem. Další informace naleznete [v tématu Předávání argument odkazem](#passing-an-argument-by-reference).
 - V podpisu metody, chcete-li vrátit hodnotu volajícímu odkazem. Další informace naleznete v [tématu Reference return values](#reference-return-values).
 - V těle člena označuje, že referenční vrácená hodnota je uložena místně jako odkaz, který volající zamýšlí změnit, nebo obecně místní proměnná přistupuje k jiné hodnotě odkazem. Další informace naleznete v tématu [Ref locals](#ref-locals).
-- V `struct` prohlášení o `ref struct` prohlášení `readonly ref struct`o prohlášení a nebo . Další informace naleznete v tématu [ref struct types](#ref-struct-types).
+- V `struct` prohlášení o `ref struct` prohlášení `readonly ref struct`o prohlášení a nebo . Další informace naleznete [ `ref` v](../builtin-types/struct.md#ref-struct) části struktura [typy struktury](../builtin-types/struct.md) článku.
 
 ## <a name="passing-an-argument-by-reference"></a>Předání argumentu odkazem
 
@@ -136,23 +136,6 @@ Následující příklad definuje `Book` třídu, <xref:System.String> která `T
 Když volající uloží hodnotu `GetBookByTitle` vrácenou metodou jako ref local, změny, které volající provede `BookCollection` na vrácenou hodnotu, se projeví v objektu, jak ukazuje následující příklad.
 
 [!code-csharp[csrefKeywordsMethodParams#6](~/samples/snippets/csharp/language-reference/keywords/in-ref-out-modifier/RefParameterModifier.cs#5)]
-
-## <a name="ref-struct-types"></a>Typy struktury ref
-
-Přidání `ref` modifikátoru `struct` do deklarace definuje, že instance tohoto typu musí být přiděleny. Jinými slovy instance těchto typů nelze nikdy vytvořit na haldě jako člen jiné třídy. Primární motivací pro <xref:System.Span%601> tuto funkci byla a související struktury.
-
-Cílem zachování `ref struct` typu jako proměnné přidělené zásobníku zavádí několik pravidel, která `ref struct` kompilátor vynucuje pro všechny typy.
-
-- Nemůžete box. `ref struct` Nelze přiřadit `ref struct` typ proměnné typu `object`, `dynamic`nebo typu rozhraní.
-- `ref struct`typy nelze implementovat rozhraní.
-- Nelze deklarovat `ref struct` jako člen pole třídy nebo normální struktury. To zahrnuje deklarování automaticky implementované vlastnosti, která vytvoří záložní pole generované kompilátorem.
-- Nelze deklarovat místní `ref struct` proměnné, které jsou typy v asynchronní metody. Můžete deklarovat je v <xref:System.Threading.Tasks.Task>synchronní metody, které vracejí , <xref:System.Threading.Tasks.Task%601>nebo `Task`-like typy.
-- Nelze deklarovat `ref struct` místní proměnné v iterátorech.
-- Proměnné nelze `ref struct` zachytit ve výrazech lambda nebo místních funkcích.
-
-Tato omezení zajistí, že omylem `ref struct` nepoužijete způsobem, který by ji mohl propagovat na spravovanou haldu.
-
-Můžete kombinovat modifikátory deklarovat strukturu jako `readonly ref`. A `readonly ref struct` kombinuje výhody a `ref struct` omezení `readonly struct` a prohlášení.
 
 ## <a name="c-language-specification"></a>specifikace jazyka C#
 

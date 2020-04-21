@@ -2,12 +2,12 @@
 title: Anonymní záznamy
 description: Naučte se používat konstrukce a použití anonymních záznamů, což je jazyková funkce, která pomáhá při manipulaci s daty.
 ms.date: 06/12/2019
-ms.openlocfilehash: ef3aa8fccdb6ff406542932816e4138040845a59
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 121f0f638dff2ae529b2488d8e3b1ad9c064cf90
+ms.sourcegitcommit: 465547886a1224a5435c3ac349c805e39ce77706
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79187497"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81738500"
 ---
 # <a name="anonymous-records"></a>Anonymní záznamy
 
@@ -126,7 +126,7 @@ Je užitečné deklarovat [diskriminované odbory,](discriminated-unions.md) jej
 ```fsharp
 type FullName = { FirstName: string; LastName: string }
 
-// Note that using a named for Manager and Executive would require mutually recursive definitions.
+// Note that using a named record for Manager and Executive would require mutually recursive definitions.
 type Employee =
     | Engineer of FullName
     | Manager of {| Name: FullName; Reports: Employee list |}

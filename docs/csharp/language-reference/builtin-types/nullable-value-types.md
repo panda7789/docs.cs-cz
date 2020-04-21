@@ -4,12 +4,12 @@ description: Informace o typech hodnot s možnou hodnotou c# s možnou hodnotou 
 ms.date: 11/04/2019
 helpviewer_keywords:
 - nullable value types [C#]
-ms.openlocfilehash: c13ef6a091ec6aebd4608c5ed8d2c03b067c7312
-ms.sourcegitcommit: 2b3b2d684259463ddfc76ad680e5e09fdc1984d2
+ms.openlocfilehash: fcd49d7d25b0ad23363db8cb61596004b2e87a8d
+ms.sourcegitcommit: 465547886a1224a5435c3ac349c805e39ce77706
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80888069"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81739002"
 ---
 # <a name="nullable-value-types-c-reference"></a>Typy hodnot s hodnotou Null (odkaz jazyka C# )
 

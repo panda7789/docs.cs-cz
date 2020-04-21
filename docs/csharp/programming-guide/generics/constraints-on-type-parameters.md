@@ -6,12 +6,12 @@ helpviewer_keywords:
 - type constraints [C#]
 - type parameters [C#], constraints
 - unbound type parameter [C#]
-ms.openlocfilehash: 2962de53eab132ad02aaf679fdd6037bd24fa714
-ms.sourcegitcommit: 927b7ea6b2ea5a440c8f23e3e66503152eb85591
+ms.openlocfilehash: 0035f7d8aa862b4bd1b09a6f122a89786a6e295b
+ms.sourcegitcommit: 465547886a1224a5435c3ac349c805e39ce77706
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81463887"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81738256"
 ---
 # <a name="constraints-on-type-parameters-c-programming-guide"></a>Omezení parametrů typu (Průvodce programováním jazyka C#)
 
@@ -19,7 +19,7 @@ Omezení informují kompilátor o schopnostech, které musí mít argument typu.
 
 |Omezení|Popis|
 |----------------|-----------------|
-|`where T : struct`|Argument typu musí být typ hodnoty s hodnotou, kterou nelze utnout. Informace o typech hodnot s možnou hodnotou s možnou hodnotou null naleznete v tématu [Nullable typy hodnot](../../language-reference/builtin-types/nullable-value-types.md). Vzhledem k tomu, že všechny typy `struct` hodnot `new()` mají přístupný konstruktor bez parametrů, omezení znamená omezení a nelze je kombinovat s omezením. `new()` Omezení také nelze kombinovat `struct` s `unmanaged` omezením.|
+|`where T : struct`|Argument typu musí být typ hodnoty s hodnotou, kterou nelze utnout. Informace o typech hodnot s možnou hodnotou s možnou hodnotou null naleznete v tématu [Nullable typy hodnot](../../language-reference/builtin-types/nullable-value-types.md). Vzhledem k tomu, že všechny typy `struct` hodnot `new()` mají přístupný konstruktor bez parametrů, omezení znamená omezení a nelze je kombinovat s omezením. `new()` Omezení nelze kombinovat `struct` s omezením. `unmanaged`|
 |`where T : class`|Argument typu musí být typ odkazu. Toto omezení platí také pro všechny třídy, rozhraní, delegáta nebo typu pole. V kontextu s možnou hodnotou null `T` v c# 8.0 nebo novější, musí být typ odkazu nelze hodnotitelné ho. |
 |`where T : class?`|Argument typu musí být typ odkazu, buď nelze utíkat hodnotu null nebo nelze utajinou hodnotu null. Toto omezení platí také pro všechny třídy, rozhraní, delegáta nebo typu pole.|
 |`where T : notnull`|Argument typu musí být typ, který nelze utnout. Argument může být typ odkazu s možnou hodnotou neshodnou v c# 8.0 nebo novějším nebo typ hodnoty, který nelze hodnotit s nulovou hodnotou. |

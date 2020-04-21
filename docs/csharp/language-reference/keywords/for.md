@@ -7,12 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - for keyword [C#]
 ms.assetid: 34041a40-2c87-467a-9ffb-a0417d8f67a8
-ms.openlocfilehash: fc6a23cabd93323cacc33dfc4388116881c1fc84
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: cb83fa015eea19b156faebb5bed18cc1f0970cc1
+ms.sourcegitcommit: 465547886a1224a5435c3ac349c805e39ce77706
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "74552266"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81738798"
 ---
 # <a name="for-c-reference"></a>pro (odkaz C#)
 

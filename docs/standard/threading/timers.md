@@ -12,12 +12,12 @@ helpviewer_keywords:
 - timers, about timers
 ms.assetid: 7091500d-be18-499b-a942-95366ce185e5
 author: pkulikov
-ms.openlocfilehash: d7d1fa13b02fe7425fa9b4cb81ba20297a23fe4b
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: d463eb2a8d598dc5ba9b2fb51a6fc08c563e6fe4
+ms.sourcegitcommit: 465547886a1224a5435c3ac349c805e39ce77706
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "73128953"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81739486"
 ---
 # <a name="timers"></a>Časovače
 

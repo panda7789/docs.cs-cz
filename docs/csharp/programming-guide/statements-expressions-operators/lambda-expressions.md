@@ -8,12 +8,12 @@ helpviewer_keywords:
 - expression lambda [C#]
 - expressions [C#], lambda
 ms.assetid: 57e3ba27-9a82-4067-aca7-5ca446b7bf93
-ms.openlocfilehash: c549b9fcc91401aed846afd39e656b60e16afb74
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 44d6ed9ac6e1c3c4d08bbd69ca808d2e740f0c4e
+ms.sourcegitcommit: 465547886a1224a5435c3ac349c805e39ce77706
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75937602"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81738321"
 ---
 # <a name="lambda-expressions-c-programming-guide"></a>Lambda výrazy (C# Programovací průvodce)
 
@@ -41,7 +41,7 @@ Výraz lambdas lze také převést na typy [stromu výrazů,](../concepts/expres
 
 [!code-csharp-interactive[lambda is expression tree](~/samples/snippets/csharp/programming-guide/lambda-expressions/Introduction.cs#ExpressionTree)]
 
-Výrazy lambda můžete použít v libovolném kódu, který vyžaduje instance typů delegátů <xref:System.Threading.Tasks.Task.Run(System.Action)?displayProperty=nameWithType> nebo stromů výrazů, například jako argument metody pro předání kódu, který by měl být proveden na pozadí. Můžete také použít lambda výrazy při zápisu [LINQ v C#](../../linq/index.md), jak ukazuje následující příklad:
+Výrazy lambda můžete použít v libovolném kódu, který vyžaduje instance typů delegátů <xref:System.Threading.Tasks.Task.Run(System.Action)?displayProperty=nameWithType> nebo stromů výrazů, například jako argument metody pro předání kódu, který by měl být proveden na pozadí. Výrazy lambda můžete také použít při zápisu [LINQ v c#](../../linq/index.md), jak ukazuje následující příklad:
 
 [!code-csharp-interactive[lambda is argument in LINQ](~/samples/snippets/csharp/programming-guide/lambda-expressions/Introduction.cs#Argument)]
 

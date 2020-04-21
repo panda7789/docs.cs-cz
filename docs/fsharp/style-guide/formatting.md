@@ -2,19 +2,19 @@
 title: Pravidla formátování kódu F#
 description: Naučte se pokyny pro formátování kódu F#.
 ms.date: 11/04/2019
-ms.openlocfilehash: 2086b515b8ec9b69a44e2e65ca06fb320670dff2
-ms.sourcegitcommit: 7980a91f90ae5eca859db7e6bfa03e23e76a1a50
+ms.openlocfilehash: b8be70dd29a04e71614308164e541b99a1724305
+ms.sourcegitcommit: 465547886a1224a5435c3ac349c805e39ce77706
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81278935"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81739552"
 ---
 # <a name="f-code-formatting-guidelines"></a>Pravidla formátování kódu F#
 
 Tento článek nabízí pokyny pro formátování kódu tak, aby váš kód F#je:
 
-* Obecně považováno za čitelnější
-* Je v souladu s konvencemi používanými nástroji pro formátování v sadě Visual Studio a dalšími editory.
+* Čitelnější
+* V souladu s konvencemi použitými nástroji pro formátování v sadě Visual Studio a dalšími editory
 * Podobně jako u jiných kódů online
 
 Tyto pokyny jsou [založeny](https://github.com/dungpa/fantomas/blob/master/docs/FormattingConventions.md) na komplexní průvodce F # Formátování konvence [Anh-Dung Phan](https://github.com/dungpa).
@@ -27,7 +27,7 @@ F# používá významné prázdné místo ve výchozím nastavení. Následujíc
 
 Pokud je vyžadováno odsazení, je nutné použít mezery, nikoli tabulátory. Je vyžadována alespoň jedna mezera. Vaše organizace může vytvořit standardy kódování, které určují počet mezer, které se mají použít pro odsazení; typické jsou dvě, tři nebo čtyři mezery odsazení na každé úrovni, kde dochází k odsazení.
 
-**Doporučujeme 4 mezery pro odsazení.**
+**Doporučujeme čtyři mezery za odsazení.**
 
 To znamená, že odsazení programů je subjektivní záležitostí. Varianty jsou v pořádku, ale první pravidlo, které byste měli dodržovat, je *konzistence odsazení*. Zvolte obecně přijímaný styl odsazení a používejte jej systematicky v celém základu kódu.
 
@@ -43,7 +43,7 @@ Vždy používejte prázdné místo kolem binárních aritmetické výrazy:
 let subtractThenAdd x = x - 1 + 3
 ```
 
-Unární `-` operátory by měly mít vždy hodnotu, kterou jsou negovat okamžitě následovat:
+Unární `-` operátory by měly být vždy okamžitě následovány hodnotou, kterou negující:
 
 ```fsharp
 // OK
@@ -100,7 +100,7 @@ let myFun (a: decimal) b c = a + b + c
 let myFunBad (a:decimal)(b)c = a + b + c
 ```
 
-### <a name="place-parameters-on-a-new-line-for-very-long-member-definitions"></a>Umístit parametry na nový řádek pro velmi dlouhé definice členů
+### <a name="place-parameters-on-a-new-line-for-long-member-definitions"></a>Umístit parametry na nový řádek pro dlouhé definice členů
 
 Pokud máte velmi dlouhou definici člena, umístěte parametry na nové řádky a odsaďte je o jeden obor.
 
@@ -180,7 +180,7 @@ let f x = x + 1 // Increment by one.
 
 ## <a name="naming-conventions"></a>Zásady vytváření názvů
 
-### <a name="use-camelcase-for-class-bound-expression-bound-and-pattern-bound-values-and-functions"></a>Použití camelCase pro hodnoty a funkce vázané na třídy, výrazy a se vzorkem
+### <a name="use-camelcase-for-class-bound-expression-bound-and-pattern-bound-values-and-functions"></a>Použití camelCase pro hodnoty a funkce vázané na třídu, výraza a vzor
 
 Je běžné a přijaté F# styl používat camelCase pro všechny názvy vázané jako místní proměnné nebo ve vzorových shod ách a definicích funkcí.
 
@@ -287,7 +287,7 @@ Obory názvů, výjimky, události`.dll` a názvy projektů/ projektů by měly 
 
 Historicky některé knihovny F# používají podtržítka v názvech. To však již není široce přijímané, částečně proto, že je v konfliktu s konvencemi pojmenování .NET. To znamená, že někteří programátoři F# používají silně podtržítka, částečně z historických důvodů, a tolerance a respekt je důležité. Uvědomte si však, že styl je často nelíbí jiní, kteří mají na výběr o tom, zda jej použít.
 
-Některé výjimky zahrnují spolupráci s nativními součástmi, kde jsou podtržítka velmi častá.
+Jedna výjimka zahrnuje spolupráci s nativními součástmi, kde jsou běžné podtržítka.
 
 ### <a name="use-standard-f-operators"></a>Použití standardních operátorů Jazyka F#
 
@@ -325,7 +325,7 @@ Pro všechny ostatní typy použijte formulář předpony.
 
 ## <a name="formatting-tuples"></a>Formátování řazených kolekcí členů
 
-Kontinalizovat n-tice by měla být závorka a za vymezujícími čárky uvnitř by měla následovat jedna mezera, například: `(1, 2)`, `(x, y, z)`.
+Kontinalizovat n-tice by měla být závorka a za vymezujícími čárky v ní by měla následovat jedna mezera, například: `(1, 2)`, `(x, y, z)`.
 
 Běžně se přijímá vynechat závorky v porovnávání vzorů řazených kolekcí členů:
 
@@ -354,7 +354,7 @@ V souhrnu upřednostňujte instance n-tice v závorce, ale při použití řazen
 
 ## <a name="formatting-discriminated-union-declarations"></a>Formátování discriminated unie prohlášení
 
-Odsazení `|` v definici typu podle 4 mezer:
+Odsazení `|` v definici typu čtyřmi mezerami:
 
 ```fsharp
 // OK
@@ -393,7 +393,7 @@ let tree1 =
 
 ## <a name="formatting-record-declarations"></a>Formátování deklarací záznamů
 
-Odsazení `{` v definici typu o 4 mezery a zahájení seznamu polí na stejném řádku:
+Odsazení `{` v definici typu čtyřmi mezerami a zahájení seznamu polí na stejném řádku:
 
 ```fsharp
 // OK
@@ -508,7 +508,7 @@ let rainbow2 =
         Lackeys = ["Zippy"; "George"; "Bungle"] }
 ```
 
-A stejně jako vodítko záznamu můžete chtít vyhradit samostatné řádky pro závorky a odsazení jednoho oboru vpravo s výrazem. Všimněte si, že v některých zvláštních případech, jako je například obtékání hodnoty s volitelným bez závorek, může být nutné zachovat ortézu na jednom řádku:
+A stejně jako vodítko záznamu můžete chtít vyhradit samostatné řádky pro závorky a odsazení jednoho oboru vpravo s výrazem. V některých zvláštních případech, například zabalení hodnoty s volitelným bez závorek, může být nutné zachovat ortézu na jednom řádku:
 
 ```fsharp
 type S = { F1: int; F2: string }
@@ -691,7 +691,7 @@ lambdaList
     | Var v -> 1)
 ```
 
-Porovnávání vzorů ve `let` `let rec` funkcích definovaných nebo by `let`mělo být `function` odsazeno 4 mezery po spuštění , i když je použito klíčové slovo:
+Porovnávání vzorů ve `let` `let rec` funkcích definovaných nebo by `let`mělo být `function` odsazeno čtyři mezery po spuštění , i když je použito klíčové slovo:
 
 ```fsharp
 let rec sizeLambda acc = function
@@ -824,7 +824,7 @@ module A2 =
 
 ### <a name="formatting-object-expressions-and-interfaces"></a>Formátování výrazů a rozhraní objektů
 
-Objektové výrazy a rozhraní by měly `member` být zarovnány stejným způsobem jako odsazení po 4 mezerách.
+Objektové výrazy a rozhraní by měly `member` být zarovnány stejným způsobem jako odsazení za čtyřmi mezerami.
 
 ```fsharp
 let comparer =

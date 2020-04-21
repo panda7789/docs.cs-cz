@@ -7,12 +7,12 @@ helpviewer_keywords:
 - I/O [.NET], buffers
 author: rick-anderson
 ms.author: riande
-ms.openlocfilehash: f939164cd56b2fb2feeeb171236b0e1171327e19
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: d113def0182dc6a5bcea6c18b2d0e4b475946e31
+ms.sourcegitcommit: 465547886a1224a5435c3ac349c805e39ce77706
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "78160115"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81739620"
 ---
 # <a name="work-with-buffers-in-net"></a>Práce s vyrovnávacími paměťmi v rozhraní .NET
 
@@ -191,5 +191,5 @@ Následující příklad analyzuje 4bajtovou délku velkého endianového celéh
 ### <a name="sequencereadert-common-problems"></a>Sekvenční čtečka\<T\> běžné problémy
 
 - Protože `SequenceReader<T>` je proměnlivá struktura, měla by být vždy předána [odkazem](../../csharp/language-reference/keywords/ref.md).
-- `SequenceReader<T>`je [ref struct,](../../csharp/language-reference/keywords/ref.md#ref-struct-types) takže jej lze použít pouze v synchronních metodách a nemůže být uložen v polích. Další informace naleznete v [tématu Zápis bezpečné a efektivní kód jazyka C#](../../csharp/write-safe-efficient-code.md).
+- `SequenceReader<T>`je [ref struct,](../../csharp/language-reference/builtin-types/struct.md#ref-struct) takže jej lze použít pouze v synchronních metodách a nemůže být uložen v polích. Další informace naleznete v [tématu Zápis bezpečné a efektivní kód jazyka C#](../../csharp/write-safe-efficient-code.md).
 - `SequenceReader<T>`je optimalizován pro použití jako čtečka pouze pro předávání. `Rewind`je určen pro malé zálohy, které nelze `Read`řešit `Peek`s `IsNext` využitím jiných , a rozhraní API.

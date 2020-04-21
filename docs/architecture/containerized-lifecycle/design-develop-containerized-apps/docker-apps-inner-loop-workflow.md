@@ -2,12 +2,12 @@
 title: Pracovní postup vývoje vnitřní smyčky pro aplikace Dockeru
 description: Naučte se pracovní postup "vnitřní smyčka" pro vývoj aplikací Dockeru.
 ms.date: 02/15/2019
-ms.openlocfilehash: 615cfd08f46609c4e100ea3e72b541fe2c1ae62a
-ms.sourcegitcommit: e3cbf26d67f7e9286c7108a2752804050762d02d
+ms.openlocfilehash: bce047bd5ba75f9ef652a294ff6a15656fc5ac34
+ms.sourcegitcommit: 465547886a1224a5435c3ac349c805e39ce77706
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2020
-ms.locfileid: "80989009"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81738410"
 ---
 # <a name="inner-loop-development-workflow-for-docker-apps"></a>Pracovní postup vývoje vnitřní smyčky pro aplikace Dockeru
 
@@ -263,7 +263,7 @@ Můžete to vyzkoušet pomocí CURL z terminálu. V instalaci Dockeru v systému
 
 Visual Studio Code podporuje ladění Dockeru, pokud používáte Node.js a další platformy, jako jsou kontejnery .NET Core.
 
-Můžete také ladit .NET Core nebo .NET Framework kontejnery v Dockeru při použití Visual Studio pro Windows nebo Mac, jak je popsáno v další části.
+Při použití Visual Studia pro Windows nebo Mac můžete také ladit kontejnery .NET Core nebo .NET Framework v Dockeru, jak je popsáno v další části.
 
 > [!TIP]
 > Další informace o ladění kontejnerů Node.js <https://blog.docker.com/2016/07/live-debugging-docker/> Dockeru naleznete v tématu a <https://docs.microsoft.com/archive/blogs/user_ed/visual-studio-code-new-features-13-big-debugging-updates-rich-object-hover-conditional-breakpoints-node-js-mono-more>.

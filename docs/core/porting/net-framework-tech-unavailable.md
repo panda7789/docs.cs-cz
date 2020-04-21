@@ -4,12 +4,12 @@ titleSuffix: ''
 description: Informace o technologiích rozhraní .NET Framework, které nejsou k dispozici na jádru rozhraní .NET
 author: cartermp
 ms.date: 04/30/2019
-ms.openlocfilehash: 7dfec63870950f12ec933ebf09041b3c8ce2cbb5
-ms.sourcegitcommit: d9470d8b2278b33108332c05224d86049cb9484b
+ms.openlocfilehash: 65e465f78b55270b42532eb7e8803f48c048ec3c
+ms.sourcegitcommit: 465547886a1224a5435c3ac349c805e39ce77706
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/17/2020
-ms.locfileid: "81607794"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81739144"
 ---
 # <a name="net-framework-technologies-unavailable-on-net-core"></a>Technologie rozhraní .NET Framework nejsou v jádru rozhraní .NET k dispozici
 
@@ -19,7 +19,7 @@ Jen proto, že rozhraní API nebo technologie není aktuálně implementována n
 
 ## <a name="appdomains"></a>Domény aplikací
 
-Aplikační domény (AppDomains) izolují aplikace od sebe navzájem. AppDomains vyžadují podporu za běhu a jsou obecně poměrně drahé. Vytváření dalších domén aplikací není podporováno a v budoucnu nejsou žádné plány na přidání této funkce. Pro izolaci kódu použijte jako alternativu samostatné procesy nebo kontejnery. Chcete-li dynamicky načíst <xref:System.Runtime.Loader.AssemblyLoadContext> sestavení, použijte třídu.
+Aplikační domény (AppDomains) izolují aplikace od sebe navzájem. Domény aplikací vyžadují podporu za běhu a jsou obecně drahé. Vytváření dalších domén aplikací není podporováno a v budoucnu nejsou žádné plány na přidání této funkce. Pro izolaci kódu použijte jako alternativu samostatné procesy nebo kontejnery. Chcete-li dynamicky načíst <xref:System.Runtime.Loader.AssemblyLoadContext> sestavení, použijte třídu.
 
 Chcete-li usnadnit migraci kódu z rozhraní .NET <xref:System.AppDomain> Framework, rozhraní .NET Core zpřístupňuje některé povrchrozhraní rozhraní API. Některá řešení API fungují normálně <xref:System.AppDomain.UnhandledException?displayProperty=nameWithType>(například ), někteří členové <xref:System.AppDomain.SetCachePath%2A>nedělají nic <xref:System.PlatformNotSupportedException> (například <xref:System.AppDomain.CreateDomain%2A>) a některé z nich hodí (například ). Zkontrolujte typy, které používáte, proti [ `System.AppDomain` referenčnímu zdroji](https://github.com/dotnet/runtime/blob/master/src/libraries/System.Private.CoreLib/src/System/AppDomain.cs) v [úložišti GitHub dotnet/runtime](https://github.com/dotnet/runtime). Ujistěte se, že vyberete větev, která odpovídá implementované verzi.
 

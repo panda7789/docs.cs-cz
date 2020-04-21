@@ -2,12 +2,12 @@
 title: Zpracování reentrancy v asynchronních aplikacích (C#)
 ms.date: 07/20/2015
 ms.assetid: 47c5075e-c448-45ce-9155-ed4e7e98c677
-ms.openlocfilehash: 67fbbd294ffe6219b58065f974543b2dd483a92c
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: d46a87ed2200dc92b8e3d23be80306a31a01e501
+ms.sourcegitcommit: 465547886a1224a5435c3ac349c805e39ce77706
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "77451860"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81738308"
 ---
 # <a name="handling-reentrancy-in-async-apps-c"></a>Zpracování reentrancy v asynchronních aplikacích (C#)
 
@@ -33,7 +33,7 @@ Když do aplikace zahrnete asynchronní kód, měli byste zvážit a případně
 > [!NOTE]
 > Zabezpečení transportní vrstvy (TLS) verze 1.2 je nyní minimální verze, která se má použít ve vývoji aplikace. Pokud vaše aplikace cílí na verzi rozhraní .NET Framework starší než 4.7, přečtěte si následující článek o [doporučených postupech zabezpečení transportní vrstvy (TLS) pomocí rozhraní .NET Framework](../../../../framework/network-programming/tls.md).
 
-## <a name="BKMK_RecognizingReentrancy"></a>Rozpoznání reentrancy
+## <a name="recognizing-reentrancy"></a><a name="BKMK_RecognizingReentrancy"></a>Rozpoznání reentrancy
 
 V příkladu v tomto tématu uživatelé zvolí tlačítko **Start** pro spuštění asynchronní aplikace, která stáhne řadu webů a vypočítá celkový počet stažených bajtů. Synchronní verze příkladu by reagovat stejným způsobem bez ohledu na to, kolikrát uživatel zvolí tlačítko, protože po prvním, vlákno uživatelského rozhraní ignoruje tyto události, dokud aplikace dokončí spuštění. V asynchronní aplikaci však vlákno uživatelského rozhraní nadále reaguje a můžete znovu zadat asynchronní operaci před dokončením.
 
@@ -91,7 +91,7 @@ TOTAL bytes returned:  890591
 
 Můžete zkontrolovat kód, který vytváří tento výstup posouváním na konec tohoto tématu. Můžete experimentovat s kódem stažením řešení do místního počítače a spuštěním projektu WebsiteDownload nebo pomocí kódu na konci tohoto tématu k vytvoření vlastního projektu. Další informace a pokyny naleznete v [tématu Revize a spuštění aplikace Example .](#BKMD_SettingUpTheExample)
 
-## <a name="BKMK_HandlingReentrancy"></a>Manipulace s reentrancy
+## <a name="handling-reentrancy"></a><a name="BKMK_HandlingReentrancy"></a>Manipulace s reentrancy
 
 Reentrancy můžete zpracovat různými způsoby v závislosti na tom, co chcete, aby vaše aplikace dělat. Toto téma uvádí následující příklady:
 
@@ -107,11 +107,11 @@ Reentrancy můžete zpracovat různými způsoby v závislosti na tom, co chcete
 
   Povolit všechny požadované operace spustit asynchronně, ale koordinovat zobrazení výstupu tak, aby výsledky z každé operace se zobrazí společně a v pořadí.
 
-### <a name="BKMK_DisableTheStartButton"></a>Zakázání tlačítka Start
+### <a name="disable-the-start-button"></a><a name="BKMK_DisableTheStartButton"></a>Zakázání tlačítka Start
 
 Tlačítko **Start** můžete blokovat v době, kdy je spuštěna operace, zakázáním tlačítka v horní části obslužné rutiny `StartButton_Click` události. Po dokončení operace pak můžete `finally` znovu povolit tlačítko z bloku, aby uživatelé mohli aplikaci znovu spustit.
 
-Chcete-li nastavit tento scénář, proveďte následující změny základního kódu, který je k dispozici v [revizi a spuštění aplikace Příklad](#BKMD_SettingUpTheExample). Hotovou aplikaci si také můžete stáhnout z [aplikace Async Samples: Reentrancy in .NET Desktop Apps](https://code.msdn.microsoft.com/Async-Sample-Preventing-a8489f06). Název projektu je DisableStartButton.
+Chcete-li nastavit tento scénář, proveďte následující změny základního kódu, který je k dispozici v [revizi a spuštění aplikace Příklad](#BKMD_SettingUpTheExample). Hotovou aplikaci si můžete také stáhnout z [aplikace Async Samples: Reentrancy in .NET Desktop Apps](https://code.msdn.microsoft.com/Async-Sample-Preventing-a8489f06). Název projektu je DisableStartButton.
 
 ```csharp
 private async void StartButton_Click(object sender, RoutedEventArgs e)
@@ -140,13 +140,13 @@ private async void StartButton_Click(object sender, RoutedEventArgs e)
 
 V důsledku změn tlačítko nereaguje při `AccessTheWebAsync` stahování webových stránek, takže proces nelze znovu zadat.
 
-### <a name="BKMK_CancelAndRestart"></a>Zrušit a restartovat operaci
+### <a name="cancel-and-restart-the-operation"></a><a name="BKMK_CancelAndRestart"></a>Zrušit a restartovat operaci
 
 Místo zakázání tlačítka **Start** můžete ponechat tlačítko aktivní, ale pokud uživatel toto tlačítko znovu zvolí, zrušte operaci, která je již spuštěna, a nechte pokračovat v naposledy zahájené operaci.
 
 Další informace o zrušení naleznete v [tématu Jemné doladění asynchronní aplikace (C#)](./fine-tuning-your-async-application.md).
 
-Chcete-li nastavit tento scénář, proveďte následující změny základního kódu, který je k dispozici v [revizi a spuštění aplikace Příklad](#BKMD_SettingUpTheExample). Hotovou aplikaci si také můžete stáhnout z [aplikace Async Samples: Reentrancy in .NET Desktop Apps](https://code.msdn.microsoft.com/Async-Sample-Preventing-a8489f06). Název projektu je CancelAndRestart.
+Chcete-li nastavit tento scénář, proveďte následující změny základního kódu, který je k dispozici v [revizi a spuštění aplikace Příklad](#BKMD_SettingUpTheExample). Hotovou aplikaci si můžete také stáhnout z [aplikace Async Samples: Reentrancy in .NET Desktop Apps](https://code.msdn.microsoft.com/Async-Sample-Preventing-a8489f06). Název projektu je CancelAndRestart.
 
 1. Deklarovat proměnnou <xref:System.Threading.CancellationTokenSource> , `cts`která je v oboru pro všechny metody.
 
@@ -301,13 +301,13 @@ TOTAL bytes returned:  890591
 
 Chcete-li odstranit částečné seznamy, odkomentujte první řádek `StartButton_Click` kódu, abyste zrušili textové pole při každém restartování operace uživatelem.
 
-### <a name="BKMK_RunMultipleOperations"></a>Spuštění více operací a fronty výstupu
+### <a name="run-multiple-operations-and-queue-the-output"></a><a name="BKMK_RunMultipleOperations"></a>Spuštění více operací a fronty výstupu
 
 Tento třetí příklad je nejsložitější v tom, že aplikace spustí další asynchronní operaci pokaždé, když uživatel zvolí tlačítko **Start** a všechny operace spustit až do konce. Všechny požadované operace stáhnout weby ze seznamu asynchronně, ale výstup z operací je prezentován akvenční. To znamená, že skutečná aktivita stahování je prokládána, jak ukazuje výstup v [rozpoznávání reentrancy,](#BKMK_RecognizingReentrancy) ale seznam výsledků pro každou skupinu je uveden samostatně.
 
 Operace sdílejí globální <xref:System.Threading.Tasks.Task> `pendingWork`, , který slouží jako gatekeeper pro proces zobrazení.
 
-Chcete-li nastavit tento scénář, proveďte následující změny základního kódu, který je k dispozici v [revizi a spuštění aplikace Příklad](#BKMD_SettingUpTheExample). Hotovou aplikaci si také můžete stáhnout z [aplikace Async Samples: Reentrancy in .NET Desktop Apps](https://code.msdn.microsoft.com/Async-Sample-Preventing-a8489f06). Název projektu je QueueResults.
+Chcete-li nastavit tento scénář, proveďte následující změny základního kódu, který je k dispozici v [revizi a spuštění aplikace Příklad](#BKMD_SettingUpTheExample). Hotovou aplikaci si můžete také stáhnout z [aplikace Async Samples: Reentrancy in .NET Desktop Apps](https://code.msdn.microsoft.com/Async-Sample-Preventing-a8489f06). Název projektu je QueueResults.
 
 Následující výstup ukazuje výsledek, pokud uživatel zvolí tlačítko **Start** pouze jednou. Popisek písmene A označuje, že výsledek je od prvního výběru tlačítka **Start.** Čísla zobrazují pořadí adres URL v seznamu cílů stahování.
 
@@ -547,14 +547,14 @@ Výstup ukazuje následující vzory.
 
     Po zadání skupiny `StartButton_Click`operace nedokončí výraz čekání, dokud operace `FinishOneGroupAsync`nevstoupí . Proto žádná jiná operace může získat kontrolu během tohoto segmentu kódu.
 
-## <a name="BKMD_SettingUpTheExample"></a>Kontrola a spuštění ukázkové aplikace
+## <a name="reviewing-and-running-the-example-app"></a><a name="BKMD_SettingUpTheExample"></a>Kontrola a spuštění ukázkové aplikace
 
 Chcete-li lépe porozumět ukázkové aplikaci, můžete si ji stáhnout, vytvořit sami nebo zkontrolovat kód na konci tohoto tématu bez implementace aplikace.
 
 > [!NOTE]
 > Chcete-li spustit příklad jako desktopovou aplikaci WPF (Windows Presentation Foundation), musíte mít v počítači nainstalovanou visual studio 2012 nebo novější a rozhraní .NET Framework 4.5 nebo novější.
 
-### <a name="BKMK_DownloadingTheApp"></a>Stažení aplikace
+### <a name="downloading-the-app"></a><a name="BKMK_DownloadingTheApp"></a>Stažení aplikace
 
 1. Stáhněte si komprimovaný soubor z [ukázky asynchronní: Reentrancy v .NET Desktop Apps](https://code.msdn.microsoft.com/Async-Sample-Preventing-a8489f06).
 
@@ -568,7 +568,7 @@ Chcete-li lépe porozumět ukázkové aplikaci, můžete si ji stáhnout, vytvo�
 
 6. Zvolte klávesy CTRL+F5 pro sestavení a spuštění projektu.
 
-### <a name="BKMK_BuildingTheApp"></a>Vytváření aplikace
+### <a name="building-the-app"></a><a name="BKMK_BuildingTheApp"></a>Vytváření aplikace
 
 Následující část obsahuje kód pro sestavení příkladu jako aplikace WPF.
 

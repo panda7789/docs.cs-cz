@@ -2,12 +2,12 @@
 title: dotnet test, příkaz
 description: Dotnet test příkaz se používá k provedení testů částí v daném projektu.
 ms.date: 02/27/2020
-ms.openlocfilehash: f9df03cda01bdaf649394a58e96903e764193338
-ms.sourcegitcommit: 927b7ea6b2ea5a440c8f23e3e66503152eb85591
+ms.openlocfilehash: 2eebcbe2e4a1660da4ffa4ea9a68190c8443463a
+ms.sourcegitcommit: 465547886a1224a5435c3ac349c805e39ce77706
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81463379"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81739106"
 ---
 # <a name="dotnet-test"></a>dotnet test
 
@@ -51,7 +51,7 @@ Testovací projekty určují testovací `<PackageReference>` běh pomocí běžn
 
 ## <a name="options"></a>Možnosti
 
-- **`a|--test-adapter-path <PATH_TO_ADAPTER>`**
+- **`-a|--test-adapter-path <PATH_TO_ADAPTER>`**
 
   Použijte vlastní testovací adaptéry ze zadané cesty v testovacím běhu.
 
@@ -59,19 +59,19 @@ Testovací projekty určují testovací `<PackageReference>` běh pomocí běžn
 
   Spustí testy v režimu obviňování. Tato možnost je užitečná při izolování problémových testů, které způsobují selhání testovacího hostitele. Vytvoří výstupní soubor v aktuálním adresáři jako *Sequence.xml,* který zachycuje pořadí spuštění testů před selháním.
 
-- **`c|--configuration <CONFIGURATION>`**
+- **`-c|--configuration <CONFIGURATION>`**
 
   Definuje konfiguraci sestavení. Výchozí hodnota `Debug`je , ale konfigurace projektu může přepsat toto výchozí nastavení sady SDK.
 
-- **`-collect <DATA_COLLECTOR_FRIENDLY_NAME>`**
+- **`--collect <DATA_COLLECTOR_FRIENDLY_NAME>`**
 
   Povolí sběr dat pro spuštění testu. Další informace naleznete v [tématu Sledování a analýza testovacího běhu](https://aka.ms/vstest-collect).
 
-- **`d|--diag <PATH_TO_DIAGNOSTICS_FILE>`**
+- **`-d|--diag <PATH_TO_DIAGNOSTICS_FILE>`**
 
   Povolí diagnostický režim pro testovací platformu a zapisuje diagnostické zprávy do zadaného souboru.
 
-- **`f|--framework <FRAMEWORK>`**
+- **`-f|--framework <FRAMEWORK>`**
 
   Vyhledá testovací binární soubory pro konkrétní [rámec](../../standard/frameworks.md).
 
@@ -79,7 +79,7 @@ Testovací projekty určují testovací `<PackageReference>` běh pomocí běžn
 
   Odfiltruje testy v aktuálním projektu pomocí daného výrazu. Další informace naleznete v části [Podrobnosti o možnosti filtr.](#filter-option-details) Další informace a příklady použití filtrace testů selektivních testů částí naleznete v [tématu Spuštění testů selektivních částí](../testing/selective-unit-tests.md).
 
-- **`h|--help`**
+- **`-h|--help`**
 
   Vytiskne krátkou nápovědu pro příkaz.
 
@@ -87,7 +87,7 @@ Testovací projekty určují testovací `<PackageReference>` běh pomocí běžn
 
   Umožňuje příkazu zastavit a čekat na vstup uživatele nebo akci. Například k dokončení ověřování. K dispozici od .NET Core 3.0 SDK.
 
-- **`l|--logger <LOGGER_URI/FRIENDLY_NAME>`**
+- **`-l|--logger <LOGGER_URI/FRIENDLY_NAME>`**
 
   Určuje protokolovací nástroj pro výsledky testů. Na rozdíl od MSBuild, dotnet test nepřijímá zkratky: `-l "console;v=d"` `-l "console;verbosity=detailed"`místo použití .
 

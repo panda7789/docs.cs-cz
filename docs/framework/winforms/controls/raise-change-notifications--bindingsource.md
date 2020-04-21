@@ -13,15 +13,15 @@ helpviewer_keywords:
 - INotifyPropertyChanged interface [Windows Forms], using with BindingSource
 - BindingSource component [Windows Forms], examples
 ms.assetid: 7fa2cf51-c09f-4375-adf0-e36c5617f099
-ms.openlocfilehash: 07248ec0b8ac4f2356d9c9915b6a904dfad30cb2
-ms.sourcegitcommit: c91110ef6ee3fedb591f3d628dc17739c4a7071e
+ms.openlocfilehash: 2fe4458aa43144a9c29ed67fd7bee99a37fe1434
+ms.sourcegitcommit: 465547886a1224a5435c3ac349c805e39ce77706
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/15/2020
-ms.locfileid: "81388971"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81739679"
 ---
 # <a name="how-to-raise-change-notifications-using-a-bindingsource-and-the-inotifypropertychanged-interface"></a>Postupy: Vytváření oznámení o změnách pomocí rozhraní BindingSource a INotifyPropertyChanged
-Komponenta <xref:System.Windows.Forms.BindingSource> automaticky rozpozná změny ve zdroji dat, když typ obsažený <xref:System.ComponentModel.INotifyPropertyChanged> ve zdroji <xref:System.ComponentModel.INotifyPropertyChanged.PropertyChanged> dat implementuje rozhraní a vyvolá události při změně hodnoty vlastnosti. To je užitečné, protože <xref:System.Windows.Forms.BindingSource> ovládací prvky vázané na bude automaticky aktualizovat jako hodnoty zdroje dat změnit.  
+Komponenta <xref:System.Windows.Forms.BindingSource> automaticky detekuje změny ve zdroji dat, když typ obsažený <xref:System.ComponentModel.INotifyPropertyChanged> ve <xref:System.ComponentModel.INotifyPropertyChanged.PropertyChanged> zdroji dat implementuje a vyvolá události při změně hodnoty vlastnosti. Toto zjišťování změn je užitečné, protože ovládací prvky vázané na <xref:System.Windows.Forms.BindingSource> automaticky aktualizovat jako hodnoty zdroje dat změnit.  
   
 > [!NOTE]
 > Pokud váš zdroj <xref:System.ComponentModel.INotifyPropertyChanged> dat implementuje a provádíte asynchronní operace, neměli byste provádět změny zdroje dat ve vlákně na pozadí. Místo toho byste měli číst data ve vlákně na pozadí a sloučit data do seznamu ve vlákně uživatelského rozhraní.  

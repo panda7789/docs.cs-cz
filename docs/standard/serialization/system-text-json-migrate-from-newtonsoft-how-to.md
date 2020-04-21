@@ -11,12 +11,12 @@ helpviewer_keywords:
 - serializing objects
 - serialization
 - objects, serializing
-ms.openlocfilehash: 957bafcdf69d5792702962db6598458a0c8ec974
-ms.sourcegitcommit: e48a54ebe62e874500a7043f6ee0b77a744d55b4
+ms.openlocfilehash: 0828a5654171df39230055215903d3a49690155d
+ms.sourcegitcommit: 465547886a1224a5435c3ac349c805e39ce77706
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80291577"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81739237"
 ---
 # <a name="how-to-migrate-from-newtonsoftjson-to-systemtextjson"></a>Jak migrovat z Newtonsoft.Json na System.Text.Json
 
@@ -81,7 +81,7 @@ V následující `Newtonsoft.Json` tabulce `System.Text.Json` jsou uvedeny funkc
 | Povolit jednoduché uvozovky kolem hodnot řetězce              | ❌[Není podporováno](#json-strings-property-names-and-string-values) |
 | Povolit hodnoty JSON bez řetězce pro vlastnosti řetězce    | ❌[Není podporováno](#non-string-values-for-string-properties) |
 
-Toto není vyčerpávající seznam `Newtonsoft.Json` funkcí. Seznam obsahuje mnoho scénářů, které byly požadovány v [githubproblémy](https://github.com/dotnet/runtime/issues?q=is%3Aopen+is%3Aissue+label%3Aarea-System.Text.Json) nebo [StackOverflow](https://stackoverflow.com/questions/tagged/system.text.json) příspěvky. Pokud implementujete řešení pro jeden z zde uvedených scénářů, který aktuálně nemá ukázkový kód, a pokud chcete sdílet řešení, vyberte **tuto stránku** v [části Zpětná vazba](/dotnet/standard/serialization/system-text-json-migrate-from-newtonsoft-how-to#feedback) na této stránce. To vytvoří problém GitHub a zobrazí jej v dolní části této stránky.
+Toto není vyčerpávající seznam `Newtonsoft.Json` funkcí. Seznam obsahuje mnoho scénářů, které byly požadovány v [githubproblémy](https://github.com/dotnet/runtime/issues?q=is%3Aopen+is%3Aissue+label%3Aarea-System.Text.Json) nebo [StackOverflow](https://stackoverflow.com/questions/tagged/system.text.json) příspěvky. Pokud implementujete řešení pro jeden z zde uvedených scénářů, který aktuálně nemá ukázkový kód, a pokud chcete sdílet řešení, vyberte **tuto stránku** v části **Zpětná vazba** v dolní části této stránky. To vytvoří problém v úložišti GitHub této dokumentace a zobrazí jej v části **Zpětná vazba** na této stránce.
 
 ## <a name="differences-in-default-jsonserializer-behavior-compared-to-newtonsoftjson"></a>Rozdíly ve výchozím chování JsonSerializer ve srovnání s Newtonsoft.Json
 
@@ -472,7 +472,7 @@ public JsonElement LookAndLoad(JsonElement source)
 
 Předchozí kód očekává, `JsonElement` že obsahuje `fileName` vlastnost. Otevře soubor JSON a `JsonDocument`vytvoří . Metoda předpokládá, že volající chce pracovat s celým `Clone` dokumentem, `RootElement`takže vrátí .
 
-Pokud obdržíte `JsonElement` a vracíte dílčí prvek, není nutné vrátit `Clone` a dílčího prvku. Volající je zodpovědný za `JsonDocument` udržování naživu, `JsonElement` že předaný patří. Například:
+Pokud obdržíte `JsonElement` a vracíte dílčí prvek, není nutné vrátit `Clone` a dílčího prvku. Volající je zodpovědný za `JsonDocument` udržování naživu, `JsonElement` že předaný patří. Příklad:
 
 ```csharp
 public JsonElement ReturnFileName(JsonElement source)
@@ -510,7 +510,7 @@ V následujících částech jsou vysvětleny doporučené programovací vzory p
 
 ### <a name="utf8jsonreader-is-a-ref-struct"></a>Utf8JsonReader je ref struct
 
-Vzhledem `Utf8JsonReader` k tomu, že typ je *ref struct*, má [určitá omezení](../../csharp/language-reference/keywords/ref.md#ref-struct-types). Například nemůže být uložen jako pole na třídu nebo strukturu než ref struct. Chcete-li dosáhnout vysokého výkonu, tento typ musí být `ref struct` protože potřebuje do mezipaměti vstupní [ReadOnlySpan\<bajt>](xref:System.ReadOnlySpan%601), který sám je ref struct. Kromě toho tento typ je proměnlivý, protože obsahuje stav. Proto **předat podle ref** spíše než podle hodnoty. Předání podle hodnoty by mělo za následek kopii struktury a změny stavu by nebyly viditelné pro volajícího. To se `Newtonsoft.Json` liší `Newtonsoft.Json` `JsonTextReader` od protože je třída. Další informace o použití struktury ref naleznete v [tématu Zápis bezpečné a efektivní kód Jazyka C#](../../csharp/write-safe-efficient-code.md).
+Vzhledem `Utf8JsonReader` k tomu, že typ je *ref struct*, má [určitá omezení](../../csharp/language-reference/builtin-types/struct.md#ref-struct). Například nemůže být uložen jako pole na třídu nebo strukturu než ref struct. Chcete-li dosáhnout vysokého výkonu, tento typ musí být `ref struct` protože potřebuje do mezipaměti vstupní [ReadOnlySpan\<bajt>](xref:System.ReadOnlySpan%601), který sám je ref struct. Kromě toho tento typ je proměnlivý, protože obsahuje stav. Proto **předat podle ref** spíše než podle hodnoty. Předání podle hodnoty by mělo za následek kopii struktury a změny stavu by nebyly viditelné pro volajícího. To se `Newtonsoft.Json` liší `Newtonsoft.Json` `JsonTextReader` od protože je třída. Další informace o použití struktury ref naleznete v [tématu Zápis bezpečné a efektivní kód Jazyka C#](../../csharp/write-safe-efficient-code.md).
 
 ### <a name="read-utf-8-text"></a>Přečtěte si text UTF-8
 

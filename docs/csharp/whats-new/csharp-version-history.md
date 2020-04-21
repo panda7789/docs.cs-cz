@@ -3,12 +3,12 @@ title: Historie průvodce C# - C#
 description: Jak tento jazyk vypadal v jeho nejranějších verzích a jak se od té doby vyvíjel?
 author: erikdietrich
 ms.date: 04/08/2020
-ms.openlocfilehash: f321b9c742fed6fb1efaf8fbb1914c203dd6391b
-ms.sourcegitcommit: c91110ef6ee3fedb591f3d628dc17739c4a7071e
+ms.openlocfilehash: ed9555bcef1c71964937c2bc18fedbc7da94f0db
+ms.sourcegitcommit: 465547886a1224a5435c3ac349c805e39ce77706
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/15/2020
-ms.locfileid: "81389113"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81738155"
 ---
 # <a name="the-history-of-c"></a>Historie C\#
 
@@ -17,7 +17,7 @@ Tento článek obsahuje historii každé hlavní verze jazyka C#. Tým Jazyka C#
 > [!IMPORTANT]
 > Jazyk C# závisí na typech a metodách v tom, co specifikace Jazyka C# definuje jako *standardní knihovnu* pro některé funkce. Platforma .NET poskytuje tyto typy a metody v počtu balíčků. Jedním z příkladů je zpracování výjimek. Každý `throw` příkaz nebo výraz je kontrolována zajistit objekt, <xref:System.Exception>který je vyvolána je odvozen od . Podobně každý `catch` je kontrolována, aby bylo zajištěno, že <xref:System.Exception>typ ulovené je odvozen od . Každá verze může přidat nové požadavky. Chcete-li používat nejnovější funkce jazyka ve starších prostředích, bude pravděpodobně nutné nainstalovat konkrétní knihovny. Tyto závislosti jsou popsány na stránce pro každou konkrétní verzi. Další informace o [vztazích mezi jazykem a knihovnou](relationships-between-language-and-library.md) pro pozadí této závislosti.
 
-Nástroje sestavení Jazyka C# považují nejnovější hlavní jazykovou verzi za výchozí jazykovou verzi. Mezi hlavními verzemi mohou být bodové verze, které jsou podrobně popsány v jiných článcích v této části. Chcete-li v bodové verzi používat nejnovější funkce, je třeba [nakonfigurovat jazykovou verzi kompilátoru](../language-reference/configure-language-version.md) a vybrat její verzi. Od c# 7.0 došlo k tříbodovým uvolněním:
+Nástroje sestavení Jazyka C# považují nejnovější hlavní jazykovou verzi za výchozí jazykovou verzi. Mezi hlavními verzemi mohou být bodové verze, které jsou podrobně popsány v jiných článcích v této části. Chcete-li v bodové verzi používat nejnovější funkce, je třeba [nakonfigurovat jazykovou verzi kompilátoru](../language-reference/configure-language-version.md) a vybrat její verzi. Od c# 7.0 došlo k tříbodovým verzím:
 
 - [C# 7.3](csharp-7-3.md):
   - C# 7.3 je k dispozici od [Visual Studio 2017 verze 15.7](https://visualstudio.microsoft.com/vs/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link) a [.NET Core 2.1 SDK](../../core/whats-new/dotnet-core-2-1.md).

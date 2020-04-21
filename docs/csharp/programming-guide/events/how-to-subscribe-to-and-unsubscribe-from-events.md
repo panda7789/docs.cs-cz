@@ -6,12 +6,12 @@ helpviewer_keywords:
 - Code Editor, event handlers
 - events [C#], creating using the IDE
 ms.assetid: 6319f39f-282c-4173-8a62-6c4657cf51cd
-ms.openlocfilehash: 3df357cb15f7f77cefbf360dd9615ce246afe2ea
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 0a9e2cc64da56c376445efce32e8da36ba9b6cdc
+ms.sourcegitcommit: 465547886a1224a5435c3ac349c805e39ce77706
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75705324"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81738223"
 ---
 # <a name="how-to-subscribe-to-and-unsubscribe-from-events-c-programming-guide"></a>Jak se přihlásit k odběru a odhlásit se z událostí (C# Programming Guide)
 Přihlášení k odběru události, která je publikována jinou třídou, pokud chcete napsat vlastní kód, který je volán při vyvolání této události. Můžete se například přihlásit k `click` odběru události tlačítka, aby vaše aplikace udělala něco užitečného, když uživatel klikne na tlačítko.  
@@ -57,7 +57,7 @@ Přihlášení k odběru události, která je publikována jinou třídou, pokud
     publisher.RaiseCustomEvent += new CustomEventHandler(HandleCustomEvent);  
     ```  
   
-     Výraz [lambda](../statements-expressions-operators/lambda-expressions.md) můžete také použít k určení obslužné rutiny události:
+     [Výraz lambda](../statements-expressions-operators/lambda-expressions.md) můžete také použít k určení obslužné rutiny události:
   
     ```csharp
     public Form1()  
@@ -99,7 +99,7 @@ Přihlášení k odběru události, která je publikována jinou třídou, pokud
   
 ## <a name="see-also"></a>Viz také
 
-- [Akce](./index.md)
+- [Události](./index.md)
 - [Událost](../../language-reference/keywords/event.md)
 - [Jak publikovat události vyhovující pravidlům rozhraní .NET Framework](./how-to-publish-events-that-conform-to-net-framework-guidelines.md)
 - [- a -= operátoři](../../language-reference/operators/subtraction-operator.md)

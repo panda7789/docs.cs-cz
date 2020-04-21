@@ -2,12 +2,12 @@
 title: Úvod k platformě a nástrojům Microsoft pro kontejnerizované aplikace
 description: Seznamte se s nabídkami Microsoftu pro podporu životního cyklu aplikací Dockeru.
 ms.date: 02/15/2019
-ms.openlocfilehash: 9c8c0f5688bf226351abfc7bf52d4ace05f8c6d8
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 8cb7870035003e956ee57684a2a2528732849379
+ms.sourcegitcommit: 465547886a1224a5435c3ac349c805e39ce77706
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "73738086"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81738451"
 ---
 # <a name="introduction-to-the-microsoft-platform-andtools-for-containerized-apps"></a>Úvod k platformě a nástrojům Microsoft pro kontejnerizované aplikace
 
@@ -21,9 +21,9 @@ Nástroje společnosti Microsoft. Pro zatížení vývoj/návrh: Docker engine p
 
 **Obrázek 3-1.** Hlavní pilíře životního cyklu pro kontejnerizované aplikace Dockeru s platformou a nástroji Microsoftu
 
-Kontejnerizovaný pracovní postup životního cyklu Dockeru může být zpočátku normativní na základě "výchozích možností produktu", což vývojářům usnadňuje rychlejší práci, ale je zásadní, že pod kapotou musí být otevřený rámec, aby to bylo flexibilní pracovní postup, který se může přizpůsobit různým kontextům od každé organizace nebo podniku. Infrastruktura pracovních postupů (součásti a produkty) musí být dostatečně flexibilní, aby pokryla prostředí, které bude mít každá společnost v budoucnu, a dokonce může vyměňovat vývoj nebo produkty DevOps s ostatními. Tato flexibilita, otevřenost a široký výběr technologií v platformě a infrastruktuře jsou přesně prioritami Společnosti Microsoft pro kontejnerizované aplikace Dockeru, jak je vysvětleno v následujících kapitolách.
+Kontejnerizovaný pracovní postup životního cyklu Dockeru může být zpočátku normativní na základě "možností produktu podle výchozích nastavení", což vývojářům usnadňuje rychlejší práci, ale je zásadní, že pod kapotou musí existovat otevřený rámec, aby se mohl pružný pracovní postup přizpůsobit různým kontextům z každé organizace nebo podniku. Infrastruktura pracovních postupů (součásti a produkty) musí být dostatečně flexibilní, aby pokryla prostředí, které bude mít každá společnost v budoucnu, a dokonce může vyměňovat vývoj nebo produkty DevOps s ostatními. Tato flexibilita, otevřenost a široký výběr technologií v platformě a infrastruktuře jsou přesně prioritami Společnosti Microsoft pro kontejnerizované aplikace Dockeru, jak je vysvětleno v následujících kapitolách.
 
-Tabulka 3-1 ukazuje, že záměrem Microsoft DevOps pro kontejnerizované aplikace Dockeru je poskytnout otevřený pracovní postup DevOps, abyste si mohli vybrat, jaké produkty chcete použít pro každou fázi (Microsoft nebo třetí strana) a zároveň poskytnout zjednodušený pracovní postup poskytuje "standardní produkty", které jsou již připojeny; proto můžete rychle začít s pracovním postupem DevOps na podnikové úrovni pro aplikace Dockeru.
+Tabulka 3-1 ukazuje, že záměrem Microsoft DevOps pro kontejnerizované aplikace Dockeru je poskytnout otevřený pracovní postup DevOps, abyste si mohli vybrat, jaké produkty chcete použít pro každou fázi (Microsoft nebo třetí strana) a zároveň poskytnout zjednodušený pracovní postup, který poskytuje "výchozí produkty", které jsou již připojeny; proto můžete rychle začít s pracovním postupem DevOps na podnikové úrovni pro aplikace Dockeru.
 
 **Tabulka 3-1.** Pracovní postupy DevOps, otevřené jakékoli technologii
 
@@ -39,13 +39,13 @@ Platforma Microsoft a nástroje pro kontejnerizované aplikace Dockeru, jak je d
 
 - **DevOps pro aplikace Docker** Vývojáři vytvářející aplikace Dockeru můžou používat [služby Azure DevOps Services](https://azure.microsoft.com/services/devops/) nebo jakýkoli jiný produkt třetích stran, jako je Jenkins, k vytvoření komplexní automatizované správy životního cyklu aplikací (ALM).
 
-  Pomocí služeb Azure DevOps mohou vývojáři vytvářet devops zaměřené na kontejnery pro rychlý a iterativní proces, který zahrnuje řízení zdrojového kódu odkudkoli (Azure DevOps Services-Git, GitHub, jakékoli vzdálené úložiště Git nebo Subversion), průběžné integrace (CI), interní testy částí, testy integrace mezi kontejnery a službami, průběžné doručování (CD) a správa verzí (RM). Vývojáři také můžou automatizovat své verze aplikací Dockeru do služby Azure Kubernetes Service (AKS), od vývoje až po pracovní a produkční prostředí.
+  Pomocí služeb Azure DevOps mohou vývojáři vytvářet devops zaměřené na kontejnery pro rychlý a iterativní proces, který zahrnuje řízení zdrojového kódu odkudkoli (Azure DevOps Services-Git, GitHub, jakékoli vzdálené úložiště Git nebo Subversion), průběžné integrace (CI), interní testy částí, testy integrace mezi kontejnery a službami, průběžné doručování (CD) a správa verzí (RM). Vývojáři můžou taky automatizovat svoje verze aplikací Dockeru do služby Azure Kubernetes Service (AKS), od vývoje až po pracovní a produkční prostředí.
 
 - **Řízení a monitorování** IT může spravovat a monitorovat produkční aplikace a služby několika způsoby a integrovat obě perspektivy do konsolidovaného prostředí.
 
   - **Azure portal** Pokud používáte orchestrátory s otevřeným zdrojovým kódem, Azure Kubernetes Service (AKS), Service Fabric a další orchestrátory vám pomůžou nastavit a udržovat prostředí Dockeru. Pokud používáte Azure Service Fabric, nástroj Service Fabric Explorer umožňuje vizualizovat a konfigurovat cluster.
 
-  - **Nástroje Dockeru:** Aplikace kontejnerů můžete spravovat pomocí známých nástrojů. Není třeba měnit stávající postupy správy Dockeru, abyste přesunuli úlohy kontejnerů do cloudu. Použijte nástroje pro správu aplikací, které už znáte, a připojte se přes standardní koncové body rozhraní API pro orchestrátorpodle vašeho výběru. Můžete také použít jiné nástroje třetích stran ke správě aplikací Dockeru, jako je například Docker Datacenter nebo dokonce nástroje CLI Docker.
+  - **Nástroje Dockeru:** Aplikace kontejnerů můžete spravovat pomocí známých nástrojů. Není třeba měnit stávající postupy správy Dockeru, abyste přesunuli úlohy kontejnerů do cloudu. Použijte nástroje pro správu aplikací, které už znáte, a připojte se přes standardní koncové body rozhraní API pro orchestrátorpodle vašeho výběru. Ke správě aplikací Dockeru můžete také použít jiné nástroje třetích stran, jako je například Docker Datacenter nebo dokonce nástroje CLI Docker.
 
     I když jste obeznámeni s příkazy Linuxu, můžete spravovat aplikace kontejnerů pomocí Microsoft Windows a PowerShell s příkazovým řádkem Linux Subsystem a produkty (Docker, Kubernetes...) klienti běžící na této funkci linuxového podsystému. Další informace o používání těchto nástrojů v systému Linux Subsystem pomocí vašeho oblíbeného operačního systému Microsoft Windows dále v této knize.
 

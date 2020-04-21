@@ -10,12 +10,12 @@ helpviewer_keywords:
 - string interpolation [C#]
 - interpolated string [C#]
 author: pkulikov
-ms.openlocfilehash: 97bc606569b83bd14cd3b32495deb8e529747e9c
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 2b95fa5fe5cecd4825e8c17a33f7795c6c9480c6
+ms.sourcegitcommit: 465547886a1224a5435c3ac349c805e39ce77706
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "76980116"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81738372"
 ---
 # <a name="---string-interpolation-c-reference"></a>$ - interpolace řetězce (odkaz C#)
 
@@ -37,7 +37,7 @@ Struktura položky s interpolačním výrazem je následující:
 
 Prvky v hranatých závorkách jsou volitelné. Následující tabulka popisuje každý prvek:
 
-|Element|Popis|
+|Prvek|Popis|
 |-------------|-----------------|
 |`interpolationExpression`|Výraz, který vytváří výsledek, který má být formátován. Řetězcová `null` reprezentace is <xref:System.String.Empty?displayProperty=nameWithType>.|
 |`alignment`|Konstantní výraz, jehož hodnota definuje minimální počet znaků v řetězcové reprezentaci výsledku výrazu. Pokud je kladná, reprezentace řetězce je zarovnána doprava; Pokud je záporná, je zarovnána doleva. Další informace naleznete v [tématu Součást zarovnání](../../../standard/base-types/composite-formatting.md#alignment-component).|
@@ -99,8 +99,8 @@ Další informace naleznete v části [Interpolované řetězce](~/_csharplang/s
 ## <a name="see-also"></a>Viz také
 
 - [Referenční dokumentace k jazyku C#](../index.md)
-- [C# speciální znaky](index.md)
+- [Speciální znaky jazyka C#](index.md)
 - [Řetězce](../../programming-guide/strings/index.md)
-- [Standardní číselné formátovací řetězce](../../../standard/base-types/standard-numeric-format-strings.md)
+- [Standardní řetězce formátu čísla](../../../standard/base-types/standard-numeric-format-strings.md)
 - [Složené formátování](../../../standard/base-types/composite-formatting.md)
 - <xref:System.String.Format%2A?displayProperty=nameWithType>

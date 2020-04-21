@@ -2,12 +2,12 @@
 title: Modernizace aplikací pomocí monitorování a telemetrie
 description: Modernizace stávajících aplikací .NET pomocí Azure Cloudu a kontejnerů Windows | Modernizujte své aplikace pomocí monitorování a telemetrie
 ms.date: 04/30/2018
-ms.openlocfilehash: 3d629e89a73c870d4b6396c6b1d0ecbe95b79ead
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: a5101f150d6548406db8638904fb4ab6375edf9c
+ms.sourcegitcommit: 465547886a1224a5435c3ac349c805e39ce77706
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "72393852"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81739172"
 ---
 # <a name="modernize-your-apps-with-monitoring-and-telemetry"></a>Modernizace aplikací pomocí monitorování a telemetrie
 
@@ -27,7 +27,7 @@ Obrázek 4-10 ukazuje příklad toho, jak Application Insights monitoruje vaši 
 
 [Azure Log Analytics](https://docs.microsoft.com/azure/log-analytics/log-analytics-overview) je součástí [celkového monitorování řešení Microsoft Azure](https://docs.microsoft.com/azure/monitoring-and-diagnostics/monitoring-overview). Je to také služba v [Operations Management Suite (OMS)](https://docs.microsoft.com/azure/operations-management-suite/operations-management-suite-overview). Log Analytics monitoruje cloudová a místní prostředí (OMS pro místní) a pomáhá udržovat dostupnost a výkon. Shromažďuje data generovaná prostředky ve vašem cloudovém a místním prostředí a také data z dalších nástrojů pro monitorování a poskytuje analýzy napříč zdroji.
 
-Ve vztahu k protokolům infrastruktury Azure, Log Analytics, jako služba Azure, ingestuje data protokolu a metriky z jiných služeb Azure (přes [Azure Monitor),](https://docs.microsoft.com/azure/monitoring-and-diagnostics/monitoring-overview-azure-monitor)virtuální počítače Azure, kontejnery Dockeru a místní nebo jiné cloudové infrastruktury. Log Analytics nabízí flexibilní vyhledávání protokolů a analýzy po vybalení z krabice nad tato data. Poskytuje bohaté nástroje, které můžete použít k analýze dat napříč zdroji, umožňuje složité dotazy ve všech protokolech a může proaktivně výstrahovat na základě zadaných podmínek. Můžete dokonce shromažďovat vlastní data v centrálním úložišti Log Analytics, kde je můžete dotazovat a vizualizovat. Můžete také využít integrované řešení Log Analytics a okamžitě získat přehled o zabezpečení a funkcích vaší infrastruktury.
+Ve vztahu k protokolům infrastruktury Azure, Log Analytics, jako služba Azure, ingestuje data protokolu a metriky z jiných služeb Azure (přes [Azure Monitor),](https://docs.microsoft.com/azure/monitoring-and-diagnostics/monitoring-overview-azure-monitor)virtuální počítače Azure, kontejnery Dockeru a místní nebo jiné cloudové infrastruktury. Log Analytics nabízí flexibilní vyhledávání protokolů a analýzy po vybalení z krabice nad tato data. Poskytuje bohaté nástroje, které můžete použít k analýze dat napříč zdroji, umožňuje složité dotazy ve všech protokolech a může proaktivně výstrahovat na základě zadaných podmínek. Můžete dokonce shromažďovat vlastní data v centrálním úložišti Log Analytics, kde je můžete dotazovat a vizualizovat. Můžete také využít integrované řešení Log Analytics okamžitě získat přehled o zabezpečení a funkčnosti vaší infrastruktury.
 
 K Log Analytics můžete přistupovat prostřednictvím portálu OMS nebo portálu Azure, které běží v libovolném prohlížeči a poskytují vám přístup k nastavení konfigurace a více nástrojů pro analýzu a činnost na shromážděná data.
 

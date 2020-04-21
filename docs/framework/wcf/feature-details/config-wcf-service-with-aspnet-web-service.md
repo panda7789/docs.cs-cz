@@ -5,18 +5,18 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 48e1cd90-de80-4d6c-846e-631878955762
-ms.openlocfilehash: 22713aba4f86fe493ba3d16ef09c2a71b6d55fe0
-ms.sourcegitcommit: c91110ef6ee3fedb591f3d628dc17739c4a7071e
+ms.openlocfilehash: ddd7e8c95701532010b54e5136a33d37d139f6a4
+ms.sourcegitcommit: 465547886a1224a5435c3ac349c805e39ce77706
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/15/2020
-ms.locfileid: "81389787"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81739232"
 ---
 # <a name="how-to-configure-wcf-service-to-interoperate-with-aspnet-web-service-clients"></a>Postupy: Konfigurace služby WCF pro spolupráci s klienty webové služby ASP.NET
 
 Chcete-li nakonfigurovat koncový bod služby WCF (Windows Communication Foundation) tak, aby byl interoperabilní s klienty ASP.NET webové služby, použijte <xref:System.ServiceModel.BasicHttpBinding?displayProperty=nameWithType> typ jako typ vazby pro koncový bod služby.  
   
- Volitelně můžete povolit podporu pro ověřování https a na úrovni přenosu klienta na vazbě. ASP.NET klienti webové služby nepodporují kódování zpráv <xref:System.ServiceModel.BasicHttpBinding.MessageEncoding%2A?displayProperty=nameWithType> MTOM, takže vlastnost by <xref:System.ServiceModel.WSMessageEncoding.Text?displayProperty=nameWithType>měla být ponechána jako výchozí hodnota, která je . ASP.Net klientů webové služby nepodporují službu <xref:System.ServiceModel.BasicHttpBinding.Security%2A?displayProperty=nameWithType> WS-Security, takže by měla být nastavena na <xref:System.ServiceModel.BasicHttpSecurityMode.Transport>.  
+ Volitelně můžete povolit podporu pro ověřování https a na úrovni přenosu klienta na vazbě. ASP.NET klienti webové služby nepodporují kódování zpráv <xref:System.ServiceModel.BasicHttpBinding.MessageEncoding%2A?displayProperty=nameWithType> MTOM, takže vlastnost by <xref:System.ServiceModel.WSMessageEncoding.Text?displayProperty=nameWithType>měla být ponechána jako výchozí hodnota, která je . ASP.NET klientů webové služby nepodporují službu <xref:System.ServiceModel.BasicHttpBinding.Security%2A?displayProperty=nameWithType> WS-Security, takže by měla být nastavena na <xref:System.ServiceModel.BasicHttpSecurityMode.Transport>.  
   
  Chcete-li zpřístupnit metadata služby WCF pro ASP.NET nástroje pro generování proxy serveru webové služby (tj. [nástroj Web Services Description Language Tool (Wsdl.exe),](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/7h3ystb6(v%3dvs.100))Nástroj pro zjišťování [webových služeb (Disco.exe)](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/cy2a3ybs(v=vs.100))a funkci **Přidat webový odkaz** v sadě Visual Studio), měli byste vystavit koncový bod metadat HTTP/GET.  
   
@@ -24,7 +24,7 @@ Chcete-li nakonfigurovat koncový bod služby WCF (Windows Communication Foundat
   
 1. Vytvoření nové <xref:System.ServiceModel.BasicHttpBinding> instance  
   
-2. Volitelně povolit zabezpečení přenosu pro tuto vazbu koncového <xref:System.ServiceModel.BasicHttpSecurityMode.Transport>bodu služby nastavením režimu zabezpečení pro vazbu na . Podrobnosti naleznete v části [Zabezpečení dopravy](../../../../docs/framework/wcf/feature-details/transport-security.md).  
+2. Volitelně povolit zabezpečení přenosu pro tuto vazbu koncového <xref:System.ServiceModel.BasicHttpSecurityMode.Transport>bodu služby nastavením režimu zabezpečení pro vazbu na . Podrobnosti naleznete v tématu [Transport Security](../../../../docs/framework/wcf/feature-details/transport-security.md).  
   
 3. Přidejte nový koncový bod aplikace do hostitele služby pomocí instance vazby, kterou jste právě vytvořili. Podrobnosti o tom, jak přidat koncový bod služby v kódu, naleznete v tématu [Postup: Vytvoření koncového bodu služby v kódu](../../../../docs/framework/wcf/feature-details/how-to-create-a-service-endpoint-in-code.md).  
   

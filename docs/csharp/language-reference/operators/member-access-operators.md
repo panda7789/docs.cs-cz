@@ -1,7 +1,7 @@
 ---
 title: Operátory přístupu členů a výrazy – odkaz jazyka C#
 description: Další informace o operátory Jazyka C#, které můžete použít pro přístup k členům typu.
-ms.date: 03/31/2020
+ms.date: 04/17/2020
 author: pkulikov
 f1_keywords:
 - ._CSharpKeyword
@@ -32,12 +32,12 @@ helpviewer_keywords:
 - hat operator [C#]
 - .. operator [C#]
 - range operator [C#]
-ms.openlocfilehash: 90066b1e9c219f66fc0c76423679e81aa3fa6770
-ms.sourcegitcommit: 43cbde34970f5f38f30c43cd63b9c7e2e83717ae
+ms.openlocfilehash: 4e213c92ae08edd8d537017e474c33200cb4c22c
+ms.sourcegitcommit: 465547886a1224a5435c3ac349c805e39ce77706
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/11/2020
-ms.locfileid: "81120986"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81738724"
 ---
 # <a name="member-access-operators-and-expressions-c-reference"></a>Operátory přístupu k členům a výrazy (odkaz C#)
 
@@ -156,6 +156,8 @@ if (handler != null)
 }
 ```
 
+To je bezpečný způsob, jak zajistit, že `handler` je vyvolána pouze non-null. Vzhledem k tomu, že instance delegáta jsou neměnné, žádné vlákno může změnit hodnotu, na kterou odkazuje `handler` místní proměnná. Zejména pokud kód spouštěný jiným vláknem odhlásí `PropertyChanged` z `null` `handler` `PropertyChanged` události a stane se před `handler` je vyvolána, hodnota odkazuje zůstává nedotčena. Operátor `?.` vyhodnotí jeho levostranný operand ne více než jednou, zaručující, že jej nelze změnit na `null` po ověření jako non-null.
+
 ## <a name="invocation-expression-"></a>Výraz vyvolání ()
 
 Pomocí závorek `()`, můžete volat [metodu](../../programming-guide/classes-and-structs/methods.md) nebo vyvolat [delegáta](../../programming-guide/delegates/index.md).
@@ -180,7 +182,7 @@ K dispozici v C# 8.0 a novější, `^` operátor označuje pozici prvku od konce
 
 Jak ukazuje předchozí příklad, `^e` výraz <xref:System.Index?displayProperty=nameWithType> je typu. Ve `^e`výrazu `e` musí být výsledek implicitně převoditelný na `int`.
 
-Můžete také použít `^` operátor s [operátorem rozsahu](#range-operator-) k vytvoření rozsahu indexů. Další informace naleznete [v tématu Indexy a rozsahy](../../tutorials/ranges-indexes.md).
+Operátor s `^` [operátorem rozsahu](#range-operator-) můžete také použít k vytvoření rozsahu indexů. Další informace naleznete [v tématu Indexy a rozsahy](../../tutorials/ranges-indexes.md).
 
 ## <a name="range-operator-"></a>Operátor rozsahu ..
 

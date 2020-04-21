@@ -10,12 +10,12 @@ helpviewer_keywords:
 - else keyword [C#]
 - if keyword [C#]
 ms.assetid: d9a1d562-8cf5-4bd4-9ba7-8ad970cd25b2
-ms.openlocfilehash: 98c1a8dceec3e5a47627841988e2d722c56fc36c
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 61b60674d3b5de4649a52d2a165265ae0a27e0be
+ms.sourcegitcommit: 465547886a1224a5435c3ac349c805e39ce77706
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75715267"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81738853"
 ---
 # <a name="if-else-c-reference"></a>if-else (Referenční dokumentace jazyka C#)
 
@@ -71,7 +71,7 @@ V následujícím příkladu zadáte znak z klávesnice a program použije `if` 
 
 ## <a name="example"></a>Příklad
 
-Můžete také vnořit `if` příkaz uvnitř bloku else, jak ukazuje následující částečný kód. Příklad vnoří příkazy `if` uvnitř dva bloky else a jeden pak blokovat. Komentáře určují, které podmínky jsou v každém bloku pravdivé nebo nepravdivé.
+Příkaz můžete také `if` vnořit do bloku else, jak ukazuje následující částečný kód. Příklad vnoří příkazy `if` uvnitř dva bloky else a jeden pak blokovat. Komentáře určují, které podmínky jsou v každém bloku pravdivé nebo nepravdivé.
 
 [!code-csharp[csrefKeywordsSelection#5](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsSelection/CS/csrefKeywordsSelection.cs#5)]
 
@@ -141,4 +141,4 @@ if (!(m >= n || m >= p))
 - [C# Klíčová slova](index.md)
 - [?: Operátor](../operators/conditional-operator.md)
 - [if-else – příkaz (C++)](/cpp/cpp/if-else-statement-cpp)
-- [Přepnout](switch.md)
+- [switch](switch.md)

@@ -2,12 +2,12 @@
 title: dotnet, příkaz
 description: Další informace o příkazu dotnet (obecný ovladač pro rozhraní příkazu .NET Core CLI) a jeho použití.
 ms.date: 02/13/2020
-ms.openlocfilehash: d700f35f3c977524ff3857da99519882eb0136e9
-ms.sourcegitcommit: 927b7ea6b2ea5a440c8f23e3e66503152eb85591
+ms.openlocfilehash: 6a08297499d955db44e342dc82fed25b7b9b8171
+ms.sourcegitcommit: 465547886a1224a5435c3ac349c805e39ce77706
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81463271"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81739069"
 ---
 # <a name="dotnet-command"></a>dotnet, příkaz
 
@@ -264,7 +264,7 @@ dotnet myapp.dll
 
 - `DOTNET_NOLOGO`
 
-  Určuje, zda se při prvním spuštění zobrazí uvítání a telemetrické zprávy .NET Core. Nastaví `true` ztlumení těchto zpráv `true` `1`(hodnoty `yes` , nebo `false` přijaté) nebo `false` `0`na `no` povolit (hodnoty , nebo přijaté). Pokud není nastavena, `false` výchozí je a zprávy se zobrazí při prvním spuštění. Všimněte si, že tento příznak `DOTNET_CLI_TELEMETRY_OPTOUT` nemá žádný vliv na telemetrii (viz pro odhlášení odesílání telemetrie).
+  Určuje, zda se při prvním spuštění zobrazí uvítání a telemetrické zprávy .NET Core. Nastaví `true` ztlumení těchto zpráv `true` `1`(hodnoty `yes` , nebo `false` přijaté) nebo `false` `0`na `no` povolit (hodnoty , nebo přijaté). Pokud není nastavena, `false` výchozí je a zprávy se zobrazí při prvním spuštění. Tento příznak nemá žádný vliv `DOTNET_CLI_TELEMETRY_OPTOUT` na telemetrii (viz pro odhlášení odesílání telemetrie).
 
 - `DOTNET_CLI_TELEMETRY_OPTOUT`
 
