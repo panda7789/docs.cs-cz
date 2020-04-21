@@ -2,20 +2,20 @@
 title: Anonymní záznamy
 description: Naučte se používat konstrukce a použití anonymních záznamů, což je jazyková funkce, která pomáhá při manipulaci s daty.
 ms.date: 06/12/2019
-ms.openlocfilehash: ef3aa8fccdb6ff406542932816e4138040845a59
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 121f0f638dff2ae529b2488d8e3b1ad9c064cf90
+ms.sourcegitcommit: 465547886a1224a5435c3ac349c805e39ce77706
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79187497"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81738500"
 ---
-# <a name="anonymous-records"></a><span data-ttu-id="0fd67-103">Anonymní záznamy</span><span class="sxs-lookup"><span data-stu-id="0fd67-103">Anonymous Records</span></span>
+# <a name="anonymous-records"></a><span data-ttu-id="984b9-103">Anonymní záznamy</span><span class="sxs-lookup"><span data-stu-id="984b9-103">Anonymous Records</span></span>
 
-<span data-ttu-id="0fd67-104">Anonymní záznamy jsou jednoduché agregace pojmenovaných hodnot, které není nutné deklarovat před použitím.</span><span class="sxs-lookup"><span data-stu-id="0fd67-104">Anonymous records are simple aggregates of named values that don't need to be declared before use.</span></span> <span data-ttu-id="0fd67-105">Můžete je deklarovat jako struktury nebo typy odkazů.</span><span class="sxs-lookup"><span data-stu-id="0fd67-105">You can declare them as either structs or reference types.</span></span> <span data-ttu-id="0fd67-106">Ve výchozím nastavení se neje vypořádají referenčními typy.</span><span class="sxs-lookup"><span data-stu-id="0fd67-106">They're reference types by default.</span></span>
+<span data-ttu-id="984b9-104">Anonymní záznamy jsou jednoduché agregace pojmenovaných hodnot, které není nutné deklarovat před použitím.</span><span class="sxs-lookup"><span data-stu-id="984b9-104">Anonymous records are simple aggregates of named values that don't need to be declared before use.</span></span> <span data-ttu-id="984b9-105">Můžete je deklarovat jako struktury nebo typy odkazů.</span><span class="sxs-lookup"><span data-stu-id="984b9-105">You can declare them as either structs or reference types.</span></span> <span data-ttu-id="984b9-106">Ve výchozím nastavení se neje vypořádají referenčními typy.</span><span class="sxs-lookup"><span data-stu-id="984b9-106">They're reference types by default.</span></span>
 
-## <a name="syntax"></a><span data-ttu-id="0fd67-107">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="0fd67-107">Syntax</span></span>
+## <a name="syntax"></a><span data-ttu-id="984b9-107">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="984b9-107">Syntax</span></span>
 
-<span data-ttu-id="0fd67-108">Následující příklady ukazují syntaxi anonymního záznamu.</span><span class="sxs-lookup"><span data-stu-id="0fd67-108">The following examples demonstrate the anonymous record syntax.</span></span> <span data-ttu-id="0fd67-109">Položky oddělené `[item]` jako volitelné.</span><span class="sxs-lookup"><span data-stu-id="0fd67-109">Items delimited as `[item]` are optional.</span></span>
+<span data-ttu-id="984b9-108">Následující příklady ukazují syntaxi anonymního záznamu.</span><span class="sxs-lookup"><span data-stu-id="984b9-108">The following examples demonstrate the anonymous record syntax.</span></span> <span data-ttu-id="984b9-109">Položky oddělené `[item]` jako volitelné.</span><span class="sxs-lookup"><span data-stu-id="984b9-109">Items delimited as `[item]` are optional.</span></span>
 
 ```fsharp
 // Construct an anonymous record
@@ -28,11 +28,11 @@ let value-name = Type-Name<[struct] {| Label1: Type1; Label2: Type2; ...|}>
 let function-name (arg-name: [struct] {| Label1: Type1; Label2: Type2; ...|}) ...
 ```
 
-## <a name="basic-usage"></a><span data-ttu-id="0fd67-110">Základní použití</span><span class="sxs-lookup"><span data-stu-id="0fd67-110">Basic usage</span></span>
+## <a name="basic-usage"></a><span data-ttu-id="984b9-110">Základní použití</span><span class="sxs-lookup"><span data-stu-id="984b9-110">Basic usage</span></span>
 
-<span data-ttu-id="0fd67-111">Anonymní záznamy jsou nejlépe myšlenka jako F# typy záznamů, které není nutné deklarovat před instanci.</span><span class="sxs-lookup"><span data-stu-id="0fd67-111">Anonymous records are best thought of as F# record types that don't need to be declared before instantiation.</span></span>
+<span data-ttu-id="984b9-111">Anonymní záznamy jsou nejlépe myšlenka jako F# typy záznamů, které není nutné deklarovat před instanci.</span><span class="sxs-lookup"><span data-stu-id="984b9-111">Anonymous records are best thought of as F# record types that don't need to be declared before instantiation.</span></span>
 
-<span data-ttu-id="0fd67-112">Zde například můžete pracovat s funkcí, která vytváří anonymní záznam:</span><span class="sxs-lookup"><span data-stu-id="0fd67-112">For example, here how you can interact with a function that produces an anonymous record:</span></span>
+<span data-ttu-id="984b9-112">Zde například můžete pracovat s funkcí, která vytváří anonymní záznam:</span><span class="sxs-lookup"><span data-stu-id="984b9-112">For example, here how you can interact with a function that produces an anonymous record:</span></span>
 
 ```fsharp
 open System
@@ -50,7 +50,7 @@ printfn "Circle with radius: %f has diameter %f, area %f, and circumference %f"
     r stats.Diameter stats.Area stats.Circumference
 ```
 
-<span data-ttu-id="0fd67-113">Následující příklad rozbalí předchozí s `printCircleStats` funkcí, která bere anonymní záznam jako vstup:</span><span class="sxs-lookup"><span data-stu-id="0fd67-113">The following example expands on the previous one with a `printCircleStats` function that takes an anonymous record as input:</span></span>
+<span data-ttu-id="984b9-113">Následující příklad rozbalí předchozí s `printCircleStats` funkcí, která bere anonymní záznam jako vstup:</span><span class="sxs-lookup"><span data-stu-id="984b9-113">The following example expands on the previous one with a `printCircleStats` function that takes an anonymous record as input:</span></span>
 
 ```fsharp
 open System
@@ -71,7 +71,7 @@ let stats = getCircleStats r
 printCircleStats r stats
 ```
 
-<span data-ttu-id="0fd67-114">Volání `printCircleStats` s libovolným anonymním typem záznamu, který nemá stejný "tvar" jako vstupní typ, se nepodaří zkompilovat:</span><span class="sxs-lookup"><span data-stu-id="0fd67-114">Calling `printCircleStats` with any anonymous record type that doesn't have the same "shape" as the input type will fail to compile:</span></span>
+<span data-ttu-id="984b9-114">Volání `printCircleStats` s libovolným anonymním typem záznamu, který nemá stejný "tvar" jako vstupní typ, se nepodaří zkompilovat:</span><span class="sxs-lookup"><span data-stu-id="984b9-114">Calling `printCircleStats` with any anonymous record type that doesn't have the same "shape" as the input type will fail to compile:</span></span>
 
 ```fsharp
 printCircleStats r {| Diameter = 2.0; Area = 4.0; MyCircumference = 12.566371 |}
@@ -79,9 +79,9 @@ printCircleStats r {| Diameter = 2.0; Area = 4.0; MyCircumference = 12.566371 |}
 // '["Area"; "Circumference"; "Diameter"]' and '["Area"; "Diameter"; "MyCircumference"]'
 ```
 
-## <a name="struct-anonymous-records"></a><span data-ttu-id="0fd67-115">Strukturovat anonymní záznamy</span><span class="sxs-lookup"><span data-stu-id="0fd67-115">Struct anonymous records</span></span>
+## <a name="struct-anonymous-records"></a><span data-ttu-id="984b9-115">Strukturovat anonymní záznamy</span><span class="sxs-lookup"><span data-stu-id="984b9-115">Struct anonymous records</span></span>
 
-<span data-ttu-id="0fd67-116">Anonymní záznamy lze také definovat jako `struct` strukturu s volitelným klíčovým slovem.</span><span class="sxs-lookup"><span data-stu-id="0fd67-116">Anonymous records can also be defined as struct with the optional `struct` keyword.</span></span> <span data-ttu-id="0fd67-117">Následující příklad rozšiřuje předchozí tím, že produkuje a spotřebovává nitanonymní záznam:</span><span class="sxs-lookup"><span data-stu-id="0fd67-117">The following example augments the previous one by producing and consuming a struct anonymous record:</span></span>
+<span data-ttu-id="984b9-116">Anonymní záznamy lze také definovat jako `struct` strukturu s volitelným klíčovým slovem.</span><span class="sxs-lookup"><span data-stu-id="984b9-116">Anonymous records can also be defined as struct with the optional `struct` keyword.</span></span> <span data-ttu-id="984b9-117">Následující příklad rozšiřuje předchozí tím, že produkuje a spotřebovává nitanonymní záznam:</span><span class="sxs-lookup"><span data-stu-id="984b9-117">The following example augments the previous one by producing and consuming a struct anonymous record:</span></span>
 
 ```fsharp
 open System
@@ -104,9 +104,9 @@ let stats = getCircleStats r
 printCircleStats r stats
 ```
 
-### <a name="structness-inference"></a><span data-ttu-id="0fd67-118">Závěr o struktuře</span><span class="sxs-lookup"><span data-stu-id="0fd67-118">Structness inference</span></span>
+### <a name="structness-inference"></a><span data-ttu-id="984b9-118">Závěr o struktuře</span><span class="sxs-lookup"><span data-stu-id="984b9-118">Structness inference</span></span>
 
-<span data-ttu-id="0fd67-119">Strukturovat anonymní záznamy také umožňují "odvození struktury", kde není `struct` nutné zadat klíčové slovo na webu volání.</span><span class="sxs-lookup"><span data-stu-id="0fd67-119">Struct anonymous records also allow for "structness inference" where you do not need to specify the `struct` keyword at the call site.</span></span> <span data-ttu-id="0fd67-120">V tomto příkladu můžete `struct` elide `printCircleStats`klíčové slovo při volání :</span><span class="sxs-lookup"><span data-stu-id="0fd67-120">In this example, you elide the `struct` keyword when calling `printCircleStats`:</span></span>
+<span data-ttu-id="984b9-119">Strukturovat anonymní záznamy také umožňují "odvození struktury", kde není `struct` nutné zadat klíčové slovo na webu volání.</span><span class="sxs-lookup"><span data-stu-id="984b9-119">Struct anonymous records also allow for "structness inference" where you do not need to specify the `struct` keyword at the call site.</span></span> <span data-ttu-id="984b9-120">V tomto příkladu můžete `struct` elide `printCircleStats`klíčové slovo při volání :</span><span class="sxs-lookup"><span data-stu-id="984b9-120">In this example, you elide the `struct` keyword when calling `printCircleStats`:</span></span>
 
 ```fsharp
 
@@ -117,16 +117,16 @@ let printCircleStats r (stats: struct {| Area: float; Circumference: float; Diam
 printCircleStats r {| Area = 4.0; Circumference = 12.6; Diameter = 12.6 |}
 ```
 
-<span data-ttu-id="0fd67-121">Reverzní vzor - `struct` určující, kdy vstupní typ není nitanonymní záznam - se nezdaří kompilovat.</span><span class="sxs-lookup"><span data-stu-id="0fd67-121">The reverse pattern - specifying `struct` when the input type is not a struct anonymous record - will fail to compile.</span></span>
+<span data-ttu-id="984b9-121">Reverzní vzor - `struct` určující, kdy vstupní typ není nitanonymní záznam - se nezdaří kompilovat.</span><span class="sxs-lookup"><span data-stu-id="984b9-121">The reverse pattern - specifying `struct` when the input type is not a struct anonymous record - will fail to compile.</span></span>
 
-## <a name="embedding-anonymous-records-within-other-types"></a><span data-ttu-id="0fd67-122">Vkládání anonymních záznamů do jiných typů</span><span class="sxs-lookup"><span data-stu-id="0fd67-122">Embedding anonymous records within other types</span></span>
+## <a name="embedding-anonymous-records-within-other-types"></a><span data-ttu-id="984b9-122">Vkládání anonymních záznamů do jiných typů</span><span class="sxs-lookup"><span data-stu-id="984b9-122">Embedding anonymous records within other types</span></span>
 
-<span data-ttu-id="0fd67-123">Je užitečné deklarovat [diskriminované odbory,](discriminated-unions.md) jejichž případy jsou záznamy.</span><span class="sxs-lookup"><span data-stu-id="0fd67-123">It's useful to declare [discriminated unions](discriminated-unions.md) whose cases are records.</span></span> <span data-ttu-id="0fd67-124">Ale pokud data v záznamech je stejný typ jako discriminated unie, je nutné definovat všechny typy jako vzájemně rekurzivní.</span><span class="sxs-lookup"><span data-stu-id="0fd67-124">But if the data in the records is the same type as the discriminated union, you must define all types as mutually recursive.</span></span> <span data-ttu-id="0fd67-125">Použití anonymních záznamů zabrání toto omezení.</span><span class="sxs-lookup"><span data-stu-id="0fd67-125">Using anonymous records avoids this restriction.</span></span> <span data-ttu-id="0fd67-126">Následuje příklad typu a funkce, která se nad ním shoduje:</span><span class="sxs-lookup"><span data-stu-id="0fd67-126">What follows is an example type and function that pattern matches over it:</span></span>
+<span data-ttu-id="984b9-123">Je užitečné deklarovat [diskriminované odbory,](discriminated-unions.md) jejichž případy jsou záznamy.</span><span class="sxs-lookup"><span data-stu-id="984b9-123">It's useful to declare [discriminated unions](discriminated-unions.md) whose cases are records.</span></span> <span data-ttu-id="984b9-124">Ale pokud data v záznamech je stejný typ jako discriminated unie, je nutné definovat všechny typy jako vzájemně rekurzivní.</span><span class="sxs-lookup"><span data-stu-id="984b9-124">But if the data in the records is the same type as the discriminated union, you must define all types as mutually recursive.</span></span> <span data-ttu-id="984b9-125">Použití anonymních záznamů zabrání toto omezení.</span><span class="sxs-lookup"><span data-stu-id="984b9-125">Using anonymous records avoids this restriction.</span></span> <span data-ttu-id="984b9-126">Následuje příklad typu a funkce, která se nad ním shoduje:</span><span class="sxs-lookup"><span data-stu-id="984b9-126">What follows is an example type and function that pattern matches over it:</span></span>
 
 ```fsharp
 type FullName = { FirstName: string; LastName: string }
 
-// Note that using a named for Manager and Executive would require mutually recursive definitions.
+// Note that using a named record for Manager and Executive would require mutually recursive definitions.
 type Employee =
     | Engineer of FullName
     | Manager of {| Name: FullName; Reports: Employee list |}
@@ -139,23 +139,23 @@ let getFirstName e =
     | Executive ex -> ex.Name.FirstName
 ```
 
-## <a name="copy-and-update-expressions"></a><span data-ttu-id="0fd67-127">Kopírování a aktualizace výrazů</span><span class="sxs-lookup"><span data-stu-id="0fd67-127">Copy and update expressions</span></span>
+## <a name="copy-and-update-expressions"></a><span data-ttu-id="984b9-127">Kopírování a aktualizace výrazů</span><span class="sxs-lookup"><span data-stu-id="984b9-127">Copy and update expressions</span></span>
 
-<span data-ttu-id="0fd67-128">Anonymní záznamy podporují konstrukci s [výrazy kopírování a aktualizace](copy-and-update-record-expressions.md).</span><span class="sxs-lookup"><span data-stu-id="0fd67-128">Anonymous records support construction with [copy and update expressions](copy-and-update-record-expressions.md).</span></span> <span data-ttu-id="0fd67-129">Můžete například vytvořit novou instanci anonymního záznamu, který kopíruje data existujícího:</span><span class="sxs-lookup"><span data-stu-id="0fd67-129">For example, here's how you can construct a new instance of an anonymous record that copies an existing one's data:</span></span>
+<span data-ttu-id="984b9-128">Anonymní záznamy podporují konstrukci s [výrazy kopírování a aktualizace](copy-and-update-record-expressions.md).</span><span class="sxs-lookup"><span data-stu-id="984b9-128">Anonymous records support construction with [copy and update expressions](copy-and-update-record-expressions.md).</span></span> <span data-ttu-id="984b9-129">Můžete například vytvořit novou instanci anonymního záznamu, který kopíruje data existujícího:</span><span class="sxs-lookup"><span data-stu-id="984b9-129">For example, here's how you can construct a new instance of an anonymous record that copies an existing one's data:</span></span>
 
 ```fsharp
 let data = {| X = 1; Y = 2 |}
 let data' = {| data with Y = 3 |}
 ```
 
-<span data-ttu-id="0fd67-130">Na rozdíl od pojmenovaných záznamů však anonymní záznamy umožňují vytvářet zcela odlišné formuláře s výrazy kopírování a aktualizace.</span><span class="sxs-lookup"><span data-stu-id="0fd67-130">However, unlike named records, anonymous records allow you to construct entirely different forms with copy and update expressions.</span></span> <span data-ttu-id="0fd67-131">Následující příklad převezme stejný anonymní záznam z předchozího příkladu a rozbalí jej na nový anonymní záznam:</span><span class="sxs-lookup"><span data-stu-id="0fd67-131">The follow example takes the same anonymous record from the previous example and expands it into a new anonymous record:</span></span>
+<span data-ttu-id="984b9-130">Na rozdíl od pojmenovaných záznamů však anonymní záznamy umožňují vytvářet zcela odlišné formuláře s výrazy kopírování a aktualizace.</span><span class="sxs-lookup"><span data-stu-id="984b9-130">However, unlike named records, anonymous records allow you to construct entirely different forms with copy and update expressions.</span></span> <span data-ttu-id="984b9-131">Následující příklad převezme stejný anonymní záznam z předchozího příkladu a rozbalí jej na nový anonymní záznam:</span><span class="sxs-lookup"><span data-stu-id="984b9-131">The follow example takes the same anonymous record from the previous example and expands it into a new anonymous record:</span></span>
 
 ```fsharp
 let data = {| X = 1; Y = 2 |}
 let expandedData = {| data with Z = 3 |} // Gives {| X=1; Y=2; Z=3 |}
 ```
 
-<span data-ttu-id="0fd67-132">Je také možné vytvářet anonymní záznamy z instancí pojmenovaných záznamů:</span><span class="sxs-lookup"><span data-stu-id="0fd67-132">It is also possible to construct anonymous records from instances of named records:</span></span>
+<span data-ttu-id="984b9-132">Je také možné vytvářet anonymní záznamy z instancí pojmenovaných záznamů:</span><span class="sxs-lookup"><span data-stu-id="984b9-132">It is also possible to construct anonymous records from instances of named records:</span></span>
 
 ```fsharp
 type R = { X: int }
@@ -163,7 +163,7 @@ let data = { X = 1 }
 let data' = {| data with Y = 2 |} // Gives {| X=1; Y=2 |}
 ```
 
-<span data-ttu-id="0fd67-133">Můžete také kopírovat data do a z referenčních a strukturovaných anonymních záznamů:</span><span class="sxs-lookup"><span data-stu-id="0fd67-133">You can also copy data to and from reference and struct anonymous records:</span></span>
+<span data-ttu-id="984b9-133">Můžete také kopírovat data do a z referenčních a strukturovaných anonymních záznamů:</span><span class="sxs-lookup"><span data-stu-id="984b9-133">You can also copy data to and from reference and struct anonymous records:</span></span>
 
 ```fsharp
 // Copy data from a reference record into a struct anonymous record
@@ -183,22 +183,22 @@ let data2 = {| r1 with Y = 1 |}
 let data3 = struct {| data2 with Z = r2.X |}
 ```
 
-## <a name="properties-of-anonymous-records"></a><span data-ttu-id="0fd67-134">Vlastnosti anonymních záznamů</span><span class="sxs-lookup"><span data-stu-id="0fd67-134">Properties of anonymous records</span></span>
+## <a name="properties-of-anonymous-records"></a><span data-ttu-id="984b9-134">Vlastnosti anonymních záznamů</span><span class="sxs-lookup"><span data-stu-id="984b9-134">Properties of anonymous records</span></span>
 
-<span data-ttu-id="0fd67-135">Anonymní záznamy mají řadu charakteristik, které jsou nezbytné pro úplné pochopení, jak mohou být použity.</span><span class="sxs-lookup"><span data-stu-id="0fd67-135">Anonymous records have a number of characteristics that are essential to fully understanding how they can be used.</span></span>
+<span data-ttu-id="984b9-135">Anonymní záznamy mají řadu charakteristik, které jsou nezbytné pro úplné pochopení, jak mohou být použity.</span><span class="sxs-lookup"><span data-stu-id="984b9-135">Anonymous records have a number of characteristics that are essential to fully understanding how they can be used.</span></span>
 
-### <a name="anonymous-records-are-nominal"></a><span data-ttu-id="0fd67-136">Anonymní záznamy jsou nominální</span><span class="sxs-lookup"><span data-stu-id="0fd67-136">Anonymous records are nominal</span></span>
+### <a name="anonymous-records-are-nominal"></a><span data-ttu-id="984b9-136">Anonymní záznamy jsou nominální</span><span class="sxs-lookup"><span data-stu-id="984b9-136">Anonymous records are nominal</span></span>
 
-<span data-ttu-id="0fd67-137">Anonymní záznamy jsou [nominální typy](https://en.wikipedia.org/wiki/Nominal_type_system).</span><span class="sxs-lookup"><span data-stu-id="0fd67-137">Anonymous records are [nominal types](https://en.wikipedia.org/wiki/Nominal_type_system).</span></span> <span data-ttu-id="0fd67-138">Oni jsou nejlépe myšlenka jako pojmenované typy [záznamů](records.md) (které jsou také nominální), které nevyžadují předem prohlášení.</span><span class="sxs-lookup"><span data-stu-id="0fd67-138">They are best thought as named [record](records.md) types (which are also nominal) that do not require an up-front declaration.</span></span>
+<span data-ttu-id="984b9-137">Anonymní záznamy jsou [nominální typy](https://en.wikipedia.org/wiki/Nominal_type_system).</span><span class="sxs-lookup"><span data-stu-id="984b9-137">Anonymous records are [nominal types](https://en.wikipedia.org/wiki/Nominal_type_system).</span></span> <span data-ttu-id="984b9-138">Oni jsou nejlépe myšlenka jako pojmenované typy [záznamů](records.md) (které jsou také nominální), které nevyžadují předem prohlášení.</span><span class="sxs-lookup"><span data-stu-id="984b9-138">They are best thought as named [record](records.md) types (which are also nominal) that do not require an up-front declaration.</span></span>
 
-<span data-ttu-id="0fd67-139">Zvažte následující příklad se dvěma anonymními deklaracemi záznamů:</span><span class="sxs-lookup"><span data-stu-id="0fd67-139">Consider the following example with two anonymous record declarations:</span></span>
+<span data-ttu-id="984b9-139">Zvažte následující příklad se dvěma anonymními deklaracemi záznamů:</span><span class="sxs-lookup"><span data-stu-id="984b9-139">Consider the following example with two anonymous record declarations:</span></span>
 
 ```fsharp
 let x = {| X = 1 |}
 let y = {| Y = 1 |}
 ```
 
-<span data-ttu-id="0fd67-140">Hodnoty `x` `y` a mají různé typy a nejsou vzájemně kompatibilní.</span><span class="sxs-lookup"><span data-stu-id="0fd67-140">The `x` and `y` values have different types and are not compatible with one another.</span></span> <span data-ttu-id="0fd67-141">Nejsou schavitelné a nejsou srovnatelné.</span><span class="sxs-lookup"><span data-stu-id="0fd67-141">They are not equatable and they are not comparable.</span></span> <span data-ttu-id="0fd67-142">Pro ilustraci zvažte pojmenovaný ekvivalent záznamu:</span><span class="sxs-lookup"><span data-stu-id="0fd67-142">To illustrate this, consider a named record equivalent:</span></span>
+<span data-ttu-id="984b9-140">Hodnoty `x` `y` a mají různé typy a nejsou vzájemně kompatibilní.</span><span class="sxs-lookup"><span data-stu-id="984b9-140">The `x` and `y` values have different types and are not compatible with one another.</span></span> <span data-ttu-id="984b9-141">Nejsou schavitelné a nejsou srovnatelné.</span><span class="sxs-lookup"><span data-stu-id="984b9-141">They are not equatable and they are not comparable.</span></span> <span data-ttu-id="984b9-142">Pro ilustraci zvažte pojmenovaný ekvivalent záznamu:</span><span class="sxs-lookup"><span data-stu-id="984b9-142">To illustrate this, consider a named record equivalent:</span></span>
 
 ```fsharp
 type X = { X: int }
@@ -208,11 +208,11 @@ let x = { X = 1 }
 let y = { Y = 1 }
 ```
 
-<span data-ttu-id="0fd67-143">Neexistuje nic ze své podstaty odlišné o anonymní záznamy ve srovnání s jejich pojmenované ekvivalenty záznamu, pokud jde o typ ekvivalence nebo porovnání.</span><span class="sxs-lookup"><span data-stu-id="0fd67-143">There isn't anything inherently different about anonymous records when compared with their named record equivalents when concerning type equivalency or comparison.</span></span>
+<span data-ttu-id="984b9-143">Neexistuje nic ze své podstaty odlišné o anonymní záznamy ve srovnání s jejich pojmenované ekvivalenty záznamu, pokud jde o typ ekvivalence nebo porovnání.</span><span class="sxs-lookup"><span data-stu-id="984b9-143">There isn't anything inherently different about anonymous records when compared with their named record equivalents when concerning type equivalency or comparison.</span></span>
 
-### <a name="anonymous-records-use-structural-equality-and-comparison"></a><span data-ttu-id="0fd67-144">Anonymní záznamy používají strukturální rovnost a porovnání</span><span class="sxs-lookup"><span data-stu-id="0fd67-144">Anonymous records use structural equality and comparison</span></span>
+### <a name="anonymous-records-use-structural-equality-and-comparison"></a><span data-ttu-id="984b9-144">Anonymní záznamy používají strukturální rovnost a porovnání</span><span class="sxs-lookup"><span data-stu-id="984b9-144">Anonymous records use structural equality and comparison</span></span>
 
-<span data-ttu-id="0fd67-145">Stejně jako typy záznamů jsou anonymní záznamy strukturálně srovnatelné a srovnatelné.</span><span class="sxs-lookup"><span data-stu-id="0fd67-145">Like record types, anonymous records are structurally equatable and comparable.</span></span> <span data-ttu-id="0fd67-146">To platí pouze v případě, že všechny typy složek podporují rovnost a porovnání, jako u typů záznamů.</span><span class="sxs-lookup"><span data-stu-id="0fd67-146">This is only true if all constituent types support equality and comparison, like with record types.</span></span> <span data-ttu-id="0fd67-147">Pro podporu rovnosti nebo porovnání musí mít dva anonymní záznamy stejný "tvar".</span><span class="sxs-lookup"><span data-stu-id="0fd67-147">To support equality or comparison, two anonymous records must have the same "shape".</span></span>
+<span data-ttu-id="984b9-145">Stejně jako typy záznamů jsou anonymní záznamy strukturálně srovnatelné a srovnatelné.</span><span class="sxs-lookup"><span data-stu-id="984b9-145">Like record types, anonymous records are structurally equatable and comparable.</span></span> <span data-ttu-id="984b9-146">To platí pouze v případě, že všechny typy složek podporují rovnost a porovnání, jako u typů záznamů.</span><span class="sxs-lookup"><span data-stu-id="984b9-146">This is only true if all constituent types support equality and comparison, like with record types.</span></span> <span data-ttu-id="984b9-147">Pro podporu rovnosti nebo porovnání musí mít dva anonymní záznamy stejný "tvar".</span><span class="sxs-lookup"><span data-stu-id="984b9-147">To support equality or comparison, two anonymous records must have the same "shape".</span></span>
 
 ```fsharp
 {| a = 1+1 |} = {| a = 2 |} // true
@@ -222,9 +222,9 @@ let y = { Y = 1 }
 {| a = 1 + 1 |} = {| a = 2;  b = 1|}
 ```
 
-### <a name="anonymous-records-are-serializable"></a><span data-ttu-id="0fd67-148">Anonymní záznamy lze serializovat.</span><span class="sxs-lookup"><span data-stu-id="0fd67-148">Anonymous records are serializable</span></span>
+### <a name="anonymous-records-are-serializable"></a><span data-ttu-id="984b9-148">Anonymní záznamy lze serializovat.</span><span class="sxs-lookup"><span data-stu-id="984b9-148">Anonymous records are serializable</span></span>
 
-<span data-ttu-id="0fd67-149">Anonymní záznamy můžete serializovat stejně jako s pojmenovanými záznamy.</span><span class="sxs-lookup"><span data-stu-id="0fd67-149">You can serialize anonymous records just as you can with named records.</span></span> <span data-ttu-id="0fd67-150">Zde je příklad pomocí [Newtonsoft.Json](https://www.nuget.org/packages/Newtonsoft.Json/):</span><span class="sxs-lookup"><span data-stu-id="0fd67-150">Here is an example using [Newtonsoft.Json](https://www.nuget.org/packages/Newtonsoft.Json/):</span></span>
+<span data-ttu-id="984b9-149">Anonymní záznamy můžete serializovat stejně jako s pojmenovanými záznamy.</span><span class="sxs-lookup"><span data-stu-id="984b9-149">You can serialize anonymous records just as you can with named records.</span></span> <span data-ttu-id="984b9-150">Zde je příklad pomocí [Newtonsoft.Json](https://www.nuget.org/packages/Newtonsoft.Json/):</span><span class="sxs-lookup"><span data-stu-id="984b9-150">Here is an example using [Newtonsoft.Json](https://www.nuget.org/packages/Newtonsoft.Json/):</span></span>
 
 ```fsharp
 open Newtonsoft.Json
@@ -236,11 +236,11 @@ let phillip = JsonConvert.DeserializeObject<{|name: string; age: int|}>(philStr)
 printfn "Name: %s Age: %d" phillip.name phillip.age
 ```
 
-<span data-ttu-id="0fd67-151">Anonymní záznamy jsou užitečné pro odesílání zjednodušených dat v síti bez nutnosti definovat doménu pro serializované/rekonstruované typy předem.</span><span class="sxs-lookup"><span data-stu-id="0fd67-151">Anonymous records are useful for sending lightweight data over a network without the need to define a domain for your serialized/deserialized types up front.</span></span>
+<span data-ttu-id="984b9-151">Anonymní záznamy jsou užitečné pro odesílání zjednodušených dat v síti bez nutnosti definovat doménu pro serializované/rekonstruované typy předem.</span><span class="sxs-lookup"><span data-stu-id="984b9-151">Anonymous records are useful for sending lightweight data over a network without the need to define a domain for your serialized/deserialized types up front.</span></span>
 
-### <a name="anonymous-records-interoperate-with-c-anonymous-types"></a><span data-ttu-id="0fd67-152">Anonymní záznamy spolupracují s anonymními typy jazyka C#</span><span class="sxs-lookup"><span data-stu-id="0fd67-152">Anonymous records interoperate with C# anonymous types</span></span>
+### <a name="anonymous-records-interoperate-with-c-anonymous-types"></a><span data-ttu-id="984b9-152">Anonymní záznamy spolupracují s anonymními typy jazyka C#</span><span class="sxs-lookup"><span data-stu-id="984b9-152">Anonymous records interoperate with C# anonymous types</span></span>
 
-<span data-ttu-id="0fd67-153">Je možné použít rozhraní .NET API, které vyžaduje použití [anonymních typů jazyka C#](../../csharp/programming-guide/classes-and-structs/anonymous-types.md).</span><span class="sxs-lookup"><span data-stu-id="0fd67-153">It is possible to use a .NET API that requires the use of [C# anonymous types](../../csharp/programming-guide/classes-and-structs/anonymous-types.md).</span></span> <span data-ttu-id="0fd67-154">C# anonymní typy jsou triviální pro vzájemnou prosazení pomocí anonymních záznamů.</span><span class="sxs-lookup"><span data-stu-id="0fd67-154">C# anonymous types are trivial to interoperate with by using anonymous records.</span></span> <span data-ttu-id="0fd67-155">Následující příklad ukazuje, jak pomocí anonymních záznamů volat [přetížení LINQ,](../../csharp/programming-guide/concepts/linq/index.md) které vyžaduje anonymní typ:</span><span class="sxs-lookup"><span data-stu-id="0fd67-155">The following example shows how to use anonymous records to call a [LINQ](../../csharp/programming-guide/concepts/linq/index.md) overload that requires an anonymous type:</span></span>
+<span data-ttu-id="984b9-153">Je možné použít rozhraní .NET API, které vyžaduje použití [anonymních typů jazyka C#](../../csharp/programming-guide/classes-and-structs/anonymous-types.md).</span><span class="sxs-lookup"><span data-stu-id="984b9-153">It is possible to use a .NET API that requires the use of [C# anonymous types](../../csharp/programming-guide/classes-and-structs/anonymous-types.md).</span></span> <span data-ttu-id="984b9-154">C# anonymní typy jsou triviální pro vzájemnou prosazení pomocí anonymních záznamů.</span><span class="sxs-lookup"><span data-stu-id="984b9-154">C# anonymous types are trivial to interoperate with by using anonymous records.</span></span> <span data-ttu-id="984b9-155">Následující příklad ukazuje, jak pomocí anonymních záznamů volat [přetížení LINQ,](../../csharp/programming-guide/concepts/linq/index.md) které vyžaduje anonymní typ:</span><span class="sxs-lookup"><span data-stu-id="984b9-155">The following example shows how to use anonymous records to call a [LINQ](../../csharp/programming-guide/concepts/linq/index.md) overload that requires an anonymous type:</span></span>
 
 ```fsharp
 open System.Linq
@@ -251,26 +251,26 @@ for ng in nameGrouping do
     printfn "%s has first letter %c" ng.Name ng.FirstLetter
 ```
 
-<span data-ttu-id="0fd67-156">Existuje velké množství dalších rozhraní API používané v celé .NET, které vyžadují použití předávání v anonymní typ.</span><span class="sxs-lookup"><span data-stu-id="0fd67-156">There are a multitude of other APIs used throughout .NET that require the use of passing in an anonymous type.</span></span> <span data-ttu-id="0fd67-157">Anonymní záznamy jsou vaším nástrojem pro práci s nimi.</span><span class="sxs-lookup"><span data-stu-id="0fd67-157">Anonymous records are your tool for working with them.</span></span>
+<span data-ttu-id="984b9-156">Existuje velké množství dalších rozhraní API používané v celé .NET, které vyžadují použití předávání v anonymní typ.</span><span class="sxs-lookup"><span data-stu-id="984b9-156">There are a multitude of other APIs used throughout .NET that require the use of passing in an anonymous type.</span></span> <span data-ttu-id="984b9-157">Anonymní záznamy jsou vaším nástrojem pro práci s nimi.</span><span class="sxs-lookup"><span data-stu-id="984b9-157">Anonymous records are your tool for working with them.</span></span>
 
-## <a name="limitations"></a><span data-ttu-id="0fd67-158">Omezení</span><span class="sxs-lookup"><span data-stu-id="0fd67-158">Limitations</span></span>
+## <a name="limitations"></a><span data-ttu-id="984b9-158">Omezení</span><span class="sxs-lookup"><span data-stu-id="984b9-158">Limitations</span></span>
 
-<span data-ttu-id="0fd67-159">Anonymní záznamy mají určitá omezení v jejich použití.</span><span class="sxs-lookup"><span data-stu-id="0fd67-159">Anonymous records have some restrictions in their usage.</span></span> <span data-ttu-id="0fd67-160">Některé z nich jsou vlastní jejich designu, ale jiní jsou přístupné ke změně.</span><span class="sxs-lookup"><span data-stu-id="0fd67-160">Some are inherent to their design, but others are amenable to change.</span></span>
+<span data-ttu-id="984b9-159">Anonymní záznamy mají určitá omezení v jejich použití.</span><span class="sxs-lookup"><span data-stu-id="984b9-159">Anonymous records have some restrictions in their usage.</span></span> <span data-ttu-id="984b9-160">Některé z nich jsou vlastní jejich designu, ale jiní jsou přístupné ke změně.</span><span class="sxs-lookup"><span data-stu-id="984b9-160">Some are inherent to their design, but others are amenable to change.</span></span>
 
-### <a name="limitations-with-pattern-matching"></a><span data-ttu-id="0fd67-161">Omezení s porovnáváním vzorů</span><span class="sxs-lookup"><span data-stu-id="0fd67-161">Limitations with pattern matching</span></span>
+### <a name="limitations-with-pattern-matching"></a><span data-ttu-id="984b9-161">Omezení s porovnáváním vzorů</span><span class="sxs-lookup"><span data-stu-id="984b9-161">Limitations with pattern matching</span></span>
 
-<span data-ttu-id="0fd67-162">Anonymní záznamy nepodporují porovnávání vzorů, na rozdíl od pojmenovaných záznamů.</span><span class="sxs-lookup"><span data-stu-id="0fd67-162">Anonymous records do not support pattern matching, unlike named records.</span></span> <span data-ttu-id="0fd67-163">Existují tři důvody:</span><span class="sxs-lookup"><span data-stu-id="0fd67-163">There are three reasons:</span></span>
+<span data-ttu-id="984b9-162">Anonymní záznamy nepodporují porovnávání vzorů, na rozdíl od pojmenovaných záznamů.</span><span class="sxs-lookup"><span data-stu-id="984b9-162">Anonymous records do not support pattern matching, unlike named records.</span></span> <span data-ttu-id="984b9-163">Existují tři důvody:</span><span class="sxs-lookup"><span data-stu-id="984b9-163">There are three reasons:</span></span>
 
-1. <span data-ttu-id="0fd67-164">Vzor by musel odpovídat za každé pole anonymního záznamu, na rozdíl od pojmenovaných typů záznamů.</span><span class="sxs-lookup"><span data-stu-id="0fd67-164">A pattern would have to account for every field of an anonymous record, unlike named record types.</span></span> <span data-ttu-id="0fd67-165">Je to proto, že anonymní záznamy nepodporují strukturální subtypování – jsou to nominální typy.</span><span class="sxs-lookup"><span data-stu-id="0fd67-165">This is because anonymous records do not support structural subtyping – they are nominal types.</span></span>
-2. <span data-ttu-id="0fd67-166">Z důvodu (1) není možné mít další vzory ve výrazu shody vzoru, protože každý odlišný vzor by znamenal jiný anonymní typ záznamu.</span><span class="sxs-lookup"><span data-stu-id="0fd67-166">Because of (1), there is no ability to have additional patterns in a pattern match expression, as each distinct pattern would imply a different anonymous record type.</span></span>
-3. <span data-ttu-id="0fd67-167">Z důvodu (3) by jakýkoli anonymní záznam vzor by být podrobnější než použití "tečka" zápis.</span><span class="sxs-lookup"><span data-stu-id="0fd67-167">Because of (3), any anonymous record pattern would be more verbose than the use of “dot” notation.</span></span>
+1. <span data-ttu-id="984b9-164">Vzor by musel odpovídat za každé pole anonymního záznamu, na rozdíl od pojmenovaných typů záznamů.</span><span class="sxs-lookup"><span data-stu-id="984b9-164">A pattern would have to account for every field of an anonymous record, unlike named record types.</span></span> <span data-ttu-id="984b9-165">Je to proto, že anonymní záznamy nepodporují strukturální subtypování – jsou to nominální typy.</span><span class="sxs-lookup"><span data-stu-id="984b9-165">This is because anonymous records do not support structural subtyping – they are nominal types.</span></span>
+2. <span data-ttu-id="984b9-166">Z důvodu (1) není možné mít další vzory ve výrazu shody vzoru, protože každý odlišný vzor by znamenal jiný anonymní typ záznamu.</span><span class="sxs-lookup"><span data-stu-id="984b9-166">Because of (1), there is no ability to have additional patterns in a pattern match expression, as each distinct pattern would imply a different anonymous record type.</span></span>
+3. <span data-ttu-id="984b9-167">Z důvodu (3) by jakýkoli anonymní záznam vzor by být podrobnější než použití "tečka" zápis.</span><span class="sxs-lookup"><span data-stu-id="984b9-167">Because of (3), any anonymous record pattern would be more verbose than the use of “dot” notation.</span></span>
 
-<span data-ttu-id="0fd67-168">Existuje otevřený jazyk návrh [povolit porovnávání vzorů v omezených kontextech](https://github.com/fsharp/fslang-suggestions/issues/713).</span><span class="sxs-lookup"><span data-stu-id="0fd67-168">There is an open language suggestion to [allow pattern matching in limited contexts](https://github.com/fsharp/fslang-suggestions/issues/713).</span></span>
+<span data-ttu-id="984b9-168">Existuje otevřený jazyk návrh [povolit porovnávání vzorů v omezených kontextech](https://github.com/fsharp/fslang-suggestions/issues/713).</span><span class="sxs-lookup"><span data-stu-id="984b9-168">There is an open language suggestion to [allow pattern matching in limited contexts](https://github.com/fsharp/fslang-suggestions/issues/713).</span></span>
 
-### <a name="limitations-with-mutability"></a><span data-ttu-id="0fd67-169">Omezení s proměnlivostí</span><span class="sxs-lookup"><span data-stu-id="0fd67-169">Limitations with mutability</span></span>
+### <a name="limitations-with-mutability"></a><span data-ttu-id="984b9-169">Omezení s proměnlivostí</span><span class="sxs-lookup"><span data-stu-id="984b9-169">Limitations with mutability</span></span>
 
-<span data-ttu-id="0fd67-170">V současné době není možné definovat `mutable` anonymní záznam s daty.</span><span class="sxs-lookup"><span data-stu-id="0fd67-170">It is not currently possible to define an anonymous record with `mutable` data.</span></span> <span data-ttu-id="0fd67-171">Existuje [návrh otevřeného jazyka,](https://github.com/fsharp/fslang-suggestions/issues/732) který umožňuje proměnlivá data.</span><span class="sxs-lookup"><span data-stu-id="0fd67-171">There is an [open language suggestion](https://github.com/fsharp/fslang-suggestions/issues/732) to allow mutable data.</span></span>
+<span data-ttu-id="984b9-170">V současné době není možné definovat `mutable` anonymní záznam s daty.</span><span class="sxs-lookup"><span data-stu-id="984b9-170">It is not currently possible to define an anonymous record with `mutable` data.</span></span> <span data-ttu-id="984b9-171">Existuje [návrh otevřeného jazyka,](https://github.com/fsharp/fslang-suggestions/issues/732) který umožňuje proměnlivá data.</span><span class="sxs-lookup"><span data-stu-id="984b9-171">There is an [open language suggestion](https://github.com/fsharp/fslang-suggestions/issues/732) to allow mutable data.</span></span>
 
-### <a name="limitations-with-struct-anonymous-records"></a><span data-ttu-id="0fd67-172">Omezení s nitkovými anonymními záznamy</span><span class="sxs-lookup"><span data-stu-id="0fd67-172">Limitations with struct anonymous records</span></span>
+### <a name="limitations-with-struct-anonymous-records"></a><span data-ttu-id="984b9-172">Omezení s nitkovými anonymními záznamy</span><span class="sxs-lookup"><span data-stu-id="984b9-172">Limitations with struct anonymous records</span></span>
 
-<span data-ttu-id="0fd67-173">Není možné deklarovat struktury `IsByRefLike` anonymní `IsReadOnly`záznamy jako nebo .</span><span class="sxs-lookup"><span data-stu-id="0fd67-173">It is not possible to declare struct anonymous records as `IsByRefLike` or `IsReadOnly`.</span></span> <span data-ttu-id="0fd67-174">Existuje [otevřený jazyk návrh](https://github.com/fsharp/fslang-suggestions/issues/712) `IsByRefLike` pro `IsReadOnly` anonymní záznamy.</span><span class="sxs-lookup"><span data-stu-id="0fd67-174">There is an [open language suggestion](https://github.com/fsharp/fslang-suggestions/issues/712) to for `IsByRefLike` and `IsReadOnly` anonymous records.</span></span>
+<span data-ttu-id="984b9-173">Není možné deklarovat struktury `IsByRefLike` anonymní `IsReadOnly`záznamy jako nebo .</span><span class="sxs-lookup"><span data-stu-id="984b9-173">It is not possible to declare struct anonymous records as `IsByRefLike` or `IsReadOnly`.</span></span> <span data-ttu-id="984b9-174">Existuje [otevřený jazyk návrh](https://github.com/fsharp/fslang-suggestions/issues/712) `IsByRefLike` pro `IsReadOnly` anonymní záznamy.</span><span class="sxs-lookup"><span data-stu-id="984b9-174">There is an [open language suggestion](https://github.com/fsharp/fslang-suggestions/issues/712) to for `IsByRefLike` and `IsReadOnly` anonymous records.</span></span>
