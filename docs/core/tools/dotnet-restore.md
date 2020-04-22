@@ -2,12 +2,12 @@
 title: dotnet obnovit, příkaz
 description: Pomocí příkazu dotnet restore se dozvíte, jak obnovit závislosti a nástroje specifické pro projekt.
 ms.date: 02/27/2020
-ms.openlocfilehash: f49f0cda4424a4cc54ab7d4d4c6f729919dc7e60
-ms.sourcegitcommit: 927b7ea6b2ea5a440c8f23e3e66503152eb85591
+ms.openlocfilehash: c5cc9adf1d77b0ab03a61cc315d42c2f38362ad9
+ms.sourcegitcommit: 348bb052d5cef109a61a3d5253faa5d7167d55ac
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81463423"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "82021783"
 ---
 # <a name="dotnet-restore"></a>dotnet restore
 
@@ -120,7 +120,7 @@ Někdy může být nepohodlné `dotnet restore` spustit implicitně. Například
 
 - **`--no-cache`**
 
-  Určuje, že se nebudou ukládáy balíčky a požadavky HTTP.
+  Určuje, že se nemají ukládat do mezipaměti požadavky HTTP.
 
 - **`--no-dependencies`**
 

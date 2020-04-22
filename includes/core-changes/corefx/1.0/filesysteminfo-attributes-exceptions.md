@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 4091bdcf7d9ed8872aed5faa6e6d3ed143903787
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 2ea9abca7578c2ddf92712a1c597f8f1ff4a5c0c
+ms.sourcegitcommit: 348bb052d5cef109a61a3d5253faa5d7167d55ac
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "77449392"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "82021811"
 ---
 ### <a name="unauthorizedaccessexception-thrown-by-filesysteminfoattributes"></a>UnauthorizedAccessException vyvoláno souborem FileSystemInfo.Attributes
 
@@ -24,7 +24,7 @@ Upravte `catch` všechny příkazy zachytit <xref:System.UnauthorizedAccessExcep
 
 #### <a name="category"></a>Kategorie
 
-CoreFx
+Základní knihovny .NET
 
 #### <a name="affected-apis"></a>Ovlivněná rozhraní API
 

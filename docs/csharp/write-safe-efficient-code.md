@@ -4,12 +4,12 @@ description: Nedávná vylepšení jazyka C# umožňují psát ověřitelný bez
 ms.date: 03/17/2020
 ms.technology: csharp-advanced-concepts
 ms.custom: mvc
-ms.openlocfilehash: dc697d822c4d471d2b67ce074ab9af8fc2724b23
-ms.sourcegitcommit: c91110ef6ee3fedb591f3d628dc17739c4a7071e
+ms.openlocfilehash: c324f3603c69555b40efa56d8e26c046c28f3a7c
+ms.sourcegitcommit: 465547886a1224a5435c3ac349c805e39ce77706
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/15/2020
-ms.locfileid: "81389683"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "82021477"
 ---
 # <a name="write-safe-and-efficient-c-code"></a>Napište bezpečný a efektivní kód Jazyka C#
 
@@ -26,7 +26,7 @@ Tento článek se zaměřuje na následující techniky správy zdrojů:
 - Použijte [`ref readonly`](language-reference/keywords/ref.md#reference-return-values) return, pokud je `struct` vrácená <xref:System.IntPtr.Size?displayProperty=nameWithType> hodnota větší než a doba trvání úložiště je větší než metoda vracející hodnotu.
 - Pokud je velikost `readonly struct` a <xref:System.IntPtr.Size?displayProperty=nameWithType>větší než , měli `in` byste ji předat jako parametr z důvodů výkonu.
 - Nikdy předat `struct` jako `in` parametr, pokud je `readonly` deklarován s `readonly` modifikátornebo metoda volá pouze členy struktury. Porušení tohoto pokynu může negativně ovlivnit výkon a může vést k obskurní chování.
-- Použijte [`ref struct`](language-reference/keywords/ref.md#ref-struct-types), nebo `readonly ref struct` jako <xref:System.Span%601> <xref:System.ReadOnlySpan%601> nebo pracovat s pamětí jako posloupnost bajtů.
+- Použijte [`ref struct`](language-reference/builtin-types/struct.md#ref-struct), nebo `readonly ref struct` jako <xref:System.Span%601> <xref:System.ReadOnlySpan%601> nebo pracovat s pamětí jako posloupnost bajtů.
 
 Tyto techniky vás nutí vyvážit dva konkurenční cíle s ohledem na **odkazy** a **hodnoty**. Proměnné, které jsou [typy odkazů](programming-guide/types/index.md#reference-types) obsahovat odkaz na umístění v paměti. Proměnné, které jsou [typy hodnot](programming-guide/types/index.md#value-types) přímo obsahují jejich hodnotu. Tyto rozdíly zdůrazňují klíčové rozdíly, které jsou důležité pro správu prostředků paměti. **Typy hodnot** jsou obvykle zkopírovány při předání do metody nebo vráceny z metody. Toto chování zahrnuje kopírování `this` hodnoty při volání členů typu hodnoty. Náklady na kopii se vztahují k velikosti typu. **Referenční typy** jsou přiděleny na spravované haldy. Každý nový objekt vyžaduje nové přidělení a následně musí být rekultivovány. Obě tyto operace nějakou dobu trvat. Odkaz je zkopírován, když je typ odkazu předán jako argument metodě nebo vrácen z metody.
 

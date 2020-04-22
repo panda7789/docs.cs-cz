@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: e6e10b2ec451c07bf397cbdcac51ef57c29dab47
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: cc3251e3b31143bd95793b407e50cf76e0e30142
+ms.sourcegitcommit: 348bb052d5cef109a61a3d5253faa5d7167d55ac
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "74568088"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "82021644"
 ---
 ### <a name="json-serializer-exception-type-changed-from-jsonexception-to-notsupportedexception"></a>Typ výjimky serializátoru Json byl změněn z `JsonException` na`NotSupportedException`
 
@@ -33,7 +33,7 @@ Pokud jste chytání <xref:System.Text.Json.JsonException> při deserializaci, m
 
 #### <a name="category"></a>Kategorie
 
-CoreFx
+Základní knihovny .NET
 
 #### <a name="affected-apis"></a>Ovlivněná rozhraní API
 

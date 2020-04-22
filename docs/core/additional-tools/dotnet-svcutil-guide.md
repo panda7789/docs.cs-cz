@@ -3,12 +3,12 @@ title: Přehled nástroje WCF svcutil
 description: Přehled nástroje Dotnet-svcutil společnosti Microsoft WCF, který přidává funkce pro projekty .NET Core a ASP.NET Core, podobně jako nástroj WCF svcutil pro projekty rozhraní .NET Framework.
 author: mlacouture
 ms.date: 02/22/2019
-ms.openlocfilehash: 0607c73935f319f2cc0d8d9f92d96a4c71c54edf
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 1f500c9355112183a135c2b639807c7cd62fbbfc
+ms.sourcegitcommit: 348bb052d5cef109a61a3d5253faa5d7167d55ac
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "76920939"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "82021252"
 ---
 # <a name="wcf-dotnet-svcutil-tool-for-net-core"></a>WCF dotnet-svcutil nástroj pro .NET Core
 
@@ -128,7 +128,7 @@ Generovaný soubor je uložen jako _HelloSvcutil/ServiceReference/Reference.cs_.
 4. Upravte `Configure` metodu pro vyvolání webové služby. To provést vytvořením instance třídy, která `ClientBase` dědí z a volání metody na objekt klienta:
 
     ```csharp
-    public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+    public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
     {
         if (env.IsDevelopment())
         {

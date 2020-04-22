@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 711b51c590be149545fda3130148e2bcaef8be4f
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: b55de00188d92623c493dfc5f9aca915890ae5df
+ms.sourcegitcommit: 348bb052d5cef109a61a3d5253faa5d7167d55ac
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "78262366"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "82021460"
 ---
 ### <a name="private-fields-added-to-built-in-struct-types"></a>Soukromá pole přidaná k předdefinovaným typům struktury
 
@@ -35,7 +35,7 @@ V rozhraní .NET Core 2.1 má předchozí kód za následek následující chybu
 
 Instance typy struktury pomocí operátoru `new` nebo [výchozí literál](../../../../docs/csharp/language-reference/operators/default.md#default-literal).
 
-Například:
+Příklad:
 
 ```csharp
 ConsoleKeyInfo key = new ConsoleKeyInfo();    // Struct type.
@@ -53,7 +53,7 @@ if (key.ToString() == "y")
 
 #### <a name="category"></a>Kategorie
 
-CoreFx
+Základní knihovny .NET
 
 #### <a name="affected-apis"></a>Ovlivněná rozhraní API
 

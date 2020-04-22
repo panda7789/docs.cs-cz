@@ -2,12 +2,12 @@
 title: 'C# vyhrazené atributy: Podmíněné, Zastaralé, AttributeUsage'
 ms.date: 04/09/2020
 description: Tyto atributy jsou interpretovány kompilátorem ovlivnit kód generovaný kompilátorem
-ms.openlocfilehash: ca3b76387de2a57380d6eb0848991d979a558662
-ms.sourcegitcommit: c91110ef6ee3fedb591f3d628dc17739c4a7071e
+ms.openlocfilehash: c6d697dd08233ffc88900949998047137ee170a9
+ms.sourcegitcommit: 348bb052d5cef109a61a3d5253faa5d7167d55ac
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/15/2020
-ms.locfileid: "81389868"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "82021763"
 ---
 # <a name="reserved-attributes-conditionalattribute-obsoleteattribute-attributeusageattribute"></a>Vyhrazené atributy: ConditionalAttribute, ObsoleteAttribute, AttributeUsageAttribute
 
@@ -19,25 +19,25 @@ Atribut `Conditional` umožňuje provádění metody závislé na identifikátor
 
 V následujícím příkladu `Conditional` se používá metoda povolení nebo zakázání zobrazení diagnostických informací specifických pro program:
 
-::::::code language="csharp" source="snippets/trace.cs" interactive="try-dotnet" :::
+:::code language="csharp" source="snippets/trace.cs" interactive="try-dotnet" :::
 
 Pokud `TRACE_ON` identifikátor není definován, výstup trasování se nezobrazí. Prozkoumejte sami v interaktivním okně.
 
 Atribut `Conditional` se často používá `DEBUG` s identifikátorem povolit trasování a protokolování funkce pro ladění sestavení, ale ne ve verzi sestavení, jak je znázorněno v následujícím příkladu:
 
-::::::code language="csharp" source="snippets/ConditionalExamples.cs" id="SnippetConditional" :::
+:::code language="csharp" source="snippets/ConditionalExamples.cs" id="SnippetConditional" :::
 
 Pokud je volána metoda označená jako podmíněná, přítomnost nebo nepřítomnost zadaného symbolu předběžného zpracování určuje, zda je volání zahrnuto nebo vynecháno. Pokud je definován symbol, je zahrnuto volání; v opačném případě je volání vynecháno. Podmíněná metoda musí být metoda v deklaraci třídy `void` nebo struktury a musí mít návratový typ. Použití `Conditional` je čistší, elegantnější a méně náchylné k `#if…#endif` chybám než ohraničování metod uvnitř bloků.
 
 Pokud má metoda `Conditional` více atributů, je zahrnuto volání metody, pokud je definován jeden nebo více podmíněných symbolů (symboly jsou logicky propojeny pomocí operátoru OR). V následujícím příkladu přítomnost `A` buď `B` nebo má za následek volání metody:
 
-::::::code language="csharp" source="snippets/ConditionalExamples.cs" id="SnippetMultipleConditions" :::
+:::code language="csharp" source="snippets/ConditionalExamples.cs" id="SnippetMultipleConditions" :::
 
 ### <a name="using-conditional-with-attribute-classes"></a>Použití `Conditional` s třídami atributů
 
 Atribut `Conditional` lze také použít na definici třídy atributu. V následujícím příkladu bude `Documentation` vlastní atribut přidávat informace `DEBUG` pouze do metadat, pokud je definován.
 
-::::::code language="csharp" source="snippets/ConditionalExamples.cs" id="SnippetConditionalConditionalAttribute" :::
+:::code language="csharp" source="snippets/ConditionalExamples.cs" id="SnippetConditionalConditionalAttribute" :::
 
 ## <a name="obsolete-attribute"></a>Atribut `Obsolete`
 
@@ -45,7 +45,7 @@ Atribut `Obsolete` označí prvek kódu jako již doporučený pro použití. Po
 
 V následujícím příkladu `Obsolete` je atribut `A` použit `B.OldMethod`pro třídu a metodu . Vzhledem k tomu, že druhý `B.OldMethod` argument `true`konstruktoru atributu aplikovaný na je `A` nastavena na , tato metoda způsobí chybu kompilátoru, vzhledem k tomu, že pomocí třídy pouze vytvoří upozornění. Volání `B.NewMethod`, však nevytváří žádné upozornění nebo chybu. Například při použití s předchozími definicemi, následující kód generuje dvě upozornění a jednu chybu:
 
-::::::code language="csharp" source="snippets/ObsoleteExample.cs" interactive="try-dotnet" :::
+:::code language="csharp" source="snippets/ObsoleteExample.cs" interactive="try-dotnet" :::
 
 Řetězec zadaný jako první argument konstruktoru atributu se zobrazí jako součást upozornění nebo chyby. Jsou generována `A` dvě upozornění pro třídu: jeden pro deklaraci odkazu třídy a jeden pro konstruktor třídy. Atribut `Obsolete` lze použít bez argumentů, ale včetně vysvětlení, co použít místo toho se doporučuje.
 

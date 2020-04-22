@@ -2,12 +2,12 @@
 title: Kroky ve vývoji DevOps vnější smyčky pro aplikaci Dockeru
 description: Naučte se kroky pro "vnější smyčku" pracovního postupu DevOps
 ms.date: 02/15/2019
-ms.openlocfilehash: fdda1b6a2deb08ed97867583fcc8048d4dba880c
-ms.sourcegitcommit: e3cbf26d67f7e9286c7108a2752804050762d02d
+ms.openlocfilehash: 44bd73bf88a743e5350e422d3ea000ca075f7383
+ms.sourcegitcommit: 465547886a1224a5435c3ac349c805e39ce77706
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2020
-ms.locfileid: "80988970"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "82021290"
 ---
 # <a name="steps-in-the-outer-loop-devops-workflow-for-a-docker-application"></a>Kroky ve vývoji DevOps vnější smyčky pro aplikaci Dockeru
 
@@ -31,7 +31,7 @@ I když řízení zdrojového kódu (SCC) a správa zdrojového kódu se může 
 
 Místní bitové kopie, generované vývojáři, by měly být používány pouze jimi při testování v rámci svých vlastních počítačů. To je důvod, proč je důležité mít kanál DevOps aktivován z kódu SCC.
 
-Služby Azure DevOps services a team foundation server podporují git a řízení verzí Team Foundation. Můžete si mezi nimi vybrat a použít je pro komplexní prostředí microsoftu. Můžete však také spravovat kód v externích úložištích (jako je GitHub, místní úložiště Git nebo Subversion) a stále se k němu můžete připojit a získat kód jako výchozí bod pro kanál DevOps CI.
+Služby Azure DevOps services a team foundation server podporují git a řízení verzí Team Foundation. Můžete si mezi nimi vybrat a použít je pro komplexní prostředí microsoftu. Můžete však také spravovat kód v externích úložištích (jako je GitHub, místní úložiště Git nebo Subversion) a stále můžete se k němu připojit a získat kód jako výchozí bod pro kanál DevOps CI.
 
 ## <a name="step-3-build-ci-integrate-and-test-with-azure-devops-services-and-docker"></a>Krok 3: Sestavení, vytváření, integrace a testování se službami Azure DevOps a Dockerem
 
@@ -184,7 +184,7 @@ Z hlediska CD a konkrétně služby Azure DevOps Services můžete spustit speci
 
 **Obrázek 5-9**. Nasazení distribuovaných aplikací do kontejnerové služby
 
-Zpočátku při nasazování do určitých clusterů nebo orchestrátorů byste tradičně používali specifické skripty a mechanismy nasazení na každém orchestrátoru (to znamená Kubernetes a Service Fabric mají různé mechanismy nasazení) namísto jednoduššího a snadno použitelného `docker-compose` nástroje založeného na definičním `docker-compose.yml` souboru. Nicméně díky úlohě Azure DevOps Services Docker Deploy, která je znázorněna na obrázku 5-10, `docker-compose.yml` teď můžete také nasadit do podporovaných `docker-compose.yml` orchestrátorů pomocí známého souboru, protože nástroj provede tento "překlad" za vás (ze souboru do formátu potřebného orchestratorem).
+Zpočátku při nasazování do určitých clusterů nebo orchestrátorů byste tradičně používali specifické skripty a mechanismy nasazení na každém orchestrátoru (to znamená Kubernetes a Service Fabric mají různé mechanismy nasazení) namísto jednoduššího a snadno použitelného `docker-compose` nástroje založeného na definičním `docker-compose.yml` souboru. Nicméně díky úlohě Azure DevOps Services Docker Deploy, která je znázorněna na obrázku 5-10, `docker-compose.yml` teď můžete také nasadit do podporovaných `docker-compose.yml` orchestrátorů pomocí známého souboru, protože nástroj provede tento "překlad" za vás (ze souboru do formátu potřebného orchestrátorem).
 
 ![Snímek obrazovky s úlohou Nasazení do Kubernetes](./media/docker-application-outer-loop-devops-workflow/add-deploy-to-kubernetes-task.png)
 

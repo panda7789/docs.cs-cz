@@ -1,17 +1,17 @@
 ---
 title: Změny rozdělení knihovny základních tříd
-description: Uvádí nejnovější změny v .NET CoreFx, knihovně základních tříd.
+description: Uvádí nejnovější změny v základních knihovnách .NET.
 ms.date: 09/20/2019
-ms.openlocfilehash: 56a3cf4f4c00a79752d5a98bb086bb9f8c0614b1
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 8cf90ca2bc8736101c1cb8d327a93d100148937b
+ms.sourcegitcommit: 348bb052d5cef109a61a3d5253faa5d7167d55ac
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79147572"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "82021825"
 ---
-# <a name="corefx-breaking-changes"></a>CoreFx láme změny
+# <a name="core-net-libraries-breaking-changes"></a>Základní knihovny .NET narušují změny
 
-CoreFx poskytuje primitiva a další obecné typy používané .NET Core.
+Základní knihovny .NET poskytují primitiva a další obecné typy používané jádrem .NET Core.
 
 Na této stránce jsou popsány následující změny:
 

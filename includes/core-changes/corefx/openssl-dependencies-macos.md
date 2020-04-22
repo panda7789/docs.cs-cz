@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 6a5cd260a2820e2a81142f6d55e32e91173ca503
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 8790637c31d503455eb8ba722cca827c2a24b7c9
+ms.sourcegitcommit: 348bb052d5cef109a61a3d5253faa5d7167d55ac
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79147448"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "82021444"
 ---
 ### <a name="openssl-versions-on-macos"></a>Verze OpenSSL v macOS
 
@@ -42,7 +42,7 @@ S touto změnou je chování pro běhové toruny jádra .NET v systému macOS n�
 
 #### <a name="category"></a>Kategorie
 
-CoreFx
+Základní knihovny .NET
 
 #### <a name="affected-apis"></a>Ovlivněná rozhraní API
 

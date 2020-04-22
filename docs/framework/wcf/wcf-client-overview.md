@@ -7,12 +7,12 @@ dev_langs:
 helpviewer_keywords:
 - clients [WCF], architecture
 ms.assetid: f60d9bc5-8ade-4471-8ecf-5a07a936c82d
-ms.openlocfilehash: c12579062b04cfb46e14d5c3d734a7c155f8d654
-ms.sourcegitcommit: 7980a91f90ae5eca859db7e6bfa03e23e76a1a50
+ms.openlocfilehash: b314b61584e45ac5e80a248e639bdac427ba4a57
+ms.sourcegitcommit: 465547886a1224a5435c3ac349c805e39ce77706
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81278883"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "82021721"
 ---
 # <a name="wcf-client-overview"></a>Přehled klienta WCF
 
@@ -42,7 +42,7 @@ Následující části popisují tyto kroky a poskytují stručný úvod k násl
 - Volání služeb pomocí klientských kanálů.  
   
 ## <a name="obtain-the-service-contract-bindings-and-addresses"></a>Získání servisní smlouvy, vazeb a adres  
- V WCF služby a klienti model smlouvy pomocí spravované atributy, rozhraní a metody. Chcete-li se připojit ke službě v klientské aplikaci, musíte získat informace o typu pro servisní smlouvu. Obvykle to provést pomocí [ServiceModel Metadata Utility Tool (Svcutil.exe)](servicemodel-metadata-utility-tool-svcutil-exe.md), který stáhne metadata ze služby, převede na soubor spravovaného zdrojového kódu v jazyce podle vašeho výběru a vytvoří konfigurační soubor klientské aplikace, který můžete použít ke konfiguraci objektu klienta WCF. Například pokud se chystáte vytvořit objekt klienta `MyCalculatorService`WCF vyvolat , a víte, že metadata pro tuto službu je publikován na `http://computerName/MyCalculatorService/Service.svc?wsdl`, pak následující `ClientCode.vb` příklad kódu ukazuje, jak použít Svcutil.exe získat soubor, který obsahuje servisní smlouvy ve spravovaném kódu.  
+ V WCF služby a klienti model smlouvy pomocí spravované atributy, rozhraní a metody. Chcete-li se připojit ke službě v klientské aplikaci, musíte získat informace o typu pro servisní smlouvu. Obvykle získáte informace o typu pro servisní smlouvy pomocí [ServiceModel Metadata Utility Tool (Svcutil.exe)](servicemodel-metadata-utility-tool-svcutil-exe.md). Nástroj stáhne metadata ze služby, převede je na soubor spravovaného zdrojového kódu v jazyce podle vašeho výběru a vytvoří konfigurační soubor klientské aplikace, který můžete použít ke konfiguraci objektu klienta WCF. Například pokud se chystáte vytvořit objekt klienta `MyCalculatorService`WCF vyvolat , a víte, že metadata pro tuto službu je publikován na `http://computerName/MyCalculatorService/Service.svc?wsdl`, pak následující `ClientCode.vb` příklad kódu ukazuje, jak použít Svcutil.exe získat soubor, který obsahuje servisní smlouvy ve spravovaném kódu.  
   
 ```console  
 svcutil /language:vb /out:ClientCode.vb /config:app.config http://computerName/MyCalculatorService/Service.svc?wsdl  
