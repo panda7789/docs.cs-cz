@@ -8,7 +8,7 @@
     - name: Vytvoření nového formuláře Windows Form
       href: creating-a-new-windows-form.md
       items:
-        - name: 'Postupy: Vytvoření formulářové aplikace Windows z příkazového řádku'
+        - name: 'Postupy: Vytvoření aplikace Windows Forms z příkazového řádku'
           href: how-to-create-a-windows-forms-application-from-the-command-line.md
         - name: Windows Forms – souřadnice
           href: windows-forms-coordinates.md
@@ -103,11 +103,11 @@
           href: how-to-apply-the-propertynamechanged-pattern.md
         - name: 'Postupy: Vytvoření připojeného ovládacího prvku a formátování zobrazených dat'
           href: how-to-create-a-bound-control-and-format-the-displayed-data.md
-        - name: 'Postupy: Vytvoření jednoduše připojeného ovládacího prvku na Windows Form'
+        - name: 'Postupy: Vytvoření jednoduše vázaného ovládacího prvku na formuláři Windows Forms'
           href: how-to-create-a-simple-bound-control-on-a-windows-form.md
-        - name: 'Postupy: Zajistěte, aby více ovládacích prvků vázaných ke stejnému zdroji dat zůstalo synchronizovaných'
+        - name: 'Postupy: Zajištění, aby více ovládacích prvků vázaných ke stejnému zdroji dat zůstalo synchronizovaných'
           href: multiple-controls-bound-to-data-source-synchronized.md
-        - name: 'Postupy: Zajistěte, aby vybraný řádek v podřízené tabulce zůstal ve správné pozici'
+        - name: 'Postupy: Zajištění, aby vybraný řádek v podřízené tabulce zůstal ve správné pozici'
           href: ensure-the-selected-row-in-a-child-table-correct.md
         - name: 'Postupy: Implementace rozhraní IListSource'
           href: how-to-implement-the-ilistsource-interface.md
@@ -130,6 +130,8 @@
           href: additional-security-considerations-in-windows-forms.md
     - name: ClickOnce – nasazení pro Windows Forms
       href: clickonce-deployment-for-windows-forms.md
+    - name: Vylepšení usnadnění přístupu pomocí .NET Core 3.0
+      href: windows-forms-accessibility-improvements.md
     - name: 'Postupy: Přístup ke kolekcím s klíči ve Windows Forms'
       href: how-to-access-keyed-collections-in-windows-forms.md
     - name: Rozšiřování formulářových aplikací Windows

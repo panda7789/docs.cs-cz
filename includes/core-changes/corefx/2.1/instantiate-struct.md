@@ -1,20 +1,20 @@
 ---
-ms.openlocfilehash: 711b51c590be149545fda3130148e2bcaef8be4f
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: b55de00188d92623c493dfc5f9aca915890ae5df
+ms.sourcegitcommit: 348bb052d5cef109a61a3d5253faa5d7167d55ac
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "78262366"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "82021460"
 ---
-### <a name="private-fields-added-to-built-in-struct-types"></a><span data-ttu-id="6b366-101">Soukromá pole přidaná k předdefinovaným typům struktury</span><span class="sxs-lookup"><span data-stu-id="6b366-101">Private fields added to built-in struct types</span></span>
+### <a name="private-fields-added-to-built-in-struct-types"></a><span data-ttu-id="9951a-101">Soukromá pole přidaná k předdefinovaným typům struktury</span><span class="sxs-lookup"><span data-stu-id="9951a-101">Private fields added to built-in struct types</span></span>
 
-<span data-ttu-id="6b366-102">Soukromá pole byla přidána k [určitým typům struktury](#affected-apis) v [referenčních sestavách](../../../../docs/standard/assembly/reference-assemblies.md).</span><span class="sxs-lookup"><span data-stu-id="6b366-102">Private fields were added to [certain struct types](#affected-apis) in [reference assemblies](../../../../docs/standard/assembly/reference-assemblies.md).</span></span> <span data-ttu-id="6b366-103">V důsledku toho v C# tyto typy struktury musí být vždy vytvořena instance pomocí [nového operátoru](../../../../docs/csharp/language-reference/operators/new-operator.md) nebo [výchozí literál](../../../../docs/csharp/language-reference/operators/default.md#default-literal).</span><span class="sxs-lookup"><span data-stu-id="6b366-103">As a result, in C#, those struct types must always be instantiated by using the [new operator](../../../../docs/csharp/language-reference/operators/new-operator.md) or [default literal](../../../../docs/csharp/language-reference/operators/default.md#default-literal).</span></span>
+<span data-ttu-id="9951a-102">Soukromá pole byla přidána k [určitým typům struktury](#affected-apis) v [referenčních sestavách](../../../../docs/standard/assembly/reference-assemblies.md).</span><span class="sxs-lookup"><span data-stu-id="9951a-102">Private fields were added to [certain struct types](#affected-apis) in [reference assemblies](../../../../docs/standard/assembly/reference-assemblies.md).</span></span> <span data-ttu-id="9951a-103">V důsledku toho v C# tyto typy struktury musí být vždy vytvořena instance pomocí [nového operátoru](../../../../docs/csharp/language-reference/operators/new-operator.md) nebo [výchozí literál](../../../../docs/csharp/language-reference/operators/default.md#default-literal).</span><span class="sxs-lookup"><span data-stu-id="9951a-103">As a result, in C#, those struct types must always be instantiated by using the [new operator](../../../../docs/csharp/language-reference/operators/new-operator.md) or [default literal](../../../../docs/csharp/language-reference/operators/default.md#default-literal).</span></span>
 
-#### <a name="change-description"></a><span data-ttu-id="6b366-104">Popis změny</span><span class="sxs-lookup"><span data-stu-id="6b366-104">Change description</span></span>
+#### <a name="change-description"></a><span data-ttu-id="9951a-104">Popis změny</span><span class="sxs-lookup"><span data-stu-id="9951a-104">Change description</span></span>
 
-<span data-ttu-id="6b366-105">V rozhraní .NET Core 2.0 a předchozích verzích mohou <xref:System.ConsoleKeyInfo>být některé typy struktury, `new` například , instance bez použití operátoru nebo [výchozího literálu](../../../../docs/csharp/language-reference/operators/default.md#default-literal) v c#.</span><span class="sxs-lookup"><span data-stu-id="6b366-105">In .NET Core 2.0 and previous versions, some provided struct types, for example, <xref:System.ConsoleKeyInfo>, could be instantiated without using the `new` operator or [default literal](../../../../docs/csharp/language-reference/operators/default.md#default-literal) in C#.</span></span> <span data-ttu-id="6b366-106">Důvodem bylo, [že referenční sestavení](../../../../docs/standard/assembly/reference-assemblies.md) používaná kompilátorem jazyka C# neobsahovala soukromá pole pro struktury.</span><span class="sxs-lookup"><span data-stu-id="6b366-106">This was because the [reference assemblies](../../../../docs/standard/assembly/reference-assemblies.md) used by the C# compiler didn't contain the private fields for the structs.</span></span> <span data-ttu-id="6b366-107">Všechna soukromá pole pro typy struktury .NET jsou přidána do referenčních sestavení začínajících v rozhraní .NET Core 2.1.</span><span class="sxs-lookup"><span data-stu-id="6b366-107">All private fields for .NET struct types are added to the reference assemblies starting in .NET Core 2.1.</span></span>
+<span data-ttu-id="9951a-105">V rozhraní .NET Core 2.0 a předchozích verzích mohou <xref:System.ConsoleKeyInfo>být některé typy struktury, `new` například , instance bez použití operátoru nebo [výchozího literálu](../../../../docs/csharp/language-reference/operators/default.md#default-literal) v c#.</span><span class="sxs-lookup"><span data-stu-id="9951a-105">In .NET Core 2.0 and previous versions, some provided struct types, for example, <xref:System.ConsoleKeyInfo>, could be instantiated without using the `new` operator or [default literal](../../../../docs/csharp/language-reference/operators/default.md#default-literal) in C#.</span></span> <span data-ttu-id="9951a-106">Důvodem bylo, [že referenční sestavení](../../../../docs/standard/assembly/reference-assemblies.md) používaná kompilátorem jazyka C# neobsahovala soukromá pole pro struktury.</span><span class="sxs-lookup"><span data-stu-id="9951a-106">This was because the [reference assemblies](../../../../docs/standard/assembly/reference-assemblies.md) used by the C# compiler didn't contain the private fields for the structs.</span></span> <span data-ttu-id="9951a-107">Všechna soukromá pole pro typy struktury .NET jsou přidána do referenčních sestavení začínajících v rozhraní .NET Core 2.1.</span><span class="sxs-lookup"><span data-stu-id="9951a-107">All private fields for .NET struct types are added to the reference assemblies starting in .NET Core 2.1.</span></span>
 
-<span data-ttu-id="6b366-108">Například následující kód Jazyka C# se zkompiluje v rozhraní .NET Core 2.0, ale ne v rozhraní .NET Core 2.1:</span><span class="sxs-lookup"><span data-stu-id="6b366-108">For example, the following C# code compiles in .NET Core 2.0, but not in .NET Core 2.1:</span></span>
+<span data-ttu-id="9951a-108">Například následující kód Jazyka C# se zkompiluje v rozhraní .NET Core 2.0, ale ne v rozhraní .NET Core 2.1:</span><span class="sxs-lookup"><span data-stu-id="9951a-108">For example, the following C# code compiles in .NET Core 2.0, but not in .NET Core 2.1:</span></span>
 
 ```csharp
 ConsoleKeyInfo key;    // Struct type
@@ -25,17 +25,17 @@ if (key.ToString() == "y")
 }
 ```
 
-<span data-ttu-id="6b366-109">V rozhraní .NET Core 2.1 má předchozí kód za následek následující chybu kompilátoru: **CS0165 - Použití nepřiřazené místní proměnné 'klíč'**</span><span class="sxs-lookup"><span data-stu-id="6b366-109">In .NET Core 2.1, the previous code results in the following compiler error: **CS0165 - Use of unassigned local variable 'key'**</span></span>
+<span data-ttu-id="9951a-109">V rozhraní .NET Core 2.1 má předchozí kód za následek následující chybu kompilátoru: **CS0165 - Použití nepřiřazené místní proměnné 'klíč'**</span><span class="sxs-lookup"><span data-stu-id="9951a-109">In .NET Core 2.1, the previous code results in the following compiler error: **CS0165 - Use of unassigned local variable 'key'**</span></span>
 
-#### <a name="version-introduced"></a><span data-ttu-id="6b366-110">Zavedená verze</span><span class="sxs-lookup"><span data-stu-id="6b366-110">Version introduced</span></span>
+#### <a name="version-introduced"></a><span data-ttu-id="9951a-110">Zavedená verze</span><span class="sxs-lookup"><span data-stu-id="9951a-110">Version introduced</span></span>
 
-<span data-ttu-id="6b366-111">2.1</span><span class="sxs-lookup"><span data-stu-id="6b366-111">2.1</span></span>
+<span data-ttu-id="9951a-111">2.1</span><span class="sxs-lookup"><span data-stu-id="9951a-111">2.1</span></span>
 
-#### <a name="recommended-action"></a><span data-ttu-id="6b366-112">Doporučená akce</span><span class="sxs-lookup"><span data-stu-id="6b366-112">Recommended action</span></span>
+#### <a name="recommended-action"></a><span data-ttu-id="9951a-112">Doporučená akce</span><span class="sxs-lookup"><span data-stu-id="9951a-112">Recommended action</span></span>
 
-<span data-ttu-id="6b366-113">Instance typy struktury pomocí operátoru `new` nebo [výchozí literál](../../../../docs/csharp/language-reference/operators/default.md#default-literal).</span><span class="sxs-lookup"><span data-stu-id="6b366-113">Instantiate struct types by using the `new` operator or [default literal](../../../../docs/csharp/language-reference/operators/default.md#default-literal).</span></span>
+<span data-ttu-id="9951a-113">Instance typy struktury pomocí operátoru `new` nebo [výchozí literál](../../../../docs/csharp/language-reference/operators/default.md#default-literal).</span><span class="sxs-lookup"><span data-stu-id="9951a-113">Instantiate struct types by using the `new` operator or [default literal](../../../../docs/csharp/language-reference/operators/default.md#default-literal).</span></span>
 
-<span data-ttu-id="6b366-114">Například:</span><span class="sxs-lookup"><span data-stu-id="6b366-114">For example:</span></span>
+<span data-ttu-id="9951a-114">Příklad:</span><span class="sxs-lookup"><span data-stu-id="9951a-114">For example:</span></span>
 
 ```csharp
 ConsoleKeyInfo key = new ConsoleKeyInfo();    // Struct type.
@@ -51,11 +51,11 @@ if (key.ToString() == "y")
     Console.WriteLine("Yes!");
 ```
 
-#### <a name="category"></a><span data-ttu-id="6b366-115">Kategorie</span><span class="sxs-lookup"><span data-stu-id="6b366-115">Category</span></span>
+#### <a name="category"></a><span data-ttu-id="9951a-115">Kategorie</span><span class="sxs-lookup"><span data-stu-id="9951a-115">Category</span></span>
 
-<span data-ttu-id="6b366-116">CoreFx</span><span class="sxs-lookup"><span data-stu-id="6b366-116">CoreFx</span></span>
+<span data-ttu-id="9951a-116">Základní knihovny .NET</span><span class="sxs-lookup"><span data-stu-id="9951a-116">Core .NET libraries</span></span>
 
-#### <a name="affected-apis"></a><span data-ttu-id="6b366-117">Ovlivněná rozhraní API</span><span class="sxs-lookup"><span data-stu-id="6b366-117">Affected APIs</span></span>
+#### <a name="affected-apis"></a><span data-ttu-id="9951a-117">Ovlivněná rozhraní API</span><span class="sxs-lookup"><span data-stu-id="9951a-117">Affected APIs</span></span>
 
 - <xref:System.ArraySegment%601.Enumerator?displayProperty=fullName>
 - <xref:System.ArraySegment%601?displayProperty=fullName>
