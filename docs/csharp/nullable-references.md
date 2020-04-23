@@ -2,13 +2,13 @@
 title: Odkazové typy s možnou hodnotou null
 description: Tento článek obsahuje přehled typů odkazů s možnou hodnotou null, které byly přidány v c# 8.0. Dozvíte se, jak funkce poskytuje bezpečnost proti výjimky nulové odkaz pro nové a existující projekty.
 ms.technology: csharp-null-safety
-ms.date: 02/19/2019
-ms.openlocfilehash: bb4c2b6951a38eeb705c7de50ef5d9645350e336
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.date: 04/21/2020
+ms.openlocfilehash: 589118ffaa9ad39f000e3e5adf2896d114f68dd3
+ms.sourcegitcommit: 73aa9653547a1cd70ee6586221f79cc29b588ebd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79399425"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "82101970"
 ---
 # <a name="nullable-reference-types"></a>Odkazové typy s možnou hodnotou null
 
@@ -23,8 +23,10 @@ C# 8.0 zavádí **typy odkazů s možnou hodnotou null** a typy odkazů s **hodn
 
 Tato nová funkce poskytuje významné výhody oproti zpracování referenčních proměnných v dřívějších verzích jazyka C#, kde záměr návrhu nelze určit z deklarace proměnné. Kompilátor neposkytl bezpečnost proti výjimkám nulového odkazu pro typy odkazů:
 
-- **Odkaz může být null**. Při inicializování typu odkazu na hodnotu null nebo null je mu později přiřazeno žádné upozornění.
-- **Odkaz se předpokládá, že není null**. Kompilátor nevydává žádná upozornění, když jsou odkazovány typy odkazů. (S odkazy s možnou hodnotou null kompilátor vydá upozornění vždy, když dereference proměnnou, která může být null).
+- **Odkaz může být null**. Kompilátor nevydává upozornění, když je typ odkazu inicializován na hodnotu null nebo později přiřazen ke hodnotě null. Kompilátor vydává upozornění, když jsou tyto proměnné bez kontrol y null odkazovány bez kontroly null.
+- **Odkaz se předpokládá, že není null**. Kompilátor nevydává žádná upozornění, když jsou odkazovány typy odkazů. Kompilátor vydává upozornění, pokud je proměnná nastavena na výraz, který může mít hodnotu null.
+
+Tato upozornění jsou vydávány v době kompilace. Kompilátor nepřidává žádné nulové kontroly nebo jiné runtime konstrukce v kontextu s možnou hodnotou null. Za běhu je ekvivalentní odkaz s možnou hodnotou null a odkaz, který nelze hodnotit.
 
 S přidáním typů odkazů s možnou hodnotou null můžete deklarovat svůj záměr jasněji. Hodnota `null` je správný způsob, jak reprezentovat, že proměnná neodkazuje na hodnotu. Nepoužívejte tuto funkci k `null` odebrání všech hodnot z kódu. Spíše byste měli deklarovat svůj záměr kompilátoru a dalším vývojářům, kteří čtou váš kód. Deklarováním záměru vás kompilátor informuje při psaní kódu, který není konzistentní s tímto záměrem.
 
@@ -34,7 +36,7 @@ S přidáním typů odkazů s možnou hodnotou null můžete deklarovat svůj z�
 string? name;
 ```
 
-Každá proměnná, `?` kde není připojen k názvu typu, je **typ odkazu s možnou hodnotou null**. To zahrnuje všechny proměnné typu odkazu v existujícím kódu, pokud jste tuto funkci povolili.
+Jakákoli proměnná, `?` kde není připojen k názvu typu, je **typ odkazu s možnou hodnotou null**. To zahrnuje všechny proměnné typu odkazu v existujícím kódu, když jste povolili tuto funkci.
 
 Kompilátor používá statickou analýzu k určení, pokud je známo, že odkaz s možnou hodnotou null není null. Kompilátor vás upozorní, pokud zrušíte odkaz na odkaz s možnou hodnotou null, pokud může být null. Toto chování můžete přepsat pomocí `!` [operátoru null-forgiving](language-reference/operators/null-forgiving.md) za názvem proměnné. Například pokud víte, `name` že proměnná není null, ale kompilátor vydá upozornění, můžete napsat následující kód přepsat analýzu kompilátoru:
 
@@ -48,8 +50,8 @@ Libovolný typ odkazu může mít jednu ze čtyř *hodnot nullabilities*, která
 
 - *Neplatné*: Null nelze přiřadit proměnné tohoto typu. Proměnné tohoto typu není nutné zkontrolovat null před dereferencing.
 - *Null:* Null lze přiřadit proměnné tohoto typu. Odstranění odkazování proměnných tohoto typu bez `null` předchozí kontroly způsobí upozornění.
-- *Nevšímavý*: Toto je stav před c# 8.0. Proměnné tohoto typu mohou být odkazované nebo přiřazeny bez upozornění.
-- *Neznámý*: Toto je obecně pro parametry typu, kde omezení neříkají kompilátoru, že typ musí být *nullable* nebo *nenullable*.
+- *Nevšímavý*: Nevšímavý je pre-C# 8.0 stavu. Proměnné tohoto typu mohou být odkazované nebo přiřazeny bez upozornění.
+- *Neznámý*: Neznámý je obecně pro parametry typu, kde omezení neříkají kompilátoru, že typ musí být *nullable* nebo *nenullable*.
 
 Nullability typu v deklaraci proměnné je řízen *a nullable kontextu,* ve kterém je deklarována proměnná.
 
@@ -86,7 +88,9 @@ Direktivy můžete také použít k nastavení stejných kontextů kdekoli v pro
 - `#nullable enable annotations`: Nastavte kontext poznámky s možnou hodnotou null na **povolenou hodnotu**.
 - `#nullable restore annotations`: Obnoví kontext upozornění na kontext poznámky do nastavení projektu.
 
-Ve výchozím nastavení jsou kontexty poznámk y s možnou hodnotou null a upozornění **zakázány**. To znamená, že váš existující kód se zkompiluje beze změn a bez generování nových upozornění.
+Ve výchozím nastavení jsou kontexty poznámk y s možnou hodnotou null a upozornění **zakázány**, včetně nových projektů. To znamená, že váš existující kód se zkompiluje beze změn a bez generování nových upozornění.
+
+Tyto možnosti poskytují dvě odlišné strategie [pro aktualizaci existujícího základu kódu](nullable-migration-strategies.md) pro použití typů odkazů s možnou hodnotou null.
 
 ## <a name="nullable-annotation-context"></a>Kontext poznámky s možnou hodnotou null
 
@@ -103,7 +107,7 @@ Kompilátor používá následující pravidla v povoleném kontextu poznámky s
 
 - Jakákoli proměnná typu odkazu je odkaz, který **lze neutírovat hodnotu null**.
 - Všechny odkazy, které nelze zrušit, mohou být bezpečně odkazovány.
-- Jakýkoli typ odkazu s `?` možnou hodnotou null (poznamenal po typu v deklaraci proměnné) může být null. Statická analýza určuje, zda je hodnota známo, že není null, když je odkazována. Pokud ne, kompilátor vás upozorní.
+- Jakýkoli typ odkazu s `?` možnou hodnotou null (poznamenal po typu v deklaraci proměnné) může být null. Statická analýza určuje, zda je hodnota známá jako nenulová, když je odkazována. Pokud ne, kompilátor vás upozorní.
 - Operátor null-forgiving můžete použít k prohlášení, že odkaz s možnou hodnotou null není null.
 
 V povoleném kontextu poznámky s `?` možnou hodnotou null znak připojený k typu odkazu deklaruje **typ odkazu s možnou hodnotou null**. `!` **Operátor null odpouštějící** může být připojen k výrazu deklarovat, že výraz není null.
@@ -115,7 +119,11 @@ Kontext upozornění s možnou hodnotou null se liší od kontextu poznámky s m
 1. Proměnná byla jednoznačně přiřazena k hodnotě nenulové hodnoty.
 1. Proměnná nebo výraz byl zkontrolován proti null před de-referencing to.
 
-Kompilátor generuje upozornění vždy, když dereference proměnné nebo výraz ve stavu **možná null,** když je povolen kontext upozornění s možnou hodnotou null. Kromě toho jsou generována upozornění, když je proměnná nebo výraz **možná null** přiřazen k neplatnému typu odkazu v povoleném kontextu poznámky s možnou hodnotou null.
+Kompilátor generuje upozornění, když zrušíte odkaz na proměnnou nebo výraz, který je **možná null** v kontextu upozornění s možnou hodnotou null. Kromě toho kompilátor generuje upozornění, když je neplatný typ odkazu přiřazen proměnné nebo výrazu **možná null** v povoleném kontextu poznámky s možnou hodnotou null.
+
+## <a name="attributes-describe-apis"></a>Atributy popisují api
+
+Přidáte atributy api, které poskytují kompilátoru další informace o tom, kdy argumenty nebo vrácené hodnoty může nebo nemůže být null. Další informace o těchto atributech naleznete v našem článku v referenčním jazyce, který zahrnuje [atributy s možnou hodnotou null](language-reference/attributes/nullable-analysis.md). Tyto atributy jsou přidávány do knihoven .NET přes aktuální a nadcházející verze. Nejčastěji používaná prostředí API jsou aktualizována jako první.
 
 ## <a name="see-also"></a>Viz také
 

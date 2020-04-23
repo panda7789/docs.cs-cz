@@ -2,12 +2,12 @@
 title: 'C# Vyhrazené atributy: Statická analýza s možnou hodnotou Null'
 ms.date: 04/14/2020
 description: Tyto atributy jsou interpretovány kompilátorem poskytnout lepší statickou analýzu pro nullable a nenulelné typy odkazů.
-ms.openlocfilehash: 0315d78db7517541efe578d8675c0f2fe45f5aea
-ms.sourcegitcommit: c91110ef6ee3fedb591f3d628dc17739c4a7071e
+ms.openlocfilehash: 33521133a6a01196e6e1ab9c3cdc191a24f1ecf3
+ms.sourcegitcommit: 73aa9653547a1cd70ee6586221f79cc29b588ebd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/15/2020
-ms.locfileid: "81389861"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "82102707"
 ---
 # <a name="reserved-attributes-contribute-to-the-compilers-null-state-static-analysis"></a>Vyhrazené atributy přispívají ke statické analýze nulového stavu kompilátoru.
 
@@ -129,7 +129,7 @@ public Customer FindCustomer(string lastName, string firstName)
 
 Pravděpodobně jste napsali metodu, `null` jako je tato, abyste se vrátili, když se nenašel hledaný název. Jasně `null` ukazuje, že záznam nebyl nalezen. V tomto příkladu byste pravděpodobně změnit `Customer` návratový typ z na `Customer?`. Deklarování vrácené hodnoty jako typu odkazu s možnou hodnotou null jasně určuje záměr tohoto rozhraní API.
 
-Z důvodů uvedených v [obecných definicích a nullability](../../nullable-attributes.md#generic-definitions-and-nullability) tato technika nefunguje s obecnými metodami. Můžete mít obecnou metodu, která následuje podobný vzor:
+Z důvodů uvedených v [obecných definicích a nullability](../../nullable-migration-strategies.md#generic-definitions-and-nullability) tato technika nefunguje s obecnými metodami. Můžete mít obecnou metodu, která následuje podobný vzor:
 
 ```csharp
 public T Find<T>(IEnumerable<T> sequence, Func<T, bool> match)

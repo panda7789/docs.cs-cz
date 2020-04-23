@@ -1,32 +1,32 @@
 ---
-title: LOH ve Windows - .NET
+title: Haldy velkých objektů (LOH) v systému Windows
 ms.date: 05/02/2018
 helpviewer_keywords:
 - large object heap (LOH)"
 - LOH
 - garbage collection, large object heap
 - GC [.NET ], large object heap
-ms.openlocfilehash: 5125b76dd26ffa4fb363ecf8449f65b490f57b93
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: ab9beca58b3d6118bc0f5121b6f5dec71a9f9f36
+ms.sourcegitcommit: 73aa9653547a1cd70ee6586221f79cc29b588ebd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "74283622"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "82102265"
 ---
 # <a name="the-large-object-heap-on-windows-systems"></a>Haldy velkých objektů v systémech Windows
 
-Uvolňování paměti .NET (GC) rozděluje objekty na malé a velké objekty. Pokud je objekt velký, některé jeho atributy se stanou významnějšími než v případě, že je objekt malý. Například komprimace – to znamená kopírování v paměti jinde na haldě – může být nákladné. Z tohoto důvodu .NET GarbageCollector umístí velké objekty na haldy velkých objektů (LOH). V tomto tématu se podíváme na haldu velkého objektu do hloubky. Budeme diskutovat o tom, co kvalifikuje objekt jako velký objekt, jak jsou shromažďovány tyto velké objekty a jaký druh výkonu důsledky velké objekty uložit.
+Systém uvolňování paměti .NET (GC) rozděluje objekty na malé a velké objekty. Pokud je objekt velký, některé jeho atributy se stanou významnějšími než v případě, že je objekt malý. Například komprimace,&mdash;která je, kopírování v paměti&mdash;jinde na haldě může být nákladné. Z tohoto důvodu systém uvolňování umístí velké objekty na haldy velkých objektů (LOH). Tento článek popisuje, co kvalifikuje objekt jako velký objekt, jak velké objekty jsou shromažďovány a jaký druh výkonu důsledky velké objekty uložit.
 
 > [!IMPORTANT]
-> Toto téma popisuje haldu velkých objektů v rozhraní .NET Framework a .NET Core spuštěné pouze v systémech Windows. Nezahrnuje LOH spuštěné na implementacích .NET na jiných platformách.
+> Tento článek popisuje haldu velkých objektů v rozhraní .NET Framework a .NET Core spuštěné pouze v systémech Windows. Nezahrnuje LOH spuštěné na implementacích .NET na jiných platformách.
 
-## <a name="how-an-object-ends-up-on-the-large-object-heap-and-how-gc-handles-them"></a>Jak objekt skončí na haldě velkého objektu a jak je gc zpracovává
+## <a name="how-an-object-ends-up-on-the-loh"></a>Jak objekt skončí na LOH
 
 Pokud je objekt větší nebo roven velikosti 85 000 bajtů, je považován za velký objekt. Toto číslo bylo určeno laděním výkonu. Pokud je požadavek na přidělení objektu pro 85 000 nebo více bajtů, přiděluje jej runtime na haldě velkého objektu.
 
-Chcete-li pochopit, co to znamená, je užitečné prozkoumat některé základy o .NET GC.
+Chcete-li pochopit, co to znamená, je užitečné prozkoumat některé základy o uvolňování paměti.
 
-Uvolňování .NET je generační kolektor. Má tři generace: generace 0, generace 1 a generace 2. Důvodem pro mít 3 generace je, že v dobře vyladěné aplikaci, většina objektů zemře v gen0. Například v serverové aplikaci by přidělení přidružená ke každému požadavku měla po dokončení požadavku zemřít. In-letu přidělení žádosti bude dělat to do gen1 a zemřít tam. Gen1 v podstatě funguje jako nárazník mezi oblastmi mladých objektů a oblastmi objektů s dlouhou životností.
+Systém uvolňování paměti je generační kolektor. Má tři generace: generace 0, generace 1 a generace 2. Důvodem pro mít 3 generace je, že v dobře vyladěné aplikaci, většina objektů zemře v gen0. Například v serverové aplikaci by přidělení přidružená ke každému požadavku měla po dokončení požadavku zemřít. In-letu přidělení žádosti bude dělat to do gen1 a zemřít tam. Gen1 v podstatě funguje jako nárazník mezi oblastmi mladých objektů a oblastmi objektů s dlouhou životností.
 
 Malé objekty jsou vždy přiděleny v generaci 0 a v závislosti na jejich životnosti může být povýšen na generaci 1 nebo generace2. Velké objekty jsou vždy přiděleny v generaci 2.
 
@@ -64,7 +64,7 @@ Obrázek 3: LOH po generaci 2 GC
 
 ## <a name="when-is-a-large-object-collected"></a>Kdy je velký objekt shromážděn?
 
-Obecně platí, že GC nastane, když dojde k jedné z následujících podmínek 3:
+Obecně platí, že GC dochází za jedné z následujících tří podmínek:
 
 - Přidělení překračuje prahovou hodnotu generace 0 nebo velkého objektu.
 
@@ -122,7 +122,7 @@ Přidělení haldy velkého objektu ovlivňují výkon následujícími způsoby
 
 Ze tří faktorů jsou první dva obvykle významnější než třetí. Z tohoto důvodu doporučujeme přidělit fond velkých objektů, které znovu použít namísto přidělování dočasných.
 
-## <a name="collecting-performance-data-for-the-loh"></a>Shromažďování údajů o výkonu pro LOH
+## <a name="collect-performance-data-for-the-loh"></a>Shromažďujte údaje o výkonu pro LOH
 
 Před shromažďováním údajů o výkonu pro určitou oblast byste již měli provést následující kroky:
 
@@ -310,6 +310,6 @@ Tento příkaz se rozdělí do ladicího programu a zobrazí zásobník volání
 
 CLR 2.0 přidal funkci s názvem *Hromadění virtuálních počítačích,* která může být užitečná pro scénáře, kde jsou často získávány a vydávány segmenty (včetně velkých a malých objektů). Chcete-li zadat hromadění virtuálních montovny, zadejte příznak spuštění volaný `STARTUP_HOARD_GC_VM` prostřednictvím hostitelského rozhraní API. Místo uvolnění prázdné segmenty zpět do operačního systému, CLR zruší potvrzení paměti na tyto segmenty a umístí je do pohotovostního seznamu. (Všimněte si, že CLR neumožňuje pro segmenty, které jsou příliš velké.) CLR později používá tyto segmenty k uspokojení nových požadavků segmentu. Při příštím, že vaše aplikace potřebuje nový segment, CLR používá jeden z tohoto seznamu pohotovostního režimu, pokud může najít ten, který je dostatečně velký.
 
-Hromadění virtuálních počítačů je také užitečné pro aplikace, které se chtějí držet segmenty, které již získaly, jako jsou některé serverové aplikace, které jsou dominantní aplikace spuštěné v systému, aby se zabránilo výjimkám z paměti.
+Hromadění virtuálních počítačů je také užitečné pro aplikace, které se chtějí držet segmenty, které již získaly, jako jsou některé serverové aplikace, které jsou dominantní aplikace spuštěné v systému, aby se zabránilo výjimkám z důvodu nedostatku paměti.
 
 Důrazně doporučujeme, abyste pečlivě otestovali aplikaci při použití této funkce, abyste zajistili, že vaše aplikace má poměrně stabilní využití paměti.

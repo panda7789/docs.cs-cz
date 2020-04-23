@@ -3,12 +3,12 @@ title: Slovníček k technologii .NET
 description: Zjistěte význam vybraných termínů použitých v dokumentaci k rozhraní .NET.
 ms.date: 01/22/2019
 ms.technology: dotnet-standard
-ms.openlocfilehash: d8f16579ea4dcbc9260aac83e16d3fbd30db519c
-ms.sourcegitcommit: 1c1a1f9ec0bd1efb3040d86a79f7ee94e207cca5
+ms.openlocfilehash: e7608ee7e68300d691df51aed923db0e8b518165
+ms.sourcegitcommit: 73aa9653547a1cd70ee6586221f79cc29b588ebd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/03/2020
-ms.locfileid: "80635573"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "82102473"
 ---
 # <a name="net-glossary"></a>Slovníček k technologii .NET
 
@@ -54,9 +54,12 @@ Přesný význam závisí na kontextu, ale common language runtime obvykle odkaz
 
 Tento CLR je sestaven ze stejného základu kódu jako CLR. Původně byl CoreCLR runtime programu Silverlight a byl navržen tak, aby běžel na více platformách, konkrétně na platformách Windows a OS X. CoreCLR je nyní součástí .NET Core a představuje zjednodušenou verzi CLR. Je to stále [runtime napříč](#cross-platform) platformami, nyní včetně podpory mnoha distribucí Linuxu. CoreCLR je také virtuální počítač s možnostmi JIT a spuštění kódu.
 
-## <a name="corefx"></a>CoreFX
+## <a name="corefx"></a>CoreFx
 
 Knihovna základních tříd .NET Core (BCL)
+
+> [!TIP]
+> *Fx* je zkratka pro *rámec*.
 
 Sada knihoven, které tvoří systém. \* (a v omezené míře\*Microsoft.) obory názvů. BCL je obecný účel, nižší úroveň rámce, které vyšší úrovně aplikační architektury, jako je například ASP.NET Core, stavět na. Zdrojový kód souboru .NET Core BCL je obsažen v [úložišti runtime .NET Core](https://github.com/dotnet/runtime). Většina rozhraní API .NET Core jsou však k dispozici také v rozhraní .NET Framework, takže si můžete myslet CoreFX jako rozsvázu rozhraní .NET Framework BCL.
 

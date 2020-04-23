@@ -2,12 +2,12 @@
 title: dotnet obnovit, příkaz
 description: Pomocí příkazu dotnet restore se dozvíte, jak obnovit závislosti a nástroje specifické pro projekt.
 ms.date: 02/27/2020
-ms.openlocfilehash: c5cc9adf1d77b0ab03a61cc315d42c2f38362ad9
-ms.sourcegitcommit: 348bb052d5cef109a61a3d5253faa5d7167d55ac
+ms.openlocfilehash: 3deef68a9bcee389a52291c72e7e1a1019a739fd
+ms.sourcegitcommit: 73aa9653547a1cd70ee6586221f79cc29b588ebd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "82021783"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "82102785"
 ---
 # <a name="dotnet-restore"></a>dotnet restore
 
@@ -34,9 +34,22 @@ dotnet restore -h|--help
 
 Příkaz `dotnet restore` používá NuGet k obnovení závislostí, stejně jako nástroje specifické pro projekt, které jsou zadány v souboru projektu. Ve výchozím nastavení jsou obnovení závislostí a nástrojů spouštěny paralelně.
 
-Chcete-li obnovit závislosti, NuGet potřebuje kanály, kde jsou umístěny balíčky. Informační kanály jsou obvykle poskytovány prostřednictvím konfiguračního souboru *nuget.config.* Při instalaci sady .NET Core SDK je k dispozici výchozí konfigurační soubor. Další informační kanály zadáte vytvořením vlastního souboru *nuget.config* v adresáři projektu. Kanály *nuget.config* můžete přepsat pomocí `-s` možnosti - .
+### <a name="specify-feeds"></a>Určení informačních kanálů
+
+Chcete-li obnovit závislosti, NuGet potřebuje kanály, kde jsou umístěny balíčky. Informační kanály jsou obvykle poskytovány prostřednictvím konfiguračního souboru *nuget.config.* Při instalaci sady .NET Core SDK je k dispozici výchozí konfigurační soubor. Chcete-li zadat další informační kanály, proveďte jeden z následujících akcí:
+
+- Vytvořte si vlastní soubor *nuget.config* v adresáři projektu. Další informace naleznete [v tématu Běžné konfigurace NuGet](/nuget/consume-packages/configuring-nuget-behavior) a [nuget.config rozdíly](#nugetconfig-differences) dále v tomto článku.
+- Používejte `dotnet nuget` příkazy, [`dotnet nuget add source`](dotnet-nuget-add-source.md)například .
+
+Kanály *nuget.config* můžete přepsat pomocí `-s` možnosti.
+
+Informace o použití ověřených informačních kanálů naleznete v [tématu Náročné balíčky z ověřených informačních kanálů](/nuget/consume-packages/consuming-packages-authenticated-feeds).
+
+### <a name="package-cache"></a>Mezipaměť balíčků
 
 U závislostí určíte, kam budou obnovené balíčky umístěny během operace obnovení pomocí argumentu. `--packages` Pokud není zadán, je použita výchozí mezipaměť balíčku `.nuget/packages` NuGet, která se nachází v adresáři v domovském adresáři uživatele ve všech operačních systémech. Například */home/user1* v Systému Linux nebo *C:\Users\user1* v systému Windows.
+
+### <a name="project-specific-tooling"></a>Nástroje specifické pro projekt
 
 Pro nástroje specifické pro `dotnet restore` projekt nejprve obnoví balíček, ve kterém je nástroj zabalen a potom pokračuje obnovit závislosti nástroje, jak je uvedeno v jeho souboru projektu.
 

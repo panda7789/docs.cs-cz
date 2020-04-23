@@ -8,12 +8,12 @@ helpviewer_keywords:
 - configuration switches
 - configuration
 ms.assetid: 4ce07f47-7ddb-4d91-b067-501bd8b88752
-ms.openlocfilehash: 95ae438e9fb52cc584d18a981bffb66147eb4a77
-ms.sourcegitcommit: 7980a91f90ae5eca859db7e6bfa03e23e76a1a50
+ms.openlocfilehash: 8d5cd73bb9393533cb669581420e24297cb5ff71
+ms.sourcegitcommit: 73aa9653547a1cd70ee6586221f79cc29b588ebd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "81242813"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "82102928"
 ---
 # <a name="appcontextswitchoverrides-element"></a>\<AppContextSwitchOverrides> prvek
 
@@ -55,11 +55,11 @@ Definuje jeden nebo více přepínačů používaných třídou <xref:System.App
 |`runtime`|Obsahuje informace o možnostech inicializace modulu runtime.|
 
 ## <a name="remarks"></a>Poznámky
- Počínaje rozhraním .NET Framework 4.6 umožňuje `<AppContextSwitchOverrides>` prvek v konfiguračním souboru volajícím rozhraní API určit, zda jejich aplikace může využívat nové funkce nebo zachovat kompatibilitu s předchozími verzemi knihovny. Například pokud chování rozhraní API se změnilo mezi dvěma `<AppContextSwitchOverrides>` verzemi knihovny, prvek umožňuje volajícím tohoto rozhraní API odhlásit nové chování na verze knihovny, které podporují nové funkce. Pro aplikace, které volají rozhraní API `<AppContextSwitchOverrides>` v rozhraní .NET Framework, prvek může také povolit volajícím, jejichž aplikace cílstarší verze rozhraní .NET Framework se přihlásit do nové funkce, pokud jejich aplikace běží na verzi rozhraní .NET Framework, který obsahuje tuto funkci.
+ Počínaje rozhraním .NET Framework `<AppContextSwitchOverrides>` 4.6 umožňuje prvek v konfiguračním souboru volajícím rozhraní API určit, zda jejich aplikace může využívat nové funkce nebo zachovat kompatibilitu s předchozími verzemi knihovny. Například pokud chování rozhraní API se změnilo mezi dvěma `<AppContextSwitchOverrides>` verzemi knihovny, prvek umožňuje volajícím tohoto rozhraní API odhlásit nové chování na verze knihovny, které podporují nové funkce. Pro aplikace, které volají rozhraní API `<AppContextSwitchOverrides>` v rozhraní .NET Framework, prvek může také povolit volajícím, jejichž aplikace cílstarší verze rozhraní .NET Framework se přihlásit do nové funkce, pokud jejich aplikace běží na verzi rozhraní .NET Framework, který obsahuje tuto funkci.
 
  Atribut `value` `<AppContextSwitchOverrides>` prvku se skládá z jednoho řetězce, který se skládá z jednoho nebo více párů název/hodnota oddělený středníkem.  Každý název identifikuje přepínač kompatibility a jeho odpovídající`true` hodnota `false`je logická hodnota ( nebo ), která označuje, zda je přepínač nastaven. Ve výchozím nastavení `false`je přepínač a knihovny poskytují nové funkce. Poskytují pouze předchozí funkce, pokud je přepínač nastaven (to `true`znamená, že jeho hodnota je ). To umožňuje knihovnám poskytovat nové chování pro existující rozhraní API a současně umožňuje volajícím, kteří jsou závislí na předchozím chování, odhlásit se z nové funkce.
 
- Rozhraní .NET Framework podporuje následující přepínače:
+Rozhraní .NET Framework podporuje následující přepínače:
 
 |Název přepínače|Popis|Zavedena|
 |-----------------|-----------------|----------------|
@@ -141,7 +141,7 @@ Definuje jeden nebo více přepínačů používaných třídou <xref:System.App
 
  Vývojáři knihovny mohou také definovat vlastní přepínače, které volajícím umožňují odhlásit se ze změněných funkcí zavedených v novějších verzích jejich knihoven. Další informace naleznete <xref:System.AppContext> ve třídě.
 
-## <a name="switches-in-aspnet-applications"></a>Přepínače v ASP.NET aplikacích
+## <a name="switches-in-aspnet-apps"></a>Přepínače v ASP.NET aplikacích
 
 Aplikaci ASP.NET můžete nakonfigurovat tak, [ \<](../appsettings/add-element-for-appsettings.md) aby používala nastavení kompatibility přidáním prvku Add>do části [ \<applicationSettings>](../appsettings/index.md) souboru web.config.
 
@@ -179,6 +179,7 @@ Následující příklad používá `<add>` prvek k přidání `<appSettings>` d
 
 ## <a name="see-also"></a>Viz také
 
+- [Zmírnění nových chování v rozhraní .NET Framework 4.6 a novějších](../../../migration-guide/mitigations.md)
 - <xref:System.AppContext?displayProperty=nameWithType>
 - [\<> element za běhu](runtime-element.md)
 - [\<konfigurace> Element](../configuration-element.md)

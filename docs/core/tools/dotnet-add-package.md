@@ -2,12 +2,12 @@
 title: dotnet přidat balíček, příkaz
 description: Příkaz "dotnet add package" poskytuje vhodnou možnost přidání odkazu na balíček NuGet do projektu.
 ms.date: 02/14/2020
-ms.openlocfilehash: 24a25cdab2aab30d52f8407adfda437f47437290
-ms.sourcegitcommit: 927b7ea6b2ea5a440c8f23e3e66503152eb85591
+ms.openlocfilehash: 1d57aed59ccd45417c88f9b6a2f9dd768fda9b58
+ms.sourcegitcommit: 73aa9653547a1cd70ee6586221f79cc29b588ebd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81463758"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "82102850"
 ---
 # <a name="dotnet-add-package"></a>dotnet add package
 
@@ -32,8 +32,6 @@ dotnet add package -h|--help
 
 Příkaz `dotnet add package` poskytuje vhodnou možnost přidání odkazu na balíček do souboru projektu. Po spuštění příkazu je kontrola kompatibility k zajištění balíček je kompatibilní s rámci v projektu. Pokud kontrola předá, `<PackageReference>` je do souboru projektu přidán prvek a je spuštěno obnovení [dotnet.](dotnet-restore.md)
 
-[!INCLUDE[DotNet Restore Note](../../../includes/dotnet-restore-note.md)]
-
 Například přidání `Newtonsoft.Json` do *ToDo.csproj* vytváří výstup podobný následujícímu příkladu:
 
 ```console
@@ -54,6 +52,10 @@ Soubor *ToDo.csproj* nyní [`<PackageReference>`](/nuget/consume-packages/packag
 ```xml
 <PackageReference Include="Newtonsoft.Json" Version="12.0.1" />
 ```
+
+### <a name="implicit-restore"></a>Implicitní obnovení
+
+[!INCLUDE[DotNet Restore Note](../../../includes/dotnet-restore-note.md)]
 
 ## <a name="arguments"></a>Argumenty
 

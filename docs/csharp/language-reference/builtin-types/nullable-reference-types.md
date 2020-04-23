@@ -2,12 +2,12 @@
 title: Typy odkazů s možnou hodnotou Null – odkaz jazyka C#
 description: Informace o typech odkazů s možnou hodnotou C# s možnou hodnotou null a jejich použití
 ms.date: 04/06/2020
-ms.openlocfilehash: cbc7397ac76b43b79a4168f4c61fe2c631b4a46b
-ms.sourcegitcommit: 2b3b2d684259463ddfc76ad680e5e09fdc1984d2
+ms.openlocfilehash: cb61b162b06faa51faabbcdd91e55618cdeaca73
+ms.sourcegitcommit: 73aa9653547a1cd70ee6586221f79cc29b588ebd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80888314"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "82102694"
 ---
 # <a name="nullable-reference-types-c-reference"></a>Typy odkazů s možnou hodnotou Null (odkaz jazyka C#)
 
@@ -61,11 +61,11 @@ Následující úryvek ukazuje, kde kompilátor vydává upozornění při použ
 
 :::code language="csharp" source="snippets/NullableReferenceTypes.cs" id="SnippetLocalWarnings":::
 
-Předchozí příklady ukazují statické analýzy kompilátoru k určení nulového stavu referenčních proměnných. Kompilátor použije jazyková pravidla pro nulové kontroly a přiřazení, aby informoval svou analýzu.  Kompilátor nemůže dělat předpoklady o sémantiku metod nebo vlastností. Pokud voláte metody, které provádějí nulové kontroly, kompilátor nemůže vědět, tyto metody ovlivňují stav null proměnné. Existuje několik atributů, které můžete přidat do svých api informovat kompilátor o sémantiku argumentů a vrácené hodnoty. Tyto atributy byly použity pro mnoho běžných rozhraní API v knihovnách .NET Core. Například <xref:System.String.IsNullOrEmpty%2A> byla aktualizována a kompilátor správně interpretuje tuto metodu jako kontrolu null. Další informace o atributech, které platí pro statickou analýzu nulového stavu, naleznete v článku [atributů Nullable](../../nullable-attributes.md).
+Předchozí příklady ukazují statické analýzy kompilátoru k určení nulového stavu referenčních proměnných. Kompilátor použije jazyková pravidla pro nulové kontroly a přiřazení, aby informoval svou analýzu.  Kompilátor nemůže dělat předpoklady o sémantiku metod nebo vlastností. Pokud voláte metody, které provádějí nulové kontroly, kompilátor nemůže vědět, tyto metody ovlivňují stav null proměnné. Existuje několik atributů, které můžete přidat do svých api informovat kompilátor o sémantiku argumentů a vrácené hodnoty. Tyto atributy byly použity pro mnoho běžných rozhraní API v knihovnách .NET Core. Například <xref:System.String.IsNullOrEmpty%2A> byla aktualizována a kompilátor správně interpretuje tuto metodu jako kontrolu null. Další informace o atributech, které platí pro statickou analýzu nulového stavu, naleznete v článku [atributů Nullable](../attributes/nullable-analysis.md).
 
 ## <a name="setting-the-nullable-context"></a>Nastavení kontextu s možnou hodnotou null
 
-Existují dva způsoby, jak řídit kontext s možnou hodnotou null. Na úrovni projektu můžete přidat `<Nullable>enable</Nullable>` nastavení projektu. Ve zdrojovém souboru C# `#nullable enable` můžete přidat pragma povolit kontext s možnou hodnotou null. Viz článek o [nastavení strategie s možnou hodnotou null](../../nullable-attributes.md).
+Existují dva způsoby, jak řídit kontext s možnou hodnotou null. Na úrovni projektu můžete přidat `<Nullable>enable</Nullable>` nastavení projektu. Ve zdrojovém souboru C# `#nullable enable` můžete přidat pragma povolit kontext s možnou hodnotou null. Viz článek o [nastavení strategie s možnou hodnotou null](../../nullable-migration-strategies.md).
 
 ## <a name="c-language-specification"></a>specifikace jazyka C#
 

@@ -3,12 +3,12 @@ title: Nastavení konfigurace systému uvolňování paměti
 description: Informace o nastavení za běhu pro konfiguraci, jak systém uvolňování paměti spravuje paměť pro aplikace .NET Core.
 ms.date: 01/09/2020
 ms.topic: reference
-ms.openlocfilehash: dfb641eeda03d1acaa4771bd6253fcb33c4082a6
-ms.sourcegitcommit: d9470d8b2278b33108332c05224d86049cb9484b
+ms.openlocfilehash: ec575bdd17c8a7c290673b7085074bbba94cedef
+ms.sourcegitcommit: 73aa9653547a1cd70ee6586221f79cc29b588ebd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/17/2020
-ms.locfileid: "81607807"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "82102863"
 ---
 # <a name="run-time-configuration-options-for-garbage-collection"></a>Možnosti konfigurace za běhu pro uvolňování paměti
 
@@ -24,7 +24,7 @@ Nastavení jsou uspořádána do skupin na této stránce. Nastavení v rámci k
 
 ## <a name="flavors-of-garbage-collection"></a>Příchutě uvolňování paměti
 
-Dvě hlavní varianty uvolňování paměti jsou pracovní stanice GC a server GC. Další informace o rozdílech mezi těmito dvěma, naleznete [v tématu Základy uvolňování paměti](../../standard/garbage-collection/fundamentals.md#workstation-and-server-garbage-collection).
+Dvě hlavní varianty uvolňování paměti jsou pracovní stanice GC a server GC. Další informace o rozdílech mezi těmito dvěma informacemi naleznete v tématu [Workstation and server garbage collection](../../standard/garbage-collection/workstation-server-gc.md).
 
 Podpříchutě uvolňování paměti jsou pozadí a non-souběžné.
 
@@ -72,7 +72,7 @@ Soubor projektu:
 
 - Konfiguruje, zda je povoleno uvolňování paměti na pozadí (souběžné).
 - Výchozí hodnota:`true`Povoleno ( ).
-- Další informace naleznete v [tématu Uvolňování paměti na pozadí](../../standard/garbage-collection/fundamentals.md#background-workstation-garbage-collection) a uvolňování paměti serveru na [pozadí](../../standard/garbage-collection/fundamentals.md#background-server-garbage-collection).
+- Další informace naleznete v [tématu uvolňování paměti na pozadí](../../standard/garbage-collection/background-gc.md).
 
 | | Název nastavení | Hodnoty | Zavedená verze |
 | - | - | - | - |
@@ -240,7 +240,7 @@ Příklad:
 
 - Určuje maximální velikost potvrzení v bajtech pro hromadu GC a účetnictví gc.
 - Toto nastavení platí pouze pro 64bitové počítače.
-- Výchozí hodnota, která platí pouze v určitých případech, je menší 20 MB nebo 75 % limitu paměti v kontejneru. Výchozí hodnota se použije v případě, že:
+- Výchozí hodnota, která platí pouze v určitých případech, je větší 20 MB nebo 75 % limitu paměti v kontejneru. Výchozí hodnota se použije v případě, že:
 
   - Proces je spuštěn uvnitř kontejneru, který má zadaný limit paměti.
   - [System.GC.HeapHardLimitPercent](#systemgcheaphardlimitpercentcomplus_gcheaphardlimitpercent) není nastavena.

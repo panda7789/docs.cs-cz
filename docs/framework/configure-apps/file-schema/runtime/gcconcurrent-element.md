@@ -9,12 +9,12 @@ helpviewer_keywords:
 - gcConcurrent element
 - <gcConcurrent> element
 ms.assetid: 503f55ba-26ed-45ac-a2ea-caf994da04cd
-ms.openlocfilehash: 5957337aa960a0d5f445249b410dbfaddb7b08e9
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 249518ae7477d284d50f9010757db83b7752c657
+ms.sourcegitcommit: 73aa9653547a1cd70ee6586221f79cc29b588ebd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79400041"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "82102915"
 ---
 # <a name="gcconcurrent-element"></a>\<gcConcurrent> element
 
@@ -54,7 +54,7 @@ Následující části popisují atributy, podřízené prvky a nadřazené prvk
 
 ### <a name="parent-elements"></a>Nadřazené prvky
 
-|Element|Popis|
+|Prvek|Popis|
 |-------------|-----------------|
 |`configuration`|Kořenový prvek v každém konfiguračním souboru, který je používán modulem Common Language Runtime (CLR) a aplikacemi rozhraní .NET Framework.|
 |`runtime`|Obsahuje informace o vazbách sestavení a uvolnění paměti.|
@@ -82,7 +82,7 @@ Následující konfigurační soubor zakáže uvolňování paměti na pozadí:
 
 Pokud je v konfiguračním souboru počítače nastaveno **gcConcurrentSetting,** definuje výchozí hodnotu pro všechny aplikace rozhraní .NET Framework. Nastavení konfiguračního souboru počítače přepíše nastavení konfiguračního souboru aplikace.
 
-Další informace o souběžné a pozadí uvolňování paměti naleznete [v části Souběžné uvolňování paměti](../../../../standard/garbage-collection/fundamentals.md#concurrent-garbage-collection), uvolňování paměti pracovní stanice na [pozadí](../../../../standard/garbage-collection/fundamentals.md#background-workstation-garbage-collection)a uvolňování paměti serveru [na pozadí](../../../../standard/garbage-collection/fundamentals.md#background-server-garbage-collection) v článku [Základy uvolňování paměti.](../../../../standard/garbage-collection/fundamentals.md)
+Další informace o souběžné a pozadí uvolňování paměti naleznete v [tématu uvolňování paměti na pozadí](../../../../standard/garbage-collection/background-gc.md).
 
 ## <a name="example"></a>Příklad
 
@@ -98,6 +98,6 @@ Následující příklad umožňuje uvolňování paměti na pozadí:
 
 ## <a name="see-also"></a>Viz také
 
-- [Schéma nastavení běhového prostředí](index.md)
+- [Schéma nastavení běhu](index.md)
 - [Schéma konfiguračního souboru](../index.md)
 - [Základy kolekce paměti](../../../../standard/garbage-collection/fundamentals.md)

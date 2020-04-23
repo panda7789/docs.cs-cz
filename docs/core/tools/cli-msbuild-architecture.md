@@ -2,12 +2,12 @@
 title: Architektura nástrojů příkazového řádku .NET Core
 description: Přečtěte si o vrstvách nástrojů .NET Core a o tom, co se změnilo v posledních verzích.
 ms.date: 03/06/2017
-ms.openlocfilehash: fde1a0acb6af9dd65aa3466b4ea37473b2eab6fb
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: e1a9fe59225c17d54f6e7213d2b3c3fa70ee58e0
+ms.sourcegitcommit: 73aa9653547a1cd70ee6586221f79cc29b588ebd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "77092912"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "82102876"
 ---
 # <a name="high-level-overview-of-changes-in-the-net-core-tools"></a>Přehled změn v nástrojích .NET Core na vysoké úrovni
 
@@ -30,7 +30,7 @@ Začněme s rychlým osvěžením při vrstvách náhledu 2, jak je znázorněno
 
 ![Náhled 2 nástrojů architektury na vysoké úrovni](media/cli-msbuild-architecture/p2-arch.png)
 
-Vrstvení nástrojů v náhledu 2 je jednoduché. V dolní části je základem rozhraní PŘÍKAZOVÉHO ŘÁDKU jádra .NET. Všechny ostatní nástroje vyšší úrovně, jako je například Visual Studio nebo Visual Studio Code, závisí a spoléhají na cli k vytváření projektů, obnovení závislostí a tak dále. Například pokud Visual Studio chtěl provést operaci obnovení, `dotnet restore` by volání do příkazu ([viz poznámka](#dotnet-restore-note)) v příkazu cli.
+Vrstvení nástrojů v náhledu 2 je jednoduché. V dolní části je základem rozhraní PŘÍKAZOVÉHO ŘÁDKU jádra .NET. Všechny ostatní nástroje vyšší úrovně, jako je například Visual Studio nebo Visual Studio Code, závisí a spoléhají na cli k vytváření projektů, obnovení závislostí a tak dále. Například pokud Visual Studio chtěl provést operaci obnovení, `dotnet restore` bude volat do příkazu v příkazu příkazu příkazu.
 
 S přechodem na nový systém projektu se předchozí diagram změní:
 
@@ -41,7 +41,7 @@ Hlavní rozdíl je v tom, že CLI již není základní vrstvou; tuto roli nyní
 > [!NOTE]
 > "Cíl" je termín MSBuild, který označuje pojmenovanou operaci, kterou může MSBuild vyvolat. Obvykle je spojen s jedním nebo více úloh, které provádějí některé logiky, které cíl má dělat. MSBuild podporuje mnoho hotových `Copy` cílů, jako je například nebo `Execute`; umožňuje také uživatelům psát vlastní úkoly pomocí spravovaného kódu a definovat cíle pro provádění těchto úkolů. Další informace naleznete v tématu [MSBuild tasks](/visualstudio/msbuild/msbuild-tasks).
 
-Všechny sady nástrojů nyní spotřebovávají sdílenou komponentu Sady SDK a její cíle, včetně cli. Například Visual Studio 2019 nevolá `dotnet restore` do příkazu ([viz poznámka](#dotnet-restore-note)) k obnovení závislostí pro projekty .NET Core. Místo toho používá cíl "Obnovit" přímo. Vzhledem k tomu, že se jedná o cíle MSBuild, můžete také použít nezpracovaná MSBuild k jejich spuštění pomocí příkazu [dotnet msbuild.](dotnet-msbuild.md)
+Všechny sady nástrojů nyní spotřebovávají sdílenou komponentu Sady SDK a její cíle, včetně cli. Například Visual Studio 2019 nevolá `dotnet restore` do příkazu obnovit závislosti pro projekty .NET Core. Místo toho používá cíl "Obnovit" přímo. Vzhledem k tomu, že se jedná o cíle MSBuild, můžete také použít nezpracovaná MSBuild k jejich spuštění pomocí příkazu [dotnet msbuild.](dotnet-msbuild.md)
 
 ### <a name="cli-commands"></a>Příkazy příkazového příkazu
 
@@ -73,5 +73,6 @@ Tento příkaz publikuje aplikaci do `pub` složky pomocí konfigurace "Release"
 
 Významné výjimky z tohoto `new` `run` pravidla jsou příkazy a. Nebyly implementovány jako cíle MSBuild.
 
-<a name="dotnet-restore-note"></a>
+### <a name="implicit-restore"></a>Implicitní obnovení
+
 [!INCLUDE[DotNet Restore Note](~/includes/dotnet-restore-note.md)]

@@ -3,12 +3,12 @@ title: Co je nového v C# 7.0 - C# Průvodce
 description: Získejte přehled o nových funkcích ve verzi 7.0 jazyka C#.
 ms.date: 02/20/2019
 ms.assetid: fd41596d-d0c2-4816-b94d-c4d00a5d0243
-ms.openlocfilehash: a6ac5c00ceb2ce8e5e56e2a86a8cde937d5108e2
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 1291de95b88b3de16fb94fb376fb4153dd4a5862
+ms.sourcegitcommit: 73aa9653547a1cd70ee6586221f79cc29b588ebd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79399691"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "82102668"
 ---
 # <a name="whats-new-in-c-70"></a>Co je nového v jazyce C# 7.0
 
@@ -16,11 +16,11 @@ C# 7.0 přidá do jazyka C# řadu nových funkcí:
 
 - [`out`Proměnné](#out-variables)
   - Hodnoty vuvedené jako argumenty můžete deklarovat `out` jako argumenty pro metodu, kde se používají.
-- [Záznamů](#tuples)
+- [N-tice](#tuples)
   - Můžete vytvořit zjednodušené, nepojmenované typy, které obsahují více veřejných polí. Kompilátory a nástroje IDE pochopit sémantiku těchto typů.
 - [Zahození](#discards)
   - Zahození jsou dočasné proměnné pouze pro zápis používané v přiřazeních, pokud se nestaráte o přiřazenou hodnotu. Jsou nejužitečnější při deconstructing řazené kolekce členů a uživatelem definované typy, stejně jako při volání metody s `out` parametry.
-- [Porovnávání](#pattern-matching)
+- [Porovnávání vzorů](#pattern-matching)
   - Můžete vytvořit logiku větvení na základě libovolných typů a hodnot členů těchto typů.
 - [`ref`místní obyvatelé a vrací](#ref-locals-and-returns)
   - Metoda místní proměnné a vrácené hodnoty mohou být odkazy na jiné úložiště.
@@ -211,7 +211,7 @@ Stejnou techniku lze `async` použít s metodami, které zajišťují, že výji
 [!code-csharp[TaskExample](~/samples/snippets/csharp/new-in-7/AsyncWork.cs#TaskExample "Task returning method with local function")]
 
 > [!NOTE]
-> Některé návrhy, které jsou podporovány místními funkcemi, lze také provést pomocí *výrazů lambda*. Další informace naleznete [v tématu Místní funkce vs. lambda výrazy](../local-functions-vs-lambdas.md).
+> Některé návrhy, které jsou podporovány místními funkcemi, lze také provést pomocí *výrazů lambda*. Další informace naleznete [v tématu Místní funkce vs. lambda výrazy](../programming-guide/classes-and-structs/local-functions.md#local-functions-vs-lambda-expressions).
 
 ## <a name="more-expression-bodied-members"></a>Více členů s výrazovým tělem
 

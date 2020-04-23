@@ -2,12 +2,12 @@
 title: Jazyková správa jazyka C# – průvodce c#
 description: Zjistěte, jak je určena jazyková verze jazyka C# na základě projektu a důvody této volby. Přečtěte si, jak ručně přepsat výchozí nastavení.
 ms.date: 02/21/2020
-ms.openlocfilehash: ef7275aad7638f52ecbfca1dfbdb962ae242fb48
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 850c4a860878593d80aaa3b7b38efaff9e003f43
+ms.sourcegitcommit: 73aa9653547a1cd70ee6586221f79cc29b588ebd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79399537"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "82102655"
 ---
 # <a name="c-language-versioning"></a>Správa jazykových verzí jazyka C#
 
@@ -20,7 +20,7 @@ C# 8.0 (a vyšší) je podporována pouze na .NET Core 3.x a novější verze. M
 - Výchozí implementace člena rozhraní vyžaduje nové funkce v clru .NET Core 3.0.
 - Asynchronní datové proudy <xref:System.IAsyncDisposable?displayProperty=nameWithType> <xref:System.Collections.Generic.IAsyncEnumerable%601?displayProperty=nameWithType>vyžadují <xref:System.Collections.Generic.IAsyncEnumerator%601?displayProperty=nameWithType>nové typy , a .
 - Indexy a rozsahy vyžadují <xref:System.Index?displayProperty=nameWithType> <xref:System.Range?displayProperty=nameWithType>nové typy a .
-- Typy odkazů s možnou hodnotou Null využívají několik [atributů](../nullable-attributes.md) k zajištění lepších upozornění. Tyto atributy byly přidány do rozhraní .NET Core 3.0. Ostatní cílové rámce nebyly anotovány s některou z těchto atributů. To znamená, že upozornění, která lze zrušit, nemusí přesně odrážet potenciální problémy.
+- Typy odkazů s možnou hodnotou Null využívají několik [atributů](attributes/nullable-analysis.md) k zajištění lepších upozornění. Tyto atributy byly přidány do rozhraní .NET Core 3.0. Ostatní cílové rámce nebyly anotovány s některou z těchto atributů. To znamená, že upozornění, která lze zrušit, nemusí přesně odrážet potenciální problémy.
 
 ## <a name="defaults"></a>Ve výchozím nastavení
 
@@ -77,7 +77,7 @@ V následující tabulce jsou uvedeny všechny aktuální jazykové verze jazyka
 
 |Hodnota|Význam|
 |------------|-------------|
-|Náhled|Kompilátor přijímá všechny platné syntaxe jazyka z nejnovější verze preview.|
+|preview|Kompilátor přijímá všechny platné syntaxe jazyka z nejnovější verze preview.|
 |nejnovější|Kompilátor přijímá syntaxi z nejnovější vydané verze kompilátoru (včetně dílčí verze).|
 |nejnovějšíMajor|Kompilátor přijímá syntaxi z nejnovější vydané hlavní verze kompilátoru.|
 |8.0|Kompilátor přijímá pouze syntaxi, která je zahrnuta v C# 8.0 nebo nižší.|

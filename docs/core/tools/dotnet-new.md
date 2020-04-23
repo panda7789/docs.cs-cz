@@ -2,12 +2,12 @@
 title: dotnet nový příkaz
 description: Nový příkaz dotnet vytvoří nové projekty .NET Core založené na zadané šabloně.
 ms.date: 04/10/2020
-ms.openlocfilehash: 4ad0d7e54f93582237ed9457b562957018916d36
-ms.sourcegitcommit: 927b7ea6b2ea5a440c8f23e3e66503152eb85591
+ms.openlocfilehash: 1979f98a6005a414acc64c5eaa086a88aca9f033
+ms.sourcegitcommit: 73aa9653547a1cd70ee6586221f79cc29b588ebd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81463616"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "82102824"
 ---
 # <a name="dotnet-new"></a>dotnet new
 
@@ -35,6 +35,10 @@ dotnet new -h|--help
 Příkaz `dotnet new` vytvoří projekt .NET Core nebo jiné artefakty založené na šabloně.
 
 Příkaz volá [modul šablony](https://github.com/dotnet/templating) k vytvoření artefaktů na disku na základě zadané šablony a možností.
+
+### <a name="implicit-restore"></a>Implicitní obnovení
+
+[!INCLUDE[dotnet restore note](~/includes/dotnet-restore-note.md)]
 
 ## <a name="arguments"></a>Argumenty
 

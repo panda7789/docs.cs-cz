@@ -5,20 +5,20 @@ helpviewer_keywords:
 - GCCpuGroup element
 - <GCCpuGroup> element
 ms.assetid: c1fc7d6c-7220-475c-a312-5b8b201f66e0
-ms.openlocfilehash: ae9c96c9d49cf3f6be94da3f77b91423cab12e0b
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: f1cbe5a7109d6e4aae2e92710920a1c6b3a40d00
+ms.sourcegitcommit: 73aa9653547a1cd70ee6586221f79cc29b588ebd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74430477"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "82102889"
 ---
-# <a name="gccpugroup-element"></a>\<element > GCCpuGroup
+# <a name="gccpugroup-element"></a>\<Prvek> skupiny GCCpuGroup
 
-Určuje, zda uvolňování paměti podporuje více skupin PROCESORů.
+Určuje, zda uvolňování paměti podporuje více skupin procesoru.
 
-[**konfigurační >\<** ](../configuration-element.md)\
-&nbsp;&nbsp;[ **\<runtime >** ](runtime-element.md)\
-&nbsp;&nbsp;&nbsp;&nbsp; **\<GCCpuGroup >**
+[**\<>konfigurace**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<>za běhu**](runtime-element.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;**\<>GCCpuGroup**
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -35,14 +35,14 @@ Následující části popisují atributy, podřízené prvky a nadřazené prvk
 
 |Atribut|Popis|
 |---------------|-----------------|
-|`enabled`|Požadovaný atribut.<br /><br /> Určuje, zda uvolňování paměti podporuje více skupin PROCESORů.|
+|`enabled`|Požadovaný atribut.<br /><br /> Určuje, zda uvolňování paměti podporuje více skupin procesoru.|
 
 ## <a name="enabled-attribute"></a>Atribut enabled
 
 |Hodnota|Popis|
 |-----------|-----------------|
-|`false`|Uvolňování paměti nepodporuje více skupin PROCESORů. Toto nastavení je výchozí.|
-|`true`|Uvolňování paměti podporuje více skupin PROCESORů, pokud je povoleno shromažďování paměti serveru.|
+|`false`|Uvolňování paměti nepodporuje více skupin procesoru. Toto nastavení je výchozí.|
+|`true`|Uvolňování paměti podporuje více skupin procesoru, pokud je povoleno uvolňování paměti serveru.|
 
 ### <a name="child-elements"></a>Podřízené elementy
 
@@ -57,14 +57,14 @@ Následující části popisují atributy, podřízené prvky a nadřazené prvk
 
 ## <a name="remarks"></a>Poznámky
 
-Pokud je v počítači více skupin PROCESORů a uvolňování paměti serveru (viz [\<gcServer >](gcserver-element.md) element), povolením tohoto elementu dojde k rozšíření uvolňování paměti napříč všemi skupinami CPU a při vytváření a vyrovnávání hald budou brát v úvahu všechny jádra.
+Pokud má počítač více skupin procesoru a je povoleno uvolňování paměti serveru (viz [ \<gcServer>](gcserver-element.md) element), povolení tohoto prvku rozšiřuje uvolňování paměti ve všech skupinách procesoru a bere v úvahu všechna jádra při vytváření a vyvažování hromady.
 
 > [!NOTE]
-> Tento prvek se vztahuje pouze na vlákna uvolňování paměti. Chcete-li povolit modulu runtime pro distribuci uživatelských vláken napříč všemi skupinami PROCESORů, je nutné povolit také [\<Thread_UseAllCpuGroups >](thread-useallcpugroups-element.md) elementu.
+> Tento prvek platí pouze pro vlákna uvolňování paměti. Chcete-li povolit runtime distribuovat vlákna uživatelů ve všech skupinách procesoru, musíte také povolit [ \<Thread_UseAllCpuGroups>](thread-useallcpugroups-element.md) prvek.
 
 ## <a name="example"></a>Příklad
 
-Následující příklad ukazuje, jak povolit uvolňování paměti pro více skupin PROCESORů.
+Následující příklad ukazuje, jak povolit uvolňování paměti pro více skupin procesoru.
 
 ```xml
 <configuration>
@@ -75,9 +75,9 @@ Následující příklad ukazuje, jak povolit uvolňování paměti pro více sk
 </configuration>
 ```
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Schéma nastavení běhového prostředí](index.md)
+- [Schéma nastavení běhu](index.md)
 - [Schéma konfiguračního souboru](../index.md)
-- [Zakázání souběžného uvolňování paměti](gcconcurrent-element.md#to-disable-background-garbage-collection)
-- [Uvolnění paměti pracovní stanice a serveru](../../../../standard/garbage-collection/fundamentals.md#workstation-and-server-garbage-collection)
+- [Zakázat souběžné uvolňování paměti](gcconcurrent-element.md#to-disable-background-garbage-collection)
+- [Uvolňování paměti pracovní stanice a serveru](../../../../standard/garbage-collection/workstation-server-gc.md)

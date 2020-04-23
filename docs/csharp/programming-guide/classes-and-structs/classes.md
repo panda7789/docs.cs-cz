@@ -6,12 +6,12 @@ helpviewer_keywords:
 - classes [C#]
 - C# language, classes
 ms.assetid: e8848524-7273-429f-8aba-c658d5eff5ad
-ms.openlocfilehash: aadf555fb47963eab323bbb6105227c5b119e6f4
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: d726ab3a882d2e6913fa69c7b82f1d6db78dd47d
+ms.sourcegitcommit: 73aa9653547a1cd70ee6586221f79cc29b588ebd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79170309"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "82102044"
 ---
 # <a name="classes-c-programming-guide"></a>Třídy (Průvodce programováním v C#)
 
@@ -26,7 +26,7 @@ MyClass mc = new MyClass();
 MyClass mc2 = mc;
 ```
 
-Při vytvoření objektu je na spravované haldě pro daný objekt přidělendostatek paměti a proměnná obsahuje pouze odkaz na umístění uvedeného objektu. Typy na spravované haldy vyžadují režii, jak při přidělení, tak při jejich uvolnění funkcí automatické správy paměti CLR, která je známá jako *uvolňování paměti*. Uvolňování paměti je však také vysoce optimalizované a ve většině scénářů nevytváří problém s výkonem. Další informace o uvolňování paměti naleznete v [tématu Automatická správa paměti a uvolňování paměti](../../../standard/garbage-collection/gc.md).  
+Při vytvoření objektu je na spravované haldě pro daný objekt přidělendostatek paměti a proměnná obsahuje pouze odkaz na umístění uvedeného objektu. Typy na spravované haldy vyžadují režii, jak při přidělení, tak při jejich uvolnění funkcí automatické správy paměti CLR, která je známá jako *uvolňování paměti*. Uvolňování paměti je však také vysoce optimalizované a ve většině scénářů nevytváří problém s výkonem. Další informace o uvolňování paměti naleznete v [tématu Automatická správa paměti a uvolňování paměti](../../../standard/garbage-collection/fundamentals.md).  
   
 ## <a name="declaring-classes"></a>Deklarace tříd
 

@@ -7,16 +7,16 @@ helpviewer_keywords:
 - .NET Framework, compatibility with earlier versions
 - .NET Framework versions, compatibility
 ms.assetid: 2f25e522-456a-48c3-8a53-e5f39275649f
-ms.openlocfilehash: e0de18b5a40875d1fec2633c16688111d8f4b9ee
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 2e268753bf5941e9d28ee2bdd82ce77016ddf01a
+ms.sourcegitcommit: 73aa9653547a1cd70ee6586221f79cc29b588ebd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "73974959"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "82102980"
 ---
-# <a name="version-compatibility-in-the-net-framework"></a>Kompatibilita verzí v rozhraní .NET Framework
+# <a name="version-compatibility"></a>Kompatibilita verzí
 
-Zpětná kompatibilita znamená, že aplikace, která byla vyvinuta pro konkrétní verzi platformy, bude spuštěna v novějších verzích této platformy. Rozhraní .NET Framework se pokusí maximalizovat zpětnou kompatibilitu: Zdrojový kód napsaný pro jednu verzi rozhraní .NET Framework by měl zkompilovat v novějších verzích rozhraní .NET Framework a binární soubory spuštěné v jedné verzi rozhraní .NET Framework by se měly chovat stejně novější verze rozhraní .NET Framework.
+Zpětná kompatibilita znamená, že aplikace, která byla vyvinuta pro konkrétní verzi platformy, bude spuštěna v novějších verzích této platformy. Rozhraní .NET Framework se pokusí maximalizovat zpětnou kompatibilitu: Zdrojový kód napsaný pro jednu verzi rozhraní .NET Framework by měl zkompilovat v novějších verzích rozhraní .NET Framework a binární soubory spuštěné v jedné verzi rozhraní .NET Framework by se měly v novějších verzích rozhraní .NET Framework chovat stejně.
 
 ## <a name="version-compatibility-for-apps"></a><a name="Apps"></a>Kompatibilita verzí aplikací
 
@@ -41,7 +41,7 @@ Aplikace může řídit verzi rozhraní .NET Framework, na kterém je spuštěna
 
 Z důvodu tohoto omezení jsou záruky kompatibility obzvláště důležité pro součásti. Počínaje rozhraním .NET Framework 4 můžete určit míru, do jaké má součást zůstat <xref:System.Runtime.Versioning.ComponentGuaranteesAttribute?displayProperty=nameWithType> kompatibilní ve více verzích, použitím atributu pro tuto komponentu. Nástroje mohou tento atribut použít ke zjištění potenciálního porušení záruky kompatibility v budoucích verzích součásti.
 
-## <a name="backward-compatibility-and-the-net-framework"></a>Zpětná kompatibilita a rozhraní .NET Framework
+## <a name="backward-compatibility"></a>Zpětná kompatibilita
 
 Rozhraní .NET Framework 4.5 a novější verze jsou zpětně kompatibilní s aplikacemi, které byly vytvořeny s dřívějšími verzemi rozhraní .NET Framework. Jinými slovy, aplikace a součásti vytvořené s předchozími verzemi budou fungovat beze změn v rozhraní .NET Framework 4.5 a novějších verzích. Ve výchozím nastavení však aplikace běží na verzi běžného jazyka runtime, pro které byly vyvinuty, takže budete muset poskytnout konfigurační soubor, který umožní vaší aplikaci spustit v rozhraní .NET Framework 4.5 nebo novější verze. Další informace naleznete v části [Kompatibilita verzí pro aplikace](#Apps) dříve v tomto článku.
 
@@ -63,9 +63,9 @@ Pokud vaše aplikace nebo komponenta nefunguje podle očekávání v rozhraní .
 
 - Pokud narazíte na problém, který není zdokumentován, otevřete problém na [webu komunity vývojářů pro rozhraní .NET](https://developercommunity.visualstudio.com/spaces/61/index.html) nebo otevřete problém v [úložišti Microsoft/dotnet GitHub](https://github.com/microsoft/dotnet/issues).
 
-## <a name="compatibility-and-side-by-side-execution"></a>Kompatibilita a souběžné provádění
+## <a name="side-by-side-execution"></a>Souběžné spouštění
 
-Pokud nemůžete najít vhodné řešení pro váš problém, nezapomeňte, že rozhraní .NET Framework 4.5 (nebo jeden z jeho bodových verzí) běží vedle sebe s verzemi 1.1, 2.0 a 3.5 a je aktualizace na místě, která nahrazuje verzi 4. Pro aplikace, které cílí na verze 1.1, 2.0 a 3.5, můžete nainstalovat příslušnou verzi rozhraní .NET Framework do cílového počítače a spustit aplikaci v nejlepším prostředí. Další informace o souběžném provádění naleznete v [tématu Side-by-Side Execution](../deployment/side-by-side-execution.md).
+Pokud nemůžete najít vhodné řešení pro váš problém, nezapomeňte, že rozhraní .NET Framework 4.5 (nebo jeden z jeho bodových verzí) běží vedle sebe s verzemi 1.1, 2.0 a 3.5 a je na místě aktualizace, která nahrazuje verzi 4. Pro aplikace, které cílí na verze 1.1, 2.0 a 3.5, můžete nainstalovat příslušnou verzi rozhraní .NET Framework do cílového počítače a spustit aplikaci v nejlepším prostředí. Další informace o souběžném provádění naleznete v [tématu Side-by-Side Execution](../deployment/side-by-side-execution.md).
 
 ## <a name="see-also"></a>Viz také
 

@@ -2,12 +2,12 @@
 title: dotnet spustit, příkaz
 description: Příkaz dotnet run poskytuje vhodnou možnost spuštění aplikace ze zdrojového kódu.
 ms.date: 02/19/2020
-ms.openlocfilehash: 28ed13a17c127ae1c61548fed8491315db279c20
-ms.sourcegitcommit: 927b7ea6b2ea5a440c8f23e3e66503152eb85591
+ms.openlocfilehash: 77282fd8615ef01b7867c1bf0f741c834b6ddb30
+ms.sourcegitcommit: 73aa9653547a1cd70ee6586221f79cc29b588ebd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81463418"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "82102762"
 ---
 # <a name="dotnet-run"></a>dotnet run
 
@@ -46,6 +46,8 @@ dotnet myapp.dll
 Další informace o `dotnet` ovladači naleznete v tématu [nástroje CLI (.NET Core Command Line Tools).](index.md)
 
 Chcete-li spustit `dotnet run` aplikaci, příkaz řeší závislosti aplikace, které jsou mimo sdílené hodu runtime z mezipaměti NuGet. Vzhledem k tomu, že používá závislosti uložené `dotnet run` v mezipaměti, nedoporučuje se používat ke spouštění aplikací v produkčním prostředí. Místo toho [vytvořte](../deploying/index.md) [`dotnet publish`](dotnet-publish.md) nasazení pomocí příkazu a nasadit publikovaný výstup.
+
+### <a name="implicit-restore"></a>Implicitní obnovení
 
 [!INCLUDE[dotnet restore note + options](~/includes/dotnet-restore-note-options.md)]
 

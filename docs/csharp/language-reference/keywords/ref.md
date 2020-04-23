@@ -7,12 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - parameters [C#], ref
 - ref keyword [C#]
-ms.openlocfilehash: 494a46040d6cc33c5284449779fae89705fd29c2
-ms.sourcegitcommit: 465547886a1224a5435c3ac349c805e39ce77706
+ms.openlocfilehash: 07e1b49605c83908f7b9af25e0cb2599a97257c5
+ms.sourcegitcommit: 73aa9653547a1cd70ee6586221f79cc29b588ebd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81738829"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "82102070"
 ---
 # <a name="ref-c-reference"></a>ref (Referenční dokumentace jazyka C#)
 
@@ -77,7 +77,7 @@ Další informace o předávání typů odkazů podle hodnoty a odkazu naleznete
   
 ## <a name="reference-return-values"></a>Referenční návratové hodnoty
 
-Referenční vrácené hodnoty (nebo ref vrátí) jsou hodnoty, které metoda vrátí odkazem na volajícího. To znamená, že volající může upravit hodnotu vrácenou metodou a tato změna se projeví ve stavu objektu, který obsahuje metodu.
+Referenční vrácené hodnoty (nebo ref vrátí) jsou hodnoty, které metoda vrátí odkazem na volajícího. To znamená, že volající může upravit hodnotu vrácenou metodou a tato změna se projeví ve stavu objektu v metodě volání.
 
 Referenční vrácená hodnota je `ref` definována pomocí klíčového slova:
 
@@ -94,6 +94,10 @@ return ref DecimalArray[0];
 ```
 
 Aby volající mohl upravit stav objektu, musí být vrácená hodnota odkazu uložena do proměnné, která je explicitně definována jako [ref local](#ref-locals).
+
+Zde je úplnější ref návrat příklad zobrazující podpis metody a tělo metody.
+
+[!code-csharp[FindReturningRef](~/samples/snippets/csharp/new-in-7/MatrixSearch.cs#FindReturningRef "Find returning by reference")]
 
 Volaná metoda může také `ref readonly` deklarovat vrácenou hodnotu, která vrací hodnotu odkazem, a vynutit, aby volající kód nemohl změnit vrácenou hodnotu. Volající metoda se může vyhnout kopírování vrácené hodnoty uložením hodnoty v místní proměnné [pouze pro čtení ref.](#ref-readonly-locals)
 

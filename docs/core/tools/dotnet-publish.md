@@ -2,12 +2,12 @@
 title: dotnet publikovat, příkaz
 description: Příkaz publikování dotnet publikuje projekt nebo řešení .NET Core do adresáře.
 ms.date: 02/24/2020
-ms.openlocfilehash: ca6b6bd0151674a81e0beee7798dc6bde9c088f0
-ms.sourcegitcommit: 927b7ea6b2ea5a440c8f23e3e66503152eb85591
+ms.openlocfilehash: 78ed8098be1b6887fc6a2a647fd169e2bf7f7fd1
+ms.sourcegitcommit: 73aa9653547a1cd70ee6586221f79cc29b588ebd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81463471"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "82102798"
 ---
 # <a name="dotnet-publish"></a>dotnet publish
 
@@ -24,7 +24,7 @@ dotnet publish [<PROJECT>|<SOLUTION>] [-c|--configuration <CONFIGURATION>]
     [-f|--framework <FRAMEWORK>] [--force] [--interactive]
     [--manifest <PATH_TO_MANIFEST_FILE>] [--no-build] [--no-dependencies]
     [--no-restore] [--nologo] [-o|--output <OUTPUT_DIRECTORY>]
-    [-p:PublishReadyToRun] [-p:PublishSingleFile] [-p:PublishTrimmed]
+    [-p:PublishReadyToRun=true] [-p:PublishSingleFile=true] [-p:PublishTrimmed=true]
     [-r|--runtime <RUNTIME_IDENTIFIER>] [--self-contained [true|false]]
     [--no-self-contained] [-v|--verbosity <LEVEL>]
     [--version-suffix <VERSION_SUFFIX>]
@@ -42,6 +42,10 @@ dotnet publish -h|--help
 - Závislosti aplikace, které jsou zkopírovány z mezipaměti NuGet do výstupní složky.
 
 Výstup `dotnet publish` příkazu je připraven k nasazení do hostitelského systému (například server, PC, Mac, notebook) pro spuštění. Je to jediný oficiálně podporovaný způsob, jak připravit aplikaci pro nasazení. V závislosti na typu nasazení, který projekt určuje, může nebo nemusí mít hostitelský systém na něm nainstalovanou sdílenou runtime .NET Core. Další informace naleznete v [tématu Publish .NET Core apps with the .NET Core CLI](../deploying/deploy-with-cli.md).
+
+### <a name="implicit-restore"></a>Implicitní obnovení
+
+[!INCLUDE[dotnet restore note](~/includes/dotnet-restore-note.md)]
 
 ### <a name="msbuild"></a>MSBuild
 
@@ -135,13 +139,13 @@ Další informace najdete v následujících materiálech:
 
     Pokud je při publikování řešení zadána relativní cesta, výstup každého projektu přejde do samostatné složky vzhledem k umístění souboru projektu. Pokud je při publikování řešení zadána absolutní cesta, veškerý výstup publikování pro všechny projekty přejde do zadané složky.
 
-- **`-p:PublishReadyToRun`**
+- **`-p:PublishReadyToRun=true`**
 
   Zkompiluje sestavení aplikací ve formátu ReadyToRun (R2R). R2R je forma kompilace před časem (AOT). Další informace naleznete v tématu [ReadyToRun images](../whats-new/dotnet-core-3-0.md#readytorun-images). K dispozici od .NET Core 3.0 SDK.
 
   Doporučujeme zadat tuto možnost v profilu publikování, nikoli na příkazovém řádku. Další informace naleznete v tématu [MSBuild](#msbuild).
 
-- **`-p:PublishSingleFile`**
+- **`-p:PublishSingleFile=true`**
 
   Nabalí aplikaci do spustitelného souboru pro jeden soubor specifický pro platformu. Spustitelný soubor je samorozbalovací a obsahuje všechny závislosti (včetně nativní), které jsou nutné ke spuštění aplikace. Při prvním spuštění aplikace se aplikace extrahuje do adresáře na základě názvu aplikace a identifikátoru sestavení. Při opětovném spuštění aplikace je spuštění rychlejší. Aplikace nemusí extrahovat sám podruhé, pokud se používá nová verze. K dispozici od .NET Core 3.0 SDK.
 
@@ -149,7 +153,7 @@ Další informace najdete v následujících materiálech:
 
   Doporučujeme zadat tuto možnost v profilu publikování, nikoli na příkazovém řádku. Další informace naleznete v tématu [MSBuild](#msbuild).
 
-- **`-p:PublishTrimmed`**
+- **`-p:PublishTrimmed=true`**
 
   Ořízne nepoužívané knihovny, aby se zmenšila velikost nasazení aplikace při publikování samostatného spustitelného souboru. Další informace naleznete [v tématu Oříznutí samostatných nasazení a spustitelných souborů](../deploying/trim-self-contained.md). K dispozici od .NET Core 3.0 SDK.
 

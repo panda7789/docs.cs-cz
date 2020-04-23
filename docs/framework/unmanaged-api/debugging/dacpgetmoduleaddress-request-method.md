@@ -15,12 +15,12 @@ topic_type:
 - apiref
 author: cshung
 ms.author: andrewau
-ms.openlocfilehash: 6850dc256a70e0c0343104b3904e9eda62d11e7e
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 4dbe6a2c295e5afae1b6761f0c7b695fdb906428
+ms.sourcegitcommit: 73aa9653547a1cd70ee6586221f79cc29b588ebd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79179201"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "82102904"
 ---
 # <a name="dacpgetmoduleaddressrequest-method"></a>DacpGetModulAddress::Metoda požadavku
 
@@ -49,11 +49,12 @@ Tato struktura žije uvnitř runtime a není vystavena prostřednictvím žádn�
 
 ## <a name="requirements"></a>Požadavky
 
-**Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).  
-**Záhlaví:** Žádná **knihovna:** Žádná  
-**Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v47plus](../../../../includes/net-current-v47plus.md)]  
+**Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md)\
+**Záhlaví:** Žádné\
+**Knihovna:** Žádné\
+**Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v47plus](../../../../includes/net-current-v47plus.md)]
 
 ## <a name="see-also"></a>Viz také
 
-- [ladění](index.md)
-- [DacpGetModuleAddress rozhraní](dacpgetmoduleaddress-structure.md)
+- [Ladění](index.md)
+- [DacpGetModuleAddress struktura](dacpgetmoduleaddress-structure.md)

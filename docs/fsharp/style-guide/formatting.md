@@ -2,12 +2,12 @@
 title: Pravidla formátování kódu F#
 description: Naučte se pokyny pro formátování kódu F#.
 ms.date: 11/04/2019
-ms.openlocfilehash: b8be70dd29a04e71614308164e541b99a1724305
-ms.sourcegitcommit: 465547886a1224a5435c3ac349c805e39ce77706
+ms.openlocfilehash: dd48380a90ee92b2c1edaaabc116fa1cd8010390
+ms.sourcegitcommit: 73aa9653547a1cd70ee6586221f79cc29b588ebd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81739552"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "82102486"
 ---
 # <a name="f-code-formatting-guidelines"></a>Pravidla formátování kódu F#
 
@@ -579,10 +579,10 @@ Při programovém generování polí a `->` seznamů upřednostňujte při `do .
 
 ```fsharp
 // Preferred
-let squares = [ for x in 1..10 -> x*x ]
+let squares = [ for x in 1..10 -> x * x ]
 
 // Not preferred
-let squares' = [ for x in 1..10 do yield x*x ]
+let squares' = [ for x in 1..10 do yield x * x ]
 ```
 
 Starší verze jazyka F# vyžaduje `yield` zadání v situacích, kdy data mohou být generovány podmíněně nebo mohou být po sobě jdoucí výrazy, které mají být vyhodnoceny. Preferujte vynechání `yield` těchto klíčových slov, pokud není nutné zkompilovat se starší jazykovou verzí Jazyka F#:
@@ -816,10 +816,10 @@ let function1 a b = a - b * b
 ```fsharp
 // A1 and A2 are local modules.
 module A1 =
-    let function1 a b = a*a + b*b
+    let function1 a b = a * a + b * b
 
 module A2 =
-    let function2 a b = a*a - b*b
+    let function2 a b = a * a - b * b
 ```
 
 ### <a name="formatting-object-expressions-and-interfaces"></a>Formátování výrazů a rozhraní objektů
@@ -878,7 +878,7 @@ type MyRecord =
 
 ### <a name="formatting-attributes-on-parameters"></a>Formátování atributů parametrů
 
-Atributy mohou být také umístí na parametry. V tomto případě umístěte na stejný řádek jako parametr a před název:
+Atributy lze také umístit na parametry. V tomto případě umístěte na stejný řádek jako parametr a před název:
 
 ```fsharp
 // Defines a class that takes an optional value as input defaulting to false.

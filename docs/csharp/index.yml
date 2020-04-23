@@ -6,12 +6,12 @@ metadata:
   description: Naučte se c# programování - pro začínající vývojáře, vývojáři nové C#, a zkušené vývojáře C# / .NET
   ms.topic: landing-page
   ms.date: 11/19/2019
-  ms.openlocfilehash: 2bec49d0832a7d00d0fea247166a9ec073f37e11
-  ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+  ms.openlocfilehash: a0de519e518cac70bac831cf689042e104cd1389
+  ms.sourcegitcommit: 73aa9653547a1cd70ee6586221f79cc29b588ebd
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 03/15/2020
-  ms.locfileid: "75339161"
+  ms.lasthandoff: 04/23/2020
+  ms.locfileid: "82102720"
 landingContent:
 - title: 'Naučte se programovat v C #'
   linkLists:
@@ -77,8 +77,8 @@ landingContent:
       url: nullable-references.md
   - linkListType: concept
     links:
-    - text: Opatinovat api pro nullability
-      url: nullable-attributes.md
+    - text: Zvolte strategii migrace s možnou hodnotou null
+      url: nullable-migration-strategies.md
   - linkListType: tutorial
     links:
     - text: Využívat a generovat asynchronní proudy
@@ -103,7 +103,7 @@ landingContent:
   linkLists:
   - linkListType: reference
     links:
-    - text: Referenční informace k jazyku
+    - text: Referenční dokumentace jazyka
       url: language-reference/index.md
     - text: Klíčová slova jazyka C#
       url: language-reference/keywords/index.md

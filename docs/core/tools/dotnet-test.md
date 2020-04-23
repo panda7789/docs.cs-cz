@@ -2,12 +2,12 @@
 title: dotnet test, příkaz
 description: Dotnet test příkaz se používá k provedení testů částí v daném projektu.
 ms.date: 02/27/2020
-ms.openlocfilehash: 2eebcbe2e4a1660da4ffa4ea9a68190c8443463a
-ms.sourcegitcommit: 465547886a1224a5435c3ac349c805e39ce77706
+ms.openlocfilehash: 69b8101f9b1052f4726dce8a86234da99f5dc89c
+ms.sourcegitcommit: 73aa9653547a1cd70ee6586221f79cc29b588ebd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81739106"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "82102737"
 ---
 # <a name="dotnet-test"></a>dotnet test
 
@@ -43,6 +43,10 @@ Testovací projekty určují testovací `<PackageReference>` běh pomocí běžn
 
 [!code-xml[XUnit Basic Template](../../../samples/snippets/csharp/xunit-test/xunit-test.csproj)]
 
+### <a name="implicit-restore"></a>Implicitní obnovení
+
+[!INCLUDE[dotnet restore note](~/includes/dotnet-restore-note.md)]
+
 ## <a name="arguments"></a>Argumenty
 
 - **`PROJECT | SOLUTION`**
@@ -69,7 +73,7 @@ Testovací projekty určují testovací `<PackageReference>` běh pomocí běžn
 
 - **`-d|--diag <PATH_TO_DIAGNOSTICS_FILE>`**
 
-  Povolí diagnostický režim pro testovací platformu a zapisuje diagnostické zprávy do zadaného souboru.
+  Povolí diagnostický režim pro testovací platformu a zapíše diagnostické zprávy do zadaného souboru.
 
 - **`-f|--framework <FRAMEWORK>`**
 
@@ -105,11 +109,11 @@ Testovací projekty určují testovací `<PackageReference>` běh pomocí běžn
 
 - **`-o|--output <OUTPUT_DIRECTORY>`**
 
-  Adresář, ve kterém chcete najít binární soubory ke spuštění.
+  Adresář, ve kterém chcete najít binární soubory ke spuštění. Pokud není zadán, výchozí `./bin/<configuration>/<framework>/`cesta je .  Pro projekty s více cílových rozhraní (prostřednictvím vlastnosti) `TargetFrameworks` je také nutné definovat, `--framework` když zadáte tuto možnost.
 
 - **`-r|--results-directory <PATH>`**
 
-  Adresář, kde budou umístěny výsledky testů. Pokud zadaný adresář neexistuje, je vytvořen.
+  Adresář, kde budou umístěny výsledky testů. Pokud zadaný adresář neexistuje, je vytvořen. Výchozí hodnota `TestResults` je v adresáři, který obsahuje soubor projektu.
 
 - **`--runtime <RUNTIME_IDENTIFIER>`**
 
@@ -127,13 +131,13 @@ Testovací projekty určují testovací `<PackageReference>` běh pomocí běžn
 
   Nastaví úroveň podrobností příkazu. Povolené hodnoty `q[uiet]` `m[inimal]`jsou `n[ormal]` `d[etailed]`, `diag[nostic]`, , a . Výchozí formát je `minimal`. Další informace naleznete v tématu <xref:Microsoft.Build.Framework.LoggerVerbosity>.
 
-- `RunSettings`Argumenty
+- **`RunSettings`** Argumenty
 
   Argumenty jsou `RunSettings` předány jako konfigurace pro test. Argumenty jsou `[name]=[value]` určeny jako páry po "-- " (všimněte si mezery po --). Mezera se používá `[name]=[value]` k oddělení více párů.
 
   Příklad: `dotnet test -- MSTest.DeploymentEnabled=false MSTest.MapInconclusiveToFailed=True`
 
-  Další informace naleznete [v vstest.console.exe: Předávání RunSettings args](https://github.com/Microsoft/vstest-docs/blob/master/docs/RunSettingsArguments.md).
+  Další informace naleznete [v tématu Předávání argumentů RunSettings prostřednictvím příkazového řádku](https://github.com/Microsoft/vstest-docs/blob/master/docs/RunSettingsArguments.md).
 
 ## <a name="examples"></a>Příklady
 

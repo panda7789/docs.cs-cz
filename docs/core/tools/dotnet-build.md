@@ -2,12 +2,12 @@
 title: dotnet sestavení, příkaz
 description: Příkaz sestavení dotnet vytvoří projekt a všechny jeho závislosti.
 ms.date: 02/14/2020
-ms.openlocfilehash: 27deca4ab1c12314db5214c73660862a8a57a398
-ms.sourcegitcommit: 927b7ea6b2ea5a440c8f23e3e66503152eb85591
+ms.openlocfilehash: 1022df059493c7e045f81d4be93dff2fdab77eb1
+ms.sourcegitcommit: 73aa9653547a1cd70ee6586221f79cc29b588ebd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81463712"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "82102837"
 ---
 # <a name="dotnet-build"></a>dotnet build
 
@@ -43,9 +43,13 @@ U spustitelných projektů zaměřených na verze starší než .NET Core 3.0 se
 
 U spustitelných projektů zaměřených na rozhraní .NET Core 3.0 a novější jsou závislosti knihovny zkopírovány do výstupní složky. To znamená, že pokud neexistuje žádná jiná logika specifická pro publikování (například webové projekty mají), výstup sestavení by měl být nasaditelný.
 
-Sestavení vyžaduje soubor *project.assets.json,* který obsahuje seznam závislostí vaší aplikace. Soubor je vytvořen [`dotnet restore`](dotnet-restore.md) při spuštění. Bez souboru datových zdrojů na místě nástroje nelze vyřešit referenční sestavení, což má za následek chyby. Pomocí sady .NET Core 1.x SDK `dotnet restore` bylo `dotnet build`nutné před spuštěním explicitně spustit . Počínaje sadou .NET Core 2.0 `dotnet restore` SDK, `dotnet build`běží implicitně při spuštění . Pokud chcete zakázat implicitní obnovení při spuštění příkazu sestavení, můžete předat `--no-restore` možnost.
+### <a name="implicit-restore"></a>Implicitní obnovení
+
+Sestavení vyžaduje soubor *project.assets.json,* který obsahuje seznam závislostí vaší aplikace. Soubor je vytvořen [`dotnet restore`](dotnet-restore.md) při spuštění. Bez souboru datových zdrojů na místě nástroje nelze vyřešit referenční sestavení, což má za následek chyby.
 
 [!INCLUDE[dotnet restore note + options](~/includes/dotnet-restore-note-options.md)]
+
+### <a name="executable-or-library-output"></a>Spustitelný nebo knihovní výstup
 
 Zda je projekt spustitelný nebo není, je určena `<OutputType>` vlastností v souboru projektu. Následující příklad ukazuje projekt, který vytváří spustitelný kód:
 

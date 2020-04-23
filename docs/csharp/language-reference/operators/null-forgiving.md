@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - null-forgiving operator [C#]
 - '! operator [C#]'
-ms.openlocfilehash: a8b47e83ce9e999ea2afe94db0a21725abc2d327
-ms.sourcegitcommit: 465547886a1224a5435c3ac349c805e39ce77706
+ms.openlocfilehash: f3d06dec42ba117cd30dbf4d05fa4a6f594e57e5
+ms.sourcegitcommit: 73aa9653547a1cd70ee6586221f79cc29b588ebd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81738577"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "82101969"
 ---
 # <a name="-null-forgiving-operator-c-reference"></a>! (null-odpouštějící) operátor (C# odkaz)
 
@@ -43,7 +43,7 @@ Pokud můžete změnit `IsValid` metodu, můžete použít [NotNullWhen](xref:Sy
 
 [!code-csharp[Use an attribute](snippets/NullForgivingOperator.cs#UseAttribute)]
 
-V předchozím příkladu není nutné použít operátor null odpouštějící, protože kompilátor má `p` dostatek `null` informací `if` k zjistíní, že nemůže být uvnitř příkazu. Další informace o atributech, které umožňují poskytnout další informace o stavu null proměnné, naleznete v [tématu Upgrade api s atributy definovat očekávání null](../../nullable-attributes.md).
+V předchozím příkladu není nutné použít operátor null odpouštějící, protože kompilátor má `p` dostatek `null` informací `if` k zjistíní, že nemůže být uvnitř příkazu. Další informace o atributech, které umožňují poskytnout další informace o stavu null proměnné, naleznete v [tématu Upgrade api s atributy definovat očekávání null](../attributes/nullable-analysis.md).
 
 ## <a name="c-language-specification"></a>specifikace jazyka C#
 
