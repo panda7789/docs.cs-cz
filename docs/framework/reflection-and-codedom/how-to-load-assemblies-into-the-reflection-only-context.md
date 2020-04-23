@@ -25,16 +25,16 @@ Kontext zatížení pouze pro reflexi umožňuje kontrolovat sestavení kompilov
 
 ## <a name="to-load-an-assembly-into-the-reflection-only-load-context"></a>Načtení sestavení do kontextu načtení pouze pro reflexi
 
-1. Použijte přetížení metody <xref:System.Reflection.Assembly.ReflectionOnlyLoad%28System.String%29> k načtení sestavení daného zobrazovaného názvu nebo metody <xref:System.Reflection.Assembly.ReflectionOnlyLoadFrom%2A> pro načtení sestavení, které danou cestu načetlo. Pokud je sestavení binární image, použijte přetížení metody <xref:System.Reflection.Assembly.ReflectionOnlyLoad%28System.Byte%5B%5D%29>.
+1. K načtení <xref:System.Reflection.Assembly.ReflectionOnlyLoad%28System.String%29> sestavení podle jeho zobrazovaného názvu použijte přetížení metody, nebo <xref:System.Reflection.Assembly.ReflectionOnlyLoadFrom%2A> metodu pro načtení sestavení, které danou cestu zadala. Pokud je sestavení binární image, použijte přetížení <xref:System.Reflection.Assembly.ReflectionOnlyLoad%28System.Byte%5B%5D%29> metody.
 
     > [!NOTE]
     > Kontext pouze pro reflexi nelze použít pro načtení verze knihovny mscorlib. dll z verze .NET Framework kromě verze v kontextu spuštění.
 
-2. Pokud má sestavení závislosti, metoda <xref:System.Reflection.Assembly.ReflectionOnlyLoad%2A> je nenačte. Pokud je potřebujete ověřit, musíte je načíst sami.
+2. Pokud sestavení obsahuje závislosti, <xref:System.Reflection.Assembly.ReflectionOnlyLoad%2A> metoda je nenačte. Pokud je potřebujete ověřit, musíte je načíst sami.
 
-3. Určete, zda je sestavení načteno do kontextu pouze pro reflexi pomocí vlastnosti <xref:System.Reflection.Assembly.ReflectionOnly%2A> sestavení.
+3. Určete, zda je sestavení načteno do kontextu pouze pro reflexi pomocí <xref:System.Reflection.Assembly.ReflectionOnly%2A> vlastnosti sestavení.
 
-4. Pokud byly atributy použity na sestavení nebo na typy v sestavení, zkontrolujte tyto atributy pomocí třídy <xref:System.Reflection.CustomAttributeData>, aby se zajistilo, že není proveden žádný pokus o spuštění kódu v kontextu pouze pro reflexi. Použijte příslušné přetížení metody <xref:System.Reflection.CustomAttributeData.GetCustomAttributes%2A?displayProperty=nameWithType> pro získání <xref:System.Reflection.CustomAttributeData> objektů představujících atributy použité pro sestavení, člena, modul nebo parametr.
+4. Pokud byly atributy použity na sestavení nebo na typy v sestavení, zkontrolujte tyto atributy pomocí <xref:System.Reflection.CustomAttributeData> třídy, aby se zajistilo, že není proveden žádný pokus o spuštění kódu v kontextu pouze pro reflexi. Použijte příslušné přetížení <xref:System.Reflection.CustomAttributeData.GetCustomAttributes%2A?displayProperty=nameWithType> metody pro získání <xref:System.Reflection.CustomAttributeData> objektů představujících atributy použité pro sestavení, člena, modul nebo parametr.
 
     > [!NOTE]
     > Atributy použité pro sestavení nebo jejich obsah mohou být definovány v sestavení nebo mohou být definovány v jiném sestavení načteno do kontextu pouze pro reflexi. Neexistuje žádný způsob, jak sdělit předem, kde jsou definovány atributy.
@@ -52,7 +52,7 @@ Příklad kódu definuje vlastní atribut se dvěma konstruktory a jednou vlastn
 [!code-csharp[CustomAttributeData#1](../../../samples/snippets/csharp/VS_Snippets_CLR/CustomAttributeData/CS/source.cs#1)]
 [!code-vb[CustomAttributeData#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/CustomAttributeData/VB/source.vb#1)]
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Reflection.Assembly.ReflectionOnlyLoad%2A>
 - <xref:System.Reflection.Assembly.ReflectionOnly%2A>

@@ -21,7 +21,7 @@ Tento příklad znázorňuje, jakým způsobem lze předávat typy řetězců po
   
  Příklad MsgBox používá následující nespravovanou funkci zobrazenou s původní deklarací funkce:  
   
-- **MessageBox** exportován z souboru User32.dll.  
+- **MessageBox** exportovaný z User32. dll.  
   
     ```cpp
     int MessageBox(HWND hWnd, LPCTSTR lpText, LPCTSTR lpCaption,
@@ -30,14 +30,14 @@ Tento příklad znázorňuje, jakým způsobem lze předávat typy řetězců po
   
  V tomto příkladu obsahuje třída `NativeMethods` spravovaný prototyp pro každou nespravovanou funkci volanou třídou `MsgBoxSample`. Metody spravovaného prototypu `MsgBox`, `MsgBox2` a `MsgBox3` mají pro stejnou nespravovanou funkci odlišné deklarace.  
   
- Deklarace pro příklad `MsgBox2` vytváří v okně se zprávou nesprávný výstup, protože typ znaku, který je zadán jako ANSI, se neshoduje se vstupním bodem `MessageBoxW`, což je název funkce Unicode. Deklarace `MsgBox3` pro vytvoří neshodu mezi **EntryPoint**, **CharSet**a **ExactSpelling** pole. Při zavolání vyvolá pole `MsgBox3` výjimku. Podrobné informace o pojmenování řetězců a zařazování názvů naleznete [v tématu Určení znakové sady](specifying-a-character-set.md).  
+ Deklarace pro příklad `MsgBox2` vytváří v okně se zprávou nesprávný výstup, protože typ znaku, který je zadán jako ANSI, se neshoduje se vstupním bodem `MessageBoxW`, což je název funkce Unicode. Deklarace `MsgBox3` pro vytvoří neshodu mezi poli **EntryPoint**, **CharSet**a **ExactSpelling** . Při zavolání vyvolá pole `MsgBox3` výjimku. Podrobné informace o pojmenovávání řetězců a zařazování názvů najdete v tématu [Určení znakové sady](specifying-a-character-set.md).  
   
 ## <a name="declaring-prototypes"></a>Deklarace prototypů  
  [!code-cpp[Conceptual.Interop.Marshaling#5](../../../samples/snippets/cpp/VS_Snippets_CLR/conceptual.interop.marshaling/cpp/msgbox.cpp#5)]
  [!code-csharp[Conceptual.Interop.Marshaling#5](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.interop.marshaling/cs/msgbox.cs#5)]
  [!code-vb[Conceptual.Interop.Marshaling#5](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.interop.marshaling/vb/msgbox.vb#5)]  
   
-## <a name="calling-functions"></a>Volající funkce  
+## <a name="calling-functions"></a>Volání funkcí  
  [!code-cpp[Conceptual.Interop.Marshaling#6](../../../samples/snippets/cpp/VS_Snippets_CLR/conceptual.interop.marshaling/cpp/msgbox.cpp#6)]
  [!code-csharp[Conceptual.Interop.Marshaling#6](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.interop.marshaling/cs/msgbox.cs#6)]
  [!code-vb[Conceptual.Interop.Marshaling#6](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.interop.marshaling/vb/msgbox.vb#6)]  

@@ -17,7 +17,7 @@ ms.locfileid: "79181313"
 
 Vstupní bod určuje umístění funkce v knihovně DLL. Původní název nebo řadový vstupní bod cílové funkce identifikuje v rámci spravovaného projektu funkci napříč hranicemi interoperability. Dále je možné namapovat vstupní bod na jiný název, a tak funkci účinně přejmenovat.  
   
- Následuje seznam možných důvodů pro přejmenování funkce DLL:  
+ Následuje seznam možných důvodů přejmenování funkce knihovny DLL:  
   
 - Zamezení používání názvů funkcí rozhraní API, která rozlišují velikost písmen  
   
@@ -31,7 +31,7 @@ Vstupní bod určuje umístění funkce v knihovně DLL. Původní název nebo 
   
 ## <a name="renaming-a-function-in-visual-basic"></a>Přejmenování funkce v jazyce Visual Basic  
 
-Visual Basic používá **funkci klíčovéslovo** v <xref:System.Runtime.InteropServices.DllImportAttribute.EntryPoint?displayProperty=nameWithType> **Declare** prohlášení nastavit pole. Následující příklad znázorňuje základní deklaraci.  
+Visual Basic používá klíčové slovo **Function** v příkazu **Declare** pro nastavení <xref:System.Runtime.InteropServices.DllImportAttribute.EntryPoint?displayProperty=nameWithType> pole. Následující příklad znázorňuje základní deklaraci.  
   
 ```vb
 Friend Class NativeMethods
@@ -43,7 +43,7 @@ Friend Class NativeMethods
 End Class
 ```
   
-Vstupní bod **messageboxu** můžete nahradit **msgbox** zahrnutím klíčového slova **Alias** do definice, jak je znázorněno v následujícím příkladu. V obou příkladech klíčové slovo **Auto** eliminuje potřebu určit verzi znakové sady vstupního bodu. Další informace o výběru znakové sady naleznete v [tématu Určení znakové sady](specifying-a-character-set.md).  
+Vstupní bod **MessageBox** můžete nahradit pomocí **OknoSeZprávou** vložením klíčového slova **alias** do definice, jak je znázorněno v následujícím příkladu. V obou příkladech klíčové slovo **auto** eliminuje nutnost zadat verzi znakového sady vstupního bodu. Další informace o výběru znakové sady naleznete v tématu [Určení znakové sady](specifying-a-character-set.md).  
   
 ```vb
 Friend Class NativeMethods
@@ -57,7 +57,7 @@ End Class
 ```
   
 ## <a name="renaming-a-function-in-c-and-c"></a>Přejmenování funkce v jazyce C# a C++  
- K určení funkce knihovny DLL pomocí názvu nebo řádu můžete použít pole <xref:System.Runtime.InteropServices.DllImportAttribute.EntryPoint?displayProperty=nameWithType> . Pokud je název funkce v definici metody stejný jako vstupní bod v dll, není třeba explicitně identifikovat funkci s **entrypoint** pole. Jinak lze pro určení názvu nebo řádu použít jednu z těchto podob atributů:  
+ K určení funkce knihovny DLL pomocí názvu nebo řádu můžete použít pole <xref:System.Runtime.InteropServices.DllImportAttribute.EntryPoint?displayProperty=nameWithType> . Pokud je název funkce v definici metody stejný jako vstupní bod v knihovně DLL, není nutné explicitně identifikovat funkci s polem **EntryPoint** . Jinak lze pro určení názvu nebo řádu použít jednu z těchto podob atributů:  
   
 ```csharp
 [DllImport("DllName", EntryPoint = "Functionname")]
@@ -66,7 +66,7 @@ End Class
   
  Je nutné poznamenat, že pro řád je třeba použít předponu v podobě znaku libry (#).  
   
- Následující příklad ukazuje, jak nahradit **MessageBoxA** **msgBox** v kódu pomocí **entrypoint** pole.  
+ Následující příklad ukazuje, jak nahradit **MessageBox** ' pomocí **OknoSeZprávou** v kódu pomocí pole **EntryPoint** .  
   
 ```csharp
 using System;

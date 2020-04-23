@@ -9,9 +9,9 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 03/19/2020
 ms.locfileid: "82071932"
 ---
-Vytvořte textový `azureauth.json`soubor s názvem . Vložte výstup JSON z při vytvoření instančního objektu.
+Vytvořte textový soubor s názvem `azureauth.json`. Při vytváření instančního objektu vložte výstup JSON.
 
-Uložte tento soubor na bezpečné místo ve vašem systému, kde z něho bude moct číst váš kód. Pomocí prostředí PowerShell nastavte `AZURE_AUTH_LOCATION` proměnnou prostředí pojmenovanou s úplnou cestou k souboru, například:
+Uložte tento soubor na bezpečné místo ve vašem systému, kde z něho bude moct číst váš kód. Pomocí PowerShellu nastavte proměnnou prostředí s názvem `AZURE_AUTH_LOCATION` úplnou cestou k souboru, třeba:
 
 ```powershell
 [Environment]::SetEnvironmentVariable("AZURE_AUTH_LOCATION", "C:\src\azureauth.json", "User")

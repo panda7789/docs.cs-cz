@@ -35,7 +35,7 @@ Ve výchozím nastavení se služby spouštějí v jiném kontextu zabezpečení
   
 ### <a name="to-specify-the-security-context-for-a-service"></a>Určení kontextu zabezpečení pro službu  
   
-1. Po vytvoření služby přidejte pro ni potřebné instalační programy. Další informace najdete v tématu [jak: Přidejte instalační programy do aplikace](how-to-add-installers-to-your-service-application.md)služby.  
+1. Po vytvoření služby přidejte pro ni potřebné instalační programy. Další informace najdete v tématu [Postup: Přidání instalačních programů do aplikace služby](how-to-add-installers-to-your-service-application.md).  
   
 2. V Návrháři přejděte ke `ProjectInstaller` třídě a klikněte na instalační program procesu služby pro službu, se kterou pracujete.  
   
@@ -44,8 +44,8 @@ Ve výchozím nastavení se služby spouštějí v jiném kontextu zabezpečení
   
 3. V okně **vlastnosti** nastavte <xref:System.ServiceProcess.ServiceProcessInstaller.Account%2A> na odpovídající hodnotu.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Úvod do aplikací služby systému Windows](introduction-to-windows-service-applications.md)
 - [Postupy: Přidání instalačních programů do aplikace služby](how-to-add-installers-to-your-service-application.md)
-- [Postupy: Vytvořit služby systému Windows](how-to-create-windows-services.md)
+- [Postupy: Vytváření služeb systému Windows](how-to-create-windows-services.md)

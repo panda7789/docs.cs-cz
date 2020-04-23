@@ -24,13 +24,13 @@ Tato ukázka předvádí, jak předat delegáty nespravované funkci očekávaj�
 
 Ukázka zpětného volání používá následující nespravované funkce, které jsou zobrazeny s původní deklarací funkce:
 
-- `TestCallBack` exportováno z knihovny knihovny pinvokelib. dll.
+- `TestCallBack`exportováno z knihovny pinvokelib. dll.
 
     ```cpp
     void TestCallBack(FPTR pf, int value);
     ```
 
-- `TestCallBack2` exportováno z knihovny knihovny pinvokelib. dll.
+- `TestCallBack2`exportováno z knihovny pinvokelib. dll.
 
     ```cpp
     void TestCallBack2(FPTR2 pf2, char* value);
@@ -38,7 +38,7 @@ Ukázka zpětného volání používá následující nespravované funkce, kter
 
 [Knihovny pinvokelib. dll](marshaling-data-with-platform-invoke.md#pinvokelibdll) je vlastní nespravovaná knihovna, která obsahuje implementaci pro dříve uvedené funkce.
 
-V této ukázce třída `NativeMethods` obsahuje spravované prototypy pro metody `TestCallBack` a `TestCallBack2`. Obě metody předají delegátovi funkce zpětného volání jako parametr. Signatura delegáta musí odpovídat podpisu metody, na kterou odkazuje. Například Delegáti `FPtr` a `FPtr2` mají signatury, které jsou stejné jako metody `DoSomething` a `DoSomething2`.
+V této ukázce `NativeMethods` třída obsahuje spravované prototypy pro metody `TestCallBack` a. `TestCallBack2` Obě metody předají delegátovi funkce zpětného volání jako parametr. Signatura delegáta musí odpovídat podpisu metody, na kterou odkazuje. Například delegáti `FPtr` a `FPtr2` mají signatury, které jsou stejné jako metody `DoSomething` a `DoSomething2` .
 
 ## <a name="declaring-prototypes"></a>Deklarace prototypů
 [!code-cpp[Conceptual.Interop.Marshaling#37](../../../samples/snippets/cpp/VS_Snippets_CLR/conceptual.interop.marshaling/cpp/callback.cpp#37)]
@@ -50,7 +50,7 @@ V této ukázce třída `NativeMethods` obsahuje spravované prototypy pro metod
 [!code-csharp[Conceptual.Interop.Marshaling#38](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.interop.marshaling/cs/callback.cs#38)]
 [!code-vb[Conceptual.Interop.Marshaling#38](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.interop.marshaling/vb/callback.vb#38)]
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Různé vzorky zařazování](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ss9sb93t(v=vs.100))
 - [Datové typy vyvolání platformy](marshaling-data-with-platform-invoke.md#platform-invoke-data-types)

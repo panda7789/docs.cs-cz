@@ -1,6 +1,6 @@
 ---
 title: Nástroje Azure pro Visual Studio 2015
-description: Získejte nástroje, které vám pomohou začít používat knihovny Azure .NET z Visual Studia 2015.
+description: Získejte nástroje pro zahájení používání knihoven Azure .NET ze sady Visual Studio 2015.
 ms.date: 10/19/2017
 ms.custom: azure-sdk-dotnet
 ms.openlocfilehash: a29709d56f2debe04d49ee4eafdc27acd4ca480f
@@ -12,24 +12,24 @@ ms.locfileid: "82071925"
 ---
 # <a name="azure-tools-for-visual-studio-2015"></a>Nástroje Azure pro Visual Studio 2015
 
-Nejrychlejší a nejjednodušší způsob instalace **sady Azure SDK pro Visual Studio 2015** a **Service Fabric SDK a Nástroje pro Visual Studio 2015** používá [Instalační službu webové platformy](https://www.microsoft.com/web/downloads/platform.aspx). Instalační služba webové platformy Microsoft je bezplatný nástroj, který zjednodušuje stahování, instalaci a aktualizaci některých součástí webové platformy Microsoft, včetně nástrojů Azure pro Visual Studio 2015. Tyto sady SDK lze také stáhnout a nainstalovat jako jednotlivé součásti ze [stránky Stahování Azure](https://azure.microsoft.com/downloads/).
+Nejrychlejší a nejjednodušší způsob, jak nainstalovat **sadu Azure SDK pro Visual studio 2015** a **Service Fabric SDK a nástroje pro Visual Studio 2015** , používá [instalační program webové platformy](https://www.microsoft.com/web/downloads/platform.aspx). Instalace webové platformy Microsoft je bezplatný nástroj, který zjednodušuje stahování, instalaci a aktualizaci některých komponent webové platformy Microsoftu, včetně nástrojů Azure pro Visual Studio 2015. Tyto sady SDK je také možné stáhnout a nainstalovat jako jednotlivé komponenty ze [stránky Azure downloads](https://azure.microsoft.com/downloads/).
 
-## <a name="using-the-web-platform-installer"></a>Použití Instalační služby webové platformy
+## <a name="using-the-web-platform-installer"></a>Použití instalačního programu webové platformy
 
-1. Stáhněte a spusťte tento [zaváděcí nástroj Instalační služby webové platformy](https://www.microsoft.com/web/handlers/webpi.ashx?command=getinstallerredirect&appid=VWDOrVs2015AzurePack;MicrosoftAzure-ServiceFabric-VS2015).
+1. Stáhněte a spusťte tento [zaváděcí program instalace webové platformy](https://www.microsoft.com/web/handlers/webpi.ashx?command=getinstallerredirect&appid=VWDOrVs2015AzurePack;MicrosoftAzure-ServiceFabric-VS2015).
 
-2. Zaváděcí nástroj nainstaluje Instalační program webové platformy (v případě potřeby) a automaticky vloží nejnovější verze **sady Azure SDK pro Visual Studio 2015** a service **fabric SDK a nástroje pro Visual Studio 2015** položky do seznamu *položky položky, které mají být nainstalovány.* Klepněte na tlačítko **Instalovat**.
+2. Zaváděcí nástroj nainstaluje instalační program webové platformy (v případě potřeby) a automaticky vloží nejnovější verze **sady Azure SDK pro Visual studio 2015** a **Service Fabric sady SDK a nástrojů pro Visual Studio 2015** položky v seznamu *položky, které mají být nainstalovány* . Klikněte na **nainstalovat**.
 
     ![Instalační program webové platformy](../media/sdk/vs2015-install/webpi.png)
 
-3. Na další obrazovce klikněte na **Souhlasím**. Web PI začne stahovat a instalovat vybrané součásti.
+3. Na další obrazovce klikněte na **Souhlasím**. Webová PI začne stahovat a instalovat součásti, které jste vybrali.
 
-4. Po dokončení instalace se zobrazí potvrzovací obrazovka. Klikněte na **Finish** (Dokončit). Instalační program webové platformy nyní můžete zavřít.
+4. Po dokončení instalace se zobrazí potvrzovací obrazovka. Klikněte na **Finish** (Dokončit). Nyní můžete zavřít instalační program webové platformy.
 
 ## <a name="verifying-the-installation"></a>Ověření instalace
 
-1. V sadě Visual Studio 2015 klikněte na nabídku **Nástroje** a potom klikněte na **Rozšíření a aktualizace...**.
+1. V aplikaci Visual Studio 2015 klikněte na nabídku **nástroje** a potom klikněte na možnost **rozšíření a aktualizace...**.
 
-2. Zobrazený seznam bude obsahovat několik nástrojů Azure, jako jsou **nástroje služby Microsoft Azure App Service Tools**, Microsoft Azure Storage Connected **Service**a Service **Fabric Tools**.
+2. Zobrazený seznam bude obsahovat několik nástrojů Azure, například **Microsoft Azure App Service nástroje**, **Microsoft Azure Storage připojená služba**a **nástroje Service Fabric**.
 
     ![Rozšíření a aktualizace](../media/sdk/vs2015-install/ext-tools.png)

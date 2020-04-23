@@ -49,7 +49,7 @@ Vývojáři modelu COM můžou těžit z následujících informací o spravovan
 
   Většina typů vyžaduje knihovnu typů, pokud je využívána aplikací modelu COM. Můžete vygenerovat knihovnu typů nebo použít tuto úlohu vývojáři modelu COM. Windows SDK poskytuje následující možnosti pro vygenerování knihovny typů:
 
-  - [Exportér knihovny typů](#cpconpackagingassemblyforcomanchor1)
+  - [knihovna typů – exportér](#cpconpackagingassemblyforcomanchor1)
 
   - [TypeLibConverter – třída](#cpconpackagingassemblyforcomanchor2)
 
@@ -71,9 +71,9 @@ Pokyny najdete v tématu [Postup: vložení knihoven typů jako prostředků Win
 
 ## <a name="typelibconverter-class"></a>TypeLibConverter – třída
 
-Třída <xref:System.Runtime.InteropServices.TypeLibConverter> umístěná v oboru názvů **System. Runtime. Interop** převede třídy a rozhraní obsažené v sestavení na knihovnu typů modelu COM. Toto rozhraní API vytváří stejné informace o typu jako Exportér knihovny typů, jak je popsáno v předchozí části.
+<xref:System.Runtime.InteropServices.TypeLibConverter> Třída, která je umístěna v oboru názvů **System. Runtime. Interop** , převede třídy a rozhraní obsažené v sestavení na knihovnu typů modelu COM. Toto rozhraní API vytváří stejné informace o typu jako Exportér knihovny typů, jak je popsáno v předchozí části.
 
-**Třída TypeLibConverter** implementuje <xref:System.Runtime.InteropServices.ITypeLibConverter>.
+**Třída TypeLibConverter** implementuje rozhraní <xref:System.Runtime.InteropServices.ITypeLibConverter>.
 
 <a name="cpconpackagingassemblyforcomanchor3"></a>
 
@@ -87,14 +87,14 @@ Třída <xref:System.Runtime.InteropServices.TypeLibConverter> umístěná v obo
 
 [Nástroj pro instalaci služeb .NET (Regsvcs. exe)](../tools/regsvcs-exe-net-services-installation-tool.md) přidává spravované třídy do služby komponent Windows 2000 a kombinuje několik úloh v rámci jediného nástroje. Kromě načítání a registrace sestavení může Regsvcs. exe vygenerovat, zaregistrovat a nainstalovat knihovnu typů do existující aplikace COM+ 1,0.
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Runtime.InteropServices.TypeLibConverter>
 - <xref:System.Runtime.InteropServices.ITypeLibConverter>
 - [Vystavení komponent architektury .NET Framework pro COM](exposing-dotnet-components-to-com.md)
 - [Kvalifikace typů .NET pro spolupráci](../../standard/native-interop/qualify-net-types-for-interoperation.md)
 - [Představení rozhraní třídy](../../standard/native-interop/com-callable-wrapper.md#introducing-the-class-interface)
-- [Důležité informace o zabezpečení sestavení](../../standard/assembly/security-considerations.md)
-- [Tlbexp.exe (exportér knihovny typů)](../tools/tlbexp-exe-type-library-exporter.md)
+- [Požadavky na zabezpečení sestavení](../../standard/assembly/security-considerations.md)
+- [Tlbexp. exe (Exportér knihovny typů)](../tools/tlbexp-exe-type-library-exporter.md)
 - [Registrování sestav pomocí modelu COM](registering-assemblies-with-com.md)
 - [Postupy: vkládání knihoven typů jako prostředků Win32 v aplikacích](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ww9a897z(v=vs.100))

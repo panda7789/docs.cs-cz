@@ -43,7 +43,7 @@ Aplikace spolupráce obvykle obsahuje klientské sestavení .NET, jedno nebo ví
 ### <a name="shared-assemblies"></a>Sdílená sestavení  
  Sestavení, která jsou sdílená více aplikacemi, by měla být nainstalována do centralizovaného úložiště nazývaného globální mezipaměť sestavení (GAC). Klienti rozhraní .NET mají přístup ke stejné kopii definičního sestavení, které je podepsáno a nainstalováno v globální mezipaměti sestavení (GAC). Další informace o vytváření a používání primárních sestavení vzájemné spolupráce naleznete v tématu [primární spolupracující sestavení](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/aax7sdch(v=vs.100)).  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Vystavení komponent COM pro rozhraní .NET Framework](exposing-com-components.md)
 - [Import knihovny typů ve formě sestavení](importing-a-type-library-as-an-assembly.md)

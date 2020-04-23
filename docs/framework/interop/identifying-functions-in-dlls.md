@@ -25,9 +25,9 @@ Identita funkce knihovny DLL se skládá z následujících prvků:
   
 - Název souboru DLL, ve kterém se dá najít implementace  
   
- Například zadání funkce **MessageBox** v User32. dll identifikuje funkci (**MessageBox**) a její umístění (User32. dll, User32 nebo user32). Programovací rozhraní aplikace systému Microsoft Windows (rozhraní Windows API) může obsahovat dvě verze každé funkce, která zpracovává znaky a řetězce: 1 bajtovou verzi znakové sady ANSI a 2 bajtovou verzi znakové sady Unicode. Je-li tento parametr zadán, je znaková sada reprezentovaná polem <xref:System.Runtime.InteropServices.DllImportAttribute.CharSet> nastavena na hodnotu ANSI. Některé funkce můžou mít víc než dvě verze.  
+ Například zadání funkce **MessageBox** v User32. dll identifikuje funkci (**MessageBox**) a její umístění (User32. dll, User32 nebo user32). Programovací rozhraní aplikace systému Microsoft Windows (rozhraní Windows API) může obsahovat dvě verze každé funkce, která zpracovává znaky a řetězce: 1 bajtovou verzi znakové sady ANSI a 2 bajtovou verzi znakové sady Unicode. Je-li tento parametr zadán, je znaková sada <xref:System.Runtime.InteropServices.DllImportAttribute.CharSet> reprezentovaná polem standardně ANSI. Některé funkce můžou mít víc než dvě verze.  
   
- **MessageBox** je vstupní bod ANSI pro funkci **MessageBox** ; **MessageBoxW** je verze Unicode. Pomocí různých nástrojů příkazového řádku můžete zobrazit seznam názvů funkcí pro konkrétní knihovnu DLL, například User32. dll. K získání názvů funkcí můžete například použít `dumpbin /exports user32.dll` nebo `link /dump /exports user32.dll`.  
+ **MessageBox** je vstupní bod ANSI pro funkci **MessageBox** ; **MessageBoxW** je verze Unicode. Pomocí různých nástrojů příkazového řádku můžete zobrazit seznam názvů funkcí pro konkrétní knihovnu DLL, například User32. dll. Můžete například použít `dumpbin /exports user32.dll` nebo `link /dump /exports user32.dll` k získání názvů funkcí.  
   
  Nespravovanou funkci můžete přejmenovat bez ohledu na to, co byste chtěli v kódu, Pokud namapujete nový název na původní vstupní bod v knihovně DLL. Pokyny k přejmenování nespravované funkce DLL ve spravovaném zdrojovém kódu naleznete v tématu [určení vstupního bodu](specifying-an-entry-point.md).  
   
@@ -43,7 +43,7 @@ Identita funkce knihovny DLL se skládá z následujících prvků:
   
  Úplnou dokumentaci k rozhraní API systému Windows najdete v sadě SDK platformy. Příklady, které ukazují, jak vytvořit. Deklarace založené na síti, které se mají použít s voláním platformy, najdete v tématu [zařazování dat pomocí vyvolání platformy](marshaling-data-with-platform-invoke.md).  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Používání nespravovaných funkcí DLL](consuming-unmanaged-dll-functions.md)
 - [Určení vstupního bodu](specifying-an-entry-point.md)

@@ -30,14 +30,14 @@ Projekty Interop modelu COM, které odkazují na jedno nebo více sestavení obs
 
  Vkládání typů spolupráce pomocí sady Visual Studio je znázorněno v [návodu: Vložení typů ze spravovaných sestavení v aplikaci Visual Studio](../../standard/assembly/embed-types-visual-studio.md).
 
- Chcete-li odkazovat na definiční sestavení s kompilátorem příkazového řádku a vkládat informace o typu ve vašich spustitelných souborech, použijte přepínač [-Link (C# možnosti kompilátoru)](../../csharp/language-reference/compiler-options/link-compiler-option.md) nebo přepínač [-Link (Visual Basic)](../../visual-basic/reference/command-line-compiler/link.md) a zadejte název sestavení pro spolupráci.
+ Chcete-li odkazovat na definiční sestavení s kompilátorem příkazového řádku a vkládat informace o typu ve vašich spustitelných souborech, použijte přepínač [-Link (možnosti kompilátoru C#)](../../csharp/language-reference/compiler-options/link-compiler-option.md) nebo přepínač [-Link (Visual Basic)](../../visual-basic/reference/command-line-compiler/link.md) a zadejte název sestavení vzájemné spolupráce.
 
 > [!NOTE]
-> Visual C++ aplikace nemůžou vkládat informace o typu, ale můžou spolupracovat s aplikacemi nebo doplňky, které to dělají.
+> Aplikace Visual C++ nemůžou vkládat informace o typu, ale můžou spolupracovat s aplikacemi nebo doplňky, které to dělají.
 
  Chcete-li zkompilovat aplikaci, která zahrnuje primární definiční sestavení při nasazení, použijte přepínač **/reference** Compiler a zadejte název definičního sestavení.
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Vystavení komponent COM pro rozhraní .NET Framework](exposing-com-components.md)
 - [Jazyková nezávislost a jazykově nezávislé komponenty](../../standard/language-independence-and-language-independent-components.md)

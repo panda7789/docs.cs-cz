@@ -40,7 +40,7 @@ Každý počítač, ve kterém je nainstalován modul CLR (Common Language Runti
   
  Sestavení nasazená v globální mezipaměti sestavení (GAC) musí mít silný název. Když je sestavení přidáno do globální mezipaměti sestavení (GAC), kontroly integrity se provádí na všech souborech, které tvoří sestavení. Mezipaměť provádí tyto kontroly integrity, aby bylo zajištěno, že sestavení nebylo manipulováno, například když došlo ke změně souboru, ale manifest neodráží změnu.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Sestavení v .NET](../../standard/assembly/index.md)
 - [Práce se sestaveními a s globální pamětí sestavení](working-with-assemblies-and-the-gac.md)

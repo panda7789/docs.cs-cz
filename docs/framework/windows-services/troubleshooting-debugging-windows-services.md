@@ -20,11 +20,11 @@ ms.lasthandoff: 09/17/2019
 ms.locfileid: "71053500"
 ---
 # <a name="troubleshooting-debugging-windows-services"></a>Řešení potíží: Ladění služeb systému Windows
-Když ladíte aplikaci služby systému Windows, vaše služba a **Windows Service Manager** interakci. **Service Manager** spustí vaši službu voláním <xref:System.ServiceProcess.ServiceBase.OnStart%2A> metody a potom počká <xref:System.ServiceProcess.ServiceBase.OnStart%2A> 30 sekund, než se metoda vrátí. Pokud se metoda v tomto čase nevrátí, správce zobrazí chybu, kterou nelze spustit.  
+Když ladíte aplikaci služby systému Windows, vaše služba a **Windows Service Manager** interakci. **Service Manager** spustí vaši službu voláním <xref:System.ServiceProcess.ServiceBase.OnStart%2A> metody a potom počká 30 sekund, než se <xref:System.ServiceProcess.ServiceBase.OnStart%2A> metoda vrátí. Pokud se metoda v tomto čase nevrátí, správce zobrazí chybu, kterou nelze spustit.  
   
- Při ladění <xref:System.ServiceProcess.ServiceBase.OnStart%2A> metody, jak je popsáno v [tématu How to: Ladění aplikací](how-to-debug-windows-service-applications.md)služby systému Windows je třeba si uvědomit toto 30 sekundové období. Pokud zaškrtnete zarážku v <xref:System.ServiceProcess.ServiceBase.OnStart%2A> metodě a nechcete ji krokovat během 30 sekund, správce službu nespustí.  
+ Při ladění <xref:System.ServiceProcess.ServiceBase.OnStart%2A> metody, jak je popsáno v tématu [Postupy: ladění aplikací služby systému Windows](how-to-debug-windows-service-applications.md), je třeba si uvědomit toto 30 sekundové období. Pokud zaškrtnete zarážku v <xref:System.ServiceProcess.ServiceBase.OnStart%2A> metodě a nechcete ji krokovat během 30 sekund, správce službu nespustí.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Postupy: Ladění aplikací služby systému Windows](how-to-debug-windows-service-applications.md)
 - [Úvod do aplikací služby systému Windows](introduction-to-windows-service-applications.md)

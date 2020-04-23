@@ -18,7 +18,7 @@ ms.lasthandoff: 10/30/2019
 ms.locfileid: "73119736"
 ---
 # <a name="retrieving-setup-information-from-an-application-domain"></a>Načítání informací nastavení z domény aplikace
-Každá instance domény aplikace se skládá z vlastností a <xref:System.AppDomainSetup> informací. Můžete načíst informace o instalaci z domény aplikace pomocí třídy <xref:System.AppDomain?displayProperty=nameWithType>. Tato třída poskytuje několik členů, kteří načítají konfigurační informace o doméně aplikace.  
+Každá instance domény aplikace se skládá z vlastností a <xref:System.AppDomainSetup> informací. Můžete načíst informace o instalaci z domény aplikace pomocí <xref:System.AppDomain?displayProperty=nameWithType> třídy. Tato třída poskytuje několik členů, kteří načítají konfigurační informace o doméně aplikace.  
   
  Můžete také zadat dotaz na objekt **AppDomainSetup** pro doménu aplikace, abyste získali informace o nastavení, které byly předány doméně při jejím vytvoření.  
   
@@ -28,13 +28,13 @@ Každá instance domény aplikace se skládá z vlastností a <xref:System.AppDo
  [!code-csharp[AppDomain_Setup#2](../../../samples/snippets/csharp/VS_Snippets_CLR/AppDomain_Setup/CS/source2.cs#2)]
  [!code-vb[AppDomain_Setup#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/AppDomain_Setup/VB/source2.vb#2)]  
   
- Následující příklad nastaví a následně načte informace o nastavení pro doménu aplikace. Všimněte si, že `AppDomain.SetupInformation.ApplicationBase` získá informace o konfiguraci.  
+ Následující příklad nastaví a následně načte informace o nastavení pro doménu aplikace. Všimněte si `AppDomain.SetupInformation.ApplicationBase` , že získá informace o konfiguraci.  
   
  [!code-cpp[AppDomain_Setup#3](../../../samples/snippets/cpp/VS_Snippets_CLR/AppDomain_Setup/CPP/source3.cpp#3)]
  [!code-csharp[AppDomain_Setup#3](../../../samples/snippets/csharp/VS_Snippets_CLR/AppDomain_Setup/CS/source3.cs#3)]
  [!code-vb[AppDomain_Setup#3](../../../samples/snippets/visualbasic/VS_Snippets_CLR/AppDomain_Setup/VB/source3.vb#3)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Programování s aplikačními doménami](application-domains.md#programming-with-application-domains)
 - [Používání domén aplikací](use.md)

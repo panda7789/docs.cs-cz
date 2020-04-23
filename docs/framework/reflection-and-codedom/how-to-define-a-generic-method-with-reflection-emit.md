@@ -88,7 +88,7 @@ Třetí postup ukazuje, jak zavolat obecnou metodu.
 
 ### <a name="to-emit-the-method-body"></a>Vygenerování těla metody
 
-1. Získejte generátor kódu a deklarujte místní proměnné a popisky. Metoda <xref:System.Reflection.Emit.ILGenerator.DeclareLocal%2A> se používá při deklarování lokálních proměnných. Metoda `Factory` má čtyři místní proměnné: `retVal` pro uchování nového `TOutput` vráceného metodou, `ic` pro uložení `TOutput` při přetypování na `ICollection(Of TInput)` (`ICollection<TInput>` in C#). , `input` pro uložení vstupního pole objektů `TInput` a `index` k iterování v poli. Tato metoda má také dva popisky, jeden pro vstup do smyčky (`enterLoop`) a jeden pro začátek smyčky (`loopAgain`), definované pomocí metody <xref:System.Reflection.Emit.ILGenerator.DefineLabel%2A>.
+1. Získejte generátor kódu a deklarujte místní proměnné a popisky. Metoda <xref:System.Reflection.Emit.ILGenerator.DeclareLocal%2A> se používá při deklarování lokálních proměnných. `Factory` Metoda má `retVal` čtyři místní proměnné: pro uchování nového `TOutput` , který je vrácen metodou, `ic` pro uchování `TOutput` při přetypování do `ICollection(Of TInput)` (`ICollection<TInput>` v jazyce C#) `input` pro uchování vstupního pole `TInput` objektů a `index` pro iteraci v poli. Tato metoda má také dva popisky, jeden pro vstup do smyčky (`enterLoop`) a jeden pro začátek smyčky (`loopAgain`), definované pomocí metody <xref:System.Reflection.Emit.ILGenerator.DefineLabel%2A>.
 
     První věc, kterou metoda provede, je načtení jejího argumentu pomocí operačního kódu <xref:System.Reflection.Emit.OpCodes.Ldarg_0> a jeho uložení do místní proměnné `input` pomocí operačního kódu <xref:System.Reflection.Emit.OpCodes.Stloc_S>.
 
@@ -131,7 +131,7 @@ Třetí postup ukazuje, jak zavolat obecnou metodu.
 
 ### <a name="to-invoke-the-generic-method"></a>Volání obecné metody
 
-1. `Factory` je obecná definice metody. Aby ji bylo možné vyvolat, je nutné přiřadit typy parametrů obecného typu. To lze učinit použitím metody <xref:System.Reflection.MethodInfo.MakeGenericMethod%2A>. Následující kód vytvoří konstruovanou obecnou metodu, určí typ <xref:System.String> jako typ parametru `TInput` a typ `List(Of String)` (`List<string>` v jazyce C#) jako typ parametru `TOutput` a zobrazí řetězec představující tuto metodu.
+1. `Factory`je obecná definice metody. Aby ji bylo možné vyvolat, je nutné přiřadit typy parametrů obecného typu. To lze učinit použitím metody <xref:System.Reflection.MethodInfo.MakeGenericMethod%2A>. Následující kód vytvoří konstruovanou obecnou metodu, určí typ <xref:System.String> jako typ parametru `TInput` a typ `List(Of String)` (`List<string>` v jazyce C#) jako typ parametru `TOutput` a zobrazí řetězec představující tuto metodu.
 
     [!code-csharp[GenericMethodHowTo#21](../../../samples/snippets/csharp/VS_Snippets_CLR/GenericMethodHowTo/CS/source.cs#21)]
     [!code-vb[GenericMethodHowTo#21](../../../samples/snippets/visualbasic/VS_Snippets_CLR/GenericMethodHowTo/VB/source.vb#21)]
@@ -164,7 +164,7 @@ Příklad kódu obsahuje zdrojový kód, který je ekvivalentní s vygenerovanou
 [!code-csharp[GenericMethodHowTo#1](../../../samples/snippets/csharp/VS_Snippets_CLR/GenericMethodHowTo/CS/source.cs#1)]
 [!code-vb[GenericMethodHowTo#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/GenericMethodHowTo/VB/source.vb#1)]
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Reflection.Emit.MethodBuilder>
 - [Postupy: Definování obecného typu pomocí generování reflexe](how-to-define-a-generic-type-with-reflection-emit.md)

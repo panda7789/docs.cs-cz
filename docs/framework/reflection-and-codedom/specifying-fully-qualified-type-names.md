@@ -23,7 +23,7 @@ ms.locfileid: "73130030"
 ---
 # <a name="specifying-fully-qualified-type-names"></a>Určení plně kvalifikovaných názvů typů
 
-Je nutné zadat názvy typů, aby měly platný vstup k různým operacím reflexe. Plně kvalifikovaný název typu se skládá ze specifikace názvu sestavení, specifikace oboru názvů a názvu typu. Specifikace názvu typu jsou používány metodami, jako jsou <xref:System.Type.GetType%2A?displayProperty=nameWithType>, <xref:System.Reflection.Module.GetType%2A?displayProperty=nameWithType>, <xref:System.Reflection.Emit.ModuleBuilder.GetType%2A?displayProperty=nameWithType>a <xref:System.Reflection.Assembly.GetType%2A?displayProperty=nameWithType>.
+Je nutné zadat názvy typů, aby měly platný vstup k různým operacím reflexe. Plně kvalifikovaný název typu se skládá ze specifikace názvu sestavení, specifikace oboru názvů a názvu typu. Specifikace názvu typu <xref:System.Type.GetType%2A?displayProperty=nameWithType>jsou používány metodami, jako jsou <xref:System.Reflection.Module.GetType%2A?displayProperty=nameWithType>, <xref:System.Reflection.Emit.ModuleBuilder.GetType%2A?displayProperty=nameWithType>, a <xref:System.Reflection.Assembly.GetType%2A?displayProperty=nameWithType>.
 
 ## <a name="grammar-for-type-names"></a>Gramatika pro názvy typů
 
@@ -116,9 +116,9 @@ AssemblyProperty
 
 V názvu typu je identifikátor libovolný platný název určený pravidly jazyka.
 
-Použijte zpětné lomítko (\\) jako řídicí znak pro oddělení následujících tokenů při použití jako součást IDENTIFIKÁTORu.
+Pomocí zpětného lomítka\\() jako řídicího znaku můžete oddělit následující tokeny při použití jako součást identifikátoru.
 
-|Klíčové|Význam|
+|Podpisový|Význam|
 |-----------|-------------|
 |\\,|Oddělovač sestavení|
 |\\+|Oddělovač vloženého typu|
@@ -127,15 +127,15 @@ Použijte zpětné lomítko (\\) jako řídicí znak pro oddělení následujíc
 |\\[|Oddělovač dimenze pole.|
 |\\]|Oddělovač dimenze pole.|
 |\\.|Použití zpětného lomítka před tečkou pouze v případě, že se období používá ve specifikaci pole. Období v NamespaceSpec neberou zpětné lomítko.|
-|v případě potřeby \\\|zpětného lomítka jako řetězcový literál.|
+|\\\|Zpětné lomítko v případě potřeby jako řetězcový literál.|
 
 Všimněte si, že ve všech součástech token TypeSpec s výjimkou AssemblyNameSpec jsou mezery relevantní. V AssemblyNameSpec mezery před oddělovačem ', ' jsou relevantní, ale mezery za oddělovačem ', ' budou ignorovány.
 
-Třídy reflexe, jako je například <xref:System.Type.FullName%2A?displayProperty=nameWithType>, vrátí název pozměněný tak, aby se vrácený název mohl použít při volání <xref:System.Type.GetType%2A>, jako v `MyType.GetType(myType.FullName)`.
+Třídy reflexe, <xref:System.Type.FullName%2A?displayProperty=nameWithType>jako například, vrátí pozměněný název tak, aby se vrácený název mohl použít při volání <xref:System.Type.GetType%2A>metody, jako `MyType.GetType(myType.FullName)`v.
 
 Například plně kvalifikovaný název pro typ může být `Ozzy.OutBack.Kangaroo+Wallaby,MyAssembly`.
 
-Pokud byl obor názvů `Ozzy.Out+Back`, před znaménkem znaménka musí být uvozen zpětným lomítkem. V opačném případě analyzátor by ho interpretoval jako oddělovač vnořování. Reflexe generuje tento řetězec jako `Ozzy.Out\+Back.Kangaroo+Wallaby,MyAssembly`.
+Pokud byl `Ozzy.Out+Back`obor názvů, pak znaménko plus musí předcházet zpětnému lomítku. V opačném případě analyzátor by ho interpretoval jako oddělovač vnořování. Reflexe vygeneruje tento `Ozzy.Out\+Back.Kangaroo+Wallaby,MyAssembly`řetězec jako.
 
 ## <a name="specifying-assembly-names"></a>Určení názvů sestavení
 
@@ -147,7 +147,7 @@ Minimální informace požadované ve specifikaci názvu sestavení jsou textov�
 |**PublicKey**|Úplný veřejný klíč|Řetězcová hodnota úplného veřejného klíče v šestnáctkovém formátu Zadejte nulový odkaz (**Nothing** v Visual Basic) k explicitnímu označení soukromého sestavení.|
 |**PublicKeyToken**|Token veřejného klíče (8bitové bajtové hodnoty hash úplného veřejného klíče)|Řetězcová hodnota tokenu veřejného klíče v šestnáctkovém formátu. Zadejte nulový odkaz (**Nothing** v Visual Basic) k explicitnímu označení soukromého sestavení.|
 |**Jazykových**|Jazyková verze sestavení|Jazyková verze sestavení ve formátu RFC-1766 nebo neutrální pro sestavení nezávislá na jazyce (nesatelitní).|
-|**Uživatelská**|Vlastní binární rozsáhlý objekt (BLOB). Tato operace je aktuálně používána pouze v sestaveních generovaných [generátorem nativních bitových kopií (NGen)](../tools/ngen-exe-native-image-generator.md).|Vlastní řetězec používaný nástrojem generátor nativních bitových kopií pro oznamování mezipaměti sestavení, že sestavení, které se instaluje, je nativní bitová kopie, a proto je nutné ji nainstalovat do mezipaměti nativní bitové kopie. Označuje se také jako řetězec zap.|
+|**Vlastní**|Vlastní binární rozsáhlý objekt (BLOB). Tato operace je aktuálně používána pouze v sestaveních generovaných [generátorem nativních bitových kopií (NGen)](../tools/ngen-exe-native-image-generator.md).|Vlastní řetězec používaný nástrojem generátor nativních bitových kopií pro oznamování mezipaměti sestavení, že sestavení, které se instaluje, je nativní bitová kopie, a proto je nutné ji nainstalovat do mezipaměti nativní bitové kopie. Označuje se také jako řetězec zap.|
 
 Následující příklad ukazuje rozhraní **AssemblyName** pro jednoduše pojmenované sestavení s výchozí jazykovou verzí.
 
@@ -187,7 +187,7 @@ com.microsoft.crypto, Culture=en, PublicKeyToken=a5d015c7d5a0b012,
 
 ## <a name="specifying-generic-types"></a>Určení obecných typů
 
-SimpleTypeSpec\`číslo představuje otevřený obecný typ s parametry od 1 do *n* parametrů obecného typu. Chcete-li například získat odkaz na otevřený seznam obecných typů\<T > nebo uzavřený seznam obecných typů\<> řetězce, použijte ``Type.GetType("System.Collections.Generic.List`1")`` k získání odkazu na slovník obecného typu\<TKey, TValue > , použijte ``Type.GetType("System.Collections.Generic.Dictionary`2")``.
+SimpleTypeSpec\`číslo představuje otevřený obecný typ s parametry od 1 do *n* parametrů obecného typu. Například chcete-li získat odkaz\<na otevřený seznam obecných typů T> nebo uzavřený seznam\<obecných typů typu>, použijte ``Type.GetType("System.Collections.Generic.List`1")`` k získání odkazu na slovník\<obecného typu TKey, TValue>, použijte. ``Type.GetType("System.Collections.Generic.Dictionary`2")``
 
 ## <a name="specifying-pointers"></a>Určení ukazatelů
 
@@ -195,26 +195,26 @@ SimpleTypeSpec * představuje nespravovaný ukazatel. Například chcete-li zís
 
 ## <a name="specifying-references"></a>Zadání odkazů
 
-SimpleTypeSpec & představuje spravovaný ukazatel nebo odkaz. Například pro získání odkazu na typ MyType použijte `Type.GetType("MyType &")`. Všimněte si, že na rozdíl od ukazatelů jsou odkazy omezeny na jednu úroveň.
+SimpleTypeSpec & představuje spravovaný ukazatel nebo odkaz. Například chcete-li získat odkaz na typ MyType, použijte `Type.GetType("MyType &")`. Všimněte si, že na rozdíl od ukazatelů jsou odkazy omezeny na jednu úroveň.
 
 ## <a name="specifying-arrays"></a>Určení polí
 
-V BNF gramatice se ReflectionEmitDimension vztahuje pouze na neúplné definice typu načtené pomocí <xref:System.Reflection.Emit.ModuleBuilder.GetType%2A?displayProperty=nameWithType>. Neúplné definice typu jsou <xref:System.Reflection.Emit.TypeBuilder> objekty vytvořené pomocí <xref:System.Reflection.Emit?displayProperty=nameWithType>, ale na kterých <xref:System.Reflection.Emit.TypeBuilder.CreateType%2A?displayProperty=nameWithType> nebyl volán. ReflectionDimension lze použít k načtení jakékoli definice typu, která byla dokončena, tedy typu, který byl načten.
+V BNF gramatice se ReflectionEmitDimension vztahuje pouze na neúplné definice typu načtené <xref:System.Reflection.Emit.ModuleBuilder.GetType%2A?displayProperty=nameWithType>pomocí. Neúplné definice typu <xref:System.Reflection.Emit.TypeBuilder> jsou objekty vytvořené <xref:System.Reflection.Emit?displayProperty=nameWithType> pomocí, ale <xref:System.Reflection.Emit.TypeBuilder.CreateType%2A?displayProperty=nameWithType> na které nebyly volány. ReflectionDimension lze použít k načtení jakékoli definice typu, která byla dokončena, tedy typu, který byl načten.
 
 Pole jsou k dispozici v reflexi zadáním pořadí pole:
 
-- `Type.GetType("MyArray[]")` získá pole s jednou dimenzí s 0 s dolní hranicí.
+- `Type.GetType("MyArray[]")`Získá pole s jednou dimenzí, které má dolní mez 0.
 
-- `Type.GetType("MyArray[*]")` získá pole s jednou dimenzí, které má neznámou dolní mez.
-- `Type.GetType("MyArray[][]")` získá pole dvourozměrného pole.
+- `Type.GetType("MyArray[*]")`Získá pole s jednou dimenzí, které má neznámou dolní mez.
+- `Type.GetType("MyArray[][]")`Získá pole dvourozměrného pole.
 
-- `Type.GetType("MyArray[*,*]")` a `Type.GetType("MyArray[,]")` získá obdélníkové dvourozměrné pole s neznámými dolními mezemi.
+- `Type.GetType("MyArray[*,*]")`a `Type.GetType("MyArray[,]")` získá obdélníkové dvourozměrné pole s neznámými dolními mezemi.
 
-Všimněte si, že z běhového bodu zobrazení, `MyArray[] != MyArray[*]`, ale u multidimenzionálních polí jsou oba zápisy ekvivalentní. To znamená, `Type.GetType("MyArray [,]") == Type.GetType("MyArray[*,*]")` se vyhodnotí jako **true**.
+Všimněte si, že z běhového bodu zobrazení `MyArray[] != MyArray[*]`,, ale u multidimenzionálních polí jsou oba zápisy ekvivalentní. To znamená, `Type.GetType("MyArray [,]") == Type.GetType("MyArray[*,*]")` že se vyhodnotí jako **true**.
 
-Pro **modul ModuleBuilder. GetType**`MyArray[0..5]` označuje pole s jednou dimenzí, které má velikost 6, dolní mez 0. `MyArray[4…]` označuje pole s jednou dimenzí s neznámou velikostí a dolní mez 4.
+Pro **modul ModuleBuilder. GetType** `MyArray[0..5]` označuje pole s jednou dimenzí, které má velikost 6, dolní mez 0. `MyArray[4…]`označuje pole s jednou dimenzí neznámé velikosti a dolní meze 4.
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Reflection.AssemblyName>
 - <xref:System.Reflection.Emit.ModuleBuilder>

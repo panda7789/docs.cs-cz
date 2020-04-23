@@ -22,12 +22,12 @@ Modul pro [Import knihovny typů (Tlbimp. exe)](../tools/tlbimp-exe-type-library
   
 1. Použijte následující příkaz:  
   
-     **tlbimp** \<*type-library-File*>  
+     **Tlbimp** \< *– typ knihovny – soubor*>  
   
      Přidání přepínače **/out:** vytvoří definiční sestavení se změněným názvem, například LOANLib. dll. Změna názvu definičního sestavení může zjednodušit jeho odlišení od původní knihovny DLL modelu COM a zabránit problémům, ke kterým může dojít, pokud mají duplicitní názvy.  
   
 ## <a name="example"></a>Příklad  
- Následující příkaz vytvoří sestavení LOANLib. dll v oboru názvů `Loanlib`.  
+ Následující příkaz vytvoří sestavení LOANLib. dll v `Loanlib` oboru názvů.  
   
 ```console  
 tlbimp Loanlib.tlb  
@@ -39,7 +39,7 @@ tlbimp Loanlib.tlb
 tlbimp LoanLib.tlb /out: LOANLib.dll  
 ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Import knihovny typů ve formě sestavení](importing-a-type-library-as-an-assembly.md)
 - [Vystavení komponent COM pro rozhraní .NET Framework](exposing-com-components.md)

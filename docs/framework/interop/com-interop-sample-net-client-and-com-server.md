@@ -17,9 +17,9 @@ ms.lasthandoff: 03/12/2020
 ms.locfileid: "79181493"
 ---
 # <a name="com-interop-sample-net-client-and-com-server"></a>Ukázka zprostředkovatele s objekty COM: klient .NET a server COM
-Tato ukázka ukazuje, jak [klient .NET](#cpconcominteropsamplenetclientcomserveranchor1), vytvořený pro přístup k [serveru COM](#cpconcominteropsamplenetclientcomserveranchor2), vytvoří instanci com coclass a volá členy třídy k provádění výpočtů hypotéky.  
+Tato ukázka předvádí, jak [klient .NET](#cpconcominteropsamplenetclientcomserveranchor1), sestavený pro přístup k [serveru com](#cpconcominteropsamplenetclientcomserveranchor2), vytvoří instanci třídy coclass modelu COM a volá členy třídy za účelem provedení výpočtů hypotéky.  
   
- V tomto příkladu klient vytvoří a zavolá instanci **Loan** coclass, předá čtyři argumenty (jeden z těchto čtyř se rovná nule) na instanci a zobrazí výpočty. Fragmenty kódu z této ukázky se zobrazí v celé této části.  
+ V tomto příkladu klient vytvoří a zavolá instanci kotřídy **výpůjčky** , předá čtyři argumenty (jedna z těchto čtyř se rovná nule) k instanci a zobrazí výpočty. Fragmenty kódu z této ukázky se zobrazí v celé této části.  
   
 <a name="cpconcominteropsamplenetclientcomserveranchor1"></a>
 ## <a name="net-client"></a>Klient .NET  
@@ -152,7 +152,7 @@ public class LoanApp {
 ```  
   
 <a name="cpconcominteropsamplenetclientcomserveranchor2"></a>
-## <a name="com-server"></a>COM Server  
+## <a name="com-server"></a>Server COM  
   
 ```cpp  
 // Loan.cpp : Implementation of CLoan  

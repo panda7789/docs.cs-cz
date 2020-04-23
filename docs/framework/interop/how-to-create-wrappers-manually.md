@@ -18,7 +18,7 @@ Rozhodnete-li se deklarovat typy modelu COM ve spravovaném zdrojovém kódu ru�
   
 1. Deklarujte typy v jazyce, který je kompatibilní se specifikací CLS (Common Language Specification), a soubor zkompilujte.  
   
-2. Exportujte sestavení obsahující typy pomocí [exportélu knihovny typů (Tlbexp.exe).](../tools/tlbexp-exe-type-library-exporter.md)  
+2. Exportujte sestavení obsahující typy pomocí [typu Exportér knihovny typů (Tlbexp. exe)](../tools/tlbexp-exe-type-library-exporter.md).  
   
 3. Exportovanou knihovnu typů modelu COM použijte jako základ pro deklaraci spravovaných typů orientovaných na model COM.  
   
@@ -26,16 +26,16 @@ Rozhodnete-li se deklarovat typy modelu COM ve spravovaném zdrojovém kódu ru�
   
 1. Za předpokladu, že máte soubor IDL nebo soubor knihovny typů, se rozhodněte, které třídy a rozhraní budou zahrnuty do uživatelského objektu RCW. Je možné vyloučit jakékoli typy, které nechcete přímo nebo nepřímo použít v aplikaci.  
   
-2. Vytvořte zdrojový soubor v jazyce, který odpovídá specifikaci CLS a deklarujte typy. Úplný popis procesu převodu importu naleznete v tématu [Typknihovna do souhrnu převodu sestavy.](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/k83zzh38(v=vs.100)) Efektivně při vytváření vlastní RCW, ručně provádíte aktivitu převodu typu poskytovanou [typem knihovny Import (Tlbimp.exe)](../tools/tlbimp-exe-type-library-importer.md). Příklad v následující části zobrazuje typy v souboru IDL nebo souboru knihovny typů a odpovídající typy v kódu jazyka C#.  
+2. Vytvořte zdrojový soubor v jazyce, který odpovídá specifikaci CLS a deklarujte typy. Úplný popis procesu převodu importu naleznete v tématu [Souhrn převodu knihovny typů na sestavení](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/k83zzh38(v=vs.100)) . Efektivně platí, že když vytvoříte vlastní RCW, ručně provádíte aktivitu konverze typu poskytnutou modulem pro [Import knihovny typů (Tlbimp. exe)](../tools/tlbimp-exe-type-library-importer.md). Příklad v následující části zobrazuje typy v souboru IDL nebo souboru knihovny typů a odpovídající typy v kódu jazyka C#.  
   
 3. Po dokončení vytváření deklarací zkompilujte soubor jako jakýkoli jiný spravovaný zdrojový kód.  
   
-4. Stejně jako v případě typů, které jsou importovány pomocí nástroje Tlbimp.exe, vyžadují některé z nich dodatečné informace, které lze přidat přímo do kódu. Podrobnosti naleznete v [tématu Jak: Úprava interop sestavení](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/8zbc969t(v=vs.100)).  
+4. Stejně jako v případě typů, které jsou importovány pomocí nástroje Tlbimp.exe, vyžadují některé z nich dodatečné informace, které lze přidat přímo do kódu. Podrobnosti naleznete v tématu [How to: Edit interop assemblies](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/8zbc969t(v=vs.100)).  
   
 ## <a name="example"></a>Příklad  
  Následující kód znázorňuje příklad rozhraní `ISATest` a třídy `SATest` v souboru IDL a odpovídající typy ve zdrojovém kódu jazyka C#.  
   
- **Soubor knihovny IDL nebo typu**  
+ **IDL nebo soubor knihovny typů**  
   
 ```cpp
  [  
@@ -99,9 +99,9 @@ namespace SAServer
   
 ## <a name="see-also"></a>Viz také
 
-- [Přizpůsobení reložií s runtime voláním](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/e753eftz(v=vs.100))
+- [Přizpůsobení obálek za běhu, které se budou volat](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/e753eftz(v=vs.100))
 - [Datové typy COM](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/sak564ww(v=vs.100))
-- [Postup: Úprava sestavení interop](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/8zbc969t(v=vs.100))
-- [Souhrn převodu knihovny typů do sestavení](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/k83zzh38(v=vs.100))
-- [Tlbimp.exe (importér knihovny typů)](../tools/tlbimp-exe-type-library-importer.md)
-- [Tlbexp.exe (exportér knihovny typů)](../tools/tlbexp-exe-type-library-exporter.md)
+- [Postupy: Úprava sestavení vzájemné spolupráce](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/8zbc969t(v=vs.100))
+- [Souhrn převodu knihovny typů na sestavení](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/k83zzh38(v=vs.100))
+- [Tlbimp. exe (importér knihovny typů)](../tools/tlbimp-exe-type-library-importer.md)
+- [Tlbexp. exe (Exportér knihovny typů)](../tools/tlbexp-exe-type-library-exporter.md)

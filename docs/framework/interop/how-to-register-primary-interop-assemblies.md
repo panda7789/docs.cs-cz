@@ -34,20 +34,20 @@ K registraci primárního definičního sestavení použijte [Nástroj pro regis
 
 ## <a name="to-register-a-primary-interop-assembly"></a>Registrace primárního definičního sestavení
 
-1. V příkazovém řádku zadejte příkaz:
+1. Na příkazovém řádku zadejte:
 
      **Regasm** *AssemblyName*
 
      V tomto příkazu je *AssemblyName* název souboru registrovaného sestavení. Nástroj Regasm. exe přidá položku pro primární definiční sestavení pod stejným klíčem registru jako původní knihovnu typů.
 
 ## <a name="example"></a>Příklad
- Následující příklad registruje `CompanyA.UtilLib.dll` primární spolupracující sestavení.
+ Následující příklad registruje `CompanyA.UtilLib.dll` primární definiční sestavení.
 
 ```console
 regasm CompanyA.UtilLib.dll
 ```
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Programování s primárními definičními sestaveními](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/baxfadst(v=vs.100))
 - [Hledání primárních sestavení vzájemné spolupráce](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/y06sxw56(v=vs.100))

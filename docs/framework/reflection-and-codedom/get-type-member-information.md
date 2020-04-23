@@ -17,7 +17,7 @@ ms.lasthandoff: 10/30/2019
 ms.locfileid: "73130206"
 ---
 # <a name="how-to-get-type-and-member-information-by-using-reflection"></a>Postupy: načtení informací o typu a členu pomocí reflexe
-Obor názvů <xref:System.Reflection> obsahuje mnoho metod získání informací o typech a jejich členech. Tento článek ukazuje jednu z těchto metod <xref:System.Type.GetMembers%2A?displayProperty=nameWithType>. Další informace najdete v tématu [Přehled reflexe](reflection.md).
+<xref:System.Reflection> Obor názvů obsahuje mnoho metod získání informací o typech a jejich členech. Tento článek ukazuje jednu z těchto metod, <xref:System.Type.GetMembers%2A?displayProperty=nameWithType>. Další informace najdete v tématu [Přehled reflexe](reflection.md).
   
 ## <a name="example"></a>Příklad
 
@@ -27,7 +27,7 @@ Následující příklad získá informace o typu a členu pomocí reflexe:
 [!code-csharp[Get type members](../../../samples/snippets/standard/reflection/memberinfo/gettypemembers.cs)]
 [!code-vb[Get type members](../../../samples/snippets/standard/reflection/memberinfo/gettypemembers.vb)]
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Program s aplikačními doménami](../app-domains/application-domains.md#programming-with-application-domains)
 - [Reflexe](reflection.md)

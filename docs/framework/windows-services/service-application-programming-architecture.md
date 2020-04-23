@@ -49,24 +49,24 @@ Aplikace služby systému Windows jsou založeny na třídě, která dědí z <x
 > [!NOTE]
 > Tyto metody reprezentují stavy, během kterých se služba pohybuje v průběhu své životnosti. služba přejde z jednoho stavu na další. Například nikdy nebudete mít službu, aby reagovala na <xref:System.ServiceProcess.ServiceBase.OnContinue%2A> příkaz před <xref:System.ServiceProcess.ServiceBase.OnStart%2A> voláním.  
   
- Existuje několik dalších vlastností a metod, které mají zájem. Zde jsou některé z nich:  
+ Existuje několik dalších vlastností a metod, které mají zájem. Mezi ně patří:  
   
-- <xref:System.ServiceProcess.ServiceBase.Run%2A> Metoda<xref:System.ServiceProcess.ServiceBase> třídy. Toto je hlavní vstupní bod pro službu. Když vytvoříte službu pomocí šablony služby systému Windows, kód je vložen do `Main` metody vaší aplikace pro spuštění služby. Tento kód vypadá takto:  
+- <xref:System.ServiceProcess.ServiceBase.Run%2A> Metoda <xref:System.ServiceProcess.ServiceBase> třídy. Toto je hlavní vstupní bod pro službu. Když vytvoříte službu pomocí šablony služby systému Windows, kód je vložen do `Main` metody vaší aplikace pro spuštění služby. Tento kód vypadá takto:  
   
      [!code-csharp[VbRadconService#6](../../../samples/snippets/csharp/VS_Snippets_VBCSharp/VbRadconService/CS/MyNewService.cs#6)]
      [!code-vb[VbRadconService#6](../../../samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbRadconService/VB/MyNewService.vb#6)]  
   
     > [!NOTE]
-    > V těchto příkladech se používá pole <xref:System.ServiceProcess.ServiceBase>typu, do kterého lze přidat každou službu, kterou vaše aplikace obsahuje, a poté lze všechny služby spustit společně. Pokud ale vytváříte jenom jednu službu, můžete se rozhodnout nepoužívat pole a jednoduše deklarovat nový objekt, který dědí <xref:System.ServiceProcess.ServiceBase> a pak ho spustí. Příklad naleznete v tématu [How to: Napište služby](how-to-write-services-programmatically.md)programově.  
+    > V těchto příkladech se používá pole <xref:System.ServiceProcess.ServiceBase>typu, do kterého lze přidat každou službu, kterou vaše aplikace obsahuje, a poté lze všechny služby spustit společně. Pokud ale vytváříte jenom jednu službu, můžete se rozhodnout nepoužívat pole a jednoduše deklarovat nový objekt, který dědí <xref:System.ServiceProcess.ServiceBase> a pak ho spustí. Příklad naleznete v tématu [How to: Write Services Programs](how-to-write-services-programmatically.md).  
   
-- Řada vlastností <xref:System.ServiceProcess.ServiceBase> třídy. Určují, jaké metody lze ve vaší službě volat. Například pokud <xref:System.ServiceProcess.ServiceBase.CanStop%2A> je vlastnost nastavena na `true`, <xref:System.ServiceProcess.ServiceBase.OnStop%2A> lze volat metodu ve vaší službě. Pokud je `true` <xref:System.ServiceProcess.ServiceBase.OnPause%2A> vlastnost nastavena na, lze volat metody <xref:System.ServiceProcess.ServiceBase.OnContinue%2A>a. <xref:System.ServiceProcess.ServiceBase.CanPauseAndContinue%2A> Když nastavíte jednu z těchto vlastností na `true`, měli byste přepsat a definovat zpracování pro související metody.  
+- Řada vlastností <xref:System.ServiceProcess.ServiceBase> třídy. Určují, jaké metody lze ve vaší službě volat. Například pokud je <xref:System.ServiceProcess.ServiceBase.CanStop%2A> vlastnost nastavena na `true`, lze volat <xref:System.ServiceProcess.ServiceBase.OnStop%2A> metodu ve vaší službě. Pokud je <xref:System.ServiceProcess.ServiceBase.CanPauseAndContinue%2A> vlastnost nastavena na `true`, lze volat <xref:System.ServiceProcess.ServiceBase.OnPause%2A> metody <xref:System.ServiceProcess.ServiceBase.OnContinue%2A> a. Když nastavíte jednu z těchto vlastností na `true`, měli byste přepsat a definovat zpracování pro související metody.  
   
     > [!NOTE]
     > Vaše služba musí přinejmenším <xref:System.ServiceProcess.ServiceBase.OnStart%2A> přepsat a <xref:System.ServiceProcess.ServiceBase.OnStop%2A> být užitečná.  
   
  Můžete také použít komponentu s názvem <xref:System.ServiceProcess.ServiceController> ke komunikaci s a řízení chování existující služby.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Úvod do aplikací služby systému Windows](introduction-to-windows-service-applications.md)
-- [Postupy: Vytvořit služby systému Windows](how-to-create-windows-services.md)
+- [Postupy: Vytváření služeb systému Windows](how-to-create-windows-services.md)

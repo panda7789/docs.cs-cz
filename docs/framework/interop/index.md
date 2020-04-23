@@ -19,43 +19,43 @@ ms.locfileid: "73457966"
 ---
 # <a name="interoperating-with-unmanaged-code"></a>Spolupráce s nespravovaným kódem
 
-Rozhraní .NET Framework podporuje interakci s komponentami modelu COM, službami modelu COM+, externími knihovnami typů a mnoha službami operačního systému. Datové typy, podpisy metod a mechanismy zpracování chyb se liší mezi spravovanými a nespravovanými objektovými modely. Chcete-li zjednodušit vzájemné spolupráce mezi součástmi rozhraní .NET Framework a nespravovaným kódem a usnadnit cestu migrace, soubor Runtime jazyka common jazyk ukrytý chod klientů i serverů rozdíly v těchto objektových modelech.
+.NET Framework podporuje interakci s komponentami COM, službami COM+, externími knihovnami typů a mnoha službami operačního systému. Datové typy, signatury metod a mechanismy zpracování chyb se liší mezi spravovanými a nespravovanými objektovými modely. Aby bylo možné zjednodušit vzájemnou spolupráci mezi .NET Framework komponentami a nespravovaným kódem, a usnadnit tak cestu migrace, modul CLR (Common Language Runtime) se v těchto objektových modelech skrývá mezi klienty a servery.
 
-Kód, který se spustí pod kontrolou runtime se nazývá spravovaný kód. Naopak kód, který běží mimo runtime se nazývá nespravovaný kód. Komponenty modelu COM, rozhraní ActiveX a funkce rozhraní API systému Windows jsou příklady nespravovaného kódu.
+Kód, který se spouští pod ovládacím prvkem modulu runtime, se nazývá spravovaný kód. Naopak kód, který se spouští mimo modul runtime, se nazývá nespravovaný kód. Mezi příklady nespravovaného kódu patří komponenty modelu COM, rozhraní ActiveX a funkce rozhraní API systému Windows.
 
 ## <a name="in-this-section"></a>V tomto oddílu
 
 [Vystavení komponent COM pro rozhraní .NET Framework](exposing-com-components.md)  
-Popisuje způsob použití komponent modelu COM z aplikací rozhraní .NET Framework.
+Popisuje, jak použít komponenty modelu COM z aplikace .NET Framework.
 
 [Vystavení komponent architektury .NET Framework pro COM](exposing-dotnet-components-to-com.md)  
-Popisuje způsob použití součástí rozhraní .NET Framework z aplikací modelu COM.
+Popisuje, jak používat .NET Framework komponenty z aplikací modelu COM.
 
 [Používání nespravovaných funkcí DLL](consuming-unmanaged-dll-functions.md)  
-Popisuje, jak volat nespravované funkce dll pomocí platformy vyvolat.
+Popisuje, jak volat nespravované funkce knihovny DLL pomocí vyvolání platformy.
 
 [Zařazování spolupráce](interop-marshaling.md)  
-Popisuje zařazování pro interop com a platformy invoke.
+Popisuje zařazování pro zprostředkovatele komunikace s objekty COM a vyvolání platformy.
 
 [Postupy: Mapování výsledků HRESULT a výjimek](how-to-map-hresults-and-exceptions.md)  
 Popisuje mapování mezi výjimkami a HRESULTs.
 
 [Ekvivalence typů a vestavěné typy spolupráce](type-equivalence-and-embedded-interop-types.md)  
-Popisuje, jak jsou informace o typu pro typy COM vloženy do sestavení a jak běžný jazyk runtime určuje rovnocennost vložených typů COM.
+Popisuje způsob vložení informací o typu pro typy modelu COM do sestavení a jak modul CLR (Common Language Runtime) určí rovnocennost integrovaných typů COM.
 
 [Postupy: Generování primárních sestavení vzájemné spolupráce pomocí Tlbimp.exe](how-to-generate-primary-interop-assemblies-using-tlbimp-exe.md)  
-Popisuje, jak vytvořit primární interop sestavení pomocí *Tlbimp.exe* (Import knihovny typů).
+Popisuje, jak vypracovávat primární spolupracující sestavení pomocí nástroje *Tlbimp. exe* (importér knihovny typů).
 
 [Postupy: Registrace primárních sestavení spolupráce](how-to-register-primary-interop-assemblies.md)  
-Popisuje, jak zaregistrovat primární sestavení interop před odkazem na ně v projektech.
+Popisuje, jak registrovat primární sestavení vzájemné spolupráce předtím, než na ně můžete odkazovat v projektech.
 
 [Bezregistrační zprostředkovatel komunikace s objekty COM](registration-free-com-interop.md)  
-Popisuje, jak může interop modelu COM aktivovat součásti bez použití registru systému Windows.
+Popisuje, jak může zprostředkovatel komunikace s objekty COM aktivovat součásti bez použití registru systému Windows.
 
 [Postupy: Konfigurace bezregistrační aktivace komponent využívajících rozhraní .NET Framework](configure-net-framework-based-com-components-for-reg.md)  
-Popisuje, jak vytvořit manifest aplikace a jak vytvořit a vložit manifest komponenty.
+Popisuje, jak vytvořit manifest aplikace a jak vytvořit a vložit manifest součásti.
 
 ## <a name="related-sections"></a>Související oddíly
 
 [Obálky COM](../../standard/native-interop/com-wrappers.md)  
-Popisuje obálky poskytované com interop.
+Popisuje obálky poskytované zprostředkovatelem komunikace s objekty COM.

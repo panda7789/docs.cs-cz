@@ -8,12 +8,12 @@ helpviewer_keywords:
 - GAC (global assembly cache), benefits
 - access control lists [.NET Framework]
 ms.assetid: 8a18e5c2-d41d-49ef-abcb-7c27e2469433
-ms.openlocfilehash: 330555f907a5ee2ef9cfc11b0b5659a392c0dec7
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 7834fbc4d74b44c4bc5204ac451e92cac22e1ef5
+ms.sourcegitcommit: 62285ec11fa8e8424bab00511a90760c60e63c95
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73119710"
+ms.lasthandoff: 04/20/2020
+ms.locfileid: "81645422"
 ---
 # <a name="working-with-assemblies-and-the-global-assembly-cache"></a>Práce se sestaveními a s globální pamětí sestavení
 
@@ -71,5 +71,5 @@ Vysvětluje, jak používat nástroj [Ildasm. exe (IL Disassembler)](../tools/il
 [Jak běhové prostředí vyhledává sestavení](../deployment/how-the-runtime-locates-assemblies.md)  
 Popisuje, jak modul CLR (Common Language Runtime) vyhledá a načte sestavení, která tvoří vaši aplikaci.  
   
-[Programování se sestaveními](../../standard/assembly/program.md)  
+[Programování se sestaveními](../../standard/assembly/index.md)  
 Popisuje sestavení, stavební bloky spravovaných aplikací.

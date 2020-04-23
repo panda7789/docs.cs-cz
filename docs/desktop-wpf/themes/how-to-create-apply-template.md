@@ -1,6 +1,6 @@
 ---
-title: Vytvoření šablony v aplikaci WPF - .NET Desktop
-description: Zjistěte, jak vytvořit a odkazovat na šablonu ovládacího prvku v systému Windows Presentation Foundation a .NET Core.
+title: Vytvoření šablony v prostředí WPF – .NET Desktop
+description: Naučte se vytvořit a odkazovat na šablonu ovládacího prvku v Windows Presentation Foundation a .NET Core.
 author: thraka
 ms.author: adegeo
 ms.date: 11/15/2019
@@ -37,25 +37,25 @@ ms.locfileid: "82071246"
 ---
 # <a name="create-a-template-for-a-control"></a>Vytvoření šablony pro ovládací prvek
 
-Pomocí windows presentation foundation (WPF) můžete přizpůsobit vizuální strukturu a chování existujícího ovládacího prvku pomocí vlastní opakovaně použitelné šablony. Šablony lze použít globálně na vaši aplikaci, okna a stránky nebo přímo na ovládací prvky. Většina scénářů, které vyžadují vytvoření nového ovládacího prvku, může být pokryta místo toho vytvoření množení nové šablony pro existující ovládací prvek.
+Pomocí Windows Presentation Foundation (WPF) můžete přizpůsobit vizuální strukturu a chování existující ovládacímu prvku pomocí vlastní opakovaně použitelné šablony. Šablony lze globálně použít pro vaši aplikaci, okna a stránky nebo přímo k ovládacím prvkům. Pro většinu scénářů, které vyžadují vytvoření nového ovládacího prvku, se místo toho dá vytvořit nová šablona pro existující ovládací prvek.
 
 [!INCLUDE [desktop guide under construction](../../../includes/desktop-guide-preview-note.md)]
 
-V tomto článku se budete zabývat vytvořením nového <xref:System.Windows.Controls.ControlTemplate> ovládacího <xref:System.Windows.Controls.Button> prvku.
+V tomto článku budete zkoumat vytvoření nového <xref:System.Windows.Controls.ControlTemplate> <xref:System.Windows.Controls.Button> ovládacího prvku.
 
-## <a name="when-to-create-a-controltemplate"></a>Kdy vytvořit šablonu ovládacího prvku
+## <a name="when-to-create-a-controltemplate"></a>Kdy vytvořit ControlTemplate
 
-Ovládací prvky mají <xref:System.Windows.Controls.Border.Background%2A>mnoho <xref:System.Windows.Controls.Control.Foreground%2A>vlastností, například , a <xref:System.Windows.Controls.Control.FontFamily%2A>. Tyto vlastnosti řídí různé aspekty vzhledu ovládacího prvku, ale změny, které můžete provést nastavením těchto vlastností, jsou omezené. Můžete například nastavit <xref:System.Windows.Controls.Control.Foreground%2A> vlastnost na <xref:System.Windows.Controls.Control.FontStyle%2A> modrou a kurzívu <xref:System.Windows.Controls.CheckBox>na . Pokud chcete přizpůsobit vzhled ovládacího prvku nad rámec toho, co může nastavení <xref:System.Windows.Controls.ControlTemplate>ostatních vlastností v ovládacím prvku provést, vytvořte .
+Ovládací prvky mají mnoho vlastností, jako <xref:System.Windows.Controls.Border.Background%2A>jsou <xref:System.Windows.Controls.Control.Foreground%2A>, a <xref:System.Windows.Controls.Control.FontFamily%2A>. Tyto vlastnosti řídí různé aspekty vzhledu ovládacího prvku, ale změny, které můžete provést nastavením těchto vlastností, jsou omezené. Můžete například nastavit <xref:System.Windows.Controls.Control.Foreground%2A> vlastnost na modrou a <xref:System.Windows.Controls.Control.FontStyle%2A> na kurzívu na. <xref:System.Windows.Controls.CheckBox> Pokud chcete přizpůsobit vzhled ovládacího prvku nad rámec toho, co nastavení dalších vlastností ovládacího prvku může udělat, vytvoříte <xref:System.Windows.Controls.ControlTemplate>.
 
-Ve většině uživatelských rozhraní má tlačítko stejný celkový vzhled: obdélník s určitým textem. Pokud chcete vytvořit zaoblené tlačítko, můžete vytvořit nový ovládací prvek, který dědí z tlačítka nebo znovu vytvoří funkce tlačítka. Kromě toho nový uživatelský ovládací prvek by poskytnout kruhový vizuál.
+Ve většině uživatelských rozhraní má tlačítko stejný obecný vzhled: obdélník s nějakým textem. Pokud jste chtěli vytvořit zaoblené tlačítko, mohli byste vytvořit nový ovládací prvek, který dědí z tlačítka, nebo znovu vytvořit funkci tlačítka. Kromě toho nový uživatelský ovládací prvek poskytne kruhový vizuál.
 
-Můžete se vyhnout vytváření nových ovládacích prvků přizpůsobením vizuální rozložení existujícího ovládacího prvku. Se zaobleným tlačítkem vytvoříte a <xref:System.Windows.Controls.ControlTemplate> s požadovaným vizuálním rozložením.
+Vytváření nových ovládacích prvků můžete vyhnout přizpůsobením vizuálního rozložení existujícího ovládacího prvku. Pomocí zaobleného tlačítka vytvoříte <xref:System.Windows.Controls.ControlTemplate> s požadovaným rozložením vizuálu.
 
-Na druhou stranu, pokud potřebujete ovládací prvek s novými funkcemi, různými vlastnostmi a novýmnastavením, vytvoříte nový <xref:System.Windows.Controls.UserControl>.
+Na druhé straně, pokud potřebujete ovládací prvek s novými funkcemi, různými vlastnostmi a novými nastaveními, měli byste vytvořit nový <xref:System.Windows.Controls.UserControl>.
 
 ## <a name="prerequisites"></a>Požadované součásti
 
-Vytvořte novou aplikaci WPF a v *mainwindow.xaml* (nebo jiné okno podle vašeho výběru) nastavit následující vlastnosti na ** \<Element Okna>:**
+Vytvořte novou aplikaci WPF a v *MainWindow. XAML* (nebo jiném okně podle vašeho výběru) nastavte následující vlastnosti v ** \<okně>** elementu:
 
 |     |     |
 | --- | --- |
@@ -63,52 +63,52 @@ Vytvořte novou aplikaci WPF a v *mainwindow.xaml* (nebo jiné okno podle vašeh
 | **[!OP.NO-LOC(SizeToContent)]** | `WidthAndHeight` |
 | **[!OP.NO-LOC(MinWidth)]**      | `250` |
 
-Nastavte obsah elementu ** \<Window>** na následující XAML:
+Nastavte obsah ** \<okna>** elementu na následující XAML:
 
 [!code-xaml[Initial](~/samples/snippets/desktop-guide/wpf/styles-templates-create-apply-template/csharp/Window1.xaml#Initial)]
 
-Nakonec *mainwindow.xaml* soubor by měl vypadat podobně jako následující:
+V elementu end by soubor *MainWindow. XAML* měl vypadat nějak takto:
 
 [!code-xaml[InitialWhole](~/samples/snippets/desktop-guide/wpf/styles-templates-create-apply-template/csharp/Window1.xaml#InitialWhole)]
 
-Pokud spustíte aplikaci, vypadá to takto:
+Pokud aplikaci spouštíte, vypadá to jako na následujícím:
 
-![Okno WPF se dvěma nestylovými tlačítky](media/create-apply-template/unstyled-button.png)
+![Okno WPF se dvěma nestyle tlačítky](media/create-apply-template/unstyled-button.png)
 
-## <a name="create-a-controltemplate"></a>Vytvoření šablony ovládacího prvku
+## <a name="create-a-controltemplate"></a>Vytvoření ControlTemplate
 
-Nejběžnější způsob deklarování <xref:System.Windows.Controls.ControlTemplate> a je `Resources` jako prostředek v části v souboru XAML. Vzhledem k tomu, že šablony jsou prostředky, řídí se stejnými pravidly oboru, která platí pro všechny prostředky. Jednoduše řečeno, kde deklarujete, že šablona ovlivňuje, kde lze šablonu použít. Pokud například deklarujete šablonu v kořenovém prvku souboru XAML definice aplikace, šablonu lze použít kdekoli v aplikaci. Pokud definujete šablonu v okně, mohou šablonu používat pouze ovládací prvky v tomto okně.
+Nejběžnější způsob, jak deklarovat, <xref:System.Windows.Controls.ControlTemplate> je jako prostředek v `Resources` oddílu v souboru XAML. Vzhledem k tomu, že šablony jsou prostředky, řídí se stejnými pravidly oboru, která se vztahují na všechny prostředky. Jednoduše řečeno, kde deklarujete šablonu, má vliv na to, kde lze šablonu použít. Například pokud deklarujete šablonu v kořenovém elementu souboru XAML definice aplikace, šablonu lze použít kdekoli v aplikaci. Definujete-li šablonu v okně, mohou šablonu používat pouze ovládací prvky v tomto okně.
 
-Chcete-li začít, `Window.Resources` přidejte prvek do souboru *MainWindow.xaml:*
+Chcete-li začít s, `Window.Resources` přidejte element do souboru *MainWindow. XAML* :
 
 [!code-xaml[WindowResStart](~/samples/snippets/desktop-guide/wpf/styles-templates-create-apply-template/csharp/Window2.xaml#WindowResStart)]
 
-Vytvořte novou ** \<>ControlTemplate** s následující sadou vlastností:
+Vytvořte nový ** \<>ControlTemplate** s následujícími vlastnostmi:
 
 |     |     |
 | --- | --- |
-| **x:Klíč**         | `roundbutton` |
+| **X:Key –**         | `roundbutton` |
 | **TargetType**    | `Button` |
 
 Tato šablona ovládacího prvku bude jednoduchá:
 
-- kořenový prvek ovládacího prvku,<xref:System.Windows.Controls.Grid>
-- a <xref:System.Windows.Shapes.Ellipse> nakreslit zaoblený vzhled tlačítka
-- a <xref:System.Windows.Controls.ContentPresenter> zobrazí obsah tlačítka určeného uživatelem
+- kořenový element ovládacího prvku,<xref:System.Windows.Controls.Grid>
+- <xref:System.Windows.Shapes.Ellipse> vykreslení zaobleného vzhledu tlačítka
+- <xref:System.Windows.Controls.ContentPresenter> pro zobrazení obsahu tlačítka zadaného uživatelem
 
 [!code-xaml[ControlTemplate](~/samples/snippets/desktop-guide/wpf/styles-templates-create-apply-template/csharp/Window3.xaml#ControlTemplate)]
 
-### <a name="templatebinding"></a>Šablona vazba
+### <a name="templatebinding"></a>TemplateBinding
 
-Při vytváření nového <xref:System.Windows.Controls.ControlTemplate>ovládacího prvku můžete stále chtít použít veřejné vlastnosti ke změně vzhledu ovládacího prvku. Rozšíření značky [TemplateBinding](../../framework/wpf/advanced/templatebinding-markup-extension.md) váže vlastnost prvku, který <xref:System.Windows.Controls.ControlTemplate> je ve veřejné vlastnosti, která je definována ovládacím prvkem. Při použití [TemplateBinding](../../framework/wpf/advanced/templatebinding-markup-extension.md), povolíte vlastnosti ovládacího prvku působit jako parametry šablony. To znamená, že když je nastavena vlastnost na ovládací prvek, tato hodnota je předána na prvek, který má [TemplateBinding](../../framework/wpf/advanced/templatebinding-markup-extension.md) na něm.
+Když vytvoříte nový <xref:System.Windows.Controls.ControlTemplate>, můžete přesto chtít použít veřejné vlastnosti ke změně vzhledu ovládacího prvku. Rozšíření značek [TemplateBinding](../../framework/wpf/advanced/templatebinding-markup-extension.md) váže vlastnost prvku, který je v <xref:System.Windows.Controls.ControlTemplate> vlastnosti Public, která je definována ovládacím prvkem. Když použijete [TemplateBinding](../../framework/wpf/advanced/templatebinding-markup-extension.md), povolíte vlastnosti ovládacího prvku tak, aby sloužily jako parametry šablony. To znamená, že když je nastavena vlastnost ovládacího prvku, je tato hodnota předána prvku, který má [TemplateBinding](../../framework/wpf/advanced/templatebinding-markup-extension.md) .
 
-### <a name="ellipse"></a>Elipsa
+### <a name="ellipse"></a>Elipsy
 
-Všimněte **:::no-loc text="Fill":::** si, že a **:::no-loc text="Stroke":::** vlastnosti ** \<elementu elipsy** <xref:System.Windows.Controls.Control.Background>>jsou vázány na vlastnosti ovládacího <xref:System.Windows.Controls.Control.Foreground> prvku a vlastnosti.
+Všimněte si, **:::no-loc text="Fill":::** že **:::no-loc text="Stroke":::** vlastnosti a ** \<>elementu elipsy** jsou vázány na vlastnosti ovládacího <xref:System.Windows.Controls.Control.Foreground> prvku <xref:System.Windows.Controls.Control.Background> a.
 
-### <a name="contentpresenter"></a>Contentpresenter
+### <a name="contentpresenter"></a>ContentPresenter
 
-Do šablony je také přidán prvek [ \<ContentPresenter>.](xref:System.Windows.Controls.ContentPresenter) Vzhledem k tomu, že tato šablona je určena <xref:System.Windows.Controls.ContentControl>pro tlačítko, vezměte v úvahu, že tlačítko dědí z . Tlačítko představuje obsah prvku. Uvnitř tlačítka můžete nastavit cokoli, například prostý text nebo dokonce jiný ovládací prvek. Obě následující tlačítka jsou platná:
+Do šablony se přidá také prvek [ \<ContentPresenter>](xref:System.Windows.Controls.ContentPresenter) . Vzhledem k tomu, že je tato šablona navržena pro tlačítko, vezměte v úvahu, <xref:System.Windows.Controls.ContentControl>že tlačítko dědí z. Tlačítko zobrazí obsah elementu. Můžete nastavit cokoli uvnitř tlačítka, jako je prostý text nebo i jiný ovládací prvek. Níže jsou uvedené platná tlačítka:
 
 ```xaml
 <Button>My Text</Button>
@@ -120,13 +120,13 @@ Do šablony je také přidán prvek [ \<ContentPresenter>.](xref:System.Windows.
 </Button>
 ```
 
-V obou předchozích příkladech jsou text a zaškrtávací políčko nastaveny jako vlastnost [Button.Content.](xref:System.Windows.Controls.ContentControl.Content) Cokoliv je nastaveno jako obsah, může být prezentováno prostřednictvím ** \<>ContentPresenter **, což je to, co šablona dělá.
+V obou předchozích příkladech se text a zaškrtávací políčko nastaví jako vlastnost [Button. Content](xref:System.Windows.Controls.ContentControl.Content) . Bez ohledu na to, jak je možné obsah prezentovat pomocí ** \<>ContentPresenter **, což je to, co dělá šablona.
 
-Pokud <xref:System.Windows.Controls.ControlTemplate> je použita <xref:System.Windows.Controls.ContentControl> pro typ, `Button`například , a <xref:System.Windows.Controls.ContentPresenter> je hledána ve stromu prvků. Pokud `ContentPresenter` je nalezen, šablona automaticky sváže <xref:System.Windows.Controls.ContentControl.Content> vlastnost `ContentPresenter`ovládacího prvku na .
+Pokud <xref:System.Windows.Controls.ControlTemplate> je použit na <xref:System.Windows.Controls.ContentControl> typ, například `Button`,, <xref:System.Windows.Controls.ContentPresenter> je prohledán ve stromu elementu. Pokud `ContentPresenter` je nalezen, šablona automaticky váže <xref:System.Windows.Controls.ContentControl.Content> vlastnost ovládacího prvku na. `ContentPresenter`
 
 ## <a name="use-the-template"></a>Použití šablony
 
-Najít tlačítka, které byly deklarovány na začátku tohoto článku.
+Najděte tlačítka, která byla deklarována na začátku tohoto článku.
 
 [!code-xaml[Initial](~/samples/snippets/desktop-guide/wpf/styles-templates-create-apply-template/csharp/Window1.xaml#Initial)]
 
@@ -134,74 +134,74 @@ Nastavte <xref:System.Windows.Controls.Control.Template> vlastnost druhého tla�
 
 [!code-xaml[StyledButton](~/samples/snippets/desktop-guide/wpf/styles-templates-create-apply-template/csharp/Window3.xaml#StyledButton)]
 
-Pokud spustíte projekt a podíváte se na výsledek, uvidíte, že tlačítko má zaoblené pozadí.
+Pokud projekt spustíte a podíváte se na výsledek, uvidíte, že tlačítko má zaoblené pozadí.
 
-![Okno WPF s jedním tlačítkem oválné šablony](media/create-apply-template/styled-button.png)
+![Okno WPF s jedním tlačítkem šablony – tlačítko elipsa](media/create-apply-template/styled-button.png)
 
-Možná jste si všimli, že tlačítko není kruh, ale je zkosené. Vzhledem ke způsobu, ** \<>** jakým prvek funguje, se vždy zvětšuje tak, aby vyplnil dostupné místo. Změníte tak, že **:::no-loc text="width":::** **:::no-loc text="height":::** kruh bude jednotný na stejnou hodnotu:
+Možná jste si všimli, že tlačítko není kruh, ale je zkosený. Z důvodu způsobu, jakým funkce ** \<>elipsa** funguje, se vždy rozbalí, aby vyplnila dostupný prostor. Označit kroužek jako Uniform změnou vlastností Button **:::no-loc text="width":::** a **:::no-loc text="height":::** na stejnou hodnotu:
 
 [!code-xaml[StyledButtonSize](~/samples/snippets/desktop-guide/wpf/styles-templates-create-apply-template/csharp/Window3.xaml#StyledButtonSize)]
 
-![Okno WPF s jedním cyklovým tlačítkem šablony](media/create-apply-template/styled-uniform-button.png)
+![Okno WPF s jedním kulatým tlačítkem šablony](media/create-apply-template/styled-uniform-button.png)
 
-## <a name="add-a-trigger"></a>Přidání aktivační události
+## <a name="add-a-trigger"></a>Přidání triggeru
 
-I když tlačítko s použitou šablonou vypadá jinak, chová se stejně jako jakékoli jiné tlačítko. Pokud stisknete <xref:System.Windows.Controls.Primitives.ButtonBase.Click> tlačítko, událost se spustí. Možná jste si však všimli, že když přesunete ukazatel myši nad tlačítko, vizuály tlačítka se nezmění. Všechny tyto vizuální interakce jsou definovány šablonou.
+I když tlačítko s použitou šablonou vypadá jinak, chová se stejně jako jakékoli jiné tlačítko. Po stisknutí tlačítka se <xref:System.Windows.Controls.Primitives.ButtonBase.Click> událost aktivuje. Ale možná jste si všimli, že když přesunete ukazatel myši na tlačítko, vizuály tlačítka se nezmění. Tyto interakce vizuálů jsou všechny definované šablonou.
 
-S dynamické události a vlastnosti systémy, které poskytuje WPF, můžete sledovat konkrétní vlastnost pro hodnotu a potom změnit styl šablony v případě potřeby. V tomto příkladu budete sledovat <xref:System.Windows.UIElement.IsMouseOver> vlastnost tlačítka. Když je myš nad ovládacím prvkem, styl ** \<Elipsa>** s novou barvou. Tento typ aktivační události se označuje jako *PropertyTrigger*.
+Díky dynamickým systémům událostí a vlastností, které poskytuje WPF, můžete sledovat konkrétní vlastnost pro určitou hodnotu a pak šablonu v případě potřeby přeformátovat. V tomto příkladu budete sledovat <xref:System.Windows.UIElement.IsMouseOver> vlastnost tlačítka. Když je ukazatel myši nad ovládacím prvkem, styl ** \<elipsy>** novou barvou. Tento typ triggeru se označuje jako *PropertyTrigger*.
 
-Aby to fungovalo, budete muset přidat název ** \<elipsy>,** na které můžete odkazovat. Dejte mu název **backgroundElement**.
+Aby to fungovalo, budete muset přidat název na ** \<elipsu>** , na kterou můžete odkazovat. Dejte mu název **backgroundElement**.
 
 [!code-xaml[EllipseName](~/samples/snippets/desktop-guide/wpf/styles-templates-create-apply-template/csharp/Window4.xaml#EllipseName)]
 
-Dále přidejte <xref:System.Windows.Trigger> nové [controlTemplate.Triggers](xref:System.Windows.Controls.ControlTemplate.Triggers) kolekce. Aktivační událost bude `IsMouseOver` sledovat událost `true`pro hodnotu .
+Dále přidejte nový <xref:System.Windows.Trigger> do kolekce [ControlTemplate. Triggers](xref:System.Windows.Controls.ControlTemplate.Triggers) . Aktivační událost bude sledovat `IsMouseOver` událost pro danou hodnotu. `true`
 
 [!code-xaml[ControlTemplate](~/samples/snippets/desktop-guide/wpf/styles-templates-create-apply-template/csharp/Window4.xaml?name=ControlTemplate&highlight=6-10)]
 
-Dále přidejte ** \<setter>** do ** \<>aktivační události,** která změní **Fill** vlastnost ** \<>elipsy** na novou barvu.
+Dále přidejte ** \<>setter** k ** \<triggeru>** , který změní vlastnost **Fill** ** \<>elipsy** na novou barvu.
 
 [!code-xaml[MouseOver](~/samples/snippets/desktop-guide/wpf/styles-templates-create-apply-template/csharp/Window5.xaml#MouseOver)]
 
-Spusťte projekt. Všimněte si, že při přesunutí myši nad tlačítko se změní barva ** \<elipsy>.**
+Spusťte projekt. Všimněte si, že při přesunutí ukazatele myši na tlačítko se změní barva ** \<elipsy>** .
 
-![přejecími myšpřes tlačítko WPF změnit barvu výplně](media/create-apply-template/mouse-move-over-button.gif)
+![Změna barvy výplně tlačítkem myši se pohybuje přes tlačítko WPF](media/create-apply-template/mouse-move-over-button.gif)
 
-## <a name="use-a-visualstate"></a>Použití visualstate
+## <a name="use-a-visualstate"></a>Použití VisualState
 
-Vizuální stavy jsou definovány a spuštěny ovládacím prvkem. Například při přesunutí myši nad ovládací prvek, `CommonStates.MouseOver` stav se aktivuje. Můžete animovat změny vlastností na základě aktuálního stavu ovládacího prvku. V předchozí části ** \<PropertyTrigger>** byl použit ke změně popředí `AliceBlue` tlačítka, `IsMouseOver` když `true`byla vlastnost . Místo toho vytvořte vizuální stav, který animuje změnu této barvy a poskytuje hladký přechod. Další informace o *VisualStates*naleznete [v tématu styly a šablony v WPF](../fundamentals/styles-templates-overview.md#visual-states).
+Vizuální stavy jsou definovány a aktivovány ovládacím prvkem. Například když se ukazatel myši přesune nad ovládací prvek, `CommonStates.MouseOver` stav se aktivuje. Můžete animovat změny vlastností na základě aktuálního stavu ovládacího prvku. V předchozí části byl ** \<>PropertyTrigger** použit k změně popředí tlačítka na `AliceBlue` `IsMouseOver` hodnotu, pokud byla `true`vlastnost. Místo toho vytvořte vizuální stav, který animuje změnu této barvy, čímž zajistíte hladký přechod. Další informace o *VisualStates*naleznete v tématu [styly a šablony v WPF](../fundamentals/styles-templates-overview.md#visual-states).
 
-Chcete-li převést ** \<>Vlastnost triggeru** do animovaného vizuálního stavu, nejprve odeberte prvek ** \<ControlTemplate.Triggers>** ze šablony.
+Chcete-li převést ** \<>PropertyTrigger** na animovaný vizuální stav, nejprve odeberte ** \<ControlTemplate prvek.>Triggers** z vaší šablony.
 
 [!code-xaml[CleanTemplate](~/samples/snippets/desktop-guide/wpf/styles-templates-create-apply-template/csharp/Window5.xaml#CleanTemplate)]
 
-Dále `CommonStates`v kořenovém ** \<** adresáři grid>šablony ovládacího prvku přidejte prvek ** \<VisualStateManager.VisualStateGroups>** s>** \<VisualStateGroup** pro . Definujte dva `Normal` `MouseOver`stavy a .
+Dále v tabulce ** \<>** v kořenovém adresáři šablony ovládacího prvku přidejte prvek ** \<>VisualStateManager. VisualStateGroups** s ** \<VisualStateGroup>** pro. `CommonStates` Definujte dva stavy `Normal` a `MouseOver`.
 
 [!code-xaml[VisualState](~/samples/snippets/desktop-guide/wpf/styles-templates-create-apply-template/csharp/Window6.xaml#VisualState)]
 
-Všechny animace definované v ** \<visualstate>** jsou použity při aktivaci tohoto stavu. Vytvořte animace pro každý stav. Animace jsou umístěny uvnitř ** \<Storyboard>** element. Další informace o scénářích najdete v [tématu Přehled scénářů](../../framework/wpf/graphics-multimedia/storyboards-overview.md).
+Jakékoli animace definované v ** \<VisualState>** jsou aplikovány, když je tento stav aktivován. Vytváření animací pro každý stav Animace jsou umístěny uvnitř ** \<>ho prvku scénáře** . Další informace o scénářích najdete v tématu [Přehled scénářů](../../framework/wpf/graphics-multimedia/storyboards-overview.md).
 
 - Normální
 
-  Tento stav animuje výplň elipsy a `Background` obnovuje ji na barvu ovládacího prvku.
+  Tento stav animuje výplň elipsy a obnoví ji do `Background` barvy ovládacího prvku.
 
   [!code-xaml[NormalState](~/samples/snippets/desktop-guide/wpf/styles-templates-create-apply-template/csharp/Window6.xaml#NormalState)]
 
-- Mouseover
+- MouseOver
 
-  Tento stav animuje `Background` barvu elipsy `Yellow`na novou barvu: .
+  Tento stav animuje barvu elipsy `Background` na novou barvu: `Yellow`.
 
   [!code-xaml[MouseOverState](~/samples/snippets/desktop-guide/wpf/styles-templates-create-apply-template/csharp/Window6.xaml#MouseOverState)]
 
-** \<ControlTemplate>** by nyní měl vypadat takto.
+** \<>ControlTemplate** by teď mělo vypadat takto.
 
 [!code-xaml[FinalTemplate](~/samples/snippets/desktop-guide/wpf/styles-templates-create-apply-template/csharp/Window7.xaml#FinalTemplate)]
 
-Spusťte projekt. Všimněte si, že při pohybu myší nad tlačítkem>barva ** \<elipsy** animovat.
+Spusťte projekt. Všimněte si, že když přesunete ukazatel myši na tlačítko, barva ** \<elipsy>** animaci.
 
-![přejecími myšpřes tlačítko WPF změnit barvu výplně](media/create-apply-template/mouse-move-over-button-visualstate.gif)
+![Změna barvy výplně tlačítkem myši se pohybuje přes tlačítko WPF](media/create-apply-template/mouse-move-over-button-visualstate.gif)
 
 ## <a name="next-steps"></a>Další kroky
 
-- [Vytvoření stylu ovládacího prvku ve WPF](../fundamentals/styles-templates-create-apply-style.md)
-- [Styly a šablony ve WPF](../fundamentals/styles-templates-overview.md)
-- [Přehled zdrojů XAML](../fundamentals/xaml-resources-define.md)
+- [Vytvoření stylu pro ovládací prvek v subsystému WPF](../fundamentals/styles-templates-create-apply-style.md)
+- [Styly a šablony v subsystému WPF](../fundamentals/styles-templates-overview.md)
+- [Přehled prostředků XAML](../fundamentals/xaml-resources-define.md)

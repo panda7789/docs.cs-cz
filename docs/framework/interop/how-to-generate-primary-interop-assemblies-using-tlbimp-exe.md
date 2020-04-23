@@ -29,13 +29,13 @@ Existují dva způsoby, jak vytvořit primární definiční sestavení:
 
   - Pokud přidáte odkazy na závislá sestavení, která nejsou sestaveními primární spolupráce, nemusíte vygenerovat primární definiční sestavení.
 
-- Ruční vytváření sestavení primární spolupráce ve zdrojovém kódu pomocí jazyka, který je kompatibilní se specifikací CLS (Common Language Specification), jako je C#například. Tento přístup je užitečný v případě, že knihovna typů není k dispozici.
+- Ruční vytváření sestavení primární spolupráce ve zdrojovém kódu pomocí jazyka, který je kompatibilní se specifikací CLS (Common Language Specification), jako je C#. Tento přístup je užitečný v případě, že knihovna typů není k dispozici.
 
 Pro podepsání sestavení silným názvem musíte mít pár kryptografických klíčů. Podrobnosti najdete v tématu [Vytvoření páru klíčů](../../standard/assembly/create-public-private-key-pair.md).
 
 ### <a name="to-generate-a-primary-interop-assembly-using-tlbimpexe"></a>Generování primárního definičního sestavení pomocí nástroje Tlbimp. exe
 
-1. V příkazovém řádku zadejte příkaz:
+1. Na příkazovém řádku zadejte:
 
     **Tlbimp** *tlbfile*  **/Primary/keyfile:** *filename* **/out:** *AssemblyName*
 
@@ -49,24 +49,24 @@ Můžete také zabalit více verzí knihovny typů. Pokyny najdete v tématu [Po
 
 ## <a name="example"></a>Příklad
 
-Následující příklad importuje knihovnu typů modelu COM `LibUtil.tlb` a podepíše sestavení `LibUtil.dll` se silným názvem pomocí souboru klíče `CompanyA.snk`. Vynecháte-li konkrétní název oboru názvů, tento příklad vytvoří výchozí obor názvů `LibUtil`.
+Následující příklad importuje knihovnu `LibUtil.tlb` typů modelu COM a podepíše sestavení `LibUtil.dll` se silným názvem pomocí souboru `CompanyA.snk`klíče. Vynecháte-li konkrétní název oboru názvů, tento příklad vytvoří výchozí obor `LibUtil`názvů.
 
 ```console
 tlbimp LibUtil.tlb /primary /keyfile:CompanyA.snk /out:LibUtil.dll
 ```
 
-Pro výstižnější název (pomocí *dodavatele*. *Název knihovny* – zásady pojmenování: v následujícím příkladu je popsán výchozí název souboru sestavení a název oboru názvů.
+Pro výstižnější název (pomocí *dodavatele*.* Název knihovny* – zásady pojmenování: v následujícím příkladu je popsán výchozí název souboru sestavení a název oboru názvů.
 
 ```console
 tlbimp LibUtil.tlb /primary /keyfile:CompanyA.snk /namespace:CompanyA.LibUtil /out:CompanyA.LibUtil.dll
 ```
 
-Následující příklad importuje `MyLib.tlb`, který odkazuje `CompanyA.LibUtil.dll`a podepíše sestavení `CompanyB.MyLib.dll` se silným názvem pomocí souboru klíče `CompanyB.snk`. Obor názvů `CompanyB.MyLib`přepíše výchozí název oboru názvů.
+Následující příklad `MyLib.tlb`importuje, který `CompanyA.LibUtil.dll`odkazuje a podepíše sestavení `CompanyB.MyLib.dll` silným názvem pomocí souboru `CompanyB.snk`klíče. Obor názvů `CompanyB.MyLib`přepíše výchozí název oboru názvů.
 
 ```console
 tlbimp MyLib.tlb /primary /keyfile:CompanyB.snk /namespace:CompanyB.MyLib /reference:CompanyA.LibUtil.dll /out:CompanyB.MyLib.dll
 ```
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Postupy: Registrace primárních sestavení spolupráce](how-to-register-primary-interop-assemblies.md)

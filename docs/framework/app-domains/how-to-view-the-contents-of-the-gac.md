@@ -39,7 +39,7 @@ gacutil /l
 > [!NOTE]
 > V dřívějších verzích .NET Framework bylo povoleno rozšíření prostředí systému Windows [Shfusion. dll](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/34149zk3(v=vs.100)) , které umožňuje zobrazit globální mezipaměť sestavení (GAC) v Průzkumníkovi souborů. Počínaje .NET Framework 4 Shfusion. dll je zastaralá.
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Práce se sestaveními a s globální pamětí sestavení](working-with-assemblies-and-the-gac.md)
-- [Gacutil.exe (nástroj globální mezipaměti sestavení)](../tools/gacutil-exe-gac-tool.md)
+- [Gacutil. exe (nástroj Global Assembly Cache Tool)](../tools/gacutil-exe-gac-tool.md)

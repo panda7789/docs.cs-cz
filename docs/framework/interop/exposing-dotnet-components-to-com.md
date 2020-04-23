@@ -49,7 +49,7 @@ Zápis typu rozhraní .NET a využití tohoto typu z nespravovaného kódu jsou 
 
      Sestavení se silným názvem může být nainstalováno v globální mezipaměti sestavení (GAC) a vyžaduje podpis od jeho vydavatele. Sestavení, která nemají silný název, musí být nainstalována v adresáři aplikace klienta.
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Spolupráce s nespravovaným kódem](index.md)
 - [Ukázka zprostředkovatele komunikace s objekty COM: klient COM a server .NET](com-interop-sample-com-client-and-net-server.md)

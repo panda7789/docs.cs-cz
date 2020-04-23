@@ -32,14 +32,14 @@ ms.locfileid: "73458016"
 ---
 # <a name="creating-satellite-assemblies-for-desktop-apps"></a>Vytváření satelitních sestavení pro aplikace klasické pracovní plochy
 
-Soubory prostředků hrají ústřední roli v lokalizovaných aplikacích. Umožňují aplikaci zobrazovat řetězce, obrázky a další data v jazyce a jazykové verzi uživatele a poskytovat alternativní data v případě, že prostředky pro vlastní jazyk nebo jazykovou verzi uživatele nejsou k dispozici. .NET Framework používá model hvězdicové a hvězdicové k vyhledání a načtení lokalizovaných prostředků. Centrum je hlavní sestavení, které obsahuje nelokalizovatelný spustitelný kód a prostředky pro jednu jazykovou verzi, která se nazývá neutrální nebo výchozí jazyková verze. Výchozí jazyková verze je záložní jazyková verze pro aplikaci. používá se, když nejsou k dispozici žádné lokalizované prostředky. Pomocí atributu <xref:System.Resources.NeutralResourcesLanguageAttribute> určíte jazykovou verzi výchozí jazykové verze aplikace. Každý paprsek se připojuje k satelitnímu sestavení, které obsahuje prostředky pro jednu lokalizovanou jazykovou verzi, ale neobsahuje žádný kód. Vzhledem k tomu, že satelitní sestavení nejsou součástí hlavního sestavení, můžete snadno aktualizovat nebo nahradit prostředky, které odpovídají konkrétní jazykové verzi, aniž by bylo nutné nahradit hlavní sestavení pro aplikaci.
+Soubory prostředků hrají ústřední roli v lokalizovaných aplikacích. Umožňují aplikaci zobrazovat řetězce, obrázky a další data v jazyce a jazykové verzi uživatele a poskytovat alternativní data v případě, že prostředky pro vlastní jazyk nebo jazykovou verzi uživatele nejsou k dispozici. .NET Framework používá model hvězdicové a hvězdicové k vyhledání a načtení lokalizovaných prostředků. Centrum je hlavní sestavení, které obsahuje nelokalizovatelný spustitelný kód a prostředky pro jednu jazykovou verzi, která se nazývá neutrální nebo výchozí jazyková verze. Výchozí jazyková verze je záložní jazyková verze pro aplikaci. používá se, když nejsou k dispozici žádné lokalizované prostředky. Použijte <xref:System.Resources.NeutralResourcesLanguageAttribute> atribut k určení jazykové verze výchozí jazykové verze aplikace. Každý paprsek se připojuje k satelitnímu sestavení, které obsahuje prostředky pro jednu lokalizovanou jazykovou verzi, ale neobsahuje žádný kód. Vzhledem k tomu, že satelitní sestavení nejsou součástí hlavního sestavení, můžete snadno aktualizovat nebo nahradit prostředky, které odpovídají konkrétní jazykové verzi, aniž by bylo nutné nahradit hlavní sestavení pro aplikaci.
 
 > [!NOTE]
-> Prostředky výchozí jazykové verze aplikace mohou být také uloženy v satelitním sestavení. Chcete-li to provést, přiřaďte atributu <xref:System.Resources.NeutralResourcesLanguageAttribute> hodnotu <xref:System.Resources.UltimateResourceFallbackLocation.Satellite?displayProperty=nameWithType>.
+> Prostředky výchozí jazykové verze aplikace mohou být také uloženy v satelitním sestavení. K tomu přiřadíte hodnotu <xref:System.Resources.NeutralResourcesLanguageAttribute> atributu. <xref:System.Resources.UltimateResourceFallbackLocation.Satellite?displayProperty=nameWithType>
 
 ## <a name="satellite-assembly-name-and-location"></a>Název a umístění satelitního sestavení
 
-Model hvězdicové lokality vyžaduje umístění prostředků do konkrétních umístění, aby je bylo možné snadno vyhledat a použít. Pokud nezkompilujete a pojmenujte prostředky podle očekávání nebo pokud je neumístíte do správných umístění, modul CLR (Common Language Runtime) je nebude moci vyhledat a bude místo toho používat prostředky výchozí jazykové verze. Správce prostředků .NET Framework reprezentované objektem <xref:System.Resources.ResourceManager> slouží k automatickému přístupu k lokalizovaným prostředkům. Správce prostředků vyžaduje následující:
+Model hvězdicové lokality vyžaduje umístění prostředků do konkrétních umístění, aby je bylo možné snadno vyhledat a použít. Pokud nezkompilujete a pojmenujte prostředky podle očekávání nebo pokud je neumístíte do správných umístění, modul CLR (Common Language Runtime) je nebude moci vyhledat a bude místo toho používat prostředky výchozí jazykové verze. .NET Framework Správce prostředků reprezentované <xref:System.Resources.ResourceManager> objektem, slouží k automatickému přístupu k lokalizovaným prostředkům. Správce prostředků vyžaduje následující:
 
 - Jedno satelitní sestavení musí zahrnovat všechny prostředky pro konkrétní jazykovou verzi. Jinými slovy, je třeba zkompilovat více souborů *. txt* nebo *. resx* do jednoho binárního souboru *. Resources* .
 
@@ -50,7 +50,7 @@ Model hvězdicové lokality vyžaduje umístění prostředků do konkrétních 
 
 - Satelitní sestavení musí mít stejný název jako aplikace a musí používat příponu názvu souboru. Resources. dll. Například pokud je aplikace pojmenována *example. exe*, název každého satelitního sestavení by měl být *example. Resources. dll*. Všimněte si, že název satelitního sestavení neoznačuje jazykovou verzi svých souborů prostředků. Satelitní sestavení se však zobrazí v adresáři, který určuje jazykovou verzi.
 
-- Informace o jazykové verzi satelitního sestavení musí být zahrnuty v metadatech sestavení. Chcete-li uložit název jazykové verze v metadatech satelitního sestavení, zadejte možnost `/culture`, když použijete [linker sestavení](../tools/al-exe-assembly-linker.md) pro vložení prostředků do satelitního sestavení.
+- Informace o jazykové verzi satelitního sestavení musí být zahrnuty v metadatech sestavení. Chcete-li uložit název jazykové verze v metadatech satelitního sestavení, zadáte `/culture` možnost při použití [linkeru sestavení](../tools/al-exe-assembly-linker.md) pro vložení prostředků do satelitního sestavení.
 
 Následující ilustrace znázorňuje ukázkovou adresářovou strukturu a požadavky na umístění pro aplikace, které neinstalujete do [globální mezipaměti sestavení (GAC](../app-domains/gac.md)). Položky s příponami. txt a. Resources nebudou dodávány s konečnou aplikací. Jedná se o mezilehlé soubory prostředků, které slouží k vytváření finálních sestavení satelitních prostředků. V tomto příkladu můžete nahradit soubory. resx pro soubory. txt. Další informace najdete v tématu [balení a nasazení prostředků](packaging-and-deploying-resources-in-desktop-apps.md).
 
@@ -60,15 +60,15 @@ Následující obrázek ukazuje adresář satelitního sestavení:
 
 ## <a name="compiling-satellite-assemblies"></a>Kompilování satelitních sestavení
 
-Nástroj [Resource File Generator (Resgen. exe)](../tools/resgen-exe-resource-file-generator.md) slouží k kompilování textových souborů nebo souborů XML ( *. resx*), které obsahují prostředky do binárních souborů *. Resources* . Pak pomocí [linkeru sestavení (Al. exe)](../tools/al-exe-assembly-linker.md) zkompilujete soubory *. Resources* do satelitních sestavení. *Al. exe* vytvoří sestavení ze souborů *. Resources* , které zadáte. Satelitní sestavení mohou obsahovat pouze prostředky; nemohou obsahovat žádný spustitelný kód.
+Nástroj [Resource File Generator (Resgen. exe)](../tools/resgen-exe-resource-file-generator.md) slouží k kompilování textových souborů nebo souborů XML (*. resx*), které obsahují prostředky do binárních souborů *. Resources* . Pak pomocí [linkeru sestavení (Al. exe)](../tools/al-exe-assembly-linker.md) zkompilujete soubory *. Resources* do satelitních sestavení. *Al. exe* vytvoří sestavení ze souborů *. Resources* , které zadáte. Satelitní sestavení mohou obsahovat pouze prostředky; nemohou obsahovat žádný spustitelný kód.
 
-Následující příkaz *Al. exe* vytvoří satelitní sestavení pro aplikaci `Example` z německých souborů *řetězců. de. Resources*.
+Následující příkaz *Al. exe* vytvoří satelitní sestavení pro aplikaci `Example` ze souborů řetězců německého zdroje *. de. Resources*.
 
 ```console
 al -target:lib -embed:strings.de.resources -culture:de -out:Example.resources.dll
 ```
 
-Následující příkaz *Al. exe* také vytvoří satelitní sestavení pro aplikaci `Example` ze souboru *strings. de. Resources*. Možnost **/template** způsobí, že satelitní sestavení zdědí všechna metadata sestavení s výjimkou jeho informací o jazykové verzi z nadřazeného sestavení (*example. dll*).
+Následující příkaz *Al. exe* také vytvoří satelitní sestavení pro aplikaci `Example` ze souborů *strings. de. Resources*. Možnost **/template** způsobí, že satelitní sestavení zdědí všechna metadata sestavení s výjimkou jeho informací o jazykové verzi z nadřazeného sestavení (*example. dll*).
 
 ```console
 al -target:lib -embed:strings.de.resources -culture:de -out:Example.resources.dll -template:Example.dll
@@ -90,20 +90,20 @@ V následující tabulce jsou popsány možnosti nástroje *Al. exe* použité v
 
 Následuje jednoduchý příklad "Hello World", který zobrazuje okno se zprávou obsahující lokalizovaný pozdrav. Příklad obsahuje prostředky pro angličtinu (USA), francouzština (Francie) a ruština (Rusko) a její záložní jazyková verze je angličtina. Chcete-li vytvořit příklad, postupujte následovně:
   
-1. Vytvořte soubor prostředků s názvem *Greetings. resx* nebo *Greeting. txt* , který bude obsahovat prostředek pro výchozí jazykovou verzi. Uloží jeden řetězec s názvem `HelloString`, jehož hodnota je Hello World!. v tomto souboru.
+1. Vytvořte soubor prostředků s názvem *Greetings. resx* nebo *Greeting. txt* , který bude obsahovat prostředek pro výchozí jazykovou verzi. Uloží jeden řetězec s názvem `HelloString` , jehož hodnota je Hello World!. v tomto souboru.
 
-2. Chcete-li určit, že angličtina (EN) je výchozí jazyková verze aplikace, přidejte následující atribut <xref:System.Resources.NeutralResourcesLanguageAttribute?displayProperty=nameWithType> do souboru AssemblyInfo aplikace nebo do hlavního souboru zdrojového kódu, který bude zkompilován do hlavního sestavení aplikace.
+2. Chcete-li označit, že angličtina (EN) je výchozí jazyková verze aplikace, přidejte <xref:System.Resources.NeutralResourcesLanguageAttribute?displayProperty=nameWithType> následující atribut do souboru AssemblyInfo aplikace nebo do hlavního souboru zdrojového kódu, který bude zkompilován do hlavního sestavení aplikace.
 
     [!code-csharp[Conceptual.Resources.Locating#2](~/samples/snippets/csharp/VS_Snippets_CLR/conceptual.resources.locating/cs/assemblyinfo.cs#2)]
     [!code-vb[Conceptual.Resources.Locating#2](~/samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.resources.locating/vb/assemblyinfo.vb#2)]  
   
 3. Přidejte podporu pro další jazykové verze (EN-US, fr-FR a ru-RU) do aplikace následujícím způsobem:  
   
-    - Pro podporu jazykové verze en-US nebo angličtiny (USA) vytvořte soubor prostředků s názvem *Greetings. en-US. resx* nebo *Greeting. en-US. txt*a uložte ho do něj jediným řetězcem s názvem `HelloString`, jehož hodnota je "Hi World!".
+    - Pro podporu jazykové verze en-US nebo angličtiny (USA) vytvořte soubor prostředků s názvem *Greetings. en-US. resx* nebo *Greeting. en-US. txt*a uložte ho do něj s jediným řetězcem, `HelloString` jehož hodnota je "Hi World!".
   
-    - Pro podporu jazykové verze fr-FR nebo francouzštiny (Francie) vytvořte soubor prostředků s názvem *Greeting.fr-fr. resx* nebo *Greeting.fr-fr. txt*a uložte jej do něj jediným řetězcem s názvem `HelloString`, jehož hodnota je "Salut tout Le Monde!".
+    - Pro podporu jazykové verze fr-FR nebo francouzštiny (Francie) vytvořte soubor prostředků s názvem *Greeting.fr-fr. resx* nebo *Greeting.fr-fr. txt*a uložte jej do něj jediným řetězcem s `HelloString` názvem, který má hodnotu "Salut tout Le Monde!".
   
-    - Pro podporu jazykové verze ru-RU nebo ruštiny (Rusko) vytvořte soubor prostředků s názvem *Greeting.ru-ru. resx* nebo *Greeting.ru-ru. txt*a uložte jej do něj jediným řetězcem s názvem `HelloString`, jehož hodnota je "Всем привет!".
+    - Pro podporu jazykové verze ru-RU nebo ruštiny (Rusko) vytvořte soubor prostředků s názvem *Greeting.ru-ru. resx* nebo *Greeting.ru-ru. txt*a uložte ho do něj s jedním řetězcem `HelloString` s názvem "Всем привет!".
   
 4. Pomocí [Resgen. exe](../tools/resgen-exe-resource-file-generator.md) zkompilujte jednotlivé texty nebo soubory prostředků XML do binárního souboru *. Resources* . Výstupem je sada souborů, které mají stejný název kořenového souboru jako soubory *. resx* nebo *. txt* , ale rozšíření *. Resources* . Pokud vytvoříte příklad se sadou Visual Studio, proces kompilace se zpracuje automaticky. Pokud nepoužíváte aplikaci Visual Studio, spusťte následující příkazy pro zkompilování souborů *. resx* do souborů *. Resources* :  
   
@@ -119,12 +119,12 @@ Následuje jednoduchý příklad "Hello World", který zobrazuje okno se zprávo
 5. Zkompilujte následující zdrojový kód spolu s prostředky pro výchozí jazykovou verzi do hlavního sestavení aplikace:
 
     > [!IMPORTANT]
-    > Pokud používáte příkazový řádek místo sady Visual Studio k vytvoření příkladu, měli byste změnit volání konstruktoru <xref:System.Resources.ResourceManager> třídy na následující: `ResourceManager rm = new ResourceManager("Greetings", typeof(Example).Assembly);`
+    > Pokud používáte příkazový řádek místo sady Visual Studio k vytvoření příkladu, měli byste změnit volání konstruktoru <xref:System.Resources.ResourceManager> třídy na následující:`ResourceManager rm = new ResourceManager("Greetings", typeof(Example).Assembly);`
 
     [!code-csharp[Conceptual.Resources.Locating#1](~/samples/snippets/csharp/VS_Snippets_CLR/conceptual.resources.locating/cs/program.cs#1)]
     [!code-vb[Conceptual.Resources.Locating#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.resources.locating/vb/module1.vb#1)]
 
-    Pokud je aplikace pojmenována jako příklad a kompilujete z příkazového řádku, příkaz pro C# kompilátor je:
+    Pokud je aplikace pojmenována jako příklad a kompilujete z příkazového řádku, příkaz pro kompilátor jazyka C# je:
 
     ```console
     csc Example.cs -res:Greeting.resources
@@ -226,20 +226,20 @@ Následující příklad používá metodu v knihovně tříd .NET Framework k e
     sn –p ResKey.snk PublicKey.snk
     ```
 
-3. Vytvořte soubor prostředků s názvem *strings. resx* , který bude obsahovat prostředek pro výchozí jazykovou verzi. Uložte jeden řetězec s názvem `Greeting`, jehož hodnota je "jak udělat?" v tomto souboru.
+3. Vytvořte soubor prostředků s názvem *strings. resx* , který bude obsahovat prostředek pro výchozí jazykovou verzi. Uložte jeden řetězec s názvem `Greeting` , jehož hodnota je "jak provést?" v tomto souboru.
 
-4. Chcete-li označit, že "en" je výchozí jazyková verze aplikace, přidejte následující atribut <xref:System.Resources.NeutralResourcesLanguageAttribute?displayProperty=nameWithType> do souboru AssemblyInfo aplikace nebo do hlavního souboru zdrojového kódu, který bude zkompilován do hlavního sestavení aplikace:
+4. Chcete-li označit, že "en" je výchozí jazykovou verzí aplikace, <xref:System.Resources.NeutralResourcesLanguageAttribute?displayProperty=nameWithType> přidejte následující atribut do souboru AssemblyInfo aplikace nebo do hlavního souboru zdrojového kódu, který bude zkompilován do hlavního sestavení aplikace:
 
     [!code-csharp[Conceptual.Resources.Satellites#2](~/samples/snippets/csharp/VS_Snippets_CLR/conceptual.resources.satellites/cs/stringlibrary.cs#2)]
     [!code-vb[Conceptual.Resources.Satellites#2](~/samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.resources.satellites/vb/stringlibrary.vb#2)]
 
 5. Přidejte podporu pro další jazykové verze (kultury en-US, fr-FR a ru-RU) do aplikace následujícím způsobem:
 
-    - Chcete-li podporovat jazykovou verzi "en-US" nebo anglickou (USA), vytvořte soubor prostředků s názvem *strings. en-US. resx* nebo *String. en-US. txt*a uložte jej do něj jediným řetězcem s názvem `Greeting`, jehož hodnota je "Hello!".
+    - Chcete-li podporovat jazykovou verzi "en-US" nebo anglickou (USA), vytvořte soubor prostředků s názvem *strings. en-US. resx* nebo *String. en-US. txt*a uložte jej do něj jediným `Greeting` řetězcem s názvem "Hello!".
 
-    - Pro podporu "fr-FR" nebo francouzštiny (Francie) vytvořte soubor prostředků s názvem *strings.fr-fr. resx* nebo *strings.fr-fr. txt* a uložte jej do něj jediným řetězcem s názvem `Greeting`, jehož hodnota je "šťastnou jour!".
+    - Pro podporu "fr-FR" nebo francouzštiny (Francie) vytvořte soubor prostředků s názvem *strings.fr-fr. resx* nebo *strings.fr-fr. txt* a uložte jej do něj jediným řetězcem, `Greeting` jehož hodnota je "šťastnou jour!".
 
-    - Aby bylo možné podporovat jazykovou verzi ru-RU nebo ruština (Rusko), vytvořte soubor prostředků s názvem *strings.ru-ru. resx* nebo *strings.ru-ru. txt* a uložte jej do něj jediným řetězcem s názvem `Greeting`, jehož hodnota je "привет!".
+    - Pro podporu "ru-RU" nebo ruské jazykové verze (Rusko) vytvořte soubor prostředků s názvem *strings.ru-ru. resx* nebo *strings.ru-ru. txt* a uložte do něj jediný řetězec s názvem `Greeting` , jehož hodnota je "привет!".
 
 6. Pomocí [Resgen. exe](../tools/resgen-exe-resource-file-generator.md) zkompilujte jednotlivé texty nebo soubory prostředků XML do binárního souboru. Resources. Výstupem je sada souborů, které mají stejný název kořenového souboru jako soubory *. resx* nebo *. txt* , ale rozšíření *. Resources* . Pokud vytvoříte příklad se sadou Visual Studio, proces kompilace se zpracuje automaticky. Pokud nepoužíváte aplikaci Visual Studio, spusťte následující příkaz pro zkompilování souborů *. resx* do souborů *. Resources* :
 
@@ -252,12 +252,12 @@ Následující příklad používá metodu v knihovně tříd .NET Framework k e
 7. Zkompilujte následující zdrojový kód pro *StringLibrary. vb* nebo *StringLibrary.cs* společně s prostředky pro výchozí jazykovou verzi do zpožděně podepsaného sestavení knihovny s názvem *StringLibrary. dll*:
 
     > [!IMPORTANT]
-    > Pokud používáte příkazový řádek místo sady Visual Studio k vytvoření příkladu, měli byste změnit volání konstruktoru třídy <xref:System.Resources.ResourceManager>, aby `ResourceManager rm = new ResourceManager("Strings",` `typeof(Example).Assembly);`.
+    > Pokud používáte příkazový řádek místo sady Visual Studio k vytvoření příkladu, měli byste změnit volání konstruktoru <xref:System.Resources.ResourceManager> třídy na. `ResourceManager rm = new ResourceManager("Strings",` `typeof(Example).Assembly);`
 
     [!code-csharp[Conceptual.Resources.Satellites#1](~/samples/snippets/csharp/VS_Snippets_CLR/conceptual.resources.satellites/cs/stringlibrary.cs#1)]
     [!code-vb[Conceptual.Resources.Satellites#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.resources.satellites/vb/stringlibrary.vb#1)]
 
-    Příkaz pro C# kompilátor je:
+    Příkaz pro kompilátor jazyka C# je:
 
     ```console
     csc -t:library -resource:Strings.resources -delaysign+ -keyfile:publickey.snk StringLibrary.cs
@@ -304,7 +304,7 @@ Následující příklad používá metodu v knihovně tříd .NET Framework k e
     [!code-csharp[Conceptual.Resources.Satellites#3](~/samples/snippets/csharp/VS_Snippets_CLR/conceptual.resources.satellites/cs/example.cs#3)]
     [!code-vb[Conceptual.Resources.Satellites#3](~/samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.resources.satellites/vb/example.vb#3)]
 
-    Pro zkompilování z příkazového řádku použijte následující příkaz pro C# kompilátor:
+    Pro zkompilování z příkazového řádku, použijte následující příkaz pro kompilátor jazyka C#:
 
     ```console
     csc Example.cs -r:StringLibrary.dll
@@ -318,11 +318,11 @@ Následující příklad používá metodu v knihovně tříd .NET Framework k e
 
 14. Spusťte *příklad. exe*.
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Zabalení a nasazení prostředků](packaging-and-deploying-resources-in-desktop-apps.md)
 - [Zpoždění podepsání sestavení](../../standard/assembly/delay-sign.md)
-- [Al.exe (linker sestavení)](../tools/al-exe-assembly-linker.md)
-- [Sn.exe (nástroj pro silný název)](../tools/sn-exe-strong-name-tool.md)
-- [Gacutil.exe (nástroj globální mezipaměti sestavení)](../tools/gacutil-exe-gac-tool.md)
-- [Prostředky v desktopových aplikacích](index.md)
+- [Al. exe (linker sestavení)](../tools/al-exe-assembly-linker.md)
+- [SN. exe (Nástroj pro silný název)](../tools/sn-exe-strong-name-tool.md)
+- [Gacutil. exe (nástroj Global Assembly Cache Tool)](../tools/gacutil-exe-gac-tool.md)
+- [Prostředky v aplikacích klasické pracovní plochy](index.md)

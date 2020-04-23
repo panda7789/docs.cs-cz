@@ -16,52 +16,52 @@ ms.locfileid: "79180531"
 ---
 # <a name="emitting-dynamic-methods-and-assemblies"></a>Generování dynamických metod a sestavení
 
-Tato část popisuje sadu spravovaných typů v oboru <xref:System.Reflection.Emit> názvů, které umožňují kompilátoru nebo nástroji vyzařovat metadata a zprostředkující jazyk Microsoft (MSIL) za běhu a volitelně generovat přenosný spustitelný soubor (PE) na disku. Skriptovací stroje a kompilátory jsou primárními uživateli tohoto oboru názvů. V této části funkce poskytované obor <xref:System.Reflection.Emit> názvů se označuje jako odraz emit.  
+Tato část popisuje sadu spravovaných typů v <xref:System.Reflection.Emit> oboru názvů, které umožňují kompilátorům nebo nástrojům generovat metadata a jazyk MSIL (Microsoft Intermediate Language) za běhu a volitelně vygenerovat soubor přenositelného spustitelného souboru (PE) na disku. Skriptovací stroje a kompilátory jsou primárními uživateli tohoto oboru názvů. V této části je funkce poskytovaná <xref:System.Reflection.Emit> oborem názvů označována jako vygenerování reflexe.  
   
-Reflexe vyzařují poskytuje následující funkce:  
+Vygenerování reflexe poskytuje následující možnosti:  
   
-- Definujte zjednodušené globální metody <xref:System.Reflection.Emit.DynamicMethod> za běhu pomocí třídy a spusťte je pomocí delegátů.  
+- Definujte zjednodušené globální metody za běhu, pomocí <xref:System.Reflection.Emit.DynamicMethod> třídy a spusťte je pomocí delegátů.  
   
-- Definujte sestavení za běhu a pak je spusťte a/nebo je uložte na disk.  
+- Definujte sestavení v době běhu a pak je spusťte nebo uložte na disk.  
   
-- Definujte sestavení za běhu, spusťte je a pak je uvolněte a povolte uvolnění paměti pro uvolnění jejich prostředků.  
+- Definujte sestavení za běhu, spusťte je a pak je uvolněte a umožněte uvolnění paměti, aby bylo možné znovu získat své prostředky.  
   
-- Definujte moduly v nových sestaveních za běhu a potom je spusťte a/nebo je uložte na disk.  
+- Definujte moduly v nových sestaveních za běhu a pak je spusťte nebo uložte na disk.  
   
-- Definujte typy v modulech za běhu, vytvořte instance těchto typů a vyvolat jejich metody.  
+- Definujte typy v modulech v době běhu, vytvořte instance těchto typů a volejte jejich metody.  
   
-- Definujte symbolické informace pro definované moduly, které mohou být použity nástroji, jako jsou ladicí programy a profilovací programy kódu.  
+- Definujte symbolické informace pro definované moduly, které mohou být používány nástroji, jako jsou ladicí programy a profilery kódu.  
   
-Kromě spravovaných typů <xref:System.Reflection.Emit> v oboru názvů existují nespravovaná metadata rozhraní, které jsou popsány v dokumentaci metadat [rozhraní](../unmanaged-api/metadata/metadata-interfaces.md) referenční. Spravovaný odraz emit poskytuje silnější sémantické kontroly chyb a vyšší úroveň abstrakce metadat než nespravované metadata rozhraní.  
+Kromě spravovaných typů v <xref:System.Reflection.Emit> oboru názvů existují nespravovaná rozhraní metadat, která jsou popsána v referenční dokumentaci [rozhraní metadat](../unmanaged-api/metadata/metadata-interfaces.md) . Spravované reflexe Emit poskytuje silnější sémantickou kontrolu chyb a vyšší úroveň abstrakce metadat než nespravované rozhraní metadat.  
   
-Dalším užitečným zdrojem informací pro práci s metadaty a jazykem MSIL je dokumentace common language infrastructure (CLI), zejména "Partition II: Metadata Definition and Sémantics" a "Partition III: CIL Instruction Set". Dokumentace je k dispozici online na [webových stránkách společnosti Ecma](https://www.ecma-international.org/publications/standards/Ecma-335.htm).  
+Dalším užitečným prostředkem pro práci s metadaty a jazykem MSIL je dokumentace Common Language Infrastructure (CLI), zejména oddíl II: definice metadat a sémantika a oddíl III: sada instrukcí CIL. Dokumentace je k dispozici online na webu [ECMA](https://www.ecma-international.org/publications/standards/Ecma-335.htm).  
   
 ## <a name="in-this-section"></a>V tomto oddílu
   
-[Bezpečnostní otázky v reflexi vyzařují](security-issues-in-reflection-emit.md)  
-Popisuje problémy se zabezpečením související s vytvářením dynamických sestavení pomocí odrazu vyzařovat.  
+[Problémy se zabezpečením v generování reflexe](security-issues-in-reflection-emit.md)  
+Popisuje problémy se zabezpečením související s vytvářením dynamických sestavení pomocí generování reflexe.  
 
-[Postup: Definování a provádění dynamických metod](how-to-define-and-execute-dynamic-methods.md) Ukazuje, jak provést jednoduchou dynamickou metodu a dynamickou metodu vázanou na instanci třídy.
+[Postupy: definování a provádění dynamických metod](how-to-define-and-execute-dynamic-methods.md) Ukazuje, jak spustit jednoduchou dynamickou metodu a dynamickou metodu svázanou s instancí třídy.
 
-[Postup: Definování obecného typu s odrazem emitují](how-to-define-a-generic-type-with-reflection-emit.md) Ukazuje, jak vytvořit jednoduchý obecný typ se dvěma parametry typu, jak použít třídu, rozhraní a speciální omezení parametrů typu a jak vytvořit členy, které používají parametry typu třídy jako typy parametrů a návratové typy.
+[Postupy: definování obecného typu pomocí generování reflexe](how-to-define-a-generic-type-with-reflection-emit.md) Ukazuje, jak vytvořit jednoduchý obecný typ se dvěma parametry typu, jak použít třídu, rozhraní a speciální omezení pro parametry typu a jak vytvořit členy, které používají parametry typu třídy jako typy parametrů a návratové typy.
 
-[Postup: Definování obecné metody s odrazem vyzařovat](how-to-define-a-generic-method-with-reflection-emit.md) Ukazuje, jak vytvořit, vyzařovat a vyvolat jednoduchou obecnou metodu.
+[Postupy: definování obecné metody pomocí generování reflexe](how-to-define-a-generic-method-with-reflection-emit.md) Ukazuje, jak vytvořit, vygenerovat a vyvolat jednoduchou obecnou metodu.
 
-[Sběratelské sestavy pro dynamické generování typů](collectible-assemblies.md) Zavádí sběratelská sestavení, což jsou dynamická sestavení, která lze uvolnit bez uvolnění domény aplikace, ve které byla vytvořena.
+[Kolekční sestavení pro generování dynamického typu](collectible-assemblies.md) Zavádí kolekční sestavení, která jsou dynamická sestavení, která lze uvolnit bez uvolnění domény aplikace, ve které byly vytvořeny.
   
 ## <a name="reference"></a>Referenční informace  
 
 <xref:System.Reflection.Emit.OpCodes>  
-Katalogy kódy instrukcí MSIL, které můžete použít k sestavení těla metod.  
+Zařadí do katalogu kódy instrukcí jazyka MSIL, které můžete použít k sestavení těla metody.  
   
 <xref:System.Reflection.Emit>  
-Obsahuje spravované třídy používané k emitování dynamických metod, sestavení a typů.  
+Obsahuje spravované třídy používané k vygenerování dynamických metod, sestavení a typů.  
   
 <xref:System.Type>  
-Popisuje třídu, <xref:System.Type> která představuje typy ve spravované reflexe a odrazu vyzařovat a který je klíčem k použití těchto technologií.  
+Popisuje <xref:System.Type> třídu, která představuje typy v spravovaných reflexích a reflexi Emit a který je klíčem k používání těchto technologií.  
   
 <xref:System.Reflection>  
-Obsahuje spravované třídy používané k prozkoumání metadat a spravovaného kódu.  
+Obsahuje spravované třídy používané k prozkoumávání metadat a spravovaného kódu.  
   
 ## <a name="related-sections"></a>Související oddíly  
 
@@ -69,4 +69,4 @@ Obsahuje spravované třídy používané k prozkoumání metadat a spravovanéh
 Vysvětluje, jak prozkoumat metadata a spravovaný kód.  
   
 [Sestavení v .NET](../../standard/assembly/index.md)  
-Poskytuje přehled sestavení v implementacích rozhraní .NET.
+Poskytuje přehled o sestaveních v implementacích rozhraní .NET.

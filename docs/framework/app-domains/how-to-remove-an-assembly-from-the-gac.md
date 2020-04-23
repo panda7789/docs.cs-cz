@@ -28,9 +28,9 @@ Existují dva způsoby, jak odebrat sestavení z globální mezipaměti sestaven
 
 ## <a name="removing-an-assembly-with-gacutilexe"></a>Odebrání sestavení pomocí Gacutil. exe
 
-V příkazovém řádku zadejte následující příkaz:
+Do příkazového řádku zadejte následující příkaz:
 
-**Gacutil – u** \<*název sestavení*>
+*název sestavení* pro **Gacutil – u** \<>
 
 V tomto příkazu je *název sestavení* název sestavení, které chcete odebrat z globální mezipaměti sestavení (GAC).
 
@@ -50,8 +50,8 @@ V aplikaci **a funkce** v **Ovládacích panelech**vyberte aplikaci, kterou chce
 > [!NOTE]
 > Instalační služba systému Windows udržuje počet odkazů pro sestavení nainstalovaná v globální mezipaměti sestavení (GAC). Sestavení je odebráno z GAC pouze v případě, že počet odkazů dosáhne nuly, což znamená, že není používáno žádnou aplikací nainstalovanou Instalační služba systému Windows balíčkem.
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Práce se sestaveními a s globální pamětí sestavení](working-with-assemblies-and-the-gac.md)
 - [Postupy: Instalace sestavení do globální mezipaměti sestavení](install-assembly-into-gac.md)
-- [Gacutil.exe (nástroj globální mezipaměti sestavení)](../tools/gacutil-exe-gac-tool.md)
+- [Gacutil. exe (nástroj Global Assembly Cache Tool)](../tools/gacutil-exe-gac-tool.md)

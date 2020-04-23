@@ -1,6 +1,6 @@
 ---
 title: Přehled XAML
-description: Zjistěte, jak je jazyk XAML strukturován a implementován systémem WPF (Windows Presentation Foundation) pro jazyk .NET Core.
+description: Přečtěte si, jak je jazyk XAML strukturovaný a implementovaný pomocí Windows Presentation Foundation (WPF) pro .NET Core.
 author: thraka
 ms.date: 08/08/2019
 ms.author: adegeo
@@ -28,61 +28,61 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 03/06/2020
 ms.locfileid: "82071785"
 ---
-# <a name="xaml-overview-in-wpf"></a>Přehled XAML v WPF
+# <a name="xaml-overview-in-wpf"></a>Přehled XAML v subsystému WPF
 
-Tento článek popisuje funkce jazyka XAML a ukazuje, jak můžete použít XAML k zápisu windows presentation foundation (WPF) aplikace. Tento článek konkrétně popisuje XAML jako implementované WPF. XAML sám o sobě je větší koncept jazyka než WPF.
+Tento článek popisuje funkce jazyka XAML a ukazuje, jak lze použít XAML k psaní Windows Presentation Foundationch aplikací (WPF). Tento článek konkrétně popisuje XAML, jak je implementováno v jazyce WPF. Samotný XAML je větší jazyk konceptu než WPF.
 
 [!INCLUDE [desktop guide under construction](../../../includes/desktop-guide-preview-note.md)]
 
 ## <a name="what-is-xaml"></a>Co je XAML
 
-XAML je deklarativní značkovací jazyk. Jak se použije na programovací model .NET Core, XAML zjednodušuje vytváření uživatelského rozhraní pro aplikaci .NET Core. Můžete vytvořit viditelné prvky uživatelského rozhraní v deklarativní masce XAML a potom oddělit definici uživatelského rozhraní od logiky za běhu pomocí souborů s kódem na pozadí, které jsou spojeny se značkami prostřednictvím částečných definic tříd. XAML přímo představuje konkretizovat objekty v určité sadě typů zálohování definovaných v sestavách. To je na rozdíl od většiny ostatních jazycích značek, které jsou obvykle interpretovaný jazyk bez takové přímé vazby na systém doprovodného typu. XAML umožňuje pracovní postup, kde samostatné strany mohou pracovat na uživatelském prostředí a logiku aplikace pomocí potenciálně různých nástrojů.
+XAML je deklarativní jazyk značení. V programovacím modelu .NET Core jazyk XAML zjednodušuje vytváření uživatelského rozhraní pro aplikaci .NET Core. Můžete vytvořit viditelné prvky uživatelského rozhraní v deklarativním kódu XAML a potom oddělit definici uživatelského rozhraní od běhové logiky pomocí souborů kódu na pozadí, které jsou připojeny ke značkám prostřednictvím definic dílčí třídy. XAML přímo představuje instanci objektů v konkrétní sadě typů zálohování definovaných v sestaveních. To se na rozdíl od většiny ostatních jazyků značek, což je obvykle interpretovaný jazyk bez přímé propojení na systém back-Type. XAML umožňuje pracovní postup, ve kterém můžou samostatné strany pracovat na uživatelském rozhraní a logice aplikace, a to pomocí potenciálně různých nástrojů.
 
-Při reprezentován jako text, XAML soubory `.xaml` jsou XML soubory, které obecně mají příponu. Soubory mohou být kódovány libovolným kódováním XML, ale kódování jako UTF-8 je typické.
+V případě, že jsou reprezentovány jako text, soubory XAML jsou `.xaml` soubory XML, které mají obvykle příponu. Soubory mohou být kódovány jakýmkoli kódováním XML, ale kódování jako UTF-8 je typické.
 
-Následující příklad ukazuje, jak můžete vytvořit tlačítko jako součást ui. Tento příklad je určen k vám chuť, jak XAML představuje běžné metafory programování uživatelského rozhraní (není kompletní vzorek).
-
-[!code-xaml[XAMLOvwSupport#DirtSimple](~/samples/snippets/csharp/VS_Snippets_Wpf/XAMLOvwSupport/CSharp/page2.xaml#dirtsimple)]
-
-## <a name="xaml-syntax-in-brief"></a>Syntaxe XAML ve zkratce
-
-V následujících částech jsou vysvětleny základní formy syntaxe XAML a uvedeny krátké značky příklad. Tyto oddíly nejsou určeny k poskytování úplných informací o každém formuláři syntaxe, například jak jsou reprezentovány v systému typu zálohování. Další informace o specifikách syntaxe XAML naleznete [v části Syntaxe XAML v detailu](../../framework/wpf/advanced/xaml-syntax-in-detail.md).
-
-Velká část materiálu v příštích několika částech bude pro vás elementární, pokud máte předchozí znalost jazyka XML. To je důsledkem jednoho ze základních konstrukčních principů XAML. Jazyk XAML definuje vlastní koncepty, ale tyto koncepty fungují v rámci jazyka XML a formuláře značek.
-
-### <a name="xaml-object-elements"></a>Prvky objektu XAML
-
-Element objektu obvykle deklaruje instanci typu. Tento typ je definován v sestaveních odkazuje technologie, která používá XAML jako jazyk.
-
-Syntaxe prvku objektu vždy začíná`<`otevírací úhlovou závorkou ( ). Následuje název typu, do kterého chcete vytvořit instanci. (Název může obsahovat předponu, koncept, který bude vysvětlen později.) Poté můžete volitelně deklarovat atributy prvku objektu. Chcete-li značku prvku objektu dokončit,`>`zakončete uzavírací úhlovou závorkou ( ). Místo toho můžete použít samouzavírací formulář, který nemá žádný obsah, vyplněním značky lomítkem a uzavíracím úhlovým držákem za sebou (`/>`). Podívejte se například znovu na dříve zobrazený úryvek značek.
+Následující příklad ukazuje, jakým způsobem můžete vytvořit tlačítko jako součást uživatelského rozhraní. Tento příklad je určen k poskytnutí charakteru, jak XAML představuje společné programování uživatelského rozhraní metaphors (není to kompletní ukázka).
 
 [!code-xaml[XAMLOvwSupport#DirtSimple](~/samples/snippets/csharp/VS_Snippets_Wpf/XAMLOvwSupport/CSharp/page2.xaml#dirtsimple)]
 
-Určuje dva objektové `<StackPanel>` prvky: (s obsahem a `<Button .../>` uzavírací značkou později) a (formulář pro samouzavírací formulář s několika atributy). Objektové `StackPanel` prvky a `Button` každý mapovat na název třídy, která je definována WPF a je součástí sestavení WPF. Když zadáte značku elementu objektu, vytvoříte instrukce pro zpracování XAML k vytvoření nové instance základního typu. Každá instance je vytvořena voláním konstruktoru bez parametrů základního typu při analýzě a načítání XAML.
+## <a name="xaml-syntax-in-brief"></a>Stručná syntaxe jazyka XAML
+
+Následující části vysvětlují základní formy syntaxe jazyka XAML a poskytují krátký příklad označení. Tyto části nejsou určeny k poskytování úplných informací o jednotlivých formulářích syntaxe, například o tom, jak jsou reprezentovány v systému typů zálohování. Další informace o konkrétních syntaxech syntaxe jazyka XAML naleznete v tématu [syntaxe jazyka XAML podrobněji](../../framework/wpf/advanced/xaml-syntax-in-detail.md).
+
+Většina materiálu v následujících částech bude základní pro vás, pokud jste dříve obeznámeni s jazykem XML. Toto je důsledek jednoho ze základních principů návrhu jazyka XAML. Jazyk XAML definuje koncepty vlastní, ale tyto koncepty fungují v jazyce XML a formuláři s označením.
+
+### <a name="xaml-object-elements"></a>Elementy objektu XAML
+
+Prvek objektu obvykle deklaruje instanci typu. Tento typ je definován v sestaveních, na které odkazuje technologie, která používá XAML jako jazyk.
+
+Syntaxe elementu objektu vždy začíná levou lomenou závorkou (`<`). Následuje název typu, ve kterém chcete vytvořit instanci. (Název může obsahovat předponu, koncept, který bude vysvětlen později.) Potom můžete volitelně deklarovat atributy elementu Object. Chcete-li dokončit značku prvku objektu, ukončete pravou ostrou závorku`>`(). Místo toho můžete použít samoobslužný formulář, který nemá žádný obsah, doplněním značky s lomítkem a pravou ostrou závorkou v úspěchu (`/>`). Podívejte se například na dříve zobrazený fragment kódu znovu.
+
+[!code-xaml[XAMLOvwSupport#DirtSimple](~/samples/snippets/csharp/VS_Snippets_Wpf/XAMLOvwSupport/CSharp/page2.xaml#dirtsimple)]
+
+To určuje dva prvky objektu: `<StackPanel>` (s obsahem a koncovou značku později) a `<Button .../>` (formulář pro samoobslužné zavírání s několika atributy). Prvky `StackPanel` objektu a `Button` každé mapování na název třídy, která je definována WPF a je součástí sestavení WPF. Když zadáte značku prvku objektu, vytvoříte instrukci pro zpracování XAML pro vytvoření nové instance základního typu. Každá instance je vytvořena voláním konstruktoru bez parametrů základního typu při analýze a načítání XAML.
 
 ### <a name="attribute-syntax-properties"></a>Syntaxe atributu (vlastnosti)
 
-Vlastnosti objektu mohou být často vyjádřeny jako atributy prvku objektu. Syntaxe atributu pojmenuje vlastnost objektu, která je nastavena, následovanou operátorem přiřazení (=). Hodnota atributu je vždy zadána jako řetězec, který je obsažen v uvozovkách.
+Vlastnosti objektu lze často vyjádřit jako atributy elementu Object. Syntaxe atributu vyjmenovává vlastnost objektu, která je právě nastavena, následovaná operátorem přiřazení (=). Hodnota atributu je vždy zadána jako řetězec, který je obsažen v uvozovkách.
 
-Syntaxe atributu je nejefektivnější syntaxe nastavení vlastností a je nejintuitivnější syntaxí, kterou lze použít pro vývojáře, kteří v minulosti používali značkovací jazyky. Například následující značky vytvoří tlačítko, které má červený text a modré `Content`pozadí kromě zobrazení textu určeného jako .
+Syntaxe atributu je nejefektivnější syntaxe nastavení vlastností a je nejpohodlnější syntaxe, která se používá pro vývojáře, kteří používali jazyky značek v minulosti. Například následující kód vytvoří tlačítko, které má červený text a modré pozadí vedle zobrazení textu zadaného jako `Content`.
 
 [!code-xaml[XAMLOvwSupport#BlueRedButton](~/samples/snippets/csharp/VS_Snippets_Wpf/XAMLOvwSupport/CSharp/Page1.xaml#blueredbutton)]
 
-### <a name="property-element-syntax"></a>Syntaxe prvku vlastnosti
+### <a name="property-element-syntax"></a>Syntaxe elementu vlastnosti
 
-Pro některé vlastnosti prvku objektu není syntaxe atributu možná, protože objekt nebo informace nezbytné k poskytnutí hodnoty vlastnosti nemohou být dostatečně vyjádřeny v rámci uvozovky a omezení řetězce syntaxe atributu. V těchto případech lze použít jinou syntaxi známou jako syntaxe prvku vlastnosti.
+U některých vlastností elementu Object není syntaxe atributu možná, protože objekt nebo informace, které jsou nezbytné k poskytnutí hodnoty vlastnosti, nelze přiměřeně vyjádřit v rámci značky uvozovek a omezením řetězce syntaxe atributu. V těchto případech lze použít jinou syntaxi známou jako syntaxe prvku vlastnosti.
 
-Syntaxe počáteční značky elementu vlastnosti je `<TypeName.PropertyName>`. Obecně je obsah této značky prvek objektu typu, který vlastnost bere jako jeho hodnotu. Po zadání obsahu je nutné zavřít element vlastnosti koncovou značkou. Syntaxe koncové značky `</TypeName.PropertyName>`je .
+Syntaxe pro počáteční značku elementu vlastnosti je `<TypeName.PropertyName>`. Obecně platí, že obsah této značky je prvek objektu typu, který vlastnost přebírá jako hodnotu. Po zadání obsahu je nutné zavřít element Property s koncovou značkou. Syntaxe pro koncovou značku je `</TypeName.PropertyName>`.
 
-Pokud je syntaxe atributu možná, použití syntaxe atributu je obvykle pohodlnější a umožňuje kompaktnější značky, ale to je často jen otázkou stylu, nikoli technického omezení. Následující příklad ukazuje stejné vlastnosti, které jsou nastaveny jako v předchozím příkladu syntaxe `Button`atributu, ale tentokrát pomocí syntaxe elementu vlastnosti pro všechny vlastnosti .
+Pokud je možné syntaxi atributu, použití syntaxe atributu je obvykle pohodlnější a umožňuje více kompaktních značek, ale to je často pouze druh stylu, nikoli technické omezení. Následující příklad ukazuje stejné vlastnosti jako v předchozím příkladu syntaxe atributu, ale tentokrát pomocí syntaxe elementu Property pro všechny vlastnosti `Button`.
 
 [!code-xaml[XAMLOvwSupport#BlueRedButtonPE](~/samples/snippets/csharp/VS_Snippets_Wpf/XAMLOvwSupport/CSharp/Page1.xaml#blueredbuttonpe)]
 
 ### <a name="collection-syntax"></a>Syntaxe kolekce
 
-Jazyk XAML obsahuje některé optimalizace, které vytvářejí více čitelné značky. Jedním z takových optimalizace je, že pokud určitá vlastnost přebírá typ kolekce, pak položky, které deklarujete ve značkách jako podřízené prvky v rámci hodnoty této vlastnosti, se stanou součástí kolekce. V tomto případě kolekce podřízených prvků objektu je hodnota nastavena na vlastnost kolekce.
+Jazyk XAML obsahuje několik optimalizací, které poskytují uživatelsky čitelné značky. Taková optimalizace je taková, že pokud konkrétní vlastnost přebírá typ kolekce, pak položky, které deklarujete jako podřízené prvky v rámci této hodnoty této vlastnosti, se stanou součástí kolekce. V tomto případě kolekce podřízených prvků objektu je hodnota nastavená na vlastnost kolekce.
 
-Následující příklad ukazuje syntaxi kolekce <xref:System.Windows.Media.GradientBrush.GradientStops%2A> pro nastavení hodnot vlastnosti.
+Následující příklad ukazuje syntaxi kolekce pro nastavení hodnot <xref:System.Windows.Media.GradientBrush.GradientStops%2A> vlastnosti.
 
 ```xaml
 <LinearGradientBrush>
@@ -96,9 +96,9 @@ Následující příklad ukazuje syntaxi kolekce <xref:System.Windows.Media.Grad
 
 ### <a name="xaml-content-properties"></a>Vlastnosti obsahu XAML
 
-XAML určuje funkci jazyka, kdy třída může přesně určit jednu ze svých vlastností jako vlastnost _obsahu_ XAML. Podřízené prvky tohoto prvku objektu se používají k nastavení hodnoty této vlastnosti content. Jinými slovy pro vlastnost content jedinečně můžete vynechat element vlastnosti při nastavování této vlastnosti v značek XAML a vytvořit více viditelné metafory nadřazený/podřízený ve značkách.
+XAML Určuje funkci jazyka, kde třída může určit přesně jednu z vlastností, která má být vlastností _obsahu_ XAML. Podřízené prvky tohoto prvku objektu slouží k nastavení hodnoty této vlastnosti obsahu. Jinými slovy, pro vlastnost obsahu lze jedinečně vynechat element Property při nastavení této vlastnosti v kódu XAML a vytvořit viditelné nadřazené/podřízené metafora ve značce.
 
-Určuje například <xref:System.Windows.Controls.Border> vlastnost _obsahu_ <xref:System.Windows.Controls.Decorator.Child%2A>souboru . Následující dva <xref:System.Windows.Controls.Border> prvky jsou zpracovány stejně. První z nich využívá syntaxi vlastnosti obsahu `Border.Child` a vynese prvek vlastnosti. Druhý ukazuje `Border.Child` explicitně.
+Například <xref:System.Windows.Controls.Border> určuje vlastnost _obsahu_ pro <xref:System.Windows.Controls.Decorator.Child%2A>. Následující dva <xref:System.Windows.Controls.Border> prvky jsou zpracovány identicky. První z nich využívá syntaxi vlastnosti obsahu a vynechává prvek `Border.Child` vlastnosti. Druhá z nich se `Border.Child` zobrazí explicitně.
 
 ```xaml
 <Border>
@@ -112,7 +112,7 @@ Určuje například <xref:System.Windows.Controls.Border> vlastnost _obsahu_ <xr
 </Border>
 ```
 
-Jako pravidlo jazyka XAML hodnota vlastnosti obsahu XAML musí být uvedeny zcela před nebo zcela po jakékoli jiné prvky vlastnosti na tento prvek objektu. Například následující značky nekompiluje.
+Jako pravidlo jazyka XAML musí být hodnota vlastnosti obsahu XAML předána zcela před nebo zcela po všech ostatních prvcích vlastností na daném objektovém prvku. Například následující kód není zkompilován.
 
 ```xaml
 <Button>I am a
@@ -120,21 +120,21 @@ Jako pravidlo jazyka XAML hodnota vlastnosti obsahu XAML musí být uvedeny zcel
   blue button</Button>
 ```
 
-Další informace o specifikách syntaxe XAML naleznete [v části Syntaxe XAML v detailu](../../framework/wpf/advanced/xaml-syntax-in-detail.md).
+Další informace o konkrétních syntaxech syntaxe jazyka XAML naleznete v tématu [syntaxe jazyka XAML podrobněji](../../framework/wpf/advanced/xaml-syntax-in-detail.md).
 
 ### <a name="text-content"></a>Textový obsah
 
-Malý počet prvků XAML může přímo zpracovat text jako jejich obsah. Chcete-li to povolit, musí být splněn jeden z následujících případů:
+Malý počet prvků XAML může přímo zpracovat text jako svůj obsah. Pokud to chcete povolit, musí mít jeden z následujících případů hodnotu true:
 
-- Třída musí deklarovat vlastnost content a vlastnost content musí být typu přiřaditelného řetězci (typ může být <xref:System.Object>). Například všechny <xref:System.Windows.Controls.ContentControl> <xref:System.Windows.Controls.ContentControl.Content%2A> použití jako jeho content <xref:System.Object>vlastnost a je typ , <xref:System.Windows.Controls.ContentControl> a <xref:System.Windows.Controls.Button>to `<Button>Hello</Button>`podporuje následující použití například : .
+- Třída musí deklarovat vlastnost obsahu a tato vlastnost obsahu musí být typu, který lze přiřadit k řetězci (typ může být <xref:System.Object>). <xref:System.Windows.Controls.ContentControl> Například jakékoli použití <xref:System.Windows.Controls.ContentControl.Content%2A> jako jeho vlastnost obsahu a je typu <xref:System.Object>a to podporuje následující použití na, <xref:System.Windows.Controls.ContentControl> například <xref:System.Windows.Controls.Button>:. `<Button>Hello</Button>`
 
-- Typ musí deklarovat převaděč typu, v takovém případě se textový obsah použije jako inicializační text pro tento převaděč typu. Například `<Brush>Blue</Brush>` převede hodnotu `Blue` obsahu na stopu. Tento případ je v praxi méně častý.
+- Typ musí deklarovat konvertor typu. v takovém případě je textový obsah použit jako inicializační text pro tento konvertor typu. Například `<Brush>Blue</Brush>` převede hodnotu obsahu `Blue` do štětce. Tento případ je v praxi méně běžný.
 
-- Typ musí být známý jazyk XAML primitivní.
+- Typ musí být známý primitivní jazyk XAML.
 
 ### <a name="content-properties-and-collection-syntax-combined"></a>Kombinované vlastnosti obsahu a syntaxe kolekce
 
-Vezměme si tento příklad.
+Vezměte v úvahu tento příklad.
 
 ```xaml
 <StackPanel>
@@ -143,11 +143,11 @@ Vezměme si tento příklad.
 </StackPanel>
 ```
 
-Zde je <xref:System.Windows.Controls.Button> každý podřízený <xref:System.Windows.Controls.StackPanel>prvek . Jedná se o zjednodušenou a intuitivní značku, která vyneche dvě značky ze dvou různých důvodů.
+Tady je každý <xref:System.Windows.Controls.Button> podřízený prvek <xref:System.Windows.Controls.StackPanel>. Toto je zjednodušený a intuitivní kód, který vynechává dvě značky ze dvou různých důvodů.
 
-- **Vynecháno StackPanel.Children prvek vlastnost:** <xref:System.Windows.Controls.StackPanel> odvozuje od <xref:System.Windows.Controls.Panel>. <xref:System.Windows.Controls.Panel>definuje <xref:System.Windows.Controls.Panel.Children%2A?displayProperty=nameWithType> jako svou vlastnost obsahu XAML.
+- **Vynechaný element vlastnosti StackPanel. Children:** <xref:System.Windows.Controls.StackPanel> je odvozený <xref:System.Windows.Controls.Panel>od. <xref:System.Windows.Controls.Panel>definuje <xref:System.Windows.Controls.Panel.Children%2A?displayProperty=nameWithType> jako vlastnost obsahu XAML.
 
-- **Vynecháno elementu objektu UIElementCollection:** Vlastnost <xref:System.Windows.Controls.Panel.Children%2A?displayProperty=nameWithType> má typ <xref:System.Windows.Controls.UIElementCollection>, který <xref:System.Collections.IList>implementuje . Značka elementu kolekce může být vynechána na základě pravidel XAML <xref:System.Collections.IList>pro zpracování kolekcí, jako je například . (V tomto <xref:System.Windows.Controls.UIElementCollection> případě ve skutečnosti nelze vytvořit instanci, protože nezveřejňuje konstruktor <xref:System.Windows.Controls.UIElementCollection> bez parametrů, a proto je prvek objektu zobrazen komentovaný).
+- **Vynechán prvek objektu UIElementCollection:** <xref:System.Windows.Controls.Panel.Children%2A?displayProperty=nameWithType> Vlastnost přebírá typ <xref:System.Windows.Controls.UIElementCollection>, který implementuje <xref:System.Collections.IList>. Značku prvku kolekce lze vynechat na základě pravidel jazyka XAML pro zpracování kolekcí, jako je <xref:System.Collections.IList>například. (V tomto případě nemůžete vytvořit instanci, <xref:System.Windows.Controls.UIElementCollection> protože nezveřejňuje konstruktor bez parametrů, což je důvod, proč je prvek <xref:System.Windows.Controls.UIElementCollection> objektu zobrazen jako komentář).
 
 ```xaml
 <StackPanel>
@@ -162,85 +162,85 @@ Zde je <xref:System.Windows.Controls.Button> každý podřízený <xref:System.W
 
 ### <a name="attribute-syntax-events"></a>Syntaxe atributu (události)
 
-Syntaxe atributu lze také použít pro členy, které jsou události, nikoli vlastnosti. V tomto případě název atributu je název události. V wpf implementaci událostí pro XAML je hodnota atributu název obslužné rutiny, která implementuje delegáta této události. Například následující značky přiřadí obslužnou rutinu <xref:System.Windows.Controls.Primitives.ButtonBase.Click> události <xref:System.Windows.Controls.Button> vytvořené ve značkách:
+Syntaxi atributů lze také použít pro členy, kteří jsou události, nikoli vlastnosti. V tomto případě je názvem atributu název události. V implementaci WPF událostí pro XAML je hodnota atributu název obslužné rutiny, která implementuje delegáta události. Například následující kód přiřadí obslužnou rutinu <xref:System.Windows.Controls.Primitives.ButtonBase.Click> události pro událost <xref:System.Windows.Controls.Button> vytvořenou v kódu:
 
 [!code-xaml[XAMLOvwSupport#ButtonWithCodeBehind](~/samples/snippets/csharp/VS_Snippets_Wpf/XAMLOvwSupport/CSharp/page3.xaml#buttonwithcodebehind)]
 
-Je více událostí a XAML v WPF, než jen tento příklad syntaxe atributu. Můžete se například divit, co `ClickHandler` zde odkazované představuje a jak je definován. To bude vysvětleno v nadcházející [události a XAML kód na pozadí](#events-and-xaml-code-behind) části tohoto článku.
+V subsystému WPF existuje více událostí a XAML než pouze tento příklad syntaxe atributu. Například můžete mít na `ClickHandler` něco, co tady je znázorněno a jak je definováno. To bude vysvětleno v nadcházejících [událostech a](#events-and-xaml-code-behind) v tomto článku v části s kódem na pozadí.
 
-## <a name="case-and-white-space-in-xaml"></a>Velká a prázdné místo v XAML
+## <a name="case-and-white-space-in-xaml"></a>Velikosti písmen a mezer v jazyce XAML
 
-Obecně xaml rozlišuje malá a velká písmena. Pro účely řešení typů zálohování WPF XAML rozlišuje se stejnými pravidly, která clr rozlišuje malá a velká písmena. Prvky objektu, prvky vlastností a názvy atributů musí být určeny pomocí citlivého pouzdře při porovnání s názvem s podkladovým typem v sestavení nebo s členem typu. Klíčová slova jazyka XAML a primitiva jsou také rozlišována malá a velká písmena. Hodnoty nejsou vždy rozlišována malá a velká písmena. Rozlišování malých a velkých písmen pro hodnoty bude záviset na chování převaděče typu přidružené k vlastnosti, která přebírá hodnotu, nebo na typu hodnoty vlastnosti. Například vlastnosti, <xref:System.Boolean> které berou `true` typ `True` může trvat buď nebo jako ekvivalentní hodnoty, ale pouze proto, že nativní WPF XAML parser typ převodu pro řetězec <xref:System.Boolean> již umožňuje tyto jako ekvivalenty.
+Obecně platí, že XAML rozlišuje velká a malá písmena. Pro účely překladu typů zálohování WPF XAML rozlišuje velká a malá písmena se stejnými pravidly, jako je u CLR velká a malá písmena. Prvky objektu, prvky vlastností a názvy atributů musí být zadány pomocí citlivých malých a velkých písmen v porovnání s názvem k základnímu typu v sestavení nebo pro člena typu. V jazyce XAML a primitivních klíčích jsou rozlišována velká a malá písmena. V hodnotách nejsou rozlišována malá a velká písmena. Rozlišování velkých a malých písmen pro hodnoty závisí na chování převaděče typů přidružené k vlastnosti, která přebírá hodnotu, nebo na typ hodnoty vlastnosti. <xref:System.Boolean> Například vlastnosti, které přebírají typ, mohou přijímat buď `true` `True` ekvivalentní hodnoty, ale pouze proto, že NATIVNÍ převod typu analyzátoru WPF XAML pro řetězec na <xref:System.Boolean> již je povoluje jako ekvivalenty.
 
-WPF XAML procesory a serializátory bude ignorovat nebo vynechat všechny nevýznamné prázdné znaky a normalizuje všechny významné prázdné místo. To je konzistentní s výchozí prázdné místo chování doporučení specifikace XAML. Toto chování je pouze důsledkem, pokud zadáte řetězce v rámci vlastností obsahu XAML. V nejjednodušších termínech XAML převede mezery, linefeed a tabulátorznaky do mezer a pak zachová jednu mezeru, pokud se nachází na obou koncích souvislého řetězce. Úplné vysvětlení zpracování prázdného místa XAML není zahrnuto v tomto článku. Další informace naleznete [v tématu Zpracování prázdného místa v XAML](../xaml-services/white-space-processing.md).
+Procesory a serializace WPF XAML budou ignorovat nebo odstranit všechny nevýznamné prázdné znaky a budou normalizovat jakékoli významné prázdné znaky. To je konzistentní s výchozími doporučeními pro chování prázdných míst specifikace jazyka XAML. Toto chování je pouze v případě, že zadáte řetězce v rámci vlastností obsahu XAML. V nejjednodušším smyslu XAML převede znaky mezer, odřádkování a tabulátoru na mezery a pak zachová jeden prostor, pokud se najde na konci souvislého řetězce. Úplné vysvětlení zpracování prázdných míst v jazyce XAML není zahrnuto v tomto článku. Další informace naleznete v tématu [prázdné místo zpracování v jazyce XAML](../xaml-services/white-space-processing.md).
 
 ## <a name="markup-extensions"></a>Rozšíření značek
 
-Rozšíření značek jsou koncept jazyka XAML. Při použití k zadání hodnoty syntaxe atributu`{` označují `}`složené závorky ( a ) použití rozšíření značek. Toto použití řídí zpracování XAML uniknout z obecné zpracování hodnoty atributů jako literál řetězec nebo řetězec konvertibilní hodnotu.
+Rozšíření značek jsou koncept jazyka XAML. Při použití k poskytnutí hodnoty syntaxe atributu, složené závorky (`{` a `}`) označují použití rozšíření značek. Toto využití směruje zpracování XAML za účelem sekvence z obecného zpracování hodnot atributů jako řetězcového literálu nebo hodnoty převoditelné z řetězce.
 
-Nejběžnější značkovací rozšíření používaná v programování [`Binding`](../../framework/wpf/advanced/binding-markup-extension.md)aplikací WPF jsou , používá se [`StaticResource`](../../framework/wpf/advanced/staticresource-markup-extension.md) pro [`DynamicResource`](../../framework/wpf/advanced/dynamicresource-markup-extension.md)výrazy datové vazby a odkazy na prostředky a . Pomocí rozšíření značek můžete použít syntaxi atributu k zadání hodnot vlastností, i když tato vlastnost obecně nepodporuje syntaxi atributu. Rozšíření značek často používají zprostředkující typy výrazů k povolení funkcí, jako je například odložení hodnot nebo odkazování na jiné objekty, které jsou k dispozici pouze za běhu.
+Nejběžnější přípony značek používané v programování aplikací WPF jsou [`Binding`](../../framework/wpf/advanced/binding-markup-extension.md)používány pro výrazy datových vazeb a odkazy [`StaticResource`](../../framework/wpf/advanced/staticresource-markup-extension.md) na prostředky a. [`DynamicResource`](../../framework/wpf/advanced/dynamicresource-markup-extension.md) Pomocí rozšíření značek můžete použít syntaxi atributu k poskytnutí hodnot pro vlastnosti, i když tato vlastnost obecně nepodporuje syntaxi atributu. Rozšíření značek často používají typy mezilehlého výrazu k povolení funkcí, jako je například odložení hodnot nebo odkazování na jiné objekty, které jsou přítomny pouze v době běhu.
 
-Například následující značky nastaví hodnotu vlastnosti <xref:System.Windows.FrameworkElement.Style%2A> pomocí syntaxe atributu. Vlastnost <xref:System.Windows.FrameworkElement.Style%2A> přebírá instanci <xref:System.Windows.Style> třídy, kterou ve výchozím nastavení nelze vytvořit pomocí řetězce syntaxe atributu. Ale v tomto případě atribut odkazuje na konkrétní `StaticResource`rozšíření značky . Při zpracování tohoto rozšíření značek vrátí odkaz na styl, který byl dříve vytvořena jako prostředek s klíčem ve slovníku prostředků.
+Například následující kód nastaví hodnotu <xref:System.Windows.FrameworkElement.Style%2A> vlastnosti pomocí syntaxe atributu. <xref:System.Windows.FrameworkElement.Style%2A> Vlastnost přebírá instanci <xref:System.Windows.Style> třídy, ve které se ve výchozím nastavení nedala vytvořit instance řetězcem syntaxe atributu. Ale v tomto případě atribut odkazuje na konkrétní rozšíření značek, `StaticResource`. Při zpracování tohoto rozšíření značek vrátí odkaz na styl, který byl dříve vytvořen jako prostředek s klíčem ve slovníku prostředků.
 
 [!code-xaml[FEResourceSH_snip#XAMLOvwShortResources](~/samples/snippets/csharp/VS_Snippets_Wpf/FEResourceSH_snip/CS/page1.xaml#xamlovwshortresources)]
 [!code-xaml[FEResourceSH_snip#XAMLOvwShortResources2](~/samples/snippets/csharp/VS_Snippets_Wpf/FEResourceSH_snip/CS/page1.xaml#xamlovwshortresources2)]
 [!code-xaml[FEResourceSH_snip#XAMLOvwShortResources3](~/samples/snippets/csharp/VS_Snippets_Wpf/FEResourceSH_snip/CS/page1.xaml#xamlovwshortresources3)]
 
-Referenční seznam všech rozšíření značek pro XAML implementovaných konkrétně v WPF naleznete v [tématu WPF XAML Extensions](../../framework/wpf/advanced/wpf-xaml-extensions.md). Referenční seznam rozšíření značek, které jsou definovány system.xaml a jsou více široce dostupné pro implementace .NET Core XAML, naleznete v [tématu XAML Namespace (x:) Funkce jazyka](../xaml-services/namespace-language-features.md). Další informace o konceptech rozšíření značek naleznete v [tématu Markup Extensions and WPF XAML](../../framework/wpf/advanced/markup-extensions-and-wpf-xaml.md).
+Odkaz na seznam všech rozšíření značek pro jazyk XAML implementovaný konkrétně v technologii WPF naleznete v tématu [rozšíření WPF XAML](../../framework/wpf/advanced/wpf-xaml-extensions.md). Pro odkazový seznam rozšíření značek, která jsou definována v System. XAML a jsou širší pro implementaci .NET Core XAML, naleznete v tématu [obor názvů XAML (x:). Jazykové funkce](../xaml-services/namespace-language-features.md). Další informace o konceptech rozšíření značek naleznete v tématu [rozšíření značek a WPF XAML](../../framework/wpf/advanced/markup-extensions-and-wpf-xaml.md).
 
 ## <a name="type-converters"></a>Převaděče typů
 
-V části [Syntaxe XAML v kostce](#xaml-syntax-in-brief) bylo uvedeno, že hodnota atributu musí být možné nastavit řetězcem. Základní, nativní zpracování, jak jsou řetězce převedeny na jiné typy <xref:System.String> objektů nebo primitivní hodnoty je založena <xref:System.DateTime> na <xref:System.Uri>samotném typu, kromě nativní zpracování pro určité typy, jako je například nebo . Ale mnoho WPF typy nebo členy těchto typů rozšířit základní řetězec atribut zpracování chování takovým způsobem, že instance složitější typy objektů lze zadat jako řetězce a atributy.
+V [syntaxi jazyka XAML v krátkém](#xaml-syntax-in-brief) oddílu bylo uvedeno, že hodnota atributu musí být schopna nastavit řetězec. Základní, nativní zpracování způsobu převodu řetězců do jiných typů objektů nebo primitivních hodnot je založen na <xref:System.String> typu samotném, a to i na nativní zpracování pro určité typy, jako je <xref:System.DateTime> například <xref:System.Uri>nebo. Ale mnoho typů WPF nebo členů těchto typů rozšiřuje základní chování při zpracování atributů řetězců takovým způsobem, že instance složitějších typů objektů mohou být zadány jako řetězce a atributy.
 
-Struktura <xref:System.Windows.Thickness> je příkladem typu, který má povolený převod typu pro použití XAML. <xref:System.Windows.Thickness>označuje měření v rámci vnořeného obdélníku a <xref:System.Windows.FrameworkElement.Margin%2A>používá se jako hodnota pro vlastnosti, jako je například . Umístěním převaděče <xref:System.Windows.Thickness>typu na , <xref:System.Windows.Thickness> všechny vlastnosti, které používají xAML, jsou snadněji zadat v XAML, protože mohou být zadány jako atributy. Následující příklad používá syntaxi převodu typu a <xref:System.Windows.FrameworkElement.Margin%2A>atributu k poskytnutí hodnoty pro :
+<xref:System.Windows.Thickness> Struktura je příkladem typu, který má povolen převod typu pro použití v jazyce XAML. <xref:System.Windows.Thickness>označuje měření v rámci vnořeného obdélníku a používá se jako hodnota pro vlastnosti, <xref:System.Windows.FrameworkElement.Margin%2A>jako je například. Umístěním převaděče typu na <xref:System.Windows.Thickness>, všechny vlastnosti, které používají <xref:System.Windows.Thickness> , je snazší zadat v jazyce XAML, protože mohou být zadány jako atributy. Následující příklad používá převod typu a syntaxi atributu k poskytnutí hodnoty pro <xref:System.Windows.FrameworkElement.Margin%2A>:
 
 [!code-xaml[XAMLOvwSupport#MarginTCE](~/samples/snippets/csharp/VS_Snippets_Wpf/XAMLOvwSupport/CSharp/page7.xaml#margintce)]
 
-Předchozí příklad syntaxe atributu je ekvivalentní následujícímu podrobnému <xref:System.Windows.FrameworkElement.Margin%2A> příkladu syntaxe, kde <xref:System.Windows.Thickness> je místo toho nastavena syntaxe prvku vlastnosti obsahující prvek objektu. Čtyři klíčové vlastnosti <xref:System.Windows.Thickness> jsou nastaveny jako atributy na nové instanci:
+Příklad syntaxe předchozího atributu je ekvivalentní následujícímu příkladu syntaxe verbose, kde <xref:System.Windows.FrameworkElement.Margin%2A> je místo toho nastaveno prostřednictvím syntaxe elementu Property obsahující prvek <xref:System.Windows.Thickness> Object. Čtyři klíčové vlastnosti pro <xref:System.Windows.Thickness> jsou nastaveny jako atributy nové instance:
 
 [!code-xaml[XAMLOvwSupport#MarginVerbose](~/samples/snippets/csharp/VS_Snippets_Wpf/XAMLOvwSupport/CSharp/page7.xaml#marginverbose)]
 
 > [!NOTE]
-> Existuje také omezený počet objektů, kde převod typu je jediný veřejný způsob, jak nastavit vlastnost na tento typ bez zahrnutí podtřídy, protože samotný typ nemá konstruktor bez parametrů. Příklad: <xref:System.Windows.Input.Cursor>.
+> Existuje také omezený počet objektů, kde je převod typu jediným veřejným způsobem, jak nastavit vlastnost na tento typ bez použití podtřídy, protože samotný typ nemá konstruktor bez parametrů. Příklad: <xref:System.Windows.Input.Cursor>.
 
-Další informace o převodu typu naleznete v [tématech TypeConverters a XAML](../../framework/wpf/advanced/typeconverters-and-xaml.md).
+Další informace o převodu typů naleznete v tématu [TypeConverters a XAML](../../framework/wpf/advanced/typeconverters-and-xaml.md).
 
-## <a name="xaml-root-elements-and-xaml-namespaces"></a>Kořenové prvky XAML a obory názvů XAML
+## <a name="xaml-root-elements-and-xaml-namespaces"></a>Kořenové elementy XAML a obory názvů XAML
 
-Soubor XAML musí mít pouze jeden kořenový prvek, aby byl jak dobře formátovaný soubor XML, tak platný soubor XAML. Pro typické scénáře WPF použijete kořenový prvek, který má v modelu <xref:System.Windows.Window> aplikace <xref:System.Windows.Controls.Page> WPF <xref:System.Windows.ResourceDictionary> prominentní význam (například <xref:System.Windows.Application> nebo pro stránku, pro externí slovník nebo pro definici aplikace). Následující příklad ukazuje kořenový prvek typického souboru XAML pro stránku <xref:System.Windows.Controls.Page>WPF s kořenovým prvkem .
+Soubor XAML musí mít pouze jeden kořenový element, aby mohl být ve správném formátu XML a platný soubor XAML. V typických scénářích WPF použijete kořenový prvek, který má výrazný význam v modelu aplikace WPF ( <xref:System.Windows.Window> například nebo <xref:System.Windows.Controls.Page> pro stránku, <xref:System.Windows.ResourceDictionary> pro externí slovník nebo <xref:System.Windows.Application> pro definici aplikace). Následující příklad ukazuje kořenový prvek typického souboru XAML pro stránku WPF s kořenovým elementem <xref:System.Windows.Controls.Page>.
 
 [!code-xaml[XAMLOvwSupport#RootOnly](~/samples/snippets/csharp/VS_Snippets_Wpf/XAMLOvwSupport/CSharp/page2.xaml#rootonly)]
 [!code-xaml[XAMLOvwSupport#RootOnly2](~/samples/snippets/csharp/VS_Snippets_Wpf/XAMLOvwSupport/CSharp/page2.xaml#rootonly2)]
 
-Kořenový prvek také obsahuje `xmlns` `xmlns:x`atributy a . Tyto atributy označují procesoru XAML, který obory názvů XAML obsahují definice typů pro podpůrné typy, na které bude značka odkazovat jako na prvky. Atribut `xmlns` konkrétně označuje výchozí obor názvů XAML. Ve výchozím oboru názvů XAML lze zadat prvky objektu ve značkách bez předpony. Pro většinu scénářů aplikace WPF a pro téměř všechny příklady uvedené v oddílech WPF sady SDK je výchozí `http://schemas.microsoft.com/winfx/2006/xaml/presentation`obor názvů XAML mapován na obor názvů WPF . Atribut `xmlns:x` označuje další obor názvů XAML, který mapuje `http://schemas.microsoft.com/winfx/2006/xaml`obor názvů jazyka XAML .
+Kořenový element obsahuje také atributy `xmlns` a. `xmlns:x` Tyto atributy označují procesor XAML, který obsahuje obory názvů XAML definice typu pro typy back-Types, které budou odkazovat jako prvky. `xmlns` Atribut konkrétně určuje výchozí obor názvů XAML. V rámci výchozího oboru názvů XAML lze prvky objektu v kódu zadat bez předpony. Pro většinu scénářů aplikace WPF a pro téměř všechny příklady uvedené v oddílech WPF sady SDK je výchozí obor názvů jazyka XAML mapován na obor názvů `http://schemas.microsoft.com/winfx/2006/xaml/presentation`WPF. `xmlns:x` Atribut označuje další obor názvů XAML, který mapuje obor názvů `http://schemas.microsoft.com/winfx/2006/xaml`jazyka XAML.
 
-Toto `xmlns` použití k definování oboru pro použití a mapování oboru názvů je konzistentní se specifikací XML 1.0. XAML namescopes se liší od xml namescopes pouze v tom, že XAML namescope také znamená něco o tom, jak namescope prvky jsou zálohovány typy, pokud jde o rozlišení typu a analýzy XAML.
+Toto použití `xmlns` pro definování oboru pro použití a mapování namescope je konzistentní se specifikací XML 1,0. Obory názvů WPF XAML se liší od XML obory názvů WPF pouze v tom, že XAML namescope také znamená něco o tom, jak jsou prvky namescope zálohovány typy, pokud je k dispozici pro rozlišení typu a při analýze XAML.
 
-Atributy `xmlns` jsou nezbytně nutné pouze pro kořenový prvek každého souboru XAML. `xmlns`definice se budou vztahovat na všechny potomek prvků kořenového prvku (toto `xmlns`chování je opět v souladu se specifikací XML 1.0 pro .) `xmlns` atributy jsou také povoleny na jiné prvky pod kořenem a by se vztahovaly na všechny potomek prvky definující prvek. Častou definici nebo předefinování oborů názvů XAML však může mít za následek styl značek XAML, který je obtížně čitelný.
+`xmlns` Atributy jsou pouze naprosto nezbytné v kořenovém elementu každého souboru XAML. `xmlns`definice budou použity pro všechny následníky kořenového prvku (Toto chování je znovu konzistentní se specifikací XML 1,0 pro `xmlns`.) `xmlns` atributy jsou povoleny také na jiných prvcích pod kořenem a platí pro všechny následníky definující element. Časté definice nebo předefinování oborů názvů XAML ale mohou mít za následek, že je obtížné číst styl kódu XAML.
 
-WPF implementace jeho procesoru XAML zahrnuje infrastrukturu, která má povědomí o wpf jádra sestavení. Je známo, že jádrová sestavení WPF obsahují typy, které podporují mapování WPF na výchozí obor názvů XAML. To je povoleno prostřednictvím konfigurace, která je součástí souboru sestavení projektu a WPF sestavení a projektové systémy. Proto deklarování výchozí ho xaml `xmlns` obor názvů jako výchozí je vše, co je nezbytné pro odkaz na prvky XAML, které pocházejí ze sestavení WPF.
+Implementace WPF svého procesoru v jazyce XAML zahrnuje infrastrukturu, která obsahuje povědomí o základních sestaveních WPF. Základní sestavení WPF jsou známá, aby obsahovala typy, které podporují mapování WPF na výchozí obor názvů XAML. Tato možnost je povolena prostřednictvím konfigurace, která je součástí souboru sestavení projektu a systémů sestavení a projektů WPF. Proto deklarace výchozího oboru názvů XAML jako výchozí `xmlns` je vše, co je nezbytné pro odkazování na prvky XAML, které pocházejí ze sestavení WPF.
 
-### <a name="the-x-prefix"></a>X: předpona
+### <a name="the-x-prefix"></a>X: prefix
 
-V předchozím příkladu kořenového `x:` prvku byla předpona použita `http://schemas.microsoft.com/winfx/2006/xaml`k mapování oboru názvů XAML , což je vyhrazený obor názvů XAML, který podporuje konstrukce jazyka XAML. Tato `x:` předpona se používá pro mapování tohoto oboru názvů XAML v šablonách pro projekty, v příkladech a v dokumentaci v této sadě SDK. Obor názvů XAML pro jazyk XAML obsahuje několik programovacích konstrukcí, které budete často používat v jazyce XAML. Následuje seznam nejběžnějších `x:` předpon programování konstrukce, které budete používat:
+V předchozím příkladu kořenového elementu se předpona `x:` použila k mapování oboru názvů `http://schemas.microsoft.com/winfx/2006/xaml`XAML, což je vyhrazený obor názvů XAML, který podporuje konstrukce jazyka XAML. Tato `x:` předpona se používá pro mapování tohoto oboru názvů XAML v šablonách projektů, v příkladech a v dokumentaci v rámci této sady SDK. Obor názvů XAML pro jazyk XAML obsahuje několik programovacích konstrukcí, které budou často používány v jazyce XAML. Následuje seznam nejběžnějších `x:` programovacích konstrukcí, které budete používat:
 
-- [x:Key](../xaml-services/xkey-directive.md): Nastaví jedinečný klíč <xref:System.Windows.ResourceDictionary> pro každý prostředek v (nebo podobné slovníkové koncepty v jiných architekturách). `x:Key`bude pravděpodobně představovat 90 `x:` procent použití, které uvidíte v typické wpf app značky.
+- [x:Key –](../xaml-services/xkey-directive.md): nastavuje jedinečný klíč pro každý prostředek v rámci <xref:System.Windows.ResourceDictionary> (nebo v podobných konceptech slovníku v jiných rozhraních). `x:Key`budou pravděpodobně účtovány v 90 procentech `x:` využití, která se zobrazí v typickém kódu aplikace WPF.
 
-- [x:Class](../xaml-services/xclass-directive.md): Určuje obor názvů CLR a název třídy, která poskytuje kód na pozadí stránky XAML. Musíte mít takové třídy pro podporu kódu na pozadí na programovací `x:` model WPF, a proto téměř vždy vidět mapovány, i v případě, že neexistují žádné prostředky.
+- [x:Class](../xaml-services/xclass-directive.md): Určuje obor názvů a název třídy CLR pro třídu, která poskytuje kód na pozadí stránky XAML. Je nutné, aby taková třída podporovala kód na základě programovacího modelu WPF, a proto téměř vždy vidíte `x:` namapované, i když nejsou k dispozici žádné prostředky.
 
-- [x:Name](../xaml-services/xname-directive.md): Určuje název objektu za běhu pro instanci, která existuje v kódu za běhu po zpracování prvku objektu. Obecně platí, že často budete používat WPF definované ekvivalentní vlastnost pro [x:Name](../xaml-services/xname-directive.md). Tyto vlastnosti mapovat konkrétně na vlastnost zálohování CLR a jsou proto vhodnější pro programování aplikací, kde často používáte kód run-time najít pojmenované prvky z inicializované XAML. Nejběžnější taková vlastnost <xref:System.Windows.FrameworkElement.Name%2A?displayProperty=nameWithType>je . Stále můžete použít [x:Name,](../xaml-services/xname-directive.md) pokud ekvivalentní <xref:System.Windows.FrameworkElement.Name%2A> WPF úroveň architektury vlastnost není podporována v určitém typu. K tomu dochází v některých scénářích animace.
+- [x:Name](../xaml-services/xname-directive.md): Určuje název objektu modulu runtime pro instanci, která existuje v běhovém kódu po zpracování elementu Object. Obecně platí, že často použijete ekvivalentní vlastnost pro [x:Name](../xaml-services/xname-directive.md), která je definována pro WPF. Tyto vlastnosti jsou mapovány konkrétně na vlastnost zálohování CLR a jsou proto pohodlnější pro programování aplikací, kde často používáte běhový kód k nalezení pojmenovaných prvků z inicializovaného kódu XAML. Nejběžnější taková vlastnost je <xref:System.Windows.FrameworkElement.Name%2A?displayProperty=nameWithType>. Můžete i nadále používat [x:Name](../xaml-services/xname-directive.md) , pokud není ekvivalentní vlastnost na úrovni <xref:System.Windows.FrameworkElement.Name%2A> architektury WPF na daném typu podporována. K tomu dochází v některých scénářích animace.
 
-- [x:Static](../xaml-services/xstatic-markup-extension.md): Povolí odkaz, který vrací statickou hodnotu, která jinak není vlastností kompatibilní s XAML.
+- [x:static](../xaml-services/xstatic-markup-extension.md): povolí odkaz, který vrací statickou hodnotu, která není jinak vlastností kompatibilní s jazykem XAML.
 
-- [x:Type](../xaml-services/xtype-markup-extension.md): Vytvoří <xref:System.Type> odkaz na základě názvu typu. Používá se k určení atributů, <xref:System.Type> <xref:System.Windows.Style.TargetType%2A?displayProperty=nameWithType>které berou , například , i<xref:System.Type> když vlastnost má často nativní převod typu string-to-conversion takovým způsobem, že použití rozšíření značek [x:Type](../xaml-services/xtype-markup-extension.md) je volitelné.
+- [x:Type](../xaml-services/xtype-markup-extension.md): vytvoří <xref:System.Type> odkaz na základě názvu typu. Tato možnost slouží k určení atributů, které <xref:System.Type>přebírají, <xref:System.Windows.Style.TargetType%2A?displayProperty=nameWithType>například, přestože často vlastnost má nativní<xref:System.Type> převod řetězce na převod takovým způsobem, že použití rozšíření značek [x:Type](../xaml-services/xtype-markup-extension.md) je volitelné.
 
-Existují další programovací konstrukce `x:` v oboru názvů předpony/XAML, které nejsou tak běžné. Podrobnosti naleznete v [tématu XAML Namespace (x:) Funkce jazyka](../xaml-services/namespace-language-features.md).
+Existují další programovací konstrukce v oboru názvů `x:` prefix/XAML, které nejsou tak běžné. Podrobnosti najdete v tématu [obor názvů XAML (x:). Jazykové funkce](../xaml-services/namespace-language-features.md).
 
-## <a name="custom-prefixes-and-custom-types-in-xaml"></a>Vlastní předpony a vlastní typy v XAML
+## <a name="custom-prefixes-and-custom-types-in-xaml"></a>Vlastní předpony a vlastní typy v jazyce XAML
 
-Pro vlastní sestavení nebo pro sestavení mimo jádro WPF **PresentationCore**, **PresentationFramework** a **WindowsBase**můžete zadat `xmlns` sestavení jako součást vlastního mapování. Potom můžete odkazovat na typy z tohoto sestavení v XAML, tak dlouho, dokud tento typ je správně implementována pro podporu xAML použití, které se pokoušíte.
+Pro vlastní sestavení nebo pro sestavení mimo rozhraní WPF Core of **PresentationCore**, **PresentationFramework** a **WindowsBase**můžete zadat sestavení jako součást vlastního `xmlns` mapování. Pak můžete odkazovat na typy z tohoto sestavení v jazyce XAML, pokud je tento typ správně implementován pro podporu použití jazyka XAML, které zkoušíte.
 
-Následuje základní příklad fungování vlastních předpon ve značkách XAML. Předpona `custom` je definována ve značce kořenového prvku a mapována na konkrétní sestavení, které je zabaleno a k dispozici s aplikací. Toto sestavení `NumericUpDown`obsahuje typ , který je implementován pro podporu obecného použití XAML, stejně jako pomocí dědičnosti třídy, která umožňuje jeho vložení v tomto konkrétním bodě v modelu obsahu WPF XAML. Instance tohoto `NumericUpDown` ovládacího prvku je deklarována jako element objektu pomocí předpony tak, aby analyzátor XAML věděl, který obor názvů XAML obsahuje typ, a proto kde je záložní sestavení, které obsahuje definici typu.
+Následuje základní příklad, jak vlastní předpony fungují v kódu XAML. Předpona `custom` je definována ve značce kořenového prvku a namapována na konkrétní sestavení, které je zabaleno a k dispozici v aplikaci. Toto sestavení obsahuje typ `NumericUpDown`, který je implementován pro podporu obecného použití jazyka XAML, a také použití dědičnosti třídy, která umožňuje jeho vložení na tento konkrétní bod v modelu obsahu WPF XAML. Instance tohoto `NumericUpDown` ovládacího prvku je deklarována jako element Object s použitím předpony tak, aby analyzátor XAML věděl, který obor názvů XAML obsahuje typ, a proto, kde záložní sestavení obsahuje definici typu.
 
 ```xaml
 <Page
@@ -255,38 +255,38 @@ Následuje základní příklad fungování vlastních předpon ve značkách XA
 </Page>
 ```
 
-Další informace o vlastních typech v XAML naleznete v tématu [XAML a Custom Classes for WPF](../../framework/wpf/advanced/xaml-and-custom-classes-for-wpf.md).
+Další informace o vlastních typech v jazyce XAML naleznete v tématu [XAML a vlastní třídy pro WPF](../../framework/wpf/advanced/xaml-and-custom-classes-for-wpf.md).
 
-Další informace o tom, jak spolu souvisejí obory názvů XML a obory názvů kódu v sestaveních, naleznete v [tématu XAML Namespaces a Namespace Mapping for WPF XAML](../../framework/wpf/advanced/xaml-namespaces-and-namespace-mapping-for-wpf-xaml.md).
+Další informace o tom, jak se v sestavení vztahují obory názvů XML a obory názvů kódu, naleznete v tématu [obory názvů XAML a mapování oboru názvů pro WPF XAML](../../framework/wpf/advanced/xaml-namespaces-and-namespace-mapping-for-wpf-xaml.md).
 
-## <a name="events-and-xaml-code-behind"></a>Události a kód XAML na pozadí
+## <a name="events-and-xaml-code-behind"></a>Události a kód XAML – na pozadí
 
-Většina wpf aplikací se skládá ze značek XAML i kódu na pozadí. V rámci projektu XAML je `.xaml` zapsán jako soubor a clr jazyk, jako je například Microsoft Visual Basic nebo C# se používá k zápisu souboru s kódem na pozadí. Pokud je soubor XAML zkompilován jako součást programovacích a aplikačních modelů WPF, umístění souboru kódu XAML pro soubor XAML je identifikováno zadáním oboru názvů a třídy jako `x:Class` atributu kořenového prvku XAML.
+Většina aplikací WPF se skládá z kódu XAML i kódu na pozadí. V rámci projektu je kód XAML napsán jako `.xaml` soubor a jazyk CLR, jako je například Microsoft Visual Basic nebo C#, je použit k zápisu souboru kódu na pozadí. Je-li soubor XAML kód kompilován jako součást programovacích a aplikačních modelů WPF, umístění souboru kódu XAML pro soubor XAML je identifikováno zadáním oboru názvů a třídy jako `x:Class` atributu kořenového prvku XAML.
 
-V příkladech zatím jste viděli několik tlačítek, ale žádné z těchto tlačítek neměl žádné logické chování s nimi spojené dosud. Primární mechanismus na úrovni aplikace pro přidání chování pro prvek objektu je použít existující událost třídy elementu a napsat konkrétní obslužnou rutinu pro tuto událost, která je vyvolána při vyvolání této události za běhu. Název události a název obslužné rutiny, která má být používána, jsou určeny ve značkách, zatímco kód, který implementuje obslužnou rutinu, je definován v kódu na pozadí.
+V uvedených příkladech jste viděli několik tlačítek, ale žádná z těchto tlačítek neměla k nim přidruženo žádné logické chování. Primární mechanismus na úrovni aplikace pro přidání chování pro prvek objektu je použít existující událost třídy elementu a zapsat konkrétní obslužnou rutinu pro tuto událost, která je vyvolána, když je událost vyvolána za běhu. Název události a název obslužné rutiny, které se mají použít, jsou uvedeny v označení, zatímco kód, který implementuje vaši obslužnou rutinu, je definován v kódu na pozadí.
 
 [!code-xaml[XAMLOvwSupport#ButtonWithCodeBehind](~/samples/snippets/csharp/VS_Snippets_Wpf/XAMLOvwSupport/CSharp/page3.xaml#buttonwithcodebehind)]
 
 [!code-csharp[XAMLOvwSupport#ButtonWithCodeBehindHandler](~/samples/snippets/csharp/VS_Snippets_Wpf/XAMLOvwSupport/CSharp/page3.xaml.cs#buttonwithcodebehindhandler)]
 [!code-vb[XAMLOvwSupport#ButtonWithCodeBehindHandler](~/samples/snippets/visualbasic/VS_Snippets_Wpf/XAMLOvwSupport/VisualBasic/Page1.xaml.vb#buttonwithcodebehindhandler)]
 
-Všimněte si, že soubor s kódem na pozadí používá obor názvů `ExampleNamespace` CLR a deklaruje `ExamplePage` jako částečnou třídu v rámci tohoto oboru názvů. To paraleluje hodnotu `x:Class` atributu `ExampleNamespace`.`ExamplePage` který byl uveden v kořenovém adresáři značek. Kompilátor značek WPF vytvoří částečnou třídu pro jakýkoli kompilovaný soubor XAML odvozením třídy z typu kořenového prvku. Když zadáte kód za, který také definuje stejnou částečnou třídu, výsledný kód je kombinován v rámci stejného oboru názvů a třídy zkompilované aplikace.
+Všimněte si, že soubor s kódem na pozadí používá obor `ExampleNamespace` názvů CLR a `ExamplePage` deklaruje jako částečnou třídu v rámci tohoto oboru názvů. Tím se `x:Class` paralelně hodnota atributu `ExampleNamespace`.`ExamplePage` který byl zadán v kořenovém adresáři značek. Kompilátor značek WPF vytvoří částečnou třídu pro všechny kompilované soubory XAML odvozením třídy z typu kořenového prvku. Pokud zadáte kód na pozadí, který také definuje stejnou částečnou třídu, výsledný kód je sloučen do stejného oboru názvů a třídy kompilované aplikace.
 
-Další informace o požadavcích na programování na pozadí kódu v WPF naleznete v [tématu Code-behind, Event Handler a Požadavky na částečnou třídu v WPF](../../framework/wpf/advanced/code-behind-and-xaml-in-wpf.md#code-behind-event-handler-and-partial-class-requirements-in-wpf).
+Další informace o požadavcích programování kódu na pozadí v technologii WPF naleznete v tématu [Code-na, obslužná rutina události a požadavky na částečnou třídu v](../../framework/wpf/advanced/code-behind-and-xaml-in-wpf.md#code-behind-event-handler-and-partial-class-requirements-in-wpf)subsystému WPF.
 
-Pokud nechcete vytvořit samostatný soubor s kódem na pozadí, můžete také zařadit kód do souboru XAML. Vázací kód je však méně univerzální technika, která má podstatná omezení. Další informace naleznete v [tématu Code-Behind a XAML v WPF](../../framework/wpf/advanced/code-behind-and-xaml-in-wpf.md).
+Pokud nechcete vytvořit samostatný soubor kódu na pozadí, můžete také vložit kód do souboru XAML. Vložený kód je však méně univerzální technikou, která má významná omezení. Další informace naleznete v tématu [Code-na a XAML v](../../framework/wpf/advanced/code-behind-and-xaml-in-wpf.md)subsystému WPF.
 
 ### <a name="routed-events"></a>Směrované události
 
-Konkrétní funkce události, která je zásadní pro WPF je směrované události. Směrované události umožňují prvek zpracovat událost, která byla vyvolána jiným prvkem, tak dlouho, dokud jsou prvky propojeny prostřednictvím vztahu stromu. Při zadávání zpracování událostí s atributem XAML lze směrovitou událost poslouchat a zpracovávat na libovolném prvku, včetně prvků, které neuvádějí tuto konkrétní událost v tabulce členů třídy. Toho lze dosáhnout kvalifikujícím atribut názvu události s názvem třídy vlastnící. Například `StackPanel` nadřazený `StackPanel`  /  `Button` v probíhajícím příkladu může zaregistrovat obslužnou rutinu pro událost tlačítka podřízeného <xref:System.Windows.Controls.Primitives.ButtonBase.Click> prvku zadáním atributu `Button.Click` na elementu objektu `StackPanel` s názvem obslužné rutiny jako hodnotou atributu. Další informace naleznete v tématu [Přehled směrovaných událostí](../../framework/wpf/advanced/routed-events-overview.md).
+Konkrétní funkce události, která je základem pro WPF, je směrná událost. Směrované události umožňují elementu zpracovávat události, které byly vyvolány jiným prvkem, pokud jsou prvky propojeny pomocí relace stromu. Při zadávání zpracování událostí pomocí atributu XAML lze směrovat směrované události pro libovolný element, včetně prvků, které neuvádějí tuto konkrétní událost v tabulce členů třídy. To je dosaženo zařazením atributu název události s názvem vlastnící třídy. Například `StackPanel` nadřazená položka v pokračujícím `StackPanel`  /  `Button` příkladu by mohla zaregistrovat obslužnou <xref:System.Windows.Controls.Primitives.ButtonBase.Click> rutinu pro událost tlačítka podřízeného elementu zadáním atributu `Button.Click` u prvku `StackPanel` objektu s názvem obslužné rutiny jako hodnotou atributu. Další informace najdete v tématu [Přehled směrovaných událostí](../../framework/wpf/advanced/routed-events-overview.md).
 
-## <a name="xaml-named-elements"></a>Pojmenované prvky XAML
+## <a name="xaml-named-elements"></a>Pojmenované elementy XAML
 
-Ve výchozím nastavení instanci objektu, která je vytvořena v grafu objektu zpracováním elementu objektu XAML, nemá jedinečný identifikátor nebo odkaz na objekt. Naopak pokud voláte konstruktor v kódu, téměř vždy použijete výsledek konstruktoru k nastavení proměnné na vyrobenou instanci, takže můžete odkazovat na instanci později v kódu. Aby byl zajištěn standardizovaný přístup k objektům, které byly vytvořeny pomocí definice značek, xAML definuje [atribut x:Name](../xaml-services/xname-directive.md). Můžete nastavit hodnotu `x:Name` atributu na libovolný prvek objektu. Ve vašem kódu na pozadí, identifikátor, který zvolíte, je ekvivalentní proměnné instance, která odkazuje na vyrobenou instanci. Ve všech ohledech pojmenované prvky fungují, jako by byly instance objektu (název odkazuje na tuto instanci) a váš kód na pozadí můžete odkazovat na pojmenované prvky pro zpracování interakce run-time v rámci aplikace. Toto připojení mezi instancemi a proměnnými je dosaženo kompilátorem značek WPF XAML <xref:System.Windows.Markup.IComponentConnector.InitializeComponent%2A> a konkrétněji zahrnuje prvky a vzory, jako je například nebude podrobně popsáno v tomto článku.
+Ve výchozím nastavení instance objektu, která je vytvořena v grafu objektů zpracováním elementu objektu XAML, nemá jedinečný identifikátor nebo odkaz na objekt. Naproti tomu, pokud voláte konstruktor v kódu, skoro vždy použijete výsledek konstruktoru pro nastavení proměnné na vytvořenou instanci, takže můžete odkazovat na instanci později v kódu. Za účelem zajištění standardizovaného přístupu k objektům, které byly vytvořeny pomocí definice kódu, XAML definuje [atribut x:Name](../xaml-services/xname-directive.md). Můžete nastavit hodnotu `x:Name` atributu u libovolného elementu Object. V kódu na pozadí se identifikátor, který zvolíte, odpovídá proměnné instance, která odkazuje na vytvořenou instanci. Ve všech ohledech se funkce pojmenované prvky, jako by šlo o instance objektů (název odkazuje na tuto instanci), a váš kód na pozadí může odkazovat na pojmenované prvky pro zpracování interakcí za běhu v rámci aplikace. Toto připojení mezi instancemi a proměnnými je provedeno kompilátorem kódu XAML WPF a konkrétně zahrnuje funkce a vzory, jako například <xref:System.Windows.Markup.IComponentConnector.InitializeComponent%2A> , které nebudou podrobněji popsány v tomto článku.
 
-WPF framework-level XAML <xref:System.Windows.FrameworkElement.Name%2A> elementy dědí vlastnost, která `x:Name` je ekvivalentní xaml definovaný atribut. Některé další třídy také poskytují `x:Name`ekvivalenty na úrovni vlastností pro , který je také obecně definován jako `Name` vlastnost. Obecně řečeno, pokud nemůžete `Name` najít vlastnost v tabulce členů pro vybraný `x:Name` prvek/typ, použijte místo. Hodnoty `x:Name` poskytnou identifikátor prvku XAML, který lze použít za běhu, a to buď určitými <xref:System.Windows.FrameworkElement.FindName%2A>subsystémy, nebo metodami nástrojů, jako je například .
+Prvky XAML na úrovni architektury WPF dědí <xref:System.Windows.FrameworkElement.Name%2A> vlastnost, která je ekvivalentní atributu definovanému `x:Name` XAML. Některé jiné třídy také poskytují ekvivalenty na úrovni vlastnosti pro `x:Name`, což je také obecně definováno jako `Name` vlastnost. Obecně řečeno, pokud nemůžete najít `Name` vlastnost v tabulce Members pro zvolený element/typ, použijte `x:Name` místo toho. `x:Name` Hodnoty budou poskytovat identifikátor prvku jazyka XAML, který lze použít v době běhu, a to buď pomocí specifických subsystémů, nebo pomocí pomocných metod, jako <xref:System.Windows.FrameworkElement.FindName%2A>je.
 
-Následující příklad <xref:System.Windows.FrameworkElement.Name%2A> nastaví <xref:System.Windows.Controls.StackPanel> na prvek. Potom obslužná <xref:System.Windows.Controls.Button> <xref:System.Windows.Controls.StackPanel> rutina <xref:System.Windows.Controls.StackPanel> v rámci, `buttonContainer` který <xref:System.Windows.FrameworkElement.Name%2A>odkazuje na odkaz prostřednictvím jeho instance, jak je nastaveno .
+Následující příklad nastaví <xref:System.Windows.FrameworkElement.Name%2A> u <xref:System.Windows.Controls.StackPanel> prvku. Pak <xref:System.Windows.Controls.Button> obslužná rutina v rámci, která <xref:System.Windows.Controls.StackPanel> odkazuje na <xref:System.Windows.Controls.StackPanel> odkaz `buttonContainer` prostřednictvím své instance, je nastavena <xref:System.Windows.FrameworkElement.Name%2A>pomocí.
 
 [!code-xaml[XAMLOvwSupport#NamedE](~/samples/snippets/csharp/VS_Snippets_Wpf/XAMLOvwSupport/CSharp/page7.xaml#namede)]
 [!code-xaml[XAMLOvwSupport#NamedE2](~/samples/snippets/csharp/VS_Snippets_Wpf/XAMLOvwSupport/CSharp/page7.xaml#namede2)]
@@ -294,43 +294,43 @@ Následující příklad <xref:System.Windows.FrameworkElement.Name%2A> nastaví
 [!code-csharp[XAMLOvwSupport#NameCode](~/samples/snippets/csharp/VS_Snippets_Wpf/XAMLOvwSupport/CSharp/page7.xaml.cs#namecode)]
 [!code-vb[XAMLOvwSupport#NameCode](~/samples/snippets/visualbasic/VS_Snippets_Wpf/XAMLOvwSupport/VisualBasic/Page1.xaml.vb#namecode)]
 
-Stejně jako proměnná, název XAML pro instanci se řídí koncept oboru, takže názvy mohou být vynuceny jako jedinečné v rámci určitého oboru, který je předvídatelný. Primární značka, která definuje stránku označuje jeden jedinečný název xaml, přičemž hranice oboru názvů XAML je kořenovým prvkem této stránky. Jiné zdroje značek však mohou pracovat se stránkou za běhu, jako jsou styly nebo šablony v rámci stylů, a tyto zdroje značek mají často vlastní názvové obory XAML, které se nemusí nutně připojit k oboru názvů XAML na stránce. Další informace `x:Name` o oborech názvů A <xref:System.Windows.FrameworkElement.Name%2A>XAML naleznete v tématu , [x:Name Directive](../xaml-services/xname-directive.md)nebo [WPF XAML Namescopes](../../framework/wpf/advanced/wpf-xaml-namescopes.md).
+Podobně jako u proměnné se název XAML pro instanci řídí konceptem oboru, aby bylo možné názvy vynutily, aby byly jedinečné v rámci určitého oboru, který je předvídatelný. Primární kód, který definuje stránku, označuje jednu jedinečnou namescope XAML s hranicí namescope XAML, která je kořenovým prvkem této stránky. Nicméně jiné zdroje značek mohou pracovat se stránkou v době běhu, jako jsou styly nebo šablony v rámci stylů, a tyto zdroje značek často mají vlastní obory názvů WPF XAML, které nemusí být nutně připojeny k namescopeu stránky XAML. Další informace o `x:Name` a XAML obory názvů WPF naleznete v tématu <xref:System.Windows.FrameworkElement.Name%2A>, [direktive x:Name](../xaml-services/xname-directive.md)nebo [WPF XAML obory názvů WPF](../../framework/wpf/advanced/wpf-xaml-namescopes.md).
 
 ## <a name="attached-properties-and-attached-events"></a>Připojené vlastnosti a připojené události
 
-XAML určuje funkci jazyka, která umožňuje určité vlastnosti nebo události, které mají být zadány na libovolný prvek, bez ohledu na to, zda vlastnost nebo událost existuje v definicích typu pro prvek, který je nastaven na. Verze vlastností této funkce se nazývá připojená vlastnost, verze událostí se nazývá připojená událost. Koncepčně si můžete představit připojené vlastnosti a připojené události jako globální členy, které lze nastavit na libovolné instanci elementu/objektu XAML. Tento prvek nebo třída nebo větší infrastruktura však musí podporovat úložiště podpůrných vlastností pro připojené hodnoty.
+XAML Určuje funkci jazyka, která umožňuje určit určité vlastnosti nebo události v jakémkoli elementu bez ohledu na to, zda vlastnost nebo událost existují v definicích typu prvku, na kterém je nastavena. Verze vlastností této funkce se nazývá připojená vlastnost, verze události se nazývá připojená událost. V konceptuální části si můžete představit připojené vlastnosti a připojené události jako globální členy, které lze nastavit u libovolné instance elementu nebo objektu XAML. Nicméně tento element nebo třída nebo větší infrastruktura musí podporovat úložiště vlastností pro připojené hodnoty.
 
-Připojené vlastnosti v XAML se obvykle používají pomocí syntaxe atributu. V syntaxi atributu určíte připojenou `ownerType.propertyName`vlastnost ve formuláři .
+Připojené vlastnosti v jazyce XAML se obvykle používají prostřednictvím syntaxe atributu. V syntaxi atributu zadáte připojenou vlastnost ve formuláři `ownerType.propertyName`.
 
-Povrchně se to podobá použití prvku vlastnosti, `ownerType` ale v tomto případě zadáte je vždy jiný typ než prvek objektu, kde je nastavena připojená vlastnost. `ownerType`je typ, který poskytuje přistupující metody, které jsou vyžadovány procesorem XAML, aby bylo možné získat nebo nastavit hodnotu připojené vlastnosti.
+`ownerType` Po navýšení se to podobá použití prvku vlastnosti, ale v tomto případě je vždy jiný typ než prvek objektu, kde je nastavena připojená vlastnost. `ownerType`je typ, který poskytuje přístupové metody, které jsou vyžadovány procesorem XAML, aby bylo možné získat nebo nastavit hodnotu připojené vlastnosti.
 
-Nejběžnější scénář pro připojené vlastnosti je umožnit podřízené prvky hlásit hodnotu vlastnosti jejich nadřazený prvek.
+Nejběžnějším scénářem pro připojené vlastnosti je povolení podřízených prvků pro hlášení hodnoty vlastnosti do jejich nadřazeného prvku.
 
-Následující příklad ilustruje <xref:System.Windows.Controls.DockPanel.Dock%2A?displayProperty=nameWithType> připojenou vlastnost. Třída <xref:System.Windows.Controls.DockPanel> definuje přístupové objekty <xref:System.Windows.Controls.DockPanel.Dock%2A?displayProperty=nameWithType> pro a proto vlastní připojené vlastnosti. Třída <xref:System.Windows.Controls.DockPanel> také obsahuje logiku, která itevaluje jeho podřízené <xref:System.Windows.Controls.DockPanel.Dock%2A?displayProperty=nameWithType>prvky a konkrétně kontroluje každý prvek pro nastavenou hodnotu . Pokud je nalezena hodnota, tato hodnota se používá během rozložení umístit podřízené prvky. Použití <xref:System.Windows.Controls.DockPanel.Dock%2A?displayProperty=nameWithType> připojené vlastnosti a tato schopnost umístění je ve skutečnosti <xref:System.Windows.Controls.DockPanel> motivující scénář pro třídu.
+Následující příklad znázorňuje <xref:System.Windows.Controls.DockPanel.Dock%2A?displayProperty=nameWithType> připojenou vlastnost. <xref:System.Windows.Controls.DockPanel> Třída definuje přistupující objekty pro <xref:System.Windows.Controls.DockPanel.Dock%2A?displayProperty=nameWithType> a proto vlastní připojenou vlastnost. <xref:System.Windows.Controls.DockPanel> Třída také obsahuje logiku, která prochází své podřízené prvky a konkrétně kontroluje každý prvek pro sadu hodnoty <xref:System.Windows.Controls.DockPanel.Dock%2A?displayProperty=nameWithType>. Pokud je nalezena hodnota, tato hodnota se používá během rozložení k umístění podřízených elementů. Použití <xref:System.Windows.Controls.DockPanel.Dock%2A?displayProperty=nameWithType> připojené vlastnosti a tato schopnost umístění je ve skutečnosti scénář motivace pro <xref:System.Windows.Controls.DockPanel> třídu.
 
 [!code-xaml[XAMLOvwSupport#DockAP](~/samples/snippets/csharp/VS_Snippets_Wpf/XAMLOvwSupport/CSharp/page8.xaml#dockap)]
 
-V WPF většina nebo všechny připojené vlastnosti jsou také implementovány jako vlastnosti závislostí. Další informace naleznete v [tématu Přehled připojených vlastností](../../framework/wpf/advanced/attached-properties-overview.md).
+Ve WPF je většina nebo všechny připojené vlastnosti implementovány také jako vlastnosti závislosti. Další informace najdete v tématu [Přehled připojených vlastností](../../framework/wpf/advanced/attached-properties-overview.md).
 
-Připojené události používají `ownerType.eventName` podobnou formu syntaxe atributu. Stejně jako nepřipojené události, hodnota atributu pro připojené události v XAML určuje název metody obslužné rutiny, která je vyvolána při zpracování události na prvku. Připojené události použití v WPF XAML jsou méně časté. Další informace naleznete [v tématu Přehled připojených událostí](../../framework/wpf/advanced/attached-events-overview.md).
+Připojené události používají podobný `ownerType.eventName` tvar syntaxe atributu. Stejně jako nepřipojené události určuje hodnota atributu připojené události v jazyce XAML název metody obslužné rutiny, která je vyvolána při zpracování události na elementu. Připojená používání událostí v jazyce WPF XAML jsou méně společná. Další informace najdete v tématu [Přehled připojených událostí](../../framework/wpf/advanced/attached-events-overview.md).
 
 ## <a name="base-types-and-xaml"></a>Základní typy a XAML
 
-Základní WPF XAML a jeho XAML obor názvů je kolekce typů, které odpovídají CLR objekty kromě značkovací prvky pro XAML. Však ne všechny třídy lze mapovat na prvky. Abstraktní třídy, <xref:System.Windows.Controls.Primitives.ButtonBase>například , a některé neabstraktní základní třídy, se používají pro dědičnost v modelu objektů CLR. Základní třídy, včetně abstraktních, jsou pro vývoj XAML stále důležité, protože každý z konkrétních prvků XAML dědí členy z některé základní třídy v hierarchii. Často tyto členy zahrnují vlastnosti, které lze nastavit jako atributy na prvek nebo události, které mohou být zpracovány. <xref:System.Windows.FrameworkElement>je betonová základní třída uI WPF na úrovni rámce WPF. Při navrhování ui, budete používat různé tvar, panel, decorator nebo <xref:System.Windows.FrameworkElement>kontrolní třídy, které všechny odvozené z . Související základní třída <xref:System.Windows.FrameworkContentElement>, podporuje prvky orientované na dokumenty, které dobře fungují pro prezentaci <xref:System.Windows.FrameworkElement>rozložení toku, pomocí rozhraní API, která záměrně zrcadlí rozhraní API v . Kombinace atributů na úrovni prvku a objektového modelu CLR poskytuje sadu společných vlastností, které jsou nastaveny na většině konkrétních prvků XAML, bez ohledu na konkrétní prvek XAML a jeho základní typ.
+Základní WPF XAML a jeho obor názvů XAML je kolekce typů, které odpovídají objektům CLR, kromě prvků značek pro XAML. Ne všechny třídy však mohou být mapovány na prvky. Abstraktní třídy, jako <xref:System.Windows.Controls.Primitives.ButtonBase>jsou a určité neabstraktní základní třídy, jsou používány pro dědění v modelu objektů CLR. Základní třídy, včetně abstraktních, jsou stále důležité pro vývoj v jazyce XAML, protože každý z konkrétních prvků XAML dědí členy z některé základní třídy ve své hierarchii. Tyto členy často obsahují vlastnosti, které lze nastavit jako atributy prvku nebo události, které lze zpracovat. <xref:System.Windows.FrameworkElement>je konkrétní základní třídou uživatelského rozhraní WPF na úrovni architektury WPF. Při navrhování uživatelského rozhraní použijete různé třídy Shape, panel, dekoratér nebo Control, které jsou odvozeny z <xref:System.Windows.FrameworkElement>. Související základní třída <xref:System.Windows.FrameworkContentElement>, podporuje prvky orientované na dokument, které dobře fungují pro prezentaci plovoucího rozložení, používají rozhraní API, která záměrně zrcadlí rozhraní API <xref:System.Windows.FrameworkElement>v nástroji. Kombinace atributů na úrovni prvku a objektového modelu CLR poskytuje sadu společných vlastností, které lze nastavit pro většinu betonových prvků XAML, bez ohledu na konkrétní prvek XAML a jeho nadřízený typ.
 
 ## <a name="xaml-security"></a>Zabezpečení XAML
 
-XAML je značkovací jazyk, který přímo představuje instanci a spuštění objektu. Proto prvky vytvořené v XAML mají stejnou schopnost pracovat se systémovými prostředky (přístup k síti, vznětlivé připojení k souboru, například) jako ekvivalentní generovaný kód. XAML načtený do plně důvěryhodné aplikace má stejný přístup k systémovým prostředkům jako hostitelská aplikace.
+XAML je jazyk značek, který přímo představuje instanci objektu a provádění. Proto prvky vytvořené v jazyce XAML mají stejnou schopnost pracovat se systémovými prostředky (například přístup k síti, vstupně-výstupní operace systému souborů) jako ekvivalentní generovaný kód. XAML načtený v plně důvěryhodné aplikaci má stejný přístup k systémovým prostředkům, jako hostující aplikace.
 
-### <a name="code-access-security-cas-in-wpf"></a>Zabezpečení přístupu kódu (CAS) v WPF
+### <a name="code-access-security-cas-in-wpf"></a>Zabezpečení přístupu kódu (CAS) v subsystému WPF
 
-**Tato část se vztahuje pouze na rozhraní .NET Framework. WPF pro .NET Core nepodporuje CAS. Další informace naleznete v [tématu Code Access Security differences](../migration/differences-from-net-framework.md#code-access-security).**
+**Tato část se týká jenom .NET Framework. WPF pro .NET Core nepodporuje CAS. Další informace najdete v tématu [rozdíly v zabezpečení přístupu ke kódu](../migration/differences-from-net-framework.md#code-access-security).**
 
-WPF pro rozhraní .NET Framework podporuje zabezpečení přístupu ke kódu (CAS). To znamená, že obsah WPF spuštěný v zóně Internet má snížená oprávnění k provádění. "Loose XAML" (stránky nekompilovanéxaml interpretovány v době načítání prohlížečem XAML) a XBAP jsou obvykle spuštěny v této internetové zóně a používají stejnou sadu oprávnění. XAML načtený do plně důvěryhodné aplikace má však stejný přístup k systémovým prostředkům jako hostitelská aplikace. Další informace naleznete v tématu [WPF Partial Trust Security](../../framework/wpf/wpf-partial-trust-security.md).
+WPF pro .NET Framework podporuje zabezpečení přístupu kódu (CAS). To znamená, že obsah WPF běžící v zóně Internet má omezená oprávnění ke spuštění. "Volné XAML" (stránky nekompilovaného XAML interpretované v době načtení prohlížečem XAML) a XBAP jsou obvykle spouštěny v této zóně Internetu a používají stejnou sadu oprávnění. Nicméně XAML načtený v plně důvěryhodné aplikaci má stejný přístup k systémovým prostředkům, jako hostující aplikace. Další informace najdete v tématu [zabezpečení částečné důvěryhodnosti WPF](../../framework/wpf/wpf-partial-trust-security.md).
 
 ## <a name="loading-xaml-from-code"></a>Načítání XAML z kódu
 
-XAML lze definovat všechny uživatelské ho uživatelského prohlášení, ale někdy je také vhodné definovat pouze část uživatelského uvisu v XAML. Tuto funkci lze použít k povolení částečného přizpůsobení, místního úložiště informací, použití xaml k poskytnutí obchodního objektu nebo různých možných scénářů. Klíčem k těmto scénářům <xref:System.Windows.Markup.XamlReader> je <xref:System.Windows.Markup.XamlReader.Load%2A> třída a její metoda. Vstup je soubor XAML a výstup je objekt, který představuje všechny run-time strom objektů, které byly vytvořeny z této značky. Potom můžete vložit objekt jako vlastnost jiného objektu, který již v aplikaci existuje. Pokud je vlastnost vhodnou vlastností v modelu obsahu, která má možnosti zobrazení a která upozorní spuštění motoru, že nový obsah byl přidán do aplikace, můžete snadno upravit obsah spuštěné aplikace načtením v XAML. Pro rozhraní .NET Framework je tato funkce obecně k dispozici pouze v plně důvěryhodných aplikacích z důvodu zřejmých důsledků zabezpečení načítání souborů do aplikací při jejich spuštění.
+XAML lze použít k definování celého uživatelského rozhraní, ale je někdy také vhodné definovat pouze část uživatelského rozhraní v jazyce XAML. Tato funkce se dá použít k povolení částečného přizpůsobení, místního úložiště informací, použití XAML k poskytnutí podnikového objektu nebo nejrůznějších možných scénářů. Klíčem k těmto scénářům je <xref:System.Windows.Markup.XamlReader> třída a její <xref:System.Windows.Markup.XamlReader.Load%2A> metoda. Vstup je soubor XAML a výstup je objekt, který reprezentuje všechny běhové stromové struktury objektů, které byly vytvořeny z tohoto kódu. Pak můžete objekt vložit jako vlastnost jiného objektu, který již v aplikaci existuje. Pokud je vlastnost vhodnou vlastností v modelu obsahu, která má příslušně zobrazené možnosti zobrazení a upozorní prováděcí modul, že se do aplikace přidal nový obsah, můžete snadno upravovat obsah běžící aplikace načtením v jazyce XAML. Pro .NET Framework je tato funkce všeobecně dostupná jenom v aplikacích s plnou důvěryhodností, protože se jedná o zjevné důsledky zabezpečení při načítání souborů do aplikací při jejich spuštění.
 
 ## <a name="see-also"></a>Viz také
 

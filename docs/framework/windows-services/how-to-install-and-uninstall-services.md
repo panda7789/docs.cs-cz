@@ -1,5 +1,5 @@
 ---
-title: 'Postup: Instalace a odinstalace služeb systému Windows'
+title: 'Postupy: instalace a odinstalace služeb systému Windows'
 ms.date: 02/05/2019
 helpviewer_keywords:
 - Windows Service applications, deploying
@@ -19,77 +19,77 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/17/2020
 ms.locfileid: "81607916"
 ---
-# <a name="how-to-install-and-uninstall-windows-services"></a>Postup: Instalace a odinstalace služeb systému Windows
+# <a name="how-to-install-and-uninstall-windows-services"></a>Postupy: instalace a odinstalace služeb systému Windows
 
-Pokud vyvíjíte službu Windows s rozhraním .NET Framework, můžete aplikaci služby rychle nainstalovat pomocí nástroje příkazového řádku [*InstallUtil.exe*](../tools/installutil-exe-installer-tool.md) nebo [prostředí PowerShell](/powershell/scripting/overview). Vývojáři, kteří chtějí uvolnit službu systému Windows, kterou mohou uživatelé nainstalovat a odinstalovat, by měli používat program InstallShield. Další informace naleznete [v tématu Vytvoření balíčku instalačního programu (plocha systému Windows).](/visualstudio/deployment/deploying-applications-services-and-components#create-an-installer-package-windows-desktop)
+Pokud vyvíjíte službu pro Windows s .NET Framework, můžete rychle nainstalovat aplikaci služby pomocí nástroje příkazového řádku [*Installutil. exe*](../tools/installutil-exe-installer-tool.md) nebo [PowerShellu](/powershell/scripting/overview). Vývojáři, kteří chtějí uvolnit službu systému Windows, kterou mohou uživatelé instalovat a odinstalovat, by měli používat program InstallShield. Další informace najdete v tématu [Vytvoření instalačního balíčku (Desktop Windows)](/visualstudio/deployment/deploying-applications-services-and-components#create-an-installer-package-windows-desktop).
 
 > [!WARNING]
-> Pokud chcete odinstalovat službu z počítače, nepostupujte podle pokynů v tomto článku. Místo toho zjistěte, který program nebo softwarový balíček službu nainstaloval, a pak v nastavení odinstalujte tento program výběrem **možnosti Aplikace.** Všimněte si, že mnoho služeb jsou nedílnou součástí systému Windows; Pokud je odeberete, může dojít k nestabilitě systému.
+> Pokud chcete odinstalovat službu z počítače, neprovádějte postup v tomto článku. Místo toho Zjistěte, který program nebo softwarový balíček službu nainstaloval, a pak zvolte možnost **aplikace** v nastavení pro odinstalaci tohoto programu. Všimněte si, že mnoho služeb je nedílnou součástí Windows. Pokud je odstraníte, může to způsobit nestabilitu systému.
 
-Chcete-li použít postup uvedený v tomto článku, musíte nejprve přidat instalační službu služby do služby systému Windows. Další informace naleznete [v tématu Návod: Vytvoření aplikace služby Windows](../windows-services/walkthrough-creating-a-windows-service-application-in-the-component-designer.md).
+Chcete-li použít kroky v tomto článku, musíte nejprve přidat do služby systému Windows Instalační program služby. Další informace najdete v tématu [Návod: Vytvoření aplikace služby systému Windows](../windows-services/walkthrough-creating-a-windows-service-application-in-the-component-designer.md).
 
-Projekty služeb systému Windows nelze spustit přímo z vývojového prostředí sady Visual Studio stisknutím klávesy F5. Před spuštěním projektu je nutné nainstalovat službu v projektu.
+Nemůžete spustit projekty služby Windows přímo z vývojového prostředí sady Visual Studio stisknutím klávesy F5. Předtím, než můžete spustit projekt, je nutné nainstalovat službu do projektu.
 
 > [!TIP]
-> **Pomocí Průzkumníka serveru** můžete ověřit, zda jste službu nainstalovali nebo odinstalovali. Další informace naleznete v tématu [Použití Průzkumníka serveru v sadě Visual Studio](https://support.microsoft.com/help/316649/how-to-use-the-server-explorer-in-visual-studio-net-and-visual-studio).
+> Pomocí **Průzkumník serveru** můžete ověřit, že jste nainstalovali nebo odinstalovali vaši službu. Další informace najdete v tématu [Jak používat Průzkumník serveru v aplikaci Visual Studio](https://support.microsoft.com/help/316649/how-to-use-the-server-explorer-in-visual-studio-net-and-visual-studio).
 
-### <a name="install-your-service-manually-using-installutilexe-utility"></a>Ruční instalace služby pomocí nástroje InstallUtil.exe
+### <a name="install-your-service-manually-using-installutilexe-utility"></a>Ruční instalace služby pomocí nástroje InstallUtil. exe
 
-1. V nabídce **Start** vyberte adresář ** \< *verze* > sady Visual Studio** a pak vyberte **příkazový řádek pro vývojáře pro \< *verzi*>VS**.
+1. V nabídce **Start** vyberte adresář ** \< *verze* > sady Visual Studio** a potom vyberte **Developer Command Prompt pro \< *verzi*>vs**.
 
-     Zobrazí se příkazový řádek vývojáře pro visual studio.
+     Zobrazí se Developer Command Prompt pro Visual Studio.
 
-2. Získejte přístup k adresáři, ve kterém je umístěn zkompilovaný spustitelný soubor projektu.
+2. Přejděte do adresáře, kde se nachází kompilovaný spustitelný soubor projektu.
 
-3. *Spusťte soubor InstallUtil.exe* z příkazového řádku s spustitelným souborem projektu jako parametrem:
+3. Spusťte *Installutil. exe* z příkazového řádku s spustitelným souborem vašeho projektu jako parametr:
 
     ```console
     installutil <yourproject>.exe
     ```
 
-     Pokud používáte příkazový řádek pro vývojáře pro Visual Studio, *installutil.exe* by měl být na systémové cestě. V opačném případě jej můžete přidat do cesty nebo ji vyvolat pomocí plně kvalifikované cesty. Tento nástroj je nainstalován s rozhraním .NET Framework v *%WINDIR%\Microsoft.NET\Framework[64]\\<framework_version\>*.
+     Pokud používáte Developer Command Prompt pro Visual Studio, musí být *Installutil. exe* v systémové cestě. V opačném případě ji můžete přidat do cesty nebo použít úplnou cestu k jejímu vyvolání. Tento nástroj se instaluje s .NET Framework v *%windir%\Microsoft.NET\Framework [64]\\<framework_version\>*.
 
      Příklad:
-     - Pokud je instalační adresář systému Windows *C:\Windows,* je v 32bitové verzi rozhraní .NET Framework 4 nebo 4.5 a novějších výchozí cesta *C:\Windows\Microsoft.NET\Framework\v4.0.30319\InstallUtil.exe*.
-     - Pro 64bitovou verzi rozhraní .NET Framework 4 nebo 4.5 a novější je výchozí cesta *C:\Windows\Microsoft.NET\Framework64\v4.0.30319\InstallUtil.exe*.
+     - Pro 32 verze .NET Framework 4 nebo 4,5 a novější, pokud je instalační adresář systému Windows *C:\Windows*, je výchozí cesta *C:\Windows\Microsoft.NET\Framework\v4.0.30319\InstallUtil.exe*.
+     - Pro 64-bitovou verzi .NET Framework 4 nebo 4,5 a novější je výchozí cesta *C:\Windows\Microsoft.NET\Framework64\v4.0.30319\InstallUtil.exe*.
 
-### <a name="uninstall-your-service-manually-using-installutilexe-utility"></a>Odinstalace služby ručně pomocí nástroje InstallUtil.exe
+### <a name="uninstall-your-service-manually-using-installutilexe-utility"></a>Ruční odinstalace služby pomocí nástroje InstallUtil. exe
 
-1. V nabídce **Start** vyberte adresář ** \< *verze* > sady Visual Studio** a pak vyberte **příkazový řádek pro vývojáře pro \< *verzi*>VS**.
+1. V nabídce **Start** vyberte adresář ** \< *verze* > sady Visual Studio** a potom vyberte **Developer Command Prompt pro \< *verzi*>vs**.
 
-     Zobrazí se příkazový řádek vývojáře pro visual studio.
+     Zobrazí se Developer Command Prompt pro Visual Studio.
 
-2. *Spusťte soubor InstallUtil.exe* z příkazového řádku s výstupem projektu jako parametrem:
+2. Spusťte *Installutil. exe* z příkazového řádku s výstupem vašeho projektu jako parametr:
 
     ```console
     installutil /u <yourproject>.exe
     ```
 
-3. Po odstranění spustitelného souboru služby může být služba stále přítomna v registru. V takovém případě odeberte položku služby z registru pomocí příkazu [sc delete.](/windows-server/administration/windows-commands/sc-delete)
+3. Po odstranění spustitelného souboru pro službu může být služba v registru stále k dispozici. V takovém případě pomocí příkazu [sc delete](/windows-server/administration/windows-commands/sc-delete) odeberte položku služby z registru.
 
 ### <a name="install-your-service-manually-using-powershell"></a>Ruční instalace služby pomocí PowerShellu
 
-1. V nabídce **Start** vyberte adresář **prostředí Windows PowerShell** a pak vyberte **Windows PowerShell**.
+1. V nabídce **Start** vyberte adresář **Windows PowerShell** a pak vyberte **Windows PowerShell**.
 
-2. Získejte přístup k adresáři, ve kterém je umístěn zkompilovaný spustitelný soubor projektu.
+2. Přejděte do adresáře, kde se nachází kompilovaný spustitelný soubor projektu.
 
-3. Spusťte rutinu [**Nové služby**](/powershell/module/microsoft.powershell.management/new-service) s výstupem projektu a názvem služby jako parametry:
+3. Spusťte rutinu [**New-Service**](/powershell/module/microsoft.powershell.management/new-service) s výstupem vašeho projektu a názvem služby jako parametry:
 
     ```powershell
     New-Service -Name "YourServiceName" -BinaryPathName <yourproject>.exe
     ```
 
-### <a name="uninstall-your-service-manually-using-powershell"></a>Odinstalace služby ručně pomocí prostředí PowerShell
+### <a name="uninstall-your-service-manually-using-powershell"></a>Ruční odinstalace služby pomocí PowerShellu
 
-1. V nabídce **Start** vyberte adresář **prostředí Windows PowerShell** a pak vyberte **Windows PowerShell**.
+1. V nabídce **Start** vyberte adresář **Windows PowerShell** a pak vyberte **Windows PowerShell**.
 
-2. Spusťte rutinu [**Odebrat službu**](/powershell/module/microsoft.powershell.management/remove-service) s názvem služby jako parametrem:
+2. Spusťte rutinu [**remove-Service**](/powershell/module/microsoft.powershell.management/remove-service) s názvem vaší služby jako parametr:
 
     ```powershell
     Remove-Service -Name "YourServiceName"
     ```
 
-3. Po odstranění spustitelného souboru služby může být služba stále přítomna v registru. V takovém případě odeberte položku služby z registru pomocí příkazu [sc delete.](/windows-server/administration/windows-commands/sc-delete)
+3. Po odstranění spustitelného souboru pro službu může být služba v registru stále k dispozici. V takovém případě pomocí příkazu [sc delete](/windows-server/administration/windows-commands/sc-delete) odeberte položku služby z registru.
 
     ```powershell
     sc.exe delete "YourServiceName"
@@ -97,7 +97,7 @@ Projekty služeb systému Windows nelze spustit přímo z vývojového prostřed
 
 ## <a name="see-also"></a>Viz také
 
-- [Úvod do aplikací služeb systému Windows](../windows-services/introduction-to-windows-service-applications.md)
-- [Postup: Vytvoření služeb systému Windows](../windows-services/how-to-create-windows-services.md)
-- [Postup: Přidání instalačních programů do aplikace služby](../windows-services/how-to-add-installers-to-your-service-application.md)
+- [Úvod do aplikací služby systému Windows](../windows-services/introduction-to-windows-service-applications.md)
+- [Postupy: vytváření služeb systému Windows](../windows-services/how-to-create-windows-services.md)
+- [Postupy: Přidání instalačních programů do aplikace služby](../windows-services/how-to-add-installers-to-your-service-application.md)
 - [Installutil.exe (instalační nástroj)](../tools/installutil-exe-installer-tool.md)

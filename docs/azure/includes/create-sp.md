@@ -9,9 +9,9 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 03/19/2020
 ms.locfileid: "82071981"
 ---
-Vaše aplikace .NET potřebuje oprávnění ke čtení a vytváření prostředků ve vašem předplatném Azure, aby bylo možné používat knihovny Azure Management pro .NET. Vytvořte instanční objekt a nakonfigurujte aplikaci tak, aby běžela s jeho přihlašovacími údaji, aby tento přístup udělila. Instanční objekty představují způsob, jak vytvořit neinteraktivní účet přidružený k vaší identitě, kterému udělíte pouze oprávnění potřebná k fungování vaší aplikace.
+Vaše aplikace .NET potřebuje oprávnění ke čtení a vytváření prostředků ve vašem předplatném Azure, aby bylo možné používat knihovny pro správu Azure pro .NET. Vytvořte instanční objekt a nakonfigurujte svou aplikaci tak, aby běžela s přihlašovacími údaji pro udělení tohoto přístupu. Instanční objekty představují způsob, jak vytvořit neinteraktivní účet přidružený k vaší identitě, kterému udělíte pouze oprávnění potřebná k fungování vaší aplikace.
 
-Nejprve se přihlaste do [služby Azure Cloud Shell](https://shell.azure.com/bash). Ověřte, zda aktuálně používáte předplatné, ve kterém chcete vytvořit instanční objekt.
+Nejdřív se přihlaste k [Azure Cloud Shell](https://shell.azure.com/bash). Ověřte, že aktuálně používáte předplatné, ve kterém chcete instanční objekt vytvořit.
 
 ```azurecli-interactive
 az account show
@@ -35,15 +35,15 @@ Zobrazí se informace o vašem předplatném.
 }
 ```
 
-Pokud nejste přihlášeni ke správnému předplatnému, vyberte `az account set -s <name or ID of subscription>`správné předplatné zadáním .
+Pokud nejste přihlášení ke správnému předplatnému, vyberte správný zápis zadáním `az account set -s <name or ID of subscription>`.
 
-Vytvořte instanční objekt s následujícím příkazem:
+Objekt služby vytvořte pomocí následujícího příkazu:
 
 ```azurecli-interactive
 az ad sp create-for-rbac --sdk-auth
 ```
 
-Informace o instančním objektu se zobrazí jako JSON.
+Hlavní informace o instančním objektu se zobrazí jako JSON.
 
 ```json
 {

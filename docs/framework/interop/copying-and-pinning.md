@@ -24,7 +24,7 @@ Argumenty metody předané hodnotou jsou zařazeny do nespravovaného kódu jako
 
 ![Diagram znázorňující typy odkazů předané hodnotou a odkazem.](./media/copying-and-pinning/interop-marshal-reference-pin.gif)
 
-Připnutí dočasně uzamkne data v jejich aktuálním umístění v paměti, takže tím brání jejich přemístění systémem uvolňování paměti společného jazykového modulu runtime. Data zařazovacího modulu připnete k omezení režijních nákladů na kopírování a zvýšení výkonu. Typ dat určuje, zda je zkopírován nebo připnuté během procesu zařazování.  Připnutí se provádí automaticky během zařazování pro objekty, jako je <xref:System.String>, ale můžete také ručně připnout paměť pomocí <xref:System.Runtime.InteropServices.GCHandle> třídy.
+Připnutí dočasně uzamkne data v jejich aktuálním umístění v paměti, takže tím brání jejich přemístění systémem uvolňování paměti společného jazykového modulu runtime. Data zařazovacího modulu připnete k omezení režijních nákladů na kopírování a zvýšení výkonu. Typ dat určuje, zda je zkopírován nebo připnuté během procesu zařazování.  Připnutí se provádí automaticky během zařazování pro objekty <xref:System.String>, jako je, můžete ale také ručně připnout paměť <xref:System.Runtime.InteropServices.GCHandle> pomocí třídy.
 
 ## <a name="formatted-blittable-classes"></a>Formátované přenositelné třídy
 
@@ -41,9 +41,9 @@ Formátované nepřenositelné třídy mají pevně dané rozložení ( [naform�
 
 - Pokud je nepřenosná třída zařazená odkazem, Volaný obdrží ukazatel na ukazatel na kopii struktury dat.
 
-- Pokud je nastaven atribut <xref:System.Runtime.InteropServices.InAttribute>, je tato kopie vždy inicializována se stavem instance, zařazování podle potřeby.
+- Pokud je <xref:System.Runtime.InteropServices.InAttribute> atribut nastaven, bude tato kopie vždy inicializována se stavem instance, zařazování podle potřeby.
 
-- Pokud je nastaven atribut <xref:System.Runtime.InteropServices.OutAttribute>, stav je vždy zkopírován zpět do instance při návratu, zařazování podle potřeby.
+- Pokud je <xref:System.Runtime.InteropServices.OutAttribute> atribut nastaven, stav je vždy zkopírován zpět do instance při návratu, zařazování podle potřeby.
 
 - Pokud jsou nastaveny atributy **InAttribute** i **subattribute** , jsou požadovány obě kopie. Pokud je atribut vynechán, zařazovací modul může být optimalizován vyřazením buď zkopírování.
 
@@ -74,11 +74,11 @@ Jako optimalizace, pokud je typ řetězce zařazen podle hodnoty (například ř
 > [!CAUTION]
 > Když je řetězec předán podle hodnoty, volaný nesmí nikdy změnit odkaz předaný zařazovacím objektem. V takovém případě může být poškozena spravovaná halda.
 
-Pokud je předána <xref:System.String?displayProperty=nameWithType> odkazem, zařazovací služba zkopíruje obsah řetězce do sekundární vyrovnávací paměti před provedením volání. Pak zkopíruje obsah vyrovnávací paměti do nového řetězce při návratu z volání. Tato technika zajišťuje, že neměnné spravované řetězce zůstávají beze změny.
+Pokud <xref:System.String?displayProperty=nameWithType> je předána odkazem, zařazovací služba zkopíruje obsah řetězce do sekundární vyrovnávací paměti před provedením volání. Pak zkopíruje obsah vyrovnávací paměti do nového řetězce při návratu z volání. Tato technika zajišťuje, že neměnné spravované řetězce zůstávají beze změny.
 
-Když je <xref:System.Text.StringBuilder?displayProperty=nameWithType> předána hodnotou, zařazovací modul předává odkaz na vnitřní vyrovnávací paměť **StringBuilder** přímo volajícímu. Volající a volaný musí souhlasit s velikostí vyrovnávací paměti. Volající je zodpovědný za vytvoření **StringBuilder** s adekvátní délkou. Volaný musí podniknout nezbytná opatření, aby se zajistilo, že vyrovnávací paměť nebude přetečení. **StringBuilder** je výjimka pro pravidlo, které odkazuje na typy předané hodnotou, ve výchozím nastavení předány jako parametry v parametrech. Vždycky se předává jako vstupně-výstupní.
+Když <xref:System.Text.StringBuilder?displayProperty=nameWithType> je předána hodnotou, zařazovací modul předává odkaz na vnitřní vyrovnávací paměť **StringBuilder** přímo volajícímu. Volající a volaný musí souhlasit s velikostí vyrovnávací paměti. Volající je zodpovědný za vytvoření **StringBuilder** s adekvátní délkou. Volaný musí podniknout nezbytná opatření, aby se zajistilo, že vyrovnávací paměť nebude přetečení. **StringBuilder** je výjimka pro pravidlo, které odkazuje na typy předané hodnotou, ve výchozím nastavení předány jako parametry v parametrech. Vždycky se předává jako vstupně-výstupní.
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Výchozí chování zařazování](default-marshaling-behavior.md)
 - [Směrové atributy](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/77e6taeh(v=vs.100))

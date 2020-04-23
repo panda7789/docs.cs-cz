@@ -23,13 +23,13 @@ Následující postupy ukazují, jak vytvořit a zkompilovat graf CodeDOM, kter�
   
 1. Vytvořte konzolovou aplikaci, která bude používat kód CodeDOM k vygenerování zdrojového kódu pro třídu.  
   
-     V tomto příkladu je generována třída s názvem `Sample`a generovaný kód je třída s názvem `CodeDOMCreatedClass` v souboru s názvem SampleCode.  
+     V tomto příkladu je generována třída s `Sample`názvem a generovaný kód je třída s názvem `CodeDOMCreatedClass` v souboru s názvem SampleCode.  
   
-2. Ve třídě generování proveďte inicializaci grafu CodeDOM a použijte metody CodeDOM k definování členů, konstruktoru a vstupního bodu (`Main` metoda) generované třídy.  
+2. Ve třídě generování proveďte inicializaci grafu CodeDOM a použijte metody CodeDOM k definování členů, konstruktoru a vstupního bodu (`Main` metody) generované třídy.  
   
-     V tomto příkladu vygenerovaná třída má dvě pole, tři vlastnosti, konstruktor, metodu a metodu `Main`.  
+     V tomto příkladu vygenerovaná třída má dvě pole, tři vlastnosti, konstruktor, metodu a `Main` metodu.  
   
-3. Ve třídě generování vytvořte poskytovatele kódu specifického pro jazyk a zavolejte jeho metodu <xref:System.CodeDom.Compiler.CodeDomProvider.GenerateCodeFromCompileUnit%2A> pro vygenerování kódu z grafu.  
+3. Ve třídě generování vytvořte poskytovatele kódu specifického pro jazyk a zavolejte jeho <xref:System.CodeDom.Compiler.CodeDomProvider.GenerateCodeFromCompileUnit%2A> metodu pro generování kódu z grafu.  
   
 4. Zkompilujte a spusťte aplikaci pro generování kódu.  
   
@@ -37,7 +37,7 @@ Následující postupy ukazují, jak vytvořit a zkompilovat graf CodeDOM, kter�
   
 ### <a name="to-create-the-application-that-will-execute-the-codedom-code"></a>Vytvoření aplikace, která spustí kód CodeDOM  
   
-- Vytvořte třídu konzolové aplikace, která bude obsahovat kód CodeDOM. Definujte globální pole, která mají být použita ve třídě pro odkaz na sestavení (<xref:System.CodeDom.CodeCompileUnit>) a třídu (<xref:System.CodeDom.CodeTypeDeclaration>), zadejte název generovaného zdrojového souboru a deklarujte metodu `Main`.  
+- Vytvořte třídu konzolové aplikace, která bude obsahovat kód CodeDOM. Definujte globální pole, která mají být použita ve třídě pro odkaz na sestavení (<xref:System.CodeDom.CodeCompileUnit>) a třídu (<xref:System.CodeDom.CodeTypeDeclaration>), zadejte název generovaného zdrojového souboru a deklarujte `Main` metodu.  
   
      [!code-csharp[CodeDOM Class Sample Main#1](../../../samples/snippets/csharp/VS_Snippets_CLR/CodeDOM Class Sample Main/CS/program.cs#1)]
      [!code-vb[CodeDOM Class Sample Main#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/CodeDOM Class Sample Main/VB/program.vb#1)]  
@@ -51,41 +51,41 @@ Následující postupy ukazují, jak vytvořit a zkompilovat graf CodeDOM, kter�
   
 ### <a name="to-add-members-to-the-codedom-graph"></a>Přidání členů do grafu CodeDOM  
   
-- Přidejte pole do grafu CodeDOM přidáním <xref:System.CodeDom.CodeMemberField> objektů do vlastnosti <xref:System.CodeDom.CodeTypeDeclaration.Members%2A> třídy.  
+- Přidejte pole do grafu CodeDOM přidáním <xref:System.CodeDom.CodeMemberField> objektů do <xref:System.CodeDom.CodeTypeDeclaration.Members%2A> vlastnosti třídy.  
   
      [!code-csharp[CodeDOM Class Sample#3](../../../samples/snippets/csharp/VS_Snippets_CLR/CodeDOM Class Sample/CS/program.cs#3)]
      [!code-vb[CodeDOM Class Sample#3](../../../samples/snippets/visualbasic/VS_Snippets_CLR/CodeDOM Class Sample/VB/program.vb#3)]  
   
-- Přidejte vlastnosti do grafu CodeDOM přidáním <xref:System.CodeDom.CodeMemberProperty> objektů do vlastnosti <xref:System.CodeDom.CodeTypeDeclaration.Members%2A> třídy.  
+- Přidejte vlastnosti do grafu CodeDOM přidáním <xref:System.CodeDom.CodeMemberProperty> objektů do <xref:System.CodeDom.CodeTypeDeclaration.Members%2A> vlastnosti třídy.  
   
      [!code-csharp[CodeDOM Class Sample#4](../../../samples/snippets/csharp/VS_Snippets_CLR/CodeDOM Class Sample/CS/program.cs#4)]
      [!code-vb[CodeDOM Class Sample#4](../../../samples/snippets/visualbasic/VS_Snippets_CLR/CodeDOM Class Sample/VB/program.vb#4)]  
   
-- Přidejte metodu do grafu CodeDOM přidáním objektu <xref:System.CodeDom.CodeMemberMethod> do vlastnosti <xref:System.CodeDom.CodeTypeDeclaration.Members%2A> třídy.  
+- Přidejte metodu do grafu CodeDOM přidáním <xref:System.CodeDom.CodeMemberMethod> objektu do <xref:System.CodeDom.CodeTypeDeclaration.Members%2A> vlastnosti třídy.  
   
      [!code-csharp[CodeDOM Class Sample#5](../../../samples/snippets/csharp/VS_Snippets_CLR/CodeDOM Class Sample/CS/program.cs#5)]
      [!code-vb[CodeDOM Class Sample#5](../../../samples/snippets/visualbasic/VS_Snippets_CLR/CodeDOM Class Sample/VB/program.vb#5)]  
   
-- Přidejte konstruktor do grafu CodeDOM přidáním objektu <xref:System.CodeDom.CodeConstructor> do vlastnosti <xref:System.CodeDom.CodeTypeDeclaration.Members%2A> třídy.  
+- Přidejte konstruktor do grafu CodeDOM přidáním <xref:System.CodeDom.CodeConstructor> objektu do <xref:System.CodeDom.CodeTypeDeclaration.Members%2A> vlastnosti třídy.  
   
      [!code-csharp[CodeDOM Class Sample#6](../../../samples/snippets/csharp/VS_Snippets_CLR/CodeDOM Class Sample/CS/program.cs#6)]
      [!code-vb[CodeDOM Class Sample#6](../../../samples/snippets/visualbasic/VS_Snippets_CLR/CodeDOM Class Sample/VB/program.vb#6)]  
   
-- Přidejte vstupní bod do grafu CodeDOM přidáním objektu <xref:System.CodeDom.CodeEntryPointMethod> do vlastnosti <xref:System.CodeDom.CodeTypeDeclaration.Members%2A> třídy.  
+- Přidejte vstupní bod do grafu CodeDOM přidáním <xref:System.CodeDom.CodeEntryPointMethod> objektu do <xref:System.CodeDom.CodeTypeDeclaration.Members%2A> vlastnosti třídy.  
   
      [!code-csharp[CodeDOM Class Sample#7](../../../samples/snippets/csharp/VS_Snippets_CLR/CodeDOM Class Sample/CS/program.cs#7)]
      [!code-vb[CodeDOM Class Sample#7](../../../samples/snippets/visualbasic/VS_Snippets_CLR/CodeDOM Class Sample/VB/program.vb#7)]  
   
 ### <a name="to-generate-the-code-from-the-codedom-graph"></a>Generování kódu z grafu CodeDOM  
   
-- Vygenerujte zdrojový kód z grafu CodeDOM voláním metody <xref:System.CodeDom.Compiler.CodeDomProvider.GenerateCodeFromCompileUnit%2A>.  
+- Vygenerujte zdrojový kód z grafu CodeDOM voláním <xref:System.CodeDom.Compiler.CodeDomProvider.GenerateCodeFromCompileUnit%2A> metody.  
   
      [!code-csharp[CodeDOM Class Sample#8](../../../samples/snippets/csharp/VS_Snippets_CLR/CodeDOM Class Sample/CS/program.cs#8)]
      [!code-vb[CodeDOM Class Sample#8](../../../samples/snippets/visualbasic/VS_Snippets_CLR/CodeDOM Class Sample/VB/program.vb#8)]  
   
 ### <a name="to-create-the-graph-and-generate-the-code"></a>Vytvoření grafu a generování kódu  
   
-1. Přidejte metody vytvořené v předchozích krocích do metody `Main` definované v prvním kroku.  
+1. Přidejte metody vytvořené v předchozích krocích do `Main` metody definované v prvním kroku.  
   
      [!code-csharp[CodeDOM Class Sample#9](../../../samples/snippets/csharp/VS_Snippets_CLR/CodeDOM Class Sample/CS/program.cs#9)]
      [!code-vb[CodeDOM Class Sample#9](../../../samples/snippets/visualbasic/VS_Snippets_CLR/CodeDOM Class Sample/VB/program.vb#9)]  
@@ -114,9 +114,9 @@ The object:
   
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
   
-- Tento příklad kódu vyžaduje úspěšné provedení sady oprávnění `FullTrust`.  
+- Tento příklad kódu vyžaduje úspěšné `FullTrust` provedení sady oprávnění.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Použití modelu CodeDOM](using-the-codedom.md)
 - [Generování a kompilace zdrojového kódu z grafu modelu CodeDOM](generating-and-compiling-source-code-from-a-codedom-graph.md)

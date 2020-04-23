@@ -16,75 +16,75 @@ ms.lasthandoff: 03/12/2020
 ms.locfileid: "79181367"
 ---
 # <a name="marshaling-different-types-of-arrays"></a>Zařazování různých typů polí
-Pole je typ odkazu ve spravovaném kódu, který obsahuje jeden nebo více prvků stejného typu. Přestože pole jsou typy odkazů, jsou předány jako V parametry nespravované funkce. Toto chování je v rozporu s způsob, jakým jsou spravovaná pole předávána spravovaným objektům, což je jako parametry In/Out. Další podrobnosti naleznete v [tématu Kopírování a připnutí](copying-and-pinning.md).  
+Pole je typ odkazu ve spravovaném kódu, který obsahuje jeden nebo více prvků stejného typu. I když pole jsou odkazové typy, jsou předány jako parametry do nespravovaných funkcí. Toto chování je nekonzistentní, protože spravovaná pole jsou předávána spravovaným objektům, což jsou vstupně-výstupní parametry. Další podrobnosti najdete v tématu [kopírování a připnutí](copying-and-pinning.md).  
   
- V následující tabulce jsou uvedeny možnosti zařazování polí a popisuje jejich použití.  
+ Následující tabulka uvádí možnosti zařazování pro pole a popisuje jejich použití.  
   
 |Pole|Popis|  
 |-----------|-----------------|  
-|Celá čísla podle hodnoty.|Předá pole celá čísla jako In parametr.|  
-|Celá čísla odkazem.|Předá pole celá čísla jako in/out parametr.|  
-|Celá čísla podle hodnoty (dvojrozměrné).|Předá matici celá čísla jako In parametr.|  
-|Řetězců podle hodnoty.|Předá pole řetězců jako In parametr.|  
-|Struktur s celámi.|Předá pole struktur, které obsahují celá čísla jako In parametr.|  
-|Struktur s řetězci.|Předá pole struktur, které obsahují pouze řetězce jako in/out parametr. Členy pole lze změnit.|  
+|Celých čísel podle hodnoty.|Předá pole celých čísel jako parametr v parametru.|  
+|Celých čísel podle odkazu.|Předá pole celých čísel jako vstupně-výstupní parametr.|  
+|Celých čísel podle hodnoty (dvourozměrné).|Předává matici celých čísel jako parametr v parametru.|  
+|Řetězců podle hodnoty.|Předá pole řetězců jako parametr v parametru.|  
+|Struktury s celými čísly.|Předá pole struktury, které obsahují celá čísla jako parametr in.|  
+|Struktury s řetězci.|Předá pole struktur, které obsahují pouze řetězce jako vstupně-výstupní parametr. Členy pole lze změnit.|  
   
 ## <a name="example"></a>Příklad  
- Tato ukázka ukazuje, jak předat následující typy polí:  
+ Tato ukázka předvádí, jak předat následující typy polí:  
   
-- Pole celá čísla podle hodnoty.  
+- Pole celých čísel podle hodnoty.  
   
-- Pole celá čísla podle odkazu, které lze velikost.  
+- Pole celých čísel podle odkazu, které lze změnit.  
   
-- Vícerozměrné pole (matice) celá čísla podle hodnoty.  
+- Multidimenzionální pole (matice) celých čísel podle hodnoty.  
   
 - Pole řetězců podle hodnoty.  
   
-- Pole struktur s celá čísla.  
+- Pole struktur s celými čísly  
   
 - Pole struktur s řetězci.  
   
- Pokud pole je explicitně zařazenodkaz, výchozí chování zařazuje pole jako In parametr. Toto chování můžete změnit <xref:System.Runtime.InteropServices.InAttribute> <xref:System.Runtime.InteropServices.OutAttribute> použitím atributů a explicitně.  
+ Pokud není pole explicitně zařazeno pomocí odkazu, výchozí chování zařadí pole jako parametr v parametru. Toto chování můžete změnit použitím atributů <xref:System.Runtime.InteropServices.InAttribute> a <xref:System.Runtime.InteropServices.OutAttribute> explicitně.  
   
- Ukázka pole používá následující nespravované funkce zobrazené s jejich původní deklarací funkce:  
+ Ukázka pole používá následující nespravované funkce, které jsou zobrazeny s původní deklarací funkce:  
   
-- **TestArrayOfInts** exportován z souboru PinvokeLib.dll.  
+- **TestArrayOfInts** exportovaný z knihovny pinvokelib. dll.  
   
     ```cpp
     int TestArrayOfInts(int* pArray, int pSize);  
     ```  
   
-- **TestRefArrayOfInts** exportován z souboru PinvokeLib.dll.  
+- **TestRefArrayOfInts** exportovaný z knihovny pinvokelib. dll.  
   
     ```cpp
     int TestRefArrayOfInts(int** ppArray, int* pSize);  
     ```  
   
-- **TestMatrixOfInts** exportován z PinvokeLib.dll.  
+- **TestMatrixOfInts** exportovaný z knihovny pinvokelib. dll.  
   
     ```cpp
     int TestMatrixOfInts(int pMatrix[][COL_DIM], int row);  
     ```  
   
-- **TestArrayOfStrings** exportovány z souboru PinvokeLib.dll.  
+- **TestArrayOfStrings** exportovaný z knihovny pinvokelib. dll.  
   
     ```cpp
     int TestArrayOfStrings(char** ppStrArray, int size);  
     ```  
   
-- **TestArrayOfStructs** exportován z souboru PinvokeLib.dll.  
+- **TestArrayOfStructs** exportovaný z knihovny pinvokelib. dll.  
   
     ```cpp
     int TestArrayOfStructs(MYPOINT* pPointArray, int size);  
     ```  
   
-- **TestArrayOfStructs2** exportován z souboru PinvokeLib.dll.  
+- **TestArrayOfStructs2** exportovaný z knihovny pinvokelib. dll.  
   
     ```cpp
     int TestArrayOfStructs2 (MYPERSON* pPersonArray, int size);  
     ```  
   
- [PinvokeLib.dll](marshaling-data-with-platform-invoke.md#pinvokelibdll) je vlastní nespravovaná knihovna, která obsahuje implementace pro dříve uvedené funkce a dvě proměnné struktury, **MYPOINT** a **MYPERSON**. Struktury obsahují následující prvky:  
+ [Knihovny pinvokelib. dll](marshaling-data-with-platform-invoke.md#pinvokelibdll) je vlastní nespravovaná knihovna, která obsahuje implementace pro dříve uvedené funkce a dvě proměnné struktury, **MYPOINT** a **MYPERSON**. Struktury obsahují následující prvky:  
   
 ```cpp
 typedef struct _MYPOINT  
@@ -100,19 +100,19 @@ typedef struct _MYPERSON
 } MYPERSON;  
 ```  
   
- V této ukázce `MyPoint` `MyPerson` a struktury obsahují vložené typy. Atribut <xref:System.Runtime.InteropServices.StructLayoutAttribute> je nastaven tak, aby bylo zajištěno, že členy jsou uspořádány v paměti postupně, v pořadí, ve kterém se zobrazí.  
+ V této ukázce struktury `MyPoint` a `MyPerson` obsahují vložené typy. <xref:System.Runtime.InteropServices.StructLayoutAttribute> Atribut je nastaven tak, aby bylo zajištěno, že jsou členy uspořádány v paměti sekvenčně v pořadí, ve kterém jsou zobrazeny.  
   
- Třída `NativeMethods` obsahuje sadu metod volaných třídou. `App` Konkrétní podrobnosti o předávání polí naleznete v komentářích v následující ukázce. Pole, které je typem odkazu, je ve výchozím nastavení předáno jako parametr In. Aby volající obdržel výsledky, musí být **inAttribute** a **OutAttribute** explicitně použity na argument obsahující pole.  
+ `NativeMethods` Třída obsahuje sadu metod, které jsou `App` volány třídou. Konkrétní podrobnosti o předávání polí naleznete v komentářích v následující ukázce. Pole, které je odkazový typ, je ve výchozím nastavení předáno jako parametr in. Aby volající mohl přijímat výsledky, **atribut** InAttribute a **subattribute** musí být explicitně aplikovány na argument obsahující pole.  
   
 ### <a name="declaring-prototypes"></a>Deklarace prototypů  
  [!code-csharp[Conceptual.Interop.Marshaling#31](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.interop.marshaling/cs/arrays.cs#31)]
  [!code-vb[Conceptual.Interop.Marshaling#31](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.interop.marshaling/vb/arrays.vb#31)]  
   
-### <a name="calling-functions"></a>Volající funkce  
+### <a name="calling-functions"></a>Volání funkcí  
  [!code-csharp[Conceptual.Interop.Marshaling#32](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.interop.marshaling/cs/arrays.cs#32)]
  [!code-vb[Conceptual.Interop.Marshaling#32](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.interop.marshaling/vb/arrays.vb#32)]  
   
 ## <a name="see-also"></a>Viz také
 
-- [Platforma vyvolat datové typy](marshaling-data-with-platform-invoke.md#platform-invoke-data-types)
+- [Datové typy vyvolání platformy](marshaling-data-with-platform-invoke.md#platform-invoke-data-types)
 - [Vytváření prototypů ve spravovaném kódu](creating-prototypes-in-managed-code.md)

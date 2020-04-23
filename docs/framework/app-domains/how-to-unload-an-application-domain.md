@@ -18,7 +18,7 @@ ms.lasthandoff: 10/30/2019
 ms.locfileid: "73119848"
 ---
 # <a name="how-to-unload-an-application-domain"></a>Postupy: Uvolnění domény aplikace
-Po dokončení používání domény aplikace ji uvolněte pomocí metody <xref:System.AppDomain.Unload%2A?displayProperty=nameWithType>. Metoda **Unload** řádně vypne zadanou doménu aplikace. Během procesu uvolňování nemohou žádná nová vlákna přistupovat k doméně aplikace a jsou uvolněny všechny datové struktury specifické pro doménu aplikace.  
+Po dokončení používání domény aplikace ji uvolněte pomocí <xref:System.AppDomain.Unload%2A?displayProperty=nameWithType> metody. Metoda **Unload** řádně vypne zadanou doménu aplikace. Během procesu uvolňování nemohou žádná nová vlákna přistupovat k doméně aplikace a jsou uvolněny všechny datové struktury specifické pro doménu aplikace.  
   
  Sestavení načítaná do domény aplikace jsou odebrána a již nejsou k dispozici. Pokud je sestavení v doméně aplikace neutrální vzhledem k doméně, data pro sestavení zůstanou v paměti, dokud se celý proces nevypne. Neexistuje žádný mechanismus pro uvolnění mezidoménově neutrálních sestavení než vypnutí celého procesu. Existují situace, kdy požadavek na uvolnění domény aplikace nefunguje a má za následek <xref:System.CannotUnloadAppDomainException>.  
   
@@ -29,7 +29,7 @@ Po dokončení používání domény aplikace ji uvolněte pomocí metody <xref:
  [!code-csharp[System.AppDomain.Load#3](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.appdomain.load/cs/source3.cs#3)]
  [!code-vb[System.AppDomain.Load#3](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.appdomain.load/vb/source3.vb#3)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Programování s aplikačními doménami](application-domains.md#programming-with-application-domains)
 - [Postupy: Vytvoření domény aplikace](how-to-create-an-application-domain.md)

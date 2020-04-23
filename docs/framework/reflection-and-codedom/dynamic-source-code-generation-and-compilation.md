@@ -19,11 +19,11 @@ ms.locfileid: "75544986"
 ---
 # <a name="compile-and-generate-dynamic-source-code"></a>Kompilovat a generovat dynamický zdrojový kód
 
-.NET Framework obsahuje mechanismus nazvaný Code Document Object Model (CodeDOM), který umožňuje vývojářům programu generovat zdrojový kód pro generování zdrojového kódu v několika programovacích jazycích za běhu na základě jednoho modelu, který představuje kód. pro vykreslení.  
+.NET Framework obsahuje mechanismus nazvaný Code Document Object Model (CodeDOM), který umožňuje vývojářům programu generovat zdrojový kód pro generování zdrojového kódu v několika programovacích jazycích za běhu na základě jednoho modelu, který představuje kód pro vykreslení.  
   
 Aby představoval zdrojový kód, prvky CodeDOM jsou vzájemně propojeny, aby tvořily datovou strukturu známou jako graf CodeDOM, který modeluje strukturu nějakého zdrojového kódu.  
   
-Obor názvů <xref:System.CodeDom?displayProperty=fullName> definuje typy, které mohou představovat logickou strukturu zdrojového kódu, nezávisle na konkrétním programovacím jazyce. Obor názvů <xref:System.CodeDom.Compiler?displayProperty=fullName> definuje typy pro generování zdrojového kódu z grafů CodeDOM a správu kompilace zdrojového kódu v podporovaných jazycích. Dodavatelé a vývojáři kompilátoru můžou sadu podporovaných jazyků zvětšit.  
+<xref:System.CodeDom?displayProperty=fullName> Obor názvů definuje typy, které mohou představovat logickou strukturu zdrojového kódu, nezávisle na konkrétním programovacím jazyce. <xref:System.CodeDom.Compiler?displayProperty=fullName> Obor názvů definuje typy pro generování zdrojového kódu z grafů CodeDOM a správu kompilace zdrojového kódu v podporovaných jazycích. Dodavatelé a vývojáři kompilátoru můžou sadu podporovaných jazyků zvětšit.  
   
 Modelování zdrojového kódu nezávislého na jazyce může být užitečné, když program potřebuje vygenerovat zdrojový kód pro model programu v několika jazycích nebo v neurčitém cílovém jazyce. Například někteří návrháři používají rozhraní CodeDOM jako rozhraní pro abstrakci jazyka k vytvoření zdrojového kódu ve správném programovacím jazyce, pokud je k dispozici podpora CodeDOM pro daný jazyk.  
   
@@ -37,7 +37,7 @@ Modelování zdrojového kódu nezávislého na jazyce může být užitečné, 
   
 - [Generování zdrojového kódu a kompilace programu z grafu CodeDOM](generating-and-compiling-source-code-from-a-codedom-graph.md)  
 
-  Popisuje, jak generovat zdrojový kód a zkompilovat generovaný kód s externím kompilátorem pomocí tříd definovaných v oboru názvů `System.CodeDom.Compiler`.  
+  Popisuje, jak generovat zdrojový kód a zkompilovat generovaný kód s externím kompilátorem pomocí tříd definovaných v `System.CodeDom.Compiler` oboru názvů.  
   
 - [Postupy: Vytváření souborů dokumentace XML pomocí modelu CodeDOM](how-to-create-an-xml-documentation-file-using-codedom.md)  
 
@@ -47,7 +47,7 @@ Modelování zdrojového kódu nezávislého na jazyce může být užitečné, 
 
   Popisuje, jak použít CodeDOM k vygenerování třídy obsahující pole, vlastnosti, metodu, konstruktor a vstupní bod.  
   
-## <a name="reference"></a>Odkaz  
+## <a name="reference"></a>Referenční informace  
 
 - <xref:System.CodeDom>  
 

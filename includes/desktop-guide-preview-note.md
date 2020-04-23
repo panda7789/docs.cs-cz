@@ -8,4 +8,4 @@ ms.locfileid: "82071043"
 ---
 
 > [!IMPORTANT]
-> Dokumentace Průvodce plochami je ve výstavbě.
+> Dokumentace k desktopové příručce je v rámci konstrukce.

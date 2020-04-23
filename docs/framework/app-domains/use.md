@@ -6,12 +6,12 @@ helpviewer_keywords:
 - common language runtime, application domains
 - runtime, application domains
 ms.assetid: c6d99815-e022-4d2c-9420-1d7ab5b9d504
-ms.openlocfilehash: d6bbc2648608e9542158e0f281984174447633a4
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 6ee02a3f27a645f19fd6a327052939586fac4aa9
+ms.sourcegitcommit: 62285ec11fa8e8424bab00511a90760c60e63c95
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73119728"
+ms.lasthandoff: 04/20/2020
+ms.locfileid: "81645426"
 ---
 # <a name="using-application-domains"></a>Používání domén aplikací
 
@@ -46,9 +46,9 @@ Popisuje, jak stínové kopírování umožňuje aktualizace sestavení, když j
 Vysvětluje, jak můžete obdržet oznámení o vyvolání výjimky před tím, než modul CLR (Common Language Runtime) začne hledat obslužné rutiny výjimek.  
   
 [Řešení načítání sestavení](../../standard/assembly/resolve-loads.md)  
-Poskytuje pokyny k použití události <xref:System.AppDomain.AssemblyResolve?displayProperty=nameWithType> k vyřešení selhání načtení sestavení.  
+Poskytuje pokyny k použití <xref:System.AppDomain.AssemblyResolve?displayProperty=nameWithType> události pro řešení selhání načtení sestavení.  
   
-## <a name="reference"></a>Odkaz  
+## <a name="reference"></a>Referenční informace  
 
 <xref:System.AppDomain>  
 Představuje doménu aplikace. Poskytuje metody pro vytváření a řízení domén aplikací.  
@@ -57,7 +57,7 @@ Představuje doménu aplikace. Poskytuje metody pro vytváření a řízení dom
 [Sestavení v .NET](../../standard/assembly/index.md)  
 Poskytuje přehled o funkcích, které provádí sestavení.  
   
-[Programování se sestaveními](../../standard/assembly/program.md)  
+[Programování se sestaveními](../../standard/assembly/index.md)  
 Popisuje způsob vytváření, podepisování a nastavení atributů v rámci sestavení.  
   
 [Generování dynamických metod a sestavení](../reflection-and-codedom/emitting-dynamic-methods-and-assemblies.md)  

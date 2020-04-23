@@ -24,7 +24,7 @@ Zabalení často používané funkce knihovny DLL ve spravované třídě předs
   
  Po zabalení můžete volat metody pro třídu při volání statických metod na jakékoli jiné třídě. Volání platformy zpracovává základní exportovanou funkci automaticky.  
   
- Při navrhování spravované třídy pro vyvolání platformy zvažte vztahy mezi třídami a funkcemi knihovny DLL. Můžete například:  
+ Při navrhování spravované třídy pro vyvolání platformy zvažte vztahy mezi třídami a funkcemi knihovny DLL. Můžete například provést následující věci:  
   
 - Deklarujete funkce knihovny DLL v rámci existující třídy.  
   
@@ -34,7 +34,7 @@ Zabalení často používané funkce knihovny DLL ve spravované třídě předs
   
  Můžete pojmenovat třídu a její metody, které jste si zařadíte. Příklady, které ukazují, jak vytvořit. Deklarace založené na síti, které se mají použít s voláním platformy, najdete v tématu [zařazování dat pomocí vyvolání platformy](marshaling-data-with-platform-invoke.md).  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Používání nespravovaných funkcí DLL](consuming-unmanaged-dll-functions.md)
 - [Identifikace funkcí ve knihovnách DLL](identifying-functions-in-dlls.md)

@@ -32,21 +32,21 @@ Ve výchozím nastavení mají všechny projekty služby systému Windows schopn
   
 ### <a name="to-enable-default-event-logging-for-your-service"></a>Povolení protokolování výchozích událostí pro vaši službu  
   
-- Nastavte vlastnost pro komponentu na `true`. <xref:System.ServiceProcess.ServiceBase.AutoLog%2A>  
+- Nastavte <xref:System.ServiceProcess.ServiceBase.AutoLog%2A> vlastnost pro komponentu na `true`.  
   
     > [!NOTE]
     > Ve výchozím nastavení je tato vlastnost nastavena na `true`hodnotu. Tuto možnost nemusíte explicitně nastavovat, pokud nevytváříte komplexnější zpracování, jako je například vyhodnocení podmínky a nastavení <xref:System.ServiceProcess.ServiceBase.AutoLog%2A> vlastnosti na základě výsledku této podmínky.  
   
 ### <a name="to-disable-event-logging-for-your-service"></a>Zakázání protokolování událostí pro vaši službu  
   
-- Nastavte vlastnost pro komponentu na `false`. <xref:System.ServiceProcess.ServiceBase.AutoLog%2A>  
+- Nastavte <xref:System.ServiceProcess.ServiceBase.AutoLog%2A> vlastnost pro komponentu na `false`.  
   
      [!code-csharp[VbRadconService#17](../../../samples/snippets/csharp/VS_Snippets_VBCSharp/VbRadconService/CS/MyNewService.cs#17)]
      [!code-vb[VbRadconService#17](../../../samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbRadconService/VB/MyNewService.vb#17)]  
   
 ### <a name="to-set-up-logging-to-a-custom-log"></a>Nastavení protokolování do vlastního protokolu  
   
-1. Nastavte <xref:System.ServiceProcess.ServiceBase.AutoLog%2A> vlastnost `false`.  
+1. Nastavte <xref:System.ServiceProcess.ServiceBase.AutoLog%2A> vlastnost na `false`hodnotu.  
   
     > [!NOTE]
     > Aby bylo možné <xref:System.ServiceProcess.ServiceBase.AutoLog%2A> použít vlastní protokol, je nutné nastavit hodnotu false.  
@@ -55,9 +55,9 @@ Ve výchozím nastavení mají všechny projekty služby systému Windows schopn
   
 3. Vytvořte vlastní protokol voláním <xref:System.Diagnostics.EventLog.CreateEventSource%2A> metody a zadáním zdrojového řetězce a názvu souboru protokolu, který chcete vytvořit.  
   
-4. <xref:System.Diagnostics.EventLog.Source%2A> Nastavte vlastnost <xref:System.Diagnostics.EventLog> u instance komponenty na zdrojový řetězec, který jste vytvořili v kroku 3.  
+4. Nastavte <xref:System.Diagnostics.EventLog.Source%2A> vlastnost u instance <xref:System.Diagnostics.EventLog> komponenty na zdrojový řetězec, který jste vytvořili v kroku 3.  
   
-5. Zapište své položky přístupem k <xref:System.Diagnostics.EventLog.WriteEntry%2A> metodě <xref:System.Diagnostics.EventLog> v instanci komponenty.  
+5. Zapište své položky přístupem k <xref:System.Diagnostics.EventLog.WriteEntry%2A> metodě v instanci <xref:System.Diagnostics.EventLog> komponenty.  
   
      Následující kód ukazuje, jak nastavit protokolování do vlastního protokolu.  
   
@@ -69,6 +69,6 @@ Ve výchozím nastavení mají všechny projekty služby systému Windows schopn
     [!code-csharp[VbRadconService#15](../../../samples/snippets/csharp/VS_Snippets_VBCSharp/VbRadconService/CS/MyNewService.cs#15)]
     [!code-vb[VbRadconService#15](../../../samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbRadconService/VB/MyNewService.vb#15)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Úvod do aplikací služby systému Windows](introduction-to-windows-service-applications.md)

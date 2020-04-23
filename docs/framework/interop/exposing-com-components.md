@@ -30,16 +30,16 @@ Tato část shrnuje proces potřebný k vystavení existující součásti model
   
 3. [Zkompilujte projekt interoperability](compiling-an-interop-project.md).  
   
-     Windows SDK poskytuje kompilátory pro několik jazyků kompatibilních se specifikací CLS (Common Language Specification), včetně Visual Basic, C#a C++.  
+     Windows SDK poskytuje kompilátory pro několik jazyků kompatibilních se specifikací CLS (Common Language Specification), včetně Visual Basic, C# a C++.  
   
 4. [Nasazení aplikace spolupráce](deploying-an-interop-application.md)  
   
      Aplikace Interop jsou nejlépe nasazeny jako podepsaná sestavení v globální mezipaměti sestavení ( [silně pojmenovaná](../../standard/assembly/strong-named.md)).  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Spolupráce s nespravovaným kódem](index.md)
 - [Faktory návrhu pro spoluprovozování](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/61aax4kh(v=vs.100))
 - [Ukázka zprostředkovatele s objekty COM: klient .NET a server COM](com-interop-sample-net-client-and-com-server.md)
 - [Jazyková nezávislost a jazykově nezávislé komponenty](../../standard/language-independence-and-language-independent-components.md)
-- [Gacutil.exe (nástroj globální mezipaměti sestavení)](../tools/gacutil-exe-gac-tool.md)
+- [Gacutil. exe (nástroj Global Assembly Cache Tool)](../tools/gacutil-exe-gac-tool.md)

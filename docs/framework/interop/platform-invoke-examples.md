@@ -21,13 +21,13 @@ ms.lasthandoff: 03/12/2020
 ms.locfileid: "79181321"
 ---
 # <a name="platform-invoke-examples"></a>Příklady vyvolání platformy
-Následující příklady ukazují, jak definovat a volat **MessageBox** funkce v User32.dll, předávání jednoduchý řetězec jako argument. V příkladech je <xref:System.Runtime.InteropServices.DllImportAttribute.CharSet?displayProperty=nameWithType> pole nastaveno na **hodnotu Automaticky,** aby cílová platforma určovala šířku znaku a zařazování řetězců.  
+Následující příklady ukazují, jak definovat a volat funkci **MessageBox** v souboru User32. dll, která předává jednoduchý řetězec jako argument. V příkladech je <xref:System.Runtime.InteropServices.DllImportAttribute.CharSet?displayProperty=nameWithType> pole nastaveno na hodnotu **automaticky** , aby cílová platforma mohla určit šířku znaku a zařazování řetězců.  
   
  [!code-cpp[Conceptual.Interop.PInvoke#1](../../../samples/snippets/cpp/VS_Snippets_CLR/Conceptual.Interop.PInvoke/cpp/Example.cpp#1)]
  [!code-csharp[Conceptual.Interop.PInvoke#1](../../../samples/snippets/csharp/VS_Snippets_CLR/Conceptual.Interop.PInvoke/cs/Example1.cs#1)]
  [!code-vb[Conceptual.Interop.PInvoke#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Conceptual.Interop.PInvoke/vb/Example1.vb#1)]  
   
- Další příklady naleznete v [tématu zařazování dat s platformy invoke](marshaling-data-with-platform-invoke.md).  
+ Další příklady naleznete v tématu [zařazování dat s voláním platformy](marshaling-data-with-platform-invoke.md).  
   
 ## <a name="see-also"></a>Viz také
 

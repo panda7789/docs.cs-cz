@@ -23,7 +23,7 @@ Pokud se rozhodnete nepoužívat šablonu projektu služby systému Windows, mů
   
 - Musíte vytvořit `Main` metodu pro projekt služby, který definuje služby, které mají být spuštěny, a <xref:System.ServiceProcess.ServiceBase.Run%2A> zavolá metodu na nich.  
   
-- Musíte přepsat <xref:System.ServiceProcess.ServiceBase.OnStart%2A> postupy a <xref:System.ServiceProcess.ServiceBase.OnStop%2A> a vyplnit libovolný kód, který chcete spustit.  
+- Musíte přepsat postupy <xref:System.ServiceProcess.ServiceBase.OnStart%2A> a <xref:System.ServiceProcess.ServiceBase.OnStop%2A> a vyplnit libovolný kód, který chcete spustit.  
   
 ### <a name="to-write-a-service-programmatically"></a>Programové vytvoření služby  
   
@@ -35,7 +35,7 @@ Pokud se rozhodnete nepoužívat šablonu projektu služby systému Windows, mů
   
     3. Přejděte na **System. ServiceProcess. dll** a klikněte na **Vybrat**.  
   
-    4. Klikněte na **OK**.  
+    4. Klikněte na tlačítko **OK**.  
   
 2. Přidejte třídu a nakonfigurujte ji, aby dědila <xref:System.ServiceProcess.ServiceBase>:  
   
@@ -47,7 +47,7 @@ Pokud se rozhodnete nepoužívat šablonu projektu služby systému Windows, mů
      [!code-csharp[VbRadconService#8](../../../samples/snippets/csharp/VS_Snippets_VBCSharp/VbRadconService/CS/MyNewService.cs#8)]
      [!code-vb[VbRadconService#8](../../../samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbRadconService/VB/MyNewService.vb#8)]  
   
-4. `Main` Vytvořte metodu pro třídu a použijte ji k definování služby, kterou bude vaše třída obsahovat; `userService1` je název třídy:  
+4. Vytvořte `Main` metodu pro třídu a použijte ji k definování služby, kterou bude vaše třída obsahovat; `userService1` je název třídy:  
   
      [!code-csharp[VbRadconService#9](../../../samples/snippets/csharp/VS_Snippets_VBCSharp/VbRadconService/CS/MyNewService.cs#9)]
      [!code-vb[VbRadconService#9](../../../samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbRadconService/VB/MyNewService.vb#9)]  
@@ -59,21 +59,21 @@ Pokud se rozhodnete nepoužívat šablonu projektu služby systému Windows, mů
   
 6. Přepište jakékoli jiné metody, pro které chcete definovat vlastní zpracování, a napište kód, který určí akce, které by měla služba provádět v každém případě.  
   
-7. Přidejte nezbytné instalační programy pro aplikaci služby. Další informace najdete v tématu [jak: Přidejte instalační programy do aplikace](how-to-add-installers-to-your-service-application.md)služby.  
+7. Přidejte nezbytné instalační programy pro aplikaci služby. Další informace najdete v tématu [Postup: Přidání instalačních programů do aplikace služby](how-to-add-installers-to-your-service-application.md).  
   
 8. Sestavte projekt výběrem možnosti **Sestavit řešení** v nabídce **sestavení** .  
   
     > [!NOTE]
     > Netiskněte klávesu F5 pro spuštění projektu – projekt služby nemůžete tímto způsobem spustit.  
   
-9. Vytvořte projekt instalace a vlastní akce pro instalaci služby. Příklad najdete v tématu [Návod: Vytvoření aplikace služby systému Windows v Návrháři](walkthrough-creating-a-windows-service-application-in-the-component-designer.md)komponent.  
+9. Vytvořte projekt instalace a vlastní akce pro instalaci služby. Příklad naleznete v tématu [Návod: Vytvoření aplikace služby systému Windows v Návrháři komponent](walkthrough-creating-a-windows-service-application-in-the-component-designer.md).  
   
-10. Nainstalujte službu. Další informace najdete v tématu [jak: Nainstalujte a odinstalujte](how-to-install-and-uninstall-services.md)služby.  
+10. Nainstalujte službu. Další informace najdete v tématu [Postupy: instalace a odinstalace služeb](how-to-install-and-uninstall-services.md).  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Úvod do aplikací služby systému Windows](introduction-to-windows-service-applications.md)
-- [Postupy: Vytvořit služby systému Windows](how-to-create-windows-services.md)
+- [Postupy: Vytváření služeb systému Windows](how-to-create-windows-services.md)
 - [Postupy: Přidání instalačních programů do aplikace služby](how-to-add-installers-to-your-service-application.md)
-- [Postupy: Protokolovat informace o službách](how-to-log-information-about-services.md)
-- [Návod: Vytvoření aplikace služby systému Windows v Návrháři součástí](walkthrough-creating-a-windows-service-application-in-the-component-designer.md)
+- [Postupy: Zaznamenávání informací o službách](how-to-log-information-about-services.md)
+- [Návod: Vytvoření aplikace služby systému Windows v návrháři součástí](walkthrough-creating-a-windows-service-application-in-the-component-designer.md)

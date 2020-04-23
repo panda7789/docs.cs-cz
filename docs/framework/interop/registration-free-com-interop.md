@@ -52,6 +52,6 @@ Zprostředkovatel komunikace s objekty COM bez registrace aktivuje komponentu be
     > [!NOTE]
     > Souběžné spouštění je funkce .NET Framework, která umožňuje více verzí modulu runtime a více verzí aplikací a komponent, které používají verzi modulu runtime, pro spuštění ve stejném počítači současně. Souběžné spouštění a souběžná sestavení jsou různými mechanismy pro poskytování funkcí vedle sebe.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Postupy: Konfigurace bezregistrační aktivace komponent využívajících rozhraní .NET Framework](configure-net-framework-based-com-components-for-reg.md)

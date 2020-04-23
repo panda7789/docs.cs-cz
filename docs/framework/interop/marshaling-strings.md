@@ -23,20 +23,20 @@ Vyvolání platformy kopíruje parametry řetězce a v případě potřeby je p�
   
  Následující tabulka uvádí možnosti zařazování pro řetězce, popisuje jejich použití a poskytuje odkaz na odpovídající ukázku .NET Framework.  
   
-|String|Popis|Ukázka|  
+|Řetězec|Popis|Ukázka|  
 |------------|-----------------|------------|  
 |Podle hodnoty.|Předá řetězce jako v parametrech.|[MsgBox](msgbox-sample.md)|  
 |Jako výsledek.|Vrátí řetězce z nespravovaného kódu.|[Řetězce](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/e765dyyy(v=vs.100))|  
-|Odkazem.|Předává řetězce jako vstupně-výstupní parametry pomocí <xref:System.Text.StringBuilder>.|[Vyrovnávací paměti](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/x3txb6xc(v=vs.100))|  
+|Odkazem.|Předává řetězce jako vstupně-výstupní parametry <xref:System.Text.StringBuilder>pomocí.|[Vyrovnávací paměti](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/x3txb6xc(v=vs.100))|  
 |Ve struktuře podle hodnoty.|Předá řetězce ve struktuře, která je v parametru.|[Struktury](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/eadtsekz(v=vs.100))|  
-|Ve struktuře podle odkazu **(char\*)** .|Předá řetězce ve struktuře, která je parametrem in/out. Nespravovaná funkce očekává ukazatel na vyrovnávací paměť znaků a velikost vyrovnávací paměti je členem struktury.|[Řetězce](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/e765dyyy(v=vs.100))|  
-|Ve struktuře podle odkazu **(Char [])** .|Předá řetězce ve struktuře, která je parametrem in/out. Nespravovaná funkce očekává vyrovnávací paměť vloženého znaku.|[OSINFO –](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/795sy883(v=vs.100))|  
-|Ve třídě podle hodnoty **(char\*)** .|Předá řetězce ve třídě (třída je parametrem in/out). Nespravovaná funkce očekává ukazatel na vyrovnávací paměť znaků.|[Openfiledlg –](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/w5tyztk9(v=vs.100))|  
-|Ve třídě podle hodnoty **(Char [])** .|Předá řetězce ve třídě (třída je parametrem in/out). Nespravovaná funkce očekává vyrovnávací paměť vloženého znaku.|[OSINFO –](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/795sy883(v=vs.100))|  
+|Ve struktuře podle odkazu **(Char\*)**.|Předá řetězce ve struktuře, která je parametrem in/out. Nespravovaná funkce očekává ukazatel na vyrovnávací paměť znaků a velikost vyrovnávací paměti je členem struktury.|[Řetězce](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/e765dyyy(v=vs.100))|  
+|Ve struktuře podle odkazu **(Char [])**.|Předá řetězce ve struktuře, která je parametrem in/out. Nespravovaná funkce očekává vyrovnávací paměť vloženého znaku.|[OSINFO –](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/795sy883(v=vs.100))|  
+|Ve třídě podle hodnoty **(Char\*)**.|Předá řetězce ve třídě (třída je parametrem in/out). Nespravovaná funkce očekává ukazatel na vyrovnávací paměť znaků.|[Openfiledlg –](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/w5tyztk9(v=vs.100))|  
+|Ve třídě podle hodnoty **(Char [])**.|Předá řetězce ve třídě (třída je parametrem in/out). Nespravovaná funkce očekává vyrovnávací paměť vloženého znaku.|[OSINFO –](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/795sy883(v=vs.100))|  
 |Jako pole řetězců podle hodnoty.|Vytvoří pole řetězců, které je předáno hodnotou.|[Pole](marshaling-different-types-of-arrays.md)|  
 |Jako pole struktury, které obsahují řetězce podle hodnoty.|Vytvoří pole struktury obsahující řetězce a pole je předáno hodnotou.|[Pole](marshaling-different-types-of-arrays.md)|  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Výchozí zařazování pro řetězce](default-marshaling-for-strings.md)
 - [Zařazování dat s voláním platformy](marshaling-data-with-platform-invoke.md)

@@ -17,29 +17,29 @@ ms.locfileid: "75715888"
 ---
 # <a name="reflection-in-the-net-framework-for-windows-store-apps"></a>Reflexe v rozhraní .NET Framework pro aplikace pro Windows Store
 
-Počínaje .NET Framework 4,5 .NET Framework obsahuje sadu typů reflexe a členů pro použití v aplikacích pro Windows 8. x Store. Tyto typy a členy jsou k dispozici v plném rozhraní .NET Framework a také v rozhraní .NET pro aplikace pro Windows Store. Tento dokument popisuje hlavní rozdíly mezi těmito položkami a jejich protějšky v rozhraní .NET Framework 4 a dřívějších verzích.  
+Počínaje .NET Framework 4,5 .NET Framework obsahuje sadu typů reflexe a členů pro použití v aplikacích pro Windows 8. x Store. Tyto typy a členy jsou k dispozici v plném .NET Framework a také v rozhraní .NET pro aplikace pro Windows Store. Tento dokument popisuje hlavní rozdíly mezi těmito položkami a jejich protějšky v rozhraní .NET Framework 4 a dřívějších verzích.  
   
  Pokud vytváříte aplikaci pro Store ve Windows 8. x, je nutné použít typy a členy reflexe v rozhraní .NET pro aplikace Store pro Windows 8. x. Tyto typy a členy jsou také k dispozici, ačkoli nejsou vyžadovány, pro použití v aplikacích pracovní plochy, takže lze použít stejný kód pro oba typy aplikací.  
   
 ## <a name="typeinfo-and-assembly-loading"></a>TypeInfo a načítání sestavení  
- V aplikacích .NET pro Windows 8. x Store, třída <xref:System.Reflection.TypeInfo> obsahuje některé funkce třídy .NET Framework 4 <xref:System.Type>. Objekt <xref:System.Type> představuje odkaz na definici typu, zatímco objekt <xref:System.Reflection.TypeInfo> představuje samotnou definici typu. To umožňuje práci s objekty typu <xref:System.Type> bez toho, aby modul runtime musel načíst sestavení, na které odkazují. Získání přidruženého objektu <xref:System.Reflection.TypeInfo> vynutí načtení sestavení.  
+ V rozhraní .NET pro aplikace Windows 8. x Store <xref:System.Reflection.TypeInfo> třída obsahuje některé funkce třídy .NET Framework 4. <xref:System.Type> Objekt <xref:System.Type> představuje odkaz na definici typu, zatímco objekt <xref:System.Reflection.TypeInfo> představuje samotnou definici typu. To umožňuje práci s objekty typu <xref:System.Type> bez toho, aby modul runtime musel načíst sestavení, na které odkazují. Získání přidruženého objektu <xref:System.Reflection.TypeInfo> vynutí načtení sestavení.  
   
- <xref:System.Reflection.TypeInfo> obsahuje mnoho členů dostupných v <xref:System.Type>a mnoho vlastností reflexe v rozhraní .NET pro Windows 8. x Store apps vrací kolekce objektů <xref:System.Reflection.TypeInfo>. Chcete-li získat objekt <xref:System.Reflection.TypeInfo> z objektu <xref:System.Type>, použijte metodu <xref:System.Reflection.IReflectableType.GetTypeInfo%2A>.  
+ <xref:System.Reflection.TypeInfo>obsahuje mnoho členů, které jsou k <xref:System.Type>dispozici na, a mnoho vlastností reflexe v rozhraní .NET pro Windows 8. x Store apps <xref:System.Reflection.TypeInfo> vrací kolekce objektů. Chcete-li získat objekt <xref:System.Reflection.TypeInfo> z objektu <xref:System.Type>, použijte metodu <xref:System.Reflection.IReflectableType.GetTypeInfo%2A>.  
   
 ## <a name="query-methods"></a>Metody dotazů  
- V aplikacích .NET pro Windows 8. x Store používáte vlastnosti reflexe, které vracejí <xref:System.Collections.Generic.IEnumerable%601> kolekce namísto metod, které vracejí pole. Kontexty reflexe mohou pro velká sestavení nebo typy implementovat opožděné procházení těchto kolekcí.  
+ V aplikacích .NET pro Windows 8. x Store používáte vlastnosti reflexe, které vracejí <xref:System.Collections.Generic.IEnumerable%601> kolekce místo metod, které vracejí pole. Kontexty reflexe mohou pro velká sestavení nebo typy implementovat opožděné procházení těchto kolekcí.  
   
  Vlastnosti reflexe vrací pouze metody deklarované pro daný objekt namísto procházení stromu dědičnosti. Kromě toho nelze pro filtrování použít parametry <xref:System.Reflection.BindingFlags>. Namísto toho filtrování probíhá na vrácené kolekci v uživatelském kódu pomocí dotazů LINQ. Pro objekty reflexe modulu runtime (například výsledek výrazu `typeof(Object)`) je procházení stromu dědičnosti provedeno nejlépe prostřednictvím pomocných metod třídy <xref:System.Reflection.RuntimeReflectionExtensions>. Spotřebitelé objektů z vlastních kontextů reflexe nemohou tyto metody použít a musí strom dědičnosti procházet sami.  
   
 ## <a name="restrictions"></a>Omezení  
- V aplikaci Windows 8. x Store je přístup k některým .NET Frameworkovým typům a členům omezený. Například nemůžete volat .NET Framework metody, které nejsou součástí rozhraní .NET pro aplikace pro Windows 8. x Store, pomocí objektu <xref:System.Reflection.MethodInfo>. Kromě toho jsou blokovány určité typy a členy, které nejsou považovány za bezpečné v rámci kontextu aplikace Windows 8. x Store, jako jsou <xref:System.Runtime.InteropServices.Marshal> a <xref:System.Runtime.InteropServices.WindowsRuntime.WindowsRuntimeMarshal> členy. Toto omezení se týká pouze typů a členů rozhraní .NET Framework. Váš kód nebo kód třetích stran lze volat jako obvykle.  
+ V aplikaci Windows 8. x Store je přístup k některým .NET Frameworkovým typům a členům omezený. Například nemůžete volat .NET Framework metody, které nejsou součástí rozhraní .NET pro aplikace pro Windows 8. x Store, pomocí <xref:System.Reflection.MethodInfo> objektu. Kromě toho jsou blokovány určité typy a členy, které nejsou považovány za bezpečné v rámci kontextu aplikace Windows 8. x Store, jako jsou <xref:System.Runtime.InteropServices.Marshal> a <xref:System.Runtime.InteropServices.WindowsRuntime.WindowsRuntimeMarshal> členové. Toto omezení se týká pouze typů a členů rozhraní .NET Framework. Váš kód nebo kód třetích stran lze volat jako obvykle.  
   
 ## <a name="example"></a>Příklad  
- Tento příklad používá typy a členy reflexe v rozhraní .NET pro Windows 8. x Store pro načtení metod a vlastností typu <xref:System.Globalization.Calendar>, včetně zděděných metod a vlastností. Chcete-li spustit tento kód, vložte jej do souboru kódu pro stránku Windows 8. x Store, která obsahuje ovládací prvek <xref:Windows.UI.Xaml.Controls.TextBlock?displayProperty=nameWithType> s názvem `textblock1` v projektu s názvem reflexe. Pokud vložíte tento kód do projektu s jiným názvem, je třeba změnit název oboru názvů tak, aby odpovídal vašemu projektu.  
+ Tento příklad používá typy a členy reflexe v rozhraní .NET pro Windows 8. x Store pro načtení metod a vlastností <xref:System.Globalization.Calendar> typu, včetně zděděných metod a vlastností. Chcete-li spustit tento kód, vložte jej do souboru kódu pro stránku Windows 8. x Store, která obsahuje <xref:Windows.UI.Xaml.Controls.TextBlock?displayProperty=nameWithType> ovládací prvek `textblock1` pojmenovaný v projektu s názvem reflexe. Pokud vložíte tento kód do projektu s jiným názvem, je třeba změnit název oboru názvů tak, aby odpovídal vašemu projektu.  
   
  [!code-csharp[System.ReflectionWinStoreApp#1](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.reflectionwinstoreapp/cs/mainpage.xaml.cs#1)]
  [!code-vb[System.ReflectionWinStoreApp#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.reflectionwinstoreapp/vb/mainpage.xaml.vb#1)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Reflexe](reflection.md)

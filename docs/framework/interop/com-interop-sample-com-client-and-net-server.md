@@ -16,10 +16,10 @@ ms.lasthandoff: 03/12/2020
 ms.locfileid: "79181506"
 ---
 # <a name="com-interop-sample-com-client-and-net-server"></a>Ukázka zprostředkovatele komunikace s objekty COM: klient COM a server .NET
-Tato ukázka ukazuje vzájemné působení [klienta COM](#cpconcominteropsamplecomclientnetserveranchor1) a [serveru .NET,](#cpconcominteropsamplecomclientnetserveranchor2) který provádí výpočty hypotéky. V tomto příkladu klient vytvoří a zavolá `Loan` instanci spravované třídy, předá instanci čtyři argumenty (jeden z těchto čtyř se rovná nule) a zobrazí výpočty. Příklady kódu z této ukázky se zobrazí v této části.  
+Tato ukázka předvádí provedenou operaci [klienta modelu COM](#cpconcominteropsamplecomclientnetserveranchor1) a [serveru .NET](#cpconcominteropsamplecomclientnetserveranchor2) , který provádí výpočty hypotéky. V tomto příkladu klient vytvoří a zavolá instanci spravované `Loan` třídy, předá do instance čtyři argumenty (jedna z těchto čtyř se rovná nule) a zobrazí výpočty. V rámci této části se zobrazí příklady kódu z této ukázky.  
   
 <a name="cpconcominteropsamplecomclientnetserveranchor1"></a>
-## <a name="com-client"></a>Klient COM  
+## <a name="com-client"></a>Klient modelu COM  
   
 ```cpp  
 // ConLoan.cpp : Defines the entry point for the console application.  

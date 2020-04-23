@@ -51,6 +51,6 @@ Následující části obsahují odkazy na všechna témata s postupy, která na
   
 - [Postupy: Zobrazení obsahu sestavení](../../standard/assembly/view-contents.md)  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Domény a sestavení aplikací](index.md)
+- [Aplikační domény a sestavení](index.md)

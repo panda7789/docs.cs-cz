@@ -46,8 +46,8 @@ Exportovaný spravovaný server s knihovnou typů zaregistrovanou modulem [Regas
 
 |Klient modelu COM|Server .NET|Požadavky zařazování|
 |----------------|-----------------|-----------------------------|
-|REŽIMU|`Both` se přestanou STA.|Zařazování do stejného typu apartment.|
-|Agent|`Both` se stávají jako MTA.|Zařazování do stejného typu apartment.|
+|REŽIMU|`Both`Vytvoří STA.|Zařazování do stejného typu apartment.|
+|Agent|`Both`se staly MTA.|Zařazování do stejného typu apartment.|
 
 Vzhledem k tomu, že klient a Server jsou ve stejném typu apartment, služba interop marshaling automaticky zpracovává všechna zařazování dat. Následující ilustrace znázorňuje interop marshaling službu, která je provozována mezi spravovanými a nespravovanými haldami v rámci stejného typu Apartment ve stylu COM.
 
@@ -57,7 +57,7 @@ Pokud plánujete exportovat spravovaný server, uvědomte si, že klient COM ur�
 
 ### <a name="managed-clients-and-com-servers"></a>Spravované klienty a servery COM
 
-Výchozím nastavením pro objekty Apartment spravovaného klienta je MTA; Typ aplikace klienta .NET však může změnit výchozí nastavení. Například Visual Basic nastavení klienta Apartment je STA. K prohlédnutí a změně nastavení bytu spravovaného klienta můžete použít <xref:System.STAThreadAttribute?displayProperty=nameWithType>, <xref:System.MTAThreadAttribute?displayProperty=nameWithType>, vlastnost <xref:System.Threading.Thread.ApartmentState%2A?displayProperty=nameWithType> nebo vlastnost <xref:System.Web.UI.Page.AspCompatMode%2A?displayProperty=nameWithType>.
+Výchozím nastavením pro objekty Apartment spravovaného klienta je MTA; Typ aplikace klienta .NET však může změnit výchozí nastavení. Například Visual Basic nastavení klienta Apartment je STA. Pro kontrolu a změnu <xref:System.STAThreadAttribute?displayProperty=nameWithType>nastavení bytu <xref:System.MTAThreadAttribute?displayProperty=nameWithType>spravovaného <xref:System.Threading.Thread.ApartmentState%2A?displayProperty=nameWithType> klienta můžete použít <xref:System.Web.UI.Page.AspCompatMode%2A?displayProperty=nameWithType> vlastnost,, vlastnost nebo vlastnost.
 
 Autor komponenty nastaví spřažení vlákna pro server COM. V následující tabulce jsou uvedeny kombinace nastavení bytu pro klienty rozhraní .NET a servery COM. Zobrazuje také výsledné požadavky na zařazování pro kombinace.
 
@@ -73,10 +73,10 @@ Pokud jsou spravovaný klient a nespravovaný Server ve stejném typu apartment,
 Pro zařazování mezi platformami můžete provádět následující akce:
 
 - Přijměte režii k zařazování mezi jednotlivými platformami, což je patrné jenom v případě, že hranice obsahuje mnoho volání. Je nutné zaregistrovat knihovnu typů komponenty modelu COM pro volání úspěšného křížení hranice objektu apartment.
-- Změňte hlavní vlákno nastavením vlákna klienta na STA nebo MTA. Například pokud váš C# klient volá mnoho komponent modelu COM STA, můžete se vyhnout zařazování na více platforem nastavením hlavního vlákna na sta.
+- Změňte hlavní vlákno nastavením vlákna klienta na STA nebo MTA. Například pokud váš klient C# volá mnoho komponent modelu COM STA, můžete zamezit zařazování na více platforem nastavením hlavního vlákna na STA.
 
     > [!NOTE]
-    > Jakmile je vlákno C# klienta nastavené na sta, budou volání komponent modelu COM MTA vyžadovat zařazování mezi prostředími.
+    > Jakmile je vlákno klienta v jazyce C# nastaveno na hodnotu STA, budou volání komponent modelu COM MTA vyžadovat zařazování mezi prostředími.
 
 Pokyny, jak explicitně vybrat model Apartment, najdete v tématu [spravovaná a nespravované vlákno](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/5s8ee185(v=vs.100)).
 
@@ -117,7 +117,7 @@ Některé nespravované volání lze přesměrovat prostřednictvím protokolu S
 
 ## <a name="related-topics"></a>Související témata
 
-|Název|Popis|
+|Nadpis|Popis|
 |-----------|-----------------|
 |[Výchozí chování zařazování](default-marshaling-behavior.md)|Popisuje pravidla, která služba interop marshaling používá k zařazování dat.|
 |[Zařazování dat s voláním platformy](marshaling-data-with-platform-invoke.md)|Popisuje, jak deklarovat parametry metody a předávat argumenty funkcím exportovaným nespravovanými knihovnami.|
@@ -129,6 +129,6 @@ Některé nespravované volání lze přesměrovat prostřednictvím protokolu S
 |[Pokročilá interoperabilita modelu COM](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bd9cdfyx(v=vs.100))|Obsahuje odkazy na Další informace o zahrnutí komponent modelu COM do aplikace .NET Framework.|
 |[Faktory návrhu pro spoluprovozování](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/61aax4kh(v=vs.100))|Poskytuje tipy pro psaní integrovaných komponent modelu COM.|
 
-## <a name="reference"></a>Odkaz
+## <a name="reference"></a>Referenční informace
 
 <xref:System.Runtime.InteropServices?displayProperty=nameWithType>

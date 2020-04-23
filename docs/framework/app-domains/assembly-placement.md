@@ -15,11 +15,11 @@ ms.lasthandoff: 10/30/2019
 ms.locfileid: "73119962"
 ---
 # <a name="assembly-placement"></a>Umístění sestavení
-Pro většinu .NET Frameworkch aplikací naleznete sestavení, která tvoří aplikaci v adresáři aplikace, v podadresáři adresáře aplikace nebo v globální mezipaměti sestavení (Pokud je sestavení sdíleno). Můžete přepsat, kde modul CLR (Common Language Runtime) hledá sestavení pomocí [> elementu\<codebase](../configure-apps/file-schema/runtime/codebase-element.md) v konfiguračním souboru. Pokud sestavení nemá silný název, umístění zadané pomocí [> elementu\<codebase](../configure-apps/file-schema/runtime/codebase-element.md) je omezeno na adresář aplikace nebo na podadresář. Pokud má sestavení silný název, [> Element\<codebase](../configure-apps/file-schema/runtime/codebase-element.md) může určit libovolné umístění v počítači nebo v síti.  
+Pro většinu .NET Frameworkch aplikací naleznete sestavení, která tvoří aplikaci v adresáři aplikace, v podadresáři adresáře aplikace nebo v globální mezipaměti sestavení (Pokud je sestavení sdíleno). Můžete přepsat, kde modul CLR (Common Language Runtime) hledá sestavení pomocí [ \<elementu> codebase](../configure-apps/file-schema/runtime/codebase-element.md) v konfiguračním souboru. Pokud sestavení nemá silný název, umístění zadané pomocí [ \<> elementu codebase](../configure-apps/file-schema/runtime/codebase-element.md) je omezeno na adresář aplikace nebo na podadresář. Pokud má sestavení silný název, [ \<> element codebase](../configure-apps/file-schema/runtime/codebase-element.md) může určit libovolné umístění v počítači nebo v síti.  
   
  Podobná pravidla se vztahují na lokalizaci sestavení při práci s nespravovaným kódem nebo aplikacemi COM interop: Pokud bude sestavení sdíleno více aplikacemi, měla by být nainstalována do globální mezipaměti sestavení (GAC). Sestavení použitá s nespravovaným kódem musí být exportována jako knihovna typů a zaregistrována. Sestavení používaná zprostředkovatelem komunikace s objekty COM musí být registrována v katalogu, i když v některých případech tato registrace probíhá automaticky.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Jak běhové prostředí vyhledává sestavení](../deployment/how-the-runtime-locates-assemblies.md)
 - [Konfigurace aplikací](../configure-apps/index.md)

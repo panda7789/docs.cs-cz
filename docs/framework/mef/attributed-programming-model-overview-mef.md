@@ -25,7 +25,7 @@ Výchozím programovacím modelem používaným v MEF je *model programování s
 
 ## <a name="import-and-export-basics"></a>Základy importu a exportu
 
-*Export* je hodnota, kterou část poskytuje jiným částem v kontejneru a *Import* je požadavek, aby část, která je vyjádřena v kontejneru, byla vyplněna z dostupných exportů. V programovacím modelu s atributy jsou importy a exporty deklarovány pomocí tříd upravení nebo členů pomocí atributů `Import` a `Export`. Atribut `Export` může setřídět třídu, pole, vlastnost nebo metodu, zatímco atribut `Import` může setřídit pole, vlastnost nebo parametr konstruktoru.
+*Export* je hodnota, kterou část poskytuje jiným částem v kontejneru a *Import* je požadavek, aby část, která je vyjádřena v kontejneru, byla vyplněna z dostupných exportů. V programovacím modelu s atributy jsou importy a exporty deklarovány pomocí tříd upravení nebo členů `Import` s `Export` atributy a. `Export` Atribut může vytřídit třídu, pole, vlastnost nebo metodu, zatímco `Import` atribut může setřídit pole, vlastnost nebo parametr konstruktoru.
 
 Aby se import shodoval s exportem, musí mít import a export stejný *kontrakt*. Smlouva se skládá z řetězce, který se označuje jako *název kontraktu*a typ exportovaného nebo importovaného objektu, který se označuje jako *Typ kontraktu*. Pouze v případě, že shoda názvu kontraktu a typu smlouvy je exportem, který je považován za splnění konkrétního importu.
 
@@ -46,7 +46,7 @@ public class MyClass
 }
 ```
 
-V tomto importu nemá atribut `Import` žádný typ kontraktu ani připojený parametr názvu kontraktu. Proto obě budou odvozeny z dekorované vlastnosti. V takovém případě bude typ kontraktu `IMyAddin`a název kontraktu bude jedinečným řetězcem vytvořeným z typu kontraktu. (Jinými slovy, název kontraktu bude odpovídat pouze exportům, jejichž názvy jsou také odvozeny z typu `IMyAddin`.)
+V tomto importu nemá `Import` atribut ani typ kontraktu ani připojený parametr názvu kontraktu. Proto obě budou odvozeny z dekorované vlastnosti. V takovém případě bude typ `IMyAddin`kontraktu a název kontraktu bude jedinečným řetězcem vytvořeným z typu kontraktu. (Jinými slovy, název kontraktu bude odpovídat pouze exportům, jejichž názvy jsou také odvozeny od typu `IMyAddin`.)
 
 Následující příklad ukazuje export, který odpovídá předchozímu importu.
 
@@ -63,7 +63,7 @@ End Class
 public class MyLogger : IMyAddin { }
 ```
 
-V tomto exportu je typ kontraktu `IMyAddin`, protože je zadaný jako parametr `Export` atributu. Exportovaný typ musí být buď stejný jako typ kontraktu, odvozený od typu kontraktu, nebo implementovat typ kontraktu, pokud se jedná o rozhraní. V tomto exportu vlastní typ `MyLogger` implementuje rozhraní `IMyAddin`. Název kontraktu je odvozený od typu kontraktu, což znamená, že tento export bude odpovídat předchozímu importu.
+V tomto exportu je `IMyAddin` typ kontraktu, protože je zadán jako parametr `Export` atributu. Exportovaný typ musí být buď stejný jako typ kontraktu, odvozený od typu kontraktu, nebo implementovat typ kontraktu, pokud se jedná o rozhraní. V tomto exportu samotný typ `MyLogger` implementuje rozhraní. `IMyAddin` Název kontraktu je odvozený od typu kontraktu, což znamená, že tento export bude odpovídat předchozímu importu.
 
 > [!NOTE]
 > Exporty a importy by měly být obvykle deklarovány ve veřejných třídách nebo členech. Další deklarace jsou podporovány, ale export nebo import privátního, chráněného nebo interního člena přerušuje model izolace pro danou část a proto se nedoporučuje.
@@ -83,9 +83,9 @@ End Class
 public class MyLogger : IMyAddin { }
 ```
 
-V tomto exportu se místo `IMyAddin``MyLogger` typ kontraktu. I když `MyLogger` implementuje `IMyAddin`a proto může být převedena na objekt `IMyAddin`, tento export nebude odpovídat předchozímu importu, protože typy kontraktů nejsou stejné.
+V tomto exportu je `MyLogger` jako typ kontraktu místo. `IMyAddin` I když `MyLogger` implementují `IMyAddin`, a proto lze přetypovat na `IMyAddin` objekt, tento export nebude odpovídat předchozímu importu, protože typy kontraktů nejsou stejné.
 
-Obecně není nutné zadávat název kontraktu a většina kontraktů by měla být definována v souvislosti s typem a metadaty kontraktu. Za určitých okolností je však důležité zadat název kontraktu přímo. Nejběžnějším případem je, že třída exportuje několik hodnot, které sdílejí společný typ, jako jsou primitivní. Název kontraktu lze zadat jako první parametr atributu `Import` nebo `Export`. Následující kód ukazuje import a export se zadaným názvem kontraktu `MajorRevision`.
+Obecně není nutné zadávat název kontraktu a většina kontraktů by měla být definována v souvislosti s typem a metadaty kontraktu. Za určitých okolností je však důležité zadat název kontraktu přímo. Nejběžnějším případem je, že třída exportuje několik hodnot, které sdílejí společný typ, jako jsou primitivní. Název kontraktu lze zadat jako první parametr atributu `Import` or. `Export` Následující kód ukazuje import a export se zadaným názvem kontraktu `MajorRevision`.
 
 ```vb
 Public Class MyExportClass
@@ -124,11 +124,11 @@ public class MyExportClass
 }
 ```
 
-Pokud není zadán typ kontraktu, bude stále odvozen od typu importu nebo exportu. Nicméně i v případě, že je název kontraktu zadán explicitně, musí se typ kontraktu přesně shodovat s importem a exportem, aby bylo možné považovat za shodu. Například pokud se pole `MajorRevision` jako řetězec, typy odvozených kontraktů se neshodují a export by neodpovídal importu, i když má stejný název kontraktu.
+Pokud není zadán typ kontraktu, bude stále odvozen od typu importu nebo exportu. Nicméně i v případě, že je název kontraktu zadán explicitně, musí se typ kontraktu přesně shodovat s importem a exportem, aby bylo možné považovat za shodu. Například pokud by `MajorRevision` pole bylo typu String, odvozené typy kontraktu se neshodují a export by neodpovídal importu, i když má stejný název kontraktu.
 
 ### <a name="importing-and-exporting-a-method"></a>Import a export metody
 
-Atribut `Export` může také roztřídit metodu stejným způsobem jako třída, vlastnost nebo funkce. Exporty metod musí určovat typ kontraktu nebo název kontraktu, protože typ nelze odvodit. Zadaný typ může být buď vlastní delegát, nebo obecný typ, například `Func`. Následující třída exportuje metodu s názvem `DoSomething`.
+`Export` Atribut může také roztřídit metodu stejným způsobem jako třída, vlastnost nebo funkce. Exporty metod musí určovat typ kontraktu nebo název kontraktu, protože typ nelze odvodit. Zadaný typ může být buď vlastní delegát, nebo obecný typ, například `Func`. Následující třída exportuje metodu s názvem `DoSomething`.
 
 ```vb
 Public Class MyAddin
@@ -151,7 +151,7 @@ public class MyAddin
 }
 ```
 
-V této třídě metoda `DoSomething` přijímá jeden parametr `int` a vrátí `string`. Aby bylo možné tento export vyhledat, musí součást importu deklarovat příslušného člena. Následující třída importuje metodu `DoSomething`.
+V této třídě `DoSomething` metoda přijímá jeden `int` parametr a vrátí. `string` Aby bylo možné tento export vyhledat, musí součást importu deklarovat příslušného člena. Následující třída importuje `DoSomething` metodu.
 
 ```vb
 Public Class MyClass1
@@ -170,7 +170,7 @@ public class MyClass
 }
 ```
 
-Další informace o použití objektu `Func<T, T>` naleznete v tématu <xref:System.Func%602>.
+Další informace o použití `Func<T, T>` objektu naleznete v tématu. <xref:System.Func%602>
 
 <a name="types_of_imports"></a>
 
@@ -199,7 +199,7 @@ public class MyClass
 }
 ```
 
-Pokud je typ kontraktu odvozen z klíčového slova `dynamic`, bude odpovídat jakémukoli typu kontraktu. V takovém případě by měl import **vždy** určovat název kontraktu, na kterém se bude shodovat. (Pokud není zadaný žádný název kontraktu, import se považuje za neodpovídající žádným exportům.) Oba následující exporty by odpovídaly předchozímu importu.
+Pokud je typ kontraktu odvozen z `dynamic` klíčového slova, bude odpovídat jakémukoli typu kontraktu. V takovém případě by měl import **vždy** určovat název kontraktu, na kterém se bude shodovat. (Pokud není zadaný žádný název kontraktu, import se považuje za neodpovídající žádným exportům.) Oba následující exporty by odpovídaly předchozímu importu.
 
 ```vb
 <Export("TheString", GetType(IMyAddin))>
@@ -226,7 +226,7 @@ Import třídy musí být připravený k práci s objektem libovolného typu.
 
 ### <a name="lazy-imports"></a>Opožděné importy
 
-V některých případech importovaná třída může vyžadovat nepřímý odkaz na importovaný objekt, aby se objekt nevytvořil okamžitě. V tomto scénáři třída může deklarovat *opožděný import* pomocí typu kontraktu `Lazy<T>`. Následující importovaná vlastnost deklaruje opožděný import.
+V některých případech importovaná třída může vyžadovat nepřímý odkaz na importovaný objekt, aby se objekt nevytvořil okamžitě. V tomto scénáři třída může deklarovat *opožděné importy* pomocí typu kontraktu `Lazy<T>`. Následující importovaná vlastnost deklaruje opožděný import.
 
 ```vb
 Public Class MyClass1
@@ -245,7 +245,7 @@ public class MyClass
 }
 ```
 
-Z hlediska modulu kompozice je typ kontraktu `Lazy<T>` považován za shodný s typem kontraktu `T`. Předchozí import proto odpovídá následujícímu exportu.
+Z hlediska modulu kompozice `Lazy<T>` je typ kontraktu považován za shodný s typem kontraktu. `T` Předchozí import proto odpovídá následujícímu exportu.
 
 ```vb
 <Export(GetType(IMyAddin))>
@@ -260,15 +260,15 @@ End Class
 public class MyLogger : IMyAddin { }
 ```
 
-Název kontraktu a typ kontraktu lze zadat v atributu `Import` pro opožděné importy, jak je popsáno výše v části "základní import a export".
+Název kontraktu a typ kontraktu lze zadat v `Import` atributu pro opožděné importy, jak je popsáno výše v části "základní importy a export".
 
 ### <a name="prerequisite-imports"></a>Import požadovaných součástí
 
-Exportované části MEF jsou obvykle vytvářeny modulem složení, a to v reakci na přímý požadavek nebo na nutnost vyplnit odpovídající import. Ve výchozím nastavení používá modul kompozice při vytváření součásti konstruktor bez parametrů. Chcete-li, aby modul používal jiný konstruktor, můžete jej označit atributem `ImportingConstructor`.
+Exportované části MEF jsou obvykle vytvářeny modulem složení, a to v reakci na přímý požadavek nebo na nutnost vyplnit odpovídající import. Ve výchozím nastavení používá modul kompozice při vytváření součásti konstruktor bez parametrů. Chcete-li, aby modul používal jiný konstruktor, můžete jej označit `ImportingConstructor` atributem.
 
-Každá část může mít pouze jeden konstruktor pro použití modulem složení. Pokud neposkytnete žádné konstruktory bez parametrů ani atribut `ImportingConstructor` ani zadáním více než jednoho atributu `ImportingConstructor`, dojde k chybě.
+Každá část může mít pouze jeden konstruktor pro použití modulem složení. Pokud neposkytnete žádný konstruktor bez `ImportingConstructor` parametrů ani žádný atribut, nebo pokud `ImportingConstructor` zadáte více než jeden atribut, dojde k chybě.
 
-Chcete-li vyplnit parametry konstruktoru označeného atributem `ImportingConstructor`, všechny tyto parametry jsou automaticky deklarovány jako import. Toto je pohodlný způsob, jak deklarovat importy, které se používají při inicializaci části. Následující třída používá `ImportingConstructor` k deklaraci importu.
+Chcete-li vyplnit parametry konstruktoru označeného `ImportingConstructor` atributem, všechny tyto parametry jsou automaticky deklarovány jako import. Toto je pohodlný způsob, jak deklarovat importy, které se používají při inicializaci části. Následující třída používá `ImportingConstructor` pro deklaraci importu.
 
 ```vb
 Public Class MyClass1
@@ -314,7 +314,7 @@ public class MyClass
 }
 ```
 
-Ve výchozím nastavení používá atribut `ImportingConstructor` odvozený typ kontraktu a názvy kontraktů pro všechny importy parametrů. To lze přepsat upravení parametrů pomocí atributů `Import`, které mohou následně definovat typ kontraktu a název kontraktu explicitně. Následující kód demonstruje konstruktor, který používá tuto syntaxi k importu odvozené třídy namísto nadřazené třídy.
+Ve výchozím nastavení používá `ImportingConstructor` atribut pro všechny importy parametrů odvozené typy kontraktů a názvy kontraktů. To lze přepsat tím, že upravení parametry s `Import` atributy, které mohou následně definovat typ kontraktu a název kontraktu explicitně. Následující kód demonstruje konstruktor, který používá tuto syntaxi k importu odvozené třídy namísto nadřazené třídy.
 
 ```vb
 <ImportingConstructor()>
@@ -331,17 +331,17 @@ public MyClass([Import(typeof(IMySubAddin))]IMyAddin MyAddin)
 }
 ```
 
-Konkrétně byste měli být opatrní s parametry kolekce. Například pokud zadáte `ImportingConstructor` v konstruktoru s parametrem typu `IEnumerable<int>`, import bude odpovídat jedinému exportu typu `IEnumerable<int>`namísto sady EXPORTS typu `int`. Chcete-li porovnat sadu exportů typu `int`, je nutné zadat parametr s atributem `ImportMany`.
+Konkrétně byste měli být opatrní s parametry kolekce. `ImportingConstructor` Například pokud zadáte v konstruktoru s `IEnumerable<int>`parametrem typu, import bude odpovídat jedinému exportu typu `IEnumerable<int>`namísto sady EXPORTS typu. `int` Chcete-li porovnat sadu exportů typu `int`, je nutné zadat parametr s `ImportMany` atributem.
 
-Parametry deklarované jako Imports pomocí atributu `ImportingConstructor` jsou také označeny jako *požadované importy*. MEF normálně umožňuje exportům a importům vytvořit *cyklus*. Například cyklus je místo, kde objekt A importuje objekt B, který zase importuje objekt A. Za běžných okolností není cyklem problém a kontejner kompozice vytvoří oba objekty normálně.
+Parametry deklarované jako import pomocí `ImportingConstructor` atributu jsou také označeny jako *požadované importy*. MEF normálně umožňuje exportům a importům vytvořit *cyklus*. Například cyklus je místo, kde objekt A importuje objekt B, který zase importuje objekt A. Za běžných okolností není cyklem problém a kontejner kompozice vytvoří oba objekty normálně.
 
 Pokud je importovaná hodnota požadována konstruktorem součásti, tento objekt se nemůže zúčastnit cyklu. Pokud objekt A vyžaduje, aby byl objekt B vytvořen před samotným sestavením a objekt B importuje objekt A, pak se cyklus nebude moci vyřešit a dojde k chybě kompozice. Importy deklarované v parametrech konstruktoru jsou tedy požadavky na importy, které musí být vyplněny před jakýmkoli exportem z objektu, který je vyžaduje, aby je bylo možné použít.
 
 ### <a name="optional-imports"></a>Volitelné importy
 
-Atribut `Import` určuje požadavek, který má součást fungovat. Pokud import nelze splnit, složení této součásti selže a součást nebude k dispozici.
+`Import` Atribut určuje požadavek, který má součást fungovat. Pokud import nelze splnit, složení této součásti selže a součást nebude k dispozici.
 
-Pomocí vlastnosti `AllowDefault` můžete určit, že import je *nepovinný* . V tomto případě bude kompozice úspěšná i v případě, že import neodpovídá žádnému dostupnému exportu a vlastnost import bude nastavena na výchozí hodnotu pro svůj typ vlastnosti (`null` pro vlastnosti objektu, `false` pro logické hodnoty nebo nula pro číselné vlastnosti.) Následující třída používá volitelný import.
+Pomocí `AllowDefault` vlastnosti můžete určit, že import je *nepovinný* . V tomto případě bude kompozice úspěšná i v případě, že import neodpovídá žádnému dostupnému exportu a vlastnost import bude nastavena na výchozí hodnotu pro svůj typ vlastnosti (`null` pro vlastnosti objektu, `false` pro logické hodnoty nebo nula pro číselné vlastnosti.) Následující třída používá volitelný import.
 
 ```vb
 Public Class MyClass1
@@ -367,7 +367,7 @@ public class MyClass
 
 ### <a name="importing-multiple-objects"></a>Importování více objektů
 
-Atribut `Import` bude úspěšně sestaven pouze v případě, že odpovídá jednomu a pouze jednomu exportu. Jiné případy vytvoří chybu složení. Chcete-li importovat více než jeden export, který odpovídá stejné smlouvě, použijte atribut `ImportMany`. Importy označené pomocí tohoto atributu jsou vždycky volitelné. Například složení nebude úspěšné, pokud nejsou k dispozici žádné vyhovující exporty. Následující třída importuje libovolný počet exportů typu `IMyAddin`.
+`Import` Atribut bude úspěšně sestaven pouze v případě, že odpovídá jednomu a pouze jednomu exportu. Jiné případy vytvoří chybu složení. Chcete-li importovat více než jeden export, který odpovídá stejné smlouvě, `ImportMany` použijte atribut. Importy označené pomocí tohoto atributu jsou vždycky volitelné. Například složení nebude úspěšné, pokud nejsou k dispozici žádné vyhovující exporty. Následující třída importuje libovolný počet exportů typu `IMyAddin`.
 
 ```vb
 Public Class MyClass1
@@ -386,9 +386,9 @@ public class MyClass
 }
 ```
 
-K importovanému poli lze přistupovat pomocí běžné `IEnumerable<T>` syntaxe a metod. Místo toho je také možné použít běžné pole (`IMyAddin[]`).
+K importovanému poli je možné přistupovat `IEnumerable<T>` pomocí běžných syntaxí a metod. Místo toho je také možné použít běžné pole (`IMyAddin[]`).
 
-Tento model může být velmi důležitý při použití v kombinaci s syntaxí `Lazy<T>`. Například pomocí `ImportMany`, `IEnumerable<T>`a `Lazy<T>`, můžete importovat nepřímé odkazy na libovolný počet objektů a pouze vytvořit instance těch, které jsou nezbytné. Následující třída zobrazuje tento model.
+Tento model může být velmi důležitý při použití v kombinaci s `Lazy<T>` syntaxí. Například pomocí `ImportMany`, `IEnumerable<T>`a `Lazy<T>`můžete importovat nepřímé odkazy na libovolný počet objektů a vytvořit pouze instance těch, které jsou nezbytné. Následující třída zobrazuje tento model.
 
 ```vb
 Public Class MyClass1
@@ -411,9 +411,9 @@ public class MyClass
 
 ## <a name="avoiding-discovery"></a>Zamezení zjišťování
 
-V některých případech můžete chtít zabránit tomu, aby se součást zjistila jako součást katalogu. Například část může být základní třídou, která má být zděděna z, ale není použita. To můžete provést dvěma způsoby. Nejprve můžete použít klíčové slovo `abstract` pro třídu Part. Abstraktní třídy nikdy neposkytují export, i když mohou poskytnout děděné exporty třídám, které jsou z nich odvozeny.
+V některých případech můžete chtít zabránit tomu, aby se součást zjistila jako součást katalogu. Například část může být základní třídou, která má být zděděna z, ale není použita. To můžete provést dvěma způsoby. Nejprve můžete použít `abstract` klíčové slovo pro třídu součásti. Abstraktní třídy nikdy neposkytují export, i když mohou poskytnout děděné exporty třídám, které jsou z nich odvozeny.
 
-Pokud třídu nelze nastavit jako abstraktní, lze ji roztřídit pomocí atributu `PartNotDiscoverable`. Část upravená pomocí tohoto atributu nebude zahrnuta do žádných katalogů. Následující příklad znázorňuje tyto vzory. Katalog bude vyhledán `DataOne`. Vzhledem k tomu, že `DataTwo` je abstraktní, nebude zjištěno. Vzhledem k tomu, že `DataThree` používal atribut `PartNotDiscoverable`, nebude zjištěno.
+Pokud třídu nelze nastavit jako abstraktní, lze ji roztřídit pomocí `PartNotDiscoverable` atributu. Část upravená pomocí tohoto atributu nebude zahrnuta do žádných katalogů. Následující příklad znázorňuje tyto vzory. `DataOne`budou zjištěny katalogem. Vzhledem `DataTwo` k tomu, že je abstraktní, nebude zjištěno. Vzhledem `DataThree` k `PartNotDiscoverable` tomu, že se atribut použil, nebude zjištěn.
 
 ```vb
 <Export()>
@@ -466,7 +466,7 @@ public class DataThree
 
 Exporty můžou poskytnout další informace o samotných údajích, které se nazývají *metadata*. Metadata lze použít k předávání vlastností exportovaného objektu do importované části. Importovaná část může pomocí těchto dat rozhodnout, které exporty se mají použít, nebo shromažďovat informace o exportu bez nutnosti jeho sestavení. Z tohoto důvodu musí být import opožděný, aby používal metadata.
 
-Chcete-li použít metadata, obvykle deklarujete rozhraní známé jako *zobrazení metadat*, které deklaruje, jaká metadata budou k dispozici. Rozhraní zobrazení metadat musí mít pouze vlastnosti a tyto vlastnosti musí mít přistupující objekty `get`. Následující rozhraní je příkladem zobrazení metadat.
+Chcete-li použít metadata, obvykle deklarujete rozhraní známé jako *zobrazení metadat*, které deklaruje, jaká metadata budou k dispozici. Rozhraní zobrazení metadat musí mít pouze vlastnosti, přičemž tyto vlastnosti musí mít `get` přistupující objekty. Následující rozhraní je příkladem zobrazení metadat.
 
 ```vb
 Public Interface IPluginMetadata
@@ -491,7 +491,7 @@ public interface IPluginMetadata
 
 Je také možné použít obecnou kolekci, `IDictionary<string, object>`jako zobrazení metadat, ale to propadá na výhody kontroly typu a je třeba se jim vyhnout.
 
-Obvykle jsou požadovány všechny vlastnosti pojmenované v zobrazení metadat a jakékoli exporty, které je neposkytují, nebudou považovány za shodu. Atribut `DefaultValue` určuje, že je vlastnost volitelná. Pokud není tato vlastnost zahrnutá, přiřadí se výchozí hodnota zadaná jako parametr `DefaultValue`. Níže jsou dvě různé třídy dekorované metadaty. Obě tyto třídy by odpovídaly předchozímu zobrazení metadat.
+Obvykle jsou požadovány všechny vlastnosti pojmenované v zobrazení metadat a jakékoli exporty, které je neposkytují, nebudou považovány za shodu. `DefaultValue` Atribut určuje, že vlastnost je volitelná. Pokud vlastnost není zahrnutá, přiřadí se výchozí hodnota zadaná jako parametr `DefaultValue`. Níže jsou dvě různé třídy dekorované metadaty. Obě tyto třídy by odpovídaly předchozímu zobrazení metadat.
 
 ```vb
 <Export(GetType(IPlugin))>
@@ -527,9 +527,9 @@ public class DWriter : IPlugin
 }
 ```
 
-Metadata jsou vyjádřena za atributem `Export` pomocí atributu `ExportMetadata`. Každá část metadat se skládá z dvojice název/hodnota. Název v metadatech se musí shodovat s názvem příslušné vlastnosti v zobrazení metadat a hodnota bude přiřazena této vlastnosti.
+Metadata jsou vyjádřena po `Export` atributu pomocí `ExportMetadata` atributu. Každá část metadat se skládá z dvojice název/hodnota. Název v metadatech se musí shodovat s názvem příslušné vlastnosti v zobrazení metadat a hodnota bude přiřazena této vlastnosti.
 
-Je to dovozce, který určuje, jaké zobrazení metadat se bude používat. Import s metadaty je deklarován jako opožděný import, s rozhraním metadat jako druhým parametrem typu pro `Lazy<T,T>`. Následující třída importuje předchozí část s metadaty.
+Je to dovozce, který určuje, jaké zobrazení metadat se bude používat. Import s metadaty je deklarován jako opožděné importu s rozhraním metadat jako druhým parametrem typu `Lazy<T,T>`. Následující třída importuje předchozí část s metadaty.
 
 ```vb
 Public Class Addin
@@ -547,7 +547,7 @@ public class Addin
 }
 ```
 
-V mnoha případech budete chtít kombinovat metadata s atributem `ImportMany`, aby bylo možné analyzovat v dostupných importech a vybírat a vytvářet instance pouze jeden, nebo filtrovat kolekci tak, aby odpovídala určité podmínce. Následující třída vytváří instance pouze `IPlugin` objekty, které mají `Name` hodnotu "protokolovací".
+V mnoha případech budete chtít kombinovat metadata s `ImportMany` atributem, aby bylo možné analyzovat v dostupných importech a vybírat a vytvářet instance pouze jeden, nebo filtrovat kolekci tak, aby odpovídala určité podmínce. Následující třída vytváří instance pouze `IPlugin` objekty, které mají `Name` hodnotu "protokolovací".
 
 ```vb
 Public Class User
@@ -597,9 +597,9 @@ public class User
 
 Pokud třída dědí z části, může se také stát, že se tato třída stane součástí. Importy jsou vždy děděny podtřídami. Proto bude podtřídou součásti vždy součástí, se stejnými importy jako její nadřazená třída.
 
-Exporty deklarované pomocí atributu `Export` nejsou děděny podtřídami. Součást však může exportovat sebe sama pomocí atributu `InheritedExport`. Podtřídy této části zdědí a poskytnou stejný export, včetně názvu kontraktu a typu smlouvy. Na rozdíl od atributu `Export` lze `InheritedExport` použít pouze na úrovni třídy, nikoli na úrovni člena. Proto nelze export na úrovni členů dědění nikdy dědit.
+Exporty deklarované pomocí `Export` atributu nejsou děděny podtřídami. Součást však může exportovat sebe sama pomocí `InheritedExport` atributu. Podtřídy této části zdědí a poskytnou stejný export, včetně názvu kontraktu a typu smlouvy. Na rozdíl od `Export` atributu `InheritedExport` lze použít pouze na úrovni třídy, nikoli na úrovni člena. Proto nelze export na úrovni členů dědění nikdy dědit.
 
-Následující čtyři třídy demonstrují principy dědičnosti importu a exportu. `NumTwo` dědí z `NumOne`, takže `NumTwo` import `IMyData`. Běžné exporty nejsou děděny, takže `NumTwo` nebude něco exportovat. `NumFour` dědí z `NumThree`. Protože `NumThree` používá `InheritedExport`, `NumFour` má jeden export s typem kontraktu `NumThree`. Exporty na úrovni členů nejsou nikdy děděny, takže `IMyData` není exportován.
+Následující čtyři třídy demonstrují principy dědičnosti importu a exportu. `NumTwo`dědí z `NumOne`, takže `NumTwo` se naimportuje `IMyData`. Běžné exporty nejsou děděny, `NumTwo` takže nebudou exportovány žádné výsledky. `NumFour`dědí z `NumThree`. Vzhledem `NumThree` k `InheritedExport`tomu `NumFour` , že používá, má jeden `NumThree`export s typem kontraktu. Exporty na úrovni členů nejsou nikdy zděděné `IMyData` , takže se neexportují.
 
 ```vb
 <Export()>
@@ -685,7 +685,7 @@ public class NumFour : NumThree
 }
 ```
 
-Pokud jsou k atributu `InheritedExport` přidružená metadata, budou tato metadata také zděděná. (Další informace najdete v části předchozí metadata a zobrazení metadat). Zděděná metadata nelze upravovat podtřídou. Když však znovu deklarujete atribut `InheritedExport` se stejným názvem kontraktu a typem kontraktu, ale s novými metadaty, podtřída může nahradit zděděná metadata novými metadaty. Následující třída demonstruje tento princip. `MegaLogger` část dědí z `Logger` a obsahuje atribut `InheritedExport`. Vzhledem k tomu, že `MegaLogger` znovu deklaruje nová metadata s názvem status, nedědí její název a metadata verze z `Logger`.
+Pokud jsou k `InheritedExport` atributu přidružená metadata, budou tato metadata také děděna. (Další informace najdete v části předchozí metadata a zobrazení metadat). Zděděná metadata nelze upravovat podtřídou. Pokud však znovu deklarujete `InheritedExport` atribut se stejným názvem kontraktu a typem kontraktu, ale s novými metadaty, podtřída může nahradit zděděná metadata novými metadaty. Následující třída demonstruje tento princip. `MegaLogger` Část dědí z `Logger` a obsahuje `InheritedExport` atribut. Vzhledem `MegaLogger` k tomu, že znovu deklaruje nová metadata s názvem status, nedědí název a metadata verze z `Logger`.
 
 ```vb
 <InheritedExport(GetType(IPlugin))>
@@ -745,9 +745,9 @@ public class MegaLogger : Logger        {
 }
 ```
 
-Při opětovné deklaraci atributu `InheritedExport` pro přepsání metadat se ujistěte, že typy kontraktu jsou stejné. (V předchozím příkladu je `IPlugin` typ kontraktu.) Pokud se liší, místo přepsání, druhý atribut vytvoří druhý nezávislý export z části. Obecně to znamená, že budete muset explicitně zadat typ kontraktu při přepsání atributu `InheritedExport`, jak je znázorněno v předchozím příkladu.
+Při opětovné deklaraci `InheritedExport` atributu pro přepsání metadat se ujistěte, že typy kontraktu jsou stejné. (V předchozím příkladu `IPlugin` je to typ kontraktu.) Pokud se liší, místo přepsání, druhý atribut vytvoří druhý nezávislý export z části. Obecně to znamená, že budete muset explicitně zadat typ kontraktu při přepsání `InheritedExport` atributu, jak je znázorněno v předchozím příkladu.
 
-Vzhledem k tomu, že rozhraní nemohou být vytvořena přímo, nesmí být obecně upravena pomocí atributů `Export` nebo `Import`. Rozhraní lze však dekorovat pomocí atributu `InheritedExport` na úrovni rozhraní a tento export spolu s veškerými přidruženými metadaty bude děděn všemi implementací tříd. Samotné rozhraní nebude ale k dispozici jako součást.
+Vzhledem k tomu, že rozhraní nemohou být vytvořena přímo, nesmí být obecně `Export` upravena pomocí atributů nebo `Import` . Rozhraní lze však dekorovat pomocí `InheritedExport` atributu na úrovni rozhraní a export spolu s jakýmikoli přidruženými metadaty bude děděn všemi implementací tříd. Samotné rozhraní nebude ale k dispozici jako součást.
 
 <a name="custom_export_attributes"></a>
 
@@ -755,7 +755,7 @@ Vzhledem k tomu, že rozhraní nemohou být vytvořena přímo, nesmí být obec
 
 Základní atributy exportu `Export` a `InheritedExport`lze rozšířit tak, aby zahrnovaly metadata jako vlastnosti atributu. Tato technika je užitečná pro použití podobných metadat na mnoho částí nebo pro vytvoření stromu dědičnosti atributů metadat.
 
-Vlastní atribut může určovat typ kontraktu, název kontraktu nebo jiná metadata. Aby bylo možné definovat vlastní atribut, musí být třída, která dědí z `ExportAttribute` (nebo `InheritedExportAttribute`), upravena atributem `MetadataAttribute`. Následující třída definuje vlastní atribut.
+Vlastní atribut může určovat typ kontraktu, název kontraktu nebo jiná metadata. Aby bylo možné definovat vlastní atribut, musí být třída, která dědí `ExportAttribute` z ( `InheritedExportAttribute`nebo), upravena `MetadataAttribute` atributem. Následující třída definuje vlastní atribut.
 
 ```vb
 <MetadataAttribute()>
@@ -789,7 +789,7 @@ public class MyAttribute : ExportAttribute
 }
 ```
 
-Tato třída definuje vlastní atribut s názvem `MyAttribute` s typem kontraktu `IMyAddin` a některá metadata s názvem `MyMetadata`. Všechny vlastnosti ve třídě označené atributem `MetadataAttribute` se považují za metadata definovaná ve vlastním atributu. Následující dvě deklarace jsou ekvivalentní.
+Tato třída definuje vlastní atribut s názvem `MyAttribute` typu `IMyAddin` kontrakt a některá metadata s názvem `MyMetadata`. Všechny vlastnosti ve třídě označené `MetadataAttribute` atributem se považují za metadata definovaná ve vlastním atributu. Následující dvě deklarace jsou ekvivalentní.
 
 ```vb
 <Export(GetType(IMyAddin))>
@@ -815,7 +815,7 @@ public MyAddin myAddin { get; set; }
 
 V první deklaraci je typ kontraktu a metadata explicitně definovány. Ve druhé deklaraci je typ kontraktu a metadata implicitní v přizpůsobeném atributu. Zejména v případech, kdy je třeba použít velké množství identických metadat na mnoho částí (například informace o autorech nebo autorských právech), může použití vlastního atributu ušetřit spoustu času a duplikace. Kromě toho lze vytvořit stromy dědičnosti vlastních atributů, aby bylo možné variace.
 
-Chcete-li vytvořit volitelná metadata ve vlastním atributu, můžete použít atribut `DefaultValue`. Pokud je tento atribut použit pro vlastnost ve vlastní třídě atributu, určuje, že dekorovaná vlastnost je volitelná a není nutné ji dodávat Exportér. Pokud hodnota vlastnosti není dodána, bude jí přiřazena výchozí hodnota pro svůj typ vlastnosti (obvykle `null`, `false`nebo 0).
+Chcete-li vytvořit volitelná metadata ve vlastním atributu, můžete použít `DefaultValue` atribut. Pokud je tento atribut použit pro vlastnost ve vlastní třídě atributu, určuje, že dekorovaná vlastnost je volitelná a není nutné ji dodávat Exportér. Pokud hodnota vlastnosti není dodána, přiřadí se výchozí hodnota pro svůj typ vlastnosti (obvykle `null` `false`, nebo 0).
 
 <a name="creation_policies"></a>
 
@@ -827,9 +827,9 @@ Dvě možné zásady vytváření jsou *sdílené* a *nesdílené*. Součást s 
 
 Součást se zásadami vytváření nesdílených se vytvoří pokaždé, když se najde odpovídající import pro jeden z jeho exportů. Pro každý import v kontejneru, který odpovídá jedné z exportovaných smluv, bude vytvořena instance nového kopírování. Vnitřní stav těchto kopií nebude sdílen. Tyto zásady jsou vhodné pro části, kde každý import vyžaduje vlastní vnitřní stav.
 
-Import i export mohou určovat zásadu vytváření součásti, a to z hodnot `Shared`, `NonShared`nebo `Any`. Výchozí hodnota je `Any` pro import i export. Export, který určuje `Shared` nebo `NonShared`, bude odpovídat pouze importu, který určuje stejný nebo který určuje `Any`. Podobně import, který určuje `Shared` nebo `NonShared`, bude odpovídat pouze exportu, které určuje stejné nebo které určuje `Any`. Importy a exporty s nekompatibilními zásadami vytváření nejsou považovány za shodu, a to stejným způsobem jako při importu a exportu, jejichž název kontraktu nebo typ kontraktu se neshodují. Pokud import i export specifikují `Any`nebo nezadáte zásadu vytváření a výchozí hodnotu `Any`, zásada vytváření se bude sdílet s výchozím nastavením.
+Import i export může určovat zásadu vytváření součásti, a to z hodnot `Shared`, `NonShared`nebo. `Any` Výchozí hodnota je `Any` pro import i export. Export, který určuje `Shared` nebo `NonShared` bude odpovídat pouze importu, který určuje stejné nebo které určuje `Any`. Podobně import, který určuje `Shared` nebo `NonShared` , bude odpovídat pouze exportu, který určuje stejné nebo, které určuje. `Any` Importy a exporty s nekompatibilními zásadami vytváření nejsou považovány za shodu, a to stejným způsobem jako při importu a exportu, jejichž název kontraktu nebo typ kontraktu se neshodují. Pokud pro import i export určíte `Any`nebo nezadáte zásadu vytváření a výchozí hodnotu pro `Any`, zásady vytváření se budou sdílet jako výchozí.
 
-Následující příklad ukazuje import i export, které určují zásady vytváření. `PartOne` neurčuje zásadu vytváření, takže výchozí hodnota je `Any`. `PartTwo` neurčuje zásadu vytváření, takže výchozí hodnota je `Any`. Vzhledem k tomu, že se naimportují i exportují výchozí hodnoty `Any`, `PartOne` sdílet. `PartThree` určuje zásadu vytváření `Shared`, takže `PartTwo` a `PartThree` budou sdílet stejnou kopii `PartOne`. `PartFour` určuje zásadu vytváření `NonShared`, takže `PartFour` nebudou sdíleny v `PartFive`. `PartSix` určuje zásadu vytváření `NonShared`. `PartFive` a `PartSix` získají samostatné kopie `PartFour`. `PartSeven` určuje zásadu vytváření `Shared`. Vzhledem k tomu, že není k dispozici žádná exportovaná `PartFour` se zásadami vytvoření `Shared`, `PartSeven` import se neshoduje s žádným a nebude vyplněn.
+Následující příklad ukazuje import i export, které určují zásady vytváření. `PartOne`neurčuje zásadu vytváření, takže výchozí hodnota je `Any`. `PartTwo`neurčuje zásadu vytváření, takže výchozí hodnota je `Any`. Vzhledem k tomu, že se naimportují i exportují výchozí hodnoty do `Any`, `PartOne` budou sdíleny. `PartThree`Určuje zásadu `Shared` vytváření, takže `PartTwo` a `PartThree` bude sdílet stejnou kopii. `PartOne` `PartFour`Určuje zásadu `NonShared` vytváření, takže `PartFour` se v `PartFive`nástroji nesdílí. `PartSix`Určuje zásadu `NonShared` vytváření. `PartFive`a `PartSix` každý z `PartFour`nich získá samostatné kopie. `PartSeven`Určuje zásadu `Shared` vytváření. Vzhledem k tomu `PartFour` `Shared`, že není exportována se zásadami vytváření, `PartSeven` import neshoduje s žádným a nebude vyplněn.
 
 ```vb
 <Export()>
@@ -972,15 +972,15 @@ public class PartSeven
 
 ## <a name="life-cycle-and-disposing"></a>Životní cyklus a odstraňování
 
-Vzhledem k tomu, že části jsou hostovány v kontejneru složení, jejich životní cyklus může být složitější než běžné objekty. Části můžou implementovat dvě důležitá rozhraní související s životním cyklem: `IDisposable` a `IPartImportsSatisfiedNotification`.
+Vzhledem k tomu, že části jsou hostovány v kontejneru složení, jejich životní cyklus může být složitější než běžné objekty. Části můžou implementovat dvě důležitá rozhraní související s životním `IDisposable` cyklem `IPartImportsSatisfiedNotification`: a.
 
-Součásti, které vyžadují, aby se prováděla práce při vypnutí nebo potřebují uvolnit prostředky, by měly implementovat `IDisposable`, obvykle pro objekty .NET Framework. Vzhledem k tomu, že kontejner vytváří a udržuje odkazy na části, je nutné volat metodu `Dispose` pouze v kontejneru, který vlastní část. Kontejner sám implementuje `IDisposable`a jako část jeho vyčištění v `Dispose` bude volat `Dispose` na všech částech, které vlastní. Z tohoto důvodu byste měli kontejner kompozice vždy uvolnit, pokud je a jakékoliv součásti, které vlastní, již nepotřebujete.
+Součásti, které vyžadují, aby se prováděla práce při vypnutí nebo které potřebují uvolnit prostředky, `IDisposable`by měly implementovat běžné pro .NET Framework objekty. Vzhledem k tomu, že kontejner vytváří a udržuje odkazy na části, pouze kontejner, který vlastní část, by měl `Dispose` volat metodu. Samotný kontejner implementuje `IDisposable`a jako součást jeho vyčištění v `Dispose` rámci něj bude volat `Dispose` všechny části, které vlastní. Z tohoto důvodu byste měli kontejner kompozice vždy uvolnit, pokud je a jakékoliv součásti, které vlastní, již nepotřebujete.
 
-V případě dlouhodobých kontejnerů kompozice se může stát, že spotřeba paměti podle částí se zásadou vytváření nesdíleného není sdílená. Tyto nesdílené části je možné vytvořit víckrát, takže nebudou uvolněny, dokud nedojde k uvolnění samotného kontejneru. V takovém případě kontejner poskytuje metodu `ReleaseExport`. Volání této metody u nesdíleného exportu odebere tento export z kontejneru složení a odstraní jej. Části, které se používají jenom odebraným exportem, a tak i na stromové struktuře, se taky odeberou a odstraňují. Tímto způsobem lze prostředky uvolnit bez likvidace kontejneru kompozice.
+V případě dlouhodobých kontejnerů kompozice se může stát, že spotřeba paměti podle částí se zásadou vytváření nesdíleného není sdílená. Tyto nesdílené části je možné vytvořit víckrát, takže nebudou uvolněny, dokud nedojde k uvolnění samotného kontejneru. Chcete-li se tomuto `ReleaseExport` postupu zabývat, kontejner poskytuje metodu. Volání této metody u nesdíleného exportu odebere tento export z kontejneru složení a odstraní jej. Části, které se používají jenom odebraným exportem, a tak i na stromové struktuře, se taky odeberou a odstraňují. Tímto způsobem lze prostředky uvolnit bez likvidace kontejneru kompozice.
 
-`IPartImportsSatisfiedNotification` obsahuje jednu metodu nazvanou `OnImportsSatisfied`. Tato metoda je volána kontejnerem kompozice na všech částech, které implementují rozhraní po dokončení složení, a importy části jsou připravené k použití. Části jsou vytvořeny modulem složení, aby bylo možné vyplnit importy dalších částí. Před nastavením importu části nelze provést žádnou inicializaci, která spoléhá na nebo zpracovává importované hodnoty v konstruktoru součásti, pokud tyto hodnoty nebyly zadány jako požadavky pomocí atributu `ImportingConstructor`. To je obvykle upřednostňovaná metoda, ale v některých případech nemusí být injektáže konstruktoru k dispozici. V těchto případech lze inicializaci provést v `OnImportsSatisfied`a část by měla implementovat `IPartImportsSatisfiedNotification`.
+`IPartImportsSatisfiedNotification`obsahuje jednu metodu s `OnImportsSatisfied`názvem. Tato metoda je volána kontejnerem kompozice na všech částech, které implementují rozhraní po dokončení složení, a importy části jsou připravené k použití. Části jsou vytvořeny modulem složení, aby bylo možné vyplnit importy dalších částí. Před nastavením importu části nelze provést žádnou inicializaci, která spoléhá na nebo zpracovává importované hodnoty v konstruktoru součásti, pokud tyto hodnoty nebyly zadány jako požadavky pomocí `ImportingConstructor` atributu. To je obvykle upřednostňovaná metoda, ale v některých případech nemusí být injektáže konstruktoru k dispozici. V těchto případech může být inicializace provedena v `OnImportsSatisfied`a část by měla implementovat. `IPartImportsSatisfiedNotification`
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Video pro kanál 9: otevření aplikací pomocí Managed Extensibility Framework](https://channel9.msdn.com/events/TechEd/NorthAmerica/2009/DTL328)
 - [Video pro kanál 9: Managed Extensibility Framework (MEF) 2,0](https://channel9.msdn.com/posts/NET-45-Oleg-Lvovitch-and-Kevin-Ransom-Managed-Extensibility-Framework-MEF-20)

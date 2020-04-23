@@ -21,53 +21,53 @@ ms.lasthandoff: 03/14/2020
 ms.locfileid: "79399971"
 ---
 # <a name="consuming-unmanaged-dll-functions"></a>Používání nespravovaných funkcí DLL
-Vyvolání platformy je služba, která umožňuje spravovanému kódu volat nespravované funkce implementované v knihovnách dynamických odkazů (DLL), jako jsou ty v rozhraní API systému Windows. Vyhledá a vyvolá exportovanou funkci a zařazuje její argumenty (celá čísla, řetězce, pole, struktury a tak dále) přes hranice vzájemné spolupráce podle potřeby.  
+Vyvolání platformy je služba, která umožňuje spravovanému kódu volat nespravované funkce implementované v knihovně DLL (Dynamic Link Library), jako jsou ty v rozhraní API systému Windows. Vyhledá a vyvolá exportovanou funkci a zařadí argumenty (celá čísla, řetězce, pole, struktury atd.) v rámci hranice mezioperace podle potřeby.  
   
- Tato část zavádí úkoly spojené s využíváním nespravovaných funkcí dll a poskytuje další informace o vyvolání platformy. Kromě následujících úkolů existují obecné aspekty a odkaz poskytující další informace a příklady.  
+ V této části jsou uvedeny úlohy spojené s používáním nespravovaných funkcí knihovny DLL a další informace o vyvolání platformy. Kromě následujících úkolů existují obecné požadavky a odkaz, který poskytuje další informace a příklady.  
   
-#### <a name="to-consume-exported-dll-functions"></a>Využití exportovaných funkcí dll  
+#### <a name="to-consume-exported-dll-functions"></a>Využití exportovaných funkcí DLL  
   
 1. [Identifikujte funkce v knihovnách DLL](identifying-functions-in-dlls.md).  
   
-     Minimálně je nutné zadat název funkce a název dll, která ji obsahuje.  
+     Minimální je nutné zadat název funkce a název knihovny DLL, která ji obsahuje.  
   
-2. [Vytvořte třídu pro funkce dll](creating-a-class-to-hold-dll-functions.md).  
+2. [Vytvořte třídu pro uchovávání funkcí knihovny DLL](creating-a-class-to-hold-dll-functions.md).  
   
-     Můžete použít existující třídu, vytvořit jednotlivé třídy pro každou nespravovanou funkci nebo vytvořit jednu třídu, která obsahuje sadu souvisejících nespravovaných funkcí.  
+     Můžete použít existující třídu, vytvořit jednotlivou třídu pro každou nespravovanou funkci nebo vytvořit jednu třídu, která obsahuje sadu souvisejících nespravovaných funkcí.  
   
-3. [Vytvořte prototypy ve spravovaném kódu](creating-prototypes-in-managed-code.md).  
+3. [Vytváření prototypů ve spravovaném kódu](creating-prototypes-in-managed-code.md).  
   
-     [Visual Basic] Použijte **declare** prohlášení s **funkce** a **Lib** klíčová slova. V některých výjimečných případech můžete použít **DllImportAttribute** s klíčová slova **sdílené funkce.** Tyto případy jsou vysvětleny dále v této části.  
+     [Visual Basic] Použijte příkaz **Declare** s klíčovými slovy **Function** a **lib** . V některých vzácných případech můžete použít **DllImportAttribute** pomocí klíčových slov **sdílených funkcí** . Tyto případy jsou vysvětleny dále v této části.  
   
-     [C#] Pomocí **atributu DllImportAttribute** můžete identifikovat knihovnu DLL a funkci. Označte metodu **statickými** a **extern** modifikátory.  
+     Jazyk Použijte **DllImportAttribute** k identifikaci knihovny DLL a funkce. Označte metodu **statickými** a **externými** modifikátory.  
   
-     [C++] Pomocí **atributu DllImportAttribute** můžete identifikovat knihovnu DLL a funkci. Označte metodu obálky nebo funkci **extern "C"**.  
+     Volat Použijte **DllImportAttribute** k identifikaci knihovny DLL a funkce. Označte obálkovou metodu nebo funkci s **extern "C"**.  
   
-4. [Volání funkce DLL](calling-a-dll-function.md).  
+4. [Volání funkce knihovny DLL](calling-a-dll-function.md).  
   
-     Volání metody na spravované třídy, stejně jako jakékoli jiné spravované metody. [Předávání struktury](passing-structures.md) a [provádění funkcí zpětného volání](callback-functions.md) jsou zvláštní případy.  
+     Volejte metodu na spravované třídě stejně jako jakoukoli jinou spravovanou metodu. [Předání struktur](passing-structures.md) a [implementace funkcí zpětného volání](callback-functions.md) jsou zvláštní případy.  
   
- Příklady, které ukazují, jak vytvořit . NET založené deklarace, které mají být použity s platformy vyvolat, naleznete v [tématu zařazování dat s platformy invoke](marshaling-data-with-platform-invoke.md).  
+ Příklady, které ukazují, jak vytvořit. Deklarace založené na síti, které se mají použít s voláním platformy, najdete v tématu [zařazování dat pomocí vyvolání platformy](marshaling-data-with-platform-invoke.md).  
   
 ## <a name="a-closer-look-at-platform-invoke"></a>Bližší pohled na vyvolání platformy  
- Platforma vyvolání spoléhá na metadata vyhledejte exportované funkce a zařazování jejich argumenty za běhu. Tento proces je znázorněn na následujícím obrázku.  
+ Vyvolání platformy spoléhá na metadata pro vyhledání exportovaných funkcí a zařazování jejich argumentů za běhu. Tento proces je znázorněn na následujícím obrázku.  
   
- ![Diagram, který znázorňuje volání platformy vyvolat.](./media/consuming-unmanaged-dll-functions/platform-invoke-call.gif)  
+ ![Diagram, který zobrazuje volání vyvolání platformy.](./media/consuming-unmanaged-dll-functions/platform-invoke-call.gif)  
   
- Když platforma vyvolá volání nespravované funkce, provede následující posloupnost akcí:  
+ Když vyvolání platformy volá nespravovanou funkci, provede následující posloupnost akcí:  
   
-1. Vyhledá dll obsahující funkci.  
+1. Vyhledá knihovnu DLL obsahující funkci.  
   
-2. Načte dll do paměti.  
+2. Načte knihovnu DLL do paměti.  
   
-3. Vyhledá adresu funkce v paměti a odešle své argumenty do zásobníku, zařazování dat podle potřeby.  
+3. Vyhledá adresu funkce v paměti a vloží její argumenty do zásobníku, zařazování dat podle potřeby.  
   
     > [!NOTE]
-    > Vyhledání a načtení dll a umístění adresy funkce v paměti dojít pouze při prvním volání funkce.  
+    > Vyhledání a načtení knihovny DLL a vyhledání adresy funkce v paměti dochází pouze při prvním volání funkce.  
   
-4. Přenese řízení na nespravovanou funkci.  
+4. Přenáší řízení na nespravovanou funkci.  
   
- Vyvolání platformy vyvolá výjimky generované nespravovanou funkcí spravovanému volajícímu.
+ Vyvolání platformy vyvolá výjimku vygenerovanou nespravovanou funkcí spravovanému volajícímu.
 
 ## <a name="see-also"></a>Viz také
 

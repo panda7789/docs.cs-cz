@@ -15,61 +15,61 @@ ms.locfileid: "79180548"
 ---
 # <a name="collectible-assemblies-for-dynamic-type-generation"></a>Kolekční sestavení pro generování dynamických typů
 
-*Sběratelská sestavení* jsou dynamická sestavení, která lze uvolnit bez uvolnění domény aplikace, ve které byla vytvořena. Všechny spravované a nespravované paměti používané sběratelské sestavení a typy, které obsahuje lze rekultivovat. Informace, jako je název sestavení, jsou odebrány z vnitřních tabulek.
+*Sestavení kolekční* jsou dynamická sestavení, která lze uvolnit bez uvolnění domény aplikace, ve které byly vytvořeny. Veškerá spravovaná a nespravovaná paměť, kterou používá kolekční sestavení, a typy, které obsahuje, mohou být uvolněny. Informace, jako je název sestavení, jsou odebrány z interní tabulky.
 
-Chcete-li povolit <xref:System.Reflection.Emit.AssemblyBuilderAccess.RunAndCollect?displayProperty=nameWithType> uvolnění, použijte příznak při vytváření dynamické sestavy. Sestava je přechodná (to znamená, že ji nelze uložit) a podléhá omezením popsaným v části [Omezení sběratelských sestavení.](#restrictions-on-collectible-assemblies) Běžný jazyk runtime (CLR) uvolní sběratelské sestavení automaticky při uvolnění všech objektů přidružených k sestavení. Ve všech ostatních ohledech jsou sběratelská sestavy vytvářena a používána stejným způsobem jako ostatní dynamické sestavy.
+Chcete-li povolit uvolnění, <xref:System.Reflection.Emit.AssemblyBuilderAccess.RunAndCollect?displayProperty=nameWithType> použijte příznak při vytváření dynamického sestavení. Sestavení je přechodné (to znamená, nemůže být uloženo) a podléhá omezením popsaným v části [omezení pro sestavení kolekční](#restrictions-on-collectible-assemblies) . Modul CLR (Common Language Runtime) uvolní sestavení kolekční automaticky při uvolnění všech objektů přidružených k sestavení. Ve všech ostatních ohledech se kolekční sestavení vytvářejí a používají stejným způsobem jako ostatní dynamická sestavení.
 
-## <a name="lifetime-of-collectible-assemblies"></a>Životnost sběratelských sestav
+## <a name="lifetime-of-collectible-assemblies"></a>Doba života kolekční sestavení
 
-Životnost sběratelské sestavení je řízena existencí odkazů na typy, které obsahuje, a objekty, které jsou vytvořeny z těchto typů. Běžný jazyk runtime neuvolní sestavení tak dlouho, dokud jeden`T` nebo více z následujících existují ( je libovolný typ, který je definován v sestavení):
+Životnost sestavení kolekční je řízena existencí odkazů na typy, které obsahuje, a objekty, které jsou vytvořeny z těchto typů. Modul CLR (Common Language Runtime) neuvolní sestavení, pokud existuje jeden nebo více z následujících typů (`T` je libovolný typ, který je definován v sestavení):
 
-- Instance `T`aplikace .
+- Instance `T`.
 
 - Instance pole `T`.
 
-- Instance obecného typu, `T` který má jako jeden z jeho argumentů typu. To zahrnuje obecné `T`kolekce , i v případě, že kolekce je prázdný.
+- Instance obecného typu, který má `T` jako jeden z jejích argumentů typu. To zahrnuje obecné kolekce `T`, a to i v případě, že je kolekce prázdná.
 
-- Instance <xref:System.Type> nebo <xref:System.Reflection.Emit.TypeBuilder> která `T`představuje .
+- Instance <xref:System.Type> nebo <xref:System.Reflection.Emit.TypeBuilder> , která představuje `T`.
 
    > [!IMPORTANT]
-   > Je nutné uvolnit všechny objekty, které představují části sestavy. Definuje, <xref:System.Reflection.Emit.ModuleBuilder> který `T` definuje udržuje <xref:System.Reflection.Emit.TypeBuilder>odkaz na <xref:System.Reflection.Emit.AssemblyBuilder> , a objekt <xref:System.Reflection.Emit.ModuleBuilder>udržuje odkaz na , takže odkazy na tyto objekty musí být uvolněna. Dokonce i existence <xref:System.Reflection.Emit.LocalBuilder> nebo <xref:System.Reflection.Emit.ILGenerator> použité při `T` stavbě brání vykládce.
+   > Je nutné uvolnit všechny objekty, které reprezentují části sestavení. Rozhraní <xref:System.Reflection.Emit.ModuleBuilder> , které `T` definuje odkaz na <xref:System.Reflection.Emit.TypeBuilder>, a <xref:System.Reflection.Emit.AssemblyBuilder> objekt udržuje odkaz na <xref:System.Reflection.Emit.ModuleBuilder>, takže odkazy na tyto objekty musí být uvolněny. Dokonce i existence <xref:System.Reflection.Emit.LocalBuilder> nebo, která se <xref:System.Reflection.Emit.ILGenerator> používá v rámci konstrukce `T` prevence vykládku.
 
-- Statický odkaz `T` na jiný dynamicky `T1` definovaný typ, který je stále dosažitelný spuštěním kódu. `T1` Může například odvodit `T`z , nebo `T` může být `T1`typ parametru v metodě .
+- Statický odkaz na `T` jiný dynamicky definovaný typ `T1` , který je stále dosažitelný spuštěním kódu. Například `T1` může odvozovat z `T`nebo `T` může být typem parametru v metodě. `T1`
 
-- A **ByRef** na statické pole, které patří do `T`.
+- Typ **ByRef** ke statickému poli, které patří `T`do.
 
-- A <xref:System.RuntimeTypeHandle> <xref:System.RuntimeFieldHandle>, <xref:System.RuntimeMethodHandle> nebo který `T` odkazuje na nebo `T`na složku .
+- A <xref:System.RuntimeTypeHandle>, <xref:System.RuntimeFieldHandle>nebo <xref:System.RuntimeMethodHandle> , který odkazuje na `T` součást prvku `T`.
 
-- Instance jakékoli reflexe objektu, který by mohl <xref:System.Type> být použit `T`nepřímo nebo přímo pro přístup k objektu, který představuje . <xref:System.Type> Například objekt pro `T` lze získat z typu pole, `T`jehož typ prvku `T` je , nebo z obecného typu, který má jako argument typu.
+- Instance libovolného objektu reflexe, který může být použit nepřímo nebo přímo pro přístup <xref:System.Type> k objektu, `T`který představuje. Například <xref:System.Type> objekt pro `T` lze získat z typu pole, jehož typ elementu je `T`, nebo z obecného typu, který má `T` jako argument typu.
 
-- Metoda `M` v zásobníku volání libovolného `M` vlákna, `T` kde je metoda nebo metoda na úrovni modulu, která je definována v sestavení.
+- Metoda `M` v zásobníku volání libovolného vlákna, kde `M` je metoda `T` nebo metoda na úrovni modulu, která je definována v sestavení.
 
-- Delegát na statickou metodu, která je definována v modulu sestavení.
+- Delegát pro statickou metodu, která je definována v modulu sestavení.
 
-Pokud existuje pouze jedna položka z tohoto seznamu pouze pro jeden typ nebo jednu metodu v sestavení, runtime nemůže uvolnit sestavení.
+Pokud pouze jedna položka z tohoto seznamu existuje pouze pro jeden typ nebo jednu metodu v sestavení, modul runtime nemůže uvolnit sestavení.
 
 > [!NOTE]
-> Runtime není ve skutečnosti uvolnit sestavení, dokud finalizační metody byly spuštěny pro všechny položky v seznamu.
+> Modul runtime ve skutečnosti nenačítá sestavení, dokud nejsou spuštěny finalizační metody pro všechny položky v seznamu.
 
-Pro účely sledování životnosti je vytvořený `List<int>` obecný typ, například (v jazyce C#) nebo `List(Of Integer)` (v jazyce Visual Basic), který je vytvořen a používán při generování sběratelského sestavení, považován za definovaný buď v sestavení, které obsahuje definici obecného typu, nebo v sestavení, které obsahuje definici jednoho z jeho argumentů typu. Přesné sestavení, které se používá, je podrobnosti implementace a může změnit.
+Pro účely sledování životního cyklu se konstruovaný obecný typ, jako `List<int>` je například (v jazyce `List(Of Integer)` C#) nebo (v Visual Basic), který je vytvořen a použit při generování sestavení kolekční, je považován za definovaný buď v sestavení, které obsahuje definici obecného typu nebo v sestavení, které obsahuje definici jednoho z jejích argumentů typu. Přesné sestavení, které je použito, je podrobné informace o implementaci a může se změnit.
 
-## <a name="restrictions-on-collectible-assemblies"></a>Omezení sběratelských sestav
+## <a name="restrictions-on-collectible-assemblies"></a>Omezení pro kolekční sestavení
 
-Pro sběratelská sestavení platí následující omezení:
+Následující omezení platí pro kolekční sestavení:
 
-- **Statické odkazy** Typy v běžné dynamické sestavení nemůže mít statické odkazy na typy, které jsou definovány ve sběratelské sestavení. Například pokud definujete běžný typ, který dědí z typu <xref:System.NotSupportedException> ve sběratelském sestavení, je vyvolána výjimka. Typ ve sběratelské sestavě může mít statické odkazy na typ v jiné sběratelské sestavě, ale to prodlužuje životnost odkazovaného sestavení na životnost odkazující sestavy.
+- **Statické odkazy** Typy v běžném dynamickém sestavení nemohou mít statické odkazy na typy, které jsou definovány v sestavení kolekční. Například pokud definujete běžný typ, který dědí z typu v sestavení kolekční, je vyvolána <xref:System.NotSupportedException> výjimka. Typ v sestavení kolekční může mít statické odkazy na typ v jiném sestavení kolekční, ale rozšiřuje životnost odkazovaného sestavení na životnost odkazujícího sestavení.
 
-- **KOM interop** V rámci sběratelského sestavení nelze definovat žádná rozhraní modelu COM a žádné instance typů v rámci sběratelského sestavení nelze převést na objekty COM. Typ ve sběratelské sestavě nemůže sloužit jako com volatelné obálky (CCW) nebo runtime volatelné obálky (RCW). Typy ve sběratelských sestaveních však mohou používat objekty, které implementují rozhraní COM.
+- **Zprostředkovatel komunikace s objekty COM** V rámci kolekční sestavení nelze definovat žádná rozhraní modelu COM a žádné instance typů v rámci sestavení kolekční nelze převést na objekty modelu COM. Typ v sestavení kolekční nemůže sloužit jako obálka s možnou modelem COM (doleva) nebo obálka s možnou (RCW). Typy v sestaveních kolekční však mohou používat objekty, které implementují rozhraní COM.
 
-- **Vyvolání platformy** Metody, které <xref:System.Runtime.InteropServices.DllImportAttribute> mají atribut nebude kompilovat, pokud jsou deklarovány ve sběratelské sestavení. Instrukce <xref:System.Reflection.Emit.OpCodes.Calli?displayProperty=nameWithType> nelze použít při implementaci typu ve sběratelské sestavení a tyto typy nelze zařazovat do nespravovaného kódu. Můžete však volat do nativního kódu pomocí vstupního bodu, který je deklarován v nesběratelském sestavení.
+- **Vyvolání platformy** Metody, které mají <xref:System.Runtime.InteropServices.DllImportAttribute> atribut, nebudou zkompilovány, pokud jsou deklarovány v sestavení kolekční. <xref:System.Reflection.Emit.OpCodes.Calli?displayProperty=nameWithType> Instrukci nelze použít v implementaci typu v kolekční sestavení a takové typy nelze zařadit do nespravovaného kódu. Do nativního kódu však můžete zavolat pomocí vstupního bodu, který je deklarován v sestavení bez kolekční.
 
-- **Zařazování** Objekty (zejména delegáti), které jsou definovány ve sběratelských sestaveních, nelze zařadit. Toto je omezení pro všechny přechodné emitované typy.
+- **Zařazování** Objekty (zejména Delegáti), které jsou definovány v sestaveních kolekční, nelze zařadit. Toto je omezení pro všechny přechodné emitované typy.
 
-- **Montážní zatížení** Odraz emituje je jediný mechanismus, který je podporován pro načítání sběratelských sestav. Sestavení, která jsou načtena pomocí jiné formy nakládky sestavy, nelze uvolnit.
+- **Načítání sestavení** Generování reflexe je jediným mechanismem, který je podporován pro načítání sestavení kolekční. Sestavení, která jsou načtena pomocí jakékoliv jiné formy načítání sestavení, nelze uvolnit.
 
-- **Kontextové objekty** Kontextové statické proměnné nejsou podporovány. Typy ve sběratelské sestavě nelze rozšířit <xref:System.ContextBoundObject>. Kód ve sběratelských sestaveních však může používat kontextové objekty, které jsou definovány jinde.
+- **Kontextově vázané objekty** Kontext – statické proměnné nejsou podporovány. Typy v sestavení kolekční se nedají <xref:System.ContextBoundObject>zvětšit. Nicméně kód v sestaveních kolekční může používat kontextově vázané objekty, které jsou definovány jinde.
 
-- **Statická data z vlákna** Proměnné statické podprocesy nejsou podporovány.
+- **Vlákna – statická data** Proměnné statických vláken nejsou podporovány.
 
 ## <a name="see-also"></a>Viz také
 
