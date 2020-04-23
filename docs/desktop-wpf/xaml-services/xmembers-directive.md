@@ -1,0 +1,40 @@
+---
+title: x:Members – direktiva
+ms.date: 03/30/2017
+ms.assetid: 155b393d-3b49-4c5a-8c9e-b3d9893af4e4
+ms.openlocfilehash: c751a4f1cdea8dce7ef5165f5225ab3a825c7344
+ms.sourcegitcommit: c2d9718996402993cf31541f11e95531bc68bad0
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "82071463"
+---
+# <a name="xmembers-directive"></a><span data-ttu-id="db05c-102">x:Members – direktiva</span><span class="sxs-lookup"><span data-stu-id="db05c-102">x:Members Directive</span></span>
+<span data-ttu-id="db05c-103">Obsahuje sadu členů, které jsou definovány ve značkách, které platí pro x:Class nadřazeného prvku.</span><span class="sxs-lookup"><span data-stu-id="db05c-103">Holds a set of members that are defined in markup, which apply to the x:Class of the parent element.</span></span>
+
+## <a name="xaml-attribute-usage"></a><span data-ttu-id="db05c-104">Použití atributu XAML</span><span class="sxs-lookup"><span data-stu-id="db05c-104">XAML Attribute Usage</span></span>
+
+```xaml
+<object x:Class="className">
+<x:Members>
+  oneOrMoreMembers
+</x:Members
+</object>
+```
+
+## <a name="xaml-values"></a><span data-ttu-id="db05c-105">Hodnoty XAML</span><span class="sxs-lookup"><span data-stu-id="db05c-105">XAML Values</span></span>
+
+|||
+|-|-|
+|`className`|<span data-ttu-id="db05c-106">Název záložní třídy nebo částečné třídy pro výrobu XAML.</span><span class="sxs-lookup"><span data-stu-id="db05c-106">Name of the backing class or partial class for the XAML production.</span></span> <span data-ttu-id="db05c-107">Viz Poznámky.</span><span class="sxs-lookup"><span data-stu-id="db05c-107">See Remarks.</span></span>|
+|`oneOrMoreMembers`|<span data-ttu-id="db05c-108">Jeden nebo více prvků objektu, které představují definice členů.</span><span class="sxs-lookup"><span data-stu-id="db05c-108">One or more object elements that represent member definitions.</span></span> <span data-ttu-id="db05c-109">Obvykle se jedná `x:Property` o objektové prvky.</span><span class="sxs-lookup"><span data-stu-id="db05c-109">Typically, these are `x:Property` object elements.</span></span> <span data-ttu-id="db05c-110">Viz Poznámky.</span><span class="sxs-lookup"><span data-stu-id="db05c-110">See Remarks.</span></span>|
+
+## <a name="remarks"></a><span data-ttu-id="db05c-111">Poznámky</span><span class="sxs-lookup"><span data-stu-id="db05c-111">Remarks</span></span>
+
+<span data-ttu-id="db05c-112">V implementaci služby .NET XAML Services neexistuje žádná `x:Members`záložní třída nebo základní implementace člena pro .</span><span class="sxs-lookup"><span data-stu-id="db05c-112">In .NET XAML Services implementation, there is no backing class or underlying member implementation for `x:Members`.</span></span> <span data-ttu-id="db05c-113">`x:Members`je speciální člen XAML, který může existovat jako člen libovolného typu.</span><span class="sxs-lookup"><span data-stu-id="db05c-113">`x:Members` is a special XAML member that can exist as a member on any type.</span></span> <span data-ttu-id="db05c-114">V datovém proudu uzlu `x:Members` XAML je `Members`reprezentován jako člen s názvem , z oboru názvů XAML jazyka XAML.</span><span class="sxs-lookup"><span data-stu-id="db05c-114">In a XAML node stream, `x:Members` is represented as a member named `Members`, from the XAML language XAML namespace.</span></span> <span data-ttu-id="db05c-115">Člen `Members` obsahuje obecný seznam `Member` objektů jen pro čtení.</span><span class="sxs-lookup"><span data-stu-id="db05c-115">The member `Members` contains a read-only generic list of `Member` objects.</span></span> <span data-ttu-id="db05c-116">V typické značky jednotlivých `x:Property` členů jsou určeny jako prvky vlastností.</span><span class="sxs-lookup"><span data-stu-id="db05c-116">In typical markup the individual members are specified as `x:Property` property elements.</span></span> <span data-ttu-id="db05c-117">`x:Property`je přesnější typ speciálně pro vlastnosti typů `x:Member`a je přiřaditelný .</span><span class="sxs-lookup"><span data-stu-id="db05c-117">`x:Property` is a more precise type specifically for properties of types and is assignable to `x:Member`.</span></span> <span data-ttu-id="db05c-118">Další informace naleznete [v tématu x:Property Directive](xproperty-directive.md).</span><span class="sxs-lookup"><span data-stu-id="db05c-118">For more information, see [x:Property Directive](xproperty-directive.md).</span></span>
+
+<span data-ttu-id="db05c-119">Chcete-li podporovat `x:Members` praktické použití jako prostředek k určení definice členů ve značkách, musí být členy přidruženy ke třídě, která může být změněna.</span><span class="sxs-lookup"><span data-stu-id="db05c-119">To support a practical usage of `x:Members` as a means to specify member definitions in markup, the members must be associated with a class that can be modified.</span></span> <span data-ttu-id="db05c-120">Zamýšlený model je, který `x:Members` existuje jako člen typu, `x:Class`který určuje .</span><span class="sxs-lookup"><span data-stu-id="db05c-120">The intended model is that `x:Members` exists as a member of a type that specifies an `x:Class`.</span></span> <span data-ttu-id="db05c-121">Mechanismus pro přisuzování typů a členů nebo pro vytváření definic dynamických členů však není podporován na úrovni služby .NET XAML Services.</span><span class="sxs-lookup"><span data-stu-id="db05c-121">However, the mechanism for associating types and members or for producing dynamic member definitions is not supported at .NET XAML Services level.</span></span> <span data-ttu-id="db05c-122">To je ponecháno na jednotlivé architektury, které mají modely aplikací, které podporují definice členů z XAML.</span><span class="sxs-lookup"><span data-stu-id="db05c-122">This is left to individual frameworks that have application models that support member definitions from XAML.</span></span> <span data-ttu-id="db05c-123">MSBUILD obvykle sestavení akce, které značky kompilovat XAML a buď integrovat s kódem na pozadí nebo vyrábět čisté z XAML sestavení jsou potřebné pro podporu této funkce.</span><span class="sxs-lookup"><span data-stu-id="db05c-123">Typically, MSBUILD build actions that markup-compile the XAML and either integrate it with code-behind or produce pure from-XAML assemblies are needed to support that feature.</span></span>
+
+## <a name="xmembers-for-windows-workflow-foundation"></a><span data-ttu-id="db05c-124">x:Členové pro Nadaci pracovního postupu Windows</span><span class="sxs-lookup"><span data-stu-id="db05c-124">x:Members for Windows Workflow Foundation</span></span>
+
+<span data-ttu-id="db05c-125">Pro Windows Workflow `x:Members` Foundation obsahuje členy vlastní aktivity složené výhradně v XAML nebo XAML definované dynamické členy pro návrháře aktivit s kódem na pozadí.</span><span class="sxs-lookup"><span data-stu-id="db05c-125">For Windows Workflow Foundation, `x:Members` contains the members of a custom activity composed entirely in XAML, or XAML –defined dynamic members for an activity designer with code-behind.</span></span> <span data-ttu-id="db05c-126">`x:Class`musí být také uveden na kořenovém prvku výroby XAML.</span><span class="sxs-lookup"><span data-stu-id="db05c-126">`x:Class` must also be specified on the root element of the XAML production.</span></span> <span data-ttu-id="db05c-127">Toto není požadavek na úrovni služby .NET XAML, ale stane se požadavkem při načtení výroby XAML akcemi sestavení MSBUILD, které podporují vlastní aktivity a Windows Workflow Foundation XAML obecně.</span><span class="sxs-lookup"><span data-stu-id="db05c-127">This is not a requirement at .NET XAML Services level, but becomes a requirement when the XAML production is loaded by the MSBUILD build actions that support custom activities and Windows Workflow Foundation XAML in general.</span></span> <span data-ttu-id="db05c-128">`x:Members`musí být první podřízený prvek ve značkách elementu objektu, který deklaruje `x:Class`.</span><span class="sxs-lookup"><span data-stu-id="db05c-128">`x:Members` must be the first child element in markup of the object element that declares the `x:Class`.</span></span>

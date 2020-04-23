@@ -1,0 +1,61 @@
+---
+title: x:FieldModifier – direktiva
+ms.date: 03/30/2017
+helpviewer_keywords:
+- FieldModifier attribute in XAML [XAML Services]
+- x:FieldModifier attribute [XAML Services]
+- XAML [XAML Services], x:FieldModifier attribute
+ms.assetid: ed427cd4-2f35-4d24-bd2f-0fa7b71ec248
+ms.openlocfilehash: 3e104b4c464d545e048f29901701c1c3dbb68229
+ms.sourcegitcommit: c2d9718996402993cf31541f11e95531bc68bad0
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "82071526"
+---
+# <a name="xfieldmodifier-directive"></a><span data-ttu-id="fd9f8-102">x:FieldModifier – direktiva</span><span class="sxs-lookup"><span data-stu-id="fd9f8-102">x:FieldModifier Directive</span></span>
+<span data-ttu-id="fd9f8-103">Upraví chování kompilace XAML tak, aby pole pro <xref:System.Reflection.TypeAttributes.Public?displayProperty=nameWithType> pojmenované odkazy <xref:System.Reflection.TypeAttributes.NotPublic?displayProperty=nameWithType> na objekty byly definovány s přístupem namísto výchozího chování.</span><span class="sxs-lookup"><span data-stu-id="fd9f8-103">Modifies XAML compilation behavior so that fields for named object references are defined with <xref:System.Reflection.TypeAttributes.Public?displayProperty=nameWithType> access instead of the <xref:System.Reflection.TypeAttributes.NotPublic?displayProperty=nameWithType> default behavior.</span></span>
+
+## <a name="xaml-attribute-usage"></a><span data-ttu-id="fd9f8-104">Použití atributu XAML</span><span class="sxs-lookup"><span data-stu-id="fd9f8-104">XAML Attribute Usage</span></span>
+
+```xaml
+<object x:FieldModifier="Public".../>
+```
+
+## <a name="xaml-values"></a><span data-ttu-id="fd9f8-105">Hodnoty XAML</span><span class="sxs-lookup"><span data-stu-id="fd9f8-105">XAML Values</span></span>
+
+|||
+|-|-|
+|<span data-ttu-id="fd9f8-106">*Veřejné*</span><span class="sxs-lookup"><span data-stu-id="fd9f8-106">*Public*</span></span>|<span data-ttu-id="fd9f8-107">Přesný řetězec, který <xref:System.Reflection.TypeAttributes.Public?displayProperty=nameWithType> předáte zadat versus <xref:System.Reflection.TypeAttributes.NotPublic?displayProperty=nameWithType> se liší v závislosti na kódu na pozadí programovací jazyk, který se používá.</span><span class="sxs-lookup"><span data-stu-id="fd9f8-107">The exact string you pass to specify <xref:System.Reflection.TypeAttributes.Public?displayProperty=nameWithType> versus <xref:System.Reflection.TypeAttributes.NotPublic?displayProperty=nameWithType> varies, depending on the code-behind programming language that is used.</span></span> <span data-ttu-id="fd9f8-108">Viz Poznámky.</span><span class="sxs-lookup"><span data-stu-id="fd9f8-108">See Remarks.</span></span>|
+
+## <a name="dependencies"></a><span data-ttu-id="fd9f8-109">Závislosti</span><span class="sxs-lookup"><span data-stu-id="fd9f8-109">Dependencies</span></span>
+
+ <span data-ttu-id="fd9f8-110">Pokud výroba XAML `x:FieldModifier` používá kdekoli, kořenový prvek této výroby XAML musí deklarovat [x:Class směrnice](xclass-directive.md).</span><span class="sxs-lookup"><span data-stu-id="fd9f8-110">If a XAML production uses `x:FieldModifier` anywhere, the root element of that XAML production must declare an [x:Class Directive](xclass-directive.md).</span></span>
+
+## <a name="remarks"></a><span data-ttu-id="fd9f8-111">Poznámky</span><span class="sxs-lookup"><span data-stu-id="fd9f8-111">Remarks</span></span>
+
+<span data-ttu-id="fd9f8-112">`x:FieldModifier`není relevantní pro deklarování obecné úrovně přístupu třídy nebo jejích členů.</span><span class="sxs-lookup"><span data-stu-id="fd9f8-112">`x:FieldModifier` is not relevant for declaring the general access level of a class or its members.</span></span> <span data-ttu-id="fd9f8-113">Je relevantní pouze pro chování zpracování XAML při zpracování konkrétní XAML objekt, který je součástí výroby XAML a stane se objektem, který je potenciálně přístupný v grafu objektu aplikace.</span><span class="sxs-lookup"><span data-stu-id="fd9f8-113">It is relevant only for XAML-processing behavior when a particular XAML object that is part of a XAML production is processed, and becomes an object that is potentially accessible in the object graph of an application.</span></span> <span data-ttu-id="fd9f8-114">Ve výchozím nastavení je odkaz na pole pro takový objekt zachován jako soukromý, což brání spotřebitelům v přímé změně grafu objektu.</span><span class="sxs-lookup"><span data-stu-id="fd9f8-114">By default, the field reference for such an object is kept private, which prevents control consumers from modifying the object graph directly.</span></span> <span data-ttu-id="fd9f8-115">Místo toho se očekává, že spotřebitelé ovládacího prvku upravit objekt grafu pomocí standardní vzory, které jsou povoleny programovací modely, například získáním kořen rozložení, podřízené kolekce prvků, vyhrazené veřejné vlastnosti a tak dále.</span><span class="sxs-lookup"><span data-stu-id="fd9f8-115">Instead, control consumers are expected to modify the object graph by using standard patterns that are enabled by programming models, such as by obtaining the layout root, the child element collections, the dedicated public properties, and so on.</span></span>
+
+<span data-ttu-id="fd9f8-116">Hodnota atributu `x:FieldModifier` se liší podle programovacího jazyka a jeho účel se může lišit v konkrétních architekturách.</span><span class="sxs-lookup"><span data-stu-id="fd9f8-116">The value for the `x:FieldModifier` attribute varies by programming language, and its purpose can vary in specific frameworks.</span></span> <span data-ttu-id="fd9f8-117">Řetězec, který chcete použít, závisí <xref:System.CodeDom.Compiler.CodeDomProvider> na tom, jak každý jazyk implementuje jeho a převaděče typu, který vrátí k definování významů pro <xref:System.Reflection.TypeAttributes.Public?displayProperty=nameWithType> a <xref:System.Reflection.TypeAttributes.NotPublic?displayProperty=nameWithType>, a zda je tento jazyk rozlišována malá a velká písmena.</span><span class="sxs-lookup"><span data-stu-id="fd9f8-117">The string to use depends on how each language implements its <xref:System.CodeDom.Compiler.CodeDomProvider> and the type converters it returns to define the meanings for <xref:System.Reflection.TypeAttributes.Public?displayProperty=nameWithType> and <xref:System.Reflection.TypeAttributes.NotPublic?displayProperty=nameWithType>, and whether that language is case sensitive.</span></span>
+
+- <span data-ttu-id="fd9f8-118">Pro C#, řetězec předat <xref:System.Reflection.TypeAttributes.Public?displayProperty=nameWithType> k `public`označení je .</span><span class="sxs-lookup"><span data-stu-id="fd9f8-118">For C#, the string to pass to designate <xref:System.Reflection.TypeAttributes.Public?displayProperty=nameWithType> is `public`.</span></span>
+
+- <span data-ttu-id="fd9f8-119">V jazyce Microsoft Visual Basic .NET <xref:System.Reflection.TypeAttributes.Public?displayProperty=nameWithType> `Public`je řetězec, který má být určen, .</span><span class="sxs-lookup"><span data-stu-id="fd9f8-119">For Microsoft Visual Basic .NET, the string to pass to designate <xref:System.Reflection.TypeAttributes.Public?displayProperty=nameWithType> is `Public`.</span></span>
+
+- <span data-ttu-id="fd9f8-120">Pro C++/CLI aktuálně neexistují žádné cíle pro XAML. proto řetězec předat není definována.</span><span class="sxs-lookup"><span data-stu-id="fd9f8-120">For C++/CLI, no targets for XAML currently exist; therefore, the string to pass is undefined.</span></span>
+
+<span data-ttu-id="fd9f8-121">Můžete také <xref:System.Reflection.TypeAttributes.NotPublic?displayProperty=nameWithType> zadat`internal` ( v `Friend` jazyce C#, <xref:System.Reflection.TypeAttributes.NotPublic?displayProperty=nameWithType> v `NotPublic` jazyce Visual Basic), ale zadání je neobvyklé, protože jako chování je již výchozí.</span><span class="sxs-lookup"><span data-stu-id="fd9f8-121">You can also specify <xref:System.Reflection.TypeAttributes.NotPublic?displayProperty=nameWithType> (`internal` in C#, `Friend` in Visual Basic) but specifying <xref:System.Reflection.TypeAttributes.NotPublic?displayProperty=nameWithType> is unusual because `NotPublic` as the behavior is already the default.</span></span>
+
+<span data-ttu-id="fd9f8-122"><xref:System.Reflection.TypeAttributes.NotPublic?displayProperty=nameWithType>je výchozí chování, protože je zřídka, že kód mimo sestavení, které zkompilovalxaml potřebuje přístup k xaml-vytvořil prvek.</span><span class="sxs-lookup"><span data-stu-id="fd9f8-122"><xref:System.Reflection.TypeAttributes.NotPublic?displayProperty=nameWithType> is the default behavior because it is infrequent that code outside the assembly that compiled the XAML needs access to a XAML-created element.</span></span> <span data-ttu-id="fd9f8-123">WPF architektura zabezpečení spolu s chování kompilace XAML nedeklaruje pole, která ukládají instance prvků jako veřejné, pokud jste výslovně nastavit `x:FieldModifier` povolit veřejný přístup.</span><span class="sxs-lookup"><span data-stu-id="fd9f8-123">WPF security architecture together with XAML compilation behavior will not declare fields that store element instances as public, unless you specifically set the `x:FieldModifier` to allow public access.</span></span>
+
+<span data-ttu-id="fd9f8-124">`x:FieldModifier`je relevantní pouze pro prvky s [x:Name Directive,](xname-directive.md) protože tento název se používá k odkazování na pole poté, co je veřejné.</span><span class="sxs-lookup"><span data-stu-id="fd9f8-124">`x:FieldModifier` is only relevant for elements with an [x:Name Directive](xname-directive.md) because that name is used to reference the field after it is public.</span></span>
+
+<span data-ttu-id="fd9f8-125">Ve výchozím nastavení je částečná třída kořenového prvku veřejná; můžete však provést neveřejné pomocí [x:ClassModifier směrnice](xclassmodifier-directive.md).</span><span class="sxs-lookup"><span data-stu-id="fd9f8-125">By default, the partial class for the root element is public; however, you can make it nonpublic by using the [x:ClassModifier Directive](xclassmodifier-directive.md).</span></span> <span data-ttu-id="fd9f8-126">[Direktiva x:ClassModifier](xclassmodifier-directive.md) také ovlivňuje úroveň přístupu instance třídy kořenového prvku.</span><span class="sxs-lookup"><span data-stu-id="fd9f8-126">The [x:ClassModifier Directive](xclassmodifier-directive.md) also affects the access level of the instance of the root element class.</span></span> <span data-ttu-id="fd9f8-127">Můžete umístit `x:Name` oba `x:FieldModifier` a na kořenový prvek, ale to pouze vytvoří kopii veřejného pole kořenový prvek, s true kořenový prvek třídy úroveň přístupu stále [řízena x:ClassModifier směrnice](xclassmodifier-directive.md).</span><span class="sxs-lookup"><span data-stu-id="fd9f8-127">You can put both `x:Name` and `x:FieldModifier` on the root element, but this only makes a public field copy of the root element, with the true root element class access level still controlled by [x:ClassModifier Directive](xclassmodifier-directive.md).</span></span>
+
+## <a name="see-also"></a><span data-ttu-id="fd9f8-128">Viz také</span><span class="sxs-lookup"><span data-stu-id="fd9f8-128">See also</span></span>
+
+- [<span data-ttu-id="fd9f8-129">XAML a vlastní třídy pro WPF</span><span class="sxs-lookup"><span data-stu-id="fd9f8-129">XAML and Custom Classes for WPF</span></span>](../../framework/wpf/advanced/xaml-and-custom-classes-for-wpf.md)
+- [<span data-ttu-id="fd9f8-130">Podkladový kód a kód XAML v subsystému WPF</span><span class="sxs-lookup"><span data-stu-id="fd9f8-130">Code-Behind and XAML in WPF</span></span>](../../framework/wpf/advanced/code-behind-and-xaml-in-wpf.md)
+- [<span data-ttu-id="fd9f8-131">x:Name – direktiva</span><span class="sxs-lookup"><span data-stu-id="fd9f8-131">x:Name Directive</span></span>](xname-directive.md)
+- [<span data-ttu-id="fd9f8-132">Sestavení aplikace WPF (WPF)</span><span class="sxs-lookup"><span data-stu-id="fd9f8-132">Building a WPF Application (WPF)</span></span>](../../framework/wpf/app-development/building-a-wpf-application-wpf.md)
+- [<span data-ttu-id="fd9f8-133">x:ClassModifier – direktiva</span><span class="sxs-lookup"><span data-stu-id="fd9f8-133">x:ClassModifier Directive</span></span>](xclassmodifier-directive.md)

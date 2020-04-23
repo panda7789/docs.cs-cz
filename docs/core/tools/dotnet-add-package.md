@@ -2,22 +2,22 @@
 title: dotnet přidat balíček, příkaz
 description: Příkaz "dotnet add package" poskytuje vhodnou možnost přidání odkazu na balíček NuGet do projektu.
 ms.date: 02/14/2020
-ms.openlocfilehash: 24a25cdab2aab30d52f8407adfda437f47437290
-ms.sourcegitcommit: 927b7ea6b2ea5a440c8f23e3e66503152eb85591
+ms.openlocfilehash: 1d57aed59ccd45417c88f9b6a2f9dd768fda9b58
+ms.sourcegitcommit: 73aa9653547a1cd70ee6586221f79cc29b588ebd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81463758"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "82102850"
 ---
-# <a name="dotnet-add-package"></a><span data-ttu-id="c4f81-103">dotnet add package</span><span class="sxs-lookup"><span data-stu-id="c4f81-103">dotnet add package</span></span>
+# <a name="dotnet-add-package"></a><span data-ttu-id="75587-103">dotnet add package</span><span class="sxs-lookup"><span data-stu-id="75587-103">dotnet add package</span></span>
 
-<span data-ttu-id="c4f81-104">**Tento článek se týká:** ✔️ .NET Core 2.x SDK a novější verze</span><span class="sxs-lookup"><span data-stu-id="c4f81-104">**This article applies to:** ✔️ .NET Core 2.x SDK and later versions</span></span>
+<span data-ttu-id="75587-104">**Tento článek se týká:** ✔️ .NET Core 2.x SDK a novější verze</span><span class="sxs-lookup"><span data-stu-id="75587-104">**This article applies to:** ✔️ .NET Core 2.x SDK and later versions</span></span>
 
-## <a name="name"></a><span data-ttu-id="c4f81-105">Název</span><span class="sxs-lookup"><span data-stu-id="c4f81-105">Name</span></span>
+## <a name="name"></a><span data-ttu-id="75587-105">Název</span><span class="sxs-lookup"><span data-stu-id="75587-105">Name</span></span>
 
-<span data-ttu-id="c4f81-106">`dotnet add package`- Přidá odkaz na balíček do souboru projektu.</span><span class="sxs-lookup"><span data-stu-id="c4f81-106">`dotnet add package` - Adds a package reference to a project file.</span></span>
+<span data-ttu-id="75587-106">`dotnet add package`- Přidá odkaz na balíček do souboru projektu.</span><span class="sxs-lookup"><span data-stu-id="75587-106">`dotnet add package` - Adds a package reference to a project file.</span></span>
 
-## <a name="synopsis"></a><span data-ttu-id="c4f81-107">Synopse</span><span class="sxs-lookup"><span data-stu-id="c4f81-107">Synopsis</span></span>
+## <a name="synopsis"></a><span data-ttu-id="75587-107">Synopse</span><span class="sxs-lookup"><span data-stu-id="75587-107">Synopsis</span></span>
 
 ```dotnetcli
 dotnet add [<PROJECT>] package <PACKAGE_NAME>
@@ -28,13 +28,11 @@ dotnet add [<PROJECT>] package <PACKAGE_NAME>
 dotnet add package -h|--help
 ```
 
-## <a name="description"></a><span data-ttu-id="c4f81-108">Popis</span><span class="sxs-lookup"><span data-stu-id="c4f81-108">Description</span></span>
+## <a name="description"></a><span data-ttu-id="75587-108">Popis</span><span class="sxs-lookup"><span data-stu-id="75587-108">Description</span></span>
 
-<span data-ttu-id="c4f81-109">Příkaz `dotnet add package` poskytuje vhodnou možnost přidání odkazu na balíček do souboru projektu.</span><span class="sxs-lookup"><span data-stu-id="c4f81-109">The `dotnet add package` command provides a convenient option to add a package reference to a project file.</span></span> <span data-ttu-id="c4f81-110">Po spuštění příkazu je kontrola kompatibility k zajištění balíček je kompatibilní s rámci v projektu.</span><span class="sxs-lookup"><span data-stu-id="c4f81-110">After running the command, there's a compatibility check to ensure the package is compatible with the frameworks in the project.</span></span> <span data-ttu-id="c4f81-111">Pokud kontrola předá, `<PackageReference>` je do souboru projektu přidán prvek a je spuštěno obnovení [dotnet.](dotnet-restore.md)</span><span class="sxs-lookup"><span data-stu-id="c4f81-111">If the check passes, a `<PackageReference>` element is added to the project file and [dotnet restore](dotnet-restore.md) is run.</span></span>
+<span data-ttu-id="75587-109">Příkaz `dotnet add package` poskytuje vhodnou možnost přidání odkazu na balíček do souboru projektu.</span><span class="sxs-lookup"><span data-stu-id="75587-109">The `dotnet add package` command provides a convenient option to add a package reference to a project file.</span></span> <span data-ttu-id="75587-110">Po spuštění příkazu je kontrola kompatibility k zajištění balíček je kompatibilní s rámci v projektu.</span><span class="sxs-lookup"><span data-stu-id="75587-110">After running the command, there's a compatibility check to ensure the package is compatible with the frameworks in the project.</span></span> <span data-ttu-id="75587-111">Pokud kontrola předá, `<PackageReference>` je do souboru projektu přidán prvek a je spuštěno obnovení [dotnet.](dotnet-restore.md)</span><span class="sxs-lookup"><span data-stu-id="75587-111">If the check passes, a `<PackageReference>` element is added to the project file and [dotnet restore](dotnet-restore.md) is run.</span></span>
 
-[!INCLUDE[DotNet Restore Note](../../../includes/dotnet-restore-note.md)]
-
-<span data-ttu-id="c4f81-112">Například přidání `Newtonsoft.Json` do *ToDo.csproj* vytváří výstup podobný následujícímu příkladu:</span><span class="sxs-lookup"><span data-stu-id="c4f81-112">For example, adding `Newtonsoft.Json` to *ToDo.csproj* produces output similar to the following example:</span></span>
+<span data-ttu-id="75587-112">Například přidání `Newtonsoft.Json` do *ToDo.csproj* vytváří výstup podobný následujícímu příkladu:</span><span class="sxs-lookup"><span data-stu-id="75587-112">For example, adding `Newtonsoft.Json` to *ToDo.csproj* produces output similar to the following example:</span></span>
 
 ```console
 Writing C:\Users\me\AppData\Local\Temp\tmp95A8.tmp
@@ -49,73 +47,77 @@ info : Package 'Newtonsoft.Json' is compatible with all the specified frameworks
 info : PackageReference for package 'Newtonsoft.Json' version '12.0.1' added to file 'C:\projects\ToDo\ToDo.csproj'.
 ```
 
-<span data-ttu-id="c4f81-113">Soubor *ToDo.csproj* nyní [`<PackageReference>`](/nuget/consume-packages/package-references-in-project-files) obsahuje prvek pro odkazovaný balíček.</span><span class="sxs-lookup"><span data-stu-id="c4f81-113">The *ToDo.csproj* file now contains a [`<PackageReference>`](/nuget/consume-packages/package-references-in-project-files) element for the referenced package.</span></span>
+<span data-ttu-id="75587-113">Soubor *ToDo.csproj* nyní [`<PackageReference>`](/nuget/consume-packages/package-references-in-project-files) obsahuje prvek pro odkazovaný balíček.</span><span class="sxs-lookup"><span data-stu-id="75587-113">The *ToDo.csproj* file now contains a [`<PackageReference>`](/nuget/consume-packages/package-references-in-project-files) element for the referenced package.</span></span>
 
 ```xml
 <PackageReference Include="Newtonsoft.Json" Version="12.0.1" />
 ```
 
-## <a name="arguments"></a><span data-ttu-id="c4f81-114">Argumenty</span><span class="sxs-lookup"><span data-stu-id="c4f81-114">Arguments</span></span>
+### <a name="implicit-restore"></a><span data-ttu-id="75587-114">Implicitní obnovení</span><span class="sxs-lookup"><span data-stu-id="75587-114">Implicit restore</span></span>
+
+[!INCLUDE[DotNet Restore Note](../../../includes/dotnet-restore-note.md)]
+
+## <a name="arguments"></a><span data-ttu-id="75587-115">Argumenty</span><span class="sxs-lookup"><span data-stu-id="75587-115">Arguments</span></span>
 
 - **`PROJECT`**
 
-  <span data-ttu-id="c4f81-115">Určuje soubor projektu.</span><span class="sxs-lookup"><span data-stu-id="c4f81-115">Specifies the project file.</span></span> <span data-ttu-id="c4f81-116">Pokud není zadán, příkaz prohledá aktuální adresář pro jeden.</span><span class="sxs-lookup"><span data-stu-id="c4f81-116">If not specified, the command searches the current directory for one.</span></span>
+  <span data-ttu-id="75587-116">Určuje soubor projektu.</span><span class="sxs-lookup"><span data-stu-id="75587-116">Specifies the project file.</span></span> <span data-ttu-id="75587-117">Pokud není zadán, příkaz prohledá aktuální adresář pro jeden.</span><span class="sxs-lookup"><span data-stu-id="75587-117">If not specified, the command searches the current directory for one.</span></span>
 
 - **`PACKAGE_NAME`**
 
-  <span data-ttu-id="c4f81-117">Odkaz na balíček přidat.</span><span class="sxs-lookup"><span data-stu-id="c4f81-117">The package reference to add.</span></span>
+  <span data-ttu-id="75587-118">Odkaz na balíček přidat.</span><span class="sxs-lookup"><span data-stu-id="75587-118">The package reference to add.</span></span>
 
-## <a name="options"></a><span data-ttu-id="c4f81-118">Možnosti</span><span class="sxs-lookup"><span data-stu-id="c4f81-118">Options</span></span>
+## <a name="options"></a><span data-ttu-id="75587-119">Možnosti</span><span class="sxs-lookup"><span data-stu-id="75587-119">Options</span></span>
 
 - **`-f|--framework <FRAMEWORK>`**
 
-  <span data-ttu-id="c4f81-119">Přidá odkaz na balíček pouze při cílení na konkrétní [rámec](../../standard/frameworks.md).</span><span class="sxs-lookup"><span data-stu-id="c4f81-119">Adds a package reference only when targeting a specific [framework](../../standard/frameworks.md).</span></span>
+  <span data-ttu-id="75587-120">Přidá odkaz na balíček pouze při cílení na konkrétní [rámec](../../standard/frameworks.md).</span><span class="sxs-lookup"><span data-stu-id="75587-120">Adds a package reference only when targeting a specific [framework](../../standard/frameworks.md).</span></span>
 
 - **`-h|--help`**
 
-  <span data-ttu-id="c4f81-120">Vytiskne krátkou nápovědu pro příkaz.</span><span class="sxs-lookup"><span data-stu-id="c4f81-120">Prints out a short help for the command.</span></span>
+  <span data-ttu-id="75587-121">Vytiskne krátkou nápovědu pro příkaz.</span><span class="sxs-lookup"><span data-stu-id="75587-121">Prints out a short help for the command.</span></span>
 
 - **`--interactive`**
 
-  <span data-ttu-id="c4f81-121">Umožňuje příkazu zastavit a čekat na vstup nebo akci uživatele (například k dokončení ověřování).</span><span class="sxs-lookup"><span data-stu-id="c4f81-121">Allows the command to stop and wait for user input or action (for example, to complete authentication).</span></span> <span data-ttu-id="c4f81-122">K dispozici od .NET Core 2.1 SDK, verze 2.1.400 nebo novější.</span><span class="sxs-lookup"><span data-stu-id="c4f81-122">Available since .NET Core 2.1 SDK, version 2.1.400 or later.</span></span>
+  <span data-ttu-id="75587-122">Umožňuje příkazu zastavit a čekat na vstup nebo akci uživatele (například k dokončení ověřování).</span><span class="sxs-lookup"><span data-stu-id="75587-122">Allows the command to stop and wait for user input or action (for example, to complete authentication).</span></span> <span data-ttu-id="75587-123">K dispozici od .NET Core 2.1 SDK, verze 2.1.400 nebo novější.</span><span class="sxs-lookup"><span data-stu-id="75587-123">Available since .NET Core 2.1 SDK, version 2.1.400 or later.</span></span>
 
 - **`-n|--no-restore`**
 
-  <span data-ttu-id="c4f81-123">Přidá odkaz na balíček bez provedení náhledu obnovení a kontroly kompatibility.</span><span class="sxs-lookup"><span data-stu-id="c4f81-123">Adds a package reference without performing a restore preview and compatibility check.</span></span>
+  <span data-ttu-id="75587-124">Přidá odkaz na balíček bez provedení náhledu obnovení a kontroly kompatibility.</span><span class="sxs-lookup"><span data-stu-id="75587-124">Adds a package reference without performing a restore preview and compatibility check.</span></span>
 
 - **`--package-directory <PACKAGE_DIRECTORY>`**
 
-  <span data-ttu-id="c4f81-124">Adresář, kde chcete obnovit balíčky.</span><span class="sxs-lookup"><span data-stu-id="c4f81-124">The directory where to restore the packages.</span></span> <span data-ttu-id="c4f81-125">Výchozí umístění obnovení `%userprofile%\.nuget\packages` balíčku je `~/.nuget/packages` v systému Windows a na macOS a Linuxu.</span><span class="sxs-lookup"><span data-stu-id="c4f81-125">The default package restore location is `%userprofile%\.nuget\packages` on Windows and `~/.nuget/packages` on macOS and Linux.</span></span> <span data-ttu-id="c4f81-126">Další informace naleznete [v tématu Správa globálních balíčků, mezipaměti a dočasných složek v NuGet](https://docs.microsoft.com/nuget/consume-packages/managing-the-global-packages-and-cache-folders).</span><span class="sxs-lookup"><span data-stu-id="c4f81-126">For more information, see [Managing the global packages, cache, and temp folders in NuGet](https://docs.microsoft.com/nuget/consume-packages/managing-the-global-packages-and-cache-folders).</span></span>
+  <span data-ttu-id="75587-125">Adresář, kde chcete obnovit balíčky.</span><span class="sxs-lookup"><span data-stu-id="75587-125">The directory where to restore the packages.</span></span> <span data-ttu-id="75587-126">Výchozí umístění obnovení `%userprofile%\.nuget\packages` balíčku je `~/.nuget/packages` v systému Windows a na macOS a Linuxu.</span><span class="sxs-lookup"><span data-stu-id="75587-126">The default package restore location is `%userprofile%\.nuget\packages` on Windows and `~/.nuget/packages` on macOS and Linux.</span></span> <span data-ttu-id="75587-127">Další informace naleznete [v tématu Správa globálních balíčků, mezipaměti a dočasných složek v NuGet](https://docs.microsoft.com/nuget/consume-packages/managing-the-global-packages-and-cache-folders).</span><span class="sxs-lookup"><span data-stu-id="75587-127">For more information, see [Managing the global packages, cache, and temp folders in NuGet](https://docs.microsoft.com/nuget/consume-packages/managing-the-global-packages-and-cache-folders).</span></span>
 
 - **`-s|--source <SOURCE>`**
 
-  <span data-ttu-id="c4f81-127">NuGet zdroj balíčku použít během operace obnovení.</span><span class="sxs-lookup"><span data-stu-id="c4f81-127">The NuGet package source to use during the restore operation.</span></span>
+  <span data-ttu-id="75587-128">NuGet zdroj balíčku použít během operace obnovení.</span><span class="sxs-lookup"><span data-stu-id="75587-128">The NuGet package source to use during the restore operation.</span></span>
 
 - **`-v|--version <VERSION>`**
 
-  <span data-ttu-id="c4f81-128">Verze balíčku.</span><span class="sxs-lookup"><span data-stu-id="c4f81-128">Version of the package.</span></span> <span data-ttu-id="c4f81-129">Viz [NuGet balíček verze .](https://docs.microsoft.com/nuget/reference/package-versioning)</span><span class="sxs-lookup"><span data-stu-id="c4f81-129">See [NuGet package versioning](https://docs.microsoft.com/nuget/reference/package-versioning).</span></span>
+  <span data-ttu-id="75587-129">Verze balíčku.</span><span class="sxs-lookup"><span data-stu-id="75587-129">Version of the package.</span></span> <span data-ttu-id="75587-130">Viz [NuGet balíček verze .](https://docs.microsoft.com/nuget/reference/package-versioning)</span><span class="sxs-lookup"><span data-stu-id="75587-130">See [NuGet package versioning](https://docs.microsoft.com/nuget/reference/package-versioning).</span></span>
 
-## <a name="examples"></a><span data-ttu-id="c4f81-130">Příklady</span><span class="sxs-lookup"><span data-stu-id="c4f81-130">Examples</span></span>
+## <a name="examples"></a><span data-ttu-id="75587-131">Příklady</span><span class="sxs-lookup"><span data-stu-id="75587-131">Examples</span></span>
 
-- <span data-ttu-id="c4f81-131">Přidejte `Newtonsoft.Json` balíček NuGet do projektu:</span><span class="sxs-lookup"><span data-stu-id="c4f81-131">Add `Newtonsoft.Json` NuGet package to a project:</span></span>
+- <span data-ttu-id="75587-132">Přidejte `Newtonsoft.Json` balíček NuGet do projektu:</span><span class="sxs-lookup"><span data-stu-id="75587-132">Add `Newtonsoft.Json` NuGet package to a project:</span></span>
 
   ```dotnetcli
   dotnet add package Newtonsoft.Json
   ```
 
-- <span data-ttu-id="c4f81-132">Přidání konkrétní verze balíčku do projektu:</span><span class="sxs-lookup"><span data-stu-id="c4f81-132">Add a specific version of a package to a project:</span></span>
+- <span data-ttu-id="75587-133">Přidání konkrétní verze balíčku do projektu:</span><span class="sxs-lookup"><span data-stu-id="75587-133">Add a specific version of a package to a project:</span></span>
 
   ```dotnetcli
   dotnet add ToDo.csproj package Microsoft.Azure.DocumentDB.Core -v 1.0.0
   ```
 
-- <span data-ttu-id="c4f81-133">Přidejte balíček pomocí konkrétního zdroje NuGet:</span><span class="sxs-lookup"><span data-stu-id="c4f81-133">Add a package using a specific NuGet source:</span></span>
+- <span data-ttu-id="75587-134">Přidejte balíček pomocí konkrétního zdroje NuGet:</span><span class="sxs-lookup"><span data-stu-id="75587-134">Add a package using a specific NuGet source:</span></span>
 
   ```dotnetcli
   dotnet add package Microsoft.AspNetCore.StaticFiles -s https://dotnet.myget.org/F/dotnet-core/api/v3/index.json
   ```
 
-## <a name="see-also"></a><span data-ttu-id="c4f81-134">Viz také</span><span class="sxs-lookup"><span data-stu-id="c4f81-134">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="75587-135">Viz také</span><span class="sxs-lookup"><span data-stu-id="75587-135">See also</span></span>
 
-- [<span data-ttu-id="c4f81-135">Správa globálních balíčků, mezipaměti a dočasných složek v NuGet</span><span class="sxs-lookup"><span data-stu-id="c4f81-135">Managing the global packages, cache, and temp folders in NuGet</span></span>](https://docs.microsoft.com/nuget/consume-packages/managing-the-global-packages-and-cache-folders)
-- [<span data-ttu-id="c4f81-136">Správa verzí balíčku NuGet</span><span class="sxs-lookup"><span data-stu-id="c4f81-136">NuGet package versioning</span></span>](https://docs.microsoft.com/nuget/reference/package-versioning)
+- [<span data-ttu-id="75587-136">Správa globálních balíčků, mezipaměti a dočasných složek v NuGet</span><span class="sxs-lookup"><span data-stu-id="75587-136">Managing the global packages, cache, and temp folders in NuGet</span></span>](https://docs.microsoft.com/nuget/consume-packages/managing-the-global-packages-and-cache-folders)
+- [<span data-ttu-id="75587-137">Správa verzí balíčku NuGet</span><span class="sxs-lookup"><span data-stu-id="75587-137">NuGet package versioning</span></span>](https://docs.microsoft.com/nuget/reference/package-versioning)
