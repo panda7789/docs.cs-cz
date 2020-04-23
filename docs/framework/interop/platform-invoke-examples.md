@@ -20,17 +20,17 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 03/12/2020
 ms.locfileid: "79181321"
 ---
-# <a name="platform-invoke-examples"></a><span data-ttu-id="1ec17-102">Příklady vyvolání platformy</span><span class="sxs-lookup"><span data-stu-id="1ec17-102">Platform Invoke Examples</span></span>
-<span data-ttu-id="1ec17-103">Následující příklady ukazují, jak definovat a volat **MessageBox** funkce v User32.dll, předávání jednoduchý řetězec jako argument.</span><span class="sxs-lookup"><span data-stu-id="1ec17-103">The following examples demonstrate how to define and call the **MessageBox** function in User32.dll, passing a simple string as an argument.</span></span> <span data-ttu-id="1ec17-104">V příkladech je <xref:System.Runtime.InteropServices.DllImportAttribute.CharSet?displayProperty=nameWithType> pole nastaveno na **hodnotu Automaticky,** aby cílová platforma určovala šířku znaku a zařazování řetězců.</span><span class="sxs-lookup"><span data-stu-id="1ec17-104">In the examples, the <xref:System.Runtime.InteropServices.DllImportAttribute.CharSet?displayProperty=nameWithType> field is set to **Auto** to let the target platform determine the character width and string marshaling.</span></span>  
+# <a name="platform-invoke-examples"></a><span data-ttu-id="2a4cb-102">Příklady vyvolání platformy</span><span class="sxs-lookup"><span data-stu-id="2a4cb-102">Platform Invoke Examples</span></span>
+<span data-ttu-id="2a4cb-103">Následující příklady ukazují, jak definovat a volat funkci **MessageBox** v souboru User32. dll, která předává jednoduchý řetězec jako argument.</span><span class="sxs-lookup"><span data-stu-id="2a4cb-103">The following examples demonstrate how to define and call the **MessageBox** function in User32.dll, passing a simple string as an argument.</span></span> <span data-ttu-id="2a4cb-104">V příkladech je <xref:System.Runtime.InteropServices.DllImportAttribute.CharSet?displayProperty=nameWithType> pole nastaveno na hodnotu **automaticky** , aby cílová platforma mohla určit šířku znaku a zařazování řetězců.</span><span class="sxs-lookup"><span data-stu-id="2a4cb-104">In the examples, the <xref:System.Runtime.InteropServices.DllImportAttribute.CharSet?displayProperty=nameWithType> field is set to **Auto** to let the target platform determine the character width and string marshaling.</span></span>  
   
  [!code-cpp[Conceptual.Interop.PInvoke#1](../../../samples/snippets/cpp/VS_Snippets_CLR/Conceptual.Interop.PInvoke/cpp/Example.cpp#1)]
  [!code-csharp[Conceptual.Interop.PInvoke#1](../../../samples/snippets/csharp/VS_Snippets_CLR/Conceptual.Interop.PInvoke/cs/Example1.cs#1)]
  [!code-vb[Conceptual.Interop.PInvoke#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Conceptual.Interop.PInvoke/vb/Example1.vb#1)]  
   
- <span data-ttu-id="1ec17-105">Další příklady naleznete v [tématu zařazování dat s platformy invoke](marshaling-data-with-platform-invoke.md).</span><span class="sxs-lookup"><span data-stu-id="1ec17-105">For additional examples, see [Marshaling Data with Platform Invoke](marshaling-data-with-platform-invoke.md).</span></span>  
+ <span data-ttu-id="2a4cb-105">Další příklady naleznete v tématu [zařazování dat s voláním platformy](marshaling-data-with-platform-invoke.md).</span><span class="sxs-lookup"><span data-stu-id="2a4cb-105">For additional examples, see [Marshaling Data with Platform Invoke](marshaling-data-with-platform-invoke.md).</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="1ec17-106">Viz také</span><span class="sxs-lookup"><span data-stu-id="1ec17-106">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="2a4cb-106">Viz také</span><span class="sxs-lookup"><span data-stu-id="2a4cb-106">See also</span></span>
 
 - <xref:System.Runtime.InteropServices.DllImportAttribute>
-- [<span data-ttu-id="1ec17-107">Vytváření prototypů ve spravovaném kódu</span><span class="sxs-lookup"><span data-stu-id="1ec17-107">Creating Prototypes in Managed Code</span></span>](creating-prototypes-in-managed-code.md)
-- [<span data-ttu-id="1ec17-108">Určení sady znaků</span><span class="sxs-lookup"><span data-stu-id="1ec17-108">Specifying a Character Set</span></span>](specifying-a-character-set.md)
+- [<span data-ttu-id="2a4cb-107">Vytváření prototypů ve spravovaném kódu</span><span class="sxs-lookup"><span data-stu-id="2a4cb-107">Creating Prototypes in Managed Code</span></span>](creating-prototypes-in-managed-code.md)
+- [<span data-ttu-id="2a4cb-108">Určení sady znaků</span><span class="sxs-lookup"><span data-stu-id="2a4cb-108">Specifying a Character Set</span></span>](specifying-a-character-set.md)

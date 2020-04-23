@@ -8,4 +8,4 @@ ms.locfileid: "82071043"
 ---
 
 > [!IMPORTANT]
-> <span data-ttu-id="cae8d-101">Dokumentace Průvodce plochami je ve výstavbě.</span><span class="sxs-lookup"><span data-stu-id="cae8d-101">The Desktop Guide documentation is under construction.</span></span>
+> <span data-ttu-id="d55b1-101">Dokumentace k desktopové příručce je v rámci konstrukce.</span><span class="sxs-lookup"><span data-stu-id="d55b1-101">The Desktop Guide documentation is under construction.</span></span>
