@@ -18,20 +18,20 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 03/15/2020
 ms.locfileid: "74349206"
 ---
-# <a name="accessing-user-data-visual-basic"></a><span data-ttu-id="c80a2-102">Přístup k uživatelským datům (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="c80a2-102">Accessing User Data (Visual Basic)</span></span>
+# <a name="accessing-user-data-visual-basic"></a><span data-ttu-id="3982a-102">Přístup k uživatelským datům (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="3982a-102">Accessing User Data (Visual Basic)</span></span>
 
-<span data-ttu-id="c80a2-103">Tato část obsahuje témata `My.User` týkající se objektu a úkolů, které můžete provést s ním.</span><span class="sxs-lookup"><span data-stu-id="c80a2-103">This section contains topics dealing with the `My.User` object and tasks that you can accomplish with it.</span></span>  
+<span data-ttu-id="3982a-103">V této části najdete témata týkající se `My.User` objektu a úkolů, které s ním můžete provádět.</span><span class="sxs-lookup"><span data-stu-id="3982a-103">This section contains topics dealing with the `My.User` object and tasks that you can accomplish with it.</span></span>  
   
- <span data-ttu-id="c80a2-104">Objekt `My.User` poskytuje přístup k informacím o přihlášeném uživateli vrácením <xref:System.Security.Principal.IPrincipal> objektu, který implementuje rozhraní.</span><span class="sxs-lookup"><span data-stu-id="c80a2-104">The `My.User` object provides access to information about the logged-on user by returning an object that implements the <xref:System.Security.Principal.IPrincipal> interface.</span></span>  
+ <span data-ttu-id="3982a-104">`My.User` Objekt poskytuje přístup k informacím o přihlášeném uživateli vrácením objektu, který implementuje <xref:System.Security.Principal.IPrincipal> rozhraní.</span><span class="sxs-lookup"><span data-stu-id="3982a-104">The `My.User` object provides access to information about the logged-on user by returning an object that implements the <xref:System.Security.Principal.IPrincipal> interface.</span></span>  
   
-## <a name="tasks"></a><span data-ttu-id="c80a2-105">Úlohy</span><span class="sxs-lookup"><span data-stu-id="c80a2-105">Tasks</span></span>  
+## <a name="tasks"></a><span data-ttu-id="3982a-105">Úlohy</span><span class="sxs-lookup"><span data-stu-id="3982a-105">Tasks</span></span>  
   
-|<span data-ttu-id="c80a2-106">Akce</span><span class="sxs-lookup"><span data-stu-id="c80a2-106">To</span></span>|<span data-ttu-id="c80a2-107">Seznamte se s </span><span class="sxs-lookup"><span data-stu-id="c80a2-107">See</span></span>|  
+|<span data-ttu-id="3982a-106">Akce</span><span class="sxs-lookup"><span data-stu-id="3982a-106">To</span></span>|<span data-ttu-id="3982a-107">Seznamte se s </span><span class="sxs-lookup"><span data-stu-id="3982a-107">See</span></span>|  
 |--------|---------|  
-|<span data-ttu-id="c80a2-108">Získání přihlašovacího jména uživatele</span><span class="sxs-lookup"><span data-stu-id="c80a2-108">Get the user's login name</span></span>|<xref:Microsoft.VisualBasic.ApplicationServices.User.Name%2A>|  
-|<span data-ttu-id="c80a2-109">Získání názvu domény uživatele, pokud aplikace používá ověřování systému Windows</span><span class="sxs-lookup"><span data-stu-id="c80a2-109">Get the user's domain name, if the application uses Windows authentication</span></span>|<xref:Microsoft.VisualBasic.ApplicationServices.User.CurrentPrincipal>|  
-|<span data-ttu-id="c80a2-110">Určení role uživatele</span><span class="sxs-lookup"><span data-stu-id="c80a2-110">Determine the user's role</span></span>|<xref:Microsoft.VisualBasic.ApplicationServices.User.IsInRole%2A>|  
+|<span data-ttu-id="3982a-108">Získá přihlašovací jméno uživatele.</span><span class="sxs-lookup"><span data-stu-id="3982a-108">Get the user's login name</span></span>|<xref:Microsoft.VisualBasic.ApplicationServices.User.Name%2A>|  
+|<span data-ttu-id="3982a-109">Získat název domény uživatele, pokud aplikace používá ověřování systému Windows</span><span class="sxs-lookup"><span data-stu-id="3982a-109">Get the user's domain name, if the application uses Windows authentication</span></span>|<xref:Microsoft.VisualBasic.ApplicationServices.User.CurrentPrincipal>|  
+|<span data-ttu-id="3982a-110">Určení role uživatele</span><span class="sxs-lookup"><span data-stu-id="3982a-110">Determine the user's role</span></span>|<xref:Microsoft.VisualBasic.ApplicationServices.User.IsInRole%2A>|  
   
-## <a name="see-also"></a><span data-ttu-id="c80a2-111">Viz také</span><span class="sxs-lookup"><span data-stu-id="c80a2-111">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="3982a-111">Viz také</span><span class="sxs-lookup"><span data-stu-id="3982a-111">See also</span></span>
 
 - <xref:Microsoft.VisualBasic.ApplicationServices.User>
