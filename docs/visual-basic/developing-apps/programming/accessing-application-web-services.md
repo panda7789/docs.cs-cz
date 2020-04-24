@@ -15,16 +15,16 @@ ms.locfileid: "74349228"
 ---
 # <a name="accessing-application-web-services-visual-basic"></a>Přístup k aplikačním webovým službám (Visual Basic)
 
-Objekt `My.WebServices` poskytuje instanci každé webové služby, na kterou odkazuje aktuální projekt. Každá instance je vytvořena instance na vyžádání. K těmto webovým službám můžete `My.WebServices` přistupovat prostřednictvím vlastností objektu. Název vlastnosti je stejný jako název webové služby, ke které vlastnost přistupuje. Všechny třídy, <xref:System.Web.Services.Protocols.SoapHttpClientProtocol> které dědí z je webová služba.
+`My.WebServices` Objekt poskytuje instanci každé webové služby, na kterou odkazuje aktuální projekt. Každá instance je vytvořena na vyžádání. K těmto webovým službám můžete přistupovat prostřednictvím vlastností `My.WebServices` objektu. Název vlastnosti je stejný jako název webové služby, ke které vlastnost přistupuje. Libovolná třída, která <xref:System.Web.Services.Protocols.SoapHttpClientProtocol> dědí z, je webová služba.
 
 ## <a name="tasks"></a>Úlohy
 
-V následující tabulce jsou uvedeny možné způsoby přístupu k webovým službám, na které aplikace odkazuje.
+V následující tabulce jsou uvedeny možné způsoby přístupu k webovým službám, na které odkazuje aplikace.
 
 |Akce|Seznamte se s |
 |---|---|
 |Volání webové služby|[Objekt My.WebServices](../../../visual-basic/language-reference/objects/my-webservices-object.md)|
-|Volání webové služby asynchronně a zpracování události po dokončení|[Postupy: Asynchronní volání webové služby](../../../visual-basic/developing-apps/programming/how-to-call-a-web-service-asynchronously.md)|
+|Asynchronní volání webové služby a zpracování události při jejím dokončení|[Postupy: Asynchronní volání webové služby](../../../visual-basic/developing-apps/programming/how-to-call-a-web-service-asynchronously.md)|
 
 ## <a name="see-also"></a>Viz také
 

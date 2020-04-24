@@ -24,7 +24,7 @@ Identifikuje uživatelsky definovaný soubor manifestu aplikace Win32, který bu
   
 ## <a name="arguments"></a>Argumenty  
   
-|Termín|Definice|  
+|Označení|Definice|  
 |---|---|  
 |`fileName`|Cesta k souboru vlastního manifestu.|  
   
@@ -38,13 +38,13 @@ Identifikuje uživatelsky definovaný soubor manifestu aplikace Win32, který bu
   
  Pokud je splněna některá z následujících podmínek, bude se aplikace vztahovat k virtualizaci:  
   
-1. Použijete možnost `-nowin32manifest` a neposkytnete manifest v pozdějším kroku sestavení nebo jako součást souboru prostředků Windows (. res) pomocí možnosti `-win32resource`.  
+1. Použijete `-nowin32manifest` možnost a neposkytnete manifest v pozdějším kroku sestavení nebo jako součást souboru prostředků systému Windows (. res) pomocí `-win32resource` možnosti.  
   
 2. Poskytnete vlastní manifest, který neurčuje požadovanou úroveň spuštění.  
   
  Visual Studio vytvoří soubor default. manifest a uloží ho do adresářů pro ladění a vydání spolu se spustitelným souborem. Výchozí soubor App. manifest můžete zobrazit nebo upravit kliknutím na **Zobrazit nastavení nástroje řízení uživatelských účtů** na kartě **aplikace** v Návrháři projektu. Další informace naleznete na [stránce aplikace, Návrhář projektu (Visual Basic)](/visualstudio/ide/reference/application-page-project-designer-visual-basic).  
   
- Manifest aplikace můžete zadat jako vlastní krok po sestavení nebo jako součást souboru prostředků Win32 pomocí možnosti `-nowin32manifest`. Tuto možnost použijte, pokud chcete, aby se vaše aplikace mohla vztahovat k virtualizaci souborů nebo registru v systému Windows Vista. Tím zabráníte kompilátoru v vytvoření a vložení výchozího manifestu do souboru PE.  
+ Manifest aplikace můžete zadat jako vlastní krok po sestavení nebo jako součást souboru prostředků Win32 pomocí `-nowin32manifest` možnosti. Tuto možnost použijte, pokud chcete, aby se vaše aplikace mohla vztahovat k virtualizaci souborů nebo registru v systému Windows Vista. Tím zabráníte kompilátoru v vytvoření a vložení výchozího manifestu do souboru PE.  
   
 ## <a name="example"></a>Příklad  
  Následující příklad ukazuje výchozí manifest, který Visual Basic Kompilátor vloží do PE.  
@@ -66,7 +66,7 @@ Identifikuje uživatelsky definovaný soubor manifestu aplikace Win32, který bu
 </assembly>  
 ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Visual Basic Kompilátor příkazového řádku](../../../visual-basic/reference/command-line-compiler/index.md)
 - [-nowin32manifest (Visual Basic)](../../../visual-basic/reference/command-line-compiler/nowin32manifest.md)

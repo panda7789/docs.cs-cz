@@ -22,14 +22,14 @@ Určuje název kontejneru klíče pro dvojici klíčů, který poskytne sestaven
 -keycontainer:container  
 ```  
   
-## <a name="arguments"></a>Arguments  
+## <a name="arguments"></a>Argumenty  
   
-|Termín|Definice|  
+|Označení|Definice|  
 |---|---|  
-|`container`|Požadováno. Soubor kontejneru, který obsahuje klíč. Uzavřete název souboru do uvozovek (""), pokud název obsahuje mezeru.|  
+|`container`|Povinná hodnota. Soubor kontejneru, který obsahuje klíč. Uzavřete název souboru do uvozovek (""), pokud název obsahuje mezeru.|  
   
 ## <a name="remarks"></a>Poznámky  
- Kompilátor vytvoří součást, kterou může sdílet, vložením veřejného klíče do manifestu sestavení a podepsáním konečného sestavení pomocí privátního klíče. Chcete-li vygenerovat soubor klíče, zadejte `sn -k file` na příkazovém řádku. Možnost `-i` nainstaluje dvojici klíčů do kontejneru. Další informace naleznete v tématu [sn. exe (Nástroj pro silný název)](../../../framework/tools/sn-exe-strong-name-tool.md)).  
+ Kompilátor vytvoří součást, kterou může sdílet, vložením veřejného klíče do manifestu sestavení a podepsáním konečného sestavení pomocí privátního klíče. Chcete-li vygenerovat soubor klíče `sn -k file` , zadejte do příkazového řádku. `-i` Možnost nainstaluje dvojici klíčů do kontejneru. Další informace naleznete v tématu [sn. exe (Nástroj pro silný název)](../../../framework/tools/sn-exe-strong-name-tool.md)).  
   
  Pokud kompilujete s `-target:module`, název souboru klíče je uložen v modulu a začleněn do sestavení, které je vytvořeno při kompilaci sestavení pomocí [-addmodule –](../../../visual-basic/reference/command-line-compiler/addmodule.md).  
   
@@ -40,7 +40,7 @@ Určuje název kontejneru klíče pro dvojici klíčů, který poskytne sestaven
  Další informace o podepsání sestavení naleznete v tématu [vytváření a používání sestavení se silným názvem](../../../standard/assembly/create-use-strong-named.md) .  
   
 > [!NOTE]
-> Možnost `-keycontainer` není k dispozici ve vývojovém prostředí sady Visual Studio; je k dispozici pouze při kompilaci z příkazového řádku.  
+> Tato `-keycontainer` možnost není k dispozici ve vývojovém prostředí sady Visual Studio; je k dispozici pouze při kompilaci z příkazového řádku.  
   
 ## <a name="example"></a>Příklad  
  Následující kód zkompiluje zdrojový soubor `Input.vb` a určí kontejner klíčů.  
@@ -49,7 +49,7 @@ Určuje název kontejneru klíče pro dvojici klíčů, který poskytne sestaven
 vbc -keycontainer:key1 input.vb  
 ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Sestavení v .NET](../../../standard/assembly/index.md)
 - [Visual Basic Kompilátor příkazového řádku](../../../visual-basic/reference/command-line-compiler/index.md)

@@ -15,12 +15,12 @@ ms.lasthandoff: 01/07/2020
 ms.locfileid: "75710749"
 ---
 # <a name="inferring-schemas-from-xml-documents"></a>Odvození schémat z dokumentů XML
-Toto téma popisuje, jak použít třídu <xref:System.Xml.Schema.XmlSchemaInference> k odvození schématu XML Schema Definition Language (XSD) ze struktury dokumentu XML.  
+Toto téma popisuje, jak pomocí <xref:System.Xml.Schema.XmlSchemaInference> třídy odvodit schéma XML schématu definice jazyka (XSD) ze struktury dokumentu XML.  
   
 ## <a name="the-schema-inference-process"></a>Proces odvození schématu  
- Třída <xref:System.Xml.Schema.XmlSchemaInference> <xref:System.Xml.Schema?displayProperty=nameWithType> oboru názvů se používá ke generování jednoho nebo více schémat XML Schema Definition Language (XSD) ze struktury dokumentu XML. Vygenerovaná schémata lze použít k ověření původního dokumentu XML.  
+ <xref:System.Xml.Schema.XmlSchemaInference> Třída <xref:System.Xml.Schema?displayProperty=nameWithType> oboru názvů se používá ke generování jednoho nebo více schémat XML Schema Definition Language (XSD) ze struktury dokumentu XML. Vygenerovaná schémata lze použít k ověření původního dokumentu XML.  
   
- V případě, že je dokument XML zpracován třídou <xref:System.Xml.Schema.XmlSchemaInference>, třída <xref:System.Xml.Schema.XmlSchemaInference> vytvoří předpoklady o komponentách schématu, které popisují prvky a atributy v dokumentu XML. Třída <xref:System.Xml.Schema.XmlSchemaInference> také odvodí komponenty schématu omezenému způsobu tím, že odvozuje nejvíc omezující typ pro určitý element nebo atribut. Jak je shromažďováno více informací o dokumentu XML, tato omezení jsou vyzpůsobena odvozením méně omezujících typů. Nejméně omezující typ, který lze odvodit, je `xs:string`.  
+ V případě, že je dokument XML zpracován <xref:System.Xml.Schema.XmlSchemaInference> třídou, <xref:System.Xml.Schema.XmlSchemaInference> vytvoří třída předpoklady o komponentách schématu, které popisují prvky a atributy v dokumentu XML. <xref:System.Xml.Schema.XmlSchemaInference> Třída také odvodí komponenty schématu omezeného způsobu tím, že odvozuje nejvíc omezující typ pro určitý element nebo atribut. Jak je shromažďováno více informací o dokumentu XML, tato omezení jsou vyzpůsobena odvozením méně omezujících typů. Nejméně omezující typ, který lze odvodit, je `xs:string`.  
   
  Vezměte například následující část dokumentu XML.  
   
@@ -32,14 +32,14 @@ Toto téma popisuje, jak použít třídu <xref:System.Xml.Schema.XmlSchemaInfer
 <parent attribute1="A">  
 ```  
   
- Pokud je v předchozím příkladu při výskytu atributu `attribute1` s hodnotou `6` v procesu <xref:System.Xml.Schema.XmlSchemaInference>, předpokládá se, že je typu `xs:unsignedByte`. Když je v procesu <xref:System.Xml.Schema.XmlSchemaInference> nalezen druhý `parent` element, omezení je odpojeno změnou typu na `xs:string`, protože hodnota atributu `attribute1` je nyní `A`. Podobně atribut `minOccurs` pro všechny `child` prvky odvoditelné ve schématu jsou rozvoditelné na `minOccurs="0"`, protože druhý nadřazený prvek nemá žádné podřízené prvky.  
+ V předchozím příkladu, pokud je zjištěn `attribute1` atribut s hodnotou `6` <xref:System.Xml.Schema.XmlSchemaInference> procesu, předpokládá se, že je typu `xs:unsignedByte`. Při zjištění druhého `parent` elementu v <xref:System.Xml.Schema.XmlSchemaInference> procesu je omezení odpojeno změnou typu na `xs:string` , protože hodnota `attribute1` atributu je nyní. `A` Podobně `minOccurs` atribut pro všechny `child` elementy odvozené ve schématu jsou rozvoditelné na `minOccurs="0"` , protože druhý nadřazený prvek nemá žádné podřízené prvky.  
   
 ## <a name="inferring-schemas-from-xml-documents"></a>Odvození schémat z dokumentů XML  
- Třída <xref:System.Xml.Schema.XmlSchemaInference> používá dvě přetížené metody <xref:System.Xml.Schema.XmlSchemaInference.InferSchema%2A> k odvození schématu z dokumentu XML.  
+ <xref:System.Xml.Schema.XmlSchemaInference> Třída používá dvě přetížené <xref:System.Xml.Schema.XmlSchemaInference.InferSchema%2A> metody pro odvození schématu z dokumentu XML.  
   
- První <xref:System.Xml.Schema.XmlSchemaInference.InferSchema%2A?displayProperty=nameWithType> metoda slouží k vytvoření schématu založeného na dokumentu XML. Druhá metoda <xref:System.Xml.Schema.XmlSchemaInference.InferSchema%2A?displayProperty=nameWithType> slouží k odvození schématu, které popisuje více dokumentů XML. Můžete například zakládat více dokumentů XML do metody <xref:System.Xml.Schema.XmlSchemaInference.InferSchema%2A?displayProperty=nameWithType> jednou v čase pro vytvoření schématu, které popisuje celou sadu dokumentů XML.  
+ První <xref:System.Xml.Schema.XmlSchemaInference.InferSchema%2A?displayProperty=nameWithType> metoda se používá k vytvoření schématu založeného na dokumentu XML. Druhá <xref:System.Xml.Schema.XmlSchemaInference.InferSchema%2A?displayProperty=nameWithType> metoda slouží k odvození schématu, které popisuje více dokumentů XML. Můžete například zakládat více dokumentů XML do <xref:System.Xml.Schema.XmlSchemaInference.InferSchema%2A?displayProperty=nameWithType> metody v jednom okamžiku pro vytvoření schématu, které popisuje celou sadu dokumentů XML.  
   
- První <xref:System.Xml.Schema.XmlSchemaInference.InferSchema%2A?displayProperty=nameWithType> metoda odvodí schéma z dokumentu XML obsaženého v objektu <xref:System.Xml.XmlReader> a vrátí objekt <xref:System.Xml.Schema.XmlSchemaSet> obsahující odvozené schéma. Druhá metoda <xref:System.Xml.Schema.XmlSchemaInference.InferSchema%2A?displayProperty=nameWithType> prohledá objekt <xref:System.Xml.Schema.XmlSchemaSet> pro schéma se stejným cílovým oborem názvů jako dokument XML obsažený v objektu <xref:System.Xml.XmlReader>, obnoví stávající schéma a vrátí objekt <xref:System.Xml.Schema.XmlSchemaSet> obsahující odvozené schéma.  
+ První <xref:System.Xml.Schema.XmlSchemaInference.InferSchema%2A?displayProperty=nameWithType> metoda odvodí schéma z dokumentu XML obsaženého v <xref:System.Xml.XmlReader> objektu a vrátí <xref:System.Xml.Schema.XmlSchemaSet> objekt obsahující odvozené schéma. Druhá <xref:System.Xml.Schema.XmlSchemaInference.InferSchema%2A?displayProperty=nameWithType> metoda <xref:System.Xml.Schema.XmlSchemaSet> prohledá objekt pro schéma se stejným cílovým oborem názvů jako dokument XML obsažený v <xref:System.Xml.XmlReader> objektu, obnoví existující schéma a vrátí <xref:System.Xml.Schema.XmlSchemaSet> objekt obsahující odvozené schéma.  
   
  Změny schématu pro upřesnění jsou založeny na nové struktuře nalezené v dokumentu XML. Například při procházení dokumentu XML, jsou vytvořeny předpoklady týkající se nalezených datových typů a schéma je vytvořeno na základě těchto předpokladů. Nicméně pokud jsou data zjištěna v druhém odvození předání, které se liší od původního předpokladu, schéma je upřesněno. Následující příklad znázorňuje proces upřesnění.  
   
@@ -47,15 +47,15 @@ Toto téma popisuje, jak použít třídu <xref:System.Xml.Schema.XmlSchemaInfer
  [!code-csharp[XmlSchemaInferenceExamples#4](../../../../samples/snippets/csharp/VS_Snippets_Data/XmlSchemaInferenceExamples/CS/XmlSchemaInferenceExamples.cs#4)]
  [!code-vb[XmlSchemaInferenceExamples#4](../../../../samples/snippets/visualbasic/VS_Snippets_Data/XmlSchemaInferenceExamples/VB/XmlSchemaInferenceExamples.vb#4)]  
   
- V příkladu se jako první vstup použije následující soubor `item1.xml`.  
+ V příkladu se jako první vstup použije `item1.xml`následující soubor.  
   
  [!code-xml[XmlSchemaInferenceExamples#13](../../../../samples/snippets/xml/VS_Snippets_Data/XmlSchemaInferenceExamples/XML/item1.xml#13)]  
   
- Příklad poté převezme soubor `item2.xml` jako jeho druhý vstup:  
+ Příklad pak převezme `item2.xml` soubor jako druhý vstup:  
   
  [!code-xml[XmlSchemaInferenceExamples#14](../../../../samples/snippets/xml/VS_Snippets_Data/XmlSchemaInferenceExamples/XML/item2.xml#14)]  
   
- Při zjištění atributu `productID` v prvním dokumentu XML je hodnota `123456789` považována za typ `xs:unsignedInt`. Pokud je však druhý dokument XML čten a je nalezena hodnota `A53-246`, typ `xs:unsignedInt` již nelze předpokládat. Schéma je rafinované a typ `productID` je změněn na `xs:string`. Kromě toho atribut `minOccurs` elementu `supplierID` je nastaven na `0`, protože druhý dokument XML neobsahuje žádný `supplierID` element.  
+ Při zjištění `productID` atributu v prvním dokumentu XML `123456789` je hodnota `xs:unsignedInt` typu považována za typ. Pokud je však druhý dokument XML čten a hodnota `A53-246` je nalezena, `xs:unsignedInt` typ již nelze předpokládat. Schéma je upřesněno a typ `productID` je změněn na. `xs:string` Kromě toho `minOccurs` atribut pro `supplierID` element je nastaven na `0`, protože druhý dokument XML neobsahuje žádný `supplierID` element.  
   
  Následuje schéma odvoditelné z prvního dokumentu XML.  
   
@@ -66,7 +66,7 @@ Toto téma popisuje, jak použít třídu <xref:System.Xml.Schema.XmlSchemaInfer
  [!code-xml[XmlSchemaInferenceExamples#16](../../../../samples/snippets/xml/VS_Snippets_Data/XmlSchemaInferenceExamples/XML/InferSchema2.xml#16)]  
   
 ## <a name="inline-schemas"></a>Vložená schémata  
- Pokud se během procesu <xref:System.Xml.Schema.XmlSchemaInference> vyskytne vložené schéma XML Schema Definition Language (XSD), je vyvolána <xref:System.Xml.Schema.XmlSchemaInferenceException>. Například následující vložené schéma vyvolá <xref:System.Xml.Schema.XmlSchemaInferenceException>.  
+ Pokud je během <xref:System.Xml.Schema.XmlSchemaInference> procesu zjištěno vložené schéma XML Schema Definition Language (XSD), <xref:System.Xml.Schema.XmlSchemaInferenceException> je vyvolána výjimka. Například následující vložené schéma vyvolá <xref:System.Xml.Schema.XmlSchemaInferenceException>.  
   
 ```xml  
 <root xmlns:ex="http://www.contoso.com" xmlns="http://www.tempuri.org">  
@@ -78,9 +78,9 @@ Toto téma popisuje, jak použít třídu <xref:System.Xml.Schema.XmlSchemaInfer
 ```  
   
 ## <a name="schemas-that-cannot-be-refined"></a>Schémata, která nelze zdokonalit  
- Existují konstrukce schématu W3C XML, které se schématem <xref:System.Xml.Schema.XmlSchemaInference> schématu XML (XSD) schématu, pokud je daný typ upřesněn a způsobuje vyvolání výjimky. Například komplexní typ, jehož sestavování nejvyšší úrovně je jakékoli jiné než sekvence. V modelu objektu schématu (SOM) odpovídá <xref:System.Xml.Schema.XmlSchemaComplexType>, jehož vlastnost <xref:System.Xml.Schema.XmlSchemaComplexType.Particle%2A> není instancí <xref:System.Xml.Schema.XmlSchemaSequence>.  
+ Existují konstrukce schématu W3C XML, které proces schématu <xref:System.Xml.Schema.XmlSchemaInference> XML pro definici schématu (XSD) nemůže zpracovat, pokud je daný typ upřesněn a způsobí vyvolání výjimky. Například komplexní typ, jehož sestavování nejvyšší úrovně je jakékoli jiné než sekvence. V modelu objektu schématu (SOM) to odpovídá objektu <xref:System.Xml.Schema.XmlSchemaComplexType> , jehož <xref:System.Xml.Schema.XmlSchemaComplexType.Particle%2A> vlastnost není instancí. <xref:System.Xml.Schema.XmlSchemaSequence>  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Xml.Schema.XmlSchemaInference>
 - [Model objektu schématu (SOM) XML](../../../../docs/standard/data/xml/xml-schema-object-model-som.md)

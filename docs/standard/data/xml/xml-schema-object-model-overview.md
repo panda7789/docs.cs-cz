@@ -21,22 +21,22 @@ Model objektu schématu (SOM) v Microsoft .NET Framework je bohatá rozhraní AP
   
 - Vytvářejte schémata v paměti pomocí tříd silného typu.  
   
-- Interakce s <xref:System.Xml.Schema.XmlSchemaSet> třídou pro ukládání, kompilování a načítání schémat.  
+- Interakci s <xref:System.Xml.Schema.XmlSchemaSet> třídou pro ukládání, kompilování a načítání schémat.  
   
-- Interakce s metodou <xref:System.Xml.XmlReader.Create%2A> třídy <xref:System.Xml.XmlReader> pro ověřování dokumentů instance XML proti schématům.  
+- Interakce s <xref:System.Xml.XmlReader.Create%2A> metodou <xref:System.Xml.XmlReader> třídy pro ověřování dokumentů instance XML proti schématům.  
   
 - Editory sestavení pro vytváření a údržbu schémat.  
   
 - Dynamicky upravit schéma, které je možné vyhovět a uložit pro použití při ověřování dokumentů instance XML.  
   
 ## <a name="the-schema-object-model"></a>Model objektu schématu  
- SOM obsahuje rozsáhlou sadu tříd v oboru názvů <xref:System.Xml.Schema?displayProperty=nameWithType> odpovídající prvkům ve schématu XML. Například prvek `<xsd:schema>...</xsd:schema>` se mapuje na třídu <xref:System.Xml.Schema.XmlSchema?displayProperty=nameWithType> a všechny informace, které mohou být obsaženy v elementu `<xsd:schema/>` lze reprezentovat pomocí třídy <xref:System.Xml.Schema.XmlSchema>. Podobně se prvky `<xsd:element>...</xsd:element>` a `<xsd:attribute>...</xsd:attribute>` mapují na <xref:System.Xml.Schema.XmlSchemaElement?displayProperty=nameWithType> a <xref:System.Xml.Schema.XmlSchemaAttribute?displayProperty=nameWithType> třídy v uvedeném pořadí. Toto mapování pokračuje pro všechny prvky schématu XML vytvoření modelu objektu XML schématu v oboru názvů <xref:System.Xml.Schema> ilustrované v následujícím diagramu.  
+ SOM obsahuje rozsáhlou sadu tříd v <xref:System.Xml.Schema?displayProperty=nameWithType> oboru názvů odpovídající prvkům ve schématu XML. Například `<xsd:schema>...</xsd:schema>` element mapuje na <xref:System.Xml.Schema.XmlSchema?displayProperty=nameWithType> třídu a všechny informace, které mohou být obsaženy v rámci `<xsd:schema/>` elementu, mohou být reprezentovány pomocí <xref:System.Xml.Schema.XmlSchema> třídy. Podobně se prvky `<xsd:element>...</xsd:element>` a `<xsd:attribute>...</xsd:attribute>` mapují na třídy <xref:System.Xml.Schema.XmlSchemaElement?displayProperty=nameWithType> a <xref:System.Xml.Schema.XmlSchemaAttribute?displayProperty=nameWithType> v uvedeném pořadí. Toto mapování pokračuje pro všechny prvky schématu XML vytvoření modelu objektu XML schématu v <xref:System.Xml.Schema> oboru názvů, který je znázorněn v následujícím diagramu.  
   
  ![Model objektu System. XML. Schema](./media/xml-schema-object-model-overview/xml-schema-object-model.gif)  
   
- Další informace o jednotlivých třídách v oboru názvů <xref:System.Xml.Schema> naleznete v referenční dokumentaci k oboru názvů <xref:System.Xml.Schema> v knihovně tříd .NET Framework.  
+ Další informace o jednotlivých třídách v <xref:System.Xml.Schema> oboru názvů naleznete v referenční <xref:System.Xml.Schema> dokumentaci k oboru názvů v knihovně tříd .NET Framework.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Čtení ze schémat XML a zápis do nich](../../../../docs/standard/data/xml/reading-and-writing-xml-schemas.md)
 - [Sestavování schémat XML](../../../../docs/standard/data/xml/building-xml-schemas.md)

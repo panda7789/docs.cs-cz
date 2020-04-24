@@ -15,11 +15,11 @@ LINQ to XML je nový model ve .NET Framework verze 3,5 pro zpracování dat XML.
   
  Dotazy v LINQ to XML jsou stručné a výrazné pomocí syntaxe, která se podobá jazyku SQL, než XPath nebo XQuery. Vzhledem k tomu, že výsledky dotazu mohou být vráceny jako kolekce prvků nebo atributů a lze je použít jako parametry pro objekty XElement, mohou být stromy XML snadno transformované z jednoho obrazce na jiný.  
   
- LINQ to XML využívá technologii LINQ (Language-Integrated Query) v .NET Framework verze 3,5. LINQ rozšiřuje jazykovou syntaxi C# a Visual Basic poskytuje výkonné možnosti dotazování, které lze rozšířit na potenciálně libovolné úložiště dat.  
+ LINQ to XML využívá technologii LINQ (Language-Integrated Query) v .NET Framework verze 3,5. LINQ rozšiřuje jazykovou syntaxi C# a Visual Basic a poskytuje výkonné možnosti dotazování, které lze rozšířit na potenciálně libovolné úložiště dat.  
   
- Podrobné informace o jeho použití najdete v tématu [LINQ to XMLC#()](../../../csharp/programming-guide/concepts/linq/linq-to-xml-overview.md) a [LINQ to XML (Visual Basic)](../../../visual-basic/programming-guide/concepts/linq/linq-to-xml.md). Přehled rozhraní LINQ Framework naleznete v tématu [Language-Integrated Query (LINQ) C# ](../../../csharp/programming-guide/concepts/linq/index.md) nebo [LINQ (Language-Integrated Query)-Visual Basic](../../../visual-basic/programming-guide/concepts/linq/index.md).  
+ Podrobné informace o jeho použití naleznete v tématu [LINQ to XML (C#)](../../../csharp/programming-guide/concepts/linq/linq-to-xml-overview.md) a [LINQ to XML (Visual Basic)](../../../visual-basic/programming-guide/concepts/linq/linq-to-xml.md). Přehled rozhraní LINQ Framework naleznete v tématu [Language-Integrated Query (LINQ) – C#](../../../csharp/programming-guide/concepts/linq/index.md) nebo [Language-INTEGRATED Query (linq)-Visual Basic](../../../visual-basic/programming-guide/concepts/linq/index.md).  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Xml.Linq>
 - <xref:System.Linq>

@@ -22,18 +22,18 @@ Zkompiluje soubory zdrojového kódu ve všech podřízených adresářích buď
 -recurse:[dir\]file  
 ```  
   
-## <a name="arguments"></a>Arguments  
+## <a name="arguments"></a>Argumenty  
  `dir`  
- Volitelné. Adresář, ve kterém chcete zahájit hledání. Pokud není zadán, hledání začne v adresáři projektu.  
+ Nepovinný parametr. Adresář, ve kterém chcete zahájit hledání. Pokud není zadán, hledání začne v adresáři projektu.  
   
  `file`  
- Požadováno. Soubory, které chcete vyhledat. Zástupné znaky jsou povoleny.  
+ Povinná hodnota. Soubory, které chcete vyhledat. Zástupné znaky jsou povoleny.  
   
 ## <a name="remarks"></a>Poznámky  
- Můžete použít zástupné znaky v názvu souboru k zkompilování všech vyhovujících souborů v adresáři projektu bez použití `-recurse`. Pokud není zadán žádný název výstupního souboru, kompilátor vyloží název výstupního souboru v prvním zpracovávaném vstupním souboru. Většinou se jedná o první soubor v seznamu souborů kompilovaných při abecedním zobrazení. Z tohoto důvodu je nejlepší zadat výstupní soubor pomocí možnosti `-out`.  
+ Můžete použít zástupné znaky v názvu souboru k zkompilování všech vyhovujících souborů v adresáři projektu bez `-recurse`použití. Pokud není zadán žádný název výstupního souboru, kompilátor vyloží název výstupního souboru v prvním zpracovávaném vstupním souboru. Většinou se jedná o první soubor v seznamu souborů kompilovaných při abecedním zobrazení. Z tohoto důvodu je nejlepší zadat výstupní soubor pomocí `-out` možnosti.  
   
 > [!NOTE]
-> Možnost `-recurse` není k dispozici ve vývojovém prostředí sady Visual Studio; je k dispozici pouze při kompilaci z příkazového řádku.  
+> Tato `-recurse` možnost není k dispozici ve vývojovém prostředí sady Visual Studio; je k dispozici pouze při kompilaci z příkazového řádku.  
   
 ## <a name="example"></a>Příklad  
  Následující příkaz zkompiluje všechny Visual Basic soubory v aktuálním adresáři.  
@@ -42,13 +42,13 @@ Zkompiluje soubory zdrojového kódu ve všech podřízených adresářích buď
 vbc *.vb  
 ```  
   
- Následující příkaz zkompiluje všechny Visual Basic soubory v adresáři `Test\ABC` a všech adresářích pod ním a pak vygeneruje `Test.ABC.dll`.  
+ Následující příkaz zkompiluje všechny Visual Basic soubory v `Test\ABC` adresáři a všech adresářích pod ním a pak vygeneruje. `Test.ABC.dll`  
   
 ```console
 vbc -target:library -out:Test.ABC.dll -recurse:Test\ABC\*.vb  
 ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Visual Basic Kompilátor příkazového řádku](../../../visual-basic/reference/command-line-compiler/index.md)
 - [-out (Visual Basic)](../../../visual-basic/reference/command-line-compiler/out.md)

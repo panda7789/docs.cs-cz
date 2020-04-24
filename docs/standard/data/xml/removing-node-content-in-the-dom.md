@@ -11,8 +11,8 @@ ms.lasthandoff: 01/07/2020
 ms.locfileid: "75710333"
 ---
 # <a name="removing-node-content-in-the-dom"></a>Odebrání obsahu uzlu v modelu DOM
-U typů uzlů, které dědí z <xref:System.Xml.XmlCharacterData>typy uzlů <xref:System.Xml.XmlComment>, <xref:System.Xml.XmlText>, <xref:System.Xml.XmlCDataSection>, <xref:System.Xml.XmlWhitespace>a <xref:System.Xml.XmlSignificantWhitespace> můžete odebrat znaky pomocí metody <xref:System.Xml.XmlCharacterData.DeleteData%2A>, která odebere rozsah znaků z uzlu. Pokud chcete zcela odebrat obsah, odeberte uzel obsahující obsah. Pokud chcete zachovat uzel, ale obsah není správný, upravte obsah. Informace o úpravách obsahu uzlu naleznete [v tématu Úprava uzlů, obsahu a hodnot v dokumentu XML](../../../../docs/standard/data/xml/modifying-nodes-content-and-values-in-an-xml-document.md).  
+U typů uzlů, které dědí <xref:System.Xml.XmlCharacterData>z, což jsou <xref:System.Xml.XmlComment>typy <xref:System.Xml.XmlText>uzlů <xref:System.Xml.XmlCDataSection>, <xref:System.Xml.XmlWhitespace>,, <xref:System.Xml.XmlSignificantWhitespace> a, můžete odebrat znaky pomocí <xref:System.Xml.XmlCharacterData.DeleteData%2A> metody, která odebere rozsah znaků z uzlu. Pokud chcete zcela odebrat obsah, odeberte uzel obsahující obsah. Pokud chcete zachovat uzel, ale obsah není správný, upravte obsah. Informace o úpravách obsahu uzlu naleznete [v tématu Úprava uzlů, obsahu a hodnot v dokumentu XML](../../../../docs/standard/data/xml/modifying-nodes-content-and-values-in-an-xml-document.md).  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Model DOM (Document Object Model) dokumentu XML](../../../../docs/standard/data/xml/xml-document-object-model-dom.md)
+- [model DOM (Document Object Model) dokumentu XML](../../../../docs/standard/data/xml/xml-document-object-model-dom.md)

@@ -25,7 +25,7 @@ Vloží soubor prostředků Win32 do výstupního souboru.
 -win32resource:filename  
 ```  
   
-## <a name="arguments"></a>Arguments  
+## <a name="arguments"></a>Argumenty  
  `filename`  
  Název souboru prostředků, který se má přidat do výstupního souboru. Uzavřete název souboru do uvozovek (""), pokud obsahuje mezeru.  
   
@@ -37,7 +37,7 @@ Vloží soubor prostředků Win32 do výstupního souboru.
  Viz [-linkresource – (Visual Basic)](../../../visual-basic/reference/command-line-compiler/linkresource.md) pro odkazování na soubor prostředků .NET Framework nebo [prostředku (Visual Basic)](../../../visual-basic/reference/command-line-compiler/resource.md) pro připojení souboru prostředků .NET Framework.  
   
 > [!NOTE]
-> Možnost `-win32resource` není k dispozici ve vývojovém prostředí sady Visual Studio; je k dispozici pouze při kompilaci z příkazového řádku.  
+> Tato `-win32resource` možnost není k dispozici ve vývojovém prostředí sady Visual Studio; je k dispozici pouze při kompilaci z příkazového řádku.  
   
 ## <a name="example"></a>Příklad  
  Následující kód zkompiluje `In.vb` a připojí soubor prostředků Win32 `Rf.res`:  
@@ -46,7 +46,7 @@ Vloží soubor prostředků Win32 do výstupního souboru.
 vbc -win32resource:rf.res in.vb  
 ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Visual Basic Kompilátor příkazového řádku](../../../visual-basic/reference/command-line-compiler/index.md)
 - [Příkazové řádky ukázkové kompilace](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)

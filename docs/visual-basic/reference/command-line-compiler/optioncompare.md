@@ -28,7 +28,7 @@ Určuje, jak se provádí porovnávání řetězců.
 
 ## <a name="remarks"></a>Poznámky
 
-Můžete zadat `-optioncompare` v jednom ze dvou forem: `-optioncompare:binary` pro použití binárního porovnávání řetězců a `-optioncompare:text` pro použití porovnávání textových řetězců. Ve výchozím nastavení kompilátor používá `-optioncompare:binary`.
+Můžete zadat `-optioncompare` v jednom ze dvou forem: `-optioncompare:binary` Chcete-li použít porovnávání binárních řetězců `-optioncompare:text` a použít porovnávání textových řetězců. Ve výchozím nastavení používá `-optioncompare:binary`kompilátor.
 
 V systému Microsoft Windows aktuální znaková stránka Určuje binární pořadí řazení. Typickým binárním pořadím řazení je následující:
 
@@ -52,18 +52,18 @@ Viz [příkaz Option Compare](../../../visual-basic/language-reference/statement
 
 ## <a name="example"></a>Příklad
 
-Následující kód zkompiluje `ProjFile.vb` a používá porovnávání binárních řetězců.
+Následující kód kompiluje `ProjFile.vb` a používá porovnávání binárních řetězců.
 
 ```console
 vbc -optioncompare:binary projFile.vb
 ```
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Visual Basic Kompilátor příkazového řádku](../../../visual-basic/reference/command-line-compiler/index.md)
-- [-optionexplicit](../../../visual-basic/reference/command-line-compiler/optionexplicit.md)
-- [-optionstrict](../../../visual-basic/reference/command-line-compiler/optionstrict.md)
-- [-optioninfer](../../../visual-basic/reference/command-line-compiler/optioninfer.md)
+- [– OptionExplicit –](../../../visual-basic/reference/command-line-compiler/optionexplicit.md)
+- [– OptionStrict –](../../../visual-basic/reference/command-line-compiler/optionstrict.md)
+- [– optioninfer –](../../../visual-basic/reference/command-line-compiler/optioninfer.md)
 - [Příkazové řádky ukázkové kompilace](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)
 - [Příkaz Option Compare](../../../visual-basic/language-reference/statements/option-compare-statement.md)
 - [Výchozí hodnoty pro Visual Basic, Projekty, dialogové okno Možnosti](/visualstudio/ide/reference/visual-basic-defaults-projects-options-dialog-box)

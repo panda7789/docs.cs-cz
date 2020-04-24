@@ -12,7 +12,7 @@ ms.locfileid: "75710151"
 ---
 # <a name="style-sheet-directives-embedded-in-a-document"></a>Direktivy šablon stylů vložené v dokumentu
 
-V některých případech existující XML obsahuje direktivu šablon stylů `<?xml:stylesheet?>`. Aplikace Microsoft Internet Explorer přijímá jako alternativu k syntaxi `<?xml-stylesheet?>`. Pokud data XML obsahují direktivu `<?xml:stylesheet?>`, jak je znázorněno na následujících datech, pokus o načtení těchto dat do XML model DOM (Document Object Model) (DOM) vyvolá výjimku.
+Existující kód XML může občas obsahovat direktivu šablon stylů `<?xml:stylesheet?>`. Aplikace Microsoft Internet Explorer přijímá jako alternativu k `<?xml-stylesheet?>` syntaxi. Pokud data XML obsahují `<?xml:stylesheet?>` direktivu, jak je znázorněno na následujících datech, pokus o načtení těchto dat do XML model DOM (Document Object Model) (DOM) vyvolá výjimku.
 
 ```xml
 <?xml version="1.0" ?>
@@ -23,7 +23,7 @@ V některých případech existující XML obsahuje direktivu šablon stylů `<?
 </root>
 ```
 
-K tomu dochází, protože `<?xml:stylesheet?>` se považuje za neplatný **ProcessingInstruction** do modelu DOM. Jakékoli **ProcessingInstruction**, v závislosti na oborech názvů ve specifikaci XML, mohou být pouze názvy bez dvojtečky (NCNames), nikoli kvalifikované názvy (QName).
+K tomu dochází, `<?xml:stylesheet?>` protože se v modelu DOM považuje neplatný **ProcessingInstruction** . Jakékoli **ProcessingInstruction**, v závislosti na oborech názvů ve specifikaci XML, mohou být pouze názvy bez dvojtečky (NCNames), nikoli kvalifikované názvy (QName).
 
 Z oddílu 6 specifikací oboru názvů ve specifikaci XML je účinek, aby metody **Load** a **LoadXml** splňovaly specifikace je v dokumentu:
 
@@ -31,10 +31,10 @@ Z oddílu 6 specifikací oboru názvů ve specifikaci XML je účinek, aby metod
 
 - Názvy entit, cíle ProcessingInstruction ani názvy Notation neobsahují žádné dvojtečky.
 
-U `<?xml:stylesheet?>`, který obsahuje dvojtečku, jste teď poznamenali pravidlo ve druhé odrážce.
+V případě `<?xml:stylesheet?>` , že obsahuje dvojtečku, jste teď poznamenali pravidlo ve druhé odrážce.
 
-V souladu s konsorcium World Wide Web (W3C), který [přiřazuje šablony stylů s dokumenty XML verze 1,0](https://www.w3.org/TR/xml-stylesheet/), je pokyn ke zpracování k přidružení šablony stylů XSLT k dokumentu XML `<?xml-stylesheet?>`a pomlčkou nahrazuje dvojtečku.
+V závislosti na konsorcium World Wide Web (W3C), které spojují [šablony stylů s dokumenty XML verze 1,0](https://www.w3.org/TR/xml-stylesheet/), je `<?xml-stylesheet?>`pokyn ke zpracování k přidružení šablony stylů XSLT k dokumentu XML s pomlčkou, která nahrazuje dvojtečku.
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Model DOM (Document Object Model) dokumentu XML](xml-document-object-model-dom.md)
+- [model DOM (Document Object Model) dokumentu XML](xml-document-object-model-dom.md)

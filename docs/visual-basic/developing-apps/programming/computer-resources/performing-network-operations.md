@@ -14,18 +14,18 @@ ms.locfileid: "74345543"
 ---
 # <a name="performing-network-operations-visual-basic"></a>Provádění síťových operací (Visual Basic)
 
-V následujících tabulkách jsou uvedeny úkoly přidružené k objektu. `My.Computer.Network`  
+V následujících tabulkách jsou uvedeny úkoly spojené s `My.Computer.Network` objektem.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
 
  [Postupy: Nahrání souboru](../../../../visual-basic/developing-apps/programming/computer-resources/how-to-upload-a-file.md)  
- Ukazuje, jak nahrát soubor a uložit jej `My.Computer.Network`do vzdáleného umístění pomocí aplikace .  
+ Ukazuje, jak nahrát soubor a uložit ho do vzdáleného umístění pomocí `My.Computer.Network`.  
   
  [Postupy: Stažení souboru](../../../../visual-basic/developing-apps/programming/computer-resources/how-to-download-a-file.md)  
- Ukazuje, jak stáhnout soubor ze vzdáleného umístění pomocí `My.Computer.Network`aplikace .  
+ Ukazuje, jak stáhnout soubor ze vzdáleného umístění pomocí `My.Computer.Network`.  
   
  [Postupy: Kontrola stavu připojení](../../../../visual-basic/developing-apps/programming/computer-resources/how-to-check-connection-status.md)  
- Ukazuje, jak zjistit, zda má počítač funkční síťové připojení.  
+ Ukazuje, jak zjistit, jestli má počítač fungující síťové připojení.  
   
 ## <a name="reference"></a>Referenční informace  
 
@@ -33,13 +33,13 @@ V následujících tabulkách jsou uvedeny úkoly přidružené k objektu. `My.C
  Uvádí metody, vlastnosti a události pro práci se sítí.  
   
  <xref:Microsoft.VisualBasic.Devices.Network.DownloadFile%2A>  
- Popisuje metodu. `DownloadFile`  
+ Popisuje `DownloadFile` metodu.  
   
  <xref:Microsoft.VisualBasic.Devices.Network.Ping%2A>  
- Popisuje metodu. `Ping`  
+ Popisuje `Ping` metodu.  
   
  <xref:Microsoft.VisualBasic.Devices.Network.UploadFile%2A>  
- Popisuje metodu. `UploadFile`  
+ Popisuje `UploadFile` metodu.  
   
  <xref:Microsoft.VisualBasic.Devices.Network.IsAvailable>  
  Popisuje `IsAvailable` vlastnost.

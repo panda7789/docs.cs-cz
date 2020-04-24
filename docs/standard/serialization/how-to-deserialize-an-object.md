@@ -46,7 +46,7 @@ Při deserializaci objektu, formát přenosu Určuje, zda vytváříte objekt da
     var myObject = (MySerializableClass) mySerializer.Deserialize(myFileStream)
     ```
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Představení serializace XML](introducing-xml-serialization.md)
 - [Postupy: Serializace objektu](how-to-serialize-an-object.md)

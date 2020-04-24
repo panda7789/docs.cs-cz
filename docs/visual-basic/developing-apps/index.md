@@ -14,32 +14,32 @@ ms.locfileid: "74349255"
 ---
 # <a name="developing-applications-with-visual-basic"></a>Vývoj aplikací pomocí jazyka Visual Basic
 
-Tato část popisuje koncepční dokumentaci pro jazyk jazyka Visual Basic.  
+Tato část obsahuje koncepční dokumentaci pro Visual Basic jazyk.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
 
  [Programování v jazyce Visual Basic](../../visual-basic/developing-apps/programming/index.md)  
- Zahrnuje různé programovací předměty.  
+ Zahrnuje celou řadu témat programování.  
   
  [Vývoj s použitím oboru názvů My](../../visual-basic/developing-apps/development-with-my/index.md)  
- Popisuje novou funkci `My`s názvem , která poskytuje přístup k informacím a výchozí instance objektu, které souvisejí s aplikací a její prostředí run-time.  
+ Popisuje novou funkci nazvanou `My`, která poskytuje přístup k informacím a výchozím instancím objektů, které se vztahují k aplikaci a jejímu prostředí za běhu.  
   
- [Přístup k datům v aplikacích jazyka Visual Basic](../../visual-basic/developing-apps/accessing-data.md)  
- Obsahuje nápovědu k přístupu k datům v jazyce Visual Basic.  
+ [Přístup k datům v aplikacích Visual Basic](../../visual-basic/developing-apps/accessing-data.md)  
+ Obsahuje informace o přístupu k datům v Visual Basic.  
   
  [Vytváření a používání součástí v jazyce Visual Basic](../../visual-basic/developing-apps/creating-and-using-components.md)  
- Definuje termín *komponenty* a popisuje, jak a kdy vytvořit součásti.  
+ Definuje pojem *komponenty* a popisuje, jak a kdy se mají vytvářet komponenty.  
   
  [Základy aplikací modelu Windows Forms](../../visual-basic/developing-apps/windows-forms/index.md)  
- Obsahuje informace o vytváření aplikací systému Windows Forms pomocí sady Visual Studio.  
+ Poskytuje informace o vytváření model Windows Forms aplikací pomocí sady Visual Studio.  
   
- [Přizpůsobení projektů a rozšíření my](../../visual-basic/developing-apps/customizing-extending-my/index.md)  
- Popisuje, jak lze přizpůsobit šablony projektu `My` a poskytnout další objekty.  
+ [Přizpůsobení projektů a rozšíření mých](../../visual-basic/developing-apps/customizing-extending-my/index.md)  
+ Popisuje, jak lze přizpůsobit šablony projektů k poskytnutí dalších `My` objektů.  
   
 ## <a name="related-sections"></a>Související oddíly  
 
  [Příručka k programování v jazyce Visual Basic](../../visual-basic/programming-guide/index.md)  
- Provede základní prvky programování pomocí jazyka Visual Basic.  
+ Provede vás základními prvky programování s Visual Basic.  
   
- [Referenční příručka jazyka Visual Basic](../../visual-basic/language-reference/index.md)  
- Obsahuje referenční dokumentaci pro jazyk jazyka Visual Basic.
+ [Reference jazyka Visual Basic](../../visual-basic/language-reference/index.md)  
+ Obsahuje referenční dokumentaci pro jazyk Visual Basic.

@@ -13,6 +13,6 @@ ms.locfileid: "73130866"
 # <a name="inserting-nodes-into-an-xml-document"></a>Vkládání uzlů do dokumentu XML
 Vložením nových uzlů můžete dokument upravit. Uzly mohou být nově vytvořeny, existující ve stejném dokumentu nebo mohou být importovány z jiného dokumentu. Další informace o vytváření nových uzlů najdete v tématu [vytvoření nových uzlů v modelu DOM](../../../../docs/standard/data/xml/create-new-nodes-in-the-dom.md). Další informace o kopírování existujících uzlů naleznete v tématech [kopírování existujících uzlů](../../../../docs/standard/data/xml/copy-existing-nodes.md), [kopírování existujících uzlů z jednoho dokumentu na jiný](../../../../docs/standard/data/xml/copying-existing-nodes-from-one-document-to-another.md)nebo [kopírování fragmentů dokumentů](../../../../docs/standard/data/xml/copying-document-fragments.md).  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Model DOM (Document Object Model) dokumentu XML](../../../../docs/standard/data/xml/xml-document-object-model-dom.md)
+- [model DOM (Document Object Model) dokumentu XML](../../../../docs/standard/data/xml/xml-document-object-model-dom.md)

@@ -14,31 +14,31 @@ ms.locfileid: "74336734"
 ---
 # <a name="walkthrough-changing-where-myapplicationlog-writes-information-visual-basic"></a>Návod: Změna místa, kam objekt My.Application.Log zapisuje informace (Visual Basic)
 
-Objekty `My.Application.Log` a `My.Log` můžete použít k protokolování informací o událostech, ke kterým dochází ve vaší aplikaci. Tento návod ukazuje, jak přepsat výchozí nastavení `Log` a způsobit, že objekt zapisovat do jiných posluchačů protokolu.
+Pomocí objektů `My.Application.Log` a `My.Log` můžete protokolovat informace o událostech, ke kterým dochází ve vaší aplikaci. Tento návod ukazuje, jak přepsat výchozí nastavení a způsobit, že `Log` objekt zapisuje do jiných posluchačů protokolů.
 
 ## <a name="prerequisites"></a>Požadavky
 
-Objekt `Log` může zapisovat informace do několika naslouchacích procesů protokolu. Před změnou konfigurací je třeba určit aktuální konfiguraci posluchačů protokolu. Další informace naleznete [v tématu Návod: Určení, kde my.Application.Log zapisuje informace](../../../../visual-basic/developing-apps/programming/log-info/walkthrough-determining-where-my-application-log-writes-information.md).
+`Log` Objekt může zapisovat informace do několika posluchačů protokolů. Před změnou konfigurace je třeba určit aktuální konfiguraci naslouchacího procesu protokolu. Další informace naleznete v tématu [Návod: zjištění, kam aplikace My. Application. Log zapisuje informace](../../../../visual-basic/developing-apps/programming/log-info/walkthrough-determining-where-my-application-log-writes-information.md).
 
-Můžete si přečíst [postup: Zápis informací o události do textového souboru](../../../../visual-basic/developing-apps/programming/log-info/how-to-write-event-information-to-a-text-file.md) nebo [Jak: Zápis do protokolu událostí aplikace](../../../../visual-basic/developing-apps/programming/log-info/how-to-write-to-an-application-event-log.md).
+Můžete si přečíst [Postupy: zápis informací o události do textového souboru](../../../../visual-basic/developing-apps/programming/log-info/how-to-write-event-information-to-a-text-file.md) nebo [Postupy: zápis do protokolu událostí aplikace](../../../../visual-basic/developing-apps/programming/log-info/how-to-write-to-an-application-event-log.md).
 
 ### <a name="to-add-listeners"></a>Přidání posluchačů
 
-1. Klepněte pravým tlačítkem myši na soubor app.config v **Průzkumníku řešení** a zvolte **Otevřít**.
+1. V **Průzkumník řešení** klikněte pravým tlačítkem na soubor App. config a vyberte **otevřít**.
 
-     \-nebo -
+     \-ani
 
-     Pokud není k dispozici žádný soubor app.config:
+     Pokud neexistuje žádný soubor App. config:
 
-    1. V nabídce **Projekt** zvolte **Přidat novou položku**.
+    1. V nabídce **projekt** klikněte na příkaz **Přidat novou položku**.
 
-    2. V dialogovém okně **Přidat novou položku** vyberte **Konfigurační soubor aplikace**.
+    2. V dialogovém okně **Přidat novou položku** vyberte možnost **konfigurační soubor aplikace**.
 
-    3. Klikněte na **Přidat**.
+    3. Klikněte na tlačítko **Add** (Přidat).
 
-2. Vyhledejte `<listeners>` oddíl pod `<source>` oddílem `name` s atributem "DefaultSource" v `<sources>` části. Sekce `<sources>` je v `<system.diagnostics>` sekci, v horní `<configuration>` části.
+2. Vyhledejte `<listeners>` část `<source>` v části s `name` atributem "DefaultSource" v `<sources>` části. `<sources>` Oddíl je v `<system.diagnostics>` části v části nejvyšší úrovně `<configuration>` .
 
-3. Přidejte tyto `<listeners>` prvky do tohoto oddílu.
+3. Přidejte tyto prvky do této `<listeners>` části.
 
     ```xml
     <!-- Uncomment to connect the application file log. -->
@@ -53,11 +53,11 @@ Můžete si přečíst [postup: Zápis informací o události do textového soub
     <!-- <add name="Console" /> -->
     ```
 
-4. Odkomentujte posluchače protokolu, `Log` které chcete přijímat zprávy.
+4. Odkomentujte naslouchací procesy protokolů, které chcete přijímat `Log` zprávy.
 
-5. Vyhledejte `<sharedListeners>` oddíl v `<system.diagnostics>` části v části `<configuration>` nejvyšší úrovně.
+5. Vyhledejte `<sharedListeners>` část `<system.diagnostics>` v části v sekci nejvyšší úrovně `<configuration>` .
 
-6. Přidejte tyto `<sharedListeners>` prvky do tohoto oddílu.
+6. Přidejte tyto prvky do této `<sharedListeners>` části.
 
     ```xml
     <add name="FileLog"
@@ -88,7 +88,7 @@ Můžete si přečíst [postup: Zápis informací o události do textového soub
          initializeData="true" />
     ```
 
-7. Obsah souboru app.config by měl být podobný následujícímu xml:
+7. Obsah souboru App. config by měl vypadat podobně jako následující kód XML:
 
     ```xml
     <?xml version="1.0" encoding="utf-8" ?>
@@ -147,39 +147,39 @@ Můžete si přečíst [postup: Zápis informací o události do textového soub
     </configuration>
     ```
 
-### <a name="to-reconfigure-a-listener"></a>Změna konfigurace naslouchací proces
+### <a name="to-reconfigure-a-listener"></a>Postup překonfigurování naslouchacího procesu
 
-1. Vyhledejte `<add>` prvek posluchače `<sharedListeners>` z oddílu.
+1. Vyhledejte `<add>` element naslouchacího procesu z `<sharedListeners>` oddílu.
 
-2. Atribut `type` udává název typu naslouchací proces. Tento typ musí <xref:System.Diagnostics.TraceListener> dědit z třídy. Pomocí silně pojmenovaného názvu typu zajistěte, aby byl použit správný typ. Další informace naleznete v části "Chcete-li odkazovat na silně pojmenovaný typ" níže.
+2. `type` Atribut poskytuje název typu naslouchacího procesu. Tento typ musí dědit od <xref:System.Diagnostics.TraceListener> třídy. Použijte název silně pojmenovaného typu k zajištění toho, aby byl použit správný typ. Další informace naleznete níže v části "odkazování na silně pojmenovaný typ".
 
-     Některé typy, které můžete použít, jsou:
+     Mezi typy, které můžete použít, patří:
 
-    - Naslouchací <xref:Microsoft.VisualBasic.Logging.FileLogTraceListener?displayProperty=nameWithType> proces, který zapisuje do protokolu souborů.
+    - <xref:Microsoft.VisualBasic.Logging.FileLogTraceListener?displayProperty=nameWithType> Naslouchací proces, který zapisuje do protokolu souborů.
 
-    - Naslouchací <xref:System.Diagnostics.EventLogTraceListener?displayProperty=nameWithType> proces, který zapisuje informace do protokolu událostí počítače určeného parametrem. `initializeData`
+    - <xref:System.Diagnostics.EventLogTraceListener?displayProperty=nameWithType> Naslouchací proces, který zapisuje informace do protokolu událostí počítače určeného `initializeData` parametrem.
 
-    - A <xref:System.Diagnostics.DelimitedListTraceListener?displayProperty=nameWithType> <xref:System.Diagnostics.XmlWriterTraceListener?displayProperty=nameWithType> naslouchací procesy, `initializeData` které zapisují do souboru určeného v parametru.
+    - Naslouchací <xref:System.Diagnostics.DelimitedListTraceListener?displayProperty=nameWithType> procesy <xref:System.Diagnostics.XmlWriterTraceListener?displayProperty=nameWithType> a, které zapisují do souboru zadaného v `initializeData` parametru.
 
-    - Naslouchací <xref:System.Diagnostics.ConsoleTraceListener?displayProperty=nameWithType> proces, který zapisuje do konzoly příkazového řádku.
+    - <xref:System.Diagnostics.ConsoleTraceListener?displayProperty=nameWithType> Naslouchací proces, který zapisuje do konzoly příkazového řádku.
 
-     Informace o tom, kde jiné typy posluchačů protokolu psát informace, naleznete v dokumentaci tohoto typu.
+     Informace o tom, kde jiné typy protokolových posluchačů zapisují informace, najdete v dokumentaci k tomuto typu.
 
-3. Když aplikace vytvoří objekt posluchače protokolu, `initializeData` předá atribut jako parametr konstruktoru. Význam atributu `initializeData` závisí na naslouchací proces trasování.
+3. Když aplikace vytvoří objekt naslouchacího procesu protokolu, předá tento `initializeData` atribut jako parametr konstruktoru. Význam `initializeData` atributu závisí na naslouchací službě trasování.
 
-4. Po vytvoření naslouchací proces protokolu aplikace nastaví vlastnosti posluchače. Tyto vlastnosti jsou definovány ostatními atributy v elementu. `<add>` Další informace o vlastnostech pro konkrétní naslouchací proces naleznete v dokumentaci k typu tohoto naslouchacího procesu.
+4. Po vytvoření naslouchacího procesu protokolu aplikace nastaví vlastnosti naslouchacího procesu. Tyto vlastnosti jsou definovány jinými atributy v `<add>` elementu. Další informace o vlastnostech konkrétního naslouchacího procesu najdete v dokumentaci pro daný typ naslouchacího procesu.
 
-### <a name="to-reference-a-strongly-named-type"></a>Odkaz na silně pojmenovaný typ
+### <a name="to-reference-a-strongly-named-type"></a>Odkazování na silně pojmenovaný typ
 
-1. Chcete-li zajistit, že správný typ se používá pro posluchače protokolu, ujistěte se, že používáte plně kvalifikovaný název typu a silně pojmenovaný název sestavení. Syntaxe silně pojmenovaného typu je následující:
+1. Chcete-li zajistit, aby byl pro naslouchací proces protokolu použit správný typ, nezapomeňte použít plně kvalifikovaný název typu a silně pojmenovaný název sestavení. Syntaxe silně pojmenovaného typu je následující:
 
-     \<*název>,* \< *název* sestavení \<>, \<číslo *verze*>,> jazykové *verze,* \< *silný název*>
+     \<*název typu*>, \< *název sestavení*>, \< *číslo verze*>, \< *jazyková verze*> \<, *silný název*>
 
-2. Tento příklad kódu ukazuje, jak určit silně pojmenovaný název typu pro plně kvalifikovaný typ – "System.Diagnostics.FileLogTraceListener" v tomto případě.
+2. Tento příklad kódu ukazuje, jak určit název silně pojmenovaného typu pro plně kvalifikovaný typ – "System. Diagnostics. FileLogTraceListener" v tomto případě.
 
      [!code-vb[VbVbalrMyApplicationLog#15](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyApplicationLog/VB/Form1.vb#15)]
 
-     Toto je výstup a lze jej použít k jedinečným odkazem na silně pojmenovaný typ, jako v postupu "Chcete-li přidat posluchače" výše.
+     Toto je výstup a lze jej použít k jedinečnému odkazu silně pojmenovaného typu, jak je uvedeno výše v proceduře "Přidat naslouchací procesy".
 
      `Microsoft.VisualBasic.Logging.FileLogTraceListener, Microsoft.VisualBasic, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a`
 

@@ -25,20 +25,20 @@ Určuje, kam se mají zarovnat oddíly výstupního souboru.
 -filealign:number  
 ```  
   
-## <a name="arguments"></a>Arguments  
+## <a name="arguments"></a>Argumenty  
  `number`  
- Požadováno. Hodnota, která určuje zarovnání oddílů ve výstupním souboru. Platné hodnoty jsou 512, 1024, 2048, 4096 a 8192. Tyto hodnoty jsou v bajtech.  
+ Povinná hodnota. Hodnota, která určuje zarovnání oddílů ve výstupním souboru. Platné hodnoty jsou 512, 1024, 2048, 4096 a 8192. Tyto hodnoty jsou v bajtech.  
   
 ## <a name="remarks"></a>Poznámky  
- Pomocí možnosti `-filealign` můžete určit zarovnání oddílů ve výstupním souboru. Oddíly jsou bloky souvislé paměti v přenositelném spustitelném souboru (PE), který obsahuje buď kód, nebo data. Možnost `-filealign` umožňuje kompilovat aplikaci pomocí nestandardního zarovnání; většinu vývojářů tuto možnost nepotřebují použít.  
+ Pomocí `-filealign` možnosti můžete určit zarovnání oddílů ve výstupním souboru. Oddíly jsou bloky souvislé paměti v přenositelném spustitelném souboru (PE), který obsahuje buď kód, nebo data. `-filealign` Možnost umožňuje zkompilovat aplikaci pomocí nestandardního zarovnání; většinu vývojářů tuto možnost nepotřebují použít.  
   
- Každý oddíl je zarovnán na hranici, která je násobkem hodnoty `-filealign`. Neexistuje žádná pevná výchozí hodnota. Pokud není zadán `-filealign`, kompilátor vybere výchozí hodnotu v době kompilace.  
+ Každý oddíl je zarovnán na hranici, která je násobkem `-filealign` hodnoty. Neexistuje žádná pevná výchozí hodnota. Pokud `-filealign` parametr není zadán, kompilátor vybere výchozí hodnotu v době kompilace.  
   
  Zadáním velikosti oddílu můžete změnit velikost výstupního souboru. Změna velikosti oddílu může být užitečná pro programy, které se spustí na menších zařízeních.  
   
 > [!NOTE]
-> Možnost `-filealign` není k dispozici ve vývojovém prostředí sady Visual Studio; je k dispozici pouze při kompilaci z příkazového řádku.  
+> Tato `-filealign` možnost není k dispozici ve vývojovém prostředí sady Visual Studio; je k dispozici pouze při kompilaci z příkazového řádku.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Visual Basic Kompilátor příkazového řádku](../../../visual-basic/reference/command-line-compiler/index.md)

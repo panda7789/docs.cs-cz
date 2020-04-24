@@ -14,23 +14,23 @@ ms.locfileid: "74352091"
 ---
 # <a name="how-to-log-exceptions-in-visual-basic"></a>Postupy: Protokolování výjimek v jazyce Visual Basic
 
-Objekty `My.Application.Log` a `My.Log` můžete použít k protokolování informací o výjimkách, ke kterým dochází ve vaší aplikaci. Tyto příklady ukazují, `My.Application.Log.WriteException` jak použít metodu k protokolování výjimek, které zachytíte explicitně a výjimky, které jsou neošetřené.  
+Pomocí objektů `My.Application.Log` a `My.Log` můžete protokolovat informace o výjimkách, ke kterým dochází ve vaší aplikaci. Tyto příklady ukazují, jak použít `My.Application.Log.WriteException` metodu k protokolování výjimek, které jsou zachyceny explicitně a výjimek, které jsou neošetřené.  
   
- Pro protokolování trasování `My.Application.Log.WriteEntry` informací použijte metodu. Další informace najdete v tématu <xref:Microsoft.VisualBasic.Logging.Log.WriteEntry%2A>.  
+ Pro informace o trasování protokolu použijte `My.Application.Log.WriteEntry` metodu. Další informace najdete v tématu <xref:Microsoft.VisualBasic.Logging.Log.WriteEntry%2A>.  
   
-### <a name="to-log-a-handled-exception"></a>Protokolování zpracované výjimky  
+### <a name="to-log-a-handled-exception"></a>Protokolování ošetřené výjimky  
   
 1. Vytvořte metodu, která bude generovat informace o výjimce.  
   
      [!code-vb[VbVbalrMyApplicationLog#9](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyApplicationLog/VB/Form1.vb#9)]  
   
-2. Použijte `Try...Catch` blok zachytit výjimku.  
+2. K zachycení `Try...Catch` výjimky použijte blok.  
   
      [!code-vb[VbVbalrMyApplicationLog#6](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyApplicationLog/VB/Form1.vb#6)]  
   
-3. Vložte kód, který by `Try` mohl generovat výjimku v bloku.  
+3. Vložte kód, který by mohl vytvořit výjimku v `Try` bloku.  
   
-     `Dim` Odkomentujte `MsgBox` řádky a, které způsobí výjimku. <xref:System.NullReferenceException>  
+     Odkomentujte `Dim` řádky `MsgBox` a, abyste způsobili <xref:System.NullReferenceException> výjimku.  
   
      [!code-vb[VbVbalrMyApplicationLog#7](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyApplicationLog/VB/Form1.vb#7)]  
   
@@ -38,27 +38,27 @@ Objekty `My.Application.Log` a `My.Log` můžete použít k protokolování info
   
      [!code-vb[VbVbalrMyApplicationLog#8](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyApplicationLog/VB/Form1.vb#8)]  
   
-     Následující příklad ukazuje úplný kód pro protokolování zpracované výjimky.  
+     Následující příklad ukazuje úplný kód pro protokolování ošetřené výjimky.  
   
      [!code-vb[VbVbalrMyApplicationLog#10](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyApplicationLog/VB/Form1.vb#10)]  
   
-### <a name="to-log-an-unhandled-exception"></a>Protokolování neošetřené výjimky  
+### <a name="to-log-an-unhandled-exception"></a>Postup při protokolování neošetřené výjimky  
   
-1. V **Průzkumníku řešení**je vybrán projekt . V nabídce **Projekt** zvolte **Vlastnosti**.  
+1. Máte projekt vybraný v **Průzkumník řešení**. V nabídce **projekt** klikněte na příkaz **vlastnosti**.  
   
-2. Klikněte na kartu **Aplikace.**  
+2. Klikněte na kartu **aplikace** .  
   
 3. Kliknutím na tlačítko **Zobrazit události aplikace** otevřete Editor kódu.  
   
-     Tím se otevře soubor ApplicationEvents.vb.  
+     Tím se otevře soubor ApplicationEvents. vb.  
   
-4. Otevřete soubor ApplicationEvents.vb v Editoru kódu. V nabídce **Obecné** zvolte **MyApplication Events**.  
+4. Otevřete soubor ApplicationEvents. vb v editoru kódu. V nabídce **Obecné** vyberte **události MyApplication**.  
   
-5. V nabídce **Declarations** zvolte **UnhandledException**.  
+5. V nabídce **deklarace** vyberte možnost **UnhandledException**.  
   
      Aplikace vyvolá <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.UnhandledException> událost před spuštěním hlavní aplikace.  
   
-6. Přidejte `My.Application.Log.WriteException` metodu `UnhandledException` do obslužné rutiny události.  
+6. Přidejte `My.Application.Log.WriteException` metodu do obslužné rutiny `UnhandledException` události.  
   
      [!code-vb[VbVbalrMyApplicationLog#4](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyApplicationLog/VB/MyEventsFake.vb#4)]  
   
@@ -71,7 +71,7 @@ Objekty `My.Application.Log` a `My.Log` můžete použít k protokolování info
 - <xref:Microsoft.VisualBasic.Logging.Log?displayProperty=nameWithType>
 - <xref:Microsoft.VisualBasic.Logging.Log.WriteEntry%2A>
 - <xref:Microsoft.VisualBasic.Logging.Log.WriteException%2A>
-- [Práce s protokoly aplikací](../../../../visual-basic/developing-apps/programming/log-info/working-with-application-logs.md)
+- [Práce s protokoly aplikací](../../../../visual-basic/developing-apps/programming/log-info/working-with-application-logs.md)
 - [Postupy: Zápis zpráv protokolu](../../../../visual-basic/developing-apps/programming/log-info/how-to-write-log-messages.md)
 - [Návod: Zjištění, kam objekt My.Application.Log zapisuje informace](../../../../visual-basic/developing-apps/programming/log-info/walkthrough-determining-where-my-application-log-writes-information.md)
 - [Návod: Změna místa, kam objekt My.Application.Log zapisuje informace](../../../../visual-basic/developing-apps/programming/log-info/walkthrough-changing-where-my-application-log-writes-information.md)

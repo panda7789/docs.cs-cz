@@ -17,17 +17,17 @@ ms.locfileid: "74349243"
 ---
 # <a name="accessing-application-forms-visual-basic"></a>Přístup k formulářům aplikace (Visual Basic)
 
-Objekt `My.Forms` poskytuje snadný způsob přístupu k instanci každého formuláře systému Windows deklarované v projektu aplikace. Můžete také použít vlastnosti objektu `My.Application` pro přístup k úvodní obrazovce aplikace a hlavní formulář a získat seznam otevřených formulářů aplikace.  
+`My.Forms` Objekt poskytuje snadný způsob, jak získat přístup k instanci každého formuláře Windows deklarovaného v projektu aplikace. Můžete také použít vlastnosti `My.Application` objektu pro přístup k úvodní obrazovce aplikace a k hlavnímu formuláři a získat seznam otevřených formulářů aplikace.  
   
 ## <a name="tasks"></a>Úlohy  
 
- V následující tabulce jsou uvedeny příklady, které ukazují, jak získat přístup k formulářům aplikace.  
+ V následující tabulce jsou uvedeny příklady, které ukazují, jak přistupovat k formulářům aplikace.  
   
 |Akce|Seznamte se s |  
 |---|---|  
 |Přístup k jednomu formuláři z jiného formuláře v aplikaci.|[My.Forms – objekt](../../../visual-basic/language-reference/objects/my-forms-object.md)|  
 |Zobrazí názvy všech otevřených formulářů aplikace.|<xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.OpenForms%2A>|  
-|Při spuštění aplikace aktualizujte úvodní obrazovku informacemi o stavu.|<xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.SplashScreen%2A>|  
+|Aktualizujte úvodní obrazovku o stavové informace při spuštění aplikace.|<xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.SplashScreen%2A>|  
   
 ## <a name="see-also"></a>Viz také
 

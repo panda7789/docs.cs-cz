@@ -23,31 +23,31 @@ Povolí nebo zakáže optimalizace kompilátoru.
 -optimize[ + | - ]  
 ```  
   
-## <a name="arguments"></a>Arguments  
+## <a name="arguments"></a>Argumenty  
   
-|Termín|Definice|  
+|Označení|Definice|  
 |---|---|  
-|`+` &#124; `-`|Volitelné. Možnost `-optimize-` zakáže optimalizace kompilátoru. Možnost `-optimize+` povoluje optimalizace. Ve výchozím nastavení jsou optimalizace zakázané.|  
+|`+`&#124;`-`|Nepovinný parametr. `-optimize-` Možnost zakáže optimalizace kompilátoru. `-optimize+` Možnost povoluje optimalizace. Ve výchozím nastavení jsou optimalizace zakázané.|  
   
 ## <a name="remarks"></a>Poznámky  
- Optimalizace kompilátoru usnadňují, rychlejší a efektivnější výstupní soubor. Vzhledem k tomu, že optimalizace mají za následek změnu uspořádání kódu ve výstupním souboru, `-optimize+` může způsobit obtížné ladění.  
+ Optimalizace kompilátoru usnadňují, rychlejší a efektivnější výstupní soubor. Vzhledem k tomu, že optimalizace mají za následek změnu uspořádání kódu ve výstupním souboru `-optimize+` , může být ladění obtížné.  
   
- Všechny moduly generované pomocí `-target:module` pro sestavení musí používat stejné nastavení `-optimize` jako sestavení. Další informace najdete v tématu [-target (Visual Basic)](../../../visual-basic/reference/command-line-compiler/target.md).  
+ Všechny moduly generované v `-target:module` pro sestavení musí používat stejné `-optimize` nastavení jako sestavení. Další informace najdete v tématu [-target (Visual Basic)](../../../visual-basic/reference/command-line-compiler/target.md).  
   
- Můžete kombinovat možnosti `-optimize` a `-debug`.  
+ Můžete kombinovat možnosti `-optimize` a `-debug` .  
   
 |Nastavení – optimalizace v integrovaném vývojovém prostředí sady Visual Studio|  
 |---|  
 |1. v **Průzkumník řešení**mít vybraný projekt. V nabídce **projekt** klikněte na příkaz **vlastnosti**.<br />     <br />2. klikněte na kartu **kompilovat** .<br />3. klikněte na tlačítko **Upřesnit** .<br />4. Upravte zaškrtávací políčko **Povolit optimalizace** .|  
   
 ## <a name="example"></a>Příklad  
- Následující kód zkompiluje `T2.vb` a povoluje optimalizace kompilátoru.  
+ Následující kód zkompiluje `T2.vb` a povolí optimalizace kompilátoru.  
   
 ```console
 vbc t2.vb -optimize  
 ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Visual Basic Kompilátor příkazového řádku](../../../visual-basic/reference/command-line-compiler/index.md)
 - [-Debug (Visual Basic)](../../../visual-basic/reference/command-line-compiler/debug.md)

@@ -13,11 +13,11 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/03/2019
 ms.locfileid: "73459260"
 ---
-# <a name="datetimeserialization-element"></a>\<element > dateTimeSerialization
+# <a name="datetimeserialization-element"></a>\<dateTimeSerialization – element>
 Určuje režim serializace <xref:System.DateTime> objekty.  
   
- Konfigurace \<  
-\<dateTimeSerialization >  
+ \<> konfigurace  
+\<dateTimeSerialization>  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -34,10 +34,10 @@ Určuje režim serializace <xref:System.DateTime> objekty.
   
 |Atributy|Popis|  
 |----------------|-----------------|  
-|`mode`|Volitelné. Určuje režim serializace. Nastavte na jednu z <xref:System.Xml.Serialization.Configuration.DateTimeSerializationSection.DateTimeSerializationMode> hodnoty. Výchozí hodnota je **zpáteční**.|  
+|`mode`|Nepovinný parametr. Určuje režim serializace. Nastavte na jednu z <xref:System.Xml.Serialization.Configuration.DateTimeSerializationSection.DateTimeSerializationMode> hodnoty. Výchozí hodnota je **zpáteční**.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
- Žádné  
+ Žádné.  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
@@ -46,16 +46,16 @@ Určuje režim serializace <xref:System.DateTime> objekty.
 |System.XML.Serialization|Element nejvyšší úrovně pro řízení serializace XML.|  
   
 ## <a name="remarks"></a>Poznámky  
- Ve verzích 1,0, 1,1, 2,0 a novějších .NET Framework platí, že pokud je tato vlastnost nastavená na **místní**, <xref:System.DateTime> objekty se vždycky naformátují jako místní čas. Informace o zóně Místní čas je vždy součástí serializovaná data. Nastavte tuto vlastnost na **místní** , aby se zajistila kompatibilita se staršími verzemi .NET Framework.  
+ V verzích 1,0, 1,1, 2,0 a novějších .NET Framework platí, že pokud je tato vlastnost nastavena na **místní**, <xref:System.DateTime> objekty jsou vždy formátovány jako místní čas. Informace o zóně Místní čas je vždy součástí serializovaná data. Nastavte tuto vlastnost na **místní** , aby se zajistila kompatibilita se staršími verzemi .NET Framework.  
   
- Ve verzi 2,0 a novějších .NET Framework, které mají tuto vlastnost nastavenou na hodnotu **zpětného převodu**, se <xref:System.DateTime> objekty zkontrolují za účelem zjištění, zda jsou v místním, UTC nebo neurčeném časovém pásmu. <xref:System.DateTime> Objekty jsou pak serializován tak, že tyto informace je zachováno. Toto je výchozí chování a je doporučené chování pro všechny nové aplikace, které nekomunikují ve starších verzích rozhraní.  
+ Ve verzi 2,0 a novějších .NET Framework, které mají tuto vlastnost nastavenou na hodnotu **zpětného převodu**, <xref:System.DateTime> jsou zkontrolovány objekty za účelem zjištění, zda jsou v místním, UTC nebo neurčeném časovém pásmu. <xref:System.DateTime> Objekty jsou pak serializován tak, že tyto informace je zachováno. Toto je výchozí chování a je doporučené chování pro všechny nové aplikace, které nekomunikují ve starších verzích rozhraní.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.DateTime>
 - <xref:System.Xml.Serialization.XmlSchemaImporter>
 - <xref:System.Xml.Serialization.Configuration.DateTimeSerializationSection.DateTimeSerializationMode>
 - [Schéma konfiguračního souboru](../../../docs/framework/configure-apps/file-schema/index.md)
-- [\<element > schemaImporterExtensions](../../../docs/standard/serialization/schemaimporterextensions-element.md)
-- [\<přidat > element pro \<schemaImporterExtensions >](../../../docs/standard/serialization/add-element-for-schemaimporterextensions.md)
-- [\<element System. XML. Serialization > elementu](../../../docs/standard/serialization/system-xml-serialization-element.md)
+- [\<schemaImporterExtensions – element>](../../../docs/standard/serialization/schemaimporterextensions-element.md)
+- [\<Přidat> element pro \<>schemaImporterExtensions](../../../docs/standard/serialization/add-element-for-schemaimporterextensions.md)
+- [\<System. XML. Serialization – element>](../../../docs/standard/serialization/system-xml-serialization-element.md)

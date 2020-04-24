@@ -24,7 +24,7 @@ Určuje, která verze platformy modulu CLR (Common Language Runtime) může spus
   
 ## <a name="arguments"></a>Argumenty  
   
-|Termín|Definice|  
+|Označení|Definice|  
 |---|---|  
 |`x86`|Zkompiluje sestavení tak, aby bylo spuštěno pomocí 32 CLR kompatibilního s platformou x86.|  
 |`x64`|Zkompiluje sestavení tak, aby bylo spuštěno pomocí 64 CLR na počítači, který podporuje instrukční sady AMD64 nebo EM64T.|  
@@ -34,7 +34,7 @@ Určuje, která verze platformy modulu CLR (Common Language Runtime) může spus
 |`anycpu32bitpreferred`|Zkompiluje sestavení pro spuštění na libovolné platformě. Aplikace bude spuštěna jako 32ová aplikace v 32 i v 64 bitových verzí systému Windows. Tento příznak je platný jenom pro spustitelné soubory (. EXE) a vyžaduje .NET Framework 4,5.|  
   
 ## <a name="remarks"></a>Poznámky  
- Pomocí možnosti `-platform` určete typ procesoru, který je cílem výstupního souboru.  
+ Tuto `-platform` možnost použijte k určení typu procesoru cíleného výstupním souborem.  
   
  Obecně platí, .NET Framework sestavení zapsaných v Visual Basic budou spuštěna stejně bez ohledu na platformu. Existují však některé případy, které se chovají odlišně na různých platformách. Tyto běžné případy:  
   
@@ -42,27 +42,27 @@ Určuje, která verze platformy modulu CLR (Common Language Runtime) může spus
   
 - Aritmetický ukazatel, který obsahuje konstantní velikosti.  
   
-- Nesprávné vyvolání platformy nebo deklarace COM, které používají `Integer` pro popisovače místo <xref:System.IntPtr>.  
+- Nesprávné vyvolání platformy nebo deklarace COM, které `Integer` používají pro popisovače místo <xref:System.IntPtr>.  
   
-- Přetypování <xref:System.IntPtr> do `Integer`.  
+- <xref:System.IntPtr> Přetypování `Integer`do.  
   
 - Použití volání platformy nebo zprostředkovatele komunikace s objekty COM s komponentami, které neexistují na všech platformách.  
   
- Pokud víte, že jste provedli předpoklady týkající se architektury, na které je váš kód spuštěný, možnost **-platformou** tyto problémy sníží. Určen  
+ Pokud víte, že jste provedli předpoklady týkající se architektury, na které je váš kód spuštěný, možnost **-platformou** tyto problémy sníží. Konkrétně:  
   
 - Pokud se rozhodnete cílit na 64 platformu a aplikace je spuštěná na 32 počítači, chybová zpráva je mnohem starší a cílená na problém je větší než chyba, ke které dojde bez použití tohoto přepínače.  
   
-- Pokud u možnosti nastavíte příznak `x86` a aplikace se následně spustí na 64ém počítači, aplikace se spustí v subsystému WOW namísto nativního spuštění.  
+- Pokud u možnosti nastavíte `x86` příznak a aplikace se následně spustí na 64ém počítači, aplikace se spustí v subsystému Wow, nikoli v nativním provozu.  
   
  V 64 operačním systému Windows:  
   
-- Sestavení kompilována s `-platform:x86` budou spouštěna v 32 CLR spuštěném v modulu WOW64.  
+- Sestavení kompilována `-platform:x86` se spustí v 32 CLR spuštěném v modulu WOW64.  
   
-- Spustitelné soubory kompilovány s `-platform:anycpu` budou spouštěny v 64 CLR.  
+- Spustitelné soubory zkompilované pomocí `-platform:anycpu` se spustí v 64 CLR.  
   
-- Knihovna DLL kompilována s `-platform:anycpu` bude spuštěna ve stejném modulu CLR jako proces, do kterého byla načtena.  
+- Knihovna DLL, která je `-platform:anycpu` zkompilována s, bude spuštěna ve stejném modulu CLR jako proces, do kterého byla načtena.  
   
-- Spustitelné soubory, které jsou kompilovány s `-platform:anycpu32bitpreferred`, budou spouštěny v 32 CLR.  
+- Spustitelné soubory, které jsou zkompilovány s `-platform:anycpu32bitpreferred` , budou spouštěny v 32 CLR.  
   
  Další informace o vývoji aplikace pro spuštění v 64 verze systému Windows naleznete v tématu [64-bitové aplikace](../../../framework/64-bit-apps.md).  
   
@@ -75,13 +75,13 @@ Určuje, která verze platformy modulu CLR (Common Language Runtime) může spus
      Další informace naleznete v tématu [Kompilovat stránku, Návrhář projektu (Visual Basic)](/visualstudio/ide/reference/compile-page-project-designer-visual-basic).  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje, jak použít možnost kompilátoru `-platform`.  
+ Následující příklad ukazuje, jak použít možnost `-platform` kompilátoru.  
   
 ```console
 vbc -platform:x86 myFile.vb  
 ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [-Target (Visual Basic)](target.md)
 - [Visual Basic Kompilátor příkazového řádku](index.md)

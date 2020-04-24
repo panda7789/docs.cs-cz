@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Odeslání souboru'
+title: 'Postupy: Nahrání souboru'
 ms.date: 07/20/2015
 helpviewer_keywords:
 - networks, uploading files
@@ -17,23 +17,23 @@ ms.locfileid: "74345563"
 ---
 # <a name="how-to-upload-a-file-in-visual-basic"></a>Postupy: Odeslání souboru v jazyce Visual Basic
 
-Metodu <xref:Microsoft.VisualBasic.Devices.Network.UploadFile%2A> lze použít k nahrání souboru a jeho uložení do vzdáleného umístění. Pokud `ShowUI` je parametr `True`nastaven na , zobrazí se dialogové okno, které zobrazuje průběh nahrávání a umožňuje uživatelům operaci zrušit.  
+<xref:Microsoft.VisualBasic.Devices.Network.UploadFile%2A> Metodu lze použít k nahrání souboru a jeho uložení do vzdáleného umístění. Pokud je `ShowUI` parametr nastaven na `True`hodnotu, zobrazí se dialogové okno, které zobrazuje průběh nahrávání a umožňuje uživatelům zrušit operaci.  
   
 ### <a name="to-upload-a-file"></a>Nahrání souboru  
   
-- Pomocí `UploadFile` této metody můžete nahrát soubor a zadat umístění zdrojového souboru a umístění cílového adresáře jako řetězec nebo identifikátor URI (Identifikátor jednotného prostředku). Tento příklad odešle `Order.txt` `http://www.cohowinery.com/uploads.aspx`soubor do aplikace .  
+- Použijte `UploadFile` metodu pro nahrání souboru, určení umístění zdrojového souboru a umístění cílového adresáře jako řetězce nebo identifikátor URI (Uniform Resource Identifier). Tento příklad nahraje soubor `Order.txt` do. `http://www.cohowinery.com/uploads.aspx`  
   
      [!code-vb[VbResourceTasks#6](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbResourceTasks/VB/Class1.vb#6)]  
   
 ### <a name="to-upload-a-file-and-show-the-progress-of-the-operation"></a>Nahrání souboru a zobrazení průběhu operace  
   
-- Pomocí `UploadFile` této metody můžete nahrát soubor a zadat umístění zdrojového souboru a umístění cílového adresáře jako řetězec nebo identifikátor URI. Tento příklad odešle `Order.txt` `http://www.cohowinery.com/uploads.aspx` soubor bez zadání uživatelského jména nebo hesla, zobrazí průběh nahrávání a má interval časového intervalu 500 milisekund.  
+- Použijte `UploadFile` metodu k nahrání souboru, určení umístění zdrojového souboru a umístění cílového adresáře jako řetězce nebo identifikátoru URI. Tento příklad nahraje soubor `Order.txt` do `http://www.cohowinery.com/uploads.aspx` , aniž by zadal uživatelské jméno nebo heslo, zobrazuje průběh nahrávání a má časový limit 500 milisekund.  
   
      [!code-vb[VbResourceTasks#7](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbResourceTasks/VB/Class1.vb#7)]  
   
-### <a name="to-upload-a-file-supplying-a-user-name-and-password"></a>Odeslání souboru zadáním uživatelského jména a hesla  
+### <a name="to-upload-a-file-supplying-a-user-name-and-password"></a>Pokud chcete nahrát soubor, zadejte uživatelské jméno a heslo.  
   
-- Pomocí `UploadFile` této metody můžete nahrát soubor, zadat umístění zdrojového souboru a umístění cílového adresáře jako řetězec nebo identifikátor URI a zadat uživatelské jméno a heslo. Tento příklad nahraje `Order.txt` `http://www.cohowinery.com/uploads.aspx`soubor do , `anonymous` zadání uživatelského jména a prázdné heslo.  
+- Použijte `UploadFile` metodu k nahrání souboru, určení umístění zdrojového souboru a umístění cílového adresáře jako řetězce nebo identifikátoru URI a zadání uživatelského jména a hesla. Tento příklad nahraje soubor `Order.txt` do `http://www.cohowinery.com/uploads.aspx`, zadáním uživatelského jména `anonymous` a prázdného hesla.  
   
      [!code-vb[VbResourceTasks#8](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbResourceTasks/VB/Class1.vb#8)]  
   
@@ -43,9 +43,9 @@ Metodu <xref:Microsoft.VisualBasic.Devices.Network.UploadFile%2A> lze použít k
   
 - Cesta k místnímu souboru není platná (<xref:System.ArgumentException>).  
   
-- Ověřování se<xref:System.Security.SecurityException>nezdařilo ( ).  
+- Ověřování se nezdařilo (<xref:System.Security.SecurityException>).  
   
-- Vypršel časový limit<xref:System.TimeoutException>připojení ( ).  
+- Vypršel časový limit připojení (<xref:System.TimeoutException>).  
   
 ## <a name="see-also"></a>Viz také
 

@@ -11,8 +11,8 @@ ms.lasthandoff: 01/07/2020
 ms.locfileid: "75711061"
 ---
 # <a name="copy-existing-nodes"></a>Kopírování existujících uzlů
-Existuje mnoho metod a vlastností v souboru XML model DOM (Document Object Model) (DOM), které můžete použít k výběru uzlu, například **SelectSingleNode**, **ChildNodes [int i]** , **atributů [int i]** . Po výběru uzlu jej můžete vložit do stromu pomocí jedné z metod vložení, které fungují pro daný typ uzlu. Jediným omezením pro vložení uzlu do stromu je, že dokument musí být po vložení uzlu stále správně vytvořen. Když je existující uzel vložen do stromu modelu DOM, je odebrán z původní pozice a přidán na jeho cílovou pozici.  
+Existuje mnoho metod a vlastností v souboru XML model DOM (Document Object Model) (DOM), které můžete použít k výběru uzlu, například **SelectSingleNode**, **ChildNodes [int i]**, **atributů [int i]**. Po výběru uzlu jej můžete vložit do stromu pomocí jedné z metod vložení, které fungují pro daný typ uzlu. Jediným omezením pro vložení uzlu do stromu je, že dokument musí být po vložení uzlu stále správně vytvořen. Když je existující uzel vložen do stromu modelu DOM, je odebrán z původní pozice a přidán na jeho cílovou pozici.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Model DOM (Document Object Model) dokumentu XML](../../../../docs/standard/data/xml/xml-document-object-model-dom.md)
+- [model DOM (Document Object Model) dokumentu XML](../../../../docs/standard/data/xml/xml-document-object-model-dom.md)

@@ -14,7 +14,7 @@ ms.locfileid: "75710541"
 Typy uzlů rozpoznané v dotazu XPath nejsou stejné typy uzlů, které se nacházejí v model DOM (Document Object Model) (DOM).  
   
 ## <a name="w3c-xpath-node-types"></a>Typy uzlů XPath W3C  
- Typy uzlů rozpoznané v dotazu XPath nejsou typy uzlů, které se nacházejí v model DOM (Document Object Model) (DOM). Níže jsou uvedeny typy uzlů XPath reprezentované výčtem <xref:System.Xml.XPath.XPathNodeType>.  
+ Typy uzlů rozpoznané v dotazu XPath nejsou typy uzlů, které se nacházejí v model DOM (Document Object Model) (DOM). Níže jsou uvedeny typy uzlů XPath reprezentované <xref:System.Xml.XPath.XPathNodeType> výčtem.  
   
 - <xref:System.Xml.XPath.XPathNodeType.All>  
   
@@ -36,7 +36,7 @@ Typy uzlů rozpoznané v dotazu XPath nejsou stejné typy uzlů, které se nach�
   
 - <xref:System.Xml.XPath.XPathNodeType.Whitespace>  
   
- Tyto typy uzlů jsou založeny na datovém modelu XPath, kde jsou uzly odvozeny ze sady informací XML. Typy uzlů <xref:System.Xml.XPath.XPathNodeType.SignificantWhitespace> a <xref:System.Xml.XPath.XPathNodeType.Whitespace> jsou rozšířeními od Microsoftu .NET Framework k typům základních uzlů popsaným v datovém modelu XPath.  
+ Tyto typy uzlů jsou založeny na datovém modelu XPath, kde jsou uzly odvozeny ze sady informací XML. Typy <xref:System.Xml.XPath.XPathNodeType.SignificantWhitespace> uzlů <xref:System.Xml.XPath.XPathNodeType.Whitespace> a jsou rozšířeními od Microsoftu .NET Framework k typům základních uzlů popsaným v datovém modelu XPath.  
   
  Typ uzlu atributu je v datovém modelu XPath použit odlišně, než je v modelu DOM. V datovém modelu XPath uzel elementu obsahuje sadu uzlů atributů, které se týkají, a uzel elementu je nadřazeným uzlem každého uzlu atributu. V modelu DOM je však uzel prvku vlastníkem a nikoli nadřazeným objektem. V obou modelech se uzly atributů a názvů nepovažují za podřízené uzly uzlu elementu.  
   
@@ -44,7 +44,7 @@ Typy uzlů rozpoznané v dotazu XPath nejsou stejné typy uzlů, které se nach�
   
  Další informace o přechodu elementů, atributů a uzlů oboru názvů naleznete v tématu [uzel nastavení navigace pomocí prvku XPathNavigator](../../../../docs/standard/data/xml/node-set-navigation-using-xpathnavigator.md) a [atribut a uzel oboru názvů pomocí témat XPathNavigator](../../../../docs/standard/data/xml/attribute-and-namespace-node-navigation-using-xpathnavigator.md) .  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Xml.XmlDocument>
 - <xref:System.Xml.XPath.XPathDocument>
@@ -53,5 +53,5 @@ Typy uzlů rozpoznané v dotazu XPath nejsou stejné typy uzlů, které se nach�
 - [Výběr dat XML pomocí XPathNavigator](../../../../docs/standard/data/xml/select-xml-data-using-xpathnavigator.md)
 - [Vyhodnocení výrazů XPath pomocí XPathNavigator](../../../../docs/standard/data/xml/evaluate-xpath-expressions-using-xpathnavigator.md)
 - [Párování uzlů pomocí XPathNavigator](../../../../docs/standard/data/xml/matching-nodes-using-xpathnavigator.md)
-- [Dotazy XPath a obory názvů](../../../../docs/standard/data/xml/xpath-queries-and-namespaces.md)
+- [Dotazy a obory názvů XPath](../../../../docs/standard/data/xml/xpath-queries-and-namespaces.md)
 - [Zkompilované výrazy XPath](../../../../docs/standard/data/xml/compiled-xpath-expressions.md)

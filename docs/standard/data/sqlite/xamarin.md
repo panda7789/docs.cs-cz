@@ -23,7 +23,7 @@ Microsoft. data. sqlite cílí .NET Standard 2,0 a jsou podporovány v Xamarin. 
 | **Xamarin.iOS** | ✔ |
 | **Xamarin.Mac** | ✔ |
 | **Xamarin. TVOS** | ✔ |
-| **UPW** | — |
+| **UWP** | — |
 | &nbsp;&nbsp;&nbsp;&nbsp;`arm` | ✔ |
 | &nbsp;&nbsp;&nbsp;&nbsp;`arm64` | ✔ |
 | &nbsp;&nbsp;&nbsp;&nbsp;`x64` | ✔ |
@@ -33,7 +33,7 @@ Microsoft. data. sqlite cílí .NET Standard 2,0 a jsou podporovány v Xamarin. 
 
 Microsoft. data. sqlite se pokusí automaticky inicializovat sady SQLitePCLRaw. Vzhledem k tomu, že došlo k omezení kompilace v předstihu (AOT) pro Xamarin. iOS, pokus se nezdaří a zobrazí se následující chyba.
 
-> Musíte volat `SQLitePCL.raw.SetProvider()`. Pokud používáte balíček sady prostředků, je to provedeno voláním `SQLitePCL.Batteries.Init()`.
+> Musíte zavolat `SQLitePCL.raw.SetProvider()`. Pokud používáte balíček sady prostředků, je to provedeno voláním `SQLitePCL.Batteries.Init()`.
 
 Pro inicializaci sady přidejte do aplikace následující řádek kódu před použitím Microsoft. data. sqlite.
 
@@ -41,7 +41,7 @@ Pro inicializaci sady přidejte do aplikace následující řádek kódu před p
 SQLitePCL.Batteries_V2.Init();
 ```
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 * [Asynchronní omezení](async.md)
 * [Vlastní verze SQLite](custom-versions.md)

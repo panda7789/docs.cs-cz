@@ -1,5 +1,5 @@
 ---
-title: 'Postup: čtení z textových souborů oddělených čárkami'
+title: 'Postupy: čtení z textových souborů s hodnotami oddělenými čárkou'
 ms.date: 07/20/2015
 helpviewer_keywords:
 - files [Visual Basic], parsing
@@ -14,31 +14,31 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 03/15/2020
 ms.locfileid: "74335065"
 ---
-# <a name="how-to-read-from-comma-delimited-text-files-in-visual-basic"></a>Postup: čtení z textových souborů oddělených čárkami v jazyce Visual Basic
+# <a name="how-to-read-from-comma-delimited-text-files-in-visual-basic"></a>Postupy: čtení z textových souborů s oddělovači ve formátu čárky v Visual Basic
 
-Objekt `TextFieldParser` poskytuje způsob, jak snadno a efektivně analyzovat strukturované textové soubory, jako jsou například protokoly. Vlastnost `TextFieldType` definuje, zda se jedná o soubor s oddělovačem nebo o soubor s poli textu s pevnou šířkou.  
+`TextFieldParser` Objekt poskytuje způsob, jak snadno a efektivně analyzovat strukturované textové soubory, jako jsou protokoly. `TextFieldType` Vlastnost určuje, zda se jedná o soubor s oddělovači, nebo o pole s pevnou šířkou textu.  
   
-### <a name="to-parse-a-comma-delimited-text-file"></a>Analýza textového souboru odděleného čárkami  
+### <a name="to-parse-a-comma-delimited-text-file"></a>Jak analyzovat textový soubor s oddělovači  
   
-1. Vytvořte `TextFieldParser`nový . Následující kód vytvoří `TextFieldParser` `MyReader` pojmenovaný a `test.txt`otevře soubor .  
+1. Vytvořte nový `TextFieldParser`. Následující kód vytvoří `TextFieldParser` pojmenované `MyReader` a otevře soubor. `test.txt`  
   
      [!code-vb[VbFileIORead#15](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbFileIORead/VB/Class1.vb#15)]  
   
-2. Definujte `TextField` typ a oddělovač. Následující kód definuje `TextFieldType` vlastnost `Delimited` jako a oddělovač jako ",".  
+2. Definujte `TextField` typ a oddělovač. Následující kód definuje `TextFieldType` vlastnost jako `Delimited` a oddělovač jako ",".  
   
      [!code-vb[VbFileIORead#16](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbFileIORead/VB/Class1.vb#16)]  
   
-3. Smyčka procházet pole v souboru. Pokud jsou některé řádky poškozeny, nahlaste chybu a pokračujte v provádění analýzy. Následující kód prochází souborem, zobrazuje každé pole a hlásí všechna pole, která jsou nesprávně formátována.  
+3. Projděte pole v souboru. Pokud jsou některé řádky poškozené, nahlaste chybu a pokračujte v analýze. Následující kód prochází souborem, zobrazením jednotlivých polí a vytvářením sestav pro všechna pole, která jsou formátována nesprávně.  
   
      [!code-vb[VbFileIORead#17](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbFileIORead/VB/Class1.vb#17)]  
   
-4. Zavřete `While` `Using` bloky `End While` a `End Using`s a .  
+4. Zavřete bloky `While` a `Using` v nástroji `End While` a `End Using`.  
   
      [!code-vb[VbFileIORead#18](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbFileIORead/VB/Class1.vb#18)]  
   
 ## <a name="example"></a>Příklad  
 
- Tento příklad čte `test.txt`ze souboru .  
+ Tento příklad čte ze souboru `test.txt`.  
   
  [!code-vb[VbFileIORead#19](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbFileIORead/VB/Class1.vb#19)]  
   
@@ -46,15 +46,15 @@ Objekt `TextFieldParser` poskytuje způsob, jak snadno a efektivně analyzovat s
 
  Následující podmínky mohou způsobit výjimku:  
   
-- Řádek nelze analyzovat pomocí zadaného formátu<xref:Microsoft.VisualBasic.FileIO.MalformedLineException>( ). Zpráva o výjimce určuje řádek způsobující <xref:Microsoft.VisualBasic.FileIO.TextFieldParser.ErrorLine%2A> výjimku, zatímco vlastnosti je přiřazen text obsažený v řádku.  
+- Řádek nelze analyzovat pomocí zadaného formátu (<xref:Microsoft.VisualBasic.FileIO.MalformedLineException>). Zpráva o výjimce Určuje řádek, který způsobil výjimku, zatímco <xref:Microsoft.VisualBasic.FileIO.TextFieldParser.ErrorLine%2A> vlastnost je přiřazena k textu obsaženému na řádku.  
   
-- Zadaný soubor neexistuje<xref:System.IO.FileNotFoundException>( ).  
+- Zadaný soubor neexistuje (<xref:System.IO.FileNotFoundException>).  
   
-- Situace částečné důvěryhodnosti, ve které uživatel nemá dostatečná oprávnění pro přístup k souboru. (<xref:System.Security.SecurityException>).  
+- Částečně důvěryhodná situace, kdy uživatel nemá dostatečná oprávnění pro přístup k souboru. (<xref:System.Security.SecurityException>).  
   
-- Cesta je příliš<xref:System.IO.PathTooLongException>dlouhá ( ).  
+- Cesta je příliš dlouhá (<xref:System.IO.PathTooLongException>).  
   
-- Uživatel nemá dostatečná oprávnění pro přístup<xref:System.UnauthorizedAccessException>k souboru ( ).  
+- Uživatel nemá dostatečná oprávnění pro přístup k souboru (<xref:System.UnauthorizedAccessException>).  
   
 ## <a name="see-also"></a>Viz také
 

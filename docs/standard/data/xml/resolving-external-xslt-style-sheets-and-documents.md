@@ -14,41 +14,41 @@ ms.locfileid: "75710294"
 V průběhu transformace se může několikrát vyhodnotit, když budete potřebovat přeložit externí prostředky.  
   
 > [!NOTE]
-> Třída <xref:System.Xml.Xsl.XslTransform> je v .NET Framework 2,0 zastaralá. Pomocí třídy <xref:System.Xml.Xsl.XslCompiledTransform> můžete provádět transformace XSLT (Extensible Stylesheet Language).  
+> <xref:System.Xml.Xsl.XslTransform> Třída je zastaralá v .NET Framework 2,0. Transformace XSLT (Extensible Stylesheet Language) můžete použít k <xref:System.Xml.Xsl.XslCompiledTransform> transformaci pomocí třídy.  
   
  V průběhu transformace se může několikrát vyhodnotit, když budete potřebovat vyřešit externí prostředky:  
   
-- Během <xref:System.Xml.Xsl.XslTransform.Load%2A> vyhledat externí šablonu stylů.  
+- <xref:System.Xml.Xsl.XslTransform.Load%2A> Při hledání externího listu stylů.  
   
-- Během <xref:System.Xml.Xsl.XslTransform.Load%2A> pro řešení `<xsl:include>` nebo `<xsl:import>` prvků nalezených v šabloně stylů.  
+- V <xref:System.Xml.Xsl.XslTransform.Load%2A> průběhu vyřešte `<xsl:include>` všechny `<xsl:import>` prvky nebo nalezené v šabloně stylů.  
   
-- Během <xref:System.Xml.Xsl.XslTransform.Transform%2A> vyřešit jakékoli `document()` funkce.  
+- Během <xref:System.Xml.Xsl.XslTransform.Transform%2A> řešení všech `document()` funkcí.  
   
 ## <a name="using-the-xmlresolver-class"></a>Použití třídy objekt XmlResolver  
- Pokud je vyžadováno ověřování pro přístup k síťovému prostředku, použijte <xref:System.Xml.Xsl.XslTransform.Load%2A> metody, které mají parametr <xref:System.Xml.XmlResolver> k předání objektu <xref:System.Xml.XmlResolver>, který má nastavené vlastnosti nezbytných přihlašovacích údajů.  
+ Pokud je vyžadováno ověřování pro přístup k síťovému prostředku, použijte <xref:System.Xml.Xsl.XslTransform.Load%2A> metody, které mají <xref:System.Xml.XmlResolver> parametr pro předání <xref:System.Xml.XmlResolver> objektu, který má nastavené vlastnosti nezbytných přihlašovacích údajů.  
   
- Pokud máte vlastní <xref:System.Xml.XmlResolver>, kterou chcete použít, nebo pokud potřebujete zadat jiné přihlašovací údaje, v závislosti na tom, kdy externí prostředek potřebuje řešení, je v následující tabulce uveden požadovaný úkol.  
+ Máte-li vlastní <xref:System.Xml.XmlResolver> , který chcete použít, nebo pokud potřebujete zadat jiné přihlašovací údaje, v závislosti na tom, kdy externí prostředek potřebuje řešení, je v následující tabulce uvedena požadovaná úloha.  
   
 |Jaký proces vyžaduje řešení|Je vyžadován úkol|  
 |--------------------------------------|-------------------|  
-|Během <xref:System.Xml.Xsl.XslTransform.Load%2A> najít šablonu stylů.|Určete přetíženou <xref:System.Xml.Xsl.XslTransform.Load%2A> metodu, která přebírá jako parametr <xref:System.Xml.XmlResolver>, pokud je šablona stylů na prostředku, který vyžaduje přihlašovací údaje.|  
-|Během <xref:System.Xml.Xsl.XslTransform.Load%2A> vyřešit `<xsl:include>` nebo `<xsl:import>`.|Zadejte přetíženou <xref:System.Xml.Xsl.XslTransform.Load%2A> metodu, která přijímá jako parametr <xref:System.Xml.XmlResolver>. <xref:System.Xml.XmlResolver> slouží k načtení šablon stylů, na které odkazují příkazy `import` nebo `include`. Pokud předáte `null`, externí prostředky se nevyřeší.|  
-|Během transformace k vyřešení všech funkcí `document()`.|Zadejte <xref:System.Xml.XmlResolver> při transformaci pomocí metody <xref:System.Xml.Xsl.XslTransform.Transform%2A>, která přebírá <xref:System.Xml.XmlResolver> argument.|  
+|Během <xref:System.Xml.Xsl.XslTransform.Load%2A> hledání předlohy se styly.|Zadejte přetíženou <xref:System.Xml.Xsl.XslTransform.Load%2A> metodu, která přebírá jako parametr, <xref:System.Xml.XmlResolver> Pokud je šablona stylů na prostředku, který vyžaduje přihlašovací údaje.|  
+|Během <xref:System.Xml.Xsl.XslTransform.Load%2A> řešení `<xsl:include>` nebo `<xsl:import>`.|Zadejte přetíženou <xref:System.Xml.Xsl.XslTransform.Load%2A> metodu, která přijímá jako parametr <xref:System.Xml.XmlResolver>. <xref:System.Xml.XmlResolver> Slouží k načtení šablon stylů, na které odkazují příkazy `import` nebo `include` . Pokud předáte `null`, externí prostředky nebudou vyřešeny.|  
+|Během transformace k vyřešení jakýchkoli `document()` funkcí.|Určete <xref:System.Xml.XmlResolver> při transformaci pomocí <xref:System.Xml.Xsl.XslTransform.Transform%2A> metody, která přebírá <xref:System.Xml.XmlResolver> argument.|  
   
- Funkce `document()` načítá další prostředky XML ze šablon stylů kromě počátečních dat XML poskytnutých vstupním datovým proudem. Vzhledem k tomu, že tato funkce umožňuje zahrnutí dat XML, která lze umístit jinde, <xref:System.Xml.XmlResolver> s hodnotou `null` poskytnutou metodě <xref:System.Xml.Xsl.XslTransform.Transform%2A> brání spuštění funkce `document()`. Pokud chcete použít funkci `document()`, použijte metodu <xref:System.Xml.Xsl.XslTransform.Transform%2A>, která přebírá <xref:System.Xml.XmlResolver> jako parametr, kromě toho, že má příslušnou sadu oprávnění.  
+ `document()` Funkce načte další prostředky XML ze šablon stylů kromě počátečních dat XML poskytnutých vstupním datovým proudem. Vzhledem k tomu, že tato funkce umožňuje zahrnutí dat XML, která lze umístit jinde <xref:System.Xml.XmlResolver> , a `null` s hodnotou poskytnutou <xref:System.Xml.Xsl.XslTransform.Transform%2A> metodě brání spuštění `document()` funkce. Chcete-li použít `document()` funkci, použijte <xref:System.Xml.Xsl.XslTransform.Transform%2A> metodu, která přijímá <xref:System.Xml.XmlResolver> jako parametr, kromě toho, že má odpovídající sadu oprávnění.  
   
- Další informace o metodě <xref:System.Xml.Xsl.XslTransform.Load%2A> a jejím použití <xref:System.Xml.XmlResolver>naleznete v tématu <xref:System.Xml.Xsl.XslTransform.Load%28System.String%2CSystem.Xml.XmlResolver%29?displayProperty=nameWithType>.  
+ Další informace o <xref:System.Xml.Xsl.XslTransform.Load%2A> metodě a jejím použití <xref:System.Xml.XmlResolver>naleznete v tématu. <xref:System.Xml.Xsl.XslTransform.Load%28System.String%2CSystem.Xml.XmlResolver%29?displayProperty=nameWithType>  
   
- Při volání metody <xref:System.Xml.Xsl.XslTransform.Transform%2A> se oprávnění vypočítávají proti legitimaci poskytnuté v době načítání a tato sada oprávnění je přiřazena k celému procesu transformace. Pokud se funkce `document()` pokusí zahájit akci, která vyžaduje oprávnění, která nebyla v sadě nalezena, je vyvolána výjimka.  
+ Při volání <xref:System.Xml.Xsl.XslTransform.Transform%2A> metody se oprávnění vypočítávají proti legitimaci poskytnuté v době načítání a tato sada oprávnění je přiřazena k celému procesu transformace. Pokud se `document()` funkce pokusí zahájit akci, která vyžaduje oprávnění, která nebyla v sadě nalezena, je vyvolána výjimka.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Transformace XSLT s třídou XslTransform](../../../../docs/standard/data/xml/xslt-transformations-with-the-xsltransform-class.md)
 - [Třída XslTransform implementuje procesor XSLT](../../../../docs/standard/data/xml/xsltransform-class-implements-the-xslt-processor.md)
 - [Výstupy z XslTransform](../../../../docs/standard/data/xml/outputs-from-an-xsltransform.md)
 - [Transformace XSLT v různých úložištích](../../../../docs/standard/data/xml/xslt-transformations-over-different-stores.md)
 - [XsltArgumentList pro parametry šablon stylů a objektů rozšíření](../../../../docs/standard/data/xml/xsltargumentlist-for-style-sheet-parameters-and-extension-objects.md)
-- [Skriptování šablony stylů XSLT pomocí \<msxsl: > skriptu](../../../../docs/standard/data/xml/xslt-stylesheet-scripting-using-msxsl-script.md)
+- [Skriptování šablony stylů XSLT \<pomocí msxsl: skript>](../../../../docs/standard/data/xml/xslt-stylesheet-scripting-using-msxsl-script.md)
 - [Podpora pro funkci msxsl:node-set()](../../../../docs/standard/data/xml/support-for-the-msxsl-node-set-function.md)
 - [XPathNavigator v transformacích](../../../../docs/standard/data/xml/xpathnavigator-in-transformations.md)
 - [XPathNodeIterator v transformacích](../../../../docs/standard/data/xml/xpathnodeiterator-in-transformations.md)

@@ -15,17 +15,17 @@ ms.locfileid: "74329573"
 ---
 # <a name="how-to-read-application-settings-in-visual-basic"></a>Postupy: Čtení nastavení aplikace v jazyce Visual Basic
 
-Nastavení uživatele můžete přečíst tak, že přistupujete k vlastnosti nastavení objektu. `My.Settings`  
+Můžete číst nastavení uživatele přístupem k vlastnosti nastavení `My.Settings` objektu.  
   
- Objekt `My.Settings` zveřejňuje každé nastavení jako vlastnost. Název vlastnosti je stejný jako název nastavení a typ vlastnosti je stejný jako typ nastavení. **Rozsah** nastavení označuje, zda je vlastnost jen pro čtení; vlastnost pro nastavení oboru **aplikace** je jen pro čtení, zatímco vlastnost pro nastavení **uživatelského** oboru je čtení a zápis. Další informace naleznete v tématu [My.Settings Object](../../../../visual-basic/language-reference/objects/my-settings-object.md).  
+ `My.Settings` Objekt zpřístupňuje každé nastavení jako vlastnost. Název vlastnosti je stejný jako název nastavení a typ vlastnosti je stejný jako typ nastavení. **Obor** nastavení určuje, zda je vlastnost určena pouze pro čtení; vlastnost pro nastavení rozsahu **aplikace** je jen pro čtení, zatímco vlastnost pro nastavení oboru **uživatele** je určena pro čtení i zápis. Další informace najdete v tématu [objekt My. Settings](../../../../visual-basic/language-reference/objects/my-settings-object.md).  
   
 ## <a name="example"></a>Příklad  
 
- V tomto příkladu `Nickname` se zobrazí hodnota nastavení.  
+ V tomto příkladu se zobrazí hodnota `Nickname` nastavení.  
   
  [!code-vb[VbVbalrMyResources#14](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyResources/VB/Form1.vb#14)]  
   
- Aby tento příklad fungoval, musí `Nickname` mít aplikace `String`nastavení typu . Další informace naleznete v [tématu Správa nastavení aplikací (.NET)](/visualstudio/ide/managing-application-settings-dotnet).  
+ Aby tento příklad fungoval, musí mít vaše aplikace `Nickname` nastavení typu. `String` Další informace najdete v tématu [Správa nastavení aplikace (.NET)](/visualstudio/ide/managing-application-settings-dotnet).  
   
 ## <a name="see-also"></a>Viz také
 

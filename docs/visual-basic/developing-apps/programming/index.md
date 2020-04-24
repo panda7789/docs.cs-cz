@@ -1,5 +1,5 @@
 ---
-title: Programování
+title: Plánování
 ms.date: 07/20/2015
 helpviewer_keywords:
 - programming [Visual Basic], Visual Basic
@@ -14,30 +14,30 @@ ms.locfileid: "74352107"
 ---
 # <a name="programming-in-visual-basic"></a>Programování v jazyce Visual Basic
 
-Tato část popisuje úlohy programování, o kterých se můžete dozvědět více při vytváření aplikace jazyka.  
+Tato část pojednává o programovacích úlohách, které můžete chtít získat více informací o vytváření Visual Basic aplikace.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
 
  [Přístup k prostředkům počítače](../../../visual-basic/developing-apps/programming/computer-resources/index.md)  
- Obsahuje dokumentaci o `My.Computer` použití objektu pro přístup k informacím o počítači, ve kterém je aplikace spuštěna, a o řízení počítače.  
+ Obsahuje dokumentaci k použití `My.Computer` objektu pro přístup k informacím o počítači, ve kterém je aplikace spuštěná, a o tom, jak počítač ovládat.  
   
- [Protokolování informací z aplikace](../../../visual-basic/developing-apps/programming/log-info/index.md)  
- Obsahuje dokumentaci o tom, jak `My.Application.Log` protokolovat informace z vaší aplikace pomocí `My.Log` a objekty a jak rozšířit možnosti protokolování aplikace.  
+ [Protokolování informací z aplikace](../../../visual-basic/developing-apps/programming/log-info/index.md)  
+ Obsahuje dokumentaci k protokolování informací z aplikace pomocí objektů `My.Application.Log` a `My.Log` a o tom, jak rozšiřuje možnosti protokolování aplikace.  
   
  [Přístup k uživatelským datům](../../../visual-basic/developing-apps/programming/accessing-user-data.md)  
- Obsahuje dokumentaci k úkolům, `My.User` které lze provést pomocí objektu.  
+ Obsahuje dokumentaci k úlohám, které lze provádět pomocí `My.User` objektu.  
   
  [Přístup k formulářům aplikace](../../../visual-basic/developing-apps/programming/accessing-application-forms.md)  
- Obsahuje dokumentaci o přístupu k formulářům aplikace pomocí `My.Forms` `My.Application` a objekty.  
+ Obsahuje dokumentaci o přístupu k formulářům aplikace pomocí objektů `My.Forms` a. `My.Application`  
   
  [Přístup k aplikačním webovým službám](../../../visual-basic/developing-apps/programming/accessing-application-web-services.md)  
- Obsahuje dokumentaci o tom, jak získat přístup `My.WebServices` k webovým službám, na které aplikace odkazuje pomocí objektu.  
+ Obsahuje dokumentaci týkající se přístupu k webovým službám, na které aplikace odkazuje, `My.WebServices` pomocí objektu.  
   
- [Přístup k nastavení aplikace](../../../visual-basic/developing-apps/programming/app-settings/index.md)  
- Obsahuje dokumentaci o přístupu k `My.Settings` nastavení aplikace pomocí objektu.  
+ [Přístup k nastavení aplikace](../../../visual-basic/developing-apps/programming/app-settings/index.md)  
+ Obsahuje dokumentaci k přístupu k nastavení aplikace pomocí `My.Settings` objektu.  
   
  [Zpracování jednotek, adresářů a souborů](drives-directories-files/index.md)  
- Obsahuje dokumentaci o tom, jak `My.Computer.FileSystem` získat přístup k systému souborů pomocí objektu.  
+ Obsahuje dokumentaci, jak přistupovat k systému souborů pomocí `My.Computer.FileSystem` objektu.  
   
 ## <a name="see-also"></a>Viz také
 

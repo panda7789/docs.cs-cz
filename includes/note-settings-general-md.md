@@ -8,4 +8,4 @@ ms.locfileid: "65635288"
 ---
 
 > [!NOTE]
-> Váš počítač může v následujících pokynech zobrazovat odlišné názvy nebo umístění některých prvků uživatelského rozhraní sady Visual Studio. Tyto prvky jsou určeny edicí sady Visual Studio a použitým nastavením. Další informace naleznete [v tématu Personalizace ide](/visualstudio/ide/personalizing-the-visual-studio-ide).
+> Váš počítač může v následujících pokynech zobrazovat odlišné názvy nebo umístění některých prvků uživatelského rozhraní sady Visual Studio. Tyto prvky jsou určeny edicí sady Visual Studio a použitým nastavením. Další informace najdete v tématu [Přizpůsobení integrovaného vývojového prostředí (IDE](/visualstudio/ide/personalizing-the-visual-studio-ide)).

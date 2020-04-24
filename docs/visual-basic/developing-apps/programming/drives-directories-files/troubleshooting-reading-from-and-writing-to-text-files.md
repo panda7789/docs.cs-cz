@@ -1,5 +1,5 @@
 ---
-title: 'Řešení potíží: čtení a zápis do textových souborů'
+title: 'Řešení potíží: čtení z textových souborů a zápis do nich'
 ms.date: 07/20/2015
 helpviewer_keywords:
 - troubleshooting file I/O
@@ -16,25 +16,25 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 03/15/2020
 ms.locfileid: "74333789"
 ---
-# <a name="troubleshooting-reading-from-and-writing-to-text-files-visual-basic"></a>Řešení potíží: čtení a zápis do textových souborů (Visual Basic)
+# <a name="troubleshooting-reading-from-and-writing-to-text-files-visual-basic"></a>Řešení potíží: čtení z textových souborů a zápis do nich (Visual Basic)
 
-Toto téma popisuje běžné problémy při práci s textovými soubory a navrhuje přístup ke každému z nich.  
+Toto téma popisuje běžné problémy zjištěné při práci s textovými soubory a navrhuje přístup k jednotlivým.  
   
 ## <a name="common-problems"></a>Běžné problémy  
 
- Mezi nejčastější problémy při práci s textovými soubory patří výjimky zabezpečení, kódování souborů nebo neplatné cesty.  
+ Nejběžnější problémy, ke kterým došlo při práci s textovými soubory, zahrnují výjimky zabezpečení, kódování souborů nebo neplatné cesty.  
   
 ### <a name="security-exceptions"></a>Výjimky zabezpečení  
 
- A <xref:System.Security.SecurityException> je vyvolána, když dojde k chybě zabezpečení. To je často důsledkem toho, že uživatel i min. nemá potřebná oprávnění, která mohou být vyřešena přidáním oprávnění nebo prací se soubory v izolovaném úložišti.  
+ Výjimka <xref:System.Security.SecurityException> je vyvolána, když dojde k chybě zabezpečení. To často vede k tomu, že uživatel nemá potřebná oprávnění, která se můžou vyřešit přidáváním oprávnění nebo práci se soubory v izolovaném úložišti.  
   
 ### <a name="file-encodings"></a>Kódování souborů  
 
- Kódování souborů, označované také jako kódování znaků, určují, jak mají při zpracování textu představovat znaky. Neočekávané znaky v textovém souboru mohou být důsledkem nesprávného kódování. U většiny souborů může být jedno kódování vhodnější než jiné, pokud jde o znaky jazyka, které může nebo nemůže zpracovat, ačkoli unicode je obvykle upřednostňováno. Další informace naleznete v [tématu Kódování souborů](../../../../visual-basic/developing-apps/programming/drives-directories-files/file-encodings.md) a <xref:System.Text.Encoding>.  
+ Kódování souborů, označovaná také jako kódování znaků, určují způsob reprezentace znaků při zpracování textu. Neočekávané znaky v textovém souboru mohou být způsobeny nesprávným kódováním. U většiny souborů může být jedno kódování vhodnější než jiné z důvodu toho, které znaky jazyka může nebo nemůže zpracovat, i když je standardu Unicode obvykle upřednostňovaný. Další informace naleznete v tématu [kódování souborů](../../../../visual-basic/developing-apps/programming/drives-directories-files/file-encodings.md) a <xref:System.Text.Encoding>.  
   
 ### <a name="incorrect-paths"></a>Nesprávné cesty  
 
- Při analýzě cest souboru, zejména relativní cesty, je snadné zadat nesprávná data. Mnoho problémů lze opravit tím, že se ujistíte, že poskytujete správnou cestu. Další informace naleznete v [tématu How to: Parse File Paths](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-parse-file-paths.md).  
+ Při analýze cest k souborům, zejména relativních cest, je snadné zadávat nesprávná data. Mnohé problémy se dají opravit tím, že zadáte správnou cestu. Další informace najdete v tématu [Postup: analýza cest k souborům](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-parse-file-paths.md).  
   
 ## <a name="see-also"></a>Viz také
 

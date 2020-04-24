@@ -24,10 +24,10 @@ Potlačí zobrazení nápisu copyrightu a informativní zprávy během kompilace
 ```  
   
 ## <a name="remarks"></a>Poznámky  
- Pokud zadáte `-nologo`, kompilátor nezobrazí banner s copyrightem. Ve výchozím nastavení `-nologo` neplatí.  
+ Pokud zadáte `-nologo`, kompilátor nezobrazí banner o autorských právech. Ve výchozím nastavení `-nologo` není platná.  
   
 > [!NOTE]
-> Možnost `-nologo` není k dispozici ve vývojovém prostředí sady Visual Studio; je k dispozici pouze při kompilaci z příkazového řádku.  
+> Tato `-nologo` možnost není k dispozici ve vývojovém prostředí sady Visual Studio; je k dispozici pouze při kompilaci z příkazového řádku.  
   
 ## <a name="example"></a>Příklad  
  Následující kód zkompiluje `T2.vb` a nezobrazuje banner s copyrightem.  
@@ -36,7 +36,7 @@ Potlačí zobrazení nápisu copyrightu a informativní zprávy během kompilace
 vbc -nologo t2.vb  
 ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Visual Basic Kompilátor příkazového řádku](../../../visual-basic/reference/command-line-compiler/index.md)
 - [Příkazové řádky ukázkové kompilace](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)

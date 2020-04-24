@@ -20,16 +20,16 @@ ms.locfileid: "74349206"
 ---
 # <a name="accessing-user-data-visual-basic"></a>Přístup k uživatelským datům (Visual Basic)
 
-Tato část obsahuje témata `My.User` týkající se objektu a úkolů, které můžete provést s ním.  
+V této části najdete témata týkající se `My.User` objektu a úkolů, které s ním můžete provádět.  
   
- Objekt `My.User` poskytuje přístup k informacím o přihlášeném uživateli vrácením <xref:System.Security.Principal.IPrincipal> objektu, který implementuje rozhraní.  
+ `My.User` Objekt poskytuje přístup k informacím o přihlášeném uživateli vrácením objektu, který implementuje <xref:System.Security.Principal.IPrincipal> rozhraní.  
   
 ## <a name="tasks"></a>Úlohy  
   
 |Akce|Seznamte se s |  
 |--------|---------|  
-|Získání přihlašovacího jména uživatele|<xref:Microsoft.VisualBasic.ApplicationServices.User.Name%2A>|  
-|Získání názvu domény uživatele, pokud aplikace používá ověřování systému Windows|<xref:Microsoft.VisualBasic.ApplicationServices.User.CurrentPrincipal>|  
+|Získá přihlašovací jméno uživatele.|<xref:Microsoft.VisualBasic.ApplicationServices.User.Name%2A>|  
+|Získat název domény uživatele, pokud aplikace používá ověřování systému Windows|<xref:Microsoft.VisualBasic.ApplicationServices.User.CurrentPrincipal>|  
 |Určení role uživatele|<xref:Microsoft.VisualBasic.ApplicationServices.User.IsInRole%2A>|  
   
 ## <a name="see-also"></a>Viz také

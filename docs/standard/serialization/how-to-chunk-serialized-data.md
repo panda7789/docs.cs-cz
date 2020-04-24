@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: bloku dat serializovaná data'
+title: 'Postupy: Serializovaná data bloku'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -20,7 +20,7 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/28/2019
 ms.locfileid: "64602422"
 ---
-# <a name="how-to-chunk-serialized-data"></a>Postupy: bloku dat serializovaná data
+# <a name="how-to-chunk-serialized-data"></a>Postupy: Serializovaná data bloku
 
 [!INCLUDE [binary-serialization-warning](../../../includes/binary-serialization-warning.md)]
 
@@ -40,7 +40,7 @@ Jsou dva problémy, k nimž došlo při odesílání velkých sad dat do webové
   
 ### <a name="to-implement-client-side-processing"></a>K implementaci zpracování na straně klienta  
   
-1. Změnit metodu webové na proxy serveru klienta má být vrácen typ, který implementuje <xref:System.Xml.Serialization.IXmlSerializable>. Můžete použít <xref:System.Xml.Serialization.Advanced.SchemaImporterExtension> k provést automaticky, ale není to zde uvedeny.  
+1. Změnit metodu webové na proxy serveru klienta má být vrácen typ, který implementuje <xref:System.Xml.Serialization.IXmlSerializable>. <xref:System.Xml.Serialization.Advanced.SchemaImporterExtension> K tomu můžete použít k automatickému provedení tohoto postupu, ale tu se tady nezobrazí.  
   
 2. Implementace <xref:System.Xml.Serialization.IXmlSerializable.ReadXml%2A> metodu za účelem čtení blokového data datového proudu a zápis na disk bajtů. Tato implementace také vyvolává průběh události, které mohou být využívána grafického ovládacího prvku, jako je například indikátor průběhu.  
   
@@ -54,10 +54,10 @@ Následující příklad kódu ukazuje metodu webové na straně klienta, který
 [!code-csharp[HowToChunkSerializedData#3](../../../samples/snippets/csharp/VS_Snippets_Remoting/HowToChunkSerializedData/CS/SerializationChunk.cs#3)]
 [!code-vb[HowToChunkSerializedData#3](../../../samples/snippets/visualbasic/VS_Snippets_Remoting/HowToChunkSerializedData/VB/SerializationChunk.vb#3)]  
   
-## <a name="compiling-the-code"></a>Kompilování kódu  
+## <a name="compiling-the-code"></a>Zkompilování kódu  
   
 - Kód používá následující obory názvů: <xref:System>, <xref:System.Runtime.Serialization>, <xref:System.Web.Services>, <xref:System.Web.Services.Protocols>, <xref:System.Xml>, <xref:System.Xml.Serialization>, a <xref:System.Xml.Schema>.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Vlastní serializace](custom-serialization.md)

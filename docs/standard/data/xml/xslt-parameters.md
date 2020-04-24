@@ -14,15 +14,15 @@ ms.lasthandoff: 01/07/2020
 ms.locfileid: "75709696"
 ---
 # <a name="xslt-parameters"></a>Parametry XSLT
-Parametry XSLT jsou přidány do <xref:System.Xml.Xsl.XsltArgumentList> pomocí metody <xref:System.Xml.Xsl.XsltArgumentList.AddParam%2A>. Úplný název a identifikátor URI oboru názvů jsou v daném čase přidruženy k objektu Parameter.  
+Parametry XSLT jsou přidány do <xref:System.Xml.Xsl.XsltArgumentList> <xref:System.Xml.Xsl.XsltArgumentList.AddParam%2A> metody pomocí metody. Úplný název a identifikátor URI oboru názvů jsou v daném čase přidruženy k objektu Parameter.  
   
 ### <a name="to-use-an-xslt-parameter"></a>Použití parametru XSLT  
   
-1. Vytvořte objekt <xref:System.Xml.Xsl.XsltArgumentList> a přidejte parametr pomocí metody <xref:System.Xml.Xsl.XsltArgumentList.AddParam%2A>.  
+1. Vytvořte <xref:System.Xml.Xsl.XsltArgumentList> objekt a přidejte parametr pomocí <xref:System.Xml.Xsl.XsltArgumentList.AddParam%2A> metody.  
   
 2. Zavolejte parametr ze seznamu stylů.  
   
-3. Předejte objekt <xref:System.Xml.Xsl.XsltArgumentList> do metody <xref:System.Xml.Xsl.XslCompiledTransform.Transform%2A>.  
+3. Předat <xref:System.Xml.Xsl.XsltArgumentList> objekt <xref:System.Xml.Xsl.XslCompiledTransform.Transform%2A> metodě.  
   
 ## <a name="parameter-types"></a>Typy parametrů  
  Objekt Parameter by měl odpovídat typu W3C. V následující tabulce jsou uvedeny odpovídající typy W3C, ekvivalentní třídy Microsoft .NET (typ) a zda typ W3C je typ XPath nebo typ XSLT.  
@@ -32,18 +32,18 @@ Parametry XSLT jsou přidány do <xref:System.Xml.Xsl.XsltArgumentList> pomocí 
 |`String`|<xref:System.String?displayProperty=nameWithType>|XPath|  
 |`Boolean`|<xref:System.Boolean?displayProperty=nameWithType>|XPath|  
 |`Number`|<xref:System.Double?displayProperty=nameWithType>|XPath|  
-|`Result Tree Fragment`|<xref:System.Xml.XPath.XPathNavigator?displayProperty=nameWithType>|XSLT|  
+|`Result Tree Fragment`|<xref:System.Xml.XPath.XPathNavigator?displayProperty=nameWithType>|SOUBORU|  
 |`Node*`|<xref:System.Xml.XPath.XPathNavigator?displayProperty=nameWithType>|XPath|  
-|`Node Set`|<xref:System.Xml.XPath.XPathNodeIterator><br /><br /> **XPathNavigator[]**|XPath|  
+|`Node Set`|<xref:System.Xml.XPath.XPathNodeIterator><br /><br /> **XPathNavigator []**|XPath|  
   
- \* To je ekvivalent sady uzlů, která obsahuje jeden uzel.  
+ * To je ekvivalent sady uzlů, která obsahuje jeden uzel.  
   
- Pokud objekt Parameter není jedna z výše uvedených tříd, je převedena podle následujících pravidel. Číselné typy modulu CLR (Common Language Runtime) jsou převedeny na <xref:System.Double>. Typ <xref:System.DateTime> je převeden na <xref:System.String>. <xref:System.Xml.XPath.IXPathNavigable> typy jsou převedeny na <xref:System.Xml.XPath.XPathNavigator>. **Prvek XPathNavigator []** je převeden na <xref:System.Xml.XPath.XPathNodeIterator>.  
+ Pokud objekt Parameter není jedna z výše uvedených tříd, je převedena podle následujících pravidel. Číselné typy modulu CLR (Common Language Runtime) jsou převedeny <xref:System.Double>na. <xref:System.DateTime> Typ je převeden na <xref:System.String>. <xref:System.Xml.XPath.IXPathNavigable>typy jsou převedeny na <xref:System.Xml.XPath.XPathNavigator>. **Prvek XPathNavigator []** je převeden <xref:System.Xml.XPath.XPathNodeIterator>na.  
   
  Všechny ostatní typy vyvolávají chybu.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad používá metodu <xref:System.Xml.Xsl.XsltArgumentList.AddParam%2A> k vytvoření parametru pro uchování počítaného data slevy. Datum slevy se počítá jako 20 dní od data objednávky.  
+ Následující příklad používá <xref:System.Xml.Xsl.XsltArgumentList.AddParam%2A> metodu k vytvoření parametru pro uchování počítaného data slevy. Datum slevy se počítá jako 20 dní od data objednávky.  
   
  [!code-csharp[XSLT_Param#1](../../../../samples/snippets/csharp/VS_Snippets_Data/XSLT_Param/CS/xsltparam.cs#1)]
  [!code-vb[XSLT_Param#1](../../../../samples/snippets/visualbasic/VS_Snippets_Data/XSLT_Param/VB/xsltparam.vb#1)]  
@@ -66,6 +66,6 @@ Parametry XSLT jsou přidány do <xref:System.Xml.Xsl.XsltArgumentList> pomocí 
 </order>  
 ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Transformace XSLT](../../../../docs/standard/data/xml/xslt-transformations.md)

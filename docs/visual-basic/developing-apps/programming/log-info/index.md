@@ -1,5 +1,5 @@
 ---
-title: Protokolování informací z aplikace
+title: Protokolování informací z aplikace
 ms.date: 07/20/2015
 helpviewer_keywords:
 - Log object
@@ -18,28 +18,28 @@ ms.locfileid: "74353257"
 ---
 # <a name="logging-information-from-the-application-visual-basic"></a>Protokolování informací z aplikace (Visual Basic)
 
-Tato část obsahuje témata, která popisují, jak `My.Application.Log` `My.Log` protokolovat informace z vaší aplikace pomocí objektu nebo a jak rozšířit možnosti protokolování aplikace.  
+Tato část obsahuje témata, která pokrývají, jak protokolovat informace z vaší `My.Application.Log` aplikace `My.Log` pomocí objektu nebo a jak rozšiřuje možnosti protokolování aplikace.  
   
- Objekt `Log` poskytuje metody pro zápis informací do posluchačů protokolu `Log` aplikace a `TraceSource` rozšířené vlastnostobjektu poskytuje podrobné informace o konfiguraci. Objekt `Log` je konfigurován pomocí konfiguračního souboru aplikace.  
+ `Log` Objekt poskytuje metody pro zápis informací do protokolu naslouchacího procesu aplikace a vlastnost Advanced `Log` `TraceSource` objektu poskytuje podrobné informace o konfiguraci. `Log` Objekt je konfigurován pomocí konfiguračního souboru aplikace.  
   
- Objekt `My.Log` je k dispozici pouze pro ASP.NET aplikace. Pro klientské `My.Application.Log`aplikace použijte . Další informace naleznete v tématu <xref:Microsoft.VisualBasic.Logging.Log>.  
+ `My.Log` Objekt je k dispozici pouze pro aplikace ASP.NET. Pro klientské aplikace použijte `My.Application.Log`. Další informace naleznete v tématu <xref:Microsoft.VisualBasic.Logging.Log>.  
   
 ## <a name="tasks"></a>Úlohy  
   
 |Akce|Seznamte se s |  
 |--------|---------|  
-|Zapište informace o události do protokolů aplikace.|[Postupy: Zápis zpráv protokolu](../../../../visual-basic/developing-apps/programming/log-info/how-to-write-log-messages.md)|  
+|Zapište informace události do protokolů aplikace.|[Postupy: Zápis zpráv protokolu](../../../../visual-basic/developing-apps/programming/log-info/how-to-write-log-messages.md)|  
 |Zapište informace o výjimce do protokolů aplikace.|[Postupy: Protokolování výjimek](../../../../visual-basic/developing-apps/programming/log-info/how-to-log-exceptions.md)|  
-|Při spuštění a vypnutí aplikace zapište informace o trasování do protokolů aplikace.|[Postupy: Protokolování zpráv při spuštění nebo ukončení aplikace](../../../../visual-basic/developing-apps/programming/log-info/how-to-log-messages-when-the-application-starts-or-shuts-down.md)|  
-|Nakonfigurujte `My.Application.Log` zápis informací do textového souboru.|[Postupy: Zápis informací o události do textového souboru](../../../../visual-basic/developing-apps/programming/log-info/how-to-write-event-information-to-a-text-file.md)|  
-|Nakonfigurujte `My.Application.Log` zápis informací do protokolu událostí.|[Postupy: Zápis do protokolu událostí aplikace](../../../../visual-basic/developing-apps/programming/log-info/how-to-write-to-an-application-event-log.md)|  
+|Zapište trasovací informace do protokolů aplikace při spuštění a ukončení aplikace.|[Postupy: Protokolování zpráv při spuštění nebo ukončení aplikace](../../../../visual-basic/developing-apps/programming/log-info/how-to-log-messages-when-the-application-starts-or-shuts-down.md)|  
+|Nakonfigurujte `My.Application.Log` pro zápis informací do textového souboru.|[Postupy: Zápis informací o události do textového souboru](../../../../visual-basic/developing-apps/programming/log-info/how-to-write-event-information-to-a-text-file.md)|  
+|Nakonfigurujte `My.Application.Log` , aby se zapisovaly informace do protokolu událostí.|[Postupy: Zápis do protokolu událostí aplikace](../../../../visual-basic/developing-apps/programming/log-info/how-to-write-to-an-application-event-log.md)|  
 |Změnit, `My.Application.Log` kde zapisuje informace.|[Návod: Změna místa, kam objekt My.Application.Log zapisuje informace](../../../../visual-basic/developing-apps/programming/log-info/walkthrough-changing-where-my-application-log-writes-information.md)|  
-|Určete, kde `My.Application.Log` jsou informace o zápisu.|[Návod: Zjištění, kam objekt My.Application.Log zapisuje informace](../../../../visual-basic/developing-apps/programming/log-info/walkthrough-determining-where-my-application-log-writes-information.md)|  
-|Vytvořte vlastní naslouchací proces protokolu pro . `My.Application.Log`|[Návod: Vytváření vlastních součástí naslouchajících protokolům](../../../../visual-basic/developing-apps/programming/log-info/walkthrough-creating-custom-log-listeners.md)|  
-|Filtrovat výstup `My.Application.Log` protokolů.|[Návod: Filtrování výstupu My.Application.Log](../../../../visual-basic/developing-apps/programming/log-info/walkthrough-filtering-my-application-log-output.md)|  
+|Určete, `My.Application.Log` kde zapisuje informace.|[Návod: Zjištění, kam objekt My.Application.Log zapisuje informace](../../../../visual-basic/developing-apps/programming/log-info/walkthrough-determining-where-my-application-log-writes-information.md)|  
+|Vytvořte vlastní naslouchací proces protokolu pro `My.Application.Log`.|[Návod: Vytváření vlastních součástí naslouchajících protokolům](../../../../visual-basic/developing-apps/programming/log-info/walkthrough-creating-custom-log-listeners.md)|  
+|Filtrujte výstup `My.Application.Log` protokolů.|[Návod: Filtrování výstupu My.Application.Log](../../../../visual-basic/developing-apps/programming/log-info/walkthrough-filtering-my-application-log-output.md)|  
   
 ## <a name="see-also"></a>Viz také
 
 - <xref:Microsoft.VisualBasic.Logging.Log?displayProperty=nameWithType>
-- [Práce s protokoly aplikací](../../../../visual-basic/developing-apps/programming/log-info/working-with-application-logs.md)
-- [Řešení potíží: Součásti naslouchající protokolům](../../../../visual-basic/developing-apps/programming/log-info/troubleshooting-log-listeners.md)
+- [Práce s protokoly aplikací](../../../../visual-basic/developing-apps/programming/log-info/working-with-application-logs.md)
+- [Řešení potíží: Komponenty naslouchající protokolům](../../../../visual-basic/developing-apps/programming/log-info/troubleshooting-log-listeners.md)

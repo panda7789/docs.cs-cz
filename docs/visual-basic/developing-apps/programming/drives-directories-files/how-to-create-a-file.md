@@ -14,7 +14,7 @@ ms.locfileid: "74348798"
 ---
 # <a name="how-to-create-a-file-in-visual-basic"></a>Postupy: Vytvoření souboru v jazyce Visual Basic
 
-Tento příklad vytvoří prázdný textový soubor na <xref:System.IO.File.Create%2A> zadané <xref:System.IO.File> cestě pomocí metody ve třídě.  
+Tento příklad vytvoří prázdný textový soubor v zadané cestě pomocí <xref:System.IO.File.Create%2A> metody ve <xref:System.IO.File> třídě.  
   
 ## <a name="example"></a>Příklad  
 
@@ -30,13 +30,13 @@ Tento příklad vytvoří prázdný textový soubor na <xref:System.IO.File.Crea
   
  Následující podmínky mohou způsobit výjimku:  
   
-- Název cesty je poškozen. Obsahuje například neplatné znaky nebo je<xref:System.ArgumentException>pouze prázdné znaky ( ).  
+- Název cesty je poškozen. Například obsahuje neplatné znaky nebo je pouze mezera (<xref:System.ArgumentException>).  
   
-- Cesta je jen pro<xref:System.IO.IOException>čtení ( ).  
+- Cesta je určena jen pro čtení (<xref:System.IO.IOException>).  
   
-- Název cesty `Nothing` je<xref:System.ArgumentNullException>( ).  
+- Název cesty je `Nothing` (<xref:System.ArgumentNullException>).  
   
-- Název cesty je příliš<xref:System.IO.PathTooLongException>dlouhý ( ).  
+- Název cesty je příliš dlouhý (<xref:System.IO.PathTooLongException>).  
   
 - Cesta je neplatná (<xref:System.IO.DirectoryNotFoundException>).  
   
@@ -44,11 +44,11 @@ Tento příklad vytvoří prázdný textový soubor na <xref:System.IO.File.Crea
   
 ## <a name="net-framework-security"></a>Zabezpečení rozhraní .NET Framework  
 
- A <xref:System.Security.SecurityException> může být vyvolána v prostředí s částečnou důvěryhodností.  
+ <xref:System.Security.SecurityException> Může být vyvolána v prostředích s částečnou důvěryhodností.  
   
  Volání <xref:System.IO.File.Create%2A> metody vyžaduje <xref:System.Security.Permissions.FileIOPermission>.  
   
- Je <xref:System.UnauthorizedAccessException> vyvolána, pokud uživatel nemá oprávnění k vytvoření souboru.  
+ Pokud <xref:System.UnauthorizedAccessException> uživatel nemá oprávnění k vytvoření souboru, je vyvolána výjimka.  
   
 ## <a name="see-also"></a>Viz také
 

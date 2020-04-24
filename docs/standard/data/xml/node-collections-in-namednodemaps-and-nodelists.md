@@ -15,6 +15,6 @@ Můžete načíst sadu uzlů a umístit ji do seřazené nebo neuspořádané ko
   
  Informace o neuspořádané kolekci naleznete v tématu [neuspořádané načtení uzlu podle názvu nebo indexu](../../../../docs/standard/data/xml/unordered-node-retrieval-by-name-or-index.md). Informace o seřazené kolekci najdete v tématu [pořadí načítání uzlů podle indexu](../../../../docs/standard/data/xml/ordered-node-retrieval-by-index.md).  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Model DOM (Document Object Model) dokumentu XML](../../../../docs/standard/data/xml/xml-document-object-model-dom.md)
+- [model DOM (Document Object Model) dokumentu XML](../../../../docs/standard/data/xml/xml-document-object-model-dom.md)

@@ -15,7 +15,7 @@ ms.locfileid: "75710658"
 Následující tabulka popisuje výchozí mapování mezi datovými typy XML a typy modulu CLR (Common Language Runtime).
 
 > [!NOTE]
-> `xs` a předpony `xdt` jsou namapovány na <https://www.w3.org/2001/XMLSchema> a v uvedeném pořadí identifikátory URI oboru názvů <https://www.w3.org/2003/05/xpath-datatypes>.
+> Předpony `xs` a jsou namapovány na identifikátor <https://www.w3.org/2001/XMLSchema> URI oboru <https://www.w3.org/2003/05/xpath-datatypes> názvů a v uvedeném pořadí. `xdt`
 
 |Typ XML|Typ CLR|
 |--------------|--------------|
@@ -76,6 +76,6 @@ Následující tabulka popisuje výchozí mapování mezi datovými typy XML a t
 |Uzel komentáře|<xref:System.Xml.XPath.XPathNavigator>|
 |Zpracovává se uzel instrukcí.|<xref:System.Xml.XPath.XPathNavigator>|
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Podpora typu v třídách System.Xml](../../../../docs/standard/data/xml/type-support-in-the-system-xml-classes.md)

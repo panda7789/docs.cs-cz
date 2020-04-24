@@ -16,17 +16,17 @@ ms.locfileid: "74345883"
 ---
 # <a name="how-to-check-connection-status-in-visual-basic"></a>Postupy: Kontrola stavu připojení v jazyce Visual Basic
 
-Vlastnost <xref:Microsoft.VisualBasic.Devices.Network.IsAvailable> lze použít k určení, zda má počítač funkční síť nebo připojení k Internetu.  
+<xref:Microsoft.VisualBasic.Devices.Network.IsAvailable> Vlastnost se dá použít k určení, jestli má počítač funkční síť nebo připojení k Internetu.  
   
 [!INCLUDE[note_settings_general](~/includes/note-settings-general-md.md)]  
   
-### <a name="to-check-whether-a-computer-has-a-working-connection"></a>Kontrola, zda má počítač funkční připojení  
+### <a name="to-check-whether-a-computer-has-a-working-connection"></a>Ověření, zda má počítač funkční připojení  
   
-- Zjistěte, `IsAvailable` zda `True` `False`je vlastnost nebo . Následující kód zkontroluje stav vlastnosti a hlásí ji:  
+- Určete, zda `IsAvailable` je `True` vlastnost nebo `False`. Následující kód zkontroluje stav vlastnosti a ohlásí ji:  
   
      [!code-vb[VbResourceTasks#3](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbResourceTasks/VB/Class1.vb#3)]  
   
-     Tento příklad kódu je také k dispozici jako fragment kódu IntelliSense. Ve výběru fragmentu kódu je umístěn v **konektivitě a síti**. Další informace naleznete v [tématu Fragmenty kódu](/visualstudio/ide/code-snippets).  
+     Tento příklad kódu je také k dispozici jako fragment kódu technologie IntelliSense. Ve výběru fragmentu kódu se nachází v **Možnosti připojení a sítě**. Další informace naleznete v tématu [fragmenty kódu](/visualstudio/ide/code-snippets).  
   
 ## <a name="see-also"></a>Viz také
 

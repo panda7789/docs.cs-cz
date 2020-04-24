@@ -14,34 +14,34 @@ ms.lasthandoff: 01/07/2020
 ms.locfileid: "75710060"
 ---
 # <a name="user-defined-functions-and-variables"></a>Uživatelem definované funkce a proměnné
-Třída <xref:System.Xml.XPath.XPathNavigator> poskytuje sadu metod, které slouží k interakci s daty <xref:System.Xml.XPath.XPathDocument>. Standardní funkce XPath můžete doplnit implementací funkcí rozšíření a proměnných pro použití ve výrazech dotazů XPath. Metoda <xref:System.Xml.XPath.XPathExpression.SetContext%2A> může přijmout uživatelsky definovaný kontext odvozený od <xref:System.Xml.Xsl.XsltContext>. Uživatelsky definované funkce jsou vyřešeny vlastním kontextem.  
+<xref:System.Xml.XPath.XPathNavigator> Třída poskytuje sadu metod, které slouží k interakci s <xref:System.Xml.XPath.XPathDocument> daty. Standardní funkce XPath můžete doplnit implementací funkcí rozšíření a proměnných pro použití ve výrazech dotazů XPath. <xref:System.Xml.XPath.XPathExpression.SetContext%2A> Metoda může přijmout uživatelsky definovaný kontext odvozený z <xref:System.Xml.Xsl.XsltContext>. Uživatelsky definované funkce jsou vyřešeny vlastním kontextem.  
   
  Funkce a proměnné rozšíření mohou být užitečné při prevenci útoků injektáže XML. V těchto scénářích je uživatelský vstup přiřazen k vlastním proměnným a zpracován funkcí rozšíření, nikoli jako nezpracovaný vstup zřetězený s pokyny pro zpracování. Funkce rozšíření a proměnné obsahují uživatelský vstup, takže fungují pouze na datech XML, která jsou určena návrhářem.  
   
- Chcete-li použít rozšíření, implementujte vlastní třídu <xref:System.Xml.Xsl.XsltContext> spolu s rozhraními <xref:System.Xml.Xsl.IXsltContextFunction> a <xref:System.Xml.Xsl.IXsltContextVariable>, které podporují funkce a proměnné rozšíření. <xref:System.Xml.XPath.XPathExpression> přidá vstup uživatele s jeho <xref:System.Xml.Xsl.XsltArgumentList> do vlastního <xref:System.Xml.Xsl.XsltContext>.  
+ Chcete-li použít rozšíření implementující <xref:System.Xml.Xsl.XsltContext> vlastní třídu spolu s <xref:System.Xml.Xsl.IXsltContextFunction> rozhraními <xref:System.Xml.Xsl.IXsltContextVariable> a podporující rozšíření funkcí a proměnných. <xref:System.Xml.XPath.XPathExpression> Přidá vstup uživatele s <xref:System.Xml.Xsl.XsltArgumentList> vlastním uživatelem <xref:System.Xml.Xsl.XsltContext>.  
   
- <xref:System.Xml.XPath.XPathExpression> představuje kompilovaný dotaz, který <xref:System.Xml.XPath.XPathNavigator> používá k vyhledání a zpracování uzlů identifikovaných výrazem.  
+ <xref:System.Xml.XPath.XPathExpression> Představuje kompilovaný dotaz, který <xref:System.Xml.XPath.XPathNavigator> používá k vyhledání a zpracování uzlů identifikovaných výrazem.  
   
- Následující příklad ukazuje implementaci třídy vlastního kontextu odvozenou z <xref:System.Xml.Xsl.XsltContext>. Komentáře v kódu popisují členy třídy a jejich použití ve vlastních funkcích. Implementace funkcí a proměnných a ukázková aplikace, která používá tyto implementace, se řídí tímto segmentem kódu.  
+ Následující příklad ukazuje implementaci třídy vlastního kontextu odvozené z <xref:System.Xml.Xsl.XsltContext>. Komentáře v kódu popisují členy třídy a jejich použití ve vlastních funkcích. Implementace funkcí a proměnných a ukázková aplikace, která používá tyto implementace, se řídí tímto segmentem kódu.  
   
  [!code-csharp[XPathExtensionFunctions#2](../../../../samples/snippets/csharp/VS_Snippets_Data/xpathextensionfunctions/cs/xpathextensionfunctions.cs#2)]
  [!code-vb[XPathExtensionFunctions#2](../../../../samples/snippets/visualbasic/VS_Snippets_Data/xpathextensionfunctions/vb/xpathextensionfunctions.vb#2)]  
   
- Následující kód implementuje <xref:System.Xml.Xsl.IXsltContextFunction>. Třída, která implementuje <xref:System.Xml.Xsl.IXsltContextFunction> řeší a provádí uživatelsky definované funkce. Tento příklad používá funkci identifikovanou deklarací: `private int CountChar(string title, char charTocount)`.  
+ Následující kód implementuje <xref:System.Xml.Xsl.IXsltContextFunction>. Třída, která implementuje <xref:System.Xml.Xsl.IXsltContextFunction> funkci, která překládá a provádí uživatelsky definované funkce. Tento příklad používá funkci identifikovanou deklarací: `private int CountChar(string title, char charTocount)`.  
   
  Komentáře kódu popisují členy třídy.  
   
  [!code-csharp[XPathExtensionFunctions#3](../../../../samples/snippets/csharp/VS_Snippets_Data/xpathextensionfunctions/cs/xpathextensionfunctions.cs#3)]
  [!code-vb[XPathExtensionFunctions#3](../../../../samples/snippets/visualbasic/VS_Snippets_Data/xpathextensionfunctions/vb/xpathextensionfunctions.vb#3)]  
   
- Následující kód implementuje <xref:System.Xml.Xsl.IXsltContextVariable>. Tato třída překládá odkazy na uživatelsky definované proměnné ve výrazech dotazů XPath za běhu. Instance této třídy je vytvořena a vrácena přepsanou metodou <xref:System.Xml.Xsl.XsltContext.ResolveVariable%2A> třídy Custom <xref:System.Xml.Xsl.XsltContext>.  
+ Následující kód implementuje <xref:System.Xml.Xsl.IXsltContextVariable>. Tato třída překládá odkazy na uživatelsky definované proměnné ve výrazech dotazů XPath za běhu. Instance této třídy je vytvořena a vrácena potlačenou <xref:System.Xml.Xsl.XsltContext.ResolveVariable%2A> metodou vlastní <xref:System.Xml.Xsl.XsltContext> třídy.  
   
  Komentáře kódu popisují členy třídy.  
   
  [!code-csharp[XPathExtensionFunctions#4](../../../../samples/snippets/csharp/VS_Snippets_Data/xpathextensionfunctions/cs/xpathextensionfunctions.cs#4)]
  [!code-vb[XPathExtensionFunctions#4](../../../../samples/snippets/visualbasic/VS_Snippets_Data/xpathextensionfunctions/vb/xpathextensionfunctions.vb#4)]  
   
- S definicemi předchozí třídy v oboru používá následující kód vlastní funkci pro počítání znaků v prvcích `Tasks.xml` dokumentu. Komentáře v kódu popisují kód, který zkompiluje vlastní funkci a spustí jej v dokumentu `Tasks.xml`.  
+ S definicemi předchozí třídy v oboru používá následující kód vlastní funkci pro počítání znaků v prvcích `Tasks.xml` dokumentu. Komentáře v kódu popisují kód, který zkompiluje vlastní funkci a spustí jej na `Tasks.xml` dokumentu.  
   
  [!code-csharp[XPathExtensionFunctions#1](../../../../samples/snippets/csharp/VS_Snippets_Data/xpathextensionfunctions/cs/xpathextensionfunctions.cs#1)]
  [!code-vb[XPathExtensionFunctions#1](../../../../samples/snippets/visualbasic/VS_Snippets_Data/xpathextensionfunctions/vb/xpathextensionfunctions.vb#1)]  

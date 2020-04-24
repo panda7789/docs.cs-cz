@@ -23,7 +23,7 @@ Pokud máte v úmyslu vystavovat typy v sestavení s aplikacemi modelu COM, zva�
   
      I když zprostředkovatel komunikace s objekty COM poskytuje mechanismus pro automatické generování rozhraní obsahujícího všechny členy třídy a členy své základní třídy, je mnohem lepší poskytnout explicitní rozhraní. Automaticky generované rozhraní se nazývá rozhraní třídy. Pokyny naleznete v tématu [Představujeme rozhraní třídy](com-callable-wrapper.md#introducing-the-class-interface).  
   
-     Můžete použít Visual Basic, C#a C++ k začleňování definic rozhraní do kódu, místo aby bylo nutné používat rozhraní IDL (Interface Definition Language) nebo jeho ekvivalent. Podrobnosti o syntaxi najdete v dokumentaci jazyka.  
+     Můžete použít Visual Basic, C# a C++ pro začlenění definic rozhraní do kódu, místo abyste museli používat rozhraní IDL (Interface Definition Language) nebo jeho ekvivalent. Podrobnosti o syntaxi najdete v dokumentaci jazyka.  
   
 - Spravované typy musí být veřejné.  
   
@@ -45,7 +45,7 @@ Pokud máte v úmyslu vystavovat typy v sestavení s aplikacemi modelu COM, zva�
   
  Při exportu do modelu COM je Hierarchie dědičnosti spravovaného typu sloučena. Správa verzí se také liší mezi spravovanými a nespravovanými prostředími. Typy vystavené objektu COM nemají stejné charakteristiky verze jako jiné spravované typy.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Runtime.InteropServices.ComVisibleAttribute>
 - [Vystavení komponent architektury .NET Framework pro COM](../../../docs/framework/interop/exposing-dotnet-components-to-com.md)

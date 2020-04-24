@@ -11,7 +11,7 @@ ms.locfileid: "75447270"
 ---
 # <a name="database-errors"></a>Chyby databáze
 
-<xref:Microsoft.Data.Sqlite.SqliteException> je vyvolána, když dojde k chybě SQLite. Zprávu poskytuje SQLite. Vlastnosti `SqliteErrorCode` a `SqliteExtendedErrorCode` obsahují [kód výsledku](https://www.sqlite.org/rescode.html) SQLite chyby.
+<xref:Microsoft.Data.Sqlite.SqliteException>je vyvolána, když dojde k chybě SQLite. Zprávu poskytuje SQLite. Vlastnosti `SqliteErrorCode` a `SqliteExtendedErrorCode` obsahují [kód výsledku](https://www.sqlite.org/rescode.html) SQLite chyby.
 
 Může dojít k chybám pokaždé, když Microsoft. data. sqlite komunikuje s nativní knihovnou SQLite. V následujícím seznamu jsou uvedeny běžné scénáře, kdy může dojít k chybám:
 
@@ -28,21 +28,21 @@ SQLite je agresivní, když přichází na uzamykání tabulek a databázových 
 
 Kdykoli dojde k chybě typu zaneprázdněn nebo uzamčená chyba Microsoft. data. sqlite, bude se automaticky opakovat, dokud nebude úspěšná nebo dokud nebude dosaženo časového limitu příkazu.
 
-Časový limit příkazu můžete zvýšit nastavením <xref:Microsoft.Data.Sqlite.SqliteCommand.CommandTimeout%2A>. Výchozí časový limit je 30 sekund. Hodnota `0` znamená žádný časový limit.
+Časový limit příkazu můžete zvýšit nastavením <xref:Microsoft.Data.Sqlite.SqliteCommand.CommandTimeout%2A>. Výchozí časový limit je 30 sekund. Hodnota `0` znamená, že nevypršel časový limit.
 
 ```csharp
 // Retry for 60 seconds while locked
 command.CommandTimeout = 60;
 ```
 
-Microsoft. data. sqlite někdy potřebuje vytvořit objekt implicitního příkazu. Například během BeginTransaction. Chcete-li nastavit časový limit pro tyto příkazy, použijte <xref:Microsoft.Data.Sqlite.SqliteConnection.DefaultTimeout%2A>.
+Microsoft. data. sqlite někdy potřebuje vytvořit objekt implicitního příkazu. Například během BeginTransaction. Chcete-li nastavit časový limit pro tyto příkazy <xref:Microsoft.Data.Sqlite.SqliteConnection.DefaultTimeout%2A>, použijte.
 
 ```csharp
 // Set the default timeout of all commands on this connection
 connection.DefaultTimeout = 60;
 ```
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 * [Kódy chyb SQLite](https://www.sqlite.org/rescode.html)
 * [Uzamykání souborů v SQLite](https://www.sqlite.org/lockingv3.html)

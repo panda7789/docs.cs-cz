@@ -1,5 +1,5 @@
 ---
-title: Analýza textových souborů s objektem TextFieldParser
+title: Analýza textových souborů pomocí objektu TextFieldParser
 ms.date: 07/20/2015
 helpviewer_keywords:
 - TextFieldParser object, using
@@ -13,27 +13,27 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 03/15/2020
 ms.locfileid: "74333849"
 ---
-# <a name="parsing-text-files-with-the-textfieldparser-object-visual-basic"></a>Analýza textových souborů s objektem TextFieldParser (Visual Basic)
+# <a name="parsing-text-files-with-the-textfieldparser-object-visual-basic"></a>Analýza textových souborů pomocí objektu TextFieldParser (Visual Basic)
 
-Objekt `TextFieldParser` umožňuje analyzovat a zpracovávat velmi velký soubor, které jsou strukturovány jako sloupce s omezenou šířkou textu, jako jsou například soubory protokolu nebo starší informace o databázi. Analýza textového souboru `TextFieldParser` s je podobná iterace přes textový soubor, zatímco metoda analýzy extrahovat pole textu je podobná metody manipulace s řetězci používané k tokenizaci oddělených řetězců.  
+`TextFieldParser` Objekt umožňuje analyzovat a zpracovat velmi velký soubor, který je strukturovaný jako sloupec s oddělovači, například soubory protokolu nebo starší informace databáze. Analýza textového souboru pomocí `TextFieldParser` je podobná iteraci přes textový soubor, zatímco metoda Parse pro extrakci polí textu je podobná metodám manipulace s řetězci, které slouží k tokenizovat řetězců s oddělovači.  
   
 ## <a name="parsing-different-types-of-text-files"></a>Analýza různých typů textových souborů  
 
- Textové soubory mohou mít pole různé šířky, ohraničené znakem, například čárkou nebo mezerou na tabulátorech. Definujte `TextFieldType` a oddělovač, jako v následujícím `SetDelimiters` příkladu, který používá metodu k definování textového souboru odděleného tabulátorem:  
+ Textové soubory mohou obsahovat pole s různou šířkou, oddělené znakem, jako je čárka nebo mezera tabulátoru. Definujte `TextFieldType` a oddělovač, jak je uvedeno v následujícím příkladu, který používá `SetDelimiters` metodu k definování textového souboru s oddělovači tabulátoru:  
   
  [!code-vb[VbVbalrTextFieldParser#21](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrTextFieldParser/VB/Class1.vb#21)]  
   
- Ostatní textové soubory mohou mít pevné šířky polí. V takových případech je třeba `TextFieldType` `FixedWidth` definovat as a definovat šířky každého pole, jako v následujícím příkladu. Tento příklad `SetFieldWidths` používá metodu k definování sloupců textu: první sloupec je široký 5 znaků, druhý je 10, třetí je 11 a čtvrtý má proměnnou šířku.  
+ Jiné textové soubory mohou mít pevné šířky polí. V takových případech je nutné definovat `TextFieldType` jako `FixedWidth` a definovat šířku každého pole, jak je uvedeno v následujícím příkladu. V tomto příkladu se `SetFieldWidths` používá metoda k definování sloupců textu: první sloupec má šířku 5 znaků, druhá je 10, třetí je 11 a čtvrtá je proměnná šířka.  
   
  [!code-vb[VbVbalrTextFieldParser#22](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrTextFieldParser/VB/Class1.vb#22)]  
   
- Jakmile je formát definován, můžete procházet soubor, pomocí `ReadFields` metody ke zpracování každého řádku v pořadí.  
+ Po definování formátu můžete projít soubor pomocí `ReadFields` metody pro zpracování každého řádku.  
   
- Pokud pole neodpovídá zadanému formátu, je vyvolána <xref:Microsoft.VisualBasic.FileIO.MalformedLineException> výjimka. Při vyvolání těchto výjimek `ErrorLine` `ErrorLineNumber` vlastnosti a obsahovat text způsobuje výjimku a číslo řádku tohoto textu.  
+ Pokud se pole neshoduje se zadaným formátem, <xref:Microsoft.VisualBasic.FileIO.MalformedLineException> je vyvolána výjimka. Pokud jsou takové výjimky vyvolány `ErrorLine` , `ErrorLineNumber` vlastnosti a uchovávají text, který způsobuje výjimku, a číslo řádku tohoto textu.  
   
 ## <a name="parsing-files-with-multiple-formats"></a>Analýza souborů s více formáty  
 
- Metodu `PeekChars` objektu `TextFieldParser` lze použít ke kontrole každého pole před jeho přečtením, což umožňuje definovat více formátů polí a odpovídajícím způsobem reagovat. Další informace naleznete v [tématu How to: Read From Text Files with Multiple Formats](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-read-from-text-files-with-multiple-formats.md).  
+ `PeekChars` Metodu `TextFieldParser` objektu lze použít ke kontrole každého pole před jeho čtením, což vám umožní definovat více formátů pro pole a odpovídajícím způsobem reagovat. Další informace najdete v tématu [Postupy: čtení z textových souborů s více formáty](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-read-from-text-files-with-multiple-formats.md).  
   
 ## <a name="see-also"></a>Viz také
 

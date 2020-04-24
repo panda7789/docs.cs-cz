@@ -15,39 +15,39 @@ ms.locfileid: "74345602"
 ---
 # <a name="how-to-receive-strings-from-serial-ports-in-visual-basic"></a>Postupy: Příjem řetězců ze sériových portů v jazyce Visual Basic
 
-Toto téma popisuje `My.Computer.Ports` použití pro příjem řetězců ze sériových portů počítače v jazyce Visual Basic.  
+Toto téma popisuje, jak používat `My.Computer.Ports` k přijímání řetězců ze sériových portů počítače v Visual Basic.  
   
 ### <a name="to-receive-strings-from-the-serial-port"></a>Příjem řetězců ze sériového portu  
   
-1. Inicializovat návratový řetězec.  
+1. Inicializujte návratový řetězec.  
   
      [!code-vb[VbVbalrMyComputer#38](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyComputer/VB/Class2.vb#38)]  
   
-2. Určete, který sériový port by měl poskytovat řetězce. Tento příklad předpokládá, `COM1`že je .  
+2. Určete, který sériový port by měl poskytnout řetězce. Tento příklad předpokládá, že `COM1`je.  
   
-3. Pomocí `My.Computer.Ports.OpenSerialPort` metody získat odkaz na port. Další informace naleznete v tématu <xref:Microsoft.VisualBasic.Devices.Ports.OpenSerialPort%2A>.  
+3. Použijte `My.Computer.Ports.OpenSerialPort` metodu k získání odkazu na port. Další informace naleznete v tématu <xref:Microsoft.VisualBasic.Devices.Ports.OpenSerialPort%2A>.  
   
-     Blok `Try...Catch...Finally` umožňuje aplikaci zavřít sériový port i v případě, že generuje výjimku. Veškerý kód, který manipuluje se sériovým portem, by se měl objevit v tomto bloku.  
+     `Try...Catch...Finally` Blok umožňuje aplikaci zavřít sériový port, i když generuje výjimku. Veškerý kód, který zpracovává sériový port, by měl být uveden v rámci tohoto bloku.  
   
      [!code-vb[VbVbalrMyComputer#39](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyComputer/VB/Class2.vb#39)]  
   
-4. Vytvořte `Do` smyčku pro čtení řádků textu, dokud nebudou k dispozici žádné další řádky.  
+4. Vytvoří `Do` smyčku pro čtení řádků textu, dokud nebudou k dispozici žádné další řádky.  
   
      [!code-vb[VbVbalrMyComputer#40](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyComputer/VB/Class2.vb#40)]  
   
-5. Pomocí <xref:System.IO.Ports.SerialPort.ReadLine> této metody můžete číst další dostupný řádek textu ze sériového portu.  
+5. Použijte <xref:System.IO.Ports.SerialPort.ReadLine> metodu pro čtení dalšího dostupného řádku textu ze sériového portu.  
   
      [!code-vb[VbVbalrMyComputer#41](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyComputer/VB/Class2.vb#41)]  
   
-6. Pomocí `If` příkazu určete, zda <xref:System.IO.Ports.SerialPort.ReadLine> metoda vrátí `Nothing` (což znamená, že není k dispozici žádný další text). Pokud se `Nothing`vrátí , `Do` ukončete smyčku.  
+6. Použijte `If` příkaz k určení, <xref:System.IO.Ports.SerialPort.ReadLine> zda metoda vrátí `Nothing` (což znamená, že není k dispozici žádný další text). Pokud se vrátí `Nothing`, ukončete `Do` smyčku.  
   
      [!code-vb[VbVbalrMyComputer#42](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyComputer/VB/Class2.vb#42)]  
   
-7. Přidejte `Else` blok `If` do příkazu pro zpracování případu, pokud je řetězec skutečně přečten. Blok připojí řetězec ze sériového portu k vratný řetězec.  
+7. Přidejte `Else` blok do `If` příkazu pro zpracování případu, pokud je řetězec skutečně čten. Blok připojí řetězec ze sériového portu do návratového řetězce.  
   
      [!code-vb[VbVbalrMyComputer#43](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyComputer/VB/Class2.vb#43)]  
   
-8. Vraťte řetězec.  
+8. Vrátí řetězec.  
   
      [!code-vb[VbVbalrMyComputer#44](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyComputer/VB/Class2.vb#44)]  
   
@@ -55,17 +55,17 @@ Toto téma popisuje `My.Computer.Ports` použití pro příjem řetězců ze sé
 
  [!code-vb[VbVbalrMyComputer#37](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyComputer/VB/Class2.vb#37)]  
   
- Tento příklad kódu je také k dispozici jako fragment kódu IntelliSense. Ve výběru fragmentu kódu je umístěn v **konektivitě a síti**. Další informace naleznete v [tématu Fragmenty kódu](/visualstudio/ide/code-snippets).  
+ Tento příklad kódu je také k dispozici jako fragment kódu technologie IntelliSense. Ve výběru fragmentu kódu se nachází v **Možnosti připojení a sítě**. Další informace naleznete v tématu [fragmenty kódu](/visualstudio/ide/code-snippets).  
   
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
 
- Tento příklad předpokládá, že `COM1`počítač používá .  
+ V tomto příkladu se předpokládá, že `COM1`počítač používá.  
   
 ## <a name="robust-programming"></a>Robustní programování  
 
- Tento příklad předpokládá, že `COM1`počítač používá . Pro větší flexibilitu by měl kód umožnit uživateli vybrat požadovaný sériový port ze seznamu dostupných portů. Další informace naleznete v [tématu How to: Show Available Serial Ports](../../../../visual-basic/developing-apps/programming/computer-resources/how-to-show-available-serial-ports.md).  
+ V tomto příkladu se předpokládá, že `COM1`počítač používá. Pro větší flexibilitu by měl kód uživateli dovolit vybrat požadovaný sériový port ze seznamu dostupných portů. Další informace najdete v tématu [Postup: zobrazení dostupných sériových portů](../../../../visual-basic/developing-apps/programming/computer-resources/how-to-show-available-serial-ports.md).  
   
- Tento příklad `Try...Catch...Finally` používá blok ujistěte se, že aplikace zavře port a zachytit všechny výjimky časového výpadku. Další informace naleznete v [tématu Try... Chytit... Finally prohlášení](../../../../visual-basic/language-reference/statements/try-catch-finally-statement.md).  
+ V `Try...Catch...Finally` tomto příkladu se používá blok k ujištění, že aplikace zavírá port a zachytává všechny výjimky časového limitu. Další informace najdete v tématu [Try... Zachytit... Finally – příkaz](../../../../visual-basic/language-reference/statements/try-catch-finally-statement.md).  
   
 ## <a name="see-also"></a>Viz také
 

@@ -27,7 +27,7 @@ Obsahuje odkazy na stránky o vytváření aplikací pracujících s daty pomoc�
 [LINQ](../../visual-basic/programming-guide/language-features/linq/index.md)  
 Obsahuje odkazy na témata popisující způsob použití technologie LINQ s jazykem Visual Basic.
 
-[LINQ to SQL](../../framework/data/adonet/sql/linq/index.md)  
+[Technologie LINQ to SQL](../../framework/data/adonet/sql/linq/index.md)  
 Obsahuje informace o [!INCLUDE[vbtecdlinq](~/includes/vbtecdlinq-md.md)]. Zahrnuje příklady programování.  
 
 [Nástroje LINQ to SQL v sadě Visual Studio](/visualstudio/data-tools/linq-to-sql-tools-in-visual-studio2)  
@@ -58,4 +58,4 @@ Poskytuje odkazy na stránky vysvětlující postup odeslaní aktualizovaných d
 Popisuje třídy rozhraní ADO.NET, které zpřístupňují služby pro přístup k datům programátorovi rozhraní .NET Framework.
 
 [Data v řešeních pro systém Office](/visualstudio/vsto/data-in-office-solutions)  
-Obsahuje odkazy na stránky, které vysvětlují, jak fungují data v řešeních sady Office, včetně informací o programování zaměřeném na schéma, ukládání dat do mezipaměti a přístupu k datům na straně serveru.
+Obsahuje odkazy na stránky, které vysvětlují, jak fungují data v řešeních pro systém Office, včetně informací o programování orientovaném na schéma, ukládání dat do mezipaměti a přístupu k datům na straně serveru.

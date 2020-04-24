@@ -49,8 +49,8 @@ if (((object)node1.Name) == ((object)node2.Name))
 { ...  
 ```  
   
- Výše uvedený scénář tabulky názvů předaných mezi dvěma dokumenty je typický při opakovaném zpracování stejného typu dokumentu, jako je například objednávka dokumentů na webu elektronického obchodování, který je v souladu se schématem jazyka XML (XSD) nebo typem dokumentu. definice (DTD) a stejné řetězce se opakují. Použití stejné tabulky názvů přináší vylepšení výkonu, protože stejný název elementu se vyskytuje ve více dokumentech.  
+ Výše uvedený scénář tabulky názvů předaných mezi dvěma dokumenty je typický při opakovaném zpracování stejného typu dokumentu, jako je například objednávka dokumentů na webu elektronického obchodování, který je v souladu se schématem XML Schema Definition Language (XSD) nebo definicí typu dokumentu (DTD) a se opakují stejné řetězce. Použití stejné tabulky názvů přináší vylepšení výkonu, protože stejný název elementu se vyskytuje ve více dokumentech.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Model DOM (Document Object Model) dokumentu XML](../../../../docs/standard/data/xml/xml-document-object-model-dom.md)
+- [model DOM (Document Object Model) dokumentu XML](../../../../docs/standard/data/xml/xml-document-object-model-dom.md)

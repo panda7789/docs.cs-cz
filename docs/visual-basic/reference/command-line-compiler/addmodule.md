@@ -22,21 +22,21 @@ Způsobí, že kompilátor zpřístupní všechny informace o typech ze zadanýc
 -addmodule:fileList  
 ```  
   
-## <a name="arguments"></a>Arguments  
+## <a name="arguments"></a>Argumenty  
  `fileList`  
- Požadováno. Čárkami oddělený seznam souborů, které obsahují metadata, ale neobsahují manifesty sestavení. Názvy souborů, které obsahují mezery, by měly být obklopené uvozovkami ("").  
+ Povinná hodnota. Čárkami oddělený seznam souborů, které obsahují metadata, ale neobsahují manifesty sestavení. Názvy souborů, které obsahují mezery, by měly být obklopené uvozovkami ("").  
   
 ## <a name="remarks"></a>Poznámky  
- Soubory uvedené parametrem `fileList` musí být vytvořeny s možností `-target:module` nebo s jiným kompilátorem ekvivalentním `-target:module`.  
+ Soubory uvedené `fileList` parametrem musí být vytvořeny s `-target:module` možností nebo s jiným kompilátorem ekvivalentním. `-target:module`  
   
- Všechny moduly přidané pomocí `-addmodule` musí být ve stejném adresáři jako výstupní soubor v době běhu. To znamená, že můžete určit modul v jakémkoli adresáři v době kompilace, ale modul musí být v adresáři aplikace v době běhu. Pokud to tak není, zobrazí se chyba <xref:System.TypeLoadException>.  
+ Všechny moduly přidané pomocí `-addmodule` musí být ve stejném adresáři jako výstupní soubor v době běhu. To znamená, že můžete určit modul v jakémkoli adresáři v době kompilace, ale modul musí být v adresáři aplikace v době běhu. Pokud to tak není, zobrazí se <xref:System.TypeLoadException> chyba.  
   
- Pokud zadáte (implicitně nebo explicitně) možnost libovolný[cíl (Visual Basic)](../../../visual-basic/reference/command-line-compiler/target.md) kromě `-target:module` s `-addmodule`, soubory, které předáte do `-addmodule`, se stanou součástí sestavení projektu. Pro spuštění výstupního souboru, který obsahuje jeden nebo více souborů přidaných s `-addmodule`, je vyžadováno sestavení.  
+ Pokud zadáte (implicitně nebo explicitně) možnost libovolný[cíl (Visual Basic)](../../../visual-basic/reference/command-line-compiler/target.md) jiné než `-target:module` s `-addmodule`, soubory, které předáte, `-addmodule` se stanou součástí sestavení projektu. Pro spuštění výstupního souboru, který obsahuje jeden nebo více souborů přidaných pomocí `-addmodule`, je vyžadováno sestavení.  
   
  Pomocí [-Reference (Visual Basic)](../../../visual-basic/reference/command-line-compiler/reference.md) můžete importovat metadata ze souboru, který obsahuje sestavení.  
   
 > [!NOTE]
-> Možnost `-addmodule` není k dispozici ve vývojovém prostředí sady Visual Studio; je k dispozici pouze při kompilaci z příkazového řádku.  
+> Tato `-addmodule` možnost není k dispozici ve vývojovém prostředí sady Visual Studio; je k dispozici pouze při kompilaci z příkazového řádku.  
   
 ## <a name="example"></a>Příklad  
  Následující kód vytvoří modul.  
@@ -47,9 +47,9 @@ Způsobí, že kompilátor zpřístupní všechny informace o typech ze zadanýc
   
  [!code-vb[VbVbalrCompiler#48](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrCompiler/VB/OptionStrictOff.vb#48)]  
   
- Když spustíte `t1`, výstup IT `802`.  
+ Když spustíte `t1`, výstup `802`IT.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Visual Basic Kompilátor příkazového řádku](../../../visual-basic/reference/command-line-compiler/index.md)
 - [-Target (Visual Basic)](../../../visual-basic/reference/command-line-compiler/target.md)

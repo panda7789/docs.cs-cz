@@ -28,9 +28,9 @@ Kompilátor příkazového řádku můžete vyvolat zadáním názvu spustiteln�
 
 3. Vyvolejte Developer Command Prompt pro Visual Studio.
 
-4. Do příkazového řádku zadejte `vbc.exe` *sourceFileName* a potom stiskněte klávesu ENTER.
+4. Do příkazového řádku zadejte `vbc.exe` *sourceFileName* a stiskněte klávesu ENTER.
 
-    Pokud jste například uložili zdrojový kód do adresáře s názvem `SourceFiles`, otevřete příkazový řádek a zadejte `cd SourceFiles`, který chcete změnit na tento adresář. Pokud adresář obsahoval zdrojový soubor s názvem `Source.vb`, můžete ho zkompilovat zadáním `vbc.exe Source.vb`.
+    Pokud jste například uložili zdrojový kód do adresáře s názvem `SourceFiles`, otevřete příkazový řádek a zadejte `cd SourceFiles` příkaz pro změnu do tohoto adresáře. Pokud adresář obsahoval zdrojový soubor s názvem `Source.vb`, můžete ho zkompilovat zadáním. `vbc.exe Source.vb`
 
 ## <a name="to-set-the-path-environment-variable-to-the-compiler-for-the-windows-command-prompt"></a>Nastavení proměnné prostředí PATH na kompilátor příkazového řádku systému Windows
 
@@ -54,11 +54,11 @@ Kompilátor příkazového řádku můžete vyvolat zadáním názvu spustiteln�
 
 1. V nabídce **Start** klikněte na složku **příslušenství** a pak otevřete **příkazový řádek systému Windows**.
 
-2. Do příkazového řádku zadejte `vbc.exe`*sourceFileName* a potom stiskněte klávesu ENTER.
+2. Do příkazového řádku zadejte `vbc.exe` *sourceFileName* a stiskněte klávesu ENTER.
 
-     Pokud jste například uložili zdrojový kód do adresáře s názvem `SourceFiles`, otevřete příkazový řádek a zadejte `cd SourceFiles`, který chcete změnit na tento adresář. Pokud adresář obsahoval zdrojový soubor s názvem `Source.vb`, můžete ho zkompilovat zadáním `vbc.exe Source.vb`.
+     Pokud jste například uložili zdrojový kód do adresáře s názvem `SourceFiles`, otevřete příkazový řádek a zadejte `cd SourceFiles` příkaz pro změnu do tohoto adresáře. Pokud adresář obsahoval zdrojový soubor s názvem `Source.vb`, můžete ho zkompilovat zadáním. `vbc.exe Source.vb`
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Visual Basic Kompilátor příkazového řádku](../../../visual-basic/reference/command-line-compiler/index.md)
 - [Podmíněná kompilace](../../../visual-basic/programming-guide/program-structure/conditional-compilation.md)

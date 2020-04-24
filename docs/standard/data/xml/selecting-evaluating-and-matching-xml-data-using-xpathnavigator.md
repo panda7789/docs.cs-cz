@@ -11,28 +11,28 @@ ms.lasthandoff: 01/07/2020
 ms.locfileid: "75710138"
 ---
 # <a name="selecting-evaluating-and-matching-xml-data-using-xpathnavigator"></a>Výběr, vyhodnocení a spárování dat XML pomocí XPathNavigator
-Třída <xref:System.Xml.XPath.XPathNavigator> poskytuje metody pro výběr uzlů v objektu <xref:System.Xml.XPath.XPathDocument> nebo <xref:System.Xml.XmlDocument> pomocí dotazu XPath, vyhodnocení a přezkoumání výsledků výrazu XPath a určení, zda uzel v objektu <xref:System.Xml.XPath.XPathDocument> nebo <xref:System.Xml.XmlDocument> odpovídá danému výrazu XPath. Tyto a další pojmy, které se vztahují k výběru, vyhodnocení a odpovídajícím uzlům v <xref:System.Xml.XPath.XPathDocument> nebo objektu <xref:System.Xml.XmlDocument> jsou popsány v následujících tématech.  
+<xref:System.Xml.XPath.XPathNavigator> Třída poskytuje metody pro výběr uzlů v <xref:System.Xml.XPath.XPathDocument> objektu nebo <xref:System.Xml.XmlDocument> pomocí dotazu XPath, vyhodnocení a přezkoumání výsledků výrazu XPath a určení, zda uzel v objektu <xref:System.Xml.XPath.XPathDocument> nebo <xref:System.Xml.XmlDocument> odpovídá danému výrazu XPath. Tyto a další pojmy, které se vztahují k výběru, vyhodnocení a shodě uzlů <xref:System.Xml.XPath.XPathDocument> v <xref:System.Xml.XmlDocument> objektu nebo, jsou popsány v následujících tématech.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Výběr dat XML pomocí XPathNavigator](../../../../docs/standard/data/xml/select-xml-data-using-xpathnavigator.md)  
  Popisuje sadu metod <xref:System.Xml.XPath.XPathNavigator> třídy, které slouží k výběru sady uzlů v objektu <xref:System.Xml.XPath.XPathDocument> nebo <xref:System.Xml.XmlDocument> pomocí výrazu XPath.  
   
  [Vyhodnocení výrazů XPath pomocí XPathNavigator](../../../../docs/standard/data/xml/evaluate-xpath-expressions-using-xpathnavigator.md)  
- Popisuje metodu <xref:System.Xml.XPath.XPathNavigator.Evaluate%2A> třídy <xref:System.Xml.XPath.XPathNavigator>, která se používá k vyhodnocení výrazu XPath.  
+ Popisuje <xref:System.Xml.XPath.XPathNavigator.Evaluate%2A> metodu <xref:System.Xml.XPath.XPathNavigator> třídy použitou k vyhodnocení výrazu XPath.  
   
  [Párování uzlů pomocí XPathNavigator](../../../../docs/standard/data/xml/matching-nodes-using-xpathnavigator.md)  
- Popisuje metodu <xref:System.Xml.XPath.XPathNavigator.Matches%2A> třídy <xref:System.Xml.XPath.XPathNavigator> sloužící k určení, zda uzel odpovídá výrazu XPath.  
+ Popisuje <xref:System.Xml.XPath.XPathNavigator.Matches%2A> metodu <xref:System.Xml.XPath.XPathNavigator> třídy sloužící k určení, zda uzel odpovídá výrazu XPath.  
   
  [Rozpoznané typy uzlů s dotazy XPath](../../../../docs/standard/data/xml/node-types-recognized-with-xpath-queries.md)  
  Popisuje typy uzlů rozpoznané v dotazu XPath.  
   
- [Dotazy XPath a obory názvů](../../../../docs/standard/data/xml/xpath-queries-and-namespaces.md)  
+ [Dotazy a obory názvů XPath](../../../../docs/standard/data/xml/xpath-queries-and-namespaces.md)  
  Popisuje použití oborů názvů v dotazu XPath.  
   
  [Zkompilované výrazy XPath](../../../../docs/standard/data/xml/compiled-xpath-expressions.md)  
- Popisuje třídu <xref:System.Xml.XPath.XPathExpression>, která představuje kompilovaný dotaz XPath.  
+ Popisuje <xref:System.Xml.XPath.XPathExpression> třídu, která představuje kompilovaný dotaz XPath.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Xml.XmlDocument>
 - <xref:System.Xml.XPath.XPathDocument>

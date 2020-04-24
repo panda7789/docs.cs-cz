@@ -16,23 +16,23 @@ ms.locfileid: "74348882"
 ---
 # <a name="file-encodings-visual-basic"></a>Kódování souborů (Visual Basic)
 
-Kódování souborů, označované také jako kódování znaků, určují, jak mají při zpracování textu představovat znaky. Jedno kódování může být vhodnější než jiné, pokud jde o jazyk, který může nebo nemůže zpracovat, ačkoli Unicode je obvykle upřednostňován.
+Kódování souborů, označovaná také jako kódování znaků, určují způsob reprezentace znaků při zpracování textu. Jedno kódování může být vhodnější než jiné, a to z toho smyslu, které znaky jazyka může nebo nemůže zpracovat, i když je obvykle upřednostňovaný Unicode.
 
-Při čtení nebo zápisu do souborů může mít nesprávně odpovídající kódování souborů za následek výjimky nebo nesprávné výsledky.
+Při čtení nebo zapisování do souborů může nesprávně odpovídat kódování souborů způsobit výjimky nebo nesprávné výsledky.
 
 ## <a name="types-of-encodings"></a>Typy kódování
 
-Unicode je upřednostňované kódování při práci se soubory. Unicode je celosvětový standard kódování znaků, který používá 16bitové kódové hodnoty k reprezentaci všech znaků používaných v moderním výpočetním prostředí, včetně technických symbolů a speciálních znaků používaných při publikování.
+Unicode je preferované kódování při práci se soubory. Unicode je celosvětový standard kódování znaků, který používá 16bitové hodnoty kódu pro reprezentaci všech znaků používaných v moderních výpočetních prostředích, včetně technických symbolů a speciálních znaků používaných při publikování.
 
-Předchozí standardy kódování znaků se skládaly z tradičních znakových sad, jako je například znaková sada Systému Windows ANSI, která používá 8bitové kódové hodnoty nebo kombinace 8bitových hodnot k reprezentaci znaků používaných v určitém jazyce nebo zeměpisné oblasti.
+Předchozí standardy kódování znaků se skládají z tradičních znakových sad, jako je například znaková sada Windows ANSI, která používá 8bitové hodnoty kódu, nebo kombinace 8 bitových hodnot, které reprezentují znaky používané v konkrétním jazyce nebo geografické oblasti.
 
-## <a name="encoding-class"></a>Třída kódování
+## <a name="encoding-class"></a>Encoding – třída
 
-Třída <xref:System.Text.Encoding> představuje kódování znaků. V této tabulce je uveden typ kódování, která jsou k dispozici, a popisuje každé kódování.
+<xref:System.Text.Encoding> Třída představuje kódování znaků. Tato tabulka uvádí typy dostupných kódování a popisuje je.
 
-|Name (Název)|Popis|
+|Název|Popis|
 |---|---|
-|<xref:System.Text.ASCIIEncoding>|Představuje znak ASCII kódování znaků Unicode.|
+|<xref:System.Text.ASCIIEncoding>|Představuje kódování znaků ASCII znaků Unicode.|
 |<xref:System.Text.UnicodeEncoding>|Představuje kódování UTF-16 znaků Unicode.|
 |<xref:System.Text.UTF32Encoding>|Představuje kódování UTF-32 znaků Unicode.|
 |<xref:System.Text.UTF7Encoding>|Představuje kódování UTF-7 znaků Unicode.|

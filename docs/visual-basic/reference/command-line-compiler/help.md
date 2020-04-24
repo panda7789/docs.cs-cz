@@ -25,7 +25,7 @@ Zobrazí možnosti kompilátoru.
 -help  
 ```
 
-nebo  
+– nebo –  
 
 ```console
 -?  
@@ -35,7 +35,7 @@ nebo
  Pokud zahrnete tuto možnost do kompilace, není vytvořen žádný výstupní soubor a nebude provedena žádná kompilace.  
   
 > [!NOTE]
-> Možnost `-help` není k dispozici ve vývojovém prostředí sady Visual Studio; je k dispozici pouze při kompilaci z příkazového řádku.  
+> Tato `-help` možnost není k dispozici ve vývojovém prostředí sady Visual Studio; je k dispozici pouze při kompilaci z příkazového řádku.  
   
 ## <a name="example"></a>Příklad  
  Následující kód zobrazí pomocníka z příkazového řádku.  
@@ -44,7 +44,7 @@ nebo
 vbc -help  
 ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Visual Basic Kompilátor příkazového řádku](../../../visual-basic/reference/command-line-compiler/index.md)
 - [Příkazové řádky ukázkové kompilace](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)

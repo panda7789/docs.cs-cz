@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Odesílání řetězců na sériové porty'
+title: 'Postupy: Posílání řetězců na sériové porty'
 ms.date: 07/20/2015
 helpviewer_keywords:
 - ports, sending strings to
@@ -16,29 +16,29 @@ ms.locfileid: "74345590"
 ---
 # <a name="how-to-send-strings-to-serial-ports-in-visual-basic"></a>Postupy: Odesílání řetězců na sériové porty v jazyce Visual Basic
 
-Toto téma popisuje `My.Computer.Ports` použití k odesílání řetězců do sériových portů počítače v jazyce Visual Basic.  
+V tomto tématu se dozvíte `My.Computer.Ports` , jak pomocí nástroje odesílat řetězce na sériové porty počítače v Visual Basic.  
   
 ## <a name="example"></a>Příklad  
 
- Tento příklad odešle řetězec do sériového portu COM1. V počítači může být nutné použít jiný sériový port.  
+ Tento příklad odešle řetězec na sériový port COM1. V počítači možná budete muset použít jiný sériový port.  
   
- Pomocí `My.Computer.Ports.OpenSerialPort` metody získat odkaz na port. Další informace naleznete v tématu <xref:Microsoft.VisualBasic.Devices.Ports.OpenSerialPort%2A>.  
+ Použijte `My.Computer.Ports.OpenSerialPort` metodu k získání odkazu na port. Další informace naleznete v tématu <xref:Microsoft.VisualBasic.Devices.Ports.OpenSerialPort%2A>.  
   
- Blok `Using` umožňuje aplikaci zavřít sériový port i v případě, že generuje výjimku. Veškerý kód, který manipuluje se sériovým portem, `Try...Catch...Finally` by se měl objevit v tomto bloku nebo v rámci bloku.  
+ `Using` Blok umožňuje aplikaci zavřít sériový port, i když generuje výjimku. Veškerý kód, který zpracovává sériový port, by měl být uveden v rámci tohoto bloku `Try...Catch...Finally` nebo v rámci bloku.  
   
- Metoda <xref:System.IO.Ports.SerialPort.WriteLine%2A> odešle data do sériového portu.  
+ <xref:System.IO.Ports.SerialPort.WriteLine%2A> Metoda odesílá data do sériového portu.  
   
  [!code-vb[VbVbalrMyComputer#33](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyComputer/VB/Class2.vb#33)]  
   
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
   
-- Tento příklad předpokládá, že `COM1`počítač používá .  
+- V tomto příkladu se předpokládá, že `COM1`počítač používá.  
   
 ## <a name="robust-programming"></a>Robustní programování  
 
- Tento příklad předpokládá, že `COM1`počítač používá ; pro větší flexibilitu by měl kód umožnit uživateli vybrat požadovaný sériový port ze seznamu dostupných portů. Další informace naleznete v [tématu How to: Show Available Serial Ports](../../../../visual-basic/developing-apps/programming/computer-resources/how-to-show-available-serial-ports.md).  
+ Tento příklad předpokládá, že počítač používá `COM1`; pro větší flexibilitu by měl kód uživateli dovolit vybrat požadovaný sériový port ze seznamu dostupných portů. Další informace najdete v tématu [Postup: zobrazení dostupných sériových portů](../../../../visual-basic/developing-apps/programming/computer-resources/how-to-show-available-serial-ports.md).  
   
- Tento příklad `Using` používá blok a ujistěte se, že aplikace zavře port, i když vyvolá výjimku. Další informace naleznete [v tématu Using Statement](../../../../visual-basic/language-reference/statements/using-statement.md).  
+ Tento příklad používá `Using` blok k ujištění, že aplikace uzavře port, i když vyvolá výjimku. Další informace naleznete v tématu [using – příkaz](../../../../visual-basic/language-reference/statements/using-statement.md).  
   
 ## <a name="see-also"></a>Viz také
 

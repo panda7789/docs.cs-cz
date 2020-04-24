@@ -14,17 +14,17 @@ ms.locfileid: "74345484"
 ---
 # <a name="security-and-the-registry-visual-basic"></a>Zabezpečení a registr (Visual Basic)
 
-Tato stránka popisuje bezpečnostní důsledky ukládání dat v registru.  
+Tato stránka popisuje důsledky zabezpečení ukládání dat do registru.  
   
 ## <a name="permissions"></a>Oprávnění  
 
- Není bezpečné ukládat tajné klíče, například hesla, do registru jako prostý text, i v případě, že klíč registru je chráněn seznamy ACL (seznamy řízení přístupu).  
+ Není bezpečné ukládat tajné klíče, jako jsou hesla, v registru jako prostý text, a to i v případě, že je klíč registru chráněný pomocí seznamů řízení přístupu (ACL).  
   
- Práce s registrem může ohrozit zabezpečení povolením nevhodného přístupu k systémovým prostředkům nebo chráněným informacím. Chcete-li použít tyto vlastnosti, musíte <xref:System.Security.Permissions.RegistryPermissionAccess> mít oprávnění ke čtení a zápisu z výčtu, který řídí přístup k proměnným registru. Jakýkoli kód spuštěný s úplným vztahem důvěryhodnosti (podle výchozích zásad zabezpečení se jedná o libovolný kód nainstalovaný na místním pevném disku uživatele) má potřebná oprávnění pro přístup k registru. Další informace naleznete <xref:System.Security.Permissions.RegistryPermission> v tématu class.  
+ Práce s registrem může ohrozit zabezpečení tím, že umožňuje nevhodný přístup k systémovým prostředkům nebo chráněným informacím. Chcete-li použít tyto vlastnosti, musíte mít oprávnění ke čtení a zápisu <xref:System.Security.Permissions.RegistryPermissionAccess> z výčtu, který řídí přístup k proměnným registru. Veškerý kód spuštěný s úplným vztahem důvěryhodnosti (pod výchozí zásadou zabezpečení je to jakýkoli kód nainstalovaný na místním pevném disku uživatele) má potřebná oprávnění pro přístup k registru. Další informace naleznete v tématu <xref:System.Security.Permissions.RegistryPermission> třída.  
   
- Proměnné registru by neměly být uloženy <xref:System.Security.Permissions.RegistryPermission> v umístění v paměti, kde kód bez přístupu k nim. Podobně při udělování oprávnění udělte minimální oprávnění potřebná k dokončení úlohy.  
+ Proměnné registru by neměly být uloženy v umístěních paměti, kde <xref:System.Security.Permissions.RegistryPermission> kód bez přístupu k nim mají přístup. Podobně při udělování oprávnění udělte minimální oprávnění potřebná k provedení úlohy.  
   
- Hodnoty přístupu k oprávnění <xref:System.Security.Permissions.RegistryPermissionAccess> registru jsou definovány výčet. V následující tabulce jsou uvedeny její členy.  
+ Hodnoty přístupu k oprávněním registru jsou definovány <xref:System.Security.Permissions.RegistryPermissionAccess> výčtem. Následující tabulka podrobně popisuje její členy.  
   
 |Hodnota|Přístup k proměnným registru|  
 |-----------|----------------------------------|  
@@ -36,10 +36,10 @@ Tato stránka popisuje bezpečnostní důsledky ukládání dat v registru.
   
 ## <a name="checking-values-in-registry-keys"></a>Kontrola hodnot v klíčích registru  
 
- Při vytváření hodnoty registru se musíte rozhodnout, co dělat, pokud tato hodnota již existuje. Jiný proces, možná škodlivý, může mít již vytvořilhodnotu a mají k ní přístup. Když vložíte data do hodnoty registru, data jsou k dispozici pro jiný proces. Chcete-li tomu `GetValue` zabránit, použijte metodu. Vrátí, `Nothing` pokud klíč ještě neexistuje.  
+ Když vytváříte hodnotu registru, musíte se rozhodnout, co dělat, pokud tato hodnota již existuje. Jiný proces, pravděpodobně škodlivý, již mohl vytvořit hodnotu a mít k ní přístup. Při vložení dat do hodnoty registru jsou data k dispozici pro druhý proces. Chcete-li tomu zabránit, `GetValue` použijte metodu. Vrátí `Nothing` , pokud klíč ještě neexistuje.  
   
 > [!IMPORTANT]
-> Při čtení registru z webové aplikace závisí identita aktuálního uživatele na ověřování a zosobnění implementovaném ve webové aplikaci.  
+> Při čtení registru z webové aplikace závisí identita aktuálního uživatele na ověřování a zosobnění implementovaného ve webové aplikaci.  
   
 ## <a name="see-also"></a>Viz také
 

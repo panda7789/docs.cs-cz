@@ -17,43 +17,43 @@ ms.locfileid: "74345605"
 ---
 # <a name="how-to-read-a-value-from-a-registry-key-in-visual-basic"></a>Postupy: Načtení hodnoty z klíče registru v jazyce Visual Basic
 
-Metodu `GetValue` objektu `My.Computer.Registry` lze použít ke čtení hodnot v registru systému Windows.  
+`GetValue` Metodu `My.Computer.Registry` objektu lze použít ke čtení hodnot v registru systému Windows.  
   
- Pokud klíč "Software\MyApp" v následujícím příkladu neexistuje, je vyvolána výjimka. Pokud `ValueName`, "Název" v následujícím příkladu `Nothing` neexistuje, je vrácena.  
+ Pokud klíč "Software\MyApp" v následujícím příkladu neexistuje, je vyvolána výjimka. Pokud není `ValueName`, "Name" v následujícím příkladu neexistuje, `Nothing` je vrácena.  
   
- Metodu `GetValue` lze také použít k určení, zda daná hodnota existuje v určitém klíči registru.  
+ `GetValue` Metodu lze také použít k určení, zda daná hodnota existuje v určitém klíči registru.  
   
- Při čtení kódu z webové aplikace je aktuální uživatel určen ověřováním a zosobněním, které je implementováno ve webové aplikaci.  
+ Když kód přečte registr z webové aplikace, je aktuální uživatel určen ověřováním a zosobněním, které je implementováno ve webové aplikaci.  
   
-### <a name="to-read-a-value-from-a-registry-key"></a>Čtení hodnoty z klíče registru  
+### <a name="to-read-a-value-from-a-registry-key"></a>Načtení hodnoty z klíče registru  
   
-- Pomocí `GetValue` metody určující cestu a název) přečtete hodnotu z klíče registru. Následující příklad přečte `Name` `HKEY_CURRENT_USER\Software\MyApp` hodnotu z a zobrazí ji v poli se zprávou.  
+- Použijte `GetValue` metodu, zadáním cesty a názvu) načtěte hodnotu z klíče registru. Následující příklad přečte hodnotu `Name` z `HKEY_CURRENT_USER\Software\MyApp` a zobrazí ji v okně se zprávou.  
   
      [!code-vb[VbResourceTasks#4](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbResourceTasks/VB/Class1.vb#4)]  
   
- Tento příklad kódu je také k dispozici jako fragment kódu IntelliSense. Ve výběru fragmentu kódu je umístěn v registru **operačního systému Windows >**. Další informace naleznete v [tématu Fragmenty kódu](/visualstudio/ide/code-snippets).  
+ Tento příklad kódu je také k dispozici jako fragment kódu technologie IntelliSense. Ve výběru fragmentu kódu je umístěn v **operačním systému Windows > registru**. Další informace naleznete v tématu [fragmenty kódu](/visualstudio/ide/code-snippets).  
   
-### <a name="to-determine-whether-a-value-exists-in-a-registry-key"></a>Chcete-li zjistit, zda hodnota existuje v klíči registru  
+### <a name="to-determine-whether-a-value-exists-in-a-registry-key"></a>Určení, jestli v klíči registru existuje hodnota  
   
-- Pomocí `GetValue` metody načtěte hodnotu. Následující kód zkontroluje, zda hodnota existuje, a vrátí zprávu, pokud tomu tak není.  
+- Použijte `GetValue` metodu pro načtení hodnoty. Následující kód kontroluje, zda hodnota existuje, a vrátí zprávu, pokud není.  
   
      [!code-vb[VbResourceTasks#12](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbResourceTasks/VB/Class1.vb#12)]  
   
 ## <a name="robust-programming"></a>Robustní programování  
 
- Registr obsahuje klíče nejvyšší úrovně nebo root, které se používají k ukládání dat. Například kořenový klíč HKEY_LOCAL_MACHINE se používá pro ukládání nastavení na úrovni počítače používané všemi uživateli, zatímco HKEY_CURRENT_USER se používá pro ukládání dat specifických pro jednotlivé uživatele.  
+ Registr obsahuje klíče nejvyšší úrovně (neboli kořenové), které se používají k ukládání dat. Například kořenový klíč HKEY_LOCAL_MACHINE slouží k ukládání nastavení na úrovni počítače používaných všemi uživateli, zatímco HKEY_CURRENT_USER se používá k ukládání dat specifických pro jednotlivé uživatele.  
   
  Následující podmínky mohou způsobit výjimku:  
   
 - Název klíče je `Nothing` (<xref:System.ArgumentNullException>).  
   
-- Uživatel nemá oprávnění ke čtení z<xref:System.Security.SecurityException>klíčů registru ( ).  
+- Uživatel nemá oprávnění ke čtení z klíčů registru (<xref:System.Security.SecurityException>).  
   
-- Název klíče překračuje limit 255 znaků<xref:System.ArgumentException>( ).  
+- Název klíče překračuje limit 255 znaků (<xref:System.ArgumentException>).  
   
 ## <a name="net-framework-security"></a>Zabezpečení rozhraní .NET Framework  
 
- Chcete-li spustit tento proces, vaše sestavení <xref:System.Security.Permissions.RegistryPermission> vyžaduje úroveň oprávnění udělené třídou. Pokud jsou spuštěny v kontextu částečné důvěryhodnosti, proces může vyvolat výjimku z důvodu nedostatečných oprávnění. Podobně musí mít uživatel správné akly pro vytváření nebo zápis do nastavení. Například místní aplikace, která má oprávnění zabezpečení přístupu kódu, nemusí mít oprávnění operačního systému. Další informace naleznete v [tématu Základy zabezpečení přístupu kódu](../../../../framework/misc/code-access-security-basics.md).  
+ Pro spuštění tohoto procesu vaše sestavení vyžaduje úroveň oprávnění udělené <xref:System.Security.Permissions.RegistryPermission> třídou. Pokud používáte v kontextu s částečným vztahem důvěryhodnosti, proces může vyvolat výjimku z důvodu nedostatečných oprávnění. Podobně uživatel musí mít správné seznamy ACL pro vytvoření nebo zápis do nastavení. Například místní aplikace, která má oprávnění zabezpečení přístupu kódu, nemusí mít oprávnění operačního systému. Další informace najdete v tématu [Základy zabezpečení přístupu ke kódu](../../../../framework/misc/code-access-security-basics.md).  
   
 ## <a name="see-also"></a>Viz také
 

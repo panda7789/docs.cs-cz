@@ -13,26 +13,26 @@ ms.locfileid: "74352060"
 ---
 # <a name="how-to-write-log-messages-visual-basic"></a>Postupy: Zápis zpráv protokolu (Visual Basic)
 
-Objekty `My.Application.Log` a `My.Log` můžete použít k protokolování informací o vaší aplikaci. Tento příklad ukazuje, `My.Application.Log.WriteEntry` jak použít metodu k protokolování trasování informací.
+Pomocí objektů `My.Application.Log` a `My.Log` můžete protokolovat informace o vaší aplikaci. Tento příklad ukazuje, jak použít `My.Application.Log.WriteEntry` metodu k protokolování informací o trasování.
 
-Pro protokolování informací `My.Application.Log.WriteException` o výjimce použijte metodu; Viz [Postup: Protokolovat výjimky](../../../../visual-basic/developing-apps/programming/log-info/how-to-log-exceptions.md).
+Pro protokolování informací o výjimce použijte `My.Application.Log.WriteException` metodu; viz [How to: log Exceptions](../../../../visual-basic/developing-apps/programming/log-info/how-to-log-exceptions.md).
 
 ## <a name="example"></a>Příklad
 
-Tento příklad `My.Application.Log.WriteEntry` používá metodu k zápisu informací o trasování.
+Tento příklad používá `My.Application.Log.WriteEntry` metodu k vypsání informací o trasování.
 
 [!code-vb[VbVbalrMyApplicationLog#11](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyApplicationLog/VB/Form1.vb#11)]
 
 ## <a name="net-framework-security"></a>Zabezpečení rozhraní .NET Framework
 
-Ujistěte se, že data zapisující do protokolu neobsahují citlivé informace, jako jsou uživatelská hesla. Další informace naleznete v [tématu Práce s protokoly aplikací](../../../../visual-basic/developing-apps/programming/log-info/working-with-application-logs.md).
+Ujistěte se, že data, která do protokolu zapisujete, neobsahují citlivé informace, jako jsou uživatelská hesla. Další informace najdete v tématu [práce s protokoly aplikací](../../../../visual-basic/developing-apps/programming/log-info/working-with-application-logs.md).
 
 ## <a name="see-also"></a>Viz také
 
 - <xref:Microsoft.VisualBasic.Logging.Log?displayProperty=nameWithType>
 - <xref:Microsoft.VisualBasic.Logging.Log.WriteEntry%2A>
 - <xref:Microsoft.VisualBasic.Logging.Log.WriteException%2A>
-- [Práce s protokoly aplikací](../../../../visual-basic/developing-apps/programming/log-info/working-with-application-logs.md)
+- [Práce s protokoly aplikací](../../../../visual-basic/developing-apps/programming/log-info/working-with-application-logs.md)
 - [Postupy: Protokolování výjimek](../../../../visual-basic/developing-apps/programming/log-info/how-to-log-exceptions.md)
 - [Návod: Zjištění, kam objekt My.Application.Log zapisuje informace](../../../../visual-basic/developing-apps/programming/log-info/walkthrough-determining-where-my-application-log-writes-information.md)
 - [Návod: Změna místa, kam objekt My.Application.Log zapisuje informace](../../../../visual-basic/developing-apps/programming/log-info/walkthrough-changing-where-my-application-log-writes-information.md)

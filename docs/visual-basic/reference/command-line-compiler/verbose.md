@@ -22,24 +22,24 @@ Způsobí, že kompilátor vyprodukuje Podrobné stavové a chybové zprávy.
 -verbose[+ | -]  
 ```  
   
-## <a name="arguments"></a>Arguments  
- `+` &#124; `-`  
- Volitelné. Zadání `-verbose` je stejné jako určení `-verbose+`, což způsobí, že kompilátor vygeneruje podrobné zprávy. Výchozí hodnota pro tuto možnost je `-verbose-`.  
+## <a name="arguments"></a>Argumenty  
+ `+`&#124;`-`  
+ Nepovinný parametr. Určení `-verbose` je stejné jako při zadání `-verbose+`, což způsobí, že kompilátor vygeneruje podrobné zprávy. Výchozí hodnota pro tuto možnost je `-verbose-`.  
   
 ## <a name="remarks"></a>Poznámky  
- Možnost `-verbose` zobrazí informace o celkovém počtu chyb vydaných kompilátorem, sestav, které sestavení načítá modul, a zobrazuje, které soubory jsou aktuálně kompilovány.  
+ `-verbose` Možnost zobrazí informace o celkovém počtu chyb vydaných kompilátorem, sestav, které sestavení načítá modul, a zobrazuje, které soubory jsou aktuálně kompilovány.  
   
 > [!NOTE]
-> Možnost `-verbose` není k dispozici ve vývojovém prostředí sady Visual Studio; je k dispozici pouze při kompilaci z příkazového řádku.  
+> Tato `-verbose` možnost není k dispozici ve vývojovém prostředí sady Visual Studio; je k dispozici pouze při kompilaci z příkazového řádku.  
   
 ## <a name="example"></a>Příklad  
- Následující kód zkompiluje `In.vb` a nasměruje kompilátor, aby zobrazoval podrobné informace o stavu.  
+ Následující kód zkompiluje `In.vb` a nasměruje kompilátor pro zobrazení podrobných informací o stavu.  
   
 ```console  
 vbc -verbose in.vb  
 ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Visual Basic Kompilátor příkazového řádku](../../../visual-basic/reference/command-line-compiler/index.md)
 - [Příkazové řádky ukázkové kompilace](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)

@@ -15,14 +15,14 @@ ms.lasthandoff: 01/07/2020
 ms.locfileid: "75710411"
 ---
 # <a name="reading-and-writing-xml-schemas"></a>Čtení ze schémat XML a zápis do nich
-Rozhraní API modelu modelu objektu schématu (SOM) je možné použít ke čtení a zápisu schémat XML Schema Definition Language (XSD) ze souborů nebo jiných zdrojů a sestavení schémat XML v paměti pomocí tříd v oboru názvů <xref:System.Xml.Schema?displayProperty=nameWithType>, který se mapuje na struktury definované v doporučeních schématu XML konsorcium World Wide Web (W3C).  
+Rozhraní API modelu modelu objektu schématu (SOM) lze použít ke čtení a zápisu schémat XML Schema Definition Language (XSD) ze souborů nebo jiných zdrojů a sestavení schémat XML v paměti pomocí tříd v <xref:System.Xml.Schema?displayProperty=nameWithType> oboru názvů, které jsou mapovány na struktury definované v doporučeních schématu XML konsorcium World Wide Web (W3C).  
   
 ## <a name="reading-and-writing-xml-schemas"></a>Čtení ze schémat XML a zápis do nich  
- Třída <xref:System.Xml.Schema.XmlSchema> poskytuje metody <xref:System.Xml.Schema.XmlSchema.Read%2A> a <xref:System.Xml.Schema.XmlSchema.Write%2A> pro čtení a zápis schémat XML. Metoda <xref:System.Xml.Schema.XmlSchema.Read%2A> vrátí objekt <xref:System.Xml.Schema.XmlSchema> reprezentující schéma XML a převezme volitelné <xref:System.Xml.Schema.ValidationEventHandler> jako parametr pro zpracování upozornění ověřování schématu a chyby zjištěné při čtení schématu XML.  
+ <xref:System.Xml.Schema.XmlSchema> Třída poskytuje metody <xref:System.Xml.Schema.XmlSchema.Read%2A> a <xref:System.Xml.Schema.XmlSchema.Write%2A> pro čtení a zápis schémat XML. <xref:System.Xml.Schema.XmlSchema.Read%2A> Metoda vrátí <xref:System.Xml.Schema.XmlSchema> objekt představující schéma XML a převezme volitelné <xref:System.Xml.Schema.ValidationEventHandler> jako parametr pro zpracování upozornění ověřování schématu a chyb zjištěných při čtení schématu XML.  
   
- Metoda <xref:System.Xml.Schema.XmlSchema.Write%2A> zapisuje schémata XML do <xref:System.IO.Stream>, <xref:System.IO.TextWriter> a <xref:System.Xml.XmlWriter> objektů a může převzít volitelný objekt <xref:System.Xml.XmlNamespaceManager> jako parametr. <xref:System.Xml.XmlNamespaceManager> se používá ke zpracování oborů názvů zjištěných ve schématu XML. Další informace o třídě <xref:System.Xml.XmlNamespaceManager> naleznete v tématu [Správa oborů názvů v dokumentu XML](../../../../docs/standard/data/xml/managing-namespaces-in-an-xml-document.md).  
+ <xref:System.Xml.Schema.XmlSchema.Write%2A> Metoda zapisuje schémata XML do <xref:System.IO.Stream> <xref:System.IO.TextWriter> <xref:System.Xml.XmlWriter> objektů a objekty a může jako parametr převzít <xref:System.Xml.XmlNamespaceManager> volitelný objekt. <xref:System.Xml.XmlNamespaceManager> Slouží ke zpracování oborů názvů, které byly zjištěny ve schématu XML. Další informace o <xref:System.Xml.XmlNamespaceManager> třídě naleznete v tématu [Správa oborů názvů v dokumentu XML](../../../../docs/standard/data/xml/managing-namespaces-in-an-xml-document.md).  
   
- Následující příklad kódu ukazuje čtení a zápis XML schémat z a do souboru. Příklad kódu přebírá soubor `example.xsd`, čte ho do objektu <xref:System.Xml.Schema.XmlSchema> pomocí metody `static`<xref:System.Xml.Schema.XmlSchema.Read%2A> a pak zapíše soubor do konzoly a do nového souboru `new.xsd`. Příklad kódu také poskytuje <xref:System.Xml.Schema.ValidationEventHandler> jako parametr pro metodu `static`<xref:System.Xml.Schema.XmlSchema.Read%2A>, která zpracovává všechna upozornění ověřování schématu nebo chyby zjištěné při čtení schématu XML. Pokud není zadán <xref:System.Xml.Schema.ValidationEventHandler> (`null`), nejsou hlášeny žádná upozornění ani chyby.  
+ Následující příklad kódu ukazuje čtení a zápis XML schémat z a do souboru. `example.xsd` Příklad kódu převezme <xref:System.Xml.Schema.XmlSchema> soubor, přečte jej do objektu pomocí `static` <xref:System.Xml.Schema.XmlSchema.Read%2A> metody a pak zapíše soubor do konzoly a do nového `new.xsd` souboru. Příklad kódu také poskytuje <xref:System.Xml.Schema.ValidationEventHandler> jako parametr `static` <xref:System.Xml.Schema.XmlSchema.Read%2A> metodě pro zpracování jakýchkoli upozornění ověřování schématu nebo chyb, ke kterým došlo při čtení schématu XML. Pokud parametr <xref:System.Xml.Schema.ValidationEventHandler> není zadán (`null`), nejsou hlášeny žádná upozornění ani chyby.  
   
  [!code-cpp[XmlSchemaReadWriteExample#1](../../../../samples/snippets/cpp/VS_Snippets_Data/XmlSchemaReadWriteExample/CPP/XmlSchemaReadWriteExample.cpp#1)]
  [!code-csharp[XmlSchemaReadWriteExample#1](../../../../samples/snippets/csharp/VS_Snippets_Data/XmlSchemaReadWriteExample/CS/XmlSchemaReadWriteExample.cs#1)]
@@ -45,7 +45,7 @@ Rozhraní API modelu modelu objektu schématu (SOM) je možné použít ke čten
 </xs:schema>  
 ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Přehled Modelu objektu schématu XML](../../../../docs/standard/data/xml/xml-schema-object-model-overview.md)
 - [Sestavování schémat XML](../../../../docs/standard/data/xml/building-xml-schemas.md)

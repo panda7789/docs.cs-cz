@@ -14,7 +14,7 @@ ms.lasthandoff: 10/07/2019
 ms.locfileid: "72005505"
 ---
 # <a name="-main"></a>-main
-Určuje třídu nebo modul, který obsahuje postup `Sub Main`.  
+Určuje třídu nebo modul, který obsahuje `Sub Main` proceduru.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -22,16 +22,16 @@ Určuje třídu nebo modul, který obsahuje postup `Sub Main`.
 -main:location  
 ```  
   
-## <a name="arguments"></a>Arguments  
+## <a name="arguments"></a>Argumenty  
  `location`  
- Požadováno. Název třídy nebo modulu, který obsahuje postup `Sub Main`, který se má volat při spuštění programu. Může to být v podobě **: hlavní: modul** nebo **-hlavní: obor názvů. Module**.  
+ Povinná hodnota. Název třídy nebo modulu, který obsahuje `Sub Main` proceduru, která má být volána při spuštění programu. Může to být v podobě **: hlavní: modul** nebo **-hlavní: obor názvů. Module**.  
   
 ## <a name="remarks"></a>Poznámky  
- Tuto možnost použijte při vytváření spustitelného souboru nebo spustitelného programu systému Windows. Pokud je možnost **-Main** vynechána, kompilátor vyhledá platný sdílený `Sub Main` ve všech veřejných třídách a modulech.  
+ Tuto možnost použijte při vytváření spustitelného souboru nebo spustitelného programu systému Windows. Pokud je možnost **-Main** vynechána, kompilátor vyhledá platnou sdílenou `Sub Main` ve všech veřejných třídách a modulech.  
   
- Diskuzi o různých formách postupu `Main` najdete [v části hlavní postup v Visual Basic](../../../visual-basic/programming-guide/program-structure/main-procedure.md) .  
+ Diskuzi o různých formulářích `Main` postupu najdete v tématu [hlavní postup v Visual Basic](../../../visual-basic/programming-guide/program-structure/main-procedure.md) .  
   
- Když `location` je třída, která dědí z <xref:System.Windows.Forms.Form>, kompilátor poskytuje výchozí proceduru `Main`, která spustí aplikaci, pokud třída nemá proceduru `Main`. To umožňuje kompilovat kód na příkazovém řádku, který byl vytvořen ve vývojovém prostředí.  
+ Když `location` je třída, která dědí z <xref:System.Windows.Forms.Form>, kompilátor poskytuje výchozí `Main` proceduru, která spustí aplikaci, pokud třída nemá žádnou `Main` proceduru. To umožňuje kompilovat kód na příkazovém řádku, který byl vytvořen ve vývojovém prostředí.  
   
  [!code-vb[VbVbalrCompiler#16](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrCompiler/VB/Class1.vb#16)]  
   
@@ -46,15 +46,15 @@ Určuje třídu nebo modul, který obsahuje postup `Sub Main`.
 4. Upravte hodnotu v poli **spouštěcí objekt** .  
   
 ## <a name="example"></a>Příklad  
- Následující kód zkompiluje `T2.vb` a `T3.vb` a určí, že se procedura `Sub Main` bude nacházet ve třídě `Test2`.  
+ `T2.vb` Následující kód zkompiluje `T3.vb`a určí, že `Sub Main` procedura bude nalezena ve `Test2` třídě.  
   
 ```console
 vbc t2.vb t3.vb -main:Test2  
 ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Visual Basic Kompilátor příkazového řádku](../../../visual-basic/reference/command-line-compiler/index.md)
 - [-Target (Visual Basic)](../../../visual-basic/reference/command-line-compiler/target.md)
 - [Příkazové řádky ukázkové kompilace](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)
-- [Hlavní postup v Visual Basic](../../../visual-basic/programming-guide/program-structure/main-procedure.md)
+- [Hlavní procedura v jazyce Visual Basic](../../../visual-basic/programming-guide/program-structure/main-procedure.md)

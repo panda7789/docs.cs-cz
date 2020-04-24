@@ -28,9 +28,9 @@ Zabraňuje kompilátoru v zobrazení kódu pro chyby a upozornění souvisejíc�
 
 ## <a name="remarks"></a>Poznámky
 
-Ve výchozím nastavení není `-quiet` v platnosti. Když kompilátor ohlásí chybu nebo upozornění související se syntaxí, vypíše také řádek ze zdrojového kódu. Pro aplikace, které analyzují výstup kompilátoru, může být vhodnější, aby kompilátor vyoutput pouze text diagnostiky.
+Ve výchozím nastavení `-quiet` není platná. Když kompilátor ohlásí chybu nebo upozornění související se syntaxí, vypíše také řádek ze zdrojového kódu. Pro aplikace, které analyzují výstup kompilátoru, může být vhodnější, aby kompilátor vyoutput pouze text diagnostiky.
 
-V následujícím příkladu `Module1` výstupy chyby, která obsahuje zdrojový kód při kompilaci bez `-quiet`.
+V následujícím příkladu `Module1` výstup obsahuje chybu, která zahrnuje zdrojový kód, pokud je zkompilován `-quiet`bez.
 
 ```vb
 Module Module1
@@ -49,14 +49,14 @@ C:\projects\vb2.vb(3) : error BC30451: 'x' is not declared. It may be inaccessib
         ~
 ```
 
-Kompilováno s `-quiet`, kompilátor výstupuje pouze následující:
+Kompilováno `-quiet`s, kompilátor výstupuje pouze následující:
 
 ```console
 E:\test\t2.vb(3) : error BC30451: Name 'x' is not declared.
 ```
 
 > [!NOTE]
-> Možnost `-quiet` není k dispozici ve vývojovém prostředí sady Visual Studio; je k dispozici pouze při kompilaci z příkazového řádku.
+> Tato `-quiet` možnost není k dispozici ve vývojovém prostředí sady Visual Studio; je k dispozici pouze při kompilaci z příkazového řádku.
 
 ## <a name="example"></a>Příklad
 
@@ -66,7 +66,7 @@ Následující kód zkompiluje `T2.vb` a nezobrazuje kód pro diagnostiku kompil
 vbc -quiet t2.vb
 ```
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Visual Basic Kompilátor příkazového řádku](../../../visual-basic/reference/command-line-compiler/index.md)
 - [Příkazové řádky ukázkové kompilace](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)

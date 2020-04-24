@@ -1,5 +1,5 @@
 ---
-title: Přístup k počítačovým prostředkům
+title: Přístup k prostředkům počítače
 ms.date: 07/20/2015
 helpviewer_keywords:
 - computer resources [Visual Basic]
@@ -13,12 +13,12 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 03/15/2020
 ms.locfileid: "74345539"
 ---
-# <a name="accessing-computer-resources-visual-basic"></a>Přístup k počítačovým prostředkům (Visual Basic)
+# <a name="accessing-computer-resources-visual-basic"></a>Přístup k prostředkům počítače (Visual Basic)
 
-Objekt `My.Computer` je jedním ze tří `My`centrálních objektů v aplikaci , který poskytuje přístup k informacím a běžně používané funkce. `My.Computer`poskytuje metody, vlastnosti a události pro přístup k počítači, ve kterém je aplikace spuštěna. Mezi jeho objekty patří:
+`My.Computer` Objekt je jedním ze tří centrálních objektů v `My`nástroji, který poskytuje přístup k informacím a běžně používaným funkcím. `My.Computer`poskytuje metody, vlastnosti a události pro přístup k počítači, na kterém je aplikace spuštěná. Mezi tyto objekty patří:
 
 - <xref:Microsoft.VisualBasic.Devices.Audio>
-- Schránka (<xref:Microsoft.VisualBasic.MyServices.ClipboardProxy>)
+- Schránka<xref:Microsoft.VisualBasic.MyServices.ClipboardProxy>()
 - <xref:Microsoft.VisualBasic.Devices.Clock>
 - <xref:Microsoft.VisualBasic.FileIO.FileSystem>
 - <xref:Microsoft.VisualBasic.Devices.ServerComputer.Info%2A>
@@ -26,30 +26,30 @@ Objekt `My.Computer` je jedním ze tří `My`centrálních objektů v aplikaci ,
 - <xref:Microsoft.VisualBasic.Devices.Mouse>
 - <xref:Microsoft.VisualBasic.Devices.Network>
 - <xref:Microsoft.VisualBasic.Devices.Ports>
-- Registr<xref:Microsoft.VisualBasic.MyServices.RegistryProxy>( )
+- Registr (<xref:Microsoft.VisualBasic.MyServices.RegistryProxy>)
 
 ## <a name="in-this-section"></a>V tomto oddílu
 
 [Přehrávání zvuků](../../../../visual-basic/developing-apps/programming/computer-resources/playing-sounds.md)  
-Zobrazí seznam `My.Computer.Audio`úkolů přidružených k aplikaci , například přehrávání zvuku na pozadí.
+Zobrazí seznam úkolů, `My.Computer.Audio`ke kterým se jedná, například přehrávání zvuku na pozadí.
 
 [Ukládání dat do schránky a čtení ze schránky](../../../../visual-basic/developing-apps/programming/computer-resources/storing-data-to-and-reading-from-the-clipboard.md)  
-Uvádí úkoly `My.Computer.Clipboard`přidružené k aplikaci , například čtení dat ze schránky nebo zápis dat do schránky.
+Obsahuje seznam úkolů přidružených `My.Computer.Clipboard`k, například čtení dat z nebo zápis dat do schránky.
 
 [Získání informací o počítači](../../../../visual-basic/developing-apps/programming/computer-resources/getting-information-about-the-computer.md)  
-Uvádí úkoly `My.Computer.Info`přidružené k aplikaci , například určení úplného názvu počítače nebo adres IP.
+Obsahuje seznam úkolů přidružených `My.Computer.Info`k, jako je například určení úplného názvu nebo IP adresy počítače.
 
 [Přístup ke klávesnici](../../../../visual-basic/developing-apps/programming/computer-resources/accessing-the-keyboard.md)  
-Uvádí úkoly `My.Computer.Keyboard`přidružené k aplikaci , například určení, zda je zapnuto caps lock.
+Obsahuje seznam úkolů přidružených `My.Computer.Keyboard`k, například určení, zda je Caps Lock zapnutá.
 
 [Přístup k myši](../../../../visual-basic/developing-apps/programming/computer-resources/accessing-the-mouse.md)  
-Uvádí úkoly `My.Computer.Mouse`přidružené k aplikaci , například určení, zda je k dispozici myš.
+Zobrazí seznam úkolů `My.Computer.Mouse`, které jsou k dispozici, například určení, zda je myš přítomna.
 
 [Provádění síťových operací](../../../../visual-basic/developing-apps/programming/computer-resources/performing-network-operations.md)  
-Uvádí úkoly `My.Computer.Network`přidružené k aplikaci , například nahrávání nebo stahování souborů.
+Vypisuje úkoly `My.Computer.Network`, které jsou k, například nahrávání nebo stahování souborů.
 
 [Přístup k portům počítače](../../../../visual-basic/developing-apps/programming/computer-resources/accessing-the-computer-s-ports.md)  
-Zobrazí seznam `My.Computer.Ports`úloh přidružených k aplikaci , například zobrazení dostupných sériových portů nebo odesílání řetězců na sériové porty.
+Obsahuje seznam úloh `My.Computer.Ports`, které jsou k dispozici, například zobrazení dostupných sériových portů nebo odesílání řetězců na sériové porty.
 
 [Čtení z registru a zápis do něj](../../../../visual-basic/developing-apps/programming/computer-resources/reading-from-and-writing-to-the-registry.md)  
-Uvádí úkoly `My.Computer.Registry`přidružené k aplikaci , například čtení dat nebo zápis dat do klíčů registru.
+Obsahuje seznam úkolů přidružených `My.Computer.Registry`k, například čtení dat z nebo zápis dat do klíčů registru.

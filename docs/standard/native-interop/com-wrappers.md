@@ -31,7 +31,7 @@ Model COM se liší od modelu objektu .NET runtime v několika důležitých zp�
   
  Ve většině případů standardní RCW nebo doleva generované modulem runtime poskytuje adekvátní zařazování pro volání, která překračují hranice mezi COM a .NET Runtime. Pomocí vlastních atributů můžete volitelně upravit způsob, jakým modul runtime představuje spravovaný a nespravovaný kód.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Pokročilá interoperabilita modelu COM v .NET Framework](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bd9cdfyx(v=vs.100))
 - [Obálka volatelná za běhu](runtime-callable-wrapper.md)

@@ -25,16 +25,16 @@ Určuje obor názvů pro všechny deklarace typů.
 -rootnamespace:namespace  
 ```  
   
-## <a name="arguments"></a>Arguments  
+## <a name="arguments"></a>Argumenty  
   
-|Termín|Definice|  
+|Označení|Definice|  
 |---|---|  
 |`namespace`|Název oboru názvů, do kterého mají být uzavřeny všechny deklarace typu pro aktuální projekt.|  
   
 ## <a name="remarks"></a>Poznámky  
- Použijete-li spustitelný soubor sady Visual Studio (devenv. exe) ke kompilaci projektu vytvořeného v integrovaném vývojovém prostředí sady Visual Studio, použijte `-rootnamespace` k určení hodnoty vlastnosti <xref:VSLangProj80.VBProjectProperties3.RootNamespace%2A>. Další informace najdete v tématu [přepínače příkazového řádku devenv](/visualstudio/ide/reference/devenv-command-line-switches) .  
+ Použijete-li spustitelný soubor sady Visual Studio (devenv. exe) ke kompilaci projektu vytvořeného v integrovaném vývojovém prostředí sady Visual `-rootnamespace` Studio, použijte k určení hodnoty <xref:VSLangProj80.VBProjectProperties3.RootNamespace%2A> vlastnosti. Další informace najdete v tématu [přepínače příkazového řádku devenv](/visualstudio/ide/reference/devenv-command-line-switches) .  
   
- Použijte modul common language runtime MSIL Disassembler (`Ildasm.exe`) k zobrazení názvů oborů názvů ve výstupním souboru.  
+ Použijte modul common language runtime MSIL Disassembler (`Ildasm.exe`) pro zobrazení názvů oborů názvů ve výstupním souboru.  
   
 |Nastavení-RootNamespace v integrovaném vývojovém prostředí sady Visual Studio|  
 |---|  
@@ -47,8 +47,8 @@ Určuje obor názvů pro všechny deklarace typů.
 vbc -rootnamespace:mynamespace in.vb  
 ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Visual Basic Kompilátor příkazového řádku](../../../visual-basic/reference/command-line-compiler/index.md)
-- [Ildasm.exe (IL Disassembler)](../../../framework/tools/ildasm-exe-il-disassembler.md)
+- [Ildasm. exe (IL Disassembler)](../../../framework/tools/ildasm-exe-il-disassembler.md)
 - [Příkazové řádky ukázkové kompilace](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)

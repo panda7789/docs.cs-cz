@@ -1,5 +1,5 @@
 ---
-title: 'Postup: spuštění aplikace a její odeslání Úhozů - Visual Basic'
+title: 'Postupy: spuštění aplikace a odeslání klávesových úhozů – Visual Basic'
 ms.date: 10/23/2019
 helpviewer_keywords:
 - keystrokes, sending
@@ -14,9 +14,9 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 03/15/2020
 ms.locfileid: "72919394"
 ---
-# <a name="how-to-start-an-application-and-send-it-keystrokes-visual-basic"></a>Postup: spuštění aplikace a její odeslání úhozů (Visual Basic)
+# <a name="how-to-start-an-application-and-send-it-keystrokes-visual-basic"></a>Postupy: spuštění aplikace a odeslání klávesových úhozů (Visual Basic)
 
-Tento příklad <xref:Microsoft.VisualBasic.Interaction.Shell%2A> používá metodu ke spuštění aplikace Poznámkový blok a potom vytiskne větu odesláním úhozů pomocí metody [My.Computer.Keyboard.SendKeys.](xref:Microsoft.VisualBasic.Devices.Keyboard.SendKeys%2A)
+Tento příklad používá <xref:Microsoft.VisualBasic.Interaction.Shell%2A> metodu ke spuštění aplikace Poznámkový blok a pak vytiskne větu odesláním stisknutí kláves pomocí metody [My. Computer. Keyboard. SendKeys](xref:Microsoft.VisualBasic.Devices.Keyboard.SendKeys%2A) .
 
 ## <a name="example"></a>Příklad
 
@@ -24,11 +24,11 @@ Tento příklad <xref:Microsoft.VisualBasic.Interaction.Shell%2A> používá met
 
 ## <a name="robust-programming"></a>Robustní programování
 
-Výjimka <xref:System.ArgumentException> je vyvolána, pokud nelze najít aplikaci s požadovaným identifikátorem procesu.  
+Pokud <xref:System.ArgumentException> se aplikace s požadovaným identifikátorem procesu nenajde, vyvolá se výjimka.  
   
 ## <a name="net-framework-security"></a>Zabezpečení rozhraní .NET Framework
 
-Volání funkce `Shell` vyžaduje úplnou<xref:System.Security.SecurityException> důvěryhodnost (třída).
+Volání `Shell` funkce vyžaduje úplný vztah důvěryhodnosti (<xref:System.Security.SecurityException> Class).
 
 ## <a name="see-also"></a>Viz také
 

@@ -17,15 +17,15 @@ ms.locfileid: "74333826"
 ---
 # <a name="reading-from-files-in-visual-basic"></a>Čtení ze souborů v jazyce Visual Basic
 
-Tato část vysvětluje, jak provádět úkoly, které jsou spojeny se čtením ze souborů.  
+V této části se dozvíte, jak provádět úlohy spojené se čtením ze souborů.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
 
- [Postup: Čtení z textových souborů](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-read-from-text-files.md)  
+ [Postupy: čtení z textových souborů](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-read-from-text-files.md)  
  Ukazuje, jak číst z textového souboru.  
   
  [Postupy: Čtení z textových souborů s oddělovači](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-read-from-comma-delimited-text-files.md)  
- Ukazuje, jak číst z odděleného textového souboru.  
+ Ukazuje, jak číst z textového souboru s oddělovači.  
   
  [Postupy: Čtení z textových souborů s pevnou šířkou](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-read-from-fixed-width-text-files.md)  
  Ukazuje, jak číst z textového souboru s pevnou šířkou.  
@@ -37,7 +37,7 @@ Tato část vysvětluje, jak provádět úkoly, které jsou spojeny se čtením 
  Ukazuje, jak číst z binárního souboru.  
   
  [Postupy: Čtení textu ze souborů pomocí třídy StreamReader](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-read-text-from-files-with-a-streamreader.md)  
- Ukazuje, jak používat <xref:System.IO.StreamReader> ke čtení ze souboru.  
+ Ukazuje, jak použít <xref:System.IO.StreamReader> ke čtení ze souboru.  
   
 ## <a name="reference"></a>Referenční informace  
 
@@ -45,27 +45,27 @@ Tato část vysvětluje, jak provádět úkoly, které jsou spojeny se čtením 
  Popisuje `My.Computer.FileSystem` objekt a jeho členy.  
   
  <xref:Microsoft.VisualBasic.FileIO.FileSystem.ReadAllText%2A>  
- Popisuje metodu. `ReadAllText`  
+ Popisuje `ReadAllText` metodu.  
   
  <xref:Microsoft.VisualBasic.FileIO.FileSystem.ReadAllBytes%2A>  
- Popisuje metodu. `ReadAllBytes`  
+ Popisuje `ReadAllBytes` metodu.  
   
  <xref:Microsoft.VisualBasic.FileIO.FileSystem.OpenTextFieldParser%2A>  
- Popisuje metodu. `OpenTextFieldParser`  
+ Popisuje `OpenTextFieldParser` metodu.  
   
  <xref:Microsoft.VisualBasic.FileIO.FileSystem.OpenTextFileReader%2A>  
- Popisuje metodu. `OpenTextFileReader`  
+ Popisuje `OpenTextFileReader` metodu.  
   
 ## <a name="related-sections"></a>Související oddíly  
 
  [Ukládání dat do schránky a čtení ze schránky](../../../../visual-basic/developing-apps/programming/computer-resources/storing-data-to-and-reading-from-the-clipboard.md)  
- Vysvětluje, jak provádět úkoly, `My.Computer.Clipboard`které jsou přidruženy k aplikaci , například čtení dat ze schránky nebo zápis dat do schránky.  
+ Vysvětluje, jak provádět úkoly, které jsou spojeny s `My.Computer.Clipboard`, například čtení dat z nebo zápis dat do schránky.  
   
  [Analýza textových souborů pomocí objektu TextFieldParser](../../../../visual-basic/developing-apps/programming/drives-directories-files/parsing-text-files-with-the-textfieldparser-object.md)  
- Poskytuje přehled čtení textových `TextFieldParser` souborů s objektem.  
+ Poskytuje přehled o čtení textových souborů s `TextFieldParser` objektem.  
   
  [Návod: Práce se soubory a adresáři v jazyce Visual Basic](../../../../visual-basic/developing-apps/programming/drives-directories-files/walkthrough-manipulating-files-and-directories.md)  
  Ukazuje, jak používat `My` funkci se soubory a adresáři.  
   
  [Návod: Manipulace se soubory pomocí metod rozhraní .NET Framework](../../../../visual-basic/developing-apps/programming/drives-directories-files/walkthrough-manipulating-files-by-using-net-framework-methods.md)  
- Ukazuje, jak používat metody rozhraní .NET Framework se soubory a adresáři.
+ Ukazuje, jak používat metody .NET Framework se soubory a adresáři.

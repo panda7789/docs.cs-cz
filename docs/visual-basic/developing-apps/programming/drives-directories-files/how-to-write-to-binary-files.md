@@ -15,13 +15,13 @@ ms.locfileid: "74334434"
 ---
 # <a name="how-to-write-to-binary-files-in-visual-basic"></a>Postupy: Zápis do binárních souborů v jazyce Visual Basic
 
-Metoda <xref:Microsoft.VisualBasic.FileIO.FileSystem.WriteAllBytes%2A> zapisuje data do binárního souboru. Pokud `append` je `True`parametr , připojí data k souboru; v opačném případě jsou data v souboru přepsána.
+<xref:Microsoft.VisualBasic.FileIO.FileSystem.WriteAllBytes%2A> Metoda zapisuje data do binárního souboru. Pokud je `append` `True`parametr, připojí data do souboru. v opačném případě jsou data v souboru přepsána.
 
-Pokud zadaná cesta bez názvu souboru <xref:System.IO.DirectoryNotFoundException> není platná, bude vyvolána výjimka. Pokud je cesta platná, ale soubor neexistuje, soubor bude vytvořen.
+Pokud zadaná cesta s výjimkou názvu souboru není platná, bude vyvolána <xref:System.IO.DirectoryNotFoundException> výjimka. Pokud je cesta platná, ale soubor neexistuje, vytvoří se soubor.
 
 ## <a name="to-write-to-a-binary-file"></a>Zápis do binárního souboru
 
-Použijte `WriteAllBytes` metodu, která poskytuje cestu k souboru a název a bajty, které mají být zapsány. Tento příklad připojí datové `CustomerData` pole k `CollectedData.dat`souboru s názvem .
+Použijte `WriteAllBytes` metodu a zadejte cestu k souboru a název a bajty, které mají být zapsány. Tento příklad připojí datové pole `CustomerData` k souboru s názvem. `CollectedData.dat`
 
 [!code-vb[VbVbcnMyFileSystem#27](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnMyFileSystem/VB/Class1.vb#27)]
 
@@ -29,19 +29,19 @@ Použijte `WriteAllBytes` metodu, která poskytuje cestu k souboru a název a ba
 
 Následující podmínky mohou vytvořit výjimku:
 
-- Cesta není platná z jednoho z následujících důvodů: jedná se o řetězec nulové délky; obsahuje pouze prázdné místo; nebo obsahuje neplatné znaky. (<xref:System.ArgumentException>).
+- Cesta není platná z některého z následujících důvodů: Jedná se o řetězec o nulové délce; obsahuje pouze prázdné znaky; nebo obsahuje neplatné znaky. (<xref:System.ArgumentException>).
 
-- Cesta není platná, protože `Nothing` <xref:System.ArgumentNullException>je ( ).
+- Cesta není platná, protože je `Nothing` (<xref:System.ArgumentNullException>).
 
-- `File`odkazuje na cestu, která<xref:System.IO.FileNotFoundException> neexistuje <xref:System.IO.DirectoryNotFoundException>( nebo ).
+- `File`odkazuje na cestu, která neexistuje (<xref:System.IO.FileNotFoundException> nebo <xref:System.IO.DirectoryNotFoundException>).
 
-- Soubor je používán jiným procesem nebo dojde k chybě<xref:System.IO.IOException>vstupně-out ( ).
+- Soubor je používán jiným procesem nebo dojde k vstupně-výstupní chybě (<xref:System.IO.IOException>).
 
-- Cesta překračuje maximální délku definovanou<xref:System.IO.PathTooLongException>systémem ( ).
+- Cesta přesahuje maximální povolenou délku (<xref:System.IO.PathTooLongException>) definovanou systémem.
 
-- Název souboru nebo adresáře v cestě obsahuje dvojtečku (:) nebo je v neplatném formátu (<xref:System.NotSupportedException>).
+- Název souboru nebo adresáře v cestě obsahuje dvojtečku (:) nebo má neplatnou hodnotu format<xref:System.NotSupportedException>().
 
-- Uživatel nemá potřebná oprávnění k<xref:System.Security.SecurityException>zobrazení cesty ( ).
+- Uživatel nemá potřebná oprávnění k zobrazení cesty (<xref:System.Security.SecurityException>).
 
 ## <a name="see-also"></a>Viz také
 

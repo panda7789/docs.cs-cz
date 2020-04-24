@@ -7,4 +7,4 @@ ms.lasthandoff: 03/14/2020
 ms.locfileid: "65639124"
 ---
 > [!WARNING]
-> Binární serializace může být nebezpečné. Nikdy nerekonstruujte data z nedůvěryhodného zdroje a nikdy nepřekrouzujte serializovaná data do systémů, které nejsou pod vaší kontrolou.
+> Binární serializace může být nebezpečná. Nikdy nepoužívejte serializaci dat z nedůvěryhodného zdroje a nepoužívejte data serializovaného přenosu dat do systémů, které nejsou pod vaší kontrolou.

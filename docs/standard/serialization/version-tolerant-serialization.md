@@ -128,7 +128,7 @@ Zpětná volání serializace jsou mechanismus, který poskytuje zachytávání 
 |<xref:System.Runtime.Serialization.OnSerializingAttribute>|Před serializací.|Připravte pro serializaci. Můžete například vytvořte struktury volitelnými daty.|
 |<xref:System.Runtime.Serialization.OnSerializedAttribute>|Po serializace.|Protokolovat události serializace.|
 
- \* toto zpětné volání je vyvoláno před konstruktor deserializace, pokud je k dispozici.
+ \*Toto zpětné volání je vyvoláno před konstruktor deserializace, pokud je k dispozici.
 
 #### <a name="using-callbacks"></a>Použití zpětných volání
 
@@ -262,7 +262,7 @@ End Class
 
 ## <a name="serializationbinder"></a>SerializationBinder
 
-Někteří uživatelé muset které třídu k serializaci a deserializaci vzhledem k tomu, že u serverových a klientských je nutné zadat jinou verzi třídy ovládacího prvku. <xref:System.Runtime.Serialization.SerializationBinder> je abstraktní třída, která slouží k řízení skutečných typů použitých během serializace a deserializace. Chcete-li použít tuto třídu, dosáhnout odvozením třídy od <xref:System.Runtime.Serialization.SerializationBinder> a přepište <xref:System.Runtime.Serialization.SerializationBinder.BindToName%2A> a <xref:System.Runtime.Serialization.SerializationBinder.BindToType%2A> metody. Další informace naleznete v tématu [řízení serializace a deserializace pomocí SerializationBinder](../../framework/wcf/feature-details/controlling-serialization-and-deserialization-with-serializationbinder.md).
+Někteří uživatelé muset které třídu k serializaci a deserializaci vzhledem k tomu, že u serverových a klientských je nutné zadat jinou verzi třídy ovládacího prvku. <xref:System.Runtime.Serialization.SerializationBinder>je abstraktní třída, která slouží k řízení skutečných typů použitých během serializace a deserializace. Chcete-li použít tuto třídu, dosáhnout odvozením třídy od <xref:System.Runtime.Serialization.SerializationBinder> a přepište <xref:System.Runtime.Serialization.SerializationBinder.BindToName%2A> a <xref:System.Runtime.Serialization.SerializationBinder.BindToType%2A> metody. Další informace naleznete v tématu [řízení serializace a deserializace pomocí SerializationBinder](../../framework/wcf/feature-details/controlling-serialization-and-deserialization-with-serializationbinder.md).
 
 ## <a name="best-practices"></a>Osvědčené postupy
 
@@ -280,7 +280,7 @@ Chcete-li zajistit, že budou kompatibilní s budoucí serializace moduly typu, 
 - Vždy nastavte vlastnost **VersionAdded** u atributu **OptionalFieldAttribute** správně.
 - Vyhněte se větvenou správy verzí.
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.SerializableAttribute>
 - <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter>

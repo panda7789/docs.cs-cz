@@ -38,7 +38,7 @@ Soubory projektu (. vbproj) můžete kompilovat na příkazovém řádku pomocí
 [Postupy: volání kompilátoru příkazového řádku](../../../visual-basic/reference/command-line-compiler/how-to-invoke-the-command-line-compiler.md) \
 Popisuje, jak vyvolat kompilátor příkazového řádku v příkazovém řádku systému MS-DOS nebo z konkrétního podadresáře.
 
-[Ukázkové příkazové řádky kompilace](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md) \
+[Příkazové řádky ukázkové kompilace](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md) \
 Poskytuje seznam ukázkových příkazových řádků, které můžete upravit pro vlastní použití.
 
 ## <a name="related-sections"></a>Související oddíly
@@ -46,7 +46,7 @@ Poskytuje seznam ukázkových příkazových řádků, které můžete upravit p
 [Visual Basic Kompilátor příkazového řádku](../../../visual-basic/reference/command-line-compiler/index.md) \
 Obsahuje seznam možností kompilátoru uspořádaných podle abecedy nebo podle účelu.
 
- \ [podmíněné kompilace](../../../visual-basic/programming-guide/program-structure/conditional-compilation.md)
+[Podmíněná kompilace](../../../visual-basic/programming-guide/program-structure/conditional-compilation.md) \
 Popisuje, jak zkompilovat konkrétní oddíly kódu.
 
 [Sestavování a čištění projektů a řešení v aplikaci Visual Studio](/visualstudio/ide/building-and-cleaning-projects-and-solutions-in-visual-studio) \

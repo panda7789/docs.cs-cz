@@ -23,18 +23,18 @@ Určuje, zda bude sestavení zcela nebo částečně podepsáno.
 -delaysign[+ | -]
 ```
 
-## <a name="arguments"></a>Arguments
+## <a name="arguments"></a>Argumenty
 
-`+` &#124; `-`  
-Volitelné. Pokud chcete plně podepsané sestavení, použijte `-delaysign-`. Pokud chcete umístit veřejný klíč do sestavení a rezervovat místo pro podepsaný algoritmus hash, použijte `-delaysign+`. Výchozí hodnota je `-delaysign-`.
+`+`&#124;`-`  
+Nepovinný parametr. Použijte `-delaysign-` , pokud chcete sestavení plně podepsaného. Použijte `-delaysign+` , pokud chcete umístit veřejný klíč do sestavení a rezervovat místo pro podepsaný algoritmus hash. Výchozí formát je `-delaysign-`.
 
 ## <a name="remarks"></a>Poznámky
 
-Možnost `-delaysign` nemá žádný vliv, pokud se používá s parametrem [-keyfile](../../../visual-basic/reference/command-line-compiler/keyfile.md) nebo [-](../../../visual-basic/reference/command-line-compiler/keycontainer.md).
+`-delaysign` Možnost nemá žádný vliv, pokud se nepoužívá s parametrem [-keyfile](../../../visual-basic/reference/command-line-compiler/keyfile.md) nebo [-](../../../visual-basic/reference/command-line-compiler/keycontainer.md).
 
 Když vyžádáte plně podepsané sestavení, kompilátor vyhodnotí hodnotu hash souboru obsahujícího manifest (metadata sestavení) a podepíše tuto hodnotu hash privátním klíčem. Výsledný digitální podpis je uložen do souboru obsahujícího manifest. Když je sestavení podepsáno opožděně, kompilátor nevypočítá a uloží podpis, ale rezervuje místo v souboru, aby bylo možné podpis přidat později.
 
-Například pomocí `-delaysign+` může vývojář v organizaci distribuovat nepodepsané testovací verze sestavení, které mohou testeri zaregistrovat s globální mezipamětí sestavení a použít. Po dokončení práce na sestavení může osoba odpovědná za soukromý klíč organizace plně podepsat sestavení. Tato compartmentalization chrání privátní klíč organizace před zveřejněním a umožňuje všem vývojářům pracovat na sestaveních.
+Například pomocí nástroje `-delaysign+`může vývojář v organizaci distribuovat nepodepsané testovací verze sestavení, které mohou testeri zaregistrovat s globální mezipamětí sestavení a použít. Po dokončení práce na sestavení může osoba odpovědná za soukromý klíč organizace plně podepsat sestavení. Tato compartmentalization chrání privátní klíč organizace před zveřejněním a umožňuje všem vývojářům pracovat na sestaveních.
 
 Další informace o podepsání sestavení naleznete v tématu [vytváření a používání sestavení se silným názvem](../../../standard/assembly/create-use-strong-named.md) .
 
@@ -46,7 +46,7 @@ Další informace o podepsání sestavení naleznete v tématu [vytváření a p
 
 3. Nastavte hodnotu v poli **pouze Zpožděné podepsání** .
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Visual Basic Kompilátor příkazového řádku](../../../visual-basic/reference/command-line-compiler/index.md)
 - [-keyfile](../../../visual-basic/reference/command-line-compiler/keyfile.md)

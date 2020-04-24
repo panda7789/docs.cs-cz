@@ -16,23 +16,23 @@ ms.locfileid: "74348784"
 ---
 # <a name="how-to-delete-a-file-in-visual-basic"></a>Postupy: Odstranění souboru v jazyce Visual Basic
 
-Metoda `DeleteFile` objektu `My.Computer.FileSystem` umožňuje odstranit soubor. Mezi možnosti, které nabízí, patří: zda odeslat odstraněný soubor do **koše**, zda požádat uživatele o potvrzení, že soubor by měl být odstraněn, a co dělat, když uživatel zruší operaci.  
+`DeleteFile` Metoda `My.Computer.FileSystem` objektu umožňuje odstranit soubor. Mezi možnosti, které nabízí, patří: bez ohledu na to, jestli se má odstraněný soubor poslat do **koše**, jestli se má uživatel položit, aby zkontroloval, jestli by se měl soubor odstranit, a co dělat, když uživatel operaci zruší.  
   
 ### <a name="to-delete-a-text-file"></a>Odstranění textového souboru  
   
-- Pomocí `DeleteFile` metody odstraňte soubor. Následující kód ukazuje, jak odstranit `test.txt`soubor s názvem .  
+- K odstranění `DeleteFile` souboru použijte metodu. Následující kód ukazuje, jak odstranit soubor s názvem `test.txt`.  
   
      [!code-vb[VbVbcnMyFileSystem#22](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnMyFileSystem/VB/Class1.vb#22)]  
   
-### <a name="to-delete-a-text-file-and-ask-the-user-to-confirm-that-the-file-should-be-deleted"></a>Odstranění textového souboru a požádejte uživatele o potvrzení, že má být soubor odstraněn  
+### <a name="to-delete-a-text-file-and-ask-the-user-to-confirm-that-the-file-should-be-deleted"></a>Odstranění textového souboru a požádejte uživatele o potvrzení, že by se měl soubor odstranit  
   
-- Pomocí `DeleteFile` metody odstraňte soubor `showUI` a `AllDialogs`nastavením na . Následující kód ukazuje, jak odstranit `test.txt` pojmenovaný soubor a umožnit uživateli potvrdit, že soubor by měl být odstraněn.  
+- Pomocí `DeleteFile` metody odstraňte soubor a nastavte `showUI` na. `AllDialogs` Následující kód ukazuje, jak odstranit soubor s názvem `test.txt` a umožní uživateli potvrdit, že by měl být soubor smazán.  
   
      [!code-vb[VbFileIOMisc#9](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbFileIOMisc/VB/Class1.vb#9)]  
   
-### <a name="to-delete-a-text-file-and-send-it-to-the-recycle-bin"></a>Odstranění textového souboru a jeho odeslání do koše  
+### <a name="to-delete-a-text-file-and-send-it-to-the-recycle-bin"></a>Odstranění textového souboru a jeho odeslání do odpadkového koše  
   
-- Pomocí `DeleteFile` metody odstraňte soubor a `SendToRecycleBin` určete `recycle` parametr. Následující kód ukazuje, jak odstranit `test.txt` pojmenovaný soubor a odeslat jej do **koše**.  
+- Použijte `DeleteFile` metodu k odstranění souboru, který určuje `SendToRecycleBin` `recycle` parametr. Následující kód ukazuje, jak odstranit soubor s názvem `test.txt` a odeslat ho do **odpadkového koše**.  
   
      [!code-vb[VbFileIOMisc#10](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbFileIOMisc/VB/Class1.vb#10)]  
   
@@ -40,25 +40,25 @@ Metoda `DeleteFile` objektu `My.Computer.FileSystem` umožňuje odstranit soubor
 
  Následující podmínky mohou způsobit výjimku:  
   
-- Cesta není platná z jednoho z následujících důvodů: jedná se o řetězec nulové délky, obsahuje pouze prázdné znaky, \\ \\\\obsahuje neplatné znaky nebo se jedná o cestu zařízení (začíná na . ) (<xref:System.ArgumentException>).  
+- Cesta není platná z některého z následujících důvodů: Jedná se o řetězec o nulové délce, obsahuje pouze prázdné znaky, obsahuje neplatné znaky nebo se jedná o cestu k zařízení (začíná \\ \\na.\\) (<xref:System.ArgumentException>).  
   
-- Cesta není platná, protože `Nothing` <xref:System.ArgumentNullException>je ( ).  
+- Cesta není platná, protože je `Nothing` (<xref:System.ArgumentNullException>).  
   
-- Cesta překračuje maximální délku definovanou<xref:System.IO.PathTooLongException>systémem ( ).  
+- Cesta přesahuje maximální povolenou délku (<xref:System.IO.PathTooLongException>) definovanou systémem.  
   
-- Název souboru nebo složky v cestě obsahuje dvojtečku (:) nebo je v neplatném formátu (<xref:System.NotSupportedException>).  
+- Název souboru nebo složky v cestě obsahuje dvojtečku (:) nebo má neplatnou hodnotu format<xref:System.NotSupportedException>().  
   
-- Soubor je používán<xref:System.IO.IOException>( ).  
+- Soubor se používá (<xref:System.IO.IOException>).  
   
-- Uživatel nemá potřebná oprávnění k<xref:System.Security.SecurityException>zobrazení cesty ( ).  
+- Uživatel nemá potřebná oprávnění k zobrazení cesty (<xref:System.Security.SecurityException>).  
   
 - Soubor neexistuje (<xref:System.IO.FileNotFoundException>).  
   
-- Uživatel nemá oprávnění k odstranění souboru nebo je soubor<xref:System.UnauthorizedAccessException>jen pro čtení ( ).  
+- Uživatel nemá oprávnění k odstranění tohoto souboru, nebo je soubor jen pro čtení (<xref:System.UnauthorizedAccessException>).  
   
-- Existuje situace částečné důvěryhodnosti, ve které uživatel nemá<xref:System.Security.SecurityException>dostatečná oprávnění ( ).  
+- V případě, že uživatel nemá dostatečná oprávnění (<xref:System.Security.SecurityException>), existuje situace s částečným vztahem důvěryhodnosti.  
   
-- Uživatel operaci zrušil a `onUserCancel` je `ThrowException` nastavenna na (<xref:System.OperationCanceledException>).  
+- Uživatel operaci zrušil a `onUserCancel` je nastaven na `ThrowException` (<xref:System.OperationCanceledException>).  
   
 ## <a name="see-also"></a>Viz také
 

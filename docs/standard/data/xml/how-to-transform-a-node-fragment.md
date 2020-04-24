@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: transformace fragmentu uzlu'
+title: 'Postupy: Transformace fragmentu uzlu'
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -13,8 +13,8 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 01/07/2020
 ms.locfileid: "75710814"
 ---
-# <a name="how-to-transform-a-node-fragment"></a>Postupy: transformace fragmentu uzlu
-Při transformaci dat obsažených v <xref:System.Xml.XmlDocument> nebo objektu <xref:System.Xml.XPath.XPathDocument> se transformace XSLT vztahují na dokument jako celek. Jinými slovy, Pokud předáte v jiném než kořenovém uzlu dokumentu, nezabrání to procesu transformace v přístupu ke všem uzlům v načteném dokumentu. Chcete-li transformovat fragment uzlu, je nutné vytvořit samostatný objekt obsahující pouze fragment uzlu a předat tento objekt metodě <xref:System.Xml.Xsl.XslCompiledTransform.Transform%2A>.  
+# <a name="how-to-transform-a-node-fragment"></a>Postupy: Transformace fragmentu uzlu
+Při transformaci dat obsažených v objektu <xref:System.Xml.XmlDocument> nebo <xref:System.Xml.XPath.XPathDocument> se transformace XSLT vztahují na dokument jako celek. Jinými slovy, Pokud předáte v jiném než kořenovém uzlu dokumentu, nezabrání to procesu transformace v přístupu ke všem uzlům v načteném dokumentu. Chcete-li transformovat fragment uzlu, je nutné vytvořit samostatný objekt obsahující pouze fragment uzlu a předat tento objekt <xref:System.Xml.Xsl.XslCompiledTransform.Transform%2A> metodě.  
   
 ## <a name="procedures"></a>Procedury  
   
@@ -26,7 +26,7 @@ Při transformaci dat obsažených v <xref:System.Xml.XmlDocument> nebo objektu 
   
 3. Vytvořte samostatný objekt se pouze fragmentem uzlu.  
   
-4. Předejte fragment uzlu do metody <xref:System.Xml.Xsl.XslCompiledTransform.Transform%2A>.  
+4. Předejte fragment uzlu do <xref:System.Xml.Xsl.XslCompiledTransform.Transform%2A> metody.  
   
 ## <a name="example"></a>Příklad  
  Následující příklad transformuje fragment uzlu a výstupy výsledků do konzoly.  
@@ -45,6 +45,6 @@ Při transformaci dat obsažených v <xref:System.Xml.XmlDocument> nebo objektu 
 ### <a name="output"></a>Výstup  
  Titul knihy je důvěryhodný člověk.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Používání třídy XslCompiledTransform](../../../../docs/standard/data/xml/using-the-xslcompiledtransform-class.md)

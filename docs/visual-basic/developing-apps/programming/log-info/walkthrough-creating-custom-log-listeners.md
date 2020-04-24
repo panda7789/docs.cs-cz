@@ -14,103 +14,103 @@ ms.locfileid: "74353613"
 ---
 # <a name="walkthrough-creating-custom-log-listeners-visual-basic"></a>Návod: Vytváření vlastních součástí naslouchajících protokolům (Visual Basic)
 
-Tento návod ukazuje, jak vytvořit vlastní naslouchací proces `My.Application.Log` protokolu a nakonfigurovat jej tak, aby poslouchat výstup objektu.
+Tento návod ukazuje, jak vytvořit vlastní naslouchací proces protokolu a nakonfigurovat ho tak, aby naslouchal výstupu `My.Application.Log` objektu.
 
-## <a name="getting-started"></a>Začínáme
+## <a name="getting-started"></a>začínáme
 
-Posluchači protokolu musí <xref:System.Diagnostics.TraceListener> dědit z třídy.
+Naslouchací procesy protokolu musí dědit od <xref:System.Diagnostics.TraceListener> třídy.
 
-#### <a name="to-create-the-listener"></a>Vytvoření naslouchací proces
+#### <a name="to-create-the-listener"></a>Vytvoření naslouchacího procesu
 
-- V aplikaci vytvořte `SimpleListener` třídu s <xref:System.Diagnostics.TraceListener>názvem, která dědí z .
+- V aplikaci vytvořte třídu s názvem `SimpleListener` , která dědí z. <xref:System.Diagnostics.TraceListener>
 
      [!code-vb[VbVbalrMyApplicationLog#16](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyApplicationLog/VB/Form1.vb#16)]
 
-     Metody <xref:System.Diagnostics.TraceListener.Write%2A> <xref:System.Diagnostics.TraceListener.WriteLine%2A> a vyžadované `MsgBox` základní třídou volají k zobrazení jejich vstupu.
+     Metody <xref:System.Diagnostics.TraceListener.Write%2A> a <xref:System.Diagnostics.TraceListener.WriteLine%2A> , které jsou požadovány pro základní třídu, `MsgBox` volají pro zobrazení jejich vstupu.
 
-     Atribut <xref:System.Security.Permissions.HostProtectionAttribute> je použit <xref:System.Diagnostics.TraceListener.Write%2A> na <xref:System.Diagnostics.TraceListener.WriteLine%2A> metody a tak, aby jejich atributy odpovídaly metodám základní třídy. Atribut <xref:System.Security.Permissions.HostProtectionAttribute> umožňuje hostiteli, který spouští kód k určení, že kód zveřejňuje synchronizaci ochrany hostitele.
+     <xref:System.Security.Permissions.HostProtectionAttribute> Atribut se aplikuje na metody <xref:System.Diagnostics.TraceListener.Write%2A> a <xref:System.Diagnostics.TraceListener.WriteLine%2A> , aby jejich atributy odpovídaly metodám základní třídy. <xref:System.Security.Permissions.HostProtectionAttribute> Atribut umožňuje hostiteli, který spouští kód, určit, že kód zveřejňuje synchronizaci hostitele.
 
     > [!NOTE]
-    > Atribut <xref:System.Security.Permissions.HostProtectionAttribute> je účinný pouze u nespravovaných aplikací, které hostují modul runtime společného jazyka a které implementují ochranu hostitele, například SQL Server.
+    > <xref:System.Security.Permissions.HostProtectionAttribute> Atribut je platný pouze v nespravovaných aplikacích, které jsou hostiteli modulu CLR (Common Language Runtime) a které implementují ochranu hostitele, například SQL Server.
 
-Chcete-li `My.Application.Log` zajistit, že používá naslouchací proces protokolu, měli byste důrazně pojmenovat sestavení, které obsahuje naslouchací proces protokolu.
+Chcete-li `My.Application.Log` zajistit, aby používala naslouchací proces protokolu, měli byste silně pojmenovat sestavení, které obsahuje váš naslouchací proces protokolu.
 
-Další postup poskytuje některé jednoduché kroky pro vytvoření sestavení silně pojmenované protokol naslouchací proces. Další informace naleznete v [tématu Vytváření a používání sestavení se silným názvem](../../../../standard/assembly/create-use-strong-named.md).
+Další postup poskytuje několik jednoduchých kroků pro vytvoření silně pojmenovaného sestavení naslouchacího procesu protokolu. Další informace naleznete v tématu [vytváření a používání sestavení se silným názvem](../../../../standard/assembly/create-use-strong-named.md).
 
-#### <a name="to-strongly-name-the-log-listener-assembly"></a>Silně pojmenovat sestavení posluchače protokolu
+#### <a name="to-strongly-name-the-log-listener-assembly"></a>Pro silně pojmenování sestavení naslouchacího procesu protokolu
 
-1. V **Průzkumníku řešení**je vybrán projekt . V nabídce **Projekt** zvolte **Vlastnosti**.
+1. Máte projekt vybraný v **Průzkumník řešení**. V nabídce **projekt** klikněte na příkaz **vlastnosti**.
 
-2. Klikněte na kartu **Podpis.**
+2. Klikněte na kartu **podepisování** .
 
-3. Vyberte podepsat pole **sestavy.**
+3. Vyberte pole **podepsat sestavení** .
 
-4. V ** \<** rozevíracím seznamu Zvolte Nový>v rozevíracím seznamu **Zvolit soubor klíče silného názvu.**
+4. V rozevíracím seznamu **Vyberte soubor klíče se silným názvem** vyberte ** \<nový>** .
 
-     Otevře se dialogové okno **Vytvořit klíč silného názvu.**
+     Otevře se dialogové okno **vytvořit klíč se silným názvem** .
 
-5. Zadejte název souboru klíče do pole **Název souboru klíče.**
+5. Zadejte název souboru klíče do pole **název souboru klíče** .
 
-6. Zadejte heslo do polí **Zadat heslo** a **Potvrdit heslo.**
+6. Do polí **Zadejte** heslo a **potvrďte heslo** zadejte heslo.
 
 7. Klikněte na tlačítko **OK**.
 
 8. Znovu sestavte aplikaci.
 
-## <a name="adding-the-listener"></a>Přidání naslouchací proces
+## <a name="adding-the-listener"></a>Přidání naslouchacího procesu
 
-Nyní, když sestavení má silný název, je třeba určit silný `My.Application.Log` název naslouchací proces tak, že používá posluchače protokolu.
+Nyní, když má sestavení silný název, je nutné určit silný název naslouchacího procesu tak, `My.Application.Log` aby používal naslouchací proces protokolu.
 
 Formát silně pojmenovaného typu je následující.
 
-\<název>, \<název sestavení \<>, \<číslo verze \<>,> jazykové verze,>
+\<název typu>, \<název sestavení>, \<číslo verze>, \<jazyková verze> \<, silný název>
 
-#### <a name="to-determine-the-strong-name-of-the-listener"></a>Chcete-li určit silný název naslouchací proces
+#### <a name="to-determine-the-strong-name-of-the-listener"></a>Určení silného názvu naslouchacího procesu
 
-- Následující kód ukazuje, jak určit silně pojmenovaný `SimpleListener`název typu pro .
+- Následující kód ukazuje, jak určit název silně pojmenovaného typu pro `SimpleListener`.
 
      [!code-vb[VbVbalrMyApplicationLog#17](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyApplicationLog/VB/Form1.vb#17)]
 
-     Silný název typu závisí na projektu.
+     Silný název typu závisí na vašem projektu.
 
-S silným názvem můžete přidat naslouchací proces do kolekce naslouchací `My.Application.Log` proces protokolu.
+Se silným názvem můžete přidat naslouchací proces do kolekce `My.Application.Log` log-Listener.
 
-#### <a name="to-add-the-listener-to-myapplicationlog"></a>Přidání naslouchací proces do My.Application.Log
+#### <a name="to-add-the-listener-to-myapplicationlog"></a>Přidání naslouchacího procesu do My. Application. log
 
-1. Klikněte pravým tlačítkem myši na soubor app.config v **Průzkumníku řešení** a zvolte **Otevřít**.
+1. V **Průzkumník řešení** klikněte pravým tlačítkem na soubor App. config a vyberte **otevřít**.
 
      -nebo-
 
-     Pokud existuje soubor app.config:
+     Pokud existuje soubor App. config:
 
-    1. V nabídce **Projekt** zvolte **Přidat novou položku**.
+    1. V nabídce **projekt** klikněte na příkaz **Přidat novou položku**.
 
-    2. V dialogovém okně **Přidat novou položku** zvolte **Konfigurační soubor aplikace**.
+    2. V dialogovém okně **Přidat novou položku** vyberte možnost **konfigurační soubor aplikace**.
 
-    3. Klikněte na **Přidat**.
+    3. Klikněte na tlačítko **Add** (Přidat).
 
-2. Vyhledejte `<listeners>` oddíl v `<source>` části `name` s atributem "DefaultSource", který se nachází v `<sources>` sekci. Sekce `<sources>` je umístěna `<system.diagnostics>` v sekci, v `<configuration>` sekci nejvyšší úrovně.
+2. Vyhledejte `<listeners>` část v `<source>` části s `name` atributem "DefaultSource", který se nachází v `<sources>` části. `<sources>` Oddíl je umístěný v `<system.diagnostics>` části v části nejvyšší úrovně `<configuration>` .
 
-3. Přidejte tento `<listeners>` prvek do oddílu:
+3. Přidejte tento element do `<listeners>` oddílu:
 
     ```xml
     <add name="SimpleLog" />
     ```
 
-4. Vyhledejte `<sharedListeners>` oddíl v `<system.diagnostics>` části v části `<configuration>` nejvyšší úrovně.
+4. Vyhledejte `<sharedListeners>` část `<system.diagnostics>` v části v sekci nejvyšší úrovně `<configuration>` .
 
-5. Přidejte tento `<sharedListeners>` prvek do tohoto oddílu:
+5. Přidejte tento element do této `<sharedListeners>` části:
 
     ```xml
     <add name="SimpleLog" type="SimpleLogStrongName" />
     ```
 
-     Změňte hodnotu `SimpleLogStrongName` má být silný název naslouchací proces.
+     Změňte hodnotu `SimpleLogStrongName` na se silným názvem naslouchacího procesu.
 
 ## <a name="see-also"></a>Viz také
 
 - <xref:Microsoft.VisualBasic.Logging.Log?displayProperty=nameWithType>
-- [Práce s protokoly aplikací](../../../../visual-basic/developing-apps/programming/log-info/working-with-application-logs.md)
+- [Práce s protokoly aplikací](../../../../visual-basic/developing-apps/programming/log-info/working-with-application-logs.md)
 - [Postupy: Protokolování výjimek](../../../../visual-basic/developing-apps/programming/log-info/how-to-log-exceptions.md)
 - [Postupy: Zápis zpráv protokolu](../../../../visual-basic/developing-apps/programming/log-info/how-to-write-log-messages.md)
 - [Návod: Změna místa, kam objekt My.Application.Log zapisuje informace](../../../../visual-basic/developing-apps/programming/log-info/walkthrough-changing-where-my-application-log-writes-information.md)

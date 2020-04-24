@@ -25,11 +25,11 @@ Zapne nebo vypne kontrolu chyb pro celočíselné operace.
 -removeintchecks[+ | -]  
 ```  
   
-## <a name="arguments"></a>Arguments  
+## <a name="arguments"></a>Argumenty  
   
-|Termín|Definice|  
+|Označení|Definice|  
 |---|---|  
-|`+` &#124; `-`|Volitelné. Možnost `-removeintchecks-` způsobí, že kompilátor zkontroluje všechny celočíselné výpočty pro chyby přetečení. Výchozí hodnota je `-removeintchecks-`.<br /><br /> Zadáním `-removeintchecks` nebo `-removeintchecks+` zabráníte kontrole chyb a rychleji můžete provádět výpočty celých čísel. Bez kontroly chyb a v případě, že dojde k přetečení kapacit datových typů, mohou být uloženy nesprávné výsledky bez vyvolání chyby.|  
+|`+`&#124;`-`|Nepovinný parametr. `-removeintchecks-` Možnost způsobí, že kompilátor zkontroluje všechny celočíselné výpočty pro chyby přetečení. Výchozí formát je `-removeintchecks-`.<br /><br /> Určení `-removeintchecks` nebo `-removeintchecks+` zabránění v kontrole chyb a rychlejší provádění výpočtů v celých číslech Bez kontroly chyb a v případě, že dojde k přetečení kapacit datových typů, mohou být uloženy nesprávné výsledky bez vyvolání chyby.|  
   
 |Nastavení-removeintchecks – v integrovaném vývojovém prostředí sady Visual Studio|  
 |---|  
@@ -42,7 +42,7 @@ Zapne nebo vypne kontrolu chyb pro celočíselné operace.
 vbc -removeintchecks+ test.vb  
 ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Visual Basic Kompilátor příkazového řádku](../../../visual-basic/reference/command-line-compiler/index.md)
 - [Příkazové řádky ukázkové kompilace](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)

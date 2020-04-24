@@ -16,25 +16,25 @@ ms.locfileid: "74329615"
 ---
 # <a name="how-to-create-property-grids-for-user-settings-in-visual-basic"></a>Postupy: Vytváření mřížek vlastností pro nastavení uživatele v jazyce Visual Basic
 
-Mřížku vlastností pro uživatelská nastavení můžete <xref:System.Windows.Forms.PropertyGrid> vytvořit vyplněním ovládacího `My.Settings` prvku vlastnostmi nastavení uživatele objektu.  
+Mřížku vlastností pro uživatelské nastavení můžete vytvořit naplněním <xref:System.Windows.Forms.PropertyGrid> ovládacího prvku pomocí vlastností uživatelského nastavení `My.Settings` objektu.  
   
 > [!NOTE]
-> Aby tento příklad fungoval, musí mít aplikace nakonfigurovaná uživatelská nastavení. Další informace naleznete v [tématu Správa nastavení aplikací (.NET)](/visualstudio/ide/managing-application-settings-dotnet).  
+> Aby tento příklad fungoval, musí mít vaše aplikace nastavené uživatelské nastavení. Další informace najdete v tématu [Správa nastavení aplikace (.NET)](/visualstudio/ide/managing-application-settings-dotnet).  
   
- Objekt `My.Settings` zveřejňuje každé nastavení jako vlastnost. Název vlastnosti je stejný jako název nastavení a typ vlastnosti je stejný jako typ nastavení. **Rozsah** nastavení určuje, zda je vlastnost jen pro čtení; vlastnost pro nastavení **Application**-scope je jen pro čtení, zatímco vlastnost pro nastavení **User**-scope je čtení a zápis. Další informace naleznete v tématu [My.Settings Object](../../../../visual-basic/language-reference/objects/my-settings-object.md).  
+ `My.Settings` Objekt zpřístupňuje každé nastavení jako vlastnost. Název vlastnosti je stejný jako název nastavení a typ vlastnosti je stejný jako typ nastavení. **Rozsah** nastavení určuje, zda je vlastnost určena pouze pro čtení; vlastnost pro nastavení rozsahu **aplikace**je jen pro čtení a vlastnost pro nastavení rozsahu **uživatele**je pro čtení i zápis. Další informace najdete v tématu [objekt My. Settings](../../../../visual-basic/language-reference/objects/my-settings-object.md).  
   
 > [!NOTE]
-> Hodnoty nastavení oboru aplikace nelze za běhu změnit ani uložit. Nastavení oboru aplikace lze změnit pouze při vytváření aplikace (prostřednictvím **Návrháře projektu)** nebo úpravou konfiguračního souboru aplikace. Další informace naleznete v [tématu Správa nastavení aplikací (.NET)](/visualstudio/ide/managing-application-settings-dotnet).  
+> V době běhu nemůžete změnit ani uložit hodnoty nastavení rozsahu aplikace. Nastavení rozsahu aplikace lze změnit pouze při vytváření aplikace (prostřednictvím **Návrháře projektu**) nebo úpravou konfiguračního souboru aplikace. Další informace najdete v tématu [Správa nastavení aplikace (.NET)](/visualstudio/ide/managing-application-settings-dotnet).  
   
- Tento příklad <xref:System.Windows.Forms.PropertyGrid> používá ovládací prvek pro přístup `My.Settings` k vlastnostem nastavení uživatele objektu. Ve výchozím <xref:System.Windows.Forms.PropertyGrid> nastavení zobrazuje všechny `My.Settings` vlastnosti objektu. Vlastnosti nastavení uživatele však <xref:System.Configuration.UserScopedSettingAttribute> mají atribut. Tento příklad <xref:System.Windows.Forms.PropertyGrid.BrowsableAttributes%2A> nastaví <xref:System.Windows.Forms.PropertyGrid> vlastnost <xref:System.Configuration.UserScopedSettingAttribute> to to zobrazit pouze vlastnosti nastavení uživatele.  
+ Tento příklad používá <xref:System.Windows.Forms.PropertyGrid> ovládací prvek pro přístup k vlastnostem uživatelského nastavení `My.Settings` objektu. Ve výchozím nastavení <xref:System.Windows.Forms.PropertyGrid> zobrazuje všechny vlastnosti `My.Settings` objektu. Vlastnosti uživatelského nastavení ale mají <xref:System.Configuration.UserScopedSettingAttribute> atribut. Tento příklad nastaví <xref:System.Windows.Forms.PropertyGrid.BrowsableAttributes%2A> vlastnost na hodnotu <xref:System.Windows.Forms.PropertyGrid> , <xref:System.Configuration.UserScopedSettingAttribute> aby zobrazovala pouze vlastnosti uživatelského nastavení.  
   
-### <a name="to-add-a-user-setting-property-grid"></a>Přidání mřížky vlastností nastavení uživatele  
+### <a name="to-add-a-user-setting-property-grid"></a>Přidání mřížky vlastností uživatelského nastavení  
   
-1. Přidejte **propertygrid** ovládací prvek z **panelu nástrojů** na návrhovou `Form1`plochu pro vaši aplikaci, předpokládá se zde .  
+1. Přidejte ovládací prvek **PropertyGrid** ze **sady nástrojů** na návrhovou plochu pro vaši aplikaci, která je `Form1`považována za.  
   
-     Výchozí název ovládacího prvku mřížky vlastností je `PropertyGrid1`.  
+     Výchozím názvem ovládacího prvku mřížky vlastností je `PropertyGrid1`.  
   
-2. Poklepáním na návrhovou plochu otevřete `Form1` kód pro obslužnou rutinu události načtení formuláře.  
+2. Dvojitým kliknutím na návrhovou plochu `Form1` pro otevřete kód pro obslužnou rutinu události načtení formuláře.  
   
 3. Nastavte `My.Settings` objekt jako vybraný objekt pro mřížku vlastností.  
   
@@ -45,11 +45,11 @@ Mřížku vlastností pro uživatelská nastavení můžete <xref:System.Windows
      [!code-vb[VbVbalrMyResources#12](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyResources/VB/Form1.vb#12)]  
   
     > [!NOTE]
-    > Chcete-li zobrazit pouze nastavení oboru <xref:System.Configuration.ApplicationScopedSettingAttribute> aplikace, <xref:System.Configuration.UserScopedSettingAttribute>použijte atribut namísto .  
+    > Chcete-li zobrazit pouze nastavení rozsahu aplikace, použijte <xref:System.Configuration.ApplicationScopedSettingAttribute> atribut namísto. <xref:System.Configuration.UserScopedSettingAttribute>  
   
 ## <a name="robust-programming"></a>Robustní programování  
 
- Aplikace uloží uživatelská nastavení při vypnutí aplikace. Chcete-li nastavení uložit `My.Settings.Save` okamžitě, zavolejte metodu. Další informace naleznete v [tématu How to: Persist User Settings in Visual Basic](../../../../visual-basic/developing-apps/programming/app-settings/how-to-persist-user-settings.md).  
+ Aplikace uloží nastavení uživatele, když se aplikace vypíná. Chcete-li nastavení uložit hned, zavolejte `My.Settings.Save` metodu. Další informace najdete v tématu [Postup: zachování uživatelských nastavení v Visual Basic](../../../../visual-basic/developing-apps/programming/app-settings/how-to-persist-user-settings.md).  
   
 ## <a name="see-also"></a>Viz také
 

@@ -16,7 +16,7 @@ ms.locfileid: "74348578"
 ---
 # <a name="-refonly-visual-basic"></a>-Nepoužívejte refout (Visual Basic)
 
-Možnost **-nepoužívejte refout** označuje, že primární výstup kompilace by měl být referenční sestavení namísto sestavení implementace. Parametr `-refonly` tiše zakáže soubory pdbí výstupu, protože referenční sestavení nelze spustit.
+Možnost **-nepoužívejte refout** označuje, že primární výstup kompilace by měl být referenční sestavení namísto sestavení implementace. `-refonly` Parametr tiše zakáže soubory PDB na výstupu, protože referenční sestavení nelze spustit.
 
 [!INCLUDE[compiler-options](~/includes/compiler-options.md)]
 
@@ -28,13 +28,13 @@ Možnost **-nepoužívejte refout** označuje, že primární výstup kompilace 
 
 ## <a name="remarks"></a>Poznámky
 
-Visual Basic podporuje přepínač `-refonly` počínaje verzí 15,3.
+Visual Basic podporuje `-refonly` přepínač počínaje verzí 15,3.
 
 Referenční sestavení jsou speciálním typem sestavení, který obsahuje pouze minimální velikost metadat, která je vyžadována pro reprezentaci veřejného povrchu rozhraní API knihovny. Zahrnují deklarace pro všechny členy, které jsou významné při odkazování na sestavení v nástrojích sestavení, ale vyloučí všechny implementace členů a deklarace privátních členů, které nemají žádný pozor na jejich kontrakty rozhraní API. Další informace najdete v tématu [referenční sestavení](../../../standard/assembly/reference-assemblies.md) v příručce .NET.
 
 Možnosti `-refonly` a [`-refout`](refout-compiler-option.md) se vzájemně vylučují.
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [-refout](refout-compiler-option.md)
 - [Visual Basic Kompilátor příkazového řádku](index.md)

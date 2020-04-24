@@ -23,9 +23,9 @@ Tato lokalita obsahuje [specifikaci Visual Basic 11](../../../../_vblang/spec/in
 
 V úložišti [dotnet/vblang](https://github.com/dotnet/vblang/issues) by se měly vytvořit problémy se specifikací. Nebo pokud vás zajímá, že se mají opravit všechny zjištěné chyby, můžete odeslat [žádost](https://github.com/dotnet/vblang/pulls) o přijetí změn do stejného úložiště.
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Referenční příručka jazyka Visual Basic](../../../visual-basic/language-reference/index.md)
+- [Reference jazyka Visual Basic](../../../visual-basic/language-reference/index.md)
 
 >[!div class="step-by-step"]
->[Next](../../../../_vblang/spec/introduction.md)
+>[Další](../../../../_vblang/spec/introduction.md)

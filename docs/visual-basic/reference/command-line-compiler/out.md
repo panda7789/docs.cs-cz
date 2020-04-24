@@ -24,14 +24,14 @@ Určuje název výstupního souboru.
   
 ## <a name="arguments"></a>Argumenty  
   
-|Termín|Definice|  
+|Označení|Definice|  
 |---|---|  
-|`filename`|Požadováno. Název výstupního souboru, který kompilátor vytvoří. Pokud název souboru obsahuje mezeru, uzavřete název do uvozovek ("").|  
+|`filename`|Povinná hodnota. Název výstupního souboru, který kompilátor vytvoří. Pokud název souboru obsahuje mezeru, uzavřete název do uvozovek ("").|  
   
 ## <a name="remarks"></a>Poznámky  
- Zadejte úplný název a příponu souboru, který se má vytvořit. Pokud to neuděláte, soubor. exe převezme svůj název ze souboru zdrojového kódu, který obsahuje `Sub Main` postup, a soubor. dll převezme svůj název z prvního souboru zdrojového kódu.  
+ Zadejte úplný název a příponu souboru, který se má vytvořit. Pokud to neuděláte, soubor. exe převezme svůj název ze souboru zdrojového kódu, který obsahuje `Sub Main` proceduru, a soubor. dll převezme svůj název z prvního souboru zdrojového kódu.  
   
- Pokud zadáte název souboru bez přípony. exe nebo. dll, kompilátor pro vás automaticky přidá rozšíření v závislosti na hodnotě zadané pro možnost kompilátoru `-target`.  
+ Pokud zadáte název souboru bez přípony. exe nebo. dll, kompilátor pro vás automaticky přidá rozšíření v závislosti na hodnotě zadané pro možnost `-target` kompilátoru.  
   
 |Nastavení v integrovaném vývojovém prostředí sady Visual Studio|  
 |---|  
@@ -44,7 +44,7 @@ Určuje název výstupního souboru.
 vbc t2.vb -out:t3.exe  
 ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Visual Basic Kompilátor příkazového řádku](../../../visual-basic/reference/command-line-compiler/index.md)
 - [-Target (Visual Basic)](../../../visual-basic/reference/command-line-compiler/target.md)

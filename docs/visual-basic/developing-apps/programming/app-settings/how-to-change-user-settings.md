@@ -16,12 +16,12 @@ ms.locfileid: "74329619"
 ---
 # <a name="how-to-change-user-settings-in-visual-basic"></a>Postupy: Změna uživatelského nastavení v jazyce Visual Basic
 
-Nastavení uživatele můžete změnit přiřazením nové hodnoty vlastnosti nastavení `My.Settings` objektu.  
+Nastavení uživatele můžete změnit přiřazením nové hodnoty k vlastnosti nastavení `My.Settings` objektu.  
   
- Objekt `My.Settings` zveřejňuje každé nastavení jako vlastnost. Název vlastnosti je stejný jako název nastavení a typ vlastnosti je stejný jako typ nastavení. **Obor** nastavení určuje, zda je vlastnost jen pro čtení: Vlastnost pro nastavení **Application**-scope je jen pro čtení, zatímco vlastnost pro nastavení **User**-scope je čtení a zápis. Další informace naleznete v tématu [My.Settings Object](../../../../visual-basic/language-reference/objects/my-settings-object.md).  
+ `My.Settings` Objekt zpřístupňuje každé nastavení jako vlastnost. Název vlastnosti je stejný jako název nastavení a typ vlastnosti je stejný jako typ nastavení. **Rozsah** nastavení určuje, zda je vlastnost určena pouze pro čtení: vlastnost pro nastavení rozsahu **aplikace**je jen pro čtení a vlastnost pro nastavení oboru **uživatele**je určena pro čtení i zápis. Další informace najdete v tématu [objekt My. Settings](../../../../visual-basic/language-reference/objects/my-settings-object.md).  
   
 > [!NOTE]
-> Přestože můžete změnit a uložit hodnoty nastavení uživatelského oboru za běhu, nastavení oboru aplikace jsou jen pro čtení a nelze je programově změnit. Nastavení oboru aplikace můžete změnit při vytváření aplikace pomocí **Návrháře projektu** nebo úpravou konfiguračního souboru aplikace. Další informace naleznete v [tématu Správa nastavení aplikací (.NET)](/visualstudio/ide/managing-application-settings-dotnet).  
+> I když můžete změnit a uložit hodnoty nastavení rozsahu uživatele v době běhu, nastavení rozsahu aplikace jsou jen pro čtení a nelze je změnit programově. Můžete změnit nastavení rozsahu aplikace při vytváření aplikace pomocí **Návrháře projektu** nebo úpravou konfiguračního souboru aplikace. Další informace najdete v tématu [Správa nastavení aplikace (.NET)](/visualstudio/ide/managing-application-settings-dotnet).  
   
 ## <a name="example"></a>Příklad  
 
@@ -29,9 +29,9 @@ Nastavení uživatele můžete změnit přiřazením nové hodnoty vlastnosti na
   
  [!code-vb[VbVbalrMyResources#7](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyResources/VB/Form1.vb#7)]  
   
- Aby tento příklad fungoval, musí `Nickname` mít aplikace uživatelské `String`nastavení typu .  
+ Aby tento příklad fungoval, musí mít vaše aplikace `Nickname` uživatelské nastavení typu. `String`  
   
- Aplikace uloží uživatelská nastavení při vypnutí aplikace. Chcete-li nastavení uložit `My.Settings.Save` okamžitě, zavolejte metodu. Další informace naleznete v [tématu How to: Persist User Settings in Visual Basic](../../../../visual-basic/developing-apps/programming/app-settings/how-to-persist-user-settings.md).  
+ Aplikace uloží nastavení uživatele, když se aplikace vypíná. Chcete-li nastavení uložit hned, zavolejte `My.Settings.Save` metodu. Další informace najdete v tématu [Postup: zachování uživatelských nastavení v Visual Basic](../../../../visual-basic/developing-apps/programming/app-settings/how-to-persist-user-settings.md).  
   
 ## <a name="see-also"></a>Viz také
 

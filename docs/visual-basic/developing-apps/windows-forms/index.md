@@ -14,11 +14,11 @@ ms.locfileid: "74349154"
 ---
 # <a name="windows-forms-application-basics-visual-basic"></a>Základy formulářové aplikace Windows (Visual Basic)
 
-Důležitou součástí Visual Basic je schopnost vytvářet model Windows Forms aplikace, které se spouštějí místně na počítačích uživatelů. Pomocí sady Visual Studio můžete vytvořit aplikaci a uživatelské rozhraní pomocí model Windows Forms. Model Windows Forms aplikace je postavená na třídách z oboru názvů <xref:System.Windows.Forms>.
+Důležitou součástí Visual Basic je schopnost vytvářet model Windows Forms aplikace, které se spouštějí místně na počítačích uživatelů. Pomocí sady Visual Studio můžete vytvořit aplikaci a uživatelské rozhraní pomocí model Windows Forms. Model Windows Forms aplikace je postavená na třídách z <xref:System.Windows.Forms> oboru názvů.
 
 ## <a name="designing-windows-forms-applications"></a>Navrhování model Windows Formsch aplikací
 
-Pomocí sady Visual Studio můžete vytvářet aplikace model Windows Forms a služby pro Windows. Další informace naleznete v následujících tématech:
+Pomocí sady Visual Studio můžete vytvářet aplikace model Windows Forms a služby pro Windows. Další informace najdete v následujících tématech:
 
 - [Začínáme s model Windows Forms](../../../framework/winforms/getting-started-with-windows-forms.md). Poskytuje informace o tom, jak vytvořit a programovat model Windows Forms.
 
@@ -40,9 +40,9 @@ Když uživatel provede nějaký formulář nebo některý z jeho ovládacích p
 
 Model Windows Forms obsahuje různé ovládací prvky, které lze umístit do formulářů: ovládací prvky, které zobrazují textová pole, tlačítka, rozevírací seznamy, přepínače a dokonce i webové stránky. Seznam všech ovládacích prvků, které lze použít na formuláři, naleznete v tématu [ovládací prvky pro použití v model Windows Forms](../../../framework/winforms/controls/controls-to-use-on-windows-forms.md). Pokud existující ovládací prvek nevyhovuje vašim potřebám, model Windows Forms také podporuje vytváření vlastních ovládacích prvků pomocí <xref:System.Windows.Forms.UserControl> třídy.
 
-Model Windows Forms má bohatě řízené ovládací prvky uživatelského rozhraní, které emuluje funkce v špičkových aplikacích, jako je systém Microsoft Office. Pomocí ovládacího prvku <xref:System.Windows.Forms.ToolStrip> a <xref:System.Windows.Forms.MenuStrip> můžete vytvořit panely nástrojů a nabídky, které obsahují text a obrázky, zobrazit podnabídky a hostovat další ovládací prvky, jako jsou textová pole a pole se seznamem.
+Model Windows Forms má bohatě řízené ovládací prvky uživatelského rozhraní, které emuluje funkce v špičkových aplikacích, jako je systém Microsoft Office. Pomocí ovládacího <xref:System.Windows.Forms.ToolStrip> prvku <xref:System.Windows.Forms.MenuStrip> a můžete vytvořit panely nástrojů a nabídky, které obsahují text a obrázky, zobrazit podnabídky a hostovat další ovládací prvky, jako jsou textová pole a pole se seznamem.
 
-Pomocí Návrháře formulářů přetahování sady Visual Studio můžete snadno vytvářet model Windows Forms aplikace: stačí vybrat ovládací prvky s kurzorem a umístit je tam, kde chcete na formuláři. Návrhář poskytuje nástroje, jako jsou čáry mřížky a "přichycení čáry", aby bylo možné z zarovnání ovládacích prvků zabrat jakékoli potíže. A bez ohledu na to, zda používáte aplikaci Visual Studio nebo zkompilovat na příkazovém řádku, můžete použít ovládací prvky <xref:System.Windows.Forms.FlowLayoutPanel>, <xref:System.Windows.Forms.TableLayoutPanel> a <xref:System.Windows.Forms.SplitContainer> k vytváření pokročilých rozložení formulářů s minimálním časem a úsilím.
+Pomocí Návrháře formulářů přetahování sady Visual Studio můžete snadno vytvářet model Windows Forms aplikace: stačí vybrat ovládací prvky s kurzorem a umístit je tam, kde chcete na formuláři. Návrhář poskytuje nástroje, jako jsou čáry mřížky a "přichycení čáry", aby bylo možné z zarovnání ovládacích prvků zabrat jakékoli potíže. A bez ohledu na to, zda používáte aplikaci Visual Studio nebo zkompilovat na příkazovém řádku, <xref:System.Windows.Forms.FlowLayoutPanel>můžete <xref:System.Windows.Forms.TableLayoutPanel> použít <xref:System.Windows.Forms.SplitContainer> ovládací prvky a a vytvořit tak rozšířená rozložení formulářů s minimálním časem a úsilím.
 
 ### <a name="custom-ui-elements"></a>Vlastní prvky uživatelského rozhraní
 
@@ -50,18 +50,18 @@ Nakonec, pokud je nutné vytvořit vlastní prvky uživatelského rozhraní, <xr
 
 Podrobné informace o používání těchto funkcí najdete v následujících tématech nápovědy.
 
-|Pro|Další informace naleznete v tématu|
+|Akce|Seznamte se s |
 |--------|---------|
 |Vytvoření nové aplikace model Windows Forms pomocí sady Visual Studio|[Kurz 1: vytvoření prohlížeče obrázků](/visualstudio/ide/tutorial-1-create-a-picture-viewer)|
-|Použití ovládacích prvků ve formulářích|[Postupy: Přidávání ovládacích prvků do Windows Forms](../../../framework/winforms/controls/how-to-add-controls-to-windows-forms.md)|
-|Vytváření grafik pomocí <xref:System.Drawing>|[Začínáme s programováním grafiky](../../../framework/winforms/advanced/getting-started-with-graphics-programming.md)|
+|Použití ovládacích prvků ve formulářích|[Postupy: Přidávání ovládacích prvků do formulářů Windows](../../../framework/winforms/controls/how-to-add-controls-to-windows-forms.md)|
+|Vytváření grafiky pomocí<xref:System.Drawing>|[Začínáme s programováním grafiky](../../../framework/winforms/advanced/getting-started-with-graphics-programming.md)|
 |Vytváření vlastních ovládacích prvků|[Postupy: Dědění ze třídy UserControl](../../../framework/winforms/controls/how-to-inherit-from-the-usercontrol-class.md)|
 
 ## <a name="displaying-and-manipulating-data"></a>Zobrazení dat a manipulace s nimi
 
-Mnoho aplikací musí zobrazovat data z databáze, souboru XML, webové služby XML nebo jiného zdroje dat. Model Windows Forms poskytuje flexibilní ovládací prvek, který se nazývá <xref:System.Windows.Forms.DataGridView> ovládací prvek pro vykreslování takových tabulkových dat v tradičním formátu řádku a sloupce, aby každá část dat zabírala svoji vlastní buňku. Pomocí <xref:System.Windows.Forms.DataGridView> můžete přizpůsobit vzhled jednotlivých buněk, zamknout libovolné řádky a sloupce a zobrazovat komplexní ovládací prvky uvnitř buněk, mimo jiné funkce.
+Mnoho aplikací musí zobrazovat data z databáze, souboru XML, webové služby XML nebo jiného zdroje dat. Model Windows Forms poskytuje flexibilní ovládací prvek, který <xref:System.Windows.Forms.DataGridView> se nazývá ovládací prvek pro vykreslování takových tabulkových dat v tradičním formátu řádku a sloupce, aby každá část dat zabírala svoji vlastní buňku. Pomocí <xref:System.Windows.Forms.DataGridView> můžete přizpůsobit vzhled jednotlivých buněk, zamknout libovolné řádky a sloupce na místě a zobrazovat komplexní ovládací prvky uvnitř buněk mimo jiné funkce.
 
-Připojení ke zdrojům dat přes síť je jednoduchý úkol s model Windows Forms inteligentními klienty. Součást <xref:System.Windows.Forms.BindingSource>, novinka s model Windows Forms v aplikaci Visual Studio 2005 a .NET Framework 2,0, představuje připojení ke zdroji dat a zpřístupňuje metody pro svázání dat s ovládacími prvky, přechod na předchozí a další záznamy, úpravy záznamů a uložení změn zpět do původního zdroje. Ovládací prvek <xref:System.Windows.Forms.BindingNavigator> poskytuje jednoduché rozhraní pro <xref:System.Windows.Forms.BindingSource> komponentu, aby uživatelé mohli procházet záznamy.
+Připojení ke zdrojům dat přes síť je jednoduchý úkol s model Windows Forms inteligentními klienty. <xref:System.Windows.Forms.BindingSource> Součást, novinka s model Windows Forms v aplikaci Visual Studio 2005 a .NET Framework 2,0 představuje připojení ke zdroji dat a zpřístupňuje metody pro svázání dat s ovládacími prvky, přechod na předchozí a další záznamy, úpravy záznamů a uložení změn zpět do původního zdroje. <xref:System.Windows.Forms.BindingNavigator> Ovládací prvek poskytuje jednoduché rozhraní nad <xref:System.Windows.Forms.BindingSource> komponentou pro uživatele, kteří chtějí procházet záznamy.
 
 ### <a name="data-bound-controls"></a>Ovládací prvky vázané na data
 
@@ -73,9 +73,9 @@ Další typ datové vazby, který můžete spravovat v model Windows Forms, je n
 
 Podrobné informace o používání těchto funkcí najdete v následujících tématech nápovědy.
 
-|Pro|Další informace naleznete v tématu|
+|Akce|Seznamte se s |
 |--------|---------|
-|Použití komponenty <xref:System.Windows.Forms.BindingSource>|[Postupy: Vytvoření vazby ovládacích prvků Windows Forms ke komponentě BindingSource pomocí Návrháře](../../../framework/winforms/controls/bind-wf-controls-with-the-bindingsource.md)|
+|Použití <xref:System.Windows.Forms.BindingSource> komponenty|[Postupy: Vytvoření vazby ovládacích prvků Windows Forms ke komponentě BindingSource pomocí Návrháře](../../../framework/winforms/controls/bind-wf-controls-with-the-bindingsource.md)|
 |Práce s ADO.NETmi zdroji dat|[Postupy: Řazení a filtrování dat ADO.NET pomocí komponenty Windows Forms BindingSource](../../../framework/winforms/controls/sort-and-filter-ado-net-data-with-wf-bindingsource-component.md)|
 |Použití okna zdroje dat|[Návod: zobrazení dat ve formuláři Windows](/visualstudio/data-tools/accessing-data-in-visual-studio)|
 
@@ -89,7 +89,7 @@ Při aktualizaci aplikace publikujete nový manifest nasazení a novou kopii va�
 
 Úplný Úvod do technologie ClickOnce naleznete v tématu [zabezpečení a nasazení ClickOnce](/visualstudio/deployment/clickonce-security-and-deployment). Podrobné informace o používání těchto funkcí najdete v následujících tématech nápovědy:
 
-|Pro|Další informace naleznete v tématu|
+|Akce|Seznamte se s |
 |--------|---------|
 |Nasazení aplikace pomocí technologie ClickOnce|[Postupy: Publikování aplikace ClickOnce pomocí průvodce publikováním](/visualstudio/deployment/how-to-publish-a-clickonce-application-using-the-publish-wizard)<br /><br /> [Návod: Ruční nasazení aplikace ClickOnce](/visualstudio/deployment/walkthrough-manually-deploying-a-clickonce-application)|
 |Aktualizace ClickOnce nasazení|[Postupy: Správa aktualizací pro aplikaci ClickOnce](/visualstudio/deployment/how-to-manage-updates-for-a-clickonce-application)|
@@ -101,13 +101,13 @@ V model Windows Forms existuje mnoho dalších funkcí, které umožňují rychl
 
 Podrobné informace o používání těchto funkcí najdete v následujících tématech nápovědy:
 
-|Pro|Další informace naleznete v tématu|
+|Akce|Seznamte se s |
 |--------|---------|
 |Tisk obsahu formuláře|[Postupy: Tisk grafiky v modelu Windows Forms](../../../framework/winforms/advanced/how-to-print-graphics-in-windows-forms.md)<br /><br /> [Postupy: Tisk vícestránkového textového souboru v modelu Windows Forms](../../../framework/winforms/advanced/how-to-print-a-multi-page-text-file-in-windows-forms.md)|
 |Další informace o model Windows Forms zabezpečení|[Přehled zabezpečení ve Windows Forms](../../../framework/winforms/security-in-windows-forms-overview.md)|
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase>
 - [Přehled produktu Windows Forms](../../../framework/winforms/windows-forms-overview.md)
-- [Objekt My.Forms](../../../visual-basic/language-reference/objects/my-forms-object.md)
+- [My.Forms – objekt](../../../visual-basic/language-reference/objects/my-forms-object.md)

@@ -1,5 +1,5 @@
 ---
-title: 'Postup: čtení z textu s pevnou šířkou Soubory'
+title: 'Postupy: čtení z textových souborů s pevnou šířkou'
 ms.date: 07/20/2015
 helpviewer_keywords:
 - fixed-width text file
@@ -15,33 +15,33 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 03/15/2020
 ms.locfileid: "74334628"
 ---
-# <a name="how-to-read-from-fixed-width-text-files-in-visual-basic"></a>Postup: čtení z textových souborů s pevnou šířkou v jazyce Visual Basic
+# <a name="how-to-read-from-fixed-width-text-files-in-visual-basic"></a>Postupy: čtení z textových souborů s pevnou šířkou v Visual Basic
 
-Objekt `TextFieldParser` poskytuje způsob, jak snadno a efektivně analyzovat strukturované textové soubory, jako jsou například protokoly.  
+`TextFieldParser` Objekt poskytuje způsob, jak snadno a efektivně analyzovat strukturované textové soubory, jako jsou protokoly.  
   
- Vlastnost `TextFieldType` definuje, zda je analyzovaný soubor soubor s oddělovačem nebo soubor, který má pole s pevnou šířkou textu. V textovém souboru s pevnou šířkou může mít pole na konci proměnnou šířku. Chcete-li určit, že pole na konci má proměnnou šířku, definujte ji tak, aby měla šířku menší nebo rovnou nule.  
+ `TextFieldType` Vlastnost definuje, zda je analyzovaný soubor soubor s oddělovači nebo který má pole s pevnou šířkou textu. V textovém souboru s pevnou šířkou může mít pole na konci proměnlivou šířku. Chcete-li určit, že pole na konci má proměnnou Width, definujte ji tak, aby měla šířku menší nebo rovna nule.  
   
-### <a name="to-parse-a-fixed-width-text-file"></a>Analýza textového souboru s pevnou šířkou  
+### <a name="to-parse-a-fixed-width-text-file"></a>Chcete-li analyzovat textový soubor s pevnou šířkou  
   
-1. Vytvořte `TextFieldParser`nový . Následující kód vytvoří `TextFieldParser` `Reader` pojmenovaný a `test.log`otevře soubor .  
+1. Vytvořte nový `TextFieldParser`. Následující kód vytvoří `TextFieldParser` pojmenované `Reader` a otevře soubor. `test.log`  
   
      [!code-vb[VbFileIORead#9](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbFileIORead/VB/Class1.vb#9)]  
   
-2. Definujte `TextFieldType` vlastnost `FixedWidth`jako , definování šířky a formátu. Následující kód definuje sloupce textu; první je 5 znaků široký, druhý 10, třetí 11 a čtvrtý má proměnnou šířku.  
+2. Definujte `TextFieldType` vlastnost jako `FixedWidth`a definujte šířku a formát. Následující kód definuje sloupce textu; první je 5 znaků široké, druhý 10, třetí 11 a čtvrtá je proměnná Width.  
   
      [!code-vb[VbFileIORead#10](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbFileIORead/VB/Class1.vb#10)]  
   
-3. Smyčka procházet pole v souboru. Pokud jsou některé řádky poškozeny, oznamte chybu a pokračujte v provádění analýzy.  
+3. Projděte pole v souboru. Pokud jsou některé řádky poškozené, nahlaste chybu a pokračujte v analýze.  
   
      [!code-vb[VbFileIORead#11](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbFileIORead/VB/Class1.vb#11)]  
   
-4. Zavřete `While` `Using` bloky `End While` a `End Using`s a .  
+4. Zavřete bloky `While` a `Using` v nástroji `End While` a `End Using`.  
   
      [!code-vb[VbFileIORead#12](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbFileIORead/VB/Class1.vb#12)]  
   
 ## <a name="example"></a>Příklad  
 
- Tento příklad čte `test.log`ze souboru .  
+ Tento příklad čte ze souboru `test.log`.  
   
  [!code-vb[VbFileIORead#13](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbFileIORead/VB/Class1.vb#13)]  
   
@@ -49,15 +49,15 @@ Objekt `TextFieldParser` poskytuje způsob, jak snadno a efektivně analyzovat s
 
  Následující podmínky mohou způsobit výjimku:  
   
-- Řádek nelze analyzovat pomocí zadaného formátu<xref:Microsoft.VisualBasic.FileIO.MalformedLineException>( ). Zpráva o výjimce určuje řádek způsobující <xref:Microsoft.VisualBasic.FileIO.TextFieldParser.ErrorLine%2A> výjimku, zatímco vlastnost je přiřazena k textu obsaženému v řádku.  
+- Řádek nelze analyzovat pomocí zadaného formátu (<xref:Microsoft.VisualBasic.FileIO.MalformedLineException>). Zpráva o výjimce Určuje řádek, který způsobil výjimku, zatímco <xref:Microsoft.VisualBasic.FileIO.TextFieldParser.ErrorLine%2A> vlastnost je přiřazena k textu obsaženému na řádku.  
   
-- Zadaný soubor neexistuje<xref:System.IO.FileNotFoundException>( ).  
+- Zadaný soubor neexistuje (<xref:System.IO.FileNotFoundException>).  
   
-- Situace částečné důvěryhodnosti, ve které uživatel nemá dostatečná oprávnění pro přístup k souboru. (<xref:System.Security.SecurityException>).  
+- Částečně důvěryhodná situace, kdy uživatel nemá dostatečná oprávnění pro přístup k souboru. (<xref:System.Security.SecurityException>).  
   
-- Cesta je příliš<xref:System.IO.PathTooLongException>dlouhá ( ).  
+- Cesta je příliš dlouhá (<xref:System.IO.PathTooLongException>).  
   
-- Uživatel nemá dostatečná oprávnění pro přístup<xref:System.UnauthorizedAccessException>k souboru ( ).  
+- Uživatel nemá dostatečná oprávnění pro přístup k souboru (<xref:System.UnauthorizedAccessException>).  
   
 ## <a name="see-also"></a>Viz také
 

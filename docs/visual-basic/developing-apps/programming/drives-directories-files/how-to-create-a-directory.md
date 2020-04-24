@@ -14,13 +14,13 @@ ms.locfileid: "74348803"
 ---
 # <a name="how-to-create-a-directory-in-visual-basic"></a>Postupy: Vytvoření adresáře v jazyce Visual Basic
 
-Pomocí `CreateDirectory` metody objektu `My.Computer.FileSystem` vytvořte adresáře.  
+Použijte `CreateDirectory` metodu `My.Computer.FileSystem` objektu k vytvoření adresáře.  
   
  Pokud adresář již existuje, není vyvolána žádná výjimka.  
   
 ### <a name="to-create-a-directory"></a>Vytvoření adresáře  
   
-- Metodu `CreateDirectory` použijte zadáním úplné cesty k umístění, kde by měl být adresář vytvořen. Tento příklad vytvoří `NewDirectory` `C:\Documents and Settings\All Users\Documents`adresář v .  
+- Použijte `CreateDirectory` metodu zadáním úplné cesty k umístění, kde má být adresář vytvořen. Tento příklad vytvoří adresář `NewDirectory` v. `C:\Documents and Settings\All Users\Documents`  
   
      [!code-vb[VbVbcnMyFileSystem#2](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnMyFileSystem/VB/Class1.vb#2)]  
   
@@ -28,19 +28,19 @@ Pomocí `CreateDirectory` metody objektu `My.Computer.FileSystem` vytvořte adre
 
  Následující podmínky mohou způsobit výjimku:  
   
-- Název adresáře je poškozen. Obsahuje například neplatné znaky nebo je<xref:System.ArgumentException>pouze prázdné znaky ( ).  
+- Název adresáře je poškozený. Například obsahuje neplatné znaky nebo je pouze mezera (<xref:System.ArgumentException>).  
   
-- Nadřazený adresář adresáře, který<xref:System.IO.IOException>má být vytvořen, je jen pro čtení ( .  
+- Nadřazený adresář adresáře, který se má vytvořit, je jen pro čtení (<xref:System.IO.IOException>).  
   
-- Název adresáře `Nothing` <xref:System.ArgumentNullException>je ( ).  
+- Název adresáře je `Nothing` (<xref:System.ArgumentNullException>).  
   
-- Název adresáře je<xref:System.IO.PathTooLongException>příliš dlouhý ( ).  
+- Název adresáře je příliš dlouhý (<xref:System.IO.PathTooLongException>).  
   
 - Název adresáře je dvojtečka ":" (<xref:System.NotSupportedException>).  
   
 - Uživatel nemá oprávnění k vytvoření adresáře (<xref:System.UnauthorizedAccessException>).  
   
-- Uživatel nemá oprávnění v situaci částečné<xref:System.Security.SecurityException>důvěryhodnosti ( ).  
+- Uživatel nemá oprávnění v situaci s částečným vztahem důvěryhodnosti (<xref:System.Security.SecurityException>).  
   
 ## <a name="see-also"></a>Viz také
 

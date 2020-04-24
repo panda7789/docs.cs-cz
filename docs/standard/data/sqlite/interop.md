@@ -13,11 +13,11 @@ ms.locfileid: "75447235"
 
 Microsoft. data. sqlite používá SQLitePCLRaw k interakci s nativní knihovnou SQLite. SQLitePCLRaw poskytuje dynamicky rozhraní .NET API přes nativní rozhraní API pro SQLite. SqliteConnection a SqliteDataReader poskytují přístup k podkladovým objektům SQLitePCLRaw, které vám umožní volat tato rozhraní API přímo.
 
-Následující příklad ukazuje, jak volat `sqlite3_trace` k zápisu provedených příkazů SQL do konzoly:
+Následující příklad ukazuje, jak zavolat `sqlite3_trace` k zápisu provedených příkazů SQL do konzoly:
 
 [!code-csharp[](../../../../samples/snippets/standard/data/sqlite/InteropSample/Program.cs?name=snippet_Trace)]
 
-A následující příklad ukazuje volání `sqlite3_stmt_status` k zobrazení, kolik kroků virtuálního počítače v rámci SQLite je příkaz SQL zkompilován:
+A následující příklad ukazuje volání `sqlite3_stmt_status` pro zjištění, kolik kroků virtuálního počítače SQLite je ZKOMPILOVÁN příkaz SQL:
 
 [!code-csharp[](../../../../samples/snippets/standard/data/sqlite/InteropSample/Program.cs?name=snippet_StatementStatus)]
 

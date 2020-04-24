@@ -19,11 +19,11 @@ Definice typu dokumentu (DTD) komplikuje podporu oboru názvů. Například nás
   
  Níže jsou uvedena možná řešení, pokud je tato konstrukce povolená:  
   
-- `x:` se považuje za předponu oboru názvů, ale tato předpona musí být přeložitelný pomocí `xmlns:x` deklarace oboru názvů, která musí existovat také někde v DTD. Namapování této předpony na jinou hodnotu v dokumentu instance je chyba.  
+- `x:` Je považován za předponu oboru názvů, ale tuto předponu je nutné přeložit pomocí deklarace `xmlns:x` oboru názvů, která musí také existovat někde v DTD. Namapování této předpony na jinou hodnotu v dokumentu instance je chyba.  
   
-- `x:` se považuje za předponu oboru názvů, ale tato předpona je vždy vyřešena v kontextu prvků instance. To znamená, že předpona může být ve skutečnosti namapována na různé obory názvů identifikátorů URI (Uniform Resource Identifier), v závislosti na oboru názvů, ve kterém se zobrazí prvek `item`. Toto chování je více předvídatelné než řešení uvedené v předchozí odrážce, ale má jiné složité důsledky, protože vyžaduje, aby byly výchozí atributy vyhodnoceny.  
+- `x:` Je považován za předponu oboru názvů, ale tato předpona je vždy vyřešena v kontextu prvků instance. To znamená, že předpona může být ve skutečnosti namapována na různé obory názvů identifikátorů URI (Uniform Resource Identifier) `item` , v závislosti na oboru názvů, ve kterém se prvek zobrazí. Toto chování je více předvídatelné než řešení uvedené v předchozí odrážce, ale má jiné složité důsledky, protože vyžaduje, aby byly výchozí atributy vyhodnoceny.  
   
-- Dvojtečka je ignorována, protože je v definici DTD a název atributu je `x:y`, žádná předpona a žádný identifikátor URI oboru názvů.  
+- Dvojtečka se ignoruje, protože je v definici DTD a název atributu je `x:y`, bez předpony a ŽÁDNÉho identifikátoru URI oboru názvů.  
   
 - Dvojtečka ve výchozím atributu vyvolá výjimku, která říká, že dvojtečky v názvech uvnitř DTD nejsou podporovány. Výsledkem je předvídatelné chování, ale znamená, že nemůžete načíst mnoho publikovaných definic DTD konsorcium World Wide Web (W3C).  
   
@@ -31,6 +31,6 @@ Definice typu dokumentu (DTD) komplikuje podporu oboru názvů. Například nás
   
  XML v Microsoft .NET Framework implementuje druhou možnost maximální kompatibility W3C.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Model DOM (Document Object Model) dokumentu XML](../../../../docs/standard/data/xml/xml-document-object-model-dom.md)
+- [model DOM (Document Object Model) dokumentu XML](../../../../docs/standard/data/xml/xml-document-object-model-dom.md)

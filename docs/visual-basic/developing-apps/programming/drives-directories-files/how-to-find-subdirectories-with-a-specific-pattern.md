@@ -14,13 +14,13 @@ ms.locfileid: "74348771"
 ---
 # <a name="how-to-find-subdirectories-with-a-specific-pattern-in-visual-basic"></a>Postupy: Hledání podadresářů pomocí specifického vzoru v jazyce Visual Basic
 
-Metoda <xref:Microsoft.VisualBasic.FileIO.FileSystem.GetDirectories%2A> vrátí kolekci řetězců jen pro čtení představující názvy cest pro podadresáře v adresáři. `wildCards` Parametr můžete použít k určení určitého vzoru. Pokud chcete do hledání zahrnout obsah podadresářů, nastavte `searchType` parametr `SearchOption.SearchAllSubDirectories`na .
+<xref:Microsoft.VisualBasic.FileIO.FileSystem.GetDirectories%2A> Metoda vrátí kolekci řetězců jen pro čtení, které představují názvy cest pro podadresáře v adresáři. K určení konkrétního `wildCards` vzoru můžete použít parametr. Chcete-li do hledání zahrnout obsah podadresářů, nastavte `searchType` parametr na. `SearchOption.SearchAllSubDirectories`
 
-Prázdná kolekce je vrácena, pokud nejsou nalezeny žádné adresáře odpovídající zadanému vzoru.
+Pokud se nenajde žádné adresáře vyhovující zadanému vzoru, vrátí se prázdná kolekce.
 
 ## <a name="to-find-subdirectories-with-a-specific-pattern"></a>Vyhledání podadresářů s určitým vzorem
 
-Použijte `GetDirectories` metodu, která poskytuje název a cestu adresáře, který chcete prohledat. Následující příklad vrátí všechny adresáře ve struktuře adresářů, které obsahují slovo "Protokoly" v jejich názvu a přidá je do `ListBox1`.
+Použijte `GetDirectories` metodu, zadejte název a cestu adresáře, který chcete vyhledat. Následující příklad vrátí všechny adresáře ve struktuře adresáře, které obsahují slovo "logs" v názvu a přidá je do `ListBox1`.
 
 [!code-vb[VbVbcnFileAccess#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnFileAccess/VB/Class1.vb#1)]
 
@@ -28,23 +28,23 @@ Použijte `GetDirectories` metodu, která poskytuje název a cestu adresáře, k
 
 Následující podmínky mohou způsobit výjimku:
 
-- Cesta není platná z jednoho z následujících důvodů: jedná se o řetězec nulové délky, obsahuje pouze prázdné znaky, \\ \\\\obsahuje neplatné znaky nebo se jedná o cestu zařízení (začíná na . ) (<xref:System.ArgumentException>).
+- Cesta není platná z některého z následujících důvodů: Jedná se o řetězec o nulové délce, obsahuje pouze prázdné znaky, obsahuje neplatné znaky nebo se jedná o cestu k zařízení (začíná \\ \\na.\\) (<xref:System.ArgumentException>).
 
-- Cesta není platná, protože `Nothing` <xref:System.ArgumentNullException>je ( ).
+- Cesta není platná, protože je `Nothing` (<xref:System.ArgumentNullException>).
 
-- Jeden nebo více zadaných zástupných znaků je `Nothing`prázdný řetězec<xref:System.ArgumentNullException>nebo obsahuje pouze mezery ( ).
+- Jeden nebo více zadaných zástupných znaků je `Nothing`, prázdný řetězec nebo obsahuje pouze mezery (<xref:System.ArgumentNullException>).
 
 - `directory`neexistuje (<xref:System.IO.DirectoryNotFoundException>).
 
-- `directory`odkazuje na existující<xref:System.IO.IOException>soubor ( ).
+- `directory`odkazuje na existující soubor (<xref:System.IO.IOException>).
 
-- Cesta překračuje maximální délku definovanou<xref:System.IO.PathTooLongException>systémem ( ).
+- Cesta přesahuje maximální povolenou délku (<xref:System.IO.PathTooLongException>) definovanou systémem.
 
-- Název souboru nebo složky v cestě obsahuje dvojtečku (:) nebo je v neplatném formátu (<xref:System.NotSupportedException>).
+- Název souboru nebo složky v cestě obsahuje dvojtečku (:) nebo má neplatnou hodnotu format<xref:System.NotSupportedException>().
 
-- Uživatel nemá potřebná oprávnění k<xref:System.Security.SecurityException>zobrazení cesty ( ).
+- Uživatel nemá potřebná oprávnění k zobrazení cesty (<xref:System.Security.SecurityException>).
 
-- Uživatel nemá potřebná<xref:System.UnauthorizedAccessException>oprávnění ( ).
+- Uživatel nemá potřebná oprávnění (<xref:System.UnauthorizedAccessException>).
 
 ## <a name="see-also"></a>Viz také
 

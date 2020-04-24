@@ -15,7 +15,7 @@ Transakce umožňují seskupit více příkazů SQL do jedné pracovní jednotky
 
 ## <a name="concurrency"></a>Souběžnost
 
-V rámci SQLite může mít v databázi v okamžiku, že změny čekají na více než jednu transakci. Z tohoto důvodu volání <xref:Microsoft.Data.Sqlite.SqliteConnection.BeginTransaction%2A> a `Execute` metody na <xref:Microsoft.Data.Sqlite.SqliteCommand> mohou vyprší časový limit, pokud dokončení jiné transakce trvá příliš dlouho.
+V rámci SQLite může mít v databázi v okamžiku, že změny čekají na více než jednu transakci. Z tohoto důvodu volání <xref:Microsoft.Data.Sqlite.SqliteConnection.BeginTransaction%2A> a `Execute` metody, které mohou být <xref:Microsoft.Data.Sqlite.SqliteCommand> vyvolány v případě, že dokončení jiné transakce trvá příliš dlouho.
 
 Další informace o uzamykání, opakování a vypršení časových limitů najdete v tématu [chyby databáze](database-errors.md).
 
@@ -33,6 +33,6 @@ SQLite také podporuje **čtení nepotvrzené** při použití sdílené mezipam
 
 Microsoft. data. sqlite zpracovává IsolationLevel předaný do <xref:Microsoft.Data.Sqlite.SqliteConnection.BeginTransaction%2A> jako minimální úroveň. Skutečná úroveň izolace bude povýšena buď na hodnotu číst nepotvrzeno nebo serializovatelný.
 
-Následující kód simuluje nepřečtené čtení. Všimněte si, že připojovací řetězec musí zahrnovat `Cache=Shared`.
+Následující kód simuluje nepřečtené čtení. Všimněte si, že připojovací řetězec musí `Cache=Shared`obsahovat.
 
 [!code-csharp[](../../../../samples/snippets/standard/data/sqlite/DirtyReadSample/Program.cs?name=snippet_DirtyRead)]

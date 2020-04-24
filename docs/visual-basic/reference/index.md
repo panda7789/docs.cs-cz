@@ -1,5 +1,5 @@
 ---
-title: Odkaz
+title: Referenční informace
 ms.date: 07/20/2015
 helpviewer_keywords:
 - language reference
@@ -16,7 +16,7 @@ ms.locfileid: "74352882"
 Tato část obsahuje odkazy na referenční informace o různých aspektech Visual Basic programování.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Referenční příručka jazyka Visual Basic](../../visual-basic/language-reference/index.md)  
+ [Reference jazyka Visual Basic](../../visual-basic/language-reference/index.md)  
  Poskytuje referenční informace pro různé aspekty Visual Basicho jazyka.  
   
  [Visual Basic Kompilátor příkazového řádku](../../visual-basic/reference/command-line-compiler/index.md)  
@@ -32,7 +32,7 @@ Tato část obsahuje odkazy na referenční informace o různých aspektech Visu
  [Obecné elementy uživatelského rozhraní (Visual Studio)](/visualstudio/ide/reference/general-user-interface-elements-visual-studio)  
  Obsahuje témata pro dialogová okna a okna použitá v aplikaci Visual Studio.  
   
- [Nástroje XML v sadě Visual Studio](/visualstudio/xml-tools/xml-tools-in-visual-studio)  
+ [Nástroje XML v aplikaci Visual Studio](/visualstudio/xml-tools/xml-tools-in-visual-studio)  
  Obsahuje odkazy na témata o různých nástrojích XML dostupných v aplikaci Visual Studio.  
   
  [Reference pro automatizaci a rozšiřitelnost](/visualstudio/extensibility/extensibility-in-visual-studio?view=vs-2015)  
