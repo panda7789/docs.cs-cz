@@ -1,5 +1,5 @@
 ---
-title: 'Návod: styl obsahu WPF'
+title: 'Návod: Styl WPF obsahu'
 ms.date: 03/30/2017
 helpviewer_keywords:
 - WPF Designer [Windows Forms], styling WPF content
@@ -9,59 +9,59 @@ ms.assetid: e574aac7-7ea4-4cdb-8034-bab541f000df
 author: jillre
 ms.author: jillfra
 manager: jillfra
-ms.openlocfilehash: e52297f51c74fc3dba93c987fd5b9bd5b6801777
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: 07241d41e3fbf270a76bd241765bfa369ee265d5
+ms.sourcegitcommit: 62285ec11fa8e8424bab00511a90760c60e63c95
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76732540"
+ms.lasthandoff: 04/20/2020
+ms.locfileid: "81646334"
 ---
-# <a name="walkthrough-style-wpf-content"></a>Návod: styl obsahu WPF
+# <a name="walkthrough-style-wpf-content"></a>Návod: Styl WPF obsahu
 
-V tomto článku se dozvíte, jak použít styly pro řízení Windows Presentation Foundation (WPF) hostovaného ve formuláři Windows.
+Tento článek ukazuje, jak použít styl pro ovládací prvek WPF (Windows Presentation Foundation) hostovaný ve formuláři systému Windows.
 
-## <a name="prerequisites"></a>Předpoklady
+## <a name="prerequisites"></a>Požadavky
 
-K dokončení tohoto Názorného postupu potřebujete Visual Studio.
+K dokončení tohoto návodu potřebujete Visual Studio.
 
 ## <a name="create-the-project"></a>Vytvoření projektu
 
-Otevřete Visual Studio a vytvořte nový projekt aplikace model Windows Forms v Visual Basic nebo vizuálu C# s názvem `StylingWpfContent`.
+Otevřete Visual Studio a vytvořte nový projekt aplikace Windows `StylingWpfContent`Forms v jazyce Visual Basic nebo Visual C# s názvem .
 
 > [!NOTE]
-> Při hostování obsahu WPF jsou podporovány C# pouze projekty a Visual Basic.
+> Při hostování obsahu WPF jsou podporovány pouze projekty jazyka C# a Visual Basic.
 
-## <a name="create-the-wpf-control-types"></a>Vytvoření typů ovládacích prvků WPF
+## <a name="create-the-wpf-control-types"></a>Vytvoření typů ovládacích prvku WPF
 
-Po přidání typu ovládacího prvku WPF do projektu jej můžete hostovat v ovládacím prvku <xref:System.Windows.Forms.Integration.ElementHost>.
+Po přidání typu ovládacího prvku WPF do projektu <xref:System.Windows.Forms.Integration.ElementHost> jej můžete hostovat v ovládacím prvku.
 
-1. Přidejte do řešení nový projekt WPF <xref:System.Windows.Controls.UserControl>. Použijte výchozí název pro typ ovládacího prvku `UserControl1.xaml`. Další informace najdete v tématu [Návod: vytvoření nového obsahu WPF na model Windows Forms v době návrhu](walkthrough-creating-new-wpf-content-on-windows-forms-at-design-time.md).
+1. Přidejte do <xref:System.Windows.Controls.UserControl> řešení nový projekt WPF. Použijte výchozí název pro typ `UserControl1.xaml`ovládacího prvku . Další informace naleznete [v tématu Návod: Vytvoření nového obsahu WPF ve formulářích Windows v době návrhu](walkthrough-creating-new-wpf-content-on-windows-forms-at-design-time.md).
 
-2. V zobrazení Návrh se ujistěte, že je vybrána možnost `UserControl1`.
+2. V návrhovém zobrazení `UserControl1` zkontrolujte, zda je tato možnost vybraná.
 
-3. V okně **vlastnosti** nastavte hodnotu <xref:System.Windows.FrameworkElement.Width%2A> a vlastnosti <xref:System.Windows.FrameworkElement.Height%2A> na **200**.
+3. V okně **Vlastnosti** nastavte hodnotu <xref:System.Windows.FrameworkElement.Height%2A> vlastnosti a na <xref:System.Windows.FrameworkElement.Width%2A> **hodnotu 200**.
 
-4. Do <xref:System.Windows.Controls.UserControl> přidejte ovládací prvek <xref:System.Windows.Controls.Button?displayProperty=nameWithType> a nastavte hodnotu vlastnosti <xref:System.Windows.Controls.ContentControl.Content%2A> na **Zrušit**.
+4. Přidejte <xref:System.Windows.Controls.Button?displayProperty=nameWithType> ovládací <xref:System.Windows.Controls.UserControl> prvek a nastavte <xref:System.Windows.Controls.ContentControl.Content%2A> hodnotu vlastnosti **na Cancel**.
 
-5. Přidejte do <xref:System.Windows.Controls.UserControl> druhý ovládací prvek <xref:System.Windows.Controls.Button?displayProperty=nameWithType> a nastavte hodnotu vlastnosti <xref:System.Windows.Controls.ContentControl.Content%2A> na **OK**.
+5. Přidejte <xref:System.Windows.Controls.Button?displayProperty=nameWithType> druhý ovládací <xref:System.Windows.Controls.UserControl> prvek a nastavte <xref:System.Windows.Controls.ContentControl.Content%2A> hodnotu vlastnosti na **OK**.
 
 6. Sestavte projekt.
 
-## <a name="apply-a-style-to-a-wpf-control"></a>Použití stylu pro ovládací prvek WPF
+## <a name="apply-a-style-to-a-wpf-control"></a>Použití stylu u ovládacího prvku WPF
 
-Můžete použít různé styly pro ovládací prvek WPF a změnit jeho vzhled a chování.
+Můžete použít jiný styl ovládacího prvku WPF změnit jeho vzhled a chování.
 
-1. Otevřete `Form1` v Návrhář formulářů.
+1. Otevřete `Form1` v Návrháři formulářů systému Windows.
 
-1. Na **panelu nástrojů**dvakrát klikněte na `UserControl1`. tím se vytvoří instance `UserControl1` ve formuláři.
+1. V **panelu nástrojů**poklepejte `UserControl1` `UserControl1` na vytvoření instance ve formuláři.
 
-   Instance `UserControl1` je hostována v novém ovládacím prvku <xref:System.Windows.Forms.Integration.ElementHost> s názvem `elementHost1`.
+   Instance `UserControl1` je hostována v <xref:System.Windows.Forms.Integration.ElementHost> novém `elementHost1`ovládacím prvku s názvem .
 
-1. Na panelu inteligentních značek pro `elementHost1`v rozevíracím seznamu klikněte na **Upravit hostovaný obsah** .
+1. V panelu inteligentních značek klikněte v `elementHost1`rozevíracím seznamu na Upravit **hostovaný obsah.**
 
-   `UserControl1` se otevře v Návrháři WPF.
+   `UserControl1`otevře v Návrháři WPF.
 
-1. V zobrazení XAML vložte následující kód XAML po `<UserControl>` počáteční značku. Tento kód XAML vytvoří přechod s kontrastem ohraničení přechodu. Při kliknutí na ovládací prvek se přechody změní tak, aby se vygenerovalo tlačítko při stisknutí tlačítka. Další informace najdete v tématu [stylování a šablonování](../../../desktop-wpf/fundamentals/styles-templates-overview.md).
+1. V zobrazení XAML vložte za `<UserControl>` otevírací značku následující XAML. Tento XAML vytvoří přechod s kontrastním ohraničením přechodu. Po klepnutí na ovládací prvek se přechody změní tak, aby generovaly vzhled stisknutého tlačítka. Další informace naleznete [v tématu Styling a Templating](../../../desktop-wpf/fundamentals/styles-templates-overview.md).
 
    ```xaml
    <UserControl.Resources>
@@ -111,13 +111,13 @@ Můžete použít různé styly pro ovládací prvek WPF a změnit jeho vzhled a
    </UserControl.Resources>
    ```
 
-1. Použijte styl `SimpleButton` definovaný v předchozím kroku na tlačítko Storno vložením následujícího kódu XAML do značky `<Button>` tlačítka **Zrušit** .
+1. Použijte `SimpleButton` styl definovaný v předchozím kroku na tlačítko Storno vložením `<Button>` následujícího xaml do značky tlačítka **Storno.**
 
    ```xaml
    Style="{StaticResource SimpleButton}
    ```
 
-   Vaše deklarace tlačítka bude vypadat podobně jako v následujícím kódu XAML:
+   Deklarace tlačítka se bude podobat následujícímu xaml:
 
    ```xaml
    <Button Height="23" Margin="41,52,98,0" Name="button1" VerticalAlignment="Top"
@@ -126,13 +126,13 @@ Můžete použít různé styly pro ovládací prvek WPF a změnit jeho vzhled a
 
 1. Sestavte projekt.
 
-1. Otevřete `Form1` v Návrhář formulářů.
+1. Otevřete `Form1` v Návrháři formulářů systému Windows.
 
-1. Nový styl se aplikuje na ovládací prvek tlačítko.
+1. Nový styl se aplikuje na ovládací prvek tlačítka.
 
-1. V nabídce **ladění** vyberte **Spustit ladění** , aby se aplikace spustila.
+1. V nabídce **Ladění** vyberte **Spustit ladění,** chcete-li aplikaci spustit.
 
-1. Klikněte na tlačítko **OK** a tlačítka **Storno** a zobrazte rozdíly.
+1. Klikněte na tlačítka **OK** a **Storno** a zobrazte rozdíly.
 
 ## <a name="see-also"></a>Viz také
 
@@ -141,5 +141,5 @@ Můžete použít různé styly pro ovládací prvek WPF a změnit jeho vzhled a
 - [Migrace a interoperabilita](../../wpf/advanced/migration-and-interoperability.md)
 - [Používání ovládacích prvků WPF](using-wpf-controls.md)
 - [Návrh kódu XAML v sadě Visual Studio](/visualstudio/xaml-tools/designing-xaml-in-visual-studio)
-- [Přehled XAML (WPF)](../../wpf/advanced/xaml-overview-wpf.md)
+- [Přehled XAML (WPF)](../../../desktop-wpf/fundamentals/xaml.md)
 - [Styly a šablony](../../../desktop-wpf/fundamentals/styles-templates-overview.md)

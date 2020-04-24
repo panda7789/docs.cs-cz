@@ -6,24 +6,24 @@ helpviewer_keywords:
 - application configuration [.NET Framework]
 - assemblies [.NET Framework], specifying location
 ms.assetid: 1cb92bd7-6bab-44cf-8fd3-36303ce84fea
-ms.openlocfilehash: f13b19dcd0aceac969d9639e6230ad33c6cd8d84
-ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
+ms.openlocfilehash: ead69d1e850050214c15295134c06ff6f66e9760
+ms.sourcegitcommit: 62285ec11fa8e8424bab00511a90760c60e63c95
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70971551"
+ms.lasthandoff: 04/20/2020
+ms.locfileid: "81646035"
 ---
 # <a name="specifying-an-assemblys-location"></a>Určení umístění sestavení
-Existují dva způsoby, jak zadat umístění sestavení:  
+Umístění sestavení lze zadat dvěma způsoby:  
   
-- Pomocí elementu [> základukódu.\<](./file-schema/runtime/codebase-element.md)  
+- Použití [ \<elementu codeBase>.](./file-schema/runtime/codebase-element.md)  
   
-- Použití prvku > zjišťování. [ \<](./file-schema/runtime/probing-element.md)  
+- Použití [ \<sondování>](./file-schema/runtime/probing-element.md) prvek.  
   
- Můžete také použít [konfigurační nástroj .NET Framework (Mscorcfg. msc)](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/2bc0cxhc(v=vs.100)) k určení umístění sestavení nebo určení umístění pro modul common language runtime pro sestavení.  
+ Můžete také použít [nástroj konfigurace rozhraní .NET Framework (Mscorcfg.msc)](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/2bc0cxhc(v=vs.100)) k určení umístění sestavení nebo k určení umístění pro běžný jazyk runtime pro sondování sestavení.  
   
-## <a name="using-the-codebase-element"></a>Použití elementu > codebase \<  
- Pomocí elementu  **\<> základu kódu** můžete použít pouze soubory zásad pro konfiguraci počítače nebo vydavatele, které také přesměrují verzi sestavení. Pokud modul runtime určuje, která verze sestavení se má použít, použije základní nastavení kódu ze souboru, který určuje verzi. Pokud není uveden žádný základ kódu, sondy runtime pro sestavení normálním způsobem. Podrobnosti najdete v tématu [jak modul runtime vyhledává sestavení](../deployment/how-the-runtime-locates-assemblies.md).  
+## <a name="using-the-codebase-element"></a>Použití \<elementu codeBase>  
+ CodeBase>prvek můžete použít pouze v konfiguraci počítače nebo v souborech zásad vydavatele, které také přesměrovává verzi sestavení. ** \<** Když runtime určuje, kterou verzi sestavení použít, použije základní nastavení kódu ze souboru, který určuje verzi. Pokud není uveden žádný základ kódu, runtime sondy pro sestavení normálním způsobem. Podrobnosti naleznete [v tématu How the Runtime Locates Assemblies](../deployment/how-the-runtime-locates-assemblies.md).  
   
  Následující příklad ukazuje, jak určit umístění sestavení.  
   
@@ -43,15 +43,15 @@ Existují dva způsoby, jak zadat umístění sestavení:
 </configuration>  
 ```  
   
- Atribut **Version** je vyžadován pro všechna sestavení se silným názvem, ale měla by být vynechána pro sestavení, která nejsou silně pojmenována. **\<CodeBase>** element vyžaduje **href** atribut. **V\<elementu > codebase** nelze zadat rozsahy verzí.  
+ Atribut **verze** je vyžadován pro všechna sestavení se silným názvem, ale měl by být vynechán pro sestavení, která nejsou silně pojmenované. Element ** \<codeBase>** vyžaduje atribut **href.** V elementu ** \<codeBase>** nelze zadat rozsahy verzí.  
   
 > [!NOTE]
-> Pokud zadáváte nápovědu k základnímu kódu pro sestavení, které není silně pojmenováno, pomocný parametr musí ukazovat na základ aplikace nebo podadresář základního adresáře aplikace.  
+> Pokud dodáváte základní nápovědu kódu pro sestavení, které není silně pojmenované, musí nápověda ukazovat na základnu aplikace nebo podadresář základního adresáře aplikace.  
   
-## <a name="using-the-probing-element"></a>\<Použití elementu >ho zjišťování  
- Modul runtime vyhledává sestavení, která nemají základ kódu, pomocí zjišťování. Další informace o zjišťování najdete v tématu [jak modul runtime vyhledává sestavení](../deployment/how-the-runtime-locates-assemblies.md).  
+## <a name="using-the-probing-element"></a>Použití \<sondování> element  
+ Runtime vyhledá sestavení, které nemají základ kódu zjišťováním. Další informace o zjišťování naleznete [v tématu How the Runtime Locates Assemblies](../deployment/how-the-runtime-locates-assemblies.md).  
   
- Pomocí elementu >ho zjišťování v konfiguračním souboru aplikace můžete určit podadresáře, které by měl modul runtime při hledání sestavení vyhledat. [ \<](./file-schema/runtime/probing-element.md) Následující příklad ukazuje, jak zadat adresáře, které by měl modul runtime Hledat.  
+ Pomocí [ \<prvku sondování>](./file-schema/runtime/probing-element.md) v konfiguračním souboru aplikace můžete určit podadresáře, které by měl runtime hledat při vyhledání sestavení. Následující příklad ukazuje, jak určit adresáře, které by měl zaběhu hledat.  
   
 ```xml  
 <configuration>  
@@ -63,11 +63,11 @@ Existují dva způsoby, jak zadat umístění sestavení:
 </configuration>  
 ```  
   
- Atribut **Nastavení privatePath** obsahuje adresáře, ve kterých by měl modul runtime Hledat sestavení. Pokud je aplikace umístěná v adresáři C:\Program době Files\MyApp, modul runtime bude hledat sestavení, která nespecifikují základ kódu v adresáři C:\Program Files\MyApp\Bin, C:\Program Files\MyApp\Bin2\Subbin a C:\Program Files\MyApp\Bin3. Adresáře určené v **Nastavení privatePath** musí být podadresáře základního adresáře aplikace.  
+ Atribut **privatePath** obsahuje adresáře, které by měl za běhu hledat sestavení. Pokud je aplikace umístěna v c:\programových souborech\MyApp, bude za běhu hledat sestavení, která neurčují základní kód v c:\Program Files\MyApp\Bin, C:\Program Files\MyApp\Bin\Bin2\Subbin a C:\Program Files\MyApp\Bin3. Adresáře zadané v **privatePath** musí být podadresáře základního adresáře aplikace.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Sestavení v .NET](../../standard/assembly/index.md)
-- [Programování se sestaveními](../../standard/assembly/program.md)
+- [Programování se sestaveními](../../standard/assembly/index.md)
 - [Jak běhové prostředí vyhledává sestavení](../deployment/how-the-runtime-locates-assemblies.md)
 - [Konfigurace aplikací pomocí konfiguračních souborů](index.md)

@@ -3,12 +3,12 @@ title: Vítejte na .NET
 description: Začínáme s řady technologií .NET.
 ms.date: 12/03/2019
 ms.custom: updateeachrelease
-ms.openlocfilehash: ecdbdf13aa64de0f07b09eb73953e64d66755bb0
-ms.sourcegitcommit: 1c1a1f9ec0bd1efb3040d86a79f7ee94e207cca5
+ms.openlocfilehash: 64b9b0402631d34adc7ebd3bf8f7bc13416026b0
+ms.sourcegitcommit: 62285ec11fa8e8424bab00511a90760c60e63c95
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/03/2020
-ms.locfileid: "80635954"
+ms.lasthandoff: 04/20/2020
+ms.locfileid: "81646284"
 ---
 # <a name="welcome-to-net"></a>Vítejte na .NET
 
@@ -33,7 +33,7 @@ Sledujte také nejnovější události rozhraní .NET:
 
 Informace o nejnovějších funkcích přidaných do implementací rozhraní .NET a podporovaných jazyků naleznete v následujících článcích:
 
-- [Co je nového v .NET Core](core/whats-new/index.md)
+- [Co je nového v .NET Core 3.1](core/whats-new/dotnet-core-3-1.md)
 - [Novinky v rozhraní .NET Framework](framework/whats-new/index.md)
 - [Co je nového v jazyce C#](csharp/whats-new/index.md)
 - [Co je nového v jazyce Visual Basic](visual-basic/getting-started/whats-new.md)
@@ -49,7 +49,7 @@ Tato dokumentace popisuje šíři rozhraní .NET napříč platformami a jazyky.
 - [Průvodce F#](fsharp/index.yml)
 - [Průvodce visual basicem](visual-basic/index.yml)
 - [ML.NET průvodce](machine-learning/index.yml)
-- [.NET for Apache Spark](spark/index.yml)
+- [.NET pro Apache Spark](spark/index.yml)
 - [Architektura aplikace .NET](architecture/index.yml)
 
 Kromě toho můžete procházet [odkaz na rozhraní .NET API](/dotnet/api).

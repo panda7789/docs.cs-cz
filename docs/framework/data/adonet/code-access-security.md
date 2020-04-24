@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 93e099eb-daa1-4f1e-b031-c1e10a996f88
-ms.openlocfilehash: 6fc54bb9e38768e390201ea77243d3df4cd67f10
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 7b0f269bd4dce8ddaaaa72c3760a4d7a0e3eb8b9
+ms.sourcegitcommit: 62285ec11fa8e8424bab00511a90760c60e63c95
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79151738"
+ms.lasthandoff: 04/20/2020
+ms.locfileid: "81646017"
 ---
 # <a name="code-access-security-and-adonet"></a>Zabezpečení přístupu ke kódu a ADO.NET
 Rozhraní .NET Framework nabízí zabezpečení založené na rolích, stejně jako zabezpečení přístupu kódu (CAS), které jsou implementovány pomocí společné infrastruktury poskytované clr (COMMON Language runtime). Ve světě nespravovaného kódu se většina aplikací spouští s oprávněními uživatele nebo objektu zabezpečení. V důsledku toho mohou být počítačové systémy poškozeny a soukromá data ohrožena, pokud je škodlivý software nebo software naplněný chybami spuštěn uživatelem se zvýšenými oprávněními.  
@@ -50,7 +50,7 @@ Rozhraní .NET Framework nabízí zabezpečení založené na rolích, stejně j
  V závislosti na typu aplikace, kterou vytváříte, byste měli také zvážit implementaci oprávnění založených na rolích v databázi. Další informace o zabezpečení na základě rolí na serveru SQL Server naleznete v tématu [SQL Server Security](./sql/sql-server-security.md).  
   
 ## <a name="assemblies"></a>Sestavení  
- Sestavení tvoří základní jednotku nasazení, správy verzí, opakovaného použití, oboru aktivace a oprávnění zabezpečení pro aplikaci rozhraní .NET Framework. Sestavení poskytuje kolekci typů a prostředků, které jsou vytvořeny pro spolupráci a tvoří logickou jednotku funkčnosti. Clr typ neexistuje mimo kontext sestavení. Další informace o vytváření a nasazování sestavení naleznete v [tématu Programování pomocí sestavení](../../../standard/assembly/program.md).  
+ Sestavení tvoří základní jednotku nasazení, správy verzí, opakovaného použití, oboru aktivace a oprávnění zabezpečení pro aplikaci rozhraní .NET Framework. Sestavení poskytuje kolekci typů a prostředků, které jsou vytvořeny pro spolupráci a tvoří logickou jednotku funkčnosti. Clr typ neexistuje mimo kontext sestavení. Další informace o vytváření a nasazování sestavení naleznete v [tématu Programování pomocí sestavení](../../../standard/assembly/index.md).  
   
 ### <a name="strong-naming-assemblies"></a>Sestavení se silným pojmenováním  
  Silný název nebo digitální podpis se skládá z identity sestavení, která obsahuje jeho jednoduchý textový název, číslo verze a informace o jazykové verzi (pokud jsou k dispozici), plus veřejný klíč a digitální podpis. Digitální podpis je generován ze souboru sestavení pomocí odpovídajícího soukromého klíče. Soubor sestavení obsahuje manifest sestavení, který obsahuje názvy a hashy všech souborů, které tvoří sestavení.  

@@ -7,12 +7,12 @@ dev_langs:
 helpviewer_keywords:
 - controls [WPF], about WPF controls
 ms.assetid: 3f255a8a-35a8-4712-9065-472ff7d75599
-ms.openlocfilehash: 2ec8c0a99f4e2431aed0d8c24168b7329de669f8
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 2aab0fc8adaf17a8e9820a6269a740ef09540cda
+ms.sourcegitcommit: 62285ec11fa8e8424bab00511a90760c60e63c95
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79187531"
+ms.lasthandoff: 04/20/2020
+ms.locfileid: "81646489"
 ---
 # <a name="controls"></a>Ovládací prvky
 <a name="introduction"></a>
@@ -54,7 +54,7 @@ ms.locfileid: "79187531"
   
  [!code-xaml[ControlsOverview#5](~/samples/snippets/csharp/VS_Snippets_Wpf/ControlsOverview/CSharp/AppInCode.xaml#5)]  
   
- Styl můžete také použít pouze na určité ovládací prvky určitého typu přiřazením klíče `Style` ke stylu a zadáním tohoto klíče ve vlastnosti ovládacího prvku.  Další informace o stylech naleznete v [tématu Styling a Templating](styling-and-templating.md).  
+ Styl můžete také použít pouze na určité ovládací prvky určitého typu přiřazením klíče `Style` ke stylu a zadáním tohoto klíče ve vlastnosti ovládacího prvku.  Další informace o stylech naleznete v [tématu Styling a Templating](../../../desktop-wpf/fundamentals/styles-templates-overview.md).  
   
 ### <a name="creating-a-controltemplate"></a>Vytvoření šablony ovládacího prvku  
  A <xref:System.Windows.Style> umožňuje nastavit vlastnosti na více ovládacích prvků najednou, ale někdy <xref:System.Windows.Controls.Control> můžete chtít přizpůsobit vzhled <xref:System.Windows.Style>nad rámec toho, co můžete udělat vytvořením . Třídy, které <xref:System.Windows.Controls.Control> dědí <xref:System.Windows.Controls.ControlTemplate>z třídy mají , <xref:System.Windows.Controls.Control>který definuje strukturu a vzhled . Vlastnost <xref:System.Windows.Controls.Control.Template%2A> a <xref:System.Windows.Controls.Control> je veřejná, takže <xref:System.Windows.Controls.Control> můžete <xref:System.Windows.Controls.ControlTemplate> dát, která je jiná než její výchozí. Často můžete zadat <xref:System.Windows.Controls.ControlTemplate> nový <xref:System.Windows.Controls.Control> pro místo dědění z ovládacího <xref:System.Windows.Controls.Control>prvku přizpůsobit vzhled .  
@@ -99,12 +99,12 @@ ms.locfileid: "79187531"
   
 ## <a name="see-also"></a>Viz také
 
-- [Styly a šablony](styling-and-templating.md)
+- [Styly a šablony](../../../desktop-wpf/fundamentals/styles-templates-overview.md)
 - [Řízení podle kategorie](controls-by-category.md)
 - [Knihovna ovládacích prvků](control-library.md)
 - [Přehled datových šablon](../data/data-templating-overview.md)
 - [Přehled datových vazeb](../../../desktop-wpf/data/data-binding-overview.md)
-- [Vstupní](../advanced/input-wpf.md)
+- [Vstup](../advanced/input-wpf.md)
 - [Povolení příkazu](../advanced/how-to-enable-a-command.md)
 - [Návod: Vytvoření tlačítka s vlastní animací](walkthroughs-create-a-custom-animated-button.md)
 - [Přizpůsobení ovládacího prvku](control-customization.md)

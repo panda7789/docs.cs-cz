@@ -1,31 +1,31 @@
 ---
-title: 'Postupy: vytváření řetězců pomocí StringBuilder'
+title: 'Postup: vytvoření řetězců pomocí StringBuilder'
 ms.date: 07/20/2015
 helpviewer_keywords:
 - StringBuilder class
 - strings [Visual Basic], using StringBuilder
 ms.assetid: 9c042880-aa16-432e-9ccb-cd00abda9ae3
-ms.openlocfilehash: 9295b9d0cdcfdb05dfc75f75f48c16c2354b09b0
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: c41db584df83782dab99b90043045aa2cabcb6ff
+ms.sourcegitcommit: 62285ec11fa8e8424bab00511a90760c60e63c95
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74344371"
+ms.lasthandoff: 04/20/2020
+ms.locfileid: "81645326"
 ---
-# <a name="how-to-create-strings-using-a-stringbuilder-in-visual-basic"></a>Postupy: vytváření řetězců pomocí StringBuilder v Visual Basic
+# <a name="how-to-create-strings-using-a-stringbuilder-in-visual-basic"></a>Postup: vytvoření řetězců pomocí StringBuilder v jazyce Visual Basic
 
-Tento příklad vytvoří dlouhý řetězec z mnoha menších řetězců pomocí třídy <xref:System.Text.StringBuilder>. Třída <xref:System.Text.StringBuilder> je efektivnější než `&=` operátor pro zřetězení řady řetězců.
+Tento příklad vytvoří dlouhý řetězec z mnoha <xref:System.Text.StringBuilder> menších řetězců pomocí třídy. Třída <xref:System.Text.StringBuilder> je efektivnější než `&=` operátor pro zřetězení mnoho řetězců.
 
 ## <a name="example"></a>Příklad
 
-Následující příklad vytvoří instanci třídy <xref:System.Text.StringBuilder>, připojí k této instanci řetězce 1 000 a potom vrátí jeho řetězcovou reprezentaci:
+Následující příklad vytvoří instanci <xref:System.Text.StringBuilder> třídy, připojí k této instanci 1 000 řetězců a pak vrátí její řetězcovou reprezentaci:
 
  [!code-vb[VbVbalrStrings#70](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStrings/VB/Class2.vb#70)]
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Používání třídy StringBuilder](../../../../standard/base-types/stringbuilder.md)
-- [&= – operátor](../../../language-reference/operators/and-assignment-operator.md)
+- [&= Operátor](../../../language-reference/operators/and-assignment-operator.md)
 - [Řetězce](index.md)
 - [Vytváření nových řetězců](../../../../standard/base-types/creating-new.md)
-- [Práce s řetězci](../../../../standard/base-types/manipulating-strings.md)
+- [Práce s řetězci](../../../../standard/base-types/best-practices-strings.md)

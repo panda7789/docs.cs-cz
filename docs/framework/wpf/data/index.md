@@ -8,21 +8,21 @@ helpviewer_keywords:
 - Windows Presentation Foundation [WPF], data
 - data [WPF]
 ms.assetid: dea454e2-abd8-4c53-ba37-d3ed53187d64
-ms.openlocfilehash: aa8f872e807eccb81d0f1ca2c838485bb254c7c0
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: a1ea8e10225eb9a4dcd4f20a23820c3757445fbf
+ms.sourcegitcommit: 62285ec11fa8e8424bab00511a90760c60e63c95
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73460296"
+ms.lasthandoff: 04/20/2020
+ms.locfileid: "81646440"
 ---
 # <a name="data"></a>Data
-[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] datové vazby poskytují jednoduchý a konzistentní způsob, jak aplikace prezentovat a interagovat s daty. Prvky mohou být vázány na data z nejrůznějších zdrojů dat ve formě objektů CLR (Common Language Runtime) a XML. [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] také poskytuje mechanismus pro přenos dat prostřednictvím operací přetažení.  
+[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]datová vazba poskytuje jednoduchý a konzistentní způsob, jak mohou aplikace prezentovat data a pracovat s nimi. Prvky mohou být vázány na data z různých zdrojů dat ve formě objektů CLR (COMMON Language runtime) a XML. [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]poskytuje také mechanismus pro přenos dat prostřednictvím operací přetažení myší.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Datová vazba](data-binding-wpf.md)  
+ [Datová vazba](../../../desktop-wpf/data/data-binding-overview.md)  
  [Přetažení](../advanced/drag-and-drop.md)  
   
-## <a name="reference"></a>Odkaz  
+## <a name="reference"></a>Referenční informace  
  <xref:System.Windows.Data>  
   
  <xref:System.Windows.Data.Binding>  
@@ -38,7 +38,7 @@ ms.locfileid: "73460296"
   
  [Datová vazba](../advanced/optimizing-performance-data-binding.md)  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Návod: Moje první desktopová aplikace WPF](../getting-started/walkthrough-my-first-wpf-desktop-application.md)
 - [Návod: Ukládání aplikačních dat do mezipaměti v aplikaci WPF](../advanced/walkthrough-caching-application-data-in-a-wpf-application.md)

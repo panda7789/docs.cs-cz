@@ -2,12 +2,12 @@
 title: Kolekce
 ms.date: 07/20/2015
 ms.assetid: 5f7749f3-aaf2-4319-b63c-bfa72e1e2b7a
-ms.openlocfilehash: ba16d04e781bcf69356b1f603d92e104816a0860
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 232b9ec7b5975092e73daf0a7384fa816f55f72f
+ms.sourcegitcommit: 62285ec11fa8e8424bab00511a90760c60e63c95
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79400825"
+ms.lasthandoff: 04/20/2020
+ms.locfileid: "81646335"
 ---
 # <a name="collections-visual-basic"></a>Kolekce (Visual Basic)
 
@@ -570,12 +570,12 @@ End Function
 
 ## <a name="see-also"></a>Viz také
 
-- [Inicializátory kolekcí](../../../visual-basic/programming-guide/language-features/collection-initializers/index.md)
+- [Inicializátory kolekce](../../../visual-basic/programming-guide/language-features/collection-initializers/index.md)
 - [Koncepty programování (Visual Basic)](../../../visual-basic/programming-guide/concepts/index.md)
 - [Příkaz Option Strict](../../../visual-basic/language-reference/statements/option-strict-statement.md)
 - [LINQ na objekty (Visual Basic)](../../../visual-basic/programming-guide/concepts/linq/linq-to-objects.md)
-- [Paralelní LINQ (PLINQ)](../../../standard/parallel-programming/parallel-linq-plinq.md)
+- [Paralelní LINQ (PLINQ)](../../../standard/parallel-programming/introduction-to-plinq.md)
 - [Kolekce a datové struktury](../../../standard/collections/index.md)
 - [Výběr třídy kolekce](../../../standard/collections/selecting-a-collection-class.md)
-- [Porovnávání a řazení v kolekcích](../../../standard/collections/comparisons-and-sorts-within-collections.md)
-- [Kdy použít generické kolekce](../../../standard/collections/when-to-use-generic-collections.md)
+- [Porovnání a řazení v rámci kolekcí](../../../standard/collections/comparisons-and-sorts-within-collections.md)
+- [Kdy použít obecné kolekce](../../../standard/collections/when-to-use-generic-collections.md)

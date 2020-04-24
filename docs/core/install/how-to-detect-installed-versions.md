@@ -6,12 +6,12 @@ ms.author: adegeo
 ms.date: 12/04/2019
 ms.custom: updateeachrelease
 zone_pivot_groups: operating-systems-set-one
-ms.openlocfilehash: 3efc54cea7e10bc21a472a7fa9d4026e305be79a
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 3a78acee6cf427085e98f14353fc2c0ac65d3d80
+ms.sourcegitcommit: 62285ec11fa8e8424bab00511a90760c60e63c95
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79399033"
+ms.lasthandoff: 04/20/2020
+ms.locfileid: "81645338"
 ---
 # <a name="how-to-check-that-net-core-is-already-installed"></a>Jak zkontrolovat, zda je jádro .NET Core již nainstalováno
 
@@ -163,6 +163,51 @@ Microsoft.NETCore.App 2.2.7 [/usr/local/share/dotnet/shared/Microsoft.NETCore.Ap
 Microsoft.NETCore.App 3.0.0 [/usr/local/share/dotnet/shared/Microsoft.NETCore.App]
 Microsoft.NETCore.App 3.1.0 [/usr/local/share/dotnet/shared/Microsoft.NETCore.App]
 ```
+
+::: zone-end
+
+## <a name="check-for-install-folders"></a>Kontrola instalačních složek
+
+Je možné, že rozhraní .NET Core je `PATH` nainstalováno, ale není přidáno do proměnné pro váš operační systém nebo profil uživatele. Spuštění příkazů z předchozích částí nemusí fungovat. Jako alternativu můžete zkontrolovat, zda existují instalační složky .NET Core.
+
+Při instalaci rozhraní .NET Core z instalačního programu nebo skriptu je nainstalován do standardní složky. Většinu času instalační program nebo skript, který používáte k instalaci .NET Core vám dává možnost nainstalovat do jiné složky. Pokud se rozhodnete nainstalovat do jiné složky, upravte začátek cesty ke složce.
+
+::: zone pivot="os-windows"
+
+- **spustitelný soubor dotnet**\
+_C:\\programové\\soubory\\dotnet dotnet.exe_
+
+- **Sada SDK rozhraní .NET**\
+_C:\\programové\\soubory\\dotnet sdk\\{version}\\_
+
+- **Doba běhu rozhraní .NET**\
+_C:\\programové\\soubory\\\\dotnet sdílené\\{runtime-type} {version}\\_
+
+::: zone-end
+
+::: zone pivot="os-linux"
+
+- **spustitelný soubor dotnet**\
+_/home/user/share/dotnet/dotnet_
+
+- **Sada SDK rozhraní .NET**\
+_/home/user/share/dotnet/sdk/{version}/_
+
+- **Doba běhu rozhraní .NET**\
+_/home/user/share/dotnet/shared/{runtime-type}/{version}/_
+
+::: zone-end
+
+::: zone pivot="os-macos"
+
+- **spustitelný soubor dotnet**\
+_/usr/local/share/dotnet/dotnet_
+
+- **Sada SDK rozhraní .NET**\
+_/usr/local/share/dotnet/sdk/{version}/_
+
+- **Doba běhu rozhraní .NET**\
+_/usr/local/share/dotnet/shared/{runtime-type}/{version}/_
 
 ::: zone-end
 

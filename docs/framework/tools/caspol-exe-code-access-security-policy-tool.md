@@ -15,18 +15,18 @@ helpviewer_keywords:
 - security policy [.NET Framework], modifying
 - manually editing security configuration files
 ms.assetid: d2bf6123-7b0c-4e60-87ad-a39a1c3eb2e0
-ms.openlocfilehash: 792d89351b3759984b085fd8aee9c3ae8e012c09
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: a5a4068d0bf6f6f158ea9b2880785e227f96243d
+ms.sourcegitcommit: 62285ec11fa8e8424bab00511a90760c60e63c95
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "79180417"
+ms.lasthandoff: 04/20/2020
+ms.locfileid: "81645576"
 ---
 # <a name="caspolexe-code-access-security-policy-tool"></a>Caspol.exe (nástroj zásad zabezpečení přístupu kódu)
 Nástroj Code Access Security (CAS) Policy (Caspol.exe) umožňuje uživatelům a správcům měnit zásady zabezpečení pro úroveň zásad počítače, úroveň zásad uživatele a úroveň zásad podniku.  
   
 > [!IMPORTANT]
-> Počínaje rozhraním .NET Framework 4 nemá caspol.exe vliv na zásady CAS, pokud není nastaven [ \<a nenastaven na verzi legacyCasPolicy> element](../configure-apps/file-schema/runtime/netfx40-legacysecuritypolicy-element.md) . `true` Libovolná nastavení zobrazená nebo upravená pomocí nástroje CasPol.exe ovlivňují pouze aplikace, které se přihlašují pomocí zásad CAS. Další informace naleznete v [tématu Změny zabezpečení](../security/security-changes.md).  
+> Počínaje rozhraním .NET Framework 4 nemá caspol.exe vliv na zásady CAS, pokud není nastaven [ \<a nenastaven na verzi legacyCasPolicy> element](../configure-apps/file-schema/runtime/netfx40-legacysecuritypolicy-element.md) . `true` Libovolná nastavení zobrazená nebo upravená pomocí nástroje CasPol.exe ovlivňují pouze aplikace, které se přihlašují pomocí zásad CAS. Další informace naleznete v [tématu Změny zabezpečení](https://docs.microsoft.com/previous-versions/dotnet/framework/security/security-changes).  
   
 > [!NOTE]
 > 64bitové počítače obsahují 64bitové i 32bitové verze zásad zabezpečení. Aby bylo zajištěno, že změny v zásadách se aplikují na 32bitové i 64bitové aplikace, je třeba spustit 32bitovou i 64bitovou verzi nástroje Caspol.exe.  
@@ -54,7 +54,7 @@ caspol [options]
 |**-customall**  *cesta*<br /><br /> – nebo –<br /><br /> **-ca**  *cesta*|Značí, že jsou všechny možnosti následující za touto možností aplikovány na zásady počítače, podniku a určeného vlastního uživatele. Je nutné zadat umístění konfiguračního souboru zabezpečení vlastního uživatele s argumentem *cesty.*|  
 |**-cu**[**stomuser**] *cesta*|Umožňuje spravovat zásadu vlastního uživatele, která nepatří uživateli, jenž aktuálně spouští nástroj Caspol.exe. Je nutné zadat umístění konfiguračního souboru zabezpečení vlastního uživatele s argumentem *cesty.*|  
 |**-podnik**<br /><br /> – nebo –<br /><br /> **-en**|Značí, že jsou všechny možnosti následující za touto možností aplikovány na zásady na úrovni podniku. Uživatelé, kteří nejsou podnikovými administrátory, nemají dostatečná práva pro modifikaci podnikové zásady, přestože si ji mohou zobrazit. V nepodnikových scénářích nebude tato zásada ve výchozím nastavení ovlivňovat zásadu počítače ani uživatele.|  
-|**-e**[**xecution**] {**na** &#124; **off**}|Vypíná nebo zapíná mechanismus, jenž ověřuje, která oprávnění se mají před spuštěním kódu provést. **Poznámka:**  Tento přepínač je odebrán v rozhraní .NET Framework 4 a novějších verzích. Další informace naleznete v [tématu Změny zabezpečení](../security/security-changes.md).|  
+|**-e**[**xecution**] {**na** &#124; **off**}|Vypíná nebo zapíná mechanismus, jenž ověřuje, která oprávnění se mají před spuštěním kódu provést. **Poznámka:**  Tento přepínač je odebrán v rozhraní .NET Framework 4 a novějších verzích. Další informace naleznete v [tématu Změny zabezpečení](https://docs.microsoft.com/previous-versions/dotnet/framework/security/security-changes).|  
 |**-f**[**orce**]|Zakáže, aby nástroj provedl autodestruktivní test a změní zásadu dle zadání uživatele. Nástroj Caspol.exe běžně ověřuje, zda může jakákoli změna zásady zabránit nástroji Caspol.exe ve správném spuštění. Pokud tomu tak je, nástroj Caspol.exe změnu zásady neuloží a zobrazí chybovou zprávu. Chcete-li vynutit Caspol.exe změnit zásady i v případě, že to brání Caspol.exe sám o sobě spuštění, použijte možnost **-force.**|  
 |**-h**[**elp**]|Zobrazí syntaxi a možnosti příkazu pro nástroj Caspol.exe.|  
 |**-l**[**ist**]|Vypíše hierarchii skupiny kódu a sad oprávnění konkrétního počítače, uživatele, podniku nebo všech úrovní zásad. Nástroj Caspol.exe zobrazuje nejprve popisek skupiny kódu a poté název, pokud není null.|  
@@ -73,7 +73,7 @@ caspol [options]
 |**-resetlockdown**<br /><br /> – nebo –<br /><br /> **-rsld řekl:**|Vrátí zásadu do více omezující verze výchozího stavu a zachová ji na disk; vytvoří zálohu předchozí zásady počítače a zachová `security.config.bac`ji do souboru s názvem .  Uzamčená zásada je podobná výchozí zásadě s tím rozdílem, `Local Intranet`že `Trusted Sites`zásada neuděluje žádné oprávnění kódu z , a `Internet` zóny a odpovídající kódové skupiny nemají žádné podřízené kódové skupiny.|  
 |**-resolvegroup** *assembly_file*<br /><br /> – nebo –<br /><br /> **-rsg**  *assembly_file*|Zobrazuje skupiny kódu, do kterých patří určité sestavení (*assembly_file).* Ve výchozím nastavení tato možnost zobrazuje úrovně zásad počítače, uživatele a podniku, ke kterým sestavení patří. Chcete-li zobrazit pouze jednu úroveň zásad, použijte tuto možnost s možností **-machine**, **-user**nebo **-enterprise.**|  
 |**-resolveperm** *assembly_file*<br /><br /> – nebo –<br /><br /> **-rsp** *assembly_file*|Zobrazuje všechna oprávnění, která zadaná (nebo výchozí) úroveň zásady zabezpečení může poskytnout sestavení, pokud je sestavením povoleno spuštění. Assembly_file *assembly_file* argument určuje sestavení. Pokud zadáte možnost **-all,** nástroj Caspol.exe vypočítá oprávnění pro sestavení na základě zásad uživatele, počítače a organizace. v opačném případě platí výchozí pravidla chování.|  
-|**-s**[**ecurity**] {**na** &#124; **off**}|Vypne nebo zapne zabezpečení přístupu kódu. Zadání **mj.** **Poznámka:**  Tento přepínač je odebrán v rozhraní .NET Framework 4 a novějších verzích. Další informace naleznete v [tématu Změny zabezpečení](../security/security-changes.md). **Pozor:**  Pokud je zabezpečení přístupu kódu zakázáno, všechny požadavky na přístup kódu jsou úspěšné. Zakázání zabezpečení přístupu kódu způsobí, že bude systém zranitelný vůči útokům škodlivým kódem, jako jsou například viry nebo červi. Vypnutí zabezpečení přinese zlepšení výkonu, ale mělo by být použito pouze tehdy, pokud byla přijata další bezpečnostní opatření, která pomohou zajistit, aby celková bezpečnost systému nebyla narušena. Mezi příklady dalších bezpečnostních opatření patří: odpojení od veřejné sítě, fyzické zabezpečení počítačů atd.|  
+|**-s**[**ecurity**] {**na** &#124; **off**}|Vypne nebo zapne zabezpečení přístupu kódu. Zadání **mj.** **Poznámka:**  Tento přepínač je odebrán v rozhraní .NET Framework 4 a novějších verzích. Další informace naleznete v [tématu Změny zabezpečení](https://docs.microsoft.com/previous-versions/dotnet/framework/security/security-changes). **Pozor:**  Pokud je zabezpečení přístupu kódu zakázáno, všechny požadavky na přístup kódu jsou úspěšné. Zakázání zabezpečení přístupu kódu způsobí, že bude systém zranitelný vůči útokům škodlivým kódem, jako jsou například viry nebo červi. Vypnutí zabezpečení přinese zlepšení výkonu, ale mělo by být použito pouze tehdy, pokud byla přijata další bezpečnostní opatření, která pomohou zajistit, aby celková bezpečnost systému nebyla narušena. Mezi příklady dalších bezpečnostních opatření patří: odpojení od veřejné sítě, fyzické zabezpečení počítačů atd.|  
 |**-u**[**ser**]|Značí, že jsou všechny možnosti následující po této možnosti aplikovány na zásadu na uživatelské úrovni pro uživatele, který nástroj Caspol.exe spustil. Pro uživatele bez oprávnění správce je **-user** výchozí.|  
 |**-?**|Zobrazí syntaxi a možnosti příkazu pro nástroj Caspol.exe.|  
   
@@ -86,8 +86,8 @@ caspol [options]
 |**-vlastní**  *soubor XML*|Přidá vlastní podmínku členství. Povinný argument *xmlfile* určuje soubor XML, který obsahuje serializaci vlastní podmínky členství XML.|  
 |**-hashhas** *hashAlg* {**-hex** *hashValue* &#124; **-file** *assembly_file* }|Určuje kód, který obsahuje zadanou hodnotu hash sestavení. Pro použití hodnoty hash jako podmínky členství ve skupině kódu je nutné zadat hodnotu hash nebo soubor sestavení. Další informace o této podmínce členství naleznete v tématu <xref:System.Security.Policy.HashMembershipCondition?displayProperty=nameWithType>.|  
 |**-hospoda** { **-cert** *cert_file_name* &#124;<br /><br /> **-soubor** *signed_file_name* &#124; **-hex**  *hex_string* }|Určuje kód, který obsahuje zadaného vydavatele softwaru, jak je označeno souborem certifikátu, podpisem na souboru nebo šestnáctkovou reprezentací certifikátu X509. Další informace o této podmínce členství naleznete v tématu <xref:System.Security.Policy.PublisherMembershipCondition?displayProperty=nameWithType>.|  
-|**-site** *web*|Určuje kód, který obsahuje zadanou webovou stránku původu. Například:<br /><br /> `-site** www.proseware.com`<br /><br /> Další informace o této podmínce členství naleznete v tématu <xref:System.Security.Policy.SiteMembershipCondition?displayProperty=nameWithType>.|  
-|**-strong -file** *file_name* {*name* &#124; **-noname**} {*verze* &#124; **-noversion**}|Určuje kód, který má určitý silný název označený názvem souboru, názvem sestavení jako řetězec a verzí sestavení ve formátu *major*. *nezletilá*. *stavět*. *revize*. Například:<br /><br /> **-strong -file** myAssembly.exe myAssembly 1.2.3.4<br /><br /> Další informace o této podmínce členství naleznete v tématu <xref:System.Security.Policy.StrongNameMembershipCondition?displayProperty=nameWithType>.|  
+|**-site** *web*|Určuje kód, který obsahuje zadanou webovou stránku původu. Příklad:<br /><br /> `-site** www.proseware.com`<br /><br /> Další informace o této podmínce členství naleznete v tématu <xref:System.Security.Policy.SiteMembershipCondition?displayProperty=nameWithType>.|  
+|**-strong -file** *file_name* {*name* &#124; **-noname**} {*verze* &#124; **-noversion**}|Určuje kód, který má určitý silný název označený názvem souboru, názvem sestavení jako řetězec a verzí sestavení ve formátu *major*. *nezletilá*. *stavět*. *revize*. Příklad:<br /><br /> **-strong -file** myAssembly.exe myAssembly 1.2.3.4<br /><br /> Další informace o této podmínce členství naleznete v tématu <xref:System.Security.Policy.StrongNameMembershipCondition?displayProperty=nameWithType>.|  
 |**-URL** *URL*|Určuje kód pocházející ze zadané adresy URL. Adresa URL musí obsahovat `http://` protokol, například nebo `ftp://`. Znak se zástupným znakem (\*) lze navíc použít k určení více sestavení z určité adresy URL. **Poznámka:**  Vzhledem k tomu, že adresu URL lze identifikovat pomocí více názvů, použití adresy URL jako podmínky členství není bezpečný způsob, jak zjistit identitu kódu. Kdykoli je to možné, použijte podmínku členství silného názvu, podmínku vydavatele nebo podmínku hodnoty hash. <br /><br /> Další informace o této podmínce členství naleznete v tématu <xref:System.Security.Policy.UrlMembershipCondition?displayProperty=nameWithType>.|  
 |**-zone** *zonename*|Určuje kód pomocí zadané zóny původu. Argument *název zóny* může být jedna z následujících hodnot: **MyComputer**, **Intranet**, **Trusted**, **Internet**nebo **Untrusted**. Další informace o této podmínce členství naleznete v části <xref:System.Security.Policy.ZoneMembershipCondition> Třída.|  
   
@@ -246,5 +246,5 @@ caspol -all -resolveperm testassembly
   
 ## <a name="see-also"></a>Viz také
 
-- [Nástroje](index.md)
-- [Příkazové řádky](developer-command-prompt-for-vs.md)
+- [nástroje](index.md)
+- [Příkazová zobrazení](developer-command-prompt-for-vs.md)

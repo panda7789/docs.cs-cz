@@ -8,15 +8,15 @@ helpviewer_keywords:
 - ThemeDictionary markup extension [WPF]
 - XAML [WPF], ThemeDictionary markup extension
 ms.assetid: aa75e10b-13dd-4989-972d-51bab63a05e2
-ms.openlocfilehash: ab38c2c885e230183852fff895e0a8a8f1d7a666
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: f6ba0fe45aa11063c79d673b26794072968f4200
+ms.sourcegitcommit: 62285ec11fa8e8424bab00511a90760c60e63c95
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73459485"
+ms.lasthandoff: 04/20/2020
+ms.locfileid: "81646190"
 ---
 # <a name="themedictionary-markup-extension"></a>ThemeDictionary – rozšíření značek
-Poskytuje způsob, jak vlastní autoři ovládacích prvků nebo aplikace, které integrují ovládací prvky třetích stran pro načtení slovníků prostředků specifických pro motiv pro použití při stylování ovládacího prvku.  
+Poskytuje způsob, jak pro vlastní autoři ovládacích prvků nebo aplikace, které integrují ovládací prvky třetích stran k načtení slovníky prostředků specifické pro motiv pro použití v styling ovládacího prvku.  
   
 ## <a name="xaml-attribute-usage"></a>Použití atributu XAML  
   
@@ -38,34 +38,34 @@ Poskytuje způsob, jak vlastní autoři ovládacích prvků nebo aplikace, kter�
   
 |||  
 |-|-|  
-|`assemblyUri`|Identifikátor URI (Uniform Resource Identifier) sestavení, které obsahuje informace o motivu. Obvykle se jedná o identifikátor URI balíčku, který odkazuje na sestavení ve větším balíčku. Prostředky sestavení a identifikátory URI balíčku zjednodušují problémy s nasazením. Další informace najdete v tématu [identifikátory URI Pack v](../app-development/pack-uris-in-wpf.md)subsystému WPF.|  
+|`assemblyUri`|Identifikátor jednotného prostředku (URI) sestavení, který obsahuje informace o motivu. Obvykle se jedná o identifikátor URI balení, který odkazuje na sestavení ve větším balíčku. Prostředky sestavení a balíčky identifikátorů URI zjednodušují problémy s nasazením. Další informace naleznete [v tématu Pack URI v WPF](../app-development/pack-uris-in-wpf.md).|  
   
 ## <a name="remarks"></a>Poznámky  
- Toto rozšíření má vyplnit jenom jednu konkrétní hodnotu vlastnosti: hodnotu pro <xref:System.Windows.ResourceDictionary.Source%2A?displayProperty=nameWithType>.  
+ Toto rozšíření je určeno k vyplnění pouze <xref:System.Windows.ResourceDictionary.Source%2A?displayProperty=nameWithType>jedné konkrétní hodnoty vlastnosti: hodnota pro .  
   
- Pomocí tohoto rozšíření můžete zadat jediné sestavení pouze pro prostředky, které obsahuje některé styly, které se použijí, když se v systému uživatele použije motiv Windows Aero, ostatní styly, jenom když je motiv Luna aktivní a tak dále. Když použijete toto rozšíření, obsah slovníku prostředků specifický pro ovládací prvek se dá v případě potřeby automaticky zrušit a znovu načíst, aby byl pro jiný motiv specifický.  
+ Pomocí tohoto rozšíření můžete určit jedno sestavení pouze pro prostředky, které obsahuje některé styly, které se použijí pouze v případě, že je motiv Prostředí Windows použit v systému uživatele, jiné styly pouze v případě, že je aktivní motiv Luna a tak dále. Pomocí tohoto rozšíření obsah slovníku prostředků specifické pro ovládací prvek lze automaticky zneplatnit a znovu načíst být specifické pro jiný motiv v případě potřeby.  
   
- `assemblyUri` řetězec (<xref:System.Windows.ThemeDictionaryExtension.AssemblyName%2A> hodnota vlastnosti) tvoří základ konvence pojmenování, která určuje, který slovník se použije pro konkrétní motiv. Logika <xref:System.Windows.Markup.MarkupExtension.ProvideValue%2A> pro `ThemeDictionary` dokončí konvenci vygenerováním identifikátoru URI (Uniform Resource Identifier), který odkazuje na konkrétní variantu slovníku motivů, jak je obsaženo v předkompilovaném sestavení prostředků. Popis této konvence nebo interakce motivů s obecným stylem řízení a stylem stránky nebo aplikace jako konceptu se zde nepokrývá. Základní scénář použití `ThemeDictionary` je zadání vlastnosti <xref:System.Windows.ResourceDictionary.Source%2A> `ResourceDictionary` deklarované na úrovni aplikace. Pokud zadáte identifikátor URI pro sestavení prostřednictvím rozšíření `ThemeDictionary`, nikoli jako přímý identifikátor URI, logika rozšíření poskytne neplatnou logiku, která se použije vždy, když se změní motiv systému.  
+ Řetězec `assemblyUri` (<xref:System.Windows.ThemeDictionaryExtension.AssemblyName%2A> hodnota vlastnosti) tvoří základ konvence pojmenování, která určuje, který slovník platí pro konkrétní motiv. Logika <xref:System.Windows.Markup.MarkupExtension.ProvideValue%2A> `ThemeDictionary` pro dokončení konvence generováním identifikátoru jednotného prostředku (URI), který odkazuje na konkrétní variantu slovníku motivu, jak je obsaženv rámci sestavení předkompilovaného prostředku. Popis této konvence nebo interakce motivu s obecným řídicím stylem a stylem na úrovni stránky/aplikace jako koncept emituje meze. Základní scénář pro `ThemeDictionary` použití je <xref:System.Windows.ResourceDictionary.Source%2A> určit `ResourceDictionary` vlastnost deklarované na úrovni aplikace. Pokud zadáte identifikátor URI pro `ThemeDictionary` sestavení prostřednictvím rozšíření, nikoli jako přímý identifikátor URI, logika rozšíření poskytne logiku zneplatnění, která se použije při každé změně motivu systému.  
   
- Nejčastějším typem syntaxe, která se používá u tohoto rozšíření značek, je syntaxe atributu. Token řetězce poskytnutý po řetězci `ThemeDictionary` identifikátoru je přiřazen jako hodnota <xref:System.Windows.ThemeDictionaryExtension.AssemblyName%2A> základní třídy rozšíření <xref:System.Windows.ThemeDictionaryExtension>.  
+ Nejčastějším typem syntaxe, která se používá u tohoto rozšíření značek, je syntaxe atributu. Token řetězce zadaný `ThemeDictionary` po přidělení řetězce <xref:System.Windows.ThemeDictionaryExtension.AssemblyName%2A> identifikátoru jako <xref:System.Windows.ThemeDictionaryExtension> hodnota základní třídy rozšíření.  
   
- `ThemeDictionary` lze také použít v syntaxi elementu Object. V takovém případě je nutné zadat hodnotu vlastnosti <xref:System.Windows.ThemeDictionaryExtension.AssemblyName%2A>.  
+ `ThemeDictionary`lze také použít v syntaxi prvku objektu. V tomto případě je vyžadováno <xref:System.Windows.ThemeDictionaryExtension.AssemblyName%2A> zadání hodnoty vlastnosti.  
   
- `ThemeDictionary` lze také použít v podrobném použití atributu, které určuje vlastnost <xref:System.Windows.Markup.StaticExtension.Member%2A> jako dvojici vlastnost = hodnota:  
+ `ThemeDictionary`lze také použít v podrobném použití atributu, který určuje <xref:System.Windows.Markup.StaticExtension.Member%2A> vlastnost jako dvojici vlastností=hodnota:  
   
 ```xml  
 <object property="{ThemeDictionary AssemblyName=assemblyUri}" .../>  
 ```  
   
- Použití podrobné syntaxe je často užitečné pro rozšíření, která mají více než jednu nastavitelnou vlastnost, nebo v případě, že jsou některé vlastnosti volitelné. Protože `ThemeDictionary` má pouze jednu nastavitelnou vlastnost, která je povinná, toto podrobné použití není typické.  
+ Použití podrobné syntaxe je často užitečné pro rozšíření, která mají více než jednu nastavitelnou vlastnost, nebo v případě, že jsou některé vlastnosti volitelné. Protože `ThemeDictionary` má pouze jednu vlastnost settable, která je vyžadována, toto podrobné použití není typické.  
   
- V implementaci [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] procesoru je zpracování tohoto rozšíření značek definováno třídou <xref:System.Windows.ThemeDictionaryExtension>.  
+ [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] V implementaci procesoru zpracování pro toto rozšíření <xref:System.Windows.ThemeDictionaryExtension> značky je definována třídy.  
   
- `ThemeDictionary` je rozšíření značek. Rozšíření značek jsou obvykle implementována v případě požadavku, aby díky použití řídicí sekvence mohly být hodnoty atributů něčím jiným než literálními hodnotami nebo názvy obslužných rutin, a tento požadavek má tak rozsáhlou platnost, že nestačí jednoduše použít převaděče typů pro určité typy nebo vlastnosti. Všechna rozšíření značek v [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] používají znaky {a} v jejich syntaxi atributu, což je konvence, podle které procesor [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] rozpoznává, že rozšíření značek musí zpracovat atribut. Další informace naleznete v tématu [rozšíření značek a WPF XAML](markup-extensions-and-wpf-xaml.md).  
+ `ThemeDictionary`je rozšíření značky. Rozšíření značek jsou obvykle implementována v případě požadavku, aby díky použití řídicí sekvence mohly být hodnoty atributů něčím jiným než literálními hodnotami nebo názvy obslužných rutin, a tento požadavek má tak rozsáhlou platnost, že nestačí jednoduše použít převaděče typů pro určité typy nebo vlastnosti. Všechna rozšíření značek [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] používají znaky { a } v syntaxi atributu, [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] což je konvence, podle které procesor rozpozná, že rozšíření značek musí atribut zpracovat. Další informace naleznete [v tématu Markup Extensions a WPF XAML](markup-extensions-and-wpf-xaml.md).  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Styly a šablony](../controls/styling-and-templating.md)
+- [Styly a šablony](../../../desktop-wpf/fundamentals/styles-templates-overview.md)
 - [Přehled XAML (WPF)](../../../desktop-wpf/fundamentals/xaml.md)
 - [Rozšíření značek a WPF XAML](markup-extensions-and-wpf-xaml.md)
 - [Prostředek, obsah a datové soubory aplikace WPF](../app-development/wpf-application-resource-content-and-data-files.md)

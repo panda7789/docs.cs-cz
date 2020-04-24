@@ -8,92 +8,92 @@ helpviewer_keywords:
 - DataGrid [WPF], validation
 - validation [WPF], DataGrid
 ms.assetid: ec6078a8-1e42-4648-b414-f4348e81bda1
-ms.openlocfilehash: 401949aa4bea924b458a91dc00c454c97aff4895
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: 38b4c9cd7679f0d8da9b18fb5bd6bb729d33ed54
+ms.sourcegitcommit: 62285ec11fa8e8424bab00511a90760c60e63c95
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73458464"
+ms.lasthandoff: 04/20/2020
+ms.locfileid: "81646090"
 ---
 # <a name="how-to-implement-validation-with-the-datagrid-control"></a>Postupy: Implementace ověření pomocí ovládacího prvku DataGrid
-Ovládací prvek <xref:System.Windows.Controls.DataGrid> umožňuje provádět ověřování na úrovni buňky i řádku. Při ověřování na úrovni buňky ověříte jednotlivé vlastnosti vázaného datového objektu, když uživatel aktualizuje hodnotu. Při ověřování na úrovni řádků ověříte celé datové objekty, když uživatel potvrdí změny řádku. Můžete také poskytnout přizpůsobenou vizuální zpětnou vazbu k chybám ověřování nebo použít výchozí vizuální zpětnou vazbu, kterou poskytuje ovládací prvek <xref:System.Windows.Controls.DataGrid>.  
+Ovládací <xref:System.Windows.Controls.DataGrid> prvek umožňuje provádět ověření na úrovni buňky i řádku. Při ověřování na úrovni buňky můžete ověřit jednotlivé vlastnosti vázaného datového objektu, když uživatel aktualizuje hodnotu. Při ověřování na úrovni řádku ověřujete celé datové objekty, když uživatel potvrdí změny na řádku. Můžete také poskytnout přizpůsobenou vizuální zpětnou vazbu pro chyby ověření nebo použít výchozí vizuální zpětnou vazbu, kterou <xref:System.Windows.Controls.DataGrid> poskytuje ovládací prvek.  
   
- Následující postupy popisují, jak použít pravidla ověřování pro <xref:System.Windows.Controls.DataGrid> vazby a přizpůsobení vizuální zpětné vazby.  
+ Následující postupy popisují, jak použít <xref:System.Windows.Controls.DataGrid> ověřovací pravidla pro vazby a přizpůsobit vizuální zpětnou vazbu.  
   
-### <a name="to-validate-individual-cell-values"></a>Ověření jednotlivých hodnot buňky  
+### <a name="to-validate-individual-cell-values"></a>Ověření jednotlivých hodnot buněk  
   
-- Zadejte jedno nebo více ověřovacích pravidel pro vazbu použitou se sloupcem. To je podobné ověřování dat v jednoduchých ovládacích prvcích, jak je popsáno v tématu [Přehled vytváření datových vazeb](../data/data-binding-overview.md).  
+- Zadejte jedno nebo více ověřovacích pravidel pro vazbu použitou se sloupcem. To je podobné ověřování dat v jednoduchých ovládacích prvků, jak je popsáno v [přehledu datové vazby](../../../desktop-wpf/data/data-binding-overview.md).  
   
-     Následující příklad ukazuje ovládací prvek <xref:System.Windows.Controls.DataGrid> se čtyřmi sloupci svázanými s různými vlastnostmi obchodního objektu. Tři sloupce určují <xref:System.Windows.Controls.ExceptionValidationRule> nastavením vlastnosti <xref:System.Windows.Data.Binding.ValidatesOnExceptions%2A> na `true`.  
+     Následující příklad ukazuje <xref:System.Windows.Controls.DataGrid> ovládací prvek se čtyřmi sloupci vázanými na různé vlastnosti obchodního objektu. Tři sloupce určují <xref:System.Windows.Controls.ExceptionValidationRule> nastavenívlastnosti <xref:System.Windows.Data.Binding.ValidatesOnExceptions%2A> na `true`.  
   
      [!code-xaml[DataGrid_Validation#BasicXaml](~/samples/snippets/csharp/VS_Snippets_Wpf/datagrid_validation/cs/window1.xaml#basicxaml)]  
   
-     Když uživatel zadá do sloupce ID kurzu neplatnou hodnotu (například jiné než celé číslo), zobrazí se kolem buňky červené ohraničení. Můžete změnit tuto výchozí zpětnou vazbu k ověření, jak je popsáno v následujícím postupu.  
+     Když uživatel zadá neplatnou hodnotu (například necelé číslo ve sloupci ID kurzu), zobrazí se kolem buňky červené ohraničení. Tuto výchozí zpětnou vazbu ověření můžete změnit, jak je popsáno v následujícím postupu.  
   
-### <a name="to-customize-cell-validation-feedback"></a>Přizpůsobení zpětné vazby k ověření buňky  
+### <a name="to-customize-cell-validation-feedback"></a>Přizpůsobení zpětné vazby ověření buněk  
   
-- Vlastnost <xref:System.Windows.Controls.DataGridBoundColumn.EditingElementStyle%2A> sloupce nastavte na styl vhodný pro ovládací prvek pro úpravy sloupce. Vzhledem k tomu, že ovládací prvky pro úpravy jsou vytvořeny za běhu, nemůžete použít <xref:System.Windows.Controls.Validation.ErrorTemplate%2A?displayProperty=nameWithType> připojenou vlastnost, jako byste používali jednoduché ovládací prvky.  
+- Nastavte <xref:System.Windows.Controls.DataGridBoundColumn.EditingElementStyle%2A> vlastnost sloupce na styl odpovídající ovládacímu prvku pro úpravy sloupce. Vzhledem k tomu, že ovládací prvky <xref:System.Windows.Controls.Validation.ErrorTemplate%2A?displayProperty=nameWithType> pro úpravy jsou vytvářeny za běhu, nelze použít připojenou vlastnost jako u jednoduchých ovládacích prvků.  
   
-     Následující příklad aktualizuje předchozí příklad přidáním stylu chyby, který sdílí tři sloupce s ověřovacími pravidly. Když uživatel zadá neplatnou hodnotu, styl změní barvu pozadí buňky a přidá popis. Všimněte si použití triggeru k určení, zda došlo k chybě ověřování. To je nutné, protože pro buňky aktuálně není k dispozici žádná vyhrazená šablona chyby.  
+     Následující příklad aktualizuje předchozí příklad přidáním chybového stylu sdíleného třemi sloupci s ověřovacími pravidly. Když uživatel zadá neplatnou hodnotu, styl změní barvu pozadí buňky a přidá popisek. Všimněte si použití aktivační události k určení, zda došlo k chybě ověření. To je nutné, protože v současné době neexistuje žádná vyhrazená šablona chyb pro buňky.  
   
      [!code-xaml[DataGrid_Validation#CellValidationXaml](~/samples/snippets/csharp/VS_Snippets_Wpf/datagrid_validation/cs/mainwindow.xaml#cellvalidationxaml)]  
   
-     Můžete implementovat rozsáhlejší přizpůsobení nahrazením <xref:System.Windows.Controls.DataGridColumn.CellStyle%2A> používaného sloupcem.  
+     Můžete implementovat rozsáhlejší přizpůsobení <xref:System.Windows.Controls.DataGridColumn.CellStyle%2A> nahrazením použité sloupec.  
   
 ### <a name="to-validate-multiple-values-in-a-single-row"></a>Ověření více hodnot v jednom řádku  
   
-1. Implementujte podtřídu <xref:System.Windows.Controls.ValidationRule>, která kontroluje více vlastností vázaného datového objektu. V implementaci metody <xref:System.Windows.Controls.ValidationRule.Validate%2A> přetypujte hodnotu parametru `value` na instanci <xref:System.Windows.Data.BindingGroup>. Přístup k datovému objektu pak můžete získat pomocí vlastnosti <xref:System.Windows.Data.BindingGroup.Items%2A>.  
+1. Implementujte <xref:System.Windows.Controls.ValidationRule> podtřídu, která kontroluje více vlastností vázaného datového objektu. V <xref:System.Windows.Controls.ValidationRule.Validate%2A> implementaci metody přetypujte hodnotu parametru `value` na instanci. <xref:System.Windows.Data.BindingGroup> Potom můžete přistupovat k <xref:System.Windows.Data.BindingGroup.Items%2A> datovému objektu prostřednictvím vlastnosti.  
   
-     Následující příklad demonstruje tento proces ověření, zda hodnota vlastnosti `StartDate` pro `Course` objekt je dřívější než hodnota vlastnosti `EndDate`.  
+     Následující příklad ukazuje tento proces k `StartDate` ověření, `Course` zda hodnota vlastnosti pro objekt je starší než jeho `EndDate` hodnota vlastnosti.  
   
      [!code-csharp[DataGrid_Validation#CourseValidationRule](~/samples/snippets/csharp/VS_Snippets_Wpf/datagrid_validation/cs/mainwindow.xaml.cs#coursevalidationrule)]
      [!code-vb[DataGrid_Validation#CourseValidationRule](~/samples/snippets/visualbasic/VS_Snippets_Wpf/datagrid_validation/vb/mainwindow.xaml.vb#coursevalidationrule)]  
   
-2. Přidejte ověřovací pravidlo do kolekce <xref:System.Windows.Controls.DataGrid.RowValidationRules%2A?displayProperty=nameWithType>. Vlastnost <xref:System.Windows.Controls.DataGrid.RowValidationRules%2A> poskytuje přímý přístup k vlastnosti <xref:System.Windows.Data.BindingGroup.ValidationRules%2A> instance <xref:System.Windows.Data.BindingGroup>, která seskupuje všechny vazby používané ovládacím prvkem.  
+2. Přidejte ověřovací pravidlo <xref:System.Windows.Controls.DataGrid.RowValidationRules%2A?displayProperty=nameWithType> do kolekce. Vlastnost <xref:System.Windows.Controls.DataGrid.RowValidationRules%2A> poskytuje přímý přístup <xref:System.Windows.Data.BindingGroup.ValidationRules%2A> k <xref:System.Windows.Data.BindingGroup> vlastnosti instance, která seskupuje všechny vazby používané ovládacím prvkem.  
   
-     Následující příklad nastaví vlastnost <xref:System.Windows.Controls.DataGrid.RowValidationRules%2A> v jazyce XAML. Vlastnost <xref:System.Windows.Controls.ValidationRule.ValidationStep%2A> je nastavena na hodnotu <xref:System.Windows.Controls.ValidationStep.UpdatedValue>, takže ověření probíhá pouze po aktualizaci vázaného datového objektu.  
+     Následující příklad nastaví <xref:System.Windows.Controls.DataGrid.RowValidationRules%2A> vlastnost v XAML. Vlastnost <xref:System.Windows.Controls.ValidationRule.ValidationStep%2A> je nastavena tak, aby <xref:System.Windows.Controls.ValidationStep.UpdatedValue> k ověření došlo až po aktualizaci vázaného datového objektu.  
   
      [!code-xaml[DataGrid_Validation#RowValidationRulesXaml](~/samples/snippets/csharp/VS_Snippets_Wpf/datagrid_validation/cs/mainwindow.xaml#rowvalidationrulesxaml)]  
   
-     Pokud uživatel zadá koncové datum, které je dřívější než počáteční datum, zobrazí se v záhlaví řádku červený vykřičník (!). Můžete změnit tuto výchozí zpětnou vazbu k ověření, jak je popsáno v následujícím postupu.  
+     Když uživatel určí koncové datum, které je dřívější než počáteční datum, zobrazí se v záhlaví řádku červený vykřičník (!). Tuto výchozí zpětnou vazbu ověření můžete změnit, jak je popsáno v následujícím postupu.  
   
-### <a name="to-customize-row-validation-feedback"></a>Přizpůsobení zpětné vazby k ověření řádku  
+### <a name="to-customize-row-validation-feedback"></a>Přizpůsobení zpětné vazby ověření řádku  
   
-- Nastavte vlastnost <xref:System.Windows.Controls.DataGrid.RowValidationErrorTemplate%2A?displayProperty=nameWithType>. Tato vlastnost umožňuje přizpůsobit zpětnou vazbu k ověření řádku pro jednotlivé ovládací prvky <xref:System.Windows.Controls.DataGrid>. Můžete také ovlivnit více ovládacích prvků pomocí implicitního stylu řádku pro nastavení vlastnosti <xref:System.Windows.Controls.DataGridRow.ValidationErrorTemplate%2A?displayProperty=nameWithType>.  
+- Nastavte <xref:System.Windows.Controls.DataGrid.RowValidationErrorTemplate%2A?displayProperty=nameWithType> vlastnost. Tato vlastnost umožňuje přizpůsobit zpětnou <xref:System.Windows.Controls.DataGrid> vazbu ověření řádku pro jednotlivé ovládací prvky. Můžete také ovlivnit více ovládacích prvků pomocí <xref:System.Windows.Controls.DataGridRow.ValidationErrorTemplate%2A?displayProperty=nameWithType> implicitní styl řádku nastavit vlastnost.  
   
-     Následující příklad nahradí výchozí názor na ověření řádku pomocí viditelného indikátoru. Když uživatel zadá neplatnou hodnotu, zobrazí se v záhlaví řádku červený kroužek s bílým vykřičníkem. K tomu dochází pro chyby ověřování řádku a buňky. Přidružená chybová zpráva se zobrazí v popisu tlačítka.  
+     Následující příklad nahradí výchozí zpětnou vazbu ověření řádku viditelnějším indikátorem. Když uživatel zadá neplatnou hodnotu, v záhlaví řádku se zobrazí červený kruh s bílým vykřičníkem. K tomu dochází pro chyby ověření řádku a buňky. Přidružená chybová zpráva se zobrazí v popisu.  
   
      [!code-xaml[DataGrid_Validation#RowValidationFeedbackXaml](~/samples/snippets/csharp/VS_Snippets_Wpf/datagrid_validation/cs/mainwindow.xaml#rowvalidationfeedbackxaml)]  
   
 ## <a name="example"></a>Příklad  
- Následující příklad uvádí kompletní ukázku ověřování buněk a řádků. Třída `Course` poskytuje ukázkový datový objekt, který implementuje <xref:System.ComponentModel.IEditableObject> pro podporu transakcí. Ovládací prvek <xref:System.Windows.Controls.DataGrid> komunikuje s <xref:System.ComponentModel.IEditableObject>, aby uživatelé mohli vrátit změny stisknutím klávesy ESC.  
+ Následující příklad poskytuje úplnou ukázku pro ověření buněk a řádků. Třída `Course` poskytuje ukázkový datový objekt, který implementuje <xref:System.ComponentModel.IEditableObject> pro podporu transakcí. Ovládací <xref:System.Windows.Controls.DataGrid> prvek spolupracuje <xref:System.ComponentModel.IEditableObject> s umožnit uživatelům vrátit změny stisknutím klávesy ESC.  
   
 > [!NOTE]
-> Pokud používáte Visual Basic, v prvním řádku MainWindow. xaml nahraďte `x:Class="DataGridValidation.MainWindow"` `x:Class="MainWindow"`.  
+> Pokud používáte visual basic, v prvním řádku MainWindow.xaml, nahradit `x:Class="DataGridValidation.MainWindow"` . `x:Class="MainWindow"`  
   
- Chcete-li ověřit ověření, postupujte následovně:  
+ Chcete-li ověření otestovat, vyzkoušejte následující postup:  
   
-- Do sloupce ID kurzu zadejte hodnotu, která není celočíselná.  
+- Ve sloupci ID kurzu zadejte hodnotu bez celého čísla.  
   
-- Do sloupce koncové datum zadejte datum starší než datum zahájení.  
+- Do sloupce Koncové datum zadejte datum, které je dřívější než Počáteční datum.  
   
-- Odstraňte hodnotu v ID kurzu, počáteční datum nebo datum ukončení.  
+- Odstraňte hodnotu v ID kurzu, počátečním datu nebo koncovém datu.  
   
-- Chcete-li vrátit neplatnou hodnotu buňky, umístěte kurzor zpátky do buňky a stiskněte klávesu ESC.  
+- Chcete-li vrátit zpět neplatnou hodnotu buňky, vložte kurzor zpět do buňky a stiskněte klávesu ESC.  
   
-- Chcete-li vrátit změny celého řádku, pokud je aktuální buňka v režimu úprav, stiskněte dvakrát klávesu ESC.  
+- Chcete-li vrátit změny pro celý řádek, když je aktuální buňka v režimu úprav, stiskněte dvakrát klávesu ESC.  
   
-- Pokud dojde k chybě ověřování, přesuňte ukazatel myši nad indikátor v záhlaví řádku, aby se zobrazila přidružená chybová zpráva.  
+- Dojde-li k ověřovací chybě, přesuňte ukazatel myši nad indikátor v záhlaví řádku a zotřite přidruženou chybovou zprávu.  
   
  [!code-csharp[DataGrid_Validation#FullCode](~/samples/snippets/csharp/VS_Snippets_Wpf/datagrid_validation/cs/mainwindow.xaml.cs#fullcode)]
  [!code-vb[DataGrid_Validation#FullCode](~/samples/snippets/visualbasic/VS_Snippets_Wpf/datagrid_validation/vb/mainwindow.xaml.vb#fullcode)]  
   
  [!code-xaml[DataGrid_Validation#FullXaml](~/samples/snippets/csharp/VS_Snippets_Wpf/datagrid_validation/cs/mainwindow.xaml#fullxaml)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Controls.DataGrid>
 - [DataGrid](datagrid.md)
 - [Datová vazba](../../../desktop-wpf/data/data-binding-overview.md)
-- [Implementace ověření vazby](../data/how-to-implement-binding-validation.md)
-- [Implementace logiky ověření na vlastních objektech](../data/how-to-implement-validation-logic-on-custom-objects.md)
+- [Implementovat ověření vazby](../data/how-to-implement-binding-validation.md)
+- [Implementace logiky ověření u vlastních objektů](../data/how-to-implement-validation-logic-on-custom-objects.md)

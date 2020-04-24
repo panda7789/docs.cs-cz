@@ -4,12 +4,12 @@ description: Zjistěte, jak funguje správa verzí v c# a .NET
 ms.date: 01/08/2017
 ms.technology: csharp-advanced-concepts
 ms.assetid: aa8732d7-5cd0-46e1-994a-78017f20d861
-ms.openlocfilehash: 124cce51865f04a555bc121fb6ce18cc95591bdc
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: dc192337e4eaa5f9f1d6509ea8c15deeac34a48c
+ms.sourcegitcommit: 62285ec11fa8e8424bab00511a90760c60e63c95
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79156464"
+ms.lasthandoff: 04/20/2020
+ms.locfileid: "81645458"
 ---
 # <a name="versioning-in-c"></a>Správa verzí v C\#
 
@@ -43,7 +43,7 @@ Při pokusu o zachování zpětné kompatibility se staršími verzemi knihovny 
 - Virtuální metody: Pokud vytvoříte virtuální metodu nevirtuální v nové verzi, znamená to, že projekty, které tuto metodu přepíší, budou muset být aktualizovány. Jedná se o obrovskou průlomovou změnu a je silně odrazována.
 - Podpisy metody: Při aktualizaci chování metody vyžaduje také změnit jeho podpis, měli byste místo toho vytvořit přetížení tak, aby kód volající do této metody bude i nadále fungovat.
 Vždy můžete manipulovat starý podpis metody volat do podpisu nové metody tak, aby implementace zůstává konzistentní.
-- [Zastaralý atribut](programming-guide/concepts/attributes/common-attributes.md#Obsolete): Tento atribut v kódu můžete použít k určení tříd nebo členů tříd, které jsou zastaralé a pravděpodobně budou odebrány v budoucích verzích. Tím je zajištěno, že vývojáři využívající vaši knihovnu jsou lépe připraveni na nejnovější změny.
+- [Zastaralý atribut](language-reference/attributes/general.md#obsolete-attribute): Tento atribut v kódu můžete použít k určení tříd nebo členů tříd, které jsou zastaralé a pravděpodobně budou odebrány v budoucích verzích. Tím je zajištěno, že vývojáři využívající vaši knihovnu jsou lépe připraveni na nejnovější změny.
 - Volitelné argumenty metody: Pokud provedete dříve volitelné argumenty metody povinné nebo změnit jejich výchozí hodnotu pak veškerý kód, který neposkytuje tyto argumenty bude muset být aktualizován.
 
 > [!NOTE]

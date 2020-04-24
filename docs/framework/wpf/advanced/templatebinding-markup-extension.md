@@ -8,12 +8,12 @@ helpviewer_keywords:
 - XAML [WPF], TemplateBinding markup extension
 - TemplateBinding markup extensions [WPF]
 ms.assetid: 1d25bbfc-dbc2-499d-9f12-419d23d4ac6a
-ms.openlocfilehash: 8cebbf717f66b072bc84b2068193ff2fe76ea87b
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 8c631a5a78db90187f0375181d4d4d1832159b7d
+ms.sourcegitcommit: 62285ec11fa8e8424bab00511a90760c60e63c95
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79187283"
+ms.lasthandoff: 04/20/2020
+ms.locfileid: "81646172"
 ---
 # <a name="templatebinding-markup-extension"></a>TemplateBinding – rozšíření značek
 Propojuje hodnotu vlastnosti v šabloně ovládacího prvku s hodnotou jiné vlastnosti ovládacího prvku bez vizuálního vzhledu.  
@@ -64,8 +64,8 @@ Propojuje hodnotu vlastnosti v šabloně ovládacího prvku s hodnotou jiné vl
 
 - <xref:System.Windows.Style>
 - <xref:System.Windows.Controls.ControlTemplate>
-- [Styly a šablony](../controls/styling-and-templating.md)
+- [Styly a šablony](../../../desktop-wpf/fundamentals/styles-templates-overview.md)
 - [Přehled XAML (WPF)](../../../desktop-wpf/fundamentals/xaml.md)
 - [Rozšíření značek a WPF XAML](markup-extensions-and-wpf-xaml.md)
 - [RelativeSource MarkupExtension](relativesource-markupextension.md)
-- [Rozšíření značek datové vazby](binding-markup-extension.md)
+- [Rozšíření značek připojení](binding-markup-extension.md)

@@ -18,12 +18,12 @@ helpviewer_keywords:
 - isolated storage, types
 - user authentication, isolated storage
 ms.assetid: 14812988-473f-44ae-b75f-fd5c2f21fb7b
-ms.openlocfilehash: 9bbd2c3cdca9b2eaee268738bf99189b0be78eba
-ms.sourcegitcommit: 1c1a1f9ec0bd1efb3040d86a79f7ee94e207cca5
+ms.openlocfilehash: 0e8be9b1d12d40f8135d21abe9dd6cb0b63bb2d8
+ms.sourcegitcommit: 62285ec11fa8e8424bab00511a90760c60e63c95
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/03/2020
-ms.locfileid: "80635735"
+ms.lasthandoff: 04/20/2020
+ms.locfileid: "81646396"
 ---
 # <a name="types-of-isolation"></a>Typy izolace
 Přístup k izolovanému úložišti je vždy omezen na uživatele, který jej vytvořil. K implementaci tohoto typu izolace používá soubor RUNTIME společného jazyka stejnou představu o identitě uživatele, kterou rozpozná operační systém, což je identita přidružená k procesu, ve kterém je kód spuštěn při otevření úložiště. Tato identita je ověřená identita uživatele, ale zosobnění může způsobit dynamickou změnu identity aktuálního uživatele.  
@@ -32,7 +32,7 @@ Přístup k izolovanému úložišti je vždy omezen na uživatele, který jej v
   
 - Identita domény představuje důkaz aplikace, která v případě webové aplikace může být úplná adresa URL. U kódu hostovaného prostředím může být identita domény založena na cestě k adresáři aplikace. Pokud například spustitelný soubor běží z cesty C:\Office\MyApp.exe, bude identita domény C:\Office\MyApp.exe.  
   
-- Identita sestavení je důkazem sestavení. To může pocházet z kryptografického digitálního podpisu, což může být [silný název](../assembly/strong-named.md)sestavení , vydavatel softwaru sestavení nebo jeho identita url. Pokud má sestavení silný název i identitu vydavatele softwaru, použije se identita vydavatele softwaru. Pokud sestavení pochází z Internetu a je nepodepsané, identita adresy URL se používá. Další informace o sestaveních a silných názvech naleznete v [tématu Programování pomocí sestavení](/dotnet/standard/assembly/index).  
+- Identita sestavení je důkazem sestavení. To může pocházet z kryptografického digitálního podpisu, což může být [silný název](../assembly/strong-named.md)sestavení , vydavatel softwaru sestavení nebo jeho identita url. Pokud má sestavení silný název i identitu vydavatele softwaru, použije se identita vydavatele softwaru. Pokud sestavení pochází z Internetu a je nepodepsané, identita adresy URL se používá. Další informace o sestaveních a silných názvech naleznete v [tématu Programování pomocí sestavení](../assembly/index.md).  
   
 - Roamingová úložiště se přesouvají s uživatelem, který má cestovní profil uživatele. Soubory jsou zapsány do síťového adresáře a stahovány do libovolného počítače, ke které se uživatel přihlásí. Další informace o cestovních <xref:System.IO.IsolatedStorage.IsolatedStorageScope.Roaming?displayProperty=nameWithType>uživatelských profilech naleznete v tématu .  
   

@@ -6,15 +6,15 @@ helpviewer_keywords:
 - element tree [WPF]
 - visual tree [WPF]
 ms.assetid: e83f25e5-d66b-4fc7-92d2-50130c9a6649
-ms.openlocfilehash: 696772da1ebee405493f2ff0e1481daf93d08ec7
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: aed4350f1a7084b7894a70ac9d6d00cf25b39e34
+ms.sourcegitcommit: 62285ec11fa8e8424bab00511a90760c60e63c95
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79187024"
+ms.lasthandoff: 04/20/2020
+ms.locfileid: "81646202"
 ---
 # <a name="trees-in-wpf"></a>Stromy v subsystému WPF
-V mnoha technologiích jsou prvky a součásti uspořádány do stromové struktury, kde vývojáři přímo manipulují s uzly objektů ve stromu, aby ovlivnili vykreslování nebo chování aplikace. [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]používá také několik metafor stromové struktury k definování vztahů mezi prvky programu. Z větší části WPF vývojáři mohou vytvořit aplikaci v kódu nebo definovat části aplikace v XAML při přemýšlení koncepčně o metaforu stromu objektů, ale bude volat konkrétní ROZHRANÍ API nebo pomocí konkrétní značky, aby tak učinily spíše než některé obecné Rozhraní API pro manipulaci s stromem objektů, jako je například rozhraní XML DOM. WPF zpřístupňuje dvě pomocné třídy, <xref:System.Windows.LogicalTreeHelper> <xref:System.Windows.Media.VisualTreeHelper>které poskytují strom metaforické zobrazení a . Termíny vizuální strom a logický strom se také používají v dokumentaci WPF, protože tyto stejné stromy jsou užitečné pro pochopení chování některých klíčových funkcí WPF. Toto téma definuje, co vizuální strom a logický strom představují, popisuje, jak tyto <xref:System.Windows.LogicalTreeHelper> <xref:System.Windows.Media.VisualTreeHelper>stromy souvisejí s celkovým konceptem stromu objektů, a zavádí a s.  
+V mnoha technologiích jsou prvky a součásti uspořádány do stromové struktury, kde vývojáři přímo manipulují s uzly objektů ve stromu, aby ovlivnili vykreslování nebo chování aplikace. [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]používá také několik metafor stromové struktury k definování vztahů mezi prvky programu. Z větší části WPF vývojáři můžete vytvořit aplikaci v kódu nebo definovat části aplikace v XAML při přemýšlení koncepčně o metaforu stromu objektů, ale bude volat konkrétní rozhraní API nebo pomocí konkrétní značky, aby tak učinily, spíše než některé obecné objektstrom manipulace rozhraní API, jako je například můžete použít v XML DOM. WPF zpřístupňuje dvě pomocné třídy, <xref:System.Windows.LogicalTreeHelper> <xref:System.Windows.Media.VisualTreeHelper>které poskytují strom metaforické zobrazení a . Termíny vizuální strom a logický strom se také používají v dokumentaci WPF, protože tyto stejné stromy jsou užitečné pro pochopení chování některých klíčových funkcí WPF. Toto téma definuje, co vizuální strom a logický strom představují, popisuje, jak tyto <xref:System.Windows.LogicalTreeHelper> <xref:System.Windows.Media.VisualTreeHelper>stromy souvisejí s celkovým konceptem stromu objektů, a zavádí a s.  
 
 <a name="element_tree"></a>
 ## <a name="trees-in-wpf"></a>Stromy v subsystému WPF  
@@ -37,7 +37,7 @@ V mnoha technologiích jsou prvky a součásti uspořádány do stromové strukt
   
  Logický strom však není celý objekt grafu, který existuje pro uživatelské rozhraní aplikace za běhu, a to i s xAML implicitní syntaktické položky započítány. Hlavním důvodem jsou vizuály a šablony. Zvažte například <xref:System.Windows.Controls.Button>. Logický strom hlásí <xref:System.Windows.Controls.Button> objekt a `Content`také jeho řetězec . Ale je více k tomuto tlačítku ve stromu objektů run-time. Zejména tlačítko se zobrazí pouze na obrazovce tak, <xref:System.Windows.Controls.Button> jak to dělá, protože byla použita určitá šablona ovládacího prvku. Vizuály, které pocházejí z použité šablony <xref:System.Windows.Controls.Border> (například šablona definované tmavě šedé kolem vizuální tlačítko) nejsou hlášeny v logickém stromu, i když se díváte na logický strom za běhu (například zpracování vstupní události z viditelného uživatelského zařízení a potom čtení logického stromu). Chcete-li najít vizuály šablony, budete místo toho muset prozkoumat vizuální strom.  
   
- Další informace o [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] tom, jak syntaxe mapuje na vytvořený objektový graf a implicitní syntaxi v XAML, naleznete [v tématu Syntaxe XAML podrobně](xaml-syntax-in-detail.md) nebo [Přehled XAML (WPF).](xaml-overview-wpf.md)  
+ Další informace o [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] tom, jak syntaxe mapuje na vytvořený objektový graf a implicitní syntaxi v XAML, naleznete [v tématu Syntaxe XAML podrobně](xaml-syntax-in-detail.md) nebo [Přehled XAML (WPF).](../../../desktop-wpf/fundamentals/xaml.md)  
   
 <a name="tree_property_inheritance_event_routing"></a>
 ### <a name="the-purpose-of-the-logical-tree"></a>Účel logického stromu  
@@ -55,7 +55,7 @@ V mnoha technologiích jsou prvky a součásti uspořádány do stromové strukt
   
 <a name="pvi"></a>
 ### <a name="property-value-inheritance"></a>Dědičnost hodnoty vlastnosti  
- Dědičnost hodnoty vlastnosti pracuje prostřednictvím hybridního stromu. Skutečná metadata, která <xref:System.Windows.FrameworkPropertyMetadata.Inherits%2A> obsahuje vlastnost, která umožňuje dědičnost <xref:System.Windows.FrameworkPropertyMetadata> vlastností, je třída wpf na úrovni architektury. Proto nadřazený objekt, který obsahuje původní hodnotu, a <xref:System.Windows.FrameworkElement> <xref:System.Windows.FrameworkContentElement>podřízený objekt, který tuto hodnotu dědí, musí být nebo , a musí být oba součástí některého logického stromu. Však pro existující WPF vlastnosti, které podporují dědičnost vlastností, dědičnost hodnoty vlastnosti je schopen udržovat prostřednictvím zasahující objekt, který není v logickém stromu. Hlavně je to důležité pro to, aby prvky šablony používaly všechny zděděné hodnoty vlastností nastavené buď v instanci, která je šablonována, nebo na ještě vyšších úrovních složení na úrovni stránky a proto vyšší v logickém stromu. Aby dědičnost hodnoty vlastnosti fungovala konzistentně přes takovou hranici, musí být děťující vlastnost registrována jako připojená vlastnost a měli byste postupovat podle tohoto vzoru, pokud máte v úmyslu definovat vlastní vlastnost závislosti s vlastností dědičnost. Přesný strom používaný pro dědičnost vlastností nelze zcela předvídat pomocí metody pomocné třídy, a to ani za běhu. Další informace naleznete v [tématu Dědičnost hodnoty nemovitosti](property-value-inheritance.md).  
+ Dědičnost hodnoty vlastnosti pracuje prostřednictvím hybridního stromu. Skutečná metadata, která <xref:System.Windows.FrameworkPropertyMetadata.Inherits%2A> obsahuje vlastnost, která umožňuje dědičnost <xref:System.Windows.FrameworkPropertyMetadata> vlastností, je třída wpf na úrovni architektury. Proto nadřazený objekt, který obsahuje původní hodnotu, a <xref:System.Windows.FrameworkElement> <xref:System.Windows.FrameworkContentElement>podřízený objekt, který tuto hodnotu dědí, musí být nebo , a musí být oba součástí některého logického stromu. Však pro existující WPF vlastnosti, které podporují dědičnost vlastností, dědičnost hodnoty vlastnosti je schopen udržovat prostřednictvím zasahující objekt, který není v logickém stromu. Hlavně je to důležité pro to, aby prvky šablony používaly všechny zděděné hodnoty vlastností nastavené buď v instanci, která je šablonována, nebo na ještě vyšších úrovních složení na úrovni stránky a proto vyšší v logickém stromu. Aby dědičnost hodnoty vlastnosti fungovala konzistentně přes takovou hranici, musí být děťující vlastnost registrována jako připojená vlastnost a tento vzor byste měli dodržovat, pokud máte v úmyslu definovat vlastní vlastnost závislosti s chováním dědičnosti vlastností. Přesný strom používaný pro dědičnost vlastností nelze zcela předvídat pomocí metody pomocné třídy, a to ani za běhu. Další informace naleznete v [tématu Dědičnost hodnoty nemovitosti](property-value-inheritance.md).  
   
 <a name="two_trees"></a>
 ## <a name="the-visual-tree"></a>Vizuální strom  
@@ -89,5 +89,5 @@ V mnoha technologiích jsou prvky a součásti uspořádány do stromové strukt
 - [Přehled vstupu](input-overview.md)
 - [Přehled vykreslování grafiky WPF](../graphics-multimedia/wpf-graphics-rendering-overview.md)
 - [Přehled směrovaných událostí](routed-events-overview.md)
-- [Inicializace elementů objektu, které nejsou ve stromu objektů](initialization-for-object-elements-not-in-an-object-tree.md)
+- [Inicializace elementů objektu, které nejsou obsaženy ve stromu objektů](initialization-for-object-elements-not-in-an-object-tree.md)
 - [Architektura WPF](wpf-architecture.md)

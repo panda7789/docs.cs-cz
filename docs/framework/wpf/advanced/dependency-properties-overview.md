@@ -14,12 +14,12 @@ helpviewer_keywords:
 - dependency properties [WPF]
 - resources [WPF], references to
 ms.assetid: d119d00c-3afb-48d6-87a0-c4da4f83dee5
-ms.openlocfilehash: 542e0a84e4c5cfc3750c33fe29cb40d3643e91e3
-ms.sourcegitcommit: 1c1a1f9ec0bd1efb3040d86a79f7ee94e207cca5
+ms.openlocfilehash: c73a61b8c251b12d5b3dac67535632322779a6af
+ms.sourcegitcommit: 62285ec11fa8e8424bab00511a90760c60e63c95
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/03/2020
-ms.locfileid: "80636029"
+ms.lasthandoff: 04/20/2020
+ms.locfileid: "81644057"
 ---
 # <a name="dependency-properties-overview"></a>Přehled vlastností závislostí
 
@@ -99,7 +99,7 @@ Vlastnost závislosti poskytuje funkce, které rozšiřuje funkce vlastnosti na 
 
 - [Integrace návrháře WPF](#wpf-designer-integration)
 
-### <a name="resources"></a>Prostředky
+### <a name="resources"></a>Zdroje a prostředky
 Hodnotu vlastnosti závislosti lze nastavit odkazem na prostředek. Prostředky jsou obvykle určeny jako hodnota `Resources` vlastnosti kořenového prvku stránky nebo aplikace (tato umístění umožňují nejvhodnější přístup k prostředku). Následující příklad ukazuje, jak <xref:System.Windows.Media.SolidColorBrush> definovat prostředek.
 
 [!code-xaml[PropertiesOvwSupport#ResourcesResource](~/samples/snippets/csharp/VS_Snippets_Wpf/PropertiesOvwSupport/CSharp/page2.xaml#resourcesresource)]
@@ -123,7 +123,7 @@ Následující příklad nastaví <xref:System.Windows.Controls.ContentControl.C
 > [!NOTE]
 > Vazby jsou považovány za místní hodnotu, což znamená, že pokud nastavíte jinou místní hodnotu, odstraníte vazbu. Podrobnosti naleznete v [tématu Priorita hodnoty vlastnosti závislostí](dependency-property-value-precedence.md).
 
-Vlastnosti závislostí <xref:System.Windows.DependencyObject> nebo třída nejsou nativně podporují <xref:System.ComponentModel.INotifyPropertyChanged> pro účely vytváření <xref:System.Windows.DependencyObject> oznámení o změnách hodnoty vlastnosti zdroj pro operace datové vazby. Další informace o tom, jak vytvořit vlastnosti pro použití v datové vazbě, které mohou vykazovat změny cíle datové vazby, naleznete v [tématu Přehled datové vazby](../data/data-binding-overview.md).
+Vlastnosti závislostí <xref:System.Windows.DependencyObject> nebo třída nejsou nativně podporují <xref:System.ComponentModel.INotifyPropertyChanged> pro účely vytváření <xref:System.Windows.DependencyObject> oznámení o změnách hodnoty vlastnosti zdroj pro operace datové vazby. Další informace o tom, jak vytvořit vlastnosti pro použití v datové vazbě, které mohou vykazovat změny cíle datové vazby, naleznete v [tématu Přehled datové vazby](../../../desktop-wpf/data/data-binding-overview.md).
 
 ### <a name="styles"></a>Styly
 Styly a šablony jsou dva hlavní motivující scénáře pro použití vlastností závislostí. Styly jsou užitečné zejména pro [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)]nastavení vlastností, které definují aplikaci . Styly jsou obvykle definovány jako prostředky v XAML. Styly interagují se systémem vlastností, protože obvykle obsahují "setters" pro určité vlastnosti, stejně jako "aktivační události", které mění hodnotu vlastnosti na základě hodnoty v reálném čase pro jinou vlastnost.
@@ -134,7 +134,7 @@ Následující příklad vytvoří jednoduchý styl (který by <xref:System.Wind
 
 [!code-xaml[PropertiesOvwSupport#SimpleStyle](~/samples/snippets/csharp/VS_Snippets_Wpf/PropertiesOvwSupport/CSharp/page3.xaml#simplestyle)]
 
-Další informace naleznete [v tématu Styling a Templating](../controls/styling-and-templating.md).
+Další informace naleznete [v tématu Styling a Templating](../../../desktop-wpf/fundamentals/styles-templates-overview.md).
 
 ### <a name="animations"></a>Animace
 Vlastnosti závislostí lze animovat. Při použití animace a je spuštěna, animovaná hodnota pracuje s vyšší prioritou než libovolná hodnota (například místní hodnota), která jinak vlastnost má.

@@ -7,12 +7,12 @@ dev_langs:
 helpviewer_keywords:
 - security [.NET Framework], code access security
 ms.assetid: 4eaa6535-d9fe-41a1-91d8-b437cfc16921
-ms.openlocfilehash: 08d708e8f98bd2fe06757df3033a512e2fe1f3c2
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 352fa41cb9d3136f853b068d0101a6dcab5dfd7c
+ms.sourcegitcommit: 62285ec11fa8e8424bab00511a90760c60e63c95
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79400055"
+ms.lasthandoff: 04/20/2020
+ms.locfileid: "81645764"
 ---
 # <a name="code-access-security-basics"></a>Základy zabezpečení přístupu kódu
 
@@ -53,7 +53,7 @@ Zabezpečení přístupu kódu nevylučuje možnost lidské chyby v psaní kódu
 Deklarativní syntaxe zabezpečení používá [atributy](../../standard/attributes/index.md) k umístění informací o zabezpečení do [metadat](../../standard/metadata-and-self-describing-components.md) kódu. Atributy lze umístit na úrovni sestavení, třídy nebo člena, aby byl uveden typ požadavku, požadavku nebo přepsání, které chcete použít. Požadavky se používají v aplikacích, které cílí na soubor RUNTIME společného jazyka, aby informovaly systém zabezpečení runtime o oprávněních, která vaše aplikace potřebuje nebo nechce. Požadavky a přepsání se používají v knihovnách k ochraně prostředků před volajícími nebo k přepsání výchozího chování zabezpečení.
 
 > [!NOTE]
-> V rozhraní .NET Framework 4 došlo k důležitým změnám modelu zabezpečení a terminologie rozhraní .NET Framework. Další informace o těchto změnách naleznete v [tématu Změny zabezpečení](../security/security-changes.md).
+> V rozhraní .NET Framework 4 došlo k důležitým změnám modelu zabezpečení a terminologie rozhraní .NET Framework. Další informace o těchto změnách naleznete v [tématu Změny zabezpečení](https://docs.microsoft.com/previous-versions/dotnet/framework/security/security-changes).
 
 Chcete-li použít deklarativní volání zabezpečení, je nutné inicializovat data stavu objektu oprávnění tak, aby představovala konkrétní formu oprávnění, které potřebujete. Každé předdefinované oprávnění má atribut, <xref:System.Security.Permissions.SecurityAction> který je předán výčet popsat typ operace zabezpečení, které chcete provést. Oprávnění však také přijmout vlastní parametry, které jsou výhradní pro ně.
 
@@ -166,4 +166,4 @@ Pokud chcete, aby vaše aplikace provést operaci, která vyžaduje přístup k 
 - [Zabezpečení přístupu kódu](code-access-security.md)
 - [Základy zabezpečení přístupu kódu](code-access-security-basics.md)
 - [Atributy](../../standard/attributes/index.md)
-- [Metadata a komponenty popisující samy sebe](../../standard/metadata-and-self-describing-components.md)
+- [Metadata a součásti pro vlastní popis](../../standard/metadata-and-self-describing-components.md)

@@ -11,12 +11,12 @@ helpviewer_keywords:
 ms.assetid: b96bed40-8946-4285-8fe4-88045ab854ed
 ms.topic: tutorial
 ms.custom: mvc,vs-dotnet
-ms.openlocfilehash: facb9ebebd9ce1904886a946277185ac2c2e4bc4
-ms.sourcegitcommit: 927b7ea6b2ea5a440c8f23e3e66503152eb85591
+ms.openlocfilehash: 9381873faa8cca1accf95d823f5183a218d28813
+ms.sourcegitcommit: 62285ec11fa8e8424bab00511a90760c60e63c95
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81463927"
+ms.lasthandoff: 04/20/2020
+ms.locfileid: "81646420"
 ---
 # <a name="tutorial-create-your-first-wpf-application-in-visual-studio-2019"></a>Kurz: Vytvoření první aplikace WPF v Sadě Visual Studio 2019
 
@@ -358,7 +358,7 @@ Následující obrázek znázorňuje prvky uživatelského rozhraní přidané d
 
 ## <a name="style-controls"></a>Ovládací prvky stylu
 
-Vzhled různých prvků je často stejný pro všechny prvky stejného typu v uživatelském rozhraní. Uživatelské rozhraní používá [styly](../controls/styling-and-templating.md) k opakovanému použití vzhledu ve více prvcích. Opětovná použitelnost stylů pomáhá zjednodušit vytváření a správu XAML. Tato část nahrazuje atributy za prvek, které byly definovány v předchozích krocích, styly.
+Vzhled různých prvků je často stejný pro všechny prvky stejného typu v uživatelském rozhraní. Uživatelské rozhraní používá [styly](../../../desktop-wpf/fundamentals/styles-templates-overview.md) k opakovanému použití vzhledu ve více prvcích. Opětovná použitelnost stylů pomáhá zjednodušit vytváření a správu XAML. Tato část nahrazuje atributy za prvek, které byly definovány v předchozích krocích, styly.
 
 1. Otevřete *soubor Application.xaml* nebo *App.xaml*.
 
@@ -481,7 +481,7 @@ Následující obrázek znázorňuje `ExpenseIt` obě stránky aplikace s použi
 V tomto návodu jste se naučili řadu technik pro vytvoření ui pomocí Windows Presentation Foundation (WPF). Nyní byste měli mít základní znalosti o stavebních blocích aplikace .NET vázané na data. Další informace o architektuře WPF a programovacích modelech naleznete v následujících tématech:
 
 - [Architektura WPF](../advanced/wpf-architecture.md)
-- [Přehled XAML (WPF)](../advanced/xaml-overview-wpf.md)
+- [Přehled XAML (WPF)](../../../desktop-wpf/fundamentals/xaml.md)
 - [Přehled vlastností závislostí](../advanced/dependency-properties-overview.md)
 - [Rozložení](../advanced/layout.md)
 

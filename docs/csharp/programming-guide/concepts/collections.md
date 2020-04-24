@@ -2,12 +2,12 @@
 title: Kolekce (C#)
 ms.date: 07/20/2015
 ms.assetid: 317d7dc3-8587-4873-8b3e-556f86497939
-ms.openlocfilehash: a560155b936aef7a4a346d39eaed75e0a85c1a73
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: d2996648690fc03b5f1d6a90e0be96155c5a24ed
+ms.sourcegitcommit: 62285ec11fa8e8424bab00511a90760c60e63c95
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79169880"
+ms.lasthandoff: 04/20/2020
+ms.locfileid: "81645470"
 ---
 # <a name="collections-c"></a>Kolekce (C#)
 
@@ -602,8 +602,8 @@ private static IEnumerable<int> EvenSequence(
 - [Koncepty programování (C#)](./index.md)
 - [Příkaz Option Strict](../../../visual-basic/language-reference/statements/option-strict-statement.md)
 - [LINQ na objekty (C#)](./linq/linq-to-objects.md)
-- [Paralelní LINQ (PLINQ)](../../../standard/parallel-programming/parallel-linq-plinq.md)
+- [Paralelní LINQ (PLINQ)](../../../standard/parallel-programming/introduction-to-plinq.md)
 - [Kolekce a datové struktury](../../../standard/collections/index.md)
 - [Výběr třídy kolekce](../../../standard/collections/selecting-a-collection-class.md)
-- [Porovnávání a řazení v kolekcích](../../../standard/collections/comparisons-and-sorts-within-collections.md)
-- [Kdy použít generické kolekce](../../../standard/collections/when-to-use-generic-collections.md)
+- [Porovnání a řazení v rámci kolekcí](../../../standard/collections/comparisons-and-sorts-within-collections.md)
+- [Kdy použít obecné kolekce](../../../standard/collections/when-to-use-generic-collections.md)

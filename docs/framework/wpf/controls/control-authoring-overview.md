@@ -8,12 +8,12 @@ helpviewer_keywords:
 - controls [WPF], authoring overview
 - authoring overview for controls [WPF]
 ms.assetid: 3d864748-cff0-4e63-9b23-d8e5a635b28f
-ms.openlocfilehash: 2326520039085beb5f5294e23db67b67f9d7d7da
-ms.sourcegitcommit: 7980a91f90ae5eca859db7e6bfa03e23e76a1a50
+ms.openlocfilehash: a6ab5463cc28aa590454ae1304714d3d12ee7c6b
+ms.sourcegitcommit: 62285ec11fa8e8424bab00511a90760c60e63c95
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "81243268"
+ms.lasthandoff: 04/20/2020
+ms.locfileid: "81646139"
 ---
 # <a name="control-authoring-overview"></a>Přehled vytváření ovládacích prvku
 
@@ -38,7 +38,7 @@ Historicky pokud jste chtěli získat přizpůsobené prostředí z existující
 
 - **Aktivační události.** A <xref:System.Windows.Trigger> umožňuje dynamicky měnit vzhled a chování ovládacího prvku bez vytvoření nového ovládacího prvku. Předpokládejme například, <xref:System.Windows.Controls.ListBox> že máte v aplikaci více <xref:System.Windows.Controls.ListBox> ovládacích prvků a chcete, aby položky v každé z nich byly tučné a červené, když jsou vybrány. Prvním instinktem může být vytvoření třídy, která dědí z <xref:System.Windows.Controls.ListBox> <xref:System.Windows.Controls.Primitives.Selector.OnSelectionChanged%2A> metody a přepíše ji za účelem změny vzhledu <xref:System.Windows.Controls.ListBoxItem> vybrané položky, ale lepším přístupem je přidání aktivační události ke stylu a, který mění vzhled vybrané položky. Aktivační událost umožňuje změnit hodnoty vlastností nebo provést akce na základě hodnoty vlastnosti. A <xref:System.Windows.EventTrigger> umožňuje provést akce, když dojde k události.
 
-Další informace o stylech, šablonách a aktivačních událostech naleznete [v tématu Stylování a šablonování](styling-and-templating.md).
+Další informace o stylech, šablonách a aktivačních událostech naleznete [v tématu Stylování a šablonování](../../../desktop-wpf/fundamentals/styles-templates-overview.md).
 
 Obecně platí, že pokud ovládací prvek zrcadlí funkce existujícího ovládacího prvku, ale chcete, aby ovládací prvek vypadat jinak, měli byste nejprve zvážit, zda můžete použít některou z metod popsaných v této části změnit existující ovládací prvek vzhled.
 

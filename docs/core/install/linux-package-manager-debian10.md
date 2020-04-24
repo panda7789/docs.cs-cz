@@ -4,12 +4,12 @@ description: Pomocí správce balíčků nainstalujte na Debian 10 .NET Core SDK
 author: thraka
 ms.author: adegeo
 ms.date: 03/17/2020
-ms.openlocfilehash: fd6f42684aa9fb3ea9429b80f858459698a1b825
-ms.sourcegitcommit: 07123a475af89b6da5bb6cc51ea40ab1e8a488f0
+ms.openlocfilehash: a312496ed9a26783198cdd038db7ffa2bdc7381e
+ms.sourcegitcommit: 62285ec11fa8e8424bab00511a90760c60e63c95
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80134317"
+ms.lasthandoff: 04/20/2020
+ms.locfileid: "81645293"
 ---
 # <a name="debian-10-package-manager---install-net-core"></a>Debian 10 Správce balíčků - Instalace .NET Core
 
@@ -19,12 +19,12 @@ Tento článek popisuje, jak pomocí správce balíčků nainstalovat .NET Core 
 
 [!INCLUDE [package-manager-intro-sdk-vs-runtime](includes/package-manager-intro-sdk-vs-runtime.md)]
 
-## <a name="register-microsoft-key-and-feed"></a>Registrace klíče Microsoft a informačního kanálu
+## <a name="add-microsoft-repository-key-and-feed"></a>Přidání klíče a informačního kanálu úložiště Microsoft
 
 Před instalací rozhraní .NET budete muset:
 
-- Zaregistrujte klíč Společnosti Microsoft.
-- Zaregistrujte úložiště produktů.
+- Přidejte podpisový klíč balíčku Microsoft do seznamu důvěryhodných klíčů.
+- Přidejte úložiště do správce balíčků.
 - Nainstalujte požadované závislosti.
 
 Stačí to provést jednou na jednom počítači.

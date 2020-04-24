@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - base elements [WPF]
 ms.assetid: 2c997092-72c6-4767-bc84-74267f4eee72
-ms.openlocfilehash: 7d52d951d4fa4df83bbcca6b4cb479e18e532d2a
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: f6519675ebf3624152e1077e7582f04e38b1dce9
+ms.sourcegitcommit: 62285ec11fa8e8424bab00511a90760c60e63c95
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79141625"
+ms.lasthandoff: 04/20/2020
+ms.locfileid: "81644042"
 ---
 # <a name="base-elements-overview"></a>Přehled základních elementů
 Vysoké procento tříd [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] v jsou odvozeny ze čtyř tříd, které jsou běžně označovány v dokumentaci sady SDK jako třídy základní prvek. Tyto třídy <xref:System.Windows.FrameworkElement> <xref:System.Windows.ContentElement>jsou <xref:System.Windows.UIElement> <xref:System.Windows.FrameworkContentElement>, , , a . Třída <xref:System.Windows.DependencyObject> je také související, protože se jedná <xref:System.Windows.UIElement> o společnou základní třídu obou<xref:System.Windows.ContentElement>  
@@ -47,7 +47,7 @@ Vysoké procento tříd [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasha
   
 - Podpora pro styling a scénáře. Další informace naleznete <xref:System.Windows.Style> v tématu přehled [scénářů](../graphics-multimedia/storyboards-overview.md).  
   
-- Podpora datové vazby. Další informace naleznete v [tématu Přehled datových vazeb](../data/data-binding-overview.md).  
+- Podpora datové vazby. Další informace naleznete v [tématu Přehled datových vazeb](../../../desktop-wpf/data/data-binding-overview.md).  
   
 - Podpora pro dynamické odkazy na prostředky. Další informace naleznete v tématu [XAML Resources](../../../desktop-wpf/fundamentals/xaml-resources-define.md).  
   
@@ -67,7 +67,7 @@ Vysoké procento tříd [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasha
   
 - Podpora pro styling a scénáře. Další informace naleznete <xref:System.Windows.Style> v tématech a [přehled animací](../graphics-multimedia/animation-overview.md).  
   
-- Podpora datové vazby. Další informace naleznete v [tématu Přehled datových vazeb](../data/data-binding-overview.md).  
+- Podpora datové vazby. Další informace naleznete v [tématu Přehled datových vazeb](../../../desktop-wpf/data/data-binding-overview.md).  
   
 - Podpora pro dynamické odkazy na prostředky. Další informace naleznete v tématu [XAML Resources](../../../desktop-wpf/fundamentals/xaml-resources-define.md).  
   

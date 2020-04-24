@@ -8,12 +8,12 @@ dev_langs:
 helpviewer_keywords:
 - what's new [.NET Framework]
 ms.assetid: 1d971dd7-10fc-4692-8dac-30ca308fc0fa
-ms.openlocfilehash: d5657f4081577b2a27bc3c2f6880784015c56060
-ms.sourcegitcommit: 99b153b93bf94d0fecf7c7bcecb58ac424dfa47c
+ms.openlocfilehash: f56ba7d68be107e697d3f732767f0a5f11c1a622
+ms.sourcegitcommit: 62285ec11fa8e8424bab00511a90760c60e63c95
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/25/2020
-ms.locfileid: "80249692"
+ms.lasthandoff: 04/20/2020
+ms.locfileid: "81644218"
 ---
 # <a name="whats-new-in-net-framework"></a>Co je nového v rozhraní .NET Framework
 
@@ -102,7 +102,7 @@ Koncové body stavu jsou široce používány orchestračními nástroji ke spr�
 
 Existují dva způsoby, jak vystavit koncový bod stavu a publikovat informace o stavu služby WCF:
 
-- Prostřednictvím kódu. Například:
+- Prostřednictvím kódu. Příklad:
 
   ```csharp
   ServiceHost host = new ServiceHost(typeof(Service1),
@@ -124,7 +124,7 @@ Existují dva způsoby, jak vystavit koncový bod stavu a publikovat informace o
   host.Description.Behaviors.Add(healthBehavior)
   ```
 
-- Pomocí konfiguračního souboru. Například:
+- Pomocí konfiguračního souboru. Příklad:
 
   ```xml
   <behaviors>
@@ -136,7 +136,7 @@ Existují dva způsoby, jak vystavit koncový bod stavu a publikovat informace o
   </behaviors>
   ```
 
-Stav služby lze dotazovat pomocí parametrů dotazu, `OnServiceFailure` `OnDispatcherFailure`jako `OnListenerFailure` `OnThrottlePercentExceeded`je například , , , a kód odpovědi HTTP lze zadat pro každý parametr dotazu. Pokud je pro parametr dotazu vynechán kód odpovědi HTTP, použije se ve výchozím nastavení kód odpovědi 503 HTTP. Například:
+Stav služby lze dotazovat pomocí parametrů dotazu, `OnServiceFailure` `OnDispatcherFailure`jako `OnListenerFailure` `OnThrottlePercentExceeded`je například , , , a kód odpovědi HTTP lze zadat pro každý parametr dotazu. Pokud je pro parametr dotazu vynechán kód odpovědi HTTP, použije se ve výchozím nastavení kód odpovědi 503 HTTP. Příklad:
 
 - Selhání služby:`https://contoso:81/Service1?health&OnServiceFailure=450`
 
@@ -252,7 +252,7 @@ Using rsa = RSA.Create(rsaParameters)
 End Using
 ```
 
-Metody <xref:System.Security.Cryptography.DSA.Create(System.Int32)?displayProperty=nameWithType> <xref:System.Security.Cryptography.RSA.Create(System.Int32)?displayProperty=nameWithType> a umožňují generovat <xref:System.Security.Cryptography.DSA> <xref:System.Security.Cryptography.RSA> nové nebo klíče s určitou velikostí klíče. Například:
+Metody <xref:System.Security.Cryptography.DSA.Create(System.Int32)?displayProperty=nameWithType> <xref:System.Security.Cryptography.RSA.Create(System.Int32)?displayProperty=nameWithType> a umožňují generovat <xref:System.Security.Cryptography.DSA> <xref:System.Security.Cryptography.RSA> nové nebo klíče s určitou velikostí klíče. Příklad:
 
 ```csharp
 using (DSA dsa = DSA.Create(2048))
@@ -467,7 +467,7 @@ NET Framework 4.7.2 přidává podpěry pro enklávu vždy šifrované. Původn�
 
 - <xref:System.Data.SqlClient.SqlEnclaveAttestationParameters>, který poskytuje parametry atestace používané sql serverem k získání informací potřebných ke spuštění určitého protokolu osazení.
 
-Konfigurační soubor aplikace pak určuje <xref:System.Data.SqlClient.SqlColumnEncryptionEnclaveProvider?displayProperty=nameWithType> konkrétní implementaci abstraktní třídy, která poskytuje funkce pro zprostředkovatele enklávy. Například:
+Konfigurační soubor aplikace pak určuje <xref:System.Data.SqlClient.SqlColumnEncryptionEnclaveProvider?displayProperty=nameWithType> konkrétní implementaci abstraktní třídy, která poskytuje funkce pro zprostředkovatele enklávy. Příklad:
 
 ```xml
 <configuration>
@@ -588,7 +588,7 @@ Pro aplikaci Windows Forms předchozí řešení nastavení povědomí O DPI v k
 Rozhraní .NET Framework 4.7.1 obsahuje nové funkce v následujících oblastech:
 
 - [Základní třídy](#core471)
-- [Common language runtime (CLR)](#clr)
+- [Běžný jazyk runtime (CLR)](#clr)
 - [Sítě](#net471)
 - [ASP.NET](#asp-net471)
 
@@ -650,7 +650,7 @@ Rozhraní .NET Framework 4.7.1 <xref:System.Web.HttpCookie.TryParse%2A?displayPr
 
 **Možnosti hash SHA-2 pro přihlašovací údaje pro ověřování ASP.NET formulářů**
 
-V rozhraní .NET Framework 4.7 a starších verzích ASP.NET vývojářům povolily ukládat pověření uživatelů s zahálčenými hesly v konfiguračních souborech pomocí MD5 nebo SHA1. Počínaje rozhraním .NET Framework 4.7.1 podporuje ASP.NET také nové zabezpečené možnosti hash SHA-2, jako jsou SHA256, SHA384 a SHA512. SHA1 zůstává výchozí a výchozí algoritmus hash, který není výchozí, lze definovat v konfiguračním souboru webu. Například:
+V rozhraní .NET Framework 4.7 a starších verzích ASP.NET vývojářům povolily ukládat pověření uživatelů s zahálčenými hesly v konfiguračních souborech pomocí MD5 nebo SHA1. Počínaje rozhraním .NET Framework 4.7.1 podporuje ASP.NET také nové zabezpečené možnosti hash SHA-2, jako jsou SHA256, SHA384 a SHA512. SHA1 zůstává výchozí a výchozí algoritmus hash, který není výchozí, lze definovat v konfiguračním souboru webu. Příklad:
 
 ```xml
 <system.web>
@@ -695,7 +695,7 @@ Můžete vidět [příklad vylepšení kryptografie rozhraní .NET Framework 4.7
 
 **Lepší podpora řídicích znaků pomocí datacontractjsonserializer**
 
-V rozhraní .NET Framework <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer> 4.7 serializuje řídicí znaky v souladu se standardem ECMAScript 6. Toto chování je ve výchozím nastavení povoleno pro aplikace, které cílí na rozhraní .NET Framework 4.7, a je funkcí pro přihlášení pro aplikace, které jsou spuštěny v rámci rozhraní .NET Framework 4.7, ale zaměřují se na předchozí verzi rozhraní .NET Framework. Další informace naleznete [v tématu Retargeting Changes in the .NET Framework 4.7](../migration-guide/retargeting-changes-in-the-net-framework-4-7.md).
+V rozhraní .NET Framework <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer> 4.7 třída serializuje řídicí znaky v souladu se standardem ECMAScript 6. Toto chování je ve výchozím nastavení povoleno pro aplikace, které cílí na rozhraní .NET Framework 4.7, a je funkcí pro přihlášení pro aplikace, které jsou spuštěny v rámci rozhraní .NET Framework 4.7, ale zaměřují se na předchozí verzi rozhraní .NET Framework. Další informace naleznete v části [Kompatibilita aplikací.](../migration-guide/application-compatibility.md)
 
 <a name="net47" />
 
@@ -768,11 +768,11 @@ V rozhraní .NET Framework 4.7 obsahuje wpf následující vylepšení:
 
 **Podpora balíčku dotykového stylu založeného na zprávách WM_POINTER Windows**
 
-Nyní máte možnost použít balíček dotykového pera založený na [WM_POINTER zpráv](https://docs.microsoft.com/previous-versions/windows/desktop/InputMsg/messages) namísto platformy WISP (Windows Ink Services Platform). Toto je funkce opt-in v rozhraní .NET Framework. Další informace naleznete [v tématu Retargeting Changes in the .NET Framework 4.7](../migration-guide/retargeting-changes-in-the-net-framework-4-7.md).
+Nyní máte možnost použít balíček dotykového pera založený na [WM_POINTER zpráv](https://docs.microsoft.com/previous-versions/windows/desktop/InputMsg/messages) namísto platformy WISP (Windows Ink Services Platform). Toto je funkce opt-in v rozhraní .NET Framework. Další informace naleznete v části [Kompatibilita aplikací.](../migration-guide/application-compatibility.md)
 
 **Nová implementace pro wpf tisková API**
 
-Rozhraní API pro tisk wpf ve <xref:System.Printing.PrintQueue?displayProperty=nameWithType> třídě volání rozhraní API balíčku [tiskových dokumentů](/windows/desktop/printdocs/tailored-app-printing-api) systému Windows namísto zastaralé rozhraní [XPS Print API](/windows/desktop/printdocs/xps-printing). Dopad této změny na kompatibilitu aplikací naleznete [v tématu Retargeting Changes in the .NET Framework 4.7](../migration-guide/retargeting-changes-in-the-net-framework-4-7.md).
+Rozhraní API pro tisk wpf ve <xref:System.Printing.PrintQueue?displayProperty=nameWithType> třídě volání rozhraní API balíčku [tiskových dokumentů](/windows/desktop/printdocs/tailored-app-printing-api) systému Windows namísto zastaralé rozhraní [XPS Print API](/windows/desktop/printdocs/xps-printing). Dopad této změny na kompatibilitu aplikací naleznete v části [Kompatibilita aplikací.](../migration-guide/application-compatibility.md)
 
 <a name="v462" />
 
@@ -841,7 +841,7 @@ End Class
 
 Potom můžete vytvořit soubor prostředků, DataAnnotation.Localization.fr.resx, jehož klíč je řetězec chybové zprávy a jehož hodnota je lokalizovaná chybová zpráva. Soubor musí být nalezen `App.LocalResources` ve složce. Například následující je klíč a jeho hodnota v lokalizované francouzštině (fr) chybová zpráva:
 
-| Name (Název)                                 | Hodnota                                     |
+| Název                                 | Hodnota                                     |
 | ------------------------------------ | ----------------------------------------- |
 | Hodnocení musí být mezi 1 a 10. | La note doit être tvoří entre 1 et 10. |
 
@@ -965,7 +965,7 @@ Chcete-li tento problém vyřešit v rozhraní .NET Framework 4.6.2, byly přid�
 
 Knihovna kryptografie systému Windows (CNG) přidala podporu pro ukládání trvalých symetrických klíčů a použití hardwarově uložených symetrických klíčů a rozhraní .NET Framework 4.6.2 umožnilo vývojářům tuto funkci využívat.  Vzhledem k tomu, že pojem názvy klíčů a zprostředkovatelé klíčů je specifické pro implementaci, použití této `Aes.Create`funkce vyžaduje využití konstruktoru konkrétní typy implementace namísto upřednostňované tovární přístup (například volání ).
 
-Pro algoritmy AES (<xref:System.Security.Cryptography.AesCng>) a 3DES (<xref:System.Security.Cryptography.TripleDESCng>) existuje podpora symetrického šifrování s trvalým klíčem. Například:
+Pro algoritmy AES (<xref:System.Security.Cryptography.AesCng>) a 3DES (<xref:System.Security.Cryptography.TripleDESCng>) existuje podpora symetrického šifrování s trvalým klíčem. Příklad:
 
 ```csharp
 public static byte[] EncryptDataWithPersistedKey(byte[] data, byte[] iv)
@@ -1343,7 +1343,7 @@ V předchozích verzích WPF vlastní slovníky nerozpoznaly seznamy vyloučený
 > [!NOTE]
 > Tyto nové formáty souborů nejsou přímo podporovány WPF kontrolu pravopisu API a vlastní slovníky dodané WPF v aplikacích by měl y nadále používat soubory .lex.
 
-**ukázky**
+**Ukázky**
 
 Existuje několik wpf ukázky v úložišti [GitHub Microsoft/WPF-Samples.](https://github.com/Microsoft/WPF-Samples) Pomozte nám vylepšit naše ukázky tím, že nám pošlete žádost o přijetí nebo otevřete [problém githubu](https://github.com/Microsoft/WPF-Samples/issues).
 
@@ -1387,7 +1387,7 @@ Nespravované profilování rozhraní API byla rozšířena takto:
 
 ### <a name="native-image-generator-ngen-pdbs"></a>Nativní obrazgenerátor (NGEN) PDBs
 
-Trasování událostí mezi počítači umožňuje zákazníkům profilovat program v počítači A a podívat se na data profilování pomocí mapování zdrojové čáry v počítači B. Pomocí předchozích verzí rozhraní .NET Framework by uživatel zkopíroval všechny moduly a nativní obrázky z profilovaného zařízení k analytickému počítači, který obsahuje ddb IL, a vytvořil mapování zdroj-na nativní. Zatímco tento proces může fungovat dobře, když jsou soubory relativně malé, například pro telefonní aplikace, soubory mohou být velmi velké na stolních systémech a vyžadují značný čas ke kopírování.
+Trasování událostí mezi počítači umožňuje zákazníkům profilovat program v počítači A a podívat se na data profilování pomocí mapování zdrojové čáry v počítači B. Pomocí předchozích verzí rozhraní .NET Framework by uživatel zkopíroval všechny moduly a nativní bitové kopie z profilovaného počítače do analytického počítače, který obsahuje dDB IL a vytvořil mapování ze zdroje na nativní. Zatímco tento proces může fungovat dobře, když jsou soubory relativně malé, například pro telefonní aplikace, soubory mohou být velmi velké na stolních systémech a vyžadují značný čas ke kopírování.
 
 S Ngen PDBs NGen můžete vytvořit PDB, který obsahuje il-to-nativní mapování bez závislosti na IL PDB. V našem scénáři trasování událostí mezi počítači je potřeba pouze zkopírovat nativní pdb bitové kopie, která je generována počítačem A do počítače B, a použít [rozhraní API pro přístup k ladění k](/visualstudio/debugger/debug-interface-access/debug-interface-access-sdk-reference) čtení mapování zdroje-IL pdb a mapování IL-TO-NAtivního obrázku PDB. Kombinace obou mapování poskytuje mapování zdroj na nativní. Vzhledem k tomu, že nativní obraz PDB je mnohem menší než všechny moduly a nativní obrázky, proces kopírování z počítače A do počítače B je mnohem rychlejší.
 
@@ -1890,7 +1890,7 @@ Mezi vylepšení při ladění aplikací rozhraní .NET Framework ve Visual Stud
 
 - Upravujte a pokračujte u 64bitových aplikací. Visual Studio 2013 podporuje funkci Úpravy a pokračovat pro 64bitové spravované aplikace pro stolní počítače, Windows Store a Windows Phone. Existující omezení zůstávají v platnosti pro 32bitové i 64bitové aplikace (viz poslední část článku [Podporované změny kódu (C#).](/visualstudio/debugger/supported-code-changes-csharp)
 
-- Ladění podporující asynchronní. Chcete-li usnadnit ladění asynchronních aplikací v sadě Visual Studio 2013, zásobník volání skryje kód infrastruktury poskytovaný kompilátory pro podporu asynchronního programování a také řetězy v logických nadřazených rámcích, takže můžete sledovat provádění logického programu více Jasně. Okno Úkoly nahrazuje okno Paralelní úkoly a zobrazuje úkoly, které se vztahují k určité zarážky, a také zobrazuje všechny další úkoly, které jsou aktuálně aktivní nebo naplánované v aplikaci. O této funkci si můžete přečíst v části Ladění podporující asynchronní informace [v oznámení rozhraní .NET Framework 4.5.1](https://devblogs.microsoft.com/dotnet/announcing-the-net-framework-4-5-1-preview/).
+- Ladění podporující asynchronní. Chcete-li usnadnit ladění asynchronních aplikací v sadě Visual Studio 2013, zásobník volání skryje kód infrastruktury poskytovaný kompilátory pro podporu asynchronního programování a také řetězy v logických nadřazených rámcích, takže můžete sledovat provádění logického programu jasněji. Okno Úkoly nahrazuje okno Paralelní úkoly a zobrazuje úkoly, které se vztahují k určité zarážky, a také zobrazuje všechny další úkoly, které jsou aktuálně aktivní nebo naplánované v aplikaci. O této funkci si můžete přečíst v části Ladění podporující asynchronní informace [v oznámení rozhraní .NET Framework 4.5.1](https://devblogs.microsoft.com/dotnet/announcing-the-net-framework-4-5-1-preview/).
 
 - Lepší podpora výjimek pro součásti prostředí Windows Runtime. Výjimky, které vyvstávají z aplikací pro Windows Store, ve Windows 8.1 zachovávají informace o chybě, která výjimku způsobila, a to i přes hranice jazyka. O této funkci si můžete přečíst v části Vývoj aplikací pro Windows Store v [oznámení .NET Framework 4.5.1](https://devblogs.microsoft.com/dotnet/announcing-the-net-framework-4-5-1-preview/).
 
@@ -1954,7 +1954,7 @@ V rozhraní .NET Framework 4.5 byly do jazyků Jazyka C# a Visual Basic přidán
 
 <a name="tools" />
 
-### <a name="tools"></a>Nástroje
+### <a name="tools"></a>nástroje
 
 V rozhraní .NET Framework 4.5 umožňuje generátor souborů prostředků (Resgen.exe) vytvořit soubor Resw pro použití v aplikacích pro Windows 8.x Store ze souboru .resources vloženého do sestavení rozhraní .NET Framework. Další informace naleznete v [tématu Resgen.exe (Resource File Generator).](../tools/resgen-exe-resource-file-generator.md)
 
@@ -2128,7 +2128,7 @@ Projekt knihovny přenosných tříd v sadě Visual Studio 2012 (a novějších 
 
 - [Rozhraní .NET Framework a nesvázaná vydání](../get-started/the-net-framework-and-out-of-band-releases.md)
 - [Co je nového v usnadnění v rozhraní .NET Framework](whats-new-in-accessibility.md)
-- [Novinky v sadě Visual Studio 2017](/visualstudio/ide/whats-new-visual-studio-2017)
+- [Co je nového ve Visual Studiu 2017](/visualstudio/ide/whats-new-visual-studio-2017)
 - [Co je nového ve Visual Studiu 2019](/visualstudio/ide/whats-new-visual-studio-2019)
 - [ASP.NET](/aspnet)
 - [Co je nového pro C++ v Sadě Visual Studio](/cpp/what-s-new-for-visual-cpp-in-visual-studio)

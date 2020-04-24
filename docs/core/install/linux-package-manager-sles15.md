@@ -4,12 +4,12 @@ description: Pomocí správce balíčků nainstalujte na sles 15 .NET Core SDK a
 author: thraka
 ms.author: adegeo
 ms.date: 03/17/2020
-ms.openlocfilehash: b86b97bf17165f2f7a70e80ff581750ba39be375
-ms.sourcegitcommit: 07123a475af89b6da5bb6cc51ea40ab1e8a488f0
+ms.openlocfilehash: 608229447ef8814130c2a42edfc1c11c35ca156c
+ms.sourcegitcommit: 62285ec11fa8e8424bab00511a90760c60e63c95
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80134179"
+ms.lasthandoff: 04/20/2020
+ms.locfileid: "81645628"
 ---
 # <a name="sles-15-package-manager---install-net-core"></a>SLES 15 Správce balíčků - instalace jádra .NET
 
@@ -19,12 +19,12 @@ Tento článek popisuje, jak pomocí správce balíčků nainstalovat .NET Core 
 
 [!INCLUDE [package-manager-intro-sdk-vs-runtime](includes/package-manager-intro-sdk-vs-runtime.md)]
 
-## <a name="register-microsoft-key-and-feed"></a>Registrace klíče Microsoft a informačního kanálu
+## <a name="add-microsoft-repository-key-and-feed"></a>Přidání klíče a informačního kanálu úložiště Microsoft
 
 Před instalací rozhraní .NET budete muset:
 
-- Zaregistrujte klíč Společnosti Microsoft.
-- Zaregistrujte úložiště produktů.
+- Přidejte podpisový klíč balíčku Microsoft do seznamu důvěryhodných klíčů.
+- Přidejte úložiště do správce balíčků.
 - Nainstalujte požadované závislosti.
 
 Stačí to provést jednou na jednom počítači.

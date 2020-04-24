@@ -4,12 +4,12 @@ description: Pomocí správce balíčků nainstalujte k instalaci sady .NET Core
 author: thraka
 ms.author: adegeo
 ms.date: 03/17/2020
-ms.openlocfilehash: d6cec51422dc59b7f667e36001b7db4742b53a6f
-ms.sourcegitcommit: 07123a475af89b6da5bb6cc51ea40ab1e8a488f0
+ms.openlocfilehash: f8c4115b9d85edc36809f0daed5f6825149c8411
+ms.sourcegitcommit: 62285ec11fa8e8424bab00511a90760c60e63c95
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80134352"
+ms.lasthandoff: 04/20/2020
+ms.locfileid: "81645407"
 ---
 # <a name="centos-7-package-manager---install-net-core"></a>Správce balíčků CentoS 7 - instalace .NET Core
 
@@ -19,12 +19,12 @@ Tento článek popisuje, jak pomocí správce balíčků nainstalovat .NET Core 
 
 [!INCLUDE [package-manager-intro-sdk-vs-runtime](includes/package-manager-intro-sdk-vs-runtime.md)]
 
-## <a name="register-microsoft-key-and-feed"></a>Registrace klíče Microsoft a informačního kanálu
+## <a name="add-microsoft-repository-key-and-feed"></a>Přidání klíče a informačního kanálu úložiště Microsoft
 
 Před instalací rozhraní .NET budete muset:
 
-- Zaregistrujte klíč Společnosti Microsoft.
-- Zaregistrujte úložiště produktů.
+- Přidejte podpisový klíč balíčku Microsoft do seznamu důvěryhodných klíčů.
+- Přidejte úložiště do správce balíčků.
 - Nainstalujte požadované závislosti.
 
 Stačí to provést jednou na jednom počítači.

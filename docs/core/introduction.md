@@ -4,16 +4,16 @@ description: .NET Core je modulární, vysoce výkonná implementace rozhraní .
 author: richlander
 ms.date: 03/26/2020
 ms.custom: updateeachrelease
-ms.openlocfilehash: a20cdda5cbd366d04e7ee9e8df3d1b15d10c1f4a
-ms.sourcegitcommit: a9b8945630426a575ab0a332e568edc807666d1b
+ms.openlocfilehash: f99b446bbd38b2b814c13afa13ab34cd5c9aa086
+ms.sourcegitcommit: 62285ec11fa8e8424bab00511a90760c60e63c95
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/30/2020
-ms.locfileid: "80391158"
+ms.lasthandoff: 04/20/2020
+ms.locfileid: "81645528"
 ---
-# <a name="introduction-to-net-core"></a>Úvod do rozhraní .NET Core
+# <a name="introduction-to-net-core"></a>Úvod do .NET Core
 
-[.NET Core](about.md) je [open-source,](https://github.com/dotnet/runtime/blob/master/LICENSE.TXT)univerzální vývojová platforma. Můžete vytvářet aplikace .NET Core pro procesory Windows, macOS a Linux pro procesory x64, x86, ARM32 a ARM64 pomocí více programovacích jazyků. Architektury a rozhraní API jsou k dispozici pro [cloud](/aspnet/core/), [IoT](/archive/msdn-magazine/2019/august/net-core-cross-platform-iot-programming-with-net-core-3-0), [klientské ui](/dotnet/desktop-wpf/overview/index)a [strojové učení](/dotnet/machine-learning/).
+[.NET Core](about.md) je [open-source,](https://github.com/dotnet/runtime/blob/master/LICENSE.TXT)univerzální vývojová platforma. Můžete vytvářet aplikace .NET Core pro procesory Windows, macOS a Linux pro procesory x64, x86, ARM32 a ARM64 pomocí více programovacích jazyků. Architektury a rozhraní API jsou k dispozici pro [cloud](/aspnet/core/), [IoT](/archive/msdn-magazine/2019/august/net-core-cross-platform-iot-programming-with-net-core-3-0), [klientské ui](../desktop-wpf/overview/index.md)a [strojové učení](/dotnet/machine-learning/).
 
 [Stáhněte si sdk jádra .NET a](https://dotnet.microsoft.com/download) vyzkoušejte v počítači .NET Core. Nejnovější verze je [.NET Core 3.1](https://devblogs.microsoft.com/dotnet/announcing-net-core-3-1/).
 
@@ -26,7 +26,7 @@ Jádro .NET můžete získat následujícími způsoby:
 * [Kontejnery Dockeru](https://hub.docker.com/_/microsoft-dotnet-core/)
 * [Zipy a dehtové kuličky](https://dotnet.microsoft.com/download/dotnet-core/3.1)
 * [Instalace skriptů](https://dotnet.microsoft.com/download/dotnet-core/scripts)
-* [Poznámky k verzi](https://github.com/dotnet/core/tree/master/release-notes)
+* [Zpráva k vydání verze](https://github.com/dotnet/core/tree/master/release-notes)
 
 ## <a name="create-your-first-application"></a>Vytvoření první aplikace
 

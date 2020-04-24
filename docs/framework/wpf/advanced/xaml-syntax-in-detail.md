@@ -29,12 +29,12 @@ helpviewer_keywords:
 - attribute syntax [XAML]
 - XAML [WPF], property element syntax
 ms.assetid: 67cce290-ca26-4c41-a797-b68aabc45479
-ms.openlocfilehash: dbff4bed59c8d1e861555676578b52528e2aebbe
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 5f8bb862ce443fd7397036b10f69cda65a6960bc
+ms.sourcegitcommit: 62285ec11fa8e8424bab00511a90760c60e63c95
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79186190"
+ms.lasthandoff: 04/20/2020
+ms.locfileid: "81646148"
 ---
 # <a name="xaml-syntax-in-detail"></a>Podrobná syntaxe XAML
 Toto téma definuje termíny, které se používají k popisu prvků syntaxe XAML. Tyto termíny se často používají ve zbývající části této dokumentace, a to jak pro wpf dokumentaci konkrétně a pro ostatní rámce, které používají XAML nebo základní xaml koncepty povolené podporou jazyka XAML na úrovni System.Xaml. Toto téma rozšiřuje základní terminologii zavedenou v tématu [Přehled XAML (WPF)](../../../desktop-wpf/fundamentals/xaml.md).  
@@ -130,7 +130,7 @@ Toto téma definuje termíny, které se používají k popisu prvků syntaxe XAM
   
  Můžete také pojmenovat libovolnou událost z libovolného objektu, který je přístupný prostřednictvím výchozího oboru názvů pomocí *typeName*. *událost* částečně kvalifikovaný název; Tato syntaxe podporuje připojení obslužných rutin pro směrované události, kde je obslužná rutina určena ke zpracování směrování událostí z podřízených prvků, ale nadřazený prvek nemá tuto událost také v tabulce členů. Tato syntaxe se podobá připojené syntaxi události, ale událost zde není true attached událost. Místo toho odkazujete na událost s kvalifikovaným názvem. Další informace naleznete v tématu [Přehled směrovaných událostí](routed-events-overview.md).  
   
- Pro některé scénáře jsou někdy názvy vlastností k dispozici jako hodnota atributu, nikoli jako název atributu. Tento název vlastnosti může také obsahovat kvalifikátory, například vlastnost zadaná ve formuláři *ownerType*. *dependencyPropertyName*. Tento scénář je běžné při psaní stylů nebo šablon v XAML. Pravidla zpracování pro názvy vlastností poskytované jako hodnota atributu se liší a řídí se typem nastavené vlastnosti nebo chováním konkrétních podsystémů WPF. Podrobnosti viz [Styling a šablonování](../controls/styling-and-templating.md).  
+ Pro některé scénáře jsou někdy názvy vlastností k dispozici jako hodnota atributu, nikoli jako název atributu. Tento název vlastnosti může také obsahovat kvalifikátory, například vlastnost zadaná ve formuláři *ownerType*. *dependencyPropertyName*. Tento scénář je běžné při psaní stylů nebo šablon v XAML. Pravidla zpracování pro názvy vlastností poskytované jako hodnota atributu se liší a řídí se typem nastavené vlastnosti nebo chováním konkrétních podsystémů WPF. Podrobnosti viz [Styling a šablonování](../../../desktop-wpf/fundamentals/styles-templates-overview.md).  
   
  Jiné použití pro názvy vlastností je, když hodnota atributu popisuje vztah vlastnost-vlastnost. Tato funkce se používá pro datové vazby a pro <xref:System.Windows.PropertyPath> cíle scénáře a je povolena třídou a jeho převaděč typu. Podrobnější popis vyhledávací sémantiky naleznete v tématu [PropertyPath XAML Syntaxe](propertypath-xaml-syntax.md).  
   
@@ -173,7 +173,7 @@ Toto téma definuje termíny, které se používají k popisu prvků syntaxe XAM
   
  Na odkazových stránkách .NET pro typy kolekcí je tato syntaxe s záměrným vynecháním elementu objektu pro kolekci příležitostně zaznamenána v částech syntaxe XAML jako Implicitní syntaxe kolekce.  
   
- S výjimkou kořenového prvku je každý element objektu v souboru XAML, který je vnořen jako podřízený prvek jiného prvku, skutečně element, který je jedním nebo oběma následujícími případy: člen implicitní vlastnosti kolekce nadřazeného prvku nebo prvek, který určuje hodnotu vlastnosti obsahu XAML pro nadřazený prvek (vlastnosti obsahu XAML budou popsány v nadcházející části). Jinými slovy, vztah nadřazených prvků a podřízených prvků na stránce značek je skutečně jeden objekt v kořenovém adresáři a každý prvek objektu pod kořenem je buď jedna instance, která poskytuje hodnotu vlastnosti nadřazeného, nebo jedna z položek v rámci kolekce, která je také hodnota vlastnosti typu kolekce nadřazeného. Tento koncept jednoho kořene je společný s XML a je často posílena v chování <xref:System.Windows.Markup.XamlReader.Load%2A>rozhraní API, která načítají XAML, například .  
+ S výjimkou kořenového prvku je každý element objektu v souboru XAML, který je vnořen jako podřízený prvek jiného prvku, skutečně elementem, který je jedním nebo oběma následujícími případy: členem implicitní vlastnosti kolekce nadřazeného prvku nebo elementem, který určuje hodnotu vlastnosti obsahu XAML pro nadřazený prvek (vlastnosti obsahu XAML budou popsány v nadcházející části). Jinými slovy vztah nadřazených prvků a podřízených prvků na stránce značek je skutečně jeden objekt v kořenovém adresáři a každý prvek objektu pod kořenem je buď jedna instance, která poskytuje hodnotu vlastnosti nadřazeného, nebo jednu z položek v rámci kolekce, která je také hodnotou vlastnosti typu kolekce nadřazeného objektu. Tento koncept jednoho kořene je společný s XML a je často posílena v chování <xref:System.Windows.Markup.XamlReader.Load%2A>rozhraní API, která načítají XAML, například .  
   
  Následující příklad je syntaxe s elementem<xref:System.Windows.Media.GradientStopCollection>objektu pro kolekci ( ) zadanou explicitně.  
   
@@ -227,7 +227,7 @@ Toto téma definuje termíny, které se používají k popisu prvků syntaxe XAM
   
 <a name="content_properties_and_collection_syntax_combined"></a>
 ## <a name="content-properties-and-collection-syntax-combined"></a>Kombinační vlastnosti obsahu a syntaxe kolekce  
- Chcete-li přijmout více než jeden prvek objektu jako obsah, musí být typ vlastnosti content konkrétně typ kolekce. Podobně jako syntaxe prvku vlastnosti pro typy kolekcí musí procesor XAML identifikovat typy, které jsou typy kolekcí. Pokud má prvek vlastnost obsahu XAML a typ vlastnosti obsahu XAML je kolekce, nemusí být implicitní typ kolekce zadán ve značkách jako element objektu a vlastnost obsahu XAML nemusí být zadána jako vlastnost. Prvek. Proto zdánlivý obsah modelu ve značkách nyní může mít více než jeden podřízený prvek přiřazen jako obsah. Následuje syntaxe obsahu <xref:System.Windows.Controls.Panel> pro odvozenou třídu. Všechny <xref:System.Windows.Controls.Panel> odvozené třídy vytvářejí vlastnost obsahu <xref:System.Windows.Controls.Panel.Children%2A>XAML , <xref:System.Windows.Controls.UIElementCollection>která vyžaduje hodnotu typu .  
+ Chcete-li přijmout více než jeden prvek objektu jako obsah, musí být typ vlastnosti content konkrétně typ kolekce. Podobně jako syntaxe prvku vlastnosti pro typy kolekcí musí procesor XAML identifikovat typy, které jsou typy kolekcí. Pokud má prvek vlastnost obsahu XAML a typ vlastnosti obsahu XAML je kolekce, nemusí být implicitní typ kolekce zadán ve značkách jako element objektu a vlastnost obsahu XAML nemusí být zadána jako prvek vlastnosti. Proto zdánlivý obsah modelu ve značkách nyní může mít více než jeden podřízený prvek přiřazen jako obsah. Následuje syntaxe obsahu <xref:System.Windows.Controls.Panel> pro odvozenou třídu. Všechny <xref:System.Windows.Controls.Panel> odvozené třídy vytvářejí vlastnost obsahu <xref:System.Windows.Controls.Panel.Children%2A>XAML , <xref:System.Windows.Controls.UIElementCollection>která vyžaduje hodnotu typu .  
   
  [!code-xaml[XAMLOvwSupport#SyntaxContent](~/samples/snippets/csharp/VS_Snippets_Wpf/XAMLOvwSupport/CSharp/page5.xaml#syntaxcontent)]  
   
@@ -316,7 +316,7 @@ Toto téma definuje termíny, které se používají k popisu prvků syntaxe XAM
 ## <a name="see-also"></a>Viz také
 
 - [Přehled XAML (WPF)](../../../desktop-wpf/fundamentals/xaml.md)
-- [Jazykové funkce oboru názvů jazyka XAML (x:)](../../../desktop-wpf/xaml-services/namespace-language-features.md)
+- [Jazykové funkce kompatibility značek (mc:)](../../../desktop-wpf/xaml-services/namespace-language-features.md)
 - [Rozšíření WPF XAML](wpf-xaml-extensions.md)
 - [Přehled vlastností závislosti](dependency-properties-overview.md)
 - [TypeConverters a XAML](typeconverters-and-xaml.md)
