@@ -8,21 +8,21 @@ helpviewer_keywords:
 - Windows Presentation Foundation [WPF], data
 - data [WPF]
 ms.assetid: dea454e2-abd8-4c53-ba37-d3ed53187d64
-ms.openlocfilehash: aa8f872e807eccb81d0f1ca2c838485bb254c7c0
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: a1ea8e10225eb9a4dcd4f20a23820c3757445fbf
+ms.sourcegitcommit: 62285ec11fa8e8424bab00511a90760c60e63c95
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73460296"
+ms.lasthandoff: 04/20/2020
+ms.locfileid: "81646440"
 ---
-# <a name="data"></a><span data-ttu-id="6696a-102">Data</span><span class="sxs-lookup"><span data-stu-id="6696a-102">Data</span></span>
-[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] <span data-ttu-id="6696a-103">datové vazby poskytují jednoduchý a konzistentní způsob, jak aplikace prezentovat a interagovat s daty.</span><span class="sxs-lookup"><span data-stu-id="6696a-103">data binding provides a simple and consistent way for applications to present and interact with data.</span></span> <span data-ttu-id="6696a-104">Prvky mohou být vázány na data z nejrůznějších zdrojů dat ve formě objektů CLR (Common Language Runtime) a XML.</span><span class="sxs-lookup"><span data-stu-id="6696a-104">Elements can be bound to data from a variety of data sources in the form of common language runtime (CLR) objects and XML.</span></span> [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] <span data-ttu-id="6696a-105">také poskytuje mechanismus pro přenos dat prostřednictvím operací přetažení.</span><span class="sxs-lookup"><span data-stu-id="6696a-105">also provides a mechanism for the transfer of data through drag-and-drop operations.</span></span>  
+# <a name="data"></a><span data-ttu-id="53532-102">Data</span><span class="sxs-lookup"><span data-stu-id="53532-102">Data</span></span>
+[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]<span data-ttu-id="53532-103">datová vazba poskytuje jednoduchý a konzistentní způsob, jak mohou aplikace prezentovat data a pracovat s nimi.</span><span class="sxs-lookup"><span data-stu-id="53532-103">data binding provides a simple and consistent way for applications to present and interact with data.</span></span> <span data-ttu-id="53532-104">Prvky mohou být vázány na data z různých zdrojů dat ve formě objektů CLR (COMMON Language runtime) a XML.</span><span class="sxs-lookup"><span data-stu-id="53532-104">Elements can be bound to data from a variety of data sources in the form of common language runtime (CLR) objects and XML.</span></span> [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]<span data-ttu-id="53532-105">poskytuje také mechanismus pro přenos dat prostřednictvím operací přetažení myší.</span><span class="sxs-lookup"><span data-stu-id="53532-105">also provides a mechanism for the transfer of data through drag-and-drop operations.</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="6696a-106">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="6696a-106">In This Section</span></span>  
- [<span data-ttu-id="6696a-107">Datová vazba</span><span class="sxs-lookup"><span data-stu-id="6696a-107">Data Binding</span></span>](data-binding-wpf.md)  
- [<span data-ttu-id="6696a-108">Přetažení</span><span class="sxs-lookup"><span data-stu-id="6696a-108">Drag and Drop</span></span>](../advanced/drag-and-drop.md)  
+## <a name="in-this-section"></a><span data-ttu-id="53532-106">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="53532-106">In This Section</span></span>  
+ [<span data-ttu-id="53532-107">Datová vazba</span><span class="sxs-lookup"><span data-stu-id="53532-107">Data Binding</span></span>](../../../desktop-wpf/data/data-binding-overview.md)  
+ [<span data-ttu-id="53532-108">Přetažení</span><span class="sxs-lookup"><span data-stu-id="53532-108">Drag and Drop</span></span>](../advanced/drag-and-drop.md)  
   
-## <a name="reference"></a><span data-ttu-id="6696a-109">Odkaz</span><span class="sxs-lookup"><span data-stu-id="6696a-109">Reference</span></span>  
+## <a name="reference"></a><span data-ttu-id="53532-109">Referenční informace</span><span class="sxs-lookup"><span data-stu-id="53532-109">Reference</span></span>  
  <xref:System.Windows.Data>  
   
  <xref:System.Windows.Data.Binding>  
@@ -31,14 +31,14 @@ ms.locfileid: "73460296"
   
  <xref:System.Windows.Controls.DataTemplateSelector>  
   
-## <a name="related-sections"></a><span data-ttu-id="6696a-110">Související oddíly</span><span class="sxs-lookup"><span data-stu-id="6696a-110">Related Sections</span></span>  
- [<span data-ttu-id="6696a-111">Ovládací prvky</span><span class="sxs-lookup"><span data-stu-id="6696a-111">Controls</span></span>](../controls/index.md)  
+## <a name="related-sections"></a><span data-ttu-id="53532-110">Související oddíly</span><span class="sxs-lookup"><span data-stu-id="53532-110">Related Sections</span></span>  
+ [<span data-ttu-id="53532-111">Ovládací prvky</span><span class="sxs-lookup"><span data-stu-id="53532-111">Controls</span></span>](../controls/index.md)  
   
- [<span data-ttu-id="6696a-112">Styly a šablony</span><span class="sxs-lookup"><span data-stu-id="6696a-112">Styling and Templating</span></span>](../../../desktop-wpf/fundamentals/styles-templates-overview.md)  
+ [<span data-ttu-id="53532-112">Styly a šablony</span><span class="sxs-lookup"><span data-stu-id="53532-112">Styling and Templating</span></span>](../../../desktop-wpf/fundamentals/styles-templates-overview.md)  
   
- [<span data-ttu-id="6696a-113">Datová vazba</span><span class="sxs-lookup"><span data-stu-id="6696a-113">Data Binding</span></span>](../advanced/optimizing-performance-data-binding.md)  
+ [<span data-ttu-id="53532-113">Datová vazba</span><span class="sxs-lookup"><span data-stu-id="53532-113">Data Binding</span></span>](../advanced/optimizing-performance-data-binding.md)  
   
-## <a name="see-also"></a><span data-ttu-id="6696a-114">Viz také:</span><span class="sxs-lookup"><span data-stu-id="6696a-114">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="53532-114">Viz také</span><span class="sxs-lookup"><span data-stu-id="53532-114">See also</span></span>
 
-- [<span data-ttu-id="6696a-115">Návod: Moje první desktopová aplikace WPF</span><span class="sxs-lookup"><span data-stu-id="6696a-115">Walkthrough: My first WPF desktop application</span></span>](../getting-started/walkthrough-my-first-wpf-desktop-application.md)
-- [<span data-ttu-id="6696a-116">Návod: Ukládání aplikačních dat do mezipaměti v aplikaci WPF</span><span class="sxs-lookup"><span data-stu-id="6696a-116">Walkthrough: Caching Application Data in a WPF Application</span></span>](../advanced/walkthrough-caching-application-data-in-a-wpf-application.md)
+- [<span data-ttu-id="53532-115">Návod: Moje první desktopová aplikace WPF</span><span class="sxs-lookup"><span data-stu-id="53532-115">Walkthrough: My first WPF desktop application</span></span>](../getting-started/walkthrough-my-first-wpf-desktop-application.md)
+- [<span data-ttu-id="53532-116">Návod: Ukládání aplikačních dat do mezipaměti v aplikaci WPF</span><span class="sxs-lookup"><span data-stu-id="53532-116">Walkthrough: Caching Application Data in a WPF Application</span></span>](../advanced/walkthrough-caching-application-data-in-a-wpf-application.md)
