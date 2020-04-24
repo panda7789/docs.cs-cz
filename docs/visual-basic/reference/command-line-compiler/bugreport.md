@@ -23,15 +23,15 @@ Vytvoří soubor, který můžete použít při zaznamenání zprávy o chybě.
 -bugreport:file
 ```
 
-## <a name="arguments"></a>Arguments
+## <a name="arguments"></a>Argumenty
 
-|Termín|Definice|
+|Označení|Definice|
 |---|---|
-|`file`|Požadováno. Název souboru, který bude obsahovat zprávu o chybě. Uzavřete název souboru do uvozovek (""), pokud název obsahuje mezeru.|
+|`file`|Povinná hodnota. Název souboru, který bude obsahovat zprávu o chybě. Uzavřete název souboru do uvozovek (""), pokud název obsahuje mezeru.|
 
 ## <a name="remarks"></a>Poznámky
 
-Do `file`se přidají následující informace:
+Do `file`této části jsou přidány následující informace:
 
 - Kopii všech souborů zdrojového kódu v kompilaci.
 
@@ -45,15 +45,15 @@ Do `file`se přidají následující informace:
 
 - Popis toho, jak si myslíte problém, by měl být vyřešen, pro který se zobrazí výzva.
 
-Vzhledem k tomu, že kopie všech souborů zdrojového kódu je součástí `file`, může být vhodné reprodukce (podezřelé) vady kódu v nejkratším možném programu.
+Vzhledem k tomu `file`, že je do aplikace zahrnutá kopie všech souborů zdrojového kódu, můžete v nejbližším programu chtít reprodukování vady kódu (podezřelé).
 
 > [!IMPORTANT]
-> Možnost `-bugreport` vytvoří soubor, který obsahuje potenciálně citlivé informace. Patří sem aktuální čas, verze kompilátoru, verze .NET Framework, verze operačního systému, uživatelské jméno, argumenty příkazového řádku, s nimiž byl kompilátor spuštěn, veškerý zdrojový kód a binární forma libovolného odkazovaného sestavení. Tato možnost je k dispozici při zadání možností příkazového řádku v souboru Web. config pro kompilaci ASP.NET aplikace na straně serveru. Chcete-li tomu zabránit, upravte soubor Machine. config tak, aby nedocházelo k tomu, aby uživatelé mohli kompilovat na serveru.
+> `-bugreport` Možnost vytvoří soubor, který obsahuje potenciálně citlivé informace. Patří sem aktuální čas, verze kompilátoru, verze .NET Framework, verze operačního systému, uživatelské jméno, argumenty příkazového řádku, s nimiž byl kompilátor spuštěn, veškerý zdrojový kód a binární forma libovolného odkazovaného sestavení. Tato možnost je k dispozici při zadání možností příkazového řádku v souboru Web. config pro kompilaci ASP.NET aplikace na straně serveru. Chcete-li tomu zabránit, upravte soubor Machine. config tak, aby nedocházelo k tomu, aby uživatelé mohli kompilovat na serveru.
 
-Pokud je tato možnost použita s `-errorreport:prompt`, `-errorreport:queue`nebo `-errorreport:send`a vaše aplikace narazí na vnitřní chybu kompilátoru, informace v `file` se odešlou společnosti Microsoft Corporation. Tyto informace pomohou technikům Microsoftu identifikovat příčinu chyby a mohou pomoci zlepšit další vydání Visual Basic. Ve výchozím nastavení se Microsoftu neodesílají žádné informace. Pokud však zkompilujete aplikaci pomocí `-errorreport:queue`, která je ve výchozím nastavení povolena, aplikace shromáždí své zprávy o chybách. Až se správce počítače přihlásí, systém zasílání zpráv o chybách zobrazí automaticky otevírané okno, které správci umožní předávat společnosti Microsoft jakékoli zprávy o chybách, ke kterým došlo od přihlášení.
+Pokud je tato možnost použita s `-errorreport:prompt`, `-errorreport:queue`nebo `-errorreport:send`a vaše aplikace narazí na vnitřní chybu kompilátoru, informace v `file` nástroji se odesílají společnosti Microsoft Corporation. Tyto informace pomohou technikům Microsoftu identifikovat příčinu chyby a mohou pomoci zlepšit další vydání Visual Basic. Ve výchozím nastavení se Microsoftu neodesílají žádné informace. Pokud však zkompilujete aplikaci pomocí nástroje `-errorreport:queue`, který je ve výchozím nastavení povolený, aplikace shromáždí své zprávy o chybách. Až se správce počítače přihlásí, systém zasílání zpráv o chybách zobrazí automaticky otevírané okno, které správci umožní předávat společnosti Microsoft jakékoli zprávy o chybách, ke kterým došlo od přihlášení.
 
 > [!NOTE]
-> Možnost `-bugreport` není k dispozici ve vývojovém prostředí sady Visual Studio; je k dispozici pouze při kompilaci z příkazového řádku.
+> Tato `-bugreport` možnost není k dispozici ve vývojovém prostředí sady Visual Studio; je k dispozici pouze při kompilaci z příkazového řádku.
 
 ## <a name="example"></a>Příklad
 
@@ -63,7 +63,7 @@ Následující příklad zkompiluje *T2. vb* a vloží všechny informace o hlá
 vbc -bugreport:problem.txt t2.vb
 ```
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Visual Basic Kompilátor příkazového řádku](index.md)
 - [-Debug (Visual Basic)](debug.md)

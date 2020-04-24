@@ -1,5 +1,5 @@
 ---
-title: <add> – element pro <schemaImporterExtensions>
+title: Element <add> pro <schemaImporterExtensions>
 ms.date: 03/30/2017
 helpviewer_keywords:
 - XML serialization, configuration
@@ -12,13 +12,13 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 02/28/2020
 ms.locfileid: "78159933"
 ---
-# <a name="add-element-for-schemaimporterextensions"></a>\<přidat > element pro \<schemaImporterExtensions >
+# <a name="add-element-for-schemaimporterextensions"></a>\<Přidat> element pro \<> schemaImporterExtensions
 Přidá typy používané <xref:System.Xml.Serialization.XmlSchemaImporter> pro mapování typů XSD na typy rozhraní .NET Framework. Další informace o konfiguračních souborech najdete v tématu [Schéma konfiguračního souboru](../../../docs/framework/configure-apps/file-schema/index.md).  
   
- Konfigurace \<>  
-\<System. XML. Serialization >  
-\<schemaImporterExtensions >  
-\<přidat >  
+ \<> konfigurace  
+\<System. XML. Serialization –>  
+\<schemaImporterExtensions>  
+\<Přidat>  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -34,7 +34,7 @@ Přidá typy používané <xref:System.Xml.Serialization.XmlSchemaImporter> pro 
 |Atribut|Popis|  
 |---------------|-----------------|  
 |**Jméno**|Jednoduchý název, který je použit k vyhledání instance.|  
-|**type**|Povinná hodnota. Určuje třídu rozšíření schématu k přidání. Hodnota atributu **Type** musí být na jednom řádku a musí obsahovat plně kvalifikovaný název typu. Při sestavení je umístěn v globální mezipaměti sestavení (GAC), musí také zahrnovat verze, jazykovou verzi a token veřejného klíče podepsané sestavení.|  
+|**textový**|Povinná hodnota. Určuje třídu rozšíření schématu k přidání. Hodnota atributu **Type** musí být na jednom řádku a musí obsahovat plně kvalifikovaný název typu. Při sestavení je umístěn v globální mezipaměti sestavení (GAC), musí také zahrnovat verze, jazykovou verzi a token veřejného klíče podepsané sestavení.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
  Žádné.  
@@ -43,7 +43,7 @@ Přidá typy používané <xref:System.Xml.Serialization.XmlSchemaImporter> pro 
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|\<schemaImporterExtensions >|Obsahuje typy, které jsou používány <xref:System.Xml.Serialization.XmlSchemaImporter>.|  
+|\<schemaImporterExtensions>|Obsahuje typy, které jsou používány <xref:System.Xml.Serialization.XmlSchemaImporter>.|  
   
 ## <a name="example"></a>Příklad  
  Následující příklad kódu přidá typ rozšíření, která XmlSchemaImporter můžete použít, když mapování typů.  
@@ -63,5 +63,5 @@ Přidá typy používané <xref:System.Xml.Serialization.XmlSchemaImporter> pro 
 ## <a name="see-also"></a>Viz také
 
 - <xref:System.Xml.Serialization.XmlSchemaImporter>
-- [\<element System. XML. Serialization > elementu](../../../docs/standard/serialization/system-xml-serialization-element.md)
-- [\<element > schemaImporterExtensions](../../../docs/standard/serialization/schemaimporterextensions-element.md)
+- [\<System. XML. Serialization – element>](../../../docs/standard/serialization/system-xml-serialization-element.md)
+- [\<schemaImporterExtensions – element>](../../../docs/standard/serialization/schemaimporterextensions-element.md)

@@ -24,7 +24,7 @@ Způsobí, že kompilátor sestaví sestavení, jejichž výstup Byte-byte je st
 
 ## <a name="remarks"></a>Poznámky
 
-Ve výchozím nastavení je výstup kompilátoru z dané sady vstupů jedinečný, protože kompilátor přidá časové razítko a identifikátor GUID, který je vygenerován z náhodných čísel. Použijete možnost `-deterministic` k vytvoření *deterministického sestavení*, jehož binární obsah je identický v rámci kompilací, pokud vstup zůstává stejný.
+Ve výchozím nastavení je výstup kompilátoru z dané sady vstupů jedinečný, protože kompilátor přidá časové razítko a identifikátor GUID, který je vygenerován z náhodných čísel. Použijete `-deterministic` možnost k vytvoření *deterministického sestavení*, jehož binární obsah je identický v rámci kompilací, pokud vstup zůstává stejný.
 
 Kompilátor považuje za účel determinismem následující vstupy:
 
@@ -36,7 +36,7 @@ Kompilátor považuje za účel determinismem následující vstupy:
   - Zdrojové soubory
   - Odkazovaná sestavení
   - Odkazované moduly
-  - Prostředky
+  - Zdroje a prostředky
   - Soubor klíče se silným názvem
   - soubory @ Response
   - Analyzátory
@@ -50,7 +50,7 @@ Kompilátor považuje za účel determinismem následující vstupy:
 
 Pokud jsou zdroje veřejně dostupné, lze použít deterministické kompilace k určení, zda binární soubor je zkompilován z důvěryhodného zdroje. Může být také užitečné v souvislém systému sestavení pro určení, zda jsou kroky sestavení závislé na změnách binárních souborů nutné provést.
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Visual Basic Kompilátor příkazového řádku](../../../visual-basic/reference/command-line-compiler/index.md)
 - [Příkazové řádky ukázkové kompilace](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)

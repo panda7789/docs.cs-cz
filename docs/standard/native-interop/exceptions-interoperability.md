@@ -20,11 +20,11 @@ Zprostředkovatel komunikace s výjimkami nespravovaného kódu je podporován p
 
 ## <a name="setjmplongjmp-behaviors"></a>Chování setjmp/longjmp
 
-Spolupráce s funkcemi `setjmp` a `longjmp` C se nepodporuje. Nemůžete použít `longjmp` k přeskočení spravovaných rámců.
+Interoperabilita `setjmp` s `longjmp` funkcemi a a C není podporována. Nemůžete `longjmp` použít k přeskočení spravovaných rámců.
 
 Další informace najdete v [dokumentaci k longjmp](https://docs.microsoft.com/cpp/c-runtime-library/reference/longjmp).
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Výjimky](index.md)
 - [Spolupráce s nativními knihovnami](https://www.mono-project.com/docs/advanced/pinvoke/#runtime-exception-propagation)

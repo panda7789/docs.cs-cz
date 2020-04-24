@@ -19,7 +19,7 @@ SQLitePCLRaw poskytuje balíčky sady prostředků, které usnadňují přenesen
 
 Hlavní balíček Microsoft. data. sqlite ve výchozím nastavení přináší SQLitePCLRaw. bundle_e_sqlite3.
 
-Pokud chcete použít jinou sadu prostředků, nainstalujte místo toho balíček `Microsoft.Data.Sqlite.Core` společně s balíčkem sady, který chcete použít. Sady se automaticky inicializují pomocí Microsoft. data. sqlite.
+Pokud chcete použít jinou sadu prostředků, nainstalujte `Microsoft.Data.Sqlite.Core` balíček místo toho společně s balíčkem sady, který chcete použít. Sady se automaticky inicializují pomocí Microsoft. data. sqlite.
 
 | Nabídky | Popis |
 | --- | --- |
@@ -31,14 +31,14 @@ Pokud chcete použít jinou sadu prostředků, nainstalujte místo toho balíče
 
 Například pro použití neoficiálního Open Source sestavení SQLCipher použijte následující příkazy.
 
-### <a name="net-core-clitabnetcore-cli"></a>[Rozhraní příkazového řádku .NET Core](#tab/netcore-cli)
+### <a name="net-core-cli"></a>[Rozhraní příkazového řádku .NET Core](#tab/netcore-cli)
 
 ```dotnetcli
 dotnet add package Microsoft.Data.Sqlite.Core
 dotnet add package SQLitePCLRaw.bundle_e_sqlcipher
 ```
 
-### <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio)
+### <a name="visual-studio"></a>[Visual Studio](#tab/visual-studio)
 
 ``` PowerShell
 Install-Package Microsoft.Data.Sqlite.Core
@@ -49,7 +49,7 @@ Install-Package SQLitePCLRaw.bundle_e_sqlcipher
 
 ## <a name="sqlitepclraw-providers"></a>SQLitePCLRaw poskytovatelé
 
-Pomocí `SQLitePCLRaw.provider.dynamic_cdecl` balíčku můžete použít vlastní sestavení SQLite. V tomto případě zodpovídáte za nasazení nativní knihovny s vaší aplikací. Všimněte si, že podrobnosti o nasazení nativních knihoven s vaší aplikací se výrazně liší v závislosti na tom, kterou platformu .NET a modul runtime používáte.
+Můžete použít vlastní sestavení SQLite využitím `SQLitePCLRaw.provider.dynamic_cdecl` balíčku. V tomto případě zodpovídáte za nasazení nativní knihovny s vaší aplikací. Všimněte si, že podrobnosti o nasazení nativních knihoven s vaší aplikací se výrazně liší v závislosti na tom, kterou platformu .NET a modul runtime používáte.
 
 Nejdřív budete muset implementovat IGetFunctionPointer. Implementace je poměrně triviální v .NET Core.
 

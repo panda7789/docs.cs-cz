@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: řízení serializace odvozených tříd'
+title: 'Postupy: Řízení serializace odvozených tříd'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -12,10 +12,10 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 02/28/2020
 ms.locfileid: "78159920"
 ---
-# <a name="how-to-control-serialization-of-derived-classes"></a>Postupy: řízení serializace odvozených tříd
+# <a name="how-to-control-serialization-of-derived-classes"></a>Postupy: Řízení serializace odvozených tříd
 Použití atributu **třídě XmlElementAttribute** ke změně názvu elementu XML není jediným způsobem, jak přizpůsobit serializaci objektu. Datový proud XML můžete také upravit tak, že vyplývající z existující třídy a instruující <xref:System.Xml.Serialization.XmlSerializer> instance jak k serializaci nové třídy.  
   
- Například uděleno `Book` třídy, můžete z něj odvodit a vytvořit `ExpandedBook` třídu, která má několik více vlastností. Při serializaci nebo deserializaci je však nutné, aby **XmlSerializer** přijal odvozený typ. To lze provést vytvořením instance <xref:System.Xml.Serialization.XmlElementAttribute> a nastavením její vlastnosti **typ** na odvozenou třídu typu. Přidejte **třídě XmlElementAttribute** do instance <xref:System.Xml.Serialization.XmlAttributes>. Pak přidejte **atributy XmlAttribute** do instance <xref:System.Xml.Serialization.XmlAttributeOverrides>, určení typu, který je přepsán, a názvu člena, který přijímá odvozenou třídu. To je ukázáno v následujícím příkladu.  
+ Například uděleno `Book` třídy, můžete z něj odvodit a vytvořit `ExpandedBook` třídu, která má několik více vlastností. Při serializaci nebo deserializaci je však nutné, aby **XmlSerializer** přijal odvozený typ. To lze provést vytvořením <xref:System.Xml.Serialization.XmlElementAttribute> instance a nastavením vlastnosti **typu** na odvozenou třídu typu. Přidejte **třídě XmlElementAttribute** do <xref:System.Xml.Serialization.XmlAttributes> instance. Pak přidejte **atributy XmlAttribute** do <xref:System.Xml.Serialization.XmlAttributeOverrides> instance, zadání typu, který je přepsán a název členu, který přijímá odvozenou třídu. To je ukázáno v následujícím příkladu.  
   
 ## <a name="example"></a>Příklad  
   

@@ -11,10 +11,10 @@ ms.lasthandoff: 01/14/2020
 ms.locfileid: "75937932"
 ---
 # <a name="using-the-xslcompiledtransform-class"></a>Používání třídy XslCompiledTransform
-Třída <xref:System.Xml.Xsl.XslCompiledTransform> je procesorem Microsoft .NET Framework XSLT. Tato třída se používá ke kompilaci šablon stylů a provádění transformací XSLT.  
+<xref:System.Xml.Xsl.XslCompiledTransform> Třída je procesorem Microsoft .NET Framework XSLT. Tato třída se používá ke kompilaci šablon stylů a provádění transformací XSLT.  
   
 > [!NOTE]
-> I když je celkový výkon <xref:System.Xml.Xsl.XslCompiledTransform> třídy lepší než <xref:System.Xml.Xsl.XslTransform> třídy, metoda <xref:System.Xml.Xsl.XslCompiledTransform.Load%2A> třídy <xref:System.Xml.Xsl.XslCompiledTransform> může při prvním volání na transformaci pracovat pomaleji než metoda <xref:System.Xml.Xsl.XslTransform.Load%2A> třídy <xref:System.Xml.Xsl.XslTransform>. Důvodem je, že soubor XSLT musí být zkompilován před jeho načtením. Další informace najdete v tomto blogovém příspěvku: [XslCompiledTransform pomalejší než XslTransform?](https://docs.microsoft.com/archive/blogs/antosha/xslcompiledtransform-slower-than-xsltransform)  
+> <xref:System.Xml.Xsl.XslCompiledTransform> I když je celkový výkon třídy lepší než <xref:System.Xml.Xsl.XslTransform> třída, <xref:System.Xml.Xsl.XslCompiledTransform.Load%2A> metoda <xref:System.Xml.Xsl.XslCompiledTransform> třídy může při prvním volání transformace pracovat pomaleji než <xref:System.Xml.Xsl.XslTransform.Load%2A> metoda <xref:System.Xml.Xsl.XslTransform> třídy. Důvodem je, že soubor XSLT musí být zkompilován před jeho načtením. Další informace najdete v tomto blogovém příspěvku: [XslCompiledTransform pomalejší než XslTransform?](https://docs.microsoft.com/archive/blogs/antosha/xslcompiledtransform-slower-than-xsltransform)  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Vstupy do třídy XslCompiledTransform](../../../../docs/standard/data/xml/inputs-to-the-xslcompiledtransform-class.md)  
@@ -24,21 +24,21 @@ Třída <xref:System.Xml.Xsl.XslCompiledTransform> je procesorem Microsoft .NET 
  Popisuje dostupné možnosti výstupu XSLT.  
   
  [Překlad externích prostředků během zpracování XSLT](../../../../docs/standard/data/xml/resolving-external-resources-during-xslt-processing.md)  
- Popisuje použití třídy <xref:System.Xml.XmlResolver> k překladu externích prostředků.  
+ Popisuje použití <xref:System.Xml.XmlResolver> třídy k překladu externích prostředků.  
   
  [Rozšíření šablon stylů XSLT](../../../../docs/standard/data/xml/extending-xslt-style-sheets.md)  
  Popisuje, jak jsou podporována rozšíření XSLT.  
   
 |||  
 |-|-|  
-|[Chyby XSLT s možností zotavení](../../../../docs/standard/data/xml/recoverable-xslt-errors.md)|Uvádí volitelné chování, které povoluje doporučení XSLT 1,0 pro konsorcium World Wide Web (W3C) a popisuje, jak jsou tato chování zpracována <xref:System.Xml.Xsl.XslCompiledTransform> třídou.|  
+|[Chyby XSLT s možností zotavení](../../../../docs/standard/data/xml/recoverable-xslt-errors.md)|Uvádí volitelné chování, které povoluje doporučení konsorcium World Wide Web (W3C) XSLT 1,0, a popisuje, jak toto chování zpracovává <xref:System.Xml.Xsl.XslCompiledTransform> třída.|  
 |[Postupy: Transformace fragmentu uzlu](../../../../docs/standard/data/xml/how-to-transform-a-node-fragment.md)|Popisuje, jak transformovat fragment uzlu.|  
   
 ## <a name="related-sections"></a>Související oddíly  
  [Migrace z třídy XslTransform](../../../../docs/standard/data/xml/migrating-from-the-xsltransform-class.md)  
  Popisuje, jak migrovat kód z <xref:System.Xml.Xsl.XslTransform> třídy.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Xml.Xsl.XsltSettings>
 - <xref:System.Xml.Xsl.XsltMessageEncounteredEventArgs>

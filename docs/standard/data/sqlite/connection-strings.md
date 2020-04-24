@@ -11,25 +11,25 @@ ms.locfileid: "79400447"
 ---
 # <a name="connection-strings"></a>Připojovací řetězce
 
-Připojovací řetězec se používá k určení způsobu připojení k databázi. Připojovací řetězce v Microsoft.Data.Sqlite postupujte podle [standardní ADO.NET syntaxe](../../../framework/data/adonet/connection-strings.md) jako středník-oddělený seznam klíčových slov a hodnot.
+Připojovací řetězec se používá k určení, jak se připojit k databázi. Připojovací řetězce v Microsoft. data. sqlite následují jako standardní [syntaxi ADO.NET](../../../framework/data/adonet/connection-strings.md) jako seznam klíčových slov a hodnot oddělených středníkem.
 
 ## <a name="keywords"></a>Klíčová slova
 
-Následující klíčová slova připojovacího řetězce lze použít s Microsoft.Data.Sqlite:
+Následující klíčová slova připojovacího řetězce se dají použít s Microsoft. data. sqlite:
 
 ### <a name="data-source"></a>Zdroj dat
 
-Cesta k databázovému souboru. *DataSource* (bez mezery) a *Název souboru* jsou aliasy tohoto klíčového slova.
+Cesta k databázovému souboru. *DataSource* (bez mezer) a *filename* jsou aliasy tohoto klíčového slova.
 
-SQLite zpracuje cesty vzhledem k aktuálnímu pracovnímu adresáři. Lze také zadat absolutní cesty.
+SQLite považuje cesty vzhledem k aktuálnímu pracovnímu adresáři. Lze také zadat absolutní cesty.
 
-Pokud **prázdné**, SQLite vytvoří dočasnou databázi na disku, která je odstraněna při zavření připojení.
+Pokud je **prázdná**, SQLite vytvoří dočasnou databázi na disku, která se odstraní při zavření připojení.
 
-Pokud `:memory:`se používá databáze v paměti. Další informace naleznete [v tématu In-Memory databases](in-memory-databases.md).
+Pokud `:memory:`se používá databáze v paměti. Další informace najdete v tématu [databáze v paměti](in-memory-databases.md).
 
-Cesty začínající substitučním řetězcem `|DataDirectory|` jsou považovány za relativní cesty. Pokud je nastavena, cesty jsou vyrobeny vzhledem k hodnotě vlastnosti domény aplikace DataDirectory.
+Cesty, které začínají `|DataDirectory|` náhradním řetězcem, jsou považovány za stejné jako relativní cesty. Je-li nastavena, cesty jsou relativní vzhledem k hodnotě vlastnosti doména aplikace DataDirectory.
 
-Toto klíčové slovo také podporuje [názvy souborů URI](https://www.sqlite.org/uri.html).
+Toto klíčové slovo také podporuje [názvy souborů identifikátorů URI](https://www.sqlite.org/uri.html).
 
 ### <a name="mode"></a>Mode
 
@@ -49,48 +49,48 @@ Režim ukládání do mezipaměti používaný připojením.
 | Hodnota   | Popis                                                                                    |
 | ------- | ---------------------------------------------------------------------------------------------- |
 | Výchozí | Používá výchozí režim základní knihovny SQLite. Toto nastavení je výchozí.                   |
-| Private | Každé připojení používá privátní mezipaměť.                                                          |
-| Sdílená  | Připojení sdílejí mezipaměť. Tento režim může změnit chování transakce a zamykání tabulky. |
+| Private | Každé připojení používá soukromou mezipaměť.                                                          |
+| Sdílená  | Připojení sdílejí mezipaměť. Tento režim může změnit chování při zamykání transakce a tabulky. |
 
 ### <a name="password"></a>Heslo
 
-Šifrovací klíč. Pokud je `PRAGMA key` zadán, je odeslán ihned po otevření připojení.
+Šifrovací klíč Když se zadá `PRAGMA key` , pošle se hned po otevření připojení.
 
 > [!WARNING]
-> Heslo nemá žádný vliv, pokud nativní knihovna SQLite nepodporuje šifrování.
+> Heslo nemá žádný vliv, pokud šifrování nepodporuje nativní knihovna SQLite.
 
 ### <a name="foreign-keys"></a>Cizí klíče
 
-Hodnota označující, zda chcete povolit omezení cizího klíče.
+Hodnota, která označuje, jestli se mají povolit omezení cizího klíče
 
 | Hodnota   | Popis
 | ------- | --- |
-| True    | Odešle `PRAGMA foreign_keys = 1` ihned po otevření připojení.
-| False   | Odešle `PRAGMA foreign_keys = 0` ihned po otevření připojení.
-| (prázdné) | Neposílá `PRAGMA foreign_keys`. Toto nastavení je výchozí. |
+| True    | Odesílá `PRAGMA foreign_keys = 1` se hned po otevření připojení.
+| False   | Odesílá `PRAGMA foreign_keys = 0` se hned po otevření připojení.
+| obsahovat | Neposílá `PRAGMA foreign_keys`. Toto nastavení je výchozí. |
 
-Není třeba povolit cizí klíče, pokud, stejně jako v e_sqlite3, SQLITE_DEFAULT_FOREIGN_KEYS byl použit ke kompilaci nativní knihovny SQLite.
+Není nutné povolit cizí klíče, pokud by jako v e_sqlite3 SQLITE_DEFAULT_FOREIGN_KEYS byl použit ke kompilaci nativní knihovny SQLite.
 
-### <a name="recursive-triggers"></a>Rekurzivní aktivační události
+### <a name="recursive-triggers"></a>Rekurzivní triggery
 
-Hodnota, která označuje, zda chcete povolit rekurzivní aktivační události.
+Hodnota, která označuje, jestli se mají povolit rekurzivní triggery
 
 | Hodnota | Popis                                                                 |
 | ----- | --------------------------------------------------------------------------- |
-| True  | Odešle `PRAGMA recursive_triggers` ihned po otevření připojení. |
+| True  | Odesílá `PRAGMA recursive_triggers` se hned po otevření připojení. |
 | False | Neposílá `PRAGMA recursive_triggers`. Toto nastavení je výchozí.              |
 
-## <a name="connection-string-builder"></a>Tvůrce připojovacího řetězce
+## <a name="connection-string-builder"></a>Tvůrce připojovacích řetězců
 
-Můžete použít <xref:Microsoft.Data.Sqlite.SqliteConnectionStringBuilder> jako silně zadaný způsob vytváření připojovacích řetězců. Může být také použit k prevenci útoků injektáže spojovacího řetězce.
+Můžete použít <xref:Microsoft.Data.Sqlite.SqliteConnectionStringBuilder> jako silně typované způsoby vytváření připojovacích řetězců. Můžete ji také použít k zabránění útokům prostřednictvím injektáže připojovacího řetězce.
 
 [!code-csharp[](../../../../samples/snippets/standard/data/sqlite/EncryptionSample/Program.cs?name=snippet_ConnectionStringBuilder)]
 
 ## <a name="examples"></a>Příklady
 
-### <a name="basic"></a>Basic
+### <a name="basic"></a>Základní
 
-Základní připojovací řetězec se sdílenou mezipamětí pro lepší souběžnost.
+Základní připojovací řetězec se sdílenou mezipamětí pro zlepšení souběžnosti.
 
 ```ConnectionString
 Data Source=Application.db;Cache=Shared
@@ -98,7 +98,7 @@ Data Source=Application.db;Cache=Shared
 
 ### <a name="encrypted"></a>Šifrované
 
-Šifrovaná databáze.
+Zašifrovaná databáze.
 
 ```ConnectionString
 Data Source=Encrypted.db;Password=MyEncryptionKey
@@ -120,9 +120,9 @@ Soukromá databáze v paměti.
 Data Source=:memory:
 ```
 
-### <a name="sharable-in-memory"></a>Sharable v paměti
+### <a name="sharable-in-memory"></a>Sdíletelné v paměti
 
-Sharable, v paměti databáze označena názvem *Sharable*.
+Databáze v paměti, kterou může *sdílet název,* který je určený k jeho vytvoření.
 
 ```ConnectionString
 Data Source=Sharable;Mode=Memory;Cache=Shared

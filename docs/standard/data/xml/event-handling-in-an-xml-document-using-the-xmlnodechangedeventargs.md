@@ -16,7 +16,7 @@ ms.locfileid: "78156527"
 # <a name="event-handling-in-an-xml-document-using-the-xmlnodechangedeventargs"></a>Zpracování událostí v dokumentu XML pomocí XmlNodeChangedEventArgs
 **XmlNodeChangedEventArgs** zapouzdřuje argumenty předávané obslužným rutinám událostí registrovaným v objektu **XmlDocument** pro zpracování událostí. Události a popis, kdy jsou aktivovány, jsou uvedeny v následující tabulce.  
   
-|Událost|Aktivováno|  
+|Událost|Aktiv|  
 |-----------|-----------|  
 |<xref:System.Xml.XmlDocument.NodeInserting>|V případě, že bude uzel patřící do aktuálního dokumentu vložen do jiného uzlu.|  
 |<xref:System.Xml.XmlDocument.NodeInserted>|Pokud byl uzel patřící do aktuálního dokumentu vložen do jiného uzlu.|  
@@ -208,4 +208,4 @@ public class Sample
   
 ## <a name="see-also"></a>Viz také
 
-- [Model DOM (Document Object Model) dokumentu XML](../../../../docs/standard/data/xml/xml-document-object-model-dom.md)
+- [model DOM (Document Object Model) dokumentu XML](../../../../docs/standard/data/xml/xml-document-object-model-dom.md)

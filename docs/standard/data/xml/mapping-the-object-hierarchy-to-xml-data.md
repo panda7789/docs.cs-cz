@@ -20,7 +20,7 @@ V případě, že je dokument XML v paměti, konceptuální reprezentace je stro
   
  Pokud máte následující jednoduchý kód XML:  
   
- **Input** (Vstup)  
+ **Vstup**  
   
 ```xml  
 <book>  
@@ -33,11 +33,11 @@ V případě, že je dokument XML v paměti, konceptuální reprezentace je stro
  ![Příklad stromu uzlu](../../../../docs/standard/data/xml/media/simple-xml.gif "Simple_XML")  
 Reprezentace stromu uzlů v knize a názvu  
   
- Element `book` se stal objektem **XmlElement** , další prvek, `title`, se také stal atributem **XmlElement**, zatímco obsah elementu se stala objektem **XmlText** . Při prohlížení metod a vlastností třídy **XmlElement** se metody a vlastnosti liší od metod a vlastností dostupných v objektu **XmlText** . Proto si poznáte, jaký typ uzlu se kód XML stává zásadní, protože jeho typ uzlu určuje akce, které lze provést.  
+ `book` Prvek se stala objektem **XmlElement** , další prvek `title`se také stal atributem **XmlElement**, zatímco obsah elementu se stala objektem **XmlText** . Při prohlížení metod a vlastností třídy **XmlElement** se metody a vlastnosti liší od metod a vlastností dostupných v objektu **XmlText** . Proto si poznáte, jaký typ uzlu se kód XML stává zásadní, protože jeho typ uzlu určuje akce, které lze provést.  
   
  Následující příklad přečte v datech XML a zapisuje jiný text v závislosti na typu uzlu. Použijte následující datový soubor XML jako Input, **Items. XML**:  
   
- **Input** (Vstup)  
+ **Vstup**  
   
 ```xml  
 <?xml version="1.0"?>  
@@ -186,31 +186,31 @@ public class Sample
   
 |Vstup|Výstup|Test typu uzlu|  
 |-----------|------------|--------------------|  
-|\<? XML verze = "1.0"? >|\<? XML verze = ' 1.0 '? >|XmlNodeType.XmlDeclaration|  
-|\<!--Toto je ukázkový dokument XML – >|\<!--Toto je ukázkový dokument XML – >|XmlNodeType.Comment|  
-|\<! Položky DOCTYPE [\<! Číslo ENTITY "123" >] >|\<! Položky DOCTYPE [\<! Číslo ENTITY "123" >]|XmlNodeType.DocumentType|  
-|\<položky >|\<položky >|XmlNodeType.Element|  
-|Položka \<>|Položka \<>|XmlNodeType.Element|  
-|Test s entitou: &number;|Test s entitou: 123|XmlNodeType.Text|  
-|\</Item >|\</Item >|XmlNodeType.EndElement|  
-|Položka \<>|Položka \<>|XmNodeType.Element|  
-|test s podřízeným elementem|test s podřízeným elementem|XmlNodeType.Text|  
-|\<Další >|\<Další >|XmlNodeType.Element|  
-|vhodné|vhodné|XmlNodeType.Text|  
-|\</Item >|\</Item >|XmlNodeType.EndElement|  
-|Položka \<>|Položka \<>|XmlNodeType.Element|  
-|testování pomocí oddílu CDATA|testování pomocí oddílu CDATA|XmlTest.Text|  
-|<! [CDATA [\<456 >]]\>|<! [CDATA [\<456 >]]\>|XmlTest.CDATA|  
-|IME|IME|XmlNodeType.Text|  
-|\</Item >|\</Item >|XmlNodeType.EndElement|  
-|Položka \<>|Položka \<>|XmlNodeType.Element|  
-|Test s entitou char: &\#65;|Test s entitou char: A|XmlNodeType.Text|  
-|\</Item >|\</Item >|XmlNodeType.EndElement|  
-|v tomto elementu \<!--čtrnáct znaků.-->|\<– čtrnáct znaků v tomto elementu.-->|XmlNodeType.Comment|  
-|Položka \<>|Položka \<>|XmlNodeType.Element|  
-|1234567890ABCD|1234567890ABCD|XmlNodeType.Text|  
-|\</Item >|\</Item >|XmlNodeType.EndElement|  
-|\</Items >|\</Items >|XmlNodeType.EndElement|  
+|\<? XML Version = "1.0"? >|\<? XML verze = ' 1.0 '? >|XmlNodeType. XmlDeclaration|  
+|\<!--Toto je ukázkový dokument XML-->|\<!--Toto je ukázkový dokument XML-->|XmlNodeType. Comment|  
+|\<! Položky DOCTYPE [\<! Číslo ENTITY "123" >] >|\<! Položky DOCTYPE [\<! Číslo ENTITY "123" >]|XmlNodeType. DocumentType|  
+|\<> položek|\<> položek|XmlNodeType. element|  
+|\<> položky|\<> položky|XmlNodeType. element|  
+|Test s entitou:&number;|Test s entitou: 123|XmlNodeType. text|  
+|\</Item>|\</Item>|XmlNodeType. EndElement|  
+|\<> položky|\<> položky|XmNodeType. element|  
+|test s podřízeným elementem|test s podřízeným elementem|XmlNodeType. text|  
+|\<Další>|\<Další>|XmlNodeType. element|  
+|vhodné|vhodné|XmlNodeType. text|  
+|\</Item>|\</Item>|XmlNodeType. EndElement|  
+|\<> položky|\<> položky|XmlNodeType. element|  
+|testování pomocí oddílu CDATA|testování pomocí oddílu CDATA|XmlTest. text|  
+|<! [CDATA [\<456>]]\>|<! [CDATA [\<456>]]\>|XmlTest. CDATA|  
+|IME|IME|XmlNodeType. text|  
+|\</Item>|\</Item>|XmlNodeType. EndElement|  
+|\<> položky|\<> položky|XmlNodeType. element|  
+|Test s entitou char: &\#65;|Test s entitou char: A|XmlNodeType. text|  
+|\</Item>|\</Item>|XmlNodeType. EndElement|  
+|\<V tomto elementu!--čtrnáct znaků.-->|\<--Čtrnáct znaků v tomto elementu.-->|XmlNodeType. Comment|  
+|\<> položky|\<> položky|XmlNodeType. element|  
+|1234567890ABCD|1234567890ABCD|XmlNodeType. text|  
+|\</Item>|\</Item>|XmlNodeType. EndElement|  
+|\</Items>|\</Items>|XmlNodeType. EndElement|  
   
  Musíte znát typ uzlu, který je přiřazen, protože typ uzlu řídí, jaké druhy akcí jsou platné a jaký druh vlastností lze nastavit a načíst.  
   
@@ -220,4 +220,4 @@ public class Sample
   
 ## <a name="see-also"></a>Viz také
 
-- [Model DOM (Document Object Model) dokumentu XML](../../../../docs/standard/data/xml/xml-document-object-model-dom.md)
+- [model DOM (Document Object Model) dokumentu XML](../../../../docs/standard/data/xml/xml-document-object-model-dom.md)

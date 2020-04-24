@@ -1,5 +1,5 @@
 ---
-title: Pokyny serializace
+title: Pokyny pro serializaci
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -15,14 +15,14 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 02/28/2020
 ms.locfileid: "78159790"
 ---
-# <a name="serialization-guidelines"></a>Pokyny serializace
+# <a name="serialization-guidelines"></a>Pokyny pro serializaci
 Tento dokument obsahuje seznam pokyny k serializaci zvážit při navrhování rozhraní API.  
 
 [!INCLUDE [binary-serialization-warning](../../../includes/binary-serialization-warning.md)]
   
  .NET nabízí tři hlavní Serializační technologie, které jsou optimalizované pro různé scénáře serializace. Následující tabulka uvádí tyto technologie a hlavní typy .NET, které souvisejí s těmito technologiemi.  
   
-|Technologie|Příslušných tříd|Poznámky:|  
+|Technologie|Příslušných tříd|Poznámky|  
 |----------------|----------------------|-----------|  
 |Smlouva serializaci dat|<xref:System.Runtime.Serialization.DataContractAttribute><br /><br /> <xref:System.Runtime.Serialization.DataMemberAttribute><br /><br /> <xref:System.Runtime.Serialization.DataContractSerializer><br /><br /> <xref:System.Runtime.Serialization.NetDataContractSerializer><br /><br /> <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer><br /><br /> <xref:System.Runtime.Serialization.ISerializable>|Obecné stálost<br /><br /> Webové služby<br /><br /> JSON|  
 |Serializace XML|<xref:System.Xml.Serialization.XmlSerializer>|Formát XML <br />k úplnému řízení|  
@@ -50,7 +50,7 @@ Tento dokument obsahuje seznam pokyny k serializaci zvážit při navrhování r
 - Vyhněte se podpora modulu runtime serializace nebo serializace XML pouze z důvodů obecné stálost. Místo toho raději smlouvy serializaci dat  
   
 #### <a name="supporting-data-contract-serialization"></a>Podpora serializace kontraktu dat  
- Typy mohou podporovat serializaci kontraktu dat použitím <xref:System.Runtime.Serialization.DataContractAttribute> na typ a <xref:System.Runtime.Serialization.DataMemberAttribute> členů (polí a vlastností) typu.  
+ Typy mohou podporovat serializaci kontraktu dat aplikováním <xref:System.Runtime.Serialization.DataContractAttribute> na typ a <xref:System.Runtime.Serialization.DataMemberAttribute> na členy (pole a vlastnosti) typu.  
   
  [!code-csharp[SerializationGuidelines#1](../../../samples/snippets/csharp/VS_Snippets_CFX/serializationguidelines/cs/source.cs#1)]
  [!code-vb[SerializationGuidelines#1](../../../samples/snippets/visualbasic/VS_Snippets_CFX/serializationguidelines/vb/source.vb#1)]  
@@ -69,7 +69,7 @@ Tento dokument obsahuje seznam pokyny k serializaci zvážit při navrhování r
      [!code-csharp[SerializationGuidelines#3](../../../samples/snippets/csharp/VS_Snippets_CFX/serializationguidelines/cs/source.cs#3)]
      [!code-vb[SerializationGuidelines#3](../../../samples/snippets/visualbasic/VS_Snippets_CFX/serializationguidelines/vb/source.vb#3)]  
   
-     <xref:System.Runtime.Serialization.OnDeserializedAttribute> Se atribut nejčastěji používané zpětného volání. Ostatní atributy v rodině jsou <xref:System.Runtime.Serialization.OnDeserializingAttribute>, <xref:System.Runtime.Serialization.OnSerializingAttribute>a <xref:System.Runtime.Serialization.OnSerializedAttribute>. Jejich lze použít k označení zpětná volání, které získat spuštěny před deserializace před serializací a nakonec po serializaci, v uvedeném pořadí.  
+     <xref:System.Runtime.Serialization.OnDeserializedAttribute> Se atribut nejčastěji používané zpětného volání. Ostatní atributy v rodině jsou <xref:System.Runtime.Serialization.OnDeserializingAttribute>, <xref:System.Runtime.Serialization.OnSerializingAttribute>a. <xref:System.Runtime.Serialization.OnSerializedAttribute> Jejich lze použít k označení zpětná volání, které získat spuštěny před deserializace před serializací a nakonec po serializaci, v uvedeném pořadí.  
   
 4. ZVAŽTE použití <xref:System.Runtime.Serialization.KnownTypeAttribute> označuje konkrétní typy, které se mají používat při deserializaci komplexní objekt grafu.  
   
@@ -103,14 +103,14 @@ Tento dokument obsahuje seznam pokyny k serializaci zvážit při navrhování r
      [!code-csharp[SerializationGuidelines#6](../../../samples/snippets/csharp/VS_Snippets_CFX/serializationguidelines/cs/source.cs#6)]
      [!code-vb[SerializationGuidelines#6](../../../samples/snippets/visualbasic/VS_Snippets_CFX/serializationguidelines/vb/source.vb#6)]  
   
-2. ZVAŽTE implementaci <xref:System.Xml.Serialization.IXmlSerializable> rozhraní, pokud chcete, aby ještě větší kontrolu nad tvar serializovaná XML než nabízejí použitím atributy serializace XML. Dvě metody rozhraní, <xref:System.Xml.Serialization.IXmlSerializable.ReadXml%2A> a <xref:System.Xml.Serialization.IXmlSerializable.WriteXml%2A>, umožňují plně řídit serializovaný datový proud XML. Můžete také určit schématu XML, který získá vygenerována pro typ použitím <xref:System.Xml.Serialization.XmlSchemaProviderAttribute> atributu.  
+2. ZVAŽTE implementaci <xref:System.Xml.Serialization.IXmlSerializable> rozhraní, pokud chcete, aby ještě větší kontrolu nad tvar serializovaná XML než nabízejí použitím atributy serializace XML. Dvě metody rozhraní <xref:System.Xml.Serialization.IXmlSerializable.ReadXml%2A> a <xref:System.Xml.Serialization.IXmlSerializable.WriteXml%2A>umožňují plně řídit serializovaný datový proud XML. Můžete také určit schématu XML, který získá vygenerována pro typ použitím <xref:System.Xml.Serialization.XmlSchemaProviderAttribute> atributu.  
   
 #### <a name="supporting-runtime-serialization"></a>Podpora serializace modulu runtime  
  *Serializace za běhu* je technologie, kterou používá Vzdálená komunikace .NET. Pokud se domníváte, že vaše typy bude přenosu pomocí vzdálené komunikace pomocí rozhraní .NET, je třeba Ujistěte se, že podporují runtime serializace.  
   
- Základní podporu pro *serializaci za běhu* lze poskytnout použitím atributu <xref:System.SerializableAttribute> a pokročilejší scénáře zahrnují implementaci jednoduchého *modelu serializace za běhu* (implementace-<xref:System.Runtime.Serialization.ISerializable> a poskytnutí konstruktoru serializace).  
+ Základní podporu pro *serializaci za běhu* lze poskytnout použitím <xref:System.SerializableAttribute> atributu a pokročilejší scénáře zahrnují implementaci jednoduchých *serializovatelných vzorů za běhu* (implementovat-<xref:System.Runtime.Serialization.ISerializable> a poskytnout konstruktor serializace).  
   
-1. ZVAŽTE podporuje runtime serializace v případě, že vaše typy budou použity u vzdálené komunikace rozhraní .NET. Například obor názvů <xref:System.AddIn> používá vzdálenou komunikaci rozhraní .NET a všechny typy vyměňované mezi doplňky **System. AddIn** musí podporovat serializaci modulu runtime.  
+1. ZVAŽTE podporuje runtime serializace v případě, že vaše typy budou použity u vzdálené komunikace rozhraní .NET. Například <xref:System.AddIn> obor názvů používá vzdálenou komunikaci rozhraní .NET a všechny typy vyměňované mezi doplňky **System. AddIn** musí podporovat serializaci modulu runtime.  
   
      [!code-csharp[SerializationGuidelines#7](../../../samples/snippets/csharp/VS_Snippets_CFX/serializationguidelines/cs/source.cs#7)]
      [!code-vb[SerializationGuidelines#7](../../../samples/snippets/visualbasic/VS_Snippets_CFX/serializationguidelines/vb/source.vb#7)]  
@@ -143,6 +143,6 @@ Tento dokument obsahuje seznam pokyny k serializaci zvážit při navrhování r
 - [Serializátor kontraktu dat](../../../docs/framework/wcf/feature-details/data-contract-serializer.md)
 - [Typy podporované serializátorem kontraktu dat](../../../docs/framework/wcf/feature-details/types-supported-by-the-data-contract-serializer.md)
 - [Binární serializace](binary-serialization.md)
-- [Vzdálená komunikace .NET](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/72x4h507(v=vs.100))
+- [Vzdálené komunikace pomocí rozhraní .NET](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/72x4h507(v=vs.100))
 - [Serializace XML a SOAP](xml-and-soap-serialization.md)
 - [Zabezpečení a serializace](../../../docs/framework/misc/security-and-serialization.md)

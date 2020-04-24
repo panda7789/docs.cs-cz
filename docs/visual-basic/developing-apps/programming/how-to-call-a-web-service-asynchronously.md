@@ -14,24 +14,24 @@ ms.locfileid: "76794554"
 ---
 # <a name="how-to-call-a-web-service-asynchronously-visual-basic"></a>Postupy: Asynchronní volání webové služby (Visual Basic)
 
-Tento příklad připojí obslužnou rutinu k události asynchronní obslužné rutiny webové služby, aby mohla načíst výsledek volání asynchronní metody. Tento příklad použil webovou službu DemoTemperatureService ve společnosti `http://www.xmethods.net`.
+Tento příklad připojí obslužnou rutinu k události asynchronní obslužné rutiny webové služby, aby mohl načíst výsledek volání asynchronní metody. Tento příklad používal webovou službu DemoTemperatureService na adrese `http://www.xmethods.net`.
 
-Když odkazujete na webovou službu v projektu v integrovaném vývojovém `My.WebServices` prostředí sady Visual Studio (IDE), je přidána do objektu a ide generuje třídu proxy klienta pro přístup k zadané webové službě
+Když odkazujete na webovou službu v projektu v integrovaném vývojovém prostředí (IDE) sady Visual Studio, přidá se k `My.WebServices` objektu a rozhraní IDE vygeneruje klientskou proxy třídu pro přístup k zadané webové službě.
 
-Třída proxy umožňuje volat metody webové služby synchronně, kde aplikace čeká na dokončení funkce. Kromě toho proxy vytvoří další členy, které pomáhají volat metodu asynchronně. Pro každou funkci webové služby *NameOfWebServiceFunction*vytvoří proxy server podprogram *NameOfWebServiceFunction,* `Async` událost *NameOfWebServiceFunction* `Completed` a třídu *NameOfWebServiceFunction.* `CompletedEventArgs` Tento příklad ukazuje, jak používat asynchronní členy `getTemp` pro přístup k funkci webové služby DemoTemperatureService.
+Třída proxy umožňuje volat metody webové služby synchronně, kde vaše aplikace čeká na dokončení funkce. Kromě toho proxy vytvoří další členy, které vám pomůžou vyvolat asynchronní volání metody. Pro každou funkci webové služby *NameOfWebServiceFunction*vytvoří proxy podrutinu *NameOfWebServiceFunction* `Async` , událost *NameOfWebServiceFunction* `Completed` a třídu *NameOfWebServiceFunction* `CompletedEventArgs` . Tento příklad ukazuje, jak použít asynchronní členy pro přístup k `getTemp` funkci webové služby DemoTemperatureService.
 
 > [!NOTE]
-> Tento kód nefunguje ve webových aplikacích, `My.WebServices` protože ASP.NET nepodporuje objekt.
+> Tento kód nefunguje ve webových aplikacích, protože ASP.NET `My.WebServices` objekt nepodporuje.
 
-## <a name="call-a-web-service-asynchronously"></a>Volání webové služby asynchronně
+## <a name="call-a-web-service-asynchronously"></a>Asynchronní volání webové služby
 
-1. Odkazna webovou službu `http://www.xmethods.net`DemoTemperatureService na adrese . Adresa je
+1. Odkaz na webovou službu DemoTemperatureService na `http://www.xmethods.net`adrese. Adresa je
 
     ```http
     http://www.xmethods.net/sd/2001/DemoTemperatureService.wsdl
     ```
 
-2. Přidejte obslužnou rutinu `getTempCompleted` události pro událost:
+2. Přidejte obslužnou rutinu události pro `getTempCompleted` událost:
 
     ```vb
     Private Sub getTempCompletedHandler(ByVal sender As Object,
@@ -42,15 +42,15 @@ Třída proxy umožňuje volat metody webové služby synchronně, kde aplikace 
     ```
 
     > [!NOTE]
-    > `Handles` Příkaz nelze použít k přidružení obslužné rutiny události k událostem objektu. `My.WebServices`
+    > `Handles` Příkaz nelze použít k přidružení obslužné rutiny události k událostem `My.WebServices` objektu.
 
-3. Přidejte pole ke sledování, pokud byla `getTempCompleted` obslužná rutina události přidána do události:
+3. Přidejte pole, které se má sledovat, pokud byla do `getTempCompleted` události přidána obslužná rutina události:
 
     ```vb
     Private handlerAttached As Boolean = False
     ```
 
-4. V případě potřeby přidejte metodu pro přidání obslužné rutiny `getTempCompleted` události k události a volání `getTempAsync` metody:
+4. Přidejte metodu pro přidání obslužné rutiny události do `getTempCompleted` události, je-li to nutné, a volání `getTempAsync` metody:
 
     ```vb
     Sub CallGetTempAsync(ByVal zipCode As Integer)
@@ -64,7 +64,7 @@ Třída proxy umožňuje volat metody webové služby synchronně, kde aplikace 
     End Sub
     ```
 
-    Chcete-li `getTemp` volat webovou metodu asynchronně, zavolejte metodu. `CallGetTempAsync` Po dokončení webové metody je její vrácená `getTempCompletedHandler` hodnota předána obslužné rutině události.
+    Pro asynchronní volání `getTemp` webové metody volejte `CallGetTempAsync` metodu. Po dokončení metody web je jeho návratová hodnota předána obslužné rutině `getTempCompletedHandler` události.
 
 ## <a name="see-also"></a>Viz také
 

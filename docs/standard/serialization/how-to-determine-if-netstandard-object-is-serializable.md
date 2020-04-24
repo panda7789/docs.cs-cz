@@ -17,11 +17,11 @@ ms.locfileid: "78159894"
 ---
 # <a name="how-to-determine-if-a-net-standard-object-is-serializable"></a>Jak zjistit, zda je objekt .NET Standard serializovatelný
 
-.NET Standard je specifikace definující typy a členy, které musí být přítomny v konkrétních implementacích .NET, které odpovídají této verzi standardu. .NET Standard však nedefinuje, zda je typ serializovatelný. Typy definované v knihovně .NET Standard nejsou označeny atributem <xref:System.SerializableAttribute>. Místo toho je možné určit, zda je konkrétní typ serializovatelný, konkrétní implementaci rozhraní .NET, například .NET Framework a .NET Core.
+.NET Standard je specifikace definující typy a členy, které musí být přítomny v konkrétních implementacích .NET, které odpovídají této verzi standardu. .NET Standard však nedefinuje, zda je typ serializovatelný. Typy definované v knihovně .NET Standard nejsou označeny <xref:System.SerializableAttribute> atributem. Místo toho je možné určit, zda je konkrétní typ serializovatelný, konkrétní implementaci rozhraní .NET, například .NET Framework a .NET Core.
 
 Pokud jste vytvořili knihovnu, která cílí na .NET Standard, vaše knihovna může být spotřebována jakoukoli implementací .NET, která podporuje .NET Standard. To znamená, že nemůžete předem znát, zda je konkrétní typ serializovatelný; můžete určit, zda je v době běhu serializovatelný.
 
-Můžete určit, zda je objekt serializovatelný za běhu načtením hodnoty vlastnosti <xref:System.Type.IsSerializable> objektu <xref:System.Type>, který představuje typ tohoto objektu. Následující příklad poskytuje jednu implementaci. Definuje metodu rozšíření `IsSerializable(Object)`, která určuje, zda může být serializována kterákoli <xref:System.Object> instance.
+Můžete určit, zda je objekt serializovatelný za běhu načtením hodnoty <xref:System.Type.IsSerializable> vlastnosti <xref:System.Type> objektu, který představuje tento typ objektu. Následující příklad poskytuje jednu implementaci. Definuje metodu `IsSerializable(Object)` rozšíření, která označuje, zda může <xref:System.Object> být jakákoli instance serializována.
 
 [!code-csharp[is-a-type-serializable](~/samples/snippets/standard/serialization/is-serializable/csharp/program.cs#2)]
 [!code-vb[is-a-type-serializable](~/samples/snippets/standard/serialization/is-serializable/vb/library.vb#2)]

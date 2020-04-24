@@ -13,19 +13,19 @@ ms.lasthandoff: 01/08/2020
 ms.locfileid: "75741047"
 ---
 # <a name="steps-in-the-serialization-process"></a>Kroky v procesu serializace
-Když je metoda <xref:System.Runtime.Serialization.Formatter.Serialize%2A> volána pro [formátovací modul](xref:System.Runtime.Serialization.Formatter), serializace objektu pokračuje podle následujícího pořadí pravidel:
+Pokud je <xref:System.Runtime.Serialization.Formatter.Serialize%2A> metoda volána pro [formátovací modul](xref:System.Runtime.Serialization.Formatter), serializace objektu pokračuje podle následujícího pořadí pravidel:
 
-- Chcete-li zjistit, zda formátovací modul obsahuje náhradní selektor se provede kontrola. Pokud formátovací modul, zkontrolujte, zda selektor náhradní zpracovává objekty daného typu. Pokud selektor zpracovává typ objektu, <xref:System.Runtime.Serialization.ISerializable.GetObjectData%2A?displayProperty=nameWithType> je volána v náhradním selektoru.
+- Chcete-li zjistit, zda formátovací modul obsahuje náhradní selektor se provede kontrola. Pokud formátovací modul, zkontrolujte, zda selektor náhradní zpracovává objekty daného typu. Pokud selektor zpracovává typ objektu, <xref:System.Runtime.Serialization.ISerializable.GetObjectData%2A?displayProperty=nameWithType> je volána v selektoru náhradních položek.
 
-- Pokud není k dispozici žádný náhradní selektor nebo pokud nezpracovává typ objektu, je provedena kontroly pro určení, zda je objekt označen atributem [serializovatelný](xref:System.SerializableAttribute) . Pokud objekt není, je vyvolána <xref:System.Runtime.Serialization.SerializationException>.
+- Pokud není k dispozici žádný náhradní selektor nebo pokud nezpracovává typ objektu, je provedena kontroly pro určení, zda je objekt označen atributem [serializovatelný](xref:System.SerializableAttribute) . Pokud objekt není, <xref:System.Runtime.Serialization.SerializationException> je vyvolána.
 
-- Pokud je objekt vhodně označený, ověřte, zda objekt implementuje rozhraní <xref:System.Runtime.Serialization.ISerializable>. Pokud objekt je, <xref:System.Runtime.Serialization.ISerializable.GetObjectData%2A> je volána na objektu.
+- Je-li objekt označen příznakem odpovídajícím způsobem, ověřte <xref:System.Runtime.Serialization.ISerializable> , zda objekt implementuje rozhraní. Pokud objekt je, <xref:System.Runtime.Serialization.ISerializable.GetObjectData%2A> je volána na objektu.
   
 - Pokud objekt neimplementuje <xref:System.Runtime.Serialization.ISerializable>, použije se výchozí zásada serializace a serializace všech polí, která nejsou označena jako [neserializovatelné](xref:System.NonSerializedAttribute).
 
 [!INCLUDE [binary-serialization-warning](../../../includes/binary-serialization-warning.md)]
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Binární serializace](binary-serialization.md)
 - [Serializace XML a SOAP](xml-and-soap-serialization.md)

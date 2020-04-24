@@ -18,7 +18,7 @@ ms.locfileid: "78159868"
 ---
 # <a name="how-to-qualify-xml-element-and-xml-attribute-names"></a>Jak kvalifikovat elementy XML a názvy atributů XML
 
-Obory názvů XML obsažené v instancích třídy <xref:System.Xml.Serialization.XmlSerializerNamespaces> musí odpovídat specifikaci konsorcium World Wide Web (W3C), která se nazývá [obory názvů v XML](https://www.w3.org/TR/REC-xml-names/).
+Obory názvů XML obsažené v instancích <xref:System.Xml.Serialization.XmlSerializerNamespaces> třídy musí odpovídat specifikaci konsorcium World Wide Web (W3C), která se nazývá [obory názvů v XML](https://www.w3.org/TR/REC-xml-names/).
 
 Obory názvů XML poskytuje metodu pro kvalifikované názvy elementů XML a atributy ve formátu XML v dokumentech XML. Úplný název se skládá z předpony a názvu místní, oddělených středníkem. Předpona, která funguje pouze jako zástupný symbol; je mapován na identifikátor URI, který určuje obor názvů. Kombinace oboru názvů univerzálně spravované identifikátoru URI a místní název vytváří název, který je musí být jedinečný.
 
@@ -165,10 +165,10 @@ public class Price
 ## <a name="see-also"></a>Viz také
 
 - <xref:System.Xml.Serialization.XmlSerializer>
-- [Nástroj pro definici schématu XML a serializace XML](the-xml-schema-definition-tool-and-xml-serialization.md)
+- [Nástroj definice schématu XML a serializace XML](the-xml-schema-definition-tool-and-xml-serialization.md)
 - [Představení serializace XML](introducing-xml-serialization.md)
 - [XmlSerializer – Třída](xref:System.Xml.Serialization.XmlSerializer)
-- [Seznam atributů řídících serializaci XML](attributes-that-control-xml-serialization.md)
+- [Atributy, které řídí serializaci XML](attributes-that-control-xml-serialization.md)
 - [Postupy: Zadání alternativního názvu elementu pro XML stream](how-to-specify-an-alternate-element-name-for-an-xml-stream.md)
 - [Postupy: Serializace objektu](how-to-serialize-an-object.md)
 - [Postupy: Deserializace objektu](how-to-deserialize-an-object.md)

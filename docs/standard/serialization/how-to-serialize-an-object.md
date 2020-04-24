@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: serializace objektu'
+title: 'Postupy: Serializace objektu'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -15,7 +15,7 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 02/28/2020
 ms.locfileid: "78159881"
 ---
-# <a name="how-to-serialize-an-object"></a>Postupy: serializace objektu
+# <a name="how-to-serialize-an-object"></a>Postupy: Serializace objektu
 K serializaci objektu, nejprve vytvořte objekt, který má být serializován a nastavíte jeho veřejné vlastnosti a pole. Chcete-li to provést, je třeba určit přenos formát, ve kterém má být uložena jako datový proud nebo jako soubor XML datového proudu. Například pokud datový proud XML musí být uložen ve formě trvalé, vytvořit <xref:System.IO.FileStream> objektu.  
   
 > [!NOTE]
