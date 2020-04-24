@@ -14,39 +14,39 @@ ms.locfileid: "74334542"
 ---
 # <a name="how-to-rename-a-file-in-visual-basic"></a>Postupy: Přejmenování souboru v jazyce Visual Basic
 
-Pomocí `RenameFile` metody objektu `My.Computer.FileSystem` přejmenujte soubor zadáním aktuálního umístění, názvu souboru a nového názvu souboru. Tuto metodu nelze použít k přesunutí souboru. pomocí `MoveFile` metody přesuňte a přejmenujte soubor.  
+Použijte `RenameFile` metodu `My.Computer.FileSystem` objektu k přejmenování souboru zadáním aktuálního umístění, názvu souboru a nového názvu souboru. Tuto metodu nelze použít k přesunutí souboru. k přesunutí `MoveFile` a přejmenování souboru použijte metodu.  
   
 ### <a name="to-rename-a-file"></a>Přejmenování souboru  
   
-- Pomocí `My.Computer.FileSystem.RenameFile` této metody můžete soubor přejmenovat. Tento příklad přejmenuje `Test.txt` soubor `SecondTest.txt`s názvem .  
+- K přejmenování `My.Computer.FileSystem.RenameFile` souboru použijte metodu. Tento příklad přejmenuje soubor s názvem `Test.txt` na `SecondTest.txt`.  
   
      [!code-vb[VbVbcnMyFileSystem#9](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnMyFileSystem/VB/Class1.vb#9)]  
   
- Tento příklad kódu je také k dispozici jako fragment kódu IntelliSense. Ve výběru fragmentu kódu je fragment umístěn v **systému souborů - Zpracování jednotek, složek a souborů**. Další informace naleznete v [tématu Fragmenty kódu](/visualstudio/ide/code-snippets).  
+ Tento příklad kódu je také k dispozici jako fragment kódu technologie IntelliSense. Ve výběru fragmentu kódu je fragment kódu umístěný v **systému souborů, ve kterém se zpracovávají jednotky, složky a soubory**. Další informace naleznete v tématu [fragmenty kódu](/visualstudio/ide/code-snippets).  
   
 ## <a name="robust-programming"></a>Robustní programování  
 
  Následující podmínky mohou způsobit výjimku:  
   
-- Cesta není platná z jednoho z následujících důvodů: jedná se o řetězec nulové délky, obsahuje pouze prázdné znaky, \\ \\\\obsahuje neplatné znaky nebo se jedná o cestu zařízení (začíná na . ) (<xref:System.ArgumentException>).  
+- Cesta není platná z některého z následujících důvodů: Jedná se o řetězec o nulové délce, obsahuje pouze prázdné znaky, obsahuje neplatné znaky nebo se jedná o cestu k zařízení (začíná \\ \\na.\\) (<xref:System.ArgumentException>).  
   
-- `newName`obsahuje informace<xref:System.ArgumentException>o cestě ( ).  
+- `newName`obsahuje informace o cestě<xref:System.ArgumentException>().  
   
-- Cesta není platná, protože `Nothing` <xref:System.ArgumentNullException>je ( ).  
+- Cesta není platná, protože je `Nothing` (<xref:System.ArgumentNullException>).  
   
-- `newName`je `Nothing` nebo prázdný<xref:System.ArgumentNullException>řetězec ( ).  
+- `newName`je `Nothing` nebo prázdný řetězec (<xref:System.ArgumentNullException>).  
   
-- Zdrojový soubor není platný nebo neexistuje<xref:System.IO.FileNotFoundException>( ).  
+- Zdrojový soubor není platný nebo neexistuje (<xref:System.IO.FileNotFoundException>).  
   
-- Existuje existující soubor nebo adresář s `newName` názvem<xref:System.IO.IOException>zadaným v ( ).  
+- Existuje existující soubor nebo adresář s názvem zadaným v `newName` (<xref:System.IO.IOException>).  
   
-- Cesta překračuje maximální délku definovanou<xref:System.IO.PathTooLongException>systémem ( ).  
+- Cesta přesahuje maximální povolenou délku (<xref:System.IO.PathTooLongException>) definovanou systémem.  
   
-- Název souboru nebo adresáře v cestě obsahuje dvojtečku (:) nebo je v neplatném formátu (<xref:System.NotSupportedException>).  
+- Název souboru nebo adresáře v cestě obsahuje dvojtečku (:) nebo má neplatnou hodnotu format<xref:System.NotSupportedException>().  
   
-- Uživatel nemá potřebná oprávnění k<xref:System.Security.SecurityException>zobrazení cesty ( ).  
+- Uživatel nemá potřebná oprávnění k zobrazení cesty (<xref:System.Security.SecurityException>).  
   
-- Uživatel nemá požadované oprávnění (<xref:System.UnauthorizedAccessException>).  
+- Uživatel nemá požadovaná oprávnění (<xref:System.UnauthorizedAccessException>).  
   
 ## <a name="see-also"></a>Viz také
 

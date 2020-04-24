@@ -24,12 +24,12 @@ ms.locfileid: "80248040"
 ---
 # <a name="controlling-xml-serialization-using-attributes"></a>Řízení serializace XML pomocí atributů
 
-Atributy lze použít k řízení XML serializace objektu nebo k vytvoření alternativní datový proud XML ze stejné sady tříd. Další podrobnosti o vytvoření alternativního datového proudu XML najdete v [tématu Postup: Zadání názvu alternativního prvku datového proudu XML](how-to-specify-an-alternate-element-name-for-an-xml-stream.md).
+Atributy lze použít k řízení XML serializace objektu nebo k vytvoření alternativní datový proud XML ze stejné sady tříd. Další informace o vytvoření alternativního datového proudu XML naleznete v tématu [How to: zadejte název alternativního prvku pro datový proud XML](how-to-specify-an-alternate-element-name-for-an-xml-stream.md).
 
 > [!NOTE]
-> Pokud musí generovaný kód XML odpovídat části 5 dokumentu W3C (World Wide Web Consortium) s názvem [Simple Object Access Protocol (SOAP) 1.1](https://www.w3.org/TR/2000/NOTE-SOAP-20000508/), použijte atributy uvedené v části [Atributy, které řídí kódovanou serializaci SOAP](attributes-that-control-encoded-soap-serialization.md).
+> Pokud XML vygenerované musí odpovídat části 5 dokumentu konsorcium World Wide Web (W3C) s názvem [Simple Object Access Protocol (SOAP) 1,1](https://www.w3.org/TR/2000/NOTE-SOAP-20000508/), použijte atributy uvedené v [atributech, které řídí serializaci kódovaných SOAP](attributes-that-control-encoded-soap-serialization.md).
 
-Ve výchozím nastavení je název elementu XML určen název třída nebo člen. V jednoduché třídě `Book`s názvem `ISBN` pole s názvem \<vytvoří značku elementu XML ISBN>, jak je znázorněno v následujícím příkladu.
+Ve výchozím nastavení je název elementu XML určen název třída nebo člen. V jednoduché třídě s názvem `Book`, pole s názvem `ISBN` vytvoří značku \<XML typu ISBN>, jak je znázorněno v následujícím příkladu.
 
 ```vb
 Public Class Book
@@ -66,7 +66,7 @@ public class TaxRates {
 }
 ```
 
-Další informace o atributech naleznete v [tématu Atributy](../../../docs/standard/attributes/index.md). Seznam atributů, které řídí serializaci XML, naleznete v [tématu Atributy, které řídí serializaci XML](attributes-that-control-xml-serialization.md).
+Další informace o atributech naleznete v tématu [Attributes](../../../docs/standard/attributes/index.md). Seznam atributů, které řídí serializace XML, naleznete v tématu [atributy, které řídí serializaci XML](attributes-that-control-xml-serialization.md).
 
 ## <a name="controlling-array-serialization"></a>Řízení serializace pole
 
@@ -241,7 +241,7 @@ Serializovanou instanci může vypadat takto.
 </Group>
 ```
 
-Jiný způsob k rozlišení dvou datové proudy XML je použít nástroj definici schématu XML ke generování soubory dokumentů schématu XML (XSD) z zkompilovaný kód. (Další podrobnosti o použití nástroje naleznete v [tématu Nástroj pro definici schématu XML a Serializace XML](the-xml-schema-definition-tool-and-xml-serialization.md).) Pokud není pro pole použit žádný atribut, schéma popisuje prvek následujícím způsobem.
+Jiný způsob k rozlišení dvou datové proudy XML je použít nástroj definici schématu XML ke generování soubory dokumentů schématu XML (XSD) z zkompilovaný kód. (Další informace o použití tohoto nástroje naleznete v tématu [Nástroj definice schématu XML a serializace XML](the-xml-schema-definition-tool-and-xml-serialization.md).) Pokud není použit žádný atribut na pole, schéma popisuje prvek následujícím způsobem.
 
 ```xml
 <xs:element minOccurs="0" maxOccurs ="1" name="Employees" type="ArrayOfEmployee" />
@@ -318,7 +318,7 @@ Mohou nastat situace, když veřejné vlastnosti nebo pole nemusí být serializ
 ## <a name="see-also"></a>Viz také
 
 - [Atributy, které řídí serializaci XML](attributes-that-control-xml-serialization.md)
-- [Atributy, které řídí serializaci zakódovanou v protokolu SOAP](attributes-that-control-encoded-soap-serialization.md)
+- [Atributy, které řídí kódovanou serializaci SOAP](attributes-that-control-encoded-soap-serialization.md)
 - [Představení serializace XML](introducing-xml-serialization.md)
 - [Příklady serializace XML](examples-of-xml-serialization.md)
 - [Postupy: Zadání alternativního názvu elementu pro XML stream](how-to-specify-an-alternate-element-name-for-an-xml-stream.md)

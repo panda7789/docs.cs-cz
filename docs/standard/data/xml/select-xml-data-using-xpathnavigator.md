@@ -14,10 +14,10 @@ ms.lasthandoff: 01/07/2020
 ms.locfileid: "75710164"
 ---
 # <a name="select-xml-data-using-xpathnavigator"></a>Výběr dat XML pomocí XPathNavigator
-Třída <xref:System.Xml.XPath.XPathNavigator> poskytuje sadu metod, které slouží k výběru sady uzlů v objektu <xref:System.Xml.XPath.XPathDocument> nebo <xref:System.Xml.XmlDocument> pomocí výrazu XPath. Po výběru můžete iterovat přes vybranou sadu uzlů.  
+<xref:System.Xml.XPath.XPathNavigator> Třída poskytuje sadu metod, které slouží k výběru sady uzlů v objektu <xref:System.Xml.XPath.XPathDocument> nebo <xref:System.Xml.XmlDocument> pomocí výrazu XPath. Po výběru můžete iterovat přes vybranou sadu uzlů.  
   
 ## <a name="xpathnavigator-selection-methods"></a>Metody výběru XPathNavigator  
- Třída <xref:System.Xml.XPath.XPathNavigator> poskytuje sadu metod, které slouží k výběru sady uzlů v objektu <xref:System.Xml.XPath.XPathDocument> nebo <xref:System.Xml.XmlDocument> pomocí výrazu XPath. Třída <xref:System.Xml.XPath.XPathNavigator> také poskytuje sadu optimalizovaných metod pro výběr nadřazených a podřízených uzlů rychleji než použití výrazu XPath. Vybraná sada uzlů se vrátí v objektu <xref:System.Xml.XPath.XPathNodeIterator> nebo objektu <xref:System.Xml.XPath.XPathNavigator> v případě jednoho vybraného uzlu.  
+ <xref:System.Xml.XPath.XPathNavigator> Třída poskytuje sadu metod, které slouží k výběru sady uzlů v objektu <xref:System.Xml.XPath.XPathDocument> nebo <xref:System.Xml.XmlDocument> pomocí výrazu XPath. <xref:System.Xml.XPath.XPathNavigator> Třída také poskytuje sadu optimalizovaných metod pro výběr nadřazených a podřízených uzlů rychleji než použití výrazu XPath. Vybraná sada uzlů je vrácena v <xref:System.Xml.XPath.XPathNodeIterator> objektu nebo <xref:System.Xml.XPath.XPathNavigator> objektu v případě jednoho vybraného uzlu.  
   
 ### <a name="selecting-nodes-using-xpath-expressions"></a>Výběr uzlů pomocí výrazů XPath  
  Chcete-li vybrat sadu uzlů pomocí výrazu XPath, použijte jednu z následujících metod výběru.  
@@ -26,11 +26,11 @@ Třída <xref:System.Xml.XPath.XPathNavigator> poskytuje sadu metod, které slou
   
 - <xref:System.Xml.XPath.XPathNavigator.SelectSingleNode%2A>  
   
- Při volání tyto metody vrátí sadu uzlů, které můžete volně procházet pomocí objektu <xref:System.Xml.XPath.XPathNodeIterator> nebo objektu <xref:System.Xml.XPath.XPathNavigator> v případě jednoho vybraného uzlu.  
+ Při volání tyto metody vrátí sadu uzlů, které můžete volně procházet pomocí <xref:System.Xml.XPath.XPathNodeIterator> objektu nebo <xref:System.Xml.XPath.XPathNavigator> objektu v případě jednoho vybraného uzlu.  
   
- Navigace s objektem <xref:System.Xml.XPath.XPathNodeIterator> nemá vliv na pozici objektu <xref:System.Xml.XPath.XPathNavigator> používaného k jeho vytvoření. Objekt <xref:System.Xml.XPath.XPathNavigator> vrácený z <xref:System.Xml.XPath.XPathNavigator.SelectSingleNode%2A>ch metod je umístěn na jednom vráceném uzlu a také nemá vliv na pozici objektu <xref:System.Xml.XPath.XPathNavigator>, který se používá k jeho vytvoření.  
+ Navigace s <xref:System.Xml.XPath.XPathNodeIterator> objektem nemá vliv na pozici <xref:System.Xml.XPath.XPathNavigator> objektu používaného k jeho vytvoření. <xref:System.Xml.XPath.XPathNavigator> Objekt vrácený z <xref:System.Xml.XPath.XPathNavigator.SelectSingleNode%2A> metod je umístěn na jednom vráceném uzlu a také nemá vliv na pozici <xref:System.Xml.XPath.XPathNavigator> objektu používaného k jeho vytvoření.  
   
- Následující příklad ukazuje vytvoření objektu <xref:System.Xml.XPath.XPathNavigator> z objektu <xref:System.Xml.XPath.XPathDocument>, použití metody <xref:System.Xml.XPath.XPathNavigator.Select%2A> k výběru uzlů v objektu <xref:System.Xml.XPath.XPathDocument> a použití objektu <xref:System.Xml.XPath.XPathNodeIterator> k iterování na vybraných uzlech.  
+ Následující příklad <xref:System.Xml.XPath.XPathNavigator> ukazuje vytvoření objektu z <xref:System.Xml.XPath.XPathDocument> objektu, použití <xref:System.Xml.XPath.XPathNavigator.Select%2A> metody k výběru uzlů v <xref:System.Xml.XPath.XPathDocument> objektu a použití <xref:System.Xml.XPath.XPathNodeIterator> objektu k iterování na vybraných uzlech.  
   
 ```vb  
 Dim document As XPathDocument = New XPathDocument("books.xml")  
@@ -53,14 +53,14 @@ while(nodes.MoveNext())
 }  
 ```  
   
- V příkladu se jako vstup používá soubor `books.xml`.  
+ Příklad přebírá `books.xml` soubor jako vstup.  
   
  [!code-xml[XPathXMLExamples#1](../../../../samples/snippets/xml/VS_Snippets_Data/XPathXMLExamples/XML/books.xml#1)]  
   
 ### <a name="optimized-selection-methods"></a>Metody optimalizovaného výběru  
- Metody <xref:System.Xml.XPath.XPathNavigator.SelectChildren%2A>, <xref:System.Xml.XPath.XPathNavigator.SelectAncestors%2A>a <xref:System.Xml.XPath.XPathNavigator.SelectDescendants%2A> třídy <xref:System.Xml.XPath.XPathNavigator> reprezentují výrazy XPath běžně používané k načtení uzlů podřízenosti, následníka a předchůdce. Tyto metody jsou optimalizované pro výkon a jsou rychlejší než jejich odpovídající výrazy XPath. Metody <xref:System.Xml.XPath.XPathNavigator.SelectChildren%2A>, <xref:System.Xml.XPath.XPathNavigator.SelectAncestors%2A>a <xref:System.Xml.XPath.XPathNavigator.SelectDescendants%2A> vyberou nadřazené, podřízené a odvozené uzly na základě hodnoty <xref:System.Xml.XPath.XPathNodeType> nebo místního názvu a identifikátoru URI oboru názvů uzlů k výběru. Vybrané uzly předchůdce, podřízené a následníka jsou vráceny v objektu <xref:System.Xml.XPath.XPathNodeIterator>.  
+ Metody <xref:System.Xml.XPath.XPathNavigator.SelectChildren%2A>, <xref:System.Xml.XPath.XPathNavigator.SelectAncestors%2A>a <xref:System.Xml.XPath.XPathNavigator.SelectDescendants%2A> <xref:System.Xml.XPath.XPathNavigator> třídy reprezentují výrazy XPath běžně používané k načtení uzlů podřízenosti, následníka a předchůdce. Tyto metody jsou optimalizované pro výkon a jsou rychlejší než jejich odpovídající výrazy XPath. Metody <xref:System.Xml.XPath.XPathNavigator.SelectChildren%2A>, <xref:System.Xml.XPath.XPathNavigator.SelectAncestors%2A>a <xref:System.Xml.XPath.XPathNavigator.SelectDescendants%2A> slouží k výběru nadřazených uzlů, podřízených uzlů a následníků <xref:System.Xml.XPath.XPathNodeType> na základě hodnoty nebo místního názvu a identifikátoru URI uzlů, které chcete vybrat. Vybrané předchůdce, podřízené uzly a následníky jsou vráceny v <xref:System.Xml.XPath.XPathNodeIterator> objektu.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Xml.XmlDocument>
 - <xref:System.Xml.XPath.XPathDocument>
@@ -69,5 +69,5 @@ while(nodes.MoveNext())
 - [Vyhodnocení výrazů XPath pomocí XPathNavigator](../../../../docs/standard/data/xml/evaluate-xpath-expressions-using-xpathnavigator.md)
 - [Párování uzlů pomocí XPathNavigator](../../../../docs/standard/data/xml/matching-nodes-using-xpathnavigator.md)
 - [Rozpoznané typy uzlů s dotazy XPath](../../../../docs/standard/data/xml/node-types-recognized-with-xpath-queries.md)
-- [Dotazy XPath a obory názvů](../../../../docs/standard/data/xml/xpath-queries-and-namespaces.md)
+- [Dotazy a obory názvů XPath](../../../../docs/standard/data/xml/xpath-queries-and-namespaces.md)
 - [Zkompilované výrazy XPath](../../../../docs/standard/data/xml/compiled-xpath-expressions.md)

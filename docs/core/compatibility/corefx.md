@@ -1,40 +1,41 @@
 ---
-title: Změny rozdělení knihovny základních tříd
-description: Uvádí nejnovější změny v základních knihovnách .NET.
+title: Přerušující změny knihovny základních tříd
+description: Obsahuje seznam nejnovějších změn v základních knihovnách .NET.
 ms.date: 09/20/2019
-ms.openlocfilehash: 8cf90ca2bc8736101c1cb8d327a93d100148937b
-ms.sourcegitcommit: 348bb052d5cef109a61a3d5253faa5d7167d55ac
+ms.openlocfilehash: 841003fdb114042466cc15b4846e133cf37de85c
+ms.sourcegitcommit: 8b02d42f93adda304246a47f49f6449fc74a3af4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "82021825"
+ms.lasthandoff: 04/24/2020
+ms.locfileid: "82135643"
 ---
-# <a name="core-net-libraries-breaking-changes"></a>Základní knihovny .NET narušují změny
+# <a name="core-net-libraries-breaking-changes"></a>Základní knihovny .NET – přerušující změny
 
-Základní knihovny .NET poskytují primitiva a další obecné typy používané jádrem .NET Core.
+Základní knihovny .NET poskytují primitivní a další obecné typy používané .NET Core.
 
-Na této stránce jsou popsány následující změny:
+Na této stránce jsou popsány následující přerušující se změny:
 
-| Narušující změny | Zavedená verze |
+| Zásadní změna | Představená verze |
 | - | :-: |
-| [Api, která sestavy verze nyní sestavy produktu a není verze souboru](#apis-that-report-version-now-report-product-and-not-file-version) | 3.0 |
-| [Vlastní instance EncoderFallbackBuffer nemohou rekurzivně ustoupit](#custom-encoderfallbackbuffer-instances-cannot-fall-back-recursively) | 3.0 |
-| [Změny chování formátování s plovoucí desetinnou táhou a analýza](#floating-point-formatting-and-parsing-behavior-changed) | 3.0 |
-| [Operace analýzy s plovoucí desetinnou táhou již neselžou nebo nevyvolá vyzvučují výjimku Přetečení](#floating-point-parsing-operations-no-longer-fail-or-throw-an-overflowexception) | 3.0 |
-| [InvalidAsynchronousStateException přesunuta do jiného sestavení](#invalidasynchronousstateexception-moved-to-another-assembly) | 3.0 |
-| [NET Core 3.0 se řídí osvědčenými postupy Unicode při výměně špatně vytvořených bajtových sekvencí UTF-8](#net-core-30-follows-unicode-best-practices-when-replacing-ill-formed-utf-8-byte-sequences) | 3.0 |
-| [TypeDescriptionProviderAttribute přesunutdo jiného sestavení](#typedescriptionproviderattribute-moved-to-another-assembly) | 3.0 |
-| [ZipArchiveEntry již zpracovává archivy s nekonzistentními velikostmi položek](#ziparchiveentry-no-longer-handles-archives-with-inconsistent-entry-sizes) | 3.0 |
-| [Typ výjimky serializátoru JSON byl změněn z JsonException na NotSupportedException](#json-serializer-exception-type-changed-from-jsonexception-to-notsupportedexception) | 3.0 |
-| [Změna sémantiky (string)null v Utf8JsonWriter](#change-in-semantics-of-stringnull-in-utf8jsonwriter) | 3.0 |
-| [Metody JsonEncodedText.Encode mají další argument JavaScriptEncoder](#jsonencodedtextencode-methods-have-an-additional-javascriptencoder-argument) | 3.0 |
-| [JsonFactoryConverter.CreateConverter podpis změněn](#jsonfactoryconvertercreateconverter-signature-changed) | 3.0 |
-| [Změny rozhraní API Prvku JsonElement](#jsonelement-api-changes) | 3.0 |
-| [FieldInfo.SetValue vyvolá výjimku pro statická pole pouze init.](#fieldinfosetvalue-throws-exception-for-static-init-only-fields) | 3.0 |
+| [Rozhraní API, která verze sestav nyní hlásí produkt a nikoli verzi souboru](#apis-that-report-version-now-report-product-and-not-file-version) | 3.0 |
+| [Vlastní instance EncoderFallbackBuffer se nemůžou vrátit rekurzivně.](#custom-encoderfallbackbuffer-instances-cannot-fall-back-recursively) | 3.0 |
+| [Změny chování při formátování a analýze plovoucí desetinné čárky](#floating-point-formatting-and-parsing-behavior-changed) | 3.0 |
+| [Operace analýzy s plovoucí desetinnou čárkou již nejsou úspěšné nebo vyvolávají výjimku OverflowException](#floating-point-parsing-operations-no-longer-fail-or-throw-an-overflowexception) | 3.0 |
+| [InvalidAsynchronousStateException – přesunuté do jiného sestavení](#invalidasynchronousstateexception-moved-to-another-assembly) | 3.0 |
+| [.NET Core 3,0 se řídí osvědčenými postupy Unicode při nahrazování nesprávně naformátovaných sekvencí bajtů UTF-8.](#net-core-30-follows-unicode-best-practices-when-replacing-ill-formed-utf-8-byte-sequences) | 3.0 |
+| [TypeDescriptionProviderAttribute přesunuté do jiného sestavení](#typedescriptionproviderattribute-moved-to-another-assembly) | 3.0 |
+| [ZipArchiveEntry už nezpracovává archivy s nekonzistentními velikostmi záznamů.](#ziparchiveentry-no-longer-handles-archives-with-inconsistent-entry-sizes) | 3.0 |
+| [Typ výjimky serializátoru JSON se změnil z JsonException na NotSupportedException.](#json-serializer-exception-type-changed-from-jsonexception-to-notsupportedexception) | 3.0 |
+| [Změna v sémantikě (String) null v Utf8JsonWriter](#change-in-semantics-of-stringnull-in-utf8jsonwriter) | 3.0 |
+| [Metody JsonEncodedText. Encode mají další argument JavaScriptEncoder.](#jsonencodedtextencode-methods-have-an-additional-javascriptencoder-argument) | 3.0 |
+| [Změnil se podpis JsonFactoryConverter. CreateConverter.](#jsonfactoryconvertercreateconverter-signature-changed) | 3.0 |
+| [Změny rozhraní API JsonElement](#jsonelement-api-changes) | 3.0 |
+| [Parametr FieldInfo. SetValue vyvolá výjimku pro statická pole pouze pro init.](#fieldinfosetvalue-throws-exception-for-static-init-only-fields) | 3.0 |
 | [Soukromá pole přidaná k předdefinovaným typům struktury](#private-fields-added-to-built-in-struct-types) | 2.1 |
-| [Změna výchozí hodnoty useShellExecute](#change-in-default-value-of-useshellexecute) | 2.1 |
+| [Změna výchozí hodnoty UseShellExecute objektu Process](#change-in-default-value-of-useshellexecute) | 2.1 |
 | [Verze OpenSSL v macOS](#openssl-versions-on-macos) | 2.1 |
-| [UnauthorizedAccessException vyvoláno souborem FileSystemInfo.Attributes](#unauthorizedaccessexception-thrown-by-filesysteminfoattributes) | 1.0 |
+| [UnauthorizedAccessException vyvolaná atributy SystemInfo.](#unauthorizedaccessexception-thrown-by-filesysteminfoattributes) | 1.0 |
+| [Manipulace s poškozenými výjimkami stavu procesu není podporována.](#handling-corrupted-state-exceptions-is-not-supported) | 1.0 |
 
 ## <a name="net-core-30"></a>.NET Core 3.0
 
@@ -108,8 +109,12 @@ Na této stránce jsou popsány následující změny:
 
 ***
 
-## <a name="net-core-10"></a>.NET Jádro 1.0
+## <a name="net-core-10"></a>.NET Core 1,0
 
 [!INCLUDE [UnauthorizedAccessException thrown by FileSystemInfo.Attributes](~/includes/core-changes/corefx/1.0/filesysteminfo-attributes-exceptions.md)]
+
+***
+
+[!INCLUDE [corrupted-state-exceptions](~/includes/core-changes/corefx/1.0/corrupted-state-exceptions.md)]
 
 ***

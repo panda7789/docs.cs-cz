@@ -1,20 +1,24 @@
 ### YamlMime:Landing
 title: Dokumentace pro .NET
-summary: Další informace o .NET, open source vývojářské platformě pro vytváření mnoha různých typů aplikací.
+summary: Přečtěte si o .NET, open source vývojářské platformě pro vytváření mnoha různých typů aplikací.
 metadata:
   title: Dokumentace pro .NET
-  description: Další informace o .NET, open source vývojářské platformě pro vytváření mnoha různých typů aplikací.
+  description: Přečtěte si o .NET, open source vývojářské platformě pro vytváření mnoha různých typů aplikací.
   ms.topic: landing-page
-  ms.date: 03/27/2020
-  ms.openlocfilehash: 5984996b59cfb89e5f165bf966722093c0992eea
-  ms.sourcegitcommit: 1c1a1f9ec0bd1efb3040d86a79f7ee94e207cca5
+  ms.date: 04/22/2020
+  ms.openlocfilehash: 67fa6bb8c14ef3fad05b4874553a9ce75f811833
+  ms.sourcegitcommit: 8b02d42f93adda304246a47f49f6449fc74a3af4
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 04/03/2020
-  ms.locfileid: "80636078"
+  ms.lasthandoff: 04/24/2020
+  ms.locfileid: "82135812"
 landingContent:
-- title: Další informace o rozhraní .NET
+- title: Přečtěte si o .NET
   linkLists:
+  - linkListType: download
+    links:
+    - text: Stažení sady .NET SDK
+      url: https://dotnet.microsoft.com/download
   - linkListType: overview
     links:
     - text: Prohlídka technologie .NET
@@ -31,11 +35,11 @@ landingContent:
       url: frameworks.md
     - text: Common Language Runtime (CLR)
       url: clr.md
-    - text: Možnost volby mezi rozhraním .NET Core a rozhraním .NET Framework pro serverové aplikace
+    - text: Volba mezi .NET Core a .NET Framework pro serverové aplikace
       url: choosing-core-framework-server.md
   - linkListType: whats-new
     links:
-    - text: Co je nového ve standardu .NET
+    - text: Novinky v rozhraní .NET Standard
       url: whats-new/whats-new-in-dotnet-standard.md
     - text: Co je nového v .NET Core
       url: ../core/whats-new/dotnet-core-3-1.md
@@ -43,15 +47,15 @@ landingContent:
   linkLists:
   - linkListType: concept
     links:
-    - text: Serializace a deserializace json
+    - text: Serializace a deserializace JSON
       url: serialization/system-text-json-overview.md
   - linkListType: how-to-guide
     links:
-    - text: 'Serializace a deserializace JSON pomocí C #'
+    - text: 'Serializace a deserializace JSON pomocí jazyka C #'
       url: serialization/system-text-json-how-to.md
-    - text: Migrace z Newtonsoft.Json na System.Text.Json
+    - text: Migrace ze Newtonsoft. JSON na System. text. JSON
       url: serialization/system-text-json-migrate-from-newtonsoft-how-to.md
-    - text: Napište vlastní převaděče pro serializaci JSON
+    - text: Zápis vlastních převaděčů pro serializaci JSON
       url: serialization/system-text-json-converters-how-to.md
   - linkListType: sample
     links:
@@ -61,15 +65,15 @@ landingContent:
   linkLists:
   - linkListType: concept
     links:
-    - text: Číselné formátovací řetězce
+    - text: Řetězce číselných formátů
       url: base-types/standard-numeric-format-strings.md
-    - text: Formátovací řetězce data a času
+    - text: Řetězce formátu data a času
       url: base-types/standard-date-and-time-format-strings.md
     - text: Složené formátování
       url: base-types/composite-formatting.md
     - text: Převod časů mezi časovými pásmy
       url: datetime/converting-between-time-zones.md
-    - text: Oříznutí a odebrání znaků z řetězců
+    - text: Ořezávání a odebrání znaků z řetězců
       url: base-types/trimming.md
     - text: Regulární výrazy v rozhraní .NET
       url: base-types/regular-expressions.md
@@ -77,15 +81,15 @@ landingContent:
     links:
     - text: Převést řetězce na DateTime
       url: base-types/parsing-datetime.md
-    - text: Pad číslo s úvodními nulami
+    - text: Vyplnění čísla úvodními nulami
       url: base-types/how-to-pad-a-number-with-leading-zeros.md
-    - text: Zobrazení milisekund v hodnotách data a času
+    - text: Zobrazení milisekund v hodnotách data a času
       url: base-types/how-to-display-milliseconds-in-date-and-time-values.md
   - linkListType: reference
     links:
     - text: Jazyk regulárních výrazů
       url: base-types/regular-expression-language-quick-reference.md
-- title: Třídy návrhu a knihovny
+- title: Navrhování tříd a knihoven
   linkLists:
   - linkListType: overview
     links:
@@ -95,21 +99,21 @@ landingContent:
     links:
     - text: Zásady vytváření názvů
       url: design-guidelines/general-naming-conventions.md
-    - text: Konvence velkých písmen
+    - text: Konvence pro malá a velká písmena
       url: design-guidelines/capitalization-conventions.md
 - title: Použití událostí a výjimek
   linkLists:
   - linkListType: concept
     links:
-    - text: Doporučené postupy pro výjimky
+    - text: Osvědčené postupy pro výjimky
       url: exceptions/best-practices-for-exceptions.md
     - text: Zpracování a vyvolávání událostí
       url: events/index.md
   - linkListType: how-to-guide
     links:
-    - text: Použití bloku try-catch k zachycení výjimek
+    - text: Zachycení výjimek pomocí bloku try-catch
       url: exceptions/how-to-use-the-try-catch-block-to-catch-exceptions.md
-    - text: Zvýšení a využití událostí
+    - text: Vyvolání a zpracování událostí
       url: events/how-to-raise-and-consume-events.md
 - title: Vstup/výstup souborů a streamů
   linkLists:
@@ -117,23 +121,23 @@ landingContent:
     links:
     - text: Vstup/výstup souborů a streamů
       url: io/index.md
-    - text: Formáty cest souborů v systému Windows
+    - text: Formáty cest souborů ve Windows
       url: io/file-path-formats.md
   - linkListType: how-to-guide
     links:
     - text: Zápis textu do souboru
       url: io/how-to-write-text-to-a-file.md
-    - text: Čtení textu ze souboru
+    - text: Přečíst text ze souboru
       url: io/how-to-read-text-from-a-file.md
-    - text: Komprese a extrahování souborů
+    - text: Komprimace a extrakce souborů
       url: io/how-to-compress-and-extract-files.md
-    - text: Otevření a připojení k souboru protokolu
+    - text: Otevřít a připojit k souboru protokolu
       url: io/how-to-open-and-append-to-a-log-file.md
 - title: Správa využití paměti
   linkLists:
   - linkListType: concept
     links:
-    - text: Základy uvolňování paměti
+    - text: Základní informace o uvolňování paměti
       url: garbage-collection/fundamentals.md
     - text: Implementace metody Dispose
       url: garbage-collection/implementing-dispose.md
@@ -149,11 +153,11 @@ landingContent:
       url: parallel-programming/task-parallel-library-tpl.md
     - text: Asynchronní programování založené na úlohách
       url: parallel-programming/task-based-asynchronous-programming.md
-    - text: Zrušení úkolu
+    - text: Zrušení úlohy
       url: parallel-programming/task-cancellation.md
   - linkListType: how-to-guide
     links:
-    - text: Napsat jednoduchý paralelní program pomocí Parallel.ForEach
+    - text: Zápis jednoduchého paralelního programu pomocí Parallel. ForEach
       url: parallel-programming/how-to-write-a-simple-parallel-foreach-loop.md
-    - text: Vrácení hodnoty z úkolu
+    - text: Vrácení hodnoty z úlohy
       url: parallel-programming/how-to-return-a-value-from-a-task.md

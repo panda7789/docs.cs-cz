@@ -23,22 +23,22 @@ Způsobí, že kompilátor nebude automaticky odkazovat na standardní knihovny.
 ```  
   
 ## <a name="remarks"></a>Poznámky  
- Možnost `-nostdlib` odstraní automatický odkaz na sestavení System. dll a zabrání kompilátoru v čtení souboru Vbc. rsp. Soubor Vbc. rsp, který je umístěn ve stejném adresáři jako soubor Vbc. exe, odkazuje na běžně používané .NET Framework sestavení a importuje obory názvů `System` a `Microsoft.VisualBasic`.  
+ `-nostdlib` Možnost odebere automatický odkaz na sestavení System. dll a zabrání kompilátoru v čtení souboru Vbc. rsp. Soubor Vbc. rsp, který je umístěn ve stejném adresáři jako soubor Vbc. exe, odkazuje na běžně používané .NET Framework sestavení a importuje obory názvů `System` a. `Microsoft.VisualBasic`  
   
 > [!NOTE]
 > Na sestavení knihovny mscorlib. dll a Microsoft. VisualBasic. dll jsou odkazy vždy odkazovány.  
   
 > [!NOTE]
-> Možnost `-nostdlib` není k dispozici ve vývojovém prostředí sady Visual Studio; je k dispozici pouze při kompilaci z příkazového řádku.  
+> Tato `-nostdlib` možnost není k dispozici ve vývojovém prostředí sady Visual Studio; je k dispozici pouze při kompilaci z příkazového řádku.  
   
 ## <a name="example"></a>Příklad  
- Následující kód zkompiluje `T2.vb` bez odkazování na standardní knihovny. Chcete-li odebrat objekt `My`, je nutné nastavit `_MYTYPE` Konstanta podmíněné kompilace na řetězec "Empty".  
+ Následující kód zkompiluje `T2.vb` bez odkazování na standardní knihovny. Chcete-li odebrat `_MYTYPE` `My` objekt, je nutné nastavit konstantu podmíněné kompilace na řetězec "Empty".  
   
 ```console
 vbc -nostdlib -define:_MYTYPE=\"Empty\" T2.vb  
 ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [-noconfig](../../../visual-basic/reference/command-line-compiler/noconfig.md)
 - [Visual Basic Kompilátor příkazového řádku](../../../visual-basic/reference/command-line-compiler/index.md)

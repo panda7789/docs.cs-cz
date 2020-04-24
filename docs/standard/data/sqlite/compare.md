@@ -48,18 +48,18 @@ Microsoft. data. sqlite má mnoho méně klíčových slov pro [připojovací ř
 
 | Klíčové slovo          | Jiné                                         |
 | ---------------- | --------------------------------------------------- |
-| Velikost mezipaměti       | Odeslat `PRAGMA cache_size = <pages>`                  |
+| Velikost mezipaměti       | Posílají`PRAGMA cache_size = <pages>`                  |
 | Výchozí časový limit  | Použití vlastnosti DefaultTimeout v SqliteConnection |
-| FailIfMissing    | Použít `Mode=ReadWrite`                                |
+| FailIfMissing    | Použití `Mode=ReadWrite`                                |
 | FullUri          | Použití klíčového slova zdroje dat                         |
-| Režim deníku     | Odeslat `PRAGMA journal_mode = <mode>`                 |
-| Starší verze formátu    | Odeslat `PRAGMA legacy_file_format = 1`                |
-| Maximální počet stránek   | Odeslat `PRAGMA max_page_count = <pages>`              |
-| Velikost stránky        | Odeslat `PRAGMA page_size = <bytes>`                   |
-| Jen pro čtení        | Použít `Mode=ReadOnly`                                 |
-| Synchronní      | Odeslat `PRAGMA synchronous = <mode>`                  |
+| Režim deníku     | Posílají`PRAGMA journal_mode = <mode>`                 |
+| Starší verze formátu    | Posílají`PRAGMA legacy_file_format = 1`                |
+| Maximální počet stránek   | Posílají`PRAGMA max_page_count = <pages>`              |
+| Velikost stránky        | Posílají`PRAGMA page_size = <bytes>`                   |
+| Jen pro čtení        | Použití `Mode=ReadOnly`                                 |
+| Synchronní      | Posílají`PRAGMA synchronous = <mode>`                  |
 | Identifikátor URI              | Použití klíčového slova zdroje dat                         |
-| UseUTF16Encoding | Odeslat `PRAGMA encoding = 'UTF-16'`                   |
+| UseUTF16Encoding | Posílají`PRAGMA encoding = 'UTF-16'`                   |
 
 ## <a name="authorization"></a>Autorizace
 
@@ -73,9 +73,9 @@ Microsoft. data. sqlite nemá žádná rozhraní API, která zveřejňují ozná
 
 Microsoft. data. sqlite nemá žádné rozhraní API pro vytváření modulů virtuálních tabulek. K poskytnutí zpětné vazby k této funkci použijte [#13823](https://github.com/dotnet/efcore/issues/13823) problému.
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-* [Datové typy](types.md)
+* [Typy dat](types.md)
 * [Připojovací řetězce](connection-strings.md)
 * [Šifrování](encryption.md)
 * [Omezení ADO.NET](adonet-limitations.md)

@@ -13,7 +13,7 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 02/28/2020
 ms.locfileid: "78159816"
 ---
-# <a name="schemaimporterextensions-element"></a>\<element > schemaImporterExtensions
+# <a name="schemaimporterextensions-element"></a>\<schemaImporterExtensions – element>
 Obsahuje typy, které jsou používány <xref:System.Xml.Serialization.XmlSchemaImporter> pro mapování typů XSD na typy rozhraní .NET Framework. Další informace o konfiguračních souborech najdete v tématu [Schéma konfiguračního souboru](../../../docs/framework/configure-apps/file-schema/index.md).  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -28,13 +28,13 @@ Obsahuje typy, které jsou používány <xref:System.Xml.Serialization.XmlSchema
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<přidat > element pro \<schemaImporterExtensions >](../../../docs/standard/serialization/add-element-for-schemaimporterextensions.md)|Přidá typy, které jsou používány <xref:System.Xml.Serialization.XmlSchemaImporter> k vytvoření mapování.|  
+|[\<Přidat> element pro \<>schemaImporterExtensions](../../../docs/standard/serialization/add-element-for-schemaimporterextensions.md)|Přidá typy, které jsou používány <xref:System.Xml.Serialization.XmlSchemaImporter> k vytvoření mapování.|  
   
 ## <a name="parent-elements"></a>Nadřazené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<element System. XML. Serialization > elementu](../../../docs/standard/serialization/system-xml-serialization-element.md)|Element nejvyšší úrovně pro řízení serializace XML.|  
+|[\<System. XML. Serialization – element>](../../../docs/standard/serialization/system-xml-serialization-element.md)|Element nejvyšší úrovně pro řízení serializace XML.|  
   
 ## <a name="example"></a>Příklad  
  Následující příklad kódu ukazuje, jak přidat typy, které jsou používány <xref:System.Xml.Serialization.XmlSchemaImporter> při mapování typů XSD na typy rozhraní .NET Framework.  
@@ -55,6 +55,6 @@ Obsahuje typy, které jsou používány <xref:System.Xml.Serialization.XmlSchema
 - <xref:System.Xml.Serialization.XmlSchemaImporter>
 - <xref:System.Xml.Serialization.Configuration.DateTimeSerializationSection.DateTimeSerializationMode>
 - [Schéma konfiguračního souboru](../../../docs/framework/configure-apps/file-schema/index.md)
-- [\<element > dateTimeSerialization](../../../docs/standard/serialization/datetimeserialization-element.md)
-- [\<přidat > element pro \<schemaImporterExtensions >](../../../docs/standard/serialization/add-element-for-schemaimporterextensions.md)
-- [\<element System. XML. Serialization > elementu](../../../docs/standard/serialization/system-xml-serialization-element.md)
+- [\<dateTimeSerialization – element>](../../../docs/standard/serialization/datetimeserialization-element.md)
+- [\<Přidat> element pro \<>schemaImporterExtensions](../../../docs/standard/serialization/add-element-for-schemaimporterextensions.md)
+- [\<System. XML. Serialization – element>](../../../docs/standard/serialization/system-xml-serialization-element.md)

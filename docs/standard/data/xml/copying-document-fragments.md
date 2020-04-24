@@ -13,6 +13,6 @@ ms.locfileid: "75711035"
 # <a name="copying-document-fragments"></a>Kopírování fragmentů dokumentu
 Můžete vytvořit uzel **XmlDocumentFragment** a potom do něj přidat uzly. Když je **XmlDocumentFragment** vložen s metodou **InsertNode** , uzel **XmlDocumentFragment** není zkopírován, ale jeho podřízené uzly jsou vloženy do XML model DOM (Document Object Model) (DOM).  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Model DOM (Document Object Model) dokumentu XML](../../../../docs/standard/data/xml/xml-document-object-model-dom.md)
+- [model DOM (Document Object Model) dokumentu XML](../../../../docs/standard/data/xml/xml-document-object-model-dom.md)

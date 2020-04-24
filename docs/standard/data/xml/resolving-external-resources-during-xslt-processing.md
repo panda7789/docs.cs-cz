@@ -17,32 +17,32 @@ ms.locfileid: "75710281"
 V případě transformace XSLT může být několikrát nutné přeložit externí prostředky.  
   
 ## <a name="using-the-xmlresolver-class"></a>Použití třídy objekt XmlResolver  
- Třída <xref:System.Xml.XmlResolver> slouží k překladu externích prostředků. Následující tabulka popisuje, kdy se <xref:System.Xml.XmlResolver> během zpracování XSLT zapojí.  
+ <xref:System.Xml.XmlResolver> Třída se používá k překladu externích prostředků. Následující tabulka popisuje, kdy se <xref:System.Xml.XmlResolver> během zpracování XSLT stala zahrnuta.  
   
 |Úloha XSLT|K čemu se objekt XmlResolver používá|  
 |---------------|--------------------------------------|  
-|Zkompilujte šablonu stylů.|Vyřešte identifikátor URI pro šablonu stylů.<br /><br /> \- a -<br /><br /> Přeložit odkazy identifikátoru URI v jakémkoli `xsl:import` nebo `xsl:include` prvky.|  
-|Spusťte šablonu stylů.|Vyřešte identifikátor URI kontextu dokumentu.<br /><br /> \- a -<br /><br /> Přeloží odkazy identifikátoru URI v jakýchkoli funkcích XSLT `document()`.|  
+|Zkompilujte šablonu stylů.|Vyřešte identifikátor URI pro šablonu stylů.<br /><br /> ani<br /><br /> Přeložit odkazy identifikátoru URI `xsl:import` v `xsl:include` libovolných prvcích nebo.|  
+|Spusťte šablonu stylů.|Vyřešte identifikátor URI kontextu dokumentu.<br /><br /> ani<br /><br /> Přeložit odkazy identifikátoru URI v `document()` jakýchkoli funkcích XSLT.|  
   
- Metody <xref:System.Xml.Xsl.XslCompiledTransform.Load%2A> a <xref:System.Xml.Xsl.XslCompiledTransform.Transform%2A> zahrnují přetížení, která přebírají objekt <xref:System.Xml.XmlResolver> jako jeden z jeho argumentů. Pokud není zadaný <xref:System.Xml.XmlResolver>, použije se výchozí <xref:System.Xml.XmlUrlResolver> bez přihlašovacích údajů.  
+ Metody <xref:System.Xml.Xsl.XslCompiledTransform.Load%2A> a <xref:System.Xml.Xsl.XslCompiledTransform.Transform%2A> zahrnují přetížení, která přijímají <xref:System.Xml.XmlResolver> objekt jako jeden z argumentů. Pokud <xref:System.Xml.XmlResolver> není zadaný, použije se výchozí nastavení <xref:System.Xml.XmlUrlResolver> bez přihlašovacích údajů.  
   
- Následující seznam popisuje, kdy možná budete chtít zadat objekt <xref:System.Xml.XmlResolver>:  
+ Následující seznam popisuje, kdy možná budete chtít zadat <xref:System.Xml.XmlResolver> objekt:  
   
 - Pokud proces XSLT potřebuje přístup k síťovému prostředku, který vyžaduje ověření, můžete použít <xref:System.Xml.XmlResolver> s potřebnými přihlašovacími údaji.  
   
-- Pokud chcete omezit prostředky, ke kterým může proces XSLT přistupovat, můžete použít <xref:System.Xml.XmlSecureResolver> se správnou sadou oprávnění. Třídu <xref:System.Xml.XmlSecureResolver> použijte v případě, že potřebujete otevřít prostředek, který neovládáte nebo který není důvěryhodný.  
+- Pokud chcete omezit prostředky, ke kterým může proces XSLT přistupovat, můžete použít <xref:System.Xml.XmlSecureResolver> se správnou sadou oprávnění. Třídu použijte <xref:System.Xml.XmlSecureResolver> v případě, že potřebujete otevřít prostředek, který neovládáte nebo který není důvěryhodný.  
   
-- Pokud chcete přizpůsobit chování, můžete implementovat vlastní třídu <xref:System.Xml.XmlResolver> a použít ji k řešení prostředků.  
+- Pokud chcete přizpůsobit chování, můžete implementovat vlastní <xref:System.Xml.XmlResolver> třídu a použít ji k řešení prostředků.  
   
-- Pokud chcete zajistit, aby nedošlo k žádnému externímu prostředku, můžete pro argument <xref:System.Xml.XmlResolver> zadat `null`.  
+- Pokud chcete zajistit, aby nedošlo k žádnému externímu prostředku, můžete `null` pro <xref:System.Xml.XmlResolver> argument zadat.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad zkompiluje šablonu stylů uloženou v síťovém prostředku. Objekt <xref:System.Xml.XmlUrlResolver> Určuje pověření nutná pro přístup k šabloně stylů.  
+ Následující příklad zkompiluje šablonu stylů uloženou v síťovém prostředku. <xref:System.Xml.XmlUrlResolver> Objekt Určuje pověření nutná pro přístup k šabloně stylů.  
   
  [!code-csharp[XslCompiledTransform.Load#11](../../../../samples/snippets/csharp/VS_Snippets_Data/XslCompiledTransform.Load/CS/Xslt_Load_v2.cs#11)]
  [!code-vb[XslCompiledTransform.Load#11](../../../../samples/snippets/visualbasic/VS_Snippets_Data/XslCompiledTransform.Load/VB/Xslt_Load_v2.vb#11)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Xml.Xsl.XslCompiledTransform>
 - <xref:System.Xml.Xsl.XsltSettings>

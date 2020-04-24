@@ -15,22 +15,22 @@ ms.locfileid: "74329631"
 ---
 # <a name="how-to-persist-user-settings-in-visual-basic"></a>Postupy: Zachování uživatelského nastavení v jazyce Visual Basic
 
-Tuto metodu `My.Settings.Save` můžete použít k zachování změn v nastavení uživatele.  
+Můžete použít `My.Settings.Save` metodu k uchování změn nastavení uživatele.  
   
- Aplikace jsou obvykle navrženy tak, aby zachovat změny nastavení uživatele při vypnutí aplikace. Je to proto, že uložení nastavení může trvat, v závislosti na několika faktorech, několik sekund.  
+ Aplikace jsou obvykle navržené tak, aby při ukončení aplikace vytrvaly změny nastavení uživatele. Důvodem je to, že ukládání nastavení může trvat v závislosti na několika faktorech, a to několik sekund.  
   
- Další informace naleznete v tématu [My.Settings Object](../../../../visual-basic/language-reference/objects/my-settings-object.md).  
+ Další informace najdete v tématu [objekt My. Settings](../../../../visual-basic/language-reference/objects/my-settings-object.md).  
   
 > [!NOTE]
-> Přestože můžete změnit a uložit hodnoty nastavení uživatelského oboru za běhu, nastavení oboru aplikace jsou jen pro čtení a nelze je programově změnit. Nastavení oboru aplikace můžete změnit při vytváření aplikace, prostřednictvím **Návrháře projektu**nebo úpravou konfiguračního souboru aplikace. Další informace naleznete v [tématu Správa nastavení aplikací (.NET)](/visualstudio/ide/managing-application-settings-dotnet).  
+> I když můžete změnit a uložit hodnoty nastavení rozsahu uživatele v době běhu, nastavení rozsahu aplikace jsou jen pro čtení a nelze je změnit programově. Můžete změnit nastavení rozsahu aplikace při vytváření aplikace, pomocí **Návrháře projektu**nebo úpravou konfiguračního souboru aplikace. Další informace najdete v tématu [Správa nastavení aplikace (.NET)](/visualstudio/ide/managing-application-settings-dotnet).  
   
 ## <a name="example"></a>Příklad  
 
- Tento příklad změní hodnotu nastavení `LastChanged` uživatele a uloží `My.Settings.Save` tuto změnu voláním metody.  
+ Tento příklad změní hodnotu nastavení `LastChanged` uživatele a uloží tuto změnu voláním `My.Settings.Save` metody.  
   
  [!code-vb[VbVbalrMyResources#5](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyResources/VB/Form1.vb#5)]  
   
- Aby tento příklad fungoval, musí `LastChanged` mít aplikace uživatelské `Date`nastavení typu . Další informace naleznete v [tématu Správa nastavení aplikací (.NET)](/visualstudio/ide/managing-application-settings-dotnet).  
+ Aby tento příklad fungoval, musí mít vaše aplikace `LastChanged` uživatelské nastavení typu. `Date` Další informace najdete v tématu [Správa nastavení aplikace (.NET)](/visualstudio/ide/managing-application-settings-dotnet).  
   
 ## <a name="see-also"></a>Viz také
 

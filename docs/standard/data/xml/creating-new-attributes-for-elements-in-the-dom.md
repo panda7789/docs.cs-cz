@@ -102,7 +102,7 @@ doc.DocumentElement.SetAttributeNode(attr)
 doc.DocumentElement.SetAttributeNode(attr);
 ```
 
-**Output**
+**Výstup**
 
 ```xml
 <book genre="novel" ISBN="1-861001-57-5" publisher="WorldWide Publishing">
@@ -114,7 +114,7 @@ doc.DocumentElement.SetAttributeNode(attr);
 
 Můžete také vytvořit uzel **XmlAttribute** a použít metody **InsertBefore** nebo **InsertAfter** k umístění do příslušné pozice v kolekci. Pokud je v kolekci atributů již přítomen atribut se stejným názvem, existující uzel **XmlAttribute** je odebrán z kolekce a je vložen nový uzel **XmlAttribute** . To funguje stejným způsobem jako metoda **SetAttributes** . Tyto metody přebírají jako parametr existující uzel jako referenční bod pro provádění **InsertBefore** a **InsertAfter**. Pokud neposkytnete referenční uzel určující, kam vložit nový uzel, je výchozím nastavením pro metodu **InsertAfter** vložení nového uzlu na začátek kolekce. Výchozí pozice pro **InsertBefore**, pokud není k dispozici žádný uzel odkazu, je na konci kolekce.
 
-Pokud jste vytvořili **XmlNamedNodeMap** atributů, můžete přidat atribut podle názvu pomocí metody <xref:System.Xml.XmlNamedNodeMap.SetNamedItem%2A>. Další informace najdete v tématu [kolekce uzlů v NamedNodeMaps a NodeLists](node-collections-in-namednodemaps-and-nodelists.md).
+Pokud jste vytvořili **XmlNamedNodeMap** atributů, můžete přidat atribut podle názvu pomocí <xref:System.Xml.XmlNamedNodeMap.SetNamedItem%2A> metody. Další informace najdete v tématu [kolekce uzlů v NamedNodeMaps a NodeLists](node-collections-in-namednodemaps-and-nodelists.md).
 
 ## <a name="default-attributes"></a>Výchozí atributy
 
@@ -124,6 +124,6 @@ Vytvoříte-li prvek, který je deklarován jako výchozí atribut, je vytvořen
 
 Hodnota uzlu atributu se bude jednat o své podřízené uzly. Existují pouze dva typy platných podřízených uzlů: uzly **XmlText** a uzly **XmlEntityReference** . Jedná se o podřízené uzly v tom smyslu, že metody jako **hodnotu FirstChild** a **LastChild** je zpracovávají jako podřízené uzly. Toto rozlišení atributu s podřízenými uzly je důležité při pokusu o odebrání atributů nebo podřízených uzlů atributů. Další informace naleznete v tématu [Odebrání atributů z uzlu elementu v modelu DOM](removing-attributes-from-an-element-node-in-the-dom.md).
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Model DOM (Document Object Model) dokumentu XML](xml-document-object-model-dom.md)
+- [model DOM (Document Object Model) dokumentu XML](xml-document-object-model-dom.md)

@@ -21,7 +21,7 @@ ms.lasthandoff: 02/28/2020
 ms.locfileid: "78159244"
 ---
 # <a name="applying-interop-attributes"></a>Použití atributů spolupráce
-Obor názvů <xref:System.Runtime.InteropServices> poskytuje tři kategorie atributů specifických pro spolupráci: ty, které jste použili v době návrhu, ty, které byly aplikovány pomocí nástrojů pro spolupráci s objekty COM a rozhraní API během procesu převodu a které byly aplikovány vámi nebo zprostředkovatelem komunikace s objekty COM.  
+<xref:System.Runtime.InteropServices> Obor názvů poskytuje tři kategorie atributů specifických pro spolupráci: ty, které jste použili v době návrhu, ty, které byly aplikovány pomocí nástrojů spolupráce modelu COM a rozhraní API během procesu převodu a které byly aplikovány vámi nebo zprostředkovatelem komunikace s objekty com.  
   
  Pokud nejste obeznámeni s úlohou použití atributů pro spravovaný kód, přečtěte si téma [rozšíření metadat pomocí atributů](../../../docs/standard/attributes/index.md). Podobně jako u jiných vlastních atributů můžete použít atributy specifické pro spolupráci na typy, metody, vlastnosti, parametry, pole a další členy.  
   

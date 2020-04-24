@@ -15,21 +15,21 @@ ms.locfileid: "78159673"
 ---
 # <a name="extending-the-dom"></a>Rozšíření modelu DOM
 
-Microsoft .NET Framework obsahuje základní sadu tříd, které poskytují implementaci XML model DOM (Document Object Model) (DOM). <xref:System.Xml.XmlNode>a jeho odvozené třídy poskytují metody a vlastnosti, které umožňují procházení, dotazování a úpravu obsahu a struktury dokumentu XML.
+Microsoft .NET Framework obsahuje základní sadu tříd, které poskytují implementaci XML model DOM (Document Object Model) (DOM). <xref:System.Xml.XmlNode>A jeho odvozené třídy poskytuje metody a vlastnosti, které umožňují procházení, dotazování a úpravu obsahu a struktury dokumentu XML.
 
 Když je obsah XML načten do paměti pomocí modelu DOM, vytvořené uzly obsahují informace, jako je název uzlu, typ uzlu a tak dále. Můžou nastat případy, kdy potřebujete konkrétní informace o uzlu, které neposkytují základní třídy. Například může být vhodné zobrazit číslo řádku a umístění uzlu. V takovém případě můžete odvodit nové třídy z existujících tříd modelu DOM a přidat další funkce.
 
 Při odvozování nových tříd jsou k dispozici dva obecné pokyny:
 
-- Doporučuje se nikdy odvozovat od třídy <xref:System.Xml.XmlNode>. Místo toho se doporučuje odvodit třídy z třídy odpovídající typu uzlu, který vás zajímá. Například pokud chcete vrátit další informace o uzlech atributů, můžete odvodit z třídy <xref:System.Xml.XmlAttribute>.
+- Doporučuje se nikdy odvozovat od <xref:System.Xml.XmlNode> třídy. Místo toho se doporučuje odvodit třídy z třídy odpovídající typu uzlu, který vás zajímá. Například pokud chcete získat další informace o uzlech atributů, můžete odvozovat z <xref:System.Xml.XmlAttribute> třídy.
 
 - S výjimkou metod vytváření uzlů doporučujeme, aby při přepsání funkce vždy volali základní verzi funkce a pak přidali jakékoli další zpracování.
 
 ## <a name="creating-your-own-node-instances"></a>Vytváření vlastních instancí uzlů
 
-Třída <xref:System.Xml.XmlDocument> obsahuje metody vytváření uzlů. Když je načten soubor XML, jsou volány tyto metody pro vytvoření uzlů. Tyto metody můžete přepsat tak, aby se při načtení dokumentu vytvořily instance uzlů. Například pokud jste rozšířili třídu <xref:System.Xml.XmlElement>, měli byste dědit třídu <xref:System.Xml.XmlDocument> a přepsat metodu <xref:System.Xml.XmlDocument.CreateElement%2A>.
+<xref:System.Xml.XmlDocument> Třída obsahuje metody vytváření uzlů. Když je načten soubor XML, jsou volány tyto metody pro vytvoření uzlů. Tyto metody můžete přepsat tak, aby se při načtení dokumentu vytvořily instance uzlů. Například pokud jste rozšířili <xref:System.Xml.XmlElement> třídu, měli byste <xref:System.Xml.XmlDocument> třídu dědit a přepsat <xref:System.Xml.XmlDocument.CreateElement%2A> metodu.
 
-Následující příklad ukazuje, jak přepsat metodu <xref:System.Xml.XmlDocument.CreateElement%2A> pro vrácení vaší implementace <xref:System.Xml.XmlElement> třídy.
+Následující příklad ukazuje, jak přepsat <xref:System.Xml.XmlDocument.CreateElement%2A> metodu pro vrácení vaší implementace <xref:System.Xml.XmlElement> třídy.
 
 ```vb
 Class LineInfoDocument
@@ -56,7 +56,7 @@ class LineInfoDocument : XmlDocument
 
 Chcete-li zvětšit třídu, odvodíte třídu z jedné z existujících tříd modelu DOM. Pak můžete přepsat všechny virtuální metody nebo vlastnosti v základní třídě nebo přidat vlastní.
 
-V následujícím příkladu je vytvořena nová třída, která implementuje třídu <xref:System.Xml.XmlElement> a rozhraní <xref:System.Xml.IXmlLineInfo>. Jsou definovány další metody a vlastnosti, které umožňují uživatelům shromažďovat informace o řádcích.
+V následujícím příkladu je vytvořena nová třída, která implementuje <xref:System.Xml.XmlElement> třídu a <xref:System.Xml.IXmlLineInfo> rozhraní. Jsou definovány další metody a vlastnosti, které umožňují uživatelům shromažďovat informace o řádcích.
 
 ```vb
 Class LineInfoElement
@@ -240,7 +240,7 @@ Number of elements in book.xml: 3
 
 ## <a name="node-event-handler"></a>Obslužná rutina události uzlu
 
-.NET Framework implementace modelu DOM také obsahuje systém událostí, který umožňuje přijímat a zpracovávat události při změně uzlů v dokumentu XML. Pomocí tříd <xref:System.Xml.XmlNodeChangedEventHandler> a <xref:System.Xml.XmlNodeChangedEventArgs> můžete zachytit události `NodeChanged`, `NodeChanging`, `NodeInserted`, `NodeInserting`, `NodeRemoved`a `NodeRemoving`.
+.NET Framework implementace modelu DOM také obsahuje systém událostí, který umožňuje přijímat a zpracovávat události při změně uzlů v dokumentu XML. Pomocí tříd <xref:System.Xml.XmlNodeChangedEventHandler> a <xref:System.Xml.XmlNodeChangedEventArgs> můžete `NodeChanged`zachytit `NodeChanging`události, `NodeInserted`,, `NodeInserting`, `NodeRemoved`a. `NodeRemoving`
 
 Proces zpracování událostí funguje v odvozených třídách úplně stejně, jako by to bylo v původních třídách modelu DOM.
 
@@ -248,8 +248,8 @@ Další informace o zpracování událostí uzlu naleznete v tématu [události]
 
 ## <a name="default-attributes-and-the-createelement-method"></a>Výchozí atributy a metoda CreateElement
 
-Pokud přepíšete metodu <xref:System.Xml.XmlDocument.CreateElement%2A> v odvozené třídě, při vytváření nových prvků při úpravách dokumentu nebudou přidány výchozí atributy. Jedná se o problém jenom při úpravách. Vzhledem k tomu, že metoda <xref:System.Xml.XmlDocument.CreateElement%2A> zodpovídá za přidání výchozích atributů do <xref:System.Xml.XmlDocument>, je nutné tuto funkci v metodě <xref:System.Xml.XmlDocument.CreateElement%2A> nakódovat. Pokud načítáte <xref:System.Xml.XmlDocument>, která obsahuje výchozí atributy, bude zpracována správně. Další informace o výchozích atributech naleznete v tématu [vytváření nových atributů pro prvky v modelu DOM](creating-new-attributes-for-elements-in-the-dom.md).
+Pokud přepíšete <xref:System.Xml.XmlDocument.CreateElement%2A> metodu v odvozené třídě, při vytváření nových prvků při úpravách dokumentu nebudou přidány výchozí atributy. Jedná se o problém jenom při úpravách. Vzhledem k <xref:System.Xml.XmlDocument.CreateElement%2A> tomu <xref:System.Xml.XmlDocument>, že metoda je zodpovědná za přidání výchozích atributů do, musíte tuto funkci v <xref:System.Xml.XmlDocument.CreateElement%2A> metodě nakódovat. Pokud načítáte <xref:System.Xml.XmlDocument> , který obsahuje výchozí atributy, bude zpracována správně. Další informace o výchozích atributech naleznete v tématu [vytváření nových atributů pro prvky v modelu DOM](creating-new-attributes-for-elements-in-the-dom.md).
 
 ## <a name="see-also"></a>Viz také
 
-- [Model DOM (Document Object Model) dokumentu XML](xml-document-object-model-dom.md)
+- [model DOM (Document Object Model) dokumentu XML](xml-document-object-model-dom.md)

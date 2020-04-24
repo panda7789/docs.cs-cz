@@ -28,7 +28,7 @@ Rozhraní .NET nabízí tyto technologie serializace:
   
 - [Serializace JSON](system-text-json-overview.md) pouze veřejné vlastnosti a nezachovává věrnost typu. JSON je otevřený standard, který je atraktivní volbou pro sdílení dat na celém webu.
 
-## <a name="reference"></a>Reference
+## <a name="reference"></a>Referenční informace
 
 <xref:System.Runtime.Serialization>  
 Obsahuje třídy, které lze použít pro serializaci a deserializaci objektů.

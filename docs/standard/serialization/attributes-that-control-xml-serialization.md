@@ -17,11 +17,11 @@ ms.lasthandoff: 04/23/2019
 ms.locfileid: "61794963"
 ---
 # <a name="attributes-that-control-xml-serialization"></a>Atributy, které řídí serializaci XML
-Můžete použít atributy v následující tabulce do třídy a třídy členy lze řídit způsob, ve kterém <xref:System.Xml.Serialization.XmlSerializer> serializuje a deserializuje instance třídy. Abyste pochopili, jak tyto atributy řídí serializace XML, naleznete v tématu [řízení XML serializace pomocí atributů](../../../docs/standard/serialization/controlling-xml-serialization-using-attributes.md).  
+Můžete použít atributy v následující tabulce do třídy a třídy členy lze řídit způsob, ve kterém <xref:System.Xml.Serialization.XmlSerializer> serializuje a deserializuje instance třídy. Informace o tom, jak tyto atributy řídí serializace XML, naleznete v tématu [řízení serializace XML pomocí atributů](../../../docs/standard/serialization/controlling-xml-serialization-using-attributes.md).  
   
- Tyto atributy lze také použít k řízení zprávy protokolu SOAP literálu styl generovaných webové služby XML. Další informace o použití těchto atributů pro metodu XML webových služeb najdete v tématu [serializace XML pomocí webových služeb XML](../../../docs/standard/serialization/xml-serialization-with-xml-web-services.md).  
+ Tyto atributy lze také použít k řízení zprávy protokolu SOAP literálu styl generovaných webové služby XML. Další informace o použití těchto atributů pro metodu XML Web Services naleznete v tématu [serializace XML s webovými službami XML](../../../docs/standard/serialization/xml-serialization-with-xml-web-services.md).  
   
- Další informace o atributech najdete v tématu [atributy](../../../docs/standard/attributes/index.md).  
+ Další informace o atributech naleznete v tématu [Attributes](../../../docs/standard/attributes/index.md).  
   
 |Atribut|Platí pro|Určuje|  
 |---------------|----------------|---------------|  
@@ -39,15 +39,15 @@ Můžete použít atributy v následující tabulce do třídy a třídy členy 
 |<xref:System.Xml.Serialization.XmlTextAttribute>|Veřejné vlastnosti a pole.|Vlastnost nebo pole by měl být serializován jako XML text.|  
 |<xref:System.Xml.Serialization.XmlTypeAttribute>|Deklarace veřejných tříd.|Zadejte název a obor názvů XML.|  
   
- Kromě těchto atributů, které jsou všechny nalezené v <xref:System.Xml.Serialization> obor názvů, můžete také použít <xref:System.ComponentModel.DefaultValueAttribute> atributu na pole. **DefaultValueAttribute –** nastaví hodnotu, která bude automaticky přiřazen k členovi Pokud není zadána žádná hodnota.  
+ Kromě těchto atributů, které jsou všechny nalezené v <xref:System.Xml.Serialization> obor názvů, můžete také použít <xref:System.ComponentModel.DefaultValueAttribute> atributu na pole. **DefaultValueAttribute –** nastaví hodnotu, která bude automaticky přiřazena členu, pokud není zadána žádná hodnota.  
   
- K řízení kódovaného serializace SOAP XML, naleznete v tématu [atributy, aby ovládací prvek kódovaný SOAP serializace](../../../docs/standard/serialization/attributes-that-control-encoded-soap-serialization.md).  
+ Pro řízení kódované serializace XML protokolu SOAP, viz [atributy, které řídí serializaci kódovaných SOAP](../../../docs/standard/serialization/attributes-that-control-encoded-soap-serialization.md).  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Serializace XML a SOAP](../../../docs/standard/serialization/xml-and-soap-serialization.md)
 - <xref:System.Xml.Serialization.XmlSerializer>
 - [Řízení serializace XML pomocí atributů](../../../docs/standard/serialization/controlling-xml-serialization-using-attributes.md)
-- [Postupy: Určení alternativního názvu elementu pro Stream XML](../../../docs/standard/serialization/how-to-specify-an-alternate-element-name-for-an-xml-stream.md)
+- [Postupy: Zadání alternativního názvu elementu pro XML stream](../../../docs/standard/serialization/how-to-specify-an-alternate-element-name-for-an-xml-stream.md)
 - [Postupy: Serializace objektu](../../../docs/standard/serialization/how-to-serialize-an-object.md)
 - [Postupy: Deserializace objektu](../../../docs/standard/serialization/how-to-deserialize-an-object.md)

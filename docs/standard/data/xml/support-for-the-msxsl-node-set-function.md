@@ -11,15 +11,15 @@ ms.lasthandoff: 02/28/2020
 ms.locfileid: "78155591"
 ---
 # <a name="support-for-the-msxslnode-set-function"></a>Podpora pro funkci msxsl:node-set()
-Funkce `msxsl:node-set` umožňuje převést fragment stromu výsledků na sadu uzlů. Výsledná sada uzlů vždy obsahuje jeden uzel a je kořenovým uzlem stromu.  
+`msxsl:node-set` Funkce umožňuje převést fragment stromu výsledků na sadu uzlů. Výsledná sada uzlů vždy obsahuje jeden uzel a je kořenovým uzlem stromu.  
   
 > [!NOTE]
-> Třída <xref:System.Xml.Xsl.XslTransform> je v .NET Framework 2,0 zastaralá. Pomocí třídy <xref:System.Xml.Xsl.XslCompiledTransform> můžete provádět transformace XSLT (Extensible Stylesheet Language). Další informace najdete v tématu [použití třídy XslCompiledTransform](../../../../docs/standard/data/xml/using-the-xslcompiledtransform-class.md) a [migrace z třídy XslTransform](../../../../docs/standard/data/xml/migrating-from-the-xsltransform-class.md) .  
+> <xref:System.Xml.Xsl.XslTransform> Třída je zastaralá v .NET Framework 2,0. Transformace XSLT (Extensible Stylesheet Language) můžete použít k <xref:System.Xml.Xsl.XslCompiledTransform> transformaci pomocí třídy. Další informace najdete v tématu [použití třídy XslCompiledTransform](../../../../docs/standard/data/xml/using-the-xslcompiledtransform-class.md) a [migrace z třídy XslTransform](../../../../docs/standard/data/xml/migrating-from-the-xsltransform-class.md) .  
   
- Funkce `msxsl:node-set` umožňuje převést fragment stromu výsledků na sadu uzlů. Výsledná sada uzlů vždy obsahuje jeden uzel a je kořenovým uzlem stromu.  
+ `msxsl:node-set` Funkce umožňuje převést fragment stromu výsledků na sadu uzlů. Výsledná sada uzlů vždy obsahuje jeden uzel a je kořenovým uzlem stromu.  
   
 ## <a name="example"></a>Příklad  
- V následujícím příkladu `$var` je proměnná, která je stromem uzlů v šabloně stylů. Příkaz for-each v kombinaci s funkcí `node-set` umožňuje uživateli iterovat v rámci tohoto stromu uzlů jako sadu uzlů.  
+ V následujícím příkladu `$var` je proměnná, která je stromem uzlu v šabloně stylů. Příkaz for-each v kombinaci s `node-set` funkcí umožňuje uživateli iterovat v rámci tohoto stromu uzlů jako sadu uzlů.  
   
 ## <a name="nodesetxsl"></a>uzlů. xsl  
   

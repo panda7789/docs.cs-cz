@@ -1,7 +1,7 @@
 ---
 title: Parametry
 ms.date: 12/13/2019
-description: Přečtěte si, jak používat parametry SQL.
+description: Naučte se používat parametry SQL.
 ms.openlocfilehash: 1d2f818ad392a919faedd785394de28a9c6f56c3
 ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
@@ -11,17 +11,17 @@ ms.locfileid: "79400454"
 ---
 # <a name="parameters"></a>Parametry
 
-Parametry se používají k ochraně proti útokům injektáže SQL. Místo zřetězení vstupu uživatele s příkazy SQL použijte parametry, abyste zajistili, že vstup je vždy považován pouze za literálovou hodnotu a nikdy nebyl proveden. V SQLite parametry jsou obvykle povoleny kdekoli literál je povoleno v příkazech SQL.
+Parametry slouží k ochraně před útoky prostřednictvím injektáže SQL. Namísto zřetězení vstupu uživatele s příkazy SQL použijte parametry pro zajištění, že vstup je někdy považován za hodnotu literálu a nikdy se neprovede. V SQLite jsou parametry obvykle povoleny všude, kde je v příkazech jazyka SQL povolen literál.
 
-Parametry mohou být předponou buď `:`, `@`nebo `$`.
+Parametry mohou mít předponu buď `:`, `@`nebo. `$`
 
 [!code-csharp[](../../../../samples/snippets/standard/data/sqlite/HelloWorldSample/Program.cs?name=snippet_Parameter)]
 
-Podrobnosti o tom, jak jsou hodnoty .NET mapovány na hodnoty SQLite, najdete v tématu [Datové typy.](types.md)
+Podrobnosti o tom, jak jsou hodnoty .NET mapovány na hodnoty SQLite, naleznete v tématu [datové typy](types.md) .
 
 ## <a name="truncation"></a>Zkrácení
 
-Pomocí <xref:Microsoft.Data.Sqlite.SqliteParameter.Size> vlastnosti můžete zkrátit hodnoty TEXT a BLOB.
+Pomocí <xref:Microsoft.Data.Sqlite.SqliteParameter.Size> vlastnosti Zkraťte text a hodnoty objektů BLOB.
 
 ```csharp
 // Truncate name to 30 characters
@@ -30,11 +30,11 @@ command.Parameters.AddWithValue("$name", name).Length = 30;
 
 ## <a name="alternative-types"></a>Alternativní typy
 
-Někdy můžete chtít použít alternativní typ SQLite. To provést nastavením vlastnosti. <xref:Microsoft.Data.Sqlite.SqliteParameter.SqliteType>
+V některých případech může být vhodné použít jiný typ SQLite. Provedete to nastavením <xref:Microsoft.Data.Sqlite.SqliteParameter.SqliteType> vlastnosti.
 
-Lze použít následující mapování alternativního typu. Výchozí mapování naleznete v tématu [Datové typy](types.md).
+Lze použít následující alternativní mapování typů. Výchozí mapování najdete v tématu [datové typy](types.md).
 
-| Hodnota          | SqliteTyp | Poznámky          |
+| Hodnota          | SqliteType | Poznámky          |
 | -------------- | ---------- | ---------------- |
 | Char           | Integer    | UTF-16           |
 | DateTime       | Skutečné       | Hodnota juliánského dne |
@@ -46,8 +46,8 @@ Lze použít následující mapování alternativního typu. Výchozí mapován�
 
 ## <a name="output-parameters"></a>Výstupní parametry
 
-SQLite nepodporuje výstupní parametry. Místo toho vrátí tezauje hodnoty ve výsledcích dotazu.
+SQLite nepodporuje výstupní parametry. Místo toho se vrátí hodnoty z výsledků dotazu.
 
 ## <a name="see-also"></a>Viz také
 
-* [Datové typy](types.md)
+* [Typy dat](types.md)

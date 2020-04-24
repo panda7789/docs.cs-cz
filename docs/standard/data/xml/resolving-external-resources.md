@@ -41,15 +41,15 @@ Vlastnost **objekt XmlResolver** třídy **XmlDocument** je používána třído
   
 |Vlastnost objekt XmlResolver|Funkce|Poznámky|  
 |--------------------------|--------------|-----------|  
-|Třída **objekt XmlResolver** používaná třídou **XmlDocument** je stejná jako ta, kterou používá objekt **XmlReader**.|**XmlDocument** používá **objekt XmlResolver** , který byl přiřazen objektu **XmlReader**.<br /><br /> Vlastnost **XmlDocument. překladač** nelze nastavit bez ohledu na úroveň vztahu důvěryhodnosti **XmlDocument** , protože načítá **objekt XmlResolver** z objektu **XmlReader**. Nemůžete se pokusit přepsat nastavení **objekt XmlResolver** objektů **XmlReader** nastavením vlastnosti **objekt XmlResolver** pro **XmlDocument**.|Objektem XmlReader může být **Třída** **XmlTextReader**, ověřování <xref:System.Xml.XmlReader>nebo uživatelsky napsané čtecí zařízení. Pokud čtečka podporuje řešení entit, vyřeší se externí entity. Pokud čtenář předaný není podporován odkazy na entity, odkazy na entity nejsou vyřešeny.|  
+|Třída **objekt XmlResolver** používaná třídou **XmlDocument** je stejná jako ta, kterou používá objekt **XmlReader**.|**XmlDocument** používá **objekt XmlResolver** , který byl přiřazen objektu **XmlReader**.<br /><br /> Vlastnost **XmlDocument. překladač** nelze nastavit bez ohledu na úroveň vztahu důvěryhodnosti **XmlDocument** , protože načítá **objekt XmlResolver** z objektu **XmlReader**. Nemůžete se pokusit přepsat nastavení **objekt XmlResolver** objektů **XmlReader** nastavením vlastnosti **objekt XmlResolver** pro **XmlDocument**.|Objektem XmlReader může být **Třída** **XmlTextReader**, <xref:System.Xml.XmlReader>ověřování nebo uživatelsky napsané čtecí zařízení. Pokud čtečka podporuje řešení entit, vyřeší se externí entity. Pokud čtenář předaný není podporován odkazy na entity, odkazy na entity nejsou vyřešeny.|  
   
  Nastavení objekt XmlResolver tak, aby obsahovalo správné přihlašovací údaje, umožňuje přístup k externím prostředkům.  
   
 > [!NOTE]
-> Neexistuje žádný způsob, jak načíst vlastnost **objekt XmlResolver** . To pomáhá zabránit uživateli v použití **objekt XmlResolver** , u kterého byla nastavena pověření. Kromě toho, pokud je použita položka **XmlTextReader** nebo ověřující <xref:System.Xml.XmlReader> pro načtení souboru **XmlDocument** a v prvku **XmlDocument** je nastaven překladač, který je nastaven, překladače z těchto čtecích zařízení **nejsou po fázi** **zatížení** ukládány do mezipaměti, protože toto nastavení také představuje bezpečnostní riziko.  
+> Neexistuje žádný způsob, jak načíst vlastnost **objekt XmlResolver** . To pomáhá zabránit uživateli v použití **objekt XmlResolver** , u kterého byla nastavena pověření. Kromě toho, pokud **XmlTextReader** je použita položka <xref:System.Xml.XmlReader> XmlTextReader nebo Valid pro načtení souboru **XmlDocument** a prvek **XmlDocument** obsahuje překladač, který byl nastaven, překladače z těchto čtecích zařízení nejsou uloženy v mezipaměti **XmlDocument** po fázi **zatížení** , protože to také představuje bezpečnostní riziko.  
   
- Další informace naleznete v části poznámky na referenční stránce <xref:System.Xml.XmlResolver>.  
+ Další informace naleznete v části poznámky na <xref:System.Xml.XmlResolver> referenční stránce.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Model DOM (Document Object Model) dokumentu XML](../../../../docs/standard/data/xml/xml-document-object-model-dom.md)
+- [model DOM (Document Object Model) dokumentu XML](../../../../docs/standard/data/xml/xml-document-object-model-dom.md)

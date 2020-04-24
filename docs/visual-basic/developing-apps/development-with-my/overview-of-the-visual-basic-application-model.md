@@ -20,13 +20,13 @@ Visual Basic poskytuje dobře definovaný model pro řízení chování aplikac�
 
  Typická aplikace musí při spuštění a vypnutí provádět úlohy. Například při spuštění aplikace může zobrazit úvodní obrazovku, vytvořit připojení k databázi, načíst uložený stav atd. Když se aplikace ukončí, může zavřít databázová připojení, Uložit aktuální stav atd. Kromě toho může aplikace spustit konkrétní kód, když dojde k neočekávanému ukončení aplikace, například během neošetřené výjimky.  
   
- Model Visual Basic aplikace usnadňuje vytvoření aplikace s *jedinou instancí* . Jedna instance aplikace se liší od normální aplikace, ve které může běžet jenom jedna instance aplikace. Pokus o spuštění jiné instance aplikace s jednou instancí má za následek oznámení původní instance – pomocí `StartupNextInstance` události – tento další pokus o spuštění. Oznámení obsahuje argumenty příkazového řádku další instance. Následná instance aplikace je pak zavřena před tím, než může dojít k inicializaci.  
+ Model Visual Basic aplikace usnadňuje vytvoření aplikace s *jedinou instancí* . Jedna instance aplikace se liší od normální aplikace, ve které může běžet jenom jedna instance aplikace. Pokus o spuštění jiné instance aplikace s jednou instancí má za následek oznámení původní instance – prostřednictvím `StartupNextInstance` události – tento další pokus o spuštění byl proveden. Oznámení obsahuje argumenty příkazového řádku další instance. Následná instance aplikace je pak zavřena před tím, než může dojít k inicializaci.  
   
  Spustí se aplikace s jednou instancí a ověří, zda se jedná o první nebo další instanci aplikace:  
   
 - Pokud se jedná o první instanci, spustí se obvyklým způsobem.  
   
-- Každý následný pokus o spuštění aplikace, zatímco první instance se spustí, má za následek velmi odlišné chování. Následné pokusy upozorní první instanci na argumenty příkazového řádku a okamžitě se ukončí. První instance zpracovává událost `StartupNextInstance`, aby určila, jaké argumenty příkazového řádku následující instance byly, a pokračuje v běhu.  
+- Každý následný pokus o spuštění aplikace, zatímco první instance se spustí, má za následek velmi odlišné chování. Následné pokusy upozorní první instanci na argumenty příkazového řádku a okamžitě se ukončí. První instance zpracovává `StartupNextInstance` událost, aby určila, jaké argumenty příkazového řádku následující instance byly, a pokračuje v běhu.  
   
      Tento diagram znázorňuje, jak další instance signalizuje první instanci:  
   
@@ -38,27 +38,27 @@ Visual Basic poskytuje dobře definovaný model pro řízení chování aplikac�
 
  V aplikačním modelu jsou nalezeny následující události:  
   
-- **Spuštění aplikace** Aplikace vyvolá událost <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.Startup> při spuštění. Zpracováním této události můžete přidat kód, který inicializuje aplikaci před načtením hlavního formuláře. Událost `Startup` také umožňuje zrušit provádění aplikace v této fázi procesu spuštění, pokud je to žádoucí.  
+- **Spuštění aplikace** Aplikace vyvolá <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.Startup> událost při spuštění. Zpracováním této události můžete přidat kód, který inicializuje aplikaci před načtením hlavního formuláře. `Startup` Událost také umožňuje zrušit provádění aplikace v této fázi procesu spuštění, pokud je to žádoucí.  
   
-     Aplikaci můžete nakonfigurovat tak, aby při spuštění spouštěcího kódu aplikace zobrazila úvodní obrazovku. Ve výchozím nastavení model aplikace potlačí úvodní obrazovku při použití argumentu příkazového řádku `/nosplash` nebo `-nosplash`.  
+     Aplikaci můžete nakonfigurovat tak, aby při spuštění spouštěcího kódu aplikace zobrazila úvodní obrazovku. Ve výchozím nastavení model aplikace potlačí úvodní obrazovku při použití argumentu `/nosplash` nebo `-nosplash` příkazového řádku.  
   
-- **Aplikace s jednou instancí**. Událost <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.StartupNextInstance> se vyvolá při spuštění další instance aplikace s jednou instancí. Událost předá argumenty příkazového řádku následující instance.  
+- **Aplikace s jednou instancí**. Událost <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.StartupNextInstance> se vyvolá, když se spustí další instance aplikace s jednou instancí. Událost předá argumenty příkazového řádku následující instance.  
   
-- **Neošetřené výjimky**. Pokud aplikace narazí na neošetřenou výjimku, vyvolá událost <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.UnhandledException>. Vaše obslužná rutina pro danou událost může prošetřit výjimku a určit, zda pokračovat v provádění.  
+- **Neošetřené výjimky**. Pokud aplikace narazí na neošetřenou výjimku, vyvolá <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.UnhandledException> událost. Vaše obslužná rutina pro danou událost může prošetřit výjimku a určit, zda pokračovat v provádění.  
   
-     Událost `UnhandledException` se v některých případech nevyvolává. Další informace najdete v tématu <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.UnhandledException>.  
+     `UnhandledException` Událost se v některých případech nevyvolává. Další informace naleznete v tématu <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.UnhandledException>.  
   
-- **Změny připojení k síti**. Pokud se změní dostupnost sítě v počítači, aplikace vyvolá událost <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.NetworkAvailabilityChanged>.  
+- **Změny připojení k síti**. Pokud se změní dostupnost sítě v počítači, aplikace událost vyvolá <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.NetworkAvailabilityChanged> .  
   
-     Událost `NetworkAvailabilityChanged` se v některých případech nevyvolává. Další informace najdete v tématu <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.NetworkAvailabilityChanged>.  
+     `NetworkAvailabilityChanged` Událost se v některých případech nevyvolává. Další informace naleznete v tématu <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.NetworkAvailabilityChanged>.  
   
-- **Aplikace byla ukončena**. Aplikace poskytuje událost <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.Shutdown> k signalizaci, kdy se bude vypínat. V této obslužné rutině události se můžete ujistit, že operace, které vaše aplikace potřebuje, jsou dokončeny a uloženy například. Aplikaci můžete nakonfigurovat tak, aby byla vypnuta, když se zavře hlavní formulář, nebo vypnout pouze v případě, že dojde k zavření všech formulářů.  
+- **Aplikace byla ukončena**. Aplikace poskytuje <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.Shutdown> událost k signalizaci, kdy se má vypínat. V této obslužné rutině události se můžete ujistit, že operace, které vaše aplikace potřebuje, jsou dokončeny a uloženy například. Aplikaci můžete nakonfigurovat tak, aby byla vypnuta, když se zavře hlavní formulář, nebo vypnout pouze v případě, že dojde k zavření všech formulářů.  
   
 ## <a name="availability"></a>Dostupnost  
 
- Ve výchozím nastavení je model aplikace Visual Basic k dispozici pro model Windows Forms projekty. Pokud nakonfigurujete aplikaci tak, aby používala jiný spouštěcí objekt, nebo spusťte kód aplikace s vlastním `Sub Main`, může tento objekt nebo třída potřebovat implementaci <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase> třídy pro použití aplikačního modelu. Informace o změně spouštěcího objektu naleznete v tématu [Stránka aplikace, Návrhář projektu (Visual Basic)](/visualstudio/ide/reference/application-page-project-designer-visual-basic).  
+ Ve výchozím nastavení je model aplikace Visual Basic k dispozici pro model Windows Forms projekty. Pokud nakonfigurujete aplikaci tak, aby používala jiný spouštěcí objekt, nebo spusťte kód aplikace s vlastním `Sub Main`, pak tento objekt nebo třída může potřebovat implementaci <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase> třídy pro použití aplikačního modelu. Informace o změně spouštěcího objektu naleznete v tématu [Stránka aplikace, Návrhář projektu (Visual Basic)](/visualstudio/ide/reference/application-page-project-designer-visual-basic).  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase>
 - <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.Startup>

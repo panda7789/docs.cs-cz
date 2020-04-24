@@ -11,9 +11,9 @@ ms.lasthandoff: 01/07/2020
 ms.locfileid: "75709904"
 ---
 # <a name="xml-schema-object-model-som"></a>Model objektu schématu (SOM) XML
-Schéma XML je výkonný a složitý Nástroj pro vytváření a ověřování struktury v odpovídajících dokumentech XML. Podobně jako modelování dat v relační databázi poskytuje schéma způsob, jak definovat strukturu dokumentů XML, zadáním prvků, které lze použít v dokumentech, a struktury a typů, které tyto prvky musí dodržovat, aby byly platné pro Tha konkrétní schéma pro t.  
+Schéma XML je výkonný a složitý Nástroj pro vytváření a ověřování struktury v odpovídajících dokumentech XML. Podobně jako modelování dat v relační databázi poskytuje schéma způsob, jak definovat strukturu dokumentů XML, zadáním prvků, které lze použít v dokumentech, a struktury a typů, které tyto prvky musí dodržovat, aby byly platné pro příslušné schéma.  
   
- Model objektu schématu (SOM) poskytuje sadu tříd v oboru názvů <xref:System.Xml.Schema?displayProperty=nameWithType>, které umožňují číst schéma ze souboru nebo programově vytvořit schéma v paměti. Schéma lze následně procházet, upravovat, kompilovat, ověřovat nebo zapisovat do souboru.  
+ Model objektu schématu (SOM) poskytuje sadu tříd v <xref:System.Xml.Schema?displayProperty=nameWithType> oboru názvů, které umožňují číst schéma ze souboru nebo programově vytvořit schéma v paměti. Schéma lze následně procházet, upravovat, kompilovat, ověřovat nebo zapisovat do souboru.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Přehled Modelu objektu schématu XML](../../../../docs/standard/data/xml/xml-schema-object-model-overview.md)  
@@ -23,7 +23,7 @@ Schéma XML je výkonný a složitý Nástroj pro vytváření a ověřování s
  Popisuje čtení a zápis schémat XML ze souborů nebo jiných zdrojů.  
   
  [Sestavování schémat XML](../../../../docs/standard/data/xml/building-xml-schemas.md)  
- Popisuje, jak použít třídy v oboru názvů <xref:System.Xml.Schema?displayProperty=nameWithType> k sestavení schémat XML v paměti.  
+ Popisuje, jak použít třídy v <xref:System.Xml.Schema?displayProperty=nameWithType> oboru názvů k sestavení schémat XML v paměti.  
   
  [Procházení schémat XML](../../../../docs/standard/data/xml/traversing-xml-schemas.md)  
  Popisuje, jak procházet schéma XML pro přístup k prvkům, atributům a typům uloženým v modelu SOM.  

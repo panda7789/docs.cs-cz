@@ -13,9 +13,9 @@ ms.locfileid: "75447263"
 
 SQLite nepodporuje ve výchozím nastavení šifrování souborů databáze. Místo toho musíte použít upravenou verzi SQLite, jako je například [See](https://www.hwaci.com/sw/sqlite/see.html), [SQLCipher](https://www.zetetic.net/sqlcipher/), [SQLiteCrypt](http://www.sqlite-crypt.com/)nebo [wxSQLite3](https://utelle.github.io/wxsqlite3). Tento článek ukazuje použití nepodporovaného Open Source sestavení SQLCipher, ale tyto informace platí i pro další řešení, protože obvykle řídí stejný vzor.
 
-## <a name="installation"></a>Instalace služby
+## <a name="installation"></a>Instalace
 
-### <a name="net-core-clitabnetcore-cli"></a>[Rozhraní příkazového řádku .NET Core](#tab/netcore-cli)
+### <a name="net-core-cli"></a>[Rozhraní příkazového řádku .NET Core](#tab/netcore-cli)
 
 ```dotnetcli
 dotnet remove package Microsoft.Data.Sqlite
@@ -23,7 +23,7 @@ dotnet add package Microsoft.Data.Sqlite.Core
 dotnet add package SQLitePCLRaw.bundle_e_sqlcipher
 ```
 
-### <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio)
+### <a name="visual-studio"></a>[Visual Studio](#tab/visual-studio)
 
 ``` PowerShell
 Remove-Package Microsoft.Data.Sqlite
@@ -43,8 +43,8 @@ Pokud chcete povolit šifrování, zadejte klíč pomocí klíčového slova `Pa
 
 ## <a name="rekeying-the-database"></a>Opětovné vytvoření klíče databáze
 
-Pokud chcete změnit šifrovací klíč databáze, vydejte příkaz `PRAGMA rekey`. Chcete-li dešifrovat databázi, zadejte `NULL`.
+Pokud chcete změnit šifrovací klíč databáze, vydejte `PRAGMA rekey` příkaz. Chcete-li dešifrovat databázi `NULL`, zadejte.
 
-SQLite nepodporuje parametry v příkazech `PRAGMA`. Místo toho použijte funkci `quote()`, abyste zabránili injektáže SQL.
+SQLite nepodporuje parametry v `PRAGMA` příkazech. Místo toho použijte `quote()` funkci k zabránění injektáže SQL.
 
 [!code-csharp[](../../../../samples/snippets/standard/data/sqlite/EncryptionSample/Program.cs?name=snippet_Rekey)]

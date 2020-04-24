@@ -53,12 +53,12 @@ Následující obrázek znázorňuje proces pro přístup k objektům modelu COM
 |Rozhraní|Popis|  
 |---------------|-----------------|  
 |**IConnectionPoint** a **IConnectionPointContainer**|RCW převede objekty, které zpřístupňují styl události spojovacího bodu, na události založené na delegování.|  
-|**IDispatchEx –** (pouze .NET Framework) |Pokud třída implementuje **IDispatchEx –** , RCW implementuje **IExpando**. Rozhraní **IDispatchEx –** je rozšíření rozhraní **IDispatch** , které na rozdíl od rozhraní **IDispatch**povoluje vyčíslení, sčítání, odstraňování a rozlišování velkých a malých písmen členů.|  
+|**IDispatchEx –** (pouze .NET Framework) |Pokud třída implementuje **IDispatchEx –**, RCW implementuje **IExpando**. Rozhraní **IDispatchEx –** je rozšíření rozhraní **IDispatch** , které na rozdíl od rozhraní **IDispatch**povoluje vyčíslení, sčítání, odstraňování a rozlišování velkých a malých písmen členů.|  
 |**IEnumVARIANT**|Povoluje, aby typy COM, které podporují výčty, byly zpracovány jako kolekce.|  
   
 ## <a name="see-also"></a>Viz také
 
-- [COM – obálky](com-wrappers.md)
+- [Obálky COM](com-wrappers.md)
 - [Obálka volatelná aplikacemi COM](com-callable-wrapper.md)
 - [Souhrn převodu knihovny typů na sestavení](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/k83zzh38(v=vs.100))
 - [Import knihovny typů ve formě sestavení](../../framework/interop/importing-a-type-library-as-an-assembly.md)

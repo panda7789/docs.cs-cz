@@ -14,10 +14,10 @@ ms.lasthandoff: 02/28/2020
 ms.locfileid: "78159478"
 ---
 # <a name="xml-schema-xsd-validation-with-xmlschemacollection"></a>Ověření schématu XML (XSD) s třídou XmlSchemaCollection
-Můžete použít <xref:System.Xml.Schema.XmlSchemaCollection> k ověření dokumentu XML proti schématům XML Schema Definition Language (XSD). <xref:System.Xml.Schema.XmlSchemaCollection> zvyšuje výkon tím, že ukládá schémata do kolekce, takže nejsou načteny do paměti pokaždé, když dojde k ověření. Pokud schéma existuje v kolekci schémat, použije se atribut `schemaLocation` k vyhledání schématu v kolekci.  
+Můžete použít <xref:System.Xml.Schema.XmlSchemaCollection> k ověření dokumentu XML proti schématům XML Schema Definition Language (XSD). <xref:System.Xml.Schema.XmlSchemaCollection> Zlepšuje výkon tím, že ukládá schémata do kolekce, takže nejsou načteny do paměti pokaždé, když dojde k ověření. Pokud schéma existuje v kolekci schémat, je použit `schemaLocation` atribut k vyhledání schématu v kolekci.  
   
 > [!IMPORTANT]
-> Třída <xref:System.Xml.Schema.XmlSchemaCollection> je nyní zastaralá a byla nahrazena třídou <xref:System.Xml.Schema.XmlSchemaSet>. Další informace o třídě <xref:System.Xml.Schema.XmlSchemaSet> naleznete v tématu Třída [XmlSchemaSet pro kompilaci schématu](../../../../docs/standard/data/xml/xmlschemaset-for-schema-compilation.md).  
+> <xref:System.Xml.Schema.XmlSchemaCollection> Třída je nyní zastaralá a byla nahrazena <xref:System.Xml.Schema.XmlSchemaSet> třídou. Další informace o <xref:System.Xml.Schema.XmlSchemaSet> třídě naleznete v tématu Třída [XmlSchemaSet pro kompilaci schématu](../../../../docs/standard/data/xml/xmlschemaset-for-schema-compilation.md).  
   
  Následující příklad ukazuje kořenový prvek datového souboru.  
   
@@ -28,7 +28,7 @@ Můžete použít <xref:System.Xml.Schema.XmlSchemaCollection> k ověření doku
     targetNamespace="urn:bookstore-schema">  
 ```  
   
- V tomto příkladu je hodnota atributu `targetNamespace` `urn:bookstore-schema`, což je stejný obor názvů, který se používá při přidávání schématu do <xref:System.Xml.Schema.XmlSchemaCollection>.  
+ V tomto příkladu je hodnota `targetNamespace` atributu `urn:bookstore-schema`, což je stejný obor názvů, který se používá při přidávání schématu do. <xref:System.Xml.Schema.XmlSchemaCollection>  
   
  Následující příklad kódu přidá schéma XML do <xref:System.Xml.Schema.XmlSchemaCollection>.  
   
@@ -50,7 +50,7 @@ vreader = new XmlValidatingReader (reader);
 vreader.Schemas.Add(xsc);  
 ```  
   
- Atribut `targetNamespace` se obecně používá při přidání vlastnosti `namespaceURI` v metodě <xref:System.Xml.Schema.XmlSchemaCollection.Add%2A> pro <xref:System.Xml.Schema.XmlSchemaCollection>. Před přidáním schématu do <xref:System.Xml.Schema.XmlSchemaCollection>můžete zadat odkaz s hodnotou null. Pro schémata bez oboru názvů by měl být použit prázdný řetězec (""). <xref:System.Xml.Schema.XmlSchemaCollection> může mít pouze jedno schéma bez oboru názvů.  
+ `targetNamespace` Atribut je obecně používán při přidání `namespaceURI` vlastnosti do <xref:System.Xml.Schema.XmlSchemaCollection.Add%2A> metody pro <xref:System.Xml.Schema.XmlSchemaCollection>. Před přidáním schématu do nástroje lze zadat odkaz s hodnotou null <xref:System.Xml.Schema.XmlSchemaCollection>. Pro schémata bez oboru názvů by měl být použit prázdný řetězec (""). <xref:System.Xml.Schema.XmlSchemaCollection> Může obsahovat pouze jedno schéma bez oboru názvů.  
   
  Následující příklad kódu přidá schéma XML, #. xsd, do <xref:System.Xml.Schema.XmlSchemaCollection> a ověří soubor. XML.  
   
@@ -147,7 +147,7 @@ namespace ValidationSample
 </xs:schema>  
 ```  
   
- Následující příklad kódu vytvoří <xref:System.Xml.XmlValidatingReader>, který převezme <xref:System.Xml.XmlTextReader>. Vstupní soubor sample4. XML je ověřen proti schématu XML sample4. xsd.  
+ Následující příklad kódu vytvoří objekt <xref:System.Xml.XmlValidatingReader> , který převezme <xref:System.Xml.XmlTextReader>. Vstupní soubor sample4. XML je ověřen proti schématu XML sample4. xsd.  
   
 ```vb  
 Dim tr As New XmlTextReader("sample4.xml")  

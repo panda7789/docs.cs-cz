@@ -31,7 +31,7 @@ Serializace XML je základní přenos mechanismus použít v architektuře XML w
  KÓD XML generovaný webovou službou XML lze naformátovat jedním ze dvou způsobů, buď literálů, nebo kódovaných, jak je vysvětleno v tématu [Přizpůsobení formátování zpráv SOAP](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/dkwy2d72(v=vs.100)). Proto existují dvě sady atributů, které řídí serializace XML. Atributy uvedené v [atributech, které řídí serializace XML,](../../../docs/standard/serialization/attributes-that-control-xml-serialization.md) jsou navrženy pro řízení literálového stylu XML. Atributy uvedené v [atributech, které ovládají ovládací prvek kódované serializaci protokolu SOAP](../../../docs/standard/serialization/attributes-that-control-encoded-soap-serialization.md) , mají kódovaný styl. Použitím selektivní tyto atributy, můžete přizpůsobit aplikace má být vrácena, obojím stylů. Kromě toho tyto atributy lze použít (v závislosti) má být vrácen hodnoty a parametry.  
   
 ### <a name="example-of-using-both-styles"></a>Příklad použití obou stylů  
- Při vytváření webové služby XML, můžete použít obě sady atributů pro metody. V následujícím příkladu kódu s názvem třídy `MyService` obsahuje dvě metody webové služby XML, `MyLiteralMethod` a `MyEncodedMethod`. Obě metody provádět má stejnou funkci: vrací instanci `Order` třídy. Ve třídě `Order` se <xref:System.Xml.Serialization.XmlTypeAttribute> a atributy <xref:System.Xml.Serialization.SoapTypeAttribute> aplikují na `OrderID` pole a oba atributy mají svou `ElementName` vlastnost nastavenou na jiné hodnoty.  
+ Při vytváření webové služby XML, můžete použít obě sady atributů pro metody. V následujícím příkladu kódu s názvem třídy `MyService` obsahuje dvě metody webové služby XML, `MyLiteralMethod` a `MyEncodedMethod`. Obě metody provádět má stejnou funkci: vrací instanci `Order` třídy. `Order` Ve <xref:System.Xml.Serialization.XmlTypeAttribute> třídě jsou <xref:System.Xml.Serialization.SoapTypeAttribute> oba atributy aplikovány na `OrderID` pole a oba atributy mají svou `ElementName` vlastnost nastavenou na jiné hodnoty.  
   
  Chcete-li spustit příklad, vložte kód do soubor s příponou .asmx a umístění souboru do virtuálního adresáře spravované Internet Information Services (IIS). Z prohlížeče, HTML, jako je například Internet Explorer zadejte název počítače, virtuální adresář a soubor.  
   
@@ -261,7 +261,7 @@ public class Order {
 ## <a name="see-also"></a>Viz také
 
 - [Serializace XML a SOAP](xml-and-soap-serialization.md)
-- [Seznam atributů řídících serializaci zakódovanou v protokolu SOAP](attributes-that-control-encoded-soap-serialization.md)
+- [Atributy, které řídí kódovanou serializaci SOAP](attributes-that-control-encoded-soap-serialization.md)
 - [Postupy: Serializace objektu jako XML streamu zakódovaného v protokolu SOAP](how-to-serialize-an-object-as-a-soap-encoded-xml-stream.md)
 - [Postupy: Přepsání serializace XML zakódované v protokolu SOAP](how-to-override-encoded-soap-xml-serialization.md)
 - [Představení serializace XML](introducing-xml-serialization.md)

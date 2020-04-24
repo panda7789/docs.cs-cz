@@ -11,7 +11,7 @@ ms.lasthandoff: 01/07/2020
 ms.locfileid: "75710996"
 ---
 # <a name="create-new-nodes-in-the-dom"></a>Vytváření nových uzlů v modelu DOM
-<xref:System.Xml.XmlDocument> má metodu create pro všechny typy uzlů. Poskytněte metodu s názvem v případě potřeby a obsah nebo jiné parametry pro tyto uzly, které mají obsah (například textový uzel) a uzel je vytvořen. Níže jsou uvedené metody, které vyžadují název a několik dalších parametrů, které mají vytvořit vhodný uzel.  
+<xref:System.Xml.XmlDocument> Obsahuje metodu create pro všechny typy uzlů. Poskytněte metodu s názvem v případě potřeby a obsah nebo jiné parametry pro tyto uzly, které mají obsah (například textový uzel) a uzel je vytvořen. Níže jsou uvedené metody, které vyžadují název a několik dalších parametrů, které mají vytvořit vhodný uzel.  
   
 - <xref:System.Xml.XmlDocument.CreateCDataSection%2A>  
   
@@ -43,12 +43,12 @@ ms.locfileid: "75710996"
   
 |Metoda|Umístění uzlu|  
 |------------|--------------------|  
-|<xref:System.Xml.XmlNode.InsertBefore%2A>|Vloženo před referenční uzel. Například pro vložení nového uzlu na pozici 5:<br /><br /> `Dim refChild As XmlNode = node.ChildNodes(4) 'The reference is zero-based.node.InsertBefore(newChild, refChild);`<br /><br /> `XmlNode refChild = node.ChildNodes[4]; //The reference is zero-based. node.InsertBefore(newChild, refChild);`<br /><br /> Další informace naleznete v metodě <xref:System.Xml.XmlNode.InsertBefore%2A>.|  
-|<xref:System.Xml.XmlNode.InsertAfter%2A>|Vloženo za referenční uzel. Příklad:<br /><br /> `node.InsertAfter(newChild, refChild)`<br /><br /> `node.InsertAfter(newChild, refChild);`<br /><br /> Další informace naleznete v metodě <xref:System.Xml.XmlNode.InsertAfter%2A>.|  
-|<xref:System.Xml.XmlNode.AppendChild%2A>|Přidá uzel na konec seznamu podřízených uzlů pro daný uzel. Pokud je přidaný uzel <xref:System.Xml.XmlDocumentFragment>, celý obsah fragmentu dokumentu se přesune do podřízeného seznamu tohoto uzlu. Další informace naleznete v metodě <xref:System.Xml.XmlNode.AppendChild%2A>.|  
-|<xref:System.Xml.XmlNode.PrependChild%2A>|Přidá uzel na začátek seznamu podřízených uzlů daného uzlu. Pokud je přidaný uzel <xref:System.Xml.XmlDocumentFragment>, celý obsah fragmentu dokumentu se přesune do podřízeného seznamu tohoto uzlu. Další informace naleznete v metodě <xref:System.Xml.XmlNode.PrependChild%2A>.|  
-|<xref:System.Xml.XmlAttributeCollection.Append%2A>|Připojí uzel <xref:System.Xml.XmlAttribute> na konec kolekce atributů přidružené k elementu. Další informace naleznete v metodě <xref:System.Xml.XmlAttributeCollection.Append%2A>.|  
+|<xref:System.Xml.XmlNode.InsertBefore%2A>|Vloženo před referenční uzel. Například pro vložení nového uzlu na pozici 5:<br /><br /> `Dim refChild As XmlNode = node.ChildNodes(4) 'The reference is zero-based.node.InsertBefore(newChild, refChild);`<br /><br /> `XmlNode refChild = node.ChildNodes[4]; //The reference is zero-based. node.InsertBefore(newChild, refChild);`<br /><br /> Další informace naleznete v <xref:System.Xml.XmlNode.InsertBefore%2A> metodě.|  
+|<xref:System.Xml.XmlNode.InsertAfter%2A>|Vloženo za referenční uzel. Příklad:<br /><br /> `node.InsertAfter(newChild, refChild)`<br /><br /> `node.InsertAfter(newChild, refChild);`<br /><br /> Další informace naleznete v <xref:System.Xml.XmlNode.InsertAfter%2A> metodě.|  
+|<xref:System.Xml.XmlNode.AppendChild%2A>|Přidá uzel na konec seznamu podřízených uzlů pro daný uzel. Pokud je přidaný uzel objekt <xref:System.Xml.XmlDocumentFragment>, je celý obsah fragmentu dokumentu přesunut do podřízeného seznamu tohoto uzlu. Další informace naleznete v <xref:System.Xml.XmlNode.AppendChild%2A> metodě.|  
+|<xref:System.Xml.XmlNode.PrependChild%2A>|Přidá uzel na začátek seznamu podřízených uzlů daného uzlu. Pokud je přidaný uzel objekt <xref:System.Xml.XmlDocumentFragment>, je celý obsah fragmentu dokumentu přesunut do podřízeného seznamu tohoto uzlu. Další informace naleznete v <xref:System.Xml.XmlNode.PrependChild%2A> metodě.|  
+|<xref:System.Xml.XmlAttributeCollection.Append%2A>|Připojí <xref:System.Xml.XmlAttribute> uzel na konec kolekce atributů přidružené k elementu. Další informace naleznete v <xref:System.Xml.XmlAttributeCollection.Append%2A> metodě.|  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Model DOM (Document Object Model) dokumentu XML](../../../../docs/standard/data/xml/xml-document-object-model-dom.md)
+- [model DOM (Document Object Model) dokumentu XML](../../../../docs/standard/data/xml/xml-document-object-model-dom.md)

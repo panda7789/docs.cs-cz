@@ -26,9 +26,9 @@ Kompilátor příkazového řádku Visual Basic poskytuje alternativu k kompilov
 [Sestavení z příkazového řádku](../../../visual-basic/reference/command-line-compiler/building-from-the-command-line.md)  
 Popisuje Visual Basic Kompilátor příkazového řádku, který je k dispozici jako alternativa k kompilování programů z integrovaného vývojového prostředí (IDE) sady Visual Studio.
 
-[Visual Basic možnosti kompilátoru seřazené abecedně](../../../visual-basic/reference/command-line-compiler/compiler-options-listed-alphabetically.md)  
+[Možnosti kompilátoru jazyka Visual Basic v abecedním pořadí](../../../visual-basic/reference/command-line-compiler/compiler-options-listed-alphabetically.md)  
 Zobrazí seznam možností kompilátoru v abecední tabulce.
 
-[Visual Basic možnosti kompilátoru uvedené podle kategorie](../../../visual-basic/reference/command-line-compiler/compiler-options-listed-by-category.md)  
+[Možnosti kompilátoru jazyka Visual Basic uvedené podle kategorie](../../../visual-basic/reference/command-line-compiler/compiler-options-listed-by-category.md)  
 Prezentuje možnosti kompilátoru ve funkčních skupinách.
   

@@ -1,38 +1,42 @@
 ---
-title: nameof expression - C# odkaz
-ms.date: 07/12/2019
+title: výraz nameof – Referenční dokumentace jazyka C#
+ms.date: 04/23/2020
 f1_keywords:
 - nameof_CSharpKeyword
 - nameof
 helpviewer_keywords:
 - nameof expression [C#]
 ms.assetid: 33601bf3-cc2c-4496-846d-f9679bccf2a7
-ms.openlocfilehash: 5a68161be7bb03122d2a63ccef4365c5853862b2
-ms.sourcegitcommit: 2514f4e3655081dcfe1b22470c0c28500f952c42
+ms.openlocfilehash: d71acf0cf7d5cdcfa5310455af2120fa1f82d567
+ms.sourcegitcommit: 8b02d42f93adda304246a47f49f6449fc74a3af4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/18/2020
-ms.locfileid: "79507136"
+ms.lasthandoff: 04/24/2020
+ms.locfileid: "82135916"
 ---
-# <a name="nameof-expression-c-reference"></a>nameof expression (odkaz C# )
+# <a name="nameof-expression-c-reference"></a>nameof – výraz (Referenční dokumentace jazyka C#)
 
-Výraz `nameof` vytvoří název proměnné, typu nebo člena jako řetězcovou konstantu:
+`nameof` Výraz vytvoří název proměnné, typu nebo členu jako řetězcové konstanty:
 
 [!code-csharp-interactive[nameof expression](snippets/NameOfOperator.cs#Examples)]
 
-Jak ukazuje předchozí příklad, v případě typu a oboru názvů není produkovaný název obvykle [plně kvalifikovaný](~/_csharplang/spec/basic-concepts.md#fully-qualified-names).
+Jak ukazuje předchozí příklad, v případě typu a oboru názvů není vytvořen název obvykle [plně kvalifikovaný](~/_csharplang/spec/basic-concepts.md#fully-qualified-names).
 
-Výraz `nameof` je vyhodnocován v době kompilace a nemá žádný vliv v době běhu.
+V případě [doslovnéch identifikátorů](../tokens/verbatim.md)není `@` znak součástí názvu, jak ukazuje následující příklad:
 
-Výraz můžete `nameof` použít k tomu, aby byl kód pro kontrolu argumentů více udržovatelný:
+[!code-csharp-interactive[nameof verbatim](snippets/NameOfOperator.cs#Verbatim)]
+
+`nameof` Výraz je vyhodnocen v době kompilace a nemá žádný vliv na dobu běhu.
+
+`nameof` Výraz lze použít k zajištění udržovatelnosti kódu kontroly argumentu:
 
 [!code-csharp[nameof and argument check](snippets/NameOfOperator.cs#ExceptionMessage)]
 
-Výraz `nameof` je k dispozici v C# 6 a novější.
+`nameof` Výraz je k dispozici v C# 6 a novějším.
 
 ## <a name="c-language-specification"></a>specifikace jazyka C#
 
-Další informace naleznete v části [Nameof expressions](~/_csharplang/spec/expressions.md#nameof-expressions) ve [specifikaci jazyka C#](~/_csharplang/spec/introduction.md).
+Další informace naleznete v části [Expressions nameof](~/_csharplang/spec/expressions.md#nameof-expressions) v tématu [specifikace jazyka C#](~/_csharplang/spec/introduction.md).
 
 ## <a name="see-also"></a>Viz také
 

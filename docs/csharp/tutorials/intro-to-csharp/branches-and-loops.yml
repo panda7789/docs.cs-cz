@@ -1,8 +1,8 @@
 ### YamlMime:Tutorial
-title: Naučte se podmíněnou logiku pomocí příkazů větvea smyčka
+title: Další informace o podmíněné logice s příkazy větví a smyček
 metadata:
-  title: Větve a smyčky – interaktivní výuka úvodu do jazyka C#
-  description: V tomto kurzu o větvích a smyčkách se pomocí prohlížeče interaktivně naučíte C#. Napíšete kód v C# a potom si výsledky jeho kompilace a spuštění prohlédnete přímo v prohlížeči.
+  title: Větve a smyčky – Úvod k interaktivnímu kurzu C#
+  description: V tomto kurzu o větvích a cyklech se v prohlížeči naučí interaktivně pracovat s jazykem C#. Napíšete kód v C# a potom si výsledky jeho kompilace a spuštění prohlédnete přímo v prohlížeči.
   audience: Developer
   level: Beginner
   ms.custom: mvc
@@ -10,21 +10,21 @@ metadata:
   displayType: two-column
   interactive: csharp
   nextTutorialHref: list-collection.yml
-  nextTutorialTitle: Kolekce seznamu
-  ms.openlocfilehash: ab709b6b30b5a173e2faf08b577e4d7a3d9a9034
-  ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+  nextTutorialTitle: Kolekce seznamů
+  ms.openlocfilehash: b0a967ea2e5212887d617e76b4ecb445cfbb8b55
+  ms.sourcegitcommit: 8b02d42f93adda304246a47f49f6449fc74a3af4
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 03/14/2020
-  ms.locfileid: "73969430"
+  ms.lasthandoff: 04/24/2020
+  ms.locfileid: "82135929"
 items:
 - durationInMinutes: 1
   content: >
-    Tento kurz vás naučí, jak psát kód, který zkoumá proměnné a změní cestu spuštění na základě těchto proměnných. V prohlížeči interaktivně napíšete kód v C# a zobrazíte výsledky kompilace a spuštění kódu. Tento kurz obsahuje řadu lekcí, které zkoumají větvení a opakování konstrukce v C#. V těchto kurzech se seznámíte se základy jazyka C#.
+    V tomto kurzu se naučíte, jak napsat kód, který prochází proměnné a mění cestu provádění na základě těchto proměnných. V prohlížeči interaktivně napíšete kód v C# a zobrazíte výsledky kompilace a spuštění kódu. Tento kurz obsahuje řadu lekcí, které se seznámí s konstrukcemi větvení a smyček v jazyce C#. V těchto kurzech se seznámíte se základy jazyka C#.
 - title: Rozhodování pomocí příkazu if
   durationInMinutes: 4
   content: >
-    Spusťte v interaktivním okně následující kód. Vyberte tlačítko **Enter focus mode** . Potom zadejte do interaktivního okna následující blok kódu a vyberte **Spustit**:
+    Spusťte v interaktivním okně následující kód. Vyberte tlačítko pro **zadání detailního režimu** . Potom do interaktivního okna zadejte následující blok kódu a vyberte **Spustit**:
 
 
     ```csharp
@@ -38,7 +38,7 @@ items:
     ```
 
 
-    Pokud používáte toto v prostředí, měli byste postupovat podle pokynů pro [místní verzi](branches-and-loops-local.md) místo.
+    Pokud ve svém prostředí používáte, měli byste místo toho postupovat podle pokynů pro [místní verzi](branches-and-loops-local.md) .
 
 
     Upravte deklaraci `b`, aby součet byl menší než 10:
@@ -51,7 +51,7 @@ items:
     ```
 
 
-    Znovu vyberte tlačítko **Spustit.** Protože odpověď je menší než 10, nic se nevytiskne. Testovaná **podmínka** není splněná. Nemáte žádný kód, který by bylo možné provést, protože jste zatím napsali jenom jednu z možných větví příkazu `if`: větev pro splnění podmínky.
+    Znovu vyberte tlačítko **Spustit** . Protože odpověď je menší než 10, nic se nevytiskne. Testovaná **podmínka** není splněná. Nemáte žádný kód, který by bylo možné provést, protože jste zatím napsali jenom jednu z možných větví příkazu `if`: větev pro splnění podmínky.
 
 
     > [!TIP]
@@ -72,7 +72,7 @@ items:
     > Toto online kódovací prostředí je v režimu náhledu. Pokud se setkáte s potížemi, oznamte je [v úložišti dotnet/try](https://github.com/dotnet/try/issues).
 - title: Spolupráce if a else
   durationInMinutes: 10
-  content: "\nChcete-li ve větvích True a False provést různý kód, vytvoříte větev `else`, která se provede, když podmínka není splněná. Vyzkoušejte tohle:\n\n```csharp\nint a = 5;\nint b = 3;\nif (a + b > 10)\n    Console.WriteLine(\"The answer is greater than 10\");\nelse\n    Console.WriteLine(\"The answer is not greater than 10\");\n```\n\nPříkaz následující za klíčovým slovem `else` se provede jen tehdy, když má testovaná podmínka hodnotu `false`. Kombinace `if` a `else` s logickými podmínkami poskytuje veškerou sílu, kterou potřebujete.\n\n> [!IMPORTANT]\n> Důvodem odsazení pod příkazy `if` a `else` je snadnější čtení pro uživatele.\n> Jazyk C# nepovažuje odsazení nebo prázdné místo za významné.\n> Příkaz následující za klíčovým slovem `if` nebo `else` se provede na základě podmínky. Všechny ukázky v tomto kurzu postupujte podle běžné praxe odsadit řádky založené na toku řízení příkazů.\n\nProtože odsazení není významné, je potřeba pomocí `{` a `}` vyznačit, když chcete, aby jako součást podmíněně prováděného bloku bylo víc příkazů. Programátoři v C# obvykle používají tyto složené závorky pro všechny klauzule `if` a `else`. Následující příklad je stejný jako ten, co jste zrovna vytvořili. Zkuste to.\n\n```csharp\nint a = 5;\nint b = 3;\nif (a + b > 10)\n{\n    Console.WriteLine(\"The answer is greater than 10\");\n}\nelse\n{\n    Console.WriteLine(\"The answer is not greater than 10\");\n}\n```\n\n> [!TIP]\n> Prostřednictvím zbytku tohoto kurzu ukázky kódu všechny obsahují závorky, následující přijaté postupy.\n\nMůžete testovat složitější podmínky:\n\n```csharp\nint a = 5;\nint b = 3;\nint c = 4;\nif ((a + b + c > 10) && (a == b))\n{\n    Console.WriteLine(\"The answer is greater than 10\");\n    Console.WriteLine(\"And the first number is equal to the second\");\n}\nelse\n{\n    Console.WriteLine(\"The answer is not greater than 10\");\n    Console.WriteLine(\"Or the first number is not equal to the second\");\n}\n```\n\nSymbol `==` testuje *rovnost*. Použití `==` odlišuje test rovnosti od `a = 5`přiřazení, které jste viděli v .\n\nZápis `&&` představuje „a zároveň“. To znamená, že když se má provést větev True, musí být splněny obě podmínky.  Tyto příklady také ukazují, že můžete mít v každé podmíněné větvi víc příkazů, pokud je uzavřete mezi `{` a `}`.\n\nTaké můžete použít zápis `||`, který představuje „nebo“:\n\n```csharp\nint a = 5;\nint b = 3;\nint c = 4;\nif ((a + b + c > 10) || (a == b))\n{\n    Console.WriteLine(\"The answer is greater than 10\");\n    Console.WriteLine(\"Or the first number is equal to the second\");\n}\nelse\n{\n    Console.WriteLine(\"The answer is not greater than 10\");\n    Console.WriteLine(\"And the first number is not equal to the second\");\n}\n```\n\nUpravte hodnoty `a` `b`, `c` a a `&&` `||` přepněte mezi a prozkoumat. Získáte větší pochopení toho, `&&` jak `||` a operátoři pracují.\n\n> [!NOTE]\n> Toto online kódovací prostředí je v režimu náhledu. Pokud se setkáte s potížemi, oznamte je [v úložišti dotnet/try](https://github.com/dotnet/try/issues).\n"
+  content: "\nChcete-li ve větvích True a False provést různý kód, vytvoříte větev `else`, která se provede, když podmínka není splněná. Vyzkoušejte tohle:\n\n```csharp\nint a = 5;\nint b = 3;\nif (a + b > 10)\n    Console.WriteLine(\"The answer is greater than 10\");\nelse\n    Console.WriteLine(\"The answer is not greater than 10\");\n```\n\nPříkaz následující za klíčovým slovem `else` se provede jen tehdy, když má testovaná podmínka hodnotu `false`. Kombinace `if` a `else` s logickými podmínkami poskytuje veškerou sílu, kterou potřebujete.\n\n> [!IMPORTANT]\n> Důvodem odsazení pod příkazy `if` a `else` je snadnější čtení pro uživatele.\n> Jazyk C# nezpracovává odsazení ani prázdné znaky jako významné.\n> Příkaz následující za klíčovým slovem `if` nebo `else` se provede na základě podmínky. Všechny ukázky v tomto kurzu se řídí běžným postupem odsazení řádků na základě toku řízení příkazů.\n\nProtože odsazení není významné, je potřeba pomocí `{` a `}` vyznačit, když chcete, aby jako součást podmíněně prováděného bloku bylo víc příkazů. Programátoři v C# obvykle používají tyto složené závorky pro všechny klauzule `if` a `else`. Následující příklad je stejný jako ten, co jste zrovna vytvořili. Zkuste to.\n\n```csharp\nint a = 5;\nint b = 3;\nif (a + b > 10)\n{\n    Console.WriteLine(\"The answer is greater than 10\");\n}\nelse\n{\n    Console.WriteLine(\"The answer is not greater than 10\");\n}\n```\n\n> [!TIP]\n> Ve zbývající části tohoto kurzu obsahuje ukázka kódu všechny složené závorky, a to po přijatých postupech.\n\nMůžete testovat složitější podmínky:\n\n```csharp\nint a = 5;\nint b = 3;\nint c = 4;\nif ((a + b + c > 10) && (a == b))\n{\n    Console.WriteLine(\"The answer is greater than 10\");\n    Console.WriteLine(\"And the first number is equal to the second\");\n}\nelse\n{\n    Console.WriteLine(\"The answer is not greater than 10\");\n    Console.WriteLine(\"Or the first number is not equal to the second\");\n}\n```\n\nTesty `==` symbolů pro *rovnost*. Použití `==` rozlišuje test pro rovnost z přiřazení, které jste viděli v `a = 5`.\n\nZápis `&&` představuje „a zároveň“. To znamená, že když se má provést větev True, musí být splněny obě podmínky.  Tyto příklady také ukazují, že můžete mít v každé podmíněné větvi víc příkazů, pokud je uzavřete mezi `{` a `}`.\n\nTaké můžete použít zápis `||`, který představuje „nebo“:\n\n```csharp\nint a = 5;\nint b = 3;\nint c = 4;\nif ((a + b + c > 10) || (a == b))\n{\n    Console.WriteLine(\"The answer is greater than 10\");\n    Console.WriteLine(\"Or the first number is equal to the second\");\n}\nelse\n{\n    Console.WriteLine(\"The answer is not greater than 10\");\n    Console.WriteLine(\"And the first number is not equal to the second\");\n}\n```\n\nUmožňuje upravit hodnoty `a`, `b`a `c` a přepínat mezi `&&` a `||` a prozkoumat. Získáte lepší znalosti o tom, jak operátory `&&` a `||` fungují.\n\n> [!NOTE]\n> Toto online kódovací prostředí je v režimu náhledu. Pokud se setkáte s potížemi, oznamte je [v úložišti dotnet/try](https://github.com/dotnet/try/issues).\n"
 - title: Použití smyček k opakování operací
   durationInMinutes: 6
   content: >
@@ -150,13 +150,13 @@ items:
     Dělá to samé jako smyčky `while` a `do`, které jste už použili. Příkaz `for` má tři části, které řídí jeho fungování.
 
 
-    První část je **pro inicializátor**: `int counter = 0;` deklaruje, že `counter` je proměnná smyčky a nastaví jeho počáteční hodnotu . `0`
+    První část je **pro inicializátor inicializátoru**: `int counter = 0;` deklaruje, že `counter` je proměnná smyčky, a nastaví její počáteční hodnotu na `0`.
 
 
-    Střední část je **for** `counter < 10` condition : `for` deklaruje, že tato smyčka pokračuje v provádění, dokud je hodnota čítače menší než 10.
+    Střední část je **pro podmínku**: `counter < 10` deklaruje, že se tato `for` smyčka pokračuje, dokud hodnota čítače není menší než 10.
 
 
-    Poslední část je **for iterator**: `counter++` určuje, jak upravit proměnnou smyčky `for` po provedení bloku po příkazu. V tomto případě určuje, že `counter` se má po každém provedení bloku zvýšit o 1.
+    Poslední část je **for iterátor**: `counter++` určuje, jak se má změnit proměnná smyčky po provedení bloku po `for` příkazu. V tomto případě určuje, že `counter` se má po každém provedení bloku zvýšit o 1.
 
 
     Zkuste si s touto ukázkou zaexperimentovat. Vyzkoušejte všechny následující možnosti:
@@ -173,6 +173,9 @@ items:
     > [!NOTE]
 
     > Toto online kódovací prostředí je v režimu náhledu. Pokud se setkáte s potížemi, oznamte je [v úložišti dotnet/try](https://github.com/dotnet/try/issues).
+- title: Vytvořené vnořené smyčky
+  durationInMinutes: 10
+  content: "Smyčka `do` or `for` může být vnořena uvnitř jiné smyčky `while`, aby bylo možné vytvořit matici pomocí kombinace každé položky ve vnějším cyklu s každou položkou uvnitř vnitřní smyčky. Pojďme to udělat pro sestavení sady alfanumerických párů reprezentujících řádky a sloupce.\n\nJedna `for` smyčka může vygenerovat řádky:\n\n```csharp\nfor (int row = 1; row < 11; row++)\n{\n  Console.WriteLine($\"The row is {row}\");\n}\n```\n\nDalší smyčka může vygenerovat sloupce:\n\n```csharp\nfor (char column = 'a'; column < 'k'; column++)\n{\n  Console.WriteLine($\"The column is {column}\");\n}\n```\n\nMůžete vnořit jednu smyčku dovnitř do dvojice formulářů:\n  \n```csharp\nfor (int row = 1; row < 11; row++)\n{\n  for (char column = 'a'; column < 'k'; column++)\n  {\n    Console.WriteLine($\"The cell is ({row}, {column})\");\n  }\n}\n```\n\nMůžete vidět, že vnější smyčka se jednou zvýší pro každé úplné spuštění vnitřní smyčky. Zaměnit vnořování řádků a sloupců a Prohlédněte si změny sami.\n"
 - title: Kombinace větví a smyček
   durationInMinutes: 12
   content: >
@@ -221,7 +224,7 @@ items:
     > Toto online kódovací prostředí je v režimu náhledu. Pokud se setkáte s potížemi, oznamte je [v úložišti dotnet/try](https://github.com/dotnet/try/issues).
 - title: Blahopřejeme!
   content: >-
-    Dokončili jste interaktivní kurz "větve a smyčky". Můžete vybrat odkaz **na kolekci seznamu** níže a spustit další interaktivní kurz, nebo můžete navštívit [web .NET](https://dotnet.microsoft.com/learn/dotnet/hello-world-tutorial/intro) a stáhnout sadku .NET Core SDK, vytvořit projekt v počítači a zachovat kódování. Část "Další kroky" vás vrátí zpět do těchto kurzů.
+    Dokončili jste Interaktivní kurz větve a smyček. Kliknutím na odkaz **kolekce** níže můžete spustit další interaktivní kurz, nebo můžete navštívit [Web .net](https://dotnet.microsoft.com/learn/dotnet/hello-world-tutorial/intro) a stáhnout .NET Core SDK, vytvořit projekt na počítači a zachovat kódování. Oddíl "další kroky" vás převede zpět na tyto kurzy.
 
 
     Více se o těchto konceptech dozvíte v těchto tématech:
@@ -229,8 +232,8 @@ items:
 
     - [Příkaz If a else](../../language-reference/keywords/if-else.md)
 
-    - [Zatímco prohlášení](../../language-reference/keywords/while.md)
+    - [While – příkaz](../../language-reference/keywords/while.md)
 
     - [Příkaz Do](../../language-reference/keywords/do.md)
 
-    - [Pro výpis](../../language-reference/keywords/for.md)
+    - [Příkaz for](../../language-reference/keywords/for.md)

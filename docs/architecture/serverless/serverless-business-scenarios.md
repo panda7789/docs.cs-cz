@@ -1,102 +1,123 @@
 ---
-title: Ukázka obchodních scénářů a případů použití aplikací bez serveru
-description: Naučte se bez serveru s praktickým přístupem k ukázkám, které sahají od zpracování obrazu až po mobilní back-endy a kanály ETL.
+title: Ukázkové obchodní scénáře a případy použití pro aplikace bez serveru
+description: Přístup k ukázkám, které jsou v rozsahu od zpracování obrazu až po mobilní kanály a kanály ETL, se naučíte bez serveru s praktickým přístupem.
 author: JEREMYLIKNESS
 ms.author: jeliknes
-ms.date: 06/26/2018
-ms.openlocfilehash: 5f0d7a4c5cd736d1168ec76c1c0ea19627505f15
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.date: 04/17/2020
+ms.openlocfilehash: 5c2ee70b86fbc9a54d2a532eaa3d7509f23825df
+ms.sourcegitcommit: 8b02d42f93adda304246a47f49f6449fc74a3af4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "76787884"
+ms.lasthandoff: 04/24/2020
+ms.locfileid: "82135656"
 ---
 # <a name="serverless-business-scenarios-and-use-cases"></a>Obchodní scénáře aplikací bez serveru a případy použití
 
-Existuje mnoho případů použití a scénáře pro aplikace bez serveru. Tato kapitola obsahuje ukázky, které ilustrují různé scénáře. Scénáře zahrnují odkazy na související dokumentaci a úložiště veřejného zdrojového kódu. Ukázky v této kapitole vám umožní začít pracovat s vlastní sestavením a implementovat řešení bez serveru.
+K dispozici je mnoho případů použití a scénářů pro aplikace bez serveru. Tato kapitola obsahuje ukázky, které ilustrují různé scénáře. Scénáře obsahují odkazy na související dokumentaci a veřejné úložiště zdrojového kódu. Ukázky v této kapitole vám umožní začít pracovat s vlastními vytvářením a implementací řešení bez serveru.
 
-## <a name="analyze-and-archive-images"></a>Analýza a archivace obrázků
+## <a name="big-data-processing"></a>Zpracování velkých objemů dat
 
-Tato ukázka ukazuje události bez serveru (Event Grid), pracovní postupy (aplikace logiky) a kód (Funkce Azure). Také ukazuje, jak integrovat s jiným prostředkem, v tomto případě Cognitive Services pro analýzu obrázků.
+![Mapování/zmenšení diagramu](https://docs.microsoft.com/samples/azure-samples/durablefunctions-mapreduce-dotnet/big-data-processing-serverless-mapreduce-on-azure/media/mapreducearchitecture.png)
 
-Konzolová aplikace umožňuje předat odkaz na adresu URL na webu. Aplikace publikuje adresu URL jako zprávu mřížky událostí. Souběžně aplikace funkce bez serveru a aplikace logiky přihlásit ke zprávě. Aplikace funkce bez serveru serializuje bitovou kopii do úložiště objektů blob. Ukládá také informace ve službě Azure Table Storage. Metadata uloží původní adresu URL obrázku a název bitové kopie objektu blob. Aplikace logiky spolupracuje s rozhraním API pro vlastní vizi, aby analyzovala bitovou kopii a vytvořila popisek generovaný počítačem. Titulek je uložen v tabulce metadat.
+V tomto příkladu se používá bez serveru k provedení operace mapování/zmenšování pro sadu velkých objemů dat. Určuje průměrnou rychlost New York Yellow taxislužby TRIPS za den v 2017.
 
-![Analýza a archivace architektury obrázků](./media/image-processing-example.png)
+[Zpracování velkých objemů dat: MapReduce bez serveru v Azure](https://docs.microsoft.com/samples/azure-samples/durablefunctions-mapreduce-dotnet/big-data-processing-serverless-mapreduce-on-azure/)
 
-Samostatná jednostránková aplikace (SPA) volá funkci bez serveru, aby získala seznam obrázků a metadat. Pro každý obrázek volá jinou funkci, která doručuje obrazová data z archivu. Konečným výsledkem je galerie s automatickými titulky.
+## <a name="create-serverless-applications-hands-on-lab"></a>Vytváření aplikací bez serveru: praktická cvičení
 
-![Automatická galerie obrázků](./media/automated-image-gallery.png)
+Naučte se používat funkce pro spouštění logiky na straně serveru a vytváření architektur bez serveru.
 
-Úplné úložiště a pokyny k vytvoření aplikace logiky jsou k dispozici zde: [Připojení mřížky událostí](https://github.com/JeremyLikness/Event-Grid-Glue).
+- Výběr nejlepší služby Azure pro vaši firmu
+- Vytváření Azure Functions
+- Používání triggerů
+- Funkce zřetězení
+- Dlouhotrvající pracovní postupy
+- Monitorování
+- Vývoj, testování a nasazení
 
-## <a name="cross-platform-mobile-client-using-xamarinforms-and-functions"></a>Mobilní klient napříč platformami využívající Xamarin.Forms a funkce
+[Vytváření aplikací bez serveru](https://docs.microsoft.com/learn/paths/create-serverless-applications/)
 
-Podívejte se, jak implementovat jednoduchou funkci Azure bez serveru na Webu Azure Portal nebo ve Visual Studiu. Vytvořte klienta s Xamarin.Forms, který běží na Android, iOS a Windows. Aplikace je pak rafinována tak, aby používala JavaScriptOvý zápis objektu (JSON) jako komunikační médium mezi serverem a mobilními klienty s back-endem bez serveru.
+## <a name="customer-reviews"></a>Recenze zákazníků
 
-Další informace naleznete [v tématu Implementace jednoduché funkce Azure s klientem Xamarin.Forms](https://docs.microsoft.com/samples/azure-samples/functions-xamarin-getting-started/implementing-a-simple-azure-function-with-a-xamarinforms-client/).
+Tato ukázka předvádí nové nástroje Azure Functions pro knihovny tříd jazyka C# v aplikaci Visual Studio. Vytvořte web, kde zákazníci odesílají recenze produktů uložené v Azure Storage BLOBs a CosmosDB. Přidejte funkci Azure, která umožňuje automatizované moderování revizí zákazníka pomocí Cognitive Services Azure. Použijte frontu úložiště Azure k oddělení webu od funkce.
 
-## <a name="generate-a-photo-mosaic-with-serverless-image-recognition"></a>Generování fotomozaiky s rozpoznáváním obrazu bez serveru
+[Aplikace pro revize zákazníků pomocí Cognitive Services](https://docs.microsoft.com/samples/azure-samples/functions-customer-reviews/customer-reviews-cognitive-services/)
 
-Ukázka používá Azure Functions a Microsoft Cognitive Services Custom Vision Service ke generování foto mozaiky ze vstupní bitové kopie. Model je trénován k rozpoznání obrázků. Když je obrázek nahrán, rozpozná ho a vyhledá pomocí bingu. Původní obrázek se znovu složí pomocí výsledků hledání.
+## <a name="docker-linux-image-support"></a>Podpora imagí Docker Linux
 
-![Orlando oko fotografie a mozaika](./media/orlando-eye-both.png)
+Tato ukázka demonstruje, jak `Dockerfile` vytvořit a spustit Azure Functions v kontejneru Linux Docker.
 
-Můžete například trénovat model s památkami Orlando, jako je Orlando Eye. Vlastní vize rozpozná obraz Orlando Eye a funkce vytvoří fotomozaiku složenou z výsledků vyhledávání obrázků Bing pro "Orlando Eye".
+[Azure Functions v systému Linux](https://docs.microsoft.com/samples/azure-samples/functions-linux-custom-image/azure-functions-on-linux-custom-image-tutorial-sample-project/)
 
-Další informace naleznete v [tématu Azure Functions foto mozaika generátor](https://github.com/Azure-Samples/functions-dotnet-photo-mosaic).
+## <a name="file-processing-and-validation"></a>Zpracování a ověřování souborů
 
-## <a name="migrate-an-existing-application-to-the-cloud"></a>Migrace existující aplikace do cloudu
+Tento příklad analyzuje sadu souborů CSV od hypotetických zákazníků. Zajišťuje připravenost všech souborů požadovaných pro zákazníka "Batch" a potom ověří strukturu každého souboru. Různá řešení se zobrazují pomocí Azure Functions, Logic Apps a Durable Functions.
 
-Jak je popsáno v předchozích kapitolách, je běžné přijmout n-vrstvé architektury pro hostování vaší aplikace v místním prostředí. Přestože migrace prostředků "tak, jak jsou" pomocí virtuálních počítačů je nejméně riskantní cestu ke cloudu, mnoho společností se rozhodnou využít příležitosti k refaktorování jejich aplikací. Naštěstí refaktoring nemusí být "vše-nebo-nic" úsilí. Ve skutečnosti je možné migrovat aplikaci a pak postupně nahradit komponenty cloudovými nativními protějšky.
+[Zpracování a ověřování souborů pomocí Azure Functions, Logic Apps a Durable Functions](https://docs.microsoft.com/samples/azure-samples/serverless-file-validation/file-processing-and-validation-using-azure-functions-logic-apps-and-durable-functions/)
 
-Aplikace používá funkci proxy serverů Funkce Azure k povolení refaktoringu koncového bodu z původního místního kódu do koncového bodu bez serveru.
+## <a name="game-data-visualization"></a>Vizualizace herních dat
 
-![Architektura migrace](./media/migration-architecture.png)
+![Telemetrie her](https://docs.microsoft.com/samples/azure-samples/gaming-in-editor-telemetry/in-editor-telemetry-visualization/media/points.png)
 
-Proxy server poskytuje jeden koncový bod rozhraní API, který je aktualizován tak, aby přesměroval jednotlivé požadavky při jejich přesunu do funkcí bez serveru.
+Příklad, jak vývojář může implementovat řešení vizualizace dat v editoru pro svou hru. Ve skutečnosti se modul plug-in a modul plug-in Unreal Engine vyvinul pomocí této ukázky jako jeho back-end. Součást služby je nezávislá herního stroje.
 
-Můžete zobrazit video, které vás provede celou migrací: [Zvedejte a posuňte se pomocí funkcí Azure bez serveru](https://channel9.msdn.com/Events/Connect/2017/E102). Přístup k ukázkovému kódu: [Přineste si vlastní aplikaci](https://github.com/JeremyLikness/bring-own-app-connect-17).
+[Vizualizace telemetrie her v editoru](https://docs.microsoft.com/samples/azure-samples/gaming-in-editor-telemetry/in-editor-telemetry-visualization/)
 
-## <a name="parse-a-csv-file-and-insert-into-a-database"></a>Analýza souboru CSV a vložení do databáze
+## <a name="graphql"></a>GraphQL
 
-Extrakce, transformace a zatížení (ETL) je běžná obchodní funkce, která integruje různé systémy. Tradiční přístupy často zahrnují nastavení vyhrazených serverů FTP a nasazení naplánovaných úloh za účelem analýzy souborů a jejich překladu pro obchodní použití. Architektura bez serveru usnadňuje úlohu, protože aktivační událost může spustit při nahrání souboru. Azure Functions řeší úkoly, jako je ETL prostřednictvím jeho ideální složení malé kousky kódu, které se zaměřují na konkrétní problém.
+Vytvořte funkci bez serveru, která zpřístupňuje rozhraní GraphQL API.
 
-![Snímek obrazovky, který zobrazuje proces analýzy csv.](./media/serverless-business-scenarios/csv-parse-database-import.png)
+[Funkce bez serveru pro GraphQL](https://github.com/softchris/graphql-workshop-dotnet/blob/master/docs/workshop/4.md)
 
-Zdrojový kód a praktická laboratoř naleznete v tématu [CSV import lab](https://github.com/JeremyLikness/azure-fn-file-process-hol).
+## <a name="internet-of-things-iot-reliable-edge-relay"></a>Spolehlivý hraniční přenos Internet věcí (IoT)
 
-## <a name="shorten-links-and-track-metrics"></a>Zkrácení odkazů a sledování metrik
+![Architektura IoT](https://docs.microsoft.com/samples/azure-samples/iot-reliable-edge-relay/iot-reliable-edge-relay/media/architecture.png)
 
-Nástroje pro zkrácení odkazů původně pomohly zakódovat adresy URL v krátkých příspěvcích na Twitteru, aby se přizpůsobily limitu 140 znaků. Rozrostly se tak, aby zahrnovaly několik použití, nejčastěji pro sledování prokliků pro analýzy. Scénář zkracovače odkazů je zcela bezserverová aplikace, která spravuje odkazy a sestavy metriky.
+Tato ukázka implementuje nový komunikační protokol, který umožňuje spolehlivou komunikaci ze zařízení IoT. Automatizuje detekci a zpětnou výplň datových mezer.
 
-Funkce Azure se používá k poskytování jednostránkové aplikace (SPA), která umožňuje vložit dlouhou adresu URL a generovat krátké adresy URL. Adresy URL jsou označeny pro sledování věcí, jako jsou kampaně (témata) a média (například sociální sítě, na které jsou odkazy zveřejněny). Krátký kód se ukládá v Azure Table Storage jako klíč, s dlouhou adresu URL jako hodnotu. Když kliknete na krátký odkaz, jiná funkce vyhledá dlouhou adresu URL, odešle přesměrování a umístí informace o události do fronty. Jiná funkce Azure zpracuje frontu a umístí informace do Azure Cosmos DB.
+[IoT Reliable Edge Relay](https://docs.microsoft.com/samples/azure-samples/iot-reliable-edge-relay/iot-reliable-edge-relay/)
 
-![Architektura zkracovače odkazů](./media/link-shortener-architecture.png)
+## <a name="microservices-reference-architecture"></a>Referenční architektura mikroslužeb
 
-Pak můžete vytvořit řídicí panel Power BI, abyste získali přehledo shromážděných dat. Na back-end, Application Insights poskytuje důležité metriky. Telemetrie zahrnuje, jak dlouho trvá pro průměrného uživatele k přesměrování a jak dlouho trvá přístup k Azure Table Storage.
+![Referenční architektura](https://docs.microsoft.com/samples/azure-samples/serverless-microservices-reference-architecture/serverless-microservices-reference-architecture/media/macro-architecture.png)
 
-![Příklad Power BI](./media/power-bi-example.png)
+Referenční architektura, která vás provede procesem rozhodování, který se zabývá návrhem, vývojem a poskytováním RideShare aplikací Relecloud (fiktivní společnost). Obsahuje praktické pokyny ke konfiguraci a nasazení všech komponent architektury.
 
-Kompletní link shortener repozitář s pokyny je k dispozici zde: [Zkracovač BEZ serveru URL](https://github.com/jeremylikness/serverless-url-shortener). O zjednodušené verzi si můžete přečíst zde: [Azure Storage pro aplikace .NET bez serveru během několika minut](https://devblogs.microsoft.com/aspnet/azure-storage-for-serverless-net-apps-in-minutes/).
+[Referenční architektura mikroslužeb bez serveru](https://docs.microsoft.com/samples/azure-samples/serverless-microservices-reference-architecture/serverless-microservices-reference-architecture/)
 
-## <a name="verify-device-connectivity-using-a-ping"></a>Ověření připojení zařízení pomocí příkazu ping
+## <a name="migrate-console-apps-to-serverless"></a>Migrace konzolových aplikací na bez serveru
 
-Ukázka se skládá z azure iot hub a funkce Azure. Nová zpráva v centru IoT Hub aktivuje funkci Azure. Kód bez serveru odešle stejný obsah zprávy zpět do zařízení, které jej odeslané. Projekt má veškerý kód a konfiguraci nasazení potřebnou pro řešení.
+Tato ukázka je obecná funkce (`.csx` soubor), která se dá použít k převedení jakékoli konzolové aplikace na webovou službu HTTP v Azure Functions. Vše, co musíte udělat, je upravit konfigurační soubor a určit, jaké vstupní parametry se budou předávat jako argumenty `.exe`do.
 
-Další informace najdete v [tématu Azure IoT Hub ping](https://github.com/Azure-Samples/iot-hub-node-ping).
+[Spouštění konzolových aplikací v Azure Functions](https://docs.microsoft.com/samples/azure-samples/functions-dotnet-migrating-console-apps/run-console-apps-on-azure-functions/)
 
-## <a name="recommended-resources"></a>Doporučené zdroje
+## <a name="serverless-for-mobile"></a>Bez serveru pro mobilní zařízení
 
-- [Generátor fotomozaiky Azure Functions](https://github.com/Azure-Samples/functions-dotnet-photo-mosaic)
-- [Ping služby Azure IoT Hub](https://github.com/Azure-Samples/iot-hub-node-ping)
-- [Azure Storage pro aplikace .NET bez serveru během několika minut](https://devblogs.microsoft.com/aspnet/azure-storage-for-serverless-net-apps-in-minutes/)
-- [Přineste si vlastní aplikaci](https://github.com/JeremyLikness/bring-own-app-connect-17)
-- [Testovací laboratoř importu CSV](https://github.com/JeremyLikness/azure-fn-file-process-hol)
-- [Připevnění mřížky událostí](https://github.com/JeremyLikness/Event-Grid-Glue)
-- [Implementace jednoduché funkce Azure s klientem Xamarin.Forms](https://docs.microsoft.com/samples/azure-samples/functions-xamarin-getting-started/implementing-a-simple-azure-function-with-a-xamarinforms-client/)
-- [Zvedat a posouvat pomocí funkcí Azure bez serveru](https://channel9.msdn.com/Events/Connect/2017/E102)
-- [Zkracovač adres URL bez serveru](https://github.com/jeremylikness/serverless-url-shortener)
+Azure Functions lze snadno implementovat a udržovat a přistupovat prostřednictvím protokolu HTTP. Jsou skvělým způsobem, jak implementovat rozhraní API pro mobilní aplikace. Microsoft nabízí skvělé nástroje pro více platforem pro iOS, Android a Windows s využitím Xamarin. V takovém případě Xamarin a Azure Functions fungují skvěle společně. Tento článek ukazuje, jak implementovat službu Azure Functions na webovém portálu Azure nebo v aplikaci Visual Studio napřed a vytvořit klienta pro různé platformy pomocí Xamarin. Forms běžící v Androidu, iOS a Windows.
+
+[Implementace jednoduché funkce Azure Functions s klientem Xamarin. Forms](https://docs.microsoft.com/samples/azure-samples/functions-xamarin-getting-started/implementing-a-simple-azure-function-with-a-xamarinforms-client/)
+
+## <a name="serverless-messaging"></a>Zasílání zpráv bez serveru
+
+V této ukázce se dozvíte, jak používat model Durable Functions ventilátor pro načtení libovolného počtu zpráv v rámci libovolného počtu relací nebo oddílů. Cílí na Service Bus, Event Hubs nebo fronty úložiště. Ukázka také přidává možnost využít tyto zprávy s jinou funkcí Azure a načíst výsledná časová data do jiného centra událostí. Data se pak ingestují do analytických služeb, jako je Azure Průzkumník dat.
+
+[Vytváření a využívání zpráv prostřednictvím Service Bus, Event Hubs a front úložiště s Azure Functions](https://docs.microsoft.com/samples/azure-samples/durable-functions-producer-consumer/product-consume-messages-az-functions/)
+
+## <a name="recommended-resources"></a>Doporučené prostředky
+
+- [Azure Functions v systému Linux](https://docs.microsoft.com/samples/azure-samples/functions-linux-custom-image/azure-functions-on-linux-custom-image-tutorial-sample-project/)
+- [Zpracování velkých objemů dat: MapReduce bez serveru v Azure](https://docs.microsoft.com/samples/azure-samples/durablefunctions-mapreduce-dotnet/big-data-processing-serverless-mapreduce-on-azure/)
+- [Vytváření aplikací bez serveru](https://docs.microsoft.com/learn/paths/create-serverless-applications/)
+- [Aplikace pro revize zákazníků pomocí Cognitive Services](https://docs.microsoft.com/samples/azure-samples/functions-customer-reviews/customer-reviews-cognitive-services/)
+- [Zpracování a ověřování souborů pomocí Azure Functions, Logic Apps a Durable Functions](https://docs.microsoft.com/samples/azure-samples/serverless-file-validation/file-processing-and-validation-using-azure-functions-logic-apps-and-durable-functions/)
+- [Implementace jednoduché funkce Azure Functions s klientem Xamarin. Forms](https://docs.microsoft.com/samples/azure-samples/functions-xamarin-getting-started/implementing-a-simple-azure-function-with-a-xamarinforms-client/)
+- [Vizualizace telemetrie her v editoru](https://docs.microsoft.com/samples/azure-samples/gaming-in-editor-telemetry/in-editor-telemetry-visualization/)
+- [IoT Reliable Edge Relay](https://docs.microsoft.com/samples/azure-samples/iot-reliable-edge-relay/iot-reliable-edge-relay/)
+- [Vytváření a využívání zpráv prostřednictvím Service Bus, Event Hubs a front úložiště s Azure Functions](https://docs.microsoft.com/samples/azure-samples/durable-functions-producer-consumer/product-consume-messages-az-functions/)
+- [Spouštění konzolových aplikací v Azure Functions](https://docs.microsoft.com/samples/azure-samples/functions-dotnet-migrating-console-apps/run-console-apps-on-azure-functions/)
+- [Funkce bez serveru pro GraphQL](https://github.com/softchris/graphql-workshop-dotnet/blob/master/docs/workshop/4.md)
+- [Referenční architektura mikroslužeb bez serveru](https://docs.microsoft.com/samples/azure-samples/serverless-microservices-reference-architecture/serverless-microservices-reference-architecture/)
 
 >[!div class="step-by-step"]
 >[Předchozí](orchestration-patterns.md)
->[další](serverless-conclusion.md)
+>[Další](serverless-conclusion.md)

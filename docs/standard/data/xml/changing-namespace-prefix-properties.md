@@ -62,8 +62,8 @@ Console.WriteLine(doc.InnerXml);
 <a:test xmlns="123" xmlns:a="123" />  
 ```  
   
- V případě, že byl strom uložen do řetězce v důsledku volání metody **doc. InnerXml**, byl přidán atribut `xmlns:a='123'`, který zachovává obor názvů `test` elementu. Bylo `'123'`a zůstalo `'123'`.  
+ V případě, že byl strom uložen do řetězce v důsledku volání metody **doc. InnerXml**, byl `xmlns:a='123'` přidán atribut pro zachování oboru názvů `test` elementu. Bylo `'123'`to a zůstalo `'123'`.  
   
 ## <a name="see-also"></a>Viz také
 
-- [Model DOM (Document Object Model) dokumentu XML](../../../../docs/standard/data/xml/xml-document-object-model-dom.md)
+- [model DOM (Document Object Model) dokumentu XML](../../../../docs/standard/data/xml/xml-document-object-model-dom.md)

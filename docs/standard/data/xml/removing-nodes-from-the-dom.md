@@ -11,14 +11,14 @@ ms.lasthandoff: 01/07/2020
 ms.locfileid: "75710307"
 ---
 # <a name="removing-nodes-from-the-dom"></a>Odebrání uzlů z modelu DOM
-Chcete-li odebrat uzel z XML model DOM (Document Object Model) (DOM), použijte metodu <xref:System.Xml.XmlNode.RemoveChild%2A> k odebrání konkrétního uzlu. Když odeberete uzel, metoda odstraní podstrom patřící k odebíranému uzlu. To znamená, že pokud se nejedná o uzel typu list.  
+Chcete-li odebrat uzel z XML model DOM (Document Object Model) (DOM), použijte <xref:System.Xml.XmlNode.RemoveChild%2A> metodu pro odebrání konkrétního uzlu. Když odeberete uzel, metoda odstraní podstrom patřící k odebíranému uzlu. To znamená, že pokud se nejedná o uzel typu list.  
   
- Chcete-li odebrat více uzlů z modelu DOM, použijte metodu <xref:System.Xml.XmlNode.RemoveAll%2A> k odebrání všech podřízených objektů a atributů, pokud jsou k dispozici pro aktuální uzel.  
+ Chcete-li odebrat více uzlů z modelu DOM, <xref:System.Xml.XmlNode.RemoveAll%2A> použijte metodu k odebrání všech podřízených objektů a atributů (Pokud je k dispozici) aktuálního uzlu.  
   
- Pokud pracujete s <xref:System.Xml.XmlNamedNodeMap>, můžete uzel odebrat pomocí metody <xref:System.Xml.XmlNamedNodeMap.RemoveNamedItem%2A>.  
+ Pokud pracujete s <xref:System.Xml.XmlNamedNodeMap>, můžete uzel odebrat pomocí <xref:System.Xml.XmlNamedNodeMap.RemoveNamedItem%2A> metody.  
   
  Chcete-li odebrat atributy, přečtěte si téma [Odebrání atributů z uzlu elementu v modelu DOM](../../../../docs/standard/data/xml/removing-attributes-from-an-element-node-in-the-dom.md).  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Model DOM (Document Object Model) dokumentu XML](../../../../docs/standard/data/xml/xml-document-object-model-dom.md)
+- [model DOM (Document Object Model) dokumentu XML](../../../../docs/standard/data/xml/xml-document-object-model-dom.md)

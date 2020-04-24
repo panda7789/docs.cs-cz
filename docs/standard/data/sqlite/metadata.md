@@ -15,28 +15,28 @@ Pro načtení metadat v ADO.NET jsou k dispozici dvě rozhraní API. Jedna načt
 
 ## <a name="query-result-metadata"></a>Metadata výsledků dotazu
 
-Metadata týkající se výsledků dotazu můžete načíst pomocí metody <xref:Microsoft.Data.Sqlite.SqliteDataReader.GetSchemaTable%2A> v `SqliteDataReader`. Vrácený <xref:System.Data.DataTable> obsahuje následující sloupce:
+Metadata týkající se výsledků dotazu můžete načíst pomocí <xref:Microsoft.Data.Sqlite.SqliteDataReader.GetSchemaTable%2A> metody na. `SqliteDataReader` Vrácená <xref:System.Data.DataTable> zpráva obsahuje následující sloupce:
 
-| Sloupec             | Type    | Popis                                                               |
+| Sloupec             | Typ    | Popis                                                               |
 | ------------------ | ------- | ------------------------------------------------------------------------- |
-| `AllowDBNull`      | Boolean | True, pokud sloupec zdroje může mít hodnotu NULL.                                    |
-| `BaseCatalogName`  | String  | Název databáze zdrojového sloupce. Pro výrazy je vždycky NULL.    |
-| `BaseColumnName`   | String  | Název zdrojového sloupce, který má nealias Pro výrazy je vždycky NULL.    |
-| `BaseSchemaName`   | String  | Vždycky NULL. SQLite nepodporuje schémata.                              |
-| `BaseServerName`   | String  | Cesta k souboru databáze zadaného v připojovacím řetězci.         |
-| `BaseTableName`    | String  | Název tabulky počátečního sloupce Pro výrazy je vždycky NULL.       |
-| `ColumnName`       | String  | Název nebo alias sloupce v sadě výsledků.                        |
+| `AllowDBNull`      | Logická hodnota | True, pokud sloupec zdroje může mít hodnotu NULL.                                    |
+| `BaseCatalogName`  | Řetězec  | Název databáze zdrojového sloupce. Pro výrazy je vždycky NULL.    |
+| `BaseColumnName`   | Řetězec  | Název zdrojového sloupce, který má nealias Pro výrazy je vždycky NULL.    |
+| `BaseSchemaName`   | Řetězec  | Vždycky NULL. SQLite nepodporuje schémata.                              |
+| `BaseServerName`   | Řetězec  | Cesta k souboru databáze zadaného v připojovacím řetězci.         |
+| `BaseTableName`    | Řetězec  | Název tabulky počátečního sloupce Pro výrazy je vždycky NULL.       |
+| `ColumnName`       | Řetězec  | Název nebo alias sloupce v sadě výsledků.                        |
 | `ColumnOrdinal`    | Int32   | Pořadí sloupce v sadě výsledků.                              |
-| `ColumnSize`       | Int32   | Always-1. To se může v budoucích verzích `Microsoft.Data.Sqlite`změnit.   |
-| `DataType`         | Type    | Výchozí datový typ .NET sloupce.                                 |
-| `DataTypeName`     | String  | Datový typ SQLite sloupce                                       |
-| `IsAliased`        | Boolean | True, pokud je název sloupce v sadě výsledků uveden jako alias.                     |
-| `IsAutoIncrement`  | Boolean | True, pokud byl zdrojový sloupec vytvořen pomocí klíčového slova AutoIncrement.     |
-| `IsExpression`     | Boolean | True, pokud sloupec pochází z výrazu v dotazu.            |
-| `IsKey`            | Boolean | True, pokud je zdrojový sloupec částí primárního klíče.                     |
-| `IsUnique`         | Boolean | True, pokud je sloupec počátek jedinečný.                                      |
-| `NumericPrecision` | Int16   | Vždycky NULL. To se může v budoucích verzích `Microsoft.Data.Sqlite`změnit. |
-| `NumericScale`     | Int16   | Vždycky NULL. To se může v budoucích verzích `Microsoft.Data.Sqlite`změnit. |
+| `ColumnSize`       | Int32   | Always-1. To se v budoucích verzích aplikace `Microsoft.Data.Sqlite`může změnit.   |
+| `DataType`         | Typ    | Výchozí datový typ .NET sloupce.                                 |
+| `DataTypeName`     | Řetězec  | Datový typ SQLite sloupce                                       |
+| `IsAliased`        | Logická hodnota | True, pokud je název sloupce v sadě výsledků uveden jako alias.                     |
+| `IsAutoIncrement`  | Logická hodnota | True, pokud byl zdrojový sloupec vytvořen pomocí klíčového slova AutoIncrement.     |
+| `IsExpression`     | Logická hodnota | True, pokud sloupec pochází z výrazu v dotazu.            |
+| `IsKey`            | Logická hodnota | True, pokud je zdrojový sloupec částí primárního klíče.                     |
+| `IsUnique`         | Logická hodnota | True, pokud je sloupec počátek jedinečný.                                      |
+| `NumericPrecision` | Int16   | Vždycky NULL. To se v budoucích verzích aplikace `Microsoft.Data.Sqlite`může změnit. |
+| `NumericScale`     | Int16   | Vždycky NULL. To se v budoucích verzích aplikace `Microsoft.Data.Sqlite`může změnit. |
 
 Následující příklad ukazuje, jak použít `GetSchemaTable` k vytvoření řetězce ladění, který zobrazuje metadata o výsledku:
 
@@ -72,8 +72,8 @@ FROM sqlite_master AS t,
 WHERE t.type = 'table';
 ```
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 * [Úložiště SQL Database schématu](https://www.sqlite.org/fileformat.html#storage_of_the_sql_database_schema)
 * [PRAGMA – příkazy](https://www.sqlite.org/pragma.html)
-* [Datové typy](types.md)
+* [Typy dat](types.md)

@@ -13,7 +13,7 @@ ms.locfileid: "77627371"
 
 Model objektu komponenty (COM) umožňuje objektu vystavit svou funkčnost jiným komponentám a hostovat aplikace na platformách systému Windows. Aby uživatelé mohli spolupracovat s existujícími základy kódování, .NET Framework vždy poskytovala silnou podporu pro spolupráci s knihovnami COM. V .NET Core 3,0 byla do .NET Core ve Windows přidána velká část této podpory. V této dokumentaci se dozvíte, jak fungují běžné technologie COM interop a jak je můžete využít k vzájemné spolupráci s vašimi stávajícími knihovnami COM.
 
-- [COM – obálky](./com-wrappers.md)
+- [Obálky COM](./com-wrappers.md)
 - [COM – volat obálky](./com-callable-wrapper.md)
 - [Běhové obálky pro volat](./runtime-callable-wrapper.md)
 - [Kvalifikace typů .NET pro mezichodové operace COM](./qualify-net-types-for-interoperation.md)

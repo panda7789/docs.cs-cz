@@ -14,17 +14,17 @@ ms.locfileid: "74347019"
 ---
 # <a name="accessing-the-mouse-visual-basic"></a>Přístup k myši (Visual Basic)
 
-Objekt `My.Computer.Mouse` poskytuje způsob, jak najít informace o myši počítače, například pokud existuje myš, počet tlačítek myši a podrobnosti o kolečku myši.  
+`My.Computer.Mouse` Objekt poskytuje způsob, jak najít informace o myši počítače, například pokud existuje myš, počet tlačítek myši a podrobnosti o kolečku myši.  
   
 ## <a name="remarks"></a>Poznámky  
 
- V této tabulce jsou `My.Computer.Mouse` uvedeny úkoly přidružené k objektu a odkazuje na témata, která ukazují, jak provést každý.  
+ Tato tabulka obsahuje seznam úkolů přidružených k `My.Computer.Mouse` objektu a odkazuje na témata, která demonstrují, jak se mají provést.  
   
 |Akce|Seznamte se s |  
 |--------|---------|  
-|Určete, zda má myš rolovací kolečko.|<xref:Microsoft.VisualBasic.Devices.Mouse.WheelExists>|  
-|Určení, zda byla zaměněna levá a pravá tlačítka myši|<xref:Microsoft.VisualBasic.Devices.Mouse.ButtonsSwapped>|  
-|Nastavte, jak moc se má posouvat, když se kolečko myši otočí o jeden zářez.|<xref:Microsoft.VisualBasic.Devices.Mouse.WheelScrollLines>|  
+|Určí, zda má myš rolovací kolečko.|<xref:Microsoft.VisualBasic.Devices.Mouse.WheelExists>|  
+|Určení, zda byla záměna levého a pravého tlačítka myši|<xref:Microsoft.VisualBasic.Devices.Mouse.ButtonsSwapped>|  
+|Nastavte, kolik se má při otočení kolečka myši otočit o jeden stupeň.|<xref:Microsoft.VisualBasic.Devices.Mouse.WheelScrollLines>|  
   
 ## <a name="see-also"></a>Viz také
 

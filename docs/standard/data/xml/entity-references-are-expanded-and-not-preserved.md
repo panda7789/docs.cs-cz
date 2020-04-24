@@ -11,12 +11,12 @@ ms.lasthandoff: 01/07/2020
 ms.locfileid: "75710931"
 ---
 # <a name="entity-references-are-expanded-and-not-preserved"></a>Odkazy na entity jsou rozšířené a nezachované
-Když se odkaz na entitu rozbalí a nahradí textem, který představuje, uzel **XmlEntityReference** se nevytvoří. Místo toho je deklarace entity analyzována a uzly vytvořené z obsahu v deklaraci jsou kopírovány na místo **XmlEntityReference**. Proto v `&publisher;` příklad `&publisher;` není uložen, ale místo toho je vytvořen uzel **XmlText** .  
+Když se odkaz na entitu rozbalí a nahradí textem, který představuje, uzel **XmlEntityReference** se nevytvoří. Místo toho je deklarace entity analyzována a uzly vytvořené z obsahu v deklaraci jsou kopírovány na místo **XmlEntityReference**. Proto se v `&publisher;` příkladu `&publisher;` neukládá, ale místo toho se vytvoří uzel **XmlText** .  
   
  ![rozbalená stromová struktura](../../../../docs/standard/data/xml/media/xmlentityref-expanded-nodes.gif "xmlentityref_expanded_nodes")  
 Stromová struktura pro odkazy na entity, které jsou rozbaleny  
   
- Znakové entity, jako `B` nebo `<`, nejsou zachovány. Místo toho jsou vždy rozbaleny a jsou reprezentovány jako textové uzly.  
+ Znakové entity, jako `B` jsou `<` nebo, nejsou zachovány. Místo toho jsou vždy rozbaleny a jsou reprezentovány jako textové uzly.  
   
  Pro zachování uzlů **XmlEntityReference** a podřízených uzlů odkazovaného odkazu na entitu nastavte příznak **EntityHandling** na **ExpandCharEntities**. V opačném případě ponechte příznak **EntityHandling** ve výchozím nastavení, což je **ExpandEntities**. V takovém případě se v modelu DOM nezobrazí uzly odkazů na entity. Uzly jsou nahrazeny uzly, které jsou kopiemi podřízených uzlů deklarace entity.  
   
@@ -24,7 +24,7 @@ Stromová struktura pro odkazy na entity, které jsou rozbaleny
   
  XmlElement: Vydavatel  
   
- XmlEntityReference: `&publisher;`  
+ XmlEntityReference:`&publisher;`  
   
  XmlText: Microsoft Press  
   
@@ -38,6 +38,6 @@ Stromová struktura pro odkazy na entity, které jsou rozbaleny
   
  Použijete-li čtecí modul, který nemůže vyřešit entity, vyvolá metoda **Load** výjimku, pokud nalezne odkaz na entitu.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Model DOM (Document Object Model) dokumentu XML](../../../../docs/standard/data/xml/xml-document-object-model-dom.md)
+- [model DOM (Document Object Model) dokumentu XML](../../../../docs/standard/data/xml/xml-document-object-model-dom.md)

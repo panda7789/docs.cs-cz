@@ -22,14 +22,14 @@ Určuje umístění odkazovaných sestavení.
 -libpath:dirList  
 ```  
   
-## <a name="arguments"></a>Arguments  
+## <a name="arguments"></a>Argumenty  
   
-|Termín|Definice|  
+|Označení|Definice|  
 |---|---|  
-|`dirList`|Požadováno. Středníkem oddělený seznam adresářů, ve kterých se má kompilátor hledat, pokud odkazované sestavení nebylo nalezeno v aktuálním pracovním adresáři (adresář, ze kterého vyvoláváte kompilátor), nebo systémový adresář společného jazykového modulu runtime. Pokud název adresáře obsahuje mezeru, uzavřete název do uvozovek ("").|  
+|`dirList`|Povinná hodnota. Středníkem oddělený seznam adresářů, ve kterých se má kompilátor hledat, pokud odkazované sestavení nebylo nalezeno v aktuálním pracovním adresáři (adresář, ze kterého vyvoláváte kompilátor), nebo systémový adresář společného jazykového modulu runtime. Pokud název adresáře obsahuje mezeru, uzavřete název do uvozovek ("").|  
   
 ## <a name="remarks"></a>Poznámky  
- Možnost `-libpath` určuje umístění sestavení, na která odkazuje možnost [-reference](../../../visual-basic/reference/command-line-compiler/reference.md) .  
+ `-libpath` Možnost určuje umístění sestavení, na které odkazuje možnost [-reference](../../../visual-basic/reference/command-line-compiler/reference.md) .  
   
  Kompilátor vyhledá odkazy na sestavení, které nejsou plně kvalifikované v následujícím pořadí:  
   
@@ -37,13 +37,13 @@ Určuje umístění odkazovaných sestavení.
   
 2. Systémový adresář společného jazykového modulu runtime.  
   
-3. Adresáře určené `-libpath`.  
+3. Adresáře určené parametrem `-libpath`.  
   
 4. Adresáře určené proměnnou prostředí LIB.  
   
- Možnost `-libpath` je aditivní; zadáním více než jednou se připojí k jakýmkoli předchozím hodnotám.  
+ `-libpath` Možnost je aditivní; zadáním více než jednou se připojí k jakýmkoli předchozím hodnotám.  
   
- Pomocí `-reference` zadejte odkaz na sestavení.  
+ Slouží `-reference` k zadání odkazu na sestavení.  
   
 |Nastavení-LIBPATH v integrovaném vývojovém prostředí sady Visual Studio|  
 |---|  
@@ -56,7 +56,7 @@ Určuje umístění odkazovaných sestavení.
 vbc -libpath:c:\;"c:\New Assemblies" -reference:t2.dll t2.vb  
 ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Sestavení v .NET](../../../standard/assembly/index.md)
 - [Visual Basic Kompilátor příkazového řádku](../../../visual-basic/reference/command-line-compiler/index.md)

@@ -24,24 +24,24 @@ Způsobí, že kompilátor vygeneruje ladicí informace a umístí je do výstup
 -debug[+ | -]
 ```
 
-nebo
+– nebo –
 
 ```console
 -debug:[full | pdbonly]
 ```
 
-## <a name="arguments"></a>Arguments
+## <a name="arguments"></a>Argumenty
 
-|Termín|Definice|
+|Označení|Definice|
 |---|---|
-|`+` &#124; `-`|Volitelné. Určení `+` nebo `-debug` způsobí, že kompilátor vygeneruje ladicí informace a umístí jej do souboru PDB. Určení `-` má stejný účinek jako nespecifikuje `-debug`.|
-|`full` &#124; `pdbonly`|Volitelné. Určuje typ ladicích informací generovaných kompilátorem. Pokud nezadáte `-debug:pdbonly`, výchozí hodnota je `full`, která umožňuje připojit k běžícímu programu ladicí program. Argument `pdbonly` umožňuje ladění zdrojového kódu, když je program spuštěn v ladicím programu, ale zobrazuje kód jazyka sestavení pouze v případě, že je spuštěný program připojen k ladicímu programu.|
+|`+`&#124;`-`|Nepovinný parametr. Zadání `+` nebo `-debug` způsobí, že kompilátor generuje ladicí informace a umístí je do souboru. pdb. Zadání `-` má stejný účinek jako nespecifikující `-debug`.|
+|`full`&#124;`pdbonly`|Nepovinný parametr. Určuje typ ladicích informací generovaných kompilátorem. Pokud nezadáte `-debug:pdbonly`, použije se výchozí hodnota `full`, která umožňuje připojit k běžícímu programu ladicí program. `pdbonly` Argument umožňuje ladění zdrojového kódu, když je program spuštěn v ladicím programu, ale zobrazuje kód jazyka sestavení pouze v případě, že je spuštěný program připojen k ladicímu programu.|
 
 ## <a name="remarks"></a>Poznámky
 
 Tuto možnost použijte k vytvoření sestavení ladění. Pokud nezadáte `-debug`, `-debug+`nebo `-debug:full`, nebudete moci ladit výstupní soubor programu.
 
-Ve výchozím nastavení nejsou informace o ladění generovány (`-debug-`). Chcete-li vygenerovat ladicí informace, zadejte `-debug` nebo `-debug+`.
+Ve výchozím nastavení nejsou informace o ladění generovány (`-debug-`). Chcete-li vygenerovat ladicí `-debug` informace `-debug+`, zadejte nebo.
 
 Informace o tom, jak nakonfigurovat výkon ladění aplikace, najdete v tématu [Vytvoření obrázku pro snadnější ladění](../../../framework/debug-trace-profile/making-an-image-easier-to-debug.md).
 
@@ -51,13 +51,13 @@ Informace o tom, jak nakonfigurovat výkon ladění aplikace, najdete v tématu 
 
 ## <a name="example"></a>Příklad
 
-Následující příklad vloží informace o ladění do výstupního souboru `App.exe`.
+Následující příklad vloží informace o ladění do výstupního `App.exe`souboru.
 
 ```console
 vbc -debug -out:app.exe test.vb
 ```
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Visual Basic Kompilátor příkazového řádku](../../../visual-basic/reference/command-line-compiler/index.md)
 - [-bugreport](../../../visual-basic/reference/command-line-compiler/bugreport.md)

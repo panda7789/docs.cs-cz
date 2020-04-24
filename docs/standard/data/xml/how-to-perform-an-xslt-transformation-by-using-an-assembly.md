@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: provedení transformace XSLT pomocí sestavení'
+title: 'Postupy: Provedení transformace XSLT pomocí sestavení'
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -13,8 +13,8 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 02/28/2020
 ms.locfileid: "78155972"
 ---
-# <a name="how-to-perform-an-xslt-transformation-by-using-an-assembly"></a>Postupy: provedení transformace XSLT pomocí sestavení
-Kompilátor XSLT (xsltc. exe) kompiluje šablony stylů XSLT a generuje sestavení. Sestavení lze předat přímo do metody <xref:System.Xml.Xsl.XslCompiledTransform.Load%28System.Type%29?displayProperty=nameWithType>.  
+# <a name="how-to-perform-an-xslt-transformation-by-using-an-assembly"></a>Postupy: Provedení transformace XSLT pomocí sestavení
+Kompilátor XSLT (xsltc. exe) kompiluje šablony stylů XSLT a generuje sestavení. Sestavení lze předat přímo do <xref:System.Xml.Xsl.XslCompiledTransform.Load%28System.Type%29?displayProperty=nameWithType> metody.  
   
 ### <a name="to-copy-the-xml-and-xslt-files-to-your-local-computer"></a>Kopírování souborů XML a XSLT do místního počítače  
   
@@ -146,7 +146,7 @@ Kompilátor XSLT (xsltc. exe) kompiluje šablony stylů XSLT a generuje sestaven
   
 1. Sestavení můžete do sady Visual Studio zahrnout přidáním odkazu do Průzkumník řešení nebo z příkazového řádku.  
   
-2. Pro příkazový řádek s C#použijte následující:  
+2. Pro příkazový řádek v jazyce C# použijte následující:  
   
     ```console  
     csc myCode.cs /r:system.dll;system.xml.dll;Transform.dll  

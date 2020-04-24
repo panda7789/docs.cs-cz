@@ -14,13 +14,13 @@ ms.lasthandoff: 01/07/2020
 ms.locfileid: "75709748"
 ---
 # <a name="xpathnavigator-in-transformations"></a>XPathNavigator v transformacích
-Třída <xref:System.Xml.XPath.XPathNavigator> poskytuje náhodný přístup jen pro čtení k datům a je navržena pro použití jako vstup do rozšiřitelného jazyka stylů XSL pro transformace (XSLT). Je implementována na <xref:System.Xml.XPath.XPathDocument>, <xref:System.Xml.XmlDataDocument>a <xref:System.Xml.XmlDocument>. <xref:System.Xml.XPath.XPathNavigator> je založena na datovém modelu konsorcium World Wide Web (W3C), jak je popsáno v části 5 doporučení jazyka XML Path (XPath).  
+<xref:System.Xml.XPath.XPathNavigator> Třída poskytuje náhodný přístup jen pro čtení k datům a je určený pro použití jako vstup pro jazyk XSLT (Extensible Stylesheet Language). Je implementována v systémech <xref:System.Xml.XPath.XPathDocument>, <xref:System.Xml.XmlDataDocument>a <xref:System.Xml.XmlDocument>. <xref:System.Xml.XPath.XPathNavigator> Je založena na datovém modelu konsorcium World Wide Web (W3C), jak je popsáno v části 5 doporučení jazyka XML Path (XPath).  
   
- <xref:System.Xml.XPath.XPathNavigator> definuje model kurzoru v jakémkoli úložišti a poskytuje rychlé dotazy XPath jen pro čtení v jakémkoli úložišti dat. <xref:System.Xml.XPath.XPathNavigator> je také třída, která se má použít pro iteraci fragmentů stromu výsledků.  
+ <xref:System.Xml.XPath.XPathNavigator> Definuje model kurzoru v jakémkoli úložišti a poskytuje rychlé dotazy XPath jen pro čtení v jakémkoli úložišti dat. <xref:System.Xml.XPath.XPathNavigator> Je také třída, která se má použít pro iteraci fragmentů stromu výsledků.  
   
- Rozhraní API umožňuje získat informace z aktuálního uzlu ve Storu a přejít na připojené uzly. <xref:System.Xml.XPath.XPathNavigator> je model stylu kurzoru, který provádí přecházení přes úložiště pomocí sady metod **Move** . <xref:System.Xml.XPath.XPathNavigator> je vždy umístěn na uzlu. Všechny metody **Move** , které selžou, ponechá <xref:System.Xml.XPath.XPathNavigator> beze změny.  
+ Rozhraní API umožňuje získat informace z aktuálního uzlu ve Storu a přejít na připojené uzly. <xref:System.Xml.XPath.XPathNavigator> Je model stylu kurzoru, který provádí přecházení přes úložiště pomocí sady metod **Move** . <xref:System.Xml.XPath.XPathNavigator> Je vždy umístěn na uzlu. Všechny metody **přesunutí** , které selžou, <xref:System.Xml.XPath.XPathNavigator> nezůstane beze změny.  
   
- <xref:System.Xml.XPath.XPathNavigator> je třída, která se má použít pro iteraci fragmentů stromu výsledků. Následující ukázka kódu vytvoří fragment stromu výsledek v rámci předlohy se styly voláním funkce s parametrem, `fragment`, který obsahuje XML.  
+ <xref:System.Xml.XPath.XPathNavigator> Je třída, která se má použít pro iteraci fragmentů stromu výsledků. Následující ukázka kódu vytvoří fragment stromu výsledek v rámci předlohy se styly voláním funkce s parametrem, `fragment`, který obsahuje XML.  
   
 ## <a name="testxsl"></a>test. xsl  
   
@@ -114,6 +114,6 @@ public class sample
 <?xml version="1.0" encoding="utf-8"?>Joe  
 ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Třída XslTransform implementuje procesor XSLT](../../../../docs/standard/data/xml/xsltransform-class-implements-the-xslt-processor.md)

@@ -18,9 +18,9 @@ ms.locfileid: "75709995"
 Pokud je schéma XDR (XML-data redukované), proti kterému ověřujete, Uloženo v kolekci **XmlSchemaCollection**, je přidruženo k identifikátoru URI oboru názvů, který byl zadán při přidání schématu do kolekce. **XmlValidatingReader** mapuje identifikátor URI oboru názvů v dokumentu XML na schéma, které odpovídá identifikátoru URI v kolekci.
 
 > [!IMPORTANT]
-> Třída <xref:System.Xml.Schema.XmlSchemaCollection> je nyní zastaralá a byla nahrazena třídou <xref:System.Xml.Schema.XmlSchemaSet>. Další informace o třídě <xref:System.Xml.Schema.XmlSchemaSet> naleznete v tématu Třída [XmlSchemaSet pro kompilaci schématu](xmlschemaset-for-schema-compilation.md).
+> <xref:System.Xml.Schema.XmlSchemaCollection> Třída je nyní zastaralá a byla nahrazena <xref:System.Xml.Schema.XmlSchemaSet> třídou. Další informace o <xref:System.Xml.Schema.XmlSchemaSet> třídě naleznete v tématu Třída [XmlSchemaSet pro kompilaci schématu](xmlschemaset-for-schema-compilation.md).
 
-Například pokud je kořenový prvek dokumentu XML `<bookstore xmlns="urn:newbooks-schema">`, když je schéma přidáno do rozhraní **XmlSchemaCollection** , odkazuje na stejný obor názvů následujícím způsobem:
+Například pokud kořenový prvek dokumentu XML je `<bookstore xmlns="urn:newbooks-schema">`, když je schéma přidáno do sady **XmlSchemaCollection** , odkazuje na stejný obor názvů následujícím způsobem:
 
 ```vb
 xsc.Add("urn:newbooks-schema", "newbooks.xdr")
@@ -154,7 +154,7 @@ Následující text popisuje obsah souboru schématu XDR *. XDR*, který bude ov
 </Schema>
 ```
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Xml.XmlValidatingReader.ValidationType%2A>
 - [Kompilace schématu XmlSchemaCollection](xmlschemacollection-schema-compilation.md)

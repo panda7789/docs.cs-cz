@@ -1,30 +1,30 @@
 ---
-title: Odebrání runtime jádra .NET a sady SDK
-description: Tento článek popisuje, jak určit, které verze rozhraní .NET Core Runtime a sady SDK jsou aktuálně nainstalovány, a potom, jak je odebrat v systémech Windows, Mac a Linux.
-ms.date: 12/17/2019
+title: Odebrání modulu runtime .NET Core a sady SDK
+description: Tento článek popisuje, jak určit, které verze modulu runtime .NET Core a sady SDK jsou momentálně nainstalované, a jak je odstranit v systémech Windows, Mac a Linux.
+ms.date: 04/22/2020
 author: billwagner
 ms.author: wiwagn
 ms.custom: updateeachrelease
-ms.openlocfilehash: 71c11825981c6259a779e1ac8f947a41618e922d
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 0b3501bf7c730120d3885b8c3f29b901fb131215
+ms.sourcegitcommit: 8b02d42f93adda304246a47f49f6449fc74a3af4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79398837"
+ms.lasthandoff: 04/24/2020
+ms.locfileid: "82135760"
 ---
-# <a name="how-to-remove-the-net-core-runtime-and-sdk"></a>Odebrání sady .NET Core Runtime a sady SDK
+# <a name="how-to-remove-the-net-core-runtime-and-sdk"></a>Postup odebrání modulu runtime .NET Core a sady SDK
 
-V průběhu času při instalaci aktualizovaných verzí rozhraní .NET Core runtime a sady SDK můžete chtít odebrat zastaralé verze rozhraní .NET Core z počítače. Odebrání starších verzí runtime může změnit za běhu zvoleného ke spuštění aplikací sdíleného frameworku, jak je podrobně popsáno v článku o [výběru verze .NET Core](selection.md).
+V průběhu času, při instalaci aktualizovaných verzí modulu runtime .NET Core a sady SDK, můžete chtít z počítače odebrat zastaralé verze rozhraní .NET Core. Odebrání starších verzí modulu runtime může změnit modul runtime zvolený tak, aby spouštěl aplikace sdíleného rozhraní, jak je popsáno v článku [Výběr verze .NET Core](selection.md).
 
 ## <a name="should-i-remove-a-version"></a>Mám odebrat verzi?
 
-Chování [výběru verze .NET Core](selection.md) a kompatibilita rozhraní .NET Core za běhu mezi aktualizacemi umožňují bezpečné odebrání předchozích verzí. Aktualizace runtime .NET Core jsou kompatibilní v rámci hlavní verze 'pásmo', jako je 1.x a 2.x. Kromě toho novější verze sady .NET Core SDK obecně zachovat schopnost vytvářet aplikace, které se zaměřují na předchozí verze runtime kompatibilním způsobem.
+Chování při [výběru verze .NET Core](selection.md) a kompatibilita modulu runtime .NET Core napříč aktualizacemi umožňují bezpečné odebrání předchozích verzí. Aktualizace modulu runtime .NET Core jsou kompatibilní s hlavní verzí "pásma", jako je například 1. x a 2. x. Kromě toho novější verze .NET Core SDK obecně udržují možnost vytvářet aplikace, které cílí na předchozí verze modulu runtime kompatibilním způsobem.
 
-Obecně platí, že potřebujete pouze nejnovější sdk a nejnovější verzi opravy runtimes požadované pro vaši aplikaci. Instance, kde zachování starší verze Sady SDK nebo Runtime patří udržování **project.json-založené**aplikace. Pokud vaše aplikace nemá konkrétní důvody pro starší sady SDK nebo runtimes, můžete bezpečně odebrat starší verze.
+Obecně platí, že potřebujete jenom nejnovější sadu SDK a nejnovější verzi patch runtime, která je pro vaši aplikaci nutná. Instance, které udržují starší verze sady SDK nebo modulu runtime, zahrnují údržbu aplikací založených na **Project. JSON**. Pokud vaše aplikace nemá konkrétní důvody pro předchozí sady SDK nebo moduly runtime, můžete starší verze odstranit bezpečně.
 
-## <a name="determine-what-is-installed"></a>Určení nainstalovaného
+## <a name="determine-what-is-installed"></a>Určete, co je nainstalováno
 
-Počínaje rozhraním .NET Core 2.1 obsahuje rozhraní .NET CLI možnosti, které můžete použít k zobrazení seznamu verzí sady SDK a runtime nainstalovaných v počítači.  Slouží [`dotnet --list-sdks`](../tools/dotnet.md#options) k zobrazení seznamu sad SDK nainstalovaných v počítači. Slouží [`dotnet --list-runtimes`](../tools/dotnet.md#options) k zobrazení seznamu runčasů nainstalovaných v počítači. Následující text ukazuje typický výstup pro Windows, macOS nebo Linux:
+Počínaje rozhraním .NET Core 2,1 mají rozhraní .NET CLI možnosti, které můžete použít k vypsání verzí sady SDK a modulu runtime, které jsou nainstalovány na vašem počítači.  Pomocí [`dotnet --list-sdks`](../tools/dotnet.md#options) zobrazíte seznam sad SDK nainstalovaných v počítači. Použijte [`dotnet --list-runtimes`](../tools/dotnet.md#options) k zobrazení seznamu modulů runtime instalovaných v počítači. Následující text zobrazuje typický výstup pro Windows, macOS nebo Linux:
 
 <!-- markdownlint-disable MD025 -->
 
@@ -36,7 +36,7 @@ Spuštěním následujícího příkazu:
 dotnet --list-sdks
 ```
 
-Získáte výstup podobný následující:
+Získáte výstup podobný následujícímu:
 
 ```console
 2.1.200-preview-007474 [C:\Program Files\dotnet\sdk]
@@ -62,7 +62,7 @@ A spuštěním následujícího příkazu:
 dotnet --list-runtimes
 ```
 
-Získáte výstup podobný následující:
+Získáte výstup podobný následujícímu:
 
 ```console
 Microsoft.AspNetCore.All 2.1.0-preview2-final [C:\Program Files\dotnet\shared\Microsoft.AspNetCore.All]
@@ -90,7 +90,7 @@ Spuštěním následujícího příkazu:
 dotnet --list-sdks
 ```
 
-Získáte výstup podobný následující:
+Získáte výstup podobný následujícímu:
 
 ```console
 1.0.1 [/usr/share/dotnet/sdk]
@@ -110,7 +110,7 @@ A spuštěním následujícího příkazu:
 dotnet --list-runtimes
 ```
 
-Získáte výstup podobný následující:
+Získáte výstup podobný následujícímu:
 
 ```console
 Microsoft.AspNetCore.All 2.1.0-preview2-final [/usr/share/dotnet/shared/Microsoft.AspNetCore.All]
@@ -132,7 +132,7 @@ Microsoft.NETCore.App 2.1.0 [/usr/share/dotnet/shared/Microsoft.NETCore.App]
 Microsoft.NETCore.App 2.1.1 [/usr/share/dotnet/shared/Microsoft.NETCore.App]
 ```
 
-# <a name="macos"></a>[Macos](#tab/macos)
+# <a name="macos"></a>[macOS](#tab/macos)
 
 Spuštěním následujícího příkazu:
 
@@ -140,7 +140,7 @@ Spuštěním následujícího příkazu:
 dotnet --list-sdks
 ```
 
-Získáte výstup podobný následující:
+Získáte výstup podobný následujícímu:
 
 ```console
 1.0.1 [/usr/local/share/dotnet/sdk]
@@ -160,7 +160,7 @@ A spuštěním následujícího příkazu:
 dotnet --list-runtimes
 ```
 
-Získáte výstup podobný následující:
+Získáte výstup podobný následujícímu:
 
 ```console
 Microsoft.AspNetCore.All 2.1.0-preview2-final [/usr/local/share/dotnet/shared/Microsoft.AspNetCore.All]
@@ -184,104 +184,108 @@ Microsoft.NETCore.App 2.1.1 [/usr/local/share/dotnet/shared/Microsoft.NETCore.Ap
 
 ---
 
-## <a name="uninstall-net-core"></a>Odinstalace jádra .NET Core
+## <a name="uninstall-net-core"></a>Odinstalace .NET Core
 
 # <a name="windows"></a>[Windows](#tab/windows)
 
-Jádro .NET používá dialogové okno **Přidat nebo odebrat programy** systému Windows k odebrání verzí runtime .NET Core a sady SDK. Následující obrázek znázorňuje dialogové okno **Přidat nebo odebrat programy** s několika nainstalovanými verzemi běhu .NET a sady SDK.
+.NET Core používá dialogové okno **Přidat nebo odebrat programy** v systému Windows k odebrání verzí modulu runtime .NET Core a sady SDK. Následující obrázek ukazuje dialog **Přidat nebo odebrat programy** s nainstalovaným několika verzemi modulu .NET runtime a sady SDK.
 
-![Přidat nebo odebrat programy pro odebrání rozhraní .NET Core](./media/remove-runtime-sdk-versions/programs-and-features.png)
+![Přidat nebo odebrat programy pro odebrání .NET Core](./media/remove-runtime-sdk-versions/programs-and-features.png)
 
-Vyberte všechny verze, které chcete odebrat ze zařízení, a klepněte na tlačítko **Odinstalovat**.
+Vyberte všechny verze, které chcete z počítače odebrat, a klikněte na **odinstalovat**.
 
 # <a name="linux"></a>[Linux](#tab/linux)
 
-Existuje více možností odinstalace .NET Core (buď SDK nebo runtime) na Linuxu. Nejlepší způsob, jak odinstalovat jádro .NET Core, je zrcadlit akci použitou k instalaci jádra .NET Core. Specifika závisí na zvolené distribuci a způsobu instalace.
+K dispozici je více možností pro odinstalaci rozhraní .NET Core (buď sady SDK nebo modulu runtime) v systému Linux. Nejlepším způsobem, jak odinstalovat .NET Core, je zrcadlit akci, kterou jste použili k instalaci .NET Core. Konkrétní závislosti závisí na zvolené distribuci a metodě instalace.
 
 > [!IMPORTANT]
-> Informace o instalaci rozhraní .NET Core naleznete v [průvodci začínám](https://access.redhat.com/documentation/en-us/net_core/2.0/html/getting_started_guide/gs_install_dotnet#install_register_rehel) s red hatem.
+> V případě instalací Red Hat si přečtěte informace o instalaci a odinstalaci .NET Core v [příručce pro Red hat Začínáme](https://access.redhat.com/documentation/en-us/net_core/2.0/html/getting_started_guide/gs_install_dotnet#install_register_rehel) .
 
-Počínaje rozhraním .NET Core 2.1 není nutné odinstalovat sadu .NET Core SDK při upgradu pomocí správce balíčků. Správce `update` balíčků `refresh` nebo příkazy automaticky odeberou starší verzi po úspěšné instalaci novější verze.
+Počínaje rozhraním .NET Core 2,1 není nutné při upgradu pomocí Správce balíčků .NET Core SDK odinstalovat. Správce `update` balíčků nebo `refresh` příkazy automaticky odebere starší verzi po úspěšné instalaci novější verze.
 
-Pokud jste nainstalovali .NET Core pomocí správce balíčků, použijte stejný správce balíčků k odinstalaci sady .NET SDK nebo runtime. Instalace .NET Core podporují nejoblíbenější správce balíčků. Přesné syntaxe ve vašem prostředí naleznete v dokumentaci správce balíčků vaší distribuce:
+Pokud jste nainstalovali .NET Core pomocí Správce balíčků, použijte stejného správce balíčků pro odinstalaci sady .NET SDK nebo modulu runtime. Instalace .NET Core podporují většinu oblíbených správců balíčků. V dokumentaci pro správce balíčků distribuce vyhledejte přesnou syntaxi vašeho prostředí.
 
-- [apt-get(8)](https://linux.die.net/man/8/apt-get) používají systémy založené na Debianu, včetně Ubuntu.
-- [yum(8)](https://linux.die.net/man/8/yum) se používá na Fedora, CentOS a Oracle Linux.
-- [zypper(8)](https://en.opensuse.org/SDB:Zypper_manual_(plain)) se používá na openSUSE a SUSE Linux Enterprise System (SLES).
-- [dnf(8)](https://dnf.readthedocs.io/en/latest/command_ref.html) se používá na Fedoru.
+- [apt-get (8)](https://linux.die.net/man/8/apt-get) se používá v systémech založených na Debian, včetně Ubuntu.
+- [Yumu (8)](https://linux.die.net/man/8/yum) se používá na Fedora, CentOS a Oracle Linux.
+- [zypperu (8)](https://en.opensuse.org/SDB:Zypper_manual_(plain)) se používá v systémech OPENSUSE a SUSE Linux Enterprise (SLES).
+- [DNF (8)](https://dnf.readthedocs.io/en/latest/command_ref.html) se používá v Fedora.
 
-Téměř ve všech případech je `remove`příkaz k odebrání balíčku .
+V téměř všech případech je `remove`příkaz k odebrání balíčku.
 
-Název balíčku pro instalaci sady .NET Core SDK pro většinu správců balíčků je `dotnet-sdk`následovaný číslem verze. Počínaje verzí 2.1.300 sady .NET Core SDK a verzí `2.1` runtime jsou potřebná pouze čísla hlavních a dílčích verzí: například sada .NET Core SDK verze 2.1.300 může být považována za balíček `dotnet-sdk-2.1`. Předchozí verze vyžadují celý řetězec verze: `dotnet-sdk-2.1.200` například by bylo vyžadováno pro verzi 2.1.200 sady .NET Core SDK.
+Název balíčku pro instalaci .NET Core SDK pro většinu správců balíčků je `dotnet-sdk`následovaný číslem verze. Počínaje verzí 2.1.300 .NET Core SDK a verzí `2.1` modulu runtime jsou nutná pouze čísla hlavní verze a podverze. například .NET Core SDK verze 2.1.300 může být odkazována jako balíček. `dotnet-sdk-2.1` Předchozí verze vyžadují řetězec celé verze: například `dotnet-sdk-2.1.200` by vyžadovala 2.1.200 verze .NET Core SDK.
 
-Pro počítače, které nainstalovaly pouze runtime a nikoli SDK, je `dotnet-runtime-<version>` název balíčku `aspnetcore-runtime-<version>` pro soubor .NET Core runtime a pro celý zásobník runtime.
+Pro počítače, které mají nainstalované pouze modul runtime a nikoli sadu SDK, je `dotnet-runtime-<version>` název balíčku pro modul runtime .NET Core a `aspnetcore-runtime-<version>` pro celý zásobník modulu runtime.
 
-Instalace jádra .NET starší než 2.0 neodinstalovaly hostitelskou aplikaci při odinstalaci sady SDK pomocí správce balíčků. Pomocí `apt-get`příkazu je:
+Instalace .NET Core starší než 2,0 odinstalovaly hostitelskou aplikaci, když se sada SDK odinstalovala pomocí Správce balíčků. Pomocí `apt-get`příkazu je tento příkaz:
 
 ```bash
 apt-get remove dotnet-host
 ```
 
-Všimněte si, že neexistuje `dotnet-host`žádná verze připojena k .
+Všimněte si, že není připojená žádná `dotnet-host`verze.
 
-Pokud jste nainstalovali pomocí tarballu, musíte odebrat .NET Core pomocí ruční metody.
+Pokud jste nainstalovali tarballu pomocí nástroje, je nutné pomocí ruční metody odebrat rozhraní .NET Core.
 
-Sady SDK a runtimes odeberete samostatně odebráním adresáře, který tuto verzi obsahuje. Chcete-li například odebrat 1.0.1 SDK a runtime, použijte následující příkazy bash:
-
-```bash
-sudo rm -rf /usr/share/dotnet/sdk/1.0.1
-sudo rm -rf /usr/share/dotnet/shared/Microsoft.NETCore.App/1.0.1
-sudo rm -rf /usr/share/dotnet/shared/Microsoft.AspNetCore.App/1.0.1
-sudo rm -rf /usr/share/dotnet/host/fxr/1.0.1
-```
-
-Nadřazené adresáře pro sadu SDK a `dotnet --list-sdks` `dotnet --list-runtimes` runtime jsou uvedeny ve výstupu z příkazu a, jak je znázorněno v předchozí tabulce.
-
-# <a name="macos"></a>[Macos](#tab/macos)
-
-Na Macu je nutné odebrat sady SDK a runtimes samostatně odebráním adresáře, který tuto verzi obsahuje. Chcete-li například odebrat 1.0.1 SDK a runtime, použijte následující příkazy bash:
+V systému Linux musíte sady SDK a moduly runtime odebrat samostatně odebráním adresářů se správou verzí. Aby bylo jasné, tak se odstraní sada SDK a modul runtime z disku. Chcete-li například odebrat sadu 1.0.1 SDK a modul runtime, použijte následující příkazy bash:
 
 ```bash
-sudo rm -rf /usr/local/share/dotnet/sdk/1.0.1
-sudo rm -rf /usr/local/share/dotnet/shared/Microsoft.NETCore.App/1.0.1
-sudo rm -rf /usr/local/share/dotnet/shared/Microsoft.AspNetCore.App/1.0.1
-sudo rm -rf /usr/local/share/dotnet/host/fxr/1.0.1
+version="1.0.1"
+sudo rm -rf /usr/local/share/dotnet/sdk/$version
+sudo rm -rf /usr/local/share/dotnet/shared/Microsoft.NETCore.App/$version
+sudo rm -rf /usr/local/share/dotnet/shared/Microsoft.AspNetCore.All/$version
+sudo rm -rf /usr/local/share/dotnet/shared/Microsoft.AspNetCore.App/$version
+sudo rm -rf /usr/local/share/dotnet/host/fxr/$version
 ```
 
-Nadřazené adresáře pro sadu SDK a `dotnet --list-sdks` `dotnet --list-runtimes` runtime jsou uvedeny ve výstupu z příkazu a, jak je znázorněno v předchozí tabulce.
+Nadřazené adresáře pro sadu SDK a modul runtime jsou uvedeny ve výstupu příkazu `dotnet --list-sdks` a `dotnet --list-runtimes` , jak je znázorněno v předchozí tabulce.
+
+# <a name="macos"></a>[macOS](#tab/macos)
+
+V systému Mac musíte sady SDK a moduly runtime odebrat samostatně tak, že odeberete adresáře s verzemi. Aby bylo jasné, tak se odstraní sada SDK a modul runtime z disku. Chcete-li například odebrat sadu 1.0.1 SDK a modul runtime, použijte následující příkazy bash:
+
+```bash
+version="1.0.1"
+sudo rm -rf /usr/local/share/dotnet/sdk/$version
+sudo rm -rf /usr/local/share/dotnet/shared/Microsoft.NETCore.App/$version
+sudo rm -rf /usr/local/share/dotnet/shared/Microsoft.AspNetCore.All/$version
+sudo rm -rf /usr/local/share/dotnet/shared/Microsoft.AspNetCore.App/$version
+sudo rm -rf /usr/local/share/dotnet/host/fxr/$version
+```
+
+Nadřazené adresáře pro sadu SDK a modul runtime jsou uvedeny ve výstupu příkazu `dotnet --list-sdks` a `dotnet --list-runtimes` , jak je znázorněno v předchozí tabulce.
 
 ---
 
 ## <a name="net-core-uninstall-tool"></a>Nástroj pro odinstalaci .NET Core
 
-[Nástroj .NET Core Uninstall Tool](../additional-tools/uninstall-tool.md) (`dotnet-core-uninstall`) umožňuje odebrat sady .NET Core SDK a runtimes ze systému. K dispozici je kolekce možností, které určují, které verze by měly být odinstalovány.
+[Nástroj pro odinstalaci .NET Core](../additional-tools/uninstall-tool.md) (`dotnet-core-uninstall`) umožňuje odebrat sady SDK a moduly runtime .NET Core ze systému. K dispozici je kolekce možností, pomocí kterých určíte, které verze se mají odinstalovat.
 
-## <a name="visual-studio-dependency-on-net-core-sdk-versions"></a>Závislost sady Visual Studio na verzích sady .NET Core SDK
+## <a name="visual-studio-dependency-on-net-core-sdk-versions"></a>Závislost sady Visual Studio na .NET Core SDK verzích
 
-Před Visual Studio 2019 verze 16.3, Visual Studio instalátory volal samostatný instalační program .NET Core SDK. V důsledku toho se verze sady SDK zobrazí v dialogovém okně **Přidat nebo odebrat programy systému** Windows. Odebrání sad SDK jádra .NET, které byly nainstalovány aplikací Visual Studio pomocí samostatného instalačního programu, může dojít k přerušení sady Visual Studio. Pokud visual studio má problémy po odinstalaci sad SDK, spusťte opravit v této konkrétní verzi sady Visual Studio. V následující tabulce jsou uvedeny některé závislosti sady Visual Studio na verzích sady .NET Core SDK:
+Před Visual Studio 2019 verze 16,3 se instalátory sady Visual Studio nazývají samostatné instalační služby .NET Core SDK. V důsledku toho se verze sady SDK zobrazí v dialogovém okně **Přidat nebo odebrat programy** v systému Windows. Odebrání sady .NET Core SDK, které byly nainstalovány v aplikaci Visual Studio pomocí samostatného instalačního programu, může poškodit aplikaci Visual Studio. Pokud má aplikace Visual Studio problémy po odinstalaci sad SDK, spusťte v této konkrétní verzi sady Visual Studio opravu. V následující tabulce jsou uvedeny některé závislosti sady Visual Studio na .NET Core SDK verzích:
 
-| Verze sady Visual Studio | Verze sady .NET Core SDK |
+| Verze sady Visual Studio | Verze .NET Core SDK |
 | -- | -- |
-|  Visual Studio 2019 verze 16.2  | .NET Jádro SDK 2.2.4xx, 2.1.8xx |
-|  Visual Studio 2019 verze 16.1 | .NET Jádro SDK 2.2.3xx, 2.1.7xx |
-| Visual Studio 2019 verze 16.0 | .NET Jádro SDK 2.2.2xx, 2.1.6xx |
-| Visual Studio 2017 verze 15.9 | .NET Jádro SDK 2.2.1xx, 2.1.5xx |
-| Visual Studio 2017 verze 15.8 | Sada .NET Core SDK 2.1.4xx |
+|  Visual Studio 2019 verze 16.2  | .NET Core SDK 2.2.4 xx, 2.1.8 XX |
+|  Visual Studio 2019 verze 16.1 | .NET Core SDK 2.2.3 xx, 2.1.7 XX |
+| Visual Studio 2019 verze 16,0 | .NET Core SDK 2.2.2 xx, 2.1.6 xx |
+| Visual Studio 2017 verze 15,9 | .NET Core SDK 2.2.1 xx xx, 2.1.5 XX |
+| Visual Studio 2017 verze 15,8 | .NET Core SDK 2.1.4 XX |
 
-Počínaje Visual Studio 2019 verze 16.3, Visual Studio má na starosti vlastní kopii .NET Core SDK. Z tohoto důvodu již tyto verze sady SDK nevidíte v dialogovém okně **Přidat nebo odebrat programy.**
+Počínaje verzí Visual Studio 2019 verze 16,3 se Visual Studio účtuje na vlastní kopii .NET Core SDK. Z tohoto důvodu se tyto verze sady SDK už nezobrazuje v dialogovém okně **Přidat nebo odebrat programy** .
 
-## <a name="remove-the-nuget-fallback-folder"></a>Odebrání záložní složky NuGet
+## <a name="remove-the-nuget-fallback-folder"></a>Odebrat záložní složku NuGet
 
-Před sadou .NET Core 3.0 SDK instalační programy .NET Core SDK používaly *nugetfallbackfolder* k uložení mezipaměti balíčků NuGet. Tato mezipaměť byla použita při operacích, jako `dotnet restore` je například nebo `dotnet build /t:Restore`. Je `NuGetFallbackFolder` umístěn na *adrese C:\Program Files\dotnet\sdk* v systému Windows a na adrese */usr/local/share/dotnet/sdk* v systému macOS.
+Před sadou .NET Core 3,0 SDK .NET Core SDK Instalační programy používaly *NuGetFallbackFolder* k ukládání mezipaměti balíčků NuGet. Tato mezipaměť se použila během operací, `dotnet restore` jako `dotnet build /t:Restore`je nebo. `NuGetFallbackFolder` Je umístěný ve *složce C:\Program Files\dotnet\sdk* ve Windows a v */usr/local/share/dotnet/SDK* na MacOS.
 
-Tuto složku můžete odebrat, pokud:
+Tuto složku můžete chtít odebrat, pokud:
 
-* Vyvíjíte pouze pomocí sady .NET Core 3.0 SDK nebo novějších verzí.
-* Vyvíjíte pomocí .NET Core SDK verze starší než 3.0, ale můžete pracovat online a věci mohou být pomalejší jednou.
+* Vyvíjíte pouze pomocí .NET Core 3,0 SDK nebo novějších verzí.
+* Vyvíjíte pomocí .NET Core SDK verzí starších než 3,0, ale můžete pracovat online a věci můžou být pomalejší.
 
-Pokud chcete odebrat záložní složku NuGet, můžete ji odstranit, ale budete potřebovat oprávnění správce, abyste tak učinili.
+Pokud chcete odebrat záložní složku NuGet, můžete ji odstranit, ale budete k tomu potřebovat oprávnění správce.
 
-Není doporučeno odstranit složku *dotnet.* Tím byste odstranili všechny globální nástroje, které jste dříve nainstalovali. Také v systému Windows:
+Nedoporučuje se odstranit složku *dotnet* . Tím by se odebraly všechny globální nástroje, které jste předtím nainstalovali. Také ve Windows:
 
-- Přerušíte verzi Visual Studia 2019 verze 16.3 a novější. Můžete spustit **opravit** obnovit.
-- Pokud jsou v dialogovém okně **Přidat nebo odebrat programy** položky .NET Core SDK, budou osamocené.
+- Budete přerušit Visual Studio 2019 verze 16,3 a novější. Můžete spustit **opravu** pro obnovení.
+- Pokud v dialogovém okně **Přidat nebo odebrat programy** existují .NET Core SDK položky, budou osamocené.

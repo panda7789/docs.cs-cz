@@ -115,7 +115,7 @@ public class Sample
 
 V tomto příkladu se zobrazí následující výstup:
 
-**Output**
+**Výstup**
 
 Zobrazí všechny atributy v kolekci.
 
@@ -190,7 +190,7 @@ public class Sample
 
 ## <a name="retrieving-an-individual-attribute-node"></a>Načtení jednotlivého uzlu atributu
 
-Chcete-li načíst jeden uzel atributu z prvku, je použita metoda <xref:System.Xml.XmlElement.GetAttributeNode%2A?displayProperty=nameWithType>. Vrátí objekt typu **XmlAttribute**. Po získání **atributu XmlAttribute**jsou všechny metody a vlastnosti, které jsou k dispozici ve třídě <xref:System.Xml.XmlAttribute?displayProperty=nameWithType>, k dispozici pro tento objekt, jako je například hledání **OwnerElement**.
+Chcete-li načíst jeden uzel atributu z prvku, je <xref:System.Xml.XmlElement.GetAttributeNode%2A?displayProperty=nameWithType> použita metoda. Vrátí objekt typu **XmlAttribute**. Po získání **atributu XmlAttribute**jsou všechny metody a vlastnosti, které jsou k dispozici ve <xref:System.Xml.XmlAttribute?displayProperty=nameWithType> třídě, k dispozici pro tento objekt, jako je například hledání **OwnerElement**.
 
 ```vb
 Imports System.IO
@@ -258,6 +258,6 @@ Můžete také provést jak je znázorněno v předchozím příkladu, kde je je
 XmlAttribute attr = doc.DocumentElement.Attributes[0];
 ```
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Model DOM (Document Object Model) dokumentu XML](../../../../docs/standard/data/xml/xml-document-object-model-dom.md)
+- [model DOM (Document Object Model) dokumentu XML](../../../../docs/standard/data/xml/xml-document-object-model-dom.md)

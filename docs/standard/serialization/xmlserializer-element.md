@@ -13,11 +13,11 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 03/25/2020
 ms.locfileid: "80249536"
 ---
-# <a name="xmlserializer-element"></a>\<xmlSerializer> Element
+# <a name="xmlserializer-element"></a>\<xmlSerializer – element> elementu
 Určuje, zda dodatečnou kontrolu průběh <xref:System.Xml.Serialization.XmlSerializer> je Hotovo.  
   
- \<konfigurační>  
-\<system.xml.serialization>  
+ \<> konfigurace  
+\<System. XML. Serialization –>  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,17 +40,17 @@ Určuje, zda dodatečnou kontrolu průběh <xref:System.Xml.Serialization.XmlSer
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
-|Element|Popis|  
+|Prvek|Popis|  
 |-------------|-----------------|  
-|[\<system.xml.serialization> Element](../../../docs/standard/serialization/system-xml-serialization-element.md)|Obsahuje nastavení konfigurace pro <xref:System.Xml.Serialization.XmlSerializer> a <xref:System.Xml.Serialization.XmlSchemaImporter> třídy.|  
+|[\<System. XML. Serialization – element>](../../../docs/standard/serialization/system-xml-serialization-element.md)|Obsahuje nastavení konfigurace pro <xref:System.Xml.Serialization.XmlSerializer> a <xref:System.Xml.Serialization.XmlSchemaImporter> třídy.|  
   
 ## <a name="remarks"></a>Poznámky  
- Ve výchozím nastavení <xref:System.Xml.Serialization.XmlSerializer> poskytuje další vrstvu zabezpečení proti potenciální odmítnutí útoků služby při deserializaci nedůvěryhodná data. Učiní tak pokusem o detekovat nekonečné smyčce během deserializace. Pokud je tato podmínka zjištěna, je vyvolána výjimka s následující zprávou: "Vnitřní chyba: deserializace se nepodařilo předem přes základní datový proud."  
+ Ve výchozím nastavení <xref:System.Xml.Serialization.XmlSerializer> poskytuje další vrstvu zabezpečení proti potenciální odmítnutí útoků služby při deserializaci nedůvěryhodná data. Učiní tak pokusem o detekovat nekonečné smyčce během deserializace. Je-li taková podmínka zjištěna, je vyvolána výjimka s následující zprávou: "vnitřní chyba: deserializace nemohla pokračovat v podkladovém datovém proudu".  
   
- Přijetí tato zpráva nemusí znamenat, že útoku služby probíhá. V některých výjimečných případech mechanismus detekce nekonečné smyčce vytváří chybné detekce a legitimní příchozí zprávy, je vyvolána výjimka. Pokud zjistíte, že ve vaší konkrétní aplikaci jsou legitimní zprávy odmítnuty touto další vrstvou ochrany, nastavte **atribut checkDeserializeAdvances** na "false".  
+ Přijetí tato zpráva nemusí znamenat, že útoku služby probíhá. V některých výjimečných případech mechanismus detekce nekonečné smyčce vytváří chybné detekce a legitimní příchozí zprávy, je vyvolána výjimka. Pokud zjistíte, že v rámci konkrétní aplikace jsou legitimní zprávy odmítnuty touto dodatečnou vrstvou ochrany, nastavte atribut **checkDeserializeAdvances** na hodnotu false.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad kódu nastaví atribut **checkDeserializeAdvances** na "false".  
+ Následující příklad kódu nastaví atribut **checkDeserializeAdvances** na hodnotu false (NEPRAVDA).  
   
 ```xml  
 <configuration>  
@@ -63,5 +63,5 @@ Určuje, zda dodatečnou kontrolu průběh <xref:System.Xml.Serialization.XmlSer
 ## <a name="see-also"></a>Viz také
 
 - <xref:System.Xml.Serialization.XmlSerializer>
-- [\<system.xml.serialization> Element](../../../docs/standard/serialization/system-xml-serialization-element.md)
+- [\<System. XML. Serialization – element>](../../../docs/standard/serialization/system-xml-serialization-element.md)
 - [Serializace XML a SOAP](../../../docs/standard/serialization/xml-and-soap-serialization.md)

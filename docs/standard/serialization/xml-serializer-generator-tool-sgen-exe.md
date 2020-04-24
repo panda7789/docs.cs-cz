@@ -11,7 +11,7 @@ ms.locfileid: "80588366"
 ---
 # <a name="xml-serializer-generator-tool-sgenexe"></a>Nástroj XML Serializer Generator Tool (Sgen.exe)
 
-Generátor serializátorů XML vytvoří sestavení serializace XML pro typy v zadaném sestavení. Serializace sestavení zlepšuje výkon při <xref:System.Xml.Serialization.XmlSerializer> spuštění při serializes nebo rekonstruovat objekty zadaných typů.
+Generátor serializátor XML vytvoří sestavení serializace XML pro typy v zadaném sestavení. Sestavení serializace zlepšuje výkon <xref:System.Xml.Serialization.XmlSerializer> při spuštění při serializaci nebo deserializaci objektů zadaných typů.
   
 ## <a name="syntax"></a>Syntaxe
 
@@ -22,29 +22,29 @@ sgen [options]
 ```
   
 > [!TIP]
-> Aby nástroje rozhraní .NET Framework fungovaly `Path` `Include`správně, `Lib` je nutné správně nastavit proměnné , a prostředí. Tyto proměnné prostředí nastavte spuštěním souboru SDKVars.bat, který je umístěn v adresáři \<Sady SDK>\v2.0\Bin. SDKVars.bat je třeba spustit v každém příkazovém prostředí.
+> Aby .NET Framework nástroje správně fungovaly, musíte správně nastavit proměnné `Path`prostředí `Include`, a `Lib` . Nastavte tyto proměnné prostředí spuštěním SDKVars. bat, který je umístěný v adresáři \<SDK> \v2.0\Bin Directory. SDKVars.bat je třeba spustit v každém příkazovém prostředí.
   
 ## <a name="parameters"></a>Parametry  
   
 |Možnost|Popis|  
 |------------|-----------------|  
-|**/a\[ssembly\]:** název_souboru_|Generuje kód serializace pro všechny typy obsažené v sestavení nebo spustitelný soubor určený *názvem souboru*. Lze zadat pouze jeden název souboru. Je-li tento argument se opakuje, se používá poslední název souboru.|  
-|**/c\[ompiler\]:**_možnosti_|Určuje možnosti, které mají být předána do kompilátor jazyka C#. Všechny csc.exe možnosti jsou podporovány jako jsou předány kompilátoru. To lze použít k určení, že by měl být podepsáno sestavení a k určení souboru s klíčem.|  
-|**/d\[ladění\]**|Generuje obrázek, který lze použít se ladicí program.|  
-|**/f\[orce\]**|Vynutí přepsání existující sestavení se stejným názvem. Výchozí hodnota je **false**.|  
-|**/help nebo /?**|Zobrazí syntaxi příkazu a možnosti nástroje.|  
-|**/k\[eep\]**|Potlačí odstranění vytvořených zdrojových souborů a jiné dočasné soubory, poté, co byl zkompilován sestavení serializace. To lze použít k určení, zda tento nástroj je generování kódu serializace pro určitý typ.|  
+|**/a\[sestavení\]:**_filename_|Generuje kód serializace pro všechny typy obsažené v sestavení nebo spustitelný soubor určený parametrem *filename*. Lze zadat pouze jeden název souboru. Je-li tento argument se opakuje, se používá poslední název souboru.|  
+|**/c\[ompiler\]:**_Možnosti_|Určuje možnosti, které mají být předána do kompilátor jazyka C#. Všechny možnosti CSc. exe jsou podporovány, protože jsou předány kompilátoru. To lze použít k určení, že by měl být podepsáno sestavení a k určení souboru s klíčem.|  
+|**/d\[ebug\]**|Generuje obrázek, který lze použít se ladicí program.|  
+|**/f\[Orce\]**|Vynutí přepsání existující sestavení se stejným názvem. Výchozí hodnota je **false**.|  
+|**/Help nebo/?**|Zobrazí syntaxi příkazu a možnosti nástroje.|  
+|**/k\[achovat\]**|Potlačí odstranění vytvořených zdrojových souborů a jiné dočasné soubory, poté, co byl zkompilován sestavení serializace. To lze použít k určení, zda tento nástroj je generování kódu serializace pro určitý typ.|  
 |**/n\[ologo\]**|Potlačí zobrazování úvodní nápis společnosti Microsoft.|  
-|**/o\[\]ut :**_cesta_|Určuje adresář, do kterého chcete uložit vygenerované sestavení. **Poznámka:**  Název generovaného sestavení se skládá z názvu vstupního sestavení plus "xmlSerializers.dll".|  
+|**/o\[UT\]:**_path_|Určuje adresář, do kterého chcete uložit vygenerované sestavení. **Poznámka:**  Název generovaného sestavení se skládá z názvu vstupního sestavení plus "xmlSerializers. dll".|  
 |**/p\[roxytypes\]**|Generuje kód serializace pouze pro typy XML webové služby proxy serveru.|  
 |**/r\[eference\]:**_assemblyfiles_|Určuje sestavení, která je odkazováno dle typy vyžadujících serializace XML. Je možné zadat více souborů sestavení, oddělených čárkami.|  
 |**/s\[ilent\]**|Potlačí zobrazování zpráv o úspěšném dokončení.|  
-|**/t\[\]ype :**_typ_|Generuje kód serializace pouze u zadaného typu.|  
+|**/t\[typ\]:**_typ_|Generuje kód serializace pouze u zadaného typu.|  
 |**/v\[erbose\]**|Zobrazí podrobné informace pro ladění. Zobrazí seznam typů z cílového sestavení, které nelze serializovat, s <xref:System.Xml.Serialization.XmlSerializer>.|  
 |**/?**|Zobrazí syntaxi příkazu a možnosti nástroje.|  
   
 ## <a name="remarks"></a>Poznámky  
- Pokud není použit generátor serializátor XML, <xref:System.Xml.Serialization.XmlSerializer> generuje serializace kódu a sestavení serializace pro každý typ při každém spuštění aplikace. Chcete-li zlepšit výkon spuštění serializace XML, použijte nástroj Sgen.exe ke generování těchto sestavení předem. Tyto sestavení lze nasadit poté s aplikací.  
+ Pokud není použit generátor serializátor XML, <xref:System.Xml.Serialization.XmlSerializer> generuje serializace kódu a sestavení serializace pro každý typ při každém spuštění aplikace. Chcete-li zlepšit výkon při spuštění serializace XML, použijte nástroj Sgen. exe ke generování těchto sestavení předem. Tyto sestavení lze nasadit poté s aplikací.  
   
  Generátor serializátor XML můžete také zvýšit výkon klienty, kteří používají ke komunikaci se servery, protože proces serializace nesmí být účtovány výkonu, poté klikněte na tlačítko při prvním načtení typ proxy XML webové služby.  
   
@@ -63,5 +63,5 @@ sgen Data.dll
   
 ## <a name="see-also"></a>Viz také
 
-- [nástroje](../../../docs/framework/tools/index.md)
-- [Příkazová zobrazení](../../../docs/framework/tools/developer-command-prompt-for-vs.md)
+- [Nástroje](../../../docs/framework/tools/index.md)
+- [Výzvy příkazového řádku](../../../docs/framework/tools/developer-command-prompt-for-vs.md)

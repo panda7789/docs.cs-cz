@@ -14,7 +14,7 @@ ms.lasthandoff: 02/28/2020
 ms.locfileid: "78160349"
 ---
 # <a name="converting-strings-to-net-framework-data-types"></a>Převádění řetězců na datové typy rozhraní .NET Framework
-Chcete-li převést řetězec na datový typ .NET Framework, použijte metodu **XmlConvert** , která odpovídá požadavkům aplikace. Seznam všech metod převodu, které jsou k dispozici ve třídě **XmlConvert** , naleznete v tématu <xref:System.Xml.XmlConvert>.  
+Chcete-li převést řetězec na datový typ .NET Framework, použijte metodu **XmlConvert** , která odpovídá požadavkům aplikace. Seznam všech metod převodu, které jsou k dispozici ve třídě **XmlConvert** , <xref:System.Xml.XmlConvert>naleznete v tématu.  
   
  Řetězec vrácený metodou **ToString** je řetězcová verze dat, která je předána. Kromě toho existuje několik typů .NET Framework, které se převádějí pomocí třídy **XmlConvert** , ale nepoužívají metody ve třídě **System. Convert** . Třída **XmlConvert** se řídí specifikací datového typu XSD (XML Schema) a má datový typ, na který může **XmlConvert** mapovat.  
   
@@ -23,12 +23,12 @@ Chcete-li převést řetězec na datový typ .NET Framework, použijte metodu **
 |Typ rozhraní .NET Framework|Vrácený řetězec|  
 |-------------------------|---------------------|  
 |Logická hodnota|"pravda", "NEPRAVDA"|  
-|Single. PositiveInfinity|"INF"|  
+|Single. PositiveInfinity|SOUBORŮ|  
 |Single. NegativeInfinity|"-INF"|  
-|Double. PositiveInfinity|"INF"|  
+|Double. PositiveInfinity|SOUBORŮ|  
 |Double. NegativeInfinity|"-INF"|  
 |DateTime|Formát je "rrrr-MM-ddTHH: mm: sszzzzzz" a jeho podmnožiny.|  
-|Časový interval|Formát je PnYnMnTnHnMnS, což je, `P2Y10M15DT10H30M20S` je doba 2 roky, 10 měsíců, 15 dní, 10 hodin, 30 minut a 20 sekund.|  
+|Časový interval|Formát je PnYnMnTnHnMnS, což `P2Y10M15DT10H30M20S` je doba 2 roky, 10 měsíců, 15 dní, 10 hodin, 30 minut a 20 sekund.|  
   
 > [!NOTE]
 > Pokud převedete některý z .NET Framework typů uvedených v tabulce na řetězec pomocí metody **ToString** , vrácený řetězec není základní typ, ale typ řetězce XML Schema (XSD).  
@@ -76,14 +76,14 @@ writer.WriteElementString("Number", XmlConvert.ToString(value));
   
 |Platný vstupní parametr řetězce|Typ výstupu .NET Framework|  
 |----------------------------------|--------------------------------|  
-|„true“|Logická hodnota. true|  
+|podmínka|Logická hodnota. true|  
 |1|Logická hodnota. true|  
-|„false“|Boolean. false|  
+|chybné|Boolean. false|  
 |"0"|Boolean. false|  
   
  Například s ohledem na následující kód XML:  
   
- **Input** (Vstup)  
+ **Vstup**  
   
 ```xml  
 <Boolean>true</Boolean>  
@@ -108,7 +108,7 @@ Console.WriteLine(bvalue);
   
 |Platný vstupní parametr řetězce|Typ výstupu .NET Framework|  
 |----------------------------------|--------------------------------|  
-|"INF"|Single. PositiveInfinity|  
+|SOUBORŮ|Single. PositiveInfinity|  
 |"-INF"|Single. NegativeInfinity|  
   
 ## <a name="string-to-double"></a>Řetězec, který se má zdvojnásobit  
@@ -116,10 +116,10 @@ Console.WriteLine(bvalue);
   
 |Platný vstupní parametr řetězce|Typ výstupu .NET Framework|  
 |----------------------------------|--------------------------------|  
-|"INF"|Double. PositiveInfinity|  
+|SOUBORŮ|Double. PositiveInfinity|  
 |"-INF"|Double. NegativeInfinity|  
   
- Následující kód zapisuje `<Infinity>INF</Infinity>`:  
+ Následující zápis `<Infinity>INF</Infinity>`kódu:  
   
 ```vb  
 Dim value As Double = Double.PositiveInfinity  

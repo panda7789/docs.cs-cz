@@ -25,27 +25,27 @@ Definuje podmíněné konstanty kompilátoru.
 -define:["]symbol[=value][,symbol[=value]]["]  
 ```
 
-nebo
+– nebo –
 
 ```console  
 -d:["]symbol[=value][,symbol[=value]]["]  
 ```  
   
-## <a name="arguments"></a>Arguments  
+## <a name="arguments"></a>Argumenty  
   
-|Termín|Definice|  
+|Označení|Definice|  
 |---|---|  
-|`symbol`|Požadováno. Symbol, který má být definován.|  
-|`value`|Volitelné. Hodnota, kterou chcete přiřadit `symbol`. Pokud `value` je řetězec, musí být ohraničen znakem zpětného lomítka nebo posloupnosti uvozovek (\\") místo uvozovek. Pokud není zadána žádná hodnota, bude provedena hodnota true.|  
+|`symbol`|Povinná hodnota. Symbol, který má být definován.|  
+|`value`|Nepovinný parametr. Hodnota, která má `symbol`být přiřazena. Pokud `value` je řetězec, musí být ohraničen znakem zpětného lomítka nebo posloupnosti uvozovek (\\") místo uvozovek. Pokud není zadána žádná hodnota, bude provedena hodnota true.|  
   
 ## <a name="remarks"></a>Poznámky  
- Možnost `-define` má podobný efekt jako použití direktivy preprocesoru `#Const` ve zdrojovém souboru, s tím rozdílem, že konstanty definované s `-define` jsou veřejné a platí pro všechny soubory v projektu.  
+ `-define` Možnost má podobný efekt jako použití `#Const` direktivy preprocesoru ve zdrojovém souboru s tím rozdílem, že konstanty definované `-define` s jsou veřejné a platí pro všechny soubory v projektu.  
   
- Symboly vytvořené pomocí této možnosti můžete použít spolu s direktivou `#If`...`Then`...`#Else` ke podmíněnému kompilování zdrojových souborů.  
+ Můžete použít symboly vytvořené pomocí této možnosti s `#If`... `Then`... `#Else` direktiva podmíněného kompilování zdrojových souborů.  
   
- `-d` je krátká forma `-define`.  
+ `-d`je krátký tvar `-define`.  
   
- Můžete definovat více symbolů pomocí `-define` čárkou pro oddělení definic symbolů.  
+ Můžete definovat více symbolů `-define` pomocí čárky pro oddělení definic symbolů.  
   
 |Nastavení – definice v integrovaném vývojovém prostředí sady Visual Studio|  
 |---|  
@@ -56,7 +56,7 @@ nebo
   
  [!code-vb[VbVbalrCompiler#45](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrCompiler/VB/Class1.vb#45)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Visual Basic Kompilátor příkazového řádku](../../../visual-basic/reference/command-line-compiler/index.md)
 - [Direktivy #If...Then...#Else](../../../visual-basic/language-reference/directives/if-then-else-directives.md)

@@ -13,7 +13,7 @@ ms.locfileid: "75709969"
 # <a name="xml-document-object-model-dom-hierarchy"></a>Hierarchie modelu DOM (Document Object Model) dokumentu XML
 Následující ilustrace znázorňuje hierarchii tříd pro XML model DOM (Document Object Model) (DOM), s názvem konsorcium World Wide Web (W3C) v závorkách spolu s názvem třídy, kde je relevantní.  
   
- ![XML model DOM (Document Object Model) &#40;hierarchie&#41; DOM](../../../../docs/standard/data/xml/media/dom-class-hierarchy.gif "Dom_class_hierarchy")  
+ ![Hierarchie&#41; &#40;DOM model DOM (Document Object Model) XML](../../../../docs/standard/data/xml/media/dom-class-hierarchy.gif "Dom_class_hierarchy")  
 Hierarchie XML model DOM (Document Object Model) (DOM)  
   
  Následující třídy nedědí z **XmlNode**:  
@@ -36,6 +36,6 @@ Hierarchie XML model DOM (Document Object Model) (DOM)
   
  Třída **XmlLinkedNode** dědí z typu **XmlNode**. Jeho účelem je přepsat dvě metody z **XmlNode**: metody **PreviousSibling** a **NextSibling** . Tyto přepsané metody jsou potom zděděné a používané v **XmlCharacterData**, **XmlDeclaration**, **XmlDocumentType**, **XmlElement**, **XmlEntityReference**a **XmlProcessingInstruction**, což jsou třídy, které mají předchozí a další na stejné úrovni.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Model DOM (Document Object Model) dokumentu XML](../../../../docs/standard/data/xml/xml-document-object-model-dom.md)
+- [model DOM (Document Object Model) dokumentu XML](../../../../docs/standard/data/xml/xml-document-object-model-dom.md)

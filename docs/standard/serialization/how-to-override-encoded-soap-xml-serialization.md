@@ -14,7 +14,7 @@ ms.locfileid: "61922587"
 ---
 # <a name="how-to-override-encoded-soap-xml-serialization"></a>Postupy: Přepsání serializace XML zakódované v protokolu SOAP
 
-Proces pro přepsání XML serializaci objektů jako zprávy protokolu SOAP je podobný procesu pro přepsání standardních serializace XML. Informace o přepsání standardních serializace XML, naleznete v tématu [jak: Určení alternativního názvu elementu pro XML Stream](../../../docs/standard/serialization/how-to-specify-an-alternate-element-name-for-an-xml-stream.md).
+Proces pro přepsání XML serializaci objektů jako zprávy protokolu SOAP je podobný procesu pro přepsání standardních serializace XML. Informace o přepsání standardní serializace XML naleznete v tématu [How to: zadejte název alternativního prvku pro datový proud XML](../../../docs/standard/serialization/how-to-specify-an-alternate-element-name-for-an-xml-stream.md).
 
 ## <a name="to-override-serialization-of-objects-as-soap-messages"></a>Chcete-li přepsat serializaci objektů jako zprávy protokolu SOAP
 
@@ -24,11 +24,11 @@ Proces pro přepsání XML serializaci objektů jako zprávy protokolu SOAP je p
 
 3. Vytvořte instanci jedné nebo více atributů, které mají vliv na serializace XML, v závislosti na člena serializována. Další informace naleznete v tématu "Atributy, aby ovládací prvek kódovaný SOAP serializace".
 
-4. Nastavit vlastnost odpovídající `SoapAttributes` k atributu vytvořili v kroku 3.
+4. Nastavte odpovídající vlastnost `SoapAttributes` pro na atribut vytvořený v kroku 3.
 
 5. Add `SoapAttributes` to `SoapAttributeOverrides`.
 
-6. Vytvořit `XmlTypeMapping` pomocí `SoapAttributeOverrides`. Použití `SoapReflectionImporter.ImportTypeMapping` metody.
+6. Vytvořit `XmlTypeMapping` pomocí `SoapAttributeOverrides`. Použijte metodu `SoapReflectionImporter.ImportTypeMapping`.
 
 7. Vytvořit `XmlSerializer` pomocí `XmlTypeMapping`.
 
@@ -278,11 +278,11 @@ public class Run
 }
 ```
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Serializace XML a SOAP](../../../docs/standard/serialization/xml-and-soap-serialization.md)
-- [Seznam atributů řídících serializaci zakódovanou v protokolu SOAP](../../../docs/standard/serialization/attributes-that-control-encoded-soap-serialization.md)
-- [Serializace XML pomocí webových služeb XML](../../../docs/standard/serialization/xml-serialization-with-xml-web-services.md)
+- [Atributy, které řídí kódovanou serializaci SOAP](../../../docs/standard/serialization/attributes-that-control-encoded-soap-serialization.md)
+- [Serializace XML s webovými službami XML](../../../docs/standard/serialization/xml-serialization-with-xml-web-services.md)
 - [Postupy: Serializace objektu](../../../docs/standard/serialization/how-to-serialize-an-object.md)
 - [Postupy: Deserializace objektu](../../../docs/standard/serialization/how-to-deserialize-an-object.md)
-- [Postupy: Serializace objektu jako XML kódováním protokolu SOAP Stream](../../../docs/standard/serialization/how-to-serialize-an-object-as-a-soap-encoded-xml-stream.md)
+- [Postupy: Serializace objektu jako XML streamu zakódovaného v protokolu SOAP](../../../docs/standard/serialization/how-to-serialize-an-object-as-a-soap-encoded-xml-stream.md)

@@ -16,13 +16,13 @@ ms.locfileid: "78156384"
 # <a name="ordered-node-retrieval-by-index"></a>Načtení seřazených uzlů podle indexu
 Konsorcium World Wide Web (W3C) XML model DOM (Document Object Model) (DOM) také popisuje seznam uzlů., který má schopnost zpracovávat uspořádaný seznam uzlů, na rozdíl od neuspořádané sady, která je zpracována **XmlNamedNodeMap**. Seznam uzlů. v Microsoft .NET Framework se nazývá **XmlNodeList**. Metody a vlastnosti, které vracejí **XmlNodeList** , jsou:  
   
-- XmlNode.ChildNodes  
+- XmlNode. ChildNodes  
   
-- XmlDocument.GetElementsByTagName  
+- XmlDocument. GetElementsByTagName  
   
-- XmlElement.GetElementsByTagName  
+- XmlElement. GetElementsByTagName  
   
-- XmlNode.SelectNodes  
+- XmlNode. SelectNodes  
   
  **XmlNodeList** má vlastnost **Count** , kterou lze použít k zápisu smyček pro iteraci v uzlech **XmlNodeList**, jak je znázorněno v následujícím příkladu kódu:  
   
@@ -53,7 +53,7 @@ for (int i=0; i < elemList.Count; i++)
 }
 ```  
   
- Kromě vlastnosti **Count** je k dispozici metoda **GetEnumerator** , která pro kolekci uzlů v **XmlNodeList**poskytuje iteraci stylu `foreach`. Následující příklad kódu ukazuje použití příkazu `foreach`.  
+ Kromě vlastnosti **Count** je k dispozici metoda **GetEnumerator** , která pro kolekci uzlů v **XmlNodeList**poskytuje `foreach` iteraci stylu. Následující příklad kódu ukazuje použití `foreach` příkazu.  
   
 ```vb  
 Dim doc As New XmlDocument()  
@@ -90,8 +90,8 @@ End While
   }  
 ```  
   
- Další informace o metodách a vlastnostech dostupných na **XmlNodeList**naleznete v tématu <xref:System.Xml.XmlNodeList>.  
+ Další informace o metodách a vlastnostech dostupných v **XmlNodeList**naleznete v tématu <xref:System.Xml.XmlNodeList>.  
   
 ## <a name="see-also"></a>Viz také
 
-- [Model DOM (Document Object Model) dokumentu XML](../../../../docs/standard/data/xml/xml-document-object-model-dom.md)
+- [model DOM (Document Object Model) dokumentu XML](../../../../docs/standard/data/xml/xml-document-object-model-dom.md)

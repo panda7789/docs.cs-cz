@@ -1,6 +1,6 @@
 ---
-title: + a += operátory - c# odkaz
-ms.date: 05/24/2019
+title: + and + = Operators-C# Reference
+ms.date: 04/23/2020
 f1_keywords:
 - +_CSharpKeyword
 - +=_CSharpKeyword
@@ -13,42 +13,42 @@ helpviewer_keywords:
 - event subscription [C#]
 - += operator [C#]
 ms.assetid: 93e56486-bb42-43c1-bd43-60af11e64e67
-ms.openlocfilehash: cafd07f4b4aefdcc4b43750d61c155fe3d65aa46
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 18364d80b8117fd4074c2c4231eac07c76829bb3
+ms.sourcegitcommit: 8b02d42f93adda304246a47f49f6449fc74a3af4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79399299"
+ms.lasthandoff: 04/24/2020
+ms.locfileid: "82135734"
 ---
-# <a name="-and--operators-c-reference"></a>+ a += operátory (odkaz C#)
+# <a name="-and--operators-c-reference"></a>+ a + = – operátory (Referenční dokumentace jazyka C#)
 
-A `+` `+=` operátory jsou podporovány předdefinované [integrální](../builtin-types/integral-numeric-types.md) a [plovoucí desetinnou desetinnou](../builtin-types/floating-point-numeric-types.md) hodnotou, typem [řetězce](../builtin-types/reference-types.md#the-string-type) a [delegací.](../builtin-types/reference-types.md#the-delegate-type)
+Operátory `+` a `+=` jsou podporovány integrovanými [celočíselnými](../builtin-types/integral-numeric-types.md) typy a čísly s [plovoucí desetinnou](../builtin-types/floating-point-numeric-types.md) čárkou, typem [řetězce](../builtin-types/reference-types.md#the-string-type) a typy [delegátů](../builtin-types/reference-types.md#the-delegate-type) .
 
-Informace o `+` operátoru aritmetiky naleznete [unary plus a minus operátory](arithmetic-operators.md#unary-plus-and-minus-operators) a sčítání operátor [+](arithmetic-operators.md#addition-operator-) části [aritmetické operátory](arithmetic-operators.md) článku.
+Informace o `+` aritmetickém operátoru naleznete v tématu [unární operátory plus a minus](arithmetic-operators.md#unary-plus-and-minus-operators) a [operátor sčítání](arithmetic-operators.md#addition-operator-) a další části v článku [aritmetické operátory](arithmetic-operators.md) .
 
 ## <a name="string-concatenation"></a>Zřetězení řetězců
 
-Pokud jeden nebo oba operandy jsou `+` typu [řetězce](../builtin-types/reference-types.md#the-string-type), operátor zřetězí řetězcové reprezentace jeho operandů:
+Když je jeden nebo oba operandy typu [String](../builtin-types/reference-types.md#the-string-type), `+` operátor zřetězí řetězcové reprezentace svých operandů (řetězcové vyjádření `null` je prázdným řetězcem):
 
 [!code-csharp-interactive[string concatenation](snippets/AdditionOperator.cs#AddStrings)]
 
-Počínaje C# 6, [řetězec interpolace](../tokens/interpolated.md) poskytuje pohodlnější způsob, jak formátovat řetězce:
+Počínaje jazykem C# 6 poskytuje [interpolace řetězců](../tokens/interpolated.md) pohodlnější způsob formátování řetězců:
 
 [!code-csharp-interactive[string interpolation](snippets/AdditionOperator.cs#UseStringInterpolation)]
 
 ## <a name="delegate-combination"></a>Kombinace delegátů
 
-Pro operandy stejného typu `+` [delegáta](../builtin-types/reference-types.md#the-delegate-type) operátor vrátí novou instanci delegáta, která při vyvolání vyvolá operand u levé ruky a potom vyvolá pravostranný operand. Pokud některý z operandů `null` `+` je , operátor vrátí hodnotu jiného `null`operandu (což může být také ). Následující příklad ukazuje, jak lze delegáty kombinovat s operátorem: `+`
+Pro operandy stejného typu [delegáta](../builtin-types/reference-types.md#the-delegate-type) vrátí `+` operátor novou instanci delegáta, která při vyvolání vyvolá levý operand a poté vyvolá operand na pravé straně. Pokud je `null`některý z operandů, `+` operátor vrátí hodnotu jiného operandu (což může být `null`také). Následující příklad ukazuje, jak mohou být Delegáti kombinováni `+` s operátorem:
 
 [!code-csharp-interactive[delegate combination](snippets/AdditionOperator.cs#AddDelegates)]
 
-Chcete-li provést odebrání [ `-` ](subtraction-operator.md#delegate-removal)delegáta, použijte operátor .
+Chcete-li provést odebrání delegáta, použijte [ `-` operátor](subtraction-operator.md#delegate-removal).
 
-Další informace o typech delegátů naleznete v tématu [Delegáti](../../programming-guide/delegates/index.md).
+Další informace o typech delegátů naleznete v tématu [Delegates](../../programming-guide/delegates/index.md).
 
-## <a name="addition-assignment-operator-"></a>Operátor přiřazení sčítání +=
+## <a name="addition-assignment-operator-"></a>Operátor přiřazení sčítání + =
 
-Výraz používající `+=` operátor, například
+Výraz, který `+=` používá operátor, například
 
 ```csharp
 x += y
@@ -60,27 +60,27 @@ je ekvivalentem
 x = x + y
 ```
 
-kromě `x` toho, že se vyhodnocuje pouze jednou.
+s výjimkou, že `x` je vyhodnocena pouze jednou.
 
-Následující příklad ukazuje použití operátoru: `+=`
+Následující příklad ukazuje použití `+=` operátoru:
 
 [!code-csharp-interactive[+= examples](snippets/AdditionOperator.cs#AddAndAssign)]
 
-`+=` Operátor můžete také použít k určení metody obslužné rutiny události při přihlášení k odběru [události](../keywords/event.md). Další informace naleznete v [tématu Jak: přihlásit se k odběru a odhlásit se z odběru událostí](../../programming-guide/events/how-to-subscribe-to-and-unsubscribe-from-events.md).
+`+=` Operátor můžete také použít k určení metody obslužné rutiny události při přihlášení k odběru [události](../keywords/event.md). Další informace najdete v tématu [Postup: přihlášení a](../../programming-guide/events/how-to-subscribe-to-and-unsubscribe-from-events.md)odhlášení odběru událostí.
 
-## <a name="operator-overloadability"></a>Přetížení obsluhy
+## <a name="operator-overloadability"></a>Přetížení operátoru
 
-Uživatelem definovaný typ může `+` [přetížit](operator-overloading.md) operátor. Když binární `+` operátor je přetížený, `+=` operátor je také implicitně přetížené. Uživatelem definovaný typ nemůže `+=` explicitně přetížit operátor.
+Uživatelsky definovaný typ může [přetížit](operator-overloading.md) `+` operátor. Při přetížení binárního `+` operátoru je `+=` operátor také implicitně přetížený. Uživatelsky definovaný typ nemůže explicitně přetížit `+=` operátor.
 
 ## <a name="c-language-specification"></a>specifikace jazyka C#
 
-Další informace naleznete [unary plus operátor](~/_csharplang/spec/expressions.md#unary-plus-operator) a [sčítání operátor](~/_csharplang/spec/expressions.md#addition-operator) části [c# specifikace jazyka](~/_csharplang/spec/introduction.md).
+Další informace naleznete v částech [unárního operátoru plus](~/_csharplang/spec/expressions.md#unary-plus-operator) a [operátoru sčítání](~/_csharplang/spec/expressions.md#addition-operator) ve [specifikaci jazyka C#](~/_csharplang/spec/introduction.md).
 
 ## <a name="see-also"></a>Viz také
 
 - [Referenční dokumentace k jazyku C#](../index.md)
 - [Operátory jazyka C#](index.md)
 - [Jak zřetězit více řetězců](../../how-to/concatenate-multiple-strings.md)
-- [Akce](../../programming-guide/events/index.md)
+- [Události](../../programming-guide/events/index.md)
 - [Aritmetické operátory](arithmetic-operators.md)
-- [- a -= operátoři](subtraction-operator.md)
+- [-a-= – operátory](subtraction-operator.md)

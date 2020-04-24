@@ -13,6 +13,6 @@ ms.locfileid: "75709943"
 # <a name="xml-element-and-attribute-name-verification-when-creating-new-nodes"></a>Ověření názvu atributu a elementu XML při vytváření nových uzlů
 Model DOM (Document Object Model) XML (DOM) kontroluje platnost názvů při vytváření nových uzlů prvků nebo uzlů atributů. Pokud názvy obsahují neplatné znaky, je vyvolána výjimka. Aby bylo zajištěno, že názvy jsou platné a kódované správně, je nutné použít třídu **XmlConvert** ke kódování názvu a dekódování na úrovni aplikace. Funkce **XmlWriter** má metody, které provedly další práci, aby bylo zajištěno, že kód XML je vygenerován správně.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Model DOM (Document Object Model) dokumentu XML](../../../../docs/standard/data/xml/xml-document-object-model-dom.md)
+- [model DOM (Document Object Model) dokumentu XML](../../../../docs/standard/data/xml/xml-document-object-model-dom.md)

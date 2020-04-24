@@ -18,9 +18,9 @@ ms.locfileid: "78155734"
   
 - XmlElement. Attributes  
   
-- XmlDocumentType.Entities  
+- XmlDocumentType. Entities  
   
-- XmlDocumentType.Notations  
+- XmlDocumentType. Notation  
   
  Například vlastnost **XmlDocumentType. Entities** Získá kolekci uzlů **XmlEntity** deklarovaných v deklaraci typu dokumentu. Tato kolekce se vrátí jako **XmlNamedNodeMap**a můžete iterovat v rámci kolekce s použitím vlastnosti **Count** a informací o zobrazení entity. Příklad iterace prostřednictvím **XmlNamedNodeMap**naleznete v tématu <xref:System.Xml.XmlDocumentType.Entities%2A>.  
   
@@ -119,4 +119,4 @@ class test {
   
 ## <a name="see-also"></a>Viz také
 
-- [Model DOM (Document Object Model) dokumentu XML](../../../../docs/standard/data/xml/xml-document-object-model-dom.md)
+- [model DOM (Document Object Model) dokumentu XML](../../../../docs/standard/data/xml/xml-document-object-model-dom.md)

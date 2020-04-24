@@ -20,6 +20,6 @@ Metoda **CreateEntityReference** vytvoří nový uzel **XmlEntityReference** . M
   
  I když je **objektu XmlDataDocument** odvozenou třídou **XmlDocument**, **objektu XmlDataDocument** nepodporuje vytváření odkazů na entity. Důvodem je, že podřízené objekty **EntityReference** jsou jen pro čtení. Podřízené položky uzlu **EntityReference** mohou být rozloženy do více než jedné oblasti. V tomto případě bude část řádku přidružená k oblasti, která obsahuje část objektu **EntityReference** , jen pro čtení.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Model DOM (Document Object Model) dokumentu XML](../../../../docs/standard/data/xml/xml-document-object-model-dom.md)
+- [model DOM (Document Object Model) dokumentu XML](../../../../docs/standard/data/xml/xml-document-object-model-dom.md)

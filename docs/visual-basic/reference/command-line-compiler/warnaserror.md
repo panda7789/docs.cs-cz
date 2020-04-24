@@ -24,20 +24,20 @@ Způsobí, že kompilátor bude zacházet s prvním výskytem upozornění jako 
   
 ## <a name="arguments"></a>Argumenty  
   
-|Termín|Definice|  
+|Označení|Definice|  
 |---|---|  
-|+ &#124; -|Volitelná. Ve výchozím nastavení je `-warnaserror-` aktivní. Upozornění nebrání kompilátoru v vytváření výstupního souboru. Možnost `-warnaserror`, která je stejná jako `-warnaserror+`, způsobí, že upozornění budou považována za chyby.|  
-|`numberList`|Volitelná. Seznam čísel ID upozornění oddělených čárkami, na které se vztahuje možnost `-warnaserror` Pokud není zadané žádné ID upozornění, možnost `-warnaserror` platí pro všechna upozornění.|  
+|+ &#124; –|Nepovinný parametr. Ve výchozím nastavení `-warnaserror-` je to v platnosti. Upozornění nebrání kompilátoru v vytváření výstupního souboru. `-warnaserror` Možnost, která je stejná jako `-warnaserror+`, způsobí, že upozornění budou považována za chyby.|  
+|`numberList`|Nepovinný parametr. Seznam čísel ID upozornění oddělených čárkami, na které se `-warnaserror` možnost vztahuje. Pokud není zadané žádné ID upozornění, bude `-warnaserror` možnost platit pro všechna upozornění.|  
   
 ## <a name="remarks"></a>Poznámky  
- Možnost `-warnaserror` zpracovává všechna upozornění jako chyby. Všechny zprávy, které by byly obvykle hlášeny jako upozornění, jsou místo toho hlášeny jako chyby. Kompilátor ohlásí následné výskyty stejného upozornění jako upozornění.  
+ `-warnaserror` Možnost zpracovává všechna upozornění jako chyby. Všechny zprávy, které by byly obvykle hlášeny jako upozornění, jsou místo toho hlášeny jako chyby. Kompilátor ohlásí následné výskyty stejného upozornění jako upozornění.  
   
- Ve výchozím nastavení je `-warnaserror-` aktivní, což způsobí, že upozornění budou pouze informativní. Možnost `-warnaserror`, která je stejná jako `-warnaserror+`, způsobí, že upozornění budou považována za chyby.  
+ Ve výchozím nastavení `-warnaserror-` je to v platnosti, což způsobí, že upozornění budou pouze informativní. `-warnaserror` Možnost, která je stejná jako `-warnaserror+`, způsobí, že upozornění budou považována za chyby.  
   
  Pokud chcete, aby se jako chyby považovala jenom některá konkrétní upozornění, můžete zadat čárkami oddělený seznam čísel upozornění, která se budou považovat za chyby.  
   
 > [!NOTE]
-> Možnost `-warnaserror` neurčuje, jak se zobrazují upozornění. Pro vypnutí upozornění použijte možnost [-](../../../visual-basic/reference/command-line-compiler/nowarn.md) upozornění.  
+> `-warnaserror` Možnost neurčuje, jak se zobrazují upozornění. Pro vypnutí upozornění použijte možnost [-](../../../visual-basic/reference/command-line-compiler/nowarn.md) upozornění.  
   
 |Nastavení-warnaserror –, aby považovala všechna upozornění jako chyby v integrovaném vývojovém prostředí sady Visual Studio|  
 |---|  
@@ -61,7 +61,7 @@ vbc -warnaserror in.vb
 vbc -warnaserror:42024 t2.vb  
 ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Visual Basic Kompilátor příkazového řádku](../../../visual-basic/reference/command-line-compiler/index.md)
 - [Příkazové řádky ukázkové kompilace](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)

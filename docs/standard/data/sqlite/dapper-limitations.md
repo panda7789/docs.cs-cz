@@ -17,13 +17,13 @@ Při použití Microsoft. data. sqlite s [dapperem](https://stackexchange.github
 
 Názvy parametrů SQLite rozlišují velká a malá písmena. Zajistěte, aby názvy parametrů používané v SQL odpovídaly velikostem vlastností anonymního objektu. Problém [#18861](https://github.com/dotnet/efcore/issues/18861) by vylepšil toto prostředí.
 
-Dapperem také očekává parametry pro použití předpony `@`. Jiné předpony nebudou fungovat.
+Dapperem také očekává parametry pro použití `@` předpony. Jiné předpony nebudou fungovat.
 
 [!code-csharp[](../../../../samples/snippets/standard/data/sqlite/DapperSample/Program.cs?name=snippet_Parameter)]
 
 ## <a name="data-types"></a>Typy dat
 
-Dapperem čte hodnoty pomocí indexeru SqliteDataReader. Návratový typ tohoto indexeru je objekt, což znamená, že bude vracet pouze hodnoty Long, Double, String nebo Byte []. Další informace najdete v tématu [datové typy](types.md). Dapperem zpracovává většinu převodů mezi těmito a dalšími primitivními typy. Bohužel nezpracovává `DateTimeOffset`, `Guid`nebo `TimeSpan`. Vytvořte obslužné rutiny typů, pokud chcete použít tyto typy ve výsledcích.
+Dapperem čte hodnoty pomocí indexeru SqliteDataReader. Návratový typ tohoto indexeru je objekt, což znamená, že bude vracet pouze hodnoty Long, Double, String nebo Byte []. Další informace najdete v tématu [datové typy](types.md). Dapperem zpracovává většinu převodů mezi těmito a dalšími primitivními typy. Bohužel nezpracovává `DateTimeOffset`, `Guid`nebo. `TimeSpan` Vytvořte obslužné rutiny typů, pokud chcete použít tyto typy ve výsledcích.
 
 [!code-csharp[](../../../../samples/snippets/standard/data/sqlite/DapperSample/Program.cs?name=snippet_TypeHandlers)]
 
@@ -31,7 +31,7 @@ Nezapomeňte před dotazování přidat obslužné rutiny typů.
 
 [!code-csharp[](../../../../samples/snippets/standard/data/sqlite/DapperSample/Program.cs?name=snippet_AddTypeHandlers)]
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-* [Datové typy](types.md)
+* [Typy dat](types.md)
 * [Asynchronní omezení](async.md)

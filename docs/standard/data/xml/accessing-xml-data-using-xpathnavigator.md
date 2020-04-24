@@ -11,25 +11,25 @@ ms.lasthandoff: 01/07/2020
 ms.locfileid: "75711165"
 ---
 # <a name="accessing-xml-data-using-xpathnavigator"></a>Přístup k datům XML pomocí XPathNavigator
-Třída <xref:System.Xml.XPath.XPathNavigator> poskytuje metody pro navigaci v uzlech, extrakci dat XML a přístup k datům XML se silným typem v objektu <xref:System.Xml.XPath.XPathDocument> nebo <xref:System.Xml.XmlDocument>.  
+<xref:System.Xml.XPath.XPathNavigator> Třída poskytuje metody pro navigaci v uzlech, extrakci dat XML a přístup k datům XML silného typu v objektu <xref:System.Xml.XPath.XPathDocument> or <xref:System.Xml.XmlDocument> .  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Navigace v sadě uzlů pomocí XPathNavigator](../../../../docs/standard/data/xml/node-set-navigation-using-xpathnavigator.md)  
- Popisuje uzel pro navigační metody <xref:System.Xml.XPath.XPathNavigator> třídy používané pro navigaci uzlů v objektu <xref:System.Xml.XPath.XPathDocument> nebo <xref:System.Xml.XmlDocument>.  
+ Popisuje, jak nastavit navigační metody <xref:System.Xml.XPath.XPathNavigator> třídy používané pro navigaci uzlů v objektu <xref:System.Xml.XPath.XPathDocument> nebo. <xref:System.Xml.XmlDocument>  
   
  [Navigace v uzlu oborů názvů a atributů pomocí XPathNavigator](../../../../docs/standard/data/xml/attribute-and-namespace-node-navigation-using-xpathnavigator.md)  
- Popisuje metody a atributy navigace uzlu oboru názvů třídy <xref:System.Xml.XPath.XPathNavigator>.  
+ Popisuje metody a vlastnosti navigace v uzlu oboru názvů <xref:System.Xml.XPath.XPathNavigator> třídy.  
   
  [Extrahování dat XML pomocí XPathNavigator](../../../../docs/standard/data/xml/extract-xml-data-using-xpathnavigator.md)  
- Popisuje různé metody extrakce dat XML z objektu <xref:System.Xml.XPath.XPathDocument> nebo <xref:System.Xml.XmlDocument>.  
+ Popisuje různé metody extrakce dat XML z objektu <xref:System.Xml.XPath.XPathDocument> nebo. <xref:System.Xml.XmlDocument>  
   
  [Přístup k datům XML silného typu pomocí XPathNavigator](../../../../docs/standard/data/xml/accessing-strongly-typed-xml-data-using-xpathnavigator.md)  
- Popisuje přístup k datům XML se silným typem v objektu <xref:System.Xml.XPath.XPathDocument> nebo <xref:System.Xml.XmlDocument> pomocí třídy <xref:System.Xml.XPath.XPathNavigator>.  
+ Popisuje přístup k datům XML se silným typem <xref:System.Xml.XPath.XPathDocument> v <xref:System.Xml.XmlDocument> objektu nebo pomocí <xref:System.Xml.XPath.XPathNavigator> třídy.  
   
  [Uživatelem definované funkce a proměnné](../../../../docs/standard/data/xml/user-defined-functions-and-variables.md)  
- Popisuje implementaci vlastní třídy <xref:System.Xml.Xsl.XsltContext> spolu s rozhraními <xref:System.Xml.Xsl.IXsltContextFunction> a <xref:System.Xml.Xsl.IXsltContextVariable>, které podporují funkce a proměnné rozšíření.  
+ Popisuje implementaci vlastní <xref:System.Xml.Xsl.XsltContext> třídy spolu s rozhraními <xref:System.Xml.Xsl.IXsltContextFunction> a <xref:System.Xml.Xsl.IXsltContextVariable> podporující funkce rozšíření a proměnné.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Xml.XmlDocument>
 - <xref:System.Xml.XPath.XPathDocument>

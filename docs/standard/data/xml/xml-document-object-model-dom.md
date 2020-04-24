@@ -42,7 +42,7 @@ V rámci struktury dokumentu XML každý kroužek na tomto obrázku představuje
 - Načtěte celé uzly kromě informací, které uzel obsahuje, jako je například text v uzlu element.
 
   > [!NOTE]
-  > Pokud aplikace nevyžaduje strukturu nebo možnosti úprav poskytované modelem DOM, třídy **XmlReader** a **XmlWriter** poskytují neuložený datový proud, který je určen pouze pro přístup ke streamu XML. Další informace naleznete v tématu <xref:System.Xml.XmlReader> a <xref:System.Xml.XmlWriter>.
+  > Pokud aplikace nevyžaduje strukturu nebo možnosti úprav poskytované modelem DOM, třídy **XmlReader** a **XmlWriter** poskytují neuložený datový proud, který je určen pouze pro přístup ke streamu XML. Další informace naleznete v tématech <xref:System.Xml.XmlReader> a <xref:System.Xml.XmlWriter>.
 
 Objekty **uzlů** mají sadu metod a vlastností a také základní a jasně definované charakteristiky. Některé z těchto vlastností jsou:
 
@@ -50,13 +50,13 @@ Objekty **uzlů** mají sadu metod a vlastností a také základní a jasně def
 
 - Většina uzlů může mít více podřízených uzlů, které jsou uzly přímo pod nimi. Následuje seznam typů uzlů, které mohou mít podřízené uzly.
 
-  - **Dokument**
+  - **Dokumentů**
 
   - **DocumentFragment**
 
   - **EntityReference**
 
-  - **Element**
+  - **Prvek**
 
   - **Atribut**
 
@@ -64,7 +64,7 @@ Objekty **uzlů** mají sadu metod a vlastností a také základní a jasně def
 
 - Uzly, které jsou na stejné úrovni, reprezentované v diagramu **Kniha** a uzly **pubinfo** , jsou na stejné úrovni.
 
-Jedna z vlastností modelu DOM je způsob, jakým zpracovává atributy. Atributy nejsou uzly, které jsou součástí vztahů nadřazených, podřízených a na stejné úrovni. Atributy jsou považovány za vlastnost uzlu elementu a jsou tvořeny názvem a dvojicí hodnot. Například pokud máte data XML sestávající z `format="dollar`"přidruženo k elementu `price`, slovo `format` je název a hodnota atributu `format` je `dollar`. Chcete-li načíst atribut `format="dollar"` **cenového** uzlu, zavolejte metodu **GetAttribute** , když je kurzor umístěn v uzlu `price` elementu. Další informace naleznete v tématu [přístup k atributům v modelu DOM](../../../../docs/standard/data/xml/accessing-attributes-in-the-dom.md).
+Jedna z vlastností modelu DOM je způsob, jakým zpracovává atributy. Atributy nejsou uzly, které jsou součástí vztahů nadřazených, podřízených a na stejné úrovni. Atributy jsou považovány za vlastnost uzlu elementu a jsou tvořeny názvem a dvojicí hodnot. Například pokud máte data XML sestávající `format="dollar`z "přidruženo k elementu `price`", slovo `format` je název a hodnota `format` atributu je. `dollar` Chcete-li `format="dollar"` načíst atribut **cenového** uzlu, zavolejte metodu **GetAttribute** , pokud je kurzor umístěn v uzlu `price` element. Další informace naleznete v tématu [přístup k atributům v modelu DOM](../../../../docs/standard/data/xml/accessing-attributes-in-the-dom.md).
 
 V případě, že je kód XML čten do paměti, jsou vytvořeny uzly. Ale ne všechny uzly jsou stejného typu. Element v jazyce XML má odlišná pravidla a syntaxi než instrukce pro zpracování. Proto se při čtení různých dat typ uzlu přiřadí každému uzlu. Tento typ uzlu určuje vlastnosti a funkce uzlu.
 
@@ -74,7 +74,7 @@ Společnost Microsoft rozšířila rozhraní API, která jsou k dispozici v kons
 
 Model DOM je nejužitečnější pro čtení dat XML do paměti pro změnu struktury, pro přidání nebo odebrání uzlů nebo pro úpravu dat držených uzlem jako v textu obsaženém v prvku. K dispozici jsou však jiné třídy, které jsou rychlejší než model DOM v jiných scénářích. V případě rychlého, neuloženého datového proudu, který je pouze pro zápis do mezipaměti, použijte rozhraní **XmlReader** a **XmlWriter**. Pokud potřebujete náhodný přístup pomocí modelu kurzoru a **XPath**, použijte třídu **XPathNavigator** .
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Typy uzlů XML](../../../../docs/standard/data/xml/types-of-xml-nodes.md)
 - [Mapování hierarchie objektů na data XML](../../../../docs/standard/data/xml/mapping-the-object-hierarchy-to-xml-data.md)

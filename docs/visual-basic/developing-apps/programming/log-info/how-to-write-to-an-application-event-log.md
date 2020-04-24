@@ -16,39 +16,39 @@ ms.locfileid: "74352051"
 ---
 # <a name="how-to-write-to-an-application-event-log-visual-basic"></a>Postupy: Zápis do protokolu událostí aplikace (Visual Basic)
 
-Objekty a `My.Application.Log` `My.Log` můžete použít k zápisu informací o událostech, ke kterým dochází ve vaší aplikaci. Tento příklad ukazuje, jak nakonfigurovat `My.Application.Log` naslouchací proces protokolu událostí, takže zapíše informace o trasování do protokolu událostí aplikace.
+Pomocí objektů `My.Application.Log` a `My.Log` můžete zapisovat informace o událostech, ke kterým dochází ve vaší aplikaci. Tento příklad ukazuje, jak nakonfigurovat naslouchací proces protokolu událostí, `My.Application.Log` který zapisuje trasovací informace do protokolu událostí aplikace.
 
-Do protokolu zabezpečení nelze zapisovat. Chcete-li zapisovat do systémového protokolu, musíte být členem účtu LocalSystem nebo Administrator.
+Do protokolu zabezpečení nelze zapisovat. Aby bylo možné zapisovat do systémového protokolu, musíte být členem účtu LocalSystem nebo správce.
 
-Chcete-li zobrazit protokol událostí, můžete použít **Průzkumníka serveru** nebo **Prohlížeč událostí systému Windows**. Další informace naleznete [v tématu ETW Události v rozhraní .NET Framework](../../../../framework/performance/etw-events.md).
+Chcete-li zobrazit protokol událostí, můžete použít **Průzkumník serveru** nebo **Windows Prohlížeč událostí**. Další informace najdete v tématu [události ETW v .NET Framework](../../../../framework/performance/etw-events.md).
 
-## <a name="to-add-and-configure-the-event-log-listener"></a>Přidání a konfigurace posluchače protokolu událostí
+## <a name="to-add-and-configure-the-event-log-listener"></a>Přidání a konfigurace naslouchacího procesu protokolu událostí
 
-1. Klepněte pravým tlačítkem myši na soubor app.config v **Průzkumníku řešení** a zvolte **Otevřít**.
+1. V **Průzkumník řešení** klikněte pravým tlačítkem na soubor App. config a vyberte **otevřít**.
 
-    \-nebo -
+    \-ani
 
-    Pokud není k dispozici žádný soubor app.config,
+    Pokud soubor App. config neexistuje,
 
-    1. V nabídce **Projekt** zvolte **Přidat novou položku**.
+    1. V nabídce **projekt** klikněte na příkaz **Přidat novou položku**.
 
-    2. V dialogovém okně **Přidat novou položku** zvolte **Konfigurační soubor aplikace**.
+    2. V dialogovém okně **Přidat novou položku** vyberte možnost **konfigurační soubor aplikace**.
 
-    3. Klikněte na **Přidat**.
+    3. Klikněte na tlačítko **Add** (Přidat).
 
-2. Vyhledejte `<listeners>` oddíl v konfiguračním souboru aplikace.
+2. Vyhledejte `<listeners>` část v konfiguračním souboru aplikace.
 
-    Oddíl najdete `<listeners>` v `<source>` sekci s atributem název "DefaultSource", který `<system.diagnostics>` je vnořen pod oddíl, který je vnořen pod oddíl nejvyšší úrovně. `<configuration>`
+    `<listeners>` Část `<source>` v oddílu najdete s názvem atribut "DefaultSource", který je vnořen do `<system.diagnostics>` oddílu, který je vnořen v části nejvyšší úrovně `<configuration>` .
 
-3. Přidejte tento `<listeners>` prvek do tohoto oddílu:
+3. Přidejte tento element do této `<listeners>` části:
 
     ```xml
     <add name="EventLog"/>
     ```
 
-4. Vyhledejte `<sharedListeners>` oddíl v `<system.diagnostics>` části v části `<configuration>` nejvyšší úrovně.
+4. Vyhledejte `<sharedListeners>` část `<system.diagnostics>` v části v sekci nejvyšší úrovně `<configuration>` .
 
-5. Přidejte tento `<sharedListeners>` prvek do tohoto oddílu:
+5. Přidejte tento element do této `<sharedListeners>` části:
 
     ```xml
     <add name="EventLog"
@@ -56,22 +56,22 @@ Chcete-li zobrazit protokol událostí, můžete použít **Průzkumníka server
          initializeData="APPLICATION_NAME"/>
     ```
 
-    Nahraďte `APPLICATION_NAME` název aplikace.
+    Nahraďte `APPLICATION_NAME` názvem vaší aplikace.
 
     > [!NOTE]
-    > Aplikace obvykle zapisuje pouze chyby do protokolu událostí. Informace o výstupu protokolu filtrování naleznete [v tématu Návod: Filtrování výstupu my.Application.Log](../../../../visual-basic/developing-apps/programming/log-info/walkthrough-filtering-my-application-log-output.md).
+    > Aplikace obvykle zapisuje pouze chyby do protokolu událostí. Informace o filtrování výstupu protokolu naleznete v tématu [Návod: filtrování výstupu my. Application. log](../../../../visual-basic/developing-apps/programming/log-info/walkthrough-filtering-my-application-log-output.md).
 
-## <a name="to-write-event-information-to-the-event-log"></a>Zápis informací o událostech do protokolu událostí
+## <a name="to-write-event-information-to-the-event-log"></a>Zápis informací o události do protokolu událostí
 
-Pomocí `My.Application.Log.WriteEntry` metody `My.Application.Log.WriteException` or zapište informace do protokolu událostí. Další informace naleznete v [tématu How to: Write Log Messages](../../../../visual-basic/developing-apps/programming/log-info/how-to-write-log-messages.md) and [How to: Log Exceptions](../../../../visual-basic/developing-apps/programming/log-info/how-to-log-exceptions.md).
+Pomocí metody `My.Application.Log.WriteEntry` nebo `My.Application.Log.WriteException` zapište informace do protokolu událostí. Další informace naleznete v tématu [How to: Write log messages](../../../../visual-basic/developing-apps/programming/log-info/how-to-write-log-messages.md) and [to: log Exceptions](../../../../visual-basic/developing-apps/programming/log-info/how-to-log-exceptions.md).
 
-Po konfiguraci posluchače protokolu událostí pro sestavení obdrží `My.Application.Log` všechny zprávy, které zapisuje z tohoto sestavení.
+Po nakonfigurování naslouchacího procesu protokolu událostí pro sestavení obdrží všechny zprávy, které `My.Application.Log` zapisují z tohoto sestavení.
 
 ## <a name="see-also"></a>Viz také
 
 - <xref:Microsoft.VisualBasic.Logging.Log?displayProperty=nameWithType>
 - <xref:Microsoft.VisualBasic.Logging.Log.WriteEntry%2A>
 - <xref:Microsoft.VisualBasic.Logging.Log.WriteException%2A>
-- [Práce s protokoly aplikací](../../../../visual-basic/developing-apps/programming/log-info/working-with-application-logs.md)
+- [Práce s protokoly aplikací](../../../../visual-basic/developing-apps/programming/log-info/working-with-application-logs.md)
 - [Postupy: Protokolování výjimek](../../../../visual-basic/developing-apps/programming/log-info/how-to-log-exceptions.md)
 - [Návod: Zjištění, kam objekt My.Application.Log zapisuje informace](../../../../visual-basic/developing-apps/programming/log-info/walkthrough-determining-where-my-application-log-writes-information.md)

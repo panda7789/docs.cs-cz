@@ -11,8 +11,8 @@ ms.locfileid: "75901285"
 ---
 # <a name="online-backup"></a>Online zálohování
 
-SQLite může zálohovat soubory databáze, když je aplikace spuštěná. Tato funkce je k dispozici v Microsoft. data. sqlite jako metoda <xref:Microsoft.Data.Sqlite.SqliteConnection.BackupDatabase%2A> v `SqliteConnection`.
+SQLite může zálohovat soubory databáze, když je aplikace spuštěná. Tato funkce je k dispozici v Microsoft. data. sqlite <xref:Microsoft.Data.Sqlite.SqliteConnection.BackupDatabase%2A> jako metoda `SqliteConnection`na.
 
 [!code-csharp[](../../../../samples/snippets/standard/data/sqlite/BackupSample/Program.cs?name=snippet_Backup)]
 
-V současné době `BackupDatabase` zálohuje databázi co nejrychleji a zablokuje další připojení pro zápis do databáze. Problém [#13834](https://github.com/dotnet/efcore/issues/13834) by poskytoval alternativní rozhraní API pro zálohování databáze na pozadí a povolení dalších připojení k přerušení zálohování a zápisu do databáze. Pokud vás zajímá, poskytněte nám svůj názor na problém.
+V současné `BackupDatabase` době bude databáze zálohována co nejrychleji a zablokuje další připojení z zápisu do databáze. Problém [#13834](https://github.com/dotnet/efcore/issues/13834) by poskytoval alternativní rozhraní API pro zálohování databáze na pozadí a povolení dalších připojení k přerušení zálohování a zápisu do databáze. Pokud vás zajímá, poskytněte nám svůj názor na problém.

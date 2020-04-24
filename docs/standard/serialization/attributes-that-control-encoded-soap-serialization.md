@@ -17,11 +17,11 @@ ms.locfileid: "61794937"
 ---
 # <a name="attributes-that-control-encoded-soap-serialization"></a>Atributy, které řídí serializaci zakódovanou v protokolu SOAP
 
-World Wide Web Consortium (W3C) dokumentu s názvem [jednoduchý objekt přístup protokolu (SOAP) 1.1](https://www.w3.org/TR/2000/NOTE-SOAP-20000508/) obsahuje volitelný oddíl (oddíl 5), který popisuje, jak může být zakódován parametry protokolu SOAP. Tak, aby odpovídal pro oddíl 5 specifikace, musí používat speciální sadu atributů v nalezen <xref:System.Xml.Serialization> oboru názvů. Tyto atributy v závislosti na třídy a členy třídy aplikovat a pak <xref:System.Xml.Serialization.XmlSerializer> k serializaci instancí třídy nebo tříd.
+Dokument konsorcium World Wide Web (W3C) s názvem [Simple Object Access Protocol (SOAP) 1,1](https://www.w3.org/TR/2000/NOTE-SOAP-20000508/) obsahuje volitelný oddíl (oddíl 5), který popisuje, jak lze kódovat parametry protokolu SOAP. Pro dodržení oddílu 5 specifikace musíte použít speciální sadu atributů, které se <xref:System.Xml.Serialization> nacházejí v oboru názvů. Tyto atributy v závislosti na třídy a členy třídy aplikovat a pak <xref:System.Xml.Serialization.XmlSerializer> k serializaci instancí třídy nebo tříd.
 
-V následující tabulce jsou uvedeny atributy, kde je lze použít, a jejich význam. Další informace o použití těchto atributů ovládacímu prvku serializace XML, naleznete v tématu [jak: Serializace objektu jako XML kódováním protokolu SOAP Stream](how-to-serialize-an-object-as-a-soap-encoded-xml-stream.md) a [jak: Přepsat kódovaný protokol SOAP XML serializace](how-to-override-encoded-soap-xml-serialization.md).
+V následující tabulce jsou uvedeny atributy, kde je lze použít, a jejich význam. Další informace o použití těchto atributů pro řízení serializace XML naleznete v tématu [How to: serializovat objekt jako datový proud XML s kódováním SOAP](how-to-serialize-an-object-as-a-soap-encoded-xml-stream.md) a [Postupy: přepsání serializace XML](how-to-override-encoded-soap-xml-serialization.md)s kódováním.
 
-Další informace o atributech najdete v tématu [atributy](../../../docs/standard/attributes/index.md).
+Další informace o atributech naleznete v tématu [Attributes](../../../docs/standard/attributes/index.md).
 
 |Atribut|Platí pro|Určuje|
 |---------------|----------------|---------------|
@@ -32,11 +32,11 @@ Další informace o atributech najdete v tématu [atributy](../../../docs/standa
 |<xref:System.Xml.Serialization.SoapIncludeAttribute>|Veřejná odvozené třídy prohlášení a veřejné metody pro dokumenty služby popis jazyka WSDL (Web).|Typ by měly být zahrnuty při generování schémat (Chcete-li rozpoznán po serializován).|
 |<xref:System.Xml.Serialization.SoapTypeAttribute>|Deklarace veřejných tříd.|Třída by měla být serializován jako typ objektu XML.|
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Serializace XML a SOAP](xml-and-soap-serialization.md)
-- [Postupy: Serializace objektu jako XML kódováním protokolu SOAP Stream](how-to-serialize-an-object-as-a-soap-encoded-xml-stream.md)
-- [Postupy: Přepsat kódovaný protokol SOAP serializace XML](how-to-override-encoded-soap-xml-serialization.md)
+- [Postupy: Serializace objektu jako XML streamu zakódovaného v protokolu SOAP](how-to-serialize-an-object-as-a-soap-encoded-xml-stream.md)
+- [Postupy: Přepsání serializace XML zakódované v protokolu SOAP](how-to-override-encoded-soap-xml-serialization.md)
 - [Atributy](../../../docs/standard/attributes/index.md)
 - <xref:System.Xml.Serialization.XmlSerializer>
 - [Postupy: Serializace objektu](how-to-serialize-an-object.md)

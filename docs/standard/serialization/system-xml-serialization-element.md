@@ -13,12 +13,12 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 06/27/2019
 ms.locfileid: "67410550"
 ---
-# <a name="systemxmlserialization-element"></a>\<system.xml.serialization> Element
+# <a name="systemxmlserialization-element"></a>\<System. XML. Serialization – element>
 
-Element nejvyšší úrovně pro řízení serializace XML. Další informace o konfiguračních souborech najdete v tématu [schéma konfiguračního souboru](../../../docs/framework/configure-apps/file-schema/index.md).
+Element nejvyšší úrovně pro řízení serializace XML. Další informace o konfiguračních souborech najdete v tématu [Schéma konfiguračního souboru](../../../docs/framework/configure-apps/file-schema/index.md).
 
-\<Konfigurace > \
-\<system.xml.serialization>
+\<> Konfigurace \
+\<System. XML. Serialization –>
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -33,20 +33,20 @@ Následující části popisují atributy, podřízené prvky a nadřazené prvk
 
 ### <a name="attributes"></a>Atributy
 
-Žádné
+Žádné.
 
 ### <a name="child-elements"></a>Podřízené elementy
 
 |Prvek|Popis|
 |-------------|-----------------|
-|[\<dateTimeSerialization > – Element](../../../docs/standard/serialization/datetimeserialization-element.md)|Určuje režim serializace <xref:System.DateTime> objekty.|
-|[\<schemaImporterExtensions> Element](../../../docs/standard/serialization/schemaimporterextensions-element.md)|Obsahuje typy, které jsou používány <xref:System.Xml.Serialization.XmlSchemaImporter> pro mapování typů XSD na typy rozhraní .NET Framework.|
+|[\<dateTimeSerialization – element>](../../../docs/standard/serialization/datetimeserialization-element.md)|Určuje režim serializace <xref:System.DateTime> objekty.|
+|[\<schemaImporterExtensions – element>](../../../docs/standard/serialization/schemaimporterextensions-element.md)|Obsahuje typy, které jsou používány <xref:System.Xml.Serialization.XmlSchemaImporter> pro mapování typů XSD na typy rozhraní .NET Framework.|
 
 ### <a name="parent-elements"></a>Nadřazené elementy
 
 |Prvek|Popis|
 |-------------|-----------------|
-|[\<Konfigurace > – Element](../../../docs/framework/configure-apps/file-schema/configuration-element.md)|Kořenový element v každém konfiguračním souboru, který je používán common language runtime a aplikacemi rozhraní .NET Framework.|
+|[\<Element> konfigurace](../../../docs/framework/configure-apps/file-schema/configuration-element.md)|Kořenový element v každém konfiguračním souboru, který je používán common language runtime a aplikacemi rozhraní .NET Framework.|
 
 ## <a name="example"></a>Příklad
 
@@ -66,11 +66,11 @@ Následující příklad kódu ukazuje, jak určit režim serializace <xref:Syst
 </system.xml.serialization>
 ```
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Xml.Serialization.XmlSchemaImporter>
 - <xref:System.Xml.Serialization.Configuration.DateTimeSerializationSection.DateTimeSerializationMode>
 - [Schéma konfiguračního souboru](../../../docs/framework/configure-apps/file-schema/index.md)
-- [\<dateTimeSerialization > – Element](../../../docs/standard/serialization/datetimeserialization-element.md)
-- [\<schemaImporterExtensions> Element](../../../docs/standard/serialization/schemaimporterextensions-element.md)
-- [\<Přidat > – Element pro \<schemaImporterExtensions >](../../../docs/standard/serialization/add-element-for-schemaimporterextensions.md)
+- [\<dateTimeSerialization – element>](../../../docs/standard/serialization/datetimeserialization-element.md)
+- [\<schemaImporterExtensions – element>](../../../docs/standard/serialization/schemaimporterextensions-element.md)
+- [\<Přidat> element pro \<>schemaImporterExtensions](../../../docs/standard/serialization/add-element-for-schemaimporterextensions.md)

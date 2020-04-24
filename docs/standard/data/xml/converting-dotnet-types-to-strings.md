@@ -15,15 +15,15 @@ Pokud chcete převést .NET Framework typ na řetězec, použijte metodu **ToStr
   
 |Typ rozhraní .NET Framework|Vrácený typ řetězce|  
 |-------------------------|--------------------------|  
-|Boolean|"pravda", "NEPRAVDA"|  
-|Single. PositiveInfinity|"INF"|  
+|Logická hodnota|"pravda", "NEPRAVDA"|  
+|Single. PositiveInfinity|SOUBORŮ|  
 |Single. NegativeInfinity|"-INF"|  
-|Double. PositiveInfinity|"INF"|  
+|Double. PositiveInfinity|SOUBORŮ|  
 |Double. NegativeInfinity|"-INF"|  
-|Datum a čas|Formát je RRRR-MM-ddTHH: mm: sszzzzzz a jeho podmnožiny.|  
-|Časový rozsah|Formát je PnYnMnTnHnMnS, například `P2Y10M15DT10H30M20S` má délku 2 roky, 10 měsíců, 15 dní, 10hours, 30 minut a 20 sekund.|  
+|DateTime|Formát je RRRR-MM-ddTHH: mm: sszzzzzz a jeho podmnožiny.|  
+|Časový interval|Formát je PnYnMnTnHnMnS, například `P2Y10M15DT10H30M20S` je doba 2 roky, 10 měsíců, 15 dní, 10hours, 30 minut a 20 sekund.|  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Převod datových typů XML](../../../../docs/standard/data/xml/conversion-of-xml-data-types.md)
 - [Převádění řetězců na datové typy rozhraní .NET Framework](../../../../docs/standard/data/xml/converting-strings-to-dotnet-data-types.md)

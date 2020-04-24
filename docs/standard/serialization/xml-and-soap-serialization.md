@@ -18,7 +18,7 @@ ms.locfileid: "80588378"
 ---
 # <a name="xml-and-soap-serialization"></a>Serializace XML a SOAP
 
-Serializace XML převede (serializuje) veřejná pole a vlastnosti objektu a parametry a vrácené hodnoty metod na datový proud XML, který odpovídá dokumentu jazyka XSD specifického jazyka XML Schema. Serializace XML výsledkem silného typu třídy s veřejné vlastnosti a pole, které jsou převedeny na sériového formátu (v tomto případě XML) pro uložení nebo přenos.
+Serializace XML převede (serializace) Veřejná pole a vlastnosti objektu a parametry a návratové hodnoty metod do datového proudu XML, který odpovídá konkrétnímu dokumentu XSD (XML Schema Definition Language). Serializace XML výsledkem silného typu třídy s veřejné vlastnosti a pole, které jsou převedeny na sériového formátu (v tomto případě XML) pro uložení nebo přenos.
 
 Protože kód XML je otevřený standard, může být zpracována datový proud XML ve všech aplikacích, podle potřeby, bez ohledu na platformu. Můžete například webové služby XML vytvořené pomocí technologie ASP.NET použití <xref:System.Xml.Serialization.XmlSerializer> třídy za účelem vytvoření datové proudy XML, který vkládá data mezi aplikací webové služby XML v rámci Internetu nebo v těchto sítích. Deserializace naopak přebírá takové datový proud XML a rekonstruuje objektu.
 

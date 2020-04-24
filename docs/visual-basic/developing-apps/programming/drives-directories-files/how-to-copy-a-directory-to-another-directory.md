@@ -16,51 +16,51 @@ ms.locfileid: "74348866"
 ---
 # <a name="how-to-copy-a-directory-to-another-directory-in-visual-basic"></a>Postupy: Zkopírování adresáře do jiného adresáře v jazyce Visual Basic
 
-Pomocí <xref:Microsoft.VisualBasic.FileIO.FileSystem.CopyDirectory%2A> této metody zkopírujte adresář do jiného adresáře. Tato metoda kopíruje obsah adresáře i samotný adresář. Pokud cílový adresář neexistuje, bude vytvořen. Pokud adresář se stejným názvem existuje v `overwrite` cílovém `False`umístění a je nastaven na , bude obsah obou adresářů sloučen. Během operace můžete zadat nový název adresáře.
+K zkopírování adresáře do jiného adresáře použijte <xref:Microsoft.VisualBasic.FileIO.FileSystem.CopyDirectory%2A> metodu. Tato metoda zkopíruje obsah adresáře a také samotný adresář. Pokud cílový adresář neexistuje, vytvoří se. Pokud v cílovém umístění existuje adresář se stejným názvem a `overwrite` je nastaven na `False`hodnotu, obsah obou adresářů bude sloučen. Během operace můžete zadat nový název adresáře.
 
-Při kopírování souborů v adresáři mohou být vyvolány výjimky, které jsou způsobeny určitým `overwrite` souborem, například souborem existujícím během sloučení, zatímco je nastavenna na `False`. Při vyvolání těchto výjimek jsou sloučeny do jediné `Data` výjimky, jejíž vlastnost obsahuje položky, ve kterých je klíč souboru nebo cesty k adresáři a konkrétní zpráva o výjimce je obsažena v odpovídající hodnotě.
+Při kopírování souborů v adresáři mohou být vyvolány výjimky, které jsou způsobeny konkrétním souborem, jako je například soubor existující během sloučení, `overwrite` zatímco je nastavena `False`na. Pokud jsou tyto výjimky vyvolány, jsou konsolidovány do jediné výjimky, `Data` jejíž vlastnost obsahuje položky, ve kterých je soubor nebo cesta k adresáři klíč a specifická zpráva výjimky je obsažena v odpovídající hodnotě.
 
-## <a name="to-copy-a-directory-to-another-directory"></a>Kopírování adresáře do jiného adresáře
+## <a name="to-copy-a-directory-to-another-directory"></a>Zkopírování adresáře do jiného adresáře
 
-- Použijte `CopyDirectory` metodu určující názvy zdrojových a cílových adresářů. Následující příklad zkopíruje `TestDirectory1` adresář `TestDirectory2`s názvem do , přepsání existujících souborů.
+- Použijte metodu `CopyDirectory` , která určuje název zdrojového a cílového adresáře. Následující příklad zkopíruje adresář s názvem `TestDirectory1` do `TestDirectory2`a přepíše stávající soubory.
 
     [!code-vb[VbVbcnMyFileSystem#16](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnMyFileSystem/VB/Class1.vb#16)]
 
-    Tento příklad kódu je také k dispozici jako fragment kódu IntelliSense. Ve výběru fragmentu kódu je umístěn v **systému souborů - Zpracování jednotek, složek a souborů**. Další informace naleznete v [tématu Fragmenty kódu](/visualstudio/ide/code-snippets).
+    Tento příklad kódu je také k dispozici jako fragment kódu technologie IntelliSense. Ve výběru fragmentu kódu se nachází v **systému souborů – zpracování jednotek, složek a souborů**. Další informace naleznete v tématu [fragmenty kódu](/visualstudio/ide/code-snippets).
 
 ## <a name="robust-programming"></a>Robustní programování
 
 Následující podmínky mohou způsobit výjimku:
 
-- Nový název zadaný pro adresář obsahuje dvojtečku (:) nebo lomítko (\<xref:System.ArgumentException>nebo /) ( ).
+- Nový název zadaný pro adresář obsahuje dvojtečku (:) nebo lomítko (\ nebo/)<xref:System.ArgumentException>().
 
-- Cesta není platná z jednoho z následujících důvodů: jedná se o řetězec nulové délky, obsahuje pouze prázdné znaky, \\ \\\\obsahuje neplatné znaky nebo se jedná o cestu zařízení (začíná na . ) (<xref:System.ArgumentException>).
+- Cesta není platná z některého z následujících důvodů: Jedná se o řetězec o nulové délce, obsahuje pouze prázdné znaky, obsahuje neplatné znaky nebo se jedná o cestu k zařízení (začíná \\ \\na.\\) (<xref:System.ArgumentException>).
 
-- Cesta není platná, protože `Nothing` <xref:System.ArgumentNullException>je ( ).
+- Cesta není platná, protože je `Nothing` (<xref:System.ArgumentNullException>).
 
-- `destinationDirectoryName`je `Nothing` nebo prázdný<xref:System.ArgumentNullException>řetězec ( )
+- `destinationDirectoryName`je `Nothing` nebo prázdný řetězec (<xref:System.ArgumentNullException>)
 
 - Zdrojový adresář neexistuje (<xref:System.IO.DirectoryNotFoundException>).
 
-- Zdrojový adresář je kořenový<xref:System.IO.IOException>adresář ( ).
+- Zdrojový adresář je kořenový adresář (<xref:System.IO.IOException>).
 
-- Kombinovaná cesta odkazuje na existující<xref:System.IO.IOException>soubor ( ).
+- Kombinovaná cesta odkazuje na existující soubor (<xref:System.IO.IOException>).
 
-- Zdrojová cesta a cílová<xref:System.IO.IOException>cesta jsou stejné ( ).
+- Cesta ke zdroji a cílová cesta jsou stejné (<xref:System.IO.IOException>).
 
-- `ShowUI`je nastavena na `UIOption.AllDialogs` a uživatel operaci zruší nebo jeden nebo více souborů<xref:System.OperationCanceledException>v adresáři nelze zkopírovat ( ).
+- `ShowUI`je nastaven na `UIOption.AllDialogs` hodnotu a uživatel operaci zruší nebo jeden či více souborů v adresáři nelze zkopírovat (<xref:System.OperationCanceledException>).
 
-- Operace je cyklická<xref:System.InvalidOperationException>( ).
+- Operace je cyklická (<xref:System.InvalidOperationException>).
 
 - Cesta obsahuje dvojtečku (:) (<xref:System.NotSupportedException>).
 
-- Cesta překračuje maximální délku definovanou<xref:System.IO.PathTooLongException>systémem ( ).
+- Cesta přesahuje maximální povolenou délku (<xref:System.IO.PathTooLongException>) definovanou systémem.
 
-- Název souboru nebo složky v cestě obsahuje dvojtečku (:) nebo je v neplatném formátu (<xref:System.NotSupportedException>).
+- Název souboru nebo složky v cestě obsahuje dvojtečku (:) nebo má neplatnou hodnotu format<xref:System.NotSupportedException>().
 
-- Uživatel nemá potřebná oprávnění k<xref:System.Security.SecurityException>zobrazení cesty ( ).
+- Uživatel nemá potřebná oprávnění k zobrazení cesty (<xref:System.Security.SecurityException>).
 
-- Cílový soubor existuje, ale nelze<xref:System.UnauthorizedAccessException>k němu získat přístup ( ).
+- Cílový soubor existuje, ale nelze k němu přistupovat (<xref:System.UnauthorizedAccessException>).
 
 ## <a name="see-also"></a>Viz také
 

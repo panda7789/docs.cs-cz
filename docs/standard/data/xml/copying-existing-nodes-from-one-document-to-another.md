@@ -21,7 +21,7 @@ Metoda **ImportNode** je mechanismus, pomocí kterého se uzel nebo celý podstr
   
 |Typ uzlu|*hluboký* parametr má hodnotu true.|*hluboký* parametr má hodnotu false.|  
 |---------------|------------------------------|-------------------------------|  
-|XmlAttribute|<xref:System.Xml.XmlAttribute.Specified%2A> je na atributu XmlAttribute nastaven na **hodnotu true** . Následníky zdroje **XmlAttribute** jsou rekurzivně importovány a výsledné uzly znovu sestaveny tak, aby tvořily odpovídající podstrom.|*Hluboký* parametr se nevztahuje na uzly **XmlAttribute** , protože při importu vždy přenesou jejich podřízené uzly.|  
+|XmlAttribute|Vlastnost <xref:System.Xml.XmlAttribute.Specified%2A> je nastavena na **hodnotu true** na atributu XmlAttribute. Následníky zdroje **XmlAttribute** jsou rekurzivně importovány a výsledné uzly znovu sestaveny tak, aby tvořily odpovídající podstrom.|*Hluboký* parametr se nevztahuje na uzly **XmlAttribute** , protože při importu vždy přenesou jejich podřízené uzly.|  
 |XmlCDataSection|Zkopíruje uzel, včetně jeho dat.|Zkopíruje uzel, včetně jeho dat.|  
 |XmlComment|Zkopíruje uzel, včetně jeho dat.|Zkopíruje uzel, včetně jeho dat.|  
 |XmlDocumentFragment|Následníky zdrojového uzlu jsou rekurzivně importovány a výsledné uzly znovu sestaveny tak, aby tvořily odpovídající podstrom.|Vytvoří se prázdná **XmlDocumentFragment** .|  
@@ -38,6 +38,6 @@ Metoda **ImportNode** je mechanismus, pomocí kterého se uzel nebo celý podstr
 > [!NOTE]
 > I když lze importovat uzly DocumentType, může mít dokument pouze jeden DocumentType. Takže po importu typu dokumentu před jeho vložením do stromu je nutné se ujistit, že v dokumentu není žádný typ dokumentu. Informace o odebírání uzlů najdete v tématu [Odebrání uzlů, obsahu a hodnot z dokumentu XML](../../../../docs/standard/data/xml/removing-nodes-content-and-values-from-an-xml-document.md).  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Model DOM (Document Object Model) dokumentu XML](../../../../docs/standard/data/xml/xml-document-object-model-dom.md)
+- [model DOM (Document Object Model) dokumentu XML](../../../../docs/standard/data/xml/xml-document-object-model-dom.md)

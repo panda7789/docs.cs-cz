@@ -14,7 +14,7 @@ ms.locfileid: "74329599"
 ---
 # <a name="accessing-the-computers-ports-visual-basic"></a>Přístup k portům počítače (Visual Basic)
 
-Objekt `My.Computer.Ports` poskytuje vlastnost a metodu pro přístup k sériovým portům počítače.  
+`My.Computer.Ports` Objekt poskytuje vlastnost a metodu pro přístup k sériovým portům počítače.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
 
@@ -25,13 +25,13 @@ Objekt `My.Computer.Ports` poskytuje vlastnost a metodu pro přístup k sériov�
  Ukazuje, jak vytočit modem připojený k sériovému portu počítače.  
   
  [Postupy: Posílání řetězců na sériové porty](../../../../visual-basic/developing-apps/programming/computer-resources/how-to-send-strings-to-serial-ports.md)  
- Ukazuje, jak odeslat řetězec do sériového portu počítače.  
+ Ukazuje, jak odeslat řetězec na sériový port počítače.  
   
  [Postupy: Příjem řetězců ze sériových portů](../../../../visual-basic/developing-apps/programming/computer-resources/how-to-receive-strings-from-serial-ports.md)  
- Ukazuje, jak přijímat řetězec ze sériového portu počítače.  
+ Ukazuje, jak přijímat řetězce z sériového portu počítače.  
   
  [Portové operace v rozhraní .NET Framework](../../../../visual-basic/developing-apps/programming/computer-resources/port-operations-in-the-net-framework.md)  
- Popisuje způsob použití rozhraní .NET Framework při provádění operací s porty.  
+ Popisuje, jak používat .NET Framework při provádění operací portů.  
   
 ## <a name="reference"></a>Referenční informace  
 
@@ -42,9 +42,9 @@ Objekt `My.Computer.Ports` poskytuje vlastnost a metodu pro přístup k sériov�
  Popisuje `SerialPortNames` vlastnost, která získá kolekci názvů sériových portů v počítači.  
   
  <xref:Microsoft.VisualBasic.Devices.Ports.OpenSerialPort%2A>  
- Popisuje metodu, `OpenSerialPort` která vytvoří <xref:System.IO.Ports.SerialPort?displayProperty=nameWithType> a otevře objekt.  
+ Popisuje `OpenSerialPort` metodu, která vytváří a otevírá <xref:System.IO.Ports.SerialPort?displayProperty=nameWithType> objekt.  
   
 ## <a name="related-sections"></a>Související oddíly  
 
  <xref:System.IO.Ports.SerialPort>  
- Popisuje třídu rozhraní <xref:System.IO.Ports.SerialPort> .NET Framework.
+ Popisuje třídu .NET Framework <xref:System.IO.Ports.SerialPort> .

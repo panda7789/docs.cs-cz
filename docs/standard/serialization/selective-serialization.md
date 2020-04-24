@@ -27,7 +27,7 @@ public class MyObject
 }  
 ```
 
-Přesvědčte se, pokud je to možné, objekt, který by mohl obsahovat nonserializable data citlivá na zabezpečení. Pokud objekt musí být serializován, použijte atribut `NonSerialized` pro konkrétní pole, která ukládají citlivá data. Pokud tato pole nevylučujete ze serializace, uvědomte si, že data, která jsou uložena, jsou vystavena jakémukoli kódu, který má oprávnění k serializaci. Další informace o psaní kódu zabezpečené serializace naleznete v tématu [Security and Serialization](../../../docs/framework/misc/security-and-serialization.md).
+Přesvědčte se, pokud je to možné, objekt, který by mohl obsahovat nonserializable data citlivá na zabezpečení. Pokud objekt musí být serializován, použijte `NonSerialized` atribut pro konkrétní pole, která ukládají citlivá data. Pokud tato pole nevylučujete ze serializace, uvědomte si, že data, která jsou uložena, jsou vystavena jakémukoli kódu, který má oprávnění k serializaci. Další informace o psaní kódu zabezpečené serializace naleznete v tématu [Security and Serialization](../../../docs/framework/misc/security-and-serialization.md).
 
 [!INCLUDE [binary-serialization-warning](../../../includes/binary-serialization-warning.md)]
   

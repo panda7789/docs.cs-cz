@@ -26,19 +26,19 @@ Vynutila striktní sémantiku typu pro omezení implicitních převodů typu.
 -optionstrict[:custom]
 ```
 
-## <a name="arguments"></a>Arguments
+## <a name="arguments"></a>Argumenty
 
-`+` &#124; `-`  
-Volitelné. Možnost `-optionstrict+` omezuje implicitní převod typu. Výchozí hodnota pro tuto možnost je `-optionstrict-`. Možnost `-optionstrict+` je stejná jako `-optionstrict`. Pro sémantiku typu lze použít obojí.
+`+`&#124;`-`  
+Nepovinný parametr. `-optionstrict+` Možnost omezuje implicitní převod typu. Výchozí hodnota pro tuto možnost je `-optionstrict-`. `-optionstrict+` Možnost je stejná jako `-optionstrict`. Pro sémantiku typu lze použít obojí.
 
 `custom`  
-Požadováno. Zobrazit upozornění, pokud není respektována striktní sémantika jazyka
+Povinná hodnota. Zobrazit upozornění, pokud není respektována striktní sémantika jazyka
 
 ## <a name="remarks"></a>Poznámky
 
-Pokud je platný `-optionstrict+`, lze implicitně převést pouze rozšiřující převody typů. Implicitně zúžené převody typů, jako je například přiřazení objektu typu `Decimal` k objektu typu Integer, jsou hlášeny jako chyby.
+V `-optionstrict+` důsledku toho je možné implicitně převést pouze rozšiřující převody typů. Implicitně zúžené převody typů, jako je například `Decimal` přiřazení objektu typu k objektu typu Integer, jsou hlášeny jako chyby.
 
-Chcete-li generovat upozornění pro implicitní zužující převody typů, použijte `-optionstrict:custom`. Pomocí `-nowarn:numberlist` můžete ignorovat konkrétní upozornění a `-warnaserror:numberlist` pro považovat konkrétní upozornění za chyby.
+Chcete-li generovat upozornění pro implicitní zužující převody typů, `-optionstrict:custom`použijte. Slouží `-nowarn:numberlist` k ignorování konkrétních upozornění `-warnaserror:numberlist` a k považovat konkrétní upozornění za chyby.
 
 ### <a name="to-set--optionstrict-in-the-visual-studio-ide"></a>Nastavení-OptionStrict – v integrovaném vývojovém prostředí sady Visual Studio
 
@@ -54,18 +54,18 @@ Viz [příkaz Option Strict](../../../visual-basic/language-reference/statements
 
 ## <a name="example"></a>Příklad
 
-Následující kód zkompiluje `Test.vb` pomocí sémantiky striktního typu.
+Následující kód je zkompilován `Test.vb` pomocí sémantiky striktního typu.
 
 ```console
 vbc -optionstrict+ test.vb
 ```
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Visual Basic Kompilátor příkazového řádku](../../../visual-basic/reference/command-line-compiler/index.md)
-- [-optioncompare](../../../visual-basic/reference/command-line-compiler/optioncompare.md)
-- [-optionexplicit](../../../visual-basic/reference/command-line-compiler/optionexplicit.md)
-- [-optioninfer](../../../visual-basic/reference/command-line-compiler/optioninfer.md)
+- [– OptionCompare –](../../../visual-basic/reference/command-line-compiler/optioncompare.md)
+- [– OptionExplicit –](../../../visual-basic/reference/command-line-compiler/optionexplicit.md)
+- [– optioninfer –](../../../visual-basic/reference/command-line-compiler/optioninfer.md)
 - [-nowarn](../../../visual-basic/reference/command-line-compiler/nowarn.md)
 - [-warnaserror – (Visual Basic)](../../../visual-basic/reference/command-line-compiler/warnaserror.md)
 - [Příkazové řádky ukázkové kompilace](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)
