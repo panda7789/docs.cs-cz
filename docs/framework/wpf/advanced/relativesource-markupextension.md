@@ -7,27 +7,27 @@ helpviewer_keywords:
 - RelativeSource markup extensions [WPF]
 - XAML [WPF], RelativeSource markup extension
 ms.assetid: 26be4721-49b5-4717-a92e-7d54ad0d3a81
-ms.openlocfilehash: 6301299da966ade9b5cc7ccd105c8269a486744e
-ms.sourcegitcommit: 62285ec11fa8e8424bab00511a90760c60e63c95
+ms.openlocfilehash: 47117d684a981f31e22cf513fc78e1e2dda73f8a
+ms.sourcegitcommit: 839777281a281684a7e2906dccb3acd7f6a32023
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/20/2020
-ms.locfileid: "81646229"
+ms.lasthandoff: 04/24/2020
+ms.locfileid: "82141266"
 ---
 # <a name="relativesource-markupextension"></a>RelativeSource MarkupExtension
 
-Určuje vlastnosti <xref:System.Windows.Data.RelativeSource> zdroje vazby, které mají být použity v <xref:System.Windows.Data.Binding.RelativeSource%2A> rámci rozšíření <xref:System.Windows.Data.Binding> [značky vazby](binding-markup-extension.md)nebo při nastavování vlastnosti prvku vytvořeného v XAML.
+Určuje vlastnosti zdroje <xref:System.Windows.Data.RelativeSource> vazby, které mají být použity v [rozšíření značek vazby](binding-markup-extension.md), nebo při nastavení <xref:System.Windows.Data.Binding.RelativeSource%2A> vlastnosti <xref:System.Windows.Data.Binding> prvku vytvořeného v jazyce XAML.
 
 ## <a name="xaml-attribute-usage"></a>Použití atributu XAML
 
 ```xml
-<Binding RelativeSource="{RelativeSource modeEnumValue}" .../>
+<Binding RelativeSource="{RelativeSource modeEnumValue}" ... />
 ```
 
 ## <a name="xaml-attribute-usage-nested-within-binding-extension"></a>Použití atributu XAML (vnořeného do rozšíření Binding)
 
 ```xml
-<object property="{Binding RelativeSource={RelativeSource modeEnumValue} ...}" .../>
+<object property="{Binding RelativeSource={RelativeSource modeEnumValue} ...}" ... />
 ```
 
 ## <a name="xaml-object-element-usage"></a>Použití elementu objektu XAML
@@ -58,30 +58,30 @@ Určuje vlastnosti <xref:System.Windows.Data.RelativeSource> zdroje vazby, kter�
 
 |||
 |-|-|
-|`modeEnumValue`|Jeden z následujících produktů:<br /><br /> - Token `Self`řetězce ; odpovídá tak, <xref:System.Windows.Data.RelativeSource> jak bylo <xref:System.Windows.Data.RelativeSource.Mode%2A> vytvořeno <xref:System.Windows.Data.RelativeSourceMode.Self>s vlastností nastavenou na .<br />- Token `TemplatedParent`řetězce ; odpovídá tak, <xref:System.Windows.Data.RelativeSource> jak bylo <xref:System.Windows.Data.RelativeSource.Mode%2A> vytvořeno <xref:System.Windows.Data.RelativeSourceMode.TemplatedParent>s vlastností nastavenou na .<br />- Token `PreviousData`řetězce ; odpovídá tak, <xref:System.Windows.Data.RelativeSource> jak bylo <xref:System.Windows.Data.RelativeSource.Mode%2A> vytvořeno <xref:System.Windows.Data.RelativeSourceMode.PreviousData>s vlastností nastavenou na .<br />- Informace o `FindAncestor` režimu naleznete níže.|
-|`FindAncestor`|Token `FindAncestor`řetězce . Pomocí tohoto tokenu přejde `RelativeSource` režim, ve kterém určuje typ předchůdce a volitelně úroveň předchůdce. To odpovídá <xref:System.Windows.Data.RelativeSource> jako vytvořené s <xref:System.Windows.Data.RelativeSource.Mode%2A> jeho <xref:System.Windows.Data.RelativeSourceMode.FindAncestor>vlastnost nastavena na .|
-|`typeName`|Vyžadováno `FindAncestor` pro režim. Název typu, který vyplní <xref:System.Windows.Data.RelativeSource.AncestorType%2A> vlastnost.|
-|`intLevel`|Volitelné `FindAncestor` pro režim. Úroveň předchůdce (vyhodnocována ve směru nadřazeného uzlu v logickém stromu)|
+|`modeEnumValue`|Jeden z následujících produktů:<br /><br /> – Řetězcový token `Self`; odpovídá <xref:System.Windows.Data.RelativeSource> jako vytvořený s <xref:System.Windows.Data.RelativeSource.Mode%2A> vlastností nastavenou na. <xref:System.Windows.Data.RelativeSourceMode.Self><br />– Řetězcový token `TemplatedParent`; odpovídá <xref:System.Windows.Data.RelativeSource> jako vytvořený s <xref:System.Windows.Data.RelativeSource.Mode%2A> vlastností nastavenou na. <xref:System.Windows.Data.RelativeSourceMode.TemplatedParent><br />– Řetězcový token `PreviousData`; odpovídá <xref:System.Windows.Data.RelativeSource> jako vytvořený s <xref:System.Windows.Data.RelativeSource.Mode%2A> vlastností nastavenou na. <xref:System.Windows.Data.RelativeSourceMode.PreviousData><br />– Viz níže pro informace o `FindAncestor` režimu.|
+|`FindAncestor`|Řetězcový token `FindAncestor`. Pomocí tohoto tokenu přejdete do režimu `RelativeSource` , který určuje typ předchůdce a volitelně i úroveň předchůdce. To odpovídá typu <xref:System.Windows.Data.RelativeSource> , který byl vytvořen s <xref:System.Windows.Data.RelativeSource.Mode%2A> vlastností nastavenou na <xref:System.Windows.Data.RelativeSourceMode.FindAncestor>.|
+|`typeName`|Vyžaduje se `FindAncestor` pro režim. Název typu, který vyplní <xref:System.Windows.Data.RelativeSource.AncestorType%2A> vlastnost.|
+|`intLevel`|Volitelné pro `FindAncestor` režim. Úroveň předchůdce (vyhodnocována ve směru nadřazeného uzlu v logickém stromu)|
 
 ## <a name="remarks"></a>Poznámky
 
-`{RelativeSource TemplatedParent}`použití vazby jsou klíčovou technikou, která řeší větší koncept oddělení hlavního použití ovládacího prvku a logiku ovládacího prvku. To umožňuje vytvořit vazbu z definice šablony na nadřazený objekt vytvořený pomocí šablony (instanci objektu vytvořenou za běhu, pro niž je šablona použita). V tomto případě [TemplateBinding Markup Extension](templatebinding-markup-extension.md) je ve skutečnosti zkratka `{Binding RelativeSource={RelativeSource TemplatedParent}}`pro následující výraz vazby: . `TemplateBinding`nebo `{RelativeSource TemplatedParent}` použití jsou relevantní pouze v rámci XAML, který definuje šablonu. Další informace naleznete v [tématu TemplateBinding Markup Extension](templatebinding-markup-extension.md).
+`{RelativeSource TemplatedParent}`použití vazby představují klíčovou techniku, která řeší větší pojem oddělení uživatelského rozhraní ovládacího prvku a logiky ovládacího prvku. To umožňuje vytvořit vazbu z definice šablony na nadřazený objekt vytvořený pomocí šablony (instanci objektu vytvořenou za běhu, pro niž je šablona použita). V tomto případě je [rozšíření značek TemplateBinding](templatebinding-markup-extension.md) ve skutečnosti zkrácený pro následující výraz vazby: `{Binding RelativeSource={RelativeSource TemplatedParent}}`. `TemplateBinding`nebo `{RelativeSource TemplatedParent}` použití jsou relevantní pouze v rámci jazyka XAML, který definuje šablonu. Další informace najdete v tématu [rozšíření značek TemplateBinding](templatebinding-markup-extension.md).
 
-`{RelativeSource FindAncestor}`používá se hlavně v šablonách ovládacího prvku nebo předvídatelné samostatné kompozice uživatelského prvku, pro případy, kdy je vždy očekáváno, že ovládací prvek bude ve vizuálním stromu určitého typu předchůdce. Například položky ovládacího prvku `FindAncestor` položky může použít použití svázat s vlastnostmi jejich položky řídit nadřazený předchůdce. Nebo prvky, které jsou součástí složení `FindAncestor` ovládacího prvku v šabloně můžete použít vazby na nadřazené prvky ve stejné struktuře složení.
+`{RelativeSource FindAncestor}`se primárně používá v šablonách ovládacích prvků nebo předvídatelných sestavách uživatelského rozhraní, v případech, kdy se ovládací prvek vždy očekává ve vizuálním stromu určitého typu předchůdce. Například položky ovládacího prvku položky mohou použít `FindAncestor` použití k vytvoření vazby na vlastnosti svých položek nadřízený nadřazený prvek. Nebo elementy, které jsou součástí kompozice ovládacích prvků v šabloně, mohou `FindAncestor` použít vazby na nadřazené prvky ve stejné struktuře kompozice.
 
-V syntaxi prvku `FindAncestor` objektu pro režim zobrazený v částech Syntaxe XAML se syntaxe druhého prvku objektu používá speciálně pro `FindAncestor` režim. `FindAncestor`režim vyžaduje <xref:System.Windows.Data.RelativeSource.AncestorType%2A> hodnotu. Je nutné <xref:System.Windows.Data.RelativeSource.AncestorType%2A> nastavit jako atribut pomocí [x:Typ Značkovací rozšíření](../../../desktop-wpf/xaml-services/xtype-markup-extension.md) odkaz na typ předchůdce hledat. Hodnota <xref:System.Windows.Data.RelativeSource.AncestorType%2A> se používá při zpracování požadavku na vazbu za běhu.
+V syntaxi elementu objektu pro `FindAncestor` režim zobrazený v sekcích Syntaxe XAML se druhá syntaxe elementu Object používá konkrétně pro `FindAncestor` režim. `FindAncestor`režim vyžaduje <xref:System.Windows.Data.RelativeSource.AncestorType%2A> hodnotu. Musíte nastavit <xref:System.Windows.Data.RelativeSource.AncestorType%2A> jako atribut pomocí odkazu [rozšíření značek x:Type](../../../desktop-wpf/xaml-services/xtype-markup-extension.md) na typ předchůdce, který se má hledat. <xref:System.Windows.Data.RelativeSource.AncestorType%2A> Hodnota se používá v případě, že je požadavek na vazbu zpracován v době běhu.
 
-Pro `FindAncestor` režim může <xref:System.Windows.Data.RelativeSource.AncestorLevel%2A> volitelná vlastnost pomoci rozptýlit vyhledávání předchůdce v případech, kdy ve stromu prvků existuje více než jeden předchůdce tohoto typu.
+V `FindAncestor` případě režimu volitelná vlastnost <xref:System.Windows.Data.RelativeSource.AncestorLevel%2A> může podobu nejednoznačnosti vyhledávání předchůdce v případech, kdy je ve stromové struktuře elementu možná více než jeden nadřazený prvek daného typu.
 
-Další informace o použití `FindAncestor` režimu <xref:System.Windows.Data.RelativeSource>naleznete v tématu .
+Další informace o použití `FindAncestor` režimu naleznete v tématu. <xref:System.Windows.Data.RelativeSource>
 
-`{RelativeSource Self}`je užitečné pro scénáře, kde jedna vlastnost instance by měla záviset na hodnotě jiné vlastnosti stejné instance a žádný obecný vztah vlastnosti závislosti (například nátlak) již existuje mezi těmito dvěma vlastnostmi. I když je vzácné, že existují dvě vlastnosti na objekt tak, že hodnoty jsou doslova `Converter` identické (a `{RelativeSource Self}`jsou identicky zadány), můžete také použít parametr vazby, která má , a použít převaděč převést mezi zdrojové a cílové typy. Další scénář `{RelativeSource Self}` pro je <xref:System.Windows.MultiDataTrigger>jako součást .
+`{RelativeSource Self}`je vhodný pro scénáře, kdy by jedna vlastnost instance měla záviset na hodnotě jiné vlastnosti stejné instance a žádný obecný vztah vlastnosti závislosti (jako je například konverze) již mezi těmito dvěma vlastnostmi existuje. I když je pravděpodobné, že v objektu existují dvě vlastnosti, například hodnoty jsou doslova identické (a jsou identicky), můžete také použít `Converter` parametr na vazbu, která má `{RelativeSource Self}`, a použít konvertor k převodu mezi zdrojovým a cílovým typem. Další situací pro `{RelativeSource Self}` je jako součást <xref:System.Windows.MultiDataTrigger>.
 
-Například následující XAML definuje <xref:System.Windows.Shapes.Rectangle> prvek tak, že bez ohledu <xref:System.Windows.FrameworkElement.Width%2A>na <xref:System.Windows.Shapes.Rectangle> to, jaká hodnota je zadána , je vždy čtverec:`<Rectangle Width="200" Height="{Binding RelativeSource={RelativeSource Self}, Path=Width}" .../>`
+Například následující kód XAML definuje <xref:System.Windows.Shapes.Rectangle> prvek tak, aby bez ohledu na <xref:System.Windows.FrameworkElement.Width%2A> <xref:System.Windows.Shapes.Rectangle> to, jaká hodnota je zadána pro, je vždy čtvercový:`<Rectangle Width="200" Height="{Binding RelativeSource={RelativeSource Self}, Path=Width}" .../>`
 
-`{RelativeSource PreviousData}`je užitečné buď v šablonách dat nebo v případech, kdy vazby používají kolekci jako zdroj dat. Můžete zvýraznit `{RelativeSource PreviousData}` vztahy mezi sousedními datovými položkami v kolekci. Související technika je vytvořit <xref:System.Windows.Data.MultiBinding> mezi aktuální a předchozí položky ve zdroji dat a použít převaděč na tuto vazbu k určení rozdílu mezi dvě položky a jejich vlastnosti.
+`{RelativeSource PreviousData}`je užitečné buď v datových šablonách, nebo v případech, kdy vazby používají kolekci jako zdroj dat. Můžete použít `{RelativeSource PreviousData}` k zvýraznění vztahů mezi sousedními datovými položkami v kolekci. Související technikou je vytvořit <xref:System.Windows.Data.MultiBinding> mezi aktuálními a předchozími položkami ve zdroji dat a pomocí převaděče na této vazbě určit rozdíl mezi dvěma položkami a jejich vlastnostmi.
 
-V následujícím příkladu <xref:System.Windows.Controls.TextBlock> se zobrazí první v šabloně položek aktuální číslo. Druhá <xref:System.Windows.Controls.TextBlock> <xref:System.Windows.Data.MultiBinding> vazba je, že <xref:System.Windows.Data.Binding> nominálně má dva složky: aktuální záznam a vazba, která záměrně používá předchozí záznam dat pomocí `{RelativeSource PreviousData}`. Poté převaděč <xref:System.Windows.Data.MultiBinding> na vypočítá rozdíl a vrátí jej do vazby.
+V následujícím příkladu první <xref:System.Windows.Controls.TextBlock> v šabloně Items zobrazí aktuální číslo. Druhá <xref:System.Windows.Controls.TextBlock> vazba je, která <xref:System.Windows.Data.MultiBinding> má nominální hodnotu dvou <xref:System.Windows.Data.Binding> prvků: aktuální záznam a vazba, která záměrně používá předchozí datový záznam pomocí. `{RelativeSource PreviousData}` Pak konvertor na základě <xref:System.Windows.Data.MultiBinding> vypočítá rozdíl a vrátí ho do vazby.
 
 ```xml
 <ListBox Name="fibolist">
@@ -101,13 +101,14 @@ V následujícím příkladu <xref:System.Windows.Controls.TextBlock> se zobraz�
             </StackPanel>
         </DataTemplate>
     </ListBox.ItemTemplate>
+</ListBox>
 ```
 
-Popis datové vazby jako koncept zde není popsán, viz [Přehled datové vazby](../../../desktop-wpf/data/data-binding-overview.md).
+Popis datové vazby jako koncept se tady nezabývá, najdete v tématu [Přehled datových vazeb](../../../desktop-wpf/data/data-binding-overview.md).
 
-V [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] implementaci procesoru XAML zpracování pro toto rozšíření <xref:System.Windows.Data.RelativeSource> značky je definováno třídou.
+V implementaci [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] procesoru XAML je zpracování tohoto rozšíření značek definováno <xref:System.Windows.Data.RelativeSource> třídou.
 
-`RelativeSource`je rozšíření značky. Rozšíření značek jsou obvykle implementována v případě požadavku, aby díky použití řídicí sekvence mohly být hodnoty atributů něčím jiným než literálními hodnotami nebo názvy obslužných rutin, a tento požadavek má tak rozsáhlou platnost, že nestačí jednoduše použít převaděče typů pro určité typy nebo vlastnosti. Všechna rozšíření značek v XAML `{` `}` používají znaky a v syntaxi jejich atributu, což je konvence, podle které procesor XAML rozpozná, že rozšíření značek musí atribut zpracovat. Další informace naleznete [v tématu Markup Extensions a WPF XAML](markup-extensions-and-wpf-xaml.md).
+`RelativeSource`je rozšíření značek. Rozšíření značek jsou obvykle implementována v případě požadavku, aby díky použití řídicí sekvence mohly být hodnoty atributů něčím jiným než literálními hodnotami nebo názvy obslužných rutin, a tento požadavek má tak rozsáhlou platnost, že nestačí jednoduše použít převaděče typů pro určité typy nebo vlastnosti. Všechna rozšíření značek v jazyce XAML používají `{` ve `}` svých syntaxech atributů znaky a, což je konvence, pomocí níž procesor XAML rozpozná, že je nutné zpracovat atribut rozšířením značek. Další informace naleznete v tématu [rozšíření značek a WPF XAML](markup-extensions-and-wpf-xaml.md).
 
 ## <a name="see-also"></a>Viz také
 

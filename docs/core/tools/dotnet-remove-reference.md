@@ -1,69 +1,70 @@
 ---
-title: dotnet odebrat odkaz, příkaz
-description: Dotnet remove reference příkaz poskytuje vhodnou možnost odebrat projekt na odkazy projektu.
+title: dotnet – příkaz Remove reference
+description: Příkaz dotnet Remove Reference poskytuje pohodlný způsob, jak odebrat projekt odkazům na projekt.
 ms.date: 02/14/2020
-ms.openlocfilehash: 92d36bbbde64d806abc8f223c5f08e3f3d79ce9d
-ms.sourcegitcommit: 927b7ea6b2ea5a440c8f23e3e66503152eb85591
+ms.openlocfilehash: a45153376d7d6eb764c1d2c6b473d04a273a2de1
+ms.sourcegitcommit: c2c1269a81ffdcfc8675bcd9a8505b1a11ffb271
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81463445"
+ms.lasthandoff: 04/25/2020
+ms.locfileid: "82158330"
 ---
 # <a name="dotnet-remove-reference"></a>dotnet remove reference
 
-**Tento článek se týká:** ✔️ .NET Core 2.x SDK a novější verze
+**Tento článek se týká:** ✔️ .NET Core 2. x SDK a novějších verzí
 
 ## <a name="name"></a>Název
 
-`dotnet remove reference`- Odebere odkazy mezi projekty.
+`dotnet remove reference`– Odebere odkazy z projektu na projekt (P2P).
 
-## <a name="synopsis"></a>Synopse
+## <a name="synopsis"></a>Stručný obsah
 
 ```dotnetcli
-dotnet remove [<PROJECT>] reference [-f|--framework <FRAMEWORK>] <PROJECT_REFERENCES>
+dotnet remove [<PROJECT>] reference [-f|--framework <FRAMEWORK>]
+     <PROJECT_REFERENCES>
 
 dotnet remove reference -h|--help
 ```
 
 ## <a name="description"></a>Popis
 
-Příkaz `dotnet remove reference` poskytuje vhodnou možnost odebrání odkazů na projekt z projektu.
+`dotnet remove reference` Příkaz nabízí pohodlný možnost odebrání odkazů na projekt z projektu.
 
 ## <a name="arguments"></a>Argumenty
 
 `PROJECT`
 
-Cílový soubor projektu. Pokud není zadán, příkaz prohledá aktuální adresář pro jeden.
+Cílový soubor projektu. Pokud není zadán, příkaz vyhledá v aktuálním adresáři.
 
 `PROJECT_REFERENCES`
 
-Odkazy projektu na projekt (P2P) k odstranění. Můžete zadat jeden nebo více projektů. Glob vzory jsou [podporovány](https://en.wikipedia.org/wiki/Glob_(programming)) na Unix / Linux založené terminály.
+Odkazy z projektu na projekt (P2P), které se mají odebrat. Můžete určit jeden nebo více projektů. [Glob vzory](https://en.wikipedia.org/wiki/Glob_(programming)) jsou podporovány v terminálech založených na systému UNIX/Linux.
 
 ## <a name="options"></a>Možnosti
 
 - **`-h|--help`**
 
-  Vytiskne krátkou nápovědu pro příkaz.
+  Vypíše krátkou nápovědu k příkazu.
 
 - **`-f|--framework <FRAMEWORK>`**
 
-  Odebere odkaz pouze při cílení na konkrétní [rámec](../../standard/frameworks.md).
+  Odebere referenci pouze v případě, že cílí na konkrétní [rozhraní](../../standard/frameworks.md) pomocí formátu TFM.
 
 ## <a name="examples"></a>Příklady
 
-- Odeberte odkaz na projekt ze zadaného projektu:
+- Odebrat odkaz na projekt ze zadaného projektu:
 
   ```dotnetcli
   dotnet remove app/app.csproj reference lib/lib.csproj
   ```
 
-- Odebrání více odkazů na projekt z projektu v aktuálním adresáři:
+- Odebrat více odkazů na projekt z projektu v aktuálním adresáři:
 
   ```dotnetcli
   dotnet remove reference lib1/lib1.csproj lib2/lib2.csproj
   ```
 
-- Odstraňte více odkazů na projekt pomocí glob vzoru na Unix /Linux:
+- Odebrání více odkazů na projekt pomocí vzoru glob v systému UNIX/Linux:
 
   ```dotnetcli
   dotnet remove app/app.csproj reference **/*.csproj`

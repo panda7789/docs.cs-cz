@@ -3,12 +3,12 @@ title: Přizpůsobení z .NET Framework na .NET Core
 description: Pochopení procesu přenosu a zjišťování nástrojů, které můžete najít užitečné při přenosu .NET Framework projektu do .NET Core.
 author: cartermp
 ms.date: 10/22/2019
-ms.openlocfilehash: 499632791e85f4ede87668775ad48407c6988095
-ms.sourcegitcommit: 8b02d42f93adda304246a47f49f6449fc74a3af4
+ms.openlocfilehash: c6797a5b3a97ddd01f86498d896e859baf8997be
+ms.sourcegitcommit: c2c1269a81ffdcfc8675bcd9a8505b1a11ffb271
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "82135578"
+ms.lasthandoff: 04/25/2020
+ms.locfileid: "82158280"
 ---
 # <a name="overview-of-porting-from-net-framework-to-net-core"></a>Přehled přenosů z .NET Framework do .NET Core
 
@@ -33,7 +33,7 @@ V celém procesu se budou používat tyto nástroje:
 
 ## <a name="porting-a-solution"></a>Portování řešení
 
-V případě, že je v řešení více projektů, může přenos vypadat složitější, protože je nutné adresovat projekty v určitém pořadí. Proces převodu by měl být v rámci nejnižšího přístupu, kde se nejprve převádějí projekty bez závislostí na jiných projektech v řešení a pokračuje v celém řešení.
+V případě, že existuje více projektů v řešení, může být přenos složitější, protože je nutné adresovat projekty v určitém pořadí. Proces převodu by měl být v rámci nejnižšího přístupu, kde se nejprve převádějí projekty bez závislostí na jiných projektech v řešení a pokračuje v celém řešení.
 
 Chcete-li identifikovat projekty objednávek, které by měly být migrovány, můžete použít následující nástroje:
 
@@ -46,7 +46,7 @@ Při přenosu projektu do .NET Core doporučujeme použít následující postup
 
 1. Převeďte všechny vaše `packages.config` závislosti na formát [PackageReference](/nuget/consume-packages/package-references-in-project-files) pomocí nástroje pro [převod v aplikaci Visual Studio](/nuget/consume-packages/migrate-packages-config-to-package-reference).
 
-   Tento krok zahrnuje převod závislostí ze starší verze `packages.config` formátu. `packages.config`nefunguje na .NET Core, takže tento převod je nutný, pokud máte závislosti balíčku. Vyžaduje taky jenom závislosti, které přímo používáte v projektu, což později usnadňuje postup snížením množství závislostí, které musíte spravovat.
+   Tento krok zahrnuje převod závislostí ze starší verze `packages.config` formátu. `packages.config`nefunguje na .NET Core, takže tento převod je nutný, pokud máte závislosti balíčku. Vyžaduje taky jenom závislosti, které přímo používáte v projektu, což usnadňuje pozdější kroky snížením počtu závislostí, které musíte spravovat.
 
 1. Převeďte soubor projektu na novou strukturu souborů ve stylu sady SDK. Můžete vytvořit nové projekty pro .NET Core a kopírovat přes zdrojové soubory nebo se pokusit převést existující soubor projektu pomocí nástroje.
 
@@ -66,7 +66,7 @@ Při přenosu projektu do .NET Core doporučujeme použít následující postup
 
    Při čtení sestav vygenerovaných analyzátorem jsou důležité informace skutečná rozhraní API, která se používají, a ne nutně procento podpory cílové platformy. Mnoho rozhraní API má v .NET Standard/Core stejné možnosti, a proto je potřeba pochopit, jaké scénáře vaše knihovna nebo aplikace potřebuje rozhraní API, aby bylo možné určit, že se má přenositelnost vynásobit.
 
-   Existují případy, kdy rozhraní API nejsou ekvivalentní a je třeba provést některé direktivy preprocesoru kompilátoru (tj. `#if NET45`) na speciální případ platforem. V tomto okamžiku se projekt stále zaměřuje na .NET Framework. U každého z těchto cílových případů se doporučuje použít známé podmíněné výrazy, které lze chápat jako scénář.  Například podpora AppDomain v .NET Core je omezená, ale pro scénář načítání a uvolňování sestavení existuje nové rozhraní API, které není k dispozici v rozhraní .NET Core. Běžný způsob, jak to zpracovat v kódu, by byl podobný:
+   Existují některé případy, kdy rozhraní API nejsou ekvivalentní a je třeba provést některé direktivy preprocesoru kompilátoru (tj. `#if NET45`) na speciální případ platforem. V tomto okamžiku bude projekt stále cílen .NET Framework. U každého z těchto cílových případů se doporučuje použít známé podmíněné výrazy, které lze chápat jako scénář.  Například podpora AppDomain v .NET Core je omezená, ale pro scénář načítání a uvolňování sestavení existuje nové rozhraní API, které není k dispozici v rozhraní .NET Core. Běžný způsob, jak to zpracovat v kódu, by byl podobný:
 
    ```csharp
    #if FEATURE_APPDOMAIN_LOADING
@@ -84,7 +84,7 @@ Při přenosu projektu do .NET Core doporučujeme použít následující postup
 
 1. V tomto okamžiku se můžete přepnout na cílení na .NET Core (obecně pro aplikace) nebo .NET Standard (pro knihovny).
 
-   Volba mezi .NET Core a .NET Standard je převážně závislá na tom, kde se projekt spustí. Pokud se jedná o knihovnu, kterou budou používat jiné aplikace nebo distribuované přes NuGet, je obvykle vhodné cílit na .NET Standard. Existují však rozhraní API, která jsou k dispozici pouze v rozhraní .NET Core pro výkon nebo jiné důvody. v takovém případě by mělo být rozhraní .NET Core cíleno na potenciálně .NET Standard sestavení i s nižším výkonem nebo funkci. Když cílíte .NET Standard, projekt bude připravený ke spuštění na nových platformách (například WebAssembly). Pokud projekt obsahuje závislosti na konkrétních aplikačních architekturách (například ASP.NET Core), bude cíl omezen tím, co podporují závislosti.
+   Volba mezi .NET Core a .NET Standard je převážně závislá na tom, kde se projekt spustí. Pokud se jedná o knihovnu, kterou budou používat jiné aplikace nebo distribuované přes NuGet, je obvykle vhodné cílit na .NET Standard. Existují však rozhraní API, která jsou k dispozici pouze v rozhraní .NET Core pro výkon nebo jiné důvody. v takovém případě by mělo být rozhraní .NET Core cíleno na potenciálně .NET Standard sestavení i na nižší výkon a funkčnost. Když cílíte .NET Standard, projekt bude připravený ke spuštění na nových platformách (například WebAssembly). Pokud projekt obsahuje závislosti na konkrétních aplikačních architekturách (například ASP.NET Core), bude cíl omezen tím, co podporují závislosti.
 
    Pokud neexistují žádné direktivy preprocesoru pro podmíněný kód kompilace pro .NET Framework nebo .NET Standard, bude to jednoduché, jak najít následující v souboru projektu:
 
@@ -98,17 +98,17 @@ Při přenosu projektu do .NET Core doporučujeme použít následující postup
    <TargetFramework>netcoreapp3.1</TargetFramework>
    ```
 
-   Pokud se však jedná o knihovnu, kterou chcete z nějakého důvodu nadále podporovat .NET Framework specifických sestavení, můžete [více cílit](../../standard/library-guidance/cross-platform-targeting.md) tím, že je nahradíte následujícími:
+   Pokud se však jedná o knihovnu, pro kterou chcete pokračovat v podpoře .NET Frameworkch specifických sestavení, můžete [více cílit](../../standard/library-guidance/cross-platform-targeting.md) tím, že je nahradíte následujícími:
 
    ```xml
    <TargetFrameworks>net472;netstandard2.0</TargetFrameworks>
    ```
 
-   Pokud používáte rozhraní API specifická pro systém Windows (například přístup do registru), měli byste nainstalovat [sadu Compatibility Pack systému Windows](./windows-compat-pack.md).
+   Pokud používáte rozhraní API specifická pro systém Windows (například přístup do registru), nainstalujte [sadu Windows Compatibility Pack](./windows-compat-pack.md).
 
 ## <a name="next-steps"></a>Další kroky
 
->[!div class="nextstepaction"]
->[Analyze dependencies](third-party-deps.md)
->ASP.NET migrace balíčku[NuGet](../deploying/creating-nuget-packages.md)
->balíčku závislostí[na ASP.NET Core](/aspnet/core/migration/proper-to-2x)
+> [!div class="nextstepaction"]
+> [Analyze dependencies](third-party-deps.md)
+> ASP.NET migrace balíčku[NuGet](../deploying/creating-nuget-packages.md)
+> balíčku závislostí[na ASP.NET Core](/aspnet/core/migration/proper-to-2x)

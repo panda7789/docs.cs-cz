@@ -4,12 +4,12 @@ ms.date: 10/01/2018
 helpviewer_keywords:
 - Memory&lt;T&gt; and Span&lt;T&gt; best practices
 - using Memory&lt;T&gt; and Span&lt;T&gt;
-ms.openlocfilehash: 1f0d513e8bfd1668ee548315597385c555d374ef
-ms.sourcegitcommit: 8b02d42f93adda304246a47f49f6449fc74a3af4
+ms.openlocfilehash: b89969f212da6ac90d0fb0d1bf388626e136b92e
+ms.sourcegitcommit: c2c1269a81ffdcfc8675bcd9a8505b1a11ffb271
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "82135773"
+ms.lasthandoff: 04/25/2020
+ms.locfileid: "82158590"
 ---
 # <a name="memoryt-and-spant-usage-guidelines"></a>Pokyny k používání Memory\<T> a Span\<T>
 
@@ -23,7 +23,7 @@ Vzhledem k tomu, že vyrovnávací paměti lze předávat mezi rozhraními API a
 
 - **Vlastnictví**. Vlastník instance vyrovnávací paměti je zodpovědný za správu životnosti, včetně zničení vyrovnávací paměti, když se už nepoužívá. Všechny vyrovnávací paměti mají jednoho vlastníka. Obecně je vlastníkem komponenta, která vytvořila vyrovnávací paměť nebo která obdržela vyrovnávací paměť z továrny. Vlastnictví lze také přenést; **Součást-a** může opustit řízení vyrovnávací paměti pro **komponentu B**, na které **Komponenta bodu-A** již nesmí používat vyrovnávací paměť, a **Komponenta B** se stane zodpovědností za zničení vyrovnávací paměti, pokud se už nepoužívá.
 
-- **Spotřeba**. Příjemce instance vyrovnávací paměti může použít instanci vyrovnávací paměti čtením z ní a případně do ní zapisovat. Vyrovnávací paměti můžou mít jednoho příjemce v čase, pokud není k dispozici nějaký mechanismus externí synchronizace. Všimněte si, že aktivní příjemce vyrovnávací paměti nemusí být nutně vlastníkem vyrovnávací paměti.
+- **Spotřeba**. Příjemce instance vyrovnávací paměti může použít instanci vyrovnávací paměti čtením z ní a případně do ní zapisovat. Vyrovnávací paměti můžou mít jednoho příjemce v čase, pokud není k dispozici nějaký mechanismus externí synchronizace. Aktivní příjemce vyrovnávací paměti nemusí být nutně vlastníkem vyrovnávací paměti.
 
 - **Zapůjčení**. Zapůjčení je doba, po kterou může určitá součást být příjemcem vyrovnávací paměti.
 
@@ -110,7 +110,7 @@ Vzhledem k tomu, že blok paměti je vlastněn, ale má být předán více komp
 
 - I když je vyhrazená sada pro <xref:System.Span%601> optimalizaci výkonu a dává <xref:System.Span%601> preferovaný typ pro provoz na bloku paměti, je také předmětům <xref:System.Span%601> některých hlavních omezení. Je důležité znát, kdy použít <xref:System.Span%601> a kdy použít. <xref:System.Memory%601>
 
-Níže jsou naše doporučení pro úspěšné používání <xref:System.Memory%601> a související typy. Všimněte si, že doprovodné materiály <xref:System.Memory%601> , <xref:System.Span%601> které platí pro <xref:System.ReadOnlyMemory%601> a <xref:System.ReadOnlySpan%601> platí i pro a, pokud výslovně nepovažujeme za jinak.
+Níže jsou naše doporučení pro úspěšné používání <xref:System.Memory%601> a související typy. Doprovodné materiály, které <xref:System.Memory%601> se <xref:System.Span%601> vztahují na a <xref:System.ReadOnlyMemory%601> platí <xref:System.ReadOnlySpan%601> i v případě, že výslovně nebereme jinak.
 
 **#1 pravidla: v případě synchronního rozhraní API použijte\<místo parametru> paměti\<t, pokud je to možné, možnost span t>.**
 

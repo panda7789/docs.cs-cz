@@ -2,21 +2,21 @@
 title: Ověřování zabezpečení
 ms.date: 03/30/2017
 ms.assetid: 48dcd496-0c4f-48ce-8b9b-0e25b77ffa58
-ms.openlocfilehash: 17e6e250c6b345477f7c9b377eb8e16ff4331ca7
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: d635ae72b71df18934acd1016ac3e799d2c4aea1
+ms.sourcegitcommit: 839777281a281684a7e2906dccb3acd7f6a32023
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79183373"
+ms.lasthandoff: 04/24/2020
+ms.locfileid: "82140509"
 ---
 # <a name="security-validation"></a>Ověřování zabezpečení
-Tato ukázka ukazuje, jak používat vlastní chování k ověření služeb v počítači, aby bylo zajištěno, že splňují určitá kritéria. V této ukázce služby jsou ověřeny vlastní chování skenování prostřednictvím každého koncového bodu ve službě a zkontrolujte, zda obsahují zabezpečené prvky vazby. Tato ukázka je založena na [začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md).  
+Tato ukázka předvádí, jak pomocí vlastního chování ověřit služby na počítači, abyste měli jistotu, že splňují určitá kritéria. V této ukázce se služby ověřují pomocí vlastního chování tím, že prochází každý koncový bod ve službě a kontroluje, jestli obsahují zabezpečené prvky vazby. Tato ukázka je založena na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md).  
   
 > [!NOTE]
-> Postup instalace a pokyny k sestavení pro tuto ukázku jsou umístěny na konci tohoto tématu.  
+> Postup nastavení a pokyny pro sestavení pro tuto ukázku najdete na konci tohoto tématu.  
   
-## <a name="endpoint-validation-custom-behavior"></a>Vlastní chování ověření koncového bodu  
- Přidáním uživatelského `Validate` kódu k metodě obsažené v <xref:System.ServiceModel.Description.IServiceBehavior> rozhraní může být vlastní chování poskytnuto službě nebo koncovému bodu k provádění akcí definovaných uživatelem. Následující kód se používá ke smyčku prostřednictvím každý koncový bod obsažený ve službě, která prohledává jejich kolekce vazby pro zabezpečené vazby.  
+## <a name="endpoint-validation-custom-behavior"></a>Vlastní chování ověřování koncového bodu  
+ Přidáním uživatelského kódu do `Validate` metody obsažené v <xref:System.ServiceModel.Description.IServiceBehavior> rozhraní může být vlastní chování uděleno službě nebo koncovému bodu pro provádění uživatelem definovaných akcí. Následující kód se používá k procyklení každého koncového bodu obsaženého ve službě, který vyhledává v rámci svých vazeb vazby pro zabezpečené vazby.  
   
 ```csharp
 public void Validate(ServiceDescription serviceDescription,
@@ -47,7 +47,7 @@ public void Validate(ServiceDescription serviceDescription,
 }  
 ```  
   
- Přidáním následujícího kódu do souboru `serviceValidate` Web.config přidáte příponu chování, kterou má služba rozpoznat.  
+ Přidáním následujícího kódu do souboru Web. config přidáte rozšíření `serviceValidate` chování služby, které chcete rozpoznat.  
   
 ```xml  
 <system.serviceModel>  
@@ -55,11 +55,12 @@ public void Validate(ServiceDescription serviceDescription,
         <behaviorExtensions>  
             <add name="endpointValidate" type="Microsoft.ServiceModel.Samples.EndpointValidateElement, endpointValidate, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" />  
         </behaviorExtensions>  
-    </extensions>  
-...  
+    </extensions>
+    ...
+</system.serviceModel>
 ```  
   
- Jakmile je rozšíření chování přidáno do služby, `endpointValidate` je nyní možné přidat chování do seznamu chování v souboru Web.config a tím i do služby.  
+ Jakmile je rozšíření chování přidáno ke službě, je nyní možné přidat `endpointValidate` chování do seznamu chování v souboru Web. config a tedy do služby.  
   
 ```xml  
 <behaviors>  
@@ -72,40 +73,40 @@ public void Validate(ServiceDescription serviceDescription,
 </behaviors>  
 ```  
   
- Chování a jejich rozšíření, které jsou přidány do souboru Web.config použít chování pro jednotlivé služby, zatímco při přidání do souboru Machine.config použít chování pro každou službu aktivní v počítači.  
+ Chování a jejich rozšíření, která jsou přidána do souboru Web. config, aplikují chování na jednotlivé služby, zatímco když přidáte do souboru Machine. config, použije se chování pro všechny aktivní služby v počítači.  
   
 > [!NOTE]
-> Při přidávání chování do všech služeb se doporučuje zálohovat soubor Machine.config před provedením jakékoli změny.  
+> Při přidávání chování do všech služeb je navrženo zálohování souboru Machine. config před provedením jakékoli změny.  
   
- Nyní spusťte klienta uvedeného v adresáři client\bin této ukázky. Dojde k výjimce s následující zprávou:http://localhost/servicemodelsamples/service.svc"Požadovaná služba , " nelze aktivovat." To je očekáváno, protože koncový bod je považován za nezabezpečený koncovým bodem ověřování chování a zabraňuje spuštění služby. Chování také vyvolá vnitřní výjimku, která popisuje, který koncový bod je nezabezpečený a zapíše zprávu do systému Prohlížeč událostí pod zdrojem "System.ServiceModel 4.0.0" a kategorie "WebHost". Je také možné zapnout trasování na službu v této ukázce. To umožňuje uživateli zobrazit výjimky vyvoláné koncovým bodem ověřování chování otevřením výsledné trasování služby pomocí nástroje Sledování služby.  
+ Nyní spusťte klienta, který je k dispozici v adresáři client\bin této ukázky. Došlo k výjimce s následující zprávou: "požadovanou službuhttp://localhost/servicemodelsamples/service.svcnelze aktivovat". To se očekává, protože koncový bod se považuje za nezabezpečený pomocí chování při ověřování koncového bodu a zabrání spuštění služby. Chování také vyvolá interní výjimku, která popisuje, který koncový bod je nezabezpečený a zapisuje do systému zprávu Prohlížeč událostí pod zdrojem "System. ServiceModel 4.0.0.0" a "webhost" kategorie. V této ukázce je také možné zapnout trasování pro službu. To uživateli umožňuje zobrazit výjimky vyvolané chováním ověřování koncového bodu otevřením výsledných trasování služby pomocí nástroje Service Trace Viewer.  
   
-#### <a name="to-view-failed-endpoint-validation-exception-messages-in-the-event-viewer"></a>Zobrazení neúspěšných zpráv o výjimce ověření koncového bodu v Prohlížeči událostí  
+#### <a name="to-view-failed-endpoint-validation-exception-messages-in-the-event-viewer"></a>Zobrazení zpráv výjimky ověřování koncového bodu, které selhaly v Prohlížeč událostí  
   
-1. Klepněte na nabídku **Start** a vyberte **spustit...**.  
+1. Klikněte na nabídku **Start** a vyberte možnost **Spustit...**.  
   
-2. Zadejte `eventvwr` a klepněte na tlačítko **OK**.  
+2. Zadejte `eventvwr` a klikněte na **OK**.  
   
-3. V okně Prohlížeč událostí klepněte na **položku Aplikace**.  
+3. V okně Prohlížeč událostí klikněte na možnost **aplikace**.  
   
-4. Poklepáním na nedávno přidanou událost System.ServiceModel 4.0.0.0 v kategorii "WebHost" v okně **Aplikace** zobrazíte nezabezpečené zprávy koncového bodu.  
+4. Poklikejte na nedávno přidanou událost System. ServiceModel 4.0.0.0 do kategorie webhost v okně **aplikace** a zobrazte nezabezpečené zprávy koncového bodu.  
   
 #### <a name="to-set-up-build-and-run-the-sample"></a>Nastavení, sestavení a spuštění ukázky  
   
-1. Ujistěte se, že jste provedli [jednorázový postup instalace pro ukázky windows communication foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
+1. Ujistěte se, že jste provedli [postup jednorázového nastavení pro Windows Communication Foundation ukázky](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
   
-2. Chcete-li vytvořit c# nebo Visual Basic .NET vydání řešení, postupujte podle pokynů v [sestavení windows communication foundation ukázky](../../../../docs/framework/wcf/samples/building-the-samples.md).  
+2. Chcete-li sestavit edici C# nebo Visual Basic .NET, postupujte podle pokynů v tématu [sestavování ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
   
-3. Chcete-li spustit ukázku v konfiguraci jednoho nebo více počítačů, postupujte podle pokynů v [části Spuštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
+3. Chcete-li spustit ukázku v konfiguraci s jedním nebo více počítači, postupujte podle pokynů v části [spuštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
   
 > [!IMPORTANT]
-> Ukázky mohou být již nainstalovány v počítači. Před pokračováním zkontrolujte následující (výchozí) adresář.  
+> Ukázky již mohou být nainstalovány v počítači. Než budete pokračovat, vyhledejte následující (výchozí) adresář.  
 >
 > `<InstallDrive>:\WF_WCF_Samples`  
 >
-> Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a Windows Workflow Foundation (WF) Ukázky pro rozhraní .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka je umístěna v následujícím adresáři.  
+> Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázek. Tato ukázka se nachází v následujícím adresáři.  
 >
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Management\ServiceValidation`  
   
 ## <a name="see-also"></a>Viz také
 
-- [Vzorky monitorování appfabricu](https://docs.microsoft.com/previous-versions/appfabric/ff383407(v=azure.10))
+- [Ukázky monitorování technologie AppFabric](https://docs.microsoft.com/previous-versions/appfabric/ff383407(v=azure.10))

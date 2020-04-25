@@ -1,21 +1,21 @@
 ---
-title: Instalace .NET Core na Ubuntu 19,10 – správce balíčků – .NET Core
-description: Pomocí Správce balíčků nainstalujte .NET Core SDK a modul runtime v Ubuntu 19,10.
+title: Instalace .NET Core na Ubuntu 20,04 – správce balíčků – .NET Core
+description: Pomocí Správce balíčků nainstalujte .NET Core SDK a modul runtime v Ubuntu 20,04.
 author: thraka
 ms.author: adegeo
-ms.date: 03/17/2020
-ms.openlocfilehash: 5a51527a6691508c033d5130265e32ecfb7308f8
+ms.date: 04/15/2020
+ms.openlocfilehash: b99dcbab3305bffdcc9202bb2a09e3061abca95b
 ms.sourcegitcommit: 839777281a281684a7e2906dccb3acd7f6a32023
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/24/2020
-ms.locfileid: "82140736"
+ms.locfileid: "82148378"
 ---
-# <a name="ubuntu-1910-package-manager---install-net-core"></a>Správce balíčků Ubuntu 19,10 – instalace .NET Core
+# <a name="ubuntu-2004-package-manager---install-net-core"></a>Správce balíčků Ubuntu 20,04 – instalace .NET Core
 
 [!INCLUDE [package-manager-switcher](./includes/package-manager-switcher.md)]
 
-Tento článek popisuje, jak pomocí Správce balíčků nainstalovat .NET Core na Ubuntu 19,10.
+Tento článek popisuje, jak pomocí Správce balíčků nainstalovat .NET Core na Ubuntu 20,04.
 
 [!INCLUDE [package-manager-intro-sdk-vs-runtime](includes/package-manager-intro-sdk-vs-runtime.md)]
 
@@ -32,7 +32,7 @@ Stačí to provést jednou na jednom počítači.
 Otevřete terminál a spusťte následující příkazy.
 
 ```bash
-wget https://packages.microsoft.com/config/ubuntu/19.10/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
+wget https://packages.microsoft.com/config/ubuntu/20.04/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
 sudo dpkg -i packages-microsoft-prod.deb
 ```
 
@@ -102,7 +102,7 @@ Pokud to nefunguje, můžete spustit ruční instalaci pomocí následujících 
 sudo apt-get install -y gpg
 wget -O- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor -o microsoft.asc.gpg
 sudo mv microsoft.asc.gpg /etc/apt/trusted.gpg.d/
-wget https://packages.microsoft.com/config/ubuntu/19.10/prod.list
+wget https://packages.microsoft.com/config/ubuntu/20.04/prod.list
 sudo mv prod.list /etc/apt/sources.list.d/microsoft-prod.list
 sudo chown root:root /etc/apt/trusted.gpg.d/microsoft.asc.gpg
 sudo chown root:root /etc/apt/sources.list.d/microsoft-prod.list

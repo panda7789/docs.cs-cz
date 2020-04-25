@@ -1,14 +1,14 @@
 ---
 title: Typy a proměnné jazyka c# – prohlídka jazyka C#
 description: 'Informace o definování typů a deklaraci proměnných v jazyce C #'
-ms.date: 02/25/2020
+ms.date: 04/24/2020
 ms.assetid: f8a8051e-0049-43f1-b594-9c84cc7b1224
-ms.openlocfilehash: dc80a7ea80790ef5af5218f5a608e5829d2970cc
-ms.sourcegitcommit: 8b02d42f93adda304246a47f49f6449fc74a3af4
+ms.openlocfilehash: 6a3bd3dc802f0d080fd96036067f709e62faf426
+ms.sourcegitcommit: 839777281a281684a7e2906dccb3acd7f6a32023
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/24/2020
-ms.locfileid: "82135955"
+ms.locfileid: "82140997"
 ---
 # <a name="types-and-variables"></a>Typy a proměnné
 
@@ -30,8 +30,10 @@ Následující přehled poskytuje přehled systému typů jazyka C#.
     - Uživatelem definované typy formuláře`enum E {...}`
   - [Typy struktury][StructTypes]
     - Uživatelem definované typy formuláře`struct S {...}`
-  - [Typy hodnot s povolenou hodnotou Null][NullableTypes]
+  - [Typy hodnot s možnou hodnotou null][NullableTypes]
     - Rozšíření všech ostatních typů hodnot s `null` hodnotou
+  - [Typy hodnot řazené kolekce členů][TupleTypes]
+    - Uživatelem definované typy formuláře`(T1, T2, ...)`
 - [Odkazové typy][ReferenceTypes]
   - [Typy tříd][ClassTypes]
     - Nejvyšší základní třída všech ostatních typů:`object`
@@ -49,6 +51,7 @@ Následující přehled poskytuje přehled systému typů jazyka C#.
 [EnumTypes]: ../language-reference/builtin-types/enum.md
 [StructTypes]: ../language-reference/builtin-types/struct.md
 [NullableTypes]: ../language-reference/builtin-types/nullable-value-types.md
+[TupleTypes]: ../tuples.md
 [ReferenceTypes]: ../language-reference/keywords/reference-types.md
 [ClassTypes]: ../language-reference/keywords/class.md
 [InterfaceTypes]: ../language-reference/keywords/interface.md

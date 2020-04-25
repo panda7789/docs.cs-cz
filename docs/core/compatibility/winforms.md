@@ -1,46 +1,56 @@
 ---
-title: Změny rozdělení formulářů Systému Windows
-description: Uvádí nejnovější změny ve formulářích Windows pro .NET Core.
+title: model Windows Forms přerušující změny
+description: Obsahuje seznam nejnovějších změn v model Windows Forms pro .NET Core.
 ms.date: 01/08/2020
-ms.openlocfilehash: 25c568a8a0092a9c4874419c64c7dcebea4dce9e
-ms.sourcegitcommit: 2b3b2d684259463ddfc76ad680e5e09fdc1984d2
+ms.openlocfilehash: 75d369c7fb999da81a50fe46716e125c3840eb7a
+ms.sourcegitcommit: c2c1269a81ffdcfc8675bcd9a8505b1a11ffb271
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80888111"
+ms.lasthandoff: 04/25/2020
+ms.locfileid: "82158434"
 ---
-# <a name="breaking-changes-in-windows-forms"></a>Nejnovější změny ve formulářích Windows Forms
+# <a name="breaking-changes-in-windows-forms"></a>Průlomové změny v model Windows Forms
 
-Podpora windows forms byla přidána do rozhraní .NET Core ve verzi 3.0. Tento článek uvádí nejnovější změny pro Windows Forms podle verze .NET Core, ve kterém byly zavedeny. Pokud upgradujete aplikaci pro Windows Forms z rozhraní .NET Framework nebo z předchozí verze rozhraní .NET Core (3.0 nebo novější), platí pro vás tento článek.
+Do .NET Core ve verzi 3,0 se přidala podpora model Windows Forms. V tomto článku jsou uvedeny zásadní změny model Windows Forms ve verzi .NET Core, ve které byly zavedeny. Pokud upgradujete model Windows Forms aplikaci z .NET Framework nebo z předchozí verze rozhraní .NET Core (3,0 nebo novější), můžete tento článek použít pro vás.
 
-Na této stránce jsou popsány následující změny:
+Na této stránce jsou popsány následující přerušující se změny:
 
-| Narušující změny | Zavedená verze |
+| Zásadní změna | Představená verze |
 | - | :-: |
-| [WinForms API nyní vyvolat ArgumentNullException](#winforms-apis-now-throw-argumentnullexception) | 5.0 |
+| [Odebrané ovládací prvky stavového řádku](#removed-status-bar-controls) | 5.0 |
+| [Metody WinForms teď vyvolávají výjimku ArgumentException.](#winforms-methods-now-throw-argumentexception) | 5.0 |
+| [Metody WinForms teď vyvolávají ArgumentNullException](#winforms-methods-now-throw-argumentnullexception) | 5.0 |
 | [Odebrané ovládací prvky](#removed-controls) | 3.1 |
-| [Událost CellFormatting není vyvolána, pokud je zobrazen popisek](#cellformatting-event-not-raised-if-tooltip-is-shown) | 3.1 |
-| [Control.DefaultFont změněn na Segoe UI 9 pt](#default-control-font-changed-to-segoe-ui-9-pt) | 3.0 |
-| [Modernizace dialogového okna FolderBrowserDialog](#modernization-of-the-folderbrowserdialog) | 3.0 |
-| [Serializovatelný atribut odebraný z některých typů formulářů systému Windows](#serializableattribute-removed-from-some-windows-forms-types) | 3.0 |
-| [Přepínač kompatibility AllowUpdateChildControlIndexForTabControls není podporován.](#allowupdatechildcontrolindexfortabcontrols-compatibility-switch-not-supported) | 3.0 |
-| [Přepínač kompatibility DomainUpDown.UseLegacyScrolling není podporován.](#domainupdownuselegacyscrolling-compatibility-switch-not-supported) | 3.0 |
-| [Přepínač kompatibility DoNotLoadLatestRichEditControl není podporován.](#donotloadlatestricheditcontrol-compatibility-switch-not-supported) | 3.0 |
-| [Přepínač kompatibility DoNotSupportSelectAllShortcutInMultilineTextBox není podporován](#donotsupportselectallshortcutinmultilinetextbox-compatibility-switch-not-supported) | 3.0 |
-| [Přepínač kompatibility DontSupportReentrantFilterMessage není podporován.](#dontsupportreentrantfiltermessage-compatibility-switch-not-supported) | 3.0 |
-| [Přepínač kompatibility EnableVisualStyleValidation není podporován.](#enablevisualstylevalidation-compatibility-switch-not-supported) | 3.0 |
-| [Přepínač kompatibility UseLegacyContextMenuStripSourceSourceControlValue není podporován.](#uselegacycontextmenustripsourcecontrolvalue-compatibility-switch-not-supported) | 3.0 |
-| [Přepínač kompatibility UseLegacyImages není podporován.](#uselegacyimages-compatibility-switch-not-supported) | 3.0 |
-| [Změna přístupu pro AccessibleObject.RuntimeIDFirstItem](#change-of-access-for-accessibleobjectruntimeidfirstitem) | 3.0 |
-| [Duplicitní api odebraná z formulářů systému Windows Forms](#duplicated-apis-removed-from-windows-forms) | 3.0 |
+| [Pokud je zobrazený popis, událost CellFormatting se neaktivuje.](#cellformatting-event-not-raised-if-tooltip-is-shown) | 3.1 |
+| [Control. DefaultFont se změnil na Segoe UI 9 bodů.](#default-control-font-changed-to-segoe-ui-9-pt) | 3.0 |
+| [Modernizace FolderBrowserDialog](#modernization-of-the-folderbrowserdialog) | 3.0 |
+| [SerializableAttribute byl odebrán z některých typů model Windows Forms.](#serializableattribute-removed-from-some-windows-forms-types) | 3.0 |
+| [Přepínač kompatibility AllowUpdateChildControlIndexForTabControls se nepodporuje.](#allowupdatechildcontrolindexfortabcontrols-compatibility-switch-not-supported) | 3.0 |
+| [Přepínač kompatibility DomainUpDown. UseLegacyScrolling se nepodporuje.](#domainupdownuselegacyscrolling-compatibility-switch-not-supported) | 3.0 |
+| [Přepínač kompatibility DoNotLoadLatestRichEditControl se nepodporuje.](#donotloadlatestricheditcontrol-compatibility-switch-not-supported) | 3.0 |
+| [Přepínač kompatibility DoNotSupportSelectAllShortcutInMultilineTextBox se nepodporuje.](#donotsupportselectallshortcutinmultilinetextbox-compatibility-switch-not-supported) | 3.0 |
+| [Přepínač kompatibility DontSupportReentrantFilterMessage se nepodporuje.](#dontsupportreentrantfiltermessage-compatibility-switch-not-supported) | 3.0 |
+| [Přepínač kompatibility EnableVisualStyleValidation se nepodporuje.](#enablevisualstylevalidation-compatibility-switch-not-supported) | 3.0 |
+| [Přepínač kompatibility UseLegacyContextMenuStripSourceControlValue se nepodporuje.](#uselegacycontextmenustripsourcecontrolvalue-compatibility-switch-not-supported) | 3.0 |
+| [Přepínač kompatibility UseLegacyImages se nepodporuje.](#uselegacyimages-compatibility-switch-not-supported) | 3.0 |
+| [Změna přístupu pro třída AccessibleObject. RuntimeIDFirstItem](#change-of-access-for-accessibleobjectruntimeidfirstitem) | 3.0 |
+| [Odebrala se duplicitní rozhraní API z model Windows Forms.](#duplicated-apis-removed-from-windows-forms) | 3.0 |
 
-## <a name="net-50"></a>.NET 5.0
+## <a name="net-50"></a>.NET 5,0
+
+[!INCLUDE [winforms-deprecated-controls](../../../includes/core-changes/windowsforms/5.0/winforms-deprecated-controls.md)]
+
+***
+
+[!INCLUDE [invalid-args-cause-argumentexception](../../../includes/core-changes/windowsforms/5.0/invalid-args-cause-argumentexception.md)]
+
+***
 
 [!INCLUDE [null-args-cause-argumentnullexception](../../../includes/core-changes/windowsforms/5.0/null-args-cause-argumentnullexception.md)]
 
 ***
 
-## <a name="net-core-31"></a>.NET Jádro 3.1
+## <a name="net-core-31"></a>.NET Core 3,1
 
 [!INCLUDE[Removed controls](~/includes/core-changes/windowsforms/3.1/remove-controls-3.1.md)]
 
@@ -106,4 +116,4 @@ Na této stránce jsou popsány následující změny:
 
 ## <a name="see-also"></a>Viz také
 
-- [Port aplikace Windows Forms na jádro .NET Core](../porting/winforms.md)
+- [Port model Windows Forms aplikace do .NET Core](../porting/winforms.md)

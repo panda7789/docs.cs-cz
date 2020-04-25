@@ -1,54 +1,54 @@
 ---
-title: přepínat výraz - odkaz Jazyka C#
-description: Naučte se používat výraz přepínače C# pro porovnávání vzorů a další introspekce dat
+title: Switch – výraz – Referenční dokumentace jazyka C#
+description: Naučte se používat výraz přepínače C# pro porovnávání vzorů a jiné introspekce dat.
 ms.date: 03/19/2020
-ms.openlocfilehash: 9e609bcea0f92f492b5f9b07840e47f75c1b71e4
-ms.sourcegitcommit: 99b153b93bf94d0fecf7c7bcecb58ac424dfa47c
+ms.openlocfilehash: f53cbe873c841271f64496e4e5ff1f11750c7b8a
+ms.sourcegitcommit: 839777281a281684a7e2906dccb3acd7f6a32023
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/25/2020
-ms.locfileid: "80249786"
+ms.lasthandoff: 04/24/2020
+ms.locfileid: "82140667"
 ---
-# <a name="switch-expression-c-reference"></a>přepínat výraz (odkaz C# )
+# <a name="switch-expression-c-reference"></a>Switch – výraz (Referenční dokumentace jazyka C#)
 
-Tento článek `switch` popisuje výraz, zavedené v C# 8.0. Informace o `switch` prohlášení naleznete v článku o [ `switch` prohlášení](../keywords/switch.md) v části [příkazy.](../keywords/index.md)
+Tento článek se `switch` věnuje výrazu zavedenému v C# 8,0. Informace o `switch` příkazu naleznete v článku na [ `switch` příkazu](../keywords/switch.md) v oddílu [příkazy](../keywords/index.md) .
 
 ## <a name="basic-example"></a>Základní příklad
 
-Výraz `switch` poskytuje `switch`sémantiku -like v kontextu výrazu. Poskytuje stručnou syntaxi, když ramena přepínače vytvoří hodnotu. Následující příklad ukazuje strukturu výrazu přepínače. Překládá hodnoty z `enum` reprezentující vizuální směry v online mapě do odpovídajícího základního směru:
+`switch` Výraz poskytuje `switch`sémantiku podobně jako v kontextu výrazu. Poskytuje stručnou syntaxi, když zbraně přepínače vytvoří hodnotu. Následující příklad ukazuje strukturu výrazu přepínače. Překládá hodnoty z `enum` reprezentace vizuálních směrů v online mapě na odpovídající směr mohutnosti:
 
 :::code language="csharp" source="snippets/SwitchExpressions.cs" id="SnippetBasicStructure":::
 
-Předchozí ukázka ukazuje základní prvky výrazu přepínače:
+Předchozí příklad ukazuje základní prvky výrazu Switch:
 
-- *Výraz rozsahu*: Předchozí příklad používá `direction` proměnnou jako výraz rozsahu.
-- *Ramena výrazu switch*: Každé rameno výrazu přepínače `=>` obsahuje *vzorek*, volitelný kryt *případu*, token a *výraz*.
+- *Výraz rozsahu*: předchozí příklad používá proměnnou `direction` jako výraz rozsahu.
+- *Paže s výrazem přepínače*: každý výraz přepínače ARM obsahuje *vzor*, volitelný *případ Guard*, `=>` token a *výraz*.
 
-Výsledkem *výrazu switch* je hodnota výrazu prvního *ramene výrazu přepínače,* jehož *vzor* odpovídá `true` *výrazu rozsahu* a jehož ochrana *příčiny*, pokud je k dispozici, vyhodnotí na . *Výraz* na pravé straně `=>` tokenu nemůže být výraz příkazu.
+Výsledek *výrazu Switch* je hodnota výrazu pro výraz sekvence prvního *přepínače ARM* , jehož *vzor* odpovídá *výrazu rozsahu* *a kde je, pokud je přítomen*, je vyhodnocen jako. `true` *Výraz* na pravé straně `=>` tokenu nemůže být příkaz výrazu.
 
-*Ramena výrazu přepínače* jsou vyhodnocována v textovém pořadí. Kompilátor vydá chybu, když nelze vybrat *rameno výrazu* dolní přepínač, protože vyšší *rameno výrazu přepínače* odpovídá všem jeho hodnotám.
+*Paže výrazu přepínače* jsou vyhodnocovány v textovém pořadí. Kompilátor vystaví chybu, pokud nelze zvolit *ARM výrazu* dolního přepínače, protože *ARM výrazu* vyššího přepínače odpovídá všem jeho hodnotám.
 
-## <a name="patterns-and-case-guards"></a>Vzory a kryty skříně
+## <a name="patterns-and-case-guards"></a>Vzory a případové Guardy
 
-Mnoho vzorů jsou podporovány v přepínači výraz zbraní. Předchozí příklad použil *vzor hodnoty*. *Vzorek hodnoty* porovná výraz rozsahu s hodnotou. Tato hodnota musí být konstanta času kompilace. *Vzorek typu* porovná výraz rozsahu se známým typem. Následující příklad načte třetí prvek z sekvence. Používá různé metody založené na typu sekvence:
+V rukou výrazu Switch je podporováno mnoho vzorů. Předchozí příklad používal *vzorec hodnoty*. *Vzorec hodnoty* porovnává výraz rozsahu s hodnotou. Tato hodnota musí být časovou konstantou kompilace. *Vzor typu* porovnává výraz rozsahu se známým typem. Následující příklad načte třetí prvek z sekvence. Používá různé metody v závislosti na typu sekvence:
 
 :::code language="csharp" source="snippets/SwitchExpressions.cs" id="SnippetTypePattern":::
 
-Vzorky mohou být rekurzivní, kde vzorek testuje typ a pokud tento typ odpovídá, vzorek odpovídá jedné nebo více hodnotám vlastností ve výrazu rozsahu. K rozšíření předchozího příkladu můžete použít rekurzivní vzorky. Můžete přidat příkazy výraz přepínače pro pole, která mají méně než 3 prvky. Rekurzivní vzory jsou uvedeny v následujícím příkladu:
+Vzorce mohou být rekurzivní, kde vzor testuje typ a pokud tento typ odpovídá, vzor odpovídá jedné nebo více hodnot vlastností ve výrazu rozsahu. Pomocí rekurzivních vzorů můžete výše uvedený příklad zvětšit. Pro pole, která mají méně než 3 prvky, přidejte paže výrazu přepínače. Rekurzivní vzory jsou uvedeny v následujícím příkladu:
 
 :::code language="csharp" source="snippets/SwitchExpressions.cs" id="SnippetRecursivePattern":::
 
-Rekurzivní vzory můžete zkoumat vlastnosti výrazu rozsahu, ale nelze spustit libovolný kód. Ochrannou *dobu případu*určenou `when` v klauzuli můžete použít k poskytnutí podobných kontrol pro jiné typy sekvencí:
+Rekurzivní vzory mohou kontrolovat vlastnosti výrazu rozsahu, ale nemohou spustit libovolný kód. K poskytnutí podobných kontrol pro jiné typy sekvencí můžete `when` použít *ochrannou velikost písmen*zadanou v klauzuli.
 
 :::code language="csharp" source="snippets/SwitchExpressions.cs" id="SnippetGuardCase":::
 
-Nakonec můžete přidat `_` vzorek a `null` vzorek zachytit argumenty, které nejsou zpracovány žádné jiné rameno výraz u přepínače. To dělá výraz *přepínače vyčerpávající*, což znamená, že je zpracována jakákoli možná hodnota výrazu rozsahu. Následující příklad přidá tyto výrazzbraně:
+Nakonec můžete přidat `_` vzor a `null` vzor pro zachycení argumentů, které nejsou zpracovávány jakýmkoli jiným ramenem výrazu Switch. Díky tomu je výraz Switch *vyčerpávající*, což znamená, že je zpracována jakákoli možná hodnota výrazu rozsahu. Následující příklad přidá tyto zbraně výrazů:
 
 :::code language="csharp" source="snippets/SwitchExpressions.cs" id="SnippetExhaustive":::
 
-Předchozí příklad přidá `null` vzorek a změní `IEnumerable<T>` vzorek textu `_` na vzorek. Vzor `null` poskytuje kontrolu null jako rameno výrazu přepínače. Výraz pro tuto ruku <xref:System.ArgumentNullException>vyvolá . Vzor `_` odpovídá všem vstupům, které nebyly spárovány s předchozími rameny. Musí přijít po `null` kontrole, jinak `null` by odpovídala vstupům.
+Předchozí příklad přidá `null` vzor a změní vzorek `IEnumerable<T>` typu na `_` vzor. `null` Vzor poskytuje kontrolu null jako ARM výrazu přepínače. Výraz pro tuto platformu ARM vyvolá <xref:System.ArgumentNullException>. `_` Vzor odpovídá všem vstupům, které nebyly porovnány s předchozími opěrkami. Musí se nacházet po `null` kontrole nebo by odpovídala `null` vstupům.
 
-Můžete si přečíst více v návrhu c# jazyk spec pro [rekurzivní vzory](~/_csharplang/proposals/csharp-8.0/patterns.md#switch-expression).
+Můžete si přečíst další informace v návrhu specifikace jazyka C# pro [rekurzivní vzory](~/_csharplang/proposals/csharp-8.0/patterns.md#switch-expression).
 
 ## <a name="see-also"></a>Viz také
 

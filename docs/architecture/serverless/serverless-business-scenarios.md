@@ -4,12 +4,12 @@ description: Přístup k ukázkám, které jsou v rozsahu od zpracování obrazu
 author: JEREMYLIKNESS
 ms.author: jeliknes
 ms.date: 04/17/2020
-ms.openlocfilehash: 5c2ee70b86fbc9a54d2a532eaa3d7509f23825df
-ms.sourcegitcommit: 8b02d42f93adda304246a47f49f6449fc74a3af4
+ms.openlocfilehash: 3cb3b73325fccc327ccf17f7298048f2eeb3577a
+ms.sourcegitcommit: c2c1269a81ffdcfc8675bcd9a8505b1a11ffb271
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "82135656"
+ms.lasthandoff: 04/25/2020
+ms.locfileid: "82158447"
 ---
 # <a name="serverless-business-scenarios-and-use-cases"></a>Obchodní scénáře aplikací bez serveru a případy použití
 
@@ -93,13 +93,13 @@ Tato ukázka je obecná funkce (`.csx` soubor), která se dá použít k převed
 
 ## <a name="serverless-for-mobile"></a>Bez serveru pro mobilní zařízení
 
-Azure Functions lze snadno implementovat a udržovat a přistupovat prostřednictvím protokolu HTTP. Jsou skvělým způsobem, jak implementovat rozhraní API pro mobilní aplikace. Microsoft nabízí skvělé nástroje pro více platforem pro iOS, Android a Windows s využitím Xamarin. V takovém případě Xamarin a Azure Functions fungují skvěle společně. Tento článek ukazuje, jak implementovat službu Azure Functions na webovém portálu Azure nebo v aplikaci Visual Studio napřed a vytvořit klienta pro různé platformy pomocí Xamarin. Forms běžící v Androidu, iOS a Windows.
+Azure Functions lze snadno implementovat a udržovat a přistupovat prostřednictvím protokolu HTTP. Jsou skvělým způsobem, jak implementovat rozhraní API pro mobilní aplikace. Microsoft nabízí skvělé nástroje pro více platforem pro iOS, Android a Windows s využitím Xamarin. V takovém případě Xamarin a Azure Functions fungují skvěle společně. Tento článek ukazuje, jak implementovat funkci Azure Functions v Azure Portal nebo v aplikaci Visual Studio poprvé a vytvořit klienta pro různé platformy pomocí Xamarin. Forms běžící v Androidu, iOS a Windows.
 
 [Implementace jednoduché funkce Azure Functions s klientem Xamarin. Forms](https://docs.microsoft.com/samples/azure-samples/functions-xamarin-getting-started/implementing-a-simple-azure-function-with-a-xamarinforms-client/)
 
 ## <a name="serverless-messaging"></a>Zasílání zpráv bez serveru
 
-V této ukázce se dozvíte, jak používat model Durable Functions ventilátor pro načtení libovolného počtu zpráv v rámci libovolného počtu relací nebo oddílů. Cílí na Service Bus, Event Hubs nebo fronty úložiště. Ukázka také přidává možnost využít tyto zprávy s jinou funkcí Azure a načíst výsledná časová data do jiného centra událostí. Data se pak ingestují do analytických služeb, jako je Azure Průzkumník dat.
+V této ukázce se dozvíte, jak použít Durable Functions vzorek ventilátoru pro načtení libovolného počtu zpráv v rámci libovolného počtu relací nebo oddílů. Cílí na Service Bus, Event Hubs nebo fronty úložiště. Ukázka také přidává možnost využít tyto zprávy s jinou funkcí Azure a načíst výsledná časová data do jiného centra událostí. Data se pak ingestují do analytických služeb, jako je Azure Průzkumník dat.
 
 [Vytváření a využívání zpráv prostřednictvím Service Bus, Event Hubs a front úložiště s Azure Functions](https://docs.microsoft.com/samples/azure-samples/durable-functions-producer-consumer/product-consume-messages-az-functions/)
 

@@ -1,32 +1,32 @@
 ---
-ms.openlocfilehash: ace0a4a60ad4d3f3a13cf4bdb2431e61d04ad8e7
-ms.sourcegitcommit: 348bb052d5cef109a61a3d5253faa5d7167d55ac
+ms.openlocfilehash: d1562cb76f37b6cc2aeb6fe2f7c17c393e169e84
+ms.sourcegitcommit: c2c1269a81ffdcfc8675bcd9a8505b1a11ffb271
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "82021555"
+ms.lasthandoff: 04/25/2020
+ms.locfileid: "82158467"
 ---
-### <a name="invalidasynchronousstateexception-moved-to-another-assembly"></a>InvalidAsynchronousStateException přesunuta do jiného sestavení
+### <a name="invalidasynchronousstateexception-moved-to-another-assembly"></a>InvalidAsynchronousStateException – přesunuté do jiného sestavení
 
-Třída <xref:System.ComponentModel.InvalidAsynchronousStateException> byla přesunuta.
+<xref:System.ComponentModel.InvalidAsynchronousStateException> Třída byla přesunuta.
 
 #### <a name="change-description"></a>Popis změny
 
-V rozhraní .NET Core 2.2 <xref:System.ComponentModel.InvalidAsynchronousStateException> a starších verzích se třída nachází v sestavě *System.ComponentModel.TypeConverter.*
+V rozhraní .NET Core 2,2 a starších verzích se <xref:System.ComponentModel.InvalidAsynchronousStateException> Třída nachází v sestavení *System. ComponentModel. TypeConverter* .
 
-Počínaje rozhraním .NET Core 3.0 se nachází v sestavě *System.ComponentModel.Primitives.*
+Počínaje rozhraním .NET Core 3,0 se nachází v sestavení *System. ComponentModel. primitivs* .
 
-#### <a name="version-introduced"></a>Zavedená verze
+#### <a name="version-introduced"></a>Představená verze
 
 3.0
 
 #### <a name="recommended-action"></a>Doporučená akce
 
-Tato změna má vliv pouze na <xref:System.ComponentModel.InvalidAsynchronousStateException> aplikace, které <xref:System.Reflection.Assembly.GetType%2A?displayProperty=nameWithType> používají reflexe <xref:System.Activator.CreateInstance%2A?displayProperty=nameWithType> načíst voláním metody, jako je například nebo přetížení, které předpokládá, že typ je v určitém sestavení. Pokud tomu tak je, sestavení sestavení odkazuje ve volání metody by měla být aktualizována tak, aby odrážely nové umístění sestavení typu.
+Tato změna ovlivní pouze aplikace, které používají reflexe <xref:System.ComponentModel.InvalidAsynchronousStateException> k načtení voláním metody, <xref:System.Reflection.Assembly.GetType%2A?displayProperty=nameWithType> jako je nebo přetížení <xref:System.Activator.CreateInstance%2A?displayProperty=nameWithType> , které předpokládá, že typ je v konkrétním sestavení. V takovém případě aktualizujte sestavení odkazované v volání metody, aby odráželo umístění nového sestavení typu.
 
 #### <a name="category"></a>Kategorie
 
-Základní knihovny .NET
+Knihovny Core .NET
 
 #### <a name="affected-apis"></a>Ovlivněná rozhraní API
 

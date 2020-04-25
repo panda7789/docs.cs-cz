@@ -1,29 +1,29 @@
 ---
-ms.openlocfilehash: fc0eec26073c299887b4748d0ad37e21c7294e84
-ms.sourcegitcommit: 7980a91f90ae5eca859db7e6bfa03e23e76a1a50
+ms.openlocfilehash: 7a6b0b15de4295506ff03b8566c06010b918566c
+ms.sourcegitcommit: c2c1269a81ffdcfc8675bcd9a8505b1a11ffb271
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "81275484"
+ms.lasthandoff: 04/25/2020
+ms.locfileid: "82158388"
 ---
-### <a name="winforms-apis-now-throw-argumentnullexception"></a>WinForms API nyní vyvolat ArgumentNullException
+### <a name="winforms-methods-now-throw-argumentnullexception"></a>Metody WinForms teď vyvolávají ArgumentNullException
 
-Některé metody Windows Forms <xref:System.ArgumentNullException> nyní vyvolat pro argumenty <xref:System.NullReferenceException>null, kde dříve hodil .
+Některé metody model Windows Forms nyní vyvolávají výjimku <xref:System.ArgumentNullException> pro argumenty null, kde dříve vyvolaly <xref:System.NullReferenceException>.
 
 #### <a name="change-description"></a>Popis změny
 
-Dříve některé metody Windows <xref:System.NullReferenceException> Forms hodil if předán argument, který byl null. Počínaje .NET 5.0, tyto metody <xref:System.ArgumentNullException> nyní vyvolat pro argumenty null místo.
+Dříve některé model Windows Forms metody vyvolaly <xref:System.NullReferenceException> výjimku, pokud předala argument, který měl hodnotu null. Počínaje rozhraním .NET 5,0 tyto metody nyní vyvolávají místo <xref:System.ArgumentNullException> toho argumenty pro hodnoty null.
 
-Vyvolání <xref:System.ArgumentNullException> odpovídá chování .NET runtime. Také zlepšuje ladění prostředí tím, že jasně sdělit, že argument je null a který argument je.
+<xref:System.ArgumentNullException> Vyvolání vyhovuje chování modulu runtime .NET. Vylepšuje také možnosti ladění tím, že jednoznačně komunikuje, že argument má hodnotu null a který argument je.
 
-#### <a name="version-introduced"></a>Zavedená verze
+#### <a name="version-introduced"></a>Představená verze
 
-.NET 5.0 Náhled 1\
-.NET 5.0 Náhled 2
+.NET 5,0 Preview 1 \
+.NET 5,0 Preview 2
 
 #### <a name="recommended-action"></a>Doporučená akce
 
-Pokud zavoláte některou z těchto metod <xref:System.NullReferenceException> a váš kód aktuálně <xref:System.ArgumentNullException> zachytí pro argumenty null, místo toho zachyťte. Kromě toho zvažte aktualizaci kódu, abyste zabránili předání argumentů null uvedeným metodám.
+Pokud voláte některou z těchto metod a váš kód aktuálně zachytává <xref:System.NullReferenceException> pro argumenty null, Zachyťte <xref:System.ArgumentNullException> místo toho. Kromě toho zvažte aktualizaci kódu, abyste zabránili předávání argumentů do uvedených metod.
 
 #### <a name="category"></a>Kategorie
 
@@ -31,7 +31,7 @@ Windows Forms
 
 #### <a name="affected-apis"></a>Ovlivněná rozhraní API
 
-Počínaje rozhraním .NET 5.0 Náhled 1:
+Počínaje verzí .NET 5,0 Preview 1:
 
 - <xref:System.Windows.Forms.Control.ControlCollection.%23ctor(System.Windows.Forms.Control)>
 - <xref:System.Windows.Forms.TabControl.GetToolTipText(System.Object)?displayProperty=nameWithType>
@@ -42,10 +42,10 @@ Počínaje rozhraním .NET 5.0 Náhled 1:
 - <xref:System.Windows.Forms.ToolStripRenderer.OnRenderItemText(System.Windows.Forms.ToolStripItemTextRenderEventArgs)?displayProperty=nameWithType>
 - <xref:System.Windows.Forms.ToolStripRenderer.OnRenderStatusStripSizingGrip(System.Windows.Forms.ToolStripRenderEventArgs)?displayProperty=nameWithType>
 
-Počínaje rozhraním .NET 5.0 Náhled 2:
+Od verze .NET 5,0 Preview 2:
 
 - <xref:System.Windows.Forms.DataGridViewComboBoxEditingControl.ApplyCellStyleToEditingControl(System.Windows.Forms.DataGridViewCellStyle)?displayProperty=nameWithType>
-- <xref:System.Windows.Forms.RichTextBox.LoadFile(System.IO.Stream,System.Windows.Forms.RichTextBoxStreamType)?displayProperty=nameWithType>(pouze <xref:System.IO.Stream> pro parametr)
+- <xref:System.Windows.Forms.RichTextBox.LoadFile(System.IO.Stream,System.Windows.Forms.RichTextBoxStreamType)?displayProperty=nameWithType>(pouze pro <xref:System.IO.Stream> parametr)
 
 <!-- 
 

@@ -8,12 +8,12 @@ helpviewer_keywords:
 - XAML [WPF], TemplateBinding markup extension
 - TemplateBinding markup extensions [WPF]
 ms.assetid: 1d25bbfc-dbc2-499d-9f12-419d23d4ac6a
-ms.openlocfilehash: 8c631a5a78db90187f0375181d4d4d1832159b7d
-ms.sourcegitcommit: 62285ec11fa8e8424bab00511a90760c60e63c95
+ms.openlocfilehash: 69698db8b51e3872d5941d4fba67271b1e61226e
+ms.sourcegitcommit: 839777281a281684a7e2906dccb3acd7f6a32023
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/20/2020
-ms.locfileid: "81646172"
+ms.lasthandoff: 04/24/2020
+ms.locfileid: "82140463"
 ---
 # <a name="templatebinding-markup-extension"></a>TemplateBinding – rozšíření značek
 Propojuje hodnotu vlastnosti v šabloně ovládacího prvku s hodnotou jiné vlastnosti ovládacího prvku bez vizuálního vzhledu.  
@@ -21,44 +21,44 @@ Propojuje hodnotu vlastnosti v šabloně ovládacího prvku s hodnotou jiné vl
 ## <a name="xaml-attribute-usage"></a>Použití atributu XAML  
   
 ```xml  
-<object property="{TemplateBinding sourceProperty}" .../>  
+<object property="{TemplateBinding sourceProperty}" ... />
 ```  
   
 ## <a name="xaml-attribute-usage-for-setter-property-in-template-or-style"></a>Použití atributu XAML (pro vlastnost Setter v šabloně nebo stylu)  
   
 ```xml  
-<Setter Property="propertyName" Value="{TemplateBinding sourceProperty}" .../>  
+<Setter Property="propertyName" Value="{TemplateBinding sourceProperty}" ... />  
 ```  
   
 ## <a name="xaml-values"></a>Hodnoty XAML  
   
 |||  
 |-|-|  
-|`propertyName`|<xref:System.Windows.DependencyProperty.Name%2A?displayProperty=nameWithType>vlastnosti nastavené v syntaxi setteru.|  
-|`sourceProperty`|Další vlastnost závislosti, která existuje u typu, který <xref:System.Windows.DependencyProperty.Name%2A?displayProperty=nameWithType>je šablonován, určená jeho .<br /><br /> - nebo -<br /><br /> Název vlastnosti specifikovaný s použitím teček, který je definován jiným typem než cílovým typem bez vizuálního vzhledu. To je <xref:System.Windows.PropertyPath>vlastně . Viz [PropertyPath XAML Syntaxe](propertypath-xaml-syntax.md).|  
+|`propertyName`|<xref:System.Windows.DependencyProperty.Name%2A?displayProperty=nameWithType>vlastnosti nastavené v syntaxi setter.|  
+|`sourceProperty`|Další vlastnost závislosti, která existuje pro typ, který je vytvářen šablonou, <xref:System.Windows.DependencyProperty.Name%2A?displayProperty=nameWithType>kterou určuje.<br /><br /> - nebo -<br /><br /> Název vlastnosti specifikovaný s použitím teček, který je definován jiným typem než cílovým typem bez vizuálního vzhledu. To je ve skutečnosti <xref:System.Windows.PropertyPath>a. Viz [syntaxe jazyka XAML pro PropertyPath](propertypath-xaml-syntax.md).|  
   
 ## <a name="remarks"></a>Poznámky  
- A `TemplateBinding` je optimalizovaná forma [vazby](binding-markup-extension.md) pro scénáře šablony, podobně jako `Binding` k vyrobeno s `{Binding RelativeSource={RelativeSource TemplatedParent}, Mode=OneWay}`. A `TemplateBinding` je vždy jednosměrná vazba, i v případě, že vlastnosti účastní výchozí obousměrné vazby. Obě vlastnosti musejí být vlastnosti závislostí. Chcete-li dosáhnout obousměrné vazby na šablonovaný nadřazený použít následující příkaz vazby místo `{Binding RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay, Path=MyDependencyProperty}`.
+ Je optimalizovaná forma [vazby](binding-markup-extension.md) pro scénáře šablon, která je analogická s `Binding` `{Binding RelativeSource={RelativeSource TemplatedParent}, Mode=OneWay}`vytvořenou. `TemplateBinding` `TemplateBinding` Je vždy jednosměrná vazba, a to i v případě, že vlastnosti použité jako výchozí jsou obousměrné vazby. Obě vlastnosti musejí být vlastnosti závislostí. Aby bylo možné dosáhnout obousměrné vazby k nadřazenému objektu, použijte místo něj `{Binding RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay, Path=MyDependencyProperty}`následující příkaz vazby.
   
- [RelativeSource](relativesource-markupextension.md) je další rozšíření značky, které se `TemplateBinding` někdy používá ve spojení s nebo místo, aby bylo možné provést relativní vazby vlastností v rámci šablony.  
+ [RelativeSource](relativesource-markupextension.md) je další rozšíření značek, které se někdy používá ve spojení s nebo namísto `TemplateBinding` , aby bylo možné provést relativní vazbu vlastnosti v rámci šablony.  
   
- Popis šablon ovládacích prvku jako koncept zde není popsán; Další informace naleznete [v tématu Ovládací styly a šablony](../controls/control-styles-and-templates.md).  
+ Popis šablon ovládacích prvků v rámci konceptu se zde nezabývá; Další informace najdete v tématu [styly a šablony ovládacích prvků](../controls/control-styles-and-templates.md).  
   
- Nejčastějším typem syntaxe, která se používá u tohoto rozšíření značek, je syntaxe atributu. Token řetězce zadaný `TemplateBinding` po přidělení řetězce <xref:System.Windows.TemplateBindingExtension.Property%2A> identifikátoru jako <xref:System.Windows.TemplateBindingExtension> hodnota základní třídy rozšíření.  
+ Nejčastějším typem syntaxe, která se používá u tohoto rozšíření značek, je syntaxe atributu. Token řetězce poskytnutý po řetězci `TemplateBinding` identifikátoru je přiřazen jako <xref:System.Windows.TemplateBindingExtension.Property%2A> hodnota základní <xref:System.Windows.TemplateBindingExtension> třídy rozšíření.  
   
- Je možné použít syntaxi elementu objektu, kterou ale neuvádíme, protože nemá žádné reálné použití. `TemplateBinding`se používá k vyplnění hodnot v rámci setters, pomocí `TemplateBinding` vyhodnocených výrazů a pomocí syntaxe elementu objektu pro vyplnění `<Setter.Property>` syntaxe prvku vlastnosti je zbytečně podrobné.  
+ Je možné použít syntaxi elementu objektu, kterou ale neuvádíme, protože nemá žádné reálné použití. `TemplateBinding`slouží k vyplňování hodnot v rámci setter, pomocí vyhodnocených výrazů a použití syntaxe elementů `TemplateBinding` objektu pro `<Setter.Property>` k vyplnění syntaxe elementu Property je zbytečně podrobné.  
   
- `TemplateBinding`lze také použít v podrobném použití atributu, který určuje <xref:System.Windows.TemplateBindingExtension.Property%2A> vlastnost jako dvojici vlastností=hodnota:  
+ `TemplateBinding`lze také použít v podrobném použití atributu, které určuje <xref:System.Windows.TemplateBindingExtension.Property%2A> vlastnost jako dvojici vlastnost = hodnota:  
   
 ```xml  
-<object property="{TemplateBinding Property=sourceProperty}" .../>  
+<object property="{TemplateBinding Property=sourceProperty}" ... />
 ```  
   
- Použití podrobné syntaxe je často užitečné pro rozšíření, která mají více než jednu nastavitelnou vlastnost, nebo v případě, že jsou některé vlastnosti volitelné. Protože `TemplateBinding` má pouze jednu vlastnost settable, která je vyžadována, toto podrobné použití není typické.  
+ Použití podrobné syntaxe je často užitečné pro rozšíření, která mají více než jednu nastavitelnou vlastnost, nebo v případě, že jsou některé vlastnosti volitelné. Protože `TemplateBinding` má pouze jednu nastavitelnou vlastnost, která je povinná, toto podrobné použití není typické.  
   
- V [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] implementaci procesoru XAML zpracování pro toto rozšíření <xref:System.Windows.TemplateBindingExtension> značky je definováno třídou.  
+ V implementaci [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] procesoru XAML je zpracování tohoto rozšíření značek definováno <xref:System.Windows.TemplateBindingExtension> třídou.  
   
- `TemplateBinding`je rozšíření značky. Rozšíření značek jsou obvykle implementována v případě požadavku, aby díky použití řídicí sekvence mohly být hodnoty atributů něčím jiným než literálními hodnotami nebo názvy obslužných rutin, a tento požadavek má tak rozsáhlou platnost, že nestačí jednoduše použít převaděče typů pro určité typy nebo vlastnosti. Všechna rozšíření značek v XAML `{` `}` používají znaky a v syntaxi jejich atributu, což je konvence, podle které procesor XAML rozpozná, že rozšíření značek musí atribut zpracovat. Další informace naleznete [v tématu Markup Extensions a WPF XAML](markup-extensions-and-wpf-xaml.md).  
+ `TemplateBinding`je rozšíření značek. Rozšíření značek jsou obvykle implementována v případě požadavku, aby díky použití řídicí sekvence mohly být hodnoty atributů něčím jiným než literálními hodnotami nebo názvy obslužných rutin, a tento požadavek má tak rozsáhlou platnost, že nestačí jednoduše použít převaděče typů pro určité typy nebo vlastnosti. Všechna rozšíření značek v jazyce XAML používají `{` ve `}` svých syntaxech atributů znaky a, což je konvence, pomocí níž procesor XAML rozpozná, že je nutné zpracovat atribut rozšířením značek. Další informace naleznete v tématu [rozšíření značek a WPF XAML](markup-extensions-and-wpf-xaml.md).  
   
 ## <a name="see-also"></a>Viz také
 
