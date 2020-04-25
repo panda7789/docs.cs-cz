@@ -30,11 +30,11 @@
               items:
                 - name: Zalomení ohraničení kolem obsahu plátna
                   href: how-to-wrap-a-border-around-the-content-of-a-canvas.md
-                - name: Načtení nebo nastavení vlastnosti umístění plátna
+                - name: Získání nebo nastavení vlastností umístění plátna
                   href: how-to-get-or-set-canvas-positioning-properties.md
                 - name: Vytvoření a použití plátna
                   href: how-to-create-and-use-a-canvas.md
-                - name: Umístění podřízených elementů pomocí vlastností připojených k plátnu
+                - name: Umístění podřízených elementů pomocí vlastností přidružených k plátnu
                   href: how-to-use-the-attached-properties-of-canvas-to-position-child-elements.md
                 - name: Změna velikosti plátna použitím jezdce
                   href: how-to-resize-a-canvas-by-using-a-thumb.md
@@ -58,7 +58,7 @@
               href: how-to-group-sort-and-filter-data-in-the-datagrid-control.md
             - name: 'Postupy: Implementace ověření pomocí ovládacího prvku DataGrid'
               href: how-to-implement-validation-with-the-datagrid-control.md
-            - name: 'Návod: Zobrazení dat z databáze serveru SQL Server v ovládacím prvku DataGrid'
+            - name: 'Návod: Zobrazení dat z databáze SQL Serveru v ovládacím prvku DataGrid'
               href: walkthrough-display-data-from-a-sql-server-database-in-a-datagrid-control.md
             - name: Možnosti změny velikosti v ovládacím prvku DataGrid
               href: sizing-options-in-the-datagrid-control.md
@@ -70,7 +70,7 @@
             - name: – postupy
               href: dockpanel-how-to-topics.md
               items:
-                - name: Načtení a nastavení hodnoty ukotvení
+                - name: Získání nebo nastavení hodnoty ukotvení
                   href: how-to-get-or-set-a-dock-value.md
                 - name: Vytvoření objektu DockPanel
                   href: how-to-create-a-dockpanel.md
@@ -141,7 +141,7 @@
               items:
                 - name: Použití elementu obrázku
                   href: how-to-use-the-image-element.md
-                - name: Převedení obrázku do odstínů šedi
+                - name: Převedení obrázku na odstíny šedi
                   href: how-to-convert-an-image-to-greyscale.md
                 - name: Oříznutí obrázku
                   href: how-to-crop-an-image.md
@@ -158,9 +158,9 @@
             - name: – postupy
               href: listbox-how-to-topics.md
               items:
-                - name: Připojení prvku ListBox k datům
+                - name: Svázání prvku ListBox s daty
                   href: how-to-bind-a-listbox-to-data.md
-                - name: Načtení položky ListBoxItem
+                - name: Získání položky ListBoxItem
                   href: how-to-get-a-listboxitem.md
                 - name: Zvýšení výkonu posunování prvku ListBox
                   href: how-to-improve-the-scrolling-performance-of-a-listbox.md
@@ -189,11 +189,11 @@
                   href: how-to-create-a-style-for-a-dragged-gridview-column-header.md
                 - name: Zobrazení obsahu ListView použitím GridView
                   href: how-to-display-listview-contents-by-using-a-gridview.md
-                - name: Nastavení stylu vybraných položek v zobrazení ListView použitím aktivačních procedur
+                - name: Nastavení stylu vybraných položek v zobrazení ListView použitím triggerů
                   href: how-to-use-triggers-to-style-selected-items-in-a-listview.md
                 - name: Vytvoření ListViewItems pomocí CheckBox
                   href: how-to-create-listviewitems-with-a-checkbox.md
-                - name: Zobrazení data pomocí GridViewRowPresenter
+                - name: Zobrazení dat pomocí GridViewRowPresenter
                   href: how-to-display-data-by-using-gridviewrowpresenter.md
                 - name: Seskupení položek v objektu ListView s implementací GridView
                   href: how-to-group-items-in-a-listview-that-implements-a-gridview.md
@@ -218,7 +218,7 @@
               items:
                 - name: Vytvoření vlastního elementu panelu
                   href: how-to-create-a-custom-panel-element.md
-                - name: Přetížení metody panelu OnRender
+                - name: Přepsání metody panelu OnRender
                   href: how-to-override-the-panel-onrender-method.md
                 - name: Nastavení vlastností výšky elementu
                   href: how-to-set-the-height-properties-of-an-element.md
@@ -236,9 +236,9 @@
             - name: – postupy
               href: popup-how-to-topics.md
               items:
-                - name: Animace překryvného objektu
+                - name: Animace prvku Popup
                   href: how-to-animate-a-popup.md
-                - name: Určení vlastního překryvného umístění
+                - name: Určení vlastního umístění prvku Popup
                   href: how-to-specify-a-custom-popup-position.md
         - name: ProgressBar
           href: progressbar.md
@@ -267,7 +267,7 @@
         - name: ScrollBar
           href: scrollbar.md
           items:
-            - name: Přizpůsobení velikosti jezdce v objektu ScrollBar
+            - name: Přizpůsobení velikosti jezdce v prvku ScrollBar
               href: how-to-customize-the-thumb-size-on-a-scrollbar.md
         - name: ScrollViewer
           href: scrollviewer.md
@@ -296,11 +296,11 @@
             - name: – postupy
               href: stackpanel-how-to-topics.md
               items:
-                - name: Výběr mezi StackPanel a DockPanel
+                - name: Výběr mezi elementy StackPanel a DockPanel
                   href: how-to-choose-between-stackpanel-and-dockpanel.md
-                - name: Vytvoření objektu StackPanel
+                - name: Vytvoření elementu StackPanel
                   href: how-to-create-a-stackpanel.md
-                - name: Vodorovné a svislé zarovnání obsahu v objektu StackPanel
+                - name: Vodorovné a svislé zarovnání obsahu v elementu StackPanel
                   href: how-to-horizontally-or-vertically-align-content-in-a-stackpanel.md
         - name: StatusBar
           href: statusbar.md
@@ -325,11 +325,11 @@
                   href: how-to-detect-when-text-in-a-textbox-has-changed.md
                 - name: Povolení znaků tabulátoru v ovládacím prvku TextBox
                   href: how-to-enable-tab-characters-in-a-textbox-control.md
-                - name: Získání kolekce řádků z objektu TextBox
+                - name: Získání kolekce řádků z prvku TextBox
                   href: how-to-get-a-collection-of-lines-from-a-textbox.md
                 - name: Nastavení ovládacího prvku TextBox jen pro čtení
                   href: how-to-make-a-textbox-control-read-only.md
-                - name: Umístění kurzoru na začátku a konci textu v ovládacím prvku TextBox
+                - name: Umístění kurzoru na začátek nebo konec textu v ovládacím prvku TextBox
                   href: position-the-cursor-at-the-beginning-or-end-of-text.md
                 - name: Načtení výběru textu
                   href: how-to-retrieve-a-text-selection.md
@@ -339,7 +339,7 @@
                   href: how-to-set-the-text-content-of-a-textbox-control.md
                 - name: Povolení kontroly pravopisu v ovládacím prvku pro úpravy textu
                   href: how-to-enable-spell-checking-in-a-text-editing-control.md
-                - name: Použití vlastní místní nabídky u objektu TextBox
+                - name: Použití vlastní místní nabídky s prvkem TextBox
                   href: how-to-use-a-custom-context-menu-with-a-textbox.md
                 - name: Použití kontroly pravopisu s místní nabídkou
                   href: how-to-use-spell-checking-with-a-context-menu.md
@@ -350,7 +350,7 @@
           items:
             - name: ToolBar – přehled
               href: toolbar-overview.md
-            - name: Ovládací prvky stylu na objektu ToolBar
+            - name: Ovládací prvky stylu na prvku ToolBar
               href: how-to-style-controls-on-a-toolbar.md
         - name: Popisy tlačítek
           href: tooltip.md
@@ -360,7 +360,7 @@
             - name: – postupy
               href: tooltip-how-to-topics.md
               items:
-                - name: Umístění objektu ToolTip
+                - name: Umístění prvku ToolTip
                   href: how-to-position-a-tooltip.md
                 - name: Používání vlastnosti BetweenShowDelay
                   href: how-to-use-the-betweenshowdelay-property.md
@@ -387,13 +387,13 @@
         - name: Viewbox
           href: viewbox.md
           items:
-            - name: Použití vlastností roztažení na obsah viewbox
+            - name: Použití vlastností roztažení na obsah Viewbox
               href: how-to-apply-stretch-properties-to-the-contents-of-a-viewbox.md
     - name: "– styly a\_šablony"
       href: styles-and-templates.md
       items:
         - name: Styly a šablony
-          href: styling-and-templating.md
+          href: ../../../desktop-wpf/fundamentals/styles-templates-overview.md
         - name: Přizpůsobení existujícího ovládacího prvku pomocí ControlTemplate
           href: ../../../desktop-wpf/themes/how-to-create-apply-template.md
         - name: 'Postupy: Vyhledávání elementů generovaných objektem ControlTemplate'
@@ -415,15 +415,15 @@
             - name: – postupy
               href: adorners-how-to-topics.md
               items:
-                - name: Implementace doplňku
+                - name: Implementace doplňku pro úpravy
                   href: how-to-implement-an-adorner.md
-                - name: Připojení doplňku k elementu
+                - name: Svázání doplňku pro úpravy s elementem
                   href: how-to-bind-an-adorner-to-an-element.md
                 - name: Doplnění podřízených položek panelu
                   href: how-to-adorn-the-children-of-a-panel.md
-                - name: Odebrání doplňku z elementu
+                - name: Odebrání doplňku pro úpravy z elementu
                   href: how-to-remove-an-adorner-from-an-element.md
-                - name: Odebrání všech doplňků z elementu
+                - name: Odebrání všech doplňků pro úpravy z elementu
                   href: how-to-remove-all-adorners-from-an-element.md
         - name: Styly a šablony ovládacích prvků
           href: control-styles-and-templates.md
@@ -494,7 +494,7 @@
               href: window-styles-and-templates.md
         - name: Automatizace uživatelského rozhraní vlastního ovládacího prvku WPF
           href: ui-automation-of-a-wpf-custom-control.md
-        - name: 'Návod: Vytvoření tlačítka s vlastní animací'
+        - name: 'Návody: Vytvoření tlačítka s vlastní animací'
           href: walkthroughs-create-a-custom-animated-button.md
           items:
             - name: Vytvoření tlačítka použitím Blendu

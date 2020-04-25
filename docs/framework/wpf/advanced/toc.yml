@@ -7,7 +7,7 @@
       href: xaml-in-wpf.md
       items:
         - name: Přehled XAML (WPF)
-          href: xaml-overview-wpf.md
+          href: ../../../desktop-wpf/fundamentals/xaml.md
         - name: Podrobná syntaxe XAML
           href: xaml-syntax-in-detail.md
         - name: Podkladový kód a kód XAML v subsystému WPF
@@ -290,7 +290,7 @@
       href: resources-wpf.md
       items:
         - name: Zdroje XAML
-          href: xaml-resources.md
+          href: ../../../desktop-wpf/fundamentals/xaml-resources-define.md
           items:
             - name: Zdroje a kód
               href: resources-and-code.md

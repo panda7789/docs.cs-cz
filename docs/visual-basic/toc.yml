@@ -29,7 +29,7 @@
         - name: "Přístup k\_nastavení aplikace"
           href: developing-apps/programming/app-settings/index.md
         - name: 'Zpracování jednotek, adresářů a souborů'
-          href: developing-apps/programming/drives-directories-files/processing.md
+          href: developing-apps/programming/drives-directories-files/index.md
     - name: "Vývoj s\_použitím oboru názvů My"
       href: developing-apps/development-with-my/index.md
       items:
@@ -1414,6 +1414,6 @@
     - name: Specifikace jazyka
       href: reference/language-specification/
 - name: Ukázkové aplikace
-  href: sample-applications.md
+  href: 'https://github.com/dotnet/docs/tree/master/samples/snippets/visualbasic'
 - name: Postupy
   href: walkthroughs.md
