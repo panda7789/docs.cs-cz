@@ -56,9 +56,9 @@
           items:
             - name: GetExceptionRecord – metoda
               href: iclrdatatarget3-getexceptionrecord-method.md
-            - name: Metoda GetExceptionContextRecord
+            - name: GetExceptionContextRecord – metoda
               href: iclrdatatarget3-getexceptioncontextrecord-method.md
-            - name: Metoda GetExceptionThreadID
+            - name: GetExceptionThreadID – metoda
               href: iclrdatatarget3-getexceptionthreadid-method.md
         - name: ICLRDebugging – rozhraní
           href: iclrdebugging-interface.md
@@ -75,7 +75,7 @@
         - name: ICLRMetadataLocator – rozhraní
           href: iclrmetadatalocator-interface.md
           items:
-            - name: GetMetadata – metoda
+            - name: GetMetaData – metoda
               href: iclrmetadatalocator-getmetadata-method.md
         - name: ICorDebug – rozhraní
           href: icordebug-interface.md
@@ -138,7 +138,7 @@
         - name: Rozhraní ICorDebugAppDomain4
           href: icordebugappdomain4-interface.md
           items:
-            - name: Metoda GetObjectForCCW
+            - name: GetObjectForCCW – metoda
               href: icordebugappdomain4-getobjectforccw-method.md
         - name: ICorDebugAppDomainEnum – rozhraní
           href: icordebugappdomainenum-interface.md
@@ -185,9 +185,9 @@
         - name: Rozhraní ICorDebugAssembly3
           href: icordebugassembly3-interface.md
           items:
-            - name: Metoda EnumerateContainedAssemblies
+            - name: EnumerateContainedAssemblies – metoda
               href: icordebugassembly3-enumeratecontainedassemblies-method.md
-            - name: Metoda GetContainerAssembly
+            - name: GetContainerAssembly – metoda
               href: icordebugassembly3-getcontainerassembly-method.md
         - name: ICorDebugAssemblyEnum – rozhraní
           href: icordebugassemblyenum-interface.md
@@ -351,25 +351,25 @@
         - name: Rozhraní ICorDebugDataTarget2
           href: icordebugdatatarget2-interface.md
           items:
-            - name: Metoda CreateVirtualUnwinder
+            - name: CreateVirtualUnwinder – metoda
               href: icordebugdatatarget2-createvirtualunwinder-method.md
-            - name: Metoda EnumerateThreadIDs
+            - name: EnumerateThreadIDs – metoda
               href: icordebugdatatarget2-enumeratethreadids-method.md
             - name: GetImageFromPointer – metoda
               href: icordebugdatatarget2-getimagefrompointer-method.md
-            - name: Metoda GetImageLocation
+            - name: GetImageLocation – metoda
               href: icordebugdatatarget2-getimagelocation-method.md
-            - name: Metoda GetSymbolProviderForImage
+            - name: GetSymbolProviderForImage – metoda
               href: icordebugdatatarget2-getsymbolproviderforimage-method.md
         - name: Rozhraní ICorDebugDataTarget3
           href: icordebugdatatarget3-interface.md
           items:
-            - name: Metoda GetLoadedModules
+            - name: GetLoadedModules – metoda
               href: icordebugdatatarget3-getloadedmodules-method.md
         - name: Rozhraní ICorDebugDebugEvent
           href: icordebugdebugevent-interface.md
           items:
-            - name: Metoda GetEventKind
+            - name: GetEventKind – metoda
               href: icordebugdebugevent-geteventkind-method.md
             - name: GetThread – metoda
               href: icordebugdebugevent-getthread-method.md
@@ -533,7 +533,7 @@
         - name: Rozhraní ICorDebugFunction3
           href: icordebugfunction3-interface.md
           items:
-            - name: Metoda GetActiveReJitRequestILCode
+            - name: GetActiveReJitRequestILCode – metoda
               href: icordebugfunction3-getactiverejitrequestilcode-method.md
         - name: ICorDebugFunctionBreakpoint – rozhraní
           href: icordebugfunctionbreakpoint-interface.md
@@ -598,12 +598,12 @@
         - name: Rozhraní ICorDebugILCode
           href: icordebugilcode-interface.md
           items:
-            - name: Metoda GetEHClauses
+            - name: GetEHClauses – metoda
               href: icordebugilcode-getehclauses-method.md
         - name: Rozhraní ICorDebugILCode2
           href: icordebugilcode2-interface.md
           items:
-            - name: Metoda GetInstrumentedILMap
+            - name: GetInstrumentedILMap – metoda
               href: icordebugilcode2-getinstrumentedilmap-method.md
             - name: GetLocalVarSigToken – metoda
               href: icordebugilcode2-getlocalvarsigtoken-method.md
@@ -643,11 +643,11 @@
         - name: Rozhraní ICorDebugILFrame4
           href: icordebugilframe4-interface.md
           items:
-            - name: Metoda EnumerateLocalVariablesEx
+            - name: EnumerateLocalVariablesEx – metoda
               href: icordebugilframe4-enumeratelocalvariablesex-method.md
-            - name: Metoda GetCodeEx
+            - name: GetCodeEx – metoda
               href: icordebugilframe4-getcodeex-method.md
-            - name: Metoda GetLocalVariableEx
+            - name: GetLocalVariableEx – metoda
               href: icordebugilframe4-getlocalvariableex-method.md
         - name: ICorDebugInstanceFieldSymbol – rozhraní
           href: icordebuginstancefieldsymbol-interface.md
@@ -996,7 +996,7 @@
         - name: ICorDebugProcess4 – rozhraní
           href: icordebugprocess4-interface.md
           items:
-            - name: Metoda ProcessStateChanged
+            - name: ProcessStateChanged – metoda
               href: icordebugprocess4-processstatechanged-method.md
         - name: ICorDebugProcess5 – rozhraní
           href: icordebugprocess5-interface.md
@@ -1030,25 +1030,25 @@
           items:
             - name: DecodeEvent – metoda
               href: icordebugprocess6-decodeevent-method.md
-            - name: Metoda EnableVirtualModuleSplitting
+            - name: EnableVirtualModuleSplitting – metoda
               href: icordebugprocess6-enablevirtualmodulesplitting-method.md
             - name: GetCode – metoda
               href: icordebugprocess6-getcode-method.md
-            - name: Metoda GetExportStepInfo
+            - name: GetExportStepInfo – metoda
               href: icordebugprocess6-getexportstepinfo-method.md
-            - name: Metoda MarkDebuggerAttached
+            - name: MarkDebuggerAttached – metoda
               href: icordebugprocess6-markdebuggerattached-method.md
             - name: Metoda ProcessStateChanged
               href: icordebugprocess6-processstatechanged-method.md
         - name: Rozhraní ICorDebugProcess7
           href: icordebugprocess7-interface.md
           items:
-            - name: Metoda SetWriteableMetadataUpdateMode
+            - name: SetWriteableMetadataUpdateMode – metoda
               href: icordebugprocess7-setwriteablemetadataupdatemode-method.md
         - name: Rozhraní ICorDebugProcess8
           href: icordebugprocess8-interface.md
           items:
-            - name: Metoda EnableExceptionCallbacksOutsideOfMyCode
+            - name: EnableExceptionCallbacksOutsideOfMyCode – metoda
               href: icordebugprocess8-enableexceptioncallbacksoutsideofmycode-method.md
         - name: ICorDebugProcessEnum – rozhraní
           href: icordebugprocessenum-interface.md
@@ -1442,7 +1442,7 @@
           items:
             - name: GetMethodDefinitionByToken
               href: ixclrdatamodule-getmethoddefinitionbytoken-method.md
-            - name: Žádost
+            - name: Request
               href: ixclrdatamodule-request-method.md
             - name: GetVersionId
               href: ixclrdatamodule-getversionid-method.md
@@ -1608,6 +1608,11 @@
           href: cordebugexceptionobjectstackframe-structure.md
         - name: CorDebugGuidToTypeMapping – struktura
           href: cordebugguidtotypemapping-structure.md
+        - name: DacpGetModuleAddress – struktura
+          href: dacpgetmoduleaddress-structure.md
+          items:
+            - name: 'DacpGetModuleAddress::Request – metoda'
+              href: dacpgetmoduleaddress-request-method.md
         - name: DacpMethodDescData – struktura
           href: dacpmethoddescdata-structure.md
         - name: DacpModuleData – struktura

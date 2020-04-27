@@ -221,6 +221,8 @@
                   href: migration-guide/retargeting/4.5.1-4.7.1.md
                 - name: 4.5.1 na 4.7.2
                   href: migration-guide/retargeting/4.5.1-4.7.2.md
+                - name: 4.5.1 na 4.8
+                  href: migration-guide/retargeting/4.5.1-4.8.md
                 - name: 4.5.2 na 4.6
                   href: migration-guide/retargeting/4.5.2-4.6.md
                 - name: 4.5.2 na 4.6.1
@@ -277,6 +279,44 @@
                   href: migration-guide/retargeting/4.7.1-4.8.md
                 - name: 4.7.2 na 4.8
                   href: migration-guide/retargeting/4.7.2-4.8.md
+        - name: Možná omezení chování
+          items:
+            - name: Přehled
+              href: migration-guide/mitigations.md
+            - name: Vlastní implementace IMessageFilter.PreFilterMessage
+              href: migration-guide/mitigation-custom-imessagefilter-prefiltermessage-implementations.md
+            - name: Deserializace objektů mezi doménami aplikací
+              href: migration-guide/mitigation-deserialization-of-objects-across-app-domains.md
+            - name: Nový 64bitový kompilátor JIT
+              href: migration-guide/mitigation-new-64-bit-jit-compiler.md
+            - name: Kontroly dvojtečky u cest
+              href: migration-guide/mitigation-path-colon-checks.md
+            - name: Normalizace cest
+              href: migration-guide/mitigation-path-normalization.md
+            - name: Snímky PNG v objektech ikon
+              href: migration-guide/mitigation-png-frames-in-icon-objects.md
+            - name: Podpora dotykového ovládání a pera na základě ukazatele
+              href: migration-guide/mitigation-pointer-based-touch-and-stylus-support.md
+            - name: Období blokování fondu
+              href: migration-guide/mitigation-pool-blocking-period.md
+            - name: Správa verzí produktu
+              href: migration-guide/mitigation-product-versioning.md
+            - name: Serializace řídicích znaků
+              href: migration-guide/mitigation-serialization-control-characters.md
+            - name: Protokoly TLS
+              href: migration-guide/mitigation-tls-protocols.md
+            - name: Služby WCF a ověřování certifikátů
+              href: migration-guide/mitigation-wcf-services-and-certificate-authentication.md
+            - name: Rozložení WPF
+              href: migration-guide/mitigation-wpf-layout.md
+            - name: Vykreslování oken ve WPF
+              href: migration-guide/mitigation-wpf-window-rendering.md
+            - name: X509CertificateClaimSet.FindClaims – metoda
+              href: migration-guide/mitigation-x509certificateclaimset-findclaims-method.md
+            - name: Ověřování schématu XML
+              href: migration-guide/mitigation-xml-schema-validation.md
+            - name: ZipArchiveEntry.FullName – oddělovač cest
+              href: migration-guide/mitigation-ziparchiveentry-fullname-path-separator.md
         - name: Kompatibilita verzí
           href: migration-guide/version-compatibility.md
     - name: Verze rozhraní .NET Framework
