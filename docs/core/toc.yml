@@ -20,6 +20,8 @@
       href: install/how-to-detect-installed-versions.md
     - name: Správci balíčků pro Linux
       items:
+        - name: Ubuntu 20.04
+          href: install/linux-package-manager-ubuntu-2004.md
         - name: Ubuntu 19.10
           href: install/linux-package-manager-ubuntu-1910.md
         - name: Ubuntu 19.04
@@ -351,7 +353,7 @@
     - name: Portování projektů Windows Forms
       href: porting/winforms.md
     - name: Portování projektů WPF
-      href: porting/wpf.md
+      href: ../desktop-wpf/migration/convert-project-from-net-framework.md
     - name: Portování projektů v C++/CLI
       href: porting/cpp-cli.md
 - name: Testování jednotek
@@ -418,7 +420,7 @@
         - name: Vytvoření aplikace .NET Core pomocí modulů plug-in
           href: tutorials/creating-app-with-plugin-support.md
         - name: Jak se používá a ladí funkce zrušení načtení sestavení v .NET Core
-          href: ../standard/assembly/unloadability-howto.md
+          href: ../standard/assembly/unloadability.md
 - name: Vytváření distribučních balíčků .NET Core
   href: distribution-packaging.md
 - name: Vystavení komponent .NET Core pro COM

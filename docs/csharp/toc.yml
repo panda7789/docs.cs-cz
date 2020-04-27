@@ -119,8 +119,8 @@
       href: programming-guide/types/index.md
     - name: Odkazové typy s možnou hodnotou null
       href: nullable-references.md
-    - name: Aktualizace podpisů rozhraní API na odkazy s možnou hodnotou null
-      href: nullable-attributes.md
+    - name: Volba strategie pro povolení typů odkazů s možnou hodnotou null
+      href: nullable-migration-strategies.md
     - name: Jmenné prostory
       href: programming-guide/namespaces/index.md
     - name: Základní typy
@@ -1200,6 +1200,8 @@
               href: programming-guide/xmldoc/exception.md
             - name: <include>
               href: programming-guide/xmldoc/include.md
+            - name: <inheritdoc>
+              href: programming-guide/xmldoc/inheritdoc.md
             - name: <list>
               href: programming-guide/xmldoc/list.md
             - name: <para>

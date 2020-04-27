@@ -232,6 +232,10 @@
           displayName: garbage collection
         - name: Základy
           href: garbage-collection/fundamentals.md
+        - name: Pracovní stanice a uvolňování paměti serveru
+          href: garbage-collection/workstation-server-gc.md
+        - name: Uvolňování paměti pozadí
+          href: garbage-collection/background-gc.md
         - name: Halda pro velké objekty
           href: garbage-collection/large-object-heap.md
         - name: Uvolňování paměti a výkon
@@ -748,8 +752,8 @@
           href: serialization/how-to-chunk-serialized-data.md
         - name: 'Postupy: Určení, zda lze objekt .NET Standard serializovat'
           href: serialization/how-to-determine-if-netstandard-object-is-serializable.md
-        - name: Ukázky
-          href: serialization/samples-binary.md
+        - name: Ukázka
+          href: serialization/basic-serialization-technology-sample.md
     - name: Serializace XML a SOAP
       items:
         - name: Přehled
@@ -804,8 +808,6 @@
               href: serialization/xml-serializer-generator-tool-sgen-exe.md
             - name: Nástroj definice schématu XML (Xsd.exe)
               href: serialization/xml-schema-definition-tool-xsd-exe.md
-        - name: Ukázky
-          href: serialization/samples-xml.md
 - name: Vývoj pro více platforem
   items:
     - name: Přehled
