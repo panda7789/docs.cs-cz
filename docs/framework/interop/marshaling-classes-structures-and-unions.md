@@ -18,12 +18,12 @@ helpviewer_keywords:
 - data marshaling, platform invoke
 - marshaling, platform invoke
 ms.assetid: 027832a2-9b43-4fd9-9b45-7f4196261a4e
-ms.openlocfilehash: d761d8ed7488e99f29d4844d061867915a624b96
-ms.sourcegitcommit: 42ed59871db1f29a32b3d8e7abeb20e6eceeda7c
+ms.openlocfilehash: 708ed6a232950cb69796f105f6f198749ed53a24
+ms.sourcegitcommit: 5988e9a29cedb8757320817deda3c08c6f44a6aa
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74960014"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82200012"
 ---
 # <a name="marshaling-classes-structures-and-unions"></a>Zařazování tříd, struktur a sjednocení
 
@@ -42,6 +42,7 @@ V následující tabulce jsou uvedeny možnosti zařazování pro třídy, struk
 |Pole struktur s celými čísly a řetězci podle odkazu|Předá pole struktury, které obsahují celá čísla a řetězce jako výstupní parametr. Volaná funkce přiděluje paměť pro pole.|[Ukázka Outarrayofstructs –](#outarrayofstructs-sample)|
 |Sjednocení s typy hodnot.|Předá sjednocení s typy hodnot (Integer a Double).|[sjednocení – ukázka](#unions-sample)|
 |Sjednocení se smíšenými typy.|Předá sjednocení se smíšenými typy (Integer a String).|[sjednocení – ukázka](#unions-sample)|
+|Struktura s rozložením pro konkrétní platformu.|Předá typ s definicemi nativního balení.|[Ukázka platformy](#platform-sample)|
 |Hodnoty null ve struktuře.|Předá odkaz s hodnotou null (**Nothing** v Visual Basic) místo odkazu na typ hodnoty.|[HandleRef – ukázka](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.0/hc662t8k(v=vs.85))|
 
 ## <a name="structures-sample"></a>Ukázka struktur
@@ -221,6 +222,85 @@ Ve spravovaném kódu jsou sjednocení definována jako struktury. `MyUnion` Str
 [!code-cpp[Conceptual.Interop.Marshaling#29](~/samples/snippets/cpp/VS_Snippets_CLR/conceptual.interop.marshaling/cpp/unions.cpp#29)]
 [!code-csharp[Conceptual.Interop.Marshaling#29](~/samples/snippets/csharp/VS_Snippets_CLR/conceptual.interop.marshaling/cs/unions.cs#29)]
 [!code-vb[Conceptual.Interop.Marshaling#29](~/samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.interop.marshaling/vb/unions.vb#29)]
+
+## <a name="platform-sample"></a>Ukázka platformy
+
+V některých scénářích `struct` se `union` rozložení může lišit v závislosti na cílové platformě. Zvažte například typ, který [`STRRET`](/windows/win32/api/shtypes/ns-shtypes-strret) je definován ve scénáři modelu com:
+
+```c++
+#include <pshpack8.h> /* Defines the packing of the struct */
+typedef struct _STRRET
+    {
+    UINT uType;
+    /* [switch_is][switch_type] */ union
+        {
+        /* [case()][string] */ LPWSTR pOleStr;
+        /* [case()] */ UINT uOffset;
+        /* [case()] */ char cStr[ 260 ];
+        }  DUMMYUNIONNAME;
+    }  STRRET;
+#include <poppack.h>
+```
+
+Výše uvedená `struct` deklarace je deklarována s hlavičkou systému Windows, které mají vliv na rozložení paměti daného typu. Pokud je definována ve spravovaném prostředí, tyto podrobnosti o rozložení jsou potřeba ke správné spolupráci s nativním kódem.
+
+Správná spravovaná definice tohoto typu v rámci 32 procesu je:
+
+``` CSharp
+[StructLayout(LayoutKind.Explicit, Size = 264)]
+public struct STRRET_32
+{
+    [FieldOffset(0)]
+    public uint uType;
+
+    [FieldOffset(4)]
+    public IntPtr pOleStr;
+
+    [FieldOffset(4)]
+    public uint uOffset;
+
+    [FieldOffset(4)]
+    public IntPtr cStr;
+}
+```
+
+U 64 procesu se velikost *a* posunutí polí liší. Správné rozložení je:
+
+``` CSharp
+[StructLayout(LayoutKind.Explicit, Size = 272)]
+public struct STRRET_64
+{
+    [FieldOffset(0)]
+    public uint uType;
+
+    [FieldOffset(8)]
+    public IntPtr pOleStr;
+
+    [FieldOffset(8)]
+    public uint uOffset;
+
+    [FieldOffset(8)]
+    public IntPtr cStr;
+}
+```
+
+Při nesprávném zvážení nativního rozložení ve scénáři spolupráce může dojít k náhodným chybám nebo horším, nesprávným výpočtům.
+
+Ve výchozím nastavení mohou být sestavení .NET spouštěna v 32 a 64 verze modulu runtime .NET. Aplikace musí počkat, než čas spuštění určí, který z předchozích definic se má použít.
+
+Následující fragment kódu ukazuje příklad, jak zvolit mezi 32 a 64 bitů definice v době běhu.
+
+```CSharp
+if (IntPtr.Size == 8)
+{
+    // Use the STRRET_64 definition
+}
+else
+{
+    Debug.Assert(IntPtr.Size == 4);
+    // Use the STRRET_32 definition
+}
+```
 
 ## <a name="systime-sample"></a>SysTime – ukázka
 

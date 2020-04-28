@@ -1,23 +1,25 @@
 ---
 title: Škálování aplikací nativních pro Cloud
 description: Škálování aplikací v cloudu pomocí služby Azure Kubernetes a Azure Functions tak, aby splňovala požadavky uživatelů v úsporném režimu.
-ms.date: 09/23/2019
-ms.openlocfilehash: 5f4aac5804c5498c331787083c943a6ea1b69748
-ms.sourcegitcommit: 55f438d4d00a34b9aca9eedaac3f85590bb11565
+ms.date: 04/13/2020
+ms.openlocfilehash: 91d925778e9dfcf8a1ec2486fe8961037409f207
+ms.sourcegitcommit: 5988e9a29cedb8757320817deda3c08c6f44a6aa
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71184825"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82199935"
 ---
 # <a name="scaling-cloud-native-applications"></a>Škálování aplikací nativních pro Cloud
 
 [!INCLUDE [book-preview](../../../includes/book-preview.md)]
 
-Jednou z nejčastěji nabídnutá výhod přechodu do hostitelského prostředí v cloudu je škálovatelnost. V rámci škálovatelnosti nebo schopnosti aplikace přijmout další uživatelské zatížení bez nepatřičného snížení výkonu pro každého uživatele se často dosahuje tím, že se aplikace rozbalí do malých částí, které mohou být dány libovolnými prostředky, které potřebují. V této kapitole zavádíme technologie, které umožňují škálování cloudových aplikací pro splnění požadavků uživatelů. Mezi tyto technologie patří:
+Jednou z nejčastěji nabídnutá výhod přechodu do hostitelského prostředí v cloudu je škálovatelnost. Škálovatelnost nebo schopnost aplikace přijímat dodatečné uživatelské zatížení, aniž by došlo k narušení výkonu pro každého uživatele. Nejčastěji se dosahuje tím, že se aplikace rozbalí do malých částí, které je možné dodávat podle libovolných prostředků, které potřebují. Dodavatelé cloudu umožňují obrovské škálovatelnost kdykoli a kdekoli na světě.
 
-- Kontejnery
-- Orchestrátorů
-- Výpočetní prostředí bez serveru
+ V této kapitole se zabýváme technologiemi, které umožňují škálování cloudových aplikací pro splnění požadavků uživatelů. Patří k nim tyto technologie:
+
+- Containers
+- Orchestrátory
+- Bezserverová architektura
 
 >[!div class="step-by-step"]
 >[Předchozí](centralized-configuration.md)

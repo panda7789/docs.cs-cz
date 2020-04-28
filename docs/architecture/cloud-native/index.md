@@ -1,24 +1,24 @@
 ---
-title: Navrhování cloudových nativních aplikací .NET pro Azure
-description: Průvodce pro vytváření cloudnativních aplikací využívajících kontejnery, mikroslužby a funkce Bez serveru Azure.
+title: Architekt cloudových nativních aplikací .NET pro Azure
+description: Příručka pro sestavování nativních aplikací cloudu využívajících kontejnery, mikroslužby a funkce bez serveru v Azure.
 author: ardalis
-ms.date: 03/07/2019
-ms.openlocfilehash: cf3be07f0d37aacf4f0252ef2f4d922b7be93eee
-ms.sourcegitcommit: e3cbf26d67f7e9286c7108a2752804050762d02d
+ms.date: 04/23/2020
+ms.openlocfilehash: ebef97fb355cbf682b37ee441a19fbbfdd2d0dc3
+ms.sourcegitcommit: 5988e9a29cedb8757320817deda3c08c6f44a6aa
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2020
-ms.locfileid: "80989061"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82199817"
 ---
-# <a name="architecting-cloud-native-net-applications-for-azure"></a>Navrhování cloudových nativních aplikací .NET pro Azure
+# <a name="architecting-cloud-native-net-applications-for-azure"></a>Architekt cloudových nativních aplikací .NET pro Azure
 
 [!INCLUDE [book-preview](../../../includes/book-preview.md)]
 
-![obrázek obálky](./media/cover.png)
+![titulní obrázek](./media/cover.png)
 
 PUBLIKOVAL(A)
 
-Produktové týmy Microsoft Developer Division, .NET a Visual Studio
+Týmy produktů Microsoft Developer divize, .NET a Visual Studio
 
 Divize společnosti Microsoft Corporation
 
@@ -28,55 +28,61 @@ Redmond, Washington 98052-6399
 
 Copyright &copy; 2019 od společnosti Microsoft Corporation
 
-Všechna práva vyhrazena. Žádná část obsahu této knihy nesmí být reprodukována nebo přenášena v jakékoli formě nebo jakýmkoli způsobem bez písemného souhlasu vydavatele.
+Všechna práva vyhrazena. Žádná část obsahu této knihy se nedá reprodukovat ani přenést v jakékoli formě nebo jakýmkoli způsobem bez písemného svolení vydavatele.
 
-Tato kniha je poskytována "tak, jak je" a vyjadřuje názory a názory autora. Názory, názory a informace vyjádřené v této knize, včetně url a dalších odkazů na internetové stránky, se mohou změnit bez předchozího upozornění.
+Tato kniha je k dispozici "tak jak jsou" a vyjadřuje zobrazení a stanoviska autora. Zobrazení, názory a informace vyjádřené v této knize, včetně adres URL a dalších odkazů na internetové weby, se mohou změnit bez předchozího upozornění.
 
 Některé zde uvedené příklady slouží pouze k znázornění a jsou smyšlené. Neměli byste z nich vyvozovat žádné skutečné vztahy či spojení.
 
-Společnost Microsoft a ochranné https://www.microsoft.com známky uvedené na webové stránce "Ochranné známky" jsou ochrannými známkami skupiny společností Microsoft.
+Microsoft a ochranné známky uvedené https://www.microsoft.com na webové stránce ochranné známky jsou ochranné známky skupiny společností Microsoft.
 
 Mac a macOS jsou ochranné známky společnosti Apple Inc.
 
-Logo velryby Docker je registrovaná ochranná známka společnosti Docker, Inc. Používá se svolením.
+Logo Docker Whale je registrovaná ochranná známka společnosti Docker, Inc., kterou používá oprávnění.
 
 Všechny ostatní značky a loga jsou majetkem příslušných vlastníků.
 
-Autoři:
+Autoři
 
-> **Steve "ardalis" Smith** - softwarový architekt a trenér - [Ardalis.com](https://ardalis.com)
+> **Rob Vettor**, hlavní architekt cloudového systému/architekt IP – [thinkingincloudnative.com](http://thinkingincloudnative.com/about/), Microsoft
 >
-> **Rob Vettor** - Microsoft - hlavní architekt cloudového systému / ARCHITEKT IP - [thinkingincloudnative.com](http://thinkingincloudnative.com/about/)
+> **Steve "ardalis" Smith**, software architekt a Trainer- [Ardalis.com](https://ardalis.com)
 
-Účastníci a recenzenti:
+Účastníci a kontroloři:
 
-> **Cesar De la Torre**, hlavní programový manažer, .NET tým, Microsoft
+> **Cesar de la Torre**, Principal program Manager, .NET Team, Microsoft
 >
-> **Nish Anil**, Sr. Program Manager, .NET tým, Microsoft
+> **Nish Anil**, vedoucí program, tým .NET, Microsoft
+>
+> **Jeremy Likeness**, vedoucí program, tým .NET, Microsoft
+>
+> **Cecil Phillip**, hlavní poradce pro Cloud, Microsoft
 
-Editory:
+Další informace o eShopOnContainers
 
-> **Maira Wenzel**, Sr. Content Developer, .NET tým, Microsoft
+Editory
+
+> **Maira Wenzel**, programový manažer, tým .NET, Microsoft
 
 ## <a name="who-should-use-this-guide"></a>Kdo by měl používat tuto příručku
 
-Okruhy uživatelů tohoto průvodce jsou především vývojáři, vedoucí vývoje a architekti, kteří se zajímají o to, jak vytvářet aplikace navržené pro cloud.
+Cílová skupina pro tento průvodce je hlavně vývojářům, vedoucím vývoje a architektům, kteří mají zájem o vytváření aplikací určených pro Cloud.
 
-Sekundární publikum je technická rozhodnutí, kteří plánují zvolit, zda mají vytvářet své aplikace pomocí přístupu nativního pro cloud.
+Sekundární cílová skupina je technickým rozhodnutím, které plánuje vybrat, jestli se mají vytvářet aplikace s využitím nativního přístupu v cloudu.
 
-## <a name="how-you-can-use-this-guide"></a>Jak můžete tuto příručku používat
+## <a name="how-you-can-use-this-guide"></a>Jak můžete použít tuto příručku
 
-Tato příručka začíná definováním cloudnativní a zavedení referenční aplikace vytvořené pomocí zásad a technologií nativní pro cloud. Kromě těchto prvních dvou kapitol je zbytek knihy rozdělen na konkrétní kapitoly zaměřené na témata společná pro většinu aplikací nativních pro cloud. Můžete přejít na některou z těchto kapitol a dozvědět se o přístupech nativních pro cloud:
+Tato příručka začíná definováním cloudového nativního nasazení a představením referenční aplikace vytvořené pomocí cloudových nativních principů a technologií. Kromě těchto prvních dvou kapitol se zbytek knihy rozdělí na konkrétní kapitoly zaměřené na témata, která jsou společná pro většinu cloudových nativních aplikací. Pokud se chcete dozvědět víc o přístupech nativních ke cloudu, můžete přejít na libovolnou z těchto kapitol:
 
-- Přístup k datům a datům
+- Data a přístup k datům
 - Vzory komunikace
 - Škálování a škálovatelnost
 - Odolnost aplikace
 - Monitorování a stav
-- Identita a bezpečnost
+- Identita a zabezpečení
 - DevOps
 
-Tato příručka je k dispozici jak ve formátu PDF, tak online. Neváhejte a předat tento dokument nebo odkazy na jeho online verzi svému týmu, abyste zajistili společné porozumění těmto tématům. Většina těchto témat těží z důsledného porozumění základním zásadám a vzorcům, jakož i kompromisům spojeným s rozhodnutími týkajícími se těchto témat. Naším cílem s tímto dokumentem je vybavit týmy a jejich vedoucí informace, které potřebují k tomu, aby se mohli informovaně rozhodovat o architektuře, vývoji a hostování svých aplikací.
+Tato příručka je k dispozici ve formátu PDF i v online režimu. Nebojte se, že tento dokument předáte nebo odkazuje na jeho online verzi týmu, aby se zajistilo běžné porozumění těmto tématům. Většina těchto témat přináší konzistentní porozumění základním principům a vzorům a kompromisům, které se týkají rozhodnutí souvisejících s těmito tématy. Naším cílem tohoto dokumentu je vybavit týmy a jejich vedoucími informacemi, které potřebují k rozhodování o jejich architektuře, vývoji a hostování svých aplikací.
 
 >[!div class="step-by-step"]
 >[Další](introduction.md)

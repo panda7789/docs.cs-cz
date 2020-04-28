@@ -2,12 +2,12 @@
 title: Vzory odolnosti aplikací
 description: Architekt cloudových nativních aplikací .NET pro Azure | Vzory odolnosti aplikací
 ms.date: 06/30/2019
-ms.openlocfilehash: 13811efaa88e0bd2824add1c8712b78b18d46375
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 6805603f349578655b2535c7346af368c5ce1841
+ms.sourcegitcommit: 5988e9a29cedb8757320817deda3c08c6f44a6aa
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73087753"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82199687"
 ---
 # <a name="application-resiliency-patterns"></a>Vzory odolnosti aplikací
 
@@ -33,7 +33,7 @@ Jak je popsáno v kapitole 1, vývojáři Microsoftu vytvářející cloudové n
 
 Teď se podíváme na vzory pokusů o opakování a okruhu.
 
-### <a name="retry-pattern"></a>Vzor opakování
+### <a name="retry-pattern"></a>Model Opakování
 
 V distribuovaném cloudovém nativním prostředí můžou volání služeb a cloudových prostředků selhat kvůli přechodným (krátkodobým) chybám, které se obvykle po krátké době vyřeší. Implementace strategie opakování pomáhá cloudovým nativním službám zvládnout tyto scénáře.
 
@@ -54,9 +54,9 @@ Je důležité zvýšit omezení rychlosti období před opakovaným pokusem o v
 
 ## <a name="circuit-breaker-pattern"></a>Vzorek pro přerušení okruhu
 
-I když vzor opakování může přispět k vyřazení žádosti entangled v částečném selhání, existují situace, kdy selhání může být způsobeno neočekávanými událostmi, které budou vyžadovat přeložení delší dobu. Tyto chyby můžou být v rozsahu závažnosti od částečné ztráty připojení k úplnému selhání služby. V těchto situacích je bezúčelné pro aplikaci, aby se nepřetržitě opakovala operace, která není pravděpodobně úspěšná.
+I když vzor opakování může přispět k vyřazení žádosti entangled v částečném selhání, existují situace, kdy selhání může být způsobeno neočekávanými událostmi, které budou vyžadovat přeložení delší dobu. Tyto chyby můžou být různě závažné, od částečného výpadku připojení až po úplné selhání služby. V těchto situacích je bezúčelné pro aplikaci, aby se nepřetržitě opakovala operace, která není pravděpodobně úspěšná.
 
-Kvůli horšímu provádění operací nepřetržitého opakování při opakovaném pokusu o nereagující službu vás může přejít k vašemu samoobslužnému útoku na útok, kde jste službu zaplaveni nepřetržitými voláními vyčerpání prostředků, jako jsou paměť, vlákna a databáze. připojení, což způsobuje selhání nesouvisejících částí systému, které používají stejné prostředky.
+Kvůli horšímu provádění operací nepřetržitého opakování při opakovaném pokusu o nereagující službu vás může přejít na scénář útoku na nereagující službu, kde jste službu zaplavi pomocí nepřetržitých volání vyčerpání prostředků, jako jsou paměť, vlákna a databázová připojení, což způsobuje selhání nesouvisejících částí systému, které používají stejné prostředky.
 
 V těchto situacích by bylo vhodnější, že operace selže okamžitě a pokusí se o vyvolání služby pouze v případě, že je pravděpodobně úspěšná.
 

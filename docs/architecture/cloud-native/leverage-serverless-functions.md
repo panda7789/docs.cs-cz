@@ -1,29 +1,29 @@
 ---
 title: Využití bezserverových funkcí
 description: Využití bez serveru a Azure Functions v cloudových nativních aplikacích
-ms.date: 06/30/2019
-ms.openlocfilehash: 77ddef0eb8844ea1b55cd2fc5ec8aa12593c8631
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.date: 04/13/2020
+ms.openlocfilehash: 176499e3cd0349cd689b9d13d1c237a6343d13f3
+ms.sourcegitcommit: 5988e9a29cedb8757320817deda3c08c6f44a6aa
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73087111"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82199739"
 ---
 # <a name="leveraging-serverless-functions"></a>Využití bezserverových funkcí
 
 [!INCLUDE [book-preview](../../../includes/book-preview.md)]
 
-V rámci správy úplných počítačů a operačních systémů pro využívání cloudových možností, bez serveru na extrémním konci, kde jediná věc, za kterou zodpovídáte, je váš kód a platíte jenom při spuštění kódu. Azure Functions poskytuje způsob, jak v aplikacích vytvářet možnosti bez serveru.
+V rámci spektra od správy fyzických počítačů po využití cloudových možností bez serveru na extrémním konci. Vaše jediná odpovědnost je váš kód a platíte jenom při spuštění kódu. Azure Functions poskytuje způsob, jak sestavovat možnosti bez serveru do nativních aplikací pro Cloud.
 
 ## <a name="what-is-serverless"></a>Co je bez serveru?
 
-Computing bez serveru neznamená, že není k dispozici žádný server, na kterém je spuštěná aplikace – kód pořád běží na serveru někam. Rozdíl je v tom, že vývojový tým aplikace již nemusí mít obavy při správě serverové infrastruktury. Computingová řešení bez serveru, jako je Azure Functions týmu, zvyšují produktivitu a umožňují organizacím optimalizovat jejich prostředky a soustředit se na poskytování řešení.
+Bez serveru je poměrně novým modelem služby cloud computingu. Neznamená to, že jsou servery volitelné – váš kód pořád běží na serveru někam. Rozdíl je v tom, že se tým aplikace již netýká správy serverové infrastruktury. Místo toho dodavatel cloudu tuto zodpovědnost vlastní. Vývojový tým zvyšuje svou produktivitu díky doručování podnikových řešení zákazníkům, ne při přípravě na domovníing.
 
-Výpočetní prostředí bez serveru používá pro hostování aplikace nebo součásti vaší aplikace nestavové kontejnery s aktivační událostí. Platformy bez serveru se můžou škálovat a v závislosti na požadavcích podle potřeby. Platformy, jako je Azure Functions, mají snadný přímý přístup k jiným službám Azure, jako jsou fronty, události a úložiště.
+Výpočetní prostředí bez serveru používá pro hostování služeb nestavové kontejnery s událostmi. Můžou škálovat a v závislosti na potřebě požadavků. Platformy bez serveru, jako je Azure Functions, mají úzkou integraci s dalšími službami Azure, jako jsou fronty, události a úložiště.
 
 ## <a name="what-challenges-are-solved-by-serverless"></a>Jaké problémy řeší bez serveru?
 
-Bez serveru je maximální abstrakcí z provozu vlastního hardwaru. Vývojáři se můžou zaměřit výhradně na psaní kódu pro řešení obchodních problémů, aniž by se museli starat o některé z následujících úloh, které by mohly být nutné při hostování vlastních serverů:
+Platformy bez serveru řeší mnoho časově náročných a nákladných otázek:
 
 - Nákup počítačů a licencí softwaru
 - Ubytování, zabezpečení, konfigurace a údržba počítačů a jejich požadavků na síť, výkon a/C
@@ -31,36 +31,37 @@ Bez serveru je maximální abstrakcí z provozu vlastního hardwaru. Vývojáři
 - Konfigurace webových serverů nebo služeb počítače pro hostování aplikačního softwaru
 - Konfigurace aplikačního softwaru v rámci své platformy
 
-Mnohé společnosti využívají spoustu pedagogů a přiřazují velké rozpočty na podporu těchto potíží s hardwarovou infrastrukturou. Pouhým přechodem na Cloud eliminují některé z těchto otázek; posunutí aplikací po celém serveru tak, aby se neodstranila zbývající aplikace.
+Mnoho společností přiděluje velké rozpočty na podporu týkající se hardwarové infrastruktury. Přechod do cloudu může snížit náklady. posunutí aplikací na bez serveru může přispět k jejich odstranění.
+
+## <a name="what-is-the-difference-between-a-microservice-and-a-serverless-function"></a>Jaký je rozdíl mezi mikroslužbou a funkcí bez serveru?
+
+Mikroslužba obvykle zapouzdřuje obchodní schopnost, jako je například nákupní košík pro online web elektronického obchodování. Zpřístupňuje více operací, které umožní uživateli spravovat své možnosti nákupu. Funkce je však malý, odlehčený blok kódu, který spouští operace s jedním účelem v reakci na událost.
+Mikroslužby jsou obvykle vytvořené tak, aby reagovaly na žádosti, často z rozhraní. Požadavky mohou být založené na protokolu HTTP REST nebo gRPC. Služby bez serveru reagují na události. Jeho architektura řízená událostmi je ideální pro zpracování krátkodobě spuštěných úloh na pozadí.
 
 ## <a name="what-scenarios-are-appropriate-for-serverless"></a>Jaké scénáře jsou vhodné pro bez serveru?
 
-Bez serveru se používají jednotlivé krátkodobé běžící funkce, které jsou volány v reakci na určitou aktivační událost. Díky tomu jsou ideální pro zpracování úloh na pozadí.
+Bez serveru zveřejňuje jednotlivé krátkodobé běžící funkce, které jsou vyvolány v reakci na Trigger. Díky tomu jsou ideální pro zpracování úloh na pozadí.
 
-Aplikace může například potřebovat poslat e-mail jako součást zpracování žádosti. Místo odeslání e-mailu v rámci zpracování webové žádosti by se podrobnosti o e-mailu daly umístit do fronty a tato zpráva se dá použít k výběru zprávy a odeslání e-mailu. Celá řada různých částí aplikace nebo dokonce mnoho aplikací může využít stejnou funkci Azure, která poskytuje lepší výkon a škálovatelnost pro aplikace a používá [Vyrovnávání zatížení založené na frontě](https://docs.microsoft.com/azure/architecture/patterns/queue-based-load-leveling) , aby nedocházelo k problémům při posílání e-mailů.
+Aplikace může potřebovat poslat e-mail jako krok v pracovním postupu. Místo odeslání oznámení v rámci žádosti mikroslužeb umístěte podrobnosti zprávy do fronty. Funkce Azure může vyřadit zprávu do fronty a asynchronně odeslat e-mail. To by mohlo zlepšit výkon a škálovatelnost mikroslužby. [Vyrovnávání zátěže založené na frontách](https://docs.microsoft.com/azure/architecture/patterns/queue-based-load-leveling) se dá implementovat, aby nedocházelo k problémům při posílání e-mailů. Tato samostatná služba se navíc dá znovu použít jako nástroj pro celou řadu různých aplikací.
 
-I když je [vzor vydavatele/předplatitele](https://docs.microsoft.com/azure/architecture/patterns/publisher-subscriber) mezi aplikacemi a Azure Functions nejběžnějším vzorem, je možné použít i jiné vzory. Azure Functions můžou aktivovat jiné události, jako jsou třeba změny v Azure Blob Storage. Aplikace, která podporuje nahrávání imagí, by mohla mít zodpovědnost za vytváření miniatur nebo změnu velikosti nahraných obrázků na konzistentní rozměry nebo pro optimalizaci velikosti obrázků. Všechny tyto funkce mohou být aktivovány přímo vložením do Azure Blob Storage, zachovává složitost a zatížení samotné aplikace.
+Asynchronní zasílání zpráv z front a témat je běžným vzorem pro aktivaci funkcí bez serveru. Azure Functions se ale můžou aktivovat jinými událostmi, jako jsou třeba změny v Azure Blob Storage. Služba, která podporuje nahrávání imagí, může mít za účelem optimalizace velikosti obrázku zodpovědnost funkce Azure. Funkci lze aktivovat přímo vložením do služby Azure Blob Storage, což zachovává složitost operací mikroslužeb.
 
-Mnoho aplikací má v rámci svých pracovních postupů dlouhotrvající procesy. Tyto úlohy jsou často prováděny v rámci interakce uživatele s aplikací a nutí uživatele počkat a negativně ovlivnit jejich prostředí. Computing bez serveru poskytuje skvělý způsob, jak provádět pomalejší úkoly mimo smyčku interakce uživatele. tyto úlohy se můžou snadno škálovat na vyžádání, aniž by bylo potřeba škálovat celou aplikaci.
+Mnohé služby mají dlouhotrvající procesy v rámci svých pracovních postupů. Tyto úlohy jsou často prováděny v rámci interakce uživatele s aplikací. Tyto úlohy můžou vynutit, aby uživatel čekal a negativně ovlivnil své zkušenosti. Computing bez serveru poskytuje skvělý způsob, jak přesunout pomalejší úlohy mimo smyčku interakce uživatele. Tyto úlohy se můžou škálovat na vyžádání bez nutnosti škálovat celou aplikaci.
 
 ## <a name="when-should-you-avoid-serverless"></a>Kdy byste se měli vyhnout bez serveru?
 
-Pro úlohy, které neblokují uživatelské rozhraní, se používá výpočetní výkon bez serveru. To znamená, že nejsou ideální pro hostování webových aplikací nebo webových rozhraní API přímo. Hlavním důvodem je to, že řešení bez serveru se zřídí a na vyžádání se škáluje. Pokud je potřeba nová instance funkce, na kterou se říká *studený start*, trvá zřízení čas. Tato doba obvykle trvá několik sekund, ale může to trvat i v závislosti na různých faktorech. Jedna instance může být často udržována po neomezenou dobu (například tím, že je pravidelně vydává požadavek), ale pokud počet instancí někdy potřebuje horizontální navýšení kapacity, zůstane problém s jeho zahájením.
+Řešení bez serveru jsou zajišťována a škálovatelná na vyžádání. Při vyvolání nové instance se jedná o běžný problém Starter. Studené zahájení je doba potřebná k zajištění této instance. Obvykle může tato prodleva trvat několik sekund, ale může to trvat v závislosti na různých faktorech. Po zřízení se jedna instance udržuje jako aktivní, dokud obdrží pravidelné požadavky. Pokud je však služba volána méně často, může ji Azure odstranit z paměti a při vyvolání vyžadovat studenou spouštěcí službu. V případě, že se funkce škáluje na novou instanci, jsou také vyžadovány studené starty.
 
-![studená vs. začátek](./media/cold-start-warm-start.png)
-**obrázek 3-10**. Studené zahájení vs. začátek
+Obrázek 3-10 ukazuje vzorek pro studený start. Všimněte si dalších kroků, které jsou potřeba, když je aplikace studená.
 
-Pokud potřebujete zabránit úplnému startu na začátku, můžete zvolit možnost přepnout z [plánu spotřeby na vyhrazený plán](https://azure.microsoft.com/blog/understanding-serverless-cold-start/). Můžete také [nakonfigurovat jednu nebo více předem](https://docs.microsoft.com/azure/azure-functions/functions-premium-plan#pre-warmed-instances) zavedených instancí s plánem Premium, takže pokud potřebujete přidat jinou instanci, je již a připravená k použití. Tyto možnosti mohou zmírnit jeden z klíčových otázek spojených s výpočetním prostředím bez serveru.
+![Studená vs.](./media/cold-start-warm-start.png)
+počáteční**Obrázek 3-10**. Studené zahájení vs. začátek
 
-Měli byste se také obvykle vyhnout serveru bez serveru pro dlouhotrvající úlohy. Jsou nejvhodnější pro malé části práce, které je možné rychle dokončit. Většina platforem bez serveru vyžaduje, aby se jednotlivé funkce dokončily během několika minut. Azure Functions se výchozí hodnota intervalu 5 minut (může být nakonfigurovaná na 10 minut). Plán Azure Functions Premium může zmírnit i tento problém, což je výchozí časový limit na 30 minut a umožňuje nakonfigurovat neomezeně vyšší limit.
+Aby nedocházelo k úplnému startu, můžete přepnout z [plánu spotřeby na vyhrazený plán](https://azure.microsoft.com/blog/understanding-serverless-cold-start/). Můžete také nakonfigurovat jednu nebo více předem zavedených [instancí](https://docs.microsoft.com/azure/azure-functions/functions-premium-plan#pre-warmed-instances) s upgradem plánu Premium. V takových případech, pokud potřebujete přidat jinou instanci, je už na cestách a připraveno k použití. Tyto možnosti mohou přispět ke zmírnění potíží s studeným startem souvisejícím s výpočetním prostředím bez serveru.
 
-A konečně využití bez serveru pro určité úkoly v rámci aplikace přináší složitost. Je často vhodné architektovat aplikaci v modulárním, volně připojeném způsobem, a pak zjistit, jestli jsou výhody serveru nevýhodné, aby se zajistila další složitost. Mnohé menší aplikace budou v jednom monolitické nasazení dokonale fungovat, aniž by to vyžadovalo architekturu distribuované aplikace bez serveru.
+Poskytovatelé cloudových služeb se účtují za servery bez serveru založeného na době provádění výpočetního prostředí a spotřebované paměti. Dlouho běžící operace nebo úlohy s vysokou spotřebou paměti nejsou vždy nejlepšími kandidáty pro bez serveru. Funkce bez serveru přidává malým blokům práce, které je možné rychle dokončit. Většina platforem bez serveru vyžaduje, aby se jednotlivé funkce dokončily během několika minut. Azure Functions výchozí doba trvání 5 minut, která se dá nakonfigurovat až na 10 minut. Plán Azure Functions Premium může zmírnit tento problém taky, což je výchozí časové limity na 30 minut s neomezeným vyšším limitem, který se dá nakonfigurovat. Výpočetní čas není kalendářní čas. Pokročilejší funkce využívající [Azure Durable Functions Framework](https://docs.microsoft.com/azure/azure-functions/durable/durable-functions-overview?tabs=csharp) můžou pozastavit provádění v průběhu několika dnů. Fakturace vychází z skutečné doby spuštění – když se funkce probudí a pokračuje ve zpracování.
 
-## <a name="references"></a>Reference
-
-- [Principy studeného startu bez serveru](https://azure.microsoft.com/blog/understanding-serverless-cold-start/)
-- [Předem zahřívání Azure Functions instance](https://docs.microsoft.com/azure/azure-functions/functions-premium-plan#pre-warmed-instances)
-- [Vytvoření funkce na platformě Linux pomocí vlastní image](https://docs.microsoft.com/azure/azure-functions/functions-create-function-linux-custom-image)
+A konečně využití Azure Functions pro úlohy aplikace přináší složitost. Je vhodné nejdřív navrhnout svou aplikaci s modulárním, volně vázaným návrhem. Pak zjistíte, jestli neexistují výhody serveru, které budou mít větší složitost.
 
 >[!div class="step-by-step"]
 >[Předchozí](leverage-containers-orchestrators.md)

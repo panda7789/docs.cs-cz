@@ -1,30 +1,33 @@
 ---
 title: Škálování kontejnerů a bezserverových aplikací
-description: Škálování aplikací v cloudu pomocí služby Azure Kubernetes tak, aby splňovala požadavky uživatelů díky zvýšení počtu jednotlivých prostředků počítače nebo zvýšení počtu počítačů v clusteru aplikací.
-ms.date: 09/23/2019
-ms.openlocfilehash: 2d0537fb3ed56beb4eccbf9b8c34a5d87793413b
-ms.sourcegitcommit: 55f438d4d00a34b9aca9eedaac3f85590bb11565
+description: Škálování aplikací v cloudu pomocí služby Azure Kubernetes, aby splňovala požadavky uživatelů
+ms.date: 04/13/2020
+ms.openlocfilehash: b4580e6994611ad394bbaa2d5bb07f64c2798569
+ms.sourcegitcommit: 5988e9a29cedb8757320817deda3c08c6f44a6aa
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71184797"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82199921"
 ---
 # <a name="scaling-containers-and-serverless-applications"></a>Škálování kontejnerů a bezserverových aplikací
 
-Existují dva typické způsoby, jak škálovat aplikaci: horizontální navýšení kapacity a škálování. Předchozí odkazuje na přidání možností pro jednoho hostitele, zatímco druhý odkazuje na přidání do celkového počtu hostitelů. Častější způsob, jak na to uvažovat, je to, jak si sami získat a některé přátele ve městě. Pokud se jedná o jediného přítele, mohli byste se dovolat do svého pracovního automobilu na dvou sedadlech. Pokud se ale jedná o tři nebo čtyři, možná budete muset provést jednu z vašich SUVs nebo minivan, škálovat kapacitu až ke zvýšení kapacity. Když vaše celkové číslo přeskočí až do desítky nebo více, budete pravděpodobně muset převzít více vozidel (Pokud se nejedná o jinou jednotku), což demonstruje pojem horizontálního navýšení kapacity přidáním dalších instancí (v tomto případě více vozidel). Pojďme se podívat, jak to platí pro naše aplikace.
+Existují dva způsoby, jak aplikaci škálovat: nahoru nebo ven. Předchozí odkazuje na přidání kapacity k jednomu prostředku, zatímco druhá odkazuje na přidání dalších prostředků ke zvýšení kapacity.
 
 ## <a name="the-simple-solution-scaling-up"></a>Jednoduché řešení: škálování
 
-Proces upgradu stávajících serverů tak, aby jim poskytoval více prostředků (procesor, paměť, rychlost vstupu/výstupu disku, rychlost vstupu/výstupu v síti), se označuje jako horizontální *navýšení*kapacity. V cloudových nativních aplikacích se škálování většinou neodkazuje na nákup a instalaci skutečného hardwaru na fyzických počítačích, takže v seznamu dostupných možností je výběr lépe připraveného plánu. Nativní aplikace pro Cloud jsou obvykle škálovatelné změnou velikosti virtuálního počítače, která se používá k hostování jednotlivých uzlů ve fondu uzlů Kubernetes. Kubernetes koncepty, jako jsou uzly, clustery a lusky, jsou podrobněji popsány v [následující části](leverage-containers-orchestrators.md). Azure podporuje širokou škálu velikostí virtuálních počítačů, které používají [Windows](https://docs.microsoft.com/azure/virtual-machines/windows/sizes?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json) i [Linux](https://docs.microsoft.com/azure/virtual-machines/linux/sizes). Pokud chcete svoji aplikaci vertikálně škálovat, vytvořte nový fond uzlů s větší velikostí virtuálních počítačů uzlů a pak migrujte úlohy do nového fondu. To vyžaduje [více fondů uzlů pro cluster AKS](https://docs.microsoft.com/azure/aks/use-multiple-node-pools), což je funkce, která je aktuálně ve verzi Preview. Aplikace bez serveru se škálují až po výběru velikostí [plánů Premium](https://docs.microsoft.com/azure/azure-functions/functions-scale) a prémiových instancí nebo výběrem jiného vyhrazeného plánu služby App Service.
+Upgrade existujícího hostitelského serveru se zvýšeným využitím procesoru, paměti, rychlosti v/v disku a rychlostí v/v sítě se označuje jako horizontální *navýšení*kapacity. Horizontální navýšení kapacity cloudové aplikace zahrnuje výběr více možností prostředků od dodavatele cloudu. Můžete například vytvořit nový fond uzlů s většími virtuálními počítači v clusteru Kubernetes. Pak migrujte své kontejnerové služby do nového fondu.
+
+Aplikace bez serveru se škálují až po výběru velikosti prémiových [funkcí](https://docs.microsoft.com/azure/azure-functions/functions-scale) nebo velikostí instancí Premium z vyhrazeného plánu služby App Service.
 
 ## <a name="scaling-out-cloud-native-apps"></a>Horizontální navýšení kapacity cloudových aplikací
 
-Cloudové nativní aplikace podporují horizontální navýšení kapacity přidáním dalších uzlů nebo lusků k žádostem o služby. To můžete provést ručně úpravou nastavení konfigurace pro aplikaci (například [škálování fondu uzlů](https://docs.microsoft.com/azure/aks/use-multiple-node-pools#scale-a-node-pool-manually)) nebo pomocí automatického *škálování*. Automatické škálování upravuje prostředky používané aplikací, aby reagovaly na poptávku, podobně jako termostat reaguje na teplotu voláním pro další vytápění nebo chlazení. Při použití automatického škálování je ruční škálování zakázané.
+Nativní aplikace pro Cloud mají často zkušenosti s velkými výkyvy na vyžádání a vyžadují škálování na okamžik. Přidávají přednost horizontálnímu škálování. Horizontální navýšení kapacity se provádí horizontálně přidáním dalších počítačů (nazývaných uzly) nebo instancí aplikace do existujícího clusteru. V Kubernetes můžete ručně škálovat úpravou nastavení konfigurace pro aplikaci (například [škálování fondu uzlů](https://docs.microsoft.com/azure/aks/use-multiple-node-pools#scale-a-node-pool-manually)) nebo pomocí automatického škálování.
 
-Clustery AKS se můžou škálovat jedním ze dvou způsobů:
+Clustery AKS můžou automatické škálování jedním ze dvou způsobů:
 
-- [Automatické škálování clusteru](https://docs.microsoft.com/azure/aks/cluster-autoscaler) sleduje lusky, které není možné naplánovat na uzlech z důvodu omezení prostředků. Podle potřeby přidá další uzly.
-- Horizontální navýšení **pod AutoScale** používá server metrik v clusteru Kubernetes ke sledování požadavků na prostředky v luskech. Pokud služba potřebuje víc prostředků, zvýší se počet lusků.
+Nejprve monitor [horizontálně pod automatickým škálováním](https://docs.microsoft.com/azure/aks/tutorial-kubernetes-scale#autoscale-pods) sleduje požadavky na prostředky a automaticky škáluje REPLIKy pod, aby je splňovala. Když se provoz zvyšuje, automaticky se zřídí další repliky pro horizontální navýšení kapacity služeb. Podobně platí, že když se poptávka sníží, odeberou se do škálování vašich služeb. Nadefinujete metriku, na které se má škálovat, například využití procesoru. Můžete také zadat minimální a maximální počet replik, které mají být spuštěny. AKS monitoruje tuto metriku a odpovídajícím způsobem se škáluje.
+
+V dalším kroku funkce [automatického škálování clusteru AKS](https://docs.microsoft.com/azure/aks/cluster-autoscaler) umožňuje automaticky škálovat výpočetní uzly napříč clusterem Kubernetes tak, aby splňovaly požadavky. Díky tomu můžete automaticky přidat nové virtuální počítače do základní sady škálování virtuálních počítačů Azure, když se vyžaduje větší výpočetní kapacita. Také odebere uzly, pokud již nejsou vyžadovány.
 
 Obrázek 3-13 ukazuje vztah mezi těmito dvěma službami škálování.
 
@@ -32,18 +35,13 @@ Obrázek 3-13 ukazuje vztah mezi těmito dvěma službami škálování.
 
 **Obrázek 3-13**. Horizontální navýšení kapacity App Serviceho plánu.
 
-Tyto služby mohou také snížit počet lusků nebo uzlů podle potřeby. Tyto dvě služby můžou spolupracovat společně a často se nasazují společně v clusteru. V kombinaci se horizontální automatické škálování pod ním zaměřuje na spouštění počtu lusků potřebných pro splnění požadavků aplikace. Automatické škálování clusteru se zaměřuje na spouštění počtu uzlů potřebných k podpoře naplánovaných lusků.
+Společně zajistěte, aby se zajistil optimální počet instancí kontejnerů a výpočetních uzlů pro podporu kolísání poptávky. Automatické škálování vodorovně pod optimalizuje počet požadovaných lusků. Automatické škálování clusteru optimalizuje počet požadovaných uzlů.
 
 ### <a name="scaling-azure-functions"></a>Škálování Azure Functions
 
-Azure Functions automaticky podporuje horizontální navýšení kapacity. Výchozí plán spotřeby přidává (a odebírá) prostředky dynamicky na základě počtu triggerů přicházejících do. Účtují se vám poplatky za výpočetní prostředky, které se používají, když vaše funkce běží na základě počtu spuštění, času spuštění a využité paměti. Pomocí plánu Premium získáte stejné funkce, ale můžete také řídit velikosti instancí, které se používají, už nemusíte začínat (aby se předešlo prodlevám při spuštění), a nakonfigurovat vyhrazené virtuální počítače, na kterých se budou spouštět vaše funkce. Výchozí konfigurace by měla pro většinu aplikací poskytovat ekonomické a škálovatelné řešení. možnost Premium umožňuje vývojářům flexibilitu pro vlastní Azure Functions požadavky.
+Azure Functions automaticky škálovat na vyžádání. Prostředky serveru se dynamicky přiřazují a odstraňují na základě počtu aktivovaných událostí. Účtují se vám jenom výpočetní prostředky spotřebované při spuštění vašich funkcí. Fakturace vychází z počtu spuštění, času spuštění a využité paměti.
 
-## <a name="references"></a>Reference
-
-- [AKS více fondů uzlů](https://docs.microsoft.com/azure/aks/use-multiple-node-pools)
-- [Automatické škálování clusteru AKS](https://docs.microsoft.com/azure/aks/cluster-autoscaler)
-- [Kurz: škálování aplikací v AKS](https://docs.microsoft.com/azure/aks/tutorial-kubernetes-scale)
-- [Azure Functions škálování a hostování](https://docs.microsoft.com/azure/azure-functions/functions-scale)
+I když výchozí plán spotřeby poskytuje pro většinu aplikací ekonomické a škálovatelné řešení, možnost Premium umožňuje vývojářům pružně využít vlastní požadavky na Azure Functions. Upgrade na plán Premium poskytuje kontrolu nad velikostmi instancí, předem zaplacenými instancemi (aby se předešlo zpožděním spuštění) a vyhrazeným virtuálním počítačům.
 
 >[!div class="step-by-step"]
 >[Předchozí](deploy-containers-azure.md)

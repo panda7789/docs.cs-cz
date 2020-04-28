@@ -1,29 +1,29 @@
 ---
-title: nový operátor - odkaz Jazyka C#
+title: New – operátor – reference jazyka C#
 ms.date: 06/25/2019
 helpviewer_keywords:
 - new operator keyword [C#]
 ms.assetid: a212b697-a79b-4105-9923-1f7b108036e8
-ms.openlocfilehash: 84131bc503a106961419a27fc4e3e0f2d82306a8
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: ed18c42cd28412a967c94a65c2a92b0b75097b52
+ms.sourcegitcommit: 5988e9a29cedb8757320817deda3c08c6f44a6aa
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "78846230"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82199726"
 ---
-# <a name="new-operator-c-reference"></a>nový operátor (odkaz C# )
+# <a name="new-operator-c-reference"></a>New – operátor (Referenční dokumentace jazyka C#)
 
-Operátor `new` vytvoří novou instanci typu.
+`new` Operátor vytvoří novou instanci typu.
 
-Klíčové slovo můžete také použít jako [modifikátor deklarace člena](../keywords/new-modifier.md) nebo [omezení obecného typu](../keywords/new-constraint.md). `new`
+`new` Klíčové slovo lze použít také jako [Modifikátor deklarace člena](../keywords/new-modifier.md) nebo [omezení obecného typu](../keywords/new-constraint.md).
 
 ## <a name="constructor-invocation"></a>Vyvolání konstruktoru
 
-Chcete-li vytvořit novou instanci typu, obvykle vyvolat jeden z [konstruktorů](../../programming-guide/classes-and-structs/constructors.md) tohoto typu pomocí operátoru: `new`
+Chcete-li vytvořit novou instanci typu, obvykle vyvoláte jeden z [konstruktorů](../../programming-guide/classes-and-structs/constructors.md) tohoto typu pomocí `new` operátoru:
 
 [!code-csharp-interactive[invoke constructor](snippets/NewOperator.cs#Constructor)]
 
-[Inicializátor objektu nebo](../../programming-guide/classes-and-structs/object-and-collection-initializers.md) `new` kolekce s operátorem můžete použít k vytvoření instance a inicializaci objektu v jednom příkazu, jak ukazuje následující příklad:
+Můžete použít [inicializátor objektu nebo kolekce](../../programming-guide/classes-and-structs/object-and-collection-initializers.md) s `new` operátorem pro vytvoření instance a inicializaci objektu v jednom příkazu, jak ukazuje následující příklad:
 
 [!code-csharp-interactive[constructor with initializer](snippets/NewOperator.cs#ConstructorWithInitializer)]
 
@@ -33,34 +33,34 @@ Chcete-li vytvořit novou instanci typu, obvykle vyvolat jeden z [konstruktorů]
 
 [!code-csharp-interactive[create array](snippets/NewOperator.cs#Array)]
 
-Pomocí syntaxe inicializace pole vytvořte instanci pole a naplňte ji prvky v jednom příkazu. Následující příklad ukazuje různé způsoby, jak to udělat:
+Pomocí syntaxe inicializace pole vytvořte instanci pole a naplňte ji prvky v jednom příkazu. Následující příklad ukazuje různé způsoby, jak to lze provést:
 
 [!code-csharp-interactive[initialize array](snippets/NewOperator.cs#ArrayInitialization)]
 
-Další informace o polích naleznete v [tématu Arrays](../../programming-guide/arrays/index.md).
+Další informace o polích naleznete v tématu [Arrays](../../programming-guide/arrays/index.md).
 
 ## <a name="instantiation-of-anonymous-types"></a>Vytváření instancí anonymních typů
 
-Chcete-li vytvořit instanci [anonymního typu](../../programming-guide/classes-and-structs/anonymous-types.md), použijte syntaxi inicializačního operátoru `new` a objektu:
+Chcete-li vytvořit instanci [anonymního typu](../../programming-guide/classes-and-structs/anonymous-types.md), použijte syntaxi `new` inicializátoru operátoru a objektu:
 
 [!code-csharp-interactive[anonymous type](snippets/NewOperator.cs#AnonymousType)]
 
-## <a name="destruction-of-type-instances"></a>Zničení instancí typu
+## <a name="destruction-of-type-instances"></a>Zničení instancí typů
 
-Není třeba zničit dříve vytvořené instance typu. Instance referenčních i hodnotových typů jsou automaticky zničeny. Instance typů hodnot jsou zničeny, jakmile je zničen kontext, který je obsahuje. Instance typů odkazů jsou zničeny [systémem uvolňování paměti](../../../standard/garbage-collection/index.md) v neurčeném čase po odebrání posledního odkazu na ně.
+Nemusíte zničit dřívější vytvořené instance typu. Instance obou typů odkaz i hodnota jsou zničeny automaticky. Instance typů hodnot jsou zničeny ihned po zničení kontextu, který je obsahuje. Instance typů odkazů jsou zničeny systémem [uvolňování paměti](../../../standard/garbage-collection/index.md) v některém nespecifikovaném čase po odebrání posledního odkazu na ně.
 
-Pro instance typu, které obsahují nespravované prostředky, například popisovač souboru, se doporučuje použít deterministické vyčištění, aby bylo zajištěno, že prostředky, které obsahují, budou vydány co nejdříve. Další informace naleznete <xref:System.IDisposable?displayProperty=nameWithType> v odkazu rozhraní API a [using prohlášení](../keywords/using-statement.md) článku.
+U instancí typu, které obsahují nespravované prostředky, například popisovač souboru, se doporučuje použít deterministické vyčištění, aby bylo zajištěno, že prostředky, které obsahují, budou zveřejněny co nejdříve. Další informace najdete v tématu Reference <xref:System.IDisposable?displayProperty=nameWithType> k rozhraní API a v článku o [příkazu Using](../keywords/using-statement.md) .
 
-## <a name="operator-overloadability"></a>Přetížení obsluhy
+## <a name="operator-overloadability"></a>Přetížení operátoru
 
-Uživatelem definovaný typ nemůže `new` přetížit operátor.
+Uživatelsky definovaný typ nemůže přetížit `new` operátor.
 
 ## <a name="c-language-specification"></a>specifikace jazyka C#
 
-Další informace naleznete [v části Nový operátor](~/_csharplang/spec/expressions.md#the-new-operator) specifikace jazyka [C#](~/_csharplang/spec/introduction.md).
+Další informace naleznete v části [New operator](~/_csharplang/spec/expressions.md#the-new-operator) v tématu [specifikace jazyka C#](~/_csharplang/spec/introduction.md).
 
 ## <a name="see-also"></a>Viz také
 
 - [Referenční dokumentace k jazyku C#](../index.md)
 - [Operátory jazyka C#](index.md)
-- [Inicializátory objektů a kolekcí](../../programming-guide/classes-and-structs/object-and-collection-initializers.md)
+- [Inicializátory objektu a kolekce](../../programming-guide/classes-and-structs/object-and-collection-initializers.md)
