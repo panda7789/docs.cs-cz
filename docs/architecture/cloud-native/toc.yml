@@ -44,7 +44,7 @@
         - name: Komunikační infrastruktura Service Mesh
           href: service-mesh-communication-infrastructure.md
     - name: Distribuovaná data
-      href: database-per-microservice.md
+      href: distributed-data.md
       items:
         - name: Relační data vs. data NoSQL
           href: relational-vs-nosql-data.md
