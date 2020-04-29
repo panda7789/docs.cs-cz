@@ -4,12 +4,12 @@ description: Naučte se migrovat aplikaci Windows Presentation Foundation (WPF) 
 author: mjrousos
 ms.date: 09/12/2019
 ms.author: mikerou
-ms.openlocfilehash: f52005e7c8a6312b8c4e09a950f1f635af1894e4
-ms.sourcegitcommit: cdf5084648bf5e77970cbfeaa23f1cab3e6e234e
+ms.openlocfilehash: ccd2fc5a49d9c2d31c693e48099732614b568c7b
+ms.sourcegitcommit: 1cb64b53eb1f253e6a3f53ca9510ef0be1fd06fe
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "82071309"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82507452"
 ---
 # <a name="migrating-wpf-apps-to-net-core"></a>Migrace aplikací WPF do .NET Core
 
@@ -162,7 +162,7 @@ Na základě této sestavy a předchozí analýzy závislostí NuGet vypadá to,
 
 Pokud vaše aplikace nepoužívá nový [Formát souboru projektu ve stylu sady SDK](../../core/tools/csproj.md), budete potřebovat nový soubor projektu pro cílové rozhraní .NET Core. Existující soubor CSPROJ můžete nahradit, nebo pokud upřednostňujete zachování existujícího projektu v jeho aktuálním stavu, můžete přidat nový soubor CSPROJ cílící na rozhraní .NET Core. Můžete sestavit verze aplikace pro .NET Framework a .NET Core s jedním souborem projektu ve stylu sady SDK s [cílením](../../standard/library-guidance/cross-platform-targeting.md) na více verzí (určením více `<TargetFrameworks>` cílů).
 
-Chcete-li vytvořit nový soubor projektu, můžete vytvořit nový projekt WPF v aplikaci Visual Studio nebo použít `dotnet new wpf` příkaz v dočasném adresáři pro vygenerování souboru projektu a potom jej zkopírovat nebo přejmenovat do správného umístění. K dispozici je také nástroj [CsprojToVs2017](https://github.com/hvanbakel/CsprojToVs2017)vytvořený komunitou, který může automatizovat některé migrace souborů projektu. Tento nástroj je užitečný, ale ještě potřebuje člověk ke kontrole výsledků, aby se zajistilo, že všechny podrobnosti migrace jsou správné. Jedna konkrétní oblast, kterou nástroj nezpracovává optimálně, migruje balíčky NuGet ze souborů *Packages. config* . Pokud nástroj běží na souboru projektu, který stále používá soubor *Packages. config* k odkazování na balíčky NuGet, migruje se `<PackageReference>` na prvky automaticky, ale přidá `<PackageReference>` prvky pro *všechny* balíčky místo pouze těch, které mají nejvyšší úroveň. Pokud jste již migrovali na`<PackageReference>` prvky pomocí sady Visual Studio (jak jste to udělali v této ukázce), nástroj může pomáhat se zbytkem převodu. Podobně jako Scott Hanselman doporučuje ve [svém blogovém příspěvku o migraci souborů csproj](https://www.hanselman.com/blog/UpgradingAnExistingNETProjectFilesToTheLeanNewCSPROJFormatFromNETCore.aspx). přenos po ruce je vzdělávací a výsledkem je lepší výsledky, pokud máte pouze několik projektů na port. Pokud ale předáváte desítky nebo stovky souborů projektu, pak může být nástroj jako [CsprojToVs2017] help.
+Chcete-li vytvořit nový soubor projektu, můžete vytvořit nový projekt WPF v aplikaci Visual Studio nebo použít `dotnet new wpf` příkaz v dočasném adresáři pro vygenerování souboru projektu a potom jej zkopírovat nebo přejmenovat do správného umístění. K dispozici je také nástroj [CsprojToVs2017](https://github.com/hvanbakel/CsprojToVs2017)vytvořený komunitou, který může automatizovat některé migrace souborů projektu. Tento nástroj je užitečný, ale ještě potřebuje člověk ke kontrole výsledků, aby se zajistilo, že všechny podrobnosti migrace jsou správné. Jedna konkrétní oblast, kterou nástroj nezpracovává optimálně, migruje balíčky NuGet ze souborů *Packages. config* . Pokud nástroj běží na souboru projektu, který stále používá soubor *Packages. config* k odkazování na balíčky NuGet, migruje se `<PackageReference>` na prvky automaticky, ale přidá `<PackageReference>` prvky pro *všechny* balíčky místo pouze těch, které mají nejvyšší úroveň. Pokud jste již migrovali na`<PackageReference>` prvky pomocí sady Visual Studio (jak jste to udělali v této ukázce), nástroj může pomáhat se zbytkem převodu. Podobně jako Scott Hanselman doporučuje ve [svém blogovém příspěvku o migraci souborů csproj](https://www.hanselman.com/blog/UpgradingAnExistingNETProjectFilesToTheLeanNewCSPROJFormatFromNETCore.aspx). přenos po ruce je vzdělávací a výsledkem je lepší výsledky, pokud máte pouze několik projektů na port. Pokud ale přenášíte desítky nebo stovky souborů projektu, může se jednat o nástroj, jako je [CsprojToVs2017](https://github.com/hvanbakel/CsprojToVs2017) .
 
 Chcete-li vytvořit nový soubor projektu pro ukázku pro obchodní oddělení, `dotnet new wpf` spusťte příkaz v dočasném adresáři a přesuňte vygenerovaný soubor *. csproj* do složky *BeanTraderClient* a přejmenujte jej na **BeanTraderClient. Core. csproj**.
 

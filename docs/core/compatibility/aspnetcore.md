@@ -1,86 +1,101 @@
 ---
-title: ASP.NET Zásadní změny
+title: ASP.NET Core přerušující změny
 titleSuffix: ''
-description: Uvádí nejnovější změny v ASP.NET jádru.
-ms.date: 03/27/2020
+description: Zobrazí seznam nejnovějších změn v ASP.NET Core.
+ms.date: 04/28/2020
 author: scottaddie
 ms.author: scaddie
-ms.openlocfilehash: 95057425614d7c717154ecfb687db2b9a6ca4a18
-ms.sourcegitcommit: a9b8945630426a575ab0a332e568edc807666d1b
+ms.openlocfilehash: 454735028f8c0923b99e85ade30f498f13dd6cab
+ms.sourcegitcommit: 1cb64b53eb1f253e6a3f53ca9510ef0be1fd06fe
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/30/2020
-ms.locfileid: "80391244"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82507141"
 ---
-# <a name="aspnet-core-breaking-changes"></a>ASP.NET Zásadní změny
+# <a name="aspnet-core-breaking-changes"></a>ASP.NET Core přerušující změny
 
-ASP.NET Core poskytuje funkce vývoje webových aplikací používané rozhraním .NET Core.
+ASP.NET Core poskytuje funkce pro vývoj webových aplikací, které používá .NET Core.
 
-Na této stránce jsou popsány následující změny:
+Na této stránce jsou popsány následující přerušující se změny:
 
-- [Byla odebrána zastaralá antiforgerií, CORS, diagnostika, MVC a směrovací api](#obsolete-antiforgery-cors-diagnostics-mvc-and-routing-apis-removed)
-- [Ověřování: Vyřazení Google+](#authentication-google-deprecated-and-replaced)
-- [Ověřování: Vlastnost HttpContext.Authentication byla odebrána.](#authentication-httpcontextauthentication-property-removed)
-- [Ověřování: Newtonsoft.Json typy nahrazeny](#authentication-newtonsoftjson-types-replaced)
-- [Ověřování: Podpis OAuthHandler ExchangeCodeAsync byl změněn.](#authentication-oauthhandler-exchangecodeasync-signature-changed)
-- [Autorizace: AddAuthorization přetížení přesunuta do jiného sestavení](#authorization-addauthorization-overload-moved-to-different-assembly)
-- [Autorizace: IAllowAnonymous odebrán z AuthorizationFilterContext.Filters](#authorization-iallowanonymous-removed-from-authorizationfiltercontextfilters)
-- [Autorizace: Implementace IAuthorizationPolicyProvider vyžadují novou metodu](#authorization-iauthorizationpolicyprovider-implementations-require-new-method)
-- [Azure: Odebrané balíčky integrace Azure s předponou Microsoftu](#azure-microsoft-prefixed-azure-integration-packages-removed)
-- [Ukládání do mezipaměti: CompactOnMemoryPressure vlastnost odstraněna](#caching-compactonmemorypressure-property-removed)
-- [Ukládání do mezipaměti: Microsoft.Extensions.Caching.SqlServer používá nový balíček SqlClient](#caching-microsoftextensionscachingsqlserver-uses-new-sqlclient-package)
-- [Ukládání do mezipaměti: ResponseCaching "pubternal" typy změněny na vnitřní](#caching-responsecaching-pubternal-types-changed-to-internal)
-- [Ochrana dat: DataProtection.AzureStorage používá nová api úložiště Azure](#data-protection-dataprotectionazurestorage-uses-new-azure-storage-apis)
-- [Hosting: AspNetCoreModule V1 odstraněn z Windows Hosting Bundle](#hosting-aspnetcoremodule-v1-removed-from-windows-hosting-bundle)
-- [Hostování: Obecný hostitel omezuje injekci konstruktoru spuštění](#hosting-generic-host-restricts-startup-constructor-injection)
-- [Hostování: Přesměrování HTTPS povoleno pro mimoprocesové aplikace služby IIS](#hosting-https-redirection-enabled-for-iis-out-of-process-apps)
-- [Hosting: IHostingEnvironment a IApplicationLifetime typy nahrazeny](#hosting-ihostingenvironment-and-iapplicationlifetime-types-marked-obsolete-and-replaced)
-- [Hostování: Objekt Usvého zprostředkovatele objectpoolu odebrán ze závislostí WebHostBuilder](#hosting-objectpoolprovider-removed-from-webhostbuilder-dependencies)
-- [HTTP: Prohlížeč SameSite změny dopad ověřování](#http-browser-samesite-changes-impact-authentication)
-- [HTTP: VýchozíhttpContext rozšiřitelnost odebrána](#http-defaulthttpcontext-extensibility-removed)
-- [HTTP: Pole HeaderNames byla změněna na statickou jen pro čtení.](#http-headernames-constants-changed-to-static-readonly)
-- [HTTP: Změny infrastruktury těla odezvy](#http-response-body-infrastructure-changes)
-- [HTTP: Některé výchozí hodnoty cookie SameSite se změnily](#http-some-cookie-samesite-defaults-changed-to-none)
-- [HTTP: Synchronní vi zakázánve výchozím nastavení](#http-synchronous-io-disabled-in-all-servers)
-- [Identita: Přetížení metody AddDefaultUI bylo odebráno.](#identity-adddefaultui-method-overload-removed)
-- [Identita: Změna verze zaváděcích verzí ui bootstrap](#identity-default-bootstrap-version-of-ui-changed)
-- [Identita: SignInAsync vyvolá výjimku pro neověřenou identitu](#identity-signinasync-throws-exception-for-unauthenticated-identity)
-- [Identita: Konstruktor SignInManager přijímá nový parametr.](#identity-signinmanager-constructor-accepts-new-parameter)
-- [Identita: Uživatelské uživatelské zařízení používá funkci statických webových datových zdrojů](#identity-ui-uses-static-web-assets-feature)
-- [Poštolka: Připojení adaptéry odstraněny](#kestrel-connection-adapters-removed)
-- [Poštolek: Prázdná sestava HTTPS byla odebrána.](#kestrel-empty-https-assembly-removed)
-- [Poštolka: Žádost trailer záhlaví přesunuta do nové kolekce](#kestrel-request-trailer-headers-moved-to-new-collection)
-- [Poštolek: Změny vrstvy transportní abstrakce](#kestrel-transport-abstractions-removed-and-made-public)
-- [Lokalizace: API označená jako zastaralá](#localization-resourcemanagerwithculturestringlocalizer-and-withculture-marked-obsolete)
-- [Protokolování: Třída DebugLogger byla interní](#logging-debuglogger-class-made-internal)
-- [MVC: Akce řadiče Asynchronní přípona byla odebrána](#mvc-async-suffix-trimmed-from-controller-action-names)
-- [MVC: JsonResult byl přesunut do microsoft.aspNetCore.Mvc.Core](#mvc-jsonresult-moved-to-microsoftaspnetcoremvccore)
-- [MVC: Nástroj předběžné kompilace se zastaral](#mvc-precompilation-tool-deprecated)
-- [MVC: Typy změněné na interní](#mvc-pubternal-types-changed-to-internal)
-- [MVC: Překrytí kompatibility webového rozhraní byla odstraněna.](#mvc-web-api-compatibility-shim-removed)
-- [Razor: Runtime kompilace přesunuta do balíčku](#razor-runtime-compilation-moved-to-a-package)
-- [Stav relace: Odebraná zastaralá api](#session-state-obsolete-apis-removed)
-- [Sdílený rámec: Odebrání sestavení z Microsoft.AspNetCore.App](#shared-framework-assemblies-removed-from-microsoftaspnetcoreapp)
-- [Sdílený rámec: Microsoft.AspNetCore.All odebrán](#shared-framework-removed-microsoftaspnetcoreall)
-- [SignalR: HandshakeProtocol.SuccessHandshakeData nahrazen](#signalr-handshakeprotocolsuccesshandshakedata-replaced)
-- [SignalR: Metody připojení hubu odebrány](#signalr-hubconnection-resetsendping-and-resettimeout-methods-removed)
-- [SignalR: Konstruktory HubConnectionContext byly změněny.](#signalr-hubconnectioncontext-constructors-changed)
-- [SignalR: Změna názvu klientského balíčku JavaScript](#signalr-javascript-client-package-name-changed)
-- [SignalR: MessagePack Hub Protocol byl přesunut na balíček MessagePack 2.x](#signalr-messagepack-hub-protocol-moved-to-messagepack-2x-package)
-- [Signalizátor: Zastaralá api](#signalr-usesignalr-and-useconnections-methods-marked-obsolete)
-- [SignalR: UseSignalR a UseConnections metody odebrány](#signalr-usesignalr-and-useconnections-methods-removed)
-- [SPAServices a NodeServices konzola logger záložní změna](#spas-spaservices-and-nodeservices-no-longer-fall-back-to-console-logger)
-- [SPAServices a NodeServices označené jako zastaralé](#spas-spaservices-and-nodeservices-marked-obsolete)
-- [Statické soubory: Typ obsahu CSV byl změněn na standardy](#static-files-csv-content-type-changed-to-standards-compliant)
-- [Cílový rámec: Rozhraní .NET Framework není podporováno.](#target-framework-net-framework-support-dropped)
+- [Odebrání zastaralých rozhraní API pro antipadělání, CORS, diagnostiku, MVC a směrování](#obsolete-antiforgery-cors-diagnostics-mvc-and-routing-apis-removed)
+- [Ověřování: Google + zastaralá](#authentication-google-deprecated-and-replaced)
+- [Ověřování: vlastnost HttpContext. Authentication byla odebrána.](#authentication-httpcontextauthentication-property-removed)
+- [Ověřování: nahrazené typy Newtonsoft. JSON](#authentication-newtonsoftjson-types-replaced)
+- [Ověřování: změnil se podpis OAuthHandler ExchangeCodeAsync.](#authentication-oauthhandler-exchangecodeasync-signature-changed)
+- [Autorizace: přetížení AddAuthorization se přesunulo do jiného sestavení.](#authorization-addauthorization-overload-moved-to-different-assembly)
+- [Autorizace: IAllowAnonymous se odebral z AuthorizationFilterContext. filters.](#authorization-iallowanonymous-removed-from-authorizationfiltercontextfilters)
+- [Autorizace: implementace IAuthorizationPolicyProvider vyžadují novou metodu.](#authorization-iauthorizationpolicyprovider-implementations-require-new-method)
+- [Azure: odebraly se balíčky Microsoft infixních integrací Azure.](#azure-microsoft-prefixed-azure-integration-packages-removed)
+- [Ukládání do mezipaměti: byla odebrána vlastnost CompactOnMemoryPressure](#caching-compactonmemorypressure-property-removed)
+- [Ukládání do mezipaměti: Microsoft. Extensions. Caching. SqlServer používá nový balíček SqlClient.](#caching-microsoftextensionscachingsqlserver-uses-new-sqlclient-package)
+- [Ukládání do mezipaměti: ResponseCaching typy "pubternal" se změnily na interní](#caching-responsecaching-pubternal-types-changed-to-internal)
+- [Ochrana dat: DataProtection. AzureStorage používá nová rozhraní API Azure Storage.](#data-protection-dataprotectionazurestorage-uses-new-azure-storage-apis)
+- [Rozšíření: změny odkazů balíčku ovlivňují některé balíčky NuGet](#extensions-package-reference-changes-affecting-some-nuget-packages)
+- [Hostování: AspNetCoreModule v1 odebrané ze sady hostování Windows](#hosting-aspnetcoremodule-v1-removed-from-windows-hosting-bundle)
+- [Hostování: obecný hostitel omezuje úvodní vkládání spouštěcího konstruktoru.](#hosting-generic-host-restricts-startup-constructor-injection)
+- [Hostování: přesměrování protokolu HTTPS je povolené pro vnitroprocesové aplikace IIS.](#hosting-https-redirection-enabled-for-iis-out-of-process-apps)
+- [Hostování: nahrazené typy IHostingEnvironment a IApplicationLifetime](#hosting-ihostingenvironment-and-iapplicationlifetime-types-marked-obsolete-and-replaced)
+- [Hostování: ObjectPoolProvider se odebral ze závislostí WebHostBuilder.](#hosting-objectpoolprovider-removed-from-webhostbuilder-dependencies)
+- [HTTP: typy Kestrel a IIS BadHttpRequestException označené jako zastaralé a nahrazené](#http-kestrel-and-iis-badhttprequestexception-types-marked-obsolete-and-replaced)
+- [HTTP: Browser SameSite změny dopadu na ověření](#http-browser-samesite-changes-impact-authentication)
+- [HTTP: rozšíření DefaultHttpContext bylo odebráno.](#http-defaulthttpcontext-extensibility-removed)
+- [HTTP: HeaderNames pole se změnila na static jen pro čtení.](#http-headernames-constants-changed-to-static-readonly)
+- [HTTP: změny infrastruktury textu odpovědi](#http-response-body-infrastructure-changes)
+- [HTTP: některé soubory cookie SameSite výchozí hodnoty se změnily](#http-some-cookie-samesite-defaults-changed-to-none)
+- [HTTP: ve výchozím nastavení je zakázaná synchronní v/v.](#http-synchronous-io-disabled-in-all-servers)
+- [Identita: přetížení metody AddDefaultUI bylo odebráno.](#identity-adddefaultui-method-overload-removed)
+- [Identita: Změna verze Bootstrap uživatelského rozhraní](#identity-default-bootstrap-version-of-ui-changed)
+- [Identita: SignInAsync vyvolá výjimku pro neověřenou identitu.](#identity-signinasync-throws-exception-for-unauthenticated-identity)
+- [Identita: konstruktor SignInManager akceptuje nový parametr.](#identity-signinmanager-constructor-accepts-new-parameter)
+- [Identita: uživatelské rozhraní používá funkci statických webových prostředků.](#identity-ui-uses-static-web-assets-feature)
+- [Kestrel: odebrané adaptéry připojení](#kestrel-connection-adapters-removed)
+- [Kestrel: bylo odebráno prázdné sestavení HTTPS.](#kestrel-empty-https-assembly-removed)
+- [Kestrel: hlavičky přípojných vozidel žádosti přesunuté do nové kolekce](#kestrel-request-trailer-headers-moved-to-new-collection)
+- [Kestrel: změny vrstvy abstrakce transportu](#kestrel-transport-abstractions-removed-and-made-public)
+- [Lokalizace: rozhraní API označená jako zastaralá](#localization-resourcemanagerwithculturestringlocalizer-and-withculture-marked-obsolete)
+- [Protokolování: DebugLogger třída provedla interní](#logging-debuglogger-class-made-internal)
+- [MVC: byla odebrána asynchronní přípona akce řadiče.](#mvc-async-suffix-trimmed-from-controller-action-names)
+- [MVC: JsonResult se přesunula do Microsoft. AspNetCore. Mvc. Core.](#mvc-jsonresult-moved-to-microsoftaspnetcoremvccore)
+- [MVC: zastaralý nástroj předkompilace](#mvc-precompilation-tool-deprecated)
+- [MVC: typy se změnily na interní](#mvc-pubternal-types-changed-to-internal)
+- [MVC: překrytí kompatibility webového rozhraní API se odebralo.](#mvc-web-api-compatibility-shim-removed)
+- [Razor: kompilace za běhu byla přesunuta do balíčku](#razor-runtime-compilation-moved-to-a-package)
+- [Stav relace: odebrané zastaralé rozhraní API](#session-state-obsolete-apis-removed)
+- [Sdílené rozhraní: odebrání sestavení z Microsoft. AspNetCore. app](#shared-framework-assemblies-removed-from-microsoftaspnetcoreapp)
+- [Sdílené rozhraní: Microsoft. AspNetCore. All odebral](#shared-framework-removed-microsoftaspnetcoreall)
+- [Signál: HandshakeProtocol. SuccessHandshakeData nahrazeno](#signalr-handshakeprotocolsuccesshandshakedata-replaced)
+- [Signál: odebrané metody HubConnection](#signalr-hubconnection-resetsendping-and-resettimeout-methods-removed)
+- [Signál: HubConnectionContext konstruktory se změnily.](#signalr-hubconnectioncontext-constructors-changed)
+- [Signal: Změna názvu balíčku klienta JavaScript](#signalr-javascript-client-package-name-changed)
+- [Signal: protokol centra MessagePack se přesunul do balíčku MessagePack 2. x.](#signalr-messagepack-hub-protocol-moved-to-messagepack-2x-package)
+- [Signal: typ možností protokolu centra MessagePack se změnil.](#signalr-messagepack-hub-protocol-options-type-changed)
+- [Signál: zastaralé rozhraní API](#signalr-usesignalr-and-useconnections-methods-marked-obsolete)
+- [Signál: metody UseSignalR a UseConnections se odebraly.](#signalr-usesignalr-and-useconnections-methods-removed)
+- [Jednostránkové: SpaServices a výchozí změna nouzového výchozího nastavení nástroje konzoly NodeServices](#spas-spaservices-and-nodeservices-no-longer-fall-back-to-console-logger)
+- [Jednostránkové: SpaServices a NodeServices označené jako zastaralé](#spas-spaservices-and-nodeservices-marked-obsolete)
+- [Statické soubory: typ obsahu CSV se změnil na vyhovující standardům.](#static-files-csv-content-type-changed-to-standards-compliant)
+- [Cílová architektura: .NET Framework není podporovaná.](#target-framework-net-framework-support-dropped)
 
-## <a name="aspnet-core-50"></a>ASP.NET jádro 5.0
+## <a name="aspnet-core-50"></a>ASP.NET Core 5,0
 
 [!INCLUDE[Azure: Microsoft-prefixed Azure integration packages removed](~/includes/core-changes/aspnetcore/5.0/azure-integration-packages-removed.md)]
 
 ***
 
+[!INCLUDE[Extensions: Package reference changes](~/includes/core-changes/aspnetcore/5.0/extensions-package-reference-changes.md)]
+
+***
+
+[!INCLUDE[HTTP: Kestrel and IIS BadHttpRequestException types marked obsolete and replaced](~/includes/core-changes/aspnetcore/5.0/http-badhttprequestexception-obsolete.md)]
+
+***
+
 [!INCLUDE[SignalR: MessagePack Hub Protocol moved to MessagePack 2.x package](~/includes/core-changes/aspnetcore/5.0/signalr-messagepack-package.md)]
+
+***
+
+[!INCLUDE[SignalR: MessagePack Hub Protocol options type changed](~/includes/core-changes/aspnetcore/5.0/signalr-messagepack-hub-protocol-options-changed.md)]
 
 ***
 
@@ -92,13 +107,13 @@ Na této stránce jsou popsány následující změny:
 
 ***
 
-## <a name="aspnet-core-31"></a>ASP.NET jádro 3.1
+## <a name="aspnet-core-31"></a>ASP.NET Core 3,1
 
 [!INCLUDE[HTTP: Browser SameSite changes impact authentication](~/includes/core-changes/aspnetcore/3.1/http-cookie-samesite-authn-impacts.md)]
 
 ***
 
-## <a name="aspnet-core-30"></a>ASP.NET jádro 3.0
+## <a name="aspnet-core-30"></a>ASP.NET Core 3,0
 
 [!INCLUDE[Obsolete Antiforgery, CORS, Diagnostics, MVC, and Routing APIs removed](~/includes/core-changes/aspnetcore/3.0/obsolete-apis-removed.md)]
 

@@ -3,12 +3,12 @@ title: Relační data vs. data NoSQL
 description: Přečtěte si o relačních a NoSQLch datech v cloudových nativních aplikacích
 author: robvet
 ms.date: 01/22/2020
-ms.openlocfilehash: c074be0c973156c1757b97ffc727711d5dd072af
-ms.sourcegitcommit: 5988e9a29cedb8757320817deda3c08c6f44a6aa
+ms.openlocfilehash: a2561b0abfc1975badfafeeb4fa2f2c6429814be
+ms.sourcegitcommit: 1cb64b53eb1f253e6a3f53ca9510ef0be1fd06fe
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82199977"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82507361"
 ---
 # <a name="relational-vs-nosql-data"></a>Relační data vs. data NoSQL
 
@@ -226,7 +226,7 @@ Azure Cosmos DB nabízí pět jasně definovaných [modelů konzistence](https:/
 
 **Obrázek 5-16**: Cosmos DB popis úrovně konzistence
 
-V článku [Seznámení s 9 kuličkou: Vysvětlené Cosmos dB úrovně konzistence](https://blog.jeremylikness.com/blog/2018-03-23_getting-behind-the-9ball-cosmosdb-consistency-levels/)Microsoft Cloud Developer poradce Jeremy Likeness poskytuje skvělé vysvětlení pěti modelů.
+V článku [Seznámení s 9 kuličkou: Vysvětlené Cosmos dB úrovně konzistence](https://blog.jeremylikness.com/blog/2018-03-23_getting-behind-the-9ball-cosmosdb-consistency-levels/)nabízí program Microsoft program Manager Jeremy Likness vynikající vysvětlení pěti modelů.
 
 ### <a name="partitioning"></a>Dělení
 

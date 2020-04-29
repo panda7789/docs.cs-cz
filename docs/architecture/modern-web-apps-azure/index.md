@@ -4,12 +4,12 @@ description: Příručka, která poskytuje kompletní pokyny k vytváření mono
 author: ardalis
 ms.author: wiwagn
 ms.date: 12/4/2019
-ms.openlocfilehash: 6ae5de0381c8796faee74abd40f688214ab13211
-ms.sourcegitcommit: 5988e9a29cedb8757320817deda3c08c6f44a6aa
+ms.openlocfilehash: 936a068507116033ad178f26e77945f30f70387e
+ms.sourcegitcommit: 1cb64b53eb1f253e6a3f53ca9510ef0be1fd06fe
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82199960"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82507190"
 ---
 # <a name="architect-modern-web-applications-with-aspnet-core-and-azure"></a>Navrhování moderních webových aplikací pomocí ASP.NET Core a Azure
 
@@ -50,6 +50,12 @@ Autor:
 Editory
 
 > **Maira Wenzel**
+
+## <a name="action-links"></a>Odkazy na akce
+
+- Tato elektronická kniha je také k dispozici ve formátu PDF (pouze v anglické verzi [).](https://aka.ms/webappebook)
+
+- Klonování/rozvětvení referenční aplikace [eShopOnWeb na GitHubu](https://github.com/dotnet-architecture/eShopOnWeb)
 
 ## <a name="introduction"></a>Úvod
 

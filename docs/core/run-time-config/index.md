@@ -1,45 +1,45 @@
 ---
-title: Možnosti konfigurace za běhu
-description: Zjistěte, jak nakonfigurovat aplikace .NET Core pomocí nastavení konfigurace za běhu.
+title: Možnosti konfigurace běhového běhu
+description: Naučte se konfigurovat aplikace .NET Core pomocí nastavení konfigurace za běhu.
 ms.date: 01/21/2020
-ms.openlocfilehash: ddf68c30e620a06856f65e71bd050e1b77618f20
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: d49707b93e272f0e527ff536a80140ec98e5c1a8
+ms.sourcegitcommit: 1cb64b53eb1f253e6a3f53ca9510ef0be1fd06fe
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "79399159"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82506777"
 ---
-# <a name="net-core-run-time-configuration-settings"></a>Nastavení konfigurace jádra .NET
+# <a name="net-core-run-time-configuration-settings"></a>Nastavení konfigurace runtime .NET Core
 
-Rozhraní .NET Core podporuje použití konfiguračních souborů a proměnných prostředí ke konfiguraci chování aplikací .NET Core za běhu. Konfigurace za běhu je atraktivní volbou, pokud:
+.NET Core podporuje použití konfiguračních souborů a proměnných prostředí ke konfiguraci chování aplikací .NET Core v době běhu. Konfigurace běhového běhu je atraktivní možnost, pokud:
 
-- Nevlastníte ani neřídíte zdrojový kód aplikace, a proto jej nelze programově konfigurovat.
+- Zdrojový kód aplikace nevlastníte nebo neovládáte, a proto ji nelze programově nakonfigurovat.
 
-- Více instancí aplikace spustit současně v jednom systému a chcete nakonfigurovat každý pro optimální výkon.
+- V jednom systému se spouští více instancí aplikace současně a chcete je nakonfigurovat pro optimální výkon.
 
 > [!NOTE]
-> Tato dokumentace je nedokončená práce. Pokud zjistíte, že zde uvedené informace jsou neúplné nebo nepřesné, [otevřete problém,](https://github.com/dotnet/docs/issues) abyste nám o tom měli vědět, nebo [odešlete žádost o přijetí informací](https://github.com/dotnet/docs/pulls) k řešení problému. Informace o odesílání žádostí o přijetí vyžádat pro úložiště dotnet/docs naleznete v [příručce přispěvatele](https://github.com/dotnet/docs/blob/master/CONTRIBUTING.md).
+> Tato dokumentace je probíhající práce. Pokud si všimnete, že zde uvedené informace jsou buď neúplné, nebo nepřesné, buď [otevřete problém](https://github.com/dotnet/docs/issues) , abychom nás věděli, nebo [odešlete žádost](https://github.com/dotnet/docs/pulls) o přijetí změn k vyřešení problému. Informace o odesílání žádostí o přijetí změn pro úložiště dotnet/docs najdete v [příručce pro přispěvatele](https://docs.microsoft.com/contribute/dotnet/dotnet-contribute).
 
-Jádro .NET poskytuje následující mechanismy pro konfiguraci chování aplikací za běhu:
+.NET Core poskytuje následující mechanismy pro konfiguraci chování aplikace za běhu:
 
-- [Soubor runtimeconfig.json](#runtimeconfigjson)
+- [Soubor runtimeconfig. JSON](#runtimeconfigjson)
 
-- [Vlastnosti MSBuild](#msbuild-properties)
+- [Vlastnosti nástroje MSBuild](#msbuild-properties)
 
 - [Proměnné prostředí](#environment-variables)
 
 Některé hodnoty konfigurace lze také nastavit programově voláním <xref:System.AppContext.SetSwitch%2A?displayProperty=nameWithType> metody.
 
-Články v této části dokumentace jsou uspořádány podle kategorie, například [ladění](debugging-profiling.md) a [uvolňování paměti](garbage-collector.md). V příslušných případech jsou zobrazeny možnosti konfigurace pro soubory *runtimeconfig.json,* vlastnosti MSBuild, proměnné prostředí a pro křížový odkaz soubory *app.config* pro projekty rozhraní .NET Framework.
+Články v této části dokumentace jsou uspořádány podle kategorie, například [ladění](debugging-profiling.md) a [uvolňování paměti](garbage-collector.md). Pokud je to možné, zobrazí se možnosti konfigurace pro soubory *runtimeconfig. JSON* , vlastnosti MSBuild, proměnné prostředí a, pro křížové odkazy, soubory *App. config* pro .NET Framework projekty.
 
-## <a name="runtimeconfigjson"></a>runtimeconfig.json
+## <a name="runtimeconfigjson"></a>runtimeconfig. JSON
 
-Při [vytváření](../tools/dotnet-build.md)projektu je ve výstupním adresáři generován soubor *[appname].runtimeconfig.json.* Pokud soubor *runtimeconfig.template.json* existuje ve stejné složce jako soubor projektu, všechny možnosti konfigurace, které obsahuje, jsou sloučeny do souboru *[appname].runtimeconfig.json.* Pokud vytváříte aplikaci sami, vložte všechny možnosti konfigurace do souboru *runtimeconconfig.template.json.* Pokud právě spouštěte aplikaci, vložte je přímo do souboru *[appname].runtimeconfig.json.*
+Při [sestavení](../tools/dotnet-build.md)projektu se ve výstupním adresáři vygeneruje soubor *[AppName]. runtimeconfig. JSON* . Pokud soubor *runtimeconfig. template. JSON* existuje ve stejné složce jako soubor projektu, všechny možnosti konfigurace, které obsahuje, jsou sloučeny do souboru *[název_aplikace]. runtimeconfig. JSON* . Pokud vytváříte aplikaci sami, vložte do souboru *runtimeconfig. template. JSON* všechny možnosti konfigurace. Pokud jste právě spustili aplikaci, vložte ji přímo do souboru *[název_aplikace]. runtimeconfig. JSON* .
 
 > [!NOTE]
-> Soubor *[appname].runtimeconfig.json* bude přepsán na následujícísestavení.
+> Soubor *[AppName]. runtimeconfig. JSON* se přepíše v následných sestaveních.
 
-V části **configProperties** souborů *runtimeconfig.json* určete možnosti konfigurace. Tato část má formulář:
+Zadejte možnosti konfigurace modulu runtime v části **configProperties** souborů *runtimeconfig. JSON* . Tato část obsahuje formulář:
 
 ```json
 "configProperties": {
@@ -48,9 +48,9 @@ V části **configProperties** souborů *runtimeconfig.json* určete možnosti k
 }
 ```
 
-### <a name="example-appnameruntimeconfigjson-file"></a>Příklad souboru [appname].runtimeconfig.json
+### <a name="example-appnameruntimeconfigjson-file"></a>Příklad souboru [AppName]. runtimeconfig. JSON
 
-Pokud umisťujete možnosti do výstupního souboru JSON, vnořte je pod `runtimeOptions` vlastnost.
+Pokud umístíte možnosti do výstupního souboru JSON, zanořit je do `runtimeOptions` vlastnosti.
 
 ```json
 {
@@ -69,9 +69,9 @@ Pokud umisťujete možnosti do výstupního souboru JSON, vnořte je pod `runtim
 }
 ```
 
-### <a name="example-runtimeconfigtemplatejson-file"></a>Příklad souboru runtimeconfig.template.json
+### <a name="example-runtimeconfigtemplatejson-file"></a>Příklad souboru runtimeconfig. template. JSON
 
-Pokud umisťujete možnosti do souboru Šablony `runtimeOptions` JSON, vyneche vlastnost.
+Pokud umístíte možnosti do souboru JSON šablony, vynechejte `runtimeOptions` vlastnost.
 
 ```json
 {
@@ -85,9 +85,9 @@ Pokud umisťujete možnosti do souboru Šablony `runtimeOptions` JSON, vyneche v
 
 ## <a name="msbuild-properties"></a>vlastnosti nástroje MSBuild
 
-Některé možnosti konfigurace za běhu lze nastavit pomocí vlastností MSBuild v souboru *.csproj* nebo *.vbproj* projektů .NET Core ve stylu sady SDK. Vlastnosti MSBuild mají přednost před možnostmi nastaveným v souboru *runtimeconfig.template.json.* Také přepsat všechny možnosti, které nastavíte v souboru *[appname].runtimeconfig.json* v době sestavení.
+Některé možnosti konfigurace modulu runtime lze nastavit pomocí vlastností nástroje MSBuild v souboru *. csproj* nebo *. vbproj* v projektech .NET Core ve stylu sady SDK. Vlastnosti nástroje MSBuild mají přednost před možnostmi nastavenými v souboru *runtimeconfig. template. JSON* . Přepíší také všechny možnosti, které jste nastavili v souboru *[název_aplikace]. runtimeconfig. JSON* v době sestavení.
 
-Zde je příklad souboru projektu ve stylu sady SDK s vlastnostmi msbuild pro konfiguraci chování za běhu:
+Zde je příklad souboru projektu ve stylu sady SDK s vlastnostmi MSBuild pro konfiguraci chování za běhu:
 
 ```xml
 <Project Sdk="Microsoft.NET.Sdk">
@@ -106,13 +106,13 @@ Zde je příklad souboru projektu ve stylu sady SDK s vlastnostmi msbuild pro ko
 </Project>
 ```
 
-Vlastnosti MSBuild pro konfiguraci chování za běhu jsou uvedeny v jednotlivých článcích pro každou oblast, například [uvolňování paměti](garbage-collector.md).
+Vlastnosti nástroje MSBuild pro konfiguraci chování za běhu jsou uvedeny v jednotlivých článcích pro každou oblast, například [uvolňování paměti](garbage-collector.md).
 
 ## <a name="environment-variables"></a>Proměnné prostředí
 
-Proměnné prostředí lze použít k zadání některých informací o konfiguraci za běhu. Konfigurační knoflíky určené jako proměnné prostředí mají obecně předponu **COMPlus_**.
+Proměnné prostředí lze použít k poskytnutí některých informací o konfiguraci run-time. Konfigurační ovladače zadané jako proměnné prostředí mají obecně předponu **COMPlus_**.
 
-Proměnné prostředí můžete definovat z Ovládacích panelů systému Windows na příkazovém řádku nebo programově voláním <xref:System.Environment.SetEnvironmentVariable(System.String,System.String)?displayProperty=nameWithType> metody v systémech Windows i Unix.
+Můžete definovat proměnné prostředí z ovládacích panelů systému Windows, na příkazovém řádku nebo programově voláním <xref:System.Environment.SetEnvironmentVariable(System.String,System.String)?displayProperty=nameWithType> metody v systémech Windows i UNIX.
 
 Následující příklady ukazují, jak nastavit proměnnou prostředí na příkazovém řádku:
 
