@@ -3,12 +3,12 @@ title: Průlomové změny – .NET Framework do .NET Core
 titleSuffix: ''
 description: Obsahuje seznam přerušujících změn z .NET Framework do .NET Core.
 ms.date: 12/18/2019
-ms.openlocfilehash: 6a6cbffed5a54e3683832da54d408d77bb553cf1
-ms.sourcegitcommit: 8b02d42f93adda304246a47f49f6449fc74a3af4
+ms.openlocfilehash: df5907e05c6a2aed478d64cc40c5d6f051f92f96
+ms.sourcegitcommit: d7666f6e49c57a769612602ea7857b927294ce47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "82135621"
+ms.lasthandoff: 04/30/2020
+ms.locfileid: "82595699"
 ---
 # <a name="breaking-changes-for-migration-from-net-framework-to-net-core"></a>Zásadní změny migrace z .NET Framework do .NET Core
 
@@ -22,6 +22,7 @@ Pokud migrujete aplikaci z .NET Framework do .NET Core, může to mít vliv na z
 - [Změna výchozí hodnoty UseShellExecute objektu Process](#change-in-default-value-of-useshellexecute)
 - [UnauthorizedAccessException vyvolaná atributy SystemInfo.](#unauthorizedaccessexception-thrown-by-filesysteminfoattributes)
 - [Manipulace s poškozenými výjimkami stavu procesu není podporována.](#handling-corrupted-state-exceptions-is-not-supported)
+- [Vlastnosti objekt UriBuilder protokolu už neobsahují úvodní znaky.](#uribuilder-properties-no-longer-prepend-leading-characters)
 
 ### <a name="net-core-21"></a>.NET Core 2.1
 
@@ -36,6 +37,10 @@ Pokud migrujete aplikaci z .NET Framework do .NET Core, může to mít vliv na z
 ***
 
 [!INCLUDE [corrupted-state-exceptions](~/includes/core-changes/corefx/1.0/corrupted-state-exceptions.md)]
+
+***
+
+[!INCLUDE [uribuilder-behavior-changes](../../../includes/core-changes/corefx/1.0/uribuilder-behavior-changes.md)]
 
 ***
 

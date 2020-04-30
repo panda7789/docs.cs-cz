@@ -1,56 +1,56 @@
 ---
-title: Nástroj odinstalace
-description: Přehled nástroje .NET Core Uninstall Tool, což je nástroj s průvodcem, který umožňuje řízené vyčištění sad SDK jádra .NET a runčase.
+title: Odinstalační nástroj
+description: Přehled nástroje pro odinstalaci rozhraní .NET Core, což je průvodce nástrojem, který umožňuje řízené vyčištění sad .NET Core SDK a modulů runtime.
 author: sfoslund
 ms.date: 01/06/2020
-ms.openlocfilehash: 816aef6ab8bc0e51bb8befb14fde60513d4fadfc
-ms.sourcegitcommit: 2514f4e3655081dcfe1b22470c0c28500f952c42
+ms.openlocfilehash: 45cf0841391d02636770e98666e2897d2598fab4
+ms.sourcegitcommit: d7666f6e49c57a769612602ea7857b927294ce47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/18/2020
-ms.locfileid: "79507318"
+ms.lasthandoff: 04/30/2020
+ms.locfileid: "82595712"
 ---
 # <a name="net-core-uninstall-tool"></a>Nástroj pro odinstalaci .NET Core
 
-[Nástroj .NET Core Uninstall Tool](https://aka.ms/dotnet-core-uninstall-tool) (`dotnet-core-uninstall`) umožňuje odebrat sady .NET Core SDK a runtimes ze systému. K dispozici je kolekce možností, které určují, které verze chcete odinstalovat.
+[Nástroj pro odinstalaci .NET Core](https://aka.ms/dotnet-core-uninstall-tool) (`dotnet-core-uninstall`) umožňuje odebrat sady SDK a moduly runtime .NET Core ze systému. K dispozici je kolekce možností, které určují verze, které chcete odinstalovat.
 
-Nástroj podporuje Windows a macOS. Linux není v současné době podporován.
+Nástroj podporuje Windows a macOS. Linux není aktuálně podporován.
 
-V systému Windows může nástroj odinstalovat pouze sady SDK a runtimes, které byly nainstalovány pomocí jednoho z následujících instalačních programů:
+V systému Windows může nástroj odinstalovat pouze sady SDK a moduly runtime, které byly nainstalovány pomocí jednoho z následujících instalačních programů:
 
-- Instalační program .NET Core SDK a runtime.
-- Instalační program sady Visual Studio ve verzích starších než Visual Studio 2019 verze 16.3.
+- Instalační program .NET Core SDK a modulu runtime.
+- Instalační program sady Visual Studio ve verzích starších než Visual Studio 2019 verze 16,3.
 
-V systému macOS může nástroj odinstalovat pouze sady SDK a runtimes umístěné ve složce */usr/local/share/dotnet.*
+V macOS může nástroj odinstalovat jenom sady SDK a moduly runtime umístěné ve složce */usr/local/share/dotnet* .
 
-Z důvodu těchto omezení nemusí být nástroj schopen odinstalovat všechny sady .NET Core SDK a runtimes v počítači. Pomocí příkazu `dotnet --info` můžete najít všechny nainstalované sady .NET Core SDK a runtimes, včetně těchto sad SDK a runtimes, které tento nástroj nelze odebrat. Příkaz `dotnet-core-uninstall list` zobrazí sady SDK, které lze pomocí nástroje odinstalovat.
+Z důvodu těchto omezení nemusí nástroj na počítači odinstalovat všechny sady .NET Core SDK a moduly runtime. Pomocí `dotnet --info` příkazu můžete najít všechny nainstalované sady .NET Core SDK a moduly runtime, včetně těchto sad SDK a modulu runtime, které tento nástroj nemůže odebrat. `dotnet-core-uninstall list` Příkaz zobrazí, které sady SDK je možné odinstalovat pomocí nástroje.
 
 ## <a name="install-the-tool"></a>Instalace nástroje
 
-Zde si můžete stáhnout nástroj .NET Core Uninstall Tool [a](https://aka.ms/dotnet-core-uninstall-tool) zdrojový kód najdete v úložišti GitHub [dotnet/cli-lab.](https://github.com/dotnet/cli-lab)
+Nástroj pro odinstalaci rozhraní .NET Core si můžete stáhnout [odsud a najít](https://aka.ms/dotnet-core-uninstall-tool) zdrojový kód v úložišti GitHub [/CLI-Lab](https://github.com/dotnet/cli-lab) .
 
 > [!NOTE]
-> Nástroj vyžaduje zvýšení odinstalace sad SDK jádra .NET a runčase. Proto by měl být nainstalován v adresáři chráněném pro zápis, například *C:\Program Files* v systému Windows nebo */usr/local/bin* v systému macOS. Viz také [zvýšený přístup pro příkazy dotnet](../tools/elevated-access.md). Další informace naleznete v [podrobných pokynech k instalaci](https://aka.ms/dotnet-core-uninstall-tool).
+> Tento nástroj vyžaduje zvýšení oprávnění k odinstalování sad SDK a modulů runtime .NET Core. Proto by měl být nainstalován v adresáři chráněném zápisem, například *C:\Program Files* ve Windows nebo */usr/local/bin* na MacOS. Viz také [zvýšený přístup pro příkazy dotnet](../tools/elevated-access.md). Další informace najdete v [podrobných pokynech k instalaci](https://aka.ms/dotnet-core-uninstall-tool).
 
-## <a name="run-the-tool"></a>Spuštění nástroje
+## <a name="run-the-tool"></a>Spusťte nástroj.
 
 Následující kroky ukazují doporučený postup pro spuštění nástroje pro odinstalaci:
 
-- [Krok 1 – Zobrazení nainstalovaných sad SDK .NET Core A RunTimes](#step-1---display-installed-net-core-sdks-and-runtimes)
-- [Krok 2 - Proveďte suchý běh](#step-2---do-a-dry-run)
-- [Krok 3 – Odinstalace sad SDK jádra .NET a runčase](#step-3---uninstall-net-core-sdks-and-runtimes)
-- [Krok 4 – Odstranění záložní složky NuGet (volitelné)](#step-4---delete-the-nuget-fallback-folder-optional)
+- [Krok 1 – zobrazení nainstalovaných sad SDK a modulů runtime .NET Core](#step-1---display-installed-net-core-sdks-and-runtimes)
+- [Krok 2 – provedení suchého běhu](#step-2---do-a-dry-run)
+- [Krok 3 – odinstalace sad SDK a modulů runtime .NET Core](#step-3---uninstall-net-core-sdks-and-runtimes)
+- [Krok 4 – odstranění záložní složky NuGet (volitelné)](#step-4---delete-the-nuget-fallback-folder-optional)
 
-### <a name="step-1---display-installed-net-core-sdks-and-runtimes"></a>Krok 1 – Zobrazení nainstalovaných sad SDK .NET Core A RunTimes
+### <a name="step-1---display-installed-net-core-sdks-and-runtimes"></a>Krok 1 – zobrazení nainstalovaných sad SDK a modulů runtime .NET Core
 
-Příkaz `dotnet-core-uninstall list` obsahuje seznam nainstalovaných sad SDK jádra .NET a dob běhu, které lze pomocí tohoto nástroje odebrat. Některé sady SDK a runtimes mohou být vyžadovány sadou Visual Studio a zobrazí se s poznámkou, proč se nedoporučuje je odinstalovat.
+`dotnet-core-uninstall list` Příkaz vypíše nainstalované sady .NET Core SDK a moduly runtime, které lze pomocí tohoto nástroje odebrat. Aplikace Visual Studio může vyžadovat některé sady SDK a moduly runtime, které se zobrazí s poznámkou, proč není doporučeno je odinstalovat.
 
 > [!NOTE]
-> Výstup příkazu `dotnet-core-uninstall list` nebude odpovídat seznamu nainstalovaných verzí ve `dotnet --info` výstupu ve většině případů. Konkrétně tento nástroj nebude zobrazovat verze nainstalované soubory ZIP nebo spravované aplikací Visual Studio (libovolná verze nainstalovaná v sadě Visual Studio 2019 16.3 nebo novější). Jedním ze způsobů, jak zkontrolovat, zda je verze `Add or Remove Programs`spravována visual studio je zobrazit v aplikaci , kde Visual Studio spravované verze jsou označeny jako takové v jejich zobrazované názvy.
+> Výstup `dotnet-core-uninstall list` příkazu se neshoduje se seznamem nainstalovaných verzí ve většině případů ve výstupu `dotnet --info` . Konkrétně tento nástroj nebude zobrazovat verze nainstalované soubory ZIP nebo spravované sadou Visual Studio (jakákoli verze nainstalovaná se sadou Visual Studio 2019 16,3 nebo novější). Jedním ze způsobů, jak zjistit, jestli je verze spravovaná pomocí sady Visual Studio, je `Add or Remove Programs`zobrazit v, kde spravované verze Visual studia jsou označené jako v jejich zobrazovaných názvech.
 
-**seznam odinstalace dotnet-core-uninstall**
+**dotnet – základní – seznam odinstalování**
 
-#### <a name="synopsis"></a>Synopse
+#### <a name="synopsis"></a>Stručný obsah
 
 ```console
 dotnet-core-uninstall list [options]
@@ -62,75 +62,75 @@ dotnet-core-uninstall list [options]
 
 * **`--aspnet-runtime`**
 
-  Zobrazí seznam všech ASP.NET za běhu jádra, které lze odinstalovat pomocí tohoto nástroje.
+  Zobrazí seznam všech ASP.NET Core Runtime, které lze pomocí tohoto nástroje odinstalovat.
 
 * **`--hosting-bundle`**
 
-  Zobrazí seznam všech runtime rozhraní .NET Core a hostingových balíčků, které lze odinstalovat pomocí tohoto nástroje.
+  Zobrazí seznam všech modulů runtime .NET Core a hostitelských sad, které se dají odinstalovat pomocí tohoto nástroje.
 
 * **`--runtime`**
 
-  Zobrazí seznam všech runčasů jádra .NET, které lze tímto nástrojem odinstalovat.
+  Zobrazí seznam všech modulů runtime .NET Core, které se dají odinstalovat pomocí tohoto nástroje.
 
 * **`--sdk`**
 
-  Zobrazí seznam všech sad SDK jádra .NET, které lze tímto nástrojem odinstalovat.
+  Zobrazí seznam všech sad SDK .NET Core, které se dají odinstalovat pomocí tohoto nástroje.
 
 * **`-v, --verbosity <LEVEL>`**
 
-  Nastaví úroveň podrobností. Povolené hodnoty `q[uiet]` `m[inimal]`jsou `n[ormal]` `d[etailed]`, `diag[nostic]`, , a . Výchozí hodnota je `normal`.
+  Nastaví úroveň podrobností. Povolené hodnoty jsou `q[uiet]`, `m[inimal]`, `n[ormal]` `d[etailed]`, a `diag[nostic]`. Výchozí hodnota je `normal`.
 
 * **`--x64`**
 
-  Zobrazí seznam všech sad X64 .NET Core SDK a runtimes, které lze odinstalovat pomocí tohoto nástroje.
+  Obsahuje seznam všech sad SDK a modulů runtime x64 .NET Core, které je možné odinstalovat pomocí tohoto nástroje.
 
 * **`--x86`**
 
-  Zobrazí seznam všech sad X86 .NET Core SDK a runtimes, které lze odinstalovat pomocí tohoto nástroje.
+  Obsahuje seznam všech sad SDK a modulů runtime x86 .NET Core, které je možné odinstalovat pomocí tohoto nástroje.
 
-## <a name="macos"></a>[Macos](#tab/macos)
+## <a name="macos"></a>[macOS](#tab/macos)
 
 * **`--runtime`**
 
-  Zobrazí seznam všech runčasů jádra .NET, které lze tímto nástrojem odinstalovat.
+  Zobrazí seznam všech modulů runtime .NET Core, které se dají odinstalovat pomocí tohoto nástroje.
 
 * **`--sdk`**
 
-  Zobrazí seznam všech sad SDK jádra .NET, které lze tímto nástrojem odinstalovat.
+  Zobrazí seznam všech sad SDK .NET Core, které se dají odinstalovat pomocí tohoto nástroje.
 
 * **`-v, --verbosity <LEVEL>`**
 
-  Nastaví úroveň podrobností. Povolené hodnoty `q[uiet]` `m[inimal]`jsou `n[ormal]` `d[etailed]`, `diag[nostic]`, , a . Výchozí hodnota je `normal`.
+  Nastaví úroveň podrobností. Povolené hodnoty jsou `q[uiet]`, `m[inimal]`, `n[ormal]` `d[etailed]`, a `diag[nostic]`. Výchozí hodnota je `normal`.
   
 ---
 
 #### <a name="examples"></a>Příklady
 
-* Seznam všech sad SDK jádra .NET a runtimes, které lze odebrat pomocí tohoto nástroje:
+* Vypíše všechny sady SDK a moduly runtime .NET Core, které je možné odebrat pomocí tohoto nástroje:
 
   ```console
   dotnet-core-uninstall list
   ```
 
-* Seznam všech sad sdsad a runčase jádra x64 .NET:
+* Vypíše všechny sady SDK a moduly runtime x64 .NET Core:
 
   ```console
   dotnet-core-uninstall list --x64
   ```
 
-* Seznam všech sad sdsad x86 .NET Core:
+* Vypíše všechny sady SDK x86 .NET Core:
 
   ```console
   dotnet-core-uninstall list --sdk --x86
   ```
 
-### <a name="step-2---do-a-dry-run"></a>Krok 2 - Proveďte suchý běh
+### <a name="step-2---do-a-dry-run"></a>Krok 2 – provedení suchého běhu
 
-`dotnet-core-uninstall dry-run` Příkazy `dotnet-core-uninstall whatif` a zobrazují sady .NET Core SDK a runtimes, které budou odebrány na základě možností, které jsou k dispozici bez provedení odinstalace. Tyto příkazy jsou synonyma.
+Příkazy `dotnet-core-uninstall dry-run` a `dotnet-core-uninstall whatif` zobrazují sady .NET Core SDK a moduly runtime, které budou odebrány na základě možností, které jsou k dispozici bez provedení odinstalace. Tyto příkazy jsou synonyma.
 
-**dotnet-core-uninstall dry-run a dotnet-core-uninstall whatif**
+**dotnet-Core – odinstalace suchého běhu a dotnet-Core-Uninstall whatIf**
 
-#### <a name="synopsis"></a>Synopse
+#### <a name="synopsis"></a>Stručný obsah
 
 ```console
 dotnet-core-uninstall dry-run [options] [<VERSION>...]
@@ -142,12 +142,12 @@ dotnet-core-uninstall whatif [options] [<VERSION>...]
 
 * **`VERSION`**
 
-  Zadaná verze k odinstalaci. Můžete uvést několik verzí jeden po druhém, oddělené mezerami. Soubory odpovědí jsou také podporovány.
+  Zadaná verze, která se má odinstalovat Po druhém můžete zobrazit několik verzí, které jsou oddělené mezerami. Podporovány jsou také soubory odpovědí.
 
   > [!TIP]
-  > Soubory odpovědí jsou alternativou k umístění všech verzí na příkazovém řádku.
-  > Jedná se o textové soubory, \*obvykle s příponou RSP, a každá verze je uvedena na samostatném řádku.
-  > Chcete-li zadat soubor `VERSION` odpovědí pro \@ argument, použijte znak bezprostředně následovaný názvem souboru odpovědi.
+  > Soubory odpovědí jsou alternativou k umístění všech verzí do příkazového řádku.
+  > Jsou to textové soubory, obvykle s příponou \*. rsp a každá verze je uvedena na samostatném řádku.
+  > Chcete-li zadat soubor odpovědí pro `VERSION` argument, použijte \@ znak ihned následovaný názvem souboru odpovědi.
 
 #### <a name="options"></a>Možnosti
 
@@ -155,164 +155,164 @@ dotnet-core-uninstall whatif [options] [<VERSION>...]
 
 * **`--all`**
 
-  Odebere všechny sady .NET Core SDK a runtimes.
+  Odebere všechny sady SDK a moduly runtime .NET Core.
 
 * **`--all-below <VERSION>`**
 
-  Odebere pouze sady .NET Core SDK a runtimes s verzí menší než zadaná verze. Zadaná verze zůstane nainstalována.
+  Odebere jenom sady SDK a modul runtime .NET Core s verzí nižší, než je zadaná verze. Zadaná verze zůstane nainstalovaná.
 
 * **`--all-but <VERSIONS>`**
 
-  Odebere všechny sady .NET Core SDK a runtimes, s výjimkou těch, které byly zadány.
+  Odebere všechny sady SDK a moduly runtime .NET Core s výjimkou uvedených verzí.
 
 * **`--all-but-latest`**
 
-  Odebere sady .NET Core SDK a runtimes, s výjimkou jedné nejvyšší verze.
+  Odebere sady SDK a moduly runtime .NET Core s výjimkou jedné nejvyšší verze.
 
 * **`--all-lower-patches`**
 
-  Odebere sady .NET Core SDK a runtimes nahrazené vyššími opravami. Tato možnost chrání global.json.
+  Odebere sady SDK a moduly runtime .NET Core nahrazené vyššími opravami. Tato možnost chrání Global. JSON.
 
 * **`--all-previews`**
 
-  Odebere sady .NET Core SDK a runtimes označené jako náhledy.
+  Odebere sady .NET Core SDK a moduly runtime označené jako náhledy.
 
 * **`--all-previews-but-latest`**
 
-  Odebere sady .NET Core SDK a runtimes označené jako náhledy s výjimkou jednoho nejvyššího náhledu.
+  Odebere sady .NET Core SDK a moduly runtime označené jako náhledy kromě nejvyšší verze Preview.
 
 * **`--aspnet-runtime`**
 
-  Odebere pouze ASP.NET za běhu jádra.
+  Odebere pouze moduly runtime ASP.NET Core.
 
 * **`--hosting-bundle`**
 
-  Odebere pouze runtime .NET Core a hostování balíčků.
+  Odebere jenom modul runtime .NET Core a hostitelské sady.
 
 * **`--major-minor <MAJOR_MINOR>`**
 
-  Odebere sady .NET Core SDK a `major.minor` runtimes, které odpovídají zadané verzi.
+  Odebere sady .NET Core SDK a moduly runtime, které odpovídají `major.minor` zadané verzi.
 
 * **`--runtime`**
 
-  Odebere pouze runtimes jádra .NET.
+  Odebere jenom modul runtime .NET Core.
 
 * **`--sdk`**
 
-  Odebere pouze sady SDK jádra .NET.
+  Odebere jenom sady .NET Core SDK.
 
 * **`-v, --verbosity <LEVEL>`**
 
-  Nastaví úroveň podrobností. Povolené hodnoty `q[uiet]` `m[inimal]`jsou `n[ormal]` `d[etailed]`, `diag[nostic]`, , a . Výchozí hodnota je `normal`.
+  Nastaví úroveň podrobností. Povolené hodnoty jsou `q[uiet]`, `m[inimal]`, `n[ormal]` `d[etailed]`, a `diag[nostic]`. Výchozí hodnota je `normal`.
 
 * **`--x64`**
 
-  Musí být `--sdk`použit `--runtime`s `--aspnet-runtime` , a odebrat x64 SDK nebo runtimes.
+  Se musí použít s `--sdk`, `--runtime`a `--aspnet-runtime` pro odebrání sad nebo modulů runtime x64.
 
 * **`--x86`**
 
-  Musí být `--sdk`použit `--runtime`s `--aspnet-runtime` , a odebrat x86 SDK nebo runtimes.
+  Se musí použít s `--sdk`, `--runtime`a `--aspnet-runtime` k odebrání sad SDK nebo modulů runtime x86.
 
-* **`--force`** Vynutí odebrání verzí, které mohou být použity visual studio.
+* **`--force`** Vynutí odebrání verzí, které mohou být použity v aplikaci Visual Studio.
 
 Poznámky:
 
-1. Přesně jeden `--sdk` `--runtime`z `--aspnet-runtime`, `--hosting-bundle` , , a je požadováno.
-2. `--all`, `--all-below` `--all-but`, `--all-but-latest` `--all-lower-patches`, `--all-previews` `--all-previews-but-latest`, `--major-minor`, `[<VERSION>...]` , , a jsou výlučné.
-3. Pokud `--x64` `--x86` nebo nejsou zadány, budou odebrány x64 i x86.
+1. Je vyžadován právě `--sdk`jeden `--runtime`z `--aspnet-runtime`,, a. `--hosting-bundle`
+2. `--all`, `--all-below`, `--all-but`, `--all-but-latest`, `--all-lower-patches`, `--all-previews`, `--all-previews-but-latest`, `--major-minor`a `[<VERSION>...]` jsou exkluzivní.
+3. Pokud `--x64` `--x86` nejsou zadány, budou odebrány obě platformy x64 i x86.
 
-## <a name="macos"></a>[Macos](#tab/macos)
+## <a name="macos"></a>[macOS](#tab/macos)
 
 * **`--all`**
 
-  Odebere všechny sady .NET Core SDK a runtimes.
+  Odebere všechny sady SDK a moduly runtime .NET Core.
 
 * **`--all-below <VERSION>`**
 
-  Odebere sady .NET Core SDK a runtimes pod zadanou verzí. Zadaná verze zůstane zachována.
+  Odebere sady SDK a moduly runtime .NET Core pod zadanou verzí. Zadaná verze zůstane.
 
 * **`--all-but <VERSIONS>`**
 
-  Odebere sady .NET Core SDK a runtimes, s výjimkou těch, které byly zadány.
+  Odebere sady SDK a moduly runtime .NET Core s výjimkou uvedených verzí.
 
 * **`--all-but-latest`**
 
-  Odebere sady .NET Core SDK a runtimes, s výjimkou jedné nejvyšší verze.
+  Odebere sady SDK a moduly runtime .NET Core s výjimkou jedné nejvyšší verze.
 
 * **`--all-lower-patches`**
 
-  Odebere sady .NET Core SDK a runtimes nahrazené vyššími opravami. Tato možnost chrání global.json.
+  Odebere sady SDK a moduly runtime .NET Core nahrazené vyššími opravami. Tato možnost chrání Global. JSON.
 
 * **`--all-previews`**
 
-  Odebere sady .NET Core SDK a runtimes označené jako náhledy.
+  Odebere sady .NET Core SDK a moduly runtime označené jako náhledy.
 
 * **`--all-previews-but-latest`**
 
-  Odebere sady .NET Core SDK a runtimes označené jako náhledy s výjimkou jednoho nejvyššího náhledu.
+  Odebere sady .NET Core SDK a moduly runtime označené jako náhledy kromě nejvyšší verze Preview.
 
 * **`--major-minor <MAJOR_MINOR>`**
 
-  Odebere sady .NET Core SDK a `major.minor` runtimes, které odpovídají zadané verzi.
+  Odebere sady .NET Core SDK a moduly runtime, které odpovídají `major.minor` zadané verzi.
 
 * **`--runtime`**
 
-  Odebere pouze runtimes jádra .NET.
+  Odebere jenom modul runtime .NET Core.
 
 * **`--sdk`**
 
-  Odebere pouze sady SDK jádra .NET.
+  Odebere jenom sady .NET Core SDK.
 
 * **`-v, --verbosity <LEVEL>`**
 
-  Nastaví úroveň podrobností. Povolené hodnoty `q[uiet]` `m[inimal]`jsou `n[ormal]` `d[etailed]`, `diag[nostic]`, , a . Výchozí hodnota je `normal`.
+  Nastaví úroveň podrobností. Povolené hodnoty jsou `q[uiet]`, `m[inimal]`, `n[ormal]` `d[etailed]`, a `diag[nostic]`. Výchozí hodnota je `normal`.
   
-* **`--force`** Vynutí odebrání verzí, které mohou být používány sady Visual Studio nebo sady SDK.
+* **`--force`** Vynutí odebrání verzí, které mohou být použity v aplikaci Visual Studio nebo sadách SDK.
 
 Poznámky:
 
-1. Přesně jeden `--sdk` `--runtime` z a je nutné.
-2. `--all`, `--all-below` `--all-but`, `--all-but-latest` `--all-lower-patches`, `--all-previews` `--all-previews-but-latest`, `--major-minor`, `[<VERSION>...]` , , a jsou výlučné.
+1. Je vyžadován právě `--sdk` jeden `--runtime` z a.
+2. `--all`, `--all-below`, `--all-but`, `--all-but-latest`, `--all-lower-patches`, `--all-previews`, `--all-previews-but-latest`, `--major-minor`a `[<VERSION>...]` jsou exkluzivní.
 
 ---
 
 #### <a name="examples"></a>Příklady
 
 > [!NOTE]
-> Ve výchozím nastavení nejsou ve `dotnet-core-uninstall dry-run` výstupu zahrnuty sady .NET Core SDK a runtimes, které mohou být vyžadovány sadou Visual Studio nebo jinými sadami SDK. V následujících příkladech některé zadané sady SDK a doba běhu nemusí být zahrnuty do výstupu, v závislosti na stavu počítače. Chcete-li zahrnout všechny sady SDK a dobu běhu, `--force` uveďte je explicitně jako argumenty nebo použijte možnost.
+> Ve výchozím nastavení nejsou sady .NET Core SDK a moduly runtime, které mohou být vyžadovány aplikací Visual Studio nebo jinými sadami `dotnet-core-uninstall dry-run` SDK, zahrnuty ve výstupu. V následujících příkladech nemusí být některé ze zadaných sad SDK a modulu runtime zahrnuty ve výstupu v závislosti na stavu počítače. Pokud chcete zahrnout všechny sady SDK a moduly runtime, uveďte je explicitně jako argumenty nebo `--force` použijte možnost.
 
-* Běh nasucho odebrání všech runčasů .NET Core, které byly nahrazeny vyššími opravami:
+* Suché spuštění odebrání všech modulů runtime .NET Core, které byly nahrazeny vyššími opravami:
 
   ```console
   dotnet-core-uninstall dry-run --all-lower-patches --runtime
   ```
 
-* Nasucho odstranit všechny sady .NET Core `2.2.301`SDK pod verzí :
+* Suché spuštění odebrání všech sad .NET Core SDK pod verzí `2.2.301`:
 
   ```console
   dotnet-core-uninstall whatif --all-below 2.2.301 --sdk
   ```
 
-### <a name="step-3---uninstall-net-core-sdks-and-runtimes"></a>Krok 3 – Odinstalace sad SDK jádra .NET a runčase
+### <a name="step-3---uninstall-net-core-sdks-and-runtimes"></a>Krok 3 – odinstalace sad SDK a modulů runtime .NET Core
 
-`dotnet-core-uninstall remove`odinstaluje sady .NET Core SDK a runtimes, které jsou určeny kolekcí možností. Nástroj nelze použít k odinstalaci sad SDK a runtimes s verzí 5.0 nebo vyšší.
+`dotnet-core-uninstall remove`odinstaluje sady SDK a moduly runtime .NET Core, které jsou určené kolekcí možností. Tento nástroj se nedá použít k odinstalování sad SDK a běhových prostředí s verzí 5,0 nebo vyšší.
 
-Vzhledem k tomu, že tento nástroj má destruktivní chování, **důrazně** doporučujeme provést spuštění nasucho před spuštěním příkazu remove. Běh na sucho vám ukáže, jaké sady .NET Core SDK `remove` a runtimes budou odebrány při použití příkazu. Odkazovat na [Mám odebrat verzi?](../versions/remove-runtime-sdk-versions.md#should-i-remove-a-version) chcete-li zjistit, které sady SDK a runtimes jsou bezpečné odebrat.
+Vzhledem k tomu, že tento nástroj má destruktivní chování, **důrazně** doporučujeme, abyste před spuštěním příkazu Remove nepoužívali suché spuštění. V suchém běhu se zobrazí informace o tom, jaké sady `remove` .NET Core SDK a moduly runtime budou odebrány při použití příkazu. Informace o tom, jak [mám odebrat verzi?](../install/remove-runtime-sdk-versions.md#should-i-remove-a-version) informace o tom, které sady SDK a moduly runtime je bezpečné odebrat.
 
 > [!CAUTION]
-> Mějte na paměti následující upozornění:
+> Pamatujte na následující upozornění:
 >
->- Tento nástroj může odinstalovat verze sady .NET Core SDK, které jsou vyžadovány `global.json` soubory v počítači. Sady SDK jádra .NET můžete přeinstalovat na stránce [Download .NET Core.](https://dotnet.microsoft.com/download/dotnet-core)
->- Tento nástroj může odinstalovat verze runtime .NET Core, které jsou vyžadovány aplikacemi závislými na rámci počítače. Runtime jádra .NET můžete přeinstalovat na stránce [Download .NET Core.](https://dotnet.microsoft.com/download/dotnet-core)
->- Tento nástroj může odinstalovat verze sady .NET Core SDK a runtime, na které aplikace Visual Studio spoléhá. Pokud přerušíte instalaci sady Visual Studio, spusťte "Oprava" v instalačním programu sady Visual Studio a vraťte se do pracovního stavu.
+>- Tento nástroj může odinstalovat verze .NET Core SDK, které jsou vyžadovány `global.json` soubory na vašem počítači. Sady .NET Core SDK můžete přeinstalovat ze stránky [stáhnout jádro .NET Core](https://dotnet.microsoft.com/download/dotnet-core) .
+>- Tento nástroj může odinstalovat verze modulu runtime .NET Core, které jsou vyžadovány závislými aplikacemi architektury na vašem počítači. Moduly runtime .NET Core můžete přeinstalovat na stránce [stáhnout jádro .NET Core](https://dotnet.microsoft.com/download/dotnet-core) .
+>- Tento nástroj může odinstalovat verze .NET Core SDK a modulu runtime, na kterém se aplikace Visual Studio spoléhá. Pokud přerušíte instalaci sady Visual Studio, spusťte v instalačním programu sady Visual Studio "opravit" a vraťte se do funkčního stavu.
 
-Ve výchozím nastavení všechny příkazy zachovat .NET Core SDK a runtimes, které mohou být vyžadovány Visual Studio nebo jiné sady SDK. Tyto sady SDK a runtimes lze odinstalovat jejich výpisem `--force` explicitně jako argumenty nebo pomocí možnosti.
+Ve výchozím nastavení všechny příkazy udržují sady SDK a moduly runtime .NET Core, které mohou být vyžadovány aplikací Visual Studio nebo jinými sadami SDK. Tyto sady SDK a moduly runtime můžete odinstalovat tak, že je explicitně uvedete jako argumenty nebo `--force` pomocí možnosti.
 
-Nástroj vyžaduje zvýšení odinstalace sad SDK jádra .NET a runčase. Spusťte nástroj v příkazovém `sudo` řádku Správce v systému Windows a v systému macOS. `dry-run` Příkazy `whatif` a nevyžadují zvýšení oprávnění.
+Tento nástroj vyžaduje zvýšení oprávnění k odinstalování sad SDK a modulů runtime .NET Core. Spusťte nástroj v příkazovém řádku správce ve Windows a `sudo` v MacOS. Příkazy `dry-run` a `whatif` nevyžadují zvýšení oprávnění.
 
-**dotnet-core-uninstall odebrat**
+**dotnet – jádro – odebrání odinstalace**
 
-#### <a name="synopsis"></a>Synopse
+#### <a name="synopsis"></a>Stručný obsah
 
 ```console
 dotnet-core-uninstall remove [options] [<VERSION>...]
@@ -322,12 +322,12 @@ dotnet-core-uninstall remove [options] [<VERSION>...]
 
 * **`VERSION`**
 
-  Zadaná verze k odinstalaci. Můžete uvést několik verzí jeden po druhém, oddělené mezerami. Soubory odpovědí jsou také podporovány.
+  Zadaná verze, která se má odinstalovat Po druhém můžete zobrazit několik verzí, které jsou oddělené mezerami. Podporovány jsou také soubory odpovědí.
 
   > [!TIP]
-  > Soubory odpovědí jsou alternativou k umístění všech verzí na příkazovém řádku.
-  > Jedná se o textové soubory, \*obvykle s příponou RSP, a každá verze je uvedena na samostatném řádku.
-  > Chcete-li zadat soubor `VERSION` odpovědí pro \@ argument, použijte znak bezprostředně následovaný názvem souboru odpovědi.
+  > Soubory odpovědí jsou alternativou k umístění všech verzí do příkazového řádku.
+  > Jsou to textové soubory, obvykle s příponou \*. rsp a každá verze je uvedena na samostatném řádku.
+  > Chcete-li zadat soubor odpovědí pro `VERSION` argument, použijte \@ znak ihned následovaný názvem souboru odpovědi.
 
 #### <a name="options"></a>Možnosti
 
@@ -335,193 +335,193 @@ dotnet-core-uninstall remove [options] [<VERSION>...]
 
 * **`--all`**
 
-  Odebere všechny sady .NET Core SDK a runtimes.
+  Odebere všechny sady SDK a moduly runtime .NET Core.
 
 * **`--all-below <VERSION>`**
 
-  Odebere pouze sady .NET Core SDK a runtimes s verzí menší než zadaná verze. Zadaná verze zůstane nainstalována.
+  Odebere jenom sady SDK a modul runtime .NET Core s verzí nižší, než je zadaná verze. Zadaná verze zůstane nainstalovaná.
 
 * **`--all-but <VERSIONS>`**
 
-  Odebere všechny sady .NET Core SDK a runtimes, s výjimkou těch, které byly zadány.
+  Odebere všechny sady SDK a moduly runtime .NET Core s výjimkou uvedených verzí.
 
 * **`--all-but-latest`**
 
-  Odebere sady .NET Core SDK a runtimes, s výjimkou jedné nejvyšší verze.
+  Odebere sady SDK a moduly runtime .NET Core s výjimkou jedné nejvyšší verze.
 
 * **`--all-lower-patches`**
 
-  Odebere sady .NET Core SDK a runtimes nahrazené vyššími opravami. Tato možnost chrání global.json.
+  Odebere sady SDK a moduly runtime .NET Core nahrazené vyššími opravami. Tato možnost chrání Global. JSON.
 
 * **`--all-previews`**
 
-  Odebere sady .NET Core SDK a runtimes označené jako náhledy.
+  Odebere sady .NET Core SDK a moduly runtime označené jako náhledy.
 
 * **`--all-previews-but-latest`**
 
-  Odebere sady .NET Core SDK a runtimes označené jako náhledy s výjimkou jednoho nejvyššího náhledu.
+  Odebere sady .NET Core SDK a moduly runtime označené jako náhledy kromě nejvyšší verze Preview.
 
 * **`--aspnet-runtime`**
 
-  Odebere pouze ASP.NET za běhu jádra.
+  Odebere pouze moduly runtime ASP.NET Core.
 
 * **`--hosting-bundle`**
 
-  Odebere pouze runtime .NET Core a hostování balíčků.
+  Odebere jenom modul runtime .NET Core a hostitelské sady.
 
 * **`--major-minor <MAJOR_MINOR>`**
 
-  Odebere sady .NET Core SDK a `major.minor` runtimes, které odpovídají zadané verzi.
+  Odebere sady .NET Core SDK a moduly runtime, které odpovídají `major.minor` zadané verzi.
 
 * **`--runtime`**
 
-  Odebere pouze runtimes jádra .NET.
+  Odebere jenom modul runtime .NET Core.
 
 * **`--sdk`**
 
-  Odebere pouze sady SDK jádra .NET.
+  Odebere jenom sady .NET Core SDK.
 
 * **`-v, --verbosity <LEVEL>`**
 
-  Nastaví úroveň podrobností. Povolené hodnoty `q[uiet]` `m[inimal]`jsou `n[ormal]` `d[etailed]`, `diag[nostic]`, , a . Výchozí hodnota je `normal`.
+  Nastaví úroveň podrobností. Povolené hodnoty jsou `q[uiet]`, `m[inimal]`, `n[ormal]` `d[etailed]`, a `diag[nostic]`. Výchozí hodnota je `normal`.
 
 * **`--x64`**
 
-  Musí být `--sdk`použit `--runtime`s `--aspnet-runtime` , a odebrat x64 SDK nebo runtimes.
+  Se musí použít s `--sdk`, `--runtime`a `--aspnet-runtime` pro odebrání sad nebo modulů runtime x64.
 
 * **`--x86`**
 
-  Musí být `--sdk`použit `--runtime`s `--aspnet-runtime` , a odebrat x86 SDK nebo runtimes.
+  Se musí použít s `--sdk`, `--runtime`a `--aspnet-runtime` k odebrání sad SDK nebo modulů runtime x86.
 
-* **`-y, --yes`** Provede příkaz bez nutnosti potvrzení ano nebo ne.
+* **`-y, --yes`** Provede příkaz bez nutnosti potvrzení Ano nebo ne.
 
-* **`--force`** Vynutí odebrání verzí, které mohou být použity visual studio.
+* **`--force`** Vynutí odebrání verzí, které mohou být použity v aplikaci Visual Studio.
 
 Poznámky:
 
-1. Přesně jeden `--sdk` `--runtime`z `--aspnet-runtime`, `--hosting-bundle` , , a je požadováno.
-2. `--all`, `--all-below` `--all-but`, `--all-but-latest` `--all-lower-patches`, `--all-previews` `--all-previews-but-latest`, `--major-minor`, `[<VERSION>...]` , , a jsou výlučné.
-3. Pokud `--x64` `--x86` nebo nejsou zadány, budou odebrány x64 i x86.
+1. Je vyžadován právě `--sdk`jeden `--runtime`z `--aspnet-runtime`,, a. `--hosting-bundle`
+2. `--all`, `--all-below`, `--all-but`, `--all-but-latest`, `--all-lower-patches`, `--all-previews`, `--all-previews-but-latest`, `--major-minor`a `[<VERSION>...]` jsou exkluzivní.
+3. Pokud `--x64` `--x86` nejsou zadány, budou odebrány obě platformy x64 i x86.
 
-## <a name="macos"></a>[Macos](#tab/macos)
+## <a name="macos"></a>[macOS](#tab/macos)
 
 * **`--all`**
 
-  Odebere všechny sady .NET Core SDK a runtimes.
+  Odebere všechny sady SDK a moduly runtime .NET Core.
 
 * **`--all-below <VERSION>`**
 
-  Odebere sady .NET Core SDK a runtimes pod zadanou verzí. Zadaná verze zůstane zachována.
+  Odebere sady SDK a moduly runtime .NET Core pod zadanou verzí. Zadaná verze zůstane.
 
 * **`--all-but <VERSIONS>`**
 
-  Odebere sady .NET Core SDK a runtimes, s výjimkou těch, které byly zadány.
+  Odebere sady SDK a moduly runtime .NET Core s výjimkou uvedených verzí.
 
 * **`--all-but-latest`**
 
-  Odebere sady .NET Core SDK a runtimes, s výjimkou jedné nejvyšší verze.
+  Odebere sady SDK a moduly runtime .NET Core s výjimkou jedné nejvyšší verze.
 
 * **`--all-lower-patches`**
 
-  Odebere sady .NET Core SDK a runtimes nahrazené vyššími opravami. Tato možnost chrání global.json.
+  Odebere sady SDK a moduly runtime .NET Core nahrazené vyššími opravami. Tato možnost chrání Global. JSON.
 
 * **`--all-previews`**
 
-  Odebere sady .NET Core SDK a runtimes označené jako náhledy.
+  Odebere sady .NET Core SDK a moduly runtime označené jako náhledy.
 
 * **`--all-previews-but-latest`**
 
-  Odebere sady .NET Core SDK a runtimes označené jako náhledy s výjimkou jednoho nejvyššího náhledu.
+  Odebere sady .NET Core SDK a moduly runtime označené jako náhledy kromě nejvyšší verze Preview.
 
 * **`--major-minor <MAJOR_MINOR>`**
 
-  Odebere sady .NET Core SDK a `major.minor` runtimes, které odpovídají zadané verzi.
+  Odebere sady .NET Core SDK a moduly runtime, které odpovídají `major.minor` zadané verzi.
 
 * **`--runtime`**
 
-  Odebere pouze runtimes jádra .NET.
+  Odebere jenom modul runtime .NET Core.
 
 * **`--sdk`**
 
-  Odebere pouze sady SDK jádra .NET.
+  Odebere jenom sady .NET Core SDK.
 
 * **`-v, --verbosity <LEVEL>`**
 
-  Nastaví úroveň podrobností. Povolené hodnoty `q[uiet]` `m[inimal]`jsou `n[ormal]` `d[etailed]`, `diag[nostic]`, , a . Výchozí hodnota je `normal`.
+  Nastaví úroveň podrobností. Povolené hodnoty jsou `q[uiet]`, `m[inimal]`, `n[ormal]` `d[etailed]`, a `diag[nostic]`. Výchozí hodnota je `normal`.
 
-* **`-y, --yes`** Provede příkaz bez nutnosti potvrzení Y/N.
+* **`-y, --yes`** Provede příkaz bez potvrzení hodnoty Y/N.
   
-* **`--force`** Vynutí odebrání verzí, které mohou být používány sady Visual Studio nebo sady SDK.
+* **`--force`** Vynutí odebrání verzí, které mohou být použity v aplikaci Visual Studio nebo sadách SDK.
 
 Poznámky:
 
-1. Přesně jeden `--sdk` `--runtime` z a je nutné.
-2. `--all`, `--all-below` `--all-but`, `--all-but-latest` `--all-lower-patches`, `--all-previews` `--all-previews-but-latest`, `--major-minor`, `[<VERSION>...]` , , a jsou výlučné.
+1. Je vyžadován právě `--sdk` jeden `--runtime` z a.
+2. `--all`, `--all-below`, `--all-but`, `--all-but-latest`, `--all-lower-patches`, `--all-previews`, `--all-previews-but-latest`, `--major-minor`a `[<VERSION>...]` jsou exkluzivní.
 
 ---
 
 #### <a name="examples"></a>Příklady
 
 > [!NOTE]
-> Ve výchozím nastavení jsou uloženy sady .NET Core SDK a runtimes, které mohou být vyžadovány sadou Visual Studio nebo jinými sadami SDK. V následujících příkladech mohou některé zadané sady SDK a doba běhu zůstat v závislosti na stavu počítače. Chcete-li odebrat všechny sady SDK a dobu běhu, uveďte je explicitně jako argumenty nebo použijte `--force` možnost.
+> Ve výchozím nastavení jsou zachovány sady .NET Core SDK a moduly runtime, které mohou být vyžadovány aplikací Visual Studio nebo jinými sadami SDK. V následujících příkladech mohou některé ze zadaných sad SDK a modulu runtime zůstat v závislosti na stavu počítače. Pokud chcete odebrat všechny sady SDK a moduly runtime, uveďte je explicitně jako argumenty nebo `--force` použijte možnost.
 
-* Odeberte všechny runtimes jádra .NET kromě verze `3.0.0-preview6-27804-01` bez nutnosti potvrzení y/n:
+* Odeberte všechny moduly runtime .NET Core s výjimkou `3.0.0-preview6-27804-01` verze bez vyžadování a/N potvrzení:
 
   ```console
   dotnet-core-uninstall remove --all-but 3.0.0-preview6-27804-01 --runtime --yes
   ```
 
-* Odeberte všechny sady .NET Core 1.1 SDK bez nutnosti potvrzení Y/n:
+* Odeberte všechny sady SDK .NET Core 1,1, aniž by bylo nutné potvrzovat a/n:
 
   ```console
   dotnet-core-uninstall remove --sdk --major-minor 1.1 -y
   ```
 
-* Odeberte sdk .NET Core 1.1.11 bez výstupu konzoly:
+* Odebrání sady .NET Core 1.1.11 SDK bez výstupu konzoly:
 
   ```console
   dotnet-core-uninstall remove 1.1.11 --sdk --yes --verbosity q
   ```
 
-* Odeberte všechny sady .NET Core SDK, které lze bezpečně odebrat tímto nástrojem:
+* Odeberte všechny sady SDK .NET Core, které je možné bezpečně odebrat tímto nástrojem:
 
   ```console
   dotnet-core-uninstall remove --all --sdk
   ```
 
-* Odeberte všechny sady .NET Core SDK, které lze odebrat tímto nástrojem, včetně sad SDK, které mohou být vyžadovány sadou Visual Studio (nedoporučuje se):
+* Odebrat všechny sady .NET Core SDK, které mohou být tímto nástrojem odebrány, včetně sad SDK, které mohou být vyžadovány aplikací Visual Studio (nedoporučuje se):
 
   ```console
   dotnet-core-uninstall remove --all --sdk --force
   ```
 
-* Odebrání všech sad SDK jádra ROZHRANÍ .NET, které jsou zadány v souboru odpovědí`versions.rsp`
+* Odebrat všechny sady .NET Core SDK, které jsou uvedené v souboru odpovědí`versions.rsp`
 
   ```console
   dotnet-core-uninstall remove --sdk @versions.rsp
   ```
 
-  Obsah *versions.rsp* je následující:
+  Obsah *verze. rsp* je následující:
   
   ```text
   2.2.300
   2.1.700
   ```
 
-### <a name="step-4---delete-the-nuget-fallback-folder-optional"></a>Krok 4 – Odstranění záložní složky NuGet (volitelné)
+### <a name="step-4---delete-the-nuget-fallback-folder-optional"></a>Krok 4 – odstranění záložní složky NuGet (volitelné)
 
-V některých případech již `NuGetFallbackFolder` nepotřebujete a možná budete chtít odstranit. Další informace o odstranění této složky naleznete [v tématu Remove the NuGetFallbackFolder](../versions/remove-runtime-sdk-versions.md#remove-the-nuget-fallback-folder).
+V některých případech už nepotřebujete `NuGetFallbackFolder` a chcete, aby ho bylo možné odstranit. Další informace o odstranění této složky najdete v tématu [Odebrání NuGetFallbackFolder](../install/remove-runtime-sdk-versions.md#remove-the-nuget-fallback-folder).
 
 ## <a name="uninstall-the-tool"></a>Odinstalace nástroje
 
 ## <a name="windows"></a>[Windows](#tab/windows)
 
-1. Sem **Přidat nebo odebrat programy**.
+1. Otevřete panel **Přidat nebo odebrat programy**.
 2. Vyhledejte `Microsoft .NET Core SDK Uninstall Tool`.
-3. Vyberte **možnost Odinstalovat**.
+3. Vyberte **odinstalovat**.
 
-## <a name="macos"></a>[Macos](#tab/macos)
+## <a name="macos"></a>[macOS](#tab/macos)
 
-Odstraňte stažený soubor *dotnet-core-uninstall.tar.gz* z adresáře, ve kterém byl nainstalován. Pokud jste rozbalili obsah tohoto souboru do jiného adresáře, nezapomeňte tento obsah také odstranit.
+Odstraňte stažený soubor *dotnet-Core-Uninstall. tar. gz* z adresáře, kam byl nainstalován. Pokud rozdělíte obsah tohoto souboru do jiného adresáře, nezapomeňte tento obsah také odstranit.
 
 ---
