@@ -14,14 +14,14 @@
       href: install/runtime.md
     - name: Podporovaný operační systém a závislosti
       href: install/dependencies.md
+    - name: Správa šablon pro .NET
+      href: install/templates.md
     - name: Záležitosti „notářského“ ověřování pro macOS
       href: install/macos-notarization-issues.md
     - name: Jak kontrolovat verze .NET Core
       href: install/how-to-detect-installed-versions.md
     - name: Správci balíčků pro Linux
       items:
-        - name: Ubuntu 20.04
-          href: install/linux-package-manager-ubuntu-2004.md
         - name: Ubuntu 19.10
           href: install/linux-package-manager-ubuntu-1910.md
         - name: Ubuntu 19.04
