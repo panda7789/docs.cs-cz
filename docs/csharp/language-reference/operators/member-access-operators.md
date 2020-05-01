@@ -32,12 +32,12 @@ helpviewer_keywords:
 - hat operator [C#]
 - .. operator [C#]
 - range operator [C#]
-ms.openlocfilehash: 86c8cce79e447bee638e1c5c7cb2fdbc64f630f3
-ms.sourcegitcommit: d7666f6e49c57a769612602ea7857b927294ce47
+ms.openlocfilehash: 37a6cb7cd32a9d60607aec51b1994e4717c5349a
+ms.sourcegitcommit: e09dbff13f0b21b569a101f3b3c5efa174aec204
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/30/2020
-ms.locfileid: "82595894"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82624862"
 ---
 # <a name="member-access-operators-and-expressions-c-reference"></a>Operátory a výrazy přístupu členů (Referenční dokumentace jazyka C#)
 
@@ -139,7 +139,7 @@ V `??` předchozím příkladu, pokud operátor nepoužíváte, se vyhodnotí `n
 Operátor `?.` přístupu k podmíněnému členu s hodnotou null je také označován jako Elvis operátor.
 
 > [!NOTE]
-> V jazyce C# 8 operátory s hodnotou null vzájemně fungují s [operátorem null-striktní](null-forgiving.md) a neočekávaným způsobem. Například výraz `x?.y!.z` je analyzován jako `(x?.y)!.z`. Z důvodu této interpretace `z` je vyhodnocena `x` i `null`v případě, že je, <xref:System.NullReferenceException>což může vést k.
+> V C# 8 [operátor null-striktní](null-forgiving.md) ukončí seznam předchozích operací s hodnotou null. Například výraz `x?.y!.z` je analyzován jako `(x?.y)!.z`. Z důvodu této interpretace `z` je vyhodnocena `x` i `null`v případě, že je, <xref:System.NullReferenceException>což může vést k.
 
 ### <a name="thread-safe-delegate-invocation"></a>Volání delegáta bezpečné pro přístup z více vláken
 

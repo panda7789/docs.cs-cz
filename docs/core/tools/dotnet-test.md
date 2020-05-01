@@ -1,23 +1,23 @@
 ---
-title: dotnet test, příkaz
-description: Dotnet test příkaz se používá k provedení testů částí v daném projektu.
-ms.date: 02/27/2020
-ms.openlocfilehash: 69b8101f9b1052f4726dce8a86234da99f5dc89c
-ms.sourcegitcommit: 73aa9653547a1cd70ee6586221f79cc29b588ebd
+title: dotnet – příkaz testu
+description: Příkaz dotnet test se používá ke spouštění testů jednotek v daném projektu.
+ms.date: 04/29/2020
+ms.openlocfilehash: a8218b6596601069b89a60ad018adf89a1f47cf6
+ms.sourcegitcommit: e09dbff13f0b21b569a101f3b3c5efa174aec204
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "82102737"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82624888"
 ---
 # <a name="dotnet-test"></a>dotnet test
 
-**Tento článek se týká:** ✔️ .NET Core 2.1 SDK a novější verze
+**Tento článek se týká:** ✔️ .net Core 2,1 SDK a novějších verzí
 
 ## <a name="name"></a>Název
 
-`dotnet test`- Testovací ovladač .NET používaný ke spuštění testů částí.
+`dotnet test`– Testovací ovladač .NET, který se používá ke spouštění testů jednotek.
 
-## <a name="synopsis"></a>Synopse
+## <a name="synopsis"></a>Stručný obsah
 
 ```dotnetcli
 dotnet test [<PROJECT> | <SOLUTION>]
@@ -37,9 +37,9 @@ dotnet test -h|--help
 
 ## <a name="description"></a>Popis
 
-Příkaz `dotnet test` se používá ke spuštění testů částí v daném projektu. Příkaz `dotnet test` spustí aplikace konzoly pro spuštění testu určená pro projekt. Testovací běžec provede testy definované pro rozhraní testování částí (například MSTest, NUnit nebo xUnit) a hlásí úspěch nebo neúspěch každého testu. Pokud jsou všechny testy úspěšné, testovací běžec vrátí 0 jako ukončovací kód; v opačném případě, pokud některý test selže, vrátí 1. Testovací běžec a knihovna testování částí jsou zabaleny jako balíčky NuGet a jsou obnoveny jako běžné závislosti pro projekt.
+`dotnet test` Příkaz slouží ke spuštění testů jednotek v daném projektu. `dotnet test` Příkaz spustí konzolovou aplikaci Test Runner určenou pro projekt. Test Runner spustí testy definované pro systém testů jednotek (například MSTest, NUnit nebo xUnit) a ohlásí úspěch nebo neúspěch každého testu. Pokud jsou všechny testy úspěšné, Test Runner vrátí 0 jako ukončovací kód; jinak, pokud nějaký test selže, vrátí 1. Pro projekty zaměřené na více platforem jsou testy spouštěny pro každou cílovou architekturu. Test Runner a knihovna testů jednotek jsou zabaleny jako balíčky NuGet a jsou obnoveny jako běžné závislosti pro projekt.
 
-Testovací projekty určují testovací `<PackageReference>` běh pomocí běžného prvku, jak je vidět v následujícím ukázkovém souboru projektu:
+Projekty testů určují testovací spouštěč pomocí obyčejného `<PackageReference>` prvku, jak je vidět v následujícím ukázkovém souboru projektu:
 
 [!code-xml[XUnit Basic Template](../../../samples/snippets/csharp/xunit-test/xunit-test.csproj)]
 
@@ -51,7 +51,7 @@ Testovací projekty určují testovací `<PackageReference>` běh pomocí běžn
 
 - **`PROJECT | SOLUTION`**
 
-  Cesta k testovacímu projektu nebo řešení. Pokud není zadán, je výchozí aktuální adresář.
+  Cesta k testovacímu projektu nebo řešení. Pokud není zadaný, použije se ve výchozím nastavení aktuální adresář.
 
 ## <a name="options"></a>Možnosti
 
@@ -61,15 +61,15 @@ Testovací projekty určují testovací `<PackageReference>` běh pomocí běžn
 
 - **`--blame`**
 
-  Spustí testy v režimu obviňování. Tato možnost je užitečná při izolování problémových testů, které způsobují selhání testovacího hostitele. Vytvoří výstupní soubor v aktuálním adresáři jako *Sequence.xml,* který zachycuje pořadí spuštění testů před selháním.
+  Spustí testy v režimu viny. Tato možnost je užitečná při izolaci problematických testů, které způsobují selhání hostitele testu. Vytvoří výstupní soubor v aktuálním adresáři jako *Sequence. XML* , který zachycuje pořadí spuštění testů před selháním.
 
 - **`-c|--configuration <CONFIGURATION>`**
 
-  Definuje konfiguraci sestavení. Výchozí hodnota `Debug`je , ale konfigurace projektu může přepsat toto výchozí nastavení sady SDK.
+  Definuje konfiguraci sestavení. Výchozí hodnota je `Debug`, ale konfigurace vašeho projektu může přepsat toto výchozí nastavení sady SDK.
 
 - **`--collect <DATA_COLLECTOR_FRIENDLY_NAME>`**
 
-  Povolí sběr dat pro spuštění testu. Další informace naleznete v [tématu Sledování a analýza testovacího běhu](https://aka.ms/vstest-collect).
+  Povolí shromažďování dat pro testovací běh. Další informace najdete v tématu [monitorování a analýza testovacího běhu](https://aka.ms/vstest-collect).
 
 - **`-d|--diag <PATH_TO_DIAGNOSTICS_FILE>`**
 
@@ -77,133 +77,136 @@ Testovací projekty určují testovací `<PackageReference>` běh pomocí běžn
 
 - **`-f|--framework <FRAMEWORK>`**
 
-  Vyhledá testovací binární soubory pro konkrétní [rámec](../../standard/frameworks.md).
+  Vyhledá testovací binární soubory pro konkrétní [rozhraní](../../standard/frameworks.md).
 
 - **`--filter <EXPRESSION>`**
 
-  Odfiltruje testy v aktuálním projektu pomocí daného výrazu. Další informace naleznete v části [Podrobnosti o možnosti filtr.](#filter-option-details) Další informace a příklady použití filtrace testů selektivních testů částí naleznete v [tématu Spuštění testů selektivních částí](../testing/selective-unit-tests.md).
+  Odfiltruje testy v aktuálním projektu pomocí daného výrazu. Další informace najdete v části [Podrobnosti o možnosti filtru](#filter-option-details) . Další informace a příklady použití selektivního filtrování testů jednotek naleznete v tématu [spuštění selektivních testů jednotek](../testing/selective-unit-tests.md).
 
 - **`-h|--help`**
 
-  Vytiskne krátkou nápovědu pro příkaz.
+  Vypíše krátkou nápovědu k příkazu.
 
 - **`--interactive`**
 
-  Umožňuje příkazu zastavit a čekat na vstup uživatele nebo akci. Například k dokončení ověřování. K dispozici od .NET Core 3.0 SDK.
+  Umožňuje zastavení příkazu zastavit a počkat na vstup nebo akci uživatele. Například k dokončení ověřování. K dispozici od verze .NET Core 3,0 SDK.
 
 - **`-l|--logger <LOGGER_URI/FRIENDLY_NAME>`**
 
-  Určuje protokolovací nástroj pro výsledky testů. Na rozdíl od MSBuild, dotnet test nepřijímá zkratky: `-l "console;v=d"` `-l "console;verbosity=detailed"`místo použití .
+  Určuje protokolovací nástroj pro výsledky testů. Na rozdíl od MSBuild test dotnet nepřijímá zkratky: místo `-l "console;v=d"` použití. `-l "console;verbosity=detailed"`
 
 - **`--no-build`**
 
-  Nesestaví testovací projekt před jeho spuštěním. Také implicitně nastaví `--no-restore` - příznak.
+  Před spuštěním nevytvoří testovací projekt. Také implicitně nastaví příznak- `--no-restore` .
 
 - **`--nologo`**
 
-  Spusťte testy bez zobrazení hlavičky Microsoft TestPlatform. K dispozici od .NET Core 3.0 SDK.
+  Spusťte testy bez zobrazení banneru Microsoft TestPlatform. K dispozici od verze .NET Core 3,0 SDK.
 
 - **`--no-restore`**
 
-  Nespustí implicitní obnovení při spuštění příkazu.
+  Při spuštění příkazu neprovede implicitní obnovení.
 
 - **`-o|--output <OUTPUT_DIRECTORY>`**
 
-  Adresář, ve kterém chcete najít binární soubory ke spuštění. Pokud není zadán, výchozí `./bin/<configuration>/<framework>/`cesta je .  Pro projekty s více cílových rozhraní (prostřednictvím vlastnosti) `TargetFrameworks` je také nutné definovat, `--framework` když zadáte tuto možnost.
+  Adresář, ve kterém se mají najít binární soubory, které se mají spustit. Pokud není zadaný, použije se výchozí cesta `./bin/<configuration>/<framework>/`.  Pro projekty s více cílovými rozhraními (prostřednictvím `TargetFrameworks` vlastnosti) musíte definovat `--framework` i při zadání této možnosti. `dotnet test`vždy spouštějte testy z výstupního adresáře. Můžete použít <xref:System.AppDomain.BaseDirectory%2A?displayProperty=nameWithType> pro využívání testovacích prostředků ve výstupním adresáři.
 
 - **`-r|--results-directory <PATH>`**
 
-  Adresář, kde budou umístěny výsledky testů. Pokud zadaný adresář neexistuje, je vytvořen. Výchozí hodnota `TestResults` je v adresáři, který obsahuje soubor projektu.
+  Adresář, do kterého budou umístěny výsledky testů. Pokud zadaný adresář neexistuje, vytvoří se. Výchozí hodnota je `TestResults` v adresáři, který obsahuje soubor projektu.
 
 - **`--runtime <RUNTIME_IDENTIFIER>`**
 
-  Cílový runtime, pro který chcete testovat.
+  Cílový modul runtime, pro který se má testovat.
 
 - **`-s|--settings <SETTINGS_FILE>`**
 
-  Soubor, `.runsettings` který chcete použít pro spuštění testů. [Nakonfigurujte `.runsettings` testy částí pomocí souboru.](/visualstudio/test/configure-unit-tests-by-using-a-dot-runsettings-file)
+  `.runsettings` Soubor, který se má použít pro spuštění testů. Všimněte si, `TargetPlatform` že element (x86 | x64) nemá žádný vliv `dotnet test`na. Chcete-li spustit testy, které cílí na x86, nainstalujte verzi x86 rozhraní .NET Core. Bitová verze příkazu *dotnet. exe* , který je na cestě, bude použit pro spouštění testů. Další informace najdete v následujících zdrojích informací:
+
+  - [Nakonfigurujte testy jednotek pomocí `.runsettings` souboru.](/visualstudio/test/configure-unit-tests-by-using-a-dot-runsettings-file)
+  - [Konfigurace testovacího běhu](https://github.com/Microsoft/vstest-docs/blob/master/docs/configure.md)
 
 - **`-t|--list-tests`**
 
-  Seznam všech zjištěných testů v aktuálním projektu.
+  Vypíše všechny zjištěné testy v aktuálním projektu.
 
 - **`-v|--verbosity <LEVEL>`**
 
-  Nastaví úroveň podrobností příkazu. Povolené hodnoty `q[uiet]` `m[inimal]`jsou `n[ormal]` `d[etailed]`, `diag[nostic]`, , a . Výchozí formát je `minimal`. Další informace naleznete v tématu <xref:Microsoft.Build.Framework.LoggerVerbosity>.
+  Nastaví úroveň podrobností příkazu. Povolené hodnoty jsou `q[uiet]`, `m[inimal]`, `n[ormal]` `d[etailed]`, a `diag[nostic]`. Výchozí formát je `minimal`. Další informace naleznete v tématu <xref:Microsoft.Build.Framework.LoggerVerbosity>.
 
-- **`RunSettings`** Argumenty
+- **`RunSettings`** náhodné
 
-  Argumenty jsou `RunSettings` předány jako konfigurace pro test. Argumenty jsou `[name]=[value]` určeny jako páry po "-- " (všimněte si mezery po --). Mezera se používá `[name]=[value]` k oddělení více párů.
+  Argumenty jsou předány `RunSettings` jako konfigurace pro test. Argumenty jsou zadány `[name]=[value]` jako páry po "--" (Všimněte si mezer za-). K oddělení více `[name]=[value]` párů se používá mezera.
 
   Příklad: `dotnet test -- MSTest.DeploymentEnabled=false MSTest.MapInconclusiveToFailed=True`
 
-  Další informace naleznete [v tématu Předávání argumentů RunSettings prostřednictvím příkazového řádku](https://github.com/Microsoft/vstest-docs/blob/master/docs/RunSettingsArguments.md).
+  Další informace najdete v tématu [předávání argumentů runsettings pomocí příkazového řádku](https://github.com/Microsoft/vstest-docs/blob/master/docs/RunSettingsArguments.md).
 
 ## <a name="examples"></a>Příklady
 
-- Spusťte testy v projektu v aktuálním adresáři:
+- Spustit testy v projektu v aktuálním adresáři:
 
   ```dotnetcli
   dotnet test
   ```
 
-- Spusťte testy `test1` v projektu:
+- Spustit testy v `test1` projektu:
 
   ```dotnetcli
   dotnet test ~/projects/test1/test1.csproj
   ```
 
-- Spusťte testy v projektu v aktuálním adresáři a vygenerujte soubor výsledků testu ve formátu trx:
+- Spusťte testy v projektu v aktuálním adresáři a vygenerujte soubor výsledků testů ve formátu TRX:
 
   ```dotnetcli
   dotnet test --logger trx
   ```
 
-- Spusťte testy v projektu v aktuálním adresáři a protokolujte s podrobnou podrobností do konzoly:
+- Spusťte testy v projektu v aktuálním adresáři a log s detailní podrobností do konzoly:
 
   ```dotnetcli
   dotnet test --logger "console;verbosity=detailed"
   ```
 
-## <a name="filter-option-details"></a>Podrobnosti o možnosti filtru
+## <a name="filter-option-details"></a>Podrobnosti možnosti filtru
 
 `--filter <EXPRESSION>`
 
 `<Expression>`má formát `<property><operator><value>[|&<Expression>]`.
 
-`<property>`je atributem `Test Case`. Následují vlastnosti podporované populární rozhraní testování částí:
+`<property>`je atributem `Test Case`. Níže jsou uvedené vlastnosti podporované oblíbenými rozhraními pro testování částí:
 
-| Testovací rámec | Podporované vlastnosti                                                                                      |
+| Testovací rozhraní | Podporované vlastnosti                                                                                      |
 | -------------- | --------------------------------------------------------------------------------------------------------- |
-| MSTest         | <ul><li>Plně kvalifikovaný název</li><li>Název</li><li>Classname</li><li>Priorita</li><li>Kategorie testů</li></ul> |
-| xJednotka          | <ul><li>Plně kvalifikovaný název</li><li>DisplayName</li><li>Vlastnosti</li></ul>                                   |
+| MSTest         | <ul><li>FullyQualifiedName</li><li>Název</li><li>NázevTřídy</li><li>Priorita</li><li>TestCategory</li></ul> |
+| xUnit          | <ul><li>FullyQualifiedName</li><li>DisplayName</li><li>Traits</li></ul>                                   |
 
-Popisuje `<operator>` vztah mezi vlastností a hodnotou:
+`<operator>` Popisuje vztah mezi vlastností a hodnotou:
 
 | Operátor | Funkce        |
 | :------: | --------------- |
 | `=`      | Přesná shoda     |
-| `!=`     | Není přesná shoda |
+| `!=`     | Nepřesná shoda |
 | `~`      | Contains        |
 | `!~`     | Neobsahuje    |
 
-`<value>`je řetězec. Všechna vyhledávání jsou malá a velká písmena.
+`<value>`je řetězec. U všech hledání se nerozlišují malá a velká písmena.
 
-Výraz bez `<operator>` je automaticky považován `contains` `FullyQualifiedName` za vlastnost on `dotnet test --filter xyz` (například je stejný jako `dotnet test --filter FullyQualifiedName~xyz`).
+Výraz bez objektu `<operator>` je automaticky považován za vlastnost `contains` on `FullyQualifiedName` (například `dotnet test --filter xyz` je stejný jako `dotnet test --filter FullyQualifiedName~xyz`).
 
-Výrazy lze spojit s podmíněnými operátory:
+Výrazy se dají spojit s podmíněnými operátory:
 
 | Operátor            | Funkce |
 | ------------------- | -------- |
 | <code>&#124;</code> | NEBO       |
 | `&`                 | AND      |
 
-Výrazy můžete uzavřít do závorek při použití podmíněných operátorů `(Name~TestMethod1) | (Name~TestMethod2)`(například).
+Výrazy můžete uzavřít do závorek při použití podmíněných operátorů (například `(Name~TestMethod1) | (Name~TestMethod2)`).
 
-Další informace a příklady použití filtrace testů selektivních testů částí naleznete v [tématu Spuštění testů selektivních částí](../testing/selective-unit-tests.md).
+Další informace a příklady použití selektivního filtrování testů jednotek naleznete v tématu [spuštění selektivních testů jednotek](../testing/selective-unit-tests.md).
 
 ## <a name="see-also"></a>Viz také
 
-- [Rámce a cíle](../../standard/frameworks.md)
-- [Katalog IDentifier (RID) modulu .NET Core Runtime](../rid-catalog.md)
+- [Architektury a cíle](../../standard/frameworks.md)
+- [Katalog identifikátorů runtime .NET Core (RID)](../rid-catalog.md)
 - [Předávání argumentů runsettings prostřednictvím příkazového řádku](https://github.com/Microsoft/vstest-docs/blob/master/docs/RunSettingsArguments.md)

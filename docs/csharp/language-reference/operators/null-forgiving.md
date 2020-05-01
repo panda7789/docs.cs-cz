@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - null-forgiving operator [C#]
 - '! operator [C#]'
-ms.openlocfilehash: 772f37f1fc7446eae66f0cd0f12adb5e2e41997d
-ms.sourcegitcommit: d7666f6e49c57a769612602ea7857b927294ce47
+ms.openlocfilehash: 2a8db2882968dbcbe6a8868ab6fe1c128c94a41f
+ms.sourcegitcommit: e09dbff13f0b21b569a101f3b3c5efa174aec204
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/30/2020
-ms.locfileid: "82595946"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82624875"
 ---
 # <a name="-null-forgiving-operator-c-reference"></a>! (null-striktní) – operátor (Referenční dokumentace jazyka C#)
 
@@ -20,7 +20,7 @@ K dispozici v C# 8,0 a novějším, `!` unární operátor přípony je operáto
 Operátor null-striktní nemá žádný vliv na dobu běhu. Ovlivňuje pouze analýzu statického toku kompilátoru změnou stavu null výrazu. V době běhu se výraz `x!` vyhodnotí jako výsledek podkladového výrazu `x`.
 
 > [!NOTE]
-> V jazyce C# 8 operátor null-striktní spolupracuje s [operátory s hodnotou null](member-access-operators.md#null-conditional-operators--and-) jako neočekávaným způsobem. Výraz `x?.y!.z` se analyzuje jako `(x?.y)!.z`. `z` Z důvodu tohoto výkladu jsou vyhodnocovány `x` i `null`v případě, že je, <xref:System.NullReferenceException>což může vést k.
+> V C# 8 operátor null-striktní ukončí seznam předchozích operací [s hodnotou null](member-access-operators.md#null-conditional-operators--and-) . Například výraz `x?.y!.z` je analyzován jako `(x?.y)!.z`. Z důvodu této interpretace `z` je vyhodnocena `x` i `null`v případě, že je, <xref:System.NullReferenceException>což může vést k.
 
 Další informace o funkci typů odkazů s možnou hodnotou null naleznete v tématu [typy odkazů s možnou hodnotou null](../builtin-types/nullable-reference-types.md).
 
