@@ -2,12 +2,12 @@
 title: Trvanlivý kontext instance
 ms.date: 03/30/2017
 ms.assetid: 97bc2994-5a2c-47c7-927a-c4cd273153df
-ms.openlocfilehash: 604a617dc03bf06b71fe3019b58b2161216ee3e0
-ms.sourcegitcommit: 839777281a281684a7e2906dccb3acd7f6a32023
+ms.openlocfilehash: d70617fef7ebe0a94e22e858ee403d5d4f1840e3
+ms.sourcegitcommit: 7370aa8203b6036cea1520021b5511d0fd994574
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "82141188"
+ms.lasthandoff: 05/02/2020
+ms.locfileid: "82728399"
 ---
 # <a name="durable-instance-context"></a>Trvanlivý kontext instance
 
@@ -18,7 +18,7 @@ Tato ukázka předvádí, jak přizpůsobit modul runtime Windows Communication 
 
 Tato ukázka zahrnuje rozšíření vrstvy kanálu a vrstvy modelu služby WCF. Proto je nutné před použitím podrobností implementace pochopit základní koncepty.
 
-Trvalé kontexty instance můžete najít ve scénářích reálného světa často. Aplikace nákupního košíku má například možnost pozastavit nákup uprostřed a pokračovat v dalším dni. Takže když na příští den navštívíme nákupní košík, náš původní kontext se obnoví. Je důležité si uvědomit, že aplikace nákupního košíku (na serveru) neudržuje během odpojování instanci nákupního košíku. Místo toho uchovává svůj stav na trvalé paměťové médium a používá ho při vytváření nové instance pro obnovený kontext. Proto instance služby, která se může nabývat stejným kontextem, není stejná jako předchozí instance (to znamená, že nemá stejnou adresu paměti).
+Trvalé kontexty instance můžete najít ve scénářích reálného světa často. Aplikace nákupního košíku má například možnost pozastavit nákup uprostřed a pokračovat v jiném dni. Takže když na příští den navštívíme nákupní košík, náš původní kontext se obnoví. Je důležité si uvědomit, že aplikace nákupního košíku (na serveru) neudržuje během odpojování instanci nákupního košíku. Místo toho uchovává svůj stav na trvalé paměťové médium a používá ho při vytváření nové instance pro obnovený kontext. Proto instance služby, která se může nabývat stejným kontextem, není stejná jako předchozí instance (to znamená, že nemá stejnou adresu paměti).
 
 Je možné, že kontext trvalé instance je možný malým protokolem, který vyměňuje ID kontextu mezi klientem a službou. Toto ID kontextu se vytvoří v klientovi a přenáší do služby. Když je instance služby vytvořená, pokusí se modul runtime služby načíst trvalý stav, který odpovídá tomuto ID kontextu z trvalého úložiště (ve výchozím nastavení je to databáze SQL Server 2005). Pokud není k dispozici žádný stav, má nová instance svůj výchozí stav. Implementace služby používá vlastní atribut k označení operací, které mění stav implementace služby, aby modul runtime po jejich vyvolání mohl uložit instanci služby.
 
@@ -28,11 +28,11 @@ V předchozím popisu lze snadno odlišit dva kroky, aby bylo možné dosáhnout
 
 2. Pokud chcete implementovat vlastní logiku vytváření instancí, změňte místní chování služby.
 
-Vzhledem k tomu, že první v seznamu má vliv na zprávy, měly by být implementované jako vlastní kanál a musí se připojit ke vrstvě kanálu. Ta má vliv pouze na místní chování služby, a proto může být implementována rozšířením několika bodů rozšiřitelnosti služby. V následujících částech jsou popsána všechna tato rozšíření.
+Vzhledem k tomu, že první v seznamu má vliv na zprávy, měla by být implementována jako vlastní kanál a zapojena do vrstvy kanálu. Ta má vliv pouze na místní chování služby, a proto může být implementována rozšířením několika bodů rozšiřitelnosti služby. V následujících částech jsou popsána všechna tato rozšíření.
 
 ## <a name="durable-instancecontext-channel"></a>Trvalý kanál InstanceContext
 
-První věc, kterou si můžete prohlédnout, je rozšíření vrstvy kanálu. Prvním krokem při psaní vlastního kanálu je určení komunikační struktury kanálu. V rámci zavedení nového přenosového protokolu by kanál měl spolupracovat s prakticky jakýmkoli jiným kanálem v zásobníku kanálů. Proto by měl podporovat všechny vzory výměny zpráv. Základní funkce kanálu jsou však stejné bez ohledu na jeho komunikační strukturu. Konkrétně z klienta by měl z klienta napsat ID kontextu pro zprávy a ze služby, které by mělo číst toto ID kontextu ze zpráv a předávat je do horních úrovní. Z tohoto důvodu je vytvořena `DurableInstanceContextChannelBase` třída, která funguje jako abstraktní základní třída pro všechny implementace kontextu trvalého kanálu instance. Tato třída obsahuje funkce správy běžných stavových počítačů a dva chráněné členy pro použití a čtení informací o kontextu do a ze zpráv.
+První věc, kterou si můžete prohlédnout, je rozšíření vrstvy kanálu. Prvním krokem při psaní vlastního kanálu je určení komunikační struktury kanálu. Při zavádění nového přenosového protokolu by kanál měl spolupracovat s prakticky jakýmkoli jiným kanálem v zásobníku kanálů. Proto by měl podporovat všechny vzory výměny zpráv. Základní funkce kanálu jsou však stejné bez ohledu na jeho komunikační strukturu. Konkrétně z klienta by měl z klienta napsat ID kontextu pro zprávy a ze služby, které by mělo číst toto ID kontextu ze zpráv a předávat je do horních úrovní. Z tohoto důvodu je vytvořena `DurableInstanceContextChannelBase` třída, která funguje jako abstraktní základní třída pro všechny implementace kontextu trvalého kanálu instance. Tato třída obsahuje funkce správy běžných stavových počítačů a dva chráněné členy pro použití a čtení informací o kontextu do a ze zpráv.
 
 ```csharp
 class DurableInstanceContextChannelBase
@@ -89,7 +89,7 @@ message.Properties.Add(DurableInstanceContextUtility.ContextIdProperty, contextI
 
 Než budete pokračovat, je důležité pochopit použití `Properties` kolekce ve `Message` třídě. Tato `Properties` kolekce se obvykle používá při předávání dat z nižší úrovně do horních úrovní z vrstvy kanálu. Tímto způsobem je možné zajistit, aby se požadovaná data poskytovala na nejvyšší úrovni konzistentním způsobem bez ohledu na podrobnosti protokolu. Jinými slovy, vrstva kanálu může odeslat a přijmout ID kontextu buď jako hlavičku protokolu SOAP, nebo jako hlavičku souboru cookie protokolu HTTP. Není ale nutné, aby horní úrovně věděli o těchto podrobnostech, protože vrstva kanálu zpřístupňuje tyto informace v `Properties` kolekci.
 
-Teď je potřeba `DurableInstanceContextChannelBase` , aby byla v rámci třídy místo všech deseti z nezbytných rozhraní (IOutputChannel, IInputChannel, IOutputSessionChannel, IInputSessionChannel, třídu IRequestChannel, IReplyChannel, IRequestSessionChannel, IReplySessionChannel, IDuplexChannel, IDuplexSessionChannel) implementovaná. Podobají se každému dostupnému vzoru výměny zpráv (datagram, simplexní, duplexní a jejich variantě v relaci). Každá z těchto implementací dědí základní třídu, která byla dříve `ApplyContext` popsána, a `ReadContextId` správné volání. Například, `DurableInstanceContextOutputChannel` který implementuje rozhraní IOutputChannel – zavolá `ApplyContext` metodu z každé metody, která odesílá zprávy.
+Teď je potřeba `DurableInstanceContextChannelBase` , aby byla v rámci třídy místo všech deseti z nezbytných rozhraní (IOutputChannel, IInputChannel, IOutputSessionChannel, IInputSessionChannel, třídu IRequestChannel, IReplyChannel, IRequestSessionChannel, IReplySessionChannel, IDuplexChannel, IDuplexSessionChannel) implementovaná. Podobá se každému dostupnému vzorci výměny zpráv (datagram, simplexní, duplexní a jejich variantní relace). Každá z těchto implementací dědí základní třídu, která byla dříve `ApplyContext` popsána, a `ReadContextId` správné volání. Například, `DurableInstanceContextOutputChannel` který implementuje rozhraní IOutputChannel – zavolá `ApplyContext` metodu z každé metody, která odesílá zprávy.
 
 ```csharp
 public void Send(Message message, TimeSpan timeout)
@@ -100,7 +100,7 @@ public void Send(Message message, TimeSpan timeout)
 }
 ```
 
-Na druhé straně – to `DurableInstanceContextInputChannel` implementuje `IInputChannel` rozhraní – volá `ReadContextId` metodu v každé metodě, která přijímá zprávy.
+Na druhé straně `DurableInstanceContextInputChannel` – to implementuje `IInputChannel` rozhraní – volá `ReadContextId` metodu v každé metodě, která přijímá zprávy.
 
 ```csharp
 public Message Receive(TimeSpan timeout)
@@ -171,7 +171,7 @@ using (SqlConnection connection = new SqlConnection(GetConnectionString()))
 }
 ```
 
-V `GetInstance` metodě jsou pro dané ID kontextu čtena Serializovaná data a objekt sestavený z něj je vrácen volajícímu.
+V `GetInstance` metodě jsou serializovaná data čtena pro dané ID kontextu a objekt sestavený z něj je vrácen volajícímu.
 
 ```csharp
 object data;
@@ -282,7 +282,7 @@ public void Initialize(InstanceContext instanceContext, Message message)
 
 Jak je popsáno výše, ID kontextu je načteno `Properties` z kolekce `Message` třídy a předáno do konstruktoru třídy rozšíření. Ukazuje, jak lze informace mezi vrstvami konzistentně vyměňovat.
 
-Dalším důležitým krokem je přepsání procesu vytváření instancí služby. WCF umožňuje implementovat vlastní chování vytváření instancí a zapojit je do modulu runtime pomocí rozhraní IInstanceProvider. Nová `InstanceProvider` třída je implementována k provedení této úlohy. V konstruktoru je přijat typ služby očekávaný od zprostředkovatele instance. Později se použije k vytvoření nových instancí. V části `GetInstance` implementace je vytvořena instance Správce úložiště, kde se hledá trvalá instance. Pokud se vrátí `null` , vytvoří se nová instance typu služby, která se vrátí volajícímu.
+Dalším důležitým krokem je přepsání procesu vytváření instancí služby. WCF umožňuje implementovat vlastní chování vytváření instancí a zapojit je do modulu runtime pomocí rozhraní IInstanceProvider. Nová `InstanceProvider` třída je implementována k provedení této úlohy. Typ služby očekávaný od zprostředkovatele instance je přijatý v konstruktoru. Později se použije k vytvoření nových instancí. V `GetInstance` implementaci se vytvoří instance Správce úložiště, kde se hledá trvalá instance. Pokud se vrátí `null`, pak se vytvoří instance nové instance typu služby a vrátí se volajícímu.
 
 ```csharp
 public object GetInstance(InstanceContext instanceContext, Message message)
@@ -302,11 +302,11 @@ public object GetInstance(InstanceContext instanceContext, Message message)
 }
 ```
 
-Dalším důležitým krokem je instalace `InstanceContextExtension`tříd `InstanceContextInitializer` a `InstanceProvider` do modulu runtime modelu služby. Vlastní atribut lze použít k označení tříd implementace služby pro instalaci chování. `DurableInstanceContextAttribute` Obsahuje implementaci pro tento atribut a implementuje `IServiceBehavior` rozhraní pro rozšiřování celého modulu runtime služby.
+Dalším důležitým krokem je instalace `InstanceContextExtension` `InstanceContextInitializer` `InstanceProvider` tříd, a do modulu runtime modelu služby. Vlastní atribut lze použít k označení tříd implementace služby pro instalaci chování. `DurableInstanceContextAttribute` Obsahuje implementaci pro tento atribut a implementuje `IServiceBehavior` rozhraní pro rozšiřování celého modulu runtime služby.
 
 Tato třída má vlastnost, která přijímá typ Správce úložiště, který se má použít. Tímto způsobem implementace umožňuje uživatelům zadat vlastní `IStorageManager` implementaci jako parametr tohoto atributu.
 
-V `ApplyDispatchBehavior` implementaci `InstanceContextMode` se ověřuje aktuální `ServiceBehavior` atribut. Pokud je tato vlastnost nastavená na singleton, není možné povolit trvalé vytváření instancí a k `InvalidOperationException` oznamování hostitele je vyvolána výjimka.
+V `ApplyDispatchBehavior` implementaci `InstanceContextMode` je ověřován aktuální `ServiceBehavior` atribut. Pokud je tato vlastnost nastavená na singleton, není možné povolit trvalé vytváření instancí a k `InvalidOperationException` oznamování hostitele je vyvolána výjimka.
 
 ```csharp
 ServiceBehaviorAttribute serviceBehavior =
@@ -374,7 +374,7 @@ return result;
 
 ## <a name="using-the-extension"></a>Použití rozšíření
 
-Vrstva kanálu i rozšíření vrstvy modelu služby jsou hotové a dají se teď použít v aplikacích WCF. Služby musí přidat kanál do zásobníku kanálů pomocí vlastní vazby a pak označit třídy implementace služby příslušnými atributy.
+Vrstva kanálu i rozšíření vrstvy modelu služby jsou hotové a dají se teď použít v aplikacích WCF. Služby musí kanál přidat do zásobníku kanálů pomocí vlastní vazby a pak označit třídy implementace služby příslušnými atributy.
 
 ```csharp
 [DurableInstanceContext]

@@ -2,14 +2,15 @@
 title: Relace a fronty
 ms.date: 03/30/2017
 ms.assetid: 47d7c5c2-1e6f-4619-8003-a0ff67dcfbd6
-ms.openlocfilehash: 489a8f5e782faca679991809e575e98153de95e0
-ms.sourcegitcommit: 839777281a281684a7e2906dccb3acd7f6a32023
+ms.openlocfilehash: ce8cdd08f9bc34d03a014b253024a2b756d4c82a
+ms.sourcegitcommit: 7370aa8203b6036cea1520021b5511d0fd994574
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "82140602"
+ms.lasthandoff: 05/02/2020
+ms.locfileid: "82728458"
 ---
 # <a name="sessions-and-queues"></a>Relace a fronty
+
 Tato ukázka předvádí, jak odeslat a přijmout sadu souvisejících zpráv v komunikaci ve frontě prostřednictvím přenosu služby Řízení front zpráv (MSMQ). Tato ukázka používá `netMsmqBinding` vazbu. Služba je samoobslužná Konzolová aplikace, která vám umožní sledovat službu přijímající zprávy zařazené do fronty.  
   
 > [!NOTE]
@@ -172,7 +173,7 @@ using (TransactionScope scope = new TransactionScope(TransactionScopeOption.Requ
 > [!NOTE]
 > Pro všechny zprávy v relaci lze použít pouze jednu transakci a všechny zprávy v relaci je nutné před potvrzením transakce odeslat. Ukončení klienta ukončí relaci. Proto musí být klient před dokončením transakce uzavřen, aby odesílal všechny zprávy v relaci do fronty.  
   
- Když spustíte ukázku, aktivity klienta a služby se zobrazí v oknech konzoly služby i klienta. Můžete vidět, že služba přijímá zprávy z klienta. V každém okně konzoly stiskněte klávesu ENTER a ukončete službu a klienta. Počítejte s tím, že protože se používá služba zařazování do fronty, klient a služba nemusí být spuštěny ve stejnou dobu. Můžete spustit klienta, vypnout ho a pak spustit službu a nadále přijímat zprávy.  
+ Když spustíte ukázku, aktivity klienta a služby se zobrazí v oknech konzoly služby i klienta. Můžete vidět, že služba přijímá zprávy z klienta. V každém okně konzoly stiskněte klávesu ENTER a ukončete službu a klienta. Protože se služba Řízení front používá, není nutné, aby klient a služba běžely ve stejnou dobu. Můžete spustit klienta, vypnout ho a pak spustit službu a nadále přijímat zprávy.  
   
  Na straně klienta.  
   
@@ -205,7 +206,7 @@ Purchase Order: 7c86fef0-2306-4c51-80e6-bcabcc1a6e5e
         Order status: Pending  
 ```  
   
-### <a name="to-set-up-build-and-run-the-sample"></a>Nastavení, sestavení a spuštění ukázky  
+### <a name="set-up-build-and-run-the-sample"></a>Nastavení, sestavení a spuštění ukázky  
   
 1. Ujistěte se, že jste provedli [postup jednorázového nastavení pro Windows Communication Foundation ukázky](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
   
@@ -213,9 +214,9 @@ Purchase Order: 7c86fef0-2306-4c51-80e6-bcabcc1a6e5e
   
 3. Chcete-li spustit ukázku v konfiguraci s jedním nebo více počítači, postupujte podle pokynů v části [spuštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
   
- Ve výchozím nastavení <xref:System.ServiceModel.NetMsmqBinding>je zapnuto zabezpečení přenosu. Existují dvě důležité vlastnosti pro zabezpečení přenosu ve službě MSMQ, <xref:System.ServiceModel.MsmqTransportSecurity.MsmqAuthenticationMode%2A> a <xref:System.ServiceModel.MsmqTransportSecurity.MsmqProtectionLevel%2A> `.` to ve výchozím nastavení je režim ověřování nastaven na `Windows` hodnotu a úroveň ochrany je nastavena na `Sign`hodnotu. Aby služba MSMQ poskytovala funkci ověřování a podepisování, musí být součástí domény a musí být nainstalovaná možnost integrace služby Active Directory pro službu MSMQ. Pokud tuto ukázku spustíte na počítači, který nesplňuje tato kritéria, zobrazí se chyba.  
+ Ve výchozím nastavení <xref:System.ServiceModel.NetMsmqBinding>je zapnuto zabezpečení přenosu. Existují dvě důležité vlastnosti pro zabezpečení přenosu ve službě MSMQ, <xref:System.ServiceModel.MsmqTransportSecurity.MsmqAuthenticationMode%2A> a <xref:System.ServiceModel.MsmqTransportSecurity.MsmqProtectionLevel%2A> `.` to ve výchozím nastavení je režim ověřování nastaven na `Windows` hodnotu a úroveň ochrany je nastavena na `Sign`hodnotu. Aby služba MSMQ poskytovala funkci ověřování a podepisování, musí být součástí domény a musí být nainstalovaná možnost integrace služby Active Directory pro službu MSMQ. Pokud tuto ukázku spustíte na počítači, který nesplňuje tato kritéria, dojde k chybě.  
   
-### <a name="to-run-the-sample-on-a-computer-joined-to-a-workgroup-or-without-active-directory-integration"></a>Spuštění ukázky na počítači připojeném k pracovní skupině nebo bez integrace služby Active Directory  
+### <a name="run-the-sample-on-a-computer-joined-to-a-workgroup"></a>Spuštění ukázky na počítači připojeném k pracovní skupině  
   
 1. Pokud počítač není součástí domény nebo nemáte nainstalovanou integraci služby Active Directory, vypněte zabezpečení přenosu nastavením režimu ověřování a úrovně ochrany tak `None` , jak je znázorněno v následující ukázkové konfiguraci.  
   

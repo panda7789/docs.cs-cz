@@ -4,12 +4,12 @@ description: Naučte se používat nástroj Analyzátor přenositelnosti .NET k 
 ms.date: 09/13/2019
 ms.technology: dotnet-standard
 ms.assetid: 0375250f-5704-4993-a6d5-e21c499cea1e
-ms.openlocfilehash: ef6173fe5da798c1fff5d2eb723a91875905e400
-ms.sourcegitcommit: 1cb64b53eb1f253e6a3f53ca9510ef0be1fd06fe
+ms.openlocfilehash: 8d019bef5fddac9f7c3d93e416cea061905c82ff
+ms.sourcegitcommit: 7370aa8203b6036cea1520021b5511d0fd994574
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82507530"
+ms.lasthandoff: 05/02/2020
+ms.locfileid: "82728448"
 ---
 # <a name="the-net-portability-analyzer"></a>Analyzátor přenositelnosti .NET
 
@@ -27,7 +27,7 @@ Po převedení projektu na cílení na novou platformu, jako je například .NET
 
 ## <a name="how-to-use-the-net-portability-analyzer"></a>Jak používat analyzátor přenositelnosti .NET
 
-Pokud chcete začít používat analyzátor přenositelnosti .NET v aplikaci Visual Studio, musíte nejdřív stáhnout a nainstalovat rozšíření z [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=ConnieYau.NETPortabilityAnalyzer). Funguje v sadě Visual Studio 2017 a novějších verzích. Můžete ji nakonfigurovat v aplikaci Visual Studio prostřednictvím možnosti **Analýza** > **Nastavení analyzátoru přenositelnosti** a vybrat cílové platformy, což jsou platformy .NET/verze, u kterých chcete vyhodnotit přenositelnost mezer v porovnání s platformou nebo verzí, se kterou je vaše aktuální sestavení sestavené.
+Pokud chcete začít používat analyzátor přenositelnosti .NET v aplikaci Visual Studio, musíte nejdřív stáhnout a nainstalovat rozšíření z [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=ConnieYau.NETPortabilityAnalyzer). Funguje v sadě Visual Studio 2017 a novějších verzích. Nakonfigurujte ho v aplikaci Visual Studio pomocí možnosti **Analýza** > **Nastavení analyzátoru přenositelnosti** a vyberte cílové platformy, které jsou platformami a verzemi .NET, u kterých chcete vyhodnotit přenositelnost mezer v porovnání s platformou/verzí, se kterou je vaše aktuální sestavení sestavené.
 
 ![Snímek obrazovky s analyzátorem přenositelnosti](./media/portability-analyzer/portability-screenshot.png)
 
@@ -67,7 +67,7 @@ V části **Podrobnosti** sestavy jsou uvedena chybějící rozhraní API ze vš
 - Cílový člen: v cílové platformě chybí metoda.
 - Název sestavení: .NET Framework sestavení, ve kterém chybí rozhraní API.
 - Každá z vybraných cílových platforem je jeden sloupec, jako je například hodnota ".NET Core": "Nepodporovaná" znamená, že rozhraní API není na této cílové platformě podporováno.
-- Doporučené změny: Doporučené rozhraní API nebo technologie se změní na. V současné době je toto pole prázdné nebo zastaralé pro spoustu rozhraní API. Vzhledem k velkému počtu rozhraní API máme velkou výzvu, abychom ji zachovali. Těšíme se na alternativní řešení, abychom zákazníkům poskytli užitečné informace.
+- Doporučené změny: Doporučené rozhraní API nebo technologie, na které se má změnit. V současné době je toto pole prázdné nebo zastaralé pro mnoho rozhraní API. Vzhledem k velkému počtu rozhraní API máme důležitou výzvu k tomu, aby byla v aktuálním stavu. Těšíme se na alternativní řešení, abychom zákazníkům poskytli užitečné informace.
 
 #### <a name="missing-assemblies"></a>Chybějící sestavení
 

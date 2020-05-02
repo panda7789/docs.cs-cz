@@ -1,24 +1,24 @@
 ---
-title: dotnet nuget push, příkaz
-description: Příkaz push dotnet nuget odešle balíček na server a publikuje jej.
+title: dotnet – příkaz push NuGet
+description: Příkaz dotnet NuGet push odešle balíček na server a publikuje ho.
 author: karann-msft
 ms.date: 02/14/2020
-ms.openlocfilehash: 96f8d008c8306a0782d5149360a24bb4097a1ec4
-ms.sourcegitcommit: 927b7ea6b2ea5a440c8f23e3e66503152eb85591
+ms.openlocfilehash: 8b0437d7f4ada2b56af50e30717d131668c21f7e
+ms.sourcegitcommit: 7370aa8203b6036cea1520021b5511d0fd994574
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81463521"
+ms.lasthandoff: 05/02/2020
+ms.locfileid: "82728359"
 ---
 # <a name="dotnet-nuget-push"></a>dotnet nuget push
 
-**Tento článek se týká:** ✔️ .NET Core 2.x SDK a novější verze
+**Tento článek se týká:** ✔️ .NET Core 2. x SDK a novějších verzí
 
 ## <a name="name"></a>Název
 
-`dotnet nuget push`- Odešle balíček na server a publikuje jej.
+`dotnet nuget push`– Odešle balíček na server a publikuje ho.
 
-## <a name="synopsis"></a>Synopse
+## <a name="synopsis"></a>Stručný obsah
 
 ```dotnetcli
 dotnet nuget push [<ROOT>] [-d|--disable-buffering] [--force-english-output]
@@ -32,51 +32,53 @@ dotnet nuget push -h|--help
 
 ## <a name="description"></a>Popis
 
-Příkaz `dotnet nuget push` odešle balíček na server a publikuje jej. Příkaz push používá podrobnosti o serveru a pověření, které se nacházejí v konfiguračním souboru nuget systému nebo v řetězci konfiguračních souborů. Další informace o konfiguračních souborech naleznete [v tématu Configuring NuGet Behavior](/nuget/consume-packages/configuring-nuget-behavior). Výchozí konfigurace nugetu je získána načtením *%AppData%\NuGet\NuGet.config* (Windows) nebo *$HOME/.local/share* (Linux/macOS), potom načtením *libovolného souboru nuget.config* nebo *.nuget\nuget.config* počínaje kořenem jednotky a končícím v aktuálním adresáři.
+`dotnet nuget push` Příkaz odešle balíček na server a publikuje ho. Příkaz push používá podrobnosti serveru a přihlašovacích údajů, které se našly v konfiguračním souboru NuGet systému nebo v řetězci konfiguračních souborů. Další informace o konfiguračních souborech najdete v tématu [Konfigurace chování NuGet](/nuget/consume-packages/configuring-nuget-behavior). Výchozí konfigurace NuGet se získá tak, že se načtou *%AppData%\NuGet\NuGet.config* (Windows) nebo *$Home/.local/share* (Linux/MacOS) a pak se načte jakákoli soubor *NuGet. config* nebo *. NuGet\NuGet.config* počínaje kořenovým adresářem jednotky a končí aktuálním adresářem.
+
+Příkaz vloží existující balíček. Nevytváří balíček. K vytvoření balíčku použijte [`dotnet pack`](dotnet-pack.md).
 
 ## <a name="arguments"></a>Argumenty
 
 - **`ROOT`**
 
-  Určuje cestu k souboru, který má být posunut.
+  Určuje cestu k balíčku, který má být vložen.
 
 ## <a name="options"></a>Možnosti
 
 - **`-d|--disable-buffering`**
 
-  Zakáže ukládání do vyrovnávací paměti při odesílání na server HTTP(S), aby se snížilo využití paměti.
+  Zakáže ukládání do vyrovnávací paměti při doručování na server HTTP (S), aby se snížilo využití paměti.
 
 - **`--force-english-output`**
 
-  Vynutí spuštění aplikace pomocí invariantní jazykové verze založené na angličtině.
+  Vynutí spuštění aplikace s využitím neutrální jazykové verze založené na angličtině.
 
 - **`-h|--help`**
 
-  Vytiskne krátkou nápovědu pro příkaz.
+  Vypíše krátkou nápovědu k příkazu.
 
 - **`--interactive`**
 
-  Umožňuje příkaz blokovat a vyžaduje ruční akci pro operace, jako je ověřování. Možnost je k dispozici od .NET Core 2.2 SDK.
+  Umožňuje příkazu blokovat a vyžadovat ruční akci pro operace, jako je ověřování. Možnost je k dispozici od verze .NET Core 2,2 SDK.
 
 - **`-k|--api-key <API_KEY>`**
 
-  Klíč rozhraní API pro server.
+  Klíč rozhraní API pro server
 
 - **`-n|--no-symbols`**
 
-  Netlačí symboly (i když jsou k dispozici).
+  Symboly nejsou nabízeny (i v případě, že jsou k dispozici).
 
 - **`--no-service-endpoint`**
 
-  Nepřipojí "api/v2/package" ke zdrojové adrese URL. Možnost je k dispozici od .NET Core 2.1 SDK.
+  Nepřipojí k zdrojové adrese URL rozhraní API/v2/Package. Možnost je k dispozici od verze .NET Core 2,1 SDK.
 
 - **`-s|--source <SOURCE>`**
 
-  Určuje adresu URL serveru. Tato možnost je `DefaultPushSource` vyžadována, pokud není v konfiguračním souboru NuGet nastavena hodnota konfigurace.
+  Určuje adresu URL serveru. Tato možnost je povinná, pokud `DefaultPushSource` konfigurační hodnota není nastavená v konfiguračním souboru NuGet.
 
 - **`--skip-duplicate`**
 
-  Při odesílání více balíčků na server HTTP(S) považuje všechny 409 konflikt odpověď jako upozornění tak, aby push může pokračovat. K dispozici od .NET Core 3.1 SDK.
+  Při nahrávání více balíčků na server HTTP (S) zachází s každou odpovědí na 409 konfliktů jako s upozorněním, aby bylo možné pokračovat v nabízení. K dispozici od verze .NET Core 3,1 SDK.
 
 - **`-sk|--symbol-api-key <API_KEY>`**
 
@@ -88,58 +90,67 @@ Příkaz `dotnet nuget push` odešle balíček na server a publikuje jej. Přík
 
 - **`-t|--timeout <TIMEOUT>`**
 
-  Určuje časový limit pro odesílání na server v sekundách. Výchozí hodnota je 300 sekund (5 minut). Zadáním 0 (nula sekund) se použije výchozí hodnota.
+  Určuje časový limit pro doručování na server během několika sekund. Výchozí hodnota je 300 sekund (5 minut). Zadáním hodnoty 0 (nula sekund) se použije výchozí hodnota.
 
 ## <a name="examples"></a>Příklady
 
-- Odešle *foo.nupkg* na výchozí zdroj nabízených oznámení a zadá klíč rozhraní API:
+- Vložení *foo. nupkg* na výchozí zdroj nabízených oznámení a zadání klíče rozhraní API:
 
   ```dotnetcli
   dotnet nuget push foo.nupkg -k 4003d786-cc37-4004-bfdf-c4f3e8ef9b3a
   ```
 
-- Push *foo.nupkg* na oficiální server NuGet a zadejte klíč rozhraní API:
+- Vložení *foo. nupkg* do oficiálního serveru NuGet a zadání klíče rozhraní API:
 
   ```dotnetcli
   dotnet nuget push foo.nupkg -k 4003d786-cc37-4004-bfdf-c4f3e8ef9b3a -s https://api.nuget.org/v3/index.json
   ```
   
-  * Posuňte *foo.nupkg* na vlastní zdroj `https://customsource`nabízených síly a zadejte klíč rozhraní API:
+  * Vložení *foo. nupkg* do vlastního zdroje `https://customsource`nabízených oznámení zadání klíče rozhraní API:
 
   ```dotnetcli
   dotnet nuget push foo.nupkg -k 4003d786-cc37-4004-bfdf-c4f3e8ef9b3a -s https://customsource/
   ```
 
-- Posune *foo.nupkg* na výchozí zdroj push:
+- Vložení *foo. nupkg* na výchozí zdroj nabízených oznámení:
 
   ```dotnetcli
   dotnet nuget push foo.nupkg
   ```
 
-- Odešle *foo.symbols.nupkg* na výchozí zdroj symbolů:
+- Vložení *foo. Symbols. nupkg* do výchozího zdroje symbolů:
 
   ```dotnetcli
   dotnet nuget push foo.symbols.nupkg
   ```
 
-- Odešle *foo.nupkg* na výchozí zdroj nabízených oznámení a určí časový limit 360 sekund:
+- Vložení *foo. nupkg* na výchozí zdroj nabízených oznámení a zadání časového limitu 360 sekund:
 
   ```dotnetcli
   dotnet nuget push foo.nupkg --timeout 360
   ```
 
-- Odešle všechny soubory *NUPKG* v aktuálním adresáři na výchozí zdroj nabízených oznámení:
+- Nahrajte všechny soubory *. nupkg* v aktuálním adresáři do výchozího zdroje nabízených oznámení:
 
   ```dotnetcli
   dotnet nuget push *.nupkg
   ```
 
   > [!NOTE]
-  > Pokud tento příkaz nefunguje, může to být způsobeno chybou, která existovala ve starších verzích sady SDK (.NET Core 2.1 SDK a starších verzích).
-  > Chcete-li tento problém vyřešit, inovujte verzi sady SDK nebo spusťte místo toho následující příkaz:`dotnet nuget push **/*.nupkg`
+  > Pokud tento příkaz nefunguje, může to být způsobeno chybou, která existovala ve starších verzích sady SDK (.NET Core 2,1 SDK a starších verzích).
+  > Pokud to chcete opravit, upgradujte verzi sady SDK nebo spusťte následující příkaz:`dotnet nuget push **/*.nupkg`
 
-- Odešle všechny soubory *.nupkg* i v případě, že server HTTP(S) vrátí odpověď konfliktu 409:
+- Nahrajte všechny soubory *. nupkg* i v případě, že server http (S) vrátí odpověď na konflikt 409:
 
   ```dotnetcli
   dotnet nuget push *.nupkg --skip-duplicate
   ```
+
+- Nahrajte všechny soubory *. nupkg* v aktuálním adresáři do místního adresáře informačního kanálu:
+
+  ```dotnetcli
+  dotnet nuget push *.nupkg -s c:\mydir
+  ```
+
+  Tento příkaz neukládá balíčky do hierarchické struktury složek, což se doporučuje pro optimalizaci výkonu. Další informace najdete v tématu [místní informační kanály](//nuget/hosting-packages/local-feeds).
+  

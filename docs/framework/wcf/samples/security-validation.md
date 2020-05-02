@@ -2,14 +2,14 @@
 title: Ověřování zabezpečení
 ms.date: 03/30/2017
 ms.assetid: 48dcd496-0c4f-48ce-8b9b-0e25b77ffa58
-ms.openlocfilehash: d635ae72b71df18934acd1016ac3e799d2c4aea1
-ms.sourcegitcommit: 839777281a281684a7e2906dccb3acd7f6a32023
+ms.openlocfilehash: 90d335f32c43ecf575c69cf800ab69bee05f39ee
+ms.sourcegitcommit: 7370aa8203b6036cea1520021b5511d0fd994574
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "82140509"
+ms.lasthandoff: 05/02/2020
+ms.locfileid: "82728373"
 ---
-# <a name="security-validation"></a>Ověřování zabezpečení
+# <a name="security-validation"></a>Ověření zabezpečení
 Tato ukázka předvádí, jak pomocí vlastního chování ověřit služby na počítači, abyste měli jistotu, že splňují určitá kritéria. V této ukázce se služby ověřují pomocí vlastního chování tím, že prochází každý koncový bod ve službě a kontroluje, jestli obsahují zabezpečené prvky vazby. Tato ukázka je založena na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md).  
   
 > [!NOTE]
@@ -78,9 +78,9 @@ public void Validate(ServiceDescription serviceDescription,
 > [!NOTE]
 > Při přidávání chování do všech služeb je navrženo zálohování souboru Machine. config před provedením jakékoli změny.  
   
- Nyní spusťte klienta, který je k dispozici v adresáři client\bin této ukázky. Došlo k výjimce s následující zprávou: "požadovanou službuhttp://localhost/servicemodelsamples/service.svcnelze aktivovat". To se očekává, protože koncový bod se považuje za nezabezpečený pomocí chování při ověřování koncového bodu a zabrání spuštění služby. Chování také vyvolá interní výjimku, která popisuje, který koncový bod je nezabezpečený a zapisuje do systému zprávu Prohlížeč událostí pod zdrojem "System. ServiceModel 4.0.0.0" a "webhost" kategorie. V této ukázce je také možné zapnout trasování pro službu. To uživateli umožňuje zobrazit výjimky vyvolané chováním ověřování koncového bodu otevřením výsledných trasování služby pomocí nástroje Service Trace Viewer.  
+ Nyní spusťte klienta, který je k dispozici v adresáři client\bin této ukázky. Byla vyvolána výjimka s následující zprávou: "požadovanou službuhttp://localhost/servicemodelsamples/service.svcnelze aktivovat". To se očekává, protože koncový bod se považuje za nezabezpečený pomocí chování při ověřování koncového bodu a zabrání spuštění služby. Chování také vyvolá interní výjimku, která popisuje, který koncový bod je nezabezpečený a zapisuje do systému zprávu Prohlížeč událostí pod zdrojem "System. ServiceModel 4.0.0.0" a "webhost" kategorie. V této ukázce je také možné zapnout trasování pro službu. To uživateli umožňuje zobrazit výjimky vyvolané chováním ověřování koncového bodu otevřením výsledných trasování služby pomocí nástroje Service Trace Viewer.  
   
-#### <a name="to-view-failed-endpoint-validation-exception-messages-in-the-event-viewer"></a>Zobrazení zpráv výjimky ověřování koncového bodu, které selhaly v Prohlížeč událostí  
+### <a name="view-failed-endpoint-validation-exception-messages-in-the-event-viewer"></a>Zobrazit zprávy výjimky ověření neúspěšných koncových bodů v Prohlížeč událostí  
   
 1. Klikněte na nabídku **Start** a vyberte možnost **Spustit...**.  
   
@@ -90,7 +90,7 @@ public void Validate(ServiceDescription serviceDescription,
   
 4. Poklikejte na nedávno přidanou událost System. ServiceModel 4.0.0.0 do kategorie webhost v okně **aplikace** a zobrazte nezabezpečené zprávy koncového bodu.  
   
-#### <a name="to-set-up-build-and-run-the-sample"></a>Nastavení, sestavení a spuštění ukázky  
+## <a name="set-up-build-and-run-the-sample"></a>Nastavení, sestavení a spuštění ukázky  
   
 1. Ujistěte se, že jste provedli [postup jednorázového nastavení pro Windows Communication Foundation ukázky](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
   

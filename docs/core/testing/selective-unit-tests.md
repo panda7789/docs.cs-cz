@@ -3,16 +3,16 @@ title: Spouštění selektivních testů jednotek
 description: Jak použít výraz filtru ke spuštění selektivních testů jednotek pomocí příkazu dotnet test v .NET Core.
 author: smadala
 ms.date: 04/29/2020
-ms.openlocfilehash: e66455b5ac012114c45d998fae11da7ee769fbe2
-ms.sourcegitcommit: e09dbff13f0b21b569a101f3b3c5efa174aec204
+ms.openlocfilehash: 50642126f3b470180ddd303ed4a2d2d90bfa5b8f
+ms.sourcegitcommit: 7370aa8203b6036cea1520021b5511d0fd994574
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82624914"
+ms.lasthandoff: 05/02/2020
+ms.locfileid: "82728185"
 ---
-# <a name="running-selective-unit-tests"></a>Spouštění selektivních testů jednotek
+# <a name="run-selective-unit-tests"></a>Spouštění selektivních testů jednotek
 
-Pomocí `dotnet test` příkazu v .NET Core můžete použít výraz filtru ke spuštění selektivních testů. Tento článek ukazuje, jak filtrovat, který test se spouští. Následující příklady používají `dotnet test`. Pokud používáte `vstest.console.exe`, nahraďte parametr `--filter` `--testcasefilter:`.
+Pomocí `dotnet test` příkazu v .NET Core můžete použít výraz filtru ke spuštění selektivních testů. Tento článek ukazuje, jak filtrovat, které testy jsou spuštěny. Následující příklady používají `dotnet test`. Pokud používáte `vstest.console.exe`, nahraďte parametr `--filter` `--testcasefilter:`.
 
 ## <a name="character-escaping"></a>Znakové uvozovací znaky
 
@@ -65,7 +65,7 @@ namespace MSTestNamespace
 | Expression | Výsledek |
 | ---------- | ------ |
 | <code>dotnet test --filter "FullyQualifiedName~UnitTest1&#124;TestCategory=CategoryA"</code> | Spustí testy, které `UnitTest1` jsou `FullyQualifiedName` v **nebo** `TestCategory` `CategoryA`. |
-| `dotnet test --filter "FullyQualifiedName~UnitTest1&TestCategory=CategoryA"` | Spustí testy, které `UnitTest1` mají `FullyQualifiedName` v **a** `TestCategory` `CategoryA`. |
+| `dotnet test --filter "FullyQualifiedName~UnitTest1&TestCategory=CategoryA"` | Spustí testy, které `UnitTest1` jsou `FullyQualifiedName` v **a** `TestCategory` `CategoryA`. |
 | <code>dotnet test --filter "(FullyQualifiedName~UnitTest1&TestCategory=CategoryA)&#124;Priority=1"</code> | `FullyQualifiedName` Spustí testy, které obsahují `UnitTest1` **a** `TestCategory` jsou `CategoryA` **nebo** `Priority` 1. |
 
 ## <a name="xunit"></a>xUnit
@@ -153,7 +153,7 @@ namespace NUnitNamespace
 | Expression | Výsledek |
 | ---------- | ------ |
 | <code>dotnet test --filter "FullyQualifiedName~UnitTest1&#124;TestCategory=CategoryA"</code> | Spustí testy, které `UnitTest1` jsou `FullyQualifiedName` v **nebo** `TestCategory` `CategoryA`. |
-| `dotnet test --filter "FullyQualifiedName~UnitTest1&TestCategory=CategoryA"` | Spustí testy, které `UnitTest1` mají `FullyQualifiedName` v **a** `TestCategory` `CategoryA`. |
+| `dotnet test --filter "FullyQualifiedName~UnitTest1&TestCategory=CategoryA"` | Spustí testy, které `UnitTest1` jsou `FullyQualifiedName` v **a** `TestCategory` `CategoryA`. |
 | <code>dotnet test --filter "(FullyQualifiedName~UnitTest1&TestCategory=CategoryA)&#124;Priority=1"</code> | `FullyQualifiedName` Spustí testy, které obsahují `UnitTest1` **a** `TestCategory` jsou `CategoryA` **nebo** `Priority` 1. |
 
 Další informace najdete v tématu [testovací případ Filter](https://github.com/Microsoft/vstest-docs/blob/master/docs/filter.md).

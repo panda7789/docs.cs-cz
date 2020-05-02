@@ -2,15 +2,15 @@
 title: ASP.NET Core přerušující změny
 titleSuffix: ''
 description: Zobrazí seznam nejnovějších změn v ASP.NET Core.
-ms.date: 04/28/2020
+ms.date: 04/29/2020
 author: scottaddie
 ms.author: scaddie
-ms.openlocfilehash: 454735028f8c0923b99e85ade30f498f13dd6cab
-ms.sourcegitcommit: 1cb64b53eb1f253e6a3f53ca9510ef0be1fd06fe
+ms.openlocfilehash: 63d39b1aa6e46b6bcbeb5a409efacac01dea4262
+ms.sourcegitcommit: 7370aa8203b6036cea1520021b5511d0fd994574
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82507141"
+ms.lasthandoff: 05/02/2020
+ms.locfileid: "82728346"
 ---
 # <a name="aspnet-core-breaking-changes"></a>ASP.NET Core přerušující změny
 
@@ -41,6 +41,7 @@ Na této stránce jsou popsány následující přerušující se změny:
 - [HTTP: Browser SameSite změny dopadu na ověření](#http-browser-samesite-changes-impact-authentication)
 - [HTTP: rozšíření DefaultHttpContext bylo odebráno.](#http-defaulthttpcontext-extensibility-removed)
 - [HTTP: HeaderNames pole se změnila na static jen pro čtení.](#http-headernames-constants-changed-to-static-readonly)
+- [HTTP: HttpClient instance vytvořené pomocí kódů IHttpClientFactory pro celočíselné hodnoty log status](#http-httpclient-instances-created-by-ihttpclientfactory-log-integer-status-codes)
 - [HTTP: změny infrastruktury textu odpovědi](#http-response-body-infrastructure-changes)
 - [HTTP: některé soubory cookie SameSite výchozí hodnoty se změnily](#http-some-cookie-samesite-defaults-changed-to-none)
 - [HTTP: ve výchozím nastavení je zakázaná synchronní v/v.](#http-synchronous-io-disabled-in-all-servers)
@@ -54,6 +55,7 @@ Na této stránce jsou popsány následující přerušující se změny:
 - [Kestrel: hlavičky přípojných vozidel žádosti přesunuté do nové kolekce](#kestrel-request-trailer-headers-moved-to-new-collection)
 - [Kestrel: změny vrstvy abstrakce transportu](#kestrel-transport-abstractions-removed-and-made-public)
 - [Lokalizace: rozhraní API označená jako zastaralá](#localization-resourcemanagerwithculturestringlocalizer-and-withculture-marked-obsolete)
+- [Lokalizace: odebral se člen rozhraní třídy ResourceManagerWithCultureStringLocalizer a WithCulture.](#localization-resourcemanagerwithculturestringlocalizer-class-and-withculture-interface-member-removed)
 - [Protokolování: DebugLogger třída provedla interní](#logging-debuglogger-class-made-internal)
 - [MVC: byla odebrána asynchronní přípona akce řadiče.](#mvc-async-suffix-trimmed-from-controller-action-names)
 - [MVC: JsonResult se přesunula do Microsoft. AspNetCore. Mvc. Core.](#mvc-jsonresult-moved-to-microsoftaspnetcoremvccore)
@@ -87,7 +89,15 @@ Na této stránce jsou popsány následující přerušující se změny:
 
 ***
 
+[!INCLUDE[HTTP: HttpClient instances created by IHttpClientFactory log integer status codes](~/includes/core-changes/aspnetcore/5.0/http-httpclient-instances-log-integer-status-codes.md)]
+
+***
+
 [!INCLUDE[HTTP: Kestrel and IIS BadHttpRequestException types marked obsolete and replaced](~/includes/core-changes/aspnetcore/5.0/http-badhttprequestexception-obsolete.md)]
+
+***
+
+[!INCLUDE[Localization: ResourceManagerWithCultureStringLocalizer class and WithCulture interface member removed](~/includes/core-changes/aspnetcore/5.0/localization-members-removed.md)]
 
 ***
 
