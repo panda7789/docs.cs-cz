@@ -14,6 +14,8 @@
       href: install/runtime.md
     - name: Podporovaný operační systém a závislosti
       href: install/dependencies.md
+    - name: Odebrání zastaralých modulů runtime a sad SDK
+      href: install/remove-runtime-sdk-versions.md
     - name: Správa šablon pro .NET
       href: install/templates.md
     - name: Záležitosti „notářského“ ověřování pro macOS
@@ -36,6 +38,8 @@
           href: install/linux-package-manager-debian10.md
         - name: Debian 9
           href: install/linux-package-manager-debian9.md
+        - name: Fedora 32
+          href: install/linux-package-manager-fedora32.md
         - name: Fedora 31
           href: install/linux-package-manager-fedora31.md
         - name: Fedora 30
@@ -393,8 +397,6 @@
       href: versions/index.md
     - name: Výběr verze .NET Core
       href: versions/selection.md
-    - name: Odebrání zastaralých modulů runtime a sad SDK
-      href: versions/remove-runtime-sdk-versions.md
 - name: Katalog RID (Runtime Identifier)
   href: rid-catalog.md
 - name: Správa a načítání závislostí
