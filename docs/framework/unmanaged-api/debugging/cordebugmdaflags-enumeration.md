@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 7c0c92fe-8bd2-477f-b307-aca0143732ca
 topic_type:
 - apiref
-ms.openlocfilehash: 34a66a8afa118ecaaaeea0b7b78daaadf1da7509
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.openlocfilehash: e024500ea66dcb42e712e07e976a709401160a27
+ms.sourcegitcommit: de7f589de07a9979b6ac28f54c3e534a617d9425
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76778265"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "82795765"
 ---
 # <a name="cordebugmdaflags-enumeration"></a>CorDebugMDAFlags – výčet
 Určuje stav vlákna, ve kterém je aktivován pomocník spravovaného ladění (MDA).  
@@ -39,17 +39,17 @@ typedef enum CorDebugMDAFlags {
 |`MDA_FLAG_SLIP`|Vlákno, ve kterém se aktivovalo MDA, bylo od chvíle, kdy byla vyvolána služba MDA, naproti skluzu.|  
   
 ## <a name="remarks"></a>Poznámky  
- V případě, že zásobník volání již nepopisuje, kde byl původně vyvolán proces MDA, vlákno jepovažováno za neúspěšně. Jedná se o neobvyklé okolnosti, o jejichž provedení neplatného vlákna po ukončení operace.  
+ V případě, že zásobník volání již nepopisuje, kde byl původně vyvolán proces MDA, vlákno je *slipped*považováno za neúspěšně. Jedná se o neobvyklé okolnosti, o jejichž provedení neplatného vlákna po ukončení operace.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** CorDebug. idl, CorDebug. h  
   
  **Knihovna:** CorGuids. lib  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Výčty pro ladění](debugging-enumerations.md)
+- [Ladění výčtů](debugging-enumerations.md)

@@ -6,23 +6,23 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 03/14/2020
 ms.locfileid: "75937070"
 ---
-### <a name="dontsupportreentrantfiltermessage-compatibility-switch-not-supported"></a>Přepínač kompatibility DontSupportReentrantFilterMessage není podporován.
+### <a name="dontsupportreentrantfiltermessage-compatibility-switch-not-supported"></a>Přepínač kompatibility DontSupportReentrantFilterMessage se nepodporuje.
 
-Přepínač `Switch.System.Windows.Forms.DontSupportReentrantFilterMessage` kompatibility, který byl zaveden v rozhraní .NET Framework 4.6.1, není ve formulářích Windows v rozhraní .NET Core 3.0 podporován.
+Přepínač `Switch.System.Windows.Forms.DontSupportReentrantFilterMessage` kompatibility, který byl představen v .NET Framework 4.6.1, není podporován v model Windows Forms .net Core 3,0.
 
 #### <a name="change-description"></a>Popis změny
 
-Počínaje rozhraním .NET Framework 4.6.1, `Switch.System.Windows.Forms.DontSupportReentrantFilterMessage` přepínač <xref:System.IndexOutOfRangeException> kompatibility <xref:System.Windows.Forms.Application.FilterMessage%2A?displayProperty=nameWithType> řeší možné výjimky <xref:System.Windows.Forms.IMessageFilter.PreFilterMessage%2A?displayProperty=nameWithType> při volání zprávy s vlastní implementací. Další informace naleznete [v tématu Mitigation: Custom IMessageFilter.PreFilterMessageMessage Implementations](~/docs/framework/migration-guide/mitigation-custom-imessagefilter-prefiltermessage-implementations.md).
+`Switch.System.Windows.Forms.DontSupportReentrantFilterMessage` Počínaje .NET Framework 4.6.1, přepínač kompatibility řeší možné <xref:System.IndexOutOfRangeException> výjimky při volání <xref:System.Windows.Forms.Application.FilterMessage%2A?displayProperty=nameWithType> zprávy s vlastní <xref:System.Windows.Forms.IMessageFilter.PreFilterMessage%2A?displayProperty=nameWithType> implementací. Další informace naleznete v tématu [zmírňující rizika: Custom IMessageFilter. PreFilterMessage Implements](~/docs/framework/migration-guide/mitigation-custom-imessagefilter-prefiltermessage-implementations.md).
 
-V rozhraní .NET `Switch.System.Windows.Forms.DontSupportReentrantFilterMessage` Core není přepínač podporován.
+V rozhraní .NET Core není `Switch.System.Windows.Forms.DontSupportReentrantFilterMessage` přepínač podporován.
 
-#### <a name="version-introduced"></a>Zavedená verze
+#### <a name="version-introduced"></a>Představená verze
 
-3.0 Náhled 9
+3,0 Preview 9
 
 #### <a name="recommended-action"></a>Doporučená akce
 
-Odstraňte spínač. Přepínač není podporován a nejsou k dispozici žádné alternativní funkce.
+Odeberte přepínač. Přepínač není podporován a nejsou k dispozici žádné alternativní funkce.
 
 #### <a name="category"></a>Kategorie
 

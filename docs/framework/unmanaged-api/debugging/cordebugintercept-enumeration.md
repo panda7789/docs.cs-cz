@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 3d5b642e-7ef2-428b-a5ae-509c35ed461a
 topic_type:
 - apiref
-ms.openlocfilehash: 8ce48b63a92e84ce92da0dcf35a6242744c1a8c3
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.openlocfilehash: 18a5e337b6026a20a95b1c29f3d7bda5187efc66
+ms.sourcegitcommit: de7f589de07a9979b6ac28f54c3e534a617d9425
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76778421"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "82795856"
 ---
 # <a name="cordebugintercept-enumeration"></a>CorDebugIntercept – výčet
 Určuje typy kódu, které mohou být zachyceny (to je od-steped do).  
@@ -54,14 +54,14 @@ typedef enum CorDebugIntercept {
  Použijte metodu [ICorDebugStepper:: SetInterceptMask –](icordebugstepper-setinterceptmask-method.md) pro vytvoření typů kódu, který lze zachytit.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** CorDebug. idl, CorDebug. h  
   
  **Knihovna:** CorGuids. lib  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Výčty pro ladění](debugging-enumerations.md)
+- [Ladění výčtů](debugging-enumerations.md)

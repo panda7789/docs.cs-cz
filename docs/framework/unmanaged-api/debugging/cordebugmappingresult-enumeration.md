@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 701281dd-2936-45c8-a1f0-3bf7332b093b
 topic_type:
 - apiref
-ms.openlocfilehash: 317dc2fe8403ae25949410423f1a28ad365caf6a
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.openlocfilehash: a7a450e85f7eaa765766ffa985d7c01538e2669c
+ms.sourcegitcommit: de7f589de07a9979b6ac28f54c3e534a617d9425
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76789312"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "82795791"
 ---
 # <a name="cordebugmappingresult-enumeration"></a>CorDebugMappingResult – výčet
 Poskytuje podrobné informace o tom, jak byla získána hodnota ukazatele na instrukce (IP).  
@@ -52,14 +52,14 @@ typedef enum CorDebugMappingResult {
  K získání hodnoty ukazatele na instrukci můžete použít metodu [ICorDebugILFrame:: getip –](icordebugilframe-getip-method.md) .  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** CorDebug. idl, CorDebug. h  
   
  **Knihovna:** CorGuids. lib  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Výčty pro ladění](debugging-enumerations.md)
+- [Ladění výčtů](debugging-enumerations.md)

@@ -2,12 +2,12 @@
 title: Co je nového v C# 8,0 – příručka C#
 description: Získejte přehled o nových funkcích dostupných v C# 8,0.
 ms.date: 04/07/2020
-ms.openlocfilehash: c29041972bf7ff608b73ddc9ea3cfcd253905a49
-ms.sourcegitcommit: 5988e9a29cedb8757320817deda3c08c6f44a6aa
+ms.openlocfilehash: 8935660d175cc3ee404ee374e3a58fc47d283771
+ms.sourcegitcommit: de7f589de07a9979b6ac28f54c3e534a617d9425
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82200077"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "82794569"
 ---
 # <a name="whats-new-in-c-80"></a>Co je nového v C# 8,0
 

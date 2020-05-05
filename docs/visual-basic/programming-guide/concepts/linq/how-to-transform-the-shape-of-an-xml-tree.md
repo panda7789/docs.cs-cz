@@ -1,13 +1,13 @@
 ---
-title: 'Postupy: transformace tvaru stromu XML'
+title: 'Postupy: Transformace tvaru stromu XML'
 ms.date: 07/20/2015
 ms.assetid: 84b60854-48b2-452c-87f2-77d53e1d653a
-ms.openlocfilehash: 67ffd5f50572c0deba75c664ffd0e12ecfabf730
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 24cf02d84b498fc4b41238b1adaf7316cb139a10
+ms.sourcegitcommit: de7f589de07a9979b6ac28f54c3e534a617d9425
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74332421"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "82796103"
 ---
 # <a name="how-to-transform-the-shape-of-an-xml-tree-visual-basic"></a>Postupy: transformace obrazce stromu XML (Visual Basic)
 *Tvar* dokumentu XML odkazuje na jeho názvy elementů, názvy atributů a charakteristiky jeho hierarchie.  
@@ -21,7 +21,7 @@ ms.locfileid: "74332421"
 ## <a name="example"></a>Příklad  
  Následující kód změní tvar souboru XML pomocí vložených výrazů dotazů.  
   
- Zdrojový dokument XML v tomto příkladu obsahuje element `Customers` pod prvkem `Root`, který obsahuje všechny zákazníky. Obsahuje také prvek `Orders` pod prvkem `Root`, který obsahuje všechny objednávky. Tento příklad vytvoří nový strom XML, ve kterém jsou objednávky pro každého zákazníka obsaženy v prvku `Orders` v rámci `Customer` elementu. Původní dokument obsahuje také prvek `CustomerID` v prvku `Order`; Tento prvek bude odebrán z dokumentu opětovného tvaru.  
+ Zdrojový dokument XML v tomto příkladu obsahuje `Customers` element pod `Root` prvkem, který obsahuje všechny zákazníky. Obsahuje také `Orders` element pod `Root` prvkem, který obsahuje všechny objednávky. Tento příklad vytvoří nový strom XML, ve kterém jsou objednávky pro každého zákazníka obsaženy v `Orders` elementu v rámci `Customer` elementu. Původní dokument obsahuje také `CustomerID` element v `Order` elementu; Tento prvek bude odebrán z dokumentu opětovného tvaru.  
   
  Tento příklad používá následující dokument XML: [ukázkový soubor XML: zákazníci a objednávky (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-customers-and-orders-linq-to-xml.md).  
   
@@ -53,10 +53,10 @@ Dim newCustOrd = _
 Console.WriteLine(newCustOrd)  
 ```  
   
- Tento kód generuje následující výstup:  
+ Výsledkem tohoto kódu je následující výstup:  
   
 ```xml  
-        <Root>  
+<Root>  
 <Customer CustomerID="GREAL">  
   <CompanyName>Great Lakes Food Market</CompanyName>  
   <ContactName>Howard Snyder</ContactName>  
@@ -86,13 +86,14 @@ Console.WriteLine(newCustOrd)
   </FullAddress>  
   <Orders />  
 </Customer>  
-. . .  
+...
+</Root>
 ```  
   
 ## <a name="example"></a>Příklad  
  Tento příklad přejmenuje některé prvky a převede některé atributy na prvky.  
   
- Kód volá `ConvertAddress`, která vrací seznam objektů <xref:System.Xml.Linq.XElement>. Argumentem metody je dotaz, který určuje `Address` složitý prvek, kde `Type` atribut má hodnotu `"Shipping"`.  
+ Kód volá `ConvertAddress`, který vrátí seznam <xref:System.Xml.Linq.XElement> objektů. Argumentem metody je dotaz, který určuje `Address` komplexní prvek, kde `Type` atribut má hodnotu. `"Shipping"`  
   
  Tento příklad používá následující dokument XML: [vzorový soubor XML: typická nákupní objednávka (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-typical-purchase-order-linq-to-xml.md).  
   
@@ -127,7 +128,7 @@ Sub Main()
 End Sub  
 ```  
   
- Tento kód generuje následující výstup:  
+ Výsledkem tohoto kódu je následující výstup:  
   
 ```xml  
 <PO>  
@@ -142,6 +143,6 @@ End Sub
 </PO>  
 ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Projekce a transformace (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/projections-and-transformations-linq-to-xml.md)

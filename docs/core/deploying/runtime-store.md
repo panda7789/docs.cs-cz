@@ -47,7 +47,7 @@ Prvním krokem je vytvoření *manifestu balíčku pro úložiště* , který ob
 </Project>
 ```
 
-**Případě**
+**Příklad**
 
 Následující ukázkový manifest úložiště balíčků (*Packages. csproj*) se používá k přidání [`Newtonsoft.Json`](https://www.nuget.org/packages/Newtonsoft.Json/) a [`Moq`](https://www.nuget.org/packages/moq/) do úložiště balíčků modulu runtime:
 
@@ -66,7 +66,7 @@ Zřízení úložiště balíčků modulu runtime spuštěním `dotnet store` s 
 dotnet store --manifest <PATH_TO_MANIFEST_FILE> --runtime <RUNTIME_IDENTIFIER> --framework <FRAMEWORK>
 ```
 
-**Případě**
+**Příklad**
 
 ```dotnetcli
 dotnet store --manifest packages.csproj --runtime win10-x64 --framework netcoreapp2.0 --framework-version 2.0.0
@@ -76,7 +76,7 @@ Můžete předat několik cest k manifestu cílového úložiště balíčků do
 
 Ve výchozím nastavení je výstupem příkazu úložiště balíčků v podadresáři *. dotnet/Store* profilu uživatele. Pomocí `--output <OUTPUT_DIRECTORY>` možnosti můžete zadat jiné umístění. Kořenový adresář úložiště obsahuje cílový soubor *. XML artefaktu* manifestu. Tento soubor může být zpřístupněn ke stažení a musí ho používat autoři aplikací, kteří chtějí toto úložiště cílit při publikování.
 
-**Případě**
+**Příklad**
 
 Následující soubor *artefakt. XML* se vytvoří po spuštění předchozího příkladu. Všimněte si [`Castle.Core`](https://www.nuget.org/packages/Castle.Core/) , že se jedná `Moq`o závislost, takže je automaticky zahrnutá a zobrazí se v souboru manifestu *artefakts. XML* .
 
@@ -96,7 +96,7 @@ Pokud máte cílový soubor manifestu na disku, zadejte cestu k souboru při pub
 dotnet publish --manifest <PATH_TO_MANIFEST_FILE>
 ```
 
-**Případě**
+**Příklad**
 
 ```dotnetcli
 dotnet publish --manifest manifest.xml

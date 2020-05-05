@@ -7,12 +7,12 @@ dev_langs:
 - vb
 - cpp
 ms.assetid: f3d97d53-614d-4a04-a174-87965b7405f6
-ms.openlocfilehash: 5c2d997d9006a3f1eb971eac20982b9dd5677ebf
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 2d991a7835d22af2c780b020d6884f626908665e
+ms.sourcegitcommit: de7f589de07a9979b6ac28f54c3e534a617d9425
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75710749"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "82796168"
 ---
 # <a name="inferring-schemas-from-xml-documents"></a>Odvození schémat z dokumentů XML
 Toto téma popisuje, jak pomocí <xref:System.Xml.Schema.XmlSchemaInference> třídy odvodit schéma XML schématu definice jazyka (XSD) ze struktury dokumentu XML.  
@@ -29,7 +29,7 @@ Toto téma popisuje, jak pomocí <xref:System.Xml.Schema.XmlSchemaInference> tř
     <child>One</child>  
     <child>Two</child>  
 </parent>  
-<parent attribute1="A">  
+<parent attribute1="A" />
 ```  
   
  V předchozím příkladu, pokud je zjištěn `attribute1` atribut s hodnotou `6` <xref:System.Xml.Schema.XmlSchemaInference> procesu, předpokládá se, že je typu `xs:unsignedByte`. Při zjištění druhého `parent` elementu v <xref:System.Xml.Schema.XmlSchemaInference> procesu je omezení odpojeno změnou typu na `xs:string` , protože hodnota `attribute1` atributu je nyní. `A` Podobně `minOccurs` atribut pro všechny `child` elementy odvozené ve schématu jsou rozvoditelné na `minOccurs="0"` , protože druhý nadřazený prvek nemá žádné podřízené prvky.  

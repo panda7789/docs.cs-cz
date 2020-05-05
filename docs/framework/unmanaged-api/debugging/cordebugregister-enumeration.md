@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 003bb138-7960-4291-ac88-0d87e470ff70
 topic_type:
 - apiref
-ms.openlocfilehash: 9af265144c9e38ffe132c16a318c374b08a920e3
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.openlocfilehash: 19d0dcf8a5633371765861fcc29df4ef8c91ebc4
+ms.sourcegitcommit: de7f589de07a9979b6ac28f54c3e534a617d9425
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76778257"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "82795713"
 ---
 # <a name="cordebugregister-enumeration"></a>CorDebugRegister – výčet
 Určuje Registry přidružené k dané architektuře procesoru.  
@@ -190,23 +190,23 @@ typedef enum CorDebugRegister {
 |`REGISTER_ARM_LR`|Registr odkazů (R14) na procesoru ARM.|  
   
 ## <a name="remarks"></a>Poznámky  
- Pro procesor IA-64 jsou k dispozici 128 datových registrů pro obecné účely a 128 datových registrů s plovoucí desetinnou čárkou, ale jsou k dispozici pouze hodnoty `REGISTER_IA64_R0` a `REGISTER_IA64_F0`. Ostatní hodnoty lze určit následujícím způsobem:  
+ Pro procesor IA-64 jsou k dispozici 128 datových registrů pro obecné účely a 128 datových registrů s plovoucí desetinnou `REGISTER_IA64_R0` čárkou, ale jsou k dispozici pouze hodnoty a `REGISTER_IA64_F0` . Ostatní hodnoty lze určit následujícím způsobem:  
   
-- Přidejte číslo registru, které se má `REGISTER_IA64_R0` pro hodnoty `REGISTER_IA64_R1` prostřednictvím `REGISTER_IA64_R127`, které odpovídají #1 registraci dat prostřednictvím #127 registru pro procesor IA-64.  
+- Přidejte číslo registru do `REGISTER_IA64_R0` pro hodnoty `REGISTER_IA64_R1` prostřednictvím `REGISTER_IA64_R127`, který odpovídá #1 registraci dat prostřednictvím #127 registru pro procesor IA-64.  
   
-- Přidejte číslo registru, které se má `REGISTER_IA64_F0` pro hodnoty `REGISTER_IA64_F1` prostřednictvím `REGISTER_IA64_F127`, které odpovídají registru #1 FP v rámci registru s daty #127 FP v procesoru IA-64.  
+- Přidejte číslo registru do `REGISTER_IA64_F0` pro hodnoty `REGISTER_IA64_F1` prostřednictvím `REGISTER_IA64_F127`, který odpovídá registru dat #1 FP prostřednictvím #127 registru dat FP v procesoru IA-64.  
   
- Pokud například potřebujete zadat #83 registru dat v procesoru IA-64, použijte `REGISTER_IA64_R0` + 83.  
+ Pokud například potřebujete zadat #83 registru dat v procesoru IA-64, použijte `REGISTER_IA64_R0` příkaz + 83.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** CorDebug. idl, CorDebug. h  
   
  **Knihovna:** CorGuids. lib  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Výčty pro ladění](debugging-enumerations.md)
+- [Ladění výčtů](debugging-enumerations.md)

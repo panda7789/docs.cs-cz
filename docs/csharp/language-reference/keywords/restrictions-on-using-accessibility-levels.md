@@ -1,44 +1,44 @@
 ---
-title: Omezení používání úrovní usnadnění – odkaz jazyka C#
+title: Omezení používání úrovní dostupnosti – reference jazyka C#
 ms.date: 07/20/2015
 helpviewer_keywords:
 - access modifiers [C#], accessibility level restrictions
 ms.assetid: 987e2f22-46bf-4fea-80ee-270b9cd01045
-ms.openlocfilehash: 48ab765db7c839ed0dd14df5e6b30f5bd6c0d29b
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 8082dbd7398b6634b68f1dd2887cd55d6798a5d9
+ms.sourcegitcommit: de7f589de07a9979b6ac28f54c3e534a617d9425
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79173533"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "82795154"
 ---
-# <a name="restrictions-on-using-accessibility-levels-c-reference"></a>Omezení používání úrovní usnadnění (odkaz C#
+# <a name="restrictions-on-using-accessibility-levels-c-reference"></a>Omezení používání úrovní přístupnosti (Referenční dokumentace jazyka C#)
 
-Když zadáte typ v deklaraci, zkontrolujte, zda úroveň usnadnění typu je závislá na úrovni usnadnění přístupu člena nebo jiného typu. Například přímá základní třída musí být alespoň stejně přístupná jako odvozená třída. Následující deklarace způsobit chybu kompilátoru, protože základní třída `BaseClass` je méně přístupné než `MyClass`:
+Při zadání typu v deklaraci ověřte, zda je úroveň přístupnosti typu závislá na úrovni přístupnosti člena nebo jiného typu. Například Přímá základní třída musí být alespoň tak přístupná jako odvozená třída. Následující deklarace způsobují chybu kompilátoru, protože základní třída `BaseClass` je méně dostupná než: `MyClass`
 
 ```csharp
 class BaseClass {...}
 public class MyClass: BaseClass {...} // Error
 ```
 
-Následující tabulka shrnuje omezení deklarovaných úrovní usnadnění.
+Následující tabulka shrnuje omezení deklarované úrovně přístupnosti.
 
 |Kontext|Poznámky|
 |-------------|-------------|
-|[Třídy](../../programming-guide/classes-and-structs/classes.md)|Přímá základní třída typu třídy musí být alespoň stejně přístupná jako samotný typ třídy.|
-|[Rozhraní](../../programming-guide/interfaces/index.md)|Explicitní základní rozhraní typu rozhraní musí být alespoň stejně přístupné jako samotný typ rozhraní.|
-|[Delegáty](../../programming-guide/delegates/index.md)|Návratový typ a typy parametrů typu delegáta musí být alespoň stejně přístupné jako samotný typ delegáta.|
-|[Konstanty](../../programming-guide/classes-and-structs/constants.md)|Typ konstanty musí být alespoň stejně přístupný jako konstanta sama.|
-|[Pole](../../programming-guide/classes-and-structs/fields.md)|Typ pole musí být alespoň stejně přístupný jako samotné pole.|
-|[Metody](../../programming-guide/classes-and-structs/methods.md)|Návratový typ a typy parametrů metody musí být alespoň stejně přístupné jako samotná metoda.|
-|[Vlastnosti](../../programming-guide/classes-and-structs/properties.md)|Typ vlastnosti musí být alespoň stejně přístupný jako vlastnost sama.|
-|[Akce](../../programming-guide/events/index.md)|Typ události musí být alespoň stejně přístupný jako samotná událost.|
-|[Indexery](../../programming-guide/indexers/index.md)|Typy typů a parametrů indexeru musí být alespoň stejně přístupné jako indexer sám.|
-|[Operátory](../operators/index.md)|Návratový typ a typy parametrů operátoru musí být alespoň stejně přístupné jako samotný operátor.|
-|[Konstruktory](../../programming-guide/classes-and-structs/constructors.md)|Typy parametrů konstruktoru musí být alespoň stejně přístupné jako samotný konstruktor.|
+|[Třídy](../../programming-guide/classes-and-structs/classes.md)|Přímá základní třída typu třídy musí být alespoň tak přístupná jako typ třídy samotné.|
+|[Rozhraní](../../programming-guide/interfaces/index.md)|Explicitní základní rozhraní typu rozhraní musí být alespoň tak přístupná jako typ rozhraní.|
+|[Delegáty](../../programming-guide/delegates/index.md)|Návratový typ a typy parametrů typu delegáta musí být k dispozici alespoň jako typ delegáta.|
+|[Konstanty](../../programming-guide/classes-and-structs/constants.md)|Typ konstanty musí být alespoň tak přístupný jako konstanta sama.|
+|[Pole](../../programming-guide/classes-and-structs/fields.md)|Typ pole musí být alespoň tak přístupný jako pole samotné.|
+|[Metody](../../programming-guide/classes-and-structs/methods.md)|Návratový typ a typy parametrů metody musí být k dispozici alespoň jako metoda samotná.|
+|[Vlastnosti](../../programming-guide/classes-and-structs/properties.md)|Typ vlastnosti musí být alespoň tak přístupný jako vlastnost sama.|
+|[Události](../../programming-guide/events/index.md)|Typ události musí být alespoň tak přístupný jako událost samotná.|
+|[Indexery](../../programming-guide/indexers/index.md)|Typy a parametry indexeru musí být alespoň tak přístupné jako indexer samotný.|
+|[Operátory](../operators/index.md)|Návratový typ a typy parametrů operátoru musí být k dispozici alespoň jako samotný operátor.|
+|[Konstruktory](../../programming-guide/classes-and-structs/constructors.md)|Typy parametrů konstruktoru musí být alespoň tak přístupné jako samotný konstruktor.|
 
 ## <a name="example"></a>Příklad
 
-Následující příklad obsahuje chybné deklarace různých typů. Komentář za každou deklarací označuje očekávanou chybu kompilátoru.
+Následující příklad obsahuje chybné deklarace různých typů. Komentář, který následuje za každou deklarací, indikuje očekávanou chybu kompilátoru.
 
 ```csharp
 // Restrictions on Using Accessibility Levels
@@ -109,14 +109,14 @@ public class A
 
 ## <a name="see-also"></a>Viz také
 
-- [Odkaz jazyka C#](../../language-reference/index.md)
-- [Programovací příručka jazyka C#](../../programming-guide/index.md)
-- [C# Klíčová slova](../../language-reference/keywords/index.md)
-- [Modifikátory přístupu](../../language-reference/keywords/access-modifiers.md)
-- [Doména přístupnosti](../../language-reference/keywords/accessibility-domain.md)
-- [Úrovně přístupnosti](../../language-reference/keywords/accessibility-levels.md)
+- [Reference jazyka C#](../index.md)
+- [Průvodce programováním v C#](../../programming-guide/index.md)
+- [Klíčová slova jazyka C#](index.md)
+- [Modifikátory přístupu](access-modifiers.md)
+- [Doména přístupnosti](accessibility-domain.md)
+- [Úrovně přístupnosti](accessibility-levels.md)
 - [Modifikátory přístupu](../../programming-guide/classes-and-structs/access-modifiers.md)
-- [Veřejné](../../language-reference/keywords/public.md)
-- [Soukromé](../../language-reference/keywords/private.md)
-- [protected](../../language-reference/keywords/protected.md)
-- [Vnitřní](../../language-reference/keywords/internal.md)
+- [public](public.md)
+- [private](private.md)
+- [protected](protected.md)
+- [internal](internal.md)

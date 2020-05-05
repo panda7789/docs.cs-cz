@@ -1,25 +1,21 @@
 ---
-title: Nástroje pro přenos do jádra .NET Core
-description: Informace o některých nástrojích, které můžete použít k portu do rozhraní .NET Core
+title: Nástroje pro přenos do .NET Core
+description: Přečtěte si o některých nástrojích, které můžete použít k portům pro .NET Core.
 author: cartermp
-ms.date: 12/07/2018
-ms.openlocfilehash: 64bad7600d8e17ada83d4bd8bc56762fd1789f43
-ms.sourcegitcommit: e3cbf26d67f7e9286c7108a2752804050762d02d
+ms.date: 05/03/2020
+ms.openlocfilehash: d0cf0abf206950beb34556ca3ba7243d8cad241e
+ms.sourcegitcommit: de7f589de07a9979b6ac28f54c3e534a617d9425
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2020
-ms.locfileid: "80989126"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "82795583"
 ---
 # <a name="tools-to-help-with-porting-to-net-core"></a>Nástroje pro pomoc s přenosem aplikací do .NET Core
 
-Při přenosu můžete najít užitečné nástroje uvedené v tomto článku:
+Můžete najít nástroje uvedené v tomto článku, které jsou užitečné při přenosu:
 
-- [.NET Přenositelnost Analyzer](../../standard/analyzers/portability-analyzer.md) - toolchain, který může generovat zprávu o tom, jak přenosný kód je mezi rozhraním .NET Framework a .NET Core:
-  - Jako [nástroj příkazového řádku](https://github.com/Microsoft/dotnet-apiport/releases)
+- [Analyzátor přenositelnosti .NET](../../standard/analyzers/portability-analyzer.md) – sada nástrojů, který může generovat sestavu způsobu, jakým je váš kód mezi .NET Framework a .NET Core.
+  - Jako [Nástroj příkazového řádku](https://github.com/Microsoft/dotnet-apiport/releases)
   - Jako [rozšíření sady Visual Studio](https://marketplace.visualstudio.com/items?itemName=ConnieYau.NETPortabilityAnalyzer)
-- [.NET API analyzer](../../standard/analyzers/api-analyzer.md) - Analyzátor Roslyn, který zjišťuje potenciální rizika kompatibility pro rozhraní API jazyka C# na různých platformách a detekuje volání zastaralá rozhraní API.
-
-Kromě toho se můžete pokusit portovat menší řešení nebo jednotlivé projekty do formátu souboru projektu .NET Core pomocí nástroje [CsprojToVs2017.](https://github.com/hvanbakel/CsprojToVs2017)
-
-> [!WARNING]
-> CsprojToVs2017 je nástroj třetí strany. Neexistuje žádná záruka, že bude fungovat pro všechny vaše projekty a může způsobit drobné změny v chování, které jste závislí na. CsprojToVs2017 by měl být použit jako _výchozí bod,_ který automatizuje základní věci, které lze automatizovat. Není zaručeným řešením migrace formátů souborů projektu.
+- [Rozhraní .NET API Analyzer](../../standard/analyzers/api-analyzer.md) – analyzátor Roslyn, který zjišťuje potenciální rizika kompatibility pro rozhraní API jazyka C# na různých platformách a detekuje volání zastaralých rozhraní API.
+- [Try-Convert](https://www.nuget.org/packages/try-convert/) -globální nástroj .NET Core, který může převést projekt nebo celé řešení na sadu .NET SDK, včetně přesunu desktopových aplikací do .NET Core. Nedoporučuje se, pokud máte navázánější sestavení (například vlastní úkoly, cíle nebo importy) a odmítáte mnoho typů projektů, které nejsou kompatibilní s .NET Core.

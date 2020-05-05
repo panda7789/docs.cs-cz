@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: b30280bb-fe75-44ed-8589-bcff081fae44
 topic_type:
 - apiref
-ms.openlocfilehash: a443332e4f2b0351e99754fae610af39268bb105
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.openlocfilehash: a3214fc4e52918716f183720c7c616b1fff74bdb
+ms.sourcegitcommit: de7f589de07a9979b6ac28f54c3e534a617d9425
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76789272"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "82795674"
 ---
 # <a name="cordebugsetcontextflag-enumeration"></a>CorDebugSetContextFlag – výčet
 Označuje, zda je kontext z aktivního (nebo koncového) rámce v zásobníku nebo byl vypočítán odvinutím z jiného rámce.  
@@ -42,18 +42,18 @@ typedef enum CorDebugSetContextFlag
 |SET_CONTEXT_FLAG_UNWIND_FRAME|Kontext byl vypočítán odvinutím z jiného rámce.|  
   
 ## <a name="remarks"></a>Poznámky  
- `CorDebugSetContextFlag` poskytuje hodnoty, které jsou používány metodou [ICorDebugStackWalk:: SetContext](icordebugstackwalk-setcontext-method.md) .  
+ `CorDebugSetContextFlag`poskytuje hodnoty, které jsou používány metodou [ICorDebugStackWalk:: SetContext](icordebugstackwalk-setcontext-method.md) .  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** CorDebug. idl, CorDebug. h  
   
  **Knihovna:** CorGuids. lib  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Výčty pro ladění](debugging-enumerations.md)
+- [Ladění výčtů](debugging-enumerations.md)
 - [Ladění](index.md)

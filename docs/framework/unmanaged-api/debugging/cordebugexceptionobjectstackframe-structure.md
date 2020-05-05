@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 542cdd81-5ae7-4361-b0ef-1ae4775df258
 topic_type:
 - apiref
-ms.openlocfilehash: 2845c15d67e287d6efb0cd0a9c940b69de3a1c0c
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.openlocfilehash: 7eccaf984b187e463195bb3804f87bbb2c7ad47b
+ms.sourcegitcommit: de7f589de07a9979b6ac28f54c3e534a617d9425
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76789367"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "82795921"
 ---
 # <a name="cordebugexceptionobjectstackframe-structure"></a>CorDebugExceptionObjectStackFrame – struktura
 Představuje informace o snímku zásobníku z objektu výjimky.  
@@ -48,15 +48,15 @@ typedef struct CorDebugExceptionObjectStackFrame {
  Volající musí uvolnit ukazatel na objekt ICorDebugModule, jakmile se již nepoužívá.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** CorDebug. idl, CorDebug. h  
   
  **Knihovna:** CorGuids. lib  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Struktury pro ladění](debugging-structures.md)
 - [Ladění](index.md)

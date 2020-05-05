@@ -6,21 +6,21 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 03/14/2020
 ms.locfileid: "74644045"
 ---
-### <a name="change-of-access-for-accessibleobjectruntimeidfirstitem"></a>Změna přístupu pro AccessibleObject.RuntimeIDFirstItem
+### <a name="change-of-access-for-accessibleobjectruntimeidfirstitem"></a>Změna přístupu pro třída AccessibleObject. RuntimeIDFirstItem
 
-Počínaje rozhraním .NET Core 3.0 `AccessibleObject.RuntimeIDFirstItem` RC1 `protected` se `internal`přístupnost nástroje změnila z na .
+Od verze .NET Core 3,0 RC1 se přístupnost `AccessibleObject.RuntimeIDFirstItem` pro změnila z `protected` na. `internal`
 
 #### <a name="change-description"></a>Popis změny
 
-Počínaje rozhraním .NET Core 3.0 `protected`Preview 4 bylo `AccessibleObject.RuntimeIDFirstItem` pole . Počínaje rozhraním .NET Core 3.0 RC1 `internal` se změnil z `protected` na zarovnat s usnadněním přístupu pole v rozhraní .NET Framework.
+Od verze .NET Core 3,0 Preview 4 bylo `AccessibleObject.RuntimeIDFirstItem` `protected`pole. Od verze .NET Core 3,0 RC1 se změnila z `protected` verze na `internal` , aby byla zarovnaná s přístupností pole v .NET Framework.
 
-#### <a name="version-introduced"></a>Zavedená verze
+#### <a name="version-introduced"></a>Představená verze
 
-3.0 RC1
+3,0 RC1
 
 #### <a name="recommended-action"></a>Doporučená akce
 
-Změna může ovlivnit vás, pokud jste vyvinuli aplikaci .NET Core <xref:System.Windows.Forms.AccessibleObject> s typem, který je odvozen od pole a přistupuje k němu. `RuntimeIDFirstItem` Pokud se jedná o tento případ, můžete definovat místní konstantu takto:
+Tato změna může mít vliv na to, zda jste vytvořili aplikaci .NET Core s typem, který je odvozen <xref:System.Windows.Forms.AccessibleObject> z a přistupuje k `RuntimeIDFirstItem` poli. V takovém případě můžete definovat místní konstantu následujícím způsobem:
 
 ```csharp
 const int RuntimeIDFirstItem = 0x2a;
@@ -32,7 +32,7 @@ Windows Forms
 
 #### <a name="affected-apis"></a>Ovlivněná rozhraní API
 
-- Nelze zjistit pomocí analýzy rozhraní API.
+- Nedá se detekovat přes analýzu rozhraní API.
 
 <!-- 
 

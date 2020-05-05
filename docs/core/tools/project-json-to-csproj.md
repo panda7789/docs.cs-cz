@@ -1,26 +1,26 @@
 ---
-title: srovnání project.json a csproj
-description: Podívejte se na mapování mezi elementy project.json a csproj.
+title: porovnání Project. JSON a csproj
+description: Viz mapování mezi elementy Project. JSON a csproj.
 author: natemcmaster
 ms.date: 03/13/2017
-ms.openlocfilehash: abe515007b47b415ac33e3350a29edced1784d68
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: feaa7e9cde7e1aa4dfe94d699b14a018fc728f27
+ms.sourcegitcommit: de7f589de07a9979b6ac28f54c3e534a617d9425
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "77451102"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "82794621"
 ---
-# <a name="a-mapping-between-projectjson-and-csproj-properties"></a>Mapování mezi vlastnostmi project.json a csproj
+# <a name="a-mapping-between-projectjson-and-csproj-properties"></a>Mapování mezi vlastnostmi Project. JSON a csproj
 
-Podle [Nate McMaster](https://github.com/natemcmaster)
+Od [Tomáš McMaster](https://github.com/natemcmaster)
 
-Během vývoje nástrojů .NET Core byla provedena důležitá změna návrhu, která již nepodporuje soubory *project.json* a místo toho přesune projekty .NET Core do formátu MSBuild/csproj.
+Během vývoje nástrojů .NET Core byly provedeny důležité změny návrhu, aby už nepodporovaly soubory *Project. JSON* , a místo toho můžete přesunout projekty .NET Core do formátu MSBuild/csproj.
 
-Tento článek ukazuje, jak jsou nastavení v *aplikaci project.json* reprezentována ve formátu MSBuild/csproj, takže se můžete dozvědět, jak používat nový formát a pochopit změny provedené nástroji pro migraci při upgradu projektu na nejnovější verzi nástroje.
+Tento článek ukazuje, jak jsou nastavení v *Project. JSON* zastoupena ve formátu MSBuild/csproj, abyste se mohli naučit používat nový formát a pochopit změny provedené nástroji pro migraci při upgradu projektu na nejnovější verzi nástroje.
 
 ## <a name="the-csproj-format"></a>Formát csproj
 
-Nový formát \*.csproj je formát založený na jazyce XML. Následující příklad ukazuje kořenový uzel projektu .NET `Microsoft.NET.Sdk`Core pomocí . Pro webové projekty je `Microsoft.NET.Sdk.Web`použitá sada SDK .
+Nový formát, \*. csproj, je formát založený na jazyce XML. Následující příklad ukazuje kořenový uzel projektu .NET Core pomocí `Microsoft.NET.Sdk`. Pro webové projekty je `Microsoft.NET.Sdk.Web`použita sada SDK.
 
 ```xml
 <Project Sdk="Microsoft.NET.Sdk">
@@ -28,7 +28,7 @@ Nový formát \*.csproj je formát založený na jazyce XML. Následující př�
 </Project>
 ```
 
-## <a name="common-top-level-properties"></a>Běžné vlastnosti nejvyšší úrovně
+## <a name="common-top-level-properties"></a>Společné vlastnosti nejvyšší úrovně
 
 ### <a name="name"></a>jméno
 
@@ -38,9 +38,9 @@ Nový formát \*.csproj je formát založený na jazyce XML. Následující př�
 }
 ```
 
-Již není podporováno. V csproj je to určeno názvem souboru projektu, který obvykle odpovídá názvu adresáře. Například, `MyProjectName.csproj`.
+Již není podporováno. V hodnotě csproj je určena název souboru projektu, který obvykle odpovídá názvu adresáře. Například, `MyProjectName.csproj`.
 
-Ve výchozím nastavení název souboru projektu také `<AssemblyName>` `<PackageId>` určuje hodnotu vlastností a.
+Ve výchozím nastavení určuje název souboru projektu také hodnotu vlastností `<AssemblyName>` a. `<PackageId>`
 
 ```xml
 <PropertyGroup>
@@ -49,8 +49,8 @@ Ve výchozím nastavení název souboru projektu také `<AssemblyName>` `<Packag
 </PropertyGroup>
 ```
 
-Bude `<AssemblyName>` mít jinou `<PackageId>` hodnotu, než kdyby `buildOptions\outputName` vlastnost byla definována v project.json.
-Další informace naleznete v [tématu Další běžné možnosti sestavení](#other-common-build-options).
+`<AssemblyName>` Bude mít jinou hodnotu, než `<PackageId>` kdyby `buildOptions\outputName` byla vlastnost definována v Project. JSON.
+Další informace najdete v tématu [Další běžné možnosti sestavení](#other-common-build-options).
 
 ### <a name="version"></a>version
 
@@ -60,7 +60,7 @@ Další informace naleznete v [tématu Další běžné možnosti sestavení](#o
 }
 ```
 
-Použijte `VersionPrefix` vlastnosti a: `VersionSuffix`
+Použijte vlastnosti `VersionPrefix` a `VersionSuffix` :
 
 ```xml
 <PropertyGroup>
@@ -77,7 +77,7 @@ Můžete také použít `Version` vlastnost, ale to může přepsat nastavení v
 </PropertyGroup>
 ```
 
-### <a name="other-common-root-level-options"></a>Další běžné možnosti kořenové úrovně
+### <a name="other-common-root-level-options"></a>Další běžné možnosti na úrovni root
 
 ```json
 {
@@ -104,9 +104,9 @@ And it's really great!</Description>
 </PropertyGroup>
 ```
 
-## <a name="frameworks"></a>Rámců
+## <a name="frameworks"></a>rozhraní
 
-### <a name="one-target-framework"></a>Jeden cílový rámec
+### <a name="one-target-framework"></a>Jedna cílová architektura
 
 ```json
 {
@@ -122,7 +122,7 @@ And it's really great!</Description>
 </PropertyGroup>
 ```
 
-### <a name="multiple-target-frameworks"></a>Více cílových architektur
+### <a name="multiple-target-frameworks"></a>Více cílových rozhraní
 
 ```json
 {
@@ -133,7 +133,7 @@ And it's really great!</Description>
 }
 ```
 
-Pomocí `TargetFrameworks` této vlastnosti můžete definovat seznam cílových architektur. Pomocí středníku oddělte více hodnot architektury.
+Pomocí `TargetFrameworks` vlastnosti Definujte seznam cílových rozhraní. K oddělení více hodnot rozhraní použijte středník.
 
 ```xml
 <PropertyGroup>
@@ -144,10 +144,10 @@ Pomocí `TargetFrameworks` této vlastnosti můžete definovat seznam cílových
 ## <a name="dependencies"></a>závislosti
 
 > [!IMPORTANT]
-> Pokud je závislost **projekt** a nikoli balíček, formát se liší.
-> Další informace naleznete v části [typ závislosti.](#dependency-type)
+> Pokud se jedná o **projekt** , nikoli o balíček, formát se liší.
+> Další informace najdete v části [typ závislosti](#dependency-type) .
 
-### <a name="netstandardlibrary-metapackage"></a>Metabalíček NETStandard.Library
+### <a name="netstandardlibrary-metapackage"></a>NETStandard. Library Metapackage
 
 ```json
 {
@@ -163,7 +163,7 @@ Pomocí `TargetFrameworks` této vlastnosti můžete definovat seznam cílových
 </PropertyGroup>
 ```
 
-### <a name="microsoftnetcoreapp-metapackage"></a>Metabalíček Microsoft.NETCore.App
+### <a name="microsoftnetcoreapp-metapackage"></a>Microsoft. NETCore. app Metapackage
 
 ```json
 {
@@ -179,7 +179,7 @@ Pomocí `TargetFrameworks` této vlastnosti můžete definovat seznam cílových
 </PropertyGroup>
 ```
 
-Všimněte `<RuntimeFrameworkVersion>` si, že hodnota v projektu migrované je určena verzí sady SDK, kterou jste nainstalovali.
+Všimněte si, `<RuntimeFrameworkVersion>` že hodnota v migrovaném projektu je určena verzí sady SDK, kterou jste nainstalovali.
 
 ### <a name="top-level-dependencies"></a>Závislosti nejvyšší úrovně
 
@@ -197,7 +197,7 @@ Všimněte `<RuntimeFrameworkVersion>` si, že hodnota v projektu migrované je 
 </ItemGroup>
 ```
 
-### <a name="per-framework-dependencies"></a>Závislosti podle rámců
+### <a name="per-framework-dependencies"></a>Závislosti pro rozhraní
 
 ```json
 {
@@ -255,7 +255,7 @@ Všimněte `<RuntimeFrameworkVersion>` si, že hodnota v projektu migrované je 
 
 ### <a name="dependency-type"></a>typ závislosti
 
-#### <a name="type-project"></a>typ: projekt
+#### <a name="type-project"></a>Typ: projekt
 
 ```json
 {
@@ -276,9 +276,9 @@ Všimněte `<RuntimeFrameworkVersion>` si, že hodnota v projektu migrované je 
 ```
 
 > [!NOTE]
-> Tím dojde k `dotnet pack --version-suffix $suffix` přerušení způsobu, jakým určuje verzi závislosti odkazu na projekt.
+> Tím dojde k přerušení způsobu, `dotnet pack --version-suffix $suffix` který určuje verzi závislosti odkazu na projekt.
 
-#### <a name="type-build"></a>typ: sestavení
+#### <a name="type-build"></a>Typ: Build
 
 ```json
 {
@@ -297,7 +297,7 @@ Všimněte `<RuntimeFrameworkVersion>` si, že hodnota v projektu migrované je 
 </ItemGroup>
 ```
 
-#### <a name="type-platform"></a>typ: platforma
+#### <a name="type-platform"></a>Typ: platforma
 
 ```json
 {
@@ -310,9 +310,9 @@ Všimněte `<RuntimeFrameworkVersion>` si, že hodnota v projektu migrované je 
 }
 ```
 
-Neexistuje žádný ekvivalent v csproj.
+V hodnotě csproj není žádný ekvivalent.
 
-## <a name="runtimes"></a>Runtime
+## <a name="runtimes"></a>moduly runtime
 
 ```json
 {
@@ -330,14 +330,14 @@ Neexistuje žádný ekvivalent v csproj.
 </PropertyGroup>
 ```
 
-### <a name="standalone-apps-self-contained-deployment"></a>Samostatné aplikace (samostatné nasazení)
+### <a name="standalone-apps-self-contained-deployment"></a>Samostatné aplikace (samostatně zahrnuté nasazení)
 
-V souboru project.json `runtimes` definování oddílu znamená, že aplikace byla během vytváření a publikování samostatná.
-V MSBuild všechny projekty jsou *přenosné* během sestavení, ale mohou být publikovány jako samostatné.
+V aplikaci Project. JSON definování `runtimes` oddílu znamená, že aplikace byla při sestavování a publikování samostatná.
+V nástroji MSBuild jsou všechny projekty *přenosné* během sestavení, ale mohou být publikovány jako samostatné.
 
 `dotnet publish --framework netcoreapp1.0 --runtime osx.10.11-x64`
 
-Další informace naleznete [v tématu Samostatné nasazení (SCD)](../deploying/index.md#publish-self-contained).
+Další informace najdete v tématu [samostatná nasazení (SCD)](../deploying/index.md#publish-self-contained).
 
 ## <a name="tools"></a>nástroje
 
@@ -356,11 +356,11 @@ Další informace naleznete [v tématu Samostatné nasazení (SCD)](../deploying
 ```
 
 > [!NOTE]
-> `imports`na nástroje nejsou podporovány v csproj. Nástroje, které potřebují import, nebudou `Microsoft.NET.Sdk`fungovat s novým .
+> `imports`v nástrojích csproj nejsou podporovány nástroje. Nástroje, které potřebují importy, nebudou s novým `Microsoft.NET.Sdk`nástrojem fungovat.
 
 ## <a name="buildoptions"></a>buildOptions
 
-Viz také [Soubory](#files).
+Viz také [soubory](#files).
 
 ### <a name="emitentrypoint"></a>emitEntryPoint
 
@@ -378,7 +378,7 @@ Viz také [Soubory](#files).
 </PropertyGroup>
 ```
 
-Pokud `emitEntryPoint` `false`byla , `OutputType` hodnota je `Library`převedena na , což je výchozí hodnota:
+Pokud `emitEntryPoint` byla `false`, hodnota `OutputType` je převedena na `Library`, což je výchozí hodnota:
 
 ```json
 {
@@ -395,7 +395,7 @@ Pokud `emitEntryPoint` `false`byla , `OutputType` hodnota je `Library`převedena
 </PropertyGroup>
 ```
 
-### <a name="keyfile"></a>Keyfile
+### <a name="keyfile"></a>keyFile
 
 ```json
 {
@@ -405,7 +405,7 @@ Pokud `emitEntryPoint` `false`byla , `OutputType` hodnota je `Library`převedena
 }
 ```
 
-Prvek `keyFile` se rozbalí na tři vlastnosti v MSBuild:
+Element `keyFile` se v nástroji MSBuild rozšíří na tři vlastnosti:
 
 ```xml
 <PropertyGroup>
@@ -447,9 +447,9 @@ Prvek `keyFile` se rozbalí na tři vlastnosti v MSBuild:
 
 ## <a name="packoptions"></a>packOptions
 
-Viz také [Soubory](#files).
+Viz také [soubory](#files).
 
-### <a name="common-pack-options"></a>Běžné možnosti balení
+### <a name="common-pack-options"></a>Možnosti běžných balíčků
 
 ```json
 {
@@ -485,8 +485,8 @@ Viz také [Soubory](#files).
 </PropertyGroup>
 ```
 
-Neexistuje žádný ekvivalent `owners` pro prvek v MSBuild.
-Pro `summary`, můžete použít MSBuild `<Description>` vlastnost, i `summary` když hodnota není migrována automaticky do této [`description`](#other-common-root-level-options) vlastnosti, protože tato vlastnost je mapována na prvek.
+Neexistuje žádný ekvivalent pro `owners` element v MSBuild.
+Pro `summary`můžete použít vlastnost MSBuild `<Description>` , i když hodnota `summary` není migrována automaticky do této vlastnosti, protože tato vlastnost je mapována na [`description`](#other-common-root-level-options) element.
 
 ## <a name="scripts"></a>skripty
 
@@ -499,7 +499,7 @@ Pro `summary`, můžete použít MSBuild `<Description>` vlastnost, i `summary` 
 }
 ```
 
-Jejich ekvivalent v MSBuild jsou [cíle](/visualstudio/msbuild/msbuild-targets):
+Jejich ekvivalent v nástroji MSBuild jsou [cíle](/visualstudio/msbuild/msbuild-targets):
 
 ```xml
 <Target Name="MyPreCompileTarget" BeforeTargets="Build">
@@ -512,7 +512,7 @@ Jejich ekvivalent v MSBuild jsou [cíle](/visualstudio/msbuild/msbuild-targets):
 </Target>
 ```
 
-## <a name="runtimeoptions"></a>možnosti běhu
+## <a name="runtimeoptions"></a>runtimeOptions
 
 ```json
 {
@@ -528,7 +528,7 @@ Jejich ekvivalent v MSBuild jsou [cíle](/visualstudio/msbuild/msbuild-targets):
 }
 ```
 
-Všechna nastavení v této skupině, s výjimkou vlastnosti System.GC.Server, jsou umístěna do souboru nazvaného *runtimeconfig.template.json* ve složce projektu s možnostmi, které jsou během procesu migrace přeneseny na kořenový objekt:
+Všechna nastavení v této skupině, s výjimkou vlastnosti System. GC. Server, jsou umístěna do souboru s názvem *runtimeconfig. template. JSON* ve složce projektu s možnostmi, které byly během procesu migrace vyvolány na kořenový objekt:
 
 ```json
 {
@@ -541,7 +541,7 @@ Všechna nastavení v této skupině, s výjimkou vlastnosti System.GC.Server, j
 }
 ```
 
-Vlastnost "System.GC.Server" je migrována do souboru csproj:
+Vlastnost System. GC. Server je migrována do souboru csproj:
 
 ```xml
 <PropertyGroup>
@@ -549,7 +549,7 @@ Vlastnost "System.GC.Server" je migrována do souboru csproj:
 </PropertyGroup>
 ```
 
-Můžete však nastavit všechny tyto hodnoty ve vlastnostech csproj i MSBuild:
+Všechny tyto hodnoty však můžete nastavit v souboru csproj a také ve vlastnostech MSBuild:
 
 ```xml
 <PropertyGroup>
@@ -569,13 +569,13 @@ Můžete však nastavit všechny tyto hodnoty ve vlastnostech csproj i MSBuild:
 }
 ```
 
-Není podporováno v csproj. Místo toho je nutné vytvořit soubory obsahu zahrnout do souboru *.nuspec.*
-Další informace naleznete [v tématu Including content files](/nuget/schema/nuspec#including-content-files).
+Ve csproj se nepodporuje. Místo toho je nutné v souboru *. nuspec* vytvořit zahrnuté soubory obsahu.
+Další informace najdete v tématu [zahrnutí souborů obsahu](/nuget/schema/nuspec#including-content-files).
 
 ## <a name="files"></a>files
 
-V *souboru project.json*lze sestavení a balíček rozšířit tak, aby se zkompilovaly a vkládalo z různých složek.
-V MSBuild se to provádí pomocí [položek](/visualstudio/msbuild/common-msbuild-project-items). Následující příklad je běžný převod:
+V *aplikaci Project. JSON*bylo možné sestavení a sadu rozšířit, aby se daly kompilovat a vkládat z různých složek.
+V nástroji MSBuild to je prováděno pomocí [položek](/visualstudio/msbuild/common-msbuild-project-items). Následující příklad je běžným převodem:
 
 ```json
 {
@@ -621,21 +621,21 @@ V MSBuild se to provádí pomocí [položek](/visualstudio/msbuild/common-msbuil
 ```
 
 > [!NOTE]
-> Mnoho výchozích [vzorů globbing](https://en.wikipedia.org/wiki/Glob_(programming)) udávají automaticky sada .NET Core SDK.
-> Další informace naleznete [v tématu Default Compile Item Values](https://aka.ms/sdkimplicititems).
+> Mnohé z výchozích [vzorů nástroje pro expanzi názvů](https://en.wikipedia.org/wiki/Glob_(programming)) jsou automaticky přidány .NET Core SDK.
+> Další informace naleznete v tématu [výchozí hodnoty položky kompilace](https://aka.ms/sdkimplicititems).
 
-Podporují všechny `ItemGroup` prvky `Include` `Exclude`MSBuild , a `Remove`.
+Všechny prvky `ItemGroup` MSBuild podporují `Include`, `Exclude`a `Remove`.
 
-Rozložení balíčku uvnitř .nupkg lze `PackagePath="path"`upravit pomocí .
+Rozložení balíčku uvnitř soubor. nupkg lze upravit pomocí `PackagePath="path"`.
 
-S `Content`výjimkou , většina `Pack="true"` skupin položek vyžadují explicitně přidání, které mají být zahrnuty do balíčku. `Content`bude umístěn ve složce *obsahu* v balíčku, `<IncludeContentInPack>` protože vlastnost `true` MSBuild je ve výchozím nastavení nastavena na.
-Další informace naleznete [v tématu Včetně obsahu v balíčku](/nuget/schema/msbuild-targets#including-content-in-a-package).
+S výjimkou `Content`je většina skupin položek, které `Pack="true"` jsou součástí balíčku, vyžadovat explicitní přidání. `Content`bude umístěn do složky *obsahu* v balíčku, protože vlastnost MSBuild `<IncludeContentInPack>` je ve výchozím nastavení nastavena na `true` hodnotu.
+Další informace najdete v tématu [zahrnutí obsahu do balíčku](/nuget/schema/msbuild-targets#including-content-in-a-package).
 
-`PackagePath="%(Identity)"`je krátký způsob nastavení cesty balíčku k cestě k souboru relativnímu k projektu.
+`PackagePath="%(Identity)"`je krátký způsob, jak nastavit cestu balíčku k relativní cestě k souboru projektu.
 
 ## <a name="testrunner"></a>testRunner
 
-### <a name="xunit"></a>xJednotka
+### <a name="xunit"></a>xUnit
 
 ```json
 {
@@ -675,4 +675,4 @@ Další informace naleznete [v tématu Včetně obsahu v balíčku](/nuget/schem
 
 ## <a name="see-also"></a>Viz také
 
-- [Přehled změn v zastřihovaném zastřihění/](../tools/cli-msbuild-architecture.md)
+- [Podrobný přehled změn v rozhraní příkazového řádku](cli-msbuild-architecture.md)

@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: e4412dc2-c338-4cfb-94d8-f682095dd2b1
 topic_type:
 - apiref
-ms.openlocfilehash: 2be827e12db765485ee889d6a4a19a982dad5d54
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.openlocfilehash: 4a65a98ee04c3870dae2f49b3da2a8e72b1ffae4
+ms.sourcegitcommit: de7f589de07a9979b6ac28f54c3e534a617d9425
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76778372"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "82795827"
 ---
 # <a name="cordebuginternalframetype-enumeration"></a>CorDebugInternalFrameType – výčet
 Určuje typ rámce zásobníku. Tento výčet používá metoda [ICorDebugInternalFrame:: getframetype –](icordebuginternalframe-getframetype-method.md) .  
@@ -47,7 +47,7 @@ typedef enum CorDebugInternalFrameType {
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`STUBFRAME_NONE`|Hodnota null. Metoda `ICorDebugInternalFrame::GetFrameType` nikdy tuto hodnotu nevrací.|  
+|`STUBFRAME_NONE`|Hodnota null. `ICorDebugInternalFrame::GetFrameType` Metoda nikdy tuto hodnotu nevrátí.|  
 |`STUBFRAME_M2U`|Nespravovaný rámeček se zástupnými procedurami spravovaného do nespravovaného kódu|  
 |`STUBFRAME_U2M`|Nespravovaný rámec nespravovaného kódu.|  
 |`STUBFRAME_APPDOMAIN_TRANSITION`|Přechod mezi doménami aplikace.|  
@@ -60,14 +60,14 @@ typedef enum CorDebugInternalFrameType {
 |`STUBFRAME_JIT_COMPILATION`|Modul runtime je kompilace metody JIT.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** CorDebug. idl, CorDebug. h  
   
  **Knihovna:** CorGuids. lib  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Výčty pro ladění](debugging-enumerations.md)
+- [Ladění výčtů](debugging-enumerations.md)

@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: a3ccdf18-4ec6-494d-9024-48e5c8c724f5
 topic_type:
 - apiref
-ms.openlocfilehash: 69a8aabd1d79bb9bb4248259c99124ce50677600
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.openlocfilehash: 9c22ca47a606da0949529cf55655bbcde19cb5c9
+ms.sourcegitcommit: de7f589de07a9979b6ac28f54c3e534a617d9425
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76789247"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "82795661"
 ---
 # <a name="cordebugthreadstate-enumeration"></a>CorDebugThreadState – výčet
 Určuje stav vlákna pro ladění.  
@@ -41,19 +41,19 @@ typedef enum CorDebugThreadState {
 |`THREAD_SUSPEND`|Vlákno nelze spustit.|  
   
 ## <a name="remarks"></a>Poznámky  
- Ladicí program používá výčet `CorDebugThreadState` k řízení provádění vlákna. Stav vlákna lze nastavit pomocí metody [ICorDebugThread:: SetDebugState –](icordebugthread-setdebugstate-method.md) nebo [ICorDebugController:: SetAllThreadsDebugState –](icordebugcontroller-setallthreadsdebugstate-method.md) .  
+ Ladicí program používá `CorDebugThreadState` výčet k řízení provádění vlákna. Stav vlákna lze nastavit pomocí metody [ICorDebugThread:: SetDebugState –](icordebugthread-setdebugstate-method.md) nebo [ICorDebugController:: SetAllThreadsDebugState –](icordebugcontroller-setallthreadsdebugstate-method.md) .  
   
- Zpětné volání, které je poskytované [hostujícímu rozhraní API](../../../../docs/framework/unmanaged-api/hosting/index.md) , povoluje pumpování zpráv, takže stav přerušeno není potřeba.  
+ Zpětné volání, které je poskytované [hostujícímu rozhraní API](../hosting/index.md) , povoluje pumpování zpráv, takže stav přerušeno není potřeba.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** CorDebug. idl, CorDebug. h  
   
  **Knihovna:** CorGuids. lib  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Výčty pro ladění](debugging-enumerations.md)
+- [Ladění výčtů](debugging-enumerations.md)
