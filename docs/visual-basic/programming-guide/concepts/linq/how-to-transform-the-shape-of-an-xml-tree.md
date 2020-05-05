@@ -1,29 +1,29 @@
 ---
-title: 'Postupy: transformace tvaru stromu XML'
+title: 'Postupy: Transformace tvaru stromu XML'
 ms.date: 07/20/2015
 ms.assetid: 84b60854-48b2-452c-87f2-77d53e1d653a
-ms.openlocfilehash: 67ffd5f50572c0deba75c664ffd0e12ecfabf730
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 24cf02d84b498fc4b41238b1adaf7316cb139a10
+ms.sourcegitcommit: de7f589de07a9979b6ac28f54c3e534a617d9425
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74332421"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "82796103"
 ---
-# <a name="how-to-transform-the-shape-of-an-xml-tree-visual-basic"></a><span data-ttu-id="05a5f-102">Postupy: transformace obrazce stromu XML (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="05a5f-102">How to: Transform the Shape of an XML Tree (Visual Basic)</span></span>
-<span data-ttu-id="05a5f-103">*Tvar* dokumentu XML odkazuje na jeho názvy elementů, názvy atributů a charakteristiky jeho hierarchie.</span><span class="sxs-lookup"><span data-stu-id="05a5f-103">The *shape* of an XML document refers to its element names, attribute names, and the characteristics of its hierarchy.</span></span>  
+# <a name="how-to-transform-the-shape-of-an-xml-tree-visual-basic"></a><span data-ttu-id="dcb48-102">Postupy: transformace obrazce stromu XML (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="dcb48-102">How to: Transform the Shape of an XML Tree (Visual Basic)</span></span>
+<span data-ttu-id="dcb48-103">*Tvar* dokumentu XML odkazuje na jeho názvy elementů, názvy atributů a charakteristiky jeho hierarchie.</span><span class="sxs-lookup"><span data-stu-id="dcb48-103">The *shape* of an XML document refers to its element names, attribute names, and the characteristics of its hierarchy.</span></span>  
   
- <span data-ttu-id="05a5f-104">Někdy budete muset změnit tvar dokumentu XML.</span><span class="sxs-lookup"><span data-stu-id="05a5f-104">Sometimes you will have to change the shape of an XML document.</span></span> <span data-ttu-id="05a5f-105">Například může být nutné odeslat existující dokument XML do jiného systému, který vyžaduje různé názvy elementů a atributů.</span><span class="sxs-lookup"><span data-stu-id="05a5f-105">For example, you might have to send an existing XML document to another system that requires different element and attribute names.</span></span> <span data-ttu-id="05a5f-106">Můžete procházet dokumentem, odstraňovat a předávat prvky podle potřeby, ale použití funkční konstrukce má za následek čitelnější a udržovatelný kód.</span><span class="sxs-lookup"><span data-stu-id="05a5f-106">You could go through the document, deleting and renaming elements as required, but using functional construction results in more readable and maintainable code.</span></span> <span data-ttu-id="05a5f-107">Další informace o konstrukci funkčnosti najdete v tématu [funkční konstrukce (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/functional-construction-linq-to-xml.md).</span><span class="sxs-lookup"><span data-stu-id="05a5f-107">For more information about functional construction, see [Functional Construction (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/functional-construction-linq-to-xml.md).</span></span>  
+ <span data-ttu-id="dcb48-104">Někdy budete muset změnit tvar dokumentu XML.</span><span class="sxs-lookup"><span data-stu-id="dcb48-104">Sometimes you will have to change the shape of an XML document.</span></span> <span data-ttu-id="dcb48-105">Například může být nutné odeslat existující dokument XML do jiného systému, který vyžaduje různé názvy elementů a atributů.</span><span class="sxs-lookup"><span data-stu-id="dcb48-105">For example, you might have to send an existing XML document to another system that requires different element and attribute names.</span></span> <span data-ttu-id="dcb48-106">Můžete procházet dokumentem, odstraňovat a předávat prvky podle potřeby, ale použití funkční konstrukce má za následek čitelnější a udržovatelný kód.</span><span class="sxs-lookup"><span data-stu-id="dcb48-106">You could go through the document, deleting and renaming elements as required, but using functional construction results in more readable and maintainable code.</span></span> <span data-ttu-id="dcb48-107">Další informace o konstrukci funkčnosti najdete v tématu [funkční konstrukce (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/functional-construction-linq-to-xml.md).</span><span class="sxs-lookup"><span data-stu-id="dcb48-107">For more information about functional construction, see [Functional Construction (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/functional-construction-linq-to-xml.md).</span></span>  
   
- <span data-ttu-id="05a5f-108">První příklad změní organizaci dokumentu XML.</span><span class="sxs-lookup"><span data-stu-id="05a5f-108">The first example changes the organization of the XML document.</span></span> <span data-ttu-id="05a5f-109">Přesouvá komplexní prvky z jednoho umístění ve stromové struktuře do jiného.</span><span class="sxs-lookup"><span data-stu-id="05a5f-109">It moves complex elements from one location in the tree to another.</span></span>  
+ <span data-ttu-id="dcb48-108">První příklad změní organizaci dokumentu XML.</span><span class="sxs-lookup"><span data-stu-id="dcb48-108">The first example changes the organization of the XML document.</span></span> <span data-ttu-id="dcb48-109">Přesouvá komplexní prvky z jednoho umístění ve stromové struktuře do jiného.</span><span class="sxs-lookup"><span data-stu-id="dcb48-109">It moves complex elements from one location in the tree to another.</span></span>  
   
- <span data-ttu-id="05a5f-110">Druhý příklad v tomto tématu vytvoří dokument XML s jiným tvarem, než zdrojový dokument.</span><span class="sxs-lookup"><span data-stu-id="05a5f-110">The second example in this topic creates an XML document with a different shape than the source document.</span></span> <span data-ttu-id="05a5f-111">Změní velká a malá písmena názvů prvků, přejmenuje některé prvky a ponechá některé prvky ze zdrojového stromu z transformované stromové struktury.</span><span class="sxs-lookup"><span data-stu-id="05a5f-111">It changes the casing of the element names, renames some elements, and leaves some elements from the source tree out of the transformed tree.</span></span>  
+ <span data-ttu-id="dcb48-110">Druhý příklad v tomto tématu vytvoří dokument XML s jiným tvarem, než zdrojový dokument.</span><span class="sxs-lookup"><span data-stu-id="dcb48-110">The second example in this topic creates an XML document with a different shape than the source document.</span></span> <span data-ttu-id="dcb48-111">Změní velká a malá písmena názvů prvků, přejmenuje některé prvky a ponechá některé prvky ze zdrojového stromu z transformované stromové struktury.</span><span class="sxs-lookup"><span data-stu-id="dcb48-111">It changes the casing of the element names, renames some elements, and leaves some elements from the source tree out of the transformed tree.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="05a5f-112">Příklad</span><span class="sxs-lookup"><span data-stu-id="05a5f-112">Example</span></span>  
- <span data-ttu-id="05a5f-113">Následující kód změní tvar souboru XML pomocí vložených výrazů dotazů.</span><span class="sxs-lookup"><span data-stu-id="05a5f-113">The following code changes the shape of an XML file using embedded query expressions.</span></span>  
+## <a name="example"></a><span data-ttu-id="dcb48-112">Příklad</span><span class="sxs-lookup"><span data-stu-id="dcb48-112">Example</span></span>  
+ <span data-ttu-id="dcb48-113">Následující kód změní tvar souboru XML pomocí vložených výrazů dotazů.</span><span class="sxs-lookup"><span data-stu-id="dcb48-113">The following code changes the shape of an XML file using embedded query expressions.</span></span>  
   
- <span data-ttu-id="05a5f-114">Zdrojový dokument XML v tomto příkladu obsahuje element `Customers` pod prvkem `Root`, který obsahuje všechny zákazníky.</span><span class="sxs-lookup"><span data-stu-id="05a5f-114">The source XML document in this example contains a `Customers` element under the `Root` element that contains all customers.</span></span> <span data-ttu-id="05a5f-115">Obsahuje také prvek `Orders` pod prvkem `Root`, který obsahuje všechny objednávky.</span><span class="sxs-lookup"><span data-stu-id="05a5f-115">It also contains an `Orders` element under the `Root` element that contains all orders.</span></span> <span data-ttu-id="05a5f-116">Tento příklad vytvoří nový strom XML, ve kterém jsou objednávky pro každého zákazníka obsaženy v prvku `Orders` v rámci `Customer` elementu.</span><span class="sxs-lookup"><span data-stu-id="05a5f-116">This example creates a new XML tree in which the orders for each customer are contained in an `Orders` element within the `Customer` element.</span></span> <span data-ttu-id="05a5f-117">Původní dokument obsahuje také prvek `CustomerID` v prvku `Order`; Tento prvek bude odebrán z dokumentu opětovného tvaru.</span><span class="sxs-lookup"><span data-stu-id="05a5f-117">The original document also contains a `CustomerID` element in the `Order` element; this element will be removed from the re-shaped document.</span></span>  
+ <span data-ttu-id="dcb48-114">Zdrojový dokument XML v tomto příkladu obsahuje `Customers` element pod `Root` prvkem, který obsahuje všechny zákazníky.</span><span class="sxs-lookup"><span data-stu-id="dcb48-114">The source XML document in this example contains a `Customers` element under the `Root` element that contains all customers.</span></span> <span data-ttu-id="dcb48-115">Obsahuje také `Orders` element pod `Root` prvkem, který obsahuje všechny objednávky.</span><span class="sxs-lookup"><span data-stu-id="dcb48-115">It also contains an `Orders` element under the `Root` element that contains all orders.</span></span> <span data-ttu-id="dcb48-116">Tento příklad vytvoří nový strom XML, ve kterém jsou objednávky pro každého zákazníka obsaženy v `Orders` elementu v rámci `Customer` elementu.</span><span class="sxs-lookup"><span data-stu-id="dcb48-116">This example creates a new XML tree in which the orders for each customer are contained in an `Orders` element within the `Customer` element.</span></span> <span data-ttu-id="dcb48-117">Původní dokument obsahuje také `CustomerID` element v `Order` elementu; Tento prvek bude odebrán z dokumentu opětovného tvaru.</span><span class="sxs-lookup"><span data-stu-id="dcb48-117">The original document also contains a `CustomerID` element in the `Order` element; this element will be removed from the re-shaped document.</span></span>  
   
- <span data-ttu-id="05a5f-118">Tento příklad používá následující dokument XML: [ukázkový soubor XML: zákazníci a objednávky (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-customers-and-orders-linq-to-xml.md).</span><span class="sxs-lookup"><span data-stu-id="05a5f-118">This example uses the following XML document: [Sample XML File: Customers and Orders (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-customers-and-orders-linq-to-xml.md).</span></span>  
+ <span data-ttu-id="dcb48-118">Tento příklad používá následující dokument XML: [ukázkový soubor XML: zákazníci a objednávky (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-customers-and-orders-linq-to-xml.md).</span><span class="sxs-lookup"><span data-stu-id="dcb48-118">This example uses the following XML document: [Sample XML File: Customers and Orders (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-customers-and-orders-linq-to-xml.md).</span></span>  
   
 ```vb  
 Dim co As XElement = XElement.Load("CustomersOrders.xml")  
@@ -53,10 +53,10 @@ Dim newCustOrd = _
 Console.WriteLine(newCustOrd)  
 ```  
   
- <span data-ttu-id="05a5f-119">Tento kód generuje následující výstup:</span><span class="sxs-lookup"><span data-stu-id="05a5f-119">This code produces the following output:</span></span>  
+ <span data-ttu-id="dcb48-119">Výsledkem tohoto kódu je následující výstup:</span><span class="sxs-lookup"><span data-stu-id="dcb48-119">This code produces the following output:</span></span>  
   
 ```xml  
-        <Root>  
+<Root>  
 <Customer CustomerID="GREAL">  
   <CompanyName>Great Lakes Food Market</CompanyName>  
   <ContactName>Howard Snyder</ContactName>  
@@ -86,15 +86,16 @@ Console.WriteLine(newCustOrd)
   </FullAddress>  
   <Orders />  
 </Customer>  
-. . .  
+...
+</Root>
 ```  
   
-## <a name="example"></a><span data-ttu-id="05a5f-120">Příklad</span><span class="sxs-lookup"><span data-stu-id="05a5f-120">Example</span></span>  
- <span data-ttu-id="05a5f-121">Tento příklad přejmenuje některé prvky a převede některé atributy na prvky.</span><span class="sxs-lookup"><span data-stu-id="05a5f-121">This example renames some elements and converts some attributes to elements.</span></span>  
+## <a name="example"></a><span data-ttu-id="dcb48-120">Příklad</span><span class="sxs-lookup"><span data-stu-id="dcb48-120">Example</span></span>  
+ <span data-ttu-id="dcb48-121">Tento příklad přejmenuje některé prvky a převede některé atributy na prvky.</span><span class="sxs-lookup"><span data-stu-id="dcb48-121">This example renames some elements and converts some attributes to elements.</span></span>  
   
- <span data-ttu-id="05a5f-122">Kód volá `ConvertAddress`, která vrací seznam objektů <xref:System.Xml.Linq.XElement>.</span><span class="sxs-lookup"><span data-stu-id="05a5f-122">The code calls `ConvertAddress`, which returns a list of <xref:System.Xml.Linq.XElement> objects.</span></span> <span data-ttu-id="05a5f-123">Argumentem metody je dotaz, který určuje `Address` složitý prvek, kde `Type` atribut má hodnotu `"Shipping"`.</span><span class="sxs-lookup"><span data-stu-id="05a5f-123">The argument to the method is a query that determines the `Address` complex element where the `Type` attribute has a value of `"Shipping"`.</span></span>  
+ <span data-ttu-id="dcb48-122">Kód volá `ConvertAddress`, který vrátí seznam <xref:System.Xml.Linq.XElement> objektů.</span><span class="sxs-lookup"><span data-stu-id="dcb48-122">The code calls `ConvertAddress`, which returns a list of <xref:System.Xml.Linq.XElement> objects.</span></span> <span data-ttu-id="dcb48-123">Argumentem metody je dotaz, který určuje `Address` komplexní prvek, kde `Type` atribut má hodnotu. `"Shipping"`</span><span class="sxs-lookup"><span data-stu-id="dcb48-123">The argument to the method is a query that determines the `Address` complex element where the `Type` attribute has a value of `"Shipping"`.</span></span>  
   
- <span data-ttu-id="05a5f-124">Tento příklad používá následující dokument XML: [vzorový soubor XML: typická nákupní objednávka (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-typical-purchase-order-linq-to-xml.md).</span><span class="sxs-lookup"><span data-stu-id="05a5f-124">This example uses the following XML document: [Sample XML File: Typical Purchase Order (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-typical-purchase-order-linq-to-xml.md).</span></span>  
+ <span data-ttu-id="dcb48-124">Tento příklad používá následující dokument XML: [vzorový soubor XML: typická nákupní objednávka (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-typical-purchase-order-linq-to-xml.md).</span><span class="sxs-lookup"><span data-stu-id="dcb48-124">This example uses the following XML document: [Sample XML File: Typical Purchase Order (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-typical-purchase-order-linq-to-xml.md).</span></span>  
   
 ```vb  
 Function ConvertAddress(ByVal add As XElement) As IEnumerable(Of XElement)  
@@ -127,7 +128,7 @@ Sub Main()
 End Sub  
 ```  
   
- <span data-ttu-id="05a5f-125">Tento kód generuje následující výstup:</span><span class="sxs-lookup"><span data-stu-id="05a5f-125">This code produces the following output:</span></span>  
+ <span data-ttu-id="dcb48-125">Výsledkem tohoto kódu je následující výstup:</span><span class="sxs-lookup"><span data-stu-id="dcb48-125">This code produces the following output:</span></span>  
   
 ```xml  
 <PO>  
@@ -142,6 +143,6 @@ End Sub
 </PO>  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="05a5f-126">Viz také:</span><span class="sxs-lookup"><span data-stu-id="05a5f-126">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="dcb48-126">Viz také</span><span class="sxs-lookup"><span data-stu-id="dcb48-126">See also</span></span>
 
-- [<span data-ttu-id="05a5f-127">Projekce a transformace (LINQ to XML) (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="05a5f-127">Projections and Transformations (LINQ to XML) (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/projections-and-transformations-linq-to-xml.md)
+- [<span data-ttu-id="dcb48-127">Projekce a transformace (LINQ to XML) (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="dcb48-127">Projections and Transformations (LINQ to XML) (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/projections-and-transformations-linq-to-xml.md)
