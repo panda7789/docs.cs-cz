@@ -13,7 +13,7 @@ ms.locfileid: "82158317"
 
 **Tento článek se týká:** ✔️ .NET Core 2. x SDK a novějších verzí
 
-## <a name="name"></a>Název
+## <a name="name"></a>Name
 
 `dotnet add reference`– Přidá odkazy na projekt na projekt (P2P).
 

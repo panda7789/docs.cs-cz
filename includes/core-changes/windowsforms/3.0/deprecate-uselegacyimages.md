@@ -6,23 +6,23 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 03/14/2020
 ms.locfileid: "75937117"
 ---
-### <a name="uselegacyimages-compatibility-switch-not-supported"></a>Přepínač kompatibility UseLegacyImages není podporován.
+### <a name="uselegacyimages-compatibility-switch-not-supported"></a>Přepínač kompatibility UseLegacyImages se nepodporuje.
 
-Přepínač `Switch.System.Windows.Forms.UseLegacyImages` kompatibility, který byl zaveden v rozhraní .NET Framework 4.8, není ve formulářích Windows v rozhraní .NET Core 3.0 podporován.
+Přepínač `Switch.System.Windows.Forms.UseLegacyImages` kompatibility, který byl představen v .NET Framework 4,8, není podporován v model Windows Forms v rozhraní .net Core 3,0.
 
 #### <a name="change-description"></a>Popis změny
 
-Počínaje rozhraním .NET Framework 4.8, přepínač `Switch.System.Windows.Forms.UseLegacyImages` kompatibility řeší možné problémy s škálováním obrázků ve scénářích ClickOnce v prostředích s vysokým dpi. Pokud je `true`přepínač nastaven na , umožňuje uživateli obnovit změnu velikosti starších bitů na displejích s vysokým rozlišením DPI, jejichž měřítko je nastaveno na více než 100 %. Další informace najdete [v tématu .NET Framework 4.8 Poznámky k verzi](https://github.com/microsoft/dotnet/blob/master/releases/net48/dotnet48-changes.md#clickonce) na GitHubu.
+Počínaje .NET Framework 4,8 se přepínač kompatibility, `Switch.System.Windows.Forms.UseLegacyImages` který se zabývá možnostmi problémy s škálováním obrazu ve scénářích ClickOnce v prostředích s VYSOKÝm rozlišením DPI. Když je tato `true`možnost nastavená na, přepínač umožní uživateli obnovit starší verzi obrazu na vysokém rozlišení DPI, jejichž škálování je nastavené na větší než 100%. Další informace najdete v [poznámkách k verzi .NET Framework 4,8](https://github.com/microsoft/dotnet/blob/master/releases/net48/dotnet48-changes.md#clickonce) na GitHubu.
 
-V rozhraní .NET `Switch.System.Windows.Forms.UseLegacyImages` Core není přepínač podporován.
+V rozhraní .NET Core není `Switch.System.Windows.Forms.UseLegacyImages` přepínač podporován.
 
-#### <a name="version-introduced"></a>Zavedená verze
+#### <a name="version-introduced"></a>Představená verze
 
-3.0 Náhled 9
+3,0 Preview 9
 
 #### <a name="recommended-action"></a>Doporučená akce
 
-Odstraňte spínač. Přepínač není podporován a nejsou k dispozici žádné alternativní funkce.
+Odeberte přepínač. Přepínač není podporován a nejsou k dispozici žádné alternativní funkce.
 
 #### <a name="category"></a>Kategorie
 
@@ -30,7 +30,7 @@ Windows Forms
 
 #### <a name="affected-apis"></a>Ovlivněná rozhraní API
 
-- Žádný
+- Žádné
 
 <!-- 
 

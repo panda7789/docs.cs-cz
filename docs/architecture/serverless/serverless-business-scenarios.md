@@ -35,7 +35,7 @@ Naučte se používat funkce pro spouštění logiky na straně serveru a vytvá
 - Monitorování
 - Vývoj, testování a nasazení
 
-[Vytváření aplikací bez serveru](https://docs.microsoft.com/learn/paths/create-serverless-applications/)
+[Vytváření bezserverových aplikací](https://docs.microsoft.com/learn/paths/create-serverless-applications/)
 
 ## <a name="customer-reviews"></a>Recenze zákazníků
 
@@ -107,7 +107,7 @@ V této ukázce se dozvíte, jak použít Durable Functions vzorek ventilátoru 
 
 - [Azure Functions v systému Linux](https://docs.microsoft.com/samples/azure-samples/functions-linux-custom-image/azure-functions-on-linux-custom-image-tutorial-sample-project/)
 - [Zpracování velkých objemů dat: MapReduce bez serveru v Azure](https://docs.microsoft.com/samples/azure-samples/durablefunctions-mapreduce-dotnet/big-data-processing-serverless-mapreduce-on-azure/)
-- [Vytváření aplikací bez serveru](https://docs.microsoft.com/learn/paths/create-serverless-applications/)
+- [Vytváření bezserverových aplikací](https://docs.microsoft.com/learn/paths/create-serverless-applications/)
 - [Aplikace pro revize zákazníků pomocí Cognitive Services](https://docs.microsoft.com/samples/azure-samples/functions-customer-reviews/customer-reviews-cognitive-services/)
 - [Zpracování a ověřování souborů pomocí Azure Functions, Logic Apps a Durable Functions](https://docs.microsoft.com/samples/azure-samples/serverless-file-validation/file-processing-and-validation-using-azure-functions-logic-apps-and-durable-functions/)
 - [Implementace jednoduché funkce Azure Functions s klientem Xamarin. Forms](https://docs.microsoft.com/samples/azure-samples/functions-xamarin-getting-started/implementing-a-simple-azure-function-with-a-xamarinforms-client/)

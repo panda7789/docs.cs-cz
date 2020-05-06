@@ -6,23 +6,23 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 03/14/2020
 ms.locfileid: "75937014"
 ---
-### <a name="enablevisualstylevalidation-compatibility-switch-not-supported"></a>Přepínač kompatibility EnableVisualStyleValidation není podporován.
+### <a name="enablevisualstylevalidation-compatibility-switch-not-supported"></a>Přepínač kompatibility EnableVisualStyleValidation se nepodporuje.
 
-Přepínač `Switch.System.Windows.Forms.EnableVisualStyleValidation` kompatibility není ve Formulářích systému Windows v rozhraní .NET Core 3.0 podporován.
+V `Switch.System.Windows.Forms.EnableVisualStyleValidation` model Windows Forms .net Core 3,0 není podporován přepínač kompatibility.
 
 #### <a name="change-description"></a>Popis změny
 
-V rozhraní .NET `Switch.System.Windows.Forms.EnableVisualStyleValidation` Framework přepínač kompatibility povolil aplikaci odhlásit se z ověřování vizuálních stylů dodávaných v číselné podobě.
+V .NET Framework přepínač `Switch.System.Windows.Forms.EnableVisualStyleValidation` kompatibility povolil aplikaci, aby odhlásila ověření vizuálních stylů zadaných v číselném tvaru.
 
-V rozhraní .NET `Switch.System.Windows.Forms.EnableVisualStyleValidation` Core není přepínač podporován.
+V rozhraní .NET Core není `Switch.System.Windows.Forms.EnableVisualStyleValidation` přepínač podporován.
 
-#### <a name="version-introduced"></a>Zavedená verze
+#### <a name="version-introduced"></a>Představená verze
 
-3.0 Náhled 9
+3,0 Preview 9
 
 #### <a name="recommended-action"></a>Doporučená akce
 
-Odstraňte spínač. Přepínač není podporován a nejsou k dispozici žádné alternativní funkce.
+Odeberte přepínač. Přepínač není podporován a nejsou k dispozici žádné alternativní funkce.
 
 #### <a name="category"></a>Kategorie
 
@@ -30,7 +30,7 @@ Windows Forms
 
 #### <a name="affected-apis"></a>Ovlivněná rozhraní API
 
-- Žádný
+- Žádné
 
 <!-- 
 

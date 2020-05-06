@@ -1,5 +1,5 @@
 ---
-title: let klauzule - C# Reference
+title: let – Referenční dokumentace jazyka C#
 ms.date: 07/20/2015
 f1_keywords:
 - let_CSharpKeyword
@@ -8,31 +8,31 @@ helpviewer_keywords:
 - let keyword [C#]
 - let clause [C#]
 ms.assetid: 13c9c1a4-ce57-48ef-8e1b-4c2a59b99fb4
-ms.openlocfilehash: 3ce2b663e5678de6b53db610b489f85ab1427b9d
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: a6eee9a23fa28b78343e6479106eaa24ecf4caa6
+ms.sourcegitcommit: de7f589de07a9979b6ac28f54c3e534a617d9425
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79173585"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "82795362"
 ---
 # <a name="let-clause-c-reference"></a>let – klauzule (Referenční dokumentace jazyka C#)
 
-Ve výrazu dotazu je někdy užitečné uložit výsledek dílčího výrazu, aby bylo možné jej použít v následujících klauzulích. Můžete to provést `let` pomocí klíčového slova, které vytvoří novou proměnnou rozsahu a inicializuje ji s výsledkem výrazu, který zadáte. Po inicializování s hodnotou nelze proměnnou rozsahu použít k uložení jiné hodnoty. Pokud však proměnná rozsahu obsahuje dotazovatelný typ, může být dotazován.
+Ve výrazu dotazu je někdy užitečné ukládat výsledek dílčího výrazu, aby jej bylo možné použít v dalších klauzulích. Můžete to provést pomocí `let` klíčového slova, které vytvoří novou proměnnou rozsahu a inicializuje ji s výsledkem výrazu, který zadáte. Po inicializaci s hodnotou nelze proměnnou rozsahu použít k uložení jiné hodnoty. Nicméně pokud proměnná rozsahu obsahuje typ Queryable, může se dotazovat.
 
 ## <a name="example"></a>Příklad
 
-V následujícím `let` příkladu se používá dvěma způsoby:
+V následujícím příkladu `let` se používá dvěma způsoby:
 
-1. Chcete-li vytvořit výčet typu, který může být sám dotazován.
+1. Pro vytvoření vyčíslitelného typu, který se může dotazovat sám na sebe.
 
-2. Chcete-li povolit `ToLower` dotaz volat pouze `word`jednou na proměnné rozsahu . Bez `let`použití , budete `ToLower` muset volat v každém `where` predikátu v klauzuli.
+2. Aby dotaz mohl volat `ToLower` pouze jednou pro proměnnou `word`rozsahu. Bez použití `let`by bylo nutné zavolat `ToLower` do každého predikátu v `where` klauzuli.
 
 [!code-csharp[cscsrefQueryKeywords#28](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsCsrefQueryKeywords/CS/Let.cs#28)]
 
 ## <a name="see-also"></a>Viz také
 
-- [Odkaz jazyka C#](../../language-reference/index.md)
+- [Reference jazyka C#](../index.md)
 - [Klíčová slova dotazu (LINQ)](query-keywords.md)
-- [LINQ v jazyce C#](../../linq/index.md)
+- [LINQ v jazyku C#](../../linq/index.md)
 - [LINQ (Language Integrated Query)](../../programming-guide/concepts/linq/index.md)
 - [Zpracování výjimek ve výrazech dotazů](../../linq/handle-exceptions-in-query-expressions.md)

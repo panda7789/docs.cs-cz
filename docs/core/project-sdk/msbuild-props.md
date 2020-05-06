@@ -3,16 +3,16 @@ title: Vlastnosti nástroje MSBuild pro Microsoft. NET. SDK
 description: Referenční informace o vlastnostech MSBuild, které jsou srozumitelné pro .NET Core SDK.
 ms.date: 02/14/2020
 ms.topic: reference
-ms.openlocfilehash: 105b7d67ea24515ea88481cb4a4fe42d2a03cfd0
-ms.sourcegitcommit: 1cb64b53eb1f253e6a3f53ca9510ef0be1fd06fe
+ms.openlocfilehash: 800ff59310d8437d7f770bf20a5bdf37714f8515
+ms.sourcegitcommit: de7f589de07a9979b6ac28f54c3e534a617d9425
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82506783"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "82795570"
 ---
 # <a name="msbuild-properties-for-net-core-sdk-projects"></a>Vlastnosti nástroje MSBuild pro projekty .NET Core SDK
 
-Tato stránka popisuje vlastnosti nástroje MSBuild pro konfiguraci projektů .NET Core.
+Tato stránka popisuje vlastnosti nástroje MSBuild pro konfiguraci projektů .NET Core. Můžete zadat *metadata* pro každou vlastnost jako podřízené prvky vlastnosti.
 
 > [!NOTE]
 > Tato stránka je Nedokončená práce a neobsahuje seznam všech užitečných vlastností MSBuild pro .NET Core SDK. Seznam běžných vlastností MSBuild najdete v tématu [běžné vlastnosti MSBuild](/visualstudio/msbuild/common-msbuild-project-properties).
@@ -28,11 +28,9 @@ Tato stránka popisuje vlastnosti nástroje MSBuild pro konfiguraci projektů .N
 `TargetFramework` Vlastnost určuje cílovou verzi rozhraní .NET Framework pro aplikaci, která implicitně odkazuje na [Metapackage](../packages.md#metapackages). Seznam platných monikerů cílového rozhraní Framework naleznete v tématu [cílové architektury v projektech ve stylu sady SDK](../../standard/frameworks.md#supported-target-framework-versions).
 
 ```xml
-<Project Sdk="Microsoft.NET.Sdk">
-  <PropertyGroup>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
-  </PropertyGroup>
-</Project>
+<PropertyGroup>
+  <TargetFramework>netcoreapp3.1</TargetFramework>
+</PropertyGroup>
 ```
 
 Další informace naleznete v tématu [cílová rozhraní v projektech ve stylu sady SDK](../../standard/frameworks.md).
@@ -45,11 +43,9 @@ Vlastnost použijte `TargetFrameworks` , pokud chcete, aby aplikace byla cílena
 > Tato vlastnost je ignorována `TargetFramework` , pokud je zadáno (jednotné).
 
 ```xml
-<Project Sdk="Microsoft.NET.Sdk">
-  <PropertyGroup>
-    <TargetFrameworks>netcoreapp3.1;net462</TargetFrameworks>
-  </PropertyGroup>
-</Project>
+<PropertyGroup>
+  <TargetFrameworks>netcoreapp3.1;net462</TargetFrameworks>
+</PropertyGroup>
 ```
 
 Další informace naleznete v tématu [cílová rozhraní v projektech ve stylu sady SDK](../../standard/frameworks.md).
@@ -62,12 +58,24 @@ Další informace naleznete v tématu [cílová rozhraní v projektech ve stylu 
 `NetStandardImplicitPackageVersion` Vlastnost použijte, pokud chcete zadat verzi rozhraní, která je nižší než verze [Metapackage](../packages.md#metapackages) . Soubor projektu v následujícím příkladu cílí `netstandard1.3` , ale používá 1.6.0 verzi. `NETStandard.Library`
 
 ```xml
-<Project Sdk="Microsoft.NET.Sdk">
-  <PropertyGroup>
-    <TargetFramework>netstandard1.3</TargetFramework>
-    <NetStandardImplicitPackageVersion>1.6.0</NetStandardImplicitPackageVersion>
-  </PropertyGroup>
-</Project>
+<PropertyGroup>
+  <TargetFramework>netstandard1.3</TargetFramework>
+  <NetStandardImplicitPackageVersion>1.6.0</NetStandardImplicitPackageVersion>
+</PropertyGroup>
+```
+
+## <a name="package-properties"></a>Vlastnosti balíčku
+
+Můžete `PackageId`zadat vlastnosti, `PackageVersion`například,, `PackageIcon`, `Title`a `Description` pro popis balíčku, který je vytvořen z projektu. Informace o těchto a dalších vlastnostech naleznete v tématu [targeting pack](/nuget/reference/msbuild-targets#pack-target).
+
+```xml
+<PropertyGroup>
+  ...
+  <PackageId>ClassLibDotNetStandard</PackageId>
+  <Version>1.0.0</Version>
+  <Authors>John Doe</Authors>
+  <Company>Contoso</Company>
+</PropertyGroup>
 ```
 
 ## <a name="publish-properties"></a>Vlastnosti publikování
@@ -82,11 +90,9 @@ Další informace naleznete v tématu [cílová rozhraní v projektech ve stylu 
 `RuntimeIdentifier` Vlastnost umožňuje zadat jeden [identifikátor modulu runtime (RID)](../rid-catalog.md) pro projekt. Identifikátor RID umožňuje publikování samostatně zahrnutého nasazení.
 
 ```xml
-<Project Sdk="Microsoft.NET.Sdk">
-  <PropertyGroup>
-    <RuntimeIdentifier>ubuntu.16.04-x64</RuntimeIdentifier>
-  </PropertyGroup>
-</Project>
+<PropertyGroup>
+  <RuntimeIdentifier>ubuntu.16.04-x64</RuntimeIdentifier>
+</PropertyGroup>
 ```
 
 ### <a name="runtimeidentifiers"></a>RuntimeIdentifiers
@@ -97,11 +103,9 @@ Další informace naleznete v tématu [cílová rozhraní v projektech ve stylu 
 > `RuntimeIdentifier`(jednotné) může poskytovat rychlejší sestavení, pokud je potřeba jenom jeden modul runtime.
 
 ```xml
-<Project Sdk="Microsoft.NET.Sdk">
-  <PropertyGroup>
-    <RuntimeIdentifiers>win10-x64;osx.10.11-x64;ubuntu.16.04-x64</RuntimeIdentifiers>
-  </PropertyGroup>
-</Project>
+<PropertyGroup>
+  <RuntimeIdentifiers>win10-x64;osx.10.11-x64;ubuntu.16.04-x64</RuntimeIdentifiers>
+</PropertyGroup>
 ```
 
 ### <a name="trimmerrootassembly"></a>TrimmerRootAssembly
@@ -111,11 +115,9 @@ Další informace naleznete v tématu [cílová rozhraní v projektech ve stylu 
 Následující kód XML vylučuje `System.Security` sestavení z ořezávání.
 
 ```xml
-<Project Sdk="Microsoft.NET.Sdk">
-  <ItemGroup>
-    <TrimmerRootAssembly Include="System.Security" />
-  </ItemGroup>
-</Project>
+<ItemGroup>
+  <TrimmerRootAssembly Include="System.Security" />
+</ItemGroup>
 ```
 
 ### <a name="useapphost"></a>UseAppHost
@@ -125,11 +127,9 @@ Následující kód XML vylučuje `System.Security` sestavení z ořezávání.
 V rozhraní .NET Core 3,0 a novějších verzích je ve výchozím nastavení vytvořen spustitelný soubor závislý na rozhraní. Nastavte `UseAppHost` vlastnost na `false` hodnotu pro zakázání generování spustitelného souboru.
 
 ```xml
-<Project Sdk="Microsoft.NET.Sdk">
-  <PropertyGroup>
-    <UseAppHost>false</UseAppHost>
-  </PropertyGroup>
-</Project>
+<PropertyGroup>
+  <UseAppHost>false</UseAppHost>
+</PropertyGroup>
 ```
 
 Další informace o nasazení naleznete v tématu [nasazení aplikace .NET Core](../deploying/index.md).
@@ -143,11 +143,9 @@ Další informace o nasazení naleznete v tématu [nasazení aplikace .NET Core]
 `LangVersion` Vlastnost umožňuje zadat konkrétní verzi programovacího jazyka. Například pokud chcete mít přístup k funkcím verze Preview jazyka C#, `LangVersion` nastavte `preview`na.
 
 ```xml
-<Project Sdk="Microsoft.NET.Sdk">
-  <PropertyGroup>
-    <LangVersion>preview</LangVersion>
-  </PropertyGroup>
-</Project>
+<PropertyGroup>
+  <LangVersion>preview</LangVersion>
+</PropertyGroup>
 ```
 
 Další informace najdete v tématu [Správa verzí jazyka C#](../../csharp/language-reference/configure-language-version.md#override-a-default).
@@ -171,11 +169,9 @@ Můžete nakonfigurovat některé chování za běhu zadáním vlastností MSBui
 `ConcurrentGarbageCollection` Vlastnost konfiguruje, zda je povoleno [uvolňování paměti na pozadí (souběžně)](../../standard/garbage-collection/background-gc.md) . Nastavte hodnotu na zakázat `false` uvolňování paměti na pozadí. Další informace najdete v tématu [System. GC. souběžné/COMPlus_gcConcurrent](../run-time-config/garbage-collector.md#systemgcconcurrentcomplus_gcconcurrent).
 
 ```xml
-<Project Sdk="Microsoft.NET.Sdk">
-  <PropertyGroup>
-    <ConcurrentGarbageCollection>false</ConcurrentGarbageCollection>
-  </PropertyGroup>
-</Project>
+<PropertyGroup>
+  <ConcurrentGarbageCollection>false</ConcurrentGarbageCollection>
+</PropertyGroup>
 ```
 
 ### <a name="invariantglobalization"></a>InvariantGlobalization
@@ -183,11 +179,9 @@ Můžete nakonfigurovat některé chování za běhu zadáním vlastností MSBui
 `InvariantGlobalization` Vlastnost nakonfiguruje, jestli aplikace běží v režimu *invariantní globalizace* , což znamená, že nemá přístup k datům specifickým pro jazykovou verzi. Nastavte hodnotu `true` pro spuštění v režimu invariantní globalizace. Další informace naleznete v tématu [invariantní režim](../run-time-config/globalization.md#invariant-mode).
 
 ```xml
-<Project Sdk="Microsoft.NET.Sdk">
-  <PropertyGroup>
-    <InvariantGlobalization>true</InvariantGlobalization>
-  </PropertyGroup>
-</Project>
+<PropertyGroup>
+  <InvariantGlobalization>true</InvariantGlobalization>
+</PropertyGroup>
 ```
 
 ### <a name="retainvmgarbagecollection"></a>RetainVMGarbageCollection
@@ -195,11 +189,9 @@ Můžete nakonfigurovat některé chování za běhu zadáním vlastností MSBui
 `RetainVMGarbageCollection` Vlastnost konfiguruje systém uvolňování paměti pro vložení odstraněných segmentů paměti v pohotovostním seznamu pro budoucí použití nebo uvolnění. Nastavením hodnoty určíte `true` , aby systém uvolňování paměti umístil segmenty do seznamu pohotovostních hodnot. Další informace najdete v tématu [System. GC. RetainVM/COMPlus_GCRetainVM](../run-time-config/garbage-collector.md#systemgcretainvmcomplus_gcretainvm).
 
 ```xml
-<Project Sdk="Microsoft.NET.Sdk">
-  <PropertyGroup>
-    <RetainVMGarbageCollection>true</RetainVMGarbageCollection>
-  </PropertyGroup>
-</Project>
+<PropertyGroup>
+  <RetainVMGarbageCollection>true</RetainVMGarbageCollection>
+</PropertyGroup>
 ```
 
 ### <a name="servergarbagecollection"></a>ServerGarbageCollection
@@ -207,11 +199,9 @@ Můžete nakonfigurovat některé chování za běhu zadáním vlastností MSBui
 `ServerGarbageCollection` Vlastnost konfiguruje, zda aplikace používá [uvolňování paměti pracovní stanice nebo uvolňování paměti serveru](../../standard/garbage-collection/workstation-server-gc.md). Nastavte hodnotu `true` na použít uvolňování paměti serveru. Další informace najdete v tématu [System. GC. Server/COMPlus_gcServer](../run-time-config/garbage-collector.md#systemgcservercomplus_gcserver).
 
 ```xml
-<Project Sdk="Microsoft.NET.Sdk">
-  <PropertyGroup>
-    <ServerGarbageCollection>true</ServerGarbageCollection>
-  </PropertyGroup>
-</Project>
+<PropertyGroup>
+  <ServerGarbageCollection>true</ServerGarbageCollection>
+</PropertyGroup>
 ```
 
 ### <a name="threadpoolmaxthreads"></a>ThreadPoolMaxThreads
@@ -219,11 +209,9 @@ Můžete nakonfigurovat některé chování za běhu zadáním vlastností MSBui
 `ThreadPoolMaxThreads` Vlastnost konfiguruje maximální počet vláken pro fond pracovních vláken. Další informace najdete v tématu [maximální počet vláken](../run-time-config/threading.md#maximum-threads).
 
 ```xml
-<Project Sdk="Microsoft.NET.Sdk">
-  <PropertyGroup>
-    <ThreadPoolMaxThreads>20</ThreadPoolMaxThreads>
-  </PropertyGroup>
-</Project>
+<PropertyGroup>
+  <ThreadPoolMaxThreads>20</ThreadPoolMaxThreads>
+</PropertyGroup>
 ```
 
 ### <a name="threadpoolminthreads"></a>ThreadPoolMinThreads
@@ -231,11 +219,9 @@ Můžete nakonfigurovat některé chování za běhu zadáním vlastností MSBui
 `ThreadPoolMinThreads` Vlastnost konfiguruje minimální počet vláken pro fond pracovních vláken. Další informace najdete v tématu [minimální počet vláken](../run-time-config/threading.md#minimum-threads).
 
 ```xml
-<Project Sdk="Microsoft.NET.Sdk">
-  <PropertyGroup>
-    <ThreadPoolMinThreads>4</ThreadPoolMinThreads>
-  </PropertyGroup>
-</Project>
+<PropertyGroup>
+  <ThreadPoolMinThreads>4</ThreadPoolMinThreads>
+</PropertyGroup>
 ```
 
 ### <a name="tieredcompilation"></a>TieredCompilation
@@ -243,11 +229,9 @@ Můžete nakonfigurovat některé chování za běhu zadáním vlastností MSBui
 `TieredCompilation` Vlastnost určuje, zda kompilátor JIT (just-in-time) používá [vrstvenou kompilaci](../whats-new/dotnet-core-3-0.md#tiered-compilation). Nastavte hodnotu `false` na zakázat vrstvenou kompilaci. Další informace najdete v tématu [vrstvená kompilace](../run-time-config/compilation.md#tiered-compilation).
 
 ```xml
-<Project Sdk="Microsoft.NET.Sdk">
-  <PropertyGroup>
-    <TieredCompilation>false</TieredCompilation>
-  </PropertyGroup>
-</Project>
+<PropertyGroup>
+  <TieredCompilation>false</TieredCompilation>
+</PropertyGroup>
 ```
 
 ### <a name="tieredcompilationquickjit"></a>TieredCompilationQuickJit
@@ -255,11 +239,9 @@ Můžete nakonfigurovat některé chování za běhu zadáním vlastností MSBui
 `TieredCompilationQuickJit` Vlastnost konfiguruje, zda kompilátor JIT používá rychlou JIT. Nastavením hodnoty `false` na zakážete rychlou JIT. Další informace najdete v tématu [rychlá JIT](../run-time-config/compilation.md#quick-jit).
 
 ```xml
-<Project Sdk="Microsoft.NET.Sdk">
-  <PropertyGroup>
-    <TieredCompilationQuickJit>false</TieredCompilationQuickJit>
-  </PropertyGroup>
-</Project>
+<PropertyGroup>
+  <TieredCompilationQuickJit>false</TieredCompilationQuickJit>
+</PropertyGroup>
 ```
 
 ### <a name="tieredcompilationquickjitforloops"></a>TieredCompilationQuickJitForLoops
@@ -267,51 +249,84 @@ Můžete nakonfigurovat některé chování za běhu zadáním vlastností MSBui
 `TieredCompilationQuickJitForLoops` Vlastnost konfiguruje, zda kompilátor JIT používá rychlou JIT v metodách, které obsahují smyčky. Nastavte hodnotu na, `true` Chcete-li povolit rychlou JIT v metodách, které obsahují smyčky. Další informace najdete v tématu [rychlá JIT pro smyčky](../run-time-config/compilation.md#quick-jit-for-loops).
 
 ```xml
-<Project Sdk="Microsoft.NET.Sdk">
-  <PropertyGroup>
-    <TieredCompilationQuickJitForLoops>true</TieredCompilationQuickJitForLoops>
-  </PropertyGroup>
-</Project>
+<PropertyGroup>
+  <TieredCompilationQuickJitForLoops>true</TieredCompilationQuickJitForLoops>
+</PropertyGroup>
 ```
 
-## <a name="nuget-packages"></a>Balíčky NuGet
+## <a name="reference-properties"></a>Vlastnosti odkazu
 
-- [PackageReference](#packagereference)
 - [AssetTargetFallback](#assettargetfallback)
-
-### <a name="packagereference"></a>PackageReference
-
-`PackageReference` Položka umožňuje zadat závislost NuGet. Například můžete chtít odkazovat na jeden balíček místo [Metapackage](../packages.md#metapackages). `Include` Atribut určuje ID balíčku. Fragment souboru projektu v následujícím příkladu odkazuje na balíček [System. Runtime](https://www.nuget.org/packages/System.Runtime/) .
-
-```xml
-<Project Sdk="Microsoft.NET.Sdk">
-  ...
-  <ItemGroup>
-    <PackageReference Include="System.Runtime" Version="4.3.0" />
-  </ItemGroup>
-</Project>
-```
-
-Další informace naleznete v tématu [odkazy na balíčky v souborech projektu](/nuget/consume-packages/package-references-in-project-files).
+- [PackageReference](#packagereference)
+- [ProjectReference](#projectreference)
+- [Referenční informace](#reference)
+- [Obnovit vlastnosti](#restore-properties)
 
 ### <a name="assettargetfallback"></a>AssetTargetFallback
 
-`AssetTargetFallback` Vlastnost umožňuje určit další kompatibilní verze rozhraní pro projekty, na které projekt odkazuje, a balíčky NuGet, které váš projekt spotřebovává. Pokud například zadáte závislost balíčku pomocí `PackageReference` , ale tento balíček neobsahuje prostředky, které jsou kompatibilní s vašimi projekty `TargetFramework`, vlastnost se `AssetTargetFallback` dostane do hry. Kompatibilita odkazovaného balíčku je znovu zkontrolována pomocí každé cílové architektury, která je určena v `AssetTargetFallback`.
+`AssetTargetFallback` Vlastnost umožňuje zadat další kompatibilní verze rozhraní pro odkazy na projekt a balíčky NuGet. Pokud například zadáte závislost balíčku pomocí `PackageReference` , ale tento balíček neobsahuje prostředky, které jsou kompatibilní s vašimi projekty `TargetFramework`, vlastnost se `AssetTargetFallback` dostane do hry. Kompatibilita odkazovaného balíčku je znovu zkontrolována pomocí každé cílové architektury, která je určena v `AssetTargetFallback`.
 
 Můžete nastavit `AssetTargetFallback` vlastnost na jednu nebo více [cílových verzí rozhraní .NET Framework](../../standard/frameworks.md#supported-target-framework-versions).
 
 ```xml
-<Project Sdk="Microsoft.NET.Sdk">
-  ...
-  <PropertyGroup>
-    <AssetTargetFallback>net461</AssetTargetFallback>
-  </PropertyGroup>
-</Project>
+<PropertyGroup>
+  <AssetTargetFallback>net461</AssetTargetFallback>
+</PropertyGroup>
 ```
 
-### <a name="pack-and-restore-targets"></a>Cíle sad a obnovení
+### <a name="packagereference"></a>PackageReference
 
-Byl zaveden `pack` MSBuild 15,1 `restore` a cílený pro vytváření a obnovování balíčků NuGet v rámci sestavení. Informace o vlastnostech MSBuild pro tyto cíle, včetně `PackageTargetFallback`, najdete v tématu [sada NuGet Pack a obnovení jako cíle MSBuild](/nuget/reference/msbuild-targets).
+`PackageReference` Definuje odkaz na balíček NuGet. Například můžete chtít odkazovat na jeden balíček místo [Metapackage](../packages.md#metapackages).
+
+`Include` Atribut určuje ID balíčku. `Version` Atribut určuje verzi nebo rozsah verzí. Informace o tom, jak zadat minimální verzi, maximální verzi, rozsah nebo přesnou shodu, najdete v tématu [rozsahy verzí](/nuget/concepts/package-versioning#version-ranges). Do odkazu na projekt můžete také přidat následující metadata: `IncludeAssets`, `ExcludeAssets`a. `PrivateAssets`
+
+Fragment souboru projektu v následujícím příkladu odkazuje na balíček [System. Runtime](https://www.nuget.org/packages/System.Runtime/) .
+
+```xml
+<ItemGroup>
+  <PackageReference Include="System.Runtime" Version="4.3.0" />
+</ItemGroup>
+```
+
+Další informace naleznete v tématu [odkazy na balíčky v souborech projektu](/nuget/consume-packages/package-references-in-project-files).
+
+### <a name="projectreference"></a>ProjectReference
+
+`ProjectReference` Položka definuje odkaz na jiný projekt. Odkazovaný projekt je přidán jako závislost balíčku NuGet, to znamená, že je zpracována jako `PackageReference`.
+
+`Include` Atribut určuje cestu k projektu. Do odkazu na projekt můžete také přidat následující metadata: `IncludeAssets`, `ExcludeAssets`a. `PrivateAssets`
+
+Fragment souboru projektu v následujícím příkladu odkazuje na projekt s názvem `Project2`.
+
+```xml
+<ItemGroup>
+  <ProjectReference Include="..\Project2.csproj" />
+</ItemGroup>
+```
+
+### <a name="reference"></a>Referenční informace
+
+`Reference` Položka definuje odkaz na soubor sestavení.
+
+`Include` Atribut určuje název souboru a `HintPath` podřízený element určuje cestu k sestavení.
+
+```xml
+<ItemGroup>
+  <Reference Include="MyAssembly">
+    <HintPath>..\..\Assemblies\MyAssembly.dll</HintPath>
+  </Reference>
+</ItemGroup>
+```
+
+### <a name="restore-properties"></a>Obnovit vlastnosti
+
+Při obnovení odkazovaného balíčku se nainstaluje všechny jeho přímé závislosti a všechny závislosti těchto závislostí. Obnovení balíčku můžete přizpůsobit zadáním vlastností, jako jsou `RestorePackagesPath` a `RestoreIgnoreFailedSources`. Další informace o těchto a dalších vlastnostech naleznete v tématu [Restore Target](/nuget/reference/msbuild-targets#restore-target).
+
+```xml
+<PropertyGroup>
+  <RestoreIgnoreFailedSource>true</RestoreIgnoreFailedSource>
+</PropertyGroup>
+```
 
 ## <a name="see-also"></a>Viz také
 

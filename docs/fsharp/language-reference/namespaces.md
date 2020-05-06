@@ -1,17 +1,17 @@
 ---
 title: Jmenné prostory
-description: Naučte se F# , jak obor názvů umožňuje organizovat kód do oblastí souvisejících funkcí tím, že umožňuje připojit název k seskupení prvků programu.
+description: 'Přečtěte si, jak obor názvů F # umožňuje organizovat kód do oblastí souvisejících funkcí tím, že umožňuje připojit název k seskupení prvků programu.'
 ms.date: 12/08/2018
-ms.openlocfilehash: a55da1592b04c64576b4c66de61b5ca137289a6f
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: bf71843349434a1ea91c58dbc0477373dbb0c449
+ms.sourcegitcommit: de7f589de07a9979b6ac28f54c3e534a617d9425
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73425047"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "82796129"
 ---
 # <a name="namespaces"></a>Jmenné prostory
 
-Obor názvů umožňuje organizovat kód do oblastí souvisejících funkcí tím, že umožňuje připojit název k seskupení prvků F# programu. Obory názvů jsou obvykle prvky nejvyšší úrovně F# v souborech.
+Obor názvů umožňuje organizovat kód do oblastí souvisejících funkcí tím, že umožňuje připojit název k seskupení prvků programu F #. Obory názvů jsou obvykle prvky nejvyšší úrovně v souborech F #.
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -27,11 +27,11 @@ Obory názvů nemohou přímo obsahovat hodnoty a funkce. Místo toho musí být
 
 Komentáře XML mohou být deklarovány nad oborem názvů, ale jsou ignorovány. Direktivy kompilátoru mohou být také deklarovány nad oborem názvů.
 
-Obory názvů lze deklarovat explicitně s klíčovým slovem Namespace nebo implicitně při deklaraci modulu. K deklaraci oboru názvů explicitně použijte klíčové slovo Namespace následovaný názvem oboru názvů. Následující příklad ukazuje soubor kódu, který deklaruje obor názvů `Widgets` s typem a modulem zahrnutým v tomto oboru názvů.
+Obory názvů lze deklarovat explicitně s klíčovým slovem Namespace nebo implicitně při deklaraci modulu. K deklaraci oboru názvů explicitně použijte klíčové slovo Namespace následovaný názvem oboru názvů. Následující příklad ukazuje soubor kódu, který deklaruje obor názvů `Widgets` s typem a modul obsažený v tomto oboru názvů.
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-2/snippet6406.fs)]
 
-Pokud je celý obsah souboru v jednom modulu, můžete také deklarovat obory názvů implicitně pomocí klíčového slova `module` a zadáním nového názvu oboru názvů v plně kvalifikovaném názvu modulu. Následující příklad ukazuje soubor kódu, který deklaruje obor názvů `Widgets` a modul `WidgetsModule`, který obsahuje funkci.
+Pokud je celý obsah souboru v jednom modulu, můžete také deklarovat obory názvů implicitně pomocí `module` klíčového slova a zadáním nového názvu oboru názvů v plně kvalifikovaném názvu modulu. Následující příklad ukazuje soubor kódu, který deklaruje obor názvů `Widgets` a modul `WidgetsModule`, který obsahuje funkci.
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-2/snippet6401.fs)]
 
@@ -39,7 +39,7 @@ Následující kód je ekvivalentní předchozímu kódu, ale modul je místní 
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/namespaces/snippet6402.fs)]
 
-Pokud je ve stejném souboru v jednom nebo více oborech názvů více než jeden modul, je nutné použít deklarace místních modulů. Pokud používáte deklarace místních modulů, nemůžete použít kvalifikovaný obor názvů v deklaracích modulů. Následující kód ukazuje soubor, který má deklaraci oboru názvů a dvě deklarace místních modulů. V tomto případě jsou moduly obsaženy přímo v oboru názvů; neexistuje žádný implicitně vytvořený modul, který má stejný název jako soubor. Jakýkoli jiný kód v souboru, jako je například vazba `do`, je v oboru názvů, ale ne ve vnitřních modulech, takže je nutné kvalifikovat člena modulu `widgetFunction` pomocí názvu modulu.
+Pokud je ve stejném souboru v jednom nebo více oborech názvů více než jeden modul, je nutné použít deklarace místních modulů. Pokud používáte deklarace místních modulů, nemůžete použít kvalifikovaný obor názvů v deklaracích modulů. Následující kód ukazuje soubor, který má deklaraci oboru názvů a dvě deklarace místních modulů. V tomto případě jsou moduly obsaženy přímo v oboru názvů; neexistuje žádný implicitně vytvořený modul, který má stejný název jako soubor. Jakýkoli jiný kód v souboru, jako je například `do` vazba, je v oboru názvů, ale ne ve vnitřních modulech, takže je nutné kvalifikovat člen `widgetFunction` modulu pomocí názvu modulu.
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-2/snippet6403.fs)]
 
@@ -62,11 +62,11 @@ Následující příklad ukazuje, jak deklarovat vnořený obor názvů.
 
 ## <a name="namespaces-in-files-and-assemblies"></a>Obory názvů v souborech a sestaveních
 
-Obory názvů mohou zahrnovat více souborů v jednom projektu nebo kompilaci. Pojem *fragment oboru názvů* popisuje část oboru názvů, která je obsažena v jednom souboru. Obory názvů mohou také zahrnovat více sestavení. Například obor názvů `System` zahrnuje celou .NET Framework, která zahrnuje mnoho sestavení a obsahuje mnoho vnořených oborů názvů.
+Obory názvů mohou zahrnovat více souborů v jednom projektu nebo kompilaci. Pojem *fragment oboru názvů* popisuje část oboru názvů, která je obsažena v jednom souboru. Obory názvů mohou také zahrnovat více sestavení. Například `System` obor názvů zahrnuje celou .NET Framework, která zahrnuje mnoho sestavení a obsahuje mnoho vnořených oborů názvů.
 
 ## <a name="global-namespace"></a>Globální obor názvů
 
-Pro vložení názvů do oboru názvů na nejvyšší úrovni .NET použijte předdefinovaný `global` oboru názvů.
+Předdefinovaný obor názvů `global` slouží k umístění názvů do oboru názvů na nejvyšší úrovni .NET.
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-2/snippet6407.fs)]
 
@@ -76,7 +76,7 @@ Globální můžete použít také k odkazování na obor názvů .NET nejvyšš
 
 ## <a name="recursive-namespaces"></a>Rekurzivní obory názvů
 
-Obory názvů lze také deklarovat jako rekurzivní, aby bylo možné veškerý obsažený kód vzájemně rekurzivní.  To se provádí prostřednictvím `namespace rec`. Použití `namespace rec` může zmírnit některé bolesti v neschopnost psát vzájemně referenční kód mezi typy a moduly. Zde je příklad:
+Obory názvů lze také deklarovat jako rekurzivní, aby bylo možné veškerý obsažený kód vzájemně rekurzivní.  To se provádí prostřednictvím `namespace rec`. Použití aplikace `namespace rec` může zmírnit některé bolesti v neschopnost psát vzájemně referenční kód mezi typy a moduly. Zde je příklad:
 
 ```fsharp
 namespace rec MutualReferences
@@ -86,8 +86,6 @@ type PeelState = Peeled | Unpeeled
 
 // This exception depends on the type below.
 exception DontSqueezeTheBananaException of Banana
-
-type BananaPeel() = class end
 
 type Banana(orientation : Orientation) =
     member val IsPeeled = false with get, set
@@ -117,12 +115,12 @@ module BananaHelpers =
         | Down -> b |> peelSides
 ```
 
-Všimněte si, že výjimka `DontSqueezeTheBananaException` a třída `Banana` vzájemně odkazují.  Kromě toho modul `BananaHelpers` a třída `Banana` také vzájemně odkazují. To by nebylo možné vyjádřit v F# případě, že jste odebrali klíčové slovo `rec` z oboru názvů `MutualReferences`.
+Všimněte si, že `DontSqueezeTheBananaException` výjimka a třída `Banana` odkazují na sebe navzájem.  Kromě toho modul `BananaHelpers` a třída `Banana` také odkazují na sebe navzájem. To by nebylo možné vyjádřit v jazyce F #, pokud jste odstranili `rec` klíčové slovo `MutualReferences` z oboru názvů.
 
 Tato funkce je k dispozici také pro [moduly](modules.md)nejvyšší úrovně.
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Referenční dokumentace jazyka F#](index.md)
+- [Referenční dokumentace jazyka F #](index.md)
 - [Moduly](modules.md)
-- [F#RFC FS-1009 – povoluje vzájemně se referenční typy a moduly nad větším rozsahem v rámci souborů.](https://github.com/fsharp/fslang-design/blob/master/FSharp-4.1/FS-1009-mutually-referential-types-and-modules-single-scope.md)
+- [F # RFC FS-1009 – povoluje vzájemné referenční typy a moduly nad větším rozsahem v rámci souborů.](https://github.com/fsharp/fslang-design/blob/master/FSharp-4.1/FS-1009-mutually-referential-types-and-modules-single-scope.md)

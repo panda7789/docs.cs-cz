@@ -488,7 +488,11 @@
     - name: Kolekce bezpečné pro přístup z více vláken
       href: collections/thread-safe/
 - name: Číslovky v technologii .NET
-  href: numerics.md
+  items:
+    - name: Přehled
+      href: numerics.md
+    - name: Typy s povoleným SIMD
+      href: simd.md
 - name: 'Data, časy a časová pásma'
   href: datetime/
 - name: Události

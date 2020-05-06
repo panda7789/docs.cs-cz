@@ -6,23 +6,23 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 03/14/2020
 ms.locfileid: "75937057"
 ---
-### <a name="donotloadlatestricheditcontrol-compatibility-switch-not-supported"></a>Přepínač kompatibility DoNotLoadLatestRichEditControl není podporován.
+### <a name="donotloadlatestricheditcontrol-compatibility-switch-not-supported"></a>Přepínač kompatibility DoNotLoadLatestRichEditControl se nepodporuje.
 
-Přepínač `Switch.System.Windows.Forms.UseLegacyImages` kompatibility, který byl zaveden v rozhraní .NET Framework 4.7.1, není ve formulářích Windows v rozhraní .NET Core 3.0 podporován.
+Přepínač `Switch.System.Windows.Forms.UseLegacyImages` kompatibility, který byl představen v .NET Framework 4.7.1, není podporován v model Windows Forms .net Core 3,0.
 
 #### <a name="change-description"></a>Popis změny
 
-V rozhraní .NET Framework 4.6.2 a <xref:System.Windows.Forms.RichTextBox> předchozí verze ovládací prvek by vytvořit instanci Ovládací prvek Win32 RichEdit v3.0 <xref:System.Windows.Forms.RichTextBox> a pro aplikace, které se zaměřují na rozhraní .NET Framework 4.7.1, by ovládací prvek vytvořit instanci RichEdit v4.1 (v *msftedit.dll*). Přepínač `Switch.System.Windows.Forms.DoNotLoadLatestRichEditControl` kompatibility byl zaveden, aby aplikace, které cílí na rozhraní .NET Framework 4.7.1 a novější verze, odhlásily nový ovládací prvek RichEdit v4.1 a místo toho použily starý ovládací prvek RichEdit v3.
+V .NET Framework 4.6.2 a předchozích verzích může <xref:System.Windows.Forms.RichTextBox> ovládací prvek vytvořit instanci systému Win32 RichEdit Control v 3.0 a pro aplikace, které cílí na .NET Framework 4.7.1, by měl <xref:System.Windows.Forms.RichTextBox> ovládací prvek vytvořit instanci RichEdit v 4.1 (v *Msftedit. dll*). Byl `Switch.System.Windows.Forms.DoNotLoadLatestRichEditControl` zaveden přepínač kompatibility, který umožňuje aplikacím, které cílí na .NET Framework 4.7.1 a novějších verzí, odhlásit nový ovládací prvek RichEdit v 4.1 a místo toho použít starý ovládací prvek RichEdit v3.
 
-V rozhraní .NET `Switch.System.Windows.Forms.DoNotLoadLatestRichEditControl` Core není přepínač podporován. Podporovány jsou pouze <xref:System.Windows.Forms.RichTextBox> nové verze ovládacího prvku.
+V rozhraní .NET Core není `Switch.System.Windows.Forms.DoNotLoadLatestRichEditControl` přepínač podporován. Jsou podporovány pouze nové verze <xref:System.Windows.Forms.RichTextBox> tohoto ovládacího prvku.
 
-#### <a name="version-introduced"></a>Zavedená verze
+#### <a name="version-introduced"></a>Představená verze
 
-3.0 Náhled 9
+3,0 Preview 9
 
 #### <a name="recommended-action"></a>Doporučená akce
 
-Odstraňte spínač. Přepínač není podporován a nejsou k dispozici žádné alternativní funkce.
+Odeberte přepínač. Přepínač není podporován a nejsou k dispozici žádné alternativní funkce.
 
 #### <a name="category"></a>Kategorie
 

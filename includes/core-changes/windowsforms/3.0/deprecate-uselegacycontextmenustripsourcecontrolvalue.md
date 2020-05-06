@@ -6,23 +6,23 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 03/14/2020
 ms.locfileid: "75937079"
 ---
-### <a name="uselegacycontextmenustripsourcecontrolvalue-compatibility-switch-not-supported"></a>Přepínač kompatibility UseLegacyContextMenuStripSourceSourceControlValue není podporován.
+### <a name="uselegacycontextmenustripsourcecontrolvalue-compatibility-switch-not-supported"></a>Přepínač kompatibility UseLegacyContextMenuStripSourceControlValue se nepodporuje.
 
-Přepínač `Switch.System.Windows.Forms.UseLegacyContextMenuStripSourceControlValue` kompatibility, který byl zaveden v rozhraní .NET Framework 4.7.2, není ve formulářích Windows v rozhraní .NET Core 3.0 podporován.
+Přepínač `Switch.System.Windows.Forms.UseLegacyContextMenuStripSourceControlValue` kompatibility, který byl představen v .NET Framework 4.7.2, není podporován v model Windows Forms .net Core 3,0.
 
 #### <a name="change-description"></a>Popis změny
 
-Počínaje rozhraním .NET Framework 4.7.2 umožňuje přepínač `Switch.System.Windows.Forms.UseLegacyContextMenuStripSourceControlValue` kompatibility vývojáři odhlásit se z nového chování <xref:System.Windows.Forms.ContextMenuStrip.SourceControl?displayProperty=nameWithType> vlastnosti, která nyní vrací odkaz na ovládací prvek zdroj. Předchozí chování vlastnosti bylo `null`vrátit . Další informace naleznete v tématu [ \<AppContextSwitchOverrides> element](~/docs/framework/configure-apps/file-schema/runtime/appcontextswitchoverrides-element.md).
+Počínaje .NET Framework 4.7.2, přepínač `Switch.System.Windows.Forms.UseLegacyContextMenuStripSourceControlValue` kompatibility umožňuje vývojářům, aby se odhlásili od nového chování <xref:System.Windows.Forms.ContextMenuStrip.SourceControl?displayProperty=nameWithType> vlastnosti, který nyní vrací odkaz na správu zdrojového kódu. Předchozí chování vlastnosti bylo vráceno `null`. Další informace naleznete v tématu [ \<AppContextSwitchOverrides> element](~/docs/framework/configure-apps/file-schema/runtime/appcontextswitchoverrides-element.md).
 
-V rozhraní .NET `Switch.System.Windows.Forms.UseLegacyContextMenuStripSourceControlValue` Core není přepínač podporován.
+V rozhraní .NET Core není `Switch.System.Windows.Forms.UseLegacyContextMenuStripSourceControlValue` přepínač podporován.
 
-#### <a name="version-introduced"></a>Zavedená verze
+#### <a name="version-introduced"></a>Představená verze
 
-3.0 Náhled 9
+3,0 Preview 9
 
 #### <a name="recommended-action"></a>Doporučená akce
 
-Odstraňte spínač. Přepínač není podporován a nejsou k dispozici žádné alternativní funkce.
+Odeberte přepínač. Přepínač není podporován a nejsou k dispozici žádné alternativní funkce.
 
 #### <a name="category"></a>Kategorie
 
