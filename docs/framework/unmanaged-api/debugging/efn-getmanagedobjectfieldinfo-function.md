@@ -14,14 +14,14 @@ helpviewer_keywords:
 ms.assetid: 3b93bcff-62a4-47b2-babc-6bcf4216119a
 topic_type:
 - apiref
-ms.openlocfilehash: 182424632e4f81dfdf86e87dc6bb2c75c2780fce
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.openlocfilehash: 42f7020212dd2db793b7c7d20a15c129157e7261
+ms.sourcegitcommit: d9c7ac5d06735a01c1fafe34efe9486734841a72
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76793760"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82860763"
 ---
-# <a name="_efn_getmanagedobjectfieldinfo-function"></a>\_EFN\_GetManagedObjectFieldInfo Function
+# <a name="_efn_getmanagedobjectfieldinfo-function"></a>\_EFN\_– funkce GetManagedObjectFieldInfo
 Získá posun od začátku objektu k poli a hodnotu pole pomocí zadaného ukazatele objektu a názvu pole.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -58,12 +58,12 @@ HRESULT _EFN_GetManagedObjectFieldInfo(
  Pokud ve vlákně, který je aktuálně v kontextu, není žádný spravovaný kód, funkce vrátí hodnotu HRESULT SOS_E_NOMANAGEDCODE s hodnotou zařízení 0xa0 a kódem chyby 0x1000.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** SOS_Stacktrace. h  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Globální statické funkce pro ladění](debugging-global-static-functions.md)
+- [Globální statické funkce ladění](debugging-global-static-functions.md)

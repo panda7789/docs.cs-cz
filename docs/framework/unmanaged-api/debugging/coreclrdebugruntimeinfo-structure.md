@@ -16,12 +16,12 @@ helpviewer_keywords:
 ms.assetid: bd01c30f-b7a8-4179-9497-622b6599b1a6
 topic_type:
 - apiref
-ms.openlocfilehash: 92a814d427fcf2e40c7f79e9eb9192e0b7eed4b2
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 2c41e7db32ee8557a6c03217b95fd5b040655c70
+ms.sourcegitcommit: d9c7ac5d06735a01c1fafe34efe9486734841a72
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73132130"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82860938"
 ---
 # <a name="coreclrdebugruntimeinfo-structure"></a>CoreClrDebugRuntimeInfo – struktura
 Představuje instanci modulu CLR (Common Language Runtime), která je načtena v procesu ve vzdáleném počítači.  
@@ -41,7 +41,7 @@ struct  CoreClrDebugRuntimeInfo {
 |`m_dwInternalID`|Identifikátor modulu runtime, který je přiřazený proxy vzdáleného ladění, který běží na cílovém počítači.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** CoreClrRemoteDebuggingInterfaces. h  
   

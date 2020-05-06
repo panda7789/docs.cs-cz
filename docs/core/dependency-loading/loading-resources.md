@@ -1,78 +1,79 @@
 ---
-title: Algoritmus načítání satelitního sestavení - .NET Core
-description: Popis podrobností algoritmu satelitního nakládacího systému v rozhraní .NET Core
+title: Algoritmus načítání satelitních sestavení – .NET Core
+description: Popis podrobností algoritmu satelitního načítání sestavení v .NET Core
 ms.date: 08/09/2019
 author: sdmaclea
 ms.author: stmaclea
-ms.openlocfilehash: bfdc1d8179d46a13b3d137a87397fa3e573da33c
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 17f29a9aca79019daa91736e586bf1b6b753a9ec
+ms.sourcegitcommit: d9c7ac5d06735a01c1fafe34efe9486734841a72
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "70105313"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82859527"
 ---
-# <a name="satellite-assembly-loading-algorithm"></a>Algoritmus satelitního nakládacího systému
+# <a name="satellite-assembly-loading-algorithm"></a>Algoritmus načítání satelitních sestavení
 
 Satelitní sestavení se používají k ukládání lokalizovaných prostředků přizpůsobených pro jazyk a jazykovou verzi.
 
-Satelitní sestavení používají jiný algoritmus načítání než obecně spravovaná sestavení.
+Satelitní sestavení používají jiný algoritmus načítání než obecná spravovaná sestavení.
 
 ## <a name="when-are-satellite-assemblies-loaded"></a>Kdy jsou satelitní sestavení načtena?
 
-Satelitní sestavení jsou načteny při načítání lokalizovaného prostředku.
+Satelitní sestavení jsou načtena při načítání lokalizovaného prostředku.
 
-Základní rozhraní API pro načtení <xref:System.Resources.ResourceManager?displayProperty=fullName> lokalizovaných prostředků je třída. Nakonec <xref:System.Resources.ResourceManager> třída bude volat <xref:System.Reflection.Assembly.GetSatelliteAssembly%2A> metodu <xref:System.Globalization.CultureInfo.Name?displayProperty=nameWithType>pro každý .
+Základní rozhraní API pro načtení lokalizovaných prostředků je <xref:System.Resources.ResourceManager?displayProperty=fullName> třída. Nakonec <xref:System.Resources.ResourceManager> třída zavolá <xref:System.Reflection.Assembly.GetSatelliteAssembly%2A> metodu pro každý z nich <xref:System.Globalization.CultureInfo.Name?displayProperty=nameWithType>.
 
-Rozhraní API vyšší úrovně může abstrahujte rozhraní API nižší úrovně.
+Rozhraní API vyšší úrovně můžou mít abstraktní rozhraní API nízké úrovně.
 
 ## <a name="algorithm"></a>Algoritmus
 
 Záložní proces prostředku .NET Core zahrnuje následující kroky:
 
-1. Určete `active` <xref:System.Runtime.Loader.AssemblyLoadContext> instanci. Ve všech případech `active` instance je vykonávající <xref:System.Runtime.Loader.AssemblyLoadContext>sestavení .
+1. `active` <xref:System.Runtime.Loader.AssemblyLoadContext> Určete instanci. Ve všech případech je `active` instancí spouštěným sestavením. <xref:System.Runtime.Loader.AssemblyLoadContext>
 
-2. Instance `active` se pokusí načíst satelitní sestavení pro požadovanou jazykovou verzi v pořadí podle priority:
-    - Kontroluji jeho mezipaměť.
-    - Kontrola adresáře aktuálně spuštěného sestavení pro podadresář, který <xref:System.Globalization.CultureInfo.Name?displayProperty=nameWithType> odpovídá `es-MX`požadovanému (například).
+2. `active` Instance se pokusí načíst satelitní sestavení pro požadovanou jazykovou verzi v pořadí podle priority podle:
+    - Kontroluje se její mezipaměť.
+    - Kontrola adresáře aktuálně spuštěného sestavení pro podadresář, který odpovídá požadovanému <xref:System.Globalization.CultureInfo.Name?displayProperty=nameWithType> (například `es-MX`).
 
         > [!NOTE]
-        > Tato funkce nebyla implementována v rozhraní .NET Core před 3.0.
+        > Tato funkce nebyla implementována v .NET Core před 3,0.
         >
         > [!NOTE]
-        > V Linuxu a macOS je podadresář rozlišován podle velkých a malých písmen a musí:
-        > - Přesně tak, aby se shodoval.
-        > - Buďte v malé písmeno.
+        > V případě systému Linux a macOS se v podadresářích rozlišují malá a velká písmena a musí být buď:
+        >
+        > - Přesně rozlišovat velká a malá písmena.
+        > - V malých malých písmenech.
 
-    - Pokud `active` je <xref:System.Runtime.Loader.AssemblyLoadContext.Default?displayProperty=nameWithType> instance, spuštěním [výchozí satelitní (prostředek) sondování](default-probing.md#satellite-resource-assembly-probing) logiky.
+    - Pokud `active` je <xref:System.Runtime.Loader.AssemblyLoadContext.Default?displayProperty=nameWithType> instance, spusťte výchozí logiku pro [zjišťování sestavení (prostředků)](default-probing.md#satellite-resource-assembly-probing) .
 
     - Volání <xref:System.Runtime.Loader.AssemblyLoadContext.Load%2A?displayProperty=nameWithType> funkce.
 
-    - Vyvolání <xref:System.Runtime.Loader.AssemblyLoadContext.Resolving?displayProperty=nameWithType> akce.
+    - Vyvolává se <xref:System.Runtime.Loader.AssemblyLoadContext.Resolving?displayProperty=nameWithType> událost.
 
-    - Vyvolání <xref:System.AppDomain.AssemblyResolve?displayProperty=nameWithType> akce.
+    - Vyvolává se <xref:System.AppDomain.AssemblyResolve?displayProperty=nameWithType> událost.
 
 3. Pokud je načteno satelitní sestavení:
-   - Událost <xref:System.AppDomain.AssemblyLoad?displayProperty=nameWithType> je vyvolána.
-   - Sestavení je prohledáno pro požadovaný prostředek. Pokud za běhu najde prostředek v sestavení, použije jej. Pokud zdroj nenajde, bude pokračovat v hledání.
+   - <xref:System.AppDomain.AssemblyLoad?displayProperty=nameWithType> Událost je vyvolána.
+   - Sestavení je vyhledalo pro požadovaný prostředek. Pokud modul runtime nalezne prostředek v sestavení, použije ho. Pokud prostředek nenajde, pokračuje v hledání.
 
     > [!NOTE]
-    > Chcete-li najít prostředek v satelitním sestavení, hledá za běhu <xref:System.Resources.ResourceManager> soubor <xref:System.Globalization.CultureInfo.Name?displayProperty=nameWithType>prostředků požadovaný pro aktuální . V souboru prostředků vyhledá požadovaný název prostředku. Pokud buď nebyl nalezen, prostředek je považován za nebyl nalezen.
+    > Chcete-li najít prostředek v rámci satelitního sestavení, modul runtime vyhledá soubor prostředků požadovaný <xref:System.Resources.ResourceManager> pro aktuální. <xref:System.Globalization.CultureInfo.Name?displayProperty=nameWithType> V rámci souboru prostředků vyhledá požadovaný název prostředku. Pokud buď není nalezen, bude prostředek považován za nenalezený.
 
-4. Další runtime prohledává nadřazená sestavení jazykové verze prostřednictvím mnoha potenciálních úrovní, pokaždé, když opakuje kroky 2 & 3.
+4. Modul runtime Next prohledává sestavení nadřazené jazykové verze prostřednictvím mnoha potenciálních úrovní, pokaždé při opakování kroků 2 & 3.
 
-    Každá jazyková verze má pouze jeden <xref:System.Globalization.CultureInfo.Parent%2A?displayProperty=nameWithType> nadřazený, který je definován vlastností.
+    Každá jazyková verze má pouze jeden nadřazený prvek, který je definován <xref:System.Globalization.CultureInfo.Parent%2A?displayProperty=nameWithType> vlastností.
 
-    Hledání nadřazené jazykové verze <xref:System.Globalization.CultureInfo.Parent%2A> se <xref:System.Globalization.CultureInfo.InvariantCulture?displayProperty=nameWithType>zastaví, když je vlastnost jazykové verze .
+    Hledání nadřazených jazykových verzí se zastaví, pokud je <xref:System.Globalization.CultureInfo.Parent%2A> <xref:System.Globalization.CultureInfo.InvariantCulture?displayProperty=nameWithType>vlastnost jazykové verze.
 
-    Pro <xref:System.Globalization.CultureInfo.InvariantCulture>, nevracíme se k krokům 2 & 3, ale spíše pokračovat krokem 5.
+    V <xref:System.Globalization.CultureInfo.InvariantCulture>případě se nevrátíme k krokům 2 & 3, ale místo toho pokračujte krokem 5.
 
-5. Pokud prostředek stále nebyl nalezen, použije se prostředek pro výchozí (záložní) jazykovou verzi.
+5. Pokud se prostředek ještě nenalezne, použije se prostředek pro výchozí (záložní) jazykovou verzi.
 
-   Prostředky pro výchozí jazykovou verzi jsou obvykle zahrnuty v sestavení hlavní aplikace. Můžete však <xref:System.Resources.UltimateResourceFallbackLocation.Satellite?displayProperty=nameWithType> zadat <xref:System.Resources.NeutralResourcesLanguageAttribute.Location?displayProperty=nameWithType> pro vlastnost. Tato hodnota označuje, že konečné záložní umístění pro prostředky je satelitní sestavení spíše než hlavní sestavení.
+   Prostředky pro výchozí jazykovou verzi jsou obvykle zahrnuty v sestavení Main aplikace. Pro <xref:System.Resources.NeutralResourcesLanguageAttribute.Location?displayProperty=nameWithType> vlastnost však lze zadat <xref:System.Resources.UltimateResourceFallbackLocation.Satellite?displayProperty=nameWithType> . Tato hodnota označuje, že konečné záložní umístění pro prostředky je satelitní sestavení, nikoli hlavní sestavení.
 
     > [!NOTE]
-    > Výchozí jazyková verze je konečný záložní. Proto doporučujeme vždy zahrnout vyčerpávající sadu prostředků ve výchozím souboru prostředků. To pomáhá zabránit vyvolání výjimek. Tím, že vyčerpávající sadu, poskytujete záložní pro všechny prostředky a ujistěte se, že alespoň jeden prostředek je vždy k dispozici pro uživatele, i když není kulturně specifické.
+    > Výchozí jazyková verze je Ultimate Fallback. Proto doporučujeme vždy zahrnout vyčerpávající sadu prostředků do výchozího souboru prostředků. To pomáhá zabránit vyvolání výjimek. Díky úplnému nastavení zadáte zálohu pro všechny prostředky a zajistěte, aby měl uživatel vždy k dispozici alespoň jeden prostředek, a to i v případě, že není kulturně specifické.
 
-6. Konečně
-   - Pokud runtime nenajde soubor prostředků pro výchozí (záložní) jazykovou <xref:System.Resources.MissingManifestResourceException> <xref:System.Resources.MissingSatelliteAssemblyException> verzi, je vyvolána výjimka nebo výjimka.
-   - Pokud je soubor prostředků nalezen, ale požadovaný prostředek není `null`k dispozici, požadavek vrátí .
+6. Uznan
+   - Pokud modul runtime nenajde soubor prostředků pro výchozí (záložní) jazykovou verzi, je vyvolána <xref:System.Resources.MissingManifestResourceException> výjimka <xref:System.Resources.MissingSatelliteAssemblyException> nebo.
+   - Pokud je nalezen soubor prostředků, ale požadovaný prostředek není k dispozici, požadavek se `null`vrátí.

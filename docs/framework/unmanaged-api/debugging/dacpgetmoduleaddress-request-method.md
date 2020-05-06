@@ -1,5 +1,5 @@
 ---
-title: DacpGetModulAddress::Metoda požadavku
+title: DacpGetModuleAddress::Request – metoda
 ms.date: 01/16/2019
 api.name:
 - DacpGetModuleAddress::Request Method
@@ -15,16 +15,16 @@ topic_type:
 - apiref
 author: cshung
 ms.author: andrewau
-ms.openlocfilehash: 4dbe6a2c295e5afae1b6761f0c7b695fdb906428
-ms.sourcegitcommit: 73aa9653547a1cd70ee6586221f79cc29b588ebd
+ms.openlocfilehash: 1755526636bed6d78663112e4c2ad5ab7c3f731c
+ms.sourcegitcommit: d9c7ac5d06735a01c1fafe34efe9486734841a72
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "82102904"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82860841"
 ---
-# <a name="dacpgetmoduleaddressrequest-method"></a>DacpGetModulAddress::Metoda požadavku
+# <a name="dacpgetmoduleaddressrequest-method"></a>DacpGetModuleAddress::Request – metoda
 
-Provede požadavek na naplnění struktury z dané struktury runtime.
+Provede požadavek na naplnění struktury z dané běhové struktury.
 
 [!INCLUDE[debugging-api-recommended-note](../../../../includes/debugging-api-recommended-note.md)]
 
@@ -39,22 +39,22 @@ HRESULT Request(
 ## <a name="parameters"></a>Parametry
 
 `pDataModule`\
-[v] Ukazatel na modul dat osiva.
+pro Ukazatel na modul dat o počátečních datech.
 
 ## <a name="remarks"></a>Poznámky
 
-Tato struktura žije uvnitř runtime a není vystavena prostřednictvím žádné záhlaví nebo soubory knihovny. Chcete-li jej použít, nejjednodušší způsob je napodobit implementaci:
+Tato struktura žije v modulu runtime a není vystavena prostřednictvím žádné hlavičky nebo souborů knihoven. Pokud ho chcete použít, nejjednodušší způsob je napodobení implementace:
 
-- Vrátí hodnotu získanou voláním `Request` metody parametru `IXCLRDataModule*` s následujícími parametry:`((uint32) 0xf0000000, 0, 0, (uint32) sizeof(*this), (uint8*) this)`
+- Vraťte hodnotu získanou z volání `Request` metody v `IXCLRDataModule*` parametru s následujícími parametry:`((uint32) 0xf0000000, 0, 0, (uint32) sizeof(*this), (uint8*) this)`
 
 ## <a name="requirements"></a>Požadavky
 
-**Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md)\
-**Záhlaví:** Žádné\
-**Knihovna:** Žádné\
-**Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v47plus](../../../../includes/net-current-v47plus.md)]
+**Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md)\
+**Hlavička:** NTato
+**Knihovna:** NTato
+**Verze .NET Framework:**[!INCLUDE[net_current_v47plus](../../../../includes/net-current-v47plus.md)]
 
 ## <a name="see-also"></a>Viz také
 
 - [Ladění](index.md)
-- [DacpGetModuleAddress struktura](dacpgetmoduleaddress-structure.md)
+- [Struktura DacpGetModuleAddress](dacpgetmoduleaddress-structure.md)

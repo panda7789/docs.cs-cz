@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: d627e8b7-a605-40ac-b9bb-da9a3f1b66d9
 topic_type:
 - apiref
-ms.openlocfilehash: bd2f67c2d7230d3873b4dc0df73ac1be778a0828
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 6a7a7736837f7e6bbf1ad4982e78a75550abbeab
+ms.sourcegitcommit: d9c7ac5d06735a01c1fafe34efe9486734841a72
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79179100"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82860499"
 ---
 # <a name="iclrdatatargetwritevirtual-method"></a>ICLRDataTarget::WriteVirtual – metoda
-Zapíše data ze zadané vyrovnávací paměti na zadanou adresu virtuální paměti.  
+Zapisuje data ze zadané vyrovnávací paměti do zadané adresy virtuální paměti.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,25 +39,25 @@ HRESULT WriteVirtual (
   
 ## <a name="parameters"></a>Parametry  
  `address`  
- [v] CLRDATA_ADDRESS, který ukládá adresu virtuální paměti.  
+ pro CLRDATA_ADDRESS, který ukládá adresu virtuální paměti.  
   
  `buffer`  
- [v] Ukazatel na vyrovnávací paměť, která ukládá data, která mají být zapsána.  
+ pro Ukazatel na vyrovnávací paměť, ve kterém jsou uložena data, která mají být zapsána.  
   
  `bytesRequested`  
- [v] Počet bajtů, které mají být zapsány.  
+ pro Počet bajtů, které mají být zapsány.  
   
  `bytesWritten`  
- [out] Ukazatel na skutečný počet zapsaných bajtů.  
+ mimo Ukazatel na skutečný počet zapsaných bajtů.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Záhlaví:** ClrData.idl, ClrData.h  
+ **Hlavička:** ClrData. idl, ClrData. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také
 

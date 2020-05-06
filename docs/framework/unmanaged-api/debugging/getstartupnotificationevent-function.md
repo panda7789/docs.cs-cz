@@ -16,12 +16,12 @@ helpviewer_keywords:
 ms.assetid: c94b1b61-045a-4695-bacd-0f18c5acc246
 topic_type:
 - apiref
-ms.openlocfilehash: fb158b35165fb229fc78169e2508679b6749752e
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 3377dcd5d45ca8e31a57a75bd81366d41837c12c
+ms.sourcegitcommit: d9c7ac5d06735a01c1fafe34efe9486734841a72
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73122954"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82860712"
 ---
 # <a name="getstartupnotificationevent-function"></a>GetStartupNotificationEvent – funkce
 Vytvoří nebo otevře obslužnou rutinu události, která bude signalizována jakýmkoli modulem CLR (Common Language Runtime), který se načítá v zadaném cílovém procesu.  
@@ -48,18 +48,18 @@ HRESULT GetStartupNotificationEvent
  Úspěšně se získal popisovač události oznámení při spuštění.  
   
  E_INVALIDARG  
- `phStartupEvent` je null nebo `debuggeePID` neodkazuje na proces, který aktuálně běží.  
+ `phStartupEvent`má hodnotu null `debuggeePID` nebo neodkazuje na proces, který aktuálně běží.  
   
  E_FAIL (nebo jiné návratové kódy E_)  
  Nelze získat popisovač události oznámení při spuštění.  
   
 ## <a name="remarks"></a>Poznámky  
- V operačním systému Windows `debuggeePID` mapuje identifikátor procesu operačního systému.  
+ V operačním systému Windows se `debuggeePID` mapuje na identifikátor procesu operačního systému.  
   
  Událost je signalizována před spuštěním jakéhokoliv spravovaného kódu modulem CLR, který signalizace událost.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Záhlaví:** dbgshim. h  
   

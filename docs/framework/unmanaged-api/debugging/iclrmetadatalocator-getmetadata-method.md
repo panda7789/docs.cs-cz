@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 704a8893-ac56-43b4-90ea-715f38ccb40e
 topic_type:
 - apiref
-ms.openlocfilehash: 66b3934d000b4f000c368acb1f57c8fc82a5c453
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.openlocfilehash: ad309290319396ff4e74e30d572effeffe802d1d
+ms.sourcegitcommit: d9c7ac5d06735a01c1fafe34efe9486734841a72
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76793628"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82859875"
 ---
 # <a name="iclrmetadatalocatorgetmetadata-method"></a>ICLRMetadataLocator::GetMetadata – metoda
 Volá se službami CLR (Common Language Runtime) k načtení metadat obrázku.  
@@ -74,14 +74,14 @@ HRESULT GetMetadata(
  Tato metoda je implementována modulem pro ladění aplikace.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** ClrData. idl, ClrData. h  
   
  **Knihovna:** CorGuids. lib  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [ICLRMetadataLocator – rozhraní](iclrmetadatalocator-interface.md)
