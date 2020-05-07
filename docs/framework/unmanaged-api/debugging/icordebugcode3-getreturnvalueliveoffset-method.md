@@ -17,15 +17,15 @@ helpviewer_keywords:
 ms.assetid: 8c2ff5d8-8c04-4423-b1e1-e1c8764b36d3
 topic_type:
 - apiref
-ms.openlocfilehash: 34d543dd76de05bdf55d8187cf192455d1387a9f
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 2cb4c79601061ab8473d6d7ca50c4ed2f92b01c4
+ms.sourcegitcommit: 957c49696eaf048c284ef8f9f8ffeb562357ad95
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79178945"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82893431"
 ---
 # <a name="icordebugcode3getreturnvalueliveoffset-method"></a>ICorDebugCode3::GetReturnValueLiveOffset – metoda
-Pro zadaný posun IL získá nativní posuny, kde by měla být umístěna zarážka tak, aby ladicí program mohl získat vrácenou hodnotu z funkce.  
+U zadaného posunu IL Získá nativní posuny, kde by měla být umístěna zarážka, aby ladicí program mohl získat návratovou hodnotu z funkce.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,41 +40,41 @@ HRESULT GetReturnValueLiveOffset(
   
 ## <a name="parameters"></a>Parametry  
  `ILoffset`  
- Posun IL. Musí se jednat o stránku s voláním funkce, jinak se volání funkce nezdaří.  
+ Posun IL Musí se jednat o web volání funkce nebo se volání funkce nezdaří.  
   
  `bufferSize`  
- Počet bajtů, které `pOffsets`jsou k dispozici pro uložení .  
+ Počet bajtů, které jsou k dispozici pro uložení `pOffsets`.  
   
  `pFetched`  
- Ukazatel na počet posunů skutečně vrácených. Obvykle je jeho hodnota 1, ale jedna instrukce `CALL` IL může mapovat na více instrukcí sestavení.  
+ Ukazatel na počet skutečně vrácených posunů. Obvykle je jeho hodnota 1, ale jedna instrukce IL může být mapována na více `CALL` instrukcí sestavení.  
   
  `pOffsets`  
- Pole nativní posuny. Obvykle `pOffsets` obsahuje jeden posun, i když jeden IL instrukce můžete `CALL` mapovat na více map na více instrukcí sestavení.  
+ Pole nativních posunů. Obvykle `pOffsets` obsahuje jeden posun, přestože jedna instrukce Il může být mapována na více než více instrukcí `CALL` sestavení.  
   
 ## <a name="remarks"></a>Poznámky  
- Tato metoda se používá spolu s [ICorDebugILFrame3::GetReturnValueForILOffset](icordebugilframe3-getreturnvalueforiloffset-method.md) metoda získat vrácenou hodnotu metody, která vrací typ odkazu. Předání mdloby posunu do webu volání funkce této metodě vrátí jeden nebo více nativní posuny. Ladicí program pak můžete nastavit zarážky na tyto nativní posuny ve funkci. Když ladicí program zasáhne jeden z zarážek, můžete pak předat stejný IL posun, který jste předali této metodě [iCorDebugILFrame3::GetReturnValueForILOffset](icordebugilframe3-getreturnvalueforiloffset-method.md) metoda získat vrácenou hodnotu. Ladicí program by pak měl vymazat všechny zarážky, které nastaví.  
+ Tato metoda se používá společně s metodou [ICorDebugILFrame3:: GetReturnValueForILOffset –](icordebugilframe3-getreturnvalueforiloffset-method.md) k získání návratové hodnoty metody, která vrací typ odkazu. Předání posunu IL k webu volání funkce této metodě vrátí jedno nebo více nativních posunů. Ladicí program pak může nastavit zarážky na těchto nativních posunech ve funkci. Když ladicí program narazí na jednu ze zarážek, můžete předat stejný posun IL, který jste předali do této metody, do metody [ICorDebugILFrame3:: GetReturnValueForILOffset –](icordebugilframe3-getreturnvalueforiloffset-method.md) pro získání návratové hodnoty. Ladicí program by pak měl vymazat všechny zarážky, které nastavily.  
   
 > [!WARNING]
-> Metody `ICorDebugCode3::GetReturnValueLiveOffset` a a [ICorDebugILFrame3::GetReturnValueForILOffset](icordebugilframe3-getreturnvalueforiloffset-method.md) umožňují získat informace o vrácené hodnotě pouze pro typy odkazů. Načítání informací o vrácené hodnotě z typů hodnot <xref:System.ValueType>(tj. všechny typy, které jsou odvozeny z ) není podporováno.  
+> Metody `ICorDebugCode3::GetReturnValueLiveOffset` a [ICorDebugILFrame3:: GetReturnValueForILOffset –](icordebugilframe3-getreturnvalueforiloffset-method.md) umožňují získat informace o vrácených hodnotách pouze pro typy odkazů. Načítání informací o vrácených hodnotách z typů hodnot (tj. všechny typy, <xref:System.ValueType>které jsou odvozeny z), nejsou podporovány.  
   
  Funkce vrátí `HRESULT` hodnoty uvedené v následující tabulce.  
   
-|`HRESULT`Hodnotu|Popis|  
+|`HRESULT`osa|Popis|  
 |---------------------|-----------------|  
-|`S_OK`|Úspěch|  
-|`CORDBG_E_INVALID_OPCODE`|Daný server offset IL není instrukce volání nebo `void`funkce vrátí .|  
-|`CORDBG_E_UNSUPPORTED`|Daný posun IL je správné volání, ale návratový typ není podporován pro získání vrácené hodnoty.|  
+|`S_OK`|Úspěch.|  
+|`CORDBG_E_INVALID_OPCODE`|Daná lokalita posunu IL není instrukcí volání, nebo vrátí `void`funkce.|  
+|`CORDBG_E_UNSUPPORTED`|Daný posun IL je správného volání, ale návratový typ není podporován pro získání návratové hodnoty.|  
   
- Metoda `ICorDebugCode3::GetReturnValueLiveOffset` je k dispozici pouze v systémech x86 a AMD64.  
+ Tato `ICorDebugCode3::GetReturnValueLiveOffset` metoda je k dispozici pouze v systémech založených na platformě x86 a amd64.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v451plus](../../../../includes/net-current-v451plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v451plus](../../../../includes/net-current-v451plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také
 

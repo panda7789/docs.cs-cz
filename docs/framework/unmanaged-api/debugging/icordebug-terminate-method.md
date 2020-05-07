@@ -15,18 +15,18 @@ helpviewer_keywords:
 ms.assetid: fffe5616-0896-4426-ab5e-21869b514883
 topic_type:
 - apiref
-ms.openlocfilehash: 2d3f8360a1fb1164fd4e26f85246251409bee376
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.openlocfilehash: 44bb98f54debb129f951cc388fea81ca0f17b20c
+ms.sourcegitcommit: 957c49696eaf048c284ef8f9f8ffeb562357ad95
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76788951"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82895311"
 ---
 # <a name="icordebugterminate-method"></a>ICorDebug::Terminate – metoda
-Ukončí objekt `ICorDebug`.  
+Ukončí `ICorDebug` objekt.  
   
 > [!NOTE]
-> `Terminate` by neměl být voláno, dokud nebylo přijato zpětné volání [ICorDebugManagedCallback:: ExitProcess –](icordebugmanagedcallback-exitprocess-method.md) pro všechny laděné procesy.  
+> `Terminate`neměl by být volána, dokud nebylo přijato zpětné volání [ICorDebugManagedCallback:: ExitProcess –](icordebugmanagedcallback-exitprocess-method.md) pro všechny laděné procesy.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -35,17 +35,17 @@ HRESULT Terminate ();
 ```  
   
 ## <a name="remarks"></a>Poznámky  
- `Terminate` musí být volána, pokud již není objekt `ICorDebug` potřeba.  
+ `Terminate`musí být volána, když `ICorDebug` objekt již není potřeba.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** CorDebug. idl, CorDebug. h  
   
  **Knihovna:** CorGuids. lib  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [ICorDebug – rozhraní](icordebug-interface.md)

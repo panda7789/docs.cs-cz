@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 56e718b4-fabd-418b-a5b3-3cc33c745683
 topic_type:
 - apiref
-ms.openlocfilehash: 873dd5a1eb2c9356049d2d0c0cb495b963c2ae46
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.openlocfilehash: d4a254853256e1a1440f5588418b94e39eabcc9a
+ms.sourcegitcommit: 957c49696eaf048c284ef8f9f8ffeb562357ad95
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76784194"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82894110"
 ---
 # <a name="icordebugclassgetstaticfieldvalue-method"></a>ICorDebugClass::GetStaticFieldValue – metoda
 Získá hodnotu zadaného statického pole.  
@@ -37,7 +37,7 @@ HRESULT GetStaticFieldValue (
   
 ## <a name="parameters"></a>Parametry  
  `fieldDef`  
- pro Pole `Def` token, který odkazuje na pole, které má být načteno.  
+ pro Token pole `Def` , který odkazuje na pole, které má být načteno.  
   
  `pFrame`  
  pro Ukazatel na objekt ICorDebugFrame, který představuje rámec, který má být použit k jednoznačnému rozlišení mezi statickými a doménovými doménami vlákna, kontextu nebo domény aplikace.  
@@ -48,13 +48,13 @@ HRESULT GetStaticFieldValue (
  mimo Ukazatel na adresu objektu ICorDebugValue, který představuje hodnotu statického pole.  
   
 ## <a name="remarks"></a>Poznámky  
- U parametrizovaných typů je hodnota statického pole relativní vzhledem k konkrétní instanci. Proto pokud konstruktor třídy přebírá parametry typu <xref:System.Type>, zavolejte [ICorDebugType:: GetStaticFieldValue](icordebugtype-getstaticfieldvalue-method.md) namísto `ICorDebugClass::GetStaticFieldValue`.  
+ U parametrizovaných typů je hodnota statického pole relativní vzhledem k konkrétní instanci. Proto pokud konstruktor třídy přebírá parametry typu <xref:System.Type>, zavolejte [ICorDebugType:: GetStaticFieldValue](icordebugtype-getstaticfieldvalue-method.md) namísto. `ICorDebugClass::GetStaticFieldValue`  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** CorDebug. idl, CorDebug. h  
   
  **Knihovna:** CorGuids. lib  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]
+ **Verze .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]

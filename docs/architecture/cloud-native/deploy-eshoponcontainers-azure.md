@@ -1,60 +1,90 @@
 ---
 title: Nasazení aplikace eShopOnContainers do Azure
 description: Nasazení aplikace eShopOnContainers pomocí služby Azure Kubernetes, Helm a DevSpaces.
-ms.date: 06/30/2019
-ms.openlocfilehash: 21033cc904dc595193c69f3452ce2522740f8ff6
-ms.sourcegitcommit: 55f438d4d00a34b9aca9eedaac3f85590bb11565
+ms.date: 04/20/2020
+ms.openlocfilehash: a3eacedac946cb25cf3cced305d7921e29f0d204
+ms.sourcegitcommit: 957c49696eaf048c284ef8f9f8ffeb562357ad95
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71183271"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82895585"
 ---
 # <a name="deploying-eshoponcontainers-to-azure"></a>Nasazení aplikace eShopOnContainers do Azure
 
 [!INCLUDE [book-preview](../../../includes/book-preview.md)]
 
-Logiku podporující aplikaci eShopOnContainers může podporovat Azure pomocí nejrůznějších služeb. Doporučený postup je využít Kubernetes pomocí služby Azure Kubernetes Service (AKS). To se dá zkombinovat s nasazením Helm, aby se zajistila jednoduchá opakovaná konfigurace infrastruktury. Vývojáři mohou volitelně využít Azure Dev Spaces Kubernetes jako součást jejich procesu vývoje. Další možností je hostování funkcí aplikace pomocí funkcí bez serveru Azure, jako jsou Azure Functions a Azure Logic Apps.
+Aplikace eShopOnContainers se dá nasadit na celou řadu platforem Azure. Doporučený postup je nasadit aplikaci do služby Azure Kubernetes Services (AKS). Helm, nástroj pro nasazení Kubernetes, je k dispozici, aby se snížila složitost nasazení. V případě potřeby můžou vývojáři implementovat Azure Dev Spaces pro Kubernetes, aby se zjednodušil proces vývoje.
 
 ## <a name="azure-kubernetes-service"></a>Azure Kubernetes Service
 
-Pokud byste chtěli hostovat aplikaci eShopOnContainers ve vlastním clusteru AKS, je prvním krokem vytvoření clusteru. Můžete to provést pomocí Azure Portal, který vás provede potřebnými kroky, nebo můžete použít Azure CLI, abyste měli jistotu, že v takovém případě povolíte Access Control a směrování na základě rolí (RBAC). V dokumentaci k eShopOnContainers najdete postup, který se zabývá vytvořením vlastního clusteru AKS. Po vytvoření clusteru musíte povolit přístup k řídicímu panelu Kubernetes. v takovém případě byste měli být schopni přejít na řídicí panel Kubernetes a spravovat cluster.
+Pro hostování eShop v AKS je prvním krokem vytvoření clusteru AKS. K tomu můžete použít Azure Portal, které vás provedou potřebnými kroky. Můžete také vytvořit cluster z Azure CLI, přičemž se ujistěte, že jste povolili Access Control na základě rolí (RBAC) a směrování aplikací. V dokumentaci k eShopOnContainers najdete postup vytvoření vlastního clusteru AKS. Po vytvoření můžete cluster otevřít a spravovat pomocí řídicího panelu Kubernetes.
 
-Jakmile je cluster vytvořený a nakonfigurovaný, můžete do něj nasadit aplikaci pomocí Helm a pokladny.
+Aplikaci eShop teď můžete nasadit do clusteru s využitím Helm a.
 
 ## <a name="deploying-to-azure-kubernetes-service-using-helm"></a>Nasazení do služby Azure Kubernetes pomocí Helm
 
-Základní nasazení na AKS můžou používat vlastní skripty rozhraní příkazového řádku nebo jednoduché soubory nasazení, ale složitější aplikace by měly používat nástroj pro správu závislostí, jako je Helm. Helm je udržována v rámci cloudové výpočetní platformy a pomáhá definovat, instalovat a upgradovat Kubernetes aplikace. Helm se skládá z klienta příkazového řádku, Helm, který používá grafy Helm, a součásti v clusteru. Grafy Helm používají standardní soubory ve formátu YAML k popisu související sady Kubernetesch prostředků a obvykle jsou společně s aplikací, které popisují. Grafy Helm se od jednoduchých po složité v závislosti na požadavcích instalace, které popisují.
+Helm je nástroj Správce balíčků aplikace, který pracuje přímo s Kubernetes. Pomůže vám definovat, instalovat a upgradovat Kubernetes aplikace. I když je možné jednoduché aplikace nasadit do AKS pomocí vlastních skriptů CLI nebo jednoduchých souborů nasazení, komplexní aplikace můžou obsahovat spoustu Kubernetes objektů a využívat výhod Helm.
+
+Pomocí Helm aplikace zahrnují konfigurační soubory založené na textu s názvem Helm grafy, které deklarativně popisují aplikaci a konfiguraci v balíčcích Helm. Grafy používají standardní soubory ve formátu YAML k popisu související sady prostředků Kubernetes. Jsou ve verzi spolu s kódem aplikace, které popisují. Grafy Helm se od jednoduchých po složité v závislosti na požadavcích instalace, které popisují.
+
+Helm se skládá z klientského nástroje příkazového řádku, který využívá grafy Helm a spouští příkazy pro serverovou komponentu s názvem, do které končí. Do služby komunikuje s rozhraním API Kubernetes, aby bylo zajištěno správné zřizování vašich kontejnerových úloh. Helm je udržována v rámci platformy Cloud-Native Computing.
+
+Následující soubor YAML prezentuje šablonu Helm:
+
+```yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ .Values.app.svc.marketing }}
+  labels:
+    app: {{ template "marketing-api.name" . }}
+    chart: {{ template "marketing-api.chart" . }}
+    release: {{ .Release.Name }}
+    heritage: {{ .Release.Service }}
+spec:
+  type: {{ .Values.service.type }}
+  ports:
+    - port: {{ .Values.service.port }}
+      targetPort: http
+      protocol: TCP
+      name: http
+  selector:
+    app: {{ template "marketing-api.name" . }}
+    release: {{ .Release.Name }}
+```
+
+Všimněte si, jak šablona popisuje dynamickou sadu párů klíč/hodnota. Při vyvolání šablony jsou hodnoty, které jsou uzavřeny ve složených závorkách, načítány z jiných konfiguračních souborů založených na YAML.
 
 Grafy eShopOnContainers Helm najdete ve složce/k8s/Helm. Obrázek 2-6 ukazuje, jak jsou různé komponenty aplikace uspořádány do struktury složek, kterou používá Helm k definování a správě nasazení.
 
-![architektury eShopOnContainers](./media/eshoponcontainers-helm-folder.png)
-**obrázek 2-6**. Složka Helm eShopOnContainers
+![Obrázek architektury](./media/eshoponcontainers-helm-folder.png)
+eShopOnContainers**2-6**. Složka Helm eShopOnContainers
 
-Jednotlivé komponenty jsou nainstalovány pomocí příkazu `helm install`. Tyto příkazy jsou snadno skriptované a eShopOnContainers poskytuje skript "nasadit vše", který projde různými komponentami a nainstaluje je pomocí příslušných Helm grafů. Výsledkem je opakovaný proces, ve kterém je verze aplikace ve správě zdrojového kódu, kterou může kdokoli v týmu nasadit do clusteru AKS s jedním řádkovým příkazem skriptu. Zejména v kombinaci s Azure Dev Spaces umožňuje vývojářům snadno diagnostikovat a testovat jejich jednotlivé změny v cloudových nativních aplikacích založených na mikroslužbách.
+Jednotlivé komponenty se instalují pomocí `helm install` příkazu. eShop obsahuje skript "nasadit vše", který projde a nainstaluje komponenty pomocí příslušných Helm grafů. Výsledkem je opakovaný proces, ve kterém je verze aplikace ve správě zdrojového kódu, kterou může kdokoli v týmu nasadit do clusteru AKS s jedním řádkovým příkazem skriptu.
+
+> Všimněte si, že verze 3 nástroje Helm oficiálně odstraňuje nutnost serverové komponenty pro pokladnu. Další informace o tomto vylepšení najdete [tady](https://medium.com/better-programming/why-is-tiller-missing-in-helm-3-2347c446714).
 
 ## <a name="azure-dev-spaces"></a>Azure Dev Spaces
 
-Azure Dev Spaces pomáhá jednotlivým vývojářům hostovat během vývoje svou vlastní jedinečnou verzi clusterů AKS v Azure. To minimalizuje požadavky na místní počítače a umožňuje členům týmu rychle zjistit, jak se jejich změny chovají ve skutečném prostředí AKS. Azure Dev Spaces nabízí rozhraní příkazového řádku, které se vývojářům používá ke správě svých vývojových prostorů a k nasazení v konkrétním podřízeném prostoru pro vývoj podle potřeby. Na každý podřízený prostor pro vývoj se odkazuje pomocí jedinečné subdomény adresy URL, která umožňuje souběžné nasazení upravených clusterů, aby se jednotliví vývojáři mohli vyhnout konfliktům probíhajících vzájemně pracujících úloh. Na obrázku 2-7 vidíte, jak vývojář Susie nasadil svoji vlastní verzi mikroslužeb kol do svého vývojového prostoru. Potom je možné otestovat své změny pomocí vlastní adresy URL začínající názvem jejího místa (susie.s.dev.myapp.eus.azds.io).
+Nativní aplikace pro Cloud můžou rychle rozšiřovat rozsáhlé a komplexní a vyžadují, aby se mohly spustit významné výpočetní prostředky. V těchto scénářích nemůže být celá aplikace hostována na vývojovém počítači (zejména notebook). Azure Dev Spaces je navržený pro řešení tohoto problému pomocí AKS. Umožňuje vývojářům pracovat s místní verzí svých služeb a současně hostovat zbytek aplikace v AKS vývojovém clusteru.
 
-![architektury eShopOnContainers](./media/azure-devspaces-one.png)
-**obrázek 2-7**. Vývojář Susie nasadí svoji vlastní verzi mikroslužby bicyklů a otestuje ji.
+Vývojáři sdílejí běžící (vývojovou) instanci v clusteru AKS, který obsahuje celou kontejnerovou aplikaci. Ale používají osobní prostory nastavené na svém počítači k místnímu vývoji svých služeb. Po dokončení se otestuje z konce na konec v clusteru AKS – bez závislostí replikace. Azure Dev Spaces sloučí kód z místního počítače se službami v AKS. Členové týmu mohou vidět, jak se změny budou chovat ve skutečném prostředí AKS. Vývojáři můžou rychle iterovat a ladit kód přímo v Kubernetes pomocí sady Visual Studio 2017 nebo Visual Studio Code.
 
-V současné době vývojář Jan přizpůsobuje mikroslužbu rezervací a potřebuje testovat své změny. Může nasadit své změny do vlastního prostoru pro vývoj bez konfliktu se změnami Susie, jak je znázorněno na obrázku 2-8. Může otestovat své změny pomocí vlastní adresy URL, která má předponu s názvem svého místa (john.s.dev.myapp.eus.azds.io).
+Na obrázku 2-7 vidíte, že vývojář Susie nasadil aktualizovanou verzi mikroslužby bicyklů do svého vývojového prostoru. Potom je možné otestovat své změny pomocí vlastní adresy URL začínající názvem jejího místa (susie.s.dev.myapp.eus.azds.io).
 
-![architektury eShopOnContainers](./media/azure-devspaces-two.png)
-**obrázek 2-8**. Vývojář Jan nasadí svoji vlastní verzi mikroslužby rezervací a otestuje ji bez konfliktu s ostatními vývojáři.
+![Obrázek architektury](./media/azure-devspaces-one.png)
+eShopOnContainers**2-7**. Vývojář Susie nasadí svoji vlastní verzi mikroslužby bicyklů a otestuje ji.
+
+V současné době vývojář Jan přizpůsobuje mikroslužbu rezervací a potřebuje testovat své změny. Nasadí své změny do vlastního prostoru pro vývoj bez konfliktu se změnami Susie, jak je znázorněno na obrázku 2-8. Jan potom testuje změny pomocí vlastní adresy URL, která má předponu s názvem svého místa (john.s.dev.myapp.eus.azds.io).
+
+![Obrázek architektury](./media/azure-devspaces-two.png)
+eShopOnContainers**2-8**. Vývojář Jan nasadí svoji vlastní verzi mikroslužby rezervací a otestuje ji bez konfliktu s ostatními vývojáři.
 
 Pomocí Azure Dev Spaces můžou týmy pracovat přímo se AKS a přitom nezávisle měnit, nasazovat a testovat jejich změny. Tento přístup omezuje nutnost samostatných vyhrazených hostovaných prostředí, protože každý vývojář efektivně má své vlastní prostředí AKS. Vývojáři mohou pracovat s Azure Dev Spaces pomocí svého rozhraní příkazového řádku nebo spustit aplikaci pro Azure Dev Spaces přímo ze sady Visual Studio. [Přečtěte si další informace o tom, jak Azure Dev Spaces fungují a jsou nakonfigurované.](https://docs.microsoft.com/azure/dev-spaces/how-dev-spaces-works)
 
 ## <a name="azure-functions-and-logic-apps-serverless"></a>Azure Functions a Logic Apps (bez serveru)
 
-Ukázka eShopOnContainers zahrnuje podporu pro sledování online marketingových kampaní. Funkce Azure slouží k získání podrobností o marketingové kampani pro dané ID kampaně. Místo vytváření kompletní aplikace ASP.NET Core pro tento účel je jeden koncový bod Azure Functions jednodušší a dostatečný. Azure Functions mít mnohem jednodušší model sestavování a nasazování než úplné ASP.NET Core aplikace, zejména pokud je nakonfigurované tak, aby běžely v Kubernetes. Nasazení funkce se skriptuje pomocí šablon Azure Resource Manager (ARM) a rozhraní příkazového řádku Azure CLI. Tato mikroslužba podrobností o kampani není dostupná pro zákazníka a nemá stejné požadavky jako online obchod, takže je vhodným kandidátem na Azure Functions. Funkce vyžaduje, aby některá konfigurace fungovala správně, jako jsou data připojovacího řetězce databáze a nastavení obrázku základní identifikátor URI. Azure Functions můžete nakonfigurovat na webu Azure Portal.
-
-## <a name="references"></a>Reference
-
-- [eShopOnContainers: Vytvoření clusteru Kubernetes v AKS](https://github.com/dotnet-architecture/eShopOnContainers/wiki/Deploy-to-Azure-Kubernetes-Service-(AKS)#create-kubernetes-cluster-in-aks)
-- [eShopOnContainers: Azure Dev Spaces](https://github.com/dotnet-architecture/eShopOnContainers/wiki/Azure-Dev-Spaces)
-- [Azure Dev Spaces](https://docs.microsoft.com/azure/dev-spaces/about)
+Ukázka eShopOnContainers zahrnuje podporu pro sledování online marketingových kampaní. Funkce Azure se používá ke sledování podrobností marketingové kampaně pro dané ID kampaně. Místo vytváření úplné mikroslužeb je jedna funkce Azure jednodušší a dostatečná. Azure Functions mají jednoduchý model sestavení a nasazení, zejména v případě, že je nakonfigurován tak, aby běžel v Kubernetes. Nasazení funkce se skriptuje pomocí šablon Azure Resource Manager (ARM) a rozhraní příkazového řádku Azure CLI. Tato služba kampaně není zaměřená na zákazníka a vyvolává jednu operaci, což je skvělým kandidátem na Azure Functions. Tato funkce vyžaduje minimální konfiguraci, včetně dat připojovacího řetězce databáze a nastavení Image základního identifikátoru URI. Azure Functions můžete nakonfigurovat v Azure Portal.
 
 >[!div class="step-by-step"]
 >[Předchozí](map-eshoponcontainers-azure-services.md)

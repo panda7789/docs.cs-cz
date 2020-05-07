@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: 6fae3b23-5c9f-47c0-85d8-6bb75e050786
 topic_type:
 - apiref
-ms.openlocfilehash: 3d27cf1987d7e9896885f87857554f4039c8d714
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.openlocfilehash: aeecf19cb85ce5d7781c3dfedca079e97cab76ce
+ms.sourcegitcommit: 957c49696eaf048c284ef8f9f8ffeb562357ad95
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76788983"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82895361"
 ---
 # <a name="icordebuginitialize-method"></a>ICorDebug::Initialize – metoda
-Inicializuje objekt `ICorDebug`.  
+Inicializuje `ICorDebug` objekt.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -32,17 +32,17 @@ HRESULT Initialize ();
 ```  
   
 ## <a name="remarks"></a>Poznámky  
- Ladicí program musí volat `Initialize` v době vytváření pro inicializaci služeb ladění. Tato metoda musí být volána před voláním jakékoli jiné metody `ICorDebug`.  
+ Ladicí program musí volat `Initialize` během vytváření pro inicializaci služeb ladění. Tato metoda musí být volána před voláním jakékoli jiné `ICorDebug` metody.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** CorDebug. idl, CorDebug. h  
   
  **Knihovna:** CorGuids. lib  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [ICorDebug – rozhraní](icordebug-interface.md)

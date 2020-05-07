@@ -14,16 +14,16 @@ helpviewer_keywords:
 ms.assetid: dbb1c4dc-269a-459b-ab1d-6c70788782ce
 topic_type:
 - apiref
-ms.openlocfilehash: d6c923f03309da3ad8092ea6119e7d850120ee2c
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.openlocfilehash: e494bbb24e8f2245593e7945625e72e70ae1dde5
+ms.sourcegitcommit: 957c49696eaf048c284ef8f9f8ffeb562357ad95
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76783807"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82892770"
 ---
 # <a name="icordebugcontroller-interface"></a>ICorDebugController – rozhraní
 
-Představuje obor, buď <xref:System.Diagnostics.Process>, nebo <xref:System.AppDomain>, ve kterém lze ovládat kontext provádění kódu.  
+Představuje obor, buď <xref:System.Diagnostics.Process> nebo <xref:System.AppDomain>, ve kterém lze ovládat kontext provádění kódu.  
   
 ## <a name="methods"></a>Metody  
   
@@ -41,20 +41,20 @@ Představuje obor, buď <xref:System.Diagnostics.Process>, nebo <xref:System.App
 |[Terminate – metoda](icordebugcontroller-terminate-method.md)|Ukončí proces se zadaným ukončovacím kódem.|  
   
 ## <a name="remarks"></a>Poznámky  
- Pokud `ICorDebugController` řídí proces, zahrnuje obor všechny podprocesy procesu. Pokud `ICorDebugController` řídí doménu aplikace, obor obsahuje pouze vlákna této konkrétní aplikační domény.  
+ Pokud `ICorDebugController` řízení procesu řídí, obor zahrnuje všechna vlákna procesu. Pokud `ICorDebugController` aplikace řídí doménu aplikace, zahrnuje obor pouze vlákna této konkrétní aplikační domény.  
   
 > [!NOTE]
 > Toto rozhraní nepodporuje vzdálené volání, a to buď mezi počítačem, nebo mezi procesy.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** CorDebug. idl, CorDebug. h  
   
  **Knihovna:** CorGuids. lib  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Rozhraní pro ladění](debugging-interfaces.md)
+- [Debugging – rozhraní](debugging-interfaces.md)

@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: 7137e3d1-1dad-48d8-8c37-16ac816534d3
 topic_type:
 - apiref
-ms.openlocfilehash: fde76c3b34fcc9f2321f3426d2801b310f681067
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 59a497d203d241bbc6e0f884007d4a401c112073
+ms.sourcegitcommit: 957c49696eaf048c284ef8f9f8ffeb562357ad95
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79179001"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82893656"
 ---
 # <a name="icordebugcodegetcode-method"></a>ICorDebugCode::GetCode – metoda
-Vrátí celý kód pro zadanou funkci, který je formátován pro zpětný překlad. Tato metoda byla zastaralá v rozhraní .NET Framework verze 2.0. Použijte [ICorDebugCode2::GetCodeChunks](icordebugcode2-getcodechunks-method.md) místo.  
+Vrátí celý kód pro zadanou funkci, který je formátován pro zpětný překlad. Tato metoda je zastaralá ve verzi .NET Framework 2,0. Místo toho použijte [ICorDebugCode2:: getcodechunks –](icordebugcode2-getcodechunks-method.md) .  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,31 +40,31 @@ HRESULT GetCode (
   
 ## <a name="parameters"></a>Parametry  
  `startOffset`  
- [v] Posun začátku funkce.  
+ pro Posun začátku funkce  
   
  `endOffset`  
- [v] Posun konce funkce.  
+ pro Posun konce funkce  
   
  `cBufferAlloc`  
- [v] Velikost pole, `buffer` do kterého bude vrácen kód.  
+ pro Velikost `buffer` pole, do něhož bude vrácen kód.  
   
  `buffer`  
- [out] Pole, do kterého bude vrácen kód.  
+ mimo Pole, do kterého bude vrácen kód.  
   
  `pcBufferSize`  
- [out] Počet vrácených bajtů.  
+ mimo Počet vrácených bajtů  
   
 ## <a name="remarks"></a>Poznámky  
- Pokud byl kód funkce rozdělen do více bloků, jsou zřetězeny v pořadí zvyšující se nativní posun. Hranice instrukcí nejsou kontrolovány.  
+ Pokud byl kód funkce rozdělen do více bloků dat, jsou zřetězeny v pořadí, ve kterém se zvyšuje nativní posun. Nekontrolují se hranice instrukcí.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET Framework:** 1.1, 1.0  
+ **Verze .NET Framework:** 1,1, 1,0  
   
 ## <a name="see-also"></a>Viz také
 
