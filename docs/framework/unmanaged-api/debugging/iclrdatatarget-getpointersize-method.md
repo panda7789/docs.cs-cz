@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 51d9f4a4-81a7-4527-8537-5212bdb05c70
 topic_type:
 - apiref
-ms.openlocfilehash: 7a274aaec4919b86f32f98e4d8278dc12748fb2b
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.openlocfilehash: e6c4d5f8cc911198add176cab9c4b9b89128068e
+ms.sourcegitcommit: d9c7ac5d06735a01c1fafe34efe9486734841a72
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76785483"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82860621"
 ---
 # <a name="iclrdatatargetgetpointersize-method"></a>ICLRDataTarget::GetPointerSize – metoda
 Získá velikost typu ukazatele, který cílový proces používá, v bajtech. Tato metoda je volána službou Common Language Runtime Data Access Services.  
@@ -41,14 +41,14 @@ HRESULT GetPointerSize (
  Tato metoda je implementována modulem pro ladění aplikace.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** ClrData. idl, ClrData. h  
   
  **Knihovna:** CorGuids. lib  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [ICLRDataTarget – rozhraní](iclrdatatarget-interface.md)

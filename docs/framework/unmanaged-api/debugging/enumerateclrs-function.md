@@ -16,12 +16,12 @@ helpviewer_keywords:
 ms.assetid: f8d50cb3-ec4f-4529-8fe3-bd61fd28e13c
 topic_type:
 - apiref
-ms.openlocfilehash: cdf88ef193df71a638fff43add1a9648d8631731
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.openlocfilehash: 1f33fb98712939d1e687798547b784819f164d63
+ms.sourcegitcommit: d9c7ac5d06735a01c1fafe34efe9486734841a72
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76789119"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82860720"
 ---
 # <a name="enumerateclrs-function"></a>EnumerateCLRs – funkce
 Poskytuje mechanismus pro vytváření výčtu CLRs v procesu.  
@@ -48,14 +48,14 @@ HRESULT EnumerateCLRs (
  mimo Ukazatel na pole řetězců, které určují úplné cesty pro CLRs načtené v procesu.  
   
  `pdwArrayLengthOut`  
- mimo Ukazatel na DWORD, který obsahuje délku rovnoměrné velikosti `ppHandleArrayOut` a `pdwArrayLengthOut`.  
+ mimo Ukazatel na DWORD, který obsahuje délku rovnoměrné velikosti `ppHandleArrayOut` a. `pdwArrayLengthOut`  
   
 ## <a name="return-value"></a>Návratová hodnota  
  S_OK  
  Počet CLRs v procesu byl úspěšně zjištěn a odpovídající pole popisovače a cesty byly správně vyplněny.  
   
  E_INVALIDARG  
- Buď je `ppHandleArrayOut` nebo `ppStringArrayOut` null, nebo je `pdwArrayLengthOut` null.  
+ Buď `ppHandleArrayOut` nebo `ppStringArrayOut` je null, nebo `pdwArrayLengthOut` má hodnotu null.  
   
  E_OUTOFMEMORY  
  Funkce nemůže přidělit dostatek paměti pro pole popisovač a cesta.  
@@ -64,16 +64,16 @@ HRESULT EnumerateCLRs (
  Nelze vytvořit výčet načtených CLRs.  
   
 ## <a name="remarks"></a>Poznámky  
- Pro cílový proces, který je identifikován `debuggeePID`, funkce vrátí pole cest, `ppStringArrayOut`, na CLRs načtený v procesu; pole obslužných rutin událostí, `ppHandleArrayOut`, které mohou obsahovat událost pokračování-spuštění pro modul CLR ve stejném indexu; a velikost polí `pdwArrayLengthOut`, které určují počet načtených CLRs.  
+ Pro cílový proces, který je identifikován nástrojem `debuggeePID`, vrátí funkce pole cest, `ppStringArrayOut`aby bylo možné CLRs načíst do procesu. pole obslužných rutin událostí, `ppHandleArrayOut`které mohou obsahovat událost pokračování-spuštění pro modul CLR ve stejném indexu; a velikost polí `pdwArrayLengthOut`, která určuje počet načtených CLRs.  
   
- V operačním systému Windows `debuggeePID` mapuje identifikátor procesu operačního systému.  
+ V operačním systému Windows se `debuggeePID` mapuje na identifikátor procesu operačního systému.  
   
- Tato funkce přiděluje paměť pro `ppHandleArrayOut` a `ppStringArrayOut`. Chcete-li uvolnit přidělenou paměť, je nutné volat [funkci CloseCLREnumeration –](closeclrenumeration-function.md).  
+ Tato funkce přidělí paměť pro `ppHandleArrayOut` a `ppStringArrayOut` . Chcete-li uvolnit přidělenou paměť, je nutné volat [funkci CloseCLREnumeration –](closeclrenumeration-function.md).  
   
- Tuto funkci lze volat s parametrem pole nastaveným na hodnotu null, aby bylo možné vrátit počet CLRs v cílovém procesu. Od tohoto počtu může volající odvodit velikost vyrovnávací paměti, která se vytvoří: `(sizeof(HANDLE) * count) + (sizeof(LPWSTR) * count) + (sizeof(WCHAR*) * count * MAX_PATH)`.  
+ Tuto funkci lze volat s parametrem pole nastaveným na hodnotu null, aby bylo možné vrátit počet CLRs v cílovém procesu. Od tohoto počtu volající může odvodit velikost vyrovnávací paměti, která bude vytvořena: `(sizeof(HANDLE) * count) + (sizeof(LPWSTR) * count) + (sizeof(WCHAR*) * count * MAX_PATH)`.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Záhlaví:** dbgshim. h  
   

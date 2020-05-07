@@ -14,14 +14,14 @@ helpviewer_keywords:
 ms.assetid: 6e7c6bee-7ced-495f-bf6c-2a5f0c716f7e
 topic_type:
 - apiref
-ms.openlocfilehash: 9230e1fcba7c0492e50773e7ca13fb16f07238a2
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.openlocfilehash: 708ac2e407bf6f87dbe314a0e87cdd16f45b2bcf
+ms.sourcegitcommit: d9c7ac5d06735a01c1fafe34efe9486734841a72
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76789139"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82860756"
 ---
-# <a name="_efn_getmanagedobjectname-function"></a>\_EFN\_GetManagedObjectName Function
+# <a name="_efn_getmanagedobjectname-function"></a>\_EFN\_– funkce GetManagedObjectName
 Získá název typu pomocí zadaného ukazatele spravovaného objektu.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -52,12 +52,12 @@ HRESULT _EFN_GetManagedObjectName(
  Pokud ve vlákně, který je aktuálně v kontextu, není žádný spravovaný kód, funkce vrátí hodnotu HRESULT SOS_E_NOMANAGEDCODE s hodnotou zařízení 0xa0 a kódem chyby 0x1000.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** SOS_Stacktrace. h  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Globální statické funkce pro ladění](debugging-global-static-functions.md)
+- [Globální statické funkce ladění](debugging-global-static-functions.md)

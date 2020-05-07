@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 9bb93fab-57e8-4f9a-9ef3-1794504fa896
 topic_type:
 - apiref
-ms.openlocfilehash: c8313b7c97eb5d94424259dc91459f62e13368fb
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.openlocfilehash: e4fa0a3745200d39a468292e9520b1aeb0e9f1b2
+ms.sourcegitcommit: d9c7ac5d06735a01c1fafe34efe9486734841a72
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76785597"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82860678"
 ---
 # <a name="iclrdataenummemoryregionscallbackenummemoryregion-method"></a>ICLRDataEnumMemoryRegionsCallback::EnumMemoryRegion – metoda
 Volá se [ICLRDataEnumMemoryRegions –:: EnumMemoryRegions –](iclrdataenummemoryregions-enummemoryregions-method.md) , aby se do ladicího programu nahlásila výsledek pokusu o vytvoření výčtu konkrétní oblasti paměti.  
@@ -42,19 +42,19 @@ HRESULT EnumMemoryRegion (
  pro Velikost oblasti paměti (v bajtech).  
   
 ## <a name="remarks"></a>Poznámky  
- Metoda `ICLRDataEnumMemoryRegions::EnumMemoryRegions` vyvolá tuto metodu zpětného volání po každém pokusu o vytvoření výčtu oblasti paměti. Výčet bude pokračovat i v případě, že tato metoda vrátí hodnotu HRESULT indikující selhání.  
+ `ICLRDataEnumMemoryRegions::EnumMemoryRegions` Metoda po každém pokusu o výčet oblasti paměti zavolá tuto metodu zpětného volání. Výčet bude pokračovat i v případě, že tato metoda vrátí hodnotu HRESULT indikující selhání.  
   
  Oblasti hlášené tímto zpětným voláním můžou být duplicitní nebo překrývající se oblasti.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** ClrData. idl, ClrData. h  
   
  **Knihovna:** CorGuids. lib  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [ICLRDataEnumMemoryRegionsCallback – rozhraní](iclrdataenummemoryregionscallback-interface.md)

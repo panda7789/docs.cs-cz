@@ -14,14 +14,14 @@ helpviewer_keywords:
 ms.assetid: 21ceed9e-62b2-4024-b027-6d095109955a
 topic_type:
 - apiref
-ms.openlocfilehash: 824be4a401d265575b48f66045dd944d521e64a4
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.openlocfilehash: c50fe09648793ba7340960654811ff31187269d8
+ms.sourcegitcommit: d9c7ac5d06735a01c1fafe34efe9486734841a72
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76789150"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82860784"
 ---
-# <a name="_efn_getmanagedexcepstack-function"></a>\_EFN\_GetManagedExcepStack Function
+# <a name="_efn_getmanagedexcepstack-function"></a>\_EFN\_– funkce GetManagedExcepStack
 Pokud je zadána adresa spravovaného objektu výjimky, vrátí verzi řetězce trasování zásobníku obsaženého v rámci.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -52,12 +52,12 @@ HRESULT _EFN_GetManagedExcepStack(
  Pokud ve vlákně, který je aktuálně v kontextu, není žádný spravovaný kód, funkce vrátí hodnotu HRESULT SOS_E_NOMANAGEDCODE s hodnotou zařízení 0xa0 a kódem chyby 0x1000.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** SOS_Stacktrace. h  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Globální statické funkce pro ladění](debugging-global-static-functions.md)
+- [Globální statické funkce ladění](debugging-global-static-functions.md)

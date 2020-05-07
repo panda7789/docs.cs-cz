@@ -14,14 +14,14 @@ helpviewer_keywords:
 ms.assetid: caea7754-867c-4360-a65c-5ced4408fd9d
 topic_type:
 - apiref
-ms.openlocfilehash: cc5093a5ba0afcccaf960e9b8776f93a061cc2f5
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.openlocfilehash: a725aa2c0f1fdea523bbf7cba880bc805f855782
+ms.sourcegitcommit: d9c7ac5d06735a01c1fafe34efe9486734841a72
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76785671"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82860731"
 ---
-# <a name="_efn_stacktrace-function"></a>\_EFN\_funkce trasování zásobníku
+# <a name="_efn_stacktrace-function"></a>\_EFN\_– funkce trasování zásobníku
 Poskytuje textovou reprezentaci spravovaného trasování zásobníku a pole `CONTEXT` záznamů, jednu pro každý přechod mezi nespravovaným a spravovaným kódem.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -58,22 +58,22 @@ HRESULT CALLBACK _EFN_StackTrace(
  pro Velikost struktury kontextu.  
   
  `Flags`  
- pro Nastavte na hodnotu 0 nebo SOS_STACKTRACE_SHOWADDRESSES (0x01), aby se zobrazil registr EBP a jako ukazatel na vložení zásobníku (ESP) před každou `module!functionname`ovou čáru.  
+ pro Nastavte na hodnotu 0 nebo SOS_STACKTRACE_SHOWADDRESSES (0x01), aby se zobrazil registr EBP a jako ukazatel na vložení zásobníku (ESP) před každým `module!functionname` řádkem.  
   
 ## <a name="remarks"></a>Poznámky  
- Strukturu `_EFN_StackTrace` lze volat z programového programu WinDbg. Parametry se používají takto:  
+ `_EFN_StackTrace` Struktura může být volána z programového rozhraní WinDbg. Parametry se používají takto:  
   
-- Pokud je `wszTextOut` null a `puiTextLength` není null, funkce vrátí délku řetězce v `puiTextLength`.  
+- Pokud `wszTextOut` má hodnotu null `puiTextLength` a není null, funkce vrátí délku řetězce v `puiTextLength`.  
   
-- Pokud `wszTextOut` není null, funkce ukládá text v `wszTextOut` až do umístění označeného `puiTextLength`. Pokud byla ve vyrovnávací paměti dostatek místa, vrátí se úspěšně, nebo pokud vyrovnávací paměť není dost velká, vrátí se E_OUTOFMEMORY.  
+- Pokud `wszTextOut` není null, funkce ukládá text `wszTextOut` až do umístění, které je uvedeno v. `puiTextLength` Pokud byla ve vyrovnávací paměti dostatek místa, vrátí se úspěšně, nebo pokud vyrovnávací paměť není dost velká, vrátí se E_OUTOFMEMORY.  
   
-- Přechodová část funkce je ignorována, pokud `pTransitionContexts` a `puiTransitionContextCount` jsou obě hodnoty null. V tomto případě funkce poskytuje volajícím textový výstup pouze názvů funkcí.  
+- Část přechodu funkce je ignorována, pokud `pTransitionContexts` a `puiTransitionContextCount` jsou obě hodnoty null. V tomto případě funkce poskytuje volajícím textový výstup pouze názvů funkcí.  
   
-- Pokud je `pTransitionContexts` null a `puiTransitionContextCount` není null, funkce vrátí potřebný počet kontextových položek v `puiTransitionContextCount`.  
+- Pokud `pTransitionContexts` má hodnotu null `puiTransitionContextCount` a není null, funkce vrátí potřebný počet kontextových položek v `puiTransitionContextCount`.  
   
-- Pokud `pTransitionContexts` není null, funkce ji zpracuje jako pole struktury délky `puiTransitionContextCount`. Velikost struktury je dána `uiSizeOfContext`a musí se jednat o velikost [SimpleContext](stacktrace-simplecontext-structure.md) nebo `CONTEXT` architektury.  
+- Pokud `pTransitionContexts` hodnota není null, funkce ji zpracuje jako pole struktury délky `puiTransitionContextCount`. Velikost struktury je dána `uiSizeOfContext`, a musí se jednat o velikost [SimpleContext](stacktrace-simplecontext-structure.md) nebo `CONTEXT` pro architekturu.  
   
-- `wszTextOut` je zapsán v následujícím formátu:  
+- `wszTextOut`je zapsán v následujícím formátu:  
   
     ```output  
     "<ModuleName>!<Function Name>[+<offset in hex>]  
@@ -86,19 +86,19 @@ HRESULT CALLBACK _EFN_StackTrace(
   
 - Pokud není ve vlákně aktuálně v kontextu žádný spravovaný kód, funkce vrátí SOS_E_NOMANAGEDCODE.  
   
-- Parametr `Flags` je buď 0, nebo SOS_STACKTRACE_SHOWADDRESSES pro zobrazení EBP a ESP před každým řádkem `module!functionname`. Ve výchozím nastavení má hodnotu 0.  
+- `Flags` Parametr je buď 0, nebo SOS_STACKTRACE_SHOWADDRESSES pro zobrazení EBP a ESP před každým `module!functionname` řádkem. Ve výchozím nastavení má hodnotu 0.  
   
     ```cpp  
     #define SOS_STACKTRACE_SHOWADDRESSES   0x00000001  
     ```  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** SOS_Stacktrace. h  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Globální statické funkce pro ladění](debugging-global-static-functions.md)
+- [Globální statické funkce ladění](debugging-global-static-functions.md)

@@ -16,12 +16,12 @@ helpviewer_keywords:
 ms.assetid: 3d2fe9bd-75ef-4364-84a6-da1e1994ac1a
 topic_type:
 - apiref
-ms.openlocfilehash: 609d6e47c951aa104cb23084b65e98827a6851f1
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.openlocfilehash: 60b7d77542a5065fb1e09a98e659cac17fb093e9
+ms.sourcegitcommit: d9c7ac5d06735a01c1fafe34efe9486734841a72
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76789181"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82860855"
 ---
 # <a name="createversionstringfrommodule-function"></a>CreateVersionStringFromModule – funkce
 Vytvoří řetězec verze z cesty modulu CLR (Common Language Runtime) v cílovém procesu.  
@@ -53,31 +53,31 @@ HRESULT CreateVersionStringFromModule (
  pro Velikost `pBuffer`.  
   
  `pdwLength`  
- mimo Délka řetězce verze vráceného funkcí `pBuffer`.  
+ mimo Délka řetězce verze, kterou `pBuffer`vrátil.  
   
 ## <a name="return-value"></a>Návratová hodnota  
  S_OK  
  Řetězec verze pro cílový modul CLR byl úspěšně vrácen v `pBuffer`.  
   
  E_INVALIDARG  
- `szModuleName` je null nebo buď `pBuffer` nebo `cchBuffer`, má hodnotu null. `pBuffer` a `cchBuffer` musí mít hodnotu null nebo být prázdné.  
+ `szModuleName`je null nebo buď `pBuffer` nebo `cchBuffer` je null. `pBuffer`a `cchBuffer` musí mít hodnotu null nebo být null.  
   
- HRESULT_FROM_WIN32(ERROR_INSUFFICIENT_BUFFER)  
- `pdwLength` je větší než `cchBuffer`. To může být očekávaný výsledek, pokud jste předali hodnotu null pro `pBuffer` i `cchBuffer`a dotazováni jste na potřebnou velikost vyrovnávací paměti pomocí `pdwLength`.  
+ HRESULT_FROM_WIN32 (ERROR_INSUFFICIENT_BUFFER)  
+ `pdwLength`je větší než `cchBuffer`. To může být očekávaný výsledek, pokud jste předali hodnotu null pro `pBuffer` a `cchBuffer`a dotazováni jste na potřebnou velikost vyrovnávací paměti `pdwLength`pomocí.  
   
- HRESULT_FROM_WIN32(ERROR_MOD_NOT_FOUND)  
- `szModuleName` neobsahuje cestu k platnému modulu CLR v cílovém procesu.  
+ HRESULT_FROM_WIN32 (ERROR_MOD_NOT_FOUND)  
+ `szModuleName`neobsahuje cestu k platnému modulu CLR v cílovém procesu.  
   
  E_FAIL (nebo jiné návratové kódy E_)  
- `pidDebuggee` neodkazuje na platný proces nebo jiné selhání.  
+ `pidDebuggee`neodkazuje na platný proces nebo jiné selhání.  
   
 ## <a name="remarks"></a>Poznámky  
- Tato funkce přijímá proces CLR identifikovaný `pidDebuggee` a cestu k řetězci, která je určena `szModuleName`. Řetězec verze je vrácen do vyrovnávací paměti, na kterou `pBuffer` odkazuje. Tento řetězec je neprůhledný pro uživatele funkce. To znamená, že v samotném řetězci verze není žádný vnitřní význam. Používá se výhradně v kontextu této funkce a [funkci CreateDebuggingInterfaceFromVersion –](createdebugginginterfacefromversion-function-for-silverlight.md).  
+ Tato funkce přijímá proces CLR, který je identifikován pomocí `pidDebuggee` , a cestu k řetězci, která je `szModuleName`určena parametrem. Řetězec verze je vrácen do vyrovnávací paměti, která `pBuffer` odkazuje na. Tento řetězec je neprůhledný pro uživatele funkce. To znamená, že v samotném řetězci verze není žádný vnitřní význam. Používá se výhradně v kontextu této funkce a [funkci CreateDebuggingInterfaceFromVersion –](createdebugginginterfacefromversion-function-for-silverlight.md).  
   
- Tato funkce by měla být volána dvakrát. Při prvním volání předejte hodnotu null pro `pBuffer` i `cchBuffer`. Když to uděláte, v `pdwLength`se vrátí velikost vyrovnávací paměti nutné pro `pBuffer`. Potom můžete zavolat funkci podruhé a předat vyrovnávací paměť v `pBuffer` a její velikosti v `cchBuffer`.  
+ Tato funkce by měla být volána dvakrát. Při prvním volání metody, předejte hodnotu null pro i `pBuffer` `cchBuffer`. Když to uděláte, bude vrácena velikost vyrovnávací paměti, která je `pBuffer` nezbytná pro `pdwLength`. Potom můžete zavolat funkci podruhé a předat vyrovnávací paměť v `pBuffer` a její velikosti v. `cchBuffer`  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Záhlaví:** dbgshim. h  
   

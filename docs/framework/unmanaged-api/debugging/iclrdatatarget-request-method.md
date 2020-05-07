@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: 4723bd1c-eddb-4ed2-897a-010024a47e01
 topic_type:
 - apiref
-ms.openlocfilehash: 336ba38bc80fcb2649a12c78691e52c5e4d70bfe
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: b913affb4728dc80ba67438384cbeac87265f76d
+ms.sourcegitcommit: d9c7ac5d06735a01c1fafe34efe9486734841a72
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79179115"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82860536"
 ---
 # <a name="iclrdatatargetrequest-method"></a>ICLRDataTarget::Request – metoda
-Volat služby přístupu k datům cltime společného jazyka (CLR) požádat o operaci, jak je definováno implementací.  
+Volá se službami CLR (Common Language Runtime) k vyžádání operace, jak jsou definované implementací.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,33 +41,33 @@ HRESULT Request (
   
 ## <a name="parameters"></a>Parametry  
  `reqCode`  
- [v] Definováno uživatelem.  
+ pro Definováno uživatelem.  
   
  `inBufferSize`  
- [v] Velikost vstupní vyrovnávací paměti, která se používá pro příchozí požadavek.  
+ pro Velikost vstupní vyrovnávací paměti, která se používá pro příchozí požadavek.  
   
  `inBuffer`  
- [v] Vyrovnávací paměť obsahující požadavek.  
+ pro Vyrovnávací paměť obsahující požadavek.  
   
  `outBufferSize`  
- [v] Velikost výstupní vyrovnávací paměti, která se používá pro odpověď.  
+ pro Velikost výstupní vyrovnávací paměti, která se používá pro odpověď.  
   
  `outBuffer`  
- [out] A Buffer obsahující odpověď.  
+ mimo Vyrovnávací paměť obsahující odpověď.  
   
 ## <a name="remarks"></a>Poznámky  
- Metoda `Request` usnadňuje přidání nespecifikovaných vlastních operací. To znamená, že tato metoda poskytuje rozšiřitelnost bez nutnosti revize definice rozhraní.  
+ `Request` Metoda usnadňuje přidání nespecifikovaných vlastních operací. To znamená, že tato metoda poskytuje rozšiřitelnost bez nutnosti Revize definice rozhraní.  
   
- Tato metoda je implementována zapisovače ladicí aplikace.  
+ Tato metoda je implementována modulem pro ladění aplikace.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Záhlaví:** ClrData.idl, ClrData.h  
+ **Hlavička:** ClrData. idl, ClrData. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také
 

@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: e2f05155-9bef-4e11-b703-7f05890665ca
 topic_type:
 - apiref
-ms.openlocfilehash: 2b5c99e40aabdbc654bdc612729b2756e3ef5bb4
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.openlocfilehash: 30806394a8895084068acaec6f7d03c6b67bb14b
+ms.sourcegitcommit: d9c7ac5d06735a01c1fafe34efe9486734841a72
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76793719"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82860562"
 ---
 # <a name="iclrdatatarget-interface"></a>ICLRDataTarget – rozhraní
 Poskytuje metody pro interakci s cílovou položkou modulu CLR (Common Language Runtime).  
@@ -44,15 +44,15 @@ Poskytuje metody pro interakci s cílovou položkou modulu CLR (Common Language 
  Klient rozhraní API (to znamená ladicí program) musí implementovat toto rozhraní, jak je to vhodné pro konkrétní cílovou položku. Například živý proces bude mít jinou implementaci než výpis paměti.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** ClrData. idl, ClrData. h  
   
  **Knihovna:** CorGuids. lib  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [ICLRDataTarget2 – rozhraní](iclrdatatarget2-interface.md)
-- [Rozhraní pro ladění](debugging-interfaces.md)
+- [Debugging – rozhraní](debugging-interfaces.md)

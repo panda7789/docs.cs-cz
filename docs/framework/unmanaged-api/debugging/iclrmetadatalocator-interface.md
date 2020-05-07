@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 43c944f4-406a-4df6-981e-0eabb33dd5d0
 topic_type:
 - apiref
-ms.openlocfilehash: 642391bce99328f3700d1783054943b6a450b22b
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.openlocfilehash: 734f8eaa7c520bbf1ad1208ece42751e967a208a
+ms.sourcegitcommit: d9c7ac5d06735a01c1fafe34efe9486734841a72
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76789022"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82859729"
 ---
 # <a name="iclrmetadatalocator-interface"></a>ICLRMetadataLocator – rozhraní
 Používá se ve vrstvě služeb Data Access k vyhledání metadat sestavení v cílovém procesu.  
@@ -34,14 +34,14 @@ Používá se ve vrstvě služeb Data Access k vyhledání metadat sestavení v 
  Klient API (tzn. ladicí program) musí implementovat toto rozhraní v závislosti na konkrétním cílovém procesu. Například implementace pro živý proces se liší od výpisu paměti.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** ClrData. idl, ClrData. h  
   
  **Knihovna:** CorGuids. lib  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Rozhraní pro ladění](debugging-interfaces.md)
+- [Debugging – rozhraní](debugging-interfaces.md)

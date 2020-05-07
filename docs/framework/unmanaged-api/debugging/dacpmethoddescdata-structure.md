@@ -15,12 +15,12 @@ topic_type:
 - apiref
 author: hoyosjs
 ms.author: juhoyosa
-ms.openlocfilehash: cc54664ea8ad61005de3f3fae7407946d1c861b2
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.openlocfilehash: d623fe862eaf5902fd89d0e512dd07f73a03246f
+ms.sourcegitcommit: d9c7ac5d06735a01c1fafe34efe9486734841a72
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76793848"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82860814"
 ---
 # <a name="dacpmethoddescdata-structure"></a>DacpMethodDescData – struktura
 
@@ -61,7 +61,7 @@ struct DacpMethodDescData
 | `wSlotNumber`                | Číslo pozice metody v tabulce metod.                                                   |
 | `NativeCodeAddr`             | Počáteční nativní adresa metody                                                            |
 | `data`                       | Ukazatel na vyrovnávací paměť použitou interně modulem runtime.                                             |
-| `MethodDescPtr`              | Ukazatel na `MethodDesc` v modulu runtime.                                                     |
+| `MethodDescPtr`              | Ukazatel na modul `MethodDesc` v modulu runtime.                                                     |
 | `nativeCodeInfo`             | Ukazatel na vyrovnávací paměť použitou interně modulem runtime ke sledování metod.                            |
 | `moduleInfo`                 | Ukazatel na vyrovnávací paměť použitou interně modulem runtime pro informace o modulu.                      |
 | `MDToken`                    | Token přidružený k dané metodě                                                         |
@@ -78,13 +78,13 @@ struct DacpMethodDescData
 Tato struktura žije v modulu runtime a není vystavena prostřednictvím žádné hlavičky nebo souborů knihoven. Pokud ho chcete použít, definujte strukturu, jak je uvedeno výše.
 
 ## <a name="requirements"></a>Požadavky
-**Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+**Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
 **Hlavička:** NTato  
 **Knihovna:** NTato  
-**Verze .NET Framework:** [!INCLUDE[net_current_v47plus](../../../../includes/net-current-v47plus.md)]  
+**Verze .NET Framework:**[!INCLUDE[net_current_v47plus](../../../../includes/net-current-v47plus.md)]  
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Ladění](index.md)
 - [Struktury pro ladění](debugging-structures.md)
-- [Běžné typy dat](../../../../docs/framework/unmanaged-api/common-data-types-unmanaged-api-reference.md)
+- [Běžné typy dat](../common-data-types-unmanaged-api-reference.md)

@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 0d8a7730-edc9-4728-898f-41b219cf5a28
 topic_type:
 - apiref
-ms.openlocfilehash: d4e7c055480ea611357d5d3e18ac4306acf4d0b0
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.openlocfilehash: 141dc8632812ab4a2ce82864cde56337025baa28
+ms.sourcegitcommit: d9c7ac5d06735a01c1fafe34efe9486734841a72
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76785408"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82860581"
 ---
 # <a name="iclrdatatargetgettlsvalue-method"></a>ICLRDataTarget::GetTLSValue – metoda
 Získá hodnotu z thread local Storage (TLS) zadaného vlákna v cílovém procesu. Tato metoda je volána službou Common Language Runtime (CLR) pro přístup k datům.  
@@ -43,20 +43,20 @@ HRESULT GetTLSValue (
  pro Index umístění. Tato hodnota musí být platný index v místním úložišti zadaného vlákna.  
   
  `value`  
- mimo Ukazatel na hodnotu `CLRDATA_ADDRESS`, která určuje hodnotu vrácenou z daného umístění TLS.  
+ mimo Ukazatel na `CLRDATA_ADDRESS` hodnotu, která určuje hodnotu vrácenou z daného umístění TLS.  
   
 ## <a name="remarks"></a>Poznámky  
  Tato metoda je implementována modulem pro ladění aplikace.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** ClrData. idl, ClrData. h  
   
  **Knihovna:** CorGuids. lib  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [ICLRDataTarget – rozhraní](iclrdatatarget-interface.md)

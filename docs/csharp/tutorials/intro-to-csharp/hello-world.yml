@@ -11,12 +11,12 @@ metadata:
   displayType: two-column
   interactive: csharp
   ms.custom: mvc
-  ms.openlocfilehash: 77180064f810cf70b1ec0ef3d72bbd9005b78a47
-  ms.sourcegitcommit: d7666f6e49c57a769612602ea7857b927294ce47
+  ms.openlocfilehash: 025b3e0fcaf693be00f1ca396b92617d6faf31aa
+  ms.sourcegitcommit: d9c7ac5d06735a01c1fafe34efe9486734841a72
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 04/30/2020
-  ms.locfileid: "82595907"
+  ms.lasthandoff: 05/06/2020
+  ms.locfileid: "82860977"
 items:
 - durationInMinutes: 1
   content: >
@@ -38,11 +38,6 @@ items:
 
 
     Pojďme se posunout dál. Zbytek této lekce se zabývá prací s typem `string`, který v jazyce C# představuje text. Stejně jako typ `Console` má i typ `string` svoje metody. Metody `string` pracují s textem.
-
-
-    > [!NOTE]
-
-    > Toto online kódovací prostředí je v režimu náhledu. Pokud se setkáte s potížemi, oznamte je [v úložišti dotnet/try](https://github.com/dotnet/try/issues).
 - title: Deklarace a používání proměnných
   durationInMinutes: 3
   content: >
@@ -119,11 +114,6 @@ items:
 
 
     Vyberte znovu **Spustit** , aby se zobrazily výsledky. Místo "Hello {aFriend}" by měla být zpráva "Hello Maira".
-
-
-    > [!NOTE]
-
-    > Toto online kódovací prostředí je v režimu náhledu. Pokud se setkáte s potížemi, oznamte je [v úložišti dotnet/try](https://github.com/dotnet/try/issues).
 - title: Práce s řetězci
   durationInMinutes: 5
   content: >
@@ -159,11 +149,6 @@ items:
     > [!TIP]
 
     > Teď je vhodná chvíle, abyste si to vyzkoušeli sami. Naučili jste se, že metoda `Console.WriteLine()` napíše na obrazovku text. Dozvěděli jste se, jak deklarovat proměnné a řetězit řetězce. Teď můžete v interaktivním okně experimentovat. Okno obsahuje funkci s názvem **IntelliSense** , která dává návrhy na to, co můžete dělat. Zadejte `.` za `d` v `firstFriend`. Zobrazí se seznam návrhů pro vlastnosti a metody, které můžete použít.
-
-
-    > [!NOTE]
-
-    > Toto online kódovací prostředí je v režimu náhledu. Pokud se setkáte s potížemi, oznamte je [v úložišti dotnet/try](https://github.com/dotnet/try/issues).
 - title: Další úkony s řetězci
   durationInMinutes: 5
   content: >
@@ -231,11 +216,6 @@ items:
     Console.WriteLine(sayHello.ToLower());
 
     ```
-
-
-    > [!NOTE]
-
-    > Toto online kódovací prostředí je v režimu náhledu. Pokud se setkáte s potížemi, oznamte je [v úložišti dotnet/try](https://github.com/dotnet/try/issues).
 - title: Hledání řetězců
   durationInMinutes: 10
   content: >
@@ -268,11 +248,6 @@ items:
 
 
     Při hledání dílčího řetězce „You“ na začátku a „hello“ na konci by se vám měla vrátit hodnota `true`, kdežto při hledání dílčího řetězce „goodbye“ na začátku i na konci by se měla vrátit hodnota false.
-
-
-    > [!NOTE]
-
-    > Toto online kódovací prostředí je v režimu náhledu. Pokud se setkáte s potížemi, oznamte je [v úložišti dotnet/try](https://github.com/dotnet/try/issues).
 - title: Dokončení výzvy
   durationInMinutes: 3
   content: >
@@ -293,11 +268,6 @@ items:
     Console.WriteLine(songLyrics.EndsWith("goodbye"));
 
     ```
-
-
-    > [!NOTE]
-
-    > Toto online kódovací prostředí je v režimu náhledu. Pokud se setkáte s potížemi, oznamte je [v úložišti dotnet/try](https://github.com/dotnet/try/issues).
 - content: >-
     Dokončili jste kurz "Hello C#" Úvod do jazyka C#. Kliknutím na odkaz **čísla v jazyce C#** níže můžete spustit další interaktivní kurz, nebo můžete navštívit [Web .net](https://dotnet.microsoft.com/learn/dotnet/hello-world-tutorial/intro) a stáhnout .NET Core SDK, vytvořit projekt na počítači a zachovat kódování. Oddíl "další kroky" vás převede zpět na tyto kurzy.
 
