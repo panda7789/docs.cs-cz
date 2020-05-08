@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: f35225b3-5dda-4d5a-913d-b3373e9ab81e
 topic_type:
 - apiref
-ms.openlocfilehash: c8469c9aa875e7d567229e9949d83083cbe54987
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: f317eb1b3d91fc005d59d6a06bad329a5f68aa11
+ms.sourcegitcommit: 957c49696eaf048c284ef8f9f8ffeb562357ad95
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73110348"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82895231"
 ---
 # <a name="icordebugappdomaingetmodulefrommetadatainterface-method"></a>ICorDebugAppDomain::GetModuleFromMetaDataInterface – metoda
 Získá modul, který odpovídá zadanému rozhraní metadat.  
@@ -36,16 +36,16 @@ HRESULT GetModuleFromMetaDataInterface (
   
 ## <a name="parameters"></a>Parametry  
  `pIMetaData`  
- pro Ukazatel na objekt, který je jedním z [rozhraní metadat](../../../../docs/framework/unmanaged-api/metadata/metadata-interfaces.md).  
+ pro Ukazatel na objekt, který je jedním z [rozhraní metadat](../metadata/metadata-interfaces.md).  
   
  `ppModule`  
  mimo Ukazatel na adresu objektu ICorDebugModule, který představuje modul odpovídající danému rozhraní metadat.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** CorDebug. idl, CorDebug. h  
   
  **Knihovna:** CorGuids. lib  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]
+ **Verze .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]

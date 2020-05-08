@@ -93,3 +93,5 @@
           href: infrastructure-as-code.md
         - name: Aplikační komplety nativní pro cloud
           href: application-bundles.md
+    - name: Souhrn
+      href: summary.md
