@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 208e5c2d-3f3f-404e-8b3c-7cccc14ddb16
 topic_type:
 - apiref
-ms.openlocfilehash: be1e1cd0d38ad71de43478af5565bb1ac98a8c0d
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.openlocfilehash: 8be4332da77c3fbf4229a3fbeb9ba835a7a13eee
+ms.sourcegitcommit: 957c49696eaf048c284ef8f9f8ffeb562357ad95
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76778005"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82894796"
 ---
 # <a name="icordebugblockingobjectenum-interface"></a>ICorDebugBlockingObjectEnum – rozhraní
 Poskytuje enumerátor pro seznam struktur [CorDebugBlockingObject –](cordebugblockingobject-structure.md) . Toto rozhraní je podtřídou rozhraní ICorDebugEnum.  
@@ -31,21 +31,21 @@ Poskytuje enumerátor pro seznam struktur [CorDebugBlockingObject –](cordebugb
 |[Next – metoda](icordebugblockingobjectenum-next-method.md)|Provede výčet ze seznamu [CorDebugBlockingObject –](cordebugblockingobject-structure.md) struktur.|  
   
 ## <a name="remarks"></a>Poznámky  
- Každá struktura `CorDebugBlockingObject` představuje objekt, který blokuje vlákno.  
+ Každá `CorDebugBlockingObject` struktura představuje objekt, který blokuje vlákno.  
   
 > [!NOTE]
 > Toto rozhraní nepodporuje vzdálené volání, a to buď mezi počítačem, nebo mezi procesy.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** CorDebug. idl, CorDebug. h  
   
  **Knihovna:** CorGuids. lib  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Rozhraní pro ladění](debugging-interfaces.md)
+- [Debugging – rozhraní](debugging-interfaces.md)
 - [Ladění](index.md)

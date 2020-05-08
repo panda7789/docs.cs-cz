@@ -2,12 +2,12 @@
 title: Představení referenční aplikace eShopOnContainers
 description: Představujeme referenční aplikaci eShopOnContainers Cloud Native mikroslužeb pro ASP.NET Core a Azure.
 ms.date: 06/30/2019
-ms.openlocfilehash: 0d55f248acbc34bcc76d38987d7e1d537cf6065a
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 8d4ad982716a07613ebbef6668afab69d5a8b4f6
+ms.sourcegitcommit: 957c49696eaf048c284ef8f9f8ffeb562357ad95
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73087248"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82895542"
 ---
 # <a name="introducing-eshoponcontainers-reference-app"></a>Představení referenční aplikace eShopOnContainers
 
@@ -30,7 +30,7 @@ Pojďme začít s přezkoumáním funkcí a požadavků aplikace. Aplikace eShop
 - Filtrovat položky podle značky
 - Přidání položek do nákupního košíku
 - Upravit nebo odebrat položky z koše
-- Registr
+- Rezervovat
 - Registrace účtu
 - Přihlášení
 - Odhlásit se
@@ -68,9 +68,9 @@ Vzhledem k tomu, že využívá mikroslužby, zahrnuje aplikace eShopOnContainer
 
 Kód je uspořádán tak, aby podporoval různé mikroslužby, a v rámci každé mikroslužby je kód rozdělen do logiky domény, aspekty infrastruktury a uživatelského rozhraní nebo koncového bodu služby. V mnoha případech můžou být závislosti každé služby splněné v produkčním prostředí, stejně jako alternativní možnosti pro místní vývoj. Pojďme se podívat, jak jsou požadavky aplikace mapovány na služby Azure.
 
-## <a name="understanding-microservices"></a>Porozumění mikroslužbám
+## <a name="understanding-microservices"></a>Principy mikroslužeb
 
-Tato kniha se zaměřuje na nativní cloudové aplikace sestavené pomocí technologie Azure. Další informace o osvědčených postupech mikroslužeb a o tom, jak navrhovat aplikace založené na mikroslužbách, najdete v doprovodné příručce, [mikroslužby .NET: architektura pro kontejnery aplikací .NET](https://dotnet.microsoft.com/learn/aspnet/microservices-architecture). Kniha je dostupná online, ve formátu PDF nebo ve formátech eReader.
+Tato kniha se zaměřuje na nativní cloudové aplikace sestavené pomocí technologie Azure. Další informace o osvědčených postupech mikroslužeb a o tom, jak navrhovat aplikace založené na mikroslužbách, najdete v doprovodné příručce, [mikroslužby .NET: architektura pro kontejnery aplikací .NET](https://dotnet.microsoft.com/download/thank-you/microservices-architecture-ebook).
 
 >[!div class="step-by-step"]
 >[Předchozí](candidate-apps.md)

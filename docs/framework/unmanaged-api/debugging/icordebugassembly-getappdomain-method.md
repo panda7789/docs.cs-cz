@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: 14e18510-23ac-4cba-9f96-c86147a2df9d
 topic_type:
 - apiref
-ms.openlocfilehash: 53042e722809a6574396648529c677d749154716
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 81936052c3fa2ad4fb77b503341b8b4873b80695
+ms.sourcegitcommit: 957c49696eaf048c284ef8f9f8ffeb562357ad95
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73132729"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82894936"
 ---
 # <a name="icordebugassemblygetappdomain-method"></a>ICorDebugAssembly::GetAppDomain – metoda
-Získá ukazatel rozhraní na doménu aplikace, která obsahuje tuto instanci `ICorDebugAssembly`.  
+Získá ukazatel rozhraní na doménu aplikace, která obsahuje tuto `ICorDebugAssembly` instanci.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,10 +41,10 @@ HRESULT GetAppDomain (
  Pokud je toto sestavení systémové sestavení, `GetAppDomain` vrátí hodnotu null.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** CorDebug. idl, CorDebug. h  
   
  **Knihovna:** CorGuids. lib  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]
+ **Verze .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]

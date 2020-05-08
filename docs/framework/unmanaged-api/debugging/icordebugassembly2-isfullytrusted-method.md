@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 26cbd27d-12bf-444a-8197-ccd14d37dda3
 topic_type:
 - apiref
-ms.openlocfilehash: bef51fe9df0f85659603c637f11ed4e856c8e01a
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: dd82709064fe7f7d912d93f4b3f0248769f02b9e
+ms.sourcegitcommit: 957c49696eaf048c284ef8f9f8ffeb562357ad95
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73133956"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82894887"
 ---
 # <a name="icordebugassembly2isfullytrusted-method"></a>ICorDebugAssembly2::IsFullyTrusted – metoda
 Získá hodnotu, která označuje, zda bylo sestavení uděleno úplnému vztahu důvěryhodnosti systémem zabezpečení modulu runtime.  
@@ -35,16 +35,16 @@ HRESULT IsFullyTrusted(
   
 ## <a name="parameters"></a>Parametry  
  `pbFullyTrusted`  
- [out] `true`, pokud je sestavení uděleno úplnému vztahu důvěryhodnosti systémem zabezpečení modulu runtime; v opačném případě `false`.  
+ mimo `true` Pokud byla sestavení udělena plná důvěryhodnost systémem zabezpečení modulu runtime; v opačném případě `false`.  
   
 ## <a name="remarks"></a>Poznámky  
- Tato metoda vrátí hodnotu HRESULT prvku CORDBG_E_NOTREADY, pokud zásady zabezpečení pro sestavení ještě nebyly přeloženy, to znamená, pokud dosud nebyl spuštěn žádný kód v sestavení.  
+ Tato metoda vrací hodnotu HRESULT CORDBG_E_NOTREADY, pokud zásady zabezpečení pro sestavení ještě nebyly přeloženy, tj., pokud dosud nebyl spuštěn žádný kód v sestavení.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** CorDebug. idl, CorDebug. h  
   
  **Knihovna:** CorGuids. lib  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]
+ **Verze .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]

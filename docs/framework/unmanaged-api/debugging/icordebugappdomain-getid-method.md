@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 32c27576-71fa-42ee-8230-67b92913ea08
 topic_type:
 - apiref
-ms.openlocfilehash: 87c43d6f05dffbf10ca1dd9253abfe893db9adf5
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 63346c679efc083dea9ab0eaa4f983a5308695f8
+ms.sourcegitcommit: 957c49696eaf048c284ef8f9f8ffeb562357ad95
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73110483"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82895254"
 ---
 # <a name="icordebugappdomaingetid-method"></a>ICorDebugAppDomain::GetId – metoda
 Získá jedinečný identifikátor domény aplikace.  
@@ -41,10 +41,10 @@ HRESULT GetID (
  Identifikátor domény aplikace je jedinečný v rámci nadřazeného procesu.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** CorDebug. idl, CorDebug. h  
   
  **Knihovna:** CorGuids. lib  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]
+ **Verze .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]

@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 0aba6096-5b38-435c-a72a-86d35db4daef
 topic_type:
 - apiref
-ms.openlocfilehash: 5a6e0b009674ff52595aaa0ae4a060f1cdfd1398
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: fb9b5ee329b41a8b842b94d59bd61c8bcf5f0bf5
+ms.sourcegitcommit: 957c49696eaf048c284ef8f9f8ffeb562357ad95
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73089051"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82895150"
 ---
 # <a name="icordebugappdomain2getfunctionpointertype-method"></a>ICorDebugAppDomain2::GetFunctionPointerType – metoda
 Získá ukazatel na funkci, která má daný podpis.  
@@ -46,10 +46,10 @@ HRESULT GetFunctionPointerType (
  mimo Ukazatel na adresu `ICorDebugType` objektu, který představuje ukazatel na funkci.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** CorDebug. idl, CorDebug. h  
   
  **Knihovna:** CorGuids. lib  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]
+ **Verze .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]

@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: fdab0ade-7f56-4fa2-b3ef-f7a1d2852bba
 topic_type:
 - apiref
-ms.openlocfilehash: 2d71cebb77ed3ca586e857710667c0077f4f76ed
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.openlocfilehash: 3630e25b6c24edaa366f1b0fae088e760e851fa4
+ms.sourcegitcommit: 957c49696eaf048c284ef8f9f8ffeb562357ad95
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76793585"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82895412"
 ---
 # <a name="icordebugdebugactiveprocess-method"></a>ICorDebug::DebugActiveProcess – metoda
 Připojí ladicí program k existujícímu procesu.  
@@ -40,7 +40,7 @@ HRESULT DebugActiveProcess (
  pro ID procesu, ke kterému má být připojen ladicí program.  
   
  `win32Attach`  
- pro Logická hodnota, která je nastavena na `true`, pokud se má ladicí program chovat jako ladicí program Win32 pro proces a odeslání nespravovaných zpětných volání; v opačném případě `false`.  
+ pro Logická hodnota, která je nastavena `true` na, pokud se má ladicí program chovat jako ladicí program Win32 pro proces a odeslání nespravovaných zpětných volání; v opačném případě `false`.  
   
  `ppProcess`  
  mimo Ukazatel na adresu objektu "ICorDebugProcess", který představuje proces, ke kterému byl připojen ladicí program.  
@@ -49,14 +49,14 @@ HRESULT DebugActiveProcess (
  Ladění spolupráce se nepodporuje na platformách, které nejsou založené na platformě IA-64 a platformě AMD64.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** CorDebug. idl, CorDebug. h  
   
  **Knihovna:** CorGuids. lib  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [ICorDebug – rozhraní](icordebug-interface.md)

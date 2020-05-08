@@ -1,169 +1,167 @@
 ---
 title: Komunikace front-endového klienta
-description: Zjistěte, jak front-endklienti komunikují se systémy nativními pro cloud
+description: Informace o tom, jak klienti front-endu komunikují s nativními systémy cloudu
 author: robvet
 ms.date: 09/08/2019
-ms.openlocfilehash: af26873381509df7807db6ecb37a7d73669adb37
-ms.sourcegitcommit: e3cbf26d67f7e9286c7108a2752804050762d02d
+ms.openlocfilehash: 89f13ea1c9ecbe92e959ae63a4c21bf7775f8943
+ms.sourcegitcommit: 957c49696eaf048c284ef8f9f8ffeb562357ad95
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2020
-ms.locfileid: "80989074"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82895578"
 ---
 # <a name="front-end-client-communication"></a>Komunikace front-endového klienta
 
 [!INCLUDE [book-preview](../../../includes/book-preview.md)]
 
-V cloudově nativním systému vyžadují klienti front-endu (mobilní, webové a desktopové aplikace) komunikační kanál pro interakci s nezávislými back-endovými mikroslužbami.  
+V rámci nativního cloudového systému musí klienti front-end (mobilní, webové a desktopové aplikace) komunikovat s nezávislými mikroslužbami.  
 
 Jaké jsou možnosti?
 
-Chcete-li, aby věci jednoduché, front-end klient a může *přímo komunikovat* s back-endové mikroslužby, znázorněno na obrázku 4-2.
+Aby bylo možné tyto věci jednoduché, může klient front-end *komunikovat přímo* s back-end mikroslužbami, které jsou znázorněné na obrázku 4-2.
 
-![Přímá komunikace klienta ke službám](./media/direct-client-to-service-communication.png)
+![Směrování komunikace mezi klientem a službou](./media/direct-client-to-service-communication.png)
 
-**Obrázek 4-2.** Přímá komunikace klienta ke službám
+**Obrázek 4-2.** Směrování komunikace mezi klientem a službou
 
-S tímto přístupem má každá mikroslužba veřejný koncový bod, který je přístupný front-endovým klientům. V produkčním prostředí byste umístit nástroje pro vyrovnávání zatížení před mikroslužeb, směrování provozu úměrně.
+S tímto přístupem má každá mikroslužba veřejný koncový bod, ke kterému mají přístup klienti front-end. V produkčním prostředí byste si vyrovnávání zatížení umístili před mikroslužby a poměrně směrují provoz.
 
-Zatímco jednoduché implementovat, přímá komunikace klienta by bylo přijatelné pouze pro jednoduché aplikace mikroslužeb. Tento vzor pevně spojuje front-end klienty s jádrem back-end služby, otevírá dveře pro řadu problémů, včetně:
+I když je jednoduchá implementace, je přímá komunikace s klientem přijatelná jenom pro jednoduché aplikace mikroslužeb. Tento model těsně Couples klientské klienty na základní back-endové služby a otevírá dvířka pro řadu problémů, včetně:
 
-- Náchylnost klienta k refaktoringu back-endové služby.
-- Širší prostor pro útok jako základní back-endové služby jsou přímo vystaveny.
-- Duplikace průřezových obav v každé mikroslužbě.
-- Příliš složitý kód klienta – klienti musí sledovat více koncových bodů a zpracovávat selhání odolným způsobem.
+- Náchylnost klienta k refaktoringu služby back-end.
+- Širší plocha pro útoky, jako jsou základní back-endové služby, je přímo vystavená.
+- Duplikace otázek mezi jednotlivými mikroslužbami mezi průřezy.
+- Vysoce složitý klientský kód – klienti musí sledovat více koncových bodů a zpracovávat chyby odolným způsobem.
 
-Místo toho široce přijímaný vzor návrhu cloudu je implementovat [službu brány rozhraní API](../microservices/architect-microservice-container-applications/direct-client-to-microservice-communication-versus-the-api-gateway-pattern.md) mezi front-endovými aplikacemi a back-endovými službami. Vzorek je znázorněn na obrázku 4-3.
+Místo toho široce přijatý model návrhu cloudu je implementace [služby API Gateway](../microservices/architect-microservice-container-applications/direct-client-to-microservice-communication-versus-the-api-gateway-pattern.md) mezi front-end aplikacemi a back-end službami. Vzor je zobrazen na obrázku 4-3.
 
-![Vzor brány rozhraní API](./media/api-gateway-pattern.png)
+![Vzor brány API](./media/api-gateway-pattern.png)
 
-**Obrázek 4-3.** Vzor brány rozhraní API
+**Obrázek 4-3.** Vzor brány API
 
-Na předchozím obrázku si všimněte, jak služba brány rozhraní API abstrahuje back-endové základní mikroslužby. Implementováno jako webové rozhraní API, funguje jako *reverzní proxy server*, směrování příchozí provoz na interní mikroslužeb.
+Na předchozím obrázku si všimněte, jak služba brány rozhraní API abstrakce back-endové základní mikroslužby. Implementované jako webové rozhraní API funguje jako *reverzní proxy server*, který směruje příchozí provoz do interních mikroslužeb.
 
-Brána izoluje klienta od vnitřní služby dělení a refaktoring. Pokud změníte back-endslužby, můžete přizpůsobit pro něj v bráně bez porušení klienta. Je to také vaše první obranná linie pro průřezové obavy, jako je identita, ukládání do mezipaměti, odolnost proti chybám, měření a škrcení. Mnohé z těchto průřezových problémů lze odložit z back-endových základních služeb do brány, což zjednodušuje back-endové služby.
+Brána zaizolační klienta z interního vytváření oddílů a refaktoringu služby. Změníte-li back-endové služby, budete pro ni pro bránu v bráně, aniž by došlo k narušení klienta. Je také první linií obrany pro průřezy, jako je například identita, ukládání do mezipaměti, odolnost, měření a omezování. Mnohé z těchto otázek mezi jednotlivými průřezy je možné z back-endové základní služby na bránu vypnout a zjednodušit tak back-endové služby.
 
-Je třeba dbát na to, aby brána rozhraní API byla jednoduchá a rychlá. Obchodní logika je obvykle udržována mimo bránu. Komplexní brána riskuje, že se stane úzkým místem a nakonec samotným monolitem. Větší systémy často zveřejňují více bran rozhraní API segmentovaných podle typu klienta (mobilní, webové, desktopové) nebo back-endové funkce. [Back-end pro front-endy](https://docs.microsoft.com/azure/architecture/patterns/backends-for-frontends) vzor poskytuje směr pro implementaci více bran. Vzorek je znázorněn na obrázku 4-4.
+Je potřeba zajistit, aby brána API byla jednoduchá a rychlá. Obchodní logika se obvykle uchovává mimo bránu. Složitá rizika brány se stávají kritickým bodem a nakonec monolitu sám sebe. Větší systémy často zveřejňují několik bran API, které jsou segmentované podle typu klienta (mobilní, webové, desktopové) nebo funkce back-endu. Vzor [back-endu pro front-endu](https://docs.microsoft.com/azure/architecture/patterns/backends-for-frontends) nabízí směr pro implementaci více bran. Vzor je zobrazen na obrázku 4-4.
 
-![Vzor brány rozhraní API](./media/backend-for-frontend-pattern.png)
+![Vzor brány API](./media/backend-for-frontend-pattern.png)
 
-**Obrázek 4-4.** Back-end pro front-endový vzor
+**Obrázek 4-4.** Back-end pro vzor front-endu
 
-Všimněte si na předchozím obrázku, jak se příchozí provoz odesílá do konkrétní brány rozhraní API – na základě typu klienta: web, mobilní nebo desktopová aplikace. Tento přístup má smysl, protože možnosti každého zařízení se výrazně liší v různých faktorech, výkonu a omezeních zobrazení. Mobilní aplikace obvykle zveřejňují méně funkcí než aplikace prohlížeče nebo stolních počítačů. Každá brána může být optimalizována tak, aby odpovídala možnostem a funkcím odpovídajícího zařízení.
+Všimněte si, jak se na předchozím obrázku odesílají příchozí přenosy na konkrétní bránu API – na základě typu klienta: webové, mobilní nebo desktopové aplikace. Tento přístup má smysl, protože možnosti jednotlivých zařízení se výrazně liší v rámci omezení počtu formulářů, výkonu a zobrazení. Mobilní aplikace obvykle zpřístupňují méně funkcí než prohlížeč nebo desktopové aplikace. Každou bránu je možné optimalizovat tak, aby odpovídala možnostem a funkcím příslušného zařízení.
 
-Chcete-li začít, můžete vytvořit vlastní službu brány rozhraní API. Rychlé vyhledávání GitHubu poskytne mnoho příkladů. Existuje však několik rámců a komerčních produktů brány, které jsou k dispozici.
+Začněte tím, že vytvoříte vlastní službu API Gateway. Rychlé prohledání GitHubu vám nabídne mnoho příkladů. K dispozici je však několik platforem a komerčních produktů brány.
 
-## <a name="ocelot-gateway"></a>Ocelot brána
+## <a name="ocelot-gateway"></a>Ocelot bránu
 
-Pro jednoduché aplikace nativní pro cloud .NET můžete zvážit [bránu Ocelot](https://github.com/ThreeMammals/Ocelot). Ocelot je brána rozhraní API s otevřeným zdrojovým kódem vytvořená pro mikroslužby .NET, které vyžadují jednotný vstupní bod do jejich systému. Je lehký, rychlý, škálovatelný.
+V případě jednoduchých cloudových aplikací .NET je vhodné zvážit [bránu ocelot](https://github.com/ThreeMammals/Ocelot). Ocelot je open source brána API vytvořená pro mikroslužby .NET, které vyžadují jednotný bod vstupu do systému. Je to odlehčené, rychlé a škálovatelné.
 
-Stejně jako každá brána rozhraní API, jeho primární funkce je předávat příchozí požadavky HTTP na příjem dat služby. Kromě toho podporuje širokou škálu funkcí, které jsou konfigurovatelné v kanálu middlewaru .NET Core. Jeho sada funkcí je uvedena v následující tabulce.
+Stejně jako u libovolné brány rozhraní API je jejich primární funkce předávána příchozím požadavkům HTTP na služby pro příjem dat. Kromě toho podporuje širokou škálu funkcí, které lze konfigurovat v kanálu middlewaru .NET Core. Její sada funkcí je uvedena v následující tabulce.
 
 |Funkce Ocelot  | |
 | :-------- | :-------- |
 | Směrování | Authentication |
 | Agregace požadavků | Autorizace |
-| Service Discovery (s konzulem a Eurekou) | Throttling |
+| Zjišťování služeb (s Consul a Eureka) | Throttling |
 | Vyrovnávání zatížení | Protokolování, trasování |
-| Ukládání do mezipaměti | Transformace řetězce záhlaví/dotazu |
-| Průchod korelace | Vlastní middleware |
-| Kvalita služeb | Zásady opakování |
+| Ukládání do mezipaměti | Transformace hlaviček nebo řetězce dotazu |
+| Průchod korelacemi | Vlastní middleware |
+| Kvalita služby | Zásady opakování |
 
-Každá brána Ocelot určuje upstream a downstream adresy a konfigurovatelné funkce v konfiguračním souboru JSON. Klient odešle požadavek HTTP do brány Ocelot. Po přijetí Ocelot předá objekt HttpRequest prostřednictvím svého kanálu, který s ním manipuluje do stavu určeného jeho konfigurací. Na konci kanálu Ocelot vytvoří nový HTTPResponseObject a předá ji navazující služby. Pro odpověď Ocelot obrátí kanál a odešle odpověď zpět klientovi.
+Každá brána Ocelot Určuje nadřazené a podřízené adresy a konfigurovatelné funkce v konfiguračním souboru JSON. Klient odešle požadavek HTTP do brány Ocelot. Po přijetí Ocelot předá objekt HttpRequest prostřednictvím kanálu, který ho manipuluje do stavu určeného jeho konfigurací. Na konci kanálu Ocelot vytvoří nový HTTPResponseObject a předá ho službě pro příjem dat. Pro odpověď Ocelot obrátí kanál a odešle odpověď zpět klientovi.
 
-Ocelot je k dispozici jako balíček NuGet. Zaměřuje se na net standard 2.0, takže je kompatibilní s rozhraním .NET Core 2.0+ a .NET Framework 4.6.1+ za běhu. Ocelot integruje se vším, co mluví HTTP a běží na platformách, které podporuje .NET Core: Linux, macOS a Windows. Ocelot je rozšiřitelný a podporuje mnoho moderních platforem, včetně kontejnerů Dockeru, služeb Azure Kubernetes nebo jiných veřejných cloudů.  Ocelot se integruje s open-source balíčky, jako je [konzul](https://www.consul.io), [GraphQL](https://graphql.org)a [Eureka Netflixu](https://github.com/Netflix/eureka).
+Ocelot je k dispozici jako balíček NuGet. Cílí na síť Standard 2,0, která je kompatibilní s .NET Core 2.0 + i .NET Framework 4.6.1 + runtime. Ocelot se integruje s cokoli, co mluví s HTTP a běží na platformách, které .NET Core podporuje: Linux, macOS a Windows. Ocelot je rozšiřitelná a podporuje mnoho moderních platforem, včetně kontejnerů Docker, služeb Azure Kubernetes nebo jiných veřejných cloudů.  Ocelot se integruje s open source balíčky, jako je [Consul](https://www.consul.io), [GraphQL](https://graphql.org)a Netflix [Eureka](https://github.com/Netflix/eureka).
 
-Zvažte Ocelot pro jednoduché aplikace nativní pro cloud, které nevyžadují bohatou sadu funkcí komerční brány rozhraní API.
+Zvažte Ocelot pro jednoduché aplikace nativní pro Cloud, které nevyžadují bohatou sadu funkcí komerční brány API.
 
 ## <a name="azure-application-gateway"></a>Azure Application Gateway
 
-Pro jednoduché požadavky na bránu můžete zvážit [Azure Application Gateway](https://docs.microsoft.com/azure/application-gateway/overview). Je k dispozici jako služba Azure [PaaS](https://azure.microsoft.com/overview/what-is-paas/)a obsahuje základní funkce brány, jako je směrování adres URL, ukončení protokolu SSL a brána firewall webové aplikace. Služba podporuje možnosti [vyrovnávání zatížení vrstvy 7.](https://www.nginx.com/resources/glossary/layer-7-load-balancing/) Pomocí vrstvy 7 můžete směrovat požadavky na základě skutečného obsahu zprávy HTTP, nikoli pouze nízkoúrovňových síťových paketů TCP.
+V případě požadavků na jednoduchou bránu můžete zvážit [Application Gateway Azure](https://docs.microsoft.com/azure/application-gateway/overview). K dispozici jako [Služba Azure PaaS](https://azure.microsoft.com/overview/what-is-paas/), zahrnuje základní funkce brány, jako je směrování adres URL, ukončení protokolu SSL a firewall webových aplikací. Služba podporuje funkce [Vyrovnávání zatížení vrstvy 7](https://www.nginx.com/resources/glossary/layer-7-load-balancing/) . U vrstvy 7 můžete směrovat požadavky na základě skutečného obsahu zprávy HTTP, nikoli jenom síťových paketů TCP nízké úrovně.
 
-V celé této knize evangelizujeme hosting cloud-nativní systémy v [Kubernetes](https://www.infoworld.com/article/3268073/what-is-kubernetes-your-next-application-platform.html). Orchestrátor kontejnerů Kubernetes automatizuje problémy nasazení, škálování a provozu kontejnerizovaných úloh. Azure Application Gateway se dá nakonfigurovat jako bránu rozhraní API pro cluster [služby Azure Kubernetes.](https://azure.microsoft.com/services/kubernetes-service/)
+V celé této příručce jsme evangelizovat hostování nativních systémů cloudu v [Kubernetes](https://www.infoworld.com/article/3268073/what-is-kubernetes-your-next-application-platform.html). Produkt Orchestrator v kontejneru Kubernetes automatizuje nasazení, škálování a provozní obavy týkající se kontejnerových úloh. Azure Application Gateway můžete nakonfigurovat jako bránu rozhraní API pro cluster [Azure Kubernetes Service](https://azure.microsoft.com/services/kubernetes-service/) .
 
-[Ingress controller aplikační brány](https://azure.github.io/application-gateway-kubernetes-ingress/) umožňuje Azure Application Gateway pracovat přímo se [službou Azure Kubernetes](https://azure.microsoft.com/services/kubernetes-service/). Obrázek 4.5 ukazuje architekturu.
+[Kontroler Application Gateway](https://azure.github.io/application-gateway-kubernetes-ingress/) příchozího přenosu dat umožňuje službě Azure Application Gateway pracovat přímo se [službou Azure Kubernetes](https://azure.microsoft.com/services/kubernetes-service/). Obrázek 4,5 ukazuje architekturu.
 
 ![Kontroler příchozího přenosu dat služby Application Gateway](./media/application-gateway-ingress-controller.png)
 
 **Obrázek 4-5.** Kontroler příchozího přenosu dat služby Application Gateway
 
-Kubernetes obsahuje integrovanou funkci, která podporuje vyrovnávání zatížení HTTP (úroveň 7), nazývanou [Ingress](https://kubernetes.io/docs/concepts/services-networking/ingress/). Ingress definuje sadu pravidel pro to, jak mohou být instance mikroslužeb uvnitř AKS vystaveny vnějšímu světu. V předchozí bitové kopii ingress řadič interpretuje pravidla příchozího přenosu dat nakonfigurované pro cluster a automaticky konfiguruje Aplikační brána Azure. Na základě těchto pravidel, application gateway směruje provoz na mikroslužby spuštěné uvnitř AKS. Ingress řadič naslouchá změnám pravidel příchozího přenosu dat a provede příslušné změny brány aplikace Azure.
+Kubernetes zahrnuje integrovanou funkci, která podporuje vyrovnávání zatížení HTTP (Level 7), které [se nazývá příchozí](https://kubernetes.io/docs/concepts/services-networking/ingress/)přenos dat. Příchozí připojení definuje sadu pravidel, jak můžou být instance mikroslužeb uvnitř AKS vystaveny vnějšímu světě. Na předchozím obrázku kontroler příchozího přenosu dat přeloží pravidla příchozího přenosu nakonfigurovaná pro cluster a automaticky nakonfiguruje Application Gateway Azure. Na základě těchto pravidel Application Gateway směruje provoz na mikroslužby běžící v rámci AKS. Kontroler příchozího přenosu dat naslouchá změnám pravidel příchozího přenosu dat a provádí příslušné změny v Application Gateway Azure.
 
 ## <a name="azure-api-management"></a>Azure API Management
 
-Pro středně rozsáhlé až rozsáhlé cloudové nativní systémy můžete zvážit [Azure API Management](https://azure.microsoft.com/services/api-management/). Jedná se o cloudovou službu, která nejen řeší vaše potřeby brány rozhraní API, ale poskytuje plnohodnotné vývojářské a administrativní prostředí. Správa rozhraní API je znázorněna na obrázku 4-6.
+Pro středně velká až rozsáhlá cloudová řešení systému můžete zvážit [API Management Azure](https://azure.microsoft.com/services/api-management/). Jedná se o cloudovou službu, která nejen vyřeší vaše požadavky na bránu API, ale poskytuje plnohodnotné vývojářské a administrativní prostředí. API Management se zobrazuje na obrázku 4-6.
 
 ![Azure API Management](./media/azure-api-management.png)
 
 **Obrázek 4-6.** Azure API Management
 
-Chcete-li spustit, api management zpřístupňuje server brány, který umožňuje řízený přístup ke službám back-end na základě konfigurovatelných pravidel a zásad. Tyto služby můžou být v cloudu Azure, v datovém centru on-prem nebo v jiných veřejných cloudech. Klíče ROZHRANÍ API a tokeny JWT určují, kdo může co dělat. Veškerý provoz je zaznamenán pro analytické účely.
+Aby bylo možné začít, API Management zveřejňuje server brány, který umožňuje řízený přístup k back-endové službě na základě konfigurovatelných pravidel a zásad. Tyto služby můžou být v cloudu Azure, v Prem datovém centru nebo v jiných veřejných cloudech. Klíče rozhraní API a tokeny JWT určují, kdo může co dělat. Veškerý provoz se protokoluje pro účely analýzy.
 
-Pro vývojáře nabízí api Management vývojářský portál, který poskytuje přístup ke službám, dokumentaci a ukázkovému kódu pro jejich vyvolání. Vývojáři můžou pomocí rozhraní Swagger/Open API kontrolovat koncové body služby a analyzovat jejich využití. Služba funguje napříč hlavními vývojovými platformami: .NET, Java, Golang a další.
+Pro vývojáře API Management nabízí portál pro vývojáře, který poskytuje přístup ke službám, dokumentaci a ukázkovému kódu pro jejich vyvolání. Vývojáři můžou k kontrole koncových bodů služby a k analýze jejich využití použít rozhraní Swagger nebo Open API. Služba funguje v rámci hlavních vývojových platforem: .NET, Java, golang a další.
 
-Portál vydavatele zpřístupňuje řídicí panel správy, kde správci zveřejňují rozhraní API a spravují jejich chování. Přístup ke službě může být udělen, stav služby monitorován a služba telemetrie shromážděny. Správci používají *zásady* pro každý koncový bod ovlivnit chování. [Zásady](https://docs.microsoft.com/azure/api-management/api-management-howto-policies) jsou předem sestavené příkazy, které se spouštějí postupně pro každé volání služby.  Zásady jsou konfigurovány pro příchozí volání, odchozí volání nebo vyvolány při chybě. Zásady lze použít v různých oborech služby, aby bylo možné deterministické řazení při kombinování zásad. Výrobek je dodáván s velkým počtem předem vytvořených [politik](https://docs.microsoft.com/azure/api-management/api-management-policies).
+Portál vydavatele zveřejňuje řídicí panel pro správu, ve kterém správci zveřejňují rozhraní API a spravují jejich chování. Přístup k službě se dá udělit, sledovat stav služby a shromažďovat telemetrii o službě. Správci aplikují *zásady* na každý koncový bod tak, aby ovlivnily chování. [Zásady](https://docs.microsoft.com/azure/api-management/api-management-howto-policies) jsou předem sestavené příkazy, které se spouštějí postupně pro každé volání služby.  Zásady jsou nakonfigurovány pro příchozí volání, odchozí volání nebo při chybě vyvolány. Zásady je možné použít v různých oborech služby, které umožňují deterministické řazení při kombinování zásad. Produkt se dodává s velkým množstvím předem připravených [zásad](https://docs.microsoft.com/azure/api-management/api-management-policies).
 
-Tady jsou příklady toho, jak můžou zásady ovlivnit chování vašich cloudových nativních služeb:  
+Tady jsou příklady, jak můžou zásady ovlivnit chování vašich cloudových nativních služeb:  
 
-- Omezte přístup ke službě.
-- Vynucujte ověřování.  
-- Omezení volání z jednoho zdroje, v případě potřeby.
-- Povolte ukládání do mezipaměti.
-- Blokovat volání z konkrétních IP adres.
+- Omezte přístup k službě.
+- Vyvynuťte ověřování.  
+- V případě potřeby omezení volání z jednoho zdroje.
+- Povolit ukládání do mezipaměti.
+- Zablokuje volání z konkrétních IP adres.
 - Řízení toku služby.
-- Převést požadavky z SOAP do REST nebo mezi různými formáty dat, například z XML na JSON.
+- Převeďte požadavky z SOAP na REST nebo mezi různými datovými formáty, jako je například z XML na JSON.
 
-Azure API Management můžete vystavit back-end ové služby, které jsou hostované kdekoli – v cloudu nebo datovém centru. Pro starší služby, které můžete vystavit ve vašich cloudových nativních systémech, podporuje rozhraní API REST i SOAP. I ostatní služby Azure můžou být zpřístupněny prostřednictvím správy rozhraní API. Spravované rozhraní API můžete umístit nad záložní službu Azure, jako je [Azure Service Bus](https://azure.microsoft.com/services/service-bus/) nebo Azure Logic [Apps](https://azure.microsoft.com/services/logic-apps/). Azure API Management nezahrnuje integrovanou podporu vyrovnávání zatížení a měla by se používat ve spojení se službou vyrovnávání zatížení.
+Azure API Management může vystavovat back-endové služby, které jsou hostované kdekoli – v cloudu nebo v datovém centru. U starších služeb, které můžete zveřejnit v systémech nativních pro Cloud, podporuje rozhraní API REST i protokolu SOAP. I další služby Azure mohou být zpřístupněny prostřednictvím API Management. Spravované rozhraní API můžete umístit nad službu zálohování Azure, jako je [Azure Service Bus](https://azure.microsoft.com/services/service-bus/) nebo [Azure Logic Apps](https://azure.microsoft.com/services/logic-apps/). Služba Azure API Management nezahrnuje integrovanou podporu vyrovnávání zatížení a měla by se používat ve spojení se službou Vyrovnávání zatížení.
 
-Azure API Management je k dispozici ve [čtyřech různých vrstvách](https://azure.microsoft.com/pricing/details/api-management/):
+Azure API Management je k dispozici ve [čtyřech různých úrovních](https://azure.microsoft.com/pricing/details/api-management/):
 
-- Developer
+- Vývojář
 - Základní
 - Standard
 - Premium
 
-Úroveň Developer je určena pro neprodukční úlohy a hodnocení. Ostatní úrovně nabízejí postupně větší výkon, funkce a smlouvy o vyšší úrovni služeb (SLA). Úroveň Premium poskytuje [podporu virtuální sítě Azure](https://docs.microsoft.com/azure/virtual-network/virtual-networks-overview) a více [oblastí](https://docs.microsoft.com/azure/api-management/api-management-howto-deploy-multi-region). Všechny úrovně mají pevnou cenu za hodinu.
+Úroveň pro vývojáře je určena pro úlohy, které nejsou v produkčním prostředí, a vyhodnocení. Ostatní úrovně nabízejí postupně větší možnosti napájení, funkcí a vyšších smluv o úrovni služeb (SLA). Úroveň Premium poskytuje podporu [Azure Virtual Network](https://docs.microsoft.com/azure/virtual-network/virtual-networks-overview) a [více oblastí](https://docs.microsoft.com/azure/api-management/api-management-howto-deploy-multi-region). Všechny úrovně mají pevnou cenu za hodinu.
 
-Nedávno Microsoft oznámil [úroveň bez serveru pro](https://azure.microsoft.com/blog/announcing-azure-api-management-for-serverless-architectures/) Azure API Management. Tato služba, označovaná jako *cenová úroveň spotřeby*, je variantou správy rozhraní API navržené kolem výpočetního modelu bez serveru. Na rozdíl od dříve zobrazených cenových úrovní "předem přidělené", úroveň spotřeby poskytuje okamžité zřizování a ceny za akci.
+Cloud Azure také nabízí úroveň bez [serveru](https://azure.microsoft.com/blog/announcing-azure-api-management-for-serverless-architectures/) pro Azure API Management. Tato služba se označuje jako *cenová úroveň spotřeby*, což je varianta API Management navržená kolem výpočetního modelu bez serveru. Na rozdíl od výše uvedených cenových úrovní "předem přidělené" poskytuje úroveň spotřeby okamžité zřizování a ceny za akci.
 
-Umožňuje funkce brány rozhraní API pro následující případy použití:
+Umožňuje funkce brány API v následujících případech použití:
 
-- Mikroslužby implementované pomocí technologií bez serveru, jako jsou [Azure Functions](https://docs.microsoft.com/azure/azure-functions/functions-overview) a Azure [Logic Apps](https://azure.microsoft.com/services/logic-apps/).
-- Prostředky azure zálohování služeb, jako jsou fronty service bus a témata, úložiště Azure a další.
-- Mikroslužeb, kde má příležitostné velké špičky, ale zůstává nízká většinu času.
+- Mikroslužby implementované pomocí technologií bez serveru, jako jsou [Azure Functions](https://docs.microsoft.com/azure/azure-functions/functions-overview) a [Azure Logic Apps](https://azure.microsoft.com/services/logic-apps/).
+- Prostředky služby Azure pro zálohování, například Service Bus fronty a témata, úložiště Azure a další.
+- Mikroslužby, ve kterých provoz má příležitostné velké špičky, ale zůstává ve většině času malý čas.
 
-Úroveň spotřeby používá stejné základní součásti správy rozhraní API služby, ale využívá zcela jinou architekturu založenou na dynamicky přidělených prostředcích. Dokonale ladí s výpočetním modelem bez serveru:
+Úroveň spotřeby používá stejné základní součásti API Management služby, ale využívá zcela jinou architekturu založenou na dynamicky přidělených prostředcích. Přesně se zarovnává s výpočetním modelem bez serveru:
 
 - Žádná infrastruktura ke správě.
 - Žádná nečinná kapacita.
 - Vysoká dostupnost.
 - Automatické škálování.
-- Náklady jsou založeny na skutečném využití.
+- Náklady vycházejí ze skutečného využití.
   
-Nová úroveň spotřeby je skvělou volbou pro cloudové nativní systémy, které zveřejňují prostředky bez serveru jako rozhraní API.
-
-> V době psaní úrovně spotřeby je ve verzi preview v cloudu Azure.
+Nová úroveň spotřeby je skvělou volbou pro systémy nativní pro Cloud, které zveřejňují prostředky bez serveru jako rozhraní API.
 
 ## <a name="real-time-communication"></a>Komunikace v reálném čase
 
-Komunikace v reálném čase nebo nabízená komunikace je další možností pro front-endové aplikace, které komunikují s back-endnativními cloudovými systémy přes HTTP. Aplikace, jako jsou finanční tickers, online vzdělávání, hraní her a aktualizace pokroku v zaměstnání, vyžadují okamžité reakce v reálném čase ze back-endu. Při normální komunikaci HTTP neexistuje žádný způsob, jak klient vědět, kdy jsou k dispozici nová data. Klient musí průběžně *dotazování* nebo odesílat požadavky na server. Díky komunikaci v *reálném čase* může server kdykoli doklienta zasílat nová data.
+Komunikace v reálném čase nebo nabízená oznámení je další možností pro front-endové aplikace, které komunikují s back-end cloudovým systémem přes protokol HTTP. Aplikace, jako jsou finanční služby, vzdělávání online, hry a aktualizace probíhajících úloh, vyžadují okamžité odezvy v reálném čase z back-endu. V případě normální komunikace HTTP neexistuje žádný způsob, jak by klient věděl, že jsou k dispozici nová data. Klient musí nepřetržitě *dotazovat* nebo odesílat požadavky na server. Při komunikaci v *reálném čase* může server kdykoli do klienta nabízet nová data.
 
-Systémy v reálném čase jsou často charakterizovány vysokofrekvenčními datovými toky a velkým počtem souběžných klientských připojení. Ruční implementace připojení v reálném čase se může rychle stát složitým, což vyžaduje netriviální infrastrukturu, která zajišťuje škálovatelnost a spolehlivé zasílání zpráv připojeným klientům. Můžete se ocitnout ve správě instance mezipaměti Azure Redis a sady vykladačů zatížení nakonfigurovaných s nepřístupnými relacemi pro spřažení klientů.
+Systémy v reálném čase jsou často charakteristické datovými toky s vysokou frekvencí a velkým počtem souběžných připojení klientů. Ruční implementace připojení v reálném čase se může rychle stát složitou a vyžadovat netriviální infrastrukturu, aby se zajistila škálovatelnost a spolehlivé zasílání zpráv připojeným klientům. Mohli byste najít správu instance Azure Redis Cache a sadu nástrojů pro vyrovnávání zatížení nakonfigurovaných s rychlými relacemi pro spřažení klientů.
 
-[Azure SignalR Service](https://azure.microsoft.com/services/signalr-service/) je plně spravovaná služba Azure, která zjednodušuje komunikaci v reálném čase pro vaše aplikace nativní pro cloud. Podrobnosti technické implementace, jako je zřizování kapacity, škálování a trvalá připojení, jsou abstrahovány. Jsou za vás zpracovány s 99,9% smlouvou o úrovni služeb. Zaměřujete se na funkce aplikace, nikoli na infrastrukturu.
+[Služba signalizace Azure](https://azure.microsoft.com/services/signalr-service/) je plně spravovaná služba Azure, která zjednodušuje komunikaci v reálném čase pro vaše cloudové nativní aplikace. Podrobnosti o technické implementaci, jako je zřizování kapacity, škálování a trvalá připojení, se odříznout. Jsou zpracovávány za vás s 99,9% smlouvou o úrovni služeb. Zaměřte se na funkce aplikace, ne na instalace infrastruktury.
 
-Jakmile je povolena, cloudová služba HTTP může tlačit aktualizace obsahu přímo připojeným klientům, včetně prohlížečových, mobilních a desktopových aplikací. Klienti jsou aktualizovány bez nutnosti dotazování serveru. Azure SignalR abstrahuje technologie přenosu, které vytvářejí připojení v reálném čase, včetně websocketů, událostí na straně serveru a dlouhého dotazování. Vývojáři se zaměřují na odesílání zpráv do všech nebo konkrétních podmnožin připojených klientů.
+Po povolení může cloudová služba HTTP nabízet aktualizace obsahu přímo připojeným klientům, včetně prohlížeče, mobilních aplikací a aplikací klasické pracovní plochy. Klienti se aktualizují bez nutnosti cyklického dotazování serveru. Signál Azure vyabstrakce transportní technologie, které vytvářejí připojení v reálném čase, včetně WebSockets, událostí na straně serveru a dlouhého cyklického dotazování. Vývojář se zaměřuje na posílání zpráv na všechny nebo konkrétní podmnožiny připojených klientů.
 
-Obrázek 4-7 znázorňuje sadu klientů HTTP, kteří se připojují k aplikaci nativní pro cloud s povoleným Azure SignalR.
+Obrázek 4-7 ukazuje sadu klientů HTTP připojujících se k nativní aplikaci cloudu s povolenou službou Azure Signal.
 
 ![Azure SignalR](./media/azure-signalr-service.png)
 
 **Obrázek 4-7.** Azure SignalR
 
-Další výhodou služby Azure SignalR je implementace cloudových nativních služeb bez serveru. Možná, že váš kód se spustí na vyžádání s Azure Functions aktivačních událostí. Tento scénář může být složité, protože váš kód neudržuje dlouhá připojení s klienty. Služba Azure SignalR dokáže tuto situaci řešit díky tomu, že už za vás spravuje připojení.
+Další výhodou služby signalizace Azure je implementace cloudových služeb bez serveru. Je možné, že váš kód je spuštěn na vyžádání s Azure Functions triggery. Tento scénář může být obtížné, protože váš kód neudržuje dlouhá připojení ke klientům. Služba Azure SignalR dokáže tuto situaci řešit díky tomu, že už za vás spravuje připojení.
 
-Služba Azure SignalR se úzce integruje s dalšími službami Azure, jako je Azure SQL Database, Service Bus nebo Redis Cache, což otevírá mnoho možností pro vaše nativní aplikace v cloudu.
+Služba signalizace Azure se úzce integruje s ostatními službami Azure, jako je Azure SQL Database, Service Bus nebo Redis Cache, a otevírá mnoho možností pro cloudové nativní aplikace.
 
 >[!div class="step-by-step"]
 >[Předchozí](communication-patterns.md)
->[další](service-to-service-communication.md)
+>[Další](service-to-service-communication.md)

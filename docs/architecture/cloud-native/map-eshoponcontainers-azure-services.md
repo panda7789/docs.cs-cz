@@ -1,13 +1,13 @@
 ---
 title: Mapování aplikace eShopOnContainers ke službám Azure
 description: Mapování eShopOnContainers na služby Azure, jako je služba Azure Kubernetes, brána API a Azure Service Bus.
-ms.date: 06/30/2019
-ms.openlocfilehash: eb37be94461a5373afe328572a94892dec50432d
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.date: 04/20/2020
+ms.openlocfilehash: 26fce71ba71f7da643b669396ab59affe592649a
+ms.sourcegitcommit: 957c49696eaf048c284ef8f9f8ffeb562357ad95
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76781219"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82895517"
 ---
 # <a name="mapping-eshoponcontainers-to-azure-services"></a>Mapování aplikace eShopOnContainers ke službám Azure
 
@@ -17,8 +17,8 @@ I když to není nutné, Azure je vhodný pro podporu eShopOnContainers, protož
 
 Architektura aplikace se zobrazuje na obrázku 2-5. Na levé straně jsou klientské aplikace rozdělené na mobilní, tradiční web a charakter SPA (Web Single Page Application). Na pravé straně jsou serverové komponenty, které tvoří systém, z nichž každý je možné hostovat v kontejnerech Docker a clusterech Kubernetes. Tradiční webová aplikace se používá v aplikaci ASP.NET Core MVC zobrazené žlutě. Tato aplikace a mobilní a webové aplikace SPA komunikují s jednotlivými mikroslužbami přes jednu nebo více bran rozhraní API. Brány rozhraní API se řídí vzorem "back-endy pro front-endy" (BFF), což znamená, že každá brána je navržená tak, aby podporovala daného klienta front-endu. Jednotlivé mikroslužby jsou uvedeny napravo od bran rozhraní API a zahrnují obchodní logiku i určitý druh trvalého úložiště. Různé služby využívají SQL Server databáze, instance mezipaměti Redis a úložiště MongoDB/CosmosDB. Úplně vpravo je systémová sběrnice událostí, která se používá ke komunikaci mezi mikroslužbami.
 
-![architektury eShopOnContainers](./media/eshoponcontainers-architecture.png)
-**obrázek 2-5**. Architektura eShopOnContainers
+![Obrázek architektury](./media/eshoponcontainers-architecture.png)
+eShopOnContainers**2-5**. Architektura eShopOnContainers
 
 Komponenty na straně serveru této architektury jsou snadno namapovány na služby Azure.
 
@@ -28,7 +28,7 @@ Služba Azure Kubernetes Service (AKS) může hostovat a spravovat služby hosto
 
 AKS poskytuje služby správy pro jednotlivé clustery kontejnerů. Aplikace bude nasazovat samostatné clustery AKS pro jednotlivé mikroslužby zobrazené v diagramu architektury výše. Díky tomuto přístupu se jednotlivé služby můžou nezávisle škálovat podle svých požadavků na prostředky. Jednotlivé mikroslužby je také možné nasadit nezávisle a v ideálním případě taková nasazení by měla způsobit nulové výpadky systému.
 
-## <a name="api-gateway"></a>Brána API
+## <a name="api-gateway"></a>Brána rozhraní API
 
 Aplikace eShopOnContainers má několik front-end klientů a několik různých služeb back-end. Mezi klientskými aplikacemi a mikroslužbami, které je podporují, neexistuje žádná korespondence 1:1. V takovém scénáři může být složité složitosti při psaní klientského softwaru do rozhraní s různými back-end službami zabezpečeným způsobem. Každý klient by musel tuto složitost řešit vlastními, výsledkem je duplikace a celá řada míst, kde můžete aktualizovat změny služeb, nebo jsou implementovány nové zásady.
 
@@ -44,7 +44,7 @@ Pomocí APIM můžou aplikace vystavovat několik různých skupin služeb, z ni
 
 Další možností, pokud vaše aplikace používá AKS, je nasazení řadiče pro příchozí přenos dat služby Azure Gateway jako pod clusterem AKS. To umožňuje, aby se cluster integroval s Application Gateway Azure, což umožňuje, aby brána vyrovnala zatížení v AKS luskech. [Přečtěte si další informace o řadiči Azure Gateway pro příchozí přenosy pro AKS](https://github.com/Azure/application-gateway-kubernetes-ingress).
 
-## <a name="data"></a>Datové
+## <a name="data"></a>Data
 
 Různé back-endové služby, které používá eShopOnContainers, mají různé požadavky na úložiště. SQL Server databází používá několik mikroslužeb. Mikroslužba košíku využívá pro svůj trvalost mezipaměť Redis Cache. Mikroslužba umístění očekává pro svá data rozhraní MongoDB API. Azure podporuje jednotlivé formáty dat.
 
@@ -54,7 +54,7 @@ Aplikace eShopOnContainers ukládá aktuální nákupní košík uživatele mezi
 
 Mikroslužba umístění používá pro svůj trvalost databázi MongoDB NoSQL. Během vývoje se databáze dá nasadit do vlastního kontejneru, zatímco v produkčním prostředí může využít [rozhraní API Azure Cosmos DB pro MongoDB](https://docs.microsoft.com/azure/cosmos-db/mongodb-introduction). Jednou z výhod Azure Cosmos DB je schopnost využít více různých komunikačních protokolů, včetně rozhraní SQL API a běžných rozhraní NoSQL API, včetně MongoDB, Cassandra, Gremlin a Azure Table Storage. Azure Cosmos DB nabízí plně spravovanou a globálně distribuovanou databázi jako službu, která se může škálovat tak, aby splňovala potřeby služeb, které ji používají.
 
-Distribuovaná data v nativních aplikacích cloudu jsou podrobněji popsaná v [kapitole 5](database-per-microservice.md).
+Distribuovaná data v nativních aplikacích cloudu jsou podrobněji popsaná v [kapitole 5](distributed-data.md).
 
 ## <a name="event-bus"></a>Sběrnice událostí
 
@@ -63,17 +63,6 @@ Aplikace používá události ke komunikaci mezi různými službami. Tato funkc
 ## <a name="resiliency"></a>Odolnost
 
 Po nasazení do produkčního prostředí by aplikace eShopOnContainers mohla využívat několik služeb Azure, které jsou k dispozici pro zlepšení jeho odolnosti. Aplikace zveřejňuje kontroly stavu, které je možné integrovat s Application Insights, aby poskytovala sestavy a výstrahy na základě dostupnosti aplikace. Prostředky Azure také poskytují diagnostické protokoly, které se dají použít k identifikaci a opravě chyb a problémů s výkonem. Protokoly prostředků poskytují podrobné informace o tom, kdy a jak aplikace používá různé prostředky Azure. V [kapitole 6](resiliency.md)se dozvíte víc o funkcích odolnosti nativního cloudu.
-
-## <a name="references"></a>Reference
-
-- [Architektura eShopOnContainers](https://github.com/dotnet-architecture/eShopOnContainers/wiki/Architecture)
-- [Orchestrace mikroslužeb a vícekontejnerových aplikací pro vysokou škálovatelnost a dostupnost](https://docs.microsoft.com/dotnet/architecture/microservices/architect-microservice-container-applications/scalable-available-multi-container-microservice-applications)
-- [API Management Azure](https://docs.microsoft.com/azure/api-management/api-management-key-concepts)
-- [Přehled Azure SQL Database](https://docs.microsoft.com/azure/sql-database/sql-database-technical-overview)
-- [Mezipaměť Azure pro Redis](https://azure.microsoft.com/services/cache/)
-- [Rozhraní API pro MongoDB Azure Cosmos DB](https://docs.microsoft.com/azure/cosmos-db/mongodb-introduction)
-- [Azure Service Bus](https://docs.microsoft.com/azure/service-bus-messaging/service-bus-messaging-overview)
-- [Přehled Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/overview)
 
 >[!div class="step-by-step"]
 >[Předchozí](introduce-eshoponcontainers-reference-app.md)

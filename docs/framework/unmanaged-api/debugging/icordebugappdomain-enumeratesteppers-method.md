@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 3f3c4503-570e-44c1-ae6a-a3c6b840c732
 topic_type:
 - apiref
-ms.openlocfilehash: a736990188023031eb8df5a76dd16fcc289cfe20
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: a46d1b4ebf84514a77e62a4108f6aa34cd2dd94e
+ms.sourcegitcommit: 957c49696eaf048c284ef8f9f8ffeb562357ad95
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73134039"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82895266"
 ---
 # <a name="icordebugappdomainenumeratesteppers-method"></a>ICorDebugAppDomain::EnumerateSteppers – metoda
 Získá enumerátor pro všechny aktivní prvky krokování v doméně aplikace.  
@@ -38,10 +38,10 @@ HRESULT EnumerateSteppers (
  mimo Ukazatel na adresu objektu ICorDebugStepperEnum, který je enumerátorem pro všechny aktivní prvky krokování v doméně aplikace.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** CorDebug. idl, CorDebug. h  
   
  **Knihovna:** CorGuids. lib  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]
+ **Verze .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]
