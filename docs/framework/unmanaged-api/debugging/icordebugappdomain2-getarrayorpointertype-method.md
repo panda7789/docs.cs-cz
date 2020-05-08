@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 97e493f5-3a62-4ec7-b42f-4af57bf71f57
 topic_type:
 - apiref
-ms.openlocfilehash: 166f6bb50849df8550871958d7034fdf2a841abb
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: bbf43f3936823b9a8e562cb32cfa2eef08840033
+ms.sourcegitcommit: 957c49696eaf048c284ef8f9f8ffeb562357ad95
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73089118"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82895191"
 ---
 # <a name="icordebugappdomain2getarrayorpointertype-method"></a>ICorDebugAppDomain2::GetArrayOrPointerType – metoda
 Získá pole zadaného typu nebo ukazatel nebo odkaz na zadaný typ.  
@@ -41,7 +41,7 @@ HRESULT GetArrayOrPointerType (
  pro Hodnota výčtu CorElementType –, která určuje podkladový nativní typ (pole, ukazatel nebo odkaz), který má být vytvořen.  
   
  `nRank`  
- pro Rozměr (tj. počet rozměrů) pole. Tato hodnota musí být 0, pokud `elementType` určuje typ ukazatele nebo odkazu.  
+ pro Rozměr (tj. počet rozměrů) pole. Tato hodnota musí být 0, `elementType` Pokud určuje typ ukazatele nebo odkazu.  
   
  `pTypeArg`  
  pro Ukazatel na objekt ICorDebugType, který představuje typ pole, ukazatel nebo odkaz, který má být vytvořen.  
@@ -58,13 +58,13 @@ HRESULT GetArrayOrPointerType (
   
 - ELEMENT_TYPE_ARRAY nebo ELEMENT_TYPE_SZARRAY  
   
- Pokud je hodnota typu *ELEMENTTYPE* ELEMENT_TYPE_PTR nebo ELEMENT_TYPE_BYREF, *nRank* musí být nula.  
+ Pokud je hodnota typu *elementType* ELEMENT_TYPE_PTR nebo ELEMENT_TYPE_BYREF, *nRank* musí být nula.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** CorDebug. idl, CorDebug. h  
   
  **Knihovna:** CorGuids. lib  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]
+ **Verze .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]

@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: ed71961e-ae9b-4dfc-9554-06637696d697
 topic_type:
 - apiref
-ms.openlocfilehash: d4de3405f84bfc08f7e1519bc7f9604eb1f5a14e
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 8b5a6f4447730ebc6e4b23d3cd06df85b2d7fee6
+ms.sourcegitcommit: 957c49696eaf048c284ef8f9f8ffeb562357ad95
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73088294"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82895010"
 ---
 # <a name="icordebugarrayvaluegetelementtype-method"></a>ICorDebugArrayValue::GetElementType – metoda
 Získá hodnotu, která označuje jednoduchý typ prvků v poli.  
@@ -38,10 +38,10 @@ HRESULT GetElementType (
  mimo Ukazatel na hodnotu výčtu CorElementType –, která určuje typ.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** CorDebug. idl, CorDebug. h  
   
  **Knihovna:** CorGuids. lib  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]
+ **Verze .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]

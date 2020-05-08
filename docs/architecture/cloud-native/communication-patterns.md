@@ -3,12 +3,12 @@ title: Schémata komunikace nativní pro cloud
 description: Další informace o komunikaci s klíčovou službou v cloudových nativních aplikacích
 author: robvet
 ms.date: 08/31/2019
-ms.openlocfilehash: 3bda9baa516b7bd8f893e0f58bbe5e2bfde2b61d
-ms.sourcegitcommit: 56f1d1203d0075a461a10a301459d3aa452f4f47
+ms.openlocfilehash: b3edc0817fb76ad99a1344b17d600eb747187f86
+ms.sourcegitcommit: 957c49696eaf048c284ef8f9f8ffeb562357ad95
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71214016"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82895634"
 ---
 # <a name="cloud-native-communication-patterns"></a>Schémata komunikace nativní pro cloud
 
@@ -44,7 +44,7 @@ I když poskytují spoustu výhod, mikroslužby nejsou bezplatné na oběd. Vol�
 
 - Šifrování a dešifrování zpráv bude důležité.
 
-Mikroslužby Book [.NET: architektura pro kontejnerové aplikace .NET](https://docs.microsoft.com/dotnet/standard/microservices-architecture/), která je dostupná zdarma od Microsoftu, poskytuje podrobné pokrytí způsobů komunikace pro aplikace mikroslužeb. V této kapitole poskytujeme podrobný přehled těchto vzorů spolu s možnostmi implementace dostupnými v cloudu Azure.
+Mikroslužby Book [.NET: architektura pro kontejnerové aplikace .NET](https://dotnet.microsoft.com/download/thank-you/microservices-architecture-ebook), která je dostupná zdarma od Microsoftu, poskytuje podrobné pokrytí způsobů komunikace pro aplikace mikroslužeb. V této kapitole poskytujeme podrobný přehled těchto vzorů spolu s možnostmi implementace dostupnými v cloudu Azure.
 
 V této kapitole budeme řešit komunikaci mezi front-end aplikacemi a back-endové mikroslužbami. Pak se podíváme na back-endové mikroslužby, které navzájem komunikují. Prozkoumáme komunikační technologii gRPC a. Nakonec podíváme se na nové inovativní způsoby komunikace pomocí technologie sítě služby. Ukážeme vám také, jak Cloud Azure poskytuje různé druhy *služeb* , které umožňují podporovat komunikaci v cloudu.
 

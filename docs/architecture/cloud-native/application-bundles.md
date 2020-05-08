@@ -1,15 +1,15 @@
 ---
-title: Balíčky nativních aplikací cloudu
+title: Aplikační komplety nativní pro cloud
 description: Architekt cloudových nativních aplikací .NET pro Azure | Balíčky nativních aplikací cloudu
 ms.date: 06/30/2019
-ms.openlocfilehash: 0c67035af08d3c337ff027f3742e1ce8a83f8d0f
-ms.sourcegitcommit: 55f438d4d00a34b9aca9eedaac3f85590bb11565
+ms.openlocfilehash: 6f85ca14ff4d17f9c7a90a9ace51a1448b89fcb3
+ms.sourcegitcommit: 957c49696eaf048c284ef8f9f8ffeb562357ad95
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71183712"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82895685"
 ---
-# <a name="cloud-native-application-bundles"></a>Balíčky nativních aplikací cloudu
+# <a name="cloud-native-application-bundles"></a>Aplikační komplety nativní pro cloud
 
 [!INCLUDE [book-preview](../../../includes/book-preview.md)]
 
@@ -78,7 +78,8 @@ Formát CNAB je také flexibilní a umožňuje ho použít pro jakýkoliv Cloud.
 
 ## <a name="devops-decisions"></a>DevOps rozhodnutí
 
-K dispozici je spousta skvělých nástrojů v DevOps prostoru a ještě více fantastickách knih a dokumentů, jak to bude úspěšné. Oblíbená kniha pro zahájení práce na DevOps je [projekt v Phoenixu](https://www.oreilly.com/library/view/the-phoenix-project/9781457191350/), který následuje po transformaci fiktivní společnosti z NoOps na DevOps. Jedna věc je určena pro určité: DevOps už při nasazování komplexních cloudových nativních aplikací není "Skvělé". Je to požadavek a měl by být plánován na začátku libovolného projektu a měl by být naplánován na jeho zdroj.
+K dispozici je spousta skvělých nástrojů v DevOps prostoru a ještě více fantastickách knih a dokumentů, jak to bude úspěšné. Oblíbená kniha pro zahájení práce na DevOps je [projekt v Phoenixu](https://www.oreilly.com/library/view/the-phoenix-project/9781457191350/), který následuje po transformaci fiktivní společnosti z NoOps na DevOps. Jedna věc je určena pro určité: DevOps již není "dobrým", když nasazujete komplexní cloudové nativní aplikace. Je to požadavek a měl by být plánován na začátku libovolného projektu a měl by být naplánován na jeho zdroj.
 
 >[!div class="step-by-step"]
 >[Předchozí](infrastructure-as-code.md)
+>[Další](summary.md)

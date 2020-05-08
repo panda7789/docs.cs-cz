@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: ea52be06-0a16-4f57-afca-4287d72e76c4
 topic_type:
 - apiref
-ms.openlocfilehash: 49b234b065eb66dc2ec0bc7e991117c5b54a92f3
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: c9cb599dd27a809ed5245c9570cddb8110be8172
+ms.sourcegitcommit: 957c49696eaf048c284ef8f9f8ffeb562357ad95
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73196350"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82894945"
 ---
 # <a name="icordebugassemblygetprocess-method"></a>ICorDebugAssembly::GetProcess – metoda
 Načte ukazatel rozhraní na proces, ve kterém je spuštěná tato instance ICorDebugAssembly.  
@@ -38,10 +38,10 @@ HRESULT GetProcess (
  mimo Ukazatel na rozhraní ICorDebugProcess, které představuje proces.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** CorDebug. idl, CorDebug. h  
   
  **Knihovna:** CorGuids. lib  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]
+ **Verze .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]

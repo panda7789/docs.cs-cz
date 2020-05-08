@@ -3,14 +3,14 @@ title: Závislosti .NET Core SDK a modulu runtime – .NET Core
 description: Podrobně popisuje operační systém a požadavky na architekturu procesoru pro instalaci .NET Core SDK a modulu runtime v systémech Windows, Linux a macOS.
 author: leecow
 ms.author: leecow
-ms.date: 12/04/2019
+ms.date: 04/30/2020
 zone_pivot_groups: operating-systems-set-one
-ms.openlocfilehash: 42765d4402dfa17d4e962b2ecaf7a83e91853c76
-ms.sourcegitcommit: 839777281a281684a7e2906dccb3acd7f6a32023
+ms.openlocfilehash: 280aa1431686ff99257580bb024a84b1e57f85c0
+ms.sourcegitcommit: 957c49696eaf048c284ef8f9f8ffeb562357ad95
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "82140996"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82895479"
 ---
 # <a name="net-core-dependencies-and-requirements"></a>Závislosti a požadavky .NET Core
 
@@ -30,7 +30,7 @@ Rozhraní .NET Core 3,1 podporuje následující verze systému Windows:
 > [!NOTE]
 > `+` Symbol představuje minimální verzi.
 
-| Operační systém                            | Version                        | Architektury   |
+| Operační systém                            | Verze                        | Architektury   |
 | ----------------------------- | ------------------------------ | --------------- |
 | Klient Windows                | 7 SP1 +, 8,1                    | x64, x86        |
 | Klient Windows 10             | Verze 1607 +                  | x64, x86        |
@@ -48,7 +48,7 @@ Rozhraní .NET Core 3,0 podporuje následující verze systému Windows:
 > [!NOTE]
 > `+` Symbol představuje minimální verzi.
 
-| Operační systém                            | Version                        | Architektury   |
+| Operační systém                            | Verze                        | Architektury   |
 | ----------------------------- | ------------------------------ | --------------- |
 | Klient Windows                | 7 SP1 +, 8,1                    | x64, x86        |
 | Klient Windows 10             | Verze 1607 +                  | x64, x86        |
@@ -66,7 +66,7 @@ Rozhraní .NET Core 2,2 podporuje následující verze systému Windows:
 > [!NOTE]
 > `+` Symbol představuje minimální verzi.
 
-| Operační systém                            | Version                        | Architektury   |
+| Operační systém                            | Verze                        | Architektury   |
 | ----------------------------- | ------------------------------ | --------------- |
 | Klient Windows                | 7 SP1 +, 8,1                    | x64, x86        |
 | Klient Windows 10             | Verze 1607 +                  | x64, x86        |
@@ -82,7 +82,7 @@ Rozhraní .NET Core 2,1 podporuje následující verze systému Windows:
 > [!NOTE]
 > `+` Symbol představuje minimální verzi.
 
-| Operační systém                            | Version                        | Architektury   |
+| Operační systém                            | Verze                        | Architektury   |
 | ----------------------------- | ------------------------------ | --------------- |
 | Klient Windows                | 7 SP1 +, 8,1                    | x64, x86        |
 | Klient Windows 10             | Verze 1607 +                  | x64, x86        |
@@ -135,7 +135,7 @@ Výše uvedené požadavky se vyžadují také v případě, že dojde k jedné 
 > [!NOTE]
 > `+` Symbol představuje minimální verzi.
 
-| Operační systém                             | Version               | Architektury    |
+| Operační systém                             | Verze               | Architektury    |
 | ------------------------------ | --------------------- | ---------------- |
 | Red Hat Enterprise Linux       | 6, 7, 8               | x64 |
 | CentOS                         | 7 +                    | x64 |
@@ -166,7 +166,7 @@ Další informace o tom, jak nainstalovat .NET Core 3,1 na ARM64 (kernel 4.14 +)
 > [!NOTE]
 > `+` Symbol představuje minimální verzi.
 
-| Operační systém                             | Version               | Architektury    |
+| Operační systém                             | Verze               | Architektury    |
 | ------------------------------ | --------------------- | ---------------- |
 | Red Hat Enterprise Linux       | 6, 7, 8               | x64 |
 | CentOS                         | 7 +                    | x64 |
@@ -194,7 +194,7 @@ Další informace o tom, jak nainstalovat .NET Core 3,0 na ARM64, najdete v tém
 > [!NOTE]
 > `+` Symbol představuje minimální verzi.
 
-| Operační systém                             |  Version                |  Architektury   |
+| Operační systém                             |  Verze                |  Architektury   |
 | ------------------------------ | ----------------------- | ---------------- |
 | Red Hat Enterprise Linux       |  6, 7                   | x64 |
 | CentOS                         |  7                      | x64 |
@@ -218,7 +218,7 @@ Další informace o podporovaných operačních systémech .NET Core 2,2, distri
 > [!NOTE]
 > `+` Symbol představuje minimální verzi.
 
-| Operační systém                             |  Version                |  Architektury   |
+| Operační systém                             |  Verze                |  Architektury   |
 | ------------------------------ | ----------------------- | ---------------- |
 | Red Hat Enterprise Linux       |  6, 7, 8                | x64 |
 | CentOS                         |  7 +                     | x64 |
@@ -290,6 +290,24 @@ Pro aplikace .NET Core, které používají sestavení *System. Drawing. Common*
 
 > [!WARNING]
 > Většina verzí CentOS a Fedora zahrnuje starší verzi libgdiplus. Můžete nainstalovat nejnovější verzi libgdiplus přidáním úložiště mono do systému. Další informace naleznete v tématu <https://www.mono-project.com/download/stable/>.
+
+### <a name="alpine"></a>Alpine
+
+Alpské distribuce vyžadují instalaci následujících knihoven:
+
+- ICU-knihovny (není nutné v případě, že je globalizace zakázána)
+- krb5 – knihovny
+- libcurl
+- libintl
+- libssl 1.1 (pro Alpine 3,9 nebo novější) nebo libssl 1.0 (pro starší verze)
+- libstdc + +
+- lttng – tým UST
+- numactl (volitelné, užitečné jenom pro zařízení s podporou NUMA)
+- ZLIB
+
+Pro aplikace .NET Core, které používají sestavení *System. Drawing. Common* , potřebujete také následující závislost:
+
+- libgdiplus (je k dispozici pouze v úložišti Edge/testování)
 
 ::: zone-end
 

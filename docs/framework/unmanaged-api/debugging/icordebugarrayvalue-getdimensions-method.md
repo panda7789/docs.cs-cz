@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 6c116592-134b-4ef2-a319-680e92d013aa
 topic_type:
 - apiref
-ms.openlocfilehash: 35e043c56977bf644efe1dd9cee1409f50cc877f
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: fa2be894af6e44d09c25a736f45acba56052f9fa
+ms.sourcegitcommit: 957c49696eaf048c284ef8f9f8ffeb562357ad95
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79179018"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82895044"
 ---
 # <a name="icordebugarrayvaluegetdimensions-method"></a>ICorDebugArrayValue::GetDimensions – metoda
 Získá počet prvků v každé dimenzi tohoto pole.  
@@ -37,18 +37,18 @@ HRESULT GetDimensions (
   
 ## <a name="parameters"></a>Parametry  
  `cdim`  
- [v] Počet dimenzí tohoto objektu ICorDebugArrayValue.  
+ pro Počet dimenzí tohoto objektu ICorDebugArrayValue  
   
- Tato hodnota je také `dims` velikost pole, protože jeho velikost se rovná `ICorDebugArrayValue` počtu dimenzí objektu.  
+ Tato hodnota je také velikost `dims` pole, protože jeho velikost je rovna počtu rozměrů `ICorDebugArrayValue` objektu.  
   
  `dims`  
- [out] Pole celých čísel, z nichž každá určuje počet prvků v `ICorDebugArrayValue` dimenzi v tomto objektu.  
+ mimo Pole celých čísel, z nichž každý Určuje počet prvků v dimenzi v tomto `ICorDebugArrayValue` objektu.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]
+ **Verze .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]

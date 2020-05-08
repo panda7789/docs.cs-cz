@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: b3390319-6366-418c-ba80-b552ac4dfc1e
 topic_type:
 - apiref
-ms.openlocfilehash: b964d58bddb174da38fc8988ec807fd3129b5fcf
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 28b54026c8743f31a420e164944f60709e2e271b
+ms.sourcegitcommit: 957c49696eaf048c284ef8f9f8ffeb562357ad95
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73123816"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82894370"
 ---
 # <a name="icordebugchaingetthread-method"></a>ICorDebugChain::GetThread – metoda
 Získá fyzické vlákno, na kterém je tento řetěz volání součástí.  
@@ -38,10 +38,10 @@ HRESULT GetThread (
  mimo Ukazatel na objekt ICorDebugThread, který představuje fyzické vlákno, na kterém je tento řetěz volání součástí.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** CorDebug. idl, CorDebug. h  
   
  **Knihovna:** CorGuids. lib  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]
+ **Verze .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]

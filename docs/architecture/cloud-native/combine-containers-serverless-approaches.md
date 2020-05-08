@@ -2,12 +2,12 @@
 title: Kombinování kontejnerů a přístupů bez serveru pro cloudové nativní služby
 description: Kombinování kontejnerů a Kubernetes s přístupy bez serveru
 ms.date: 04/23/2020
-ms.openlocfilehash: fe9e9fd5d07132971d64bc6433a762fb7bd22048
-ms.sourcegitcommit: 5988e9a29cedb8757320817deda3c08c6f44a6aa
+ms.openlocfilehash: a6ae17543c9075ca84126a4c19f9f51887f7fe9a
+ms.sourcegitcommit: 957c49696eaf048c284ef8f9f8ffeb562357ad95
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82199661"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82895637"
 ---
 # <a name="combining-containers-and-serverless-approaches"></a>Kombinování kontejnerů a bezserverových přístupů
 
@@ -35,7 +35,11 @@ Když je projekt vytvořen, bude obsahovat souboru Dockerfile a modul runtime Wo
 
 ## <a name="how-to-combine-serverless-and-kubernetes-with-keda"></a>Jak kombinovat bez serveru a Kubernetes pomocí KEDA
 
-Služba Azure Functions se automaticky škáluje tak, aby splňovala požadavky na základě frekvence událostí, které cílí na ni. Můžete vždycky využít AKS k hostování vašich funkcí a používat automatické škálování založené na událostech založených na Kubernetes nebo KEDA. Když se nevyskytnou žádné události, KEDA může škálovat dolů na nulové instance. [Přečtěte si další informace o škálování Azure Functions pomocí keda](https://docs.microsoft.com/azure/azure-functions/functions-kubernetes-keda).
+V této kapitole jste viděli, že Azure Functions platforma se automaticky škáluje tak, aby splňovala požadavky. Při nasazování kontejnerových funkcí do AKS se však ztratí vestavěná funkce škálování. Do záchranného rozhraní patří [Kubernetes řízená událost (keda)](https://docs.microsoft.com/azure/azure-functions/functions-kubernetes-keda). Umožňuje jemně odstupňované automatické škálování pro `event-driven Kubernetes workloads,` zahrnutí funkcí s funkcí Container.
+
+KEDA poskytuje funkce škálování řízené událostmi do modulu runtime Functions v kontejneru Docker. KEDA se může škálovat z nulových instancí (Pokud k žádné události nedochází) na `n instances`základě zatížení. Umožňuje automatické škálování tím, že vystavuje vlastní metriky na Kubernetes AutoScale (vodorovně pod automatickým nástrojem pro horizontální navýšení). Pomocí kontejnerů Functions s KEDA je možné replikovat funkce bez serveru v jakémkoli clusteru Kubernetes.
+
+Je potřeba poznamenat, že projekt KEDA je teď spravovaný službou Cloud Native Computing Foundation (CNCF).
 
 >[!div class="step-by-step"]
 >[Předchozí](leverage-serverless-functions.md)

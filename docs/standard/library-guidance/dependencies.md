@@ -2,47 +2,47 @@
 title: Závislosti a knihovny .NET
 description: Doporučení osvědčených postupů pro správu závislostí NuGet v knihovnách .NET.
 ms.date: 10/02/2018
-ms.openlocfilehash: 6a260b54c45a0cd231059ab3bc6f2707ef7fb20e
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 265e92e86d22c778f65476e7f1383d32e4964655
+ms.sourcegitcommit: 957c49696eaf048c284ef8f9f8ffeb562357ad95
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "76731475"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82895711"
 ---
 # <a name="dependencies"></a>Závislosti
 
-Primární způsob přidávání závislostí do knihovny .NET odkazuje na balíčky NuGet. Odkazy na balíčky NuGet umožňují rychle znovu použít a využít již napsané funkce, ale jsou běžným zdrojem tření pro vývojáře rozhraní .NET. Správná správa závislostí je důležitá, aby se zabránilo změnám v jiných knihovnách .NET v porušení knihovny .NET a naopak!
+Hlavním způsobem přidání závislostí do knihovny .NET je odkazování na balíčky NuGet. Odkazy na balíček NuGet vám umožní rychle znovu využít a využívat už napsané funkce, ale jsou to společný zdroj tření pro vývojáře na platformě .NET. Správná Správa závislostí je důležité, aby nedošlo ke změnám v jiných knihovnách .NET proti narušení vaší knihovny .NET a naopak.
 
-## <a name="diamond-dependencies"></a>Diamantové závislosti
+## <a name="diamond-dependencies"></a>Kosočtvercové závislosti
 
-Je běžné situace pro projekt .NET mít více verzí balíčku ve svém stromu závislostí. Například aplikace závisí na dvou balíčcích NuGet, z nichž každý závisí na různých verzích stejného balíčku. V grafu závislostí aplikace nyní existuje závislost na kosočtverci.
+V případě, že projekt .NET má ve stromu závislostí více verzí balíčku, je běžné situaci. Například aplikace závisí na dvou balíčcích NuGet, přičemž každý z nich závisí na různých verzích stejného balíčku. V grafu závislostí aplikace teď existuje závislost kosočtverce.
 
-![Závislost na kosočtverci](./media/dependencies/diamond-dependency.png "Závislost na kosočtverci")
+![Kosočtverec – závislost](./media/dependencies/diamond-dependency.png "Kosočtverec – závislost")
 
-V době sestavení NuGet analyzuje všechny balíčky, které závisí na projektu, včetně závislostí závislostí. Při zjištění více verzí balíčku jsou vyhodnocovány pravidla vybrat jeden. Sjednocení balíčků je nezbytné, protože spuštění souběžných verzí sestavení ve stejné aplikaci je problematické v rozhraní .NET.
+V době sestavení NuGet analyzuje všechny balíčky, na kterých projekt závisí, včetně závislostí závislostí. Při zjištění více verzí balíčku se pravidla vyhodnotí, aby se vybrala jedna. Sjednocení balíčků je nezbytné, protože spuštěné souběžné verze sestavení ve stejné aplikaci jsou v rozhraní .NET problematické.
 
-Většina diamantové závislosti jsou snadno přeložit; mohou však za určitých okolností způsobit problémy:
+Většinu diamantových závislostí lze snadno vyřešit. můžou se ale v určitých případech vytvářet problémy:
 
-1. **Konfliktní odkazy na balíček NuGet** brání vyřešení verze během obnovení balíčku.
-2. **Narušující změny mezi verzemi** způsobit chyby a výjimky za běhu.
-3. **Sestavení balíčku je silné s názvem**, verze sestavení změněna a aplikace je spuštěna v rozhraní .NET Framework. Jsou vyžadována přesměrování vazby sestavení.
+1. **Konfliktní odkazy na balíčky NuGet** brání v vyřešení verze během obnovování balíčku.
+2. **Narušením změn mezi verzemi** dojde k chybám a výjimkám za běhu.
+3. **Sestavení balíčku má silný název**, verze sestavení se změnila a aplikace je spuštěná na .NET Framework. Přesměrování vazby sestavení jsou povinná.
 
-Není možné vědět, jaké balíčky budou použity vedle své vlastní. Dobrým způsobem, jak snížit pravděpodobnost, že závislost na kosobru sdiamantové mincovní zařízení rozlomí vaši knihovnu, je minimalizovat počet balíčků, na kterých jste závislí.
+Není možné zjistit, jaké balíčky se budou používat společně s vašimi vlastními. Dobrým způsobem, jak snížit pravděpodobnost přerušení vaší knihovny, je minimalizovat počet balíčků, na kterých jste závislí.
 
-✔️ do zkontrolujte knihovnu .NET pro zbytečné závislosti.
+✔️ Projděte si knihovnu .NET, abyste měli zbytečné závislosti.
 
-## <a name="nuget-dependency-version-ranges"></a>Rozsahy verzí závislostí NuGet
+## <a name="nuget-dependency-version-ranges"></a>Rozsahy verzí závislosti NuGet
 
-Odkaz na balíček určuje rozsah platných balíčků, které umožňuje. Referenční verze balíčku v souboru projektu je obvykle minimální verze a neexistuje žádné maximum.
+Odkaz na balíček určuje rozsah platných balíčků, které umožňuje. Obvykle je referenční verze balíčku v souboru projektu minimální verze a neexistuje žádná maximální hodnota.
 
 ```xml
 <!-- Accepts any version 1.0 and above. -->
 <PackageReference Include="ExamplePackage" Version="1.0" />
 ```
 
-Pravidla, která NuGet používá při řešení závislostí jsou [složité](/nuget/consume-packages/dependency-resolution), ale NuGet vždy hledá nejnižší použitelnou verzi. NuGet upřednostňuje nejnižší použitelnou verzi před použitím nejvyšší dostupné, protože nejnižší bude mít nejmenší problémy s kompatibilitou.
+Pravidla, která nástroj NuGet používá při řešení závislostí, jsou [složitá](/nuget/consume-packages/dependency-resolution), ale [ve výchozím nastavení](/nuget/consume-packages/install-use-packages-visual-studio#install-and-update-options) NuGet vyhledává nejnižší platnou verzi. NuGet upřednostňuje nejnižší použitelnou verzi přes nejvyšší dostupný, protože nejnižší bude mít minimálně problémy s kompatibilitou.
 
-Z důvodu nuget nejnižší použitelné verze pravidlo, není nutné umístit horní verzi nebo přesný rozsah na odkazy na balíček, aby se zabránilo získání nejnovější verze. NuGet se již snaží najít nejnižší, nejvíce kompatibilní verze pro vás.
+Vzhledem k tomu, že pravidlo pro nejnižší verzi NuGetu splňuje, není nutné při odkazech na balíček umístit horní nebo přesný rozsah, aby se předešlo získání nejnovější verze. NuGet se už snaží najít nejnižší, nejvíce kompatibilní verzi.
 
 ```xml
 <!-- Accepts 1.0 up to 1.x, but not 2.0 and higher. -->
@@ -52,21 +52,21 @@ Z důvodu nuget nejnižší použitelné verze pravidlo, není nutné umístit h
 <PackageReference Include="ExamplePackage" Version="[1.0]" />
 ```
 
-Horní verze omezení způsobí NuGet nezdaří, pokud dojde ke konfliktu. Například jedna knihovna přijímá přesně 1.0, zatímco jiná knihovna vyžaduje 2.0 nebo vyšší. Při porušení změny mohou být zavedeny ve verzi 2.0, přísné nebo horní limit verze závislost zaručuje chybu.
+Omezení horní verze způsobí selhání NuGet v případě konfliktu. Například jedna knihovna akceptuje přesně 1,0, zatímco jiná knihovna vyžaduje 2,0 nebo vyšší. I když mohou být zásadní změny představené ve verzi 2,0, je zaručena chybná závislost verze striktní nebo horní limit.
 
-![Konflikt závislosti na diamantech](./media/dependencies/diamond-dependency-conflict.png "Konflikt závislosti na diamantech")
+![Konflikt závislosti v kosočtverec](./media/dependencies/diamond-dependency-conflict.png "Konflikt závislosti v kosočtverec")
 
-❌Nemají Odkazy na balíček NuGet bez minimální verze.
+❌Nemáte odkazy na balíček NuGet bez minimální verze.
 
-❌VYHNĚTE se NuGet odkazy na balíček, které vyžadují přesnou verzi.
+❌Vyhněte se odkazům na balíček NuGet, které vyžadují přesnou verzi.
 
-❌VYHNĚTE se Odkazy na balíček NuGet s horním limitem verze.
+❌Vyhněte se odkazům na balíček NuGet s horním limitem verze.
 
-## <a name="nuget-shared-source-packages"></a>Balíčky sdíleného zdroje NuGet
+## <a name="nuget-shared-source-packages"></a>Sdílené zdrojové balíčky NuGet
 
-Jedním ze způsobů, jak snížit externí NuGet balíček závislostí je odkazovat na sdílené zdrojové balíčky. Sdílený zdrojový balíček obsahuje [soubory zdrojového kódu,](/nuget/reference/nuspec#including-content-files) které jsou zahrnuty v projektu při odkazování. Vzhledem k tomu, že jste právě včetně souborů zdrojového kódu, které jsou kompilovány se zbytkem projektu, neexistuje žádná externí závislost a šance na konflikt.
+Jedním ze způsobů, jak omezit externí závislosti balíčků NuGet, je odkazování na sdílené zdrojové balíčky. Sdílený zdrojový balíček obsahuje [soubory zdrojového kódu](/nuget/reference/nuspec#including-content-files) , které jsou zahrnuty v projektu, pokud se na něj odkazuje. Vzhledem k tomu, že právě jste zadali soubory zdrojového kódu, které jsou kompilovány se zbytkem projektu, neexistuje žádná externí závislost a šance na konflikt.
 
-Sdílené zdrojové balíčky jsou skvělé pro zahrnutí malých částí funkcí. Například sdílený zdrojový balíček pomocných metod pro volání HTTP.
+Sdílené zdrojové balíčky jsou skvělé pro zahrnutí malých kousků funkcí. Například sdílený zdrojový balíček pomocných metod pro vytváření volání HTTP.
 
 ![Sdílený zdrojový balíček](./media/dependencies/shared-source-package.png "Sdílený zdrojový balíček")
 
@@ -74,28 +74,28 @@ Sdílené zdrojové balíčky jsou skvělé pro zahrnutí malých částí funkc
 <PackageReference Include="Microsoft.Extensions.Buffers.Testing.Sources" PrivateAssets="All" Version="1.0" />
 ```
 
-![Projekt sdíleného zdroje](./media/dependencies/shared-source-project.png "Projekt sdíleného zdroje")
+![Sdílený zdrojový projekt](./media/dependencies/shared-source-project.png "Sdílený zdrojový projekt")
 
-Sdílené zdrojové balíčky mají určitá omezení. Mohou být odkazovány `PackageReference`pouze na `packages.config` , takže starší projekty jsou vyloučeny. Sdílené zdrojové balíčky jsou použitelné pouze pro projekty se stejným typem jazyka. Z důvodu těchto omezení sdílené zdrojové balíčky se nejlépe používají ke sdílení funkcí v rámci projektu s otevřeným zdrojovým kódem.
+Sdílené zdrojové balíčky mají určitá omezení. Mohou být odkazovány pouze pomocí `PackageReference`, aby byly `packages.config` vyloučeny starší projekty. Sdílené zdrojové balíčky jsou také použitelné pouze v projektech se stejným typem jazyka. Z důvodu těchto omezení jsou sdílené zdrojové balíčky nejlépe používány pro sdílení funkcí v rámci open source projektu.
 
-✔️ zvažte odkazování na sdílené zdrojové balíčky pro malé, interní části funkcí.
+✔️ Zvažte odkazování na sdílené zdrojové balíčky pro malé, interní funkce.
 
-✔️ zvažte vytvoření balíčku sdílený zdrojový balíček, pokud poskytuje malé, vnitřní části funkcí.
+✔️ Zvažte vytvoření balíčku sdíleného zdrojového kódu, pokud poskytuje malé, interní funkce.
 
-✔️ do odkaz sdílené `PrivateAssets="All"`zdrojové balíčky s .
+✔️ odkazují na sdílené zdrojové balíčky pomocí `PrivateAssets="All"`.
 
-> Toto nastavení říká NuGet balíček je pouze pro použití v době vývoje a by neměly být vystaveny jako veřejné závislosti.
+> Toto nastavení říká NuGet, že balíček se má použít jenom v době vývoje a neměl by být vystavený jako veřejná závislost.
 
-❌Nemáte sdílené typy zdrojových balíčků ve veřejném rozhraní API.
+❌Ve veřejném rozhraní API nejsou sdílené zdrojové typy balíčků.
 
-> Sdílené typy zdrojů jsou kompilovány do referenčního sestavení a nelze je vyměňovat přes hranice sestavení. Například typ sdíleného `IRepository` zdroje v jednom projektu je samostatný typ `IRepository` ze stejného sdíleného zdroje v jiném projektu. Typy ve sdílených zdrojových balíčcích by měly mít `internal` viditelnost.
+> Sdílené zdrojové typy jsou kompilovány do odkazujícího sestavení a nelze je vyměňovat přes hranice sestavení. Například typ sdíleného zdroje `IRepository` v jednom projektu je samostatný typ ze stejného sdíleného zdroje `IRepository` v jiném projektu. Typy ve sdílených zdrojových balíčcích by měly mít `internal` viditelnost.
 
-❌NEPublikujte sdílené zdrojové balíčky, které mají NuGet.org.
+❌Nepublikujte sdílené zdrojové balíčky do NuGet.org.
 
-> Sdílené zdrojové balíčky obsahují zdrojový kód a mohou být používány pouze projekty se stejným typem jazyka. Například balíček sdíleného zdroje Jazyka C# nelze použít aplikací F#.
+> Sdílené zdrojové balíčky obsahují zdrojový kód a mohou být použity pouze v projektech se stejným typem jazyka. Například zdrojový balíček C# nelze použít v aplikaci F #.
 >
-> Publikovat sdílené zdrojové balíčky do [místního informačního kanálu nebo MyGet](./publish-nuget-package.md) využívat interně v rámci projektu.
+> Publikujte sdílené zdrojové balíčky do [místního kanálu nebo MyGet](./publish-nuget-package.md) , aby je bylo možné interně spotřebovat ve vašem projektu.
 
 >[!div class="step-by-step"]
 >[Předchozí](nuget.md)
->[další](sourcelink.md)
+>[Další](sourcelink.md)

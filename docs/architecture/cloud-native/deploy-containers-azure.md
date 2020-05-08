@@ -2,12 +2,12 @@
 title: Nasazení kontejnerů v Azure
 description: Nasazení kontejnerů v Azure pomocí Azure Container Registry, služby Azure Kubernetes a Azure Dev Spaces.
 ms.date: 04/13/2020
-ms.openlocfilehash: 6238460c6129583c34e6b328c38ed9042f32f3d6
-ms.sourcegitcommit: 5988e9a29cedb8757320817deda3c08c6f44a6aa
+ms.openlocfilehash: 57a4739d39b8ad022d699d54255f56f16d305440
+ms.sourcegitcommit: 957c49696eaf048c284ef8f9f8ffeb562357ad95
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82199557"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82895605"
 ---
 # <a name="deploying-containers-in-azure"></a>Nasazení kontejnerů v Azure
 
@@ -108,8 +108,8 @@ Vývojáři sdílejí běžící (vývojovou) instanci v clusteru AKS, který ob
 
 Abychom porozuměli hodnotě Azure Dev Spaces, umožněte mi, aby mě Nasdílela tuto nabídku z Gabe Monroy, odpoledne v kontejnerech na Microsoft Azure:
 
-> Představte si, že jste nový zaměstnanec, který se snaží opravit chybu v komplexní aplikaci mikroslužeb skládající se z desítek komponent, z nichž každý má vlastní konfiguraci a službu back-in. Abyste mohli začít, musíte nakonfigurovat své místní vývojové prostředí tak, aby mohlo napodobovat produkci, včetně nastavení IDE, řetězu nástrojů, kontejnerových závislostí služby, místního prostředí Kubernetes, pokládání pro záložní služby a další. V případě, že se při nastavení vývojového prostředí nastavila tato první chyba, může to trvat několik dní.
-> Nebo můžete použít vývojové prostory a AKS.
+> "Představte si, že jste nový zaměstnanec, který se snaží opravit chybu v komplexní aplikaci mikroslužeb skládající se z desítek komponent, z nichž každá má svou vlastní konfiguraci a službu zálohování. Abyste mohli začít, musíte nakonfigurovat své místní vývojové prostředí tak, aby mohlo napodobovat produkci, včetně nastavení IDE, řetězu nástrojů, kontejnerových závislostí služby, místního prostředí Kubernetes, pokládání pro záložní služby a další. V případě, že se při nastavení vývojového prostředí nastavila tato první chyba, může to trvat několik dní.
+> Nebo můžete použít vývojové prostory a AKS. "
 
 Proces pro práci s Azure Dev Spaces zahrnuje následující kroky:
 

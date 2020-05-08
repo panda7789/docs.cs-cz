@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: aa26df07-e0a6-4608-bdef-d4afafec89aa
 topic_type:
 - apiref
-ms.openlocfilehash: 418ebb51df3f2d86011ee2e77022c3ee5c7ac0b0
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: e6e8eb91bbc41faf0dcea010da9aa54995058653
+ms.sourcegitcommit: 957c49696eaf048c284ef8f9f8ffeb562357ad95
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73088233"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82894978"
 ---
 # <a name="icordebugarrayvaluehasbaseindicies-method"></a>ICorDebugArrayValue::HasBaseIndicies – metoda
 Získá hodnotu, která označuje, zda jakékoli dimenze v tomto poli mají základní index nenulového typu.  
@@ -35,13 +35,13 @@ HRESULT HasBaseIndicies (
   
 ## <a name="parameters"></a>Parametry  
  `pbHasBaseIndicies`  
- mimo Ukazatel na logickou hodnotu, která je `true`, pokud jedna nebo více dimenzí tohoto objektu `ICorDebugArrayValue` mají základní index nenulového typu; v opačném případě je logická hodnota `false`.  
+ mimo Ukazatel na logickou hodnotu, která je `true` v případě, že jeden nebo více `ICorDebugArrayValue` dimenzí tohoto objektu má základní index nenulového typu; v opačném případě je `false`logická hodnota.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** CorDebug. idl, CorDebug. h  
   
  **Knihovna:** CorGuids. lib  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v11plus](../../../../includes/net-current-v11plus-md.md)]
+ **Verze .NET Framework:**[!INCLUDE[net_current_v11plus](../../../../includes/net-current-v11plus-md.md)]

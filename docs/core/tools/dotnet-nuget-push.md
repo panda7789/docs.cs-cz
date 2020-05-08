@@ -3,18 +3,18 @@ title: dotnet – příkaz push NuGet
 description: Příkaz dotnet NuGet push odešle balíček na server a publikuje ho.
 author: karann-msft
 ms.date: 02/14/2020
-ms.openlocfilehash: 8b0437d7f4ada2b56af50e30717d131668c21f7e
-ms.sourcegitcommit: 7370aa8203b6036cea1520021b5511d0fd994574
+ms.openlocfilehash: 1e7831de4c041591b3602e405418f89f1d1d27d1
+ms.sourcegitcommit: 957c49696eaf048c284ef8f9f8ffeb562357ad95
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/02/2020
-ms.locfileid: "82728359"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82895460"
 ---
 # <a name="dotnet-nuget-push"></a>dotnet nuget push
 
 **Tento článek se týká:** ✔️ .NET Core 2. x SDK a novějších verzí
 
-## <a name="name"></a>Název
+## <a name="name"></a>Name
 
 `dotnet nuget push`– Odešle balíček na server a publikuje ho.
 
@@ -152,5 +152,4 @@ Příkaz vloží existující balíček. Nevytváří balíček. K vytvoření b
   dotnet nuget push *.nupkg -s c:\mydir
   ```
 
-  Tento příkaz neukládá balíčky do hierarchické struktury složek, což se doporučuje pro optimalizaci výkonu. Další informace najdete v tématu [místní informační kanály](//nuget/hosting-packages/local-feeds).
-  
+  Tento příkaz neukládá balíčky do hierarchické struktury složek, což se doporučuje pro optimalizaci výkonu. Další informace najdete v tématu [místní informační kanály](/nuget/hosting-packages/local-feeds).  

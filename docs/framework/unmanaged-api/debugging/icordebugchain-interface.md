@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: f671f519-1cb3-4ae5-b9f1-abc5e783459f
 topic_type:
 - apiref
-ms.openlocfilehash: f4bacfe94178ea78b1c3afd15a2e100076c38a84
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.openlocfilehash: 6ae0fec0f8de2bbe3862f9f70ed9cf3d32af34c4
+ms.sourcegitcommit: 957c49696eaf048c284ef8f9f8ffeb562357ad95
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76777986"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82894214"
 ---
 # <a name="icordebugchain-interface"></a>ICorDebugChain – rozhraní
 
@@ -43,20 +43,20 @@ Představuje segment fyzického nebo logického zásobníku volání.
 |[IsManaged – metoda](icordebugchain-ismanaged-method.md)|Získá hodnotu, která označuje, zda je v tomto řetězci spuštěn spravovaný kód.|  
   
 ## <a name="remarks"></a>Poznámky  
- Rámce zásobníku v řetězu zabírají souvislý prostor zásobníku a sdílejí stejné vlákno a kontext. Řetěz může představovat buď spravované nebo nespravované řetězy kódu. Prázdná instance `ICorDebugChain` představuje řetězec nespravovaného kódu.  
+ Rámce zásobníku v řetězu zabírají souvislý prostor zásobníku a sdílejí stejné vlákno a kontext. Řetěz může představovat buď spravované nebo nespravované řetězy kódu. Prázdná `ICorDebugChain` instance reprezentuje řetězec nespravovaného kódu.  
   
 > [!NOTE]
 > Toto rozhraní nepodporuje vzdálené volání, a to buď mezi počítačem, nebo mezi procesy.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** CorDebug. idl, CorDebug. h  
   
  **Knihovna:** CorGuids. lib  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Rozhraní pro ladění](debugging-interfaces.md)
+- [Debugging – rozhraní](debugging-interfaces.md)

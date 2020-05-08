@@ -3,12 +3,12 @@ title: Definování aplikací nativních pro cloud
 description: Přečtěte si o základních pilířích, které poskytují Bedrock pro nativní cloudové systémy.
 author: robvet
 ms.date: 08/20/2019
-ms.openlocfilehash: ba11cb1cf0d9d7ef9734ad49aee1df22f285fc4c
-ms.sourcegitcommit: 5988e9a29cedb8757320817deda3c08c6f44a6aa
+ms.openlocfilehash: 33977ff736fc5cbfcf86ed6479e8d0b927b87a63
+ms.sourcegitcommit: 957c49696eaf048c284ef8f9f8ffeb562357ad95
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82199778"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82895618"
 ---
 # <a name="defining-cloud-native"></a>Definování nativního cloudu
 
@@ -35,8 +35,8 @@ Zde jsou některé společnosti, které implementovaly tyto techniky. Vezměte v
 | Společnost | Prostředí |
 | :-------- | :-------- |
 | [Netflix](https://www.infoq.com/news/2013/06/netflix/) | Má 600 + služby v produkčním prostředí. Nasadí stovky časů za den. |
-| [Uber](https://eng.uber.com/micro-deploy/) | Má 1000 000 služeb uložených v produkčním prostředí. Každý týden nasadí několik tisíc sestavení. |
-| [WeChat](https://www.cs.columbia.edu/~ruigu/papers/socc18-final100.pdf) | Má 300 + služby v produkčním prostředí. Provede téměř 1 000 změn za den. |
+| [Uber](https://eng.uber.com/micro-deploy/) | V produkčním prostředí má 1000 000 služeb. Každý týden nasadí několik tisíc časů. |
+| [WeChat](https://www.cs.columbia.edu/~ruigu/papers/socc18-final100.pdf) | Má 300 + služby v produkčním prostředí. Nasadí 1 000 dní. |
 
 Jak vidíte, Netflix, Uber a WeChat zpřístupňují systémy, které se skládají ze stovek nezávislých mikroslužeb. Tento styl architektury umožňuje rychle reagovat na podmínky na trhu. Můžou okamžitě aktualizovat malé oblasti živé, složité aplikace a individuálně škálovat tyto oblasti podle potřeby.
 
@@ -95,7 +95,7 @@ V knize, [mimo dvanáct-Factor App](https://content.pivotal.io/blog/beyond-the-
 
 |    |  Nový faktor | Vysvětlení  |
 | :-------- | :-------- | :-------- |
-| 13 | Nejdřív rozhraní API | Udělejte všechno jako služba. Předpokládejme, že váš kód bude využit klientem front-end, bránou nebo jinou službou. |
+| 13 | Přístup API-first | Udělejte všechno jako služba. Předpokládejme, že váš kód bude využit klientem front-end, bránou nebo jinou službou. |
 | 14 | Telemetrie | Na pracovní stanici máte hlubokou viditelnost své aplikace a jejího chování. V cloudu to neuděláte. Ujistěte se, že váš návrh zahrnuje shromažďování dat monitorování, specifických pro doménu a stavu a systému. |
 | 15 | Ověřování/autorizace  | Implementujte identitu od začátku. Vezměte v úvahu funkce [RBAC (řízení přístupu na základě role)](https://docs.microsoft.com/azure/role-based-access-control/overview) , které jsou dostupné ve veřejných cloudech.  |
 
@@ -167,7 +167,7 @@ Dříve v této kapitole jsme porovnali elektronického obchodování aplikaci s
 
 - Jednotlivé mikroslužby se můžou škálovat nezávisle. Místo škálování celé aplikace jako jedné jednotky můžete škálovat pouze ty služby, které vyžadují větší kapacitu napájení nebo šířku pásma sítě. Tento jemně odstupňovaný přístup k škálování poskytuje lepší kontrolu nad vaším systémem a pomáhá snižovat celkové náklady při škálování částí systému, ne všeho.
 
-Vynikající referenční příručka pro porozumění mikroslužbám je [mikroslužby .NET: architektura pro kontejnerové aplikace .NET](https://docs.microsoft.com/dotnet/standard/microservices-architecture/). Kniha hluboko komentáře na návrh a architekturu mikroslužeb. Je to Pomocník pro [kompletní referenční architekturu mikroslužeb](https://github.com/dotnet-architecture/eShopOnContainers) , který je k dispozici zdarma ke stažení od Microsoftu.
+Vynikající referenční příručka pro porozumění mikroslužbám je [mikroslužby .NET: architektura pro kontejnerové aplikace .NET](https://dotnet.microsoft.com/download/thank-you/microservices-architecture-ebook). Kniha hluboko komentáře na návrh a architekturu mikroslužeb. Je to Pomocník pro [kompletní referenční architekturu mikroslužeb](https://github.com/dotnet-architecture/eShopOnContainers) , který je k dispozici zdarma ke stažení od Microsoftu.
 
 ### <a name="developing-microservices"></a>Vývoj mikroslužeb
 

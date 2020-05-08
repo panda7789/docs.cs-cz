@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: c568b737-fdb2-4816-accd-051f5ab760f1
 topic_type:
 - apiref
-ms.openlocfilehash: 217ca0a850926e5f697340cece264c6ed442a9bb
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 9f785eafa8925324e3bd269ca08a3b1367b74c44
+ms.sourcegitcommit: 957c49696eaf048c284ef8f9f8ffeb562357ad95
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73125646"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82893592"
 ---
 # <a name="icordebugcodegetfunction-method"></a>ICorDebugCode::GetFunction – metoda
 Získá "ICorDebugFunction" spojený s tímto "ICorDebugCode".  
@@ -38,13 +38,13 @@ HRESULT GetFunction (
  mimo Ukazatel na adresu funkce.  
   
 ## <a name="remarks"></a>Poznámky  
- `ICorDebugCode` a `ICorDebugFunction` udržují vztah 1:1.  
+ `ICorDebugCode`a `ICorDebugFunction` Udržujte relaci 1:1.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** CorDebug. idl, CorDebug. h  
   
  **Knihovna:** CorGuids. lib  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]
+ **Verze .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]
