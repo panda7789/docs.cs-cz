@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 50dbb9af-58a1-41f4-b56d-3da20011884f
 topic_type:
 - apiref
-ms.openlocfilehash: 52bfe669d3b078657916554255a11cecfc07d484
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 2d065d956319076d3b92eddafd4a2c25ffbfbac1
+ms.sourcegitcommit: fff146ba3fd1762c8c432d95c8b877825ae536fc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73085090"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82976262"
 ---
 # <a name="icordebugevalgetresult-method"></a>ICorDebugEval::GetResult – metoda
 Získá výsledky tohoto vyhodnocení.  
@@ -38,15 +38,15 @@ HRESULT GetResult (
  mimo Ukazatel na adresu objektu ICorDebugValue, který představuje výsledky tohoto vyhodnocení, pokud se vyhodnocení dokončí normálně.  
   
 ## <a name="remarks"></a>Poznámky  
- Metoda `GetResult` je platná až po dokončení vyhodnocení.  
+ `GetResult` Metoda je platná až po dokončení vyhodnocení.  
   
- Pokud se vyhodnocení dokončí normálně, `ppResult` určí výsledky. Pokud se ukončí s výjimkou, výsledek je vyvolána výjimka. Pokud bylo vyhodnocení nového objektu, výsledkem je odkaz na nový objekt.  
+ Pokud se vyhodnocení dokončí normálně `ppResult` , zadává výsledky. Pokud se ukončí s výjimkou, výsledek je vyvolána výjimka. Pokud bylo vyhodnocení nového objektu, výsledkem je odkaz na nový objekt.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** CorDebug. idl, CorDebug. h  
   
  **Knihovna:** CorGuids. lib  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]
+ **Verze .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]

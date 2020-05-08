@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 80d509ca-b5e3-4c46-9c14-800db73d9bf7
 topic_type:
 - apiref
-ms.openlocfilehash: 45efa1939813a319e996a72fef62ada167b877c2
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.openlocfilehash: d41216eb7da57d29d67ce17372f746328204649e
+ms.sourcegitcommit: fff146ba3fd1762c8c432d95c8b877825ae536fc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76788699"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82976171"
 ---
 # <a name="icordebugevalnewobjectnoconstructor-method"></a>ICorDebugEval::NewObjectNoConstructor – metoda
 Přidělí novou instanci objektu zadaného typu bez pokusu o volání metody konstruktoru.  
@@ -40,7 +40,7 @@ HRESULT NewObjectNoConstructor (
  pro Ukazatel na objekt ICorDebugClass, který představuje typ objektu, který má být vytvořen.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** CorDebug. idl, CorDebug. h  
   
@@ -48,6 +48,6 @@ HRESULT NewObjectNoConstructor (
   
  **Verze .NET Framework:** 1,1, 1,0  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [NewParameterizedObjectNoConstructor – metoda](icordebugeval2-newparameterizedobjectnoconstructor-method.md)

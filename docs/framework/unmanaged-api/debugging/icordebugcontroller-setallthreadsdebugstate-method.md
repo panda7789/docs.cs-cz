@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: bdda4bd7-4743-4d58-a22b-8067e967db95
 topic_type:
 - apiref
-ms.openlocfilehash: be7fce700756d7120e0853446b7b307ec77c2080
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.openlocfilehash: c2e8aaa2774e3e2699a73c40804391ca245047b1
+ms.sourcegitcommit: fff146ba3fd1762c8c432d95c8b877825ae536fc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76783764"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82976587"
 ---
 # <a name="icordebugcontrollersetallthreadsdebugstate-method"></a>ICorDebugController::SetAllThreadsDebugState – metoda
 Nastaví stav ladění pro všechna spravovaná vlákna v procesu.  
@@ -42,15 +42,15 @@ HRESULT SetAllThreadsDebugState (
  pro Ukazatel na objekt "ICorDebugThread", který představuje vlákno, které má být vyloučeno z nastavení stavu ladění. Pokud je tato hodnota null, nezbavuje se žádné vlákno.  
   
 ## <a name="remarks"></a>Poznámky  
- Metoda `SetAllThreadsDebugState` může ovlivnit vlákna, která nejsou viditelná prostřednictvím [metody EnumerateThreads –](icordebugcontroller-enumeratethreads-method.md), takže vlákna, která byla pozastavená metodou `SetAllThreadsDebugState`, bude nutné obnovit pomocí metody `SetAllThreadsDebugState`.  
+ Metoda může ovlivnit vlákna, která nejsou viditelná prostřednictvím [metody EnumerateThreads –](icordebugcontroller-enumeratethreads-method.md), takže vlákna, která byla pozastavená `SetAllThreadsDebugState` pomocí metody, bude nutné obnovit `SetAllThreadsDebugState` metodou. `SetAllThreadsDebugState`  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** CorDebug. idl, CorDebug. h  
   
  **Knihovna:** CorGuids. lib  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také

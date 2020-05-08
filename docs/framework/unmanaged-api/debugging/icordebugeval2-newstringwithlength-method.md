@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: d5f54a34-6335-4708-b407-a756ec70fab4
 topic_type:
 - apiref
-ms.openlocfilehash: 3836b6c08098d38516c8a25260fb28998a2317fe
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: a2b76cb59a95082e0cf9c0884b8277cca3c8fe8d
+ms.sourcegitcommit: fff146ba3fd1762c8c432d95c8b877825ae536fc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73084786"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82976067"
 ---
 # <a name="icordebugeval2newstringwithlength-method"></a>ICorDebugEval2::NewStringWithLength – metoda
 Vytvoří řetězec o zadané délce se zadaným obsahem.  
@@ -42,15 +42,15 @@ HRESULT NewStringWithLength (
  pro Délka řetězce  
   
 ## <a name="remarks"></a>Poznámky  
- Pokud se očekává, že koncová hodnota řetězce null je ve spravovaném řetězci, volající metody `NewStringWithLength` musí zajistit, aby délka řetězce zahrnovala koncový znak null.  
+ Pokud se očekává, že je koncový znak null řetězce ve spravovaném řetězci, volající `NewStringWithLength` metody musí zajistit, aby délka řetězce zahrnovala koncový znak null.  
   
  Řetězec je vždy vytvořen v doméně aplikace, ve které je vlákno aktuálně prováděno.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** CorDebug. idl, CorDebug. h  
   
  **Knihovna:** CorGuids. lib  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]
+ **Verze .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]

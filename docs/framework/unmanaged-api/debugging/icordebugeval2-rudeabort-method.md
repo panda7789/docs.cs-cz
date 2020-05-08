@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: 02468edf-d32b-4cb3-aaa8-3dd2abfc8b25
 topic_type:
 - apiref
-ms.openlocfilehash: a486935d5d53a6fc7d862160ed1186c5774814c7
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: e901c65824ee8d6949c79c7778944148c0d9eb28
+ms.sourcegitcommit: fff146ba3fd1762c8c432d95c8b877825ae536fc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73084800"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82976054"
 ---
 # <a name="icordebugeval2rudeabort-method"></a>ICorDebugEval2::RudeAbort – metoda
-Přeruší výpočet, který tato `ICorDebugEval2` v tuto chvíli provádí.  
+Přeruší výpočet, který `ICorDebugEval2` právě provádí.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -32,13 +32,13 @@ HRESULT RudeAbort ();
 ```  
   
 ## <a name="remarks"></a>Poznámky  
- `RudeAbort` neuvolní žádné zámky, které filtr uchovává, takže relace ladění zůstane v nezabezpečeném stavu. Zavolejte tuto metodu s mimořádnou opatrností.  
+ `RudeAbort`neuvolní žádné zámky, které filtr uchovává, takže relace ladění zůstane v nezabezpečeném stavu. Zavolejte tuto metodu s mimořádnou opatrností.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** CorDebug. idl, CorDebug. h  
   
  **Knihovna:** CorGuids. lib  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]
+ **Verze .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]

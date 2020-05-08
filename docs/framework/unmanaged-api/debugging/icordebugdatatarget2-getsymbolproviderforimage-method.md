@@ -2,15 +2,15 @@
 title: ICorDebugDataTarget2::GetSymbolProviderForImage – metoda
 ms.date: 03/30/2017
 ms.assetid: b7c0a2f0-e904-43b3-98e1-d669e8a589e8
-ms.openlocfilehash: 500d36b414be686071990a6e1b40dd8759d02ae9
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 7800630be0ed9afb321d607046be308088781388
+ms.sourcegitcommit: fff146ba3fd1762c8c432d95c8b877825ae536fc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79178937"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82976444"
 ---
 # <a name="icordebugdatatarget2getsymbolproviderforimage-method"></a>ICorDebugDataTarget2::GetSymbolProviderForImage – metoda
-Vrátí zprostředkovatele symbolů pro modul ze základní adresy tohoto modulu.  
+Vrátí poskytovatele symbolů pro modul ze základní adresy tohoto modulu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -23,26 +23,26 @@ HRESULT GetSymbolProviderForImage(
   
 ## <a name="parameters"></a>Parametry  
  `imageBaseAddress`  
- [v] Hodnota [CORDB_ADDRESS,](../../../../docs/framework/unmanaged-api/common-data-types-unmanaged-api-reference.md) která představuje základní adresu modulu.  
+ pro Hodnota [CORDB_ADDRESS](../common-data-types-unmanaged-api-reference.md) , která představuje základní adresu modulu.  
   
  `ppSymProvider`  
- [out] Ukazatel na adresu objektu [ICorDebugSymbolProvider.](icordebugsymbolprovider-interface.md)  
+ mimo Ukazatel na adresu [ICorDebugSymbolProvider](icordebugsymbolprovider-interface.md) objektu.  
   
 ## <a name="remarks"></a>Poznámky  
   
 > [!NOTE]
-> Tato metoda je k dispozici pouze s nativní .NET.  
+> Tato metoda je k dispozici pouze s .NET Native.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET Framework:**[!INCLUDE[net_46_native](../../../../includes/net-46-native-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_46_native](../../../../includes/net-46-native-md.md)]  
   
 ## <a name="see-also"></a>Viz také
 
-- [ICorDebugDataTarget2 – rozhraní](icordebugdatatarget2-interface.md)
+- [Rozhraní ICorDebugDataTarget2](icordebugdatatarget2-interface.md)
 - [Debugging – rozhraní](debugging-interfaces.md)
