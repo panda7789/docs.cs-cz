@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: ab03dcb8-ceed-4f7a-abf8-9d31604bf90c
 topic_type:
 - apiref
-ms.openlocfilehash: f338a4e50d50e7dad67160ff66ea4be3d08b0dcd
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.openlocfilehash: c5870341b2e0fca632ccead3d09852ce289188b5
+ms.sourcegitcommit: fff146ba3fd1762c8c432d95c8b877825ae536fc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76788771"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82976316"
 ---
 # <a name="icordebugenumreset-method"></a>ICorDebugEnum::Reset – metoda
 Přesune kurzor na začátek výčtu.  
@@ -32,14 +32,14 @@ HRESULT Reset ();
 ```  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** CorDebug. idl, CorDebug. h  
   
  **Knihovna:** CorGuids. lib  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Rozhraní ICorDebugEnum](icordebugenum-interface1.md)
+- [ICorDebugEnum – rozhraní](icordebugenum-interface1.md)

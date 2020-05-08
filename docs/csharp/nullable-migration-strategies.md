@@ -1,94 +1,211 @@
 ---
 title: Aktualizace základu kódu pro použití typů odkazů s možnou hodnotou null
-description: Zvolte nejlepší strategii pro upgrade základu kódu pro použití typů odkazů s možnou hodnotou null.
+description: Vyberte si nejlepší strategii pro upgrade základu kódu pro použití typů odkazů s možnou hodnotou null.
 ms.technology: csharp-null-safety
 ms.date: 07/31/2019
-ms.openlocfilehash: b4a10863aea5c47b47c2a017afb20786b1e67528
-ms.sourcegitcommit: 73aa9653547a1cd70ee6586221f79cc29b588ebd
+ms.openlocfilehash: 5909eb9ffe1f5398fc2eb74848b82f8fe9516548
+ms.sourcegitcommit: fff146ba3fd1762c8c432d95c8b877825ae536fc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "82103525"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82975331"
 ---
-# <a name="update-libraries-to-use-nullable-reference-types-and-communicate-nullable-rules-to-callers"></a>Aktualizace knihoven za účelem použití typů odkazů s možnou hodnotou null a komunikace pravidel s možnou hodnotou null volajícím
+# <a name="update-libraries-to-use-nullable-reference-types-and-communicate-nullable-rules-to-callers"></a>Aktualizace knihoven pro použití typů odkazů s možnou hodnotou null a sdělování pravidel s možnou hodnotou null volajícím
 
-Přidání [typů odkazů s možnou hodnotou](nullable-references.md) null `null` znamená, že můžete deklarovat, zda je hodnota povolena nebo očekávána pro každou proměnnou. Kromě toho `AllowNull`můžete použít řadu atributů: `DisallowNull` `MaybeNull`, `NotNull` `NotNullWhen`, `MaybeNullWhen`, `NotNullIfNotNull` , a zcela popsat nulové stavy argumentů a vrácených hodnot. To poskytuje skvělé zkušenosti při psaní kódu. Upozornění se vám objeví, pokud může být `null`proměnná s možnou hodnotou null nastavena na hodnotu . Upozornění, pokud proměnná s možnou hodnotou null není před dereferenced. Aktualizace knihoven může nějakou dobu trvat, ale odměny stojí za to. Čím více informací, které poskytnete `null` kompilátoru o *tom, kdy* je hodnota povolena nebo zakázána, tím lepší upozornění uživatelé vašeho rozhraní API získají. Začněme se známým příkladem. Představte si, že vaše knihovna má následující rozhraní API pro načtení řetězce prostředků:
+Přidání [odkazových typů s možnou hodnotou null](nullable-references.md) znamená, že můžete deklarovat `null` , zda je nebo není hodnota pro každou proměnnou povolena nebo očekávána. Kromě toho můžete použít několik `AllowNull`atributů:, `DisallowNull`, `MaybeNull`, `NotNull`, `NotNullWhen`, `MaybeNullWhen`a `NotNullIfNotNull` k úplnému popisu stavů null argumentů a vrácených hodnot. Poskytuje skvělé prostředí při psaní kódu. Zobrazí se upozornění, pokud může být proměnná bez hodnoty null nastavena na `null`. Zobrazí se upozornění, pokud u proměnné s možnou hodnotou null není zkontrolována hodnota null před tím, než ji zrušíte. Aktualizace knihoven může chvíli trvat, ale výnosy je. Další informace, které pro kompilátor poskytnete, *Pokud* je `null` hodnota povolená nebo zakázaná, budou se vám lépe zobrazovat uživatelé vašeho rozhraní API. Pojďme začít se známým příkladem. Představte si, že knihovna má následující rozhraní API k načtení řetězce prostředků:
 
 ```csharp
 bool TryGetMessage(string key, out string message)
 ```
 
-Předchozí příklad následuje známý `Try*` vzor v rozhraní .NET. Existují dva referenční argumenty pro `key` toto `message` rozhraní API: a parametr. Toto rozhraní API má následující pravidla týkající se nullness těchto argumentů:
+Předchozí příklad se řídí známým `Try*` vzorem v rozhraní .NET. Pro toto rozhraní API existují dva argumenty odkazů: `key` a `message` parametr. Toto rozhraní API má následující pravidla týkající se hodnoty null těchto argumentů:
 
-- Volající by neměli `null` projít jako `key`argument pro .
-- Volající mohou předat proměnnou, `null` jejíž `message`hodnota je jako argument pro .
-- Pokud `TryGetMessage` metoda `true`vrátí , `message` hodnota není null. Pokud je `false,` vrácená hodnota `message` hodnota (a její stav null) je null.
+- Volající by neměli předat `null` jako argument pro `key`.
+- Volající mohou předat proměnnou, jejíž hodnota je `null` jako argument pro. `message`
+- Pokud `TryGetMessage` metoda vrátí `true`hodnotu, hodnota `message` není null. Pokud je návratovou hodnotou `false,` hodnota `message` (a její stav null), má hodnotu null.
 
-Pravidlo pro `key` může být zcela vyjádřeno `key` typem proměnné: by měl být typ odkazu s hodnotou nes hotelnou hodnotou null. Parametr `message` je složitější. Umožňuje `null` jako argument, ale zaručuje, že na `out` úspěch, že argument není null. Pro tyto scénáře potřebujete bohatší slovní zásobu k popisu očekávání.
+Pravidlo pro `key` může být zcela vyjádřeno typem proměnné: `key` typ odkazu, který neumožňuje hodnotu null. `message` Parametr je složitější. To umožňuje `null` jako argument, ale zaručuje, že po úspěšném dokončení tento `out` argument nemá hodnotu null. V těchto scénářích potřebujete podrobnější slovník, který popisuje očekávání.
 
-Aktualizace knihovny pro odkazy s možnou `?` hodnotou null vyžaduje více než pokrokání na některé proměnné a názvy typů. Předchozí příklad ukazuje, že je třeba prozkoumat vaše api a zvážit vaše očekávání pro každý vstupní argument. Zvažte záruky pro vrácenou hodnotu a všechny `out` nebo `ref` argumenty na vrácení metody. Pak sdělte tato pravidla kompilátoru a kompilátor poskytne upozornění, když volající nedodržují tato pravidla.
+Aktualizace knihovny pro odkazy s možnou hodnotou null vyžaduje více `?` než automatické automatických zadávání u některých proměnných a názvů typů. Předchozí příklad ukazuje, že je nutné projít vaše rozhraní API a vzít v úvahu vaše očekávání pro každý vstupní argument. Vezměte v úvahu záruky pro vrácenou hodnotu a jakékoli `out` argumenty `ref` nebo argumentů, které vrátí metoda. Potom tyto pravidla sdělí kompilátoru a kompilátor poskytne upozornění, pokud se volajícím tyto pravidla neřídí.
 
-Tahle práce chce čas. Začněme se strategiemi, aby vaše knihovna nebo aplikace byla upozorněna na nulu a zároveň vyvažovala další požadavky a dodávky. Uvidíte, jak vyvážit probíhající vývoj, který umožňuje typy odkazů s možnou hodnotou null. Dozvíte se výzvy pro definice obecných typů. Naučíte se použít atributy k popisu před a po podmínkách na jednotlivých api.
+Tato práce trvá určitou dobu. Pojďme začít s strategiemi, které vaší knihovně nebo aplikaci zohledňují hodnoty null, zatímco se vyrovnávají další požadavky a dodávky. Uvidíte, jak vyrovnávat průběžný vývoj a povolit typy odkazů s možnou hodnotou null. Seznámíte se s problémy s definicemi obecného typu. Dozvíte se, jak použít atributy k popisu před a po jednotlivých podmínkách rozhraní API.
 
-## <a name="choose-a-strategy-for-nullable-reference-types"></a>Zvolte strategii pro typy odkazů s možnou hodnotou null.
+## <a name="choose-a-strategy-for-nullable-reference-types"></a>Zvolit strategii pro typy odkazů s možnou hodnotou null
 
-První volbou je, zda null typy odkazů by měly být zapnuty nebo vypnuty ve výchozím nastavení. Máte dvě strategie:
+První volbou je, že ve výchozím nastavení by se měly zapnout nebo vypnout typy odkazů s možnou hodnotou null. Máte dvě strategie:
 
-- Povolte typy odkazů s možnou hodnotou null pro celý projekt a zakažte je v kódu, který není připraven.
-- Povolit pouze typy odkazů s možnou hodnotou null pro kód, který byl anotován pro typy odkazů s možnou hodnotou null.
+- Povolte typy odkazů s možnou hodnotou null pro celý projekt a zakažte ho v kódu, který není připravený.
+- Povolit pouze typy odkazů s možnou hodnotou null pro kód, který je opatřen poznámkou pro typy s možnou hodnotou null
 
-První strategie funguje nejlépe, když přidáváte další funkce do knihovny při aktualizaci pro typy odkazů s možnou hodnotou null. Všechny nové vývoj je null,,,,,,,,,,,,,,,,,,,,, Při aktualizaci existujícího kódu povolíte v těchto třídách typy odkazů s možnou hodnotou null.
+První strategie funguje nejlépe při přidávání dalších funkcí do knihovny při jejich aktualizaci na typy odkazů s možnou hodnotou null. Veškerý nový vývoj má na paměti s možnou hodnotou null. Při aktualizaci existujícího kódu povolíte v těchto třídách typy odkazů s možnou hodnotou null.
 
-Po této první strategii postupujte takto:
+Po této první strategii provedete následující:
 
-1. Povolte typy odkazů s možnou `<Nullable>enable</Nullable>` hodnotou null pro celý projekt přidáním prvku do souborů *csproj.*
-1. Přidejte `#nullable disable` pragma do každého zdrojového souboru v projektu.
-1. Při práci na každém souboru odeberte pragmu a zřete všechna varování.
+1. Povolte typy odkazů s možnou hodnotou null pro celý projekt `<Nullable>enable</Nullable>` přidáním elementu do souborů *csproj* .
+1. Přidejte `#nullable disable` direktivu pragma do každého zdrojového souboru v projektu.
+1. Při práci na jednotlivých souborech odeberte direktivu pragma a vyřešte všechna upozornění.
 
-Tato první strategie má více práce předem přidat pragma do každého souboru. Výhodou je, že každý nový soubor kódu přidaný do projektu bude mít hodnotu null povolenou hodnotou. Všechny nové práce budou nullable vědomi; je třeba aktualizovat pouze existující kód.
+Tato první strategie obsahuje více než více práce pro přidání direktivy pragma do každého souboru. Výhodou je, že každý nový soubor kódu přidaný do projektu bude mít povolenou hodnotu null. Jakékoli nové práce budou mít na paměti nabývat hodnoty null; je nutné aktualizovat pouze existující kód.
 
-Druhá strategie funguje lépe, pokud je knihovna obecně stabilní a hlavním zaměřením vývoje je přijmout typy odkazů s možnou hodnotou null. Při osazování polí API zapnete typy odkazů s možnou hodnotou null. Po dokončení povolíte typy odkazů s možnou hodnotou null pro celý projekt.
+Druhá strategie funguje lépe, pokud je knihovna obecně stabilní a hlavní fokus vývoje je přijmout typy odkazů s možnou hodnotou null. Při přidávání poznámek k rozhraním API můžete zapnout typy odkazů s možnou hodnotou null. Až budete hotovi, povolte v celém projektu typy odkazů s možnou hodnotou null.
 
-V návaznosti na tuto druhou strategii postupujte takto:
+Po této druhé strategii provedete následující:
 
-1. Přidejte `#nullable enable` pragma do souboru, který chcete, aby null být vědomi.
-1. Adresují všechna varování.
-1. Pokračujte v těchto prvních dvou krocích, dokud neuvědomíte celou knihovnu, která by byla známa.
-1. Povolte typy s možnou hodnotou null pro celý projekt přidáním `<Nullable>enable</Nullable>` prvku do souborů *csproj.*
-1. Odstraňte `#nullable enable` pragmy, protože už nejsou potřeba.
+1. Přidejte `#nullable enable` direktivu pragma do souboru, pro který chcete nastavit nepovolenou hodnotu s podporou.
+1. Vyřešte všechna upozornění.
+1. Pokračujte v těchto prvních dvou krocích, dokud nebudete mít k celou knihovnu s podporou null.
+1. Povolit typy s možnou hodnotou null pro celý projekt `<Nullable>enable</Nullable>` přidáním elementu do souborů *csproj* .
+1. Odeberte `#nullable enable` direktivy pragma, protože už nejsou potřeba.
 
-Tato druhá strategie má méně práce předem. Kompromis je, že první úkol při vytváření nového souboru je přidat pragma a učinit ji nullable aware. Pokud všichni vývojáři ve vašem týmu zapomenout, že nový kód je nyní v nevyřízených položkách práce, aby všechny kód nullable aware.
+Tato druhá strategie má méně práce předem. Kompromisy je, že první úkol při vytváření nového souboru je přidání direktivy pragma a zpřístupnění hodnoty null. Pokud se některý z vývojářů v týmu zapomene, je nový kód v nedokončené práci, aby se zajistilo, že bude mít veškerý kód na hodnotu null.
 
-Která z těchto strategií si vyberete, závisí na tom, kolik aktivního vývoje probíhá ve vašem projektu. Čím zralejší a stabilnější váš projekt, tím lepší je druhá strategie. Čím více funkcí se vyvíjí, tím lepší je první strategie.
+Které z těchto strategií vybíráte, závisí na tom, kolik aktivního vývoje se v projektu provádí. Tím se zlepší a stabilnější váš projekt, tím lepší je druhá strategie. Vyvíjejí se další funkce, což je lepší první strategie.
 
-## <a name="should-nullable-warnings-introduce-breaking-changes"></a>Měla by zavést neplatné výstrahy narušující změny?
+## <a name="should-nullable-warnings-introduce-breaking-changes"></a>Má upozornění na hodnotu null zavést průlomové změny?
 
-Před povolením typů odkazů s možnou hodnotou null jsou proměnné považovány za *netečné*. Jakmile povolíte typy odkazů s možnou hodnotou null, všechny tyto proměnné jsou *nenulové*. Kompilátor vydá upozornění, pokud tyto proměnné nejsou inicializovány na hodnoty bez nuly.
+Než povolíte typy odkazů s možnou hodnotou null, jsou proměnné považovány za *Nullable oblivious*. Jakmile povolíte typy odkazů s možnou hodnotou null, všechny tyto proměnné nebudou *mít hodnotu null*. Kompilátor bude vydávat upozornění, pokud tyto proměnné nejsou inicializovány na hodnoty, které nejsou null.
 
-Dalším pravděpodobným zdrojem upozornění je vrácené hodnoty, pokud hodnota nebyla inicializována.
+Dalším pravděpodobným zdrojem upozornění je vrácení hodnot, pokud hodnota nebyla inicializována.
 
-Prvním krokem při adresování upozornění kompilátoru je použití `?` anotací na parametr a návratové typy k označení, kdy argumenty nebo vrácené hodnoty mohou být nulové. Pokud referenční proměnné nesmí být null, původní deklarace je správná. Jak to uděláte, vaším cílem není jen opravit varování. Důležitější je, aby kompilátor pochopil váš záměr pro potenciální hodnoty null. Při zkoumání varování dosáhnete dalšího zásadního rozhodnutí pro vaši knihovnu. Chcete zvážit úpravu podpisů rozhraní API tak, aby jasněji sdělovaly záměr návrhu? Lepší podpis rozhraní `TryGetMessage` API pro dříve zkoumanou metodu může být:
+Prvním krokem při adresování upozornění kompilátoru je použití `?` poznámek na parametrech a návratových typech k označení, že argumenty nebo návratové hodnoty mohou být null. Pokud referenční proměnné nesmí mít hodnotu null, je původní deklarace správná. V takovém případě váš cíl nestačí jenom opravit upozornění. Důležitější je, že kompilátor porozuměl vašemu záměru pro potenciální hodnoty null. Při kontrole upozornění se dostanete k vašemu dalšímu hlavnímu rozhodnutí o vaší knihovně. Chcete zvážit úpravu signatur rozhraní API, abyste mohli snadněji sdělit záměr návrhu? Lepší signatura rozhraní API pro `TryGetMessage` dříve zkoumané metody může být:
 
 ```csharp
 string? TryGetMessage(string key);
 ```
 
-Vrácená hodnota označuje úspěch nebo neúspěch a nese hodnotu, pokud byla nalezena hodnota. V mnoha případech může změna podpisů rozhraní API zlepšit způsob, jakým komunikují hodnoty null.
+Vrácená hodnota označuje úspěch nebo neúspěch a přenese hodnotu, pokud byla hodnota nalezena. V mnoha případech může změna signatur rozhraní API zlepšit způsob, jakým komunikuje hodnoty null.
 
-Pro veřejné knihovny nebo knihovny s velkými uživatelskými základnami však můžete upřednostňovat nezavádět žádné změny podpisu rozhraní API. Pro tyto případy a další běžné vzory můžete atributy použít jasněji definovat, `null`kdy argument nebo vrácená hodnota může být . Bez ohledu na to, zda uvažujete o změně povrchu rozhraní API, pravděpodobně zjistíte, `null` že samotné poznámky typu nejsou dostatečné pro popis hodnot argumentů nebo vrácených hodnot. V těchto případech můžete atributy použít jasněji popsat rozhraní API.
+Pro veřejné knihovny nebo knihovny s velkými základy uživatelů ale můžete raději nezavádět změny signatur rozhraní API. Pro tyto případy a další běžné vzory můžete použít atributy pro přesnější definování v případě, že argument nebo návratová hodnota může být `null`. Bez ohledu na to, zda zvažte změnu povrchu rozhraní API, pravděpodobně zjistíte, že tyto anotace typu nejsou dostačující pro `null` popis hodnot argumentů nebo vrácených hodnot. V těchto případech můžete použít atributy pro přehlednější Popis rozhraní API.
 
-## <a name="attributes-extend-type-annotations"></a>Atributy rozšiřují poznámky typu
+## <a name="attributes-extend-type-annotations"></a>Atributy rozšiřuje anotace typu
 
-Několik atributů byly přidány vyjádřit další informace o stavu null proměnných. Veškerý kód, který jste napsali před c# 8 představil null reference typy byl *null nevšímavý*. To znamená, že všechny proměnné typu odkazu může být null, ale null kontroly nejsou vyžadovány. Jakmile váš kód je *null,,,* tato pravidla změnit. Referenční typy by `null` nikdy měla být hodnota a nullable `null` typy odkazů musí být zkontrolovány proti před tím, než je odkazováno.
+Bylo přidáno několik atributů pro vyjádření dalších informací o stavu hodnoty null proměnných. Veškerý kód, který jste napsali předtím, než C# 8 zavádí odkazy s možnou hodnotou null, byl *null oblivious* To znamená, že jakákoli proměnná typu odkazu může mít hodnotu null, ale kontroly hodnoty null nejsou požadovány. Jakmile kód bude *mít na paměti hodnotu s možnou hodnotou null*, změní se tato pravidla. Odkazové typy by nikdy neměly `null` být hodnotou a pro typy odkazů s možnou hodnotou `null` null musí být před zpětným odkazem zkontrolovány.
 
-Pravidla pro vaše rozhraní API jsou pravděpodobně složitější, `TryGetValue` jak jste viděli u scénáře rozhraní API. Mnoho vašich api mají složitější pravidla pro proměnné může `null`nebo nemůže být . V těchto případech budete používat atributy k vyjádření těchto pravidel. Atributy, které popisují sémantiku rozhraní API, najdete v článku [o atributy, které mají vliv na analýzu, kterou lze udatnou hodnotu](./language-reference/attributes/nullable-analysis.md).
+Pravidla pro vaše rozhraní API jsou pravděpodobně složitější, jak jste viděli ve scénáři `TryGetValue` rozhraní API. Mnohé z vašich rozhraní API mají složitější pravidla, kdy proměnné můžou nebo nemůžou `null`být. V těchto případech použijete atributy k vyjádření těchto pravidel. Atributy, které popisují sémantiku vašeho rozhraní API, najdete v článku o [atributech, které mají vliv na analýzu s možnou hodnotou null](./language-reference/attributes/nullable-analysis.md).
 
-## <a name="generic-definitions-and-nullability"></a>Obecné definice a nullability
+## <a name="generic-definitions-and-nullability"></a>Obecné definice a možnost použití hodnoty null
 
-Správná komunikace nulového stavu obecných typů a obecných metod vyžaduje zvláštní péči. To vyplývá ze skutečnosti, že typ hodnoty s možnou hodnotou s hodnotou null a typ odkazu s možnou hodnotou s možnou hodnotou null se zásadně liší. Synonymum `int?` pro `Nullable<int>`, `string?` vzhledem k tomu, že je `string` s atributem přidaným kompilátorem. Výsledkem je, že kompilátor nemůže `T?` generovat správný `T` kód, aniž by věděl, zda je `class` nebo `struct`.
+Správně komunikující stav null obecných typů a obecné metody vyžadují zvláštní péči. To je fakt, že typ hodnoty s možnou hodnotou null a typ odkazu s možnou hodnotou null jsou zásadním rozdílem. `int?` Je synonymum pro `Nullable<int>`, zatímco `string?` je `string` atributem přidaným kompilátorem. Výsledkem je, že kompilátor nemůže generovat správný `T?` kód bez vědomí, zda `T` je `class` nebo. `struct`
 
-To neznamená, že nelze použít typ s hodnotou null (typ hodnoty nebo typ odkazu) jako argument typu pro uzavřený obecný typ. Oba `List<string?>` `List<int?>` a jsou platné instance `List<T>`.
+To neznamená, že nemůžete použít typ s povolenou hodnotou null (buď typ hodnoty, nebo odkazový typ) jako argument typu pro uzavřený obecný typ. `List<string?>` A `List<int?>` jsou platné instance `List<T>`.
 
-Co to znamená, že nelze `T?` použít v deklaraci obecné třídy nebo metody bez omezení. Například <xref:System.Linq.Enumerable.FirstOrDefault%60%601(System.Collections.Generic.IEnumerable%7B%60%600%7D)?displayProperty=nameWithType> nebude změněn na návrat `T?`. Toto omezení můžete překonat `struct` přidáním omezení nebo. `class` S některou z těchto omezení kompilátor ví, `T` `T?`jak generovat kód pro oba a .
+To znamená, že nemůžete použít `T?` v deklaraci obecné třídy nebo metody bez omezení. Například se nemění, <xref:System.Linq.Enumerable.FirstOrDefault%60%601(System.Collections.Generic.IEnumerable%7B%60%600%7D)?displayProperty=nameWithType> aby vracel. `T?` Toto omezení můžete překonat přidáním omezení `struct` nebo. `class` U některého z těchto omezení kompilátor ví, jak generovat kód pro i `T` `T?`.
 
-Můžete chtít omezit typy používané pro obecný typ argumentu, které mají být nenulové typy. Můžete to udělat přidáním `notnull` omezení pro tento argument typu. When that constraint is applied, the type argument must not be a nullable type.
+Můžete chtít omezit typy používané pro argument obecného typu, aby byly typy bez hodnoty null. To lze provést přidáním `notnull` omezení na tento argument typu. Při použití tohoto omezení nesmí argument type být typ s možnou hodnotou null.
+
+## <a name="late-initialized-properties-data-transfer-objects-and-nullability"></a>Opožděné inicializace vlastností, Přenos dat objektů a možnosti použití hodnoty null
+
+Vzhledem k tomu, že hodnota null vlastností, které jsou zpožděně inicializovány, což znamená, že je nastavena po konstrukci, může vyžadovat zvláštní pozornost, aby vaše třída nadále správně nevyjádřila původní záměr návrhu.
+
+Typy, které obsahují zpožděné vlastnosti, jako je například Přenos dat objektů (DTO), jsou často vytvořeny pomocí externí knihovny, jako je například ORM databáze (objektová relační Mapovač), deserializátor nebo některá jiná komponenta, která automaticky vyplní vlastnosti z jiného zdroje.
+
+Před povolením typů odkazů s možnou hodnotou null, které představují studenta, zvažte následující třídu DTO:
+
+```csharp
+class Student
+{
+    [Required]
+    public string FirstName { get; set; }
+
+    [Required]
+    public string LastName { get; set; }
+
+    public string VehicleRegistration { get; set; }
+}
+```
+
+Záměr návrhu (uvedený v tomto `Required` případě atributem) naznačuje, že v tomto systému jsou vlastnosti `FirstName` a `LastName` **povinné**, a proto není null.
+
+`VehicleRegistration` Vlastnost není **povinná**, takže může mít hodnotu null.
+
+Pokud povolíte typy odkazů s možnou hodnotou null, chcete určit, které vlastnosti mohou být s možnou hodnotou null, v souladu s původním záměrem:
+
+```csharp
+class Student
+{
+    [Required]
+    public string FirstName { get; set; }
+
+    [Required]
+    public string LastName { get; set; }
+
+    public string? VehicleRegistration { get; set; }
+}
+```
+
+Pro tento DTO je ``VehicleRegistration``jedinou vlastností, která může být null.
+
+Kompilátor však vyvolává `CS8618` upozornění pro `FirstName` a `LastName`, což značí, že vlastnosti, které neumožňují hodnotu null, nejsou inicializovány.
+
+Existují tři možnosti, které jsou k dispozici pro vyřešení upozornění kompilátoru způsobem, který zachovává původní záměr. Kterákoli z těchto možností je platná. měli byste zvolit ten, který nejlépe vyhovuje vašemu stylu kódování a požadavkům na návrh.
+
+### <a name="initialize-in-the-constructor"></a>Inicializovat v konstruktoru
+
+Ideální způsob, jak vyřešit neinicializovaná upozornění, je inicializovat vlastnosti v konstruktoru:
+
+```csharp
+class Student
+{
+    public Student(string firstName, string lastName)
+    {
+        FirstName = firstName;
+        LastName = lastName;
+    }
+
+    [Required]
+    public string FirstName { get; set; }
+
+    [Required]
+    public string LastName { get; set; }
+
+    public string? VehicleRegistration { get; set; }
+}
+```
+
+Tento přístup funguje pouze v případě, že knihovna, kterou použijete k vytvoření instance třídy, podporuje předávání parametrů v konstruktoru.
+
+Kromě toho knihovna může podporovat předávání *některých* vlastností v konstruktoru, ale ne všechny.
+Například EF Core podporuje [vazbu konstruktoru](/ef/core/modeling/constructors) pro normální vlastnosti sloupce, ale ne navigační vlastnosti.
+
+Podívejte se na dokumentaci knihovny, která vytváří instanci vaší třídy, abyste pochopili rozsah, ve kterém podporuje vazby konstruktoru.
+
+### <a name="property-with-nullable-backing-field"></a>Vlastnost s polem, které je k hodnotou null
+
+Pokud vazba konstruktoru nebude pro vás fungovat, jedním ze způsobů, jak se tomuto problému vypořádat, je mít vlastnost nepovolující hodnotu null s polem, které je k dispozici s možnou hodnotou null:
+
+```csharp
+private string? _firstName;
+
+[Required]
+public string FirstName
+{
+    set => _firstName = value;
+    get => _firstName
+           ?? throw new InvalidOperationException("Uninitialized " + nameof(FirstName))
+}
+```
+
+V tomto scénáři, pokud je `FirstName` vlastnost k dispozici před inicializací, kód vyvolá výjimku `InvalidOperationException`, protože kontrakt rozhraní API byl nesprávně použit.
+
+Při použití zálohovaných polí byste měli zvážit, že některé knihovny můžou mít zvláštní předpoklady. EF Core například může být nutné nakonfigurovat pro správné použití polí pro [zálohování](/ef/core/modeling/backing-field) .
+
+### <a name="initialize-the-property-to-null"></a>Inicializovat vlastnost na hodnotu null
+
+Jako terser alternativa k použití pole, které je null, nebo v případě, že knihovna, která vytváří instanci vaší třídy, není kompatibilní s tímto přístupem, můžete jednoduše inicializovat `null` vlastnost přímo s použitím operátoru null-striktní (`!`):
+
+```csharp
+[Required]
+public string FirstName { get; set; } = null!;
+
+[Required]
+public string LastName { get; set; } = null!;
+
+public string? VehicleRegistration { get; set; }
+```
+
+Nebudete nikdy sledovat skutečnou hodnotu null za běhu s výjimkou důsledků programátorské chyby, a to tak, že přístup k vlastnosti před jejich správnou inicializací.
+
+## <a name="see-also"></a>Viz také
+
+- [Migrace existujícího základu kódu na odkazy s možnou hodnotou null](tutorials/upgrade-to-nullable-references.md)
+- [Práce s typy odkazů s možnou hodnotou null v EF Core](/ef/core/miscellaneous/nullable-reference-types)

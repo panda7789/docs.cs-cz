@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 29e7a14b-d50e-4852-bfda-011b76c0c9ee
 topic_type:
 - apiref
-ms.openlocfilehash: 8a5d421bf0eb8ec5a34fe21d6efc79bbe56c294c
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: b263fed7db5cb2ef687da45f8cbc99a02e1e3ea2
+ms.sourcegitcommit: fff146ba3fd1762c8c432d95c8b877825ae536fc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73137647"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82976132"
 ---
 # <a name="icordebugevalnewstring-method"></a>ICorDebugEval::NewString – metoda
 Přidělí novou instanci řetězce se zadaným obsahem.  
@@ -41,10 +41,10 @@ HRESULT NewString (
  Řetězec je vždy vytvořen v doméně aplikace, ve které je vlákno aktuálně prováděno.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** CorDebug. idl, CorDebug. h  
   
  **Knihovna:** CorGuids. lib  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]
+ **Verze .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]

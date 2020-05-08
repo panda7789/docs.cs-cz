@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 7f470c5c-e1c0-4d8d-aad8-830f113ae751
 topic_type:
 - apiref
-ms.openlocfilehash: 4ac26ef4449dc02230f26b1247616b4587d217b7
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 1cf0080945ad78565fae3fedb454ceba7825cb4a
+ms.sourcegitcommit: fff146ba3fd1762c8c432d95c8b877825ae536fc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73085162"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82976236"
 ---
 # <a name="icordebugevalcallfunction-method"></a>ICorDebugEval::CallFunction – metoda
 
@@ -55,7 +55,7 @@ Pokud je funkce virtuální, `CallFunction` provede virtuální odeslání. Poku
 
 ## <a name="requirements"></a>Požadavky
 
-**Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).
+**Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).
 
 **Hlavička:** CorDebug. idl, CorDebug. h
 
@@ -63,6 +63,6 @@ Pokud je funkce virtuální, `CallFunction` provede virtuální odeslání. Poku
 
 **Verze .NET Framework:** 1,1, 1,0
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [CallParameterizedFunction – metoda](icordebugeval2-callparameterizedfunction-method.md)

@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: ce3025e8-defa-4c5e-8298-f49d71fa5736
 topic_type:
 - apiref
-ms.openlocfilehash: 38cc98f1bfd966d1f764e43b30003a2bae66297d
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.openlocfilehash: e9570d3c916123093f69e7f26d3778f1c7184b1f
+ms.sourcegitcommit: fff146ba3fd1762c8c432d95c8b877825ae536fc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76793461"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82976184"
 ---
 # <a name="icordebugevalnewobject-method"></a>ICorDebugEval::NewObject – metoda
 Přidělí novou instanci objektu a zavolá specifikovanou metodu konstruktoru.  
@@ -42,13 +42,13 @@ HRESULT NewObject (
  pro Konstruktor, který má být volán.  
   
  `nArgs`  
- pro Velikost pole `ppArgs`.  
+ pro Velikost `ppArgs` pole.  
   
  `ppArgs`  
  pro Pole objektů ICorDebugValue, z nichž každý představuje argument, který má být předán konstruktoru.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** CorDebug. idl, CorDebug. h  
   
@@ -56,6 +56,6 @@ HRESULT NewObject (
   
  **Verze .NET Framework:** 1,1, 1,0  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [NewParameterizedObject – metoda](icordebugeval2-newparameterizedobject-method.md)
