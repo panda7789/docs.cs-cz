@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 87ce7c5b-fd82-453e-bf55-c8a32150b183
 topic_type:
 - apiref
-ms.openlocfilehash: 0c7b8dae756fbb9ab27ff187eeb83a931b016b7f
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.openlocfilehash: 4e5939e9e74899a33f28927c4fda09d0a8fb30a0
+ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76793290"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83209731"
 ---
 # <a name="icordebugmdagetflags-method"></a>ICorDebugMDA::GetFlags – metoda
 Získá příznaky spojené s pomocníkem spravovaného ladění (MDA) reprezentovaným [ICorDebugMDA](icordebugmda-interface.md).  
@@ -38,15 +38,15 @@ HRESULT GetFlags (
  pro Bitová kombinace hodnot výčtu [CorDebugMDAFlags –](cordebugmdaflags-enumeration.md) , která určuje nastavení příznaků pro tento MDA.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** CorDebug. idl, CorDebug. h  
   
  **Knihovna:** CorGuids. lib  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [ICorDebugMDA – rozhraní](icordebugmda-interface.md)
-- [Diagnostikování chyb pomocí asistentů spravovaného ladění](../../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)
+- [Diagnostikování chyb pomocí asistentů spravovaného ladění](../../debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)

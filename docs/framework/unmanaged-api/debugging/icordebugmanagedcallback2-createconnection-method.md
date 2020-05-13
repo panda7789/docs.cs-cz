@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 49e647be-9d63-4250-9d11-704e2a400d1b
 topic_type:
 - apiref
-ms.openlocfilehash: e98748b523b948dc002f2ebc4e2e79fc7d659918
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.openlocfilehash: 51d34e68851bc6a60d25f643f63d112396abdc4e
+ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76781592"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83209068"
 ---
 # <a name="icordebugmanagedcallback2createconnection-method"></a>ICorDebugManagedCallback2::CreateConnection – metoda
 Oznamuje ladicímu programu, že bylo vytvořeno nové připojení.  
@@ -46,22 +46,22 @@ HRESULT CreateConnection (
  pro Ukazatel na název nového připojení.  
   
 ## <a name="remarks"></a>Poznámky  
- Zpětné volání `CreateConnection` se spustí v jednom z následujících případů:  
+ `CreateConnection`Zpětné volání bude aktivováno v jednom z následujících případů:  
   
-- Když se ladicí program připojí k procesu, který obsahuje připojení. V tomto případě modul runtime vygeneruje a odešle událost `CreateConnection` a událost [ICorDebugManagedCallback2:: ChangeConnection –](icordebugmanagedcallback2-changeconnection-method.md) pro každé připojení v procesu.  
+- Když se ladicí program připojí k procesu, který obsahuje připojení. V tomto případě modul runtime vytvoří a odešle `CreateConnection` událost a událost [ICorDebugManagedCallback2:: ChangeConnection –](icordebugmanagedcallback2-changeconnection-method.md) pro každé připojení v procesu.  
   
-- Když hostitel volá [ICLRDebugManager:: BeginConnection –](../../../../docs/framework/unmanaged-api/hosting/iclrdebugmanager-beginconnection-method.md) v [rozhraní API hostování](../../../../docs/framework/unmanaged-api/hosting/index.md).  
+- Když hostitel volá [ICLRDebugManager:: BeginConnection –](../../../../docs/framework/unmanaged-api/hosting/iclrdebugmanager-beginconnection-method.md) v [rozhraní API hostování](../hosting/index.md).  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** CorDebug. idl, CorDebug. h  
   
  **Knihovna:** CorGuids. lib  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [ICorDebugManagedCallback2 – rozhraní](icordebugmanagedcallback2-interface.md)
 - [ICorDebugManagedCallback – rozhraní](icordebugmanagedcallback-interface.md)

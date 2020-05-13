@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 989762c4-3d15-4485-b8ee-69e0fa8ec895
 topic_type:
 - apiref
-ms.openlocfilehash: 29c9d9dde4776ef729c0bbae7b644171a265e3ec
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 86e2b28448caf2a872e44490e8ee4763b056ed44
+ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73137470"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83206970"
 ---
 # <a name="icordebugmodulegetassembly-method"></a>ICorDebugModule::GetAssembly – metoda
 Získá nadřazené sestavení pro tento modul.  
@@ -38,10 +38,10 @@ HRESULT GetAssembly(
  mimo Ukazatel na objekt ICorDebugAssembly, který představuje sestavení obsahující tento modul.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** CorDebug. idl, CorDebug. h  
   
  **Knihovna:** CorGuids. lib  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]
+ **Verze .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]

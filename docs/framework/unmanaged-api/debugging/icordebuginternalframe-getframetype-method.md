@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: da278a29-dc2e-4bf7-96ce-801bdc4d7025
 topic_type:
 - apiref
-ms.openlocfilehash: b7a33fd6e2178e0e9188b81f516b231702fb6460
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 6b598352f734cf47514a82de1d0fca65d430a9ab
+ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73122718"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83209965"
 ---
 # <a name="icordebuginternalframegetframetype-method"></a>ICorDebugInternalFrame::GetFrameType – metoda
 Získá typ tohoto interního rámce.  
@@ -35,16 +35,16 @@ HRESULT GetFrameType (
   
 ## <a name="parameters"></a>Parametry  
  `pType`  
- mimo Ukazatel na hodnotu výčtu CorDebugInternalFrameType –, která určuje typ vnitřního rámce reprezentovaného tímto objektem `ICorDebugInternalFrame`.  
+ mimo Ukazatel na hodnotu výčtu CorDebugInternalFrameType –, která určuje typ vnitřního rámce reprezentovaného tímto `ICorDebugInternalFrame` objektem.  
   
 ## <a name="remarks"></a>Poznámky  
- Interní typ rámce nikdy nebude STUBFRAME_NONE. Ladicí programy by měly korektně ignorovat nerozpoznané typy vnitřních rámců.  
+ Interní typ rámce nebude nikdy STUBFRAME_NONE. Ladicí programy by měly korektně ignorovat nerozpoznané typy vnitřních rámců.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** CorDebug. idl, CorDebug. h  
   
  **Knihovna:** CorGuids. lib  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]
+ **Verze .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]

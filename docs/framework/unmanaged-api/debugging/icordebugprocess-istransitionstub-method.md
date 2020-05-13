@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: f7653317-7e48-4163-be03-f50f1a4b0f70
 topic_type:
 - apiref
-ms.openlocfilehash: 852c77be0dc8ef91933bacbbd3d6b3f5a69ae8c8
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: ab2121605f974fdf3f9053214a4d29d8b0dd72db
+ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73139384"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83210777"
 ---
 # <a name="icordebugprocessistransitionstub-method"></a>ICorDebugProcess::IsTransitionStub – metoda
 Získá hodnotu, která označuje, zda je adresa uvnitř zástupné procedury, která způsobí přechod ke spravovanému kódu.  
@@ -35,21 +35,21 @@ HRESULT IsTransitionStub(
   
 ## <a name="parameters"></a>Parametry  
  `address`  
- pro Hodnota `CORDB_ADDRESS`, která určuje konkrétní adresu.  
+ pro `CORDB_ADDRESS`Hodnota, která určuje konkrétní adresu.  
   
  `pbTransitionStub`  
- mimo Ukazatel na logickou hodnotu, která je `true`, pokud je zadaná adresa uvnitř zástupné procedury, která způsobí přechod ke spravovanému kódu; v opačném případě *`pbTransitionStub` `false`.  
+ mimo Ukazatel na logickou hodnotu, která je `true` v případě, že zadaná adresa je uvnitř zástupné procedury, která způsobí přechod ke spravovanému kódu; v opačném případě * `pbTransitionStub` je `false` .  
   
 ## <a name="remarks"></a>Poznámky  
- Metodu `IsTransitionStub` lze použít nespravovaným kódem krokování k rozhodnutí, kdy vrátit řízení krokování spravovanému stepper.  
+ `IsTransitionStub`Metoda může být použita nespravovaným kódem krokování k rozhodnutí, kdy vrátit řízení krokování spravovanému stepper.  
   
  Pomocí informací v přenositelném spustitelném souboru (PE) můžete také převést zástupné procedury pro převod identity.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** CorDebug. idl, CorDebug. h  
   
  **Knihovna:** CorGuids. lib  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]
+ **Verze .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]

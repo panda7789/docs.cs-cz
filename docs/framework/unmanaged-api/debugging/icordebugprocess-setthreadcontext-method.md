@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: a7b50175-2bf1-40be-8f65-64aec7aa1247
 topic_type:
 - apiref
-ms.openlocfilehash: 66d544bbc0511ea76565376c8f10294f1758026b
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.openlocfilehash: c9e403dc8cbb75a1e93c426a9e0b3a2083f1f10e
+ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76792575"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83210459"
 ---
 # <a name="icordebugprocesssetthreadcontext-method"></a>ICorDebugProcess::SetThreadContext – metoda
 Nastaví kontext pro dané vlákno v tomto procesu.  
@@ -40,7 +40,7 @@ HRESULT SetThreadContext(
  pro ID vlákna, pro které chcete nastavit kontext.  
   
  `contextSize`  
- pro Velikost pole `context`.  
+ pro Velikost `context` pole.  
   
  `context`  
  pro Pole bajtů, které popisují kontext vlákna.  
@@ -48,17 +48,17 @@ HRESULT SetThreadContext(
  Kontext určuje architekturu procesoru, ve kterém je vlákno spuštěno.  
   
 ## <a name="remarks"></a>Poznámky  
- Ladicí program by měl volat tuto metodu namísto funkce Win32 `SetThreadContext`, protože vlákno může být ve skutečnosti ve stavu "napadeno", ve kterém byl jeho kontext dočasně změněn. Tato metoda by měla být použita pouze v případě, že vlákno je v nativním kódu. Použijte [ICorDebugRegisterSet](icordebugregisterset-interface.md) pro vlákna ve spravovaném kódu. Nikdy byste neměli muset změnit kontext vlákna během události ladění OOB (out-of-band).  
+ Ladicí program by měl volat tuto metodu namísto funkce Win32 `SetThreadContext` , protože vlákno může být ve skutečnosti ve stavu "napadeno", ve kterém byl jeho kontext dočasně změněn. Tato metoda by měla být použita pouze v případě, že vlákno je v nativním kódu. Použijte [ICorDebugRegisterSet](icordebugregisterset-interface.md) pro vlákna ve spravovaném kódu. Nikdy byste neměli muset změnit kontext vlákna během události ladění OOB (out-of-band).  
   
  Předaná data musí být kontextové struktury pro aktuální platformu.  
   
  Tato metoda může poškodit modul runtime, pokud je použit nesprávně.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** CorDebug. idl, CorDebug. h  
   
  **Knihovna:** CorGuids. lib  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]
+ **Verze .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]

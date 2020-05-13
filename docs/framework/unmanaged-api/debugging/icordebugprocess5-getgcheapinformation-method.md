@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: b9538ceb-230a-4079-9cb2-903dbf5c1848
 topic_type:
 - apiref
-ms.openlocfilehash: 703f159c5bc6b73dcd0e770bdeb61f676aae034c
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.openlocfilehash: 62d45da44a95eae399fbbd287aa997a5f913d0b0
+ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76792378"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83209653"
 ---
 # <a name="icordebugprocess5getgcheapinformation-method"></a>ICorDebugProcess5::GetGCHeapInformation – metoda
 Poskytuje obecné informace o haldě uvolňování paměti, včetně toho, jestli je aktuálně vyčíslitelné.  
@@ -38,18 +38,18 @@ HRESULT GetGCHeapInformation(
  mimo Ukazatel na hodnotu [COR_HEAPINFO](cor-heapinfo-structure.md) , která poskytuje obecné informace o haldě uvolňování paměti.  
   
 ## <a name="remarks"></a>Poznámky  
- Aby bylo zajištěno, že struktury uvolňování paměti v procesu jsou aktuálně platné, je nutné volat metodu `ICorDebugProcess5::GetGCHeapInformation`. V průběhu shromažďování nelze vás provedl haldu uvolňování paměti. Jinak výčet může zachytit struktury uvolňování paměti, které jsou neplatné.  
+ `ICorDebugProcess5::GetGCHeapInformation`Metoda musí být volána před vytvořením výčtu oblasti haldy nebo jednotlivých oblastí haldy, aby bylo zajištěno, že struktury uvolňování paměti v procesu jsou aktuálně platné. V průběhu shromažďování nelze vás provedl haldu uvolňování paměti. Jinak výčet může zachytit struktury uvolňování paměti, které jsou neplatné.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** CorDebug. idl, CorDebug. h  
   
  **Knihovna:** CorGuids. lib  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [ICorDebugProcess5 – rozhraní](icordebugprocess5-interface.md)
-- [Rozhraní pro ladění](debugging-interfaces.md)
+- [Debugging – rozhraní](debugging-interfaces.md)

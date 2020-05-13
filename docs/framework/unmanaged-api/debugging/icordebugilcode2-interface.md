@@ -10,12 +10,12 @@ api_type:
 ms.assetid: f9dc2afd-df8a-464d-bdbf-5af0a1d4bf85
 topic_type:
 - apiref
-ms.openlocfilehash: 30008d6cc98f7d0d0501d67e18703ed5a344d43a
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.openlocfilehash: 65995e8386b3bc686178b79d4fbb21a7c71bed3e
+ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76794368"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83210329"
 ---
 # <a name="icordebugilcode2-interface"></a>Rozhraní ICorDebugILCode2
 [Podporované v .NET Framework 4.5.2 a novějších verzích]  
@@ -30,16 +30,16 @@ ms.locfileid: "76794368"
 |[GetLocalVarSigToken – metoda](icordebugilcode2-getlocalvarsigtoken-method.md)|Získá token metadat pro podpis místní proměnné pro funkci, která je reprezentovaná touto instancí.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** CorDebug. idl, CorDebug. h  
   
  **Knihovna:** CorGuids. lib  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v452plus](../../../../includes/net-current-v452plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v452plus](../../../../includes/net-current-v452plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [ICorDebugILCode – rozhraní](icordebugilcode-interface.md)
-- [Rozhraní pro ladění](debugging-interfaces.md)
+- [Rozhraní ICorDebugILCode](icordebugilcode-interface.md)
+- [Debugging – rozhraní](debugging-interfaces.md)
 - [Ladění](index.md)

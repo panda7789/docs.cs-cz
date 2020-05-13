@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: c8111502-5a20-447f-9dc2-76e8acd7ed5a
 topic_type:
 - apiref
-ms.openlocfilehash: 4b48132ee60bcaebb218d8f583de6558372f5055
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: de570507c4312f09def0908b9d56e5371c63527e
+ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79178610"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83207296"
 ---
 # <a name="icordebugprocess5getobject-method"></a>ICorDebugProcess5::GetObject – metoda
 Převede adresu objektu na objekt "ICorDebugObjectValue".  
@@ -36,22 +36,22 @@ HRESULT GetObject(
   
 ## <a name="parameters"></a>Parametry  
  `addr`  
- [v] Adresa objektu.  
+ pro Adresa objektu.  
   
  `ppObject`  
- [out] Ukazatel na adresu objektu "ICorDebugObjectValue".  
+ mimo Ukazatel na adresu objektu "ICorDebugObjectValue".  
   
 ## <a name="remarks"></a>Poznámky  
- Pokud `addr` neukazuje na platný spravovaný objekt, `GetObject` metoda vrátí `E_FAIL`.  
+ Pokud neodkazuje `addr` na platný spravovaný objekt, `GetObject` vrátí metoda `E_FAIL` .  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také
 

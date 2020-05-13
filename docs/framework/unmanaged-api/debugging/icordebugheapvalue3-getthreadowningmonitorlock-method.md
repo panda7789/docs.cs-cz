@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: e06fc19d-2cf4-4cad-81a3-137a68af8969
 topic_type:
 - apiref
-ms.openlocfilehash: 8be7c0e32f6183deb354d8b3936ef55c2520fe9f
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.openlocfilehash: 9cc68e39dfef096b8ab6a8ba743f7a516cc349be
+ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76788612"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83210407"
 ---
 # <a name="icordebugheapvalue3getthreadowningmonitorlock-method"></a>ICorDebugHeapValue3::GetThreadOwningMonitorLock – metoda
 Vrátí spravované vlákno, které vlastní zámek monitorování tohoto objektu.  
@@ -58,22 +58,22 @@ HRESULT GetThreadOwningMonitorLock (
   
 - Objekt vlákna je platný, dokud vlákno neskončí.  
   
- Pokud žádné spravované vlákno nevlastní zámek monitoru u tohoto objektu, `ppThread` a `pAcquisitionCount` se nezměnily a metoda vrátí S_FALSE.  
+ Pokud žádné spravované vlákno nevlastní na tomto objektu zámek monitoru `ppThread` a `pAcquisitionCount` jsou beze změny a metoda vrátí S_FALSE.  
   
- Pokud `ppThread` nebo `pAcquisitionCount` není platný ukazatel, výsledek není definován.  
+ Pokud `ppThread` nebo není `pAcquisitionCount` platný ukazatel, výsledek není definován.  
   
  Pokud dojde k chybě, kterou nelze určit, která, pokud existuje, je vláknom zámku monitoru pro tento objekt, metoda vrátí hodnotu HRESULT, která označuje selhání.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** CorDebug. idl, CorDebug. h  
   
  **Knihovna:** CorGuids. lib  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Rozhraní pro ladění](debugging-interfaces.md)
+- [Debugging – rozhraní](debugging-interfaces.md)
 - [Ladění](index.md)

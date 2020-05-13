@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 99cbc1eb-d539-4f76-a0d8-b93348112f14
 topic_type:
 - apiref
-ms.openlocfilehash: bed2871c46712490bc4b0520fa1ab8023dbab5cf
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.openlocfilehash: ff290cd8ad331ff109c3bbbf87638d22b9b183bc
+ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76794426"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83208535"
 ---
 # <a name="icordebugheapenum-interface"></a>ICorDebugHeapEnum – rozhraní
 Poskytuje enumerátor pro objekty na spravované haldě. Toto rozhraní je podtřídou rozhraní ICorDebugEnum.  
@@ -31,19 +31,19 @@ Poskytuje enumerátor pro objekty na spravované haldě. Toto rozhraní je podt�
 |[Next – metoda](icordebugheapenum-next-method.md)|Získá zadaný počet instancí [COR_HEAPOBJECT](cor-heapobject-structure.md) , které obsahují informace o objektech na spravované haldě.|  
   
 ## <a name="remarks"></a>Poznámky  
- Rozhraní `ICorDebugHeapEnum` implementuje rozhraní ICorDebugEnum.  
+ `ICorDebugHeapEnum`Rozhraní implementuje rozhraní ICorDebugEnum.  
   
- Instance `ICorDebugHeapEnum` se naplní pomocí [COR_HEAPOBJECT](cor-heapobject-structure.md) instancí voláním metody [ICorDebugProcess5:: EnumerateHeap –](icordebugprocess5-enumerateheap-method.md) . Každá instance [COR_HEAPOBJECT](cor-heapobject-structure.md) v kolekci představuje buď živý objekt na haldě, nebo objekt, který není rootem žádného objektu, ale ještě nebyl shromážděn systémem uvolňování paměti. Objekty [COR_HEAPOBJECT](cor-heapobject-structure.md) v kolekci lze vyčíslit voláním metody [ICorDebugHeapEnum –:: Next](icordebugheapenum-next-method.md) .  
+ `ICorDebugHeapEnum`Instance je naplněna instancí [COR_HEAPOBJECT](cor-heapobject-structure.md) voláním metody [ICorDebugProcess5:: EnumerateHeap –](icordebugprocess5-enumerateheap-method.md) . Každá instance [COR_HEAPOBJECT](cor-heapobject-structure.md) v kolekci představuje buď živý objekt na haldě, nebo objekt, který není rootem žádného objektu, ale ještě nebyl shromážděn systémem uvolňování paměti. Objekty [COR_HEAPOBJECT](cor-heapobject-structure.md) v kolekci lze vyčíslit voláním metody [ICorDebugHeapEnum –:: Next](icordebugheapenum-next-method.md) .  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** CorDebug. idl, CorDebug. h  
   
  **Knihovna:** CorGuids. lib  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Rozhraní pro ladění](debugging-interfaces.md)
+- [Debugging – rozhraní](debugging-interfaces.md)

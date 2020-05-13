@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: afe4e97f-bffc-47e1-adad-d6e842487f35
 topic_type:
 - apiref
-ms.openlocfilehash: 70650f415c11353bcff897f53b8dcbf9b89e6183
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: faaa118fa73a4c9b8750752d84a9dd980170ff66
+ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73137270"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83210446"
 ---
 # <a name="icordebugprocessthreadforfibercookie-method"></a>ICorDebugProcess::ThreadForFiberCookie – metoda
 Tato metoda není implementována.  
@@ -35,10 +35,10 @@ HRESULT ThreadForFiberCookie (
 ```  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** CorDebug. idl, CorDebug. h  
   
  **Knihovna:** CorGuids. lib  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]
+ **Verze .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]

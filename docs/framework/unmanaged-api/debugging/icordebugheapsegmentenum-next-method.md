@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: 51625fd0-7399-49c7-b22b-5dfb05451fe6
 topic_type:
 - apiref
-ms.openlocfilehash: 8a267ec7123edb73ad51f0781a78344119ec6f21
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: c9999961ec20a31cf82d5ad60104bcdd04c340d1
+ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79178894"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83210173"
 ---
 # <a name="icordebugheapsegmentenumnext-method"></a>ICorDebugHeapSegmentEnum::Next – metoda
-Získá zadaný počet [COR_HEAPOBJECT](cor-heapobject-structure.md) instancí, které obsahují informace o oblasti paměti spravované haldy.  
+Získá zadaný počet instancí [COR_HEAPOBJECT](cor-heapobject-structure.md) , které obsahují informace o oblastech paměti spravované haldy.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -36,24 +36,24 @@ HRESULT Next(
   
 ## <a name="parameters"></a>Parametry  
  celt  
- [v] Počet segmentů, které mají být načteny.  
+ pro Počet segmentů, které mají být načteny.  
   
  segmenty  
- [out] Pole ukazatelů, z nichž každý odkazuje na [COR_HEAPOBJECT](cor-heapobject-structure.md) objekt, který poskytuje informace o oblasti paměti ve spravované haldě.  
+ mimo Pole ukazatelů, z nichž každý odkazuje na objekt [COR_HEAPOBJECT](cor-heapobject-structure.md) , který poskytuje informace o oblasti paměti ve spravované haldě.  
   
- pceltnačten  
- [out] Ukazatel na počet [objektů COR_HEAPOBJECT](cor-heapobject-structure.md) skutečně `segments`vrácených v . Tato hodnota `null` může `celt` být, pokud je 1.  
+ pceltFetched  
+ mimo Ukazatel na počet skutečně vrácených objektů [COR_HEAPOBJECT](cor-heapobject-structure.md) `segments` . Tato hodnota může být `null` `celt` , pokud je 1.  
   
 ## <a name="remarks"></a>Poznámky  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také
 

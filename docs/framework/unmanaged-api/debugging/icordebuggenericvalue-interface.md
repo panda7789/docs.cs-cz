@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: bc14f408-b359-4c8c-ade2-888ccdf7261b
 topic_type:
 - apiref
-ms.openlocfilehash: e60d4b128bf03ff81863e0c95815b2c204807583
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.openlocfilehash: 7c5359ddf2c021f77ad1ea0a8579316c3c773fd5
+ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76794474"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83209783"
 ---
 # <a name="icordebuggenericvalue-interface"></a>ICorDebugGenericValue – rozhraní
 
@@ -33,7 +33,7 @@ Podtřída "ICorDebugValue", která se vztahuje na všechny hodnoty. Toto rozhra
 |[SetValue – metoda](icordebuggenericvalue-setvalue-method.md)|Zkopíruje novou hodnotu ze zadané vyrovnávací paměti.|  
   
 ## <a name="remarks"></a>Poznámky  
- `ICorDebugGenericValue` je dílčí rozhraní, protože se nejedná o nevzdáleněu.  
+ `ICorDebugGenericValue`je dílčí rozhraní, protože se nejedná o nevzdáleněu.  
   
  U typů odkazů je hodnota odkaz spíše než obsah odkazu.  
   
@@ -43,14 +43,14 @@ Podtřída "ICorDebugValue", která se vztahuje na všechny hodnoty. Toto rozhra
 > Toto rozhraní nepodporuje vzdálené volání, a to buď mezi počítačem, nebo mezi procesy.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** CorDebug. idl, CorDebug. h  
   
  **Knihovna:** CorGuids. lib  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Rozhraní pro ladění](debugging-interfaces.md)
+- [Debugging – rozhraní](debugging-interfaces.md)

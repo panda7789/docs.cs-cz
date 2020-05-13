@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: c8706356-d50b-4f87-a40c-39c3b7f4fd38
 topic_type:
 - apiref
-ms.openlocfilehash: 85f06b49aab1f1d1745bd7e359ed311c2ba1e44d
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: d6ce5a5cc64a5eb805faa5bb17a42a662940affe
+ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73130981"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83210251"
 ---
 # <a name="icordebugilframegetlocalvariable-method"></a>ICorDebugILFrame::GetLocalVariable – metoda
 Získá hodnotu zadané místní proměnné v rámci tohoto rámce zásobníku jazyka MSIL (Microsoft Intermediate Language).  
@@ -42,13 +42,13 @@ HRESULT GetLocalVariable (
  mimo Ukazatel na adresu objektu ICorDebugValue, který představuje načtenou hodnotu.  
   
 ## <a name="remarks"></a>Poznámky  
- Metodu `GetLocalVariable` lze použít buď v rámci rámce zásobníku MSIL, nebo v kompilovaném snímku JIT (just-in-time).  
+ Tuto `GetLocalVariable` metodu lze použít buď v rámci zásobníku MSIL, nebo v kompilovaném rámci JIT (just-in-time).  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** CorDebug. idl, CorDebug. h  
   
  **Knihovna:** CorGuids. lib  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]
+ **Verze .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]

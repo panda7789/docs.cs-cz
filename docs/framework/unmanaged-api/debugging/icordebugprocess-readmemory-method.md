@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 28e4b2f6-9589-445c-be24-24a3306795e7
 topic_type:
 - apiref
-ms.openlocfilehash: 383e3f8990a1f355c94ff5e9f9daa69bdbdd97bb
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: ccd2350589126109ff11da439a8b83abfc4b91fa
+ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79178654"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83210472"
 ---
 # <a name="icordebugprocessreadmemory-method"></a>ICorDebugProcess::ReadMemory – metoda
 Přečte zadanou oblast paměti pro tento proces.  
@@ -37,29 +37,29 @@ HRESULT ReadMemory(
   
 ## <a name="parameters"></a>Parametry  
  `address`  
- [v] Hodnota, `CORDB_ADDRESS` která určuje základní adresu paměti, která má být přečtena.  
+ pro `CORDB_ADDRESS`Hodnota, která určuje základní adresu paměti, která se má číst.  
   
  `size`  
- [v] Počet bajtů, které mají být přečteny z paměti.  
+ pro Počet bajtů, které mají být načteny z paměti.  
   
  `buffer`  
- [out] Vyrovnávací paměť, která přijímá obsah paměti.  
+ mimo Vyrovnávací paměť, která přijímá obsah paměti.  
   
  `read`  
- [out] Ukazatel na počet bajtů přenesených do zadané vyrovnávací paměti.  
+ mimo Ukazatel na počet bajtů přenesených do zadané vyrovnávací paměti.  
   
 ## <a name="remarks"></a>Poznámky  
- Metoda `ReadMemory` je primárně určena pro použití interop ladění ke kontrole oblastí paměti, které jsou používány nespravované části ladicí. Tuto metodu lze také ke čtení kódu zprostředkujícíjazyk společnosti Microsoft (MSIL) a nativní jit kompilovaný kód.  
+ `ReadMemory`Metoda je primárně určena pro účely ladění v oblasti paměti, které jsou používány nespravovanou částí laděného procesu. Tuto metodu lze také použít ke čtení kódu jazyka MSIL (Microsoft Intermediate Language) a nativního kódu kompilovaného JIT.  
   
- Všechny spravované zarážky budou odebrány z dat, která je vrácena v parametru. `buffer` Nebudou provedeny žádné úpravy pro nativní zarážky nastavené [iCorDebugProcess2::SetUnmanagedBreakpoint](icordebugprocess2-setunmanagedbreakpoint-method.md).  
+ Všechny spravované zarážky budou odebrány z dat vrácených v `buffer` parametru. Pro nativní zarážky nastavené pomocí [ICorDebugProcess2:: SetUnmanagedBreakpoint –](icordebugprocess2-setunmanagedbreakpoint-method.md)se nevytvoří žádné úpravy.  
   
- Není prováděno ukládání paměti procesu do mezipaměti.  
+ Není provedeno ukládání paměti procesu do mezipaměti.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]
+ **Verze .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]

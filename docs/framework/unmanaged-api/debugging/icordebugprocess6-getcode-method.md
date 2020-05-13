@@ -2,15 +2,15 @@
 title: ICorDebugProcess6::GetCode – metoda
 ms.date: 03/30/2017
 ms.assetid: faa538c2-60c9-4064-b996-1b4c24ebd751
-ms.openlocfilehash: 94882c67752705f9f13b858ae3b386a19dc103a6
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 178d1df7e6c8246b18afed442e944c49051b6597
+ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79178560"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83209263"
 ---
 # <a name="icordebugprocess6getcode-method"></a>ICorDebugProcess6::GetCode – metoda
-Získá informace o spravovaném kódu na konkrétní adresu kódu.  
+Načte informace o spravovaném kódu na konkrétní kódové adrese.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -22,24 +22,24 @@ HRESULT GetCode(
   
 ## <a name="parameters"></a>Parametry  
  `codeAddress`  
- [v] Hodnota [CORDB_ADDRESS,](../../../../docs/framework/unmanaged-api/common-data-types-unmanaged-api-reference.md) která určuje počáteční adresu segmentu spravovaného kódu.  
+ pro Hodnota [CORDB_ADDRESS](../common-data-types-unmanaged-api-reference.md) , která určuje počáteční adresu spravovaného segmentu kódu.  
   
  `ppCode`  
- [out] Ukazatel na adresu objektu "ICorDebugCode", který představuje segment spravovaného kódu.  
+ mimo Ukazatel na adresu objektu "ICorDebugCode", který představuje segment spravovaného kódu.  
   
 ## <a name="remarks"></a>Poznámky  
   
 > [!NOTE]
-> Tato metoda je k dispozici pouze s nativní .NET.  
+> Tato metoda je k dispozici pouze s .NET Native.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET Framework:**[!INCLUDE[net_46_native](../../../../includes/net-46-native-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_46_native](../../../../includes/net-46-native-md.md)]  
   
 ## <a name="see-also"></a>Viz také
 

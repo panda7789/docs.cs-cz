@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: aaf5938d-179c-4eaa-8d35-8523a4fadded
 topic_type:
 - apiref
-ms.openlocfilehash: 482afd09ce370fb1247864b9ac2032ee7e3a1dca
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.openlocfilehash: 8f66369d3ac5ddcfe38fe579cac728eb3a250165
+ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76788280"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83205630"
 ---
 # <a name="icordebugmanagedcallback2exceptionunwind-method"></a>ICorDebugManagedCallback2::ExceptionUnwind – metoda
 Poskytuje oznámení o stavu během procesu odvíjení výjimky.  
@@ -50,20 +50,20 @@ HRESULT ExceptionUnwind (
  pro Hodnota výčtu [CorDebugExceptionFlags –](cordebugexceptionflags-enumeration.md) , která určuje další informace o výjimce.  
   
 ## <a name="remarks"></a>Poznámky  
- `ExceptionUnwind` je volána v různých bodech během fáze unwind v procesu zpracování výjimek. `ExceptionUnwind` lze volat více než jednou při odvíjení jedné výjimky.  
+ `ExceptionUnwind`je volána v různých bodech během fáze unwind procesu zpracování výjimek. `ExceptionUnwind`může být volána více než jednou při zrušení pouze jedné výjimky.  
   
  Pokud `dwEventType` = DEBUG_EXCEPTION_INTERCEPTED, bude ukazatel na instrukci v rámci koncového bodu vlákna před (to může být několik pokynů před) instrukcí, která vedla k výjimce.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** CorDebug. idl, CorDebug. h  
   
  **Knihovna:** CorGuids. lib  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [ICorDebugManagedCallback2 – rozhraní](icordebugmanagedcallback2-interface.md)
 - [ICorDebugManagedCallback – rozhraní](icordebugmanagedcallback-interface.md)

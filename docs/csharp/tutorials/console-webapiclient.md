@@ -1,55 +1,55 @@
 ---
-title: Vytvoření klienta REST pomocí rozhraní .NET Core
-description: Tento kurz vás naučí řadu funkcí v .NET Core a jazyk C#.
+title: Vytvoření klienta REST pomocí .NET Core
+description: V tomto kurzu se naučíte řadou funkcí v .NET Core a v jazyce C#.
 ms.date: 01/09/2020
 ms.assetid: 51033ce2-7a53-4cdd-966d-9da15c8204d2
-ms.openlocfilehash: 0105db519f7accec6bf8bfbafdc6a67a444b1074
-ms.sourcegitcommit: 99b153b93bf94d0fecf7c7bcecb58ac424dfa47c
+ms.openlocfilehash: c7b7e9803b0c05f4956f5c007bca8aa4b200cfca
+ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/25/2020
-ms.locfileid: "80249165"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83208012"
 ---
 # <a name="rest-client"></a>Klient REST
 
-Tento kurz vás naučí řadu funkcí v .NET Core a jazyk C#. Dozvíte se:
+V tomto kurzu se naučíte řadou funkcí v .NET Core a v jazyce C#. Naučíte se:
 
-* Základy rozhraní příkazového příkazu jádra .NET.
+* Základy .NET Core CLI.
 * Přehled funkcí jazyka C#.
 * Správa závislostí pomocí NuGet
-* HTTP komunikace
+* Komunikace HTTP
 * Zpracování informací JSON
-* Správa konfigurace pomocí atributů.
+* Správa konfigurace s atributy.
 
-Vytvoříte aplikaci, která vydává požadavky HTTP do služby REST na GitHubu. Budete číst informace ve formátu JSON a převést, že paket JSON do C# objekty. Nakonec uvidíte, jak pracovat s objekty Jazyka C#.
+Vytvoříte aplikaci, která vydává požadavky HTTP na službu REST na GitHubu. Přečtete si informace ve formátu JSON a převeďte tento paket JSON na objekty C#. Nakonec uvidíte, jak pracovat s objekty C#.
 
-V tomto kurzu je mnoho funkcí. Postavíme je jeden po druhém.
+V tomto kurzu máte spoustu funkcí. Pojďme je sestavit jednou po jednom.
 
-Pokud dáváte přednost sledování spolu s [konečnou ukázkou](https://github.com/dotnet/samples/tree/master/csharp/getting-started/console-webapiclient) pro toto téma, můžete si ji stáhnout. Pokyny ke stažení naleznete v [tématu Ukázky a výukové programy](../../samples-and-tutorials/index.md#viewing-and-downloading-samples).
+Pokud chcete postupovat spolu s [závěrečnou ukázkou](https://github.com/dotnet/samples/tree/master/csharp/getting-started/console-webapiclient) tohoto tématu, můžete si ho stáhnout. Pokyny ke stažení najdete v tématu [ukázky a kurzy](../../samples-and-tutorials/index.md#viewing-and-downloading-samples).
 
 ## <a name="prerequisites"></a>Požadavky
 
-Budete muset nastavit počítač pro spuštění jádra .NET. Pokyny k instalaci naleznete na stránce [Ke stažení jádra .NET.](https://dotnet.microsoft.com/download) Tuto aplikaci můžete spustit ve Windows, Linuxu, macOS nebo v kontejneru Dockeru.
-Budete muset nainstalovat svůj oblíbený editor kódu. Níže uvedené popisy používají [Visual Studio Code](https://code.visualstudio.com/), což je open source editor napříč platformami. Nicméně, můžete použít bez ohledu na nástroje, které jsou pohodlné s.
+Budete muset nastavit počítač tak, aby běžel .NET Core. Pokyny k instalaci najdete na stránce [soubory ke stažení pro .NET Core](https://dotnet.microsoft.com/download) . Tuto aplikaci můžete spustit na Windows, Linux, macOS nebo v kontejneru Docker.
+Budete muset nainstalovat svůj oblíbený editor kódu. Níže uvedené popisy používají [Visual Studio Code](https://code.visualstudio.com/), což je Open Source Editor pro různé platformy. Můžete ale použít jakékoli nástroje, se kterými máte v pohodlí.
 
 ## <a name="create-the-application"></a>Vytvoření aplikace
 
-Prvním krokem je vytvoření nové aplikace. Otevřete příkazový řádek a vytvořte nový adresář pro vaši aplikaci. Ať je to aktuální adresář. V okně konzoly zadejte následující příkaz:
+Prvním krokem je vytvoření nové aplikace. Otevřete příkazový řádek a vytvořte nový adresář pro vaši aplikaci. Zajistěte, aby byl aktuální adresář. V okně konzoly zadejte následující příkaz:
 
 ```dotnetcli
 dotnet new console --name WebApiClient
 ```
 
-Tím se vytvoří počáteční soubory pro základní aplikaci "Hello World". Název projektu je "WebApiClient". Vzhledem k tomu, že se jedná o nový projekt, žádná ze závislostí není na místě. První spuštění stáhne rozhraní .NET Core framework, nainstaluje vývojový certifikát a spustí správce balíčků NuGet a obnoví chybějící závislosti.
+Tím se vytvoří počáteční soubory pro základní aplikaci "Hello World". Název projektu je "WebApiClient". Vzhledem k tomu, že se jedná o nový projekt, není provedena žádná závislost. První spuštění stáhne rozhraní .NET Core Framework, nainstaluje certifikát pro vývoj a spustí Správce balíčků NuGet pro obnovení chybějících závislostí.
 
-Než začnete provádět změny, zadejte `dotnet run` na příkazovém řádku příkaz[(viz poznámka)](#dotnet-restore-note)a spusťte aplikaci. `dotnet run`automaticky `dotnet restore` provádí, pokud ve vašem prostředí chybí závislosti. Také provádí, `dotnet build` pokud je potřeba znovu sestavit aplikaci.
-Po počátečním nastavení budete muset `dotnet restore` spustit `dotnet build` nebo pouze tehdy, když to dává smysl pro váš projekt.
+Než začnete provádět úpravy, zadejte `dotnet run` ([Viz poznámku](#dotnet-restore-note)) na příkazovém řádku a spusťte tak aplikaci. `dotnet run`provede automaticky `dotnet restore` v případě chybějících závislostí ve vašem prostředí. Provádí se také `dotnet build` v případě, že vaše aplikace musí být znovu sestavena.
+Po počáteční instalaci budete muset spustit pouze `dotnet restore` nebo, `dotnet build` když to pro váš projekt dává smysl.
 
-## <a name="adding-new-dependencies"></a>Přidání nových závislostí
+## <a name="adding-new-dependencies"></a>Přidávání nových závislostí
 
-Jedním z klíčových cílů návrhu pro .NET Core je minimalizovat velikost instalace .NET. Pokud aplikace potřebuje další knihovny pro některé z jeho funkcí, přidáte\*tyto závislosti do souboru projektu C# ( .csproj). Pro náš příklad budete muset přidat `System.Runtime.Serialization.Json` balíček, takže vaše aplikace může zpracovávat odpovědi JSON.
+Jedním z klíčových cílů pro .NET Core je minimalizace velikosti instalace rozhraní .NET. Pokud aplikace potřebuje další knihovny pro některé z jejích funkcí, přidejte tyto závislosti do souboru projektu C# ( \* . csproj). V našem příkladu budete muset `System.Runtime.Serialization.Json` balíček přidat, aby mohla aplikace zpracovat odpovědi JSON.
 
-Budete potřebovat balíček `System.Runtime.Serialization.Json` pro tuto aplikaci. Přidejte jej do projektu spuštěním následujícího příkazu [rozhraní PŘÍKAZU .NET:](../../core/tools/dotnet-add-package.md)
+`System.Runtime.Serialization.Json`Pro tuto aplikaci budete potřebovat balíček. Přidejte ho do projektu spuštěním následujícího příkazu [rozhraní .NET CLI](../../core/tools/dotnet-add-package.md) :
 
 ```dotnetcli
 dotnet add package System.Text.Json
@@ -57,11 +57,11 @@ dotnet add package System.Text.Json
 
 ## <a name="making-web-requests"></a>Vytváření webových požadavků
 
-Nyní můžete začít načítat data z webu. V této aplikaci budete číst informace z [GitHub API](https://developer.github.com/v3/). Přečtěme si informace o projektech pod zastřešujícím programem [.NET Foundation.](https://www.dotnetfoundation.org/) Začnete tím, že žádost github api načíst informace o projektech. Koncový bod, který budete <https://api.github.com/orgs/dotnet/repos>používat, je: . Chcete načíst všechny informace o těchto projektech, takže budete používat požadavek HTTP GET.
-Váš prohlížeč také používá požadavky HTTP GET, takže můžete tuto adresu URL vložit do prohlížeče a zjistit, jaké informace budete dostávat a zpracovávat.
+Teď jste připraveni začít načítat data z webu. V této aplikaci si přečtete informace z [rozhraní API GitHubu](https://developer.github.com/v3/). Pojďme si přečíst informace o projektech v rámci [.NET Foundation](https://www.dotnetfoundation.org/) zastřešující. Začnete tím, že si vyžádáte rozhraní API GitHubu, abyste načetli informace o projektech. Koncový bod, který budete používat, je: <https://api.github.com/orgs/dotnet/repos> . Chcete načíst všechny informace o těchto projektech, abyste použili požadavek HTTP GET.
+Váš prohlížeč používá také požadavky HTTP GET, takže můžete vložit tuto adresu URL do prohlížeče, abyste viděli informace, které budete dostávat a zpracovávat.
 
-Třídu <xref:System.Net.Http.HttpClient> používáte k výrobě webových požadavků. Stejně jako všechna moderní <xref:System.Net.Http.HttpClient> rozhraní API .NET podporuje pouze asynchronní metody pro dlouhotrvající rozhraní API.
-Začněte tím, že asynchronní metodu. Budete vyplnit implementaci při vytváření funkce aplikace. Začněte otevřením souboru `program.cs` v adresáři projektu `Program` a přidáním následující metody do třídy:
+Třídu můžete použít <xref:System.Net.Http.HttpClient> k vytváření webových požadavků. Stejně jako všechna moderní rozhraní API .NET <xref:System.Net.Http.HttpClient> podporuje pouze asynchronní metody pro svá dlouhotrvající rozhraní API.
+Začněte vytvořením asynchronní metody. Při sestavování funkčnosti aplikace naplníte implementaci. Začněte otevřením `program.cs` souboru v adresáři projektu a přidáním následující metody do `Program` třídy:
 
 ```csharp
 private static async Task ProcessRepositories()
@@ -69,17 +69,15 @@ private static async Task ProcessRepositories()
 }
 ```
 
-Budete muset přidat direktivu `using` v `Main` horní části metody tak, aby <xref:System.Threading.Tasks.Task> kompilátor Jazyka C# rozpozná typ:
+V horní části metody bude nutné přidat `using` direktivu `Main` , aby kompilátor jazyka C# rozpoznal <xref:System.Threading.Tasks.Task> Typ:
 
 ```csharp
 using System.Threading.Tasks;
 ```
 
-Pokud vytvoříte projekt v tomto okamžiku, zobrazí se upozornění generované pro tuto metodu, protože neobsahuje žádné `await` operátory a bude spuštěnsynchronně. Prozatím to ignorujte; při vyplňování `await` metody přidáte operátory.
+Pokud v tomto okamžiku sestavíte projekt, zobrazí se pro tuto metodu upozornění vygenerované, protože neobsahuje žádné `await` operátory a spustí se synchronně. Tuto chvíli ignorujte. operátory přidáte při `await` vyplňování metody.
 
-Dále přejmenujte obor názvů `namespace` definovaný v příkazu z jeho výchozí ho `ConsoleApp` `WebAPIClient`na . Později definujeme `repo` třídu v tomto oboru názvů.
-
-Dále aktualizujte `Main` metodu pro volání této metody. Metoda `ProcessRepositories` vrátí úkol a neměli byste ukončit program před dokončením této úlohy. Proto je nutné změnit `Main`podpis . Přidejte `async` modifikátor a změňte návratový typ na `Task`. Potom v těle metody přidejte volání `ProcessRepositories`. Přidejte `await` klíčové slovo do volání této metody:
+Dále aktualizujte `Main` metodu pro volání `ProcessRepositories` metody. `ProcessRepositories`Metoda vrátí úlohu a neukončí program před dokončením této úlohy. Proto je nutné změnit signaturu `Main` . Přidejte `async` modifikátor a změňte návratový typ na `Task` . Pak v těle metody přidejte volání do `ProcessRepositories` . Přidejte `await` klíčové slovo do tohoto volání metody:
 
 ```csharp
 static async Task Main(string[] args)
@@ -88,9 +86,9 @@ static async Task Main(string[] args)
 }
 ```
 
-Nyní máte program, který nedělá nic, ale dělá to asynchronně. Pojďme to zlepšit.
+Nyní máte program, který nic nedělá, ale asynchronně ho provede. Pojďme to vylepšit.
 
-Nejprve potřebujete objekt, který je schopen načíst data z webu; můžete použít <xref:System.Net.Http.HttpClient> k tomu, že. Tento objekt zpracovává požadavek a odpovědi. Vytvořte instanci tohoto typu ve `Program` třídě uvnitř *Program.cs* souboru.
+Nejprve potřebujete objekt, který je schopný načíst data z webu. k tomu můžete použít <xref:System.Net.Http.HttpClient> . Tento objekt zpracovává požadavek a odpovědi. Vytvořte instanci jedné instance daného typu ve `Program` třídě uvnitř souboru *program.cs* .
 
 ```csharp
 namespace WebAPIClient
@@ -107,7 +105,7 @@ namespace WebAPIClient
 }
 ```
 
-Vraťme se k `ProcessRepositories` metodě a vyplňte její první verzi:
+Pojďme se zpátky k `ProcessRepositories` metodě a vyplnit první verzi IT:
 
 ```csharp
 private static async Task ProcessRepositories()
@@ -124,26 +122,26 @@ private static async Task ProcessRepositories()
 }
 ```
 
-Budete také muset přidat dvě `using` nové direktivy v horní části souboru pro tento kompilovat:
+V horní části souboru budete muset přidat také dvě nové `using` direktivy, aby se mohla kompilovat:
 
 ```csharp
 using System.Net.Http;
 using System.Net.Http.Headers;
 ```
 
-Tato první verze vytvoří webový požadavek na čtení seznamu všech úložišť v rámci organizace dotnet foundation. (GitHub ID pro .NET Foundation je 'dotnet'). Prvních několik řádků nastavit <xref:System.Net.Http.HttpClient> pro tento požadavek. Nejprve je nakonfigurován tak, aby přijímal odpovědi GitHub JSON.
-Tento formát je jednoduše JSON. Další řádek přidá hlavičku uživatelského agenta ke všem požadavkům z tohoto objektu. Tyto dvě hlavičky jsou kontrolovány kódem serveru GitHub a jsou nezbytné k načtení informací z GitHubu.
+Tato první verze vytvoří webový požadavek na načtení seznamu všech úložišť v rámci organizace dotnet Foundation. (ID gitHubu pro .NET Foundation je "dotnet"). Prvních pár řádků, které jsou <xref:System.Net.Http.HttpClient> pro tento požadavek nastaveny. Nejdřív je nakonfigurovaný tak, aby přijímal odpovědi na adresu JSON pro GitHub.
+Tento formát je jednoduše JSON. Další řádek přidá hlavičku uživatelského agenta do všech požadavků od tohoto objektu. Tato dvě záhlaví jsou kontrolována kódem serveru GitHub a jsou nutná k načtení informací z GitHubu.
 
-Po konfiguraci <xref:System.Net.Http.HttpClient>aplikace provedete webový požadavek a načtete odpověď. V této první verzi <xref:System.Net.Http.HttpClient.GetStringAsync(System.String)?displayProperty=nameWithType> použijete metodu pohodlí. Tato metoda pohodlí spustí úlohu, která vytvoří webový požadavek a potom, když se požadavek vrátí, přečte datový proud odpovědi a extrahuje obsah z datového proudu. Tělo odpovědi je vrácena <xref:System.String>jako . Řetězec je k dispozici po dokončení úlohy.
+Po dokončení konfigurace aplikace vytvoříte <xref:System.Net.Http.HttpClient> webový požadavek a načtete odpověď. V této první verzi použijete <xref:System.Net.Http.HttpClient.GetStringAsync(System.String)?displayProperty=nameWithType> metodu usnadnění. Tato pohodlná metoda spustí úlohu, která provede webový požadavek, a poté, co požadavek vrátí, načte datový proud odpovědi a extrahuje obsah z datového proudu. Tělo odpovědi je vráceno jako <xref:System.String> . Řetězec je k dispozici po dokončení úkolu.
 
-Poslední dva řádky této metody čekají na tuto úlohu a vytisknout odpověď na konzolu.
-Vytvořte aplikaci a spusťte ji. Upozornění sestavení je nyní pryč, protože `ProcessRepositories` `await` nyní obsahuje operátor. Zobrazí se dlouhé zobrazení textu ve formátu JSON.
+Poslední dva řádky této metody čekají na daný úkol a pak vytiskněte odpověď do konzoly.
+Sestavte aplikaci a spusťte ji. Upozornění na sestavení je nyní pryč, protože `ProcessRepositories` nyní obsahuje `await` operátor. Zobrazí se dlouhé zobrazení textu ve formátu JSON.
 
 ## <a name="processing-the-json-result"></a>Zpracování výsledku JSON
 
-V tomto okamžiku jste napsali kód pro načtení odpovědi z webového serveru a zobrazení textu, který je obsažen v této odpovědi. Dále převeďte odpověď JSON na objekty Jazyka C#.
+V tuto chvíli jste napsali kód, který načte odpověď z webového serveru, a zobrazí text obsažený v této odpovědi. Nyní převedeme tuto odpověď JSON na objekty jazyka C#.
 
-Třída <xref:System.Text.Json.JsonSerializer?displayProperty=nameWithType> serializuje objekty do JSON a reserializuje JSON do objektů. Začněte definováním třídy `repo` představující objekt JSON vrácený z rozhraní API GitHub:
+<xref:System.Text.Json.JsonSerializer?displayProperty=nameWithType>Třída serializace objektů do formátu JSON a deserializace JSON do objektů. Začněte tím, že definujete třídu, která představuje `repo` objekt JSON vrácený z rozhraní API GitHubu:
 
 ```csharp
 using System;
@@ -157,75 +155,75 @@ namespace WebAPIClient
 }
 ```
 
-Vložte výše uvedený kód do nového souboru s názvem 'repo.cs'. Tato verze třídy představuje nejjednodušší cestu ke zpracování dat JSON. Název třídy a název člena odpovídají názvům použitým v paketu JSON namísto následujících konvencí jazyka C#. Opravíte to tím, že později poskytnete některé atributy konfigurace. Tato třída ukazuje další důležitou funkci serializace json a deserializace: Ne všechna pole v paketu JSON jsou součástí této třídy.
-Serializátor JSON bude ignorovat informace, které nejsou zahrnuty v typu třídy, který se používá.
+Výše uvedený kód vložte do nového souboru s názvem "úložiště. cs". Tato verze třídy představuje nejjednodušší cestu pro zpracování dat JSON. Název třídy a název členu odpovídají názvům použitým v paketu JSON namísto následujících konvencí jazyka C#. Opravte to tak, že později poskytnete nějaké konfigurační atributy. Tato třída ukazuje další důležitou funkci serializace a deserializace JSON: Ne všechna pole v paketu JSON jsou součástí této třídy.
+Serializátor JSON bude ignorovat informace, které nejsou zahrnuté do používaného typu třídy.
 Tato funkce usnadňuje vytváření typů, které pracují pouze s podmnožinou polí v paketu JSON.
 
-Teď, když jste vytvořili typ, pojďme ho rekonstruovat.
+Teď, když jste vytvořili typ, Pojďme ho deserializovat.
 
-Dále použijete serializátor k převodu JSON na objekty Jazyka C#. Nahraďte <xref:System.Net.Http.HttpClient.GetStringAsync(System.String)> volání `ProcessRepositories` v metodě následujícími řádky:
+V dalším kroku použijete serializátor k převedení formátu JSON na objekty jazyka C#. Nahraďte volání <xref:System.Net.Http.HttpClient.GetStringAsync(System.String)> v `ProcessRepositories` metodě následujícími řádky:
 
 ```csharp
 var streamTask = client.GetStreamAsync("https://api.github.com/orgs/dotnet/repos");
 var repositories = await JsonSerializer.DeserializeAsync<List<Repository>>(await streamTask);
 ```
 
-Používáte nový obor názvů, takže ho budete muset přidat také v horní části souboru:
+Používáte nový obor názvů, takže ho budete muset přidat i na začátek souboru:
 
 ```csharp
 using System.Text.Json;
 ```
 
-Všimněte si, že <xref:System.Net.Http.HttpClient.GetStreamAsync(System.String)> nyní <xref:System.Net.Http.HttpClient.GetStringAsync(System.String)>používáte místo . Serializátor používá datový proud namísto řetězce jako jeho zdroj. Vysvětlíme několik funkcí jazyka C#, které se používají ve druhém řádku předchozího fragmentu kódu. Prvním argumentem <xref:System.Text.Json.JsonSerializer.DeserializeAsync%60%601(System.IO.Stream,System.Text.Json.JsonSerializerOptions,System.Threading.CancellationToken)?displayProperty=nameWithType> je `await` výraz. (Další dva parametry jsou volitelné a jsou vynechány ve fragmentu kódu.) Await výrazy se mohou zobrazit téměř kdekoli ve vašem kódu, i když až do teď, jste je viděli pouze jako součást příkazu přiřazení. Metoda `Deserialize` je *obecná*, což znamená, že je nutné zadat argumenty typu pro jaký druh objektů by měl být vytvořen z textu JSON. V tomto příkladu reserializujete `List<Repository>`na , což je <xref:System.Collections.Generic.List%601?displayProperty=nameWithType>jiný obecný objekt, . Třída `List<>` ukládá kolekci objektů. Argument typu deklaruje typ `List<>`objektů uložených v . Text JSON představuje kolekci objektů repo, takže `Repository`argument typu je .
+Všimněte si, že nyní používáte <xref:System.Net.Http.HttpClient.GetStreamAsync(System.String)> místo <xref:System.Net.Http.HttpClient.GetStringAsync(System.String)> . Serializátor používá jako svůj zdroj datový proud místo řetězce. Pojďme Vysvětleme několik funkcí jazyka C#, které jsou používány v druhém řádku předchozího fragmentu kódu. První argument pro <xref:System.Text.Json.JsonSerializer.DeserializeAsync%60%601(System.IO.Stream,System.Text.Json.JsonSerializerOptions,System.Threading.CancellationToken)?displayProperty=nameWithType> je `await` výraz. (Ostatní dva parametry jsou volitelné a jsou vynechány ve fragmentu kódu.) Výrazy await se můžou vyskytovat skoro kdekoli v kódu, a to i v případě, že jste je teď udělali jenom jako součást příkazu přiřazení. `Deserialize`Metoda je *Obecná*, což znamená, že je nutné zadat argumenty typu pro typ objektu, který by měl být VYTVOŘEN z textu JSON. V tomto příkladu provádíte deserializaci do `List<Repository>` , což je jiný obecný objekt, <xref:System.Collections.Generic.List%601?displayProperty=nameWithType> . `List<>`Třída ukládá kolekci objektů. Argument typu deklaruje typ objektů uložených v `List<>` . Text JSON představuje kolekci objektů úložiště, takže je argument typu `Repository` .
 
-S touhle sekcí jsi skoro skončil. Teď, když jste převedli JSON na objekty Jazyka C#, zobrazme název každého úložiště. Nahraďte řádky s přečtenými řádky:
+V této části už skoro jste hotovi. Teď, když jste převedli JSON na objekty C#, pojďme zobrazit název každého úložiště. Nahraďte řádky, které se čtou:
 
 ```csharp
 var msg = await stringTask;   //**Deleted this
 Console.Write(msg);
 ```
 
-s následujícími:
+s následujícím:
 
 ```csharp
 foreach (var repo in repositories)
     Console.WriteLine(repo.name);
 ```
 
-Zkompilujte a spusťte aplikaci. Vytiskne názvy úložišť, které jsou součástí .NET Foundation.
+Zkompilujte a spusťte aplikaci. Vypíše názvy úložišť, která jsou součástí .NET Foundation.
 
 ## <a name="controlling-serialization"></a>Řízení serializace
 
-Než přidáte další funkce, pojďme `name` adresu vlastnost `[JsonPropertyName]` pomocí atributu. Proveďte následující změny v `name` deklaraci pole v repo.cs:
+Než přidáte více funkcí, pojďme tuto `name` vlastnost adresovat pomocí `[JsonPropertyName]` atributu. Proveďte následující změny v deklaraci `name` pole v repo.cs:
 
 ```csharp
 [JsonPropertyName("name")]
 public string Name { get; set; }
 ```
 
-Chcete-li použít `[JsonPropertyName]` atribut, budete <xref:System.Text.Json.Serialization> muset přidat `using` obor názvů do směrnic:
+Chcete-li použít `[JsonPropertyName]` atribut, budete muset přidat <xref:System.Text.Json.Serialization> obor názvů do `using` direktiv:
 
 ```csharp
 using System.Text.Json.Serialization;
 ```
 
-Tato změna znamená, že je třeba změnit kód, který zapisuje název každého úložiště v program.cs:
+Tato změna znamená, že potřebujete změnit kód, který zapisuje název každého úložiště v program.cs:
 
 ```csharp
 Console.WriteLine(repo.Name);
 ```
 
-Proveďte, `dotnet run` abyste se ujistili, že máte správné mapování. Měli byste vidět stejný výstup jako předtím.
+Spusťte `dotnet run` , abyste se ujistili, že jsou mapování správná. Měl by se zobrazit stejný výstup jako předtím.
 
-Před přidáním nových funkcí proveďte ještě jednu změnu. Metoda `ProcessRepositories` může provést asynchronní práci a vrátit kolekci úložišť. Vraťme z `List<Repository>` této metody a přesuňte kód, který `Main` zapisuje informace do metody.
+Pojďme ještě před přidáním nových funkcí udělat nějakou další změnu. `ProcessRepositories`Metoda může provádět asynchronní práci a vracet kolekci úložišť. Pojďme `List<Repository>` z této metody vracet a přesunete kód, který zapisuje informace do `Main` metody.
 
-Změňte podpis `ProcessRepositories` funkce a vraťte úkol, `Repository` jehož výsledkem je seznam objektů:
+Změnou signatury `ProcessRepositories` vrátíte úkol, jehož výsledkem je seznam `Repository` objektů:
 
 ```csharp
 private static async Task<List<Repository>> ProcessRepositories()
 ```
 
-Potom vraťte úložiště po zpracování odpovědi JSON:
+Pak jednoduše vraťte úložiště po zpracování odpovědi JSON:
 
 ```csharp
 var streamTask = client.GetStreamAsync("https://api.github.com/orgs/dotnet/repos");
@@ -233,8 +231,8 @@ var repositories = await JsonSerializer.DeserializeAsync<List<Repository>>(await
 return repositories;
 ```
 
-Kompilátor generuje `Task<T>` objekt pro návrat, protože jste tuto `async`metodu označili jako .
-Potom pojďme upravit `Main` metodu tak, aby zachytí tyto výsledky a zapíše každý název úložiště do konzoly. Vaše `Main` metoda nyní vypadá takto:
+Kompilátor vygeneruje `Task<T>` objekt pro návrat, protože jste označili tuto metodu jako `async` .
+Pak Pojďme `Main` metodu upravit tak, aby zachytit tyto výsledky a zapsala všechny názvy úložišť do konzoly. Vaše `Main` Metoda teď vypadá takto:
 
 ```csharp
 public static async Task Main(string[] args)
@@ -246,11 +244,11 @@ public static async Task Main(string[] args)
 }
 ```
 
-## <a name="reading-more-information"></a>Čtení více informací
+## <a name="reading-more-information"></a>Přečtěte si další informace
 
-Dokončení tohoto zpracování zpracováním několik dalších vlastností v paketu JSON, který se odesílá z rozhraní API GitHub. Nebudete chtít uchopit všechno, ale přidání několika vlastností bude demonstrovat několik dalších funkcí jazyka C#.
+Pojďme to dokončit zpracováním několika dalších vlastností v paketu JSON, které se odesílají z rozhraní API GitHubu. Nebudete chtít všechno přidat, ale přidáním několika vlastností se ukáže několik dalších funkcí jazyka C#.
 
-Začněme přidáním několika dalších jednoduchých typů do definice třídy. `Repository` Přidejte tyto vlastnosti do této třídy:
+Pojďme začít přidáním několika jednoduchých typů do `Repository` definice třídy. Přidejte tyto vlastnosti do této třídy:
 
 ```csharp
 [JsonPropertyName("description")]
@@ -266,9 +264,9 @@ public Uri Homepage { get; set; }
 public int Watchers { get; set; }
 ```
 
-Tyto vlastnosti mají předdefinované převody z typu řetězce (což je co obsahují pakety JSON) na cílový typ. Typ <xref:System.Uri> může být pro vás nový. Představuje identifikátor URI nebo v tomto případě adresu URL. V případě `Uri` a `int` typy, pokud paket JSON obsahuje data, která nepřevádí na cílový typ, akce serializace vyvolá výjimku.
+Tyto vlastnosti mají předdefinované převody z typu řetězce (což je to, co pakety JSON obsahují) k cílovému typu. <xref:System.Uri>Typ může být pro vás nový. Představuje identifikátor URI, nebo v tomto případě adresu URL. V případě `Uri` typů a platí `int` , že pokud paket JSON obsahuje data, která nejsou převedena na cílový typ, akce serializace vyvolá výjimku.
 
-Po přidání těchto aktualizací aktualizujte metodu `Main` tak, aby se tyto prvky zobrazily:
+Jakmile je přidáte, aktualizujte `Main` metodu tak, aby zobrazovala tyto prvky:
 
 ```csharp
 foreach (var repo in repositories)
@@ -282,13 +280,13 @@ foreach (var repo in repositories)
 }
 ```
 
-Jako poslední krok přidáme informace pro poslední operaci push. Tyto informace jsou formátovány tímto způsobem v odpovědi JSON:
+Jako poslední krok Pojďme přidat informace pro poslední operaci Push. Tyto informace jsou v odpovědi JSON formátované tímto způsobem:
 
 ```json
 2016-02-08T21:27:00Z
 ```
 
-Tento formát je v koordinovaném čase (UTC), <xref:System.DateTime> takže <xref:System.DateTime.Kind%2A> získáte <xref:System.DateTimeKind.Utc>hodnotu, jejíž vlastnost je . Pokud dáváte přednost datu reprezentovanému ve vašem časovém pásmu, budete muset napsat vlastní metodu převodu. Nejprve `public` definujte vlastnost, která bude obsahovat reprezentaci `Repository` UTC `LastPush` `readonly` data a času ve vaší třídě a vlastnost, která vrací datum převedené na místní čas:
+Tento formát je koordinovaný světový čas (UTC), takže získáte <xref:System.DateTime> hodnotu, jejíž <xref:System.DateTime.Kind%2A> vlastnost je <xref:System.DateTimeKind.Utc> . Pokud upřednostňujete datum reprezentované ve vašem časovém pásmu, budete muset napsat vlastní metodu převodu. Nejprve definujte `public` vlastnost, která bude obsahovat reprezentaci UTC pro datum a čas ve vaší `Repository` třídě a `LastPush` `readonly` vlastnost, která vrátí datum převedené na místní čas:
 
 ```csharp
 [JsonPropertyName("pushed_at")]
@@ -297,19 +295,19 @@ public DateTime LastPushUtc { get; set; }
 public DateTime LastPush => LastPushUtc.ToLocalTime();
 ```
 
-Projděme si nové konstrukce, které jsme právě definovali. Vlastnost `LastPush` je definována pomocí člena s `get` *výrazem pro* přistupujícího objektu. Neexistuje žádný `set` přistupující odkaz. Vynechání přistupujícího objektu `set` je způsob, jakým definujete vlastnost jen pro *čtení* v c#. (Ano, můžete vytvořit vlastnosti *pouze pro zápis* v c#, ale jejich hodnota je omezená.)
+Pojďme přecházet na nové konstrukce, které jsme právě definovali. `LastPush`Vlastnost je definována pomocí *člena Expression-těle* pro `get` přistupující objekt. K dispozici není žádný `set` přistupující objekt. Vynechání `set` přístupového objektu je způsob, jakým definujete vlastnost *jen pro čtení* v jazyce C#. (Ano, v jazyce C# můžete vytvořit vlastnosti *jen pro zápis* , ale jejich hodnota je omezená.)
 
-Nakonec přidejte ještě jeden výstupní příkaz do konzoly a jste připraveni vytvořit a spustit tuto aplikaci znovu:
+Nakonec přidejte do konzoly další příkaz Output a teď budete připraveni tuto aplikaci sestavit a spustit:
 
 ```csharp
 Console.WriteLine(repo.LastPush);
 ```
 
-Vaše verze by nyní měla odpovídat [dokončené ukázce](https://github.com/dotnet/samples/tree/master/csharp/getting-started/console-webapiclient).
+Verze by měla nyní odpovídat [ukázce dokončeno](https://github.com/dotnet/samples/tree/master/csharp/getting-started/console-webapiclient).
 
 ## <a name="conclusion"></a>Závěr
 
-Tento kurz vám ukázal, jak vytvořit webové požadavky, analyzovat výsledek a zobrazit vlastnosti těchto výsledků. Také jste přidali nové balíčky jako závislosti v projektu. Viděli jste některé funkce jazyka C#, které podporují objektově orientované techniky.
+V tomto kurzu jste si ukázali, jak vytvářet webové požadavky, analyzovat výsledek a zobrazovat vlastnosti těchto výsledků. Přidali jste také nové balíčky jako závislosti ve vašem projektu. Viděli jste některé z funkcí jazyka C#, které podporují objektově orientované techniky.
 
 <a name="dotnet-restore-note"></a>
 

@@ -1,38 +1,39 @@
 ---
-title: Přehled sady SDK základního projektu .NET
-description: Další informace o sadách SDK projektu .NET Core.
+title: Přehled sady Project SDK pro .NET Core
+titleSuffix: ''
+description: Přečtěte si o sadách SDK projektu .NET Core.
 ms.date: 02/02/2020
 ms.topic: conceptual
-ms.openlocfilehash: d0ac01dca31dffea482745126e00c34b1da20774
-ms.sourcegitcommit: c91110ef6ee3fedb591f3d628dc17739c4a7071e
+ms.openlocfilehash: 88ec1bf2c4917c69b80b997d090219097694d2bc
+ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/15/2020
-ms.locfileid: "81389671"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83206049"
 ---
-# <a name="net-core-project-sdks"></a>Sady SDK core aplikace .NET
+# <a name="net-core-project-sdks"></a>Sady SDK pro projekty .NET Core
 
-.NET Core projekty jsou spojeny s sadou pro vývoj softwaru (SDK). Každý *projekt SDK* je sada [cílů](/visualstudio/msbuild/msbuild-targets) MSBuild a přidružené [úkoly,](/visualstudio/msbuild/msbuild-tasks) které jsou zodpovědné za kompilaci, balení a publikování kódu. Projekt, který odkazuje na projekt SDK je někdy označován jako *projekt ve stylu sady SDK*.
+Projekty .NET Core jsou přidruženy k sadě SDK (Software Development Kit). Každá *sada SDK projektu* je sada [cílů](/visualstudio/msbuild/msbuild-targets) MSBuild a přidružených [úloh](/visualstudio/msbuild/msbuild-tasks) , které jsou zodpovědné za kompilování, balení a publikování kódu. Projekt, který odkazuje na sadu SDK projektu, se někdy označuje jako *projekt ve stylu sady SDK*.
 
 ## <a name="available-sdks"></a>Dostupné sady SDK
 
-Pro službu .NET Core jsou k dispozici následující sady SDK:
+Pro .NET Core jsou k dispozici následující sady SDK:
 
-| ID | Popis | Repo|
+| ID | Popis | Sestavy|
 | - | - | - |
-| `Microsoft.NET.Sdk` | Sada SDK jádra .NET | https://github.com/dotnet/sdk |
-| `Microsoft.NET.Sdk.Web` | Sada .NET Core [Web SDK](/aspnet/core/razor-pages/web-sdk) | https://github.com/aspnet/websdk |
-| `Microsoft.NET.Sdk.Razor` | Sada [SDK .NET](/aspnet/core/razor-pages/sdk) Core Razor |
-| `Microsoft.NET.Sdk.Worker` | Sada SDK základní pracovní služby .NET |
-| `Microsoft.NET.Sdk.WindowsDesktop` | Základní winforms rozhraní .NET a sada WPF SDK |
+| `Microsoft.NET.Sdk` | .NET Core SDK | https://github.com/dotnet/sdk |
+| `Microsoft.NET.Sdk.Web` | [Sada Web SDK](/aspnet/core/razor-pages/web-sdk) pro .NET Core | https://github.com/aspnet/websdk |
+| `Microsoft.NET.Sdk.Razor` | [Sada SDK](/aspnet/core/razor-pages/sdk) .NET Core Razor |
+| `Microsoft.NET.Sdk.Worker` | Sada SDK služby .NET Core Worker |
+| `Microsoft.NET.Sdk.WindowsDesktop` | WinForms a sada WPF SDK pro .NET Core |
 
-Sada .NET Core SDK je základní sadou SDK pro jádro .NET Core. Ostatní sady SDK odkazují na sadu .NET Core SDK a projekty, které jsou přidruženy k ostatním sadám SDK, mají všechny vlastnosti sady .NET Core SDK, které jsou k dispozici. Web SDK, například závisí na .NET Core SDK a Razor SDK.
+.NET Core SDK je základní sada SDK pro .NET Core. Ostatní sady SDK odkazují na .NET Core SDK a projekty, které jsou přidruženy k ostatním sadám SDK, mají k dispozici všechny vlastnosti .NET Core SDK. Webová sada SDK například závisí na .NET Core SDK i sadě Razor SDK.
 
-Můžete také vytvářet vlastní sdk, které mohou být distribuovány prostřednictvím NuGet.
+Můžete také vytvořit vlastní sadu SDK, která se dá distribuovat přes NuGet.
 
 ## <a name="project-files"></a>Soubory projektu
 
-Základní projekty .NET jsou založeny na formátu [MSBuild.](/visualstudio/msbuild/msbuild) Soubory projektu, které mají rozšíření jako *.csproj* pro projekty C# a *.fsproj* pro projekty F#, jsou ve formátu XML. Kořenový prvek souboru projektu MSBuild je prvek [Project.](/visualstudio/msbuild/project-element-msbuild) Prvek `Project` má volitelný `Sdk` atribut, který určuje, který SDK (a verze) použít. Chcete-li použít nástroje .NET Core a `Sdk` vytvořit kód, nastavte atribut na jedno z ID v tabulce [Dostupné sady SDK.](#available-sdks)
+Projekty .NET Core jsou založeny na formátu [MSBuild](/visualstudio/msbuild/msbuild) . Soubory projektu, které mají rozšíření jako *. csproj* pro projekty C# a *. fsproj* pro projekty F #, jsou ve formátu XML. Kořenový prvek souboru projektu MSBuild je [projektový](/visualstudio/msbuild/project-element-msbuild) prvek. `Project`Element má volitelný `Sdk` atribut, který určuje sadu SDK (a verze), která se má použít. Chcete-li použít nástroje .NET Core a sestavit kód, nastavte `Sdk` atribut na jedno z ID v tabulce [dostupných sad SDK](#available-sdks) .
 
 ```xml
 <Project Sdk="Microsoft.NET.Sdk">
@@ -40,7 +41,7 @@ Základní projekty .NET jsou založeny na formátu [MSBuild.](/visualstudio/msb
 </Project>
 ```
 
-Chcete-li zadat sadu SDK, která pochází z NuGet, zadejte verzi na konci názvu nebo zadejte název a verzi v souboru *global.json.*
+Pokud chcete zadat sadu SDK, která pochází z NuGet, zahrňte na konci názvu verzi nebo zadejte název a verzi v souboru *Global. JSON* .
 
 ```xml
 <Project Sdk="MSBuild.Sdk.Extras/2.0.54">
@@ -48,7 +49,7 @@ Chcete-li zadat sadu SDK, která pochází z NuGet, zadejte verzi na konci názv
 </Project>
 ```
 
-Dalším způsobem, jak určit sdk je s nejvyšší úrovně [Sdk](/visualstudio/msbuild/sdk-element-msbuild) prvek:
+Dalším způsobem, jak zadat sadu SDK, je element [sady SDK](/visualstudio/msbuild/sdk-element-msbuild) na nejvyšší úrovni:
 
 ```xml
 <Project>
@@ -57,7 +58,7 @@ Dalším způsobem, jak určit sdk je s nejvyšší úrovně [Sdk](/visualstudio
 </Project>
 ```
 
-Odkazování na sdk jedním z těchto způsobů výrazně zjednodušuje soubory projektu pro .NET Core. Při vyhodnocování projektu MSBuild `Sdk.props` přidá implicitní importy `Sdk.targets` v horní části souboru projektu a v dolní části.
+Odkazování na sadu SDK jedním z těchto způsobů značně zjednodušuje soubory projektu pro .NET Core. Při vyhodnocování projektu nástroj MSBuild přidá implicitní importy do `Sdk.props` horní části souboru projektu a `Sdk.targets` v dolní části.
 
 ```xml
 <Project>
@@ -70,76 +71,80 @@ Odkazování na sdk jedním z těchto způsobů výrazně zjednodušuje soubory 
 ```
 
 > [!TIP]
-> V počítači se systémem Windows lze soubory *Sdk.props* a *Sdk.targets* nalézt ve složce *%ProgramFiles%\dotnet\sdk\\[verze]\Sdks\Microsoft.NET.Sdk\Sdk.*
+> V počítači s Windows se soubory *SDK. props* a *SDK. targets* dají najít ve složce *%ProgramFiles%\dotnet\sdk \\ [Version] \Sdks\Microsoft.NET.Sdk\Sdk* .
 
 ### <a name="preprocess-the-project-file"></a>Předběžné zpracování souboru projektu
 
-Můžete vidět plně rozšířený projekt jako MSBuild vidí po SDK a jeho `dotnet msbuild -preprocess` cíle jsou zahrnuty pomocí příkazu. [Předprocesový](/visualstudio/msbuild/msbuild-command-line-reference#preprocess) přepínač [`dotnet msbuild`](../tools/dotnet-msbuild.md) příkazu zobrazuje, které soubory jsou importovány, jejich zdroje a jejich příspěvky k sestavení, aniž by skutečně stavěly projekt.
+Úplný rozbalený projekt se zobrazí po zobrazení nástroje MSBuild po sadě SDK a jeho cílech pomocí `dotnet msbuild -preprocess` příkazu. Přepínač [předběžného zpracování](/visualstudio/msbuild/msbuild-command-line-reference#preprocess) [`dotnet msbuild`](../tools/dotnet-msbuild.md) příkazu ukazuje, které soubory jsou importovány, jejich zdroje a jejich příspěvky na sestavení bez skutečného sestavení projektu.
 
-Pokud projekt má více cílových architektur, zaměřte výsledky příkazu pouze na jeden rámec zadáním jako vlastnost MSBuild. Příklad:
+Pokud má projekt více cílových rozhraní, zaměřte výsledky příkazu pouze na jednu architekturu zadáním jako vlastnost MSBuild. Příklad:
 
 `dotnet msbuild -property:TargetFramework=netcoreapp2.0 -preprocess:output.xml`
 
 ### <a name="default-compilation-includes"></a>Výchozí kompilace zahrnuje
 
-Výchozí zahrnuje a vylučuje pro kompilaci položky a vložené prostředky jsou definovány v sadě SDK. Na rozdíl od projektů, které nejsou sdk.net framework, není nutné zadat tyto položky v souboru projektu, protože výchozí pokrytí většiny běžných případů použití. To vede k menším souborům projektu, které jsou srozumitelnější a v případě potřeby ručně upravovány.
+Výchozí zahrnutí a vyloučení položek kompilace, integrovaných prostředků a `None` položek je definováno v sadě SDK. Na rozdíl od projektů, které nejsou .NET Framework SDK, není nutné zadávat tyto položky v souboru projektu, protože výchozí hodnoty se vztahují na nejběžnější případy použití. Tím se soubor projektu zmenší a v případě potřeby bude snazší pochopit a upravovat.
 
-V následující tabulce je uvedeno, který prvek a které globs jsou [zahrnuty](https://en.wikipedia.org/wiki/Glob_(programming)) a vyloučeny do sady .NET Core SDK:
+Následující tabulka ukazuje, které prvky a které [globy](https://en.wikipedia.org/wiki/Glob_(programming)) jsou zahrnuty a vyloučeny v .NET Core SDK:
 
-| Prvek           | Zahrnout glob                              | Vyloučit glob                                                  | Odstranit glob              |
+| Prvek           | Zahrnout glob                              | Vyloučit glob                                                  | Odebrat glob              |
 |-------------------|-------------------------------------------|---------------------------------------------------------------|--------------------------|
-| Kompilaci           | \*\*/\*.cs (nebo jiná jazyková rozšíření) | \*\*/\*.user;  \*\*/\*. \*proj;  \* \* /.sln; \*  \* \* / \*.vssscc  | –                      |
-| Vložený prostředek  | \*\*/\*.resx                              | \*\*/\*.user; \*\*/\*. \*proj; \* \* /.sln; \* \* \* / \*.vssscc     | –                      |
-| Žádná              | \*\*/\*                                   | \*\*/\*.user; \*\*/\*. \*proj; \* \* /.sln; \* \* \* / \*.vssscc     | \*\*/\*.cs; \* \* /.resx \* |
+| Sestavení           | \*\*/\*cs (nebo jiné jazykové rozšíření) | \*\*/\*uživatelský  \*\*/\*.\* Souhrn  \*\*/\*. SLN  \*\*/\*. vssscc  | –                      |
+| EmbeddedResource  | \*\*/\*. resx                              | \*\*/\*uživatelský \*\*/\*.\* Souhrn \*\*/\*. SLN \*\*/\*. vssscc     | –                      |
+| Žádné              | \*\*/\*                                   | \*\*/\*uživatelský \*\*/\*.\* Souhrn \*\*/\*. SLN \*\*/\*. vssscc     | \*\*/\*cs \*\*/\*. RESX |
 
 > [!NOTE]
-> A `./bin` `./obj` složky, které jsou `$(BaseOutputPath)` `$(BaseIntermediateOutputPath)` reprezentovány vlastnostmi a MSBuild, jsou ve výchozím nastavení vyloučeny z globs. Nezahrnuje jsou reprezentovány `$(DefaultItemExcludes)`vlastností .
+> `./bin`Složky a `./obj` , které jsou reprezentovány `$(BaseOutputPath)` vlastnostmi a nástroje `$(BaseIntermediateOutputPath)` MSBuild, jsou ve výchozím nastavení vyloučeny z globy. Vyloučení jsou reprezentovány vlastností `$(DefaultItemExcludes)` .
 
-Pokud explicitně definujete tyto položky v souboru projektu, pravděpodobně se zobrazí následující chyba:
+#### <a name="build-errors"></a>Chyby sestavení
 
-**Byly zahrnuty duplicitní položky kompilace. Sada .NET SDK ve výchozím nastavení obsahuje položky kompilace z adresáře projektu. Tyto položky můžete odebrat ze souboru projektu nebo nastavit vlastnost EnableDefaultCompileItems na hodnotu false, pokud je chcete explicitně zahrnout do souboru projektu.**
+Pokud explicitně definujete některou z těchto položek v souboru projektu, pravděpodobně se zobrazí chyba Build "NETSDK1022", která bude vypadat přibližně takto:
 
-Chcete-li chybu vyřešit, `Compile` odeberte explicitní položky, které odpovídají implicitním položkám uvedeným v předchozí tabulce, nebo nastavte `EnableDefaultCompileItems` vlastnost na `false`, která zakáže implicitní zahrnutí:
+  > Byly zahrnuty duplicitní položky Compile. Sada .NET SDK obsahuje ve výchozím nastavení položky kompilovat z adresáře projektu. Můžete buď odebrat tyto položky ze souboru projektu, nebo nastavit vlastnost ' EnableDefaultCompileItems ' na hodnotu ' false ', pokud je chcete explicitně zahrnout do souboru projektu.
 
-```xml
-<PropertyGroup>
-  <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
-</PropertyGroup>
-```
+  > Byly zahrnuty duplicitní položky ' EmbeddedResource '. Sada .NET SDK obsahuje ve výchozím nastavení položky "EmbeddedResource" z adresáře projektu. Můžete buď odebrat tyto položky ze souboru projektu, nebo nastavit vlastnost ' EnableDefaultEmbeddedResourceItems ' na hodnotu ' false ', pokud je chcete explicitně zahrnout do souboru projektu.
 
-Pokud chcete zadat, například některé soubory, které mají být publikovány s vaší aplikací, můžete stále použít `Content` známé mechanismy MSBuild pro tento prvek.
+Chcete-li tyto chyby vyřešit, proveďte jednu z následujících akcí:
 
-`EnableDefaultCompileItems`pouze zakáže `Compile` globs, ale nemá vliv na `None` jiné globs, \*jako implicitní glob, který se vztahuje i na .cs položky. Z tohoto důvodu Průzkumník řešení \*v sadě Visual Studio zobrazuje položky .cs jako součást projektu, zahrnuté jako `None` položky. Chcete-li `None` implicitní `EnableDefaultNoneItems` glob `false`zakázat, nastavte na :
+- Odeberte explicitní `Compile` položky, `EmbeddedResource` nebo, `None` které odpovídají implicitním těm uvedeným v předchozí tabulce.
 
-```xml
-<PropertyGroup>
-  <EnableDefaultNoneItems>false</EnableDefaultNoneItems>
-</PropertyGroup>
-```
+- Nastavte `EnableDefaultItems` vlastnost tak, aby `false` se zakázalo zahrnutí všech implicitních souborů:
 
-Chcete-li zakázat *všechny* `EnableDefaultItems` implicitní `false`globs, nastavte vlastnost na :
+  ```xml
+  <PropertyGroup>
+    <EnableDefaultItems>false</EnableDefaultItems>
+  </PropertyGroup>
+  ```
 
-```xml
-<PropertyGroup>
-  <EnableDefaultItems>false</EnableDefaultItems>
-</PropertyGroup>
-```
+  Pokud chcete určit soubory, které mají být publikovány s vaší aplikací, můžete stále používat známé mechanizmy nástroje MSBuild, například `Content` prvek.
+
+- Selektivně zakažte pouze `Compile` , `EmbeddedResource` nebo `None` globy nastavením `EnableDefaultCompileItems` `EnableDefaultEmbeddedResourceItems` vlastnosti, nebo `EnableDefaultNoneItems` na `false` :
+
+  ```xml
+  <PropertyGroup>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+    <EnableDefaultEmbeddedResourceItems>false</EnableDefaultEmbeddedResourceItems>
+    <EnableDefaultNoneItems>false</EnableDefaultNoneItems>
+  </PropertyGroup>
+  ```
+
+  Pokud zakážete pouze `Compile` globy, Průzkumník řešení v aplikaci Visual Studio stále zobrazuje \* položky. cs jako součást projektu, které jsou zahrnuty jako `None` položky. Pokud chcete zakázat implicitní `None` glob, nastavte `EnableDefaultNoneItems` na hodnotu `false` příliš.
 
 ## <a name="customize-the-build"></a>Přizpůsobení sestavení
 
-Existují různé způsoby [přizpůsobení sestavení](/visualstudio/msbuild/customize-your-build). Vlastnost můžete přepsat předáním jako argument příkazu [msbuild](/visualstudio/msbuild/msbuild-command-line-reference) nebo [dotnet.](../tools/index.md) Vlastnost můžete také přidat do souboru projektu nebo do souboru *Directory.Build.props.* Seznam užitečných vlastností pro projekty .NET Core naleznete v [tématu Vlastnosti msbuild pro projekty sady .NET Core SDK](msbuild-props.md).
+Existují různé způsoby [přizpůsobení sestavení](/visualstudio/msbuild/customize-your-build). Můžete chtít přepsat vlastnost předáním jako argumentu příkazu [MSBuild](/visualstudio/msbuild/msbuild-command-line-reference) nebo [dotnet](../tools/index.md) . Můžete také přidat vlastnost do souboru projektu nebo do souboru *Directory. Build. props* . Seznam užitečných vlastností pro projekty .NET Core naleznete v tématu [Reference k MSBuild pro .NET Core SDK projekty](msbuild-props.md).
 
 ### <a name="custom-targets"></a>Vlastní cíle
 
-.NET Core projekty můžete balíček vlastní MSBuild cíle a vlastnosti pro použití projekty, které spotřebovávají balíček. Tento typ rozšiřitelnosti použijte, pokud chcete:
+Projekty .NET Core můžou zabalit vlastní cíle a vlastnosti MSBuild pro použití projekty, které balíček využívají. Tento typ rozšiřitelnosti použijte v případě, že chcete:
 
-- Rozšiřte proces sestavení.
-- Přístup artefakty procesu sestavení, jako jsou generované soubory.
+- Rozšíří proces sestavení.
+- Přístup k artefaktům procesu sestavení, jako je například vygenerované soubory.
 - Zkontrolujte konfiguraci, pod kterou je vyvoláno sestavení.
 
-Vlastní cíle sestavení nebo vlastnosti přidáte `<package_id>.targets` umístěním souborů do formuláře nebo `<package_id>.props` `Contoso.Utility.UsefulStuff.targets`(například) do složky *sestavení* projektu.
+Vlastní cíle sestavení nebo vlastnosti můžete přidat umístěním souborů ve formuláři `<package_id>.targets` nebo `<package_id>.props` (například `Contoso.Utility.UsefulStuff.targets` ) do složky *sestavení* projektu.
 
-Následující kód XML je výstřižek ze souboru *.csproj,* který příkaz udává, [`dotnet pack`](../tools/dotnet-pack.md) co má sbalit. Prvek `<ItemGroup Label="dotnet pack instructions">` umístí soubory cílů do složky *sestavení* uvnitř balíčku. Prvek `<Target Name="CollectRuntimeOutputs" BeforeTargets="_GetPackageFiles">` umístí sestavení a *soubory JSON* do složky *sestavení.*
+Následující kód XML je fragmentem ze souboru *. csproj* , který instruuje příkaz, který [`dotnet pack`](../tools/dotnet-pack.md) se má zabalit. `<ItemGroup Label="dotnet pack instructions">`Prvek umístí soubory cílů do složky *sestavení* uvnitř balíčku. `<Target Name="CollectRuntimeOutputs" BeforeTargets="_GetPackageFiles">`Prvek umístí sestavení a soubory *. JSON* do složky *sestavení* .
 
 ```xml
 <Project Sdk="Microsoft.NET.Sdk">
@@ -165,12 +170,12 @@ Následující kód XML je výstřižek ze souboru *.csproj,* který příkaz ud
 </Project>
 ```
 
-Chcete-li spotřebovat vlastní cíl `PackageReference` v projektu, přidejte prvek, který odkazuje na balíček a jeho verzi. Na rozdíl od nástrojů je balíček vlastních cílů součástí uzavření závislosti náročného projektu.
+Chcete-li využívat vlastní cíl v projektu, přidejte `PackageReference` prvek, který odkazuje na balíček a jeho verzi. Na rozdíl od nástrojů je balíček vlastních cílů zahrnut v uzávěrce náročného projektu.
 
-Můžete nakonfigurovat, jak používat vlastní cíl. Vzhledem k tomu, že je cíl MSBuild, může záviset na daný cíl, spustit `dotnet msbuild -t:<target-name>` za jiným cílem nebo ručně vyvolat pomocí příkazu. Chcete-li však poskytnout lepší uživatelské prostředí, můžete kombinovat nástroje pro jednotlivé projekty a vlastní cíle. V tomto scénáři nástroj pro jednotlivé projekty přijímá všechny parametry, [`dotnet msbuild`](../tools/dotnet-msbuild.md) které jsou potřeba, a překládá, že do požadované vyvolání, který provede cíl. Ukázku tohoto druhu synergie si můžete prohlédnout na [`dotnet-packer`](https://github.com/dotnet/MVPSummitHackathon2016/tree/master/dotnet-packer) příkladech vzorků [Hackathon summitu MVP summitu 2016](https://github.com/dotnet/MVPSummitHackathon2016) v projektu.
+Můžete nakonfigurovat, jak se má používat vlastní cíl. Vzhledem k tomu, že se jedná o cíl MSBuild, může záviset na daném cíli, spustit po jiném cíli nebo být ručně vyvolán pomocí `dotnet msbuild -t:<target-name>` příkazu. Chcete-li však zajistit lepší činnost koncového uživatele, můžete kombinovat nástroje pro jednotlivé projekty a vlastní cíle. V tomto scénáři akceptuje Nástroj pro každý projekt jakékoli parametry, které jsou potřeba, a překládá se na požadované [`dotnet msbuild`](../tools/dotnet-msbuild.md) vyvolání, které provádí cíl. Ukázku tohoto druhu součinnosti si můžete prohlédnout v úložišti [ukázek MVP 2016 Hackathon](https://github.com/dotnet/MVPSummitHackathon2016) v [`dotnet-packer`](https://github.com/dotnet/MVPSummitHackathon2016/tree/master/dotnet-packer) projektu.
 
 ## <a name="see-also"></a>Viz také
 
 - [Instalace .NET Core](../install/index.md)
-- [Použití sad SDK projektu MSBuild](/visualstudio/msbuild/how-to-use-project-sdk)
-- [Balíček vlastních cílů msbuild a rekvizit y nuget](/nuget/create-packages/creating-a-package#include-msbuild-props-and-targets-in-a-package)
+- [Jak používat sady SDK projektů MSBuild](/visualstudio/msbuild/how-to-use-project-sdk)
+- [Balíčky vlastních cílů a vlastností MSBuild balíčku pomocí NuGet](/nuget/create-packages/creating-a-package#include-msbuild-props-and-targets-in-a-package)

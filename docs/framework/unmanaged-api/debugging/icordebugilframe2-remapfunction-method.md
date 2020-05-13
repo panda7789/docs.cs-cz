@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: dd639ba0-f77b-426d-9ff6-f92706840348
 topic_type:
 - apiref
-ms.openlocfilehash: f4f73b99b4cb48690a2a8611dbf5a5420adab5d4
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.openlocfilehash: 43f585417ed52b92c23087c0f02fd188ee09ea7e
+ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76794354"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83210212"
 ---
 # <a name="icordebugilframe2remapfunction-method"></a>ICorDebugILFrame2::RemapFunction – metoda
 Přemapuje upravenou funkci zadáním nového posunu jazyka MSIL (Microsoft Intermediate Language).  
@@ -40,22 +40,22 @@ HRESULT RemapFunction (
  Je zodpovědností volajícího, aby zajistila platnost této hodnoty. Například posun jazyka MSIL není platný, pokud je mimo hranice funkce.  
   
 ## <a name="remarks"></a>Poznámky  
- Když je upravena funkce rámce, ladicí program může zavolat metodu `RemapFunction` pro prohození v nejnovější verzi funkce rámce, aby ji bylo možné spustit. Spuštění kódu bude zahájeno v daném posunu MSIL.  
+ Když je upravena funkce rámce, ladicí program může zavolat `RemapFunction` metodu pro prohození v nejnovější verzi funkce rámce, aby ji bylo možné spustit. Spuštění kódu bude zahájeno v daném posunu MSIL.  
   
 > [!NOTE]
-> Volání `RemapFunction`, podobně jako volání [ICorDebugILFrame:: SetIP](icordebugilframe-setip-method.md), okamžitě zruší platnost všech ladicích rozhraní, která souvisí s generováním trasování zásobníku pro vlákno. Mezi tato rozhraní patří [ICorDebugChain](icordebugchain-interface.md), ICorDebugILFrame, ICorDebugInternalFrame a ICorDebugNativeFrame.  
+> Volání `RemapFunction` , podobně jako volání [ICorDebugILFrame:: SetIP](icordebugilframe-setip-method.md), okamžitě zruší platnost všech ladicích rozhraní, která souvisí s generováním trasování zásobníku pro vlákno. Mezi tato rozhraní patří [ICorDebugChain](icordebugchain-interface.md), ICorDebugILFrame, ICorDebugInternalFrame a ICorDebugNativeFrame.  
   
- Metodu `RemapFunction` lze volat pouze v kontextu aktuálního rámce a pouze v jednom z následujících případů:  
+ `RemapFunction`Metodu lze volat pouze v kontextu aktuálního rámce a pouze v jednom z následujících případů:  
   
 - Po přijetí zpětného volání [ICorDebugManagedCallback2:: FunctionRemapOpportunity –](icordebugmanagedcallback2-functionremapopportunity-method.md) , které ještě nepokračovalo.  
   
 - Při provádění kódu je zastaveno z důvodu události [ICorDebugManagedCallback:: EditAndContinueRemap –](icordebugmanagedcallback-editandcontinueremap-method.md) pro tento rámec.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** CorDebug. idl, CorDebug. h  
   
  **Knihovna:** CorGuids. lib  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]
+ **Verze .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]

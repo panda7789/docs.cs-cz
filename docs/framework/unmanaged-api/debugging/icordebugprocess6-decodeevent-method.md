@@ -2,15 +2,15 @@
 title: ICorDebugProcess6::DecodeEvent – metoda
 ms.date: 03/30/2017
 ms.assetid: 1453bc0c-6e0d-4d5a-b176-22607f8a3e6c
-ms.openlocfilehash: a0b77724a5a70461073d554a9794c5a904f6a363
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 7c163311f9ce8f3d98ce72f45165a5e517c6c0aa
+ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79178585"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83205505"
 ---
 # <a name="icordebugprocess6decodeevent-method"></a>ICorDebugProcess6::DecodeEvent – metoda
-Dekóduje události spravovaného ladění, které byly zapouzdřeny v datové části speciálně vytvořených nativních událostí ladění výjimek.  
+Dekóduje spravované události ladění, které byly zapouzdřeny v datové části speciálně vytvořené nativní výjimky ladění.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -27,36 +27,36 @@ HRESULT DecodeEvent(
   
 ## <a name="parameters"></a>Parametry  
  `pRecord`  
- [v] Ukazatel na bajtové pole z události ladění nativní výjimky, která obsahuje informace o události spravovaného ladění.  
+ pro Ukazatel na pole bajtů z nativní události ladění výjimky, která obsahuje informace o spravované události ladění.  
   
  `countBytes`  
- [v] Počet prvků v `pRecord` poli bajtů.  
+ pro Počet prvků v `pRecord` bajtovém poli.  
   
  `format`  
- [v] Člen výčtu [CorDebugRecordFormat,](cordebugrecordformat-enumeration.md) který určuje formát události nespravovaného ladění.  
+ pro Člen výčtu [CorDebugRecordFormat](cordebugrecordformat-enumeration.md) , který určuje formát nespravované události ladění.  
   
  `dwFlags`  
- [v] Bitové pole, které závisí na cílové architektuře a určuje další informace o události ladění. Pro systémy Windows může být členem výčtu [CorDebugDecodeEventFlagsWindows.](cordebugdecodeeventflagswindows-enumeration.md)  
+ pro Bitové pole, které závisí na cílové architektuře a které určuje další informace o události ladění. Pro systémy Windows může být členem výčtu [CorDebugDecodeEventFlagsWindows](cordebugdecodeeventflagswindows-enumeration.md) .  
   
  `dwThreadId`  
- [v] Identifikátor operačního systému podprocesu, na kterém byla vyvolána výjimka.  
+ pro Identifikátor operačního systému vlákna, na kterém byla výjimka vyvolána.  
   
  `ppEvent`  
- [out] Ukazatel na adresu objektu [ICorDebugDebugEvent,](icordebugdebugevent-interface.md) který představuje dekódovanou událost spravovaného ladění.  
+ mimo Ukazatel na adresu objektu [ICorDebugDebugEvent](icordebugdebugevent-interface.md) , který představuje dekódovou spravovanou událost ladění.  
   
 ## <a name="remarks"></a>Poznámky  
   
 > [!NOTE]
-> Tato metoda je k dispozici pouze s nativní .NET.  
+> Tato metoda je k dispozici pouze s .NET Native.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET Framework:**[!INCLUDE[net_46_native](../../../../includes/net-46-native-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_46_native](../../../../includes/net-46-native-md.md)]  
   
 ## <a name="see-also"></a>Viz také
 

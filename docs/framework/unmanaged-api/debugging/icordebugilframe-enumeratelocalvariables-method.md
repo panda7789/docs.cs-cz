@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: 1a67fa1b-2419-4cd0-aad4-6f46a0719b4b
 topic_type:
 - apiref
-ms.openlocfilehash: c071a7ddb7d8d3f0e6487ab85284c45f9a7f0372
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: ad1a91e42f582ce96906da5cbf00ca89acb18499
+ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79178843"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83210290"
 ---
 # <a name="icordebugilframeenumeratelocalvariables-method"></a>ICorDebugILFrame::EnumerateLocalVariables – metoda
-Získá čítač pro místní proměnné v tomto rámci.  
+Získá enumerátor pro místní proměnné v tomto snímku.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -35,16 +35,16 @@ HRESULT EnumerateLocalVariables(
   
 ## <a name="parameters"></a>Parametry  
  `ppValueEnum`  
- [out] Ukazatel na adresu objektu ICorDebugValueEnum, který je čítatelem pro místní proměnné v tomto rámci.  
+ mimo Ukazatel na adresu objektu ICorDebugValueEnum, který je enumerátorem místních proměnných v tomto snímku.  
   
 ## <a name="remarks"></a>Poznámky  
- `EnumerateLocalVariables`získá čítač výčtu, který může seznam místních proměnných, které jsou k dispozici v rámci volání, který je reprezentován tento objekt ICorDebugILFrame. Seznam nemusí obsahovat všechny místní proměnné v spuštěné funkci, protože některé z nich nemusí být aktivní.  
+ `EnumerateLocalVariables`Získá enumerátor, který může zobrazit seznam místních proměnných dostupných v rámci volání, který je reprezentován tímto objektem ICorDebugILFrame. Seznam nesmí obsahovat všechny místní proměnné ve spuštěné funkci, protože některé z nich nemusí být aktivní.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]
+ **Verze .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]

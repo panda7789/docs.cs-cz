@@ -1,9 +1,9 @@
 ### YamlMime:Landing
-title: .NET pro dokumentaci Apache Spark
-summary: 'Naučte se používat rozhraní .NET pro Apache Spark ke zpracování dávek dat, datových proudů v reálném čase, strojového učení a ad hoc dotazů pomocí Apache Spark kdekoli, kde píšete kód .NET.'
+title: Dokumentace k rozhraní .NET pro Apache Spark
+summary: Naučte se používat .NET pro Apache Spark ke zpracování dávek dat, datových proudů v reálném čase, strojového učení a dotazů ad hoc s Apache Spark kdekoli píšete kód .NET.
 metadata:
-  title: .NET pro dokumentaci Apache Spark
-  description: 'Naučte se používat rozhraní .NET pro Apache Spark ke zpracování dávek dat, datových proudů v reálném čase, strojového učení a ad hoc dotazů pomocí Apache Spark kdekoli, kde píšete kód .NET.'
+  title: Dokumentace k rozhraní .NET pro Apache Spark
+  description: Naučte se používat .NET pro Apache Spark ke zpracování dávek dat, datových proudů v reálném čase, strojového učení a dotazů ad hoc s Apache Spark kdekoli píšete kód .NET.
   services: service
   ms.prod: dotnet-spark
   ms.topic: landing-page
@@ -11,44 +11,62 @@ metadata:
   author: mamccrea
   ms.author: mamccrea
   ms.date: 09/11/2019
+  ms.openlocfilehash: 5b477daf0f52d48a6f068fa8eafeb1b787d19c39
+  ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
+  ms.translationtype: MT
+  ms.contentlocale: cs-CZ
+  ms.lasthandoff: 05/12/2020
+  ms.locfileid: "83212224"
 landingContent:
-  - title: O rozhraní .NET pro Apache Spark
-    linkLists:
-      - linkListType: whats-new
-        links:
-          - text: Co je nového v dokumentaci pro .NET
-            url: /dotnet/whats-new/index
-      - linkListType: overview
-        links:
-          - text: Co je .NET for Apache Spark?
-            url: what-is-apache-spark-dotnet.md
-      - linkListType: reference
-        links:
-          - text: Referenční materiály k rozhraní API
-            url: /dotnet/api/?view=spark-dotnet
-          - text: GitHubu
-            url: 'https://github.com/dotnet/spark'
-  - title: Začínáme
-    linkLists:
-      - linkListType: tutorial
-        links:
-          - text: Začínáme s rozhraním .NET pro Apache Spark
-            url: tutorials/get-started.md
-      - linkListType: learn
-        links:
-          - text: Začínáme za 10 minut na Windows nebo Linuxu
-            url: 'https://dotnet.microsoft.com/learn/data/spark-tutorial/intro'
-  - title: Nasazení rozhraní .NET pro aplikaci Apache Spark
-    linkLists:
-      - linkListType: deploy
-        links:
-          - text: Nasazení do Azure HDInsight
-            url: tutorials/hdinsight-deployment.md
-          - text: Nasazení do AWS EMR Spark
-            url: tutorials/amazon-emr-spark-deployment.md
-          - text: Nasazení do Databricks
-            url: tutorials/databricks-deployment.md
-      - linkListType: how-to-guide
-        links:
-          - text: Ladění aplikace
-            url: how-to-guides/debug.md
+- title: Základy rozhraní .NET pro Apache Spark
+  linkLists:
+  - linkListType: whats-new
+    links:
+    - text: Co je nového v dokumentaci .NET
+      url: /dotnet/whats-new/index
+  - linkListType: overview
+    links:
+    - text: Co je .NET for Apache Spark?
+      url: what-is-apache-spark-dotnet.md
+  - linkListType: reference
+    links:
+    - text: Referenční materiály k rozhraní API
+      url: /dotnet/api/?view=spark-dotnet
+    - text: GitHub
+      url: https://github.com/dotnet/spark
+- title: 10minutový úvodní kurz
+  linkLists:
+  - linkListType: tutorial
+    links:
+    - text: Začínáme s .NET pro Apache Spark
+      url: tutorials/get-started.md
+  - linkListType: learn
+    links:
+    - text: Začínáme během 10 minut v systému Windows nebo Linux
+      url: https://dotnet.microsoft.com/learn/data/spark-tutorial/intro
+- title: Nasazení aplikace .NET pro Apache Spark
+  linkLists:
+  - linkListType: deploy
+    links:
+    - text: Nasazení do Azure HDInsight
+      url: tutorials/hdinsight-deployment.md
+    - text: Nasazení do AWS EMR Spark
+      url: tutorials/amazon-emr-spark-deployment.md
+    - text: Nasazení do Databricks
+      url: tutorials/databricks-deployment.md
+  - linkListType: how-to-guide
+    links:
+    - text: Ladění aplikace
+      url: how-to-guides/debug.md
+    - text: Nasazení pracovních procesů a binárních souborů UDF
+      url: how-to-guides/deploy-worker-udf-binaries.md
+- title: Zpracování velkých objemů dat
+  linkLists:
+  - linkListType: tutorial
+    links:
+    - text: Dávkové zpracování
+      url: tutorials/batch-processing.md
+    - text: Strukturované streamování
+      url: tutorials/streaming.md
+    - text: Analýza mínění
+      url: tutorials/ml-sentiment-analysis.md

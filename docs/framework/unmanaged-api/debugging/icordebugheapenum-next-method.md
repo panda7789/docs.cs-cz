@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: 2221fd06-9e27-4113-972e-2530db8c3594
 topic_type:
 - apiref
-ms.openlocfilehash: f5af8e559b4fbfeb60530372185ca10104ade987
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 5d0b231b4014e60a9e8778c6b9d6ed7758b2d8c5
+ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79178854"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83208470"
 ---
 # <a name="icordebugheapenumnext-method"></a>ICorDebugHeapEnum::Next – metoda
-Získá zadaný počet [COR_HEAPOBJECT](cor-heapobject-structure.md) instancí, které obsahují informace o objektech na spravované haldy.  
+Získá zadaný počet instancí [COR_HEAPOBJECT](cor-heapobject-structure.md) , které obsahují informace o objektech na spravované haldě.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -36,25 +36,25 @@ HRESULT Next(
   
 ## <a name="parameters"></a>Parametry  
  celt  
- [v] Počet objektů, které mají být načteny.  
+ pro Počet objektů, které mají být načteny.  
   
   – objekty  
- [out] Pole ukazatelů, z nichž každý odkazuje na [COR_HEAPOBJECT](cor-heapobject-structure.md) objekt, který poskytuje informace o objektu na spravované haldy.  
+ mimo Pole ukazatelů, z nichž každý odkazuje na objekt [COR_HEAPOBJECT](cor-heapobject-structure.md) , který poskytuje informace o objektu na spravované haldě.  
   
- pceltnačten  
- [out] Ukazatel na počet [objektů COR_HEAPOBJECT](cor-heapobject-structure.md) skutečně `objects`vrácených v . Tato hodnota `null` může `celt` být, pokud je 1.  
+ pceltFetched  
+ mimo Ukazatel na počet skutečně vrácených objektů [COR_HEAPOBJECT](cor-heapobject-structure.md) `objects` . Tato hodnota může být `null` `celt` , pokud je 1.  
   
 ## <a name="remarks"></a>Poznámky  
- Toto `COR_HEAPOBJECT.type` pole je identifikátorem vnořeného rozhraní COM s počítaného odkazem. Tento odkaz musí být uvolněn `ICorDebugHeapEnum::Next`volajícím .  
+ `COR_HEAPOBJECT.type`Pole je identifikátor vnořeného rozhraní COM se započítávající odkazy. Tento odkaz musí být vydaný volajícím `ICorDebugHeapEnum::Next` .  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také
 

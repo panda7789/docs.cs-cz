@@ -1,6 +1,6 @@
 ---
 title: Zjištění nainstalovaných verzí rozhraní .NET Framework
-description: Pomocí kódu regedit.exe nebo prostředí PowerShell zjistíte, které verze rozhraní .NET Framework jsou v počítači nainstalovány dotazováním na registr systému Windows.
+description: Pomocí kódu, regedit. exe nebo PowerShellu zjistíte, které verze .NET Framework jsou nainstalovány na počítači pomocí dotazování registru systému Windows.
 ms.date: 02/03/2020
 dev_langs:
 - csharp
@@ -10,64 +10,64 @@ helpviewer_keywords:
 - versions, determining for .NET Framework
 - .NET Framework, determining version
 ms.assetid: 40a67826-e4df-4f59-a651-d9eb0fdc755d
-ms.openlocfilehash: 8469f977c6ed9691c81a2a8354935557b5c27171
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: d25e4ae97877462b2a3b90e51262fb656921e392
+ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "77093825"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83205490"
 ---
-# <a name="how-to-determine-which-net-framework-versions-are-installed"></a>Postup: Určení nainstalovaných verzí rozhraní .NET Framework
+# <a name="how-to-determine-which-net-framework-versions-are-installed"></a>Postupy: určení, které verze .NET Framework jsou nainstalovány
 
-Uživatelé mohou ve svých počítačích [instalovat](../install/index.md) a spouštět více verzí rozhraní .NET Framework. Při vývoji nebo nasazení aplikace možná budete potřebovat vědět, které verze rozhraní .NET Framework jsou nainstalovány v počítači uživatele. Registr obsahuje seznam verzí rozhraní .NET Framework nainstalovaných v počítači.
+Uživatelé mohou na svých počítačích [instalovat](../install/index.md) a spouštět více verzí .NET Framework. Když vyvíjíte nebo nasazujete aplikaci, možná budete potřebovat informace o tom, které verze .NET Framework jsou nainstalovány v počítači uživatele. Registr obsahuje seznam verzí .NET Framework nainstalovaných v počítači.
 
-Rozhraní .NET Framework se skládá ze dvou hlavních součástí, které jsou verzí samostatně:
+.NET Framework se skládá ze dvou hlavních součástí, které jsou ve verzi samostatně:
 
-- Sada sestavení, které jsou kolekce typů a prostředků, které poskytují funkce pro vaše aplikace. Rozhraní .NET Framework a sestavení sdílejí stejné číslo verze. Například verze rozhraní .NET Framework zahrnují 4.5, 4.6.1 a 4.7.2.
+- Sada sestavení, což jsou kolekce typů a prostředků, které poskytují funkce pro vaše aplikace. .NET Framework a sestavení sdílejí stejné číslo verze. Například verze .NET Framework zahrnují 4,5, 4.6.1 a 4.7.2.
 
-- Běžný jazyk runtime (CLR), který spravuje a spouští kód vaší aplikace. Jedna verze CLR obvykle podporuje více verzí rozhraní .NET Framework. Například CLR verze 4.0.30319. *xxxxx* kde *xxxxx* je menší než 42000, podporuje rozhraní .NET Framework verze 4 až 4.5.2. Verze CLR větší nebo rovna 4.0.30319.42000 podporuje verze rozhraní .NET Framework počínaje rozhraním .NET Framework 4.6.
+- Modul CLR (Common Language Runtime), který spravuje a spouští kód vaší aplikace. Jedna verze modulu CLR obvykle podporuje více .NET Framework verzí. Například CLR verze 4.0.30319. *xxxxx* , kde *xxxxx* je nižší než 42000, podporuje .NET Framework verze 4 až 4.5.2. Verze CLR větší než nebo rovna 4.0.30319.42000 podporuje .NET Framework verze počínaje .NET Framework 4,6.
 
-K dispozici jsou nástroje spravované komunitou, které pomáhají zjistit, které verze rozhraní .NET Framework jsou nainstalovány:
+K dispozici jsou nástroje pro údržbu komunity, které vám pomůžou zjistit, které verze .NET Framework jsou nainstalované:
 
 - [https://github.com/jmalarcon/DotNetVersions](https://github.com/jmalarcon/DotNetVersions)
 
-  Nástroj příkazového řádku .NET 2.0.
+  Nástroj příkazového řádku .NET 2,0.
 
 - [https://github.com/EliteLoser/DotNetVersionLister](https://github.com/EliteLoser/DotNetVersionLister)
 
-  Modul Prostředí PowerShell 2.0.
+  Modul PowerShell 2,0.
 
-Informace o zjišťování nainstalovaných aktualizací pro každou verzi rozhraní .NET Framework naleznete v tématu [Postup: Určení, které aktualizace rozhraní .NET Framework jsou nainstalovány](how-to-determine-which-net-framework-updates-are-installed.md).
+Informace o zjišťování nainstalovaných aktualizací pro každou verzi .NET Framework najdete v tématu [How to: Určete, které .NET Framework aktualizace se mají nainstalovat](how-to-determine-which-net-framework-updates-are-installed.md).
 
-## <a name="detect-net-framework-45-and-later-versions"></a>Detekce rozhraní .NET Framework 4.5 a novějších verzí
+## <a name="detect-net-framework-45-and-later-versions"></a>Zjistit .NET Framework 4,5 a novější verze
 
-Verze rozhraní .NET Framework (4.5 a novější) nainstalovaná v počítači je uvedena v registru na **adrese\\HKEY_LOCAL_MACHINE SOFTWARE\\Microsoft\\NET Framework Setup\\NDP\\v4\\Full**. Pokud chybí **úplný** podklíč, není nainstalována rozhraní .NET Framework 4.5 nebo vyšší.
+Verze .NET Framework (4,5 a novější) nainstalovaná na počítači je uvedená v registru v **HKEY_LOCAL_MACHINE \\ software \\ Microsoft \\ NET Framework Setup \\ NDP \\ v4 \\ Full**. Pokud chybí **úplný** podklíč, pak .NET Framework 4,5 nebo vyšší není nainstalováno.
 
 > [!NOTE]
-> Podklíč **nastavení rozhraní NET Framework** v cestě registru *nezačíná* tečkou.
+> Podklíč **instalace rozhraní .NET Framework** v cestě registru *nezačíná tečkou* .
 
-Hodnota **release** REG_DWORD v registru představuje nainstalovanou verzi rozhraní .NET Framework.
+Hodnota REG_DWORD **verze** v registru představuje verzi .NET Framework, která je nainstalovaná.
 
 <a name="version_table"></a>
 
-| Verze rozhraní .NET Framework | Hodnota **uvolnění** |
+| Verze rozhraní .NET Framework | Hodnota **verze** |
 | ---------------------- | -------------------------- |
 | .NET Framework 4.5     | Všechny operační systémy Windows: 378389 |
-| .NET Framework 4.5.1   | Ve Windows 8.1 a Windows Server 2012 R2: 378675<br />Ve všech ostatních operačních systémech Windows: 378758 |
+| .NET Framework 4.5.1   | V Windows 8.1 a Windows Server 2012 R2:378675<br />Ve všech ostatních operačních systémech Windows: 378758 |
 | .NET Framework 4.5.2   | Všechny operační systémy Windows: 379893 |
-| .NET Framework 4.6     | Ve Windows 10: 393295<br />Ve všech ostatních operačních systémech Windows: 393297 |
-| .NET Framework 4.6.1   | V systému Windows 10 Listopad aktualizace systémy: 394254<br />Ve všech ostatních operačních systémech Windows (včetně Windows 10): 394271 |
-| .NET Framework 4.6.2   | Ve Windows 10 Anniversary Update a Windows Server 2016: 394802<br />Ve všech ostatních operačních systémech Windows (včetně ostatních operačních systémů Windows 10): 394806 |
-| Rozhraní .NET Framework 4.7     | V aktualizaci Windows 10 Creators: 460798<br />Ve všech ostatních operačních systémech Windows (včetně ostatních operačních systémů Windows 10): 460805 |
-| Rozhraní .NET 4.7.1   | V systému Windows 10 Fall Creators Update a Windows Server, verze 1709: 461308<br/>Ve všech ostatních operačních systémech Windows (včetně ostatních operačních systémů Windows 10): 461310 |
-|  .NET Framework 4.7.2   | Ve Windows 10 duben 2018 Update a Windows Server verze 1803: 461808<br/>Ve všech operačních systémech Windows jiných než Windows 10 Duben 2018 Update a Windows Server verze 1803: 461814 |
-|  .NET Framework 4.8     | V systému Windows 10 Květen 2019 Update a Windows 10 listopad 2019 Aktualizace: 528040<br/>Ve Windows 10 a Windows Serveru verze 1909: 528209<br/>Na všech ostatních operačních systémech Windows (včetně ostatních operačních systémů Windows 10): 528049 |
+| .NET Framework 4.6     | Ve Windows 10:393295<br />Ve všech ostatních operačních systémech Windows: 393297 |
+| .NET Framework 4.6.1   | V systémech Windows 10 listopad Update: 394254<br />Ve všech ostatních operačních systémech Windows (včetně Windows 10): 394271 |
+| .NET Framework 4.6.2   | Ve Windows 10 – aktualizace pro výročí a Windows Server 2016:394802<br />Ve všech ostatních operačních systémech Windows (včetně dalších operačních systémů Windows 10): 394806 |
+| .NET Framework 4,7     | Ve Windows 10 Creators Update: 460798<br />Ve všech ostatních operačních systémech Windows (včetně dalších operačních systémů Windows 10): 460805 |
+| .NET Framework 4.7.1   | V systému Windows 10 patří mezi tvůrci aktualizace a Windows Server verze 1709:461308<br/>Ve všech ostatních operačních systémech Windows (včetně dalších operačních systémů Windows 10): 461310 |
+|  .NET Framework 4.7.2   | Ve Windows 10. dubna 2018 Update a Windows Server verze 1803:461808<br/>Ve všech operačních systémech Windows s výjimkou Windows 10 dubna 2018 Update a Windows Server verze 1803:461814 |
+|  .NET Framework 4.8     | Ve Windows 10 května 2019 Update a Windows 10 listopadu 2019 Update: 528040<br/>Ve Windows 10 Květen 2020 Update: 528209<br/>Ve všech ostatních operačních systémech Windows (včetně dalších operačních systémů Windows 10): 528049 |
 
 ### <a name="minimum-version"></a>Minimální verze
 
-Chcete-li zjistit, zda je k dispozici *minimální* verze rozhraní .NET Framework, použijte nejmenší hodnotu **release** REG_DWORD pro tuto verzi z předchozí tabulky.
+Chcete-li určit, zda je k dispozici *minimální* verze .NET Framework, použijte nejnižší hodnotu **verze REG_DWORD pro** tuto verzi z předchozí tabulky.
 
-Například pokud vaše aplikace běží pod rozhraní mj **REG_DWORD.** *greater than or equal to*
+Například pokud vaše aplikace běží pod .NET Framework 4,8 nebo novější verzí, otestuje REG_DWORD hodnotu **verze** , která je *větší nebo rovna* 528040.
 
 | Verze rozhraní .NET Framework | Minimální hodnota |
 | ---------------------- | ------------- |
@@ -77,105 +77,105 @@ Například pokud vaše aplikace běží pod rozhraní mj **REG_DWORD.** *greate
 | .NET Framework 4.6     | 393295 |
 | .NET Framework 4.6.1   | 394254 |
 | .NET Framework 4.6.2   | 394802 |
-| Rozhraní .NET Framework 4.7     | 460798 |
-| Rozhraní .NET 4.7.1   | 461308 |
+| .NET Framework 4,7     | 460798 |
+| .NET Framework 4.7.1   | 461308 |
 |  .NET Framework 4.7.2   | 461808 |
 |  .NET Framework 4.8     | 528040 |
 
-### <a name="use-registry-editor"></a>Použít Editor registru
+### <a name="use-registry-editor"></a>Použití Editoru registru
 
-01. V nabídce **Start** zvolte **Spustit**, zadejte *regedit*a pak vyberte **OK**.
+01. V nabídce **Start** klikněte na příkaz **Spustit**, zadejte *příkaz regedit*a pak vyberte **OK**.
 
-    Chcete-li spustit regedit, musíte mít pověření pro správu.
+    Chcete-li spustit nástroj Regedit, musíte mít pověření správce.
 
-01. V Editoru registru otevřete následující podklíč: **HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\NET Framework Setup\\\\NDP v4\\Full**. Pokud není k dispozici **úplný** podklíč, nemáte nainstalovanou rozhraní .NET Framework 4.5 nebo novější.
+01. V editoru registru otevřete následující podklíč: **HKEY_LOCAL_MACHINE \\ software \\ Microsoft \\ .NET Framework Setup \\ NDP \\ v4 \\ Full**. Pokud není přítomen **úplný** podklíč, nemáte nainstalovanou .NET Framework 4,5 nebo novější.
 
-01. Zkontrolujte položku REG_DWORD s názvem **Uvolnit**. Pokud existuje, máte nainstalovaný rozhraní .NET Framework 4.5 nebo novější. Jeho hodnota odpovídá konkrétní verzi rozhraní .NET Framework. Na následujícím obrázku je například hodnota položky **release** 528040, což je klíč verze pro rozhraní .NET Framework 4.8.
+01. Vyhledejte položku REG_DWORD s názvem **release**. Pokud existuje, budete mít nainstalované .NET Framework 4,5 nebo novější. Jeho hodnota odpovídá konkrétní verzi .NET Framework. Na následujícím obrázku je například hodnota položky **release** 528040, což je klíč verze .NET Framework 4,8.
 
-    ![Položka registru pro rozhraní .NET Framework 4.5](./media/clr-installdir.png "Položka registru pro rozhraní .NET Framework 4.5")
+    ![Položka registru pro .NET Framework 4,5](./media/clr-installdir.png "Položka registru pro .NET Framework 4,5")
 
-### <a name="use-powershell-to-check-for-a-minimum-version"></a>Kontrola minimální verze pomocí PowerShellu
+### <a name="use-powershell-to-check-for-a-minimum-version"></a>Použití PowerShellu k vyhledání minimální verze
 
-Pomocí příkazů prostředí PowerShell zkontrolujte hodnotu položky **vydání** úplného podklíče **\\HKEY_LOCAL_MACHINE SOFTWARE\\Microsoft\\NET Framework Setup\\NDP\\v4.\\**
+Použijte příkazy prostředí PowerShell ke kontrole hodnoty položky **Release** **HKEY_LOCAL_MACHINE \\ softwaru \\ Microsoft \\ .NET Framework Setup \\ NDP \\ v4 \\ Full** podklíč.
 
-Následující příklady zkontrolujte hodnotu položky **release** a zjistěte, zda je nainstalována rozhraní .NET Framework 4.6.2 nebo novější. Tento kód `True` vrátí, pokud `False` je nainstalován a jinak.
+Následující příklady kontrolují hodnotu položky **verze** , abyste zjistili, jestli je nainstalovaná .NET Framework 4.6.2 nebo novější. Tento kód `True` se vrátí, pokud je nainstalován, a `False` jinak.
 
 ```PowerShell
 (Get-ItemProperty "HKLM:SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Full").Release -ge 394802
 ```
 
-### <a name="query-the-registry-using-code"></a>Dotaz na registr pomocí kódu
+### <a name="query-the-registry-using-code"></a>Dotazování registru pomocí kódu
 
-01. Pomocí <xref:Microsoft.Win32.RegistryKey.OpenBaseKey%2A?displayProperty=nameWithType> metod <xref:Microsoft.Win32.RegistryKey.OpenSubKey%2A?displayProperty=nameWithType> a můžete získat přístup k **úplnému podklíči\\HKEY_LOCAL_MACHINE software\\Microsoft\\NET Framework Setup\\NDP\\v4\\** v registru systému Windows.
+01. Použijte <xref:Microsoft.Win32.RegistryKey.OpenBaseKey%2A?displayProperty=nameWithType> metody a <xref:Microsoft.Win32.RegistryKey.OpenSubKey%2A?displayProperty=nameWithType> pro přístup k **HKEY_LOCAL_MACHINE \\ softwaru \\ Microsoft \\ .NET Framework Setup \\ NDP \\ v4 \\ Full** podklíč v registru Windows.
 
     > [!IMPORTANT]
-    > Pokud je spuštěná aplikace 32bitová a spuštěná v 64bitovém systému Windows, budou cesty registru jiné, než bylo uvedeno dříve. 64bitový registr je k dispozici v podklíči **\\HKEY_LOCAL_MACHINE SOFTWARE\\Wow6432Node.\\ ** Podklíč registru pro rozhraní .NET Framework 4.5 je například **\\HKEY_LOCAL_MACHINE\\\\SOFTWARE\\Wow6432Node Microsoft NET Framework Setup\\\\NDP v4\\Full**.
+    > Pokud aplikace, kterou používáte, je 32 a běží v 64 bitovém systému Windows, cesty registru se budou lišit od dříve uvedených. 64 registr je k dispozici v podklíči **HKEY_LOCAL_MACHINE \\ software \\ Wow6432Node \\ ** . Například podklíč registru pro .NET Framework 4,5 je **HKEY_LOCAL_MACHINE \\ software \\ Wow6432Node \\ Microsoft \\ .NET Framework Setup \\ NDP \\ v4 \\ Full**.
 
-01. Zkontrolujte hodnotu **release** REG_DWORD a určete nainstalovanou verzi. Chcete-li být dopředné kompatibilní, zkontrolujte hodnotu větší nebo rovnou hodnotě uvedené v [tabulce verzí rozhraní .NET Framework](#version_table).
+01. Pokud chcete zjistit nainstalovanou verzi, zkontrolujte hodnotu REG_DWORD **verze** . Chcete-li být kompatibilní s přesměrováním, vyhledejte hodnotu větší nebo rovnou hodnotě uvedené v [tabulce verze .NET Framework](#version_table).
 
-Následující příklad zkontroluje hodnotu položky **release** v registru a vyhledá nainstalovanou verzi rozhraní .NET Framework 4.5 a novějších verzí:
+Následující příklad zkontroluje hodnotu položky **release** v registru, aby bylo možné najít .NET Framework 4,5 a novější verze, které jsou nainstalovány:
 
 [!code-csharp[ListVersions#5](../../../samples/snippets/csharp/framework/migration-guide/versions-installed3.cs)]
 [!code-vb[ListVersions#5](../../../samples/snippets/visualbasic/framework/migration-guide/versions-installed3.vb)]
 
-Tento příklad se řídí doporučeným postupem pro kontrolu verzí:
+Tento příklad se skládá z doporučené praxe pro kontrolu verzí:
 
-- Zkontroluje, zda je hodnota položky **Release** *větší nebo rovna* hodnotě známých klíčů vydání.
+- Kontroluje, zda je hodnota položky **verze** *větší než nebo rovna* hodnotě známých klíčů pro vydání.
 - Kontroluje v pořadí od nejnovější verze k nejstarší verzi.
 
-## <a name="detect-net-framework-10-through-40"></a>Rozpoznat rozhraní .NET Framework 1.0 až 4.0
+## <a name="detect-net-framework-10-through-40"></a>Detekovat .NET Framework 1,0 až 4,0
 
-Každá verze rozhraní .NET Framework od 1.1 do 4.0 je uvedena jako podklíč k **HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\NET Framework Setup\\NDP**. V následující tabulce je uvedena cesta ke každé verzi rozhraní .NET Framework. U většiny verzí je k **Install** dispozici hodnota `1` Instalace REG_DWORD, která označuje, že je nainstalována tato verze. V těchto podklíčích je také **hodnota Version** REG_SZ, která obsahuje řetězec verze.
+Každá verze .NET Framework od 1,1 do 4,0 je uvedena jako podklíč v **HKEY_LOCAL_MACHINE \\ softwaru \\ Microsoft \\ .NET Framework Setup \\ NDP**. Následující tabulka uvádí cestu ke každé verzi .NET Framework. Pro většinu verzí je k dispozici REG_DWORD hodnota pro **instalaci** , `1` která označuje, že je tato verze nainstalovaná. V těchto podklíčích je také REG_SZ hodnota **verze** , která obsahuje řetězec verze.
 
 > [!NOTE]
-> Podklíč **nastavení rozhraní NET Framework** v cestě registru *nezačíná* tečkou.
+> Podklíč **instalace rozhraní .NET Framework** v cestě registru *nezačíná tečkou* .
 
-| Verze architektury  | Podklíč registru | Hodnota |
+| Verze frameworku  | Podklíč registru | Hodnota |
 | ------------------ | --------------- | ----- |
-| 1.0                | **HKLM\\\\Software\\Microsoft . NETFramework\\\\Politika v1.0\\3705**     | **Instalace** REG_SZ rovná se`1` |
-| 1.1                | **HKLM\\\\Software\\Microsoft\\NET\\Framework Instalační ndp v1.1.4322**   | **Instalace** REG_DWORD rovná se`1` |
-| 2.0                | **HKLM\\\\Software\\Microsoft\\NET\\Framework Instalační ndp v2.0.50727**  | **Instalace** REG_DWORD rovná se`1` |
-| 3.0                | **HKLM\\\\Software\\Microsoft\\NET\\Framework Instalační\\ndp v3.0 Instalace** | **InstallSuccess** REG_DWORD rovná se`1` |
-| 3,5                | **HKLM\\\\Software\\Microsoft\\NET\\Framework Instalace NDP v3.5**        | **Instalace** REG_DWORD rovná se`1` |
-| 4.0 Profil klienta | **HKLM\\\\Software\\Microsoft\\NET\\Framework\\Instalační ndp v4 klienta**  | **Instalace** REG_DWORD rovná se`1` |
-| 4.0 Úplný profil   | **HKLM\\\\Software\\Microsoft\\NET\\Framework\\Instalace NDP v4 Úplné**    | **Instalace** REG_DWORD rovná se`1` |
+| 1.0                | **HKLM \\ software \\ Microsoft \\ . \\Zásady NETFramework \\ v 1.0 \\ 3705**     | **Nainstalovat** REG_SZ se rovná`1` |
+| 1.1                | **HKLM \\ software \\ Microsoft \\ .NET Framework Setup \\ NDP \\ v 1.1.4322**   | **Nainstalovat** REG_DWORD se rovná`1` |
+| 2.0                | **HKLM \\ software \\ Microsoft \\ NET Framework Setup \\ NDP \\ v 2.0.50727**  | **Nainstalovat** REG_DWORD se rovná`1` |
+| 3.0                | **HKLM \\ software \\ Microsoft \\ .NET Framework Setup \\ NDP \\ v 3.0 – \\ instalace** | **InstallSuccess** REG_DWORD se rovná`1` |
+| 3,5                | **HKLM \\ software \\ Microsoft \\ .NET Framework Setup \\ NDP \\ v 3.5**        | **Nainstalovat** REG_DWORD se rovná`1` |
+| Profil klienta 4,0 | **HKLM \\ software \\ Microsoft \\ .NET Framework Setup \\ NDP \\ v4 \\ Client**  | **Nainstalovat** REG_DWORD se rovná`1` |
+| úplný profil 4,0   | **HKLM \\ software \\ Microsoft \\ .NET Framework Setup \\ NDP \\ v4 \\ Full**    | **Nainstalovat** REG_DWORD se rovná`1` |
 
 > [!IMPORTANT]
-> Pokud je spuštěná aplikace 32bitová a spuštěná v 64bitovém systému Windows, budou cesty registru jiné, než bylo uvedeno dříve. 64bitový registr je k dispozici v podklíči **\\HKEY_LOCAL_MACHINE SOFTWARE\\Wow6432Node.\\ ** Podklíč registru pro rozhraní .NET Framework 3.5 je například **\\HKEY_LOCAL_MACHINE\\\\SOFTWARE\\Wow6432Node Microsoft NET Framework Setup\\\\NDP verze 3.5**.
+> Pokud aplikace, kterou používáte, je 32 a běží v 64 bitovém systému Windows, cesty registru se budou lišit od dříve uvedených. 64 registr je k dispozici v podklíči **HKEY_LOCAL_MACHINE \\ software \\ Wow6432Node \\ ** . Například podklíč registru pro .NET Framework 3,5 je **HKEY_LOCAL_MACHINE \\ software \\ Wow6432Node \\ Microsoft \\ NET Framework Setup \\ NDP \\ v 3.5**.
 
-Všimněte si, že cesta registru k podklíči rozhraní .NET Framework 1.0 se liší od ostatních.
+Všimněte si, že cesta k registru pro podklíč .NET Framework 1,0 se liší od ostatních.
 
-### <a name="use-registry-editor-older-framework-versions"></a>Použití Editoru registru (starší verze architektury)
+### <a name="use-registry-editor-older-framework-versions"></a>Použití Editoru registru (starší verze rozhraní)
 
-01. V nabídce **Start** zvolte **Spustit**, zadejte *regedit*a pak vyberte **OK**.
+01. V nabídce **Start** klikněte na příkaz **Spustit**, zadejte *příkaz regedit*a pak vyberte **OK**.
 
-    Chcete-li spustit regedit, musíte mít pověření pro správu.
+    Chcete-li spustit nástroj Regedit, musíte mít pověření správce.
 
-01. Otevřete podklíč, který odpovídá verzi, kterou chcete zkontrolovat. Použijte tabulku v části [Rozpoznat rozhraní .NET Framework 1.0 až 4.0.](#detect-net-framework-10-through-40)
+01. Otevřete podklíč, který odpovídá verzi, kterou chcete ověřit. Použijte tabulku v části [Detect .NET Framework 1,0 až 4,0](#detect-net-framework-10-through-40) .
 
-    Následující obrázek znázorňuje podklíč a jeho hodnotu **Version** pro rozhraní .NET Framework 3.5.
+    Následující obrázek ukazuje podklíč a hodnotu jeho **verze** .NET Framework 3,5.
 
-    ![Položka registru pro rozhraní .NET Framework 3.5.](./media/net-4-and-earlier.png "Rozhraní .NET Framework 3.5 a starší verze")
+    ![Položka registru pro .NET Framework 3,5.](./media/net-4-and-earlier.png ".NET Framework 3,5 a starší verze")
 
-### <a name="query-the-registry-using-code-older-framework-versions"></a>Dotaz registru pomocí kódu (starší verze architektury)
+### <a name="query-the-registry-using-code-older-framework-versions"></a>Dotazování registru pomocí kódu (starší verze rozhraní)
 
-Třídu <xref:Microsoft.Win32.RegistryKey?displayProperty=nameWithType> použijte pro přístup k **podklíči\\NDP HKEY_LOCAL_MACHINE SOFTWARE\\Microsoft\\NET Framework v\\** registru systému Windows.
+Použijte <xref:Microsoft.Win32.RegistryKey?displayProperty=nameWithType> třídu pro přístup k podklíči **HKEY_LOCAL_MACHINE \\ softwaru \\ Microsoft \\ .NET Framework Setup \\ NDP** v registru systému Windows.
 
 > [!IMPORTANT]
-> Pokud je spuštěná aplikace 32bitová a spuštěná v 64bitovém systému Windows, budou cesty registru jiné, než bylo uvedeno dříve. 64bitový registr je k dispozici v podklíči **\\HKEY_LOCAL_MACHINE SOFTWARE\\Wow6432Node.\\ ** Podklíč registru pro rozhraní .NET Framework 3.5 je například **\\HKEY_LOCAL_MACHINE\\\\SOFTWARE\\Wow6432Node Microsoft NET Framework Setup\\\\NDP verze 3.5**.
+> Pokud aplikace, kterou používáte, je 32 a běží v 64 bitovém systému Windows, cesty registru se budou lišit od dříve uvedených. 64 registr je k dispozici v podklíči **HKEY_LOCAL_MACHINE \\ software \\ Wow6432Node \\ ** . Například podklíč registru pro .NET Framework 3,5 je **HKEY_LOCAL_MACHINE \\ software \\ Wow6432Node \\ Microsoft \\ NET Framework Setup \\ NDP \\ v 3.5**.
 
-Následující příklad vyhledá nainstalované verze rozhraní .NET Framework 1 až 4:
+Následující příklad vyhledá .NET Framework 1 až 4 verze, které jsou nainstalovány:
 
 [!code-csharp[ListVersions](../../../samples/snippets/csharp/framework/migration-guide/versions-installed1.cs)]
 [!code-vb[ListVersions](../../../samples/snippets/visualbasic/framework/migration-guide/versions-installed1.vb)]
 
 ## <a name="find-clr-versions"></a>Najít verze CLR
 
-Rozhraní CLR rozhraní .NET Framework nainstalované s rozhraním .NET Framework je verzí samostatně. Existují dva způsoby, jak zjistit verzi rozhraní CLR rozhraní .NET Framework:
+Modul CLR .NET Framework nainstalovaný s .NET Framework má samostatnou verzi. Existují dva způsoby, jak zjistit verzi .NET Framework CLR:
 
-- **Nástroj Clrver.exe**
+- **Nástroj Clrver. exe**
 
-  Pomocí [nástroje CLR Version (Clrver.exe)](../tools/clrver-exe-clr-version-tool.md) určete, které verze clr jsou nainstalovány v počítači. Otevřete [příkazový řádek pro vývojáře pro Visual Studio](../tools/developer-command-prompt-for-vs.md) a zadejte `clrver`.
+  K určení, které verze modulu CLR jsou nainstalovány v počítači, použijte [Nástroj verze CLR (Clrver. exe)](../tools/clrver-exe-clr-version-tool.md) . Otevřete [Developer Command Prompt pro Visual Studio](../tools/developer-command-prompt-for-vs.md) a zadejte `clrver` .
 
   Ukázkový výstup:
 
@@ -185,24 +185,24 @@ Rozhraní CLR rozhraní .NET Framework nainstalované s rozhraním .NET Framewor
   v4.0.30319
   ```
 
-- **Třída `Environment`**
+- **`Environment`Třída**
 
   > [!IMPORTANT]
-  > Pro rozhraní .NET Framework 4.5 a novější <xref:System.Environment.Version%2A?displayProperty=nameWithType> verze nepoužívejte vlastnost ke zjištění verze CLR. Místo toho dotaz registru, jak je popsáno v [detect .NET Framework 4.5 a novější verze](#detect-net-framework-45-and-later-versions).
+  > U .NET Framework 4,5 a novějších verzí Nepoužívejte <xref:System.Environment.Version%2A?displayProperty=nameWithType> vlastnost k detekci verze modulu CLR. Místo toho proveďte dotaz na registr, jak je popsáno v tématu [detekce .NET Framework 4,5 a novějších verzí](#detect-net-framework-45-and-later-versions).
   
-  01. Dotaz <xref:System.Environment.Version?displayProperty=nameWithType> vlastnost načíst <xref:System.Version> objekt.
+  01. Dotaz na <xref:System.Environment.Version?displayProperty=nameWithType> vlastnost pro načtení <xref:System.Version> objektu.
   
-      Vrácený `System.Version` objekt identifikuje verzi modulu runtime, který aktuálně provádí kód. Nevrací verze sestavení nebo jiné verze runtime, které mohly být nainstalovány v počítači.
+      Vrácený `System.Version` objekt identifikuje verzi modulu runtime, který aktuálně spouští kód. Nevrací verze sestavení ani jiné verze modulu runtime, které mohou být nainstalovány v počítači.
   
-      Pro rozhraní .NET Framework verze 4, 4.5, 4.5.1 a 4.5.2 má řetězcová reprezentace vráceného <xref:System.Version> objektu formulář 4.0.30319. *xxxxx*, kde *xxxxx* je menší než 42000. Pro rozhraní .NET Framework 4.6 a novější verze má formulář 4.0.30319.42000.
+      Pro .NET Framework verze 4, 4,5, 4.5.1 a 4.5.2 má řetězcová reprezentace vráceného <xref:System.Version> objektu formu 4.0.30319.* xxxxx*, kde *xxxxx* je menší než 42000. U .NET Framework 4,6 a novějších verzí má formulář 4.0.30319.42000.
   
-  01. Po verzi **objektu,** dotaz ovat následujícím způsobem:
+  01. Jakmile budete mít objekt **verze** , proveďte dotazování následujícím způsobem:
   
-      - Pro hlavní identifikátor verze (například *4* pro verzi <xref:System.Version.Major%2A?displayProperty=nameWithType> 4.0) použijte vlastnost.
+      - Pro hlavní identifikátor vydaných verzí (například *4* pro verzi 4,0) použijte <xref:System.Version.Major%2A?displayProperty=nameWithType> vlastnost.
   
-      - Pro identifikátor dílčí verze (například *0* pro verzi <xref:System.Version.Minor%2A?displayProperty=nameWithType> 4.0) použijte vlastnost.
+      - V případě identifikátoru podverze (například *0* pro verzi 4,0) použijte <xref:System.Version.Minor%2A?displayProperty=nameWithType> vlastnost.
   
-      - Pro celý řetězec verze (například *4.0.30319.18010*) použijte metodu. <xref:System.Version.ToString%2A?displayProperty=nameWithType> Tato metoda vrátí jednu hodnotu, která odráží verzi modulu runtime, který je provádění kódu. Nevrací verze sestavení nebo jiné verze runtime, které mohou být nainstalovány v počítači.
+      - Pro celý řetězec verze (například *4.0.30319.18010*) použijte <xref:System.Version.ToString%2A?displayProperty=nameWithType> metodu. Tato metoda vrátí jednu hodnotu, která odráží verzi modulu runtime, který spouští kód. Nevrací verze sestavení ani jiné verze modulu runtime, které mohou být nainstalovány v počítači.
 
   Následující příklad používá <xref:System.Environment.Version%2A?displayProperty=nameWithType> vlastnost k načtení informací o verzi CLR:
   
@@ -211,6 +211,6 @@ Rozhraní CLR rozhraní .NET Framework nainstalované s rozhraním .NET Framewor
 
 ## <a name="see-also"></a>Viz také
 
-- [Postup: Určení nainstalovaných aktualizací rozhraní .NET Framework](how-to-determine-which-net-framework-updates-are-installed.md)
-- [Instalace rozhraní .NET Framework pro vývojáře](../install/guide-for-developers.md)
-- [Verze a závislosti rozhraní .NET Framework](versions-and-dependencies.md)
+- [Postupy: určení nainstalovaných aktualizací .NET Framework](how-to-determine-which-net-framework-updates-are-installed.md)
+- [Instalace .NET Framework pro vývojáře](../install/guide-for-developers.md)
+- [.NET Framework verze a závislosti](versions-and-dependencies.md)

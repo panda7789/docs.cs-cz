@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: 10093e3d-26b6-4ad7-8ef3-bbf66243fc02
 topic_type:
 - apiref
-ms.openlocfilehash: e9b32980a5606629676549905d3c9956633f25b0
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 70514464f27d6123a4de1d5800ed016a39541287
+ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79178692"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83207546"
 ---
 # <a name="icordebugobjectenumnext-method"></a>ICorDebugObjectEnum::Next – metoda
-Získá relativní virtuální adresy (RVAs) zadaného počtu objektů z výčtu, počínaje aktuální pozici.  
+Načte relativní virtuální adresy (RVA) zadaného počtu objektů z výčtu od aktuální pozice.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,21 +38,21 @@ HRESULT Next (
   
 ## <a name="parameters"></a>Parametry  
  `celt`  
- [v] Počet objektů, které mají být načteny.  
+ pro Počet objektů, které mají být načteny.  
   
  `objects`  
- [out] Pole ukazatelů, z nichž každý odkazuje na objekt CORDB_ADDRESS.  
+ mimo Pole ukazatelů, z nichž každý odkazuje na objekt CORDB_ADDRESS.  
   
  `pceltFetched`  
- [out] Ukazatel na počet objektů skutečně vrácena. Tato hodnota může `celt` být null, pokud je jeden.  
+ mimo Ukazatel na počet skutečně vrácených objektů. Tato hodnota může být null `celt` , pokud je jedna.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také

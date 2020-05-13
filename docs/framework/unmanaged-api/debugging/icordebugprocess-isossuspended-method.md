@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 83406cb2-5797-4402-872d-89c9516aefec
 topic_type:
 - apiref
-ms.openlocfilehash: 21da69d4bff0f17eb607dda45fb7dbafea8c59f7
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 9452f238bd84c9c185ca8e007acac563474d29df
+ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73128773"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83212058"
 ---
 # <a name="icordebugprocessisossuspended-method"></a>ICorDebugProcess::IsOSSuspended – metoda
 Získá hodnotu, která označuje, zda bylo zadané vlákno pozastaveno v důsledku zastavení tohoto procesu v rámci ladicího programu.  
@@ -38,18 +38,18 @@ HRESULT IsOSSuspended(
  pro ID daného vlákna.  
   
  `pbSuspended`  
- mimo Ukazatel na logickou hodnotu, která je `true`, pokud je zadané vlákno pozastaveno. v opačném případě *`pbSuspended` `false`.  
+ mimo Ukazatel na logickou hodnotu, která je `true` v případě pozastavení zadaného vlákna; v opačném případě * `pbSuspended` je `false` .  
   
 ## <a name="remarks"></a>Poznámky  
  Pokud bylo zadané vlákno pozastaveno v důsledku zastavení tohoto procesu ladicím programem, je počet pozastavených vláken v systému Win32 zvýšen o jednu. Uživatelské rozhraní (UI) ladicího programu může chtít tyto informace vzít v úvahu, pokud zobrazuje počet pozastavených vláken v operačním systému na uživatele.  
   
- Metoda `IsOSSuspended` dává smysl pouze v kontextu nespravovaného ladění. Během spravovaného ladění jsou vlákna v pozastaveném operačním systému spíše pozastavena.  
+ `IsOSSuspended`Metoda dává smysl pouze v kontextu nespravovaného ladění. Během spravovaného ladění jsou vlákna v pozastaveném operačním systému spíše pozastavena.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** CorDebug. idl, CorDebug. h  
   
  **Knihovna:** CorGuids. lib  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]
+ **Verze .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]

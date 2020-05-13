@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: ffd0f708-0d21-4fae-a395-63b6c45828fa
 topic_type:
 - apiref
-ms.openlocfilehash: 64304b671532325bdc2f8841a2702d537d143330
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 5d7e83c6aa494f2363698d0220bbfe724b54e612
+ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73124040"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83209432"
 ---
 # <a name="icordebugfunctioncreatebreakpoint-method"></a>ICorDebugFunction::CreateBreakpoint – metoda
 Vytvoří zarážku na začátku této funkce.  
@@ -38,10 +38,10 @@ HRESULT CreateBreakpoint (
  mimo Ukazatel na adresu objektu ICorDebugFunctionBreakpoint, který představuje novou zarážku funkce.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** CorDebug. idl, CorDebug. h  
   
  **Knihovna:** CorGuids. lib  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]
+ **Verze .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]
