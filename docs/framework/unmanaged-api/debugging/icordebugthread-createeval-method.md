@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 36605067-33d3-4579-9c72-fb0e551ab0f1
 topic_type:
 - apiref
-ms.openlocfilehash: 0c622e0eba27f501446d2b7d9d264ee0834e869c
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: f66ef88646c314502dcb610cec8ce822cab1fca2
+ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73133619"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83379286"
 ---
 # <a name="icordebugthreadcreateeval-method"></a>ICorDebugThread::CreateEval – metoda
 Vytvoří objekt ICorDebugEval, který shromažďuje a zpřístupňuje funkce tohoto ICorDebugThread.  
@@ -41,10 +41,10 @@ HRESULT CreateEval (
  Objekt vyhodnocení před provedením výpočtu napředá do vlákna nový řetěz. Tím se přeruší výpočet, který se právě provádí ve vlákně, dokud se nedokončí vyhodnocení.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** CorDebug. idl, CorDebug. h  
   
  **Knihovna:** CorGuids. lib  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]
+ **Verze .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]

@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 172ef8c4-2ead-4cfc-bd2e-dee4fb7191cd
 topic_type:
 - apiref
-ms.openlocfilehash: 33219d9a67379244e23da49c13617a4c4a2fa66d
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 16aafa439fc81c3606f98ca2ba860316ec46e0db
+ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73133455"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83379741"
 ---
 # <a name="icordebugthreadgethandle-method"></a>ICorDebugThread::GetHandle – metoda
 Získá aktuální popisovač pro aktivní část tohoto ICorDebugThread.  
@@ -43,10 +43,10 @@ HRESULT GetHandle (
  Tento popisovač je vlastněn rozhraním API pro ladění. Ladicí program by ho měl před použitím duplikovat.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** CorDebug. idl, CorDebug. h  
   
  **Knihovna:** CorGuids. lib  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]
+ **Verze .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]

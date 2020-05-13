@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 4083b505-5b59-44fb-8c5d-129db6a96c10
 topic_type:
 - apiref
-ms.openlocfilehash: 89576e2b3d5fb4df0cccfdd28c80a5cb67331597
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.openlocfilehash: 5f80125a67e634dda05b9427b5f46db8f21b29f8
+ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76791889"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83379204"
 ---
 # <a name="icordebugstackwalkgetframe-method"></a>ICorDebugStackWalk::GetFrame – metoda
 Načte aktuální rámec v objektu [ICorDebugStackWalk](icordebugstackwalk-interface.md) .  
@@ -43,25 +43,25 @@ HRESULT GetFrame([out] ICorDebugFrame ** pFrame);
 |S_OK|Modul runtime úspěšně vrátil aktuální rámec.|  
 |E_FAIL|Aktuální rámec nebyl vrácen.|  
 |S_FALSE|Aktuální rámec je nativní rámec zásobníku.|  
-|E_INVALIDARG|`pFrame` je null.|  
+|E_INVALIDARG|`pFrame`má hodnotu null.|  
 |CORDBG_E_PAST_END_OF_STACK|Ukazatel na rámec je již na konci zásobníku; Proto nelze mít k dispozici žádné další snímky.|  
   
 ## <a name="exceptions"></a>Výjimky  
   
 ## <a name="remarks"></a>Poznámky  
- `ICorDebugStackWalk` vrátí pouze skutečné rámce zásobníku. K vrácení vnitřních rámců použijte metodu [ICorDebugThread3:: GetActiveInternalFrames –](icordebugthread3-getactiveinternalframes-method.md) . (Interní snímky jsou datové struktury vložené do zásobníku modulem runtime k ukládání dočasných dat.)  
+ `ICorDebugStackWalk`Vrátí pouze skutečné rámce zásobníku. K vrácení vnitřních rámců použijte metodu [ICorDebugThread3:: GetActiveInternalFrames –](icordebugthread3-getactiveinternalframes-method.md) . (Interní snímky jsou datové struktury vložené do zásobníku modulem runtime k ukládání dočasných dat.)  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** CorDebug. idl, CorDebug. h  
   
  **Knihovna:** CorGuids. lib  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [ICorDebugStackWalk – rozhraní](icordebugstackwalk-interface.md)
-- [Rozhraní pro ladění](debugging-interfaces.md)
+- [Debugging – rozhraní](debugging-interfaces.md)
 - [Ladění](index.md)

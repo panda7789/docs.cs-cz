@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: b0df5c5d-9a2e-47bf-894c-6f8a9fe24a1f
 topic_type:
 - apiref
-ms.openlocfilehash: b78bff2994cefc6c35a4bd59133338392c3a1b24
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.openlocfilehash: b95e9f3a0d584511a2bcf156ed2c50a98f96d071
+ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76791977"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83379063"
 ---
 # <a name="icordebugremotedebugactiveprocessex-method"></a>ICorDebugRemote::DebugActiveProcessEx – metoda
 Spustí proces na vzdáleném počítači v rámci ladicího programu.  
@@ -44,7 +44,7 @@ HRESULT DebugActiveProcessEx (
  pro ID procesu, ke kterému má být připojen ladicí program.  
   
  `win32Attach`  
- [in] `true`, jestli se má ladicí program chovat jako ladicí program Win32 pro proces a odeslání nespravovaných zpětných volání; v opačném případě `false`.  
+ [in] `true` Pokud se má ladicí program chovat jako ladicí program Win32 pro proces a odeslání nespravovaných zpětných volání; v opačném případě `false` .  
   
  `ppProcess`  
  mimo Ukazatel na adresu objektu "ICorDebugProcess", který představuje proces, ke kterému byl připojen ladicí program.  
@@ -60,7 +60,7 @@ HRESULT DebugActiveProcessEx (
  Ladění ve smíšeném režimu není v Silverlightu podporované.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** CorDebug. idl, CorDebug. h  
   
@@ -68,9 +68,9 @@ HRESULT DebugActiveProcessEx (
   
  **Verze .NET Framework:** 4,5, 4, 3,5 SP1  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [ICorDebugRemote – rozhraní](icordebugremote-interface.md)
 - [ICorDebug – rozhraní](icordebug-interface.md)
 
-- [Rozhraní pro ladění](debugging-interfaces.md)
+- [Debugging – rozhraní](debugging-interfaces.md)

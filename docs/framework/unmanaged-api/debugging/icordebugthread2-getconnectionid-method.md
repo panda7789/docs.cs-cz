@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 9c76b587-f941-4fa1-8b86-f3494fb10c8e
 topic_type:
 - apiref
-ms.openlocfilehash: a81842132769934a6f5f34e6dc462bba77b3854a
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: c630daa50d465622c421381ac080eaa8d9d8d01d
+ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73138688"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83379079"
 ---
 # <a name="icordebugthread2getconnectionid-method"></a>ICorDebugThread2::GetConnectionID – metoda
 Získá identifikátor připojení pro tento objekt ICorDebugThread2.  
@@ -35,18 +35,18 @@ HRESULT GetConnectionID (
   
 ## <a name="parameters"></a>Parametry  
  `pdwConnectionId`  
- mimo `CONNID`, který představuje identifikátor připojení.  
+ mimo `CONNID`Který představuje identifikátor připojení.  
   
 ## <a name="remarks"></a>Poznámky  
- Metoda `GetConnectionID` vrátí nulu v parametru `pdwConnectionId`, pokud toto vlákno není součástí připojení.  
+ `GetConnectionID`Metoda vrátí nulu v `pdwConnectionId` parametru, pokud toto vlákno není součástí připojení.  
   
- Pokud je toto vlákno připojeno k instanci Microsoft SQL Server 2005 Analysis Services (SSAS), `CONNID` se mapuje na identifikátor procesu serveru (SPID).  
+ Pokud je toto vlákno připojeno k instanci Microsoft SQL Server 2005 Analysis Services (SSAS), `CONNID` mapuje se na identifikátor procesu serveru (SPID).  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** CorDebug. idl, CorDebug. h  
   
  **Knihovna:** CorGuids. lib  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]
+ **Verze .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]

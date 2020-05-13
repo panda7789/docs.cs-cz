@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: bac0b156-31a3-4e7f-be4d-ab21789c81f1
 topic_type:
 - apiref
-ms.openlocfilehash: 23ad8882ad97e5ceaeb690dfae08a6be55b85f64
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.openlocfilehash: 896e797acc76e8d8034bd964e488317a62eed97b
+ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76791855"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83378778"
 ---
 # <a name="icordebugstackwalksetcontext-method"></a>ICorDebugStackWalk::SetContext – metoda
 Nastaví aktuální kontext objektu [ICorDebugStackWalk](icordebugstackwalk-interface.md) na platný kontext vlákna.  
@@ -38,20 +38,20 @@ HRESULT SetContext([in] CorDebugSetContextFlag flag,
  pro Příznak [CorDebugSetContextFlag –](cordebugsetcontextflag-enumeration.md) , který označuje, zda je kontext z aktivního rámce v zásobníku, nebo kontext získaný odvinutím zásobníku.  
   
  `contextSize`  
- pro Přidělená velikost vyrovnávací paměti `CONTEXT`.  
+ pro Přidělená velikost `CONTEXT` vyrovnávací paměti.  
   
  `context`  
- pro Vyrovnávací paměť `CONTEXT`.  
+ pro `CONTEXT`Vyrovnávací paměť.  
   
 ## <a name="return-value"></a>Návratová hodnota  
  Tato metoda vrací následující konkrétní hodnoty HRESULT a také chyby HRESULT, které naznačují selhání metody.  
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
-|S_OK|Kontext objektu `ICorDebugStackWalk` byl úspěšně nastaven.|  
-|E_FAIL|Kontext `ICorDebugStackWalk`ho objektu nebyl nastaven.|  
+|S_OK|`ICorDebugStackWalk`Kontext objektu byl úspěšně nastaven.|  
+|E_FAIL|`ICorDebugStackWalk`Kontext objektu nebyl nastaven.|  
 |E_INVALIDARG|Kontext má hodnotu null.|  
-|HRESULT_FROM_WIN32(ERROR_INSUFFICIENT_BUFFER)|Kontextová vyrovnávací paměť je příliš malá.|  
+|HRESULT_FROM_WIN32 (ERROR_INSUFFICIENT_BUFFER)|Kontextová vyrovnávací paměť je příliš malá.|  
   
 ## <a name="exceptions"></a>Výjimky  
   
@@ -63,15 +63,15 @@ HRESULT SetContext([in] CorDebugSetContextFlag flag,
  Přesnou bitovou kopii tohoto kontextu lze načíst ihned voláním metody [ICorDebugStackWalk:: GetContext](icordebugstackwalk-getcontext-method.md) .  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** CorDebug. idl, CorDebug. h  
   
  **Knihovna:** CorGuids. lib  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Rozhraní pro ladění](debugging-interfaces.md)
+- [Debugging – rozhraní](debugging-interfaces.md)
 - [Ladění](index.md)

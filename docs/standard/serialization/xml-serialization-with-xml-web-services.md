@@ -1,5 +1,6 @@
 ---
 title: Serializace XML pomocí webových služeb XML
+description: Přečtěte si o serializaci XML jako transportní mechanismus, který se používá v architektuře webových služeb XML. Serializace XML je prováděna třídou XmlSerializer.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -17,12 +18,12 @@ helpviewer_keywords:
 - literal XML serialization
 - serialization, attributes
 ms.assetid: a416192f-8102-458e-bc0a-0b8f3f784da9
-ms.openlocfilehash: 2301f30a55e136b9a75a414d9325e4cf71c161da
-ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
+ms.openlocfilehash: d15bf884640707cd2bd113422c837480ad73a74f
+ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "78159530"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83377258"
 ---
 # <a name="xml-serialization-with-xml-web-services"></a>Serializace XML pomocí webových služeb XML
 Serializace XML je základní přenos mechanismus použít v architektuře XML webových služeb, prováděné <xref:System.Xml.Serialization.XmlSerializer> třídy. Chcete-li řídit XML vygenerované webovou službou XML, můžete použít atributy uvedené v obou [atributech, které řídí serializaci XML](../../../docs/standard/serialization/attributes-that-control-xml-serialization.md) a [atributy, které řídí kódované serializace protokolu SOAP](../../../docs/standard/serialization/attributes-that-control-encoded-soap-serialization.md) na třídy, vracet hodnoty, parametry a pole souboru používaného k vytvoření webové služby XML (. asmx). Další informace o vytvoření webové služby XML naleznete v tématu [webové služby XML pomocí ASP.NET](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ba0z6a33(v=vs.100)).  
@@ -31,7 +32,7 @@ Serializace XML je základní přenos mechanismus použít v architektuře XML w
  KÓD XML generovaný webovou službou XML lze naformátovat jedním ze dvou způsobů, buď literálů, nebo kódovaných, jak je vysvětleno v tématu [Přizpůsobení formátování zpráv SOAP](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/dkwy2d72(v=vs.100)). Proto existují dvě sady atributů, které řídí serializace XML. Atributy uvedené v [atributech, které řídí serializace XML,](../../../docs/standard/serialization/attributes-that-control-xml-serialization.md) jsou navrženy pro řízení literálového stylu XML. Atributy uvedené v [atributech, které ovládají ovládací prvek kódované serializaci protokolu SOAP](../../../docs/standard/serialization/attributes-that-control-encoded-soap-serialization.md) , mají kódovaný styl. Použitím selektivní tyto atributy, můžete přizpůsobit aplikace má být vrácena, obojím stylů. Kromě toho tyto atributy lze použít (v závislosti) má být vrácen hodnoty a parametry.  
   
 ### <a name="example-of-using-both-styles"></a>Příklad použití obou stylů  
- Při vytváření webové služby XML, můžete použít obě sady atributů pro metody. V následujícím příkladu kódu s názvem třídy `MyService` obsahuje dvě metody webové služby XML, `MyLiteralMethod` a `MyEncodedMethod`. Obě metody provádět má stejnou funkci: vrací instanci `Order` třídy. `Order` Ve <xref:System.Xml.Serialization.XmlTypeAttribute> třídě jsou <xref:System.Xml.Serialization.SoapTypeAttribute> oba atributy aplikovány na `OrderID` pole a oba atributy mají svou `ElementName` vlastnost nastavenou na jiné hodnoty.  
+ Při vytváření webové služby XML, můžete použít obě sady atributů pro metody. V následujícím příkladu kódu s názvem třídy `MyService` obsahuje dvě metody webové služby XML, `MyLiteralMethod` a `MyEncodedMethod`. Obě metody provádět má stejnou funkci: vrací instanci `Order` třídy. Ve `Order` třídě <xref:System.Xml.Serialization.XmlTypeAttribute> <xref:System.Xml.Serialization.SoapTypeAttribute> jsou oba atributy aplikovány na `OrderID` pole a oba atributy mají svou `ElementName` vlastnost nastavenou na jiné hodnoty.  
   
  Chcete-li spustit příklad, vložte kód do soubor s příponou .asmx a umístění souboru do virtuálního adresáře spravované Internet Information Services (IIS). Z prohlížeče, HTML, jako je například Internet Explorer zadejte název počítače, virtuální adresář a soubor.  
   

@@ -1,5 +1,6 @@
 ---
 title: Serializace – .NET
+description: Tento článek obsahuje informace o technologiích serializace .NET, včetně binární serializace, XML a serializace SOAP a serializace JSON.
 ms.date: 09/02/2019
 helpviewer_keywords:
 - JSON serialization
@@ -9,12 +10,12 @@ helpviewer_keywords:
 - serialization
 - objects, serializing
 ms.assetid: 4d1111c0-9447-4231-a997-96a2b74b3453
-ms.openlocfilehash: e6db24326c79ab6509b253c45c27f87a2aacd73c
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: b3d76c14dc9180a5f19781122d1a42bcae603e76
+ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71053351"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83377245"
 ---
 # <a name="serialization-in-net"></a>Serializace v .NET
 

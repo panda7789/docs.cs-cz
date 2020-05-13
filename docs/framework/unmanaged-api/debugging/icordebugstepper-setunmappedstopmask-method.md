@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: b1211981-e90c-4e05-8def-fa18d85ad9ab
 topic_type:
 - apiref
-ms.openlocfilehash: ff393b119c349e34898b781c3185cc82f2dba11f
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: ef458fda8e8b7e75f92a4b3c06eabec106180d23
+ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73137556"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83379250"
 ---
 # <a name="icordebugsteppersetunmappedstopmask-method"></a>ICorDebugStepper::SetUnmappedStopMask – metoda
 Nastaví hodnotu, která určuje typ nemapovaného kódu, ve kterém se spuštění zastaví.  
@@ -45,10 +45,10 @@ HRESULT SetUnmappedStopMask (
  Pokud ladicí program nepoužívá stepper k zadání metody, pak nebude nutně Krokovat s nemapovaným kódem.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** CorDebug. idl, CorDebug. h  
   
  **Knihovna:** CorGuids. lib  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]
+ **Verze .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]

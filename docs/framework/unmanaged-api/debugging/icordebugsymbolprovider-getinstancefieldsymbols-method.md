@@ -2,12 +2,12 @@
 title: 'ICorDebugSymbolProvider:: GetInstanceFieldSymbols – metoda'
 ms.date: 03/30/2017
 ms.assetid: a29b9233-ee67-4b53-b8bc-c00b281e7edb
-ms.openlocfilehash: 9c55ce4d36681e173047cfb51515a74899c5a9fe
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.openlocfilehash: 9ecc61ed6cac73a519f33e00cbfbfecc20ac2ebe
+ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76791637"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83379631"
 ---
 # <a name="icordebugsymbolprovidergetinstancefieldsymbols-method"></a>ICorDebugSymbolProvider:: GetInstanceFieldSymbols – metoda
 Načte symboly pole instance, které odpovídají token TypeSpec podpisu.  
@@ -26,10 +26,10 @@ HRESULT GetInstanceFieldSymbols(
   
 ## <a name="parameters"></a>Parametry  
  `cbSignature`  
- pro Počet bajtů v poli `typeSig`.  
+ pro Počet bajtů v `typeSig` poli.  
   
  `typeSig`  
- pro Bajtové pole obsahující podpis `typespec`.  
+ pro Bajtové pole obsahující `typespec` podpis.  
   
  `cRequestedSymbols`  
  pro Počet požadovaných symbolů.  
@@ -46,16 +46,16 @@ HRESULT GetInstanceFieldSymbols(
 > Tato metoda je k dispozici pouze s .NET Native.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** CorDebug. idl, CorDebug. h  
   
  **Knihovna:** CorGuids. lib  
   
- **Verze .NET Framework:** [!INCLUDE[net_46_native](../../../../includes/net-46-native-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_46_native](../../../../includes/net-46-native-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [GetStaticFieldSymbols – metoda](icordebugsymbolprovider-getstaticfieldsymbols-method.md)
 - [ICorDebugSymbolProvider – rozhraní](icordebugsymbolprovider-interface.md)
-- [Rozhraní pro ladění](debugging-interfaces.md)
+- [Debugging – rozhraní](debugging-interfaces.md)

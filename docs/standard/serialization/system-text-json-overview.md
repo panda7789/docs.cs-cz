@@ -1,5 +1,6 @@
 ---
 title: Serializace a deserializace JSON pomocí C#-.NET
+description: Tento přehled popisuje System.Text.Json funkce oboru názvů pro serializaci a deserializaci z formátu JSON v rozhraní .NET.
 ms.date: 01/10/2020
 no-loc:
 - System.Text.Json
@@ -9,16 +10,16 @@ helpviewer_keywords:
 - serializing objects
 - serialization
 - objects, serializing
-ms.openlocfilehash: 660a2831aa6a807486fc47eae880bcd11347c547
-ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
+ms.openlocfilehash: 909d979d46b30939e304af071de65d230febd92d
+ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "78159543"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83380129"
 ---
 # <a name="json-serialization-and-deserialization-marshalling-and-unmarshalling-in-net---overview"></a>Serializace a deserializace JSON (zařazení a zrušení zařazení) v .NET – přehled
 
-`System.Text.Json` Obor názvů poskytuje funkce pro serializaci a deserializaci z JavaScript Object Notation (JSON).
+`System.Text.Json`Obor názvů poskytuje funkce pro serializaci a deserializaci z JavaScript Object Notation (JSON).
 
 Návrh knihovny zvýrazňuje vysoký výkon a nedostatečné přidělení paměti nad rozsáhlou sadu funkcí. Integrovaná podpora UTF-8 optimalizuje proces čtení a zápisu textu JSON kódovaného jako UTF-8, což je nejbezpečnější kódování dat na webu a soubory na disku.
 
@@ -27,7 +28,7 @@ Knihovna také poskytuje třídy pro práci s modelem objektů dokumentů v pam�
 ## <a name="how-to-get-the-library"></a>Jak získat knihovnu
 
 * Knihovna je integrovaná jako součást sdíleného rozhraní [.NET Core 3,0](https://aka.ms/netcore3download) .
-* Pro jiná cílová rozhraní nainstalujte balíček [System.Text.Json](https://www.nuget.org/packages/System.Text.Json) NuGet. Balíček podporuje:
+* Pro jiná cílová rozhraní nainstalujte [System.Text.Json](https://www.nuget.org/packages/System.Text.Json) balíček NuGet. Balíček podporuje:
   * .NET Standard 2,0 a novější verze
   * .NET Framework 4.7.2 a novější verze
   * .NET Core 2,0, 2,1 a 2,2

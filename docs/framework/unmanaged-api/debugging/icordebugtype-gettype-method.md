@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: d6e64534-4d47-4ad0-a340-7590e07e2b4a
 topic_type:
 - apiref
-ms.openlocfilehash: 25ffbf73fbefbb3c584450283c3080dfc11ee598
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.openlocfilehash: ac42c6254182ea775377a448a54d527b234c97dc
+ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76791242"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83379929"
 ---
 # <a name="icordebugtypegettype-method"></a>ICorDebugType::GetType – metoda
 Získá hodnotu CorElementType –, která popisuje nativní typ modulu CLR (Common Language Runtime) <xref:System.Type> reprezentovaného tímto ICorDebugType.  
@@ -35,16 +35,16 @@ HRESULT GetType (
   
 ## <a name="parameters"></a>Parametry  
  `ty`  
- mimo Ukazatel na hodnotu výčtu `CorElementType`, která označuje CLR <xref:System.Type>, který tento `ICorDebugType` představuje.  
+ mimo Ukazatel na hodnotu `CorElementType` výčtu, která označuje CLR <xref:System.Type> , který `ICorDebugType` představuje.  
   
 ## <a name="remarks"></a>Poznámky  
- Pokud je hodnota `ty` buď ELEMENT_TYPE_CLASS nebo ELEMENT_TYPE_VALUETYPE, může být volána metoda [ICorDebugType:: GetClass](icordebugtype-getclass-method.md) pro získání typu bez instance pro obecný typ; v opačném případě Nevolejte `ICorDebugType::GetClass`.  
+ Pokud `ty` je hodnota buď ELEMENT_TYPE_CLASS nebo ELEMENT_TYPE_VALUETYPE, může být volána metoda [ICorDebugType:: GetClass](icordebugtype-getclass-method.md) pro získání nevytvořeného typu pro obecný typ. v opačném případě Nevolejte `ICorDebugType::GetClass` .  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** CorDebug. idl, CorDebug. h  
   
  **Knihovna:** CorGuids. lib  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]
+ **Verze .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]

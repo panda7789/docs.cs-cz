@@ -1,31 +1,32 @@
 ---
 title: Přátelská sestavení
+description: Sestavení typu Friend je sestavení .NET, které má přístup k interním typům (C#) nebo typu Friend (Visual Basic) jiného sestavení a členům.
 ms.date: 08/20/2019
 ms.assetid: b65ea7de-0801-477a-a39c-e914c2cc107c
 dev_langs:
 - csharp
 - vb
-ms.openlocfilehash: a74d4b74ead8492028a092e090f9281231802a87
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 105621da2bd418c6294fa2bbec474809599cb6a5
+ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "74348166"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83378937"
 ---
 # <a name="friend-assemblies"></a>Přátelská sestavení
 
-Sestavení *přítele* je sestavení, které může přistupovat k typům a členům [jiného](../../csharp/language-reference/keywords/internal.md) sestavení interní (C#) nebo [Friend](../../visual-basic/language-reference/modifiers/friend.md) (Visual Basic). Pokud identifikujete sestavení jako sestavení přítele, již není třeba označovat typy a členy jako veřejné, aby k nim měly přístup jiná sestavení. To je zvláště výhodné v následujících scénářích:
+*Sestavení typu Friend* je sestavení, které má přístup k [interním](../../csharp/language-reference/keywords/internal.md) typům (C#) nebo [Friend](../../visual-basic/language-reference/modifiers/friend.md) (Visual Basic) jiných sestavení. Pokud identifikujete sestavení jako sestavení typu Friend, již není nutné označit typy a členy jako veřejné, aby byly přístupné z jiných sestavení. To je zvlášť užitečné v následujících scénářích:
 
-- Během testování částí při spuštění testovacího kódu v samostatném sestavení, ale vyžaduje `internal` přístup k `Friend` členům v testovaném sestavení, které jsou označeny jako v jazyce C# nebo v jazyce Visual Basic.
+- Při testování částí, při spuštění testovacího kódu v samostatném sestavení, ale vyžaduje přístup ke členům v testovaném sestavení, které jsou označeny jako `internal` v jazyce C# nebo `Friend` v Visual Basic.
 
-- Při vývoji knihovny tříd a dodatky do knihovny jsou obsaženy v samostatných sestaveních, `internal` ale vyžadují `Friend` přístup k členům v existujících sestaveních, které jsou označeny jako c# nebo v jazyce Visual Basic.
+- Při vývoji knihovny tříd a přidání do knihovny jsou obsaženy v samostatných sestaveních, ale vyžadují přístup ke členům v existujících sestaveních, která jsou označena jako `internal` v jazyce C# nebo `Friend` v Visual Basic.
 
 ## <a name="remarks"></a>Poznámky
 
-<xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> Atribut můžete použít k identifikaci jednoho nebo více sestavení přátel pro dané sestavení. Následující příklad používá <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> atribut v *sestavení A* a určuje sestavení *AssemblyB* jako sestavení friend. To poskytuje *assemblyb* přístup ke všem typům a `internal` členům v `Friend` *sestavení A,* které jsou označeny jako v jazyce C# nebo v jazyce Visual Basic.
+Atribut můžete použít <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> k identifikaci jednoho nebo více sestavení typu Friend pro dané sestavení. Následující příklad používá <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> atribut v *sestavení a* a určuje sestavení *AssemblyB* jako sestavení typu Friend. To dává sestavení *AssemblyB* přístup ke všem typům a členům v *sestavení a* , které jsou označeny jako `internal` v jazyce C# nebo `Friend` v Visual Basic.
 
 > [!NOTE]
-> Při kompilaci sestavení, jako je *AssemblyB,* který bude přistupovat k interní typy nebo interní členy jiného sestavení, jako *je sestavení A*, je nutné explicitně zadat název výstupního souboru (*.exe* nebo *.dll*) pomocí možnosti kompilátoru **-out.** To je nutné, protože kompilátor ještě nevygeneroval název sestavení, které vytváří v době, kdy je vazby na externí odkazy. Další informace naleznete [v tématu -out (C#)](../../csharp/language-reference/compiler-options/out-compiler-option.md) nebo [-out (Visual Basic)](../../visual-basic/reference/command-line-compiler/out.md).
+> Při kompilaci sestavení, jako je *AssemblyB* , který bude přistupovat k interním typům nebo interním členům jiného sestavení, jako je *sestavení A*, je nutné explicitně zadat název výstupního souboru (*. exe* nebo *. dll*) pomocí možnosti kompilátoru **-out** . To je nutné, protože kompilátor ještě negeneroval název sestavení, který sestaví, v době, kdy je svázán s externími odkazy. Další informace naleznete v tématu [-out (C#)](../../csharp/language-reference/compiler-options/out-compiler-option.md) nebo [-out (Visual Basic)](../../visual-basic/reference/command-line-compiler/out.md).
 
 ```csharp
 using System.Runtime.CompilerServices;
@@ -72,34 +73,34 @@ Public Class ClassWithFriendMethod
 End Class
 ```
 
-Pouze sestavení, která explicitně zadáte `internal` jako přátelé `Friend` přístup (C#) nebo (Visual Basic) typy a členy. Například pokud *AssemblyB* je přítelem *sestavení A* a sestavení *C* odkazy *AssemblyB* `internal` , sestavení *C* nemá přístup k (C#) nebo `Friend` (Visual Basic) typy v sestavení *A*.
+Pouze sestavení, která explicitně zadáte jako přátelé, mohou přistupovat k `internal` `Friend` typům a členům (C#) nebo (Visual Basic). Například pokud je *AssemblyB* přítele *sestavení* a a *sestavení C* odkazuje *AssemblyB*, *sestavení c* nemá přístup k `internal` typům (C#) nebo `Friend` (Visual Basic) v *sestavení a*.
 
-Kompilátor provádí některé základní ověření názvu sestavení <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> friend předané atributu. Pokud *sestavení A* deklaruje *AssemblyB* jako sestavení přítele, ověřovací pravidla jsou následující:
+Kompilátor provede základní ověření názvu sestavení typu Friend předaného <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> atributu. Pokud *sestavení A* deklaruje *AssemblyB* jako sestavení typu Friend, ověřovací pravidla jsou následující:
 
-- Pokud *sestavení A* je silný pojmenovaný, *AssemblyB* musí být také silný pojmenovaný. Název sestavení friend, který je předán atributu, se musí skládat z názvu sestavení a veřejného klíče klíče silného názvu, který se používá k podpisu *AssemblyB*.
+- Pokud je *sestavení A* silně pojmenované, *AssemblyB* musí také mít silný název. Název sestavení typu Friend, který je předán atributu, musí obsahovat název sestavení a veřejný klíč klíče silného názvu, který se používá k podepsání *AssemblyB*.
 
-     Název sestavení friend, který <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> je předán atributu, nemůže být silným názvem *AssemblyB*. Nezahrnejte verzi sestavení, jazykovou verzi, architekturu nebo token veřejného klíče.
+     Název sestavení typu Friend, který je předán <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> atributu, nemůže být silným názvem *AssemblyB*. Nezahrnujte verze sestavení, jazykovou verzi, architekturu nebo token veřejného klíče.
 
-- Pokud *sestavení A* není silný pojmenovaný, název sestavení přítele by se měl skládat pouze z názvu sestavení. Další informace naleznete v [tématu Postup: Vytvoření nepodepsaných sestavení přátel](create-unsigned-friend.md).
+- Pokud *sestavení A* není silného názvu, název sestavení typu Friend by měl obsahovat pouze název sestavení. Další informace naleznete v tématu [Postupy: vytváření nepodepsaných přátelských sestavení](create-unsigned-friend.md).
 
-- Pokud je silnou s názvem *AssemblyB,* musíte zadat klíč silného názvu pro `/keyfile` *AssemblyB* pomocí nastavení projektu nebo možnosti kompilátoru příkazového řádku. Další informace naleznete v [tématu Postup: Vytvoření podepsaných sestavení přátel](create-signed-friend.md).
+- Pokud je *AssemblyB* silným názvem, je nutné zadat klíč silného názvu pro *AssemblyB* pomocí nastavení projektu nebo možnosti kompilátoru příkazového řádku `/keyfile` . Další informace naleznete v tématu [Postupy: vytvoření podepsaných sestavení typu Friend](create-signed-friend.md).
 
- Třída <xref:System.Security.Permissions.StrongNameIdentityPermission> také poskytuje možnost sdílet typy, s následujícími rozdíly:
+ <xref:System.Security.Permissions.StrongNameIdentityPermission>Třída také poskytuje možnost sdílet typy s následujícími rozdíly:
 
-- <xref:System.Security.Permissions.StrongNameIdentityPermission>platí pro individuální typ, zatímco sestava přítele se vztahuje na celou sestavu.
+- <xref:System.Security.Permissions.StrongNameIdentityPermission>platí pro individuální typ, zatímco sestavení typu Friend se vztahuje na celé sestavení.
 
-- Pokud existují stovky typů v *sestavení A,* které chcete sdílet s <xref:System.Security.Permissions.StrongNameIdentityPermission> *AssemblyB*, budete muset přidat ke všem z nich. Pokud používáte sestavení přítele, stačí deklarovat vztah přítele jednou.
+- Pokud existují stovky typů v *sestavení A* , které chcete sdílet s *AssemblyB*, musíte je přidat <xref:System.Security.Permissions.StrongNameIdentityPermission> do všech. Použijete-li sestavení typu Friend, stačí pouze deklarovat relaci typu Friend.
 
-- Pokud používáte <xref:System.Security.Permissions.StrongNameIdentityPermission>, typy, které chcete sdílet, musí být deklarovány jako veřejné. Pokud používáte sestavení přítele, sdílené typy `internal` jsou deklarovány jako (C#) nebo `Friend` (Visual Basic).
+- Pokud používáte <xref:System.Security.Permissions.StrongNameIdentityPermission> , musí být typy, které chcete sdílet, deklarovány jako veřejné. Pokud používáte sestavení typu Friend, sdílené typy jsou deklarovány jako `internal` (C#) nebo `Friend` (Visual Basic).
 
-Informace o tom, jak získat `internal` přístup k `Friend` typům a metodám sestavení (C#) nebo (Visual Basic) ze souboru modulu (soubor s příponou *.netmodule),* naleznete v [tématu -moduleassemblyname (C#)](../../csharp/language-reference/compiler-options/moduleassemblyname-compiler-option.md) nebo [-moduleassemblyname (Visual Basic).](../../visual-basic/reference/command-line-compiler/moduleassemblyname.md)
+Informace o tom, jak získat přístup k `internal` typům a metodám sestavení (C#) nebo `Friend` (Visual Basic) ze souboru modulu (soubor s příponou *. netmodule* ), naleznete v tématu [-moduleassemblyname – (C#)](../../csharp/language-reference/compiler-options/moduleassemblyname-compiler-option.md) nebo [-moduleassemblyname – (Visual Basic)](../../visual-basic/reference/command-line-compiler/moduleassemblyname.md).
 
 ## <a name="see-also"></a>Viz také
 
 - <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute>
 - <xref:System.Security.Permissions.StrongNameIdentityPermission>
-- [Postup: Vytvoření nepodepsaných sestavení přátel](create-unsigned-friend.md)
-- [Postup: Vytvoření podepsaných sestavení přátel](create-signed-friend.md)
+- [Postupy: vytváření nepodepsaných přátelských sestavení](create-unsigned-friend.md)
+- [Postupy: Vytváření podepsaných přátelských sestavení](create-signed-friend.md)
 - [Sestavení v .NET](index.md)
 - [Průvodce programováním v C#](../../csharp/programming-guide/index.md)
 - [Koncepty programování (Visual Basic)](../../visual-basic/programming-guide/concepts/index.md)

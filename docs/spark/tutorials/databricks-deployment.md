@@ -1,15 +1,15 @@
 ---
 title: Nasazení rozhraní .NET pro Apache Spark aplikaci do datacihlů
 description: Zjistěte, jak nasadit rozhraní .NET pro Apache Spark aplikaci do datacihlů.
-ms.date: 01/23/2020
+ms.date: 05/11/2020
 ms.topic: tutorial
 ms.custom: mvc
-ms.openlocfilehash: 3b00823034cbcb271cb7e169df40122f1144462a
-ms.sourcegitcommit: 957c49696eaf048c284ef8f9f8ffeb562357ad95
+ms.openlocfilehash: 228ddd59023dbd9d63ff392764fb36441a6af23a
+ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82895718"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83379848"
 ---
 # <a name="tutorial-deploy-a-net-for-apache-spark-application-to-databricks"></a>Kurz: nasazení rozhraní .NET pro Apache Spark aplikaci do datacihlů
 
@@ -40,7 +40,7 @@ Než začnete, proveďte následující úlohy:
 
 V této části vytvoříte pomocí portálu Azure pracovní prostor služby Azure Databricks.
 
-1. V Azure Portal vyberte vytvořit Azure Databricks **prostředků** > **Analytics** > **Azure Databricks**.
+1. V Azure Portal vyberte vytvořit Azure Databricks **prostředků**  >  **Analytics**  >  **Azure Databricks**.
 
    ![Vytvoření prostředku Azure Databricks v Azure Portal](./media/databricks-deployment/create-databricks-resource.png)
 
@@ -53,7 +53,7 @@ V této části vytvoříte pomocí portálu Azure pracovní prostor služby Azu
     |**Skupina prostředků**     | Určete, jestli chcete vytvořit novou skupinu prostředků, nebo použít existující. Skupina prostředků je kontejner, který obsahuje související prostředky pro řešení Azure. Další informace naleznete v tématu [Přehled skupin prostředků v Azure](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-overview). |
     |**Umístění**     | Vyberte preferovanou oblast. Informace o dostupných oblastech najdete v tématu [služby Azure dostupné v jednotlivých oblastech](https://azure.microsoft.com/regions/services/).        |
     |**Cenová úroveň**     |  Vyberte si mezi **standardem**, **Premium**nebo **zkušební verzí**. Další informace o těchto úrovních najdete na [stránce s cenami za Databricks](https://azure.microsoft.com/pricing/details/databricks/).       |
-    |**Virtual Network**     |   No       |
+    |**Virtual Network**     |   Ne       |
 
 3. Vyberte **Vytvořit**. Vytvoření pracovního prostoru trvá několik minut. Při vytváření pracovního prostoru můžete zobrazit stav nasazení v části **oznámení**.
 
@@ -79,15 +79,15 @@ Pomocí rozhraní příkazového **řádku datacihly** se můžete připojit k A
    pip3 install databricks-cli
    ```
 
-3. Po instalaci CLI datacihly otevřete nový příkazový řádek a spusťte příkaz `databricks`. Pokud **se zobrazí "datacihly" nejsou rozpoznány jako vnitřní nebo externí Chyba příkazu**, otevřete nový příkazový řádek.
+3. Po instalaci CLI datacihly otevřete nový příkazový řádek a spusťte příkaz `databricks` . Pokud **se zobrazí "datacihly" nejsou rozpoznány jako vnitřní nebo externí Chyba příkazu**, otevřete nový příkazový řádek.
 
 ## <a name="set-up-azure-databricks"></a>Nastavit Azure Databricks
 
 Teď, když máte nainstalované rozhraní příkazového řádku datacihly, je potřeba nastavit podrobnosti ověřování.
 
-1. Spusťte příkaz rozhraní příkazového `databricks configure --token`řádku datacihly.
+1. Spusťte příkaz rozhraní příkazového řádku datacihly `databricks configure --token` .
 
-2. Po spuštění příkazu konfigurace se zobrazí výzva k zadání hostitele. Adresa URL hostitele používá formát: **https://< \location>. azuredatabricks.NET**. Pokud jste například vybrali **eastus2** při vytváření služby Azure Databricks, hostitel by byl **https://eastus2.azuredatabricks.net**.
+2. Po spuštění příkazu konfigurace se zobrazí výzva k zadání hostitele. Adresa URL hostitele používá formát: **https://< \location>. azuredatabricks.NET**. Pokud jste například vybrali **eastus2** při vytváření služby Azure Databricks, hostitel by byl **https://eastus2.azuredatabricks.net** .
 
 3. Po zadání hostitele se zobrazí výzva k zadání tokenu. V Azure Portal vyberte **Spustit pracovní prostor** a spusťte Azure Databricks pracovní prostor.
 
@@ -115,7 +115,7 @@ Nyní byste měli mít přístup k jakýmkoli Azure Databricks clusterům, kter�
 
    V místním počítači vytvořte nový soubor s názvem **DB-init.sh** a vložte [obsah DB-init.sh](https://github.com/dotnet/spark/blob/master/deployment/db-init.sh) umístěný na GitHubu.
 
-   V souboru, který jste právě vytvořili, nastavte `DOTNET_SPARK_RELEASE` proměnnou na `https://github.com/dotnet/spark/releases/download/v0.6.0/Microsoft.Spark.Worker.netcoreapp2.1.linux-x64-0.6.0.tar.gz`. Zbývající část souboru *DB-init.sh* ponechte beze změny.
+   V souboru, který jste právě vytvořili, nastavte `DOTNET_SPARK_RELEASE` proměnnou na `https://github.com/dotnet/spark/releases/download/v0.6.0/Microsoft.Spark.Worker.netcoreapp2.1.linux-x64-0.6.0.tar.gz` . Zbývající část souboru *DB-init.sh* ponechte beze změny.
 
 > [!Note]
 > Pokud používáte systém Windows, ověřte, že zakončení řádků ve skriptech *install-Worker.sh* a *DB-init.sh* mají formát UNIX (LF). Konce řádků můžete změnit pomocí textových editorů, jako je Poznámkový blok + + a Atom.
@@ -188,7 +188,7 @@ Vaše aplikace se spouští na Azure Databricks prostřednictvím úlohy, která
 
 1. Přejděte do úlohy a výběrem **Upravit** Nakonfigurujte cluster vaší úlohy.
 
-2. Nastavte cluster na **Spark 2.4.1**. Pak vyberte **Upřesnit možnosti** > **skripty init**. Nastavte cestu skriptu init jako `dbfs:/spark-dotnet/db-init.sh`.
+2. Nastavte cluster na **Spark 2.4.1**. Pak vyberte **Upřesnit možnosti**  >  **skripty init**. Nastavte cestu skriptu init jako `dbfs:/spark-dotnet/db-init.sh` .
 
    ![Konfigurace clusteru Spark v Azure Databricks](./media/databricks-deployment/cluster-config.png)
 

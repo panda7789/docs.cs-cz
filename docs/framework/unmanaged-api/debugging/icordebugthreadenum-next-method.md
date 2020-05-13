@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: f967c93d-9a7f-4aaf-99a1-a1317899ff3f
 topic_type:
 - apiref
-ms.openlocfilehash: 0c455706b0d644d2444e9fbdf49c5a5d4f5295a9
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: c025afac1b53b23636a6160a475704011999d434
+ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73122393"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83379048"
 ---
 # <a name="icordebugthreadenumnext-method"></a>ICorDebugThreadEnum::Next – metoda
 Získá počet zadaných instancí ICorDebugThread z výčtu počínaje aktuální pozicí.  
@@ -38,19 +38,19 @@ HRESULT Next (
   
 ## <a name="parameters"></a>Parametry  
  `celt`  
- pro Počet instancí `ICorDebugThread`, které mají být načteny.  
+ pro Počet instancí, `ICorDebugThread` které mají být načteny.  
   
  `threads`  
- mimo Pole ukazatelů, z nichž každý odkazuje na objekt `ICorDebugThread`, který představuje vlákno.  
+ mimo Pole ukazatelů, z nichž každý odkazuje na `ICorDebugThread` objekt, který představuje vlákno.  
   
  `pceltFetched`  
- mimo Ukazatel na počet skutečně vrácených instancí `ICorDebugThread`. Tato hodnota může být null, pokud `celt` je jedna.  
+ mimo Ukazatel na počet `ICorDebugThread` skutečně vrácených instancí. Tato hodnota může být null `celt` , pokud je jedna.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** CorDebug. idl, CorDebug. h  
   
  **Knihovna:** CorGuids. lib  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]
+ **Verze .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]

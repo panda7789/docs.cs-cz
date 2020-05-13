@@ -1,5 +1,6 @@
 ---
 title: Vlastní serializace
+description: Vlastní serializace řídí serializaci a deserializaci typu. Řízení serializace může zajistit kompatibilitu serializace.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -17,12 +18,12 @@ helpviewer_keywords:
 - OnDeserializedAttribute class, custom serialization
 - OnSerializingAttribute class, custom serialization
 ms.assetid: 12ed422d-5280-49b8-9b71-a2ed129c0384
-ms.openlocfilehash: 60fdc0317975d94433401e3214953b77d0970f60
-ms.sourcegitcommit: 9a97c76e141333394676bc5d264c6624b6f45bcf
+ms.openlocfilehash: dcd5fa2777d2f1e351179570806a95eb835ad843
+ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75741055"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83375998"
 ---
 # <a name="custom-serialization"></a>Vlastní serializace
 Vlastní serializace je proces řízení serializace a deserializace typu. Řízením serializace je možné zajistit kompatibilitu serializace, což je schopnost serializace a deserializace mezi verzemi typu bez narušení základní funkce typu. Například v první verzi typu, může existovat pouze dvě pole. V příští verzi typu jsou přidány několik více polí. Ještě druhý verze aplikace, musí mít k serializaci a deserializaci oba typy. Níže uvedené části popisují, jak řídit serializace.
@@ -109,21 +110,21 @@ Public Class MyObject
 End Class
 ```  
   
- Když je během serializace volána metoda **GetObjectData** , zodpovídáte za naplnění <xref:System.Runtime.Serialization.SerializationInfo> poskytované voláním metody. Přidáte proměnné mají být serializován jako dvojice název a hodnotu. Libovolný text, lze použít jako název. Máte svobodu rozhodnutí, které členské proměnné jsou přidány do <xref:System.Runtime.Serialization.SerializationInfo>, za předpokladu, že serializován dostatek dat. Chcete-li obnovit během deserializace objektu. Odvozené třídy by měly volat metodu **GetObjectData** na základním objektu, pokud druhá implementuje <xref:System.Runtime.Serialization.ISerializable>.  
+ Když je během serializace volána metoda **GetObjectData** , zodpovídáte za naplnění <xref:System.Runtime.Serialization.SerializationInfo> poskytované voláním metody. Přidáte proměnné mají být serializován jako dvojice název a hodnotu. Libovolný text, lze použít jako název. Máte svobodu rozhodnutí, které členské proměnné jsou přidány do <xref:System.Runtime.Serialization.SerializationInfo>, za předpokladu, že serializován dostatek dat. Chcete-li obnovit během deserializace objektu. Odvozené třídy by měly volat metodu **GetObjectData** na základním objektu, pokud druhá implementuje <xref:System.Runtime.Serialization.ISerializable> .  
   
- Všimněte si, že serializace může povolit další kódu zobrazit nebo upravit data instance objektu, který je jinak nedostupný. Proto kód, který provádí serializaci, vyžaduje [SecurityPermission](xref:System.Security.Permissions.SecurityPermissionAttribute) se <xref:System.Security.Permissions.SecurityPermissionAttribute.SerializationFormatter> zadaným příznakem. Podle výchozích zásad Toto oprávnění nemá přístup k Internetu stáhnout nebo intranetu kód; Toto oprávnění je uděleno pouze kód v místním počítači. Metoda **GetObjectData** musí být explicitně chráněna buď tak, že [SecurityPermission](xref:System.Security.Permissions.SecurityPermissionAttribute) podává SecurityPermission <xref:System.Security.Permissions.SecurityPermissionAttribute.SerializationFormatter> se zadaným příznakem, nebo je náročné na jiná oprávnění, která specificky pomůžou chránit privátní data.  
+ Všimněte si, že serializace může povolit další kódu zobrazit nebo upravit data instance objektu, který je jinak nedostupný. Proto kód, který provádí serializaci, vyžaduje [SecurityPermission](xref:System.Security.Permissions.SecurityPermissionAttribute) se <xref:System.Security.Permissions.SecurityPermissionAttribute.SerializationFormatter> zadaným příznakem. Podle výchozích zásad Toto oprávnění nemá přístup k Internetu stáhnout nebo intranetu kód; Toto oprávnění je uděleno pouze kód v místním počítači. Metoda **GetObjectData** musí být explicitně chráněna buď tak, že [SecurityPermission](xref:System.Security.Permissions.SecurityPermissionAttribute) <xref:System.Security.Permissions.SecurityPermissionAttribute.SerializationFormatter> podává SecurityPermission se zadaným příznakem, nebo je náročné na jiná oprávnění, která specificky pomůžou chránit privátní data.  
   
  Pokud soukromé pole ukládá citlivé informace, měli byste na **GetObjectData** vyžadovat příslušná oprávnění k ochraně dat. Pamatujte, že kód, který má přiřazenou [SecurityPermission](xref:System.Security.Permissions.SecurityPermissionAttribute) se zadaným příznakem **SerializationFormatter** , může zobrazit a upravit data uložená v soukromých polích. Škodlivý volající, který má tato [SecurityPermission](xref:System.Security.Permissions.SecurityPermissionAttribute) udělena, může zobrazit data, jako jsou skrytá adresářová umístění nebo udělit oprávnění, a používat je k zneužití ohrožení zabezpečení v počítači. Úplný seznam příznaků oprávnění zabezpečení, které můžete zadat, najdete v tématu [výčet SecurityPermissionFlag](xref:System.Security.Permissions.SecurityPermissionFlag).  
   
  Je důležité zdůraznit, že při <xref:System.Runtime.Serialization.ISerializable> přidání do třídy je nutné implementovat jak **GetObjectData** , tak speciální konstruktor. Kompilátor vás upozorní, pokud **GetObjectData** chybí. Protože je nelze vynutit provádění konstruktor, bez upozornění je však k dispozici pokud chybí konstruktor a je vyvolána výjimka, pokud je proveden pokus o deserializaci třídy bez konstruktoru.  
   
- Aktuální návrh byl podporuje výše <xref:System.Runtime.Serialization.ISerializationSurrogate.SetObjectData%2A> metodu za účelem získání kolem potenciální problémy zabezpečení a správy verzí. Například `SetObjectData` metoda musí být veřejná, pokud je definována jako součást rozhraní; Proto musí uživatelé napsat kód pro obranu před tím, než je metoda **SetObjectData** volána víckrát. Jinak škodlivá aplikace, která volá metodu **SetObjectData** na objektu v procesu provádění operace, může způsobit potenciální problémy.  
+ Aktuální návrh byl podporuje výše <xref:System.Runtime.Serialization.ISerializationSurrogate.SetObjectData%2A> metodu za účelem získání kolem potenciální problémy zabezpečení a správy verzí. Například `SetObjectData` Metoda musí být veřejná, pokud je definována jako součást rozhraní; proto musí uživatelé napsat kód pro obranu před tím, než je metoda **SetObjectData** volána víckrát. Jinak škodlivá aplikace, která volá metodu **SetObjectData** na objektu v procesu provádění operace, může způsobit potenciální problémy.  
   
  Během deserializace <xref:System.Runtime.Serialization.SerializationInfo> je předán do třídy pomocí konstruktoru určených k tomuto účelu. Omezeními viditelnost umístí na konstruktoru jsou ignorovány, pokud je objekt deserializován; Třída tak můžete označit jako veřejné, chráněný, interní nebo privátní. Je však osvědčeným postupem zajistit konstruktoru chráněný, pokud zapečetěné třídy v takovém případě by měla být konstruktoru označena privátní. Konstruktor by měl také provést důkladné ověření vstupu. Chcete-li předejít zneužití škodlivým kódem, by měl konstruktoru vynutit stejné kontroly zabezpečení a oprávnění nutná k získání instance třídy pomocí jiných konstruktoru. Pokud toto doporučení neprovedete, škodlivý kód může předkonstruovat objekt, získat řízení [s použitím](xref:System.Security.Permissions.SecurityPermissionAttribute) <xref:System.Security.Permissions.SecurityPermissionAttribute.SerializationFormatter> příznaku a deserializovat objekt v klientském počítači obejít jakékoli zabezpečení, které by bylo použito během konstrukce standardní instance pomocí veřejného konstruktoru.  
   
  Chcete-li obnovit stav objektu, jednoduše načíst hodnoty proměnných z <xref:System.Runtime.Serialization.SerializationInfo> pomocí názvů používat během serializace. Pokud je základní třída implementuje <xref:System.Runtime.Serialization.ISerializable>, by měla být volána konstruktor základní třídy, aby umožnila základní objekt, který chcete obnovit své proměnné.  
   
- Při odvozování nové třídy z rozhraní, které implementuje <xref:System.Runtime.Serialization.ISerializable>, musí odvozená třída implementovat konstruktor i metodu **GetObjectData** , pokud má proměnné, které musí být serializovány. Následující příklad kódu ukazuje, jak to lze provést pomocí `MyObject` třídy, které jsou uvedeny dříve.  
+ Při odvozování nové třídy z rozhraní, které implementuje <xref:System.Runtime.Serialization.ISerializable> , musí odvozená třída implementovat konstruktor i metodu **GetObjectData** , pokud má proměnné, které musí být serializovány. Následující příklad kódu ukazuje, jak to lze provést pomocí `MyObject` třídy, které jsou uvedeny dříve.  
   
 ```csharp
 [Serializable]
@@ -177,7 +178,7 @@ End Class
   
  Nezapomeňte volat základní třídu v konstruktoru deserializace. Není-li toto provedeno, konstruktor základní třídy se nikdy nevolá a objekt není po deserializaci plně vytvořen.  
   
- Objekty jsou znovu vytvořena zevnitř a volání metod během deserializace může mít nežádoucí vedlejší účinky, protože volání metody může odkazovat na objekt odkazy, které nebyly byla deserializovat o dobu, kterou při volání. Pokud deserializovaná třída implementuje <xref:System.Runtime.Serialization.IDeserializationCallback>, <xref:System.Runtime.Serialization.IDeserializationCallback.OnDeserialization%2A> metoda je automaticky volána, když je celý graf objektů deserializován. V tomto okamžiku byly plně obnoveny všechny podřízené objekty odkazuje. Tabulka hash je typickým příkladem třídu, která je obtížné deserializaci bez použití naslouchací proces události. Vše je snadné k načtení dvojice klíč a hodnotu během deserializace, ale přidáním těchto objektů zpět do tabulky algoritmu hash může způsobit problémy vzhledem k tomu, že neexistuje žádná záruka této třídy, které odvozen z tabulky hash deserializovat. Volání metod z tabulky hash v této fázi není proto doporučuje.  
+ Objekty jsou znovu vytvořena zevnitř a volání metod během deserializace může mít nežádoucí vedlejší účinky, protože volání metody může odkazovat na objekt odkazy, které nebyly byla deserializovat o dobu, kterou při volání. Pokud deserializovaná třída implementuje <xref:System.Runtime.Serialization.IDeserializationCallback> , <xref:System.Runtime.Serialization.IDeserializationCallback.OnDeserialization%2A> Metoda je automaticky volána, když je celý graf objektů deserializován. V tomto okamžiku byly plně obnoveny všechny podřízené objekty odkazuje. Tabulka hash je typickým příkladem třídu, která je obtížné deserializaci bez použití naslouchací proces události. Vše je snadné k načtení dvojice klíč a hodnotu během deserializace, ale přidáním těchto objektů zpět do tabulky algoritmu hash může způsobit problémy vzhledem k tomu, že neexistuje žádná záruka této třídy, které odvozen z tabulky hash deserializovat. Volání metod z tabulky hash v této fázi není proto doporučuje.  
   
 ## <a name="see-also"></a>Viz také
 

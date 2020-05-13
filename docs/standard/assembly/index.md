@@ -1,5 +1,6 @@
 ---
 title: Sestavení v .NET
+description: Sestavení jsou základní jednotky nasazení, správy verzí, opětovného použití, oboru aktivace a oprávnění zabezpečení pro. Aplikace založené na síti.
 ms.date: 08/15/2019
 ms.assetid: 149f5ca5-5b34-4746-9542-1ae43b2d0256
 helpviewer_keywords:
@@ -12,108 +13,108 @@ helpviewer_keywords:
 - assemblies [.NET Framework]
 - version boundaries
 - type boundaries
-ms.openlocfilehash: b61d079a86bdd4a809d44ad128f19a7b358c8384
-ms.sourcegitcommit: b75a45f0cfe012b71b45dd9bf723adf32369d40c
+ms.openlocfilehash: 87030bf9770c464709559b2fb8f4c0004009e48d
+ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80228681"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83379915"
 ---
 # <a name="assemblies-in-net"></a>Sestavení v .NET
 
-Sestavení tvoří základní jednotky nasazení, správy verzí, opakovaného použití, oboru aktivace a oprávnění zabezpečení pro . NET-založené aplikace. Sestavení je kolekce typů a prostředků, které jsou vytvořeny tak, aby vzájemně spolupracovaly a tvořily logickou jednotku funkčnosti. Sestavení mají podobu spustitelných souborů (*EXE*) nebo dynamické knihovny odkazů (*DLL*) a jsou stavebními kameny aplikací .NET. Poskytují běžný jazyk runtime s informacemi, které potřebuje znát implementace typu.
+Sestavení tvoří základní jednotky nasazení, správy verzí, opětovného použití, oboru aktivace a oprávnění zabezpečení pro. Aplikace založené na síti. Sestavení je kolekce typů a prostředků, které jsou vytvořeny tak, aby vzájemně spolupracovaly a tvořily logickou jednotku funkčnosti. Sestavení mají formu spustitelného souboru (*. exe*) nebo souborů dynamické knihovny (*. dll*) a jsou stavebními bloky aplikací .NET. Poskytují modul CLR (Common Language Runtime) s informacemi, které musí být vědomy typu implementace.
 
-V rozhraní .NET Core a rozhraní .NET Framework můžete sestavit sestavení z jednoho nebo více souborů zdrojového kódu. V rozhraní .NET Framework mohou sestavení obsahovat jeden nebo více modulů. To umožňuje naplánované větší projekty tak, aby několik vývojářů mohlo pracovat na samostatných zdrojových kódových souborech nebo modulech, které jsou kombinovány za účelem vytvoření jednoho sestavení. Další informace o modulech naleznete v [tématu How to: Build a multifile assembly](../../framework/app-domains/build-multifile-assembly.md).
+V rozhraní .NET Core a .NET Framework můžete sestavit sestavení z jednoho nebo více souborů zdrojového kódu. V .NET Framework sestavení mohou obsahovat jeden nebo více modulů. To umožňuje, aby byly větší projekty plánovány, aby několik vývojářů fungovalo na samostatných souborech nebo modulech zdrojového kódu, které jsou kombinovány pro vytvoření jednoho sestavení. Další informace o modulech naleznete v tématu [How to: Build a vícesouborové sestavení](../../framework/app-domains/build-multifile-assembly.md).
 
 Sestavení mají následující vlastnosti:
 
-- Sestavení jsou implementována jako soubory *EXE* nebo *DLL.*
+- Sestavení jsou implementována jako soubory *. exe* nebo *. dll* .
 
-- U knihoven, které cílí na rozhraní .NET Framework, můžete sdílet sestavení mezi aplikacemi jejich vložením do [globální mezipaměti sestavení (GAC).](../../framework/app-domains/gac.md) Před zahrnutím do gac je nutné sestavení silného názvu. Další informace naleznete [v tématu Sestavení s názvem Strong](strong-named.md).
+- Pro knihovny cílené na .NET Framework můžete sdílet sestavení mezi aplikacemi jejich vložením do [globální mezipaměti sestavení (GAC)](../../framework/app-domains/gac.md). Sestavení se silným názvem je nutné před tím, než je můžete zahrnout do globální mezipaměti sestavení (GAC). Další informace naleznete v tématu [sestavení se silným názvem](strong-named.md).
 
-- Sestavení jsou načtena do paměti pouze v případě, že jsou požadována. Pokud nejsou použity, nejsou načteny. To znamená, že sestavení může být efektivní způsob, jak spravovat prostředky ve větších projektech.
+- Sestavení jsou načtena do paměti pouze v případě, že jsou požadována. Pokud se nepoužívají, nebudou načteny. To znamená, že sestavení mohou představovat efektivní způsob správy prostředků ve větších projektech.
 
-- Můžete programově získat informace o sestavení pomocí reflexe. Další informace naleznete v [tématu Reflexe (C#)](../../csharp/programming-guide/concepts/reflection.md) nebo [Reflexe (Visual Basic)](../../visual-basic/programming-guide/concepts/reflection.md).
+- Můžete programově získat informace o sestavení pomocí reflexe. Další informace naleznete v tématu [reflexe (C#)](../../csharp/programming-guide/concepts/reflection.md) nebo [Reflection (Visual Basic)](../../visual-basic/programming-guide/concepts/reflection.md).
 
-- Sestavení můžete načíst pouze ke kontrole <xref:System.Reflection.MetadataLoadContext> pomocí třídy v <xref:System.Reflection.Assembly.ReflectionOnlyLoad%2A?displayProperty=nameWithType> <xref:System.Reflection.Assembly.ReflectionOnlyLoadFrom%2A?displayProperty=nameWithType> .NET Core a metody or v rozhraní .NET Core a .NET Framework.
+- Sestavení lze načíst pouze pro kontrolu pomocí <xref:System.Reflection.MetadataLoadContext> třídy v rozhraní .NET Core a <xref:System.Reflection.Assembly.ReflectionOnlyLoad%2A?displayProperty=nameWithType> <xref:System.Reflection.Assembly.ReflectionOnlyLoadFrom%2A?displayProperty=nameWithType> metod nebo v rozhraní .net Core a .NET Framework.
 
-## <a name="assemblies-in-the-common-language-runtime"></a>Sestavení v zaběhu společného jazyka
+## <a name="assemblies-in-the-common-language-runtime"></a>Sestavení v modulu CLR (Common Language Runtime)
 
-Sestavení poskytují běžný jazyk runtime s informacemi, které potřebuje znát implementace typu. V modulu runtime neexistuje typ mimo kontext sestavení.
+Sestavení poskytují modul CLR (Common Language Runtime) s informacemi, které musí být vědomy typu implementace. V modulu runtime neexistuje typ mimo kontext sestavení.
 
 Sestavení definuje následující informace:
 
-- Kód, který spustí běžný jazyk runtime. Všimněte si, že každé sestavení `DllMain` `WinMain`může `Main`mít pouze jeden vstupní bod: , , nebo .
+- Kód, který modul common language runtime spouští. Všimněte si, že každé sestavení může mít pouze jeden vstupní bod: `DllMain` , `WinMain` nebo `Main` .
 
-- Hranice zabezpečení. Sestavení je jednotka, ve které jsou požadována a udělována oprávnění. Další informace o hranicích zabezpečení v sestaveních naleznete v [tématu Aspekty zabezpečení sestavení](security-considerations.md).
+- Hranice zabezpečení. Sestavení je jednotka, ve které jsou požadována a udělována oprávnění. Další informace o hranicích zabezpečení v sestaveních naleznete v tématu [požadavky na zabezpečení sestavení](security-considerations.md).
 
-- Hranice typu. Jednotlivé identity typu zahrnují název sestavení, ve kterém se nachází. Typ s názvem `MyType`, který je načten v oboru jednoho sestavení, není stejný jako typ s názvem `MyType`, který je načten v oboru jiného sestavení.
+- Hranice typu Jednotlivé identity typu zahrnují název sestavení, ve kterém se nachází. Typ s názvem `MyType`, který je načten v oboru jednoho sestavení, není stejný jako typ s názvem `MyType`, který je načten v oboru jiného sestavení.
 
-- Hranice referenčního oboru. [Manifest sestavení](#assembly-manifest) obsahuje metadata, která se používají pro řešení typů a splnění požadavků na prostředky. Manifest určuje typy a prostředky vystavit mimo sestavení a vyjmenovává další sestavení, na kterých závisí. Kód zprostředkujícího jazyka (MSIL) společnosti Microsoft v přenosném spustitelném souboru (PE) nebude spuštěn, pokud nebude mít přidružený [manifest sestavení](#assembly-manifest).
+- Hranice oboru odkazů [Manifest sestavení](#assembly-manifest) má metadata, která se používají pro překlad typů a uspokojení požadavků na prostředky. Manifest určuje typy a prostředky, které mají být vystaveny mimo sestavení, a vytvoří výčet jiných sestavení, na kterých závisí. Kód jazyka MSIL (Microsoft Intermediate Language) v přenositelném spustitelném souboru (PE) nebude proveden pouze v případě, že má přidružený [manifest sestavení](#assembly-manifest).
 
-- Hranice verze. Sestavení je nejmenší verzí jednotky v běžném jazyce runtime. Všechny typy a prostředky ve stejném sestavení jsou verzí jako jednotka. [Manifest sestavení](#assembly-manifest) popisuje závislosti verze, které zadáte pro všechna závislá sestavení. Další informace o správu verzí naleznete v [tématu Správa verzí sestavení](versioning.md).
+- Hranice verze Sestavení je nejmenší jednotka s možnou verzí v modulu CLR (Common Language Runtime). Všechny typy a prostředky ve stejném sestavení jsou ve verzi jako jednotka. [Manifest sestavení](#assembly-manifest) popisuje závislosti verze, které zadáte pro všechna závislá sestavení. Další informace o tom, jak se správou verzí, najdete v tématu [Správa verzí sestavení](versioning.md).
 
-- Jednotka pro nasazení. Při spuštění aplikace je nutné, aby byla k dispozici pouze ta sestavení, která aplikace zpočátku volá. Ostatní sestavení, jako jsou například sestavení obsahující prostředky lokalizace nebo třídy nástrojů, lze načíst na vyžádání. To umožňuje, aby aplikace byly jednoduché a tenké při prvním stažení. Další informace o nasazení sestavení naleznete v tématu [Nasazení aplikací](../../framework/deployment/index.md).
+- Jednotka nasazení. Při spuštění aplikace je nutné, aby byla k dispozici pouze ta sestavení, která aplikace zpočátku volá. Jiná sestavení, jako například sestavení obsahující prostředky lokalizace nebo obslužné třídy, lze načíst na vyžádání. To umožňuje, aby při prvním stažení aplikace byly jednoduché a tenké. Další informace o nasazení sestavení naleznete v tématu [Deploy Applications](../../framework/deployment/index.md).
 
-- Souběžně s popravčí jednotkou. Další informace o spuštění více verzí sestavení naleznete v tématu [sestavení a souběžné spuštění](side-by-side-execution.md).
+- Souběžná jednotka spuštění. Další informace o spuštění více verzí sestavení naleznete v tématu [sestavení a souběžné spouštění](side-by-side-execution.md).
 
-## <a name="create-an-assembly"></a>Vytvoření sestavy
+## <a name="create-an-assembly"></a>Vytvoření sestavení
 
-Sestavení mohou být statická nebo dynamická. Statická sestavení jsou uložena na disku v přenosných spustitelných souborech (PE). Statická sestavení mohou zahrnovat rozhraní, třídy a prostředky, jako jsou rastrové obrázky, soubory JPEG a další soubory prostředků. Můžete také vytvořit dynamická sestavení, která jsou spuštěna přímo z paměti a nejsou uložena na disk před spuštěním. Na disk můžete dynamická sestavení uložit až poté, co jsou spuštěna.
+Sestavení mohou být statická nebo dynamická. Statická sestavení jsou uložena na disku v přenosných spustitelných souborech (PE). Statická sestavení mohou zahrnovat rozhraní, třídy a prostředky, jako jsou bitmapy, soubory JPEG a jiné soubory prostředků. Můžete také vytvořit dynamická sestavení, která se spouštějí přímo z paměti a nejsou uložena na disk před provedením. Na disk můžete dynamická sestavení uložit až poté, co jsou spuštěna.
 
-Existuje několik způsobů vytváření sestavení. Můžete použít vývojové nástroje, jako je například Visual Studio, které můžete vytvářet soubory *DLL* nebo *EXE.* Pomocí nástrojů sady Windows SDK můžete vytvářet sestavení s moduly z jiných vývojových prostředí. K vytvoření dynamických sestavení můžete také <xref:System.Reflection.Emit?displayProperty=nameWithType>použít rozhraní API pro běžné běhové běhy jazyka, například .
+Existuje několik způsobů vytváření sestavení. Můžete použít vývojové nástroje, jako je například Visual Studio, které mohou vytvářet soubory *. dll* nebo *. exe* . Pomocí nástrojů v Windows SDK můžete vytvářet sestavení s moduly z jiných vývojových prostředí. Můžete také použít rozhraní API modulu CLR (Common Language Runtime), jako <xref:System.Reflection.Emit?displayProperty=nameWithType> je například, k vytvoření dynamického sestavení.
 
-Kompilujte sestavení jejich sestavením v sadě Visual Studio, jejich vytvářením pomocí nástrojů rozhraní příkazového řádku .NET Core nebo sestavením rozhraní .NET Framework pomocí kompilátoru příkazového řádku. Další informace o sestavenísestavení pomocí rozhraní CLI jádra .NET naleznete [v tématu přehled rozhraní .NET Core CLI](../../core/tools/index.md). Vytváření sestavení s kompilátory příkazového řádku naleznete v [tématu sestavení příkazového řádku s csc.exe](../../csharp/language-reference/compiler-options/command-line-building-with-csc-exe.md) pro C#nebo [Sestavení z příkazového řádku](../../visual-basic/reference/command-line-compiler/building-from-the-command-line.md) pro jazyk Visual Basic.
+Zkompilujte sestavení jejich sestavením v aplikaci Visual Studio, Sestavujte je pomocí nástrojů rozhraní příkazového řádku .NET Core nebo Sestavujte .NET Framework sestavení pomocí kompilátoru příkazového řádku. Další informace o vytváření sestavení pomocí .NET Core CLI naleznete v tématu [.NET Core CLI Overview](../../core/tools/index.md). Pro vytváření sestavení pomocí kompilátorů příkazového řádku, přečtěte si [sestavení příkazového řádku s CSc. exe](../../csharp/language-reference/compiler-options/command-line-building-with-csc-exe.md) pro C# nebo [Sestavte z příkazového řádku](../../visual-basic/reference/command-line-compiler/building-from-the-command-line.md) pro Visual Basic.
 
 > [!NOTE]
-> Chcete-li vytvořit sestavení v sadě Visual Studio, v nabídce **Sestavení** vyberte **Build**.
+> Chcete-li sestavit sestavení v aplikaci Visual Studio, vyberte v nabídce **sestavení** položku **sestavit**.
 
 ## <a name="assembly-manifest"></a>Manifest sestavení
 
-Každé sestavení má soubor *manifestu sestavení.* Podobně jako obsah obsahuje manifest sestavení:
+Každé sestavení má soubor *manifestu sestavení* . Podobně jako obsah, manifest sestavení obsahuje:
 
-- Identita sestavení (jeho název a verze).
+- Identita sestavení (jeho název a verze)
 
-- Tabulka souborů popisující všechny ostatní soubory, které tvoří sestavení, například jiná sestavení, která jste vytvořili a na která se soubor *EXE* nebo *DLL* spoléhá, na bitmapové soubory nebo soubory Readme.
+- Tabulka souborů popisující všechny ostatní soubory, které tvoří sestavení, jako například jiná sestavení, která jste vytvořili, že soubor *. exe* nebo *. dll* spoléhá na soubory rastrového obrázku nebo soubory Readme.
 
-- *Seznam odkazů sestavení*, který je seznamem všech externích závislostí, například *DLL*s nebo jiných souborů. Odkazy na sestavení obsahují odkazy na globální i soukromé objekty. Globální objekty jsou k dispozici pro všechny ostatní aplikace. V .NET Core globální objekty jsou spojeny s konkrétní .NET Core runtime. V rozhraní .NET Framework jsou globální objekty umístěny v globální mezipaměti sestavení (GAC). *System.IO.dll* je příkladem sestavení v GAC. Soukromé objekty musí být na úrovni adresáře v adresáři, ve kterém je aplikace nainstalovaná, nebo pod ním.
+- *Seznam odkazů na sestavení*, což je seznam všech vnějších závislostí, například *. dll*s nebo jiné soubory. Odkazy na sestavení obsahují odkazy na globální i privátní objekty. Globální objekty jsou k dispozici pro všechny ostatní aplikace. V rozhraní .NET Core jsou globální objekty spojeny s konkrétním modulem runtime .NET Core. V .NET Framework se globální objekty nacházejí v globální mezipaměti sestavení (GAC). *System. IO. dll* je příkladem sestavení v globální mezipaměti sestavení (GAC). Privátní objekty musí být v adresáři, ve kterém je vaše aplikace nainstalovaná, na úrovni adresáře nebo pod ním.
 
-Vzhledem k tomu, že sestavení obsahují informace o obsahu, správu verzí a závislostech, aplikace, které je používají, nemusí spoléhat na externí zdroje, jako je například registr v systémech Windows, aby fungovaly správně. Sestavení snižují konflikty *dll* a usnadňují jejich spolehlivost a snadnější nasazení aplikací. V mnoha případech můžete nainstalovat . NET jednoduše zkopírováním svých souborů do cílového počítače. Další informace naleznete v [tématu Manifest sestavení](manifest.md).
+Vzhledem k tomu, že sestavení obsahují informace o obsahu, správy verzí a závislostech, aplikace, které je používají, se nemusí podepisovat spoléhají na externí zdroje, jako je registr v systémech Windows, aby fungovaly správně. Sestavení snižují konflikty *knihoven DLL* a umožňují spolehlivější a snazší nasazení aplikací. V mnoha případech můžete nainstalovat. Pomocí čisté aplikace můžete jednoduše zkopírovat své soubory do cílového počítače. Další informace naleznete v tématu [manifest sestavení](manifest.md).
 
-## <a name="add-a-reference-to-an-assembly"></a>Přidání odkazu na sestavení
+## <a name="add-a-reference-to-an-assembly"></a>Přidat odkaz na sestavení
 
-Chcete-li použít sestavení v aplikaci, musíte na něj přidat odkaz. Jakmile je odkazováno na sestavení, všechny přístupné typy, vlastnosti, metody a další členy jeho oborů názvů jsou k dispozici pro vaši aplikaci, jako kdyby jejich kód byl součástí zdrojového souboru.
+Chcete-li použít sestavení v aplikaci, je nutné přidat odkaz na něj. Jakmile je odkazováno na sestavení, všechny dostupné typy, vlastnosti, metody a další členy svých oborů názvů jsou k dispozici pro vaši aplikaci, jako by jejich kód byl součástí zdrojového souboru.
 
 > [!NOTE]
-> Většina sestavení z knihovny tříd .NET je odkazována automaticky. Pokud sestavení systému není automaticky odkazováno, pro .NET Core, můžete přidat odkaz na balíček NuGet, který obsahuje sestavení. Buď použijte Správce balíčků NuGet v sadě Visual Studio, nebo přidejte element [ \<PackageReference>](../../core/tools/dependencies.md#the-packagereference-element) pro sestavení do projektu *.csproj* nebo *.vbproj.* V rozhraní .NET Framework můžete přidat odkaz na sestavení pomocí dialogového okna Přidat `-reference` **odkaz** v sadě Visual Studio nebo pomocí možnosti příkazového řádku pro kompilátory jazyka [C#](../../csharp/language-reference/compiler-options/reference-compiler-option.md) nebo [Visual Basic.](../../visual-basic/reference/command-line-compiler/reference.md)
+> Většina sestavení z knihovny tříd .NET je odkazována automaticky. Pokud se na systémové sestavení neodkazuje automaticky, můžete pro .NET Core přidat odkaz na balíček NuGet, který obsahuje sestavení. Buď použijte Správce balíčků NuGet v aplikaci Visual Studio, nebo přidejte element [ \< PackageReference>](../../core/tools/dependencies.md#the-packagereference-element) pro sestavení do projektu *. csproj* nebo *. vbproj* . V .NET Framework můžete přidat odkaz na sestavení pomocí dialogového okna **Přidat odkaz** v aplikaci Visual Studio nebo pomocí `-reference` Možnosti příkazového řádku pro kompilátory [jazyka C#](../../csharp/language-reference/compiler-options/reference-compiler-option.md) nebo [Visual Basic](../../visual-basic/reference/command-line-compiler/reference.md) .
 
-V c#, můžete použít dvě verze stejného sestavení v jedné aplikaci. Další informace naleznete v tématu [extern alias](../../csharp/language-reference/keywords/extern-alias.md).
+V jazyce C# můžete použít dvě verze stejného sestavení v jediné aplikaci. Další informace najdete v tématu [extern alias](../../csharp/language-reference/keywords/extern-alias.md).
 
 ## <a name="related-content"></a>Související obsah
 
 |Nadpis|Popis|
 |-----------|-----------------|
 |[Obsah sestavení](contents.md)|Prvky, které tvoří sestavení.|
-|[Manifest sestavení](manifest.md)|Data v manifestu sestavení a způsob, jakým je uložen v sestaveních.|
-|[Globální mezipaměť sestavení](../../framework/app-domains/gac.md)|Jak GAC ukládá a používá sestavení.|
+|[Manifest sestavení](manifest.md)|Data v manifestu sestavení a jejich uložení v sestaveních.|
+|[Globální mezipaměť sestavení](../../framework/app-domains/gac.md)|Jak globální mezipaměť sestavení (GAC) ukládá a používá sestavení.|
 |[Sestavení se silným názvem](strong-named.md)|Charakteristiky sestavení se silným názvem.|
-|[Důležité informace o zabezpečení sestavení](security-considerations.md)|Jak zabezpečení funguje s sestaveními.|
-|[Správa verzí sestavení](versioning.md)|Přehled zásad správy verzí rozhraní .NET Framework.|
-|[Umístění sestavení](../../framework/app-domains/assembly-placement.md)|Kde lokalizovat sestavy.|
-|[Sestavení a souběžné spouštění](side-by-side-execution.md)|Používejte více verzí runtime nebo sestavení současně.|
-|[Generování dynamických metod a sestavení](../../../docs/framework/reflection-and-codedom/emitting-dynamic-methods-and-assemblies.md)|Jak vytvořit dynamická sestavení.|
-|[Jak runtime vyhledá sestavení](../../../docs/framework/deployment/how-the-runtime-locates-assemblies.md)|Jak rozhraní .NET Framework řeší odkazy na sestavení za běhu.|
+|[Důležité informace o zabezpečení sestavení](security-considerations.md)|Jak funguje zabezpečení se sestaveními.|
+|[Správa verzí sestavení](versioning.md)|Přehled zásad správy verzí .NET Framework.|
+|[Umístění sestavení](../../framework/app-domains/assembly-placement.md)|Kam umístit sestavení.|
+|[Sestavení a souběžné spouštění](side-by-side-execution.md)|Použijte současně více verzí modulu runtime nebo sestavení.|
+|[Generování dynamických metod a sestavení](../../../docs/framework/reflection-and-codedom/emitting-dynamic-methods-and-assemblies.md)|Vytváření dynamických sestavení.|
+|[Způsob, jakým modul runtime vyhledává sestavení](../../../docs/framework/deployment/how-the-runtime-locates-assemblies.md)|Způsob, jakým .NET Framework řeší odkazy na sestavení v době běhu.|
 
-## <a name="reference"></a>Odkaz
+## <a name="reference"></a>Referenční informace
 
 <xref:System.Reflection.Assembly?displayProperty=nameWithType>
 
 ## <a name="see-also"></a>Viz také
 
-- [Formát souboru sestavení rozhraní .NET](file-format.md)
+- [Formát souboru sestavení .NET](file-format.md)
 - [Přátelská sestavení](friend.md)
 - [Referenční sestavení](reference-assemblies.md)
-- [Postup: Načtení a uvolnění sestavení](load-unload.md)
-- [Postup: Použití a ladění použitelnosti sestavení v rozhraní .NET Core](unloadability.md)
-- [Postup: Určení, zda je soubor sestavením](identify.md)
-- [Postup: Kontrola obsahu sestavení pomocí nástroje MetadataLoadContext](inspect-contents-using-metadataloadcontext.md)
+- [Postupy: načítání a uvolňování sestavení](load-unload.md)
+- [Postupy: použití a ladění nevytížení sestavení v .NET Core](unloadability.md)
+- [Postupy: určení, zda je soubor sestavením](identify.md)
+- [Postupy: kontrola obsahu sestavení pomocí MetadataLoadContext](inspect-contents-using-metadataloadcontext.md)

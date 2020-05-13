@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: dbc498a8-ba3f-42f2-bdd9-b623c77a1019
 topic_type:
 - apiref
-ms.openlocfilehash: 54a5fb50a0177fe9886582c112f16ce871ea9df4
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.openlocfilehash: b7a356d80d63fae65191bbf4fc0a23d7e02004c9
+ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76792065"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83378234"
 ---
 # <a name="icordebugregisterset2getregisters-method"></a>ICorDebugRegisterSet2::GetRegisters – metoda
 Získá hodnotu každého registru (pro platformu, na které je aktuálně spuštěn kód), který je určen pomocí dané bitové masky.  
@@ -38,7 +38,7 @@ HRESULT GetRegisters (
   
 ## <a name="parameters"></a>Parametry  
  `maskCount`  
- pro Velikost pole `mask` v bajtech  
+ pro Velikost pole v bajtech `mask` .  
   
  `mask`  
  pro Pole bajtů, každý bit, který odpovídá registru. Pokud je bit 1, načte se odpovídající hodnota registru.  
@@ -47,27 +47,27 @@ HRESULT GetRegisters (
  pro Počet hodnot registru, které mají být načteny.  
   
  `regBuffer`  
- mimo Pole objektů `CORDB_REGISTER`, z nichž každý přijímá hodnotu registru.  
+ mimo Pole `CORDB_REGISTER` objektů, z nichž každý přijímá hodnotu registru.  
   
 ## <a name="remarks"></a>Poznámky  
- Metoda `GetRegisters` vrací pole hodnot z registrů, které jsou určeny maskou. Pole neobsahuje hodnoty pro registry, jejichž bit maskování není nastaven. Proto musí být velikost pole `regBuffer` rovna počtu 1 v masce. Pokud je hodnota `regCount` příliš malá pro počet registrů, které jsou označeny maskou, hodnoty vyšších očíslovaných registrů se ze sady zkrátí. Pokud je `regCount` příliš velká, nepoužívané prvky `regBuffer` nebudou změněny.  
+ `GetRegisters`Metoda vrací pole hodnot z registrů, které jsou určeny maskou. Pole neobsahuje hodnoty pro registry, jejichž bit maskování není nastaven. Proto `regBuffer` musí být velikost pole rovna počtu 1 v masce. Pokud `regCount` je hodnota příliš malá pro počet registrů, které jsou označeny maskou, hodnoty z vyšších očíslovaných registrů se ze sady zkrátí. Pokud `regCount` je příliš velké, nepoužívané `regBuffer` prvky nebudou změněny.  
   
  Pokud je nedostupný registr označen maskou, bude pro tento registr vrácena neurčitá hodnota.  
   
- Metoda `ICorDebugRegisterSet2::GetRegisters` je nezbytná pro platformy, které mají více než 64 registrů. Například IA64 má 128 registrů pro obecné účely a 128 registrů s plovoucí desetinnou čárkou, takže potřebujete více než 64-bitů v bitové masce.  
+ Tato `ICorDebugRegisterSet2::GetRegisters` Metoda je nezbytná pro platformy, které mají více než 64 registrů. Například IA64 má 128 registrů pro obecné účely a 128 registrů s plovoucí desetinnou čárkou, takže potřebujete více než 64-bitů v bitové masce.  
   
- Pokud nemáte více než 64 registrů, stejně jako v případě platforem, jako je například x86, metoda `GetRegisters` skutečně překládá bajty v poli `mask` bajtů do `ULONG64` a poté volá metodu [ICorDebugRegisterSet:: GetRegisters](icordebugregisterset-getregisters-method.md) , která používá masku `ULONG64`.  
+ Pokud nemáte více než 64 registrů, stejně jako v případě platforem, jako je například x86, `GetRegisters` metoda skutečně převede bajty v poli `mask` bajtů do `ULONG64` a a pak zavolá metodu [ICorDebugRegisterSet:: GetRegisters](icordebugregisterset-getregisters-method.md) , která přebírá `ULONG64` masku.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** CorDebug. idl, CorDebug. h  
   
  **Knihovna:** CorGuids. lib  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [ICorDebugRegisterSet2 – rozhraní](icordebugregisterset2-interface.md)
 - [ICorDebugRegisterSet – rozhraní](icordebugregisterset-interface.md)

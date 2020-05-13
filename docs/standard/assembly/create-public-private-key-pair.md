@@ -1,5 +1,6 @@
 ---
-title: 'Postup: Vytvoření páru klíčů veřejného a soukromého sektoru'
+title: 'Postupy: Vytvoření páru veřejného a soukromého klíče'
+description: Naučte se vytvořit veřejný a privátní pár kryptografických klíčů, který se použije při kompilaci k vytvoření sestavení se silným názvem.
 ms.date: 08/20/2019
 helpviewer_keywords:
 - key pairs for strong-named assemblies
@@ -15,51 +16,51 @@ dev_langs:
 - csharp
 - vb
 - cpp
-ms.openlocfilehash: 8a9845e3cd18ff86ec04216ad0e9c5606186b113
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 675871170e7fd4171f0fe09b04d1dbb8906beda4
+ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "73122522"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83378553"
 ---
-# <a name="how-to-create-a-public-private-key-pair"></a>Postup: Vytvoření páru klíčů veřejného a soukromého sektoru
+# <a name="how-to-create-a-public-private-key-pair"></a>Postupy: Vytvoření páru veřejného a soukromého klíče
 
-Chcete-li podepsat sestavení se silným názvem, musíte mít dvojici veřejného a soukromého klíče. Tento veřejný a soukromý pár kryptografických klíčů se používá během kompilace k vytvoření sestavení se silným názvem. Pár klíčů můžete vytvořit pomocí [nástroje Silný název (Sn.exe).](../../framework/tools/sn-exe-strong-name-tool.md) Soubory dvojice klíčů mají obvykle příponu *SNK.*
+Pro podepsání sestavení silným názvem musíte mít dvojici veřejného a privátního klíče. Tento pár veřejného a privátního kryptografického klíče se používá během kompilace k vytvoření sestavení se silným názvem. Můžete vytvořit pár klíčů pomocí [nástroje Strong Name (Sn. exe)](../../framework/tools/sn-exe-strong-name-tool.md). Soubory dvojice klíčů mají obvykle příponu *. snk* .
 
 > [!NOTE]
-> V sadě Visual Studio obsahují stránky vlastností projektu jazyka C# a Visual Basic kartu **Podepisování,** která umožňuje vybrat existující klíčové soubory nebo generovat nové soubory klíčů bez použití *programu Sn.exe*. V jazyce Visual C++ můžete určit umístění existujícího souboru klíče na stránce **Vlastností Upřesnit** v části **Propojovací program** v části **Vlastnosti konfigurace** v okně **Stránky vlastností.** Použití atributu <xref:System.Reflection.AssemblyKeyFileAttribute> k identifikaci párů souborů klíčů bylo zastaralé počínaje visual studio 2005.
+> V aplikaci Visual Studio stránky vlastností projektu C# a Visual Basic zahrnují kartu **podepisování** , která umožňuje vybrat existující soubory klíčů nebo vygenerovat nové soubory klíčů bez použití *sn. exe*. V Visual C++ můžete zadat umístění existujícího souboru klíče na stránce **Upřesnit** vlastnost v oddílu **linker** v části **Vlastnosti konfigurace** okna **stránky vlastností** . Použití <xref:System.Reflection.AssemblyKeyFileAttribute> atributu k identifikaci párů klíčových souborů bylo od sady Visual Studio 2005 zastaralo.
 
 ## <a name="create-a-key-pair"></a>Vytvoření páru klíčů
 
-Chcete-li vytvořit dvojici klíčů, zadejte na příkazovém řádku následující příkaz:
+Pokud chcete vytvořit pár klíčů, zadejte na příkazovém řádku tento příkaz:
 
-**sn –k** \< *název souboru*>
+**sn – k** \< *název souboru*>
 
-V tomto příkazu je *název souboru* výstupního souboru obsahujícího dvojici klíčů.
+V tomto příkazu *název souboru* je název výstupního souboru obsahujícího dvojici klíčů.
 
-Následující příklad vytvoří dvojici klíčů nazvanou *sgKey.snk*.
+Následující příklad vytvoří dvojici klíčů s názvem *klíči sgKey. snk*.
 
 ```cmd
 sn -k sgKey.snk
 ```
 
-Pokud máte v úmyslu zpozdit podepsat sestavení a řídit celý pár klíčů (což je nepravděpodobné, mimo testovací scénáře), můžete použít následující příkazy ke generování dvojice klíčů a potom extrahovat veřejný klíč z něj do samostatného souboru. Nejprve vytvořte dvojici klíčů:
+Pokud máte v úmyslu zpozdit podpis sestavení a Vy ovládáte celý pár klíčů (což je nepravděpodobné mimo testovací scénáře), můžete pomocí následujících příkazů vygenerovat pár klíčů a potom z něj extrahovat veřejný klíč do samostatného souboru. Nejdřív vytvořte pár klíčů:
 
 ```cmd
 sn -k keypair.snk
 ```
 
-Dále extrahujte veřejný klíč z dvojice klíčů a zkopírujte jej do samostatného souboru:
+Dále z páru klíčů rozbalte veřejný klíč a zkopírujte ho do samostatného souboru:
 
 ```cmd
 sn -p keypair.snk public.snk
 ```
 
-Jakmile vytvoříte dvojici klíčů, musíte soubor umístit tam, kde jej mohou najít nástroje pro podepisování silných názvů.
+Po vytvoření páru klíčů je nutné umístit soubor, ve kterém nástroj pro podepisování silných názvů je může najít.
 
-Při podepisování sestavení se silným názvem hledá [linker sestavení (Al.exe)](../../framework/tools/al-exe-assembly-linker.md) soubor klíče vzhledem k aktuálnímu adresáři a výstupnímu adresáři. Při použití kompilátorů příkazového řádku můžete jednoduše zkopírovat klíč do aktuálního adresáře obsahujícího moduly kódu.
+Při podepisování sestavení silným názvem [linker sestavení (Al. exe)](../../framework/tools/al-exe-assembly-linker.md) vyhledá soubor klíče relativně k aktuálnímu adresáři a výstupnímu adresáři. Při použití kompilátorů příkazového řádku můžete jednoduše zkopírovat klíč do aktuálního adresáře, který obsahuje moduly kódu.
 
-Pokud používáte starší verzi sady Visual Studio, která nemá kartu **Podepisování** ve vlastnostech projektu, je doporučeným umístěním souboru klíče adresář projektu s atributem souboru určeným následujícím způsobem:
+Pokud používáte starší verzi sady Visual Studio, která nemá kartu **podepisování** ve vlastnostech projektu, doporučené umístění souboru klíče je adresář projektu se zadaným atributem souboru, a to takto:
 
 ```cpp
 [assembly:AssemblyKeyFileAttribute("keyfile.snk")];

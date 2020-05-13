@@ -1,16 +1,16 @@
 ---
-title: ICorDebugSymbolProvider::Metoda GetAssemblyImageBytes
+title: 'ICorDebugSymbolProvider:: GetAssemblyImageBytes – metoda'
 ms.date: 03/30/2017
 ms.assetid: 3db215aa-e180-4f70-8d23-6d5a0ffbc8e5
-ms.openlocfilehash: 6361b12802876ef480acbe1cc13f32b77ba0be49
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: a555acb9e23098b0a0f70924032771b1ae18e88e
+ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79178490"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83376119"
 ---
-# <a name="icordebugsymbolprovidergetassemblyimagebytes-method"></a>ICorDebugSymbolProvider::Metoda GetAssemblyImageBytes
-Čte data ze sloučeného sestavení dané relativní virtuální adresu (RVA) ve sloučeném sestavení.  
+# <a name="icordebugsymbolprovidergetassemblyimagebytes-method"></a>ICorDebugSymbolProvider:: GetAssemblyImageBytes – metoda
+Načte data ze sloučeného sestavení s ohledem na relativní virtuální adresu (RVA) ve sloučeném sestavení.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -24,27 +24,27 @@ HRESULT GetAssemblyImageBytes(
   
 ## <a name="parameters"></a>Parametry  
  `rva`  
- [v] Relativní virtuální adresa (RVA) ve sloučeném sestavení.  
+ pro Relativní virtuální adresa (RVA) ve sloučeném sestavení.  
   
  `length`  
- Počet bajtů číst ze sloučeného sestavení.  
+ Počet bajtů, které mají být čteny ze sloučeného sestavení.  
   
  `ppMemoryBuffer`  
- Ukazatel na adresu objektu [ICorDebugMemoryBuffer,](icordebugmemorybuffer-interface.md) který obsahuje informace o vyrovnávací paměti se sloučenými metadaty sestavení.  
+ Ukazatel na adresu objektu [ICorDebugMemoryBuffer](icordebugmemorybuffer-interface.md) , který obsahuje informace o vyrovnávací paměti pro Sloučená metadata sestavení.  
   
 ## <a name="remarks"></a>Poznámky  
   
 > [!NOTE]
-> Tato metoda je k dispozici pouze s nativní .NET.  
+> Tato metoda je k dispozici pouze s .NET Native.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET Framework:**[!INCLUDE[net_46_native](../../../../includes/net-46-native-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_46_native](../../../../includes/net-46-native-md.md)]  
   
 ## <a name="see-also"></a>Viz také
 

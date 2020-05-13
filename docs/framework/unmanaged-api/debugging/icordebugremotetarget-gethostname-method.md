@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 1c7276f7-7e54-470c-808c-e13745ac07a1
 topic_type:
 - apiref
-ms.openlocfilehash: f177d441da3bd967750781e487d9fed42bc132f5
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.openlocfilehash: 020724c422af7cba0165e6f37d0eacb7742153ec
+ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76791951"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83379263"
 ---
 # <a name="icordebugremotetargetgethostname-method"></a>ICorDebugRemoteTarget::GetHostName – metoda
 Vrátí plně kvalifikovaný název domény nebo IPv4 adresu cílového počítače vzdáleného ladění. Protokol IPV6 se v tuto chvíli nepodporuje.  
@@ -37,7 +37,7 @@ HRESULT GetHostName (
   
 ## <a name="parameters"></a>Parametry  
  `cchHostName`  
- pro Velikost vyrovnávací paměti `szHostName` v znacích. Pokud je tento parametr 0 (nula), `szHostName` musí mít hodnotu null.  
+ pro Velikost `szHostName` vyrovnávací paměti ve znacích. Pokud je tento parametr 0 (nula), `szHostName` musí mít hodnotu null.  
   
  `pcchHostName`  
  mimo Počet znaků, včetně ukončovacího znaku null, v názvu hostitele nebo IP adrese. Tento parametr může mít hodnotu null.  
@@ -53,10 +53,10 @@ HRESULT GetHostName (
  Nelze vrátit název hostitele nebo IP adresu.  
   
 ## <a name="remarks"></a>Poznámky  
- Tato metoda je implementována pomocí zapisovače ladicího programu. Musí následovat za vícenásobnými paradigma volání: při prvním volání volající předává hodnotu null do obou `cchHostName` i `szHostName`a `pcchHostName` vrací velikost požadované vyrovnávací paměti. Při druhém volání je výše vrácená velikost předána do `cchHostName`a v `szHostName`předává patřičnou velikost vyrovnávací paměti.  
+ Tato metoda je implementována pomocí zapisovače ladicího programu. Musí následovat za vícenásobnými paradigma volání: při prvním volání volající předává hodnotu null do a a `cchHostName` `szHostName` `pcchHostName` vrátí velikost požadované vyrovnávací paměti. Při druhém volání je výše předána velikost, která byla dříve vrácena `cchHostName` , a předána odpovídající velikost vyrovnávací paměti `szHostName` .  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** CorDebug. idl  
   
@@ -64,7 +64,7 @@ HRESULT GetHostName (
   
  **Verze .NET Framework:** 3,5 SP1  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [ICorDebugRemoteTarget – rozhraní](icordebugremotetarget-interface.md)
 - [ICorDebug – rozhraní](icordebug-interface.md)

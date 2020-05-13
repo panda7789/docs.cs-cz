@@ -1,16 +1,17 @@
 ---
 title: 'Postupy: Řízení serializace odvozených tříd'
+description: Můžete přizpůsobit datový proud XML odvozením třídy z existující třídy a pokynem instance XmlSerializer, jak serializovat novou třídu.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: caa92596-9e15-4d91-acbe-56911ef47a84
-ms.openlocfilehash: af19981fd7cfeda3e8e985fa991fd7fdf2476b42
-ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
+ms.openlocfilehash: b9a8bd52b7dfe7a9bf43061d8f44747b3a847c68
+ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "78159920"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83379127"
 ---
 # <a name="how-to-control-serialization-of-derived-classes"></a>Postupy: Řízení serializace odvozených tříd
 Použití atributu **třídě XmlElementAttribute** ke změně názvu elementu XML není jediným způsobem, jak přizpůsobit serializaci objektu. Datový proud XML můžete také upravit tak, že vyplývající z existující třídy a instruující <xref:System.Xml.Serialization.XmlSerializer> instance jak k serializaci nové třídy.  

@@ -1,5 +1,6 @@
 ---
 title: Selektivní serializace
+description: V tomto článku se dozvíte, jak označit pole pomocí neserializovaného atributu, který brání v serializaci pole.
 ms.date: 08/07/2017
 dev_langs:
 - CSharp
@@ -7,12 +8,12 @@ helpviewer_keywords:
 - serialization, selective serialization
 - binary serialization, selective serialization
 ms.assetid: 39c56635-95d2-4afd-aff1-b022e7649bb3
-ms.openlocfilehash: cc5d7964d5f3268f08721593fefc07e3eff853ca
-ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
+ms.openlocfilehash: c7203c4ea13c65f8d88c55de96988d3b1d9e9611
+ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "78159595"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83379164"
 ---
 # <a name="selective-serialization"></a>Selektivní serializace
 Třída často obsahuje pole, která by neměla být serializována. Můžete například předpokládat, že třída uchovává ID vlákna v členské proměnné. Při deserializaci třídy vlákno uloženo ID pro, když byla třída serializována, již pravděpodobně není spuštěna; Proto serializace této hodnoty nemá smysl. Můžete zabránit serializaci členských proměnných jejich označením pomocí [Neserializovaného](xref:System.NonSerializedAttribute) atributu následujícím způsobem.  

@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 678f89f9-cce7-46d1-af87-5e989abaa93c
 topic_type:
 - apiref
-ms.openlocfilehash: fdaad46b739721ff95b712d4b6461a793ae0a480
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.openlocfilehash: a7a8d96548704f223f05826af79a4e227bdfab06
+ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76791422"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83379836"
 ---
 # <a name="icordebugthread2-interface"></a>ICorDebugThread2 – rozhraní
 Slouží jako logické rozšíření rozhraní ICorDebugThread.  
@@ -29,9 +29,9 @@ Slouží jako logické rozšíření rozhraní ICorDebugThread.
 |Metoda|Popis|  
 |------------|-----------------|  
 |[GetActiveFunctions – metoda](icordebugthread2-getactivefunctions-method.md)|Získá pole instancí COR_ACTIVE_FUNCTION, které obsahují data o aktivních funkcích v rámečcích vlákna.|  
-|[GetConnectionID – metoda](icordebugthread2-getconnectionid-method.md)|Získá identifikátor připojení pro tento `ICorDebugThread2`.|  
-|[GetTaskID – metoda](icordebugthread2-gettaskid-method.md)|Získá identifikátor úkolu pro tento `ICorDebugThread2`.|  
-|[GetVolatileOSThreadID – metoda](icordebugthread2-getvolatileosthreadid-method.md)|Získá identifikátor vlákna operačního systému pro tento `ICorDebugThread2`.|  
+|[GetConnectionID – metoda](icordebugthread2-getconnectionid-method.md)|Získá identifikátor připojení `ICorDebugThread2` .|  
+|[GetTaskID – metoda](icordebugthread2-gettaskid-method.md)|Načte identifikátor úkolu `ICorDebugThread2` .|  
+|[GetVolatileOSThreadID – metoda](icordebugthread2-getvolatileosthreadid-method.md)|Získá identifikátor vlákna operačního systému `ICorDebugThread2` .|  
 |[InterceptCurrentException – metoda](icordebugthread2-interceptcurrentexception-method.md)|Umožňuje ladicímu programu zachytit aktuální výjimku ve vlákně.|  
   
 ## <a name="remarks"></a>Poznámky  
@@ -40,14 +40,14 @@ Slouží jako logické rozšíření rozhraní ICorDebugThread.
 > Toto rozhraní nepodporuje vzdálené volání, a to buď mezi počítačem, nebo mezi procesy.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** CorDebug. idl, CorDebug. h  
   
  **Knihovna:** CorGuids. lib  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Rozhraní pro ladění](debugging-interfaces.md)
+- [Debugging – rozhraní](debugging-interfaces.md)

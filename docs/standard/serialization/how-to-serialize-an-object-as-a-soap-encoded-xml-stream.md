@@ -1,5 +1,6 @@
 ---
 title: 'Postupy: Serializace objektu jako XML streamu zakódovaného v protokolu SOAP'
+description: Naučte se serializovat objekt jako datový proud XML kódovaný pomocí protokolu SOAP. Třída XmlSerializer se dá použít k serializaci tříd a generování kódovaných zpráv SOAP.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -9,16 +10,16 @@ helpviewer_keywords:
 - XML serialization, SOAP
 - serialization, SOAP
 ms.assetid: af406e0a-fa3a-46dd-a7ba-c80731eba3a0
-ms.openlocfilehash: bfbdda0861a6f2867a2e7003dd7054129fd343b8
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 09f1431d05248ef3ac3fdcf24bca35ff5cc2e22b
+ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62018014"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83378399"
 ---
 # <a name="how-to-serialize-an-object-as-a-soap-encoded-xml-stream"></a>Postupy: Serializace objektu jako XML streamu zakódovaného v protokolu SOAP
   
- Vzhledem k tomu, že zpráva SOAP je sestavena <xref:System.Xml.Serialization.XmlSerializer> pomocí jazyka XML, lze třídu použít k serializaci tříd a generování kódovaných zpráv protokolu SOAP. Výsledný kód XML odpovídá [části 5 dokumentu konsorcium World Wide Web "Simple Object Access Protocol (SOAP) 1,1"](https://www.w3.org/TR/2000/NOTE-SOAP-20000508/#_Toc478383512). Při vytváření XML webové služby, které komunikují prostřednictvím zpráv protokolu SOAP, můžete upravit datový proud XML použitím sadu atributů protokolu SOAP speciální třídy a členy třídy. Seznam atributů naleznete v tématu [atributy, které řídí serializaci kódovaných SOAP](../../../docs/standard/serialization/attributes-that-control-encoded-soap-serialization.md).  
+ Vzhledem k tomu, že zpráva SOAP je sestavena pomocí jazyka XML, <xref:System.Xml.Serialization.XmlSerializer> lze třídu použít k serializaci tříd a generování kódovaných zpráv protokolu SOAP. Výsledný kód XML odpovídá [části 5 dokumentu konsorcium World Wide Web "Simple Object Access Protocol (SOAP) 1,1"](https://www.w3.org/TR/2000/NOTE-SOAP-20000508/#_Toc478383512). Při vytváření XML webové služby, které komunikují prostřednictvím zpráv protokolu SOAP, můžete upravit datový proud XML použitím sadu atributů protokolu SOAP speciální třídy a členy třídy. Seznam atributů naleznete v tématu [atributy, které řídí serializaci kódovaných SOAP](../../../docs/standard/serialization/attributes-that-control-encoded-soap-serialization.md).  
   
 ### <a name="to-serialize-an-object-as-a-soap-encoded-xml-stream"></a>K serializaci objektu jako datový proud XML kódováním protokolu SOAP  
   
@@ -28,7 +29,7 @@ ms.locfileid: "62018014"
   
 3. Vytvořit `XmlTypeMapping` vytvořením nového `SoapReflectionImporter`a volání `ImportTypeMapping` metoda s typem serializovaná třídy.  
   
-     Následující příklad kódu volá `ImportTypeMapping` metodu `SoapReflectionImporter` třídy pro vytvoření. `XmlTypeMapping`  
+     Následující příklad kódu volá `ImportTypeMapping` metodu `SoapReflectionImporter` třídy pro vytvoření `XmlTypeMapping` .  
   
     ```vb  
     ' Serializes a class named Group as a SOAP message.  

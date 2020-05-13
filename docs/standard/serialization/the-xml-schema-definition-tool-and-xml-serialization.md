@@ -1,5 +1,6 @@
 ---
 title: Nástroj definice schématu XML a serializace XML
+description: Nástroj definice schématu XML generuje soubory tříd jazyka C# nebo Visual Basic pro schéma XSD a generuje schéma XML z knihovny nebo spustitelného souboru.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - Xsd.exe
@@ -7,16 +8,16 @@ helpviewer_keywords:
 - XML Schema Definition tool
 - serialization, XML Schema Definition tool
 ms.assetid: 3c03f855-f931-47ff-bbc6-50c0367a16e4
-ms.openlocfilehash: b51b9a0112893d9a7838155f4af051e7079c8cdd
-ms.sourcegitcommit: 961ec21c22d2f1d55c9cc8a7edf2ade1d1fd92e3
+ms.openlocfilehash: 258e66643dae64aec7280419911f5ac9193a2ada
+ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2020
-ms.locfileid: "80588391"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83380107"
 ---
 # <a name="the-xml-schema-definition-tool-and-xml-serialization"></a>Nástroj definice schématu XML a serializace XML
 
-Nástroj definice schématu XML ([XSD. exe) (XML Schema Definition Tool](../../../docs/standard/serialization/xml-schema-definition-tool-xsd-exe.md)) je nainstalován společně s nástroji pro .NET Framework jako součást sady Windows&reg; Software Development Kit (SDK). Nástroj je určen především ke dvěma účelům:  
+Nástroj definice schématu XML ([XSD. exe) (XML Schema Definition Tool](../../../docs/standard/serialization/xml-schema-definition-tool-xsd-exe.md)) je nainstalován společně s nástroji pro .NET Framework jako součást sady Windows &reg; Software Development Kit (SDK). Nástroj je určen především ke dvěma účelům:  
   
 - Chcete-li generovat buď C# nebo Visual Basic souborů třídy, které odpovídají konkrétní jazyk (XSD) schématu definice schématu XML. Nástroj přebírá schématu XML jako argument a uloží soubor, který obsahuje mnoho třída, která je, když serializované pomocí <xref:System.Xml.Serialization.XmlSerializer>, odpovídat schématu. Informace o tom, jak pomocí nástroje generovat třídy, které odpovídají konkrétnímu schématu, naleznete v tématu [How to: Use a XML Schema Definition Tool ke generování tříd a dokumentů schémat XML](../../../docs/standard/serialization/xml-schema-def-tool-gen.md).  
   

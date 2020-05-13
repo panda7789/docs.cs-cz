@@ -1,5 +1,6 @@
 ---
 title: Serializace odolná proti verzi
+description: .NET Framework 2,0 zavádí serializaci odolnou proti verzím, sadu funkcí, které usnadňují úpravu serializovatelných typů.
 ms.date: 08/08/2017
 dev_langs:
 - csharp
@@ -13,12 +14,12 @@ helpviewer_keywords:
 - BinaryFormatter class, samples
 - serialization, attributes
 ms.assetid: bea0ffe3-2708-4a16-ac7d-e586ed6b8e8d
-ms.openlocfilehash: 9886e2f20ef7954b01ea1f46a9eabdb9ea2cc12d
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.openlocfilehash: 87bdc0f0328e7a75477672432c0944818dbef244
+ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75348438"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83380096"
 ---
 # <a name="version-tolerant-serialization"></a>Serializace odolná proti verzi
 

@@ -1,5 +1,6 @@
 ---
 title: Podrobnosti serializace XML
+description: Serializace převede objekt do formuláře, který lze přenést. Tento článek poskytuje přehled serializace XML a třídy XmlSerializer.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -12,12 +13,12 @@ helpviewer_keywords:
 - DataSet class, serializing
 - XML Schema, serializing
 ms.assetid: 8c63200d-db63-4a03-a93d-21641623df62
-ms.openlocfilehash: d644e80cbf5ac17fca4df039d915c847a1936217
-ms.sourcegitcommit: 961ec21c22d2f1d55c9cc8a7edf2ade1d1fd92e3
+ms.openlocfilehash: 373a98bea6661d4a1dcfa0300dcc7c0df1ad751a
+ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2020
-ms.locfileid: "80588458"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83380163"
 ---
 # <a name="xml-serialization"></a>serializace XML
 
@@ -28,7 +29,7 @@ Serializace je proces převodu objektu do formuláře, který lze snadno přené
 > [!NOTE]
 > Serializace XML nepřevádět metody, indexery, soukromé pole nebo vlastnosti jen pro čtení (s výjimkou kolekce jen pro čtení). K serializaci všechny objektu polí a vlastností, veřejné a soukromé, použijte <xref:System.Runtime.Serialization.DataContractSerializer> namísto serializace XML.
 
- Centrální třída v serializaci XML je <xref:System.Xml.Serialization.XmlSerializer> třída a nejdůležitější metody v této třídě jsou metody **serializace** a **deserializace** . <xref:System.Xml.Serialization.XmlSerializer> Vytváří soubory jazyka C# a jejich kompiluje do soubory DLL a provést serializace. V .NET Framework 2,0 je [XML Serializer Generator Tool (Sgen. exe)](xml-serializer-generator-tool-sgen-exe.md) navržena tak, aby se tato serializace sestavení předem generovala s vaší aplikací a zlepšila výkon při spuštění. Datový proud XML generovaný **objektem XmlSerializer** je kompatibilní s doporučením konsorcium World Wide Web (W3C) [XML Schema Definition Language (XSD) 1,0](https://www.w3.org/TR/xslt). Kromě toho jsou typy dat, které jsou generovány kompatibilní s dokumentu s názvem "část schématu XML 2: datové typy."
+ Centrální třída v serializaci XML je <xref:System.Xml.Serialization.XmlSerializer> Třída a nejdůležitější metody v této třídě jsou metody **serializace** a **deserializace** . <xref:System.Xml.Serialization.XmlSerializer> Vytváří soubory jazyka C# a jejich kompiluje do soubory DLL a provést serializace. V .NET Framework 2,0 je [XML Serializer Generator Tool (Sgen. exe)](xml-serializer-generator-tool-sgen-exe.md) navržena tak, aby se tato serializace sestavení předem generovala s vaší aplikací a zlepšila výkon při spuštění. Datový proud XML generovaný **objektem XmlSerializer** je kompatibilní s doporučením konsorcium World Wide Web (W3C) [XML Schema Definition Language (XSD) 1,0](https://www.w3.org/TR/xslt). Kromě toho jsou typy dat, které jsou generovány kompatibilní s dokumentu s názvem "část schématu XML 2: datové typy."
 
  Data v objektech jsou popsána pomocí konstrukcí programovacích jazyků, jako jsou třídy, pole, vlastnosti, primitivní typy, pole a dokonce i vložené XML ve formě objektů **XmlElement** nebo **XmlAttribute** . Máte možnost vytvořit vlastní třídy označena s atributy, nebo pomocí nástroje definici schématu XML vygenerovat třídy založen na stávajícím schématu XML.
 

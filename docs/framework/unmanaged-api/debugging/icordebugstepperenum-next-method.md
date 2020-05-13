@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: d0ea0f30-e8d2-48b0-8477-e1a029ceb4dd
 topic_type:
 - apiref
-ms.openlocfilehash: 11d9c7393827b613d49e23972b4896bfe657a544
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 293d1a9cd93b5ce45105427e7df864ad8bfbe77a
+ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73138990"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83379196"
 ---
 # <a name="icordebugstepperenumnext-method"></a>ICorDebugStepperEnum::Next – metoda
 Získá zadaný počet instancí ICorDebugStepper z výčtu počínaje aktuální pozicí.  
@@ -38,19 +38,19 @@ HRESULT Next(
   
 ## <a name="parameters"></a>Parametry  
  `celt`  
- pro Počet instancí `ICorDebugStepper`, které mají být načteny.  
+ pro Počet instancí, `ICorDebugStepper` které mají být načteny.  
   
  `steppers`  
- mimo Pole ukazatelů, z nichž každý odkazuje na objekt `ICorDebugStepper`.  
+ mimo Pole ukazatelů, z nichž každý odkazuje na `ICorDebugStepper` objekt.  
   
  `pceltFetched`  
- mimo Ukazatel na počet skutečně vrácených instancí `ICorDebugStepper`. Tato hodnota může být null, pokud `celt` je jedna.  
+ mimo Ukazatel na počet `ICorDebugStepper` skutečně vrácených instancí. Tato hodnota může být null `celt` , pokud je jedna.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** CorDebug. idl, CorDebug. h  
   
  **Knihovna:** CorGuids. lib  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]
+ **Verze .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]

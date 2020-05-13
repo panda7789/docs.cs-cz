@@ -1,37 +1,38 @@
 ---
-title: 'Postup: Určení, zda je soubor sestavením'
+title: 'Postupy: určení, zda je soubor sestavením'
+description: V tomto článku se dozvíte, jak určit, zda je soubor sestavením .NET, ručně i programově.
 ms.date: 08/19/2019
 ms.assetid: ea5186bb-5bff-4dcb-bde9-d6ba4e2edd00
 dev_langs:
 - csharp
 - vb
-ms.openlocfilehash: 1d66c0c166724f195a3cafd9bcbe3c7414c08ebb
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: fb1bcfa50ec380f10ab67cc47331f91dc3e4b32d
+ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "78159504"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83380150"
 ---
-# <a name="how-to-determine-if-a-file-is-an-assembly"></a>Postup: Určení, zda je soubor sestavením
+# <a name="how-to-determine-if-a-file-is-an-assembly"></a>Postupy: určení, zda je soubor sestavením
 
-Soubor je sestavení, pokud a pouze v případě, že je spravován a obsahuje položku sestavení v jeho metadata. Další informace o sestaveních a metadatech naleznete v [tématu Manifest sestavení](manifest.md).  
+Soubor je sestavení, pokud je a pouze v případě, že je spravován a obsahuje položku sestavení v metadatech. Další informace o sestaveních a metadatech naleznete v tématu [Assembly manifest](manifest.md).  
   
-## <a name="how-to-manually-determine-if-a-file-is-an-assembly"></a>Ruční určení, zda je soubor sestavením  
+## <a name="how-to-manually-determine-if-a-file-is-an-assembly"></a>Ruční určení, zda je soubor sestavení  
   
-1. Spusťte [ildasm.exe (IL Disassembler)](../../framework/tools/ildasm-exe-il-disassembler.md).  
+1. Spusťte nástroj [Ildasm. exe (IL Disassembler)](../../framework/tools/ildasm-exe-il-disassembler.md).  
   
-2. Načtěte soubor, který chcete otestovat.  
+2. Načtěte soubor, který chcete testovat.  
   
-3. Pokud **ILDASM** hlásí, že soubor není přenosný spustitelný soubor (PE), pak není sestavení. Další informace naleznete v tématu [Jak: Zobrazit obsah sestavení](view-contents.md).  
+3. Pokud **Ildasm** hlásí, že soubor není soubor přenositelného spustitelného souboru (PE), nejedná se o sestavení. Další informace naleznete v tématu [Postupy: zobrazení obsahu sestavení](view-contents.md).  
   
-## <a name="how-to-programmatically-determine-if-a-file-is-an-assembly"></a>Jak programově určit, zda je soubor sestavení  
+## <a name="how-to-programmatically-determine-if-a-file-is-an-assembly"></a>Jak programově určit, jestli je soubor sestavení  
   
-1. Volání <xref:System.Reflection.AssemblyName.GetAssemblyName%2A?displayProperty=nameWithType> metody, předání úplnou cestu k souboru a název souboru, který testujete.  
+1. Zavolejte <xref:System.Reflection.AssemblyName.GetAssemblyName%2A?displayProperty=nameWithType> metodu a předejte jí úplnou cestu k souboru a název testovaného souboru.  
   
 2. Pokud <xref:System.BadImageFormatException> je vyvolána výjimka, soubor není sestavení.  
   
 ## <a name="example"></a>Příklad  
-Tento příklad testuje dll, aby zjistil, zda se jedná o sestavení.  
+Tento příklad testuje knihovnu DLL, aby bylo možné zjistit, zda se jedná o sestavení.  
 
 ```csharp
 class TestAssembly  
@@ -89,7 +90,7 @@ End Module
 '        Yes, the file is an Assembly.  
 ```
 
-Metoda <xref:System.Reflection.AssemblyName.GetAssemblyName%2A> načte testovací soubor a poté jej uvolní po přečtení informací.  
+<xref:System.Reflection.AssemblyName.GetAssemblyName%2A>Metoda načte testovací soubor a pak ho uvolní, jakmile jsou informace čteny.  
   
 ## <a name="see-also"></a>Viz také
 

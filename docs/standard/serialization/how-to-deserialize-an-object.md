@@ -1,5 +1,6 @@
 ---
 title: Jak deserializovat objekt pomocí XmlSerializer
+description: Naučte se, jak objekt deserializovat. Formát přenosu Určuje, zda se má vytvořit datový proud nebo objekt souboru.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -8,12 +9,12 @@ helpviewer_keywords:
 - deserializing objects
 - objects, deserializing steps
 ms.assetid: 287129c8-035a-4fea-b7b3-4790057ca076
-ms.openlocfilehash: c24ba466a208fe5abdbf565169c41c4ee3f47482
-ms.sourcegitcommit: f8c36054eab877de4d40a705aacafa2552ce70e9
+ms.openlocfilehash: e08ae0d77539219223650fd3bcbd1bcee4df2739
+ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/31/2019
-ms.locfileid: "75559895"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83379117"
 ---
 # <a name="how-to-deserialize-an-object-using-xmlserializer"></a>Jak deserializovat objekt pomocí XmlSerializer
 

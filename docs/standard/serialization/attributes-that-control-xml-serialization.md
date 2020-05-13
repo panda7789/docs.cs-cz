@@ -1,5 +1,6 @@
 ---
 title: Atributy, které řídí serializaci XML
+description: Tento článek obsahuje atributy, které lze použít na třídy a členy třídy pro řízení způsobu, jakým objekt XmlSerializer serializace nebo deserializace instance třídy.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - classes, serializing
@@ -9,12 +10,12 @@ helpviewer_keywords:
 - serialization, attributes
 - XML Schema, serializing
 ms.assetid: 414b820f-a696-4206-b576-2711d85490c7
-ms.openlocfilehash: 0d1aee4650ea29083348af482e445011289e9581
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 3a269e1f3e8fd6e982db3c241c113f471134f9d3
+ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61794963"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83378451"
 ---
 # <a name="attributes-that-control-xml-serialization"></a>Atributy, které řídí serializaci XML
 Můžete použít atributy v následující tabulce do třídy a třídy členy lze řídit způsob, ve kterém <xref:System.Xml.Serialization.XmlSerializer> serializuje a deserializuje instance třídy. Informace o tom, jak tyto atributy řídí serializace XML, naleznete v tématu [řízení serializace XML pomocí atributů](../../../docs/standard/serialization/controlling-xml-serialization-using-attributes.md).  

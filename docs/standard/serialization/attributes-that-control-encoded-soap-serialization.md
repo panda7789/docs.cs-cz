@@ -1,5 +1,6 @@
 ---
 title: Atributy, které řídí serializaci zakódovanou v protokolu SOAP
+description: V tomto článku jsou uvedeny speciální sady atributů, které jsou k dispozici v oboru názvů System. XML. Serialization, který je nezbytný pro dodržení specifikace protokolu SOAP.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - SOAP, XML serialization
@@ -8,16 +9,16 @@ helpviewer_keywords:
 - attributes [.NET Framework], XML serialization
 - serialization, attributes
 ms.assetid: 93ee258c-9c0f-4a08-897c-c10db7a00f91
-ms.openlocfilehash: 2961d9abc6c32e78b5a61e8f2bbea5cfcf6677bd
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 9e99856c3ac70b122c0def23e36bbc3059c5891c
+ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61794937"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83378464"
 ---
 # <a name="attributes-that-control-encoded-soap-serialization"></a>Atributy, které řídí serializaci zakódovanou v protokolu SOAP
 
-Dokument konsorcium World Wide Web (W3C) s názvem [Simple Object Access Protocol (SOAP) 1,1](https://www.w3.org/TR/2000/NOTE-SOAP-20000508/) obsahuje volitelný oddíl (oddíl 5), který popisuje, jak lze kódovat parametry protokolu SOAP. Pro dodržení oddílu 5 specifikace musíte použít speciální sadu atributů, které se <xref:System.Xml.Serialization> nacházejí v oboru názvů. Tyto atributy v závislosti na třídy a členy třídy aplikovat a pak <xref:System.Xml.Serialization.XmlSerializer> k serializaci instancí třídy nebo tříd.
+Dokument konsorcium World Wide Web (W3C) s názvem [Simple Object Access Protocol (SOAP) 1,1](https://www.w3.org/TR/2000/NOTE-SOAP-20000508/) obsahuje volitelný oddíl (oddíl 5), který popisuje, jak lze kódovat parametry protokolu SOAP. Pro dodržení oddílu 5 specifikace musíte použít speciální sadu atributů, které se nacházejí v <xref:System.Xml.Serialization> oboru názvů. Tyto atributy v závislosti na třídy a členy třídy aplikovat a pak <xref:System.Xml.Serialization.XmlSerializer> k serializaci instancí třídy nebo tříd.
 
 V následující tabulce jsou uvedeny atributy, kde je lze použít, a jejich význam. Další informace o použití těchto atributů pro řízení serializace XML naleznete v tématu [How to: serializovat objekt jako datový proud XML s kódováním SOAP](how-to-serialize-an-object-as-a-soap-encoded-xml-stream.md) a [Postupy: přepsání serializace XML](how-to-override-encoded-soap-xml-serialization.md)s kódováním.
 

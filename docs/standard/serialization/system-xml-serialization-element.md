@@ -1,17 +1,18 @@
 ---
 title: Element <system.xml.serialization>
+description: Tento článek popisuje prvek <System. XML. Serialization>, který je prvkem nejvyšší úrovně pro řízení serializace XML.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - system.xml.serialization element
 - XML serialization, configuration
 - <system.xml.serialization> element
 ms.assetid: 3ce45919-388a-418c-8968-6df0372c73ec
-ms.openlocfilehash: 02027a238bc9a2f82963ea841584d2bb3c6446c6
-ms.sourcegitcommit: 52e588dc2ee74d484cd07ac60076be25cbf777ab
+ms.openlocfilehash: 1e66220004d561f937d03c506e6f30db4ccc635b
+ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/27/2019
-ms.locfileid: "67410550"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83380119"
 ---
 # <a name="systemxmlserialization-element"></a>\<System. XML. Serialization – element>
 
@@ -33,7 +34,7 @@ Následující části popisují atributy, podřízené prvky a nadřazené prvk
 
 ### <a name="attributes"></a>Atributy
 
-Žádné.
+Žádné
 
 ### <a name="child-elements"></a>Podřízené elementy
 

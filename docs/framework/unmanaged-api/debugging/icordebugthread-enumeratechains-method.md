@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: ec00bc21-117e-4acd-9301-2cfafd5be8d3
 topic_type:
 - apiref
-ms.openlocfilehash: 38fe50f5a6608bb27d7a7818dee4784a7f8113ef
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 711fccd65379bc3e5e178869e7220dd84fd07fbe
+ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73133610"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83379706"
 ---
 # <a name="icordebugthreadenumeratechains-method"></a>ICorDebugThread::EnumerateChains – metoda
 Získá ukazatel rozhraní na enumerátor ICorDebugChainEnum, který obsahuje všechny řetězy zásobníku v tomto objektu ICorDebugThread.  
@@ -35,7 +35,7 @@ HRESULT EnumerateChains (
   
 ## <a name="parameters"></a>Parametry  
  `ppChains`  
- mimo Ukazatel na adresu `ICorDebugChainEnum` objektu, který umožňuje vyčíslení všech řetězů zásobníku v tomto vlákně počínaje aktivním řetězcem (to znamená nejnovější) řetěz.  
+ mimo Ukazatel na adresu `ICorDebugChainEnum` objektu, který umožňuje vyčíslení všech řetězů zásobníku v tomto vlákně počínaje aktivním řetězcem (to znamená nejnovější).  
   
 ## <a name="remarks"></a>Poznámky  
  Řetěz zásobníku představuje fyzický zásobník volání pro vlákno. V následujících případech se vytvoří hranice řetězu zásobníku:  
@@ -51,10 +51,10 @@ HRESULT EnumerateChains (
  Ladicí program může chtít změnit uspořádání fyzických zásobníků volání všech vláken do logických zásobníků volání. To by mělo zahrnovat řazení všech zřetězení vláken podle jejich vztahů volající/volaný a jejich přeseskupování.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** CorDebug. idl, CorDebug. h  
   
  **Knihovna:** CorGuids. lib  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]
+ **Verze .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]

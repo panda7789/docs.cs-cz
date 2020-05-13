@@ -1,26 +1,27 @@
 ---
-title: 'Postup: Vytvoření nepodepsaných sestavení přátel'
+title: 'Postupy: vytváření nepodepsaných přátelských sestavení'
+description: Tento článek ukazuje, jak používat sestavení typu Friend se sestaveními bez znaménka. Obsahuje informace o zabezpečení .NET.
 ms.date: 08/19/2019
 ms.assetid: 78cbc4f0-b021-4141-a4ff-eb4edbd814ca
 dev_langs:
 - csharp
 - vb
-ms.openlocfilehash: f8fec064507553b8208083578165965de2303a33
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 8d3e13669c36048759fedeb3df1bfb59fd476317
+ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "74352440"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83378973"
 ---
-# <a name="how-to-create-unsigned-friend-assemblies"></a>Postup: Vytvoření nepodepsaných sestavení přátel
+# <a name="how-to-create-unsigned-friend-assemblies"></a>Postupy: vytváření nepodepsaných přátelských sestavení
 
-Tento příklad ukazuje, jak používat sestavení přátel s sestaveními, která nejsou podepsána.
+Tento příklad ukazuje, jak použít sestavení typu Friend se sestaveními, která jsou bez znaménka.
 
-## <a name="create-an-assembly-and-a-friend-assembly"></a>Vytvoření sestavy a sestavy přítele
+## <a name="create-an-assembly-and-a-friend-assembly"></a>Vytvoření sestavení a sestavení typu Friend
 
 1. Otevřete příkazový řádek.
 
-2. Vytvořte soubor jazyka C# nebo Visual Basic s názvem *friend_unsigned_A,* který obsahuje následující kód. Kód používá <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> atribut deklarovat *friend_unsigned_B* jako sestavení přítele.
+2. Vytvořte soubor C# nebo Visual Basic s názvem *friend_unsigned_A* , který obsahuje následující kód. Kód používá <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> atribut k deklaraci *friend_unsigned_B* jako sestavení typu Friend.
 
    ```csharp
    // friend_unsigned_A.cs
@@ -73,7 +74,7 @@ Tento příklad ukazuje, jak používat sestavení přátel s sestaveními, kter
    End Class
    ```
 
-3. Kompilujte a podepisujte *friend_unsigned_A* pomocí následujícího příkazu:
+3. Zkompilujte a podepište *friend_unsigned_A* pomocí následujícího příkazu:
 
    ```csharp
    csc /target:library friend_unsigned_A.cs
@@ -83,7 +84,7 @@ Tento příklad ukazuje, jak používat sestavení přátel s sestaveními, kter
    vbc -target:library friend_unsigned_A.vb
    ```
 
-4. Vytvořte soubor jazyka C# nebo Visual Basic s názvem *friend_unsigned_B,* který obsahuje následující kód. Vzhledem k tomu, *že friend_unsigned_A* určuje *friend_unsigned_B* `internal` jako přátelské sestavení, kód v *friend_unsigned_B* může přistupovat (C#) nebo `Friend` (Visual Basic) typy a členy z *friend_unsigned_A*.
+4. Vytvořte soubor C# nebo Visual Basic s názvem *friend_unsigned_B* , který obsahuje následující kód. Vzhledem k tomu, že *friend_unsigned_A* Určuje *friend_unsigned_B* jako sestavení typu friend, kód v *friend_unsigned_B* má přístup `internal` (C#) nebo `Friend` (Visual Basic) typů a členů z *friend_unsigned_A*.
 
    ```csharp
    // friend_unsigned_B.cs
@@ -125,7 +126,7 @@ Tento příklad ukazuje, jak používat sestavení přátel s sestaveními, kter
    End Module
    ```
 
-5. Kompilace *friend_unsigned_B* pomocí následujícího příkazu.
+5. Zkompilujte *friend_unsigned_B* pomocí následujícího příkazu.
 
    ```csharp
    csc /r:friend_unsigned_A.dll /out:friend_unsigned_B.exe friend_unsigned_B.cs
@@ -135,21 +136,21 @@ Tento příklad ukazuje, jak používat sestavení přátel s sestaveními, kter
    vbc -r:friend_unsigned_A.dll friend_unsigned_B.vb
    ```
 
-   Název sestavení, které je generováno kompilátorem, musí odpovídat názvu <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> sestavení friend, který je předán atributu. Je nutné explicitně zadat název výstupního sestavení (*.exe* `-out` nebo *.dll*) pomocí možnosti kompilátoru. Další informace naleznete [v tématu -out (C# možnosti kompilátoru)](../../csharp/language-reference/compiler-options/out-compiler-option.md) nebo [-out (Visual Basic)](../../visual-basic/reference/command-line-compiler/out.md)..
+   Název sestavení, který je generován kompilátorem, se musí shodovat s názvem sestavení typu Friend, které je předáno <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> atributu. Je nutné explicitně zadat název výstupního sestavení (*. exe* nebo *. dll*) pomocí `-out` Možnosti kompilátoru. Další informace naleznete v tématu [-out (možnosti kompilátoru C#)](../../csharp/language-reference/compiler-options/out-compiler-option.md) nebo [-out (Visual Basic)](../../visual-basic/reference/command-line-compiler/out.md).
 
-6. Spusťte soubor *friend_unsigned_B.exe.*
+6. Spusťte soubor *friend_unsigned_B. exe* .
 
-   Program vyveze dva řetězce: **Class1.Test** a **Class2.Test**.
+   Program vytvoří výstup dvou řetězců: **Class1. test** a **Class2. test**.
 
 ## <a name="net-security"></a>Zabezpečení .NET
 
-Existují podobnosti mezi <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> atributem <xref:System.Security.Permissions.StrongNameIdentityPermission> a třídou. Hlavní rozdíl je, <xref:System.Security.Permissions.StrongNameIdentityPermission> že může vyžadovat oprávnění zabezpečení ke spuštění <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> určité části kódu, zatímco atribut řídí viditelnost `internal` nebo `Friend` (Visual Basic) typy a členy.
+Existují podobnosti mezi <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> atributem a <xref:System.Security.Permissions.StrongNameIdentityPermission> třídou. Hlavním rozdílem je, že <xref:System.Security.Permissions.StrongNameIdentityPermission> může vyžadovat oprávnění zabezpečení ke spuštění konkrétní části kódu, zatímco <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> atribut řídí viditelnost `internal` `Friend` typů a členů (Visual Basic).
 
 ## <a name="see-also"></a>Viz také
 
 - <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute>
 - [Sestavení v .NET](index.md)
 - [Přátelská sestavení](friend.md)
-- [Postup: Vytvoření podepsaných sestavení přátel](create-signed-friend.md)
+- [Postupy: Vytváření podepsaných přátelských sestavení](create-signed-friend.md)
 - [Průvodce programováním v C#](../../csharp/programming-guide/index.md)
 - [Koncepty programování (Visual Basic)](../../visual-basic/programming-guide/concepts/index.md)
