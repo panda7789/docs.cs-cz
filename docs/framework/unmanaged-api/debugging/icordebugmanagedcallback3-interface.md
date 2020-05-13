@@ -14,40 +14,40 @@ helpviewer_keywords:
 ms.assetid: a95389d3-cf2e-47a4-9805-61426acc6b65
 topic_type:
 - apiref
-ms.openlocfilehash: b97f29b94ed4fad6892697ca1c7ed4a20c99c03e
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.openlocfilehash: 63e3f166c4cbf17f4892dccf770343bfbf6e0284
+ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76793269"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83209744"
 ---
-# <a name="icordebugmanagedcallback3-interface"></a><span data-ttu-id="f69ee-102">ICorDebugManagedCallback3 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="f69ee-102">ICorDebugManagedCallback3 Interface</span></span>
-<span data-ttu-id="f69ee-103">Poskytuje metodu zpětného volání, která určuje, že povolené vlastní oznámení ladicího programu bylo vyvoláno.</span><span class="sxs-lookup"><span data-stu-id="f69ee-103">Provides a callback method that indicates that an enabled custom debugger notification has been raised.</span></span>  
+# <a name="icordebugmanagedcallback3-interface"></a><span data-ttu-id="fdb6f-102">ICorDebugManagedCallback3 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="fdb6f-102">ICorDebugManagedCallback3 Interface</span></span>
+<span data-ttu-id="fdb6f-103">Poskytuje metodu zpětného volání, která určuje, že povolené vlastní oznámení ladicího programu bylo vyvoláno.</span><span class="sxs-lookup"><span data-stu-id="fdb6f-103">Provides a callback method that indicates that an enabled custom debugger notification has been raised.</span></span>  
   
-## <a name="methods"></a><span data-ttu-id="f69ee-104">Metody</span><span class="sxs-lookup"><span data-stu-id="f69ee-104">Methods</span></span>  
+## <a name="methods"></a><span data-ttu-id="fdb6f-104">Metody</span><span class="sxs-lookup"><span data-stu-id="fdb6f-104">Methods</span></span>  
   
-|<span data-ttu-id="f69ee-105">Metoda</span><span class="sxs-lookup"><span data-stu-id="f69ee-105">Method</span></span>|<span data-ttu-id="f69ee-106">Popis</span><span class="sxs-lookup"><span data-stu-id="f69ee-106">Description</span></span>|  
+|<span data-ttu-id="fdb6f-105">Metoda</span><span class="sxs-lookup"><span data-stu-id="fdb6f-105">Method</span></span>|<span data-ttu-id="fdb6f-106">Popis</span><span class="sxs-lookup"><span data-stu-id="fdb6f-106">Description</span></span>|  
 |------------|-----------------|  
-|[<span data-ttu-id="f69ee-107">CustomNotification – metoda</span><span class="sxs-lookup"><span data-stu-id="f69ee-107">CustomNotification Method</span></span>](icordebugmanagedcallback3-customnotification-method.md)|<span data-ttu-id="f69ee-108">Indikuje, že se aktivovalo oznámení o povoleném vlastním ladicím programu.</span><span class="sxs-lookup"><span data-stu-id="f69ee-108">Indicates that an enabled custom debugger notification has been raised.</span></span>|  
+|[<span data-ttu-id="fdb6f-107">CustomNotification – metoda</span><span class="sxs-lookup"><span data-stu-id="fdb6f-107">CustomNotification Method</span></span>](icordebugmanagedcallback3-customnotification-method.md)|<span data-ttu-id="fdb6f-108">Indikuje, že se aktivovalo oznámení o povoleném vlastním ladicím programu.</span><span class="sxs-lookup"><span data-stu-id="fdb6f-108">Indicates that an enabled custom debugger notification has been raised.</span></span>|  
   
-## <a name="remarks"></a><span data-ttu-id="f69ee-109">Poznámky</span><span class="sxs-lookup"><span data-stu-id="f69ee-109">Remarks</span></span>  
- <span data-ttu-id="f69ee-110">Toto rozhraní je logické rozšíření rozhraní [ICorDebugManagedCallback](icordebugmanagedcallback-interface.md) a [ICorDebugManagedCallback2](icordebugmanagedcallback2-interface.md) .</span><span class="sxs-lookup"><span data-stu-id="f69ee-110">This interface is a logical extension of the [ICorDebugManagedCallback](icordebugmanagedcallback-interface.md) and [ICorDebugManagedCallback2](icordebugmanagedcallback2-interface.md) interfaces.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="fdb6f-109">Poznámky</span><span class="sxs-lookup"><span data-stu-id="fdb6f-109">Remarks</span></span>  
+ <span data-ttu-id="fdb6f-110">Toto rozhraní je logické rozšíření rozhraní [ICorDebugManagedCallback](icordebugmanagedcallback-interface.md) a [ICorDebugManagedCallback2](icordebugmanagedcallback2-interface.md) .</span><span class="sxs-lookup"><span data-stu-id="fdb6f-110">This interface is a logical extension of the [ICorDebugManagedCallback](icordebugmanagedcallback-interface.md) and [ICorDebugManagedCallback2](icordebugmanagedcallback2-interface.md) interfaces.</span></span>  
   
 > [!NOTE]
-> <span data-ttu-id="f69ee-111">Toto rozhraní nepodporuje vzdálené volání, a to buď mezi počítačem, nebo mezi procesy.</span><span class="sxs-lookup"><span data-stu-id="f69ee-111">This interface does not support being called remotely, either cross-machine or cross-process.</span></span>  
+> <span data-ttu-id="fdb6f-111">Toto rozhraní nepodporuje vzdálené volání, a to buď mezi počítačem, nebo mezi procesy.</span><span class="sxs-lookup"><span data-stu-id="fdb6f-111">This interface does not support being called remotely, either cross-machine or cross-process.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="f69ee-112">Požadavky</span><span class="sxs-lookup"><span data-stu-id="f69ee-112">Requirements</span></span>  
- <span data-ttu-id="f69ee-113">**Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="f69ee-113">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="fdb6f-112">Požadavky</span><span class="sxs-lookup"><span data-stu-id="fdb6f-112">Requirements</span></span>  
+ <span data-ttu-id="fdb6f-113">**Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="fdb6f-113">**Platforms:** See [System Requirements](../../get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="f69ee-114">**Hlavička:** CorDebug. idl, CorDebug. h</span><span class="sxs-lookup"><span data-stu-id="f69ee-114">**Header:** CorDebug.idl, CorDebug.h</span></span>  
+ <span data-ttu-id="fdb6f-114">**Hlavička:** CorDebug. idl, CorDebug. h</span><span class="sxs-lookup"><span data-stu-id="fdb6f-114">**Header:** CorDebug.idl, CorDebug.h</span></span>  
   
- <span data-ttu-id="f69ee-115">**Knihovna:** CorGuids. lib</span><span class="sxs-lookup"><span data-stu-id="f69ee-115">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="fdb6f-115">**Knihovna:** CorGuids. lib</span><span class="sxs-lookup"><span data-stu-id="fdb6f-115">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="f69ee-116">**Verze .NET Framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="f69ee-116">**.NET Framework Versions:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]</span></span>  
+ <span data-ttu-id="fdb6f-116">**Verze .NET Framework:**[!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="fdb6f-116">**.NET Framework Versions:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="f69ee-117">Viz také:</span><span class="sxs-lookup"><span data-stu-id="f69ee-117">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="fdb6f-117">Viz také</span><span class="sxs-lookup"><span data-stu-id="fdb6f-117">See also</span></span>
 
-- [<span data-ttu-id="f69ee-118">ICorDebugManagedCallback – rozhraní</span><span class="sxs-lookup"><span data-stu-id="f69ee-118">ICorDebugManagedCallback Interface</span></span>](icordebugmanagedcallback-interface.md)
-- [<span data-ttu-id="f69ee-119">ICorDebugManagedCallback2 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="f69ee-119">ICorDebugManagedCallback2 Interface</span></span>](icordebugmanagedcallback2-interface.md)
-- [<span data-ttu-id="f69ee-120">Rozhraní pro ladění</span><span class="sxs-lookup"><span data-stu-id="f69ee-120">Debugging Interfaces</span></span>](debugging-interfaces.md)
-- [<span data-ttu-id="f69ee-121">Ladění</span><span class="sxs-lookup"><span data-stu-id="f69ee-121">Debugging</span></span>](index.md)
+- [<span data-ttu-id="fdb6f-118">ICorDebugManagedCallback – rozhraní</span><span class="sxs-lookup"><span data-stu-id="fdb6f-118">ICorDebugManagedCallback Interface</span></span>](icordebugmanagedcallback-interface.md)
+- [<span data-ttu-id="fdb6f-119">ICorDebugManagedCallback2 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="fdb6f-119">ICorDebugManagedCallback2 Interface</span></span>](icordebugmanagedcallback2-interface.md)
+- [<span data-ttu-id="fdb6f-120">Debugging – rozhraní</span><span class="sxs-lookup"><span data-stu-id="fdb6f-120">Debugging Interfaces</span></span>](debugging-interfaces.md)
+- [<span data-ttu-id="fdb6f-121">Ladění</span><span class="sxs-lookup"><span data-stu-id="fdb6f-121">Debugging</span></span>](index.md)
