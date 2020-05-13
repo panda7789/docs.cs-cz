@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: e28e51d3-8f73-494f-bcd4-48bac239fbe1
 topic_type:
 - apiref
-ms.openlocfilehash: 9677fd14f50cf93eac7eeaef784082d45e8884c7
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: cab25738c9f4727fe3970cc1db15c38e68b08de6
+ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73137690"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83212916"
 ---
 # <a name="icordebugframegetchain-method"></a>ICorDebugFrame::GetChain – metoda
 Získá ukazatel na řetěz, jehož součástí je tento rámec.  
@@ -38,10 +38,10 @@ HRESULT GetChain (
  mimo Ukazatel na adresu objektu ICorDebugChain, který představuje řetězec obsahující tento rámec.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** CorDebug. idl, CorDebug. h  
   
  **Knihovna:** CorGuids. lib  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]
+ **Verze .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]

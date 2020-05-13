@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 7212d9f4-989b-44e3-b8d4-ffc35922f6a0
 topic_type:
 - apiref
-ms.openlocfilehash: ab6551ba70ed4cd154b166eeb92138b6550d2cb2
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.openlocfilehash: 6af5bc22616be196be7fdb0d417800d631d87506
+ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76792969"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83213644"
 ---
 # <a name="icordebugmodule2getjitcompilerflags-method"></a>ICorDebugModule2::GetJITCompilerFlags – metoda
 Získá příznaky, které řídí kompilaci JIT (just-in-time) tohoto ICorDebugModule2.  
@@ -38,10 +38,10 @@ HRESULT GetJITCompilerFlags (
  mimo Ukazatel na hodnotu výčtu [CorDebugJITCompilerFlags –](cordebugjitcompilerflags-enumeration.md) , která řídí kompilaci JIT.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** CorDebug. idl, CorDebug. h  
   
  **Knihovna:** CorGuids. lib  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]
+ **Verze .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]

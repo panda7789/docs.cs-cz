@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: bbc0881c-6a59-41a0-b5ee-2f3d1b71684c
 topic_type:
 - apiref
-ms.openlocfilehash: 3afefdc3d704044184ea20d061eb9449458b5060
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 7e32f3f4f6613d34e2b40946ed3eadb8eb0a7c1f
+ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73129569"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83212565"
 ---
 # <a name="icordebugmodulegetglobalvariablevalue-method"></a>ICorDebugModule::GetGlobalVariableValue – metoda
 Získá hodnotu zadané globální proměnné.  
@@ -36,16 +36,16 @@ HRESULT GetGlobalVariableValue(
   
 ## <a name="parameters"></a>Parametry  
  `fieldDef`  
- pro Token `mdFieldDef`, který odkazuje na metadata popisující globální proměnnou.  
+ pro `mdFieldDef`Token, který odkazuje na metadata popisující globální proměnnou.  
   
  `ppValue`  
  mimo Ukazatel na adresu objektu ICorDebugValue, který představuje hodnotu zadané globální proměnné.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** CorDebug. idl, CorDebug. h  
   
  **Knihovna:** CorGuids. lib  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]
+ **Verze .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]

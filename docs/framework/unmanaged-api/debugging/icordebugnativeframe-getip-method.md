@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 99f693f3-d3b9-4fd8-9d09-b8efd03f7b67
 topic_type:
 - apiref
-ms.openlocfilehash: 3011a8c7e5cf278768587633967b2e9491cf87ac
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 53576ca938074fb7e5974a96bb53a84cb6ed67ab
+ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73137338"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83213592"
 ---
 # <a name="icordebugnativeframegetip-method"></a>ICorDebugNativeFrame::GetIP – metoda
 Získá umístění posunutí nativního kódu, na který je aktuálně nastaven ukazatel na instrukci.  
@@ -41,12 +41,12 @@ HRESULT GetIP (
  Pokud je aktivní rámec zásobníku, který je reprezentován tímto "ICorDebugNativeFrame", posunem je adresa dalšího pokynu, který má být proveden. Pokud tento rámec zásobníku není aktivní, posun je adresa další instrukce, která se má provést, když se znovu aktivuje rámec zásobníku.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** CorDebug. idl, CorDebug. h  
   
  **Knihovna:** CorGuids. lib  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také

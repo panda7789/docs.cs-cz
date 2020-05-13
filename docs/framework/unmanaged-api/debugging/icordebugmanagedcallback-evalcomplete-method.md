@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: f74ab4eb-cd1b-407c-a66d-8ec0d85647f3
 topic_type:
 - apiref
-ms.openlocfilehash: d29f4095a1d615285f4c4ff30e36b91404036949
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.openlocfilehash: 0431b54997c9889e2b3206392e86e4dcde45ffb3
+ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76788416"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83212448"
 ---
 # <a name="icordebugmanagedcallbackevalcomplete-method"></a>ICorDebugManagedCallback::EvalComplete – metoda
 Oznamuje ladicímu programu, že bylo dokončeno vyhodnocení.  
@@ -46,14 +46,14 @@ HRESULT EvalComplete (
  pro Ukazatel na objekt ICorDebugEval, který představuje kód, který provedl vyhodnocení.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** CorDebug. idl, CorDebug. h  
   
  **Knihovna:** CorGuids. lib  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [ICorDebugManagedCallback – rozhraní](icordebugmanagedcallback-interface.md)

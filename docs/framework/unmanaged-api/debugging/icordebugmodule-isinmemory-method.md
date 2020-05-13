@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 89940711-98e7-4aa6-bffc-5e39e91e1b7d
 topic_type:
 - apiref
-ms.openlocfilehash: 1384acff4ea3d1aa820b065cd2c56f649f0cbdbb
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: c5fa55a84ed8907a5072f6099c3bf02cd6d78683
+ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73127927"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83213124"
 ---
 # <a name="icordebugmoduleisinmemory-method"></a>ICorDebugModule::IsInMemory – metoda
 Načte hodnotu, která označuje, jestli tento modul existuje jenom v paměti.  
@@ -35,18 +35,18 @@ HRESULT IsInMemory(
   
 ## <a name="parameters"></a>Parametry  
  `pInMemory`  
- [out] `true`, jestli tento modul existuje jenom v paměti; v opačném případě `false`.  
+ [out] `true` Pokud tento modul existuje pouze v paměti; v opačném případě `false` .  
   
 ## <a name="remarks"></a>Poznámky  
  Modul CLR (Common Language Runtime) podporuje načítání modulů z nezpracovaných datových proudů bajtů. Tyto moduly se nazývají *moduly v paměti* a neexistují na disku.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** CorDebug. idl, CorDebug. h  
   
  **Knihovna:** CorGuids. lib  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také

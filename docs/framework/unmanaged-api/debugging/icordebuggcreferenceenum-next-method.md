@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: 91b1345c-a94f-4ef8-9696-3823d06c6d05
 topic_type:
 - apiref
-ms.openlocfilehash: d87f414e9dfd05a519b60efc7ecdd5328a6dd86f
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 1cf6f9c5fe8777f3333e449a804a3c3a0a64ff19
+ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79178869"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83213085"
 ---
 # <a name="icordebuggcreferenceenumnext-method"></a>ICorDebugGCReferenceEnum::Next – metoda
-Získá zadaný počet [COR_GC_REFERENCE](cor-gc-reference-structure.md) instancí, které obsahují informace o objektech, které budou uvolněny.  
+Získá zadaný počet instancí [COR_GC_REFERENCE](cor-gc-reference-structure.md) , které obsahují informace o objektech, které budou uvolněny z paměti.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -36,24 +36,24 @@ HRESULT Next(
   
 ## <a name="parameters"></a>Parametry  
  celt  
- [v] Počet kořenů, které mají být načteny.  
+ pro Počet kořenových adresářů, které mají být načteny.  
   
- Kořeny  
- [out] Pole ukazatelů, z nichž každý odkazuje na [COR_GC_REFERENCE](cor-gc-reference-structure.md) objekt, který představuje kořen objektu, který má být uvolněno.  
+ autorit  
+ mimo Pole ukazatelů, z nichž každý odkazuje na objekt [COR_GC_REFERENCE](cor-gc-reference-structure.md) , který představuje kořen objektu, který má být shromážděn z paměti.  
   
- pceltnačten  
- [out] Ukazatel na počet [objektů COR_GC_REFERENCE](cor-gc-reference-structure.md) skutečně `roots`vrácených v . Tato hodnota `null` může `celt` být, pokud je 1.  
+ pceltFetched  
+ mimo Ukazatel na počet skutečně vrácených objektů [COR_GC_REFERENCE](cor-gc-reference-structure.md) `roots` . Tato hodnota může být `null` `celt` , pokud je 1.  
   
 ## <a name="remarks"></a>Poznámky  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také
 

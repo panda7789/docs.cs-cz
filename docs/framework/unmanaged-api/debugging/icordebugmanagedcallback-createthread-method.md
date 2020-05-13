@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 6b961728-21c4-4e8d-ae81-197458be62f4
 topic_type:
 - apiref
-ms.openlocfilehash: 0dcd6b2efea0e96a341962315bb5c631acef8a10
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.openlocfilehash: 5fa3bafd35912a7729833896f7e6f0bb2ff9b121
+ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76781950"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83212383"
 ---
 # <a name="icordebugmanagedcallbackcreatethread-method"></a>ICorDebugManagedCallback::CreateThread – metoda
 Oznamuje ladicímu programu, že vlákno zahájilo provádění spravovaného kódu.  
@@ -45,14 +45,14 @@ HRESULT CreateThread (
  Vlákno bude umístěno v první instrukci spravovaného kódu, který má být proveden.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** CorDebug. idl, CorDebug. h  
   
  **Knihovna:** CorGuids. lib  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [ICorDebugManagedCallback – rozhraní](icordebugmanagedcallback-interface.md)

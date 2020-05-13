@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: e11d5a75-61d9-4548-aedf-79c26079bd17
 topic_type:
 - apiref
-ms.openlocfilehash: 5f618f6779f6931785bba18f70fb1ac9baf46753
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 391b848d3b3f66f6af6bf3adbefb6e94d526e748
+ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73137196"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83213501"
 ---
 # <a name="icordebugprocess2getversion-method"></a>ICorDebugProcess2::GetVersion – metoda
 
@@ -41,14 +41,14 @@ mimo Ukazatel na strukturu COR_VERSION, která ukládá číslo verze modulu run
 
 ## <a name="remarks"></a>Poznámky
 
-Metoda `GetVersion` vrátí kód chyby, pokud nebyl v procesu načten modul runtime.
+`GetVersion`Metoda vrátí kód chyby, pokud nebyl v procesu načten modul runtime.
 
 ## <a name="requirements"></a>Požadavky
 
-**Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).
+**Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).
 
 **Hlavička:** CorDebug. idl, CorDebug. h
 
 **Knihovna:** CorGuids. lib
 
-**Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]
+**Verze .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]

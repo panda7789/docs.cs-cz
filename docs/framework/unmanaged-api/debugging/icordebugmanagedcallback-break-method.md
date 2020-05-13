@@ -15,16 +15,16 @@ helpviewer_keywords:
 ms.assetid: 7d78a301-82b3-43b2-9d65-3cda3285ae97
 topic_type:
 - apiref
-ms.openlocfilehash: efc9de050e34867c14f8e85e091e2b959c30f213
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: f70a88df00d15729a6bde06b49417b6439f7c0ec
+ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73122588"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83212461"
 ---
 # <a name="icordebugmanagedcallbackbreak-method"></a>ICorDebugManagedCallback::Break – metoda
 
-Upozorní ladicí program, když se spustí instrukce <xref:System.Reflection.Emit.OpCodes.Break> v datovém proudu kódu.
+Upozorní ladicí program, když <xref:System.Reflection.Emit.OpCodes.Break> je proveden pokyn v datovém proudu kódu.
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -45,14 +45,14 @@ pro Ukazatel na objekt ICorDebugThread, který představuje vlákno, které obsa
 
 ## <a name="requirements"></a>Požadavky
 
-**Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).
+**Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).
 
 **Hlavička:** CorDebug. idl, CorDebug. h
 
 **Knihovna:** CorGuids. lib
 
-**Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]
+**Verze .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [ICorDebugManagedCallback – rozhraní](icordebugmanagedcallback-interface.md)

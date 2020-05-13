@@ -12,17 +12,17 @@ api_type:
 ms.assetid: 6f60aae6-70ec-4c4c-963a-138df98c4668
 topic_type:
 - apiref
-ms.openlocfilehash: 341a86f4c1c8367f979e193a6284bf89f1b03ca0
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: aef28af3eff6aba03003f156b9226b61a8e72d5b
+ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79178806"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83213748"
 ---
 # <a name="icordebugilframe4enumeratelocalvariablesex-method"></a>ICorDebugILFrame4::EnumerateLocalVariablesEx – metoda
-[Podporováno v rozhraní .NET Framework 4.5.2 a novějších verzích]  
+[Podporované v .NET Framework 4.5.2 a novějších verzích]  
   
- Získá čítač výčtu pro místní proměnné v rámci a volitelně zahrnuje proměnné přidané v profileru ReJIT instrumentace.  
+ Získá enumerátor pro místní proměnnou v rámci a volitelně zahrnuje proměnné přidané v profileru ReJIT instrumentace.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -35,27 +35,27 @@ HRESULT EnumerateLocalVariablesEx(
   
 ## <a name="parameters"></a>Parametry  
  `flags`  
- [v] Člen výčtu [ILCodeKind,](ilcodekind-enumeration.md) který určuje, zda jsou v rámci zahrnuty proměnné přidané v instrumentaci ReJIT profileru.  
+ pro Člen výčtu [ILCodeKind](ilcodekind-enumeration.md) , který určuje, jestli jsou proměnné přidané v profileru ReJIT instrumentace zahrnuté do snímku.  
   
  `ppValueEnum`  
- [out] Ukazatel na adresu objektu "ICorDebugValueEnum", který je čítatelem pro místní proměnné v tomto rámci.  
+ mimo Ukazatel na adresu objektu "ICorDebugValueEnum", který je enumerátorem místních proměnných v tomto snímku.  
   
 ## <a name="remarks"></a>Poznámky  
- Tato metoda je podobná [EnumerateLocalVariables](icordebugilframe-enumeratelocalvariables-method.md) metoda, s tím rozdílem, že volitelně přistupuje proměnné přidané v profileru ReJIT instrumentace. Nastavení `flags` `ILCODE_ORIGINAL_IL` je ekvivalentní volání [ICorDebugILFrame::EnumerateLocalVariables](icordebugilframe-enumeratelocalvariables-method.md). Nastavení `flags` `ILCODE_REJIT_IL` umožňuje ladicí program pro přístup k místním proměnným přidaným v instrumentaci ReJIT profileru. Pokud zprostředkující jazyk (IL) není instrumentovaný, výčet je `S_OK`prázdný a metoda vrátí .  
+ Tato metoda se podobá metodě [EnumerateLocalVariables –](icordebugilframe-enumeratelocalvariables-method.md) , s tím rozdílem, že volitelně přistupuje k proměnným přidaným v profileru ReJIT instrumentace. Nastavení `flags` na `ILCODE_ORIGINAL_IL` je ekvivalentní volání [ICorDebugILFrame:: EnumerateLocalVariables –](icordebugilframe-enumeratelocalvariables-method.md). Nastavení `flags` `ILCODE_REJIT_IL` umožní ladicímu programu přístup k místním proměnným přidaným v profileru ReJIT instrumentace. Pokud se převodní jazyk (IL) neinstrumentuje, je výčet prázdný a metoda se vrátí `S_OK` .  
   
- Čítač nemusí obsahovat všechny místní proměnné v běžící metodě, protože některé z nich nemusí být aktivní.  
+ Enumerátor nesmí obsahovat všechny místní proměnné v běžící metodě, protože některé z nich nemusí být aktivní.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v452plus](../../../../includes/net-current-v452plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v452plus](../../../../includes/net-current-v452plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také
 
-- [ICorDebugILFrame4 – rozhraní](icordebugilframe4-interface.md)
+- [Rozhraní ICorDebugILFrame4](icordebugilframe4-interface.md)
 - [Debugging – rozhraní](debugging-interfaces.md)
-- [ReJIT: Návod, jak](https://docs.microsoft.com/archive/blogs/davbr/rejit-a-how-to-guide)
+- [ReJIT: Průvodce](https://docs.microsoft.com/archive/blogs/davbr/rejit-a-how-to-guide)

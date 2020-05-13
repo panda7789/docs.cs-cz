@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: b600b3a2-9908-42d8-8093-ab6f39e9a2c9
 topic_type:
 - apiref
-ms.openlocfilehash: cee095003c136142052b8f946fa8227927c80ee2
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 4c4bfe6a797fc1476ff53a8f2db4f80debc41f6b
+ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73096869"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83212435"
 ---
 # <a name="icordebugnativeframegetlocalmemoryvalue-method"></a>ICorDebugNativeFrame::GetLocalMemoryValue – metoda
 Získá hodnotu argumentu nebo místní proměnné, která je uložena v zadaném umístění v paměti pro tento nativní rámec.  
@@ -38,24 +38,24 @@ HRESULT GetLocalMemoryValue (
   
 ## <a name="parameters"></a>Parametry  
  `address`  
- pro Hodnota `CORDB_ADDRESS`, která určuje umístění paměti obsahující hodnotu.  
+ pro `CORDB_ADDRESS`Hodnota, která určuje umístění paměti obsahující hodnotu.  
   
  `cbSigBlob`  
- pro Celé číslo, které určuje velikost binárního podpisu metadat, na které odkazuje parametr `pvSigBlob`.  
+ pro Celé číslo, které určuje velikost binárního podpisu metadat, na který odkazuje `pvSigBlob` parametr.  
   
  `pvSigBlob`  
- pro Hodnota `PCCOR_SIGNATURE`, která odkazuje na binární signaturu metadat typu hodnoty.  
+ pro `PCCOR_SIGNATURE`Hodnota, která odkazuje na binární signaturu metadat typu hodnoty.  
   
  `ppValue`  
  mimo Ukazatel na adresu objektu "ICorDebugValue" představující načtenou hodnotu, která je uložena v zadaném umístění v paměti.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** CorDebug. idl, CorDebug. h  
   
  **Knihovna:** CorGuids. lib  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také

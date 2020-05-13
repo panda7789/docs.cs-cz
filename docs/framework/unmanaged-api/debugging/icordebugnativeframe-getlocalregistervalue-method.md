@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 5ccb74f3-f891-430c-b70a-e370624edde2
 topic_type:
 - apiref
-ms.openlocfilehash: 132e0868426670ba61d8ee12ba7007be1a8a52de
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 97d79f70097bef7768316907887cea2c38dd81e1
+ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73139406"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83212825"
 ---
 # <a name="icordebugnativeframegetlocalregistervalue-method"></a>ICorDebugNativeFrame::GetLocalRegisterValue – metoda
 Získá hodnotu argumentu nebo místní proměnné, která je uložena v zadaném registru pro tento nativní rámec.  
@@ -41,24 +41,24 @@ HRESULT GetLocalRegisterValue (
  pro Hodnota výčtu "CorDebugRegister –", která určuje registr obsahující hodnotu.  
   
  `cbSigBlob`  
- pro Celé číslo, které určuje velikost binárního podpisu metadat, na které odkazuje parametr `pvSigBlob`.  
+ pro Celé číslo, které určuje velikost binárního podpisu metadat, na který odkazuje `pvSigBlob` parametr.  
   
  `pvSigBlob`  
- pro Hodnota `PCCOR_SIGNATURE`, která odkazuje na binární signaturu metadat typu hodnoty.  
+ pro `PCCOR_SIGNATURE`Hodnota, která odkazuje na binární signaturu metadat typu hodnoty.  
   
  `ppValue`  
  mimo Ukazatel na adresu objektu "ICorDebugValue" představující načtenou hodnotu, která je uložena v zadaném registru.  
   
 ## <a name="remarks"></a>Poznámky  
- Metodu `GetLocalRegisterValue` lze použít buď v nativním rámci, nebo v rámci zkompilovaného snímku JIT (just-in-time).  
+ `GetLocalRegisterValue`Metodu lze použít buď v nativním rámci, nebo v rámci zkompilovaného snímku JIT (just-in-time).  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** CorDebug. idl, CorDebug. h  
   
  **Knihovna:** CorGuids. lib  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také

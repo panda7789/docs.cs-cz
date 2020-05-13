@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 22c27b01-2869-4214-b840-5921f7c874fc
 topic_type:
 - apiref
-ms.openlocfilehash: 758364b2d63343e464b727d5a1c1817533a6acea
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 7da12554ba1db9a467aa03c01bfb3b584125b129
+ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73137785"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83213189"
 ---
 # <a name="icordebugfunction2setjmcstatus-method"></a>ICorDebugFunction2::SetJMCStatus – metoda
 Označuje funkci představovanou tímto ICorDebugFunction2 pro Pouze můj kód krokování.  
@@ -35,7 +35,7 @@ HRESULT SetJMCStatus (
   
 ## <a name="parameters"></a>Parametry  
  `bIsJustMyCode`  
- pro Nastavte na `true` pro označení funkce jako uživatelského kódu; v opačném případě nastavte na `false`.  
+ pro Nastavte na `true` k označení funkce jako uživatelského kódu; jinak nastavte na `false` .  
   
 ## <a name="return-values"></a>Návratové hodnoty  
   
@@ -48,10 +48,10 @@ HRESULT SetJMCStatus (
  Pouze můj kód stepper přeskočí jiný než uživatelský kód. Uživatelský kód musí být podmnožinou laděného kódu.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** CorDebug. idl, CorDebug. h  
   
  **Knihovna:** CorGuids. lib  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]
+ **Verze .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]

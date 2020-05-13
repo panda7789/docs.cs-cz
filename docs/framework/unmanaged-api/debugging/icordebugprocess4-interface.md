@@ -15,38 +15,38 @@ topic_type:
 - apiref
 author: hoyosjs
 ms.author: juhoyosa
-ms.openlocfilehash: 1bdc958f2516bcd7c2eb74312fbf478e6d49535a
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: fcf725ea98fa4351e72cf592f92968ee2233ecb0
+ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61948798"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83213579"
 ---
 # <a name="icordebugprocess4-interface"></a>ICorDebugProcess4 – rozhraní
 
-Poskytuje podporu pro mimo proces řízení provádění.
+Poskytuje podporu pro vzdálené řízení spouštění procesů.
 
 ## <a name="methods"></a>Metody
 
 | Metoda                                                                 | Popis                                                                                             |
 | ---------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- |
-| [ProcessStateChanged](icordebugprocess4-processstatechanged-method.md) | Upozorní ICorDebug kanálu, že je vzdálený ladicí program procesu pokračovat v provádění od laděného objektu. |
+| [ProcessStateChanged –](icordebugprocess4-processstatechanged-method.md) | Upozorní kanál ICorDebug, že proces ladicího programu mimo proces pokračuje v provádění laděného objektu. |
 
 ## <a name="remarks"></a>Poznámky
 
-Toto rozhraní se nachází uvnitř modulu runtime a není dostupná záhlaví nebo soubory knihoven. Je však rozhraní modelu COM, která je odvozena z `IUnknown` s identifikátorem GUID `E930C679-78AF-4953-8AB7-B0AABF0F9F80` , který můžete získat prostřednictvím obvykle COM mechanismů.
+Toto rozhraní je v modulu runtime a není zveřejněné prostřednictvím hlaviček nebo souborů knihoven. Jedná se však o rozhraní modelu COM, které je odvozeno z `IUnknown` identifikátoru GUID `E930C679-78AF-4953-8AB7-B0AABF0F9F80` , který lze získat prostřednictvím obvyklých mechanismů modelu COM.
 
 ## <a name="requirements"></a>Požadavky
 
-**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).
+**Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).
 
-**Záhlaví:** Žádné
+**Hlavička:** NTato
 
-**Knihovna:** Žádné
+**Knihovna:** NTato
 
-**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v20plus-md.md)]
+**Verze .NET Framework:**[!INCLUDE[net_current_v45plus](../../../../includes/net-current-v20plus-md.md)]
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Rozhraní pro ladění](debugging-interfaces.md)
+- [Debugging – rozhraní](debugging-interfaces.md)
 - [Ladění](index.md)

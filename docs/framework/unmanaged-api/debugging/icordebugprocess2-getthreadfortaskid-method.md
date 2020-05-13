@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 32d54a5b-8ad3-405b-a1b9-0936a3b49d1e
 topic_type:
 - apiref
-ms.openlocfilehash: 11acf997b2efd74bc8394d830f36d3acbd1eef56
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 89be29c770098d92ce3c47f7c45b1bb8580f2edb
+ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73137198"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83213514"
 ---
 # <a name="icordebugprocess2getthreadfortaskid-method"></a>ICorDebugProcess2::GetThreadForTaskID – metoda
 Získá vlákno, ve kterém je spuštěn úkol se zadaným identifikátorem.  
@@ -42,13 +42,13 @@ HRESULT GetThreadForTaskID (
  mimo Ukazatel na adresu objektu ICorDebugThread2, který představuje vlákno, které má být načteno.  
   
 ## <a name="remarks"></a>Poznámky  
- Hostitel může nastavit identifikátor úlohy pomocí metody [ICLRTask:: SetTaskIdentifier –](../../../../docs/framework/unmanaged-api/hosting/iclrtask-settaskidentifier-method.md) .  
+ Hostitel může nastavit identifikátor úlohy pomocí metody [ICLRTask:: SetTaskIdentifier –](../hosting/iclrtask-settaskidentifier-method.md) .  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** CorDebug. idl, CorDebug. h  
   
  **Knihovna:** CorGuids. lib  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]
+ **Verze .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]

@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: 9ff3fcd6-38fe-41f8-bfd3-f0ab6c7d77ca
 topic_type:
 - apiref
-ms.openlocfilehash: 6c4262c18e4efcbbca1b3e2a327fec7d4b609a31
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: d7ad4a6b25fe6d53ab0b21066345451ae7c22c16
+ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73096929"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83213319"
 ---
 # <a name="icordebugmoduleenumnext-method"></a>ICorDebugModuleEnum::Next – metoda
-Získá počet instancí "ICorDebugModule" určených `celt` z výčtu, počínaje aktuální pozicí.  
+Získá počet instancí "ICorDebugModule" určených `celt` od výčtu počínaje aktuální pozicí.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,21 +38,21 @@ HRESULT Next (
   
 ## <a name="parameters"></a>Parametry  
  `celt`  
- pro Počet instancí `ICorDebugModule`, které mají být načteny.  
+ pro Počet instancí, `ICorDebugModule` které mají být načteny.  
   
  `modules`  
- mimo Pole ukazatelů, z nichž každý odkazuje na objekt `ICorDebugModule`.  
+ mimo Pole ukazatelů, z nichž každý odkazuje na `ICorDebugModule` objekt.  
   
  `pceltFetched`  
- mimo Ukazatel na počet skutečně vrácených instancí `ICorDebugModule`. Tato hodnota může být null, pokud `celt` je jedna.  
+ mimo Ukazatel na počet `ICorDebugModule` skutečně vrácených instancí. Tato hodnota může být null `celt` , pokud je jedna.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** CorDebug. idl, CorDebug. h  
   
  **Knihovna:** CorGuids. lib  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také

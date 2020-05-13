@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 30d906f2-cf35-4fa9-9d4c-0c31b58c9f3a
 topic_type:
 - apiref
-ms.openlocfilehash: fb96949e22b4edfc0e64780a54bb38da44eb8369
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 8f3cc16054d4b5340c9460e9c3fbcba6e563567a
+ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73129550"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83212552"
 ---
 # <a name="icordebugmodulegetmetadatainterface-method"></a>ICorDebugModule::GetMetaDataInterface – metoda
 Získá objekt rozhraní metadat, který lze použít k prohlédnutí metadat pro modul.  
@@ -39,20 +39,20 @@ HRESULT GetMetaDataInterface (
  pro Referenční ID, které určuje rozhraní metadat.  
   
  `ppObj`  
- mimo Ukazatel na adresu `T:IUnknown` objektu, který je jedním z [rozhraní metadat](../../../../docs/framework/unmanaged-api/metadata/metadata-interfaces.md).  
+ mimo Ukazatel na adresu `T:IUnknown` objektu, který je jedním z [rozhraní metadat](../metadata/metadata-interfaces.md).  
   
 ## <a name="remarks"></a>Poznámky  
- Ladicí program může pomocí metody `GetMetaDataInterface` vytvořit kopii původních metadat pro modul, který musí provést, aby bylo možné tento modul upravit. Ladicí program volá `GetMetaDataInterface` pro získání objektu rozhraní [IMetaDataEmit](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md) pro modul, volá [IMetaDataEmit:: SaveToMemory –](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-savetomemory-method.md) , aby uložil kopii metadat modulu do paměti.  
+ Ladicí program může použít `GetMetaDataInterface` metodu k vytvoření kopie původních metadat pro modul, který musí provést, aby bylo možné tento modul upravit. Ladicí program volá `GetMetaDataInterface` k získání objektu rozhraní [IMetaDataEmit](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md) pro modul a pak zavolá [IMetaDataEmit:: SaveToMemory –](../metadata/imetadataemit-savetomemory-method.md) , aby uložil kopii metadat modulu do paměti.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** CorDebug. idl, CorDebug. h  
   
  **Knihovna:** CorGuids. lib  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Metadata](../../../../docs/framework/unmanaged-api/metadata/index.md)
+- [Metadata](../metadata/index.md)

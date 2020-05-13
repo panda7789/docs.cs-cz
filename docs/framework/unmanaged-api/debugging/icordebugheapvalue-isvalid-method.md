@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 68e20e62-203d-46d8-bb91-8d3c61cfacc3
 topic_type:
 - apiref
-ms.openlocfilehash: 7685d1b6d5458a4405fc5a4abdb2f3134618f01c
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.openlocfilehash: e774905939640d2748344ad3f6e12a96f9868d9f
+ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76794403"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83213800"
 ---
 # <a name="icordebugheapvalueisvalid-method"></a>ICorDebugHeapValue::IsValid – metoda
 Získá hodnotu, která označuje, zda je objekt reprezentovaný tímto ICorDebugHeapValue platný.  
@@ -45,10 +45,10 @@ HRESULT IsValid (
  Tato metoda je zastaralá. V .NET Framework 2,0 jsou všechny hodnoty platné, dokud je volána metoda [ICorDebugController:: Continue](icordebugcontroller-continue-method.md) , v níž je čas zrušení platnosti hodnot.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** CorDebug. idl, CorDebug. h  
   
  **Knihovna:** CorGuids. lib  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]
+ **Verze .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]
