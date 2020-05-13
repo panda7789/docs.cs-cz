@@ -15,17 +15,17 @@ helpviewer_keywords:
 ms.assetid: e0eed5a8-fa6d-4818-bd00-7babcea30325
 topic_type:
 - apiref
-ms.openlocfilehash: bb25c9235e4fcded5c230d2d417b9d41bbdd9b19
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.openlocfilehash: ea7f7a9d4589e4f08b1b1e20b4d073bb5f822714
+ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76792338"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83212760"
 ---
-# <a name="icordebugprocess5gettypefortypeid-method"></a><span data-ttu-id="98fad-102">ICorDebugProcess5::GetTypeForTypeID – metoda</span><span class="sxs-lookup"><span data-stu-id="98fad-102">ICorDebugProcess5::GetTypeForTypeID Method</span></span>
-<span data-ttu-id="98fad-103">Převede identifikátor typu na hodnotu ICorDebugType.</span><span class="sxs-lookup"><span data-stu-id="98fad-103">Converts a type identifier to an ICorDebugType value.</span></span>  
+# <a name="icordebugprocess5gettypefortypeid-method"></a><span data-ttu-id="64c80-102">ICorDebugProcess5::GetTypeForTypeID – metoda</span><span class="sxs-lookup"><span data-stu-id="64c80-102">ICorDebugProcess5::GetTypeForTypeID Method</span></span>
+<span data-ttu-id="64c80-103">Převede identifikátor typu na hodnotu ICorDebugType.</span><span class="sxs-lookup"><span data-stu-id="64c80-103">Converts a type identifier to an ICorDebugType value.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="98fad-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="98fad-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="64c80-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="64c80-104">Syntax</span></span>  
   
 ```cpp  
 HRESULT GetTypeForTypeID(  
@@ -34,26 +34,26 @@ HRESULT GetTypeForTypeID(
 );  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="98fad-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="98fad-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="64c80-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="64c80-105">Parameters</span></span>  
  `id`  
- <span data-ttu-id="98fad-106">pro Identifikátor typu.</span><span class="sxs-lookup"><span data-stu-id="98fad-106">[in] The type identifier.</span></span>  
+ <span data-ttu-id="64c80-106">pro Identifikátor typu.</span><span class="sxs-lookup"><span data-stu-id="64c80-106">[in] The type identifier.</span></span>  
   
  `ppType`  
- <span data-ttu-id="98fad-107">mimo Ukazatel na adresu ICorDebugType objektu.</span><span class="sxs-lookup"><span data-stu-id="98fad-107">[out] A pointer to the address of an ICorDebugType object.</span></span>  
+ <span data-ttu-id="64c80-107">mimo Ukazatel na adresu ICorDebugType objektu.</span><span class="sxs-lookup"><span data-stu-id="64c80-107">[out] A pointer to the address of an ICorDebugType object.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="98fad-108">Poznámky</span><span class="sxs-lookup"><span data-stu-id="98fad-108">Remarks</span></span>  
- <span data-ttu-id="98fad-109">V některých případech metody, které vracejí identifikátor typu, mohou vracet hodnotu null `COR_TYPEID`.</span><span class="sxs-lookup"><span data-stu-id="98fad-109">In some cases, methods that return a type identifier may return a null `COR_TYPEID` value.</span></span> <span data-ttu-id="98fad-110">Pokud je tato hodnota předána jako argument `id`, metoda `GetTypeForTypeID` se nezdaří a vrátí `E_FAIL`.</span><span class="sxs-lookup"><span data-stu-id="98fad-110">If this value is passed as the `id` argument, the `GetTypeForTypeID` method will fail and return `E_FAIL`.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="64c80-108">Poznámky</span><span class="sxs-lookup"><span data-stu-id="64c80-108">Remarks</span></span>  
+ <span data-ttu-id="64c80-109">V některých případech metody, které vracejí identifikátor typu, mohou vracet hodnotu null `COR_TYPEID` .</span><span class="sxs-lookup"><span data-stu-id="64c80-109">In some cases, methods that return a type identifier may return a null `COR_TYPEID` value.</span></span> <span data-ttu-id="64c80-110">Pokud je tato hodnota předána jako `id` argument, `GetTypeForTypeID` metoda selže a vrátí `E_FAIL` .</span><span class="sxs-lookup"><span data-stu-id="64c80-110">If this value is passed as the `id` argument, the `GetTypeForTypeID` method will fail and return `E_FAIL`.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="98fad-111">Požadavky</span><span class="sxs-lookup"><span data-stu-id="98fad-111">Requirements</span></span>  
- <span data-ttu-id="98fad-112">**Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="98fad-112">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="64c80-111">Požadavky</span><span class="sxs-lookup"><span data-stu-id="64c80-111">Requirements</span></span>  
+ <span data-ttu-id="64c80-112">**Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="64c80-112">**Platforms:** See [System Requirements](../../get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="98fad-113">**Hlavička:** CorDebug. idl, CorDebug. h</span><span class="sxs-lookup"><span data-stu-id="98fad-113">**Header:** CorDebug.idl, CorDebug.h</span></span>  
+ <span data-ttu-id="64c80-113">**Hlavička:** CorDebug. idl, CorDebug. h</span><span class="sxs-lookup"><span data-stu-id="64c80-113">**Header:** CorDebug.idl, CorDebug.h</span></span>  
   
- <span data-ttu-id="98fad-114">**Knihovna:** CorGuids. lib</span><span class="sxs-lookup"><span data-stu-id="98fad-114">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="64c80-114">**Knihovna:** CorGuids. lib</span><span class="sxs-lookup"><span data-stu-id="64c80-114">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="98fad-115">**Verze .NET Framework:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="98fad-115">**.NET Framework Versions:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]</span></span>  
+ <span data-ttu-id="64c80-115">**Verze .NET Framework:**[!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="64c80-115">**.NET Framework Versions:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="98fad-116">Viz také:</span><span class="sxs-lookup"><span data-stu-id="98fad-116">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="64c80-116">Viz také</span><span class="sxs-lookup"><span data-stu-id="64c80-116">See also</span></span>
 
-- [<span data-ttu-id="98fad-117">ICorDebugProcess5 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="98fad-117">ICorDebugProcess5 Interface</span></span>](icordebugprocess5-interface.md)
-- [<span data-ttu-id="98fad-118">Rozhraní pro ladění</span><span class="sxs-lookup"><span data-stu-id="98fad-118">Debugging Interfaces</span></span>](debugging-interfaces.md)
+- [<span data-ttu-id="64c80-117">ICorDebugProcess5 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="64c80-117">ICorDebugProcess5 Interface</span></span>](icordebugprocess5-interface.md)
+- [<span data-ttu-id="64c80-118">Debugging – rozhraní</span><span class="sxs-lookup"><span data-stu-id="64c80-118">Debugging Interfaces</span></span>](debugging-interfaces.md)
