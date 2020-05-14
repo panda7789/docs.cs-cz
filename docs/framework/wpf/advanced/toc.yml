@@ -463,18 +463,17 @@
           href: localization-attributes-and-comments.md
         - name: Obousměrné funkce v přehledu WPF
           href: bidirectional-features-in-wpf-overview.md
-        - name: – postupy
-          href: globalization-and-localization-how-to-topics.md
+        - name: Postupy
           items:
             - name: Lokalizace aplikace
               href: how-to-localize-an-application.md
             - name: Vytvoření tlačítka pomocí automatického rozložení
               href: how-to-use-automatic-layout-to-create-a-button.md
-            - name: Automatické rozložení pomocí mřížky
+            - name: Automatické rozložení použitím mřížky
               href: how-to-use-a-grid-for-automatic-layout.md
-            - name: Správa lokalizovatelných řetězcových prostředků pomocí ResourceDictionary
+            - name: Správa zdrojů pomocí ResourceDictionary
               href: how-to-use-a-resourcedictionary-to-manage-localizable-string-resources.md
-            - name: Použití prostředků v lokalizovatelných aplikacích
+            - name: Použití zdrojů v lokalizovatelných aplikacích
               href: how-to-use-resources-in-localizable-applications.md
     - name: Rozložení
       href: layout.md

@@ -401,6 +401,8 @@
       href: versions/selection.md
 - name: Katalog RID (Runtime Identifier)
   href: rid-catalog.md
+- name: Názvy manifestů k prostředkům
+  href: resources/manifest-file-names.md
 - name: Správa a načítání závislostí
   items:
     - name: Správa závislostí
