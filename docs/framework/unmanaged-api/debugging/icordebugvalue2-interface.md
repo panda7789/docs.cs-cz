@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 3ff2ad2a-da5a-461b-8627-1a8eba49df9c
 topic_type:
 - apiref
-ms.openlocfilehash: c6f20b0f7927d79ee56b5b6962137d668dc048d1
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.openlocfilehash: d036ddf353aa3a622ade05e1e2daa7f170d28f63
+ms.sourcegitcommit: 046a9c22487551360e20ec39fc21eef99820a254
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76791108"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83396780"
 ---
 # <a name="icordebugvalue2-interface"></a>ICorDebugValue2 – rozhraní
 Rozšiřuje rozhraní "ICorDebugValue", aby poskytoval podporu pro objekty "ICorDebugType".  
@@ -28,7 +28,7 @@ Rozšiřuje rozhraní "ICorDebugValue", aby poskytoval podporu pro objekty "ICor
   
 |Metoda|Popis|  
 |------------|-----------------|  
-|[GetExactType – metoda](icordebugvalue2-getexacttype-method.md)|Získá ukazatel rozhraní na objekt `ICorDebugType`, který představuje <xref:System.Type> této hodnoty.|  
+|[GetExactType – metoda](icordebugvalue2-getexacttype-method.md)|Získá ukazatel rozhraní na `ICorDebugType` objekt, který představuje <xref:System.Type> tuto hodnotu.|  
   
 ## <a name="remarks"></a>Poznámky  
   
@@ -36,16 +36,16 @@ Rozšiřuje rozhraní "ICorDebugValue", aby poskytoval podporu pro objekty "ICor
 > Toto rozhraní nepodporuje vzdálené volání, a to buď mezi počítačem, nebo mezi procesy.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** CorDebug. idl, CorDebug. h  
   
  **Knihovna:** CorGuids. lib  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Rozhraní pro ladění](debugging-interfaces.md)
+- [Debugging – rozhraní](debugging-interfaces.md)
 
 - [ICorDebugValue3 – rozhraní](icordebugvalue3-interface.md)

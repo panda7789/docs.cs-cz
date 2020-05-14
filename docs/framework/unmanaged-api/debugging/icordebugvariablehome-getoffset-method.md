@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: f025c2e5-3f6c-4be8-9ffe-c8b214617dfe
 topic_type:
 - apiref
-ms.openlocfilehash: a6f93ec3c7ffe415c41dcf094dbde2f0a08969f6
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.openlocfilehash: 75a165e2fd517f36d779a934a5bdd9c41956411a
+ms.sourcegitcommit: 046a9c22487551360e20ec39fc21eef99820a254
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76790999"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83396766"
 ---
 # <a name="icordebugvariablehomegetoffset-method"></a>ICorDebugVariableHome:: GetOffset – metoda
 Získá posun od základního registru pro proměnnou.  
@@ -46,14 +46,14 @@ HRESULT GetOffset(
 |`E_FAIL`|Proměnná není v umístění relativní paměti registru.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** CorDebug. idl, CorDebug. h  
   
  **Knihovna:** CorGuids. lib  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v462plus](../../../../includes/net-current-v462plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v462plus](../../../../includes/net-current-v462plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [ICorDebugVariableHome – rozhraní](icordebugvariablehome-interface.md)

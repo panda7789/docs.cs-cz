@@ -1,27 +1,27 @@
 ---
 title: Struktura projektu pro aplikace Blazor
-description: Zjistěte, jak se porovnávají struktury projektů ASP.NET webových formulářů a blazorů.
+description: Přečtěte si, jak porovnat struktury projektu webových formulářů ASP.NET a projektů Blazor.
 author: danroth27
 ms.author: daroth
 ms.date: 09/11/2019
-ms.openlocfilehash: 2c383e86ff22f5a3460476998992b66e9417cc11
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 7e622663bedce13c93b8d72f5a699d076e8139b7
+ms.sourcegitcommit: 046a9c22487551360e20ec39fc21eef99820a254
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79401576"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83394769"
 ---
 # <a name="project-structure-for-blazor-apps"></a>Struktura projektu pro aplikace Blazor
 
 [!INCLUDE [book-preview](../../../includes/book-preview.md)]
 
-Navzdory svým významným rozdílům ve struktuře projektů sdílejí ASP.NET Web Forms a Blazor mnoho podobných konceptů. Zde se podíváme na strukturu projektu Blazor a porovnáme jej s projektem ASP.NET Web Forms.
+Navzdory jejich významným rozdílům struktury projektů ASP.NET webové formuláře a Blazor sdílejí mnoho podobných konceptů. Tady se podíváme na strukturu projektu Blazor a porovnejte ji s projektem webových formulářů ASP.NET.
 
-Chcete-li vytvořit první aplikaci Blazor, postupujte podle pokynů v [krocích pro zahájení začínání v aplikaci Blazor](/aspnet/core/blazor/get-started). Podle pokynů můžete vytvořit aplikaci Blazor Server nebo aplikaci Blazor WebAssembly hostovoci v ASP.NET Core. S výjimkou logiky specifické pro hostování modelu je většina kódu v obou projektech stejná.
+Pokud chcete vytvořit svoji první aplikaci pro Blazor, postupujte podle pokynů v tématu [Začínáme s Blazor](/aspnet/core/blazor/get-started). Můžete postupovat podle pokynů k vytvoření aplikace Blazor serveru nebo aplikace Blazor WebAssembly hostované v ASP.NET Core. S výjimkou logiky specifické pro model hostování je většina kódu v obou projektech stejná.
 
 ## <a name="project-file"></a>Soubor projektu
 
-Aplikace Blazor Server jsou projekty .NET Core. Soubor projektu pro aplikaci Blazor Server je asi tak jednoduchý, jak to může dostat:
+Blazor serverové aplikace jsou projekty .NET Core. Soubor projektu pro aplikaci Blazor Server je co nejjednodušší, protože může získat:
 
 ```xml
 <Project Sdk="Microsoft.NET.Sdk.Web">
@@ -33,7 +33,7 @@ Aplikace Blazor Server jsou projekty .NET Core. Soubor projektu pro aplikaci Bla
 </Project>
 ```
 
-Soubor projektu pro aplikaci Blazor WebAssembly vypadá o něco více (přesná čísla verzí se mohou lišit):
+Soubor projektu pro aplikaci WebAssembly v Blazor se trochu zabývají. (přesná čísla verze se můžou lišit):
 
 ```xml
 <Project Sdk="Microsoft.NET.Sdk.Web">
@@ -57,11 +57,11 @@ Soubor projektu pro aplikaci Blazor WebAssembly vypadá o něco více (přesná 
 </Project>
 ```
 
-Projekty Blazor WebAssembly cílí na standard .NET místo .NET Core, protože jsou spuštěny v prohlížeči v době runtime .NET založené na webové sestavě. Rozhraní .NET nelze nainstalovat do webového prohlížeče jako na serveru nebo na vývojářském počítači. Projekt proto odkazuje na rámec Blazor pomocí jednotlivých odkazů na balíčky.
+Blazor .NET Standard cíle projektů WebAssembly místo .NET Core, protože běží v prohlížeči v prostředí .NET runtime založeném na WebAssembly. Rozhraní .NET nemůžete nainstalovat do webového prohlížeče, jako je to možné na serveru nebo v počítači pro vývojáře. V důsledku toho projekt odkazuje na rozhraní Blazor pomocí jednotlivých odkazů na balíčky.
 
-Pro srovnání, výchozí ASP.NET projektu Webových formulářů obsahuje téměř 300 řádků XML ve svém souboru *.csproj,* z nichž většina je explicitně výpis různých souborů kódu a obsahu v projektu. Mnoho zjednodušení v projektech založených na standardu .NET a .NET standard pochází z výchozích cílů a vlastností importovaných odkazem na sadu `Microsoft.NET.Sdk.Web` SDK, často označované jako jednoduše webová sada SDK. Sada Web SDK obsahuje zástupné znaky a další vymoženosti, které zjednodušují zahrnutí souborů kódu a obsahu do projektu. Soubory není nutné uvádět explicitně. Při cílení na .NET Core, Web SDK také přidává odkazy na rozhraní rozhraní .NET Core a ASP.NET základní sdílené architektury. Rámce jsou viditelné z uzlu **Architektury** > **závislostí** v okně **Průzkumník řešení.** Sdílené architektury jsou kolekce sestavení, které byly nainstalovány v počítači při instalaci .NET Core.
+Porovnáním, výchozí projekt webových formulářů ASP.NET obsahuje téměř 300 řádků XML v souboru *. csproj* , přičemž většina z nich explicitně uvádí různé soubory kódu a obsahu v projektu. Mnohé z zjednodušení v projektech .NET Core a .NET Standard pocházejí z výchozích cílů a vlastností importovaných odkazem na `Microsoft.NET.Sdk.Web` sadu SDK, která se často označuje jako jednoduše webová sada SDK. Webová sada SDK obsahuje zástupné znaky a další pohodlí, které zjednodušují zahrnutí kódu a souborů obsahu v projektu. Soubory není nutné explicitně vypisovat. Při cílení na .NET Core webová sada SDK také přidá odkazy na rozhraní do sdílených rozhraní .NET Core i ASP.NET Core. Rozhraní jsou viditelná v uzlu architektury **závislostí**  >  **Frameworks** v okně **Průzkumník řešení** . Sdílené architektury jsou kolekce sestavení, která byla nainstalována na počítači při instalaci rozhraní .NET Core.
 
-I když jsou podporovány, jednotlivé odkazy na sestavení jsou méně běžné v projektech .NET Core. Většina závislostí projektu jsou zpracovány jako odkazy na balíček NuGet. Jetřeba odkazovat pouze na závislosti balíčků nejvyšší úrovně v projektech .NET Core. Přenosité závislosti jsou zahrnuty automaticky. Namísto použití souboru *packages.config,* který se běžně vyskytuje v projektech ASP.NET webových `<PackageReference>` formulářů, jsou odkazy na balíčky přidány do souboru projektu pomocí prvku.
+I když jsou podporovány, jednotlivé odkazy na sestavení jsou méně běžné v projektech .NET Core. Většina závislostí projektu se zpracovává jako odkazy na balíčky NuGet. V projektech .NET Core musíte odkazovat jenom na závislosti balíčků nejvyšší úrovně. Přenosné závislosti jsou zahrnuty automaticky. Namísto použití souboru *Packages. config* , který se běžně našel v projektech webových formulářů ASP.NET, na referenční balíčky, se odkazy na balíčky přidávají do souboru projektu pomocí `<PackageReference>` elementu.
 
 ```xml
 <ItemGroup>
@@ -71,7 +71,7 @@ I když jsou podporovány, jednotlivé odkazy na sestavení jsou méně běžné
 
 ## <a name="entry-point"></a>Vstupní bod
 
-Vstupní bod aplikace Blazor Server je definován v *souboru Program.cs,* jak byste viděli v aplikaci Console. Když se aplikace spustí, vytvoří a spustí instanci webového hostitele pomocí výchozích hodnot specifických pro webové aplikace. Webový hostitel spravuje životní cyklus aplikace Blazor Server a nastavuje služby na úrovni hostitele. Příklady těchto služeb jsou konfigurace, protokolování, vkládání závislostí a http server. Tento kód je většinou často standardní a je často ponechánbeze změny.
+Vstupní bod aplikace serveru Blazor je definovaný v souboru *program.cs* , jak by se zobrazila v konzolové aplikaci. Když se aplikace spustí, vytvoří a spustí instanci webového hostitele s použitím výchozích hodnot specifických pro webové aplikace. Webový hostitel spravuje životní cyklus aplikace serveru Blazor a nastavuje služby na úrovni hostitele. Příklady takových služeb jsou konfigurace, protokolování, vkládání závislostí a HTTP Server. Tento kód je většinou často používaný a je často nezměněný.
 
 ```csharp
 public class Program
@@ -90,17 +90,17 @@ public class Program
 }
 ```
 
-Aplikace Blazor WebAssembly také definují vstupní bod v *Program.cs*. Kód vypadá trochu jinak. Kód je podobný v tom, že nastavuje hostitele aplikace tak, aby poskytoval stejnou službu na úrovni hostitele. Hostitel aplikace WebAssembly však nenastavuje http server, protože se spouští přímo v prohlížeči.
+Blazor aplikace pro WebAssembly také definují vstupní bod v *program.cs*. Kód vypadá trochu jinak. Kód je podobný v tom, že nastavuje hostitele aplikace tak, aby poskytoval stejné služby na úrovni hostitele pro aplikaci. Hostitel aplikace pro WebAssembly ale nenastaví Server HTTP, protože se spustí přímo v prohlížeči.
 
-Aplikace Blazor `Startup` mají třídu namísto souboru *Global.asax,* která definuje logiku spuštění aplikace. Třída `Startup` se používá ke konfiguraci aplikace a všechny služby specifické pro aplikaci. V aplikaci Blazor `Startup` Server se třída používá k nastavení koncového bodu pro připojení v reálném čase používaného Blazorem mezi klientskými prohlížeči a serverem. V aplikaci Blazor WebAssembly `Startup` třída definuje kořenové součásti aplikace a kde by měly být vykresleny. Podíváme se hlouběji na `Startup` třídu v části [spuštění aplikace.](./app-startup.md)
+Aplikace Blazor mají `Startup` třídu namísto souboru *Global. asax* k definování spouštěcí logiky pro aplikaci. `Startup`Třída se používá ke konfiguraci aplikace a všech služeb specifických pro aplikace. V aplikaci Blazor serveru se `Startup` Třída používá k nastavení koncového bodu pro připojení v reálném čase, které používá Blazor mezi klientskými prohlížeči a serverem. V aplikaci Blazor WebAssembly `Startup` Třída definuje kořenové součásti pro aplikaci a tam, kde by měly být vykresleny. Podíváme se na `Startup` třídu v části [spuštění aplikace](./app-startup.md) .
 
 ## <a name="static-files"></a>Statické soubory
 
-Na rozdíl od projektů ASP.NET webových formulářů nelze jako statické soubory požadovat všechny soubory v projektu Blazor. Pouze soubory ve složce *wwwroot* jsou webové adresovatelné. Tato složka je odkazována na "kořen ový web" aplikace. Nic mimo kořen webu aplikace *není* adresovatelné na webu. Toto nastavení poskytuje další úroveň zabezpečení, která zabraňuje náhodnému vystavení souborů projektu přes web.
+Na rozdíl od projektů webových formulářů ASP.NET ne všechny soubory v projektu Blazor mohou být požadovány jako statické soubory. Pouze soubory ve složce *wwwroot* jsou webové – adresovatelné. Tato složka je označována jako "webový kořenový adresář aplikace". Cokoli mimo webový kořenový adresář aplikace *není* webová adresa. Tato instalace poskytuje další úroveň zabezpečení, která brání nechtěnému vystavení souborů projektu na webu.
 
 ## <a name="configuration"></a>Konfigurace
 
-Konfigurace v aplikacích ASP.NET webových formulářů se obvykle zpracovává pomocí jednoho nebo více souborů *web.config.* Aplikace Blazor obvykle nemají soubory *web.config.* Pokud ano, soubor se používá pouze ke konfiguraci nastavení specifických pro službu IIS, pokud jsou hostována ve službě IIS. Místo toho aplikace Blazor Server používají ASP.NET abstrakce konfigurace Core (aplikace Blazor WebAssembly v současné době nepodporují stejné abstrakce konfigurace, ale to může být funkce přidaná v budoucnu). Například výchozí aplikace Blazor Server ukládá některá nastavení v *souboru appsettings.json*.
+Konfigurace v aplikacích webových formulářů ASP.NET se obvykle zpracovává pomocí jednoho nebo více souborů *Web. config* . Aplikace Blazor obvykle nemají soubory *Web. config* . V takovém případě se soubor používá pouze ke konfiguraci nastavení specifických pro službu IIS, pokud je hostována službou IIS. Místo toho aplikace serveru Blazor používají abstrakce konfigurace ASP.NET Core (aplikace Blazor WebAssembly v současné době nepodporuje stejné abstrakce konfigurace, ale může se jednat o funkci přidanou do budoucna). Například výchozí aplikace serveru Blazor ukládá některá nastavení do souboru *appSettings. JSON*.
 
 ```json
 {
@@ -115,15 +115,15 @@ Konfigurace v aplikacích ASP.NET webových formulářů se obvykle zpracovává
 }
 ```
 
-Další informace o konfiguraci v ASP.NET základních projektech najdete v části [Konfigurace.](./config.md)
+Další informace o konfiguraci najdete v tématu ASP.NET Core projekty v oddílu [Konfigurace](./config.md) .
 
-## <a name="razor-components"></a>Komponenty pro břitvy
+## <a name="razor-components"></a>Komponenty Razor
 
-Většina souborů v blazorprojektech jsou *.razor* soubory. Razor je šablonovací jazyk založený na HTML a C#, který se používá k dynamickému generování webového uživatelského rozhraní. Soubory *.razor* definují součásti, které tvoří ui aplikace. Součásti jsou většinou identické jak pro aplikace Blazor Server, tak pro aplikace Blazor WebAssembly. Komponenty v Blazoru jsou obdobou uživatelských ovládacích prvků v ASP.NET Webových formulářích.
+Většina souborů v projektech Blazor je soubory *. Razor* . Razor je šablonování jazyk založený na HTML a C#, který se používá k dynamickému generování webového uživatelského rozhraní. Soubory *. Razor* definují komponenty, které tvoří uživatelské rozhraní aplikace. Ve většině případů jsou komponenty identické jak pro Blazor Server, tak pro aplikace Blazor pro WebAssembly. Komponenty v Blazor jsou podobné uživatelským ovládacím prvkům ve webových formulářích ASP.NET.
 
-Každý soubor komponenty Razor je zkompilován do třídy .NET při sestavení projektu. Vygenerovaná třída zachycuje stav komponenty, logiku vykreslování, metody životního cyklu, obslužné rutiny událostí a další logiku. Podíváme se na vytváření komponent v [opakovaně použitelných komponentách ui budovy s částí Blazor.](./components.md)
+Každý soubor komponenty Razor je zkompilován do třídy .NET při sestavení projektu. Vygenerovaná třída zachytí stav komponenty, logiku vykreslování, metody životního cyklu, obslužné rutiny události a další logiku. Podíváme se na vytváření komponent v části [sestavování opakovaně použitelných komponent uživatelského rozhraní pomocí oddílu Blazor](./components.md) .
 
-Soubory *_Imports.razor* nejsou soubory komponent razor. Místo toho definují sadu direktiv razor pro import do jiných souborů *.razor* ve stejné složce a v jejích podsložkách. Například soubor *_Imports.razor* je konvenční způsob `using` přidání příkazů pro běžně používané obory názvů:
+Soubory *_Imports. Razor* nejsou soubory komponenty Razor. Místo toho definují sadu direktiv Razor pro import do jiných souborů *. Razor* ve stejné složce a v jejích podsložkách. Například soubor *_Imports. Razor* je konvenčním způsobem, jak přidat `using` direktivy pro běžně používané obory názvů:
 
 ```razor
 @using System.Net.Http
@@ -139,38 +139,38 @@ Soubory *_Imports.razor* nejsou soubory komponent razor. Místo toho definují s
 
 ## <a name="pages"></a>Stránky
 
-Kde jsou stránky v aplikacích Blazor? Blazor nedefinuje samostatnou příponu souborů pro adresovatelné stránky, jako jsou soubory *ASPX* v aplikacích ASP.NET Web Forms. Místo toho jsou stránky definovány přiřazením tras k komponentám. Trasa je obvykle přiřazena pomocí `@page` razor směrnice. Například komponenta `Counter` vytvořená v souboru *Pages/Counter.razor* definuje následující trasu:
+Kde jsou stránky v aplikacích Blazor? Blazor nedefinuje samostatnou příponu souboru pro adresovatelné stránky, jako jsou soubory *. aspx* v aplikacích ASP.NET Web Forms. Místo toho jsou stránky definovány přiřazením tras k součástem. Trasa je obvykle přiřazena pomocí `@page` direktivy Razor. Například komponenta, která se `Counter` vytvořila v souboru *Pages/Counter. Razor* , definuje následující trasu:
 
 ```razor
 @page "/counter"
 ```
 
-Směrování v Blazoru je zpracováno na straně klienta, nikoli na serveru. Jak uživatel naviguje v prohlížeči, Blazor zachytí navigaci a pak vykreslí komponentu s odpovídající trasou.
+Směrování v Blazor je zpracováváno na straně klienta, nikoli na serveru. Když uživatel přejde v prohlížeči, Blazor zachytí navigaci a potom vykreslí komponentu se stejným směrováním.
 
-Trasy komponent nejsou aktuálně odvozeny umístěním souboru komponenty, jako jsou u stránek *ASPX.* Tato funkce může být přidána v budoucnu. Každý postup musí být určen explicitně na komponentě. Ukládání směrovatelných součástí do složky *Stránky* nemá žádný zvláštní význam a je čistě konvence.
+Trasy součástí nejsou aktuálně odvozeny z umístění souboru komponenty, jako jsou stránky *aspx* . Tato funkce může být v budoucnu přidána. Každou trasu musíte explicitně zadat na komponentě. Ukládání komponent s přísměrováním ve složce *Pages* nemá žádný zvláštní význam a je čistě konvencí.
 
-Podrobněji se podíváme na směrování v Blazoru v sekci [Stránky, směrování a rozložení.](./pages-routing-layouts.md)
+Podrobněji se podrobněji podíváme na téma směrování v Blazor v části [stránky, směrování a rozložení](./pages-routing-layouts.md) .
 
 ## <a name="layout"></a>Rozložení
 
-V aplikacích ASP.NET Webových formulářů se společné rozložení stránky zpracovává pomocí vzorových stránek *(Site.Master).* V aplikacích Blazor je rozložení stránky zpracováno pomocí komponent rozložení (*Shared/MainLayout.razor*). Součásti rozložení budou podrobněji popsány v části [Stránka, směrování a rozložení.](./pages-routing-layouts.md)
+V aplikacích ASP.NET Web Forms se běžné rozložení stránky zpracovává pomocí stránek předlohy (*site. Master*). V aplikacích Blazor se rozložení stránky zpracovává pomocí součástí rozložení (*Shared/MainLayout. Razor*). Komponenty rozložení budou podrobněji popsány v části [Stránka, směrování a rozložení](./pages-routing-layouts.md) .
 
-## <a name="bootstrap-blazor"></a>Bootstrap Blazor
+## <a name="bootstrap-blazor"></a>Spouštěcí Blazor
 
-Chcete-li zavést Blazor, aplikace musí:
+K zavedení Blazor musí aplikace:
 
-- Určete, kde na stránce má být vykreslena kořenová komponenta (*App.Razor*).
-- Přidejte odpovídající blazor framework skript.
+- Určete, kam má být vygenerována kořenová komponenta (*App. Razor*) na stránce.
+- Přidejte odpovídající skript Blazor Framework.
 
-V aplikaci Blazor Server je hostitelská stránka kořenové komponenty definována v souboru *_Host.cshtml.* Tento soubor definuje stránku razor, nikoli součást. Razor Pages používají syntaxi Razor k definování stránky adresovatelné serveru, velmi podobně jako stránka *ASPX.* Metoda `Html.RenderComponentAsync<TComponent>(RenderMode)` se používá k definování, kde by měla být komponenta kořenové úrovně vykreslena. Tato `RenderMode` možnost označuje způsob, jakým má být komponenta vykreslena. Následující tabulka popisuje podporované `RenderMode` možnosti.
+V aplikaci Blazor Server je v souboru *_Host. cshtml* definovaná stránka hostitele kořenové součásti. Tento soubor definuje stránku Razor, nikoli komponentu. Razor Pages použít syntaxe Razor k definování serverově adresované stránky, velmi podobně jako na stránce *aspx* . `Html.RenderComponentAsync<TComponent>(RenderMode)`Metoda slouží k definování, kde má být vykreslena komponenta na úrovni root. `RenderMode`Možnost určuje způsob, jakým má být komponenta vykreslena. Následující tabulka popisuje podporované `RenderMode` Možnosti.
 
 |Možnost                        |Popis       |
 |------------------------------|------------------|
-|`RenderMode.Server`           |Vykresleno interaktivně po navázání spojení s prohlížečem|
-|`RenderMode.ServerPrerendered`|Nejprve předvykreslena a poté vykreslena interaktivně|
+|`RenderMode.Server`           |Po navázání spojení s prohlížečem se interaktivně vykreslovat.|
+|`RenderMode.ServerPrerendered`|První předvykreslování a potom vykreslené interaktivně|
 |`RenderMode.Static`           |Vykresleno jako statický obsah|
 
-Odkaz na skript *_framework/blazor.server.js* vytvoří spojení se serverem v reálném čase a poté se zabývá všemi interakcemi uživatele a aktualizacemi uživatelského rozhraní.
+Odkaz na skript *_framework/blazor.Server.js* vytváří připojení v reálném čase se serverem a pak se zabývá všemi interakcemi uživatelů a AKTUALIZACEMI uživatelského rozhraní.
 
 ```razor
 @page "/"
@@ -197,7 +197,7 @@ Odkaz na skript *_framework/blazor.server.js* vytvoří spojení se serverem v r
 </html>
 ```
 
-V aplikaci Blazor WebAssembly je hostitelská stránka jednoduchý statický soubor HTML pod *wwwroot/index.html*. Prvek `<app>` se používá k označení, kde má být kořenová komponenta vykreslena.
+V aplikaci Blazor WebAssembly je stránka hostitele jednoduchým statickým souborem HTML pod *wwwroot/index.html*. `<app>`Prvek slouží k označení, kde by měla být vykreslena kořenová komponenta.
 
 ```html
 <!DOCTYPE html>
@@ -218,7 +218,7 @@ V aplikaci Blazor WebAssembly je hostitelská stránka jednoduchý statický sou
 </html>
 ```
 
-Konkrétní komponenta, která má být `Startup.Configure` vykreslena, je konfigurována v metodě aplikace s odpovídajícím voličem CSS, který označuje, kde má být komponenta vykreslena.
+Konkrétní komponenta pro vykreslení je nakonfigurována v `Startup.Configure` metodě aplikace s odpovídajícím Selektor šablon stylů CSS, který určuje, kde by měla být komponenta vykreslena.
 
 ```csharp
 public class Startup
@@ -234,21 +234,21 @@ public class Startup
 }
 ```
 
-## <a name="build-output"></a>Vytvořit výstup
+## <a name="build-output"></a>Výstup sestavení
 
-Při sestavení projektu Blazor jsou všechny komponenty Razor a soubory kódu zkompilovány do jednoho sestavení. Na rozdíl od ASP.NET projekty webových formulářů Blazor nepodporuje runtime kompilaci logiky uživatelského nastavení.
+Při sestavení projektu Blazor jsou všechny komponenty a soubory kódu Razor zkompilovány do jediného sestavení. Na rozdíl od projektů webových formulářů ASP.NET Blazor nepodporuje kompilaci běhové logiky uživatelského rozhraní.
 
 ## <a name="run-the-app"></a>Spuštění aplikace
 
-Chcete-li spustit aplikaci Blazor Server, stiskněte v `F5` sadě Visual Studio. Aplikace Blazor nepodporují kompilaci za běhu. Chcete-li zobrazit výsledky změn kódu a značek komponent, znovu sestavte a restartujte aplikaci s připojeným ladicím programem. Pokud spustíte bez připojenéladicí`Ctrl+F5`program ( ), Visual Studio hodinky pro změny souborů a restartuje aplikaci jako změny jsou prováděny. Při provádění změn prohlížeč ručně aktualizujete.
+Pokud chcete spustit aplikaci Blazor Server, stiskněte `F5` v aplikaci Visual Studio. Aplikace Blazor nepodporují kompilaci za běhu. Chcete-li zobrazit výsledky kódu a změny kódu komponenty, sestavte a znovu spusťte aplikaci pomocí připojeného ladicího programu. Pokud spustíte program bez připojeného ladicího programu ( `Ctrl+F5` ), Visual Studio sleduje změny souborů a restartuje aplikaci, jakmile budou provedeny změny. Prohlížeč se aktualizuje ručně, protože se udělaly změny.
 
-Chcete-li spustit aplikaci Blazor WebAssembly, zvolte jeden z následujících přístupů:
+Chcete-li spustit aplikaci WebAssembly v Blazor, vyberte jeden z následujících přístupů:
 
-- Spusťte projekt klienta přímo pomocí vývojového serveru.
-- Spusťte serverový projekt při hostování aplikace s ASP.NET Core.
+- Spusťte klientský projekt přímo pomocí vývojového serveru.
+- Spusťte serverový projekt při hostování aplikace pomocí ASP.NET Core.
 
-Aplikace Blazor WebAssembly nepodporují ladění pomocí sady Visual Studio. Chcete-li aplikaci `Ctrl+F5` spustit, použijte místo `F5`aplikace . Místo toho můžete ladit aplikace Blazor WebAssembly přímo v prohlížeči. Podrobnosti najdete [v tématu Ladění ASP.NET Core Blazor.](/aspnet/core/blazor/debug)
+Blazor aplikace WebAssembly nepodporují ladění pomocí sady Visual Studio. Pokud chcete aplikaci spustit, použijte `Ctrl+F5` místo `F5` . Místo toho můžete ladit aplikace Blazor WebAssembly přímo v prohlížeči. Podrobnosti najdete v tématu [ladění ASP.NET Core Blazor](/aspnet/core/blazor/debug) .
 
 >[!div class="step-by-step"]
->[Předchozí](hosting-models.md)
->[další](app-startup.md)
+>[Předchozí](hosting-models.md) 
+> [Další](app-startup.md)

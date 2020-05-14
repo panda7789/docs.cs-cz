@@ -17,15 +17,15 @@ helpviewer_keywords:
 ms.assetid: e00fd477-4f49-43d3-bd0e-3094824b1136
 topic_type:
 - apiref
-ms.openlocfilehash: 6484832e8e737b9a0d0b3eaf3ede4078729f7a4a
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 0c1b18f24fd30b5f6d5e85633fc0c25839aba6df
+ms.sourcegitcommit: 046a9c22487551360e20ec39fc21eef99820a254
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79178442"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83396411"
 ---
 # <a name="icoreclrdebugtargetenumprocesses-method"></a>ICoreClrDebugTarget::EnumProcesses – metoda
-Vyjmenovává procesy spuštěné ve vzdáleném počítači.  
+Vytvoří výčet procesů, které jsou spuštěny na vzdáleném počítači.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,32 +38,32 @@ HRESULT EnumProcesses (
   
 ## <a name="parameters"></a>Parametry  
  `pcProcs`  
- [out] Počet vrácených procesů `ppProcs`v . Tato hodnota může být 0 (nula).  
+ mimo Počet procesů vrácených v `ppProcs` . Tato hodnota může být 0 (nula).  
   
  `ppProcs`  
- [out] Pole [CoreClrDebugProcInfo](coreclrdebugprocinfo-structure.md) struktury, které představují procesy spuštěné ve vzdáleném počítači.  
+ mimo Pole struktur [coreclrdebugprocinfo –](coreclrdebugprocinfo-structure.md) , které reprezentují procesy běžící na vzdáleném počítači.  
   
 ## <a name="return-value"></a>Návratová hodnota  
  S_OK  
- Úspěch  
+ Úspěch.  
   
  E_OUTOFMEMORY  
- Nelze přidělit dostatek `ppProcs`paměti pro .  
+ Nelze přidělit dostatek paměti pro `ppProcs` .  
   
- E_FAIL (nebo jiné E_ návratové kódy)  
- Další selhání.  
+ E_FAIL (nebo jiné návratové kódy E_)  
+ Další chyby.  
   
 ## <a name="remarks"></a>Poznámky  
- Chcete-li uvolnit paměť, která byla přidělena touto metodou, zavolejte metodu [ICoreClrDebugTarget::FreeMemory.](icoreclrdebugtarget-freememory-method.md)  
+ Chcete-li uvolnit paměť, která byla přidělena touto metodou, zavolejte metodu [ICoreClrDebugTarget:: FreeMemory –](icoreclrdebugtarget-freememory-method.md) .  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Záhlaví:** CoreClrRemoteDebuggingInterfaces.h  
+ **Hlavička:** CoreClrRemoteDebuggingInterfaces. h  
   
- **Knihovna:** mscordbi_macx86.dll  
+ **Knihovna:** mscordbi_macx86. dll  
   
- **Verze rozhraní .NET Framework:** 3.5 SP1  
+ **Verze .NET Framework:** 3,5 SP1  
   
 ## <a name="see-also"></a>Viz také
 

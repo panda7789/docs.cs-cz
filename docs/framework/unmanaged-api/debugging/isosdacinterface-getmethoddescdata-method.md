@@ -1,5 +1,5 @@
 ---
-title: ISOSDacInterface::GetMethodDescData – metoda
+title: 'ISOSDacInterface:: GetMethodDescData – metoda'
 ms.date: 01/16/2019
 api.name:
 - ISOSDacInterface::GetMethodDescData Method
@@ -15,16 +15,16 @@ topic_type:
 - apiref
 author: cshung
 ms.author: andrewau
-ms.openlocfilehash: ea54fdd83b9470db4a08daceaa695e450f5ca1af
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: e4c44379d9db0f5e98f3ca66ec0486961ec2df3a
+ms.sourcegitcommit: 046a9c22487551360e20ec39fc21eef99820a254
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67764819"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83396948"
 ---
-# <a name="isosdacinterfacegetmethoddescdata-method"></a>ISOSDacInterface::GetMethodDescData – metoda
+# <a name="isosdacinterfacegetmethoddescdata-method"></a>ISOSDacInterface:: GetMethodDescData – metoda
 
-Získá data pro danou MethodDesc ukazatele.
+Načte data pro daný ukazatel MethodDesc.
 
 [!INCLUDE[debugging-api-recommended-note](../../../../includes/debugging-api-recommended-note.md)]
 
@@ -44,35 +44,35 @@ HRESULT GetMethodDescData(
 ## <a name="parameters"></a>Parametry
 
 `methodDesc`\
-[in] Adresa MethodDesc.
+pro Adresa MethodDesc.
 
 `ip`\
-[in] IP adresa metody.
+pro IP adresa metody
 
 `data`\
-[out] Data související s MethodDesc vrácená z interních rozhraních API.
+mimo Data přidružená k MethodDesc, která se vrací z interních rozhraní API.
 
 `cRevertedRejitVersions`\
-[out] Počet verzí vrácený rejit.
+mimo Počet vrácených verzí ReJIT.
 
 `rgRevertedRejitData`\
-[out] Data související s verzí vrácený rejit vrácená z interních rozhraních API.
+mimo Data přidružená k obnoveným verzím ReJIT, která se vrátila z interních rozhraní API.
 
 `pcNeededRevertedRejitData`\
-[out] Počet bajtů vyžadovaných k uložení dat spojené s vrácený ReJit verze.
+mimo Počet bajtů vyžadovaných k uložení dat přidružených k vráceným verzím ReJit.
 
 ## <a name="remarks"></a>Poznámky
 
-Zadaná metoda je součástí `ISOSDacInterface` rozhraní a odpovídá 20. prosincem pozice tabulce virtuální metody. Abyste mohli využít, [ `CLRDATA_ADDRESS` ](../common-data-types-unmanaged-api-reference.md) musí být definován jako 64-bit znaménka.
+Poskytnutá metoda je součástí `ISOSDacInterface` rozhraní a odpovídá 21. pozici tabulky virtuálních metod. Aby je bylo možné použít, [`CLRDATA_ADDRESS`](../common-data-types-unmanaged-api-reference.md) musí být definován jako 64-bit unsigned integer.
 
 ## <a name="requirements"></a>Požadavky
 
-**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
-**Záhlaví:** Žádný  
-**Knihovna:** Žádný  
-**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v47plus](../../../../includes/net-current-v47plus.md)]  
+**Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+**Hlavička:** NTato  
+**Knihovna:** NTato  
+**Verze .NET Framework:**[!INCLUDE[net_current_v47plus](../../../../includes/net-current-v47plus.md)]  
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Ladění](index.md)
-- [ISOSDacInterface rozhraní](isosdacinterface-interface.md)
+- [ISOSDacInterface – rozhraní](isosdacinterface-interface.md)

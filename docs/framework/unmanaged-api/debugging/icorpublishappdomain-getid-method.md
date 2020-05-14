@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 229437e3-1465-4bd8-8846-9804b2488133
 topic_type:
 - apiref
-ms.openlocfilehash: 8d6e130981693268ae5c2cd615036b84ca8ed2d8
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.openlocfilehash: 36c5c674f3cdf867107b9ee85a5befadc9246d78
+ms.sourcegitcommit: 046a9c22487551360e20ec39fc21eef99820a254
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76790702"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83396309"
 ---
 # <a name="icorpublishappdomaingetid-method"></a>ICorPublishAppDomain::GetID – metoda
 Získá jedinečný identifikátor pro tento [ICorPublishAppDomain](icorpublishappdomain-interface.md).  
@@ -41,14 +41,14 @@ HRESULT GetID (
  Identifikátor je jedinečný pouze v oboru obsahujícího proces.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** CorPub. idl, CorPub. h  
   
  **Knihovna:** CorGuids. lib  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [ICorPublishAppDomain – rozhraní](icorpublishappdomain-interface.md)

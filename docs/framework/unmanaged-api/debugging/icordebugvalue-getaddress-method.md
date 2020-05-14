@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: a247c792-45e1-4538-9e1f-b46acca4a463
 topic_type:
 - apiref
-ms.openlocfilehash: 906ca2540e421953b3ce39300aa7b2376f789929
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 467ba53f90081f0c3499fb22acab96b5e380a3f4
+ms.sourcegitcommit: 046a9c22487551360e20ec39fc21eef99820a254
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73137104"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83395834"
 ---
 # <a name="icordebugvaluegetaddress-method"></a>ICorDebugValue::GetAddress – metoda
 Získá adresu tohoto objektu "ICorDebugValue", který je právě laděn.  
@@ -35,18 +35,18 @@ HRESULT GetAddress (
   
 ## <a name="parameters"></a>Parametry  
  `pAddress`  
- mimo Ukazatel na objekt `CORDB_ADDRESS`, který určuje adresu tohoto objektu hodnoty.  
+ mimo Ukazatel na `CORDB_ADDRESS` objekt, který určuje adresu tohoto objektu hodnoty.  
   
 ## <a name="remarks"></a>Poznámky  
- Pokud je hodnota nedostupná, vrátí se 0 (nula). K tomu může dojít, pokud je hodnota nejméně částečně v registrech nebo uložená v popisovači systému uvolňování paměti (`GCHandle`).  
+ Pokud je hodnota nedostupná, vrátí se 0 (nula). K tomu může dojít, pokud je hodnota nejméně částečně v registrech nebo uložená v popisovači systému uvolňování paměti ( `GCHandle` ).  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** CorDebug. idl, CorDebug. h  
   
  **Knihovna:** CorGuids. lib  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také

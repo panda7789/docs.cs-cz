@@ -2,12 +2,12 @@
 title: IdentityServer pro nativní cloudové aplikace
 description: Architekt cloudových nativních aplikací .NET pro Azure | IdentityServer
 ms.date: 06/30/2019
-ms.openlocfilehash: 48d0b95a40682f3127127851781b4d0e26e44630
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: 536a4cbdbdaee47f3a5a0d9f93b2736270d9ea7a
+ms.sourcegitcommit: 046a9c22487551360e20ec39fc21eef99820a254
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76728575"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83394884"
 ---
 # <a name="identityserver-for-cloud-native-applications"></a>IdentityServer pro cloudové nativní aplikace
 
@@ -25,8 +25,9 @@ Aplikace obvykle potřebují podporovat některé nebo všechny z následující
 - Jiné aplikace přistupující do back-endové webové rozhraní API (bez aktivního uživatele nebo uživatelského rozhraní).
 - Každá aplikace může potřebovat interakci s dalšími webovými rozhraními API, pomocí vlastní identity nebo delegování identitě uživatele.
 
-![typy a scénáře aplikace](./media/application-types.png)
-**obrázek 8-1**. Typy a scénáře aplikace
+![Typy aplikací a scénáře](./media/application-types.png)
+
+**Obrázek 8-1**. Typy a scénáře aplikace
 
 V každém z těchto scénářů musí být vystavené funkce zabezpečené před neoprávněným použitím. Minimálně to obvykle vyžaduje ověření uživatele nebo objektu zabezpečení, který vytváří požadavek na prostředek. Toto ověřování může používat jeden z několika běžných protokolů, jako je SAML2p, WS-doOpenID nebo Connect. Komunikace s rozhraními API obvykle používá protokol OAuth2 a jeho podporu pro tokeny zabezpečení. Oddělení těchto důležitých otázek zabezpečení a jejich prováděcích detailů od samotných aplikací zajišťuje konzistenci a zlepšuje zabezpečení a udržovatelnost. Použití těchto otázek pro vyhrazený produkt, jako je IdentityServer, pomáhá požadavek každé aplikace tyto problémy vyřešit sami.
 
@@ -47,7 +48,7 @@ IdentityServer4 je open source a zdarma ho použít. Můžete ji přidat do svý
 
 ## <a name="configuration"></a>Konfigurace
 
-IdentityServer podporuje různé druhy protokolů a poskytovatele pro sociální ověřování, které se dají konfigurovat jako součást každé vlastní instalace. To se obvykle provádí v `Startup` třídě ASP.NET Core aplikace v metodě `ConfigureServices`. Konfigurace zahrnuje určení podporovaných protokolů a cest k serverům a koncovým bodům, které budou použity. Obrázek 8-2 ukazuje ukázkovou konfiguraci pořízenou z projektu uživatelského rozhraní rychlého startu IdentityServer4:
+IdentityServer podporuje různé druhy protokolů a poskytovatele pro sociální ověřování, které se dají konfigurovat jako součást každé vlastní instalace. To se obvykle provádí ve třídě ASP.NET Core aplikace `Startup` v `ConfigureServices` metodě. Konfigurace zahrnuje určení podporovaných protokolů a cest k serverům a koncovým bodům, které budou použity. Obrázek 8-2 ukazuje ukázkovou konfiguraci pořízenou z projektu uživatelského rozhraní rychlého startu IdentityServer4:
 
 ```csharp
 public class Startup
@@ -92,11 +93,11 @@ public class Startup
 
 **Obrázek 8-2**. Konfigurace IdentityServer.
 
-IdentityServer také hostuje veřejnou ukázkovou lokalitu, která se dá použít k otestování různých protokolů a konfigurací. Je umístěný na [https://demo.identityserver.io/](https://demo.identityserver.io/) a obsahuje informace o tom, jak nakonfigurovat své chování na základě `client_id`, které mu jsou k dispozici.
+IdentityServer také hostuje veřejnou ukázkovou lokalitu, která se dá použít k otestování různých protokolů a konfigurací. Je umístěný na adrese [https://demo.identityserver.io/](https://demo.identityserver.io/) a obsahuje informace o tom, jak nakonfigurovat chování na základě `client_id` poskytovaných funkcí.
 
 ## <a name="javascript-clients"></a>Klienti JavaScriptu
 
-Mnoho cloudových nativních aplikací využívá na front-endu rozhraní API na straně serveru a bohatých klientských aplikacích (jednostránkové). IdentityServer dodává [JavaScriptový klient](http://docs.identityserver.io/en/latest/quickstarts/4_javascript_client.html) (`oidc-client.js`) prostřednictvím NPM, který se dá přidat do jednostránkové a povolit tak použití IdentityServer pro přihlášení, odhlášení a ověřování webových rozhraní API na základě tokenu.
+Mnoho cloudových nativních aplikací využívá na front-endu rozhraní API na straně serveru a bohatých klientských aplikacích (jednostránkové). IdentityServer dodává [JavaScriptový klient](http://docs.identityserver.io/en/latest/quickstarts/4_javascript_client.html) ( `oidc-client.js` ) prostřednictvím NPM, který se dá přidat do jednostránkové a povolit tak použití IdentityServer pro přihlášení, odhlášení a ověřování webových rozhraní API na základě tokenu.
 
 ## <a name="references"></a>Odkazy
 
@@ -105,5 +106,5 @@ Mnoho cloudových nativních aplikací využívá na front-endu rozhraní API na
 - [Klient OIDC JavaScript](http://docs.identityserver.io/en/latest/quickstarts/4_javascript_client.html)
 
 >[!div class="step-by-step"]
->[Předchozí](azure-active-directory.md)
->[Další](security.md)
+>[Předchozí](azure-active-directory.md) 
+> [Další](security.md)

@@ -1,5 +1,5 @@
 ---
-title: IXCLRDataMethodInstance::GetILAddressMap – metoda
+title: 'IXCLRDataMethodInstance:: GetILAddressMap – metoda'
 ms.date: 01/16/2019
 api.name:
 - IXCLRDataMethodInstance::GetILAddressMap Method
@@ -15,16 +15,16 @@ topic_type:
 - apiref
 author: cshung
 ms.author: andrewau
-ms.openlocfilehash: 66e4768acff7ab735c6ac9e8f8f51a9511f7e371
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 7c4dcf59ce159434d5012120043f5bb548d49731
+ms.sourcegitcommit: 046a9c22487551360e20ec39fc21eef99820a254
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67744680"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83396817"
 ---
-# <a name="ixclrdatamethodinstancegetiladdressmap-method"></a>IXCLRDataMethodInstance::GetILAddressMap – metoda
+# <a name="ixclrdatamethodinstancegetiladdressmap-method"></a>IXCLRDataMethodInstance:: GetILAddressMap – metoda
 
-Získá IL na informace o mapování adres.
+Získá informace o mapování IL na adresu.
 
 [!INCLUDE[debugging-api-recommended-note](../../../../includes/debugging-api-recommended-note.md)]
 
@@ -41,26 +41,26 @@ HRESULT GetILAddressMap(
 ## <a name="parameters"></a>Parametry
 
 `mapLen`\
-[in] Délka zadaného mapování pole.
+pro Délka zadaného pole Maps
 
 `mapNeeded`\
-[out] Počet položek mapování, které potřebuje metodě.
+mimo Počet položek mapování, které metoda potřebuje.
 
 `maps`\
-[out, size_is(mapLen)] Pole pro ukládání položek mapování.
+[out, size_is (mapLen)] Pole pro ukládání položek mapy
 
 ## <a name="remarks"></a>Poznámky
 
-Zadaná metoda je součástí `IXCLRDataMethodInstance` rozhraní a odpovídá 14. pozice tabulce virtuální metody.
+Poskytnutá metoda je součástí `IXCLRDataMethodInstance` rozhraní a odpovídá 15. pozici tabulky virtuálních metod.
 
 ## <a name="requirements"></a>Požadavky
 
-**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
-**Záhlaví:** Žádné  
-**Knihovna:** Žádné  
-**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v47plus](../../../../includes/net-current-v47plus.md)]  
+**Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+**Hlavička:** NTato  
+**Knihovna:** NTato  
+**Verze .NET Framework:**[!INCLUDE[net_current_v47plus](../../../../includes/net-current-v47plus.md)]  
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Ladění](index.md)
-- [IXCLRDataMethodInstance Interface](ixclrdatamethodinstance-interface.md)
+- [IXCLRDataMethodInstance – rozhraní](ixclrdatamethodinstance-interface.md)

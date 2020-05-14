@@ -1,15 +1,15 @@
 ---
-title: Cloud Native DevOps
-description: Architekt cloudových nativních aplikací .NET pro Azure | Cloud Native DevOps
-ms.date: 06/30/2019
-ms.openlocfilehash: d152989061964d78c8be97b69df413b975058319
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+title: DevOps
+description: DevOps předpoklady pro cloudové nativní aplikace
+ms.date: 05/12/2020
+ms.openlocfilehash: 498ce64c3a387433862142826059b4f7e513ec7b
+ms.sourcegitcommit: 046a9c22487551360e20ec39fc21eef99820a254
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75337404"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83395786"
 ---
-# <a name="cloud-native-devops"></a>Cloud Native DevOps
+# <a name="devops"></a>DevOps
 
 [!INCLUDE [book-preview](../../../includes/book-preview.md)]
 
@@ -27,7 +27,9 @@ Vzorce a postupy, které umožňují rychlejší a spolehlivější vydání hod
 
 DevOps se předtím, než mikroslužby a je pravděpodobné, že přesun směrem k menšímu a většímu množství služeb by nebylo možné, aniž by DevOps mohl vydávat a provozovat nejen jednu, ale mnoho aplikací v produkčním prostředí je snazší.
 
-![Obrázek 11-0 hledání trendů znázorňuje, že růst v mikroslužbách nezačíná až po DevOps je poměrně dobře zavedený nápad.](./media/microservices-vs-devops.png)
+![Obrázek 10-1 hledání trendů znázorňuje, že růst v mikroslužbách nezačíná až po DevOps je poměrně dobře zavedený nápad.](./media/microservices-vs-devops.png)
+
+**Obrázek 10-1** – DevOps a mikroslužby.
 
 Osvědčenými postupy DevOps je, že je možné využít výhody cloudových nativních aplikací bez suffocating v rámci práce, ve které aplikace skutečně pracují.
 
@@ -39,11 +41,13 @@ Azure DevOps má dlouhého původu. Může trasovat své kořeny zpět do, když
 
 Azure DevOps je rozdělené na pět hlavních součástí:
 
-![Obrázek 11-1 pět hlavních oblastí služby Azure DevOps](./media/devops-components.png)
+![Obrázek 10-2 pět hlavních oblastí služby Azure DevOps](./media/devops-components.png)
+
+**Obrázek 10-2** – Azure DevOps.
+
+**Azure Repos** – Správa zdrojového kódu, která podporuje Venerable Správa verzí Team Foundation (TFVC) a obor oblíbených v oboru [Git](https://en.wikipedia.org/wiki/Git). Žádosti o přijetí změn poskytují způsob, jak povolit sociální kódování prostřednictvím diskuze o změnách, které se provedou.
 
 **Azure boards** – poskytuje nástroj pro sledování problémů a pracovních položek, který se snaží dovolit uživatelům vybrat pracovní postupy, které jsou pro ně nejvhodnější. Obsahuje řadu předem nakonfigurovaných šablon, včetně těch, které podporují SCRUM a kanbanové styly vývoje.
-
-**Azure Repos** – Správa zdrojového kódu, která podporuje Venerable Správa verzí Team Foundation (TFVC) a obor oblíbených v oboru Git. Žádosti o přijetí změn poskytují způsob, jak povolit sociální kódování prostřednictvím diskuze o změnách, které se provedou.
 
 **Azure Pipelines** – systém pro správu sestavení a vydání, který podporuje úzkou integraci s Azure. Buildy je možné spouštět na různých platformách od Windows po Linux až po MacOS. Agenti sestavení můžou být zřízené v cloudu nebo místně.
 
@@ -51,19 +55,29 @@ Azure DevOps je rozdělené na pět hlavních součástí:
 
 **Azure Artifacts** – kanál artefaktu, který společnostem umožňuje vytvářet vlastní, interní, verze NuGet, npm a další. Pokud dojde k selhání centralizovaného úložiště, slouží pro ně dvojitý účel, který funguje jako mezipaměť pro nadřazené balíčky.
 
-Organizační jednotka nejvyšší úrovně ve službě Azure DevOps se označuje jako projekt. V rámci každého projektu je možné zapnout nebo vypnout různé komponenty, například Azure Artifacts. Pokud uživatelé chtějí spravovat svůj zdrojový kód v GitHubu, ale stále využívají Azure Pipelines, je to dokonale možné. Mnoho open-source projektů využívá [bezplatné buildy](https://azure.microsoft.com/blog/announcing-azure-pipelines-with-unlimited-ci-cd-minutes-for-open-source/) nabízené službou Azure DevOps a přitom udržuje jejich zdrojový kód na GitHubu. Některé významné open source projekty, například [Visual Studio Code](https://code.visualstudio.com/), [přízi](https://yarnpkg.com/en/), [Gulp](https://gulpjs.com/)a [numpy](https://www.numpy.org/) , provedly přechod.
+Organizační jednotka nejvyšší úrovně ve službě Azure DevOps se označuje jako projekt. V rámci každého projektu je možné zapnout nebo vypnout různé komponenty, například Azure Artifacts. Každá z těchto komponent nabízí různé výhody pro cloudové nativní aplikace. Nejužitečnější jsou úložiště, desky a kanály. Pokud uživatelé chtějí spravovat svůj zdrojový kód v jiném zásobníku úložiště, jako je GitHub, ale pořád využívají Azure Pipelines a další komponenty, které jsou dokonale možné.
 
-Každá z těchto komponent poskytuje některé výhody pro cloudové nativní aplikace, ale tři nejužitečnější jsou Správa zdrojového kódu, desky a kanály.  
+Naštěstí vývojových týmů má mnoho možností při výběru úložiště. Jedním z nich je GitHub.
 
-## <a name="source-control"></a>Správy zdrojového kódu
+## <a name="github-actions"></a>GitHub Actions
+
+GitHub je na bázi 2009, což je široce populární webové úložiště pro hostování projektů, dokumentace a kódu. Mnohé velké technologické společnosti, jako jsou Apple, Amazon, Google a běžné společnosti, využívají GitHub. GitHub využívá Open Source distribuovaný systém správy verzí s názvem Git jako základ. Nahoře pak přidá svou vlastní sadu funkcí, včetně sledování chyb, funkcí a žádostí o přijetí změn, správy úloh a wiki pro jednotlivé základní kódy.
+
+V případě, že se GitHub vyvíjí, je příliš přidávání funkcí DevOps. GitHub má například vlastní kanál průběžné integrace/průběžného doručování (CI/CD), který se nazývá `GitHub Actions` . Akce GitHubu je nástroj pro automatizaci pracovních postupů založený na komunitě. Umožňuje týmům DevOps integraci s jejich existujícími nástroji, kombinovat je a odpovídat novým produktům a připojit se k životnímu cyklu softwaru, včetně stávajících partnerů CI/CD.
+
+GitHub má více než 40 000 000 uživatelů a díky tomu je největší hostitel zdrojového kódu na světě. V říjnu 2018 společnost Microsoft zakoupila GitHub. Společnost Microsoft provedla, že GitHub zůstane [otevřenou platformou](https://techcrunch.com/2018/06/04/microsoft-promises-to-keep-github-independent-and-open/) , kterou může nějaký vývojář připojit a jak se dá připojovat. I nadále funguje jako nezávislá společnost. GitHub nabízí plány pro podnikové, týmové, profesionální a bezplatné účty.
+
+## <a name="source-control"></a>Správa zdrojového kódu
 
 Uspořádání kódu pro nativní cloudové aplikace může být náročné. Pro cloudové aplikace, které se navzájem vzájemně komunikují, se místo jedné aplikace obří může jednat o web s menšími aplikacemi. Stejně jako u všech věcí v computingu si nejlepší uspořádání kódu zůstane otevřené otázky. K dispozici jsou příklady úspěšných aplikací s různými druhy rozložení, ale dvě varianty vypadají nejvíc oblíbenosti.
 
-Než se pustíte do samotné vlastní správy zdrojového kódu, je pravděpodobné, že se rozhodují, kolik projektů je vhodné. V rámci jednoho projektu je podporována podpora více úložišť a vytváření kanálů. Panely jsou trochu složitější, ale existují i úkoly, které je možné snadno přiřadit více týmům v rámci jednoho projektu. V jednom projektu Azure DevOps je sice možné podporovat stovky i tisíce vývojářů. V takovém případě je pravděpodobný nejlepší přístup, protože poskytuje všem vývojářům možnost pracovat z a snížit tak nejasnost najít tuto aplikaci, když vývojáři nezjistí, ve kterých projektech se nachází.
+Než se pustíte do samotné vlastní správy zdrojového kódu, je pravděpodobné, že se rozhodují, kolik projektů je vhodné. V rámci jednoho projektu je podporována podpora více úložišť a vytváření kanálů. Panely jsou trochu složitější, ale existují i úkoly, které je možné snadno přiřadit více týmům v rámci jednoho projektu. Je možné podporovat stovky i tisíce vývojářů z jednoho projektu Azure DevOps. V takovém případě je pravděpodobný nejlepší přístup, protože poskytuje všem vývojářům možnost pracovat z a snížit tak nejasnost najít tuto aplikaci, když vývojáři nezjistí, ve kterých projektech se nachází.
 
 Rozdělení kódu pro mikroslužby v rámci projektu Azure DevOps může být trochu náročnější.
 
-![Obrázek 11-2 jedno a více úložišť](./media/single-repository-vs-multiple.png)
+![Obrázek 10-3 jedno a více úložišť](./media/single-repository-vs-multiple.png)
+
+**Obrázek 10-3** – jedno vs. mnoho úložišť.
 
 ### <a name="repository-per-microservice"></a>Úložiště na mikroslužbu
 
@@ -78,17 +92,17 @@ Na první pohled se zdá, že se jedná o největší logický přístup k rozd�
 
 Jednou z klíčových nápadů za mikroslužby je, že služby by měly být silo a oddělené od sebe. Když použijete návrh založený na doméně, můžete se rozhodnout na hranicích služeb, které služby působí jako transakční hranice. Aktualizace databáze by neměly zahrnovat více služeb. Tato kolekce souvisejících dat je označována jako ohraničený kontext.  Tato nápad se projeví v izolaci dat mikroslužeb k databázi oddělené a autonomní od ostatních služeb. Přináší skvělou představu o tom, jak tento nápad přenést až do zdrojového kódu.
 
-Tento přístup ale není bez problémů. Jedním z dalších problémů při vývoji Gnarly je Správa závislostí. Vezměte v úvahu počet souborů, které tvoří průměrný `node_modules` adresář. Novou instalací nějakého, jako je `create-react-app`, se nejspíš s tisíci balíčků zavede. Otázka, jak tyto závislosti spravovat, je obtížné.
+Tento přístup ale není bez problémů. Jedním z dalších problémů při vývoji Gnarly je Správa závislostí. Vezměte v úvahu počet souborů, které tvoří průměrný `node_modules` adresář. Nová instalace něco podobného jako `create-react-app` je, že se s nimi bude přenášet tisíce balíčků. Otázka, jak tyto závislosti spravovat, je obtížné.
 
-Pokud je závislost aktualizována, musí podřízené balíčky také aktualizovat tuto závislost. To bohužel povede k práci s vývojem, takže invariably `node_modules` Adresář skončil s více verzemi jednoho balíčku, každá z nich je závislá na nějakém jiném balíčku, který je ve verzi trochu odlišný tempo. Při nasazování aplikace by měla být použita verze závislosti? Verze, která je aktuálně v produkčním prostředí? Verze, která je aktuálně ve verzi beta, ale která je pravděpodobně v produkčním čase, když ji příjemce provede do produkce? Obtížné problémy, které se nevyřešily jenom pomocí mikroslužeb.
+Pokud je závislost aktualizována, musí podřízené balíčky také aktualizovat tuto závislost. To bohužel povede ke vývojářské práci, takže invariably `node_modules` adresář skončí s několika verzemi jednoho balíčku, každá z nich je závislá na nějakém jiném balíčku, který je ve verzi trochu jiného tempo. Při nasazování aplikace by měla být použita verze závislosti? Verze, která je aktuálně v produkčním prostředí? Verze, která je aktuálně ve verzi beta, ale která je pravděpodobně v produkčním čase, když ji příjemce provede do produkce? Obtížné problémy, které se nevyřešily jenom pomocí mikroslužeb.
 
 Existují knihovny, které jsou závislé na nejrůznějších projektech. Tím, že mikroslužby vydělíte pomocí jednoho z nich, interní závislosti se můžou nejlépe vyřešit pomocí interního úložiště, Azure Artifacts. Sestavení pro knihovny budou nabízet své nejnovější verze do Azure Artifacts pro interní spotřebu. Aby bylo možné převzít závislosti na nově aktualizovaných balíčcích, musí se projekt pro příjem dat ještě ručně aktualizovat.
 
 Jiná nevýhoda představuje při přesouvání kódu mezi službami sám sebe. I když by bylo dobré se domnívat, že první část aplikace do mikroslužeb je 100% správnosti, je tato realita tím, že je prescient, že nebudete moct dělat žádné chyby dělení služby. Proto budou funkce a kód, které jednotky potřebují, přesunout ze služby do služby: úložiště do úložiště. Při přestupnosti z jednoho úložiště na jiný kód ztratí svou historii. K dispozici je mnoho případů, zejména v případě auditu, kde je úplná historie v části kódu necenná.
 
-Poslední a možná nejdůležitější nevýhodou je koordinace změn. V pravdivé aplikaci mikroslužeb by neexistovaly žádné závislosti nasazení mezi službami. Mělo by být možné nasadit služby A, B a C v libovolném pořadí, protože mají volné spojení. Ve skutečnosti ale existují situace, kdy je žádoucí provést změnu, která překročí více úložišť současně. Mezi příklady patří aktualizace knihovny pro uzavření bezpečnostního otvoru nebo změna komunikačního protokolu používaného všemi službami.
+Poslední a nejdůležitější nevýhodou je koordinace změn. V pravdivé aplikaci mikroslužeb by neexistovaly žádné závislosti nasazení mezi službami. Mělo by být možné nasadit služby A, B a C v libovolném pořadí, protože mají volné spojení. Ve skutečnosti ale existují situace, kdy je žádoucí provést změnu, která překročí více úložišť současně. Mezi příklady patří aktualizace knihovny pro uzavření bezpečnostního otvoru nebo změna komunikačního protokolu používaného všemi službami.
 
-Aby bylo možné provést změnu mezi úložištěm, je třeba provést potvrzení u každého úložiště v případě úspěchu. Každá změna v každém úložišti bude vyžadovat vyžádání a revizi samostatně. To může být obtížné koordinovat a obecně obtěžovat.
+Aby bylo možné provést změnu mezi úložištěm, je třeba provést potvrzení u každého úložiště v případě úspěchu. Každá změna v každém úložišti bude vyžadovat vyžádání a revizi samostatně. To může být obtížné koordinovat.
 
 Alternativou k použití mnoha úložišť je vložení veškerého zdrojového kódu do obří, všechny znalosti a samostatné úložiště.
 
@@ -104,21 +118,23 @@ Další výhodou je, že široký rozsah změn, které jsou mezi hranicemi služ
 
 Existuje mnoho nástrojů, které mohou provádět statickou analýzu kódu ke zjištění nebezpečných postupů programování nebo problematického používání rozhraní API. Ve světě s více úložišti se musí každé úložiště iterovat, aby bylo možné zjistit problémy v nich. Jediné úložiště umožňuje spustit analýzu vše na jednom místě.
 
-Přístup k jednomu úložišti má i mnoho nevýhody. Jedním z nejpravděpodobnějších z nich je, že při jednom úložišti dojde k ohrožení zabezpečení. Pokud se obsah úložiště nevrací v úložišti podle modelu služby, dojde k minimálnímu množství ztracených kódů. S jediným úložištěm může dojít ke ztrátě všech vlastněných společností. V minulosti existovalo mnoho příkladů a bylo propadnutí celého úsilí o vývoj her. Máte-li více úložišť, zveřejňuje méně Surface pásma, což je velmi žádoucí vlastnost ve většině postupů zabezpečení.
+Přístup k jednomu úložišti má i mnoho nevýhody. Jedním z nejpravděpodobnějších z nich je, že při jednom úložišti dojde k ohrožení zabezpečení. Pokud se obsah úložiště nevrací v úložišti podle modelu služby, dojde k minimálnímu množství ztracených kódů. S jediným úložištěm může dojít ke ztrátě všech vlastněných společností. V minulosti existovalo mnoho příkladů a bylo propadnutí celého úsilí o vývoj her. Máte-li více úložišť, zveřejňuje méně Surface pásma, což je žádoucí vlastnost ve většině postupů zabezpečení.
 
 Velikost jednoho úložiště se nejspíš rychle stane nespravovatelným. To představuje některé zajímavé důsledky výkonu. Může se stát, že budete muset použít specializované nástroje, jako je třeba [virtuální systém souborů pro Git](https://vfsforgit.org/), který byl původně navržený tak, aby vylepšil prostředí pro vývojáře v týmu Windows.
 
-Často je argument pro použití jednoho úložiště převařená na argument, který Facebook nebo Google používá tuto metodu pro uspořádání zdrojového kódu. Je-li přístup pro tyto společnosti dobrý, je surely správným přístupem pro všechny společnosti. Pravdivostí věci je, že hodně společností pracuje na něco, jako je například škálování Facebooku nebo Google. Problémy, ke kterým dochází v těchto škálováních, se liší od většiny vývojářů. To, co je dobré pro hus, nemusí být dobré pro Gander.
+Často je argument pro použití jednoho úložiště převařená na argument, který Facebook nebo Google používá tuto metodu pro uspořádání zdrojového kódu. Je-li přístup pro tyto společnosti dobrý, je surely správným přístupem pro všechny společnosti. Pravdivostí věci je, že několik společností pracuje na něco, jako je například škálování Facebooku nebo Google. Problémy, ke kterým dochází v těchto škálováních, se liší od většiny vývojářů. To, co je dobré pro hus, nemusí být dobré pro Gander.
 
-Na konci lze buď řešení použít k hostování zdrojového kódu pro mikroslužby. Ve většině případů se ale výhody správy a strojírenství provozu v jednom úložišti nemeager. Rozdělení kódu v různých úložištích podporuje lepší oddělení potíží a podporuje autonomii mezi vývojovými týmy.  
+Na konci lze buď řešení použít k hostování zdrojového kódu pro mikroslužby. Ve většině případů se ale výhody správy a režie provozu v jednom úložišti nemeager. Rozdělení kódu v různých úložištích podporuje lepší oddělení potíží a podporuje autonomii mezi vývojovými týmy.  
 
 ### <a name="standard-directory-structure"></a>Standardní adresářová struktura
 
 Bez ohledu na to, jak jedna z nich má projednání každé služby, bude mít vlastní adresář. Jedna z nejlepších optimalizací, která umožňuje vývojářům vzájemnou spolupráci mezi projekty, je udržovat standardní adresářovou strukturu.
 
-![Obrázek 11-3 standardní adresářovou strukturu pro služby e-mailu i přihlášení](./media/dir-struct.png)
+![Obrázek 10-4 standardní adresářovou strukturu pro služby e-mailu i přihlášení](./media/dir-struct.png)
 
-Vždy, když je vytvořen nový projekt, by měla být použita šablona, která je umístěna na místo správné struktury. Tato šablona může také zahrnovat takové užitečné položky jako kostra souboru READme a `azure-pipelines.yml`. V jakékoli architektuře mikroslužeb poskytuje vysoký stupeň odchylky mezi projekty složité operace proti službám.
+**Obrázek 10-4** – standardní adresářová struktura.
+
+Vždy, když je vytvořen nový projekt, by měla být použita šablona, která je umístěna na místo správné struktury. Tato šablona může také zahrnovat takové užitečné položky jako kostra souboru READme a `azure-pipelines.yml` . V jakékoli architektuře mikroslužeb poskytuje vysoký stupeň odchylky mezi projekty složité operace proti službám.
 
 Existuje mnoho nástrojů, které mohou poskytnout šablonování pro celý adresář, který obsahuje několik adresářů zdrojového kódu. [Yeoman](https://yeoman.io/) je oblíbený ve světě JavaScript a GitHub nedávno vydal [šablony úložišť](https://github.blog/2019-06-06-generate-new-repositories-with-repository-templates/), které poskytují většinu stejných funkcí.
 
@@ -128,33 +144,41 @@ Správa úloh v jakémkoli projektu může být obtížná. Předem je dlouhé o
 
 Nativní aplikace v cloudu mají za následek menší než tradiční softwarové produkty nebo alespoň ty, které jsou rozdělené na menší služby. Sledování problémů nebo úloh souvisejících s těmito službami zůstává důležité jako u jakéhokoli jiného softwarového projektu. Nikdo nechce ztratit záznam určité pracovní položky nebo vysvětlit zákazníkovi, že jejich potíže nebyly správně zaznamenány. Panely jsou konfigurovány na úrovni projektu, ale v rámci každého projektu lze definovat oblasti. Ty umožňují rozlomení problémů mezi několika komponentami. Výhodou zachování všech práce pro celou aplikaci na jednom místě je, že je snadné přesunout pracovní položky z jednoho týmu na jiný, protože jsou lépe pochopitelné.
 
-Azure DevOps obsahuje předem nakonfigurované množství oblíbených šablon. Ve většině základních konfiguracích je potřeba, abyste věděli, co je ve nevyřízených položkách, na kterých lidé pracují, a co se děje. Je důležité mít přehled o procesu sestavování softwaru, aby bylo možné v práci určit prioritu a dokončené úkoly hlášené zákazníkovi. Samozřejmě je samozřejmě velmi málo softwarových projektů, které jsou jednoduché jako `to do`, `doing`a `done`. Netrvá tak dlouho, aby mohli uživatelé začít přidávat kroky, jako je `QA` nebo `Detailed Specification` procesu.
+Azure DevOps obsahuje předem nakonfigurované množství oblíbených šablon. Ve většině základních konfiguracích je potřeba, abyste věděli, co je ve nevyřízených položkách, na kterých lidé pracují, a co se děje. Je důležité mít přehled o procesu sestavování softwaru, aby bylo možné v práci určit prioritu a dokončené úkoly hlášené zákazníkovi. Samozřejmě několik softwarových projektů přivede k procesu jednoduchým způsobem jako `to do` , `doing` a `done` . Netrvá tak dlouho, aby mohli uživatelé začít přidávat kroky jako `QA` nebo `Detailed Specification` do procesu.
 
 Jednou z důležitějších částí agilních metod je introspekce v pravidelných intervalech. Tyto recenze jsou určeny k tomu, aby poskytovaly přehled o tom, jaké problémy tým čelí a jak se dají zlepšit. Často to znamená změnu toku potíží a funkcí prostřednictvím procesu vývoje. Proto je naprosto dobrý stav, že rozbalíte rozložení desek s dalšími fázemi.
 
 Fáze na panelech nejsou jediným nástrojem organizace. V závislosti na konfiguraci panelu je k dispozici hierarchie pracovních položek. Nejpřesnější položka, která se může zobrazit na panelu, je úkol. Mimo pole úkol obsahuje pole pro název, popis, prioritu, odhad množství zbývající práce a možnost propojení s dalšími pracovními položkami nebo položkami vývoje (větve, potvrzení, žádosti o přijetí změn, sestavení a tak dále). Pracovní položky mohou být klasifikovány do různých oblastí aplikace a různých iterací (sprinty), aby je bylo možné snadněji najít.
 
-![Obrázek 11-4 příklad úlohy ve službě Azure DevOps](./media/task-details.png)
+![Obrázek 10-5 příklad úlohy ve službě Azure DevOps](./media/task-details.png)
 
-Pole Popis podporuje normální styly, které byste očekávali (tučné, kurzíva a přeškrtnutí), a možnost vkládat obrázky. Díky tomu je velmi výkonný nástroj, který se používá při zadávání práce nebo chyb.
+**Obrázek 10-5** – úkol v Azure DevOps.
+
+Pole Popis podporuje normální styly, které byste očekávali (tučné, kurzíva a přeškrtnutí), a možnost vkládat obrázky. Díky tomu je to výkonný nástroj pro použití při zadávání práce nebo chyb.
 
 Úlohy je možné zavádět do funkcí, které definují větší pracovní jednotku. Funkce je zase možné zavádět [do náměty](https://docs.microsoft.com/azure/devops/boards/backlogs/define-features-epics?view=azure-devops). Klasifikace úkolů v této hierarchii usnadňuje pochopení toho, jak velkou funkci přináší.
 
-![Obrázek 11-5 typy pracovních položek, které jsou ve výchozím nastavení nakonfigurovány v základní šabloně procesu](./media/board-issue-types.png)
+![Obrázek 10-6 typy pracovních položek, které jsou ve výchozím nastavení nakonfigurovány v základní šabloně procesu](./media/board-issue-types.png)
+
+**Obrázek 10-6** – pracovní položka v Azure DevOps.
 
 Existují různé druhy zobrazení problémů v Azure Boards. Položky, které ještě nejsou naplánované, se zobrazí v backlogu. Odtud je lze přiřadit ke sprintu. Sprint je časové pole, ve kterém se očekává, že se dokončí některé množství práce. Tato práce může zahrnovat úkoly, ale také řešení lístků. Po tomto případě lze celý Sprint spravovat z části panelu sprintu. Toto zobrazení ukazuje, jak probíhá práce, a obsahuje graf vypálení, který umožňuje průběžnou aktualizaci odhadu, pokud bude Sprint úspěšný.
 
-![Obrázek 11-6 panel s definovaným sprintem](./media/sprint-board.png)
+![Obrázek 10-7 panel s definovaným sprintem](./media/sprint-board.png)
+
+**Obrázek 10-7** – deska ve službě Azure DevOps.
 
 Teď by se měl vyhodnotit, že se na deskách v Azure DevOps nachází velký výkon. Pro vývojáře máte k dispozici snadnou pohled na to, co se právě zpracovává. Pro zobrazení správců projektu na nadcházející práci a přehled stávající práce. Pro manažery existuje spousta sestav o reportování a kapacitě. Bohužel neexistují žádné Magical o aplikacích Cloud Native, které eliminují nutnost sledovat práci. Pokud ale potřebujete sledovat práci, je k dispozici několik míst, kde je prostředí lepší než v Azure DevOps.
 
 ## <a name="cicd-pipelines"></a>Kanály CI/CD
 
-Téměř žádná změna v životním cyklu vývoje softwaru se proto nenástupema jako pro kontinuální integraci (CI) a průběžné doručování (CD). Sestavování a spouštění automatizovaných testů proti zdrojovému kódu projektu, jakmile se změna vrátí do brzkého výskytu chyb. Před nástupem sestavení průběžné integrace by nebylo Neběžné získat kód z úložiště a zjistit, že neuspěly v testování nebo nemohly být sestaveny. Výsledkem je velké množství sledování ze zdroje přetržení.
+Téměř žádná změna v životním cyklu vývoje softwaru se proto nenástupema jako pro kontinuální integraci (CI) a průběžné doručování (CD). Sestavování a spouštění automatizovaných testů proti zdrojovému kódu projektu, jakmile se změna vrátí do brzkého výskytu chyb. Před nástupem sestavení průběžné integrace by nebylo Neběžné získat kód z úložiště a zjistit, že neuspěly v testování nebo nemohly být sestaveny. Výsledkem je sledování zdroje zlomku.
 
 Tradičně dodávání softwaru do produkčního prostředí vyžaduje rozsáhlou dokumentaci a seznam kroků. Každý z těchto kroků je nutné ručně provést v rámci velmi náchylného procesu k chybám.
 
-![Obrázek 11-7 Kontrolní seznam](./media/checklist.png)
+![Obrázek 10-8 kontrolní seznam](./media/checklist.png)
+
+**Obrázek 10-8** – kontrolní seznam
 
 Nedílnou součástí průběžné integrace je průběžné doručování, ve kterém se do prostředí nasadí nově připravené balíčky. Ruční zpracování se nedá škálovat tak, aby odpovídalo rychlosti vývoje, takže automatizace je důležitější. Kontrolní seznamy jsou nahrazeny skripty, které mohou provádět stejné úlohy rychleji a přesněji než jakékoli lidské.
 
@@ -166,7 +190,7 @@ Důležitost automatizace procesu sestavení a doručování je vykládána pomo
 
 Azure DevOps poskytuje sadu nástrojů pro zajištění nepřetržité integrace a nasazení snadněji než kdy dřív. Tyto nástroje jsou umístěné v části Azure Pipelines. První z nich je sestavení Azure, což je nástroj pro spouštění definic sestavení založených na YAML ve velkém měřítku. Uživatelé můžou buď přenést své vlastní počítače sestavení (Skvělé pro případ, že sestavení vyžaduje prostředí pečlivě), nebo použít počítač z nepřetržitě aktualizovaného fondu virtuálních počítačů Azure hostovaných pro Azure. Tyto hostované agenti sestavení přináší předinstalované prostředí široké škály vývojářských nástrojů, nejen vývoj pro .NET, ale pro vše od jazyka Java až po vývoj pro iPhone.
 
-DevOps zahrnuje široké spektrum neplatných definic sestavení, které lze přizpůsobit pro jakékoli sestavení. Definice sestavení jsou definovány v souboru s názvem `azure-pipelines.yml` a vráceny do úložiště, aby mohly být ve verzi společně se zdrojovým kódem. To usnadňuje změny kanálu sestavení ve větvi, protože změny lze vrátit pouze do této větve. Příklad `azure-pipelines.yml` pro sestavování webové aplikace v ASP.NET na celé platformě je znázorněn na obrázku 11-8.
+DevOps zahrnuje široké spektrum neplatných definic sestavení, které lze přizpůsobit pro jakékoli sestavení. Definice sestavení jsou definovány v souboru s názvem `azure-pipelines.yml` a zkontrolovány do úložiště, aby mohly být ve verzi společně se zdrojovým kódem. To usnadňuje změny kanálu sestavení ve větvi, protože změny lze vrátit pouze do této větve. Příklad `azure-pipelines.yml` pro sestavení webové aplikace v ASP.NET v plném rozhraní je znázorněn na obrázku 10-9.
 
 ```yml
 name: $(rev:r)
@@ -228,7 +252,7 @@ steps:
   condition: succeededOrFailed()
 ```
 
-**Obrázek 11-8** – vzor Azure-Pipelines. yml
+**Obrázek 10-9** – vzor Azure-Pipelines. yml
 
 Tato definice sestavení používá řadu předdefinovaných úloh, které vytvářejí sestavení tak jednoduché jako sestavení sady galerie (jednodušší než obří Millennium Falcon). Například úloha NuGet obnoví balíčky NuGet, zatímco úloha VSBuild volá nástroje pro sestavení sady Visual Studio, aby provedla vlastní kompilaci. V Azure DevOps jsou k dispozici stovky různých úloh s tisíci více, které udržuje komunita. Je možné, že bez ohledu na to, jaké úlohy sestavení chcete spustit, už někdo vytvořil.
 
@@ -240,7 +264,9 @@ Konečný výsledek sestavení je kolekce souborů označovaných jako artefakty
 
 Sestavení se postará o zkompilování softwaru do balíčku s přípravnou, ale artefakty ještě musí být vloženy do testovacího prostředí, aby bylo možné dokončit průběžné doručování. V takovém případě Azure DevOps používá samostatný nástroj nazvaný releases. Nástroj releases používá stejné knihovny, které byly k dispozici pro sestavení, ale představují koncept "fáze". Fáze je izolované prostředí, do kterého se balíček nainstaluje. Například produkt může využívat vývoj, QA a produkční prostředí. Kód se průběžně doručuje do vývojového prostředí, kde pro něj můžete spouštět automatizované testy. Po dokončení těchto testů se tato verze přesune do prostředí QA pro manuální testování. Nakonec je kód přesunut do produkčního prostředí, kde je viditelný pro každého.
 
-![Obrázek 11-9 příklad kanálu vydaných verzí s fázemi vývoje, QA a výroby](./media/release-pipeline.png)
+![Obrázek 10-10 příklad kanálu vydaných verzí s fázemi vývoje, QA a výroby](./media/release-pipeline.png)
+
+**Obrázek 10-10** – kanál verze
 
 Každou fázi sestavení lze automaticky aktivovat dokončením předchozí fáze. V mnoha případech to však není žádoucí. Přesun kódu do produkčního prostředí může vyžadovat schválení od někoho. Nástroj releases to podporuje tím, že povoluje schvalovatele v každém kroku kanálu vydání. Pravidla je možné nastavit tak, aby se určitá osoba nebo skupina osob před tím, než se začne do produkčního prostředí, odhlásila na vydané verzi. Tyto brány umožňují ruční kontroly kvality a také dodržování zákonných požadavků souvisejících s řízením toho, co se v produkčním prostředí týká.
 
@@ -250,8 +276,8 @@ Pro konfiguraci mnoha kanálů sestavení se neúčtují žádné náklady, tak�
 
 ### <a name="versioning-releases"></a>Verze verzí
 
-Jednou z nevýhod používání funkce releases je, že se nedá definovat v souboru `azure-pipelines.yml` se změnami. Existuje mnoho důvodů, proč byste to měli udělat, protože definice vydání pro jednotlivé větve obsahují v šabloně projektu kostru vydání. Naštěstí je práce v průběhu přesunu některých fází do komponenty buildu. Tento postup se označuje jako sestavení ve více fázích a [první verze je teď k dispozici](https://devblogs.microsoft.com/devops/whats-new-with-azure-pipelines/)!
+Jednou z nevýhod používání funkce releases je, že se nedá definovat v souboru vráceného se změnami `azure-pipelines.yml` . Existuje mnoho důvodů, proč byste to měli udělat, protože definice vydání pro jednotlivé větve obsahují v šabloně projektu kostru vydání. Naštěstí je práce v průběhu přesunu některých fází do komponenty buildu. Tento postup se označuje jako sestavení ve více fázích a [první verze je teď k dispozici](https://devblogs.microsoft.com/devops/whats-new-with-azure-pipelines/)!
 
 >[!div class="step-by-step"]
->[Předchozí](azure-security.md)
->[Další](infrastructure-as-code.md)
+>[Předchozí](azure-security.md) 
+> [Další](feature-flags.md)

@@ -1,13 +1,13 @@
 ---
 title: Objektově orientované programování (C#)
-ms.date: 02/08/2020
+ms.date: 05/13/2020
 ms.assetid: 89574786-65ef-4335-88bc-fbacd094f183
-ms.openlocfilehash: 2b6be3384f76fa210c2b52c55ecf9bd865df43a6
-ms.sourcegitcommit: 5988e9a29cedb8757320817deda3c08c6f44a6aa
+ms.openlocfilehash: 541d1a2581a3241f35fc8478040c007b6581e3b2
+ms.sourcegitcommit: 046a9c22487551360e20ec39fc21eef99820a254
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82200090"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83396690"
 ---
 # <a name="object-oriented-programming-c"></a>Objektově orientované programování (C#)
 
@@ -87,13 +87,12 @@ class SampleClass
 }
 ```
 
-Většina vlastností má metody nebo postupy pro nastavení a získání hodnoty vlastnosti. Můžete však vytvořit vlastnosti jen pro čtení nebo jen pro zápis a omezit tak jejich úpravu nebo čtení. V jazyce C# můžete vynechat metodu `get` nebo. `set` Automaticky implementované vlastnosti však nemohou být pouze pro zápis. Automaticky implementované vlastnosti jen pro čtení lze nastavit v konstruktorech obsahující třídy.
+Většina vlastností má metody nebo postupy pro nastavení a získání hodnoty vlastnosti. Můžete však vytvořit vlastnosti jen pro čtení nebo jen pro zápis a omezit tak jejich úpravu nebo čtení. V jazyce C# můžete vynechat `get` `set` metodu nebo. Automaticky implementované vlastnosti však nemohou být pouze pro zápis. Automaticky implementované vlastnosti jen pro čtení lze nastavit v konstruktorech obsahující třídy.
 
 Další informace naleznete v tématu:
 
-- [get](../../language-reference/keywords/get.md)
-
-- [stanovenými](../../language-reference/keywords/set.md)
+- [Čtěte](../../language-reference/keywords/get.md)
+- [set](../../language-reference/keywords/set.md)
 
 #### <a name="methods"></a>Metody
 
@@ -104,7 +103,7 @@ Chcete-li definovat metodu třídy:
 ```csharp
 class SampleClass
 {
-    public int sampleMethod(string sampleParam)
+    public int SampleMethod(string sampleParam)
     {
         // Insert code here
     }
@@ -116,8 +115,8 @@ Třída může mít několik implementací nebo *přetížení*stejné metody, k
 Přetížení metody:
 
 ```csharp
-public int sampleMethod(string sampleParam) {}
-public int sampleMethod(int sampleParam) {}
+public int SampleMethod(string sampleParam) { }
+public int SampleMethod(int sampleParam) { }
 ```
 
 Ve většině případů deklarujete metodu v rámci definice třídy. Jazyk C# však podporuje také *metody rozšíření* , které umožňují přidat metody do existující třídy mimo skutečnou definici třídy.
@@ -156,10 +155,8 @@ Další informace o finalizační a uvolňování paměti v .NET Framework nalez
 Události umožňují třídě nebo objektu upozornit jiné třídy nebo objekty, když dojde k nějakému zájmu. Třída, která odesílá (nebo vyvolává) událost, se nazývá *Vydavatel* a třídy, které přijmou (nebo zpracovávají) událost se nazývají *předplatitelé*. Další informace o událostech, jak jsou vyvolány a zpracovávány, naleznete v tématu [events](../../../standard/events/index.md).
 
 - Chcete-li deklarovat událost ve třídě, použijte klíčové slovo [Event](../../language-reference/keywords/event.md) .
-
 - Chcete-li vyvolat událost, vyvolejte delegáta události.
-
-- K přihlášení k odběru události použijte `+=` operátor; Chcete-li zrušit odběr události, použijte `-=` operátor.
+- Chcete-li se přihlásit k odběru události, použijte `+=` operátor; Chcete-li zrušit odběr události, použijte `-=` operátor.
 
 #### <a name="nested-classes"></a>Vnořené třídy
 
@@ -187,14 +184,14 @@ Všechny třídy a členy třídy mohou určit, jakou úroveň přístupu poskyt
 
 K dispozici jsou následující modifikátory přístupu:
 
-|Modifikátor C#|Definice|
-|------------------|----------------|
-|[public](../../language-reference/keywords/public.md)|Na daný typ nebo člen je možné přistupovat jakýkoli jiný kód ve stejném sestavení nebo jiném sestavení, které na něj odkazuje.|
-|[private](../../language-reference/keywords/private.md)|Typ nebo člen je k dispozici pouze pomocí kódu ve stejné třídě.|
-|[protected](../../language-reference/keywords/protected.md)|Typ nebo člen je k dispozici pouze pomocí kódu ve stejné třídě nebo v odvozené třídě.|
-|[internal](../../language-reference/keywords/internal.md)|K typu nebo členu může být přistup libovolným kódem ve stejném sestavení, ale nikoli z jiného sestavení.|
-|[protected internal](../../language-reference/keywords/protected-internal.md)|K typu nebo členu může být přistup libovolným kódem ve stejném sestavení nebo libovolnou odvozenou třídou v jiném sestavení.|
-|[private protected](../../language-reference/keywords/private-protected.md)|Typ nebo člen je k dispozici v kódu ve stejné třídě nebo v odvozené třídě v rámci sestavení základní třídy.|
+| Modifikátor C# | Definice |
+|--|--|
+| [public](../../language-reference/keywords/public.md) | Na daný typ nebo člen je možné přistupovat jakýkoli jiný kód ve stejném sestavení nebo jiném sestavení, které na něj odkazuje. |
+| [private](../../language-reference/keywords/private.md) | Typ nebo člen je k dispozici pouze pomocí kódu ve stejné třídě. |
+| [protected](../../language-reference/keywords/protected.md) | Typ nebo člen je k dispozici pouze pomocí kódu ve stejné třídě nebo v odvozené třídě. |
+| [internal](../../language-reference/keywords/internal.md) | K typu nebo členu může být přistup libovolným kódem ve stejném sestavení, ale nikoli z jiného sestavení. |
+| [protected internal](../../language-reference/keywords/protected-internal.md) | K typu nebo členu může být přistup libovolným kódem ve stejném sestavení nebo libovolnou odvozenou třídou v jiném sestavení. |
+| [private protected](../../language-reference/keywords/private-protected.md) | Typ nebo člen je k dispozici v kódu ve stejné třídě nebo v odvozené třídě v rámci sestavení základní třídy. |
 
 Další informace najdete v tématu [modifikátory přístupu](../classes-and-structs/access-modifiers.md).
 
@@ -212,15 +209,18 @@ Po vytvoření instance třídy můžete přiřadit hodnoty vlastnostem a polím
 // Set a property value.
 sampleObject.sampleProperty = "Sample String";
 // Call a method.
-sampleObject.sampleMethod();
+sampleObject.SampleMethod();
 ```
 
 Chcete-li přiřadit hodnoty vlastnostem během procesu vytváření instancí třídy, použijte Inicializátory objektů:
 
 ```csharp
 // Set a property value.
-SampleClass sampleObject = new SampleClass
-    { FirstProperty = "A", SecondProperty = "B" };
+var sampleObject = new SampleClass
+{
+    FirstProperty = "A",
+    SecondProperty = "B"
+};
 ```
 
 Další informace naleznete v tématu:
@@ -259,8 +259,11 @@ Vytvoření instance anonymního typu:
 
 ```csharp
 // sampleObject is an instance of a simple anonymous type.
-var sampleObject =
-    new { FirstProperty = "A", SecondProperty = "B" };
+var sampleObject = new
+{
+    FirstProperty = "A",
+    SecondProperty = "B"
+};
 ```
 
 Další informace najdete v tématech: [anonymní typy](../classes-and-structs/anonymous-types.md).
@@ -275,7 +278,7 @@ Dědičnost umožňuje vytvořit novou třídu, která znovu používá, rozši�
 Chcete-li dědit ze základní třídy:
 
 ```csharp
-class DerivedClass:BaseClass {}
+class DerivedClass:BaseClass { }
 ```
 
 Ve výchozím nastavení mohou být děděny všechny třídy. Můžete však určit, zda třída nesmí být použita jako základní třída, nebo vytvořit třídu, která může být použita pouze jako základní třída.
@@ -295,8 +298,7 @@ public abstract class B { }
 Další informace naleznete v tématu:
 
 - [sealed](../../language-reference/keywords/sealed.md)
-
-- [Výtah](../../language-reference/keywords/abstract.md)
+- [abstract](../../language-reference/keywords/abstract.md)
 
 ### <a name="overriding-members"></a>Přepisování členů
 
@@ -304,12 +306,12 @@ Ve výchozím nastavení zdědí odvozená třída všechny členy ze své zákl
 
 Následující modifikátory slouží k řízení způsobu přepsání vlastností a metod:
 
-|Modifikátor C#|Definice|
-|------------------|----------------|
-|[virtual](../../language-reference/keywords/virtual.md)|Umožňuje přepsat člena třídy v odvozené třídě.|
-|[override](../../language-reference/keywords/override.md)|Přepíše virtuální (overridabled) člen definovaný v základní třídě.|
-|[Výtah](../../language-reference/keywords/abstract.md)|Vyžaduje, aby byl člen třídy přepsán v odvozené třídě.|
-|[new – modifikátor](../../language-reference/keywords/new-modifier.md)|Skryje člena zděděného ze základní třídy.|
+| Modifikátor C# | Definice |
+|--|--|
+| [virtual](../../language-reference/keywords/virtual.md) | Umožňuje přepsat člena třídy v odvozené třídě. |
+| [override](../../language-reference/keywords/override.md) | Přepíše virtuální (overridabled) člen definovaný v základní třídě. |
+| [abstract](../../language-reference/keywords/abstract.md) | Vyžaduje, aby byl člen třídy přepsán v odvozené třídě. |
+| [new – modifikátor](../../language-reference/keywords/new-modifier.md) | Skryje člena zděděného ze základní třídy. |
 
 ## <a name="interfaces"></a>Rozhraní
 
@@ -320,7 +322,7 @@ Definování rozhraní:
 ```csharp
 interface ISampleInterface
 {
-    void doSomething();
+    void DoSomething();
 }
 ```
 
@@ -329,7 +331,7 @@ Implementace rozhraní ve třídě:
 ```csharp
 class SampleClass : ISampleInterface
 {
-    void ISampleInterface.doSomething()
+    void ISampleInterface.DoSomething()
     {
         // Method implementation.
     }
@@ -354,15 +356,14 @@ public class SampleGeneric<T>
 Vytvoření instance obecné třídy:
 
 ```csharp
-SampleGeneric<string> sampleObject = new SampleGeneric<string>();
+var sampleObject = new SampleGeneric<string>();
 sampleObject.Field = "Sample string";
 ```
 
 Další informace naleznete v tématu:
 
-- [Obecné typy](../../../standard/generics/index.md)
-
-- [Obecné typy](../generics/index.md)
+- [Obecné typy v .NET](../../../standard/generics/index.md)
+- [Obecné typy – Průvodce programováním v C#](../generics/index.md)
 
 ## <a name="delegates"></a>Delegáty
 
@@ -383,10 +384,11 @@ Chcete-li vytvořit odkaz na metodu, která odpovídá podpisu určenému deleg�
 class SampleClass
 {
     // Method that matches the SampleDelegate signature.
-    public static void sampleMethod(string message)
+    public static void SampleMethod(string message)
     {
         // Add code here.
     }
+
     // Method that instantiates the delegate.
     void SampleDelegate()
     {

@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: 6ef8ac9b-9803-4b65-8b13-25f3e0b1bc6b
 topic_type:
 - apiref
-ms.openlocfilehash: 762c637696fdf79ccab6702918b5bf962ea55903
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: e95f96847c6e069758362fb6febc28dc31911bc9
+ms.sourcegitcommit: 046a9c22487551360e20ec39fc21eef99820a254
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79178408"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83396301"
 ---
 # <a name="icorpublishappdomaingetname-method"></a>ICorPublishAppDomain::GetName – metoda
-Získá název domény aplikace, která je reprezentována touto [ICorPublishAppDomain](icorpublishappdomain-interface.md).  
+Získá název domény aplikace, která je reprezentovaná tímto [ICorPublishAppDomain](icorpublishappdomain-interface.md).  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,27 +38,27 @@ HRESULT GetName (
   
 ## <a name="parameters"></a>Parametry  
  `cchName`  
- [v] Velikost `szName` pole.  
+ pro Velikost `szName` pole.  
   
  `pcchName`  
- [out] Ukazatel na počet širokých znaků, včetně znaku `szName` null, vráceného v poli.  
+ mimo Ukazatel na počet velkých znaků, včetně znaku null, vrácený v `szName` poli.  
   
  `szName`  
- [out] Pole, do kterého chcete uložit název.  
+ mimo Pole, do kterého se má uložit název  
   
 ## <a name="remarks"></a>Poznámky  
- Pokud `szName` je non-null, `GetName` metoda `cchName` zkopíruje až znaky (včetně zakončení null) do `szName`. Pokud je vrácena hodnota `pcchName`non-null , je v `szName` poli uložen skutečný počet znaků v názvu (včetně zakončení null).  
+ Pokud `szName` je hodnota null, `GetName` Metoda zkopíruje až `cchName` znaků (včetně ukončovacího znaku null) do `szName` . Pokud je vrácena jiná hodnota než null `pcchName` , je v poli uložen skutečný počet znaků v názvu (včetně ukončovacího znaku null) `szName` .  
   
- Metoda `GetName` vrátí S_OK HRESULT bez ohledu na to, kolik znaků bylo zkopírováno.  
+ `GetName`Metoda vrátí S_OK HRESULT bez ohledu na to, kolik znaků bylo kopírováno.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Záhlaví:** CorPub.idl, CorPub.h  
+ **Hlavička:** CorPub. idl, CorPub. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také
 

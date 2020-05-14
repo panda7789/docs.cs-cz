@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 87c4fcb2-7703-4a2e-afb6-42973381b960
 topic_type:
 - apiref
-ms.openlocfilehash: c4a24d879ebd9e8813ea0ac4597818569f4ae6fa
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.openlocfilehash: 1bd2f537cfa6a27c24ba91ea7caa29dc9e71a74e
+ms.sourcegitcommit: 046a9c22487551360e20ec39fc21eef99820a254
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76790729"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83396324"
 ---
 # <a name="icorpublish-interface"></a>ICorPublish – rozhraní
 Slouží jako obecné rozhraní pro publikování informací o procesech a informacích o doménách aplikace v těchto procesech.  
@@ -32,15 +32,15 @@ Slouží jako obecné rozhraní pro publikování informací o procesech a infor
 |[GetProcess – metoda](icorpublish-getprocess-method.md)|Získá instanci [ICorPublishProcess](icorpublishprocess-interface.md) , která představuje proces se zadaným identifikátorem.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** CorPub. idl, CorPub. h  
   
  **Knihovna:** CorGuids. lib  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Rozhraní pro ladění](debugging-interfaces.md)
+- [Debugging – rozhraní](debugging-interfaces.md)
 - [CorpubPublish – třída typu coclass](corpubpublish-coclass.md)

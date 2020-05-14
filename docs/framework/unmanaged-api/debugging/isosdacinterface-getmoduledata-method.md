@@ -1,5 +1,5 @@
 ---
-title: ISOSDacInterface::GetModuleData – metoda
+title: 'ISOSDacInterface:: GetModuleData – metoda'
 ms.date: 02/01/2019
 api.name:
 - ISOSDacInterface::GetModuleData Method
@@ -15,16 +15,16 @@ topic_type:
 - apiref
 author: hoyosjs
 ms.author: juhoyosa
-ms.openlocfilehash: 97b297def9fba329ff6d9573f7b2e7cc811273f8
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 14e0eb812c84a0042150345d039451adf178caf1
+ms.sourcegitcommit: 046a9c22487551360e20ec39fc21eef99820a254
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67764717"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83396914"
 ---
-# <a name="isosdacinterfacegetmoduledata-method"></a>ISOSDacInterface::GetModuleData – metoda
+# <a name="isosdacinterfacegetmoduledata-method"></a>ISOSDacInterface:: GetModuleData – metoda
 
-Načte data odpovídající modul načíst na dané adrese.
+Načte data odpovídající modulu načtenému na dané adrese.
 
 [!INCLUDE[debugging-api-recommended-note](../../../../includes/debugging-api-recommended-note.md)]
 
@@ -40,23 +40,23 @@ HRESULT GetModuleData(
 ## <a name="parameters"></a>Parametry
 
 `moduleAddr`\
-[in] Adresa načíst informace pro modul.
+pro Adresa modulu, pro který mají být načteny informace.
 
 `data`\
-[out] [DacpModuleData struktura](dacpmoduledata-structure.md) k ukládání informací načteného modulu.
+mimo [Struktura DacpModuleData](dacpmoduledata-structure.md) pro uchovávání informací načteného modulu.
 
 ## <a name="remarks"></a>Poznámky
 
-Zadaná metoda je součástí `ISOSDacInterface` rozhraní a odpovídá 13 pozice tabulce virtuální metody.
+Poskytnutá metoda je součástí `ISOSDacInterface` rozhraní a odpovídá slotu 14 tabulky virtuálních metod.
 
 ## <a name="requirements"></a>Požadavky
 
-**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
-**Záhlaví:** Žádné  
-**Knihovna:** Žádný  
-**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v47plus](../../../../includes/net-current-v47plus.md)]  
+**Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+**Hlavička:** NTato  
+**Knihovna:** NTato  
+**Verze .NET Framework:**[!INCLUDE[net_current_v47plus](../../../../includes/net-current-v47plus.md)]  
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Ladění](index.md)
-- [ISOSDacInterface rozhraní](isosdacinterface-interface.md)
+- [ISOSDacInterface – rozhraní](isosdacinterface-interface.md)

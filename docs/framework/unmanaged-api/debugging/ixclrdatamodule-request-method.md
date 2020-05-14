@@ -1,5 +1,5 @@
 ---
-title: IXCLRDataModule::Request – metoda
+title: 'IXCLRDataModule:: Request – metoda'
 ms.date: 01/16/2019
 api.name:
 - IXCLRDataModule::Request Method
@@ -15,16 +15,16 @@ topic_type:
 - apiref
 author: cshung
 ms.author: andrewau
-ms.openlocfilehash: 7d04e5630bd196ef534f72a0c3924019315f3774
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: 44ee4fc7fc2368b65f6f2fffe6ac239beddc6293
+ms.sourcegitcommit: 046a9c22487551360e20ec39fc21eef99820a254
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65632227"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83395272"
 ---
-# <a name="ixclrdatamodulerequest-method"></a>IXCLRDataModule::Request – metoda
+# <a name="ixclrdatamodulerequest-method"></a>IXCLRDataModule:: Request – metoda
 
-Požadavky k naplnění vyrovnávací paměť přidělená s daty modulu.
+Žádosti o naplnění vyrovnávací paměti dané daty modulu.
 
 [!INCLUDE[debugging-api-recommended-note](../../../../includes/debugging-api-recommended-note.md)]
 
@@ -41,30 +41,30 @@ HRESULT Request([in] ULONG32 reqCode,
 ## <a name="parameters"></a>Parametry
 
 `reqCode`\
-[in] Typ k odeslání žádosti.
+pro Typ požadavku, který se má odeslat
 
 `inBufferSize`\
-[in] velikost vstupní vyrovnávací paměť musí být předány.
+[in] velikost vstupní vyrovnávací paměti, která má být předána.
 
 `inBuffer`\
-[in, size_is(inBufferSize)] Ukazatele na vyrovnávací paměti pro nezpracovaná data se odešle požadavek.
+[in, size_is (inBufferSize)] Ukazatel vyrovnávací paměti pro nezpracovaná data, která se mají v žádosti odeslat.
 
 `outBufferSize`\
-[in] Velikost výstupní vyrovnávací paměť.
+pro Velikost výstupní vyrovnávací paměti.
 
 `outBuffer`\
-[out, size_is(outBufferSize)] Ukazatel vyrovnávací paměť pro ukládání odpovědi na požadavek.
+[out, size_is (outBufferSize)] Ukazatel vyrovnávací paměti, který se použije k uložení odpovědi na žádost
 
 ## <a name="remarks"></a>Poznámky
 
-Zadaná metoda je součástí `IXCLRDataModule` rozhraní a odpovídá 36 pozice tabulce virtuální metody.
+Poskytnutá metoda je součástí `IXCLRDataModule` rozhraní a odpovídá slotu 37th tabulky virtuálních metod.
 
 ## <a name="requirements"></a>Požadavky
 
-**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).
-**Záhlaví:** Žádný **knihovny:** Žádný **verze rozhraní .NET Framework:** [!INCLUDE[net_current_v47plus](../../../../includes/net-current-v47plus.md)]
+**Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).
+**Hlavička:** Žádná **Knihovna:** žádné **.NET Framework verze:**[!INCLUDE[net_current_v47plus](../../../../includes/net-current-v47plus.md)]
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Ladění](index.md)
-- [IXCLRDataModule Interface](ixclrdatamodule-interface.md)
+- [IXCLRDataModule – rozhraní](ixclrdatamodule-interface.md)

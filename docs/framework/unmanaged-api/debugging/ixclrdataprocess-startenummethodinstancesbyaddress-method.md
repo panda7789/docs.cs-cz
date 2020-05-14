@@ -1,5 +1,5 @@
 ---
-title: IXCLRDataProcess::StartEnumMethodInstancesByAddress Method
+title: 'IXCLRDataProcess:: StartEnumMethodInstancesByAddress – metoda'
 ms.date: 01/16/2019
 api.name:
 - IXCLRDataProcess::StartEnumMethodInstancesByAddress Method
@@ -15,16 +15,16 @@ topic_type:
 - apiref
 author: cshung
 ms.author: andrewau
-ms.openlocfilehash: d7c395e68ad5d8042f9850f25757a5aa445e5c40
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: e28fa73300e147ac07a2d325fbf517480bb73797
+ms.sourcegitcommit: 046a9c22487551360e20ec39fc21eef99820a254
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67752683"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83394937"
 ---
-# <a name="ixclrdataprocessstartenummethodinstancesbyaddress-method"></a>IXCLRDataProcess::StartEnumMethodInstancesByAddress Method
+# <a name="ixclrdataprocessstartenummethodinstancesbyaddress-method"></a>IXCLRDataProcess:: StartEnumMethodInstancesByAddress – metoda
 
-Poskytuje popisovač vytvořit výčet instancí metoda `AppDomain` spuštění na dané adrese.
+Poskytuje popisovač pro zobrazení výčtu instancí metod, které `AppDomain` začínají na dané adrese.
 
 [!INCLUDE[debugging-api-recommended-note](../../../../includes/debugging-api-recommended-note.md)]
 
@@ -41,27 +41,27 @@ HRESULT StartEnumMethodInstancesByAddress(
 ## <a name="parameters"></a>Parametry
 
 `address`\
-[in] Adresa první instanci metody.
+pro Adresa první instance metody.
 
 `appDomain`\
-[in] AppDomain metodu instance.
+pro Doména AppDomain instancí metody.
 
 `handle`\
-[out] Popisovač pro vytváření výčtu instancí metody.
+mimo Popisovač pro vytváření výčtu instancí metody.
 
 ## <a name="remarks"></a>Poznámky
 
-Zadaná metoda je součástí `IXCLRDataProcess` rozhraní a odpovídá 27 pozice tabulce virtuální metody.
+Poskytnutá metoda je součástí `IXCLRDataProcess` rozhraní a odpovídá slotu 28 tabulky virtuálních metod.
 
 ## <a name="requirements"></a>Požadavky
 
-**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
-**Záhlaví:** Žádné  
-**Knihovna:** Žádný  
-**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v47plus](../../../../includes/net-current-v47plus.md)]  
+**Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+**Hlavička:** NTato  
+**Knihovna:** NTato  
+**Verze .NET Framework:**[!INCLUDE[net_current_v47plus](../../../../includes/net-current-v47plus.md)]  
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [CLRDataSourceType Enumeration](clrdatasourcetype-enumeration.md)
+- [Výčet CLRDataSourceType](clrdatasourcetype-enumeration.md)
 - [Ladění](index.md)
-- [IXCLRDataProcess Interface](ixclrdataprocess-interface.md)
+- [IXCLRDataProcess – rozhraní](ixclrdataprocess-interface.md)

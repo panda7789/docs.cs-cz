@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: bc71cbca-7d73-40e5-84dd-2109fade3c2a
 topic_type:
 - apiref
-ms.openlocfilehash: fdd2fee11e9353c3aa3faee2b137597e4ba47801
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.openlocfilehash: dd5baa282d15d121b62b4dc4dd41bcf9ff393570
+ms.sourcegitcommit: 046a9c22487551360e20ec39fc21eef99820a254
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76791181"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83395883"
 ---
 # <a name="icordebugunmanagedcallback-interface"></a>ICorDebugUnmanagedCallback – rozhraní
 Poskytuje oznámení nativních událostí, které přímo nesouvisejí s modulem CLR (Common Language Runtime).  
@@ -36,14 +36,14 @@ Poskytuje oznámení nativních událostí, které přímo nesouvisejí s module
 > Toto rozhraní nepodporuje vzdálené volání, a to buď mezi počítačem, nebo mezi procesy.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** CorDebug. idl, CorDebug. h  
   
  **Knihovna:** CorGuids. lib  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Rozhraní pro ladění](debugging-interfaces.md)
+- [Debugging – rozhraní](debugging-interfaces.md)

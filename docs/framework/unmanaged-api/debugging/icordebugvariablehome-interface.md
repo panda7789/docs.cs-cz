@@ -16,12 +16,12 @@ helpviewer_keywords:
 ms.assetid: 76f2bf3b-759f-4eed-bce7-119415b25915
 topic_type:
 - apiref
-ms.openlocfilehash: c347346c9157fea843527c662e26ffcfba22ace4
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.openlocfilehash: caf6a24207be98be9afb10be2bd027b51405fa3b
+ms.sourcegitcommit: 046a9c22487551360e20ec39fc21eef99820a254
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76790959"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83396536"
 ---
 # <a name="icordebugvariablehome-interface"></a>ICorDebugVariableHome – rozhraní
 Představuje místní proměnnou nebo argument funkce.  
@@ -31,15 +31,15 @@ Představuje místní proměnnou nebo argument funkce.
 |Metoda|Popis|  
 |------------|-----------------|  
 |[GetArgumentIndex – metoda](icordebugvariablehome-getargumentindex-method.md)|Získá index argumentu funkce.|  
-|[GetCode – metoda](icordebugvariablehome-getcode-method.md)|Získá instanci "ICorDebugCode", která obsahuje tento objekt `ICorDebugVariableHome`.|  
+|[GetCode – metoda](icordebugvariablehome-getcode-method.md)|Získá instanci "ICorDebugCode", která obsahuje tento `ICorDebugVariableHome` objekt.|  
 |[GetLiveRange – metoda](icordebugvariablehome-getliverange-method.md)|Získá nativní rozsah, ve kterém je tato proměnná živá.|  
 |[GetLocationType – metoda](icordebugvariablehome-getlocationtype-method.md)|Získá typ nativního umístění proměnné.|  
 |[GetOffset – metoda](icordebugvariablehome-getoffset-method.md)|Získá posun od základního registru pro proměnnou.|  
-|[GetRegister – metoda](icordebugvariablehome-getregister-method.md)|Získá registr, který obsahuje proměnnou s typem umístění `VLT_REGISTER`a základní registr pro proměnnou s typem umístění `VLT_REGISTER_RELATIVE`.|  
+|[GetRegister – metoda](icordebugvariablehome-getregister-method.md)|Získá registr, který obsahuje proměnnou s typem umístění `VLT_REGISTER` a základní registr pro proměnnou s typem umístění `VLT_REGISTER_RELATIVE` .|  
 |[GetSlotIndex – metoda](icordebugvariablehome-getslotindex-method.md)|Získá spravovaný index slotu místní proměnné.|  
   
 ## <a name="example"></a>Příklad  
- Následující fragment kódu používá objekt [ICorDebugCode4](icordebugcode4-interface.md) s názvem `pCode4`.  
+ Následující fragment kódu používá objekt [ICorDebugCode4](icordebugcode4-interface.md) s názvem `pCode4` .  
   
 ```cpp  
 ICorDebugCode4 *pCode4 = NULL;  
@@ -81,15 +81,15 @@ for (int i = 0; i < celtFetched; i++)
 ```  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** CorDebug. idl, CorDebug. h  
   
  **Knihovna:** CorGuids. lib  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v462plus](../../../../includes/net-current-v462plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v462plus](../../../../includes/net-current-v462plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Rozhraní pro ladění](debugging-interfaces.md)
+- [Debugging – rozhraní](debugging-interfaces.md)
 - [ICorDebugVariableHomeEnum – rozhraní](icordebugvariablehomeenum-interface.md)

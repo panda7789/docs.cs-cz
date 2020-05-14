@@ -16,12 +16,12 @@ helpviewer_keywords:
 ms.assetid: 7cfaee76-e284-4a66-a431-8e33f0f60038
 topic_type:
 - apiref
-ms.openlocfilehash: 190671b4f690f8c2cad43cf446a1196985ec5a42
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.openlocfilehash: c44a12ef377d29e0b33b8be86aa1d8f0aa9d26bd
+ms.sourcegitcommit: 046a9c22487551360e20ec39fc21eef99820a254
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76790754"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83397159"
 ---
 # <a name="icoreclrdebugtarget-interface"></a>ICoreClrDebugTarget – rozhraní
 Poskytuje metody, které řídí počty odkazů, vytváří výčet procesů a uvolňuje paměť přidruženou k ladicímu programu, který je připojen ke vzdálenému počítači se službou Silverlight.  
@@ -59,17 +59,17 @@ class ICoreClrDebugTarget {
  V současné době je tato funkce podporována pouze pro ladění cíle aplikace založeného na programu Silverlight, který je spuštěn ve vzdáleném počítači se systémem Macintosh.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** CoreClrRemoteDebuggingInterfaces. h  
   
- **Library:** mscordbi_macx86.dll  
+ **Knihovna:** mscordbi_macx86. dll  
   
  **Verze .NET Framework:** 3,5 SP1  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [ICorDebugRemoteTarget – rozhraní](icordebugremotetarget-interface.md)
 - [ICorDebug – rozhraní](icordebug-interface.md)
 
-- [Rozhraní pro ladění](debugging-interfaces.md)
+- [Debugging – rozhraní](debugging-interfaces.md)

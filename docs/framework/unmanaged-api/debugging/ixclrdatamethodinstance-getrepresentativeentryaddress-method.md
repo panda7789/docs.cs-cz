@@ -1,5 +1,5 @@
 ---
-title: IXCLRDataMethodInstance::GetRepresentativeEntryAddress – metoda
+title: 'IXCLRDataMethodInstance:: GetRepresentativeEntryAddress – metoda'
 ms.date: 02/01/2019
 api.name:
 - IXCLRDataMethodInstance::GetRepresentativeEntryAddress
@@ -15,16 +15,16 @@ topic_type:
 - apiref
 author: hoyosjs
 ms.author: juhoyosa
-ms.openlocfilehash: 5c79e916a06e796fc87b57eb949cccda77b8a9bd
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: d9f9e16d243c0f3b45ac24776caea5bb9c32dcc1
+ms.sourcegitcommit: 046a9c22487551360e20ec39fc21eef99820a254
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67744659"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83395754"
 ---
-# <a name="ixclrdatamethodinstancegetrepresentativeentryaddress-method"></a>IXCLRDataMethodInstance::GetRepresentativeEntryAddress – metoda
+# <a name="ixclrdatamethodinstancegetrepresentativeentryaddress-method"></a>IXCLRDataMethodInstance:: GetRepresentativeEntryAddress – metoda
 
-Získá adresu nejreprezentativnější vstupní bod pro nativní kompilace všechny vstupní body pro metodu.
+Získá nejvíce reprezentativní adresu vstupní bod pro nativní kompilaci všech možných vstupních bodů pro metodu.
 
 [!INCLUDE[debugging-api-recommended-note](../../../../includes/debugging-api-recommended-note.md)]
 
@@ -39,20 +39,20 @@ HRESULT GetRepresentativeEntryAddress(
 ## <a name="parameters"></a>Parametry
 
 `addr`\
-[out] Adresa nejreprezentativnější nativní vstupní bod pro metodu.
+mimo Adresa největšího reprezentativního nativního vstupního bodu pro metodu.
 
 ## <a name="remarks"></a>Poznámky
 
-Zadaná metoda je součástí [ `IXCLRDataMethodInstance` rozhraní](ixclrdatamethodinstance-interface.md) a odpovídá 19. pozice tabulce virtuální metody.
+Poskytnutá metoda je součástí [ `IXCLRDataMethodInstance` rozhraní](ixclrdatamethodinstance-interface.md) a odpovídá dvacátému slotu tabulky virtuální metody.
 
 ## <a name="requirements"></a>Požadavky
 
-**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
-**Záhlaví:** Žádné  
-**Knihovna:** Žádné  
-**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v47plus](../../../../includes/net-current-v47plus.md)]  
+**Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+**Hlavička:** NTato  
+**Knihovna:** NTato  
+**Verze .NET Framework:**[!INCLUDE[net_current_v47plus](../../../../includes/net-current-v47plus.md)]  
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Ladění](index.md)
-- [IXCLRDataMethodInstance Interface](ixclrdatamethodinstance-interface.md)
+- [IXCLRDataMethodInstance – rozhraní](ixclrdatamethodinstance-interface.md)

@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: bb798c56-042e-475d-a245-b6fac36d0c07
 topic_type:
 - apiref
-ms.openlocfilehash: 61cac0922423acabef3d47618d98ddf082d071da
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.openlocfilehash: a48e20413f466e25a9145e9dbf1ba93d90155770
+ms.sourcegitcommit: 046a9c22487551360e20ec39fc21eef99820a254
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76790667"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83397030"
 ---
 # <a name="icorpublishappdomainenum-interface"></a>ICorPublishAppDomainEnum – rozhraní
 Podtřída rozhraní [ICorPublishEnum](icorpublishenum-interface.md) , která poskytuje metody pro procházení kolekce objektů [ICorPublishAppDomain](icorpublishappdomain-interface.md) , které aktuálně existují v rámci procesu.  
@@ -28,21 +28,21 @@ Podtřída rozhraní [ICorPublishEnum](icorpublishenum-interface.md) , která po
   
 |Metoda|Popis|  
 |------------|-----------------|  
-|[Next – metoda](icorpublishappdomainenum-next-method.md)|Získá zadaný počet instancí `ICorPublishAppDomain` z kolekce počínaje aktuální pozicí.|  
+|[Next – metoda](icorpublishappdomainenum-next-method.md)|Načte zadaný počet `ICorPublishAppDomain` instancí z kolekce počínaje aktuální pozicí.|  
   
 ## <a name="remarks"></a>Poznámky  
- Rozhraní `ICorPublishAppDomainEnum` implementuje metody abstraktního rozhraní [ICorPublishEnum](icorpublishenum-interface.md).  
+ `ICorPublishAppDomainEnum`Rozhraní implementuje metody abstraktního rozhraní [ICorPublishEnum](icorpublishenum-interface.md).  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** CorPub. idl, CorPub. h  
   
  **Knihovna:** CorGuids. lib  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Rozhraní pro ladění](debugging-interfaces.md)
+- [Debugging – rozhraní](debugging-interfaces.md)
 - [CorpubPublish – třída typu coclass](corpubpublish-coclass.md)

@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: b2f7007f-c446-4b18-aed1-a25cff8aee31
 topic_type:
 - apiref
-ms.openlocfilehash: e1044386bd6251132703c4e98a0cf2ed267d34e0
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.openlocfilehash: b8d2e49031e59db0527de3c848d7d390095797bf
+ms.sourcegitcommit: 046a9c22487551360e20ec39fc21eef99820a254
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76791141"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83396795"
 ---
 # <a name="icordebugvalue-interface"></a>ICorDebugValue – rozhraní
 Představuje hodnotu v laděném procesu. Hodnota může být čtení nebo hodnota zápisu.  
@@ -29,9 +29,9 @@ Představuje hodnotu v laděném procesu. Hodnota může být čtení nebo hodno
 |Metoda|Popis|  
 |------------|-----------------|  
 |[CreateBreakpoint – metoda](icordebugvalue-createbreakpoint-method.md)|Tato metoda není v současnosti implementována.|  
-|[GetAddress – metoda](icordebugvalue-getaddress-method.md)|Získá adresu tohoto objektu `ICorDebugValue`, který je právě laděn.|  
-|[GetSize – metoda](icordebugvalue-getsize-method.md)|Získá velikost objektu `ICorDebugValue` v bajtech.|  
-|[GetType – metoda](icordebugvalue-gettype-method.md)|Získá primitivní typ tohoto objektu `ICorDebugValue`.|  
+|[GetAddress – metoda](icordebugvalue-getaddress-method.md)|Získá adresu tohoto `ICorDebugValue` objektu, který je právě laděn.|  
+|[GetSize – metoda](icordebugvalue-getsize-method.md)|Získá velikost tohoto objektu v bajtech `ICorDebugValue` .|  
+|[GetType – metoda](icordebugvalue-gettype-method.md)|Získá primitivní typ tohoto `ICorDebugValue` objektu.|  
   
 ## <a name="remarks"></a>Poznámky  
  Obecně platí, že vlastnictví objektu hodnoty je předáno při jeho vrácení. Příjemce je zodpovědný za odebrání odkazu z objektu po jeho dokončení s objektem.  
@@ -42,15 +42,15 @@ Představuje hodnotu v laděném procesu. Hodnota může být čtení nebo hodno
 > Toto rozhraní nepodporuje vzdálené volání, a to buď mezi počítačem, nebo mezi procesy.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** CorDebug. idl, CorDebug. h  
   
  **Knihovna:** CorGuids. lib  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [ICorDebugValue3 – rozhraní](icordebugvalue3-interface.md)
-- [Rozhraní pro ladění](debugging-interfaces.md)
+- [Debugging – rozhraní](debugging-interfaces.md)

@@ -1,5 +1,5 @@
 ---
-title: IXCLRDataProcess::EndEnumMethodInstancesByAddress Method
+title: 'IXCLRDataProcess:: EndEnumMethodInstancesByAddress – metoda'
 ms.date: 01/16/2019
 api.name:
 - IXCLRDataProcess::EndEnumMethodInstancesByAddress Method
@@ -15,16 +15,16 @@ topic_type:
 - apiref
 author: cshung
 ms.author: andrewau
-ms.openlocfilehash: 378095aa2b363f4003a5372b4158df27412655e1
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 04ce8f44b0c9f532951666de7bfb9de475c14746
+ms.sourcegitcommit: 046a9c22487551360e20ec39fc21eef99820a254
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67757850"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83395257"
 ---
-# <a name="ixclrdataprocessendenummethodinstancesbyaddress-method"></a>IXCLRDataProcess::EndEnumMethodInstancesByAddress Method
+# <a name="ixclrdataprocessendenummethodinstancesbyaddress-method"></a>IXCLRDataProcess:: EndEnumMethodInstancesByAddress – metoda
 
-Uvolní prostředky využívané třídou interní iterátory využitých instance výčtu.
+Uvolní prostředky používané interními iterátory použitými během výčtu instance.
 
 [!INCLUDE[debugging-api-recommended-note](../../../../includes/debugging-api-recommended-note.md)]
 
@@ -39,21 +39,21 @@ HRESULT EndEnumMethodInstancesByAddress(
 ## <a name="parameters"></a>Parametry
 
 `handle`\
-[out] Popisovač pro vytváření výčtu instancí metody.
+mimo Popisovač pro vytváření výčtu instancí metody.
 
 ## <a name="remarks"></a>Poznámky
 
-Zadaná metoda je součástí `IXCLRDataProcess` rozhraní a odpovídá 29. pozice tabulce virtuální metody.
+Poskytnutá metoda je součástí `IXCLRDataProcess` rozhraní a odpovídá 30 slotu tabulky virtuální metody.
 
 ## <a name="requirements"></a>Požadavky
 
-**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
-**Záhlaví:** Žádný  
-**Knihovna:** Žádný  
-**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v47plus](../../../../includes/net-current-v47plus.md)]  
+**Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+**Hlavička:** NTato  
+**Knihovna:** NTato  
+**Verze .NET Framework:**[!INCLUDE[net_current_v47plus](../../../../includes/net-current-v47plus.md)]  
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [CLRDataSourceType Enumeration](clrdatasourcetype-enumeration.md)
+- [Výčet CLRDataSourceType](clrdatasourcetype-enumeration.md)
 - [Ladění](index.md)
-- [IXCLRDataProcess Interface](ixclrdataprocess-interface.md)
+- [IXCLRDataProcess – rozhraní](ixclrdataprocess-interface.md)

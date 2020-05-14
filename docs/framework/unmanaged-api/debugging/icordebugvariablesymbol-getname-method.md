@@ -1,15 +1,15 @@
 ---
-title: ICorDebugVariableSymbol::Metoda GetName
+title: 'ICorDebugVariableSymbol:: GetName – Metoda'
 ms.date: 03/30/2017
 ms.assetid: c922b7d4-44e5-45e4-aef3-cc9c35a0be80
-ms.openlocfilehash: abc0e368f259df1a3542b0fc8e7fbfd7e06cf6eb
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: ea414a39e140c74df736764dbbb1bb3934bda78f
+ms.sourcegitcommit: 046a9c22487551360e20ec39fc21eef99820a254
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79178445"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83397131"
 ---
-# <a name="icordebugvariablesymbolgetname-method"></a>ICorDebugVariableSymbol::Metoda GetName
+# <a name="icordebugvariablesymbolgetname-method"></a>ICorDebugVariableSymbol:: GetName – Metoda
 Získá název proměnné.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -24,10 +24,10 @@ HRESULT GetName(
   
 ## <a name="parameters"></a>Parametry  
  `cchName`  
- [v] Počet znaků ve `szName` vyrovnávací paměti.  
+ pro Počet znaků ve `szName` vyrovnávací paměti.  
   
  `pcchName`  
- [out] Ukazatel na počet znaků skutečně zapsaných do `szName` vyrovnávací paměti.  
+ mimo Ukazatel na počet znaků skutečně zapsaných do `szName` vyrovnávací paměti.  
   
  `szName`  
  Ukazatel na pole znaků, které obsahuje název proměnné.  
@@ -35,16 +35,16 @@ HRESULT GetName(
 ## <a name="remarks"></a>Poznámky  
   
 > [!NOTE]
-> Tato metoda je k dispozici pouze s nativní .NET.  
+> Tato metoda je k dispozici pouze s .NET Native.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET Framework:**[!INCLUDE[net_46_native](../../../../includes/net-46-native-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_46_native](../../../../includes/net-46-native-md.md)]  
   
 ## <a name="see-also"></a>Viz také
 

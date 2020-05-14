@@ -2,12 +2,12 @@
 title: Souhrn
 description: Shrnutí klíčových závěrů z architekta nativních cloudových aplikací .NET pro Azure – příručka a elektronická kniha.
 ms.date: 04/29/2020
-ms.openlocfilehash: 97f20771aae73ed88d2dadefa7ba89d64eb62fcd
-ms.sourcegitcommit: 957c49696eaf048c284ef8f9f8ffeb562357ad95
+ms.openlocfilehash: 8cad8df1f69e159caf88d3ee119278dff8726385
+ms.sourcegitcommit: 046a9c22487551360e20ec39fc21eef99820a254
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82899694"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83395318"
 ---
 # <a name="summary"></a>Souhrn
 
@@ -17,11 +17,11 @@ Tady jsou důležité závěry z tohoto průvodce:
 
 - ** [Cloud Native Computing Foundation](https://www.cncf.io/) (CNCF)** je nepřehledný open source konsorcium nad 300 hlavními společnostmi. Zodpovídá za to, aby se nahrálo využívání cloudového nativního výpočetního prostředí napříč technologiemi a cloudových zásobníků.
 
-- **Pokyny pro CNCF** doporučují, aby nativní aplikace cloudu Zay šest důležitých pilířů, jak je znázorněno na obrázku 12-1:
+- **Pokyny pro CNCF** doporučují, aby nativní aplikace cloudu Zay šest důležitých pilířů, jak je znázorněno na obrázku 11-1:
 
   ![Základní pilíře pro Cloud – nativní](./media/cloud-native-foundational-pillars.png)
 
-  **Obrázek 12-1**. Základní pilíře pro Cloud – nativní
+  **Obrázek 11-1**. Základní pilíře pro Cloud – nativní
 
 - Tyto pilíře nativní pro Cloud zahrnují:
   - Cloud a jeho základní model služby
@@ -45,7 +45,7 @@ Tady jsou důležité závěry z tohoto průvodce:
 
 - **Odolnost** proti chybám je schopnost systému reagovat na selhání a pořád zůstává funkční. Nativní systémy v cloudu zadávají distribuovanou architekturu, ve které je selhání nevyhnutelné. Aplikace musí být vytvořené tak, aby reagovaly na neúspěšné a rychle se vracely do plně funkčního stavu.
 
-- **Sítě** jsou konfigurovatelnou vrstvou infrastruktury s integrovanými funkcemi pro zpracování komunikace služby a dalších výzev k vzájemnému vyjmutí. Odpojí zodpovědnost mezi jednotlivými obchodními kódy. Tyto odpovědnosti se přesunou na proxy služby. Označované jako `Sidecar pattern`, proxy server se nasadí do samostatného procesu, který poskytuje izolaci z vašeho podnikového kódu.
+- **Sítě** jsou konfigurovatelnou vrstvou infrastruktury s integrovanými funkcemi pro zpracování komunikace služby a dalších výzev k vzájemnému vyjmutí. Odpojí zodpovědnost mezi jednotlivými obchodními kódy. Tyto odpovědnosti se přesunou na proxy služby. Označované jako `Sidecar pattern` , proxy server se nasadí do samostatného procesu, který poskytuje izolaci z vašeho podnikového kódu.
 
 - **Pozorování** je klíčovým aspektem pro cloudové nativní aplikace. Jelikož jsou služby distribuované napříč clusterem uzlů, centralizované protokolování, monitorování a výstrahy se stanou povinnými. Azure Monitor je kolekce cloudových nástrojů navržených tak, aby poskytovaly přehled o stavu systému.
 

@@ -2,12 +2,12 @@
 title: Představení referenční aplikace eShopOnContainers
 description: Představujeme referenční aplikaci eShopOnContainers Cloud Native mikroslužeb pro ASP.NET Core a Azure.
 ms.date: 06/30/2019
-ms.openlocfilehash: 8d4ad982716a07613ebbef6668afab69d5a8b4f6
-ms.sourcegitcommit: 957c49696eaf048c284ef8f9f8ffeb562357ad95
+ms.openlocfilehash: b97b62268db1d9990f762d9769233ad72551c226
+ms.sourcegitcommit: 046a9c22487551360e20ec39fc21eef99820a254
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82895542"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83395403"
 ---
 # <a name="introducing-eshoponcontainers-reference-app"></a>Představení referenční aplikace eShopOnContainers
 
@@ -50,7 +50,7 @@ Aplikace má také tyto nefunkční požadavky:
 
 Aplikace eShopOnContainers je přístupná z webových nebo mobilních klientů, kteří přistupují k aplikaci přes HTTPS cílící na serverovou aplikaci ASP.NET Core MVC nebo příslušnou bránu API. Brány rozhraní API nabízejí několik výhod, jako je například oddálení back-endové služby od jednotlivých front-end klientů a zajištění vyššího zabezpečení. Aplikace také využívá související vzor známý jako back-endy (BFF), což doporučuje vytvořit samostatné brány rozhraní API pro každého front-end klienta. Referenční architektura ukazuje rozdělení bran rozhraní API na základě toho, zda požadavek pochází z webového nebo mobilního klienta.
 
-Funkce aplikace je rozdělená na řadu různých mikroslužeb. Existují služby zodpovědné za ověřování a identitu, výpis položek z katalogu produktů, správu nákupních košíků uživatelů a zadávání objednávek. Každá z těchto samostatných služeb má své vlastní trvalé úložiště. Všimněte si, že neexistuje žádné jediné hlavní úložiště dat, se kterým pracují všechny služby. Místo toho je koordinace a komunikace mezi službami prováděna podle potřeby a pomocí sběrnice zpráv.
+Funkce aplikace je rozdělená na řadu různých mikroslužeb. Existují služby zodpovědné za ověřování a identitu, výpis položek z katalogu produktů, správu nákupních košíků uživatelů a zadávání objednávek. Každá z těchto samostatných služeb má své vlastní trvalé úložiště. Neexistuje žádné jediné hlavní úložiště dat, se kterým pracují všechny služby. Místo toho je koordinace a komunikace mezi službami prováděna podle potřeby a pomocí sběrnice zpráv.
 
 Každá z různých mikroslužeb je navržena odlišně na základě jejich individuálních požadavků. To znamená, že jejich technologický zásobník se může lišit, i když jsou všechny sestavené pomocí .NET Core a jsou navržené pro Cloud. Jednodušší služby poskytují základní přístup k vytvoření a čtení-aktualizaci-odstranění (CRUD) pro základní úložiště dat, zatímco pokročilejší služby využívají přístupy k návrhu založené na doméně a vzory pro správu složitosti firmy.
 
@@ -73,5 +73,5 @@ Kód je uspořádán tak, aby podporoval různé mikroslužby, a v rámci každ�
 Tato kniha se zaměřuje na nativní cloudové aplikace sestavené pomocí technologie Azure. Další informace o osvědčených postupech mikroslužeb a o tom, jak navrhovat aplikace založené na mikroslužbách, najdete v doprovodné příručce, [mikroslužby .NET: architektura pro kontejnery aplikací .NET](https://dotnet.microsoft.com/download/thank-you/microservices-architecture-ebook).
 
 >[!div class="step-by-step"]
->[Předchozí](candidate-apps.md)
->[Další](map-eshoponcontainers-azure-services.md)
+>[Předchozí](candidate-apps.md) 
+> [Další](map-eshoponcontainers-azure-services.md)

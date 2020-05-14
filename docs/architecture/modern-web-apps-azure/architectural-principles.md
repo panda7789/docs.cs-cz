@@ -4,12 +4,12 @@ description: Architekt moderních webových aplikací pomocí ASP.NET Core a Azu
 author: ardalis
 ms.author: wiwagn
 ms.date: 12/04/2019
-ms.openlocfilehash: e291888bee25a9c87259560ca4b12635ee73c3c7
-ms.sourcegitcommit: fff146ba3fd1762c8c432d95c8b877825ae536fc
+ms.openlocfilehash: a3444071abae89780304a9687e486f3842283a33
+ms.sourcegitcommit: 046a9c22487551360e20ec39fc21eef99820a254
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82975404"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83396249"
 ---
 # <a name="architectural-principles"></a>Zásady architektury
 
@@ -22,9 +22,9 @@ Měli byste vytvářet architekta a navrhovat softwarová řešení s ohledem na
 
 ### <a name="separation-of-concerns"></a>Oddělení obav
 
-Princip identifikátoru GUID při vývoji je **oddělením otázek**. Tento princip vyhodnotí, že software by měl být oddělený podle druhu práce, kterou provádí. Představte si například aplikaci, která obsahuje logiku pro identifikaci zajímavostich položek, které se mají zobrazit uživateli, a které formátuje tyto položky určitým způsobem, aby je bylo možné posuzovat. Chování zodpovědné za výběr položek, které se mají formátovat, by mělo být oddělené od chování zodpovědného za formátování položek, protože se jedná o samostatné otázky, které se týkají pouze koincidentů, které se na sebe vztahují.
+Princip identifikátoru GUID při vývoji je **oddělením otázek**. Tento princip vyhodnotí, že software by měl být oddělený podle druhu práce, kterou provádí. Představte si například aplikaci, která obsahuje logiku pro identifikaci zajímavostich položek, které se mají zobrazit uživateli, a které formátuje tyto položky určitým způsobem, aby je bylo možné posuzovat. Chování zodpovědné za výběr položek, které mají být naformátované, by mělo být oddělené od chování zodpovědného za formátování položek, protože toto chování je samostatné, které se týkají pouze koincidentů, které souvisejí s sebou.
 
-Aplikace může být logicky sestavena tak, aby se pomocí tohoto principu oddělující základní obchodní chování od infrastruktury a logiky uživatelského rozhraní. V ideálním případě by se obchodní pravidla a logika měla nacházet v samostatném projektu, který by neměl záviset na jiných projektech v aplikaci. Díky tomu je možné zajistit, aby byl obchodní model snadno testován a mohl se vyvíjet bez úzce se spojit s podrobnostmi o implementaci nízké úrovně. Oddělení obav je klíčové hledisko za použití vrstev v architekturách aplikací.
+Aplikace může být logicky sestavena tak, aby se dostupovala podle tohoto principu tím, že se oddělí základní obchodní chování z infrastruktury a logiky uživatelského rozhraní. V ideálním případě by se obchodní pravidla a logika měla nacházet v samostatném projektu, který by neměl záviset na jiných projektech v aplikaci. Toto oddělení pomáhá zajistit, aby byl obchodní model snadno testován a mohl se vyvíjet bez úzce se nespojit s podrobnostmi implementace nízké úrovně. Oddělení obav je klíčové hledisko za použití vrstev v architekturách aplikací.
 
 ### <a name="encapsulation"></a>Zapouzdření
 
@@ -34,7 +34,7 @@ Ve třídách je zapouzdření dosaženo omezením přístupu mimo přístup k v
 
 ### <a name="dependency-inversion"></a>Inverze závislosti
 
-Směr závislosti v rámci aplikace by měl být ve směru abstrakce, nikoli v podrobnostech implementace. Většina aplikací je zapsána tak, aby toky závislostí při kompilaci byly ve směru provádění za běhu. Tím se vytvoří graf přímého závislosti. To znamená, že pokud modul A zavolá funkci v modulu B, která volá funkci v modulu C, pak v době kompilace bude záviset na B, která bude záviset na C, jak je znázorněno na obrázku 4-1.
+Směr závislosti v rámci aplikace by měl být ve směru abstrakce, nikoli v podrobnostech implementace. Většina aplikací je zapsána tak, aby toky závislosti v době kompilace byly ve směru spouštění za běhu a vytvořily přímý graf závislosti. To znamená, že pokud modul A zavolá funkci v modulu B, která volá funkci v modulu C, pak v době kompilace bude záviset na B, která bude záviset na C, jak je znázorněno na obrázku 4-1.
 
 ![Graf přímého závislosti](./media/image4-1.png)
 
@@ -52,7 +52,7 @@ Použití principu pro inverze závislostí umožňuje volat metody na abstrakci
 
 **Metody a třídy by měly explicitně vyžadovat všechny objekty spolupráce, které potřebují, aby fungovaly správně.** Konstruktory třídy poskytují příležitost pro třídy k identifikaci potřebných věcí, aby byly v platném stavu a fungovaly správně. Pokud definujete třídy, které mohou být vytvořeny a volány, ale budou správně fungovat pouze v případě, že jsou vytvořeny určité globální nebo infrastrukturní komponenty, tyto třídy jsou pro *klienty bez problémů* . Kontrakt konstruktoru oznamuje klientovi, že potřebuje jenom zadané věci (možná nic, když třída používá jenom parametr bez parametrů), ale pak za běhu vypíná objekt, který skutečně potřebuje něco jiného.
 
-Pomocí principu explicitních závislostí jsou vaše třídy a metody od klientů od jejich klientů bezvýznamné, aby fungovaly. Díky tomu je váš kód podrobněji uživatelsky přívětivý a vaše smlouvy s kódováním jsou uživatelsky přívětivé, protože uživatelé budou mít důvěru, že pokud poskytnou, co je potřeba ve formě parametrů metod nebo konstruktorů, objekty, se kterými se pracuje, se budou chovat správně za běhu.
+Pomocí principu explicitních závislostí jsou vaše třídy a metody od klientů od jejich klientů bezvýznamné, aby fungovaly. V souladu s principem je váš kód více uživatelsky přívětivým dokumentování a vaše kontrakty kódu jsou uživatelsky přívětivé, protože uživatelé budou mít důvěru, že pokud jsou požadovány ve formě parametrů metody nebo konstruktoru, objekty, se kterými pracují, se budou chovat správně v době běhu.
 
 ### <a name="single-responsibility"></a>Jediná odpovědnost
 
@@ -60,13 +60,13 @@ Princip jedné zodpovědnosti se vztahuje na objektově orientovaný návrh, ale
 
 V aplikaci monolitické můžeme uplatnit zásadu jedné zodpovědnosti na vysokou úroveň na vrstvy v aplikaci. Odpovědnost za prezentaci by měla zůstat v projektu uživatelského rozhraní, zatímco odpovědnost za přístup k datům by měla být zachována v rámci projektu infrastruktury. Obchodní logika by měla být zachována v projektu základního aplikace, kde ji lze snadno otestovat a lze ji vyvíjet nezávisle na jiných odpovědnostech.
 
-Pokud se tento princip aplikuje na architekturu aplikace a převezme se ke svému logickému koncovému bodu, získáte mikroslužby. Daná mikroslužba by měla mít jednu zodpovědnost. Pokud potřebujete rozšířit chování systému, je obvykle lepší to udělat přidáním dalších mikroslužeb, nikoli přidáním zodpovědnosti do existující.
+Pokud se tento princip aplikuje na architekturu aplikace a převezme se na jeho logický koncový bod, získáte mikroslužby. Daná mikroslužba by měla mít jednu zodpovědnost. Pokud potřebujete rozšířit chování systému, je obvykle lepší to udělat přidáním dalších mikroslužeb, nikoli přidáním zodpovědnosti do existující.
 
 [Další informace o architektuře mikroslužeb](https://aka.ms/MicroservicesEbook)
 
 ### <a name="dont-repeat-yourself-dry"></a>Neopakuje se sami (SUCHá)
 
-Aplikace by se neměla zacházet s určením chování týkajícího se konkrétního konceptu na více místech, protože se jedná o často se zdrojem chyb. V určitém okamžiku bude změna požadavků vyžadovat změnu tohoto chování. Je možné, že se nejméně jedna instance chování nebude aktualizovat a bude to mít za následek nekonzistentní chování systému.
+Aplikace by se neměla zacházet s určením chování týkajícího se konkrétního konceptu na více místech, protože tento postup je často zdrojem chyb. V určitém okamžiku bude změna požadavků vyžadovat změnu tohoto chování. Je možné, že se nepodaří aktualizovat aspoň jednu instanci chování a systém se bude chovat nekonzistentně.
 
 Místo duplikace logiky je zapouzdřovat v programovacím konstruktoru. Tuto konstrukci udělejte od tohoto chování jediným orgánem a všechny ostatní části aplikace, které vyžadují toto chování, používají novou konstrukci.
 
@@ -105,5 +105,5 @@ Minimálně jednotlivé webové aplikace by měly být zaměřené na vlastní o
 - [Ohraničený kontext](https://martinfowler.com/bliki/BoundedContext.html)
 
 >[!div class="step-by-step"]
->[Předchozí](choose-between-traditional-web-and-single-page-apps.md)
->[Další](common-web-application-architectures.md)
+>[Předchozí](choose-between-traditional-web-and-single-page-apps.md) 
+> [Další](common-web-application-architectures.md)
