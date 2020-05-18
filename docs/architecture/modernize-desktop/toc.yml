@@ -1,0 +1,15 @@
+- name: Modernizace desktopových aplikací ve Windows 10 s .NET Core 3.1
+  href: index.md
+  items:
+    - name: Proč moderní desktopové aplikace
+      href: why-modern-applications.md
+    - name: Co je nového u .NET Core for Desktop?
+      href: whats-new-dotnet-core.md
+    - name: Migrace moderních desktopových aplikací
+      href: migrate-modern-applications.md
+    - name: Migrace Windows 10
+      href: windows-migration.md
+    - name: Příklad migrace na .NET Core 3.1
+      href: example-migration-core.md
+    - name: Nasazení moderních desktopových aplikací
+      href: deploy-modern-applications.md

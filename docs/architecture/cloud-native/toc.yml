@@ -86,9 +86,11 @@
       items:
         - name: Zabezpečení aplikací nativních pro cloud
           href: azure-security.md
-    - name: DevOps nativní pro cloud
+    - name: DevOps
       href: devops.md
       items:
+        - name: Příznaky funkcí
+          href: feature-flags.md
         - name: Infrastruktura jako kód
           href: infrastructure-as-code.md
         - name: Aplikační komplety nativní pro cloud
