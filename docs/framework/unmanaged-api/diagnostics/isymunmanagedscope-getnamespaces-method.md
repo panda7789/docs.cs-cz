@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: c44b0440-04bd-460a-84fb-41afecf44503
 topic_type:
 - apiref
-ms.openlocfilehash: b765294826a5da4010cdd2db79b50667a6f1cdb4
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 6f11a69671864ba4627c2bb8c86e0c9beb27eeb1
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74446302"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83611117"
 ---
 # <a name="isymunmanagedscopegetnamespaces-method"></a>ISymUnmanagedScope::GetNamespaces – metoda
 Načte obory názvů, které jsou používány v rámci tohoto oboru.  
@@ -38,10 +38,10 @@ HRESULT GetNamespaces(
   
 ## <a name="parameters"></a>Parametry  
  `cNameSpaces`  
- pro Velikost pole `namespaces`.  
+ pro Velikost `namespaces` pole.  
   
  `pcNameSpaces`  
- mimo Ukazatel na `ULONG32`, který přijímá velikost vyrovnávací paměti vyžadované k omezení oboru názvů.  
+ mimo Ukazatel na `ULONG32` , který přijímá velikost vyrovnávací paměti vyžadované k omezení oboru názvů.  
   
  `namespaces`  
  mimo Pole, které přijímá obory názvů.  
@@ -52,6 +52,6 @@ HRESULT GetNamespaces(
 ## <a name="requirements"></a>Požadavky  
  **Hlavička:** CorSym. idl, CorSym. h  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [ISymUnmanagedScope – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedscope-interface.md)
+- [ISymUnmanagedScope – rozhraní](isymunmanagedscope-interface.md)
