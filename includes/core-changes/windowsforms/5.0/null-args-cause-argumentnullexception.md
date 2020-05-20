@@ -1,20 +1,20 @@
 ---
-ms.openlocfilehash: 7a6b0b15de4295506ff03b8566c06010b918566c
-ms.sourcegitcommit: c2c1269a81ffdcfc8675bcd9a8505b1a11ffb271
+ms.openlocfilehash: ab8d801f3cdcfbeb6de20146754b26e3713d7dd6
+ms.sourcegitcommit: 0926684d8d34f4c6b5acce58d2193db093cb9cf2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/25/2020
-ms.locfileid: "82158388"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83702447"
 ---
 ### <a name="winforms-methods-now-throw-argumentnullexception"></a>Metody WinForms teď vyvolávají ArgumentNullException
 
-Některé metody model Windows Forms nyní vyvolávají výjimku <xref:System.ArgumentNullException> pro argumenty null, kde dříve vyvolaly <xref:System.NullReferenceException>.
+Některé metody model Windows Forms nyní vyvolávají výjimku <xref:System.ArgumentNullException> pro argumenty null, kde dříve vyvolaly <xref:System.NullReferenceException> .
 
 #### <a name="change-description"></a>Popis změny
 
-Dříve některé model Windows Forms metody vyvolaly <xref:System.NullReferenceException> výjimku, pokud předala argument, který měl hodnotu null. Počínaje rozhraním .NET 5,0 tyto metody nyní vyvolávají místo <xref:System.ArgumentNullException> toho argumenty pro hodnoty null.
+Dříve některé model Windows Forms metody vyvolaly výjimku <xref:System.NullReferenceException> , pokud předala argument, který měl hodnotu null. Počínaje rozhraním .NET 5,0 tyto metody nyní vyvolávají <xref:System.ArgumentNullException> místo toho argumenty pro hodnoty null.
 
-<xref:System.ArgumentNullException> Vyvolání vyhovuje chování modulu runtime .NET. Vylepšuje také možnosti ladění tím, že jednoznačně komunikuje, že argument má hodnotu null a který argument je.
+Vyvolání <xref:System.ArgumentNullException> vyhovuje chování modulu runtime .NET. Vylepšuje také možnosti ladění tím, že jednoznačně komunikuje, že argument má hodnotu null a který argument je.
 
 #### <a name="version-introduced"></a>Představená verze
 
@@ -49,7 +49,7 @@ Od verze .NET 5,0 Preview 2:
 
 <!-- 
 
-### Affected APIs
+#### Affected APIs
 
 - `M:System.Windows.Forms.Control.ControlCollection.#ctor(System.Windows.Forms.Control)`
 - `M:System.Windows.Forms.TabControl.GetToolTipText(System.Object)`

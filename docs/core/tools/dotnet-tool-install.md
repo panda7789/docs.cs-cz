@@ -1,23 +1,23 @@
 ---
-title: dotnet nástroj instalace, příkaz
-description: Příkaz instalace nástroje dotnet nainstaluje do počítače zadaný nástroj .NET Core.
+title: příkaz pro instalaci nástroje dotnet
+description: Příkaz pro instalaci nástroje dotnet nainstaluje na váš počítač zadaný nástroj .NET Core.
 ms.date: 02/14/2020
-ms.openlocfilehash: 723d25caa6009288dbb55d55f173b04d7b983450
-ms.sourcegitcommit: 927b7ea6b2ea5a440c8f23e3e66503152eb85591
+ms.openlocfilehash: 067f90124833da537370a36934ff212aba7577f3
+ms.sourcegitcommit: 0926684d8d34f4c6b5acce58d2193db093cb9cf2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81463366"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83702810"
 ---
 # <a name="dotnet-tool-install"></a>dotnet tool install
 
-**Tento článek se týká:** ✔️ .NET Core 2.1 SDK a novější verze
+**Tento článek se týká:** ✔️ .net Core 2,1 SDK a novějších verzí
 
-## <a name="name"></a>Název
+## <a name="name"></a>Name
 
-`dotnet tool install`- Nainstaluje do počítače zadaný [nástroj .NET Core.](global-tools.md)
+`dotnet tool install`– Nainstaluje na váš počítač zadaný [nástroj .NET Core](global-tools.md) .
 
-## <a name="synopsis"></a>Synopse
+## <a name="synopsis"></a>Stručný obsah
 
 ```dotnetcli
 dotnet tool install <PACKAGE_NAME> -g|--global
@@ -40,68 +40,68 @@ dotnet tool install -h|--help
 
 ## <a name="description"></a>Popis
 
-Příkaz `dotnet tool install` umožňuje instalaci nástrojů .NET Core do počítače. Chcete-li použít příkaz, zadejte jednu z následujících možností instalace:
+`dotnet tool install`Příkaz nabízí způsob, jak nainstalovat nástroje .NET Core na váš počítač. Chcete-li použít příkaz, zadejte jednu z následujících možností instalace:
 
-* Chcete-li nainstalovat globální nástroj do `--global` výchozího umístění, použijte tuto možnost.
-* Chcete-li nainstalovat globální nástroj do `--tool-path` vlastního umístění, použijte tuto možnost.
-* Chcete-li nainstalovat místní nástroj, `--global` `--tool-path` vynechte možnosti a.
+* Pokud chcete nainstalovat globální nástroj ve výchozím umístění, použijte `--global` možnost.
+* Pokud chcete nainstalovat globální nástroj ve vlastním umístění, použijte `--tool-path` možnost.
+* Chcete-li nainstalovat místní nástroj, vynechejte `--global` `--tool-path` Možnosti a.
 
-**Místní nástroje jsou k dispozici počínaje .NET Core SDK 3.0.**
+**K dispozici jsou místní nástroje od .NET Core SDK 3,0.**
 
-Globální nástroje jsou nainstalovány v následujících adresářích ve výchozím nastavení, když zadáte `-g` možnost nebo: `--global`
+Globální nástroje jsou ve výchozím nastavení nainstalovány v následujících adresářích při zadání `-g` Možnosti nebo `--global` :
 
 | Operační systém          | Cesta                          |
 |-------------|-------------------------------|
 | Linux/macOS | `$HOME/.dotnet/tools`         |
 | Windows     | `%USERPROFILE%\.dotnet\tools` |
 
-Místní nástroje jsou přidány do souboru *tool-manifest.json* v *adresáři .config* pod aktuálním adresářem. Pokud soubor manifestu ještě neexistuje, vytvořte jej spuštěním následujícího příkazu:
+Místní nástroje jsou přidány do souboru *dotnet-Tools. JSON* v adresáři *. config* v rámci aktuálního adresáře. Pokud soubor manifestu ještě neexistuje, vytvořte ho spuštěním následujícího příkazu:
 
 ```dotnetcli
 dotnet new tool-manifest
 ```
 
-Další informace naleznete [v tématu Instalace místního nástroje](global-tools.md#install-a-local-tool).
+Další informace najdete v tématu [instalace místního nástroje](global-tools.md#install-a-local-tool).
 
-## <a name="arguments"></a>Argumenty
+## <a name="arguments"></a>Arguments
 
 - **`PACKAGE_NAME`**
 
-  Název/ID balíčku NuGet, který obsahuje nástroj .NET Core k instalaci.
+  Název nebo ID balíčku NuGet, který obsahuje nástroj .NET Core, který se má nainstalovat
 
 ## <a name="options"></a>Možnosti
 
 - **`add-source <SOURCE>`**
 
-  Přidá další zdroj balíčku NuGet pro použití během instalace.
+  Přidá další zdroj balíčku NuGet, který se použije při instalaci.
 
 - **`configfile <FILE>`**
 
-  Soubor konfigurace NuGet (*nuget.config).*
+  Soubor konfigurace NuGet (*NuGet. config*), který se má použít.
 
 - **`framework <FRAMEWORK>`**
 
-  Určuje [cílovou architekturu,](../../standard/frameworks.md) pro kterou má být nástroj nainstalován. Ve výchozím nastavení se sada .NET Core SDK pokusí vybrat nejvhodnější cílovou architekturu.
+  Určuje [cílovou platformu](../../standard/frameworks.md) pro instalaci nástroje pro. Ve výchozím nastavení se .NET Core SDK pokusí zvolit nejvhodnější cílové rozhraní.
 
 - **`-g|--global`**
 
-  Určuje, že instalace je široká jako uživatel. Nelze kombinovat s `--tool-path` možností. Vynechání obou `--global` `--tool-path` a určuje instalaci místního nástroje.
+  Určuje, že instalace je rozsáhlá pro uživatele. Nelze kombinovat s `--tool-path` možností. Vynechání obou `--global` a `--tool-path` určí instalaci místního nástroje.
 
 - **`-h|--help`**
 
-  Vytiskne krátkou nápovědu pro příkaz.
+  Vypíše krátkou nápovědu k příkazu.
 
 - **`tool-path <PATH>`**
 
-  Určuje umístění, kam má být globální nástroj nainstalován. CESTA může být absolutní nebo relativní. Pokud cesta neexistuje, příkaz se pokusí vytvořit. Vynechání obou `--global` `--tool-path` a určuje instalaci místního nástroje.
+  Určuje umístění, kam se má nainstalovat globální nástroj. Cesta může být absolutní nebo relativní. Pokud cesta neexistuje, příkaz se pokusí ho vytvořit. Vynechání obou `--global` a `--tool-path` určí instalaci místního nástroje.
 
 - **`-v|--verbosity <LEVEL>`**
 
-  Nastaví úroveň podrobností příkazu. Povolené hodnoty `q[uiet]` `m[inimal]`jsou `n[ormal]` `d[etailed]`, `diag[nostic]`, , a .
+  Nastaví úroveň podrobností příkazu. Povolené hodnoty jsou `q[uiet]` , `m[inimal]` ,, a `n[ormal]` `d[etailed]` `diag[nostic]` .
 
 - **`--version <VERSION_NUMBER>`**
 
-  Verze nástroje k instalaci. Ve výchozím nastavení je nainstalována nejnovější stabilní verze balíčku. Tuto možnost použijte k instalaci náhledu nebo starších verzí nástroje.
+  Verze nástroje, který se má nainstalovat Ve výchozím nastavení je nainstalovaná nejnovější stabilní verze balíčku. Tuto možnost použijte k instalaci verze Preview nebo starší verze nástroje.
 
 ## <a name="examples"></a>Příklady
 
@@ -111,22 +111,22 @@ Další informace naleznete [v tématu Instalace místního nástroje](global-to
 
 - **`dotnet tool install dotnetsay --tool-path c:\global-tools`**
 
-  Nainstaluje [dotnetsay](https://www.nuget.org/packages/dotnetsay/) jako globální nástroj v určitém adresáři systému Windows.
+  Nainstaluje [dotnetsay](https://www.nuget.org/packages/dotnetsay/) jako globální nástroj do konkrétního adresáře Windows.
 
 - **`dotnet tool install dotnetsay --tool-path ~/bin`**
 
-  Nainstaluje [dotnetsay](https://www.nuget.org/packages/dotnetsay/) jako globální nástroj v určitém adresáři Linux / macOS.
+  Nainstaluje [dotnetsay](https://www.nuget.org/packages/dotnetsay/) jako globální nástroj do konkrétního adresáře Linux/MacOS.
 
 - **`dotnet tool install -g dotnetsay --version 2.0.0`**
 
-  Nainstaluje verzi 2.0.0 [dotnetsay](https://www.nuget.org/packages/dotnetsay/) jako globální nástroj.
+  Nainstaluje 2.0.0 verze [dotnetsay](https://www.nuget.org/packages/dotnetsay/) jako globální nástroj.
 
 - **`dotnet tool install dotnetsay`**
 
-  Nainstaluje [dotnetsay](https://www.nuget.org/packages/dotnetsay/) jako místní nástroj pro aktuální adresář.
+  Nainstaluje [dotnetsay](https://www.nuget.org/packages/dotnetsay/) jako místní Nástroj pro aktuální adresář.
 
 ## <a name="see-also"></a>Viz také
 
 - [Nástroje .NET Core](global-tools.md)
-- [Kurz: Instalace a použití globálního nástroje .NET Core pomocí rozhraní CLI jádra .NET](global-tools-how-to-use.md)
-- [Kurz: Instalace a použití místního nástroje .NET Core pomocí rozhraní CLI jádra .NET](local-tools-how-to-use.md)
+- [Kurz: instalace a použití globálního nástroje .NET Core pomocí .NET Core CLI](global-tools-how-to-use.md)
+- [Kurz: instalace a použití místního nástroje .NET Core pomocí .NET Core CLI](local-tools-how-to-use.md)

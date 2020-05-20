@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: e7d3ccab-b0f0-4872-8935-0ed72920171b
 topic_type:
 - apiref
-ms.openlocfilehash: e1459c1604f3f8f043fd9b61533235ab7861c910
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: e1e114070f39e75254fc1bc0f8c1bf3e4733d5a2
+ms.sourcegitcommit: 0926684d8d34f4c6b5acce58d2193db093cb9cf2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73120565"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83703374"
 ---
 # <a name="iclrprobingassemblyenum-interface"></a>ICLRProbingAssemblyEnum – rozhraní
 Poskytuje metody, které umožňují hostiteli získat identity sestavení pomocí informací o identitě sestavení, které jsou interní pro modul CLR (Common Language Runtime), a to bez nutnosti vytvořit nebo porozumět této identitě.  
@@ -28,22 +28,22 @@ Poskytuje metody, které umožňují hostiteli získat identity sestavení pomoc
   
 |Metoda|Popis|  
 |------------|-----------------|  
-|[Get – metoda](../../../../docs/framework/unmanaged-api/hosting/iclrprobingassemblyenum-get-method.md)|Získá identitu sestavení v zadaném indexu.|  
+|[Get – metoda](iclrprobingassemblyenum-get-method.md)|Získá identitu sestavení v zadaném indexu.|  
   
 ## <a name="remarks"></a>Poznámky  
- Metody jako [ICLRAssemblyIdentityManager:: GetProbingAssembliesFromReference –](../../../../docs/framework/unmanaged-api/hosting/iclrassemblyidentitymanager-getprobingassembliesfromreference-method.md) vracejí instanci `ICLRProbingAssemblyEnum`.  
+ Metody jako [ICLRAssemblyIdentityManager:: GetProbingAssembliesFromReference –](iclrassemblyidentitymanager-getprobingassembliesfromreference-method.md) vrátí `ICLRProbingAssemblyEnum` instanci.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** MSCorEE. h  
   
  **Knihovna:** Zahrnuto jako prostředek v knihovně MSCorEE. dll  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [ICLRAssemblyIdentityManager – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrassemblyidentitymanager-interface.md)
-- [ICLRAssemblyReferenceList – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrassemblyreferencelist-interface.md)
-- [Rozhraní pro hostování](../../../../docs/framework/unmanaged-api/hosting/hosting-interfaces.md)
+- [ICLRAssemblyIdentityManager – rozhraní](iclrassemblyidentitymanager-interface.md)
+- [ICLRAssemblyReferenceList – rozhraní](iclrassemblyreferencelist-interface.md)
+- [Rozhraní pro hostování](hosting-interfaces.md)

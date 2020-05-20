@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: c0a6dce5-0a8d-42e8-808b-6ca14df9d289
 topic_type:
 - apiref
-ms.openlocfilehash: a599e754202309a2b61d1761150f3f570fd0dc76
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: e5ed1cbb640e760d75e1722871453a0bec283bde
+ms.sourcegitcommit: 0926684d8d34f4c6b5acce58d2193db093cb9cf2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73120413"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83703910"
 ---
 # <a name="iclrruntimehoststart-method"></a>ICLRRuntimeHost::Start – metoda
 Inicializuje modul CLR (Common Language Runtime) na proces.  
@@ -35,7 +35,7 @@ HRESULT Start();
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
-|S_OK|`Start` byla úspěšně vrácena.|  
+|S_OK|`Start`úspěšně vráceno.|  
 |HOST_E_CLRNOTAVAILABLE|Modul CLR nebyl načten do procesu, nebo je modul CLR ve stavu, ve kterém nemůže spustit spravovaný kód nebo úspěšně zpracovat volání.|  
 |HOST_E_TIMEOUT|Vypršel časový limit volání.|  
 |HOST_E_NOT_OWNER|Volající nevlastní zámek.|  
@@ -43,18 +43,18 @@ HRESULT Start();
 |E_FAIL|Došlo k neznámé chybě závažnosti. Pokud metoda vrátí E_FAIL, CLR již není v rámci procesu použitelný. Následná volání metod hostování vrací HOST_E_CLRNOTAVAILABLE.|  
   
 ## <a name="remarks"></a>Poznámky  
- V mnoha scénářích není nutné volat `Start`, protože modul runtime se sama inicializuje automaticky při první žádosti o spuštění spravovaného kódu. Můžete však použít `Start` k zadání přesně v případě, že by měl být inicializován modul runtime.  
+ V mnoha scénářích není nutné volat `Start` , protože modul runtime se inicializuje automaticky po prvním požadavku na spuštění spravovaného kódu. Můžete však použít `Start` k zadání přesně při inicializaci modulu runtime.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** MSCorEE. h  
   
  **Knihovna:** Zahrnuto jako prostředek v knihovně MSCorEE. dll  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.AppDomain>
-- [ICLRRuntimeHost – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrruntimehost-interface.md)
+- [ICLRRuntimeHost – rozhraní](iclrruntimehost-interface.md)

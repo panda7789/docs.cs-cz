@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 3a3a9446-7a4e-4836-9b27-5c536c15993d
 topic_type:
 - apiref
-ms.openlocfilehash: 9600573a0a730cee10247d5644d587e75856cdd9
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: f72a66354bfc907dab7ebc24de515bdfb20ddfb2
+ms.sourcegitcommit: 0926684d8d34f4c6b5acce58d2193db093cb9cf2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73141188"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83703594"
 ---
 # <a name="iclrhostbindingpolicymanagerevaluatepolicy-method"></a>ICLRHostBindingPolicyManager::EvaluatePolicy – metoda
 Vyhodnotí zásady vytváření vazeb jménem hostitele.  
@@ -46,7 +46,7 @@ HRESULT EvaluatePolicy (
  pro Ukazatel na vyrovnávací paměť, která obsahuje data zásad.  
   
  `cbAppPolicySize`  
- pro Velikost vyrovnávací paměti `pbApplicationPolicy`.  
+ pro Velikost `pbApplicationPolicy` vyrovnávací paměti.  
   
  `pwzPostPolicyReferenceIdentity`  
  mimo Odkaz na sestavení po vyhodnocení nových dat zásad  
@@ -55,33 +55,33 @@ HRESULT EvaluatePolicy (
  [in, out] Ukazatel na velikost vyrovnávací paměti odkazu identity sestavení po vyhodnocení nových dat zásad.  
   
  `pdwPoliciesApplied`  
- mimo Ukazatel na logickou nebo kombinaci hodnot [EBindPolicyLevels –](../../../../docs/framework/unmanaged-api/hosting/ebindpolicylevels-enumeration.md) , které označují, které zásady byly aplikovány.  
+ mimo Ukazatel na logickou nebo kombinaci hodnot [EBindPolicyLevels –](ebindpolicylevels-enumeration.md) , které označují, které zásady byly aplikovány.  
   
 ## <a name="return-value"></a>Návratová hodnota  
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
 |S_OK|Vyhodnocení bylo úspěšně dokončeno.|  
-|E_INVALIDARG|Buď `pwzReferenceIdentity` nebo `pbApplicationPolicy`, je odkaz s hodnotou null.|  
-|ERROR_INSUFFICIENT_BUFFER|`cbAppPolicySize` je příliš malý.|  
+|E_INVALIDARG|Buď `pwzReferenceIdentity` nebo `pbApplicationPolicy` je odkaz s hodnotou null.|  
+|ERROR_INSUFFICIENT_BUFFER|`cbAppPolicySize`je příliš malá.|  
 |HOST_E_CLRNOTAVAILABLE|Modul CLR (Common Language Runtime) nebyl načten do procesu, nebo je modul CLR ve stavu, ve kterém nemůže spustit spravovaný kód nebo úspěšně zpracovat volání.|  
 |HOST_E_TIMEOUT|Vypršel časový limit volání.|  
 |HOST_E_NOT_OWNER|Volající nevlastní zámek.|  
 |HOST_E_ABANDONED|Událost byla zrušena při čekání na blokované vlákno nebo vlákna.|  
-|E_FAIL|Došlo k neznámé chybě závažnosti. Poté, co metoda vrátí E_FAIL, CLR již není v rámci procesu použitelný. Následná volání metod hostování vrací HOST_E_CLRNOTAVAILABLE.|  
+|E_FAIL|Došlo k neznámé chybě závažnosti. Poté, co metoda vrátí E_FAIL, CLR již není v rámci procesu možné použít. Následná volání metod hostování vrací HOST_E_CLRNOTAVAILABLE.|  
   
 ## <a name="remarks"></a>Poznámky  
- Metoda `EvaluatePolicy` umožňuje hostiteli ovlivnit zásady vazeb pro zachování požadavků na správu verzí sestavení specifických pro hostitele. Samotný modul zásad zůstává v rámci CLR.  
+ `EvaluatePolicy`Metoda umožňuje hostiteli ovlivnit zásady vazeb pro zachování požadavků na správu verzí sestavení specifických pro hostitele. Samotný modul zásad zůstává v rámci CLR.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** MSCorEE. h  
   
  **Knihovna:** Zahrnuto jako prostředek v knihovně MSCorEE. dll  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [ICLRHostBindingPolicyManager – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrhostbindingpolicymanager-interface.md)
+- [ICLRHostBindingPolicyManager – rozhraní](iclrhostbindingpolicymanager-interface.md)

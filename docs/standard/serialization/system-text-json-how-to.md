@@ -1,21 +1,17 @@
 ---
-title: Postup serializace a deserializace JSON pomocí C#-.NET
+title: ''
 description: V tomto článku se dozvíte, jak použít System.Text.Json obor názvů k serializaci a deserializaci z formátu JSON v rozhraní .NET. Obsahuje vzorový kód.
-ms.date: 01/10/2020
+ms.date: ''
 no-loc:
 - System.Text.Json
 - Newtonsoft.Json
-helpviewer_keywords:
-- JSON serialization
-- serializing objects
-- serialization
-- objects, serializing
-ms.openlocfilehash: ad748508b73c3e141ae345efa0abb66c009740cd
-ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
+helpviewer_keywords: []
+ms.openlocfilehash: f1a5da448b08f9b4f1cf3fa6cba67fb376b00a6f
+ms.sourcegitcommit: 0926684d8d34f4c6b5acce58d2193db093cb9cf2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83378727"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83702255"
 ---
 # <a name="how-to-serialize-and-deserialize-marshal-and-unmarshal-json-in-net"></a>Jak serializovat a deserializovat (zařazování a zrušit zařazení) JSON v .NET
 
@@ -27,9 +23,9 @@ Většina ukázkových kódů serializace se nastaví na <xref:System.Text.Json.
 
 Příklady kódu odkazují na následující třídu a varianty:
 
-[!code-csharp[](~/samples/snippets/core/system-text-json/csharp/WeatherForecast.cs?name=SnippetWF)]
+[!code-csharp[](snippets/system-text-json-how-to/csharp/WeatherForecast.cs?name=SnippetWF)]
 
-## <a name="namespaces"></a>Jmenné prostory
+## <a name="namespaces"></a>Obory názvů
 
 <xref:System.Text.Json>Obor názvů obsahuje všechny vstupní body a hlavní typy. <xref:System.Text.Json.Serialization>Obor názvů obsahuje atributy a rozhraní API pro pokročilé scénáře a přizpůsobení specifické pro serializaci a deserializaci. Příklady kódu, které jsou uvedeny v tomto článku, vyžadují `using` direktivy pro jeden nebo oba tyto obory názvů:
 
@@ -46,25 +42,25 @@ Chcete-li zapsat JSON do řetězce nebo do souboru, zavolejte <xref:System.Text.
 
 Následující příklad vytvoří JSON jako řetězec:
 
-[!code-csharp[](~/samples/snippets/core/system-text-json/csharp/RoundtripToString.cs?name=SnippetSerialize)]
+[!code-csharp[](snippets/system-text-json-how-to/csharp/RoundtripToString.cs?name=SnippetSerialize)]
 
 Následující příklad používá synchronní kód k vytvoření souboru JSON:
 
-[!code-csharp[](~/samples/snippets/core/system-text-json/csharp/RoundtripToFile.cs?name=SnippetSerialize)]
+[!code-csharp[](snippets/system-text-json-how-to/csharp/RoundtripToFile.cs?name=SnippetSerialize)]
 
 Následující příklad používá asynchronní kód k vytvoření souboru JSON:
 
-[!code-csharp[](~/samples/snippets/core/system-text-json/csharp/RoundtripToFileAsync.cs?name=SnippetSerialize)]
+[!code-csharp[](snippets/system-text-json-how-to/csharp/RoundtripToFileAsync.cs?name=SnippetSerialize)]
 
 Předchozí příklady používají odvození typu pro typ, který je serializován. Přetížení `Serialize()` přebírá parametr obecného typu:
 
-[!code-csharp[](~/samples/snippets/core/system-text-json/csharp/RoundtripToString.cs?name=SnippetSerializeWithGenericParameter)]
+[!code-csharp[](snippets/system-text-json-how-to/csharp/RoundtripToString.cs?name=SnippetSerializeWithGenericParameter)]
 
 ### <a name="serialization-example"></a>Příklad serializace
 
 Tady je ukázková třída, která obsahuje kolekce a vnořenou třídu:
 
-[!code-csharp[](~/samples/snippets/core/system-text-json/csharp/WeatherForecast.cs?name=SnippetWFWithPOCOs)]
+[!code-csharp[](snippets/system-text-json-how-to/csharp/WeatherForecast.cs?name=SnippetWFWithPOCOs)]
 
 Výstup JSON z serializace instance předchozího typu vypadá jako v následujícím příkladu. Výstup JSON je ve výchozím nastavení minifikovaného:
 
@@ -105,7 +101,7 @@ Následující příklad ukazuje stejný formát JSON (to znamená, že je pomě
 
 Pro serializaci do UTF-8 volejte <xref:System.Text.Json.JsonSerializer.SerializeToUtf8Bytes%2A?displayProperty=nameWithType> metodu:
 
-[!code-csharp[](~/samples/snippets/core/system-text-json/csharp/RoundtripToUtf8.cs?name=SnippetSerialize)]
+[!code-csharp[](snippets/system-text-json-how-to/csharp/RoundtripToUtf8.cs?name=SnippetSerialize)]
 
 <xref:System.Text.Json.JsonSerializer.Serialize%2A> <xref:System.Text.Json.Utf8JsonWriter> K dispozici je také přetížení, které přijímá objekt.
 
@@ -139,23 +135,23 @@ Chcete-li provést deserializaci z řetězce nebo souboru, zavolejte <xref:Syste
 
 Následující příklad přečte JSON z řetězce a vytvoří instanci `WeatherForecast` třídy uvedené dříve pro [příklad serializace](#serialization-example):
 
-[!code-csharp[](~/samples/snippets/core/system-text-json/csharp/RoundtripToString.cs?name=SnippetDeserialize)]
+[!code-csharp[](snippets/system-text-json-how-to/csharp/RoundtripToString.cs?name=SnippetDeserialize)]
 
 Chcete-li provést deserializaci ze souboru pomocí synchronního kódu, přečtěte si soubor do řetězce, jak je znázorněno v následujícím příkladu:
 
-[!code-csharp[](~/samples/snippets/core/system-text-json/csharp/RoundtripToFile.cs?name=SnippetDeserialize)]
+[!code-csharp[](snippets/system-text-json-how-to/csharp/RoundtripToFile.cs?name=SnippetDeserialize)]
 
 Chcete-li provést deserializaci ze souboru pomocí asynchronního kódu, zavolejte <xref:System.Text.Json.JsonSerializer.DeserializeAsync%2A> metodu:
 
-[!code-csharp[](~/samples/snippets/core/system-text-json/csharp/RoundtripToFileAsync.cs?name=SnippetDeserialize)]
+[!code-csharp[](snippets/system-text-json-how-to/csharp/RoundtripToFileAsync.cs?name=SnippetDeserialize)]
 
 ### <a name="deserialize-from-utf-8"></a>Deserializace ze znakové sady UTF-8
 
 Chcete-li deserializovat ze znakové sady UTF-8, zavolejte <xref:System.Text.Json.JsonSerializer.Deserialize%2A?displayProperty=nameWithType> přetížení, které přijímá `Utf8JsonReader` nebo `ReadOnlySpan<byte>` , jak je znázorněno v následujících příkladech. V příkladech se předpokládá, že je JSON v bajtovém poli s názvem jsonUtf8Bytes.
 
-[!code-csharp[](~/samples/snippets/core/system-text-json/csharp/RoundtripToUtf8.cs?name=SnippetDeserialize1)]
+[!code-csharp[](snippets/system-text-json-how-to/csharp/RoundtripToUtf8.cs?name=SnippetDeserialize1)]
 
-[!code-csharp[](~/samples/snippets/core/system-text-json/csharp/RoundtripToUtf8.cs?name=SnippetDeserialize2)]
+[!code-csharp[](snippets/system-text-json-how-to/csharp/RoundtripToUtf8.cs?name=SnippetDeserialize2)]
 
 ## <a name="deserialization-behavior"></a>Chování deserializace
 
@@ -174,11 +170,11 @@ Chcete-li deserializovat ze znakové sady UTF-8, zavolejte <xref:System.Text.Jso
 
 Pro poměrně vytisknutí výstupu JSON nastavte <xref:System.Text.Json.JsonSerializerOptions.WriteIndented?displayProperty=nameWithType> na `true` :
 
-[!code-csharp[](~/samples/snippets/core/system-text-json/csharp/RoundtripToString.cs?name=SnippetSerializePrettyPrint)]
+[!code-csharp[](snippets/system-text-json-how-to/csharp/RoundtripToString.cs?name=SnippetSerializePrettyPrint)]
 
 Tady je příklad typu pro serializaci a poměrně tištěné výstup JSON:
 
-[!code-csharp[](~/samples/snippets/core/system-text-json/csharp/WeatherForecast.cs?name=SnippetWF)]
+[!code-csharp[](snippets/system-text-json-how-to/csharp/WeatherForecast.cs?name=SnippetWF)]
 
 ```json
 {
@@ -206,7 +202,7 @@ Chcete-li nastavit název jednotlivých vlastností, použijte atribut [[JsonPro
 
 Tady je příklad typu k serializaci a výslednému formátu JSON:
 
-[!code-csharp[](~/samples/snippets/core/system-text-json/csharp/WeatherForecast.cs?name=SnippetWFWithPropertyNameAttribute)]
+[!code-csharp[](snippets/system-text-json-how-to/csharp/WeatherForecast.cs?name=SnippetWFWithPropertyNameAttribute)]
 
 ```json
 {
@@ -226,11 +222,11 @@ Název vlastnosti nastavený tímto atributem:
 
 Pro použití ve stylu CamelCase pro všechny názvy vlastností JSON nastavte <xref:System.Text.Json.JsonSerializerOptions.PropertyNamingPolicy?displayProperty=nameWithType> na `JsonNamingPolicy.CamelCase` , jak je znázorněno v následujícím příkladu:
 
-[!code-csharp[](~/samples/snippets/core/system-text-json/csharp/RoundTripCamelCasePropertyNames.cs?name=Serialize)]
+[!code-csharp[](snippets/system-text-json-how-to/csharp/RoundTripCamelCasePropertyNames.cs?name=Serialize)]
 
 Tady je příklad třídy pro serializaci a výstup JSON:
 
-[!code-csharp[](~/samples/snippets/core/system-text-json/csharp/WeatherForecast.cs?name=SnippetWFWithPropertyNameAttribute)]
+[!code-csharp[](snippets/system-text-json-how-to/csharp/WeatherForecast.cs?name=SnippetWFWithPropertyNameAttribute)]
 
 ```json
 {
@@ -250,15 +246,15 @@ Zásada pro pojmenování vlastností případu ve stylu CamelCase:
 
 Chcete-li použít vlastní zásadu pojmenovávání vlastností JSON, vytvořte třídu, která je odvozena z třídy <xref:System.Text.Json.JsonNamingPolicy> , a přepište <xref:System.Text.Json.JsonNamingPolicy.ConvertName%2A> metodu, jak je znázorněno v následujícím příkladu:
 
-[!code-csharp[](~/samples/snippets/core/system-text-json/csharp/UpperCaseNamingPolicy.cs)]
+[!code-csharp[](snippets/system-text-json-how-to/csharp/UpperCaseNamingPolicy.cs)]
 
 Pak nastavte <xref:System.Text.Json.JsonSerializerOptions.PropertyNamingPolicy?displayProperty=nameWithType> vlastnost na instanci třídy zásad pojmenování:
 
-[!code-csharp[](~/samples/snippets/core/system-text-json/csharp/RoundtripPropertyNamingPolicy.cs?name=SnippetSerialize)]
+[!code-csharp[](snippets/system-text-json-how-to/csharp/RoundtripPropertyNamingPolicy.cs?name=SnippetSerialize)]
 
 Tady je příklad třídy pro serializaci a výstup JSON:
 
-[!code-csharp[](~/samples/snippets/core/system-text-json/csharp/WeatherForecast.cs?name=SnippetWFWithPropertyNameAttribute)]
+[!code-csharp[](snippets/system-text-json-how-to/csharp/WeatherForecast.cs?name=SnippetWFWithPropertyNameAttribute)]
 
 ```json
 {
@@ -278,7 +274,7 @@ Zásady pojmenování vlastností JSON:
 
 Pokud je vlastnost objektu, který má být serializován `Dictionary<string,TValue>` , typu, `string` lze klíče převést na ve stylu CamelCase případ. To provedete tak, že nastavíte <xref:System.Text.Json.JsonSerializerOptions.DictionaryKeyPolicy> na `JsonNamingPolicy.CamelCase` , jak je znázorněno v následujícím příkladu:
 
-[!code-csharp[](~/samples/snippets/core/system-text-json/csharp/SerializeCamelCaseDictionaryKeys.cs?name=SnippetSerialize)]
+[!code-csharp[](snippets/system-text-json-how-to/csharp/SerializeCamelCaseDictionaryKeys.cs?name=SnippetSerialize)]
 
 Serializace objektu se slovníkem s názvem `TemperatureRanges` , který má páry klíč-hodnota `"ColdMinTemp", 20` a `"HotMinTemp", 40` výsledkem by byl výstup JSON jako v následujícím příkladu:
 
@@ -302,7 +298,7 @@ Ve výchozím nastavení jsou výčty serializovány jako čísla. Chcete-li ser
 
 Předpokládejme například, že potřebujete serializovat následující třídu, která má výčet:
 
-[!code-csharp[](~/samples/snippets/core/system-text-json/csharp/WeatherForecast.cs?name=SnippetWFWithEnum)]
+[!code-csharp[](snippets/system-text-json-how-to/csharp/WeatherForecast.cs?name=SnippetWFWithEnum)]
 
 Pokud je souhrn `Hot` , ve výchozím nastavení má serializovaný formát JSON číselnou hodnotu 3:
 
@@ -316,7 +312,7 @@ Pokud je souhrn `Hot` , ve výchozím nastavení má serializovaný formát JSON
 
 Následující vzorový kód místo číselných hodnot serializace názvy výčtu a převede názvy na ve stylu CamelCase případ:
 
-[!code-csharp[](~/samples/snippets/core/system-text-json/csharp/RoundtripEnumAsString.cs?name=SnippetSerialize)]
+[!code-csharp[](snippets/system-text-json-how-to/csharp/RoundtripEnumAsString.cs?name=SnippetSerialize)]
 
 Výsledný kód JSON vypadá jako v následujícím příkladu:
 
@@ -330,7 +326,7 @@ Výsledný kód JSON vypadá jako v následujícím příkladu:
 
 Názvy řetězců výčtu lze deserializovat také, jak je znázorněno v následujícím příkladu:
 
-[!code-csharp[](~/samples/snippets/core/system-text-json/csharp/RoundtripEnumAsString.cs?name=SnippetDeserialize)]
+[!code-csharp[](snippets/system-text-json-how-to/csharp/RoundtripEnumAsString.cs?name=SnippetDeserialize)]
 
 ## <a name="exclude-properties-from-serialization"></a>Vyloučit vlastnosti ze serializace
 
@@ -346,7 +342,7 @@ Chcete-li ignorovat jednotlivé vlastnosti, použijte atribut [[JsonIgnore]](xre
 
 Tady je příklad typu pro serializaci a výstup JSON:
 
-[!code-csharp[](~/samples/snippets/core/system-text-json/csharp/WeatherForecast.cs?name=SnippetWFWithIgnoreAttribute)]
+[!code-csharp[](snippets/system-text-json-how-to/csharp/WeatherForecast.cs?name=SnippetWFWithIgnoreAttribute)]
 
 ```json
 {
@@ -359,11 +355,11 @@ Tady je příklad typu pro serializaci a výstup JSON:
 
 Vlastnost je jen pro čtení, pokud obsahuje veřejnou metodu getter, ale ne veřejnou metodu setter. Chcete-li vyloučit všechny vlastnosti jen pro čtení, nastavte na <xref:System.Text.Json.JsonSerializerOptions.IgnoreReadOnlyProperties?displayProperty=nameWithType> `true` , jak je znázorněno v následujícím příkladu:
 
-[!code-csharp[](~/samples/snippets/core/system-text-json/csharp/SerializeExcludeReadOnlyProperties.cs?name=SnippetSerialize)]
+[!code-csharp[](snippets/system-text-json-how-to/csharp/SerializeExcludeReadOnlyProperties.cs?name=SnippetSerialize)]
 
 Tady je příklad typu pro serializaci a výstup JSON:
 
-[!code-csharp[](~/samples/snippets/core/system-text-json/csharp/WeatherForecast.cs?name=SnippetWFWithROProperty)]
+[!code-csharp[](snippets/system-text-json-how-to/csharp/WeatherForecast.cs?name=SnippetWFWithROProperty)]
 
 ```json
 {
@@ -379,15 +375,51 @@ Tato možnost se vztahuje pouze na serializaci. Během deserializace jsou vlastn
 
 Chcete-li vyloučit všechny vlastnosti hodnoty null, nastavte <xref:System.Text.Json.JsonSerializerOptions.IgnoreNullValues> vlastnost na hodnotu `true` , jak je znázorněno v následujícím příkladu:
 
-[!code-csharp[](~/samples/snippets/core/system-text-json/csharp/SerializeExcludeNullValueProperties.cs?name=SnippetSerialize)]
+[!code-csharp[](snippets/system-text-json-how-to/csharp/SerializeExcludeNullValueProperties.cs?name=SnippetSerialize)]
 
 Zde je příklad objektu pro serializaci a výstup JSON:
 
 |Vlastnost |Hodnota  |
-|---------|---------|
-| Datum    | 8/1/2019 12:00:00 DOP. 07:00|
-| TemperatureCelsius| 25 |
-| Souhrn| null|
+|---
+title: Popis: v tomto článku se dozvíte, jak použít System.Text.Json obor názvů k serializaci a deserializaci z formátu JSON v rozhraní .NET. Obsahuje vzorový kód. '
+MS. Date: No – Loc:
+- 'System.Text.Json'
+- Newtonsoft.Jsonhelpviewer_keywords:
+- 
+- 
+- 
+- 
+
+-
+title: Popis: v tomto článku se dozvíte, jak použít System.Text.Json obor názvů k serializaci a deserializaci z formátu JSON v rozhraní .NET. Obsahuje vzorový kód. '
+MS. Date: No – Loc:
+- 'System.Text.Json'
+- Newtonsoft.Jsonhelpviewer_keywords:
+- 
+- 
+- 
+- 
+
+-----| Název---: Popis: v tomto článku se dozvíte, jak použít System.Text.Json obor názvů k serializaci a deserializaci z formátu JSON v rozhraní .NET. Obsahuje vzorový kód. '
+MS. Date: No – Loc:
+- 'System.Text.Json'
+- Newtonsoft.Jsonhelpviewer_keywords:
+- 
+- 
+- 
+- 
+
+-
+title: Popis: v tomto článku se dozvíte, jak použít System.Text.Json obor názvů k serializaci a deserializaci z formátu JSON v rozhraní .NET. Obsahuje vzorový kód. '
+MS. Date: No – Loc:
+- 'System.Text.Json'
+- Newtonsoft.Jsonhelpviewer_keywords:
+- 
+- 
+- 
+- 
+
+-----| | Datum | 8/1/2019 12:00:00 DOP. 07:00 | TemperatureCelsius | 25 | Souhrn | null |
 
 ```json
 {
@@ -414,9 +446,9 @@ Ve výchozím nastavení serializátor řídí všechny znaky jiné než ASCII. 
 
 Chcete-li serializovat znakové sady jednoho nebo více jazyků bez uvozovacího znaku, určete [Rozsah znaků Unicode](xref:System.Text.Unicode.UnicodeRanges) při vytváření instance <xref:System.Text.Encodings.Web.JavaScriptEncoder?displayProperty=fullName> , jak je znázorněno v následujícím příkladu:
 
-[!code-csharp[](~/samples/snippets/core/system-text-json/csharp/SerializeCustomEncoding.cs?name=SnippetUsings)]
+[!code-csharp[](snippets/system-text-json-how-to/csharp/SerializeCustomEncoding.cs?name=SnippetUsings)]
 
-[!code-csharp[](~/samples/snippets/core/system-text-json/csharp/SerializeCustomEncoding.cs?name=SnippetLanguageSets)]
+[!code-csharp[](snippets/system-text-json-how-to/csharp/SerializeCustomEncoding.cs?name=SnippetLanguageSets)]
 
 Tento kód neřídí cyrilici ani řecké znaky. Pokud `Summary` je vlastnost nastavena na жаркоa v cyrilici, `WeatherForecast` objekt je serializován, jak je znázorněno v následujícím příkladu:
 
@@ -434,9 +466,9 @@ Chcete-li serializovat všechny jazykové sady bez použití uvozovacího, použ
 
 Alternativou je zadání jednotlivých znaků, které chcete použít, bez nutnosti řídicích znaků. Následující příklad serializace pouze prvních dvou znaků жарко:
 
-[!code-csharp[](~/samples/snippets/core/system-text-json/csharp/SerializeCustomEncoding.cs?name=SnippetUsings)]
+[!code-csharp[](snippets/system-text-json-how-to/csharp/SerializeCustomEncoding.cs?name=SnippetUsings)]
 
-[!code-csharp[](~/samples/snippets/core/system-text-json/csharp/SerializeCustomEncoding.cs?name=SnippetSelectedCharacters)]
+[!code-csharp[](snippets/system-text-json-how-to/csharp/SerializeCustomEncoding.cs?name=SnippetSelectedCharacters)]
 
 Zde je příklad kódu JSON vytvořeného předchozím kódem:
 
@@ -452,9 +484,9 @@ Zde je příklad kódu JSON vytvořeného předchozím kódem:
 
 K minimalizaci řídicích znaků, které můžete použít <xref:System.Text.Encodings.Web.JavaScriptEncoder.UnsafeRelaxedJsonEscaping?displayProperty=nameWithType> , jak je znázorněno v následujícím příkladu:
 
-[!code-csharp[](~/samples/snippets/core/system-text-json/csharp/SerializeCustomEncoding.cs?name=SnippetUsings)]
+[!code-csharp[](snippets/system-text-json-how-to/csharp/SerializeCustomEncoding.cs?name=SnippetUsings)]
 
-[!code-csharp[](~/samples/snippets/core/system-text-json/csharp/SerializeCustomEncoding.cs?name=SnippetUnsafeRelaxed)]
+[!code-csharp[](snippets/system-text-json-how-to/csharp/SerializeCustomEncoding.cs?name=SnippetUnsafeRelaxed)]
 
 > [!CAUTION]
 > V porovnání s výchozím kodérem `UnsafeRelaxedJsonEscaping` je kodér více opravňujícím, aby bylo možné předávat znaky bez řídicích znaků:
@@ -470,13 +502,13 @@ Serializace hierarchie polymorfního typu není podporována. Například pokud 
 
 Předpokládejme například, že máte `WeatherForecast` třídu a odvozenou třídu `WeatherForecastDerived` :
 
-[!code-csharp[](~/samples/snippets/core/system-text-json/csharp/WeatherForecast.cs?name=SnippetWF)]
+[!code-csharp[](snippets/system-text-json-how-to/csharp/WeatherForecast.cs?name=SnippetWF)]
 
-[!code-csharp[](~/samples/snippets/core/system-text-json/csharp/WeatherForecast.cs?name=SnippetWFDerived)]
+[!code-csharp[](snippets/system-text-json-how-to/csharp/WeatherForecast.cs?name=SnippetWFDerived)]
 
 A Předpokládejme, že argument typu `Serialize` metody v době kompilace je `WeatherForecast` :
 
-[!code-csharp[](~/samples/snippets/core/system-text-json/csharp/SerializePolymorphic.cs?name=SnippetSerializeDefault)]
+[!code-csharp[](snippets/system-text-json-how-to/csharp/SerializePolymorphic.cs?name=SnippetSerializeDefault)]
 
 V tomto scénáři není `WindSpeed` Vlastnost serializována i v případě, že `weatherForecast` objekt je ve skutečnosti `WeatherForecastDerived` objekt. Serializovat se budou jenom vlastnosti základní třídy:
 
@@ -494,11 +526,11 @@ Chcete-li serializovat vlastnosti odvozeného typu v předchozím příkladu, po
 
 * Zavolejte přetížení <xref:System.Text.Json.JsonSerializer.Serialize%2A> , které umožňuje určit typ za běhu:
 
-  [!code-csharp[](~/samples/snippets/core/system-text-json/csharp/SerializePolymorphic.cs?name=SnippetSerializeGetType)]
+  [!code-csharp[](snippets/system-text-json-how-to/csharp/SerializePolymorphic.cs?name=SnippetSerializeGetType)]
 
 * Deklarujte objekt, který se má serializovat jako `object` .
 
-  [!code-csharp[](~/samples/snippets/core/system-text-json/csharp/SerializePolymorphic.cs?name=SnippetSerializeObject)]
+  [!code-csharp[](snippets/system-text-json-how-to/csharp/SerializePolymorphic.cs?name=SnippetSerializeObject)]
 
 V předchozím ukázkovém scénáři oba přístupy způsobí, že `WindSpeed` vlastnost bude obsažena ve výstupu JSON:
 
@@ -516,9 +548,9 @@ V předchozím ukázkovém scénáři oba přístupy způsobí, že `WindSpeed` 
 
 Můžete získat polymorfní serializaci pro objekty nižší úrovně, pokud je definujete jako typ `object` . Předpokládejme například, že vaše `WeatherForecast` Třída má vlastnost s názvem `PreviousForecast` , která může být definována jako typ `WeatherForecast` nebo `object` :
 
-[!code-csharp[](~/samples/snippets/core/system-text-json/csharp/WeatherForecast.cs?name=SnippetWFWithPrevious)]
+[!code-csharp[](snippets/system-text-json-how-to/csharp/WeatherForecast.cs?name=SnippetWFWithPrevious)]
 
-[!code-csharp[](~/samples/snippets/core/system-text-json/csharp/WeatherForecast.cs?name=SnippetWFWithPreviousAsObject)]
+[!code-csharp[](snippets/system-text-json-how-to/csharp/WeatherForecast.cs?name=SnippetWFWithPreviousAsObject)]
 
 Pokud `PreviousForecast` vlastnost obsahuje instanci `WeatherForecastDerived` :
 
@@ -527,7 +559,7 @@ Pokud `PreviousForecast` vlastnost obsahuje instanci `WeatherForecastDerived` :
 
 Pro serializaci `WeatherForecastWithPreviousAsObject` není nutné volat `Serialize<object>` nebo `GetType` , protože kořenový objekt není ten, který může být odvozeného typu. Následující příklad kódu nevolá `Serialize<object>` nebo `GetType` :
 
-[!code-csharp[](~/samples/snippets/core/system-text-json/csharp/SerializePolymorphic.cs?name=SnippetSerializeSecondLevel)]
+[!code-csharp[](snippets/system-text-json-how-to/csharp/SerializePolymorphic.cs?name=SnippetSerializeSecondLevel)]
 
 Předchozí kód správně serializace `WeatherForecastWithPreviousAsObject` :
 
@@ -547,11 +579,11 @@ Předchozí kód správně serializace `WeatherForecastWithPreviousAsObject` :
 
 Stejný přístup k definování vlastností jako `object` funguje s rozhraními. Předpokládejme, že máte následující rozhraní a implementaci a chcete serializovat třídu s vlastnostmi, které obsahují instance implementace:
 
-[!code-csharp[](~/samples/snippets/core/system-text-json/csharp/IForecast.cs)]
+[!code-csharp[](snippets/system-text-json-how-to/csharp/IForecast.cs)]
 
 Při serializaci instance je `Forecasts` `Tuesday` zobrazena pouze `WindSpeed` vlastnost, protože `Tuesday` je definována jako `object` :
 
-[!code-csharp[](~/samples/snippets/core/system-text-json/csharp/SerializePolymorphic.cs?name=SnippetSerializeInterface)]
+[!code-csharp[](snippets/system-text-json-how-to/csharp/SerializePolymorphic.cs?name=SnippetSerializeInterface)]
 
 Následující příklad ukazuje kód JSON, který je výsledkem předchozího kódu:
 
@@ -571,14 +603,14 @@ Následující příklad ukazuje kód JSON, který je výsledkem předchozího k
 }
 ```
 
-Další informace o polymorfní **serializaci**a informace o **deserializaci**naleznete v tématu [How to migruje from Newtonsoft. JSON to System. text. JSON](system-text-json-migrate-from-newtonsoft-how-to.md#polymorphic-serialization).
+Další informace o polymorfní **serializaci**a informace o **deserializaci**naleznete v tématu [jak migrovat z Newtonsoft.Json na System.Text.Json ](system-text-json-migrate-from-newtonsoft-how-to.md#polymorphic-serialization).
 
 ## <a name="allow-comments-and-trailing-commas"></a>Povolí komentáře a koncové čárky.
 
 Ve výchozím nastavení se komentáře a koncové čárky ve formátu JSON nepovolují. Chcete-li ve formátu JSON dovolit komentáře, nastavte <xref:System.Text.Json.JsonSerializerOptions.ReadCommentHandling?displayProperty=nameWithType> vlastnost na hodnotu `JsonCommentHandling.Skip` .
 A chcete-li použít koncové čárky, nastavte <xref:System.Text.Json.JsonSerializerOptions.AllowTrailingCommas?displayProperty=nameWithType> vlastnost na hodnotu `true` . Následující příklad ukazuje, jak je možné:
 
-[!code-csharp[](~/samples/snippets/core/system-text-json/csharp/DeserializeCommasComments.cs?name=SnippetDeserialize)]
+[!code-csharp[](snippets/system-text-json-how-to/csharp/DeserializeCommasComments.cs?name=SnippetDeserialize)]
 
 Tady je příklad JSON s komentáři a koncovou čárkou:
 
@@ -594,7 +626,7 @@ Tady je příklad JSON s komentáři a koncovou čárkou:
 
 Ve výchozím nastavení deserializace hledá název vlastnosti rozlišující velká a malá písmena mezi vlastnostmi JSON a cílovým objektem. Chcete-li toto chování změnit, nastavte <xref:System.Text.Json.JsonSerializerOptions.PropertyNameCaseInsensitive?displayProperty=nameWithType> na `true` :
 
-[!code-csharp[](~/samples/snippets/core/system-text-json/csharp/DeserializeCaseInsensitive.cs?name=SnippetDeserialize)]
+[!code-csharp[](snippets/system-text-json-how-to/csharp/DeserializeCaseInsensitive.cs?name=SnippetDeserialize)]
 
 Tady je příklad JSON s názvy vlastností Case ve stylu CamelCase. Lze deserializovat do následujícího typu, který má názvy vlastností Case typu Pascal.
 
@@ -606,13 +638,13 @@ Tady je příklad JSON s názvy vlastností Case ve stylu CamelCase. Lze deseria
 }
 ```
 
-[!code-csharp[](~/samples/snippets/core/system-text-json/csharp/WeatherForecast.cs?name=SnippetWF)]
+[!code-csharp[](snippets/system-text-json-how-to/csharp/WeatherForecast.cs?name=SnippetWF)]
 
 ## <a name="handle-overflow-json"></a>Přetečení JSON popisovače
 
 Při deserializaci můžete přijímat data ve formátu JSON, která nejsou reprezentovaná vlastnostmi cílového typu. Předpokládejme například, že váš cílový typ je:
 
-[!code-csharp[](~/samples/snippets/core/system-text-json/csharp/WeatherForecast.cs?name=SnippetWF)]
+[!code-csharp[](snippets/system-text-json-how-to/csharp/WeatherForecast.cs?name=SnippetWF)]
 
 A JSON, který se má deserializovat, je:
 
@@ -635,18 +667,70 @@ A JSON, který se má deserializovat, je:
 
 Pokud deserializaci kódu JSON zobrazeného na zobrazeném typu, `DatesAvailable` vlastnosti a se `SummaryWords` nikde k přechodu a jsou ztraceny. Chcete-li zachytit další data, jako jsou tyto vlastnosti, použijte atribut [JsonExtensionData](xref:System.Text.Json.Serialization.JsonExtensionDataAttribute) na vlastnost typu `Dictionary<string,object>` nebo `Dictionary<string,JsonElement>` :
 
-[!code-csharp[](~/samples/snippets/core/system-text-json/csharp/WeatherForecast.cs?name=SnippetWFWithExtensionData)]
+[!code-csharp[](snippets/system-text-json-how-to/csharp/WeatherForecast.cs?name=SnippetWFWithExtensionData)]
 
 Při deserializaci formátu JSON zobrazeného dříve do tohoto ukázkového typu se data dalších dat stávají páry klíč-hodnota `ExtensionData` vlastnosti:
 
 |Vlastnost |Hodnota  |Poznámky  |
-|---------|---------|---------|
-| Datum    | 8/1/2019 12:00:00 DOP. 07:00||
-| TemperatureCelsius| 0 | Neshoda malých a velkých písmen ( `temperatureCelsius` ve formátu JSON), takže vlastnost není nastavena. |
-| Souhrn | Hot ||
-| ExtensionData – | temperatureCelsius: 25 |Vzhledem k tomu, že se neshoduje velká a malá písmena, je tato vlastnost JSON extra a ve slovníku se stala dvojicí klíč-hodnota.|
-|| DatesAvailable:<br>  8/1/2019 12:00:00 DOP. 07:00<br>8/2/2019 12:00:00 DOP. 07:00 |Vlastnost extra z formátu JSON se stávají dvojicí klíč-hodnota s polem jako objektem hodnoty.|
-| |SummaryWords:<br>Cool<br>Vítr<br>Humid |Vlastnost extra z formátu JSON se stávají dvojicí klíč-hodnota s polem jako objektem hodnoty.|
+|---
+title: Popis: v tomto článku se dozvíte, jak použít System.Text.Json obor názvů k serializaci a deserializaci z formátu JSON v rozhraní .NET. Obsahuje vzorový kód. '
+MS. Date: No – Loc:
+- 'System.Text.Json'
+- Newtonsoft.Jsonhelpviewer_keywords:
+- 
+- 
+- 
+- 
+
+-
+title: Popis: v tomto článku se dozvíte, jak použít System.Text.Json obor názvů k serializaci a deserializaci z formátu JSON v rozhraní .NET. Obsahuje vzorový kód. '
+MS. Date: No – Loc:
+- 'System.Text.Json'
+- Newtonsoft.Jsonhelpviewer_keywords:
+- 
+- 
+- 
+- 
+
+-----| Název---: Popis: v tomto článku se dozvíte, jak použít System.Text.Json obor názvů k serializaci a deserializaci z formátu JSON v rozhraní .NET. Obsahuje vzorový kód. '
+MS. Date: No – Loc:
+- 'System.Text.Json'
+- Newtonsoft.Jsonhelpviewer_keywords:
+- 
+- 
+- 
+- 
+
+-
+title: Popis: v tomto článku se dozvíte, jak použít System.Text.Json obor názvů k serializaci a deserializaci z formátu JSON v rozhraní .NET. Obsahuje vzorový kód. '
+MS. Date: No – Loc:
+- 'System.Text.Json'
+- Newtonsoft.Jsonhelpviewer_keywords:
+- 
+- 
+- 
+- 
+
+-----| Název---: Popis: v tomto článku se dozvíte, jak použít System.Text.Json obor názvů k serializaci a deserializaci z formátu JSON v rozhraní .NET. Obsahuje vzorový kód. '
+MS. Date: No – Loc:
+- 'System.Text.Json'
+- Newtonsoft.Jsonhelpviewer_keywords:
+- 
+- 
+- 
+- 
+
+-
+title: Popis: v tomto článku se dozvíte, jak použít System.Text.Json obor názvů k serializaci a deserializaci z formátu JSON v rozhraní .NET. Obsahuje vzorový kód. '
+MS. Date: No – Loc:
+- 'System.Text.Json'
+- Newtonsoft.Jsonhelpviewer_keywords:
+- 
+- 
+- 
+- 
+
+-----| | Datum | 8/1/2019 12:00:00 DOP. 07:00 | | TemperatureCelsius | 0 | Neshoda malých a velkých písmen ( `temperatureCelsius` ve formátu JSON), takže vlastnost není nastavena. | | Souhrn | Horká | | | ExtensionData – | temperatureCelsius: 25 | Vzhledem k tomu, že se neshoduje velká a malá písmena, je tato vlastnost JSON extra a ve slovníku se stala dvojicí klíč-hodnota. | || DatesAvailable:<br>  8/1/2019 12:00:00 DOP. 07:00<br>8/2/2019 12:00:00 DOP. 07:00 | Vlastnost extra z formátu JSON se stávají dvojicí klíč-hodnota s polem jako objektem hodnoty. | | | SummaryWords:<br>Cool<br>Vítr<br>Humid | Vlastnost extra z formátu JSON se stávají dvojicí klíč-hodnota s polem jako objektem hodnoty. |
 
 Při serializaci cílového objektu se dvojice hodnoty klíče dat rozšíření stanou vlastnostmi JSON stejně, jako kdyby byly ve vstupním formátu JSON:
 
@@ -676,7 +760,7 @@ Ve výchozím nastavení platí, že pokud je vlastnost ve formátu JSON null, o
 
 Předpokládejme například, že následující kód představuje cílový objekt:
 
-[!code-csharp[](~/samples/snippets/core/system-text-json/csharp/WeatherForecast.cs?name=SnippetWFWithDefault)]
+[!code-csharp[](snippets/system-text-json-how-to/csharp/WeatherForecast.cs?name=SnippetWFWithDefault)]
 
 A Předpokládejme, že následující kód JSON je deserializovaný:
 
@@ -692,7 +776,7 @@ Po deserializaci má `Summary` vlastnost `WeatherForecastWithDefault` objektu ho
 
 Chcete-li toto chování změnit, nastavte <xref:System.Text.Json.JsonSerializerOptions.IgnoreNullValues?displayProperty=nameWithType> na hodnotu `true` , jak je znázorněno v následujícím příkladu:
 
-[!code-csharp[](~/samples/snippets/core/system-text-json/csharp/DeserializeIgnoreNull.cs?name=SnippetDeserialize)]
+[!code-csharp[](snippets/system-text-json-how-to/csharp/DeserializeIgnoreNull.cs?name=SnippetDeserialize)]
 
 S touto možností `Summary` `WeatherForecastWithDefault` je vlastnost objektu výchozí hodnotou "No Summary" po deserializaci.
 
@@ -712,7 +796,7 @@ Následující části ukazují, jak používat tyto nástroje pro čtení a zá
 
 Následující příklad ukazuje, jak použít <xref:System.Text.Json.JsonDocument> třídu pro náhodný přístup k datům v řetězci JSON:
 
-[!code-csharp[](~/samples/snippets/core/system-text-json/csharp/JsonDocumentDataAccess.cs?name=SnippetAverageGrades1)]
+[!code-csharp[](snippets/system-text-json-how-to/csharp/JsonDocumentDataAccess.cs?name=SnippetAverageGrades1)]
 
 Předcházející kód:
 
@@ -721,17 +805,17 @@ Předcházející kód:
 * Přiřadí výchozí stupeň 70 pro studenty, kteří nemají třídu.
 * Spočítá studenty zvýšením `count` proměnné s každou iterací. Alternativou je volání <xref:System.Text.Json.JsonElement.GetArrayLength%2A> , jak je znázorněno v následujícím příkladu:
 
-  [!code-csharp[](~/samples/snippets/core/system-text-json/csharp/JsonDocumentDataAccess.cs?name=SnippetAverageGrades2)]
+  [!code-csharp[](snippets/system-text-json-how-to/csharp/JsonDocumentDataAccess.cs?name=SnippetAverageGrades2)]
 
 Zde je příklad kódu JSON, který tento kód zpracovává:
 
-[!code-json[](~/samples/snippets/core/system-text-json/csharp/GradesPrettyPrint.json)]
+[!code-json[](snippets/system-text-json-how-to/csharp/GradesPrettyPrint.json)]
 
 ## <a name="use-jsondocument-to-write-json"></a>Zápis JSON pomocí JsonDocument
 
 Následující příklad ukazuje, jak zapsat JSON z <xref:System.Text.Json.JsonDocument> :
 
-[!code-csharp[](~/samples/snippets/core/system-text-json/csharp/JsonDocumentWriteJson.cs?name=SnippetSerialize)]
+[!code-csharp[](snippets/system-text-json-how-to/csharp/JsonDocumentWriteJson.cs?name=SnippetSerialize)]
 
 Předcházející kód:
 
@@ -741,23 +825,23 @@ Předcházející kód:
 
 Tady je příklad vstupu JSON, který se má zpracovat v příkladu kódu:
 
-[!code-json[](~/samples/snippets/core/system-text-json/csharp/Grades.json)]
+[!code-json[](snippets/system-text-json-how-to/csharp/Grades.json)]
 
 Výsledkem je následující poměrně tištěný výstup JSON:
 
-[!code-json[](~/samples/snippets/core/system-text-json/csharp/GradesPrettyPrint.json)]
+[!code-json[](snippets/system-text-json-how-to/csharp/GradesPrettyPrint.json)]
 
 ## <a name="use-utf8jsonwriter"></a>Použití Utf8JsonWriter
 
 Následující příklad ukazuje, jak použít <xref:System.Text.Json.Utf8JsonWriter> třídu:
 
-[!code-csharp[](~/samples/snippets/core/system-text-json/csharp/Utf8WriterToStream.cs?name=SnippetSerialize)]
+[!code-csharp[](snippets/system-text-json-how-to/csharp/Utf8WriterToStream.cs?name=SnippetSerialize)]
 
 ## <a name="use-utf8jsonreader"></a>Použití Utf8JsonReader
 
 Následující příklad ukazuje, jak použít <xref:System.Text.Json.Utf8JsonReader> třídu:
 
-[!code-csharp[](~/samples/snippets/core/system-text-json/csharp/Utf8ReaderFromBytes.cs?name=SnippetDeserialize)]
+[!code-csharp[](snippets/system-text-json-how-to/csharp/Utf8ReaderFromBytes.cs?name=SnippetDeserialize)]
 
 Předchozí kód předpokládá, že `jsonUtf8` proměnná je bajtové pole, které obsahuje platný kód JSON kódovaný jako UTF-8.
 
@@ -765,7 +849,7 @@ Předchozí kód předpokládá, že `jsonUtf8` proměnná je bajtové pole, kte
 
 Následující příklad ukazuje, jak číst soubor synchronně a vyhledat hodnotu:
 
-[!code-csharp[](~/samples/snippets/core/system-text-json/csharp/Utf8ReaderFromFile.cs)]
+[!code-csharp[](snippets/system-text-json-how-to/csharp/Utf8ReaderFromFile.cs)]
 
 Předcházející kód:
 
@@ -781,9 +865,27 @@ Předcházející kód:
 
 Zde je ukázka JSON, kterou může předchozí kód přečíst. Výsledná Souhrnná zpráva je "2 z čtvrtého" má názvy, které končí na "University" ":
 
-[!code-json[](~/samples/snippets/core/system-text-json/csharp/Universities.json)]
+[!code-json[](snippets/system-text-json-how-to/csharp/Universities.json)]
 
-## <a name="additional-resources"></a>Další materiály a zdroje informací
+### <a name="read-from-a-stream-using-utf8jsonreader"></a>Čtení z datového proudu pomocí Utf8JsonReader
+
+Při čtení velkého souboru (například GB nebo více) můžete chtít, abyste nemuseli celý soubor načítat do paměti najednou. V tomto scénáři můžete použít <xref:System.IO.FileStream> .
+
+Při použití nástroje `Utf8JsonReader` ke čtení z datového proudu platí následující pravidla:
+
+* Vyrovnávací paměť obsahující částečnou datovou část JSON musí být alespoň stejně velká jako největší token JSON, aby čtenář mohl provést postup.
+* Vyrovnávací paměť musí být alespoň stejně velká jako největší sekvence prázdných znaků ve formátu JSON.
+* Čtenář neuchovává data, která si přečte, dokud úplně nepřečte další <xref:System.Text.Json.Utf8JsonReader.TokenType%2A> část v datové části JSON. Takže pokud jsou v bufferu zbývající bajty, je nutné je znovu předat čtečce. Můžete použít <xref:System.Text.Json.Utf8JsonReader.BytesConsumed%2A> k určení, kolik bajtů zbývá.
+
+Následující kód ilustruje, jak číst z datového proudu. Příklad ukazuje <xref:System.IO.MemoryStream> . Podobný kód bude pracovat s <xref:System.IO.FileStream> , s výjimkou případů, kdy `FileStream` obsahuje kusovník UTF-8 na začátku. V takovém případě je nutné tyto tři bajty z vyrovnávací paměti oddělit před předáním zbývajících bajtů `Utf8JsonReader` . V opačném případě čtecí modul vyvolal výjimku, protože kusovník není považován za platnou součást formátu JSON.
+
+Vzorový kód začíná vyrovnávací pamětí 4KB a zdvojnásobuje velikost vyrovnávací paměti pokaždé, když zjistí, že velikost není dostatečně velká, aby odpovídala kompletnímu tokenu JSON, který je vyžadován pro čtenáře, aby mohl v datové části JSON přesměrovat průběh. Ukázka JSON, která je obsažená ve fragmentu, vyvolá zvýšení velikosti vyrovnávací paměti pouze v případě, že nastavíte velmi malou počáteční velikost vyrovnávací paměti, například 10 bajtů. Pokud nastavíte počáteční velikost vyrovnávací paměti na hodnotu 10, `Console.WriteLine` příkazy ilustrují příčinu a účinek zvýšení velikosti vyrovnávací paměti. Na počáteční velikosti vyrovnávací paměti 4KB se každý ukázkový JSON zobrazí celý vzor JSON `Console.WriteLine` a velikost vyrovnávací paměti není nikdy potřeba zvýšit.
+
+[!code-csharp[](snippets/system-text-json-how-to/csharp/Utf8ReaderPartialRead.cs)]
+
+Předchozí příklad nastavuje bez omezení na to, jak velký může být velikost vyrovnávací paměti. Pokud je velikost tokenu příliš velká, může dojít k selhání kódu s <xref:System.OutOfMemoryException> výjimkou. K tomu může dojít, pokud JSON obsahuje token, který má velikost přibližně 1 GB nebo větší velikost, protože zdvojnásobení velikosti 1 GB má za následek velikost, která je příliš velká, aby se vešla do `int32` vyrovnávací paměti.
+
+## <a name="additional-resources"></a>Další zdroje
 
 * [System.Text.JsonPřehled](system-text-json-overview.md)
 * [Postup zápisu vlastních převaděčů](system-text-json-converters-how-to.md)

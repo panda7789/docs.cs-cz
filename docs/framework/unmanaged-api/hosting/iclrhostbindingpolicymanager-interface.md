@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: f9da168b-366b-4b2b-bdb9-330b6bad5a6b
 topic_type:
 - apiref
-ms.openlocfilehash: 9ed317a451e6e35aeac3bc1b83f78d1400ea5c07
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 3cf2a945607bf85a51dbec35342ff5ac46878bca
+ms.sourcegitcommit: 0926684d8d34f4c6b5acce58d2193db093cb9cf2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73136431"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83703566"
 ---
 # <a name="iclrhostbindingpolicymanager-interface"></a>ICLRHostBindingPolicyManager – rozhraní
 Poskytuje metody pro hostitele k vyhodnocení aktuálních zásad vazby a oznamování změn zásad pro zadané sestavení.  
@@ -28,20 +28,20 @@ Poskytuje metody pro hostitele k vyhodnocení aktuálních zásad vazby a oznamo
   
 |Metoda|Popis|  
 |------------|-----------------|  
-|[EvaluatePolicy – metoda](../../../../docs/framework/unmanaged-api/hosting/iclrhostbindingpolicymanager-evaluatepolicy-method.md)|Vyhodnotí zásady vytváření vazeb jménem hostitele.|  
-|[ModifyApplicationPolicy – metoda](../../../../docs/framework/unmanaged-api/hosting/iclrhostbindingpolicymanager-modifyapplicationpolicy-method.md)|Upraví zásadu vazby pro zadané sestavení a vytvoří novou verzi zásad.|  
+|[EvaluatePolicy – metoda](iclrhostbindingpolicymanager-evaluatepolicy-method.md)|Vyhodnotí zásady vytváření vazeb jménem hostitele.|  
+|[ModifyApplicationPolicy – metoda](iclrhostbindingpolicymanager-modifyapplicationpolicy-method.md)|Upraví zásadu vazby pro zadané sestavení a vytvoří novou verzi zásad.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** MSCorEE. h  
   
  **Knihovna:** Zahrnuto jako prostředek v knihovně MSCorEE. dll  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [ICLRAssemblyIdentityManager – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrassemblyidentitymanager-interface.md)
-- [IHostAssemblyStore – rozhraní](../../../../docs/framework/unmanaged-api/hosting/ihostassemblystore-interface.md)
-- [Rozhraní pro hostování](../../../../docs/framework/unmanaged-api/hosting/hosting-interfaces.md)
+- [ICLRAssemblyIdentityManager – rozhraní](iclrassemblyidentitymanager-interface.md)
+- [IHostAssemblyStore – rozhraní](ihostassemblystore-interface.md)
+- [Rozhraní pro hostování](hosting-interfaces.md)

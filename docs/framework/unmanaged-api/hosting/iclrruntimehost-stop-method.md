@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: b8fd7daf-8f8d-4ad7-92ae-019db244cec1
 topic_type:
 - apiref
-ms.openlocfilehash: 0b59532d18848f1896977aa37f0a9f54a939aa75
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 55cd444ffedc92ba74239421ae548ffd930e6ab7
+ms.sourcegitcommit: 0926684d8d34f4c6b5acce58d2193db093cb9cf2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73120381"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83703940"
 ---
 # <a name="iclrruntimehoststop-method"></a>ICLRRuntimeHost::Stop – metoda
 Zastaví provádění kódu modulem CLR (Common Language Runtime).  
@@ -38,7 +38,7 @@ HRESULT Stop();
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
-|S_OK|`Stop` byla úspěšně vrácena.|  
+|S_OK|`Stop`úspěšně vráceno.|  
 |HOST_E_CLRNOTAVAILABLE|Modul CLR nebyl načten do procesu, nebo je modul CLR ve stavu, ve kterém nemůže spustit spravovaný kód nebo úspěšně zpracovat volání.|  
 |HOST_E_TIMEOUT|Vypršel časový limit volání.|  
 |HOST_E_NOT_OWNER|Volající nevlastní zámek.|  
@@ -46,14 +46,14 @@ HRESULT Stop();
 |E_FAIL|Došlo k neznámé chybě závažnosti. Pokud metoda vrátí E_FAIL, CLR již není v rámci procesu použitelný. Následná volání metod hostování vrací HOST_E_CLRNOTAVAILABLE.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** MSCorEE. h  
   
  **Knihovna:** Zahrnuto jako prostředek v knihovně MSCorEE. dll  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [ICLRRuntimeHost – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrruntimehost-interface.md)
+- [ICLRRuntimeHost – rozhraní](iclrruntimehost-interface.md)

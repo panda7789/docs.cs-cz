@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 5212c5d9513a8ef5f51693857d0ddb60db4e49b9
-ms.sourcegitcommit: c2c1269a81ffdcfc8675bcd9a8505b1a11ffb271
+ms.openlocfilehash: f1fc70075ef09a4f036c69788342c07ee51d72ce
+ms.sourcegitcommit: 0926684d8d34f4c6b5acce58d2193db093cb9cf2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/25/2020
-ms.locfileid: "82158389"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83702483"
 ---
 ### <a name="winforms-methods-now-throw-argumentexception"></a>Metody WinForms teď vyvolávají výjimku ArgumentException.
 
@@ -14,13 +14,13 @@ Některé metody model Windows Forms nyní vyvolají <xref:System.ArgumentExcept
 
 Dřív předávání argumentů neočekávaného nebo nesprávného typu určitým model Windows Forms metodám by způsobilo neurčitý stav. Počínaje rozhraním .NET 5,0 tyto metody nyní vyvolají <xref:System.ArgumentException> při předání neplatných argumentů.
 
-<xref:System.ArgumentException> Vyvolání vyhovuje chování modulu runtime .NET. Vylepšuje také možnosti ladění tím, že jednoznačně komunikuje, který argument je neplatný.
+Vyvolání <xref:System.ArgumentException> vyhovuje chování modulu runtime .NET. Vylepšuje také možnosti ladění tím, že jednoznačně komunikuje, který argument je neplatný.
 
 Následující tabulka uvádí ovlivněné metody a parametry:
 
 | Metoda | Název parametru | Podmínka | Přidaná verze |
 |-|-|-|
-| <xref:System.Windows.Forms.TabControl.GetToolTipText(System.Object)?displayProperty=fullName> | `item` | Argument není typu <xref:System.Windows.Forms.TabPage>. | 5,0 Preview 1 |
+| <xref:System.Windows.Forms.TabControl.GetToolTipText(System.Object)?displayProperty=fullName> | `item` | Argument není typu <xref:System.Windows.Forms.TabPage> . | 5,0 Preview 1 |
 
 #### <a name="version-introduced"></a>Představená verze
 
@@ -41,7 +41,7 @@ Windows Forms
 
 <!-- 
 
-### Affected APIs
+#### Affected APIs
 
 - `M:System.Windows.Forms.TabControl.GetToolTipText(System.Object)`
 

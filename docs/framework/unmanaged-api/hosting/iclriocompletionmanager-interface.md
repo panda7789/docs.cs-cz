@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: c6c3ace6-e5e7-4450-8cc5-a9a48208c493
 topic_type:
 - apiref
-ms.openlocfilehash: b63d4269a8d48ee49016a4c51d63bf81bdba8da2
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 822b51531b7afc1c824c74b9580d9208e347e13b
+ms.sourcegitcommit: 0926684d8d34f4c6b5acce58d2193db093cb9cf2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73141031"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83703562"
 ---
 # <a name="iclriocompletionmanager-interface"></a>ICLRIoCompletionManager – rozhraní
 Implementuje metodu zpětného volání, která umožňuje hostiteli upozorňovat modul CLR (Common Language Runtime) na stav zadaných vstupně-výstupních požadavků.  
@@ -28,22 +28,22 @@ Implementuje metodu zpětného volání, která umožňuje hostiteli upozorňova
   
 |Metoda|Popis|  
 |------------|-----------------|  
-|[OnComplete – metoda](../../../../docs/framework/unmanaged-api/hosting/iclriocompletionmanager-oncomplete-method.md)|Upozorňuje CLR na stav vstupně-výstupní žádosti, která byla vytvořena pomocí volání metody [IHostIoCompletionManager:: bind](../../../../docs/framework/unmanaged-api/hosting/ihostiocompletionmanager-bind-method.md) .|  
+|[OnComplete – metoda](../../../../docs/framework/unmanaged-api/hosting/iclriocompletionmanager-oncomplete-method.md)|Upozorňuje CLR na stav vstupně-výstupní žádosti, která byla vytvořena pomocí volání metody [IHostIoCompletionManager:: bind](ihostiocompletionmanager-bind-method.md) .|  
   
 ## <a name="remarks"></a>Poznámky  
- Hostitel implementuje abstrakci dokončení vstupně-výstupních operací pomocí rozhraní [IHostIoCompletionManager](../../../../docs/framework/unmanaged-api/hosting/ihostiocompletionmanager-interface.md) . Modul CLR vytvoří v rámci tohoto rozhraní vstupně-výstupní požadavky a hostitel upozorní modul runtime výsledku takových požadavků pomocí rozhraní `ICLRIoCompletionManager`.  
+ Hostitel implementuje abstrakci dokončení vstupně-výstupních operací pomocí rozhraní [IHostIoCompletionManager](ihostiocompletionmanager-interface.md) . CLR vytvoří v/v požadavky prostřednictvím tohoto rozhraní a hostitel upozorní modul runtime na výsledek takových požadavků pomocí `ICLRIoCompletionManager` rozhraní.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** MSCorEE. h  
   
  **Knihovna:** Zahrnuto jako prostředek v knihovně MSCorEE. dll  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [IHostIoCompletionManager – rozhraní](../../../../docs/framework/unmanaged-api/hosting/ihostiocompletionmanager-interface.md)
-- [IHostThreadPoolManager – rozhraní](../../../../docs/framework/unmanaged-api/hosting/ihostthreadpoolmanager-interface.md)
-- [Rozhraní pro hostování](../../../../docs/framework/unmanaged-api/hosting/hosting-interfaces.md)
+- [IHostIoCompletionManager – rozhraní](ihostiocompletionmanager-interface.md)
+- [IHostThreadPoolManager – rozhraní](ihostthreadpoolmanager-interface.md)
+- [Rozhraní pro hostování](hosting-interfaces.md)

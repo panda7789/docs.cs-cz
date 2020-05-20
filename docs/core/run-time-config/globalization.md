@@ -1,21 +1,21 @@
 ---
 title: Nastavení konfigurace globalizace
 description: Přečtěte si o nastaveních prostředí runtime, která konfigurují aspekty globalizace aplikace .NET Core, například jak analyzuje data v japonštině.
-ms.date: 11/27/2019
+ms.date: 05/18/2020
 ms.topic: reference
-ms.openlocfilehash: 7668c345181d7c08cfca9c5cb76b8addd76223ec
-ms.sourcegitcommit: 1cb64b53eb1f253e6a3f53ca9510ef0be1fd06fe
+ms.openlocfilehash: 2561e66e6d18cb4036b0719f7e34ea66540fe095
+ms.sourcegitcommit: 0926684d8d34f4c6b5acce58d2193db093cb9cf2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82506802"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83703126"
 ---
 # <a name="run-time-configuration-options-for-globalization"></a>Možnosti konfigurace běhového běhu pro globalizaci
 
 ## <a name="invariant-mode"></a>Invariantní režim
 
 - Určuje, jestli aplikace .NET Core běží v režimu invariantní v rámci globalizace bez přístupu k datům a chováním specifickým pro jazykovou verzi.
-- Výchozí: Spusťte aplikaci s přístupem k kulturním datům (`false`).
+- Výchozí: Spusťte aplikaci s přístupem k kulturním datům ( `false` ).
 - Další informace najdete v tématu [režim invariant globalizace .NET Core](https://github.com/dotnet/runtime/blob/master/docs/design/features/globalization-invariant-mode.md).
 
 | | Název nastavení | Hodnoty |
@@ -52,8 +52,8 @@ Soubor projektu:
 
 ## <a name="era-year-ranges"></a>Rozsahy roků období
 
-- Určuje, zda jsou uvolněny oblasti pro kalendáře, které podporují více mazání, nebo zda data, která přecházejí do rozsahu <xref:System.ArgumentOutOfRangeException>dat v období, vyvolají.
-- Výchozí: kontroly rozsahu jsou uvolněny`false`().
+- Určuje, zda jsou uvolněny oblasti pro kalendáře, které podporují více mazání, nebo zda data, která přecházejí do rozsahu dat v období, vyvolají <xref:System.ArgumentOutOfRangeException> .
+- Výchozí: kontroly rozsahu jsou uvolněny ( `false` ).
 - Další informace najdete v tématu [kalendáře, mazání a rozsahy dat: odlehčené kontroly rozsahu](../../standard/datetime/working-with-calendars.md#calendars-eras-and-date-ranges-relaxed-range-checks).
 
 | | Název nastavení | Hodnoty |
@@ -64,7 +64,7 @@ Soubor projektu:
 ## <a name="japanese-date-parsing"></a>Analýza data v japonštině
 
 - Určuje, zda je řetězec, který obsahuje hodnotu "1" nebo "Gannen" jako rok úspěšně analyzován, nebo zda je podporován pouze "1".
-- Výchozí: Analyzujte řetězce, které obsahují buď "1" nebo "Gannen" jako rok`false`().
+- Výchozí: Analyzujte řetězce, které obsahují buď "1" nebo "Gannen" jako rok ( `false` ).
 - Další informace najdete v tématu [reprezentace kalendářních dat v kalendářích s více vymazáními](../../standard/datetime/working-with-calendars.md#represent-dates-in-calendars-with-multiple-eras).
 
 | | Název nastavení | Hodnoty |
@@ -75,10 +75,21 @@ Soubor projektu:
 ## <a name="japanese-year-format"></a>Formát japonského roku
 
 - Určuje, zda je první rok japonského období v japonštině formátován jako "Gannen" nebo jako číslo.
-- Výchozí: naformátujte první rok jako "Gannen"`false`().
+- Výchozí: naformátujte první rok jako "Gannen" ( `false` ).
 - Další informace najdete v tématu [reprezentace kalendářních dat v kalendářích s více vymazáními](../../standard/datetime/working-with-calendars.md#represent-dates-in-calendars-with-multiple-eras).
 
 | | Název nastavení | Hodnoty |
 | - | - | - |
 | **runtimeconfig. JSON** | `Switch.System.Globalization.FormatJapaneseFirstYearAsANumber` | `false`– formátovat jako "Gannen"<br/>`true`– formátovat jako číslo |
 | **Proměnná prostředí** | – | – |
+
+## <a name="nls"></a>NLS
+
+- Určuje, jestli rozhraní .NET pro aplikace pro Windows používá rozhraní API pro globalizaci (National Language Support) nebo mezinárodní komponenty pro rozhraní Unicode (ICU). Rozhraní .NET 5,0 a novější verze používají rozhraní API globalizace ICU ve výchozím nastavení ve Windows 10 může 2019 Update a novějších verzí.
+- Pokud toto nastavení vynecháte, .NET ve výchozím nastavení používá rozhraní API globalizace ICU. To je ekvivalentní nastavení hodnoty na `false` .
+- Další informace naleznete v tématu [rozhraní API globalizace použití knihoven ICU ve Windows](../compatibility/3.1-5.0.md#globalization-apis-use-icu-libraries-on-windows).
+
+| | Název nastavení | Hodnoty | Vedou |
+| - | - | - | - |
+| **runtimeconfig. JSON** | `System.Globalization.UseNls` | `false`-Použít rozhraní API globalizace ICU<br/>`true`– Použití rozhraní API globalizace NLS | .NET 5,0 |
+| **Proměnná prostředí** | `DOTNET_SYSTEM_GLOBALIZATION_USENLS` | `false`-Použít rozhraní API globalizace ICU<br/>`true`– Použití rozhraní API globalizace NLS | .NET 5,0 |

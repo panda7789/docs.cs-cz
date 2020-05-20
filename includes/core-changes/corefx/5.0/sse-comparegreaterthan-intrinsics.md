@@ -1,14 +1,14 @@
 ---
-ms.openlocfilehash: 6c35174be50ffc5031d0c4183bd936b4ef27757e
-ms.sourcegitcommit: d9c7ac5d06735a01c1fafe34efe9486734841a72
+ms.openlocfilehash: 251b8df571dc08ab8362a6e8551f0f9f62c25a11
+ms.sourcegitcommit: 0926684d8d34f4c6b5acce58d2193db093cb9cf2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/06/2020
-ms.locfileid: "82859799"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83702479"
 ---
 ### <a name="sse-and-sse2-comparegreaterthan-methods-properly-handle-nan-inputs"></a>Metody SSE a SSE2 CompareGreaterThan správně zpracovávají vstupy NaN.
 
-Následující <xref:System.Runtime.Intrinsics.X86.Sse?displayProperty=nameWithType> metody a <xref:System.Runtime.Intrinsics.X86.Sse2?displayProperty=nameWithType> byly opraveny tak, aby správně `NaN` zpracovaly vstupy a odpovídaly hardwarovému chování ekvivalentních metod <xref:System.Runtime.Intrinsics.X86.Avx?displayProperty=nameWithType> ve třídě:
+Následující <xref:System.Runtime.Intrinsics.X86.Sse?displayProperty=nameWithType> metody a byly <xref:System.Runtime.Intrinsics.X86.Sse2?displayProperty=nameWithType> opraveny tak, aby správně zpracovaly `NaN` vstupy a odpovídaly hardwarovému chování ekvivalentních metod ve <xref:System.Runtime.Intrinsics.X86.Avx?displayProperty=nameWithType> třídě:
 
 * `CompareGreaterThan`
 * `CompareGreaterThanOrEqual`
@@ -27,7 +27,7 @@ Počínaje rozhraním .NET 5,0 tyto metody správně zpracovávají `NaN` vstupy
 
 Standardní architektury prostředí Streaming SIMD Extensions (SSE) a Streaming SIMD Extensions 2 (SSE2) neposkytují přímou hardwarovou podporu pro tyto metody porovnání, takže se implementují v softwaru. Dříve byly metody nesprávně implementovány a nesprávně zpracovaly `NaN` vstupy. Pro kód, který je nativně z nativního, může chybné chování způsobit chyby. Pro 256 cestu kódu mohou metody také vytvořit různé výsledky pro ekvivalentní metody ve <xref:System.Runtime.Intrinsics.X86.Avx> třídě.
 
-Jako příklad, jak byly metody dříve nesprávné, můžete implementovat `CompareNotGreaterThan(x,y)` jako `CompareLessThanOrEqual(x,y)` pro běžná celá čísla. U `NaN` vstupů však tato logika počítá špatný výsledek. Místo toho použití `CompareNotLessThan(y,x)` porovná čísla správně *a* bere `NaN` v potaz vstupy.
+Jako příklad, jak byly metody dříve nesprávné, můžete implementovat `CompareNotGreaterThan(x,y)` jako `CompareLessThanOrEqual(x,y)` pro běžná celá čísla. U `NaN` vstupů však tato logika počítá špatný výsledek. Místo toho použití `CompareNotLessThan(y,x)` porovná čísla správně *a* bere v potaz `NaN` vstupy.
 
 #### <a name="version-introduced"></a>Představená verze
 
@@ -74,7 +74,7 @@ Knihovny Core .NET
 
 <!--
 
-### Affected APIs
+#### Affected APIs
 
 - `M:System.Runtime.Intrinsics.X86.Sse.CompareGreaterThan(System.Runtime.Intrinsics.Vector128{System.Single},System.Runtime.Intrinsics.Vector128{System.Single})`
 - `M:System.Runtime.Intrinsics.X86.Sse.CompareGreaterThanOrEqual(System.Runtime.Intrinsics.Vector128{System.Single},System.Runtime.Intrinsics.Vector128{System.Single})`

@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: d82d633e-cce6-427c-8b02-8227e34e12ba
 topic_type:
 - apiref
-ms.openlocfilehash: d8df78e3d5cebe5378dfba11dc0ea93cc8e346eb
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: e32714bba2403752f1ac2551ab182f2655f1fa75
+ms.sourcegitcommit: 0926684d8d34f4c6b5acce58d2193db093cb9cf2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79178105"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83703853"
 ---
 # <a name="iclrhostbindingpolicymanagermodifyapplicationpolicy-method"></a>ICLRHostBindingPolicyManager::ModifyApplicationPolicy – metoda
-Upraví zásady vazby pro zadané sestavení a vytvoří novou verzi zásady.  
+Upraví zásadu vazby pro zadané sestavení a vytvoří novou verzi zásad.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,51 +41,51 @@ HRESULT  ModifyApplicationPolicy (
   
 ## <a name="parameters"></a>Parametry  
  `pwzSourceAssemblyIdentity`  
- [v] Identita sestavení upravit.  
+ pro Identita sestavení, které má být upraveno.  
   
  `pwzTargetAssemblyIdentity`  
- [v] Nová identita upravenésestavení.  
+ pro Nová identita upraveného sestavení.  
   
  `pbApplicationPolicy`  
- [v] Ukazatel na vyrovnávací paměť, která obsahuje data zásad vazby pro sestavení upravit.  
+ pro Ukazatel na vyrovnávací paměť, která obsahuje data zásad vazby pro sestavení, které chcete upravit.  
   
  `cbAppPolicySize`  
- [v] Velikost zásady vazby, které mají být nahrazeny.  
+ pro Velikost zásady vazby, která má být nahrazena.  
   
  `dwPolicyModifyFlags`  
- [v] Logická kombinace nebo hodnot [EHostBindingPolicyModifyFlags,](../../../../docs/framework/unmanaged-api/hosting/ehostbindingpolicymodifyflags-enumeration.md) označující řízení přesměrování.  
+ pro Logická nebo kombinovaná hodnota [EHostBindingPolicyModifyFlags –](ehostbindingpolicymodifyflags-enumeration.md) , která označuje řízení přesměrování.  
   
  `pbNewApplicationPolicy`  
- [out] Ukazatel na vyrovnávací paměť, která obsahuje nová data zásad vazby.  
+ mimo Ukazatel na vyrovnávací paměť, která obsahuje nová data zásad vazby.  
   
  `pcbNewAppPolicySize`  
- [dovnitř, ven] Ukazatel na velikost vyrovnávací paměti zásad y nové vazby.  
+ [in, out] Ukazatel na velikost nové vyrovnávací paměti zásad vazby.  
   
 ## <a name="return-value"></a>Návratová hodnota  
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
-|S_OK|Zásada byla úspěšně změněna.|  
-|E_invalidarg|`pwzSourceAssemblyIdentity`nebo `pwzTargetAssemblyIdentity` byl nulový odkaz.|  
-|ERROR_INSUFFICIENT_BUFFER|`pbNewApplicationPolicy`je příliš malý.|  
-|HOST_E_CLRNOTAVAILABLE|Běžný jazyk runtime (CLR) nebyl načten do procesu nebo CLR je ve stavu, ve kterém nelze spustit spravovaný kód nebo úspěšně zpracovat volání.|  
-|HOST_E_TIMEOUT|Časový čas hovoru byl vypován.|  
+|S_OK|Zásady se úspěšně změnily.|  
+|E_INVALIDARG|`pwzSourceAssemblyIdentity`nebo `pwzTargetAssemblyIdentity` se jednalo o odkaz s hodnotou null.|  
+|ERROR_INSUFFICIENT_BUFFER|`pbNewApplicationPolicy`je příliš malá.|  
+|HOST_E_CLRNOTAVAILABLE|Modul CLR (Common Language Runtime) nebyl načten do procesu, nebo je modul CLR ve stavu, ve kterém nemůže spustit spravovaný kód nebo úspěšně zpracovat volání.|  
+|HOST_E_TIMEOUT|Vypršel časový limit volání.|  
 |HOST_E_NOT_OWNER|Volající nevlastní zámek.|  
-|HOST_E_ABANDONED|Událost byla zrušena, zatímco na ní čekalo blokované vlákno nebo vlákno.|  
-|E_fail|Došlo k neznámému katastrofickému selhání. Po metoda vrátí E_FAIL CLR již není použitelný v rámci procesu. Následná volání metod hostování vrátí HOST_E_CLRNOTAVAILABLE.|  
+|HOST_E_ABANDONED|Událost byla zrušena při čekání na blokované vlákno nebo vlákna.|  
+|E_FAIL|Došlo k neznámé chybě závažnosti. Poté, co metoda vrátí E_FAIL, CLR již není v rámci procesu možné použít. Následná volání metod hostování vrací HOST_E_CLRNOTAVAILABLE.|  
   
 ## <a name="remarks"></a>Poznámky  
- Metoda `ModifyApplicationPolicy` může být volána dvakrát. První volání by mělo poskytnout `pbNewApplicationPolicy` hodnotu null pro parametr. Toto volání se vrátí `pcbNewAppPolicySize`s potřebnou hodnotou pro . Druhé volání by mělo `pcbNewAppPolicySize`zadat tuto hodnotu pro a `pbNewApplicationPolicy`přejděte na vyrovnávací paměť této velikosti pro .  
+ `ModifyApplicationPolicy`Metodu lze volat dvakrát. První volání by mělo pro parametr dodat hodnotu null `pbNewApplicationPolicy` . Toto volání se vrátí s potřebnou hodnotou pro `pcbNewAppPolicySize` . Druhé volání by mělo uvést tuto hodnotu pro `pcbNewAppPolicySize` a odkazovat na vyrovnávací paměť této velikosti pro `pbNewApplicationPolicy` .  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Záhlaví:** MSCorEE.h  
+ **Hlavička:** MSCorEE. h  
   
- **Knihovna:** Zahrnuto jako prostředek v souboru MSCorEE.dll  
+ **Knihovna:** Zahrnuto jako prostředek v knihovně MSCorEE. dll  
   
- **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také
 
-- [ICLRHostBindingPolicyManager – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrhostbindingpolicymanager-interface.md)
+- [ICLRHostBindingPolicyManager – rozhraní](iclrhostbindingpolicymanager-interface.md)

@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 66eeca30-adb4-45f4-aff5-347564c95724
 topic_type:
 - apiref
-ms.openlocfilehash: 3c6def32c63e3557a4de72baf7b1c3e67feb4891
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 57f771d933e896677dfc0bd5d9dac58da2af22c8
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73136533"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83617253"
 ---
 # <a name="getclridentitymanager-function"></a>GetCLRIdentityManager – funkce
 Získá ukazatel na rozhraní, které umožňuje modulu CLR (Common Language Runtime) spravovat identity.  
@@ -37,23 +37,23 @@ STDAPI GetCLRIdentityManager(
   
 ## <a name="parameters"></a>Parametry  
  `riid`  
- pro `REFIID` (identifikátor rozhraní), který určuje rozhraní, které se má získat. Tato hodnota musí být buď IID_ICLRAssemblyIdentityManager, nebo IID_ICLRHostBindingPolicyManager.  
+ pro A `REFIID` (identifikátor rozhraní), který určuje rozhraní, které se má získat. Tato hodnota musí být buď IID_ICLRAssemblyIdentityManager, nebo IID_ICLRHostBindingPolicyManager.  
   
  `ppManager`  
- mimo Ukazatel na adresu buď [ICLRAssemblyIdentityManager](../../../../docs/framework/unmanaged-api/hosting/iclrassemblyidentitymanager-interface.md) , nebo objektu [ICLRHostBindingPolicyManager](../../../../docs/framework/unmanaged-api/hosting/iclrhostbindingpolicymanager-interface.md) .  
+ mimo Ukazatel na adresu buď [ICLRAssemblyIdentityManager](../../../../docs/framework/unmanaged-api/hosting/iclrassemblyidentitymanager-interface.md) , nebo objektu [ICLRHostBindingPolicyManager](iclrhostbindingpolicymanager-interface.md) .  
   
 ## <a name="remarks"></a>Poznámky  
- Chcete-li získat ukazatel na funkci `GetCLRIdentityManager`, zavolejte funkci [GetRealProcAddress –](../../../../docs/framework/unmanaged-api/hosting/getrealprocaddress-function.md) .  
+ Chcete-li získat ukazatel na funkci, zavolejte funkci [GetRealProcAddress –](getrealprocaddress-function.md) `GetCLRIdentityManager` .  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** MSCorEE. h  
   
  **Knihovna:** Knihovny Mscorwks. dll  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Zastaralé funkce pro hostování CLR](../../../../docs/framework/unmanaged-api/hosting/deprecated-clr-hosting-functions.md)
+- [Zastaralé funkce hostování CLR](deprecated-clr-hosting-functions.md)

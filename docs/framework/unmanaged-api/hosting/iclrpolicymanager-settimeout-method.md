@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 954404fd-d52d-4e68-b582-8692f3a5f608
 topic_type:
 - apiref
-ms.openlocfilehash: 516ba1325404e757af8e38de239864b21b1640f1
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: b3e66a1e04ca3f3031adf1f0f7f71d689ee76b04
+ms.sourcegitcommit: 0926684d8d34f4c6b5acce58d2193db093cb9cf2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73140756"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83703419"
 ---
 # <a name="iclrpolicymanagersettimeout-method"></a>ICLRPolicyManager::SetTimeout – metoda
 Nastaví hodnotu časového limitu pro zadanou operaci.  
@@ -36,7 +36,7 @@ HRESULT SetTimeout (
   
 ## <a name="parameters"></a>Parametry  
  `operation`  
- pro Jedna z hodnot [EClrOperation –](../../../../docs/framework/unmanaged-api/hosting/eclroperation-enumeration.md) , která označuje operaci modulu CLR (Common Language Runtime), pro kterou chcete nastavit časový limit. Podporovány jsou následující hodnoty:  
+ pro Jedna z hodnot [EClrOperation –](eclroperation-enumeration.md) , která označuje operaci modulu CLR (Common Language Runtime), pro kterou chcete nastavit časový limit. Podporovány jsou následující hodnoty:  
   
 - OPR_AppDomainUnload  
   
@@ -53,25 +53,25 @@ HRESULT SetTimeout (
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
-|S_OK|`SetTimeout` byla úspěšně vrácena.|  
+|S_OK|`SetTimeout`úspěšně vráceno.|  
 |HOST_E_CLRNOTAVAILABLE|Modul CLR nebyl načten do procesu, nebo je modul CLR ve stavu, ve kterém nemůže spustit spravovaný kód nebo úspěšně zpracovat volání.|  
 |HOST_E_TIMEOUT|Vypršel časový limit volání.|  
 |HOST_E_NOT_OWNER|Volající nevlastní zámek.|  
 |HOST_E_ABANDONED|Událost byla zrušena při čekání na blokované vlákno nebo vlákna.|  
-|E_FAIL|Došlo k neznámé chybě závažnosti. Poté, co metoda vrátí E_FAIL, CLR již není v rámci procesu použitelný. Následná volání metod hostování vrací HOST_E_CLRNOTAVAILABLE.|  
-|E_INVALIDARG|Pro zadaný `operation`nelze nastavit časový limit nebo byla zadána neplatná hodnota pro `operation`.|  
+|E_FAIL|Došlo k neznámé chybě závažnosti. Poté, co metoda vrátí E_FAIL, CLR již není v rámci procesu možné použít. Následná volání metod hostování vrací HOST_E_CLRNOTAVAILABLE.|  
+|E_INVALIDARG|Pro zadanou hodnotu nelze nastavit časový limit `operation` nebo byla zadána neplatná hodnota pro `operation` .|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** MSCorEE. h  
   
  **Knihovna:** Zahrnuto jako prostředek v knihovně MSCorEE. dll  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [EClrOperation – výčet](../../../../docs/framework/unmanaged-api/hosting/eclroperation-enumeration.md)
-- [ICLRControl – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrcontrol-interface.md)
-- [ICLRPolicyManager – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrpolicymanager-interface.md)
+- [EClrOperation – výčet](eclroperation-enumeration.md)
+- [ICLRControl – rozhraní](iclrcontrol-interface.md)
+- [ICLRPolicyManager – rozhraní](iclrpolicymanager-interface.md)

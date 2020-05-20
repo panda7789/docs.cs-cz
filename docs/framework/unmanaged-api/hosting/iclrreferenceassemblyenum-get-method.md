@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: f21c1612-9c5d-4abc-a337-577086d29c17
 topic_type:
 - apiref
-ms.openlocfilehash: 8f479443e168c3fc7c627c3227e59f1e8b54f0e0
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 5afa7b37b804b6a11a894e0e6c7708c7787a20ae
+ms.sourcegitcommit: 0926684d8d34f4c6b5acce58d2193db093cb9cf2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73120506"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83703361"
 ---
 # <a name="iclrreferenceassemblyenumget-method"></a>ICLRReferenceAssemblyEnum::Get – metoda
 Získá identitu sestavení v zadaném indexu.  
@@ -43,14 +43,14 @@ HRESULT Get (
  mimo Vyrovnávací paměť obsahující data identity sestavení.  
   
  `pcchBufferSize`  
- [in, out] Velikost vyrovnávací paměti `pwzBuffer`.  
+ [in, out] Velikost `pwzBuffer` vyrovnávací paměti.  
   
 ## <a name="return-value"></a>Návratová hodnota  
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
-|S_OK|`Get` byla úspěšně vrácena.|  
-|ERROR_INSUFFICIENT_BUFFER|`pwzBuffer` je příliš malý.|  
+|S_OK|`Get`úspěšně vráceno.|  
+|ERROR_INSUFFICIENT_BUFFER|`pwzBuffer`je příliš malá.|  
 |ERROR_NO_MORE_ITEMS|Výčet neobsahuje žádné další položky.|  
 |HOST_E_CLRNOTAVAILABLE|Modul CLR (Common Language Runtime) nebyl načten do procesu, nebo je modul CLR ve stavu, ve kterém nemůže spustit spravovaný kód nebo úspěšně zpracovat volání.|  
 |HOST_E_TIMEOUT|Vypršel časový limit volání.|  
@@ -59,18 +59,18 @@ HRESULT Get (
 |E_FAIL|Došlo k neznámé chybě závažnosti. Pokud metoda vrátí E_FAIL, CLR již není v rámci procesu použitelný. Následná volání metod hostování vrací HOST_E_CLRNOTAVAILABLE.|  
   
 ## <a name="remarks"></a>Poznámky  
- `Get` se obvykle volá dvakrát. První volání dodá hodnotu null pro `pwzBuffer`a nastaví `pcchBufferSize` na velikost vhodnou pro `pwzBuffer`. Druhé volání dodá vhodně velikost `pwzBuffer`a obsahuje kanonická data identity sestavení po dokončení.  
+ `Get`se obvykle nazývá dvakrát. První volání dodá hodnotu null pro `pwzBuffer` a nastaví `pcchBufferSize` velikost vhodnou pro `pwzBuffer` . Druhé volání dodá odpovídající velikost `pwzBuffer` a obsahuje kanonická data identity sestavení po dokončení.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** MSCorEE. h  
   
  **Knihovna:** Zahrnuto jako prostředek v knihovně MSCorEE. dll  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [ICLRAssemblyReferenceList – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrassemblyreferencelist-interface.md)
-- [ICLRReferenceAssemblyEnum – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrreferenceassemblyenum-interface.md)
+- [ICLRAssemblyReferenceList – rozhraní](iclrassemblyreferencelist-interface.md)
+- [ICLRReferenceAssemblyEnum – rozhraní](iclrreferenceassemblyenum-interface.md)

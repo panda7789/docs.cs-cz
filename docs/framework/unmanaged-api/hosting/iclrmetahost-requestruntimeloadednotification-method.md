@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: 0d5ccc4d-0193-41f5-af54-45d7b70d5321
 topic_type:
 - apiref
-ms.openlocfilehash: 23f868bba2dc058d99f1c5c09e9b311b1ff3634a
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 6813f72f9d27aeff90f797a6ca9370b22e03e6f0
+ms.sourcegitcommit: 0926684d8d34f4c6b5acce58d2193db093cb9cf2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73140901"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83703703"
 ---
 # <a name="iclrmetahostrequestruntimeloadednotification-method"></a>ICLRMetaHost::RequestRuntimeLoadedNotification – metoda
-Poskytuje funkci zpětného volání, která je zaručena k volání při prvním načtení verze modulu CLR (Common Language Runtime), ale ještě nebyla spuštěna. Tato metoda nahrazuje funkci [LockClrVersion –](../../../../docs/framework/unmanaged-api/hosting/lockclrversion-function.md) .  
+Poskytuje funkci zpětného volání, která je zaručena k volání při prvním načtení verze modulu CLR (Common Language Runtime), ale ještě nebyla spuštěna. Tato metoda nahrazuje funkci [LockClrVersion –](lockclrversion-function.md) .  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -42,7 +42,7 @@ HRESULT RequestRuntimeLoadedNotification (
 |HRESULT|Popis|  
 |-------------|-----------------|  
 |S_OK|Metoda byla úspěšně dokončena.|  
-|E_POINTER|`pCallbackFunction` je null.|  
+|E_POINTER|`pCallbackFunction`má hodnotu null.|  
   
 ## <a name="remarks"></a>Poznámky  
  Zpětné volání funguje následujícím způsobem:  
@@ -76,27 +76,27 @@ typedef void (__stdcall *RuntimeLoadedCallbackFnPtr)(
     typedef HRESULT (__stdcall *CallbackThreadUnsetFnPtr)();  
     ```  
   
- Pokud hostitel zamýšlí načíst nebo způsobí, že jiný modul runtime bude načten znovu, je nutné použít parametry `pfnCallbackThreadSet` a `pfnCallbackThreadUnset`, které jsou k dispozici ve funkci zpětného volání následujícím způsobem:  
+ Pokud hostitel zamýšlí načíst nebo způsobí, že jiný modul runtime bude načten znovu, `pfnCallbackThreadSet` `pfnCallbackThreadUnset` parametry a, které jsou zadány ve funkci zpětného volání, musí být použity následujícím způsobem:  
   
-- `pfnCallbackThreadSet` musí být voláno vláknem, které může způsobit zatížení za běhu před tím, než se provede pokus o načtení.  
+- `pfnCallbackThreadSet`musí být voláno vláknem, které může způsobit načtení za běhu před tím, než se provede pokus o načtení.  
   
-- `pfnCallbackThreadUnset` musí být volána, pokud vlákno již nebude způsobovat takové načtení za běhu (a před návratem z prvotního zpětného volání).  
+- `pfnCallbackThreadUnset`musí být volána, pokud vlákno již nebude způsobovat takové načtení za běhu (a před návratem z prvotního zpětného volání).  
   
-- `pfnCallbackThreadSet` a `pfnCallbackThreadUnset` se nepoužívají.  
+- `pfnCallbackThreadSet`a `pfnCallbackThreadUnset` zároveň nejsou znovu zapro.  
   
 > [!NOTE]
-> Hostitelské aplikace nesmí volat `pfnCallbackThreadSet` a `pfnCallbackThreadUnset` mimo obor parametru `pCallbackFunction`.  
+> Hostitelské aplikace nesmí volat `pfnCallbackThreadSet` a `pfnCallbackThreadUnset` mimo rozsah `pCallbackFunction` parametru.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** MetaHost. h  
   
  **Knihovna:** Zahrnuto jako prostředek v knihovně MSCorEE. dll  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [ICLRMetaHost – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrmetahost-interface.md)
-- [Hostování](../../../../docs/framework/unmanaged-api/hosting/index.md)
+- [ICLRMetaHost – rozhraní](iclrmetahost-interface.md)
+- [Hostování](index.md)

@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 5c834aa1-f2db-408a-b230-c7bec093d364
 topic_type:
 - apiref
-ms.openlocfilehash: 59aa904d4c67326b60381d3476eaab179d7fa42b
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 631301a10aee96bb00aeda6b0b8695f0aea186a8
+ms.sourcegitcommit: 0926684d8d34f4c6b5acce58d2193db093cb9cf2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73140801"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83703473"
 ---
 # <a name="iclrpolicymanager-interface"></a>ICLRPolicyManager – rozhraní
 Poskytuje metody, které umožňují hostiteli určit akce zásad, které mají být provedeny v případě selhání a časových limitů.  
@@ -28,25 +28,25 @@ Poskytuje metody, které umožňují hostiteli určit akce zásad, které mají 
   
 |Metoda|Popis|  
 |------------|-----------------|  
-|[SetActionOnFailure – metoda](../../../../docs/framework/unmanaged-api/hosting/iclrpolicymanager-setactiononfailure-method.md)|Určuje akci zásad, kterou by modul CLR (Common Language Runtime) měl provést při výskytu zadaného selhání.|  
-|[SetActionOnTimeout – metoda](../../../../docs/framework/unmanaged-api/hosting/iclrpolicymanager-setactionontimeout-method.md)|Určuje akci zásad, kterou by měl modul CLR provést po vypršení časového limitu zadané operace.|  
-|[SetDefaultAction – metoda](../../../../docs/framework/unmanaged-api/hosting/iclrpolicymanager-setdefaultaction-method.md)|Určuje akci zásad, kterou by měl CLR provést, když dojde k zadané operaci.|  
-|[SetTimeout – metoda](../../../../docs/framework/unmanaged-api/hosting/iclrpolicymanager-settimeout-method.md)|Nastaví hodnotu časového limitu pro zadanou operaci.|  
-|[SetTimeoutAndAction – metoda](../../../../docs/framework/unmanaged-api/hosting/iclrpolicymanager-settimeoutandaction-method.md)|Nastaví hodnotu časového limitu pro zadanou operaci a určuje akci zásad, kterou by měl CLR provést při výskytu operace.|  
-|[SetUnhandledExceptionPolicy – metoda](../../../../docs/framework/unmanaged-api/hosting/iclrpolicymanager-setunhandledexceptionpolicy-method.md)|Určuje chování modulu CLR, pokud dojde k neošetřené výjimce.|  
+|[SetActionOnFailure – metoda](iclrpolicymanager-setactiononfailure-method.md)|Určuje akci zásad, kterou by modul CLR (Common Language Runtime) měl provést při výskytu zadaného selhání.|  
+|[SetActionOnTimeout – metoda](iclrpolicymanager-setactionontimeout-method.md)|Určuje akci zásad, kterou by měl modul CLR provést po vypršení časového limitu zadané operace.|  
+|[SetDefaultAction – metoda](iclrpolicymanager-setdefaultaction-method.md)|Určuje akci zásad, kterou by měl CLR provést, když dojde k zadané operaci.|  
+|[SetTimeout – metoda](iclrpolicymanager-settimeout-method.md)|Nastaví hodnotu časového limitu pro zadanou operaci.|  
+|[SetTimeoutAndAction – metoda](iclrpolicymanager-settimeoutandaction-method.md)|Nastaví hodnotu časového limitu pro zadanou operaci a určuje akci zásad, kterou by měl CLR provést při výskytu operace.|  
+|[SetUnhandledExceptionPolicy – metoda](iclrpolicymanager-setunhandledexceptionpolicy-method.md)|Určuje chování modulu CLR, pokud dojde k neošetřené výjimce.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** MSCorEE. h  
   
  **Knihovna:** Zahrnuto jako prostředek v knihovně MSCorEE. dll  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [EClrFailure – výčet](../../../../docs/framework/unmanaged-api/hosting/eclrfailure-enumeration.md)
-- [EClrOperation – výčet](../../../../docs/framework/unmanaged-api/hosting/eclroperation-enumeration.md)
-- [EPolicyAction – výčet](../../../../docs/framework/unmanaged-api/hosting/epolicyaction-enumeration.md)
-- [ICLRControl – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrcontrol-interface.md)
+- [EClrFailure – výčet](eclrfailure-enumeration.md)
+- [EClrOperation – výčet](eclroperation-enumeration.md)
+- [EPolicyAction – výčet](epolicyaction-enumeration.md)
+- [ICLRControl – rozhraní](iclrcontrol-interface.md)

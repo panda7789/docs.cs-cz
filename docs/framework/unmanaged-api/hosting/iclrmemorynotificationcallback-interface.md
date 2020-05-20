@@ -14,35 +14,35 @@ helpviewer_keywords:
 ms.assetid: 873639e2-4837-4568-83b3-4493e67e4174
 topic_type:
 - apiref
-ms.openlocfilehash: e980356ad592e137df7d08dadd77431b0e295380
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 52fc21044d345998ad72c045cdf5e80a8a03a38e
+ms.sourcegitcommit: 0926684d8d34f4c6b5acce58d2193db093cb9cf2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73140999"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83703799"
 ---
 # <a name="iclrmemorynotificationcallback-interface"></a>ICLRMemoryNotificationCallback – rozhraní
-Umožňuje hostiteli hlásit podmínky pro tlak paměti pomocí přístupu podobného funkci Win32 `CreateMemoryResourceNotification`.  
+Umožňuje hostiteli hlásit podmínky pro tlak paměti pomocí přístupu podobného `CreateMemoryResourceNotification` funkci Win32.  
   
 ## <a name="methods"></a>Metody  
   
 |Metoda|Popis|  
 |------------|-----------------|  
-|[OnMemoryNotification – metoda](../../../../docs/framework/unmanaged-api/hosting/iclrmemorynotificationcallback-onmemorynotification-method.md)|Upozorňuje modul CLR (Common Language Runtime) na zatížení paměti v počítači.|  
+|[OnMemoryNotification – metoda](iclrmemorynotificationcallback-onmemorynotification-method.md)|Upozorňuje modul CLR (Common Language Runtime) na zatížení paměti v počítači.|  
   
 ## <a name="remarks"></a>Poznámky  
- Hostitel používá rozhraní `ICLRMemoryNotificationCallback` k vyžádání prostředků volné paměti CLR.  
+ Hostitel používá `ICLRMemoryNotificationCallback` rozhraní k vyžádání prostředků volné paměti CLR.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** MSCorEE. h  
   
  **Knihovna:** Zahrnuto jako prostředek v knihovně MSCorEE. dll  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [IHostMemoryManager – rozhraní](../../../../docs/framework/unmanaged-api/hosting/ihostmemorymanager-interface.md)
-- [Rozhraní pro hostování](../../../../docs/framework/unmanaged-api/hosting/hosting-interfaces.md)
+- [IHostMemoryManager – rozhraní](ihostmemorymanager-interface.md)
+- [Rozhraní pro hostování](hosting-interfaces.md)
