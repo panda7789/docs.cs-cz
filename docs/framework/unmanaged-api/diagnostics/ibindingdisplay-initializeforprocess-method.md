@@ -15,17 +15,17 @@ helpviewer_keywords:
 ms.assetid: 59417acb-4e59-46ad-acfe-d827e6ab6078
 topic_type:
 - apiref
-ms.openlocfilehash: bb796a12868cc3e44394ab493f7838dc48ab4dc5
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 8645878132359b6218cd62b1ff707208de53704b
+ms.sourcegitcommit: 7b1497c1927cb449cefd313bc5126ae37df30746
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74448493"
+ms.lasthandoff: 05/16/2020
+ms.locfileid: "83442147"
 ---
-# <a name="ibindingdisplayinitializeforprocess-method"></a><span data-ttu-id="2096f-102">IBindingDisplay::InitializeForProcess – metoda</span><span class="sxs-lookup"><span data-stu-id="2096f-102">IBindingDisplay::InitializeForProcess Method</span></span>
-<span data-ttu-id="2096f-103">Inicializuje objekt [IBindingDisplay](../../../../docs/framework/unmanaged-api/diagnostics/ibindingdisplay-interface.md) .</span><span class="sxs-lookup"><span data-stu-id="2096f-103">Initializes the [IBindingDisplay](../../../../docs/framework/unmanaged-api/diagnostics/ibindingdisplay-interface.md) object.</span></span>  
+# <a name="ibindingdisplayinitializeforprocess-method"></a><span data-ttu-id="319c0-102">IBindingDisplay::InitializeForProcess – metoda</span><span class="sxs-lookup"><span data-stu-id="319c0-102">IBindingDisplay::InitializeForProcess Method</span></span>
+<span data-ttu-id="319c0-103">Inicializuje objekt [IBindingDisplay](ibindingdisplay-interface.md) .</span><span class="sxs-lookup"><span data-stu-id="319c0-103">Initializes the [IBindingDisplay](ibindingdisplay-interface.md) object.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="2096f-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="2096f-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="319c0-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="319c0-104">Syntax</span></span>  
   
 ```cpp  
 HRESULT InitializeForProcess (  
@@ -33,22 +33,22 @@ HRESULT InitializeForProcess (
 );  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="2096f-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="2096f-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="319c0-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="319c0-105">Parameters</span></span>  
  `pid`  
- <span data-ttu-id="2096f-106">pro Identifikátor procesu.</span><span class="sxs-lookup"><span data-stu-id="2096f-106">[in] The process identifier.</span></span>  
+ <span data-ttu-id="319c0-106">pro Identifikátor procesu.</span><span class="sxs-lookup"><span data-stu-id="319c0-106">[in] The process identifier.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="2096f-107">Poznámky</span><span class="sxs-lookup"><span data-stu-id="2096f-107">Remarks</span></span>  
- <span data-ttu-id="2096f-108">Ladicí program volá metodu `InitializeForProcess` v době vytváření pro inicializaci zobrazení vazby.</span><span class="sxs-lookup"><span data-stu-id="2096f-108">The debugger calls the `InitializeForProcess` method at creation time to initialize the binding display.</span></span> <span data-ttu-id="2096f-109">`InitializeForProcess` musí být voláno v době vytváření před voláním jakékoli jiné metody v `IBindingDisplay`.</span><span class="sxs-lookup"><span data-stu-id="2096f-109">`InitializeForProcess` must be called at creation time before any other method on `IBindingDisplay` is called.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="319c0-107">Poznámky</span><span class="sxs-lookup"><span data-stu-id="319c0-107">Remarks</span></span>  
+ <span data-ttu-id="319c0-108">Ladicí program volá `InitializeForProcess` metodu v okamžiku vytvoření pro inicializaci zobrazení vazby.</span><span class="sxs-lookup"><span data-stu-id="319c0-108">The debugger calls the `InitializeForProcess` method at creation time to initialize the binding display.</span></span> <span data-ttu-id="319c0-109">`InitializeForProcess`musí být voláno v době vytváření před voláním jakékoli jiné metody `IBindingDisplay` .</span><span class="sxs-lookup"><span data-stu-id="319c0-109">`InitializeForProcess` must be called at creation time before any other method on `IBindingDisplay` is called.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="2096f-110">Požadavky</span><span class="sxs-lookup"><span data-stu-id="2096f-110">Requirements</span></span>  
- <span data-ttu-id="2096f-111">**Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="2096f-111">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="319c0-110">Požadavky</span><span class="sxs-lookup"><span data-stu-id="319c0-110">Requirements</span></span>  
+ <span data-ttu-id="319c0-111">**Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="319c0-111">**Platforms:** See [System Requirements](../../get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="2096f-112">**Hlavička:** BindingDisplay. h</span><span class="sxs-lookup"><span data-stu-id="2096f-112">**Header:** BindingDisplay.h</span></span>  
+ <span data-ttu-id="319c0-112">**Hlavička:** BindingDisplay. h</span><span class="sxs-lookup"><span data-stu-id="319c0-112">**Header:** BindingDisplay.h</span></span>  
   
- <span data-ttu-id="2096f-113">**Knihovna:** BindingDisplay. idl</span><span class="sxs-lookup"><span data-stu-id="2096f-113">**Library:** BindingDisplay.idl</span></span>  
+ <span data-ttu-id="319c0-113">**Knihovna:** BindingDisplay. idl</span><span class="sxs-lookup"><span data-stu-id="319c0-113">**Library:** BindingDisplay.idl</span></span>  
   
- <span data-ttu-id="2096f-114">**Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="2096f-114">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
+ <span data-ttu-id="319c0-114">**Verze .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="319c0-114">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="2096f-115">Viz také:</span><span class="sxs-lookup"><span data-stu-id="2096f-115">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="319c0-115">Viz také</span><span class="sxs-lookup"><span data-stu-id="319c0-115">See also</span></span>
 
-- [<span data-ttu-id="2096f-116">IBindingDisplay – rozhraní</span><span class="sxs-lookup"><span data-stu-id="2096f-116">IBindingDisplay Interface</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/ibindingdisplay-interface.md)
+- [<span data-ttu-id="319c0-116">IBindingDisplay – rozhraní</span><span class="sxs-lookup"><span data-stu-id="319c0-116">IBindingDisplay Interface</span></span>](ibindingdisplay-interface.md)
