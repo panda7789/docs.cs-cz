@@ -1,55 +1,61 @@
 ### YamlMime:Landing
-title: Dokumentace architektury aplikace .NET
-summary: Přečtěte si, jak vytvářet aplikace .NET připravené pro produkční prostředí nebo migrovat existující aplikace do cloudu.
+title: Dokumentace k architektuře aplikací .NET
+summary: Naučte se vytvářet aplikace .NET připravené pro produkční prostředí nebo migrujete stávající aplikace do cloudu.
 metadata:
-  title: Dokumentace architektury aplikace .NET
-  description: Naučte se doporučené postupy pro navrhování, vytváření a migraci aplikací .NET.
+  title: Dokumentace k architektuře aplikací .NET
+  description: Seznamte se s doporučenými postupy pro architekty, vytváření a migraci aplikací .NET.
   ms.topic: landing-page
   ms.date: 03/19/2020
-  ms.openlocfilehash: 6e3573416191603e1e166979f955eaae6b74022c
-  ms.sourcegitcommit: b75a45f0cfe012b71b45dd9bf723adf32369d40c
+  ms.openlocfilehash: ff3b842d33ea3fd5d9cbed5b39b2757933c1a616
+  ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 03/24/2020
-  ms.locfileid: "80228599"
+  ms.lasthandoff: 05/19/2020
+  ms.locfileid: "83613639"
 landingContent:
 - title: Vývoj aplikací pro ASP.NET Core
   linkLists:
   - linkListType: concept
     links:
-    - text: Architekturmoderních webových aplikací s ASP.NET Core a Azure
+    - text: Architekt moderních webových aplikací pomocí ASP.NET Core a Azure
       url: modern-web-apps-azure/index.md
-    - text: Blazor pro vývojáře ASP.NET webových formulářů (Preview)
+    - text: Blazor pro vývojáře webových formulářů ASP.NET (Preview)
       url: blazor-for-web-forms-developers/index.md
     - text: gRPC ASP.NET Core pro vývojáře WCF
       url: grpc-for-wcf-developers/index.md
-- title: Vývoj cloudových aplikací .NET pro Azure
+- title: Vývoj aplikací .NET Native pro Cloud pro Azure
   linkLists:
   - linkListType: concept
     links:
-    - text: Navrhování cloudových nativních aplikací .NET pro Azure (Preview)
+    - text: Navrhování aplikací .NET nativních pro cloud pro Azure
       url: cloud-native/index.md
     - text: 'Bezserverové aplikace: Architektura, vzory a implementace v Azure'
       url: serverless/index.md
-    - text: '.NET Microservices: Architektura pro kontejnerizované aplikace .NET'
+    - text: 'Mikroslužby .NET: Architektura pro kontejnerizované aplikace .NET'
       url: microservices/index.md
   - linkListType: learn
     links:
-    - text: Hello World Microservice tutorial
+    - text: Hello World kurz mikroslužeb
       url: https://dotnet.microsoft.com/learn/aspnet/microservice-tutorial/intro
 - title: Migrace aplikací .NET do Azure
   linkLists:
   - linkListType: concept
     links:
-    - text: Modernizace stávajících aplikací .NET pomocí cloudu Azure a kontejnerů s Windows
+    - text: Modernizovat stávající aplikace .NET pomocí cloudu Azure a kontejnerů Windows
       url: modernize-with-azure-containers/index.md
     - text: Migrace aplikace .NET do Azure
       url: https://dotnet.microsoft.com/apps/cloud/migrate-to-azure
-- title: Principy devOps pro rozhraní .NET
+- title: Principy DevOps pro .NET
   linkLists:
   - linkListType: concept
     links:
     - text: Životní cyklus kontejnerizovaných aplikací Dockeru s platformou a nástroji Microsoft
       url: containerized-lifecycle/index.md
-    - text: ASP.NET základní devops s Azure
+    - text: ASP.NET Core DevOps s Azure
       url: /aspnet/core/azure/devops/
+- title: Aplikace modernizovat Desktop
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Modernizace desktopových aplikací ve Windows 10 s .NET Core 3.1
+      url: modernize-desktop/index.md
