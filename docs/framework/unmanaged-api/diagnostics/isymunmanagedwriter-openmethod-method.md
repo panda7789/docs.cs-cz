@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: fb90cb7f-af88-45e8-a99f-80a0bbddb08b
 topic_type:
 - apiref
-ms.openlocfilehash: 7b13ca9884516e95e0bb922efc5bc1a845344e38
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: d2d16ab0a29fadd3a64d906a64fc46c422e01c45
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74427915"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83610038"
 ---
 # <a name="isymunmanagedwriteropenmethod-method"></a>ISymUnmanagedWriter::OpenMethod – metoda
 Otevře metodu, do které jsou vygenerovány informace o symbolech. Daná metoda se označuje jako aktuální metoda pro volání pro definování bodů sekvence, parametrů a lexikálních oborů. Existuje implicitní lexikální obor kolem celé metody. Opětovné otevření metody, která byla dříve zavřena, vymaže všechny dříve definované symboly pro danou metodu. V jednu chvíli může existovat jenom jedna metoda Open.  
@@ -42,8 +42,8 @@ HRESULT OpenMethod(
 ## <a name="requirements"></a>Požadavky  
  **Hlavička:** CorSym. idl, CorSym. h  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [ISymUnmanagedWriter – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-interface.md)
-- [CloseMethod – metoda](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-closemethod-method.md)
-- [OpenMethod2 – metoda](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter3-openmethod2-method.md)
+- [ISymUnmanagedWriter – rozhraní](isymunmanagedwriter-interface.md)
+- [CloseMethod – metoda](isymunmanagedwriter-closemethod-method.md)
+- [OpenMethod2 – metoda](isymunmanagedwriter3-openmethod2-method.md)

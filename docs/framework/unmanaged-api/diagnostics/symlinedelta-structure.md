@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 9634e995-d46d-4397-ab66-cc5781d11e4e
 topic_type:
 - apiref
-ms.openlocfilehash: a1e83e4b8cb6603029f3b42b1a3b9ba4810c9039
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: fb3b89d25b4c2e23c3980b167db4279246c4d27b
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74438009"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83609297"
 ---
 # <a name="symlinedelta-structure"></a>SYMLINEDELTA – struktura
 Poskytuje informace obslužné rutině symbolů o metodách, které byly přesunuty v důsledku úprav.  
@@ -44,6 +44,6 @@ typedef struct _SYMLINEDELTA
 ## <a name="requirements"></a>Požadavky  
  **Hlavička:** CorSym. idl  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Struktury pro úložiště symbolů diagnostiky](../../../../docs/framework/unmanaged-api/diagnostics/diagnostics-symbol-store-structures.md)
+- [Struktury úložiště symbolů diagnostiky](diagnostics-symbol-store-structures.md)

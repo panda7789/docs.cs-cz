@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 9e986986-2223-4d5f-b040-85d716146924
 topic_type:
 - apiref
-ms.openlocfilehash: c8d0145b9dffe1c0ff6ed3281c90f3bcec082ab8
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 200e68abb3f176c267045bf2a5e7e35d18400519
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74428058"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83610090"
 ---
 # <a name="isymunmanagedwriterdefineconstant-method"></a>ISymUnmanagedWriter::DefineConstant – metoda
 Definuje název pro konstantní hodnotu.  
@@ -37,13 +37,13 @@ HRESULT DefineConstant(
   
 ## <a name="parameters"></a>Parametry  
  `name`  
- pro Ukazatel na `WCHAR`, který definuje název konstanty.  
+ pro Ukazatel na `WCHAR` , který definuje název konstanty.  
   
  `value`  
  pro Hodnota konstanty.  
   
  `cSig`  
- pro Velikost pole `signature`.  
+ pro Velikost `signature` pole.  
   
  `signature`  
  pro Podpis typu konstanty.  
@@ -54,7 +54,7 @@ HRESULT DefineConstant(
 ## <a name="requirements"></a>Požadavky  
  **Hlavička:** CorSym. idl, CorSym. h  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [ISymUnmanagedWriter – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-interface.md)
-- [DefineConstant2 – metoda](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter2-defineconstant2-method.md)
+- [ISymUnmanagedWriter – rozhraní](isymunmanagedwriter-interface.md)
+- [DefineConstant2 – metoda](isymunmanagedwriter2-defineconstant2-method.md)

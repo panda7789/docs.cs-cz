@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 93de56b6-4ae8-4cca-acdc-25a434623509
 topic_type:
 - apiref
-ms.openlocfilehash: 041df959139a0be77f40d6aa5655ff15f93fb26f
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 869d7d36ac24bfeee5b2361dd569945ad77eaf7f
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74427944"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83610064"
 ---
 # <a name="isymunmanagedwriterinitialize2-method"></a>ISymUnmanagedWriter::Initialize2 – metoda
 Nastaví rozhraní Emit metadat, ke kterému bude tento zapisovač přidružen, a nastaví název výstupního souboru, do kterého budou zapsány symboly ladění. Tato metoda také umožňuje nastavit konečné umístění souboru databáze programu (PDB).  
@@ -41,16 +41,16 @@ HRESULT Initialize2(
  pro Ukazatel na rozhraní Emit metadat.  
   
  `tempfilename`  
- pro Ukazatel na `WCHAR` obsahující název souboru, na který jsou zapsány symboly ladění. Pokud je název souboru zadán pro zapisovač, který nepoužívá názvy souborů, tento parametr je ignorován.  
+ pro Ukazatel na `WCHAR` , který obsahuje název souboru, do kterého jsou zapsány symboly ladění. Pokud je název souboru zadán pro zapisovač, který nepoužívá názvy souborů, tento parametr je ignorován.  
   
  `pIStream`  
- pro Je-li tento parametr zadán, zapisovač symbolů vygeneruje symboly do daného <xref:System.Runtime.InteropServices.ComTypes.IStream>, nikoli do souboru zadaného v parametru `filename`. Parametr `pIStream` je nepovinný.  
+ pro Je-li tento parametr zadán, zapisovač symbolů vygeneruje symboly do zadaného <xref:System.Runtime.InteropServices.ComTypes.IStream> souboru, nikoli do souboru zadaného v `filename` parametru. `pIStream`Parametr je nepovinný.  
   
  `fFullBuild`  
- [in] `true`, pokud se jedná o úplné opětovné sestavení; `false`, pokud se jedná o přírůstkovou kompilaci.  
+ [in] `true` Pokud se jedná o úplné opětovné sestavení; `false`Pokud se jedná o přírůstkovou kompilaci.  
   
  `finalfilename`  
- pro Ukazatel na `WCHAR`, který je řetězec cesty k konečnému umístění souboru PDB.  
+ pro Ukazatel na `WCHAR` řetězec, který je cestou k konečnému umístění souboru PDB.  
   
 ## <a name="return-value"></a>Návratová hodnota  
  S_OK, pokud je metoda úspěšná; v opačném případě E_FAIL nebo nějaký jiný kód chyby.  
@@ -58,7 +58,7 @@ HRESULT Initialize2(
 ## <a name="requirements"></a>Požadavky  
  **Hlavička:** CorSym. idl, CorSym. h  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [ISymUnmanagedWriter – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-interface.md)
-- [Initialize – metoda](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-initialize-method.md)
+- [ISymUnmanagedWriter – rozhraní](isymunmanagedwriter-interface.md)
+- [Initialize – metoda](isymunmanagedwriter-initialize-method.md)

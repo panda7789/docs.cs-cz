@@ -2,12 +2,12 @@
 title: ISymUnmanagedWriter4 – rozhraní
 ms.date: 03/30/2017
 ms.assetid: 4af5e8c0-987d-405e-b934-8b9e70fcae6e
-ms.openlocfilehash: a656777461c50b5a1593917278eb54abda982dc2
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: eaf2e8e60d9812ab6a31fb3b9050cbaae0f1a9d7
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73134570"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83609466"
 ---
 # <a name="isymunmanagedwriter4-interface"></a>ISymUnmanagedWriter4 – rozhraní
 Rozhraní Isymunmanagedwriter4 –  
@@ -23,12 +23,12 @@ Rozhraní Isymunmanagedwriter4 –
   
 |Metoda|Popis|  
 |------------|-----------------|  
-|[GetDebugInfoWithPadding – metoda](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter4-getdebuginfowithpadding-method.md)|Funguje stejně jako [Metoda GetDebugInfo –](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-getdebuginfo-method.md) s tím rozdílem, že řetězec cesty je doplněn nulami za ukončovacím znakem null, aby data řetězce měla pevnou velikost `MAX_PATH`. Odsazení je zadáno pouze v případě, že délka řetězce cesty je menší než `MAX_PATH`.<br /><br /> To usnadňuje psaní nástrojů, které rozdílují soubory PE.|  
+|[GetDebugInfoWithPadding – metoda](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter4-getdebuginfowithpadding-method.md)|Funguje stejně jako [Metoda GetDebugInfo –](isymunmanagedwriter-getdebuginfo-method.md) s tím rozdílem, že řetězec cesty je doplněn nulami za ukončovacím znakem null, aby data řetězce měla pevnou velikost `MAX_PATH` . Odsazení je zadáno pouze v případě, že délka řetězce cesty je menší než `MAX_PATH` .<br /><br /> To usnadňuje psaní nástrojů, které rozdílují soubory PE.|  
   
 ## <a name="requirements"></a>Požadavky  
  **Hlavička:** CorSym. idl, CorSym. h  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Rozhraní pro úložiště symbolů diagnostiky](../../../../docs/framework/unmanaged-api/diagnostics/diagnostics-symbol-store-interfaces.md)
-- [ISymUnmanagedWriter3 – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter3-interface.md)
+- [Rozhraní úložiště symbolů diagnostiky](diagnostics-symbol-store-interfaces.md)
+- [ISymUnmanagedWriter3 – rozhraní](isymunmanagedwriter3-interface.md)

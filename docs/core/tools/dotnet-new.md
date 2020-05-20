@@ -2,18 +2,18 @@
 title: dotnet – nový příkaz
 description: Příkaz dotnet New vytvoří nové projekty .NET Core založené na zadané šabloně.
 ms.date: 04/10/2020
-ms.openlocfilehash: 9a68baafa7ac3e6ad2fdc8f1c6e8621d6e15f1ff
-ms.sourcegitcommit: 1cb64b53eb1f253e6a3f53ca9510ef0be1fd06fe
+ms.openlocfilehash: 1544f519f2a5f6a1a6e042c1db720eff45f5d98c
+ms.sourcegitcommit: 7b1497c1927cb449cefd313bc5126ae37df30746
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82506854"
+ms.lasthandoff: 05/16/2020
+ms.locfileid: "83442238"
 ---
 # <a name="dotnet-new"></a>dotnet new
 
 **Tento článek se týká:** ✔️ .net Core 2,0 SDK a novějších verzí
 
-## <a name="name"></a>Název
+## <a name="name"></a>Name
 
 `dotnet new`– Vytvoří nový projekt, konfigurační soubor nebo řešení na základě zadané šablony.
 
@@ -21,7 +21,7 @@ ms.locfileid: "82506854"
 
 ```dotnetcli
 dotnet new <TEMPLATE> [--dry-run] [--force] [-i|--install {PATH|NUGET_ID}]
-    [-lang|--language {C#|F#|VB}] [-n|--name <OUTPUT_NAME>]
+    [-lang|--language {"C#"|"F#"|VB}] [-n|--name <OUTPUT_NAME>]
     [--nuget-source <SOURCE>] [-o|--output <OUTPUT_DIRECTORY>]
     [-u|--uninstall] [--update-apply] [--update-check] [Template options]
 
@@ -32,7 +32,7 @@ dotnet new -h|--help
 
 ## <a name="description"></a>Popis
 
-`dotnet new` Příkaz vytvoří projekt .NET Core nebo jiné artefakty založené na šabloně.
+`dotnet new`Příkaz vytvoří projekt .NET Core nebo jiné artefakty založené na šabloně.
 
 Příkaz volá [modul šablony](https://github.com/dotnet/templating) a vytvoří artefakty na disku na základě zadané šablony a možností.
 
@@ -40,7 +40,7 @@ Příkaz volá [modul šablony](https://github.com/dotnet/templating) a vytvoř�
 
 [!INCLUDE[dotnet restore note](~/includes/dotnet-restore-note.md)]
 
-## <a name="arguments"></a>Argumenty
+## <a name="arguments"></a>Arguments
 
 - **`TEMPLATE`**
 
@@ -50,7 +50,7 @@ Příkaz volá [modul šablony](https://github.com/dotnet/templating) a vytvoř�
 
   Počínaje verzí .NET Core 3,0 SDK vyhledává CLI šablony v NuGet.org při vyvolání `dotnet new` příkazu v následujících podmínkách:
 
-  - Pokud rozhraní příkazového řádku nenalezne při vyvolání `dotnet new`odpovídající šablonu, která není ani částečná.
+  - Pokud rozhraní příkazového řádku nenalezne při vyvolání odpovídající šablonu `dotnet new` , která není ani částečná.
   - Pokud je k dispozici novější verze šablony. V tomto případě se vytvoří projekt nebo artefakt, ale rozhraní příkazového řádku vás upozorní na aktualizovanou verzi šablony.
 
   Následující tabulka obsahuje šablony, které jsou předinstalované s .NET Core SDK. Výchozí jazyk pro šablonu se zobrazí v závorkách. Kliknutím na odkaz krátké jméno zobrazíte konkrétní možnosti šablony.
@@ -90,7 +90,7 @@ Příkaz volá [modul šablony](https://github.com/dotnet/templating) a vytvoř�
 | Dotnet – místní nástroj soubor manifestu              | `tool-manifest`                 |              | Config                                | 3.0        |
 | Webová konfigurace                                   | `webconfig`                     |              | Config                                | 1.0        |
 | Soubor řešení                                | `sln`                           |              | Řešení                              | 1.0        |
-| Soubor vyrovnávací paměti protokolu                         | [Proto](#namespace)             |              | Web/gRPC                              | 3.0        |
+| Soubor vyrovnávací paměti protokolu                         | [proto](#namespace)             |              | Web/gRPC                              | 3.0        |
 
 ## <a name="options"></a>Možnosti
 
@@ -104,11 +104,11 @@ Příkaz volá [modul šablony](https://github.com/dotnet/templating) a vytvoř�
 
 - **`-h|--help`**
 
-  Vytiskne nápovědu k příkazu. Dá se vyvolat pro samotný `dotnet new` příkaz nebo pro libovolnou šablonu. Například, `dotnet new mvc --help`.
+  Vytiskne nápovědu k příkazu. Dá se vyvolat pro `dotnet new` samotný příkaz nebo pro libovolnou šablonu. Například, `dotnet new mvc --help`.
 
 - **`-i|--install <PATH|NUGET_ID>`**
 
-  Nainstaluje sadu šablon z `PATH` nebo `NUGET_ID` poskytnuté. Pokud chcete nainstalovat předprodejní verzi balíčku šablony, je nutné zadat verzi ve formátu `<package-name>::<package-version>`. Ve výchozím nastavení `dotnet new` se \* předá verze, která představuje nejnovější stabilní verzi balíčku. Podívejte se na příklad v části [Příklady](#examples) .
+  Nainstaluje sadu šablon z `PATH` nebo `NUGET_ID` poskytnuté. Pokud chcete nainstalovat předprodejní verzi balíčku šablony, je nutné zadat verzi ve formátu `<package-name>::<package-version>` . Ve výchozím nastavení se `dotnet new` předá \* verze, která představuje nejnovější stabilní verzi balíčku. Podívejte se na příklad v části [Příklady](#examples) .
   
   Pokud byla verze šablony již nainstalována při spuštění tohoto příkazu, šablona bude aktualizována na určenou verzi nebo na nejnovější stabilní verzi, pokud nebyla zadána žádná verze.
 
@@ -139,16 +139,16 @@ Příkaz volá [modul šablony](https://github.com/dotnet/templating) a vytvoř�
 
 - **`--type <TYPE>`**
 
-  Filtruje šablony založené na dostupných typech. Předdefinované hodnoty jsou `project`, `item`a `other`.
+  Filtruje šablony založené na dostupných typech. Předdefinované hodnoty jsou `project` , `item` a `other` .
 
 - **`-u|--uninstall [PATH|NUGET_ID]`**
 
-  Odinstaluje sadu šablon na `PATH` nebo `NUGET_ID` poskytnutou. Pokud `<PATH|NUGET_ID>` hodnota není zadaná, zobrazí se všechny aktuálně nainstalované sady šablon a jejich přidružené šablony. Při zadávání `NUGET_ID`nezahrnujte číslo verze.
+  Odinstaluje sadu šablon na `PATH` nebo `NUGET_ID` poskytnutou. Pokud `<PATH|NUGET_ID>` hodnota není zadaná, zobrazí se všechny aktuálně nainstalované sady šablon a jejich přidružené šablony. Při zadávání nezahrnujte `NUGET_ID` číslo verze.
 
   Pokud neurčíte parametr této možnosti, příkaz zobrazí seznam nainstalovaných šablon a podrobností.
 
   > [!NOTE]
-  > Chcete-li odinstalovat šablonu pomocí `PATH`nástroje, je nutné plně kvalifikovat cestu. Například *C:/Users/\<User>/Documents/Templates/garciasoftware.consoletemplate.CSharp* bude fungovat, ale *./GarciaSoftware.ConsoleTemplate.CSharp* z nadřazené složky to nebude.
+  > Chcete-li odinstalovat šablonu pomocí nástroje `PATH` , je nutné plně kvalifikovat cestu. Například *C:/Users/ \< User>/Documents/Templates/garciasoftware.consoletemplate.CSharp* bude fungovat, ale *./GarciaSoftware.ConsoleTemplate.CSharp* z nadřazené složky to nebude.
   > Do cesty k šabloně nezahrnujte konečné koncové lomítko adresáře.
 
 - **`--update-apply`**
@@ -353,15 +353,15 @@ Každá šablona projektu může mít k dispozici další možnosti. Základní 
 
 - **`--aad-instance <INSTANCE>`**
 
-  Instance Azure Active Directory pro připojení. Použijte s `SingleOrg` ověřováním nebo `MultiOrg` . Výchozí hodnota je `https://login.microsoftonline.com/`.
+  Instance Azure Active Directory pro připojení. Použijte s `SingleOrg` `MultiOrg` ověřováním nebo. Výchozí hodnota je `https://login.microsoftonline.com/`.
 
 - **`--client-id <ID>`**
 
-  ID klienta pro tento projekt. Použijte s `IndividualB2C`ověřováním `SingleOrg`, `MultiOrg` nebo. Výchozí hodnota je `11111111-1111-1111-11111111111111111`.
+  ID klienta pro tento projekt. Použijte s `IndividualB2C` `SingleOrg` `MultiOrg` ověřováním, nebo. Výchozí hodnota je `11111111-1111-1111-11111111111111111`.
 
 - **`--domain <DOMAIN>`**
 
-  Doména pro tenanta adresáře. Použijte s `SingleOrg` ověřováním nebo `IndividualB2C` . Výchozí hodnota je `qualified.domain.name`.
+  Doména pro tenanta adresáře. Použijte s `SingleOrg` `IndividualB2C` ověřováním nebo. Výchozí hodnota je `qualified.domain.name`.
 
 - **`--tenant-id <ID>`**
 
@@ -369,7 +369,7 @@ Každá šablona projektu může mít k dispozici další možnosti. Základní 
 
 - **`--callback-path <PATH>`**
 
-  Cesta požadavku v základní cestě identifikátoru URI přesměrování. Použijte s `SingleOrg` ověřováním nebo `IndividualB2C` . Výchozí hodnota je `/signin-oidc`.
+  Cesta požadavku v základní cestě identifikátoru URI přesměrování. Použijte s `SingleOrg` `IndividualB2C` ověřováním nebo. Výchozí hodnota je `/signin-oidc`.
 
 - **`-r|--org-read-access`**
 
@@ -381,7 +381,7 @@ Každá šablona projektu může mít k dispozici další možnosti. Základní 
 
 - **`--no-https`**
 
-  Vypne protokol HTTPS. Tato možnost platí pouze v `Individual`případě `IndividualB2C`, `SingleOrg` `MultiOrg` že se nepoužívá pro `--auth`.
+  Vypne protokol HTTPS. Tato možnost platí pouze v případě, že se `Individual` `IndividualB2C` `SingleOrg` `MultiOrg` nepoužívá pro `--auth` .
 
 - **`-uld|--use-local-db`**
 
@@ -452,15 +452,15 @@ Každá šablona projektu může mít k dispozici další možnosti. Základní 
 
 - **`--aad-instance <INSTANCE>`**
 
-  Instance Azure Active Directory pro připojení. Použijte s `SingleOrg` ověřováním nebo `MultiOrg` . Výchozí hodnota je `https://login.microsoftonline.com/`.
+  Instance Azure Active Directory pro připojení. Použijte s `SingleOrg` `MultiOrg` ověřováním nebo. Výchozí hodnota je `https://login.microsoftonline.com/`.
 
 - **`--client-id <ID>`**
 
-  ID klienta pro tento projekt. Použijte s `IndividualB2C`ověřováním `SingleOrg`, `MultiOrg` nebo. Výchozí hodnota je `11111111-1111-1111-11111111111111111`.
+  ID klienta pro tento projekt. Použijte s `IndividualB2C` `SingleOrg` `MultiOrg` ověřováním, nebo. Výchozí hodnota je `11111111-1111-1111-11111111111111111`.
 
 - **`--domain <DOMAIN>`**
 
-  Doména pro tenanta adresáře. Použijte s `SingleOrg` ověřováním nebo `IndividualB2C` . Výchozí hodnota je `qualified.domain.name`.
+  Doména pro tenanta adresáře. Použijte s `SingleOrg` `IndividualB2C` ověřováním nebo. Výchozí hodnota je `qualified.domain.name`.
 
 - **`--tenant-id <ID>`**
 
@@ -468,7 +468,7 @@ Každá šablona projektu může mít k dispozici další možnosti. Základní 
 
 - **`--callback-path <PATH>`**
 
-  Cesta požadavku v základní cestě identifikátoru URI přesměrování. Použijte s `SingleOrg` ověřováním nebo `IndividualB2C` . Výchozí hodnota je `/signin-oidc`.
+  Cesta požadavku v základní cestě identifikátoru URI přesměrování. Použijte s `SingleOrg` `IndividualB2C` ověřováním nebo. Výchozí hodnota je `/signin-oidc`.
 
 - **`-r|--org-read-access`**
 
@@ -480,7 +480,7 @@ Každá šablona projektu může mít k dispozici další možnosti. Základní 
 
 - **`--no-https`**
 
-  Vypne protokol HTTPS. Tato možnost platí pouze v `Individual`případě `IndividualB2C`, `SingleOrg`že se `MultiOrg` nepoužívají, nebo.
+  Vypne protokol HTTPS. Tato možnost platí pouze v případě, že se `Individual` `IndividualB2C` `SingleOrg` `MultiOrg` nepoužívají, nebo.
 
 - **`-uld|--use-local-db`**
 
@@ -532,7 +532,7 @@ Každá šablona projektu může mít k dispozici další možnosti. Základní 
 
 - **`--no-https`**
 
-  Vypne protokol HTTPS. Tato možnost platí pouze v případě, `None`že je ověřování.
+  Vypne protokol HTTPS. Tato možnost platí pouze v případě, že je ověřování `None` .
 
 - **`-uld|--use-local-db`**
 
@@ -617,11 +617,11 @@ Každá šablona projektu může mít k dispozici další možnosti. Základní 
 
 - **`--client-id <ID>`**
 
-  ID klienta pro tento projekt. Použijte s `IndividualB2C` ověřováním nebo `SingleOrg` . Výchozí hodnota je `11111111-1111-1111-11111111111111111`.
+  ID klienta pro tento projekt. Použijte s `IndividualB2C` `SingleOrg` ověřováním nebo. Výchozí hodnota je `11111111-1111-1111-11111111111111111`.
 
 - **`--domain <DOMAIN>`**
 
-  Doména pro tenanta adresáře. Použijte s `IndividualB2C` ověřováním nebo `SingleOrg` . Výchozí hodnota je `qualified.domain.name`.
+  Doména pro tenanta adresáře. Použijte s `IndividualB2C` `SingleOrg` ověřováním nebo. Výchozí hodnota je `qualified.domain.name`.
 
 - **`--tenant-id <ID>`**
 
@@ -637,7 +637,7 @@ Každá šablona projektu může mít k dispozici další možnosti. Základní 
 
 - **`--no-https`**
 
-  Vypne protokol HTTPS. `app.UseHsts`a `app.UseHttpsRedirection` nejsou přidány do `Startup.Configure`. Tato možnost se vztahuje jenom `IndividualB2C` na `SingleOrg` to, jestli se nepoužívají pro ověřování.
+  Vypne protokol HTTPS. `app.UseHsts`a `app.UseHttpsRedirection` nejsou přidány do `Startup.Configure` . Tato možnost se vztahuje jenom `IndividualB2C` na to, jestli `SingleOrg` se nepoužívají pro ověřování.
 
 - **`-uld|--use-local-db`**
 
@@ -680,7 +680,7 @@ Každá šablona projektu může mít k dispozici další možnosti. Základní 
 - Vytvořte projekt konzolové aplikace F # v aktuálním adresáři:
 
   ```dotnetcli
-  dotnet new console -lang F#
+  dotnet new console -lang "F#"
   ```
 
 - Vytvořte .NET Standard projekt knihovny tříd v zadaném adresáři:

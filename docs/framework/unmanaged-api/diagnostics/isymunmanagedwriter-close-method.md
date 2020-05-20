@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 4cce59e1-80b9-4fc4-b3aa-126f1c5876bc
 topic_type:
 - apiref
-ms.openlocfilehash: cd601ac6041ca22d59d7467bafc7c1d87b21371f
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 0a7ecd475a8031fedb2c8474593b45045fcc6fb9
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74428110"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83610129"
 ---
 # <a name="isymunmanagedwriterclose-method"></a>ISymUnmanagedWriter::Close – metoda
 Po potvrzení symbolů do úložiště symbolů zavře zapisovač symbolů.  
@@ -35,11 +35,11 @@ HRESULT Close();
  S_OK, pokud je metoda úspěšná; v opačném případě E_FAIL nebo nějaký jiný kód chyby.  
   
 ## <a name="remarks"></a>Poznámky  
- Po tomto volání bude zapisovač symbolů pro další aktualizace neplatný. Chcete-li zavřít zapisovač symbolů bez potvrzení symbolů, použijte místo toho metodu [ISymUnmanagedWriter:: Abort](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-abort-method.md) .  
+ Po tomto volání bude zapisovač symbolů pro další aktualizace neplatný. Chcete-li zavřít zapisovač symbolů bez potvrzení symbolů, použijte místo toho metodu [ISymUnmanagedWriter:: Abort](isymunmanagedwriter-abort-method.md) .  
   
 ## <a name="requirements"></a>Požadavky  
  **Hlavička:** CorSym. idl, CorSym. h  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [ISymUnmanagedWriter – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-interface.md)
+- [ISymUnmanagedWriter – rozhraní](isymunmanagedwriter-interface.md)

@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: d28eeea4-c4e0-40d4-91de-198d98cfa13c
 topic_type:
 - apiref
-ms.openlocfilehash: 9294dbf1caddd4b607185de54efd2b4764e6ca35
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 6fe8c3266a8c9a52cd1022589cd68485c4326fd1
+ms.sourcegitcommit: 7b1497c1927cb449cefd313bc5126ae37df30746
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74448505"
+ms.lasthandoff: 05/16/2020
+ms.locfileid: "83442186"
 ---
 # <a name="ibindingdisplaygetcurrentdisplay-method"></a>IBindingDisplay::GetCurrentDisplay – metoda
 Vrátí aktuální informace o zobrazení vazby.  
@@ -38,20 +38,20 @@ HRESULT GetCurrentDisplay (
  [out, retval] Ukazatel na pole SAFEARRAY obsahující informace o zobrazení vazby.  
   
 ## <a name="remarks"></a>Poznámky  
- Metoda [IBindingDisplay:: InitializeForProcess –](../../../../docs/framework/unmanaged-api/diagnostics/ibindingdisplay-initializeforprocess-method.md) musí být dřív úspěšná a program musí být zastavený pomocí ladicího programu.  
+ Metoda [IBindingDisplay:: InitializeForProcess –](ibindingdisplay-initializeforprocess-method.md) musí být dřív úspěšná a program musí být zastavený pomocí ladicího programu.  
   
  Volající musí navrátit vrácenou `SAFEARRAY` paměť pomocí [SafeArrayDestroy](https://docs.microsoft.com/previous-versions/windows/desktop/api/oleauto/nf-oleauto-safearraydestroy).  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** BindingDisplay. h  
   
  **Knihovna:** BindingDisplay. idl  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [IBindingDisplay – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/ibindingdisplay-interface.md)
-- [InitializeForProcess – metoda](../../../../docs/framework/unmanaged-api/diagnostics/ibindingdisplay-initializeforprocess-method.md)
+- [IBindingDisplay – rozhraní](ibindingdisplay-interface.md)
+- [InitializeForProcess – metoda](ibindingdisplay-initializeforprocess-method.md)

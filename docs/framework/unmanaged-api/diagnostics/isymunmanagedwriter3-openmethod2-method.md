@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: 025e358c-448f-4423-a2f2-57acf437c8a5
 topic_type:
 - apiref
-ms.openlocfilehash: 0c112819ef3bc4f9a7146ee80f55202ff89d689a
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: e88a844a7f79f14c717a5966b345588b3b3b9f81
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79178319"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83609414"
 ---
 # <a name="isymunmanagedwriter3openmethod2-method"></a>ISymUnmanagedWriter3::OpenMethod2 – metoda
-Otevře metodu a v obraze poskytuje její skutečný posun oddílu.  
+Otevře metodu a poskytne její skutečný posun oddílu v obrázku.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -36,21 +36,21 @@ HRESULT OpenMethod2(
   
 ## <a name="parameters"></a>Parametry  
  `method`  
- [v] Token metadat pro metodu, která má být otevřena.  
+ pro Token metadat pro metodu, která se má otevřít  
   
  `isect`  
- [v] Posun oddílu v obraze.  
+ pro Posun oddílu v obrázku  
   
  `offset`  
- [v] Posun v obraze.  
+ pro Posun v obrázku  
   
 ## <a name="return-value"></a>Návratová hodnota  
- S_OK pokud je metoda úspěšná; v opačném případě E_FAIL nebo jiný kód chyby.  
+ S_OK, pokud je metoda úspěšná; v opačném případě E_FAIL nebo nějaký jiný kód chyby.  
   
 ## <a name="requirements"></a>Požadavky  
- **Záhlaví:** CorSym.idl, CorSym.h  
+ **Hlavička:** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Viz také
 
-- [ISymUnmanagedWriter3 – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter3-interface.md)
-- [OpenMethod – metoda](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-openmethod-method.md)
+- [ISymUnmanagedWriter3 – rozhraní](isymunmanagedwriter3-interface.md)
+- [OpenMethod – metoda](isymunmanagedwriter-openmethod-method.md)

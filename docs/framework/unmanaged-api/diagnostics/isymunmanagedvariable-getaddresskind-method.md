@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: a71563c0-62f2-4eb4-970c-825d61827613
 topic_type:
 - apiref
-ms.openlocfilehash: 4d2de38e5e506873a6db262dcec19c7af9d8a0d0
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 093c5e3e64395c8946acd9201990d132e8111fc7
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74446090"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83610584"
 ---
 # <a name="isymunmanagedvariablegetaddresskind-method"></a>ISymUnmanagedVariable::GetAddressKind – metoda
 Získá typ adresy této proměnné.  
@@ -34,7 +34,7 @@ HRESULT GetAddressKind(
   
 ## <a name="parameters"></a>Parametry  
  `pRetVal`  
- mimo Ukazatel na `ULONG32`, který přijímá hodnotu. Možné hodnoty jsou definovány ve výčtu [CorSymAddrKind –](../../../../docs/framework/unmanaged-api/diagnostics/corsymaddrkind-enumeration.md) .  
+ mimo Ukazatel na `ULONG32` , který přijímá hodnotu. Možné hodnoty jsou definovány ve výčtu [CorSymAddrKind –](corsymaddrkind-enumeration.md) .  
   
 ## <a name="return-value"></a>Návratová hodnota  
  S_OK, pokud je metoda úspěšná; v opačném případě E_FAIL nebo nějaký jiný kód chyby.  
@@ -42,6 +42,6 @@ HRESULT GetAddressKind(
 ## <a name="requirements"></a>Požadavky  
  **Hlavička:** CorSym. idl, CorSym. h  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [ISymUnmanagedVariable – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedvariable-interface.md)
+- [ISymUnmanagedVariable – rozhraní](isymunmanagedvariable-interface.md)

@@ -2,18 +2,18 @@
 title: příkaz dotnet Pack
 description: Příkaz dotnet Pack vytvoří balíčky NuGet pro projekt .NET Core.
 ms.date: 04/28/2020
-ms.openlocfilehash: 26a8581f55a8dc9e61aa52e62ed94c73eefd3e03
-ms.sourcegitcommit: d7666f6e49c57a769612602ea7857b927294ce47
+ms.openlocfilehash: 00cda2c52a12a7a3aef5f61291120f522536131d
+ms.sourcegitcommit: 7b1497c1927cb449cefd313bc5126ae37df30746
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/30/2020
-ms.locfileid: "82595751"
+ms.lasthandoff: 05/16/2020
+ms.locfileid: "83442225"
 ---
 # <a name="dotnet-pack"></a>dotnet pack
 
 **Tento článek se týká:** ✔️ .NET Core 2. x SDK a novějších verzí
 
-## <a name="name"></a>Název
+## <a name="name"></a>Name
 
 `dotnet pack`– Zabalí kód do balíčku NuGet.
 
@@ -32,7 +32,7 @@ dotnet pack -h|--help
 
 ## <a name="description"></a>Popis
 
-`dotnet pack` Příkaz sestaví projekt a vytvoří balíčky NuGet. Výsledek tohoto příkazu je balíček NuGet (to znamená soubor *. nupkg* ).
+Příkaz sestaví `dotnet pack` projekt a vytvoří balíčky NuGet. Výsledek tohoto příkazu je balíček NuGet (to znamená soubor *. nupkg* ).
 
 Pokud chcete vygenerovat balíček, který obsahuje symboly ladění, máte k dispozici dvě možnosti:
 
@@ -41,7 +41,7 @@ Pokud chcete vygenerovat balíček, který obsahuje symboly ladění, máte k di
 
 Do souboru *. nuspec* jsou přidány závislosti NuGet zkomprimovaného projektu, aby byly po instalaci balíčku správně vyřešeny. Odkazy z projektu na projekt nejsou zabaleny do projektu. V současné době je nutné mít balíček na projekt, pokud máte závislosti typu projekt-projekt.
 
-Ve výchozím nastavení `dotnet pack` sestaví projekt jako první. Pokud se chcete tomuto chování vyhnout, předejte `--no-build` možnost. Tato možnost je často užitečná ve scénářích průběžné integrace (CI), kde víte, že kód byl dříve sestaven.
+Ve výchozím nastavení sestaví `dotnet pack` projekt jako první. Pokud se chcete tomuto chování vyhnout, předejte `--no-build` možnost. Tato možnost je často užitečná ve scénářích průběžné integrace (CI), kde víte, že kód byl dříve sestaven.
 
 > [!NOTE]
 > V některých případech nelze implicitní sestavení provést. Tato situace může nastat `GeneratePackageOnBuild` , pokud je nastavena, aby nedocházelo k cyklické závislosti mezi cíli sestavení a balíčku. Sestavení může selhat i v případě, že existuje uzamčený soubor nebo jiný problém.
@@ -60,17 +60,17 @@ Webové projekty nejsou ve výchozím nastavení nabaleny. Chcete-li přepsat v�
 
 [!INCLUDE[dotnet restore note + options](~/includes/dotnet-restore-note-options.md)]
 
-## <a name="arguments"></a>Argumenty
+## <a name="arguments"></a>Arguments
 
 `PROJECT | SOLUTION`
 
-  Projekt nebo řešení, které se má zabalit Jedná se buď o cestu k [souboru csproj](csproj.md), k souboru řešení nebo k adresáři. Pokud není zadán, příkaz vyhledá v aktuálním adresáři soubor projektu nebo řešení.
+  Projekt nebo řešení, které se má zabalit Jedná se buď o cestu k [souboru csproj](csproj.md), vbproj, souboru fsproj, souboru řešení nebo k adresáři. Pokud není zadán, příkaz vyhledá v aktuálním adresáři soubor projektu nebo řešení.
 
 ## <a name="options"></a>Možnosti
 
 - **`-c|--configuration <CONFIGURATION>`**
 
-  Definuje konfiguraci sestavení. Výchozí hodnota pro většinu projektů je `Debug`, ale můžete přepsat nastavení konfigurace sestavení v projektu.
+  Definuje konfiguraci sestavení. Výchozí hodnota pro většinu projektů je `Debug` , ale můžete přepsat nastavení konfigurace sestavení v projektu.
 
 - **`--force`**
 
@@ -122,11 +122,11 @@ Webové projekty nejsou ve výchozím nastavení nabaleny. Chcete-li přepsat v�
 
 - **`--version-suffix <VERSION_SUFFIX>`**
 
-  Definuje hodnotu vlastnosti `$(VersionSuffix)` MSBuild v projektu.
+  Definuje hodnotu `$(VersionSuffix)` vlastnosti MSBuild v projektu.
 
 - **`-v|--verbosity <LEVEL>`**
 
-  Nastaví úroveň podrobností příkazu. Povolené hodnoty jsou `q[uiet]`, `m[inimal]`, `n[ormal]` `d[etailed]`, a `diag[nostic]`.
+  Nastaví úroveň podrobností příkazu. Povolené hodnoty jsou `q[uiet]` , `m[inimal]` ,, a `n[ormal]` `d[etailed]` `diag[nostic]` .
 
 ## <a name="examples"></a>Příklady
 
@@ -160,7 +160,7 @@ Webové projekty nejsou ve výchozím nastavení nabaleny. Chcete-li přepsat v�
   dotnet pack --version-suffix "ci-1234"
   ```
 
-- Nastavte na verzi `2.1.0` balíčku vlastnost `PackageVersion` MSBuild:
+- Nastavte na verzi balíčku `2.1.0` `PackageVersion` vlastnost MSBuild:
 
   ```dotnetcli
   dotnet pack -p:PackageVersion=2.1.0
@@ -184,7 +184,7 @@ Webové projekty nejsou ve výchozím nastavení nabaleny. Chcete-li přepsat v�
   dotnet pack ~/projects/app1/project.csproj -p:NuspecFile=~/projects/app1/project.nuspec -p:NuspecBasePath=~/projects/app1/nuget
   ```
 
-  Informace o tom, jak používat `NuspecFile`, `NuspecBasePath`a `NuspecProperties`, najdete v následujících zdrojích informací:
+  Informace o tom, jak používat `NuspecFile` , `NuspecBasePath` a `NuspecProperties` , najdete v následujících zdrojích informací:
   
   - [Balení pomocí. nuspec](https://docs.microsoft.com/nuget/reference/msbuild-targets#packing-using-a-nuspec)
   - [Rozšířené body rozšíření pro vytvoření přizpůsobeného balíčku](https://docs.microsoft.com/nuget/reference/msbuild-targets#advanced-extension-points-to-create-customized-package)

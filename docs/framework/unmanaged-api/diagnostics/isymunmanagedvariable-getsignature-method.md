@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 78c1ba28-a410-4360-805c-23a95408964a
 topic_type:
 - apiref
-ms.openlocfilehash: 2939d9cf3991a9e0b8f93bb301925b1092eca50e
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: a3ec0af33f3f1201ce2f6b62291dfc67696fecab
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74446043"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83610441"
 ---
 # <a name="isymunmanagedvariablegetsignature-method"></a>ISymUnmanagedVariable::GetSignature – metoda
 Načte podpis této proměnné.  
@@ -37,10 +37,10 @@ HRESULT GetSignature(
   
 ## <a name="parameters"></a>Parametry  
  `cSig`  
- pro Délka vyrovnávací paměti, na kterou ukazuje parametr `sig`.  
+ pro Délka vyrovnávací paměti, na kterou `sig` parametr odkazuje.  
   
  `pcSig`  
- mimo Ukazatel na `ULONG32`, který obdrží velikost vyrovnávací paměti, která je požadována k podpisu.  
+ mimo Ukazatel na `ULONG32` , který přijímá velikost vyrovnávací paměti, která je požadována k podpisu.  
   
  `sig`  
  mimo Vyrovnávací paměť, která ukládá podpis.  
@@ -51,6 +51,6 @@ HRESULT GetSignature(
 ## <a name="requirements"></a>Požadavky  
  **Hlavička:** CorSym. idl, CorSym. h  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [ISymUnmanagedVariable – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedvariable-interface.md)
+- [ISymUnmanagedVariable – rozhraní](isymunmanagedvariable-interface.md)

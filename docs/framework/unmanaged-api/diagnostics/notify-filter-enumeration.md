@@ -14,15 +14,15 @@ helpviewer_keywords:
 ms.assetid: 4789d08f-8683-45d3-ac30-73d48c61e470
 topic_type:
 - apiref
-ms.openlocfilehash: 92e40dbe8892d48dba1c54d9cd16faa409440b24
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: b20e18d5f4314a0ab1442ac7bd5c6514e4db85d5
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74438120"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83609479"
 ---
 # <a name="notify_filter-enumeration"></a>NOTIFY_FILTER – výčet
-Označuje zpětná volání pro funkce ladicího programu. Další informace naleznete v tématu metoda [INotifySource2 –:: setnotifyfilter –](../../../../docs/framework/unmanaged-api/diagnostics/inotifysource2-setnotifyfilter-method.md) .  
+Označuje zpětná volání pro funkce ladicího programu. Další informace naleznete v tématu metoda [INotifySource2 –:: setnotifyfilter –](inotifysource2-setnotifyfilter-method.md) .  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,21 +39,21 @@ enum tagNOTIFY_FILTER
 };  
 ```  
   
-## <a name="members"></a>Members  
+## <a name="members"></a>Členové  
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`NOTIFY_FILTER_ONSYNCCALLOUT`|Označuje, že by měla být vyvolána metoda [INotifySink2:: onsynccallout –](../../../../docs/framework/unmanaged-api/diagnostics/inotifysink2-onsynccallout-method.md) .|  
-|`NOTIFY_FILTER_ONSYNCCALLENTER`|Označuje, že by měla být vyvolána metoda [INotifySink2:: onsynccallenter –](../../../../docs/framework/unmanaged-api/diagnostics/inotifysink2-onsynccallenter-method.md) .|  
-|`NOTIFY_FILTER_ONSYNCCALLEXIT`|Označuje, že by měla být vyvolána metoda [INotifySink2:: onsynccallexit –](../../../../docs/framework/unmanaged-api/diagnostics/inotifysink2-onsynccallexit-method.md) .|  
-|`NOTIFY_FILTER_ONSYNCCALLRETURN`|Označuje, že by měla být vyvolána metoda [INotifySink2:: onsynccallreturn –](../../../../docs/framework/unmanaged-api/diagnostics/inotifysink2-onsynccallreturn-method.md) .|  
-|`NOTIFY_FILTER_ALLSYNC`|Označuje, že by měly být vyvolány všechny metody [INotifySink2](../../../../docs/framework/unmanaged-api/diagnostics/inotifysink2-interface.md) .|  
+|`NOTIFY_FILTER_ONSYNCCALLOUT`|Označuje, že by měla být vyvolána metoda [INotifySink2:: onsynccallout –](inotifysink2-onsynccallout-method.md) .|  
+|`NOTIFY_FILTER_ONSYNCCALLENTER`|Označuje, že by měla být vyvolána metoda [INotifySink2:: onsynccallenter –](inotifysink2-onsynccallenter-method.md) .|  
+|`NOTIFY_FILTER_ONSYNCCALLEXIT`|Označuje, že by měla být vyvolána metoda [INotifySink2:: onsynccallexit –](inotifysink2-onsynccallexit-method.md) .|  
+|`NOTIFY_FILTER_ONSYNCCALLRETURN`|Označuje, že by měla být vyvolána metoda [INotifySink2:: onsynccallreturn –](inotifysink2-onsynccallreturn-method.md) .|  
+|`NOTIFY_FILTER_ALLSYNC`|Označuje, že by měly být vyvolány všechny metody [INotifySink2](inotifysink2-interface.md) .|  
 |`NOTIFY_FILTER_ALL`|Aktivuje všechna existující a budoucí oznámení.|  
 |`NOTIFY_FILTER_NONE`|Označuje, že by neměly být vyvolány žádné metody oznámení.|  
   
 ## <a name="requirements"></a>Požadavky  
  **Hlavička:** ProtocolNotify2. idl  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Výčty pro úložiště symbolů diagnostiky](../../../../docs/framework/unmanaged-api/diagnostics/diagnostics-symbol-store-enumerations.md)
+- [Výčty úložiště symbolů diagnostiky](diagnostics-symbol-store-enumerations.md)

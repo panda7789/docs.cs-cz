@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: e5d777c5-d450-4c0f-999c-b3953ee22cfb
 topic_type:
 - apiref
-ms.openlocfilehash: 4ac1fc0b3567c49dfb36d2886926bee72d62a8dd
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 91117eae23d38f3bc608f3203ebe53f92516c9c9
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74446075"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83610493"
 ---
 # <a name="isymunmanagedvariablegetendoffset-method"></a>ISymUnmanagedVariable::GetEndOffset – metoda
 Získá koncový posun této proměnné v rámci své nadřazené položky. Pokud se jedná o lokální proměnnou v rámci oboru, koncový posun bude spadat do posunu definovaného pro daný obor.  
@@ -34,7 +34,7 @@ HRESULT GetEndOffset(
   
 ## <a name="parameters"></a>Parametry  
  `pRetVal`  
- mimo Ukazatel na `ULONG32`, který obdrží koncový posun.  
+ mimo Ukazatel na `ULONG32` , který obdrží koncový posun.  
   
 ## <a name="return-value"></a>Návratová hodnota  
  S_OK, pokud je metoda úspěšná; v opačném případě E_FAIL nebo nějaký jiný kód chyby.  
@@ -42,7 +42,7 @@ HRESULT GetEndOffset(
 ## <a name="requirements"></a>Požadavky  
  **Hlavička:** CorSym. idl, CorSym. h  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [ISymUnmanagedVariable – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedvariable-interface.md)
-- [GetStartOffset – metoda](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedvariable-getstartoffset-method.md)
+- [ISymUnmanagedVariable – rozhraní](isymunmanagedvariable-interface.md)
+- [GetStartOffset – metoda](isymunmanagedvariable-getstartoffset-method.md)
