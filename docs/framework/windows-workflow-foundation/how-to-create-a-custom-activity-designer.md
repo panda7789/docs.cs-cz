@@ -1,13 +1,14 @@
 ---
 title: 'Postupy: Vytvoření vlastního návrháře aktivity'
+description: Tento článek popisuje, jak vytvořit návrháře vlastní aktivity v modulu Workflow Foundation, který má ukládací zónu, kde lze umístit libovolnou aktivitu.
 ms.date: 03/30/2017
 ms.assetid: 2f3aade6-facc-44ef-9657-a407ef8b9b31
-ms.openlocfilehash: 3c326508744f2aa2b34f5ee574cc9ec1e2863cf6
-ms.sourcegitcommit: 1e72e2990220b3635cebc39586828af9deb72d8c
+ms.openlocfilehash: 015efd1e482e2b531d28b9caec411c76116c9653
+ms.sourcegitcommit: 9a4488a3625866335e83a20da5e9c5286b1f034c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/26/2019
-ms.locfileid: "71306345"
+ms.lasthandoff: 05/15/2020
+ms.locfileid: "83419782"
 ---
 # <a name="how-to-create-a-custom-activity-designer"></a>Postupy: Vytvoření vlastního návrháře aktivity
 
@@ -15,41 +16,41 @@ Obvykle se implementují vlastní návrháři aktivit, aby se jejich přidružen
 
 Vlastní návrháři aktivit obvykle dědí z <xref:System.Activities.Presentation.ActivityDesigner> výchozího typu návrháře základní aktivity pro všechny aktivity bez konkrétního návrháře. Tento typ poskytuje uživatelské prostředí pro interakci s mřížkou vlastností a konfiguraci základních aspektů, jako je například Správa barev a ikon.
 
-<xref:System.Activities.Presentation.ActivityDesigner>používá dva ovládací prvky <xref:System.Activities.Presentation.WorkflowItemPresenter> pro pomoc a <xref:System.Activities.Presentation.WorkflowItemsPresenter> usnadňuje vývoj vlastních návrhářů aktivit. Zpracovávají společné funkce, jako je přetahování a odstraňování podřízených prvků, odstranění, výběru a přidání těchto podřízených prvků. Umožňuje jeden podřízený prvek uživatelského rozhraní uvnitř a poskytuje "ukládací zónu", <xref:System.Activities.Presentation.WorkflowItemsPresenter> zatímco může poskytovat podporu více prvků uživatelského rozhraní, včetně dalších funkcí, jako je řazení, přesunutí, odstranění a přidání podřízených prvků. <xref:System.Activities.Presentation.WorkflowItemPresenter>
+<xref:System.Activities.Presentation.ActivityDesigner>používá dva ovládací prvky pro pomoc a usnadňuje <xref:System.Activities.Presentation.WorkflowItemPresenter> <xref:System.Activities.Presentation.WorkflowItemsPresenter> vývoj vlastních návrhářů aktivit. Zpracovávají společné funkce, jako je přetahování a odstraňování podřízených prvků, odstranění, výběru a přidání těchto podřízených prvků. <xref:System.Activities.Presentation.WorkflowItemPresenter>Umožňuje jeden podřízený prvek uživatelského rozhraní uvnitř a poskytuje "ukládací zónu", zatímco <xref:System.Activities.Presentation.WorkflowItemsPresenter> může poskytovat podporu více prvků uživatelského rozhraní, včetně dalších funkcí, jako je řazení, přesunutí, odstranění a přidání podřízených prvků.
 
 Druhá klíčová část scénáře, která vyžaduje zvýraznění v implementaci vlastního návrháře aktivit, se týká způsobu, jakým jsou úpravy vizuálů svázány pomocí datové vazby WPF s instancí uloženou v paměti, kterou upravujeme v návrháři. Toho je dosaženo stromem položky modelu, který je také zodpovědný za povolení oznámení o změně a sledování událostí, jako jsou změny v stavech.
 
 Toto téma popisuje dva postupy.
 
-1. První postup popisuje <xref:System.Activities.Presentation.WorkflowItemPresenter> , jak vytvořit vlastního návrháře aktivit s, který poskytuje ukládací zónu, která přijímá další aktivity. Tento postup je založený na ukázce [vlastního složeného návrháře – ukázka předvádějící položky pracovního postupu](./samples/custom-composite-designers-workflow-item-presenter.md) .
+1. První postup popisuje, jak vytvořit vlastního návrháře aktivit s <xref:System.Activities.Presentation.WorkflowItemPresenter> , který poskytuje ukládací zónu, která přijímá další aktivity. Tento postup je založený na ukázce [vlastního složeného návrháře – ukázka předvádějící položky pracovního postupu](./samples/custom-composite-designers-workflow-item-presenter.md) .
 
-2. Druhý postup popisuje <xref:System.Activities.Presentation.WorkflowItemsPresenter> , jak vytvořit vlastního návrháře aktivit s nástrojem, který poskytuje funkce potřebné pro úpravu kolekce obsažených prvků. Tento postup je založený na ukázce [vlastního složeného návrháře – pracovní postup položky pracovního postupu](./samples/custom-composite-designers-workflow-items-presenter.md) .
+2. Druhý postup popisuje, jak vytvořit vlastního návrháře aktivit s nástrojem <xref:System.Activities.Presentation.WorkflowItemsPresenter> , který poskytuje funkce potřebné pro úpravu kolekce obsažených prvků. Tento postup je založený na ukázce [vlastního složeného návrháře – pracovní postup položky pracovního postupu](./samples/custom-composite-designers-workflow-items-presenter.md) .
 
 ## <a name="to-create-a-custom-activity-designer-with-a-drop-zone-using-workflowitempresenter"></a>Vytvoření vlastního návrháře aktivit pomocí přetažení zóny pomocí WorkflowItemPresenter
 
 1. Spusťte Visual Studio 2010.
 
-2. V nabídce **soubor** přejděte na příkaz **Nový**a vyberte možnost **projekt...** .
+2. V nabídce **soubor** přejděte na příkaz **Nový**a vyberte možnost **projekt...**.
 
-     **Nový projekt** zobrazí se dialogové okno.
+     Otevře se dialogové okno **Nový projekt** .
 
 3. V podokně **Nainstalované šablony** vyberte možnost **Windows** z kategorie preferovaný jazyk.
 
 4. V podokně **šablony** vyberte možnost **aplikace WPF**.
 
-5. Do pole **název** zadejte `UsingWorkflowItemPresenter`.
+5. Do pole **název** zadejte `UsingWorkflowItemPresenter` .
 
 6. Do pole **umístění** zadejte adresář, do kterého chcete uložit projekt, nebo klikněte na tlačítko **Procházet** a přejděte na něj.
 
 7. V poli **řešení** přijměte výchozí hodnotu.
 
-8. Klikněte na **OK**.
+8. Klikněte na tlačítko **OK**.
 
 9. V **Průzkumník řešení**klikněte pravým tlačítkem na soubor *MainWindows. XAML* , vyberte **Odstranit** a potvrďte **OK** v dialogovém okně **Microsoft Visual Studio** .
 
 10. V **Průzkumník řešení**klikněte pravým tlačítkem na projekt UsingWorkflowItemPresenter, vyberte **Přidat**a **Nová položka...** Chcete-li vyvolat dialogové okno **Přidat novou položku** a vybrat kategorii **WPF** v části **Nainstalované šablony** na levé straně.
 
-11. Vyberte šablonu **okna (WPF)** , pojmenujte `RehostingWFDesigner`ji a klikněte na tlačítko **Přidat**.
+11. Vyberte šablonu **okna (WPF)** , pojmenujte ji `RehostingWFDesigner` a klikněte na tlačítko **Přidat**.
 
 12. Otevřete soubor *RehostingWFDesigner. XAML* a vložte do něj následující kód, který definuje uživatelské rozhraní aplikace:
 
@@ -104,7 +105,7 @@ Toto téma popisuje dva postupy.
     </Window>
     ```
 
-13. Chcete-li přidružit návrháře aktivit k typu aktivity, musíte tohoto návrháře aktivit zaregistrovat s úložištěm metadat. Chcete-li to provést, `RegisterMetadata` přidejte metodu `RehostingWFDesigner` do třídy. V rámci rozsahu `RegisterMetadata` metody <xref:System.Activities.Presentation.Metadata.AttributeTableBuilder> vytvořte objekt a zavolejte <xref:System.Activities.Presentation.Metadata.AttributeTableBuilder.AddCustomAttributes%2A> metodu pro přidání atributů. Voláním <xref:System.Activities.Presentation.Metadata.AttributeTable> metody přidejte do úložiště metadat. <xref:System.Activities.Presentation.Metadata.MetadataStore.AddAttributeTable%2A> Následující kód obsahuje logiku opětovného hostování pro návrháře. Registruje metadata, vloží `SimpleNativeActivity` do sady nástrojů a vytvoří pracovní postup. Vložte tento kód do souboru *RehostingWFDesigner.XAML.cs* .
+13. Chcete-li přidružit návrháře aktivit k typu aktivity, musíte tohoto návrháře aktivit zaregistrovat s úložištěm metadat. Chcete-li to provést, přidejte `RegisterMetadata` metodu do `RehostingWFDesigner` třídy. V rámci rozsahu `RegisterMetadata` metody vytvořte <xref:System.Activities.Presentation.Metadata.AttributeTableBuilder> objekt a zavolejte <xref:System.Activities.Presentation.Metadata.AttributeTableBuilder.AddCustomAttributes%2A> metodu pro přidání atributů. Voláním <xref:System.Activities.Presentation.Metadata.MetadataStore.AddAttributeTable%2A> metody přidejte do <xref:System.Activities.Presentation.Metadata.AttributeTable> úložiště metadat. Následující kód obsahuje logiku opětovného hostování pro návrháře. Registruje metadata, vloží `SimpleNativeActivity` do sady nástrojů a vytvoří pracovní postup. Vložte tento kód do souboru *RehostingWFDesigner.XAML.cs* .
 
     ```csharp
     using System;
@@ -160,22 +161,22 @@ Toto téma popisuje dva postupy.
 
 16. Pomocí stejného postupu přidejte odkazy na následující sestavení:
 
-    1. System.Data.DataSetExtensions.dll
+    1. System. data. DataSetExtensions. dll
 
-    2. System.Activities.Presentation.dll
+    2. System. Activities. Presentation. dll
 
-    3. System.ServiceModel.Activities.dll
+    3. System. ServiceModel. Activities. dll
 
 17. Otevřete soubor *App. XAML* a změňte hodnotu StartUpUri na RehostingWFDesigner. XAML.
 
 18. V **Průzkumník řešení**klikněte pravým tlačítkem na projekt UsingWorkflowItemPresenter, vyberte **Přidat**a **Nová položka...** Chcete-li vyvolat dialogové okno **Přidat novou položku** a vybrat kategorii **pracovního postupu** , otevřete část **Nainstalované šablony** na levé straně.
 
-19. Vyberte šablonu **návrháře aktivit** , pojmenujte `SimpleNativeDesigner`ji a klikněte na **Přidat**.
+19. Vyberte šablonu **návrháře aktivit** , pojmenujte ji `SimpleNativeDesigner` a klikněte na **Přidat**.
 
-20. Otevřete soubor *SimpleNativeDesigner. XAML* a vložte do něj následující kód. Všimněte si, že <xref:System.Activities.Presentation.ActivityDesigner> tento kód používá jako kořenový element a ukazuje, jak se vazba <xref:System.Activities.Presentation.WorkflowItemPresenter> používá pro integraci do návrháře, takže podřízený typ lze zobrazit v návrháři složených aktivit.
+20. Otevřete soubor *SimpleNativeDesigner. XAML* a vložte do něj následující kód. Všimněte si, že tento kód používá <xref:System.Activities.Presentation.ActivityDesigner> jako kořenový element a ukazuje, jak se vazba používá pro integraci <xref:System.Activities.Presentation.WorkflowItemPresenter> do návrháře, takže podřízený typ lze zobrazit v návrháři složených aktivit.
 
     > [!NOTE]
-    > Schéma pro <xref:System.Activities.Presentation.ActivityDesigner> umožňuje přidání pouze jednoho podřízeného prvku do vaší definice návrháře vlastní aktivity; tento element však může `StackPanel`být, `Grid`nebo nějaký jiný složený prvek uživatelského rozhraní.
+    > Schéma pro <xref:System.Activities.Presentation.ActivityDesigner> umožňuje přidání pouze jednoho podřízeného prvku do vaší definice návrháře vlastní aktivity; tento element však může být `StackPanel` , `Grid` nebo nějaký jiný složený prvek uživatelského rozhraní.
 
     ```xaml
     <sap:ActivityDesigner x:Class=" UsingWorkflowItemPresenter.SimpleNativeDesigner"
@@ -213,9 +214,9 @@ Toto téma popisuje dva postupy.
 
 21. V **Průzkumník řešení**klikněte pravým tlačítkem na projekt UsingWorkflowItemPresenter, vyberte **Přidat**a **Nová položka...** Chcete-li vyvolat dialogové okno **Přidat novou položku** a vybrat kategorii **pracovního postupu** , otevřete část **Nainstalované šablony** na levé straně.
 
-22. Vyberte šablonu **aktivita kódu** , pojmenujte `SimpleNativeActivity`ji a klikněte na **Přidat**.
+22. Vyberte šablonu **aktivita kódu** , pojmenujte ji `SimpleNativeActivity` a klikněte na **Přidat**.
 
-23. Implementujte třídu zadáním následujícího kódu do souboru *SimpleNativeActivity.cs:* `SimpleNativeActivity`
+23. Implementujte `SimpleNativeActivity` třídu zadáním následujícího kódu do souboru *SimpleNativeActivity.cs* :
 
     ```csharp
     using System.Activities;
@@ -250,7 +251,7 @@ Toto téma popisuje dva postupy.
 
 ### <a name="to-create-a-custom-activity-designer-using-workflowitemspresenter"></a>Vytvoření vlastního návrháře aktivit pomocí WorkflowItemsPresenter
 
-1. Postup pro druhý Návrhář vlastní aktivity je souběžně první s několika úpravami, první z nich je pojmenovat druhou aplikaci `UsingWorkflowItemsPresenter`. Tato aplikace také nedefinuje novou vlastní aktivitu.
+1. Postup pro druhý Návrhář vlastní aktivity je souběžně první s několika úpravami, první z nich je pojmenovat druhou aplikaci `UsingWorkflowItemsPresenter` . Tato aplikace také nedefinuje novou vlastní aktivitu.
 
 2. Klíčové rozdíly jsou obsaženy v souborech *CustomParallelDesigner. XAML* a *RehostingWFDesigner.XAML.cs* . Zde je kód ze souboru *CustomParallelDesigner. XAML* , který definuje uživatelské rozhraní:
 
@@ -343,7 +344,7 @@ Toto téma popisuje dva postupy.
     }
     ```
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Activities.Presentation.ActivityDesigner>
 - <xref:System.Activities.Presentation.WorkflowItemPresenter>

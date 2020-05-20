@@ -1,15 +1,16 @@
 ---
 title: Návrh pracovních postupů
+description: Seznamte se s paradigmaty řízení toku, jako jsou vývojové diagramy, procedurální a Stavový počítač, v pracovních postupech vývoje a vytváření pracovních postupů s imperativním kódem.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - programming [WF], designing workflows
 ms.assetid: 41f727b5-b142-4c1b-b046-492b96135ae6
-ms.openlocfilehash: c774161fb5adbc5fc8e44b22d994d15fa0d2e489
-ms.sourcegitcommit: fbb8a593a511ce667992502a3ce6d8f65c594edf
+ms.openlocfilehash: 07ccd1de6648438ad65f88bada3e055e1e2a4134
+ms.sourcegitcommit: 9a4488a3625866335e83a20da5e9c5286b1f034c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/16/2019
-ms.locfileid: "74141914"
+ms.lasthandoff: 05/15/2020
+ms.locfileid: "83419925"
 ---
 # <a name="designing-workflows"></a>Návrh pracovních postupů
 Témata v této části popisují paradigma ovládacího prvku pro řízení toku používané při vývoji pracovního postupu.  

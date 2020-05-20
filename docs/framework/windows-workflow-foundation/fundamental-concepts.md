@@ -1,66 +1,67 @@
 ---
 title: Základní koncepce Windows Workflow
+description: Tento článek popisuje některé koncepty vývoje pracovního postupu v .NET Framework 4.6.1, které nemusí být pro některé vývojáře známé.
 ms.date: 03/30/2017
 ms.assetid: 0e930e80-5060-45d2-8a7a-95c0690105d4
-ms.openlocfilehash: 730679c892d96ff6de2d02ee1e1afdd52e452439
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 07498241280191fb62a35a559a3391f7148c05b9
+ms.sourcegitcommit: 9a4488a3625866335e83a20da5e9c5286b1f034c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64650937"
+ms.lasthandoff: 05/15/2020
+ms.locfileid: "83419886"
 ---
 # <a name="fundamental-windows-workflow-concepts"></a>Základní koncepce Windows Workflow
-Pracovní postup vývoje v [!INCLUDE[netfx_current_long](../../../includes/netfx-current-long-md.md)] používá koncepty, které mohou být novým někteří vývojáři. Toto téma popisuje některé koncepty a jak jsou implementované.  
+Vývoj pracovních postupů v nástroji [!INCLUDE[netfx_current_long](../../../includes/netfx-current-long-md.md)] používá koncepty, které mohou být pro některé vývojáře novinkou. Toto téma popisuje některé z konceptů a způsob jejich implementace.  
   
-## <a name="workflows-and-activities"></a>Pracovních postupů a aktivit  
- Pracovní postup je strukturovaných kolekci akcí, který modeluje procesu. Všechny akce v pracovním postupu je modelovaná jako aktivita. Hostitel komunikuje s pracovním postupem s použitím <xref:System.Activities.WorkflowInvoker> pro volání pracovního postupu, jako by šlo o metodu, <xref:System.Activities.WorkflowApplication> pro explicitní kontrolu nad spouštěním instanci jednoho pracovního postupu a <xref:System.ServiceModel.WorkflowServiceHost> pro založenou na zprávách interakce ve více instancemi scénáře. Protože krokům pracovního postupu jsou definovány jako hierarchii aktivit, mohou být označeny nejvyšší aktivity v hierarchii k definování samotného pracovního postupu. Tento model hierarchie zaujímá místo explicitního `SequentialWorkflow` a `StateMachineWorkflow` třídy z předchozí verze. Aktivity samotných jsou vyvíjeny jako kolekce jiných aktivit (pomocí <xref:System.Activities.Activity> třídy jako základ, většinou definovaný pomocí XAML) nebo jsou vytvořené s použitím vlastní <xref:System.Activities.CodeActivity> třídy, které můžete použít modul runtime pro přístup k datům, nebo <xref:System.Activities.NativeActivity> třídu, která zveřejňuje škálu modulu runtime pracovního postupu k autorem aktivity. Aktivity vyvinuté pomocí <xref:System.Activities.CodeActivity> a <xref:System.Activities.NativeActivity> jsou vytvořeny pomocí jazyků kompatibilních s CLR, jako je C#.  
+## <a name="workflows-and-activities"></a>Pracovní postupy a aktivity  
+ Pracovní postup je strukturovaná kolekce akcí, které modelují proces. Každá akce v pracovním postupu je modelována jako aktivita. Hostitel spolupracuje s pracovním postupem pomocí <xref:System.Activities.WorkflowInvoker> pro vyvolání pracovního postupu, jako by šlo o metodu, <xref:System.Activities.WorkflowApplication> pro explicitní kontrolu nad prováděním jedné instance pracovního postupu a <xref:System.ServiceModel.WorkflowServiceHost> pro interakce založené na zprávách ve scénářích s více instancemi. Vzhledem k tomu, že kroky pracovního postupu jsou definovány jako hierarchie aktivit, může být první aktivita v hierarchii určena k definování samotného pracovního postupu. Tento model hierarchie přebírá místo explicitního `SequentialWorkflow` a `StateMachineWorkflow` třídy z předchozích verzí. Aktivity samy jsou vyvíjeny jako kolekce jiných aktivit (za použití <xref:System.Activities.Activity> třídy jako základní, obvykle definované pomocí XAML) nebo jsou vlastní vytvořené pomocí <xref:System.Activities.CodeActivity> třídy, která může použít modul runtime pro přístup k datům nebo pomocí <xref:System.Activities.NativeActivity> třídy, která zpřístupňuje míru modulu runtime pracovního postupu pro autora aktivity. Aktivity vyvinuté pomocí <xref:System.Activities.CodeActivity> a <xref:System.Activities.NativeActivity> jsou vytvářeny pomocí jazyků kompatibilních s modulem CLR, jako je C#.  
   
-## <a name="activity-data-model"></a>Aktivita datového modelu  
- Aktivity ukládání a sdílení dat s použitím typů uvedené v následující tabulce.  
+## <a name="activity-data-model"></a>Datový model aktivity  
+ Aktivity ukládají a sdílejí data pomocí typů uvedených v následující tabulce.  
   
 |||  
 |-|-|  
-|Proměnná|Ukládá data v nějaké aktivitě.|  
-|Argument|Přesune data do a z aktivity.|  
-|Výraz|Aktivita s se zvýšenými oprávněními návratovou hodnotu, která je použita ve vazbách argument.|  
+|Proměnná|Ukládá data do aktivity.|  
+|Argument|Přesune data do aktivity a ven z ní.|  
+|Výraz|Aktivita se zvýšenou návratovou hodnotou použitou v vazbách argumentů.|  
   
-## <a name="workflow-runtime"></a>Modul Runtime pracovního postupu  
- Modul runtime pracovního postupu je prostředí, ve kterém spuštění pracovních postupů. <xref:System.Activities.WorkflowInvoker> je nejjednodušší způsob, jak spustit pracovní postup. Hostitel používá <xref:System.Activities.WorkflowInvoker> pro následující:  
+## <a name="workflow-runtime"></a>Modul runtime pracovního postupu  
+ Modul runtime pracovního postupu je prostředí, ve kterém se pracovní postupy spouštějí. <xref:System.Activities.WorkflowInvoker>je nejjednodušší způsob, jak spustit pracovní postup. Hostitel používá <xref:System.Activities.WorkflowInvoker> pro následující:  
   
-- Chcete-li synchronně vyvolat pracovní postup.  
+- K synchronnímu vyvolání pracovního postupu.  
   
-- Chcete-li k zadání nebo načíst výstup z pracovního postupu.  
+- Zadání vstupu do nebo načtení výstupu z pracovního postupu.  
   
-- Přidání rozšíření používané aktivity.  
+- Pro přidání rozšíření, která budou používána aktivitami.  
   
- <xref:System.Activities.ActivityInstance> je bezpečná pro vlákno proxy server, který hostitelů můžete využít při interakci s modulem runtime. Hostitel používá <xref:System.Activities.ActivityInstance> pro následující:  
+ <xref:System.Activities.ActivityInstance>je proxy server bezpečný pro přístup z více vláken, který můžou hostitelé použít k interakci s modulem runtime. Hostitel používá <xref:System.Activities.ActivityInstance> pro následující:  
   
-- Získat instanci po jeho vytvoření nebo načtení z úložiště instancí.  
+- Pro získání instance jejich vytvořením nebo načtením z úložiště instance.  
   
-- Chcete-li oznámení o událostech životního cyklu instance.  
+- Oznámení o událostech životního cyklu instance.  
   
-- K řízení provádění pracovního postupu.  
+- Pro řízení provádění pracovního postupu.  
   
-- Chcete-li k zadání nebo načíst výstup z pracovního postupu.  
+- Zadání vstupu do nebo načtení výstupu z pracovního postupu.  
   
-- Signalizuje, že pokračování pracovního postupu a předat hodnoty do pracovního postupu.  
+- K signalizaci pokračování workflowu a předání hodnot do pracovního postupu.  
   
-- Chcete-li zachovat data pracovního postupu.  
+- Pro zachování dat pracovního postupu.  
   
-- Přidání rozšíření používané aktivity.  
+- Pro přidání rozšíření, která budou používána aktivitami.  
   
- Aktivity získat přístup k prostředí modulu runtime pracovního postupu pomocí vhodné <xref:System.Activities.ActivityContext> odvozené třídy, jako například <xref:System.Activities.NativeActivityContext> nebo <xref:System.Activities.CodeActivityContext>. To používají pro překlad proměnných a argumentů pro plánování podřízené aktivity a pro celou řadu dalších účelů.  
+ Aktivity získávají přístup k běhovému prostředí pracovního postupu pomocí příslušné <xref:System.Activities.ActivityContext> odvozené třídy, jako je například <xref:System.Activities.NativeActivityContext> nebo <xref:System.Activities.CodeActivityContext> . Používají se k překladu argumentů a proměnných, k plánování podřízených aktivit a k mnoha dalším účelům.  
   
 ## <a name="services"></a>Služby  
- Pracovní postupy poskytují přirozený způsob, jak implementovat a přístup ke službám volně spárované pomocí aktivit zasílání zpráv. Zasílání zpráv aktivity jsou postavené na WCF a jsou primární mechanismus, který se používá k získání dat do a z pracovního postupu. Můžete vytvořit zasílání zpráv aktivity dohromady a modelovat jakýkoli druh vzoru výměny zpráv, který si přejete. Další informace najdete v tématu [zasílání zpráv aktivity](../wcf/feature-details/messaging-activities.md). Služby pracovních postupů jsou hostované pomocí <xref:System.ServiceModel.Activities.WorkflowServiceHost> třídy. Další informace najdete v tématu [přehled hostování služeb pracovních postupů](../wcf/feature-details/hosting-workflow-services-overview.md). Další informace o službách pracovního postupu najdete v části [služeb pracovních postupů](../wcf/feature-details/workflow-services.md)  
+ Pracovní postupy představují přirozený způsob, jak implementovat a přistupovat k volně vázaným službám, a to pomocí aktivit zasílání zpráv. Aktivity zasílání zpráv jsou postaveny na WCF a jsou primárním mechanismem, který slouží k získávání dat do a z pracovního postupu. Můžete vytvářet aktivity zasílání zpráv dohromady a modelovat jakýkoli druh způsobu výměny zpráv, který chcete. Další informace najdete v tématu [aktivity zasílání zpráv](../wcf/feature-details/messaging-activities.md). Služby pracovních postupů jsou hostovány pomocí <xref:System.ServiceModel.Activities.WorkflowServiceHost> třídy. Další informace najdete v tématu věnovaném [hostování služby pracovního postupu](../wcf/feature-details/hosting-workflow-services-overview.md). Další informace o službách pracovních postupů najdete v tématu [služby pracovních postupů](../wcf/feature-details/workflow-services.md) .  
   
-## <a name="persistence-unloading-and-long-running-workflows"></a>Trvalost, uvolňování a dlouhotrvající pracovní postupy  
- Pracovní postup Windows zjednodušuje vytváření reaktivních aplikací dlouho běžící tím, že poskytuje:  
+## <a name="persistence-unloading-and-long-running-workflows"></a>Trvalá, uvolňování a dlouhotrvající pracovní postupy  
+ Pracovní postup Windows zjednodušuje vytváření dlouhodobě spuštěných reaktivních programů tím, že poskytuje:  
   
-- Aktivity, které přistupují k externí vstup.  
+- Aktivity, které přistupují k externímu vstupu.  
   
-- Schopnost vytvářet <xref:System.Activities.Bookmark> objekty, které lze obnovit naslouchací proces hostitele.  
+- Možnost vytvářet <xref:System.Activities.Bookmark> objekty, které mohou být obnoveny pomocí naslouchacího procesu hostitele.  
   
-- Možnost zachovat data pracovního postupu a uvolnění pracovního postupu a pak znovu načíst a znovu aktivovat pracovní postup v reakci na opětovné <xref:System.Activities.Bookmark> objektů v určitý pracovní postup.  
+- Možnost zachovat data pracovního postupu a uvolnit pracovní postup a pak znovu načíst a znovu aktivovat pracovní postup v reakci na obnovení <xref:System.Activities.Bookmark> objektů v konkrétním pracovním postupu.  
   
- Pracovní postup aktivity provádí nepřetržitě, dokud nejsou žádné další aktivity ke spuštění nebo dokud se všechny aktuálně prováděné činnosti jsou čekání na vstup. V tomto druhém stavu pracovního postupu nečinnosti. Je běžné, že hostitel uvolnit pracovní postupy, které přešly nečinnosti a znovu načte moct pokračovat v provádění při přijetí zprávy dorazí. <xref:System.ServiceModel.Activities.WorkflowServiceHost> poskytuje funkce pro tuto funkci a zásadu extensible uvolnění z paměti. Pro bloky spuštění, které používají data o stavu volatile nebo jiná data, která nelze nastavit jako trvalý, můžete označit aktivitu na hostitele, že by neměl být trvalé pomocí <xref:System.Activities.NoPersistHandle>. Pracovní postup můžete také explicitně zachovat svoje data do trvalého úložiště média s použitím <xref:System.Activities.Statements.Persist> aktivity.
+ Pracovní postup nepřetržitě spouští aktivity, dokud neexistují žádné další aktivity ke spuštění nebo dokud všechny aktuálně prováděné aktivity nečekají na vstup. V tomto druhém stavu je pracovní postup nečinný. Je běžné, že hostitel odvolá pracovní postupy, které prošly nečinné, a znovu je načte, aby bylo možné pokračovat v provádění při doručení zprávy. <xref:System.ServiceModel.Activities.WorkflowServiceHost>poskytuje funkce pro tuto funkci a poskytuje rozšiřitelnou zásadu uvolnění. Pro bloky spuštění, které používají nestálý stavová data nebo jiná data, která nelze zachovat, může aktivita indikovat hostiteli, že by neměl být trvale uložen pomocí <xref:System.Activities.NoPersistHandle> . Pracovní postup může také explicitně uchovávat data na trvalém paměťovém médiu pomocí <xref:System.Activities.Statements.Persist> aktivity.

@@ -1,5 +1,6 @@
 ---
 title: Použití atributů spolupráce
+description: Tento článek shrnuje atributy zprostředkovatele komunikace s objekty COM v oboru názvů System. Runtime. InteropServices, včetně atributů doby návrhu a nástroje pro převod.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - design-time attributes
@@ -13,15 +14,15 @@ helpviewer_keywords:
 - COM interop, exposing COM components
 - COM interop, applying attributes
 ms.assetid: b6014613-641c-4912-9e2f-83a99210a037
-ms.openlocfilehash: ca104c512641774217de5e270dc50b7393fc5725
-ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
+ms.openlocfilehash: 831f8d79030264ef013a75cd91cb771c9d168576
+ms.sourcegitcommit: 9a4488a3625866335e83a20da5e9c5286b1f034c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "78159244"
+ms.lasthandoff: 05/15/2020
+ms.locfileid: "83420536"
 ---
 # <a name="applying-interop-attributes"></a>Použití atributů spolupráce
-<xref:System.Runtime.InteropServices> Obor názvů poskytuje tři kategorie atributů specifických pro spolupráci: ty, které jste použili v době návrhu, ty, které byly aplikovány pomocí nástrojů spolupráce modelu COM a rozhraní API během procesu převodu a které byly aplikovány vámi nebo zprostředkovatelem komunikace s objekty com.  
+<xref:System.Runtime.InteropServices>Obor názvů poskytuje tři kategorie atributů specifických pro spolupráci: ty, které jste použili v době návrhu, ty, které byly aplikovány pomocí nástrojů spolupráce modelu COM a rozhraní API během procesu převodu a které byly aplikovány vámi nebo zprostředkovatelem komunikace s objekty com.  
   
  Pokud nejste obeznámeni s úlohou použití atributů pro spravovaný kód, přečtěte si téma [rozšíření metadat pomocí atributů](../../../docs/standard/attributes/index.md). Podobně jako u jiných vlastních atributů můžete použít atributy specifické pro spolupráci na typy, metody, vlastnosti, parametry, pole a další členy.  
   

@@ -1,5 +1,5 @@
 ---
-title: IXCLRDataProcess::EnumModule – metoda
+title: 'IXCLRDataProcess:: EnumModule – metoda'
 ms.date: 01/16/2019
 api.name:
 - IXCLRDataProcess::EnumModule Method
@@ -15,14 +15,14 @@ topic_type:
 - apiref
 author: cshung
 ms.author: andrewau
-ms.openlocfilehash: 40ab90a3218d4309cda709004a191e9440fe505d
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 5caadcfe091393a8ff79106d57a50a532c349829
+ms.sourcegitcommit: 9a4488a3625866335e83a20da5e9c5286b1f034c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67769584"
+ms.lasthandoff: 05/15/2020
+ms.locfileid: "83420770"
 ---
-# <a name="ixclrdataprocessenummodule-method"></a>IXCLRDataProcess::EnumModule – metoda
+# <a name="ixclrdataprocessenummodule-method"></a>IXCLRDataProcess:: EnumModule – metoda
 
 Vytvoří výčet modulů tohoto procesu.
 
@@ -40,25 +40,25 @@ HRESULT EnumModule(
 ## <a name="parameters"></a>Parametry
 
 `handle`\
-[out v] Popisovač pro vytvoření výčtu moduly.
+[in, out] Popisovač pro vytváření výčtu modulů.
 
 `mod`\
-[out] Výčtový modul.
+mimo Výčtový modul.
 
 ## <a name="remarks"></a>Poznámky
 
-Zadaná metoda je součástí `IXCLRDataProcess` rozhraní a odpovídá 25 pozice tabulce virtuální metody.
+Poskytnutá metoda je součástí `IXCLRDataProcess` rozhraní a odpovídá 25 slotu tabulky virtuální metody.
 
 ## <a name="requirements"></a>Požadavky
 
-**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
-**Záhlaví:** Žádné  
-**Knihovna:** Žádné  
-**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v47plus](../../../../includes/net-current-v47plus.md)]  
+**Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
+**Hlavička:** NTato  
+**Knihovna:** NTato  
+**Verze .NET Framework:**[!INCLUDE[net_current_v47plus](../../../../includes/net-current-v47plus.md)]  
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [CLRDataSourceType Enumeration](clrdatasourcetype-enumeration.md)
+- [Výčet CLRDataSourceType](clrdatasourcetype-enumeration.md)
 - [Ladění](index.md)
-- [IXCLRDataModule Interface](ixclrdatamodule-interface.md)
-- [IXCLRDataProcess Interface](ixclrdataprocess-interface.md)
+- [IXCLRDataModule – rozhraní](ixclrdatamodule-interface.md)
+- [IXCLRDataProcess – rozhraní](ixclrdataprocess-interface.md)

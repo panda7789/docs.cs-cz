@@ -1,30 +1,31 @@
 ---
-title: Aktivity toku řízení do pracovního postupu
+title: Aktivity toku řízení v WF
+description: Tento článek shrnuje .NET Framework 4.6.1 aktivity pro řízení toku provádění v rámci pracovního postupu.
 ms.date: 03/30/2017
 ms.assetid: 6892885b-f7c5-4aea-8f5e-28863fb4ae75
-ms.openlocfilehash: bcbb12210af2d0172977dca6f81355031baa043a
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 18ff982d3f215e3fd46108eb2411f3d1a5ab9745
+ms.sourcegitcommit: 9a4488a3625866335e83a20da5e9c5286b1f034c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61945909"
+ms.lasthandoff: 05/15/2020
+ms.locfileid: "83420068"
 ---
-# <a name="control-flow-activities-in-wf"></a>Aktivity toku řízení do pracovního postupu
-[!INCLUDE[netfx_current_long](../../../includes/netfx-current-long-md.md)] Poskytuje několik aktivit pro řízení toku provádění v rámci pracovního postupu. Některé z těchto aktivit (například `Switch` a `If`) implementovat tok řídicí struktury podobné těm v programovací prostředí, jako je vizuál C#, while ostatním uživatelům (například `Pick`) nových struktur programovací model.  
+# <a name="control-flow-activities-in-wf"></a>Aktivity toku řízení v WF
+[!INCLUDE[netfx_current_long](../../../includes/netfx-current-long-md.md)]Poskytuje několik aktivit pro řízení toku provádění v rámci pracovního postupu. Některé z těchto aktivit (například `Switch` a `If` ) implementují struktury řízení toku podobné těm v programovacích prostředích, jako je například Visual C#, zatímco jiné (například `Pick` ) modelu nové programové struktury.  
   
- Všimněte si, že při aktivity, jako `Parallel` a `ParallelForEach` aktivity naplánovat současně více podřízených aktivit pro spuštění, pro pracovní postup se používá pouze jedno vlákno. Každá podřízená aktivita tyto aktivity spouští sekvenčně a následné aktivity se neprovedou až do předchozí aktivity dokončení nebo přejděte nečinnosti. V důsledku toho tyto aktivity jsou zvláště užitečná pro aplikace, ve kterých musí provést několik potenciálně blokující aktivity prokládané způsobem. Pokud žádná z podřízených aktivit tyto aktivity přejít nečinný, `Parallel` aktivity spustí podobně jako `Sequence` aktivity a `ParallelForEach` aktivity spustí podobně jako `ForEach` aktivity. Pokud však asynchronních aktivitách (například aktivit, které jsou odvozeny z <xref:System.Activities.AsyncCodeActivity>) nebo zasílání zpráv aktivity se používají, ovládací prvek předá do další větve, zatímco podřízená aktivita čeká na jeho má přijmout zprávu nebo jeho asynchronní práce k dokončení.  
+ Všimněte si, že i když aktivity `Parallel` jako `ParallelForEach` aktivity a naplánují více podřízených aktivit současně, pro pracovní postup se používá pouze jedno vlákno. Každá podřízená aktivita těchto aktivit se provádí postupně a následné aktivity se nespustí, dokud nebudou předchozí aktivity dokončeny nebo nečinné. V důsledku toho jsou tyto aktivity nejužitečnější pro aplikace, ve kterých se několik potenciálně blokovaných aktivit musí provádět prokládaným způsobem. Pokud žádná z podřízených aktivit těchto aktivit nepřejde do nečinnosti, `Parallel` aktivita se spustí stejně jako `Sequence` aktivita a `ParallelForEach` aktivita se spustí stejně jako `ForEach` aktivita. Pokud se však používají asynchronní aktivity (například aktivity odvozené z <xref:System.Activities.AsyncCodeActivity> ) nebo aktivity zasílání zpráv, řízení se předá do další větve, zatímco podřízená aktivita čeká na přijetí zprávy nebo na její asynchronní zpracování.  
   
-## <a name="flow-control-activities"></a>Aktivity toku řízení  
+## <a name="flow-control-activities"></a>Aktivity řízení toku  
   
 |Aktivita|Popis|  
 |--------------|-----------------|  
-|<xref:System.Activities.Statements.DoWhile>|Provede obsažené aktivity jednou a pokračuje k tomu, dokud je podmínka `true`.|  
-|<xref:System.Activities.Statements.ForEach%601>|Vloženým příkazem spouští postupně pro každý prvek v kolekci. <xref:System.Activities.Statements.ForEach%601> je podobný klíčové slovo `foreach`, ale je implementovaná jako aktivity místo příkaz jazyka.|  
-|<xref:System.Activities.Statements.If>|Provede obsažené aktivity, pokud je podmínka `true`a mohou spouštět aktivity obsažené v <xref:System.Activities.Statements.If.Else%2A> vlastnosti, pokud je podmínka `false`.|  
+|<xref:System.Activities.Statements.DoWhile>|Spustí obsažené aktivity jednou a pokračuje v tom, i když je podmínka `true` .|  
+|<xref:System.Activities.Statements.ForEach%601>|Spustí vložený příkaz v sekvenci pro každý prvek v kolekci. <xref:System.Activities.Statements.ForEach%601>je podobná klíčovému slovu `foreach` , ale je implementována jako aktivita, nikoli jako příkaz jazyka.|  
+|<xref:System.Activities.Statements.If>|Provede obsažené aktivity, pokud je podmínka `true` , a může spustit aktivity obsažené ve <xref:System.Activities.Statements.If.Else%2A> vlastnosti, pokud je podmínka `false` .|  
 |<xref:System.Activities.Statements.Parallel>|Provede obsažené aktivity paralelně.|  
-|<xref:System.Activities.Statements.ParallelForEach%601>|Vloženým příkazem spustí paralelně pro každý prvek v kolekci.|  
-|<xref:System.Activities.Statements.Pick>|Poskytuje modelování toku řízení na základě událostí.|  
-|<xref:System.Activities.Statements.PickBranch>|Představuje potenciální cesta provádění v <xref:System.Activities.Statements.Pick> aktivity.|  
-|<xref:System.Activities.Statements.Sequence>|Provede obsažené aktivity postupně.|  
-|<xref:System.Activities.Statements.Switch%601>|Vybere jednu možnost z mnoha aktivity, na základě hodnoty daného výrazu.|  
-|<xref:System.Activities.Statements.While>|Provede obsažené aktivity, dokud je podmínka `true`.|
+|<xref:System.Activities.Statements.ParallelForEach%601>|Spustí vložený příkaz paralelně pro každý prvek v kolekci.|  
+|<xref:System.Activities.Statements.Pick>|Poskytuje modelování toku řízení založené na událostech.|  
+|<xref:System.Activities.Statements.PickBranch>|Představuje potenciální cestu spuštění v <xref:System.Activities.Statements.Pick> aktivitě.|  
+|<xref:System.Activities.Statements.Sequence>|Provede obsažené aktivity v sekvenci.|  
+|<xref:System.Activities.Statements.Switch%601>|Vybere jednu volbu z několika aktivit, které se mají provést, na základě hodnoty daného výrazu.|  
+|<xref:System.Activities.Statements.While>|Provede obsažené aktivity, pokud je podmínka `true` .|

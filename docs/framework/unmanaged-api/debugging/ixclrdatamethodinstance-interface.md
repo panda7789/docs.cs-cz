@@ -15,12 +15,12 @@ topic_type:
 - apiref
 author: cshung
 ms.author: andrewau
-ms.openlocfilehash: c51825433bbc86c897c097475d5c15c855f6ec8b
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.openlocfilehash: 0b1c982b25af9edea76a038b4314b4bd608f07df
+ms.sourcegitcommit: 9a4488a3625866335e83a20da5e9c5286b1f034c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76790412"
+ms.lasthandoff: 05/15/2020
+ms.locfileid: "83420887"
 ---
 # <a name="ixclrdatamethodinstance-interface"></a>IXCLRDataMethodInstance – rozhraní
 
@@ -37,16 +37,16 @@ Poskytuje metody pro dotazování na informace o instanci metody.
 
 ## <a name="remarks"></a>Poznámky
 
-Toto rozhraní je v modulu runtime a není zveřejněné prostřednictvím hlaviček nebo souborů knihoven. Jedná se však o rozhraní modelu COM, které je odvozeno od `IUnknown` s identifikátorem GUID `ECD73800-22CA-4b0d-AB55-E9BA7E6318A5`, které lze získat prostřednictvím obvyklých mechanismů modelu COM.
+Toto rozhraní je v modulu runtime a není zveřejněné prostřednictvím hlaviček nebo souborů knihoven. Jedná se však o rozhraní modelu COM, které je odvozeno z `IUnknown` identifikátoru GUID `ECD73800-22CA-4b0d-AB55-E9BA7E6318A5` , který lze získat prostřednictvím obvyklých mechanismů modelu COM.
 
 ## <a name="requirements"></a>Požadavky
 
-**Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+**Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
 **Hlavička:** NTato  
 **Knihovna:** NTato  
-**Verze .NET Framework:** [!INCLUDE[net_current_v47plus](../../../../includes/net-current-v47plus.md)]  
+**Verze .NET Framework:**[!INCLUDE[net_current_v47plus](../../../../includes/net-current-v47plus.md)]  
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Ladění](index.md)
-- [Rozhraní pro ladění](debugging-interfaces.md)
+- [Debugging – rozhraní](debugging-interfaces.md)

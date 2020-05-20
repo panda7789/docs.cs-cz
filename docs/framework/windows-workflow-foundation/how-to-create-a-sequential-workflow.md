@@ -1,23 +1,24 @@
 ---
 title: 'Postupy: Vytvoření sekvenčního pracovního postupu'
+description: Tento článek vytvoří pracovní postup, který používá předdefinované aktivity, jako je například aktivita sekvence a vlastní aktivity.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: 5280e816-ae17-48c4-8de0-a1e6895dd8f0
-ms.openlocfilehash: 61e3f01b1259536ff15d71526e91aef42069722e
-ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
+ms.openlocfilehash: f80ac471fdcc425504b11b5fb17effa888aa9590
+ms.sourcegitcommit: 9a4488a3625866335e83a20da5e9c5286b1f034c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/14/2019
-ms.locfileid: "70989693"
+ms.lasthandoff: 05/15/2020
+ms.locfileid: "83419691"
 ---
 # <a name="how-to-create-a-sequential-workflow"></a>Postupy: Vytvoření sekvenčního pracovního postupu
 
-Pracovní postupy mohou být vytvořeny z vestavěných aktivit i z vlastních aktivit. V tomto tématu se seznámíte s vytvořením pracovního postupu, který používá předdefinované aktivity, <xref:System.Activities.Statements.Sequence> jako je aktivita, a vlastní aktivity z předchozího [postupu: Vytvoření tématu aktivity](how-to-create-an-activity.md) . Pracovní postup modeluje číslo odhadující hru.
+Pracovní postupy mohou být vytvořeny z vestavěných aktivit i z vlastních aktivit. V tomto tématu se seznámíte s vytvořením pracovního postupu, který používá předdefinované aktivity, jako je <xref:System.Activities.Statements.Sequence> aktivita, a vlastní aktivity z předchozího tématu [Postupy: vytvoření aktivity](how-to-create-an-activity.md) . Pracovní postup modeluje číslo odhadující hru.
 
 > [!NOTE]
-> Každé téma v kurzu Začínáme závisí na předchozích tématech. Chcete-li dokončit toto téma, je nutné [nejprve provést následující kroky: Vytvoří aktivitu](how-to-create-an-activity.md).
+> Každé téma v kurzu Začínáme závisí na předchozích tématech. Chcete-li dokončit toto téma, je nutné nejprve dokončit [Postupy: vytvoření aktivity](how-to-create-an-activity.md).
 
 > [!NOTE]
 > Pokud si chcete stáhnout dokončenou verzi kurzu, přečtěte si [kurz programovací model Windows Workflow Foundation (WF45) – začínáme](https://go.microsoft.com/fwlink/?LinkID=248976).
@@ -28,7 +29,7 @@ Pracovní postupy mohou být vytvořeny z vestavěných aktivit i z vlastních a
 
 2. V uzlu **nainstalované**, **běžné položky** vyberte **pracovní postup**. V seznamu **pracovních postupů** vyberte **aktivita** .
 
-3. Do `SequentialNumberGuessWorkflow` pole **název** zadejte a klikněte na **Přidat**.
+3. `SequentialNumberGuessWorkflow`Do pole **název** zadejte a klikněte na **Přidat**.
 
 4. Přetáhněte aktivitu **sekvence** z části **tok řízení** v **sadě nástrojů** a přetáhněte ji na popisek sem přetáhněte **aktivitu** na návrhové ploše pracovního postupu.
 
@@ -40,11 +41,11 @@ Pracovní postupy mohou být vytvořeny z vestavěných aktivit i z vlastních a
 
 3. Klikněte na **vytvořit argument**.
 
-4. Do `MaxNumber` pole **název** zadejte, v rozevíracím seznamu **směr** vyberte možnost **v vyberte v** rozevíracím seznamu **typ argumentu** možnost **Int32** a potom stiskněte klávesu ENTER a argument uložte.
+4. `MaxNumber`Do pole **název** zadejte, v rozevíracím seznamu **směr** vyberte možnost **v vyberte v** rozevíracím seznamu **typ argumentu** možnost **Int32** a potom stiskněte klávesu ENTER a argument uložte.
 
 5. Klikněte na **vytvořit argument**.
 
-6. `MaxNumber` Do pole název, které se nachází pod nově přidaným argumentem, vyberte out v rozevíracím seznamu směr, v rozevíracím seznamu typ argumentu vyberte Int32 a potom stiskněte klávesu ENTER. `Turns`
+6. `Turns`Do pole **název** , které se nachází pod nově přidaným `MaxNumber` argumentem, vyberte **out** v rozevíracím seznamu **směr** , v rozevíracím seznamu **typ argumentu** vyberte **Int32** a potom stiskněte klávesu ENTER.
 
 7. Kliknutím na **argumenty** v levé dolní části návrháře aktivit zavřete podokno **argumenty** .
 
@@ -55,17 +56,17 @@ Pracovní postupy mohou být vytvořeny z vestavěných aktivit i z vlastních a
     > [!TIP]
     > Pokud se nezobrazí žádné pole **vytvořit proměnnou** , vyberte ji kliknutím na aktivitu **sekvence** na ploše návrháře pracovního postupu.
 
-10. Do `Guess` pole **název** zadejte, v rozevíracím seznamu **typ proměnné** vyberte **Int32** a pak stisknutím klávesy ENTER uložte proměnnou.
+10. `Guess`Do pole **název** zadejte, v rozevíracím seznamu **typ proměnné** vyberte **Int32** a pak stisknutím klávesy ENTER uložte proměnnou.
 
 11. Klikněte na **vytvořit proměnnou**.
 
-12. Do `Target` pole **název** zadejte, v rozevíracím seznamu **typ proměnné** vyberte **Int32** a pak stisknutím klávesy ENTER uložte proměnnou.
+12. `Target`Do pole **název** zadejte, v rozevíracím seznamu **typ proměnné** vyberte **Int32** a pak stisknutím klávesy ENTER uložte proměnnou.
 
 13. Kliknutím na **proměnné** v levém dolním rohu návrháře aktivit zavřete podokno **proměnné** .
 
 ## <a name="to-add-the-workflow-activities"></a>Přidání aktivit pracovního postupu
 
-1. Přetáhněte aktivitu **přiřazení** z oddílu **Primitivs** v **sadě nástrojů** a přetáhněte ji na aktivitu **sekvence** . Zadejte `Target` do pole **do** a následující výraz do pole **Zadejte C# výraz** nebo **Zadejte výraz VB** .
+1. Přetáhněte aktivitu **přiřazení** z oddílu **Primitivs** v **sadě nástrojů** a přetáhněte ji na aktivitu **sekvence** . Do `Target` pole **do** vložte a následující výraz zadejte do **výrazu zadejte výraz jazyka C#** nebo **Zadejte pole výrazu VB** .
 
     ```vb
     New System.Random().Next(1, MaxNumber + 1)
@@ -90,11 +91,11 @@ Pracovní postupy mohou být vytvořeny z vestavěných aktivit i z vlastních a
     Guess != Target
     ```
 
-     Aktivita spustí své podřízené aktivity a pak vyhodnotí její <xref:System.Activities.Statements.DoWhile.Condition%2A>. <xref:System.Activities.Statements.DoWhile> Pokud se <xref:System.Activities.Statements.DoWhile.Condition%2A> vyhodnotí `True`jako, <xref:System.Activities.Statements.DoWhile> pak se aktivity v znovu spustí. V tomto příkladu je vyhodnocen odhad uživatele a <xref:System.Activities.Statements.DoWhile> pokračuje, dokud není odhad správný.
+     <xref:System.Activities.Statements.DoWhile>Aktivita spustí své podřízené aktivity a pak vyhodnotí její <xref:System.Activities.Statements.DoWhile.Condition%2A> . Pokud se <xref:System.Activities.Statements.DoWhile.Condition%2A> vyhodnotí jako `True` , pak se aktivity v <xref:System.Activities.Statements.DoWhile> znovu spustí. V tomto příkladu je vyhodnocen odhad uživatele a <xref:System.Activities.Statements.DoWhile> pokračuje, dokud není odhad správný.
 
 4. Přetáhněte aktivitu **prompt** z části **NumberGuessWorkflowActivities** sady **nástrojů** a přetáhněte ji do aktivity **DoWhile** z předchozího kroku.
 
-5. V **okně Vlastnosti**zadejte `"EnterGuess"` včetně uvozovek do pole hodnota vlastnosti **Bookmark** pro aktivitu **výzvy** . Do `Guess` pole hodnota vlastnosti **výsledek** zadejte a do pole vlastnost **text** zadejte následující výraz.
+5. V **okně Vlastnosti**zadejte `"EnterGuess"` včetně uvozovek do pole hodnota vlastnosti **Bookmark** pro aktivitu **výzvy** . `Guess`Do pole hodnota vlastnosti **výsledek** zadejte a do pole vlastnost **text** zadejte následující výraz.
 
     ```vb
     "Please enter a number between 1 and " & MaxNumber
@@ -112,7 +113,7 @@ Pracovní postupy mohou být vytvořeny z vestavěných aktivit i z vlastních a
     > [!NOTE]
     > Když vyřadíte aktivitu **přiřazení** , Všimněte si, jak Návrhář pracovního postupu automaticky přidá aktivitu **sekvence** , která bude obsahovat aktivitu **výzvy** i nově přidanou aktivitu **přiřazení** .
 
-7. `Turns + 1` **C#** Do pole do zadejte a do pole zadejte výraz nebo zadejte výraz VB. `Turns`
+7. Do `Turns` pole **do** zadejte do a vložte `Turns + 1` **výraz jazyka C#** nebo zadejte pole **výrazu VB** .
 
 8. Přetáhněte aktivitu **if** z části **Flow řízení** v **sadě nástrojů** a přetáhněte ji do aktivity **sekvence** tak, aby se doplnila nově přidaným aktivitou **přiřazení** .
 
@@ -154,11 +155,11 @@ Pracovní postupy mohou být vytvořeny z vestavěných aktivit i z vlastních a
 
 ## <a name="to-build-the-workflow"></a>Postup sestavení pracovního postupu
 
-1. Stisknutím kombinace kláves CTRL + SHIFT + B Sestavte řešení.
+1. Stisknutím kláves CTRL+SHIFT+B řešení sestavíte.
 
-     Pokyny ke spuštění pracovního postupu najdete v dalším tématu [postup: Spuštění pracovního postupu](how-to-run-a-workflow.md). Pokud jste již dokončili [postupy: Spusťte krok pracovního](how-to-run-a-workflow.md) postupu s jiným stylem pracovního postupu a přejete si ho spustit pomocí sekvenčního pracovního postupu z tohoto kroku, přejděte k části [ [Vytvoření a spusťte aplikaci](how-to-run-a-workflow.md#BKMK_ToRunTheApplication) v tématu Postupy: Spuštění pracovního postupu](how-to-run-a-workflow.md).
+     Pokyny ke spuštění pracovního postupu najdete v dalším tématu [Postup: spuštění pracovního postupu](how-to-run-a-workflow.md). Pokud jste již dokončili [Postup: spuštění kroku pracovního postupu](how-to-run-a-workflow.md) s jiným stylem pracovního postupu a chcete jej spustit pomocí sekvenčního pracovního postupu z tohoto kroku, přeskočte dopředu na [sestavení a spusťte aplikaci v](how-to-run-a-workflow.md#BKMK_ToRunTheApplication) tématu [Postupy: spuštění pracovního postupu](how-to-run-a-workflow.md).
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Activities.Statements.Flowchart>
 - <xref:System.Activities.Statements.FlowDecision>

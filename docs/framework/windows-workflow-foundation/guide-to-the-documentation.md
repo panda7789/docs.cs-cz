@@ -1,38 +1,39 @@
 ---
 title: Průvodce dokumentací k Windows Workflow
+description: Tento článek obsahuje informace o tom, jak používat dokumentaci programovací model Windows Workflow Foundation seskupenou podle zájmů a úrovně odbornosti.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - WF [WF], guide to
 - Windows Workflow Foundation [WF], guide to
 ms.assetid: a75025be-f225-430f-90cf-98f7022db436
-ms.openlocfilehash: 7697b5ab61d4be19223dc912900595f5431109fd
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: f9d9bf834946233e176abc463d31a99d476b86be
+ms.sourcegitcommit: 9a4488a3625866335e83a20da5e9c5286b1f034c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64753827"
+ms.lasthandoff: 05/15/2020
+ms.locfileid: "83419769"
 ---
 # <a name="guide-to-the-windows-workflow-documentation"></a>Průvodce dokumentací k Windows Workflow
-Toto téma obsahuje informace o tom, jak používat dokumentaci k Windows Workflow Foundation. Odkazované dokumenty se doporučuje počáteční body seskupený podle konkrétní zájmech a úrovně odborných znalostí.  
+Toto téma obsahuje informace o tom, jak používat dokumentaci programovací model Windows Workflow Foundation. U odkazovaných dokumentů se doporučuje spouštět body seskupené podle konkrétních zájmů a úrovně odbornosti.  
   
-## <a name="new-to-windows-workflow-foundation-programming"></a>Windows Workflow Foundation programování  
+## <a name="new-to-windows-workflow-foundation-programming"></a>Novinka programovací model Windows Workflow Foundation programování  
   
-- Pokud začínáte programování v jazyce programovacího modelu Windows Workflow Foundation a chcete jenom zobrazit některé ukázkové aplikace, které fungují, najdete v tématech uvedených v části [ukázky Windows Workflow](./samples/index.md).  
+- Pokud začínáte s programováním pomocí programovací model Windows Workflow Foundation a chcete jenom zobrazit některé ukázkové aplikace, které fungují, přečtěte si témata uvedená v části [ukázky pro Windows Workflow](./samples/index.md).  
   
-- Diskuzi o různých modelů řízení toku Windows Workflow Foundation, najdete v článku [návrhu pracovních postupů](designing-workflows.md).  
+- Diskuzi o různých modelech řízení toku programovací model Windows Workflow Foundation najdete v tématu [navrhování pracovních postupů](designing-workflows.md).  
   
-- Kurz vás provede základními kroky vytvoření aplikace pro Windows Workflow Foundation, najdete v tématu [kurz Začínáme](getting-started-tutorial.md).  
+- Kurz, který vás provede základními kroky vytváření programovací model Windows Workflow Foundation aplikace, najdete v tématu [Začínáme kurzu](getting-started-tutorial.md).  
   
-- Pokud vás zajímají Principy Windows Workflow Foundation, najdete v tématech [koncepční přehled Windows Workflow](conceptual-overview.md) oddílu.  
+- Pokud vás zajímá koncepty za programovací model Windows Workflow Foundation, přečtěte si témata v části [koncepční přehled pracovního postupu Windows](conceptual-overview.md) .  
   
-- Seznam termínů používaných v dokumentaci k Windows Workflow Foundation, najdete v tématu [Windows Workflow Foundation Glosář pro rozhraní .NET Framework 4.5](glossary.md).  
+- Seznam termínů používaných v dokumentaci k programovací model Windows Workflow Foundation najdete v článku [programovací model Windows Workflow Foundation Glosář pro .NET Framework 4,5](glossary.md).  
   
-- Seznam nových konceptů a funkcí najdete v tématu [co je nového ve Windows Workflow Foundation](whats-new.md).  
+- Seznam nových konceptů a funkcí najdete v tématu [co je nového v programovací model Windows Workflow Foundation](whats-new.md).  
   
-## <a name="programming-in-depth"></a>Programování podrobné  
+## <a name="programming-in-depth"></a>Podrobné programování  
   
-- Obsahuje podrobnou diskuzi o objektový model Windows Workflow Foundation, najdete v části [architektury pracovního postupu Windows](architecture.md).  
+- Podrobné informace o modelu programovací model Windows Workflow Foundationového objektu najdete v tématu [Architektura pracovního postupu Windows](architecture.md).  
   
-- Pokud jste připravení začít vyvíjet aplikace, najdete v článku [programování Windows Workflow Foundation](programming.md).  
+- Pokud jste připraveni začít s vývojem aplikace, přečtěte si téma [programovací model Windows Workflow Foundation Programming](programming.md).  
   
-- Pokud chcete rozšířit nebo upravit modelu Windows Workflow Foundation, aby vyhovoval vašim požadavkům, přečtěte si téma [rozšíření Windows Workflow Foundation](extend.md).
+- Pokud chcete rozšířit nebo přizpůsobit programovací model Windows Workflow Foundation podle vašich požadavků, přečtěte si téma [rozšíření programovací model Windows Workflow Foundation](extend.md).

@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: d4cef11f-a8ca-49bc-a1b8-6631f9e28f3e
 topic_type:
 - apiref
-ms.openlocfilehash: c81a5787eb06971e3d52aff5d1c1154a72564daf
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.openlocfilehash: 45ae947cda5b4ddadfb10f5b2bdc78a95f031703
+ms.sourcegitcommit: 9a4488a3625866335e83a20da5e9c5286b1f034c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76790338"
+ms.lasthandoff: 05/15/2020
+ms.locfileid: "83420681"
 ---
 # <a name="stacktrace_simplecontext-structure"></a>StackTrace_SimpleContext – struktura
 Poskytuje jednoduchý kontext, který lze použít místo úplné `CONTEXT` struktury.  
@@ -45,16 +45,16 @@ struct StackTrace_SimpleContext
 |`InstructionOffset`|Ukazatel na instrukci nebo ukazatel na instrukci ENTER (EIP) na platformách x86.|  
   
 ## <a name="remarks"></a>Poznámky  
- Vzhledem k tomu, že funkce trasování zásobníku obvykle potřebují vracet pouze adresu, posun snímku a adresu zásobníku, můžete místo velké `CONTEXT` struktury použít `SimpleContext` strukturu.  
+ Vzhledem k tomu, že funkce trasování zásobníku obvykle potřebují vracet pouze adresu, posun snímku a adresu zásobníku, můžete `SimpleContext` místo velké struktury použít strukturu `CONTEXT` .  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** SOS_Stacktrace. h  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Struktury pro ladění](debugging-structures.md)
 - [Ladění](index.md)

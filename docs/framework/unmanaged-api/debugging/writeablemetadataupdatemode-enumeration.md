@@ -12,12 +12,12 @@ api_type:
 ms.assetid: 6758f4d3-6bc7-4c99-8582-e9be00566784
 topic_type:
 - apiref
-ms.openlocfilehash: 5c3f2f7a9c0804b71c9c8a52bb032aca7c03825e
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.openlocfilehash: 0793dcbe4d080da83cf507e04303d66fbbb56b85
+ms.sourcegitcommit: 9a4488a3625866335e83a20da5e9c5286b1f034c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76790296"
+ms.lasthandoff: 05/15/2020
+ms.locfileid: "83420640"
 ---
 # <a name="writeablemetadataupdatemode-enumeration"></a>Výčet WriteableMetadataUpdateMode
 [Podporované v .NET Framework 4.5.2 a novějších verzích]  
@@ -41,20 +41,20 @@ typedef enum WriteableMetadataUpdateMode {
 |`AlwaysShowUpdates`|Zpřístupnit v paměti aktualizace metadat viditelných pro ladicí program.|  
   
 ## <a name="remarks"></a>Poznámky  
- Člen výčtu `WriteableMetadataUpdateMode` lze předat metodě [SetWriteableMetadataUpdateMode –](icordebugprocess7-setwriteablemetadataupdatemode-method.md) a určit tak, zda mají být aktualizace v paměti metadaty v cílovém procesu viditelné ladicímu programu.  
+ Člen `WriteableMetadataUpdateMode` výčtu může být předán metodě [SetWriteableMetadataUpdateMode –](icordebugprocess7-setwriteablemetadataupdatemode-method.md) , která určuje, zda jsou aktualizace v paměti metadat v cílovém procesu viditelné ladicímu programu.  
   
- Možnost `LegacyCompatPolicy` vynutila stejné chování jako ve verzích .NET Framework před 4.5.2. To často znamená, že metadata z aktualizací nejsou viditelná. Nicméně volání na řadu metod ladění implicitně převede ladicí program, aby byly aktualizace viditelné. Například pokud ladicí program projde [ICorDebugILFrame:: GetLocalVariable –](icordebugilframe-getlocalvariable-method.md) index proměnné, který nebyl nalezen v původních metadatech metody, všechna metadata pro modul jsou aktualizována na snímek, který odpovídá aktuálnímu stavu procesu. Jinými slovy, s možností `LegacyCompatPolicy`, ladicí program se může v závislosti na tom, jak používá jiné části nespravovaného rozhraní API pro ladění, zobrazovat žádná, některá nebo všechna dostupná aktualizace metadat.  
+ `LegacyCompatPolicy`Možnost vynutila stejné chování jako ve verzích .NET Framework před 4.5.2. To často znamená, že metadata z aktualizací nejsou viditelná. Nicméně volání na řadu metod ladění implicitně převede ladicí program, aby byly aktualizace viditelné. Například pokud ladicí program projde [ICorDebugILFrame:: GetLocalVariable –](icordebugilframe-getlocalvariable-method.md) index proměnné, který nebyl nalezen v původních metadatech metody, všechna metadata pro modul jsou aktualizována na snímek, který odpovídá aktuálnímu stavu procesu. Jinými slovy, `LegacyCompatPolicy` ladicí program se může v závislosti na tom, jak používá jiné části nespravovaného rozhraní API pro ladění, zobrazit žádné, některé nebo všechny dostupné aktualizace metadat.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** CorDebug. idl, CorDebug. h  
   
  **Knihovna:** CorGuids. lib  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v452plus](../../../../includes/net-current-v452plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v452plus](../../../../includes/net-current-v452plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Výčty pro ladění](debugging-enumerations.md)
+- [Ladění výčtů](debugging-enumerations.md)
 - [SetWriteableMetadataUpdateMode – metoda](icordebugprocess7-setwriteablemetadataupdatemode-method.md)

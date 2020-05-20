@@ -15,12 +15,12 @@ topic_type:
 - apiref
 author: hoyosjs
 ms.author: juhoyosa
-ms.openlocfilehash: d9f9e16d243c0f3b45ac24776caea5bb9c32dcc1
-ms.sourcegitcommit: 046a9c22487551360e20ec39fc21eef99820a254
+ms.openlocfilehash: d546cda5c68732e75550a3de286089f7df261c91
+ms.sourcegitcommit: 9a4488a3625866335e83a20da5e9c5286b1f034c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83395754"
+ms.lasthandoff: 05/15/2020
+ms.locfileid: "83420900"
 ---
 # <a name="ixclrdatamethodinstancegetrepresentativeentryaddress-method"></a>IXCLRDataMethodInstance:: GetRepresentativeEntryAddress – metoda
 
@@ -47,7 +47,7 @@ Poskytnutá metoda je součástí [ `IXCLRDataMethodInstance` rozhraní](ixclrda
 
 ## <a name="requirements"></a>Požadavky
 
-**Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+**Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
 **Hlavička:** NTato  
 **Knihovna:** NTato  
 **Verze .NET Framework:**[!INCLUDE[net_current_v47plus](../../../../includes/net-current-v47plus.md)]  

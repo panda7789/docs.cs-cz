@@ -14,15 +14,15 @@ helpviewer_keywords:
 ms.assetid: 8635ee3a-c84b-4626-876c-416bee54f787
 topic_type:
 - apiref
-ms.openlocfilehash: e2fa5d5a998f51e0e90cfde22b40ec12f278307b
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 455fd06dbdbfd5d9753f3d7270647a742751d804
+ms.sourcegitcommit: 9a4488a3625866335e83a20da5e9c5286b1f034c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79178365"
+ms.lasthandoff: 05/15/2020
+ms.locfileid: "83420653"
 ---
 # <a name="variablelocationtype-enumeration"></a>VariableLocationType – výčet
-Označuje nativní typ umístění proměnné.  
+Označuje typ nativního umístění proměnné.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,21 +40,21 @@ typedef enum VariableLocationType
 |Člen|Popis|  
 |------------|-----------------|  
 |`VLT_REGISTER`|Proměnná je v registru.|  
-|`VLT_REGISTER_RELATIVE`|Proměnná je v umístění paměti relativní registru.|  
-|`VLT_INVALID`|Proměnná není uložena v registru nebo umístění paměti relativní k registru.|  
+|`VLT_REGISTER_RELATIVE`|Proměnná je v umístění relativní paměti pro registraci.|  
+|`VLT_INVALID`|Proměnná není uložena v registru nebo v umístění relativní paměti registru.|  
   
 ## <a name="remarks"></a>Poznámky  
- Člen výčtu `VariableLocationType` je vrácena [ICorDebugVariableHome::GetLocationType](icordebugvariablehome-getlocationtype-method.md) metoda.  
+ Člen `VariableLocationType` výčtu je vrácen metodou [ICorDebugVariableHome:: GetLocationType](icordebugvariablehome-getlocationtype-method.md) .  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v462plus](../../../../includes/net-current-v462plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v462plus](../../../../includes/net-current-v462plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také
 
-- [Výčty pro ladění](debugging-enumerations.md)
+- [Ladění výčtů](debugging-enumerations.md)

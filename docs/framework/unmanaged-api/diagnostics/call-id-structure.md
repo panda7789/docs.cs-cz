@@ -14,15 +14,15 @@ helpviewer_keywords:
 ms.assetid: bfd46324-afec-4782-9c18-586d81fb4740
 topic_type:
 - apiref
-ms.openlocfilehash: 8c606f67766334800444f39b115d90f65ecca13d
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 1c795ee536483a7def9c0339efae66a013898a77
+ms.sourcegitcommit: 9a4488a3625866335e83a20da5e9c5286b1f034c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74448593"
+ms.lasthandoff: 05/15/2020
+ms.locfileid: "83420627"
 ---
 # <a name="call_id-structure"></a>CALL_ID – struktura
-Poskytuje informace ladicímu programu o funkci, která je volána. Další informace najdete v rozhraní [INotifySink2](../../../../docs/framework/unmanaged-api/diagnostics/inotifysink2-interface.md) .  
+Poskytuje informace ladicímu programu o funkci, která je volána. Další informace najdete v rozhraní [INotifySink2](inotifysink2-interface.md) .  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -52,7 +52,7 @@ typedef struct tagCALL_ID
 ## <a name="requirements"></a>Požadavky  
  **Hlavička:** ProtocolNotify2. idl  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [INotifySink2 – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/inotifysink2-interface.md)
-- [Struktury pro úložiště symbolů diagnostiky](../../../../docs/framework/unmanaged-api/diagnostics/diagnostics-symbol-store-structures.md)
+- [INotifySink2 – rozhraní](inotifysink2-interface.md)
+- [Struktury úložiště symbolů diagnostiky](diagnostics-symbol-store-structures.md)

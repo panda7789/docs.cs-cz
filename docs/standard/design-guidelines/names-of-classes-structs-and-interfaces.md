@@ -1,5 +1,6 @@
 ---
 title: Názvy tříd, struktur a rozhraní
+description: Použijte tyto pokyny pro pojmenovávání tříd, struktur a rozhraní jako součást pokynů pro navrhování knihoven, které rozšíří a pracují s knihovnami .NET.
 ms.date: 10/22/2008
 helpviewer_keywords:
 - type names, guidelines
@@ -12,42 +13,42 @@ helpviewer_keywords:
 - interfaces [.NET Framework], names
 - generic type parameters
 ms.assetid: 87a4b0da-ed64-43b1-ac43-968576c444ce
-ms.openlocfilehash: 2c528348c0e84037a80df9797c56f03b51c73adc
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: e7eee414c5bf5c69f63543ef240e50a4d2d948a3
+ms.sourcegitcommit: 9a4488a3625866335e83a20da5e9c5286b1f034c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79400594"
+ms.lasthandoff: 05/15/2020
+ms.locfileid: "83419080"
 ---
 # <a name="names-of-classes-structs-and-interfaces"></a>Názvy tříd, struktur a rozhraní
-Následující pokyny pro pojmenování platí pro obecné pojmenování typu.
+Pokyny pro pojmenování, které následují, se týkají obecného typu pojmenování.
 
- ✔️ do name třídy a struktury s návěsy nebo fráze užitkových jmen, pomocí PascalCasing.
+ pomocí PascalCasing ✔️ DO tříd názvů a struktur s podstatnými jmény nebo frázemi podstatných jmen.
 
- Tím se odlišují názvy typů od metod, které jsou pojmenovány s lovesnými frázemi.
+ To odlišuje názvy typů od metod, které jsou pojmenovány pomocí příkazového fráze.
 
- ✔️ do název rozhraní s přídavnými jmény, nebo občas s přídavnými jmény nebo fráze z rozmene.
+ ✔️ DO názvových rozhraní přidávejte fráze adjektiva nebo občas s podstatnými jmény nebo frázemi podstatných jmen.
 
- Fráze se zápojem a beznosná označení by měla být používána zřídka a mohou označovat, že typ by měl být abstraktní třídou, nikoli rozhraním.
+ Podstatná jména a fráze substantivum by se měly používat zřídka a můžou indikovat, že typ by měl být abstraktní třída, a ne rozhraní.
 
- ❌Nedávejte názvy tříd předponu (např.
+ ❌Neposkytněte název třídy předponu (např. "C").
 
- ✔️ ZVAŽTe ukončení názvu odvozených tříd názvem základní třídy.
+ ✔️ Zvažte ukončení názvu odvozených tříd s názvem základní třídy.
 
- To je velmi čitelné a vysvětluje vztah jasně. Některé příklady tohoto v `ArgumentOutOfRangeException`kódu jsou: , `Exception`což `SerializableAttribute`je druh , `Attribute`a , což je druh . Při uplatňování těchto pokynů je však důležité použít přiměřený úsudek; například `Button` třída je druh `Control` události, `Control` i když se nezobrazí v jeho názvu.
+ To je velmi čitelné a jasně vysvětluje vztah. Některé příklady tohoto kódu v kódu jsou: `ArgumentOutOfRangeException` , což je typ `Exception` a `SerializableAttribute` , což je druh `Attribute` . Je ale důležité použít rozumné rozhodnutí při použití této směrnice. `Button`Třída je například druh `Control` události, i když `Control` se nezobrazuje v názvu.
 
- ✔️ názvy předpony rozhraní DO s písmenem I, což znamená, že typ je rozhraní.
+ ✔️ PROVEDE předpony názvů rozhraní s písmenem I, aby označoval, že typ je rozhraní.
 
- Například `IComponent` (popisné jméno), `ICustomAttributeProvider` (fráze nosného `IPersistable` jména) a (přídavné jméno) jsou vhodné názvy rozhraní. Stejně jako u jiných názvů typů se vyhněte zkratkám.
+ Například `IComponent` (popisný substantivum), `ICustomAttributeProvider` (fráze substantivum) a `IPersistable` (adjektivum) jsou vhodné názvy rozhraní. Stejně jako u jiných typů názvů Vyhněte zkratce.
 
- ✔️ do ujistěte se, že názvy se liší pouze předponou "I" na název rozhraní při definování dvojice třídy rozhraní, kde třída je standardní implementace rozhraní.
+ ✔️ Zajistěte, aby se názvy lišily pouze předponou "I" v názvu rozhraní při definování dvojice třídy – rozhraní, kde je třída standardní implementací rozhraní.
 
 ## <a name="names-of-generic-type-parameters"></a>Názvy parametrů obecného typu
- Obecné typy byly přidány do rozhraní .NET Framework 2.0. Tato funkce zavedla nový druh identifikátoru nazývaný *parametr typu*.
+ K .NET Framework 2,0 byly přidány obecné typy. Funkce představila nový typ identifikátoru nazvaný *parametr typu*.
 
- ✔️ do název obecný typ parametry s popisnými názvy, pokud jednopísmenný název je zcela samovysvětlující a popisný název by nepřidanou hodnotu.
+ ✔️ pojmenovat parametry obecného typu s popisnými názvy, pokud není název s jedním písmenem zcela zřejmý a popisný název by nepřidal hodnotu.
 
- ✔️ ZVAŽTe použití `T` jako název parametru typu pro typy s jedním parametrem typu s jedním písmenem.
+ ✔️ ZVÁŽIT použití `T` jako názvu parametru typu pro typy s jedním parametrem typu s jedním písmenem.
 
 ```csharp
 public int IComparer<T> { ... }
@@ -55,7 +56,7 @@ public delegate bool Predicate<T>(T item);
 public struct Nullable<T> where T:struct { ... }
 ```
 
- ✔️ názvy parametrů popisného typu `T`předpony DO s programem .
+ ✔️ DĚLAT předpony názvů parametrů popisného typu s `T` .
 
 ```csharp
 public interface ISessionChannel<TSession> where TSession : ISession {
@@ -63,43 +64,43 @@ public interface ISessionChannel<TSession> where TSession : ISession {
 }
 ```
 
- ✔️ ZVAŽTe označení omezení umístěných na parametr typu v názvu parametru.
+ ✔️ Zvažte označení omezení, která jsou uvedena v parametru typu v názvu parametru.
 
- Například parametr omezen na `ISession` může být `TSession`volána .
+ Například parametr omezený na `ISession` může být volán `TSession` .
 
 ## <a name="names-of-common-types"></a>Názvy běžných typů
- ✔️ do postupujte podle pokynů popsaných v následující tabulce při pojmenování typů odvozených z nebo provádění některých typů rozhraní .NET Framework.
+ ✔️ postupujte podle pokynů popsaných v následující tabulce, když pojmenováváte typy odvozené z nebo implementují určité .NET Framework typy.
 
-|Základní typ|Pokyny pro odvozené/implementující typ|
+|Základní typ|Základní pravidlo pro odvození/implementaci typu|
 |---------------|------------------------------------------|
-|`System.Attribute`|✔️ DO přidat příponu "Atribut" do názvů vlastních tříd atributů.|
-|`System.Delegate`|✔️ DO přidat příponu "EventHandler" do názvů delegátů, které se používají v událostech.<br /><br /> ✔️ DO přidat příponu "Zpětné volání" na názvy delegátů než ty, které se používají jako obslužné rutiny událostí.<br /><br /> ❌NEPŘIdávejte příponu "Delegát" delegátovi.|
-|`System.EventArgs`|✔️ DO přidat příponu "EventArgs."|
-|`System.Enum`|❌NEODvozujte z této třídy; místo toho použijte klíčové slovo podporované vaším jazykem; například v c#, `enum` použijte klíčové slovo.<br /><br /> ❌Nepřidávejte příponu "Enum" nebo "Flag".|
-|`System.Exception`|✔️ DO přidat příponu "Výjimka".|
-|`IDictionary` <br /> `IDictionary<TKey,TValue>`|✔️ do přidat příponu "Slovník." Všimněte `IDictionary` si, že je konkrétní typ kolekce, ale tento pokyn má přednost před obecnější kolekce pokyny, které následuje.|
-|`IEnumerable` <br /> `ICollection` <br /> `IList` <br /> `IEnumerable<T>` <br /> `ICollection<T>` <br /> `IList<T>`|✔️ do přidat příponu "Kolekce".|
-|`System.IO.Stream`|✔️ do přidat příponu "Stream.".|
-|`CodeAccessPermission IPermission`|✔️ do přidat příponu "Oprávnění".|
+|`System.Attribute`|✔️ Přidejte příponu "Attribute" do názvů vlastních tříd atributů.|
+|`System.Delegate`|✔️ přidat příponu EventHandler do názvů delegátů, kteří se používají v událostech.<br /><br /> ✔️ přidat příponu "zpětného volání" do názvů jiných delegátů, než které byly použity jako obslužné rutiny událostí.<br /><br /> ❌Nepřidejte příponu Delegate do delegáta.|
+|`System.EventArgs`|✔️ přidat příponu EventArgs.|
+|`System.Enum`|❌Neodvozovat z této třídy; místo toho použijte klíčové slovo podporované vaším jazykem. například v jazyce C# použijte `enum` klíčové slovo.<br /><br /> ❌Nepřidávat příponu "enum" nebo "Flag".|
+|`System.Exception`|✔️ přidat příponu "Exception".|
+|`IDictionary` <br /> `IDictionary<TKey,TValue>`|✔️ přidat příponu "Dictionary". Všimněte si, že `IDictionary` se jedná o konkrétní typ kolekce, ale tyto obecné zásady mají přednost před obecnější pokyny k kolekcím.|
+|`IEnumerable` <br /> `ICollection` <br /> `IList` <br /> `IEnumerable<T>` <br /> `ICollection<T>` <br /> `IList<T>`|✔️ přidat příponu "Collection".|
+|`System.IO.Stream`|✔️ přidat příponu "Stream".|
+|`CodeAccessPermission IPermission`|✔️ přidat příponu "oprávnění".|
 
-## <a name="naming-enumerations"></a>Pojmenování výčtů
- Názvy typů výčtu (také nazývané výčty) obecně by se měly řídit standardními pravidly pojmenování typu (PascalCasing atd.). Existují však další pokyny, které platí konkrétně pro výčty.
+## <a name="naming-enumerations"></a>Vytváření názvů výčtů
+ Názvy výčtových typů (označovaných také jako výčty) by obecně měly splňovat standardní pravidla pro pojmenovávání typů (PascalCasing atd.). Existují však další pokyny, které platí konkrétně pro výčty.
 
- ✔️ DO použít název jednotného čísla typu pro výčet, pokud jeho hodnoty jsou bitová pole.
+ ✔️ použít název typu jednotného čísla pro výčet, pokud jeho hodnoty nejsou bitové pole.
 
- ✔️ DO použít název typu množného čísla pro výčet s bitovými poli jako hodnoty, nazývané také výčty příznaků.
+ ✔️ použít název typu plural pro výčet s bitovými poli jako hodnoty, označované také jako příznaky Enum.
 
- ❌Nepoužívejte příponu "Enum" v názvech typů výčtu.
+ ❌V názvech typu výčtu nepoužívejte příponu Enum.
 
- ❌Nepoužívejte přípony "Příznak" nebo "Příznaky" v názvech typu enum.
+ ❌V názvech typu výčtu nepoužívejte přípony příznak ani Flags.
 
- ❌Nepoužívejte předponu na názvy hodnot výčtu (např. "ad" pro výčty ADO, "rtf" pro výčty rtf atd.).
+ ❌Nepoužívejte předponu u názvů hodnot výčtu (např. "AD" pro výčty objektů ADO, "RTF" pro výčty formátovaného textu atd.).
 
  *Části © 2005, 2009 Microsoft Corporation. Všechna práva vyhrazena.*
 
- *Přetištěno se svolením Pearson Education, Inc. z [Framework Design Guidelines: Conventions, Idioms, and Patterns for Reusable .NET Libraries, 2nd Edition](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) by Krzysztof Cwalina and Brad Abrams, published Oct 22, 2008 by Addison-Wesley Professional as part of the Microsoft Windows Development Series.*
+ *Přetištěno oprávněním Pearsonova vzdělávání, Inc. z [pokynů pro návrh rozhraní: konvence, idiomy a vzory pro opakovaně použitelné knihovny .NET, druhá edice](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) od Krzysztof Cwalina a Brad Abrams, publikovaly 22. října 2008 Addison-Wesley Professional jako součást sady Microsoft Windows Development Series.*
 
 ## <a name="see-also"></a>Viz také
 
-- [Pokyny k návrhu architektury](../../../docs/standard/design-guidelines/index.md)
+- [Pokyny k návrhu architektury](../../../docs/standard/design-guidelines/index.md)
 - [Pokyny pro pojmenování](../../../docs/standard/design-guidelines/naming-guidelines.md)

@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 09daac08-005a-46b2-beab-408d0820c5e5
 topic_type:
 - apiref
-ms.openlocfilehash: 1677798abdb8994d34c82a71e97a2c858209c18e
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.openlocfilehash: 62ea982f30a6a73648d9bf36722c0b5a49a68896
+ms.sourcegitcommit: 9a4488a3625866335e83a20da5e9c5286b1f034c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76790380"
+ms.lasthandoff: 05/15/2020
+ms.locfileid: "83420744"
 ---
 # <a name="logginglevelenum-enumeration"></a>LoggingLevelEnum – výčet
 Označuje úroveň závažnosti popisné zprávy, která je zapsána do protokolu událostí, když spravované vlákno zaznamená událost.  
@@ -63,18 +63,18 @@ typedef enum LoggingLevelEnum {
 |`LPanicLevel`|Zpráva je nenouzová úroveň.|  
   
 ## <a name="remarks"></a>Poznámky  
- Modul CLR (Common Language Runtime) volá metodu [ICorDebugManagedCallback:: LogMessage –](icordebugmanagedcallback-logmessage-method.md) , která oznamuje ladicímu programu, že spravované vlákno zaznamenalo událost. Modul CLR předá hodnotu výčtu `LoggingLevelEnum`, aby označoval úroveň závažnosti zprávy, kterou spravované vlákno zapsalo do protokolu událostí.  
+ Modul CLR (Common Language Runtime) volá metodu [ICorDebugManagedCallback:: LogMessage –](icordebugmanagedcallback-logmessage-method.md) , která oznamuje ladicímu programu, že spravované vlákno zaznamenalo událost. Modul CLR předá hodnotu `LoggingLevelEnum` výčtu, aby označoval úroveň závažnosti zprávy, kterou spravované vlákno zapsalo do protokolu událostí.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** CorDebug. idl, CorDebug. h  
   
  **Knihovna:** CorGuids. lib  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Diagnostics.EventLog>
-- [Výčty pro ladění](debugging-enumerations.md)
+- [Ladění výčtů](debugging-enumerations.md)

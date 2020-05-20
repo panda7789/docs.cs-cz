@@ -1,20 +1,20 @@
 ---
 title: Výrazy dotazu
-description: Přečtěte si o podpoře výrazů dotazů pro LINQ F# v programovacím jazyce.
+description: 'Přečtěte si o podpoře výrazů dotazů pro LINQ v programovacím jazyce F #.'
 ms.date: 05/16/2016
-ms.openlocfilehash: f0c7245a930a06576487a61d73a1e5b94190ee59
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: bbd15352aa89bd1891b409177921a675784a0227
+ms.sourcegitcommit: 9a4488a3625866335e83a20da5e9c5286b1f034c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73424888"
+ms.lasthandoff: 05/15/2020
+ms.locfileid: "83419184"
 ---
 # <a name="query-expressions"></a>Výrazy dotazu
 
 > [!NOTE]
 > Odkazy na reference k rozhraní API v tomto článku vás převezmou na MSDN.  Reference k rozhraní docs.microsoft.com API není dokončená.
 
-Výrazy dotazů umožňují dotazování zdroje dat a vložení dat do požadovaného formuláře. Výrazy dotazů poskytují podporu pro LINQ v F#.
+Výrazy dotazů umožňují dotazování zdroje dat a vložení dat do požadovaného formuláře. Výrazy dotazů poskytují podporu pro LINQ v F #.
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -24,7 +24,7 @@ query { expression }
 
 ## <a name="remarks"></a>Poznámky
 
-Výrazy dotazů jsou typem výrazu výpočtu, který se podobá výrazům pořadí. Stejně jako zadáte sekvenci zadáním kódu ve výrazu pořadí, zadáte sadu dat zadáním kódu ve výrazu dotazu. V sekvenčním výrazu klíčové slovo `yield` identifikuje data, která se mají vrátit jako součást výsledné sekvence. Klíčové slovo `select` ve výrazech dotazů provádí stejnou funkci. Kromě klíčového slova `select` F# také podporuje několik operátorů dotazů, které jsou podobně jako části příkazu SQL SELECT. Tady je příklad jednoduchého výrazu dotazu spolu s kódem, který se připojuje ke zdroji dat Northwind služby OData.
+Výrazy dotazů jsou typem výrazu výpočtu, který se podobá výrazům pořadí. Stejně jako zadáte sekvenci zadáním kódu ve výrazu pořadí, zadáte sadu dat zadáním kódu ve výrazu dotazu. V sekvenčním výrazu `yield` klíčové slovo identifikuje data, která mají být vrácena jako součást výsledné sekvence. Klíčové slovo ve výrazech dotazu `select` provádí stejnou funkci. Kromě `select` klíčového slova jazyk F # také podporuje několik operátorů dotazů, které jsou podobně jako části příkazu SQL SELECT. Tady je příklad jednoduchého výrazu dotazu spolu s kódem, který se připojuje ke zdroji dat Northwind služby OData.
 
 ```fsharp
 // Use the OData type provider to create types that can be used to access the Northwind database.
@@ -46,17 +46,17 @@ query1
 |> Seq.iter (fun customer -> printfn "Company: %s Contact: %s" customer.CompanyName customer.ContactName)
 ```
 
-V předchozím příkladu kódu je výraz dotazu ve složených závorkách. Význam kódu ve výrazu je, vrátí každého zákazníka v tabulce Customers v databázi ve výsledcích dotazu. Výrazy dotazů vracejí typ, který implementuje <xref:System.Linq.IQueryable%601> a <xref:System.Collections.Generic.IEnumerable%601>, takže se dá iterovat pomocí [modulu SEQ](https://msdn.microsoft.com/library/54e8f059-ca52-4632-9ae9-49685ee9b684) , jak ukazuje příklad.
+V předchozím příkladu kódu je výraz dotazu ve složených závorkách. Význam kódu ve výrazu je, vrátí každého zákazníka v tabulce Customers v databázi ve výsledcích dotazu. Výrazy dotazů vracejí typ, který implementuje <xref:System.Linq.IQueryable%601> a <xref:System.Collections.Generic.IEnumerable%601> , a, aby bylo možné je iterovat pomocí [modulu SEQ](https://msdn.microsoft.com/library/54e8f059-ca52-4632-9ae9-49685ee9b684) , jak ukazuje příklad.
 
-Každý typ výrazu výpočtu je sestaven z třídy tvůrce. Třída tvůrce pro výraz výpočtu dotazu je `QueryBuilder`. Další informace naleznete v tématu [výrazy výpočtu](computation-expressions.md) a [Třída LINQ. QueryBuilder](https://msdn.microsoft.com/visualfsharpdocs/conceptual/linq.querybuilder-class-%5bfsharp%5d).
+Každý typ výrazu výpočtu je sestaven z třídy tvůrce. Třída tvůrce pro výraz výpočtu dotazu je `QueryBuilder` . Další informace naleznete v tématu [výrazy výpočtu](computation-expressions.md) a [Třída LINQ. QueryBuilder](https://msdn.microsoft.com/visualfsharpdocs/conceptual/linq.querybuilder-class-%5bfsharp%5d).
 
 ## <a name="query-operators"></a>Operátory dotazů
 
-Operátory dotazů umožňují zadat podrobnosti dotazu, například kritéria pro vložení záznamů, které mají být vráceny, nebo zadat pořadí řazení výsledků. Zdroj dotazu musí podporovat operátor dotazu. Pokud se pokusíte použít nepodporovaný operátor dotazu, bude vyvolána `System.NotSupportedException`.
+Operátory dotazů umožňují zadat podrobnosti dotazu, například kritéria pro vložení záznamů, které mají být vráceny, nebo zadat pořadí řazení výsledků. Zdroj dotazu musí podporovat operátor dotazu. Pokud se pokusíte použít operátor nepodporovaného dotazu, `System.NotSupportedException` bude vyvolána výjimka.
 
-Ve výrazech dotazů jsou povoleny pouze výrazy, které lze přeložit na SQL. Například při použití operátoru dotazu `where` nejsou ve výrazech povoleny žádné volání funkcí.
+Ve výrazech dotazů jsou povoleny pouze výrazy, které lze přeložit na SQL. Například při použití operátoru dotazu nejsou ve výrazech povoleny žádné volání funkcí `where` .
 
-Tabulka 1 zobrazuje dostupné operátory dotazů. Kromě toho viz tabulka2, který porovnává dotazy SQL a ekvivalentní F# výrazy dotazu dále v tomto tématu. Některé operátory dotazů nejsou podporovány některými poskytovateli typů. Konkrétně poskytovatel typu OData je omezen v operátorech dotazu, které podporuje z důvodu omezení v OData. Další informace najdete v tématu [Poskytovatel typu ODataService (F#)](https://msdn.microsoft.com/library/bac609dd-9d12-4bf9-a662-24bdf4faa43e).
+Tabulka 1 zobrazuje dostupné operátory dotazů. Dále v tomto tématu viz tabulka2, který porovnává dotazy SQL a ekvivalentní výrazy dotazů jazyka F #. Některé operátory dotazů nejsou podporovány některými poskytovateli typů. Konkrétně poskytovatel typu OData je omezen v operátorech dotazu, které podporuje z důvodu omezení v OData. Další informace najdete v tématu [Poskytovatel typu ODataService (F #)](https://msdn.microsoft.com/library/bac609dd-9d12-4bf9-a662-24bdf4faa43e).
 
 Tato tabulka předpokládá databázi v následujícím tvaru:
 
@@ -231,7 +231,7 @@ let data = [ 1; 5; 7; 11; 18; 21]
 </code></pre>
 
 </td></tr><tr>
-<td><code>thenBy</code></td><td>Provede následné řazení prvků vybraných ve vzestupném pořadí podle daného klíče řazení. Tento operátor lze použít pouze po <code>sortBy</code>, <code>sortByDescending</code>, <code>thenBy</code>nebo <code>thenByDescending</code>.<br/><br/>
+<td><code>thenBy</code></td><td>Provede následné řazení prvků vybraných ve vzestupném pořadí podle daného klíče řazení. Tento operátor lze použít pouze za operátorem <code>sortBy</code> , <code>sortByDescending</code> , <code>thenBy</code> nebo <code>thenByDescending</code> .<br/><br/>
 
 <pre><code class="lang-fsharp">query {
     for student in db.Student do
@@ -243,7 +243,7 @@ let data = [ 1; 5; 7; 11; 18; 21]
 </code></pre>
 
 </td></tr><tr>
-<td><code>thenByDescending</code></td><td>Provede následné řazení elementů, které jsou zatím vybrány v sestupném pořadí podle daného klíče řazení. Tento operátor lze použít pouze po <code>sortBy</code>, <code>sortByDescending</code>, <code>thenBy</code>nebo <code>thenByDescending</code>.<br/><br/>
+<td><code>thenByDescending</code></td><td>Provede následné řazení elementů, které jsou zatím vybrány v sestupném pořadí podle daného klíče řazení. Tento operátor lze použít pouze za operátorem <code>sortBy</code> , <code>sortByDescending</code> , <code>thenBy</code> nebo <code>thenByDescending</code> .<br/><br/>
 
 <pre><code class="lang-fsharp">query {
     for student in db.Student do
@@ -265,7 +265,7 @@ let data = [ 1; 5; 7; 11; 18; 21]
 </code></pre>
 
 </td></tr><tr>
-<td><code>join</code></td><td>Koreluje dvě sady vybraných hodnot na základě shodujících se klíčů. Všimněte si, že pořadí klíčů kolem znaménka = přihlašování ve výrazu JOIN je významné. Pokud je čára rozdělena po <code>-&gt;</code> symbol, musí být ve všech spojeních odsazena nejméně tak, jak je klíčové slovo <code>for</code>.<br/><br/>
+<td><code>join</code></td><td>Koreluje dvě sady vybraných hodnot na základě shodujících se klíčů. Všimněte si, že pořadí klíčů kolem znaménka = přihlašování ve výrazu JOIN je významné. Pokud je čára rozdělena za symbol, musí se ve všech spojeních odsazení odsazovat <code>-&gt;</code> aspoň tak, jak je klíčové slovo <code>for</code> .<br/><br/>
 
 <pre><code class="lang-fsharp">query {
     for student in db.Student do
@@ -474,7 +474,7 @@ let data = [ 1; 5; 7; 11; 18; 21]
 </code></pre>
 
 </td></tr><tr>
-<td><code>thenByNullable</code></td><td>Provede následné řazení prvků vybraných ve vzestupném pořadí podle daného klíče řazení s možnou hodnotou null. Tento operátor lze použít pouze ihned po <code>sortBy</code>, <code>sortByDescending</code>, <code>thenBy</code>nebo <code>thenByDescending</code>nebo jejich variantě s možnou hodnotou null.<br/><br/>
+<td><code>thenByNullable</code></td><td>Provede následné řazení prvků vybraných ve vzestupném pořadí podle daného klíče řazení s možnou hodnotou null. Tento operátor lze použít pouze ihned po <code>sortBy</code> , <code>sortByDescending</code> , <code>thenBy</code> nebo <code>thenByDescending</code> nebo jejich variantě s možnou hodnotou null.<br/><br/>
 
 <pre><code class="lang-fsharp">query {
     for student in db.Student do
@@ -485,7 +485,7 @@ let data = [ 1; 5; 7; 11; 18; 21]
 </code></pre>
 
 </td></tr><tr>
-<td><code>thenByNullableDescending</code></td><td>Provede následné řazení elementů, které jsou zatím vybrány v sestupném pořadí podle daného klíče řazení s možnou hodnotou null. Tento operátor lze použít pouze ihned po <code>sortBy</code>, <code>sortByDescending</code>, <code>thenBy</code>nebo <code>thenByDescending</code>nebo jejich variantě s možnou hodnotou null.<br/><br/>
+<td><code>thenByNullableDescending</code></td><td>Provede následné řazení elementů, které jsou zatím vybrány v sestupném pořadí podle daného klíče řazení s možnou hodnotou null. Tento operátor lze použít pouze ihned po <code>sortBy</code> , <code>sortByDescending</code> , <code>thenBy</code> nebo <code>thenByDescending</code> nebo jejich variantě s možnou hodnotou null.<br/><br/>
 
 <pre><code class="lang-fsharp">query {
     for student in db.Student do
@@ -500,14 +500,14 @@ let data = [ 1; 5; 7; 11; 18; 21]
 
 ## <a name="comparison-of-transact-sql-and-f-query-expressions"></a>Porovnání výrazů dotazů v jazycích Transact-SQL a F#
 
-V následující tabulce jsou uvedeny některé běžné dotazy Transact-SQL a jejich ekvivalenty F#v nástroji. Kód v této tabulce také předpokládá stejnou databázi jako předchozí tabulka a stejný počáteční kód pro nastavení poskytovatele typu.
+V následující tabulce jsou uvedeny některé běžné dotazy Transact-SQL a jejich ekvivalenty v jazyce F #. Kód v této tabulce také předpokládá stejnou databázi jako předchozí tabulka a stejný počáteční kód pro nastavení poskytovatele typu.
 
 ### <a name="table-2-transact-sql-and-f-query-expressions"></a>Tabulka 2. Výrazy dotazů v jazycích Transact-SQL a F#
 
 <table style="width:100%">
   <tr>
     <th>Transact-SQL (nerozlišuje malá a velká písmena)</th>
-    <th>F#Výraz dotazu (rozlišuje velká a malá písmena)</th>
+    <th>Výraz dotazu F # (rozlišuje velká a malá písmena)</th>
   </tr>
 <tr><td>
 Vyberte všechna pole z tabulky.<br>
@@ -543,11 +543,14 @@ query {
 <td><code>EXISTS</code>
 <br />
 
+<!-- markdownlint-capture -->
+<!-- markdownlint-disable no-space-in-emphasis -->
 <pre><code class="lang-sql">SELECT * FROM Student
 WHERE EXISTS
   (SELECT * FROM CourseSelection
    WHERE CourseSelection.StudentID = Student.StudentID)
 </code></pre>
+<!-- markdownlint-restore -->
 </td>
 
 <td>
@@ -608,11 +611,14 @@ query {
 </td></tr><tr><td>
 Seskupení s podmínkou Count<br/>
 
+<!-- markdownlint-capture -->
+<!-- markdownlint-disable no-space-in-emphasis -->
 <pre><code class="lang-sql">SELECT Student.Age, COUNT( * )
 FROM Student
 GROUP BY Student.Age
 HAVING COUNT( * ) > 1
 </code></pre>
+<!-- markdownlint-restore -->
 
 </td><td>
 
@@ -652,12 +658,15 @@ query {
 </td></tr><tr><td>
 Seskupování, počítání a řazení podle počtu.<br/>
 
+<!-- markdownlint-capture -->
+<!-- markdownlint-disable no-space-in-emphasis -->
 <pre><code class="lang-sql">SELECT Student.Age, COUNT( * ) as myCount
 FROM Student
 GROUP BY Student.Age
 HAVING COUNT( * ) > 1
 ORDER BY COUNT( * ) DESC
 </code></pre>
+<!-- markdownlint-restore -->
 
 </td><td>
 
@@ -674,7 +683,7 @@ query {
 </code></pre>
 
 </td></tr><tr><td>
-<code>IN</code> sadu zadaných hodnot.<br/>
+<code>IN</code>sada zadaných hodnot<br/>
 
 <pre><code class="lang-sql">SELECT *
 FROM Student
@@ -715,7 +724,7 @@ query {
 </code></pre>
 
 </td></tr><tr><td>
-<code>LIKE</code> se sadou porovnávání vzorů.<br/>
+<code>LIKE</code>se sadou porovnávání vzorů.<br/>
 
 <pre><code class="lang-sql">-- '[abc]%' matches strings where the first character is
 -- 'a', 'b', 'c', 'A', 'B', or 'C'
@@ -732,7 +741,7 @@ WHERE Student.Name LIKE '[abc]%'
 </code></pre>
 
 </td></tr><tr><td>
-<code>LIKE</code> s nastavením vzoru vyloučení.<br/>
+<code>LIKE</code>s nastaveným vzorem vyloučení.<br/>
 
 <pre><code class="lang-sql">-- '[^abc]%' matches strings where the first character is
 -- not 'a', 'b', 'c', 'A', 'B', or 'C'
@@ -751,7 +760,7 @@ query {
 </code></pre>
 
 </td></tr><tr><td>
-<code>LIKE</code> na jednom poli, ale vyberte jiné pole.<br/>
+<code>LIKE</code>v jednom poli, ale vyberte jiné pole.<br/>
 
 <pre><code class="lang-sql">SELECT StudentID AS ID FROM Student
 WHERE Student.Name LIKE '[^abc]%'
@@ -766,7 +775,7 @@ WHERE Student.Name LIKE '[^abc]%'
 }
 </code></pre>
 
-</td></tr><tr><td><code>LIKE</code>s hledáním pomocí dílčího řetězce.<br/>
+</td></tr><tr><td><code>LIKE</code>, s vyhledáváním pomocí dílčího řetězce.<br/>
 
 <pre><code class="lang-sql">SELECT * FROM Student
 WHERE Student.Name like '%A%'
@@ -801,7 +810,7 @@ query {
 }
 </code></pre>
 
-</td></tr><tr><td><code>LEFT JOIN</code> se dvěma tabulkami.<br/>
+</td></tr><tr><td><code>LEFT JOIN</code>se dvěma tabulkami.<br/>
 
 <pre><code class="lang-sql">SELECT * FROM Student
 LEFT JOIN CourseSelection
@@ -820,7 +829,7 @@ query {
 }
 </code></pre>
 
-</td></tr><tr><td><code>JOIN</code> s <code>COUNT</code><br/>
+</td></tr><tr><td><code>JOIN</code>řetězce<code>COUNT</code><br/>
 
 <pre><code class="lang-sql">SELECT COUNT( * ) FROM Student
 JOIN CourseSelection
@@ -903,7 +912,7 @@ query {
 }
 </code></pre>
 
-</td></tr><tr><td><code>OR</code> s řazením<br/>
+</td></tr><tr><td><code>OR</code>s řazením<br/>
 
 <pre><code class="lang-sql">SELECT * FROM Student
 WHERE Student.Age = 12 OR Student.Age = 13
@@ -921,7 +930,7 @@ query {
 }
 </code></pre>
 
-</td></tr><tr><td><code>TOP</code>, <code>OR</code>a řazení.<br/>
+</td></tr><tr><td><code>TOP</code>, <code>OR</code> a řazení.<br/>
 
 <pre><code class="lang-sql">SELECT TOP 2 student.Name FROM Student
 WHERE Student.Age = 11 OR Student.Age = 12
@@ -943,12 +952,15 @@ query {
 }
 </code></pre>
 
-</td></tr><tr><td><code>UNION</code> dvou dotazů.<br/>
+</td></tr><tr><td><code>UNION</code>dvou dotazů.<br/>
 
+<!-- markdownlint-capture -->
+<!-- markdownlint-disable no-space-in-emphasis -->
 <pre><code class="lang-sql">SELECT * FROM Student
 UNION
 SELECT * FROM lastStudent
 </code></pre>
+<!-- markdownlint-restore -->
 
 </td><td>
 
@@ -970,10 +982,13 @@ query2.Union (query1)
 
 </td></tr><tr><td>Průnik dvou dotazů.<br/>
 
+<!-- markdownlint-capture -->
+<!-- markdownlint-disable no-space-in-emphasis -->
 <pre><code class="lang-sql">SELECT * FROM Student
 INTERSECT
 SELECT * FROM LastStudent
 </code></pre>
+<!-- markdownlint-restore -->
 </td><td>
 
 <pre><code class="lang-fsharp">
@@ -992,7 +1007,7 @@ let query2 =
 query1.Intersect(query2)
 </code></pre>
 
-</td></tr><tr><td>podmínka <code>CASE</code>.<br/>
+</td></tr><tr><td><code>CASE</code>pomocné.<br/>
 
 <pre><code class="lang-sql">SELECT student.StudentID,
 CASE Student.Age
@@ -1861,7 +1876,7 @@ query {
 |> Seq.iter (fun (studentName, courseName) -> printfn "%s %s" studentName courseName)
 ```
 
-A zde je úplný výstup, pokud je tento kód spuštěn v F# Interactive.
+A zde je úplný výstup, když je tento kód spuštěn v F# Interactive.
 
 ```console
 --> Referenced 'C:\Program Files (x86)\Reference Assemblies\Microsoft\FSharp\3.0\Runtime\v4.0\Type Providers\FSharp.Data.TypeProviders.dll'
@@ -2422,8 +2437,8 @@ module Queries2 = begin
 end
 ```
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Referenční dokumentace jazyka F#](index.md)
+- [Referenční dokumentace jazyka F #](index.md)
 - [LINQ. QueryBuilder – třída](https://msdn.microsoft.com/visualfsharpdocs/conceptual/linq.querybuilder-class-%5bfsharp%5d)
 - [Výpočetní výrazy](Computation-Expressions.md)

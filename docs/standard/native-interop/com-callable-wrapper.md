@@ -1,5 +1,6 @@
 ---
 title: Obálka volatelná aplikacemi COM
+description: Když klient modelu COM volá objekt .NET, modul CLR vytvoří spravovaný objekt a na něj můžete volat obálku typu COM. Klienti modelu COM volají obálku pro objekt.
 ms.date: 10/23/2018
 dev_langs:
 - csharp
@@ -12,12 +13,12 @@ helpviewer_keywords:
 - interoperation with unmanaged code, COM wrappers
 - COM callable wrappers
 ms.assetid: d04be3b5-27b9-4f5b-8469-a44149fabf78
-ms.openlocfilehash: 6f2f4055a95dbcea8d7872b5c5fa3ccede8c2c8c
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: c42ea0b5ba4cb01304ceae4ba2d2fc91b629a9b3
+ms.sourcegitcommit: 9a4488a3625866335e83a20da5e9c5286b1f034c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79400377"
+ms.lasthandoff: 05/15/2020
+ms.locfileid: "83420523"
 ---
 # <a name="com-callable-wrapper"></a>Obálka volatelná aplikacemi COM
 
@@ -60,16 +61,16 @@ Kromě vystavení rozhraní, která jsou explicitně implementována třídou ve
 
 |Rozhraní|Popis|
 |---------------|-----------------|
-|Rozhraní třídy\_(*ClassName*)|Rozhraní vystavené modulem runtime a není explicitně definováno, které zveřejňuje všechna veřejná rozhraní, metody, vlastnosti a pole, které jsou explicitně vystaveny na spravovaném objektu.|
+|\_Rozhraní třídy (*ClassName*)|Rozhraní vystavené modulem runtime a není explicitně definováno, které zveřejňuje všechna veřejná rozhraní, metody, vlastnosti a pole, které jsou explicitně vystaveny na spravovaném objektu.|
 |**IConnectionPoint** a **IConnectionPointContainer**|Rozhraní pro objekty, které jsou zdrojem událostí založených na delegátech (rozhraní pro registraci předplatitelů událostí).|
 |**IDispatchEx –** (pouze .NET Framework)|Rozhraní dodávané modulem runtime, pokud třída implementuje **IExpando**. Rozhraní **IDispatchEx –** je rozšíření rozhraní **IDispatch** , které na rozdíl od rozhraní **IDispatch**povoluje vyčíslení, sčítání, odstraňování a rozlišování velkých a malých písmen členů.|
 |**IEnumVARIANT**|Rozhraní tříd typu kolekce, které vyčíslují objekty v kolekci, pokud třída implementuje rozhraní **IEnumerable**.|
 
 ## <a name="introducing-the-class-interface"></a>Představení rozhraní třídy
 
-Rozhraní třídy, které není explicitně definováno ve spravovaném kódu, je rozhraní, které zpřístupňuje všechny veřejné metody, vlastnosti, pole a události, které jsou explicitně vystaveny na objektu rozhraní .NET. Toto rozhraní může být rozhraní pouze pro duální nebo pouze pro odesílání. Rozhraní třídy přijímá název samotné třídy .NET, před kterým předchází podtržítko. Například pro třídy savců je \_rozhraní třídy savci.
+Rozhraní třídy, které není explicitně definováno ve spravovaném kódu, je rozhraní, které zpřístupňuje všechny veřejné metody, vlastnosti, pole a události, které jsou explicitně vystaveny na objektu rozhraní .NET. Toto rozhraní může být rozhraní pouze pro duální nebo pouze pro odesílání. Rozhraní třídy přijímá název samotné třídy .NET, před kterým předchází podtržítko. Například pro třídy savců je rozhraní třídy \_ savci.
 
-U odvozených tříd rozhraní třídy také zveřejňuje všechny veřejné metody, vlastnosti a pole základní třídy. Odvozená třída také zpřístupňuje rozhraní třídy pro každou základní třídu. Například pokud třídy savců rozšiřuje třídu MammalSuperclass, která sám rozšiřuje System. Object, objekt .NET zpřístupňuje klientům modelu COM tři rozhraní třídy s názvem \_savci \_, MammalSuperclass a \_Object.
+U odvozených tříd rozhraní třídy také zveřejňuje všechny veřejné metody, vlastnosti a pole základní třídy. Odvozená třída také zpřístupňuje rozhraní třídy pro každou základní třídu. Například pokud třídy savců rozšiřuje třídu MammalSuperclass, která sám rozšiřuje System. Object, objekt .NET zpřístupňuje klientům modelu COM tři rozhraní třídy s názvem \_ savci, \_ MammalSuperclass a \_ Object.
 
 Zvažte například následující třídu .NET:
 
@@ -96,7 +97,7 @@ public class Mammal
 }
 ```
 
-Klient COM může získat ukazatel na rozhraní třídy s názvem `_Mammal`. V .NET Framework můžete použít nástroj [Exportér knihovny typů (Tlbexp. exe)](../../framework/tools/tlbexp-exe-type-library-exporter.md) pro vygenerování knihovny typů obsahující definici `_Mammal` rozhraní. Exportér knihovny typů není v rozhraní .NET Core podporován. Pokud `Mammal` třída implementovala jedno nebo více rozhraní, zobrazí se rozhraní v rámci třídy coclass.
+Klient COM může získat ukazatel na rozhraní třídy s názvem `_Mammal` . V .NET Framework můžete použít nástroj [Exportér knihovny typů (Tlbexp. exe)](../../framework/tools/tlbexp-exe-type-library-exporter.md) pro vygenerování knihovny typů obsahující `_Mammal` definici rozhraní. Exportér knihovny typů není v rozhraní .NET Core podporován. Pokud `Mammal` Třída implementovala jedno nebo více rozhraní, zobrazí se rozhraní v rámci třídy coclass.
 
 ```console
 [odl, uuid(…), hidden, dual, nonextensible, oleautomation]
@@ -184,9 +185,9 @@ Ve výjimečných případech může být vhodné automaticky vygenerované duá
 
 ### <a name="ensure-that-all-com-event-notifications-are-late-bound"></a>Ujistěte se, že všechna oznámení o událostech COM jsou pozdní vazba.
 
-Ve výchozím nastavení jsou informace o typu modelu COM vloženy přímo do spravovaných sestavení, což eliminuje nutnost primárních definičních sestavení (PIA). Jedno z omezení vloženého typu informací však znamená, že nepodporuje doručování oznámení o událostech modelu COM pomocí volání vtable s časnou vazbou, ale podporuje pouze volání s pozdní `IDispatch::Invoke` vazbou.
+Ve výchozím nastavení jsou informace o typu modelu COM vloženy přímo do spravovaných sestavení, což eliminuje nutnost primárních definičních sestavení (PIA). Jedno z omezení vloženého typu informací však znamená, že nepodporuje doručování oznámení o událostech modelu COM pomocí volání vtable s časnou vazbou, ale podporuje pouze volání s pozdní vazbou `IDispatch::Invoke` .
 
-Pokud vaše aplikace vyžaduje volání s časnou vazbou na metody rozhraní COM, můžete nastavit vlastnost **Embed Interop Types** v sadě Visual Studio na `true`nebo zahrnout následující prvek do souboru projektu:
+Pokud vaše aplikace vyžaduje volání s časnou vazbou na metody rozhraní COM, můžete nastavit vlastnost **Embed Interop Types** v sadě Visual Studio na `true` nebo zahrnout následující prvek do souboru projektu:
 
 ```xml
 <EmbedInteropTypes>True</EmbedInteropTypes>

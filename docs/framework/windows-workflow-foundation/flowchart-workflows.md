@@ -1,37 +1,38 @@
 ---
 title: Pracovní postupy vývojového diagramu
+description: Tento článek popisuje aktivitu vývojového diagramu, která se obvykle používá k implementaci nesekvenčních pracovních postupů v rámci Workflow Foundation.
 ms.date: 03/30/2017
 ms.assetid: b0a3475c-d22f-49eb-8912-973c960aebf5
-ms.openlocfilehash: b84b0de34f8869d9775fe0694e74c340cc16a6b3
-ms.sourcegitcommit: 99b153b93bf94d0fecf7c7bcecb58ac424dfa47c
+ms.openlocfilehash: ce0661653a1d50b3f7264246b810faabbd12bf5f
+ms.sourcegitcommit: 9a4488a3625866335e83a20da5e9c5286b1f034c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/25/2020
-ms.locfileid: "80249061"
+ms.lasthandoff: 05/15/2020
+ms.locfileid: "83419912"
 ---
 # <a name="flowchart-workflows"></a>Pracovní postupy vývojového diagramu
 
-Vývojový diagram je dobře známé paradigma pro navrhování programů. Aktivita vývojového diagramu se obvykle používá k implementaci nesekvenčních `FlowDecision` pracovních postupů, ale lze ji použít pro sekvenční pracovní postupy, pokud se nepoužívají žádné uzly.
+Vývojový diagram je dobře známé paradigma pro navrhování programů. Aktivita vývojového diagramu se obvykle používá k implementaci nesekvenčních pracovních postupů, ale je možné ji použít pro sekvenční pracovní postupy, pokud `FlowDecision` se nepoužívají žádné uzly.
 
 ## <a name="flowchart-workflow-structure"></a>Struktura pracovního postupu vývojového diagramu
 
- Aktivita vývojového diagramu je aktivita, která obsahuje kolekci aktivit, které mají být provedeny.  Vývojové diagramy také obsahují <xref:System.Activities.Statements.FlowDecision> prvky řízení toku, jako je například <xref:System.Activities.Statements.FlowSwitch%601> přímé provádění mezi obsažené aktivity na základě hodnot proměnných.
+ Aktivita vývojového diagramu je aktivita, která obsahuje kolekci aktivit, které mají být provedeny.  Vývojové diagramy také obsahují prvky řízení toku, například <xref:System.Activities.Statements.FlowDecision> a <xref:System.Activities.Statements.FlowSwitch%601> , které přímo vykonává mezi obsaženými aktivitami na základě hodnot proměnných.
 
-## <a name="types-of-flow-nodes"></a>Typy uzlů toku
+## <a name="types-of-flow-nodes"></a>Typy uzlů toků
 
- Různé typy prvků se používají v závislosti na typu řízení toku požadované při spuštění prvku. Mezi typy prvků vývojového diagramu patří:
+ Různé typy prvků jsou používány v závislosti na typu řízení toku vyžadovaného při spuštění elementu. Mezi typy prvků vývojového diagramu patří:
 
-- `FlowStep`- Modely jeden krok provedení ve vývojovém diagramu.
+- `FlowStep`– Modeluje jeden krok provádění ve vývojovém diagramu.
 
-- `FlowDecision`- Provádění větví na základě logické <xref:System.Activities.Statements.If>podmínky, podobně jako .
+- `FlowDecision`– Spouštění větví na základě logické podmínky, podobně jako <xref:System.Activities.Statements.If> .
 
-- `FlowSwitch`– Exekuce poboček založená <xref:System.Activities.Statements.Switch%601>na výhradním přepínači, podobně jako .
+- `FlowSwitch`– Spuštění větví na základě výhradního přepínače, podobně jako <xref:System.Activities.Statements.Switch%601> .
 
-Každý odkaz `Action` má vlastnost, <xref:System.Activities.ActivityAction> která definuje, které lze použít ke `Next` spuštění podřízené aktivity a jeden nebo více vlastností, které definují, který prvek nebo prvky spustit při dokončení provádění aktuální prvek.
+Každé propojení má `Action` vlastnost, která definuje <xref:System.Activities.ActivityAction> , který lze použít ke spouštění podřízených aktivit, a jednu nebo více `Next` vlastností, které definují, který prvek nebo prvky mají být provedeny, když aktuální element dokončí provádění.
 
-### <a name="creating-a-basic-activity-sequence-with-a-flowstep-node"></a>Vytvoření základní sekvence aktivit s uzlem FlowStep
+### <a name="creating-a-basic-activity-sequence-with-a-flowstep-node"></a>Vytvoření sekvence základní aktivity pomocí uzlu FlowStep
 
-Chcete-li modelovat základní pořadí, ve `FlowStep` kterém dvě aktivity spustit v pořadí, prvek se používá. V následujícím příkladu `FlowStep` dva prvky se používají k provedení dvou aktivit v pořadí.
+Chcete-li modelovat základní pořadí, ve kterém jsou dvě aktivity spouštěny, `FlowStep` je použit element. V následujícím příkladu `FlowStep` se dva prvky používají ke spuštění dvou aktivit v sekvenci.
 
 ```xml
 <Flowchart>
@@ -53,9 +54,9 @@ Chcete-li modelovat základní pořadí, ve `FlowStep` kterém dvě aktivity spu
 </Flowchart>
 ```
 
-### <a name="creating-a-conditional-flowchart-with-a-flowdecision-node"></a>Vytvoření podmíněného vývojového diagramu s uzly FlowDecision
+### <a name="creating-a-conditional-flowchart-with-a-flowdecision-node"></a>Vytvoření podmíněného vývojového diagramu pomocí uzlu použitím objektu FlowDecision
 
-Chcete-li modelovat uzel podmíněného toku v pracovním postupu vývojového diagramu (to znamená vytvořit <xref:System.Activities.Statements.FlowDecision> propojení, které funguje jako symbol rozhodnutí tradičního vývojového diagramu), použije se uzel. Vlastnost <xref:System.Activities.Statements.FlowDecision.Condition%2A> uzlu je nastavena na výraz, který definuje podmínku, a <xref:System.Activities.Statements.FlowDecision.True%2A> vlastnosti a <xref:System.Activities.Statements.FlowDecision.False%2A> jsou nastaveny <xref:System.Activities.Statements.FlowNode> na `true` instance, které mají být provedeny, pokud výraz vyhodnotí nebo `false`. Následující příklad ukazuje, jak definovat pracovní <xref:System.Activities.Statements.FlowDecision> postup, který používá uzel.
+Pokud chcete modelovat uzel podmíněného toku v pracovním postupu vývojového diagramu (to znamená, že chcete vytvořit odkaz, který funguje jako tradiční symbol rozhodnutí vývojového diagramu), <xref:System.Activities.Statements.FlowDecision> použije se uzel. <xref:System.Activities.Statements.FlowDecision.Condition%2A>Vlastnost uzlu je nastavena na výraz definující podmínku a <xref:System.Activities.Statements.FlowDecision.True%2A> <xref:System.Activities.Statements.FlowDecision.False%2A> vlastnosti a jsou nastaveny na <xref:System.Activities.Statements.FlowNode> instance, které mají být provedeny, pokud je výraz vyhodnocen jako `true` nebo `false` . Následující příklad ukazuje, jak definovat pracovní postup, který používá <xref:System.Activities.Statements.FlowDecision> uzel.
 
 ```xml
 <Flowchart>
@@ -80,9 +81,9 @@ Chcete-li modelovat uzel podmíněného toku v pracovním postupu vývojového d
 </Flowchart>
 ```
 
-### <a name="creating-an-exclusive-switch-with-a-flowswitch-node"></a>Vytvoření výhradního přepínače s uzly FlowSwitch
+### <a name="creating-an-exclusive-switch-with-a-flowswitch-node"></a>Vytvoření výhradního přepínače pomocí uzlu FlowSwitch
 
-Chcete-li modelovat vývojový diagram, ve kterém je <xref:System.Activities.Statements.FlowSwitch%601> vybrána jedna výhradní cesta na základě odpovídající hodnoty, použije se uzel. Vlastnost <xref:System.Activities.Statements.FlowSwitch%601.Expression%2A> je nastavena <xref:System.Activities.Activity%601> na parametr <xref:System.Object> typu, který definuje hodnotu, proti které mají odpovídat volbám. Vlastnost <xref:System.Activities.Statements.FlowSwitch%601.Cases%2A> definuje slovník klíčů a <xref:System.Activities.Statements.FlowNode> objektů tak, aby odpovídaly podmíněnému <xref:System.Activities.Statements.FlowNode> výrazu a sadu objektů, které definují, jak by mělo tok spuštění, pokud daný případ odpovídá podmíněnému výrazu. Také <xref:System.Activities.Statements.FlowSwitch%601> definuje <xref:System.Activities.Statements.FlowSwitch%601.Default%2A> vlastnost, která definuje, jak by mělo tok spuštění, pokud žádné případy odpovídají výrazu podmínky. Následující příklad ukazuje, jak definovat pracovní <xref:System.Activities.Statements.FlowSwitch%601> postup, který používá prvek.
+Chcete-li modelovat vývojový diagram, ve kterém je vybrána jedna exkluzivní cesta na základě vyhovující hodnoty, <xref:System.Activities.Statements.FlowSwitch%601> je použit uzel. <xref:System.Activities.Statements.FlowSwitch%601.Expression%2A>Vlastnost je nastavena na hodnotu <xref:System.Activities.Activity%601> s parametrem typu <xref:System.Object> , který definuje hodnotu pro porovnání volby s. <xref:System.Activities.Statements.FlowSwitch%601.Cases%2A>Vlastnost definuje slovník klíčů a objektů, které <xref:System.Activities.Statements.FlowNode> mají být porovnány s podmíněným výrazem, a sadou <xref:System.Activities.Statements.FlowNode> objektů, které definují, jak by měl tok provádět, pokud daný případ odpovídá podmíněnému výrazu. <xref:System.Activities.Statements.FlowSwitch%601>Také definuje <xref:System.Activities.Statements.FlowSwitch%601.Default%2A> vlastnost, která definuje způsob, jakým by měl být provádění tok, pokud žádné případy neodpovídají výrazu podmínky. Následující příklad ukazuje, jak definovat pracovní postup, který používá <xref:System.Activities.Statements.FlowSwitch%601> prvek.
 
 ```xml
 <Flowchart>

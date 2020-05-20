@@ -3,12 +3,12 @@ title: Průlomové změny – .NET Framework do .NET Core
 titleSuffix: ''
 description: Obsahuje seznam přerušujících změn z .NET Framework do .NET Core.
 ms.date: 05/05/2020
-ms.openlocfilehash: 613c4e41e12be57d5631b347055140a4418e7207
-ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
+ms.openlocfilehash: f830d4571f21752900b35a7462bf0881673d6d2e
+ms.sourcegitcommit: 9a4488a3625866335e83a20da5e9c5286b1f034c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83206459"
+ms.lasthandoff: 05/15/2020
+ms.locfileid: "83420445"
 ---
 # <a name="breaking-changes-for-migration-from-net-framework-to-net-core"></a>Zásadní změny migrace z .NET Framework do .NET Core
 
@@ -23,6 +23,7 @@ Pokud migrujete aplikaci z .NET Framework do .NET Core, může to mít vliv na z
 - [UnauthorizedAccessException vyvolaná atributy SystemInfo.](#unauthorizedaccessexception-thrown-by-filesysteminfoattributes)
 - [Manipulace s poškozenými výjimkami stavu procesu není podporována.](#handling-corrupted-state-exceptions-is-not-supported)
 - [Vlastnosti objekt UriBuilder protokolu už neobsahují úvodní znaky.](#uribuilder-properties-no-longer-prepend-leading-characters)
+- [Process. StartInfo vyvolá InvalidOperationException pro procesy, které jste nespustili.](#processstartinfo-throws-invalidoperationexception-for-processes-you-didnt-start)
 
 ### <a name="net-core-21"></a>.NET Core 2.1
 
@@ -41,6 +42,10 @@ Pokud migrujete aplikaci z .NET Framework do .NET Core, může to mít vliv na z
 ***
 
 [!INCLUDE [uribuilder-behavior-changes](../../../includes/core-changes/corefx/1.0/uribuilder-behavior-changes.md)]
+
+***
+
+[!INCLUDE [startinfo-throws-exception](../../../includes/core-changes/corefx/1.0/startinfo-throws-exception.md)]
 
 ***
 
