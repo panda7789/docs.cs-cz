@@ -18,19 +18,19 @@ helpviewer_keywords:
 ms.assetid: a5cab4c6-990e-47f3-8798-cf422b791015
 topic_type:
 - apiref
-ms.openlocfilehash: 44578595b3cb790570c5359e714bd39c109cf1f8
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: a60805e1fd78cb14835957a7afc14fe279cb20fb
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79176458"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83616564"
 ---
-# <a name="corexitprocess-function"></a><span data-ttu-id="1f844-102">CorExitProcess – funkce</span><span class="sxs-lookup"><span data-stu-id="1f844-102">CorExitProcess Function</span></span>
-<span data-ttu-id="1f844-103">Ukončí aktuální nespravovaný proces.</span><span class="sxs-lookup"><span data-stu-id="1f844-103">Shuts down the current unmanaged process.</span></span>  
+# <a name="corexitprocess-function"></a><span data-ttu-id="bc34d-102">CorExitProcess – funkce</span><span class="sxs-lookup"><span data-stu-id="bc34d-102">CorExitProcess Function</span></span>
+<span data-ttu-id="bc34d-103">Ukončí aktuální nespravovaný proces.</span><span class="sxs-lookup"><span data-stu-id="bc34d-103">Shuts down the current unmanaged process.</span></span>  
   
- <span data-ttu-id="1f844-104">Tato funkce byla v rozhraní .NET Framework 4 zastaralá.</span><span class="sxs-lookup"><span data-stu-id="1f844-104">This function has been deprecated in the .NET Framework 4.</span></span> <span data-ttu-id="1f844-105">Místo toho použijte metodu [ICLRMetaHost::ExitProcess.](../../../../docs/framework/unmanaged-api/hosting/iclrmetahost-exitprocess-method.md)</span><span class="sxs-lookup"><span data-stu-id="1f844-105">Use the [ICLRMetaHost::ExitProcess](../../../../docs/framework/unmanaged-api/hosting/iclrmetahost-exitprocess-method.md) method instead.</span></span>  
+ <span data-ttu-id="bc34d-104">Tato funkce se už nepoužívá v .NET Framework 4.</span><span class="sxs-lookup"><span data-stu-id="bc34d-104">This function has been deprecated in the .NET Framework 4.</span></span> <span data-ttu-id="bc34d-105">Místo toho použijte metodu [ICLRMetaHost:: ExitProcess –](iclrmetahost-exitprocess-method.md) .</span><span class="sxs-lookup"><span data-stu-id="bc34d-105">Use the [ICLRMetaHost::ExitProcess](iclrmetahost-exitprocess-method.md) method instead.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="1f844-106">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="1f844-106">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="bc34d-106">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="bc34d-106">Syntax</span></span>  
   
 ```cpp  
 void STDMETHODCALLTYPE CorExitProcess (
@@ -38,24 +38,24 @@ void STDMETHODCALLTYPE CorExitProcess (
 );  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="1f844-107">Parametry</span><span class="sxs-lookup"><span data-stu-id="1f844-107">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="bc34d-107">Parametry</span><span class="sxs-lookup"><span data-stu-id="bc34d-107">Parameters</span></span>  
  `exitCode`  
- <span data-ttu-id="1f844-108">Celé číslo, které určuje kód ukončení procesu.</span><span class="sxs-lookup"><span data-stu-id="1f844-108">An integer that specifies the process exit code.</span></span>  
+ <span data-ttu-id="bc34d-108">Celé číslo, které určuje ukončovací kód procesu.</span><span class="sxs-lookup"><span data-stu-id="bc34d-108">An integer that specifies the process exit code.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="1f844-109">Poznámky</span><span class="sxs-lookup"><span data-stu-id="1f844-109">Remarks</span></span>  
+## <a name="remarks"></a><span data-ttu-id="bc34d-109">Poznámky</span><span class="sxs-lookup"><span data-stu-id="bc34d-109">Remarks</span></span>  
   
 > [!NOTE]
-> <span data-ttu-id="1f844-110">Počínaje rozhraním .NET `CorExitProcess` Framework 4 ukončí každý spuštěný čas runtime v procesu, nikoli pouze runtime, ke kterému byla vázána starší rozhraní API.</span><span class="sxs-lookup"><span data-stu-id="1f844-110">Beginning with the .NET Framework 4, `CorExitProcess` exits every started runtime in the process, not just the runtime to which the legacy APIs have been bound.</span></span>  
+> <span data-ttu-id="bc34d-110">Počínaje .NET Framework 4 `CorExitProcess` ukončí každý spuštěný modul runtime v procesu, nikoli jenom modul runtime, ke kterému byly navázány starší verze rozhraní API.</span><span class="sxs-lookup"><span data-stu-id="bc34d-110">Beginning with the .NET Framework 4, `CorExitProcess` exits every started runtime in the process, not just the runtime to which the legacy APIs have been bound.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="1f844-111">Požadavky</span><span class="sxs-lookup"><span data-stu-id="1f844-111">Requirements</span></span>  
- <span data-ttu-id="1f844-112">**Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="1f844-112">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="bc34d-111">Požadavky</span><span class="sxs-lookup"><span data-stu-id="bc34d-111">Requirements</span></span>  
+ <span data-ttu-id="bc34d-112">**Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="bc34d-112">**Platforms:** See [System Requirements](../../get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="1f844-113">**Záhlaví:** MSCorEE.h</span><span class="sxs-lookup"><span data-stu-id="1f844-113">**Header:** MSCorEE.h</span></span>  
+ <span data-ttu-id="bc34d-113">**Hlavička:** MSCorEE. h</span><span class="sxs-lookup"><span data-stu-id="bc34d-113">**Header:** MSCorEE.h</span></span>  
   
- <span data-ttu-id="1f844-114">**Knihovna:** Soubor MSCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="1f844-114">**Library:** MSCorEE.dll</span></span>  
+ <span data-ttu-id="bc34d-114">**Knihovna:** MSCorEE. dll</span><span class="sxs-lookup"><span data-stu-id="bc34d-114">**Library:** MSCorEE.dll</span></span>  
   
- <span data-ttu-id="1f844-115">**Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="1f844-115">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
+ <span data-ttu-id="bc34d-115">**Verze .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="bc34d-115">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="1f844-116">Viz také</span><span class="sxs-lookup"><span data-stu-id="1f844-116">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="bc34d-116">Viz také</span><span class="sxs-lookup"><span data-stu-id="bc34d-116">See also</span></span>
 
-- [<span data-ttu-id="1f844-117">Zastaralé funkce hostování CLR</span><span class="sxs-lookup"><span data-stu-id="1f844-117">Deprecated CLR Hosting Functions</span></span>](../../../../docs/framework/unmanaged-api/hosting/deprecated-clr-hosting-functions.md)
+- [<span data-ttu-id="bc34d-117">Zastaralé funkce hostování CLR</span><span class="sxs-lookup"><span data-stu-id="bc34d-117">Deprecated CLR Hosting Functions</span></span>](deprecated-clr-hosting-functions.md)

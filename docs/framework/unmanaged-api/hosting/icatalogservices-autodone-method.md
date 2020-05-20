@@ -15,22 +15,22 @@ helpviewer_keywords:
 ms.assetid: 3002f051-7aaa-4669-9314-cbc65b3a1772
 topic_type:
 - apiref
-ms.openlocfilehash: 5389082f60a97d4da97bfce1c121a9e983b9ae79
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 631da8936873b57040f1c60e8db6867ea2eed2c8
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73126844"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83617045"
 ---
-# <a name="icatalogservicesautodone-method"></a><span data-ttu-id="bc5e2-102">ICatalogServices::Autodone – metoda</span><span class="sxs-lookup"><span data-stu-id="bc5e2-102">ICatalogServices::Autodone Method</span></span>
-<span data-ttu-id="bc5e2-103">Tato metoda podporuje infrastrukturu .NET Framework a není určena pro použití přímo v kódu.</span><span class="sxs-lookup"><span data-stu-id="bc5e2-103">This method supports the .NET Framework infrastructure and is not intended to be used directly from your code.</span></span>  
+# <a name="icatalogservicesautodone-method"></a><span data-ttu-id="35f76-102">ICatalogServices::Autodone – metoda</span><span class="sxs-lookup"><span data-stu-id="35f76-102">ICatalogServices::Autodone Method</span></span>
+<span data-ttu-id="35f76-103">Tato metoda podporuje infrastrukturu .NET Framework a není určena pro použití přímo v kódu.</span><span class="sxs-lookup"><span data-stu-id="35f76-103">This method supports the .NET Framework infrastructure and is not intended to be used directly from your code.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="bc5e2-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="bc5e2-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="35f76-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="35f76-104">Syntax</span></span>  
   
 ```cpp  
 HRESULT Autodone ( );  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="bc5e2-105">Viz také:</span><span class="sxs-lookup"><span data-stu-id="bc5e2-105">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="35f76-105">Viz také</span><span class="sxs-lookup"><span data-stu-id="35f76-105">See also</span></span>
 
-- [<span data-ttu-id="bc5e2-106">Rozhraní pro hostování</span><span class="sxs-lookup"><span data-stu-id="bc5e2-106">Hosting Interfaces</span></span>](../../../../docs/framework/unmanaged-api/hosting/hosting-interfaces.md)
+- [<span data-ttu-id="35f76-106">Rozhraní pro hostování</span><span class="sxs-lookup"><span data-stu-id="35f76-106">Hosting Interfaces</span></span>](hosting-interfaces.md)
