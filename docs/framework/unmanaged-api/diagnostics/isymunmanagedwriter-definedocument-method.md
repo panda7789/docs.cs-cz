@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: c3bf15b0-3250-4bbe-b9b5-c5d695289b6f
 topic_type:
 - apiref
-ms.openlocfilehash: 02b270677131d0960db67b0ac8db38cba2b5e2df
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: fdcfb0c4f9c21eb516f4196d0c8f682669468219
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74428054"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83615225"
 ---
 # <a name="isymunmanagedwriterdefinedocument-method"></a>ISymUnmanagedWriter::DefineDocument – metoda
 Definuje zdrojový dokument. Pro známé jazyky, dodavatele a typy dokumentů jsou k dispozici identifikátory GUID.  
@@ -38,7 +38,7 @@ HRESULT DefineDocument(
   
 ## <a name="parameters"></a>Parametry  
  `url`  
- pro Ukazatel na `WCHAR` definující adresu URL (Uniform Resource Locator), která identifikuje dokument.  
+ pro Ukazatel na `WCHAR` , který definuje adresu URL (Uniform Resource Locator), která identifikuje dokument.  
   
  `language`  
  pro Ukazatel na identifikátor GUID, který definuje jazyk dokumentu.  
@@ -50,7 +50,7 @@ HRESULT DefineDocument(
  pro Ukazatel na identifikátor GUID definující typ dokumentu.  
   
  `pRetVal`  
- mimo Ukazatel na vrácené rozhraní [ISymUnmanagedWriter](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-interface.md) .  
+ mimo Ukazatel na vrácené rozhraní [ISymUnmanagedWriter](isymunmanagedwriter-interface.md) .  
   
 ## <a name="return-value"></a>Návratová hodnota  
  S_OK, pokud je metoda úspěšná; v opačném případě E_FAIL nebo nějaký jiný kód chyby.  
@@ -58,6 +58,6 @@ HRESULT DefineDocument(
 ## <a name="requirements"></a>Požadavky  
  **Hlavička:** CorSym. idl, CorSym. h  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [ISymUnmanagedWriter – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-interface.md)
+- [ISymUnmanagedWriter – rozhraní](isymunmanagedwriter-interface.md)

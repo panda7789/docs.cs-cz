@@ -1,38 +1,36 @@
 ---
 title: Azure Monitor
-description: Pomocí Azure Monitor uzískat přehled o vašem systému běží.
-ms.date: 02/05/2020
-ms.openlocfilehash: 4e5ddba6c1c13dc65662a7748d4ae3a58a6a6f68
-ms.sourcegitcommit: f87ad41b8e62622da126aa928f7640108c4eff98
+description: Použití Azure Monitor k získání přehledu o tom, zda je systém spuštěný.
+ms.date: 05/13/2020
+ms.openlocfilehash: e3ff673c63ecbc380cb8b74ae54065a091882d7b
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "80805627"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83614263"
 ---
 # <a name="azure-monitor"></a>Azure Monitor
 
-[!INCLUDE [book-preview](../../../includes/book-preview.md)]
+Žádný jiný poskytovatel cloudu nemá k dispozici řešení monitorování cloudových aplikací, které najdete v Azure. Azure Monitor je zastřešující program pro kolekci nástrojů navržený tak, aby poskytoval přehled o stavu systému, přehledu o všech problémech a optimalizaci vaší aplikace.
 
-Žádný jiný poskytovatel cloudu nemá tak vyspělé řešení monitorování cloudových aplikací, jako je řešení v Azure. Azure Monitor je zastřešující název pro kolekci nástrojů navržených tak, aby poskytovaly přehled o stavu vašeho systému, přehled o všech problémech a optimalizaci vaší aplikace.
-
-![Azure Monitor, kolekce nástrojů, které poskytují přehled o tom, jak funguje nativní aplikace cloudu. ](./media/azure-monitor.png)
- **Obrázek 7-12**. Azure Monitor, kolekce nástrojů, které poskytují přehled o tom, jak funguje nativní aplikace cloudu.
+![Azure Monitor kolekce nástrojů, které poskytují přehled o fungování nativní aplikace cloudu. ](./media/azure-monitor.png)
+ **Obrázek 7-12**. Azure Monitor kolekce nástrojů, které poskytují přehled o fungování nativní aplikace cloudu.
 
 ## <a name="gathering-logs-and-metrics"></a>Shromažďování protokolů a metrik
 
-Prvním krokem v každém řešení monitorování je shromáždit co nejvíce dat. Čím více dat lze shromáždit, tím hlubší jsou poznatky, které lze získat. Přístrojové systémy byly tradičně obtížné. Simple Network Management Protocol (SNMP) byl zlatý standardní protokol pro sběr informací o úrovni stroje, ale vyžadoval velké množství znalostí a konfiguraci. Naštěstí velká část této tvrdé práce byla odstraněna jako nejběžnější metriky jsou shromažďovány automaticky Azure Monitor.
+Prvním krokem v jakémkoli řešení monitorování je shromažďování co nejvíce dat. Víc dat, která se dají shromáždit, získáte hlubší přehledy, které je možné získat. Systémy instrumentace byly tradičně obtížné. Protokol SNMP (Simple Network Management Protocol) byl standardem Gold pro shromažďování informací na úrovni počítače, ale vyžadoval značnou znalost a konfiguraci. Naštěstí je mnoho z těchto pevných prací eliminováno, protože nejběžnější metriky se shromažďují automaticky pomocí Azure Monitor.
 
-Metriky a události na úrovni aplikace není možné instrumentovat automaticky, protože jsou specifické pro aplikaci, která se nasazuje. Za účelem shromáždění těchto metrik jsou [k dispozici sady SDK a rozhraní API,](https://docs.microsoft.com/azure/azure-monitor/app/api-custom-events-metrics) které přímo vykazují tyto informace, například když zákazník zaregistruje nebo dokončí objednávku. Výjimky můžete také zachytit a ohlásit zpět do Azure Monitor prostřednictvím Application Insights. Sady SDK podporují většinu všech jazyků nalezených v nativních aplikacích cloudu, včetně go, Pythonu, JavaScriptu a jazyků .NET.
+Metriky a události na úrovni aplikace nejsou možné automaticky instrumentovat, protože jsou specifické pro nasazenou aplikaci. Aby bylo možné shromáždit tyto metriky, jsou [k dispozici sady SDK a rozhraní API](https://docs.microsoft.com/azure/azure-monitor/app/api-custom-events-metrics) pro přímé hlášení takových informací, například když zákazník zaregistruje nebo dokončí objednávku. Výjimky lze také zachytit a nahlásit zpět do Azure Monitor prostřednictvím Application Insights. Sady SDK podporují většinu každého jazyka nalezeného v cloudových nativních aplikacích, včetně jazyků přejít, Python, JavaScript a .NET.
 
-Konečným cílem shromažďování informací o stavu vaší aplikace je zajistit, aby koncoví uživatelé měli dobré zkušenosti. Jaký lepší způsob, jak zjistit, zda uživatelé mají problémy, než dělat [mimo-v webových testů](https://docs.microsoft.com/azure/azure-monitor/app/monitor-web-app-availability)? Tyto testy mohou být stejně jednoduché jako ping na vaše webové stránky z míst po celém světě, nebo jako s agenty přihlásit do webu a simulovat akce uživatelů.
+Konečným cílem shromažďování informací o stavu vaší aplikace je zajistit, aby koncoví uživatelé měli dobré zkušenosti. Jaký lepší způsob, jak zjistit, jestli se u uživatelů vyskytují problémy, než dělat [mimo jiné webové testy](https://docs.microsoft.com/azure/azure-monitor/app/monitor-web-app-availability)? Tyto testy můžou být tak jednoduché jako při testování vašeho webu pomocí testu schůzek z umístění po celém světě, nebo v případě, že se agenti přihlašují k lokalitě a simulují akce uživatelů.
 
-## <a name="reporting-data"></a>Údaje z vykazování
+## <a name="reporting-data"></a>Data vytváření sestav
 
-Jakmile jsou data shromážděna, mohou být manipulována, shrnuta a vykreslena do grafů, které uživatelům umožňují okamžitě vidět, když se objeví problémy. Tyto grafy lze shromáždit do řídicích panelů nebo do sešitů, což je vícestránková sestava navržená tak, aby vyprávěla příběh o některých aspektech systému.
+Jakmile budou data shromážděna, může být manipulována, shrnuta a vykreslena v grafech, což umožňuje uživatelům okamžitě zobrazit, kdy dojde k problémům. Tyto grafy je možné shromažďovat do řídicích panelů nebo do sešitů, což je vícestránkové sestava navržená tak, aby informovala o některých aspektech systému.
 
-Žádná moderní aplikace by nebyla úplná bez umělé inteligence nebo strojového učení. Za tímto účelem mohou být data [předána](https://www.youtube.com/watch?v=Cuza-I1g9tw) různým nástrojům strojového učení v Azure, abyste mohli extrahovat trendy a informace, které by jinak byly skryté.
+Žádná moderní aplikace by se nedokončila bez jakýchkoli umělých analytických funkcí nebo strojového učení. K tomuto účelu můžete data [předat](https://www.youtube.com/watch?v=Cuza-I1g9tw) do různých nástrojů pro strojové učení v Azure, aby bylo možné extrahovat trendy a informace, které by jinak byly skryté.
 
-Application Insights poskytuje výkonný dotazovací jazyk s názvem Kusto, který lze použít k vyhledání záznamů, jejich shrnutí a dokonce i k vykreslení grafů. Tento dotaz například vyhledá všechny záznamy za měsíc listopad 2007, seskupí je podle státu a vykreslí prvních 10 jako výsečový graf.
+Application Insights poskytuje výkonný dotazovací jazyk s názvem Kusto, který se dá použít k hledání záznamů, jejich sumarizaci a dokonce i vykreslení grafů. Tento dotaz například vyhledá všechny záznamy za měsíc v listopadu 2007, seskupí je podle stavu a vykreslí horní 10 jako výsečový graf.
 
 ```kusto
 StormEvents
@@ -42,43 +40,43 @@ StormEvents
 | render piechart
 ```
 
-![Výsledek obrázku dotazu](./media/azure-monitor.png)
-Přehledy aplikací**7-13**. Výsledek application insights dotazu.
+![Výsledek ](./media/azure-monitor.png)
+ **obrázku Application Insights obrázek 7-13**. Výsledek dotazu Application Insights.
 
-K dispozici je hřiště pro experimentování s dotazy [Kusto,](https://dataexplorer.azure.com/clusters/help/databases/Samples) což je fantastické místo, kde můžete strávit hodinu nebo dvě. Čtení [ukázkových dotazů](https://docs.microsoft.com/azure/kusto/query/samples) může být také poučné.
+K dispozici je [Playground pro experimentování s dotazy Kusto](https://dataexplorer.azure.com/clusters/help/databases/Samples) , což je fantastická místo, které stráví hodinu nebo dvěma hodinami. Čtení [ukázkových dotazů](https://docs.microsoft.com/azure/kusto/query/samples) může být také poučené.
 
 ## <a name="dashboards"></a>Řídicí panely
 
-Existuje několik různých řídicích paneltechnologií, které mohou být použity k zobrazení informací z Azure Monitoru. Možná nejjednodušší je jen spustit dotazy v Application Insights a [vykreslit data do grafu](https://docs.microsoft.com/azure/azure-monitor/learn/tutorial-app-dashboards).
+K dispozici je několik různých technologií řídicích panelů, které lze použít k obplochy těchto informací z Azure Monitor. Nejjednodušším řešením je pouze spuštění dotazů v Application Insights a [vykreslení dat do grafu](https://docs.microsoft.com/azure/azure-monitor/learn/tutorial-app-dashboards).
 
-![Příklad grafů Application Insights vložených do](./media/azure-monitor.png)
-hlavního obrázku řídicího panelu Azure**7-14**. Příklad grafů Application Insights vložených do hlavního řídicího panelu Azure.
+![Příklad Application Insights grafů vložených na hlavní řídicí panel Azure ](./media/azure-monitor.png)
+ **Obrázek 7-14**. Příklad Application Insights grafů integrovaných v hlavním řídicím panelu Azure
 
-Tyto grafy pak můžete vložit do webu Azure portal správné pomocí funkce řídicího panelu. Pro uživatele s náročnějšími požadavky, jako je možnost přejít k podrobnostem do několika úrovní dat, jsou data Azure Monitoru dostupná pro [Power BI](https://powerbi.microsoft.com/). Power BI je špičkový nástroj podnikové třídy business intelligence, který dokáže agregovat data z mnoha různých zdrojů dat.
+Tyto grafy pak mohou být vloženy do Azure Portal správně prostřednictvím použití funkce řídicího panelu. Pro uživatele s více přesnými požadavky, jako je například schopnost přejít k podrobnostem na několik úrovní dat, Azure Monitor k dispozici [Power BI](https://powerbi.microsoft.com/)data. Power BI je špičková podniková třída, která business intelligence nástroj, který může agregovat data z mnoha různých zdrojů dat.
 
-![Příklad řídicího](./media/azure-monitor.png)
-panelu Power BI**Obrázek 7-15**. Ukázkový řídicí panel Power BI.
+![Například obrázek řídicího panelu Power BI ](./media/azure-monitor.png)
+ **7-15**. Příklad Power BI řídicího panelu.
 
-## <a name="alerts"></a>Výstrahy
+## <a name="alerts"></a>Upozornění
 
-Někdy s řídicí panely dat je nedostatečná. Pokud nikdo není vzhůru sledovat řídicí panely, pak to může být ještě mnoho hodin, než je problém vyřešen, nebo dokonce zjištěna. Za tímto účelem Azure Monitor také poskytuje horní zářez [upozorňující řešení](https://docs.microsoft.com/azure/azure-monitor/platform/alerts-overview). Výstrahy mohou být vyvolány širokou škálou podmínek, včetně:
+V některých případech nejsou data řídicích panelů dostatečná. Pokud nikdo nesleduje řídicí panely, může to být ještě mnoho hodin před adresováním problému nebo dokonce i zjištěným. K tomuto účelu Azure Monitor také nabízí [řešení upozornění](https://docs.microsoft.com/azure/azure-monitor/platform/alerts-overview)na nejvyšší stupeň. Výstrahy se můžou aktivovat v rámci široké škály podmínek, mezi které patří:
 
 - Hodnoty metriky
 - Vyhledávací dotazy na protokoly
 - Události protokolu aktivit
 - Stav základní platformy Azure
-- Testy dostupnosti webových stránek
+- Testy dostupnosti webu
 
-Při aktivaci mohou výstrahy provádět širokou škálu úloh. Na jednoduché straně mohou upozornění odeslat e-mailové oznámení do seznamu adresátů nebo textovou zprávu jednotlivci. Další zapojené výstrahy může aktivovat pracovní postup v nástroji, jako je PagerDuty, který si je vědom toho, kdo je na volání pro konkrétní aplikaci. Výstrahy můžou aktivovat akce v [Microsoft Flow,](https://flow.microsoft.com/) které odemykají téměř neomezené možnosti pracovních postupů.
+Při aktivaci můžou výstrahy provádět nejrůznější úlohy. Na jednoduché straně můžou výstrahy jednoduše odeslat e-mailové oznámení do seznamu adresátů nebo textové zprávy pro jednotlivce. Další zahrnuté výstrahy můžou aktivovat pracovní postup v nástroji, jako je PagerDuty, který ví, kdo je na volání konkrétní aplikace. Výstrahy můžou aktivovat akce v [Microsoft Flow](https://flow.microsoft.com/) odemykání téměř omezených možností pro pracovní postupy.
 
-Jako běžné příčiny výstrahy jsou identifikovány, výstrahy mohou být rozšířeny s podrobnostmi o běžné příčiny výstrah a kroky k jejich vyřešení. Vysoce vyspělé nasazení aplikací nativní pro cloud se může rozhodnout zahájit úlohy samoopravitelnosti, které provádějí akce, jako je například odebrání neúspěšných uzlů ze škálovací sady nebo spuštění aktivity automatického škálování. Nakonec již nemusí být nutné probudit personál ve 2:00, aby vyřešil problém s živým místem, protože systém se bude moci přizpůsobit kompenzaci nebo alespoň kulhat, dokud někdo nepřijde do práce druhý den ráno.
+Jak jsou zjištěny běžné příčiny výstrah, lze výstrahy zvýšit s podrobnostmi o běžných příčinách výstrah a krocích, které je třeba provést při jejich řešení. Vysoce vyspělá nasazení aplikací v cloudu se můžou rozhodnout, že se odeberou úlohy s automatickým opravou, které provádějí akce, jako je odebrání neúspěšných uzlů ze sady škálování nebo Aktivace aktivity automatického škálování. Nakonec už nemusí být nutné, aby se probudili zaměstnanci na 2AM, aby vyřešili problém s živým webem, protože systém se bude moct přizpůsobit na kompenzaci nebo aspoň Limp a až do chvíle, kdy někdo dorazí v práci na další ráno.
 
-Azure Monitor automaticky využívá strojové učení k pochopení běžných provozních parametrů nasazených aplikací. To umožňuje zjistit služby, které pracují mimo jejich normální parametry. Například typický provoz ve všední den na webu může být 10 000 požadavků za minutu. A pak, v daném týdnu, najednou počet žádostí zasáhne velmi neobvyklé 20.000 žádostí za minutu. [Inteligentní detekce](https://docs.microsoft.com/azure/azure-monitor/app/proactive-diagnostics) si všimne této odchylky od normy a spustí výstrahu. Současně je analýza trendů dostatečně chytrá, aby se vyhnula spouštění falešných poplachů, když se očekává zatížení provozu.
+Azure Monitor automaticky využívá Machine Learning k pochopení normálních provozních parametrů nasazených aplikací. Díky tomu je možné detekovat služby, které fungují mimo jejich normální parametry. Například typický provoz v týdnu v lokalitě může být 10 000 požadavků za minutu. A potom v daném týdnu náhle počet požadavků narazí na velmi neobvyklé 20 000 požadavků za minutu. [Inteligentní zjišťování](https://docs.microsoft.com/azure/azure-monitor/app/proactive-diagnostics) si všimněte odchylky od normy a aktivuje výstrahu. V současné době je analýza trendů dostatečně chytrá, aby nedocházelo k vypálení falešně pozitivních výsledků, když se očekává zatížení provozu.
 
 ## <a name="references"></a>Odkazy
 
 - [Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/overview)
 
 >[!div class="step-by-step"]
->[Předchozí](monitoring-azure-kubernetes.md)
->[další](identity.md)
+>[Předchozí](monitoring-azure-kubernetes.md) 
+> [Další](identity.md)

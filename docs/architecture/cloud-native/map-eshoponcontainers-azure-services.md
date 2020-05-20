@@ -1,24 +1,22 @@
 ---
 title: Mapování aplikace eShopOnContainers ke službám Azure
 description: Mapování eShopOnContainers na služby Azure, jako je služba Azure Kubernetes, brána API a Azure Service Bus.
-ms.date: 04/20/2020
-ms.openlocfilehash: 26fce71ba71f7da643b669396ab59affe592649a
-ms.sourcegitcommit: 957c49696eaf048c284ef8f9f8ffeb562357ad95
+ms.date: 05/13/2020
+ms.openlocfilehash: 271707404f7fb51aec59c6f682ddaefd0bac82cc
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82895517"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83613834"
 ---
 # <a name="mapping-eshoponcontainers-to-azure-services"></a>Mapování aplikace eShopOnContainers ke službám Azure
-
-[!INCLUDE [book-preview](../../../includes/book-preview.md)]
 
 I když to není nutné, Azure je vhodný pro podporu eShopOnContainers, protože projekt byl sestaven jako cloudová nativní aplikace. Aplikace je sestavená pomocí .NET Core, takže ji můžete spustit na kontejnerech Linux nebo Windows v závislosti na hostiteli Docker. Aplikace se skládá z několika autonomních mikroslužeb, z nichž každá má vlastní data. Různé mikroslužby prezentují různé přístupy od jednoduchých operací CRUD až po složitější a CQRS vzory. Mikroslužby komunikují s klienty přes protokol HTTP a vzájemně komunikují prostřednictvím komunikace založené na zprávách. Aplikace podporuje také více platforem pro klienty, protože přijímá protokol HTTP jako standardní komunikační protokol a zahrnuje ASP.NET Core a Xamarin Mobile Apps, které běží na platformách Android, iOS a Windows.
 
 Architektura aplikace se zobrazuje na obrázku 2-5. Na levé straně jsou klientské aplikace rozdělené na mobilní, tradiční web a charakter SPA (Web Single Page Application). Na pravé straně jsou serverové komponenty, které tvoří systém, z nichž každý je možné hostovat v kontejnerech Docker a clusterech Kubernetes. Tradiční webová aplikace se používá v aplikaci ASP.NET Core MVC zobrazené žlutě. Tato aplikace a mobilní a webové aplikace SPA komunikují s jednotlivými mikroslužbami přes jednu nebo více bran rozhraní API. Brány rozhraní API se řídí vzorem "back-endy pro front-endy" (BFF), což znamená, že každá brána je navržená tak, aby podporovala daného klienta front-endu. Jednotlivé mikroslužby jsou uvedeny napravo od bran rozhraní API a zahrnují obchodní logiku i určitý druh trvalého úložiště. Různé služby využívají SQL Server databáze, instance mezipaměti Redis a úložiště MongoDB/CosmosDB. Úplně vpravo je systémová sběrnice událostí, která se používá ke komunikaci mezi mikroslužbami.
 
-![Obrázek architektury](./media/eshoponcontainers-architecture.png)
-eShopOnContainers**2-5**. Architektura eShopOnContainers
+![Obrázek architektury eShopOnContainers ](./media/eshoponcontainers-architecture.png)
+ **2-5**. Architektura eShopOnContainers
 
 Komponenty na straně serveru této architektury jsou snadno namapovány na služby Azure.
 
@@ -65,5 +63,5 @@ Aplikace používá události ke komunikaci mezi různými službami. Tato funkc
 Po nasazení do produkčního prostředí by aplikace eShopOnContainers mohla využívat několik služeb Azure, které jsou k dispozici pro zlepšení jeho odolnosti. Aplikace zveřejňuje kontroly stavu, které je možné integrovat s Application Insights, aby poskytovala sestavy a výstrahy na základě dostupnosti aplikace. Prostředky Azure také poskytují diagnostické protokoly, které se dají použít k identifikaci a opravě chyb a problémů s výkonem. Protokoly prostředků poskytují podrobné informace o tom, kdy a jak aplikace používá různé prostředky Azure. V [kapitole 6](resiliency.md)se dozvíte víc o funkcích odolnosti nativního cloudu.
 
 >[!div class="step-by-step"]
->[Předchozí](introduce-eshoponcontainers-reference-app.md)
->[Další](deploy-eshoponcontainers-azure.md)
+>[Předchozí](introduce-eshoponcontainers-reference-app.md) 
+> [Další](deploy-eshoponcontainers-azure.md)

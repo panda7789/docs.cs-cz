@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: e0ebd793-3764-4df0-8f12-0e95f60b9eae
 topic_type:
 - apiref
-ms.openlocfilehash: 6e9ab623d5fe9fcfda2305df078e988a561afdc5
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 1553e616f60b4f05c06b6457d47454dfb4bc2eb7
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74427972"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83614770"
 ---
 # <a name="isymunmanagedwriterinitialize-method"></a>ISymUnmanagedWriter::Initialize – metoda
 Nastaví rozhraní Emit metadat, ke kterému bude tento zapisovač přidružen, a nastaví název výstupního souboru, do kterého budou zapsány symboly ladění.  
@@ -45,10 +45,10 @@ HRESULT Initialize(
  pro Název souboru, do kterého jsou zapsány symboly ladění. Pokud je název souboru zadán pro zapisovač, který nepoužívá názvy souborů, tento parametr je ignorován.  
   
  `pIStream`  
- pro Je-li tento parametr zadán, zapisovač symbolů bude vysílat symboly do daného <xref:System.Runtime.InteropServices.ComTypes.IStream>, nikoli do souboru zadaného v parametru `filename`. Parametr `pIStream` je nepovinný.  
+ pro Je-li tento parametr zadán, zapisovač symbolů bude generovat symboly <xref:System.Runtime.InteropServices.ComTypes.IStream> namísto souboru zadaného v `filename` parametru. `pIStream`Parametr je nepovinný.  
   
  `fFullBuild`  
- [in] `true`, pokud se jedná o úplné opětovné sestavení; `false`, pokud se jedná o přírůstkovou kompilaci.  
+ [in] `true` Pokud se jedná o úplné opětovné sestavení; `false`Pokud se jedná o přírůstkovou kompilaci.  
   
 ## <a name="return-value"></a>Návratová hodnota  
  S_OK, pokud je metoda úspěšná; v opačném případě E_FAIL nebo nějaký jiný kód chyby.  
@@ -56,7 +56,7 @@ HRESULT Initialize(
 ## <a name="requirements"></a>Požadavky  
  **Hlavička:** CorSym. idl, CorSym. h  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [ISymUnmanagedWriter – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-interface.md)
-- [Initialize2 – metoda](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-initialize2-method.md)
+- [ISymUnmanagedWriter – rozhraní](isymunmanagedwriter-interface.md)
+- [Initialize2 – metoda](isymunmanagedwriter-initialize2-method.md)

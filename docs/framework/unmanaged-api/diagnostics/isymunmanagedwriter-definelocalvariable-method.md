@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: 6fab8a58-3883-490f-8b27-64042c90f104
 topic_type:
 - apiref
-ms.openlocfilehash: f6a741df3ea57b5e9b4fa8bc5d304bfedd1d6c15
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 5730cdd910257d762230f5e54576d5e0a7ac1adb
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74428006"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83614822"
 ---
 # <a name="isymunmanagedwriterdefinelocalvariable-method"></a>ISymUnmanagedWriter::DefineLocalVariable – metoda
-Definuje jednu proměnnou v aktuálním lexikálním oboru. Tuto metodu lze volat vícekrát pro proměnnou se stejným názvem, který má více obydlí v celém rozsahu. V takovém případě se ale hodnoty parametrů `startOffset` a `endOffset` nesmí překrývat.  
+Definuje jednu proměnnou v aktuálním lexikálním oboru. Tuto metodu lze volat vícekrát pro proměnnou se stejným názvem, který má více obydlí v celém rozsahu. V tomto případě se však hodnoty `startOffset` `endOffset` parametrů a nesmí překrývat.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -43,13 +43,13 @@ HRESULT DefineLocalVariable(
   
 ## <a name="parameters"></a>Parametry  
  `name`  
- pro Ukazatel na `WCHAR`, který definuje název místní proměnné.  
+ pro Ukazatel na `WCHAR` , který definuje název místní proměnné.  
   
  `attributes`  
  pro Atributy místních proměnných.  
   
  `cSig`  
- pro `ULONG32`, která určuje velikost vyrovnávací paměti `signature` v bajtech.  
+ pro `ULONG32`Který udává velikost vyrovnávací paměti v bajtech `signature` .  
   
  `signature`  
  pro Lokální podpis proměnné.  
@@ -78,8 +78,8 @@ HRESULT DefineLocalVariable(
 ## <a name="requirements"></a>Požadavky  
  **Hlavička:** CorSym. idl, CorSym. h  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [ISymUnmanagedWriter – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-interface.md)
-- [DefineGlobalVariable – metoda](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-defineglobalvariable-method.md)
-- [DefineLocalVariable2 – metoda](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter2-definelocalvariable2-method.md)
+- [ISymUnmanagedWriter – rozhraní](isymunmanagedwriter-interface.md)
+- [DefineGlobalVariable – metoda](isymunmanagedwriter-defineglobalvariable-method.md)
+- [DefineLocalVariable2 – metoda](isymunmanagedwriter2-definelocalvariable2-method.md)

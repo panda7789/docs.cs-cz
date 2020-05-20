@@ -1,17 +1,15 @@
 ---
 title: Vzory pozorovatelnosti
 description: Vzory pozorování pro cloudové nativní aplikace
-ms.date: 02/05/2020
-ms.openlocfilehash: a821235835b4553760b19887d500a29ca75e133e
-ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
+ms.date: 05/13/2020
+ms.openlocfilehash: db6a56358923025cbcca9478908474227e5da96d
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77448509"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83613808"
 ---
 # <a name="observability-patterns"></a>Vzory pozorovatelnosti
-
-[!INCLUDE [book-preview](../../../includes/book-preview.md)]
 
 Stejně jako byly vyvinuty vzory pro podporu v rozložení kódu v aplikacích, existují vzory pro operační aplikace spolehlivě. Existují tři užitečné vzory pro údržbu aplikací: **protokolování**, **monitorování**a **výstrahy**.
 
@@ -21,20 +19,20 @@ Bez ohledu na to, jak opatrní, se aplikace téměř vždy chovají neočekávan
 
 ### <a name="challenges-when-logging-with-cloud-native-applications"></a>Problémy při protokolování s využitím nativních aplikací cloudu
 
-V tradičních aplikacích se soubory protokolu obvykle ukládají na místním počítači. Ve skutečnosti se v operačních systémech, které používají systém UNIX, nachází struktura složek, která bude obsahovat všechny protokoly, obvykle v části `/var/log`.
+V tradičních aplikacích se soubory protokolu obvykle ukládají na místním počítači. Ve skutečnosti v operačních systémech, které používají systém UNIX, je definována struktura složek, která bude obsahovat všechny protokoly, obvykle v části `/var/log` .
 
-![protokolování do souboru v aplikaci monolitické](./media/single-monolith-logging.png)
-**obrázek 7-1**. Protokolování do souboru v aplikaci monolitické
+![Protokolování do souboru v aplikaci ](./media/single-monolith-logging.png)
+ monolitické **Obrázek 7-1**. Protokolování do souboru v aplikaci monolitické
 
 Užitečnost protokolování do plochého souboru na jednom počítači se výrazně snižuje v cloudovém prostředí. Aplikace vytvářející protokoly nemusí mít přístup k místnímu disku nebo je místní disk vysoce přechodný, protože kontejnery jsou v rámci fyzických počítačů přemísťování. I jednoduché škálování aplikací monolitické napříč více uzly může zjednodušit vyhledání příslušného souboru protokolu založeného na souborech.
 
-![protokolování do souborů v aplikaci monolitické s měřítkem.](./media/multiple-node-monolith-logging.png)
-**obrázek 7-2**. Protokolování do souborů v aplikaci monolitické s měřítkem.
+![Protokolování do souborů v aplikaci monolitické s měřítkem. ](./media/multiple-node-monolith-logging.png)
+ **Obrázek 7-2**. Protokolování do souborů v aplikaci monolitické s měřítkem.
 
 Nativní aplikace v cloudu vyvinuté pomocí architektury mikroslužeb také představují problémy pro protokolovací soubory založené na souborech. Žádosti uživatelů teď můžou zahrnovat několik služeb, které běží na různých počítačích a můžou zahrnovat funkce bez serveru bez přístupu k místnímu systému souborů. V rámci těchto mnoha služeb a počítačů by bylo velmi náročné korelovat protokoly od uživatele nebo relace.
 
-![protokolování do místních souborů v aplikaci mikroslužeb.](./media/local-log-file-per-service.png)
-**obrázek 7-3**. Protokolování do místních souborů v aplikaci mikroslužeb.
+![Protokolování do místních souborů v aplikaci mikroslužeb. ](./media/local-log-file-per-service.png)
+ **Obrázek 7-3**. Protokolování do místních souborů v aplikaci mikroslužeb.
 
 Nakonec je velký počet uživatelů v některých aplikacích nativních pro Cloud. Představte si, že každý uživatel při přihlášení k aplikaci vygeneruje stovky řádků protokolu. V izolaci, která je spravovatelná, ale vynásobte to více než 100 000 uživatelů a objem protokolů je dostatečně velký, aby byly k dispozici specializované nástroje pro podporu efektivního používání protokolů.
 
@@ -42,8 +40,8 @@ Nakonec je velký počet uživatelů v některých aplikacích nativních pro Cl
 
 U každého programovacího jazyka jsou k dispozici nástroje, které umožňují zápis protokolů, a obvykle jsou režie pro zápis těchto protokolů nízká. Mnohé z knihoven protokolování poskytují protokolování různých druhů závažnosti, které mohou být vyladěny v době běhu. Například [Knihovna Serilog](https://serilog.net/) je oblíbená strukturovaná knihovna protokolování pro .NET, která poskytuje následující úrovně protokolování:
 
-* Podrobnosti
-* Ladění
+* Verbose
+* Ladit
 * Informace
 * Upozornění
 * Chyba
@@ -57,8 +55,8 @@ Z důvodu problémů spojených s používáním protokolů založených na soub
 
 Při sestavování protokolování, které zahrnuje mnoho služeb, je také užitečné dodržovat některé standardní postupy. Například generování [ID korelace](https://blog.rapid7.com/2016/12/23/the-value-of-correlation-ids/) na začátku zdlouhavé interakce a jejich protokolování v každé zprávě, která souvisí s touto interakcí, usnadňuje hledání všech souvisejících zpráv. Jedna zpráva potřebuje najít jenom jednu zprávu a extrahovat ID korelace a najít všechny související zprávy. Dalším příkladem je zajistěte, aby byl formát protokolu pro každou službu stejný, bez ohledu na to, jaký jazyk nebo knihovna protokolů používá. Díky této standardizaci je čtení protokolů mnohem jednodušší. Obrázek 7-4 ukazuje, jak může architektura mikroslužeb využít centralizované protokolování v rámci svého pracovního postupu.
 
-Protokoly ![z různých zdrojů se ingestují do centralizovaného úložiště protokolů.](./media/centralized-logging.png)
-**obrázek 7-4**. Protokoly z různých zdrojů se ingestují do centralizovaného úložiště protokolů.
+![Protokoly z různých zdrojů se ingestují do centralizovaného úložiště protokolů. ](./media/centralized-logging.png)
+ **Obrázek 7-4**. Protokoly z různých zdrojů se ingestují do centralizovaného úložiště protokolů.
 
 ## <a name="challenges-with-detecting-and-responding-to-potential-app-health-issues"></a>Výzvy k detekci a reakci na potenciální problémy s kompatibilitou stavu aplikací
 
@@ -101,5 +99,5 @@ Obvykle ale jedna chyba 500 není dostačující k určení toho, že došlo k p
 Jedním z nejvíce škodlivých vzorů při upozorňování je vyvolat příliš mnoho výstrah, aby se lidé mohli prozkoumat. Vlastníci služby se rychle odeberou na chyby, které byly dříve prověřené a které byly shledány neškodně. Když dojde k skutečným chybám, ztratí se v důsledku výskytu stovky falešně pozitivních hodnot. Parable pro [Boy, kteří provedli Jillian,](https://en.wikipedia.org/wiki/The_Boy_Who_Cried_Wolf) se často dozvěděli dětem, aby jim upozornili na toto velmi nebezpečné. Je důležité zajistit, aby výstrahy, které se aktivují, byly indikativní pro skutečný problém.
 
 >[!div class="step-by-step"]
->[Předchozí](monitoring-health.md)
->[Další](logging-with-elastic-stack.md)
+>[Předchozí](monitoring-health.md) 
+> [Další](logging-with-elastic-stack.md)

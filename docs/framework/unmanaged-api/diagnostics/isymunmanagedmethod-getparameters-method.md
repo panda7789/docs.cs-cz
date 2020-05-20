@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 3a8074f1-facc-4a3f-bb9b-d6574fc2fc74
 topic_type:
 - apiref
-ms.openlocfilehash: 9e8139a822c877e70731e18ae5a75b83e6b7578e
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 031e9d9434bc655ba8947a2bb6aba56a150e9002
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74448951"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83614458"
 ---
 # <a name="isymunmanagedmethodgetparameters-method"></a>ISymUnmanagedMethod::GetParameters – metoda
 Získá parametry pro tuto metodu. Parametry jsou vráceny v pořadí, ve kterém jsou definovány v rámci signatury metody.  
@@ -37,10 +37,10 @@ HRESULT GetParameters(
   
 ## <a name="parameters"></a>Parametry  
  `cParams`  
- pro Velikost pole `params`.  
+ pro Velikost `params` pole.  
   
  `pcParams`  
- pro Ukazatel na `ULONG32`, který přijímá velikost vyrovnávací paměti, která je požadována k uložení parametrů.  
+ pro Ukazatel na `ULONG32` , který přijímá velikost vyrovnávací paměti, která je požadována k uložení parametrů.  
   
  `params`  
  mimo Ukazatel na vyrovnávací paměť, která přijímá parametry.  
@@ -51,6 +51,6 @@ HRESULT GetParameters(
 ## <a name="requirements"></a>Požadavky  
  **Hlavička:** CorSym. idl, CorSym. h  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [ISymUnmanagedMethod – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedmethod-interface.md)
+- [ISymUnmanagedMethod – rozhraní](isymunmanagedmethod-interface.md)

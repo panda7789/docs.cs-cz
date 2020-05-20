@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: a85283d8-379c-417a-9736-ddeeef9bcf50
 topic_type:
 - apiref
-ms.openlocfilehash: 1f1bd9c33f24847eae4ff7d26c5b996cd34afb72
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: cd5d1f2d59d3e55ba454f23d2e5dd4b1316c0df4
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74448936"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83615173"
 ---
 # <a name="isymunmanagedmethodgetranges-method"></a>ISymUnmanagedMethod::GetRanges – metoda
 Vzhledem k pozici v dokumentu vrátí pole párů počátečního a koncového posunu, které odpovídají rozsahům v rámci této metody, které odpovídají rozsahům jazyka MSIL (Microsoft Intermediate Language), které umístění pokrývá. Pole je pole celých čísel a má formát [Start, end, Start, end]. Počet párů rozsahů je délka pole děleného 2.  
@@ -49,10 +49,10 @@ HRESULT GetRanges(
  pro Sloupec dokumentu odpovídající rozsahům  
   
  `cRanges`  
- pro Velikost pole `ranges`.  
+ pro Velikost `ranges` pole.  
   
  `pcRanges`  
- mimo Ukazatel na `ULONG32`, který přijímá velikost vyrovnávací paměti vyžadované k omezení rozsahu.  
+ mimo Ukazatel na `ULONG32` , který přijímá velikost vyrovnávací paměti vyžadované k omezení rozsahu.  
   
  `ranges`  
  mimo Ukazatel na vyrovnávací paměť, která přijímá rozsahy.  
@@ -63,6 +63,6 @@ HRESULT GetRanges(
 ## <a name="requirements"></a>Požadavky  
  **Hlavička:** CorSym. idl, CorSym. h  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [ISymUnmanagedMethod – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedmethod-interface.md)
+- [ISymUnmanagedMethod – rozhraní](isymunmanagedmethod-interface.md)

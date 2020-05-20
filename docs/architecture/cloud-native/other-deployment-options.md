@@ -1,17 +1,15 @@
 ---
 title: Další možnosti nasazení kontejnerů
 description: Další možnosti nasazení kontejnerů pomocí Azure
-ms.date: 04/13/2020
-ms.openlocfilehash: 3cae771b3877215a7fc91afd4f406fdfc9ff2771
-ms.sourcegitcommit: 5988e9a29cedb8757320817deda3c08c6f44a6aa
+ms.date: 05/13/2020
+ms.openlocfilehash: acb022e3d4fd4862c592fa571894e1b8ce17f465
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82199999"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83613756"
 ---
 # <a name="other-container-deployment-options"></a>Další možnosti nasazení kontejnerů
-
-[!INCLUDE [book-preview](../../../includes/book-preview.md)]
 
 Kromě služby Azure Kubernetes Service (AKS) můžete také nasadit kontejnery pro Azure App Service kontejnerů a Azure Container Instances.
 
@@ -64,5 +62,5 @@ Azure Container Instances nabízí nejrychlejší způsob, jak spustit jednoduch
 - [Nasadit instanci kontejneru z ACR](https://docs.microsoft.com/azure/container-instances/container-instances-using-azure-container-registry#deploy-with-azure-portal)
 
 >[!div class="step-by-step"]
->[Předchozí](scale-containers-serverless.md)
->[Další](communication-patterns.md)
+>[Předchozí](scale-containers-serverless.md) 
+> [Další](communication-patterns.md)

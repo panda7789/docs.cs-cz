@@ -2,17 +2,15 @@
 title: gRPC
 description: Přečtěte si o gRPC, její roli v cloudových nativních aplikacích a o tom, jak se liší od komunikace HTTP RESTful.
 author: robvet
-ms.date: 03/31/2020
-ms.openlocfilehash: 01dd4c934f0b39041ea377691067edf4dbe20378
-ms.sourcegitcommit: 957c49696eaf048c284ef8f9f8ffeb562357ad95
+ms.date: 05/13/2020
+ms.openlocfilehash: f34b267d7f5c6b4e593841c80df44d1ccbde95ae
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82895557"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83614042"
 ---
 # <a name="grpc"></a>gRPC
-
-[!INCLUDE [book-preview](../../../includes/book-preview.md)]
 
 V této knize jsme se zaměřili na komunikaci na [bázi REST](https://docs.microsoft.com/azure/architecture/best-practices/api-design) . Viděli jsme, že REST je flexibilní styl architektury, který definuje operace na základě CRUD u prostředků entity. Klienti komunikují s prostředky přes protokol HTTP pomocí komunikačního modelu požadavků a odpovědí. I když je REST široce implementováno, novější komunikační technologie, gRPC, získala obrovský potenciál v rámci cloudové nativní komunity.
 
@@ -41,7 +39,7 @@ gRPC je odlehčená a vysoce výkonná. Může to být až 8x rychlejší než s
 
 gRPC zahrnuje Open Source technologie označované jako [vyrovnávací paměti protokolu](https://developers.google.com/protocol-buffers/docs/overview). Poskytují vysoce efektivní a neutrální formát serializace pro serializaci strukturovaných zpráv, které služby odesílají vzájemně. Pomocí jazyka IDL (Interface Definition Language) pro různé platformy, vývojáři definují kontrakt služby pro jednotlivé mikroslužby. Kontrakt implementovaný jako textový `.proto` soubor, popisuje metody, vstupy a výstupy pro každou službu. Stejný soubor kontraktu se dá použít pro gRPC klienty a služby postavené na různých vývojových platformách.
 
-Pomocí souboru. kompilátor `protoc`Protobuf vygeneruje kód klienta i služby pro vaši cílovou platformu. Kód zahrnuje následující součásti:
+Pomocí souboru. kompilátor Protobuf `protoc` vygeneruje kód klienta i služby pro vaši cílovou platformu. Kód zahrnuje následující součásti:
 
 - Silně typované objekty, které sdílí klient a služba, které reprezentují operace služby a datové prvky pro zprávu.
 - Základní třída se silnými typy s požadovanou síťovou síťovou instalací, kterou služba vzdálené gRPC může zdědit a rozšiřuje.
@@ -114,5 +112,5 @@ I když se snažíme oddělit mikroslužby pomocí asynchronních komunikačníc
 GRPC se bude i nadále používat pro cloudové nativní systémy. Výhody výkonu a jednoduchost vývoje jsou přesvědčivé. Klid však bude pravděpodobně přibližně delší dobu trvat. IT Excelu pro veřejně vystavená rozhraní API a z důvodů zpětné kompatibility.
 
 >[!div class="step-by-step"]
->[Předchozí](service-to-service-communication.md)
->[Další](service-mesh-communication-infrastructure.md)
+>[Předchozí](service-to-service-communication.md) 
+> [Další](service-mesh-communication-infrastructure.md)

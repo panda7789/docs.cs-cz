@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: ea7c1617-f3ce-4220-8288-f2b50eaf0f0f
 topic_type:
 - apiref
-ms.openlocfilehash: 98ed5556020b93fb1f31d1dde84690fc33092627
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 091f497024b48589953456e1ea6daf6635738240
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74448370"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83615082"
 ---
 # <a name="isymunmanagednamespacegetvariables-method"></a>ISymUnmanagedNamespace::GetVariables – metoda
 Vrátí všechny proměnné definované v globálním oboru v rámci tohoto oboru názvů.  
@@ -37,10 +37,10 @@ HRESULT GetVariables(
   
 ## <a name="parameters"></a>Parametry  
  `cVars`  
- pro `ULONG32`, která určuje velikost `pVars` pole.  
+ pro `ULONG32`Který označuje velikost `pVars` pole.  
   
  `pcVars`  
- mimo Ukazatel na `ULONG32`, který přijímá velikost vyrovnávací paměti vyžadované k omezení oboru názvů.  
+ mimo Ukazatel na `ULONG32` , který přijímá velikost vyrovnávací paměti vyžadované k omezení oboru názvů.  
   
  `pVars`  
  mimo Ukazatel na vyrovnávací paměť, která obsahuje obory názvů.  
@@ -51,6 +51,6 @@ HRESULT GetVariables(
 ## <a name="requirements"></a>Požadavky  
  **Hlavička:** CorSym. idl, CorSym. h  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [ISymUnmanagedNamespace – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagednamespace-interface.md)
+- [ISymUnmanagedNamespace – rozhraní](isymunmanagednamespace-interface.md)

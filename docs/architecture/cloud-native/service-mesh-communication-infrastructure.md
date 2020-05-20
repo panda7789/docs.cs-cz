@@ -2,17 +2,15 @@
 title: Komunikační infrastruktura Service Mesh
 description: Přečtěte si, jak technologie sítě sítě zefektivňují komunikaci mikroslužeb v cloudu.
 author: robvet
-ms.date: 03/03/2020
-ms.openlocfilehash: 89bc4d307d725e7e31e020ef156c4c5967dd2a1c
-ms.sourcegitcommit: 5988e9a29cedb8757320817deda3c08c6f44a6aa
+ms.date: 05/13/2020
+ms.openlocfilehash: 1b11024cd029433c756812850e2665b7836a13d3
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82199941"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83613681"
 ---
 # <a name="service-mesh-communication-infrastructure"></a>Komunikační infrastruktura Service Mesh
-
-[!INCLUDE [book-preview](../../../includes/book-preview.md)]
 
 V rámci této kapitoly jsme prozkoumali problémy s komunikací mikroslužeb. Zjistili jsme, že vývojové týmy musí být citlivé na to, jak vzájemně komunikují služby back-end. V ideálním případě je to lepší komunikace mezi službami. Vyloučení ale není vždycky možné, protože back-endové služby se obvykle vzájemně spoléhá na to, že se operace dokončí.
 
@@ -73,5 +71,5 @@ Dál jsme přešli na distribuovaná data v systémech nativních pro Cloud a na
 - [Vytváření gRPC služeb pomocí videa .NET](https://channel9.msdn.com/Shows/The-Cloud-Native-Show/Building-Microservices-with-gRPC-and-NET)
 
 >[!div class="step-by-step"]
->[Předchozí](grpc.md)
->[Další](distributed-data.md)
+>[Předchozí](grpc.md) 
+> [Další](distributed-data.md)

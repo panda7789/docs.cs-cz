@@ -1,17 +1,15 @@
 ---
 title: DevOps
 description: DevOps předpoklady pro cloudové nativní aplikace
-ms.date: 05/12/2020
-ms.openlocfilehash: 498ce64c3a387433862142826059b4f7e513ec7b
-ms.sourcegitcommit: 046a9c22487551360e20ec39fc21eef99820a254
+ms.date: 05/13/2020
+ms.openlocfilehash: ce814595245d49e409e780cb0f63c436299c2e4e
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83395786"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83614111"
 ---
 # <a name="devops"></a>DevOps
-
-[!INCLUDE [book-preview](../../../includes/book-preview.md)]
 
 Oblíbeným hesloem software konzultantů je odpovědět na všechny otázky, které jsou závislé na. Není to proto, že software konzultanti fond, že neprovádí žádnou pozici. Je to z toho důvodu, že neexistuje žádná skutečná odpověď na jakékoli dotazy v softwaru. Není k dispozici absolutní právo a nesprávné místo, ale rozdíl mezi opačnými hodnotami.
 

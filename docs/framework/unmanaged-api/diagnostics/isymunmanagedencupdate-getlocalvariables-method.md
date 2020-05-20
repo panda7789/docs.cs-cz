@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 5c8840be-ffea-447f-9c8d-178f1eaf8d06
 topic_type:
 - apiref
-ms.openlocfilehash: b5fc8b6807a4c8eb700ab3fa181a216e48a732ff
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 5e5bf097a4b1e366fff807595b22c4696a91cf43
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74449030"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83614549"
 ---
 # <a name="isymunmanagedencupdategetlocalvariables-method"></a>ISymUnmanagedENCUpdate::GetLocalVariables – metoda
 Získá místní proměnné.  
@@ -41,13 +41,13 @@ HRESULT GetLocalVariables(
  pro Token metadat metody  
   
  `cLocals`  
- pro `ULONG`, která určuje velikost `rgLocals` parametru.  
+ pro `ULONG`Který označuje velikost `rgLocals` parametru.  
   
  `rgLocals`  
  mimo Vrácené pole instancí [ISymUnmanagedVariable](isymunmanagedvariable-interface.md) .  
   
  `pceltFetched`  
- mimo Ukazatel na `ULONG`, který přijímá velikost `rgLocals` vyrovnávací paměti, která je požadována pro uložení místních hodnot.  
+ mimo Ukazatel na `ULONG` , který přijímá velikost `rgLocals` vyrovnávací paměti vyžadované k uložení místních hodnot.  
   
 ## <a name="return-value"></a>Návratová hodnota  
  S_OK, pokud je metoda úspěšná; v opačném případě E_FAIL nebo nějaký jiný kód chyby.  
@@ -55,6 +55,6 @@ HRESULT GetLocalVariables(
 ## <a name="requirements"></a>Požadavky  
  **Hlavička:** CorSym. idl, CorSym. h  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [ISymUnmanagedENCUpdate – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedencupdate-interface.md)
+- [ISymUnmanagedENCUpdate – rozhraní](isymunmanagedencupdate-interface.md)

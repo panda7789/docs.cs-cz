@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: c7f941cd-e25b-4b85-b1ce-5f77c9208fa9
 topic_type:
 - apiref
-ms.openlocfilehash: 2bc673d2e331cd32d5317cb20f9418eb3a3b144a
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: a76435be591d9f73d5975c5315f6e744f8972fc7
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74431065"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83614614"
 ---
 # <a name="isymunmanageddocumentgetchecksumalgorithmid-method"></a>ISymUnmanagedDocument::GetCheckSumAlgorithmId – metoda
 Získá identifikátor algoritmu kontrolního součtu nebo vrátí identifikátor GUID všech nul, pokud neexistuje kontrolní součet.  
@@ -39,6 +39,6 @@ HRESULT GetCheckSumAlgorithmId(
 ## <a name="return-value"></a>Návratová hodnota  
  S_OK, zda je metoda úspěšná.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [ISymUnmanagedDocument – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanageddocument-interface.md)
+- [ISymUnmanagedDocument – rozhraní](isymunmanageddocument-interface.md)

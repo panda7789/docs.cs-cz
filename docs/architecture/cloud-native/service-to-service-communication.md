@@ -2,17 +2,15 @@
 title: Komunikace mezi službami
 description: Přečtěte si, jak cloudové mikroslužby back-end komunikují s ostatními back-end mikroslužbami.
 author: robvet
-ms.date: 09/09/2019
-ms.openlocfilehash: 556617a9e2df5a4d9ff9adb9d19e714ca94930ea
-ms.sourcegitcommit: 957c49696eaf048c284ef8f9f8ffeb562357ad95
+ms.date: 05/13/2020
+ms.openlocfilehash: dec06cc28ac177381b882f9e441e19e5c51bd5ad
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82895497"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83613704"
 ---
 # <a name="service-to-service-communication"></a>Komunikace mezi službami
-
-[!INCLUDE [book-preview](../../../includes/book-preview.md)]
 
 Při přesunu z front-endu klienta se teď řeší i back-endové mikroslužby navzájem.
 
@@ -50,7 +48,7 @@ Spuštění nečasté žádosti, která umožňuje jedno přímé volání HTTP 
 
 **Obrázek 4-9**. Řetězení dotazů HTTP
 
-V návrhu zobrazeném na předchozím obrázku si můžete představit riziko. Co se stane, \#když krok 3 selhává? Nebo se \#krok 8 nezdařil? Jak obnovovat? Co když je \#krok 6 pomalý, protože podkladová služba je zaneprázdněná? Jak budete pokračovat? I když vše funguje správně, zamyslete se nad latencí tohoto volání, což je součet latence každého kroku.
+V návrhu zobrazeném na předchozím obrázku si můžete představit riziko. Co se stane, když krok \# 3 selhává? Nebo se krok \# 8 nezdařil? Jak obnovovat? Co když \# je krok 6 pomalý, protože podkladová služba je zaneprázdněná? Jak budete pokračovat? I když vše funguje správně, zamyslete se nad latencí tohoto volání, což je součet latence každého kroku.
 
 Velký stupeň spojení na předchozím obrázku naznačuje, že služby nebyly optimálně modelovány. To by behoove týmu, aby znovu navštívilo svůj návrh.
 
@@ -166,7 +164,7 @@ S událostmi přesouváme z technologie řízení front zpráv na *témata*. [T�
 
 **Obrázek 4-16**. Architektura tématu
 
-Na předchozím obrázku odesílají vydavatelé zprávy do tématu. Na konci předplatitelé obdrží zprávy od předplatných. Uprostřed se v tomto tématu předají zprávy do předplatných založených na sadě *pravidel*, která jsou zobrazená v tmavě modrých polích. Pravidla slouží jako filtr, který předávají konkrétní zprávy do předplatného. Tady se pošle událost "CreateOrder" do předplatného \#1 a předplatné \#3, ale ne do předplatného \#2. Do předplatného \#2 a předplatné \#3 se pošle událost OrderCompleted.
+Na předchozím obrázku odesílají vydavatelé zprávy do tématu. Na konci předplatitelé obdrží zprávy od předplatných. Uprostřed se v tomto tématu předají zprávy do předplatných založených na sadě *pravidel*, která jsou zobrazená v tmavě modrých polích. Pravidla slouží jako filtr, který předávají konkrétní zprávy do předplatného. Tady se pošle událost "CreateOrder" do předplatného \# 1 a předplatné \# 3, ale ne do předplatného \# 2. Do předplatného \# 2 a předplatné 3 se pošle událost OrderCompleted \# .
 
 Cloud Azure podporuje dvě různé služby tématu: Azure Service Bus témata a Azure EventGrid.
 
@@ -231,5 +229,5 @@ Místo čtení ze stejného prostředku každá skupina uživatelů čte celou p
 V případě cloudových nativních aplikací, které musí streamovat velký počet událostí, může být centrum událostí Azure robustní a dostupné řešení.
 
 >[!div class="step-by-step"]
->[Předchozí](front-end-communication.md)
->[Další](grpc.md)
+>[Předchozí](front-end-communication.md) 
+> [Další](grpc.md)

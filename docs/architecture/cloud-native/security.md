@@ -1,17 +1,15 @@
 ---
 title: Zabezpečení
 description: Architekt cloudových nativních aplikací .NET pro Azure | Bezpečnost
-ms.date: 06/30/2019
-ms.openlocfilehash: 848255de70038798417a558543d0b1ea8cff1e37
-ms.sourcegitcommit: 55f438d4d00a34b9aca9eedaac3f85590bb11565
+ms.date: 05/13/2020
+ms.openlocfilehash: 9afbc2c960fdd16721e1d3aa7fd01d5c0c1fe2f9
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71184769"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83613665"
 ---
 # <a name="security"></a>Zabezpečení
-
-[!INCLUDE [book-preview](../../../includes/book-preview.md)]
 
 Nejedná se o den, kdy zprávy neobsahují nějaký příběh o napadené společnosti, nebo nějakým způsobem ztrácí data zákazníků. Dokonce i země nejsou odolné vůči problémům vytvořeným v zabezpečení jako dodatečně. V letech byly společnosti ošetřené zabezpečení zákaznických dat a ve skutečnosti i jejich celé sítě jako "Skvělé". Windows servery zůstaly neopravené, Ancient verze PHP zůstaly spuštěné a MongoDB databáze zůstanou otevřené na světě.
 
@@ -24,5 +22,5 @@ Došlo také ke zvýšení právních předpisů, které zmocňuje určitá ochr
 V krátkém případě je zabezpečení vážným podnikáním.
 
 >[!div class="step-by-step"]
->[Předchozí](identity-server.md)
->[Další](azure-security.md)
+>[Předchozí](identity-server.md) 
+> [Další](azure-security.md)

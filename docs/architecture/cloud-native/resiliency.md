@@ -1,45 +1,47 @@
 ---
 title: Odolnost nativní pro cloud
 description: Architekt cloudových nativních aplikací .NET pro Azure | Nativní odolnost cloudu
-ms.date: 06/30/2019
-ms.openlocfilehash: 427405d95534c4467ab519c2188fe88e2f18e2b2
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+author: robvet
+ms.date: 05/13/2020
+ms.openlocfilehash: f3aa89e3ae21b13a31f65013b59636b3f931553c
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76781088"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83613769"
 ---
 # <a name="cloud-native-resiliency"></a>Odolnost nativní pro cloud
 
-[!INCLUDE [book-preview](../../../includes/book-preview.md)]
+Odolnost proti chybám je schopnost systému reagovat na selhání a pořád zůstává funkční. Nejedná se o předcházení chybám, ale přijímá selhání a sestavuje vaše cloudové nativní služby, aby na ně reagovaly. Chcete se rychle vrátit do plně funkčního stavu.
 
-Odolnost proti chybám je schopnost systému reagovat na selhání a pořád zůstává funkční. Nejedná se o předcházení selhání. Ale jedná se o přijetí této chyby v cloudových systémech a sestavení vaší aplikace, která na ni reaguje. Koncovým cílem odolnosti proti chybám je vrácení aplikace do plně funkčního stavu po selhání.
-
-Na rozdíl od tradičních aplikací monolitické, kde se všechno souběžně používá v jednom procesu, nativní systémy pro Cloud využívají distribuovanou architekturu, jak je znázorněno na obrázku 6-1:
+Na rozdíl od tradičních aplikací monolitické, kde všechno běží společně v jednom procesu, cloudové systémy pro Cloud využívají distribuovanou architekturu, jak je znázorněno na obrázku 6-1:
 
 ![Distribuované cloudové prostředí – nativní](./media/distributed-cloud-native-environment.png)
 
 **Obrázek 6-1.** Distribuované cloudové prostředí – nativní
 
-Na předchozím obrázku si všimněte, že každý klient, mikroslužba a cloudová [Služba](https://12factor.net/backing-services) se spouští jako samostatný proces, který běží na různých serverech, a to prostřednictvím síťových volání.
+Na předchozím obrázku se každá mikroslužba a cloudová [Služba](https://12factor.net/backing-services) provádí v samostatném procesu v rámci serverové infrastruktury a komunikuje prostřednictvím síťových volání.
 
-Co by to stalo špatné?
+Provoz v tomto prostředí musí být citlivý na mnoho různých výzev:
 
-- Neočekávaná [latence sítě](https://www.techopedia.com/definition/8553/network-latency).
-- [Přechodné](https://docs.microsoft.com/azure/architecture/best-practices/transient-faults) chyby (dočasné chyby připojení k síti).
-- Blokuje dlouhodobě běžící synchronní operace.
+- Neočekávaná latence sítě – čas, kdy se žádost o službu dopravuje na příjemce a zpátky.
+
+- [Přechodné chyby](https://docs.microsoft.com/azure/architecture/best-practices/transient-faults) – krátkodobé chyby připojení k síti
+
+- Zablokování dlouhodobě spuštěnou synchronní operací.
+
 - Hostitelský proces, u kterého došlo k chybě a probíhá restartování nebo přesunutí.
+
 - Přetížená mikroslužba, která nemůže reagovat po krátkou dobu.
-- DevOps operace, jako je například operace aktualizace nebo škálování.
-- Operace nástroje Orchestrator, jako je například přesunutí služby z jednoho uzlu do jiného.
-- Selhání hardwaru z komoditního hardwaru.
 
-Při nasazování distribuovaných služeb do cloudové infrastruktury se faktory z předchozího seznamu stanou velmi reálné a Vy musíte architekt a vývoj defensively, abyste s nimi mohli pracovat.
+- Provozní operace nástroje Orchestrator, jako je například postupná inovace nebo přesunutí služby z jednoho uzlu do jiného.
 
-V malém distribuovaném systému bude selhání méně časté, ale při horizontálním navýšení kapacity můžete očekávat větší množství těchto potíží s bodem, kde se částečné selhání změní do normálního provozu.
+- Selhání hardwaru.
 
-Proto musí být vaše aplikace a infrastruktura odolné. V následujících částech si probereme techniky obrannou linií, které můžete přidat do své aplikace a integrované funkce cloudu, které vám pomůžou s odrážkami v uživatelském prostředí.
+Cloudové platformy můžou detekovat a zmírnit mnohé z těchto potíží s infrastrukturou. Může se restartovat, škálovat a dokonce znovu distribuovat službu do jiného uzlu.  Abyste ale mohli plně využít této integrované ochrany, musíte navrhnout vaše služby, aby na ně reagovaly a i v tomto dynamickém prostředí.
+
+V následujících částech budeme zkoumat techniky obrannou linií, které vaše služba a spravované cloudové prostředky můžou využít k minimalizaci výpadků a přerušení.
 
 >[!div class="step-by-step"]
->[Předchozí](elastic-search-in-azure.md)
->[Další](application-resiliency-patterns.md)
+>[Předchozí](elastic-search-in-azure.md) 
+> [Další](application-resiliency-patterns.md)

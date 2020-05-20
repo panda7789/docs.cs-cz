@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: dbc498a8-ba3f-42f2-bdd9-b623c77a1019
 topic_type:
 - apiref
-ms.openlocfilehash: b7a356d80d63fae65191bbf4fc0a23d7e02004c9
-ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
+ms.openlocfilehash: 71b9d59621efb547713cb4a6c9df7a7142f4a677
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83378234"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83615186"
 ---
-# <a name="icordebugregisterset2getregisters-method"></a>ICorDebugRegisterSet2::GetRegisters – metoda
+# <a name="icordebugregisterset2getregisters-method"></a>ICorDebugRegisterSet2:: GetRegisters – metoda
+
 Získá hodnotu každého registru (pro platformu, na které je aktuálně spuštěn kód), který je určen pomocí dané bitové masky.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -36,7 +37,8 @@ HRESULT GetRegisters (
 );  
 ```  
   
-## <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry
+
  `maskCount`  
  pro Velikost pole v bajtech `mask` .  
   
@@ -49,16 +51,18 @@ HRESULT GetRegisters (
  `regBuffer`  
  mimo Pole `CORDB_REGISTER` objektů, z nichž každý přijímá hodnotu registru.  
   
-## <a name="remarks"></a>Poznámky  
+## <a name="remarks"></a>Poznámky
+
  `GetRegisters`Metoda vrací pole hodnot z registrů, které jsou určeny maskou. Pole neobsahuje hodnoty pro registry, jejichž bit maskování není nastaven. Proto `regBuffer` musí být velikost pole rovna počtu 1 v masce. Pokud `regCount` je hodnota příliš malá pro počet registrů, které jsou označeny maskou, hodnoty z vyšších očíslovaných registrů se ze sady zkrátí. Pokud `regCount` je příliš velké, nepoužívané `regBuffer` prvky nebudou změněny.  
   
  Pokud je nedostupný registr označen maskou, bude pro tento registr vrácena neurčitá hodnota.  
   
- Tato `ICorDebugRegisterSet2::GetRegisters` Metoda je nezbytná pro platformy, které mají více než 64 registrů. Například IA64 má 128 registrů pro obecné účely a 128 registrů s plovoucí desetinnou čárkou, takže potřebujete více než 64-bitů v bitové masce.  
+ `ICorDebugRegisterSet2::GetRegisters`Metoda je nezbytná pro platformy, které mají více než 64 registrů. Například IA64 má 128 registrů pro obecné účely a 128 registrů s plovoucí desetinnou čárkou, takže potřebujete více než 64 bitů v bitové masce.  
   
- Pokud nemáte více než 64 registrů, stejně jako v případě platforem, jako je například x86, `GetRegisters` metoda skutečně převede bajty v poli `mask` bajtů do `ULONG64` a a pak zavolá metodu [ICorDebugRegisterSet:: GetRegisters](icordebugregisterset-getregisters-method.md) , která přebírá `ULONG64` masku.  
+ Pokud nemáte více než 64 registrů, stejně jako v případě platforem, jako je například x86, `GetRegisters` metoda pouze překládá bajty v poli `mask` bajtů do `ULONG64` a a poté volá metodu [ICorDebugRegisterSet:: GetRegisters](icordebugregisterset-getregisters-method.md) , která přebírá `ULONG64` masku.  
   
-## <a name="requirements"></a>Požadavky  
+## <a name="requirements"></a>Požadavky
+
  **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** CorDebug. idl, CorDebug. h  

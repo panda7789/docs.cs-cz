@@ -1,13 +1,13 @@
 ---
 title: Škálování kontejnerů a bezserverových aplikací
 description: Škálování aplikací v cloudu pomocí služby Azure Kubernetes, aby splňovala požadavky uživatelů
-ms.date: 04/13/2020
-ms.openlocfilehash: b4580e6994611ad394bbaa2d5bb07f64c2798569
-ms.sourcegitcommit: 5988e9a29cedb8757320817deda3c08c6f44a6aa
+ms.date: 05/13/2020
+ms.openlocfilehash: a5e1e8df785fd08901d9be41c0a06db35e09296b
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82199921"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83613717"
 ---
 # <a name="scaling-containers-and-serverless-applications"></a>Škálování kontejnerů a bezserverových aplikací
 
@@ -44,5 +44,5 @@ Azure Functions automaticky škálovat na vyžádání. Prostředky serveru se d
 I když výchozí plán spotřeby poskytuje pro většinu aplikací ekonomické a škálovatelné řešení, možnost Premium umožňuje vývojářům pružně využít vlastní požadavky na Azure Functions. Upgrade na plán Premium poskytuje kontrolu nad velikostmi instancí, předem zaplacenými instancemi (aby se předešlo zpožděním spuštění) a vyhrazeným virtuálním počítačům.
 
 >[!div class="step-by-step"]
->[Předchozí](deploy-containers-azure.md)
->[Další](other-deployment-options.md)
+>[Předchozí](deploy-containers-azure.md) 
+> [Další](other-deployment-options.md)

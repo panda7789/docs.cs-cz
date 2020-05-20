@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 2a420900-01f1-4461-8777-3a34a6dc1426
 topic_type:
 - apiref
-ms.openlocfilehash: 01ab69b73a7bc4929e2ebd49b3847f8d7c4646a2
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 25e797fdf563a01ab727f16e7173eec2552eeb27
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74448860"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83614419"
 ---
 # <a name="isymunmanagedmethodgetsourcestartend-method"></a>ISymUnmanagedMethod::GetSourceStartEnd – metoda
 Získá pozice počátečního a koncového dokumentu pro zdroj této metody. První pozice pole je začátek a druhá pozice pole je konec.  
@@ -46,7 +46,7 @@ HRESULT GetSourceStartEnd(
  pro Počáteční a koncové sloupce v odpovídajících zdrojových dokumentech.  
   
  `pRetVal`  
- [out] `true`, pokud byly definovány pozice; v opačném případě `false`.  
+ [out] `true` Pokud byly definovány pozice; v opačném případě `false` .  
   
 ## <a name="return-value"></a>Návratová hodnota  
  S_OK, pokud je metoda úspěšná; v opačném případě E_FAIL nebo nějaký jiný kód chyby.  
@@ -54,6 +54,6 @@ HRESULT GetSourceStartEnd(
 ## <a name="requirements"></a>Požadavky  
  **Hlavička:** CorSym. idl, CorSym. h  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [ISymUnmanagedMethod – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedmethod-interface.md)
+- [ISymUnmanagedMethod – rozhraní](isymunmanagedmethod-interface.md)

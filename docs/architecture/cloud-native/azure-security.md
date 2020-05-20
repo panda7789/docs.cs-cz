@@ -1,17 +1,15 @@
 ---
 title: Zabezpečení Azure pro Cloud – nativní aplikace
 description: Architekt cloudových nativních aplikací .NET pro Azure | Zabezpečení Azure pro nativní cloudové aplikace
-ms.date: 06/30/2019
-ms.openlocfilehash: 27ef6c8313f1573ca686e8489a84f64a56116fa4
-ms.sourcegitcommit: 046a9c22487551360e20ec39fc21eef99820a254
+ms.date: 05/13/2020
+ms.openlocfilehash: a39b64477eb9e896c6603e5609ede653bfee1e07
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83394735"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83614250"
 ---
 # <a name="azure-security-for-cloud-native-apps"></a>Zabezpečení Azure pro Cloud – nativní aplikace
-
-[!INCLUDE [book-preview](../../../includes/book-preview.md)]
 
 Nativní aplikace v cloudu můžou být jednodušší a obtížnější pro zabezpečení než tradiční aplikace. Na nevýhodou je nutné zabezpečit více menších aplikací a zvýšit spotřebu energie pro sestavení infrastruktury zabezpečení. Heterogenní povaha programovacích jazyků a stylů ve většině nasazení služeb také znamená, že je potřeba věnovat větší pozornost bulletinům zabezpečení z mnoha různých poskytovatelů.
 

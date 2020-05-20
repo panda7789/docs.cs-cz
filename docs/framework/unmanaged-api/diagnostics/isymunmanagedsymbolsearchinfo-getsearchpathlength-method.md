@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 274e73cf-8333-47ba-ac12-70214e2b0112
 topic_type:
 - apiref
-ms.openlocfilehash: 319ba58b5d012cbc0f9ddac0b83e5f3ae2ae062a
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 0be7297fbb71302035e71fbbf2c8b5e2a7faa2da
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74446177"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83615290"
 ---
 # <a name="isymunmanagedsymbolsearchinfogetsearchpathlength-method"></a>ISymUnmanagedSymbolSearchInfo::GetSearchPathLength – metoda
 Získá délku cesty pro hledání.  
@@ -34,7 +34,7 @@ HRESULT GetSearchPathLength(
   
 ## <a name="parameters"></a>Parametry  
  `pcchPath`  
- mimo Ukazatel na `ULONG32`, který obdrží velikost vyrovnávací paměti, která je nutná k omezení cesty pro hledání, ve znacích.  
+ mimo Ukazatel na `ULONG32` , který obdrží velikost vyrovnávací paměti, která je nutná k uložení cesty pro hledání.  
   
 ## <a name="return-value"></a>Návratová hodnota  
  S_OK, pokud je metoda úspěšná; v opačném případě E_FAIL nebo nějaký jiný kód chyby.  
@@ -42,6 +42,6 @@ HRESULT GetSearchPathLength(
 ## <a name="requirements"></a>Požadavky  
  **Hlavička:** CorSym. idl, CorSym. h  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [ISymUnmanagedSymbolSearchInfo – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedsymbolsearchinfo-interface.md)
+- [ISymUnmanagedSymbolSearchInfo – rozhraní](isymunmanagedsymbolsearchinfo-interface.md)

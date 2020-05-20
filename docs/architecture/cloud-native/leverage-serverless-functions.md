@@ -1,17 +1,15 @@
 ---
 title: Využití bezserverových funkcí
 description: Využití bez serveru a Azure Functions v cloudových nativních aplikacích
-ms.date: 04/13/2020
-ms.openlocfilehash: 176499e3cd0349cd689b9d13d1c237a6343d13f3
-ms.sourcegitcommit: 5988e9a29cedb8757320817deda3c08c6f44a6aa
+ms.date: 05/13/2020
+ms.openlocfilehash: 53a0fdd29630b2a4368f3aa37ddfc5f93df10a24
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82199739"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83613860"
 ---
 # <a name="leveraging-serverless-functions"></a>Využití bezserverových funkcí
-
-[!INCLUDE [book-preview](../../../includes/book-preview.md)]
 
 V rámci spektra od správy fyzických počítačů po využití cloudových možností bez serveru na extrémním konci. Vaše jediná odpovědnost je váš kód a platíte jenom při spuštění kódu. Azure Functions poskytuje způsob, jak sestavovat možnosti bez serveru do nativních aplikací pro Cloud.
 
@@ -54,8 +52,8 @@ Mnohé služby mají dlouhotrvající procesy v rámci svých pracovních postup
 
 Obrázek 3-10 ukazuje vzorek pro studený start. Všimněte si dalších kroků, které jsou potřeba, když je aplikace studená.
 
-![Studená vs.](./media/cold-start-warm-start.png)
-počáteční**Obrázek 3-10**. Studené zahájení vs. začátek
+![Studená vs. počáteční ](./media/cold-start-warm-start.png)
+ **Obrázek 3-10**. Studené zahájení vs. začátek
 
 Aby nedocházelo k úplnému startu, můžete přepnout z [plánu spotřeby na vyhrazený plán](https://azure.microsoft.com/blog/understanding-serverless-cold-start/). Můžete také nakonfigurovat jednu nebo více předem zavedených [instancí](https://docs.microsoft.com/azure/azure-functions/functions-premium-plan#pre-warmed-instances) s upgradem plánu Premium. V takových případech, pokud potřebujete přidat jinou instanci, je už na cestách a připraveno k použití. Tyto možnosti mohou přispět ke zmírnění potíží s studeným startem souvisejícím s výpočetním prostředím bez serveru.
 
@@ -64,5 +62,5 @@ Poskytovatelé cloudových služeb se účtují za servery bez serveru založen�
 A konečně využití Azure Functions pro úlohy aplikace přináší složitost. Je vhodné nejdřív navrhnout svou aplikaci s modulárním, volně vázaným návrhem. Pak zjistíte, jestli neexistují výhody serveru, které budou mít větší složitost.
 
 >[!div class="step-by-step"]
->[Předchozí](leverage-containers-orchestrators.md)
->[Další](combine-containers-serverless-approaches.md)
+>[Předchozí](leverage-containers-orchestrators.md) 
+> [Další](combine-containers-serverless-approaches.md)

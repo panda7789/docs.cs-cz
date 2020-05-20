@@ -1,17 +1,15 @@
 ---
 title: IdentityServer pro nativní cloudové aplikace
 description: Architekt cloudových nativních aplikací .NET pro Azure | IdentityServer
-ms.date: 06/30/2019
-ms.openlocfilehash: 536a4cbdbdaee47f3a5a0d9f93b2736270d9ea7a
-ms.sourcegitcommit: 046a9c22487551360e20ec39fc21eef99820a254
+ms.date: 05/13/2020
+ms.openlocfilehash: 81cce30568becacda29f65f9506398790af321e0
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83394884"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83614029"
 ---
 # <a name="identityserver-for-cloud-native-applications"></a>IdentityServer pro cloudové nativní aplikace
-
-[!INCLUDE [book-preview](../../../includes/book-preview.md)]
 
 IdentityServer je Open Source Server pro ověřování, který implementuje standardy OpenID Connect (OIDC) a OAuth 2,0 pro ASP.NET Core. Je navržený tak, aby poskytoval běžný způsob, jak ověřovat požadavky na všechny vaše aplikace, ať už jsou to webové, nativní, mobilní nebo koncové body rozhraní API. IdentityServer se dá použít k implementaci jednotného přihlašování (SSO) pro více aplikací a typů aplikací. Dá se použít k ověření skutečných uživatelů pomocí formulářů pro přihlášení a podobných uživatelských rozhraní i ověřování na základě služby, které obvykle zahrnuje vystavení, ověřování a obnovování tokenů bez uživatelského rozhraní. IdentityServer je navržený tak, aby bylo přizpůsobitelné řešení. Každá instance se obvykle přizpůsobí konkrétní organizaci a/nebo sadě požadavků aplikací.
 

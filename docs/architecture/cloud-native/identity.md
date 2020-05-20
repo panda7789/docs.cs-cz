@@ -1,17 +1,15 @@
 ---
 title: Identita
 description: Architekt cloudových nativních aplikací .NET pro Azure | Odcizen
-ms.date: 09/23/2019
-ms.openlocfilehash: 4cc7c04bf323d2589777df466321f6801f511b6f
-ms.sourcegitcommit: 55f438d4d00a34b9aca9eedaac3f85590bb11565
+ms.date: 05/13/2020
+ms.openlocfilehash: 9fa48977e58e2ca5a5f3e231372a4791640a85fd
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71183047"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83614016"
 ---
 # <a name="identity"></a>Identita
-
-[!INCLUDE [book-preview](../../../includes/book-preview.md)]
 
 Většina softwarových aplikací musí mít znalosti uživatele nebo procesu, který je volá. Uživatel nebo proces, který interakci s aplikací, je známý jako objekt zabezpečení a proces ověřování a autorizace těchto objektů zabezpečení se označuje jako Správa identit, nebo jen *Identita*. Jednoduché aplikace můžou zahrnovat veškerou správu identit v rámci aplikace, ale tento přístup se nedokáže dobře škálovat u mnoha aplikací a mnoha druhů objektů zabezpečení. Systém Windows podporuje používání služby Active Directory k zajištění centralizovaného ověřování a autorizace.
 
@@ -27,10 +25,10 @@ Moderní cloudová řešení identit obvykle využívají přístupové tokeny, 
 
 Služba STS obvykle zodpovídá jenom za ověřování objektu zabezpečení. Určení jejich úrovně přístupu k prostředkům je ponecháno i v ostatních částech aplikace.
 
-## <a name="references"></a>Reference
+## <a name="references"></a>Odkazy
 
-- [Platforma Microsoft identity](https://docs.microsoft.com/azure/active-directory/develop/)
+- [Microsoft identity platform](https://docs.microsoft.com/azure/active-directory/develop/)
 
 >[!div class="step-by-step"]
->[Předchozí](azure-monitor.md)
->[Další](authentication-authorization.md)
+>[Předchozí](azure-monitor.md) 
+> [Další](authentication-authorization.md)

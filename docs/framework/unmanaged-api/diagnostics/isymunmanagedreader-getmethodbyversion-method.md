@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 6ddb0631-4569-41b3-93e4-50fdfaa486dc
 topic_type:
 - apiref
-ms.openlocfilehash: d5f42e5ed3ce7829cfcf921f3002c238985710a9
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 60fbccabd21fb8bee118689a524efa9031bb2124
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74426745"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83614991"
 ---
 # <a name="isymunmanagedreadergetmethodbyversion-method"></a>ISymUnmanagedReader::GetMethodByVersion – metoda
 Získá metodu čtečky symbolů s ohledem na token metody a číslo verze pro úpravy a kopírování. Čísla verzí začínají 1 a jsou zvýšena pokaždé, když je metoda změněna v důsledku operace Edit-and-Copy.  
@@ -50,6 +50,6 @@ HRESULT GetMethodByVersion (
 ## <a name="requirements"></a>Požadavky  
  **Hlavička:** CorSym. idl, CorSym. h  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [ISymUnmanagedReader – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedreader-interface.md)
+- [ISymUnmanagedReader – rozhraní](isymunmanagedreader-interface.md)

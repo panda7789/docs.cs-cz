@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 7d58caac-2e75-4dfa-9249-32d8a624b247
 topic_type:
 - apiref
-ms.openlocfilehash: c956f5d68c992f1b08988e59038e8667b391f734
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 650a64e72b410cddfbee7dce676ddbb5a3b8b3d3
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74448911"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83614445"
 ---
 # <a name="isymunmanagedmethodgetrootscope-method"></a>ISymUnmanagedMethod::GetRootScope – metoda
 Získá kořenový lexikální rozsah v rámci této metody. Tento obor uzavírá celou metodu.  
@@ -34,7 +34,7 @@ HRESULT GetRootScope(
   
 ## <a name="parameters"></a>Parametry  
  `pRetVal`  
- mimo Ukazatel, který je nastaven na vrácené rozhraní [ISymUnmanagedScope](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedscope-interface.md) .  
+ mimo Ukazatel, který je nastaven na vrácené rozhraní [ISymUnmanagedScope](isymunmanagedscope-interface.md) .  
   
 ## <a name="return-value"></a>Návratová hodnota  
  S_OK, pokud je metoda úspěšná; v opačném případě E_FAIL nebo nějaký jiný kód chyby.  
@@ -42,6 +42,6 @@ HRESULT GetRootScope(
 ## <a name="requirements"></a>Požadavky  
  **Hlavička:** CorSym. idl, CorSym. h  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [ISymUnmanagedMethod – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedmethod-interface.md)
+- [ISymUnmanagedMethod – rozhraní](isymunmanagedmethod-interface.md)

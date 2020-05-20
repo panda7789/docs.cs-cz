@@ -1,18 +1,16 @@
 ---
-title: Ukládání do mezipaměti v nativní aplikaci cloudu
+title: Ukládání do mezipaměti v nativní cloudové aplikaci
 description: Přečtěte si o strategiích ukládání do mezipaměti v cloudové nativní aplikaci.
 author: robvet
-ms.date: 01/22/2020
-ms.openlocfilehash: 2da61a01fc53233d1934df813fcba3b91a495c43
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.date: 05/17/2020
+ms.openlocfilehash: a109db59d7b2005ea97922eef07ae4869e4894a7
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76794966"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83614289"
 ---
 # <a name="caching-in-a-cloud-native-app"></a>Ukládání do mezipaměti v nativní aplikaci cloudu
-
-[!INCLUDE [book-preview](../../../includes/book-preview.md)]
 
 Výhody ukládání do mezipaměti se dobře rozumí. Technika funguje tak, že dočasně kopíruje často používaná data z back-endu úložiště dat do *rychlého úložiště* , které se nachází blíže k aplikaci. Ukládání do mezipaměti je často implementováno tam, kde...
 
@@ -32,15 +30,15 @@ Zvažte také ukládání do mezipaměti, aby se předešlo opakovaným výpočt
 
 ## <a name="caching-architecture"></a>Architektura pro ukládání do mezipaměti
 
-Nativní cloudové aplikace obvykle implementují distribuovanou architekturu ukládání do mezipaměti. Mezipaměť je hostována jako cloudová [Služba](./definition.md#backing-services), která je oddělená od mikroslužeb. Obrázek 5-20 ukazuje architekturu.
+Nativní cloudové aplikace obvykle implementují distribuovanou architekturu ukládání do mezipaměti. Mezipaměť je hostována jako cloudová [Služba](./definition.md#backing-services), která je oddělená od mikroslužeb. Obrázek 5-15 ukazuje architekturu.
 
 ![Ukládání do mezipaměti v nativní aplikaci v cloudu](media/caching-in-a-cloud-native-app.png)
 
-**Obrázek 5-19**: ukládání do mezipaměti v nativní aplikaci v cloudu
+**Obrázek 5-15**: ukládání do mezipaměti v nativní aplikaci v cloudu
 
 Na předchozím obrázku si všimněte, jak je mezipaměť nezávislá a je sdílena mikroslužbami. V tomto scénáři je mezipaměť vyvolaná [bránou rozhraní API](./front-end-communication.md). Jak je popsáno v kapitole 4, brána slouží jako front-end pro všechny příchozí požadavky. Distribuovaná mezipaměť zvyšuje odezvu systému tím, že vrací data uložená v mezipaměti, kdykoli je to možné. Kromě toho oddělení mezipaměti od služeb umožňuje, aby se mezipaměť nezávisle nastavila nebo vyčerpala, aby se splnily zvýšené nároky na provoz.
 
-Obrázek představuje společný vzor pro ukládání do mezipaměti, který je známý jako model doplňování [mezipaměti](https://docs.microsoft.com/azure/architecture/patterns/cache-aside). U příchozího požadavku nejprve vydáte dotaz na mezipaměť (krok \#1) pro odpověď. Pokud se najde, data se vrátí hned. Pokud data v mezipaměti neexistují (označovaná jako [neúspěšný mezipaměť](https://www.techopedia.com/definition/6308/cache-miss)), načte se z místní databáze v rámci služby pro příjem dat (krok \#2). Pak se zapíše do mezipaměti pro budoucí požadavky (krok \#3) a vrátí se volajícímu. K pravidelnému vyřazení dat uložených v mezipaměti musí být nutná péče, aby systém zůstal včas a konzistentní.
+Předchozí obrázek představuje společný vzor pro ukládání do mezipaměti, který je známý jako model doplňování [mezipaměti](https://docs.microsoft.com/azure/architecture/patterns/cache-aside). U příchozího požadavku nejprve vydáte dotaz na mezipaměť (krok \# 1) pro odpověď. Pokud se najde, data se vrátí hned. Pokud data v mezipaměti neexistují (označovaná jako [neúspěšný mezipaměť](https://www.techopedia.com/definition/6308/cache-miss)), načte se z místní databáze v rámci služby pro příjem dat (krok \# 2). Pak se zapíše do mezipaměti pro budoucí požadavky (krok \# 3) a vrátí se volajícímu. K pravidelnému vyřazení dat uložených v mezipaměti musí být nutná péče, aby systém zůstal včas a konzistentní.
 
 Jak sdílená mezipaměť roste, může být výhodné rozdělit data do oddílů napříč více uzly. Díky tomu může pomoci minimalizovat spory a zlepšit škálovatelnost. Celá řada služeb ukládání do mezipaměti podporuje možnost dynamického přidávání a odebírání uzlů a vyrovnávání dat napříč oddíly. Tento přístup obvykle zahrnuje clusteringu. Clustering zpřístupňuje kolekci federovaných uzlů jako bezproblémové a jedinou mezipaměť. Interně se ale data přenáší napříč uzly po předdefinované distribuční strategii, která zatížení rovnoměrně vyrovnává.
 
@@ -62,5 +60,5 @@ V případě pokročilých scénářů lze kopii dat uložených v mezipaměti [
 Azure Redis Cache je k dispozici v rámci několika předdefinovaných konfigurací a cenových úrovní.  [Úroveň Premium](https://docs.microsoft.com/azure/azure-cache-for-redis/cache-premium-tier-intro) nabízí mnoho funkcí na podnikové úrovni, jako je clustering, trvalost dat, geografická replikace a izolace virtuální sítě.
 
 >[!div class="step-by-step"]
->[Předchozí](relational-vs-nosql-data.md)
->[Další](elastic-search-in-azure.md)
+>[Předchozí](relational-vs-nosql-data.md) 
+> [Další](elastic-search-in-azure.md)

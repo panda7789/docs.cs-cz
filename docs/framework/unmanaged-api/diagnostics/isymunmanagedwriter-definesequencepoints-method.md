@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 64202baf-be6b-40ba-8162-8cc6c0c9b8e1
 topic_type:
 - apiref
-ms.openlocfilehash: 63ba108bc234e566450bb019afc63acb4e75ad1f
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 8889c412f414f38d1d18d33ec297e82fd052280d
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74427980"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83614796"
 ---
 # <a name="isymunmanagedwriterdefinesequencepoints-method"></a>ISymUnmanagedWriter::DefineSequencePoints – metoda
 Definuje skupinu bodů sekvence v rámci aktuální metody. Každý počáteční řádek a počáteční sloupec definují začátek příkazu v rámci metody. Každý koncový řádek a koncový sloupec definují konec příkazu v rámci metody. Pole by se měla seřadit ve vzestupném pořadí posunů. Posun je vždy měřen od začátku metody (v bajtech).  
@@ -43,7 +43,7 @@ HRESULT DefineSequencePoints(
  pro Objekt dokumentu, pro který jsou definovány body sekvence.  
   
  `spCount`  
- pro `ULONG32`, která indikuje velikost každé `offsets`, `lines`, `columns`, `endLines`a `endColumns` vyrovnávací paměti.  
+ pro `ULONG32`Který označuje velikost jednotlivých `offsets` `lines` `columns` `endLines` `endColumns` vyrovnávacích pamětí,,, a.  
   
  `offsets`  
  pro Posun bodů sekvence měřený od začátku metody  
@@ -66,6 +66,6 @@ HRESULT DefineSequencePoints(
 ## <a name="requirements"></a>Požadavky  
  **Hlavička:** CorSym. idl, CorSym. h  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [ISymUnmanagedWriter – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-interface.md)
+- [ISymUnmanagedWriter – rozhraní](isymunmanagedwriter-interface.md)

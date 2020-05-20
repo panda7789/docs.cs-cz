@@ -1,17 +1,15 @@
 ---
 title: Protokolování pomocí řešení Elastic Stack
 description: Protokolování pomocí elastického zásobníku, Logstash a Kibana
-ms.date: 02/05/2020
-ms.openlocfilehash: 6863c66b63854fe3ecaabe2919beded2926ea64c
-ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
+ms.date: 05/13/2020
+ms.openlocfilehash: e886141fa691b75b882b5d67eae4ceb242e8089f
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77448907"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83613847"
 ---
 # <a name="logging-with-elastic-stack"></a>Protokolování pomocí řešení Elastic Stack
-
-[!INCLUDE [book-preview](../../../includes/book-preview.md)]
 
 Existuje mnoho dobře centralizovaných nástrojů protokolování, které se liší od bezplatného, open-source nástrojů až po dražší možnosti. V mnoha případech jsou bezplatné nástroje jako dobrá nebo lepší než placené nabídky. Jedním z těchto nástrojů je kombinace tří open-source komponent: elastické vyhledávání, Logstash a Kibana.
 
@@ -30,8 +28,8 @@ KUBE_ENABLE_NODE_LOGGING=true
 
 Tím se do clusteru nainstaluje Elasticsearch a do něj budou odesílány všechny protokoly clusteru.
 
-![příklad řídicího panelu Kibana ukazující výsledky dotazu na protokoly ingestované z Kubernetes](./media/kibana-dashboard.png)
-**obrázek 7-6**. Příklad řídicího panelu Kibana znázorňující výsledky dotazu proti protokolům, které jsou ingestované z Kubernetes
+![Příklad řídicího panelu Kibana znázorňující výsledky dotazu proti protokolům, které se ingestují z Kubernetes ](./media/kibana-dashboard.png)
+ **obrázku 7-6**. Příklad řídicího panelu Kibana znázorňující výsledky dotazu proti protokolům, které jsou ingestované z Kubernetes
 
 ## <a name="what-are-the-advantages-of-elastic-stack"></a>Jaké jsou výhody elastického zásobníku?
 
@@ -81,7 +79,7 @@ Elastické vyhledávání je výkonný vyhledávací modul, který umožňuje in
 
 Protokolované zprávy, které byly vytvořené tak, aby obsahovaly parametry nebo byly rozděleny pomocí parametrů prostřednictvím zpracování Logstash, se dají dotazovat přímo jako Elasticsearch, které tyto informace zachová.
 
-Dotaz, který vyhledává prvních 10 stránek navštívených `jill@example.com`, se zobrazí na obrázku 7-9.
+Dotaz, který vyhledává prvních 10 navštívených stránek `jill@example.com` , se zobrazí na obrázku 7-9.
 
 ```
 "query": {
@@ -118,5 +116,5 @@ Další možností je [nedávno ohlášená nabídka Elk jako služba](https://d
 - [Instalace elastického zásobníku v Azure](https://docs.microsoft.com/azure/virtual-machines/linux/tutorial-elasticsearch)
 
 >[!div class="step-by-step"]
->[Předchozí](observability-patterns.md)
->[Další](monitoring-azure-kubernetes.md)
+>[Předchozí](observability-patterns.md) 
+> [Další](monitoring-azure-kubernetes.md)

@@ -2,19 +2,19 @@
 title: Architekt cloudových nativních aplikací .NET pro Azure
 description: Příručka pro sestavování nativních aplikací cloudu využívajících kontejnery, mikroslužby a funkce bez serveru v Azure.
 author: ardalis
-ms.date: 04/23/2020
-ms.openlocfilehash: 24d5c75fc5d2e5623892e8f83daea52553d13765
-ms.sourcegitcommit: 1cb64b53eb1f253e6a3f53ca9510ef0be1fd06fe
+ms.date: 05/13/2020
+ms.openlocfilehash: 1607c1bbcc9bbb3c9fe19840a2827aa5ea083728
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82507387"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83613993"
 ---
 # <a name="architecting-cloud-native-net-applications-for-azure"></a>Architekt cloudových nativních aplikací .NET pro Azure
 
-[!INCLUDE [book-preview](../../../includes/book-preview.md)]
-
 ![titulní obrázek](./media/cover.png)
+
+**EDICE v. 1.0**
 
 PUBLIKOVAL(A)
 
@@ -26,7 +26,7 @@ One Microsoft Way
 
 Redmond, Washington 98052-6399
 
-Copyright &copy; 2019 od společnosti Microsoft Corporation
+Copyright &copy; 2020 od společnosti Microsoft Corporation
 
 Všechna práva vyhrazena. Žádná část obsahu této knihy se nedá reprodukovat ani přenést v jakékoli formě nebo jakýmkoli způsobem bez písemného svolení vydavatele.
 
@@ -34,7 +34,7 @@ Tato kniha je k dispozici "tak jak jsou" a vyjadřuje zobrazení a stanoviska au
 
 Některé zde uvedené příklady slouží pouze k znázornění a jsou smyšlené. Neměli byste z nich vyvozovat žádné skutečné vztahy či spojení.
 
-Microsoft a ochranné známky uvedené https://www.microsoft.com na webové stránce ochranné známky jsou ochranné známky skupiny společností Microsoft.
+Microsoft a ochranné známky uvedené na https://www.microsoft.com webové stránce ochranné známky jsou ochranné známky skupiny společností Microsoft.
 
 Mac a macOS jsou ochranné známky společnosti Apple Inc.
 
@@ -58,11 +58,13 @@ Autoři
 >
 > **Cecil Phillip**, hlavní poradce pro Cloud, Microsoft
 
-Další informace o eShopOnContainers
-
 Editory
 
 > **Maira Wenzel**, programový manažer, tým .NET, Microsoft
+
+## <a name="version"></a>Verze
+
+Tato příručka se zapsala jako verze **.NET core 3,1** spolu s mnoha dalšími aktualizacemi, které se týkají stejných "Wave" technologií (tj. Azure a dalších technologií třetích stran), které se shodují v čase s verzí .net Core 3,1.
 
 ## <a name="who-should-use-this-guide"></a>Kdo by měl používat tuto příručku
 
@@ -83,6 +85,10 @@ Tato příručka začíná definováním cloudového nativního nasazení a pře
 - DevOps
 
 Tato příručka je k dispozici ve formátu PDF i v online režimu. Nebojte se, že tento dokument předáte nebo odkazuje na jeho online verzi týmu, aby se zajistilo běžné porozumění těmto tématům. Většina těchto témat přináší konzistentní porozumění základním principům a vzorům a kompromisům, které se týkají rozhodnutí souvisejících s těmito tématy. Naším cílem tohoto dokumentu je vybavit týmy a jejich vedoucími informacemi, které potřebují k rozhodování o jejich architektuře, vývoji a hostování svých aplikací.
+
+## <a name="send-your-feedback"></a>Poslat svůj názor
+
+Tato kniha a související ukázky se neustále vyvíjí, takže se vaše zpětná vazba vítá! Pokud máte komentáře k tomu, jak se tato kniha dá zlepšit, použijte část zpětná vazba v dolní části každé stránky založené na [problémech na GitHubu](https://github.com/dotnet/docs/issues).
 
 >[!div class="step-by-step"]
 >[Další](introduction.md)

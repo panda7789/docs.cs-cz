@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: f909ac48-3d8f-49fb-a369-e3d9959151cd
 topic_type:
 - apiref
-ms.openlocfilehash: 75d477af7395a9b7d3328b2a5787f810733f3749
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 451cfecde7e14fad9d3fed3367112e1fb59796e5
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74448873"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83615141"
 ---
 # <a name="isymunmanagedmethodgetsequencepoints-method"></a>ISymUnmanagedMethod::GetSequencePoints – metoda
 Načte všechny body sekvence v rámci této metody.  
@@ -41,10 +41,10 @@ HRESULT GetSequencePoints(
   
 ## <a name="parameters"></a>Parametry  
  `cPoints`  
- pro `ULONG32`, která přijímá velikost `offsets`, `documents`, `lines`, `columns`, `endLines`a `endColumns` polí.  
+ pro A `ULONG32` který přijímá velikost `offsets` `documents` polí,, `lines` , `columns` , `endLines` a `endColumns` .  
   
  `pcPoints`  
- mimo Ukazatel na `ULONG32`, který přijímá délku vyrovnávací paměti vyžadované k umístění bodů sekvence.  
+ mimo Ukazatel na `ULONG32` , který přijímá délku vyrovnávací paměti vyžadované k umístění bodů sekvence.  
   
  `offsets`  
  pro Pole, do kterého se má uložit posun jazyka MSIL (Microsoft Intermediate Language) od začátku metody pro body sekvence.  
@@ -70,6 +70,6 @@ HRESULT GetSequencePoints(
 ## <a name="requirements"></a>Požadavky  
  **Hlavička:** CorSym. idl, CorSym. h  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [ISymUnmanagedMethod – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedmethod-interface.md)
+- [ISymUnmanagedMethod – rozhraní](isymunmanagedmethod-interface.md)

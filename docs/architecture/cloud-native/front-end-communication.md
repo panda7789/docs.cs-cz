@@ -2,17 +2,15 @@
 title: Komunikace front-endového klienta
 description: Informace o tom, jak klienti front-endu komunikují s nativními systémy cloudu
 author: robvet
-ms.date: 09/08/2019
-ms.openlocfilehash: 89f13ea1c9ecbe92e959ae63a4c21bf7775f8943
-ms.sourcegitcommit: 957c49696eaf048c284ef8f9f8ffeb562357ad95
+ms.date: 05/13/2020
+ms.openlocfilehash: 97421e9b90b19c720b1ab0ff8dd1e5f029cba5e4
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82895578"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83614055"
 ---
 # <a name="front-end-client-communication"></a>Komunikace front-endového klienta
-
-[!INCLUDE [book-preview](../../../includes/book-preview.md)]
 
 V rámci nativního cloudového systému musí klienti front-end (mobilní, webové a desktopové aplikace) komunikovat s nezávislými mikroslužbami.  
 
@@ -163,5 +161,5 @@ Další výhodou služby signalizace Azure je implementace cloudových služeb b
 Služba signalizace Azure se úzce integruje s ostatními službami Azure, jako je Azure SQL Database, Service Bus nebo Redis Cache, a otevírá mnoho možností pro cloudové nativní aplikace.
 
 >[!div class="step-by-step"]
->[Předchozí](communication-patterns.md)
->[Další](service-to-service-communication.md)
+>[Předchozí](communication-patterns.md) 
+> [Další](service-to-service-communication.md)

@@ -2,17 +2,15 @@
 title: Distribuovaná data
 description: Kontrastování datových úložišť v monolitické a cloudových nativních aplikacích.
 author: robvet
-ms.date: 04/24/2020
-ms.openlocfilehash: 8a9f1478f1a46b2367df9372d4adaa3b4c711782
-ms.sourcegitcommit: 5988e9a29cedb8757320817deda3c08c6f44a6aa
+ms.date: 05/13/2020
+ms.openlocfilehash: 2eff37dcc57ae39daac0ba10d10322be5eb4e321
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82204694"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83614133"
 ---
 # <a name="distributed-data"></a>Distribuovaná data
-
-[!INCLUDE [book-preview](../../../includes/book-preview.md)]
 
 Jak jsme viděli v této příručce, cloudový nativní přístup mění způsob, jakým navrhujete, nasazujete a spravujete aplikace. Také mění způsob, jakým spravujete a ukládáte data.
 
@@ -151,5 +149,5 @@ Pro tento model Vezměte v úvahu úložiště dat, které přímo podporuje zdr
 Stejně jako u všech vzorů a technologií implementujte strategické a v případě potřeby. I když může poskytovat zvýšení výkonu a škálovatelnosti, přináší se vám náklady na složitost a výuková křivka.
 
 >[!div class="step-by-step"]
->[Předchozí](service-mesh-communication-infrastructure.md)
->[Další](relational-vs-nosql-data.md)
+>[Předchozí](service-mesh-communication-infrastructure.md) 
+> [Další](relational-vs-nosql-data.md)

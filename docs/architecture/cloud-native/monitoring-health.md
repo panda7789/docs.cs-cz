@@ -1,17 +1,15 @@
 ---
 title: Monitorování a stav
 description: Monitorování a stav
-ms.date: 09/23/2019
-ms.openlocfilehash: 6274040318b5442478e9cc291c4f223bdf533110
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.date: 05/13/2020
+ms.openlocfilehash: 28e98bbdb39a68d8961d4f3ab48cde5a07a4762b
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73094505"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83613795"
 ---
 # <a name="monitoring-and-health"></a>Monitorování a stav
-
-[!INCLUDE [book-preview](../../../includes/book-preview.md)]
 
 Mikroslužby a nativní aplikace v cloudu se dají doprovázet se správnými postupy DevOps. DevOps je mnoho věcí pro mnoho lidí, ale možná jedna z lepších definic pochází z Poradce pro Cloud a DevOps evangelista Donovan Brown:
 
@@ -20,5 +18,5 @@ Mikroslužby a nativní aplikace v cloudu se dají doprovázet se správnými po
 V definicích stručný bohužel existují místo pro další věci. Jedna z klíčových součástí DevOps zajišťuje, že aplikace běžící v produkčním prostředí fungují správně a efektivně. Chcete-li posoudit stav aplikace v produkčním prostředí, je nutné monitorovat různé protokoly a metriky, které jsou vytvářeny ze serverů, hostitelů a aplikace. Počet různých služeb spuštěných v podpoře nativní aplikace cloudu umožňuje monitorování stavu jednotlivých komponent a aplikace jako celku kritické výzvy.
 
 >[!div class="step-by-step"]
->[Předchozí](resilient-communications.md)
->[Další](observability-patterns.md)
+>[Předchozí](resilient-communications.md) 
+> [Další](observability-patterns.md)

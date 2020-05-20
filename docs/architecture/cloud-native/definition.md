@@ -2,21 +2,19 @@
 title: Definování aplikací nativních pro cloud
 description: Přečtěte si o základních pilířích, které poskytují Bedrock pro nativní cloudové systémy.
 author: robvet
-ms.date: 08/20/2019
-ms.openlocfilehash: 33977ff736fc5cbfcf86ed6479e8d0b927b87a63
-ms.sourcegitcommit: 957c49696eaf048c284ef8f9f8ffeb562357ad95
+ms.date: 05/13/2020
+ms.openlocfilehash: e8b07fe7758d90f6ba97b81d0efa9d2fb5058d49
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82895618"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83614165"
 ---
 # <a name="defining-cloud-native"></a>Definování nativního cloudu
 
-[!INCLUDE [book-preview](../../../includes/book-preview.md)]
+Zastavte si, co děláte, a text deset vašich kolegů. Požádejte je, aby definovali pojem Cloud Native. Dobrá pravděpodobnost, že získáte deset různých odpovědí.
 
-Zastavte si, co děláte, a text deset vašich kolegů. Požádejte je, aby definovali pojem Cloud Native. Dobrá pravděpodobnost, že získáte osm různých odpovědí.
-
-Cloud Native je vše o změně způsobu, jakým se myslíme na vytváření důležitých podnikových systémů.
+Cloud Native je vše o změně způsobu, jakým myslíte vytváření důležitých obchodních systémů.
 
 Systémy nativní pro Cloud jsou navržené tak, aby zajišťují rychlou změnu, velký rozsah a odolnost.
 
@@ -72,7 +70,7 @@ Jak by bylo možné navrhnout nativní cloudovou aplikaci? Jak vaše architektur
 
 Široce uznávaná metodologie pro vytváření cloudových aplikací je aplikace v [dvanácti faktorech](https://12factor.net/). Popisuje sadu zásad a postupů, které vývojáři postupují při vytváření aplikací optimalizovaných pro moderní cloudová prostředí. Zvláštní pozornost se věnuje přenositelnosti napříč prostředími a deklarativní automatizaci.
 
-I když se to týká jakékoli webové aplikace, mnoho specialistů je považuje za Solid Foundation pro vytváření cloudových nativních aplikací. Systémy postavené na těchto principech se dají rychle nasadit a škálovat a přidat funkce, které rychle reagují na změny v trhu.
+Mnoho z nich je možné použít i u jakékoli webové aplikace, a proto si pro vytváření cloudových nativních aplikací považuje za 32bitový základ jako Solid Foundation. Systémy postavené na těchto principech se dají rychle nasadit a škálovat a přidat funkce, které rychle reagují na změny v trhu.
 
 V následující tabulce je zdůrazněna dvanáct-Factor metodologie:
 
@@ -88,15 +86,15 @@ V následující tabulce je zdůrazněna dvanáct-Factor metodologie:
 | 8 | Souběžnost | Služby se škálují napříč velkým počtem malých identických procesů (kopií) na rozdíl od škálování jedné velké instance na nejvýkonnějším počítači, který je k dispozici. |
 | 9 | Disposability | Instance služby by měly být jednorázově, dávají přednost rychlému spuštění, aby se zvýšily možnosti škálovatelnosti a aby bylo možné bezproblémové vypnutí systému zůstat ve správném stavu. Kontejnery Docker společně s nástrojem Orchestrator splňují tento požadavek. |
 | 10 | Parita pro vývoj/prod | Snažte se v životním cyklu aplikace považovat za co možná podobná, a vyhnout se nákladným zkratkám. V tomto případě může přijetí kontejnerů významně přispět tím, že povýší stejné spouštěcí prostředí. |
-| 11 | protokolování | Protokoly generované mikroslužbami se považují za streamy událostí. Zpracujte je pomocí Agregátoru událostí a rozšiřujte data na nástroje pro správu dolování dat a protokolů, jako je Azure Monitor nebo Splunk, a nakonec dlouhodobou archivaci. |
+| 11 | Protokolování | Protokoly generované mikroslužbami se považují za streamy událostí. Zpracujte je pomocí Agregátoru událostí a rozšiřujte data na nástroje pro správu dolování dat a protokolů, jako je Azure Monitor nebo Splunk, a nakonec dlouhodobou archivaci. |
 | 12 | Procesy správy | Spouštět úlohy správy a správy jako jednorázové procesy. Úkoly můžou zahrnovat data pro vyčištění a navýšení analýzy pro sestavu. Nástroje spouštějící tyto úlohy by se měly vyvolávat z produkčního prostředí, ale odděleně od aplikace. |
 
-V knize, [mimo dvanáct-Factor App](https://content.pivotal.io/blog/beyond-the-twelve-factor-app), si autor Kevin Hoffman podrobnosti o všech původních 12 faktorech (napsaných v 2011). Navíc kniha nabízí tři další faktory, které odráží dnešní moderní návrh cloudové aplikace.
+V knize, [mimo dvanáct-Factor App](https://content.pivotal.io/blog/beyond-the-twelve-factor-app), si autor Kevin Hoffman podrobnosti o všech původních 12 faktorech (napsaných v 2011). Dále se zabývá třemi dalšími faktory, které odráží dnešní moderní návrh cloudové aplikace.
 
 |    |  Nový faktor | Vysvětlení  |
 | :-------- | :-------- | :-------- |
 | 13 | Přístup API-first | Udělejte všechno jako služba. Předpokládejme, že váš kód bude využit klientem front-end, bránou nebo jinou službou. |
-| 14 | Telemetrie | Na pracovní stanici máte hlubokou viditelnost své aplikace a jejího chování. V cloudu to neuděláte. Ujistěte se, že váš návrh zahrnuje shromažďování dat monitorování, specifických pro doménu a stavu a systému. |
+| 14 | Telemetrická data | Na pracovní stanici máte hlubokou viditelnost své aplikace a jejího chování. V cloudu to neuděláte. Ujistěte se, že váš návrh zahrnuje shromažďování dat monitorování, specifických pro doménu a stavu a systému. |
 | 15 | Ověřování/autorizace  | Implementujte identitu od začátku. Vezměte v úvahu funkce [RBAC (řízení přístupu na základě role)](https://docs.microsoft.com/azure/role-based-access-control/overview) , které jsou dostupné ve veřejných cloudech.  |
 
 V této kapitole a v celé knize budeme odkazovat na spoustu 12 dalších faktorů.
@@ -155,7 +153,7 @@ Obrázek 1-4 kontrastuje přístup k aplikaci monolitické s přístupem k mikro
 
 Všimněte si, jak mikroslužby povýší "jeden základ kódu, jedna aplikace" z [aplikace na základě dvanácti faktorů](https://12factor.net/)popsaných výše v části.
 
-> *Faktor \#1 určuje jeden základ kódu pro každou mikroslužbu uložený ve vlastním úložišti. Sledováno pomocí správy verzí, může být nasazeno do více prostředí. "*
+> *Faktor \# 1 určuje jeden základ kódu pro každou mikroslužbu uložený ve vlastním úložišti. Sledováno pomocí správy verzí, může být nasazeno do více prostředí. "*
 
 ### <a name="why-microservices"></a>Proč mikroslužby?
 
@@ -197,7 +195,7 @@ Všimněte si, jak každý kontejner udržuje svou vlastní sadu závislostí a 
 
 Všimněte si, jak dobře model kontejneru zahrnuje Princip závislostí z [aplikace v dvanácti faktorech](https://12factor.net/).
 
-> *Faktor \#2 určuje, že "každá mikroslužba izoluje a zabalí vlastní závislosti, přechodu změny bez dopadu na celý systém."*
+> *Faktor \# 2 určuje, že "každá mikroslužba izoluje a zabalí vlastní závislosti, přechodu změny bez dopadu na celý systém."*
 
 Kontejnery podporují úlohy se systémy Linux a Windows. Cloud Azure se otevře v obou případech. V tomto případě se jedná o Linux, ne Windows Server, které se staly nejoblíbenějším operačním systémem v Azure.
 
@@ -236,9 +234,9 @@ V následující tabulce jsou popsány běžné úlohy orchestrace.
 
 Všimněte si, jak orchestrace vychází ze zásad disposability a souběžnosti z [aplikace z dvanácti faktorů](https://12factor.net/)popsaných výše v části.
 
-> *Faktor \#9 určuje, že "instance služby by měly být jednorázově, dávají přednost rychlému spuštění, aby se zvýšily možnosti škálovatelnosti a aby bylo možné bezproblémové vypnutí systému zůstat ve správném stavu. Kontejnery Docker společně s nástrojem Orchestrator splňují tento požadavek. "*
+> *Faktor \# 9 určuje, že "instance služby by měly být jednorázově, dávají přednost rychlému spuštění, aby se zvýšily možnosti škálovatelnosti a aby bylo možné bezproblémové vypnutí systému zůstat ve správném stavu. Kontejnery Docker společně s nástrojem Orchestrator splňují tento požadavek. "*
 
-> *Faktor \#8 udává, že "služby se škálují napříč velkým počtem malých identických procesů (kopií) na rozdíl od vertikálního škálování jedné velké instance na nejvýkonnějším počítači, který je k dispozici."*
+> *Faktor \# 8 udává, že "služby se škálují napříč velkým počtem malých identických procesů (kopií) na rozdíl od vertikálního škálování jedné velké instance na nejvýkonnějším počítači, který je k dispozici."*
 
 I když existuje několik orchestrací kontejnerů, [Kubernetes](https://kubernetes.io/docs/concepts/overview/what-is-kubernetes/) se stal de facto standardem pro cloudově Native World. Je to přenosná, rozšiřitelná a open source platforma pro správu kontejnerových úloh.
 
@@ -258,7 +256,7 @@ Nativní systémy cloudu závisí na mnoha různých pomocných zdrojích, jako 
 
 Služba back-Factor Services povýší zásadu "Statelessness" z [aplikace na dvanácti](https://12factor.net/), která je popsána výše v kapitole.
 
->*Faktor \#6* určuje, že "každá mikroslužba by se měla spustit ve vlastním procesu, izolovaná od ostatních spuštěných služeb. Externalize požadovaný stav na zálohovací službu, jako je například distribuovaná mezipaměť nebo úložiště dat. "
+>*Faktor \# 6* určuje, že "každá mikroslužba by se měla spustit ve vlastním procesu, izolovaná od ostatních spuštěných služeb. Externalize požadovaný stav na zálohovací službu, jako je například distribuovaná mezipaměť nebo úložiště dat. "
 
 Mohli byste hostovat své vlastní služby zálohování, ale pak budete odpovědni za licencování, zřizování a správu těchto prostředků.
 
@@ -268,9 +266,9 @@ Cloudové nativní systémy mají na starosti spravované záložní služby od 
 
 Osvědčeným postupem je považovat záložní službu za *připojeného prostředku*, která je dynamicky vázaná na mikroslužby s informacemi (adresa URL a přihlašovací údaje) uložené v externí konfiguraci. Tyto pokyny se napíší v aplikaci v [dvanácti faktorech](https://12factor.net/), které jsou popsány dříve v této kapitole.
 
->*Faktor \#4* určuje, že záložní služby by měly být zpřístupněny prostřednictvím adres URL. Tím se oddělí prostředek od aplikace a umožní se jeho změna. "
+>*Faktor \# 4* určuje, že záložní služby by měly být zpřístupněny prostřednictvím adres URL. Tím se oddělí prostředek od aplikace a umožní se jeho změna. "
 
->*Faktor \#3* určuje, že se "informace o konfiguraci přesouvají z mikroslužby a externě prostřednictvím nástroje pro správu konfigurace mimo kód."
+>*Faktor \# 3* určuje, že se "informace o konfiguraci přesouvají z mikroslužby a externě prostřednictvím nástroje pro správu konfigurace mimo kód."
 
 V tomto modelu je možné připojit a odpojit zálohovací službu beze změny kódu. Mikroslužbu můžete povýšit z QA do přípravného prostředí. Aktualizujete konfiguraci mikroslužeb tak, aby odkazovala na služby, které jsou v pracovním prostředí, a do svého kontejneru se vloží nastavení pomocí proměnné prostředí.
 
@@ -298,7 +296,7 @@ V článku [co je infrastruktura jako kód](https://docs.microsoft.com/azure/dev
 
 [32bitová aplikace](https://12factor.net/), která je popsána dříve, volá samostatné kroky při transformaci dokončeného kódu do běžící aplikace.
 
-> *Faktor \#5* určuje, že každá verze musí vymáhat striktní oddělení napříč fázemi sestavení, vydaných verzí a spuštění. Každá by měla být označena jedinečným IDENTIFIKÁTORem a podporuje možnost vracet se zpět. "
+> *Faktor \# 5* určuje, že každá verze musí vymáhat striktní oddělení napříč fázemi sestavení, vydaných verzí a spuštění. Každá by měla být označena jedinečným IDENTIFIKÁTORem a podporuje možnost vracet se zpět. "
 
 Moderní systémy CI/CD můžou splnit tento princip. Poskytují samostatné kroky nasazení a umožňují zajistit konzistentní a kvalitní kód, který je uživatelům snadno dostupný.
 
@@ -340,5 +338,5 @@ Kanál můžete definovat v kódu v souboru YAML vedle zbytku kódu pro vaši ap
 Služba Azure Pipelines podporuje většinu poskytovatelů Git a může generovat kanály nasazení pro aplikace napsané na platformách Linux, macOS a Windows. Zahrnuje podporu pro Java, .NET, JavaScript, Python, PHP, přejít, XCode a C++.
 
 >[!div class="step-by-step"]
->[Předchozí](introduction.md)
->[Další](candidate-apps.md)
+>[Předchozí](introduction.md) 
+> [Další](candidate-apps.md)

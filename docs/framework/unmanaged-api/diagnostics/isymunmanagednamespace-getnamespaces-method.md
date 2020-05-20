@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 0ea9d9af-8709-4a46-872b-f54d9e840088
 topic_type:
 - apiref
-ms.openlocfilehash: da2906187c02bbc7a35c937663e3fc7db1ebda13
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 48c50ac6be6d525676d85578e5a55a27104c180a
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74433895"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83615095"
 ---
 # <a name="isymunmanagednamespacegetnamespaces-method"></a>ISymUnmanagedNamespace::GetNamespaces – metoda
 Získá podřízené objekty tohoto oboru názvů.  
@@ -37,10 +37,10 @@ HRESULT GetNamespaces(
   
 ## <a name="parameters"></a>Parametry  
  `cNameSpaces`  
- pro `ULONG32`, která určuje velikost `namespaces` pole.  
+ pro `ULONG32`Který označuje velikost `namespaces` pole.  
   
  `pcNameSpaces`  
- mimo Ukazatel na `ULONG32`, který obdrží velikost vyrovnávací paměti, která je nutná k omezení oboru názvů, ve znacích.  
+ mimo Ukazatel na `ULONG32` , který přijímá velikost vyrovnávací paměti, která je nutná k omezení oboru názvů.  
   
  `namespaces`  
  mimo Ukazatel na vyrovnávací paměť, která obsahuje obory názvů.  
@@ -51,6 +51,6 @@ HRESULT GetNamespaces(
 ## <a name="requirements"></a>Požadavky  
  **Hlavička:** CorSym. idl, CorSym. h  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [ISymUnmanagedNamespace – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagednamespace-interface.md)
+- [ISymUnmanagedNamespace – rozhraní](isymunmanagednamespace-interface.md)

@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 657bf91d-005a-4ea4-9298-04d1291c0bc3
 topic_type:
 - apiref
-ms.openlocfilehash: 43f32ac85bebc12d0a9253205aae3f1de0dc9e5b
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 84b2f1226c84713483499c7ff777838058cb0f95
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74433973"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83615108"
 ---
 # <a name="isymunmanagednamespacegetname-method"></a>ISymUnmanagedNamespace::GetName – metoda
 Získá název tohoto oboru názvů.  
@@ -37,10 +37,10 @@ HRESULT GetName(
   
 ## <a name="parameters"></a>Parametry  
  `cchName`  
- pro `ULONG32`, která určuje velikost vyrovnávací paměti `szName`.  
+ pro `ULONG32`Který označuje velikost `szName` vyrovnávací paměti.  
   
  `pcchName`  
- mimo Ukazatel na `ULONG32`, který obdrží velikost vyrovnávací paměti, která je nutná k uložení názvu oboru názvů, včetně ukončení hodnoty null.  
+ mimo Ukazatel na `ULONG32` , který obdrží velikost vyrovnávací paměti, která je nutná k uložení názvu oboru názvů, včetně ukončení hodnoty null.  
   
  `szName`  
  mimo Ukazatel na vyrovnávací paměť, která obsahuje název oboru názvů.  
@@ -51,6 +51,6 @@ HRESULT GetName(
 ## <a name="requirements"></a>Požadavky  
  **Hlavička:** CorSym. idl, CorSym. h  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [ISymUnmanagedNamespace – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagednamespace-interface.md)
+- [ISymUnmanagedNamespace – rozhraní](isymunmanagednamespace-interface.md)

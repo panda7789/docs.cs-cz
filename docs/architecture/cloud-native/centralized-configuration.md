@@ -1,17 +1,15 @@
 ---
 title: Centralizovaná konfigurace
 description: Centralizace konfigurace pro cloudové aplikace s využitím konfigurace aplikací Azure a trezoru AzureKey.
-ms.date: 04/19/2020
-ms.openlocfilehash: 53bdc03370b04af4d830fe7abbd8aebad81e9650
-ms.sourcegitcommit: 957c49696eaf048c284ef8f9f8ffeb562357ad95
+ms.date: 05/13/2020
+ms.openlocfilehash: d389d29dcdb1db5162d95370d181ab5a85d72dc8
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82895657"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83614224"
 ---
 # <a name="centralized-configuration"></a>Centralizovaná konfigurace
-
-[!INCLUDE [book-preview](../../../includes/book-preview.md)]
 
 Na rozdíl od aplikace monolitické, ve které se všechno spouští v rámci jedné instance, se aplikace Cloud Native skládá z nezávislých služeb distribuovaných napříč virtuálními počítači, kontejnery a geografickými oblastmi. Správa nastavení konfigurace pro desítky vzájemně závislých služeb může být náročná. Duplicitní kopie nastavení konfigurace v různých umístěních jsou náchylné k chybám a jsou obtížně spravované. Centralizovaná konfigurace je zásadním požadavkem pro distribuované aplikace nativní pro Cloud.
 
@@ -68,5 +66,5 @@ Aplikace eShopOnContainers zahrnuje místní soubory nastavení aplikace s každ
 - [Azure Dev Spaces](https://docs.microsoft.com/azure/dev-spaces/about)
 
 >[!div class="step-by-step"]
->[Předchozí](deploy-eshoponcontainers-azure.md)
->[Další](scale-applications.md)
+>[Předchozí](deploy-eshoponcontainers-azure.md) 
+> [Další](scale-applications.md)

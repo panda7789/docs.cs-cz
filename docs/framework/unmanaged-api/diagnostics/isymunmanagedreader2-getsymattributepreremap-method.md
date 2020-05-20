@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 7580d546-a709-40c5-ad02-aa70d774fd0b
 topic_type:
 - apiref
-ms.openlocfilehash: 4009f8988c90ed090c0cc3d86164af347055722f
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: e6248aba1c41b2815f2806942d419da869ed94b4
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74446417"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83614913"
 ---
 # <a name="isymunmanagedreader2getsymattributepreremap-method"></a>ISymUnmanagedReader2::GetSymAttributePreRemap – metoda
 Získá vlastní atribut založený na jeho názvu. Na rozdíl od vlastních atributů metadat jsou tyto atributy uchovávány v úložišti symbolů.  
@@ -42,13 +42,13 @@ HRESULT GetSymAttributePreRemap(
  pro Token metadat nadřazeného objektu.  
   
  `name`  
- pro Ukazatel na `WCHAR`, který obsahuje název.  
+ pro Ukazatel na `WCHAR` , který obsahuje název.  
   
  `cBuffer`  
- pro `ULONG32`, která určuje velikost `buffer` pole.  
+ pro `ULONG32`Který označuje velikost `buffer` pole.  
   
  `pcBuffer`  
- mimo Ukazatel na `ULONG32`, který přijímá velikost vyrovnávací paměti vyžadované k omezení bajtů atributů.  
+ mimo Ukazatel na `ULONG32` , který přijímá velikost vyrovnávací paměti vyžadované k omezení bajtů atributů.  
   
  `buffer`  
  mimo Ukazatel na vyrovnávací paměť, která přijímá bajty atributů.  
@@ -59,6 +59,6 @@ HRESULT GetSymAttributePreRemap(
 ## <a name="requirements"></a>Požadavky  
  **Hlavička:** CorSym. idl, CorSym. h  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [ISymUnmanagedReader2 – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedreader2-interface.md)
+- [ISymUnmanagedReader2 – rozhraní](isymunmanagedreader2-interface.md)

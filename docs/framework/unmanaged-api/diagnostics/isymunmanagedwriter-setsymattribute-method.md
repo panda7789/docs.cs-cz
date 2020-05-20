@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 64d9b80e-b883-4539-89c7-03573185a1eb
 topic_type:
 - apiref
-ms.openlocfilehash: 8a4d205586921b377147eeab80754e1a0d9e52b0
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 39b0c065a324f2b3939467901739f995bc9abbad
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74427838"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83614757"
 ---
 # <a name="isymunmanagedwritersetsymattribute-method"></a>ISymUnmanagedWriter::SetSymAttribute – metoda
 Definuje vlastní atribut založený na jeho názvu. Tyto atributy jsou uloženy v úložišti symbolů na rozdíl od vlastních atributů metadat.  
@@ -40,10 +40,10 @@ HRESULT SetSymAttribute(
  pro Token metadat, pro který je definován atribut.  
   
  `name`  
- pro Ukazatel na `WCHAR`, který obsahuje název atributu.  
+ pro Ukazatel na `WCHAR` , který obsahuje název atributu.  
   
  `cData`  
- pro `ULONG32`, která určuje velikost `data` pole.  
+ pro `ULONG32`Který označuje velikost `data` pole.  
   
  `data`  
  pro Hodnota atributu.  
@@ -54,6 +54,6 @@ HRESULT SetSymAttribute(
 ## <a name="requirements"></a>Požadavky  
  **Hlavička:** CorSym. idl, CorSym. h  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [ISymUnmanagedWriter – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-interface.md)
+- [ISymUnmanagedWriter – rozhraní](isymunmanagedwriter-interface.md)

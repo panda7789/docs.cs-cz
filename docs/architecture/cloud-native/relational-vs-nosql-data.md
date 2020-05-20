@@ -2,17 +2,15 @@
 title: Relační data vs. data NoSQL
 description: Přečtěte si o relačních a NoSQLch datech v cloudových nativních aplikacích
 author: robvet
-ms.date: 01/22/2020
-ms.openlocfilehash: a2561b0abfc1975badfafeeb4fa2f2c6429814be
-ms.sourcegitcommit: 1cb64b53eb1f253e6a3f53ca9510ef0be1fd06fe
+ms.date: 05/17/2020
+ms.openlocfilehash: cc47faa4fcd4468de9ddc468e488297db4289ff5
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82507361"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83613782"
 ---
 # <a name="relational-vs-nosql-data"></a>Relační data vs. data NoSQL
-
-[!INCLUDE [book-preview](../../../includes/book-preview.md)]
 
 Relační a NoSQL jsou dva typy databázových systémů, které se běžně implementují v cloudových nativních aplikacích. Jsou sestavené jinak, ukládají data odlišně a přistupovali k různým. V této části se podíváme na obě. Později v této kapitole se podíváme na nově vydanou databázovou technologii s názvem *NewSQL*.
 
@@ -83,7 +81,6 @@ V závislosti na konkrétních požadavcích na data může mikroslužba založe
 | Načítání dat je jednoduché a má tendenci být ploché. | Pracujete se složitými dotazy a sestavami.|
 | Vaše data vyžadují rozsáhlou geografickou distribuci. | Vaši uživatelé jsou centralizovaná |
 | Vaše aplikace se nasadí do komoditního hardwaru, například s veřejnými cloudy. | Vaše aplikace bude nasazená na rozsáhlý hardware s vysokým konečným použitím |
-|||
 
 V dalších částech prozkoumáme možnosti dostupné v cloudu Azure pro ukládání a správu nativních dat cloudu.
 
@@ -134,7 +131,7 @@ Společnost Microsoft ale nadále zavazuje, aby Azure otevřela platformu tím, 
 
 ### <a name="azure-database-for-mysql"></a>Azure Database for MySQL
 
-[MySQL](https://en.wikipedia.org/wiki/MySQL) je open source relační databáze a pilíř pro aplikace postavené na [softwarovém zásobníku lamp](https://en.wikipedia.org/wiki/LAMP_(software_bundle)). Široce se vybralo pro *čtení těžkých* úloh, používá se v mnoha velkých organizacích, včetně Facebooku, Twitteru a YouTube. Edice Community je dostupná zdarma, ale edice Enterprise vyžaduje nákup licence. Produkt byl původně vytvořen v 1995. Sun Microsystems byl zakoupen v 2008. Oracle získal Sun a MySQL v 2010.
+[MySQL](https://en.wikipedia.org/wiki/MySQL)   je open source relační databáze a pilíř pro aplikace postavené na [softwarovém zásobníku lamp](https://en.wikipedia.org/wiki/LAMP_(software_bundle)). Široce se vybralo pro *čtení těžkých* úloh, používá se v mnoha velkých organizacích, včetně Facebooku, Twitteru a YouTube. Edice Community je dostupná zdarma, ale edice Enterprise vyžaduje nákup licence. Produkt byl původně vytvořen v 1995. Sun Microsystems byl zakoupen v 2008. Oracle získal Sun a MySQL v 2010.
 
 [Azure Database for MySQL](https://azure.microsoft.com/services/mysql/) je spravovaná relační databázová služba založená na Open Source stroji serveru MySQL. Používá verzi MySQL Community Edition. Server Azure MySQL je bod správy pro službu. Je to stejný stroj serveru MySQL, který se používá pro místní nasazení. Modul může vytvořit izolovanou databázi na jeden server nebo více databází na jeden server, který sdílí prostředky. Můžete dál spravovat data pomocí stejných open source nástrojů, aniž byste se museli učit nové dovednosti nebo spravovat virtuální počítače.
 
@@ -150,7 +147,7 @@ MariaDB má silnou komunitu a používá se v mnoha velkých podnicích. I když
 
 [PostgreSQL](https://www.postgresql.org/) je open source relační databáze s více než 30 lety aktivního vývoje. PostgresSQL má silnou pověst pro spolehlivost a integritu dat. Je to bohatě funkční a kompatibilní s SQL a považuje se za více výkonných procesů než MySQL – zejména pro úlohy se složitými dotazy a velkým zápisem. Řada velkých podniků, včetně Apple, Red Hat a Fujitsu, vytvořila produkty s využitím PostgreSQL.
 
-[Azure Database for PostgreSQL](https://azure.microsoft.com/services/postgresql/) je plně spravovaná služba relačních databází založená na Open Source databázovém stroji Postgres. Služba podporuje spoustu vývojových platforem, včetně jazyků C++, Java, Python, node\#, C a php. K migraci databází PostgreSQL můžete použít nástroj [rozhraní příkazového řádku](https://datamigration.microsoft.com/scenario/postgresql-to-azurepostgresql?step=1) nebo službu Azure Data Migration Service.
+[Azure Database for PostgreSQL](https://azure.microsoft.com/services/postgresql/) je plně spravovaná služba relačních databází založená na Open Source databázovém stroji Postgres. Služba podporuje spoustu vývojových platforem, včetně jazyků C++, Java, Python, Node, C \# a php. K migraci databází PostgreSQL můžete použít nástroj [rozhraní příkazového řádku](https://datamigration.microsoft.com/scenario/postgresql-to-azurepostgresql?step=1) nebo službu Azure Data Migration Service.
 
 Azure Database for PostgreSQL je k dispozici se dvěma možnostmi nasazení:
 
@@ -190,21 +187,30 @@ U Cosmos DB [rozhraní API pro více domovských](https://docs.microsoft.com/azu
 
 ### <a name="multi-model-support"></a>Podpora více modelů
 
-Při replatformování aplikací monolitické do nativní architektury cloudu budou vývojové týmy někdy muset migrovat úložiště dat open source NoSQL. Cosmos DB vám může přispět k zachování investic do těchto dataNoSQL úložiště pomocí datové platformy s *více modely* . Obrázek 5-13 ukazuje podporovaná [rozhraní NoSQL Compatibility API](https://www.wikiwand.com/en/Cosmos_DB).
+Při replatformování aplikací monolitické do nativní architektury cloudu budou vývojové týmy někdy muset migrovat úložiště dat open source NoSQL. Cosmos DB vám může přispět k zachování investic do těchto dataNoSQL úložiště pomocí datové platformy s *více modely* . Následující tabulka uvádí podporovaná rozhraní NoSQL [Compatibility API](https://www.wikiwand.com/en/Cosmos_DB).
 
-![Poskytovatelé Cosmos DB](./media/cosmos-db-providers.png)
-
-**Obrázek 5-13**: poskytovatelé Cosmos DB
+| Poskytovatel | Popis  |
+| :-------- | :-------- |
+| SQL API | Proprietární rozhraní API, které podporuje dokumenty JSON a dotazy založené na jazyce SQL |
+| Mongo DB API | Podporuje rozhraní API Mongo DB a dokumenty JSON.|
+| Rozhraní Gremlin API | Podporuje rozhraní API Gremlin s uzly založenými na grafech a reprezentacemi dat Edge. |
+| Rozhraní Cassandra API | Podporuje rozhraní API Casandra pro reprezentace dat ve velkých sloupcích. |  
+| Rozhraní Table API  | Podporuje Azure Table Storage s vylepšeními Premium. |  
+| rozhraní API pro etcd | Povoluje Cosmos DB jako záložní úložiště pro clustery služby Azure Kubernetes. |
 
 Vývojové týmy můžou migrovat existující databáze Mongo, Gremlin nebo Cassandra do Cosmos DB s minimálními změnami dat nebo kódu. Pro nové aplikace mohou vývojové týmy volit mezi možnostmi Open Source nebo integrovaným modelem rozhraní SQL API.
 
 > Interně Cosmos ukládá data v jednoduchém formátu struktury, který se skládá z primitivních datových typů. Pro každý požadavek databázový stroj přeloží primitivní data na znázornění modelu, který jste vybrali.
 
-Na předchozím obrázku 5-13 Poznamenejte si možnost [rozhraní API pro tabulky](https://docs.microsoft.com/azure/cosmos-db/table-introduction) . Toto rozhraní API je vývojem Azure Table Storage. Oba sdílejí stejný základní model tabulek, ale Cosmos DB rozhraní API pro tabulky v rozhraní API pro Azure Storage přidává vylepšení Premium, která nejsou k dispozici. Tyto funkce jsou kontrastní na obrázku 5-4.
+V předchozí tabulce si poznamenejte možnost [rozhraní API pro tabulky](https://docs.microsoft.com/azure/cosmos-db/table-introduction) . Toto rozhraní API je vývojem Azure Table Storage. Oba sdílejí stejný základní model tabulek, ale Cosmos DB rozhraní API pro tabulky v rozhraní API pro Azure Storage přidává vylepšení Premium, která nejsou k dispozici. Následující tabulka má na rozdíl od funkcí.
 
-![Azure Table API](media/azure-table-api.png)
-
-**Obrázek 5-14**: poskytovatelé Azure rozhraní API pro tabulky
+|  | Azure Table Storage  | Azure Cosmos DB  |
+| :-------- | :-------- |:-------- |
+| Latence | Světl | Latence v řádu milisekund pro čtení a zápisy kdekoli na světě |
+| Propustnost | Omezení 20 000 operací na tabulku | 10 000 000 operací na tabulku |
+| Globální distribuce | Jedna oblast s volitelnou jednou sekundární oblastí čtení | Klíč distribuce do všech oblastí s automatickým převzetím služeb při selhání |
+| Indexování | K dispozici pouze pro oddíly a vlastnosti klíče řádku | Automatické indexování všech vlastností |
+| Ceny | Na základě úložiště | Na základě propustnosti |
 
 Mikroslužby, které využívají službu Azure Table Storage, můžou snadno migrovat do Cosmos DB rozhraní API pro tabulky. Nevyžadují se žádné změny kódu.
 
@@ -214,17 +220,21 @@ Dříve v části *relační vs. NoSQL* jsme probrali předmět *konzistence dat
 
 Většina distribuovaných databází umožňuje vývojářům vybírat ze dvou modelů konzistence: silná konzistence a konečná konzistence. *Silná konzistence* je Gold Standard pro programovatelnost dat. Zaručuje, že dotaz bude vždycky vracet nejaktuálnější data, i když systém musí nabývat latencí, která čeká na replikaci na všechny kopie databáze. I když databáze konfigurovaná pro konečnou *konzistenci* vrátí data okamžitě, a to i v případě, že tato data nejsou nejaktuálnější kopie. Druhá možnost umožňuje vyšší dostupnost, větší měřítko a vyšší výkon.
 
-Azure Cosmos DB nabízí pět jasně definovaných [modelů konzistence](https://docs.microsoft.com/azure/cosmos-db/consistency-levels) zobrazených na obrázku 5-15.
+Azure Cosmos DB nabízí pět jasně definovaných [modelů konzistence](https://docs.microsoft.com/azure/cosmos-db/consistency-levels) zobrazených na obrázku 5-13.
 
 ![Cosmos DB graf konzistence](./media/cosmos-consistency-level-graph.png)
 
-**Obrázek 5-15**: Cosmos DB úrovní konzistence
+**Obrázek 5-13**: Cosmos DB úrovní konzistence
 
- Tyto možnosti umožňují provést přesné volby a podrobné kompromisy týkající se konzistence, dostupnosti a výkonu pro vaše data. Obrázek 5-16 popisuje jednotlivé úrovně.
+ Tyto možnosti umožňují provést přesné volby a podrobné kompromisy týkající se konzistence, dostupnosti a výkonu pro vaše data. Úrovně jsou uvedeny v následující tabulce.
 
-![Cosmos DB úrovně konzistence](./media/cosmos-db-consistency-levels.png)
-
-**Obrázek 5-16**: Cosmos DB popis úrovně konzistence
+| Úrovně konzistence | Popis  |
+| :-------- | :-------- |
+| Nahodilé | Žádné záruky řazení pro čtení. Repliky se nakonec konvergují. |
+| Konstantní předpona | Čtení jsou stále k dispozici, ale data jsou vrácena v pořadí, ve kterém jsou zapsána. |
+| Relace | Zaručuje vám, že můžete číst všechna data zapsaná během aktuální relace. Je to výchozí úroveň konzistence. |
+| Omezená neaktuálnost | Přečte zápisy na konci podle intervalu, který zadáte. |  
+| Silné  | Pro čtení jsou zaručena vrácení nejnovější potvrzené verze položky. Klient se nikdy nezobrazuje bez potvrzení nebo částečného čtení. |  
 
 V článku [Seznámení s 9 kuličkou: Vysvětlené Cosmos dB úrovně konzistence](https://blog.jeremylikness.com/blog/2018-03-23_getting-behind-the-9ball-cosmosdb-consistency-levels/)nabízí program Microsoft program Manager Jeremy Likness vynikající vysvětlení pěti modelů.
 
@@ -236,11 +246,11 @@ Data můžete spravovat v Cosmos DB dat vytvořením databází, kontejnerů a p
 
 Kontejnery jsou živé v Cosmos DB databázi a reprezentují nezávislá seskupení položek schématu. Položky jsou data, která přidáte do kontejneru. Jsou reprezentovány jako dokumenty, řádky, uzly nebo hrany. Všechny položky přidané do kontejneru jsou automaticky indexovány.
 
-Chcete-li rozdělit kontejner, položky jsou rozděleny do samostatných dílčích množin nazývaných logické oddíly. Logické oddíly se naplní na základě hodnoty klíče oddílu, který je spojený s každou položkou v kontejneru. Obrázek 5-18 ukazuje dva kontejnery s logickým oddílem na základě hodnoty klíče oddílu.
+Chcete-li rozdělit kontejner, položky jsou rozděleny do samostatných dílčích množin nazývaných logické oddíly. Logické oddíly se naplní na základě hodnoty klíče oddílu, který je spojený s každou položkou v kontejneru. Obrázek 5-14 ukazuje dva kontejnery s logickým oddílem na základě hodnoty klíče oddílu.
 
 ![Cosmos DB mechaniky pro dělení](./media/cosmos-db-partitioning.png)
 
-**Obrázek 5-18**: mechanismy Cosmos DBho dělení
+**Obrázek 5-14**: mechanismy Cosmos DBho dělení
 
 Všimněte si, že v předchozí ukázce každá položka zahrnuje klíč oddílu buď City, nebo letiště. Klíč určuje logický oddíl položky. Položky s kódem města jsou přiřazeny ke kontejneru vlevo a položky s kódem letiště do kontejneru na pravé straně. Kombinování hodnoty klíče oddílu s hodnotou ID vytvoří index položky, který položku jednoznačně identifikuje.
 
@@ -248,16 +258,16 @@ Interně Cosmos DB automaticky spravuje umístění [logických oddílů](https:
 
 ## <a name="newsql-databases"></a>Databáze NewSQL
 
-*NewSQL* je rozvíjející se Databázová technologie, která kombinuje distribuovanou škálovatelnost NoSQL s kyselými zárukami relační databáze. Databáze NewSQL jsou důležité pro obchodní systémy, které musí zpracovávat velké objemy dat napříč distribuovanými prostředími, a to s plnou mezitransakční podporou a dodržováním předpisů v KYSELINě. I když databáze NoSQL může poskytovat obrovské škálovatelnost, nezaručí konzistenci dat. Občasné problémy z nekonzistentních dat můžou nacházet zatížení vývojového týmu. Vývojáři musí pro svůj kód mikroslužeb vytvořit ochranu a spravovat tak problémy způsobené nekonzistentními daty.
+*NewSQL*   je rozvíjející se Databázová technologie, která kombinuje distribuovanou škálovatelnost NoSQL s KYSELými zárukami relační databáze. Databáze NewSQL jsou důležité pro obchodní systémy, které musí zpracovávat velké objemy dat napříč distribuovanými prostředími, a to s plnou mezitransakční podporou a dodržováním předpisů v KYSELINě. I když databáze NoSQL může poskytovat obrovské škálovatelnost, nezaručí konzistenci dat. Občasné problémy z nekonzistentních dat můžou nacházet zatížení vývojového týmu. Vývojáři musí pro svůj kód mikroslužeb vytvořit ochranu a spravovat tak problémy způsobené nekonzistentními daty.
 
 Cloud Native Computing Foundation (CNCF) obsahuje několik databázových projektů NewSQL.
 
 | Project | Vlastnosti |
 | :-------- | :-------- |
-| Cockroach DB |Kompatibilní s KYSELINou, relační databáze, která se globálně škáluje. Přidání nového uzlu do clusteru a CockroachDB se postará o vyrovnávání dat napříč instancemi a geografickými oblastmi. Vytváří, spravuje a distribuuje repliky k zajištění spolehlivosti. Je to open source a volně dostupný.  |
+| Cockroach DB |Relační databáze kompatibilní s KYSELINou, která se globálně škáluje. Přidání nového uzlu do clusteru a CockroachDB se postará o vyrovnávání dat napříč instancemi a geografickými oblastmi. Vytváří, spravuje a distribuuje repliky k zajištění spolehlivosti. Je to open source a volně dostupný.  |
 | TiDB | Open-source databáze, která podporuje úlohy hybridního transakčního a analytického zpracování (HTAP). Je kompatibilní s MySQL a nabízí horizontální škálovatelnost, silnou konzistenci a vysokou dostupnost.  TiDB funguje jako server MySQL. Můžete dál používat existující klientské knihovny MySQL, aniž byste museli v aplikaci provádět rozsáhlé změny kódu. |
 | YugabyteDB | Open Source a vysoce výkonná distribuovaná databáze SQL. Podporuje nízkou latenci dotazů, odolnost proti chybám a globální distribuci dat. YugabyteDB je kompatibilní s PostgressSQL a zpracovává RDBMS a škálovatelné úlohy OLTP pro škálování na více instancí. Produkt také podporuje NoSQL a je kompatibilní s Cassandra. |
-|Vitess | Vitess je databázové řešení pro nasazování, škálování a správu velkých clusterů instancí MySQL. Dá se spustit ve veřejné nebo privátní architektuře cloudu. Kombinuje a rozšiřuje mnoho důležitých funkcí MySQL a nabízí vertikální i horizontální podporu horizontálního dělení. Pocházelo na YouTube, Vitess obsluhuje veškerý provoz databáze YouTube od 2011. |
+|Vitess | Vitess je databázové řešení pro nasazování, škálování a správu velkých clusterů instancí MySQL. Může běžet v architektuře veřejného nebo privátního cloudu. Vitess kombinuje a rozšiřuje mnoho důležitých funkcí MySQL a nabízí vertikální i horizontální podporu horizontálního dělení. Pocházelo na YouTube, Vitess obsluhuje veškerý provoz databáze YouTube od 2011. |
 
 Open source projekty na předchozím obrázku jsou k dispozici v rámci Cloud Native Computing Foundation. Tři nabídky jsou úplné databázové produkty, které zahrnují podporu .NET Core. Druhý Vitess je systém clusteringu databáze, který horizontálně škáluje velké clustery instancí MySQL.
 
@@ -284,5 +294,5 @@ Jedna z více časově náročných úkolů migruje data z jedné datové platfo
 Služba poskytuje doporučení, která vás provedou změnami potřebnými ke spuštění migrace, jak malé, tak i velké.
 
 >[!div class="step-by-step"]
->[Předchozí](distributed-data.md)
->[Další](azure-caching.md)
+>[Předchozí](distributed-data.md) 
+> [Další](azure-caching.md)

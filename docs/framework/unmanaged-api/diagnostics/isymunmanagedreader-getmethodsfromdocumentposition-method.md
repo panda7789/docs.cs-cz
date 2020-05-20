@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 83605f1e-e4f3-49e6-859b-f13cad68bb54
 topic_type:
 - apiref
-ms.openlocfilehash: 923a92ea256f79a1b0130b61c4fd99460fda96a0
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: bba0fc039c403d45e8a5b60f2b0231eb24226280
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74441807"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83614952"
 ---
 # <a name="isymunmanagedreadergetmethodsfromdocumentposition-method"></a>ISymUnmanagedReader::GetMethodsFromDocumentPosition – metoda
 Vrátí pole metod, z nichž každý obsahuje zarážku na dané pozici v dokumentu.  
@@ -49,13 +49,13 @@ HRESULT GetMethodsFromDocumentPosition (
  pro Sloupec zadaného dokumentu  
   
  `cMethod`  
- pro Velikost pole `pRetVal`.  
+ pro Velikost `pRetVal` pole.  
   
  `pcMethod`  
- mimo Ukazatel na proměnnou, která přijímá počet prvků vrácených v poli `pRetVal`.  
+ mimo Ukazatel na proměnnou, která přijímá počet prvků vrácených v `pRetVal` poli.  
   
  `pRetVal`  
- mimo Pole ukazatelů, z nichž každý odkazuje na objekt [ISymUnmanagedMethod](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedmethod-interface.md) , který představuje metodu obsahující zarážku.  
+ mimo Pole ukazatelů, z nichž každý odkazuje na objekt [ISymUnmanagedMethod](isymunmanagedmethod-interface.md) , který představuje metodu obsahující zarážku.  
   
 ## <a name="return-value"></a>Návratová hodnota  
  S_OK, pokud je metoda úspěšná; v opačném případě E_FAIL nebo nějaký jiný kód chyby.  
@@ -63,6 +63,6 @@ HRESULT GetMethodsFromDocumentPosition (
 ## <a name="requirements"></a>Požadavky  
  **Hlavička:** CorSym. idl, CorSym. h  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [ISymUnmanagedReader – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedreader-interface.md)
+- [ISymUnmanagedReader – rozhraní](isymunmanagedreader-interface.md)

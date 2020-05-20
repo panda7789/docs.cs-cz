@@ -1,17 +1,15 @@
 ---
 title: Infrastruktura jako kód
 description: Přechodu infrastruktura jako Code (IaC) s aplikacemi pro Cloud Native
-ms.date: 05/12/2020
-ms.openlocfilehash: 309dd8610ab3b72a6c6da5297f109f822520c5ff
-ms.sourcegitcommit: 046a9c22487551360e20ec39fc21eef99820a254
+ms.date: 05/13/2020
+ms.openlocfilehash: cfc9e1f0b2733048d5921de5a0400998c282b1fa
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83395351"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83613951"
 ---
 # <a name="infrastructure-as-code"></a>Infrastruktura jako kód
-
-[!INCLUDE [book-preview](../../../includes/book-preview.md)]
 
 Nativní systémy cloudu zadosahují mikroslužeb, kontejnerů a moderního návrhu systému, abyste dosáhli rychlosti a flexibility. Poskytují automatizované fáze sestavení a vydání, aby bylo zajištěno konzistentní a kvalitní kód. Ale to je jenom část tohoto scénáře. Jak můžete zřídit cloudová prostředí, na kterých se tyto systémy spouštějí?
 

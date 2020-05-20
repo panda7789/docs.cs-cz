@@ -1,17 +1,15 @@
 ---
 title: Aplikační komplety nativní pro cloud
 description: Architekt cloudových nativních aplikací .NET pro Azure | Balíčky nativních aplikací cloudu
-ms.date: 05/12/2020
-ms.openlocfilehash: c16a9cba1fe31e025532ba98d644114a319bb9de
-ms.sourcegitcommit: 046a9c22487551360e20ec39fc21eef99820a254
+ms.date: 05/13/2020
+ms.openlocfilehash: fc6ee96078650dccd2ebeb3e65a0a00c4e05ecdb
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83395493"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83614341"
 ---
 # <a name="cloud-native-application-bundles"></a>Aplikační komplety nativní pro cloud
-
-[!INCLUDE [book-preview](../../../includes/book-preview.md)]
 
 Klíčovou vlastností aplikací nativních pro Cloud je, že využívají možnosti cloudu k urychlení vývoje. Tento návrh často znamená, že plná aplikace používá různé druhy technologií. Aplikace se můžou dodávat v kontejnerech Docker, některé služby můžou použít Azure Functions, zatímco jiné části se můžou spouštět přímo na virtuálních počítačích, které jsou přidělené na rozsáhlých serverech s hardwarovou akcelerací GPU. Neexistují žádné dvě aplikace nativní pro Cloud, takže je obtížné poskytnout jeden mechanismus pro jejich odeslání.
 

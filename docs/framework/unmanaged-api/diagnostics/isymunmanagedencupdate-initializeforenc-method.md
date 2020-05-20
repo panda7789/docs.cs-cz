@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: 796b2154-b53c-4d07-9e67-80fd6064725a
 topic_type:
 - apiref
-ms.openlocfilehash: 220788a38cd0ff90fed3b681a161c579206cf805
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: f612e38398f8c1320ba87722498400d70ec8bff0
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74449015"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83614536"
 ---
 # <a name="isymunmanagedencupdateinitializeforenc-method"></a>ISymUnmanagedENCUpdate::InitializeForEnc – metoda
-Umožňuje vypočítat hranice metod před prvním voláním metody [ISymUnmanagedENCUpdate:: updatesymbolstore2 –](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedencupdate-updatesymbolstore2-method.md) .  
+Umožňuje vypočítat hranice metod před prvním voláním metody [ISymUnmanagedENCUpdate:: updatesymbolstore2 –](isymunmanagedencupdate-updatesymbolstore2-method.md) .  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,6 +37,6 @@ HRESULT InitializeForEnc();
 ## <a name="requirements"></a>Požadavky  
  **Hlavička:** CorSym. idl, CorSym. h  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [ISymUnmanagedENCUpdate – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedencupdate-interface.md)
+- [ISymUnmanagedENCUpdate – rozhraní](isymunmanagedencupdate-interface.md)

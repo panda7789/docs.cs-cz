@@ -1,17 +1,16 @@
 ---
 title: Příznaky funkcí
 description: Implementace příznaků funkcí v cloudových nativních aplikacích s využitím konfigurace aplikací Azure
-ms.date: 05/03/2020
-ms.openlocfilehash: 72e1bfe777854a74fcac926811caf97e59986146
-ms.sourcegitcommit: 046a9c22487551360e20ec39fc21eef99820a254
+author: robvet
+ms.date: 05/13/2020
+ms.openlocfilehash: 607bd14a415a25b382f550e697542cf749a21772
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83398307"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83614068"
 ---
 # <a name="feature-flags"></a>Příznaky funkcí
-
-[!INCLUDE [book-preview](../../../includes/book-preview.md)]
 
 V kapitole 1 jsme tvrdili, že nativní Cloud je mnohem o rychlosti a flexibilitě. Uživatelé očekávají rychlou odezvu, inovativní funkce a nulové výpadky. `Feature flags`jsou moderní techniky nasazení, které pomáhají zvýšit flexibilitu pro aplikace nativní pro Cloud. Umožňují nasazovat nové funkce do produkčního prostředí, ale omezují jejich dostupnost. Pomocí rychlého pohybu přepínače můžete aktivovat novou funkci pro konkrétní uživatele bez restartování aplikace nebo nasazení nového kódu. Oddělují vydání nových funkcí od jejich nasazení kódu.
 
