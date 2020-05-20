@@ -14,17 +14,17 @@ helpviewer_keywords:
 ms.assetid: b4367214-6dac-4280-aa11-fd487ff30bc4
 topic_type:
 - apiref
-ms.openlocfilehash: 4932e1fd6294f4a01264e982835dd0707324082a
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 585287f63f57f55e877c94684820833b6d1add60
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79178233"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83616535"
 ---
 # <a name="_corimageunloading-function"></a>_CorImageUnloading – funkce
-Upozorní zavaděč při uvolnění bitové kopie spravovaného modulu.  
+Upozorní zavaděče na Nenačtené bitové kopie spravovaného modulu.  
   
- Tato funkce není implementována. Pokud je volána, vrátí E_NOTIMPL.  
+ Tato funkce není implementována. Při volání Vrátí E_NOTIMPL.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -36,17 +36,17 @@ STDAPI (VOID) _CorImageUnloading(
   
 ## <a name="parameters"></a>Parametry  
  `ImageBase`  
- [v] Ukazatel na počáteční umístění obrázku k uvolnění.  
+ pro Ukazatel na počáteční umístění obrázku, který má být uvolněn.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Záhlaví:** Kor.h.  
+ **Hlavička:** Cor. h  
   
- **Knihovna:** Zahrnuto jako prostředek v souboru MsCorEE.dll  
+ **Knihovna:** Zahrnuto jako prostředek v knihovně MsCorEE. dll  
   
- **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také
 
-- [Globální statické funkce pro metadata](../../../../docs/framework/unmanaged-api/metadata/metadata-global-static-functions.md)
+- [Globální statické funkce pro metadata](../metadata/metadata-global-static-functions.md)

@@ -15,17 +15,17 @@ helpviewer_keywords:
 ms.assetid: 2f09cd37-bf3a-4cc5-87b0-adc42a7eed31
 topic_type:
 - apiref
-ms.openlocfilehash: 1f40f27651d2d75cf2c3e4d7d1c21e1f47d402af
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 23d68e8e4bbd87779e3b49f0c40f5a5ab9f5124f
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79178195"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83617214"
 ---
 # <a name="getcorversion-function"></a>GetCORVersion – funkce
-Vrátí číslo verze běžného jazyka runtime (CLR), který je spuštěn v aktuálním procesu.  
+Vrátí číslo verze modulu CLR (Common Language Runtime), který je spuštěn v aktuálním procesu.  
   
- Tato funkce byla v rozhraní .NET Framework 4 zastaralá.  
+ Tato funkce se už nepoužívá v .NET Framework 4.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,23 +39,23 @@ HRESULT GetCORVersion (
   
 ## <a name="parameters"></a>Parametry  
  `pbuffer`  
- Ukazatel na vyrovnávací paměť, ve kterém CLR vrátí řetězec určující verzi runtime, který je aktuálně načten do procesu. Vrácený řetězec má stejný tvar jako řetězce předané [CorBindToRuntimeEx](../../../../docs/framework/unmanaged-api/hosting/corbindtoruntimeex-function.md), například "v1.0.1216". Pokud runtime ještě nebyl načten do procesu, funkce vrátí příslušné informace o adresáři pro nejnovější verzi runtime nainstalovaného v počítači.  
+ Ukazatel na vyrovnávací paměť, ve které CLR vrátí řetězec určující verzi modulu runtime, který je aktuálně načten do procesu. Vrácený řetězec má stejný tvar jako řetězce předané do [CorBindToRuntimeEx –](corbindtoruntimeex-function.md), například "v 1.0.1216". Pokud modul runtime ještě nebyl načten do procesu, vrátí funkce příslušné informace o adresáři pro nejnovější verzi modulu runtime nainstalovaného v počítači.  
   
  `cchBuffer`  
- Počet znaků (s),`WCHAR`které mohou `pbuffer`být drženy v .  
+ Počet znaků `WCHAR` , které lze uchovávat v `pbuffer` .  
   
  `dwLength`  
- Ukazatel na počet znaků skutečně `pbuffer`vrácených v . Pokud `pbuffer` je ukazatel null, runtime vrátí E_POINTER. Pokud je počet znaků větší než `pbuffer` délka , vrátí doba runtime ERROR_INSUFFICIENT_BUFFER.  
+ Ukazatel na počet skutečně vrácených znaků `pbuffer` . Pokud `pbuffer` je ukazatel s hodnotou null, modul runtime vrátí E_POINTER. Pokud je počet znaků větší než délka `pbuffer` , modul runtime vrátí ERROR_INSUFFICIENT_BUFFER.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Záhlaví:** MSCorEE.h  
+ **Hlavička:** MSCorEE. h  
   
- **Knihovna:** Soubor MSCorEE.dll  
+ **Knihovna:** MSCorEE. dll  
   
- **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také
 
-- [Zastaralé funkce hostování CLR](../../../../docs/framework/unmanaged-api/hosting/deprecated-clr-hosting-functions.md)
+- [Zastaralé funkce hostování CLR](deprecated-clr-hosting-functions.md)

@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 51f848be-84c5-4036-9839-c762c576bbf5
 topic_type:
 - apiref
-ms.openlocfilehash: cc0cea10b4a209583fb7afb551a6b80d52ad7f62
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: e8dda83df8a320733f45dbcc13599cdf37d26492
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73127031"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83617149"
 ---
 # <a name="host_type-enumeration"></a>HOST_TYPE – výčet
 Obsahuje hodnoty, které určují typ hostitele, který spouští aplikaci.  
@@ -43,14 +43,14 @@ typedef enum {
 |`HOST_TYPE_DEFAULT`|Stejné jako HOST_TYPE_APPLAUNCH.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** MSCorEE. h  
   
  **Knihovna:** MSCorEE. dll  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Výčty pro hostování](../../../../docs/framework/unmanaged-api/hosting/hosting-enumerations.md)
+- [Výčty hostování](hosting-enumerations.md)

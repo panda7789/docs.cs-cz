@@ -15,17 +15,17 @@ helpviewer_keywords:
 ms.assetid: a9f7f824-64a1-408d-8607-91c7f19d21fe
 topic_type:
 - apiref
-ms.openlocfilehash: a04a0c5e6865c3664d2cb5fb341c3625e35d4d7c
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: fbaf45da0902ded8a2f7bf0d470aaed3b5f531aa
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79178120"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83617123"
 ---
 # <a name="getversionfromprocess-function"></a>GetVersionFromProcess – funkce
-Získá číslo verze cltime společného jazyka (CLR), který je přidružen k popisovač zadaného procesu.  
+Získá číslo verze modulu CLR (Common Language Runtime), který je spojen se zadaným popisovačem procesu.  
   
- Tato funkce byla v rozhraní .NET Framework 4 zastaralá.  
+ Tato funkce se už nepoužívá v .NET Framework 4.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,38 +40,38 @@ HRESULT GetVersionFromProcess (
   
 ## <a name="parameters"></a>Parametry  
  `hProcess`  
- [v] Popisovač procesu.  
+ pro Popisovač procesu.  
   
  `pVersion`  
- [out] Vyrovnávací paměť, která obsahuje řetězec číslo verze po úspěšném dokončení metody.  
+ mimo Vyrovnávací paměť, která obsahuje řetězec čísla verze po úspěšném dokončení metody.  
   
  `cchBuffer`  
- [v] Délka vyrovnávací paměti verze.  
+ pro Délka vyrovnávací paměti verze.  
   
  `pdwLength`  
- [out] Ukazatel na délku řetězce čísla verze.  
+ mimo Ukazatel na délku řetězce čísla verze.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- Tato metoda vrátí standardní kódy chybový model COM (COM), jak je definováno v souboru WinError.h, kromě následujících hodnot.  
+ Tato metoda vrátí standardní kódy chyb modelu COM (Component Object Model), jak je definováno v WinError. h, kromě následujících hodnot.  
   
 |Návratový kód|Popis|  
 |-----------------|-----------------|  
 |S_OK|Metoda byla úspěšně dokončena.|  
-|E_invalidarg|`pVersion`je null `cchBuffer` a není null nebo naopak.<br /><br /> -nebo-<br /><br /> `hProcess`není platný popisovač procesu.<br /><br /> -nebo-<br /><br /> CLR není načten.|  
-|ERROR_INSUFFICIENT_BUFFER|`cchBuffer`je null nebo menší než délka řetězce verze.|  
-|E_NOTIMPL|Tato metoda není k dispozici v operačních systémech Microsoft Windows 95, Microsoft Windows 98 nebo Microsoft Windows Millennium Edition.|  
+|E_INVALIDARG|`pVersion`má hodnotu null a `cchBuffer` není null nebo naopak.<br /><br /> -nebo-<br /><br /> `hProcess`není platným popisovačem procesu.<br /><br /> -nebo-<br /><br /> Modul CLR není zaveden.|  
+|ERROR_INSUFFICIENT_BUFFER|`cchBuffer`má hodnotu null nebo menší než délka řetězce verze.|  
+|E_NOTIMPL|Tato metoda není k dispozici v operačním systému Microsoft Windows 95, Microsoft Windows 98 nebo Microsoft Windows Millennium Edition.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Záhlaví:** MSCorEE.h  
+ **Hlavička:** MSCorEE. h  
   
- **Knihovna:** Soubor MSCorEE.dll  
+ **Knihovna:** MSCorEE. dll  
   
- **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také
 
-- [GetRequestedRuntimeInfo – funkce](../../../../docs/framework/unmanaged-api/hosting/getrequestedruntimeinfo-function.md)
-- [GetRequestedRuntimeVersion – funkce](../../../../docs/framework/unmanaged-api/hosting/getrequestedruntimeversion-function.md)
-- [Zastaralé funkce hostování CLR](../../../../docs/framework/unmanaged-api/hosting/deprecated-clr-hosting-functions.md)
+- [GetRequestedRuntimeInfo – funkce](getrequestedruntimeinfo-function.md)
+- [GetRequestedRuntimeVersion – funkce](getrequestedruntimeversion-function.md)
+- [Zastaralé funkce hostování CLR](deprecated-clr-hosting-functions.md)

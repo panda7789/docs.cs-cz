@@ -14,17 +14,17 @@ helpviewer_keywords:
 ms.assetid: ded1e492-a782-4185-9c66-709e421c1782
 topic_type:
 - apiref
-ms.openlocfilehash: 4fbc6e7ea531f65a6b1cd0ec93f4847ab8e4fe83
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 9326484c6a9f96d245e3c61a0ac3e3465a8a6dcd
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79178236"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83616642"
 ---
 # <a name="corbindtoruntimebycfg-function"></a>CorBindToRuntimeByCfg – funkce
-Načte běžný jazyk runtime (CLR) do procesu pomocí informací o verzi, která je čtena ze souboru XML.  
+Načte modul CLR (Common Language Runtime) do procesu pomocí informací o verzi načtených ze souboru XML.  
   
- Tato funkce byla v rozhraní .NET Framework 4 zastaralá.  
+ Tato funkce se už nepoužívá v .NET Framework 4.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,40 +41,40 @@ HRESULT CorBindToRuntimeByCfg (
   
 ## <a name="parameters"></a>Parametry  
  `pCfgStream`  
- [v] Ukazatel na `IStream` objekt, který čte soubor XML.  
+ pro Ukazatel na `IStream` objekt, který čte soubor XML.  
   
  `reserved`  
- [v] Vyhrazeno pro budoucí použití. Jako hodnotu použijte hodnotu 0 (nula).  
+ pro Vyhrazeno pro budoucí použití. Jako hodnotu použijte 0 (nula).  
   
  `startupFlags`  
- [v] Hodnota [STARTUP_FLAGS](../../../../docs/framework/unmanaged-api/hosting/startup-flags-enumeration.md) výčtu, který určuje chování při spuštění CLR.  
+ pro Hodnota výčtu [STARTUP_FLAGS](startup-flags-enumeration.md) , která určuje chování při spuštění modulu CLR.  
   
  `rclsid`  
- [v] Coclass, `CLSID` která implementuje buď [ICorRuntimeHost](../../../../docs/framework/unmanaged-api/hosting/icorruntimehost-interface.md) nebo [ICLRRuntimeHost](../../../../docs/framework/unmanaged-api/hosting/iclrruntimehost-interface.md) rozhraní. Podporované hodnoty jsou CLSID_CorRuntimeHost nebo CLSID_CLRRuntimeHost.  
+ pro `CLSID`Třída typu coclass, která implementuje rozhraní [ICorRuntimeHost](../../../../docs/framework/unmanaged-api/hosting/icorruntimehost-interface.md) nebo [ICLRRuntimeHost](iclrruntimehost-interface.md) . Podporované hodnoty jsou CLSID_CorRuntimeHost nebo CLSID_CLRRuntimeHost.  
   
  `riid`  
- [v] buď `IID` `ICorRuntimeHost` nebo `ICLRRuntimeHost` rozhraní. Podporované hodnoty jsou IID_ICorRuntimeHost nebo IID_ICLRRuntimeHost.  
+ pro `IID` `ICorRuntimeHost` `ICLRRuntimeHost` Rozhraní nebo. Podporované hodnoty jsou IID_ICorRuntimeHost nebo IID_ICLRRuntimeHost.  
   
  `ppv`  
- [out] Ukazatel na adresu vráceného rozhraní.  
+ mimo Ukazatel na adresu vráceného rozhraní.  
   
 ## <a name="remarks"></a>Poznámky  
- Formát souboru XML je modelován podle standardního konfiguračního souboru aplikace. Další informace o souborech XML naleznete [v tématu Schéma konfiguračního souboru](../../../../docs/framework/configure-apps/file-schema/index.md).  
+ Formát souboru XML je modelován po standardní konfigurační soubor aplikace. Další informace o souborech XML najdete v tématu [Schéma konfiguračního souboru](../../configure-apps/file-schema/index.md).  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Záhlaví:** MSCorEE.h  
+ **Hlavička:** MSCorEE. h  
   
- **Knihovna:** Soubor MSCorEE.dll  
+ **Knihovna:** MSCorEE. dll  
   
- **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také
 
-- [CorBindToCurrentRuntime – funkce](../../../../docs/framework/unmanaged-api/hosting/corbindtocurrentruntime-function.md)
-- [CorBindToRuntime – funkce](../../../../docs/framework/unmanaged-api/hosting/corbindtoruntime-function.md)
-- [CorBindToRuntimeEx – funkce](../../../../docs/framework/unmanaged-api/hosting/corbindtoruntimeex-function.md)
-- [CorBindToRuntimeHost – funkce](../../../../docs/framework/unmanaged-api/hosting/corbindtoruntimehost-function.md)
-- [ICorRuntimeHost – rozhraní](../../../../docs/framework/unmanaged-api/hosting/icorruntimehost-interface.md)
-- [Zastaralé funkce hostování CLR](../../../../docs/framework/unmanaged-api/hosting/deprecated-clr-hosting-functions.md)
+- [CorBindToCurrentRuntime – funkce](corbindtocurrentruntime-function.md)
+- [CorBindToRuntime – funkce](corbindtoruntime-function.md)
+- [CorBindToRuntimeEx – funkce](corbindtoruntimeex-function.md)
+- [CorBindToRuntimeHost – funkce](corbindtoruntimehost-function.md)
+- [ICorRuntimeHost – rozhraní](icorruntimehost-interface.md)
+- [Zastaralé funkce hostování CLR](deprecated-clr-hosting-functions.md)

@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: cb5ffae5-287b-4a87-9ca8-7ce3ae0601b7
 topic_type:
 - apiref
-ms.openlocfilehash: 54c11e78438ae97e1fc0c715c9161361784b3be6
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 7f09cb2264b21fdfbc892069f2c2f0a963b131f8
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73126722"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83615966"
 ---
 # <a name="iclrassemblyidentitymanagergetclrassemblyreferencelist-method"></a>ICLRAssemblyIdentityManager::GetCLRAssemblyReferenceList – metoda
-Získá ukazatel rozhraní na instanci [ICLRAssemblyReferenceList](../../../../docs/framework/unmanaged-api/hosting/iclrassemblyreferencelist-interface.md) ze zadaného seznamu částečných identit sestavení.  
+Získá ukazatel rozhraní na instanci [ICLRAssemblyReferenceList](iclrassemblyreferencelist-interface.md) ze zadaného seznamu částečných identit sestavení.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,10 +40,10 @@ HRESULT  GetCLRAssemblyReferenceList (
  pro Pole řetězců ukončených hodnotou null ve formátu "název; vlastnost = hodnota..." které určují seznam identit částečných sestavení.  
   
  `dwNumOfReferences`  
- pro Počet položek v `ppwzAssemblyReferences`.  
+ pro Počet položek v `ppwzAssemblyReferences` .  
   
  `ppReferenceList`  
- mimo Ukazatel rozhraní na objekt `ICLRAssemblyReferenceList`, který obsahuje data identity sestavení pro seznam sestavení určených v `ppwzAssemblyReferences`.  
+ mimo Ukazatel rozhraní na `ICLRAssemblyReferenceList` objekt, který obsahuje data identity sestavení pro seznam sestavení určených v `ppwzAssemblyReferences` .  
   
 ## <a name="return-value"></a>Návratová hodnota  
   
@@ -57,15 +57,15 @@ HRESULT  GetCLRAssemblyReferenceList (
 |E_FAIL|Došlo k neznámé chybě závažnosti. Pokud metoda vrátí E_FAIL, CLR již není v rámci procesu použitelný. Následná volání metod hostování vrací HOST_E_CLRNOTAVAILABLE.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** MSCorEE. h  
   
  **Knihovna:** Zahrnuto jako prostředek v knihovně MSCorEE. dll  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [ICLRAssemblyIdentityManager – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrassemblyidentitymanager-interface.md)
-- [ICLRAssemblyReferenceList – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrassemblyreferencelist-interface.md)
+- [ICLRAssemblyIdentityManager – rozhraní](iclrassemblyidentitymanager-interface.md)
+- [ICLRAssemblyReferenceList – rozhraní](iclrassemblyreferencelist-interface.md)

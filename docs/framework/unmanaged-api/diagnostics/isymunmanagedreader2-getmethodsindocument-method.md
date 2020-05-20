@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: c7ae84d6-81e8-4cb7-a1f9-d48b6cde5d79
 topic_type:
 - apiref
-ms.openlocfilehash: 70c1d87ae32fb70f8d9f6e32b527394022459526
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 68a0f9ec8793d465a6fa3b1cb6936eddd7be4c8f
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74446428"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83615407"
 ---
 # <a name="isymunmanagedreader2getmethodsindocument-method"></a>ISymUnmanagedReader2::GetMethodsInDocument – metoda
 Načte každou metodu, která obsahuje informace o řádku v zadaném dokumentu.  
@@ -41,10 +41,10 @@ HRESULT GetMethodsInDocument(
  pro Ukazatel na dokument.  
   
  `cMethod`  
- pro `ULONG32`, která určuje velikost `pRetVal` pole.  
+ pro `ULONG32`Který označuje velikost `pRetVal` pole.  
   
  `pcMethod`  
- mimo Ukazatel na `ULONG32`, který přijímá velikost vyrovnávací paměti, která je nutná k uložení metod.  
+ mimo Ukazatel na `ULONG32` , který přijímá velikost vyrovnávací paměti, která je nutná k uložení metod.  
   
  `pRetVal`  
  mimo Ukazatel na vyrovnávací paměť, která přijímá metody.  
@@ -55,6 +55,6 @@ HRESULT GetMethodsInDocument(
 ## <a name="requirements"></a>Požadavky  
  **Hlavička:** CorSym. idl, CorSym. h  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [ISymUnmanagedReader2 – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedreader2-interface.md)
+- [ISymUnmanagedReader2 – rozhraní](isymunmanagedreader2-interface.md)

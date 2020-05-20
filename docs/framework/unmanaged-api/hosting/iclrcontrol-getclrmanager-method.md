@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 8a11bfa4-cbb0-4082-82b5-f9fba66c93f5
 topic_type:
 - apiref
-ms.openlocfilehash: fa9608423456caeb6020e883a14f2c41583ac4d9
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 04cb45cd021532b6cb3d74a195cbd62e1ab8d31d
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73126615"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83615849"
 ---
 # <a name="iclrcontrolgetclrmanager-method"></a>ICLRControl::GetCLRManager – metoda
 Získá ukazatel rozhraní na instanci kteréhokoli typu správce, který může hostitel použít ke konfiguraci modulu CLR (Common Language Runtime).  
@@ -36,21 +36,21 @@ HRESULT GetCLRManager (
   
 ## <a name="parameters"></a>Parametry  
  `riid`  
- pro `IID` typu správce, který se má vrátit Jsou podporovány následující hodnoty `IID`.  
+ pro `IID`Typ správce, který se má vrátit. `IID`Podporovány jsou následující hodnoty.  
   
-- IID_ICLRDebugManager: Určuje, zda bude `ppObject` typu [ICLRDebugManager](../../../../docs/framework/unmanaged-api/hosting/iclrdebugmanager-interface.md).  
+- IID_ICLRDebugManager: Určuje, zda `ppObject` bude [ICLRDebugManager](iclrdebugmanager-interface.md)typu.  
   
-- IID_ICLRErrorReportingManager: Určuje, zda bude `ppObject` typu [ICLRErrorReportingManager](../../../../docs/framework/unmanaged-api/hosting/iclrerrorreportingmanager-interface.md).  
+- IID_ICLRErrorReportingManager: Určuje, zda `ppObject` bude [ICLRErrorReportingManager](iclrerrorreportingmanager-interface.md)typu.  
   
-- IID_ICLRGCManager: Určuje, zda bude `ppObject` typu [ICLRGCManager](../../../../docs/framework/unmanaged-api/hosting/iclrgcmanager-interface.md).  
+- IID_ICLRGCManager: Určuje, zda `ppObject` bude [ICLRGCManager](iclrgcmanager-interface.md)typu.  
   
-- IID_ICLRHostProtectionManager: Určuje, zda bude `ppObject` typu [ICLRHostProtectionManager](../../../../docs/framework/unmanaged-api/hosting/iclrhostprotectionmanager-interface.md).  
+- IID_ICLRHostProtectionManager: Určuje, zda `ppObject` bude [ICLRHostProtectionManager](iclrhostprotectionmanager-interface.md)typu.  
   
-- IID_ICLROnEventManager: Určuje, zda bude `ppObject` typu [ICLROnEventManager](../../../../docs/framework/unmanaged-api/hosting/iclroneventmanager-interface.md).  
+- IID_ICLROnEventManager: Určuje, zda `ppObject` bude [ICLROnEventManager](iclroneventmanager-interface.md)typu.  
   
-- IID_ICLRPolicyManager: Určuje, zda bude `ppObject` typu [ICLRPolicyManager](../../../../docs/framework/unmanaged-api/hosting/iclrpolicymanager-interface.md).  
+- IID_ICLRPolicyManager: Určuje, zda `ppObject` bude [ICLRPolicyManager](iclrpolicymanager-interface.md)typu.  
   
-- IID_ICLRTaskManager: Určuje, zda bude `ppObject` typu [ICLRTaskManager](../../../../docs/framework/unmanaged-api/hosting/iclrtaskmanager-interface.md).  
+- IID_ICLRTaskManager: Určuje, zda `ppObject` bude [ICLRTaskManager](iclrtaskmanager-interface.md)typu.  
   
  `ppObject`  
  mimo Ukazatel rozhraní na požadovaného správce nebo hodnotu null, pokud byl požadován neplatný typ správce.  
@@ -64,19 +64,19 @@ HRESULT GetCLRManager (
 |HOST_E_TIMEOUT|Vypršel časový limit volání.|  
 |HOST_E_NOT_OWNER|Volající nevlastní zámek.|  
 |HOST_E_ABANDONED|Událost byla zrušena při čekání na blokované vlákno nebo vlákna.|  
-|E_FAIL|Došlo k neznámé chybě závažnosti. Poté, co metoda vrátí E_FAIL, CLR již není v rámci procesu použitelný. Následná volání metod hostování vrací HOST_E_CLRNOTAVAILABLE.|  
+|E_FAIL|Došlo k neznámé chybě závažnosti. Poté, co metoda vrátí E_FAIL, CLR již není v rámci procesu možné použít. Následná volání metod hostování vrací HOST_E_CLRNOTAVAILABLE.|  
 |E_NOINTERFACE|Typ rozhraní není podporován.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** MSCorEE. h  
   
  **Knihovna:** Zahrnuto jako prostředek v knihovně MSCorEE. dll  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [ICLRControl – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrcontrol-interface.md)
-- [IHostControl – rozhraní](../../../../docs/framework/unmanaged-api/hosting/ihostcontrol-interface.md)
+- [ICLRControl – rozhraní](iclrcontrol-interface.md)
+- [IHostControl – rozhraní](ihostcontrol-interface.md)

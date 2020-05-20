@@ -15,17 +15,17 @@ helpviewer_keywords:
 ms.assetid: a746a849-463c-44f5-a2f0-9e812ed8bcc3
 topic_type:
 - apiref
-ms.openlocfilehash: adc8ea16f0ab2bf383f8a63c49ba7d61c6bac113
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 0e1395229b67c4054df62935375a4136edf63078
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79176445"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83616486"
 ---
 # <a name="createdebugginginterfacefromversion-function"></a>CreateDebuggingInterfaceFromVersion – funkce
-Vytvoří objekt [ICorDebug](../../../../docs/framework/unmanaged-api/debugging/icordebug-interface.md) na základě informací o zadané verzi.  
+Vytvoří objekt [ICorDebug](../debugging/icordebug-interface.md) na základě zadaných informací o verzi.  
   
- Tato funkce je v rozhraní .NET Framework 4 zastaralá. Místo toho chcete získat rozhraní pro modul CLR (CLR) 2.0, použijte metodu [ICLRRuntimeInfo::GetInterface](../../../../docs/framework/unmanaged-api/hosting/iclrruntimeinfo-getinterface-method.md) a zadejte identifikátor třídy CLSID_CLRDebuggingLegacy a identifikátor rozhraní IID_ICorDebug. Chcete-li získat rozhraní pro CLR 4 nebo novější, zavolejte funkci [CLRCreateInstance](../../../../docs/framework/unmanaged-api/hosting/clrcreateinstance-function.md) a zadejte identifikátor třídy CLSID_CLRDebugging a identifikátor rozhraní IID_ICLRDebugging.  
+ Tato funkce je zastaralá v .NET Framework 4. Místo toho pro získání rozhraní pro modul CLR (Common Language Runtime) 2,0 použijte metodu [ICLRRuntimeInfo:: GetInterface](../../../../docs/framework/unmanaged-api/hosting/iclrruntimeinfo-getinterface-method.md) a určete identifikátor třídy CLSID_CLRDebuggingLegacy a identifikátor rozhraní IID_ICorDebug. Chcete-li získat rozhraní pro CLR 4 nebo novější, zavolejte funkci [CLRCreateInstance –](clrcreateinstance-function.md) a určete identifikátor třídy CLSID_CLRDebugging a identifikátor rozhraní IID_ICLRDebugging.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,34 +39,34 @@ HRESULT CreateDebuggingInterfaceFromVersion (
   
 ## <a name="parameters"></a>Parametry  
  `iDebuggerVersion`  
- [v] Verze, `ICorDebug` která je očekávána ladicí program. Viz [CorDebugInterfaceVersion](../../../../docs/framework/unmanaged-api/debugging/cordebuginterfaceversion-enumeration.md) výčet platné hodnoty.  
+ pro Verze nástroje `ICorDebug` , kterou očekává ladicí program. Platné hodnoty najdete ve výčtu [CorDebugInterfaceVersion –](../debugging/cordebuginterfaceversion-enumeration.md) .  
   
  `szDebuggeeVersion`  
- [v] Verze za běhu běžného jazyka přidružená k aplikaci nebo procesu, který má být laděn. Informace o načtení této hodnoty naleznete v metodě [GetVersionFromProcess](../../../../docs/framework/unmanaged-api/hosting/getversionfromprocess-function.md) nebo [GetRequestedRuntimeVersion.](../../../../docs/framework/unmanaged-api/hosting/getrequestedruntimeversion-function.md)  
+ pro Verze společného jazykového modulu runtime přidružená k aplikaci nebo procesu, který se má ladit. Informace o načtení této hodnoty naleznete v metodě [GetVersionFromProcess –](../../../../docs/framework/unmanaged-api/hosting/getversionfromprocess-function.md) nebo [GetRequestedRuntimeVersion –](getrequestedruntimeversion-function.md) .  
   
  `ppCordb`  
- [out] Umístění, které přijímá ukazatel `ICorDebug` na objekt.  
+ mimo Umístění, které přijímá ukazatel na `ICorDebug` objekt.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- Tato metoda vrátí standardní kódy chyb COM, jak jsou definovány v souboru WinError.h kromě následujících hodnot.  
+ Tato metoda vrací standardní chybové kódy modelu COM, jak jsou definovány v souboru WinError. h, kromě následujících hodnot.  
   
 |Návratový kód|Popis|  
 |-----------------|-----------------|  
 |S_OK|Metoda byla úspěšně dokončena.|  
-|E_invalidarg|`szDebuggeeVersion`nebo `ppCordb` je null nebo je řetězec verze nesprávný.|  
+|E_INVALIDARG|`szDebuggeeVersion`nebo `ppCordb` je null nebo je řetězec verze nesprávný.|  
   
 ## <a name="remarks"></a>Poznámky  
- Parametr `szDebuggeeVersion` se mapuje na odpovídající verzi souboru MSCorDbi.dll.  
+ `szDebuggeeVersion`Parametr se mapuje na odpovídající verzi mscordbi. dll.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Záhlaví:** MSCorEE.h  
+ **Hlavička:** MSCorEE. h  
   
- **Knihovna:** Soubor MSCorEE.dll  
+ **Knihovna:** MSCorEE. dll  
   
- **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také
 
-- [Zastaralé funkce hostování CLR](../../../../docs/framework/unmanaged-api/hosting/deprecated-clr-hosting-functions.md)
+- [Zastaralé funkce hostování CLR](deprecated-clr-hosting-functions.md)

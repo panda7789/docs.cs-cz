@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: edc8a02b-a0ac-46e3-80c1-fb8b5cef6341
 topic_type:
 - apiref
-ms.openlocfilehash: f6d033b6910120ac3074cf008391cf93e084fa2e
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: ba5c8cffcaff38b60be7031a98d4588ec6071d76
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74449080"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83615550"
 ---
 # <a name="isymunmanageddocumentwriter-interface"></a>ISymUnmanagedDocumentWriter – rozhraní
 Poskytuje metody pro zápis do dokumentu, na který odkazuje úložiště symbolů.  
@@ -28,12 +28,12 @@ Poskytuje metody pro zápis do dokumentu, na který odkazuje úložiště symbol
   
 |Metoda|Popis|  
 |------------|-----------------|  
-|[SetCheckSum – metoda](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanageddocumentwriter-setchecksum-method.md)|Nastaví informace kontrolního součtu.|  
-|[SetSource – metoda](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanageddocumentwriter-setsource-method.md)|Nastaví vložený zdroj pro dokument, který se zapisuje.|  
+|[SetCheckSum – metoda](isymunmanageddocumentwriter-setchecksum-method.md)|Nastaví informace kontrolního součtu.|  
+|[SetSource – metoda](isymunmanageddocumentwriter-setsource-method.md)|Nastaví vložený zdroj pro dokument, který se zapisuje.|  
   
 ## <a name="requirements"></a>Požadavky  
  **Hlavička:** CorSym. idl, CorSym. h  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Rozhraní pro úložiště symbolů diagnostiky](../../../../docs/framework/unmanaged-api/diagnostics/diagnostics-symbol-store-interfaces.md)
+- [Rozhraní úložiště symbolů diagnostiky](diagnostics-symbol-store-interfaces.md)

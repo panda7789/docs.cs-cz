@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: a9e00b4f-b6d0-4257-bd88-4fe9af97b8fa
 topic_type:
 - apiref
-ms.openlocfilehash: 81aef6beb9ee6d622519738d24fdd0a4d42a75b1
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 94d2ec12309249afbecdc4130f8fe20c927b0a9b
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73136553"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83616369"
 ---
 # <a name="ebindpolicylevels-enumeration"></a>EBindPolicyLevels – výčet
 Poskytuje příznaky pro určení úrovně, na které se má použít nebo upravit zásady sestavení.  
@@ -49,22 +49,22 @@ typedef enum {
 |`ePolicyLevelNone`|Neurčuje žádné příznaky na úrovni zásad.|  
 |`ePolicyLevelPublisher`|Určuje, že zásada by se měla použít na úrovni vydavatele.|  
 |`ePolicyLevelRetargetable`|Určuje, že zásada by se měla použít na proměnlivých úrovních.|  
-|`ePolicyPortability`|Určuje, že zásady by měly podporovat přenositelnost mezi implementacemi .NET Framework sestavení. Viz\<prvek konfiguračního souboru [> značka supportPortability](../../../../docs/framework/configure-apps/file-schema/runtime/supportportability-element.md) .|  
+|`ePolicyPortability`|Určuje, že zásady by měly podporovat přenositelnost mezi implementacemi .NET Framework sestavení. Viz prvek [ \< značka supportPortability>](../../configure-apps/file-schema/runtime/supportportability-element.md) konfiguračního souboru.|  
 |`ePolicyUnifiedToCLR`|Určuje, že zásady by měly být sjednoceny s modulem CLR (Common Language Runtime).|  
   
 ## <a name="remarks"></a>Poznámky  
- Tento výčet je předán metodám rozhraní [ICLRHostBindingPolicyManager](../../../../docs/framework/unmanaged-api/hosting/iclrhostbindingpolicymanager-interface.md) k určení změn v zásadách použití.  
+ Tento výčet je předán metodám rozhraní [ICLRHostBindingPolicyManager](iclrhostbindingpolicymanager-interface.md) k určení změn v zásadách použití.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** MSCorEE. h  
   
  **Knihovna:** MSCorEE. dll  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [ICLRAssemblyIdentityManager – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrassemblyidentitymanager-interface.md)
-- [Výčty pro hostování](../../../../docs/framework/unmanaged-api/hosting/hosting-enumerations.md)
+- [ICLRAssemblyIdentityManager – rozhraní](iclrassemblyidentitymanager-interface.md)
+- [Výčty hostování](hosting-enumerations.md)

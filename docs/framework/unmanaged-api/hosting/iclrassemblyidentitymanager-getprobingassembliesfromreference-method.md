@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: aec05744-e8d4-44c6-b4a8-e583229ac34e
 topic_type:
 - apiref
-ms.openlocfilehash: c8c3ca3716d97703051846f104be0f783136588a
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 98af9931e219c384b017d3c70fe21cdb6e052ac1
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73126719"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83615953"
 ---
 # <a name="iclrassemblyidentitymanagergetprobingassembliesfromreference-method"></a>ICLRAssemblyIdentityManager::GetProbingAssembliesFromReference – metoda
-Získá enumerátor [ICLRProbingAssemblyEnum –](../../../../docs/framework/unmanaged-api/hosting/iclrprobingassemblyenum-interface.md) pro identity sestavení odkazované sestavením se zadaným typem identity.  
+Získá enumerátor [ICLRProbingAssemblyEnum –](iclrprobingassemblyenum-interface.md) pro identity sestavení odkazované sestavením se zadaným typem identity.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -44,10 +44,10 @@ HRESULT GetProbingAssembliesFromReference (
  pro K dispozici pro budoucí rozšíření. CLR_ASSEMBLY_IDENTITY_FLAGS_DEFAULT je jediná hodnota, kterou aktuální verze modulu CLR (Common Language Runtime) podporuje.  
   
  `pwzReferenceIdentity`  
- pro Neprůhledná identita vazby sestavení, která se obvykle vrací voláním metody [ICLRAssemblyIdentityManager:: getbindingidentityfromfile –](../../../../docs/framework/unmanaged-api/hosting/iclrassemblyidentitymanager-getbindingidentityfromfile-method.md) nebo [ICLRAssemblyIdentityManager:: getbindingidentityfromstream –](../../../../docs/framework/unmanaged-api/hosting/iclrassemblyidentitymanager-getbindingidentityfromstream-method.md) .  
+ pro Neprůhledná identita vazby sestavení, která se obvykle vrací voláním metody [ICLRAssemblyIdentityManager:: getbindingidentityfromfile –](../../../../docs/framework/unmanaged-api/hosting/iclrassemblyidentitymanager-getbindingidentityfromfile-method.md) nebo [ICLRAssemblyIdentityManager:: getbindingidentityfromstream –](iclrassemblyidentitymanager-getbindingidentityfromstream-method.md) .  
   
  `ppProbingAssemblyEnum`  
- mimo Ukazatel rozhraní na enumerátor `ICLRProbingAssemblyEnum`, který obsahuje odkazy na sestavení, na která odkazuje sestavení identifikované `pwzReferenceIdentity`.  
+ mimo Ukazatel rozhraní na `ICLRProbingAssemblyEnum` enumerátor, který obsahuje odkazy na sestavení, na která odkazuje sestavení identifikované `pwzReferenceIdentity` .  
   
 ## <a name="return-value"></a>Návratová hodnota  
   
@@ -61,16 +61,16 @@ HRESULT GetProbingAssembliesFromReference (
 |E_FAIL|Došlo k neznámé chybě závažnosti. Pokud metoda vrátí E_FAIL, CLR již není v rámci procesu použitelný. Následná volání metod hostování vrací HOST_E_CLRNOTAVAILABLE.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** MSCorEE. h  
   
  **Knihovna:** Zahrnuto jako prostředek v knihovně MSCorEE. dll  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [ICLRAssemblyIdentityManager – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrassemblyidentitymanager-interface.md)
-- [ICLRAssemblyReferenceList – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrassemblyreferencelist-interface.md)
-- [ICLRProbingAssemblyEnum – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrprobingassemblyenum-interface.md)
+- [ICLRAssemblyIdentityManager – rozhraní](iclrassemblyidentitymanager-interface.md)
+- [ICLRAssemblyReferenceList – rozhraní](iclrassemblyreferencelist-interface.md)
+- [ICLRProbingAssemblyEnum – rozhraní](iclrprobingassemblyenum-interface.md)

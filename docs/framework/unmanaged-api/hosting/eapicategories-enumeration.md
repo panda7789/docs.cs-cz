@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 3c4a8a5a-8a46-4ac9-947f-4959bc9d6ac6
 topic_type:
 - apiref
-ms.openlocfilehash: 0fd9409a5157e1013365c94f01631f130a76f54b
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: d31b0190ef9a697fb27c849db080bec6c57618ae
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73131215"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83616382"
 ---
 # <a name="eapicategories-enumeration"></a>EApiCategories – výčet
 Popisuje kategorie schopností, které může hostitel zablokovat, aby běžel v částečně důvěryhodném kódu.  
@@ -46,7 +46,7 @@ typedef enum {
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`eAll`|Určuje, že všechny spravované třídy a členy, které jsou pokryté jinými `EApiCategories` poli, se mají zablokovat spuštění v částečně důvěryhodném kódu.|  
+|`eAll`|Určuje, že všechny spravované třídy a členy, které jsou pokryté ostatními `EApiCategories` poli, se mají zablokovat spouštění v částečně důvěryhodném kódu.|  
 |`eExternalProcessMgmt`|Určuje, že spravované třídy a členy, které umožňují vytvoření, manipulaci a zničení externích procesů, se mají zablokovat spouštění v částečně důvěryhodném kódu.|  
 |`eExternalThreading`|Určuje, že spravované třídy a členy, které umožňují vytvoření, manipulaci a zničení externích vláken, budou zablokovány spuštění v částečně důvěryhodném kódu.|  
 |`eMayLeakOnAbort`|Určuje, že spravované typy a členy, které by mohly způsobit nevracení paměti při přerušení, se zablokují pro spuštění v částečně důvěryhodném kódu.|  
@@ -59,20 +59,20 @@ typedef enum {
 |`eUI`|Určuje, že spravované třídy a členy, které povolují nebo vyžadují lidskou interakci, se zablokují, aby se spustily v částečně důvěryhodném kódu.|  
   
 ## <a name="remarks"></a>Poznámky  
- Metoda [ICLRHostProtectionManager:: SetProtectedCategories –](../../../../docs/framework/unmanaged-api/hosting/iclrhostprotectionmanager-setprotectedcategories-method.md) přebírá parametr typu `EApiCategories`.  
+ Metoda [ICLRHostProtectionManager:: SetProtectedCategories –](iclrhostprotectionmanager-setprotectedcategories-method.md) přebírá parametr typu `EApiCategories` .  
   
- Výčet `EApiCategories` a metoda `SetProtectedCategories` přímo souvisí se spravovanou třídou <xref:System.Security.Permissions.HostProtectionAttribute?displayProperty=nameWithType>. Spravovaná třída se používá s výčtem <xref:System.Security.Permissions.HostProtectionResource?displayProperty=nameWithType>, jehož hodnoty odpovídají přímo `EApiCategories` hodnotám, pro označení spravovaných typů a členů, které zpřístupňují funkce odpovídající kategoriím popsaným `EApiCategories`.  
+ `EApiCategories`Výčet a `SetProtectedCategories` Metoda přímo souvisí se spravovanou <xref:System.Security.Permissions.HostProtectionAttribute?displayProperty=nameWithType> třídou. Spravovaná třída se používá společně s <xref:System.Security.Permissions.HostProtectionResource?displayProperty=nameWithType> výčtem, jejichž hodnoty odpovídají přímo `EApiCategories` hodnotám, pro označení spravovaných typů a členů, které zpřístupňují funkce odpovídající kategoriím popsaným v `EApiCategories` .  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** MSCorEE. h  
   
  **Knihovna:** MSCorEE. dll  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [ICLRHostProtectionManager – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrhostprotectionmanager-interface.md)
-- [Výčty pro hostování](../../../../docs/framework/unmanaged-api/hosting/hosting-enumerations.md)
+- [ICLRHostProtectionManager – rozhraní](iclrhostprotectionmanager-interface.md)
+- [Výčty hostování](hosting-enumerations.md)

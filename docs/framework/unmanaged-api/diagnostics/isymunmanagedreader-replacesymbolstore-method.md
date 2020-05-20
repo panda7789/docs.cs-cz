@@ -15,18 +15,18 @@ helpviewer_keywords:
 ms.assetid: 43257761-8cb1-4eaf-8fb5-1f3980cb66cd
 topic_type:
 - apiref
-ms.openlocfilehash: 60c3537a80c39f758f46e6f2f0a5f2bcd27350b5
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: db2137146ded5200e05bbf88e23ae599f3eb7dec
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74445731"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83615446"
 ---
 # <a name="isymunmanagedreaderreplacesymbolstore-method"></a>ISymUnmanagedReader::ReplaceSymbolStore – metoda
-Nahradí existující úložiště symbolů rozdílovým úložištěm symbolů. Tato metoda je podobná metodě [UpdateSymbolStore –](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedreader-updatesymbolstore-method.md) , s tím rozdílem, že daný rozdíl funguje jako kompletní náhrada, nikoli jako aktualizace.  
+Nahradí existující úložiště symbolů rozdílovým úložištěm symbolů. Tato metoda je podobná metodě [UpdateSymbolStore –](isymunmanagedreader-updatesymbolstore-method.md) , s tím rozdílem, že daný rozdíl funguje jako kompletní náhrada, nikoli jako aktualizace.  
   
 > [!NOTE]
-> Je nutné zadat pouze jeden z parametrů `filename` nebo `pIStream`, nikoli obojí. Je-li zadán `filename`, bude úložiště symbolů Aktualizováno symboly v tomto souboru. Je-li zadán `pIStream`, bude úložiště Aktualizováno daty z <xref:System.Runtime.InteropServices.ComTypes.IStream>.  
+> Je nutné zadat pouze jeden z `filename` parametrů nebo `pIStream` , nikoli obojí. `filename`Je-li parametr zadán, bude úložiště symbolů Aktualizováno symboly v tomto souboru. `pIStream`Je-li parametr zadán, bude úložiště Aktualizováno daty z <xref:System.Runtime.InteropServices.ComTypes.IStream> .  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,7 +41,7 @@ HRESULT ReplaceSymbolStore (
  pro Název souboru, který obsahuje úložiště symbolů.  
   
  `pIStream`  
- pro Datový proud souboru, který se používá jako alternativa k parametru `filename`.  
+ pro Datový proud souboru, který se používá jako alternativa k `filename` parametru.  
   
 ## <a name="return-value"></a>Návratová hodnota  
  S_OK, pokud je metoda úspěšná; v opačném případě E_FAIL nebo nějaký jiný kód chyby.  
@@ -49,6 +49,6 @@ HRESULT ReplaceSymbolStore (
 ## <a name="requirements"></a>Požadavky  
  **Hlavička:** CorSym. idl, CorSym. h  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [ISymUnmanagedReader – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedreader-interface.md)
+- [ISymUnmanagedReader – rozhraní](isymunmanagedreader-interface.md)

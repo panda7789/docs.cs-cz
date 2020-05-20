@@ -15,18 +15,18 @@ helpviewer_keywords:
 ms.assetid: 1c8d9959-95b5-4131-be4a-556d97774014
 topic_type:
 - apiref
-ms.openlocfilehash: 645b64c8b536029663c350bdcde9a716a715aab3
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 0dce86a12ed3e93983ee62620fa0ddf7dfbc48f5
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79178086"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83616941"
 ---
 # <a name="iclrgcmanagersetgcstartuplimits-method"></a>ICLRGCManager::SetGCStartupLimits – metoda
-Nastaví velikost segmentu uvolňování paměti a maximální velikost generování systému uvolňování paměti 0.  
+Nastaví velikost segmentu uvolňování paměti a maximální velikost generace 0 systému uvolňování paměti.  
   
 > [!IMPORTANT]
-> Počínaje rozhraním .NET Framework 4.5 můžete nastavit velikost segmentu a `DWORD` maximální velikost generace 0 na hodnoty větší než pomocí metody [ICLRGCManager2::SetGCStartupLimitsEx.](../../../../docs/framework/unmanaged-api/hosting/iclrgcmanager2-setgcstartuplimitsex-method.md)  
+> Počínaje .NET Framework 4,5 můžete nastavit velikost segmentu a maximální velikost generace 0 na hodnoty větší než pomocí `DWORD` metody [ICLRGCManager2 –:: SetGCStartupLimitsEx –](iclrgcmanager2-setgcstartuplimitsex-method.md) .  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,41 +39,41 @@ HRESULT SetGCStartupLimits (
   
 ## <a name="parameters"></a>Parametry  
  `SegmentSize`  
- [v] Zadaná velikost segmentu uvolňování paměti.  
+ pro Zadaná velikost segmentu uvolňování paměti.  
   
- Minimální velikost segmentu je 4 MB. Segmenty lze zvýšit v krocích po 1 MB nebo větší.  
+ Minimální velikost segmentu je 4 MB. Segmenty lze zvýšit v přírůstcích po 1 MB nebo větší.  
   
  `MaxGen0Size`  
- [v] Zadaná maximální velikost pro generaci 0.  
+ pro Zadaná maximální velikost pro generaci 0.  
   
- Minimální velikost generace 0 je 64 KB.  
+ Minimální velikost 0. generace je 64 KB.  
   
 ## <a name="return-value"></a>Návratová hodnota  
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
-|S_OK|`SetGCStartupLimits`úspěšně vrácena.|  
-|HOST_E_CLRNOTAVAILABLE|Běžný jazyk runtime (CLR) nebyl načten do procesu nebo CLR je ve stavu, ve kterém nelze spustit spravovaný kód nebo úspěšně zpracovat volání.|  
-|HOST_E_TIMEOUT|Časový čas hovoru byl vypován.|  
+|S_OK|`SetGCStartupLimits`úspěšně vráceno.|  
+|HOST_E_CLRNOTAVAILABLE|Modul CLR (Common Language Runtime) nebyl načten do procesu, nebo je modul CLR ve stavu, ve kterém nemůže spustit spravovaný kód nebo úspěšně zpracovat volání.|  
+|HOST_E_TIMEOUT|Vypršel časový limit volání.|  
 |HOST_E_NOT_OWNER|Volající nevlastní zámek.|  
-|HOST_E_ABANDONED|Událost byla zrušena, zatímco na ní čekalo blokované vlákno nebo vlákno.|  
-|E_fail|Došlo k neznámému katastrofickému selhání. Po metoda vrátí E_FAIL CLR již není použitelný v rámci procesu. Následná volání metod hostování vrátí HOST_E_CLRNOTAVAILABLE.|  
+|HOST_E_ABANDONED|Událost byla zrušena při čekání na blokované vlákno nebo vlákna.|  
+|E_FAIL|Došlo k neznámé chybě závažnosti. Poté, co metoda vrátí E_FAIL, CLR již není v rámci procesu možné použít. Následná volání metod hostování vrací HOST_E_CLRNOTAVAILABLE.|  
   
 ## <a name="remarks"></a>Poznámky  
- Hodnoty, `SetGCStartupLimits` které nastaví lze zadat pouze jednou. Pozdější volání `SetGCStartupLimits` do jsou ignorovány.  
+ Hodnoty, které `SetGCStartupLimits` nastavíte, lze zadat pouze jednou. Pozdější volání do `SetGCStartupLimits` jsou ignorována.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Záhlaví:** MSCorEE.h  
+ **Hlavička:** MSCorEE. h  
   
- **Knihovna:** Zahrnuto jako prostředek v souboru MSCorEE.dll  
+ **Knihovna:** Zahrnuto jako prostředek v knihovně MSCorEE. dll  
   
- **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také
 
 - [Automatická správa paměti](../../../standard/automatic-memory-management.md)
-- [Kolekce paměti](../../../standard/garbage-collection/index.md)
-- [ICLRControl – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrcontrol-interface.md)
-- [ICLRGCManager – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrgcmanager-interface.md)
+- [Uvolňování paměti](../../../standard/garbage-collection/index.md)
+- [ICLRControl – rozhraní](iclrcontrol-interface.md)
+- [ICLRGCManager – rozhraní](iclrgcmanager-interface.md)

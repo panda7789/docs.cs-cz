@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: fe9849c1-c3fc-477b-a31f-e8619f5516f5
 topic_type:
 - apiref
-ms.openlocfilehash: f4c200ad23ff7a71298e84fda857912da53978a5
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 4f06dd7b85446eec986055418d2cf558b9b5bd7a
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73126687"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83615927"
 ---
 # <a name="iclrassemblyidentitymanagergetreferencedassembliesfromstream-method"></a>ICLRAssemblyIdentityManager::GetReferencedAssembliesFromStream – metoda
-Získá ukazatel na objekt [ICLRReferenceAssemblyEnum –](../../../../docs/framework/unmanaged-api/hosting/iclrreferenceassemblyenum-interface.md) , který obsahuje data identity sestavení pro sestavení, na která odkazuje sestavení v zadaném datovém proudu.  
+Získá ukazatel na objekt [ICLRReferenceAssemblyEnum –](iclrreferenceassemblyenum-interface.md) , který obsahuje data identity sestavení pro sestavení, na která odkazuje sestavení v zadaném datovém proudu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,16 +38,16 @@ HRESULT GetReferencedAssembliesFromStream (
   
 ## <a name="parameters"></a>Parametry  
  `pStream`  
- pro Ukazatel rozhraní na `IStream` obsahující sestavení, které se má vyhodnotit.  
+ pro Ukazatel rozhraní `IStream` obsahující sestavení, které má být vyhodnoceno.  
   
  `dwFlags`  
  pro K dispozici pro budoucí rozšíření. CLR_ASSEMBLY_IDENTITY_FLAGS_DEFAULT je jediná hodnota, kterou aktuální verze modulu CLR (Common Language Runtime) podporuje.  
   
  `pExcludeAssembliesList`  
- pro Ukazatel na objekt [ICLRAssemblyReferenceList](../../../../docs/framework/unmanaged-api/hosting/iclrassemblyreferencelist-interface.md) , který obsahuje data identity sestavení pro sestavení, která mají být vyloučena z `ppReferenceEnum`.  
+ pro Ukazatel na objekt [ICLRAssemblyReferenceList](iclrassemblyreferencelist-interface.md) , který obsahuje data identity sestavení pro sestavení, která mají být vyloučena z `ppReferenceEnum` .  
   
  `ppReferenceEnum`  
- mimo Ukazatel na adresu `ICLRReferenceAssemblyEnum` objektu, který obsahuje data identity sestavení pro sestavení, na která odkazuje sestavení v `pStream`, s výjimkou sestavení v `pExcludeAssembliesList`.  
+ mimo Ukazatel na adresu `ICLRReferenceAssemblyEnum` objektu, který obsahuje data identity sestavení pro sestavení, na která je odkazováno sestavením v `pStream` , s výjimkou sestavení v `pExcludeAssembliesList` .  
   
 ## <a name="return-value"></a>Návratová hodnota  
   
@@ -61,19 +61,19 @@ HRESULT GetReferencedAssembliesFromStream (
 |E_FAIL|Došlo k neznámé chybě závažnosti. Pokud metoda vrátí E_FAIL, CLR již není v rámci procesu použitelný. Následná volání metod hostování vrací HOST_E_CLRNOTAVAILABLE.|  
   
 ## <a name="remarks"></a>Poznámky  
- Volající může zvolit vyloučení sady známých odkazů na sestavení ze vráceného seznamu. Tato sada je definována `pExcludeAssembliesList`.  
+ Volající může zvolit vyloučení sady známých odkazů na sestavení ze vráceného seznamu. Tato sada je definována nástrojem `pExcludeAssembliesList` .  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** MSCorEE. h  
   
  **Knihovna:** Zahrnuto jako prostředek v knihovně MSCorEE. dll  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [ICLRAssemblyIdentityManager – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrassemblyidentitymanager-interface.md)
-- [ICLRAssemblyReferenceList – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrassemblyreferencelist-interface.md)
-- [ICLRReferenceAssemblyEnum – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrreferenceassemblyenum-interface.md)
+- [ICLRAssemblyIdentityManager – rozhraní](iclrassemblyidentitymanager-interface.md)
+- [ICLRAssemblyReferenceList – rozhraní](iclrassemblyreferencelist-interface.md)
+- [ICLRReferenceAssemblyEnum – rozhraní](iclrreferenceassemblyenum-interface.md)

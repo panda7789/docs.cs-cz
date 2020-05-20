@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: ea5b9d9f-ff06-4bd3-8de5-6435343aba59
 topic_type:
 - apiref
-ms.openlocfilehash: ff18f95bd6b4cfde5aaa4d3f6f68b58fd37c04b3
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 06c6f9b05d34ea98dde437393ded289cbab2f61d
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74449079"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83615524"
 ---
 # <a name="isymunmanageddocumentwritersetsource-method"></a>ISymUnmanagedDocumentWriter::SetSource – metoda
 Nastaví vložený zdroj pro dokument, který se zapisuje.  
@@ -35,7 +35,7 @@ HRESULT SetSource(
   
 ## <a name="parameters"></a>Parametry  
  `sourceSize`  
- pro `ULONG32`, který obsahuje velikost `source` vyrovnávací paměti.  
+ pro A `ULONG32` který obsahuje velikost `source` vyrovnávací paměti.  
   
  `source`  
  pro Vyrovnávací paměť, která ukládá vložený zdroj.  
@@ -46,6 +46,6 @@ HRESULT SetSource(
 ## <a name="requirements"></a>Požadavky  
  **Hlavička:** CorSym. idl, CorSym. h  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [ISymUnmanagedDocumentWriter – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanageddocumentwriter-interface.md)
+- [ISymUnmanagedDocumentWriter – rozhraní](isymunmanageddocumentwriter-interface.md)

@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 16dc49cb-2c60-4ac8-9c35-020e9afba3f8
 topic_type:
 - apiref
-ms.openlocfilehash: 4590d2734ea89bc1bc8a30db1c7ecac5effafd7b
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 637e1aed003e211654141ab397c9c0b4724753c2
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74429754"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83615485"
 ---
 # <a name="isymunmanagedreadergetvariables-method"></a>ISymUnmanagedReader::GetVariables – metoda
 Vrátí nemístní proměnnou, která je dána jejím nadřazeným a názvem.  
@@ -41,10 +41,10 @@ HRESULT GetVariables (
  pro Nadřazená proměnná proměnné.  
   
  `cVars`  
- pro Velikost pole `pVars`.  
+ pro Velikost `pVars` pole.  
   
  `pcVars`  
- mimo Ukazatel na proměnnou, která přijímá počet proměnných vrácených v `pVars`.  
+ mimo Ukazatel na proměnnou, která přijímá počet proměnných vrácených v `pVars` .  
   
  `pVars`  
  mimo Ukazatel na proměnnou, která přijímá proměnné.  
@@ -55,6 +55,6 @@ HRESULT GetVariables (
 ## <a name="requirements"></a>Požadavky  
  **Hlavička:** CorSym. idl, CorSym. h  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [ISymUnmanagedReader – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedreader-interface.md)
+- [ISymUnmanagedReader – rozhraní](isymunmanagedreader-interface.md)

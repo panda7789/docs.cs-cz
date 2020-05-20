@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 1588fe7b-c378-4f4b-9c4b-48647f1119cc
 topic_type:
 - apiref
-ms.openlocfilehash: 661eb758e1651901bb56810640a68f0de0b4e851
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 6b9fd62102056a8d5f859ac913f4786f04c1df7e
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73136482"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83617240"
 ---
 # <a name="getcorrequiredversion-function"></a>GetCORRequiredVersion – funkce
 Získá požadované číslo verze modulu CLR (Common Language Runtime).  
@@ -47,14 +47,14 @@ HRESULT GetCORRequiredVersion (
  mimo Počet bajtů vrácených ve vyrovnávací paměti.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** MSCorEE. h  
   
  **Knihovna:** MSCorEE. dll  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Zastaralé funkce pro hostování CLR](../../../../docs/framework/unmanaged-api/hosting/deprecated-clr-hosting-functions.md)
+- [Zastaralé funkce hostování CLR](deprecated-clr-hosting-functions.md)

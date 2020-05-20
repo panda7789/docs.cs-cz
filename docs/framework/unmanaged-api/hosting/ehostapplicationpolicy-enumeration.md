@@ -14,15 +14,15 @@ helpviewer_keywords:
 ms.assetid: 0be52d90-1976-4bf7-9717-908833a8a78d
 topic_type:
 - apiref
-ms.openlocfilehash: 6903092984bd8bb387a65e1d100fb09f3eb0b0a5
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 4ac1bcfa4c9dabfa4f6ff3ef1184c03815de3cf1
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73136542"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83616252"
 ---
 # <a name="ehostapplicationpolicy-enumeration"></a>EHostApplicationPolicy – výčet
-Označuje způsob úpravy objektu rozhraní [IHostAssemblyManager](../../../../docs/framework/unmanaged-api/hosting/ihostassemblymanager-interface.md) . Tento výčet je zastaralý.  
+Označuje způsob úpravy objektu rozhraní [IHostAssemblyManager](ihostassemblymanager-interface.md) . Tento výčet je zastaralý.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -33,14 +33,14 @@ typedef enum _HostApplicationPolicy {
 ```  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** MSCorEE. h  
   
  **Knihovna:** MSCorEE. dll  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Výčty pro hostování](../../../../docs/framework/unmanaged-api/hosting/hosting-enumerations.md)
+- [Výčty hostování](hosting-enumerations.md)

@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 8f0dd2fe-7df7-464e-91f4-5518c586bb5f
 topic_type:
 - apiref
-ms.openlocfilehash: ca34d1d84d6f9960d021c35566f8412df321464d
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 07d2de5d12fd769cb5cce243d9e721bb6fc185a7
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74429746"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83615472"
 ---
 # <a name="isymunmanagedreaderinitialize-method"></a>ISymUnmanagedReader::Initialize – metoda
 Inicializuje čtečku symbolů pomocí rozhraní pro import metadat, ke kterému bude tento čtenář přidružen, společně s názvem souboru modulu.  
@@ -43,7 +43,7 @@ HRESULT Initialize (
  pro Rozhraní pro import metadat, ke kterému se bude tento čtenář přidružit.  
   
  `filename`  
- pro Název souboru modulu. Místo toho můžete použít parametr `pIStream`.  
+ pro Název souboru modulu. Místo toho můžete použít `pIStream` parametr.  
   
  `searchPath`  
  pro Cesta, která se má vyhledat Tento parametr je volitelný.  
@@ -55,11 +55,11 @@ HRESULT Initialize (
  S_OK, pokud je metoda úspěšná; v opačném případě E_FAIL nebo nějaký jiný kód chyby.  
   
 ## <a name="remarks"></a>Poznámky  
- Je potřeba zadat jenom jeden z `filename` nebo parametry `pIStream`, ne oba. Parametr `searchPath` je nepovinný.  
+ Je nutné zadat pouze jeden z `filename` `pIStream` parametrů nebo, nikoli obojí. `searchPath`Parametr je nepovinný.  
   
 ## <a name="requirements"></a>Požadavky  
  **Hlavička:** CorSym. idl, CorSym. h  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [ISymUnmanagedReader – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedreader-interface.md)
+- [ISymUnmanagedReader – rozhraní](isymunmanagedreader-interface.md)

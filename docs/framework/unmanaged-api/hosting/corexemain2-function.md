@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 72ea68b4-689f-4733-9416-9664b75e8892
 topic_type:
 - apiref
-ms.openlocfilehash: cc5324683daa9a02a6a89b2a3fb57ee9fd5dbe72
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 8202fe4ec3ae6ef96440f203c5aea6db84744a72
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73136952"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83616577"
 ---
 # <a name="_corexemain2-function"></a>_CorExeMain2 – funkce
 Provede vstupní bod v zadaném kódu mapované paměti. Tato funkce je volána zavaděčem operačního systému.  
@@ -41,7 +41,7 @@ __int32 STDMETHODCALLTYPE _CorExeMain2 (
  pro Ukazatel na kód mapované paměti.  
   
  `cUnmappedPE`  
- pro Počet elementů, které `pUnmappedPE` může uchovávat.  
+ pro Počet elementů `pUnmappedPE` může obsahovat.  
   
  `pImageNameIn`  
  pro Ukazatel na název spustitelného obrázku.  
@@ -53,14 +53,14 @@ __int32 STDMETHODCALLTYPE _CorExeMain2 (
  pro Parametry příkazového řádku, pokud existují.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** Cor. h  
   
  **Knihovna:** Zahrnuto jako prostředek v knihovně MsCorEE. dll  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Globální statické funkce pro metadata](../../../../docs/framework/unmanaged-api/metadata/metadata-global-static-functions.md)
+- [Globální statické funkce pro metadata](../metadata/metadata-global-static-functions.md)

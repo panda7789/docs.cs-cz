@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: d231044e-2b53-4836-93f9-8117ff0e5c3a
 topic_type:
 - apiref
-ms.openlocfilehash: 302db0d029b3811d151473323a7a60bd16a00ec1
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 63b07dda2293d3e05bd3c8fcdc45f20a498ea54c
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73131236"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83616304"
 ---
 # <a name="eclrunhandledexception-enumeration"></a>EClrUnhandledException – výčet
 Popisuje dostupné možnosti pro správu výjimek, které jsou v uživatelském kódu neošetřené.  
@@ -41,22 +41,22 @@ typedef enum {
 |`eHostDeterminedPolicy`|Určuje, že modul CLR (Common Language Runtime) ignoruje neošetřené výjimky a umožňuje hostiteli určit jakoukoli další akci.|  
   
 ## <a name="remarks"></a>Poznámky  
- Chcete-li určit, že se CLR chová jako starší verze, použijte člena `eHostDeterminedPolicy`.  
+ Chcete-li určit, že se CLR chová jako starší verze, použijte `eHostDeterminedPolicy` člena.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** MSCorEE. h  
   
  **Knihovna:** MSCorEE. dll  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [EClrFailure – výčet](../../../../docs/framework/unmanaged-api/hosting/eclrfailure-enumeration.md)
-- [EClrOperation – výčet](../../../../docs/framework/unmanaged-api/hosting/eclroperation-enumeration.md)
-- [ICLRPolicyManager – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrpolicymanager-interface.md)
-- [SetUnhandledExceptionPolicy – metoda](../../../../docs/framework/unmanaged-api/hosting/iclrpolicymanager-setunhandledexceptionpolicy-method.md)
-- [IHostPolicyManager – rozhraní](../../../../docs/framework/unmanaged-api/hosting/ihostpolicymanager-interface.md)
-- [Výčty pro hostování](../../../../docs/framework/unmanaged-api/hosting/hosting-enumerations.md)
+- [EClrFailure – výčet](eclrfailure-enumeration.md)
+- [EClrOperation – výčet](eclroperation-enumeration.md)
+- [ICLRPolicyManager – rozhraní](iclrpolicymanager-interface.md)
+- [SetUnhandledExceptionPolicy – metoda](iclrpolicymanager-setunhandledexceptionpolicy-method.md)
+- [IHostPolicyManager – rozhraní](ihostpolicymanager-interface.md)
+- [Výčty hostování](hosting-enumerations.md)

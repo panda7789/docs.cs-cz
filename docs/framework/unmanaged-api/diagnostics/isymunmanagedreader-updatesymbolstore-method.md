@@ -15,18 +15,18 @@ helpviewer_keywords:
 ms.assetid: 4a17d723-86b9-4f27-bd0d-b70c3259011c
 topic_type:
 - apiref
-ms.openlocfilehash: e052d9b7b2abd57b176dfe3b00afac626d422c58
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: ccc787aa1c820a486d9a513055c9c9834b90bd1a
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74446454"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83615433"
 ---
 # <a name="isymunmanagedreaderupdatesymbolstore-method"></a>ISymUnmanagedReader::UpdateSymbolStore – metoda
 Aktualizuje existující úložiště symbolů pomocí rozdílového úložiště symbolů. Tato metoda se používá ve scénářích pro úpravy a pokračování k aktualizaci úložiště symbolů tak, aby odpovídaly rozdílům v původním přenositelném spustitelném souboru (PE).  
   
 > [!NOTE]
-> Je nutné zadat pouze jeden z parametrů `filename` nebo `pIStream`, nikoli obojí. Je-li zadán `filename`, bude úložiště symbolů Aktualizováno symboly v tomto souboru. Je-li zadán `pIStream`, bude úložiště Aktualizováno daty z <xref:System.Runtime.InteropServices.ComTypes.IStream>.  
+> Je nutné zadat pouze jeden z `filename` parametrů nebo `pIStream` , nikoli obojí. `filename`Je-li parametr zadán, bude úložiště symbolů Aktualizováno symboly v tomto souboru. `pIStream`Je-li parametr zadán, bude úložiště Aktualizováno daty z <xref:System.Runtime.InteropServices.ComTypes.IStream> .  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,7 +41,7 @@ HRESULT UpdateSymbolStore (
  pro Název souboru, který obsahuje úložiště symbolů.  
   
  `pIStream`  
- pro Datový proud souboru, který se používá jako alternativa k parametru `filename`.  
+ pro Datový proud souboru, který se používá jako alternativa k `filename` parametru.  
   
 ## <a name="return-value"></a>Návratová hodnota  
  S_OK, pokud je metoda úspěšná; v opačném případě E_FAIL nebo nějaký jiný kód chyby.  
@@ -49,6 +49,6 @@ HRESULT UpdateSymbolStore (
 ## <a name="requirements"></a>Požadavky  
  **Hlavička:** CorSym. idl, CorSym. h  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [ISymUnmanagedReader – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedreader-interface.md)
+- [ISymUnmanagedReader – rozhraní](isymunmanagedreader-interface.md)

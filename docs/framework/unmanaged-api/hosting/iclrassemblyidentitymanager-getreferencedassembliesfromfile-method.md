@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: eed63d31-d977-4c7d-9443-f9d37a2a7d81
 topic_type:
 - apiref
-ms.openlocfilehash: 65dc330e88cb2457cc34f9994313373ab1ab84aa
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 3c4f673d88594e86004c6d51a4d58a0ac4642875
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73126705"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83615940"
 ---
 # <a name="iclrassemblyidentitymanagergetreferencedassembliesfromfile-method"></a>ICLRAssemblyIdentityManager::GetReferencedAssembliesFromFile – metoda
-Získá instanci [ICLRReferenceAssemblyEnum –](../../../../docs/framework/unmanaged-api/hosting/iclrreferenceassemblyenum-interface.md) , která obsahuje seznam sestavení, na která odkazuje sestavení v zadané cestě k souboru.  
+Získá instanci [ICLRReferenceAssemblyEnum –](iclrreferenceassemblyenum-interface.md) , která obsahuje seznam sestavení, na která odkazuje sestavení v zadané cestě k souboru.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -44,10 +44,10 @@ HRESULT GetReferencedAssembliesFromFile (
  pro K dispozici pro budoucí rozšíření. CLR_ASSEMBLY_IDENTITY_FLAGS_DEFAULT je jediná hodnota, kterou aktuální verze modulu CLR (Common Language Runtime) podporuje.  
   
  `pExcludeAssembliesList`  
- pro Ukazatel na objekt [ICLRAssemblyReferenceList](../../../../docs/framework/unmanaged-api/hosting/iclrassemblyreferencelist-interface.md) , který představuje sestavení, která by měla být vyloučena z `ppReferenceEnum`.  
+ pro Ukazatel na objekt [ICLRAssemblyReferenceList](iclrassemblyreferencelist-interface.md) , který představuje sestavení, která by měla být vyloučena z `ppReferenceEnum` .  
   
  `ppReferenceEnum`  
- mimo Ukazatel na adresu `ICLRReferenceAssemblyEnum` objektu, který obsahuje data identity sestavení pro sestavení, na která je odkazováno sestavením v `pwzFilePath`, s výjimkou sestavení reprezentovaných `pExcludeAssembliesList`.  
+ mimo Ukazatel na adresu `ICLRReferenceAssemblyEnum` objektu, který obsahuje data identity sestavení pro sestavení, na která je odkazováno sestavením na `pwzFilePath` , s výjimkou sestavení reprezentovaných `pExcludeAssembliesList` .  
   
 ## <a name="return-value"></a>Návratová hodnota  
   
@@ -61,19 +61,19 @@ HRESULT GetReferencedAssembliesFromFile (
 |E_FAIL|Došlo k neznámé chybě závažnosti. Pokud metoda vrátí E_FAIL, CLR již není v rámci procesu použitelný. Následná volání metod hostování vrací HOST_E_CLRNOTAVAILABLE.|  
   
 ## <a name="remarks"></a>Poznámky  
- Volající může zvolit vyloučení sady známých odkazů na sestavení ze vráceného seznamu. Tato sada je definována parametrem `pExcludeAssembliesList`.  
+ Volající může zvolit vyloučení sady známých odkazů na sestavení ze vráceného seznamu. Tato sada je definována `pExcludeAssembliesList` parametrem.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** MSCorEE. h  
   
  **Knihovna:** Zahrnuto jako prostředek v knihovně MSCorEE. dll  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [ICLRAssemblyIdentityManager – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrassemblyidentitymanager-interface.md)
-- [ICLRAssemblyReferenceList – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrassemblyreferencelist-interface.md)
-- [ICLRReferenceAssemblyEnum – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrreferenceassemblyenum-interface.md)
+- [ICLRAssemblyIdentityManager – rozhraní](iclrassemblyidentitymanager-interface.md)
+- [ICLRAssemblyReferenceList – rozhraní](iclrassemblyreferencelist-interface.md)
+- [ICLRReferenceAssemblyEnum – rozhraní](iclrreferenceassemblyenum-interface.md)

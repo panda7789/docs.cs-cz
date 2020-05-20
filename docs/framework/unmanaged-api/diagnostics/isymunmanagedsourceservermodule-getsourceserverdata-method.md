@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: 20bdf8ff-2d15-4c64-8950-6888f642d6c0
 topic_type:
 - apiref
-ms.openlocfilehash: 6904271ed90cf733b9221178927bc680d76b58a6
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 9a3a6c07a9cace0ac9834cdb05925a301285204c
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79176575"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83615316"
 ---
 # <a name="isymunmanagedsourceservermodulegetsourceserverdata-method"></a>ISymUnmanagedSourceServerModule::GetSourceServerData – metoda
-Vrátí data zdrojového serveru pro modul. Volající musí uvolnit prostředky `CoTaskMemFree`pomocí .  
+Vrátí data zdrojového serveru pro modul. Volající musí uvolnit prostředky pomocí `CoTaskMemFree` .  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -35,17 +35,17 @@ HRESULT GetSourceServerData(
   
 ## <a name="parameters"></a>Parametry  
  `pDataByteCount`  
- [out] Ukazatel na `ULONG32` který přijímá velikost dat zdrojového serveru v bajtech.  
+ mimo Ukazatel na `ULONG32` , který obdrží velikost dat zdrojového serveru v bajtech.  
   
  `ppData`  
- [out] Ukazatel na vrácenou `pDataByteCount` hodnotu.  
+ mimo Ukazatel na vrácenou `pDataByteCount` hodnotu.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- S_OK pokud je metoda úspěšná; v opačném případě E_FAIL nebo jiný kód chyby.  
+ S_OK, pokud je metoda úspěšná; v opačném případě E_FAIL nebo nějaký jiný kód chyby.  
   
 ## <a name="requirements"></a>Požadavky  
- **Záhlaví:** CorSym.idl, CorSym.h  
+ **Hlavička:** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Viz také
 
-- [ISymUnmanagedSourceServerModule – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedsourceservermodule-interface.md)
+- [ISymUnmanagedSourceServerModule – rozhraní](isymunmanagedsourceservermodule-interface.md)

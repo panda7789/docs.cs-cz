@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 17c45f15-8c44-44da-b070-f902077b36e4
 topic_type:
 - apiref
-ms.openlocfilehash: bf932b63973f93c56883f099ddaadd9d1519f337
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 0acd31d85504688427cace0222a657885035c537
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74446326"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83615381"
 ---
 # <a name="isymunmanagedscopegetlocals-method"></a>ISymUnmanagedScope::GetLocals – metoda
 Získá místní proměnné definované v rámci tohoto oboru.  
@@ -37,10 +37,10 @@ HRESULT GetLocals(
   
 ## <a name="parameters"></a>Parametry  
  `cLocals`  
- pro `ULONG32`, která určuje velikost `locals` pole.  
+ pro `ULONG32`Který označuje velikost `locals` pole.  
   
  `pcLocals`  
- mimo Ukazatel na `ULONG32`, který přijímá velikost vyrovnávací paměti vyžadované k uložení místních proměnných.  
+ mimo Ukazatel na `ULONG32` , který přijímá velikost vyrovnávací paměti vyžadované k uložení místních proměnných.  
   
  `locals`  
  mimo Pole, které přijímá místní proměnné.  
@@ -51,6 +51,6 @@ HRESULT GetLocals(
 ## <a name="requirements"></a>Požadavky  
  **Hlavička:** CorSym. idl, CorSym. h  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [ISymUnmanagedScope – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedscope-interface.md)
+- [ISymUnmanagedScope – rozhraní](isymunmanagedscope-interface.md)

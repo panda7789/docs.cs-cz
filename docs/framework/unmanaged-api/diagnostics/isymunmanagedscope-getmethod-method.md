@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: a61866ee-221a-45b9-a1b7-395825b77872
 topic_type:
 - apiref
-ms.openlocfilehash: 348a8cebe0fd746f3ae490484ffcca2fcb77684b
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: cdbffe71540b51ff539a45861546efd761761892
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74446311"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83615368"
 ---
 # <a name="isymunmanagedscopegetmethod-method"></a>ISymUnmanagedScope::GetMethod – metoda
 Získá metodu, která obsahuje tento obor.  
@@ -34,7 +34,7 @@ HRESULT GetMethod(
   
 ## <a name="parameters"></a>Parametry  
  `pRetVal`  
- mimo Ukazatel na vrácené rozhraní [ISymUnmanagedMethod](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedmethod-interface.md) .  
+ mimo Ukazatel na vrácené rozhraní [ISymUnmanagedMethod](isymunmanagedmethod-interface.md) .  
   
 ## <a name="return-value"></a>Návratová hodnota  
  S_OK, pokud je metoda úspěšná; v opačném případě E_FAIL nebo nějaký jiný kód chyby.  
@@ -42,6 +42,6 @@ HRESULT GetMethod(
 ## <a name="requirements"></a>Požadavky  
  **Hlavička:** CorSym. idl, CorSym. h  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [ISymUnmanagedScope – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedscope-interface.md)
+- [ISymUnmanagedScope – rozhraní](isymunmanagedscope-interface.md)

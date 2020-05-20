@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: b39b3320-fac7-41f1-9a03-ab6fb0cd89c7
 topic_type:
 - apiref
-ms.openlocfilehash: 057794fe524a0ee01f6f090ca7e11a4a4b523047
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 9b4c1187945b4c243375a3096c3a8a3b22599aef
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73124932"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83616278"
 ---
 # <a name="ecustomdumpflavor-enumeration"></a>ECustomDumpFlavor – výčet
 Obsahuje hodnoty, které určují, které položky se mají zahrnout do vlastní podmnožiny výpisu haldy při vytváření sestav chyb.  
@@ -37,23 +37,23 @@ typedef enum {
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`DUMP_FLAVOR_Mini`|Určuje, že by se měl spustit výpis vlastní haldy jako s minimálním výpisem a zahrnout další data určená všemi instancemi [CustomDumpItem –](../../../../docs/framework/unmanaged-api/hosting/customdumpitem-structure.md) předanými do stejné metody.|  
+|`DUMP_FLAVOR_Mini`|Určuje, že by se měl spustit výpis vlastní haldy jako s minimálním výpisem a zahrnout další data určená všemi instancemi [CustomDumpItem –](customdumpitem-structure.md) předanými do stejné metody.|  
 |`DUMP_FLAVOR_NonHeapCLRState`|Určuje, že by měl být ve vlastním výpisu haldy shromažďována všechna data běhového stavu, která nebyla dynamicky přidělena.|  
   
 ## <a name="remarks"></a>Poznámky  
- Do metody [ICLRErrorReportingManager:: BeginCustomDump –](../../../../docs/framework/unmanaged-api/hosting/iclrerrorreportingmanager-begincustomdump-method.md) se předává parametr typu `ECustomDumpFlavor`.  
+ Parametr typu `ECustomDumpFlavor` je předán metodě [ICLRErrorReportingManager:: BeginCustomDump –](iclrerrorreportingmanager-begincustomdump-method.md) .  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** MSCorEE. h  
   
  **Knihovna:** MSCorEE. dll  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [ECustomDumpItemKind – výčet](../../../../docs/framework/unmanaged-api/hosting/ecustomdumpitemkind-enumeration.md)
-- [ICLRErrorReportingManager – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrerrorreportingmanager-interface.md)
-- [Výčty pro hostování](../../../../docs/framework/unmanaged-api/hosting/hosting-enumerations.md)
+- [ECustomDumpItemKind – výčet](ecustomdumpitemkind-enumeration.md)
+- [ICLRErrorReportingManager – rozhraní](iclrerrorreportingmanager-interface.md)
+- [Výčty hostování](hosting-enumerations.md)

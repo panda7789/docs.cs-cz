@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: f241b620-9ec5-42fd-92ef-3b22329db72a
 topic_type:
 - apiref
-ms.openlocfilehash: 45268929b6e9ad6ac6423aa0fa2b7b5022bc9179
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: f558d209d13fae93bd3a6f5e0e653afb91371a6a
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79176614"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83615329"
 ---
 # <a name="isymunmanagedscope2getconstants-method"></a>ISymUnmanagedScope2::GetConstants – metoda
 Získá místní konstanty definované v rámci tohoto oboru.  
@@ -38,20 +38,20 @@ HRESULT GetConstants(
   
 ## <a name="parameters"></a>Parametry  
  `cConstants`  
- [v] Délka vyrovnávací paměti, `pcConstants` na kterou parametr odkazuje.  
+ pro Délka vyrovnávací paměti, `pcConstants` na kterou parametr odkazuje.  
   
  `pcConstants`  
- [out] Ukazatel na `ULONG32` který obdrží velikost, ve znacích vyrovnávací paměti potřebné k obsahovat konstanty.  
+ mimo Ukazatel na `ULONG32` , který přijímá velikost vyrovnávací paměti, která je nutná k zahrnutí konstant.  
   
  `constants`  
- [out] Vyrovnávací paměť, která ukládá konstanty.  
+ mimo Vyrovnávací paměť, do které jsou uloženy konstanty.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- S_OK pokud je metoda úspěšná; v opačném případě E_FAIL nebo jiný kód chyby.  
+ S_OK, pokud je metoda úspěšná; v opačném případě E_FAIL nebo nějaký jiný kód chyby.  
   
 ## <a name="requirements"></a>Požadavky  
- **Záhlaví:** CorSym.idl, CorSym.h  
+ **Hlavička:** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Viz také
 
-- [ISymUnmanagedScope2 – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedscope2-interface.md)
+- [ISymUnmanagedScope2 – rozhraní](isymunmanagedscope2-interface.md)

@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 3002f051-7aaa-4669-9314-cbc65b3a1772
 topic_type:
 - apiref
-ms.openlocfilehash: 5389082f60a97d4da97bfce1c121a9e983b9ae79
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 631da8936873b57040f1c60e8db6867ea2eed2c8
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73126844"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83617045"
 ---
 # <a name="icatalogservicesautodone-method"></a>ICatalogServices::Autodone – metoda
 Tato metoda podporuje infrastrukturu .NET Framework a není určena pro použití přímo v kódu.  
@@ -31,6 +31,6 @@ Tato metoda podporuje infrastrukturu .NET Framework a není určena pro použit�
 HRESULT Autodone ( );  
 ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Rozhraní pro hostování](../../../../docs/framework/unmanaged-api/hosting/hosting-interfaces.md)
+- [Rozhraní pro hostování](hosting-interfaces.md)

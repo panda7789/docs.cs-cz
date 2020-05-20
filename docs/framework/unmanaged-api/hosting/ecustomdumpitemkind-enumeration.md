@@ -14,15 +14,15 @@ helpviewer_keywords:
 ms.assetid: 7105a6c8-6e4e-48de-ac3d-74ac75e5de2e
 topic_type:
 - apiref
-ms.openlocfilehash: ebbbdf02837cb1257ec4756c9d67f5a1ac0136fe
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 12a1142759532890f541a7c81006f8b3aed4d299
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73131181"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83616265"
 ---
 # <a name="ecustomdumpitemkind-enumeration"></a>ECustomDumpItemKind – výčet
-Vyhrazeno pro budoucí rozšíření struktury [CustomDumpItem –](../../../../docs/framework/unmanaged-api/hosting/customdumpitem-structure.md) .  
+Vyhrazeno pro budoucí rozšíření struktury [CustomDumpItem –](customdumpitem-structure.md) .  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,15 +39,15 @@ typedef enum {
 |`DUMP_ITEM_None`|Vyhrazeno pro budoucí použití.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** MSCorEE. h  
   
  **Knihovna:** MSCorEE. dll  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [ICLRErrorReportingManager – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrerrorreportingmanager-interface.md)
-- [Výčty pro hostování](../../../../docs/framework/unmanaged-api/hosting/hosting-enumerations.md)
+- [ICLRErrorReportingManager – rozhraní](iclrerrorreportingmanager-interface.md)
+- [Výčty hostování](hosting-enumerations.md)

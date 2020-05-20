@@ -14,15 +14,15 @@ helpviewer_keywords:
 ms.assetid: 01f9a59b-7679-4d42-9ced-4a8981625c3d
 topic_type:
 - apiref
-ms.openlocfilehash: 64e0c466edcd8863244e6ed184c18422b5f66875
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 88e81779fc9c20c506f3b0aa11ac2da3958dfe86
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79178270"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83616694"
 ---
 # <a name="cor_gc_thread_stats-structure"></a>COR_GC_THREAD_STATS – struktura
-Obsahuje statistiky podle vlákna týkající se uvolňování paměti.  
+Obsahuje statistiku jednotlivých vláken, která souvisí s uvolňováním paměti.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,22 +37,22 @@ typedef struct _COR_GC_THREAD_STATS {
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`PerThreadAllocation`|Počet bajtů paměti přidělené ve vlákně, která `COR_GC_THREAD_STATS` je přidružena k aktuální instanci. Toto číslo je vymazána na nulu pokaždé, když dojde k uvolnění paměti generace nula.|  
-|`Flags`|Počet bajtů povýšen na vyšší generace na poslední uvolnění paměti.|  
+|`PerThreadAllocation`|Počet bajtů paměti přidělených vláknu, které je přidruženo k aktuální `COR_GC_THREAD_STATS` instanci. U tohoto čísla se vymaže nula pokaždé, když dojde k uvolnění paměti bez generace.|  
+|`Flags`|Počet bajtů povýšených na vyšší generaci při nejnovějším uvolňování paměti.|  
   
 ## <a name="remarks"></a>Poznámky  
- [ICLRTask::GetMemStats](../../../../docs/framework/unmanaged-api/hosting/iclrtask-getmemstats-method.md) přebírá výstupní parametr `COR_GC_THREAD_STATS`typu .  
+ [ICLRTask:: getmemstats –](iclrtask-getmemstats-method.md) přebírá výstupní parametr typu `COR_GC_THREAD_STATS` .  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Záhlaví:** GCHost.idl  
+ **Hlavička:** GCHost. idl  
   
- **Knihovna:** Zahrnuto jako prostředek v souboru MSCorEE.dll  
+ **Knihovna:** Zahrnuto jako prostředek v knihovně MSCorEE. dll  
   
- **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také
 
-- [Struktury pro hostování](../../../../docs/framework/unmanaged-api/hosting/hosting-structures.md)
-- [IHostTask – rozhraní](../../../../docs/framework/unmanaged-api/hosting/ihosttask-interface.md)
+- [Struktury pro hostování](hosting-structures.md)
+- [IHostTask – rozhraní](ihosttask-interface.md)

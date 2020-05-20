@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 954bd386-2076-4d00-9d46-38c728aa9cab
 topic_type:
 - apiref
-ms.openlocfilehash: 288620eba867160e13a5ebee501a9afcf5623cce
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: d388f366671f50c3dcb3bd9d387300dd1bbb168f
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73126653"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83615901"
 ---
 # <a name="iclrassemblyidentitymanagerisstronglynamed-method"></a>ICLRAssemblyIdentityManager::IsStronglyNamed – metoda
 Získá hodnotu, která označuje, zda je zadané sestavení silně pojmenované.  
@@ -39,7 +39,7 @@ RESULT IsStronglyNamed (
  pro Neprůhledná data identity kanonického sestavení pro sestavení, která mají být vyhodnocena.  
   
  `pbIsStronglyNamed`  
- [out] `true`, pokud je sestavení odkazované parametrem `pwzAssemblyIdentity` silně pojmenované; v opačném případě `false`.  
+ [out] `true` Pokud je sestavení odkazované `pwzAssemblyIdentity` parametrem silně pojmenované, v opačném případě `false` .  
   
 ## <a name="return-value"></a>Návratová hodnota  
   
@@ -53,14 +53,14 @@ RESULT IsStronglyNamed (
 |E_FAIL|Došlo k neznámé chybě závažnosti. Pokud metoda vrátí E_FAIL, CLR již není v rámci procesu použitelný. Následná volání metod hostování vrací HOST_E_CLRNOTAVAILABLE.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** MSCorEE. h  
   
  **Knihovna:** Zahrnuto jako prostředek v knihovně MSCorEE. dll  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [ICLRAssemblyIdentityManager – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrassemblyidentitymanager-interface.md)
+- [ICLRAssemblyIdentityManager – rozhraní](iclrassemblyidentitymanager-interface.md)

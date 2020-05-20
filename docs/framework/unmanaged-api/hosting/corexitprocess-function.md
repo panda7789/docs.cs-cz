@@ -18,17 +18,17 @@ helpviewer_keywords:
 ms.assetid: a5cab4c6-990e-47f3-8798-cf422b791015
 topic_type:
 - apiref
-ms.openlocfilehash: 44578595b3cb790570c5359e714bd39c109cf1f8
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: a60805e1fd78cb14835957a7afc14fe279cb20fb
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79176458"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83616564"
 ---
 # <a name="corexitprocess-function"></a>CorExitProcess – funkce
 Ukončí aktuální nespravovaný proces.  
   
- Tato funkce byla v rozhraní .NET Framework 4 zastaralá. Místo toho použijte metodu [ICLRMetaHost::ExitProcess.](../../../../docs/framework/unmanaged-api/hosting/iclrmetahost-exitprocess-method.md)  
+ Tato funkce se už nepoužívá v .NET Framework 4. Místo toho použijte metodu [ICLRMetaHost:: ExitProcess –](iclrmetahost-exitprocess-method.md) .  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,22 +40,22 @@ void STDMETHODCALLTYPE CorExitProcess (
   
 ## <a name="parameters"></a>Parametry  
  `exitCode`  
- Celé číslo, které určuje kód ukončení procesu.  
+ Celé číslo, které určuje ukončovací kód procesu.  
   
 ## <a name="remarks"></a>Poznámky  
   
 > [!NOTE]
-> Počínaje rozhraním .NET `CorExitProcess` Framework 4 ukončí každý spuštěný čas runtime v procesu, nikoli pouze runtime, ke kterému byla vázána starší rozhraní API.  
+> Počínaje .NET Framework 4 `CorExitProcess` ukončí každý spuštěný modul runtime v procesu, nikoli jenom modul runtime, ke kterému byly navázány starší verze rozhraní API.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Záhlaví:** MSCorEE.h  
+ **Hlavička:** MSCorEE. h  
   
- **Knihovna:** Soubor MSCorEE.dll  
+ **Knihovna:** MSCorEE. dll  
   
- **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také
 
-- [Zastaralé funkce hostování CLR](../../../../docs/framework/unmanaged-api/hosting/deprecated-clr-hosting-functions.md)
+- [Zastaralé funkce hostování CLR](deprecated-clr-hosting-functions.md)

@@ -16,15 +16,15 @@ helpviewer_keywords:
 ms.assetid: dc1e2235-e721-4cb2-a0b8-6b0c030d7bab
 topic_type:
 - apiref
-ms.openlocfilehash: 4eb878b61b72378bc6870af7f2cd09f0b6943b13
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: ff7e7b299d185b8db263d2076c1e075b87b487fc
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73136504"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83616395"
 ---
 # <a name="destroyiceefilegen-function"></a>DestroyICeeFileGen – funkce
-Odstraní objekt [ICeeFileGen –](../../../../docs/framework/unmanaged-api/hosting/iceefilegen-class.md) .  
+Odstraní objekt [ICeeFileGen –](iceefilegen-class.md) .  
   
  Tato funkce se už nepoužívá v .NET Framework 4.  
   
@@ -38,23 +38,23 @@ HRESULT DestroyICeeFileGen (
   
 ## <a name="parameters"></a>Parametry  
  `ceeFileGen`  
- pro Objekt `ICeeFileGen`, který se má zničit.  
+ pro `ICeeFileGen`Objekt, který se má zničit  
   
 ## <a name="return-value"></a>Návratová hodnota  
  Tato metoda vrátí standardní kódy chyb modelu COM.  
   
 ## <a name="remarks"></a>Poznámky  
- `DestroyICeeFileGen` zničí objekt `ICeeFileGen` vytvořený funkcí [CreateICeeFileGen –](../../../../docs/framework/unmanaged-api/hosting/createiceefilegen-function.md) .  
+ `DestroyICeeFileGen`odstraní `ICeeFileGen` objekt vytvořený funkcí [CreateICeeFileGen –](createiceefilegen-function.md) .  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** ICeeFileGen –. h  
   
  **Knihovna:** MSCorPE. dll  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Zastaralé funkce pro hostování CLR](../../../../docs/framework/unmanaged-api/hosting/deprecated-clr-hosting-functions.md)
+- [Zastaralé funkce hostování CLR](deprecated-clr-hosting-functions.md)

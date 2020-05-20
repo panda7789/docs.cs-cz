@@ -12,12 +12,12 @@ f1_keywords:
 helpviewer_keywords:
 - EInitializeNewDomainFlags enumeration [.NET Framework hosting]
 ms.assetid: 3a120ab2-f5ef-4c9b-8595-d3ed7247c342
-ms.openlocfilehash: 3693285e13d0650f7662e2187471027cc4c40704
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 7ff10f84d8d270d31c5d560fb3c9bd3c81cf3e24
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73129420"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83616226"
 ---
 # <a name="einitializenewdomainflags-enumeration"></a>EInitializeNewDomainFlags – výčet
 Povolí hostiteli poskytovat modul runtime s informacemi o inicializaci domény aplikace.  
@@ -36,21 +36,21 @@ typedef enum {
 |Člen|Popis|  
 |------------|-----------------|  
 |`eInitializeNewDomainFlags_None`|Žádné příznaky.|  
-|`eInitializeNewDomainFlags_NoSecurityChanges`|Informuje modul CLR (Common Language Runtime), který hostitel neprovede, aby v metodě <xref:System.AppDomainManager.InitializeNewDomain%2A> provedl změny stavu zabezpečení domény aplikace.|  
+|`eInitializeNewDomainFlags_NoSecurityChanges`|Informuje modul CLR (Common Language Runtime), který hostitel neprovede, aby v metodě provedl změny stavu zabezpečení domény aplikace <xref:System.AppDomainManager.InitializeNewDomain%2A> .|  
   
 ## <a name="remarks"></a>Poznámky  
- Metoda [ICLRDomainManager:: SetAppDomainManagerType –](../../../../docs/framework/unmanaged-api/hosting/iclrdomainmanager-setappdomainmanagertype-method.md) přebírá parametr typu `EInitializeNewDomainFlags`.  
+ Metoda [ICLRDomainManager:: SetAppDomainManagerType –](iclrdomainmanager-setappdomainmanagertype-method.md) přebírá parametr typu `EInitializeNewDomainFlags` .  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** MSCorEE. h  
   
  **Knihovna:** MSCorEE. dll  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Výčty pro hostování](../../../../docs/framework/unmanaged-api/hosting/hosting-enumerations.md)
-- [SetAppDomainManagerType – metoda](../../../../docs/framework/unmanaged-api/hosting/iclrdomainmanager-setappdomainmanagertype-method.md)
+- [Výčty hostování](hosting-enumerations.md)
+- [SetAppDomainManagerType – metoda](iclrdomainmanager-setappdomainmanagertype-method.md)

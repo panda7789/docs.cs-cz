@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 5f890fdf-d22a-429e-a35f-135273d1a636
 topic_type:
 - apiref
-ms.openlocfilehash: e74d49d71cfee51f8cb99645151aace3d02de0e8
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: f1aa40ef868bf6ff7730e01ab66a6fec58af1196
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73126656"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83615875"
 ---
 # <a name="iclrassemblyreferencelist-interface"></a>ICLRAssemblyReferenceList – rozhraní
 Spravuje seznam sestavení, která jsou načtena modulem CLR (Common Language Runtime), nikoli hostitelem.  
@@ -28,23 +28,23 @@ Spravuje seznam sestavení, která jsou načtena modulem CLR (Common Language Ru
   
 |Metoda|Popis|  
 |------------|-----------------|  
-|[IsAssemblyReferenceInList – metoda](../../../../docs/framework/unmanaged-api/hosting/iclrassemblyreferencelist-isassemblyreferenceinlist-method.md)|Získá hodnotu, která označuje, zda zadaný ukazatel odkazuje na sestavení v seznamu.|  
-|[IsStringAssemblyReferenceInList – metoda](../../../../docs/framework/unmanaged-api/hosting/iclrassemblyreferencelist-isstringassemblyreferenceinlist-method.md)|Získá hodnotu, která označuje, zda je zadaný název shodný s názvem sestavení v seznamu.|  
+|[IsAssemblyReferenceInList – metoda](iclrassemblyreferencelist-isassemblyreferenceinlist-method.md)|Získá hodnotu, která označuje, zda zadaný ukazatel odkazuje na sestavení v seznamu.|  
+|[IsStringAssemblyReferenceInList – metoda](iclrassemblyreferencelist-isstringassemblyreferenceinlist-method.md)|Získá hodnotu, která označuje, zda je zadaný název shodný s názvem sestavení v seznamu.|  
   
 ## <a name="remarks"></a>Poznámky  
- Chcete-li získat ukazatel na instanci `ICLRAssemblyReferenceList`, zavolejte metodu [ICLRAssemblyIdentityManager:: GetCLRAssemblyReferenceList –](../../../../docs/framework/unmanaged-api/hosting/iclrassemblyidentitymanager-getclrassemblyreferencelist-method.md) .  
+ Voláním metody [ICLRAssemblyIdentityManager:: GetCLRAssemblyReferenceList –](iclrassemblyidentitymanager-getclrassemblyreferencelist-method.md) získá ukazatel na instanci `ICLRAssemblyReferenceList` .  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** MSCorEE. h  
   
  **Knihovna:** Zahrnuto jako prostředek v knihovně MSCorEE. dll  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [ICLRAssemblyIdentityManager – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrassemblyidentitymanager-interface.md)
-- [IHostAssemblyStore – rozhraní](../../../../docs/framework/unmanaged-api/hosting/ihostassemblystore-interface.md)
-- [Rozhraní pro hostování](../../../../docs/framework/unmanaged-api/hosting/hosting-interfaces.md)
+- [ICLRAssemblyIdentityManager – rozhraní](iclrassemblyidentitymanager-interface.md)
+- [IHostAssemblyStore – rozhraní](ihostassemblystore-interface.md)
+- [Rozhraní pro hostování](hosting-interfaces.md)

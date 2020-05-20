@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 0d144ed4-bdb0-4cac-960c-cb90f4dca173
 topic_type:
 - apiref
-ms.openlocfilehash: 2063856389b122b150a2d2744169a4a567592287
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: b12ecfdaf7c90589ce2e96b39f7437444cb91b09
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74446447"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83615420"
 ---
 # <a name="isymunmanagedreader2getmethodbyversionpreremap-method"></a>ISymUnmanagedReader2::GetMethodByVersionPreRemap – metoda
 Získá metodu čtečky symbolů s ohledem na token metody a číslo verze Edit-and-Continue. Čísla verzí začínají 1 a jsou zvýšena pokaždé, když je metoda změněna v důsledku operace Edit-and-Continue.  
@@ -42,14 +42,14 @@ HRESULT GetMethodByVersionPreRemap(
  pro Verze metody  
   
  `pRetVal`  
- mimo Ukazatel na vrácené rozhraní [ISymUnmanagedMethod](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedmethod-interface.md) .  
+ mimo Ukazatel na vrácené rozhraní [ISymUnmanagedMethod](isymunmanagedmethod-interface.md) .  
   
 ## <a name="return-value"></a>Návratová hodnota  
  S_OK, pokud je metoda úspěšná; v opačném případě E_FAIL nebo nějaký jiný kód chyby.  
   
 ## <a name="requirements"></a>Požadavky  
- **Hlavička:** CorSym. idl. CorSym.h  
+ **Hlavička:** CorSym. idl. CorSym. h  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [ISymUnmanagedReader2 – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedreader2-interface.md)
+- [ISymUnmanagedReader2 – rozhraní](isymunmanagedreader2-interface.md)

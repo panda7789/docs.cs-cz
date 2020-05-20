@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 20fefee7-1040-41ba-93dc-bd42f68b90c2
 topic_type:
 - apiref
-ms.openlocfilehash: 64ecbb56ab32ac8381a4864acd5fd40741786d30
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 841379702e24428a8092cfd1d2cbd3c5b4e17ba4
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74449135"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83615602"
 ---
 # <a name="isymunmanageddocumentgetsourcerange-method"></a>ISymUnmanagedDocument::GetSourceRange – metoda
 Vrátí zadaný rozsah vloženého zdroje do dané vyrovnávací paměti. Vyrovnávací paměť musí být dostatečně velká pro uložení zdroje.  
@@ -64,6 +64,6 @@ HRESULT GetSourceRange(
 ## <a name="return-value"></a>Návratová hodnota  
  S_OK, zda je metoda úspěšná.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [ISymUnmanagedDocument – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanageddocument-interface.md)
+- [ISymUnmanagedDocument – rozhraní](isymunmanageddocument-interface.md)

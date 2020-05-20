@@ -14,17 +14,17 @@ helpviewer_keywords:
 ms.assetid: b3222c85-da88-4485-97d7-3a6ee3e8d358
 topic_type:
 - apiref
-ms.openlocfilehash: f3b51c1b376fa9c664de53aa76ec724ca305ae6a
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 2dd004a44b20d48dafc72711ac23abcb55739224
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79178183"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83617197"
 ---
 # <a name="getfileversion-function"></a>GetFileVersion – funkce
-Získá informace o verzi clr (COMMON Language runtime) zadaného souboru pomocí zadané vyrovnávací paměti.  
+Získá informace o verzi modulu CLR (Common Language Runtime) zadaného souboru pomocí zadané vyrovnávací paměti.  
   
- Tato funkce byla v rozhraní .NET Framework 4 zastaralá.  
+ Tato funkce se už nepoužívá v .NET Framework 4.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,24 +39,24 @@ HRESULT GetFileVersion (
   
 ## <a name="parameters"></a>Parametry  
  `szFilename`  
- [v] Cesta souboru, který má být zkontrolován.  
+ pro Cesta k souboru, který se má prozkoumat  
   
  `szBuffer`  
- [dovnitř, ven] Vyrovnávací paměť přidělená pro informace o verzi, která je vrácena.  
+ [in, out] Vyrovnávací paměť přidělená pro vrácené informace o verzi.  
   
  `cchBuffer`  
- [v] Velikost . `szBuffer`  
+ pro Velikost (v rámci velkých znaků) `szBuffer` .  
   
  `dwLength`  
- [out] Velikost vráceného bajtu v bajtech `szBuffer`.  
+ mimo Velikost vracené velikosti (v bajtech) `szBuffer`  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Záhlaví:** MSCorEE.h  
+ **Hlavička:** MSCorEE. h  
   
- **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v11plus](../../../../includes/net-current-v11plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v11plus](../../../../includes/net-current-v11plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také
 
-- [Zastaralé funkce hostování CLR](../../../../docs/framework/unmanaged-api/hosting/deprecated-clr-hosting-functions.md)
+- [Zastaralé funkce hostování CLR](deprecated-clr-hosting-functions.md)

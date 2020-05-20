@@ -14,17 +14,17 @@ helpviewer_keywords:
 ms.assetid: 5bb12f9a-0612-434b-b4ed-2db636a20bec
 topic_type:
 - apiref
-ms.openlocfilehash: 6132e94544b30486b70ecfec49c1ddd5e3c0f50b
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 899d6e74902e47f1f41b849bd5c25048baa175f7
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79178106"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83617136"
 ---
 # <a name="getrequestedruntimeversionforclsid-function"></a>GetRequestedRuntimeVersionForCLSID – funkce
-Získá příslušné informace o verzi clr (COMMON Language Runtime) pro třídu se zadanou `CLSID`.  
+Získá příslušné informace o verzi modulu CLR (Common Language Runtime) pro třídu se zadaným parametrem `CLSID` .  
   
- Tato funkce byla v rozhraní .NET Framework 4 zastaralá.  
+ Tato funkce se už nepoužívá v .NET Framework 4.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,41 +40,41 @@ HRESULT GetRequestedRuntimeVersionForCLSID (
   
 ## <a name="parameters"></a>Parametry  
  `rclsid`  
- [v]  Součást. `CLSID`  
+ pro  `CLSID`Komponenty.  
   
  `pVersion`  
- [out]  Vyrovnávací paměť, která obsahuje řetězec číslo verze po úspěšném dokončení.  
+ mimo  Vyrovnávací paměť, která obsahuje řetězec čísla verze po úspěšném dokončení.  
   
  `cchBuffer`  
- [v]  Velikost, v širokých znaků `pVersion` vyrovnávací paměti.  
+ pro  Velikost vyrovnávací paměti v různých znacích `pVersion` .  
   
  `dwLength`  
- [out] Délka vrácené vyrovnávací paměti v bajtech.  
+ mimo Délka vrácené vyrovnávací paměti v bajtech.  
   
  `dwResolutionFlags`  
- [v]  Jedna z CLSID_RESOLUTION_FLAGS hodnot. Podporovány jsou následující hodnoty:  
+ pro  Jedna z hodnot CLSID_RESOLUTION_FLAGS. Podporovány jsou následující hodnoty:  
   
-- CLSID_RESOLUTION_DEFAULT: (0x0) Určuje, že má být použito výchozí chování interop.  
+- CLSID_RESOLUTION_DEFAULT: (0x0) určuje, že se má použít výchozí chování spolupráce.  
   
-- CLSID_RESOLUTION_REGISTERED: (0x1) Určuje, že registr by měl být prohledán a měl by být použit a použity zásady překrytí.  
+- CLSID_RESOLUTION_REGISTERED: (0x1) určuje, že by měl být registr prohledáván a musí být použita zásada překrytí.  
   
 ## <a name="return-value"></a>Návratová hodnota  
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
 |S_OK|Funkce byla úspěšně vrácena.|  
-|E_invalidarg|Jeden z parametrů má neplatný typ nebo formát.|  
-|ERROR_INSUFFICIENT_BUFFER|Vyrovnávací `pVersion` paměť není dostatečně velká pro uložení celého řetězce verze.|  
-|REGDB_E_CLASSNOTREG|Neexistuje žádná třída registrovaná `CLSID`s zadanou .|  
-|E_POINTER|`dwLength`je null `cchBuffer` nebo je dostatečně velký pro `pVersion` uložení řetězce verze, ale je null.|  
+|E_INVALIDARG|Jeden z parametrů má neplatný typ nebo formát.|  
+|ERROR_INSUFFICIENT_BUFFER|`pVersion`Vyrovnávací paměť není dostatečně velká pro uložení celého řetězce verze.|  
+|REGDB_E_CLASSNOTREG|Není zaregistrována žádná třída se zadaným parametrem `CLSID` .|  
+|E_POINTER|`dwLength`má hodnotu null nebo `cchBuffer` je dostatečně velká pro uložení řetězce verze, ale `pVersion` má hodnotu null.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Záhlaví:** MSCorEE.h  
+ **Hlavička:** MSCorEE. h  
   
- **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v11plus](../../../../includes/net-current-v11plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v11plus](../../../../includes/net-current-v11plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také
 
-- [Zastaralé funkce hostování CLR](../../../../docs/framework/unmanaged-api/hosting/deprecated-clr-hosting-functions.md)
+- [Zastaralé funkce hostování CLR](deprecated-clr-hosting-functions.md)

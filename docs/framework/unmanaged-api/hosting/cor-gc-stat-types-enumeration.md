@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: fc51d6db-f7f8-408b-b93d-c166fc712c99
 topic_type:
 - apiref
-ms.openlocfilehash: b0fbc462283ef1577de8100e60fd09caa53db539
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: cca393ae34144787ab7800baec7c58209394f30e
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73131918"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83616713"
 ---
 # <a name="cor_gc_stat_types-enumeration"></a>COR_GC_STAT_TYPES – výčet
 Určuje statistiku, která má být zaznamenána pro uvolňování paměti.  
@@ -34,7 +34,7 @@ typedef enum {
 ```  
   
 ## <a name="remarks"></a>Poznámky  
- Tento výčet Určuje, které statistiky ve struktuře [COR_GC_STATS](../../../../docs/framework/unmanaged-api/hosting/cor-gc-stats-structure.md) mají být nastaveny metodou [ICLRGCManager:: getstatistics](../../../../docs/framework/unmanaged-api/hosting/iclrgcmanager-getstats-method.md) .  
+ Tento výčet Určuje, které statistiky ve [COR_GC_STATS](../../../../docs/framework/unmanaged-api/hosting/cor-gc-stats-structure.md) struktuře mají být nastaveny pomocí metody [ICLRGCManager:: getstatistics](iclrgcmanager-getstats-method.md) .  
   
 ## <a name="members"></a>Členové  
   
@@ -44,13 +44,13 @@ typedef enum {
 |`COR_GC_MEMORYUSAGE`|Zaznamenává využití paměti a statistiky velikosti uvolňování paměti.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** GCHost. idl, GCHost. h  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [COR_GC_STATS – struktura](../../../../docs/framework/unmanaged-api/hosting/cor-gc-stats-structure.md)
-- [Výčty pro hostování](../../../../docs/framework/unmanaged-api/hosting/hosting-enumerations.md)
+- [COR_GC_STATS – struktura](cor-gc-stats-structure.md)
+- [Výčty hostování](hosting-enumerations.md)
