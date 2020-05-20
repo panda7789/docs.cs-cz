@@ -2,17 +2,17 @@
 title: ISymUnmanagedAsyncMethod::IsAsyncMethod – metoda
 ms.date: 03/30/2017
 ms.assetid: 670a7653-dac6-4171-98ee-d669e3adf4b2
-ms.openlocfilehash: 0ea4c21e9e6a49d7bbbad5e1853598c440cd6410
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 91b4c2688dadf12fa4a835a662622267d7831cf8
+ms.sourcegitcommit: 7b1497c1927cb449cefd313bc5126ae37df30746
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73129214"
+ms.lasthandoff: 05/16/2020
+ms.locfileid: "83441796"
 ---
 # <a name="isymunmanagedasyncmethodisasyncmethod-method"></a>ISymUnmanagedAsyncMethod::IsAsyncMethod – metoda
 Kontroluje, zda metoda obsahuje asynchronní informace nebo nikoli.  
   
- Pokud tato metoda vrátí `FALSE` pak je neplatná pro volání jakékoli jiné metody v tomto rozhraní. Budou v tomto případě vráceny `E_UNEXPECTED`.  
+ Pokud se tato metoda vrátí `FALSE` , je neplatná pro volání jakékoli jiné metody v tomto rozhraní. Budou `E_UNEXPECTED` v tomto případě vráceny.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -27,11 +27,11 @@ HRESULT IsAsyncMethod(    [out, retval] BOOL* pRetVal);
 |`pRetVal`||  
   
 ## <a name="return-value"></a>Návratová hodnota  
- Vrátí `HRESULT`.  
+ Vrací objekt `HRESULT`.  
   
 ## <a name="requirements"></a>Požadavky  
  **Hlavička:** CorSym. idl, CorSym. h  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [ISymUnmanagedAsyncMethod – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedasyncmethod-interface.md)
+- [ISymUnmanagedAsyncMethod – rozhraní](isymunmanagedasyncmethod-interface.md)

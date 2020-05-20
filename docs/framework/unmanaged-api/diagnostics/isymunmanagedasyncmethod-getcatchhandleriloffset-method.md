@@ -2,15 +2,15 @@
 title: ISymUnmanagedAsyncMethod::GetCatchHandlerILOffset – metoda
 ms.date: 03/30/2017
 ms.assetid: d5f88656-433d-447c-b21c-2a12bed2e72a
-ms.openlocfilehash: fa588056bdb83978659ccb97ed6dc09ec9c55f30
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: f45b9a53909ab23428a8d51be2e672bfdd15d951
+ms.sourcegitcommit: 7b1497c1927cb449cefd313bc5126ae37df30746
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73123801"
+ms.lasthandoff: 05/16/2020
+ms.locfileid: "83441848"
 ---
 # <a name="isymunmanagedasyncmethodgetcatchhandleriloffset-method"></a>ISymUnmanagedAsyncMethod::GetCatchHandlerILOffset – metoda
-Viz [Metoda definecatchhandleriloffset –](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedasyncmethodpropertieswriter-definecatchhandleriloffset-method.md).  
+Viz [Metoda definecatchhandleriloffset –](isymunmanagedasyncmethodpropertieswriter-definecatchhandleriloffset-method.md).  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -25,11 +25,11 @@ HRESULT GetCatchHandlerILOffset(    [out, retval] ULONG32* pRetVal);
 |`pRetVal`||  
   
 ## <a name="return-value"></a>Návratová hodnota  
- Vrátí `HRESULT`.  
+ Vrací objekt `HRESULT`.  
   
 ## <a name="requirements"></a>Požadavky  
  **Hlavička:** CorSym. idl, CorSym. h  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [ISymUnmanagedAsyncMethod – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedasyncmethod-interface.md)
+- [ISymUnmanagedAsyncMethod – rozhraní](isymunmanagedasyncmethod-interface.md)

@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: e11c9baa-4cf1-4bb4-a95f-b1908893b46c
 topic_type:
 - apiref
-ms.openlocfilehash: ca5afa8c0cf0198dbc8ab65824605f18c22dcdbb
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 58d81fd150684f254333c17374d06f7dd5b95823
+ms.sourcegitcommit: 7b1497c1927cb449cefd313bc5126ae37df30746
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74449255"
+ms.lasthandoff: 05/16/2020
+ms.locfileid: "83441411"
 ---
 # <a name="isymunmanagedconstant-interface"></a>ISymUnmanagedConstant – rozhraní
 Poskytuje přístup k nespravovaným konstantám.  
@@ -28,13 +28,13 @@ Poskytuje přístup k nespravovaným konstantám.
   
 |Metoda|Popis|  
 |------------|-----------------|  
-|[GetName – metoda](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedconstant-getname-method.md)|Získá název konstanty.|  
-|[GetSignature – metoda](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedconstant-getsignature-method.md)|Získá signaturu konstanty.|  
-|[GetValue – metoda](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedconstant-getvalue-method.md)|Získá hodnotu konstanty.|  
+|[GetName – metoda](isymunmanagedconstant-getname-method.md)|Získá název konstanty.|  
+|[GetSignature – metoda](isymunmanagedconstant-getsignature-method.md)|Získá signaturu konstanty.|  
+|[GetValue – metoda](isymunmanagedconstant-getvalue-method.md)|Získá hodnotu konstanty.|  
   
 ## <a name="requirements"></a>Požadavky  
  **Hlavička:** CorSym. idl, CorSym. h  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Rozhraní pro úložiště symbolů diagnostiky](../../../../docs/framework/unmanaged-api/diagnostics/diagnostics-symbol-store-interfaces.md)
+- [Rozhraní úložiště symbolů diagnostiky](diagnostics-symbol-store-interfaces.md)

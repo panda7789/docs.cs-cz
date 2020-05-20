@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: ad37cd10-0339-4d08-9b0e-4b3428bb4dc3
 topic_type:
 - apiref
-ms.openlocfilehash: 6f7f400c51ded0b98c0c2286cb6f90bbd77e47d7
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: c5ac38005410ae6ed9c2f4160e926987791ad604
+ms.sourcegitcommit: 9a4488a3625866335e83a20da5e9c5286b1f034c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79178400"
+ms.lasthandoff: 05/15/2020
+ms.locfileid: "83421212"
 ---
 # <a name="icorpublishappdomainenumnext-method"></a>ICorPublishAppDomainEnum::Next – metoda
-Získá zadaný počet aplikačních domén, které aktuálně existují v procesu, počínaje aktuální pozici.  
+Načte zadaný počet aplikačních domén, které aktuálně existují v procesu, počínaje aktuální pozicí.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,22 +38,22 @@ HRESULT Next (
   
 ## <a name="parameters"></a>Parametry  
  `celt`  
- [v] Počet prvků, které mají být načteny.  
+ pro Počet prvků, které mají být načteny.  
   
  `objects`  
- [out] Ukazatel na pole načtených objektů [ICorPublishAppDomain,](icorpublishappdomain-interface.md) z nichž každý představuje doménu aplikace.  
+ mimo Ukazatel na pole načtených objektů [ICorPublishAppDomain](icorpublishappdomain-interface.md) , z nichž každý představuje doménu aplikace.  
   
  `pceltFetched`  
- [out] Ukazatel na počet skutečně vrácených aplikačních domén. Tato hodnota může `celt` být null, pokud je jeden.  
+ mimo Ukazatel na počet skutečně vrácených aplikačních domén. Tato hodnota může být null `celt` , pokud je jedna.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Záhlaví:** CorPub.idl, CorPub.h  
+ **Hlavička:** CorPub. idl, CorPub. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také
 

@@ -14,15 +14,15 @@ helpviewer_keywords:
 ms.assetid: 37527a84-4b03-4f08-8135-94d898599089
 topic_type:
 - apiref
-ms.openlocfilehash: e4a415b21e3980e7603319d7acbb3831462fac9e
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 5a26de2a8f5439b7c81560927c991d449e57b76c
+ms.sourcegitcommit: 7b1497c1927cb449cefd313bc5126ae37df30746
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74449294"
+ms.lasthandoff: 05/16/2020
+ms.locfileid: "83441588"
 ---
 # <a name="isymunmanagedbinder3-interface"></a>ISymUnmanagedBinder3 – rozhraní
-Rozšiřuje rozhraní pořadače symbolů. Získejte toto rozhraní voláním `QueryInterface` na objektu, který implementuje rozhraní `ISymUnmanagedBinder`.  
+Rozšiřuje rozhraní pořadače symbolů. Získejte toto rozhraní voláním `QueryInterface` objektu, který implementuje `ISymUnmanagedBinder` rozhraní.  
   
 > [!IMPORTANT]
 > Je bezpečnostním rizikem k otevření souboru programu databáze (PDB) z nedůvěryhodného zdroje.  
@@ -31,13 +31,13 @@ Rozšiřuje rozhraní pořadače symbolů. Získejte toto rozhraní voláním `Q
   
 |Metoda|Popis|  
 |------------|-----------------|  
-|[GetReaderFromCallback – metoda](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedbinder3-getreaderfromcallback-method.md)|Umožňuje uživateli implementovat nebo dodávkovat prostřednictvím zpětného volání buď `IID_IDiaReadExeAtRVACallback`, nebo `IID_IDiaReadExeAtOffsetCallback`, aby získal informace adresáře ladění z paměti.|  
+|[GetReaderFromCallback – metoda](isymunmanagedbinder3-getreaderfromcallback-method.md)|Umožňuje uživateli implementovat nebo dodávkovat prostřednictvím zpětného volání buď `IID_IDiaReadExeAtRVACallback` nebo `IID_IDiaReadExeAtOffsetCallback` , aby získal informace adresáře ladění z paměti.|  
   
 ## <a name="requirements"></a>Požadavky  
  **Hlavička:** CorSym. idl, CorSym. h  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Rozhraní pro úložiště symbolů diagnostiky](../../../../docs/framework/unmanaged-api/diagnostics/diagnostics-symbol-store-interfaces.md)
-- [ISymUnmanagedBinder – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedbinder-interface.md)
-- [ISymUnmanagedBinder2 – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedbinder2-interface.md)
+- [Rozhraní úložiště symbolů diagnostiky](diagnostics-symbol-store-interfaces.md)
+- [ISymUnmanagedBinder – rozhraní](isymunmanagedbinder-interface.md)
+- [ISymUnmanagedBinder2 – rozhraní](isymunmanagedbinder2-interface.md)

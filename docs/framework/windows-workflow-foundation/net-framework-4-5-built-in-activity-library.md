@@ -1,17 +1,18 @@
 ---
-title: Knihovna předdefinovaných aktivit rozhraní .NET framework 4.5
+title: Integrovaná knihovna aktivit .NET Framework 4,5
+description: Tento článek popisuje novou knihovnu aktivit s rozšířenými funkcemi, které jsou součástí .NET Framework 4,5.
 ms.date: 03/30/2017
 ms.assetid: e559e87b-6aed-491d-9546-e92bcec16fdf
-ms.openlocfilehash: 6d47c36a55829684a0eefb2a560e65f7b91462a7
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 4ce4420759512ec3adfff70bf0c365014d96ec7b
+ms.sourcegitcommit: 9a4488a3625866335e83a20da5e9c5286b1f034c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61786006"
+ms.lasthandoff: 05/15/2020
+ms.locfileid: "83421485"
 ---
-# <a name="net-framework-45-built-in-activity-library"></a>Knihovna předdefinovaných aktivit rozhraní .NET framework 4.5
+# <a name="net-framework-45-built-in-activity-library"></a>Integrovaná knihovna aktivit .NET Framework 4,5
 
-[!INCLUDE[netfx_current_long](../../../includes/netfx-current-long-md.md)] obsahuje novou knihovnu aktivit rozšířené funkce. Typy aktivit, patří:
+[!INCLUDE[netfx_current_long](../../../includes/netfx-current-long-md.md)]zahrnuje novou knihovnu aktivit s rozšířenými funkcemi. Mezi typy aktivit patří následující:
 
 - [Tok řízení](control-flow-activities-in-wf.md)
 
@@ -23,7 +24,7 @@ ms.locfileid: "61786006"
 
 - [Modul runtime](runtime-activities-in-wf.md)
 
-- [Primitivní elementy](primitives-activities-in-wf.md)
+- [Primitiva](primitives-activities-in-wf.md)
 
 - [Transakce](transaction-activities-in-wf.md)
 
@@ -33,4 +34,4 @@ ms.locfileid: "61786006"
 
 - [Migrace](migration-activity-in-wf.md)
 
-Aktivity v knihovně integrovaných aktivit můžete složený do pracovních postupů, nebo ho používáte spolu se vlastní aktivity. Aktivity v knihovně integrovaných aktivit jsou zapečetěné; nejsou určeny pro použití k vytvoření nové funkce prostřednictvím dědičnosti.
+Aktivity v předdefinované knihovně aktivit mohou být tvořeny pracovními postupy nebo použity společně s vlastními aktivitami. Aktivity v předdefinované knihovně aktivit jsou zapečetěné. neslouží k vytváření nových funkcí prostřednictvím dědičnosti.

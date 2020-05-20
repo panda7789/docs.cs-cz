@@ -1,5 +1,6 @@
 ---
 title: Binární serializace
+description: Tento článek popisuje binární serializaci a typy, pro které je rozhraní .NET Core podporuje. Mějte na paměti, že se nejedná o nebezpečí binární serializace a alternativ.
 ms.date: 01/02/2018
 helpviewer_keywords:
 - binary serialization
@@ -10,12 +11,12 @@ helpviewer_keywords:
 - serialization, cross-framework
 ms.assetid: 2b1ea3be-1152-4032-b2b3-07794054c405
 author: ViktorHofer
-ms.openlocfilehash: 9df9b73a1a1347b952d76b76c9058578f5e9f401
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 4ed76437b743da842d6ba07d29fe7985f824abf0
+ms.sourcegitcommit: 9a4488a3625866335e83a20da5e9c5286b1f034c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79400636"
+ms.lasthandoff: 05/15/2020
+ms.locfileid: "83421277"
 ---
 # <a name="binary-serialization"></a>Binární serializace
 
@@ -28,7 +29,7 @@ Při provádění mechanismus serializace v prostředí objektově orientované,
 
 [!INCLUDE [binary-serialization-warning](../../../includes/binary-serialization-warning.md)]
 
-Binární serializace umožňuje upravovat soukromé členy uvnitř objektu, a proto mění stav. Z tohoto důvodu jsou doporučeny jiné architektury serializace <xref:System.Text.Json?displayProperty=fullName>, jako například, které fungují na veřejné ploše rozhraní API.
+Binární serializace umožňuje upravovat soukromé členy uvnitř objektu, a proto mění stav. Z tohoto důvodu jsou doporučeny jiné architektury serializace, jako <xref:System.Text.Json?displayProperty=fullName> například, které fungují na veřejné ploše rozhraní API.
 
 ## <a name="net-core"></a>.NET Core
 
@@ -112,7 +113,7 @@ Binární serializace umožňuje upravovat soukromé členy uvnitř objektu, a p
 > | <xref:System.Data.DBConcurrencyException?displayProperty=nameWithType> | Začíná v .NET Core 2.0.4. |
 > | <xref:System.Data.DataException?displayProperty=nameWithType> | Začíná v .NET Core 2.0.4. |
 > | <xref:System.Data.DataSet?displayProperty=nameWithType> | |
-> | <xref:System.Data.DataTable?displayProperty=nameWithType> | Pokud nastavíte `RemotingFormat` `SerializationFormat.Binary`, můžete ho vyměnit jenom pomocí .NET Core 2,1 a novějších verzí. |
+> | <xref:System.Data.DataTable?displayProperty=nameWithType> | Pokud nastavíte `RemotingFormat` `SerializationFormat.Binary` , můžete ho vyměnit jenom pomocí .net Core 2,1 a novějších verzí. |
 > | <xref:System.Data.DeletedRowInaccessibleException?displayProperty=nameWithType> | Začíná v .NET Core 2.0.4. |
 > | <xref:System.Data.DuplicateNameException?displayProperty=nameWithType> | Začíná v .NET Core 2.0.4. |
 > | <xref:System.Data.EvaluateException?displayProperty=nameWithType> | Začíná v .NET Core 2.0.4. |

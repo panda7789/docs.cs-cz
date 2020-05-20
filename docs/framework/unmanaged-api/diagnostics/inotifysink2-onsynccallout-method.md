@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 97f15656-8677-4079-8553-a1d8603355d6
 topic_type:
 - apiref
-ms.openlocfilehash: e7b3d5bd53bb9e4d6b897bfbf109c1f7307224cd
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: ce0e192a9d7d5abf56a55f844cf886c386f1c563
+ms.sourcegitcommit: 7b1497c1927cb449cefd313bc5126ae37df30746
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74442504"
+ms.lasthandoff: 05/16/2020
+ms.locfileid: "83441991"
 ---
 # <a name="inotifysink2onsynccallout-method"></a>INotifySink2::OnSyncCallOut – metoda
 Vyvolá se, když je volání ven.  
@@ -38,7 +38,7 @@ HRESULT OnSyncCallOut
   
 ## <a name="parameters"></a>Parametry  
  `in_CallID`  
- pro ID volání, které je mimo. Viz [struktura CALL_ID](../../../../docs/framework/unmanaged-api/diagnostics/call-id-structure.md).  
+ pro ID volání, které je mimo. Viz [struktura CALL_ID](call-id-structure.md).  
   
  `out_ppBuffer`  
  mimo Vyrovnávací paměť volání.  
@@ -52,8 +52,8 @@ HRESULT OnSyncCallOut
 ## <a name="requirements"></a>Požadavky  
  **Hlavička:** ProtocolNotify2. idl  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [INotifySink2 – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/inotifysink2-interface.md)
-- [INotifySource2 – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/inotifysource2-interface.md)
-- [INotifyConnection2 – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/inotifyconnection2-interface.md)
+- [INotifySink2 – rozhraní](inotifysink2-interface.md)
+- [INotifySource2 – rozhraní](inotifysource2-interface.md)
+- [INotifyConnection2 – rozhraní](inotifyconnection2-interface.md)

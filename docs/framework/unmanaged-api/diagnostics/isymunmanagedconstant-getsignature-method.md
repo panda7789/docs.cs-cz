@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 3eb41151-a228-43e3-ba8f-e6dd3ceb8542
 topic_type:
 - apiref
-ms.openlocfilehash: 401dfbea0da309db24f3052f462daa66e8bbef4a
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 332d60418c744a9391c7c0afc20248c2239b090c
+ms.sourcegitcommit: 7b1497c1927cb449cefd313bc5126ae37df30746
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74449265"
+ms.lasthandoff: 05/16/2020
+ms.locfileid: "83441617"
 ---
 # <a name="isymunmanagedconstantgetsignature-method"></a>ISymUnmanagedConstant::GetSignature – metoda
 Získá signaturu konstanty.  
@@ -37,10 +37,10 @@ HRESULT GetSignature(
   
 ## <a name="parameters"></a>Parametry  
  `cSig`  
- pro Délka vyrovnávací paměti, na kterou parametr `pcSig` odkazuje.  
+ pro Délka vyrovnávací paměti, `pcSig` na kterou parametr odkazuje.  
   
  `pcSig`  
- mimo Ukazatel na `ULONG32`, který obdrží velikost vyrovnávací paměti, která je požadována k podpisu.  
+ mimo Ukazatel na `ULONG32` , který přijímá velikost vyrovnávací paměti, která je požadována k podpisu.  
   
  `sig`  
  mimo Vyrovnávací paměť, která ukládá podpis.  
@@ -51,8 +51,8 @@ HRESULT GetSignature(
 ## <a name="requirements"></a>Požadavky  
  **Hlavička:** CorSym. idl, CorSym. h  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [ISymUnmanagedConstant – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedconstant-interface.md)
-- [GetName – metoda](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedconstant-getname-method.md)
-- [GetValue – metoda](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedconstant-getvalue-method.md)
+- [ISymUnmanagedConstant – rozhraní](isymunmanagedconstant-interface.md)
+- [GetName – metoda](isymunmanagedconstant-getname-method.md)
+- [GetValue – metoda](isymunmanagedconstant-getvalue-method.md)

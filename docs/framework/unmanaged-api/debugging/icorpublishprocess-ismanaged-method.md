@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 06b1f7cc-acdf-47a6-9d53-d9dec2424152
 topic_type:
 - apiref
-ms.openlocfilehash: 68931ba16ea1f8f61176c6d6ed8300e762b61690
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.openlocfilehash: 3eec84624866b2be7068d7875cd650828c283fd2
+ms.sourcegitcommit: 9a4488a3625866335e83a20da5e9c5286b1f034c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76790528"
+ms.lasthandoff: 05/15/2020
+ms.locfileid: "83421095"
 ---
 # <a name="icorpublishprocessismanaged-method"></a>ICorPublishProcess::IsManaged – metoda
 Získá hodnotu, která označuje, zda se má proces, na který odkazuje tento [ICorPublishProcess](icorpublishprocess-interface.md) , známo, že má spravovaný kód.  
@@ -35,20 +35,20 @@ HRESULT IsManaged (
   
 ## <a name="parameters"></a>Parametry  
  `pbManaged`  
- mimo Ukazatel na logickou hodnotu, která určuje, zda má proces spravovaný kód. Hodnota je `true`, pokud má proces spravovaný kód. v opačném případě `false`.  
+ mimo Ukazatel na logickou hodnotu, která určuje, zda má proces spravovaný kód. Hodnota je v `true` případě, že proces má spravovaný kód. v opačném případě `false` .  
   
 ## <a name="remarks"></a>Poznámky  
- Vzhledem k tomu, že aktuální verze `ICorPublishProcess` umožňuje přístup pouze k procesům se spravovaným kódem, `IsManaged` vždy vrací `true`.  
+ Vzhledem k tomu, že aktuální verze nástroje `ICorPublishProcess` umožňuje přístup pouze k procesům, které mají spravovaný kód, `IsManaged` vždy vrátí `true` .  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** CorPub. idl, CorPub. h  
   
  **Knihovna:** CorGuids. lib  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [ICorPublishProcess – rozhraní](icorpublishprocess-interface.md)

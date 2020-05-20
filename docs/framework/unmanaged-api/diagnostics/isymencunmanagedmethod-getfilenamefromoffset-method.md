@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 00e2e194-12f5-436e-a997-2b9d3e844d4f
 topic_type:
 - apiref
-ms.openlocfilehash: 74002ce9c76eebaa3ea5860b09cd3e7c9a884f8d
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 857410187edf1c712865626a3327dd4c92cc211f
+ms.sourcegitcommit: 7b1497c1927cb449cefd313bc5126ae37df30746
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74448651"
+ms.lasthandoff: 05/16/2020
+ms.locfileid: "83441926"
 ---
 # <a name="isymencunmanagedmethodgetfilenamefromoffset-method"></a>ISymENCUnmanagedMethod::GetFileNameFromOffset – metoda
 Získá název souboru pro řádek přidružený k posunu.  
@@ -38,13 +38,13 @@ HRESULT GetFileNameFromOffset(
   
 ## <a name="parameters"></a>Parametry  
  `dwOffset`  
- pro `ULONG32`, který obsahuje posun.  
+ pro `ULONG32`, Který obsahuje posun.  
   
  `cchName`  
- pro `ULONG32`, která určuje velikost vyrovnávací paměti `szName`.  
+ pro `ULONG32`Který označuje velikost `szName` vyrovnávací paměti.  
   
  `pcchName`  
- mimo Ukazatel na `ULONG32`, který obdrží velikost vyrovnávací paměti vyžadované k uložení názvů souborů v znacích.  
+ mimo Ukazatel na `ULONG32` , který obdrží velikost vyrovnávací paměti, která je nutná k uložení názvů souborů.  
   
  `szName`  
  mimo Vyrovnávací paměť, která obsahuje názvy souborů.  
@@ -55,6 +55,6 @@ HRESULT GetFileNameFromOffset(
 ## <a name="requirements"></a>Požadavky  
  **Hlavička:** CorSym. idl, CorSym. h  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [ISymENCUnmanagedMethod – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/isymencunmanagedmethod-interface.md)
+- [ISymENCUnmanagedMethod – rozhraní](isymencunmanagedmethod-interface.md)

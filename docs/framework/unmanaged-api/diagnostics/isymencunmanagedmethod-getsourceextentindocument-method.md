@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 9c5566ab-4ec7-4b61-9753-839bb90ae78c
 topic_type:
 - apiref
-ms.openlocfilehash: b8e72745eff09c6707afe5a5f20a1ddf38b239ae
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 3ac8bb3a20ce82b734a572832a9cbb75fa2568c4
+ms.sourcegitcommit: 7b1497c1927cb449cefd313bc5126ae37df30746
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74448615"
+ms.lasthandoff: 05/16/2020
+ms.locfileid: "83441900"
 ---
 # <a name="isymencunmanagedmethodgetsourceextentindocument-method"></a>ISymENCUnmanagedMethod::GetSourceExtentInDocument – metoda
 Získá nejmenší počáteční řádek a největšího koncového řádku pro metodu v konkrétním dokumentu.  
@@ -39,10 +39,10 @@ HRESULT GetSourceExtentInDocument(
  pro Ukazatel na dokument.  
   
  `pstartLine`  
- mimo Ukazatel na `ULONG32`, který obdrží počáteční řádek.  
+ mimo Ukazatel na `ULONG32` , který obdrží počáteční řádek.  
   
  `pendLine`  
- mimo Ukazatel na `ULONG32`, který obdrží koncovou čáru.  
+ mimo Ukazatel na `ULONG32` , který získá koncovou čáru.  
   
 ## <a name="return-value"></a>Návratová hodnota  
  S_OK, pokud je metoda úspěšná; v opačném případě E_FAIL nebo nějaký jiný kód chyby.  
@@ -50,6 +50,6 @@ HRESULT GetSourceExtentInDocument(
 ## <a name="requirements"></a>Požadavky  
  **Hlavička:** CorSym. idl, CorSym. h  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [ISymENCUnmanagedMethod – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/isymencunmanagedmethod-interface.md)
+- [ISymENCUnmanagedMethod – rozhraní](isymencunmanagedmethod-interface.md)

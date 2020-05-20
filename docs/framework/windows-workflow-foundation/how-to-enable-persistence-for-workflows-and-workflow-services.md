@@ -1,21 +1,22 @@
 ---
-title: 'Postupy: povolení trvalosti pro pracovní postupy a služby pracovních postupů'
+title: 'Postupy: Povolení trvalosti pro pracovní postupy a služby pracovních postupů'
+description: Přečtěte si, jak nakonfigurovat úložiště instancí pracovních postupů SQL, aby se povolilo uchovávání pracovních postupů a služeb pracovních postupů programově a pomocí konfiguračního souboru.
 ms.date: 03/30/2017
 ms.assetid: 2b1c8bf3-9866-45a4-b06d-ee562393e503
-ms.openlocfilehash: 5d0eeb8ad40f2f4f3349ab48487316014a561a1b
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: 31fe6e3f06989e9a42254747565342cf97e4b9f1
+ms.sourcegitcommit: 9a4488a3625866335e83a20da5e9c5286b1f034c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73460889"
+ms.lasthandoff: 05/15/2020
+ms.locfileid: "83421511"
 ---
-# <a name="how-to-enable-persistence-for-workflows-and-workflow-services"></a>Postupy: povolení trvalosti pro pracovní postupy a služby pracovních postupů
+# <a name="how-to-enable-persistence-for-workflows-and-workflow-services"></a>Postupy: Povolení trvalosti pro pracovní postupy a služby pracovních postupů
 
 Toto téma popisuje, jak povolit trvalost pro pracovní postupy a služby pracovních postupů.
 
 ## <a name="enable-persistence-for-workflows"></a>Povolit trvalost pro pracovní postupy
 
-Úložiště instancí můžete přidružit k aplikaci **WorkflowApplication** pomocí vlastnosti <xref:System.Activities.WorkflowApplication.InstanceStore%2A> třídy <xref:System.Activities.WorkflowApplication>. Metoda <xref:System.Activities.WorkflowApplication.Persist%2A> ukládá nebo ukládá pracovní postup do úložiště instancí přidruženého k aplikaci. Metoda <xref:System.Activities.WorkflowApplication.Unload%2A> ukládá pracovní postup do úložiště instance a poté uvolní instanci z paměti. Metoda **Load** načte pracovní postup do paměti pomocí dat pracovního postupu uložených v úložišti trvalosti instance.
+Úložiště instancí můžete přidružit k aplikaci **WorkflowApplication** pomocí <xref:System.Activities.WorkflowApplication.InstanceStore%2A> vlastnosti <xref:System.Activities.WorkflowApplication> třídy. <xref:System.Activities.WorkflowApplication.Persist%2A>Metoda ukládá nebo ukládá pracovní postup do úložiště instancí přidruženého k aplikaci. <xref:System.Activities.WorkflowApplication.Unload%2A>Metoda uchovává pracovní postup do úložiště instance a poté uvolní instanci z paměti. Metoda **Load** načte pracovní postup do paměti pomocí dat pracovního postupu uložených v úložišti trvalosti instance.
 
 Metoda **trvalosti** provádí následující kroky:
 
@@ -37,7 +38,7 @@ Metody **trvalého** i zrušení **zatížení** budou blokovat, pokud je pracov
 
 ## <a name="enable-persistence-for-workflow-services-in-code"></a>Povolení trvalosti pro služby pracovních postupů v kódu
 
-Člen **DurableInstancingOptions** třídy <xref:System.ServiceModel.WorkflowServiceHost> má vlastnost s názvem **InstanceStore** , kterou můžete použít k přidružení úložiště instancí k **hostiteli**služby.
+Člen **DurableInstancingOptions** <xref:System.ServiceModel.WorkflowServiceHost> třídy má vlastnost s názvem **InstanceStore** , kterou můžete použít k přidružení úložiště instancí k **hostiteli**služby.
 
 ```csharp
 // wsh is an instance of WorkflowServiceHost class

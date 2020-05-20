@@ -1,24 +1,25 @@
 ---
-title: Scénáře pracovního postupu Windows
+title: Scénáře Windows Workflow
+description: Podívejte se na příklady scénářů programovací model Windows Workflow Foundation, jako jsou scénáře, pomocí předdefinované knihovny aktivit a scénářů pomocí aktivit služeb pracovního postupu.
 ms.date: 03/30/2017
 ms.assetid: cb678fda-79aa-4495-833b-ef570539d4c3
-ms.openlocfilehash: 9e4d4023ee18305b843c62785fa454bb1cbe2787
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: c758d8f98380084886ab5e4465c8109e074e7d6f
+ms.sourcegitcommit: 9a4488a3625866335e83a20da5e9c5286b1f034c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61785928"
+ms.lasthandoff: 05/15/2020
+ms.locfileid: "83421355"
 ---
 # <a name="scenario"></a>Scénář
 
-Tato část obsahuje příklady scénářů Windows Workflow Foundation (WF).  
+Tato část obsahuje příklady scénářů programovací model Windows Workflow Foundation (WF).  
   
 ## <a name="in-this-section"></a>V tomto oddílu
 
-[Knihovna aktivit](activity-library.md) – obsahuje ukázky, které ukazují scénáře použití knihovna předdefinovaných aktivit.  
+[Knihovna aktivit](activity-library.md) – obsahuje ukázky, které předvádějí scénáře pomocí předdefinované knihovny aktivit.  
   
-[Služby](accessing-operationcontext.md) – obsahuje ukázky, které ukazují scénáře použití služby aktivity pracovního postupu.  
+[Služby](accessing-operationcontext.md) – obsahuje ukázky, které ukazují scénáře použití aktivit služeb pracovního postupu.  
   
-[Integrace WPF a WF v XAML](wpf-and-wf-integration-in-xaml.md) -ukazuje, jak vytvořit aplikaci, která využívá funkce Windows Presentation Foundation (WPF) a Windows Workflow Foundation (WF) v jednom dokumentu XAML. K tomu Ukázka používá rozšíření Windows Workflow Foundation (WF) a XAML.  
+[Integrace WPF a WF v jazyce XAML](wpf-and-wf-integration-in-xaml.md) – ukazuje, jak vytvořit aplikaci, která používá Windows Presentation Foundation (WPF) a funkce programovací model Windows Workflow Foundation (WF) v jednom dokumentu XAML. K tomu ukázka používá programovací model Windows Workflow Foundation (WF) a rozšiřitelnost XAML.  
   
-[Externí Toolkit sady pravidel](external-ruleset-toolkit.md) – ukazuje, jak spravovat a upravovat sady pravidel v databázi a přístup k těmto sady pravidel z pracovního postupu za běhu.
+[Externí sada RuleSet Toolkit](external-ruleset-toolkit.md) – ukazuje, jak spravovat a upravovat RuleSets v databázi a přistupovat k nim z pracovního postupu za běhu.

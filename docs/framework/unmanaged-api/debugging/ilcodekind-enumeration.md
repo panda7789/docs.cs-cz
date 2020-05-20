@@ -12,12 +12,12 @@ api_type:
 ms.assetid: b91765e4-82db-46f9-a6dc-6b80610276af
 topic_type:
 - apiref
-ms.openlocfilehash: 20e2e3f177b12221832786f4fab86635098d1989
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.openlocfilehash: 0586b9e184a0958b978837601db002e035881cbc
+ms.sourcegitcommit: 9a4488a3625866335e83a20da5e9c5286b1f034c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76790494"
+ms.lasthandoff: 05/15/2020
+ms.locfileid: "83421030"
 ---
 # <a name="ilcodekind-enumeration"></a>Výčet ILCodeKind
 [Podporované v .NET Framework 4.5.2 a novějších verzích]  
@@ -41,19 +41,19 @@ typedef enum ILCodeKind {
 |`ILCODE_REJIT_IL`|Ladicí program má přístup k informacím z instrumentace ReJIT.|  
   
 ## <a name="remarks"></a>Poznámky  
- Člen výčtu `ILCodeKind` může být předán metodám [enumeratelocalvariablesex –](icordebugilframe4-enumeratelocalvariablesex-method.md) a [getlocalvariableex –](icordebugilframe4-getlocalvariableex-method.md) k určení, zda ladicí program může přistupovat k proměnným přidaným do instrumentace ReJIT profileru a k metodě [getcodeex –](icordebugilframe4-getcodeex-method.md) k určení, zda ladicí program může získat přístup k instrumentované Il.  
+ Člen `ILCodeKind` výčtu může být předán metodám [Enumeratelocalvariablesex –](icordebugilframe4-enumeratelocalvariablesex-method.md) a [getlocalvariableex –](icordebugilframe4-getlocalvariableex-method.md) k určení, zda ladicí program může přistupovat k proměnným přidaným do instrumentace ReJIT profileru a k metodě [getcodeex –](icordebugilframe4-getcodeex-method.md) k určení, zda ladicí program může získat přístup k instrumentované Il.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** CorDebug. idl, CorDebug. h  
   
  **Knihovna:** CorGuids. lib  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v452plus](../../../../includes/net-current-v452plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v452plus](../../../../includes/net-current-v452plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Výčty pro ladění](debugging-enumerations.md)
-- [ICorDebugILFrame4 – rozhraní](icordebugilframe4-interface.md)
+- [Ladění výčtů](debugging-enumerations.md)
+- [Rozhraní ICorDebugILFrame4](icordebugilframe4-interface.md)
 - [ReJIT: Průvodce](https://docs.microsoft.com/archive/blogs/davbr/rejit-a-how-to-guide)
