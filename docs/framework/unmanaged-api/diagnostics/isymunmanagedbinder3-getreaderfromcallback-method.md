@@ -15,17 +15,17 @@ helpviewer_keywords:
 ms.assetid: 4ef83bd2-3d8e-499e-8a12-d9d6fd6ced30
 topic_type:
 - apiref
-ms.openlocfilehash: a0cccc0adfc666cc8e373bc1f89c8f6f97068fde
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 4a23e9aa259f430c0d0579657952fc6aba4c307c
+ms.sourcegitcommit: 7b1497c1927cb449cefd313bc5126ae37df30746
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74449311"
+ms.lasthandoff: 05/16/2020
+ms.locfileid: "83441653"
 ---
-# <a name="isymunmanagedbinder3getreaderfromcallback-method"></a><span data-ttu-id="81053-102">ISymUnmanagedBinder3::GetReaderFromCallback – metoda</span><span class="sxs-lookup"><span data-stu-id="81053-102">ISymUnmanagedBinder3::GetReaderFromCallback Method</span></span>
-<span data-ttu-id="81053-103">Umožňuje uživateli implementovat nebo doplnit pomocí zpětného volání buď `IID_IDiaReadExeAtRVACallback`, nebo `IID_IDiaReadExeAtOffsetCallback` a získat informace o ladicím adresáři z paměti.</span><span class="sxs-lookup"><span data-stu-id="81053-103">Allows the user to implement or supply via callback either an `IID_IDiaReadExeAtRVACallback` or `IID_IDiaReadExeAtOffsetCallback` to obtain the debug directory information from memory.</span></span>  
+# <a name="isymunmanagedbinder3getreaderfromcallback-method"></a><span data-ttu-id="54db5-102">ISymUnmanagedBinder3::GetReaderFromCallback – metoda</span><span class="sxs-lookup"><span data-stu-id="54db5-102">ISymUnmanagedBinder3::GetReaderFromCallback Method</span></span>
+<span data-ttu-id="54db5-103">Umožňuje uživateli implementovat nebo dodávkovat prostřednictvím zpětného volání buď `IID_IDiaReadExeAtRVACallback` nebo `IID_IDiaReadExeAtOffsetCallback` , aby získal informace adresáře ladění z paměti.</span><span class="sxs-lookup"><span data-stu-id="54db5-103">Allows the user to implement or supply via callback either an `IID_IDiaReadExeAtRVACallback` or `IID_IDiaReadExeAtOffsetCallback` to obtain the debug directory information from memory.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="81053-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="81053-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="54db5-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="54db5-104">Syntax</span></span>  
   
 ```cpp  
 HRESULT GetReaderFromCallback(  
@@ -37,31 +37,31 @@ HRESULT GetReaderFromCallback(
     [out,retval] ISymUnmanagedReader  **pRetVal);  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="81053-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="81053-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="54db5-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="54db5-105">Parameters</span></span>  
  `importer`  
- <span data-ttu-id="81053-106">pro Ukazatel na rozhraní pro import metadat.</span><span class="sxs-lookup"><span data-stu-id="81053-106">[in] A pointer to the metadata import interface.</span></span>  
+ <span data-ttu-id="54db5-106">pro Ukazatel na rozhraní pro import metadat.</span><span class="sxs-lookup"><span data-stu-id="54db5-106">[in] A pointer to the metadata import interface.</span></span>  
   
  `fileName`  
- <span data-ttu-id="81053-107">pro Ukazatel na název souboru.</span><span class="sxs-lookup"><span data-stu-id="81053-107">[in] A pointer to the file name.</span></span>  
+ <span data-ttu-id="54db5-107">pro Ukazatel na název souboru.</span><span class="sxs-lookup"><span data-stu-id="54db5-107">[in] A pointer to the file name.</span></span>  
   
  `searchPath`  
- <span data-ttu-id="81053-108">pro Ukazatel na cestu pro hledání.</span><span class="sxs-lookup"><span data-stu-id="81053-108">[in] A pointer to the search path.</span></span>  
+ <span data-ttu-id="54db5-108">pro Ukazatel na cestu pro hledání.</span><span class="sxs-lookup"><span data-stu-id="54db5-108">[in] A pointer to the search path.</span></span>  
   
  `searchPolicy`  
- <span data-ttu-id="81053-109">pro Hodnota výčtu [CorSymSearchPolicyAttributes –](../../../../docs/framework/unmanaged-api/diagnostics/corsymsearchpolicyattributes-enumeration.md) , která určuje zásadu, která se má použít při hledání čtečky symbolů.</span><span class="sxs-lookup"><span data-stu-id="81053-109">[in] A value of the [CorSymSearchPolicyAttributes](../../../../docs/framework/unmanaged-api/diagnostics/corsymsearchpolicyattributes-enumeration.md) enumeration that specifies the policy to be used when doing a search for a symbol reader.</span></span>  
+ <span data-ttu-id="54db5-109">pro Hodnota výčtu [CorSymSearchPolicyAttributes –](corsymsearchpolicyattributes-enumeration.md) , která určuje zásadu, která se má použít při hledání čtečky symbolů.</span><span class="sxs-lookup"><span data-stu-id="54db5-109">[in] A value of the [CorSymSearchPolicyAttributes](corsymsearchpolicyattributes-enumeration.md) enumeration that specifies the policy to be used when doing a search for a symbol reader.</span></span>  
   
  `callback`  
- <span data-ttu-id="81053-110">pro Ukazatel na funkci zpětného volání.</span><span class="sxs-lookup"><span data-stu-id="81053-110">[in] A pointer to the callback function.</span></span>  
+ <span data-ttu-id="54db5-110">pro Ukazatel na funkci zpětného volání.</span><span class="sxs-lookup"><span data-stu-id="54db5-110">[in] A pointer to the callback function.</span></span>  
   
  `pRetVal`  
- <span data-ttu-id="81053-111">mimo Ukazatel, který je nastaven na vrácené rozhraní [ISymUnmanagedReader](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedreader-interface.md) .</span><span class="sxs-lookup"><span data-stu-id="81053-111">[out] A pointer that is set to the returned [ISymUnmanagedReader](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedreader-interface.md) interface.</span></span>  
+ <span data-ttu-id="54db5-111">mimo Ukazatel, který je nastaven na vrácené rozhraní [ISymUnmanagedReader](isymunmanagedreader-interface.md) .</span><span class="sxs-lookup"><span data-stu-id="54db5-111">[out] A pointer that is set to the returned [ISymUnmanagedReader](isymunmanagedreader-interface.md) interface.</span></span>  
   
-## <a name="return-value"></a><span data-ttu-id="81053-112">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="81053-112">Return Value</span></span>  
- <span data-ttu-id="81053-113">S_OK, pokud je metoda úspěšná; v opačném případě E_FAIL nebo nějaký jiný kód chyby.</span><span class="sxs-lookup"><span data-stu-id="81053-113">S_OK if the method succeeds; otherwise, E_FAIL or some other error code.</span></span>  
+## <a name="return-value"></a><span data-ttu-id="54db5-112">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="54db5-112">Return Value</span></span>  
+ <span data-ttu-id="54db5-113">S_OK, pokud je metoda úspěšná; v opačném případě E_FAIL nebo nějaký jiný kód chyby.</span><span class="sxs-lookup"><span data-stu-id="54db5-113">S_OK if the method succeeds; otherwise, E_FAIL or some other error code.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="81053-114">Požadavky</span><span class="sxs-lookup"><span data-stu-id="81053-114">Requirements</span></span>  
- <span data-ttu-id="81053-115">**Hlavička:** CorSym. idl</span><span class="sxs-lookup"><span data-stu-id="81053-115">**Header:** CorSym.idl</span></span>  
+## <a name="requirements"></a><span data-ttu-id="54db5-114">Požadavky</span><span class="sxs-lookup"><span data-stu-id="54db5-114">Requirements</span></span>  
+ <span data-ttu-id="54db5-115">**Hlavička:** CorSym. idl</span><span class="sxs-lookup"><span data-stu-id="54db5-115">**Header:** CorSym.idl</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="81053-116">Viz také:</span><span class="sxs-lookup"><span data-stu-id="81053-116">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="54db5-116">Viz také</span><span class="sxs-lookup"><span data-stu-id="54db5-116">See also</span></span>
 
-- [<span data-ttu-id="81053-117">ISymUnmanagedBinder3 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="81053-117">ISymUnmanagedBinder3 Interface</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedbinder3-interface.md)
+- [<span data-ttu-id="54db5-117">ISymUnmanagedBinder3 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="54db5-117">ISymUnmanagedBinder3 Interface</span></span>](isymunmanagedbinder3-interface.md)

@@ -1,36 +1,37 @@
 ---
-title: Knihovna předdefinovaných aktivit rozhraní .NET framework 4.5
+title: Integrovaná knihovna aktivit .NET Framework 4,5
+description: Tento článek popisuje novou knihovnu aktivit s rozšířenými funkcemi, které jsou součástí .NET Framework 4,5.
 ms.date: 03/30/2017
 ms.assetid: e559e87b-6aed-491d-9546-e92bcec16fdf
-ms.openlocfilehash: 6d47c36a55829684a0eefb2a560e65f7b91462a7
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 4ce4420759512ec3adfff70bf0c365014d96ec7b
+ms.sourcegitcommit: 9a4488a3625866335e83a20da5e9c5286b1f034c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61786006"
+ms.lasthandoff: 05/15/2020
+ms.locfileid: "83421485"
 ---
-# <a name="net-framework-45-built-in-activity-library"></a><span data-ttu-id="8621a-102">Knihovna předdefinovaných aktivit rozhraní .NET framework 4.5</span><span class="sxs-lookup"><span data-stu-id="8621a-102">.NET Framework 4.5 Built-In Activity Library</span></span>
+# <a name="net-framework-45-built-in-activity-library"></a><span data-ttu-id="53d6f-103">Integrovaná knihovna aktivit .NET Framework 4,5</span><span class="sxs-lookup"><span data-stu-id="53d6f-103">.NET Framework 4.5 Built-In Activity Library</span></span>
 
-[!INCLUDE[netfx_current_long](../../../includes/netfx-current-long-md.md)] <span data-ttu-id="8621a-103">obsahuje novou knihovnu aktivit rozšířené funkce.</span><span class="sxs-lookup"><span data-stu-id="8621a-103">includes a new activity library with expanded functionality.</span></span> <span data-ttu-id="8621a-104">Typy aktivit, patří:</span><span class="sxs-lookup"><span data-stu-id="8621a-104">The types of activities include the following:</span></span>
+[!INCLUDE[netfx_current_long](../../../includes/netfx-current-long-md.md)]<span data-ttu-id="53d6f-104">zahrnuje novou knihovnu aktivit s rozšířenými funkcemi.</span><span class="sxs-lookup"><span data-stu-id="53d6f-104">includes a new activity library with expanded functionality.</span></span> <span data-ttu-id="53d6f-105">Mezi typy aktivit patří následující:</span><span class="sxs-lookup"><span data-stu-id="53d6f-105">The types of activities include the following:</span></span>
 
-- [<span data-ttu-id="8621a-105">Tok řízení</span><span class="sxs-lookup"><span data-stu-id="8621a-105">Control Flow</span></span>](control-flow-activities-in-wf.md)
+- [<span data-ttu-id="53d6f-106">Tok řízení</span><span class="sxs-lookup"><span data-stu-id="53d6f-106">Control Flow</span></span>](control-flow-activities-in-wf.md)
 
-- [<span data-ttu-id="8621a-106">Vývojový diagram</span><span class="sxs-lookup"><span data-stu-id="8621a-106">Flowchart</span></span>](flowchart-activities-in-wf.md)
+- [<span data-ttu-id="53d6f-107">Vývojový diagram</span><span class="sxs-lookup"><span data-stu-id="53d6f-107">Flowchart</span></span>](flowchart-activities-in-wf.md)
 
-- [<span data-ttu-id="8621a-107">Stavový stroj</span><span class="sxs-lookup"><span data-stu-id="8621a-107">State Machine</span></span>](state-machine-activities-in-wf.md)
+- [<span data-ttu-id="53d6f-108">Stavový stroj</span><span class="sxs-lookup"><span data-stu-id="53d6f-108">State Machine</span></span>](state-machine-activities-in-wf.md)
 
-- [<span data-ttu-id="8621a-108">Aktivity zasílání zpráv</span><span class="sxs-lookup"><span data-stu-id="8621a-108">Messaging Activities</span></span>](../wcf/feature-details/messaging-activities.md)
+- [<span data-ttu-id="53d6f-109">Aktivity zasílání zpráv</span><span class="sxs-lookup"><span data-stu-id="53d6f-109">Messaging Activities</span></span>](../wcf/feature-details/messaging-activities.md)
 
-- [<span data-ttu-id="8621a-109">Modul runtime</span><span class="sxs-lookup"><span data-stu-id="8621a-109">Runtime</span></span>](runtime-activities-in-wf.md)
+- [<span data-ttu-id="53d6f-110">Modul runtime</span><span class="sxs-lookup"><span data-stu-id="53d6f-110">Runtime</span></span>](runtime-activities-in-wf.md)
 
-- [<span data-ttu-id="8621a-110">Primitivní elementy</span><span class="sxs-lookup"><span data-stu-id="8621a-110">Primitives</span></span>](primitives-activities-in-wf.md)
+- [<span data-ttu-id="53d6f-111">Primitiva</span><span class="sxs-lookup"><span data-stu-id="53d6f-111">Primitives</span></span>](primitives-activities-in-wf.md)
 
-- [<span data-ttu-id="8621a-111">Transakce</span><span class="sxs-lookup"><span data-stu-id="8621a-111">Transaction</span></span>](transaction-activities-in-wf.md)
+- [<span data-ttu-id="53d6f-112">Transakce</span><span class="sxs-lookup"><span data-stu-id="53d6f-112">Transaction</span></span>](transaction-activities-in-wf.md)
 
-- [<span data-ttu-id="8621a-112">Kolekce</span><span class="sxs-lookup"><span data-stu-id="8621a-112">Collection</span></span>](collection-activities-in-wf.md)
+- [<span data-ttu-id="53d6f-113">Kolekce</span><span class="sxs-lookup"><span data-stu-id="53d6f-113">Collection</span></span>](collection-activities-in-wf.md)
 
-- [<span data-ttu-id="8621a-113">Zpracování chyb</span><span class="sxs-lookup"><span data-stu-id="8621a-113">Error Handling</span></span>](error-handling-activities-in-wf.md)
+- [<span data-ttu-id="53d6f-114">Zpracování chyb</span><span class="sxs-lookup"><span data-stu-id="53d6f-114">Error Handling</span></span>](error-handling-activities-in-wf.md)
 
-- [<span data-ttu-id="8621a-114">Migrace</span><span class="sxs-lookup"><span data-stu-id="8621a-114">Migration</span></span>](migration-activity-in-wf.md)
+- [<span data-ttu-id="53d6f-115">Migrace</span><span class="sxs-lookup"><span data-stu-id="53d6f-115">Migration</span></span>](migration-activity-in-wf.md)
 
-<span data-ttu-id="8621a-115">Aktivity v knihovně integrovaných aktivit můžete složený do pracovních postupů, nebo ho používáte spolu se vlastní aktivity.</span><span class="sxs-lookup"><span data-stu-id="8621a-115">The activities in the built-in activity library can be composed into workflows, or used alongside custom activities.</span></span> <span data-ttu-id="8621a-116">Aktivity v knihovně integrovaných aktivit jsou zapečetěné; nejsou určeny pro použití k vytvoření nové funkce prostřednictvím dědičnosti.</span><span class="sxs-lookup"><span data-stu-id="8621a-116">The activities in the built-in activity library are sealed; they are not intended to be used to create new functionality through inheritance.</span></span>
+<span data-ttu-id="53d6f-116">Aktivity v předdefinované knihovně aktivit mohou být tvořeny pracovními postupy nebo použity společně s vlastními aktivitami.</span><span class="sxs-lookup"><span data-stu-id="53d6f-116">The activities in the built-in activity library can be composed into workflows, or used alongside custom activities.</span></span> <span data-ttu-id="53d6f-117">Aktivity v předdefinované knihovně aktivit jsou zapečetěné. neslouží k vytváření nových funkcí prostřednictvím dědičnosti.</span><span class="sxs-lookup"><span data-stu-id="53d6f-117">The activities in the built-in activity library are sealed; they are not intended to be used to create new functionality through inheritance.</span></span>
