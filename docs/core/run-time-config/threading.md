@@ -1,41 +1,41 @@
 ---
-title: Nastavení konfigurace zřetězení
-description: Přečtěte si o nastavení za běhu, které konfigurují zřetězení pro aplikace .NET Core.
+title: Nastavení konfigurace vláken
+description: Přečtěte si o nastaveních prostředí runtime, která konfigurují vlákna pro aplikace .NET Core.
 ms.date: 11/27/2019
 ms.topic: reference
-ms.openlocfilehash: 68b8e93ca6ec3f708a7a627307655ada1955500a
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 1c7c16993a07ef95223481791153b75ab2f61533
+ms.sourcegitcommit: c76c8b2c39ed2f0eee422b61a2ab4c05ca7771fa
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "76789853"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83761925"
 ---
-# <a name="run-time-configuration-options-for-threading"></a><span data-ttu-id="975bf-103">Možnosti konfigurace za běhu pro zřetězení</span><span class="sxs-lookup"><span data-stu-id="975bf-103">Run-time configuration options for threading</span></span>
+# <a name="run-time-configuration-options-for-threading"></a><span data-ttu-id="59049-103">Možnosti konfigurace běhu pro dělení na vlákna</span><span class="sxs-lookup"><span data-stu-id="59049-103">Run-time configuration options for threading</span></span>
 
-## <a name="cpu-groups"></a><span data-ttu-id="975bf-104">Skupiny procesorů</span><span class="sxs-lookup"><span data-stu-id="975bf-104">CPU groups</span></span>
+## <a name="cpu-groups"></a><span data-ttu-id="59049-104">Skupiny PROCESORů</span><span class="sxs-lookup"><span data-stu-id="59049-104">CPU groups</span></span>
 
-- <span data-ttu-id="975bf-105">Konfiguruje, zda jsou vlákna automaticky distribuována mezi skupinami procesorů.</span><span class="sxs-lookup"><span data-stu-id="975bf-105">Configures whether threads are automatically distributed across CPU groups.</span></span>
-- <span data-ttu-id="975bf-106">Výchozí: Zakázáno (`0`).</span><span class="sxs-lookup"><span data-stu-id="975bf-106">Default: Disabled (`0`).</span></span>
+- <span data-ttu-id="59049-105">Konfiguruje, zda jsou vlákna automaticky distribuována napříč skupinami PROCESORů.</span><span class="sxs-lookup"><span data-stu-id="59049-105">Configures whether threads are automatically distributed across CPU groups.</span></span>
+- <span data-ttu-id="59049-106">Pokud toto nastavení vynecháte, nebudou vlákna distribuována mezi skupiny PROCESORů.</span><span class="sxs-lookup"><span data-stu-id="59049-106">If you omit this setting, threads are not distributed across CPU groups.</span></span> <span data-ttu-id="59049-107">To je ekvivalentní nastavení hodnoty na `0` .</span><span class="sxs-lookup"><span data-stu-id="59049-107">This is equivalent to setting the value to `0`.</span></span>
 
-| | <span data-ttu-id="975bf-107">Název nastavení</span><span class="sxs-lookup"><span data-stu-id="975bf-107">Setting name</span></span> | <span data-ttu-id="975bf-108">Hodnoty</span><span class="sxs-lookup"><span data-stu-id="975bf-108">Values</span></span> |
+| | <span data-ttu-id="59049-108">Název nastavení</span><span class="sxs-lookup"><span data-stu-id="59049-108">Setting name</span></span> | <span data-ttu-id="59049-109">Hodnoty</span><span class="sxs-lookup"><span data-stu-id="59049-109">Values</span></span> |
 | - | - | - |
-| <span data-ttu-id="975bf-109">**runtimeconfig.json**</span><span class="sxs-lookup"><span data-stu-id="975bf-109">**runtimeconfig.json**</span></span> | <span data-ttu-id="975bf-110">Není dostupné.</span><span class="sxs-lookup"><span data-stu-id="975bf-110">N/A</span></span> | <span data-ttu-id="975bf-111">Není dostupné.</span><span class="sxs-lookup"><span data-stu-id="975bf-111">N/A</span></span> |
-| <span data-ttu-id="975bf-112">**Proměnná prostředí**</span><span class="sxs-lookup"><span data-stu-id="975bf-112">**Environment variable**</span></span> | `COMPlus_Thread_UseAllCpuGroups` | <span data-ttu-id="975bf-113">`0`- zakázáno</span><span class="sxs-lookup"><span data-stu-id="975bf-113">`0` - disabled</span></span><br/><span data-ttu-id="975bf-114">`1`- povoleno</span><span class="sxs-lookup"><span data-stu-id="975bf-114">`1` - enabled</span></span> |
+| <span data-ttu-id="59049-110">**runtimeconfig. JSON**</span><span class="sxs-lookup"><span data-stu-id="59049-110">**runtimeconfig.json**</span></span> | <span data-ttu-id="59049-111">–</span><span class="sxs-lookup"><span data-stu-id="59049-111">N/A</span></span> | <span data-ttu-id="59049-112">–</span><span class="sxs-lookup"><span data-stu-id="59049-112">N/A</span></span> |
+| <span data-ttu-id="59049-113">**Proměnná prostředí**</span><span class="sxs-lookup"><span data-stu-id="59049-113">**Environment variable**</span></span> | `COMPlus_Thread_UseAllCpuGroups` | <span data-ttu-id="59049-114">`0`– zakázáno</span><span class="sxs-lookup"><span data-stu-id="59049-114">`0` - disabled</span></span><br/><span data-ttu-id="59049-115">`1`– povoleno</span><span class="sxs-lookup"><span data-stu-id="59049-115">`1` - enabled</span></span> |
 
-## <a name="minimum-threads"></a><span data-ttu-id="975bf-115">Minimální závity</span><span class="sxs-lookup"><span data-stu-id="975bf-115">Minimum threads</span></span>
+## <a name="minimum-threads"></a><span data-ttu-id="59049-116">Minimální počet vláken</span><span class="sxs-lookup"><span data-stu-id="59049-116">Minimum threads</span></span>
 
-- <span data-ttu-id="975bf-116">Určuje minimální počet podprocesů pro fond pracovních vláken.</span><span class="sxs-lookup"><span data-stu-id="975bf-116">Specifies the minimum number of threads for the worker thread pool.</span></span>
-- <span data-ttu-id="975bf-117">Odpovídá metodě. <xref:System.Threading.ThreadPool.SetMinThreads%2A?displayProperty=nameWithType></span><span class="sxs-lookup"><span data-stu-id="975bf-117">Corresponds to the <xref:System.Threading.ThreadPool.SetMinThreads%2A?displayProperty=nameWithType> method.</span></span>
+- <span data-ttu-id="59049-117">Určuje minimální počet vláken pro fond pracovních vláken.</span><span class="sxs-lookup"><span data-stu-id="59049-117">Specifies the minimum number of threads for the worker thread pool.</span></span>
+- <span data-ttu-id="59049-118">Odpovídá <xref:System.Threading.ThreadPool.SetMinThreads%2A?displayProperty=nameWithType> metodě.</span><span class="sxs-lookup"><span data-stu-id="59049-118">Corresponds to the <xref:System.Threading.ThreadPool.SetMinThreads%2A?displayProperty=nameWithType> method.</span></span>
 
-| | <span data-ttu-id="975bf-118">Název nastavení</span><span class="sxs-lookup"><span data-stu-id="975bf-118">Setting name</span></span> | <span data-ttu-id="975bf-119">Hodnoty</span><span class="sxs-lookup"><span data-stu-id="975bf-119">Values</span></span> |
+| | <span data-ttu-id="59049-119">Název nastavení</span><span class="sxs-lookup"><span data-stu-id="59049-119">Setting name</span></span> | <span data-ttu-id="59049-120">Hodnoty</span><span class="sxs-lookup"><span data-stu-id="59049-120">Values</span></span> |
 | - | - | - |
-| <span data-ttu-id="975bf-120">**runtimeconfig.json**</span><span class="sxs-lookup"><span data-stu-id="975bf-120">**runtimeconfig.json**</span></span> | `System.Threading.ThreadPool.MinThreads` | <span data-ttu-id="975bf-121">Celé číslo představující minimální počet podprocesů</span><span class="sxs-lookup"><span data-stu-id="975bf-121">An integer that represents the minimum number of threads</span></span> |
-| <span data-ttu-id="975bf-122">**MSBuild, vlastnost**</span><span class="sxs-lookup"><span data-stu-id="975bf-122">**MSBuild property**</span></span> | `ThreadPoolMinThreads` | <span data-ttu-id="975bf-123">Celé číslo představující minimální počet podprocesů</span><span class="sxs-lookup"><span data-stu-id="975bf-123">An integer that represents the minimum number of threads</span></span> |
-| <span data-ttu-id="975bf-124">**Proměnná prostředí**</span><span class="sxs-lookup"><span data-stu-id="975bf-124">**Environment variable**</span></span> | <span data-ttu-id="975bf-125">Není dostupné.</span><span class="sxs-lookup"><span data-stu-id="975bf-125">N/A</span></span> | <span data-ttu-id="975bf-126">Není dostupné.</span><span class="sxs-lookup"><span data-stu-id="975bf-126">N/A</span></span> |
+| <span data-ttu-id="59049-121">**runtimeconfig. JSON**</span><span class="sxs-lookup"><span data-stu-id="59049-121">**runtimeconfig.json**</span></span> | `System.Threading.ThreadPool.MinThreads` | <span data-ttu-id="59049-122">Celé číslo, které představuje minimální počet vláken</span><span class="sxs-lookup"><span data-stu-id="59049-122">An integer that represents the minimum number of threads</span></span> |
+| <span data-ttu-id="59049-123">**Vlastnost MSBuild**</span><span class="sxs-lookup"><span data-stu-id="59049-123">**MSBuild property**</span></span> | `ThreadPoolMinThreads` | <span data-ttu-id="59049-124">Celé číslo, které představuje minimální počet vláken</span><span class="sxs-lookup"><span data-stu-id="59049-124">An integer that represents the minimum number of threads</span></span> |
+| <span data-ttu-id="59049-125">**Proměnná prostředí**</span><span class="sxs-lookup"><span data-stu-id="59049-125">**Environment variable**</span></span> | <span data-ttu-id="59049-126">–</span><span class="sxs-lookup"><span data-stu-id="59049-126">N/A</span></span> | <span data-ttu-id="59049-127">–</span><span class="sxs-lookup"><span data-stu-id="59049-127">N/A</span></span> |
 
-### <a name="examples"></a><span data-ttu-id="975bf-127">Příklady</span><span class="sxs-lookup"><span data-stu-id="975bf-127">Examples</span></span>
+### <a name="examples"></a><span data-ttu-id="59049-128">Příklady</span><span class="sxs-lookup"><span data-stu-id="59049-128">Examples</span></span>
 
-<span data-ttu-id="975bf-128">*soubor runtimeconfig.json:*</span><span class="sxs-lookup"><span data-stu-id="975bf-128">*runtimeconfig.json* file:</span></span>
+<span data-ttu-id="59049-129">soubor *runtimeconfig. JSON* :</span><span class="sxs-lookup"><span data-stu-id="59049-129">*runtimeconfig.json* file:</span></span>
 
 ```json
 {
@@ -47,7 +47,7 @@ ms.locfileid: "76789853"
 }
 ```
 
-<span data-ttu-id="975bf-129">Soubor projektu:</span><span class="sxs-lookup"><span data-stu-id="975bf-129">Project file:</span></span>
+<span data-ttu-id="59049-130">Soubor projektu:</span><span class="sxs-lookup"><span data-stu-id="59049-130">Project file:</span></span>
 
 ```xml
 <Project Sdk="Microsoft.NET.Sdk">
@@ -59,20 +59,20 @@ ms.locfileid: "76789853"
 </Project>
 ```
 
-## <a name="maximum-threads"></a><span data-ttu-id="975bf-130">Maximální počet vláken</span><span class="sxs-lookup"><span data-stu-id="975bf-130">Maximum threads</span></span>
+## <a name="maximum-threads"></a><span data-ttu-id="59049-131">Maximální počet vláken</span><span class="sxs-lookup"><span data-stu-id="59049-131">Maximum threads</span></span>
 
-- <span data-ttu-id="975bf-131">Určuje maximální počet podprocesů pro fond pracovních vláken.</span><span class="sxs-lookup"><span data-stu-id="975bf-131">Specifies the maximum number of threads for the worker thread pool.</span></span>
-- <span data-ttu-id="975bf-132">Odpovídá metodě. <xref:System.Threading.ThreadPool.SetMaxThreads%2A?displayProperty=nameWithType></span><span class="sxs-lookup"><span data-stu-id="975bf-132">Corresponds to the <xref:System.Threading.ThreadPool.SetMaxThreads%2A?displayProperty=nameWithType> method.</span></span>
+- <span data-ttu-id="59049-132">Určuje maximální počet vláken pro fond pracovních vláken.</span><span class="sxs-lookup"><span data-stu-id="59049-132">Specifies the maximum number of threads for the worker thread pool.</span></span>
+- <span data-ttu-id="59049-133">Odpovídá <xref:System.Threading.ThreadPool.SetMaxThreads%2A?displayProperty=nameWithType> metodě.</span><span class="sxs-lookup"><span data-stu-id="59049-133">Corresponds to the <xref:System.Threading.ThreadPool.SetMaxThreads%2A?displayProperty=nameWithType> method.</span></span>
 
-| | <span data-ttu-id="975bf-133">Název nastavení</span><span class="sxs-lookup"><span data-stu-id="975bf-133">Setting name</span></span> | <span data-ttu-id="975bf-134">Hodnoty</span><span class="sxs-lookup"><span data-stu-id="975bf-134">Values</span></span> |
+| | <span data-ttu-id="59049-134">Název nastavení</span><span class="sxs-lookup"><span data-stu-id="59049-134">Setting name</span></span> | <span data-ttu-id="59049-135">Hodnoty</span><span class="sxs-lookup"><span data-stu-id="59049-135">Values</span></span> |
 | - | - | - |
-| <span data-ttu-id="975bf-135">**runtimeconfig.json**</span><span class="sxs-lookup"><span data-stu-id="975bf-135">**runtimeconfig.json**</span></span> | `System.Threading.ThreadPool.MaxThreads` | <span data-ttu-id="975bf-136">Celé číslo představující maximální počet podprocesů</span><span class="sxs-lookup"><span data-stu-id="975bf-136">An integer that represents the maximum number of threads</span></span> |
-| <span data-ttu-id="975bf-137">**MSBuild, vlastnost**</span><span class="sxs-lookup"><span data-stu-id="975bf-137">**MSBuild property**</span></span> | `ThreadPoolMaxThreads` | <span data-ttu-id="975bf-138">Celé číslo představující maximální počet podprocesů</span><span class="sxs-lookup"><span data-stu-id="975bf-138">An integer that represents the maximum number of threads</span></span> |
-| <span data-ttu-id="975bf-139">**Proměnná prostředí**</span><span class="sxs-lookup"><span data-stu-id="975bf-139">**Environment variable**</span></span> | <span data-ttu-id="975bf-140">Není dostupné.</span><span class="sxs-lookup"><span data-stu-id="975bf-140">N/A</span></span> | <span data-ttu-id="975bf-141">Není dostupné.</span><span class="sxs-lookup"><span data-stu-id="975bf-141">N/A</span></span> |
+| <span data-ttu-id="59049-136">**runtimeconfig. JSON**</span><span class="sxs-lookup"><span data-stu-id="59049-136">**runtimeconfig.json**</span></span> | `System.Threading.ThreadPool.MaxThreads` | <span data-ttu-id="59049-137">Celé číslo, které představuje maximální počet vláken</span><span class="sxs-lookup"><span data-stu-id="59049-137">An integer that represents the maximum number of threads</span></span> |
+| <span data-ttu-id="59049-138">**Vlastnost MSBuild**</span><span class="sxs-lookup"><span data-stu-id="59049-138">**MSBuild property**</span></span> | `ThreadPoolMaxThreads` | <span data-ttu-id="59049-139">Celé číslo, které představuje maximální počet vláken</span><span class="sxs-lookup"><span data-stu-id="59049-139">An integer that represents the maximum number of threads</span></span> |
+| <span data-ttu-id="59049-140">**Proměnná prostředí**</span><span class="sxs-lookup"><span data-stu-id="59049-140">**Environment variable**</span></span> | <span data-ttu-id="59049-141">–</span><span class="sxs-lookup"><span data-stu-id="59049-141">N/A</span></span> | <span data-ttu-id="59049-142">–</span><span class="sxs-lookup"><span data-stu-id="59049-142">N/A</span></span> |
 
-### <a name="examples"></a><span data-ttu-id="975bf-142">Příklady</span><span class="sxs-lookup"><span data-stu-id="975bf-142">Examples</span></span>
+### <a name="examples"></a><span data-ttu-id="59049-143">Příklady</span><span class="sxs-lookup"><span data-stu-id="59049-143">Examples</span></span>
 
-<span data-ttu-id="975bf-143">*soubor runtimeconfig.json:*</span><span class="sxs-lookup"><span data-stu-id="975bf-143">*runtimeconfig.json* file:</span></span>
+<span data-ttu-id="59049-144">soubor *runtimeconfig. JSON* :</span><span class="sxs-lookup"><span data-stu-id="59049-144">*runtimeconfig.json* file:</span></span>
 
 ```json
 {
@@ -84,7 +84,7 @@ ms.locfileid: "76789853"
 }
 ```
 
-<span data-ttu-id="975bf-144">Soubor projektu:</span><span class="sxs-lookup"><span data-stu-id="975bf-144">Project file:</span></span>
+<span data-ttu-id="59049-145">Soubor projektu:</span><span class="sxs-lookup"><span data-stu-id="59049-145">Project file:</span></span>
 
 ```xml
 <Project Sdk="Microsoft.NET.Sdk">
