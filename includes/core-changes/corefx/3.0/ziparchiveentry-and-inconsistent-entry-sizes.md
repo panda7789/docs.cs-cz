@@ -1,30 +1,30 @@
 ---
-ms.openlocfilehash: 9520f8c6b6671917f5694bc602293a00e2dab82d
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 8c8e87c885c99d28aa9a7a5d5a2b48c80d40d7db
+ms.sourcegitcommit: 0926684d8d34f4c6b5acce58d2193db093cb9cf2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "74568074"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83721352"
 ---
-### <a name="ziparchiveentry-no-longer-handles-archives-with-inconsistent-entry-sizes"></a>ZipArchiveEntry již zpracovává archivy s nekonzistentními velikostmi položek
+### <a name="ziparchiveentry-no-longer-handles-archives-with-inconsistent-entry-sizes"></a>ZipArchiveEntry už nezpracovává archivy s nekonzistentními velikostmi záznamů.
 
-Zip archivy seznam jak komprimované velikosti a nekomprimované velikosti v centrálním adresáři a místní záhlaví.  Vstupní data sama také označuje jeho velikost.  V rozhraní .NET Core 2.2 a starších verzích nebyly tyto hodnoty nikdy kontrolovány na konzistenci. Počínaje rozhraním .NET Core 3.0 nyní jsou.
+Archivy zip uvádějí komprimovanou velikost i nekomprimovanou velikost v centrálním adresáři a v místní hlavičce.  Samotná data samotného záznamu také označují jeho velikost.  V .NET Core 2,2 a dřívějších verzích se tyto hodnoty nikdy nekontrolovaly konzistence. Počínaje .NET Core 3,0 jsou teď.
 
 #### <a name="change-description"></a>Popis změny
 
-V rozhraní .NET Core 2.2 <xref:System.IO.Compression.ZipArchiveEntry.Open?displayProperty=nameWithType> a starších verzích se daří i v případě, že místní záhlaví nesouhlasí s centrální záhlaví souboru zip. Data jsou dekomprimována až do dosažení konce komprimovaného datového proudu, a to i v případě, že jejich délka přesahuje velikost nekomprimovaného souboru uvedenou v centrálním adresáři nebo místní hlavičce.
+V .NET Core 2,2 a starších verzích se aplikace <xref:System.IO.Compression.ZipArchiveEntry.Open?displayProperty=nameWithType> zdaří i v případě, že místní hlavička odsouhlasí s centrálním hlavičkou souboru ZIP. Data se dekomprimuje, dokud se nedosáhne konce zkomprimovaného datového proudu, a to i v případě, že jeho délka přesáhne velikost nekomprimovaného souboru, která je uvedená v centrálním adresáři/místní hlavičce.
 
-Počínaje rozhraním .NET Core <xref:System.IO.Compression.ZipArchiveEntry.Open?displayProperty=nameWithType> 3.0 metoda kontroluje, zda se místní hlavička a centrální hlavička dohodnou na komprimovaných a nekomprimovaných velikostech položky.  Pokud tomu tak není, metoda <xref:System.IO.InvalidDataException> vyvolá pokud je místní záhlaví nebo velikosti seznamu popisovačů dat, které nesouhlasí s centrálním adresářem souboru zip. Při čtení položky jsou dekomprimovaná data zkrácena na nekomprimovanou velikost souboru uvedenou v záhlaví.
+Počínaje rozhraním .NET Core 3,0 <xref:System.IO.Compression.ZipArchiveEntry.Open?displayProperty=nameWithType> Metoda kontroluje, zda se místní hlavička a centrální hlavička dohodnou na komprimovaných a nekomprimovaných velikostech položky.  Pokud ne, metoda vyvolá výjimku, <xref:System.IO.InvalidDataException> Pokud místní hlavička nebo seznam popisovačů dat archivu, které nesouhlasí s centrálním adresářem souboru ZIP. Při čtení položky se dekomprimovaná data zkrátí na nekomprimovaný soubor, který je uveden v hlavičce.
 
-Tato změna byla provedena, <xref:System.IO.Compression.ZipArchiveEntry> aby bylo zajištěno, že správně představuje velikost jeho dat a že je přečteno pouze toto množství dat.
+Tato změna byla provedena, aby se zajistilo, že <xref:System.IO.Compression.ZipArchiveEntry> správně představuje velikost svých dat a že je čteno pouze množství dat.
 
-#### <a name="version-introduced"></a>Zavedená verze
+#### <a name="version-introduced"></a>Představená verze
 
 3.0
 
 #### <a name="recommended-action"></a>Doporučená akce
 
-Přebalit všechny zip archiv, který vykazuje tyto problémy.
+Znovu zabalit libovolný archiv zip, který tyto problémy vykazuje.
 
 #### <a name="category"></a>Kategorie
 
@@ -39,7 +39,7 @@ CoreFx
 
 <!--
 
-### Affected APIs
+#### Affected APIs
 
 `M:System.IO.Compression.ZipArchiveEntry.Open`
 `Overload:System.IO.Compression.ZipFileExtensions.ExtractToDirectory%2A`

@@ -1,37 +1,37 @@
 ---
-ms.openlocfilehash: 9f8a790718fbb9d685bb8959808338dc1766bf2c
-ms.sourcegitcommit: 348bb052d5cef109a61a3d5253faa5d7167d55ac
+ms.openlocfilehash: 02c9305a36f47dfaf0b1fa8d19b07cd2d34badae
+ms.sourcegitcommit: 0926684d8d34f4c6b5acce58d2193db093cb9cf2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "82021651"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83721269"
 ---
-### <a name="fieldinfosetvalue-throws-exception-for-static-init-only-fields"></a>FieldInfo.SetValue vyvolá výjimku pro statická pole pouze init.
+### <a name="fieldinfosetvalue-throws-exception-for-static-init-only-fields"></a>Parametr FieldInfo. SetValue vyvolá výjimku pro statická pole pouze pro init.
 
-Počínaje .NET Core 3.0, je vyvolána výjimka při pokusu <xref:System.Reflection.FieldAttributes.InitOnly> o nastavení <xref:System.Reflection.FieldInfo.SetValue%2A?displayProperty=fullName>hodnoty na statické, pole voláním .
+Počínaje rozhraním .NET Core 3,0 je vyvolána výjimka při pokusu o nastavení hodnoty ve statickém <xref:System.Reflection.FieldAttributes.InitOnly> poli pomocí volání <xref:System.Reflection.FieldInfo.SetValue%2A?displayProperty=fullName> .
 
 #### <a name="change-description"></a>Popis změny
 
-V rozhraní .NET Framework a verzích rozhraní .NET Core před verzí 3.0 můžete nastavit hodnotu statického pole, které <xref:System.Reflection.FieldInfo.SetValue%2A?displayProperty=fullName>je konstantní po inicializování[(pouze pro čtení v C#](~/docs/csharp/language-reference/keywords/readonly.md)) voláním . Nastavení takového pole tímto způsobem však vedlo k nepředvídatelnému chování založenému na cílovém rozhraní a nastavení optimalizace.
+V .NET Framework a verzích .NET Core před 3,0 jste mohli nastavit hodnotu statického pole, které je konstanta po inicializaci ([ReadOnly v jazyce C#](~/docs/csharp/language-reference/keywords/readonly.md)) voláním <xref:System.Reflection.FieldInfo.SetValue%2A?displayProperty=fullName> . Nicméně nastavení takového pole tímto způsobem vedlo k nepředvídatelnému chování na základě cílové architektury a nastavení optimalizace.
 
-V .NET Core 3.0 a novější <xref:System.Reflection.FieldInfo.SetValue%2A> verze při <xref:System.Reflection.FieldAttributes.InitOnly> volání na <xref:System.FieldAccessException?displayProperty=nameWithType> statické, pole je vyvolána výjimka.
+V .NET Core 3,0 a novějších verzích při volání <xref:System.Reflection.FieldInfo.SetValue%2A> ve statickém <xref:System.Reflection.FieldAttributes.InitOnly> poli <xref:System.FieldAccessException?displayProperty=nameWithType> je vyvolána výjimka.
 
 > [!TIP]
-> Pole <xref:System.Reflection.FieldAttributes.InitOnly> je pole, které lze nastavit pouze v době, kdy je deklarováno, nebo v konstruktoru pro obsahující třídu. Jinými slovy, je konstantní po inicializování.
+> <xref:System.Reflection.FieldAttributes.InitOnly>Pole je jedno, které lze nastavit pouze v okamžiku deklarace nebo v konstruktoru pro třídu, která ji obsahuje. Jinými slovy je konstanta po inicializaci.
 
-#### <a name="version-introduced"></a>Zavedená verze
+#### <a name="version-introduced"></a>Představená verze
 
 3.0
 
 #### <a name="recommended-action"></a>Doporučená akce
 
-Inicializovat <xref:System.Reflection.FieldAttributes.InitOnly> statické, pole ve statickém konstruktoru. To platí pro dynamické i nedynamické typy.
+Proveďte inicializaci statických <xref:System.Reflection.FieldAttributes.InitOnly> polí ve statickém konstruktoru. To platí pro dynamické i jiné než dynamické typy.
 
-Případně můžete <xref:System.Reflection.FieldAttributes.InitOnly?displayProperty=nameWithType> odebrat atribut z pole a <xref:System.Reflection.FieldInfo.SetValue%2A?displayProperty=nameWithType>potom zavolat .
+Alternativně můžete odebrat <xref:System.Reflection.FieldAttributes.InitOnly?displayProperty=nameWithType> atribut z pole a pak zavolat <xref:System.Reflection.FieldInfo.SetValue%2A?displayProperty=nameWithType> .
 
 #### <a name="category"></a>Kategorie
 
-Základní knihovny .NET
+Knihovny Core .NET
 
 #### <a name="affected-apis"></a>Ovlivněná rozhraní API
 
@@ -40,7 +40,7 @@ Základní knihovny .NET
 
 <!--
 
-### Affected APIs
+#### Affected APIs
 
 - `M:System.Reflection.FieldInfo.SetValue(System.Object,System.Object)`
 - `M:System.Reflection.FieldInfo.SetValue(System.Object,System.Object,System.Reflection.BindingFlags,System.Reflection.Binder,System.Globalization.CultureInfo)`

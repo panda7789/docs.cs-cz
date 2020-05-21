@@ -1,40 +1,40 @@
 ---
-ms.openlocfilehash: 9583d868ee01117d7bd6e465e7d89a734489d1a8
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: b861dbaa02c97a03c015fdf4e63d25c40c90ea0a
+ms.sourcegitcommit: 0926684d8d34f4c6b5acce58d2193db093cb9cf2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "77449211"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83721710"
 ---
-### <a name="boolean-parameter-of-signedcmscomputesignature-is-respected"></a>Logický parametr SignedCms.ComputeSignature je respektován
+### <a name="boolean-parameter-of-signedcmscomputesignature-is-respected"></a>Je respektován logický parametr SignedCms. ComputeSignature.
 
-V .NET Core je `silent` respektován <xref:System.Security.Cryptography.Pkcs.SignedCms.ComputeSignature(System.Security.Cryptography.Pkcs.CmsSigner,System.Boolean)?displayProperty=nameWithType> logický parametr metody. Pokud je tento parametr nastaven na `true`hodnotu , nezobrazí se výzva kódu PIN.
+V .NET Core `silent` <xref:System.Security.Cryptography.Pkcs.SignedCms.ComputeSignature(System.Security.Cryptography.Pkcs.CmsSigner,System.Boolean)?displayProperty=nameWithType> je respektován parametr Boolean metody. Pokud je tento parametr nastaven na hodnotu, není zobrazena výzva k zadání kódu PIN `true` .
 
 #### <a name="change-description"></a>Popis změny
 
-V rozhraní .NET `silent` Framework <xref:System.Security.Cryptography.Pkcs.SignedCms.ComputeSignature(System.Security.Cryptography.Pkcs.CmsSigner,System.Boolean)?displayProperty=nameWithType> je parametr metody ignorován a výzva pin ukázne vždy, pokud to vyžaduje zprostředkovatel. V .NET Core `silent` je parametr respektován a `true`pokud je nastavena na , výzva PIN se nikdy nezobrazí, i když je vyžadována zprostředkovatelem.
+V .NET Framework `silent` parametr <xref:System.Security.Cryptography.Pkcs.SignedCms.ComputeSignature(System.Security.Cryptography.Pkcs.CmsSigner,System.Boolean)?displayProperty=nameWithType> metody je ignorován a výzva k zadání kódu PIN je vždy zobrazena, pokud to vyžaduje poskytovatel. V .NET Core je `silent` parametr dodržen a pokud je nastaven na `true` , výzva k zadání kódu PIN se nikdy nezobrazuje, i když ho poskytovatel požaduje.
 
-Podpora zpráv CMS/PKCS #7 byla zavedena do rozhraní .NET Core ve verzi 2.1.
+Podpora pro zprávy CMS/PKCS #7 byla představena do .NET Core ve verzi 2,1.
 
-#### <a name="version-introduced"></a>Zavedená verze
+#### <a name="version-introduced"></a>Představená verze
 
 2.1
 
 #### <a name="recommended-action"></a>Doporučená akce
 
-Chcete-li zajistit, aby se v <xref:System.Security.Cryptography.Pkcs.SignedCms.ComputeSignature(System.Security.Cryptography.Pkcs.CmsSigner,System.Boolean)?displayProperty=nameWithType> případě potřeby zobrazila výzva s kódem PIN, měly by aplikace klasické pracovní plochy volat a nastavit logický parametr na `false`hodnotu . Výsledné chování je stejné jako na rozhraní .NET Framework bez ohledu na to, zda je zakázán tichý kontext.
+Aby se v případě potřeby zobrazila výzva k zadání kódu PIN, aplikace klasické pracovní plochy by měla zavolat <xref:System.Security.Cryptography.Pkcs.SignedCms.ComputeSignature(System.Security.Cryptography.Pkcs.CmsSigner,System.Boolean)?displayProperty=nameWithType> a nastavit parametr Boolean na `false` . Výsledné chování je stejné jako u .NET Framework bez ohledu na to, jestli je v tichém kontextu zakázaný kontext.
 
-### <a name="category"></a>Kategorie
+#### <a name="category"></a>Kategorie
 
 Kryptografie
 
-### <a name="affected-apis"></a>Ovlivněná rozhraní API
+#### <a name="affected-apis"></a>Ovlivněná rozhraní API
 
 - <xref:System.Security.Cryptography.Pkcs.SignedCms.ComputeSignature(System.Security.Cryptography.Pkcs.CmsSigner,System.Boolean)?displayProperty=nameWithType>
 
 <!--
 
-### Affected APIs
+#### Affected APIs
 
 - `M:System.Security.Cryptography.Pkcs.SignedCms.ComputeSignature(System.Security.Cryptography.Pkcs.CmsSigner,System.Boolean)`
 

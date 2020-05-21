@@ -1,44 +1,44 @@
 ---
-ms.openlocfilehash: 820825f0545aa78729414c388385b339225b1235
-ms.sourcegitcommit: 348bb052d5cef109a61a3d5253faa5d7167d55ac
+ms.openlocfilehash: 00c32c10f77995284264e795d386f699082dcb84
+ms.sourcegitcommit: 0926684d8d34f4c6b5acce58d2193db093cb9cf2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "82021672"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83721209"
 ---
-### <a name="custom-encoderfallbackbuffer-instances-cannot-fall-back-recursively"></a>Vlastní instance EncoderFallbackBuffer nemohou rekurzivně ustoupit
+### <a name="custom-encoderfallbackbuffer-instances-cannot-fall-back-recursively"></a>Vlastní instance EncoderFallbackBuffer se nemůžou vrátit rekurzivně.
 
-Vlastní <xref:System.Text.EncoderFallbackBuffer> instance nelze rekurzivně ustoupit. Implementace <xref:System.Text.EncoderFallbackBuffer.GetNextChar?displayProperty=nameWithType> musí mít za následek pořadí znaků, které je konvertibilní k cílovému kódování. V opačném případě dojde k výjimce.
+Vlastní <xref:System.Text.EncoderFallbackBuffer> instance nemůžou vracet rekurzivně zpátky. Implementace <xref:System.Text.EncoderFallbackBuffer.GetNextChar?displayProperty=nameWithType> musí mít za následek sekvenci znaků, která je převoditelná na cílové kódování. V opačném případě dojde k výjimce.
 
 #### <a name="change-description"></a>Popis změny
 
-Během operace překódování znak-bajt, runtime detekuje špatně vytvořené nebo nekonvertibilní Sekvence UTF-16 a poskytuje tyto znaky <xref:System.Text.EncoderFallbackBuffer.Fallback%2A?displayProperty=nameWithType> metody. Metoda `Fallback` určuje, které znaky by měly být nahrazeny původní nekonvertibilní data a tyto znaky jsou vyprázdněny voláním <xref:System.Text.EncoderFallbackBuffer.GetNextChar%2A?displayProperty=nameWithType> ve smyčce.
+Během operace překódování znaků modul runtime detekuje nesprávně vytvořené sekvence UTF-16 a poskytuje tyto znaky <xref:System.Text.EncoderFallbackBuffer.Fallback%2A?displayProperty=nameWithType> metodě. `Fallback`Metoda určuje, které znaky by měly být nahrazeny původními nepřevoditelnými daty a tyto znaky jsou vynásobeny voláním <xref:System.Text.EncoderFallbackBuffer.GetNextChar%2A?displayProperty=nameWithType> ve smyčce.
 
-Runtime se pak pokusí překódovat tyto substituční znaky do cílového kódování. Pokud tato operace proběhne úspěšně, runtime pokračuje v překódování z místa, kde skončil v původním vstupním řetězci.
+Modul runtime se pak pokusí překódovat tyto náhradní znaky do cílového kódování. Pokud tato operace proběhne úspěšně, modul runtime pokračuje v kódování z místa, kde bylo ponecháno v původním vstupním řetězci.
 
-V .NET Core Preview 7 a staršíverze <xref:System.Text.EncoderFallbackBuffer.GetNextChar?displayProperty=nameWithType> vlastní implementace můžete vrátit sekvence znaků, které nejsou konvertibilní k cílovékódování. Pokud nahrazené znaky nelze překódovat na cílové kódování, runtime <xref:System.Text.EncoderFallbackBuffer.Fallback%2A?displayProperty=nameWithType> vyvolá metodu znovu s <xref:System.Text.EncoderFallbackBuffer.GetNextChar?displayProperty=nameWithType> náhradní znaky, očekává, že metoda vrátí novou substituční sekvenci. Tento proces pokračuje, dokud runtime nakonec vidí dobře tvarované, konvertibilní nahrazení, nebo dokud není dosaženo maximálního počtu rekurzí.
+V .NET Core Preview 7 a starších verzích mohou vlastní implementace pro <xref:System.Text.EncoderFallbackBuffer.GetNextChar?displayProperty=nameWithType> vracet sekvence znaků, které nelze převést na cílové kódování. Pokud nahrazené znaky nelze překódovat do cílového kódování, modul runtime <xref:System.Text.EncoderFallbackBuffer.Fallback%2A?displayProperty=nameWithType> ihned vyvolá metodu s náhradními znaky a očekává, že <xref:System.Text.EncoderFallbackBuffer.GetNextChar?displayProperty=nameWithType> Metoda vrátí novou sekvenci nahrazení. Tento proces pokračuje, dokud modul runtime nakonec nenalezne dobře vytvořenou, převoditelnou substituci nebo až do dosažení maximálního počtu rekurzí.
 
-Počínaje rozhraním .NET Core 3.0 <xref:System.Text.EncoderFallbackBuffer.GetNextChar?displayProperty=nameWithType> musí vlastní implementace aplikace vrátit sekvence znaků, které jsou konvertibilní k cílovému kódování. Pokud nahraditelné znaky nelze překódovat na cílové <xref:System.ArgumentException> kódování, je vyvolána. Runtime již nebude provádět rekurzivní volání <xref:System.Text.EncoderFallbackBuffer> do instance.
+Počínaje .NET Core 3,0, vlastní implementace <xref:System.Text.EncoderFallbackBuffer.GetNextChar?displayProperty=nameWithType> musí vracet sekvence znaků, které jsou převoditelné na cílové kódování. Pokud nahrazené znaky nelze překódovat do cílového kódování, <xref:System.ArgumentException> je vyvolána výjimka. Modul runtime již nebude do instance volat rekurzivní volání <xref:System.Text.EncoderFallbackBuffer> .
 
-Toto chování platí pouze v případě, že jsou splněny všechny tři následující podmínky:
+Toto chování platí pouze v případě, že jsou splněny všechny tři z následujících podmínek:
 
-- Runtime detekuje špatně formátované Sekvence UTF-16 nebo UTF-16 sekvence, které nelze převést na cílové kódování.
-- Byl <xref:System.Text.EncoderFallback> zadán vlastní.
-- Vlastní <xref:System.Text.EncoderFallback> pokusí nahradit nové špatně vytvořené nebo nekonvertibilní UTF-16 sekvence.
+- Modul runtime detekuje nesprávně vytvořenou sekvenci UTF-16 nebo sekvenci UTF-16, kterou nelze převést na cílové kódování.
+- Byla zadána vlastní aplikace <xref:System.Text.EncoderFallback> .
+- Vlastní <xref:System.Text.EncoderFallback> pokusy o náhradu nové sekvence UTF-16, která se nesprávně vytvořila nebo nepřevoditelná.
 
-#### <a name="version-introduced"></a>Zavedená verze
+#### <a name="version-introduced"></a>Představená verze
 
 3.0
 
 #### <a name="recommended-action"></a>Doporučená akce
 
-Většina vývojářů nemusí provádět žádnou akci.
+Většina vývojářů nemusí podepisovat nějakou akci.
 
-Pokud aplikace používá <xref:System.Text.EncoderFallback> vlastní <xref:System.Text.EncoderFallbackBuffer> a třídy, <xref:System.Text.EncoderFallbackBuffer.Fallback%2A?displayProperty=nameWithType> ujistěte se, že implementace naplní záložní vyrovnávací paměti s dobře formátované <xref:System.Text.EncoderFallbackBuffer.Fallback%2A> UTF-16 data, která je přímo konvertibilní na cílové kódování při metodě je poprvé vyvolána runtime.
+Pokud aplikace používá vlastní <xref:System.Text.EncoderFallback> třídu a, ujistěte se, že <xref:System.Text.EncoderFallbackBuffer> implementace <xref:System.Text.EncoderFallbackBuffer.Fallback%2A?displayProperty=nameWithType> naplní záložní vyrovnávací paměť se správnými daty UTF-16, která je přímo převoditelná na cílové kódování, když <xref:System.Text.EncoderFallbackBuffer.Fallback%2A> je metoda poprvé vyvolána modulem runtime.
 
 #### <a name="category"></a>Kategorie
 
-Základní knihovny .NET
+Knihovny Core .NET
 
 #### <a name="affected-apis"></a>Ovlivněná rozhraní API
 
@@ -47,7 +47,7 @@ Základní knihovny .NET
 
 <!--
 
-### Affected APIs
+#### Affected APIs
 
 - `Overload:System.Text.EncoderFallbackBuffer.Fallback`
 - `M:System.Text.EncoderFallbackBuffer.GetNextChar`

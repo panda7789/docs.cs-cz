@@ -1,32 +1,32 @@
 ---
-ms.openlocfilehash: 65d8ca480d41a3807473583355fe8be41e0e9701
-ms.sourcegitcommit: 7980a91f90ae5eca859db7e6bfa03e23e76a1a50
+ms.openlocfilehash: 877f9d99b660c4af843e4d8d525219c1df6c99a9
+ms.sourcegitcommit: 0926684d8d34f4c6b5acce58d2193db093cb9cf2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "81275176"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83721197"
 ---
-### <a name="net-core-30-prefers-openssl-11x-to-openssl-10x"></a>.NET Core 3.0 preferuje OpenSSL 1.1.x na OpenSSL 1.0.x
+### <a name="net-core-30-prefers-openssl-11x-to-openssl-10x"></a>.NET Core 3,0 upřednostňuje OpenSSL 1.1. x až OpenSSL 1.0. x
 
-.NET Core pro Linux, který funguje napříč několika linuxovými distribucemi, může podporovat jak OpenSSL 1.0.x, tak OpenSSL 1.1.x.  .NET Core 2.1 a .NET Core 2.2 nejprve hledají 1.0.x, pak se vrátí na 1.1.x; .NET Core 3.0 hledá nejprve 1.1.x. Tato změna byla provedena přidat podporu pro nové kryptografické standardy.
+Rozhraní .NET Core pro Linux, které funguje v různých distribucích systému Linux, může podporovat OpenSSL 1.0. x i OpenSSL 1.1. x.  .NET Core 2,1 a .NET Core 2,2 hledejte nejprve 1,0. x a potom se vraťte na verzi 1.1. x; .NET Core 3,0 nejprve vyhledá 1.1. x. Tato změna byla provedena za účelem přidání podpory pro nové kryptografické standardy.
 
-Tato změna může mít vliv na knihovny nebo aplikace, které interop platformy s typy interop specifické pro OpenSSL v .NET Core.
+Tato změna může mít vliv na knihovny nebo aplikace, které podporují interoperabilitu platforem s typy spolupráce OpenSSL specifickými pro .NET Core.
 
 #### <a name="change-description"></a>Popis změny
 
-V rozhraní .NET Core 2.2 a starších verzích preferuje runtime načítání OpenSSL 1.0.x před 1.1.x. To znamená, <xref:System.IntPtr> <xref:System.Runtime.InteropServices.SafeHandle> že typy a pro interop s OpenSSL se používají s libcrypto.so.1.0.0 / libcrypto.so.1.0 / libcrypto.so.10 podle preference.
+V .NET Core 2,2 a starších verzích modul runtime upřednostňuje načítání OpenSSL 1.0. x přes 1.1. x. To znamená, že <xref:System.IntPtr> <xref:System.Runtime.InteropServices.SafeHandle> typy a pro interoperabilitu s OpenSSL se používají s libcrypto. so. 1.0.0/libcrypto. so. 1,0/libcrypto. so. 10 Podle preference.
 
-Počínaje .NET Core 3.0, runtime preferuje načítání OpenSSL 1.1.x přes OpenSSL <xref:System.IntPtr> 1.0.x, takže typy a <xref:System.Runtime.InteropServices.SafeHandle> pro interop s OpenSSL se používají s libcrypto.so.1.1 / libcrypto.so.11 / libcrypto.so.1.1.0 / libcrypto.so.1.1.1. V důsledku toho mohou mít knihovny a aplikace, které přímo spolupracují s OpenSSL, nekompatibilní ukazatele s hodnotami vystavenými jádrem .NET při upgradu z rozhraní .NET Core 2.1 nebo .NET Core 2.2.
+Počínaje rozhraním .NET Core 3,0, modul runtime upřednostňuje načtení OpenSSL 1.1. x nad OpenSSL 1.0. x, takže <xref:System.IntPtr> typy a <xref:System.Runtime.InteropServices.SafeHandle> pro spolupráci s OpenSSL se používají s libcrypto. proto. 1.1/libcrypto. so. 11/libcrypto. so. 1.1.0/libcrypto. tak. 1.1.1 podle preference. V důsledku toho můžou knihovny a aplikace, které spolupracují s OpenSSL, mít při upgradu z .NET Core 2,1 nebo .NET Core 2,2 nekompatibilní ukazatele s hodnotami vystavenými .NET Core.
 
-#### <a name="version-introduced"></a>Zavedená verze
+#### <a name="version-introduced"></a>Představená verze
 
 3.0
 
 #### <a name="recommended-action"></a>Doporučená akce
 
-Knihovny a aplikace, které provádějí přímé operace s OpenSSL, musí být pečlivě nutné zajistit, aby používaly stejnou verzi OpenSSL jako zaběhu .NET Core.
+Knihovny a aplikace, které provádějí přímé operace s OpenSSL, musí být opatrní, aby používaly stejnou verzi OpenSSL jako modul runtime .NET Core.
 
-Všechny knihovny nebo <xref:System.IntPtr> aplikace, které používají nebo <xref:System.Runtime.InteropServices.SafeHandle> hodnoty z kryptografických typů .NET Core přímo <xref:System.Security.Cryptography.SafeEvpPKeyHandle.OpenSslVersion?displayProperty=nameWithType> s OpenSSL by měl porovnat verzi knihovny, které používají s novou vlastnost, aby bylo zajištěno, že ukazatele jsou kompatibilní.
+Všechny knihovny nebo aplikace, které používají <xref:System.IntPtr> nebo <xref:System.Runtime.InteropServices.SafeHandle> hodnoty z kryptografických typů .NET Core přímo s OpenSSL, by měly porovnat verzi knihovny, kterou používá, s novou <xref:System.Security.Cryptography.SafeEvpPKeyHandle.OpenSslVersion?displayProperty=nameWithType> vlastností, aby bylo zajištěno, že jsou ukazatele kompatibilní.
 
 #### <a name="category"></a>Kategorie
 
@@ -51,7 +51,7 @@ Kryptografie
 
 <!--
 
-### Affected APIs
+#### Affected APIs
 
 - `Overload:System.Security.Cryptography.SafeEvpPKeyHandle.#ctor`
 - `M:System.Security.Cryptography.RSAOpenSsl.#ctor(System.IntPtr)`

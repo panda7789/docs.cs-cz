@@ -1,38 +1,38 @@
 ---
-ms.openlocfilehash: 87ada29e70a94c39e7ffb74767b99d49c52444af
-ms.sourcegitcommit: 348bb052d5cef109a61a3d5253faa5d7167d55ac
+ms.openlocfilehash: 935d9b2368ea4a0eeca7943dcbd584d24d2a6633
+ms.sourcegitcommit: 0926684d8d34f4c6b5acce58d2193db093cb9cf2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "82021588"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83721108"
 ---
-### <a name="floating-point-parsing-operations-no-longer-fail-or-throw-an-overflowexception"></a>Operace analýzy s plovoucí desetinnou táhou již neselžou nebo nevyvolá vyzvučují výjimku Přetečení
+### <a name="floating-point-parsing-operations-no-longer-fail-or-throw-an-overflowexception"></a>Operace analýzy s plovoucí desetinnou čárkou již nejsou úspěšné nebo vyvolávají výjimku OverflowException
 
-Metody analýzy s plovoucí desetinnou <xref:System.OverflowException> desetinnou tázkou již nevyvolávají nebo vracejí, `false` když analyzují řetězec, jehož číselná hodnota je mimo rozsah typu <xref:System.Single> nebo <xref:System.Double> typu s plovoucí desetinnou tálkou.
+Metody analýzy s plovoucí desetinnou čárkou již nejsou <xref:System.OverflowException> `false` při analýze řetězce, jehož číselná hodnota je mimo rozsah <xref:System.Single> nebo typ s plovoucí desetinnou čárkou, vyhozeny nebo vraceny <xref:System.Double> .
 
 #### <a name="change-description"></a>Popis změny
 
-V .NET Core 2.2 a <xref:System.Double.Parse%2A?displayProperty=nameWithType> starší <xref:System.Single.Parse%2A?displayProperty=nameWithType> verze <xref:System.OverflowException> a metody throw pro hodnoty, které mimo rozsah jejich příslušného typu. Metody <xref:System.Double.TryParse%2A?displayProperty=nameWithType> <xref:System.Single.TryParse%2A?displayProperty=nameWithType> a `false` vrátí pro řetězcové reprezentace číselných hodnot mimo rozsah.
+V .NET Core 2,2 a starších verzích <xref:System.Double.Parse%2A?displayProperty=nameWithType> <xref:System.Single.Parse%2A?displayProperty=nameWithType> metody a vyvolávají výjimku <xref:System.OverflowException> pro hodnoty, které jsou mimo rozsah jejich příslušného typu. <xref:System.Double.TryParse%2A?displayProperty=nameWithType>Metody a <xref:System.Single.TryParse%2A?displayProperty=nameWithType> vrátí `false` pro řetězcové reprezentace číselných hodnot mimo rozsah.
 
-Počínaje rozhraním .NET Core <xref:System.Double.Parse%2A?displayProperty=nameWithType>3.0 již neseselá <xref:System.Double.TryParse%2A?displayProperty=nameWithType> <xref:System.Single.Parse%2A?displayProperty=nameWithType>metoda , a <xref:System.Single.TryParse%2A?displayProperty=nameWithType> metody při analýzě číselných řetězců mimo rozsah. Místo toho <xref:System.Double> metody analýzy <xref:System.Double.PositiveInfinity?displayProperty=nameWithType> vrátí hodnoty, které <xref:System.Double.MaxValue?displayProperty=nameWithType> <xref:System.Double.NegativeInfinity?displayProperty=nameWithType> překračují , a <xref:System.Double.MinValue?displayProperty=nameWithType>vrátí pro hodnoty, které jsou menší než . Podobně <xref:System.Single> metody analýzy vrátí <xref:System.Single.PositiveInfinity?displayProperty=nameWithType> hodnoty, které <xref:System.Single.MaxValue?displayProperty=nameWithType>překračují , <xref:System.Single.NegativeInfinity?displayProperty=nameWithType> a vracejí hodnoty, které jsou menší než <xref:System.Single.MinValue?displayProperty=nameWithType>.
+Počínaje rozhraním .NET Core 3,0, <xref:System.Double.Parse%2A?displayProperty=nameWithType> metody,, a se <xref:System.Double.TryParse%2A?displayProperty=nameWithType> <xref:System.Single.Parse%2A?displayProperty=nameWithType> <xref:System.Single.TryParse%2A?displayProperty=nameWithType> již nedaří při analýze číselných řetězců mimo rozsah. Místo toho <xref:System.Double> metody analýzy vrátí <xref:System.Double.PositiveInfinity?displayProperty=nameWithType> pro hodnoty, které překračují <xref:System.Double.MaxValue?displayProperty=nameWithType> , a vrátí <xref:System.Double.NegativeInfinity?displayProperty=nameWithType> hodnotu, která je menší než <xref:System.Double.MinValue?displayProperty=nameWithType> . Podobně <xref:System.Single> metody analýzy vrátí <xref:System.Single.PositiveInfinity?displayProperty=nameWithType> pro hodnoty, které překračují <xref:System.Single.MaxValue?displayProperty=nameWithType> , a vrátí <xref:System.Single.NegativeInfinity?displayProperty=nameWithType> pro hodnoty, které jsou menší než <xref:System.Single.MinValue?displayProperty=nameWithType> .
 
-Tato změna byla provedena pro lepší dodržování předpisů IEEE 754:2008.
+Tato změna byla provedena pro zlepšení dodržování standardů IEEE 754:2008.
 
-#### <a name="version-introduced"></a>Zavedená verze
+#### <a name="version-introduced"></a>Představená verze
 
 3.0
 
 #### <a name="recommended-action"></a>Doporučená akce
 
-Tato změna může ovlivnit váš kód jedním ze dvou způsobů:
+Tato změna může mít vliv na váš kód některým ze dvou způsobů:
 
-- Váš kód závisí na <xref:System.OverflowException> obslužné rutiny pro spuštění při přetečení dojde. V takovém případě byste `catch` měli příkaz odebrat a `If` umístit potřebný <xref:System.Double.IsInfinity%2A?displayProperty=nameWithType> <xref:System.Single.IsInfinity%2A?displayProperty=nameWithType> kód `true`do příkazu, který testuje, zda je nebo je .
+- Váš kód závisí na obslužné rutině, <xref:System.OverflowException> která se má provést, když dojde k přetečení. V takovém případě byste měli příkaz odebrat `catch` a umístit jakýkoli potřebný kód do `If` příkazu, který testuje, zda <xref:System.Double.IsInfinity%2A?displayProperty=nameWithType> nebo <xref:System.Single.IsInfinity%2A?displayProperty=nameWithType> je `true` .
 
-- Váš kód předpokládá, že hodnoty `Infinity`s plovoucí desetinnou čárkou nejsou . V takovém případě byste měli přidat kód potřebný ke `PositiveInfinity` kontrole `NegativeInfinity`hodnot s plovoucí desetinnou čárky a .
+- Váš kód předpokládá, že hodnoty s plovoucí desetinnou čárkou nejsou `Infinity` . V takovém případě byste měli přidat potřebný kód pro kontrolu hodnot s plovoucí desetinnou čárkou `PositiveInfinity` a `NegativeInfinity` .
 
 #### <a name="category"></a>Kategorie
 
-Základní knihovny .NET
+Knihovny Core .NET
 
 #### <a name="affected-apis"></a>Ovlivněná rozhraní API
 
@@ -43,7 +43,7 @@ Základní knihovny .NET
 
 <!--
 
-### Affected APIs
+#### Affected APIs
 
 - `Overload:System.Double.Parse`
 - `Overload:System.Double.TryParse`

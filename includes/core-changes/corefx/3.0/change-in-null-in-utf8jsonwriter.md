@@ -1,20 +1,20 @@
 ---
-ms.openlocfilehash: c9547cdc2f127cf13a3610118a26736930fcd8bd
-ms.sourcegitcommit: 348bb052d5cef109a61a3d5253faa5d7167d55ac
+ms.openlocfilehash: 13da0ef6155d65fbc894c5747cc36bb3483ba518
+ms.sourcegitcommit: 0926684d8d34f4c6b5acce58d2193db093cb9cf2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "82021577"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83721587"
 ---
-### <a name="change-in-semantics-of-stringnull-in-utf8jsonwriter"></a>Změna sémantiky `(string)null` v Utf8JsonWriter
+### <a name="change-in-semantics-of-stringnull-in-utf8jsonwriter"></a>Změna v sémantikě `(string)null` v Utf8JsonWriter
 
-V rozhraní .NET Core 3.0 Preview 7 je nulový <xref:System.Text.Json.Utf8JsonWriter>řetězec považován za prázdný řetězec v . Počínaje .NET Core 3.0 Preview 8, nulový řetězec vyvolá výjimku při použití jako název vlastnosti a vydává token null JSON při použití jako hodnota.
+V rozhraní .NET Core 3,0 Preview 7 je řetězec s hodnotou null považován za prázdný řetězec v <xref:System.Text.Json.Utf8JsonWriter> . Počínaje rozhraním .NET Core 3,0 Preview 8 vygeneruje řetězec null výjimku při použití jako názvu vlastnosti a vygeneruje token JSON s hodnotou null, pokud se používá jako hodnota.
 
 #### <a name="change-description"></a>Popis změny
 
-V .NET Core 3.0 `null` Preview 7 byl `""` řetězec považován za při psaní názvů vlastností i při psaní hodnot.  
+V rozhraní .NET Core 3,0 Preview 7 `null` byl řetězec `""` při psaní názvů vlastností a při psaní hodnot považován za obojí.  
 
-Počínaje rozhraním .NET Core 3.0 Preview 8, `null` název vlastnosti vyvolá `ArgumentNullException`a <xref:System.Text.Json.Utf8JsonWriter.WriteNull%2A?displayProperty=nameWithType> <xref:System.Text.Json.Utf8JsonWriter.WriteNullValue?displayProperty=nameWithType> `null` hodnota je považována za volání nebo .
+Počínaje rozhraním .NET Core 3,0 Preview 8 je `null` název vlastnosti vyvolána `ArgumentNullException` a `null` hodnota je považována za volání <xref:System.Text.Json.Utf8JsonWriter.WriteNull%2A?displayProperty=nameWithType> nebo <xref:System.Text.Json.Utf8JsonWriter.WriteNullValue?displayProperty=nameWithType> .
 
 Uvažujte následující kód:
 
@@ -40,37 +40,37 @@ using (Utf8JsonWriter writer = new Utf8JsonWriter(stream))
 }
 ```
 
-Při spuštění s rozhraním .NET Core 3.0 Preview 7 vytvoří zapisovač následující výstup:
+Pokud spustíte s .NET Core 3,0 Preview 7, modul pro zápis vytvoří následující výstup:
 
 ```js
 [{"":"","prop2":""},""]
 ```
 
-Počínaje rozhraním .NET Core 3.0 `writer.WriteString(propertyName1, propertyValue1)` Preview 8 <xref:System.ArgumentNullException>vyvolá volání .  Pokud `propertyName1 = null` je nahrazen `propertyName1 = string.Empty`, výstup by nyní:
+Počínaje rozhraním .NET Core 3,0 Preview 8 volání `writer.WriteString(propertyName1, propertyValue1)` vyvolá výjimku <xref:System.ArgumentNullException> .  Pokud `propertyName1 = null` je nahrazeno `propertyName1 = string.Empty` , výstup by nyní byl:
 
 ```js
 [{"":null,"prop2":null},null]
 ```
 
-Tato změna byla provedena lépe sladit s očekávání volajícího pro `null` hodnoty.
+Tato změna byla provedena pro lepší zarovnání se očekáváním volajícího pro `null` hodnoty.
 
-#### <a name="version-introduced"></a>Zavedená verze
+#### <a name="version-introduced"></a>Představená verze
 
-3.0 Náhled 8
+3,0 Preview 8
 
 #### <a name="recommended-action"></a>Doporučená akce
 
-Při psaní názvů vlastností <xref:System.Text.Json.Utf8JsonWriter> a hodnot s třídou:
+Při psaní názvů vlastností a hodnot pomocí <xref:System.Text.Json.Utf8JsonWriter> třídy:
 
-- Ujistěte`null` se, že jako názvy vlastností se používají jiné řetězce.
+- Zajistěte `null` , aby jako názvy vlastností byly použity jiné než řetězce.
 
-- Pokud je požadováno předchozí chování, použijte null coalescing vyvolání; například `writer.WriteString(propertyName1 ?? "", propertyValue1)`.
+- Pokud je požadované předchozí chování, použijte volání slučování s hodnotou null; například `writer.WriteString(propertyName1 ?? "", propertyValue1)` .
 
-- Pokud zápis `null` literálu `null` pro hodnotu řetězce není žádoucí, použijte null coalescing vyvolání; například `writer.WriteString(propertyName2, propertyValue2 ?? "")`.
+- Pokud zápis `null` literálu pro `null` řetězcovou hodnotu není žádoucí, použijte volání slučování s hodnotou null, například `writer.WriteString(propertyName2, propertyValue2 ?? "")` .
 
 #### <a name="category"></a>Kategorie
 
-Základní knihovny .NET
+Knihovny Core .NET
 
 #### <a name="affected-apis"></a>Ovlivněná rozhraní API
 
@@ -98,7 +98,7 @@ Základní knihovny .NET
 
 <!--
 
-### Affected APIs
+#### Affected APIs
 
 - `M:System.Text.Json.Utf8JsonWriter.WriteBase64String(System.String,System.ReadOnlySpan{System.Byte})`
 - `M:System.Text.Json.Utf8JsonWriter.WriteBoolean(System.String,System.Boolean)`

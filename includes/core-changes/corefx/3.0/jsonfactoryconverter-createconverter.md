@@ -1,18 +1,18 @@
 ---
-ms.openlocfilehash: 3bce796191e0ebe6dbe4650457abe5a20c383f02
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 43da6233b70927e7320874772976b9e93a0bd69f
+ms.sourcegitcommit: 0926684d8d34f4c6b5acce58d2193db093cb9cf2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79147559"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83721044"
 ---
-### <a name="jsonfactoryconvertercreateconverter-signature-changed"></a>JsonFactoryConverter.CreateConverter podpis změněn
+### <a name="jsonfactoryconvertercreateconverter-signature-changed"></a>Změnil se podpis JsonFactoryConverter. CreateConverter.
 
-Pro usnadnění složení <xref:System.Text.Json.Serialization.JsonConverterFactory> tříd <xref:System.Text.Json.Serialization.JsonConverterFactory.CreateConverter%2A> byla metoda zveřejněna a byl jí <xref:System.Text.Json.JsonSerializerOptions>dán druhý argument typu .
+Aby bylo možné zjednodušit složení <xref:System.Text.Json.Serialization.JsonConverterFactory> tříd, byla metoda zveřejněna a měla by <xref:System.Text.Json.Serialization.JsonConverterFactory.CreateConverter%2A> mít druhý argument typu <xref:System.Text.Json.JsonSerializerOptions> .
 
 #### <a name="change-description"></a>Popis změny
 
-Podpis `CreateConverter` metody v rozhraní .NET Core před verzí 3.0 Preview 8 byl:
+Signatura `CreateConverter` metody v .NET Core starší než verze 3,0 Preview 8 byla:
 
 ```csharp
 namespace System.Text.Json.Serialization
@@ -24,7 +24,7 @@ namespace System.Text.Json.Serialization
 }
 ```
 
-V rozhraní .NET Core 3.0 Preview 8 a novějších verzích je to:
+V .NET Core 3,0 Preview 8 a novějších verzích je:
 
 ```csharp
 namespace System.Text.Json.Serialization
@@ -36,15 +36,15 @@ namespace System.Text.Json.Serialization
 }
 ```
 
-Před touto změnou bylo obtížné sestavit uzavřené tovární konvertory, protože <xref:System.Text.Json.Serialization.JsonConverter%601> z ní nebyl snadný způsob, jak z ní dostat. Zveřejnění tovární metody a také <xref:System.Text.Json.JsonSerializerOptions> předání proudu umožňuje mnohem flexibilnější složení.
+Před touto změnou bylo obtížné vytvořit zapečetěné převaděče objektu pro vytváření, protože z ní neexistoval snadný způsob, jak <xref:System.Text.Json.Serialization.JsonConverter%601> z něho získat. Zajištění veřejné metody výroby a také předání současného <xref:System.Text.Json.JsonSerializerOptions> povolení pro mnohem flexibilnější složení.
 
-#### <a name="version-introduced"></a>Zavedená verze
+#### <a name="version-introduced"></a>Představená verze
 
-3.0 Náhled 8
+3,0 Preview 8
 
 #### <a name="recommended-action"></a>Doporučená akce
 
-Odvozené třídy je třeba aktualizovat a znovu zkompilovat.
+Odvozené třídy musí být aktualizovány a znovu zkompilovány.
 
 #### <a name="affected-apis"></a>Ovlivněná rozhraní API
 
@@ -52,7 +52,7 @@ Odvozené třídy je třeba aktualizovat a znovu zkompilovat.
 
 <!-- For tool use only
 
-### Affected APIs
+#### Affected APIs
 
 - `M:System.Text.Json.Serialization.JsonConverterFactory.CreateConverter(System.Type,System.Text.Json.JsonSerializerOptions)`
 

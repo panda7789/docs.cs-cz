@@ -1,30 +1,30 @@
 ---
-ms.openlocfilehash: 95a4c807f5c1077cf52f54b196e904ebc98c32f8
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 535a73c6b748166a1e4a4661a6bab0671c653278
+ms.sourcegitcommit: 0926684d8d34f4c6b5acce58d2193db093cb9cf2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "76116347"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83720922"
 ---
-### <a name="microsoftvisualbasicconstantsvbnewline-is-obsolete"></a>Microsoft.VisualBasic.Constants.vbNewLine je zastaralý
+### <a name="microsoftvisualbasicconstantsvbnewline-is-obsolete"></a>Microsoft. VisualBasic. konstanty. vbNewLine je zastaralá.
 
-Konstanta <xref:Microsoft.VisualBasic.Constants.vbNewLine?displayProperty=fullName> je [ \[označena jako zastaralá\] ](xref:System.ObsoleteAttribute) počínaje rozhraním .NET Core 3.0 Preview 8.
+<xref:Microsoft.VisualBasic.Constants.vbNewLine?displayProperty=fullName>Konstanta je označena jako [ \[ \] zastaralá](xref:System.ObsoleteAttribute) od verze .NET Core 3,0 Preview 8.
 
-#### <a name="version-introduced"></a>Zavedená verze
+#### <a name="version-introduced"></a>Představená verze
 
-3.0 Náhled 8
+3,0 Preview 8
 
 #### <a name="change-description"></a>Popis změny
 
-Počínaje rozhraním .NET Core 3.0 Preview 8 byl <xref:Microsoft.VisualBasic.Constants.vbNewLine?displayProperty=fullName> atribut [Obsolete](xref:System.ObsoleteAttribute) použit na konstantu. Použití konstanty vytváří upozornění kompilátoru. V rozhraní .NET Framework a předchozích verzích rozhraní .NET Core nebyla označena jako zastaralá.
+Počínaje verzí .NET Core 3,0 Preview 8 byl [zastaralý](xref:System.ObsoleteAttribute) atribut použit na <xref:Microsoft.VisualBasic.Constants.vbNewLine?displayProperty=fullName> konstantu. Použití konstanty generuje upozornění kompilátoru. V .NET Framework a předchozích verzích rozhraní .NET Core nebyla označena jako zastaralá.
 
-Tato změna byla provedena pro podporu jazyka Visual Basic jako jazyk pro vývoj více platforem. Konstanta <xref:Microsoft.VisualBasic.Constants.vbNewLine> je `\r\n`ekvivalentní , pořadí znaků nového řádku v systému Windows. V systémech založených na Unixu `\n`je znak nového řádku .
+Tato změna byla provedena za účelem podpory Visual Basic jako jazyka pro vývoj pro více platforem. <xref:Microsoft.VisualBasic.Constants.vbNewLine>Konstanta je ekvivalentem `\r\n` , sekvence znaků nového řádku ve Windows. V systémech UNIX je znak nového řádku `\n` .
 
 #### <a name="recommended-action"></a>Doporučená akce
 
-[Zpráva o atributu Zastaralé](xref:System.ObsoleteAttribute) pro <xref:Microsoft.VisualBasic.Constants.vbNewLine> obsahuje následující doporučení:
+[Zastaralá](xref:System.ObsoleteAttribute) zpráva atributu pro <xref:Microsoft.VisualBasic.Constants.vbNewLine> zahrnuje následující doporučení:
 
-Pro vrácení vozíku a <xref:Microsoft.VisualBasic.Constants.vbCrLf>posuv řádku použijte . Pro novou linku aktuální platformy <xref:System.Environment.NewLine?displayProperty=nameWithType>použijte .
+Pro návrat na začátek řádku a pro posun řádku použijte <xref:Microsoft.VisualBasic.Constants.vbCrLf> . Pro nový řádek aktuální platformy použijte <xref:System.Environment.NewLine?displayProperty=nameWithType> .
 
 #### <a name="category"></a>Kategorie
 
@@ -36,7 +36,7 @@ Visual Basic
 
 <!--
 
-### Affected APIs
+#### Affected APIs
 
 - `F:Microsoft.VisualBasic.Constants.vbNewLine`
 

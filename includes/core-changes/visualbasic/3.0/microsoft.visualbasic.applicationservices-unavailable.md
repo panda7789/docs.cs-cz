@@ -1,28 +1,28 @@
 ---
-ms.openlocfilehash: d8cc506d60f3c24087ebde8ead345656fea0f484
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 09027863ff2f0009a14578db35db870c27369726
+ms.sourcegitcommit: 0926684d8d34f4c6b5acce58d2193db093cb9cf2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "76116330"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83721252"
 ---
-### <a name="types-in-microsoftvisualbasicapplicationservices-namespace-not-available"></a>Typy v oboru názvů Microsoft.VisualBasic.ApplicationServices nejsou k dispozici.
+### <a name="types-in-microsoftvisualbasicapplicationservices-namespace-not-available"></a>Typy v oboru názvů Microsoft. VisualBasic. ApplicationServices nejsou k dispozici.
 
 Typy v <xref:Microsoft.VisualBasic.ApplicationServices?displayProperty=fullName> oboru názvů nejsou k dispozici.
 
-#### <a name="version-introduced"></a>Zavedená verze
+#### <a name="version-introduced"></a>Představená verze
 
-.NET Core 3.0 Náhled 8
+.NET Core 3,0 Preview 8
 
 #### <a name="change-description"></a>Popis změny
 
-Typy v <xref:Microsoft.VisualBasic.ApplicationServices?displayProperty=fullName> oboru názvů byly k dispozici v některých verzích .NET Core 3.0 Preview. Již nejsou k dispozici počínaje rozhraním .NET Core 3.0 Preview 9.
+Typy v <xref:Microsoft.VisualBasic.ApplicationServices?displayProperty=fullName> oboru názvů byly k dispozici v některých verzích .NET Core 3,0 Preview. Již nejsou od verze .NET Core 3,0 Preview 9 k dispozici.
 
-Typy byly odebrány, aby se zabránilo zbytečné závislosti sestavení nebo přerušení změny v následujících verzích.
+Typy byly odebrány, aby nedocházelo k zbytečným závislostem sestavení nebo k zásadním změnám v následujících verzích.
 
 #### <a name="recommended-action"></a>Doporučená akce
 
-Pokud váš kód závisí <xref:Microsoft.VisualBasic.ApplicationServices> na použití typů a jejich členů, můžete použít odpovídající typ nebo člen v knihovně tříd .NET. Například některé <xref:System.Environment?displayProperty=nameWithType> <xref:System.Security.Principal.WindowsIdentity?displayProperty=nameWithType> a členy poskytují ekvivalentní funkce <xref:Microsoft.VisualBasic.ApplicationServices.User?displayProperty=nameWithType> vlastnosti třídy.
+Pokud váš kód závisí na použití <xref:Microsoft.VisualBasic.ApplicationServices> typů a jejich členů, může být možné použít odpovídající typ nebo člen v knihovně tříd .NET. Například někteří <xref:System.Environment?displayProperty=nameWithType> <xref:System.Security.Principal.WindowsIdentity?displayProperty=nameWithType> Členové a poskytují ekvivalentní funkce pro vlastnosti <xref:Microsoft.VisualBasic.ApplicationServices.User?displayProperty=nameWithType> třídy.
 
 #### <a name="category"></a>Kategorie
 
@@ -34,7 +34,7 @@ Visual Basic
 
 <!--
 
-### Affected APIs
+#### Affected APIs
 
 - `N:Microsoft.VisualBasic.ApplicationServices`
 

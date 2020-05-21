@@ -1,28 +1,28 @@
 ---
-ms.openlocfilehash: 57ca2ad839aab8d61da1a929660920efe1190334
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 7a2617f27dfd6bb527ff6d408fae6382075f24ae
+ms.sourcegitcommit: 0926684d8d34f4c6b5acce58d2193db093cb9cf2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79147533"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83721722"
 ---
-### <a name="typedescriptionproviderattribute-moved-to-another-assembly"></a>TypeDescriptionProviderAttribute přesunutdo jiného sestavení
+### <a name="typedescriptionproviderattribute-moved-to-another-assembly"></a>TypeDescriptionProviderAttribute přesunuté do jiného sestavení
 
-Třída <xref:System.ComponentModel.TypeDescriptionProviderAttribute> byla přesunuta.
+<xref:System.ComponentModel.TypeDescriptionProviderAttribute>Třída byla přesunuta.
 
 #### <a name="change-description"></a>Popis změny
 
-V rozhraní .NET Core 2.2 <xref:System.ComponentModel.TypeDescriptionProviderAttribute> a starších verzích se třída nachází v sestavě *System.ComponentModel.TypeConverter.*
+V rozhraní .NET Core 2,2 a starších verzích se <xref:System.ComponentModel.TypeDescriptionProviderAttribute> Třída nachází v sestavení *System. ComponentModel. TypeConverter* .
 
-Počínaje rozhraním .NET Core 3.0 se nachází v sestavení *System.ObjectModel.*
+Počínaje rozhraním .NET Core 3,0 se nachází v sestavení *System. ObjectModel* .
 
-#### <a name="version-introduced"></a>Zavedená verze
+#### <a name="version-introduced"></a>Představená verze
 
 3.0
 
 #### <a name="recommended-action"></a>Doporučená akce
 
-Tato změna má vliv pouze na <xref:System.ComponentModel.TypeDescriptionProviderAttribute> aplikace, které používají <xref:System.Reflection.Assembly.GetType%2A?displayProperty=nameWithType> reflexe <xref:System.Activator.CreateInstance%2A?displayProperty=nameWithType> načíst typ voláním metody, jako je například nebo přetížení, které předpokládá, že typ je v určitém sestavení. Pokud tomu tak je, sestavení odkazované ve volání metody by měla být aktualizována tak, aby odrážela nové umístění sestavení typu.
+Tato změna ovlivní pouze aplikace, které používají reflexe k načtení <xref:System.ComponentModel.TypeDescriptionProviderAttribute> typu voláním metody, jako <xref:System.Reflection.Assembly.GetType%2A?displayProperty=nameWithType> je nebo přetížení <xref:System.Activator.CreateInstance%2A?displayProperty=nameWithType> , které předpokládá, že typ je v konkrétním sestavení. V takovém případě by se sestavení odkazované v volání metody mělo aktualizovat tak, aby odráželo nové umístění sestavení typu.
 
 #### <a name="category"></a>Kategorie
 
@@ -30,11 +30,11 @@ Windows Forms
 
 #### <a name="affected-apis"></a>Ovlivněná rozhraní API
 
-Žádné.
+Žádné
 
 <!--
 
-### Affected APIs
+#### Affected APIs
 
 - Not detectable via API analysis
 

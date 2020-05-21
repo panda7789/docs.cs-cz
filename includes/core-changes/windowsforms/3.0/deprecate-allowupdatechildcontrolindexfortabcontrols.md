@@ -1,18 +1,18 @@
 ---
-ms.openlocfilehash: 7e76c32ddeb50eaf1ee93d7cf3cac7469187cc41
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: e1c55eab0b968daab7322350e201b49149e63215
+ms.sourcegitcommit: 0926684d8d34f4c6b5acce58d2193db093cb9cf2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75936990"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83720976"
 ---
 ### <a name="allowupdatechildcontrolindexfortabcontrols-compatibility-switch-not-supported"></a>Přepínač kompatibility AllowUpdateChildControlIndexForTabControls se nepodporuje.
 
-Přepínač `Switch.System.Windows.Forms.AllowUpdateChildControlIndexForTabControls` kompatibility je podporován v model Windows Forms v .NET Framework 4,6 a novějších verzích, ale není podporován v model Windows Forms Počínaje rozhraním .net Core 3,0.
+`Switch.System.Windows.Forms.AllowUpdateChildControlIndexForTabControls`Přepínač kompatibility je podporován v model Windows Forms v .NET Framework 4,6 a novějších verzích, ale není podporován v model Windows Forms Počínaje rozhraním .NET Core 3,0.
 
 #### <a name="change-description"></a>Popis změny
 
-V .NET Framework 4,6 a novějších verzích vybere karta změnu pořadí kolekce ovládacích prvků. Přepínač `Switch.System.Windows.Forms.AllowUpdateChildControlIndexForTabControls` kompatibility umožňuje aplikaci přeskočit toto přeřazení, pokud je toto chování nežádoucí.
+V .NET Framework 4,6 a novějších verzích vybere karta změnu pořadí kolekce ovládacích prvků. `Switch.System.Windows.Forms.AllowUpdateChildControlIndexForTabControls`Přepínač kompatibility umožňuje aplikaci přeskočit toto přeřazení, pokud je toto chování nežádoucí.
 
 V rozhraní .NET Core není `Switch.System.Windows.Forms.AllowUpdateChildControlIndexForTabControls` přepínač podporován.
 
@@ -34,7 +34,7 @@ Windows Forms
 
 <!-- 
 
-### Affected APIs
+#### Affected APIs
 
 - Not detectable via API analysis
 
