@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: ed16bb7f-4206-43a8-b9e9-c5737b69e3af
 topic_type:
 - apiref
-ms.openlocfilehash: 79f24b3ccacd84037042a883d3a034bb7b4d200a
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 8f316d91aab4c3862a0ad45b41539a4b80791ab9
+ms.sourcegitcommit: c76c8b2c39ed2f0eee422b61a2ab4c05ca7771fa
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73092093"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83762787"
 ---
 # <a name="iclrtaskmanagersetlocale-method"></a>ICLRTaskManager::SetLocale – metoda
 Upozorňuje modul CLR (Common Language Runtime) na to, že hostitel změnil hodnotu identifikátoru národního prostředí (který se mapuje na geografickou jazykovou verzi a jazyk) na aktuálně vykonávané úloze.  
@@ -49,20 +49,20 @@ HRESULT SetLocale (
 |E_FAIL|Došlo k neznámé chybě závažnosti. Když metoda vrátí E_FAIL, CLR již není v rámci procesu použitelný. Následná volání metod hostování vrací HOST_E_CLRNOTAVAILABLE.|  
   
 ## <a name="remarks"></a>Poznámky  
- `SetLocale` dává hostiteli možnost spouštět libovolné mechanismy, které by mohly být pro synchronizaci národních prostředí.  
+ `SetLocale`dává hostiteli možnost spouštět libovolné mechanismy, které by mohly být pro synchronizaci národních prostředí.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** MSCorEE. h  
   
  **Knihovna:** Zahrnuto jako prostředek v knihovně MSCorEE. dll  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [ICLRTask – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrtask-interface.md)
-- [ICLRTaskManager – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrtaskmanager-interface.md)
-- [IHostTask – rozhraní](../../../../docs/framework/unmanaged-api/hosting/ihosttask-interface.md)
-- [IHostTaskManager – rozhraní](../../../../docs/framework/unmanaged-api/hosting/ihosttaskmanager-interface.md)
+- [ICLRTask – rozhraní](iclrtask-interface.md)
+- [ICLRTaskManager – rozhraní](iclrtaskmanager-interface.md)
+- [IHostTask – rozhraní](ihosttask-interface.md)
+- [IHostTaskManager – rozhraní](ihosttaskmanager-interface.md)

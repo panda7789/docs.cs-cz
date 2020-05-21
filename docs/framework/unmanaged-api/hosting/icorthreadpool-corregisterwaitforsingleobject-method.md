@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: cade1feb-71d2-43ed-85ca-7b2e9da12994
 topic_type:
 - apiref
-ms.openlocfilehash: 52492c3fb5e2393bd0258280f238fd245df6cb89
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 8e251ade301ce3ed85f4483634eeae4ca135334a
+ms.sourcegitcommit: c76c8b2c39ed2f0eee422b61a2ab4c05ca7771fa
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73133242"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83762718"
 ---
 # <a name="icorthreadpoolcorregisterwaitforsingleobject-method"></a>ICorThreadpool::CorRegisterWaitForSingleObject – metoda
 Tato metoda podporuje infrastrukturu .NET Framework a není určena pro použití přímo v kódu.  
@@ -40,14 +40,14 @@ HRESULT CorRegisterWaitForSingleObject (
 ```  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** MSCorEE. h  
   
  **Knihovna:** Zahrnuto jako prostředek v knihovně MSCorEE. dll  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [ICorThreadpool – rozhraní](../../../../docs/framework/unmanaged-api/hosting/icorthreadpool-interface.md)
+- [ICorThreadpool – rozhraní](icorthreadpool-interface.md)

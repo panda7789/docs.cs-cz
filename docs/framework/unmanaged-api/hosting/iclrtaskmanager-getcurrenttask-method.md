@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: c0b82a9f-edc6-4878-9c81-48de53c02142
 topic_type:
 - apiref
-ms.openlocfilehash: a57610d1b41d80d54a245b9744aafd78a1e88177
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 9cb97d9f383b7b54b431457042c4c4a7fc9cd876
+ms.sourcegitcommit: c76c8b2c39ed2f0eee422b61a2ab4c05ca7771fa
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73195909"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83762827"
 ---
 # <a name="iclrtaskmanagergetcurrenttask-method"></a>ICLRTaskManager::GetCurrentTask – metoda
-Získá instanci [ICLRTask](../../../../docs/framework/unmanaged-api/hosting/iclrtask-interface.md) , která je aktuálně spuštěna ve vlákně operačního systému, ze kterého bylo volání metody provedeno.  
+Získá instanci [ICLRTask](iclrtask-interface.md) , která je aktuálně spuštěna ve vlákně operačního systému, ze kterého bylo volání metody provedeno.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -49,20 +49,20 @@ HRESULT GetCurrentTask (
 |E_FAIL|Došlo k neznámé chybě závažnosti. Když metoda vrátí E_FAIL, CLR již není v rámci procesu použitelný. Následná volání metod hostování vrací HOST_E_CLRNOTAVAILABLE.|  
   
 ## <a name="remarks"></a>Poznámky  
- Instance `ICLRTask`, kterou parametr `ppTask` ukazuje, představuje aktuálně spuštěnou úlohu pro modul CLR. Instance `ICLRTask` je přidružená k odpovídající instanci [IHostTask](../../../../docs/framework/unmanaged-api/hosting/ihosttask-interface.md) , která představuje úlohu pro hostitele.  
+ `ICLRTask`Instance, na kterou `ppTask` parametr odkazuje, představuje aktuálně spuštěnou úlohu pro modul CLR. `ICLRTask`Instance je přidružená k odpovídající instanci [IHostTask](ihosttask-interface.md) , která představuje úlohu pro hostitele.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** MSCorEE. h  
   
  **Knihovna:** Zahrnuto jako prostředek v knihovně MSCorEE. dll  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [ICLRTask – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrtask-interface.md)
-- [ICLRTaskManager – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrtaskmanager-interface.md)
-- [IHostTask – rozhraní](../../../../docs/framework/unmanaged-api/hosting/ihosttask-interface.md)
-- [IHostTaskManager – rozhraní](../../../../docs/framework/unmanaged-api/hosting/ihosttaskmanager-interface.md)
+- [ICLRTask – rozhraní](iclrtask-interface.md)
+- [ICLRTaskManager – rozhraní](iclrtaskmanager-interface.md)
+- [IHostTask – rozhraní](ihosttask-interface.md)
+- [IHostTaskManager – rozhraní](ihosttaskmanager-interface.md)

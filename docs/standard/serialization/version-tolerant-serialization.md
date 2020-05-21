@@ -14,12 +14,12 @@ helpviewer_keywords:
 - BinaryFormatter class, samples
 - serialization, attributes
 ms.assetid: bea0ffe3-2708-4a16-ac7d-e586ed6b8e8d
-ms.openlocfilehash: 87bdc0f0328e7a75477672432c0944818dbef244
-ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
+ms.openlocfilehash: afc822e1f8873bac069f6634fdf1d4665d392e69
+ms.sourcegitcommit: c76c8b2c39ed2f0eee422b61a2ab4c05ca7771fa
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83380096"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83762588"
 ---
 # <a name="version-tolerant-serialization"></a>Serializace odolná proti verzi
 
@@ -28,7 +28,7 @@ Ve verzi 1.0 a 1.1 rozhraní .NET Framework byla problematický vytváření Ser
 - Starší verze aplikace by vyvolat výjimky dotaz k deserializaci nové verze původní typu.
 - Novější verze aplikace by výjimku výjimky, při deserializaci starší verze typu s chybějící data.
 
-Verze chybám serializace (VTS) je sada funkcí zavedena v rozhraní .NET Framework 2.0, který umožňuje snadněji v čase, chcete-li upravit Serializovatelné typy. Konkrétně jsou povoleny funkce VTS pro třídy, do kterého <xref:System.SerializableAttribute> byl použit atribut, včetně obecných typů. VTS umožňuje přidat nové pole do těchto tříd bez porušení kompatibilitu s jinými verzemi typu. Pracovní ukázkovou aplikaci najdete v tématu [ukázka technologie serializace odolného proti verzi](version-tolerant-serialization-technology-sample.md).
+Verze chybám serializace (VTS) je sada funkcí zavedena v rozhraní .NET Framework 2.0, který umožňuje snadněji v čase, chcete-li upravit Serializovatelné typy. Konkrétně jsou povoleny funkce VTS pro třídy, do kterého <xref:System.SerializableAttribute> byl použit atribut, včetně obecných typů. VTS umožňuje přidat nové pole do těchto tříd bez porušení kompatibilitu s jinými verzemi typu. Pracovní ukázkovou aplikaci najdete v tématu [ukázka technologie serializace odolného proti verzi](basic-serialization-technology-sample.md).
 
 Jsou povoleny funkce VTS, používáte-li <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter>. Navíc povoleny všechny funkce s výjimkou tolerance nadbytečná data také při použití <xref:System.Runtime.Serialization.Formatters.Soap.SoapFormatter>. Další informace o použití těchto tříd pro serializaci naleznete v tématu [binární serializace](binary-serialization.md).
 
@@ -133,7 +133,7 @@ Zpětná volání serializace jsou mechanismus, který poskytuje zachytávání 
 
 #### <a name="using-callbacks"></a>Použití zpětných volání
 
-Chcete-li použít zpětná volání, vztahují na metodu, která přijme příslušný atribut <xref:System.Runtime.Serialization.StreamingContext> parametru. Pouze jednu metodu na třídu může být označena každý z těchto atributů. Příklad:
+Chcete-li použít zpětná volání, vztahují na metodu, která přijme příslušný atribut <xref:System.Runtime.Serialization.StreamingContext> parametru. Pouze jednu metodu na třídu může být označena každý z těchto atributů. Například:
 
 ```csharp
 [OnDeserializing]

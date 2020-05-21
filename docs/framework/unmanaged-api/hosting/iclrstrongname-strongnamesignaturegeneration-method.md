@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: 4cdb1284-947a-4ed4-94c1-c5ff5cdfce56
 topic_type:
 - apiref
-ms.openlocfilehash: e58ac181c4e472c469076b880ff71e0c6afa30fe
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: a8c9eab719f6a4f233490e544f67cf779ea10b20
+ms.sourcegitcommit: c76c8b2c39ed2f0eee422b61a2ab4c05ca7771fa
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79178043"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83763032"
 ---
 # <a name="iclrstrongnamestrongnamesignaturegeneration-method"></a>ICLRStrongName::StrongNameSignatureGeneration – metoda
-Generuje podpis silného názvu pro zadané sestavení.  
+Vygeneruje podpis silného názvu pro zadané sestavení.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,49 +40,49 @@ HRESULT StrongNameSignatureGeneration (
   
 ## <a name="parameters"></a>Parametry  
  `wszFilePath`  
- [v] Cesta k souboru, který obsahuje manifest sestavení, pro které bude generován podpis silného názvu.  
+ pro Cesta k souboru, který obsahuje manifest sestavení, pro který bude vytvořen podpis silného názvu.  
   
  `wszKeyContainer`  
- [v] Název kontejneru klíčů, který obsahuje dvojici veřejného a soukromého klíče.  
+ pro Název kontejneru klíčů, který obsahuje pár veřejného a privátního klíče.  
   
- Pokud `pbKeyBlob` je `wszKeyContainer` null, musí zadat platný kontejner v rámci zprostředkovatele kryptografických služeb (CSP). V tomto případě dvojice klíčů uložená v kontejneru se používá k podepsání souboru.  
+ Pokud `pbKeyBlob` má hodnotu null, `wszKeyContainer` musí určovat platný kontejner v rámci zprostředkovatele kryptografických služeb (CSP). V tomto případě se k podepsání souboru používá pár klíčů uložený v kontejneru.  
   
- Pokud `pbKeyBlob` není null, předpokládá se, že dvojice klíčů je obsažena v binárním velkém objektu klíče (BLOB).  
+ Pokud hodnota `pbKeyBlob` není null, předpokládá se, že dvojice klíčů bude obsažena v binárním velkém objektu (BLOB) klíče.  
   
- Klíče musí být 1024bitové podpisové klíče Rivest-Shamir-Adleman (RSA). V současné době nejsou podporovány žádné jiné typy klíčů.  
+ Klíče musí být 1024-bit Rivest-Shamir-Adleman (RSA) Signing Keys. V tuto chvíli není podporovaný žádný jiný typ klíčů.  
   
  `pbKeyBlob`  
- [v] Ukazatel na dvojici veřejného a soukromého klíče. Tento pár je ve formátu vytvořeném `CryptExportKey` funkcí Win32. Pokud `pbKeyBlob` je null, předpokládá `wszKeyContainer` se, že kontejner klíčů určený podle je obsahující dvojici klíčů.  
+ pro Ukazatel na pár veřejného a privátního klíče. Tato dvojice je ve formátu vytvořeném `CryptExportKey` funkcí Win32. Pokud `pbKeyBlob` má hodnotu null, předpokládá se, že kontejner klíčů určený parametrem `wszKeyContainer` obsahuje dvojici klíčů.  
   
  `cbKeyBlob`  
- [v] Velikost v bajtů `pbKeyBlob`.  
+ pro Velikost v bajtech `pbKeyBlob` .  
   
  `ppbSignatureBlob`  
- [out] Ukazatel na umístění, do kterého běžný jazyk runtime vrátí podpis. Pokud `ppbSignatureBlob` je null, runtime ukládá podpis v `wszFilePath`souboru určeném .  
+ mimo Ukazatel na umístění, do kterého modul common language runtime vrátí podpis. Pokud `ppbSignatureBlob` je null, modul runtime uloží podpis do souboru určeného parametrem `wszFilePath` .  
   
- Pokud `ppbSignatureBlob` není null, běžný jazyk common time přiděluje místo, ve kterém chcete vrátit podpis. Volající musí uvolnit toto místo pomocí [metody ICLRStrongName::StrongNameFreeBuffer.](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnamefreebuffer-method.md)  
+ Pokud hodnota `ppbSignatureBlob` není null, modul CLR (Common Language Runtime) přidělí místo, ve kterém se podpis vrátí. Volající musí uvolnit toto místo pomocí metody [ICLRStrongName:: StrongNameFreeBuffer –](iclrstrongname-strongnamefreebuffer-method.md) .  
   
  `pcbSignatureBlob`  
- [out] Velikost vráceného podpisu v bajtech.  
+ mimo Velikost vráceného podpisu v bajtech.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- `S_OK`pokud byla metoda úspěšně dokončena; jinak hodnota HRESULT, která označuje selhání (viz [běžné hodnoty HRESULT](/windows/win32/seccrypto/common-hresult-values) pro seznam).  
+ `S_OK`Pokud byla metoda úspěšně dokončena; v opačném případě hodnota HRESULT, která označuje selhání (viz [společné hodnoty HRESULT](/windows/win32/seccrypto/common-hresult-values) pro seznam).  
   
 ## <a name="remarks"></a>Poznámky  
- Zadejte `wszFilePath` hodnotu null pro výpočet velikosti podpisu bez vytvoření podpisu.  
+ `wszFilePath`Chcete-li vypočítat velikost podpisu bez vytvoření podpisu, zadejte hodnotu null.  
   
  Podpis může být uložen buď přímo v souboru, nebo vrácen volajícímu.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Záhlaví:** MetaHost.h  
+ **Hlavička:** MetaHost. h  
   
- **Knihovna:** Zahrnuto jako prostředek v souboru MSCorEE.dll  
+ **Knihovna:** Zahrnuto jako prostředek v knihovně MSCorEE. dll  
   
- **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také
 
-- [StrongNameSignatureGenerationEx – metoda](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnamesignaturegenerationex-method.md)
-- [ICLRStrongName – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-interface.md)
+- [StrongNameSignatureGenerationEx – metoda](iclrstrongname-strongnamesignaturegenerationex-method.md)
+- [ICLRStrongName – rozhraní](iclrstrongname-interface.md)

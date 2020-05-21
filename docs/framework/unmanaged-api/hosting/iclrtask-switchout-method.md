@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: b6fb168c-b24b-4ecf-a390-2b5ba3317ae6
 topic_type:
 - apiref
-ms.openlocfilehash: f9c2e77013ff9e31a0a2ef3b4ca511b76ae345e1
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 75517ae55ebae07242f19c19c5473780ce4b0809
+ms.sourcegitcommit: c76c8b2c39ed2f0eee422b61a2ab4c05ca7771fa
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73124603"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83762913"
 ---
 # <a name="iclrtaskswitchout-method"></a>ICLRTask::SwitchOut – metoda
-Upozorní modul CLR (Common Language Runtime) na to, že úloha reprezentovaná aktuální instancí [ICLRTask](../../../../docs/framework/unmanaged-api/hosting/iclrtask-interface.md) již není v funkčním stavu.  
+Upozorní modul CLR (Common Language Runtime) na to, že úloha reprezentovaná aktuální instancí [ICLRTask](iclrtask-interface.md) již není v funkčním stavu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -35,7 +35,7 @@ HRESULT SwitchOut ();
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
-|S_OK|`SwitchOut` byla úspěšně vrácena.|  
+|S_OK|`SwitchOut`úspěšně vráceno.|  
 |HOST_E_CLRNOTAVAILABLE|Modul CLR nebyl načten do procesu, nebo je modul CLR ve stavu, ve kterém nemůže spustit spravovaný kód nebo úspěšně zpracovat volání.|  
 |HOST_E_TIMEOUT|Vypršel časový limit volání.|  
 |HOST_E_NOT_OWNER|Volající nevlastní zámek.|  
@@ -43,20 +43,20 @@ HRESULT SwitchOut ();
 |E_FAIL|Došlo k neznámé chybě závažnosti. Když metoda vrátí E_FAIL, CLR již není v rámci procesu použitelný. Následná volání metod hostování vrací HOST_E_CLRNOTAVAILABLE.|  
   
 ## <a name="remarks"></a>Poznámky  
- Hostitel volá `SwitchOut`, aby informoval CLR, že dočasně zastavil provádění úlohy, kterou představuje aktuální `ICLRTask` instance, a úlohu znovu naplánuje.  
+ Hostitel volá `SwitchOut` , aby INFORMOVAL CLR o tom, že dočasně zastavil provádění úlohy, kterou představuje aktuální `ICLRTask` instance, a úlohu znovu naplánuje.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** MSCorEE. h  
   
  **Knihovna:** Zahrnuto jako prostředek v knihovně MSCorEE. dll  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [ICLRTask – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrtask-interface.md)
-- [ICLRTaskManager – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrtaskmanager-interface.md)
-- [IHostTask – rozhraní](../../../../docs/framework/unmanaged-api/hosting/ihosttask-interface.md)
-- [IHostTaskManager – rozhraní](../../../../docs/framework/unmanaged-api/hosting/ihosttaskmanager-interface.md)
+- [ICLRTask – rozhraní](iclrtask-interface.md)
+- [ICLRTaskManager – rozhraní](iclrtaskmanager-interface.md)
+- [IHostTask – rozhraní](ihosttask-interface.md)
+- [IHostTaskManager – rozhraní](ihosttaskmanager-interface.md)

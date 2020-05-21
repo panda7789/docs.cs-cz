@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: 76d4f93a-5e25-4399-abcc-a1389549481d
 topic_type:
 - apiref
-ms.openlocfilehash: e789996af3aedd17251fc52cde52a336f65053ec
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: edce771b3c36f2c56637aa2a21fe524be0ae12c8
+ms.sourcegitcommit: c76c8b2c39ed2f0eee422b61a2ab4c05ca7771fa
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79176341"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83763017"
 ---
 # <a name="iclrstrongnamestrongnamesignaturesize-method"></a>ICLRStrongName::StrongNameSignatureSize – metoda
-Vrátí velikost podpisu silného názvu. Tato metoda se obvykle používá kompilátory k určení, kolik místa rezervovat v souboru při vytváření sestavení podepsané zpoždění.  
+Vrátí velikost podpisu silného názvu. Tato metoda je obvykle používána kompilátory k určení, kolik místa lze v souboru vyhradit při vytváření sestavení se zpožděným podpisem.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,26 +37,26 @@ HRESULT StrongNameSignatureSize (
   
 ## <a name="parameters"></a>Parametry  
  `pbPublicKeyBlob`  
- [v] Struktura typu [PublicKeyBlob,](../../../../docs/framework/unmanaged-api/strong-naming/publickeyblob-structure.md) který obsahuje veřejnou část dvojice klíčů slouží ke generování podpisu silného názvu.  
+ pro Struktura typu [PublicKeyBlob –](../strong-naming/publickeyblob-structure.md) , která obsahuje veřejnou část páru klíčů sloužící k vygenerování podpisu silného názvu.  
   
  `cbPublicKeyBlob`  
- [v] Velikost v bajtů `pbPublicKeyBlob`.  
+ pro Velikost v bajtech `pbPublicKeyBlob` .  
   
  `pcbSize`  
- [v] Počet bajtů potřebných k uložení podpisu silného názvu.  
+ pro Počet bajtů vyžadovaných k uložení podpisu silného názvu.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- `S_OK`pokud byla metoda úspěšně dokončena; jinak hodnota HRESULT, která označuje selhání (viz [běžné hodnoty HRESULT](/windows/win32/seccrypto/common-hresult-values) pro seznam).  
+ `S_OK`Pokud byla metoda úspěšně dokončena; v opačném případě hodnota HRESULT, která označuje selhání (viz [společné hodnoty HRESULT](/windows/win32/seccrypto/common-hresult-values) pro seznam).  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Záhlaví:** MetaHost.h  
+ **Hlavička:** MetaHost. h  
   
- **Knihovna:** Zahrnuto jako prostředek v souboru MSCorEE.dll  
+ **Knihovna:** Zahrnuto jako prostředek v knihovně MSCorEE. dll  
   
- **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také
 
-- [ICLRStrongName – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-interface.md)
+- [ICLRStrongName – rozhraní](iclrstrongname-interface.md)

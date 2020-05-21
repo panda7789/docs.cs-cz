@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 6b0d9259-dbe2-45bb-b34d-990f60c73424
 topic_type:
 - apiref
-ms.openlocfilehash: 848255d44ce8637182f18288d30151a3f0df0912
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 2bf1b8b10aded8e61b9bceab0ee02b1d7c0b752a
+ms.sourcegitcommit: c76c8b2c39ed2f0eee422b61a2ab4c05ca7771fa
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73092166"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83762809"
 ---
 # <a name="iclrtaskmanagergetcurrenttasktype-method"></a>ICLRTaskManager::GetCurrentTaskType – metoda
 Získá typ úlohy, která je právě prováděna.  
@@ -35,17 +35,17 @@ HRESULT GetCurrentTaskType(
   
 ## <a name="parameters"></a>Parametry  
  `pTaskType`  
- mimo Ukazatel na hodnotu výčtu [ETaskType –](../../../../docs/framework/unmanaged-api/hosting/etasktype-enumeration.md) , která určuje typ úlohy, která je právě prováděna.  
+ mimo Ukazatel na hodnotu výčtu [ETaskType –](etasktype-enumeration.md) , která určuje typ úlohy, která je právě prováděna.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** MSCorEE. h  
   
  **Knihovna:** Zahrnuto jako prostředek v knihovně MSCorEE. dll  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [ICLRTaskManager – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrtaskmanager-interface.md)
+- [ICLRTaskManager – rozhraní](iclrtaskmanager-interface.md)
