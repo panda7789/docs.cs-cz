@@ -15,21 +15,21 @@ helpviewer_keywords:
 ms.assetid: 52c543ab-9ef5-4ee7-b836-c0ffc35cd45b
 topic_type:
 - apiref
-ms.openlocfilehash: 20f2041599e85b8df20a7a9cf44680da9f17244e
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: da6efae38cd70a68feea56b12e86be23fde7f0cb
+ms.sourcegitcommit: c76c8b2c39ed2f0eee422b61a2ab4c05ca7771fa
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73195933"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83762185"
 ---
 # <a name="iclrruntimeinfoloaderrorstring-method"></a>ICLRRuntimeInfo::LoadErrorString – metoda
 Přeloží hodnotu HRESULT do příslušné chybové zprávy pro zadanou jazykovou verzi.  
   
  Tato metoda nahrazuje následující funkce:  
   
-- [LoadStringRC –](../../../../docs/framework/unmanaged-api/hosting/loadstringrc-function.md)  
+- [LoadStringRC –](loadstringrc-function.md)  
   
-- [LoadStringRCEx –](../../../../docs/framework/unmanaged-api/hosting/loadstringrcex-function.md)  
+- [LoadStringRCEx –](loadstringrcex-function.md)  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -49,7 +49,7 @@ HRESULT LoadErrorString(
  mimo Řetězec zprávy přidružený k danému HRESULT.  
   
  `pcchBuffer`  
- [in, out] Velikost `pwzbuffer`, aby se předešlo přetečení vyrovnávací paměti. Pokud je `pwzbuffer` null, `pcchBuffer` poskytuje očekávanou velikost `pwzbuffer` pro povolení předběžného přidělení.  
+ [in, out] Velikost, `pwzbuffer` která se má vyhnout přetečení vyrovnávací paměti. Pokud `pwzbuffer` má hodnotu null, `pcchBuffer` poskytuje očekávanou velikost pro povolení předběžného `pwzbuffer` přidělení.  
   
  `iLocaleID`  
  pro Identifikátor jazykové verze. Chcete-li použít výchozí jazykovou verzi, je nutné zadat-1.  
@@ -60,20 +60,20 @@ HRESULT LoadErrorString(
 |HRESULT|Popis|  
 |-------------|-----------------|  
 |S_OK|Metoda byla úspěšně dokončena.|  
-|E_POINTER|`pcchBuffer` je null.|  
-|E_INVALIDARG|`pwzBuffer` je null.|  
+|E_POINTER|`pcchBuffer`má hodnotu null.|  
+|E_INVALIDARG|`pwzBuffer`má hodnotu null.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** MetaHost. h  
   
  **Knihovna:** Zahrnuto jako prostředek v knihovně MSCorEE. dll  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [ICLRRuntimeInfo – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrruntimeinfo-interface.md)
-- [Rozhraní pro hostování](../../../../docs/framework/unmanaged-api/hosting/hosting-interfaces.md)
-- [Hostování](../../../../docs/framework/unmanaged-api/hosting/index.md)
+- [ICLRRuntimeInfo – rozhraní](iclrruntimeinfo-interface.md)
+- [Rozhraní pro hostování](hosting-interfaces.md)
+- [Hostování](index.md)

@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: c21dab60-fb65-47d9-8a94-7fd47ca53b48
 topic_type:
 - apiref
-ms.openlocfilehash: 217874e625604613e67170a118a7bc3616e02c4d
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: aa1ce70311cd4ef0204c1c31efee8bd7b313c81d
+ms.sourcegitcommit: c76c8b2c39ed2f0eee422b61a2ab4c05ca7771fa
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73139643"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83762328"
 ---
 # <a name="icorruntimehostcreatedomainsetup-method"></a>ICorRuntimeHost::CreateDomainSetup – metoda
-Načte ukazatel rozhraní typu IAppDomainSetup – do instance <xref:System.AppDomainSetup?displayProperty=nameWithType>. `IAppDomainSetup` poskytuje metody pro konfiguraci aspektů aplikační domény před jejich vytvořením.  
+Načte ukazatel rozhraní typu IAppDomainSetup – do <xref:System.AppDomainSetup?displayProperty=nameWithType> instance. `IAppDomainSetup`poskytuje metody pro konfiguraci aspektů aplikační domény před jejich vytvořením.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -35,7 +35,7 @@ HRESULT CreateDomainSetup (
   
 ## <a name="parameters"></a>Parametry  
  `pAppDomainSetup`  
- mimo Ukazatel rozhraní na instanci <xref:System.AppDomainSetup?displayProperty=nameWithType>. Tento parametr je zadán jako `IUnknown`, takže volající by obecně měli volat `QueryInterface` na tomto ukazateli, aby získal ukazatel rozhraní typu `IAppDomainSetup`.  
+ mimo Ukazatel rozhraní na <xref:System.AppDomainSetup?displayProperty=nameWithType> instanci. Tento parametr je typu `IUnknown` , takže volající by obecně volali `QueryInterface` Tento ukazatel, aby získal ukazatel rozhraní typu `IAppDomainSetup` .  
   
 ## <a name="return-value"></a>Návratová hodnota  
   
@@ -43,14 +43,14 @@ HRESULT CreateDomainSetup (
 |-------------|-----------------|  
 |S_OK|Operace byla úspěšná.|  
 |S_FALSE|Operaci se nepodařilo dokončit.|  
-|E_FAIL|Došlo k neznámému a závažnému selhání. Pokud metoda vrátí E_FAIL, modul CLR (Common Language Runtime) již nebude v procesu použit. Následná volání všech hostitelských rozhraní API vrátí HOST_E_CLRNOTAVAILABLE.|  
+|E_FAIL|Došlo k neznámému a závažnému selhání. Pokud metoda vrátí E_FAIL, modul CLR (Common Language Runtime) již nebude v procesu použit. Následná volání všech hostitelských rozhraní API vrací HOST_E_CLRNOTAVAILABLE.|  
 |HOST_E_CLRNOTAVAILABLE|Modul CLR nebyl načten do procesu, nebo je modul CLR ve stavu, ve kterém nemůže spustit spravovaný kód nebo úspěšně zpracovat volání.|  
   
 ## <a name="remarks"></a>Poznámky  
- Ukazatel vrácený z této metody je obvykle předán jako parametr metodě [CreateDomainEx –](../../../../docs/framework/unmanaged-api/hosting/icorruntimehost-createdomainex-method.md) .  
+ Ukazatel vrácený z této metody je obvykle předán jako parametr metodě [CreateDomainEx –](icorruntimehost-createdomainex-method.md) .  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** MSCorEE. h  
   
@@ -58,10 +58,10 @@ HRESULT CreateDomainSetup (
   
  **Verze .NET Framework:** 1,0, 1,1  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System._AppDomain>
 - <xref:System.AppDomain>
 - <xref:System.AppDomainSetup>
 - <xref:System.IAppDomainSetup?displayProperty=nameWithType>
-- [ICorRuntimeHost – rozhraní](../../../../docs/framework/unmanaged-api/hosting/icorruntimehost-interface.md)
+- [ICorRuntimeHost – rozhraní](icorruntimehost-interface.md)

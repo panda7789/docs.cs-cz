@@ -2,12 +2,12 @@
 title: Možnosti konfigurace běhového běhu
 description: Naučte se konfigurovat aplikace .NET Core pomocí nastavení konfigurace za běhu.
 ms.date: 01/21/2020
-ms.openlocfilehash: d49707b93e272f0e527ff536a80140ec98e5c1a8
-ms.sourcegitcommit: 1cb64b53eb1f253e6a3f53ca9510ef0be1fd06fe
+ms.openlocfilehash: 68690689fd4f936e3af76ab647f0b58d8ec6ca27
+ms.sourcegitcommit: c76c8b2c39ed2f0eee422b61a2ab4c05ca7771fa
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82506777"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83761951"
 ---
 # <a name="net-core-run-time-configuration-settings"></a>Nastavení konfigurace runtime .NET Core
 
@@ -20,13 +20,16 @@ ms.locfileid: "82506777"
 > [!NOTE]
 > Tato dokumentace je probíhající práce. Pokud si všimnete, že zde uvedené informace jsou buď neúplné, nebo nepřesné, buď [otevřete problém](https://github.com/dotnet/docs/issues) , abychom nás věděli, nebo [odešlete žádost](https://github.com/dotnet/docs/pulls) o přijetí změn k vyřešení problému. Informace o odesílání žádostí o přijetí změn pro úložiště dotnet/docs najdete v [příručce pro přispěvatele](https://docs.microsoft.com/contribute/dotnet/dotnet-contribute).
 
-.NET Core poskytuje následující mechanismy pro konfiguraci chování aplikace za běhu:
+.NET Core poskytuje následující mechanismy pro konfiguraci chování aplikace v době běhu:
 
 - [Soubor runtimeconfig. JSON](#runtimeconfigjson)
 
 - [Vlastnosti nástroje MSBuild](#msbuild-properties)
 
 - [Proměnné prostředí](#environment-variables)
+
+> [!TIP]
+> Konfigurace možnosti modulu runtime pomocí proměnné prostředí použije nastavení pro všechny aplikace .NET Core. Při konfiguraci možnosti modulu runtime v souboru *runtimeconfig. JSON* nebo projektu se použije nastavení jenom pro tuto aplikaci.
 
 Některé hodnoty konfigurace lze také nastavit programově voláním <xref:System.AppContext.SetSwitch%2A?displayProperty=nameWithType> metody.
 
@@ -50,7 +53,7 @@ Zadejte možnosti konfigurace modulu runtime v části **configProperties** soub
 
 ### <a name="example-appnameruntimeconfigjson-file"></a>Příklad souboru [AppName]. runtimeconfig. JSON
 
-Pokud umístíte možnosti do výstupního souboru JSON, zanořit je do `runtimeOptions` vlastnosti.
+Pokud umístíte možnosti do výstupního souboru JSON, zanořit je do `runtimeOptions` Vlastnosti.
 
 ```json
 {
@@ -106,11 +109,11 @@ Zde je příklad souboru projektu ve stylu sady SDK s vlastnostmi MSBuild pro ko
 </Project>
 ```
 
-Vlastnosti nástroje MSBuild pro konfiguraci chování za běhu jsou uvedeny v jednotlivých článcích pro každou oblast, například [uvolňování paměti](garbage-collector.md).
+Vlastnosti nástroje MSBuild pro konfiguraci chování za běhu jsou uvedeny v jednotlivých článcích pro každou oblast, například [uvolňování paměti](garbage-collector.md). Jsou také uvedeny v části [Konfigurace modulu runtime](../project-sdk/msbuild-props.md#run-time-configuration-properties) Referenční dokumentace vlastností MSBuild pro projekty ve stylu sady SDK.
 
 ## <a name="environment-variables"></a>Proměnné prostředí
 
-Proměnné prostředí lze použít k poskytnutí některých informací o konfiguraci run-time. Konfigurační ovladače zadané jako proměnné prostředí mají obecně předponu **COMPlus_**.
+Proměnné prostředí lze použít k poskytnutí některých informací o konfiguraci run-time. Konfigurace možnosti modulu runtime pomocí proměnné prostředí použije nastavení pro všechny aplikace .NET Core. Konfigurační ovladače zadané jako proměnné prostředí mají obecně předponu **COMPlus_**.
 
 Můžete definovat proměnné prostředí z ovládacích panelů systému Windows, na příkazovém řádku nebo programově voláním <xref:System.Environment.SetEnvironmentVariable(System.String,System.String)?displayProperty=nameWithType> metody v systémech Windows i UNIX.
 

@@ -3,12 +3,12 @@ title: Konfigurační nastavení kompilace
 description: Přečtěte si o nastaveních modulu runtime, která konfigurují, jak kompilátor JIT funguje pro aplikace .NET Core.
 ms.date: 11/27/2019
 ms.topic: reference
-ms.openlocfilehash: 4db20ee6d36fe3d3d66f473644b70c02d4e02cb3
-ms.sourcegitcommit: 1cb64b53eb1f253e6a3f53ca9510ef0be1fd06fe
+ms.openlocfilehash: cfcf9b5fc8d11a4ae35ab9b152f32133cd6930bf
+ms.sourcegitcommit: c76c8b2c39ed2f0eee422b61a2ab4c05ca7771fa
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82506841"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83762003"
 ---
 # <a name="run-time-configuration-options-for-compilation"></a>Možnosti konfigurace běhu pro kompilaci
 
@@ -98,7 +98,7 @@ Soubor projektu:
 - Konfiguruje, zda kompilátor JIT používá rychlou JIT v metodách, které obsahují smyčky.
 - Povolení rychlé JIT pro smyčky může zlepšit výkon při spuštění. Dlouhotrvající smyčky však můžou zablokovat v méně optimalizovaném kódu po dlouhou dobu.
 - Pokud je [rychlá JIT](#quick-jit) zakázaná, toto nastavení nemá žádný vliv.
-- Výchozí: disabled`false`().
+- Pokud toto nastavení vynecháte, rychlá JIT se nepoužívá pro metody, které obsahují smyčky. To je ekvivalentní nastavení hodnoty na `false` .
 
 | | Název nastavení | Hodnoty |
 | - | - | - |
@@ -136,7 +136,7 @@ Soubor projektu:
 
 - Konfiguruje, zda modul runtime .NET Core používá předem kompilovaný kód pro image s dostupnými ReadyToRun daty. Když se tato možnost zakáže, vynutí modul runtime kód rozhraní kompilování JIT.
 - Další informace najdete v tématu [ReadyToRun](../whats-new/dotnet-core-3-0.md#readytorun-images).
-- Výchozí: Enabled (`1`).
+- Pokud toto nastavení vynecháte, .NET použije ReadyToRun data, až bude k dispozici. To je ekvivalentní nastavení hodnoty na `1` .
 
 | | Název nastavení | Hodnoty |
 | - | - | - |

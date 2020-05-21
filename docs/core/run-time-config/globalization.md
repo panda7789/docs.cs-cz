@@ -3,19 +3,19 @@ title: Nastavení konfigurace globalizace
 description: Přečtěte si o nastaveních prostředí runtime, která konfigurují aspekty globalizace aplikace .NET Core, například jak analyzuje data v japonštině.
 ms.date: 05/18/2020
 ms.topic: reference
-ms.openlocfilehash: 2561e66e6d18cb4036b0719f7e34ea66540fe095
-ms.sourcegitcommit: 0926684d8d34f4c6b5acce58d2193db093cb9cf2
+ms.openlocfilehash: 56228e9a6cb6dbab6a22bdc00d11212e1019776b
+ms.sourcegitcommit: c76c8b2c39ed2f0eee422b61a2ab4c05ca7771fa
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83703126"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83761964"
 ---
 # <a name="run-time-configuration-options-for-globalization"></a>Možnosti konfigurace běhového běhu pro globalizaci
 
 ## <a name="invariant-mode"></a>Invariantní režim
 
 - Určuje, jestli aplikace .NET Core běží v režimu invariantní v rámci globalizace bez přístupu k datům a chováním specifickým pro jazykovou verzi.
-- Výchozí: Spusťte aplikaci s přístupem k kulturním datům ( `false` ).
+- Pokud toto nastavení vynecháte, aplikace se bude spouštět s přístupem k kulturním datům. To je ekvivalentní nastavení hodnoty na `false` .
 - Další informace najdete v tématu [režim invariant globalizace .NET Core](https://github.com/dotnet/runtime/blob/master/docs/design/features/globalization-invariant-mode.md).
 
 | | Název nastavení | Hodnoty |
@@ -53,7 +53,7 @@ Soubor projektu:
 ## <a name="era-year-ranges"></a>Rozsahy roků období
 
 - Určuje, zda jsou uvolněny oblasti pro kalendáře, které podporují více mazání, nebo zda data, která přecházejí do rozsahu dat v období, vyvolají <xref:System.ArgumentOutOfRangeException> .
-- Výchozí: kontroly rozsahu jsou uvolněny ( `false` ).
+- Pokud toto nastavení vynecháte, budou se kontroly rozsahu zmírnit. To je ekvivalentní nastavení hodnoty na `false` .
 - Další informace najdete v tématu [kalendáře, mazání a rozsahy dat: odlehčené kontroly rozsahu](../../standard/datetime/working-with-calendars.md#calendars-eras-and-date-ranges-relaxed-range-checks).
 
 | | Název nastavení | Hodnoty |
@@ -64,7 +64,7 @@ Soubor projektu:
 ## <a name="japanese-date-parsing"></a>Analýza data v japonštině
 
 - Určuje, zda je řetězec, který obsahuje hodnotu "1" nebo "Gannen" jako rok úspěšně analyzován, nebo zda je podporován pouze "1".
-- Výchozí: Analyzujte řetězce, které obsahují buď "1" nebo "Gannen" jako rok ( `false` ).
+- Pokud toto nastavení vynecháte, řetězce, které obsahují buď "1" nebo "Gannen", se budou analyzovat jako rok úspěšně. To je ekvivalentní nastavení hodnoty na `false` .
 - Další informace najdete v tématu [reprezentace kalendářních dat v kalendářích s více vymazáními](../../standard/datetime/working-with-calendars.md#represent-dates-in-calendars-with-multiple-eras).
 
 | | Název nastavení | Hodnoty |
@@ -75,7 +75,7 @@ Soubor projektu:
 ## <a name="japanese-year-format"></a>Formát japonského roku
 
 - Určuje, zda je první rok japonského období v japonštině formátován jako "Gannen" nebo jako číslo.
-- Výchozí: naformátujte první rok jako "Gannen" ( `false` ).
+- Pokud toto nastavení vynecháte, první rok se zformátuje jako "Gannen". To je ekvivalentní nastavení hodnoty na `false` .
 - Další informace najdete v tématu [reprezentace kalendářních dat v kalendářích s více vymazáními](../../standard/datetime/working-with-calendars.md#represent-dates-in-calendars-with-multiple-eras).
 
 | | Název nastavení | Hodnoty |

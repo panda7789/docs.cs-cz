@@ -1,41 +1,41 @@
 ---
-title: Nastavení konfigurace zřetězení
-description: Přečtěte si o nastavení za běhu, které konfigurují zřetězení pro aplikace .NET Core.
+title: Nastavení konfigurace vláken
+description: Přečtěte si o nastaveních prostředí runtime, která konfigurují vlákna pro aplikace .NET Core.
 ms.date: 11/27/2019
 ms.topic: reference
-ms.openlocfilehash: 68b8e93ca6ec3f708a7a627307655ada1955500a
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 1c7c16993a07ef95223481791153b75ab2f61533
+ms.sourcegitcommit: c76c8b2c39ed2f0eee422b61a2ab4c05ca7771fa
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "76789853"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83761925"
 ---
-# <a name="run-time-configuration-options-for-threading"></a>Možnosti konfigurace za běhu pro zřetězení
+# <a name="run-time-configuration-options-for-threading"></a>Možnosti konfigurace běhu pro dělení na vlákna
 
-## <a name="cpu-groups"></a>Skupiny procesorů
+## <a name="cpu-groups"></a>Skupiny PROCESORů
 
-- Konfiguruje, zda jsou vlákna automaticky distribuována mezi skupinami procesorů.
-- Výchozí: Zakázáno (`0`).
-
-| | Název nastavení | Hodnoty |
-| - | - | - |
-| **runtimeconfig.json** | Není dostupné. | Není dostupné. |
-| **Proměnná prostředí** | `COMPlus_Thread_UseAllCpuGroups` | `0`- zakázáno<br/>`1`- povoleno |
-
-## <a name="minimum-threads"></a>Minimální závity
-
-- Určuje minimální počet podprocesů pro fond pracovních vláken.
-- Odpovídá metodě. <xref:System.Threading.ThreadPool.SetMinThreads%2A?displayProperty=nameWithType>
+- Konfiguruje, zda jsou vlákna automaticky distribuována napříč skupinami PROCESORů.
+- Pokud toto nastavení vynecháte, nebudou vlákna distribuována mezi skupiny PROCESORů. To je ekvivalentní nastavení hodnoty na `0` .
 
 | | Název nastavení | Hodnoty |
 | - | - | - |
-| **runtimeconfig.json** | `System.Threading.ThreadPool.MinThreads` | Celé číslo představující minimální počet podprocesů |
-| **MSBuild, vlastnost** | `ThreadPoolMinThreads` | Celé číslo představující minimální počet podprocesů |
-| **Proměnná prostředí** | Není dostupné. | Není dostupné. |
+| **runtimeconfig. JSON** | – | – |
+| **Proměnná prostředí** | `COMPlus_Thread_UseAllCpuGroups` | `0`– zakázáno<br/>`1`– povoleno |
+
+## <a name="minimum-threads"></a>Minimální počet vláken
+
+- Určuje minimální počet vláken pro fond pracovních vláken.
+- Odpovídá <xref:System.Threading.ThreadPool.SetMinThreads%2A?displayProperty=nameWithType> metodě.
+
+| | Název nastavení | Hodnoty |
+| - | - | - |
+| **runtimeconfig. JSON** | `System.Threading.ThreadPool.MinThreads` | Celé číslo, které představuje minimální počet vláken |
+| **Vlastnost MSBuild** | `ThreadPoolMinThreads` | Celé číslo, které představuje minimální počet vláken |
+| **Proměnná prostředí** | – | – |
 
 ### <a name="examples"></a>Příklady
 
-*soubor runtimeconfig.json:*
+soubor *runtimeconfig. JSON* :
 
 ```json
 {
@@ -61,18 +61,18 @@ Soubor projektu:
 
 ## <a name="maximum-threads"></a>Maximální počet vláken
 
-- Určuje maximální počet podprocesů pro fond pracovních vláken.
-- Odpovídá metodě. <xref:System.Threading.ThreadPool.SetMaxThreads%2A?displayProperty=nameWithType>
+- Určuje maximální počet vláken pro fond pracovních vláken.
+- Odpovídá <xref:System.Threading.ThreadPool.SetMaxThreads%2A?displayProperty=nameWithType> metodě.
 
 | | Název nastavení | Hodnoty |
 | - | - | - |
-| **runtimeconfig.json** | `System.Threading.ThreadPool.MaxThreads` | Celé číslo představující maximální počet podprocesů |
-| **MSBuild, vlastnost** | `ThreadPoolMaxThreads` | Celé číslo představující maximální počet podprocesů |
-| **Proměnná prostředí** | Není dostupné. | Není dostupné. |
+| **runtimeconfig. JSON** | `System.Threading.ThreadPool.MaxThreads` | Celé číslo, které představuje maximální počet vláken |
+| **Vlastnost MSBuild** | `ThreadPoolMaxThreads` | Celé číslo, které představuje maximální počet vláken |
+| **Proměnná prostředí** | – | – |
 
 ### <a name="examples"></a>Příklady
 
-*soubor runtimeconfig.json:*
+soubor *runtimeconfig. JSON* :
 
 ```json
 {

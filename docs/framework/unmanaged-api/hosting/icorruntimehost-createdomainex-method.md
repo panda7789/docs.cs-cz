@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: 1bdde382-f8ba-4cc8-94b2-d1ac919c585e
 topic_type:
 - apiref
-ms.openlocfilehash: a3a2d1827774ddedc00eb849f64256e3f425b3fa
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 4e5856fbcda83c1dd30559c6f59f63495faea78d
+ms.sourcegitcommit: c76c8b2c39ed2f0eee422b61a2ab4c05ca7771fa
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73127715"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83762341"
 ---
 # <a name="icorruntimehostcreatedomainex-method"></a>ICorRuntimeHost::CreateDomainEx – metoda
-Vytvoří doménu aplikace. Volající obdrží ukazatel rozhraní typu <xref:System._AppDomain>do instance typu <xref:System.AppDomain?displayProperty=nameWithType>. Tato metoda umožňuje volajícímu předat instanci IAppDomainSetup – ke konfiguraci dalších funkcí vrácené instance <xref:System._AppDomain>.  
+Vytvoří doménu aplikace. Volající obdrží ukazatel rozhraní typu <xref:System._AppDomain> na instanci typu <xref:System.AppDomain?displayProperty=nameWithType> . Tato metoda umožňuje volajícímu předat instanci IAppDomainSetup – ke konfiguraci dalších funkcí vrácené <xref:System._AppDomain> instance.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,13 +41,13 @@ HRESULT CreateDomainEx (
  pro Volitelný parametr, který slouží k poskytnutí popisného názvu doméně. Tento popisný název lze zobrazit v uživatelských rozhraních, jako jsou například ladicí programy, a identifikovat doménu.  
   
  `pSetup`  
- pro Volitelný ukazatel rozhraní typu `IAppDomainSetup`, získaný voláním metody [ICorRuntimeHost:: createdomainsetup –](../../../../docs/framework/unmanaged-api/hosting/icorruntimehost-createdomainsetup-method.md) .  
+ pro Volitelný ukazatel rozhraní typu `IAppDomainSetup` , získaný voláním metody [ICorRuntimeHost:: createdomainsetup –](icorruntimehost-createdomainsetup-method.md) .  
   
  `pIdentityArray`  
- pro Volitelné pole ukazatelů `IIdentity` instancí, které reprezentují legitimace namapované prostřednictvím zásad zabezpečení pro vytvoření sady oprávnění. Objekt `IIdentity` lze získat voláním metody [createevidence –](../../../../docs/framework/unmanaged-api/hosting/icorruntimehost-createevidence-method.md) .  
+ pro Volitelné pole ukazatelů na `IIdentity` instance, které reprezentují legitimace namapované prostřednictvím zásad zabezpečení, aby bylo možné vytvořit sadu oprávnění. `IIdentity`Objekt lze získat voláním metody [createevidence –](icorruntimehost-createevidence-method.md) .  
   
  `pAppDomain`  
- mimo Ukazatel rozhraní typu <xref:System._AppDomain> k instanci <xref:System.AppDomain?displayProperty=nameWithType>, kterou lze použít k další kontrole domény.  
+ mimo Ukazatel rozhraní typu <xref:System._AppDomain> na instanci <xref:System.AppDomain?displayProperty=nameWithType> , která může být použita k další kontrole domény.  
   
 ## <a name="return-value"></a>Návratová hodnota  
   
@@ -55,14 +55,14 @@ HRESULT CreateDomainEx (
 |-------------|-----------------|  
 |S_OK|Operace byla úspěšná.|  
 |S_FALSE|Operaci se nepodařilo dokončit.|  
-|E_FAIL|Došlo k neznámému a závažnému selhání. Pokud metoda vrátí E_FAIL, modul CLR (Common Language Runtime) již nebude v procesu použit. Následná volání všech hostitelských rozhraní API vrátí HOST_E_CLRNOTAVAILABLE.|  
+|E_FAIL|Došlo k neznámému a závažnému selhání. Pokud metoda vrátí E_FAIL, modul CLR (Common Language Runtime) již nebude v procesu použit. Následná volání všech hostitelských rozhraní API vrací HOST_E_CLRNOTAVAILABLE.|  
 |HOST_E_CLRNOTAVAILABLE|Modul CLR nebyl načten do procesu, nebo je modul CLR ve stavu, ve kterém nemůže spustit spravovaný kód nebo úspěšně zpracovat volání.|  
   
 ## <a name="remarks"></a>Poznámky  
- `CreateDomainEx` rozšiřuje možnosti [CreateDomain –](../../../../docs/framework/unmanaged-api/hosting/icorruntimehost-createdomain-method.md) tím, že volajícímu předává instanci `IAppDomainSetup` s hodnotami vlastností pro konfiguraci domény aplikace.  
+ `CreateDomainEx`rozšiřuje možnosti [CreateDomain –](icorruntimehost-createdomain-method.md) tím, že umožňuje volajícímu předat `IAppDomainSetup` instanci s hodnotami vlastností pro konfiguraci domény aplikace.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** MSCorEE. h  
   
@@ -70,10 +70,10 @@ HRESULT CreateDomainEx (
   
  **Verze .NET Framework:** 1,0, 1,1  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System._AppDomain>
 - <xref:System.AppDomain>
 - <xref:System.IAppDomainSetup?displayProperty=nameWithType>
-- [CreateDomain – metoda](../../../../docs/framework/unmanaged-api/hosting/icorruntimehost-createdomain-method.md)
-- [ICorRuntimeHost – rozhraní](../../../../docs/framework/unmanaged-api/hosting/icorruntimehost-interface.md)
+- [CreateDomain – metoda](icorruntimehost-createdomain-method.md)
+- [ICorRuntimeHost – rozhraní](icorruntimehost-interface.md)

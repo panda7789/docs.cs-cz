@@ -1,38 +1,35 @@
 ---
-title: 'Asynchronní programování - C #'
-description: Další informace o asynchronním programovacím modelu na úrovni jazyka C# poskytovaného rozhraním .NET Core.
+title: 'Asynchronní programování – C #'
+description: Přečtěte si o asynchronním programovacím modelu C#, který poskytuje .NET Core, na úrovni jazyka C#.
 author: cartermp
-ms.date: 06/20/2016
+ms.date: 05/20/2020
 ms.technology: csharp-async
 ms.assetid: b878c34c-a78f-419e-a594-a2b44fa521a4
-ms.openlocfilehash: 38d7c856e9a536db9ef26349175ad440a49f5fe2
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: ee5edc80d9c020dbbeced3fc36d3ff273036d7b1
+ms.sourcegitcommit: c76c8b2c39ed2f0eee422b61a2ab4c05ca7771fa
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75713952"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83761886"
 ---
 # <a name="asynchronous-programming"></a>Asynchronní programování
 
-Pokud máte nějaké potřeby vázané na vstupně-výstupní jednotky (například vyžádání dat ze sítě nebo přístup k databázi), budete chtít využít asynchronní programování.  Můžete mít také kód vázaný na procesor, jako je například provádění nákladného výpočtu, což je také dobrý scénář pro psaní asynchronního kódu.
+Pokud máte nějaké požadavky na vstupně-výstupní operace (například vyžádání dat ze sítě, přístup k databázi nebo čtení a zápis do systému souborů), budete chtít využít asynchronní programování. Můžete mít také kód vázaný na procesor, jako je například provádění nákladného výpočtu, což je také dobrý scénář pro psaní asynchronního kódu.
 
-C# má asynchronní programovací model na úrovni jazyka, který umožňuje snadné psaní asynchronního kódu bez nutnosti žonglovat s zpětná volání nebo v souladu s knihovnou, která podporuje asynchronii. Z vyplývá, co je známé jako [task-based asynchronní vzor (TAP)](../standard/asynchronous-programming-patterns/task-based-asynchronous-pattern-tap.md).
+Jazyk C# má model asynchronního programování na úrovni jazyka, který umožňuje snadné psaní asynchronního kódu bez nutnosti juggle zpětná volání nebo odpovídat knihovně, která podporuje asynchronii. Postupuje podle toho, co se říká [asynchronní vzor založený na úlohách (klepněte)](../standard/asynchronous-programming-patterns/task-based-asynchronous-pattern-tap.md).
 
-## <a name="basic-overview-of-the-asynchronous-model"></a>Základní přehled asynchronního modelu
+## <a name="overview-of-the-asynchronous-model"></a>Přehled asynchronního modelu
 
-Jádrem asynchronního `Task` programování `Task<T>` je a objekty, které modelují asynchronní operace.  Jsou podporovány `async` a `await` klíčová slova.  Model je ve většině případů poměrně jednoduchý:
+Základem asynchronního programování jsou `Task` `Task<T>` objekty a, které modelují asynchronní operace. Jsou podporovány pomocí `async` `await` klíčových slov a. Model je ve většině případů velmi jednoduchý:
 
-Pro vstupně-výstupní kód, `await` operace, která `Task` `Task<T>` vrátí nebo `async` uvnitř metody.
+- Pro kód vázaný na vstupně-výstupní operace očekáváte operaci, která vrací `Task` nebo `Task<T>` uvnitř `async` metody.
+- Pro kód vázaný na procesor očekáváte operaci, která je spuštěna ve vlákně na pozadí s <xref:System.Threading.Tasks.Task.Run%2A?displayProperty=nameWithType> metodou.
 
-Pro kód vázaný na `await` procesor, operace, která je `Task.Run` spuštěna na podprocesu na pozadí s metodou.
+`await`Klíčové slovo je místo, kde dojde k Magic. Poskytuje řízení volajícímu metody, kterou provedl `await` , a nakonec umožňuje, aby uživatelské rozhraní mohlo reagovat nebo služba měla být Elasticka. I když [existují způsoby](../standard/asynchronous-programming-patterns/task-based-asynchronous-pattern-tap.md) přístupu k asynchronnímu kódu, který je jiný než `async` a `await` , Tento článek se zaměřuje na konstrukce na úrovni jazyka.
 
-Klíčové `await` slovo je místo, kde se stane kouzlo. Poskytuje řízení volajícímu metody, která `await`provedla a nakonec umožňuje uživatelské rozhraní reagovat nebo služby být elastické.
+### <a name="io-bound-example-download-data-from-a-web-service"></a>Vstup/výstup – příklad vazby: stažení dat z webové služby
 
-Existují i jiné způsoby, `async` jak `await` přistupovat k asynchronnímu kódu než a je uvedeno v článku TAP propojeném výše, ale tento dokument se od tohoto okamžiku zaměří na konstrukce na úrovni jazyka.
-
-### <a name="io-bound-example-downloading-data-from-a-web-service"></a>Příklad stahování dat z webové služby
-
-Možná budete muset stáhnout některá data z webové služby při stisknutí tlačítka, ale nechcete blokovat vlákno uživatelského rozhraní. To může být provedeno jednoduše takto:
+Může být nutné stáhnout některá data z webové služby, když je stisknuto tlačítko, ale nechcete zablokovat vlákno uživatelského rozhraní. Můžete to provést takto:
 
 ```csharp
 private readonly HttpClient _httpClient = new HttpClient();
@@ -48,13 +45,13 @@ downloadButton.Clicked += async (o, e) =>
 };
 ```
 
-A to je vše! Kód vyjadřuje záměr (stahování některých dat asynchronně) bez zabředne do interakce s task objekty.
+Kód vyjadřuje záměr (asynchronní stahování dat) bez nutnosti zabřednete v interakci s `Task` objekty.
 
-### <a name="cpu-bound-example-performing-a-calculation-for-a-game"></a>Příklad vázaný na procesor: Provedení výpočtu pro hru
+### <a name="cpu-bound-example-perform-a-calculation-for-a-game"></a>Příklad vázaný na procesor: provedení výpočtu pro hru
 
-Řekněme, že píšete mobilní hru, kde stisknutí tlačítka může způsobit poškození mnoha nepřátelům na obrazovce.  Provedení výpočtu poškození může být nákladné a dělat to na vlákně uživatelského rozhraní by se hra zdála být pozastavena při výpočtu!
+Řekněme, že píšete mobilní hru, kde stisknutí tlačítka může způsobit poškození mnoha Enemies na obrazovce. Provádění výpočtu škod může být nákladné a jeho provedení na vlákně UI by vedlo k tomu, že se hra po provedení výpočtu zastaví.
 
-Nejlepší způsob, jak to zvládnout, je spustit vlákno `Task.Run`na `await` pozadí, které provádí práci pomocí aplikace a jeho výsledek.  To umožní, aby se uI cítilo hladce, když se práce provádí.
+Nejlepším způsobem, jak to zpracovat, je spustit vlákno na pozadí, které funguje pomocí `Task.Run` a očekávat jeho výsledek pomocí `await` . Díky tomu může uživatelské rozhraní cítit plynulé fungování práce.
 
 ```csharp
 private DamageResult CalculateDamageDone()
@@ -68,69 +65,68 @@ private DamageResult CalculateDamageDone()
 calculateButton.Clicked += async (o, e) =>
 {
     // This line will yield control to the UI while CalculateDamageDone()
-    // performs its work.  The UI thread is free to perform other work.
+    // performs its work. The UI thread is free to perform other work.
     var damageResult = await Task.Run(() => CalculateDamageDone());
     DisplayDamage(damageResult);
 };
 ```
 
-A to je vše!  Tento kód čistě vyjadřuje záměr události kliknutí na tlačítko, nevyžaduje ruční správu vlákna na pozadí a činí tak neblokujícím způsobem.
+Tento kód čistě vyjadřuje záměr události kliknutí na tlačítko, nevyžaduje ruční správu vlákna na pozadí a je tak neblokujícím způsobem.
 
-### <a name="what-happens-under-the-covers"></a>Co se děje pod kryty
+### <a name="what-happens-under-the-covers"></a>Co se stane v rámci pokrývání
 
-Je tu spousta pohyblivých kusů, pokud jde o asynchronní operace.  Pokud jste zvědaví, co se děje `Task` pod `Task<T>`kryty a , pokladna [Async in-hloubkový](../standard/async-in-depth.md) článek pro více informací.
+Existuje mnoho pohybujících se částí, ve kterých se jedná o asynchronní operace. Pokud jste zajímái o tom, co se děje `Task` `Task<T>` , a další informace najdete [v](../standard/async-in-depth.md) podrobném článku.
 
-Na straně C# věcí kompilátor transformuje váš kód do stavu počítače, který `await` udržuje informace o věcech, jako je získávání spuštění při dosažení a obnovení provádění po dokončení úlohy na pozadí.
+Na straně jazyka C# kompilátor transformuje váš kód do stavového počítače, který uchovává informace o tom, jako je například vracení provádění při `await` dosažení a obnovení spuštění po dokončení úlohy na pozadí.
 
-Pro teoreticky nakloněné, toto je implementace [Promise Model asynchrony](https://en.wikipedia.org/wiki/Futures_and_promises).
+Pro teoreticky-skloněnou je to implementace [modelu asynchronii pro příslib](https://en.wikipedia.org/wiki/Futures_and_promises).
 
-## <a name="key-pieces-to-understand"></a>Klíčové kousky k pochopení
+## <a name="key-pieces-to-understand"></a>Klíčové kousky, které je potřeba pochopit
 
-* Asynchronní kód lze použít pro vstupně-výstupní a procesorvázaný kód, ale odlišně pro každý scénář.
-* Asynchronní `Task<T>` kód `Task`používá a , které jsou konstrukce používané k modelování práce se provádí na pozadí.
-* Klíčové `async` slovo změní metodu na asynchronní metodu, která vám umožní použít `await` klíčové slovo v jeho těle.
-* Při `await` použití klíčového slova pozastaví volající metodu a vrátí ovládací prvek zpět volajícímu, dokud nebude dokončena očekávaná úloha.
-* `await`lze použít pouze uvnitř asynchronní metody.
+* Asynchronní kód lze použít pro vstupně-výstupní operace i pro kód vázaný na procesor, ale pro každý scénář odlišně.
+* Asynchronní kód používá `Task<T>` a `Task` , které jsou konstrukce používané k modelování práce prováděné na pozadí.
+* `async`Klíčové slovo převede metodu do asynchronní metody, která umožňuje použití `await` klíčového slova v těle.
+* Při `await` použití klíčového slova pozastaví volající metodu a vrátí řízení volajícímu, dokud není dokončen očekávaný úkol.
+* `await`dá se použít jenom uvnitř asynchronní metody.
 
-## <a name="recognize-cpu-bound-and-io-bound-work"></a>Rozpoznat práci vázanou na procesor a vstupně-výstupní svázané práce
+## <a name="recognize-cpu-bound-and-io-bound-work"></a>Rozpoznání práce vázané na procesor a vstupně-výstupní operace
 
-První dva příklady této příručky ukázaly, jak můžete použít `async` a `await` pro práci vázanou na vstupně-výstupní a procesorovou.  Je to klíč, který můžete identifikovat, když úloha, kterou potřebujete udělat, je I/O-vázaná nebo vázaný na procesor, protože může výrazně ovlivnit výkon kódu a může potenciálně vést ke zneužití určitých konstrukcí.
+První dva příklady této příručky ukázaly, jak můžete použít `async` a `await` pro vstupně-výstupní operace a práci vázané na procesor. Je klíč, který můžete identifikovat, když je potřeba udělat úlohu, která je vázaná na vstupně-výstupní operace, nebo na základě procesoru, protože může významně ovlivnit výkon kódu a může potenciálně vést k omylům s některými konstrukcemi.
 
-Zde jsou dvě otázky, které byste se měli zeptat, než napíšete nějaký kód:
+Tady jsou dvě otázky, které byste měli před psaním kódu zeptat:
 
-1. Bude váš kód "čekání" na něco, jako jsou data z databáze?
+1. Bude váš kód "čekání" na něco, například data z databáze?
 
-    Pokud je vaše odpověď "ano", pak je vaše práce **i/ O-vázána**.
+   Pokud je vaše odpověď "Ano", vaše práce je **vázána na vstup/výstup**.
 
-2. Bude váš kód provádět velmi nákladné výpočty?
+1. Bude váš kód provádět nákladný výpočet?
 
-    Pokud jste odpověděli "ano", pak je vaše práce **vázána na procesor**.
+   Pokud jste odpověděli na Ano, vaše práce bude **vázaná na procesor**.
 
-Pokud je práce, kterou **máte, vázána na vstupně-výstupní ,** použijte `async` `await` a *bez* `Task.Run`.  *Neměli* byste používat paralelní knihovnu úloh.  Důvod je popsán v [článku Async in Depth](../standard/async-in-depth.md).
+Pokud je práce, kterou jste **vázáni na vstup/výstup**, použijte `async` a `await` *bez* `Task.Run` . *Neměli byste* používat Task Parallel Library. Důvod je popsaný v části Async v rámci [hloubky](../standard/async-in-depth.md).
 
-Pokud je práce, kterou **máte, vázána na** `async` procesor `await` a záleží vám na odezvě, použijte a ale zplodíte práci na jiném vlákně *s* `Task.Run`.  Pokud je práce vhodná pro souběžnost a paralelismus, měli byste také zvážit použití [paralelní knihovny úloh](../standard/parallel-programming/task-parallel-library-tpl.md).
+Pokud je práce **vázaná na procesor** a Vy se zajímáte o odezvu, použijte `async` a `await` , ale zapněte práci na jiném vlákně *with* `Task.Run` . Pokud je práce vhodná pro souběžnost a paralelismu, zvažte také použití [paralelní knihovny Task](../standard/parallel-programming/task-parallel-library-tpl.md).
 
-Kromě toho byste měli vždy měřit provádění kódu.  Například můžete najít sami sebe v situaci, kdy vaše práce vázaná na procesor není dostatečně nákladné ve srovnání s režií přepnutí kontextu při multithreading.  Každá volba má svůj kompromis, a měli byste si vybrat správný kompromis pro vaši situaci.
+Kromě toho byste měli vždy změřit provádění kódu. Například se můžete setkat v situaci, kdy práce vázaná na procesor není ve srovnání s režií kontextových přepínačů v případě multithreadingu dostatečně nákladná. Každá volba má své kompromisy a měli byste si vybrat správné kompromisy pro vaši situaci.
 
 ## <a name="more-examples"></a>Další příklady
 
-Následující příklady ukazují různé způsoby, jak můžete psát asynchronní kód v C#.  Pokrývají několik různých scénářů, na které se můžete sejít.
+Následující příklady ukazují různé způsoby, jak lze v jazyce C# napsat asynchronní kód. Pokrývají několik různých scénářů, které se mohou nacházet v rámci.
 
-### <a name="extracting-data-from-a-network"></a>Extrahování dat ze sítě
+### <a name="extract-data-from-a-network"></a>Extrakce dat ze sítě
 
-Tento úryvek stáhne HTML z domovské stránky v [www.dotnetfoundation.org](https://www.dotnetfoundation.org) a spočítá, kolikrát se řetězec ".NET" vyskytuje v HTML.  Používá ASP.NET MVC k definování metody webového kontroléru, která provádí tento úkol a vrací číslo.
+Tento fragment kódu stáhne kód HTML z domovské stránky <https://dotnetfoundation.org> a spočítá počet výskytů řetězce ".NET" v HTML. Používá ASP.NET k definování metody kontroleru webového rozhraní API, která provádí tuto úlohu a vrací číslo.
 
 > [!NOTE]
-> Pokud plánujete analýzu HTML v produkčním kódu, nepoužívejte regulární výrazy. Místo toho použijte knihovnu analýzy.
+> Pokud plánujete provádění analýzy HTML v produkčním kódu, nepoužívejte regulární výrazy. Místo toho použijte analýzu knihovny.
 
 ```csharp
 private readonly HttpClient _httpClient = new HttpClient();
 
-[HttpGet]
-[Route("DotNetCount")]
-public async Task<int> GetDotNetCountAsync()
+[HttpGet, Route("DotNetCount")]
+public async Task<int> GetDotNetCount()
 {
-    // Suspends GetDotNetCountAsync() to allow the caller (the web server)
+    // Suspends GetDotNetCount() to allow the caller (the web server)
     // to accept another request, rather than blocking on this one.
     var html = await _httpClient.GetStringAsync("https://dotnetfoundation.org");
 
@@ -138,15 +134,15 @@ public async Task<int> GetDotNetCountAsync()
 }
 ```
 
-Tady je stejný scénář napsaný pro univerzální aplikaci pro Windows, která provádí stejnou úlohu při stisknutí tlačítka:
+Tady je stejný scénář, který je napsán pro univerzální aplikaci pro Windows, která při stisknutí tlačítka provede stejnou úlohu:
 
 ```csharp
 private readonly HttpClient _httpClient = new HttpClient();
 
-private async void SeeTheDotNets_Click(object sender, RoutedEventArgs e)
+private async void OnSeeTheDotNetsButtonClick(object sender, RoutedEventArgs e)
 {
     // Capture the task handle here so we can await the background task later.
-    var getDotNetFoundationHtmlTask = _httpClient.GetStringAsync("https://www.dotnetfoundation.org");
+    var getDotNetFoundationHtmlTask = _httpClient.GetStringAsync("https://dotnetfoundation.org");
 
     // Any other work on the UI thread can be done here, such as enabling a Progress Bar.
     // This is important to do here, before the "await" call, so that the user
@@ -166,11 +162,11 @@ private async void SeeTheDotNets_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-### <a name="waiting-for-multiple-tasks-to-complete"></a>Čekání na dokončení více úkolů
+### <a name="wait-for-multiple-tasks-to-complete"></a>Počkejte na dokončení více úloh.
 
-Můžete se ocitnout v situaci, kdy je třeba načíst více kusů dat současně.  Rozhraní `Task` API obsahuje `Task.WhenAll` dvě `Task.WhenAny` metody, které umožňují psát asynchronní kód, který provádí neblokující čekání na více úloh na pozadí.
+Můžete se setkat v situaci, kdy potřebujete současně načíst více dat. `Task`Rozhraní API obsahuje dvě metody <xref:System.Threading.Tasks.Task.WhenAll%2A?displayProperty=nameWithType> a <xref:System.Threading.Tasks.Task.WhenAny%2A?displayProperty=nameWithType> , které umožňují napsat asynchronní kód, který provádí neblokující čekání na více úloh na pozadí.
 
-Tento příklad ukazuje, `User` jak můžete uchopit data pro sadu `userId`s.
+Tento příklad ukazuje, jak můžete vyjímat `User` data pro sadu `userId` s.
 
 ```csharp
 public async Task<User> GetUserAsync(int userId)
@@ -184,7 +180,6 @@ public async Task<User> GetUserAsync(int userId)
 public static async Task<IEnumerable<User>> GetUsersAsync(IEnumerable<int> userIds)
 {
     var getUserTasks = new List<Task<User>>();
-
     foreach (int userId in userIds)
     {
         getUserTasks.Add(GetUserAsync(userId));
@@ -194,7 +189,7 @@ public static async Task<IEnumerable<User>> GetUsersAsync(IEnumerable<int> userI
 }
 ```
 
-Zde je další způsob, jak napsat to trochu stručněji, pomocí LINQ:
+Tady je další způsob, jak tento příklad napsat stručně pomocí LINQ:
 
 ```csharp
 public async Task<User> GetUserAsync(int userId)
@@ -212,58 +207,66 @@ public static async Task<User[]> GetUsersAsync(IEnumerable<int> userIds)
 }
 ```
 
-I když je méně kódu, dávejte pozor při míchání LINQ s asynchronním kódem.  Protože LINQ používá odložené (opožděné) spuštění, asynchronní volání `foreach()` nedojde okamžitě jako ve smyčce, pokud vynutíte generované sekvence iterovat s voláním `.ToList()` nebo `.ToArray()`.
+I když je to méně kódu, při kombinování LINQ s asynchronním kódem je potřeba dbát. Vzhledem k tomu, že LINQ používá odložené (opožděné) provádění, asynchronní volání nebudou provedena ihned stejně jako ve `foreach` smyčce, pokud vynutíte vygenerování sekvence pro iteraci voláním `.ToList()` nebo `.ToArray()` .
 
-## <a name="important-info-and-advice"></a>Důležité informace a rady
+## <a name="important-info-and-advice"></a>Důležité informace a Rady
 
-Přestože asynchronní programování je poměrně jednoduché, existují některé podrobnosti, které je třeba mít na paměti, které mohou zabránit neočekávanému chování.
+V případě asynchronního programování jsou k dispozici nějaké podrobnosti, které vám pomůžou zabránit neočekávanému chování.
 
-* `async`**metody musí mít** `await` **klíčové slovo ve svém těle, nebo se nikdy výnos!**
+* `async`**metody musí mít** `await` **klíčové slovo ve svém těle, nebo nikdy nebude vracet!**
 
-To je důležité mít na paměti.  Pokud `await` není použit v těle `async` metody, kompilátor Jazyka C# vygeneruje upozornění, ale kód bude kompilovat a spouštět, jako by to byla normální metoda.  Všimněte si, že by to také neuvěřitelně neefektivní, jako stavový počítač generovaný kompilátorem Jazyka C# pro asynchronní metodu by nebylo dosaženo nic.
+  To je důležité mít na paměti. Pokud `await` se v těle metody nepoužívá `async` , kompilátor C# vygeneruje upozornění, ale kód se zkompiluje a spustí, jako kdyby šlo o běžnou metodu. To je neuvěřitelně neefektivní, protože Stavový počítač generovaný kompilátorem jazyka C# pro asynchronní metodu neprovádí žádné výsledky.
 
-* **Měli byste přidat "Async" jako příponu každého názvu asynchronní metody, kterou napíšete.**
+* **Jako příponu každého názvu asynchronní metody, kterou píšete, byste měli přidat "Async".**
 
-Toto je konvence používaná v rozhraní .NET pro snadněji rozlišovací synchronní a asynchronní metody. Všimněte si, že některé metody, které nejsou explicitně volány vaším kódem (například obslužné rutiny událostí nebo metody webového kontroleru) nemusí nutně platit. Vzhledem k tomu, že tyto nejsou explicitně volány vaším kódem, explicitní o jejich pojmenování není tak důležité.
+Toto je konvence, která se používá v rozhraní .NET k jednoduššímu odlišení synchronních a asynchronních metod. Některé metody, které nejsou explicitně volány vaším kódem (například obslužné rutiny událostí nebo metody webového kontroleru), nemusí nutně platit. Vzhledem k tomu, že nejsou explicitně volány vaším kódem, je explicitní informace o jejich pojmenování nevýznamná.
 
-* `async void`**by měl být použit pouze pro obslužné rutiny událostí.**
+* `async void`**by mělo být použito pouze pro obslužné rutiny událostí.**
 
-`async void`je jediný způsob, jak povolit zpracování obslužných rutin asynchronních událostí, `Task` `Task<T>`protože události nemají návratové typy (proto nelze použít a ). Jakékoli jiné `async void` použití modelu TAP neodpovídá modelu TAP a může být náročné na použití, například:
+`async void`je jediným způsobem, jak povolit fungování asynchronních obslužných rutin událostí, protože události nemají návratové typy (proto nemohou použít `Task` a `Task<T>` ). Jakékoli jiné použití se `async void` neřídí modelem klepnutí a může být náročné na použití, například:
 
-* Výjimky vyzdvižené v metodě `async void` nelze zachytit mimo tuto metodu.
-* `async void`metody jsou velmi obtížné testovat.
-* `async void`metody mohou způsobit špatné vedlejší účinky, pokud volající neočekává, že budou asynchronní.
+* Výjimky vyvolané v `async void` metodě nejde zachytit mimo tuto metodu.
+* `async void`metody jsou obtížné testovat.
+* `async void`metody mohou způsobit špatné vedlejší účinky, pokud volající neočekává, že budou Async.
 
-* **Při použití asynchronních lambdů ve výrazech LINQ opatrně**
+* **Při použití asynchronních výrazů lambda ve výrazech LINQ pečlivě běhouny**
 
-Lambda výrazy v LINQ použít odložené spuštění, což znamená, že kód může skončit provádění v době, kdy nejste očekávali, že. Zavedení blokování úloh do tohoto může snadno vést k zablokování, pokud není napsánsprávně. Navíc vnoření asynchronního kódu, jako je tento může také ztížit důvod o provádění kódu. Async a LINQ jsou silné, ale měly by být používány společně co nejpečlivěji a nejjasněji.
+Výrazy lambda v jazyce LINQ používají odložené provádění, což znamená, že kód může být spuštěn v okamžiku, kdy ho neočekáváte. Zavedení blokujících úloh do této operace může snadno vést k zablokování, pokud není správně napsáno. Kromě toho vnořování asynchronního kódu, jako je, může také ztížit důvod spuštění kódu. Asynchronní a LINQ jsou výkonné, ale měly by být používány společně co nejdříve a jasně.
 
-* **Napište kód, který čeká úkoly neblokujícím způsobem**
+* **Napsat kód, který čeká na úlohy bez blokování**
 
-Blokování aktuální vlákno jako prostředek čekání na task k dokončení může mít za následek zablokování a blokované podprocesů kontextu a může vyžadovat výrazně složitější zpracování chyb. Následující tabulka obsahuje pokyny, jak se vypořádat s čekáním na úkoly neblokujícím způsobem:
+Blokování aktuálního vlákna jako prostředku pro čekání `Task` na dokončení může způsobit zablokování a blokované kontextová vlákna a může vyžadovat složitější zpracování chyb. V následující tabulce najdete pokyny, jak se zabývat čekáním na úlohy neblokujícím způsobem:
 
-| Postup... | Místo tohohle... | Když si to přejí |
-| --- | --- | --- |
-| `await` | `Task.Wait` nebo `Task.Result` | Načítání výsledku úlohy na pozadí |
-| `await Task.WhenAny` | `Task.WaitAny` | Čekání na dokončení jakékoli úlohy |
-| `await Task.WhenAll` | `Task.WaitAll` | Čekání na dokončení všech úkolů |
-| `await Task.Delay` | `Thread.Sleep` | Čekání na určitou dobu |
+| Postup...          | Místo...           | Kdy to chcete udělat...                 |
+|----------------------|------------------------------|--------------------------------------------|
+| `await`              | `Task.Wait` nebo `Task.Result` | Načítání výsledku úlohy na pozadí |
+| `await Task.WhenAny` | `Task.WaitAny`               | Čeká se na dokončení všech úloh.           |
+| `await Task.WhenAll` | `Task.WaitAll`               | Čeká se na dokončení všech úloh.          |
+| `await Task.Delay`   | `Thread.Sleep`               | Čekání na časový úsek               |
+
+* **Zvažte použití** `ValueTask` **Pokud je to možné**
+
+Vrácení `Task` objektu z asynchronních metod může způsobit kritické body výkonu v určitých cestách. `Task`je odkazový typ, takže jeho použití znamená přidělení objektu. V případech, kdy metoda deklarovaná s `async` modifikátorem vrací výsledek uložený v mezipaměti nebo se dokončí synchronně, se další přidělení můžou stát značnými náklady v částech kritického výkonu v kódu. Pokud dojde k přidělení v těsných smyčkách, může to být nákladné. Další informace naleznete v tématu [generalizované asynchronní návratové typy](whats-new/csharp-7.md#generalized-async-return-types).
+
+* **Zvažte použití**`ConfigureAwait(false)`
+
+Běžnou otázkou je, "kdy mám použít <xref:System.Threading.Tasks.Task.ConfigureAwait(System.Boolean)?displayProperty=nameWithType> metodu?". Metoda umožňuje `Task` instanci nakonfigurovat svůj operátor await. To je důležitý aspekt a jeho nesprávné nastavení by mohlo mít dopad na výkon a dokonce i zablokování. Další informace o najdete v `ConfigureAwait` tématu [ConfigureAwait – Nejčastější dotazy](https://devblogs.microsoft.com/dotnet/configureawait-faq).
 
 * **Zápis méně stavového kódu**
 
-Nezávisí na stavu globálních objektů nebo provádění určitých metod. Místo toho závisí pouze na vrácené hodnoty metod. Proč?
+Nezávisí na stavu globálních objektů nebo provádění určitých metod. Místo toho závisí pouze na vrácených hodnotách metod. Proč?
 
-* Kód bude snazší důvod.
-* Kód bude snazší testovat.
-* Míchání asynchronního a synchronního kódu je mnohem jednodušší.
-* Sporičné podmínky lze obvykle zcela vyhnout.
-* V závislosti na návratové hodnoty umožňuje koordinaci asynchronní kód jednoduché.
-* (Bonus) to funguje opravdu dobře s závislostí injekce.
+* Kód bude z důvodu snazší.
+* Testování kódu bude snazší.
+* Kombinování asynchronního a synchronního kódu je mnohem jednodušší.
+* Konflikty časování se obvykle můžou vyvarovat zcela.
+* V závislosti na vrácených hodnotách je jednodušší koordinovat asynchronní kód.
+* (Bonus) funguje ve skutečnosti i při vkládání závislostí.
 
-Doporučeným cílem je dosáhnout úplné nebo téměř úplné [referenční průhlednosti](https://en.wikipedia.org/wiki/Referential_transparency_%28computer_science%29) ve vašem kódu. To bude mít za následek velmi předvídatelné, testovatelné a udržovatelné codebase.
+Doporučeným cílem je dosáhnout úplné nebo téměř úplné [referenční transparentnosti](https://en.wikipedia.org/wiki/Referential_transparency_%28computer_science%29) ve vašem kódu. Výsledkem je mimořádně předvídatelný, testovatelné a udržovatelný základ kódu.
 
 ## <a name="other-resources"></a>Další prostředky
 
-* [Asynchronní hloubka](../standard/async-in-depth.md) poskytuje další informace o tom, jak úkoly fungují.
-* [Asynchronní programování s asynchronní a čekat (C#)](./programming-guide/concepts/async/index.md)
-* Lucian Wischik šest [základních tipů pro Async](https://channel9.msdn.com/Series/Three-Essential-Tips-for-Async) jsou skvělý zdroj pro asynchronní programování
+* [Async-Depth](../standard/async-in-depth.md) poskytuje další informace o práci s úkoly.
+* [Asynchronní programování s modifikátorem Async a operátoru Await (C#)](./programming-guide/concepts/async/index.md)
+* [Šest důležitých tipů pro Lucian Wischik pro Async](https://channel9.msdn.com/Series/Three-Essential-Tips-for-Async) je vynikajícím prostředkem pro asynchronní programování.

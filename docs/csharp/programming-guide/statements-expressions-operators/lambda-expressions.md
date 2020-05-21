@@ -1,5 +1,5 @@
 ---
-title: Lambda výrazy - C# Programovací průvodce
+title: Výrazy lambda – Průvodce programováním v C#
 ms.date: 07/29/2019
 helpviewer_keywords:
 - lambda expressions [C#]
@@ -8,48 +8,48 @@ helpviewer_keywords:
 - expression lambda [C#]
 - expressions [C#], lambda
 ms.assetid: 57e3ba27-9a82-4067-aca7-5ca446b7bf93
-ms.openlocfilehash: 6fd2dab09fe97aa4af87d82e2d23664c4347c8b3
-ms.sourcegitcommit: 73aa9653547a1cd70ee6586221f79cc29b588ebd
+ms.openlocfilehash: b86fe4fd91b395498926512650490f8d3a0383a1
+ms.sourcegitcommit: c76c8b2c39ed2f0eee422b61a2ab4c05ca7771fa
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "82101992"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83761834"
 ---
-# <a name="lambda-expressions-c-programming-guide"></a>Lambda výrazy (C# Programovací průvodce)
+# <a name="lambda-expressions-c-programming-guide"></a>Výrazy lambda (Průvodce programováním v C#)
 
-*Výraz lambda* je výrazem některé z následujících dvou forem:
+*Výraz lambda* je výraz kterékoli z následujících dvou forem:
 
-- [Výraz lambda,](#expression-lambdas) který má výraz jako jeho tělo:
+- [Výraz lambda výrazu](#expression-lambdas) , který má výraz jako tělo:
 
   ```csharp
   (input-parameters) => expression
   ```
 
-- [Prohlášení lambda,](#statement-lambdas) který má prohlášení blok jako jeho tělo:
+- Výraz [lambda](#statement-lambdas) , který má blok příkazu jako jeho tělo:
 
   ```csharp  
   (input-parameters) => { <sequence-of-statements> }
   ```
 
-Pomocí [operátoru `=>` lambda prohlášení](../../language-reference/operators/lambda-operator.md) oddělte seznam parametrů lambda od jeho těla. Chcete-li vytvořit výraz lambda, zadejte vstupní parametry (pokud existují) na levé straně operátoru lambda a výraz nebo blok příkazu na druhé straně.
+Pomocí [operátoru `=>` deklarace lambda](../../language-reference/operators/lambda-operator.md) oddělte seznam parametrů lambda od jeho těla. Chcete-li vytvořit výraz lambda, zadejte vstupní parametry (pokud existují) na levé straně operátoru lambda a výraz nebo blok příkazu na druhé straně.
 
-Libovolný výraz lambda lze převést na typ [delegáta.](../../language-reference/builtin-types/reference-types.md#the-delegate-type) Typ delegáta, na který lze převést výraz lambda, je definován typy jeho parametrů a návratové hodnoty. Pokud výraz lambda nevrátí hodnotu, lze jej převést na `Action` jeden z typů delegáta; v opačném případě jej lze převést na jeden z typů delegáta. `Func` Například lambda výraz, který má dva parametry a vrátí <xref:System.Action%602> žádnou hodnotu lze převést na delegáta. Lambda výraz, který má jeden parametr a vrátí <xref:System.Func%602> hodnotu lze převést na delegáta. V následujícím příkladu je výraz `x => x * x`lambda , který určuje `x` pojmenovaný parametr `x` a vrací hodnotu kvadratických, přiřazen proměnné typu delegáta:
+Libovolný výraz lambda lze převést na typ [delegáta](../../language-reference/builtin-types/reference-types.md#the-delegate-type) . Typ delegáta, na který lze výraz lambda převést, je definován typy jeho parametrů a návratové hodnoty. Pokud výraz lambda nevrací hodnotu, lze jej převést na jeden z `Action` typů delegátů. v opačném případě jej lze převést na jeden z `Func` typů delegátů. Například lambda výraz, který má dva parametry a nevrací žádnou hodnotu, lze převést na <xref:System.Action%602> delegáta. Lambda výraz, který má jeden parametr a vrací hodnotu, lze převést na <xref:System.Func%602> delegáta. V následujícím příkladu lambda výraz `x => x * x` , který určuje parametr s názvem `x` a vrací hodnotu `x` Square, je přiřazen proměnné typu delegáta:
 
 [!code-csharp-interactive[lambda is delegate](~/samples/snippets/csharp/programming-guide/lambda-expressions/Introduction.cs#Delegate)]
 
-Výraz lambdas lze také převést na typy [stromu výrazů,](../concepts/expression-trees/index.md) jak ukazuje následující příklad:
+Lambda výrazy lze také převést na typy [stromu výrazů](../concepts/expression-trees/index.md) , jak ukazuje následující příklad:
 
 [!code-csharp-interactive[lambda is expression tree](~/samples/snippets/csharp/programming-guide/lambda-expressions/Introduction.cs#ExpressionTree)]
 
-Výrazy lambda můžete použít v libovolném kódu, který vyžaduje instance typů delegátů <xref:System.Threading.Tasks.Task.Run(System.Action)?displayProperty=nameWithType> nebo stromů výrazů, například jako argument metody pro předání kódu, který by měl být proveden na pozadí. Výrazy lambda můžete také použít při zápisu [LINQ v c#](../../linq/index.md), jak ukazuje následující příklad:
+Můžete použít výrazy lambda v jakémkoli kódu, který vyžaduje instance typů delegátů nebo stromů výrazů, například jako argument <xref:System.Threading.Tasks.Task.Run(System.Action)?displayProperty=nameWithType> metody k předání kódu, který by měl být proveden na pozadí. Lambda výrazy můžete použít také při psaní [LINQ v jazyce C#](../../linq/index.md), jak ukazuje následující příklad:
 
 [!code-csharp-interactive[lambda is argument in LINQ](~/samples/snippets/csharp/programming-guide/lambda-expressions/Introduction.cs#Argument)]
 
-Při použití syntaxe založené na <xref:System.Linq.Enumerable.Select%2A?displayProperty=nameWithType> metodě <xref:System.Linq.Enumerable?displayProperty=nameWithType> k volání metody ve třídě, například v LINQ to <xref:System.Func%602?displayProperty=nameWithType>Objects a LINQ do XML, parametr je typ delegáta . Při volání <xref:System.Linq.Queryable.Select%2A?displayProperty=nameWithType> metody ve <xref:System.Linq.Queryable?displayProperty=nameWithType> třídě, například v LINQ na SQL, je [`Expression<Func<TSource,TResult>>`](<xref:System.Linq.Expressions.Expression%601>)typem parametru typ stromu výrazu . V obou případech můžete použít stejný výraz lambda k určení hodnoty parametru. To dělá `Select` dvě volání vypadat podobně, i když ve skutečnosti typ objektů vytvořených z lambdas se liší.
+Použijete-li syntaxi založenou na metodě pro volání <xref:System.Linq.Enumerable.Select%2A?displayProperty=nameWithType> metody ve <xref:System.Linq.Enumerable?displayProperty=nameWithType> třídě, například v LINQ to Objects a LINQ to XML, je parametr typu delegát <xref:System.Func%602?displayProperty=nameWithType> . Při volání <xref:System.Linq.Queryable.Select%2A?displayProperty=nameWithType> metody ve <xref:System.Linq.Queryable?displayProperty=nameWithType> třídě, například v LINQ to SQL, je typ parametru typ stromu výrazu [`Expression<Func<TSource,TResult>>`](<xref:System.Linq.Expressions.Expression%601>) . V obou případech můžete použít stejný výraz lambda k zadání hodnoty parametru. To umožňuje, aby dvě `Select` volání vypadaly podobně, i když ve skutečnosti se typ objektů vytvořených z výrazů lambda liší.
   
-## <a name="expression-lambdas"></a>Výraz lambdas
+## <a name="expression-lambdas"></a>Výrazy lambda výrazu
 
-Lambda výraz s výrazem na pravé `=>` straně operátoru se nazývá *výraz lambda*. Výraz lambdas se ve velké míře používají při stavbě [stromů výrazů](../concepts/expression-trees/index.md). Výrazová lambda vrátí výsledek výrazu a má následující základní podobu:
+Výraz lambda s výrazem na pravé straně `=>` operátoru se nazývá *výrazová lambda*. Výrazy lambda výrazů se v konstrukci [stromů výrazů](../concepts/expression-trees/index.md)používají rozsáhle. Výrazová lambda vrátí výsledek výrazu a má následující základní podobu:
 
 ```csharp
 (input-parameters) => expression
@@ -65,15 +65,15 @@ Dva nebo více vstupních parametrů je odděleno čárkami, které jsou uvedeny
 
 [!code-csharp[two parameters](~/samples/snippets/csharp/programming-guide/lambda-expressions/ExpressionAndStatementLambdas.cs#TwoParameters)]
 
-Někdy je nemožné pro kompilátor odvodit vstupní typy. Typy můžete zadat explicitně, jak je znázorněno v následujícím příkladu:
+V některých případech je možné, že kompilátor odvodí vstupní typy. Můžete určit typy explicitně, jak je znázorněno v následujícím příkladu:
 
 [!code-csharp[explicitly typed parameters](~/samples/snippets/csharp/programming-guide/lambda-expressions/ExpressionAndStatementLambdas.cs#ExplicitlyTypedParameters)]
 
-Typy vstupních parametrů musí být všechny explicitní nebo všechny implicitní; v opačném případě dojde k chybě kompilátoru [CS0748.](../../misc/cs0748.md)
+Typy vstupních parametrů musí být všechny explicitní nebo všechny implicitní; v opačném případě dojde k chybě kompilátoru [CS0748](../../misc/cs0748.md) .
 
-Tělo výrazu lambda se může skládat z volání metody. Pokud však vytváříte stromy výrazů, které jsou vyhodnocovány mimo kontext modulu runtime běžného jazyka .NET, například v serveru SQL Server, neměli byste používat volání metod ve výrazech lambda. Metody nemají význam mimo kontext modulu CLR (Common Language Runtime) rozhraní .NET.
+Tělo výrazu lambda se může skládat z volání metody. Pokud však vytváříte stromy výrazů, které jsou vyhodnocovány mimo kontext modulu CLR (Common Language Runtime) .NET, například v SQL Server, neměli byste používat volání metody ve výrazech lambda. Metody nemají význam mimo kontext modulu CLR (Common Language Runtime) rozhraní .NET.
 
-## <a name="statement-lambdas"></a>Prohlášení lambdas
+## <a name="statement-lambdas"></a>Výrazy lambda příkazů
 
 Příkazová lambda se podobá výrazové lambdě s tím rozdílem, že výrazy jsou uzavřeny ve složených závorkách:
 
@@ -85,11 +85,11 @@ Text příkazové lambdy může obsahovat libovolný počet příkazů. V praxi
 
 [!code-csharp-interactive[statement lambda](~/samples/snippets/csharp/programming-guide/lambda-expressions/ExpressionAndStatementLambdas.cs#StatementLambda)]
 
-Příkaz lambdas nelze použít k vytvoření stromů výrazů.
+Výrazy lambda příkazu nejde použít k vytváření stromů výrazů.
   
-## <a name="async-lambdas"></a>Asynchronní lambdy
+## <a name="async-lambdas"></a>Asynchronní výrazy lambda
 
-Můžete snadno vytvořit lambda výrazy a příkazy, které zahrnují asynchronní zpracování pomocí [asynchronní](../../language-reference/keywords/async.md) a [čekat](../../language-reference/operators/await.md) klíčová slova. Například následující příklad windows forms obsahuje obslužnou rutinu události, `ExampleMethodAsync`která volá a čeká na asynchronní metodu .
+Můžete snadno vytvořit výrazy lambda a příkazy, které zahrnují asynchronní zpracování pomocí klíčových slov [Async](../../language-reference/keywords/async.md) a [await](../../language-reference/operators/await.md) . Například následující příklad model Windows Forms obsahuje obslužnou rutinu události, která volá a očekává asynchronní metodu, `ExampleMethodAsync` .
 
 ```csharp
 public partial class Form1 : Form
@@ -114,7 +114,7 @@ public partial class Form1 : Form
 }
 ```
 
-Stejný ovladač událostí můžete přidat pomocí asynchronní lambdy. Chcete-li přidat tuto `async` obslužnou rutinu, přidejte modifikátor před seznam parametrů lambda, jak ukazuje následující příklad:
+Stejný ovladač událostí můžete přidat pomocí asynchronní lambdy. Chcete-li přidat tuto obslužnou rutinu, přidejte `async` Modifikátor před seznam parametrů lambda, jak ukazuje následující příklad:
 
 ```csharp
 public partial class Form1 : Form
@@ -137,59 +137,59 @@ public partial class Form1 : Form
 }
 ```
 
-Další informace o vytváření a používání asynchronních metod naleznete [v tématu Asynchronní programování s asynchronní a await](../concepts/async/index.md).
+Další informace o tom, jak vytvořit a používat asynchronní metody, naleznete v tématu [asynchronní programování s modifikátorem Async a await](../concepts/async/index.md).
 
-## <a name="lambda-expressions-and-tuples"></a>Lambda výrazy a řazené kolekce členů
+## <a name="lambda-expressions-and-tuples"></a>Výrazy lambda a řazené kolekce členů
 
-Počínaje C# 7.0, jazyk C# poskytuje integrovanou podporu pro [řazené kolekce členů](../../tuples.md). Řazené kolekce členů můžete poskytnout jako argument výrazu lambda a výraz lambda můžete také vrátit řazenou kolekce členů. V některých případech kompilátor Jazyka C# používá odvození typu k určení typů součástí řazené kolekce členů.
+Počínaje jazykem C# 7,0 poskytuje jazyk C# integrovanou podporu pro [řazené kolekce členů](../../tuples.md). Můžete zadat řazenou kolekci členů jako argument pro lambda výraz a váš výraz lambda může také vrátit řazenou kolekci členů. V některých případech kompilátor C# používá odvození typu k určení typů komponent řazené kolekce členů.
 
-Řazená kolekce členů definujete uzavřením seznamu jeho součástí oddělených čárkami do závorek. Následující příklad používá řazenou kolekce členů se třemi součástmi předat posloupnost čísel do výrazu lambda, který zdvojnásobí každou hodnotu a vrátí řazenou skupinu se třemi součástmi, které obsahují výsledek násobení.
+Řazenou kolekci členů můžete definovat tak, že v závorkách seřadíte seznam jeho komponent oddělených čárkami. Následující příklad používá řazené kolekce členů se třemi komponenty k předání sekvence čísel lambda výrazu, který zdvojnásobuje každou hodnotu a vrátí řazenou kolekci členů se třemi komponentami, které obsahují výsledek násobení.
 
 [!code-csharp-interactive[lambda and tuples](~/samples/snippets/csharp/programming-guide/lambda-expressions/LambdasAndTuples.cs#WithoutComponentName)]
 
-Pole n-tice jsou obvykle `Item1`pojmenována , `Item2`, atd. Můžete však definovat řazenou kolekce členů s pojmenovanými součástmi, jako to dělá následující příklad.
+Obvykle se pole řazené kolekce členů nazývají `Item1` , `Item2` atd. Můžete však definovat řazenou kolekci členů s pojmenovanými součástmi, jak je uvedeno v následujícím příkladu.
 
 [!code-csharp-interactive[lambda and named tuples](~/samples/snippets/csharp/programming-guide/lambda-expressions/LambdasAndTuples.cs#WithComponentName)]
 
-Další informace o kolekcí členů řaděných kolekcí členů jazyka C# naleznete v tématu [C# typy řazené kolekce členů](../../tuples.md).
+Další informace o řazených kolekcích členů jazyka C# naleznete v tématu [typy řazené kolekce členů jazyka c#](../../tuples.md).
 
-## <a name="lambdas-with-the-standard-query-operators"></a>Lambdas se standardními operátory dotazů
+## <a name="lambdas-with-the-standard-query-operators"></a>Výrazy lambda se standardními operátory dotazu
 
-LINQ to Objects, mimo jiné implementace, mají vstupní parametr, jehož typ je jedním z <xref:System.Func%601> rodiny obecných delegátů. Tito delegáti používají parametry typu k definování počtu a typu vstupních parametrů a návratového typu delegáta. `Func`delegáti jsou velmi užitečné pro zapouzdření uživatelem definované výrazy, které jsou použity pro každý prvek v sadě zdrojových dat. Zvažte například <xref:System.Func%602> typ delegáta:  
+LINQ to Objects, mimo jiné implementace, má vstupní parametr, jehož typ je jeden z řad <xref:System.Func%601> generických delegátů. Tito Delegáti používají parametry typu pro definování počtu a typu vstupních parametrů a návratový typ delegáta. `Func`Delegáti jsou velmi užiteční pro zapouzdření uživatelsky definovaných výrazů, které jsou aplikovány na každý prvek v sadě zdrojových dat. Zvažte například <xref:System.Func%602> typ delegáta:  
 
 ```csharp
 public delegate TResult Func<in T, out TResult>(T arg)
 ```
 
-Delegát může být vytvořena jako `Func<int, bool>` instance, `int` kde je `bool` vstupní parametr a je vrácená hodnota. Vrácená hodnota je vždy určena v posledním parametru typu. Například `Func<int, string, bool>` definuje delegáta se dvěma `int` vstupními parametry `string`a `bool`, a návratový typ . Následující `Func` delegát, když je vyvolán, vrátí logickou hodnotu, která označuje, zda je vstupní parametr roven pěti:
+Delegát může být vytvořen jako `Func<int, bool>` instance, kde `int` je vstupní parametr a `bool` je návratovou hodnotou. Vrácená hodnota je vždy určena v posledním parametru typu. Například `Func<int, string, bool>` definuje delegáta se dvěma vstupními parametry, a `int` `string` a návratový typ `bool` . Následující `Func` delegát, pokud je vyvolána, vrátí logickou hodnotu, která označuje, zda je vstupní parametr roven pěti:
 
 [!code-csharp-interactive[Func example](~/samples/snippets/csharp/programming-guide/lambda-expressions/LambdasWithQueryMethods.cs#Func)]
 
-Výraz lambda můžete zadat také v případě, že typ argumentu <xref:System.Linq.Expressions.Expression%601>je , <xref:System.Linq.Queryable> například ve standardních operátorech dotazů, které jsou definovány v typu. Když zadáte <xref:System.Linq.Expressions.Expression%601> argument, lambda je zkompilován do stromu výrazů.
+Výraz lambda lze také zadat, pokud je typ argumentu, například <xref:System.Linq.Expressions.Expression%601> ve standardních operátorech dotazu, které jsou definovány v <xref:System.Linq.Queryable> typu. Při zadání <xref:System.Linq.Expressions.Expression%601> argumentu je výraz lambda zkompilován do stromu výrazu.
   
 Následující příklad používá <xref:System.Linq.Enumerable.Count%2A> standardní operátor dotazu:
 
 [!code-csharp-interactive[Count example](~/samples/snippets/csharp/programming-guide/lambda-expressions/LambdasWithQueryMethods.cs#Count)]
 
-Kompilátor může odvodit typ vstupního parametru, nebo jej můžete nastavit také explicitně. Tento konkrétní výraz lambda počítá celá`n`čísla ( ), která při dělení dvěma mají zbytek 1.
+Kompilátor může odvodit typ vstupního parametru, nebo jej můžete nastavit také explicitně. Tento konkrétní výraz lambda počítá tato celá čísla ( `n` ), která při vydělení dvěma mají zbytek 1.
 
-Následující příklad vytvoří sekvenci, která `numbers` obsahuje všechny prvky v poli, které předcházejí 9, protože to je první číslo v pořadí, které nesplňuje podmínku:
+Následující příklad vytvoří sekvenci, která obsahuje všechny prvky v `numbers` poli, které předcházejí hodnotě 9, protože se jedná o první číslo v sekvenci, která nesplňuje podmínku:
 
 [!code-csharp-interactive[TakeWhile example](~/samples/snippets/csharp/programming-guide/lambda-expressions/LambdasWithQueryMethods.cs#TakeWhile)]
 
-Následující příklad určuje více vstupních parametrů jejich uzavřením do závorek. Metoda vrátí všechny prvky `numbers` v poli, dokud nenarazí na číslo, jehož hodnota je menší než jeho ordinální pozice v poli:
+Následující příklad určuje více vstupních parametrů uzavřením do závorek. Metoda vrátí všechny prvky v `numbers` poli, dokud nenarazí na číslo, jehož hodnota je menší než pořadové místo v poli:
 
 [!code-csharp-interactive[TakeWhile example 2](~/samples/snippets/csharp/programming-guide/lambda-expressions/LambdasWithQueryMethods.cs#TakeWhileWithIndex)]
 
 ## <a name="type-inference-in-lambda-expressions"></a>Odvození typu ve výrazech lambda
 
-Při psaní lambdas, často není nutné zadat typ pro vstupní parametry, protože kompilátor můžete odvodit typ na základě lambda tělo, typy parametrů a další faktory, jak je popsáno ve specifikaci jazyka C#. Pro většinu standardních operátorů pro dotazování je prvním vstupem typ prvků ve zdrojové sekvenci. Pokud dotazujete `IEnumerable<Customer>`na , je vstupní proměnná `Customer` odvozena jako objekt, což znamená, že máte přístup k jejím metodám a vlastnostem:  
+Při psaní výrazů lambda není často nutné zadat typ pro vstupní parametry, protože kompilátor může odvodit typ na základě těla lambda, typů parametrů a dalších faktorů, jak je popsáno ve specifikaci jazyka C#. Pro většinu standardních operátorů pro dotazování je prvním vstupem typ prvků ve zdrojové sekvenci. Pokud se dotazuje na `IEnumerable<Customer>` , pak vstupní proměnná je odvozena jako `Customer` objekt, což znamená, že máte přístup ke svým metodám a vlastnostem:  
 
 ```csharp
 customers.Where(c => c.City == "London");
 ```
 
-Obecná pravidla pro odvození typu pro lambdy jsou následující:
+Obecná pravidla pro odvození typu pro výrazy lambda jsou následující:
 
 - Výraz lambda musí obsahovat stejný počet parametrů jako typ delegátu.
 
@@ -197,11 +197,11 @@ Obecná pravidla pro odvození typu pro lambdy jsou následující:
 
 - Vrácená hodnota lambda (pokud existuje) musí být implicitně převoditelná na návratový typ delegátu.
   
-Všimněte si, že lambda výrazy samy o sobě nemají typ, protože společný systém typu nemá žádný vnitřní koncept "lambda výraz." Někdy je však vhodné mluvit neformálně o "typu" výrazu lambda. V těchto případech typ odkazuje na <xref:System.Linq.Expressions.Expression> typ delegáta nebo typ, na který je převeden výraz lambda.
+Všimněte si, že lambda výrazy samy nemají typ, protože společný typ systému nemá žádný vnitřní koncept výrazu lambda. Někdy je však vhodné mluvit neformálně jako "typ" výrazu lambda. V těchto případech typ odkazuje na typ delegáta nebo <xref:System.Linq.Expressions.Expression> typ, na který je výraz lambda převeden.
 
-## <a name="capture-of-outer-variables-and-variable-scope-in-lambda-expressions"></a>Zachycení vnějších proměnných a rozsahu proměnných ve výrazech lambda
+## <a name="capture-of-outer-variables-and-variable-scope-in-lambda-expressions"></a>Zachycení vnějších proměnných a rozsahu proměnné ve výrazech lambda
 
-Lambdas může odkazovat na *vnější proměnné*. Jedná se o proměnné, které jsou v oboru v metodě, která definuje výraz lambda nebo v oboru v typu, který obsahuje výraz lambda. Proměnné, které jsou zachyceny tímto způsobem, jsou uloženy pro použití ve výrazu lambda i v případě, že proměnné by jinak přesáhly rozsah platnosti a bylo by vynuceno uvolnění paměti. Vnější proměnná musí být jednoznačně přiřazena dříve, než může být upotřebena ve výrazu lambda. Následující příklad znázorňuje tato pravidla:
+Výrazy lambda mohou odkazovat na *vnější proměnné*. Toto jsou proměnné, které jsou v oboru v metodě definující výraz lambda nebo v rozsahu typu, který obsahuje výraz lambda. Proměnné, které jsou zachyceny tímto způsobem, jsou uloženy pro použití ve výrazu lambda i v případě, že proměnné by jinak přesáhly rozsah platnosti a bylo by vynuceno uvolnění paměti. Vnější proměnná musí být jednoznačně přiřazena dříve, než může být upotřebena ve výrazu lambda. Následující příklad znázorňuje tato pravidla:
 
 [!code-csharp[variable scope](~/samples/snippets/csharp/programming-guide/lambda-expressions/VariableScopeWithLambdas.cs#VariableScope)]
 
@@ -209,28 +209,27 @@ Následující pravidla se vztahují na rozsah proměnné ve výrazu lambda:
 
 - Proměnná, která je zachycena, nebude uvolněna z paměti, dokud delegát, který na ni odkazuje, nebude mít oprávnění k uvolňování paměti.
 
-- Proměnné zavedené v rámci výrazu lambda nejsou viditelné v ohraničující metodě.
+- Proměnné, které jsou představeny v rámci výrazu lambda, nejsou viditelné v nadřazené metodě.
 
-- Výraz lambda nemůže přímo zachytit parametr [in](../../language-reference/keywords/in-parameter-modifier.md), [ref](../../language-reference/keywords/ref.md)nebo [out](../../language-reference/keywords/out-parameter-modifier.md) z ohraničující metody.
+- Výraz lambda nemůže přímo zachytit parametr [in](../../language-reference/keywords/in-parameter-modifier.md), [ref](../../language-reference/keywords/ref.md)nebo [out](../../language-reference/keywords/out-parameter-modifier.md) z nadřazené metody.
 
 - Příkaz [return](../../language-reference/keywords/return.md) ve výrazu lambda nezpůsobí vrácení ohraničující metody.
 
-- Výraz lambda nemůže [obsahovat](../../language-reference/keywords/goto.md)příkaz goto , [break](../../language-reference/keywords/break.md)nebo [continue,](../../language-reference/keywords/continue.md) pokud je cíl tohoto příkazu skok mimo blok výrazu lambda. Je také chyba mít příkaz skok mimo blok výrazu lambda, pokud je cíl uvnitř bloku.
+- Výraz lambda nemůže obsahovat příkaz [goto](../../language-reference/keywords/goto.md), [Break](../../language-reference/keywords/break.md)nebo [Continue](../../language-reference/keywords/continue.md) , pokud cíl tohoto příkazu skoku je mimo blok výrazu lambda. Je také možné, že příkaz skoku je mimo blok výrazu lambda, pokud je cíl uvnitř bloku.
 
 ## <a name="c-language-specification"></a>specifikace jazyka C#
 
-Další informace naleznete v části [Anonymní výrazy funkcí](~/_csharplang/spec/expressions.md#anonymous-function-expressions) [ve specifikaci jazyka C#](~/_csharplang/spec/introduction.md).
+Další informace naleznete v části [výrazy anonymní funkce](~/_csharplang/spec/expressions.md#anonymous-function-expressions) [specifikace jazyka C#](~/_csharplang/spec/introduction.md).
 
-## <a name="featured-book-chapter"></a>Nejlepší kapitola knihy
+## <a name="featured-book-chapter"></a>Doporučená kapitola knihy
 
-[Delegáti, události a Lambda výrazy](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/ff518994%28v=orm.10%29) v [C# 3.0 Kuchařka, Třetí vydání: Více než 250 řešení pro C# 3.0 programátory](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/ff518995%28v=orm.10%29)  
+[Delegáti, události a výrazy lambda](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/ff518994%28v=orm.10%29) v [C# 3,0 kuchařka, třetí edice: více než 250 řešení pro c# 3,0 programátory](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/ff518995%28v=orm.10%29)  
   
 ## <a name="see-also"></a>Viz také
 
-- [Programovací příručka jazyka C#](../index.md)
-- [LINQ (dotaz integrovaný jazykem)](../concepts/linq/index.md)
+- [Průvodce programováním v C#](../index.md)
+- [LINQ (jazykově integrovaný dotaz)](../concepts/linq/index.md)
 - [Stromy výrazů](../concepts/expression-trees/index.md)
-- [Místní funkce vs. lambda výrazy](../classes-and-structs/local-functions.md#local-functions-vs-lambda-expressions)
-- [Implicitně zadané lambda výrazy](../../implicitly-typed-lambda-expressions.md)
-- [Ukázky visual studia 2008 C# (viz soubory ukázkových dotazů LINQ a program XQuery)](https://code.msdn.microsoft.com/Visual-Studio-2008-C-d295cdba)
-- [Rekurzivní lambda výrazy](https://docs.microsoft.com/archive/blogs/madst/recursive-lambda-expressions)
+- [Lokální funkce vs. výrazy lambda](../classes-and-structs/local-functions.md#local-functions-vs-lambda-expressions)
+- [Ukázky pro Visual Studio 2008 C# (viz ukázky souborů dotazů LINQ a program XQuery)](https://code.msdn.microsoft.com/Visual-Studio-2008-C-d295cdba)
+- [Rekurzivní výrazy lambda](https://docs.microsoft.com/archive/blogs/madst/recursive-lambda-expressions)

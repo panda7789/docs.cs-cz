@@ -1,29 +1,29 @@
 ---
 title: Interpretace výrazů
-description: Naučte se psát kód prozkoumat strukturu stromu výrazů.
+description: Naučte se psát kód pro kontrolu struktury stromu výrazů.
 ms.date: 06/20/2016
 ms.technology: csharp-advanced-concepts
 ms.assetid: adf73dde-1e52-4df3-9929-2e0670e28e16
-ms.openlocfilehash: 1283d7d957c72558652b96cb428efd0f071f0184
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 5734e1be6b59bfe3eae97f29d1bd91e7e3a3623f
+ms.sourcegitcommit: c76c8b2c39ed2f0eee422b61a2ab4c05ca7771fa
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79146005"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83761860"
 ---
 # <a name="interpreting-expressions"></a>Interpretace výrazů
 
-[Předchozí -- Provádění výrazů](expression-trees-execution.md)
+[Předchozí výrazy, které se spouštějí](expression-trees-execution.md)
 
-Nyní napíšeme nějaký kód, který prozkoumá strukturu *stromu výrazů*. Každý uzel ve stromu výrazů bude objektem třídy, která je odvozena z `Expression`.
+Nyní napíšeme nějaký kód pro prověření struktury *stromu výrazů*. Každý uzel ve stromové struktuře výrazu bude objektem třídy, která je odvozena z `Expression` .
 
-Tento návrh umožňuje návštěvě všech uzlů ve stromu výrazu relativně přímočaré rekurzivní operace. Obecnou strategií je začít v kořenovém uzlu a určit, jaký druh uzlu je.
+Tento návrh usnadňuje návštěvu všech uzlů ve stromu výrazů a poměrně rovnou rekurzivní operaci dopřednou. Obecnou strategií je začít na kořenovém uzlu a určit, jaký typ uzlu je.
 
-Pokud typ uzlu má podřízené, rekurzivně navštivte děti. V každém podřízeném uzlu opakujte proces použitý v kořenovém uzlu: určete typ a pokud má typ podřízené děti, navštivte každou z podřízených.
+Pokud uzel má podřízené položky, rekurzivně navštíví podřízené objekty. V každém podřízeném uzlu opakujte proces použitý v kořenovém uzlu: určení typu, a pokud má typ podřízené, navštivte jednotlivé podřízené položky.
 
-## <a name="examining-an-expression-with-no-children"></a>Zkoumání výrazu bez podřízených výrazů
-Začněme návštěvou každého uzlu ve velmi jednoduchém stromu výrazů.
-Zde je kód, který vytvoří konstantní výraz a pak zkoumá jeho vlastnosti:
+## <a name="examining-an-expression-with-no-children"></a>Zkoumání výrazu bez podřízených
+Pojďme začít návštěvou každého uzlu ve vysoce jednoduchém stromu výrazu.
+Zde je kód, který vytvoří konstantní výraz a pak prověřuje jeho vlastnosti:
 
 ```csharp
 var constant = Expression.Constant(24, typeof(int));
@@ -41,21 +41,21 @@ The type of the constant value is System.Int32
 The value of the constant value is 24
 ```
 
-Nyní napíšeme kód, který by prozkoumat tento výraz a napsat některé důležité vlastnosti o něm. Tady je ten kód:
+Nyní napíšeme kód, který by prozkoumal tento výraz, a vypíšeme z něj některé důležité vlastnosti. Zde je tento kód:
 
-## <a name="examining-a-simple-addition-expression"></a>Zkoumání jednoduchého výrazu sčítání
+## <a name="examining-a-simple-addition-expression"></a>Prozkoumání jednoduchého výrazu sčítání
 
-Začněme s ukázkou přidání z úvodu do této části.
+Pojďme začít s ukázkou sčítání z úvodu do této části.
 
 ```csharp
 Expression<Func<int>> sum = () => 1 + 2;
 ```
 
-> Nepoužívám `var` k deklarování tohoto stromu výrazů, protože to není možné, protože pravá strana přiřazení je implicitně zadána. Chcete-li pochopit, že hlouběji, přečtěte si [zde](implicitly-typed-lambda-expressions.md).
+> Nepoužívám `var` deklaraci tohoto stromu výrazů, protože není možné, protože pravá strana přiřazení je implicitně typu.
 
-Kořenový uzel je `LambdaExpression`. Chcete-li získat zajímavý kód na pravé `=>` straně operátora, musíte najít jednu `LambdaExpression`z poddajných . Uděláme to se všemi výrazy v této sekci. Nadřazený uzel nám pomáhá najít `LambdaExpression`návratový typ .
+Kořenový uzel je `LambdaExpression` . Aby bylo možné získat zajímavý kód na pravé straně `=>` operátoru, je nutné najít jeden z podřízených objektů `LambdaExpression` . Provedeme to se všemi výrazy v této části. Nadřazený uzel nám pomohly najít návratový typ `LambdaExpression` .
 
-Chcete-li prozkoumat každý uzel v tomto výrazu, budeme muset rekurzivně navštívit několik uzlů. Zde je jednoduchá první implementace:
+Abychom prozkoumali jednotlivé uzly v tomto výrazu, budeme muset rekurzivně navštívit několik uzlů. Tady je jednoduchá první implementace:
 
 ```csharp
 Expression<Func<int, int, int>> addition = (a, b) => a + b;
@@ -95,9 +95,9 @@ The right side is a Parameter expression
         Parameter Type: System.Int32, Name: b
 ```
 
-V ukázkové části kódu si všimnete mnoha opakování.
-Pojďme vyčistit, že se a vybudovat obecnější účel výraz uzlu návštěvníka. To bude vyžadovat, abychom napsali rekurzivní algoritmus. Libovolný uzel může být typu, který může mít podřízené.
-Každý uzel, který má děti vyžaduje, abychom navštívili tyto děti a určit, co tento uzel je. Zde je vyčištěna verze, která využívá rekurze k návštěvě sčítání operace:
+Ve výše uvedeném příkladu kódu si všimnete spousty opakování.
+Pojďme vyčistit a vytvořit obecnější návštěvníka uzlu výrazu pro obecné účely. To bude vyžadovat, abychom napsali rekurzivní algoritmus. Libovolný uzel může být typu, který může mít podřízené objekty.
+Všechny uzly, které mají podřízené objekty, vyžadují, aby nás navštívili tyto podřízené položky a určili, co je tento uzel. Zde je vyčištěná verze, která využívá rekurzi k návštěvě operací sčítání:
 
 ```csharp
 // Base Visitor class:
@@ -215,9 +215,9 @@ public class ConstantVisitor : Visitor
 }
 ```
 
-Tento algoritmus je základem algoritmu, který `LambdaExpression`může navštívit libovolné . Existuje mnoho děr, a to, že kód, který jsem vytvořil, hledá pouze velmi malý vzorek možných sad uzlů stromu výrazů, se kterými se může setkat. Nicméně, stále se můžete naučit docela dost z toho, co produkuje. (Výchozí případ v `Visitor.CreateFromExpression` metodě vytiskne zprávu do konzoly chyb, když je zjištěn nový typ uzlu. Tímto způsobem víte, přidat nový typ výrazu.)
+Tento algoritmus je základem algoritmu, který může libovolně navštívit libovolný objekt `LambdaExpression` . Existuje spousta děr, což znamená, že kód, který jsem vytvořil, vyhledává jenom velmi malý vzorek možných sad uzlů stromu výrazů, ke kterým může dojít. Stále ale můžete zjistit, jak trochu z toho vyprodukuje. (Výchozí případ v `Visitor.CreateFromExpression` metodě vytiskne zprávu do chybové konzoly při zjištění nového typu uzlu. Tímto způsobem víte, že chcete přidat nový typ výrazu.)
 
-Když spustíte tohoto návštěvníka na přidání výraz uvýšený, získáte následující výstup:
+Po spuštění tohoto návštěvníka na výše uvedeném výrazu sčítání získáte následující výstup:
 
 ```output
 This expression is a/an Lambda expression type
@@ -238,17 +238,17 @@ The expression body is:
                 Type: System.Int32, Name: b, ByRef: False
 ```
 
-Nyní, když jste vytvořili obecnější implementaci návštěvníků, můžete navštívit a zpracovat mnoho dalších různých typů výrazů.
+Teď, když jste vytvořili obecnější implementaci návštěvníka, můžete navštívit a zpracovat spoustu více různých typů výrazů.
 
 ## <a name="examining-an-addition-expression-with-many-levels"></a>Zkoumání výrazu sčítání s mnoha úrovněmi
 
-Zkusme složitější příklad, ale přesto omezit typy uzlů pouze sčítání:
+Pojďme si vyzkoušet složitější příklad, stále ale omezit typy uzlů jenom na sčítání:
 
 ```csharp
 Expression<Func<int>> sum = () => 1 + 2 + 3 + 4;
 ```
 
-Než to spustíte na algoritmu návštěvníka, zkuste myšlenkové cvičení, abyste zjistili, jaký by mohl být výstup. Nezapomeňte, `+` že operátor je *binární operátor*: musí mít dvě podřízené objekty představující levé a pravé operandy. Existuje několik možných způsobů, jak vytvořit strom, který by mohl být správný:
+Před spuštěním tohoto algoritmu pro návštěvníky Vyzkoušejte myšlenkový postup, který bude fungovat jako výstup. Uvědomte si, že `+` operátor je *binární operátor*: musí mít dvě podřízené prvky, reprezentující levý a pravý operand. Existuje několik možných způsobů, jak vytvořit stromovou strukturu, která může být správná:
 
 ```csharp
 Expression<Func<int>> sum1 = () => 1 + (2 + (3 + 4));
@@ -259,18 +259,18 @@ Expression<Func<int>> sum4 = () => 1 + ((2 + 3) + 4);
 Expression<Func<int>> sum5 = () => (1 + (2 + 3)) + 4;
 ```
 
-Můžete vidět oddělení do dvou možných odpovědí upozornit na nejslibnější. První představuje *právo asociativní* výrazy. Druhý představují *levé asociativní* výrazy.
-Výhodou obou těchto dvou formátů je, že formát se škáluje na libovolný počet výrazů sčítání.
+V případě, že se chcete podívat na nejvíc vyslibování, můžete zobrazit rozdělení na dvě možné odpovědi. První představuje *pravé asociativní* výrazy. Druhý představuje *levé asociativní* výrazy.
+Výhodou obou obou formátů je, že formát se škáluje libovolným počtem výrazů sčítání.
 
-Pokud spustíte tento výraz prostřednictvím návštěvníka, zobrazí se tento výstup, ověření, že jednoduchý výraz sčítání je *ponechána asociativní*.
+Pokud tento výraz spouštíte prostřednictvím návštěvníka, zobrazí se tento výstup a ověří se, jestli je výraz jednoduchého přidání *ponechán asociativní*.
 
-Chcete-li spustit tuto ukázku a zobrazit celý strom výrazu, musel jsem provést jednu změnu stromu zdrojového výrazu. Pokud strom výrazu obsahuje všechny konstanty, výsledný strom `10`jednoduše obsahuje konstantní hodnotu . Kompilátor provede všechny sčítání a snižuje výraz na jeho nejjednodušší formu. Jednoduše přidání jedné proměnné ve výrazu je dostačující pro zobrazení původního stromu:
+Chcete-li spustit tuto ukázku a zobrazit úplný strom výrazů, je nutné provést jednu změnu stromu zdrojového výrazu. Pokud strom výrazu obsahuje všechny konstanty, výsledný strom jednoduše obsahuje konstantní hodnotu `10` . Kompilátor provede veškeré přidání a zmenší výraz na jeho nejjednodušší formu. Stačí přidat jednu proměnnou ve výrazu stačí k zobrazení původního stromu:
 
 ```csharp
 Expression<Func<int, int>> sum = (a) => 1 + a + 3 + 4;
 ```
 
-Vytvořte návštěvníka pro tuto částku a spusťte návštěvníka uvidíte tento výstup:
+Vytvořte návštěvníka tohoto součtu a spusťte návštěvníka, na který se zobrazí tento výstup:
 
 ```output
 This expression is a/an Lambda expression type
@@ -302,13 +302,13 @@ The expression body is:
                 The value of the constant value is 4
 ```
 
-Můžete také spustit některý z dalších vzorků prostřednictvím kódu návštěvníka a zjistit, jaký strom představuje. Zde je příklad výše `sum3` uvedeného výrazu (s dalším parametrem, který zabrání kompilátoru v výpočtu konstanty):
+Můžete také spustit libovolný z dalších ukázek prostřednictvím kódu návštěvníka a zjistit, který strom představuje. Zde je příklad `sum3` výše uvedeného výrazu (s dalším parametrem, který zabrání kompilátoru v výpočtu konstanty):
 
 ```csharp
 Expression<Func<int, int, int>> sum3 = (a, b) => (1 + a) + (3 + b);
 ```
 
-Zde je výstup z návštěvníka:
+Tady je výstup návštěvníka:
 
 ```output
 This expression is a/an Lambda expression type
@@ -341,11 +341,11 @@ The expression body is:
                         Type: System.Int32, Name: b, ByRef: False
 ```
 
-Všimněte si, že závorky nejsou součástí výstupu. Ve stromu výrazů nejsou žádné uzly, které představují závorky ve vstupním výrazu. Struktura stromu výrazobsahuje všechny informace potřebné ke sdělení priority.
+Všimněte si, že kulaté závorky nejsou součástí výstupu. Ve stromové struktuře výrazu nejsou žádné uzly, které představují závorky ve vstupním výrazu. Struktura stromu výrazů obsahuje všechny informace potřebné pro komunikaci s prioritou.
 
-## <a name="extending-from-this-sample"></a>Rozšíření z tohoto vzorku
+## <a name="extending-from-this-sample"></a>Rozšíření z této ukázky
 
-Ukázka se zabývá pouze nejvíce základní výraz stromy. Kód, který jste viděli v této části zpracovává pouze konstantní `+` celá čísla a binární operátor. Jako poslední ukázku aktualizujte návštěvníka, aby zpracovat složitější výraz. Ať to funguje na toto:
+Ukázka se zabývá pouze základní stromy výrazů. Kód, který jste viděli v této části, zpracovává pouze konstantní celá čísla a binární `+` operátor. Jako poslední ukázka Pojďme aktualizovat návštěvníka na zpracování složitějšího výrazu. Pojďme na to, aby to fungovalo:
 
 ```csharp
 Expression<Func<int, int>> factorial = (n) =>
@@ -354,17 +354,17 @@ Expression<Func<int, int>> factorial = (n) =>
     Enumerable.Range(1, n).Aggregate((product, factor) => product * factor);
 ```
 
-Tento kód představuje jednu možnou implementaci matematické *faktoriální* funkce. Způsob, jakým jsem napsal tento kód zvýrazní dvě omezení vytváření stromů výrazů přiřazením lambda výrazy výrazy výrazy. Za prvé, prohlášení lambdas nejsou povoleny. To znamená, že nelze použít smyčky, bloky, if / else příkazy a další řídicí struktury běžné v C#. Jsem omezen na používání výrazů. Za druhé nemohu rekurzivně volat stejný výraz.
-Mohl bych, kdyby to byl již delegát, ale nemohu volat ve formě stromu výrazů. V části o [vytváření stromů výrazů](expression-trees-building.md) se naučíte techniky k překonání těchto omezení.
+Tento kód představuje jednu možnou implementaci funkce matematického *faktoriál* . Způsob, jakým jsem tento kód napsal, zvýrazní dvě omezení pro vytváření stromů výrazů přiřazením výrazů lambda výrazům. První příkazy výrazy lambda nejsou povolené. To znamená, že nemůžu použít smyčky, bloky, příkazy if/else a další řídicí struktury společné v jazyce C#. Je omezeno na použití výrazů. Za druhé nelze rekurzivně volat stejný výraz.
+Můžu se už delegovat, ale nemůžu ho zavolat ve formuláři jeho stromu výrazu. V části o [sestavování stromů výrazů](expression-trees-building.md) se naučíte techniky, jak překonat tato omezení.
 
-V tomto výrazu narazíte na uzly všech těchto typů:
+V tomto výrazu se setkáte s uzly všech těchto typů:
 
-1. Equal (binární výraz)
+1. EQUAL (binární výraz)
 2. Násobení (binární výraz)
-3. Podmíněné (? : výraz)
-4. Výraz volání metody `Range()` `Aggregate()`(volání a )
+3. Podmíněný (? vyjádření
+4. Výraz volání metody (volání `Range()` a `Aggregate()` )
 
-Jedním ze způsobů, jak upravit algoritmus návštěvníka je, aby jeho provádění `default` a psát typ uzlu pokaždé, když dosáhnete klauzule. Po několika iterací, budete mít viděli každý z potenciálních uzlů. Pak máte vše, co potřebujete. Výsledkem by bylo něco takového:
+Jedním ze způsobů, jak změnit algoritmus návštěvníka, je zachovat jeho spuštění a napsat typ uzlu při každém dosažení `default` klauzule. Po několika iteracích se vám podíváte na každý z možných uzlů. Pak budete mít všechno, co potřebujete. Výsledek by byl podobný tomuto:
 
 ```csharp
 public static Visitor CreateFromExpression(Expression node)
@@ -392,7 +392,7 @@ public static Visitor CreateFromExpression(Expression node)
 }
 ```
 
-ConditionalVisitor a MethodCallVisitor zpracovat tyto dva uzly:
+ConditionalVisitor a MethodCallVisitor zpracují tyto dva uzly:
 
 ```csharp
 public class ConditionalVisitor : Visitor
@@ -451,7 +451,7 @@ public class MethodCallVisitor : Visitor
 }
 ```
 
-A výstup pro strom výrazby:
+A výstup pro strom výrazu by byl:
 
 ```output
 This expression is a/an Lambda expression type
@@ -507,18 +507,18 @@ The expression body is:
                                         Type: System.Int32, Name: factor, ByRef: False
 ```
 
-## <a name="extending-the-sample-library"></a>Rozšíření ukázkové knihovny
+## <a name="extending-the-sample-library"></a>Rozšíření knihovny ukázek
 
-Ukázky v této části zobrazit základní techniky k návštěvě a prozkoumání uzly ve stromu výrazů. I glosoval mnoho akcí, které byste mohli potřebovat, aby se soustředit na základní úkoly návštěvy a přístup uzly ve stromu výrazu.
+Ukázky v této části znázorňují základní postupy pro návštěvě a prohlédnutí uzlů ve stromu výrazů. V rámci řady akcí může být nutné se soustředit na základní úlohy při návštěvě a přístupu k uzlům ve stromu výrazů.
 
-Za prvé, návštěvníci zpracovávají pouze konstanty, které jsou celá čísla. Konstantní hodnoty může být jakýkoli jiný číselný typ a jazyk C# podporuje převody a propagační akce mezi těmito typy. Robustnější verze tohoto kódu by zrcadlit všechny tyto možnosti.
+Nejprve Návštěvníci zpracovávají pouze konstanty, které jsou celá čísla. Konstantní hodnoty mohou být jakékoli jiné číselné typy a jazyk C# podporuje převody a propagační akce mezi těmito typy. Robustnější verze tohoto kódu by znamenala zrcadlení všech možností.
 
 I poslední příklad rozpozná podmnožinu možných typů uzlů.
-Stále jej můžete krmit mnoha výrazy, které způsobí, že se nezdaří.
-Úplná implementace je zahrnuta v standardu .NET pod názvem <xref:System.Linq.Expressions.ExpressionVisitor> a může zpracovat všechny možné typy uzlů.
+Můžete si i nadále zaniknout mnoho výrazů, které způsobí selhání.
+Úplná implementace je obsažena v .NET Standard pod názvem <xref:System.Linq.Expressions.ExpressionVisitor> a může zpracovat všechny možné typy uzlů.
 
-Konečně, knihovna jsem použil v tomto článku byl postaven pro demonstraci a učení. Není to optimalizované. Napsal jsem to, aby se struktury používané velmi jasné, a upozornit na techniky používané k návštěvě uzly a analyzovat, co tam je. Implementace výroby by věnovala větší pozornost výkonu než já.
+Nakonec se knihovna, kterou jste použili v tomto článku, vytvořila pro účely ukázky a učení. Není optimalizovaná. Napsal jsem si, že se tyto struktury využívaly velmi jasné, a zvýraznit techniky používané k návštěvě uzlů a analyzovat, co je tam. Implementace v produkčním prostředí by měla věnovat větší pozornost výkonu, než mám.
 
-I s těmito omezeními byste měli být na dobré cestě k psaní algoritmů, které čtou a rozumí stromům výrazů.
+I s těmito omezeními byste měli být na cestě, jak píšete algoritmy, které čtou a porozumět stromům výrazů.
 
-[Další -- Stavební výrazy](expression-trees-building.md)
+[Další – sestavování výrazů](expression-trees-building.md)
