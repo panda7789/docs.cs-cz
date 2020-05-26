@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: 863fc8ce-9b8a-477e-8dd8-75c8544bb43a
 topic_type:
 - apiref
-ms.openlocfilehash: a8642235cda359b849c49a35ab565397402c37d2
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 2436809f35d5c46416f48987cc92feb51d291a6a
+ms.sourcegitcommit: d223616e7e6fe2139079052e6fcbe25413fb9900
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73130505"
+ms.lasthandoff: 05/22/2020
+ms.locfileid: "83804873"
 ---
 # <a name="ihostcrstsetspincount-method"></a>IHostCrst::SetSpinCount – metoda
-Nastaví počet číselníků pro aktuální instanci [IHostCrst](../../../../docs/framework/unmanaged-api/hosting/ihostcrst-interface.md) .  
+Nastaví počet číselníků pro aktuální instanci [IHostCrst](ihostcrst-interface.md) .  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -35,13 +35,13 @@ HRESULT SetSpinCount (
   
 ## <a name="parameters"></a>Parametry  
  `dwSpinCount`  
- pro Nový počet číselníků pro aktuální instanci `IHostCrst`.  
+ pro Nový počet číselníků pro aktuální `IHostCrst` instanci.  
   
 ## <a name="return-value"></a>Návratová hodnota  
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
-|S_OK|`SetSpinCount` byla úspěšně vrácena.|  
+|S_OK|`SetSpinCount`úspěšně vráceno.|  
 |HOST_E_CLRNOTAVAILABLE|Modul CLR (Common Language Runtime) nebyl načten do procesu, nebo je modul CLR ve stavu, ve kterém nemůže spustit spravovaný kód nebo úspěšně zpracovat volání.|  
 |HOST_E_TIMEOUT|Vypršel časový limit volání.|  
 |HOST_E_NOT_OWNER|Volající nevlastní zámek.|  
@@ -49,21 +49,21 @@ HRESULT SetSpinCount (
 |E_FAIL|Došlo k neznámé chybě závažnosti. Když metoda vrátí E_FAIL, CLR již není v rámci procesu použitelný. Následná volání metod hostování vrací HOST_E_CLRNOTAVAILABLE.|  
   
 ## <a name="remarks"></a>Poznámky  
- V systémech s více procesory, pokud je kritická část reprezentovaná aktuální `IHostCrst` instance nedostupná, volání vlákna se `dwSpinCount` časy před voláním [IHostSemaphore:: Počkejte](../../../../docs/framework/unmanaged-api/hosting/ihostsemaphore-wait-method.md) na semaforu přidruženého k důležité části. Pokud se kritická část uvolní během operace otáčení, volající vlákno se vyhne operaci čekání.  
+ U systémů s více procesory platí, že pokud je kritická část reprezentovaná aktuální `IHostCrst` instancí nedostupná, volající vlákno se `dwSpinCount` před voláním [IHostSemaphore:: vyčká](ihostsemaphore-wait-method.md) na semaforu přidruženého k důležité části. Pokud se kritická část uvolní během operace otáčení, volající vlákno se vyhne operaci čekání.  
   
- Použití `dwSpinCount` je stejné jako použití parametru se stejným názvem ve funkci Win32 `InitializeCriticalSectionAndSpinCount`.  
+ Použití `dwSpinCount` je stejné jako použití parametru se stejným názvem ve `InitializeCriticalSectionAndSpinCount` funkci Win32.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** MSCorEE. h  
   
  **Knihovna:** Zahrnuto jako prostředek v knihovně MSCorEE. dll  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [ICLRSyncManager – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrsyncmanager-interface.md)
-- [IHostCrst – rozhraní](../../../../docs/framework/unmanaged-api/hosting/ihostcrst-interface.md)
-- [IHostSyncManager – rozhraní](../../../../docs/framework/unmanaged-api/hosting/ihostsyncmanager-interface.md)
+- [ICLRSyncManager – rozhraní](iclrsyncmanager-interface.md)
+- [IHostCrst – rozhraní](ihostcrst-interface.md)
+- [IHostSyncManager – rozhraní](ihostsyncmanager-interface.md)

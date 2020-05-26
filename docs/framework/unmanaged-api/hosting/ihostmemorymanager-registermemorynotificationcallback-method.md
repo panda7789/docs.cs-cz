@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 65d301f6-4dbb-4b5f-8eff-82540e2b6465
 topic_type:
 - apiref
-ms.openlocfilehash: 4400fab27ed82e540230ce4196844285e8e37d16
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 0c20df85560f715e829fe02be599788854fcb0f1
+ms.sourcegitcommit: d223616e7e6fe2139079052e6fcbe25413fb9900
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73128638"
+ms.lasthandoff: 05/22/2020
+ms.locfileid: "83804481"
 ---
 # <a name="ihostmemorymanagerregistermemorynotificationcallback-method"></a>IHostMemoryManager::RegisterMemoryNotificationCallback – metoda
 Registruje ukazatel na funkci zpětného volání, kterou hostitel vyvolá, aby upozornil na modul CLR (Common Language Runtime) aktuálního zatížení paměti v počítači.  
@@ -35,13 +35,13 @@ HRESULT RegisterMemoryNotificationCallback (
   
 ## <a name="parameters"></a>Parametry  
  `pCallback`  
- pro Ukazatel rozhraní na instanci [ICLRMemoryNotificationCallback –](../../../../docs/framework/unmanaged-api/hosting/iclrmemorynotificationcallback-interface.md) , která je implementována modulem CLR.  
+ pro Ukazatel rozhraní na instanci [ICLRMemoryNotificationCallback –](iclrmemorynotificationcallback-interface.md) , která je implementována modulem CLR.  
   
 ## <a name="return-value"></a>Návratová hodnota  
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
-|S_OK|`RegisterMemoryNotificationCallback` byla úspěšně vrácena.|  
+|S_OK|`RegisterMemoryNotificationCallback`úspěšně vráceno.|  
 |HOST_E_CLRNOTAVAILABLE|Modul CLR nebyl načten do procesu, nebo je modul CLR ve stavu, ve kterém nemůže spustit spravovaný kód nebo úspěšně zpracovat volání.|  
 |HOST_E_TIMEOUT|Vypršel časový limit volání.|  
 |HOST_E_NOT_OWNER|Volající nevlastní zámek.|  
@@ -49,21 +49,21 @@ HRESULT RegisterMemoryNotificationCallback (
 |E_FAIL|Došlo k neznámé chybě závažnosti. Když metoda vrátí E_FAIL, CLR již není v rámci procesu použitelný. Následná volání metod hostování vrací HOST_E_CLRNOTAVAILABLE.|  
   
 ## <a name="remarks"></a>Poznámky  
- Vzhledem k tomu, že rozhraní `ICLRMemoryNotificationCallback` definuje pouze jednu metodu ([ICLRMemoryNotificationCallback –:: OnMemoryNotification –](../../../../docs/framework/unmanaged-api/hosting/iclrmemorynotificationcallback-onmemorynotification-method.md)) a protože `pCallback` je ukazatel na instanci `ICLRMemoryNotificationCallback` POSKYTNUTou modulem CLR, registrace je pro zpětné volání efektivně. funkce. Hostitel vyvolá `OnMemoryNotification` pro hlášení stavů paměti, místo použití standardní funkce Win32 `CreateMemoryResourceNotification`. Další informace najdete v dokumentaci k platformě Windows.  
+ Vzhledem k tomu `ICLRMemoryNotificationCallback` , že rozhraní definuje pouze jednu metodu ([ICLRMemoryNotificationCallback –:: OnMemoryNotification –](iclrmemorynotificationcallback-onmemorynotification-method.md)) a protože `pCallback` je ukazatel na `ICLRMemoryNotificationCallback` instanci poskytovanou modulem CLR, je registrace pro samotnou funkci zpětného volání efektivní. Hostitel vyvolá `OnMemoryNotification` hlášení stavů paměti místo použití standardní `CreateMemoryResourceNotification` funkce Win32. Další informace najdete v dokumentaci k platformě Windows.  
   
 > [!NOTE]
-> Volání `OnMemoryNotification` nikdy neblokují. Vždycky se vrátí hned.  
+> Volání `OnMemoryNotification` nikdy neblokuje. Vždycky se vrátí hned.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** MSCorEE. h  
   
  **Knihovna:** Zahrnuto jako prostředek v knihovně MSCorEE. dll  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [ICLRMemoryNotificationCallback – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrmemorynotificationcallback-interface.md)
-- [IHostMemoryManager – rozhraní](../../../../docs/framework/unmanaged-api/hosting/ihostmemorymanager-interface.md)
+- [ICLRMemoryNotificationCallback – rozhraní](iclrmemorynotificationcallback-interface.md)
+- [IHostMemoryManager – rozhraní](ihostmemorymanager-interface.md)

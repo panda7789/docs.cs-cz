@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: c89abf5b-1120-4437-8b57-4a99fb3ae7f9
 topic_type:
 - apiref
-ms.openlocfilehash: f7ae4e4cbb757edea242c57720baeb70ced5c428
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 1dd5ed4c556a5a4d4425a9c0730cebf22ff1785b
+ms.sourcegitcommit: d223616e7e6fe2139079052e6fcbe25413fb9900
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73192058"
+ms.lasthandoff: 05/22/2020
+ms.locfileid: "83804623"
 ---
 # <a name="ihostmallocfree-method"></a>IHostMAlloc::Free – metoda
-Uvolňuje paměť, která byla přidělena pomocí funkce [přidělení](../../../../docs/framework/unmanaged-api/hosting/ihostmalloc-alloc-method.md) .  
+Uvolňuje paměť, která byla přidělena pomocí funkce [přidělení](ihostmalloc-alloc-method.md) .  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,7 +41,7 @@ HRESULT Free (
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
-|S_OK|`Free` byla úspěšně vrácena.|  
+|S_OK|`Free`úspěšně vráceno.|  
 |HOST_E_CLRNOTAVAILABLE|Modul CLR (Common Language Runtime) nebyl načten do procesu, nebo je modul CLR ve stavu, ve kterém nemůže spustit spravovaný kód nebo úspěšně zpracovat volání.|  
 |HOST_E_TIMEOUT|Vypršel časový limit volání.|  
 |HOST_E_NOT_OWNER|Volající nevlastní zámek.|  
@@ -50,18 +50,18 @@ HRESULT Free (
 |HOST_E_INVALIDOPERATION|Byl proveden pokus o uvolnění paměti, která nebyla přidělena prostřednictvím hostitele.|  
   
 ## <a name="remarks"></a>Poznámky  
- Pokud parametr `pMem` odkazuje na oblast paměti, která nebyla přidělena pomocí volání `Alloc`, hostitel by měl vrátit HOST_E_INVALIDOPERATION.  
+ Pokud `pMem` parametr odkazuje na oblast paměti, která nebyla přidělena pomocí volání `Alloc` , hostitel by měl vrátit HOST_E_INVALIDOPERATION.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** MSCorEE. h  
   
  **Knihovna:** Zahrnuto jako prostředek v knihovně MSCorEE. dll  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [IHostMemoryManager – rozhraní](../../../../docs/framework/unmanaged-api/hosting/ihostmemorymanager-interface.md)
-- [IHostMalloc – rozhraní](../../../../docs/framework/unmanaged-api/hosting/ihostmalloc-interface.md)
+- [IHostMemoryManager – rozhraní](ihostmemorymanager-interface.md)
+- [IHostMalloc – rozhraní](ihostmalloc-interface.md)

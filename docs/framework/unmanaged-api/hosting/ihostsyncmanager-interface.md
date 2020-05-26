@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 2e081a37-6a28-4c93-b7ab-1c96a464637c
 topic_type:
 - apiref
-ms.openlocfilehash: 02a59b8ef63f7e866e419db4e3232da7eec19558
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: e96492270c403f93687245cee8b680dc16b3c787
+ms.sourcegitcommit: d223616e7e6fe2139079052e6fcbe25413fb9900
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73132632"
+ms.lasthandoff: 05/22/2020
+ms.locfileid: "83803127"
 ---
 # <a name="ihostsyncmanager-interface"></a>IHostSyncManager – rozhraní
 Poskytuje metody, které umožňují modulu CLR (Common Language Runtime) vytvářet primitivy synchronizace voláním hostitele namísto použití synchronizačních funkcí Win32.  
@@ -28,29 +28,29 @@ Poskytuje metody, které umožňují modulu CLR (Common Language Runtime) vytvá
   
 |Metoda|Popis|  
 |------------|-----------------|  
-|[CreateAutoEvent – metoda](../../../../docs/framework/unmanaged-api/hosting/ihostsyncmanager-createautoevent-method.md)|Vytvoří objekt události automatického resetování.|  
-|[CreateCrst – metoda](../../../../docs/framework/unmanaged-api/hosting/ihostsyncmanager-createcrst-method.md)|Vytvoří objekt kritického oddílu pro synchronizaci.|  
-|[CreateCrstWithSpinCount – metoda](../../../../docs/framework/unmanaged-api/hosting/ihostsyncmanager-createcrstwithspincount-method.md)|Vytvoří objekt kritického oddílu s počtem číselníků pro synchronizaci.|  
-|[CreateManualEvent – metoda](../../../../docs/framework/unmanaged-api/hosting/ihostsyncmanager-createmanualevent-method.md)|Vytvoří objekt události ručního resetování.|  
-|[CreateMonitorEvent – metoda](../../../../docs/framework/unmanaged-api/hosting/ihostsyncmanager-createmonitorevent-method.md)|Vytvoří monitorovaný objekt události automatického resetování.|  
-|[CreateRWLockReaderEvent – metoda](../../../../docs/framework/unmanaged-api/hosting/ihostsyncmanager-createrwlockreaderevent-method.md)|Vytvoří objekt události ručního resetování pro implementaci zámku čtecího modulu.|  
-|[CreateRWLockWriterEvent – metoda](../../../../docs/framework/unmanaged-api/hosting/ihostsyncmanager-createrwlockwriterevent-method.md)|Vytvoří objekt události automatického resetování pro implementaci zámku zapisovače.|  
-|[CreateSemaphore – metoda](../../../../docs/framework/unmanaged-api/hosting/ihostsyncmanager-createsemaphore-method.md)|Vytvoří objekt [IHostSemaphore](../../../../docs/framework/unmanaged-api/hosting/ihostsemaphore-interface.md) pro CLR, který se použije jako semafor pro události čekání.|  
-|[SetCLRSyncManager – metoda](../../../../docs/framework/unmanaged-api/hosting/ihostsyncmanager-setclrsyncmanager-method.md)|Nastaví instanci [ICLRSyncManager](../../../../docs/framework/unmanaged-api/hosting/iclrsyncmanager-interface.md) k přidružení k aktuální instanci `IHostSyncManager`.|  
+|[CreateAutoEvent – metoda](ihostsyncmanager-createautoevent-method.md)|Vytvoří objekt události automatického resetování.|  
+|[CreateCrst – metoda](ihostsyncmanager-createcrst-method.md)|Vytvoří objekt kritického oddílu pro synchronizaci.|  
+|[CreateCrstWithSpinCount – metoda](ihostsyncmanager-createcrstwithspincount-method.md)|Vytvoří objekt kritického oddílu s počtem číselníků pro synchronizaci.|  
+|[CreateManualEvent – metoda](ihostsyncmanager-createmanualevent-method.md)|Vytvoří objekt události ručního resetování.|  
+|[CreateMonitorEvent – metoda](ihostsyncmanager-createmonitorevent-method.md)|Vytvoří monitorovaný objekt události automatického resetování.|  
+|[CreateRWLockReaderEvent – metoda](ihostsyncmanager-createrwlockreaderevent-method.md)|Vytvoří objekt události ručního resetování pro implementaci zámku čtecího modulu.|  
+|[CreateRWLockWriterEvent – metoda](ihostsyncmanager-createrwlockwriterevent-method.md)|Vytvoří objekt události automatického resetování pro implementaci zámku zapisovače.|  
+|[CreateSemaphore – metoda](../../../../docs/framework/unmanaged-api/hosting/ihostsyncmanager-createsemaphore-method.md)|Vytvoří objekt [IHostSemaphore](ihostsemaphore-interface.md) pro CLR, který se použije jako semafor pro události čekání.|  
+|[SetCLRSyncManager – metoda](../../../../docs/framework/unmanaged-api/hosting/ihostsyncmanager-setclrsyncmanager-method.md)|Nastaví instanci [ICLRSyncManager](iclrsyncmanager-interface.md) k přidružení k aktuální `IHostSyncManager` instanci.|  
   
 ## <a name="remarks"></a>Poznámky  
- Modul CLR zjistí implementaci `IHostSyncManager` hostitele voláním metody [IHostControl:: GetHostManager –](../../../../docs/framework/unmanaged-api/hosting/ihostcontrol-gethostmanager-method.md) s `IID` IID_IHostSyncManager.  
+ CLR zjistí implementaci hostitele `IHostSyncManager` voláním metody [IHostControl:: gethostmanager –](ihostcontrol-gethostmanager-method.md) s `IID` IID_IHostSyncManager.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** MSCorEE. h  
   
  **Knihovna:** Zahrnuto jako prostředek v knihovně MSCorEE. dll  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [ICLRSyncManager – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrsyncmanager-interface.md)
-- [Rozhraní pro hostování](../../../../docs/framework/unmanaged-api/hosting/hosting-interfaces.md)
+- [ICLRSyncManager – rozhraní](iclrsyncmanager-interface.md)
+- [Rozhraní pro hostování](hosting-interfaces.md)

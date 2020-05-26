@@ -2,12 +2,12 @@
 title: dotnet-install scripts
 description: Přečtěte si o příkazu dotnet – instalace skriptů pro instalaci .NET Core SDK a sdíleného modulu runtime.
 ms.date: 04/30/2020
-ms.openlocfilehash: 6728708ac5154f558954b46a22a434b05a548e84
-ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
+ms.openlocfilehash: 9f5cef9cfcca1d8b344021efe803c063a7393f8e
+ms.sourcegitcommit: d223616e7e6fe2139079052e6fcbe25413fb9900
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83205931"
+ms.lasthandoff: 05/22/2020
+ms.locfileid: "83802727"
 ---
 # <a name="dotnet-install-scripts-reference"></a>dotnet – Reference k instalaci skriptů
 
@@ -31,7 +31,7 @@ dotnet-install.ps1 [-Architecture <ARCHITECTURE>] [-AzureFeed]
 dotnet-install.ps1 -Help
 ```
 
-Linux/macOs:
+Linux/macOS:
 
 ```bash
 dotnet-install.sh  [--architecture <ARCHITECTURE>] [--azure-feed]
@@ -100,7 +100,7 @@ Instalační skripty neaktualizují registr ve Windows. Stačí stáhnout binár
 
 - **`-InstallDir|--install-dir <DIRECTORY>`**
 
-  Určuje instalační cestu. Adresář se vytvoří, pokud neexistuje. Výchozí hodnota je *%localappdata%\Microsoft\dotnet*. Binární soubory jsou umístěny přímo v tomto adresáři.
+  Určuje instalační cestu. Adresář se vytvoří, pokud neexistuje. Výchozí hodnota je *%localappdata%\Microsoft\dotnet* ve Windows a */usr/share/dotnet* v systému Linux/MacOS. Binární soubory jsou umístěny přímo v tomto adresáři.
 
 - **`-JSonFile|--jsonfile <JSONFILE>`**
 
@@ -159,7 +159,7 @@ Instalační skripty neaktualizují registr ve Windows. Stačí stáhnout binár
 
   - `latest`– Nejnovější sestavení kanálu (používá se s `-Channel` možností)
   - `coherent`-Nejnovější souvislý Build na kanálu; používá nejnovější kombinaci stabilního balíčku (používá se s `-Channel` možnostmi názvu větve).
-  - Verze se třemi částmi ve formátu X. Y. Z představující specifickou verzi buildu; nahrazuje `-Channel` možnost. Například: `2.0.0-preview2-006120`.
+  - Verze se třemi částmi ve formátu X. Y. Z představující specifickou verzi buildu; nahrazuje `-Channel` možnost. Příklad: `2.0.0-preview2-006120`.
 
   Pokud není zadaný, `-Version` použije se výchozí hodnota `latest` .
 

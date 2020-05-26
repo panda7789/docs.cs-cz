@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: c35199bf-bc47-4901-b467-4e8a37644bbb
 topic_type:
 - apiref
-ms.openlocfilehash: 9fd299ad25166bcbcf0202da13a5b4cbdd20d7d7
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: cf257ab86d27946c861c89dff5e6f09a42013e58
+ms.sourcegitcommit: d223616e7e6fe2139079052e6fcbe25413fb9900
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73133793"
+ms.lasthandoff: 05/22/2020
+ms.locfileid: "83804711"
 ---
 # <a name="ihostiocompletionmanagerinitializehostoverlapped-method"></a>IHostIoCompletionManager::InitializeHostOverlapped – metoda
-Poskytuje hostiteli možnost inicializovat jakákoli vlastní data pro připojení ke struktuře Win32 `OVERLAPPED`, která se používá pro asynchronní vstupně-výstupní operace.  
+Poskytuje hostiteli možnost inicializovat jakákoli vlastní data pro připojení ke `OVERLAPPED` struktuře Win32, která se používá pro asynchronní vstupně-výstupní operace.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -35,13 +35,13 @@ HRESULT InitializeHostOverlapped (
   
 ## <a name="parameters"></a>Parametry  
  `pvOverlapped`  
- pro Ukazatel na strukturu `OVERLAPPED` Win32, která se má zahrnout do vstupně-výstupních požadavků.  
+ pro Ukazatel na `OVERLAPPED` strukturu Win32, který se má zahrnout do vstupně-výstupních požadavků.  
   
 ## <a name="return-value"></a>Návratová hodnota  
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
-|S_OK|`InitializeHostOverlapped` byla úspěšně vrácena.|  
+|S_OK|`InitializeHostOverlapped`úspěšně vráceno.|  
 |HOST_E_CLRNOTAVAILABLE|Modul CLR (Common Language Runtime) nebyl načten do procesu, nebo je modul CLR ve stavu, ve kterém nemůže spustit spravovaný kód nebo úspěšně zpracovat volání.|  
 |HOST_E_TIMEOUT|Vypršel časový limit volání.|  
 |HOST_E_NOT_OWNER|Volající nevlastní zámek.|  
@@ -50,24 +50,24 @@ HRESULT InitializeHostOverlapped (
 |E_OUTOFMEMORY|K přidělení požadovaného prostředku není k dispozici dostatek paměti.|  
   
 ## <a name="remarks"></a>Poznámky  
- Funkce platformy Windows používají strukturu `OVERLAPPED` k uložení stavu asynchronních vstupně-výstupních požadavků. CLR volá metodu `InitializeHostOverlapped`, aby hostitel mohl připojit vlastní data k instanci `OVERLAPPED`.  
+ Funkce platformy Windows používají `OVERLAPPED` strukturu pro ukládání stavu asynchronních vstupně-výstupních požadavků. Modul CLR volá `InitializeHostOverlapped` metodu, aby hostiteli poskytl možnost připojit k instanci vlastní data `OVERLAPPED` .  
   
 > [!IMPORTANT]
-> Chcete-li se dostat na začátek vlastního bloku dat, musí hostitelé nastavit posun na velikost `OVERLAPPED` struktury (`sizeof(OVERLAPPED)`).  
+> Chcete-li se dostat na začátek vlastního bloku dat, hostitelé musí nastavit posun na velikost `OVERLAPPED` struktury ( `sizeof(OVERLAPPED)` ).  
   
  Návratová hodnota E_OUTOFMEMORY značí, že hostitel nedokázal inicializovat vlastní data. V tomto případě CLR ohlásí chybu a volání se nezdařilo.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** MSCorEE. h  
   
  **Knihovna:** Zahrnuto jako prostředek v knihovně MSCorEE. dll  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [ICLRIoCompletionManager – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclriocompletionmanager-interface.md)
-- [GetHostOverlappedSize – metoda](../../../../docs/framework/unmanaged-api/hosting/ihostiocompletionmanager-gethostoverlappedsize-method.md)
-- [IHostIoCompletionManager – rozhraní](../../../../docs/framework/unmanaged-api/hosting/ihostiocompletionmanager-interface.md)
+- [ICLRIoCompletionManager – rozhraní](iclriocompletionmanager-interface.md)
+- [GetHostOverlappedSize – metoda](ihostiocompletionmanager-gethostoverlappedsize-method.md)
+- [IHostIoCompletionManager – rozhraní](ihostiocompletionmanager-interface.md)

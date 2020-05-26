@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: dfc51d9e-b36d-4dba-9ea1-4f63fa0601ae
 topic_type:
 - apiref
-ms.openlocfilehash: 050af068579d84b984ed83377d0c201e281bd154
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 08af77c3a158b97cd698dbaeebdc7cdf1b9acfc3
+ms.sourcegitcommit: d223616e7e6fe2139079052e6fcbe25413fb9900
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73130536"
+ms.lasthandoff: 05/22/2020
+ms.locfileid: "83804897"
 ---
 # <a name="ihostcrstleave-method"></a>IHostCrst::Leave – metoda
-Ponechá kritickou část, která je reprezentovaná aktuální instancí [IHostCrst](../../../../docs/framework/unmanaged-api/hosting/ihostcrst-interface.md).  
+Ponechá kritickou část, která je reprezentovaná aktuální instancí [IHostCrst](ihostcrst-interface.md).  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -35,7 +35,7 @@ HRESULT Leave ();
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
-|S_OK|`Leave` byla úspěšně vrácena.|  
+|S_OK|`Leave`úspěšně vráceno.|  
 |HOST_E_CLRNOTAVAILABLE|Modul CLR (Common Language Runtime) nebyl načten do procesu, nebo je modul CLR ve stavu, ve kterém nemůže spustit spravovaný kód nebo úspěšně zpracovat volání.|  
 |HOST_E_TIMEOUT|Vypršel časový limit volání.|  
 |HOST_E_NOT_OWNER|Volající nevlastní zámek.|  
@@ -43,19 +43,19 @@ HRESULT Leave ();
 |E_FAIL|Došlo k neznámé chybě závažnosti. Když metoda vrátí E_FAIL, CLR již není v rámci procesu použitelný. Následná volání metod hostování vrací HOST_E_CLRNOTAVAILABLE.|  
   
 ## <a name="remarks"></a>Poznámky  
- `Leave` umožňuje, aby CLR přímo komunikoval s implementací vlákna hostitele namísto použití odpovídající funkce Win32 `LeaveCriticalSection`. Vlákno, které přebírá vlastnictví kritické části reprezentované aktuální instancí `IHostCrst`, musí volat `Leave` jednou pro pokaždé, když vstoupí v tomto kritickém oddílu.  
+ `Leave`umožňuje CLR přímo komunikovat s implementací vlákna hostitele namísto použití odpovídající `LeaveCriticalSection` funkce Win32. Vlákno, které převezme vlastnictví kritického oddílu reprezentované aktuální `IHostCrst` instancí, musí volat `Leave` jednou pro pokaždé, když vstoupí do tohoto kritického oddílu.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** MSCorEE. h  
   
  **Knihovna:** Zahrnuto jako prostředek v knihovně MSCorEE. dll  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [ICLRSyncManager – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrsyncmanager-interface.md)
-- [IHostCrst – rozhraní](../../../../docs/framework/unmanaged-api/hosting/ihostcrst-interface.md)
-- [IHostSyncManager – rozhraní](../../../../docs/framework/unmanaged-api/hosting/ihostsyncmanager-interface.md)
+- [ICLRSyncManager – rozhraní](iclrsyncmanager-interface.md)
+- [IHostCrst – rozhraní](ihostcrst-interface.md)
+- [IHostSyncManager – rozhraní](ihostsyncmanager-interface.md)

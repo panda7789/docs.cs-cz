@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: a922fa98-beab-4f09-a342-cc94fc65687f
 topic_type:
 - apiref
-ms.openlocfilehash: f4b40a595bbdea4dd390a42af6a0d4b1a5efa2f2
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 782a12a47de0196b90de06572520ef5ed36efb26
+ms.sourcegitcommit: d223616e7e6fe2139079052e6fcbe25413fb9900
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73130497"
+ms.lasthandoff: 05/22/2020
+ms.locfileid: "83804867"
 ---
 # <a name="ihostcrsttryenter-method"></a>IHostCrst::TryEnter – metoda
-Pokusí se zadat kritickou část reprezentovanou aktuální instancí [IHostCrst](../../../../docs/framework/unmanaged-api/hosting/ihostcrst-interface.md) .  
+Pokusí se zadat kritickou část reprezentovanou aktuální instancí [IHostCrst](ihostcrst-interface.md) .  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -36,16 +36,16 @@ HRESULT TryEnter (
   
 ## <a name="parameters"></a>Parametry  
  `option`  
- pro Jedna z hodnot [WAIT_OPTION](../../../../docs/framework/unmanaged-api/hosting/wait-option-enumeration.md) , která určuje, jakou akci má hostitel provést, pokud operace zablokuje.  
+ pro Jedna z hodnot [WAIT_OPTION](wait-option-enumeration.md) určuje, jakou akci má hostitel provést, pokud operace zablokuje.  
   
  `pbSucceeded`  
- [out] `true`, jestli se dá zadat kritická část; v opačném případě `false`.  
+ [out] `true` Pokud je možné zadat kritickou část; v opačném případě `false` .  
   
 ## <a name="return-value"></a>Návratová hodnota  
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
-|S_OK|`TryEnter` byla úspěšně vrácena.|  
+|S_OK|`TryEnter`úspěšně vráceno.|  
 |HOST_E_CLRNOTAVAILABLE|Modul CLR (Common Language Runtime) nebyl načten do procesu, nebo je modul CLR ve stavu, ve kterém nemůže spustit spravovaný kód nebo úspěšně zpracovat volání.|  
 |HOST_E_TIMEOUT|Vypršel časový limit volání.|  
 |HOST_E_NOT_OWNER|Volající nevlastní zámek.|  
@@ -53,19 +53,19 @@ HRESULT TryEnter (
 |E_FAIL|Došlo k neznámé chybě závažnosti. Když metoda vrátí E_FAIL, CLR již není v rámci procesu použitelný. Následná volání metod hostování vrací HOST_E_CLRNOTAVAILABLE.|  
   
 ## <a name="remarks"></a>Poznámky  
- `TryEnter` vrátí hodnotu okamžitě a označuje, zda volající vlákno zadalo kritickou část. Tato metoda zrcadlí funkci Wind32 `TryEnterCriticalSection`.  
+ `TryEnter`Vrátí hodnotu okamžitě a označuje, zda volající vlákno zadalo kritickou část. Tato metoda zrcadlí `TryEnterCriticalSection` funkci Wind32.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** MSCorEE. h  
   
  **Knihovna:** Zahrnuto jako prostředek v knihovně MSCorEE. dll  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [ICLRSyncManager – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrsyncmanager-interface.md)
-- [IHostCrst – rozhraní](../../../../docs/framework/unmanaged-api/hosting/ihostcrst-interface.md)
-- [IHostSyncManager – rozhraní](../../../../docs/framework/unmanaged-api/hosting/ihostsyncmanager-interface.md)
+- [ICLRSyncManager – rozhraní](iclrsyncmanager-interface.md)
+- [IHostCrst – rozhraní](ihostcrst-interface.md)
+- [IHostSyncManager – rozhraní](ihostsyncmanager-interface.md)

@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 524c7fd3-9b5c-46e7-99ba-555fd2fe33f0
 topic_type:
 - apiref
-ms.openlocfilehash: f7426585045c7ae81377ec9bfca9d397d6f734cb
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: c0f7e1fd6bf4c9386300b11477df85e87899fc67
+ms.sourcegitcommit: d223616e7e6fe2139079052e6fcbe25413fb9900
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73192021"
+ms.lasthandoff: 05/22/2020
+ms.locfileid: "83803325"
 ---
 # <a name="ihostsyncmanagercreatemonitorevent-method"></a>IHostSyncManager::CreateMonitorEvent – metoda
 Vytvoří monitorovaný objekt události automatického resetování.  
@@ -39,13 +39,13 @@ HRESULT CreateMonitorEvent (
  pro Soubor cookie, který se má přidružit k objektu události.  
   
  `ppEvent`  
- mimo Ukazatel na adresu instance [IHostAutoEvent](../../../../docs/framework/unmanaged-api/hosting/ihostautoevent-interface.md) nebo hodnotu null, pokud objekt události nelze vytvořit.  
+ mimo Ukazatel na adresu instance [IHostAutoEvent](ihostautoevent-interface.md) nebo hodnotu null, pokud objekt události nelze vytvořit.  
   
 ## <a name="return-value"></a>Návratová hodnota  
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
-|S_OK|`CreateMonitorEvent` byla úspěšně vrácena.|  
+|S_OK|`CreateMonitorEvent`úspěšně vráceno.|  
 |HOST_E_CLRNOTAVAILABLE|Modul CLR (Common Language Runtime) nebyl načten do procesu, nebo je modul CLR ve stavu, ve kterém nemůže spustit spravovaný kód nebo úspěšně zpracovat volání.|  
 |HOST_E_TIMEOUT|Vypršel časový limit volání.|  
 |HOST_E_NOT_OWNER|Volající nevlastní zámek.|  
@@ -54,22 +54,22 @@ HRESULT CreateMonitorEvent (
 |E_OUTOFMEMORY|Pro vytvoření požadovaného objektu události není k dispozici dostatek paměti.|  
   
 ## <a name="remarks"></a>Poznámky  
- `CreateMonitorEvent` vrátí `IHostAutoEvent`, který CLR používá při implementaci spravovaného typu <xref:System.Threading.Monitor?displayProperty=nameWithType>. Tato metoda zrcadlí funkci Win32 `CreateEvent` s hodnotou `false` zadanou pro parametr `bManualReset`.  
+ `CreateMonitorEvent`Vrátí `IHostAutoEvent` , že CLR používá při implementaci spravovaného <xref:System.Threading.Monitor?displayProperty=nameWithType> typu. Tato metoda zrcadlí `CreateEvent` funkci Win32 s hodnotou `false` zadanou pro `bManualReset` parametr.  
   
- Hostitel může pomocí souboru cookie určit, který úkol čeká na monitorování voláním metody [ICLRSyncManager:: GetMonitorOwner –](../../../../docs/framework/unmanaged-api/hosting/iclrsyncmanager-getmonitorowner-method.md) .  
+ Hostitel může pomocí souboru cookie určit, který úkol čeká na monitorování voláním metody [ICLRSyncManager:: GetMonitorOwner –](iclrsyncmanager-getmonitorowner-method.md) .  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** MSCorEE. h  
   
  **Knihovna:** Zahrnuto jako prostředek v knihovně MSCorEE. dll  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [ICLRSyncManager – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrsyncmanager-interface.md)
-- [IHostAutoEvent – rozhraní](../../../../docs/framework/unmanaged-api/hosting/ihostautoevent-interface.md)
-- [IHostSyncManager – rozhraní](../../../../docs/framework/unmanaged-api/hosting/ihostsyncmanager-interface.md)
+- [ICLRSyncManager – rozhraní](iclrsyncmanager-interface.md)
+- [IHostAutoEvent – rozhraní](ihostautoevent-interface.md)
+- [IHostSyncManager – rozhraní](ihostsyncmanager-interface.md)
 - <xref:System.Threading.Monitor>

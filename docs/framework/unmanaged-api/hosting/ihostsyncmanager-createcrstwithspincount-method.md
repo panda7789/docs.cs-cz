@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 7280fa8c-3639-4abf-91cb-bc343da742d1
 topic_type:
 - apiref
-ms.openlocfilehash: 632b8d43ed459d489825dc796d39864e2ed15ec3
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 86bc320c28a5fbf122d234a4a1f15b674628c0b5
+ms.sourcegitcommit: d223616e7e6fe2139079052e6fcbe25413fb9900
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73139409"
+ms.lasthandoff: 05/22/2020
+ms.locfileid: "83803400"
 ---
 # <a name="ihostsyncmanagercreatecrstwithspincount-method"></a>IHostSyncManager::CreateCrstWithSpinCount – metoda
 Vytvoří objekt kritického oddílu s počtem číselníků pro synchronizaci.  
@@ -39,13 +39,13 @@ HRESULT CreateCrstWithSpinCount (
  pro Určuje počet číselníků pro objekt kritické sekce.  
   
  `ppCrst`  
- mimo Ukazatel na adresu instance [IHostCrst](../../../../docs/framework/unmanaged-api/hosting/ihostcrst-interface.md) nebo hodnotu null, pokud nelze vytvořit oddíl Critical.  
+ mimo Ukazatel na adresu instance [IHostCrst](ihostcrst-interface.md) nebo hodnotu null, pokud nelze vytvořit oddíl Critical.  
   
 ## <a name="return-value"></a>Návratová hodnota  
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
-|S_OK|`CreateCrstWithSpinCount` byla úspěšně vrácena.|  
+|S_OK|`CreateCrstWithSpinCount`úspěšně vráceno.|  
 |HOST_E_CLRNOTAVAILABLE|Modul CLR (Common Language Runtime) nebyl načten do procesu, nebo je modul CLR ve stavu, ve kterém nemůže spustit spravovaný kód nebo úspěšně zpracovat volání.|  
 |HOST_E_TIMEOUT|Vypršel časový limit volání.|  
 |HOST_E_NOT_OWNER|Volající nevlastní zámek.|  
@@ -54,19 +54,19 @@ HRESULT CreateCrstWithSpinCount (
 |E_OUTOFMEMORY|Pro vytvoření požadovaného kritického oddílu není k dispozici dostatek paměti.|  
   
 ## <a name="remarks"></a>Poznámky  
- Počet číselníků se používá jenom v systému s více procesory. Počet číselník určuje počet pokusů, které volající vlákno musí provést před tím, než provede operaci čekání na semaforu, který je přidružen k nedostupnému kritickému oddílu. Pokud se kritická část uvolní během operace otáčení, volající vlákno se vyhne operaci čekání. `CreateCrstWithSpinCount` zrcadlí funkci Win32 `InitializeCriticalSectionAndSpinCount`.  
+ Počet číselníků se používá jenom v systému s více procesory. Počet číselník určuje počet pokusů, které volající vlákno musí provést před tím, než provede operaci čekání na semaforu, který je přidružen k nedostupnému kritickému oddílu. Pokud se kritická část uvolní během operace otáčení, volající vlákno se vyhne operaci čekání. `CreateCrstWithSpinCount`zrcadlí `InitializeCriticalSectionAndSpinCount` funkci Win32.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** MSCorEE. h  
   
  **Knihovna:** Zahrnuto jako prostředek v knihovně MSCorEE. dll  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [ICLRSyncManager – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrsyncmanager-interface.md)
-- [IHostSemaphore – rozhraní](../../../../docs/framework/unmanaged-api/hosting/ihostsemaphore-interface.md)
-- [IHostSyncManager – rozhraní](../../../../docs/framework/unmanaged-api/hosting/ihostsyncmanager-interface.md)
+- [ICLRSyncManager – rozhraní](iclrsyncmanager-interface.md)
+- [IHostSemaphore – rozhraní](ihostsemaphore-interface.md)
+- [IHostSyncManager – rozhraní](ihostsyncmanager-interface.md)

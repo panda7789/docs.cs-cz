@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: 5245d4b5-b6c3-48df-9cb9-8caf059f43fb
 topic_type:
 - apiref
-ms.openlocfilehash: b2fc1d6c45eb72410ccfa1071064aa1a31ae46e6
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 7271fe8e28da0bb5fd878aae5d36ab703e64ebf0
+ms.sourcegitcommit: d223616e7e6fe2139079052e6fcbe25413fb9900
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73121408"
+ms.lasthandoff: 05/22/2020
+ms.locfileid: "83803024"
 ---
 # <a name="ihosttaskalert-method"></a>IHostTask::Alert – metoda
-Vyžádá, aby hostitel probudil úlohu reprezentovanou aktuální instancí [IHostTask](../../../../docs/framework/unmanaged-api/hosting/ihosttask-interface.md) , takže úlohu můžete zrušit.  
+Vyžádá, aby hostitel probudil úlohu reprezentovanou aktuální instancí [IHostTask](ihosttask-interface.md) , takže úlohu můžete zrušit.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -43,23 +43,23 @@ HRESULT Alert ();
 |E_FAIL|Došlo k neznámé chybě závažnosti. Když metoda vrátí E_FAIL, CLR již není v rámci procesu použitelný. Následná volání metod hostování vrací HOST_E_CLRNOTAVAILABLE.|  
   
 ## <a name="remarks"></a>Poznámky  
- Modul CLR volá metodu `Alert`, pokud je <xref:System.Threading.Thread.Abort%2A?displayProperty=nameWithType> volána z uživatelského kódu nebo když <xref:System.AppDomain> přidružená k aktuálnímu <xref:System.Threading.Thread> ukončena. Hostitel musí vracet okamžitě, protože volání je provedeno asynchronně. Pokud hostitel nemůže úlohu okamžitě upozornit, musí se vystavit při příštím vstupu do stavu, ve kterém může být upozorněn.  
+ CLR volá `Alert` metodu <xref:System.Threading.Thread.Abort%2A?displayProperty=nameWithType> , pokud je volána z uživatelského kódu nebo když je <xref:System.AppDomain> přidružena k aktuálnímu <xref:System.Threading.Thread> vypnutí. Hostitel musí vracet okamžitě, protože volání je provedeno asynchronně. Pokud hostitel nemůže úlohu okamžitě upozornit, musí se vystavit při příštím vstupu do stavu, ve kterém může být upozorněn.  
   
 > [!NOTE]
-> `Alert` ovlivňuje pouze ty úlohy, na které modul runtime předal hodnotu [WAIT_OPTION](../../../../docs/framework/unmanaged-api/hosting/wait-option-enumeration.md) WAIT_ALERTABLE do metod, jako je [Join](../../../../docs/framework/unmanaged-api/hosting/ihosttask-join-method.md).  
+> `Alert`má vliv jenom na úlohy, na které modul runtime předal [WAIT_OPTION](../../../../docs/framework/unmanaged-api/hosting/wait-option-enumeration.md) hodnotu WAIT_ALERTABLE do metod, jako je [Join](ihosttask-join-method.md).  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** MSCorEE. h  
   
  **Knihovna:** Zahrnuto jako prostředek v knihovně MSCorEE. dll  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [ICLRTask – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrtask-interface.md)
-- [ICLRTaskManager – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrtaskmanager-interface.md)
-- [IHostTask – rozhraní](../../../../docs/framework/unmanaged-api/hosting/ihosttask-interface.md)
-- [IHostTaskManager – rozhraní](../../../../docs/framework/unmanaged-api/hosting/ihosttaskmanager-interface.md)
+- [ICLRTask – rozhraní](iclrtask-interface.md)
+- [ICLRTaskManager – rozhraní](iclrtaskmanager-interface.md)
+- [IHostTask – rozhraní](ihosttask-interface.md)
+- [IHostTaskManager – rozhraní](ihosttaskmanager-interface.md)
