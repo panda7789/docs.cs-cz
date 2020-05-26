@@ -740,18 +740,6 @@
                                   href: programming-guide/concepts/linq/intermediate-materialization.md
                                 - name: Zřetězení standardních operátorů dotazů
                                   href: programming-guide/concepts/linq/chaining-standard-query-operators-together.md
-                            - name: 'Kurz: Zřetězení dotazů'
-                              items:
-                                - name: Odložené provedení a opožděné vyhodnocení v LINQ to XML
-                                  href: programming-guide/concepts/linq/deferred-execution-and-lazy-evaluation-in-linq-to-xml.md
-                                - name: Příklad odloženého provedení
-                                  href: programming-guide/concepts/linq/deferred-execution-example.md
-                                - name: Příklad řetězení dotazů
-                                  href: programming-guide/concepts/linq/chaining-queries-example.md
-                                - name: Přechodná materializace
-                                  href: programming-guide/concepts/linq/intermediate-materialization.md
-                                - name: Zřetězení standardních operátorů dotazů
-                                  href: programming-guide/concepts/linq/chaining-standard-query-operators-together.md
                             - name: 'Kurz: Manipulace s obsahem v dokumentu WordprocessingML'
                               items:
                                 - name: Tvar dokumentů WordprocessingML
