@@ -15,17 +15,17 @@ helpviewer_keywords:
 ms.assetid: d7f794e5-8e25-4d65-850a-7c34fbfce87d
 topic_type:
 - apiref
-ms.openlocfilehash: 816e2f2dc7d4d00f74f67720ee45d7b3483e57fa
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 832adacac4a6df9ccf21578538a1c557150f3ba1
+ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79177722"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84008778"
 ---
-# <a name="imetadatadispenserexgetoption-method"></a><span data-ttu-id="0de4c-102">IMetaDataDispenserEx::GetOption – metoda</span><span class="sxs-lookup"><span data-stu-id="0de4c-102">IMetaDataDispenserEx::GetOption Method</span></span>
-<span data-ttu-id="0de4c-103">Získá hodnotu zadané možnosti pro aktuální obor metadat.</span><span class="sxs-lookup"><span data-stu-id="0de4c-103">Gets the value of the specified option for the current metadata scope.</span></span> <span data-ttu-id="0de4c-104">Tato možnost určuje, jak jsou zpracována volání aktuálního oboru metadat.</span><span class="sxs-lookup"><span data-stu-id="0de4c-104">The option controls how calls to the current metadata scope are handled.</span></span>  
+# <a name="imetadatadispenserexgetoption-method"></a><span data-ttu-id="85e6b-102">IMetaDataDispenserEx::GetOption – metoda</span><span class="sxs-lookup"><span data-stu-id="85e6b-102">IMetaDataDispenserEx::GetOption Method</span></span>
+<span data-ttu-id="85e6b-103">Získá hodnotu zadané možnosti pro aktuální obor metadat.</span><span class="sxs-lookup"><span data-stu-id="85e6b-103">Gets the value of the specified option for the current metadata scope.</span></span> <span data-ttu-id="85e6b-104">Možnost určuje, jak jsou zpracovávány volání do aktuálního oboru metadat.</span><span class="sxs-lookup"><span data-stu-id="85e6b-104">The option controls how calls to the current metadata scope are handled.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="0de4c-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="0de4c-105">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="85e6b-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="85e6b-105">Syntax</span></span>  
   
 ```cpp  
 HRESULT GetOption (  
@@ -34,40 +34,40 @@ HRESULT GetOption (
 );  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="0de4c-106">Parametry</span><span class="sxs-lookup"><span data-stu-id="0de4c-106">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="85e6b-106">Parametry</span><span class="sxs-lookup"><span data-stu-id="85e6b-106">Parameters</span></span>  
  `optionId`  
- <span data-ttu-id="0de4c-107">[v] Ukazatel na identifikátor GUID, který určuje možnost, která má být načtena.</span><span class="sxs-lookup"><span data-stu-id="0de4c-107">[in] A pointer to a GUID that specifies the option to be retrieved.</span></span> <span data-ttu-id="0de4c-108">Seznam podporovaných identifikátorů GUID naleznete v části Poznámky.</span><span class="sxs-lookup"><span data-stu-id="0de4c-108">See the Remarks section for a list of supported GUIDs.</span></span>  
+ <span data-ttu-id="85e6b-107">pro Ukazatel na identifikátor GUID, který určuje možnost, která má být načtena.</span><span class="sxs-lookup"><span data-stu-id="85e6b-107">[in] A pointer to a GUID that specifies the option to be retrieved.</span></span> <span data-ttu-id="85e6b-108">Seznam podporovaných identifikátorů GUID najdete v části s poznámkami.</span><span class="sxs-lookup"><span data-stu-id="85e6b-108">See the Remarks section for a list of supported GUIDs.</span></span>  
   
  `pValue`  
- <span data-ttu-id="0de4c-109">[out] Hodnota vrácené možnosti.</span><span class="sxs-lookup"><span data-stu-id="0de4c-109">[out] The value of the returned option.</span></span> <span data-ttu-id="0de4c-110">Typ této hodnoty bude variantou typu zadané možnosti.</span><span class="sxs-lookup"><span data-stu-id="0de4c-110">The type of this value will be a variant of the specified option's type.</span></span>  
+ <span data-ttu-id="85e6b-109">mimo Hodnota vrácené možnosti.</span><span class="sxs-lookup"><span data-stu-id="85e6b-109">[out] The value of the returned option.</span></span> <span data-ttu-id="85e6b-110">Typ této hodnoty bude varianta zadaného typu možnosti.</span><span class="sxs-lookup"><span data-stu-id="85e6b-110">The type of this value will be a variant of the specified option's type.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="0de4c-111">Poznámky</span><span class="sxs-lookup"><span data-stu-id="0de4c-111">Remarks</span></span>  
- <span data-ttu-id="0de4c-112">V následujícím seznamu jsou uvedeny identifikátory GUID, které jsou pro tuto metodu podporovány.</span><span class="sxs-lookup"><span data-stu-id="0de4c-112">The following list shows the GUIDs that are supported for this method.</span></span> <span data-ttu-id="0de4c-113">Popisy naleznete v metodě [IMetaDataDispenserEx::SetOption.](../../../../docs/framework/unmanaged-api/metadata/imetadatadispenserex-setoption-method.md)</span><span class="sxs-lookup"><span data-stu-id="0de4c-113">For descriptions, see the [IMetaDataDispenserEx::SetOption](../../../../docs/framework/unmanaged-api/metadata/imetadatadispenserex-setoption-method.md) method.</span></span> <span data-ttu-id="0de4c-114">Pokud `optionId` není v tomto seznamu, tato `E_INVALIDARG`metoda vrátí HRESULT , označující nesprávný parametr.</span><span class="sxs-lookup"><span data-stu-id="0de4c-114">If `optionId` is not in this list, this method returns HRESULT `E_INVALIDARG`, indicating an incorrect parameter.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="85e6b-111">Poznámky</span><span class="sxs-lookup"><span data-stu-id="85e6b-111">Remarks</span></span>  
+ <span data-ttu-id="85e6b-112">V následujícím seznamu jsou uvedeny identifikátory GUID, které jsou pro tuto metodu podporovány.</span><span class="sxs-lookup"><span data-stu-id="85e6b-112">The following list shows the GUIDs that are supported for this method.</span></span> <span data-ttu-id="85e6b-113">Popisy naleznete v tématu [IMetaDataDispenserEx:: SetOption –](imetadatadispenserex-setoption-method.md) metoda.</span><span class="sxs-lookup"><span data-stu-id="85e6b-113">For descriptions, see the [IMetaDataDispenserEx::SetOption](imetadatadispenserex-setoption-method.md) method.</span></span> <span data-ttu-id="85e6b-114">Pokud není `optionId` v tomto seznamu, tato metoda vrátí hodnotu HRESULT `E_INVALIDARG` , což značí nesprávný parametr.</span><span class="sxs-lookup"><span data-stu-id="85e6b-114">If `optionId` is not in this list, this method returns HRESULT `E_INVALIDARG`, indicating an incorrect parameter.</span></span>  
   
-- <span data-ttu-id="0de4c-115">MetaDataCheckDuplicatesFor</span><span class="sxs-lookup"><span data-stu-id="0de4c-115">MetaDataCheckDuplicatesFor</span></span>  
+- <span data-ttu-id="85e6b-115">MetaDataCheckDuplicatesFor</span><span class="sxs-lookup"><span data-stu-id="85e6b-115">MetaDataCheckDuplicatesFor</span></span>  
   
-- <span data-ttu-id="0de4c-116">MetaDataRefToDefCheck</span><span class="sxs-lookup"><span data-stu-id="0de4c-116">MetaDataRefToDefCheck</span></span>  
+- <span data-ttu-id="85e6b-116">MetaDataRefToDefCheck</span><span class="sxs-lookup"><span data-stu-id="85e6b-116">MetaDataRefToDefCheck</span></span>  
   
-- <span data-ttu-id="0de4c-117">MetaDataNotificationForTokenMovement</span><span class="sxs-lookup"><span data-stu-id="0de4c-117">MetaDataNotificationForTokenMovement</span></span>  
+- <span data-ttu-id="85e6b-117">MetaDataNotificationForTokenMovement</span><span class="sxs-lookup"><span data-stu-id="85e6b-117">MetaDataNotificationForTokenMovement</span></span>  
   
-- <span data-ttu-id="0de4c-118">MetaDatasetENC</span><span class="sxs-lookup"><span data-stu-id="0de4c-118">MetaDataSetENC</span></span>  
+- <span data-ttu-id="85e6b-118">MetaDataSetENC</span><span class="sxs-lookup"><span data-stu-id="85e6b-118">MetaDataSetENC</span></span>  
   
-- <span data-ttu-id="0de4c-119">MetaDataErrorIfEmitOutOfOrder</span><span class="sxs-lookup"><span data-stu-id="0de4c-119">MetaDataErrorIfEmitOutOfOrder</span></span>  
+- <span data-ttu-id="85e6b-119">MetaDataErrorIfEmitOutOfOrder</span><span class="sxs-lookup"><span data-stu-id="85e6b-119">MetaDataErrorIfEmitOutOfOrder</span></span>  
   
-- <span data-ttu-id="0de4c-120">Adaptéry MetaDataGenerateTCE</span><span class="sxs-lookup"><span data-stu-id="0de4c-120">MetaDataGenerateTCEAdapters</span></span>  
+- <span data-ttu-id="85e6b-120">MetaDataGenerateTCEAdapters</span><span class="sxs-lookup"><span data-stu-id="85e6b-120">MetaDataGenerateTCEAdapters</span></span>  
   
-- <span data-ttu-id="0de4c-121">Možnosti metadatalinkeru</span><span class="sxs-lookup"><span data-stu-id="0de4c-121">MetaDataLinkerOptions</span></span>  
+- <span data-ttu-id="85e6b-121">MetaDataLinkerOptions</span><span class="sxs-lookup"><span data-stu-id="85e6b-121">MetaDataLinkerOptions</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="0de4c-122">Požadavky</span><span class="sxs-lookup"><span data-stu-id="0de4c-122">Requirements</span></span>  
- <span data-ttu-id="0de4c-123">**Platforma:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="0de4c-123">**Platform:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="85e6b-122">Požadavky</span><span class="sxs-lookup"><span data-stu-id="85e6b-122">Requirements</span></span>  
+ <span data-ttu-id="85e6b-123">**Platforma:** Viz [požadavky na systém](../../get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="85e6b-123">**Platform:** See [System Requirements](../../get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="0de4c-124">**Záhlaví:** Kor.h.</span><span class="sxs-lookup"><span data-stu-id="0de4c-124">**Header:** Cor.h</span></span>  
+ <span data-ttu-id="85e6b-124">**Hlavička:** Cor. h</span><span class="sxs-lookup"><span data-stu-id="85e6b-124">**Header:** Cor.h</span></span>  
   
- <span data-ttu-id="0de4c-125">**Knihovna:** Používá se jako prostředek v souboru MsCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="0de4c-125">**Library:** Used as a resource in MsCorEE.dll</span></span>  
+ <span data-ttu-id="85e6b-125">**Knihovna:** Používá se jako prostředek v knihovně MsCorEE. dll.</span><span class="sxs-lookup"><span data-stu-id="85e6b-125">**Library:** Used as a resource in MsCorEE.dll</span></span>  
   
- <span data-ttu-id="0de4c-126">**Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="0de4c-126">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
+ <span data-ttu-id="85e6b-126">**Verze .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="85e6b-126">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="0de4c-127">Viz také</span><span class="sxs-lookup"><span data-stu-id="0de4c-127">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="85e6b-127">Viz také</span><span class="sxs-lookup"><span data-stu-id="85e6b-127">See also</span></span>
 
-- [<span data-ttu-id="0de4c-128">IMetaDataDispenserEx – rozhraní</span><span class="sxs-lookup"><span data-stu-id="0de4c-128">IMetaDataDispenserEx Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadatadispenserex-interface.md)
-- [<span data-ttu-id="0de4c-129">IMetaDataDispenser – rozhraní</span><span class="sxs-lookup"><span data-stu-id="0de4c-129">IMetaDataDispenser Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadatadispenser-interface.md)
+- [<span data-ttu-id="85e6b-128">IMetaDataDispenserEx – rozhraní</span><span class="sxs-lookup"><span data-stu-id="85e6b-128">IMetaDataDispenserEx Interface</span></span>](imetadatadispenserex-interface.md)
+- [<span data-ttu-id="85e6b-129">IMetaDataDispenser – rozhraní</span><span class="sxs-lookup"><span data-stu-id="85e6b-129">IMetaDataDispenser Interface</span></span>](imetadatadispenser-interface.md)

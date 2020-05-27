@@ -14,19 +14,19 @@ helpviewer_keywords:
 ms.assetid: 7b9b93b0-fe92-42ba-8693-701168a29dde
 topic_type:
 - apiref
-ms.openlocfilehash: c6e0c02af93b9df726202f397bbb2afc306f3b3a
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 84cdb42b11ad70f54f21ae36ca2734dc794d06d7
+ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73090880"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84008466"
 ---
-# <a name="lpthread_start_routine-function-pointer"></a><span data-ttu-id="87c25-102">LPTHREAD_START_ROUTINE – ukazatel na funkci</span><span class="sxs-lookup"><span data-stu-id="87c25-102">LPTHREAD_START_ROUTINE Function Pointer</span></span>
-<span data-ttu-id="87c25-103">Odkazuje na funkci, která upozorňuje hostitele na spuštění vlákna.</span><span class="sxs-lookup"><span data-stu-id="87c25-103">Points to a function that notifies the host that a thread has started to execute.</span></span>  
+# <a name="lpthread_start_routine-function-pointer"></a><span data-ttu-id="87eb5-102">LPTHREAD_START_ROUTINE – ukazatel na funkci</span><span class="sxs-lookup"><span data-stu-id="87eb5-102">LPTHREAD_START_ROUTINE Function Pointer</span></span>
+<span data-ttu-id="87eb5-103">Odkazuje na funkci, která upozorňuje hostitele na spuštění vlákna.</span><span class="sxs-lookup"><span data-stu-id="87eb5-103">Points to a function that notifies the host that a thread has started to execute.</span></span>  
   
- <span data-ttu-id="87c25-104">Tento ukazatel funkce je zastaralý v .NET Framework 4.</span><span class="sxs-lookup"><span data-stu-id="87c25-104">This function pointer has been deprecated in the .NET Framework 4.</span></span>  
+ <span data-ttu-id="87eb5-104">Tento ukazatel funkce je zastaralý v .NET Framework 4.</span><span class="sxs-lookup"><span data-stu-id="87eb5-104">This function pointer has been deprecated in the .NET Framework 4.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="87c25-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="87c25-105">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="87eb5-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="87eb5-105">Syntax</span></span>  
   
 ```cpp  
 typedef DWORD (__stdcall *LPTHREAD_START_ROUTINE) (  
@@ -34,22 +34,22 @@ typedef DWORD (__stdcall *LPTHREAD_START_ROUTINE) (
 );  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="87c25-106">Parametry</span><span class="sxs-lookup"><span data-stu-id="87c25-106">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="87eb5-106">Parametry</span><span class="sxs-lookup"><span data-stu-id="87eb5-106">Parameters</span></span>  
  `lpThreadParameter`  
- <span data-ttu-id="87c25-107">pro Ukazatel na kód, který zahájil provádění.</span><span class="sxs-lookup"><span data-stu-id="87c25-107">[in] A pointer to the code that has started executing.</span></span>  
+ <span data-ttu-id="87eb5-107">pro Ukazatel na kód, který zahájil provádění.</span><span class="sxs-lookup"><span data-stu-id="87eb5-107">[in] A pointer to the code that has started executing.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="87c25-108">Poznámky</span><span class="sxs-lookup"><span data-stu-id="87c25-108">Remarks</span></span>  
- <span data-ttu-id="87c25-109">Funkce, na kterou `LPTHREAD_START_ROUTINE` body, je funkce zpětného volání a musí být implementována zapisovačí hostující aplikace.</span><span class="sxs-lookup"><span data-stu-id="87c25-109">The function to which `LPTHREAD_START_ROUTINE` points is a callback function and must be implemented by the writer of the hosting application.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="87eb5-108">Poznámky</span><span class="sxs-lookup"><span data-stu-id="87eb5-108">Remarks</span></span>  
+ <span data-ttu-id="87eb5-109">Funkce, na které `LPTHREAD_START_ROUTINE` jsou body funkce zpětného volání a které musí být implementovány zapisovačí hostující aplikace.</span><span class="sxs-lookup"><span data-stu-id="87eb5-109">The function to which `LPTHREAD_START_ROUTINE` points is a callback function and must be implemented by the writer of the hosting application.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="87c25-110">Požadavky</span><span class="sxs-lookup"><span data-stu-id="87c25-110">Requirements</span></span>  
- <span data-ttu-id="87c25-111">**Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="87c25-111">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="87eb5-110">Požadavky</span><span class="sxs-lookup"><span data-stu-id="87eb5-110">Requirements</span></span>  
+ <span data-ttu-id="87eb5-111">**Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="87eb5-111">**Platforms:** See [System Requirements](../../get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="87c25-112">**Hlavička:** MSCorEE. h</span><span class="sxs-lookup"><span data-stu-id="87c25-112">**Header:** MSCorEE.h</span></span>  
+ <span data-ttu-id="87eb5-112">**Hlavička:** MSCorEE. h</span><span class="sxs-lookup"><span data-stu-id="87eb5-112">**Header:** MSCorEE.h</span></span>  
   
- <span data-ttu-id="87c25-113">**Knihovna:** Knihovny Mscorwks. dll</span><span class="sxs-lookup"><span data-stu-id="87c25-113">**Library:** MSCorWks.dll</span></span>  
+ <span data-ttu-id="87eb5-113">**Knihovna:** Knihovny Mscorwks. dll</span><span class="sxs-lookup"><span data-stu-id="87eb5-113">**Library:** MSCorWks.dll</span></span>  
   
- <span data-ttu-id="87c25-114">**Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="87c25-114">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
+ <span data-ttu-id="87eb5-114">**Verze .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="87eb5-114">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="87c25-115">Viz také:</span><span class="sxs-lookup"><span data-stu-id="87c25-115">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="87eb5-115">Viz také</span><span class="sxs-lookup"><span data-stu-id="87eb5-115">See also</span></span>
 
-- [<span data-ttu-id="87c25-116">Zastaralé funkce pro hostování CLR</span><span class="sxs-lookup"><span data-stu-id="87c25-116">Deprecated CLR Hosting Functions</span></span>](../../../../docs/framework/unmanaged-api/hosting/deprecated-clr-hosting-functions.md)
+- [<span data-ttu-id="87eb5-116">Zastaralé funkce hostování CLR</span><span class="sxs-lookup"><span data-stu-id="87eb5-116">Deprecated CLR Hosting Functions</span></span>](deprecated-clr-hosting-functions.md)

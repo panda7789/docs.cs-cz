@@ -15,19 +15,19 @@ helpviewer_keywords:
 ms.assetid: b500a260-1d57-4953-95e1-c27063f7c8da
 topic_type:
 - apiref
-ms.openlocfilehash: 129750644962cee3206b9e38cbeaa77d38dddd71
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 2f66d34fcfdd8c61dcc92817ec1a928ac5b603fc
+ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79176107"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84008895"
 ---
-# <a name="iceegenaddsectionreloc-method"></a><span data-ttu-id="7230e-102">ICeeGen::AddSectionReloc – metoda</span><span class="sxs-lookup"><span data-stu-id="7230e-102">ICeeGen::AddSectionReloc Method</span></span>
-<span data-ttu-id="7230e-103">Přidá .reloc instrukce základu kódu.</span><span class="sxs-lookup"><span data-stu-id="7230e-103">Adds a .reloc instruction to the code base.</span></span>  
+# <a name="iceegenaddsectionreloc-method"></a><span data-ttu-id="05460-102">ICeeGen::AddSectionReloc – metoda</span><span class="sxs-lookup"><span data-stu-id="05460-102">ICeeGen::AddSectionReloc Method</span></span>
+<span data-ttu-id="05460-103">Přidá instrukci. přemístění do základu kódu.</span><span class="sxs-lookup"><span data-stu-id="05460-103">Adds a .reloc instruction to the code base.</span></span>  
   
- <span data-ttu-id="7230e-104">Tato metoda je zastaralá a neměla by být použita.</span><span class="sxs-lookup"><span data-stu-id="7230e-104">This method is obsolete and should not be used.</span></span>  
+ <span data-ttu-id="05460-104">Tato metoda je zastaralá a neměla by se používat.</span><span class="sxs-lookup"><span data-stu-id="05460-104">This method is obsolete and should not be used.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="7230e-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="7230e-105">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="05460-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="05460-105">Syntax</span></span>  
   
 ```cpp  
 HRESULT AddSectionReloc (  
@@ -38,28 +38,28 @@ HRESULT AddSectionReloc (
 );  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="7230e-106">Parametry</span><span class="sxs-lookup"><span data-stu-id="7230e-106">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="05460-106">Parametry</span><span class="sxs-lookup"><span data-stu-id="05460-106">Parameters</span></span>  
  `section`  
- <span data-ttu-id="7230e-107">[v] Část kódu v paměti, do kterého chcete přidat instrukce .reloc.</span><span class="sxs-lookup"><span data-stu-id="7230e-107">[in] The section of in-memory code to which to add a .reloc instruction.</span></span>  
+ <span data-ttu-id="05460-107">pro Část kódu v paměti, do které chcete přidat instrukci. přemístění.</span><span class="sxs-lookup"><span data-stu-id="05460-107">[in] The section of in-memory code to which to add a .reloc instruction.</span></span>  
   
  `offset`  
- <span data-ttu-id="7230e-108">[v] Posun oddílu.</span><span class="sxs-lookup"><span data-stu-id="7230e-108">[in] The offset of the section.</span></span>  
+ <span data-ttu-id="05460-108">pro Posun oddílu</span><span class="sxs-lookup"><span data-stu-id="05460-108">[in] The offset of the section.</span></span>  
   
  `relativeTo`  
- <span data-ttu-id="7230e-109">[v] Část, na `offset` kterou se vztahuje.</span><span class="sxs-lookup"><span data-stu-id="7230e-109">[in] The section to which `offset` refers.</span></span>  
+ <span data-ttu-id="05460-109">pro Oddíl, na který `offset` odkazuje.</span><span class="sxs-lookup"><span data-stu-id="05460-109">[in] The section to which `offset` refers.</span></span>  
   
  `relocType`  
- <span data-ttu-id="7230e-110">[v] Jeden z [CeeSectionRelocType](../../../../docs/framework/unmanaged-api/metadata/ceesectionreloctype-enumeration.md) hodnoty označující druh .reloc instrukce přidat.</span><span class="sxs-lookup"><span data-stu-id="7230e-110">[in] One of the [CeeSectionRelocType](../../../../docs/framework/unmanaged-api/metadata/ceesectionreloctype-enumeration.md) values, indicating the kind of .reloc instruction to add.</span></span>  
+ <span data-ttu-id="05460-110">pro Jedna z hodnot [CeeSectionRelocType –](ceesectionreloctype-enumeration.md) , která určuje druh instrukcí. přemístění, která se má přidat.</span><span class="sxs-lookup"><span data-stu-id="05460-110">[in] One of the [CeeSectionRelocType](ceesectionreloctype-enumeration.md) values, indicating the kind of .reloc instruction to add.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="7230e-111">Požadavky</span><span class="sxs-lookup"><span data-stu-id="7230e-111">Requirements</span></span>  
- <span data-ttu-id="7230e-112">**Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="7230e-112">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="05460-111">Požadavky</span><span class="sxs-lookup"><span data-stu-id="05460-111">Requirements</span></span>  
+ <span data-ttu-id="05460-112">**Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="05460-112">**Platforms:** See [System Requirements](../../get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="7230e-113">**Záhlaví:** Kor.h.</span><span class="sxs-lookup"><span data-stu-id="7230e-113">**Header:** Cor.h</span></span>  
+ <span data-ttu-id="05460-113">**Hlavička:** Cor. h</span><span class="sxs-lookup"><span data-stu-id="05460-113">**Header:** Cor.h</span></span>  
   
- <span data-ttu-id="7230e-114">**Knihovna:** Používá se jako prostředek v souboru MsCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="7230e-114">**Library:** Used as a resource in MsCorEE.dll</span></span>  
+ <span data-ttu-id="05460-114">**Knihovna:** Používá se jako prostředek v knihovně MsCorEE. dll.</span><span class="sxs-lookup"><span data-stu-id="05460-114">**Library:** Used as a resource in MsCorEE.dll</span></span>  
   
- <span data-ttu-id="7230e-115">**Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="7230e-115">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
+ <span data-ttu-id="05460-115">**Verze .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="05460-115">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="7230e-116">Viz také</span><span class="sxs-lookup"><span data-stu-id="7230e-116">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="05460-116">Viz také</span><span class="sxs-lookup"><span data-stu-id="05460-116">See also</span></span>
 
-- [<span data-ttu-id="7230e-117">ICeeGen – rozhraní</span><span class="sxs-lookup"><span data-stu-id="7230e-117">ICeeGen Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/iceegen-interface.md)
+- [<span data-ttu-id="05460-117">ICeeGen – rozhraní</span><span class="sxs-lookup"><span data-stu-id="05460-117">ICeeGen Interface</span></span>](iceegen-interface.md)
