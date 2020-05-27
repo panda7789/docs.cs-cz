@@ -14,15 +14,15 @@ helpviewer_keywords:
 ms.assetid: c42baa79-f469-4330-95a2-baf7f021c2fc
 topic_type:
 - apiref
-ms.openlocfilehash: e5cbd8c5b1bb048088fe137b1359d0bb9e29af20
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 14942680a79c4d1fcc69092a4f752738db1fb0b0
+ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79176120"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84008911"
 ---
 # <a name="couninitiee-enumeration"></a>COUNINITIEE – výčet
-Určuje konstanty používané [CoUninitializeEE](../../../../docs/framework/unmanaged-api/hosting/couninitializeee-function.md) při inicializaci běžného jazyku runtime.  
+Určuje konstanty, které používá [CoUninitializeEE –](../hosting/couninitializeee-function.md) při inicializaci modulu CLR (Common Language Runtime).  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -36,20 +36,20 @@ typedef enum tagCOUNINITEE
   
 ## <a name="members"></a>Členové  
   
-|Člen|Popis|  
+|Člen|Description|  
 |------------|-----------------|  
-|`COUNINITEE_DEFAULT`|Označuje výchozí režim neinicializace.|  
-|`COUNINITEE_DLL`|Označuje režim neinicializace pro uvolnění sestavy.|  
+|`COUNINITEE_DEFAULT`|Označuje výchozí režim nepočátečních inicializací.|  
+|`COUNINITEE_DLL`|Označuje režim neinicializovaného režimu pro uvolnění sestavení.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Záhlaví:** Kor.h.  
+ **Hlavička:** Cor. h  
   
- **Knihovna:** Zahrnuto jako prostředek v souboru MsCorEE.dll  
+ **Knihovna:** Zahrnuto jako prostředek v knihovně MsCorEE. dll  
   
- **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také
 
-- [Výčty pro metadata](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)
+- [Výčty pro metadata](metadata-enumerations.md)

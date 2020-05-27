@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: fe4150e8-071d-43fb-8e06-c3c616dbeed2
 topic_type:
 - apiref
-ms.openlocfilehash: 39f72e670ddc700c257f50f6bad6fab702ec21b6
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 93a194ea72ab894544927cf96304397b7211b5ac
+ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74432770"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84009155"
 ---
 # <a name="corsetenc-enumeration"></a>CorSetENC – výčet
 Obsahuje hodnoty, které slouží k ovlivnění chování během generování metadat.  
@@ -42,9 +42,9 @@ typedef enum CorSetENC {
 } CorSetENC;  
 ```  
   
-## <a name="members"></a>Members  
+## <a name="members"></a>Členové  
   
-|Člen|Popis|  
+|Člen|Description|  
 |------------|-----------------|  
 |`MDSetENCOn`|Zastaralé.|  
 |`MDSetENCOff`|Zastaralé.|  
@@ -53,15 +53,15 @@ typedef enum CorSetENC {
 |`MDUpdateExtension`|Označuje, že aktualizace mohou sestávat pouze z dodatků. Tokeny nejde přesunout.|  
 |`MDUpdateIncremental`|Indikuje, že je kompilace přírůstková.|  
 |`MDUpdateDelta`|Indikuje, že se mají ukládat jenom změněná metadata.|  
-|`MDUpdateMask`|Zahrnuje `MDUpdateENC`, `MDUpdateFull` a `MDUpdateIncremental`.|  
+|`MDUpdateMask`|Zahrnuje `MDUpdateENC` `MDUpdateFull` a `MDUpdateIncremental` .|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** CorHdr. h  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Výčty pro metadata](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)
+- [Výčty pro metadata](metadata-enumerations.md)

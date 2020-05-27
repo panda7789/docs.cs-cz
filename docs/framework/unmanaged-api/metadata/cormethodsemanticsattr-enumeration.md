@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: ca2af325-eb9d-4a91-90e4-267e45b98611
 topic_type:
 - apiref
-ms.openlocfilehash: bab215a8221696a0e43e228278085fcef52a40e9
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 1572c206f4a5a5fe0fd189ca84d0bcda2249c6d4
+ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74442820"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84007647"
 ---
 # <a name="cormethodsemanticsattr-enumeration"></a>CorMethodSemanticsAttr – výčet
 Obsahuje hodnoty, které popisují vztah mezi metodou a přidruženou vlastností nebo událostí.  
@@ -41,22 +41,22 @@ typedef enum CorMethodSemanticsAttr {
   
 ## <a name="members"></a>Členové  
   
-|Člen|Popis|  
+|Člen|Description|  
 |------------|-----------------|  
-|`msSetter`|Určuje, že metoda je `set` přistupující objekt pro vlastnost.|  
-|`msGetter`|Určuje, že metoda je `get` přistupující objekt pro vlastnost.|  
+|`msSetter`|Určuje, že metoda je `set` přístupná pro vlastnost.|  
+|`msGetter`|Určuje, že metoda je `get` přístupná pro vlastnost.|  
 |`msOther`|Určuje, že metoda má relaci k vlastnosti nebo jiné události, než je zde definována.|  
 |`msAddOn`|Určuje, že metoda přidá metody obslužné rutiny pro událost.|  
 |`msRemoveOn`|Určuje, že metoda odebere metody obslužné rutiny pro událost.|  
 |`msFire`|Určuje, že metoda vyvolá událost.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** CorHdr. h  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Výčty pro metadata](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)
+- [Výčty pro metadata](metadata-enumerations.md)

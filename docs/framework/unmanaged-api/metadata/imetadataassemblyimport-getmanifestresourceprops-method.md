@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 00be4789-ac63-4397-b2ec-1629a5c5a585
 topic_type:
 - apiref
-ms.openlocfilehash: d87d0d46ede65cf44c84edba92fe246174088a4e
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: c0b6d53ce3be3aed6a577bf6e38a281928499848
+ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79177658"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84009025"
 ---
 # <a name="imetadataassemblyimportgetmanifestresourceprops-method"></a>IMetaDataAssemblyImport::GetManifestResourceProps – metoda
 Získá sadu vlastností prostředku manifestu se zadaným podpisem metadat.  
@@ -41,35 +41,35 @@ HRESULT GetManifestResourceProps (
   
 ## <a name="parameters"></a>Parametry  
  `mdmr`  
- [v] Token, `mdManifestResource` který představuje prostředek, pro který chcete získat vlastnosti.  
+ pro `mdManifestResource`Token, který představuje prostředek, pro který chcete získat vlastnosti.  
   
  `szName`  
- [out] Název prostředku.  
+ mimo Název prostředku.  
   
  `cchName`  
- [v] Velikost , v širokých `szName`znaků, .  
+ pro Velikost ve velkých znakech `szName` .  
   
  `pchName`  
- [out] Ukazatel na počet širokých znaků skutečně `szName`vrácených v .  
+ mimo Ukazatel na počet velkých znaků, které se ve skutečnosti vrátily `szName` .  
   
  `ptkImplementation`  
- [out] Ukazatel na `mdFile` token nebo `mdAssemblyRef` token, který představuje soubor nebo sestavení, respektive, který obsahuje prostředek.  
+ mimo Ukazatel na `mdFile` token nebo `mdAssemblyRef` token, který představuje soubor nebo sestavení, v uvedeném pořadí, které obsahuje prostředek.  
   
  `pdwOffset`  
- [out] Ukazatel na hodnotu, která určuje posun od začátku prostředku v souboru.  
+ mimo Ukazatel na hodnotu, která určuje posun na začátek prostředku v rámci souboru.  
   
  `pdwResourceFlags`  
- [out] Ukazatel na příznaky, které popisují metadata použitá pro prostředek. Hodnota příznaky je kombinací jedné nebo více hodnot [CorManifestResourceFlags.](../../../../docs/framework/unmanaged-api/metadata/cormanifestresourceflags-enumeration.md)  
+ mimo Ukazatel na příznaky, které popisují metadata použitá u prostředku. Hodnota příznaků je kombinací jedné nebo více hodnot [CorManifestResourceFlags –](cormanifestresourceflags-enumeration.md) .  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Záhlaví:** Kor.h.  
+ **Hlavička:** Cor. h  
   
- **Knihovna:** Používá se jako prostředek v souboru MsCorEE.dll  
+ **Knihovna:** Používá se jako prostředek v knihovně MsCorEE. dll.  
   
- **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také
 
-- [IMetaDataAssemblyImport – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyimport-interface.md)
+- [IMetaDataAssemblyImport – rozhraní](imetadataassemblyimport-interface.md)

@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: d1fb65e1-7e19-4513-85b1-44f87c294d3e
 topic_type:
 - apiref
-ms.openlocfilehash: e73c95d8c720ed3263d6a66c48bdb5b5582eb686
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 64f1e2a8f05616c7ca84bc130428629b1176e985
+ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74442189"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84006178"
 ---
 # <a name="imetadatadispenserexfindassemblymodule-method"></a>IMetaDataDispenserEx::FindAssemblyModule – metoda
 Tato metoda není implementována. Při volání Vrátí E_NOTIMPL.  
@@ -60,21 +60,21 @@ HRESULT FindAssemblyModule(
  mimo Jednoduchý název sestavení.  
   
  `cchName`  
- pro Velikost `szName`v bajtech.  
+ pro Velikost v bajtech `szName` .  
   
  `pcName`  
- mimo Počet znaků, které jsou ve skutečnosti vráceny v `szName`.  
+ mimo Počet skutečně vrácených znaků `szName` .  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforma:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platforma:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** Cor. h  
   
  **Knihovna:** Používá se jako prostředek v knihovně MsCorEE. dll.  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [IMetaDataDispenserEx – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadatadispenserex-interface.md)
-- [IMetaDataDispenser – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadatadispenser-interface.md)
+- [IMetaDataDispenserEx – rozhraní](imetadatadispenserex-interface.md)
+- [IMetaDataDispenser – rozhraní](imetadatadispenser-interface.md)

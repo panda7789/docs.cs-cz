@@ -15,17 +15,17 @@ helpviewer_keywords:
 ms.assetid: 30931874-4d0e-4df1-b3d1-e425b50655d1
 topic_type:
 - apiref
-ms.openlocfilehash: 11bb220068e978dc130701e3b28ab3f421be7337
-ms.sourcegitcommit: 7e2128d4a4c45b4274bea3b8e5760d4694569ca1
+ms.openlocfilehash: 4b270c36bdbea9c8d81915eba424cae1054ce7d7
+ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75937655"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84008531"
 ---
 # <a name="loadlibraryshim-function"></a>LoadLibraryShim – funkce
 Načte zadanou verzi knihovny DLL, která je součástí .NET Framework Distribuovatelný balíček.  
   
- Tato funkce se už nepoužívá v .NET Framework 4. Místo toho použijte metodu [ICLRRuntimeInfo:: LoadLibrary](../../../../docs/framework/unmanaged-api/hosting/iclrruntimeinfo-loadlibrary-method.md) .  
+ Tato funkce se už nepoužívá v .NET Framework 4. Místo toho použijte metodu [ICLRRuntimeInfo:: LoadLibrary](iclrruntimeinfo-loadlibrary-method.md) .  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -43,7 +43,7 @@ HRESULT LoadLibraryShim (
  pro Řetězec zakončený nulou, který představuje název knihovny DLL, která má být načtena z knihovny .NET Framework.  
   
  `szVersion`  
- pro Řetězec zakončený nulou, který představuje verzi knihovny DLL, která má být načtena. Pokud je `szVersion` null, verze vybraná pro načtení je nejnovější verze zadané knihovny DLL, která je menší než verze 4. To znamená, že všechny verze, které jsou větší nebo rovny verzi 4, jsou ignorovány, pokud je `szVersion` null a není-li nainstalována žádná verze, která je nižší než verze 4, knihovna DLL se nemůže načíst. K tomu je potřeba zajistit, aby instalace .NET Framework 4 neovlivnila stávající aplikace nebo komponenty. Podívejte se na záznam [v rámci proc SxS a migrace rychlé zprovoznění](https://devblogs.microsoft.com/dotnet/in-proc-sxs-and-migration-quick-start/) na blogu týmu CLR.  
+ pro Řetězec zakončený nulou, který představuje verzi knihovny DLL, která má být načtena. Pokud `szVersion` je null, verze vybraná pro načtení je nejnovější verze zadané knihovny DLL, která je menší než verze 4. To znamená, že všechny verze, které se rovnají nebo jsou vyšší než verze 4, jsou ignorovány `szVersion` , pokud je hodnota null a není-li nainstalována žádná verze, která je nižší než verze 4, knihovna DLL se nepodařilo načíst. K tomu je potřeba zajistit, aby instalace .NET Framework 4 neovlivnila stávající aplikace nebo komponenty. Podívejte se na záznam [v rámci proc SxS a migrace rychlé zprovoznění](https://devblogs.microsoft.com/dotnet/in-proc-sxs-and-migration-quick-start/) na blogu týmu CLR.  
   
  `pvReserved`  
  Vyhrazeno pro budoucí použití.  
@@ -54,7 +54,7 @@ HRESULT LoadLibraryShim (
 ## <a name="return-value"></a>Návratová hodnota  
  Tato metoda vrátí standardní kódy chyb modelu COM (Component Object Model), jak je definováno v WinError. h, kromě následujících hodnot.  
   
-|Návratový kód|Popis|  
+|Návratový kód|Description|  
 |-----------------|-----------------|  
 |S_OK|Metoda byla úspěšně dokončena.|  
 |CLR_E_SHIM_RUNTIMELOAD|Načítání `szDllName` vyžaduje načtení modulu CLR (Common Language Runtime) a potřebnou verzi modulu CLR nelze načíst.|  
@@ -66,12 +66,12 @@ HRESULT LoadLibraryShim (
 > Počínaje verzí 2,0 .NET Framework, načtení souboru Fusion. dll způsobí načtení modulu CLR. Důvodem je, že funkce v Fusion. dll jsou nyní obálky, jejichž implementace jsou poskytovány modulem runtime.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** MSCorEE. h  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Zastaralé funkce pro hostování CLR](../../../../docs/framework/unmanaged-api/hosting/deprecated-clr-hosting-functions.md)
+- [Zastaralé funkce hostování CLR](deprecated-clr-hosting-functions.md)

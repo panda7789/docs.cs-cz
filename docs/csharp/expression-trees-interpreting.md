@@ -4,12 +4,12 @@ description: Naučte se psát kód pro kontrolu struktury stromu výrazů.
 ms.date: 06/20/2016
 ms.technology: csharp-advanced-concepts
 ms.assetid: adf73dde-1e52-4df3-9929-2e0670e28e16
-ms.openlocfilehash: 5734e1be6b59bfe3eae97f29d1bd91e7e3a3623f
-ms.sourcegitcommit: c76c8b2c39ed2f0eee422b61a2ab4c05ca7771fa
+ms.openlocfilehash: ea205d42b02ea7b38c04cb70d322329cf7c1d495
+ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83761860"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84004644"
 ---
 # <a name="interpreting-expressions"></a>Interpretace výrazů
 
@@ -22,7 +22,7 @@ Tento návrh usnadňuje návštěvu všech uzlů ve stromu výrazů a poměrně 
 Pokud uzel má podřízené položky, rekurzivně navštíví podřízené objekty. V každém podřízeném uzlu opakujte proces použitý v kořenovém uzlu: určení typu, a pokud má typ podřízené, navštivte jednotlivé podřízené položky.
 
 ## <a name="examining-an-expression-with-no-children"></a>Zkoumání výrazu bez podřízených
-Pojďme začít návštěvou každého uzlu ve vysoce jednoduchém stromu výrazu.
+Pojďme začít návštěvou každého uzlu v jednoduchém stromu výrazu.
 Zde je kód, který vytvoří konstantní výraz a pak prověřuje jeho vlastnosti:
 
 ```csharp
@@ -215,7 +215,7 @@ public class ConstantVisitor : Visitor
 }
 ```
 
-Tento algoritmus je základem algoritmu, který může libovolně navštívit libovolný objekt `LambdaExpression` . Existuje spousta děr, což znamená, že kód, který jsem vytvořil, vyhledává jenom velmi malý vzorek možných sad uzlů stromu výrazů, ke kterým může dojít. Stále ale můžete zjistit, jak trochu z toho vyprodukuje. (Výchozí případ v `Visitor.CreateFromExpression` metodě vytiskne zprávu do chybové konzoly při zjištění nového typu uzlu. Tímto způsobem víte, že chcete přidat nový typ výrazu.)
+Tento algoritmus je základem algoritmu, který může libovolně navštívit libovolný objekt `LambdaExpression` . Existuje mnoho děr, což znamená, že vytvořený kód vyhledává pouze velmi malý vzorek možných sad uzlů stromu výrazů, které mohou nastat. Stále ale můžete zjistit, jak trochu z toho vyprodukuje. (Výchozí případ v `Visitor.CreateFromExpression` metodě vytiskne zprávu do chybové konzoly při zjištění nového typu uzlu. Tímto způsobem víte, že chcete přidat nový typ výrazu.)
 
 Po spuštění tohoto návštěvníka na výše uvedeném výrazu sčítání získáte následující výstup:
 
@@ -262,7 +262,7 @@ Expression<Func<int>> sum5 = () => (1 + (2 + 3)) + 4;
 V případě, že se chcete podívat na nejvíc vyslibování, můžete zobrazit rozdělení na dvě možné odpovědi. První představuje *pravé asociativní* výrazy. Druhý představuje *levé asociativní* výrazy.
 Výhodou obou obou formátů je, že formát se škáluje libovolným počtem výrazů sčítání.
 
-Pokud tento výraz spouštíte prostřednictvím návštěvníka, zobrazí se tento výstup a ověří se, jestli je výraz jednoduchého přidání *ponechán asociativní*.
+Pokud tento výraz spouštíte prostřednictvím návštěvníka, zobrazí se tento výstup, který ověří, jestli je výraz jednoduchého přidání *ponechán asociativní*.
 
 Chcete-li spustit tuto ukázku a zobrazit úplný strom výrazů, je nutné provést jednu změnu stromu zdrojového výrazu. Pokud strom výrazu obsahuje všechny konstanty, výsledný strom jednoduše obsahuje konstantní hodnotu `10` . Kompilátor provede veškeré přidání a zmenší výraz na jeho nejjednodušší formu. Stačí přidat jednu proměnnou ve výrazu stačí k zobrazení původního stromu:
 
@@ -355,7 +355,7 @@ Expression<Func<int, int>> factorial = (n) =>
 ```
 
 Tento kód představuje jednu možnou implementaci funkce matematického *faktoriál* . Způsob, jakým jsem tento kód napsal, zvýrazní dvě omezení pro vytváření stromů výrazů přiřazením výrazů lambda výrazům. První příkazy výrazy lambda nejsou povolené. To znamená, že nemůžu použít smyčky, bloky, příkazy if/else a další řídicí struktury společné v jazyce C#. Je omezeno na použití výrazů. Za druhé nelze rekurzivně volat stejný výraz.
-Můžu se už delegovat, ale nemůžu ho zavolat ve formuláři jeho stromu výrazu. V části o [sestavování stromů výrazů](expression-trees-building.md) se naučíte techniky, jak překonat tato omezení.
+Můžu se už delegovat, ale nemůžu ho zavolat ve formuláři jeho stromu výrazu. V části o [sestavování stromů výrazů](expression-trees-building.md)se naučíte techniky překonat tato omezení.
 
 V tomto výrazu se setkáte s uzly všech těchto typů:
 
@@ -517,7 +517,7 @@ I poslední příklad rozpozná podmnožinu možných typů uzlů.
 Můžete si i nadále zaniknout mnoho výrazů, které způsobí selhání.
 Úplná implementace je obsažena v .NET Standard pod názvem <xref:System.Linq.Expressions.ExpressionVisitor> a může zpracovat všechny možné typy uzlů.
 
-Nakonec se knihovna, kterou jste použili v tomto článku, vytvořila pro účely ukázky a učení. Není optimalizovaná. Napsal jsem si, že se tyto struktury využívaly velmi jasné, a zvýraznit techniky používané k návštěvě uzlů a analyzovat, co je tam. Implementace v produkčním prostředí by měla věnovat větší pozornost výkonu, než mám.
+Nakonec se knihovna, kterou jste použili v tomto článku, vytvořila pro účely ukázky a učení. Není optimalizovaná. Napsal jsem si, že se tyto struktury vymazaly jako jasné, a zvýraznit techniky používané k návštěvě uzlů a analyzovat, co je tam. Implementace v produkčním prostředí by měla věnovat větší pozornost výkonu, než mám.
 
 I s těmito omezeními byste měli být na cestě, jak píšete algoritmy, které čtou a porozumět stromům výrazů.
 

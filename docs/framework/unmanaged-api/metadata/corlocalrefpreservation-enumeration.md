@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 44757163-1228-4213-a4c4-d4de503cc75d
 topic_type:
 - apiref
-ms.openlocfilehash: 706ea37101f9f961e92d8cef2cf508c1dd0d56c1
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 42cb4e76bb77aebcee3b28035635a877513cdc04
+ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74450240"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84008986"
 ---
 # <a name="corlocalrefpreservation-enumeration"></a>CorLocalRefPreservation – výčet
 Obsahuje hodnoty příznaků pro zpracování místních odkazů.  
@@ -37,19 +37,19 @@ typedef enum CorLocalRefPreservation
   
 ## <a name="members"></a>Členové  
   
-|Člen|Popis|  
+|Člen|Description|  
 |------------|-----------------|  
 |`MDPreserveLocalRefsNone`|Neuchovávat žádné místní odkazy.|  
 |`MDPreserveLocalTypeRef`|Zachovat místní odkazy na typ.|  
 |`MDPreserveLocalMemberRef`|Zachovat odkazy na místní členy.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** CorHdr. h  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Výčty pro metadata](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)
+- [Výčty pro metadata](metadata-enumerations.md)

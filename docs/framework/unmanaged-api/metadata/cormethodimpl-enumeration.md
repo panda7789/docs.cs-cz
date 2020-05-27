@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: ffbb3caf-20da-4a4b-8983-77376e72b990
 topic_type:
 - apiref
-ms.openlocfilehash: a76a7a2d4ad68e367e38e175377aff40ce399346
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: b32e8f0b03ef6d550c384f3d932cc295a7270028
+ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74450208"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84007660"
 ---
 # <a name="cormethodimpl-enumeration"></a>CorMethodImpl – výčet
 Obsahuje hodnoty, které popisují funkce implementace metody.  
@@ -54,7 +54,7 @@ typedef enum CorMethodImpl {
   
 ## <a name="members"></a>Členové  
   
-|Člen|Popis|  
+|Člen|Description|  
 |------------|-----------------|  
 |`miCodeTypeMask`|Příznaky, které popisují typ kódu.|  
 |`miIL`|Určuje, že implementace metody je Microsoft Intermediate Language (MSIL).|  
@@ -71,15 +71,15 @@ typedef enum CorMethodImpl {
 |`miNoInlining`|Určuje, že metoda nemůže být vložená.|  
 |`miAggressiveInlining`|Určuje, že by měla být metoda vložená, pokud je to možné.|  
 |`miNoOptimization`|Určuje, že by neměla být optimalizována metoda.|  
-|`miMaxMethodImplVal`|Maximální platná hodnota pro `CorMethodImpl`.|  
+|`miMaxMethodImplVal`|Maximální platná hodnota pro `CorMethodImpl` .|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** CorHdr. h  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Výčty pro metadata](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)
+- [Výčty pro metadata](metadata-enumerations.md)

@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 40f9bd9e-16ec-447e-81b0-168c875e9866
 topic_type:
 - apiref
-ms.openlocfilehash: ffb5953c843a338b4548253457a0c3b1ca0c20f5
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 1cb84b94b37a2e9e8dd4d20d09cbca82db290c0f
+ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74444297"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84009445"
 ---
 # <a name="assemblyflags-enumeration"></a>AssemblyFlags – výčet
 Obsahuje hodnoty, které popisují funkce běhu sestavení.  
@@ -38,7 +38,7 @@ typedef enum {
   
 ## <a name="members"></a>Členové  
   
-|Člen|Popis|  
+|Člen|Description|  
 |------------|-----------------|  
 |`afImplicitExportedTypes`|Určuje, že exportované definice typu jsou implicitní v rámci souborů, které tvoří sestavení. V .NET Framework verzích 1,0 a 1,1 je tato hodnota vždycky nastavená.|  
 |`afImplicitResources`|Určuje, že definice prostředků jsou implicitní v rámci souborů, které tvoří sestavení. V .NET Framework 1,0 a 1,1 je tato hodnota vždy nastavena jako nastavená.|  
@@ -50,15 +50,15 @@ typedef enum {
  Hodnoty mezi 0x0010 a 0x0070, včetně, se používají k popisu souběžných funkcí kompatibility odkazovaného sestavení. Pokud žádná z těchto hodnot není nastavena, předpokládá se, že sestavení je souběžně kompatibilní.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** MsCorEE. h  
   
  **Knihovna:** Zahrnuto jako prostředek v knihovně MsCorEE. dll  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Výčty pro metadata](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)
-- [IMetaDataAssemblyEmit – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyemit-interface.md)
+- [Výčty pro metadata](metadata-enumerations.md)
+- [IMetaDataAssemblyEmit – rozhraní](imetadataassemblyemit-interface.md)

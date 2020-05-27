@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: 47132dda-fa92-4bd1-ae4b-24cd9a60665a
 topic_type:
 - apiref
-ms.openlocfilehash: b921118f7c43edef3c07cbb34cbbd9119d36ce51
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 220556ec130c7bff7c413405820c4fee0582b051
+ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79177554"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84008011"
 ---
 # <a name="imetadataemitsetfieldprops-method"></a>IMetaDataEmit::SetFieldProps – metoda
-Nastaví nebo aktualizuje výchozí hodnotu pro pole odkazované zadaným tokenem pole.  
+Nastaví nebo aktualizuje výchozí hodnotu pro pole, na které se odkazuje pomocí zadaného tokenu pole.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,30 +39,30 @@ HRESULT SetFieldProps (
   
 ## <a name="parameters"></a>Parametry  
  `fd`  
- [v] Token pro cílové pole.  
+ pro Token pro cílové pole  
   
  `dwFieldFlags`  
- [v] Atributy pole. Toto je bitová maska `CorFieldAttr` hodnot.  
+ pro Atributy pole Toto je Bitová maska `CorFieldAttr` hodnot.  
   
  `dwCPlusTypeFlag`  
- [v] Pro `ELEMENT_TYPE_` *\** konstantní hodnotu. To je `CorElementType` hodnota. Pokud konstanta není definována, nastavte `ELEMENT_TYPE_END`tuto hodnotu na .  
+ pro `ELEMENT_TYPE_` *\** Pro hodnotu konstanty. Toto je `CorElementType` hodnota. Pokud konstanta není definována, nastavte tuto hodnotu na `ELEMENT_TYPE_END` .  
   
  `pValue`  
- [v] Konstantní hodnota pole.  
+ pro Hodnota konstanty pro pole  
   
  `cchValue`  
- [v] Velikost znaku Unicode . `pValue`  
+ pro Velikost (v Unicode znacích) `pValue` .  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Záhlaví:** Kor.h.  
+ **Hlavička:** Cor. h  
   
- **Knihovna:** Používá se jako prostředek v souboru MSCorEE.dll  
+ **Knihovna:** Používá se jako prostředek v knihovně MSCorEE. dll.  
   
- **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také
 
-- [IMetaDataEmit – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)
-- [IMetaDataEmit2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-interface.md)
+- [IMetaDataEmit – rozhraní](imetadataemit-interface.md)
+- [IMetaDataEmit2 – rozhraní](imetadataemit2-interface.md)

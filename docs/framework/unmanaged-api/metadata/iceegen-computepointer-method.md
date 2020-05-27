@@ -15,17 +15,17 @@ helpviewer_keywords:
 ms.assetid: b6b95c04-0f2c-4fcc-a8bc-3b1dcbdba731
 topic_type:
 - apiref
-ms.openlocfilehash: 9587bbe8f087fd9a51bba67492af1d5acb53ae4a
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 206dcd3a0a82da9b6211c8c2045e4e9d3d991973
+ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79176094"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84008869"
 ---
 # <a name="iceegencomputepointer-method"></a>ICeeGen::ComputePointer – metoda
-Určuje vyrovnávací paměť pro zadaný kód části.  
+Určuje vyrovnávací paměť pro zadaný oddíl kódu.  
   
- Tato metoda je zastaralá a neměla by být použita.  
+ Tato metoda je zastaralá a neměla by se používat.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,23 +39,23 @@ HRESULT ComputePointer (
   
 ## <a name="parameters"></a>Parametry  
  `section`  
- [v] Část kódu, pro kterou chcete vrátit vyrovnávací paměť.  
+ pro Oddíl kódu, pro který se má vrátit vyrovnávací paměť  
   
  `RVA`  
- [v] Relativní virtuální adresa metody, pro kterou chcete získat ukazatel.  
+ pro Relativní virtuální adresa metody, pro kterou se má získat ukazatel  
   
  `lpBuffer`  
- [out] Ukazatel na vrácenou vyrovnávací paměť.  
+ mimo Ukazatel na vrácenou vyrovnávací paměť.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Záhlaví:** Kor.h.  
+ **Hlavička:** Cor. h  
   
- **Knihovna:** Používá se jako prostředek v souboru MsCorEE.dll  
+ **Knihovna:** Používá se jako prostředek v knihovně MsCorEE. dll.  
   
- **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také
 
-- [ICeeGen – rozhraní](../../../../docs/framework/unmanaged-api/metadata/iceegen-interface.md)
+- [ICeeGen – rozhraní](iceegen-interface.md)

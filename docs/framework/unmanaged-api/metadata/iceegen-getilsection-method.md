@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 6f2db2ca-203f-4ac3-9530-208642ca385e
 topic_type:
 - apiref
-ms.openlocfilehash: 7ef944fd06d07dc8c4e49061a5e72d8acc4d0465
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 05f39befa8966046cd71db82da37c44f20992cff
+ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74436343"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84008804"
 ---
 # <a name="iceegengetilsection-method"></a>ICeeGen::GetIlSection – metoda
 Získá část základu kódu zprostředkujícího jazyka, na kterou odkazuje zadaný popisovač.  
@@ -40,14 +40,14 @@ HRESULT GetIlSection (
  pro Popisovač k oddílu, který má být získán.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** Cor. h  
   
  **Knihovna:** Používá se jako prostředek v knihovně MsCorEE. dll.  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [ICeeGen – rozhraní](../../../../docs/framework/unmanaged-api/metadata/iceegen-interface.md)
+- [ICeeGen – rozhraní](iceegen-interface.md)

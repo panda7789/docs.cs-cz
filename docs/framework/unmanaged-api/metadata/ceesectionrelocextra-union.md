@@ -14,15 +14,15 @@ helpviewer_keywords:
 ms.assetid: d9568cf6-7f98-4cd6-ab36-0a2bd509afcc
 topic_type:
 - apiref
-ms.openlocfilehash: 7becace679b62a635d8231c3d42213f247f44190
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: d11fefe220fdb00457cc48a6cd166673350be049
+ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74444174"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84006026"
 ---
 # <a name="ceesectionrelocextra-union"></a>CeeSectionRelocExtra – sjednocení
-Představuje posun adresy, který je používán rozhraním [ICeeGen](../../../../docs/framework/unmanaged-api/metadata/iceegen-interface.md) k přemístění oddílu.  
+Představuje posun adresy, který je používán rozhraním [ICeeGen](iceegen-interface.md) k přemístění oddílu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -34,19 +34,19 @@ typedef union  {
   
 ## <a name="members"></a>Členové  
   
-|Člen|Popis|  
+|Člen|Description|  
 |------------|-----------------|  
 |`highAdj`|Horní úprava adresy pro oddíl.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** Cor. h  
   
  **Knihovna:** Zahrnuto jako prostředek v knihovně MsCorEE. dll  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Sjednocení pro metadata](../../../../docs/framework/unmanaged-api/metadata/metadata-unions.md)
+- [Sjednocení pro metadata](metadata-unions.md)

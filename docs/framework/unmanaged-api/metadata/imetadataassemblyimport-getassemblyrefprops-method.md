@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: 5c6b7fb4-cbca-4479-b650-ab9a99732ea0
 topic_type:
 - apiref
-ms.openlocfilehash: 9aef471c1155070af0e9bcca14975a65bc5dc763
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 2858e924ab6effe192955ce53dad9d333d2d244d
+ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79175964"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84009064"
 ---
 # <a name="imetadataassemblyimportgetassemblyrefprops-method"></a>IMetaDataAssemblyImport::GetAssemblyRefProps – metoda
-Získá sadu vlastností pro odkaz na sestavení s zadaným podpisem metadat.  
+Získá sadu vlastností pro odkaz na sestavení se zadaným podpisem metadat.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -44,47 +44,47 @@ HRESULT GetAssemblyRefProps (
   
 ## <a name="parameters"></a>Parametry  
  `mdar`  
- [v] Token `mdAssemblyRef` metadat, který představuje odkaz na sestavení, pro které chcete získat vlastnosti.  
+ pro `mdAssemblyRef`Token metadat, který představuje odkaz na sestavení, pro který se mají získat vlastnosti.  
   
  `ppbPublicKeyOrToken`  
- [out] Ukazatel na veřejný klíč nebo token metadat.  
+ mimo Ukazatel na veřejný klíč nebo token metadat.  
   
  `pcbPublicKeyOrToken`  
- [out] Počet bajtů ve vráceném veřejném klíči nebo tokenu.  
+ mimo Počet bajtů v vráceném veřejném klíči nebo tokenu.  
   
  `szName`  
- [out] Jednoduchý název sestavení.  
+ mimo Jednoduchý název sestavení.  
   
  `cchName`  
- [v] Velikost , v širokých `szName`znaků, .  
+ pro Velikost ve velkých znakech `szName` .  
   
  `pchName`  
- [out] Ukazatel na počet širokých znaků skutečně `szName`vrácených v .  
+ mimo Ukazatel na počet velkých znaků, které se ve skutečnosti vrátily `szName` .  
   
  `pMetaData`  
- [out] Ukazatel na strukturu ASSEMBLYMETADATA, která obsahuje metadata sestavení.  
+ mimo Ukazatel na strukturu AssemblyMetadata –, která obsahuje metadata sestavení.  
   
  `ppbHashValue`  
- [out] Ukazatel na hodnotu hash. Toto je algoritmus hash pomocí algoritmu `PublicKey` SHA-1 vlastnosti naváděného sestavení, pokud není nastaven příznak arfFullOriginator výčtu [AssemblyRefFlags.](../../../../docs/framework/unmanaged-api/metadata/assemblyrefflags-enumeration.md)  
+ mimo Ukazatel na hodnotu hash. Toto je hodnota hash pomocí algoritmu SHA-1 `PublicKey` Vlastnosti odkazovaného sestavení, pokud není nastaven příznak arfFullOriginator výčtu [AssemblyRefFlags –](assemblyrefflags-enumeration.md) .  
   
  `pcbHashValue`  
- [out] Počet širokých znaků ve vrácené hodnotě hash.  
+ mimo Počet velkých znaků v vrácené hodnotě hash.  
   
  `pdwAssemblyRefFlags`  
- [out] Ukazatel na příznaky, které popisují metadata použitá v sestavení. Hodnota příznaků je kombinací jedné nebo více hodnot [CorAssemblyFlags.](../../../../docs/framework/unmanaged-api/metadata/corassemblyflags-enumeration.md)  
+ mimo Ukazatel na příznaky, které popisují metadata použitá pro sestavení. Hodnota příznaků je kombinací jedné nebo více hodnot [CorAssemblyFlags –](corassemblyflags-enumeration.md) .  
   
 ## <a name="return-value"></a>Návratová hodnota  
- Tato metoda vrátí S_OK pokud je úspěšná; v opačném případě vrátí jeden z kódů chyb definovaných v souboru hlavičky Winerror.h.  
+ Tato metoda vrátí S_OK, pokud je úspěšná; v opačném případě vrátí jeden z kódů chyb definovaných v souboru hlaviček Winerror. h.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Záhlaví:** Kor.h.  
+ **Hlavička:** Cor. h  
   
- **Knihovna:** Používá se jako prostředek v souboru MsCorEE.dll  
+ **Knihovna:** Používá se jako prostředek v knihovně MsCorEE. dll.  
   
- **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také
 
-- [IMetaDataAssemblyImport – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyimport-interface.md)
+- [IMetaDataAssemblyImport – rozhraní](imetadataassemblyimport-interface.md)

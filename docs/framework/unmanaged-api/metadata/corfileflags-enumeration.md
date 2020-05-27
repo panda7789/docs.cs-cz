@@ -14,15 +14,15 @@ helpviewer_keywords:
 ms.assetid: d16703fd-518f-412e-92cb-74433d11032e
 topic_type:
 - apiref
-ms.openlocfilehash: c315e2ae2753b59b4e277764d27c3fb3388b515c
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: c8c2757e99b80204ad52e69a596d62c55c369965
+ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74445414"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84007413"
 ---
 # <a name="corfileflags-enumeration"></a>CorFileFlags – výčet
-Obsahuje hodnoty, které popisují typ souboru definovaného voláním [IMetaDataAssemblyEmit::D efinefile](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyemit-definefile-method.md).  
+Obsahuje hodnoty, které popisují typ souboru definovaného voláním [IMetaDataAssemblyEmit::D efinefile](imetadataassemblyemit-definefile-method.md).  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,18 +37,18 @@ typedef enum CorFileFlags {
   
 ## <a name="members"></a>Členové  
   
-|Člen|Popis|  
+|Člen|Description|  
 |------------|-----------------|  
 |`ffContainsMetaData`|Označuje, že soubor není soubor prostředků.|  
 |`ffContainsNoMetaData`|Označuje, že soubor, pravděpodobně soubor prostředků, neobsahuje metadata.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** CorHdr. h  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Výčty pro metadata](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)
+- [Výčty pro metadata](metadata-enumerations.md)

@@ -7,4 +7,4 @@ ms.lasthandoff: 05/15/2019
 ms.locfileid: "65629970"
 ---
 > [!NOTE]
-> Toto rozhraní API byla původně určena pro interní použití v modulu runtime. I když se teď podporuje pro použití 3. stran, doporučujeme pracovat s [ `ICorDebug` ](../docs/framework/unmanaged-api/debugging/debugging-interfaces.md) a [ `ICorProfiler` ](../docs/framework/unmanaged-api/profiling/profiling-interfaces.md) rozhraní API, pokud je to možné.
+> Toto rozhraní API je původně navržené pro interní použití v modulu runtime. I když se teď podporuje pro použití třetí strany, doporučujeme pracovat s [`ICorDebug`](../docs/framework/unmanaged-api/debugging/debugging-interfaces.md) [`ICorProfiler`](../docs/framework/unmanaged-api/profiling/profiling-interfaces.md) rozhraními API, pokud je to možné.

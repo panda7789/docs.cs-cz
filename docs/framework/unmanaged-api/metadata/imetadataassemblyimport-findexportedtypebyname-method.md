@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: 46264b2c-574d-4dde-aafc-77187a104fdd
 topic_type:
 - apiref
-ms.openlocfilehash: edfe5de9c9d7ef9607a2eea5146194bbd4393a92
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: ac6de9a16fad6ba9d14f3960ddd28c42c111f254
+ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79175990"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84009389"
 ---
 # <a name="imetadataassemblyimportfindexportedtypebyname-method"></a>IMetaDataAssemblyImport::FindExportedTypeByName – metoda
-Získá ukazatel exportovaného typu, vzhledem k jeho názvu a ohraničující ho.  
+Získá ukazatel na exportovaný typ, který je dán názvem a nadřazeným typem.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,27 +37,27 @@ HRESULT FindExportedTypeByName (
   
 ## <a name="parameters"></a>Parametry  
  `szName`  
- [v] Název exportovaného typu.  
+ pro Název exportovaného typu.  
   
  `mdtExportedType`  
- [v] Token metadat pro ohraničující třídu exportovaného typu. Tato hodnota `mdExportedTypeNil` je, pokud požadovaný exportovaný typ není vnořený typ.  
+ pro Token metadat pro ohraničující třídu exportovaného typu Tato hodnota je `mdExportedTypeNil` , pokud požadovaný exportovaný typ není vnořený typ.  
   
  `ptkExportedType`  
- [out] Ukazatel na `mdExportedType` token, který představuje exportovaný typ.  
+ mimo Ukazatel na `mdExportedType` token, který představuje exportovaný typ.  
   
 ## <a name="remarks"></a>Poznámky  
- Metoda `FindExportedTypeByName` používá standardní pravidla používaná za běhu společného jazyka pro řešení odkazů.  
+ `FindExportedTypeByName`Metoda používá ke zjišťování odkazů standardní pravidla zaměstnaná modulem CLR (Common Language Runtime).  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Záhlaví:** Kor.h.  
+ **Hlavička:** Cor. h  
   
- **Knihovna:** Používá se jako prostředek v souboru MsCorEE.dll  
+ **Knihovna:** Používá se jako prostředek v knihovně MsCorEE. dll.  
   
- **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také
 
-- [IMetaDataAssemblyImport – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyimport-interface.md)
-- [Jak běhové prostředí vyhledává sestavení](../../../../docs/framework/deployment/how-the-runtime-locates-assemblies.md)
+- [IMetaDataAssemblyImport – rozhraní](imetadataassemblyimport-interface.md)
+- [Jak běhové prostředí vyhledává sestavení](../../deployment/how-the-runtime-locates-assemblies.md)

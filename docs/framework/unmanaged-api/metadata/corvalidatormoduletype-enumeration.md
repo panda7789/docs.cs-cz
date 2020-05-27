@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 748f1ab2-fbcb-4f55-89ec-8d23d81ebc80
 topic_type:
 - apiref
-ms.openlocfilehash: a8dc09ee9f0f0fd79060bb86c599ab40a285153b
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 038e2ec20e5fd01edf9835080e0f7a15ec862fd9
+ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74448757"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84008934"
 ---
 # <a name="corvalidatormoduletype-enumeration"></a>CorValidatorModuleType – výčet
 Určuje typ modulu.  
@@ -39,27 +39,27 @@ typedef enum
 } CorValidatorModuleType;  
 ```  
   
-## <a name="members"></a>Members  
+## <a name="members"></a>Členové  
   
-|Člen|Popis|  
+|Člen|Description|  
 |------------|-----------------|  
 |`ValidatorModuleTypeInvalid`|Modul je neplatného typu.|  
-|`ValidatorModuleTypeMin`|Minimální hodnota výčtu `CorValidatorModuleType`.|  
+|`ValidatorModuleTypeMin`|Minimální hodnota `CorValidatorModuleType` výčtu.|  
 |`ValidatorModuleTypePE`|Modul je přenosný spustitelný soubor (PE).|  
 |`ValidatorModuleTypeObj`|Modul je soubor. obj.|  
 |`ValidatorModuleTypeEnc`|Modul je relace ladicího programu pro úpravy a pokračování.|  
 |`ValidatorModuleTypeIncr`|Modul je ten, který se postupně sestavil.|  
-|`ValidatorModuleTypeMax`|Maximální hodnota výčtu `CorValidatorModuleType`.|  
+|`ValidatorModuleTypeMax`|Maximální hodnota `CorValidatorModuleType` výčtu.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** Cor. h  
   
  **Knihovna:** Zahrnuto jako prostředek v knihovně MsCorEE. dll  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Výčty pro metadata](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)
+- [Výčty pro metadata](metadata-enumerations.md)

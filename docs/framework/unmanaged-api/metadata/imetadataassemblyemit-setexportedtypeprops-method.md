@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 1c090153-fd5f-46c7-9cff-39a78d992c8f
 topic_type:
 - apiref
-ms.openlocfilehash: dd1d6f1da6e49837eebd9356500f403c199b011b
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: fa4f1f57cb8fe1ca81bbad6438a88bb43c48e7bf
+ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79177855"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84008076"
 ---
 # <a name="imetadataassemblyemitsetexportedtypeprops-method"></a>IMetaDataAssemblyEmit::SetExportedTypeProps – metoda
 Upraví zadanou `ExportedType` strukturu metadat.  
@@ -38,29 +38,29 @@ HRESULT SetExportedTypeProps (
   
 ## <a name="parameters"></a>Parametry  
  `ct`  
- [v] Token metadat, který určuje `ExportedType` strukturu metadat, která má být změněna.  
+ pro Token metadat, který určuje `ExportedType` strukturu metadat, která má být upravena.  
   
  `tkImplementation`  
- [v] Token typu `File`, `AssemblyRef`, `ExportedType`nebo , který určuje, jak je tento typ implementován.  
+ pro Token, typu `File` , `AssemblyRef` nebo `ExportedType` , který určuje, jak je tento typ implementován.  
   
  `tkTypeDef`  
- [v] Token `TypeDef` odkazovaný v souboru kódu.  
+ pro Token, na `TypeDef` který se odkazuje v souboru kódu.  
   
  `dwExportedTypeFlags`  
- [v] Bitová kombinace hodnot, které určují atributy typu.  
+ pro Bitová kombinace hodnot, které určují atributy typu.  
   
 ## <a name="remarks"></a>Poznámky  
- Chcete-li `ExportedType` vytvořit strukturu metadat, použijte metodu [IMetaDataAssemblyEmit::DefineExportedType.](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyemit-defineexportedtype-method.md)  
+ Chcete-li vytvořit `ExportedType` strukturu metadat, použijte metodu [IMetaDataAssemblyEmit::D efineexportedtype](imetadataassemblyemit-defineexportedtype-method.md) .  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Záhlaví:** Kor.h.  
+ **Hlavička:** Cor. h  
   
- **Knihovna:** Používá se jako prostředek v souboru MsCorEE.dll  
+ **Knihovna:** Používá se jako prostředek v knihovně MsCorEE. dll.  
   
- **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také
 
-- [IMetaDataAssemblyEmit – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyemit-interface.md)
+- [IMetaDataAssemblyEmit – rozhraní](imetadataassemblyemit-interface.md)

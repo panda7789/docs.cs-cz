@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: c065aadf-c1ca-4981-bde6-597042cb29c4
 topic_type:
 - apiref
-ms.openlocfilehash: cabd6a47e5d6fc2a4cea87b16d349d9c778b3507
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 61d81c94e3a9c092b5d45791962635c761e8da8a
+ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79176055"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84008141"
 ---
 # <a name="imetadataassemblyemitdefinefile-method"></a>IMetaDataAssemblyEmit::DefineFile – metoda
-Vytvoří `File` strukturu metadat obsahující metadata pro sestavení odkazované tímto sestavením a vrátí přidružený token metadat.  
+Vytvoří `File` strukturu metadat obsahující metadata pro sestavení, na které odkazuje toto sestavení, a vrátí přidružený token metadat.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,32 +39,32 @@ HRESULT DefineFile (
   
 ## <a name="parameters"></a>Parametry  
  `szName`  
- [v] Název souboru, který má být spotřebován.  
+ pro Název souboru, který se má spotřebovat  
   
  `pbHashValue`  
- [v] Ukazatel na data hash přidružená k sestavení.  
+ pro Ukazatel na data algoritmu hash přidružená k sestavení.  
   
  `cbHashValue`  
- [v] Velikost v bajtů `pbHashValue`.  
+ pro Velikost v bajtech `pbHashValue` .  
   
  `dwFileFlags`  
- [v] Bitová kombinace `FileFlags` hodnot, které určují nastavení vlastností.  
+ pro Bitová kombinace `FileFlags` hodnot, které určují nastavení vlastností.  
   
  `pmdf`  
- [out] Ukazatel na vrácený `File` token.  
+ mimo Ukazatel na vrácený `File` token.  
   
 ## <a name="remarks"></a>Poznámky  
- Pro `File` každý soubor, který byl součástí tohoto sestavení v době sestavení tohoto sestavení, musí být definována jedna struktura metadat, s výjimkou souboru, který obsahuje metadata.  
+ `File`Pro každý soubor, který byl součástí tohoto sestavení v době, kdy bylo sestavení sestaveno, musí být definována jedna struktura metadat s výjimkou souboru, který obsahuje metadata.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforma:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platforma:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Záhlaví:** Kor.h.  
+ **Hlavička:** Cor. h  
   
- **Knihovna:** Používá se jako prostředek v souboru MsCorEE.dll  
+ **Knihovna:** Používá se jako prostředek v knihovně MsCorEE. dll.  
   
- **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také
 
-- [IMetaDataAssemblyEmit – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyemit-interface.md)
+- [IMetaDataAssemblyEmit – rozhraní](imetadataassemblyemit-interface.md)

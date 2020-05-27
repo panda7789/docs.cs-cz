@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: cca4a9a1-731b-4411-9e04-00cffe7a56d8
 topic_type:
 - apiref
-ms.openlocfilehash: 0dafa741634cc88f8a7d86247e4fa8681d7c4305
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 39d8713b2b78047e615b6c2fdd6e95e9aacbd2ae
+ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74436373"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84008843"
 ---
 # <a name="iceegengenerateceefile-method"></a>ICeeGen::GenerateCeeFile – metoda
-Vygeneruje soubor základní znakové sady, který obsahuje základ kódu, který je aktuálně načten do tohoto rozhraní [ICeeGen](../../../../docs/framework/unmanaged-api/metadata/iceegen-interface.md) .  
+Vygeneruje soubor základní znakové sady, který obsahuje základ kódu, který je aktuálně načten do tohoto rozhraní [ICeeGen](iceegen-interface.md) .  
   
  Tato metoda je zastaralá a neměla by se používat.  
   
@@ -34,17 +34,17 @@ HRESULT GenerateCeeFile ();
 ```  
   
 ## <a name="parameters"></a>Parametry  
- `GenerateCeeFile` nepřebírá žádné parametry.  
+ `GenerateCeeFile`nepřijímá žádné parametry.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** Cor. h  
   
  **Knihovna:** Používá se jako prostředek v knihovně MsCorEE. dll.  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [ICeeGen – rozhraní](../../../../docs/framework/unmanaged-api/metadata/iceegen-interface.md)
+- [ICeeGen – rozhraní](iceegen-interface.md)

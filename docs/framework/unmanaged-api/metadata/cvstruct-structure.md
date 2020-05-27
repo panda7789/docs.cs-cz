@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: e9e4e497-d5fb-464b-991c-3bdd824664fd
 topic_type:
 - apiref
-ms.openlocfilehash: 19ee3097dfe80ba9dcbdaf316db0fd165b50abc6
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 84791eba7c95d3278bd4650bd7d660e98fcb79d8
+ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74436423"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84008913"
 ---
 # <a name="cvstruct-structure"></a>CVStruct – struktura
 Obsahuje informace, které se používají při instalaci modulu nebo složené image.  
@@ -37,22 +37,22 @@ typedef struct {
   
 ## <a name="members"></a>Členové  
   
-|Člen|Popis|  
+|Člen|Description|  
 |------------|-----------------|  
-|Závažná|Číslo sestavení hlavní verze.|  
-|Méně závažná|Číslo sestavení dílčí verze|  
+|Hlavní|Číslo sestavení hlavní verze.|  
+|Vedlejší|Číslo sestavení dílčí verze|  
 |Sub|Číslo dílčího sestavení|  
 |Sestavení|Číslo buildu.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** Cor. h  
   
  **Knihovna:** Používá se jako prostředek v knihovně MsCorEE. dll.  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Struktury pro metadata](../../../../docs/framework/unmanaged-api/metadata/metadata-structures.md)
+- [Struktury pro metadata](metadata-structures.md)

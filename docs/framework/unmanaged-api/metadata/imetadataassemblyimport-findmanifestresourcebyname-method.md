@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 7b72fa11-3866-402b-bdea-2b966b77cfe0
 topic_type:
 - apiref
-ms.openlocfilehash: ae9097725aecd21e910e49a78d81951df39e9b2d
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: ef6f7a1a6e86b45acce91792385bc3761dfb4c39
+ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79177768"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84009077"
 ---
 # <a name="imetadataassemblyimportfindmanifestresourcebyname-method"></a>IMetaDataAssemblyImport::FindManifestResourceByName – metoda
 Získá ukazatel na prostředek manifestu se zadaným názvem.  
@@ -36,24 +36,24 @@ HRESULT FindManifestResourceByName (
   
 ## <a name="parameters"></a>Parametry  
  `szName`  
- [v] Název prostředku.  
+ pro Název prostředku.  
   
  `ptkManifestResource`  
- [out] Pole používané k `mdManifestResource` ukládání tokenů metadat, z nichž každý představuje prostředek manifestu.  
+ mimo Pole použité k uložení `mdManifestResource` tokenů metadat, z nichž každý představuje prostředek manifestu.  
   
 ## <a name="remarks"></a>Poznámky  
- Metoda `FindManifestResourceByName` používá standardní pravidla používaná za běhu společného jazyka pro řešení odkazů.  
+ `FindManifestResourceByName`Metoda používá ke zjišťování odkazů standardní pravidla zaměstnaná modulem CLR (Common Language Runtime).  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforma:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platforma:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Záhlaví:** Kor.h.  
+ **Hlavička:** Cor. h  
   
- **Knihovna:** Používá se jako prostředek v souboru MsCorEE.dll  
+ **Knihovna:** Používá se jako prostředek v knihovně MsCorEE. dll.  
   
- **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také
 
-- [IMetaDataAssemblyImport – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyimport-interface.md)
-- [Jak běhové prostředí vyhledává sestavení](../../../../docs/framework/deployment/how-the-runtime-locates-assemblies.md)
+- [IMetaDataAssemblyImport – rozhraní](imetadataassemblyimport-interface.md)
+- [Jak běhové prostředí vyhledává sestavení](../../deployment/how-the-runtime-locates-assemblies.md)

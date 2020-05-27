@@ -15,17 +15,17 @@ helpviewer_keywords:
 ms.assetid: 845ab77e-9639-47f5-99fb-f3b619e3e779
 topic_type:
 - apiref
-ms.openlocfilehash: 38b9ea2ffab439f55f0a6d34d7f42c7669629168
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 8dc7f439cac56c2d55916ff8631ec3095c67680d
+ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79177914"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84008882"
 ---
 # <a name="iceegenallocatemethodbuffer-method"></a>ICeeGen::AllocateMethodBuffer – metoda
 Vytvoří vyrovnávací paměť zadané velikosti pro metodu a získá relativní virtuální adresu metody.  
   
- Tato metoda je zastaralá a neměla by být použita.  
+ Tato metoda je zastaralá a neměla by se používat.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,23 +39,23 @@ HRESULT AllocateMethodBuffer (
   
 ## <a name="parameters"></a>Parametry  
  `cchBuffer`  
- [v] Délka vyrovnávací paměti vytvořit.  
+ pro Délka vyrovnávací paměti, která má být vytvořena.  
   
  `lpBuffer`  
- [out] Vrácená vyrovnávací paměť.  
+ mimo Vrácená vyrovnávací paměť.  
   
  `RVA`  
- [out] Relativní virtuální adresa metody.  
+ mimo Relativní virtuální adresa metody  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Záhlaví:** Kor.h.  
+ **Hlavička:** Cor. h  
   
- **Knihovna:** Používá se jako prostředek v souboru MsCorEE.dll  
+ **Knihovna:** Používá se jako prostředek v knihovně MsCorEE. dll.  
   
- **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také
 
-- [ICeeGen – rozhraní](../../../../docs/framework/unmanaged-api/metadata/iceegen-interface.md)
+- [ICeeGen – rozhraní](iceegen-interface.md)

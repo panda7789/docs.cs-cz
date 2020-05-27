@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 47915d33-b7bf-409e-b484-4ee1df15de22
 topic_type:
 - apiref
-ms.openlocfilehash: 2662af41fbd2cdc3ce8a6df1e036dfc5b22ff6a3
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 7ef6dbc46806febc6fba89b39a8b894377225c23
+ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79175548"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84003952"
 ---
 # <a name="imetadataemittranslatesigwithscope-method"></a>IMetaDataEmit::TranslateSigWithScope – metoda
 Importuje sestavení do aktuálního oboru a získá nový podpis metadat pro sloučený obor.  
@@ -45,51 +45,51 @@ HRESULT TranslateSigWithScope (
   
 ## <a name="parameters"></a>Parametry  
  `pAssemImport`  
- [v] Rozhraní pro sestavení importu (kde je definován podpis).  
+ pro Rozhraní pro import sestavení (kde je definován podpis).  
   
  `pbHashValue`  
- [v] Objekt blob hash pro sestavení.  
+ pro Objekt BLOB algoritmu hash pro sestavení.  
   
  `cbHashValue`  
- [v] Počet bajtů v `pbHashValue`.  
+ pro Počet bajtů v `pbHashValue` .  
   
  `import`  
- [v] Rozhraní pro rozsah metadat importu.  
+ pro Rozhraní pro obor metadat pro import.  
   
  `pbSigBlob`  
- [v] Podpis, který má být importován.  
+ pro Podpis, který se má importovat  
   
  `cbSigBlob`  
- [v] Velikost v bajtů `pbSigBlob`.  
+ pro Velikost v bajtech `pbSigBlob` .  
   
  `pAssemEmit`  
- [v] Rozhraní pro sestavení exportu.  
+ pro Rozhraní pro export sestavení.  
   
  `emit`  
- [v] Rozhraní pro rozsah exportu metadat.  
+ pro Rozhraní pro obor metadat pro export.  
   
  `pvTranslatedSig`  
- [out] Vyrovnávací paměť pro uložení objektu blob přeloženého podpisu.  
+ mimo Vyrovnávací paměť pro uchování přeloženého objektu BLOB signatury.  
   
  `cbTranslatedSigMax`  
- [v] Kapacita v bajtů . `pvTranslatedSig`  
+ pro Kapacita (v bajtech) `pvTranslatedSig` .  
   
  `pcbTranslatedSig`  
- [out] Počet skutečných bajtů v přeloženém podpisu.  
+ mimo Počet skutečných bajtů v přeloženém podpisu.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Záhlaví:** Kor.h.  
+ **Hlavička:** Cor. h  
   
- **Knihovna:** Používá se jako prostředek v souboru MSCorEE.dll  
+ **Knihovna:** Používá se jako prostředek v knihovně MSCorEE. dll.  
   
- **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také
 
-- [IMetaDataAssemblyEmit – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyemit-interface.md)
-- [IMetaDataAssemblyImport – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyimport-interface.md)
-- [IMetaDataEmit – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)
-- [IMetaDataEmit2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-interface.md)
-- [IMetaDataImport – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
+- [IMetaDataAssemblyEmit – rozhraní](imetadataassemblyemit-interface.md)
+- [IMetaDataAssemblyImport – rozhraní](imetadataassemblyimport-interface.md)
+- [IMetaDataEmit – rozhraní](imetadataemit-interface.md)
+- [IMetaDataEmit2 – rozhraní](imetadataemit2-interface.md)
+- [IMetaDataImport – rozhraní](imetadataimport-interface.md)

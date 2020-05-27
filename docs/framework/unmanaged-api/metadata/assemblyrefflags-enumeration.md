@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: decd4f46-f3b2-466f-9501-e74f2b86b846
 topic_type:
 - apiref
-ms.openlocfilehash: 23d293a87112c62cb2127b435faeca258a7de226
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 1307f555c9d8b6d28febcf25db89ae856c143d71
+ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74444220"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84009402"
 ---
 # <a name="assemblyrefflags-enumeration"></a>AssemblyRefFlags – výčet
 Obsahuje hodnoty, které popisují funkce odkazu na sestavení.  
@@ -34,19 +34,19 @@ typedef enum {
   
 ## <a name="members"></a>Členové  
   
-|Člen|Popis|  
+|Člen|Description|  
 |------------|-----------------|  
 |`arfFullOriginator`|Určuje, že odkaz na sestavení obsahuje úplné a nehashované informace o vydavateli sestavení.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** Cor. h  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Výčty pro metadata](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)
-- [IMetaDataAssemblyEmit – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyemit-interface.md)
-- [DefineAssemblyRef – metoda](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyemit-defineassemblyref-method.md)
+- [Výčty pro metadata](metadata-enumerations.md)
+- [IMetaDataAssemblyEmit – rozhraní](imetadataassemblyemit-interface.md)
+- [DefineAssemblyRef – metoda](imetadataassemblyemit-defineassemblyref-method.md)

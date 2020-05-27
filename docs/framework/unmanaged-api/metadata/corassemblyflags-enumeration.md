@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: bb8db3b6-d81d-49fc-b74c-dbc908a9eab9
 topic_type:
 - apiref
-ms.openlocfilehash: fda890cee5f513ea8cf7e82e710f5451a860c49f
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: b1a83f07f03ddb17d5c306453cf838101a77ed65
+ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74443906"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84007933"
 ---
 # <a name="corassemblyflags-enumeration"></a>CorAssemblyFlags – výčet
 Obsahuje hodnoty, které popisují metadata použitá pro kompilaci sestavení.  
@@ -55,7 +55,7 @@ typedef enum CorAssemblyFlags {
   
 ## <a name="members"></a>Členové  
   
-|Člen|Popis|  
+|Člen|Description|  
 |------------|-----------------|  
 |`afPublicKey`|Označuje, že odkaz na sestavení obsahuje úplný, nehashový veřejný klíč.|  
 |`afPA_None`|Označuje, že není určena architektura procesoru.|  
@@ -64,25 +64,25 @@ typedef enum CorAssemblyFlags {
 |`afPA_IA64`|Indikuje, že architektura procesoru je Itanium (PE32 +).|  
 |`afPA_AMD64`|Označuje, že architektura procesoru je AMD x64 (PE32 +).|  
 |`afPA_ARM`|Indikuje, že architektura procesoru je ARM (PE32).|  
-|`afPA_NoPlatform`|Indikuje, že sestavení je referenční sestavení; To znamená, že se vztahuje na všechny architektury, ale nelze je spustit v žádné architektuře. Proto příznak je stejný jako `afPA_Mask`.|  
-|`afPA_Specified`|Indikuje, že by se měly rozšířit příznaky architektury procesoru na záznam `AssemblyRef`.|  
+|`afPA_NoPlatform`|Indikuje, že sestavení je referenční sestavení; To znamená, že se vztahuje na všechny architektury, ale nelze je spustit v žádné architektuře. Proto příznak je stejný jako `afPA_Mask` .|  
+|`afPA_Specified`|Indikuje, že by se měly rozšířit příznaky architektury procesoru na `AssemblyRef` záznam.|  
 |`afPA_Mask`|Maska, která popisuje architekturu procesoru.|  
 |`afPA_FullMask`|Určuje, že je zahrnutý popis architektury procesoru.|  
 |`afPA_Shift`|Označuje počet posunutí v příznacích architektury procesoru na a z indexu.|  
-|`afEnableJITcompileTracking`|Určuje odpovídající hodnotu z <xref:System.Diagnostics.DebuggableAttribute.DebuggingModes> <xref:System.Diagnostics.DebuggableAttribute>.|  
-|`afDisableJITcompileOptimizer`|Určuje odpovídající hodnotu z <xref:System.Diagnostics.DebuggableAttribute.DebuggingModes> <xref:System.Diagnostics.DebuggableAttribute>.|  
+|`afEnableJITcompileTracking`|Označuje odpovídající hodnotu z <xref:System.Diagnostics.DebuggableAttribute.DebuggingModes> <xref:System.Diagnostics.DebuggableAttribute> .|  
+|`afDisableJITcompileOptimizer`|Označuje odpovídající hodnotu z <xref:System.Diagnostics.DebuggableAttribute.DebuggingModes> <xref:System.Diagnostics.DebuggableAttribute> .|  
 |`afRetargetable`|Označuje, že sestavení může být v době běhu znovu cíleno na sestavení z jiného vydavatele.|  
 |`afContentType_Mask`|Maska, která popisuje typ obsahu.|  
 |`afContentType_Default`|Označuje výchozí typ obsahu.|  
 |`afContentType_WindowsRuntime`|Určuje typ obsahu prostředí Windows Runtime.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** CorHdr. h  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Výčty pro metadata](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)
+- [Výčty pro metadata](metadata-enumerations.md)

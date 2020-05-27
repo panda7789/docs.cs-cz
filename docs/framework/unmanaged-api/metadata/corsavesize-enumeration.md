@@ -14,15 +14,15 @@ helpviewer_keywords:
 ms.assetid: eb95ce39-5688-43c1-a34d-578794b32faa
 topic_type:
 - apiref
-ms.openlocfilehash: 13a4364244f7d0076d77d14c3e3ef161e3872bcb
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 22a7f87a5803dc185052a5ce7ed427eff9f8fb18
+ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79176133"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84009181"
 ---
 # <a name="corsavesize-enumeration"></a>CorSaveSize – výčet
-Obsahuje hodnoty označující úroveň přesnosti požadované při dotazování na velikost operace uložení.  
+Obsahuje hodnoty určující úroveň přesnosti požadovanou při dotazování na velikost operace uložení.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -36,21 +36,21 @@ typedef enum CorSaveSize {
   
 ## <a name="members"></a>Členové  
   
-|Člen|Popis|  
+|Člen|Description|  
 |------------|-----------------|  
-|`cssAccurate`|Určuje, že vrácená hodnota by měla být přesná.|  
-|`cssQuick`|Určuje, že má být odhadnuta vrácená hodnota.|  
-|`cssDiscardTransientCAs`|Určuje, že by měly být odebrány zahoditelné typy.|  
+|`cssAccurate`|Určuje, že návratová hodnota by měla být přesně.|  
+|`cssQuick`|Určuje, že návratová hodnota by měla být odhadnuta.|  
+|`cssDiscardTransientCAs`|Určuje, že by měly být odebrány typy, které by se měly odstranit.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Záhlaví:** CorHdr.h  
+ **Hlavička:** CorHdr. h  
   
- **Knihovna:** Používá se jako prostředek v souboru MsCorEE.dll  
+ **Knihovna:** Používá se jako prostředek v knihovně MsCorEE. dll.  
   
- **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také
 
-- [Výčty pro metadata](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)
+- [Výčty pro metadata](metadata-enumerations.md)

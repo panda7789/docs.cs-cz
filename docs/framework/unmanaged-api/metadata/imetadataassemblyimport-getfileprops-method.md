@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: c5e6216f-ae3d-4697-9688-66b69c1251ec
 topic_type:
 - apiref
-ms.openlocfilehash: dae4a36537eeac58ffb17ebc1b78d935ec807cd8
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 78c192f10f629a0c1316ae7af7fc774819f4de8f
+ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79175977"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84007478"
 ---
 # <a name="imetadataassemblyimportgetfileprops-method"></a>IMetaDataAssemblyImport::GetFileProps – metoda
 Získá vlastnosti souboru se zadaným podpisem metadat.  
@@ -41,35 +41,35 @@ HRESULT GetFileProps (
   
 ## <a name="parameters"></a>Parametry  
  `mdf`  
- [v] Token `mdFile` metadat, který představuje soubor, pro který chcete získat vlastnosti.  
+ pro `mdFile`Token metadat, který představuje soubor, pro který se mají získat vlastnosti.  
   
  `szName`  
- [out] Jednoduchý název souboru.  
+ mimo Jednoduchý název souboru.  
   
  `cchName`  
- [v] Velikost , v širokých `szName`znaků, .  
+ pro Velikost ve velkých znakech `szName` .  
   
  `pchName`  
- [out] Počet širokých znaků skutečně `szName`vrátil v .  
+ mimo Počet skutečně vrácených znaků `szName` .  
   
  `ppbHashValue`  
- [out] Ukazatel na hodnotu hash. Toto je algoritmus hash pomocí algoritmu SHA-1 souboru.  
+ mimo Ukazatel na hodnotu hash. Toto je hodnota hash pomocí algoritmu SHA-1 souboru.  
   
  `pcbHashValue`  
- [out] Počet širokých znaků ve vrácené hodnotě hash.  
+ mimo Počet velkých znaků v vrácené hodnotě hash.  
   
  `pdwFileFlags`  
- [out] Ukazatel na příznaky, které popisují metadata použitá v souboru. Hodnota příznaky je kombinací jedné nebo více hodnot [CorFileFlags.](../../../../docs/framework/unmanaged-api/metadata/corfileflags-enumeration.md)  
+ mimo Ukazatel na příznaky, které popisují metadata použitá pro soubor. Hodnota příznaků je kombinací jedné nebo více hodnot [CorFileFlags –](corfileflags-enumeration.md) .  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforma:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platforma:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Záhlaví:** Kor.h.  
+ **Hlavička:** Cor. h  
   
- **Knihovna:** Používá se jako prostředek v souboru MsCorEE.dll  
+ **Knihovna:** Používá se jako prostředek v knihovně MsCorEE. dll.  
   
- **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také
 
-- [IMetaDataAssemblyImport – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyimport-interface.md)
+- [IMetaDataAssemblyImport – rozhraní](imetadataassemblyimport-interface.md)

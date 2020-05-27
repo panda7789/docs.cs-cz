@@ -15,17 +15,17 @@ helpviewer_keywords:
 ms.assetid: 05c78aaf-5bbd-497e-9ae2-55f4fae0c5fb
 topic_type:
 - apiref
-ms.openlocfilehash: a494b1aaa762549528e92ab93d18929ef73eb8da
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: ed534890fc90d3b8543a1166c85903f10163f0a8
+ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79176081"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84008316"
 ---
 # <a name="iceegengetsectionblock-method"></a>ICeeGen::GetSectionBlock – metoda
 Získá blok oddílu základu kódu.  
   
- Tato metoda je zastaralá a neměla by být použita.  
+ Tato metoda je zastaralá a neměla by se používat.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,29 +40,29 @@ HRESULT GetSectionBlock (
   
 ## <a name="parameters"></a>Parametry  
  `section`  
- [v] Oddíl, ze kterého chcete načíst blok základu kódu.  
+ pro Oddíl, ze kterého má být načten blok základního kódu.  
   
  `len`  
- [v] Délka bloku, který má být načten.  
+ pro Délka bloku, který má být načten.  
   
  `align`  
- [v] Bajt, vzhledem k začátku oddílu, se kterým chcete zarovnat první bajt bloku. Toto je pozice bloku v sekci.  
+ pro Bajt relativní ke začátku oddílu, s nímž má být zarovnaný první bajt bloku. Toto je pozice bloku v rámci oddílu.  
   
  `ppBytes`  
- [out] Ukazatel na umístění, které přijímá adresu načteného bloku.  
+ mimo Ukazatel na umístění, které přijímá adresu načteného bloku.  
   
 ## <a name="remarks"></a>Poznámky  
- Volání `GetSectionBlock` pouze v případě, že máte zvláštní požadavky oddílu, které nejsou zpracovány jinými metodami.  
+ Volejte `GetSectionBlock` pouze v případě, že máte zvláštní požadavky na oddíly, které nejsou zpracovány jinými metodami.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Záhlaví:** Kor.h.  
+ **Hlavička:** Cor. h  
   
- **Knihovna:** Používá se jako prostředek v souboru MsCorEE.dll  
+ **Knihovna:** Používá se jako prostředek v knihovně MsCorEE. dll.  
   
- **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také
 
-- [ICeeGen – rozhraní](../../../../docs/framework/unmanaged-api/metadata/iceegen-interface.md)
+- [ICeeGen – rozhraní](iceegen-interface.md)

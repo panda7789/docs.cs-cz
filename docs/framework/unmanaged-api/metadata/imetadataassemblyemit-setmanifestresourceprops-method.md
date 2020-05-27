@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: ef77efd1-849c-4e51-ba92-7ee3d2bf0339
 topic_type:
 - apiref
-ms.openlocfilehash: 9370b27fd385b0223b354365d64aa57048f4ec69
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 74111a175b0decbc1beef7c8df5ade59d31d845b
+ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79177842"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84009142"
 ---
 # <a name="imetadataassemblyemitsetmanifestresourceprops-method"></a>IMetaDataAssemblyEmit::SetManifestResourceProps – metoda
 Upraví zadanou `ManifestResource` strukturu metadat.  
@@ -38,29 +38,29 @@ HRESULT SetManifestResourceProps (
   
 ## <a name="parameters"></a>Parametry  
  `mr`  
- [v] Token, který určuje `ManifestResource` strukturu metadat, která má být změněna.  
+ pro Token, který určuje `ManifestResource` strukturu metadat, která má být upravena.  
   
  `tkImplementation`  
- [v] Token typu `File` nebo `AssemblyRef`, který se mapuje na poskytovatele prostředků.  
+ pro Token typu `File` nebo `AssemblyRef` , který se mapuje na poskytovatele prostředků.  
   
  `dwOffset`  
- [v] Posun na začátek prostředku v souboru.  
+ pro Posun na začátek prostředku v rámci souboru.  
   
  `dwResourceFlags`  
- [v] Bitová kombinace hodnot příznaku, které určují atributy prostředku.  
+ pro Bitová kombinace hodnot příznaků, které určují atributy prostředku.  
   
 ## <a name="remarks"></a>Poznámky  
- Chcete-li `ManifestResource` vytvořit strukturu metadat, použijte metodu [IMetaDataAssemblyEmit::DefineManifestResource.](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyemit-definemanifestresource-method.md)  
+ Chcete-li vytvořit `ManifestResource` strukturu metadat, použijte metodu [IMetaDataAssemblyEmit::D efinemanifestresource](imetadataassemblyemit-definemanifestresource-method.md) .  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Záhlaví:** Kor.h.  
+ **Hlavička:** Cor. h  
   
- **Knihovna:** Používá se jako prostředek v souboru MsCorEE.dll  
+ **Knihovna:** Používá se jako prostředek v knihovně MsCorEE. dll.  
   
- **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také
 
-- [IMetaDataAssemblyEmit – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyemit-interface.md)
+- [IMetaDataAssemblyEmit – rozhraní](imetadataassemblyemit-interface.md)

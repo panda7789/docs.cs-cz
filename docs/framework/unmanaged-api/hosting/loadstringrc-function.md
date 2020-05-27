@@ -14,17 +14,17 @@ helpviewer_keywords:
 ms.assetid: 752e49b4-987c-4c28-a118-1a0c1ed510c5
 topic_type:
 - apiref
-ms.openlocfilehash: 56ae7b7cf3b577bfe41ebd0bdd98e0da68047b44
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 8bd0292ddf22453f8892ed8bddd10c2144877097
+ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79176237"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84008509"
 ---
 # <a name="loadstringrc-function"></a>LoadStringRC – funkce
-Převede hodnotu HRESULT na chybovou zprávu pomocí výchozí jazykové verze aktuálního vlákna.  
+Přeloží hodnotu HRESULT na chybovou zprávu pomocí výchozí jazykové verze aktuálního vlákna.  
   
- Tato funkce byla v rozhraní .NET Framework 4 zastaralá.  
+ Tato funkce se už nepoužívá v .NET Framework 4.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,38 +39,38 @@ HRESULT LoadStringRC (
   
 ## <a name="parameters"></a>Parametry  
  `iResourceID`  
- [v] An HRESULT.  
+ pro HRESULT.  
   
  `szBuffer`  
- [out] Vyrovnávací paměť, která obsahuje chybovou zprávu po úspěšném dokončení.  
+ mimo Vyrovnávací paměť, která obsahuje chybovou zprávu po úspěšném dokončení.  
   
  `iMax`  
- [v] Velikost vyrovnávací paměti chybové zprávy.  
+ pro Velikost vyrovnávací paměti chybové zprávy.  
   
  `bQuiet`  
- [v] Ignorovány.  
+ pro Přeskočen.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- Tato metoda vrátí standardní kódy chybový model COM (COM), jak je definováno v souboru WinError.h, kromě následujících hodnot.  
+ Tato metoda vrátí standardní kódy chyb modelu COM (Component Object Model), jak je definováno v WinError. h, kromě následujících hodnot.  
   
-|Návratový kód|Popis|  
+|Návratový kód|Description|  
 |-----------------|-----------------|  
 |S_OK|Metoda byla úspěšně dokončena.|  
-|E_invalidarg|`szBuffer`je null `iMax` nebo je nula (0).|  
+|E_INVALIDARG|`szBuffer`má hodnotu null nebo `iMax` je nula (0).|  
   
 ## <a name="remarks"></a>Poznámky  
  Pokud metoda není úspěšně dokončena, `szBuffer` obsahuje prázdný řetězec.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Záhlaví:** MSCorEE.h  
+ **Hlavička:** MSCorEE. h  
   
- **Knihovna:** MSCorEE.dll a Mscorwks.dll. Místo souboru Mscorwks.dll použijte soubor MSCorEE.dll a ujistěte se, že cílíte na správnou verzi rozhraní .NET Framework.  
+ **Knihovna:** MSCorEE. dll a knihovny Mscorwks. dll. Použijte knihovnu MSCorEE. dll namísto knihovny Mscorwks. dll, abyste se ujistili, že cílíte na správnou verzi .NET Framework.  
   
- **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také
 
-- [LoadStringRCEx – funkce](../../../../docs/framework/unmanaged-api/hosting/loadstringrcex-function.md)
-- [Zastaralé funkce hostování CLR](../../../../docs/framework/unmanaged-api/hosting/deprecated-clr-hosting-functions.md)
+- [LoadStringRCEx – funkce](loadstringrcex-function.md)
+- [Zastaralé funkce hostování CLR](deprecated-clr-hosting-functions.md)

@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 7d68666a-fb73-4455-bebd-908d49a16abc
 topic_type:
 - apiref
-ms.openlocfilehash: 8ae47eac713fbee30ea543538957b12460b8e1fc
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 688abd210cca193bf03c40f000b74ecb66eb8ede
+ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73123273"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84008544"
 ---
 # <a name="ivalidatorvalidate-method"></a>IValidator::Validate – metoda
 Ověří zadaný přenos přenositelného spustitelného souboru (PE) nebo jazyka MSIL (Microsoft Intermediate Language).  
@@ -42,13 +42,13 @@ HRESULT Validate (
   
 ## <a name="parameters"></a>Parametry  
  `veh`  
- pro Ukazatel na instanci `IVEHandler`, která zpracovává chyby ověřování.  
+ pro Ukazatel na `IVEHandler` instanci, která zpracovává chyby ověřování.  
   
  `pAppDomain`  
  pro Ukazatel na doménu aplikace, ve které je soubor načten.  
   
  `ulFlags`  
- pro Bitová kombinace hodnot [ValidatorFlags –](../../../../docs/framework/unmanaged-api/hosting/validatorflags-enumeration.md) , která označuje ověření, která by měla být provedena.  
+ pro Bitová kombinace hodnot [ValidatorFlags –](validatorflags-enumeration.md) , která označuje ověření, která by měla být provedena.  
   
  `ulMaxError`  
  pro Maximální počet chyb, které mají být povoleny před ukončením ověřování.  
@@ -66,10 +66,10 @@ HRESULT Validate (
  pro Velikost souboru (v bajtech), který má být ověřen.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** IValidator. idl, IValidator. h  
   
  **Knihovna:** Zahrnuto jako prostředek v knihovně MSCorEE. dll  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  

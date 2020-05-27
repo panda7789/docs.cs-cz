@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: c853bb58-c9c5-476b-8e80-608aa53ea18d
 topic_type:
 - apiref
-ms.openlocfilehash: c0f236bf6b4d9280945270ada36545cbf0c8a5dc
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 7245a4c222e2ad3ef1854f3c9e2d0abe37e0650a
+ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73141431"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84009480"
 ---
 # <a name="typenamefactory-coclass"></a>TypeNameFactory – třída typu coclass
 Poskytuje rozhraní pro správu dekonstrukci názvu typu.  
@@ -34,19 +34,19 @@ coclass TypeNameFactory {
   
 ## <a name="interfaces"></a>Rozhraní  
   
-|Rozhraní|Popis|  
+|Rozhraní|Description|  
 |---------------|-----------------|  
-|[ITypeNameFactory – rozhraní](../../../../docs/framework/unmanaged-api/hosting/itypenamefactory-interface.md)|Toto rozhraní podporuje infrastrukturu .NET Framework a není určeno pro použití přímo v kódu.|  
+|[ITypeNameFactory – rozhraní](itypenamefactory-interface.md)|Toto rozhraní podporuje infrastrukturu .NET Framework a není určeno pro použití přímo v kódu.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** MSCorEE. idl  
   
  **Knihovna:** Zahrnuto jako prostředek v knihovně MSCorEE. dll  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Třídy typu coclass pro hostování](../../../../docs/framework/unmanaged-api/hosting/hosting-coclasses.md)
+- [Třídy typu coclass hostování](hosting-coclasses.md)

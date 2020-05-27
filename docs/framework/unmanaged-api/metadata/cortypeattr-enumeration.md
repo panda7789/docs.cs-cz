@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 9bede0ec-5fdf-42a2-b5b7-bee64056acb6
 topic_type:
 - apiref
-ms.openlocfilehash: b1586184c91619994ba0dfc9d5dcc277c10f99cf
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: b6936081ca3dbadb4f802a6856fafb53f6cef3fa
+ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74436447"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84008960"
 ---
 # <a name="cortypeattr-enumeration"></a>CorTypeAttr – výčet
 Obsahuje hodnoty, které označují metadata typu.  
@@ -75,7 +75,7 @@ typedef enum CorTypeAttr {
   
 ## <a name="members"></a>Členové  
   
-|Člen|Popis|  
+|Člen|Description|  
 |------------|-----------------|  
 |`tdVisibilityMask`|Používá se pro informace o viditelnosti typů.|  
 |`tdNotPublic`|Určuje, že tento typ není ve veřejném oboru.|  
@@ -103,7 +103,7 @@ typedef enum CorTypeAttr {
 |`tdAnsiClass`|Určuje, že tento typ interpretuje LPTSTR jako ANSI.|  
 |`tdUnicodeClass`|Určuje, že tento typ interpretuje LPTSTR jako Unicode.|  
 |`tdAutoClass`|Určuje, že tento typ interpretuje LPTSTR automaticky.|  
-|`tdCustomFormatClass`|Určuje, že typ má nestandardní kódování, jak je určeno `CustomFormatMask`.|  
+|`tdCustomFormatClass`|Určuje, že typ má nestandardní kódování, jak je uvedeno v `CustomFormatMask` .|  
 |`tdCustomFormatMask`|Tuto masku použijte k získání nestandardních informací o kódování pro nativní spolupráci. Význam hodnot těchto dvou bitů není určen.|  
 |`tdBeforeFieldInit`|Určuje, že typ musí být inicializován před prvním pokusem o přístup k statickému poli.|  
 |`tdForwarder`|Určuje, že je typ exportován, a předávání typu.|  
@@ -112,12 +112,12 @@ typedef enum CorTypeAttr {
 |`tdHasSecurity`|Určuje, že k typu je přidruženo zabezpečení.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** CorHdr. h  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Výčty pro metadata](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)
+- [Výčty pro metadata](metadata-enumerations.md)

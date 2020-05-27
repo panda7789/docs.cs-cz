@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 864f1267-d267-4696-8df7-1f83f8444d6f
 topic_type:
 - apiref
-ms.openlocfilehash: 98183ed02f8821b7c40852de2d040775d30f2518
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: ffbc9a10ff48b3dfd59b95c0f6b9ecab80b6a49c
+ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74443742"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84007881"
 ---
 # <a name="cordeclsecurity-enumeration"></a>CorDeclSecurity – výčet
 Určuje bezpečnostní akce, které lze provést pomocí deklarativního zabezpečení.  
@@ -54,13 +54,13 @@ typedef enum CorDeclSecurity {
 } CorDeclSecurity;  
 ```  
   
-## <a name="members"></a>Members  
+## <a name="members"></a>Členové  
   
-|Člen|Popis|  
+|Člen|Description|  
 |------------|-----------------|  
-|`dclActionMask`|Rezervovaný.|  
-|`dclActionNil`|Rezervovaný.|  
-|`dclRequest`|Rezervovaný.|  
+|`dclActionMask`|Vyhrazeno.|  
+|`dclActionNil`|Vyhrazeno.|  
+|`dclRequest`|Vyhrazeno.|  
 |`dclDemand`|Všem volajícím vyšším v zásobníku volání je nutné udělit oprávnění určené aktuálním objektem oprávnění.|  
 |`dclAssert`|Volající kód může přistupovat k prostředku identifikovanému aktuálním objektem oprávnění, a to i v případě, že by volajícím vyšším v zásobníku nebylo uděleno oprávnění pro přístup k prostředku.|  
 |`dclDeny`|Možnost přístupu k prostředku určenému aktuálním objektem oprávnění je odepřena volajícím, i když jim byla udělena oprávnění k přístupu.|  
@@ -70,23 +70,23 @@ typedef enum CorDeclSecurity {
 |`dclRequestMinimum`|Volající může požadovat minimální oprávnění, která jsou požadována ke spuštění kódu. Tuto akci lze použít pouze v rámci oboru sestavení.|  
 |`dclRequestOptional`|Volající může požádat o další oprávnění, která jsou volitelná (nevyžadují se ke spuštění). Tento požadavek implicitně odmítne všechna ostatní oprávnění, která nejsou výslovně požadována. Tuto akci lze použít pouze v rámci oboru sestavení.|  
 |`dclRequestRefuse`|Žádost volajícího o oprávnění, která by mohla být nepoužitá, nebude udělena. Tuto akci lze použít pouze v rámci oboru sestavení.|  
-|`dclPrejitGrant`|Rezervovaný.|  
-|`dclPrejitDenied`|Rezervovaný.|  
-|`dclNonCasDemand`|Rezervovaný.|  
+|`dclPrejitGrant`|Vyhrazeno.|  
+|`dclPrejitDenied`|Vyhrazeno.|  
+|`dclNonCasDemand`|Vyhrazeno.|  
 |`dclNonCasLinkDemand`|K tomuto okamžitému volajícímu se musí udělit zadané oprávnění.|  
-|`dclNonCasInheritance`|Rezervovaný.|  
-|`dclLinkDemandChoice`|Rezervovaný.|  
-|`dclInheritanceDemandChoice`|Rezervovaný.|  
-|`dclDemandChoice`|Rezervovaný.|  
-|`dclMaximumValue`|Rezervovaný.|  
+|`dclNonCasInheritance`|Vyhrazeno.|  
+|`dclLinkDemandChoice`|Vyhrazeno.|  
+|`dclInheritanceDemandChoice`|Vyhrazeno.|  
+|`dclDemandChoice`|Vyhrazeno.|  
+|`dclMaximumValue`|Vyhrazeno.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** CorHdr. h  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Výčty pro metadata](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)
+- [Výčty pro metadata](metadata-enumerations.md)

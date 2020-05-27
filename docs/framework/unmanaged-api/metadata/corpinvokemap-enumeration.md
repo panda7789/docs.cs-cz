@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: f14f986e-f6ce-42bc-aa23-18150c46d28c
 topic_type:
 - apiref
-ms.openlocfilehash: 8216dc3030b18428ab52fbf8385d392f81057aa0
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 199a649b0481c2a740926636345eefbda6831ef2
+ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79176146"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84007543"
 ---
 # <a name="corpinvokemap-enumeration"></a>CorPinvokeMap – výčet
 Určuje možnosti pro volání PInvoke.  
@@ -63,38 +63,38 @@ typedef enum  CorPinvokeMap {
   
 ## <a name="members"></a>Členové  
   
-|Člen|Popis|  
+|Člen|Description|  
 |------------|-----------------|  
-|`pmNoMangle`|Použijte každý název člena, jak je zadáno.|  
+|`pmNoMangle`|Použijte název každého člena podle zadání.|  
 |`pmCharSetMask`|Vyhrazeno.|  
 |`pmCharSetNotSpec`|Vyhrazeno.|  
-|`pmCharSetAnsi`|Řetězce marshaljako vícebajtové řetězce znaků.|  
-|`pmCharSetUnicode`|Řetězce marshal jako dvoubajtové znaky Unicode.|  
-|`pmCharSetAuto`|Automaticky zařazují řetězce vhodně pro cílový operační systém. Výchozí hodnota je Unicode v systémech Windows NT, Windows 2000, Windows XP a Windows Server 2003; Výchozí hodnota je ANSI v systémech Windows 98 a Windows ME.|  
+|`pmCharSetAnsi`|Zařazování řetězců jako řetězce znaků s více bajty.|  
+|`pmCharSetUnicode`|Zařazování řetězců jako znaků Unicode 2 bajtů.|  
+|`pmCharSetAuto`|Pro cílový operační systém jsou automaticky zařazeny řetězce odpovídajícím způsobem. Výchozí hodnota je Unicode v systémech Windows NT, Windows 2000, Windows XP a Windows Server 2003. Výchozí hodnota je ANSI v systému Windows 98 a Windows Millennium.|  
 |`pmBestFitUseAssem`|Vyhrazeno.|  
-|`pmBestFitEnabled`|Proveďte nejvhodnější mapování znaků Unicode, které v znakové sadě ANSI nemají přesnou shodu.|  
-|`pmBestFitDisabled`|Neprovádějte nejvhodnější mapování znaků Unicode. V tomto případě budou všechny nezamísťující znaky nahrazeny znakem '?'.|  
+|`pmBestFitEnabled`|Proveďte nejvhodnější mapování znaků Unicode, u kterých chybí přesná shoda v sadě znaků ANSI.|  
+|`pmBestFitDisabled`|Neprovádějte nejlepší mapování znaků Unicode. V takovém případě budou všechny nemapovatelný znaky nahrazeny znakem "?".|  
 |`pmBestFitMask`|Vyhrazeno.|  
 |`pmThrowOnUnmappableCharUseAssem`|Vyhrazeno.|  
-|`pmThrowOnUnmappableCharEnabled`|Vyvolání výjimky, když interop zařazovač narazí na nemappable znak.|  
-|`pmThrowOnUnmappableCharDisabled`|Nevyvolávejte výjimku, když interop zařazovač narazí na nemappable znak.|  
+|`pmThrowOnUnmappableCharEnabled`|Vyvolat výjimku, když zařazovací modul Interop nalezne nemapovatelný znak.|  
+|`pmThrowOnUnmappableCharDisabled`|Nevyvolejte výjimku, když zařazovací modul Interop nalezne nemapovatelný znak.|  
 |`pmThrowOnUnmappableCharMask`|Vyhrazeno|  
-|`pmSupportsLastError`|Povolte volavce volat funkci `SetLastError` Win32 před návratem z přiřazené metody.|  
+|`pmSupportsLastError`|Umožňuje volanému volat `SetLastError` funkci Win32 před vrácením z metody s atributy.|  
 |`pmCallConvMask`|Vyhrazeno|  
-|`pmCallConvWinapi`|Použijte výchozí konvence volání platformy. Například v systému `StdCall` Windows výchozí je a `Cdecl`na Windows CE .NET je .|  
-|`pmCallConvCdecl`|Použijte `Cdecl` konvence volání. V tomto případě volající čistí zásobníku. To umožňuje volání `varargs` funkcí s (to znamená, že funkce, které přijímají proměnný počet parametrů).|  
-|`pmCallConvStdcall`|Použijte `StdCall` konvence volání. V tomto případě volaný čistí zásobníku. Toto je výchozí konvence pro volání nespravovaných funkcí s vyvolání platformy.|  
-|`pmCallConvThiscall`|Použijte `ThisCall` konvence volání. V tomto případě je prvním `this` parametrem ukazatel a je uložen v registru ECX. Ostatní parametry jsou tlačeny do zásobníku. Konvence `ThisCall` volání se používá k volání metod na třídy exportované z nespravované dll.|  
+|`pmCallConvWinapi`|Použijte výchozí konvenci volání platformy. Například ve Windows je výchozí nastavení `StdCall` a v systém Windows CE .NET je `Cdecl` .|  
+|`pmCallConvCdecl`|Použijte `Cdecl` konvenci volání. V tomto případě volající vyčistí zásobník. To umožňuje volání funkcí s `varargs` (to znamená, funkce, které přijímají proměnný počet parametrů).|  
+|`pmCallConvStdcall`|Použijte `StdCall` konvenci volání. V tomto případě volaný vyčistí zásobník. Toto je výchozí konvence pro volání nespravovaných funkcí s voláním platformy.|  
+|`pmCallConvThiscall`|Použijte `ThisCall` konvenci volání. V tomto případě je prvním parametrem `this` ukazatel a je uložen v registru ecx. Další parametry jsou vloženy do zásobníku. `ThisCall`Konvence volání se používá pro volání metod u tříd exportovaných z nespravované knihovny DLL.|  
 |`pmCallConvFastcall`|Vyhrazeno.|  
 |`pmMaxValue`|Vyhrazeno.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Záhlaví:** CorHdr.h  
+ **Hlavička:** CorHdr. h  
   
- **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také
 
-- [Výčty pro metadata](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)
+- [Výčty pro metadata](metadata-enumerations.md)

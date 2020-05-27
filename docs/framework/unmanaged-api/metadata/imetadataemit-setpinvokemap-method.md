@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: c6bfd574-1da3-4ba7-82f2-46ca5efcbaba
 topic_type:
 - apiref
-ms.openlocfilehash: 4c68754bc44fe035fd8e7143c52895928beae395
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 0d34c7a2992a2779b96ec87f1a0175d8fcbce34a
+ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79175587"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84007790"
 ---
 # <a name="imetadataemitsetpinvokemap-method"></a>IMetaDataEmit::SetPinvokeMap – metoda
-Nastaví nebo změní funkce pinvoke podpisu metody, jak je definováno předchozí volání [IMetaDataEmit::DefinePinvokeMap](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-definepinvokemap-method.md).  
+Nastaví nebo změní funkce signatury PInvoke metody, jak je definováno předchozím voláním [IMetaDataEmit::D efinepinvokemap](imetadataemit-definepinvokemap-method.md).  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,27 +38,27 @@ HRESULT SetPinvokeMap (
   
 ## <a name="parameters"></a>Parametry  
  `tk`  
- [v] Na `mdToken` které se vztahují informace o mapování.  
+ pro , `mdToken` Na které se vztahují informace o mapování.  
   
  `dwMappingFlags`  
- [v] Příznaky používané PInvoke k mapování. Toto je bitová maska `CorPinvokeMap` hodnot.  
+ pro Příznaky používané v PInvoke k mapování. Toto je Bitová maska `CorPinvokeMap` hodnot.  
   
  `szImportName`  
- [v] Název cílového exportu v nativní dll.  
+ pro Název cílového exportu v nativní knihovně DLL.  
   
  `mrImportDLL`  
- [v] Token `mdModuleRef` pro cílovou nespravovanou dll.  
+ pro `mdModuleRef`Token pro cílovou nespravovanou knihovnu DLL.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Záhlaví:** Kor.h.  
+ **Hlavička:** Cor. h  
   
- **Knihovna:** Používá se jako prostředek v souboru MSCorEE.dll  
+ **Knihovna:** Používá se jako prostředek v knihovně MSCorEE. dll.  
   
- **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také
 
-- [IMetaDataEmit – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)
-- [IMetaDataEmit2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-interface.md)
+- [IMetaDataEmit – rozhraní](imetadataemit-interface.md)
+- [IMetaDataEmit2 – rozhraní](imetadataemit2-interface.md)

@@ -14,15 +14,15 @@ helpviewer_keywords:
 ms.assetid: 22dc6dea-b1b9-4982-a730-a022d586b117
 topic_type:
 - apiref
-ms.openlocfilehash: 74670a1477546066145bd4bbf2f123a252e10b55
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 8b6eab8156f72847eb6dd3369950f9b46a3fc877
+ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74436482"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84007556"
 ---
 # <a name="corpekind-enumeration"></a>CorPEKind – výčet
-Obsahuje hodnoty, které popisují přenositelný spustitelný soubor (PE), vrácený voláním metody [IMetaDataImport2:: GetPEKind –](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-getpekind-method.md).  
+Obsahuje hodnoty, které popisují přenositelný spustitelný soubor (PE), vrácený voláním metody [IMetaDataImport2:: GetPEKind –](imetadataimport2-getpekind-method.md).  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,7 +41,7 @@ typedef enum CorPEKind {
   
 ## <a name="members"></a>Členové  
   
-|Člen|Popis|  
+|Člen|Description|  
 |------------|-----------------|  
 |`peNot`|Označuje, že se nejedná o soubor PE.|  
 |`peILOnly`|Označuje, že tento soubor PE obsahuje pouze spravovaný kód.|  
@@ -54,12 +54,12 @@ typedef enum CorPEKind {
  Tyto hodnoty lze použít v bitových kombinacích.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** CorHdr. h  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Výčty pro metadata](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)
+- [Výčty pro metadata](metadata-enumerations.md)

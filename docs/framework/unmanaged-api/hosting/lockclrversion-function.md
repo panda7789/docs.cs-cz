@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 1318ee37-c43b-40eb-bbe8-88fc46453d74
 topic_type:
 - apiref
-ms.openlocfilehash: 216852f8f051440b2814619b843a1f25013e4042
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 09bcebfdcfea3d5728d404cdb6b5fb170a5432c3
+ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73133775"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84008492"
 ---
 # <a name="lockclrversion-function"></a>LockClrVersion – funkce
 Umožňuje hostiteli určit, která verze modulu CLR (Common Language Runtime) bude použita v rámci procesu před explicitní inicializací modulu CLR.  
@@ -50,13 +50,13 @@ HRESULT LockClrVersion (
 ## <a name="return-value"></a>Návratová hodnota  
  Tato metoda vrací standardní chybové kódy modelu COM, jak jsou definovány v WinError. h, kromě následujících hodnot.  
   
-|Návratový kód|Popis|  
+|Návratový kód|Description|  
 |-----------------|-----------------|  
 |S_OK|Metoda byla úspěšně dokončena.|  
 |E_INVALIDARG|Jeden nebo více argumentů má hodnotu null.|  
   
 ## <a name="remarks"></a>Poznámky  
- Hostitel volá `LockClrVersion` před inicializací modulu CLR. `LockClrVersion` používá tři parametry, z nichž všechny jsou zpětná volání typu [FLockClrVersionCallback –](../../../../docs/framework/unmanaged-api/hosting/flockclrversioncallback-function-pointer.md). Tento typ je definován následujícím způsobem.  
+ Hostitel volá `LockClrVersion` před inicializací modulu CLR. `LockClrVersion`přijímá tři parametry, z nichž všechny jsou zpětná volání typu [FLockClrVersionCallback –](flockclrversioncallback-function-pointer.md). Tento typ je definován následujícím způsobem.  
   
 ```cpp  
 typedef HRESULT ( __stdcall *FLockClrVersionCallback ) ();  
@@ -64,33 +64,33 @@ typedef HRESULT ( __stdcall *FLockClrVersionCallback ) ();
   
  Při inicializaci modulu runtime dojde k následujícím krokům:  
   
-1. Hostitel volá [CorBindToRuntimeEx –](../../../../docs/framework/unmanaged-api/hosting/corbindtoruntimeex-function.md) nebo jednu z dalších funkcí inicializace modulu runtime. Alternativně může hostitel inicializovat modul runtime pomocí aktivace objektu COM.  
+1. Hostitel volá [CorBindToRuntimeEx –](corbindtoruntimeex-function.md) nebo jednu z dalších funkcí inicializace modulu runtime. Alternativně může hostitel inicializovat modul runtime pomocí aktivace objektu COM.  
   
-2. Modul runtime zavolá funkci určenou parametrem `hostCallback`.  
+2. Modul runtime zavolá funkci určenou `hostCallback` parametrem.  
   
-3. Funkce určená `hostCallback` pak provede následující posloupnost volání:  
+3. Funkce zadaná v `hostCallback` pak provede následující posloupnost volání:  
   
-    - Funkce určená parametrem `pBeginHostSetup`.  
+    - Funkce určená `pBeginHostSetup` parametrem.  
   
-    - `CorBindToRuntimeEx` (nebo jiná funkce inicializace modulu runtime).  
+    - `CorBindToRuntimeEx`(nebo jiná funkce inicializace modulu runtime).  
   
-    - [ICLRRuntimeHost:: SetHostControl –](../../../../docs/framework/unmanaged-api/hosting/iclrruntimehost-sethostcontrol-method.md).  
+    - [ICLRRuntimeHost:: SetHostControl –](iclrruntimehost-sethostcontrol-method.md).  
   
-    - [ICLRRuntimeHost:: Start](../../../../docs/framework/unmanaged-api/hosting/iclrruntimehost-start-method.md).  
+    - [ICLRRuntimeHost:: Start](iclrruntimehost-start-method.md).  
   
-    - Funkce určená parametrem `pEndHostSetup`.  
+    - Funkce určená `pEndHostSetup` parametrem.  
   
- Všechna volání z `pBeginHostSetup` k `pEndHostSetup` musí nastat v jednom vlákně nebo vlákně se stejným logickým zásobníkem. Toto vlákno se může lišit od vlákna, na kterém je volána `hostCallback`.  
+ Všechna volání od `pBeginHostSetup` do `pEndHostSetup` musí být provedena v jednom vlákně nebo vlákně se stejným logickým zásobníkem. Toto vlákno se může lišit od vlákna, na kterém `hostCallback` je volána.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** MSCorEE. h  
   
  **Knihovna:** MSCorEE. dll  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Zastaralé funkce pro hostování CLR](../../../../docs/framework/unmanaged-api/hosting/deprecated-clr-hosting-functions.md)
+- [Zastaralé funkce hostování CLR](deprecated-clr-hosting-functions.md)

@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: a7ff90ad-dad8-48e8-917d-4aa9a118cbc8
 topic_type:
 - apiref
-ms.openlocfilehash: 1d58c8c0413346536c3e61e67ca0077c08c2b387
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: e8afcb972cab9757458c7032c3678d45c6418fac
+ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74436489"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84007569"
 ---
 # <a name="corparamattr-enumeration"></a>CorParamAttr – výčet
 Obsahuje hodnoty, které popisují metadata parametru metody.  
@@ -44,7 +44,7 @@ typedef enum CorParamAttr {
   
 ## <a name="members"></a>Členové  
   
-|Člen|Popis|  
+|Člen|Description|  
 |------------|-----------------|  
 |`pdIn`|Určuje, že se parametr předává do volání metody.|  
 |`pdOut`|Určuje, že se parametr předává z návratové metody.|  
@@ -52,15 +52,15 @@ typedef enum CorParamAttr {
 |`pdReservedMask`|Vyhrazeno pro interní použití modulem CLR (Common Language Runtime).|  
 |`pdHasDefault`|Určuje, že parametr má výchozí hodnotu.|  
 |`pdHasFieldMarshal`|Určuje, že má parametr zařazovací informace.|  
-|`pdUnused`|Nepoužívané.|  
+|`pdUnused`|Nepoužívá se.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** CorHdr. h  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Výčty pro metadata](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)
+- [Výčty pro metadata](metadata-enumerations.md)

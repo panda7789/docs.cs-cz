@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: 480d596a-759f-4d29-ac1a-3dbff8f3544d
 topic_type:
 - apiref
-ms.openlocfilehash: e59e7695246b2c83171e77352e16464258516f8d
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: b05527f118de059c674ea659b1a22b7895126cf4
+ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79177467"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84007764"
 ---
 # <a name="imetadataemitsettypedefprops-method"></a>IMetaDataEmit::SetTypeDefProps – metoda
-Nastaví funkce typu definovaného předchozím voláním [IMetaDataEmit::DefineTypeDef](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-definetypedef-method.md).  
+Nastaví funkce typu definovaného předchozím voláním [IMetaDataEmit::D efinetypedef](imetadataemit-definetypedef-method.md).  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,27 +38,27 @@ HRESULT SetTypeDefProps (
   
 ## <a name="parameters"></a>Parametry  
  `td`  
- [v] Token `mdTypeDef` získaný z původního volání [IMetaDataEmit::DefineTypeDef](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-definetypedef-method.md).  
+ pro `mdTypeDef`Token získaný z původního volání [IMetaDataEmit::D efinetypedef](imetadataemit-definetypedef-method.md).  
   
  `dwTypeDefFlags`  
- [v] `TypeDef` atributy. Toto je bitová maska `CorTypeAttr` hodnot.  
+ [in] `TypeDef` atribut. Toto je Bitová maska `CorTypeAttr` hodnot.  
   
  `tkExtends`  
- [v] Základní `mdToken` třídy. Získané z předchozího volání [IMetaDataEmit::DefineImportType](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-defineimporttype-method.md)nebo `null`.  
+ pro `mdToken`Základní třída. Získáno z předchozího volání [IMetaDataEmit::D efineimporttype](imetadataemit-defineimporttype-method.md)nebo `null` .  
   
  `rtkImplements[]`  
- [v] Pole tokenů pro rozhraní, které tento typ implementuje. Tyto `mdTypeRef` tokeny jsou získány pomocí [IMetaDataEmit::DefineImportType](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-defineimporttype-method.md). Poslední prvek pole musí být `mdTokenNil`.  
+ pro Pole tokenů pro rozhraní, které tento typ implementuje. Tyto `mdTypeRef` tokeny se získávají pomocí [IMetaDataEmit::D efineimporttype](imetadataemit-defineimporttype-method.md). Poslední prvek pole musí být `mdTokenNil` .  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Záhlaví:** Kor.h.  
+ **Hlavička:** Cor. h  
   
- **Knihovna:** Používá se jako prostředek v souboru MSCorEE.dll  
+ **Knihovna:** Používá se jako prostředek v knihovně MSCorEE. dll.  
   
- **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také
 
-- [IMetaDataEmit – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)
-- [IMetaDataEmit2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-interface.md)
+- [IMetaDataEmit – rozhraní](imetadataemit-interface.md)
+- [IMetaDataEmit2 – rozhraní](imetadataemit2-interface.md)

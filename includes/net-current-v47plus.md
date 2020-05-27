@@ -6,4 +6,4 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/15/2019
 ms.locfileid: "65629973"
 ---
-Dostupné od verze 4.7
+K dispozici od od 4,7

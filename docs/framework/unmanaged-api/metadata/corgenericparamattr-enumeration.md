@@ -14,15 +14,15 @@ helpviewer_keywords:
 ms.assetid: 36c76266-71d8-48dc-bd89-54943fa659c1
 topic_type:
 - apiref
-ms.openlocfilehash: bf0008ce9429671f0c156df4256bed0b2aaee184
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: ea84b742c901ba58a3bb730f1f5033a0d90610ce
+ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79176172"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84007374"
 ---
 # <a name="corgenericparamattr-enumeration"></a>CorGenericParamAttr – výčet
-Obsahuje hodnoty, <xref:System.Type> které popisují parametry pro obecné typy, jak je použito v volání [IMetaDataEmit2::DefineGenericParam](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-definegenericparam-method.md).  
+Obsahuje hodnoty, které popisují <xref:System.Type> parametry pro obecné typy, jak se používají v voláních [IMetaDataEmit2::D efinegenericparam](imetadataemit2-definegenericparam-method.md).  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -45,25 +45,25 @@ typedef enum CorGenericParamAttr {
   
 ## <a name="members"></a>Členové  
   
-|Člen|Popis|  
+|Člen|Description|  
 |------------|-----------------|  
-|`gpVarianceMask`|Odchylka parametrů platí pouze pro obecné parametry pro rozhraní a delegáty.|  
-|`gpNonVariant`|Označuje nepřítomnost odchylky.|  
-|`gpCovariant`|Označuje kovariance.|  
+|`gpVarianceMask`|Variance parametru se vztahuje pouze na Obecné parametry pro rozhraní a delegáty.|  
+|`gpNonVariant`|Označuje absenci odchylky.|  
+|`gpCovariant`|Označuje kovarianci.|  
 |`gpContravariant`|Označuje kontravariance.|  
-|`gpSpecialConstraintMask`|Zvláštní omezení lze použít <xref:System.Type> na libovolný parametr.|  
-|`gpNoSpecialConstraint`|Označuje, že na <xref:System.Type> parametr se nevztahuje žádné omezení.|  
-|`gpReferenceTypeConstraint`|Označuje, <xref:System.Type> že parametr musí být typ odkazu.|  
-|`gpNotNullableValueTypeConstraint`|Označuje, <xref:System.Type> že parametr musí být typ hodnoty, který nemůže být nulovou hodnotou.|  
-|`gpDefaultConstructorConstraint`|Označuje, <xref:System.Type> že parametr musí mít výchozí veřejný konstruktor, který nepřebírá žádné parametry.|  
+|`gpSpecialConstraintMask`|Speciální omezení se můžou vztahovat na libovolný <xref:System.Type> parametr.|  
+|`gpNoSpecialConstraint`|Označuje, že se pro parametr neplatí žádné omezení <xref:System.Type> .|  
+|`gpReferenceTypeConstraint`|Označuje, že <xref:System.Type> parametr musí být typ odkazu.|  
+|`gpNotNullableValueTypeConstraint`|Označuje, že <xref:System.Type> parametr musí být typ hodnoty, který nemůže být hodnota null.|  
+|`gpDefaultConstructorConstraint`|Označuje, že <xref:System.Type> parametr musí mít výchozí veřejný konstruktor, který nepřijímá žádné parametry.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Záhlaví:** CorHdr.h  
+ **Hlavička:** CorHdr. h  
   
- **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také
 
-- [Výčty pro metadata](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)
+- [Výčty pro metadata](metadata-enumerations.md)

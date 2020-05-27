@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 27f6d295-0fe9-4cda-b77e-6e7d5c53df09
 topic_type:
 - apiref
-ms.openlocfilehash: 5aa5d78faa8ca9261594e2a649b11088e1d78ee7
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 026f5efe195cdb34999b65c5f47de6f68d30e11a
+ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79177861"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84008128"
 ---
 # <a name="imetadataassemblyemitdefinemanifestresource-method"></a>IMetaDataAssemblyEmit::DefineManifestResource – metoda
 Vytvoří `ManifestResource` strukturu obsahující metadata pro zadaný prostředek manifestu a vrátí přidružený token metadat.  
@@ -39,32 +39,32 @@ HRESULT DefineManifestResource (
   
 ## <a name="parameters"></a>Parametry  
  `szName`  
- [v] Název prostředku.  
+ pro Název prostředku.  
   
  `tkImplementation`  
- [v] Token metadat typu `mdtFile` nebo `mdtAssemblyRef` který se mapuje na poskytovatele prostředků. Hodnota NULL označuje, že soubor, ve kterém jsou metadata vložena, je poskytovatelem prostředků.  
+ pro Token metadat typu `mdtFile` nebo `mdtAssemblyRef` , který se mapuje na poskytovatele prostředků. Hodnota NULL znamená, že soubor, ve kterém jsou vložená metadata, je poskytovatel prostředků.  
   
  `dwOffset`  
- [v] Posun na začátek prostředku v souboru. Pro prostředky v samostatných souborech to bude vždy nula. Pokud je prostředek vložen do souboru PE (přenosný spustitelný soubor), jedná se o posun objektu BLOB prostředku, který začíná v umístění určeném v souboru hlavičky cor.h.  
+ pro Posun na začátek prostředku v rámci souboru. U prostředků v samostatných souborech bude tato hodnota vždy nulová. Pokud je prostředek vložen do přenositelného spustitelného souboru (PE), jedná se o posun objektu BLOB prostředku, který začíná v umístění zadaném v souboru hlaviček cor. h.  
   
  `dwResourceFlags`  
- [v] Bitová kombinace hodnot příznaku, které určují nastavení vlastností pro definici prostředku.  
+ pro Bitová kombinace hodnot příznaků, které určují nastavení vlastností pro definici prostředků.  
   
  `pmdmr`  
- [out] Ukazatel na vrácený token metadat.  
+ mimo Ukazatel na vrácený token metadat.  
   
 ## <a name="remarks"></a>Poznámky  
- Pro `ManifestResource` každý prostředek, který je implementován v každém souboru sestavení, musí být definována jedna struktura metadat.  
+ `ManifestResource`Pro každý prostředek, který je implementován v každém ze souborů sestavení, musí být definována jedna struktura metadat.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforma:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platforma:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Záhlaví:** Kor.h.  
+ **Hlavička:** Cor. h  
   
- **Knihovna:** Používá se jako prostředek v souboru MsCorEE.dll  
+ **Knihovna:** Používá se jako prostředek v knihovně MsCorEE. dll.  
   
- **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také
 
-- [IMetaDataAssemblyEmit – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyemit-interface.md)
+- [IMetaDataAssemblyEmit – rozhraní](imetadataassemblyemit-interface.md)

@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: a0637d66-74bf-4f2d-8137-9ff838bccece
 topic_type:
 - apiref
-ms.openlocfilehash: 14bd352099890e4ca36321d550b8e982d4373231
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 17c91200730431c4c6e230b8c1561ce7c4863868
+ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79177891"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84008180"
 ---
 # <a name="imetadataassemblyemitdefineassembly-method"></a>IMetaDataAssemblyEmit::DefineAssembly – metoda
 Vytvoří `Assembly` strukturu obsahující metadata pro zadané sestavení a vrátí přidružený token metadat.  
@@ -41,38 +41,38 @@ HRESULT DefineAssembly (
   
 ## <a name="parameters"></a>Parametry  
  `pbPublicKey`  
- [v] Veřejný klíč, který identifikuje vydavatele sestavení nebo NULL, pokud sestavení není silně pojmenované.  
+ pro Veřejný klíč, který identifikuje vydavatele sestavení, nebo hodnotu NULL, pokud sestavení není silně pojmenováno.  
   
  `cbPublicKey`  
- [v] Velikost v bajtů `pbPublicKey`.  
+ pro Velikost v bajtech `pbPublicKey` .  
   
  `uHashAlgId`  
- [v] Identifikátor algoritmu hash, který se má použít k šifrování souborů v sestavení, nebo null pro určení algoritmu SHA-1.  
+ pro Identifikátor algoritmu hash, který má být použit k zašifrování souborů v sestavení, nebo hodnota NULL pro určení algoritmu SHA-1.  
   
  `szName`  
- [v] Text čitelný pro člověka název sestavení. Tato hodnota nesmí překročit 1024 znaků.  
+ pro Textový název sestavení čitelný lidmi Tato hodnota nesmí překročit 1024 znaků.  
   
  `pMetaData`  
- [v] Ukazatel na instanci ASSEMBLYMETADATA, která obsahuje informace o verzi, platformě a národním prostředí pro sestavení.  
+ pro Ukazatel na instanci AssemblyMetadata –, která obsahuje informace o verzi, platformě a národním prostředí pro sestavení.  
   
  `dwAssemblyFlags`  
- [v] Kombinace hodnot [CorAssemblyFlags,](../../../../docs/framework/unmanaged-api/metadata/corassemblyflags-enumeration.md) které popisují prvky sestavy.  
+ pro Kombinace hodnot [CorAssemblyFlags –](corassemblyflags-enumeration.md) popisujících funkce sestavení.  
   
  `pmda`  
- [out] Ukazatel na token metadat.  
+ mimo Ukazatel na token metadat.  
   
 ## <a name="remarks"></a>Poznámky  
- V `Assembly` rámci manifestu lze definovat pouze jednu strukturu metadat.  
+ `Assembly`V rámci manifestu lze definovat pouze jednu strukturu metadat.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Záhlaví:** Kor.h.  
+ **Hlavička:** Cor. h  
   
- **Knihovna:** Zahrnuto jako prostředek v souboru MsCorEE.dll  
+ **Knihovna:** Zahrnuto jako prostředek v knihovně MsCorEE. dll  
   
- **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také
 
-- [IMetaDataAssemblyEmit – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyemit-interface.md)
+- [IMetaDataAssemblyEmit – rozhraní](imetadataassemblyemit-interface.md)

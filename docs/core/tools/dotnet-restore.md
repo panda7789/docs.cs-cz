@@ -2,12 +2,12 @@
 title: dotnet restore – příkaz
 description: Naučte se obnovit závislosti a nástroje specifické pro projekt pomocí příkazu dotnet restore.
 ms.date: 02/27/2020
-ms.openlocfilehash: 29f81b09a01e689d3f6d86c16b1f134c9fe6b6a0
-ms.sourcegitcommit: e5772b3ddcc114c80b4c9767ffdb3f6c7fad8f05
+ms.openlocfilehash: 276fad896a6a8a647ed05a9de8c582d463d9ab8f
+ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/26/2020
-ms.locfileid: "83840933"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84005311"
 ---
 # <a name="dotnet-restore"></a>dotnet restore
 
@@ -25,12 +25,12 @@ dotnet restore [<ROOT>] [--configfile <FILE>] [--disable-parallel]
     [--interactive] [--lock-file-path <LOCK_FILE_PATH>] [--locked-mode]
     [--no-cache] [--no-dependencies] [--packages <PACKAGES_DIRECTORY>]
     [-r|--runtime <RUNTIME_IDENTIFIER>] [-s|--source <SOURCE>]
-    [--use-lockfile] [-v|--verbosity <LEVEL>]
+    [--use-lock-file] [-v|--verbosity <LEVEL>]
 
 dotnet restore -h|--help
 ```
 
-## <a name="description"></a>Popis
+## <a name="description"></a>Description
 
 `dotnet restore`Příkaz používá NuGet k obnovení závislostí a také nástrojů specifických pro projekt, které jsou uvedeny v souboru projektu.  Ve většině případů nemusíte explicitně používat `dotnet restore` příkaz, protože obnovení NuGet se v případě potřeby spouští implicitně, když spustíte následující příkazy:
 
@@ -145,7 +145,7 @@ Existují tři specifická nastavení, která `dotnet restore` ignorují:
 
   Určuje identifikátor URI zdroje balíčku NuGet, který má být použit během operace obnovení. Toto nastavení přepíše všechny zdroje zadané v souborech *NuGet. config* . Více zdrojů lze zadat zadáním této možnosti několikrát.
 
-- **`--use-lockfile`**
+- **`--use-lock-file`**
 
   Povoluje vygenerování souboru zámku projektu a jeho použití s obnovením.
 

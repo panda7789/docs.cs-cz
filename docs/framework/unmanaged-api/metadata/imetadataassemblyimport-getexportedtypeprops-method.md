@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 25ca7623-5a55-4f09-b44a-36b03d142278
 topic_type:
 - apiref
-ms.openlocfilehash: 15b58e01d4ce99f19f510c760819471b84380b45
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 944941c2356cae93ecc85f1714b4b29aefcb50ad
+ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79177762"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84008401"
 ---
 # <a name="imetadataassemblyimportgetexportedtypeprops-method"></a>IMetaDataAssemblyImport::GetExportedTypeProps – metoda
 Získá sadu vlastností exportovaného typu se zadaným podpisem metadat.  
@@ -41,35 +41,35 @@ HRESULT GetExportedTypeProps (
   
 ## <a name="parameters"></a>Parametry  
  `mdct`  
- [v] Token `mdExportedType` metadat, který představuje exportovaný typ.  
+ pro `mdExportedType`Token metadat, který představuje exportovaný typ.  
   
  `szName`  
- [out] Název exportovaného typu.  
+ mimo Název exportovaného typu.  
   
  `cchName`  
- [v] Velikost . `szName`  
+ pro Velikost (v rámci velkých znaků) `szName` .  
   
  `pchName`  
- [out] Počet širokých znaků skutečně vrácených`szName`  
+ mimo Počet skutečně vrácených znaků`szName`  
   
  `ptkImplementation`  
- [out] Token `mdFile` `mdAssemblyRef`, `mdExportedType` nebo metadata, který obsahuje nebo umožňuje přístup k vlastnostem exportovaného typu.  
+ mimo `mdFile` `mdAssemblyRef` Token metadat, nebo `mdExportedType` , který obsahuje nebo umožňuje přístup k vlastnostem exportovaného typu.  
   
  `ptkTypeDef`  
- [out] Ukazatel na `mdTypeDef` token, který představuje typ v souboru.  
+ mimo Ukazatel na `mdTypeDef` token, který představuje typ v souboru.  
   
  `pdwExportedTypeFlags`  
- [out] Ukazatel na příznaky, které popisují metadata použitá pro exportovaný typ. Hodnota příznaky může být jeden nebo více [CorTypeAttr](../../../../docs/framework/unmanaged-api/metadata/cortypeattr-enumeration.md) hodnoty.  
+ mimo Ukazatel na příznaky, které popisují metadata použitá pro exportovaný typ. Hodnota příznaků může být jedna nebo víc hodnot [CorTypeAttr –](cortypeattr-enumeration.md) .  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Záhlaví:** Kor.h.  
+ **Hlavička:** Cor. h  
   
- **Knihovna:** Používá se jako prostředek v souboru MsCorEE.dll  
+ **Knihovna:** Používá se jako prostředek v knihovně MsCorEE. dll.  
   
- **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také
 
-- [IMetaDataAssemblyImport – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyimport-interface.md)
+- [IMetaDataAssemblyImport – rozhraní](imetadataassemblyimport-interface.md)

@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 6b1fcd11-c7fb-4be2-8910-abc862d4caf4
 topic_type:
 - apiref
-ms.openlocfilehash: 064374285216e9fb054b299937087f1ca7c351a4
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 649a9159f99afa64615c40c23a98a80318ae0d7f
+ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74432869"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84009168"
 ---
 # <a name="corserializationtype-enumeration"></a>CorSerializationType – výčet
 Určuje, jak je objekt serializován modulem CLR (Common Language Runtime).  
@@ -53,9 +53,9 @@ typedef enum CorSerializationType {
 } CorSerializationType;  
 ```  
   
-## <a name="members"></a>Members  
+## <a name="members"></a>Členové  
   
-|Člen|Popis|  
+|Člen|Description|  
 |------------|-----------------|  
 |`SERIALIZATION_TYPE_UNDEFINED`|Serializace objektu není definována.|  
 |`SERIALIZATION_TYPE_BOOLEAN`|Objekt je serializován jako typ Boolean.|  
@@ -79,12 +79,12 @@ typedef enum CorSerializationType {
 |`SERIALIZATION_TYPE_ENUM`|Objekt je serializován jako výčet.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** CorHdr. h  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Výčty pro metadata](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)
+- [Výčty pro metadata](metadata-enumerations.md)

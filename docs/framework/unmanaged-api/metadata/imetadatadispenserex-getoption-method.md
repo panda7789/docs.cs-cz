@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: d7f794e5-8e25-4d65-850a-7c34fbfce87d
 topic_type:
 - apiref
-ms.openlocfilehash: 816e2f2dc7d4d00f74f67720ee45d7b3483e57fa
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 832adacac4a6df9ccf21578538a1c557150f3ba1
+ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79177722"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84008778"
 ---
 # <a name="imetadatadispenserexgetoption-method"></a>IMetaDataDispenserEx::GetOption – metoda
-Získá hodnotu zadané možnosti pro aktuální obor metadat. Tato možnost určuje, jak jsou zpracována volání aktuálního oboru metadat.  
+Získá hodnotu zadané možnosti pro aktuální obor metadat. Možnost určuje, jak jsou zpracovávány volání do aktuálního oboru metadat.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -36,13 +36,13 @@ HRESULT GetOption (
   
 ## <a name="parameters"></a>Parametry  
  `optionId`  
- [v] Ukazatel na identifikátor GUID, který určuje možnost, která má být načtena. Seznam podporovaných identifikátorů GUID naleznete v části Poznámky.  
+ pro Ukazatel na identifikátor GUID, který určuje možnost, která má být načtena. Seznam podporovaných identifikátorů GUID najdete v části s poznámkami.  
   
  `pValue`  
- [out] Hodnota vrácené možnosti. Typ této hodnoty bude variantou typu zadané možnosti.  
+ mimo Hodnota vrácené možnosti. Typ této hodnoty bude varianta zadaného typu možnosti.  
   
 ## <a name="remarks"></a>Poznámky  
- V následujícím seznamu jsou uvedeny identifikátory GUID, které jsou pro tuto metodu podporovány. Popisy naleznete v metodě [IMetaDataDispenserEx::SetOption.](../../../../docs/framework/unmanaged-api/metadata/imetadatadispenserex-setoption-method.md) Pokud `optionId` není v tomto seznamu, tato `E_INVALIDARG`metoda vrátí HRESULT , označující nesprávný parametr.  
+ V následujícím seznamu jsou uvedeny identifikátory GUID, které jsou pro tuto metodu podporovány. Popisy naleznete v tématu [IMetaDataDispenserEx:: SetOption –](imetadatadispenserex-setoption-method.md) metoda. Pokud není `optionId` v tomto seznamu, tato metoda vrátí hodnotu HRESULT `E_INVALIDARG` , což značí nesprávný parametr.  
   
 - MetaDataCheckDuplicatesFor  
   
@@ -50,24 +50,24 @@ HRESULT GetOption (
   
 - MetaDataNotificationForTokenMovement  
   
-- MetaDatasetENC  
+- MetaDataSetENC  
   
 - MetaDataErrorIfEmitOutOfOrder  
   
-- Adaptéry MetaDataGenerateTCE  
+- MetaDataGenerateTCEAdapters  
   
-- Možnosti metadatalinkeru  
+- MetaDataLinkerOptions  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforma:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platforma:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Záhlaví:** Kor.h.  
+ **Hlavička:** Cor. h  
   
- **Knihovna:** Používá se jako prostředek v souboru MsCorEE.dll  
+ **Knihovna:** Používá se jako prostředek v knihovně MsCorEE. dll.  
   
- **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také
 
-- [IMetaDataDispenserEx – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadatadispenserex-interface.md)
-- [IMetaDataDispenser – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadatadispenser-interface.md)
+- [IMetaDataDispenserEx – rozhraní](imetadatadispenserex-interface.md)
+- [IMetaDataDispenser – rozhraní](imetadatadispenser-interface.md)

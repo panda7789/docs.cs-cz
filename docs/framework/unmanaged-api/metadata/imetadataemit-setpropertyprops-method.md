@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: e2501fc8-b2bc-4dcc-9205-e3acd5a53ffe
 topic_type:
 - apiref
-ms.openlocfilehash: dc6375f3e2cff1a744a8ff2e6a6adab27bbf8af3
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: b5af877c26c20bf64a27618bf24a7bce5b410419
+ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79177479"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84007777"
 ---
 # <a name="imetadataemitsetpropertyprops-method"></a>IMetaDataEmit::SetPropertyProps – metoda
-Nastaví funkce uložené v metadatech pro vlastnost definovanou předchozím voláním [metody DefineProperty](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-defineproperty-method.md).  
+Nastaví funkce uložené v metadatech pro vlastnost definovanou předchozím voláním [metody defineProperty –](imetadataemit-defineproperty-method.md).  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -42,39 +42,39 @@ HRESULT SetPropertyProps (
   
 ## <a name="parameters"></a>Parametry  
  `pr`  
- [v] Token pro vlastnost, která má být změněna  
+ pro Token pro vlastnost, která má být změněna  
   
  `dwPropFlags`  
- [v] Příznaky vlastností.  
+ pro Příznaky vlastností.  
   
  `dwCPlusTypeFlag`  
- [v] Typ výchozí hodnoty vlastnosti.  
+ pro Typ výchozí hodnoty vlastnosti  
   
  `pValue`  
- [v] Výchozí hodnota vlastnosti.  
+ pro Výchozí hodnota vlastnosti  
   
  `cchValue`  
- [v] Počet znaků (Unicode) `pValue`v .  
+ pro Počet znaků (Unicode) v `pValue` .  
   
  `mdSetter`  
- [v] Metoda, která nastaví hodnotu vlastnosti.  
+ pro Metoda, která nastaví hodnotu vlastnosti.  
   
  `mdGetter`  
- [v] Metoda, která získá hodnotu vlastnosti.  
+ pro Metoda, která získá hodnotu vlastnosti.  
   
  `rmdOtherMethods[]`  
- [v] Pole dalších metod spojených s vlastností. Ukončete `mdTokenNil` toto pole tokenem.  
+ pro Pole dalších metod přidružených k vlastnosti. Ukončí toto pole s `mdTokenNil` tokenem.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Záhlaví:** Kor.h.  
+ **Hlavička:** Cor. h  
   
- **Knihovna:** Používá se jako prostředek v souboru MSCorEE.dll  
+ **Knihovna:** Používá se jako prostředek v knihovně MSCorEE. dll.  
   
- **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také
 
-- [IMetaDataEmit – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)
-- [IMetaDataEmit2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-interface.md)
+- [IMetaDataEmit – rozhraní](imetadataemit-interface.md)
+- [IMetaDataEmit2 – rozhraní](imetadataemit2-interface.md)

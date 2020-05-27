@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: d44484bb-23a3-49c3-9e46-69d0d9ab4f0f
 topic_type:
 - apiref
-ms.openlocfilehash: df7be11e8f275824fca658a9604178e7cf28e3ce
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: f9f3e3f196f74a7dea3c722925f1d03968688882
+ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74436288"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84008999"
 ---
 # <a name="imetadataconvertergetmetadatafromtypeinfo-method"></a>IMetaDataConverter::GetMetaDataFromTypeInfo – metoda
-Získá ukazatel na instanci [IMetaDataImport](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md) , která představuje podpis metadat knihovny typů, na kterou odkazuje zadaná instance `ITypeInfo`.  
+Získá ukazatel na instanci [IMetaDataImport](imetadataimport-interface.md) , která představuje podpis metadat knihovny typů, na kterou odkazuje zadaná `ITypeInfo` instance.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -36,21 +36,21 @@ HRESULT GetMetaDataFromTypeInfo (
   
 ## <a name="parameters"></a>Parametry  
  `pITI`  
- pro Ukazatel na objekt `ITypeInfo`, který odkazuje na knihovnu typů.  
+ pro Ukazatel na `ITypeInfo` objekt, který odkazuje na knihovnu typů.  
   
  `ppMDI`  
- mimo Ukazatel na umístění, které přijímá adresu `IMetaDataImport` instance, která představuje signaturu metadat.  
+ mimo Ukazatel na umístění, které přijímá adresu `IMetaDataImport` instance, která představuje podpis metadat.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforma:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platforma:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** Cor. h  
   
  **Knihovna:** Používá se jako prostředek v knihovně MsCorEE. dll.  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [IMetaDataEmit – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)
-- [IMetaDataImport – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
+- [IMetaDataEmit – rozhraní](imetadataemit-interface.md)
+- [IMetaDataImport – rozhraní](imetadataimport-interface.md)

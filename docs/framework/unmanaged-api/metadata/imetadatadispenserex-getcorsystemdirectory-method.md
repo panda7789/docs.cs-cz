@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: d9e0f3b6-e106-4820-bada-5bfba34ce360
 topic_type:
 - apiref
-ms.openlocfilehash: fb673666543bea3df44005ee3b20d311524f51d0
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: a76c17e663fdf6555ed878cca1b86b6a9395730e
+ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79175912"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84008791"
 ---
 # <a name="imetadatadispenserexgetcorsystemdirectory-method"></a>IMetaDataDispenserEx::GetCORSystemDirectory – metoda
-Získá adresář, který obsahuje aktuální clr (COMMON Language Runtime). Tato metoda je podporována pouze pro použití mimoprocesladivé. Pokud je volána z jiné součásti, vrátí E_NOTIMPL.  
+Načte adresář, který obsahuje aktuální modul CLR (Common Language Runtime). Tato metoda je podporována pouze pro použití vnitroprocesové ladicí program. Pokud se volá z jiné součásti, vrátí E_NOTIMPL.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,24 +37,24 @@ HRESULT GetCORSystemDirectory (
   
 ## <a name="parameters"></a>Parametry  
  `szBuffer`  
- [out] Vyrovnávací paměť pro příjem názvu adresáře.  
+ mimo Vyrovnávací paměť pro získání názvu adresáře.  
   
  `cchBuffer`  
- [v] Velikost v bajtů `szBuffer`.  
+ pro Velikost v bajtech `szBuffer` .  
   
  `pchBuffer`  
- [out] Počet bajtů skutečně vrácených v `szBuffer`.  
+ mimo Počet bajtů, které se ve skutečnosti vrátily `szBuffer` .  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforma:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platforma:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Záhlaví:** Kor.h.  
+ **Hlavička:** Cor. h  
   
- **Knihovna:** Používá se jako prostředek v souboru MsCorEE.dll  
+ **Knihovna:** Používá se jako prostředek v knihovně MsCorEE. dll.  
   
- **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také
 
-- [IMetaDataDispenserEx – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadatadispenserex-interface.md)
-- [IMetaDataDispenser – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadatadispenser-interface.md)
+- [IMetaDataDispenserEx – rozhraní](imetadatadispenserex-interface.md)
+- [IMetaDataDispenser – rozhraní](imetadatadispenser-interface.md)

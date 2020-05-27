@@ -14,15 +14,15 @@ helpviewer_keywords:
 ms.assetid: 4f86ff37-2dab-4e64-819a-76b3bfe828ff
 topic_type:
 - apiref
-ms.openlocfilehash: 0b613ebacdff82a29fdbc3f4caa0f2b8bb5d3f6a
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 29f2401e2e3faccae05ca5249fcd7d9e89aacb46
+ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79176159"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84007608"
 ---
 # <a name="cornativelinktype-enumeration"></a>CorNativeLinkType – výčet
-Poskytuje hodnoty, které označují typ propojený v nativním kódu.  
+Poskytuje hodnoty, které indikují typ propojený v nativním kódu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,24 +40,24 @@ typedef enum
   
 ## <a name="members"></a>Členové  
   
-|Člen|Popis|  
+|Člen|Description|  
 |------------|-----------------|  
-|`nltNone`|Označuje, že žádné z klíčových slov jsou zadány.|  
-|`nltAnsi`|Označuje, že je zadáno klíčové slovo ANSI.|  
-|`nltUnicode`|Označuje, že je zadáno klíčové slovo Unicode.|  
-|`nltAuto`|Označuje, že je zadáno automatické klíčové slovo.|  
-|`nltOle`|Označuje, že je zadáno klíčové slovo OLE.|  
+|`nltNone`|Označuje, že není zadáno žádné klíčové slovo.|  
+|`nltAnsi`|Indikuje, že je zadané klíčové slovo ANSI.|  
+|`nltUnicode`|Indikuje, že je zadané klíčové slovo Unicode.|  
+|`nltAuto`|Indikuje, že je zadané klíčové slovo auto.|  
+|`nltOle`|Indikuje, že je zadané klíčové slovo OLE.|  
 |`nltMaxValue`|Nepoužívá se.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Záhlaví:** Kor.h.  
+ **Hlavička:** Cor. h  
   
- **Knihovna:** Zahrnuto jako prostředek v souboru MsCorEE.dll  
+ **Knihovna:** Zahrnuto jako prostředek v knihovně MsCorEE. dll  
   
- **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také
 
-- [Výčty pro metadata](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)
+- [Výčty pro metadata](metadata-enumerations.md)
