@@ -1,53 +1,59 @@
 ---
-title: Základní výukové programy rozhraní .NET
-description: Postupujte podle kurzů pro učení .NET Core k vytváření aplikací a knihoven na Macu, Linuxu a Windows.
+title: Kurzy k .NET Core
+description: Při vytváření aplikací a knihoven v počítačích Mac, Linux a Windows postupujte podle pokynů výukových kurzů .NET Core.
 author: richlander
 ms.date: 03/16/2017
 titleSuffix: ''
-ms.openlocfilehash: 84784787465bec43cc460d34ca84e4baa5a15d7d
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 9fb87180bb001a7f54d93c6e95631562103c49e8
+ms.sourcegitcommit: e5772b3ddcc114c80b4c9767ffdb3f6c7fad8f05
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "77625931"
+ms.lasthandoff: 05/26/2020
+ms.locfileid: "83840920"
 ---
-# <a name="learn-net-core-and-the-net-core-sdk-tools-by-exploring-these-tutorials"></a>Seznamte se s jádrem .NET a nástroji sady .NET Core SDK najdete v těchto kurzech
+# <a name="learn-net-core-and-the-net-core-sdk-tools-by-exploring-these-tutorials"></a>Prozkoumejte tyto kurzy a Naučte se .NET Core a nástroje pro .NET Core SDK.
 
-Následující kurzy jsou k dispozici pro informace o .NET Core.
+Následující kurzy jsou k dispozici pro získání informací o .NET Core.
 
-## <a name="create-applications-with-visual-studio"></a>Vytváření aplikací pomocí sady Visual Studio
+## <a name="use-visual-studio"></a>Použití sady Visual Studio
 
-- [Vytvoření konzolové aplikace Hello World](with-visual-studio.md)
-- [Ladění aplikace Hello World](debugging-with-visual-studio.md)
-- [Publikování aplikace Hello World](publishing-with-visual-studio.md)
+- [Vytvoření konzolové aplikace](with-visual-studio.md)
+- [Vytvoření konzolové aplikace F #](../../fsharp/get-started/get-started-visual-studio.md)
+- [Ladění aplikace](debugging-with-visual-studio.md)
+- [Publikování aplikace](publishing-with-visual-studio.md)
 - [Vytvoření knihovny tříd](library-with-visual-studio.md)
-- [Testování knihovny tříd](testing-library-with-visual-studio.md)
-- [Využití knihovny tříd](consuming-library-with-visual-studio.md)
-- [Azure Cosmos DB: Začínáme s rozhraním SQL API a jádrem .NET](/azure/cosmos-db/sql-api-dotnetcore-get-started)
+- [Testování částí knihovny tříd](testing-library-with-visual-studio.md)
+- [Použití knihovny tříd](consuming-library-with-visual-studio.md)
+- [Instalace a použití balíčku](/nuget/quickstart/install-and-use-a-package-in-visual-studio)
+- [Vytvoření a publikování balíčku](/nuget/quickstart/create-and-publish-a-package-using-visual-studio)
 
-## <a name="build-applications-with-visual-studio-code"></a>Vytváření aplikací pomocí kódu sady Visual Studio
+## <a name="use-visual-studio-code"></a>Použití editoru Visual Studio Code
 
-- [Začínáme s jazykem C# a nástrojem Visual Studio Code](with-visual-studio-code.md)
-- [Začínáme s .NET Core v systému macOS](using-on-macos.md)
+Tyto kurzy vyberte, pokud chcete použít Visual Studio Code nebo jiný Editor kódu. Všechny používají rozhraní příkazového řádku pro vývojové úlohy .NET Core, takže je možné je použít s libovolným editorem kódu.
 
-## <a name="build-applications-with-visual-studio-for-mac"></a>Vytváření aplikací pomocí Visual Studia pro Mac
+- [Vytvoření konzolové aplikace](with-visual-studio-code.md)
+- [Vytvoření konzolové aplikace a její publikování](cli-create-console-app.md)
+- [Vytvoření konzolové aplikace F #](../../fsharp/get-started/get-started-vscode.md)
+- [Vytvoření knihovny a testování částí IT – macOS](using-on-macos.md)
+- [Instalace a použití balíčku](/nuget/quickstart/install-and-use-a-package-using-the-dotnet-cli)
+- [Vytvoření a publikování balíčku](/nuget/quickstart/create-and-publish-a-package-using-the-dotnet-cli)
 
-- [Začínáme s .NET Core v systému macOS pomocí sady Visual Studio pro Mac](using-on-mac-vs.md)
-- [Vytvoření kompletního řešení .NET Core v systému macOS pomocí sady Visual Studio pro Mac](using-on-mac-vs-full-solution.md)
+## <a name="use-visual-studio-for-mac"></a>Použít Visual Studio pro Mac
 
-## <a name="build-applications-with-the-net-core-cli"></a>Vytváření aplikací pomocí rozhraní CLI jádra .NET
+- [Vytvoření konzolové aplikace](using-on-mac-vs.md)
+- [Vytvoření knihovny a testování jednotky](using-on-mac-vs-full-solution.md)
+- [Instalace a použití balíčku](/nuget/quickstart/install-and-use-a-package-in-visual-studio-mac)
 
-- [Začínáme s rozhraním .NET Core ve Windows/Linux/macOS pomocí rozhraní CLI jádra .NET](cli-create-console-app.md)
-- [Uspořádání a testování projektů pomocí rozhraní CLI jádra .NET](testing-with-cli.md)
-- [Začínáme s F #](../../fsharp/get-started/get-started-command-line.md)
+## <a name="advanced-topics"></a>Pokročilá témata
 
-## <a name="other"></a>Ostatní
-
-- [Testování částí v rozhraní .NET Core pomocí dotnetového testu](../testing/unit-testing-with-dotnet-test.md)
-- [Testování částí pomocí MSTest a .NET Core](../testing/unit-testing-with-mstest.md)
-- [Vývoj knihoven pomocí nástrojů pro různé platformy](libraries.md)
-- [Hostování .NET Core z nativního kódu](netcore-hosting.md)
+- [Vytváření knihoven](libraries.md)
+- [Testování částí aplikace pomocí xUnit](testing-with-cli.md)
+- [Testování částí pomocí C#/VB/F # s NUnit/xUnit/MSTest](../testing/index.md)
+- [Živý test jednotek se sadou Visual Studio](/visualstudio/test/live-unit-testing-start)
 - [Vytvoření šablon pro rozhraní příkazového řádku (CLI)](cli-templates-create-item-template.md)
-- [Vytvoření a použití nástrojů pro cli](../tools/global-tools-how-to-create.md)
+- [Vytvoření a použití nástrojů pro rozhraní příkazového řádku](../tools/global-tools-how-to-create.md)
+- [Vytvoření aplikace pomocí modulů plug-in](creating-app-with-plugin-support.md)
 
-Výukové programy týkající se vývoje webových aplikací ASP.NET Core naleznete v [dokumentaci ASP.NET Core](/aspnet/core/).
+## <a name="create-web-apps"></a>Vytváření webových aplikací
+
+Kurzy týkající se vývoje ASP.NET Core webových aplikací najdete v [dokumentaci k ASP.NET Core](/aspnet/core/).

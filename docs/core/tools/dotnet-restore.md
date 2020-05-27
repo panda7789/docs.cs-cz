@@ -2,18 +2,18 @@
 title: dotnet restore – příkaz
 description: Naučte se obnovit závislosti a nástroje specifické pro projekt pomocí příkazu dotnet restore.
 ms.date: 02/27/2020
-ms.openlocfilehash: cc8f374468ba95baccf058ac0b0a0175672cdf01
-ms.sourcegitcommit: c2c1269a81ffdcfc8675bcd9a8505b1a11ffb271
+ms.openlocfilehash: 29f81b09a01e689d3f6d86c16b1f134c9fe6b6a0
+ms.sourcegitcommit: e5772b3ddcc114c80b4c9767ffdb3f6c7fad8f05
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/25/2020
-ms.locfileid: "82158304"
+ms.lasthandoff: 05/26/2020
+ms.locfileid: "83840933"
 ---
 # <a name="dotnet-restore"></a>dotnet restore
 
 **Tento článek se týká:** ✔️ .net Core 2,1 SDK a novějších verzí
 
-## <a name="name"></a>Název
+## <a name="name"></a>Name
 
 `dotnet restore`– Obnoví závislosti a nástroje projektu.
 
@@ -32,7 +32,7 @@ dotnet restore -h|--help
 
 ## <a name="description"></a>Popis
 
-`dotnet restore` Příkaz používá NuGet k obnovení závislostí a také nástrojů specifických pro projekt, které jsou uvedeny v souboru projektu.  Ve většině případů nemusíte explicitně používat `dotnet restore` příkaz, protože obnovení NuGet se v případě potřeby spouští implicitně, když spustíte následující příkazy:
+`dotnet restore`Příkaz používá NuGet k obnovení závislostí a také nástrojů specifických pro projekt, které jsou uvedeny v souboru projektu.  Ve většině případů nemusíte explicitně používat `dotnet restore` příkaz, protože obnovení NuGet se v případě potřeby spouští implicitně, když spustíte následující příkazy:
 
 - [`dotnet new`](dotnet-new.md)
 - [`dotnet build`](dotnet-build.md)
@@ -49,7 +49,7 @@ V některých případech může být nepraktické spustit implicitní obnovení
 Pro obnovení závislostí potřebuje NuGet informační kanály, ve kterých se balíčky nacházejí. Informační kanály jsou obvykle poskytovány prostřednictvím konfiguračního souboru *NuGet. config* . Výchozí konfigurační soubor se poskytne při instalaci .NET Core SDK. Chcete-li zadat další informační kanály, proveďte jednu z následujících akcí:
 
 - Vytvořte vlastní soubor *NuGet. config* v adresáři projektu. Další informace najdete v tématu [běžné konfigurace NuGet](/nuget/consume-packages/configuring-nuget-behavior) a [rozdíly v souboru NuGet. config](#nugetconfig-differences) dále v tomto článku.
-- Použijte `dotnet nuget` příkazy, jako [`dotnet nuget add source`](dotnet-nuget-add-source.md)je.
+- Použijte `dotnet nuget` příkazy, jako je [`dotnet nuget add source`](dotnet-nuget-add-source.md) .
 
 Informační kanály *NuGet. config* můžete přepsat `-s` možností.
 
@@ -71,7 +71,7 @@ Existují tři specifická nastavení, která `dotnet restore` ignorují:
 
 - [bindingRedirects](/nuget/schema/nuget-config-file#bindingredirects-section)
 
-  Přesměrování vazby nefungují s `<PackageReference>` prvky a .NET Core podporuje `<PackageReference>` pouze prvky pro balíčky NuGet.
+  Přesměrování vazby nefungují s `<PackageReference>` prvky a .NET Core podporuje pouze `<PackageReference>` prvky pro balíčky NuGet.
 
 - [řešení](/nuget/schema/nuget-config-file#solution-section)
 
@@ -143,7 +143,7 @@ Existují tři specifická nastavení, která `dotnet restore` ignorují:
 
 - **`-s|--source <SOURCE>`**
 
-  Určuje zdroj balíčku NuGet, který se použije během operace obnovení. Toto nastavení přepíše všechny zdroje zadané v souborech *NuGet. config* . Více zdrojů lze zadat zadáním této možnosti několikrát.
+  Určuje identifikátor URI zdroje balíčku NuGet, který má být použit během operace obnovení. Toto nastavení přepíše všechny zdroje zadané v souborech *NuGet. config* . Více zdrojů lze zadat zadáním této možnosti několikrát.
 
 - **`--use-lockfile`**
 
@@ -151,7 +151,7 @@ Existují tři specifická nastavení, která `dotnet restore` ignorují:
 
 - **`-v|--verbosity <LEVEL>`**
 
-  Nastaví úroveň podrobností příkazu. Povolené hodnoty jsou `q[uiet]`, `m[inimal]`, `n[ormal]` `d[etailed]`, a `diag[nostic]`. Výchozí hodnota je `minimal`.
+  Nastaví úroveň podrobností příkazu. Povolené hodnoty jsou `q[uiet]` , `m[inimal]` ,, a `n[ormal]` `d[etailed]` `diag[nostic]` . Výchozí hodnota je `minimal` .
 
 ## <a name="examples"></a>Příklady
 

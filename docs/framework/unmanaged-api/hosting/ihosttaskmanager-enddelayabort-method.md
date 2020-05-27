@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: 6e02facb-2504-4356-9af5-0cee1f8436a7
 topic_type:
 - apiref
-ms.openlocfilehash: cf79c0d0f6def46d7f4d55f17afbd1f1dff00ad9
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 156626ce907c13987c0cca15016263291961037d
+ms.sourcegitcommit: e5772b3ddcc114c80b4c9767ffdb3f6c7fad8f05
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73133074"
+ms.lasthandoff: 05/26/2020
+ms.locfileid: "83841968"
 ---
 # <a name="ihosttaskmanagerenddelayabort-method"></a>IHostTaskManager::EndDelayAbort – metoda
-Upozorní hostitele, že spravovaný kód ukončuje období, ve kterém nesmí být aktuální úloha přerušena, po předchozím volání metody [IHostTaskManager:: BeginDelayAbort –](../../../../docs/framework/unmanaged-api/hosting/ihosttaskmanager-begindelayabort-method.md).  
+Upozorní hostitele, že spravovaný kód ukončuje období, ve kterém nesmí být aktuální úloha přerušena, po předchozím volání metody [IHostTaskManager:: BeginDelayAbort –](ihosttaskmanager-begindelayabort-method.md).  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -35,30 +35,30 @@ HRESULT EndDelayAbort ();
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
-|S_OK|`EndDelayAbort` byla úspěšně vrácena.|  
+|S_OK|`EndDelayAbort`úspěšně vráceno.|  
 |HOST_E_CLRNOTAVAILABLE|Modul CLR (Common Language Runtime) nebyl načten do procesu, nebo je modul CLR ve stavu, ve kterém nemůže spustit spravovaný kód nebo úspěšně zpracovat volání.|  
 |HOST_E_TIMEOUT|Vypršel časový limit volání.|  
 |HOST_E_NOT_OWNER|Volající nevlastní zámek.|  
 |HOST_E_ABANDONED|Událost byla zrušena při čekání na blokované vlákno nebo vlákna.|  
 |E_FAIL|Došlo k neznámé chybě závažnosti. Když metoda vrátí E_FAIL, CLR již není v rámci procesu použitelný. Následná volání metod hostování vrací HOST_E_CLRNOTAVAILABLE.|  
-|E_UNEXPECTED|`EndDelayAbort` byla volána bez odpovídajícího volání `BeginDelayAbort`.|  
+|E_UNEXPECTED|`EndDelayAbort`byla volána bez odpovídajícího volání `BeginDelayAbort` .|  
   
 ## <a name="remarks"></a>Poznámky  
- Modul CLR provede odpovídající volání `BeginDelayAbort` u aktuální úlohy před voláním `EndDelayAbort`. V případě absence takového volání by implementace [IHostTaskManager](../../../../docs/framework/unmanaged-api/hosting/ihosttaskmanager-interface.md) hostitele měla vrátit E_UNEXPECTED z `EndDelayAbort`a neměla by mít žádnou akci.  
+ Modul CLR provede odpovídající volání na `BeginDelayAbort` aktuální úkol před voláním `EndDelayAbort` . V případě absence takového volání by implementace [IHostTaskManager](ihosttaskmanager-interface.md) hostitele měla vrátit E_UNEXPECTED z `EndDelayAbort` a neměla by mít žádnou akci.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** MSCorEE. h  
   
  **Knihovna:** Zahrnuto jako prostředek v knihovně MSCorEE. dll  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Threading>
-- [ICLRTask – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrtask-interface.md)
-- [ICLRTaskManager – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrtaskmanager-interface.md)
-- [IHostTask – rozhraní](../../../../docs/framework/unmanaged-api/hosting/ihosttask-interface.md)
-- [IHostTaskManager – rozhraní](../../../../docs/framework/unmanaged-api/hosting/ihosttaskmanager-interface.md)
+- [ICLRTask – rozhraní](iclrtask-interface.md)
+- [ICLRTaskManager – rozhraní](iclrtaskmanager-interface.md)
+- [IHostTask – rozhraní](ihosttask-interface.md)
+- [IHostTaskManager – rozhraní](ihosttaskmanager-interface.md)

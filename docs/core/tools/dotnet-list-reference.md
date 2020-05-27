@@ -1,55 +1,55 @@
 ---
-title: Dotnet list reference příkaz
-description: Příkaz odkazu na seznam dotnet poskytuje vhodnou možnost vypsat odkazy na projekty.
+title: dotnet – příkaz odkazu na seznam
+description: Příkaz referenčního seznamu dotnet nabízí pohodlný možnost seznamu odkazů na projekt.
 ms.date: 02/14/2020
-ms.openlocfilehash: c0ea46298123e69ae527870e50d204d8fcf5cc85
-ms.sourcegitcommit: 927b7ea6b2ea5a440c8f23e3e66503152eb85591
+ms.openlocfilehash: b9b34c17102c6218f3d99f6e2620e99f70140284
+ms.sourcegitcommit: d223616e7e6fe2139079052e6fcbe25413fb9900
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81463648"
+ms.lasthandoff: 05/22/2020
+ms.locfileid: "83802755"
 ---
 # <a name="dotnet-list-reference"></a>dotnet list reference
 
-**Tento článek se týká:** ✔️ .NET Core 2.x SDK a novější verze
+**Tento článek se týká:** ✔️ .NET Core 2. x SDK a novějších verzí
 
-## <a name="name"></a>Název
+## <a name="name"></a>Name
 
-`dotnet list reference`- Uvádí odkazy mezi projekty.
+`dotnet list reference`-Obsahuje odkazy z projektu na projekt.
 
-## <a name="synopsis"></a>Synopse
+## <a name="synopsis"></a>Stručný obsah
 
 ```dotnetcli
-dotnet list [<PROJECT>|<SOLUTION>] reference
+dotnet list [<PROJECT>] reference
 
 dotnet list -h|--help
 ```
 
 ## <a name="description"></a>Popis
 
-Příkaz `dotnet list reference` poskytuje vhodnou možnost vypsat odkazy na projekt pro daný projekt nebo řešení.
+`dotnet list reference`Příkaz nabízí pohodlný možnost zobrazit odkazy projektu pro daný projekt.
 
-## <a name="arguments"></a>Argumenty
+## <a name="arguments"></a>Arguments
 
-* **`PROJECT | SOLUTION`**
+* **`PROJECT`**
 
-  Určuje soubor projektu nebo řešení, který má být používán pro výpis odkazů. Pokud není zadán, příkaz prohledá aktuální adresář pro soubor projektu.
+  Soubor projektu, na kterém má být provozován. Pokud soubor není zadán, příkaz bude hledat v aktuálním adresáři.
 
 ## <a name="options"></a>Možnosti
 
 * **`-h|--help`**
 
-  Vytiskne krátkou nápovědu pro příkaz.
+  Vypíše krátkou nápovědu k příkazu.
 
 ## <a name="examples"></a>Příklady
 
-* Seznam odkazů na projekt pro zadaný projekt:
+* Vypíše odkazy projektu pro zadaný projekt:
 
   ```dotnetcli
   dotnet list app/app.csproj reference
   ```
 
-* Seznam odkazů na projekt pro projekt v aktuálním adresáři:
+* Vypíše odkazy na projekt v aktuálním adresáři:
 
   ```dotnetcli
   dotnet list reference

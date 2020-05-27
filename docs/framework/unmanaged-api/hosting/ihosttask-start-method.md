@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: b18742b0-d8c4-401c-ae89-e6eccdaa81d0
 topic_type:
 - apiref
-ms.openlocfilehash: fe93a3bab267ccca941974b734c86329ad0f4d03
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: a4e8211f091b2a3a4f24d8350f6d7dbe7d7920af
+ms.sourcegitcommit: e5772b3ddcc114c80b4c9767ffdb3f6c7fad8f05
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73121339"
+ms.lasthandoff: 05/26/2020
+ms.locfileid: "83842384"
 ---
 # <a name="ihosttaskstart-method"></a>IHostTask::Start – metoda
-Požaduje, aby hostitel přesunul úlohu představovanou aktuální instancí [IHostTask](../../../../docs/framework/unmanaged-api/hosting/ihosttask-interface.md) z pozastaveného do aktivního stavu, ve kterém lze spustit kód.  
+Požaduje, aby hostitel přesunul úlohu představovanou aktuální instancí [IHostTask](ihosttask-interface.md) z pozastaveného do aktivního stavu, ve kterém lze spustit kód.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,20 +39,20 @@ HRESULT Start ();
 |E_FAIL|Došlo k neznámé chybě závažnosti. Když metoda vrátí E_FAIL, modul CLR (Common Language Runtime) již nebude v rámci procesu použitelný. Následná volání metod hostování vrací HOST_E_CLRNOTAVAILABLE.|  
   
 ## <a name="remarks"></a>Poznámky  
- `Start` vždy vrátí hodnotu HRESULT s výjimkou případů, kdy došlo k závažným chybám.  
+ `Start`vždy vrátí hodnotu HRESULT S_OK, s výjimkou případů, kdy došlo k závažným chybám.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** MSCorEE. h  
   
  **Knihovna:** Zahrnuto jako prostředek v knihovně MSCorEE. dll  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [ICLRTask – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrtask-interface.md)
-- [ICLRTaskManager – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrtaskmanager-interface.md)
-- [IHostTask – rozhraní](../../../../docs/framework/unmanaged-api/hosting/ihosttask-interface.md)
-- [IHostTaskManager – rozhraní](../../../../docs/framework/unmanaged-api/hosting/ihosttaskmanager-interface.md)
+- [ICLRTask – rozhraní](iclrtask-interface.md)
+- [ICLRTaskManager – rozhraní](iclrtaskmanager-interface.md)
+- [IHostTask – rozhraní](ihosttask-interface.md)
+- [IHostTaskManager – rozhraní](ihosttaskmanager-interface.md)

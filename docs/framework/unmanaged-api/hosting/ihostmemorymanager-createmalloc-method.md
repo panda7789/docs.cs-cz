@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: 9ee6e052-bef7-4350-9e4f-edfffd99ad6f
 topic_type:
 - apiref
-ms.openlocfilehash: 8bcb01f4a19e6043bd59fe6f1565cdf35ed1f77c
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 89c1d7b043d4369bf16a851924711c3c9d75791e
+ms.sourcegitcommit: d223616e7e6fe2139079052e6fcbe25413fb9900
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73136729"
+ms.lasthandoff: 05/22/2020
+ms.locfileid: "83804534"
 ---
 # <a name="ihostmemorymanagercreatemalloc-method"></a>IHostMemoryManager::CreateMAlloc – metoda
-Získá ukazatel rozhraní na instanci [IHostMalloc](../../../../docs/framework/unmanaged-api/hosting/ihostmalloc-interface.md) , která se používá k provádění požadavků na přidělení z haldy vytvořené hostitelem.  
+Získá ukazatel rozhraní na instanci [IHostMalloc](ihostmalloc-interface.md) , která se používá k provádění požadavků na přidělení z haldy vytvořené hostitelem.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -36,7 +36,7 @@ HRESULT CreateMalloc (
   
 ## <a name="parameters"></a>Parametry  
  `dwMallocType`  
- pro Kombinace příznaků [MALLOC_TYPE](../../../../docs/framework/unmanaged-api/hosting/malloc-type-enumeration.md) , které určují charakteristiky přidělené paměti.  
+ pro Kombinace příznaků [MALLOC_TYPE](malloc-type-enumeration.md) , které určují charakteristiky přidělené paměti.  
   
  `ppMAlloc`  
  mimo Ukazatel na adresu `IHostMAlloc` instance poskytnuté hostitelem.  
@@ -45,7 +45,7 @@ HRESULT CreateMalloc (
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
-|S_OK|`CreateMAlloc` byla úspěšně vrácena.|  
+|S_OK|`CreateMAlloc`úspěšně vráceno.|  
 |HOST_E_CLRNOTAVAILABLE|Modul CLR (Common Language Runtime) nebyl načten do procesu, nebo je modul CLR ve stavu, ve kterém nemůže spustit spravovaný kód nebo úspěšně zpracovat volání.|  
 |HOST_E_TIMEOUT|Vypršel časový limit volání.|  
 |HOST_E_NOT_OWNER|Volající nevlastní zámek.|  
@@ -54,18 +54,18 @@ HRESULT CreateMalloc (
 |E_OUTOFMEMORY|K dokončení žádosti o přidělení není k dispozici dostatek fyzické paměti.|  
   
 ## <a name="remarks"></a>Poznámky  
- `CreateMAlloc` vrátí objekt, který umožňuje modulu CLR vytvářet požadavky na přidělení prostřednictvím hostitele namísto použití standardních funkcí Win32.  
+ `CreateMAlloc`Vrátí objekt, který umožňuje modulu CLR vytvářet požadavky na přidělení prostřednictvím hostitele namísto použití standardních funkcí Win32.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** MSCorEE. h  
   
  **Knihovna:** Zahrnuto jako prostředek v knihovně MSCorEE. dll  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [IHostMalloc – rozhraní](../../../../docs/framework/unmanaged-api/hosting/ihostmalloc-interface.md)
-- [IHostMemoryManager – rozhraní](../../../../docs/framework/unmanaged-api/hosting/ihostmemorymanager-interface.md)
+- [IHostMalloc – rozhraní](ihostmalloc-interface.md)
+- [IHostMemoryManager – rozhraní](ihostmemorymanager-interface.md)

@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: 0fa34bca-ed18-4626-9e78-d33684d18edb
 topic_type:
 - apiref
-ms.openlocfilehash: c23773dce448c8c98d4926dff3fa51100e683fd0
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 25e931ec17cad3508d548fb4ca7e53b0ade3f119
+ms.sourcegitcommit: d223616e7e6fe2139079052e6fcbe25413fb9900
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73192040"
+ms.lasthandoff: 05/22/2020
+ms.locfileid: "83804958"
 ---
 # <a name="ihostcontrolgethostmanager-method"></a>IHostControl::GetHostManager – metoda
-Získá ukazatel rozhraní na implementaci rozhraní se zadaným `IID`.  
+Získá ukazatel rozhraní na implementaci rozhraní se zadaným hostitelem `IID` .  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -36,7 +36,7 @@ HRESULT GetHostManager (
   
 ## <a name="parameters"></a>Parametry  
  `riid`  
- pro `IID` rozhraní, pro které se modul CLR (Common Language Runtime) dotazuje na.  
+ pro `IID`Rozhraní, pro které se modul CLR (Common Language Runtime) dotazuje na.  
   
  `ppObject`  
  mimo Ukazatel na rozhraní implementovaného hostitelem nebo hodnotu null, pokud hostitel toto rozhraní nepodporuje.  
@@ -45,7 +45,7 @@ HRESULT GetHostManager (
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
-|S_OK|`GetHostManager` byla úspěšně vrácena.|  
+|S_OK|`GetHostManager`úspěšně vráceno.|  
 |HOST_E_CLRNOTAVAILABLE|Modul CLR nebyl načten do procesu, nebo je modul CLR ve stavu, ve kterém nemůže spustit spravovaný kód nebo úspěšně zpracovat volání.|  
 |HOST_E_TIMEOUT|Vypršel časový limit volání.|  
 |HOST_E_NOT_OWNER|Volající nevlastní zámek.|  
@@ -57,37 +57,37 @@ HRESULT GetHostManager (
 ## <a name="remarks"></a>Poznámky  
  CLR dotazuje hostitele, aby zjistil, zda podporuje jedno nebo více následujících rozhraní:  
   
-- [IHostMemoryManager](../../../../docs/framework/unmanaged-api/hosting/ihostmemorymanager-interface.md)  
+- [IHostMemoryManager](ihostmemorymanager-interface.md)  
   
-- [IHostTaskManager](../../../../docs/framework/unmanaged-api/hosting/ihosttaskmanager-interface.md)  
+- [IHostTaskManager](ihosttaskmanager-interface.md)  
   
-- [IHostThreadPoolManager](../../../../docs/framework/unmanaged-api/hosting/ihostthreadpoolmanager-interface.md)  
+- [IHostThreadPoolManager](ihostthreadpoolmanager-interface.md)  
   
-- [IHostIoCompletionManager](../../../../docs/framework/unmanaged-api/hosting/ihostiocompletionmanager-interface.md)  
+- [IHostIoCompletionManager](ihostiocompletionmanager-interface.md)  
   
-- [IHostSyncManager](../../../../docs/framework/unmanaged-api/hosting/ihostsyncmanager-interface.md)  
+- [IHostSyncManager](ihostsyncmanager-interface.md)  
   
-- [IHostAssemblyManager](../../../../docs/framework/unmanaged-api/hosting/ihostassemblymanager-interface.md)  
+- [IHostAssemblyManager](ihostassemblymanager-interface.md)  
   
-- [IHostGCManager](../../../../docs/framework/unmanaged-api/hosting/ihostgcmanager-interface.md)  
+- [IHostGCManager](ihostgcmanager-interface.md)  
   
-- [IHostPolicyManager](../../../../docs/framework/unmanaged-api/hosting/ihostpolicymanager-interface.md)  
+- [IHostPolicyManager](ihostpolicymanager-interface.md)  
   
-- [IHostSecurityManager](../../../../docs/framework/unmanaged-api/hosting/ihostsecuritymanager-interface.md)  
+- [IHostSecurityManager](ihostsecuritymanager-interface.md)  
   
- Pokud hostitel podporuje zadané rozhraní, nastaví `ppObject` ke své implementaci tohoto rozhraní. V opačném případě nastaví `ppObject` na hodnotu null.  
+ Pokud hostitel podporuje zadané rozhraní, nastaví `ppObject` implementaci tohoto rozhraní. V opačném případě se nastaví `ppObject` na hodnotu null.  
   
- CLR nevolá `Release` pro správce hostitele, ani když ho vypnete.  
+ Modul CLR nevolá `Release` správce hostitelů ani po jeho vypnutí.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** MSCorEE. h  
   
  **Knihovna:** Zahrnuto jako prostředek v knihovně MSCorEE. dll  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [IHostControl – rozhraní](../../../../docs/framework/unmanaged-api/hosting/ihostcontrol-interface.md)
+- [IHostControl – rozhraní](ihostcontrol-interface.md)

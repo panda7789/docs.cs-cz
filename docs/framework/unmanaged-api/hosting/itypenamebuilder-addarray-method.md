@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 0a21ae28-54bc-4f6e-aaa6-960a22c5f530
 topic_type:
 - apiref
-ms.openlocfilehash: 1d10784ec1a464cf4c9e0c0c66f28984ab672303
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 4d12d1dc09c4cc2bed688c750149979991b01461
+ms.sourcegitcommit: e5772b3ddcc114c80b4c9767ffdb3f6c7fad8f05
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73127963"
+ms.lasthandoff: 05/26/2020
+ms.locfileid: "83842115"
 ---
 # <a name="itypenamebuilderaddarray-method"></a>ITypeNameBuilder::AddArray – metoda
 Tato metoda podporuje infrastrukturu .NET Framework a není určena pro použití přímo v kódu.  
@@ -34,14 +34,14 @@ HRESULT AddArray (
 ```  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** MSCorEE. h  
   
  **Knihovna:** Zahrnuto jako prostředek v knihovně MSCorEE. dll  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Rozhraní pro hostování](../../../../docs/framework/unmanaged-api/hosting/hosting-interfaces.md)
+- [Rozhraní pro hostování](hosting-interfaces.md)

@@ -11,16 +11,16 @@ helpviewer_keywords:
 - application development [.NET], globalization
 - multilingual application development
 ms.assetid: 9a59696b-d89b-45bd-946d-c75da4732d02
-ms.openlocfilehash: eae1c38c2383d13bfb4dab83f2fe9551970b39f4
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: c5c601d18d92d9b57781bc8a09f26f0bc3a9216a
+ms.sourcegitcommit: e5772b3ddcc114c80b4c9767ffdb3f6c7fad8f05
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "73120889"
+ms.lasthandoff: 05/26/2020
+ms.locfileid: "83842007"
 ---
 # <a name="globalizing-and-localizing-net-applications"></a>Globalizace a lokalizace aplikací .NET
 
-Vývoj aplikace připravené pro svět, včetně aplikace, která může být lokalizována do jednoho nebo více jazyků, zahrnuje tři kroky: globalizace, kontrola lokalizovatelnosti a lokalizace.
+Vývoj aplikace připravené pro použití ve světě, včetně aplikace, která může být lokalizována do jednoho nebo více jazyků, zahrnuje tři kroky: globalizace, přezkoumání lokalizovatelnosti a lokalizaci.
 
 [Globalizace](globalization.md)
 
@@ -40,15 +40,19 @@ Následující tři kroky přináší dvě výhody:
 
 - Výsledkem jsou lokalizované aplikace, které jsou více stabilní a méně chybové.
 
-.NET poskytuje rozsáhlou podporu pro vývoj aplikací připravených pro svět a lokalizovaných aplikací. Zejména mnoho členů typu v knihovně třídy .NET pomáhá globalizaci vrácením hodnot, které odrážejí konvence jazykové verze aktuálního uživatele nebo zadané jazykové verze. Rozhraní .NET také podporuje satelitní sestavení, která usnadňují proces lokalizace aplikace.
+.NET poskytuje rozsáhlou podporu pro vývoj aplikací připravených pro použití ve světě. Konkrétně mnoho členů typu v knihovně tříd .NET podporuje globalizaci vrácením hodnot, které odráží konvence buď aktuální jazykové verze uživatele, nebo zadané jazykové verze. Rozhraní .NET také podporuje satelitní sestavení, která usnadňují proces lokalizace aplikace.
 
-Další informace naleznete v [dokumentaci globalizace](/globalization/).
+Další informace naleznete v dokumentaci k [globalizaci](/globalization/).
 
-## <a name="in-this-section"></a>V tomto oddílu
+## <a name="in-this-section"></a>V této části
 
 [Globalizace](globalization.md)
 
 Tento článek popisuje první fázi vytváření globalizované aplikace, včetně návrhu a kódování aplikace, která je nezávislá na jazykové verzi a jazyce.
+
+[Rozhraní .NET globalizace a ICU](globalization-icu.md)
+
+Popisuje, jak globalizace rozhraní .NET používá [mezinárodní komponenty pro kódování Unicode (ICU)](http://site.icu-project.org/home).
 
 [Revize lokalizovatelnosti](localizability-review.md)
 
@@ -60,30 +64,30 @@ Tento článek popisuje závěrečnou fázi vytvoření lokalizované aplikace, 
 
 [Řetězcové operace nezávislé na jazykové verzi](culture-insensitive-string-operations.md)
 
-Popisuje, jak používat metody a třídy .NET, které jsou ve výchozím nastavení citlivé na jazykovou verzi, aby získaly výsledky necitlivé na jazykovou verzi.
+Popisuje, jak používat metody a třídy .NET, které jsou ve výchozím nastavení závislé na jazykové verzi pro získání výsledků nezávislých na jazykové verzi.
 
-[Osvědčené postupy pro vývoj aplikací připravených pro svět](best-practices-for-developing-world-ready-apps.md)
+[Osvědčené postupy pro vývoj aplikací připravených pro použití ve světě](best-practices-for-developing-world-ready-apps.md)
 
 Popisuje doporučené postupy pro globalizaci, lokalizaci a vývoj globalizovaných aplikací technologie ASP.NET.
 
-## <a name="reference"></a>Referenční informace
+## <a name="reference"></a>Reference
 
-- <xref:System.Globalization?displayProperty=nameWithType>Namespace
+- <xref:System.Globalization?displayProperty=nameWithType>hosting
 
    Obsahuje třídy, které definují informace týkající se jazykové verze, jako je jazyk, země a oblast, používané kalendáře, vzory formátu data, měny a čísel a pořadí řazení řetězců.
 
-- <xref:System.Resources>Namespace
+- <xref:System.Resources>hosting
 
    Obsahuje třídy pro vytváření, manipulaci a používání prostředků.
 
-- <xref:System.Text>Namespace
+- <xref:System.Text>hosting
 
    Obsahuje třídy představující kódování znaků ASCII, ANSI, Unicode a další.
 
-- [Resgen.exe (generátor zdrojových souborů)](../../../docs/framework/tools/resgen-exe-resource-file-generator.md)
+- [Resgen. exe (generátor zdrojových souborů)](../../../docs/framework/tools/resgen-exe-resource-file-generator.md)
 
    Popisuje způsob použití Resgen.exe pro převedení souborů TXT a souborů prostředků založených na formátu XML (RESX) na binární soubory .resources modulu CLR (Common Language Runtime).
 
-- [Winres.exe (editor prostředků Windows Forms)](../../../docs/framework/tools/winres-exe-windows-forms-resource-editor.md)
+- [Winres. exe (model Windows Forms editor prostředků)](../../../docs/framework/tools/winres-exe-windows-forms-resource-editor.md)
 
    Popisuje způsob lokalizace formulářů Windows Forms pomocí nástroje Winres.exe.

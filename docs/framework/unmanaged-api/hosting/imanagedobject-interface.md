@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 1fbbf572-6d28-41a5-82fb-579ac90bfcf5
 topic_type:
 - apiref
-ms.openlocfilehash: c5dc1ad5bd98899f82e0b52345710c5ea3da864b
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 8439be4d466c13feaaf4ac6cf946b5960e2862a3
+ms.sourcegitcommit: e5772b3ddcc114c80b4c9767ffdb3f6c7fad8f05
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73103033"
+ms.lasthandoff: 05/26/2020
+ms.locfileid: "83842319"
 ---
 # <a name="imanagedobject-interface"></a>IManagedObject – rozhraní
 Poskytuje metody pro řízení spravovaného objektu.  
@@ -28,18 +28,18 @@ Poskytuje metody pro řízení spravovaného objektu.
   
 |Metoda|Popis|  
 |------------|-----------------|  
-|[GetObjectIdentity – metoda](../../../../docs/framework/unmanaged-api/hosting/imanagedobject-getobjectidentity-method.md)|Získá identitu tohoto spravovaného objektu.|  
-|[GetSerializedBuffer – metoda](../../../../docs/framework/unmanaged-api/hosting/imanagedobject-getserializedbuffer-method.md)|Získá řetězcovou reprezentaci tohoto spravovaného objektu.|  
+|[GetObjectIdentity – metoda](imanagedobject-getobjectidentity-method.md)|Získá identitu tohoto spravovaného objektu.|  
+|[GetSerializedBuffer – metoda](imanagedobject-getserializedbuffer-method.md)|Získá řetězcovou reprezentaci tohoto spravovaného objektu.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** MSCorEE. h  
   
  **Knihovna:** Zahrnuto jako prostředek v knihovně MSCorEE. dll  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Rozhraní pro hostování](../../../../docs/framework/unmanaged-api/hosting/hosting-interfaces.md)
+- [Rozhraní pro hostování](hosting-interfaces.md)

@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 638d77df-ff9c-40d9-88ee-930f5f87ada1
 topic_type:
 - apiref
-ms.openlocfilehash: ac835459f88655377d96699e6aea0e877218c8fb
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: e059cdddef7926c1359a83bc562146203724aa60
+ms.sourcegitcommit: e5772b3ddcc114c80b4c9767ffdb3f6c7fad8f05
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73125276"
+ms.lasthandoff: 05/26/2020
+ms.locfileid: "83842101"
 ---
 # <a name="itypenamegettypearguments-method"></a>ITypeName::GetTypeArguments – metoda
 Tato metoda podporuje infrastrukturu .NET Framework a není určena pro použití přímo v kódu.  
@@ -36,14 +36,14 @@ HRESULT GetTypeArguments (
 ```  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** MSCorEE. h  
   
  **Knihovna:** Zahrnuto jako prostředek v knihovně MSCorEE. dll  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Rozhraní pro hostování](../../../../docs/framework/unmanaged-api/hosting/hosting-interfaces.md)
+- [Rozhraní pro hostování](hosting-interfaces.md)

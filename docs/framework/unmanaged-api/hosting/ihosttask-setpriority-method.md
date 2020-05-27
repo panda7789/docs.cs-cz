@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: cd8c379b-c7a0-434f-8e23-899bd26be75d
 topic_type:
 - apiref
-ms.openlocfilehash: c64cee9ec9b62d87e0c4ae1aafaff59bb985ec95
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: ac3a8479cdf05e55885bd55d4e4fb8e6e47686f9
+ms.sourcegitcommit: e5772b3ddcc114c80b4c9767ffdb3f6c7fad8f05
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73121355"
+ms.lasthandoff: 05/26/2020
+ms.locfileid: "83842395"
 ---
 # <a name="ihosttasksetpriority-method"></a>IHostTask::SetPriority – metoda
-Požaduje, aby hostitel upravil úroveň priority vlákna pro úlohu reprezentovanou aktuální instancí [IHostTask](../../../../docs/framework/unmanaged-api/hosting/ihosttask-interface.md) .  
+Požaduje, aby hostitel upravil úroveň priority vlákna pro úlohu reprezentovanou aktuální instancí [IHostTask](ihosttask-interface.md) .  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -35,13 +35,13 @@ HRESULT SetPriority (
   
 ## <a name="parameters"></a>Parametry  
  `newPriority`  
- pro Celé číslo, které představuje požadovanou hodnotu priority vlákna pro úlohu reprezentovanou aktuální instancí `IHostTask`.  
+ pro Celé číslo, které představuje požadovanou hodnotu priority vlákna pro úlohu reprezentovanou aktuální `IHostTask` instancí.  
   
 ## <a name="return-value"></a>Návratová hodnota  
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
-|S_OK|`SetPriority` byla úspěšně vrácena.|  
+|S_OK|`SetPriority`úspěšně vráceno.|  
 |HOST_E_CLRNOTAVAILABLE|Modul CLR (Common Language Runtime) nebyl načten do procesu, nebo je modul CLR ve stavu, ve kterém nemůže spustit spravovaný kód nebo úspěšně zpracovat volání.|  
 |HOST_E_TIMEOUT|Vypršel časový limit volání.|  
 |HOST_E_NOT_OWNER|Volající nevlastní zámek.|  
@@ -49,7 +49,7 @@ HRESULT SetPriority (
 |E_FAIL|Došlo k neznámé chybě závažnosti. Když metoda vrátí E_FAIL, CLR již není v rámci procesu použitelný. Následná volání metod hostování vrací HOST_E_CLRNOTAVAILABLE.|  
   
 ## <a name="remarks"></a>Poznámky  
- Vlákna jsou udělena doba zpracování pomocí systému kruhového dotazování, který je částečně založen na úrovni priority vlákna. `SetPriority` umožňuje modulu CLR nastavit pro aktuální úkol úroveň priority vlákna. Jsou podporovány následující hodnoty `newPriority`.  
+ Vlákna jsou udělena doba zpracování pomocí systému kruhového dotazování, který je částečně založen na úrovni priority vlákna. `SetPriority`umožňuje modulu CLR nastavit pro aktuální úkol úroveň priority vlákna. `newPriority`Podporovány jsou následující hodnoty.  
   
 - THREAD_PRIORITY_ABOVE_NORMAL  
   
@@ -65,27 +65,27 @@ HRESULT SetPriority (
   
 - THREAD_PRIORITY_TIME_CRITICAL  
   
- CLR volá `SetPriority`, když je hodnota <xref:System.Threading.Thread.Priority%2A?displayProperty=nameWithType> upravena uživatelským kódem. Hostitel může definovat vlastní algoritmy pro přiřazení priority vlákna a je zadarmo ignorovat tento požadavek.  
+ CLR volá, `SetPriority` Když <xref:System.Threading.Thread.Priority%2A?displayProperty=nameWithType> je hodnota změněna pomocí uživatelského kódu. Hostitel může definovat vlastní algoritmy pro přiřazení priority vlákna a je zadarmo ignorovat tento požadavek.  
   
 > [!NOTE]
-> `SetPriority` neoznamuje, zda byla změněna úroveň priority vlákna. Voláním [IHostTask:: GetPriority](../../../../docs/framework/unmanaged-api/hosting/ihosttask-getpriority-method.md) určíte hodnotu úrovně priority vlákna úlohy.  
+> `SetPriority`neoznamuje, zda byla změněna úroveň priority vlákna. Voláním [IHostTask:: GetPriority](ihosttask-getpriority-method.md) určíte hodnotu úrovně priority vlákna úlohy.  
   
- Hodnoty úrovně priority vlákna jsou definovány funkcí Win32 `SetThreadPriority`. Další informace o prioritě vlákna najdete v dokumentaci k platformě Windows.  
+ Hodnoty úrovně priority vlákna jsou definovány `SetThreadPriority` funkcí Win32. Další informace o prioritě vlákna najdete v dokumentaci k platformě Windows.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** MSCorEE. h  
   
  **Knihovna:** Zahrnuto jako prostředek v knihovně MSCorEE. dll  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Threading.Thread>
-- [ICLRTask – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrtask-interface.md)
-- [ICLRTaskManager – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrtaskmanager-interface.md)
-- [IHostTask – rozhraní](../../../../docs/framework/unmanaged-api/hosting/ihosttask-interface.md)
-- [GetPriority – metoda](../../../../docs/framework/unmanaged-api/hosting/ihosttask-getpriority-method.md)
-- [IHostTaskManager – rozhraní](../../../../docs/framework/unmanaged-api/hosting/ihosttaskmanager-interface.md)
+- [ICLRTask – rozhraní](iclrtask-interface.md)
+- [ICLRTaskManager – rozhraní](iclrtaskmanager-interface.md)
+- [IHostTask – rozhraní](ihosttask-interface.md)
+- [GetPriority – metoda](ihosttask-getpriority-method.md)
+- [IHostTaskManager – rozhraní](ihosttaskmanager-interface.md)

@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 13be0299-df0d-4951-aabf-0676a30b385f
 topic_type:
 - apiref
-ms.openlocfilehash: d39ad45e143026f40ffcf1339e923837f9e812c4
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 473a52b55f793abc76883b0a5cd5b2a04756d9f7
+ms.sourcegitcommit: d223616e7e6fe2139079052e6fcbe25413fb9900
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73195850"
+ms.lasthandoff: 05/22/2020
+ms.locfileid: "83804359"
 ---
 # <a name="ihostmemorymanagervirtualprotect-method"></a>IHostMemoryManager::VirtualProtect – metoda
 Slouží jako logická obálka odpovídající funkce Win32. Implementace Win32 `VirtualProtect` mění ochranu v oblasti potvrzených stránek ve virtuálním adresním prostoru volajícího procesu.  
@@ -53,7 +53,7 @@ HRESULT VirtualProtect (
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
-|S_OK|`VirtualProtect` byla úspěšně vrácena.|  
+|S_OK|`VirtualProtect`úspěšně vráceno.|  
 |HOST_E_CLRNOTAVAILABLE|Modul CLR (Common Language Runtime) nebyl načten do procesu, nebo je modul CLR ve stavu, ve kterém nemůže spustit spravovaný kód nebo úspěšně zpracovat volání.|  
 |HOST_E_TIMEOUT|Vypršel časový limit volání.|  
 |HOST_E_NOT_OWNER|Volající nevlastní zámek.|  
@@ -64,14 +64,14 @@ HRESULT VirtualProtect (
  Tato implementace `VirtualProtect` vrátí hodnotu HRESULT, zatímco implementace Win32 vrátí nenulovou hodnotu pro indikaci úspěchu a nulovou hodnotu pro indikaci selhání. Další informace najdete v dokumentaci k platformě Windows.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** MSCorEE. h  
   
  **Knihovna:** Zahrnuto jako prostředek v knihovně MSCorEE. dll  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [IHostMemoryManager – rozhraní](../../../../docs/framework/unmanaged-api/hosting/ihostmemorymanager-interface.md)
+- [IHostMemoryManager – rozhraní](ihostmemorymanager-interface.md)

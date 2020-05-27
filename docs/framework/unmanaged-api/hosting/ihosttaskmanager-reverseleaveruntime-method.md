@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 4837d398-16a1-4e32-902c-022cd1aad3ca
 topic_type:
 - apiref
-ms.openlocfilehash: 362239c584f469c9bd88f9f937bb3cdae7235429
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: d328afcba9761f686dd38bdb2dd651994faaac2a
+ms.sourcegitcommit: e5772b3ddcc114c80b4c9767ffdb3f6c7fad8f05
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73132959"
+ms.lasthandoff: 05/26/2020
+ms.locfileid: "83841851"
 ---
 # <a name="ihosttaskmanagerreverseleaveruntime-method"></a>IHostTaskManager::ReverseLeaveRuntime – metoda
 Upozorňuje hostitele, že řízení opouští modul CLR (Common Language Runtime) a zadává nespravovanou funkci, která byla zase volána ze spravovaného kódu.  
@@ -35,7 +35,7 @@ HRESULT ReverseLeaveRuntime ();
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
-|S_OK|`ReverseLeaveRuntime` byla úspěšně vrácena.|  
+|S_OK|`ReverseLeaveRuntime`úspěšně vráceno.|  
 |HOST_E_CLRNOTAVAILABLE|Modul CLR nebyl načten do procesu, nebo je modul CLR ve stavu, ve kterém nemůže spustit spravovaný kód nebo úspěšně zpracovat volání.|  
 |HOST_E_TIMEOUT|Vypršel časový limit volání.|  
 |HOST_E_NOT_OWNER|Volající nevlastní zámek.|  
@@ -44,24 +44,24 @@ HRESULT ReverseLeaveRuntime ();
 |E_OUTOFMEMORY|K dokončení požadovaného přidělení prostředků není k dispozici dostatek paměti.|  
   
 ## <a name="remarks"></a>Poznámky  
- CLR volá `ReverseLeaveRuntime` pro informování hostitele, že aktuálně vykonávaná úloha vrací řízení nespravované funkci, která byla volána ze spravovaného kódu prostřednictvím vyvolání platformy. Každé volání `ReverseLeaveRuntime` odpovídá odpovídajícímu volání [ReverseEnterRuntime –](../../../../docs/framework/unmanaged-api/hosting/ihosttaskmanager-reverseenterruntime-method.md).  
+ Rozhraní CLR `ReverseLeaveRuntime` informuje hostitele o tom, že aktuálně vykonávaná úloha vrací řízení nespravované funkci, která byla volána ze spravovaného kódu prostřednictvím vyvolání platformy. Každé volání `ReverseLeaveRuntime` odpovídá odpovídajícímu volání [ReverseEnterRuntime –](ihosttaskmanager-reverseenterruntime-method.md).  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** MSCorEE. h  
   
  **Knihovna:** Zahrnuto jako prostředek v knihovně MSCorEE. dll  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [CallNeedsHostHook – metoda](../../../../docs/framework/unmanaged-api/hosting/ihosttaskmanager-callneedshosthook-method.md)
-- [EnterRuntime – metoda](../../../../docs/framework/unmanaged-api/hosting/ihosttaskmanager-enterruntime-method.md)
-- [ICLRTask – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrtask-interface.md)
-- [ICLRTaskManager – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrtaskmanager-interface.md)
-- [IHostTask – rozhraní](../../../../docs/framework/unmanaged-api/hosting/ihosttask-interface.md)
-- [IHostTaskManager – rozhraní](../../../../docs/framework/unmanaged-api/hosting/ihosttaskmanager-interface.md)
-- [LeaveRuntime – metoda](../../../../docs/framework/unmanaged-api/hosting/ihosttaskmanager-leaveruntime-method.md)
+- [CallNeedsHostHook – metoda](ihosttaskmanager-callneedshosthook-method.md)
+- [EnterRuntime – metoda](ihosttaskmanager-enterruntime-method.md)
+- [ICLRTask – rozhraní](iclrtask-interface.md)
+- [ICLRTaskManager – rozhraní](iclrtaskmanager-interface.md)
+- [IHostTask – rozhraní](ihosttask-interface.md)
+- [IHostTaskManager – rozhraní](ihosttaskmanager-interface.md)
+- [LeaveRuntime – metoda](ihosttaskmanager-leaveruntime-method.md)
 - [Bližší pohled na vyvolání platformy](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/0h9e9t7d(v=vs.100))

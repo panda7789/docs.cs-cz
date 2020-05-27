@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: 46becf3e-bc0e-4338-85c0-9ab0df76a1d0
 topic_type:
 - apiref
-ms.openlocfilehash: 792b735522580eb7460da703899a00781e525419
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 55fd858927743b097e5e842c0897a16d36b76733
+ms.sourcegitcommit: d223616e7e6fe2139079052e6fcbe25413fb9900
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73124449"
+ms.lasthandoff: 05/22/2020
+ms.locfileid: "83804987"
 ---
 # <a name="ihostautoeventset-method"></a>IHostAutoEvent::Set – metoda
-Nastaví aktuální instanci [IHostAutoEvent](../../../../docs/framework/unmanaged-api/hosting/ihostautoevent-interface.md) na signálový stav.  
+Nastaví aktuální instanci [IHostAutoEvent](ihostautoevent-interface.md) na signálový stav.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -35,7 +35,7 @@ HRESULT Set ();
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
-|S_OK|`Set` byla úspěšně vrácena.|  
+|S_OK|`Set`úspěšně vráceno.|  
 |HOST_E_CLRNOTAVAILABLE|Modul CLR (Common Language Runtime) nebyl načten do procesu, nebo je modul CLR ve stavu, ve kterém nemůže spustit spravovaný kód nebo úspěšně zpracovat volání.|  
 |HOST_E_TIMEOUT|Vypršel časový limit volání.|  
 |HOST_E_NOT_OWNER|Volající nevlastní zámek.|  
@@ -43,17 +43,17 @@ HRESULT Set ();
 |E_FAIL|Došlo k neznámé chybě závažnosti. Když metoda vrátí E_FAIL, CLR již není v rámci procesu použitelný. Následná volání metod hostování vrací HOST_E_CLRNOTAVAILABLE.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** MSCorEE. h  
   
  **Knihovna:** Zahrnuto jako prostředek v knihovně MSCorEE. dll  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [ICLRSyncManager – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrsyncmanager-interface.md)
-- [IHostAutoEvent – rozhraní](../../../../docs/framework/unmanaged-api/hosting/ihostautoevent-interface.md)
-- [IHostManualEvent – rozhraní](../../../../docs/framework/unmanaged-api/hosting/ihostmanualevent-interface.md)
-- [IHostSyncManager – rozhraní](../../../../docs/framework/unmanaged-api/hosting/ihostsyncmanager-interface.md)
+- [ICLRSyncManager – rozhraní](iclrsyncmanager-interface.md)
+- [IHostAutoEvent – rozhraní](ihostautoevent-interface.md)
+- [IHostManualEvent – rozhraní](ihostmanualevent-interface.md)
+- [IHostSyncManager – rozhraní](ihostsyncmanager-interface.md)

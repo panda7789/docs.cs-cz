@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 68c4ea19-c47c-45c6-b420-d3a2ba1c2d50
 topic_type:
 - apiref
-ms.openlocfilehash: 64cf6c80ab1cf4b3ca52c60d6e72b54c438f9f4a
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: f3e7456c3f992527981a15b3b1835e1ca72603ad
+ms.sourcegitcommit: d223616e7e6fe2139079052e6fcbe25413fb9900
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73195842"
+ms.lasthandoff: 05/22/2020
+ms.locfileid: "83803299"
 ---
 # <a name="ihostsyncmanagercreaterwlockreaderevent-method"></a>IHostSyncManager::CreateRWLockReaderEvent – metoda
 Vytvoří objekt události ručního resetování pro implementaci zámku čtecího modulu.  
@@ -37,19 +37,19 @@ HRESULT CreateRWLockReaderEvent (
   
 ## <a name="parameters"></a>Parametry  
  `bInitialState`  
- [in] `true`, pokud by `ppEvent` mělo být signalizace; v opačném případě `false`.  
+ [in] `true` , pokud `ppEvent` by měla být signalizována. v opačném případě `false` .  
   
  `cookie`  
  pro Soubor cookie, který se má přidružit k zámku čtečky.  
   
  `ppEvent`  
- mimo Ukazatel na adresu instance [IHostManualEvent](../../../../docs/framework/unmanaged-api/hosting/ihostmanualevent-interface.md) nebo hodnotu null, pokud objekt události nelze vytvořit.  
+ mimo Ukazatel na adresu instance [IHostManualEvent](ihostmanualevent-interface.md) nebo hodnotu null, pokud objekt události nelze vytvořit.  
   
 ## <a name="return-value"></a>Návratová hodnota  
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
-|S_OK|`CreateRWLockReaderEvent` byla úspěšně vrácena.|  
+|S_OK|`CreateRWLockReaderEvent`úspěšně vráceno.|  
 |HOST_E_CLRNOTAVAILABLE|Modul CLR (Common Language Runtime) nebyl načten do procesu, nebo je modul CLR ve stavu, ve kterém nemůže spustit spravovaný kód nebo úspěšně zpracovat volání.|  
 |HOST_E_TIMEOUT|Vypršel časový limit volání.|  
 |HOST_E_NOT_OWNER|Volající nevlastní zámek.|  
@@ -58,20 +58,20 @@ HRESULT CreateRWLockReaderEvent (
 |E_OUTOFMEMORY|Pro vytvoření požadovaného objektu události není k dispozici dostatek paměti.|  
   
 ## <a name="remarks"></a>Poznámky  
- Modul CLR volá `CreateRWLockReaderEvent`, aby získal odkaz na instanci `IHostManualEvent`, která se má použít při implementaci zámku čtecího modulu. Hostitel může pomocí souboru cookie určit, které úlohy čekají na zámek čtečky, pomocí dotazování rozhraní [ICLRSyncManager](../../../../docs/framework/unmanaged-api/hosting/iclrsyncmanager-interface.md) .  
+ CLR volá `CreateRWLockReaderEvent` , aby získal odkaz na `IHostManualEvent` instanci, která se má použít při implementaci zámku čtecího modulu. Hostitel může pomocí souboru cookie určit, které úlohy čekají na zámek čtečky, pomocí dotazování rozhraní [ICLRSyncManager](iclrsyncmanager-interface.md) .  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** MSCorEE. h  
   
  **Knihovna:** Zahrnuto jako prostředek v knihovně MSCorEE. dll  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [ICLRSyncManager – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrsyncmanager-interface.md)
-- [IHostAutoEvent – rozhraní](../../../../docs/framework/unmanaged-api/hosting/ihostautoevent-interface.md)
-- [IHostManualEvent – rozhraní](../../../../docs/framework/unmanaged-api/hosting/ihostmanualevent-interface.md)
-- [IHostSyncManager – rozhraní](../../../../docs/framework/unmanaged-api/hosting/ihostsyncmanager-interface.md)
+- [ICLRSyncManager – rozhraní](iclrsyncmanager-interface.md)
+- [IHostAutoEvent – rozhraní](ihostautoevent-interface.md)
+- [IHostManualEvent – rozhraní](ihostmanualevent-interface.md)
+- [IHostSyncManager – rozhraní](ihostsyncmanager-interface.md)

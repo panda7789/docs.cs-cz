@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: acd74cb5-7e22-4a07-83c3-82288e1abd9f
 topic_type:
 - apiref
-ms.openlocfilehash: 84fc99f6a5feb7ec73ee16942ba2794fc082dc89
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 8d18e6c1dca7f52b17c19f4638410a08866905f7
+ms.sourcegitcommit: d223616e7e6fe2139079052e6fcbe25413fb9900
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73133904"
+ms.lasthandoff: 05/22/2020
+ms.locfileid: "83804802"
 ---
 # <a name="ihostiocompletionmanagerbind-method"></a>IHostIoCompletionManager::Bind – metoda
-Váže zadaný popisovač na port pro dokončení I/O, který byl vytvořen dřívějším voláním [CreateIoCompletionPort –](../../../../docs/framework/unmanaged-api/hosting/ihostiocompletionmanager-createiocompletionport-method.md).  
+Váže zadaný popisovač na port pro dokončení I/O, který byl vytvořen dřívějším voláním [CreateIoCompletionPort –](ihostiocompletionmanager-createiocompletionport-method.md).  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -36,16 +36,16 @@ HRESULT Bind (
   
 ## <a name="parameters"></a>Parametry  
  `hPort`  
- pro Port pro dokončení I/O, ke kterému se má vytvořit vazba `hHandle`. Pokud je hodnota `hPort` null, `hHandle` je svázána s výchozím portem pro dokončení I/O.  
+ pro Port dokončení I/O, ke kterému se má vytvořit vazba `hHandle` . Pokud je hodnota `hPort` null, `hHandle` je svázána s výchozím portem pro dokončení I/O.  
   
  `hHandle`  
- pro Popisovač operačního systému pro vytvoření vazby na `hPort`.  
+ pro Popisovač operačního systému, k němuž má být vytvořena vazba `hPort` .  
   
 ## <a name="return-value"></a>Návratová hodnota  
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
-|S_OK|`Bind` byla úspěšně vrácena.|  
+|S_OK|`Bind`úspěšně vráceno.|  
 |HOST_E_CLRNOTAVAILABLE|Modul CLR (Common Language Runtime) nebyl načten do procesu, nebo je modul CLR ve stavu, ve kterém nemůže spustit spravovaný kód nebo úspěšně zpracovat volání.|  
 |HOST_E_TIMEOUT|Vypršel časový limit volání.|  
 |HOST_E_NOT_OWNER|Volající nevlastní zámek.|  
@@ -53,20 +53,20 @@ HRESULT Bind (
 |E_FAIL|Došlo k neznámé chybě závažnosti. Když metoda vrátí E_FAIL, CLR již není v rámci procesu použitelný. Následná volání metod hostování vrací HOST_E_CLRNOTAVAILABLE.|  
   
 ## <a name="remarks"></a>Poznámky  
- Port pro dokončení I/O se vytvoří pomocí volání `CreateIoCompletionPort`. CLR volá `Bind`, aby navázala popisovač na tento port.  
+ Port pro dokončení I/O se vytvoří pomocí volání `CreateIoCompletionPort` . CLR volá `Bind` k navázání popisovače na tento port.  
   
 > [!NOTE]
-> Po dokončení vstupně-výstupních požadavků musí hostitel zavolat metodu [ICLRIoCompletionManager –:: doplněné](../../../../docs/framework/unmanaged-api/hosting/iclriocompletionmanager-oncomplete-method.md) .  
+> Po dokončení vstupně-výstupních požadavků musí hostitel zavolat metodu [ICLRIoCompletionManager –:: doplněné](iclriocompletionmanager-oncomplete-method.md) .  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** MSCorEE. h  
   
  **Knihovna:** Zahrnuto jako prostředek v knihovně MSCorEE. dll  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [ICLRIoCompletionManager – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclriocompletionmanager-interface.md)
+- [ICLRIoCompletionManager – rozhraní](iclriocompletionmanager-interface.md)
