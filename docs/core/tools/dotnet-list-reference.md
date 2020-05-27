@@ -1,55 +1,55 @@
 ---
-title: Dotnet list reference příkaz
-description: Příkaz odkazu na seznam dotnet poskytuje vhodnou možnost vypsat odkazy na projekty.
+title: dotnet – příkaz odkazu na seznam
+description: Příkaz referenčního seznamu dotnet nabízí pohodlný možnost seznamu odkazů na projekt.
 ms.date: 02/14/2020
-ms.openlocfilehash: c0ea46298123e69ae527870e50d204d8fcf5cc85
-ms.sourcegitcommit: 927b7ea6b2ea5a440c8f23e3e66503152eb85591
+ms.openlocfilehash: b9b34c17102c6218f3d99f6e2620e99f70140284
+ms.sourcegitcommit: d223616e7e6fe2139079052e6fcbe25413fb9900
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81463648"
+ms.lasthandoff: 05/22/2020
+ms.locfileid: "83802755"
 ---
-# <a name="dotnet-list-reference"></a><span data-ttu-id="87fb2-103">dotnet list reference</span><span class="sxs-lookup"><span data-stu-id="87fb2-103">dotnet list reference</span></span>
+# <a name="dotnet-list-reference"></a><span data-ttu-id="70293-103">dotnet list reference</span><span class="sxs-lookup"><span data-stu-id="70293-103">dotnet list reference</span></span>
 
-<span data-ttu-id="87fb2-104">**Tento článek se týká:** ✔️ .NET Core 2.x SDK a novější verze</span><span class="sxs-lookup"><span data-stu-id="87fb2-104">**This article applies to:** ✔️ .NET Core 2.x SDK and later versions</span></span>
+<span data-ttu-id="70293-104">**Tento článek se týká:** ✔️ .NET Core 2. x SDK a novějších verzí</span><span class="sxs-lookup"><span data-stu-id="70293-104">**This article applies to:** ✔️ .NET Core 2.x SDK and later versions</span></span>
 
-## <a name="name"></a><span data-ttu-id="87fb2-105">Název</span><span class="sxs-lookup"><span data-stu-id="87fb2-105">Name</span></span>
+## <a name="name"></a><span data-ttu-id="70293-105">Name</span><span class="sxs-lookup"><span data-stu-id="70293-105">Name</span></span>
 
-<span data-ttu-id="87fb2-106">`dotnet list reference`- Uvádí odkazy mezi projekty.</span><span class="sxs-lookup"><span data-stu-id="87fb2-106">`dotnet list reference` - Lists project-to-project references.</span></span>
+<span data-ttu-id="70293-106">`dotnet list reference`-Obsahuje odkazy z projektu na projekt.</span><span class="sxs-lookup"><span data-stu-id="70293-106">`dotnet list reference` - Lists project-to-project references.</span></span>
 
-## <a name="synopsis"></a><span data-ttu-id="87fb2-107">Synopse</span><span class="sxs-lookup"><span data-stu-id="87fb2-107">Synopsis</span></span>
+## <a name="synopsis"></a><span data-ttu-id="70293-107">Stručný obsah</span><span class="sxs-lookup"><span data-stu-id="70293-107">Synopsis</span></span>
 
 ```dotnetcli
-dotnet list [<PROJECT>|<SOLUTION>] reference
+dotnet list [<PROJECT>] reference
 
 dotnet list -h|--help
 ```
 
-## <a name="description"></a><span data-ttu-id="87fb2-108">Popis</span><span class="sxs-lookup"><span data-stu-id="87fb2-108">Description</span></span>
+## <a name="description"></a><span data-ttu-id="70293-108">Popis</span><span class="sxs-lookup"><span data-stu-id="70293-108">Description</span></span>
 
-<span data-ttu-id="87fb2-109">Příkaz `dotnet list reference` poskytuje vhodnou možnost vypsat odkazy na projekt pro daný projekt nebo řešení.</span><span class="sxs-lookup"><span data-stu-id="87fb2-109">The `dotnet list reference` command provides a convenient option to list project references for a given project or solution.</span></span>
+<span data-ttu-id="70293-109">`dotnet list reference`Příkaz nabízí pohodlný možnost zobrazit odkazy projektu pro daný projekt.</span><span class="sxs-lookup"><span data-stu-id="70293-109">The `dotnet list reference` command provides a convenient option to list project references for a given project.</span></span>
 
-## <a name="arguments"></a><span data-ttu-id="87fb2-110">Argumenty</span><span class="sxs-lookup"><span data-stu-id="87fb2-110">Arguments</span></span>
+## <a name="arguments"></a><span data-ttu-id="70293-110">Arguments</span><span class="sxs-lookup"><span data-stu-id="70293-110">Arguments</span></span>
 
-* **`PROJECT | SOLUTION`**
+* **`PROJECT`**
 
-  <span data-ttu-id="87fb2-111">Určuje soubor projektu nebo řešení, který má být používán pro výpis odkazů.</span><span class="sxs-lookup"><span data-stu-id="87fb2-111">Specifies the project or solution file to use for listing references.</span></span> <span data-ttu-id="87fb2-112">Pokud není zadán, příkaz prohledá aktuální adresář pro soubor projektu.</span><span class="sxs-lookup"><span data-stu-id="87fb2-112">If not specified, the command searches the current directory for a project file.</span></span>
+  <span data-ttu-id="70293-111">Soubor projektu, na kterém má být provozován.</span><span class="sxs-lookup"><span data-stu-id="70293-111">The project file to operate on.</span></span> <span data-ttu-id="70293-112">Pokud soubor není zadán, příkaz bude hledat v aktuálním adresáři.</span><span class="sxs-lookup"><span data-stu-id="70293-112">If a file is not specified, the command will search the current directory for one.</span></span>
 
-## <a name="options"></a><span data-ttu-id="87fb2-113">Možnosti</span><span class="sxs-lookup"><span data-stu-id="87fb2-113">Options</span></span>
+## <a name="options"></a><span data-ttu-id="70293-113">Možnosti</span><span class="sxs-lookup"><span data-stu-id="70293-113">Options</span></span>
 
 * **`-h|--help`**
 
-  <span data-ttu-id="87fb2-114">Vytiskne krátkou nápovědu pro příkaz.</span><span class="sxs-lookup"><span data-stu-id="87fb2-114">Prints out a short help for the command.</span></span>
+  <span data-ttu-id="70293-114">Vypíše krátkou nápovědu k příkazu.</span><span class="sxs-lookup"><span data-stu-id="70293-114">Prints out a short help for the command.</span></span>
 
-## <a name="examples"></a><span data-ttu-id="87fb2-115">Příklady</span><span class="sxs-lookup"><span data-stu-id="87fb2-115">Examples</span></span>
+## <a name="examples"></a><span data-ttu-id="70293-115">Příklady</span><span class="sxs-lookup"><span data-stu-id="70293-115">Examples</span></span>
 
-* <span data-ttu-id="87fb2-116">Seznam odkazů na projekt pro zadaný projekt:</span><span class="sxs-lookup"><span data-stu-id="87fb2-116">List the project references for the specified project:</span></span>
+* <span data-ttu-id="70293-116">Vypíše odkazy projektu pro zadaný projekt:</span><span class="sxs-lookup"><span data-stu-id="70293-116">List the project references for the specified project:</span></span>
 
   ```dotnetcli
   dotnet list app/app.csproj reference
   ```
 
-* <span data-ttu-id="87fb2-117">Seznam odkazů na projekt pro projekt v aktuálním adresáři:</span><span class="sxs-lookup"><span data-stu-id="87fb2-117">List the project references for the project in the current directory:</span></span>
+* <span data-ttu-id="70293-117">Vypíše odkazy na projekt v aktuálním adresáři:</span><span class="sxs-lookup"><span data-stu-id="70293-117">List the project references for the project in the current directory:</span></span>
 
   ```dotnetcli
   dotnet list reference
