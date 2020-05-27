@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 6c1d15c1-a80a-4ee9-b1e4-6e859db6575a
 topic_type:
 - apiref
-ms.openlocfilehash: 2b191243ea03adcfecaadbd3a5871e1773b28bb1
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: a24939ac0b0808546ef3615fae4909c6c3cf8a2e
+ms.sourcegitcommit: d223616e7e6fe2139079052e6fcbe25413fb9900
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73124455"
+ms.lasthandoff: 05/22/2020
+ms.locfileid: "83804996"
 ---
 # <a name="ihostautoevent-interface"></a>IHostAutoEvent – rozhraní
 Poskytuje reprezentaci implementace události automatického resetování hostitele.  
@@ -28,21 +28,21 @@ Poskytuje reprezentaci implementace události automatického resetování hostit
   
 |Metoda|Popis|  
 |------------|-----------------|  
-|[Set – metoda](../../../../docs/framework/unmanaged-api/hosting/ihostautoevent-set-method.md)|Nastaví aktuální instanci `IHostAutoEvent` na signálový stav.|  
-|[Wait – metoda](../../../../docs/framework/unmanaged-api/hosting/ihostautoevent-wait-method.md)|Způsobí, že aktuální instance `IHostAutoEvent` počká, dokud událost nevlastníte, nebo dokud neuplyne zadaný čas.|  
+|[Set – metoda](ihostautoevent-set-method.md)|Nastaví aktuální `IHostAutoEvent` instanci na signálový stav.|  
+|[Wait – metoda](ihostautoevent-wait-method.md)|Způsobí, že aktuální `IHostAutoEvent` instance počká, dokud událost nevlastníte nebo dokud neuplyne zadaný čas.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** MSCorEE. h  
   
  **Knihovna:** Zahrnuto jako prostředek v knihovně MSCorEE. dll  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [ICLRSyncManager – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrsyncmanager-interface.md)
-- [IHostManualEvent – rozhraní](../../../../docs/framework/unmanaged-api/hosting/ihostmanualevent-interface.md)
-- [IHostSyncManager – rozhraní](../../../../docs/framework/unmanaged-api/hosting/ihostsyncmanager-interface.md)
-- [Rozhraní pro hostování](../../../../docs/framework/unmanaged-api/hosting/hosting-interfaces.md)
+- [ICLRSyncManager – rozhraní](iclrsyncmanager-interface.md)
+- [IHostManualEvent – rozhraní](ihostmanualevent-interface.md)
+- [IHostSyncManager – rozhraní](ihostsyncmanager-interface.md)
+- [Rozhraní pro hostování](hosting-interfaces.md)

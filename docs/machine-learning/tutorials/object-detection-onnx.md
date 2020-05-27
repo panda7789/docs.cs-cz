@@ -6,12 +6,12 @@ ms.author: luquinta
 ms.date: 01/30/2020
 ms.topic: tutorial
 ms.custom: mvc
-ms.openlocfilehash: b9fa8ef74dd4f8070884f6cee4eb2af3082af5e5
-ms.sourcegitcommit: 046a9c22487551360e20ec39fc21eef99820a254
+ms.openlocfilehash: 2bf44ec1657307161c13f88f7d1628b2c930fd05
+ms.sourcegitcommit: d223616e7e6fe2139079052e6fcbe25413fb9900
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83394907"
+ms.lasthandoff: 05/22/2020
+ms.locfileid: "83805529"
 ---
 # <a name="tutorial-detect-objects-using-onnx-in-mlnet"></a>Kurz: zjištění objektů pomocí ONNX v ML.NET
 
@@ -19,7 +19,7 @@ Naučte se používat předem vyškolený model ONNX v ML.NET ke zjišťování 
 
 Školení modelu detekce objektu od začátku vyžaduje nastavení milionů parametrů, velké množství označených školicích dat a obrovské množství výpočetních prostředků (stovky hodin GPU). Použití předem připraveného modelu vám umožní zástupce školicího procesu.
 
-V tomto kurzu se naučíte:
+V tomto kurzu:
 > [!div class="checklist"]
 >
 > - Pochopení problému
@@ -64,7 +64,7 @@ Existují různé typy sítí neuronové, nejběžnější jsou vícevrstvé Per
 
 ### <a name="understand-the-model"></a>Pochopení modelu
 
-Detekce objektu je úloha zpracování obrazu. Proto se většina modelů hloubkového učení, které jsou vyškolené k vyřešení tohoto problému, DNN. Model použitý v tomto kurzu je malý model YOLOv2, což je kompaktnější verze modelu YOLOv2 popsané v dokumentu: ["YOLO9000: lepší, rychlejší, silnější" podle Redmon a Fadhari](https://arxiv.org/pdf/1612.08242.pdf). Drobný YOLOv2 je vyškolená pro datovou sadu Pascal a skládá se z 15 vrstev, které mohou odhadnout 20 různých tříd objektů. Vzhledem k tomu, že malá YOLOv2 je Zhuštěná verze původního modelu YOLOv2, je mezi rychlostí a přesností provedeno kompromis. Různé vrstvy, které tvoří model, lze vizuálně vymezit pomocí nástrojů, jako je Netron. Kontrola modelu by způsobila mapování propojení mezi všemi vrstvami tvořící neuronové síť, kde každá z vrstev obsahuje název vrstvy spolu s rozměry příslušného vstupu/výstupu. Datové struktury používané k popisu vstupů a výstupů modelu jsou známé jako modely. Křížové procesory si můžete představit jako kontejnery, které ukládají data v N-dimenzích. V případě malých YOLOv2 je název vstupní vrstvy `image` a očekává se tensor dimenzí `3 x 416 x 416` . Název výstupní vrstvy je `grid` a generuje výstupní tensor dimenzí `125 x 13 x 13` .
+Detekce objektu je úloha zpracování obrazu. Proto se většina modelů hloubkového učení, které jsou vyškolené k vyřešení tohoto problému, DNN. Model použitý v tomto kurzu je malý model YOLOv2, což je kompaktnější verze modelu YOLOv2 popsané v dokumentu: ["YOLO9000: lepší, rychlejší, silnější" podle Redmon a Farhadi](https://arxiv.org/pdf/1612.08242.pdf). Drobný YOLOv2 je vyškolená pro datovou sadu Pascal a skládá se z 15 vrstev, které mohou odhadnout 20 různých tříd objektů. Vzhledem k tomu, že malá YOLOv2 je Zhuštěná verze původního modelu YOLOv2, je mezi rychlostí a přesností provedeno kompromis. Různé vrstvy, které tvoří model, lze vizuálně vymezit pomocí nástrojů, jako je Netron. Kontrola modelu by způsobila mapování propojení mezi všemi vrstvami tvořící neuronové síť, kde každá z vrstev obsahuje název vrstvy spolu s rozměry příslušného vstupu/výstupu. Datové struktury používané k popisu vstupů a výstupů modelu jsou známé jako modely. Křížové procesory si můžete představit jako kontejnery, které ukládají data v N-dimenzích. V případě malých YOLOv2 je název vstupní vrstvy `image` a očekává se tensor dimenzí `3 x 416 x 416` . Název výstupní vrstvy je `grid` a generuje výstupní tensor dimenzí `125 x 13 x 13` .
 
 ![Vstupní vrstva je rozdělená na skryté vrstvy a pak na výstupní vrstvu.](./media/object-detection-onnx/netron-model-map-layers.png)
 
@@ -705,7 +705,7 @@ Chcete-li zobrazit obrázky s ohraničujícími poli, přejděte do `assets/imag
 
 ![Ukázková zpracovaná image místnosti stravování](./media/object-detection-onnx/dinning-room-table-chairs.png)
 
-Blahopřejeme! Nyní jste úspěšně vytvořili model strojového učení pro detekci objektů opětovným použitím předem připraveného `ONNX` modelu v ml.NET.
+Gratulujeme! Nyní jste úspěšně vytvořili model strojového učení pro detekci objektů opětovným použitím předem připraveného `ONNX` modelu v ml.NET.
 
 Zdrojový kód pro tento kurz najdete v úložišti [dotnet/machinelearning-Samples](https://github.com/dotnet/machinelearning-samples/tree/master/samples/csharp/getting-started/DeepLearning_ObjectDetection_Onnx) .
 

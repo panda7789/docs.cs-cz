@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: 958970d6-f6a2-4b84-b32a-f555cbaf8f61
 topic_type:
 - apiref
-ms.openlocfilehash: 7198698edce48546c4f9a82ace18d5a6e71891ee
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: e43eb7ebfc367e7d4a7a209a5037fcc4566cd7ec
+ms.sourcegitcommit: d223616e7e6fe2139079052e6fcbe25413fb9900
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79176250"
+ms.lasthandoff: 05/22/2020
+ms.locfileid: "83803931"
 ---
 # <a name="ihostsecuritymanagergetsecuritycontext-method"></a>IHostSecurityManager::GetSecurityContext – metoda
-Získá požadované [IHostSecurityContext](../../../../docs/framework/unmanaged-api/hosting/ihostsecuritycontext-interface.md) z hostitele.  
+Získá požadovaná [IHostSecurityContext –](ihostsecuritycontext-interface.md) z hostitele.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -36,36 +36,36 @@ HRESULT GetSecurityContext (
   
 ## <a name="parameters"></a>Parametry  
  `eContextType`  
- [v] Jedna z hodnot [EContextType,](../../../../docs/framework/unmanaged-api/hosting/econtexttype-enumeration.md) označující, jaký typ kontextu zabezpečení vrátit.  
+ pro Jedna z hodnot [EContextType –](econtexttype-enumeration.md) , která označuje typ kontextu zabezpečení, který se má vrátit.  
   
  `ppSecurityContext`  
- [out] Adresa ukazatele rozhraní na `IHostSecurityContext` rozhraní `eContextType`.  
+ mimo Adresa ukazatele rozhraní na `IHostSecurityContext` `eContextType` .  
   
 ## <a name="return-value"></a>Návratová hodnota  
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
-|S_OK|`GetSecurityContext`úspěšně vrácena.|  
-|HOST_E_CLRNOTAVAILABLE|Běžný jazyk runtime (CLR) nebyl načten do procesu nebo CLR je ve stavu, ve kterém nelze spustit spravovaný kód nebo úspěšně zpracovat volání.|  
-|HOST_E_TIMEOUT|Časový čas hovoru byl vypován.|  
+|S_OK|`GetSecurityContext`úspěšně vráceno.|  
+|HOST_E_CLRNOTAVAILABLE|Modul CLR (Common Language Runtime) nebyl načten do procesu, nebo je modul CLR ve stavu, ve kterém nemůže spustit spravovaný kód nebo úspěšně zpracovat volání.|  
+|HOST_E_TIMEOUT|Vypršel časový limit volání.|  
 |HOST_E_NOT_OWNER|Volající nevlastní zámek.|  
-|HOST_E_ABANDONED|Událost byla zrušena, zatímco na ní čekalo blokované vlákno nebo vlákno.|  
-|E_fail|Došlo k neznámému katastrofickému selhání. Když metoda vrátí E_FAIL CLR již není použitelný v rámci procesu. Následná volání metod hostování vrátí HOST_E_CLRNOTAVAILABLE.|  
+|HOST_E_ABANDONED|Událost byla zrušena při čekání na blokované vlákno nebo vlákna.|  
+|E_FAIL|Došlo k neznámé chybě závažnosti. Když metoda vrátí E_FAIL, CLR již není v rámci procesu použitelný. Následná volání metod hostování vrací HOST_E_CLRNOTAVAILABLE.|  
   
 ## <a name="remarks"></a>Poznámky  
- Hostitel může řídit přístup k veškerému kódu tokenů podprocesů podle clr a uživatelského kódu. Může také zajistit, že úplné informace o kontextu zabezpečení jsou předávány přes asynchronní operace nebo body kódu s omezeným přístupem kódu. `IHostSecurityContext`zapouzdřuje tyto informace o kontextu zabezpečení, které jsou pro CLR neprůhledné. CLR zachytí tyto informace a přesune je přes odeslání pracovní položky fondu vláken, provádění finalizační metody a konstrukce modulu a třídy.  
+ Hostitel může řídit veškerý přístup kódu k tokenům vláken jak CLR, tak i uživatelský kód. Může také zajistit, aby byly kompletní informace o kontextu zabezpečení předány přes asynchronní operace nebo body kódu s omezeným přístupem ke kódu. `IHostSecurityContext`Zapouzdřuje tyto informace kontextu zabezpečení, které jsou neprůhledné pro CLR. Modul CLR tyto informace zachytí a přesune je napříč fondem vláken pracovní položky, provádění finalizační metody a konstrukce modulu a třídy.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Záhlaví:** MSCorEE.h  
+ **Hlavička:** MSCorEE. h  
   
- **Knihovna:** Zahrnuto jako prostředek v souboru MSCorEE.dll  
+ **Knihovna:** Zahrnuto jako prostředek v knihovně MSCorEE. dll  
   
- **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také
 
-- [EContextType – výčet](../../../../docs/framework/unmanaged-api/hosting/econtexttype-enumeration.md)
-- [IHostSecurityContext – rozhraní](../../../../docs/framework/unmanaged-api/hosting/ihostsecuritycontext-interface.md)
-- [IHostSecurityManager – rozhraní](../../../../docs/framework/unmanaged-api/hosting/ihostsecuritymanager-interface.md)
+- [EContextType – výčet](econtexttype-enumeration.md)
+- [IHostSecurityContext – rozhraní](ihostsecuritycontext-interface.md)
+- [IHostSecurityManager – rozhraní](ihostsecuritymanager-interface.md)

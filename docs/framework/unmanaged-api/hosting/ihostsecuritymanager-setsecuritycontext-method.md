@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: e4372384-ee69-48d7-97e0-8fab7866597a
 topic_type:
 - apiref
-ms.openlocfilehash: 676a1d50202333203c13fcf916dbb14a6d91fb8f
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 79ef08ef70ad1132ceacc3e2b997651e57032b9a
+ms.sourcegitcommit: d223616e7e6fe2139079052e6fcbe25413fb9900
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73121448"
+ms.lasthandoff: 05/22/2020
+ms.locfileid: "83803813"
 ---
 # <a name="ihostsecuritymanagersetsecuritycontext-method"></a>IHostSecurityManager::SetSecurityContext – metoda
 Nastaví kontext zabezpečení aktuálně zpracovávaného vlákna.  
@@ -36,16 +36,16 @@ HRESULT SetSecurityContext (
   
 ## <a name="parameters"></a>Parametry  
  `eContextType`  
- pro Jedna z hodnot [EContextType –](../../../../docs/framework/unmanaged-api/hosting/econtexttype-enumeration.md) , která označuje typ kontextu, který modul CLR (Common Language Runtime) umísťuje na hostitele.  
+ pro Jedna z hodnot [EContextType –](econtexttype-enumeration.md) , která označuje typ kontextu, který modul CLR (Common Language Runtime) umísťuje na hostitele.  
   
  `ppSecurityContext`  
- mimo Ukazatel na adresu nového objektu [IHostSecurityContext –](../../../../docs/framework/unmanaged-api/hosting/ihostsecuritycontext-interface.md) .  
+ mimo Ukazatel na adresu nového objektu [IHostSecurityContext –](ihostsecuritycontext-interface.md) .  
   
 ## <a name="return-value"></a>Návratová hodnota  
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
-|S_OK|`SetSecurityContext` byla úspěšně vrácena.|  
+|S_OK|`SetSecurityContext`úspěšně vráceno.|  
 |HOST_E_CLRNOTAVAILABLE|Modul CLR nebyl načten do procesu, nebo je modul CLR ve stavu, ve kterém nemůže spustit spravovaný kód nebo úspěšně zpracovat volání.|  
 |HOST_E_TIMEOUT|Vypršel časový limit volání.|  
 |HOST_E_NOT_OWNER|Volající nevlastní zámek.|  
@@ -53,25 +53,25 @@ HRESULT SetSecurityContext (
 |E_FAIL|Došlo k neznámé chybě závažnosti. Když metoda vrátí E_FAIL, CLR již není v rámci procesu použitelný. Následná volání metod hostování vrací HOST_E_CLRNOTAVAILABLE.|  
   
 ## <a name="remarks"></a>Poznámky  
- CLR volá `SetSecurityContext` v několika scénářích. Před tím, než se spustí třídy a konstruktory modulu a finalizační metody, vyvolá CLR `SetSecurityContext` k ochraně hostitele před selháním spuštění. Poté obnoví kontext zabezpečení do původního stavu po provedení konstruktoru nebo finalizační metody pomocí jiného volání `SetSecurityContext`. Podobný vzor se děje I v/v dokončování. Pokud hostitel implementuje [IHostIoCompletionManager](../../../../docs/framework/unmanaged-api/hosting/ihostiocompletionmanager-interface.md), CLR volá `SetSecurityContext` po volání [ICLRIoCompletionManager –::-Complete](../../../../docs/framework/unmanaged-api/hosting/iclriocompletionmanager-oncomplete-method.md).  
+ CLR volá `SetSecurityContext` v několika scénářích. Před tím, než se spustí třídy a konstruktory modulu a finalizační metody, vyvolá volání CLR `SetSecurityContext` k ochraně hostitele před selháním spuštění. Poté obnoví kontext zabezpečení do původního stavu po provedení konstruktoru nebo finalizační metody pomocí jiného volání metody `SetSecurityContext` . Podobný vzor se děje I v/v dokončování. Pokud hostitel implementuje [IHostIoCompletionManager](../../../../docs/framework/unmanaged-api/hosting/ihostiocompletionmanager-interface.md), VYVOLÁ volání CLR `SetSecurityContext` po volání [ICLRIoCompletionManager –::-Complete](iclriocompletionmanager-oncomplete-method.md).  
   
- V asynchronních bodech v pracovních vláknech volá CLR `SetSecurityContext` v rámci <xref:System.Threading.ThreadPool.QueueUserWorkItem%2A?displayProperty=nameWithType> nebo uvnitř [IHostThreadPoolManager:: QueueUserWorkItem](../../../../docs/framework/unmanaged-api/hosting/ihostthreadpoolmanager-queueuserworkitem-method.md), podle toho, zda hostitel nebo modul CLR implementuje fond vláken.  
+ V asynchronních bodech v pracovních vláknech volání CLR v rámci `SetSecurityContext` <xref:System.Threading.ThreadPool.QueueUserWorkItem%2A?displayProperty=nameWithType> [IHostThreadPoolManager:: QueueUserWorkItem](ihostthreadpoolmanager-queueuserworkitem-method.md), v závislosti na tom, zda hostitel nebo modul CLR implementuje fond vláken.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** MSCorEE. h  
   
  **Knihovna:** Zahrnuto jako prostředek v knihovně MSCorEE. dll  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Threading.ThreadPool?displayProperty=nameWithType>
-- [EContextType – výčet](../../../../docs/framework/unmanaged-api/hosting/econtexttype-enumeration.md)
-- [ICLRIoCompletionManager – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclriocompletionmanager-interface.md)
-- [IHostIoCompletionManager – rozhraní](../../../../docs/framework/unmanaged-api/hosting/ihostiocompletionmanager-interface.md)
-- [IHostSecurityContext – rozhraní](../../../../docs/framework/unmanaged-api/hosting/ihostsecuritycontext-interface.md)
-- [IHostSecurityManager – rozhraní](../../../../docs/framework/unmanaged-api/hosting/ihostsecuritymanager-interface.md)
-- [IHostThreadPoolManager – rozhraní](../../../../docs/framework/unmanaged-api/hosting/ihostthreadpoolmanager-interface.md)
+- [EContextType – výčet](econtexttype-enumeration.md)
+- [ICLRIoCompletionManager – rozhraní](iclriocompletionmanager-interface.md)
+- [IHostIoCompletionManager – rozhraní](ihostiocompletionmanager-interface.md)
+- [IHostSecurityContext – rozhraní](ihostsecuritycontext-interface.md)
+- [IHostSecurityManager – rozhraní](ihostsecuritymanager-interface.md)
+- [IHostThreadPoolManager – rozhraní](ihostthreadpoolmanager-interface.md)
