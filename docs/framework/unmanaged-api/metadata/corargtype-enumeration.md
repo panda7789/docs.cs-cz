@@ -14,17 +14,17 @@ helpviewer_keywords:
 ms.assetid: 3c1cb268-57a0-4664-91c7-f6908ff29e32
 topic_type:
 - apiref
-ms.openlocfilehash: 689295610006824be1107577c50376e79551cddc
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: ac822dda30d697cbbbcacf19eb6a57d1e5fb4c3b
+ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74444372"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84007946"
 ---
-# <a name="corargtype-enumeration"></a><span data-ttu-id="abbce-102">CorArgType – výčet</span><span class="sxs-lookup"><span data-stu-id="abbce-102">CorArgType Enumeration</span></span>
-<span data-ttu-id="abbce-103">Obsahuje hodnoty, které popisují nativní typ popisovače modulu runtime.</span><span class="sxs-lookup"><span data-stu-id="abbce-103">Contains values that describe the native type of a runtime handle.</span></span>  
+# <a name="corargtype-enumeration"></a><span data-ttu-id="eb705-102">CorArgType – výčet</span><span class="sxs-lookup"><span data-stu-id="eb705-102">CorArgType Enumeration</span></span>
+<span data-ttu-id="eb705-103">Obsahuje hodnoty, které popisují nativní typ popisovače modulu runtime.</span><span class="sxs-lookup"><span data-stu-id="eb705-103">Contains values that describe the native type of a runtime handle.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="abbce-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="abbce-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="eb705-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="eb705-104">Syntax</span></span>  
   
 ```cpp  
 typedef enum CorArgType {  
@@ -44,13 +44,13 @@ typedef enum CorArgType {
 } CorArgType;  
 ```  
   
-## <a name="requirements"></a><span data-ttu-id="abbce-105">Požadavky</span><span class="sxs-lookup"><span data-stu-id="abbce-105">Requirements</span></span>  
- <span data-ttu-id="abbce-106">**Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="abbce-106">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="eb705-105">Požadavky</span><span class="sxs-lookup"><span data-stu-id="eb705-105">Requirements</span></span>  
+ <span data-ttu-id="eb705-106">**Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="eb705-106">**Platforms:** See [System Requirements](../../get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="abbce-107">**Hlavička:** CorHdr. h</span><span class="sxs-lookup"><span data-stu-id="abbce-107">**Header:** CorHdr.h</span></span>  
+ <span data-ttu-id="eb705-107">**Hlavička:** CorHdr. h</span><span class="sxs-lookup"><span data-stu-id="eb705-107">**Header:** CorHdr.h</span></span>  
   
- <span data-ttu-id="abbce-108">**Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="abbce-108">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
+ <span data-ttu-id="eb705-108">**Verze .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="eb705-108">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="abbce-109">Viz také:</span><span class="sxs-lookup"><span data-stu-id="abbce-109">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="eb705-109">Viz také</span><span class="sxs-lookup"><span data-stu-id="eb705-109">See also</span></span>
 
-- [<span data-ttu-id="abbce-110">Výčty pro metadata</span><span class="sxs-lookup"><span data-stu-id="abbce-110">Metadata Enumerations</span></span>](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)
+- [<span data-ttu-id="eb705-110">Výčty pro metadata</span><span class="sxs-lookup"><span data-stu-id="eb705-110">Metadata Enumerations</span></span>](metadata-enumerations.md)
