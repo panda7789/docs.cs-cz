@@ -1,50 +1,57 @@
 ---
-title: Úvod do jazyka C# - interaktivní výukové programy
-description: Naučte se C# ve vašem prohlížeči a můžete začít s vlastním vývojovým prostředím
+title: Úvod do C# – kurzy pro interaktivní
+description: Naučte se v prohlížeči C# a začněte s vlastním vývojovým prostředím.
 ms.date: 08/22/2019
 ms.custom: mvc
-ms.openlocfilehash: 564af21fb0f9b6cf8b5c3591ff5622278a8cbb22
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: c9fc8dadac373445a5bb132b25ab25676c5230c7
+ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "73423106"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84007699"
 ---
-# <a name="introduction-to-c"></a>Úvod do C\#
+# <a name="introduction-to-c"></a>Úvod do jazyka C\#
 
-Vítávás úvod do c# kurzy. Ty začínají interaktivními lekcemi, které můžete spustit ve svém prohlížeči. Můžete se naučit základy C# z [řady c# 101 video](https://aka.ms/dotnet3-csharp) před zahájením těchto interaktivních lekcí.
+Vítá vás kurzy Úvod do C#. Tyto lekce začínají interaktivním kódem, který můžete spustit v prohlížeči. Před zahájením těchto interaktivních lekcí se můžete seznámit se základy jazyka C# z [řady videí c# 101](https://aka.ms/dotnet3-csharp) .
 
 > [!VIDEO https://channel9.msdn.com/Series/CSharp-101/What-is-C/player]
 
-První lekce vysvětlují koncepty jazyka C# pomocí malých fragmentů kódu. Dozvíte se základy syntaxe jazyka C# a jak pracovat s datovými typy, jako jsou řetězce, čísla a logické hodnoty. Je to všechno interaktivní a budete psát a spouštět kód během několika minut. Tyto první lekce nepředpokládají žádné předchozí znalosti programování nebo jazyka C#.
+První lekce vysvětlují koncepty C# pomocí malých fragmentů kódu. Naučíte se základy syntaxe jazyka C# a jak pracovat s datovými typy, jako jsou řetězce, čísla a logické hodnoty. Je to vše interaktivní a vy budete psát a spouštět kód během několika minut. Tyto první lekce nepředpokládají žádné předchozí znalosti programování nebo jazyka C#.
 
-Všechny úvodní výukové programy po lekci Hello World jsou k dispozici pomocí online prohlížeče nebo [ve vašem vlastním prostředí místního rozvoje](local-environment.md). Na konci každého kurzu se rozhodnete, zda chcete pokračovat s další lekcí online nebo na vlastním počítači. K dispozici jsou odkazy, které vám pomohou nastavit prostředí a pokračovat v dalším kurzu na vašem počítači.
+Tyto kurzy můžete vyzkoušet v různých prostředích. Koncepty, které se naučíte, jsou stejné. Rozdílem je to, na jakém chování dáváte přednost:
 
-## <a name="hello-world"></a>[Ahoj světe](hello-world.yml)
+- [V prohlížeči na platformě docs](hello-world.yml): Toto prostředí vloží okno kódu spustitelný C# na stránky docs. Kód v jazyce C# můžete zapisovat a spouštět v prohlížeči.
+- [V prostředí Microsoft Learn](https://docs.microsoft.com/learn/paths/csharp-first-steps/). Tato cesta výukového programu obsahuje několik modulů, které učí základy jazyka C#.
+- [V Jupyter v pořadači](https://mybinder.org/v2/gh/dotnet/try-samples/master?filepath=hello-csharp%2Fhello-world.ipynb). Můžete experimentovat s kódem jazyka C# v Jupyter poznámkovém bloku v aplikaci Binder.
+- [Na místním počítači](numbers-in-csharp-local.md). Po prozkoumání online můžete [stáhnout](https://dotnet.microsoft.com/download) .NET Core SDK a na svém počítači sestavovat programy.
 
-V kurzu [Hello world](hello-world.yml) vytvoříte nejzákladnější program Jazyka C#. Prozkoumáte `string` typ a způsob práce s textem.
+Všechny úvodní kurzy po Hello World lekci jsou k dispozici v online prostředí prohlížeče nebo [ve vašem místním vývojovém prostředí](local-environment.md). Na konci každého kurzu se rozhodnete, jestli chcete pokračovat v další lekci online nebo na vašem počítači. K dispozici jsou odkazy, které vám pomůžou nastavit prostředí a pokračovat v dalším kurzu na vašem počítači.
+
+## <a name="hello-world"></a>[Hello World](hello-world.yml)
+
+V kurzu [Hello World](hello-world.yml) vytvoříte nejvíce základního programu v jazyce C#. Budete zkoumat `string` typ a postup práce s textem. Můžete také použít cestu k [Microsoft Learn](https://docs.microsoft.com/learn/paths/csharp-first-steps/) nebo [Jupyter v pořadači](https://mybinder.org/v2/gh/dotnet/try-samples/master?filepath=hello-csharp%2Fhello-world.ipynb).
 
 ## <a name="numbers-in-c"></a>[Čísla v jazyce C#](numbers-in-csharp.yml)
 
-V kurzu [Čísla v jazyce C#](numbers-in-csharp.yml) se dozvíte, jak počítače ukládají čísla a jak provádět výpočty s různými číselnými typy. Naučíte se základy zaokrouhlení a jak provádět matematické výpočty pomocí jazyka C#. Tento kurz je také k dispozici [pro místní spuštění v počítači](numbers-in-csharp-local.md).
+V kurzu [čísel v jazyce C#](numbers-in-csharp.yml) se dozvíte, jak počítače ukládají čísla a jak provádět výpočty s různými číselnými typy. Naučíte se základy zaokrouhlování a postup provádění matematických výpočtů pomocí jazyka C#. Tento kurz je také k dispozici [pro spuštění místně na vašem počítači](numbers-in-csharp-local.md).
 
-Tento kurz předpokládá, že jste dokončili lekci [hello world.](hello-world.yml)
+V tomto kurzu se předpokládá, že jste dokončili lekci [Hello World](hello-world.yml) .
 
 ## <a name="branches-and-loops"></a>[Větve a smyčky](branches-and-loops.yml)
 
-[Kurz Větve a smyčky](branches-and-loops.yml) učí základy výběru různých cest provádění kódu na základě hodnot uložených v proměnných. Naučíte se základy toku řízení, což je základ toho, jak se programy rozhodují a vybírají různé akce. Tento kurz je také k dispozici [pro místní spuštění v počítači](branches-and-loops-local.md).
+Kurz [větvení a cyklů](branches-and-loops.yml) učí základy výběru různých cest ke spuštění kódu na základě hodnot uložených v proměnných. Naučíte se základy řízení toku, což je základem způsobu, jakým programy provádí rozhodnutí a výběr různých akcí. Tento kurz je také k dispozici [pro spuštění místně na vašem počítači](branches-and-loops-local.md).
 
-Tento kurz předpokládá, že jste dokončili [hello svět](hello-world.yml) a čísla [v c#](numbers-in-csharp.yml) lekce.
+V tomto kurzu se předpokládá, že jste [v lekci C#](numbers-in-csharp.yml) dokončili text [Hello World](hello-world.yml) a čísla.
 
-## <a name="list-collection"></a>[Kolekce seznamu](list-collection.yml)
+## <a name="list-collection"></a>[Kolekce seznamů](list-collection.yml)
 
-[List kolekce](list-collection.yml) lekce poskytuje prohlídku list kolekce typu, který ukládá sekvence dat. Dozvíte se, jak přidávat a odebírat položky, vyhledávat položky a seřadit seznamy. Budete zkoumat různé druhy seznamů. Tento kurz je také k dispozici [pro místní spuštění v počítači](arrays-and-collections.md).
+V lekci [kolekce seznamu](list-collection.yml) získáte prohlídku typu kolekce, ve kterém jsou uloženy sekvence dat. Naučíte se, jak přidávat a odebírat položky, Hledat položky a třídit seznamy. Budete zkoumat různé druhy seznamů. Tento kurz je také k dispozici [pro spuštění místně na vašem počítači](arrays-and-collections.md).
 
-Tento kurz předpokládá, že jste dokončili výše uvedené lekce.
+V tomto kurzu se předpokládá, že jste dokončili výše uvedené lekce.
 
 ## <a name="introduction-to-classes"></a>[Úvod do tříd](introduction-to-classes.md)
 
-Tento závěrečný kurz je k dispozici pouze ke spuštění v počítači pomocí vlastního prostředí místního vývoje a .NET Core.
-Vytvoříte konzolovou aplikaci a zobrazí tese základní objektově orientované funkce, které jsou součástí jazyka C#.
+Tento finální kurz je k dispozici pouze ke spuštění na vašem počítači pomocí vlastního místního vývojového prostředí a .NET Core.
+Vytvoříte konzolovou aplikaci a zobrazíte základní funkce orientované na objekty, které jsou součástí jazyka C#.
 
-Tento kurz předpokládá, že jste dokončili online úvodní kurzy a nainstalovali jste [.NET Core SDK](https://dotnet.microsoft.com/download) a [Visual Studio Code](https://code.visualstudio.com/).
+V tomto kurzu se předpokládá, že jste dokončili online úvodní kurzy a nainstalovali jste [.NET Core SDK](https://dotnet.microsoft.com/download) a [Visual Studio Code](https://code.visualstudio.com/).

@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 4e0c3521-e54d-43c1-9857-cc76b49b8ffc
 topic_type:
 - apiref
-ms.openlocfilehash: 74088d1cd018bb07406fc7d00ff83d783a98b663
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 779a8f88b7521aa4b0a75594552981b41714ee3f
+ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74450225"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84007673"
 ---
 # <a name="cormethodattr-enumeration"></a>CorMethodAttr – výčet
 Obsahuje hodnoty, které popisují funkce metody.  
@@ -62,9 +62,9 @@ typedef enum CorMethodAttr {
 } CorMethodAttr;  
 ```  
   
-## <a name="members"></a>Members  
+## <a name="members"></a>Členové  
   
-|Člen|Popis|  
+|Člen|Description|  
 |------------|-----------------|  
 |`mdMemberAccessMask`|Určuje přístup ke členu.|  
 |`mdPrivateScope`|Určuje, že na člena nelze odkazovat.|  
@@ -92,12 +92,12 @@ typedef enum CorMethodAttr {
 |`mdRequireSecObject`|Určuje, že metoda volá jinou metodu obsahující bezpečnostní kód.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** CorHdr. h  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Výčty pro metadata](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)
+- [Výčty pro metadata](metadata-enumerations.md)

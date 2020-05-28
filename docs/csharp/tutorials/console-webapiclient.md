@@ -3,12 +3,12 @@ title: Vytvoření klienta REST pomocí .NET Core
 description: V tomto kurzu se naučíte řadou funkcí v .NET Core a v jazyce C#.
 ms.date: 01/09/2020
 ms.assetid: 51033ce2-7a53-4cdd-966d-9da15c8204d2
-ms.openlocfilehash: 4a3a76d1ec9893c2c3e0353e305a19e59c586fe5
-ms.sourcegitcommit: 9a4488a3625866335e83a20da5e9c5286b1f034c
+ms.openlocfilehash: 1d1d1bec8c6602e4fe34fa3ce243423290412736
+ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83420380"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84004852"
 ---
 # <a name="rest-client"></a>Klient REST
 
@@ -37,10 +37,10 @@ Budete muset nainstalovat svůj oblíbený editor kódu. Níže uvedené popisy 
 Prvním krokem je vytvoření nové aplikace. Otevřete příkazový řádek a vytvořte nový adresář pro vaši aplikaci. Zajistěte, aby byl aktuální adresář. V okně konzoly zadejte následující příkaz:
 
 ```dotnetcli
-dotnet new console --name WebApiClient
+dotnet new console --name WebAPIClient
 ```
 
-Tím se vytvoří počáteční soubory pro základní aplikaci "Hello World". Název projektu je "WebApiClient". Vzhledem k tomu, že se jedná o nový projekt, není provedena žádná závislost. První spuštění stáhne rozhraní .NET Core Framework, nainstaluje certifikát pro vývoj a spustí Správce balíčků NuGet pro obnovení chybějících závislostí.
+Tím se vytvoří počáteční soubory pro základní aplikaci "Hello World". Název projektu je "WebAPIClient". Vzhledem k tomu, že se jedná o nový projekt, není provedena žádná závislost. První spuštění stáhne rozhraní .NET Core Framework, nainstaluje certifikát pro vývoj a spustí Správce balíčků NuGet pro obnovení chybějících závislostí.
 
 Než začnete provádět úpravy, zadejte `dotnet run` ([Viz poznámku](#dotnet-restore-note)) na příkazovém řádku a spusťte tak aplikaci. `dotnet run`provede automaticky `dotnet restore` v případě chybějících závislostí ve vašem prostředí. Provádí se také `dotnet build` v případě, že vaše aplikace musí být znovu sestavena.
 Po počáteční instalaci budete muset spustit pouze `dotnet restore` nebo, `dotnet build` když to pro váš projekt dává smysl.

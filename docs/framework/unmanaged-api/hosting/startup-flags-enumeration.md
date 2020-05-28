@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 4f043594-0c45-4bc6-988e-a6793f0d8d06
 topic_type:
 - apiref
-ms.openlocfilehash: 1799e0af91fa6074f174120b29e2302a27230c62
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: b4694efffa0a3dd6fed1f97fc2359c5eb335d440
+ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73141467"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84006412"
 ---
 # <a name="startup_flags-enumeration"></a>STARTUP_FLAGS – výčet
 Obsahuje hodnoty, které označují chování při spuštění modulu CLR (Common Language Runtime). Ve výchozím nastavení je uvolňování paměti nesouběžné a pouze základní knihovna tříd je načtena do doménové neutrální oblasti.  
@@ -53,7 +53,7 @@ typedef enum {
   
 ## <a name="members"></a>Členové  
   
-|Člen|Popis|  
+|Člen|Description|  
 |------------|-----------------|  
 |`STARTUP_CONCURRENT_GC`|Určuje, že by mělo být použito souběžné uvolňování paměti. Pokud volající požaduje pro sestavení serveru a souběžné uvolňování paměti v počítači s jedním procesorem, spustí se místo toho sestavení pracovní stanice a nesouběžné uvolňování paměti. **Poznámka:**  Souběžné uvolňování paměti není podporováno v aplikacích, které spouštějí emulátor WOW64 x86 v 64 systémech, které implementují architekturu Intel Itanium (dříve nazývané IA-64). Další informace o používání WOW64 v systémech s 64 Windows najdete v tématu [spouštění 32 aplikací](/windows/desktop/WinProg64/running-32-bit-applications).|  
 |`STARTUP_LOADER_OPTIMIZATION_MASK`|Určuje, že se má vyskytnout optimalizace zavaděče.|  
@@ -68,19 +68,19 @@ typedef enum {
 |`STARTUP_LEGACY_IMPERSONATION`|Určuje, že při výchozím nastavení by zosobnění nemělo v rámci asynchronních bodů přesměrovat.|  
 |`STARTUP_DISABLE_COMMITTHREADSTACK`|Určuje, že plný zásobník vláken by neměl být potvrzen při spuštění vlákna.|  
 |`STARTUP_ALWAYSFLOW_IMPERSONATION`|Určuje, že spravované zosobnění a zosobnění dosažené prostřednictvím vyvolání platformy budou procházet mezi asynchronními body. Ve výchozím nastavení budou v rámci asynchronních bodů zaplněny pouze spravované zosobnění.|  
-|`STARTUP_TRIM_GC_COMMIT`|Určuje, že uvolňování paměti bude používat méně potvrzené místo v případě nízké systémové paměti. Viz `gcTrimCommitOnLowMemory` v části [optimalizace pro sdílené webové hostování](../../../standard/garbage-collection/optimization-for-shared-web-hosting.md).|  
-|`STARTUP_ETW`|Určuje, že pro události modulu CLR (Common Language Runtime) je povoleno trasování událostí pro Windows (ETW). Počínaje systémem Windows Vista je trasování událostí vždy povoleno, takže tento příznak nemá žádný vliv. Viz [řízení protokolování .NET Framework](../../../../docs/framework/performance/controlling-logging.md).|  
-|`STARTUP_ARM`|Určuje, zda je povoleno monitorování prostředků domény aplikace. Podívejte se na vlastnost <xref:System.AppDomain.MonitoringIsEnabled%2A?displayProperty=nameWithType> a [\<AppDomainResourceMonitoring prvek >](../../../../docs/framework/configure-apps/file-schema/runtime/appdomainresourcemonitoring-element.md).|  
+|`STARTUP_TRIM_GC_COMMIT`|Určuje, že uvolňování paměti bude používat méně potvrzené místo v případě nízké systémové paměti. Nahlédněte `gcTrimCommitOnLowMemory` do části [optimalizace pro sdílené webové hostování](../../../standard/garbage-collection/optimization-for-shared-web-hosting.md).|  
+|`STARTUP_ETW`|Určuje, že pro události modulu CLR (Common Language Runtime) je povoleno trasování událostí pro Windows (ETW). Počínaje systémem Windows Vista je trasování událostí vždy povoleno, takže tento příznak nemá žádný vliv. Viz [řízení protokolování .NET Framework](../../performance/controlling-logging.md).|  
+|`STARTUP_ARM`|Určuje, zda je povoleno monitorování prostředků domény aplikace. Podívejte se na <xref:System.AppDomain.MonitoringIsEnabled%2A?displayProperty=nameWithType> vlastnost a [ \<appDomainResourceMonitoring> element](../../configure-apps/file-schema/runtime/appdomainresourcemonitoring-element.md).|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** MSCorEE. h  
   
  **Knihovna:** MSCorEE. dll  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Výčty pro hostování](../../../../docs/framework/unmanaged-api/hosting/hosting-enumerations.md)
+- [Výčty hostování](hosting-enumerations.md)

@@ -36,7 +36,7 @@ Z Microsoft Azure Marketplace můžou vývojáři využít předem nakonfigurova
 
 V této části najdete podrobný přehled dat v systémech nativních pro Cloud. Začali jsme na rozdíl od ukládání dat v aplikacích v monolitické s využitím vzorů úložiště dat v nativních systémech cloudu. Prohlédli jsme se na vzorcích dat implementovaných v nativních systémech cloudu, včetně dotazů na různé služby, distribuovaných transakcí a vzorů, které se týkají systémů s vysokými objemy. NoSQL jsme na SQL data. Prohlédli jsme si možnosti úložiště dat dostupné v Azure, které obsahují možnosti orientované na Microsoft i open source. Nakonec jsme probrali ukládání do mezipaměti a Elasticsearch v cloudové nativní aplikaci.
 
-### <a name="references"></a>Odkazy
+### <a name="references"></a>Reference
 
 - [Model dělení zodpovědnosti příkazů a dotazů (CQRS – Command and Query Responsibility Segregation)](https://docs.microsoft.com/azure/architecture/patterns/cqrs)
 

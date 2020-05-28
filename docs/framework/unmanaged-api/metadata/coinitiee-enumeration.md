@@ -14,15 +14,15 @@ helpviewer_keywords:
 ms.assetid: 64264238-3b68-4bac-a887-36b552426a6c
 topic_type:
 - apiref
-ms.openlocfilehash: 2ccc038b4420040779dae70f15e3a8827ba94180
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: f4d1c2f105abb64bf196d0dd8371c2788c97336e
+ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74444113"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84005905"
 ---
 # <a name="coinitiee-enumeration"></a>COINITIEE – výčet
-Určuje konstanty, které používá [CoInitializeEE –](../../../../docs/framework/unmanaged-api/hosting/coinitializeee-function.md) při inicializaci modulu CLR (Common Language Runtime).  
+Určuje konstanty, které používá [CoInitializeEE –](../hosting/coinitializeee-function.md) při inicializaci modulu CLR (Common Language Runtime).  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -36,21 +36,21 @@ typedef enum tagCOINITEE {
   
 ## <a name="members"></a>Členové  
   
-|Člen|Popis|  
+|Člen|Description|  
 |------------|-----------------|  
-|`COINITEE_DEFAULT`|Výchozí režim inicializace. Tím se Inicializuje modul runtime a vytvoří se výchozí <xref:System.AppDomain>.|  
+|`COINITEE_DEFAULT`|Výchozí režim inicializace. Tím se Inicializuje modul runtime a vytvoří se výchozí hodnota <xref:System.AppDomain> .|  
 |`COINITEE_DLL`|Inicializuje spuštění spravované knihovny DLL.|  
-|`COINITEE_MAIN`|Inicializuje pro spuštění spravovaného souboru EXE. Tím se Inicializuje modul runtime, ale nevytvoří se výchozí <xref:System.AppDomain>, který se vytvoří po zadání hlavní rutiny EXE.|  
+|`COINITEE_MAIN`|Inicializuje pro spuštění spravovaného souboru EXE. Tím se Inicializuje modul runtime, ale nevytvoří se výchozí <xref:System.AppDomain> , který se vytvoří po vstupu do hlavní rutiny exe.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** Cor. h  
   
  **Knihovna:** Zahrnuto jako prostředek v knihovně MsCorEE. dll  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Výčty pro metadata](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)
+- [Výčty pro metadata](metadata-enumerations.md)

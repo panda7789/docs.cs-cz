@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: f9a80f1a-55af-4459-b095-8441aae16119
 topic_type:
 - apiref
-ms.openlocfilehash: e6c3c9b842bd823e8975661964480fd801779b2d
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: ce6f5993b9c1aeb63e121b3567ee468cea1c9318
+ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74450131"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84007517"
 ---
 # <a name="correftodefcheck-enumeration"></a>CorRefToDefCheck – výčet
 Určuje příznaky pro řízení, které odkazované položky jsou převedeny na jejich definice za účelem optimalizace kódu.  
@@ -38,21 +38,21 @@ typedef enum CorRefToDefCheck {
   
 ## <a name="members"></a>Členové  
   
-|Člen|Popis|  
+|Člen|Description|  
 |------------|-----------------|  
-|`MDRefToDefDefault`|Určuje, že se odkazy na typy a odkazy členů mají převést na definice. Toto je výchozí hodnota (`MDTypeRefToDef` &#124; `MDMemberRefToDef`).|  
+|`MDRefToDefDefault`|Určuje, že se odkazy na typy a odkazy členů mají převést na definice. Toto je výchozí hodnota ( `MDTypeRefToDef` &#124; `MDMemberRefToDef` ).|  
 |`MDRefToDefAll`|Určuje, že všechny odkazované položky by měly být převedeny na definice.|  
 |`MDRefToDefNone`|Určuje, že žádné odkazované položky by měly být převedeny na definice.|  
 |`MDTypeRefToDef`|Určuje, že se mají převést pouze odkazy typu na definice typu.|  
 |`MDMemberRefToDef`|Určuje, že by měly být převedeny pouze odkazy členů na definice. To znamená, že odkazy členů by měly být převedeny na buď definice metod, nebo definice polí.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** CorHdr. h  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Výčty pro metadata](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)
+- [Výčty pro metadata](metadata-enumerations.md)
