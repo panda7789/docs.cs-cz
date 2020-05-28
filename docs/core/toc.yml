@@ -98,11 +98,6 @@
         - name: Test jednotek u knihovny
           href: tutorials/testing-library-with-visual-studio.md
           displayName: 'tutorials, visual studio, vs'
-        - name: Použití knihovny
-          href: tutorials/consuming-library-with-visual-studio.md
-          displayName: 'tutorials, visual studio, vs'
-        - name: Živý test jednotek
-          href: /visualstudio/test/live-unit-testing-start
         - name: Instalace a použití balíčku
           href: /nuget/quickstart/install-and-use-a-package-in-visual-studio
           displayName: 'tutorials, visual studio, vs'
