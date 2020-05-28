@@ -1,48 +1,48 @@
 ---
 title: Obecné pokyny
-description: Architektura mikroslužeb .NET pro kontejnerizované aplikace .NET | Obecné pokyny
+description: Architektura mikroslužeb .NET pro kontejnerové aplikace .NET | Obecné pokyny
 ms.date: 09/11/2018
-ms.openlocfilehash: 2fa66d7593b764a8df4d9acc20f93d3f8fb26174
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: e3bb4b8cf3e371c31d783fe4cfafeac282fb72b8
+ms.sourcegitcommit: ee5b798427f81237a3c23d1fd81fff7fdc21e8d3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "73089653"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84144562"
 ---
 # <a name="general-guidance"></a>Obecné pokyny
 
-Tato část obsahuje souhrn toho, kdy zvolit rozhraní .NET Core nebo .NET Framework. Další podrobnosti o těchto volbách poskytujeme v následujících částech.
+V této části najdete přehled, kdy zvolit rozhraní .NET Core nebo .NET Framework. Další podrobnosti o těchto volbách poskytujeme v níže uvedených částech.
 
-Jádro .NET core s Linuxem nebo Kontejnery Windows byste měli použít pro kontejnerizovanou serverovou aplikaci Dockeru, když:
+Pro svou kontejnerovou aplikaci Docker můžete použít .NET Core s kontejnery Linux nebo Windows v těchto případech:
 
-- Máte potřeby napříč platformami. Například chcete použít linuxové i windows kontejnery.
+- Máte různé požadavky na více platforem. Například chcete použít kontejnery Linux i Windows.
 
-- Architektura aplikace je založena na mikroslužbách.
+- Architektura vaší aplikace je založena na mikroslužbách.
 
-- Musíte rychle spustit kontejnery a chcete malé rozměry na kontejner, abyste dosáhli lepší hustoty nebo více kontejnerů na hardwarovou jednotku, abyste snížili náklady.
+- Je potřeba začít kontejnery rychle a chtít malé nároky na kontejner, abyste dosáhli lepší hustoty nebo většího počtu kontejnerů na jednotku hardwaru za účelem snížení nákladů.
 
-Stručně řečeno, při vytváření nových kontejnerizovaných aplikací .NET byste měli považovat .NET Core jako výchozí volbu. Má mnoho výhod a nejlépe se hodí k filozofii kontejnerů a stylu práce.
+V krátké době, kdy vytváříte nové kontejnery aplikací .NET, byste měli zvážit jako výchozí volbu .NET Core. Má spoustu výhod a nejlépe vyhovuje kontejnerům filozofie a stylu práce.
 
-Další výhodou použití rozhraní .NET Core je, že můžete spustit vedle sebe verze .NET pro aplikace v rámci stejného počítače. Tato výhoda je důležitější pro servery nebo virtuální servery, které nepoužívají kontejnery, protože kontejnery izolovat verze rozhraní .NET, které aplikace potřebuje. (Pokud jsou kompatibilní s základním os.)
+Další výhodou používání .NET Core je, že pro aplikace ve stejném počítači můžete spouštět souběžné verze .NET. Tato výhoda je důležitější pro servery nebo virtuální počítače, které nepoužívají kontejnery, protože kontejnery izolují verze rozhraní .NET, které aplikace potřebuje. (Pokud jsou kompatibilní s podkladovým operačním systémem.)
 
-Rozhraní .NET Framework byste měli použít pro kontejnerizovanou serverovou aplikaci Dockeru, když:
+Pro svou kontejnerovou aplikaci Docker Server byste měli použít .NET Framework v těchto případech:
 
-- Aplikace aktuálně používá rozhraní .NET Framework a má silné závislosti na systému Windows.
+- Vaše aplikace aktuálně používá .NET Framework a má silné závislosti v systému Windows.
 
-- Je třeba použít rozhraní API systému Windows, které nejsou podporovány .NET Core.
+- Je nutné použít rozhraní API systému Windows, která nejsou podporována rozhraním .NET Core.
 
-- Musíte použít knihovny .NET jiných výrobců nebo balíčky NuGet, které nejsou k dispozici pro jádro .NET Core.
+- Je nutné použít knihovny .NET nebo balíčky NuGet třetích stran, které nejsou k dispozici pro .NET Core.
 
-Použití rozhraní .NET Framework v Dockeru může zlepšit vaše možnosti nasazení minimalizací problémů s nasazením. Tento [scénář "lift and shift"](https://aka.ms/liftandshiftwithcontainersebook) je důležitý pro kontejnerizaci starších aplikací, které byly původně vyvinuty s tradiční rozhraní .NET Framework, jako jsou ASP.NET WebForms, MVC webové aplikace nebo WCF (Windows Communication Foundation) služby.
+Použití .NET Framework v Docker může zlepšit vaše prostředí nasazení díky minimalizaci problémů s nasazením. Tento [scénář "zvednutí a posunutí"](https://aka.ms/liftandshiftwithcontainersebook) je důležitý pro uzavření starší verze aplikací, které byly původně vyvinuty s tradičním .NET Framework, jako jsou ASP.NET WebForms, MVC Web Apps nebo WCF (Windows Communication Foundation) služby.
 
 ### <a name="additional-resources"></a>Další zdroje
 
-- **E-kniha: Modernizace stávajících aplikací rozhraní .NET Framework pomocí kontejnerů Azure a Windows**  
-    https://aka.ms/liftandshiftwithcontainersebook
+- **Elektronická kniha: modernizovat stávající aplikace .NET Framework s kontejnery Azure a Windows**  
+    <https://aka.ms/liftandshiftwithcontainersebook>
 
-- **Ukázkové aplikace: Modernizace starších ASP.NET webových aplikací pomocí kontejnerů windows**  
-    https://aka.ms/eshopmodernizing
+- **Ukázkové aplikace: moderní verze starších webových aplikací v ASP.NET pomocí kontejnerů Windows**  
+    <https://aka.ms/eshopmodernizing>
 
 >[!div class="step-by-step"]
->[Předchozí](index.md)
->[další](net-core-container-scenarios.md)
+>[Předchozí](index.md) 
+> [Další](net-core-container-scenarios.md)

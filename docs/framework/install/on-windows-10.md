@@ -1,83 +1,84 @@
 ---
-title: Instalace rozhraní .NET Framework ve Windows 10
-description: Přečtěte si, jak nainstalovat rozhraní .NET Framework do Windows 10 nebo Windows Server 2016.
+title: Instalace .NET Framework ve Windows 10
+description: Naučte se, jak nainstalovat .NET Framework ve Windows 10 nebo Windows serveru 2016.
 ms.date: 04/18/2019
 ms.custom: updateeachrelease
-ms.openlocfilehash: eed15b9088d6ba46d8f5bc6d16ba779dd6115b0d
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 1443ae8f8d4e61b0561f4827fafc9ecedd80fccc
+ms.sourcegitcommit: ee5b798427f81237a3c23d1fd81fff7fdc21e8d3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "76965968"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84144731"
 ---
-# <a name="install-the-net-framework-on-windows-10-and-windows-server-2016-and-later"></a>Instalace rozhraní .NET Framework ve Windows 10 a Windows Serveru 2016 a novějších
+# <a name="install-the-net-framework-on-windows-10-and-windows-server-2016-and-later"></a>Instalace .NET Framework ve Windows 10 a Windows serveru 2016 a novějších verzích
 
-Rozhraní .NET Framework je nutné spustit mnoho aplikací v systému Windows. Pokyny v tomto článku by vám měly pomoci nainstalovat potřebné verze rozhraní .NET Framework. [Rozhraní .NET Framework 4.8](https://github.com/Microsoft/dotnet/tree/master/releases/net48) je nejnovější dostupná verze.
+.NET Framework se vyžaduje ke spouštění mnoha aplikací v systému Windows. Pokyny v tomto článku vám pomůžou nainstalovat .NET Framework verze, které potřebujete. [.NET Framework 4,8](https://github.com/Microsoft/dotnet/tree/master/releases/net48) je nejnovější dostupná verze.
 
-Možná jste dorazili na tuto stránku po pokusu o spuštění aplikace a zobrazení dialogového okna v počítači podobnému následujícímu:
+Po pokusu o spuštění aplikace a zobrazení dialogu na počítači, který bude vypadat přibližně takto:
 
-![Tuto aplikaci nelze spustit.](./media/this-application-could-not-be-started.png)
+![Tuto aplikaci nebylo možné spustit.](./media/this-application-could-not-be-started.png)
 
 ## <a name="net-framework-48"></a> .NET Framework 4.8
 
-Rozhraní .NET Framework 4.8 je součástí:
+.NET Framework 4,8 je součástí:
 
-- [Aktualizace Windows 10 z května 2019](https://support.microsoft.com/help/4028685/windows-10-get-the-update)
+- [Windows 10 Květen 2019 Update](https://support.microsoft.com/help/4028685/windows-10-get-the-update)
 
 > [!div class="button"]
 > [Stáhnout .NET Framework 4.8](https://dotnet.microsoft.com/download/dotnet-framework/net48)
 
-[Rozhraní .NET Framework 4.8](https://dotnet.microsoft.com/download/dotnet-framework/net48) lze použít ke spuštění aplikací vytvořených pro rozhraní .NET Framework 4.0 až 4.7.2.
+[.NET Framework 4,8](https://dotnet.microsoft.com/download/dotnet-framework/net48) lze použít ke spouštění aplikací vytvořených pro .NET Framework 4,0 až 4.7.2.
 
-[Rozhraní .NET Framework 4.8](https://dotnet.microsoft.com/download/dotnet-framework/net48) můžete nainstalovat na:
+[.NET Framework 4,8](https://dotnet.microsoft.com/download/dotnet-framework/net48) můžete nainstalovat na:
 
-- Aktualizace Windows 10 z října 2018 (verze 1809)
+- Windows 10 říjen 2018 Update (verze 1809)
 - Aktualizace Windows 10 z dubna 2018 (verze 1803)
-- Windows 10 Fall Creators Update (verze 1709)
+- Aktualizace Creators v systému Windows 10 (verze 1709)
 - Windows 10 Creators Update (verze 1703)
-- Windows 10 Výročí Update (verze 1607)
+- Windows 10 – aktualizace pro výročí (verze 1607)
 - Windows Server 2019
-- Windows Server, verze 1809
-- Windows Server, verze 1803
+- Windows Server verze 1809
+- Windows Server verze 1803
 - Windows Server 2016
 
-Rozhraní .NET Framework 4.8 není podporováno v:
+.NET Framework 4,8 není podporován na:
 
 - Windows 10 1507
-- Windows 10 1511
+- Systém Windows 10 1511
 
-Pokud používáte Windows 10 1507 nebo 1511 a chcete nainstalovat rozhraní .NET Framework 4.8, musíte nejprve upgradovat na novější verzi Windows 10.
+Pokud používáte Windows 10 1507 nebo 1511 a chcete nainstalovat .NET Framework 4,8, musíte nejdřív upgradovat na novější verzi Windows 10.
 
 ## <a name="net-framework-462"></a>.NET Framework 4.6.2
 
-[Rozhraní .NET Framework 4.6.2](https://dotnet.microsoft.com/download/dotnet-framework/net462) je nejnovější podporovaná verze rozhraní .NET Framework v systémech Windows 10 1507 a 1511.
+[.NET Framework 4.6.2](https://dotnet.microsoft.com/download/dotnet-framework/net462) je nejnovější podporovaná verze .NET Framework ve Windows 10 1507 a 1511.
 
-Rozhraní .NET Framework 4.6.2 podporuje aplikace vytvořené pro rozhraní .NET Framework 4.0 až 4.6.2.
+.NET Framework 4.6.2 podporuje aplikace sestavené pro .NET Framework 4,0 až 4.6.2.
 
 ## <a name="net-framework-35"></a>.NET Framework 3.5
 
-Podle pokynů nainstalujte [rozhraní .NET Framework 3.5 do Windows 10](dotnet-35-windows-10.md).
+Postupujte podle pokynů a nainstalujte [.NET Framework 3,5 ve Windows 10](dotnet-35-windows-10.md).
 
-Rozhraní .NET Framework 3.5 podporuje aplikace vytvořené pro rozhraní .NET Framework 1.0 až 3.5.
+.NET Framework 3,5 podporuje aplikace sestavené pro .NET Framework 1,0 až 3,5.
 
 ## <a name="additional-information"></a>Další informace
 
-Verze rozhraní .NET Framework 4.x jsou aktuální aktualizace dřívějších verzí. To znamená následující:
+Verze .NET Framework 4. x jsou místní aktualizace na starší verze. To znamená následující:
 
-- V počítači můžete mít nainstalovanou pouze jednu verzi rozhraní .NET Framework 4.x.
+- V počítači můžete mít nainstalovanou jenom jednu verzi .NET Framework 4. x.
 
-- Pokud je již nainstalována novější verze rozhraní .NET Framework, nelze do počítače nainstalovat starší verzi rozhraní .NET Framework.
+- Starší verzi .NET Framework nejde nainstalovat na váš počítač, pokud už je nainstalovaná novější verze.
 
-- Verze 4.x rozhraní .NET Framework lze použít ke spuštění aplikací vytvořených pro rozhraní .NET Framework 4.0 prostřednictvím této verze. Například rozhraní .NET Framework 4.7 lze použít ke spuštění aplikací vytvořených pro rozhraní .NET Framework 4.0 až 4.7. Nejnovější verzi (rozhraní .NET Framework 4.8) lze použít ke spuštění aplikací vytvořených se všemi verzemi rozhraní .NET Framework začínajícími na 4.0.
+- 4. x verze .NET Framework lze použít ke spouštění aplikací vytvořených pro .NET Framework 4,0 prostřednictvím této verze. Například .NET Framework 4,7 lze použít ke spouštění aplikací vytvořených pro .NET Framework 4,0 až 4,7. Nejnovější verzi (.NET Framework 4,8) lze použít ke spouštění aplikací vytvořených ve všech verzích .NET Framework počínaje verzí 4,0.
 
-Seznam všech verzí rozhraní .NET Framework, které jsou k dispozici ke stažení, naleznete na stránce [Stahování .NET.](https://dotnet.microsoft.com/download)
+Seznam všech verzí .NET Framework dostupných ke stažení najdete na stránce [soubory ke stažení pro rozhraní .NET](https://dotnet.microsoft.com/download) .
 
 ## <a name="help"></a>Nápověda
 
-Pokud nelze nainstalovat správnou verzi rozhraní .NET Framework, můžete [se obrátit na společnost Microsoft s žádostí o pomoc](mailto:dotnet-install-help@service.microsoft.com?subject=Install-Help).
+Pokud se vám nedaří nainstalovat správnou verzi .NET Framework, můžete [požádat o pomoc Microsoft](mailto:dotnet-install-help@service.microsoft.com?subject=Install-Help).
 
 ## <a name="see-also"></a>Viz také
 
-- [Soubory KE stažení v rozhraní .NET](https://dotnet.microsoft.com/download)
+- [Soubory ke stažení pro .NET](https://dotnet.microsoft.com/download)
 - [Řešení potíží se zablokovanými instalacemi a odinstalacemi rozhraní .NET Framework](troubleshoot-blocked-installations-and-uninstallations.md)
-- [Instalace rozhraní .NET Framework pro vývojáře](guide-for-developers.md)
+- [Instalace .NET Framework pro vývojáře](guide-for-developers.md)
+- [Určit, které verze .NET Framework jsou nainstalovány](../migration-guide/how-to-determine-which-versions-are-installed.md)

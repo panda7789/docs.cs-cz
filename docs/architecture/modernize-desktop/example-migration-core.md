@@ -2,12 +2,12 @@
 title: Příklad migrace na .NET Core 3.1
 description: Ukazuje, jak migrovat ukázkové aplikace, které cílí na .NET Framework .NET Core 3,1.
 ms.date: 05/12/2020
-ms.openlocfilehash: ef8a0c24ec81a21eb89411ed4c9a543d4d70d89f
-ms.sourcegitcommit: 9a4488a3625866335e83a20da5e9c5286b1f034c
+ms.openlocfilehash: 5e8b1219cf4bd89ada5b71a60ef27eaabb94997c
+ms.sourcegitcommit: ee5b798427f81237a3c23d1fd81fff7fdc21e8d3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83423381"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84144268"
 ---
 # <a name="example-of-migrating-to-net-core-31"></a>Příklad migrace na .NET Core 3.1
 
@@ -43,7 +43,7 @@ Po dokončení migrace odkazů na balíčky je nutné ověřit všechny referenc
 
 ![Snímek obrazovky se závislostmi NuGet pro balíček Castle. Windsor](./media/example-migration-core/nuget-dependencies.png)
 
-Chcete-li ověřit kompatibilitu balíčku, můžete použít nástroj <http://fuget.org> , který nabízí podrobnější informace o verzích a závislostech.
+Chcete-li ověřit kompatibilitu balíčku, můžete použít nástroj <https://fuget.org> , který nabízí podrobnější informace o verzích a závislostech.
 
 Projekt je pravděpodobně odkazován na starší verze balíčků, které nepodporují .NET Core, ale můžete najít novější verze, které ji podporují. Aktualizace balíčků do novějších verzí proto obecně představuje dobrou doporučení. Měli byste však vzít v úvahu, že aktualizace verze balíčku může vést k nějakým změnám, které by vynutily aktualizaci kódu.
 
@@ -79,7 +79,7 @@ Atributy se generují automaticky v projektech .NET Core. Pokud projekt obsahuje
 </Project>
 ```
 
-#### <a name="resources"></a>Zdroje a prostředky
+#### <a name="resources"></a>Prostředky
 
 Integrované prostředky jsou zahrnuté automaticky, ale prostředky nejsou, takže je potřeba migrovat prostředky do nového souboru projektu.
 
@@ -133,7 +133,7 @@ Pokud například použijete konfigurační soubory (*App. config*), může doj�
 
 Dalším důvodem pro chyby je použití `BeginInvoke` metod a, `EndInvoke` protože nejsou podporované v .NET Core. Nepodporují se v .NET Core, protože mají závislost na vzdálené komunikaci, která v .NET Core neexistuje. Chcete-li tento problém vyřešit, zkuste použít `await` klíčové slovo (je-li k dispozici) nebo <xref:System.Threading.Tasks.Task.Run%2A?displayProperty=nameWithType> metodu.
 
-Pomocí analyzátorů kompatibility můžete identifikovat rozhraní API a vzory kódu v kódu, které mohou potenciálně způsobovat problémy v době běhu pomocí .NET Core. Přejít na <http://github.com/dotnet/platform-compat> a použít analyzátor rozhraní .NET API pro váš projekt.
+Pomocí analyzátorů kompatibility můžete identifikovat rozhraní API a vzory kódu v kódu, které mohou potenciálně způsobovat problémy v době běhu pomocí .NET Core. Přejít na <https://github.com/dotnet/platform-compat> a použít analyzátor rozhraní .NET API pro váš projekt.
 
 ## <a name="migrating-a-windows-forms-application"></a>Migrace aplikace model Windows Forms
 

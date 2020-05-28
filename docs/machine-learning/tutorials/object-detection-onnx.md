@@ -6,12 +6,12 @@ ms.author: luquinta
 ms.date: 01/30/2020
 ms.topic: tutorial
 ms.custom: mvc
-ms.openlocfilehash: 2bf44ec1657307161c13f88f7d1628b2c930fd05
-ms.sourcegitcommit: d223616e7e6fe2139079052e6fcbe25413fb9900
+ms.openlocfilehash: 199245aa0017d9232e3c9889c7845c3b9ec9877b
+ms.sourcegitcommit: ee5b798427f81237a3c23d1fd81fff7fdc21e8d3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/22/2020
-ms.locfileid: "83805529"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84144744"
 ---
 # <a name="tutorial-detect-objects-using-onnx-in-mlnet"></a>Kurz: zjištění objektů pomocí ONNX v ML.NET
 
@@ -19,7 +19,7 @@ Naučte se používat předem vyškolený model ONNX v ML.NET ke zjišťování 
 
 Školení modelu detekce objektu od začátku vyžaduje nastavení milionů parametrů, velké množství označených školicích dat a obrovské množství výpočetních prostředků (stovky hodin GPU). Použití předem připraveného modelu vám umožní zástupce školicího procesu.
 
-V tomto kurzu:
+V tomto kurzu se naučíte:
 > [!div class="checklist"]
 >
 > - Pochopení problému
@@ -102,7 +102,7 @@ Teď, když máte obecné informace o tom, co ONNX je a jak malý YOLOv2 funguje
 
 1. Zkopírujte `assets` adresář do adresáře projektu *ObjectDetection* . Tento adresář a jeho podadresáře obsahují soubory obrázků (kromě nemalého modelu YOLOv2, který si stáhnete a přidáte v dalším kroku) potřebného pro tento kurz.
 
-1. Stáhněte si [malý YOLOv2 model](https://onnxzoo.blob.core.windows.net/models/opset_8/tiny_yolov2/tiny_yolov2.tar.gz) z [modelu ONNX pro zoologickéii](https://github.com/onnx/models/tree/master/vision/object_detection_segmentation/tiny_yolov2)a rozbalte ho.
+1. Stáhněte si [malý YOLOv2 model](https://onnxzoo.blob.core.windows.net/models/opset_8/tiny_yolov2/tiny_yolov2.tar.gz) z [modelu ONNX pro zoologickéii](https://github.com/onnx/models/tree/master/vision/object_detection_segmentation/tiny-yolov2)a rozbalte ho.
 
     Otevřete příkazový řádek a zadejte následující příkaz:
 
@@ -665,7 +665,7 @@ Po příkazu try-catch přidejte další logiku, která indikuje, že proces je 
 
 [!code-csharp [EndProcessLog](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ObjectDetection_Onnx/ObjectDetectionConsoleApp/Program.cs#L62-L63)]
 
-A to je vše!
+A je to!
 
 ## <a name="results"></a>Výsledky
 

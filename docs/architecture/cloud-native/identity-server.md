@@ -2,12 +2,12 @@
 title: IdentityServer pro nativní cloudové aplikace
 description: Architekt cloudových nativních aplikací .NET pro Azure | IdentityServer
 ms.date: 05/13/2020
-ms.openlocfilehash: 81cce30568becacda29f65f9506398790af321e0
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: 2128001f0d25b1edd795dd9676e0d76018c1fa3a
+ms.sourcegitcommit: ee5b798427f81237a3c23d1fd81fff7fdc21e8d3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83614029"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84144367"
 ---
 # <a name="identityserver-for-cloud-native-applications"></a>IdentityServer pro cloudové nativní aplikace
 
@@ -29,7 +29,7 @@ Aplikace obvykle potřebují podporovat některé nebo všechny z následující
 
 V každém z těchto scénářů musí být vystavené funkce zabezpečené před neoprávněným použitím. Minimálně to obvykle vyžaduje ověření uživatele nebo objektu zabezpečení, který vytváří požadavek na prostředek. Toto ověřování může používat jeden z několika běžných protokolů, jako je SAML2p, WS-doOpenID nebo Connect. Komunikace s rozhraními API obvykle používá protokol OAuth2 a jeho podporu pro tokeny zabezpečení. Oddělení těchto důležitých otázek zabezpečení a jejich prováděcích detailů od samotných aplikací zajišťuje konzistenci a zlepšuje zabezpečení a udržovatelnost. Použití těchto otázek pro vyhrazený produkt, jako je IdentityServer, pomáhá požadavek každé aplikace tyto problémy vyřešit sami.
 
-IdentityServer poskytuje middleware, který běží v aplikaci ASP.NET Core a přidává podporu pro OpenID Connect a OAuth2 (viz článek [podporované specifikace](http://docs.identityserver.io/en/latest/intro/specs.html)). Organizace vytvoří svou vlastní aplikaci ASP.NET Core s využitím middlewaru IdentityServer k tomu, aby fungovala jako STS pro všechny protokoly zabezpečení založené na tokenech. Middleware IdentityServer zpřístupňuje koncové body pro podporu standardních funkcí, včetně:
+IdentityServer poskytuje middleware, který běží v aplikaci ASP.NET Core a přidává podporu pro OpenID Connect a OAuth2 (viz článek [podporované specifikace](https://docs.identityserver.io/en/latest/intro/specs.html)). Organizace vytvoří svou vlastní aplikaci ASP.NET Core s využitím middlewaru IdentityServer k tomu, aby fungovala jako STS pro všechny protokoly zabezpečení založené na tokenech. Middleware IdentityServer zpřístupňuje koncové body pro podporu standardních funkcí, včetně:
 
 - Autorizovat (ověření koncového uživatele)
 - Token (žádost o token prostřednictvím kódu programu)
@@ -95,13 +95,13 @@ IdentityServer také hostuje veřejnou ukázkovou lokalitu, která se dá použ�
 
 ## <a name="javascript-clients"></a>Klienti JavaScriptu
 
-Mnoho cloudových nativních aplikací využívá na front-endu rozhraní API na straně serveru a bohatých klientských aplikacích (jednostránkové). IdentityServer dodává [JavaScriptový klient](http://docs.identityserver.io/en/latest/quickstarts/4_javascript_client.html) ( `oidc-client.js` ) prostřednictvím NPM, který se dá přidat do jednostránkové a povolit tak použití IdentityServer pro přihlášení, odhlášení a ověřování webových rozhraní API na základě tokenu.
+Mnoho cloudových nativních aplikací využívá na front-endu rozhraní API na straně serveru a bohatých klientských aplikacích (jednostránkové). IdentityServer dodává [JavaScriptový klient](https://docs.identityserver.io/en/latest/quickstarts/4_javascript_client.html) ( `oidc-client.js` ) prostřednictvím NPM, který se dá přidat do jednostránkové a povolit tak použití IdentityServer pro přihlášení, odhlášení a ověřování webových rozhraní API na základě tokenu.
 
 ## <a name="references"></a>Odkazy
 
-- [Dokumentace k IdentityServer](http://docs.identityserver.io/en/latest/)
+- [Dokumentace k IdentityServer](https://docs.identityserver.io/en/latest/)
 - [Typy aplikací](https://docs.microsoft.com/azure/active-directory/develop/app-types)
-- [Klient OIDC JavaScript](http://docs.identityserver.io/en/latest/quickstarts/4_javascript_client.html)
+- [Klient OIDC JavaScript](https://docs.identityserver.io/en/latest/quickstarts/4_javascript_client.html)
 
 >[!div class="step-by-step"]
 >[Předchozí](azure-active-directory.md) 

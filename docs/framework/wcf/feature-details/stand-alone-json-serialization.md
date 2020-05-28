@@ -1,271 +1,271 @@
 ---
-title: Samostatná serializace JSON pomocí datacontractjsonserializer
+title: Samostatná serializace JSON pomocí DataContractJsonSerializer
 ms.date: 03/30/2017
 ms.assetid: 312bd7b2-1300-4b12-801e-ebe742bd2287
-ms.openlocfilehash: 614776a905ec319624f76876762c25bfca15a357
-ms.sourcegitcommit: 99b153b93bf94d0fecf7c7bcecb58ac424dfa47c
+ms.openlocfilehash: 259d5da544262b5cae08e1be9e8ea6e077d5b947
+ms.sourcegitcommit: ee5b798427f81237a3c23d1fd81fff7fdc21e8d3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/25/2020
-ms.locfileid: "80249445"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84144926"
 ---
-# <a name="stand-alone-json-serialization-using-datacontractjsonserializer"></a>Samostatná serializace JSON pomocí datacontractjsonserializer
+# <a name="stand-alone-json-serialization-using-datacontractjsonserializer"></a>Samostatná serializace JSON pomocí DataContractJsonSerializer
 
 > [!NOTE]
-> Tento článek <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer>je o . Pro většinu scénářů, které zahrnují serializaci a rekonstrukci json, doporučujeme api v [oboru názvů System.Text.Json](../../../standard/serialization/system-text-json-overview.md).
+> Tento článek se týká <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer> . Pro většinu scénářů, které zahrnují serializaci a deserializaci JSON, doporučujeme rozhraní API v [oboru názvů System. text. JSON](../../../standard/serialization/system-text-json-overview.md).
 
-JSON (JavaScript Object Notation) je formát dat, který je speciálně navržen pro použití kódem JavaScriptu běžícím na webových stránkách uvnitř prohlížeče. Jedná se o výchozí formát dat používaný službami ASP.NET AJAX vytvořenými v nadaci WCF (Windows Communication Foundation).
+JSON (JavaScript Object Notation) je formát dat, který je speciálně navržený tak, aby se používal v kódu JavaScriptu běžícím na webových stránkách v prohlížeči. Je to výchozí formát dat používaný službami ASP.NET AJAX vytvořenými v Windows Communication Foundation (WCF).
 
-Tento formát lze také použít při vytváření služeb AJAX bez integrace s ASP.NET - v tomto případě je XML výchozí, ale JSON lze zvolit.
+Tento formát lze použít také při vytváření služeb AJAX bez integrace s ASP.NET – v tomto případě je XML výchozí, ale může být zvolena hodnota JSON.
 
-Nakonec pokud požadujete podporu JSON, ale nevytváříte službu <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer> AJAX, umožňuje přímo serializovat objekty .NET do dat JSON a rekonstruovat tato data zpět do instancí typů .NET. Popis, jak to provést, naleznete v [tématu Jak: Serializovat a rekonstruovat json data](../../../../docs/framework/wcf/feature-details/how-to-serialize-and-deserialize-json-data.md).
+Nakonec, pokud požadujete podporu JSON, ale nevytváříte službu AJAX, <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer> umožňuje přímo serializovat objekty .NET do dat JSON a deserializovat taková data zpátky do instancí typů .NET. Popis toho, jak to provést, naleznete v tématu [How to: serializovat a deserializovat data JSON](../../../../docs/framework/wcf/feature-details/how-to-serialize-and-deserialize-json-data.md).
 
-Při práci s JSON jsou podporovány stejné typy .NET, s několika <xref:System.Runtime.Serialization.DataContractSerializer>výjimkami, jak jsou podporovány . Seznam podporovaných typů naleznete v [tématu Typy podporované serializátorem datových smluv](../../../../docs/framework/wcf/feature-details/types-supported-by-the-data-contract-serializer.md). To zahrnuje většinu primitivních typů, většinu typů polí a <xref:System.Runtime.Serialization.DataContractAttribute> kolekcí, stejně jako komplexní typy, které používají a <xref:System.Runtime.Serialization.DataMemberAttribute>.
+Při práci s JSON jsou podporovány stejné typy rozhraní .NET, s několika výjimkami, jak jsou podporovány v <xref:System.Runtime.Serialization.DataContractSerializer> . Seznam podporovaných typů najdete v tématu [typy podporované serializátorem kontraktu dat](../../../../docs/framework/wcf/feature-details/types-supported-by-the-data-contract-serializer.md). To zahrnuje většinu primitivních typů, většinu typů polí a kolekcí a také komplexní typy, které používají <xref:System.Runtime.Serialization.DataContractAttribute> a <xref:System.Runtime.Serialization.DataMemberAttribute> .
 
 ## <a name="mapping-net-types-to-json-types"></a>Mapování typů .NET na typy JSON
 
-V následující tabulce je uvedena shoda mezi typy .NET a JSON/JavaScript, pokud jsou mapovány postupy serializace a deserializace.
+Následující tabulka ukazuje korespondenci mezi typy rozhraní .NET a typy JSON/JavaScript, pokud jsou mapovány postupy serializace a deserializace.
 
-|Typy rozhraní .NET|JSON/JavaScript|Poznámky|
+|Typy .NET|JSON/JavaScript|Poznámky|
 |----------------|----------------------|-----------|
-|Všechny číselné typy, například <xref:System.Int32>, <xref:System.Decimal> nebo<xref:System.Double>|Číslo|Zvláštní hodnoty, `Double.NaN` `Double.PositiveInfinity` například , a `Double.NegativeInfinity` nejsou podporovány a výsledkem je neplatný JSON.|
-|<xref:System.Enum>|Číslo|Viz "Výčty a JSON" dále v tomto tématu.|
+|Všechny číselné typy, například <xref:System.Int32> <xref:System.Decimal> nebo<xref:System.Double>|Číslo|Speciální hodnoty jako `Double.NaN` , `Double.PositiveInfinity` a `Double.NegativeInfinity` nejsou podporovány a mají za následek neplatný formát JSON.|
+|<xref:System.Enum>|Číslo|Viz část "výčty a JSON" dále v tomto tématu.|
 |<xref:System.Boolean>|Logická hodnota|--|
 |<xref:System.String>, <xref:System.Char>|Řetězec|--|
-|<xref:System.TimeSpan>, <xref:System.Guid>, <xref:System.Uri>|Řetězec|Formát těchto typů v JSON je stejný jako v XML (v podstatě TimeSpan ve formátu ISO 8601 Duration, GUID v "12345678-ABCD-ABCD-ABCD-1234567890AB" formátu a URI ve své přirozené formě řetězce jako "http://www.example.com"). Přesné informace naleznete v [tématu Data Contract Schema Reference](../../../../docs/framework/wcf/feature-details/data-contract-schema-reference.md).|
-|<xref:System.Xml.XmlQualifiedName>|Řetězec|Formát je "name:namespace" (cokoli před první dvojtečka je název). Název nebo obor názvů mohou chybět. Pokud neexistuje žádný obor názvů dvojtečka může být vynechána také.|
+|<xref:System.TimeSpan>, <xref:System.Guid>, <xref:System.Uri>|Řetězec|Formát těchto typů ve formátu JSON je stejný jako v jazyce XML (v podstatě se jedná o časový interval ve formátu ISO 8601 Duration, identifikátor GUID ve formátu "12345678-ABCD-ABCD-ABCD-1234567890AB" a identifikátor URI ve formě přirozeného řetězce, jako je " http://www.example.com "). Podrobné informace najdete v tématu [referenční informace o schématu kontraktu dat](../../../../docs/framework/wcf/feature-details/data-contract-schema-reference.md).|
+|<xref:System.Xml.XmlQualifiedName>|Řetězec|Formát je "název: obor názvů" (cokoli před první dvojtečkou je název). Název nebo obor názvů může chybět. Pokud obor názvů neexistuje, může být dvojtečka také vynechána.|
 |<xref:System.Array>typu<xref:System.Byte>|Pole čísel|Každé číslo představuje hodnotu jednoho bajtu.|
-|<xref:System.DateTime>|DateTime nebo Řetězec|Viz Dates/Times a JSON dále v tomto tématu.|
-|<xref:System.DateTimeOffset>|Komplexní typ|Viz Dates/Times a JSON dále v tomto tématu.|
-|Typy XML a<xref:System.Xml.XmlElement>ADO.NET ( ,<br /><br /> <xref:System.Xml.Linq.XElement>. Pole , <xref:System.Xml.XmlNode><br /><br /> <xref:System.Runtime.Serialization.ISerializable>,<br /><br /> <xref:System.Data.DataSet>).|Řetězec|Podívejte se na část Typy XML a JSON v tomto tématu.|
+|<xref:System.DateTime>|DateTime nebo String|Viz data a časy a JSON později v tomto tématu.|
+|<xref:System.DateTimeOffset>|Komplexní typ|Viz data a časy a JSON později v tomto tématu.|
+|Typy XML a ADO.NET ( <xref:System.Xml.XmlElement> ,<br /><br /> <xref:System.Xml.Linq.XElement>. Pole <xref:System.Xml.XmlNode> ,<br /><br /> <xref:System.Runtime.Serialization.ISerializable>,<br /><br /> <xref:System.Data.DataSet>).|Řetězec|Další informace najdete v části Typy XML a JSON tohoto tématu.|
 |<xref:System.DBNull>|Prázdný komplexní typ|--|
-|Kolekce, slovníky a pole|Pole|V tomto tématu najdete v části Kolekce, Slovníky a Pole.|
-|Komplexní typy (s použitým <xref:System.Runtime.Serialization.DataContractAttribute> nebo <xref:System.SerializableAttribute> aplikovaným)|Komplexní typ|Datové členy se stanou členy komplexního typu JavaScript.|
-|Komplexní typy implementace <xref:System.Runtime.Serialization.ISerializable> rozhraní)|Komplexní typ|Stejné jako u jiných <xref:System.Runtime.Serialization.ISerializable> typů komplex, ale některé typy nejsou podporovány – viz iSerializable Support část rozšířené informace části tohoto tématu.|
-|`Null`hodnota pro libovolný typ|Null|Nullable typy hodnot jsou také podporovány a mapování JSON stejným způsobem jako typy hodnot, které nesmožno null.|
+|Kolekce, slovníky a pole|Pole|Viz část kolekce, slovníky a pole tohoto tématu.|
+|Komplexní typy (s <xref:System.Runtime.Serialization.DataContractAttribute> použitím nebo <xref:System.SerializableAttribute> )|Komplexní typ|Datové členy se stanou členy komplexního typu JavaScriptu.|
+|Komplexní typy implementující <xref:System.Runtime.Serialization.ISerializable> rozhraní)|Komplexní typ|Stejné jako u jiných složitých typů, ale některé <xref:System.Runtime.Serialization.ISerializable> typy nejsou podporované – Podívejte se na část podpora ISerializable v části Rozšířené informace v tomto tématu.|
+|`Null`hodnota pro libovolný typ|Null|Podporují se i typy hodnot s možnou hodnotou null a mapují se na JSON stejným způsobem jako typy hodnot, které nejsou null.|
 
 ### <a name="enumerations-and-json"></a>Výčty a JSON
 
-Hodnoty členů výčtu jsou považovány za čísla v JSON, což se liší od způsobu, jakým jsou zpracovány ve smlouvách dat, kde jsou zahrnuty jako názvy členů. Další informace o zpracování smlouvy o datech naleznete v [tématu Typy výčtu v datových kontraktech](../../../../docs/framework/wcf/feature-details/enumeration-types-in-data-contracts.md).
+Hodnoty členů výčtu jsou považovány za čísla ve formátu JSON, což se liší od toho, jak se zpracovávají v kontraktech dat, kde jsou zahrnuty jako názvy členů. Další informace o zpracování kontraktu dat najdete v tématu [výčtové typy v kontraktech dat](../../../../docs/framework/wcf/feature-details/enumeration-types-in-data-contracts.md).
 
-- Například pokud máte `public enum Color {red, green, blue, yellow, pink}`, `yellow` serializace vytvoří číslo 3 a ne řetězec "žlutá".
+- Například pokud máte `public enum Color {red, green, blue, yellow, pink}` , serializace `yellow` vytvoří číslo 3, nikoli řetězec "Yellow".
 
-- Všechny `enum` členy jsou serializovatelné. Atributy <xref:System.Runtime.Serialization.EnumMemberAttribute> <xref:System.NonSerializedAttribute> a jsou ignorovány, pokud jsou použity.
+- Všichni `enum` Členové jsou serializovatelný. <xref:System.Runtime.Serialization.EnumMemberAttribute>A <xref:System.NonSerializedAttribute> atributy jsou ignorovány, pokud jsou použity.
 
-- Je možné rekonstruovat neexistující `enum` hodnotu - například hodnotu 87 lze rekonstruovat do předchozího výčtu Color, i když není definován žádný odpovídající název barvy.
+- Je možné deserializovat neexistující `enum` hodnotu, například hodnotu 87 lze deserializovat do předchozího výčtu barev i v případě, že není definován žádný odpovídající název barvy.
 
-- Příznaky `enum` nejsou zvláštní a je zacházeno stejně jako všechny ostatní `enum`.
+- Příznaky `enum` nejsou speciální a jsou ošetřeny stejným způsobem jako jiné `enum` .
 
-### <a name="datestimes-and-json"></a>Termíny/časy a JSON
+### <a name="datestimes-and-json"></a>Data a časy a JSON
 
-Formát JSON přímo nepodporuje data a časy. Nicméně, oni jsou velmi běžně používané a ASP.NET AJAX poskytuje speciální podporu pro tyto typy. Při použití ASP.NET proxy kódů AJAX <xref:System.DateTime> typ v rozhraní `DateTime` .NET plně odpovídá typu v jazyce JavaScript.
+Formát JSON přímo nepodporuje data a časy. Jsou však velmi často používány a ASP.NET AJAX poskytuje speciální podporu pro tyto typy. Při použití proxy ASP.NET AJAX je <xref:System.DateTime> typ v .NET plně odpovídající `DateTime` typu v JavaScriptu.
 
-- Pokud nepoužíváte ASP.NET, <xref:System.DateTime> je typ v JSON reprezentován jako řetězec se speciálním formátem, který je popsán v části Rozšířené informace tohoto tématu.
+- Pokud nepoužíváte ASP.NET, <xref:System.DateTime> je typ reprezentován ve formátu JSON jako řetězec se speciálním formátem, který je popsán v části Rozšířené informace v tomto tématu.
 
-- <xref:System.DateTimeOffset>je reprezentován v JSON jako komplexní typ: {"DateTime":dateTime,"OffsetMinutes":offsetMinutes}. Člen `offsetMinutes` je posun místního času od greenwichského středního času (GMT), který je nyní také označován jako koordinovaný světový čas (UTC), přidružený k umístění události zájmu. Člen `dateTime` představuje instanci v době, kdy došlo k `DateTime` události zájmu (opět se stane v Jazyce JavaScript, když ASP.NET AJAX je používán a řetězec, když není). Při serializaci `dateTime` je člen vždy serializován v GMT. Takže, pokud popisuje 3:00 AM `dateTime` New York čas, má časovou `offsetMinutes` složku 8:00 AM a jsou 300 (minus 300 minut nebo 5 hodin od GMT).
+- <xref:System.DateTimeOffset>je reprezentován ve formátu JSON jako komplexní typ: {"DateTime":d ateTime, "OffsetMinutes": offsetMinutes}. `offsetMinutes`Členem je místní časový posun od střední hodnoty času (GMT), který se teď označuje jako koordinovaný světový čas (UTC), který je přidružený k umístění události zájmu. `dateTime`Člen představuje instanci v čase, kdy došlo k události zájmu (znovu se spustí `DateTime` v JavaScriptu, když se ASP.NET AJAX používá a řetězec, pokud není). Při serializaci `dateTime` je člen vždy serializován v GMT. Takže pokud je to pro čas 3:00 až Praha, `dateTime` má časovou komponentu 8:00 a `offsetMinutes` je 300 (minus 300 minuty nebo 5 hodin od GMT).
 
   > [!NOTE]
-  > <xref:System.DateTime>a <xref:System.DateTimeOffset> objekty, při serializování do JSON, pouze zachovat informace o přesnostmi milisekund. Hodnoty podmisekund (mikro/nanosekundy) jsou během serializace ztraceny.
+  > <xref:System.DateTime>a <xref:System.DateTimeOffset> objekty, při serializaci do formátu JSON, zachovávají pouze informace na přesnost milisekund. Během serializace dojde ke ztrátě hodnot dílčích milisekund (mikro/nanosekunds).
 
 ### <a name="xml-types-and-json"></a>Typy XML a JSON
 
-Typy XML se stanou řetězci JSON.
+Typy XML se stávají řetězcem JSON.
 
-- Například pokud datový člen "q" typu \<XElement obsahuje abc/>, JSON\<je {"q":" abc/>"}.
+- Například pokud datový člen "q" typu XElement obsahuje \<abc/> , je JSON {"q": " \<abc/> "}.
 
-- Existují některá zvláštní pravidla, která určují, jak je kód XML zabalen – další informace naleznete v části Upřesnit informace dále v tomto tématu.
+- Existují určitá zvláštní pravidla, která určují, jak je XML zabaleno. Další informace najdete v části Rozšířené informace dále v tomto tématu.
 
-- Pokud používáte ASP.NET AJAX a nechcete používat řetězce v jazyce JavaScript, ale <xref:System.ServiceModel.Web.WebGetAttribute.ResponseFormat%2A> chcete místo <xref:System.ServiceModel.Web.WebGetAttribute> toho <xref:System.ServiceModel.Web.WebInvokeAttribute.ResponseFormat%2A> xml dom, <xref:System.ServiceModel.Web.WebInvokeAttribute>nastavte vlastnost xml na nebo vlastnost XML na .
+- Pokud používáte ASP.NET AJAX a nechcete používat řetězce v JavaScriptu, ale chcete místo toho použít XML DOM, nastavte <xref:System.ServiceModel.Web.WebGetAttribute.ResponseFormat%2A> vlastnost na XML <xref:System.ServiceModel.Web.WebGetAttribute> nebo na <xref:System.ServiceModel.Web.WebInvokeAttribute.ResponseFormat%2A> vlastnost na XML v <xref:System.ServiceModel.Web.WebInvokeAttribute> .
 
 ### <a name="collections-dictionaries-and-arrays"></a>Kolekce, slovníky a pole
 
-Všechny kolekce, slovníky a pole jsou reprezentovány v JSON jako pole.
+Všechny kolekce, slovníky a pole jsou ve formátu JSON vyjádřené jako pole.
 
-- Jakékoli vlastní nastavení, které používá <xref:System.Runtime.Serialization.CollectionDataContractAttribute> je ignorována v reprezentaci JSON.
+- Jakékoli vlastní nastavení, které používá, <xref:System.Runtime.Serialization.CollectionDataContractAttribute> se ignoruje v reprezentaci JSON.
 
-- Slovníky nejsou způsob, jak pracovat přímo s JSON. Slovník\<řetězec, objekt> nemusí být podporovány stejným způsobem wcf podle očekávání z práce s jinými technologiemi JSON. Například pokud "abc" je mapována na "xyz" a "def" je mapována na 42 ve slovníku, reprezentace JSON není {"abc":"xyz","def":42} ale je [{"Key":"abc","Value":"xyz"},{"Key":"def","Value":42}] místo.
+- Slovníky nejsou způsobem, jak pracovat přímo s JSON. Slovník \<string,object> nemusí být podporován stejným způsobem ve službě WCF podle očekávání od práce s jinými technologiemi JSON. Například pokud je "ABC" mapován na "xyz" a "def", ve slovníku se namapuje na 42, reprezentace JSON není {"ABC": "xyz", "def": 42}, ale jedná se o [{"klíč": "ABC", "value": "xyz"}, {"Key": "def", "value": 42}] namísto.
 
-- Pokud byste chtěli pracovat se společností JSON přímo (dynamicky přistupovat ke klíčům a hodnotám, aniž byste předem definovali pevnou smlouvu), máte několik možností:
+- Pokud chcete pracovat s JSON přímo (dynamicky přistupovat k klíčům a hodnotám, aniž byste museli předem definovat pevný kontrakt), máte několik možností:
 
-  - Zvažte použití [slabě typované ho json serializace (AJAX)](../../../../docs/framework/wcf/samples/weakly-typed-json-serialization-sample.md) ukázka.
+  - Zvažte použití ukázky [Neslabě typovaného serializace JSON (AJAX)](../../../../docs/framework/wcf/samples/weakly-typed-json-serialization-sample.md) .
 
-  - Zvažte <xref:System.Runtime.Serialization.ISerializable> použití konstruktorů rozhraní a deserializace – tyto dva mechanismy umožňují přístup k párům klíčů a hodnot JSON při serializaci a deserializaci, ale nefungují v případě částečnédůvěryhodnosti.
+  - Zvažte použití <xref:System.Runtime.Serialization.ISerializable> konstruktorů rozhraní a deserializace – tyto dva mechanismy vám umožní přístup k párů klíč/hodnota JSON na serializaci a deserializaci, ale nefungují v scénářích s částečnou důvěryhodností.
 
-  - Zvažte práci s [mapování mezi JSON a XML](../../../../docs/framework/wcf/feature-details/mapping-between-json-and-xml.md) namísto použití serializátoru.
+  - Zvažte práci s [mapováním mezi JSON a XML](../../../../docs/framework/wcf/feature-details/mapping-between-json-and-xml.md) namísto použití serializátoru.
 
-  - *Polymorfismus* v kontextu serializace odkazuje na schopnost serializovat odvozený typ, kde se očekává jeho základní typ. Existují speciální pravidla specifická pro JSON při použití kolekcí polymorfně, když <xref:System.Object>například přiřazení kolekce . Tento problém je podrobněji popsán v části Rozšířené informace dále v tomto tématu.
+  - *Polymorfismus* v kontextu serializace odkazuje na schopnost serializovat odvozený typ, kde je očekáván jeho základní typ. Existují zvláštní pravidla specifická pro JSON při použití kolekcí polymorfní, kdy například přiřadíte kolekci k <xref:System.Object> . Tento problém je podrobněji popsán v části Rozšířené informace dále v tomto tématu.
 
 ## <a name="additional-details"></a>Další podrobnosti
 
 ### <a name="order-of-data-members"></a>Pořadí datových členů
 
-Pořadí datových členů není důležité při použití JSON. Konkrétně i <xref:System.Runtime.Serialization.DataMemberAttribute.Order%2A> v případě, že je nastavena, JSON data lze stále rekonstruovat v libovolném pořadí.
+Pořadí datových členů není při použití JSON důležité. Konkrétně i v případě <xref:System.Runtime.Serialization.DataMemberAttribute.Order%2A> , že je nastavená, můžete data JSON dál deserializovat v libovolném pořadí.
 
 ### <a name="json-types"></a>Typy JSON
 
-Typ JSON nemusí odpovídat předchozí tabulce při rekonstrukci. Například `Int` obvykle mapuje na číslo JSON, ale může být také úspěšně rekonstruovat z řetězce JSON tak dlouho, dokud tento řetězec obsahuje platné číslo. To znamená, že oba {"q":42} a {"q":"42"} jsou platné, pokud existuje `Int` datový člen s názvem "q".
+Typ JSON nemusí odpovídat předchozí tabulce v deserializaci. Například `Int` obvykle se mapuje na číslo JSON, ale lze jej také úspěšně deserializovat z řetězce JSON, pokud tento řetězec obsahuje platné číslo. To znamená, že obě {"q": 42} a {"q": "42"} jsou platné, pokud existuje `Int` datový člen s názvem "q".
 
 ### <a name="polymorphism"></a>Polymorfismus
 
-Polymorfní serializace se skládá ze schopnosti serializovat odvozený typ, kde se očekává jeho základní typ. To je podporováno pro serializaci JSON wcf srovnatelné se způsobem, jakým je podporována serializace XML. Můžete například serializovat, `MyDerivedType` `MyBaseType` kde se očekává, `Int` nebo `Object` serializovat, kde se očekává.
+Polymorfní serializace je tvořena možností serializace odvozeného typu, kde je očekáván jeho základní typ. To je podporováno pro serializaci JSON pomocí WCF srovnatelné se způsobem, jakým je podporována serializace XML. Například můžete serializovat `MyDerivedType` `MyBaseType` , kde je očekáváno, kde je očekáváno, kde `Int` `Object` je očekáváno, kde je očekáváno.
 
-Informace o typu mohou být ztraceny při rekonstrukci odvozeného typu, pokud je očekáván základní typ, pokud nerekonstruujete komplexní typ. Například pokud <xref:System.Uri> je serializován, kde <xref:System.Object> se očekává, výsledkem je řetězec JSON. Pokud je tento řetězec pak <xref:System.Object>reserializován <xref:System.String> zpět do , je vrácena .NET. Deserializer neví, že řetězec byl původně typu <xref:System.Uri>. Obecně platí, <xref:System.Object>že při očekávání jsou všechny řetězce JSON deserializovány jako řetězce .NET a všechna pole JSON používaná k serializaci <xref:System.Array> kolekcí.NET, slovníků a polí jsou deserializována jako typ <xref:System.Object>.NET bez ohledu na to, jaký byl skutečný původní typ. Logická hodnota JSON se <xref:System.Boolean>mapuje na rozhraní .NET . Však při <xref:System.Object>očekávání , JSON čísla jsou <xref:System.Int32>reserializovány jako buď .NET , <xref:System.Decimal> nebo <xref:System.Double>, kde je automaticky vybral nejvhodnější typ.
+Při deserializaci odvozeného typu může dojít ke ztrátě informací o typu, pokud se očekává základní typ, pokud neprovádíte deserializaci komplexního typu. Například pokud <xref:System.Uri> je serializován <xref:System.Object> , kde je očekáváno, je výsledkem řetězec JSON. Pokud je tento řetězec následně deserializován zpět do <xref:System.Object> , <xref:System.String> je vrácena technologie .NET. Deserializátor neví, že řetězec byl původně typu <xref:System.Uri> . Obecně, pokud je očekáváno <xref:System.Object> , všechny řetězce JSON jsou deserializovány jako řetězce .NET a všechna pole JSON používaná k serializaci kolekcí .NET, slovníky a pole jsou deserializovány jako rozhraní .NET <xref:System.Array> typu <xref:System.Object> bez ohledu na to, co byl skutečný původní typ. Logická hodnota JSON se mapuje na rozhraní .NET <xref:System.Boolean> . Pokud však očekáváte <xref:System.Object> , jsou deserializována čísla JSON buď jako rozhraní .NET <xref:System.Int32> , <xref:System.Decimal> nebo <xref:System.Double> , kde je nejvhodnější typ automaticky vybrán.
 
-Při dekontování do <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer> typu rozhraní, deklarovat typ byl objekt.
+Při deserializaci do typu rozhraní jsou <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer> deserializace, jako by byl deklarovaný typ Object.
 
-Při práci s vlastní základnu a <xref:System.Runtime.Serialization.KnownTypeAttribute>odvozené typy, pomocí , <xref:System.ServiceModel.ServiceKnownTypeAttribute> nebo ekvivalentní mechanismus je obvykle vyžadováno. Například pokud máte operaci, která `Animal` má vrácenou hodnotu `Cat` a ve `Animal`skutečnosti vrátí instanci (odvozené z ), měli byste buď použít <xref:System.Runtime.Serialization.KnownTypeAttribute>, na `Animal` typ nebo <xref:System.ServiceModel.ServiceKnownTypeAttribute> na operaci a určit `Cat` typ v těchto atributech. Další informace naleznete v [tématu Data Contract Known Types](../../../../docs/framework/wcf/feature-details/data-contract-known-types.md).
+Při práci s vlastními základními a odvozenými typy použijte <xref:System.Runtime.Serialization.KnownTypeAttribute> <xref:System.ServiceModel.ServiceKnownTypeAttribute> nebo je obvykle vyžadován ekvivalentní mechanismus. Například pokud máte operaci, která má `Animal` návratovou hodnotu a ve skutečnosti vrátí instanci `Cat` (odvozenou od `Animal` ), měli byste buď použít <xref:System.Runtime.Serialization.KnownTypeAttribute> , na `Animal` typ nebo na <xref:System.ServiceModel.ServiceKnownTypeAttribute> operaci a zadat `Cat` typ v těchto atributech. Další informace najdete v tématu [známé typy kontraktu dat](../../../../docs/framework/wcf/feature-details/data-contract-known-types.md).
 
-Podrobnosti o tom, jak polymorfní serializace funguje a diskuse o některých omezení, které musí být respektovány při jeho použití, naleznete v části Rozšířené informace dále v tomto tématu.
+Podrobnosti o tom, jak polymorfní serializace funguje a diskuzi o některých omezeních, která musí být při použití dodržena, najdete v části Rozšířené informace dále v tomto tématu.
 
 ### <a name="versioning"></a>Správa verzí
 
-Funkce správy verzí kontraktu <xref:System.Runtime.Serialization.IExtensibleDataObject> dat, včetně rozhraní, jsou plně podporovány v JSON. Kromě toho je ve většině případů možné rekonstruovat typ v jednom formátu (například XML) a pak jej serializovat do jiného formátu <xref:System.Runtime.Serialization.IExtensibleDataObject>(například JSON) a stále zachovat data v . Další informace naleznete v [tématu Forward-Compatible Data Contracts](../../../../docs/framework/wcf/feature-details/forward-compatible-data-contracts.md). Nezapomeňte, že JSON je neuspořádaný, takže všechny informace o objednávce jsou ztraceny. Kromě toho JSON nepodporuje více párů klíč/hodnota se stejným názvem klíče. Nakonec jsou všechny <xref:System.Runtime.Serialization.IExtensibleDataObject> operace na ze své podstaty polymorfní <xref:System.Object>- to je jejich odvozený typ jsou přiřazeny , základní typ pro všechny typy.
+Funkce pro správu verzí kontraktů dat, včetně <xref:System.Runtime.Serialization.IExtensibleDataObject> rozhraní, jsou ve formátu JSON plně podporované. Ve většině případů je také možné deserializovat typ v jednom formátu (například XML) a potom jej serializovat do jiného formátu (například JSON) a zachovat data v <xref:System.Runtime.Serialization.IExtensibleDataObject> . Další informace najdete v tématu [kontrakty dat kompatibilní s dopředné](../../../../docs/framework/wcf/feature-details/forward-compatible-data-contracts.md). Mějte na paměti, že kód JSON je Neseřazený, takže dojde ke ztrátě informací o objednávkách. Kromě toho JSON nepodporuje více párů klíč/hodnota se stejným názvem klíče. Nakonec všechny operace na <xref:System.Runtime.Serialization.IExtensibleDataObject> jsou ve své podstatě polymorfní – to je jejich odvozený typ, který je přiřazený k <xref:System.Object> základnímu typu pro všechny typy.
 
 ## <a name="json-in-urls"></a>JSON v adresách URL
 
-Při použití ASP.NET koncové body AJAX se <xref:System.ServiceModel.Web.WebGetAttribute> slovesem HTTP GET (pomocí atributu) se příchozí parametry zobrazí v adrese URL požadavku namísto textu zprávy. JSON je podporován i v url požadavku, takže pokud `Int` máte operaci, `Person` která má s názvem "číslo" a komplexní typ s názvem "p", může se adresa URL podobat následující adrese URL.
+Při použití koncových bodů ASP.NET AJAX s příkazem HTTP GET (s <xref:System.ServiceModel.Web.WebGetAttribute> atributem) se příchozí parametry zobrazí v adrese URL namísto textu zprávy. JSON se podporuje i v adrese URL požadavku, takže pokud máte operaci, která přebírá `Int` "číslo" a `Person` komplexní typ s názvem "p", adresa URL může vypadat jako následující adresa URL.
 
 ```html
 http://example.com/myservice.svc/MyOperation?number=7&p={"name":"John","age":42}
 ```
 
-Pokud používáte ovládací prvek ASP.NET AJAX Script Manager a proxy pro volání služby, tato adresa URL je automaticky generována proxy serverem a není vidět. JSON nelze použít v adresách URL na non-ASP.NET koncové body AJAX.
+Pokud ke volání služby používáte ovládací prvek Správce skriptů ASP.NET AJAX a proxy server, tato adresa URL se automaticky vygeneruje proxy serverem a nezobrazuje se. JSON se nedá použít v adresách URL v koncových bodech non-ASP.NET AJAX.
 
-## <a name="advanced-information"></a>Pokročilé informace
+## <a name="advanced-information"></a>Rozšířené informace
 
-### <a name="iserializable-support"></a>ISerializable Podpora
+### <a name="iserializable-support"></a>Podpora ISerializable
 
-#### <a name="supported-and-unsupported-iserializable-types"></a>Podporované a nepodporované iSerializable typy
+#### <a name="supported-and-unsupported-iserializable-types"></a>Podporované a nepodporované typy ISerializable
 
-Obecně platí, že <xref:System.Runtime.Serialization.ISerializable> typy, které implementují rozhraní jsou plně podporovány při serializaci/deserializaci JSON. Některé z těchto typů (včetně některých typů rozhraní .NET Framework) jsou však implementovány takovým způsobem, že aspekty serializace specifické pro JSON způsobí, že nebudou správně rekonstruovány:
+Obecně platí, že typy, které implementují <xref:System.Runtime.Serialization.ISerializable> rozhraní, jsou plně podporované při serializaci nebo deserializaci JSON. Nicméně některé z těchto typů (včetně některých typů .NET Framework) jsou implementovány takovým způsobem, že aspekty serializace specifické pro JSON způsobují, že nejsou správně deserializovat:
 
-- S <xref:System.Runtime.Serialization.ISerializable>, typ jednotlivých datových členů není nikdy znám předem. To vede k polymorfní situaci podobné deserializaci typů do objektu. Jak již bylo zmíněno dříve, může to vést ke ztrátě informací o typu v JSON. Například typ, který serializuje `enum` v <xref:System.Runtime.Serialization.ISerializable> jeho implementaci a pokusí se rekonstruovat `enum` zpět přímo do (bez řádného přetypovávání) selže, protože `enum` je serializován pomocí čísel v JSON a JSON čísla rekonstruovat do vestavěných .NET číselné typy (Int32, decimal nebo Double). Takže skutečnost, že číslo bývalo hodnotou, `enum` je ztraceno.
+- V systému se <xref:System.Runtime.Serialization.ISerializable> typ jednotlivých datových členů nikdy neoznačuje jako předem. To vede k polymorfní situaci, která je podobná deserializaci typů do objektu. Jak bylo zmíněno dříve, může to vést ke ztrátě informací o typu ve formátu JSON. Například typ, který serializace `enum` v jeho <xref:System.Runtime.Serialization.ISerializable> implementaci a pokusí se o deserializaci přímo do `enum` (bez správných přetypování), se nezdařil, protože `enum` je serializovaná pomocí čísel JSON a JSON čísla deserializována do předdefinovaných číselných typů .NET (Int32, Decimal nebo Double). Fakt, že číslo použité k `enum` hodnotě je ztraceno.
 
-- Typ, <xref:System.Runtime.Serialization.ISerializable> který závisí na určitém pořadí deserializace v jeho konstruktoru deserializace může také selhat rekonstruovat některá data JSON, protože většina serializátory JSON nezaručují žádné konkrétní pořadí.
+- <xref:System.Runtime.Serialization.ISerializable>Typ, který závisí na určitém pořadí deserializace v jeho konstruktoru deserializace, může také dojít k chybě při deserializaci některých dat JSON, protože většina serializátorů JSON nezaručuje konkrétní pořadí.
 
-#### <a name="factory-types"></a>Tovární typy
+#### <a name="factory-types"></a>Typy továrny
 
-Zatímco <xref:System.Runtime.Serialization.IObjectReference> rozhraní je podporováno v JSON obecně, všechny typy, které vyžadují funkci "tovární <xref:System.Runtime.Serialization.IObjectReference.GetRealObject%28System.Runtime.Serialization.StreamingContext%29> typ" (vrácení instance jiného typu než typ, který implementuje rozhraní) nejsou podporovány.
+I když <xref:System.Runtime.Serialization.IObjectReference> je rozhraní ve formátu JSON podporováno obecně, všechny typy, které vyžadují funkci "typ objektu pro vytváření" (vracející instance jiného typu <xref:System.Runtime.Serialization.IObjectReference.GetRealObject%28System.Runtime.Serialization.StreamingContext%29> než typ, který implementuje rozhraní), nejsou podporovány.
 
-### <a name="datetime-wire-format"></a>Formát datatime drátu
+### <a name="datetime-wire-format"></a>Formát vedení data a času
 
-<xref:System.DateTime>hodnoty se zobrazí jako řetězce JSON ve formě "/Date(700000+0500)/", kde první číslo (700000 v příkladu je uvedeno) je počet milisekund v časovém pásmu GMT, pravidelný čas (neletní) od půlnoci, 1. Číslo může být záporné, aby představovalo dřívější časy. Část, která se skládá z "+0500" v příkladu je <xref:System.DateTimeKind.Local> volitelné a označuje, že čas je druhu - to znamená, by měl být převeden na místní časové pásmo na deserializaci. Pokud chybí, čas je reserializován <xref:System.DateTimeKind.Utc>jako . Skutečné číslo ("0500" v tomto příkladu) a jeho znaménko (+ nebo -) jsou ignorovány.
+<xref:System.DateTime>hodnoty se zobrazí jako řetězce JSON ve formátu "/Date (700000 + 0500)/", kde první číslo (700000 v zadaném příkladu) je počet milisekund v časovém pásmu GMT, běžný (neletní) čas od půlnoci 1. ledna 1970. Počet může být záporný, aby představoval předchozí časy. Část, která se skládá z "+ 0500" v příkladu je volitelná a označuje, že doba je <xref:System.DateTimeKind.Local> typu – to znamená, že by mělo být převedeno na místní časové pásmo Při deserializaci. Pokud chybí, čas je deserializován jako <xref:System.DateTimeKind.Utc> . Skutečný počet ("0500" v tomto příkladu) a jeho znaménko (+ nebo-) se ignorují.
 
-Při <xref:System.DateTime>serializace <xref:System.DateTimeKind.Local> <xref:System.DateTimeKind.Unspecified> , a časy jsou <xref:System.DateTimeKind.Utc> zapsány s posunem a je zapsán bez.
+Při serializaci <xref:System.DateTime> <xref:System.DateTimeKind.Local> a <xref:System.DateTimeKind.Unspecified> časy jsou zapisovány s posunem a jsou <xref:System.DateTimeKind.Utc> zapsány bez.
 
-ASP.NET kód javascriptu klienta AJAX automaticky převede tyto řetězce na instance JavaScriptu. `DateTime` Pokud existují jiné řetězce, které mají podobný formulář, které nejsou typu <xref:System.DateTime> v .NET, jsou převedeny také.
+Kód JavaScriptu klienta ASP.NET AJAX tyto řetězce automaticky převede na instance JavaScriptu `DateTime` . Pokud existují další řetězce, které mají podobný tvar, který není typu <xref:System.DateTime> v rozhraní .NET, jsou převedeny také.
 
-Převod probíhá pouze v případě, že jsou uvozeny znaky "/" (to znamená, že JSON vypadá jako "\\/Date(700000+0500)\\/"), a z tohoto důvodu kodér JSON WCF (povolený <xref:System.ServiceModel.WebHttpBinding>) vždy unikne znaku "/".
+Převod probíhá pouze v případě, že znaky "/" jsou uvozeny řídicím znakem (to znamená, že JSON vypadá jako " \\ /Date (700000 + 0500) \\ /") a z tohoto důvodu se vždy označí jako kodér JSON služby WCF (povolený <xref:System.ServiceModel.WebHttpBinding> ) znak "/".
 
 ### <a name="xml-in-json-strings"></a>XML v řetězcích JSON
 
-#### <a name="xmlelement"></a>Xmlelement
+#### <a name="xmlelement"></a>Třída
 
-<xref:System.Xml.XmlElement>je serializován tak, jak je, bez obalu. Například datový člen "x" <xref:System.Xml.XmlElement> typu, který obsahuje \<abc/> je reprezentován takto:
+<xref:System.Xml.XmlElement>je serializován tak, jak je, bez zabalení. Například datový člen "x" typu <xref:System.Xml.XmlElement> , který obsahuje, \<abc/> je reprezentován následujícím způsobem:
 
 ```json
 {"x":"<abc/>"}
 ```
 
-#### <a name="arrays-of-xmlnode"></a>Pole xmlnode
+#### <a name="arrays-of-xmlnode"></a>Pole XmlNode
 
-<xref:System.Array>objekty <xref:System.Xml.XmlNode> typu jsou zabaleny do prvku nazvaného ArrayOfXmlNode ve standardním oboru názvů datové smlouvy pro daný typ. Pokud "x" je pole, které obsahuje uzel atributu "N" v oboru názvů "ns", který obsahuje "hodnotu" a uzel prázdného prvku "M", reprezentace je následující.
+<xref:System.Array>objekty typu <xref:System.Xml.XmlNode> jsou zabaleny do elementu s názvem ArrayOfXmlNode v oboru názvů kontraktu Standard data pro daný typ. Pokud "x" je pole, které obsahuje uzel atributu "N" v oboru názvů "NS", který obsahuje "value" a prázdný uzel elementu "M", reprezentace je následující.
 
 ```json
 {"x":"<ArrayOfXmlNode xmlns=\"http://schemas.datacontract.org/2004/07/System.Xml\" a:N=\"value\" xmlns:a=\"ns\"><M/></ArrayOfXmlNode>"}
 ```
 
- Atributy v prázdném oboru názvů na začátku polí XmlNode (před ostatními prvky) nejsou podporovány.
+ Atributy v prázdném oboru názvů na začátku polí XmlNode (před jinými prvky) nejsou podporovány.
 
 #### <a name="ixmlserializable-types-including-xelement-and-dataset"></a>Typy IXmlSerializable včetně XElement a DataSet
 
-<xref:System.Runtime.Serialization.ISerializable>typy rozdělují na "typy obsahu", "Typy datových sad" a "typy prvků". Definice těchto typů naleznete v tématu [XML a ADO.NET Typy v datových kontraktech](../../../../docs/framework/wcf/feature-details/xml-and-ado-net-types-in-data-contracts.md).
+<xref:System.Runtime.Serialization.ISerializable>typy se rozdělují na typy obsahu, datové sady a typy prvků. Definice těchto typů naleznete [v tématu Typy XML a ADO.NET v kontraktech dat](../../../../docs/framework/wcf/feature-details/xml-and-ado-net-types-in-data-contracts.md).
 
-"Content" a "DataSet" typy jsou <xref:System.Array> serializovány podobné objekty <xref:System.Xml.XmlNode> popsané v předchozí části. Jsou zabaleny do prvku, jehož název a obor názvů odpovídá názvu datové smlouvy a oboru názvů daného typu.
+Typy "obsah" a "DataSet" jsou serializovány podobně jako <xref:System.Array> objekty <xref:System.Xml.XmlNode> popsané v předchozí části. Jsou zabaleny do elementu, jehož název a obor názvů odpovídají názvu kontraktu dat a oboru názvů příslušného typu.
 
-"Element" typy, <xref:System.Xml.Linq.XElement> jako jsou serializovány, jak je, podobně jako <xref:System.Xml.XmlElement> dříve popsány v tomto tématu.
+Typy "element", jako <xref:System.Xml.Linq.XElement> je například, jsou serializovány tak, jak je <xref:System.Xml.XmlElement> uvedeno dříve v tomto tématu.
 
 ### <a name="polymorphism"></a>Polymorfismus
 
 #### <a name="preserving-type-information"></a>Zachování informací o typu
 
-Jak již bylo uvedeno dříve, polymorfismus je podporován v JSON s určitými omezeními. JavaScript je slabě napsaný jazyk a identita typu obvykle není problém. Však při použití JSON komunikovat mezi systémem silného typu (.NET) a slabě napsaný systém (JavaScript), je však užitečné zachovat identitu typu. Například typy s názvy datových smluv "Čtverec" a "Kruh" jsou odvozeny od typu s názvem kontraktu dat "Shape". Pokud "Circle" je odeslána z .NET do JavaScriptu a je později vrácena do .NET metoda, která očekává "Shape", je užitečné pro stranu .NET vědět, že dotyčný objekt byl původně "Circle" - jinak všechny informace specifické pro odvozený typ (například , "radius" datový člen na "Kruh") může být ztracena.
+Jak bylo uvedeno dříve, polymorfismus je ve formátu JSON podporována s některými omezeními. Jazyk JavaScript je nebezpečným jazykem a identita typu obvykle není problémem. Pokud ale používáte JSON ke komunikaci mezi systémem silného typu (.NET) a systémem slabě typovaného systému (JavaScript), je vhodné zachovat identitu typu. Například typy s názvy kontraktů dat "čtvercový" a "Circle" jsou odvozeny z typu s názvem kontraktu dat "tvar". Pokud je "kruh" odesílán z rozhraní .NET do JavaScriptu a později se vrátí na metodu .NET, která očekává "tvar", je užitečné, aby strana technologie .NET věděla, že daný objekt byl původně "kruhem" – jinak mohou být ztraceny všechny informace specifické pro odvozený typ (například datový člen "RADIUS" na "Circle").
 
-Chcete-li zachovat identitu typu, při serializaci složitých typů do JSON lze přidat "nápovědu typu" a deserializátor rozpozná nápovědu a funguje odpovídajícím způsobem. "Nápověda typu" je pár klíčů/hodnot JSON s\_\_názvem klíče "type" (dvě podtržítka následovaná slovem "typ"). Hodnota je řetězec JSON ve formuláři "DataContractName:DataContractNamespace" (cokoli až do prvnídvojtečky je název). Pomocí předchozího příkladu "Circle" lze serializovat následujícím způsobem.
+Chcete-li zachovat identitu typu při serializaci komplexních typů do formátu JSON, lze přidat "pomocný parametr" typu a deserializátor rozpoznává pomocný parametr a funguje správně. "Pomocný parametr typu" je dvojice klíč/hodnota JSON s názvem klíče \_ \_ typu "Type" (dvě podtržítka následovaná slovem "Type"). Hodnota je řetězec formátu JSON ve formátu "DataContract: DataContractNamespace" (cokoli až do první dvojtečky je název). Pomocí předchozího příkladu lze následujícím způsobem serializovat "kruh".
 
 ```json
 {"__type":"Circle:http://example.com/myNamespace","x":50,"y":70,"radius":10}
 ```
 
-Nápověda typu je velmi `xsi:type` podobná atributu definovanému standardem instance schématu XML a použitá při serializaci/deserializaci XML.
+Pomocný parametr typu se velmi podobá `xsi:type` atributu definovanému standardem instance schématu XML a používá se při serializaci nebo deserializaci kódu XML.
 
-Datové členy\_\_nazývané "typ" jsou zakázány z důvodu možného konfliktu s nápovědou typu.
+Datové členy s názvem " \_ \_ typ" jsou zakázány z důvodu možného konfliktu s pomocným parametrem typu.
 
-#### <a name="reducing-the-size-of-type-hints"></a>Zmenšení velikosti návažek typu
+#### <a name="reducing-the-size-of-type-hints"></a>Zmenšení velikosti parametrů typu
 
-Chcete-li zmenšit velikost zpráv JSON, výchozí`http://schemas.datacontract.org/2004/07/`předpona oboru názvů datové smlouvy ( ) je nahrazena znakem "#". (Chcete-li toto nahrazení reverzibilní, je použito pravidlo úniku: pokud\\obor názvů začíná znaky "#" nebo " , jsou připojeny s extra znakem "\\). Pokud je tedy "Circle" typem v oboru názvů .NET "MyApp.Shapes", `http://schemas.datacontract.org/2004/07/MyApp`je jeho výchozí obor názvů datové smlouvy . Tvary a reprezentace JSON jsou následující.
+Pro snížení velikosti zpráv JSON je výchozí předpona oboru názvů kontraktu dat ( `http://schemas.datacontract.org/2004/07/` ) nahrazena znakem "#". (Aby toto nahrazení bylo vratné, použije se pravidlo pro uvozovací znaky: Pokud obor názvů začíná znaky "#" nebo " \\ ", připojí se znak navíc " \\ ". Proto pokud "Circle" je typ v oboru názvů .NET "MyApp. Shapes", jeho výchozí obor názvů kontraktu dat je `http://schemas.datacontract.org/2004/07/MyApp` . Tvary a reprezentace JSON jsou následující.
 
 ```json
 {"__type":"Circle:#MyApp.Shapes","x":50,"y":70,"radius":10}
 ```
 
-Jak zkrácené (#MyApp.Shapes) a úplnéhttp://schemas.datacontract.org/2004/07/MyApp.Shapes) (názvy jsou chápány na deserializaci.
+Zkrácení (#MyApp. Shapes) a úplný název ( <http://schemas.datacontract.org/2004/07/MyApp.Shapes> ) jsou srozumitelné Při deserializaci.
 
 #### <a name="type-hint-position-in-json-objects"></a>Pozice nápovědy typu v objektech JSON
 
-Všimněte si, že nápověda typu se musí zobrazit jako první v reprezentaci JSON. Toto je jediný případ, kdy pořadí párů klíč/hodnota je důležité při zpracování JSON. Například následující není platný způsob, jak určit nápovědu typu.
+Všimněte si, že pomocný parametr typu musí být uveden jako první v reprezentaci JSON. Toto je jediný případ, ve kterém je pořadí párů klíč/hodnota důležité při zpracování JSON. Například následující není platný způsob, jak zadat pomocný parametr typu.
 
 ```json
 {"x":50,"y":70,"radius":10,"__type":"Circle:#MyApp.Shapes"}
 ```
 
-Oba <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer> používané WCF a ASP.NET ajax klientské stránky vždy vyzařují typ nápovědy jako první.
+Jak se <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer> používá na stránkách klienta WCF i ASP.NET AJAX, vždy nejprve vygeneruje pomocný parametr typu.
 
-#### <a name="type-hints-apply-only-to-complex-types"></a>Rady pro typ platí pouze pro složité typy
+#### <a name="type-hints-apply-only-to-complex-types"></a>Parametry typu se použijí jenom pro komplexní typy.
 
-Neexistuje žádný způsob, jak vyzařovat nápovědu typu pro nesložité typy. Například pokud operace má <xref:System.Object> návratový typ, ale vrátí Circle, reprezentace JSON může být, jak je uvedeno dříve a informace o typu je zachována. Však pokud uri je vrácena, reprezentace JSON je řetězec a skutečnost, že řetězec slouží k reprezentaci Uri je ztracena. To platí nejen pro primitivní typy, ale také pro kolekce a pole.
+Neexistuje žádný způsob, jak vygenerovat pomocný parametr typu pro nekomplexní typy. Například pokud má operace <xref:System.Object> návratový typ, ale vrátí kruh, reprezentace JSON může být jak je uvedeno výše a informace o typu jsou zachovány. Pokud je však vrácen identifikátor URI, reprezentace JSON je řetězec a fakt, že řetězec použitý k reprezentaci identifikátoru URI je ztracen. To platí nejen pro primitivní typy, ale také pro kolekce a pole.
 
-#### <a name="when-are-type-hints-emitted"></a>Když jsou vyzařovány rady typu
+#### <a name="when-are-type-hints-emitted"></a>Kdy jsou vygenerovány pomocné parametry typu
 
-Typ rady mohou výrazně zvětšit velikost zprávy (jedním ze způsobů, jak to zmírnit, je použít kratší obory názvů smlouvy dat, pokud je to možné). Proto následující pravidla určují, zda jsou emitovány rady typu:
+Pomocné parametry typu můžou výrazně zvýšit velikost zprávy (jedním ze způsobů, jak to zmírnit, je použití kratších oborů názvů kontraktů dat, pokud je to možné). Proto následující pravidla určují, zda jsou vygenerovány pomocné parametry typu:
 
-- Při použití ASP.NET AJAX, typ rady jsou vždy vydávány, kdykoli je to možné, i v případě, že neexistuje žádná základní/odvozené přiřazení - například i v případě, že Circle je přiřazen circle. (To je nutné plně povolit proces volání ze slabě typovaného prostředí JSON do prostředí silného typu .NET bez překvapivé ztráty informací.)
+- Při použití ASP.NET AJAX jsou pomocné parametry typu vždy vydávány, kdykoli je to možné, i v případě, že není k dispozici žádné základní/odvozené přiřazení, a to i v případě, že je kruh přiřazený k kruhu. (To je nutné k úplnému povolení procesu volání ze slabě typovaného prostředí JSON do prostředí .NET se silným typem bez překvapivé ztráty informací.)
 
-- Při použití služby AJAX bez ASP.NET integrace, typ rady jsou vydávány pouze v případě, že je základní/odvozené přiřazení - to znamená, že je vydáván při Circle je přiřazen k Shape nebo <xref:System.Object> ale ne při přiřazení circle. To poskytuje minimální informace potřebné ke správné implementaci klienta Jazyka JavaScript, čímž se zlepší výkon, ale nechrání před ztrátou informací o typu v nesprávně navržených klientech. Pokud se chcete vyhnout řešení tohoto problému na straně klienta, vyhněte se základním/odvozeným přiřazením na serveru.
+- Při použití služeb AJAX bez integrace ASP.NET jsou pomocné parametry generovány pouze v případě, že je k dispozici základní nebo odvozené přiřazení – to je vygenerováno při přiřazení kruhu k obrazci, <xref:System.Object> ale ne, je-li přiřazen k kruhu. To poskytuje minimální informace potřebné k správné implementaci klienta jazyka JavaScript, což zvyšuje výkon, ale nechrání před ztrátou informací typu v nesprávně navržených klientech. Pokud se chcete vyhnout tomu, že se tento problém týká klienta, nepoužívejte na serveru zcela základní nebo odvozené přiřazení.
 
-- Při použití <xref:System.Runtime.Serialization.DataContractSerializer> typu `alwaysEmitTypeInformation` umožňuje parametr konstruktoru vybrat mezi předchozími dvěma režimy, přičemž výchozí je "`false`" (pouze vyzařují rady typu v případě potřeby).
+- Při použití <xref:System.Runtime.Serialization.DataContractSerializer> typu `alwaysEmitTypeInformation` umožňuje parametr konstruktoru zvolit mezi předchozími dvěma režimy, přičemž výchozí hodnota je " `false` " (v případě potřeby pouze vygeneruje nápovědu typu).
 
 #### <a name="duplicate-data-member-names"></a>Duplicitní názvy datových členů
 
-Informace o odvozeném typu je k dispozici ve stejném objektu JSON spolu s informacemi o základním typu a může dojít v libovolném pořadí. Například `Shape` mohou být reprezentovány následujícím způsobem.
+Odvozené informace o typu jsou přítomny ve stejném objektu JSON spolu se základními informacemi o typu a můžou být v libovolném pořadí. Například `Shape` může být reprezentován následujícím způsobem.
 
 ```json
 {"__type":"Shape:#MyApp.Shapes","x":50,"y":70}
 ```
 
-Vzhledem k tomu, Circle mohou být zastoupeny takto.
+Vzhledem k tomu, že kruh může být reprezentován následujícím způsobem.
 
 ```json
 {"__type":"Circle:#MyApp.Shapes","x":50, "radius":10,"y":70}
 ```
 
-Pokud základní `Shape` typ také obsahoval datový`radius`člen s názvem " ", vede to ke kolizi při serializaci (protože objekty JSON nemohou mít `Shape.radius` `Circle.radius`opakující se názvy klíčů) a deserializaci (protože není jasné, zda "poloměr" odkazuje na nebo ). Proto zatímco koncept "vlastnost skrývání" (datové členy se stejným názvem na základě a odvozené třídy) se obecně nedoporučuje ve třídách smlouvy dat, je ve skutečnosti zakázáno v případě JSON.
+Pokud základní `Shape` typ také obsahovalo datový člen s názvem " `radius` ", to vede k kolizi v serializaci (protože objekty JSON nemohou mít opakující se názvy klíčů) a deserializaci (protože je nejasné, zda je "poloměr" odkazuje na `Shape.radius` nebo `Circle.radius` ). Proto v případě JSON není obecně doporučován koncept "skrývání vlastností" (datové členy se stejným názvem na bázi a odvozených tříd), je ve skutečnosti v případě JSON zakázaná.
 
-#### <a name="polymorphism-and-ixmlserializable-types"></a>Polymorfismus a iXmlSerializable typy
+#### <a name="polymorphism-and-ixmlserializable-types"></a>Polymorfismus a typy IXmlSerializable
 
-<xref:System.Xml.Serialization.IXmlSerializable>typy mohou být polymorfně přiřazeny k sobě jako obvykle, pokud jsou splněny požadavky známé typy, v souladu s obvyklými pravidly smlouvy dat. Serializace <xref:System.Xml.Serialization.IXmlSerializable> typu namísto <xref:System.Object> výsledků ke ztrátě informací o typu jako výsledek je řetězec JSON.
+<xref:System.Xml.Serialization.IXmlSerializable>typy mohou být polymorfním způsobem přiřazeny jako obvykle, pokud jsou splněny požadavky na známé typy, podle obvyklých pravidel kontraktu dat. Nicméně serializace <xref:System.Xml.Serialization.IXmlSerializable> typu namísto <xref:System.Object> výsledků dojde ke ztrátě informací o typu, protože výsledkem je řetězec JSON.
 
 #### <a name="polymorphism-and-certain-interface-types"></a>Polymorfismus a určité typy rozhraní
 
-Je zakázáno serializovat typ kolekce nebo typ, <xref:System.Xml.Serialization.IXmlSerializable> který implementuje, kde <xref:System.Xml.Serialization.IXmlSerializable> se <xref:System.Object>očekává typ bez kolekce, který není (s výjimkou) . Například vlastní rozhraní `IMyInterface` s názvem `MyType` a <xref:System.Collections.Generic.IEnumerable%601> typ, `int` `IMyInterface`který implementuje typ a . Je zakázáno `MyType` vrátit se z operace, jejíž návratový typ je `IMyInterface`. Důvodem `MyType` je, že musí být serializován jako pole JSON a vyžaduje nápovědu typu a jak je uvedeno dříve, nelze zahrnout nápovědu typu s poli, pouze se složitými typy.
+Je zakázáno serializovat typ kolekce nebo typ, který implementuje, <xref:System.Xml.Serialization.IXmlSerializable> kde je očekáván typ bez kolekce <xref:System.Xml.Serialization.IXmlSerializable> (s výjimkou <xref:System.Object> ). Například vlastní rozhraní s názvem `IMyInterface` a typ `MyType` , který implementuje oba <xref:System.Collections.Generic.IEnumerable%601> typy `int` i `IMyInterface` . Je zakázáno vracet `MyType` z operace, jejíž návratový typ je `IMyInterface` . Důvodem je, že `MyType` musí být serializován jako pole JSON a vyžadovat pomocný parametr typu, jak je uvedeno před tím, než nelze zahrnout pomocný parametr typu s poli, pouze se složitými typy.
 
 #### <a name="known-types-and-configuration"></a>Známé typy a konfigurace
 
-Všechny známé typy mechanismy používané <xref:System.Runtime.Serialization.DataContractSerializer> jsou také podporovány <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer>stejným způsobem . Oba serializátory číst stejný konfigurační prvek, [ \<dataContractSerializer>](../../../../docs/framework/configure-apps/file-schema/wcf/datacontractserializer-of-system-runtime-serialization.md) v [ \<system.runtime.serialization>](../../../../docs/framework/configure-apps/file-schema/wcf/system-runtime-serialization.md), chcete-li zjistit známé typy přidané prostřednictvím konfiguračního souboru.
+Všechny známé mechanizmy typů, které používá, <xref:System.Runtime.Serialization.DataContractSerializer> jsou také podporovány stejným způsobem jako <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer> . Serializátory čtou stejný element konfigurace [\<dataContractSerializer>](../../../../docs/framework/configure-apps/file-schema/wcf/datacontractserializer-of-system-runtime-serialization.md) v [\<system.runtime.serialization>](../../../../docs/framework/configure-apps/file-schema/wcf/system-runtime-serialization.md) , aby zjistily známé typy přidané prostřednictvím konfiguračního souboru.
 
 #### <a name="collections-assigned-to-object"></a>Kolekce přiřazené k objektu
 
-Kolekce přiřazené Object jsou serializovány, jako <xref:System.Collections.Generic.IEnumerable%601>by se jedná o kolekce, které implementují : pole JSON s každou položkou, která má nápovědu typu, pokud se jedná o komplexní typ. Například <xref:System.Collections.Generic.List%601> typ `Shape` přiřazený <xref:System.Object> k vypadá takto.
+Kolekce přiřazené k objektu jsou serializovány, jako by se jedná o kolekce, které implementují <xref:System.Collections.Generic.IEnumerable%601> : pole JSON se všemi položkami, které mají pomocný parametr typu, pokud se jedná o komplexní typ. Například <xref:System.Collections.Generic.List%601> typ `Shape` přiřazeno může <xref:System.Object> vypadat jako následující.
 
 ```json
 [{"__type":"Shape:#MyApp.Shapes","x":50,"y":70},
@@ -273,25 +273,25 @@ Kolekce přiřazené Object jsou serializovány, jako <xref:System.Collections.G
 {"__type":"Shape:#MyApp.Shapes","x":41,"y":32}]
 ```
 
-Při deserialikace zpět do <xref:System.Object>:
+Při deserializaci zpět do <xref:System.Object> :
 
-- `Shape`musí být v seznamu Známé typy. S <xref:System.Collections.Generic.List%601> typu `Shape` ve známých typů nemá žádný vliv. Všimněte si, že `Shape` není třeba přidávat do známých typů na serializaci v tomto případě - to se provádí automaticky.
+- `Shape`musí být v seznamu známých typů. Existence <xref:System.Collections.Generic.List%601> typu `Shape` v známých typech nemá žádný vliv. Všimněte si, že `Shape` v tomto případě není nutné přidávat do serializace známé typy – to je provedeno automaticky.
 
-- Kolekce je deserializována <xref:System.Array> jako <xref:System.Object> typ, který obsahuje `Shape` instance.
+- Kolekce je deserializována jako <xref:System.Array> typ <xref:System.Object> , který obsahuje `Shape` instance.
 
-#### <a name="derived-collections-assigned-to-base-collections"></a>Odvozené kolekce přiřazené k základním kolekcím
+#### <a name="derived-collections-assigned-to-base-collections"></a>Odvozené kolekce přiřazené ke základním kolekcím
 
-Při odvozené kolekce je přiřazena k základní kolekci, kolekce je obvykle serializován, jako kdyby se jednalo o kolekci základního typu. Pokud však typ položky odvozené kolekce nelze přiřadit k typu položky základní kolekce, je vyvolána výjimka.
+Když je odvozená kolekce přiřazena ke základní kolekci, je kolekce obvykle serializována, jako by byla kolekcí základního typu. Nicméně, pokud typ položky odvozené kolekce nemůže být přiřazen k typu položky základní kolekce, je vyvolána výjimka.
 
-#### <a name="type-hints-and-dictionaries"></a>Nápovědy k typu a slovníky
+#### <a name="type-hints-and-dictionaries"></a>Zadání tipů a slovníků
 
-Pokud je slovník přiřazen <xref:System.Object>k aplikaci , každá položka klíče a hodnoty ve <xref:System.Object> slovníku je považována za přiřazenou a získá nápovědu k typu.
+Když je slovník přiřazen k <xref:System.Object> , každá položka klíče a hodnoty ve slovníku je považována za, jako by byla přiřazena k <xref:System.Object> a získá pomocný parametr typu.
 
-Při serializaci typů slovníku, JSON objekt, který obsahuje "Klíč" a `alwaysEmitTypeInformation` "Hodnota" členy není ovlivněna nastavení a obsahuje pouze nápovědu typu, pokud předchozí pravidla kolekce vyžadují.
+Při serializaci typů slovníku není objekt JSON, který obsahuje členy "klíč" a "value", nijak ovlivněn `alwaysEmitTypeInformation` nastavením a obsahuje pouze pomocný parametr typu, pokud je vyžaduje předchozí pravidla shromažďování.
 
 ### <a name="valid-json-key-names"></a>Platné názvy klíčů JSON
 
-Serializátor XML kóduje názvy klíčů, které nejsou platnými názvy XML. Například datový člen s názvem "123" by měl kódovaný název,\_například\_\_" x0031 x0032\_\_x0033\_", protože "123" je neplatný název prvku XML (začíná číslicí). Podobná situace může nastat s některými mezinárodními znakovými sadami, které nejsou platné v názvech XML. Vysvětlení tohoto vlivu xml na zpracování JSON naleznete v [tématu Mapování mezi json a XML](../../../../docs/framework/wcf/feature-details/mapping-between-json-and-xml.md).
+Serializátor XML – zakóduje názvy klíčů, které nejsou platnými názvy XML. Například datový člen s názvem "123" by měl kódovaný název, například " \_ x0031 \_ \_ x0032 \_ \_ x0033 \_ ", protože "123" je neplatný název elementu XML (začíná číslicí). Podobná situace může nastat v případě, že některé mezinárodní znakové sady nejsou platné v názvech XML. Vysvětlení tohoto účinku XML při zpracování JSON najdete v tématu [mapování mezi JSON a XML](../../../../docs/framework/wcf/feature-details/mapping-between-json-and-xml.md).
 
 ## <a name="see-also"></a>Viz také
 

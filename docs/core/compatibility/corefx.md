@@ -2,12 +2,12 @@
 title: Přerušující změny knihovny základních tříd
 description: Obsahuje seznam nejnovějších změn v základních knihovnách .NET.
 ms.date: 09/20/2019
-ms.openlocfilehash: ca50123b842c256607d47010dbef9b216ece4661
-ms.sourcegitcommit: 9a4488a3625866335e83a20da5e9c5286b1f034c
+ms.openlocfilehash: 45de0f0d418437cf1677c9a8c7cfc9b6c33a24ef
+ms.sourcegitcommit: ee5b798427f81237a3c23d1fd81fff7fdc21e8d3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83420423"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84144474"
 ---
 # <a name="core-net-libraries-breaking-changes"></a>Základní knihovny .NET – přerušující změny
 
@@ -18,6 +18,7 @@ Na této stránce jsou popsány následující přerušující se změny:
 | Zásadní změna | Představená verze |
 | - | :-: |
 | [Metody SSE a SSE2 CompareGreaterThan správně zpracovávají vstupy NaN.](#sse-and-sse2-comparegreaterthan-methods-properly-handle-nan-inputs) | 5.0 |
+| [Sada CounterSet. provedení operace CreateCounterSetInstance nyní vyvolá chybu InvalidOperationException, pokud již instance existuje.](#countersetcreatecountersetinstance-now-throws-invalidoperationexception-if-instance-already-exists) | 5.0 |
 | [Rozhraní API, která verze sestav nyní hlásí produkt a nikoli verzi souboru](#apis-that-report-version-now-report-product-and-not-file-version) | 3.0 |
 | [Vlastní instance EncoderFallbackBuffer se nemůžou vrátit rekurzivně.](#custom-encoderfallbackbuffer-instances-cannot-fall-back-recursively) | 3.0 |
 | [Změny chování při formátování a analýze plovoucí desetinné čárky](#floating-point-formatting-and-parsing-behavior-changed) | 3.0 |
@@ -43,6 +44,10 @@ Na této stránce jsou popsány následující přerušující se změny:
 ## <a name="net-50"></a>.NET 5,0
 
 [!INCLUDE [sse-comparegreaterthan-intrinsics](../../../includes/core-changes/corefx/5.0/sse-comparegreaterthan-intrinsics.md)]
+
+***
+
+[!INCLUDE [createcountersetinstance-throws-invalidoperation](../../../includes/core-changes/corefx/5.0/createcountersetinstance-throws-invalidoperation.md)]
 
 ***
 

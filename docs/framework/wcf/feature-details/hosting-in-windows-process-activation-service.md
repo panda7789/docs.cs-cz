@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - hosting services [WCF], WAS
 ms.assetid: d2b9d226-15b7-41fc-8c9a-cb651ac20ecd
-ms.openlocfilehash: aa782c46d6530bb30055c536dd10d78f9ab9f79f
-ms.sourcegitcommit: c01c18755bb7b0f82c7232314ccf7955ea7834db
+ms.openlocfilehash: 1882feee4e8071f1d32fb59ab02519c6e6fe2684
+ms.sourcegitcommit: ee5b798427f81237a3c23d1fd81fff7fdc21e8d3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75963767"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84143560"
 ---
 # <a name="hosting-in-windows-process-activation-service"></a>Hostování v Aktivační službě procesů systému Windows
 Aktivační služba procesů systému Windows (WAS) spravuje aktivaci a životnost pracovních procesů, které obsahují aplikace, které hostují služby Windows Communication Foundation (WCF). Model procesu WAS generalizuje model procesu IIS 6,0 pro server HTTP tím, že odebere závislost na HTTP. To umožňuje službám WCF používat protokoly HTTP i non-HTTP, jako je NET. TCP, v hostitelském prostředí, které podporuje aktivaci prostřednictvím zpráv, a nabízí možnost hostovat v daném počítači velký počet aplikací.  
@@ -34,11 +34,11 @@ Aktivační služba procesů systému Windows (WAS) spravuje aktivaci a životno
   
  Následující tabulka ilustruje několik možných scénářů adresování pro weby s vazbami lokalit HTTP i bez HTTP.  
   
-|Scénář|Vazby webu|Cesta k aplikaci|Identifikátory URI základních aplikací|  
+|Scenario|Vazby webu|Cesta k aplikaci|Identifikátory URI základních aplikací|  
 |--------------|-------------------|----------------------|---------------------------|  
-|Jenom HTTP|http: 80:\*|/appTwo|http://localhost/appTwo/|  
-|HTTP i non-HTTP|http: 80:\*<br /><br /> NET. TCP: 808:\*|/appTwo|http://localhost/appTwo/<br />net.tcp://localhost/appTwo/|  
-|Pouze bez protokolu HTTP|NET. pipe: *|/appThree|NET. pipe://appThree/|  
+|Jenom HTTP|http: 80:\*|/appTwo|`http://localhost/appTwo/`|  
+|HTTP i non-HTTP|http: 80:\*<br /><br /> NET. TCP: 808:\*|/appTwo|`http://localhost/appTwo/`<br />`net.tcp://localhost/appTwo/`|  
+|Pouze bez protokolu HTTP|NET. pipe: *|/appThree|`net.pipe://appThree/`|  
   
  Je také možné řešit služby a prostředky v rámci aplikace. V rámci aplikace jsou prostředky aplikace adresovány relativně k základní cestě aplikace. Předpokládejme například, že lokalita na počítači s názvem contoso.com má vazby lokality pro protokoly HTTP a NET. TCP. Předpokládejme také, že lokalita obsahuje jednu aplikaci umístěnou na adrese/Billing, která zpřístupňuje službu v GetOrders. svc. Pokud potom služba GetOrders. svc vystavila koncový bod s relativní adresou SecureEndpoint, koncový bod služby by měl být vystaven následujícímu dvěma identifikátorům URI:  
   
@@ -48,7 +48,7 @@ Aktivační služba procesů systému Windows (WAS) spravuje aktivaci a životno
 ## <a name="the-was-runtime"></a>BYL za běhu  
  Aplikace jsou uspořádány do webů pro účely adresování a správy. V době běhu jsou aplikace seskupeny také dohromady do fondů aplikací. Fond aplikací může obsahovat mnoho různých aplikací z mnoha různých lokalit. Všechny aplikace v rámci fondu aplikací sdílejí společnou sadu charakteristik běhu. Všechny mají například všechny spuštěné pod stejnou verzí modulu CLR (Common Language Runtime) a všechny sdílejí společnou identitu procesu. Každý fond aplikací odpovídá instanci pracovního procesu (W3wp. exe). Každá spravovaná aplikace spuštěná ve sdíleném fondu aplikací je izolovaná od ostatních aplikací prostřednictvím třídy AppDomain CLR.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Architektura aktivace WAS](../../../../docs/framework/wcf/feature-details/was-activation-architecture.md)
 - [Konfigurace WAS pro použití s WCF](../../../../docs/framework/wcf/feature-details/configuring-the-wpa--service-for-use-with-wcf.md)

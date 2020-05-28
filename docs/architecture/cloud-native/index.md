@@ -3,12 +3,12 @@ title: Architekt cloudových nativních aplikací .NET pro Azure
 description: Příručka pro sestavování nativních aplikací cloudu využívajících kontejnery, mikroslužby a funkce bez serveru v Azure.
 author: ardalis
 ms.date: 05/13/2020
-ms.openlocfilehash: 196671468e56147f714078d1671f44af21bcf327
-ms.sourcegitcommit: e5772b3ddcc114c80b4c9767ffdb3f6c7fad8f05
+ms.openlocfilehash: b315f097b1584bd93f694c10f36ee7524d7e020a
+ms.sourcegitcommit: ee5b798427f81237a3c23d1fd81fff7fdc21e8d3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/26/2020
-ms.locfileid: "83840881"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84144380"
 ---
 # <a name="architecting-cloud-native-net-applications-for-azure"></a>Architekt cloudových nativních aplikací .NET pro Azure
 
@@ -34,7 +34,7 @@ Tato kniha je k dispozici "tak jak jsou" a vyjadřuje zobrazení a stanoviska au
 
 Některé zde uvedené příklady slouží pouze k znázornění a jsou smyšlené. Neměli byste z nich vyvozovat žádné skutečné vztahy či spojení.
 
-Microsoft a ochranné známky uvedené na [https://www.microsoft.com](https://www.microsoft.com) webové stránce ochranné známky jsou ochranné známky skupiny společností Microsoft.
+Microsoft a ochranné známky uvedené na <https://www.microsoft.com> webové stránce ochranné známky jsou ochranné známky skupiny společností Microsoft.
 
 Mac a macOS jsou ochranné známky společnosti Apple Inc.
 
@@ -44,7 +44,7 @@ Všechny ostatní značky a loga jsou majetkem příslušných vlastníků.
 
 Autoři
 
-> **Rob Vettor**, hlavní architekt cloudového systému/architekt IP – [thinkingincloudnative.com](http://thinkingincloudnative.com/about/), Microsoft
+> **Rob Vettor**, hlavní architekt cloudového systému/architekt IP – [thinkingincloudnative.com](https://thinkingincloudnative.com/about/), Microsoft
 >
 > **Steve "ardalis" Smith**, software architekt a Trainer- [Ardalis.com](https://ardalis.com)
 

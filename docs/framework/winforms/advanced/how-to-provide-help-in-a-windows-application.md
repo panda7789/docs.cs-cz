@@ -8,52 +8,52 @@ helpviewer_keywords:
 - HelpProvider component [Windows Forms]
 - forms [Windows Forms], providing Help
 ms.assetid: 7c4e5cec-2bd2-4f0b-8d75-c2b88929bd61
-ms.openlocfilehash: 2f9c0a9791db28cebd055ca446fdff16b9e276a4
-ms.sourcegitcommit: ffd7dd79468a81bbb0d6449f6d65513e050c04c4
+ms.openlocfilehash: 405de333ce936a864047e827e60f56a930059e26
+ms.sourcegitcommit: ee5b798427f81237a3c23d1fd81fff7fdc21e8d3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65959606"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84143602"
 ---
 # <a name="how-to-provide-help-in-a-windows-application"></a>Postupy: Poskytnutí nápovědy v aplikaci Windows
 
-Můžete provést pomocí nástroje <xref:System.Windows.Forms.HelpProvider> součásti pro připojení témata nápovědy v souboru nápovědy k určité ovládací prvky v modelu Windows Forms. Soubor nápovědy může být ve formátu HTML nebo HTMLHelp 1.x nebo větší formátu.
+Pomocí komponenty můžete v <xref:System.Windows.Forms.HelpProvider> souboru nápovědy připojit témata nápovědy ke konkrétním ovládacím prvkům na model Windows Forms. Soubor Help může být HTML nebo HTMLHelp 1. x nebo vyšší.
 
-## <a name="provide-help"></a>Poskytnutí nápovědy
+## <a name="provide-help"></a>Poskytnout pomocníka
 
-1. V sadě Visual Studio z **nástrojů**, přetáhněte <xref:System.Windows.Forms.HelpProvider> komponentu do formuláře.
+1. V sadě Visual Studio, z **panelu nástrojů**přetáhněte <xref:System.Windows.Forms.HelpProvider> komponentu do formuláře.
 
-     Komponenta se bude nacházet na hlavním panelu v dolní části Návrháře formulářů Windows.
+     Komponenta se bude nacházet v zásobníku v dolní části Návrhář formulářů.
 
-2. V **vlastnosti** okno, nastaveno <xref:System.Windows.Forms.HelpProvider.HelpNamespace%2A> vlastnost v souboru nápovědy chm, .col nebo htm.
+2. V okně **vlastnosti** nastavte <xref:System.Windows.Forms.HelpProvider.HelpNamespace%2A> vlastnost na soubor Help. chm,. slo nebo. htm.
 
-3. Vyberte jiný ovládací prvek na formuláři máte a v **vlastnosti** okno, nastaveno <xref:System.Windows.Forms.HelpProvider.SetHelpKeyword%2A> vlastnost.
+3. Vyberte jiný ovládací prvek, který máte ve formuláři, a v okně **vlastnosti** nastavte <xref:System.Windows.Forms.HelpProvider.SetHelpKeyword%2A> vlastnost.
 
-     Jedná se o řetězec, který předává <xref:System.Windows.Forms.HelpProvider> komponentu do souboru nápovědy k výzvě příslušné téma nápovědy.
+     Toto je řetězec předaný <xref:System.Windows.Forms.HelpProvider> komponentě souboru nápovědy k předvolání příslušného tématu nápovědy.
 
-4. V **vlastnosti** okno, nastaveno <xref:System.Windows.Forms.HelpProvider.SetHelpNavigator%2A> vlastnost na hodnotu <xref:System.Windows.Forms.HelpNavigator> výčtu.
+4. V okně **vlastnosti** nastavte <xref:System.Windows.Forms.HelpProvider.SetHelpNavigator%2A> vlastnost na hodnotu <xref:System.Windows.Forms.HelpNavigator> výčtu.
 
-     Určuje, jakým způsobem **HelpKeyword** vlastnost předána do systému nápovědy. V následující tabulce jsou uvedeny možné nastavení a jejich popisy.
+     To určuje způsob, jakým je vlastnost **HelpKeyword** předána systému help. V následující tabulce jsou uvedena možná nastavení a jejich popisy.
 
     |Název členu|Popis|
     |-----------------|-----------------|
-    |AssociateIndex|Určuje, že index určené téma se provádí v zadané adrese URL.|
-    |Vyhledávání|Určuje, že se zobrazí stránka hledat zadaná adresa URL.|
+    |AssociateIndex|Určuje, že se index zadaného tématu provede v zadané adrese URL.|
+    |Vyhledávání|Určuje, že se zobrazí stránka vyhledávání v zadané adrese URL.|
     |Index|Určuje, že se zobrazí index zadané adresy URL.|
-    |KeywordIndex|Určuje klíčové slovo k vyhledání a akce má být provedena v zadané adrese URL.|
-    |TableOfContents|Určuje, že se zobrazí obsah souboru nápovědy HTML 1.0.|
-    |Téma|Určuje, že se zobrazí téma odkazuje na zadanou adresu URL.|
+    |KeywordIndex|Určuje klíčové slovo, které chcete vyhledat, a akci, která se má provést v zadané adrese URL.|
+    |TableOfContents|Určuje, že se zobrazí tabulka obsahu souboru nápovědy HTML 1,0.|
+    |Téma|Určuje, že se zobrazí téma odkazované zadanou adresou URL.|
 
- V době běhu, stisknutím klávesy F1 při ovládacího prvku – pro které jste nastavili **HelpKeyword** a **HelpNavigator** vlastnosti – má fokus, otevře se soubor nápovědy spojený s ním <xref:System.Windows.Forms.HelpProvider> komponenty.
+ V době běhu stiskněte klávesu F1, když ovládací prvek, pro který jste nastavili vlastnosti **HelpKeyword** a **HelpNavigator** – má fokus, otevře se soubor s nápovědu, který se k této <xref:System.Windows.Forms.HelpProvider> komponentě přidruží.
 
- V současné době **HelpNamespace** vlastnost podporuje soubory nápovědy ve třech následujících formátech: HTMLHelp 1.x HTMLHelp 2.0 a ve formátu HTML. Proto můžete nastavit **HelpNamespace** nastavte na adresu http://, jako je například na webové stránce. Pokud to uděláte, otevře se výchozí prohlížeč na webovou stránku s řetězec zadaný v poli **HelpKeyword** vlastnost použit jako ukotvení. Ukotvení se používá pro přechod na určitou část stránku HTML.
+ V současné době vlastnost **HelpNamespace** podporuje soubory Help v následujících třech formátech: HTMLHelp 1. x, HTMLHelp 2,0 a HTML. Proto můžete vlastnost **HelpNamespace** nastavit na `http://` adresu, jako je například webová stránka. Pokud k tomu dojde, otevře se výchozí prohlížeč na webové stránce s řetězcem zadaným ve vlastnosti **HelpKeyword** použité jako kotvy. Kotva se používá k přechodu na určitou část stránky HTML.
 
 > [!IMPORTANT]
-> Pečlivě zkontrolujte všechny informace odesílané z klienta před jeho použitím v aplikaci. Uživatelé se zlými úmysly se může pokusit o odeslání nebo vložit spustitelný soubor skriptu, příkazy SQL nebo jiný kód. Před zobrazení vstupu uživatele, ukládat v databázi nebo s ním pracovat, zkontrolujte neobsahuje informace o potenciálně nebezpečné. Typické způsob, jak zkontrolovat je použit regulární výraz k vyhledání klíčová slova, jako je "Skript" při přijímání vstupu od uživatele.
+> Nezapomeňte si ověřit, jestli jsou informace odesílané z klienta před jeho použitím ve vaší aplikaci opatrní. Uživatelé se zlými úmysly se můžou pokusit odeslat nebo vložit spustitelný skript, příkazy SQL nebo jiný kód. Než zobrazíte vstup uživatele, uložte ho do databáze nebo s ním můžete pracovat, ověřte, že neobsahuje potenciálně nebezpečné informace. Obvyklým způsobem, jak zkontrolovat, je použít regulární výraz pro hledání klíčových slov, jako je například "SCRIPT", když obdržíte vstup od uživatele.
 
-Můžete také použít <xref:System.Windows.Forms.HelpProvider> součásti k zobrazení místní nápovědy, i v případě, že jste si ji nakonfigurovali zobrazíte soubory nápovědy pro ovládací prvky ve formulářích Windows. Další informace najdete v tématu [jak: Zobrazení místní nápovědy](how-to-display-pop-up-help.md).
+Můžete také použít <xref:System.Windows.Forms.HelpProvider> komponentu k zobrazení místní nápovědy, i když je máte nakonfigurovanou tak, aby zobrazovala soubory nápovědy pro ovládací prvky na model Windows Forms. Další informace najdete v tématu [Postup: zobrazení místní nápovědy](how-to-display-pop-up-help.md).
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Postupy: Zobrazení místní nápovědy](how-to-display-pop-up-help.md)
 - [Nápověda ovládacího prvku pomocí ToolTips](control-help-using-tooltips.md)

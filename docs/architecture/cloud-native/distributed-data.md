@@ -3,12 +3,12 @@ title: Distribuovaná data
 description: Kontrastování datových úložišť v monolitické a cloudových nativních aplikacích.
 author: robvet
 ms.date: 05/13/2020
-ms.openlocfilehash: 2eff37dcc57ae39daac0ba10d10322be5eb4e321
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: 28513f8691c06cf58ed14d57bf7830bb35d94852
+ms.sourcegitcommit: ee5b798427f81237a3c23d1fd81fff7fdc21e8d3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83614133"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84144393"
 ---
 # <a name="distributed-data"></a>Distribuovaná data
 
@@ -120,7 +120,7 @@ Obrázek 5-7 ukazuje implementaci CQRS vzoru.
 
 **Obrázek 5-7**. Implementace CQRS
 
-Na předchozím obrázku jsou implementované samostatné modely příkazů a dotazů. Každá operace zápisu dat je uložena do úložiště pro zápis a následně šířena do úložiště pro čtení. Věnujte velkou pozornost tomu, jak proces šíření dat funguje na principu konečné [konzistence](http://www.cloudcomputingpatterns.org/eventual_consistency/). Model čtení se nakonec synchronizuje s modelem zápisu, ale v procesu může dojít k prodlevě. V další části se podíváme na konečnou konzistenci.
+Na předchozím obrázku jsou implementované samostatné modely příkazů a dotazů. Každá operace zápisu dat je uložena do úložiště pro zápis a následně šířena do úložiště pro čtení. Věnujte velkou pozornost tomu, jak proces šíření dat funguje na principu konečné [konzistence](https://www.cloudcomputingpatterns.org/eventual_consistency/). Model čtení se nakonec synchronizuje s modelem zápisu, ale v procesu může dojít k prodlevě. V další části se podíváme na konečnou konzistenci.
 
 Toto oddělení umožňuje čtení a zápisy nezávisle na velikosti. Operace čtení používají schéma optimalizované pro dotazy, zatímco zápisy používají schéma optimalizované pro aktualizace. Čtení dotazů přechází na Denormalizovaná data, zatímco složitá obchodní logika může být použita na model zápisu. Také můžete způsobit zvýšení zabezpečení při operacích zápisu než čtení, které zveřejňuje.
 

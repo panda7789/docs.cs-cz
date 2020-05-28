@@ -2,16 +2,16 @@
 title: Sledování událostí ve službě Event Tracking ve Windows
 ms.date: 03/30/2017
 ms.assetid: f812659b-0943-45ff-9430-4defa733182b
-ms.openlocfilehash: 2c397bcfa809a1306e9c31bf3f652b055d997f38
-ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
+ms.openlocfilehash: fa5d86e327bc9c6eca85ed2908775de5f647f410
+ms.sourcegitcommit: ee5b798427f81237a3c23d1fd81fff7fdc21e8d3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/09/2020
-ms.locfileid: "77094576"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84144887"
 ---
 # <a name="tracking-events-into-event-tracing-in-windows"></a>Sledování událostí ve službě Event Tracking ve Windows
 
-Tato ukázka předvádí, jak povolit sledování programovací model Windows Workflow Foundation (WF) ve službě pracovního postupu a jak vygenerovat události sledování v trasování událostí pro Windows (ETW). K vygenerování záznamů sledování pracovního postupu v ETW používá ukázka účastník sledování ETW (<xref:System.Activities.Tracking.EtwTrackingParticipant>).
+Tato ukázka předvádí, jak povolit sledování programovací model Windows Workflow Foundation (WF) ve službě pracovního postupu a jak vygenerovat události sledování v trasování událostí pro Windows (ETW). K vygenerování záznamů sledování pracovního postupu v ETW používá ukázka účastník sledování ETW ( <xref:System.Activities.Tracking.EtwTrackingParticipant> ).
 
 Pracovní postup v ukázce obdrží požadavek, přiřadí převrácenou vstupní data do vstupní proměnné a vrátí vrácenou zpět klientovi. Pokud jsou vstupní data 0, dojde k dělení nulou s výjimkou, která je Neošetřená, což způsobí přerušení pracovního postupu. Je-li povoleno sledování, je záznam sledování chyb generován do trasování událostí pro Windows, což může pomoct později vyřešit chybu. Účastník sledování ETW je nakonfigurovaný s profilem sledování, aby se mohl přihlásit k odběru sledování záznamů. Profil sledování je definován v souboru Web. config a poskytuje se jako parametr konfigurace účastníkovi sledování ETW. Účastník sledování ETW je nakonfigurovaný v souboru Web. config služby pracovního postupu a používá se pro službu jako chování služby. V této ukázce zobrazíte události sledování v protokolu událostí pomocí Prohlížeč událostí.
 
@@ -19,10 +19,10 @@ Pracovní postup v ukázce obdrží požadavek, přiřadí převrácenou vstupn�
 
 Programovací model Windows Workflow Foundation poskytuje sledovací infrastrukturu pro sledování provádění instance pracovního postupu. Modul runtime sledování vytvoří instanci pracovního postupu pro vygenerování událostí souvisejících s životním cyklem pracovního postupu, událostí z aktivit pracovního postupu a vlastními událostmi. Následující tabulka podrobně popisuje primární součásti infrastruktury sledování.
 
-|Komponenta|Popis|
+|Součást|Popis|
 |---------------|-----------------|
 |Sledování – modul runtime|Poskytuje infrastrukturu pro vygenerování záznamů sledování.|
-|Sledování účastníků|Přistupuje k záznamům sledování. [!INCLUDE[netfx_current_short](../../../../includes/netfx-current-short-md.md)] lodí se sledováním účastníka, který zapisuje záznamy sledování jako události trasování událostí pro Windows (ETW).|
+|Sledování účastníků|Přistupuje k záznamům sledování. [!INCLUDE[netfx_current_short](../../../../includes/netfx-current-short-md.md)]dodává se sledováním účastníka, který zapisuje záznamy sledování jako události trasování událostí pro Windows (ETW).|
 |Profil sledování|Mechanismus filtrování, který umožňuje sledování účastníka přihlásit k odběru podmnožiny sledovacích záznamů emitovaných z instance pracovního postupu.|
 
 Následující tabulka podrobně popisuje záznamy sledování, které modul runtime pracovního postupu generuje.
@@ -47,11 +47,11 @@ Následující tabulka podrobně popisuje záznamy sledování, které modul run
 
 3. Pokud chcete řešení spustit, stiskněte klávesu F5.
 
-    Ve výchozím nastavení naslouchá služba na portu 53797 (http://localhost:53797/SampleWorkflowService.xamlx).
+    Ve výchozím nastavení naslouchá služba na portu 53797 ( `http://localhost:53797/SampleWorkflowService.xamlx` ).
 
 4. Pomocí Průzkumníka souborů otevřete testovacího klienta WCF.
 
-    Testovací klient služby WCF (WcfTestClient. exe) se nachází ve složce \<instalační složka sady Visual Studio 2010 > složce \Common7\IDE\.
+    Testovací klient služby WCF (WcfTestClient. exe) se nachází ve \<Visual Studio 2010 installation folder> složce \Common7\IDE\.
 
     Výchozí instalační složka sady Visual Studio 2010 je C:\Program Files\Microsoft Visual Studio 10,0.
 
@@ -59,9 +59,9 @@ Následující tabulka podrobně popisuje záznamy sledování, které modul run
 
     Do vstupního pole přidejte adresu koncového bodu. Výchozí formát je `http://localhost:53797/SampleWorkflowService.xamlx`.
 
-6. Otevřete Prohlížeč událostí aplikace.
+6. Otevřete aplikaci Prohlížeč událostí.
 
-    Před vyvoláním služby spusťte Prohlížeč událostí v nabídce **Start** vyberte **spustit** a zadejte `eventvwr.exe`. Zajistěte, aby protokol událostí naslouchal sledování událostí vydaných ze služby pracovního postupu.
+    Před vyvoláním služby spusťte Prohlížeč událostí v nabídce **Start** vyberte **Spustit** a zadejte `eventvwr.exe` . Zajistěte, aby protokol událostí naslouchal sledování událostí vydaných ze služby pracovního postupu.
 
 7. Ve stromovém zobrazení Prohlížeč událostí přejděte do části **Prohlížeč událostí**, **protokoly aplikací a služeb**a **Microsoft**. Klikněte pravým tlačítkem myši na **Microsoft** a vyberte **Zobrazit** a pak **Zobrazte protokoly o analýze a ladění** , aby se aktivovaly protokoly pro analýzu a ladění.
 
@@ -69,9 +69,9 @@ Následující tabulka podrobně popisuje záznamy sledování, které modul run
 
 8. Ve stromovém zobrazení v Prohlížeč událostí přejděte na **Prohlížeč událostí**, **protokoly aplikací a služeb**, **Microsoft**, **Windows**, **aplikační server – aplikace**. Klikněte pravým tlačítkem na možnost **analytické** a vyberte **Povolit protokol** pro povolení **analytického** protokolu.
 
-9. Otestujte službu pomocí testovacího klienta WCF dvojitým kliknutím na `GetData`.
+9. Otestujte službu pomocí testovacího klienta WCF dvojitým kliknutím `GetData` .
 
-    Tím se otevře metoda `GetData`. Požadavek akceptuje jeden parametr a zajistí, že hodnota je 0, což je výchozí hodnota.
+    Tím se otevře `GetData` metoda. Požadavek akceptuje jeden parametr a zajistí, že hodnota je 0, což je výchozí hodnota.
 
      Klikněte na **vyvolat**.
 
@@ -83,7 +83,7 @@ Následující tabulka podrobně popisuje záznamy sledování, které modul run
 
 11. Opakujte kroky 9 a 10 se vstupem dat s výjimkou 0, aby nedošlo k žádné chybě.
 
-Sledování profilů vám umožní přihlásit se k odběru událostí vygenerovaných modulem runtime při změně stavu instance pracovního postupu. V závislosti na požadavcích na monitorování můžete vytvořit profil, který je velmi hrubý, který se přihlásí k odběru malé sady změn stavu vysoké úrovně v pracovním postupu. Na druhé straně můžete vytvořit velmi přesný profil, jehož výstup bude dostatečně bohatý, aby bylo možné provést pozdější opětovné vytvoření provádění. Ukázka demonstruje události emitované z modulu runtime pracovního postupu do ETW pomocí `HealthMonitoring Tracking Profile`, který generuje malou sadu událostí. Jiný profil, který generuje další události sledování pracovního postupu, je také k dispozici v souboru Web. config s názvem `Troubleshooting Tracking Profile`. Po instalaci [!INCLUDE[netfx_current_short](../../../../includes/netfx-current-short-md.md)] je v souboru Machine. config nakonfigurován výchozí profil s prázdným názvem. Tento profil se používá v konfiguraci chování sledování trasování událostí pro Windows, pokud není zadaný název profilu ani název prázdného profilu.
+Sledování profilů vám umožní přihlásit se k odběru událostí vygenerovaných modulem runtime při změně stavu instance pracovního postupu. V závislosti na požadavcích na monitorování můžete vytvořit profil, který je velmi hrubý, který se přihlásí k odběru malé sady změn stavu vysoké úrovně v pracovním postupu. Na druhé straně můžete vytvořit velmi přesný profil, jehož výstup bude dostatečně bohatý, aby bylo možné provést pozdější opětovné vytvoření provádění. Ukázka demonstruje události emitované z modulu runtime pracovního postupu do ETW pomocí nástroje `HealthMonitoring Tracking Profile` , který generuje malou sadu událostí. Jiný profil, který generuje další události sledování pracovního postupu, je k dispozici také v souboru Web. config, který je pojmenován `Troubleshooting Tracking Profile` . Při [!INCLUDE[netfx_current_short](../../../../includes/netfx-current-short-md.md)] instalaci nástroje je v souboru Machine. config nakonfigurován výchozí profil s prázdným názvem. Tento profil se používá v konfiguraci chování sledování trasování událostí pro Windows, pokud není zadaný název profilu ani název prázdného profilu.
 
 Profil sledování stavu vygeneruje záznamy instancí pracovního postupu a záznamy šíření chyb aktivity. Tento profil je vytvořen přidáním následujícího profilu sledování do konfiguračního souboru Web. config.
 
@@ -111,7 +111,7 @@ Profil sledování stavu vygeneruje záznamy instancí pracovního postupu a zá
 </tracking>
 ```
 
- Profil se dá změnit tak, že změníte konfiguraci `EtwTrackingParticipant` na následující.
+ Profil se dá změnit tak, že změníte `EtwTrackingParticipant` konfiguraci na následující.
 
 ```xml
 <behaviors>
@@ -138,7 +138,7 @@ Profil sledování stavu vygeneruje záznamy instancí pracovního postupu a zá
 > [!NOTE]
 > Došlo k známému problému Prohlížeč událostí, kde se nemusí podařit dekódovat události ETW. Může se zobrazit chybová zpráva, která vypadá nějak takto:
 >
-> Popis ID události \<ID > ze zdrojového serveru Microsoft-Windows-Application Server – aplikace se nenašly. Buď není v místním počítači nainstalována komponenta, která vyvolává tuto událost, nebo je instalace poškozena. Součást můžete nainstalovat nebo opravit v místním počítači.
+> Popis ID události \<id> ze zdrojového serveru Microsoft-Windows-Application Server nebyl nalezen. Buď není v místním počítači nainstalována komponenta, která vyvolává tuto událost, nebo je instalace poškozena. Součást můžete nainstalovat nebo opravit v místním počítači.
 >
 > Pokud k této chybě dojde, klikněte v podokně akce na aktualizovat. Událost by se teď měla dekódovat správně.
 
@@ -147,7 +147,7 @@ Profil sledování stavu vygeneruje záznamy instancí pracovního postupu a zá
 >
 > `<InstallDrive>:\WF_WCF_Samples`
 >
-> Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] Samples. Tato ukázka se nachází v následujícím adresáři.
+> Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázek. Tato ukázka se nachází v následujícím adresáři.
 >
 > `<InstallDrive>:\WF_WCF_Samples\WF\Basic\Tracking\EtwTracking`
 

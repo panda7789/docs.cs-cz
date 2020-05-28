@@ -4,12 +4,12 @@ titleSuffix: ''
 description: Přečtěte si o sadách SDK projektu .NET Core.
 ms.date: 02/02/2020
 ms.topic: conceptual
-ms.openlocfilehash: 88ec1bf2c4917c69b80b997d090219097694d2bc
-ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
+ms.openlocfilehash: 67dede3caabd2967adca22e7563376c761829655
+ms.sourcegitcommit: ee5b798427f81237a3c23d1fd81fff7fdc21e8d3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83206049"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84144236"
 ---
 # <a name="net-core-project-sdks"></a>Sady SDK pro projekty .NET Core
 
@@ -21,8 +21,8 @@ Pro .NET Core jsou k dispozici následující sady SDK:
 
 | ID | Popis | Sestavy|
 | - | - | - |
-| `Microsoft.NET.Sdk` | .NET Core SDK | https://github.com/dotnet/sdk |
-| `Microsoft.NET.Sdk.Web` | [Sada Web SDK](/aspnet/core/razor-pages/web-sdk) pro .NET Core | https://github.com/aspnet/websdk |
+| `Microsoft.NET.Sdk` | .NET Core SDK | <https://github.com/dotnet/sdk> |
+| `Microsoft.NET.Sdk.Web` | [Sada Web SDK](/aspnet/core/razor-pages/web-sdk) pro .NET Core | <https://github.com/aspnet/websdk> |
 | `Microsoft.NET.Sdk.Razor` | [Sada SDK](/aspnet/core/razor-pages/sdk) .NET Core Razor |
 | `Microsoft.NET.Sdk.Worker` | Sada SDK služby .NET Core Worker |
 | `Microsoft.NET.Sdk.WindowsDesktop` | WinForms a sada WPF SDK pro .NET Core |
@@ -89,8 +89,8 @@ Následující tabulka ukazuje, které prvky a které [globy](https://en.wikiped
 
 | Prvek           | Zahrnout glob                              | Vyloučit glob                                                  | Odebrat glob              |
 |-------------------|-------------------------------------------|---------------------------------------------------------------|--------------------------|
-| Sestavení           | \*\*/\*cs (nebo jiné jazykové rozšíření) | \*\*/\*uživatelský  \*\*/\*.\* Souhrn  \*\*/\*. SLN  \*\*/\*. vssscc  | –                      |
-| EmbeddedResource  | \*\*/\*. resx                              | \*\*/\*uživatelský \*\*/\*.\* Souhrn \*\*/\*. SLN \*\*/\*. vssscc     | –                      |
+| Sestavení           | \*\*/\*cs (nebo jiné jazykové rozšíření) | \*\*/\*uživatelský  \*\*/\*.\* Souhrn  \*\*/\*. SLN  \*\*/\*. vssscc  | Není k dispozici                      |
+| EmbeddedResource  | \*\*/\*. resx                              | \*\*/\*uživatelský \*\*/\*.\* Souhrn \*\*/\*. SLN \*\*/\*. vssscc     | Není k dispozici                      |
 | Žádné              | \*\*/\*                                   | \*\*/\*uživatelský \*\*/\*.\* Souhrn \*\*/\*. SLN \*\*/\*. vssscc     | \*\*/\*cs \*\*/\*. RESX |
 
 > [!NOTE]

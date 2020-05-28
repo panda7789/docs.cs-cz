@@ -2,18 +2,18 @@
 title: Vytváření aplikací všesměrového vysílání pomocí přenosu UDP
 ms.date: 03/30/2017
 ms.assetid: 7485154a-6e85-4a67-a9d4-9008e741d4df
-ms.openlocfilehash: 6825aaafe87ae362fd9266f7c7a82a36d054a69f
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 40944129ce3b01d8422d5aba4cfbf913c56265ed
+ms.sourcegitcommit: ee5b798427f81237a3c23d1fd81fff7fdc21e8d3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79185245"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84144627"
 ---
 # <a name="creating-multicasting-applications-using-the-udp-transport"></a>Vytváření aplikací všesměrového vysílání pomocí přenosu UDP
-Aplikace vícesměrového vysílání odesílají malé zprávy velkému počtu příjemců současně bez nutnosti navazovat připojení z bodu do bodu. Důraz těchto aplikací je rychlost nad spolehlivostí. Jinými slovy je důležitější odesílat včasná data než zajistit, aby byla skutečně přijata jakákoli konkrétní zpráva. WCF nyní podporuje zápis vícesměrového vysílání aplikací pomocí <xref:System.ServiceModel.UdpBinding>. Tento přenos je užitečné ve scénářích, kde služba potřebuje odeslat malé zprávy na počet klientů současně. Příkladem takové služby je burzovní aplikace.  
+Aplikace vícesměrového vysílání odesílají malé zprávy velkému počtu příjemců současně, aniž by bylo nutné navázat připojení Point-to-Point. Důrazem na takové aplikace je rychlost nad spolehlivostí. Jinými slovy je důležitější odesílat včasná data, než aby bylo zajištěno, že konkrétní zpráva je skutečně přijata. WCF teď podporuje psaní aplikací využívajících vícesměrové vysílání pomocí <xref:System.ServiceModel.UdpBinding> . Tento přenos je užitečný ve scénářích, kdy služba potřebuje posílat malé zprávy na několik klientů současně. Taková služba je příkladem takové služby.  
   
 ## <a name="implementing-a-multicast-application"></a>Implementace aplikace vícesměrového vysílání  
- Chcete-li implementovat aplikaci vícesměrového vysílání, definujte servisní smlouvu a pro každou softwarovou součást, která potřebuje reagovat na zprávy vícesměrového vysílání, implementujte servisní smlouvu. Například burzovní aplikace může definovat servisní smlouvu:  
+ K implementaci aplikace vícesměrového vysílání definujte kontrakt služby a pro každou součást softwaru, která potřebuje reagovat na zprávy vícesměrového vysílání, implementujte kontrakt služby. Například burzovní aplikace pro vyměřování může definovat kontrakt služby:  
   
 ```csharp
 // Shared contracts between the client and the service  
@@ -41,7 +41,7 @@ class StockInfo
 }
 ```  
   
- Každá aplikace, která chce přijímat zprávy vícesměrového vysílání, musí být hostitelem služby, která zpřístupňuje toto rozhraní.  Zde je například ukázka kódu, která ukazuje, jak přijímat zprávy vícesměrového vysílání:  
+ Každá aplikace, která chce přijímat zprávy vícesměrového vysílání, musí hostovat službu, která toto rozhraní zpřístupňuje.  Například zde je příklad kódu, který ukazuje, jak přijímat zprávy vícesměrového vysílání:  
   
 ```csharp
 // Service Address
@@ -59,9 +59,9 @@ Console.WriteLine("Start receiving stock information");
 Console.ReadLine();
 ```  
   
- Aplikace určuje adresu UDP, na které budou poslouchat všechny služby. Vytvoří <xref:System.ServiceModel.ServiceHost> se nový a koncový bod služby <xref:System.ServiceModel.UdpBinding>je vystaven pomocí . Poté <xref:System.ServiceModel.ServiceHost> se otevře a začne naslouchat příchozím zprávám.  
+ Aplikace určuje adresu UDP, na které budou všechny služby naslouchat. Vytvoří se nový, který bude <xref:System.ServiceModel.ServiceHost> vystavený koncový bod služby pomocí <xref:System.ServiceModel.UdpBinding> . <xref:System.ServiceModel.ServiceHost>Pak se otevře a začne naslouchat příchozím zprávám.  
   
- V tomto typu scénáře je klient, který skutečně odesílá zprávy vícesměrového vysílání. Každá služba, která naslouchá na správné adrese UDP, obdrží zprávy vícesměrového vysílání. Zde je příklad klienta, který odesílá zprávy vícesměrového vysílání:  
+ V tomto typu scénáře se jedná o klienta, který ve skutečnosti odesílá zprávy vícesměrového vysílání. Každá služba, která naslouchá na správné adrese UDP, bude dostávat zprávy vícesměrového vysílání. Tady je příklad klienta, který odesílá zprávy vícesměrového vysílání:  
   
 ```csharp
 // Multicast Address
@@ -88,13 +88,13 @@ while (true)
 }
 ```  
   
- Tento kód generuje informace o akciích a potom používá servisní smlouvu IStockTicker k odesílání zpráv vícesměrového vysílání pro volání služeb naslouchání na správné adrese UDP.  
+ Tento kód vygeneruje skladové informace a pak pomocí kontraktu služby IStockTicker odesílá zprávy vícesměrového vysílání pro volání služeb, které naslouchá na správné adrese UDP.  
   
 ### <a name="udp-and-reliable-messaging"></a>UDP a spolehlivé zasílání zpráv  
- Vazba UDP nepodporuje spolehlivé zasílání zpráv z důvodu zjednodušené povahy protokolu UDP. Pokud potřebujete potvrdit, že zprávy jsou přijímány vzdálený koncový bod, použijte přenos, který podporuje spolehlivé zasílání zpráv, jako je HTTP nebo TCP. Další informace o spolehlivých zprávách naleznete v tématuhttps://go.microsoft.com/fwlink/?LinkId=231830  
+  Vazba UDP nepodporuje spolehlivé zasílání zpráv z důvodu odlehčené povahy protokolu UDP. Pokud potřebujete potvrdit, že zprávy jsou přijímány vzdáleným koncovým bodem, použijte přenos, který podporuje spolehlivé zasílání zpráv jako HTTP nebo TCP. Další informace o spolehlivém zasílání zpráv najdete v tématu <https://go.microsoft.com/fwlink/?LinkId=231830> .  
   
 ### <a name="two-way-multicast-messaging"></a>Obousměrné zasílání zpráv vícesměrového vysílání  
- Zatímco zprávy vícesměrového vysílání jsou obecně jednosměrné, UdpBinding podporuje výměnu žádostí a odpovědí. Zprávy odeslané pomocí přenosu UDP obsahují adresu Od i Do. Při použití adresy Od je třeba dbát na to, aby mohla být na cestě změněna.  Adresu lze zkontrolovat pomocí následujícího kódu:  
+ I když zprávy vícesměrového vysílání jsou všeobecně jednosměrné, UdpBinding podporuje výměnu zpráv žádostí a odpovědí. Zprávy odeslané pomocí přenosu UDP obsahují adresy od i do. Při použití adresy z se musí dbát na to, že by se mohla vést ke škodlivým změnám v cestě en-route.  Adresu lze zkontrolovat pomocí následujícího kódu:  
   
 ```csharp
 if (address.AddressFamily == AddressFamily.InterNetwork)
@@ -110,9 +110,9 @@ else
 }
 ```  
   
- Tento kód zkontroluje první bajt adresy Od a zjistí, zda obsahuje 0xE0, což znamená, že adresa je vícesměrová adresa.  
+ Tento kód zkontroluje první bajt adresy z, aby bylo možné zjistit, zda obsahuje 0xE0, což znamená, že se jedná o adresu s vícenásobným přetypováním.  
   
 ### <a name="security-considerations"></a>Aspekty zabezpečení  
- Při naslouchání zprávám vícesměrového vysílání je směrovači odeslán paket ICMP s upozorněním, že nasloucháte na adrese vícesměrového vysílání. Kdokoli v místní podsíti, který má oprávnění, může naslouchat těmto typům paketů a určit, na které adrese a portu vícesměrového vysílání nasloucháte.  
+ Při naslouchání zpráv vícesměrového vysílání se paketu protokolu ICMP pošle do směrovače s oznámením, že nasloucháte na adrese vícesměrového vysílání. Kdokoli v místní podsíti, který má oprávnění, by mohl naslouchat těmto typům paketů a určit, na které adrese vícesměrového vysílání a portu nasloucháte.  
   
- Nepoužívejte IP adresu odesílatele pro žádné bezpečnostní účely. Tyto informace mohou být zfalšovány a mohou způsobit, že aplikace odešle odpovědi nesprávnému počítači. Jedním ze způsobů, jak zmírnit tuto hrozbu, je povolit zabezpečení na úrovni zprávy. Na úrovni sítě lze použít také protokol IPSec (Internet Protocol Security) a/nebo NAP (Ochrana přístupu k síti).
+ Pro jakékoli účely zabezpečení nepoužívejte IP adresu odesílatele. Tyto informace můžou být falešné a můžou způsobit, že aplikace pošle odpovědi na nesprávný počítač. Jedním ze způsobů, jak tuto hrozbu zmírnit, je povolit zabezpečení na úrovni zpráv. Na úrovni sítě je možné použít také protokol IPSec (Internet Protocol Security) a/nebo NAP (Network Access Protection).

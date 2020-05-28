@@ -2,20 +2,20 @@
 title: 'Postupy: Publikování metadat služby promocí konfiguračního souboru'
 ms.date: 03/30/2017
 ms.assetid: f061443f-92df-4824-b36a-609c4cd14a17
-ms.openlocfilehash: 7ea0a2aa386f747b89f56f21d75a97e4409140a1
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 179ccf97ce4f5e2aa3e132db7e77c93259d5e4ac
+ms.sourcegitcommit: ee5b798427f81237a3c23d1fd81fff7fdc21e8d3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79184873"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84144939"
 ---
 # <a name="how-to-publish-metadata-for-a-service-using-a-configuration-file"></a>Postupy: Publikování metadat služby promocí konfiguračního souboru
-Toto je jedno ze dvou témat s postupy, které demonstrují publikování metadat pro službu WCF (Windows Communication Foundation). Existují dva způsoby, jak určit, jak by měla služba publikovat metadata pomocí konfiguračního souboru a pomocí kódu. Toto téma ukazuje, jak publikovat metadata pro službu pomocí konfiguračního souboru.  
+Jedná se o jedno ze dvou témat s postupy, které ukazují publikování metadat pro službu Windows Communication Foundation (WCF). Existují dva způsoby, jak zadat, jak má služba publikovat metadata, pomocí konfiguračního souboru a pomocí kódu. V tomto tématu se dozvíte, jak publikovat metadata pro službu pomocí konfiguračního souboru.  
   
 > [!CAUTION]
-> Toto téma ukazuje, jak publikovat metadata nezabezpečeným způsobem. Každý klient může načíst metadata ze služby. Pokud požadujete, aby vaše služba publikovala metadata zabezpečeným způsobem, přečtěte si část [Vlastní koncový bod zabezpečených metadat](../../../../docs/framework/wcf/samples/custom-secure-metadata-endpoint.md).  
+> V tomto tématu se dozvíte, jak publikovat metadata nezabezpečeným způsobem. Každý klient může získat metadata ze služby. Pokud vyžadujete, aby služba publikovala metadata zabezpečeným způsobem, přečtěte si téma [Vlastní zabezpečený koncový bod metadat](../../../../docs/framework/wcf/samples/custom-secure-metadata-endpoint.md).  
   
- Další informace o publikování metadat v kódu naleznete v [tématu How to: Publish Metadata for a Service Using Code](../../../../docs/framework/wcf/feature-details/how-to-publish-metadata-for-a-service-using-code.md). Publikování metadat umožňuje klientům načíst metadata pomocí požadavku WS-Transfer GET `?wsdl` nebo požadavku HTTP/GET pomocí řetězce dotazu. Chcete-li se ujistit, že kód funguje, vytvořte základní službu WCF. Pro jednoduchost je základní samoobslužná služba k dispozici v následujícím kódu.  
+ Další informace o publikování metadat v kódu naleznete v tématu [How to: Publish metadata for a Service using Code](../../../../docs/framework/wcf/feature-details/how-to-publish-metadata-for-a-service-using-code.md). Publikování metadat umožňuje klientům načíst metadata pomocí žádosti o WS-Transfer GET nebo požadavku HTTP/GET pomocí `?wsdl` řetězce dotazu. Abyste měli jistotu, že kód funguje, vytvořte základní službu WCF. V zájmu jednoduchosti je základní Samoobslužná služba k dispozici v následujícím kódu.  
   
 ```csharp  
 using System;  
@@ -71,7 +71,7 @@ namespace Metadata.Samples
 }  
 ```  
   
- Tato služba je samoobslužná služba, která je konfigurována pomocí konfiguračního souboru. Následující konfigurační soubor slouží jako výchozí bod.  
+ Tato služba je Samoobslužná služba, která je nakonfigurovaná pomocí konfiguračního souboru. Následující konfigurační soubor slouží jako výchozí bod.  
   
 ```xml  
 <configuration>  
@@ -90,17 +90,17 @@ namespace Metadata.Samples
 </configuration>  
 ```  
   
-### <a name="to-publish-metadata-for-a-wcf-service-using-an-application-configuration-file"></a>Publikování metadat pro službu WCF pomocí konfiguračního souboru aplikace  
+### <a name="to-publish-metadata-for-a-wcf-service-using-an-application-configuration-file"></a>Publikování metadat služby WCF pomocí konfiguračního souboru aplikace  
   
-1. V souboru App.config za `</services>` uzavíracím `<behaviors>` prvkem vytvořte prvek.  
+1. V souboru App. config po zavření `</services>` elementu vytvořte `<behaviors>` element.  
 
-2. V `<behaviors>` rámci prvku `<serviceBehaviors>` přidejte prvek.  
+2. V rámci `<behaviors>` elementu přidejte `<serviceBehaviors>` element.  
 
-3. Přidejte `<behavior>` prvek `<serviceBehaviors>` do elementu a `name` zadejte `<behavior>` hodnotu atributu prvku.  
+3. Přidejte `<behavior>` prvek do `<serviceBehaviors>` prvku a zadejte hodnotu `name` atributu `<behavior>` elementu.  
 
-4. Přidejte `<serviceMetadata>` prvek `<behavior>` do prvku. Nastavte `httpGetEnabled` atribut `true` a `policyVersion` atribut Policy15. `httpGetEnabled`umožňuje službě reagovat na požadavky metadat provedené požadavkem HTTP GET. `policyVersion`informuje službu, aby při generování metadat odpovídala zásadám WS-Policy 1.5.  
+4. Přidejte `<serviceMetadata>` element do `<behavior>` elementu. Nastavte `httpGetEnabled` atribut na `true` a `policyVersion` atribut na Policy15. `httpGetEnabled`umožňuje službě reagovat na požadavky na metadata vytvořené požadavkem HTTP GET. `policyVersion`oznamuje službě, aby při generování metadat dodržovala WS-Policy 1,5.  
 
-5. Přidejte `behaviorConfiguration` atribut `<service>` do prvku `name` a zadejte atribut `<behavior>` prvku přidaného v kroku 1, jak je znázorněno v následujícím příkladu kódu.  
+5. Přidejte `behaviorConfiguration` atribut do `<service>` elementu a určete `name` atribut `<behavior>` prvku přidaný v kroku 1, jak je znázorněno v následujícím příkladu kódu.  
   
     ```xml  
     <services>  
@@ -119,7 +119,7 @@ namespace Metadata.Samples
     </behaviors>  
     ```  
   
-6. Přidejte jeden `<endpoint>` nebo více prvků `IMetadataExchange`se sadou smlouvy na , jak je znázorněno v následujícím příkladu kódu.  
+6. Přidejte jeden nebo více `<endpoint>` elementů s kontraktem nastaveným na `IMetadataExchange` , jak je znázorněno v následujícím příkladu kódu.  
   
     ```xml  
     <services>  
@@ -138,31 +138,31 @@ namespace Metadata.Samples
     </services>  
     ```  
   
-7. U koncových bodů metadat přidaných v `binding` předchozím kroku nastavte atribut na jednu z následujících možností:  
+7. U koncových bodů metadat přidaných v předchozím kroku nastavte `binding` atribut na jednu z následujících možností:  
   
-    - `mexHttpBinding`pro publikaci HTTP.  
+    - `mexHttpBinding`pro publikování HTTP.  
   
-    - `mexHttpsBinding`pro publikaci HTTPS.  
+    - `mexHttpsBinding`pro publikování HTTPS.  
   
-    - `mexNamedPipeBinding`pro pojmenovanou publikaci kanálu.  
+    - `mexNamedPipeBinding`pro publikaci pojmenovaného kanálu.  
   
     - `mexTcpBinding`pro publikaci TCP.  
   
-8. U koncových bodů metadat přidaných v předchozím kroku nastavte adresu rovnou:  
+8. U koncových bodů metadat přidaných v předchozím kroku nastavte adresu na hodnotu:  
   
-    - Prázdný řetězec pro použití základní adresy hostitelské aplikace jako bodu publikace, pokud je základní adresa stejná jako vazba metadat.  
+    - Prázdný řetězec pro použití základní adresy hostitelské aplikace jako bodu publikace, pokud je základní adresa shodná s vazbou metadat.  
   
-    - Relativní adresa, pokud hostitelská aplikace má základní adresu.  
+    - Relativní adresa, pokud má hostitelská aplikace základní adresu.  
   
     - Absolutní adresa.  
   
 9. Vytvořte a spusťte konzolovou aplikaci.  
   
-10. Pomocí aplikace Internet Explorer vyhledejte základníhttp://localhost:8001/MetadataSample adresu služby (v této ukázce) a ověřte, zda je publikování metadat zapnuto. Pokud tomu tak není, zobrazí se v horní části výsledné stránky zpráva: "Publikování metadat pro tuto službu je aktuálně zakázáno."  
+10. Pomocí Internet Exploreru přejděte na základní adresu služby ( `http://localhost:8001/MetadataSample` v této ukázce) a ověřte, jestli je zapnuté publikování metadat. V takovém případě se zobrazí zpráva v horní části výsledné stránky: "publikování metadat pro tuto službu je momentálně zakázané."  
   
 ### <a name="to-use-default-endpoints"></a>Použití výchozích koncových bodů  
   
-1. Chcete-li nakonfigurovat metadata ve službě, <xref:System.ServiceModel.Description.ServiceMetadataBehavior> která používá výchozí koncové body, zadejte v konfiguračním souboru jako v předchozím příkladu, ale nezadávejte žádné koncové body. Konfigurační soubor by pak vypadat takto.  
+1. Chcete-li nakonfigurovat metadata pro službu, která používá výchozí koncové body, zadejte do <xref:System.ServiceModel.Description.ServiceMetadataBehavior> konfiguračního souboru jako v předchozím příkladu, ale nezadávejte žádné koncové body. Konfigurační soubor by pak vypadal takto.  
   
     ```xml  
     <configuration>  
@@ -179,7 +179,7 @@ namespace Metadata.Samples
     </configuration>  
     ```  
   
-     Vzhledem k <xref:System.ServiceModel.Description.ServiceMetadataBehavior> tomu, `httpGetEnabled` že `true`služba má s nastavenou na , služba má povolené metadata publikování a protože žádné koncové body byly explicitně přidány, modul runtime přidá výchozí koncové body. Další informace o výchozích koncových bodech, vazbách a chování naleznete v [tématu Zjednodušená konfigurace](../../../../docs/framework/wcf/simplified-configuration.md) a [zjednodušená konfigurace pro služby WCF](../../../../docs/framework/wcf/samples/simplified-configuration-for-wcf-services.md).  
+     Vzhledem k tomu, že služba má <xref:System.ServiceModel.Description.ServiceMetadataBehavior> s `httpGetEnabled` nastavenou hodnotou `true` , služba má povolenou metadata publikování a protože nebyly explicitně přidány žádné koncové body, modul runtime přidá výchozí koncové body. Další informace o výchozích koncových bodech, vazbách a chování najdete v tématu [zjednodušená konfigurace](../../../../docs/framework/wcf/simplified-configuration.md) a [zjednodušená konfigurace pro služby WCF](../../../../docs/framework/wcf/samples/simplified-configuration-for-wcf-services.md).  
   
 ## <a name="example"></a>Příklad  
  Následující příklad kódu ukazuje implementaci základní služby WCF a konfiguračního souboru, který publikuje metadata pro službu.  

@@ -4,12 +4,12 @@ description: Zjistěte, jak nasadit rozhraní .NET pro Apache Spark aplikaci do 
 ms.date: 01/23/2020
 ms.topic: tutorial
 ms.custom: mvc
-ms.openlocfilehash: 6b8dbe395a5db9631433a5821f5ef2b9ade556f6
-ms.sourcegitcommit: 957c49696eaf048c284ef8f9f8ffeb562357ad95
+ms.openlocfilehash: edb876921030f5034d03c821051457ca111855f8
+ms.sourcegitcommit: ee5b798427f81237a3c23d1fd81fff7fdc21e8d3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82895699"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84144757"
 ---
 # <a name="tutorial-deploy-a-net-for-apache-spark-application-to-azure-hdinsight"></a>Kurz: nasazení aplikace .NET pro Apache Spark do Azure HDInsight
 
@@ -30,7 +30,7 @@ V tomto kurzu se naučíte:
 Než začnete, proveďte následující úlohy:
 
 * Pokud nemáte předplatné Azure, vytvořte si [bezplatný účet](https://azure.microsoft.com/free/dotnet/).
-* Přihlaste se k webu [Azure Portal](https://portal.azure.com/).
+* Přihlaste se k [portálu Azure Portal](https://portal.azure.com/).
 * Nainstalujte Průzkumník služby Azure Storage na počítač se [systémem Windows](https://go.microsoft.com/fwlink/?LinkId=708343&clcid=0x409), [Linux](https://go.microsoft.com/fwlink/?LinkId=722418&clcid=0x409)nebo [MacOS](https://go.microsoft.com/fwlink/?LinkId=708342&clcid=0x409) .
 * Dokončete kurz [k rozhraní .NET pro Apache Spark – Začínáme během 10 minut](https://dotnet.microsoft.com/learn/data/spark-tutorial/intro) .
 
@@ -152,7 +152,7 @@ Po spuštění clusteru a nahrání souborů do Azure spustíte skript **install
    |---------|---------|
    | Typ skriptu |Vlastní|
    | Name | Instalace pracovního procesu|
-   | Identifikátor URI skriptu bash |https://mystorageaccount.blob.core.windows.net/mycontainer/install-worker.sh </br> Pokud chcete tento identifikátor URI potvrdit, klikněte pravým tlačítkem na install-worker.sh v Průzkumník služby Azure Storage a vyberte vlastnosti. |
+   | Identifikátor URI skriptu bash |`https://mystorageaccount.blob.core.windows.net/mycontainer/install-worker.sh` </br> Pokud chcete tento identifikátor URI potvrdit, klikněte pravým tlačítkem na install-worker.sh v Průzkumník služby Azure Storage a vyberte vlastnosti. |
    | Typ (typy) uzlů| Zaměstnanec|
    | Parametry | azure </br> wasbs://mycontainer@myStorageAccount.blob.core.windows.net/Microsoft.Spark.Worker.netcoreapp2.1.linux-x64-0.6.0.tar.gz </br> /usr/local/bin
 

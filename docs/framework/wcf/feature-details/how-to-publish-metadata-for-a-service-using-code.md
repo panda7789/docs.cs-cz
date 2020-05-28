@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 51407e6d-4d87-42d5-be7c-9887b8652006
-ms.openlocfilehash: 1faed5717c65c4973c3f1965df649df6f2e24722
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: db6bca8728789879f9bfea40904bfc80352d1dbe
+ms.sourcegitcommit: ee5b798427f81237a3c23d1fd81fff7fdc21e8d3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70045904"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84144913"
 ---
 # <a name="how-to-publish-metadata-for-a-service-using-code"></a>Postupy: Publikování metadat služby promocí kódu
 Jedná se o jedno ze dvou témat s postupy, které popisují publikování metadat pro službu Windows Communication Foundation (WCF). Existují dva způsoby, jak zadat, jak má služba publikovat metadata, pomocí konfiguračního souboru a pomocí kódu. V tomto tématu se dozvíte, jak publikovat metadata pro službu pomocí kódu.  
@@ -18,7 +18,7 @@ Jedná se o jedno ze dvou témat s postupy, které popisují publikování metad
 > [!CAUTION]
 > V tomto tématu se dozvíte, jak publikovat metadata nezabezpečeným způsobem. Každý klient může získat metadata ze služby. Pokud vyžadujete, aby služba publikovala metadata zabezpečeným způsobem. viz [Vlastní zabezpečený koncový bod metadat](../../../../docs/framework/wcf/samples/custom-secure-metadata-endpoint.md).  
   
- Další informace o publikování metadat v konfiguračním souboru najdete v tématu [How to: Publikování metadat pro službu pomocí konfiguračního souboru](../../../../docs/framework/wcf/feature-details/how-to-publish-metadata-for-a-service-using-a-configuration-file.md). Publikování metadat umožňuje klientům načíst metadata pomocí žádosti o WS-Transfer Get nebo požadavku HTTP/GET pomocí `?wsdl` řetězce dotazu. Abyste měli jistotu, že kód pracuje, musíte vytvořit základní službu WCF. Základní Samoobslužná služba je k dispozici v následujícím kódu.  
+ Další informace o publikování metadat v konfiguračním souboru naleznete v tématu [How to: Publish metadata for a Service using a Configuration File](../../../../docs/framework/wcf/feature-details/how-to-publish-metadata-for-a-service-using-a-configuration-file.md). Publikování metadat umožňuje klientům načíst metadata pomocí žádosti o WS-Transfer GET nebo požadavku HTTP/GET pomocí `?wsdl` řetězce dotazu. Abyste měli jistotu, že kód pracuje, musíte vytvořit základní službu WCF. Základní Samoobslužná služba je k dispozici v následujícím kódu.  
   
  [!code-csharp[htPublishMetadataCode#0](../../../../samples/snippets/csharp/VS_Snippets_CFX/htpublishmetadatacode/cs/program.cs#0)]
  [!code-vb[htPublishMetadataCode#0](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/htpublishmetadatacode/vb/program.vb#0)]  
@@ -38,22 +38,22 @@ Jedná se o jedno ze dvou témat s postupy, které popisují publikování metad
      [!code-csharp[htPublishMetadataCode#3](../../../../samples/snippets/csharp/VS_Snippets_CFX/htpublishmetadatacode/cs/program.cs#3)]
      [!code-vb[htPublishMetadataCode#3](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/htpublishmetadatacode/vb/program.vb#3)]  
   
-3. Zkontrolujte, zda hostitel služby již obsahuje <xref:System.ServiceModel.Description.ServiceMetadataBehavior>, a v případě potřeby vytvořte novou <xref:System.ServiceModel.Description.ServiceMetadataBehavior> instanci.  
+3. Zkontrolujte, zda hostitel služby již obsahuje, a v <xref:System.ServiceModel.Description.ServiceMetadataBehavior> případě potřeby vytvořte novou <xref:System.ServiceModel.Description.ServiceMetadataBehavior> instanci.  
   
      [!code-csharp[htPublishMetadataCode#4](../../../../samples/snippets/csharp/VS_Snippets_CFX/htpublishmetadatacode/cs/program.cs#4)]
      [!code-vb[htPublishMetadataCode#4](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/htpublishmetadatacode/vb/program.vb#4)]  
   
-4. <xref:System.ServiceModel.Description.ServiceMetadataBehavior.HttpGetEnabled%2A> Nastavte vlastnost na`true.`  
+4. Nastavte <xref:System.ServiceModel.Description.ServiceMetadataBehavior.HttpGetEnabled%2A> vlastnost na`true.`  
   
      [!code-csharp[htPublishMetadataCode#5](../../../../samples/snippets/csharp/VS_Snippets_CFX/htpublishmetadatacode/cs/program.cs#5)]
      [!code-vb[htPublishMetadataCode#5](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/htpublishmetadatacode/vb/program.vb#5)]  
   
-5. <xref:System.ServiceModel.Description.ServiceMetadataBehavior> Obsahuje<xref:System.ServiceModel.Description.MetadataExporter> vlastnost. <xref:System.ServiceModel.Description.MetadataExporter> Obsahuje<xref:System.ServiceModel.Description.MetadataExporter.PolicyVersion%2A> vlastnost. Nastavte hodnotu <xref:System.ServiceModel.Description.MetadataExporter.PolicyVersion%2A> vlastnosti na <xref:System.ServiceModel.Description.PolicyVersion.Policy15%2A>. Vlastnost lze také nastavit na <xref:System.ServiceModel.Description.PolicyVersion.Policy12%2A>hodnotu. <xref:System.ServiceModel.Description.MetadataExporter.PolicyVersion%2A> Když je nastaveno <xref:System.ServiceModel.Description.PolicyVersion.Policy15%2A> na Exportér metadat, vygeneruje informace o zásadách s metadaty, která odpovídá protokolu WS-Policy 1,5. Když se nastaví <xref:System.ServiceModel.Description.PolicyVersion.Policy12%2A> na Exportér metadat, vygeneruje informace o zásadách, které odpovídají WS-Policy 1,2.  
+5. <xref:System.ServiceModel.Description.ServiceMetadataBehavior>Obsahuje <xref:System.ServiceModel.Description.MetadataExporter> vlastnost. <xref:System.ServiceModel.Description.MetadataExporter>Obsahuje <xref:System.ServiceModel.Description.MetadataExporter.PolicyVersion%2A> vlastnost. Nastavte hodnotu <xref:System.ServiceModel.Description.MetadataExporter.PolicyVersion%2A> vlastnosti na <xref:System.ServiceModel.Description.PolicyVersion.Policy15%2A> . <xref:System.ServiceModel.Description.MetadataExporter.PolicyVersion%2A>Vlastnost lze také nastavit na hodnotu <xref:System.ServiceModel.Description.PolicyVersion.Policy12%2A> . Když je nastaveno na <xref:System.ServiceModel.Description.PolicyVersion.Policy15%2A> Exportér metadat, vygeneruje informace o zásadách s metadaty, která odpovídá protokolu WS-policy 1,5. Když se nastaví na <xref:System.ServiceModel.Description.PolicyVersion.Policy12%2A> Exportér metadat, vygeneruje informace o zásadách, které odpovídají WS-policy 1,2.  
   
      [!code-csharp[htPublishMetadataCode#6](../../../../samples/snippets/csharp/VS_Snippets_CFX/htpublishmetadatacode/cs/program.cs#6)]
      [!code-vb[htPublishMetadataCode#6](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/htpublishmetadatacode/vb/program.vb#6)]  
   
-6. <xref:System.ServiceModel.Description.ServiceMetadataBehavior> Přidejte instanci do kolekce chování hostitele služby.  
+6. Přidejte <xref:System.ServiceModel.Description.ServiceMetadataBehavior> instanci do kolekce chování hostitele služby.  
   
      [!code-csharp[htPublishMetadataCode#7](../../../../samples/snippets/csharp/VS_Snippets_CFX/htpublishmetadatacode/cs/program.cs#7)]
      [!code-vb[htPublishMetadataCode#7](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/htpublishmetadatacode/vb/program.vb#7)]  
@@ -69,7 +69,7 @@ Jedná se o jedno ze dvou témat s postupy, které popisují publikování metad
      [!code-vb[htPublishMetadataCode#9](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/htpublishmetadatacode/vb/program.vb#9)]  
   
     > [!NOTE]
-    > Pokud do služby nepřidáte žádné koncové body, modul runtime přidá pro vás výchozí koncové body. V tomto příkladu, protože je služba <xref:System.ServiceModel.Description.ServiceMetadataBehavior> nastavená na `true`, služba má povolená metadata publikování. Další informace o výchozích koncových bodech najdete v tématu [zjednodušená konfigurace](../../../../docs/framework/wcf/simplified-configuration.md) a [zjednodušená konfigurace pro služby WCF](../../../../docs/framework/wcf/samples/simplified-configuration-for-wcf-services.md).  
+    > Pokud do služby nepřidáte žádné koncové body, modul runtime přidá pro vás výchozí koncové body. V tomto příkladu, protože je služba <xref:System.ServiceModel.Description.ServiceMetadataBehavior> nastavená na `true` , služba má povolená metadata publikování. Další informace o výchozích koncových bodech najdete v tématu [zjednodušená konfigurace](../../../../docs/framework/wcf/simplified-configuration.md) a [zjednodušená konfigurace pro služby WCF](../../../../docs/framework/wcf/samples/simplified-configuration-for-wcf-services.md).  
   
 9. Otevřete hostitele služby a počkejte na příchozí volání. Když uživatel stiskne klávesu ENTER, uzavřete hostitele služby.  
   
@@ -78,7 +78,7 @@ Jedná se o jedno ze dvou témat s postupy, které popisují publikování metad
   
 10. Vytvořte a spusťte konzolovou aplikaci.  
   
-11. Pomocí Internet Exploreru přejděte na základní adresu služby (http://localhost:8001/MetadataSample v této ukázce) a ověřte, jestli je zapnuté publikování metadat. Měla by se zobrazit webová stránka, která uvádí "jednoduchá služba" na začátku a hned pod "jste vytvořili službu." V takovém případě se zobrazí zpráva v horní části výsledné stránky: "Publikování metadat pro tuto službu je momentálně zakázané."  
+11. Pomocí Internet Exploreru přejděte na základní adresu služby ( `http://localhost:8001/MetadataSample` v této ukázce) a ověřte, jestli je zapnuté publikování metadat. Měla by se zobrazit webová stránka, která uvádí "jednoduchá služba" na začátku a hned pod "jste vytvořili službu." V takovém případě se zobrazí zpráva v horní části výsledné stránky: "publikování metadat pro tuto službu je momentálně zakázané."  
   
 ## <a name="example"></a>Příklad  
  Následující příklad kódu ukazuje implementaci základní služby WCF, která publikuje metadata pro službu v kódu.  
@@ -86,10 +86,10 @@ Jedná se o jedno ze dvou témat s postupy, které popisují publikování metad
  [!code-csharp[htPublishMetadataCode#11](../../../../samples/snippets/csharp/VS_Snippets_CFX/htpublishmetadatacode/cs/program.cs#11)]
  [!code-vb[htPublishMetadataCode#11](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/htpublishmetadatacode/vb/program.vb#11)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Postupy: Hostování služby WCF ve spravované aplikaci](../../../../docs/framework/wcf/how-to-host-a-wcf-service-in-a-managed-application.md)
 - [Vlastní hostování](../../../../docs/framework/wcf/samples/self-host.md)
 - [Přehled architektury metadat](../../../../docs/framework/wcf/feature-details/metadata-architecture-overview.md)
 - [Používání metadat](../../../../docs/framework/wcf/feature-details/using-metadata.md)
-- [Postupy: Publikování metadat pro službu pomocí konfiguračního souboru](../../../../docs/framework/wcf/feature-details/how-to-publish-metadata-for-a-service-using-a-configuration-file.md)
+- [Postupy: Publikování metadat služby promocí konfiguračního souboru](../../../../docs/framework/wcf/feature-details/how-to-publish-metadata-for-a-service-using-a-configuration-file.md)

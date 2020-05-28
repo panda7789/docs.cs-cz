@@ -2,12 +2,12 @@
 title: Co je nového u .NET Core for Desktop?
 description: Přečtěte si o .NET Core, rozdílech mezi .NET Core a .NET Framework a novými přidanými funkcemi.
 ms.date: 05/12/2020
-ms.openlocfilehash: 9ec4f3002dc9d9ea80fd2b6db8095930867a5c65
-ms.sourcegitcommit: 9a4488a3625866335e83a20da5e9c5286b1f034c
+ms.openlocfilehash: b4fc0cb2841fe13b000223aefc5eaf63bd911994
+ms.sourcegitcommit: ee5b798427f81237a3c23d1fd81fff7fdc21e8d3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83423262"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84144261"
 ---
 # <a name="whats-new-with-net-core-for-desktop"></a>Co je nového u .NET Core for Desktop?
 
@@ -19,7 +19,7 @@ Od jejího spuštění v 2002 se .NET Framework vyvinula spousta let, aby podpor
 
 Pokud cílíte jenom na jednu z těchto platforem, můžete použít tento model. V mnoha případech ale můžete potřebovat více než jednu cílovou platformu ve stejném řešení. Vaše aplikace může mít například součást Správce stolního počítače, web směřující na zákazníka, který sdílí back-end logiku spuštěnou na serveru a dokonce i v mobilním klientovi. V takovém případě potřebujete jednotné prostředí pro kódování, které může zahrnovat všechny tyto svislé prvky .NET.
 
-V době vydání systému Windows 8 byl koncept přenosných knihoven tříd (PCLs) zanesen. Původně .NET Framework byla navržena s předpokladem, že by byla vždy nasazena jako jediná jednotka [, takže ještě](http://en.wikipedia.org/wiki/Decomposition_(computer_science)) nedošlo k obavám. Chcete-li čelit problému sdílení kódu mezi svislými, je nutné, aby byla siloa v tom, jak refaktorovat rozhraní. Účelem smluv je poskytnout dobře vyladěnou plochu rozhraní API. Kontrakty jsou jednoduše sestavení, která kompilujete proti a jsou navržena s řádným faktoringem při pořizování závislostí mezi nimi.
+V době vydání systému Windows 8 byl koncept přenosných knihoven tříd (PCLs) zanesen. Původně .NET Framework byla navržena s předpokladem, že by byla vždy nasazena jako jediná jednotka [, takže ještě](https://wikipedia.org/wiki/Decomposition_(computer_science)) nedošlo k obavám. Chcete-li čelit problému sdílení kódu mezi svislými, je nutné, aby byla siloa v tom, jak refaktorovat rozhraní. Účelem smluv je poskytnout dobře vyladěnou plochu rozhraní API. Kontrakty jsou jednoduše sestavení, která kompilujete proti a jsou navržena s řádným faktoringem při pořizování závislostí mezi nimi.
 
 To vede k rozhodnutí o rozdílech rozhraní API mezi svislými a na úrovni sestavení, a to na rozdíl od úrovně rozhraní API, kterou jsme předtím používali. Tento aspekt povolil prostředí knihovny tříd, které může být cíleno na více svislých, označované také jako přenositelné knihovny tříd.
 

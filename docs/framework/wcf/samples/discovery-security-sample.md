@@ -2,12 +2,12 @@
 title: Ukázka zabezpečení zjišťování
 ms.date: 03/30/2017
 ms.assetid: b8db01f4-b4a1-43fe-8e31-26d4e9304a65
-ms.openlocfilehash: 44022ee756f189347aaec606427ecb3c4c5ffa95
-ms.sourcegitcommit: 7370aa8203b6036cea1520021b5511d0fd994574
+ms.openlocfilehash: c6ec9b7e13234b7dae03541eb09ccba98f4cc93a
+ms.sourcegitcommit: ee5b798427f81237a3c23d1fd81fff7fdc21e8d3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/02/2020
-ms.locfileid: "82728424"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84144900"
 ---
 # <a name="discovery-security-sample"></a>Ukázka zabezpečení zjišťování
 
@@ -36,14 +36,14 @@ Specifikace zjišťování nevyžaduje, aby koncové body, které jsou součást
 ```  
   
 > [!NOTE]
-> `PrefixList` Byla přidána do protokolu verze zjišťování 2008.  
+> `PrefixList`Byla přidána do protokolu verze zjišťování 2008.  
   
- Pro výpočet podpisu ukázka určuje rozšířené položky podpisu. Signatura XML (`SignedInfo`) se vytvoří pomocí předpony `ds` oboru názvů, jak vyžaduje specifikace WS-Discovery. V podpisu je odkazováno tělo a všechny hlavičky v názvech oborů zjišťování a adresování, takže je nelze považovat za neoprávněně. Každý odkazovaný element je transformován pomocí exkluzivního kanonikalizace (http://www.w3.org/2001/10/xml-exc-c14n# ) a pak je vypočítána hodnota digest SHA-1 (http://www.w3.org/2000/09/xmldsig#sha1 ). V závislosti na všech odkazovaných prvcích a jejich hodnotách Digest se hodnota signatury vypočítá pomocí algoritmuhttp://www.w3.org/2000/09/xmldsig#rsa-sha1 RSA ().  
+ Pro výpočet podpisu ukázka určuje rozšířené položky podpisu. Signatura XML ( `SignedInfo` ) se vytvoří pomocí `ds` předpony oboru názvů, jak vyžaduje specifikace WS-Discovery. V podpisu je odkazováno tělo a všechny hlavičky v názvech oborů zjišťování a adresování, takže je nelze považovat za neoprávněně. Každý odkazovaný element je transformován pomocí exkluzivního kanonikalizace ( <http://www.w3.org/2001/10/xml-exc-c14n#> ) a pak je vypočítána hodnota digest SHA-1 ( <http://www.w3.org/2000/09/xmldsig#sha1> ). V závislosti na všech odkazovaných prvcích a jejich hodnotách Digest se hodnota signatury vypočítá pomocí algoritmu RSA ( <http://www.w3.org/2000/09/xmldsig#rsa-sha1> ).  
   
- Zprávy jsou podepsány pomocí certifikátu zadaného klientem. Při vytvoření prvku vazby je nutné zadat název subjektu, název a certifikát umístění úložiště. `KeyId` V kompaktním podpisu představuje identifikátor klíče podpisového tokenu, který je identifikátorem klíče subjektu (Ski) podpisového tokenu, nebo (Pokud není k dispozici) hodnota hash SHA-1 veřejného klíče podpisového tokenu.  
+ Zprávy jsou podepsány pomocí certifikátu zadaného klientem. Při vytvoření prvku vazby je nutné zadat název subjektu, název a certifikát umístění úložiště. `KeyId`V kompaktním podpisu představuje identifikátor klíče podpisového tokenu, který je identifikátorem klíče subjektu (Ski) podpisového tokenu, nebo (Pokud není k dispozici) hodnota hash SHA-1 veřejného klíče podpisového tokenu.  
   
 ## <a name="secure-channel-listener"></a>Naslouchací proces zabezpečeného kanálu  
- Naslouchací proces zabezpečeného kanálu vytváří vstupní nebo duplexní kanály, které ověřují kompaktní podpis v přijatých zprávách. Chcete-li ověřit podpis, `KeyId` je k výběru certifikátu ze zadaného úložiště použit parametr zadaný v kompaktním podpisu připojeném ke zprávě. Pokud zpráva nemá podpis nebo se její podpis nepovede, jsou zprávy vyřazené. Chcete-li použít zabezpečenou vazbu, ukázka definuje objekt pro vytváření, <xref:System.ServiceModel.Discovery.UdpDiscoveryEndpoint> který <xref:System.ServiceModel.Discovery.UdpAnnouncementEndpoint> vytvoří vlastní a s přidaným prvkem zabezpečené vazby zjišťování. Tyto zabezpečené koncové body lze použít v posluchačích oznámení zjišťování a zjistitelných službách.  
+ Naslouchací proces zabezpečeného kanálu vytváří vstupní nebo duplexní kanály, které ověřují kompaktní podpis v přijatých zprávách. Chcete-li ověřit podpis, `KeyId` je k výběru certifikátu ze zadaného úložiště použit parametr zadaný v kompaktním podpisu připojeném ke zprávě. Pokud zpráva nemá podpis nebo se její podpis nepovede, jsou zprávy vyřazené. Chcete-li použít zabezpečenou vazbu, ukázka definuje objekt pro vytváření, který vytvoří vlastní <xref:System.ServiceModel.Discovery.UdpDiscoveryEndpoint> a <xref:System.ServiceModel.Discovery.UdpAnnouncementEndpoint> s přidaným prvkem zabezpečené vazby zjišťování. Tyto zabezpečené koncové body lze použít v posluchačích oznámení zjišťování a zjistitelných službách.  
   
 ## <a name="sample-details"></a>Podrobnosti ukázky  
  Ukázka zahrnuje knihovny a 4 konzolové aplikace:

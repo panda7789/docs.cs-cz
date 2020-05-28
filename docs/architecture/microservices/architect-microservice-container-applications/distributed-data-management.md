@@ -1,112 +1,112 @@
 ---
 title: Výzvy a řešení správy distribuovaných dat
-description: Zjistěte, jaké jsou výzvy a řešení pro správu distribuovaných dat ve světě mikroslužeb.
+description: Seznamte se s výzvami a řešeními pro správu distribuovaných dat v celém světě mikroslužeb.
 ms.date: 09/20/2018
-ms.openlocfilehash: c30de24591d5a73fd34087f34a69e9c7ed54cd35
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 8b91879e879db293ed61bd5f3c49dc391b9d8f5a
+ms.sourcegitcommit: ee5b798427f81237a3c23d1fd81fff7fdc21e8d3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "71834448"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84144315"
 ---
 # <a name="challenges-and-solutions-for-distributed-data-management"></a>Výzvy a řešení správy distribuovaných dat
 
-## <a name="challenge-1-how-to-define-the-boundaries-of-each-microservice"></a>Výzva \#1: Jak definovat hranice každé mikroslužby
+## <a name="challenge-1-how-to-define-the-boundaries-of-each-microservice"></a>Výzva \# 1: jak definovat hranice jednotlivých mikroslužeb
 
-Definování hranice mikroslužeb je pravděpodobně první výzvou, se kterou se setká kdokoli. Každá mikroslužba musí být součástí vaší aplikace a každá mikroslužba by měla být autonomní se všemi výhodami a výzvami, které zprostředkovává. Ale jak ty hranice identifikujete?
+Definování hranice mikroslužeb je pravděpodobně první výzvou, kterou každý uživatel najde. Každá mikroslužba musí být součástí vaší aplikace a každá mikroslužba by měla být autonomní se všemi výhodami a výzvami, které přináší. Ale jak identifikujete tyto hranice?
 
-Nejprve se musíte zaměřit na modely logické domény aplikace a související data. Pokuste se identifikovat oddělené ostrovy dat a různé kontexty v rámci stejné aplikace. Každý kontext může mít jiný obchodní jazyk (jiné obchodní podmínky). Kontexty by měly být definovány a spravovány nezávisle. Termíny a entity, které se používají v těchto různých kontextech může znít podobně, ale můžete zjistit, že v určitém kontextu obchodní koncept s jedním se používá pro jiný účel v jiném kontextu a může dokonce mít jiný název. Například uživatel může být odkazován jako uživatel v kontextu identity nebo členství, jako zákazník v kontextu CRM, jako kupující v kontextu objednávky a tak dále.
+Nejprve se musíte zaměřit na logické doménové modely aplikace a související data. Zkuste identifikovat oddělené ostrovy dat a různé kontexty v rámci stejné aplikace. Každý kontext může mít jiný obchodní jazyk (různé obchodní výrazy). Kontexty by se měly definovat a spravovat nezávisle. Pojmy a entity, které jsou používány v těchto různých kontextech, mohou být podobné podobným způsobem, ale je možné, že v určitém kontextu bude obchodní koncept s jedním účelem použit pro jiný účel v jiném kontextu a může mít i jiný název. Například uživatel může být uveden jako uživatel v kontextu identity nebo členství, jako zákazník v kontextu CRM, jako kupující v kontextu řazení a tak dále.
 
-Způsob, jakým identifikujete hranice mezi více kontexty aplikace s jinou doménou pro každý kontext, je přesně způsob, jak můžete identifikovat hranice pro každou obchodní mikroslužbu a její související model domény a data. Vždy se pokusíte minimalizovat propojení mezi těmito mikroslužeb. Tato příručka jde do více podrobností o této identifikace a návrh modelu domény v části [Identifikace hranice modelu domény pro každou mikroslužbu](identify-microservice-domain-model-boundaries.md) později.
+Způsob identifikace hranic mezi více kontexty aplikace s různou doménou pro každý kontext je přesně takový, jak můžete identifikovat hranice pro jednotlivé obchodní mikroslužby a související doménové modely a data. Při pokusu o odpojení mezi těmito mikroslužbami se vždycky pokusíte minimalizovat. V této příručce se dozvíte víc podrobností o této identifikaci a návrhu doménového modelu v oddílu, kde se později [identifikují hranice doménového modelu pro jednotlivé mikroslužby](identify-microservice-domain-model-boundaries.md) .
 
-## <a name="challenge-2-how-to-create-queries-that-retrieve-data-from-several-microservices"></a>Výzva \#2: Jak vytvořit dotazy, které načítají data z několika mikroslužeb
+## <a name="challenge-2-how-to-create-queries-that-retrieve-data-from-several-microservices"></a>Výzva \# 2: vytvoření dotazů, které načítají data z několika mikroslužeb
 
-Druhou výzvou je, jak implementovat dotazy, které načítají data z několika mikroslužeb, a zároveň se vyhnout upovídaný komunikaci s mikroslužeb ze vzdálených klientských aplikací. Příkladem může být jedna obrazovka z mobilní aplikace, která potřebuje zobrazit informace o uživateli, který je vlastněn košíku, katalogu a mikroslužeb identity uživatele. Dalším příkladem by komplexní sestavy zahrnující mnoho tabulek umístěných ve více mikroslužeb. Správné řešení závisí na složitosti dotazů. Ale v každém případě budete potřebovat způsob, jak agregovat informace, pokud chcete zlepšit efektivitu komunikace vašeho systému. Nejoblíbenější řešení jsou následující.
+Druhá výzva je způsob implementace dotazů, které načítají data z několika mikroslužeb, a současně neumožňuje komunikaci s konverzacemi s těmito mikroslužbami ze vzdálených klientských aplikací. Příkladem může být jedna obrazovka z mobilní aplikace, která potřebuje zobrazit informace o uživateli, které vlastní košík, katalog a identitu uživatelů. Dalším příkladem může být složitá sestava zahrnující mnoho tabulek umístěných v několika mikroslužbách. Správné řešení závisí na složitosti dotazů. Ale v každém případě budete potřebovat způsob, jak agregovat informace, pokud chcete zvýšit efektivitu komunikace systému. Nejoblíbenější řešení jsou následující.
 
-**Brána rozhraní API.** Pro jednoduché agregace dat z více mikroslužeb, které vlastní různé databáze, doporučený přístup je agregace mikroslužby označovány jako brána rozhraní API. Však musíte být opatrní při implementaci tohoto vzoru, protože může být bod sytič v systému a může porušovat princip autonomie mikroslužeb. Chcete-li tuto možnost zmírnit, můžete mít více fined-zrnitý brány rozhraní API každý z nich se zaměřením na vertikální "řez" nebo obchodní oblasti systému. Vzor brány rozhraní API je vysvětleno podrobněji v [části Brána rozhraní API](direct-client-to-microservice-communication-versus-the-api-gateway-pattern.md#why-consider-api-gateways-instead-of-direct-client-to-microservice-communication) později.
+**Brána API.** Pro jednoduchou agregaci dat z více mikroslužeb, které vlastní různé databáze, je doporučený přístup agregační mikroslužba označovaná jako brána rozhraní API. Je však nutné, abyste měli pozor na implementaci tohoto modelu, protože to může být sytič v systému a může porušovat princip autonomie mikroslužeb. Chcete-li zmírnit tuto možnost, můžete mít několik jemných bran rozhraní API, které se zaměřují na vertikální "řez" nebo obchodní oblast systému. Vzor brány rozhraní API je podrobněji vysvětlen v [části brána rozhraní API](direct-client-to-microservice-communication-versus-the-api-gateway-pattern.md#why-consider-api-gateways-instead-of-direct-client-to-microservice-communication) později.
 
-**CQRS s tabulkami dotazů a čtení.** Dalším řešením pro agregaci dat z více mikroslužeb je [vzor materializovaného zobrazení](https://docs.microsoft.com/azure/architecture/patterns/materialized-view). V tomto přístupu vygenerujete předem (připravit nenormalizovaná data před skutečné dotazy dojít), tabulka jen pro čtení s daty, která je vlastněna více mikroslužeb. Tabulka má formát vhodný pro potřeby klientské aplikace.
+**CQRS pomocí dotazů nebo čtení tabulek.** Dalším řešením pro agregaci dat z více mikroslužeb je [model materializované zobrazení](https://docs.microsoft.com/azure/architecture/patterns/materialized-view). V tomto postupu vygenerujete předem (připravuje Denormalizovaná data před samotnými dotazy) a tabulku jen pro čtení s daty, která vlastní více mikroslužeb. Tabulka má formát, který je vhodný pro potřeby klientských aplikací.
 
-Zvažte něco jako obrazovku pro mobilní aplikaci. Pokud máte jednu databázi, můžete shromáždit data pro tuto obrazovku pomocí dotazu SQL, který provádí komplexní spojení zahrnující více tabulek. Však pokud máte více databází a každá databáze je vlastněna jinou mikroslužbu, nelze dotaz ovat tyto databáze a vytvořit spojení SQL. Složitý dotaz se stává výzvou. Požadavek můžete řešit pomocí přístupu CQRS – vytvoříte nenormalizovanou tabulku v jiné databázi, která se používá pouze pro dotazy. Tabulka může být navržena speciálně pro data, která potřebujete pro složitý dotaz, s relace 1:1 mezi poli potřebnými na obrazovce aplikace a sloupci v tabulce dotazů. Mohlo by to také sloužit pro účely podávání zpráv.
+Zvažte něco podobného jako na obrazovce mobilní aplikace. Pokud máte izolovanou databázi, můžete data pro tuto obrazovku vyžádat pomocí dotazu SQL, který provádí komplexní spojení zahrnující více tabulek. Pokud máte ale více databází a každá databáze vlastní jinou mikroslužbu, nemůžete tyto databáze zadat dotazem a vytvořit připojení SQL. Váš složitý dotaz se stává výzvou. Požadavek můžete vyřešit pomocí přístupu k CQRS – vytvoříte denormalizovanou tabulku v jiné databázi, která se používá jenom pro dotazy. Tabulka může být navržena speciálně pro data, která potřebujete pro složitý dotaz, s relací 1:1 mezi poli, které vyžaduje obrazovka vaší aplikace, a sloupci v tabulce dotazů. Může také sloužit pro účely vytváření sestav.
 
-Tento přístup nejen řeší původní problém (jak dotazovat a připojit se napříč mikroslužbami), ale také výrazně zvyšuje výkon ve srovnání se složitým spojením, protože již máte data, která aplikace potřebuje v tabulce dotazů. Samozřejmě pomocí příkazu a dotazu odpovědnost oddělení (CQRS) s dotazem nebo čtení tabulek znamená další vývojové práce a budete muset přijmout případné konzistence. Nicméně požadavky na výkon a vysokou škálovatelnost ve [scénářích spolupráce](http://udidahan.com/2011/10/02/why-you-should-be-using-cqrs-almost-everywhere/) (nebo konkurenční scénáře, v závislosti na úhlu pohledu) jsou, kde byste měli použít CQRS s více databází.
+Tento přístup nejenom vyřeší původní problém (dotazování a spojování napříč mikroslužbami), ale také výrazně zvyšuje výkon ve srovnání se složitým spojením, protože už máte data, která aplikace potřebuje v tabulce dotazů. Samozřejmě použití CQRS (Command and Query Responsibility Segregation) (CQRS) s tabulkami dotaz/čtení znamená další vývojovou práci a vy budete muset zapracovat s konečnou konzistencí. Nicméně požadavky na výkon a vysokou škálovatelnost ve [scénářích spolupráce](http://udidahan.com/2011/10/02/why-you-should-be-using-cqrs-almost-everywhere/) (nebo v případě konkurenčních scénářů v závislosti na bodu zobrazení) byste měli použít pro CQRS s více databázemi.
 
-**"Studená data" v centrálních databázích.** Pro složité sestavy a dotazy, které nemusí vyžadovat data v reálném čase, běžným přístupem je exportovat "horká data" (transakční data z mikroslužeb) jako "studená data" do rozsáhlých databází, které se používají pouze pro vytváření sestav. Tento centrální databázový systém může být systém založený na velkých datech, jako hadoop, datový sklad, jako je ten založený na Azure SQL Data Warehouse, nebo dokonce jedna databáze SQL, která se používá pouze pro sestavy (pokud velikost nebude problém).
+**"Studená data" v centrálních databázích.** U složitých sestav a dotazů, které nemusí vyžadovat data v reálném čase, se jedná o společný přístup k vyexportování "aktivních dat" (transakčních dat z mikroslužeb) jako "studená data" do rozsáhlých databází, které se používají jenom pro vytváření sestav. Tento centrální databázový systém může být systémem využívajícím velké objemy dat, jako je Hadoop, datový sklad, který je založený na Azure SQL Data Warehouse, nebo dokonce jenom jedna databáze SQL, která se používá jenom pro sestavy (Pokud se nejedná o problém s velikostí).
 
-Mějte na paměti, že tato centralizovaná databáze by se používala pouze pro dotazy a sestavy, které nepotřebují data v reálném čase. Původní aktualizace a transakce, jako zdroj pravdy, musí být v datech mikroslužeb. Způsob, jakým byste synchronizovali data, by byl buď pomocí komunikace řízené událostmi (zahrnuty v následujících částech), nebo pomocí jiných nástrojů pro import a export databázové infrastruktury. Pokud používáte komunikaci řízenou událostmi, bude tento proces integrace podobný způsobu šíření dat, jak je popsáno dříve pro tabulky dotazů CQRS.
+Mějte na paměti, že tato Centralizovaná databáze by se používala jenom pro dotazy a sestavy, které nepotřebují data v reálném čase. Původní aktualizace a transakce jako zdroj pravdy musí být ve vašich datech mikroslužeb. Způsob synchronizace dat by byl buď pomocí komunikace založené na událostech (popsaná v následujících částech), nebo pomocí dalších nástrojů pro import/export infrastruktury databáze. Pokud používáte komunikaci založenou na událostech, proces integrace by byl podobný způsobu, jakým šíříte data, jak je popsáno výše pro tabulky dotazů CQRS.
 
-Pokud však návrh aplikace zahrnuje neustále agregovat informace z více mikroslužeb pro složité dotazy, může být příznakem chybný návrh - mikroslužba by měla být co nejvíce izolována od jiných mikroslužeb. (To vylučuje sestavy/analýzy, které by měly vždy používat centrální databáze za studena dat.) S tento problém často může být důvod emitovat mikroslužeb. Je třeba vyvážit autonomii evoluce a nasazení každé mikroslužby se silnými závislostmi, soudržností a agregací dat.
+Pokud ale návrh vaší aplikace zahrnuje nepřetržitou agregaci informací z různých mikroslužeb pro složité dotazy, může to být příznakem špatného návrhu – mikroslužba by měla být izolovaná, jak je to možné, od ostatních mikroslužeb. (To nezahrnuje sestavy/analýzy, které vždy používají centrální databáze studených dat.) Příčinou tohoto problému často může být důvod, jak mikroslužby sloučit. Musíte vyvážit autonomii vývoje a nasazení každé mikroslužby se silnými závislostmi, soudržnosti a agregací dat.
 
-## <a name="challenge-3-how-to-achieve-consistency-across-multiple-microservices"></a>Výzva \#3: Jak dosáhnout konzistence mezi více mikroslužeb
+## <a name="challenge-3-how-to-achieve-consistency-across-multiple-microservices"></a>Výzva \# 3: jak dosáhnout konzistence napříč několika mikroslužbami
 
-Jak již bylo uvedeno dříve, data vlastněná každou mikroslužbu je privátní pro tuto mikroslužbu a lze přistupovat pouze pomocí jeho rozhraní API mikroslužeb. Proto představuje výzvu, jak implementovat obchodní procesy od konce do konce při zachování konzistence mezi více mikroslužeb.
+Jak bylo uvedeno dříve, data vlastněná jednotlivými mikroslužba jsou pro tuto mikroslužbu soukromá a dají se k ní dostat jenom pomocí jejího rozhraní API mikroslužeb. Proto se zobrazí výzva k implementaci koncových obchodních procesů a zachování konzistence napříč několika mikroslužbami.
 
-Chcete-li analyzovat tento problém, podívejme se na příklad z [referenční aplikace eShopOnContainers](https://aka.ms/eshoponcontainers). Mikroslužba katalogu udržuje informace o všech produktech, včetně ceny produktu. Mikroslužba Košík spravuje časová data o položkách produktu, které uživatelé přidávají do svých nákupních košíků, což zahrnuje cenu položek v době, kdy byly přidány do košíku. Pokud je cena produktu aktualizována v katalogu, měla by být tato cena aktualizována také v aktivních koších, které mají stejný produkt, plus systém by měl pravděpodobně varovat uživatele, že se cena určité položky změnila od doby, kdy ji přidali do košíku.
+Abychom mohli tento problém analyzovat, Podívejme se na příklad z [Referenční aplikace eShopOnContainers](https://aka.ms/eshoponcontainers). Mikroslužba katalogu uchovává informace o všech produktech, včetně ceny produktu. Mikroslužba košíku spravuje dočasná data o položkách produktu, které uživatelé přidávají do svých nákupních košíků, včetně ceny položek v době, kdy byly přidány do košíku. V případě aktualizace ceny produktu v katalogu by měla být tato cena aktualizována také v aktivních košíkech, které obsahují stejný produkt, a systém by měl pravděpodobně upozornit uživatele, že se změnila cena konkrétní položky od jejich přidání k košíku.
 
-V hypotetické monolitické verzi této aplikace, když se změní cena v tabulce produktů, podsystém katalogu může jednoduše použít transakci ACID k aktualizaci aktuální ceny v tabulce košíku.
+V hypotetické verzi monolitické této aplikace při změně ceny v tabulce Products by subsystém katalogu mohl jednoduše použít transakci kyseliny k aktualizaci aktuální ceny v tabulce koše.
 
-V aplikaci založené na mikroslužbách jsou však tabulky Product a Basket vlastněny příslušnými mikroslužbami. Žádná mikroslužba by nikdy neměla zahrnovat tabulky nebo úložiště vlastněné jinou mikroslužbou ve vlastních transakcích, ani v přímých dotazech, jak je znázorněno na obrázku 4-9.
+V aplikacích založených na mikroslužbách ale tabulky produktů a koše jsou vlastněné příslušnými mikroslužbami. Žádná mikroslužba by nikdy neměla zahrnovat tabulky/úložiště vlastněné jinou mikroslužbou ve svých vlastních transakcích, a ne ani v přímých dotazech, jak je znázorněno na obrázku 4-9.
 
-![Diagram znázorňující, že data databáze mikroslužeb nelze sdílet.](./media/distributed-data-management/indepentent-microservice-databases.png)
+![Diagram znázorňující, že data databáze mikroslužeb nejde sdílet.](./media/distributed-data-management/indepentent-microservice-databases.png)
 
-**Obrázek 4-9**. Mikroslužba nemá přímý přístup ke tabulce v jiné mikroslužbě
+**Obrázek 4-9**. Mikroslužba nemůže získat přímý přístup k tabulce v jiné mikroslužbě.
 
-Mikroslužba katalogu by neměla aktualizovat tabulku košíku přímo, protože tabulka košíku je vlastněna mikroslužbou košíku. Chcete-li provést aktualizaci mikroslužby košíku, mikroslužba katalogu by měla používat konečnou konzistenci pravděpodobně založenou na asynchronní komunikaci, jako jsou události integrace (komunikace založená na zprávě a událostech). To je, jak [eShopOnContainers](https://aka.ms/eshoponcontainers) referenční aplikace provádí tento typ konzistence mezi mikroslužeb.
+Mikroslužba katalogu by neměla aktualizovat tabulku koše přímo, protože tabulka koše je vlastněna mikroslužbou košíku. Pro zajištění aktualizace mikroslužby koše by služba Cloud Service měla použít konečnou konzistenci, která je pravděpodobně založená na asynchronní komunikaci, jako jsou například integrační události (zpráva a komunikace na základě událostí). To je způsob, jakým referenční aplikace [eShopOnContainers](https://aka.ms/eshoponcontainers) tento typ konzistence provádí napříč mikroslužbami.
 
-Jak je uvedeno v [teoréme SZP](https://en.wikipedia.org/wiki/CAP_theorem), musíte si vybrat mezi dostupností a konzistencí silnou acid. Většina scénářů založených na mikroslužbách vyžaduje dostupnost a vysokou škálovatelnost oproti silné konzistenci. Důležité aplikace musí zůstat v provozu a vývojáři mohou obejít silnou konzistenci pomocí technik pro práci se slabou nebo konečnou konzistencí. Toto je přístup, který používá většina architektur založených na mikroslužbách.
+Jak je uvedeno v [věta Cap](https://en.wikipedia.org/wiki/CAP_theorem), musíte zvolit mezi vysokou konzistencí dostupnosti a kyselinou. Většina scénářů založených na mikroslužbách vyžaduje dostupnost a vysokou škálovatelnost na rozdíl od silné konzistence. Klíčové aplikace musí zůstat v provozu a vývojáři mohou obejít silnou konzistenci pomocí technik pro práci se slabou nebo konečnou konzistencí. Toto je přístup, který zabere Většina architektur založených na mikroslužbách.
 
-Transakce ve stylu ACID nebo dvoufázové potvrzení navíc nejsou pouze v rozporu se zásadami mikroslužeb; většina databází NoSQL (jako je Azure Cosmos DB, MongoDB atd.) nepodporuje transakce dvoufázového potvrzení, typické ve scénářích distribuovaných databází. Je však nezbytné zachovat konzistenci dat mezi službami a databázemi. Tato výzva souvisí také s otázkou, jak šířit změny mezi více mikroslužeb, když některá data musí být redundantní – například když potřebujete mít název nebo popis produktu v mikroslužbě katalogu a košíku mikroservis.
+Kromě toho se ve stylu KYSELosti nebo dvoufázové transakce potvrzení nemění jenom na princip mikroslužeb. Většina databází NoSQL (například Azure Cosmos DB, MongoDB atd.) nepodporuje dvoufázové transakce potvrzení, typické ve scénářích distribuovaných databází. Zachování konzistence dat napříč službami a databázemi je ale nezbytné. Tato výzva se také vztahuje k otázce, jak rozšířit změny napříč několika mikroslužbami, pokud je potřeba, aby určitá data byla redundantní, například když potřebujete mít název nebo popis produktu v katalogu mikroslužeb a na koši.
 
-Dobrým řešením tohoto problému je použít případnou konzistenci mezi mikroslužbami formulované prostřednictvím komunikace řízené událostmi a systémem publikování a odběru. Tato témata jsou popsána v části [Asynchronní komunikace řízená událostmi](asynchronous-message-based-communication.md#asynchronous-event-driven-communication) dále v této příručce.
+Dobrým řešením tohoto problému je použití konečné konzistence mezi mikroslužbami propojenými prostřednictvím komunikace řízené událostmi a systémem pro publikování a odběr. Tato témata jsou popsaná v části [asynchronní komunikace řízená událostmi](asynchronous-message-based-communication.md#asynchronous-event-driven-communication) dále v této příručce.
 
-## <a name="challenge-4-how-to-design-communication-across-microservice-boundaries"></a>Výzva \#4: Jak navrhnout komunikaci přes hranice mikroslužeb
+## <a name="challenge-4-how-to-design-communication-across-microservice-boundaries"></a>Výzva \# 4: jak navrhovat komunikaci mezi hranicemi mikroslužeb
 
-Komunikace přes hranice mikroslužeb je skutečnou výzvou. V tomto kontextu komunikace neodkazuje na jaký protokol byste měli použít (HTTP a REST, AMQP, zasílání zpráv a tak dále). Místo toho řeší, jaký styl komunikace byste měli použít a zejména jak by měly být vaše mikroslužby spojeny. V závislosti na úrovni párování, když dojde k poruše, dopad této poruchy na váš systém se bude výrazně lišit.
+Komunikace mezi hranicemi mikroslužeb je skutečnou výzvou. V tomto kontextu komunikace neodkazuje na protokol, který byste měli použít (HTTP, REST, AMQP, zasílání zpráv a tak dále). Místo toho řeší, který styl komunikace byste měli použít, a zejména to, jak by měly být vaše mikroslužby. V závislosti na úrovni spojení, kdy dojde k chybě, se dopad této chyby na váš systém výrazně liší.
 
-V distribuovaném systému, jako je aplikace založená na mikroslužbách, s tolika artefakty pohybujícími se a s distribuovanými službami na mnoha serverech nebo hostitelích, komponenty nakonec selžou. Částečné selhání a ještě větší výpadky dojde, takže je třeba navrhnout mikroslužeb a komunikace mezi nimi s ohledem na běžná rizika v tomto typu distribuovaného systému.
+V distribuovaném systému jako aplikace založené na mikroslužbách, a díky tomu mnoho artefaktů, které se pohybují kolem a s distribuovanými službami na mnoha serverech nebo hostitelích, budou součásti nakonec neúspěšné. Dojde k částečnému selhání a dokonce i většímu výpadku, takže je potřeba navrhnout mikroslužby a komunikaci napříč nimi, aby se v tomto typu distribuovaného systému stala běžnými riziky.
 
-Populární přístup je implementovat mikroslužeb založené http (REST) z důvodu jejich jednoduchosti. Přístup založený na protokolu HTTP je naprosto přijatelný; problém zde souvisí s tím, jak jej používáte. Pokud používáte požadavky HTTP a odpovědi pouze pro interakci s mikroslužeb z klientských aplikací nebo z brány rozhraní API, to je v pořádku. Ale pokud vytvoříte dlouhé řetězce synchronní volání HTTP přes mikroslužeb, komunikaci přes jejich hranice, jako kdyby mikroslužeb byly objekty v monolitické aplikace, aplikace nakonec narazí na problémy.
+Oblíbeným přístupem je implementace mikroslužeb založených na protokolu HTTP (REST) z důvodu jejich jednoduchosti. Přístup založený na protokolu HTTP je dokonale přijatelný; Tento problém se týká toho, jak ho používáte. Pokud používáte požadavky a odpovědi HTTP pouze k interakci s mikroslužbami z klientských aplikací nebo z bran rozhraní API, je to přesně. Pokud ale vytvoříte dlouhé řetězce synchronních volání HTTP napříč mikroslužbami, komunikujete přes jejich hranice, jako kdyby mikroslužby byly objekty v aplikaci monolitické, a nakonec dojde k potížím s aplikací.
 
-Představte si například, že vaše klientská aplikace provede volání rozhraní HTTP API pro jednotlivé mikroslužby, jako je řazení mikroslužeb. Pokud řazení mikroslužeb zase volá další mikroslužby pomocí protokolu HTTP v rámci stejného cyklu požadavku a odpovědi, vytváříte řetězec volání HTTP. Zpočátku by to mohlo znít rozumně. Existují však důležité body, které je třeba vzít v úvahu při cestě touto cestou:
+Představte si například, že vaše klientská aplikace provede volání HTTP API na jednotlivé mikroslužby, jako je objednávání mikroslužeb. Pokud mikroslužba řazení zase volá další mikroslužby pomocí protokolu HTTP v rámci stejného cyklu žádosti a odpověď, vytváříte řetěz volání HTTP. Zpočátku to může být na dobrém měřeno. Existují však důležité body, které je potřeba vzít v úvahu při přechodu k této cestě:
 
-- Blokování a nízký výkon. Vzhledem k synchronní povaze protokolu HTTP původní požadavek nezíská odpověď, dokud nebudou dokončena všechna interní volání HTTP. Představte si, pokud počet těchto volání výrazně zvyšuje a současně jeden z přechodných volání HTTP mikroslužby je blokován. Výsledkem je, že výkon je ovlivněna a celková škálovatelnost bude exponenciálně ovlivněna jako další požadavky HTTP zvýšit.
+- Blokování a nízký výkon. V důsledku synchronní povahy HTTP neobdrží původní požadavek odpověď, dokud nejsou dokončená všechna interní volání HTTP. Představte si, jestli se počet těchto volání významně zvyšuje a zároveň je blokované jedno ze zprostředkujících volání HTTP do mikroslužeb. Výsledkem je, že výkon bude ovlivněn a celková škálovatelnost bude exponenciálně ovlivněna při zvýšení počtu dalších požadavků HTTP.
 
-- Propojení mikroslužeb s HTTP. Obchodní mikroslužby by neměly být spojeny s jinými obchodními mikroslužbami. V ideálním případě by neměli "vědět" o existenci jiných mikroslužeb. Pokud vaše aplikace závisí na propojení mikroslužeb jako v příkladu, dosažení autonomie na mikroslužbu bude téměř nemožné.
+- Napojuje mikroslužby pomocí protokolu HTTP. Obchodní mikroslužby by se neměly spojit s jinými mikroslužbami v podniku. V ideálním případě by neměl "znát" existenci ostatních mikroslužeb. Pokud vaše aplikace spoléhá na přihlašování mikroslužeb, jako v příkladu, bude téměř nemožné dosáhnout autonomie na mikroslužby.
 
-- Selhání v jedné mikroslužbě. Pokud jste implementovali řetězec mikroslužeb propojených voláním HTTP, když dojde k selhání některé mikroslužeb (a nakonec se nezdaří), celý řetězec mikroslužeb se nezdaří. Systém založený na mikroslužbách by měl být navržen tak, aby i nadále fungovat stejně dobře, jak je to možné během částečné selhání. I v případě, že implementovat logiku klienta, který používá opakování s exponenciální backoff nebo jistič mechanismy, složitější řetězce volání HTTP jsou, složitější je implementovat strategii selhání na základě protokolu HTTP.
+- Selhání v žádné jedné mikroslužbě. Pokud jste implementovali řetěz mikroslužeb propojených voláními HTTP, když kterákoli z mikroslužeb selže (a nakonec dojde k selhání), celý řetěz mikroslužeb se nezdaří. Systém založený na mikroslužbách by měl být navržený tak, aby během částečných selhání pokračoval i v práci. I když implementujete klientskou logiku, která používá opakování pomocí exponenciálních mechanismů omezení rychlosti nebo přestávek okruhů, složitější řetězce volání HTTP jsou složitější, takže je implementace strategie selhání založená na protokolu HTTP.
 
-Ve skutečnosti pokud vaše interní mikroslužby komunikují vytvořením řetězců požadavků HTTP, jak je popsáno, může být argumentováno, že máte monolitickou aplikaci, ale založenou na protokolu HTTP mezi procesy namísto mechanismů komunikace v rámci procesu.
+Ve skutečnosti platí, že pokud vaše interní mikroslužby komunikují vytvořením řetězů požadavků HTTP, jak je popsáno, může být namítáno, že máte aplikaci monolitické, ale jednu na základě HTTP mezi procesy namísto mechanismů komunikace uvnitř procesu.
 
-Proto za účelem vynucení autonomie mikroslužeb a mají lepší odolnost proti chybám, měli byste minimalizovat použití řetězců komunikace požadavku a odpovědi napříč mikroslužeb. Doporučujeme používat pouze asynchronní interakci pro komunikaci mezi mikroslužbami, a to buď pomocí asynchronní komunikace založené na událostech, nebo pomocí (asynchronního) dotazování HTTP nezávisle na původním cyklu požadavku a odpovědi HTTP.
+Aby bylo možné vyhovět autonomii mikroslužeb a mít lepší odolnost, měli byste minimalizovat použití řetězů komunikace mezi žádostmi a odpověďmi napříč mikroslužbami. Doporučujeme, abyste pro komunikaci mezi mikroslužbami používali pouze asynchronní interakce, buď pomocí asynchronní komunikace založené na zprávách a událostech, nebo pomocí (asynchronního) dotazování HTTP nezávisle na původním cyklu požadavků a odpovědí HTTP.
 
-Použití asynchronní komunikace je vysvětleno další podrobnosti dále v této příručce v [oddílech Asynchronní integrace mikroslužeb vynucuje autonomii mikroslužeb](communication-in-microservice-architecture.md#asynchronous-microservice-integration-enforces-microservices-autonomy) a [asynchronní komunikaci založenou na zprávě](asynchronous-message-based-communication.md).
+Použití asynchronní komunikace je vysvětleno dalšími podrobnostmi dále v této příručce v části [asynchronní integrace mikroslužeb vynutila samostatnou](communication-in-microservice-architecture.md#asynchronous-microservice-integration-enforces-microservices-autonomy) komunikaci mikroslužeb a [asynchronní komunikaci na základě zpráv](asynchronous-message-based-communication.md).
 
 ## <a name="additional-resources"></a>Další zdroje
 
-- **SZP** \
+- **CAP věta** \
   <https://en.wikipedia.org/wiki/CAP_theorem>
 
 - **Konečná konzistence** \
   <https://en.wikipedia.org/wiki/Eventual_consistency>
 
-- **Základní nátěr konzistence dat** \
+- **Úvod do konzistence dat** \
   <https://docs.microsoft.com/previous-versions/msp-n-p/dn589800(v=pandp.10)>
 
-- **Martin Fowler. CQRS (oddělení odpovědnosti příkazu a dotazu)** \
+- **Martin Fowlera. CQRS (CQRS (Command and Query Responsibility Segregation))** \
   <https://martinfowler.com/bliki/CQRS.html>
 
-- **Zhmotněný pohled** \
+- **Materializované zobrazení** \
   <https://docs.microsoft.com/azure/architecture/patterns/materialized-view>
 
-- **Charles Erow. ACID vs. BASE: Přesouvání pH zpracování databázových transakcí** \
+- **Charles řádek KYSELOST vs. BASE: posunování pH zpracování transakcí databáze** \
   <https://www.dataversity.net/acid-vs-base-the-shifting-ph-of-database-transaction-processing/>
 
 - **Kompenzační transakce** \
   <https://docs.microsoft.com/azure/architecture/patterns/compensating-transaction>
 
-- **Udi Dahan. Služba orientovaná kompozice** \
-  <http://udidahan.com/2014/07/30/service-oriented-composition-with-video/>
+- **UDI Dahan. Složení orientované na služby** \
+  <https://udidahan.com/2014/07/30/service-oriented-composition-with-video/>
 
 >[!div class="step-by-step"]
->[Předchozí](logical-versus-physical-architecture.md)
->[další](identify-microservice-domain-model-boundaries.md)
+>[Předchozí](logical-versus-physical-architecture.md) 
+> [Další](identify-microservice-domain-model-boundaries.md)
