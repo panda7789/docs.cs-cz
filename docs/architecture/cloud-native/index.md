@@ -3,92 +3,92 @@ title: Architekt cloudových nativních aplikací .NET pro Azure
 description: Příručka pro sestavování nativních aplikací cloudu využívajících kontejnery, mikroslužby a funkce bez serveru v Azure.
 author: ardalis
 ms.date: 05/13/2020
-ms.openlocfilehash: 196671468e56147f714078d1671f44af21bcf327
-ms.sourcegitcommit: e5772b3ddcc114c80b4c9767ffdb3f6c7fad8f05
+ms.openlocfilehash: b315f097b1584bd93f694c10f36ee7524d7e020a
+ms.sourcegitcommit: ee5b798427f81237a3c23d1fd81fff7fdc21e8d3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/26/2020
-ms.locfileid: "83840881"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84144380"
 ---
-# <a name="architecting-cloud-native-net-applications-for-azure"></a><span data-ttu-id="70663-103">Architekt cloudových nativních aplikací .NET pro Azure</span><span class="sxs-lookup"><span data-stu-id="70663-103">Architecting Cloud Native .NET Applications for Azure</span></span>
+# <a name="architecting-cloud-native-net-applications-for-azure"></a><span data-ttu-id="5737e-103">Architekt cloudových nativních aplikací .NET pro Azure</span><span class="sxs-lookup"><span data-stu-id="5737e-103">Architecting Cloud Native .NET Applications for Azure</span></span>
 
 ![titulní obrázek](./media/cover.png)
 
-<span data-ttu-id="70663-105">**EDICE v. 1.0**</span><span class="sxs-lookup"><span data-stu-id="70663-105">**EDITION v.1.0**</span></span>
+<span data-ttu-id="5737e-105">**EDICE v. 1.0**</span><span class="sxs-lookup"><span data-stu-id="5737e-105">**EDITION v.1.0**</span></span>
 
-<span data-ttu-id="70663-106">PUBLIKOVAL(A)</span><span class="sxs-lookup"><span data-stu-id="70663-106">PUBLISHED BY</span></span>
+<span data-ttu-id="5737e-106">PUBLIKOVAL(A)</span><span class="sxs-lookup"><span data-stu-id="5737e-106">PUBLISHED BY</span></span>
 
-<span data-ttu-id="70663-107">Týmy produktů Microsoft Developer divize, .NET a Visual Studio</span><span class="sxs-lookup"><span data-stu-id="70663-107">Microsoft Developer Division, .NET, and Visual Studio product teams</span></span>
+<span data-ttu-id="5737e-107">Týmy produktů Microsoft Developer divize, .NET a Visual Studio</span><span class="sxs-lookup"><span data-stu-id="5737e-107">Microsoft Developer Division, .NET, and Visual Studio product teams</span></span>
 
-<span data-ttu-id="70663-108">Divize společnosti Microsoft Corporation</span><span class="sxs-lookup"><span data-stu-id="70663-108">A division of Microsoft Corporation</span></span>
+<span data-ttu-id="5737e-108">Divize společnosti Microsoft Corporation</span><span class="sxs-lookup"><span data-stu-id="5737e-108">A division of Microsoft Corporation</span></span>
 
-<span data-ttu-id="70663-109">One Microsoft Way</span><span class="sxs-lookup"><span data-stu-id="70663-109">One Microsoft Way</span></span>
+<span data-ttu-id="5737e-109">One Microsoft Way</span><span class="sxs-lookup"><span data-stu-id="5737e-109">One Microsoft Way</span></span>
 
-<span data-ttu-id="70663-110">Redmond, Washington 98052-6399</span><span class="sxs-lookup"><span data-stu-id="70663-110">Redmond, Washington 98052-6399</span></span>
+<span data-ttu-id="5737e-110">Redmond, Washington 98052-6399</span><span class="sxs-lookup"><span data-stu-id="5737e-110">Redmond, Washington 98052-6399</span></span>
 
-<span data-ttu-id="70663-111">Copyright &copy; 2020 od společnosti Microsoft Corporation</span><span class="sxs-lookup"><span data-stu-id="70663-111">Copyright &copy; 2020 by Microsoft Corporation</span></span>
+<span data-ttu-id="5737e-111">Copyright &copy; 2020 od společnosti Microsoft Corporation</span><span class="sxs-lookup"><span data-stu-id="5737e-111">Copyright &copy; 2020 by Microsoft Corporation</span></span>
 
-<span data-ttu-id="70663-112">Všechna práva vyhrazena.</span><span class="sxs-lookup"><span data-stu-id="70663-112">All rights reserved.</span></span> <span data-ttu-id="70663-113">Žádná část obsahu této knihy se nedá reprodukovat ani přenést v jakékoli formě nebo jakýmkoli způsobem bez písemného svolení vydavatele.</span><span class="sxs-lookup"><span data-stu-id="70663-113">No part of the contents of this book may be reproduced or transmitted in any form or by any means without the written permission of the publisher.</span></span>
+<span data-ttu-id="5737e-112">Všechna práva vyhrazena.</span><span class="sxs-lookup"><span data-stu-id="5737e-112">All rights reserved.</span></span> <span data-ttu-id="5737e-113">Žádná část obsahu této knihy se nedá reprodukovat ani přenést v jakékoli formě nebo jakýmkoli způsobem bez písemného svolení vydavatele.</span><span class="sxs-lookup"><span data-stu-id="5737e-113">No part of the contents of this book may be reproduced or transmitted in any form or by any means without the written permission of the publisher.</span></span>
 
-<span data-ttu-id="70663-114">Tato kniha je k dispozici "tak jak jsou" a vyjadřuje zobrazení a stanoviska autora.</span><span class="sxs-lookup"><span data-stu-id="70663-114">This book is provided "as-is" and expresses the author's views and opinions.</span></span> <span data-ttu-id="70663-115">Zobrazení, názory a informace vyjádřené v této knize, včetně adres URL a dalších odkazů na internetové weby, se mohou změnit bez předchozího upozornění.</span><span class="sxs-lookup"><span data-stu-id="70663-115">The views, opinions, and information expressed in this book, including URL and other Internet website references, may change without notice.</span></span>
+<span data-ttu-id="5737e-114">Tato kniha je k dispozici "tak jak jsou" a vyjadřuje zobrazení a stanoviska autora.</span><span class="sxs-lookup"><span data-stu-id="5737e-114">This book is provided "as-is" and expresses the author's views and opinions.</span></span> <span data-ttu-id="5737e-115">Zobrazení, názory a informace vyjádřené v této knize, včetně adres URL a dalších odkazů na internetové weby, se mohou změnit bez předchozího upozornění.</span><span class="sxs-lookup"><span data-stu-id="5737e-115">The views, opinions, and information expressed in this book, including URL and other Internet website references, may change without notice.</span></span>
 
-<span data-ttu-id="70663-116">Některé zde uvedené příklady slouží pouze k znázornění a jsou smyšlené.</span><span class="sxs-lookup"><span data-stu-id="70663-116">Some examples depicted herein are provided for illustration only and are fictitious.</span></span> <span data-ttu-id="70663-117">Neměli byste z nich vyvozovat žádné skutečné vztahy či spojení.</span><span class="sxs-lookup"><span data-stu-id="70663-117">No real association or connection is intended or should be inferred.</span></span>
+<span data-ttu-id="5737e-116">Některé zde uvedené příklady slouží pouze k znázornění a jsou smyšlené.</span><span class="sxs-lookup"><span data-stu-id="5737e-116">Some examples depicted herein are provided for illustration only and are fictitious.</span></span> <span data-ttu-id="5737e-117">Neměli byste z nich vyvozovat žádné skutečné vztahy či spojení.</span><span class="sxs-lookup"><span data-stu-id="5737e-117">No real association or connection is intended or should be inferred.</span></span>
 
-<span data-ttu-id="70663-118">Microsoft a ochranné známky uvedené na [https://www.microsoft.com](https://www.microsoft.com) webové stránce ochranné známky jsou ochranné známky skupiny společností Microsoft.</span><span class="sxs-lookup"><span data-stu-id="70663-118">Microsoft and the trademarks listed at [https://www.microsoft.com](https://www.microsoft.com) on the "Trademarks" webpage are trademarks of the Microsoft group of companies.</span></span>
+<span data-ttu-id="5737e-118">Microsoft a ochranné známky uvedené na <https://www.microsoft.com> webové stránce ochranné známky jsou ochranné známky skupiny společností Microsoft.</span><span class="sxs-lookup"><span data-stu-id="5737e-118">Microsoft and the trademarks listed at <https://www.microsoft.com> on the "Trademarks" webpage are trademarks of the Microsoft group of companies.</span></span>
 
-<span data-ttu-id="70663-119">Mac a macOS jsou ochranné známky společnosti Apple Inc.</span><span class="sxs-lookup"><span data-stu-id="70663-119">Mac and macOS are trademarks of Apple Inc.</span></span>
+<span data-ttu-id="5737e-119">Mac a macOS jsou ochranné známky společnosti Apple Inc.</span><span class="sxs-lookup"><span data-stu-id="5737e-119">Mac and macOS are trademarks of Apple Inc.</span></span>
 
-<span data-ttu-id="70663-120">Logo Docker Whale je registrovaná ochranná známka společnosti Docker, Inc., kterou používá oprávnění.</span><span class="sxs-lookup"><span data-stu-id="70663-120">The Docker whale logo is a registered trademark of Docker, Inc. Used by permission.</span></span>
+<span data-ttu-id="5737e-120">Logo Docker Whale je registrovaná ochranná známka společnosti Docker, Inc., kterou používá oprávnění.</span><span class="sxs-lookup"><span data-stu-id="5737e-120">The Docker whale logo is a registered trademark of Docker, Inc. Used by permission.</span></span>
 
-<span data-ttu-id="70663-121">Všechny ostatní značky a loga jsou majetkem příslušných vlastníků.</span><span class="sxs-lookup"><span data-stu-id="70663-121">All other marks and logos are property of their respective owners.</span></span>
+<span data-ttu-id="5737e-121">Všechny ostatní značky a loga jsou majetkem příslušných vlastníků.</span><span class="sxs-lookup"><span data-stu-id="5737e-121">All other marks and logos are property of their respective owners.</span></span>
 
-<span data-ttu-id="70663-122">Autoři</span><span class="sxs-lookup"><span data-stu-id="70663-122">Authors:</span></span>
+<span data-ttu-id="5737e-122">Autoři</span><span class="sxs-lookup"><span data-stu-id="5737e-122">Authors:</span></span>
 
-> <span data-ttu-id="70663-123">**Rob Vettor**, hlavní architekt cloudového systému/architekt IP – [thinkingincloudnative.com](http://thinkingincloudnative.com/about/), Microsoft</span><span class="sxs-lookup"><span data-stu-id="70663-123">**Rob Vettor**, Principal Cloud System Architect/IP Architect - [thinkingincloudnative.com](http://thinkingincloudnative.com/about/), Microsoft</span></span>
+> <span data-ttu-id="5737e-123">**Rob Vettor**, hlavní architekt cloudového systému/architekt IP – [thinkingincloudnative.com](https://thinkingincloudnative.com/about/), Microsoft</span><span class="sxs-lookup"><span data-stu-id="5737e-123">**Rob Vettor**, Principal Cloud System Architect/IP Architect - [thinkingincloudnative.com](https://thinkingincloudnative.com/about/), Microsoft</span></span>
 >
-> <span data-ttu-id="70663-124">**Steve "ardalis" Smith**, software architekt a Trainer- [Ardalis.com](https://ardalis.com)</span><span class="sxs-lookup"><span data-stu-id="70663-124">**Steve "ardalis" Smith**, Software Architect and Trainer - [Ardalis.com](https://ardalis.com)</span></span>
+> <span data-ttu-id="5737e-124">**Steve "ardalis" Smith**, software architekt a Trainer- [Ardalis.com](https://ardalis.com)</span><span class="sxs-lookup"><span data-stu-id="5737e-124">**Steve "ardalis" Smith**, Software Architect and Trainer - [Ardalis.com](https://ardalis.com)</span></span>
 
-<span data-ttu-id="70663-125">Účastníci a kontroloři:</span><span class="sxs-lookup"><span data-stu-id="70663-125">Participants and Reviewers:</span></span>
+<span data-ttu-id="5737e-125">Účastníci a kontroloři:</span><span class="sxs-lookup"><span data-stu-id="5737e-125">Participants and Reviewers:</span></span>
 
-> <span data-ttu-id="70663-126">**Cesar de la Torre**, Principal program Manager, .NET Team, Microsoft</span><span class="sxs-lookup"><span data-stu-id="70663-126">**Cesar De la Torre**, Principal Program Manager, .NET team, Microsoft</span></span>
+> <span data-ttu-id="5737e-126">**Cesar de la Torre**, Principal program Manager, .NET Team, Microsoft</span><span class="sxs-lookup"><span data-stu-id="5737e-126">**Cesar De la Torre**, Principal Program Manager, .NET team, Microsoft</span></span>
 >
-> <span data-ttu-id="70663-127">**Nish Anil**, vedoucí program, tým .NET, Microsoft</span><span class="sxs-lookup"><span data-stu-id="70663-127">**Nish Anil**, Senior Program Manager, .NET team, Microsoft</span></span>
+> <span data-ttu-id="5737e-127">**Nish Anil**, vedoucí program, tým .NET, Microsoft</span><span class="sxs-lookup"><span data-stu-id="5737e-127">**Nish Anil**, Senior Program Manager, .NET team, Microsoft</span></span>
 >
-> <span data-ttu-id="70663-128">**Jeremy Likness**, vedoucí program, tým .NET, Microsoft</span><span class="sxs-lookup"><span data-stu-id="70663-128">**Jeremy Likness**, Senior Program Manager, .NET team, Microsoft</span></span>
+> <span data-ttu-id="5737e-128">**Jeremy Likness**, vedoucí program, tým .NET, Microsoft</span><span class="sxs-lookup"><span data-stu-id="5737e-128">**Jeremy Likness**, Senior Program Manager, .NET team, Microsoft</span></span>
 >
-> <span data-ttu-id="70663-129">**Cecil Phillip**, hlavní poradce pro Cloud, Microsoft</span><span class="sxs-lookup"><span data-stu-id="70663-129">**Cecil Phillip**, Senior Cloud Advocate, Microsoft</span></span>
+> <span data-ttu-id="5737e-129">**Cecil Phillip**, hlavní poradce pro Cloud, Microsoft</span><span class="sxs-lookup"><span data-stu-id="5737e-129">**Cecil Phillip**, Senior Cloud Advocate, Microsoft</span></span>
 
-<span data-ttu-id="70663-130">Editory</span><span class="sxs-lookup"><span data-stu-id="70663-130">Editors:</span></span>
+<span data-ttu-id="5737e-130">Editory</span><span class="sxs-lookup"><span data-stu-id="5737e-130">Editors:</span></span>
 
-> <span data-ttu-id="70663-131">**Maira Wenzel**, programový manažer, tým .NET, Microsoft</span><span class="sxs-lookup"><span data-stu-id="70663-131">**Maira Wenzel**, Program Manager, .NET team, Microsoft</span></span>
+> <span data-ttu-id="5737e-131">**Maira Wenzel**, programový manažer, tým .NET, Microsoft</span><span class="sxs-lookup"><span data-stu-id="5737e-131">**Maira Wenzel**, Program Manager, .NET team, Microsoft</span></span>
 
-## <a name="version"></a><span data-ttu-id="70663-132">Verze</span><span class="sxs-lookup"><span data-stu-id="70663-132">Version</span></span>
+## <a name="version"></a><span data-ttu-id="5737e-132">Verze</span><span class="sxs-lookup"><span data-stu-id="5737e-132">Version</span></span>
 
-<span data-ttu-id="70663-133">Tato příručka se zapsala jako verze **.NET core 3,1** spolu s mnoha dalšími aktualizacemi, které se týkají stejných "Wave" technologií (tj. Azure a dalších technologií třetích stran), které se shodují v čase s verzí .net Core 3,1.</span><span class="sxs-lookup"><span data-stu-id="70663-133">This guide has been written to cover **.NET Core 3.1** version along with many additional updates related to the same “wave” of technologies (that is, Azure and additional third-party technologies) coinciding in time with the .NET Core 3.1 release.</span></span>
+<span data-ttu-id="5737e-133">Tato příručka se zapsala jako verze **.NET core 3,1** spolu s mnoha dalšími aktualizacemi, které se týkají stejných "Wave" technologií (tj. Azure a dalších technologií třetích stran), které se shodují v čase s verzí .net Core 3,1.</span><span class="sxs-lookup"><span data-stu-id="5737e-133">This guide has been written to cover **.NET Core 3.1** version along with many additional updates related to the same “wave” of technologies (that is, Azure and additional third-party technologies) coinciding in time with the .NET Core 3.1 release.</span></span>
 
-## <a name="who-should-use-this-guide"></a><span data-ttu-id="70663-134">Kdo by měl používat tuto příručku</span><span class="sxs-lookup"><span data-stu-id="70663-134">Who should use this guide</span></span>
+## <a name="who-should-use-this-guide"></a><span data-ttu-id="5737e-134">Kdo by měl používat tuto příručku</span><span class="sxs-lookup"><span data-stu-id="5737e-134">Who should use this guide</span></span>
 
-<span data-ttu-id="70663-135">Cílová skupina pro tento průvodce je hlavně vývojářům, vedoucím vývoje a architektům, kteří mají zájem o vytváření aplikací určených pro Cloud.</span><span class="sxs-lookup"><span data-stu-id="70663-135">The audience for this guide is mainly developers, development leads, and architects who are interested in learning how to build applications designed for the cloud.</span></span>
+<span data-ttu-id="5737e-135">Cílová skupina pro tento průvodce je hlavně vývojářům, vedoucím vývoje a architektům, kteří mají zájem o vytváření aplikací určených pro Cloud.</span><span class="sxs-lookup"><span data-stu-id="5737e-135">The audience for this guide is mainly developers, development leads, and architects who are interested in learning how to build applications designed for the cloud.</span></span>
 
-<span data-ttu-id="70663-136">Sekundární cílová skupina je technickým rozhodnutím, které plánuje vybrat, jestli se mají vytvářet aplikace s využitím nativního přístupu v cloudu.</span><span class="sxs-lookup"><span data-stu-id="70663-136">A secondary audience is technical decision-makers who plan to choose whether to build their applications using a cloud-native approach.</span></span>
+<span data-ttu-id="5737e-136">Sekundární cílová skupina je technickým rozhodnutím, které plánuje vybrat, jestli se mají vytvářet aplikace s využitím nativního přístupu v cloudu.</span><span class="sxs-lookup"><span data-stu-id="5737e-136">A secondary audience is technical decision-makers who plan to choose whether to build their applications using a cloud-native approach.</span></span>
 
-## <a name="how-you-can-use-this-guide"></a><span data-ttu-id="70663-137">Jak můžete použít tuto příručku</span><span class="sxs-lookup"><span data-stu-id="70663-137">How you can use this guide</span></span>
+## <a name="how-you-can-use-this-guide"></a><span data-ttu-id="5737e-137">Jak můžete použít tuto příručku</span><span class="sxs-lookup"><span data-stu-id="5737e-137">How you can use this guide</span></span>
 
-<span data-ttu-id="70663-138">Tato příručka začíná definováním cloudového nativního nasazení a představením referenční aplikace vytvořené pomocí cloudových nativních principů a technologií.</span><span class="sxs-lookup"><span data-stu-id="70663-138">This guide begins by defining cloud native and introducing a reference application built using cloud-native principles and technologies.</span></span> <span data-ttu-id="70663-139">Kromě těchto prvních dvou kapitol se zbytek knihy rozdělí na konkrétní kapitoly zaměřené na témata, která jsou společná pro většinu cloudových nativních aplikací.</span><span class="sxs-lookup"><span data-stu-id="70663-139">Beyond these first two chapters, the rest of the book is broken up into specific chapters focused on topics common to most cloud-native applications.</span></span> <span data-ttu-id="70663-140">Pokud se chcete dozvědět víc o přístupech nativních ke cloudu, můžete přejít na libovolnou z těchto kapitol:</span><span class="sxs-lookup"><span data-stu-id="70663-140">You can jump to any of these chapters to learn about cloud-native approaches to:</span></span>
+<span data-ttu-id="5737e-138">Tato příručka začíná definováním cloudového nativního nasazení a představením referenční aplikace vytvořené pomocí cloudových nativních principů a technologií.</span><span class="sxs-lookup"><span data-stu-id="5737e-138">This guide begins by defining cloud native and introducing a reference application built using cloud-native principles and technologies.</span></span> <span data-ttu-id="5737e-139">Kromě těchto prvních dvou kapitol se zbytek knihy rozdělí na konkrétní kapitoly zaměřené na témata, která jsou společná pro většinu cloudových nativních aplikací.</span><span class="sxs-lookup"><span data-stu-id="5737e-139">Beyond these first two chapters, the rest of the book is broken up into specific chapters focused on topics common to most cloud-native applications.</span></span> <span data-ttu-id="5737e-140">Pokud se chcete dozvědět víc o přístupech nativních ke cloudu, můžete přejít na libovolnou z těchto kapitol:</span><span class="sxs-lookup"><span data-stu-id="5737e-140">You can jump to any of these chapters to learn about cloud-native approaches to:</span></span>
 
-- <span data-ttu-id="70663-141">Data a přístup k datům</span><span class="sxs-lookup"><span data-stu-id="70663-141">Data and data access</span></span>
-- <span data-ttu-id="70663-142">Vzory komunikace</span><span class="sxs-lookup"><span data-stu-id="70663-142">Communication patterns</span></span>
-- <span data-ttu-id="70663-143">Škálování a škálovatelnost</span><span class="sxs-lookup"><span data-stu-id="70663-143">Scaling and scalability</span></span>
-- <span data-ttu-id="70663-144">Odolnost aplikace</span><span class="sxs-lookup"><span data-stu-id="70663-144">Application resiliency</span></span>
-- <span data-ttu-id="70663-145">Monitorování a stav</span><span class="sxs-lookup"><span data-stu-id="70663-145">Monitoring and health</span></span>
-- <span data-ttu-id="70663-146">Identita a zabezpečení</span><span class="sxs-lookup"><span data-stu-id="70663-146">Identity and security</span></span>
-- <span data-ttu-id="70663-147">DevOps</span><span class="sxs-lookup"><span data-stu-id="70663-147">DevOps</span></span>
+- <span data-ttu-id="5737e-141">Data a přístup k datům</span><span class="sxs-lookup"><span data-stu-id="5737e-141">Data and data access</span></span>
+- <span data-ttu-id="5737e-142">Vzory komunikace</span><span class="sxs-lookup"><span data-stu-id="5737e-142">Communication patterns</span></span>
+- <span data-ttu-id="5737e-143">Škálování a škálovatelnost</span><span class="sxs-lookup"><span data-stu-id="5737e-143">Scaling and scalability</span></span>
+- <span data-ttu-id="5737e-144">Odolnost aplikace</span><span class="sxs-lookup"><span data-stu-id="5737e-144">Application resiliency</span></span>
+- <span data-ttu-id="5737e-145">Monitorování a stav</span><span class="sxs-lookup"><span data-stu-id="5737e-145">Monitoring and health</span></span>
+- <span data-ttu-id="5737e-146">Identita a zabezpečení</span><span class="sxs-lookup"><span data-stu-id="5737e-146">Identity and security</span></span>
+- <span data-ttu-id="5737e-147">DevOps</span><span class="sxs-lookup"><span data-stu-id="5737e-147">DevOps</span></span>
 
-<span data-ttu-id="70663-148">Tato příručka je k dispozici ve formátu PDF i v online režimu.</span><span class="sxs-lookup"><span data-stu-id="70663-148">This guide is available both in PDF form and online.</span></span> <span data-ttu-id="70663-149">Nebojte se, že tento dokument předáte nebo odkazuje na jeho online verzi týmu, aby se zajistilo běžné porozumění těmto tématům.</span><span class="sxs-lookup"><span data-stu-id="70663-149">Feel free to forward this document or links to its online version to your team to help ensure common understanding of these topics.</span></span> <span data-ttu-id="70663-150">Většina těchto témat přináší konzistentní porozumění základním principům a vzorům a kompromisům, které se týkají rozhodnutí souvisejících s těmito tématy.</span><span class="sxs-lookup"><span data-stu-id="70663-150">Most of these topics benefit from a consistent understanding of the underlying principles and patterns, as well as the trade-offs involved in decisions related to these topics.</span></span> <span data-ttu-id="70663-151">Naším cílem tohoto dokumentu je vybavit týmy a jejich vedoucími informacemi, které potřebují k rozhodování o jejich architektuře, vývoji a hostování svých aplikací.</span><span class="sxs-lookup"><span data-stu-id="70663-151">Our goal with this document is to equip teams and their leaders with the information they need to make well-informed decisions for their applications' architecture, development, and hosting.</span></span>
+<span data-ttu-id="5737e-148">Tato příručka je k dispozici ve formátu PDF i v online režimu.</span><span class="sxs-lookup"><span data-stu-id="5737e-148">This guide is available both in PDF form and online.</span></span> <span data-ttu-id="5737e-149">Nebojte se, že tento dokument předáte nebo odkazuje na jeho online verzi týmu, aby se zajistilo běžné porozumění těmto tématům.</span><span class="sxs-lookup"><span data-stu-id="5737e-149">Feel free to forward this document or links to its online version to your team to help ensure common understanding of these topics.</span></span> <span data-ttu-id="5737e-150">Většina těchto témat přináší konzistentní porozumění základním principům a vzorům a kompromisům, které se týkají rozhodnutí souvisejících s těmito tématy.</span><span class="sxs-lookup"><span data-stu-id="5737e-150">Most of these topics benefit from a consistent understanding of the underlying principles and patterns, as well as the trade-offs involved in decisions related to these topics.</span></span> <span data-ttu-id="5737e-151">Naším cílem tohoto dokumentu je vybavit týmy a jejich vedoucími informacemi, které potřebují k rozhodování o jejich architektuře, vývoji a hostování svých aplikací.</span><span class="sxs-lookup"><span data-stu-id="5737e-151">Our goal with this document is to equip teams and their leaders with the information they need to make well-informed decisions for their applications' architecture, development, and hosting.</span></span>
 
-## <a name="send-your-feedback"></a><span data-ttu-id="70663-152">Poslat svůj názor</span><span class="sxs-lookup"><span data-stu-id="70663-152">Send your feedback</span></span>
+## <a name="send-your-feedback"></a><span data-ttu-id="5737e-152">Poslat svůj názor</span><span class="sxs-lookup"><span data-stu-id="5737e-152">Send your feedback</span></span>
 
-<span data-ttu-id="70663-153">Tato kniha a související ukázky se neustále vyvíjí, takže se vaše zpětná vazba vítá!</span><span class="sxs-lookup"><span data-stu-id="70663-153">This book and related samples are constantly evolving, so your feedback is welcomed!</span></span> <span data-ttu-id="70663-154">Pokud máte komentáře k tomu, jak se tato kniha dá zlepšit, použijte část zpětná vazba v dolní části každé stránky založené na [problémech na GitHubu](https://github.com/dotnet/docs/issues).</span><span class="sxs-lookup"><span data-stu-id="70663-154">If you have comments about how this book can be improved, use the feedback section at the bottom of any page built on [GitHub issues](https://github.com/dotnet/docs/issues).</span></span>
+<span data-ttu-id="5737e-153">Tato kniha a související ukázky se neustále vyvíjí, takže se vaše zpětná vazba vítá!</span><span class="sxs-lookup"><span data-stu-id="5737e-153">This book and related samples are constantly evolving, so your feedback is welcomed!</span></span> <span data-ttu-id="5737e-154">Pokud máte komentáře k tomu, jak se tato kniha dá zlepšit, použijte část zpětná vazba v dolní části každé stránky založené na [problémech na GitHubu](https://github.com/dotnet/docs/issues).</span><span class="sxs-lookup"><span data-stu-id="5737e-154">If you have comments about how this book can be improved, use the feedback section at the bottom of any page built on [GitHub issues](https://github.com/dotnet/docs/issues).</span></span>
 
 >[!div class="step-by-step"]
->[<span data-ttu-id="70663-155">Další</span><span class="sxs-lookup"><span data-stu-id="70663-155">Next</span></span>](introduction.md)
+>[<span data-ttu-id="5737e-155">Další</span><span class="sxs-lookup"><span data-stu-id="5737e-155">Next</span></span>](introduction.md)
