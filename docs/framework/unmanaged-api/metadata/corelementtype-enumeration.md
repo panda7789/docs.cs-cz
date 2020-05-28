@@ -14,16 +14,16 @@ helpviewer_keywords:
 ms.assetid: c3809c8f-1737-4f0f-9442-0c01ee689871
 topic_type:
 - apiref
-ms.openlocfilehash: a4e9268d292004f447b30c82f1db4d0fe58404fe
-ms.sourcegitcommit: 7e2128d4a4c45b4274bea3b8e5760d4694569ca1
+ms.openlocfilehash: 25fb3278e576ebe4a538379918e868b2e5f87911
+ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75937948"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84007868"
 ---
 # <a name="corelementtype-enumeration"></a>CorElementType – výčet
 
-Určuje modul CLR (Common Language Runtime) <xref:System.Type>, modifikátor typu nebo informace o typu v signatuře typu metadat.
+Určuje modul CLR (Common Language Runtime) <xref:System.Type> , modifikátor typu nebo informace o typu v signatuře typu metadat.
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -77,7 +77,7 @@ typedef enum CorElementType {
 
 ## <a name="members"></a>Členové
 
-|Člen|Popis|
+|Člen|Description|
 |------------|-----------------|
 |`ELEMENT_TYPE_END`|Používá se interně.|
 |`ELEMENT_TYPE_VOID`|Typ void.|
@@ -118,34 +118,34 @@ typedef enum CorElementType {
 
 ## <a name="remarks"></a>Poznámky
 
-Modifikátory typu tvoří základ pro reprezentace složitějších typů. Hodnota modifikátoru typu `CorElementType` se aplikuje na hodnotu, která se v signatuře typu hned za ní následuje. Hodnota, která následuje za hodnotou modifikátoru typu `CorElementType`, může být `CorElementType` jednoduchá hodnota typu, token metadat nebo jiná hodnota, jak je uvedeno v následující tabulce.
+Modifikátory typu tvoří základ pro reprezentace složitějších typů. `CorElementType`Hodnota modifikátoru typu se aplikuje na hodnotu, která se na Signature typu hned doplní. Hodnota, která následuje jako `CorElementType` hodnota modifikátoru typu, může být `CorElementType` jednoduchá hodnota typu, token metadat nebo jiná hodnota, jak je uvedeno v následující tabulce.
 
 > [!NOTE]
 > Všechna čísla (*číslo*, *počet argumentů*, *token metadat*, *pořadí*, *počet*a *mez*) jsou ukládána jako komprimovaná celá čísla. Podrobnosti najdete v tématu [Standard ECMA-335-Common Language Infrastructure (CLI)](http://www.ecma-international.org/publications/standards/Ecma-335.htm) na webu ECMA.
 
 |Modifikátor typu|Formát|
 |-------------------|------------|
-|`ELEMENT_TYPE_PTR`|ELEMENT_TYPE_PTR \<hodnotu `CorElementType` >|
-|`ELEMENT_TYPE_BYREF`|ELEMENT_TYPE_BYREF \<hodnotu `CorElementType` >|
-|`ELEMENT_TYPE_VALUETYPE`|ELEMENT_TYPE_VALUETYPE \<tokenu metadat `mdTypeDef` >|
-|`ELEMENT_TYPE_CLASS`|ELEMENT_TYPE_CLASS \<tokenu metadat `mdTypeDef` >|
-|`ELEMENT_TYPE_VAR`|Číslo \<ELEMENT_TYPE_VAR >|
-|`ELEMENT_TYPE_ARRAY`|ELEMENT_TYPE_ARRAY \<`CorElementType` hodnotě > \<Rank > \<count1 > \<bound1 >... \<countN > \<boundN >|
-|`ELEMENT_TYPE_GENERICINST`|ELEMENT_TYPE_GENERICINST \<tokenu metadat `mdTypeDef` > \<počet argumentů > \<arg1 >... \<argN >|
-|`ELEMENT_TYPE_FNPTR`|ELEMENT_TYPE_FNPTR \<kompletní signaturu funkce, včetně konvence volání >|
-|`ELEMENT_TYPE_SZARRAY`|ELEMENT_TYPE_SZARRAY \<hodnotu `CorElementType` >|
-|`ELEMENT_TYPE_MVAR`|Číslo \<ELEMENT_TYPE_MVAR >|
-|`ELEMENT_TYPE_CMOD_REQD`|ELEMENT_TYPE_\<`mdTypeRef` nebo `mdTypeDef` tokenu metadat >|
-|`ELEMENT_TYPE_CMOD_OPT`|E_T_CMOD_OPT \<`mdTypeRef` nebo `mdTypeDef` tokenu metadat >|
+|`ELEMENT_TYPE_PTR`|ELEMENT_TYPE_PTR\<a `CorElementType` value>|
+|`ELEMENT_TYPE_BYREF`|ELEMENT_TYPE_BYREF\<a `CorElementType` value>|
+|`ELEMENT_TYPE_VALUETYPE`|ELEMENT_TYPE_VALUETYPE\<an `mdTypeDef` metadata token>|
+|`ELEMENT_TYPE_CLASS`|ELEMENT_TYPE_CLASS\<an `mdTypeDef` metadata token>|
+|`ELEMENT_TYPE_VAR`|ELEMENT_TYPE_VAR\<number>|
+|`ELEMENT_TYPE_ARRAY`|ELEMENT_TYPE_ARRAY \<a `CorElementType` value> \<rank> \<count1> \<bound1> ... \<countN>\<boundN>|
+|`ELEMENT_TYPE_GENERICINST`|ELEMENT_TYPE_GENERICINST \<an `mdTypeDef` metadata token> \<argument Count> \<arg1> ...\<argN>|
+|`ELEMENT_TYPE_FNPTR`|ELEMENT_TYPE_FNPTR\<complete signature for the function, including calling convention>|
+|`ELEMENT_TYPE_SZARRAY`|ELEMENT_TYPE_SZARRAY\<a `CorElementType` value>|
+|`ELEMENT_TYPE_MVAR`|ELEMENT_TYPE_MVAR\<number>|
+|`ELEMENT_TYPE_CMOD_REQD`|ELEMENT_TYPE_\<a `mdTypeRef` or `mdTypeDef` metadata token>|
+|`ELEMENT_TYPE_CMOD_OPT`|E_T_CMOD_OPT\<a `mdTypeRef` or `mdTypeDef` metadata token>|
 
 ## <a name="requirements"></a>Požadavky
 
-**Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).
+**Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).
 
 **Hlavička:** CorHdr. h
 
-**Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]
+**Verze .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Výčty pro metadata](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)
+- [Výčty pro metadata](metadata-enumerations.md)

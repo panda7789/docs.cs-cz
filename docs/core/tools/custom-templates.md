@@ -3,12 +3,12 @@ title: Vlastní šablony pro dotnet New
 description: Seznamte se s vlastními šablonami pro jakýkoli typ projektu nebo souborů .NET.
 author: thraka
 ms.date: 05/20/2020
-ms.openlocfilehash: 19855c99b240b66dfa819e70d4a1bee5c8ed14ed
-ms.sourcegitcommit: c76c8b2c39ed2f0eee422b61a2ab4c05ca7771fa
+ms.openlocfilehash: 56fcbfbc168143007f0772ce8a12347f7e25e50b
+ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83761912"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84005310"
 ---
 # <a name="custom-templates-for-dotnet-new"></a>Vlastní šablony pro dotnet New
 
@@ -55,7 +55,7 @@ Soubory vygenerované šablonou lze upravit na základě logiky a nastavení, kt
 
 Soubor *template. JSON* je umístěný ve složce *. template. config* v kořenovém adresáři šablony. Soubor poskytuje konfigurační informace modulu šablony. Minimální konfigurace vyžaduje, aby členové byli uvedeni v následující tabulce, která je dostačující k vytvoření funkční šablony.
 
-| Člen            | Typ          | Popis |
+| Člen            | Typ          | Description |
 | ----------------- | ------------- | ----------- |
 | `$schema`         | Identifikátor URI           | Schéma JSON pro soubor *template. JSON* . Editory podporující schémata JSON povolují funkce úprav JSON při určení schématu. Například [Visual Studio Code](https://code.visualstudio.com/) vyžaduje, aby tento člen povoloval technologii IntelliSense. Použijte hodnotu `http://json.schemastore.org/template` . |
 | `author`          | řetězec        | Autor šablony |

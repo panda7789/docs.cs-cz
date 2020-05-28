@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 9ea07b57-96e2-44df-8711-8fe6c119087f
 topic_type:
 - apiref
-ms.openlocfilehash: e661bd82ecf6d804e852cca4a4478084edf303c5
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 90304eb94e6f53d3132c97f5ababdc45f6053d7c
+ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73141498"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84006568"
 ---
 # <a name="rundll32shimw-function"></a>RunDll32ShimW – funkce
 Provede zadaný příkaz.  
@@ -51,14 +51,14 @@ HRESULT RunDll32ShimW (
  pro Celé číslo, které určuje režim zobrazení okna výstup.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** MSCorEE. h  
   
  **Knihovna:** MSCorEE. dll  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Zastaralé funkce pro hostování CLR](../../../../docs/framework/unmanaged-api/hosting/deprecated-clr-hosting-functions.md)
+- [Zastaralé funkce hostování CLR](deprecated-clr-hosting-functions.md)

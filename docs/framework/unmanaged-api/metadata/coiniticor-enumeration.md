@@ -14,15 +14,15 @@ helpviewer_keywords:
 ms.assetid: 67fefd89-28d6-4588-84ea-dc7a5870e014
 topic_type:
 - apiref
-ms.openlocfilehash: bb9fcc4c6e1fd495e95caa1d2200d9fd516a7748
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: ef7851ddb33003b0b4b51065cf1fea3696ca6abd
+ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74444275"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84005944"
 ---
 # <a name="coiniticor-enumeration"></a>COINITICOR – výčet
-Určuje konstanty používané v [CoInitializeCor –](../../../../docs/framework/unmanaged-api/hosting/coinitializecor-function.md) při inicializaci modulu CLR (Common Language Runtime).  
+Určuje konstanty používané v [CoInitializeCor –](../hosting/coinitializecor-function.md) při inicializaci modulu CLR (Common Language Runtime).  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -35,19 +35,19 @@ typedef enum tagCOINITCOR
   
 ## <a name="members"></a>Členové  
   
-|Člen|Popis|  
+|Člen|Description|  
 |------------|-----------------|  
 |`COINITCOR`|Určuje výchozí režim inicializace.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** Cor. h  
   
  **Knihovna:** Zahrnuto jako prostředek v knihovně MsCorEE. dll  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Výčty pro metadata](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)
+- [Výčty pro metadata](metadata-enumerations.md)

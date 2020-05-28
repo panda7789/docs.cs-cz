@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: dfd4133f-a074-4db3-a7ee-4f250fe9ad3a
 topic_type:
 - apiref
-ms.openlocfilehash: 81640e8e34335898f4dd7f4f43eafbd3ef191d19
-ms.sourcegitcommit: 7e2128d4a4c45b4274bea3b8e5760d4694569ca1
+ms.openlocfilehash: 5e6f77b9b5da061a75d23d7f3f7b673754b62afd
+ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75938158"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84006360"
 ---
 # <a name="strongnamesignatureverificationex2-method"></a>StrongNameSignatureVerificationEx2 – metoda
 Ověří podpis silně pojmenovaného sestavení a poskytuje mapování z klíče ECMA na skutečný klíč.  
@@ -41,7 +41,7 @@ HRESULT StrongNameSignatureVerificationEx (
  pro Cesta k přenositelnému spustitelnému souboru (. exe nebo. dll) pro sestavení, které má být ověřeno.  
   
  `fForceVerification`  
- [in] `true` provádět ověřování, i když je nutné přepsat nastavení registru. v opačném případě `false`.  
+ [in] `true` ověřování proveďte i v případě, že je nutné přepsat nastavení registru. v opačném případě `false` .  
   
  `pbEcmaPublicKey`  
  pro Ukazatel na mapování z veřejného klíče ECMA na skutečný klíč, který se používá k ověření.  
@@ -50,22 +50,22 @@ HRESULT StrongNameSignatureVerificationEx (
  pro Délka skutečného veřejného klíče ECMA  
   
  `pfWasVerified`  
- [out] `true`, jestli se podpis silného názvu ověřil; v opačném případě `false`. Tento parametr je také nastaven na `false`, pokud bylo ověření úspěšné z důvodu nastavení registru.  
+ [out] `true` Pokud byl podpis silného názvu ověřen; v opačném případě `false` . Tento parametr je také nastaven na hodnotu, `false` Pokud bylo ověření úspěšné z důvodu nastavení registru.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- `S_OK`, zda bylo ověření úspěšné; v opačném případě hodnota HRESULT, která označuje selhání (viz [společné hodnoty HRESULT](/windows/win32/seccrypto/common-hresult-values) pro seznam).  
+ `S_OK`Pokud bylo ověření úspěšné; v opačném případě hodnota HRESULT, která označuje selhání (viz [společné hodnoty HRESULT](/windows/win32/seccrypto/common-hresult-values) pro seznam).  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** MetaHost. h  
   
  **Knihovna:** Zahrnuto jako prostředek v knihovně MSCorEE. dll  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [StrongNameSignatureVerification – metoda](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnamesignatureverification-method.md)
-- [StrongNameSignatureVerificationEx – metoda](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnamesignatureverificationex-method.md)
-- [ICLRStrongName – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-interface.md)
+- [StrongNameSignatureVerification – metoda](iclrstrongname-strongnamesignatureverification-method.md)
+- [StrongNameSignatureVerificationEx – metoda](iclrstrongname-strongnamesignatureverificationex-method.md)
+- [ICLRStrongName – rozhraní](iclrstrongname-interface.md)

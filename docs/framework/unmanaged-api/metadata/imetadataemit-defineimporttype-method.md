@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: 37fd27af-8062-4904-ace4-51bb78ec600a
 topic_type:
 - apiref
-ms.openlocfilehash: 6825a5198976cc7ab2c04ebd6e782418dcf4a8f7
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: edce5cb93b770fb5730e5a06633ffffacf332f7a
+ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79177684"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84004686"
 ---
 # <a name="imetadataemitdefineimporttype-method"></a>IMetaDataEmit::DefineImportType – metoda
-Vytvoří odkaz na zadaný typ, který je definován mimo aktuální obor, a definuje token pro tento odkaz.  
+Vytvoří odkaz na zadaný typ, který je definován mimo aktuální rozsah, a definuje token pro tento odkaz.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,39 +41,39 @@ HRESULT DefineImportType (
   
 ## <a name="parameters"></a>Parametry  
  `pAssemImport`  
- [v] Rozhraní [IMetaDataAssemblyImport,](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyimport-interface.md) které představuje sestavení, ze kterého je importován cílový typ.  
+ pro Rozhraní [IMetaDataAssemblyImport](imetadataassemblyimport-interface.md) , které představuje sestavení, ze kterého je importován cílový typ.  
   
  `pbHashValue`  
- [v] Pole, které obsahuje hash pro `pAssemImport`sestavení určené .  
+ pro Pole, které obsahuje hodnotu hash pro sestavení určené parametrem `pAssemImport` .  
   
  `cbHashValue`  
- [v] Počet bajtů v `pbHashValue` poli.  
+ pro Počet bajtů v `pbHashValue` poli.  
   
  `pImport`  
- [v] Rozhraní [IMetaDataImport,](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md) které představuje obor metadat, ze kterého je importován cílový typ.  
+ pro Rozhraní [IMetaDataImport](imetadataimport-interface.md) , které představuje obor metadat, ze kterého je importován cílový typ.  
   
  `tdImport`  
- [v] Token, `mdTypeDef` který určuje cílový typ.  
+ pro `mdTypeDef`Token, který určuje cílový typ.  
   
  `pAssemEmit`  
- [v] Rozhraní [IMetaDataAssemblyEmit,](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyemit-interface.md) které představuje sestavení, do kterého je importován cílový typ.  
+ pro Rozhraní [IMetaDataAssemblyEmit](imetadataassemblyemit-interface.md) představující sestavení, do kterého se naimportuje cílový typ.  
   
  `ptr`  
- [out] Token, `mdTypeRef` který je definován v aktuálním oboru pro odkaz na typ.  
+ mimo `mdTypeRef`Token, který je definován v aktuálním oboru pro odkaz na typ.  
   
 ## <a name="remarks"></a>Poznámky  
- Před voláním metody [IMetaDataEmit::DefineImportMember](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-defineimportmember-method.md) můžete `DefineImportType` použít metodu k vytvoření odkazu na typ v aktuálním oboru pro nadřazenou třídu člena nebo nadřazené rozhraní.  
+ Před voláním metody [IMetaDataEmit::D efineimportmember](imetadataemit-defineimportmember-method.md) lze použít `DefineImportType` metodu pro vytvoření odkazu na typ v aktuálním oboru pro nadřazenou třídu člena nebo pro nadřazené rozhraní.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Záhlaví:** Kor.h.  
+ **Hlavička:** Cor. h  
   
- **Knihovna:** Používá se jako prostředek v souboru MSCorEE.dll  
+ **Knihovna:** Používá se jako prostředek v knihovně MSCorEE. dll.  
   
- **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také
 
-- [IMetaDataEmit – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)
-- [IMetaDataEmit2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-interface.md)
+- [IMetaDataEmit – rozhraní](imetadataemit-interface.md)
+- [IMetaDataEmit2 – rozhraní](imetadataemit2-interface.md)

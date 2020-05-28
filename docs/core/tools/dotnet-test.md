@@ -2,12 +2,12 @@
 title: dotnet – příkaz testu
 description: Příkaz dotnet test se používá ke spouštění testů jednotek v daném projektu.
 ms.date: 04/29/2020
-ms.openlocfilehash: 22b27007d26c98cff40733ef8d449ce334f87848
-ms.sourcegitcommit: d223616e7e6fe2139079052e6fcbe25413fb9900
+ms.openlocfilehash: b427954fe0026e6ac96d3bbce2b70b5c44e884e0
+ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/22/2020
-ms.locfileid: "83802683"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84005372"
 ---
 # <a name="dotnet-test"></a>dotnet test
 
@@ -35,7 +35,7 @@ dotnet test [<PROJECT> | <SOLUTION> | <DIRECTORY> | <DLL>]
 dotnet test -h|--help
 ```
 
-## <a name="description"></a>Popis
+## <a name="description"></a>Description
 
 `dotnet test`Příkaz slouží ke spuštění testů jednotek v daném řešení. Příkaz sestaví `dotnet test` řešení a spustí testovací hostitelskou aplikaci pro každý projekt testů v řešení. Testovací hostitel provede v daném projektu testy pomocí testovacího rozhraní, například: MSTest, NUnit nebo xUnit, a ohlásí úspěch nebo neúspěch každého testu. Pokud jsou všechny testy úspěšné, Test Runner vrátí 0 jako ukončovací kód; jinak, pokud nějaký test selže, vrátí 1.
 
@@ -51,7 +51,7 @@ Kde `Microsoft.NET.Test.Sdk` je testovací hostitel, `xunit` je testovací rozhr
 
 [!INCLUDE[dotnet restore note](~/includes/dotnet-restore-note.md)]
 
-## <a name="arguments"></a>Arguments
+## <a name="arguments"></a>Argumenty
 
 - **`PROJECT | SOLUTION | DIRECTORY | DLL`**
 
@@ -79,6 +79,10 @@ Kde `Microsoft.NET.Test.Sdk` je testovací hostitel, `xunit` je testovací rozhr
 - **`--collect <DATA_COLLECTOR_FRIENDLY_NAME>`**
 
   Povolí shromažďování dat pro testovací běh. Další informace najdete v tématu [monitorování a analýza testovacího běhu](https://aka.ms/vstest-collect).
+  
+  Chcete-li shromáždit pokrytí kódu na jakékoli platformě, která je podporována rozhraním .NET Core, nainstalujte [Coverlet](https://github.com/coverlet-coverage/coverlet/blob/master/README.md) a použijte `--collect:"XPlat Code Coverage"` možnost.
+
+  Ve Windows můžete pokrytí kódu shromažďovat pomocí `--collect "Code Coverage"` Možnosti. Tato možnost vygeneruje soubor *. pokrytí* , který lze otevřít v aplikaci Visual Studio 2019 Enterprise. Další informace najdete v tématu [Použití pokrytí kódu](/visualstudio/test/using-code-coverage-to-determine-how-much-code-is-being-tested) a [přizpůsobení analýzy pokrytí kódu](/visualstudio/test/customizing-code-coverage-analysis).
 
 - **`-d|--diag <PATH_TO_DIAGNOSTICS_FILE>`**
 
@@ -171,6 +175,18 @@ Kde `Microsoft.NET.Test.Sdk` je testovací hostitel, `xunit` je testovací rozhr
   dotnet test --logger trx
   ```
 
+- Spusťte testy v projektu v aktuálním adresáři a vygenerujte soubor pokrytí kódu (po instalaci [Coverlet](https://github.com/tonerdo/coverlet/blob/master/README.md)):
+
+  ```dotnetcli
+  dotnet test --collect:"XPlat Code Coverage"
+  ```
+
+- Spusťte testy v projektu v aktuálním adresáři a vygenerujte soubor pokrytí kódu (pouze Windows):
+
+  ```dotnetcli
+  dotnet test --collect "Code Coverage"
+  ```
+
 - Spusťte testy v projektu v aktuálním adresáři a log s detailní podrobností do konzoly:
 
   ```dotnetcli
@@ -195,6 +211,7 @@ Kde `Microsoft.NET.Test.Sdk` je testovací hostitel, `xunit` je testovací rozhr
 | -------------- | --------------------------------------------------------------------------------------------------------- |
 | MSTest         | <ul><li>FullyQualifiedName</li><li>Name</li><li>NázevTřídy</li><li>Priorita</li><li>TestCategory</li></ul> |
 | xUnit          | <ul><li>FullyQualifiedName</li><li>DisplayName</li><li>Traits</li></ul>                                   |
+| NUnit          | <ul><li>FullyQualifiedName</li><li>Name</li><li>TestCategory</li><li>Priorita</li></ul>                                   |
 
 `<operator>`Popisuje vztah mezi vlastností a hodnotou:
 

@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 6372aca7-869a-4af6-ba2b-0eb1047ef5c0
 topic_type:
 - apiref
-ms.openlocfilehash: 531bd3ffe00c12ef580e8341cd6ad1f7d3924717
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 18355fe9c607977f9da47389216feb2307430e1b
+ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73123348"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84008596"
 ---
 # <a name="itypenamebuildertostring-method"></a>ITypeNameBuilder::ToString – metoda
 Tato metoda podporuje infrastrukturu .NET Framework a není určena pro použití přímo v kódu.  
@@ -34,14 +34,14 @@ HRESULT ToString (
 ```  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** MSCorEE. h  
   
  **Knihovna:** Zahrnuto jako prostředek v knihovně MSCorEE. dll  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Rozhraní pro hostování](../../../../docs/framework/unmanaged-api/hosting/hosting-interfaces.md)
+- [Rozhraní pro hostování](hosting-interfaces.md)

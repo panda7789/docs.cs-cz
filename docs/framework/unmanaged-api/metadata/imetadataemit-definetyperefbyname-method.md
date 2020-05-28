@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: c30a4ce3-2d3e-411a-98df-e62ac4a5dd50
 topic_type:
 - apiref
-ms.openlocfilehash: 23a6931b31ea2d7e4e8d1cb3dc8adf3a51216315
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: ae30140e69926be32570960a32524a74b850bda4
+ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79175743"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84009350"
 ---
 # <a name="imetadataemitdefinetyperefbyname-method"></a>IMetaDataEmit::DefineTypeRefByName – metoda
 Získá token metadat pro typ, který je definován v zadaném oboru, který je mimo aktuální obor.  
@@ -37,34 +37,34 @@ HRESULT DefineTypeRefByName (
   
 ## <a name="parameters"></a>Parametry  
  `tkResolutionScope`  
- [v] Token určující rozsah rozlišení. Následující typy tokenů jsou platné:  
+ pro Token určující rozlišovací obor. Platné jsou následující typy tokenů:  
   
 - `mdModuleRef`, pokud je typ definován ve stejném sestavení, ve kterém je definován volající.  
   
-- `mdAssemblyRef`, pokud je typ definován v jiném sestavení, než ve kterém je definován volající.  
+- `mdAssemblyRef`, pokud je typ definován v jiném sestavení než objekt, ve kterém je definován volající.  
   
 - `mdTypeRef`, pokud je typ vnořený typ.  
   
-- `mdModule`, pokud je typ definován ve stejném modulu, ve kterém je definován volající.  
+- `mdModule`, pokud je typ definován ve stejném modulu, ve kterém je volající definován.  
   
 - Null, pokud je typ definován globálně.  
   
  `szName`  
- [v] Název cílového typu v unicode.  
+ pro Název cílového typu v kódování Unicode.  
   
  `ptr`  
- [out] Ukazatel na `mdTypeRef` token, který je přiřazen k typu.  
+ mimo Ukazatel na `mdTypeRef` token, který je přiřazen k typu.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Záhlaví:** Kor.h.  
+ **Hlavička:** Cor. h  
   
- **Knihovna:** Používá se jako prostředek v souboru MSCorEE.dll  
+ **Knihovna:** Používá se jako prostředek v knihovně MSCorEE. dll.  
   
- **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také
 
-- [IMetaDataEmit – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)
-- [IMetaDataEmit2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-interface.md)
+- [IMetaDataEmit – rozhraní](imetadataemit-interface.md)
+- [IMetaDataEmit2 – rozhraní](imetadataemit2-interface.md)

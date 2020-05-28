@@ -14,15 +14,15 @@ helpviewer_keywords:
 ms.assetid: 6f1e389f-ed99-4d6a-a0ba-72d7d869a01d
 topic_type:
 - apiref
-ms.openlocfilehash: 07cab119810c4da25d16a4ad7c13f2d2bda16455
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: a15c912cdf0eef1b8f131e8425ad9b5b01289982
+ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73140308"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84006724"
 ---
 # <a name="metahost_config_flags-enumeration"></a>METAHOST_CONFIG_FLAGS – výčet
-Popisuje možné příznaky vrácené v parametru `pdwConfigFlags` metody [ICLRMetaHostPolicy –:: GetRequestedRuntime –](../../../../docs/framework/unmanaged-api/hosting/iclrmetahostpolicy-getrequestedruntime-method.md) , která označuje přítomnost a nastavení atributu `useLegacyV2RuntimeActivationPolicy` v [\<spouštění > prvku](../../../../docs/framework/configure-apps/file-schema/startup/startup-element.md) konfigurační soubor.  
+Popisuje možné příznaky vrácené v `pdwConfigFlags` parametru metody [ICLRMetaHostPolicy –:: GetRequestedRuntime –](../../../../docs/framework/unmanaged-api/hosting/iclrmetahostpolicy-getrequestedruntime-method.md) , která označuje přítomnost a nastavení `useLegacyV2RuntimeActivationPolicy` atributu v [ \<startup> elementu](../../configure-apps/file-schema/startup/startup-element.md) konfiguračního souboru.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,26 +37,26 @@ typedef enum {
   
 ## <a name="members"></a>Členové  
   
-|Člen|Popis|  
+|Člen|Description|  
 |------------|-----------------|  
-|`METAHOST_CONFIG_FLAGS_LEGACY_V2_ACTIVATION_POLICY_UNSET`|Atribut `useLegacyV2RuntimeActivationPolicy` nebyl přítomen v [elementu\<startup >](../../../../docs/framework/configure-apps/file-schema/startup/startup-element.md).|  
-|`METAHOST_CONFIG_FLAGS_LEGACY_V2_ACTIVATION_POLICY_TRUE`|Atribut `useLegacyV2RuntimeActivationPolicy` existoval a byl nastaven na hodnotu `true`.|  
-|`METAHOST_CONFIG_FLAGS_LEGACY_V2_ACTIVATION_POLICY_FALSE`|Atribut `useLegacyV2RuntimeActivationPolicy` existoval a byl nastaven na hodnotu `false`.|  
-|`METAHOST_CONFIG_FLAGS_LEGACY_V2_ACTIVATION_POLICY_MASK`|Použijte tuto masku na hodnotu vrácenou v `pdwConfigFlags`, abyste získali hodnoty relevantní pro `useLegacyV2RuntimeActivationPolicy`.|  
+|`METAHOST_CONFIG_FLAGS_LEGACY_V2_ACTIVATION_POLICY_UNSET`|`useLegacyV2RuntimeActivationPolicy`Atribut nebyl v [ \<startup> elementu](../../configure-apps/file-schema/startup/startup-element.md)přítomen.|  
+|`METAHOST_CONFIG_FLAGS_LEGACY_V2_ACTIVATION_POLICY_TRUE`|`useLegacyV2RuntimeActivationPolicy`Atribut byl přítomen a nastaven na hodnotu `true` .|  
+|`METAHOST_CONFIG_FLAGS_LEGACY_V2_ACTIVATION_POLICY_FALSE`|`useLegacyV2RuntimeActivationPolicy`Atribut byl přítomen a nastaven na hodnotu `false` .|  
+|`METAHOST_CONFIG_FLAGS_LEGACY_V2_ACTIVATION_POLICY_MASK`|Použijte tuto masku na hodnotu vrácenou v `pdwConfigFlags` , abyste získali hodnoty relevantní pro `useLegacyV2RuntimeActivationPolicy` .|  
   
 ## <a name="remarks"></a>Poznámky  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** Metahost. h  
   
  **Knihovna:** Zahrnuto jako prostředek v knihovně MSCorEE. dll  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Výčty pro hostování](../../../../docs/framework/unmanaged-api/hosting/hosting-enumerations.md)
-- [GetRequestedRuntime – metoda](../../../../docs/framework/unmanaged-api/hosting/iclrmetahostpolicy-getrequestedruntime-method.md)
-- [\<> element Startup](../../../../docs/framework/configure-apps/file-schema/startup/startup-element.md)
+- [Výčty hostování](hosting-enumerations.md)
+- [GetRequestedRuntime – metoda](iclrmetahostpolicy-getrequestedruntime-method.md)
+- [\<startup>Objekt](../../configure-apps/file-schema/startup/startup-element.md)

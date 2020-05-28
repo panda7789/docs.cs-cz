@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: e0290a49-3818-4a43-ad46-3014faa34f97
 topic_type:
 - apiref
-ms.openlocfilehash: 7db27670b72a5018a03d4614b69486f67bcef155
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 87e00a69643b6bc403188fb0fdb6f9e3f3d82115
+ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79175678"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84003871"
 ---
 # <a name="imetadataemitsavetostream-method"></a>IMetaDataEmit::SaveToStream – metoda
-Uloží všechna metadata v aktuálním `IStream`oboru do zadaného oboru .  
+Uloží všechna metadata v aktuálním oboru do určeného `IStream` .  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -36,21 +36,21 @@ HRESULT SaveToStream (
   
 ## <a name="parameters"></a>Parametry  
  `pIStream`  
- [v] Zapisovatelný datový proud, do který chcete uložit.  
+ pro Zapisovatelný datový proud, do kterého se mají ukládat.  
   
  `dwSaveFlags`  
- [v] Vyhrazena. Musí být nula.  
+ pro Rezervovaný. Musí mít hodnotu nula.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Záhlaví:** Kor.h.  
+ **Hlavička:** Cor. h  
   
- **Knihovna:** Používá se jako prostředek v souboru MSCorEE.dll  
+ **Knihovna:** Používá se jako prostředek v knihovně MSCorEE. dll.  
   
- **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také
 
-- [IMetaDataEmit – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)
-- [IMetaDataEmit2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-interface.md)
+- [IMetaDataEmit – rozhraní](imetadataemit-interface.md)
+- [IMetaDataEmit2 – rozhraní](imetadataemit2-interface.md)

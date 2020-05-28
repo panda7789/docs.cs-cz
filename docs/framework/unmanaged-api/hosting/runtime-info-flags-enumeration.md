@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: adba37be-f775-4cdb-8919-5746ce694f33
 topic_type:
 - apiref
-ms.openlocfilehash: 9d505b917c343c40c7fa2a7aecf3466578ae0a8d
-ms.sourcegitcommit: 7e2128d4a4c45b4274bea3b8e5760d4694569ca1
+ms.openlocfilehash: da830aaaced179fed642340c33e7b7c37b350aa3
+ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75936643"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84006555"
 ---
 # <a name="runtime_info_flags-enumeration"></a>RUNTIME_INFO_FLAGS – výčet
 Obsahuje hodnoty, které určují, jaké informace o modulu CLR (Common Language Runtime) by měly být vráceny.  
@@ -43,7 +43,7 @@ typedef enum {
   
 ## <a name="members"></a>Členové  
   
-|Člen|Popis|  
+|Člen|Description|  
 |------------|-----------------|  
 |`RUNTIME_INFO_DONT_RETURN_DIRECTORY`|Označuje, že by neměly být zahrnuty informace o adresáři.|  
 |`RUNTIME_INFO_DONT_RETURN_VERSION`|Určuje, že by neměly být zahrnuty informace o verzi.|  
@@ -64,14 +64,14 @@ typedef enum {
 - RUNTIME_INFO_REQUEST_X86  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlavička:** MSCorEE. h  
   
  **Knihovna:** MSCorEE. dll  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Výčty pro hostování](../../../../docs/framework/unmanaged-api/hosting/hosting-enumerations.md)
+- [Výčty hostování](hosting-enumerations.md)

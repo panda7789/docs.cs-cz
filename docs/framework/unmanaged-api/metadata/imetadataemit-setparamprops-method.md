@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: a95a3908-9f87-4084-937e-8e01ef03ad63
 topic_type:
 - apiref
-ms.openlocfilehash: 13220dcfdd260688494d5aebc50f94abf8a82215
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: b710f966f519e2702607b7e186fff5986110d391
+ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79177497"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84007816"
 ---
 # <a name="imetadataemitsetparamprops-method"></a>IMetaDataEmit::SetParamProps – metoda
-Nastaví nebo změní funkce parametru metody, který byl definován předchozím voláním [IMetaDataEmit::DefineParam](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-defineparam-method.md).  
+Nastaví nebo změní funkce parametru metody, které byly definovány předchozím voláním [IMetaDataEmit::D efineparam](imetadataemit-defineparam-method.md).  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,33 +40,33 @@ HRESULT SetParamProps (
   
 ## <a name="parameters"></a>Parametry  
  `pd`  
- [v] Token pro cílový parametr.  
+ pro Token pro cílový parametr  
   
  `szName`  
- [v] Název parametru v unicode.  
+ pro Název parametru v kódování Unicode.  
   
  `dwParamFlags`  
- [v] Příznaky parametru.  
+ pro Příznaky pro parametr  
   
  `dwCPlusTypeFlag`  
- [v] ELEMENT_TYPE_* pro konstantní hodnotu.  
+ pro ELEMENT_TYPE_ * pro hodnotu konstanty.  
   
  `pValue`  
- [v] Konstantní hodnota parametru.  
+ pro Hodnota konstanty pro parametr  
   
  `cchValue`  
- [v] Velikost znaků (Unicode) `pValue`.  
+ pro Velikost v (Unicode) znaků `pValue` .  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Záhlaví:** Kor.h.  
+ **Hlavička:** Cor. h  
   
- **Knihovna:** Používá se jako prostředek v souboru MSCorEE.dll  
+ **Knihovna:** Používá se jako prostředek v knihovně MSCorEE. dll.  
   
- **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také
 
-- [IMetaDataEmit – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)
-- [IMetaDataEmit2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-interface.md)
+- [IMetaDataEmit – rozhraní](imetadataemit-interface.md)
+- [IMetaDataEmit2 – rozhraní](imetadataemit2-interface.md)

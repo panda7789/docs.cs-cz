@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: d5237628-2675-45ed-a39e-65c0731b6a56
 topic_type:
 - apiref
-ms.openlocfilehash: d8843b2b5f69696dc206e9b530e3062ff225e89e
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: ccf82531eb1f78bcfc6762d10d53ffee59f30ad8
+ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79177584"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84003937"
 ---
 # <a name="imetadataemitsavetomemory-method"></a>IMetaDataEmit::SaveToMemory – metoda
 Uloží všechna metadata v aktuálním oboru do zadané oblasti paměti.  
@@ -36,21 +36,21 @@ HRESULT SaveToMemory (
   
 ## <a name="parameters"></a>Parametry  
  `pbData`  
- [out] Adresa, na které chcete začít zápis metadat.  
+ mimo Adresa, na které začíná zapisovat metadata  
   
  `cbData`  
- [v] Velikost přidělené paměti v bajtech.  
+ pro Velikost přidělené paměti (v bajtech)  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Záhlaví:** Kor.h.  
+ **Hlavička:** Cor. h  
   
- **Knihovna:** Používá se jako prostředek v souboru MSCorEE.dll  
+ **Knihovna:** Používá se jako prostředek v knihovně MSCorEE. dll.  
   
- **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také
 
-- [IMetaDataEmit – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)
-- [IMetaDataEmit2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-interface.md)
+- [IMetaDataEmit – rozhraní](imetadataemit-interface.md)
+- [IMetaDataEmit2 – rozhraní](imetadataemit2-interface.md)

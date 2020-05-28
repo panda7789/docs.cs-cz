@@ -15,17 +15,17 @@ helpviewer_keywords:
 ms.assetid: 7cc22562-128c-440a-9147-55ff20f173d7
 topic_type:
 - apiref
-ms.openlocfilehash: ada126b41f1c634f7d8daa58480406ac26f92377
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: b7b15261d825c1bd5f217c4cecd82ed36a716d0e
+ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79177910"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84008258"
 ---
 # <a name="iceegengetstring-method"></a>ICeeGen::GetString – metoda
-Získá řetězec uložený na zadanou relativní virtuální adresu.  
+Získá řetězec uložený na zadané relativní virtuální adrese.  
   
- Tato metoda je zastaralá a neměla by být použita.  
+ Tato metoda je zastaralá a neměla by se používat.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,20 +38,20 @@ HRESULT GetString (
   
 ## <a name="parameters"></a>Parametry  
  `RVA`  
- [v] Relativní virtuální adresa řetězce vrátit.  
+ pro Relativní virtuální adresa řetězce, který se má vrátit  
   
  `lpString`  
- [out] Vrácený řetězec.  
+ mimo Vrácený řetězec.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Záhlaví:** Kor.h.  
+ **Hlavička:** Cor. h  
   
- **Knihovna:** Používá se jako prostředek v souboru MsCorEE.dll  
+ **Knihovna:** Používá se jako prostředek v knihovně MsCorEE. dll.  
   
- **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také
 
-- [ICeeGen – rozhraní](../../../../docs/framework/unmanaged-api/metadata/iceegen-interface.md)
+- [ICeeGen – rozhraní](iceegen-interface.md)

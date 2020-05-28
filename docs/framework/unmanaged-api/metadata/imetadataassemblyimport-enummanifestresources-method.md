@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: 9543b111-5705-40c9-935c-a3ffc7a581aa
 topic_type:
 - apiref
-ms.openlocfilehash: 22141cf46a965c0624c076bd1d86d2624e5a09f3
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 560a6adf85fab7f421b86cba52224d5b1bfe1089
+ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79176016"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84006256"
 ---
 # <a name="imetadataassemblyimportenummanifestresources-method"></a>IMetaDataAssemblyImport::EnumManifestResources – metoda
-Získá ukazatel výčtu pro prostředky odkazuje v aktuálnímanifest sestavení.  
+Získá ukazatel na enumerátor pro prostředky, na které se odkazuje v aktuálním manifestu sestavení.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,33 +38,33 @@ HRESULT EnumManifestResources (
   
 ## <a name="parameters"></a>Parametry  
  `phEnum`  
- [dovnitř, ven] Ukazatel na čítač výčtu. To musí být hodnota `EnumManifestResources` null při první volání metody.  
+ [in, out] Ukazatel na enumerátor. Při prvním volání metody musí být hodnota null `EnumManifestResources` .  
   
  `rManifestResources`  
- [out] Pole používané k `mdManifestResource` ukládání tokenů metadat.  
+ mimo Pole použité pro ukládání `mdManifestResource` tokenů metadat.  
   
  `cMax`  
- [v] Maximální počet `mdManifestResource` tokenů, které mohou `rManifestResources`být umístěny v .  
+ pro Maximální počet `mdManifestResource` tokenů, které lze umístit do `rManifestResources` .  
   
  `pcTokens`  
- [out] Počet tokenů `mdManifestResource` skutečně umístěných v `rManifestResources`.  
+ mimo Počet tokenů, které jsou `mdManifestResource` ve skutečnosti umístěny v `rManifestResources` .  
   
 ## <a name="return-value"></a>Návratová hodnota  
   
-|HRESULT|Popis|  
+|HRESULT|Description|  
 |-------------|-----------------|  
-|`S_OK`|`EnumManifestResources`úspěšně vrácena.|  
-|`S_FALSE`|Neexistují žádné tokeny výčet. V tomto `pcTokens` případě je nastavena na nulu.|  
+|`S_OK`|`EnumManifestResources`úspěšně vráceno.|  
+|`S_FALSE`|Neexistují žádné tokeny k vytvoření výčtu. V tomto případě `pcTokens` je nastaveno na hodnotu nula.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [Systémové požadavky](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Záhlaví:** Kor.h.  
+ **Hlavička:** Cor. h  
   
- **Knihovna:** Používá se jako prostředek v souboru MsCorEE.dll  
+ **Knihovna:** Používá se jako prostředek v knihovně MsCorEE. dll.  
   
- **Verze rozhraní .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také
 
-- [IMetaDataAssemblyImport – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyimport-interface.md)
+- [IMetaDataAssemblyImport – rozhraní](imetadataassemblyimport-interface.md)

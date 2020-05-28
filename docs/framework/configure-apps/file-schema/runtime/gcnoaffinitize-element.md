@@ -4,20 +4,20 @@ ms.date: 11/08/2019
 helpviewer_keywords:
 - gcNoAffinitize element
 - <gcNoAffinitize> element
-ms.openlocfilehash: 4031ff19131c905072696837d1622dbb6e54ae61
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: 16d6e5adefe2b632d7251669650058d7df7cea70
+ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73978373"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84004735"
 ---
-# <a name="gcnoaffinitize-element"></a>\<element > GCNoAffinitize
+# <a name="gcnoaffinitize-element"></a>\<GCNoAffinitize> – element
 
 Určuje, jestli se mají spřažení vlákna GC serveru pomocí procesorů.
 
-Konfigurace \<> \
-&nbsp;&nbsp;\<runtime > \
-&nbsp;&nbsp;&nbsp;&nbsp;\<GCNoAffinitize >
+\<configuration>\
+&nbsp;&nbsp;\<runtime>\
+&nbsp;&nbsp;&nbsp;&nbsp;\<GCNoAffinitize>
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -32,13 +32,13 @@ Následující části popisují atributy, podřízené prvky a nadřazené prvk
 
 ### <a name="attributes"></a>Atributy
 
-|Atribut|Popis|
+|Atribut|Description|
 |---------------|-----------------|
 |`enabled`|Požadovaný atribut.<br /><br />Určuje, zda jsou vlákna nebo haldy GC serveru spřažené s procesory dostupnými v počítači.|
 
 #### <a name="enabled-attribute"></a>povolený atribut
 
-|Hodnota|Popis|
+|Hodnota|Description|
 |-----------|-----------------|
 |`false`|Spřáhne vlákna GC serveru pomocí procesorů. Toto nastavení je výchozí.|
 |`true`|Nespřaženíuje vlákna GC serveru pomocí procesorů.|
@@ -49,18 +49,18 @@ Následující části popisují atributy, podřízené prvky a nadřazené prvk
 
 ### <a name="parent-elements"></a>Nadřazené prvky
 
-|Prvek|Popis|
+|Prvek|Description|
 |-------------|-----------------|
 |`configuration`|Kořenový prvek v každém konfiguračním souboru, který je používán modulem Common Language Runtime (CLR) a aplikacemi rozhraní .NET Framework.|
 |`runtime`|Obsahuje informace o vazbách sestavení a uvolnění paměti.|
 
 ## <a name="remarks"></a>Poznámky
 
-Ve výchozím nastavení jsou vlákna uvolňování paměti serveru pevně spřažené s příslušnými procesory. Každý z dostupných procesorů systému má vlastní haldu a vlákno GC. To je obvykle preferované nastavení, protože optimalizuje využití mezipaměti. Počínaje .NET Framework 4.6.2 nastavením atributu `enabled` elementu **GCNoAffinitize** na hodnotu `false`můžete určit, že vlákna uvolňování paměti serveru a CPU by neměly být pevně spojeny.
+Ve výchozím nastavení jsou vlákna uvolňování paměti serveru pevně spřažené s příslušnými procesory. Každý z dostupných procesorů systému má vlastní haldu a vlákno GC. To je obvykle preferované nastavení, protože optimalizuje využití mezipaměti. Počínaje .NET Framework 4.6.2 nastavením atributu elementu **GCNoAffinitize** `enabled` na můžete `true` určit, že vlákna uvolňování paměti serveru a CPU by neměly být pevně spojeny.
 
 Můžete zadat pouze konfigurační element **GCNoAffinitize** , aby nespřaženíy vlákna GC serveru pomocí CPU. Můžete ji také použít spolu s elementem [GCHeapCount](gcheapcount-element.md) k řízení počtu hald GC a vláken používaných aplikací.
 
-Pokud je atribut `enabled` elementu **GCNoAffinitize** `false` (jeho výchozí hodnota), můžete také použít element [GCHeapCount](gcheapcount-element.md) k určení počtu vláken GC a hald společně s elementem [GCHeapAffinitizeMask](gcheapaffinitizemask-element.md) pro určení procesorů, do kterých jsou vlákna uvolňování paměti a haldy spřažené.
+Pokud `enabled` je atribut elementu **GCNoAffinitize** `false` (jeho výchozí hodnota), můžete také použít element [GCHEAPCOUNT](gcheapcount-element.md) k určení počtu vláken GC a hald společně s elementem [GCHeapAffinitizeMask](gcheapaffinitizemask-element.md) pro určení procesorů, do kterých jsou vlákna uvolňování paměti a haldy spřažené.
 
 ## <a name="example"></a>Příklad
 
@@ -87,11 +87,11 @@ Následující příklad nespřaženíuje vlákna uvolňování paměti serveru 
 </configuration>
 ```
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Runtime.GCSettings.IsServerGC%2A?displayProperty=nameWithType>
 - [Element GCHeapAffinitizeMask](gcheapaffinitizemask-element.md)
 - [Element GCHeapCount](gcheapcount-element.md)
 - [Základní informace o uvolňování paměti](../../../../standard/garbage-collection/fundamentals.md)
-- [Schéma nastavení běhového prostředí](index.md)
+- [Schéma nastavení modulu runtime](index.md)
 - [Schéma konfiguračního souboru](../index.md)
