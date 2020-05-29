@@ -1,25 +1,25 @@
 ---
-title: Co je nového ve F# 4.5 - F# Guide
-description: Získejte přehled o nových funkcích dostupných v f# 4.5.
+title: 'Co je nového v příručce F # 4,5-F #'
+description: 'Získejte přehled o nových funkcích dostupných v F # 4,5.'
 ms.date: 11/27/2019
-ms.openlocfilehash: 560e3dd941f79b76d3b864ba0f6560be154ebc1a
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 2c978c66a4bf231398508cbc1cbb8839228ea8e9
+ms.sourcegitcommit: 71b8f5a2108a0f1a4ef1d8d75c5b3e129ec5ca1e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79186138"
+ms.lasthandoff: 05/29/2020
+ms.locfileid: "84202352"
 ---
-# <a name="whats-new-in-f-45"></a>Co je nového ve F# 4.5
+# <a name="whats-new-in-f-45"></a>Co je nového v jazyce F # 4,5
 
-F# 4.5 přidává více vylepšení jazyka F#. Mnohé z těchto funkcí byly sečteny, abyste mohli psát efektivní kód v F# a zároveň zajistit, že tento kód je bezpečný. To znamená přidání několika konceptů do jazyka a značné množství analýzy kompilátoru při použití těchto konstrukcí.
+Jazyk f # 4,5 přidává více vylepšení jazyka F #. Mnohé z těchto funkcí byly přidány dohromady, aby bylo možné psát efektivní kód v F # a zároveň zajistit bezpečnost tohoto kódu. To znamená, že přidání několika konceptů do jazyka a významného množství analýzy kompilátoru při použití těchto konstrukcí.
 
 ## <a name="get-started"></a>Začínáme
 
-F# 4.5 je k dispozici ve všech distribucích .NET Core a nástrojích Visual Studio. [Můžete začít s F#](../get-started/index.md) a dozvíte se více.
+F # 4,5 je k dispozici ve všech distribucích .NET Core a nástrojích sady Visual Studio. Začněte [s F #](../get-started/index.md) a získejte další informace.
 
-## <a name="span-and-byref-like-structs"></a>Span a byref-jako struktury
+## <a name="span-and-byref-like-structs"></a>Struktury typu span a ByRef
 
-Typ <xref:System.Span%601> zavedený v .NET Core umožňuje reprezentovat vyrovnávací paměti v paměti způsobem silného typu, který je nyní povolen v F# počínaje F# 4.5. Následující příklad ukazuje, jak můžete znovu použít <xref:System.Span%601> funkci pracující s různými reprezentacemi vyrovnávací paměti:
+<xref:System.Span%601>Typ zavedený v .NET Core umožňuje znázornit vyrovnávací paměti v paměti se silným typem, který je teď povolený v f # počínaje f # 4,5. Následující příklad ukazuje, jak lze znovu použít funkci, která pracuje <xref:System.Span%601> s různými reprezentacemi vyrovnávací paměti:
 
 ```fsharp
 let safeSum (bytes: Span<byte>) =
@@ -49,26 +49,26 @@ let stackSpan = Span<byte>(mem2, 100)
 safeSum(stackSpan) |> printfn "res = %d"
 ```
 
-Důležitým aspektem je, že Span a další [byref-jako struktury](../language-reference/structures.md#byreflike-structs) mají velmi rigidní statické analýzy prováděné kompilátorem, které omezují jejich použití způsoby, které může být neočekávané. Toto je základní kompromis mezi výkon, expresivita a bezpečnost, která je zavedena v F# 4.5.
+Důležitým aspektem je, že rozsah a jiné [struktury typu ByRef](../language-reference/structures.md#byreflike-structs) mají velmi pevnou statickou analýzu provedenou kompilátorem, která omezuje jejich použití způsobem, který by mohl být neočekávaný. Jedná se o zásadní kompromisy mezi výkonem, expresivity a bezpečností, které jsou představeny v F # 4,5.
 
 ## <a name="revamped-byrefs"></a>Přepracované byrefs
 
-Před F# 4.5 [Byrefs](../language-reference/byrefs.md) v F# byly nebezpečné a nezdravé pro mnoho aplikací. Problémy se zvukem kolem byrefs byly řešeny v F# 4.5 a byla také použita stejná statická analýza provedená pro span a byref-like struktury.
+Před F # 4,5 byly [byrefs](../language-reference/byrefs.md) v jazyce f # nebezpečné a nezvukové pro mnoho aplikací. V jazyce F # 4,5 byly vyřešeny problémy se zvukem ByRef a byla použita stejná statická analýza pro rozsah a strukturu typu ByRef.
 
-### <a name="inreft-and-outreft"></a>inref<'T> a předčí<'T>
+### <a name="inreft-and-outreft"></a>inref< t> a outref< t>
 
-Chcete-li reprezentovat pojem jen pro čtení, jen pro zápis a čtení a `inref<'T>`zápis `outref<'T>` spravované ukazatel, F# 4.5 zavádí , typy představují jen pro čtení a jen pro zápis ukazatele, v uvedeném pořadí. Každý z nich má jinou sémantiku. Nelze například zapisovat do : `inref<'T>`
+Aby reprezentovala pojem spravovaného ukazatele jen pro čtení, jen pro zápis a čtení a zápis, F # 4,5 představuje `inref<'T>` `outref<'T>` typy, které reprezentují ukazatele jen pro čtení a jen pro zápis, v uvedeném pořadí. Každá z nich má různou sémantiku. Například nemůžete zapisovat do `inref<'T>` :
 
 ```fsharp
 let f (dt: inref<DateTime>) =
     dt <- DateTime.Now // ERROR - cannot write to an inref!
 ```
 
-Ve výchozím nastavení odvození typu odvodí spravované ukazatele tak, `inref<'T>` aby byly v souladu s neměnnou povahou kódu F#, pokud již bylo něco deklarováno jako proměnlivé. Chcete-li něco zapisovat, budete muset `mutable` deklarovat typ jako před předáním jeho adresu funkci nebo členovi, který s ním manipuluje. Další informace naleznete v [tématu Byrefs](../language-reference/byrefs.md).
+Ve výchozím nastavení bude odvození typu odvodit spravované ukazatele jako `inref<'T>` v souladu s neproměnlivou povahou kódu F #, pokud něco již nebylo deklarováno jako mutable. Aby bylo možné zapisovat do libovolného textu, je nutné deklarovat typ jako `mutable` před předáním jeho adresy funkci nebo členu, který je s ním manipulován. Další informace najdete v tématu [byrefs](../language-reference/byrefs.md).
 
 ## <a name="readonly-structs"></a>Struktury jen pro čtení
 
-Počínaje F# 4.5, můžete anotovat strukturu <xref:System.Runtime.CompilerServices.IsReadOnlyAttribute> s jako takové:
+Počínaje F # 4,5 můžete přidat do struktury poznámku <xref:System.Runtime.CompilerServices.IsReadOnlyAttribute> jako takovou:
 
 ```fsharp
 [<IsReadOnly; Struct>]
@@ -77,20 +77,20 @@ type S(count1: int, count2: int) =
     member x.Count2 = count2
 ```
 
-To zakazuje deklarování proměnlivý člen v struktuře a vydává metadata, která umožňuje F# a C# považovat za jen pro čtení při spotřebovávat z sestavení. Další informace najdete v tématu [Struktury jen pro čtení](../language-reference/structures.md#readonly-structs).
+To vám neumožní deklarovat proměnlivého člena ve struktuře a emitovat metadata, která umožňují jazyku F # a C# zacházet jako ReadOnly při spotřebování ze sestavení. Další informace najdete v tématu [struktury jen pro čtení](../language-reference/structures.md#readonly-structs).
 
-## <a name="void-pointers"></a>Void ukazatele
+## <a name="void-pointers"></a>Ukazatele void
 
-Typ `voidptr` je přidán do F# 4.5, stejně jako následující funkce:
+`voidptr`Typ je přidán do F # 4,5, jak jsou následující funkce:
 
-* `NativePtr.ofVoidPtr`převedení ukazatele void na nativní ukazatel int
-* `NativePtr.toVoidPtr`převedení nativního ukazatele int na ukazatel void
+* `NativePtr.ofVoidPtr`převod ukazatele void na nativní ukazatel int
+* `NativePtr.toVoidPtr`převod nativního ukazatele int na ukazatel void
 
-To je užitečné při spolupráci s nativní komponenty, která využívá void ukazatele.
+To je užitečné při spolupráci s nativní komponentou, která využívá ukazatele void.
 
 ## <a name="the-match-keyword"></a>Klíčové slovo `match!`
 
-Klíčové `match!` slovo vylepšuje porovnávání vzorů uvnitř výpočtového výrazu:
+`match!`Klíčové slovo vylepšuje porovnávání vzorů v rámci výrazu výpočtu:
 
 ```fsharp
 // Code that returns an asynchronous option
@@ -111,11 +111,11 @@ let funcWithString (s: string) =
 }
 ```
 
-To umožňuje zkrátit kód, který často zahrnuje možnosti míchání (nebo jiné typy) s výpočetní výrazy, jako je například asynchronní. Chcete-li se dozvědět více, viz [zápas!](../language-reference/computation-expressions.md#match).
+To umožňuje zkrátit kód, který často zahrnuje možnosti kombinování (nebo jiných typů) s výpočetními výrazy, jako je například Async. Další informace najdete v tématu věnovaném [shodě](../language-reference/computation-expressions.md#match).
 
-## <a name="relaxed-upcasting-requirements-in-array-list-and-sequence-expressions"></a>Uvolněné požadavky na upcasting ve výrazech pole, seznamu a sekvencí
+## <a name="relaxed-upcasting-requirements-in-array-list-and-sequence-expressions"></a>Odlehčené požadavky na přetypování ve výrazech Array, list a Sequence
 
-Míchání typů, kde jeden může dědit z jiného uvnitř pole, seznam a sekvence výrazy tradičně `:>` vyžaduje, abyste upcast libovolný odvozený typ jeho nadřazený typ s nebo `upcast`. To je nyní uvolněná, prokázáno takto:
+Kombinování typů, kde jedna může dědit z jiného objektu Array, list a Sequence Expressions, je tradičně nutné k přetypování odvozeného typu na svůj nadřazený typ pomocí `:>` nebo `upcast` . To je teď odlehčené, které ukazuje následující:
 
 ```fsharp
 let x0 : obj list  = [ "a" ] // ok pre-F# 4.5
@@ -125,9 +125,9 @@ let x2 : obj list  = [ yield "a" :> obj ] // ok pre-F# 4.5
 let x3 : obj list  = [ yield "a" ] // Now ok for F# 4.5, and can replace x2
 ```
 
-## <a name="indentation-relaxation-for-array-and-list-expressions"></a>Uvolnění odsazení pro výrazy pole a seznamu
+## <a name="indentation-relaxation-for-array-and-list-expressions"></a>Zmírnění odrážek pro výrazy Array a list
 
-Před F# 4.5 je třeba nadměrně odsadit pole a seznam výrazů při předání jako argumenty volání metody. To již není nutné:
+Před F # 4,5 jste museli při předávání jako argumentů volání metody příliš odsazovat výrazy pole a seznamu. Už to není potřeba:
 
 ```fsharp
 module NoExcessiveIndenting =

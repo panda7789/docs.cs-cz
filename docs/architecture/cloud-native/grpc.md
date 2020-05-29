@@ -3,12 +3,12 @@ title: gRPC
 description: Přečtěte si o gRPC, její roli v cloudových nativních aplikacích a o tom, jak se liší od komunikace HTTP RESTful.
 author: robvet
 ms.date: 05/13/2020
-ms.openlocfilehash: f34b267d7f5c6b4e593841c80df44d1ccbde95ae
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: 35a8325dd82e946d88b09b223287e2871be88ffa
+ms.sourcegitcommit: 71b8f5a2108a0f1a4ef1d8d75c5b3e129ec5ca1e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83614042"
+ms.lasthandoff: 05/29/2020
+ms.locfileid: "84201323"
 ---
 # <a name="grpc"></a>gRPC
 
@@ -83,7 +83,7 @@ Upřednostnit gRPC pro následující scénáře:
 
 V době psaní tohoto zápisu se gRPC primárně používá pro back-end služby. Většina moderních prohlížečů nemůže poskytnout úroveň ovládacího prvku HTTP/2, která je nutná k podpoře klienta front-endu gRPC. V takovém případě je k dispozici [první iniciativa](https://devblogs.microsoft.com/aspnet/grpc-web-experiment/) , která umožňuje gRPC komunikaci z aplikací založených na prohlížeči vytvořených pomocí technologie JavaScript nebo Blazor WebAssembly. [GRPC-web pro .NET](https://github.com/grpc/grpc/blob/master/doc/PROTOCOL-WEB.md) umožňuje aplikaci ASP.NET Core gRPC podporovat funkce gRPC v prohlížečových aplikacích:
 
-- Klienti se silným typem kódu
+- Silně typované, klienti vygenerované kódem
 - Kompaktní zprávy Protobuf
 - Streamování serveru
 

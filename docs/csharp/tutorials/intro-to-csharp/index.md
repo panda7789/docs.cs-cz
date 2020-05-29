@@ -3,17 +3,18 @@ title: Úvod do C# – kurzy pro interaktivní
 description: Naučte se v prohlížeči C# a začněte s vlastním vývojovým prostředím.
 ms.date: 08/22/2019
 ms.custom: mvc
-ms.openlocfilehash: c9fc8dadac373445a5bb132b25ab25676c5230c7
-ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
+ms.openlocfilehash: 965fa9dba559b967d3d1ce8d661cd08235c59f70
+ms.sourcegitcommit: 71b8f5a2108a0f1a4ef1d8d75c5b3e129ec5ca1e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84007699"
+ms.lasthandoff: 05/29/2020
+ms.locfileid: "84202436"
 ---
 # <a name="introduction-to-c"></a>Úvod do jazyka C\#
 
 Vítá vás kurzy Úvod do C#. Tyto lekce začínají interaktivním kódem, který můžete spustit v prohlížeči. Před zahájením těchto interaktivních lekcí se můžete seznámit se základy jazyka C# z [řady videí c# 101](https://aka.ms/dotnet3-csharp) .
 
+<!--markdownlint-disable MD034 -->
 > [!VIDEO https://channel9.msdn.com/Series/CSharp-101/What-is-C/player]
 
 První lekce vysvětlují koncepty C# pomocí malých fragmentů kódu. Naučíte se základy syntaxe jazyka C# a jak pracovat s datovými typy, jako jsou řetězce, čísla a logické hodnoty. Je to vše interaktivní a vy budete psát a spouštět kód během několika minut. Tyto první lekce nepředpokládají žádné předchozí znalosti programování nebo jazyka C#.

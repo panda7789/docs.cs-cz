@@ -4,12 +4,12 @@ description: Zjistěte, jak nasadit rozhraní .NET pro Apache Spark aplikaci do 
 ms.date: 05/12/2020
 ms.topic: tutorial
 ms.custom: mvc
-ms.openlocfilehash: 245df14b9174a3b2ff152f90e6c50cc8766a2de9
-ms.sourcegitcommit: 046a9c22487551360e20ec39fc21eef99820a254
+ms.openlocfilehash: 4010f363e8ba606a7294ea32dc34587da6d6c8aa
+ms.sourcegitcommit: 71b8f5a2108a0f1a4ef1d8d75c5b3e129ec5ca1e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83397054"
+ms.lasthandoff: 05/29/2020
+ms.locfileid: "84202232"
 ---
 # <a name="tutorial-deploy-a-net-for-apache-spark-application-to-databricks"></a>Kurz: nasazení rozhraní .NET pro Apache Spark aplikaci do datacihlů
 
@@ -50,10 +50,10 @@ V této části vytvoříte pomocí portálu Azure pracovní prostor služby Azu
     |---------|---------|
     |**Název pracovního prostoru**     | Zadejte název pracovního prostoru Databricks.        |
     |**Předplatné**     | Z rozevíracího seznamu vyberte své předplatné Azure.        |
-    |**Skupina prostředků**     | Určete, jestli chcete vytvořit novou skupinu prostředků, nebo použít existující. Skupina prostředků je kontejner, který obsahuje související prostředky pro řešení Azure. Další informace naleznete v tématu [Přehled skupin prostředků v Azure](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-overview). |
+    |**Skupina prostředků**     | Určete, jestli chcete vytvořit novou skupinu prostředků, nebo použít existující. Skupina prostředků je kontejner, který uchovává související prostředky pro řešení Azure. Další informace naleznete v tématu [Přehled skupin prostředků v Azure](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-overview). |
     |**Umístění**     | Vyberte preferovanou oblast. Informace o dostupných oblastech najdete v tématu [služby Azure dostupné v jednotlivých oblastech](https://azure.microsoft.com/regions/services/).        |
     |**Cenová úroveň**     |  Vyberte si mezi **standardem**, **Premium**nebo **zkušební verzí**. Další informace o těchto úrovních najdete na [stránce s cenami za Databricks](https://azure.microsoft.com/pricing/details/databricks/).       |
-    |**Virtual Network**     |   Ne       |
+    |**Virtual Network**     |   No       |
 
 3. Vyberte **Vytvořit**. Vytvoření pracovního prostoru trvá několik minut. Při vytváření pracovního prostoru můžete zobrazit stav nasazení v části **oznámení**.
 
@@ -87,7 +87,7 @@ Teď, když máte nainstalované rozhraní příkazového řádku datacihly, je 
 
 1. Spusťte příkaz rozhraní příkazového řádku datacihly `databricks configure --token` .
 
-2. Po spuštění příkazu konfigurace se zobrazí výzva k zadání hostitele. Adresa URL hostitele používá formát: **https://< \location>. azuredatabricks.NET**. Pokud jste například vybrali **eastus2** při vytváření služby Azure Databricks, hostitel by byl **https://eastus2.azuredatabricks.net** .
+2. Po spuštění příkazu konfigurace se zobrazí výzva k zadání hostitele. Adresa URL hostitele používá formát: `https://<Location>.azuredatabricks.net` . Pokud jste například vybrali **eastus2** při vytváření služby Azure Databricks, hostitel by byl `https://eastus2.azuredatabricks.net` .
 
 3. Po zadání hostitele se zobrazí výzva k zadání tokenu. V Azure Portal vyberte **Spustit pracovní prostor** a spusťte Azure Databricks pracovní prostor.
 

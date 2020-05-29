@@ -4,12 +4,12 @@ description: Naučte se migrovat aplikaci Windows Presentation Foundation (WPF) 
 author: mjrousos
 ms.date: 09/12/2019
 ms.author: mikerou
-ms.openlocfilehash: ccd2fc5a49d9c2d31c693e48099732614b568c7b
-ms.sourcegitcommit: 1cb64b53eb1f253e6a3f53ca9510ef0be1fd06fe
+ms.openlocfilehash: fda4f618ddb4a3edbe6f2dd9fba0b10bc618e88d
+ms.sourcegitcommit: 71b8f5a2108a0f1a4ef1d8d75c5b3e129ec5ca1e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82507452"
+ms.lasthandoff: 05/29/2020
+ms.locfileid: "84201561"
 ---
 # <a name="migrating-wpf-apps-to-net-core"></a>Migrace aplikací WPF do .NET Core
 
@@ -35,7 +35,7 @@ K migraci na .NET Core musíte nejdřív:
 
     01. Přidejte odkaz na balíček [Microsoft. Windows. Compatibility](https://www.nuget.org/packages/Microsoft.Windows.Compatibility/) .
     01. Najděte a opravte rozdíly na úrovni rozhraní API.
-    01. Odeberte části *App. config* jiné než `appSettings` nebo `connectionStrings`.
+    01. Odeberte části *App. config* jiné než `appSettings` nebo `connectionStrings` .
     01. V případě potřeby znovu vygenerujte generovaný kód.
 
 01. Testování za běhu:
@@ -45,7 +45,7 @@ K migraci na .NET Core musíte nejdřív:
 
 ## <a name="about-the-sample"></a>O ukázce
 
-Tento článek se odkazuje na [ukázkovou aplikaci v programu Bob obchodník](https://github.com/dotnet/windows-desktop/tree/master/Samples/BeanTrader) , protože používá nejrůznější závislosti, které jsou podobné těm, které mohou mít reálné aplikace WPF. Aplikace není velká, ale měla by být v souvislosti s složitostí krok z Hello World. Tato aplikace předvádí některé problémy, se kterými se uživatelé mohou setkat při přenosu reálných aplikací. Aplikace komunikuje se službou WCF, takže aby fungovala správně, budete také muset spustit projekt BeanTraderServer (dostupný ve stejném úložišti GitHubu) a ujistit se, že konfigurace BeanTraderClient odkazuje na správný koncový bod. (Ve výchozím nastavení ukázka předpokládá, že server běží na stejném počítači v *http://localhost:8090*, což bude platit, pokud BeanTraderServer spustíte místně.)
+Tento článek se odkazuje na [ukázkovou aplikaci v programu Bob obchodník](https://github.com/dotnet/windows-desktop/tree/master/Samples/BeanTrader) , protože používá nejrůznější závislosti, které jsou podobné těm, které mohou mít reálné aplikace WPF. Aplikace není velká, ale měla by být v souvislosti s složitostí krok z Hello World. Tato aplikace předvádí některé problémy, se kterými se uživatelé mohou setkat při přenosu reálných aplikací. Aplikace komunikuje se službou WCF, takže aby fungovala správně, budete také muset spustit projekt BeanTraderServer (dostupný ve stejném úložišti GitHubu) a ujistit se, že konfigurace BeanTraderClient odkazuje na správný koncový bod. (Ve výchozím nastavení ukázka předpokládá, že server běží na stejném počítači v `http://localhost:8090` , což bude platit, pokud BeanTraderServer spustíte místně.)
 
 Mějte na paměti, že tato ukázková aplikace je určená k tomu, aby se ukázaly problémy s přenosem v .NET Core. Není určeno k předvedení osvědčených postupů pro WPF. Ve skutečnosti záměrně obsahují některé antipatterny, abyste se ujistili, že budete mít k dispozici alespoň několik zajímavých výzev při přenosu.
 
@@ -53,22 +53,22 @@ Mějte na paměti, že tato ukázková aplikace je určená k tomu, aby se ukáz
 
 Primárním problémem migrace aplikace .NET Framework do .NET Core je, že její závislosti můžou fungovat různě nebo vůbec. Migrace je mnohem jednodušší než při použití. mnoho balíčků NuGet teď cílí na .NET Standard. Počínaje platformou .NET Core 2,0 se .NET Framework a oblasti .NET Core Surface budou podobné. I tak některé rozdíly (v podpoře z balíčků NuGet a v dostupných rozhraních API .NET) zůstanou zachovány. Prvním krokem migrace je Kontrola závislostí aplikace a zajistěte, aby byly odkazy ve formátu, který je snadno migrován do .NET Core.
 
-### <a name="upgrade-to-packagereference-nuget-references"></a>Upgradovat `<PackageReference>` na reference NuGet
+### <a name="upgrade-to-packagereference-nuget-references"></a>Upgradovat na `<PackageReference>` reference NuGet
 
-Starší projekty .NET Framework obvykle uvádějí své závislosti NuGet v souboru *Packages. config* . Nový formát souboru projektu ve stylu sady SDK odkazuje na balíčky NuGet [`<PackageReference>`](/nuget/consume-packages/package-references-in-project-files) jako prvky v samotném souboru csproj, nikoli v samostatném konfiguračním souboru.
+Starší projekty .NET Framework obvykle uvádějí své závislosti NuGet v souboru *Packages. config* . Nový formát souboru projektu ve stylu sady SDK odkazuje na balíčky NuGet jako [`<PackageReference>`](/nuget/consume-packages/package-references-in-project-files) prvky v samotném souboru csproj, nikoli v samostatném konfiguračním souboru.
 
-Při migraci existují dvě výhody použití odkazů ve `<PackageReference>`stylu:
+Při migraci existují dvě výhody použití `<PackageReference>` odkazů ve stylu:
 
-- Toto je styl odkazu NuGet, který je vyžadován pro nový soubor projektu .NET Core. Pokud jste již používali `<PackageReference>`, tyto prvky souboru projektu lze zkopírovat a vložit přímo do nového projektu.
+- Toto je styl odkazu NuGet, který je vyžadován pro nový soubor projektu .NET Core. Pokud jste již používali `<PackageReference>` , tyto prvky souboru projektu lze zkopírovat a vložit přímo do nového projektu.
 - Na rozdíl od souboru Packages. config `<PackageReference>` elementy odkazují pouze na závislosti nejvyšší úrovně, které váš projekt závisí přímo na úrovni. Všechny ostatní přenositelné balíčky NuGet se určí v době obnovení a zaznamenávají se do automaticky generovaného souboru obj\project.assets.JSON. Díky tomu je mnohem snazší určit závislosti, které má váš projekt, což je užitečné při určování, zda budou nezbytné závislosti fungovat na rozhraní .NET Core nebo ne.
 
 Prvním krokem pro migraci aplikace .NET Framework do .NET Core je aktualizovat ji tak, aby používala `<PackageReference>` odkazy na NuGet. Visual Studio toto dělá jednoduché. Stačí kliknout pravým tlačítkem myši na soubor *Packages. config Packages* v aplikaci Visual Studio **Průzkumník řešení**a pak vyberte **migrovat Packages. config na PackageReference**.
 
 ![Upgrade na PackageReference](./media/convert-project-from-net-framework/package-reference-migration.png)
 
-Zobrazí se dialogové okno s vypočítanými závislostmi NuGet nejvyšší úrovně a s žádostí o další balíčky NuGet by se měly zvýšit na nejvyšší úroveň. Žádný z těchto dalších balíčků nemusí být na nejvyšší úrovni pro ukázku pro obchodní dodavatele, takže můžete zrušit kontrolu všech těchto polí. Pak klikněte na tlačítko **OK** a soubor *Packages. config* se odebere `<PackageReference>` a prvky se přidají do souboru projektu.
+Zobrazí se dialogové okno s vypočítanými závislostmi NuGet nejvyšší úrovně a s žádostí o další balíčky NuGet by se měly zvýšit na nejvyšší úroveň. Žádný z těchto dalších balíčků nemusí být na nejvyšší úrovni pro ukázku pro obchodní dodavatele, takže můžete zrušit kontrolu všech těchto polí. Pak klikněte na tlačítko **OK** a soubor *Packages. config* se odebere a `<PackageReference>` prvky se přidají do souboru projektu.
 
-`<PackageReference>`– odkazy na styl neukládají balíčky NuGet místně do složky Packages. Místo toho jsou uloženy globálně jako optimalizace. Po dokončení migrace upravte soubor CSPROJ a odeberte všechny `<Analyzer>` prvky odkazující na analyzátory, které dříve byly z *.. Adresář \Packages* Nedělejte si starosti; vzhledem k tomu, že stále máte odkazy na balíček NuGet, analyzátory budou zahrnuty v projektu. Stačí vyčistit staré prvky stylu `<Analyzer>` Packages. config.
+`<PackageReference>`– odkazy na styl neukládají balíčky NuGet místně do složky Packages. Místo toho jsou uloženy globálně jako optimalizace. Po dokončení migrace upravte soubor CSPROJ a odeberte všechny `<Analyzer>` prvky odkazující na analyzátory, které dříve byly z *.. Adresář \Packages* Nedělejte si starosti; vzhledem k tomu, že stále máte odkazy na balíček NuGet, analyzátory budou zahrnuty v projektu. Stačí vyčistit staré prvky stylu Packages. config `<Analyzer>` .
 
 ### <a name="review-nuget-packages"></a>Zkontrolovat balíčky NuGet
 
@@ -111,7 +111,7 @@ V případě ukázky na základě obchodníka je možné snadno provést všechn
 
 V ideálním případě by se aplikace aktualizovala tak, aby používala novější verzi balíčku (vzhledem k tomu, že je pravděpodobnější funkčnost .NET Core). V některých případech ale nemusí být proveditelné. V těchto případech NEUPGRADUJTE **MahApps. metro** , protože potřebné změny jsou netriviální a tento kurz se zaměřuje na migraci na .NET Core 3, ne na **MahApps. Metro 2.** Také se jedná o ne.NET Frameworkou závislost, protože obchodník z aplikace Bob uplatňuje jenom malou část **MahApps. metro**. Budeme samozřejmě potřebovat testování, aby se zajistilo, že vše funguje, až se migrace dokončí. Pokud se jednalo o reálný scénář, mělo by být dobré zaslat problém pro sledování práce, která se má přesunout na **MahApps. metro** verze 2,0, protože migrace teď nevede k nějakému technickému dluhu.
 
-Jakmile se balíčky NuGet aktualizují na nejnovější verze, skupina `<PackageReference>` položek v souboru projektu ukázkového účastníka společnosti Bob by měla vypadat takto.
+Jakmile se balíčky NuGet aktualizují na nejnovější verze, `<PackageReference>` Skupina položek v souboru projektu ukázkového účastníka společnosti Bob by měla vypadat takto.
 
 ```xml
 <ItemGroup>
@@ -144,17 +144,17 @@ Nástroj se dodává jako [modul plug-in sady Visual Studio](https://marketplace
     ApiPort.exe analyze -f <PathToBeanTraderBinaries> -r html -r excel -t ".NET Core"
     ```
 
-    `-f` Argument určuje cestu obsahující binární soubory, které se mají analyzovat. `-r` Argument určuje formát výstupního souboru, který chcete. `-t` Argument určuje, která platforma .NET bude analyzovat využití rozhraní API. V takovém případě chcete .NET Core.
+    `-f`Argument určuje cestu obsahující binární soubory, které se mají analyzovat. `-r`Argument určuje formát výstupního souboru, který chcete. `-t`Argument určuje, která platforma .NET bude analyzovat využití rozhraní API. V takovém případě chcete .NET Core.
 
 Když otevřete sestavu HTML, v první části se zobrazí všechny analyzované binární soubory a procento používaných rozhraní API .NET, které jsou k dispozici na cílové platformě. Procento není smysluplné. Užitečnější je zobrazit konkrétní chybějící rozhraní API. Chcete-li to provést, buď vyberte název sestavení, nebo se posuňte dolů k sestavám pro jednotlivá sestavení.
 
-Zaměřte se na sestavení, pro která vlastníte zdrojový kód. V sestavě ApiPorta v programu Bob obchodník je například uveden mnoho binárních souborů, ale většina z nich patří do balíčků NuGet. `Castle.Windsor`ukazuje, že závisí na některých rozhraních API System. Web, které chybí v .NET Core. Nejedná se o problém, protože jste předtím `Castle.Windsor` ověřili, že produkt podporuje .NET Core. Pro balíčky NuGet je běžné, že mají různé binární soubory pro použití s různými platformami .NET, takže jestli .NET Framework verze nástroje `Castle.Windsor` používá rozhraní API System. Web nebo not není relevantní, dokud balíček cílí také .NET Standard nebo .NET Core (to dělá).
+Zaměřte se na sestavení, pro která vlastníte zdrojový kód. V sestavě ApiPorta v programu Bob obchodník je například uveden mnoho binárních souborů, ale většina z nich patří do balíčků NuGet. `Castle.Windsor`ukazuje, že závisí na některých rozhraních API System. Web, které chybí v .NET Core. Nejedná se o problém, protože jste předtím ověřili, že `Castle.Windsor` produkt podporuje .NET Core. Pro balíčky NuGet je běžné, že mají různé binární soubory pro použití s různými platformami .NET, takže jestli .NET Framework verze nástroje `Castle.Windsor` používá rozhraní API System. Web nebo not není relevantní, dokud balíček cílí také .NET Standard nebo .NET Core (to dělá).
 
-V případě ukázky pro obchodníka v programu Bob je jediným binárním souborem, který je třeba vzít v úvahu, **BeanTraderClient** a tato sestava uvádí, `System.ServiceModel.ClientBase<T>.Close` že `System.ServiceModel.ClientBase<T>.Open`chybí pouze dvě rozhraní API .NET: a.
+V případě ukázky pro obchodníka v programu Bob je jediným binárním souborem, který je třeba vzít v úvahu, **BeanTraderClient** a tato sestava uvádí, že chybí pouze dvě rozhraní API .NET: `System.ServiceModel.ClientBase<T>.Close` a `System.ServiceModel.ClientBase<T>.Open` .
 
 ![Sestava přenositelnosti BeanTraderClient](./media/convert-project-from-net-framework/portability-report.png)
 
-Je pravděpodobné, že nebudou blokovat problémy, protože rozhraní API klienta WCF jsou v .NET Core podporována (většinou), takže pro tato centrální rozhraní API musí být k dispozici alternativní řešení. Ve skutečnosti se podívejte na `System.ServiceModel`oblast .NET Core Surface (pomocí <https://apisof.net>), že místo toho jsou v .NET Core k dispozici asynchronní alternativy.
+Je pravděpodobné, že nebudou blokovat problémy, protože rozhraní API klienta WCF jsou v .NET Core podporována (většinou), takže pro tato centrální rozhraní API musí být k dispozici alternativní řešení. Ve skutečnosti se podívejte na `System.ServiceModel` oblast .NET Core Surface (pomocí <https://apisof.net> ), že místo toho jsou v .NET Core k dispozici asynchronní alternativy.
 
 Na základě této sestavy a předchozí analýzy závislostí NuGet vypadá to, že by se neměly provádět žádné zásadní problémy migrace ukázkového účastníka z části Bob obchodník do .NET Core. Jste připraveni na další krok, ve kterém bude migrace skutečně zahájena.
 
@@ -162,19 +162,19 @@ Na základě této sestavy a předchozí analýzy závislostí NuGet vypadá to,
 
 Pokud vaše aplikace nepoužívá nový [Formát souboru projektu ve stylu sady SDK](../../core/tools/csproj.md), budete potřebovat nový soubor projektu pro cílové rozhraní .NET Core. Existující soubor CSPROJ můžete nahradit, nebo pokud upřednostňujete zachování existujícího projektu v jeho aktuálním stavu, můžete přidat nový soubor CSPROJ cílící na rozhraní .NET Core. Můžete sestavit verze aplikace pro .NET Framework a .NET Core s jedním souborem projektu ve stylu sady SDK s [cílením](../../standard/library-guidance/cross-platform-targeting.md) na více verzí (určením více `<TargetFrameworks>` cílů).
 
-Chcete-li vytvořit nový soubor projektu, můžete vytvořit nový projekt WPF v aplikaci Visual Studio nebo použít `dotnet new wpf` příkaz v dočasném adresáři pro vygenerování souboru projektu a potom jej zkopírovat nebo přejmenovat do správného umístění. K dispozici je také nástroj [CsprojToVs2017](https://github.com/hvanbakel/CsprojToVs2017)vytvořený komunitou, který může automatizovat některé migrace souborů projektu. Tento nástroj je užitečný, ale ještě potřebuje člověk ke kontrole výsledků, aby se zajistilo, že všechny podrobnosti migrace jsou správné. Jedna konkrétní oblast, kterou nástroj nezpracovává optimálně, migruje balíčky NuGet ze souborů *Packages. config* . Pokud nástroj běží na souboru projektu, který stále používá soubor *Packages. config* k odkazování na balíčky NuGet, migruje se `<PackageReference>` na prvky automaticky, ale přidá `<PackageReference>` prvky pro *všechny* balíčky místo pouze těch, které mají nejvyšší úroveň. Pokud jste již migrovali na`<PackageReference>` prvky pomocí sady Visual Studio (jak jste to udělali v této ukázce), nástroj může pomáhat se zbytkem převodu. Podobně jako Scott Hanselman doporučuje ve [svém blogovém příspěvku o migraci souborů csproj](https://www.hanselman.com/blog/UpgradingAnExistingNETProjectFilesToTheLeanNewCSPROJFormatFromNETCore.aspx). přenos po ruce je vzdělávací a výsledkem je lepší výsledky, pokud máte pouze několik projektů na port. Pokud ale přenášíte desítky nebo stovky souborů projektu, může se jednat o nástroj, jako je [CsprojToVs2017](https://github.com/hvanbakel/CsprojToVs2017) .
+Chcete-li vytvořit nový soubor projektu, můžete vytvořit nový projekt WPF v aplikaci Visual Studio nebo použít `dotnet new wpf` příkaz v dočasném adresáři pro vygenerování souboru projektu a potom jej zkopírovat nebo přejmenovat do správného umístění. K dispozici je také nástroj [CsprojToVs2017](https://github.com/hvanbakel/CsprojToVs2017)vytvořený komunitou, který může automatizovat některé migrace souborů projektu. Tento nástroj je užitečný, ale ještě potřebuje člověk ke kontrole výsledků, aby se zajistilo, že všechny podrobnosti migrace jsou správné. Jedna konkrétní oblast, kterou nástroj nezpracovává optimálně, migruje balíčky NuGet ze souborů *Packages. config* . Pokud nástroj běží na souboru projektu, který stále používá soubor *Packages. config* k odkazování na balíčky NuGet, migruje se na `<PackageReference>` prvky automaticky, ale přidá `<PackageReference>` prvky pro *všechny* balíčky místo pouze těch, které mají nejvyšší úroveň. Pokud jste již migrovali na `<PackageReference>` prvky pomocí sady Visual Studio (jak jste to udělali v této ukázce), nástroj může pomáhat se zbytkem převodu. Podobně jako Scott Hanselman doporučuje ve [svém blogovém příspěvku o migraci souborů csproj](https://www.hanselman.com/blog/UpgradingAnExistingNETProjectFilesToTheLeanNewCSPROJFormatFromNETCore.aspx). přenos po ruce je vzdělávací a výsledkem je lepší výsledky, pokud máte pouze několik projektů na port. Pokud ale přenášíte desítky nebo stovky souborů projektu, může se jednat o nástroj, jako je [CsprojToVs2017](https://github.com/hvanbakel/CsprojToVs2017) .
 
-Chcete-li vytvořit nový soubor projektu pro ukázku pro obchodní oddělení, `dotnet new wpf` spusťte příkaz v dočasném adresáři a přesuňte vygenerovaný soubor *. csproj* do složky *BeanTraderClient* a přejmenujte jej na **BeanTraderClient. Core. csproj**.
+Chcete-li vytvořit nový soubor projektu pro ukázku pro obchodní oddělení, spusťte příkaz `dotnet new wpf` v dočasném adresáři a přesuňte vygenerovaný soubor *. csproj* do složky *BeanTraderClient* a přejmenujte jej na **BeanTraderClient. Core. csproj**.
 
 Vzhledem k tomu, že nový formát souboru projektu automaticky obsahuje soubory jazyka C#, soubory *RESX* a soubory XAML, které nalezne v nebo v jejím adresáři, je soubor projektu již skoro dokončen. Pro dokončení migrace otevřete staré a nové soubory projektu vedle sebe a Prohlédněte si starou a podívejte se, jestli je potřeba migrovat nějaké informace, které obsahuje. V ukázkovém případu pro hospodářský subjekt by měly být do nového projektu zkopírovány následující položky:
 
-- Všechny `<RootNamespace>`vlastnosti `<AssemblyName>`, a `<ApplicationIcon>` by měly být kopírovány.
+- `<RootNamespace>` `<AssemblyName>` Všechny vlastnosti, a `<ApplicationIcon>` by měly být kopírovány.
 
-- Také je nutné přidat do nového `<GenerateAssemblyInfo>false</GenerateAssemblyInfo>` souboru projektu vlastnost, protože ukázka pro obchodníka v nástroji Bob zahrnuje atributy na úrovni sestavení ( `[AssemblyTitle]`například) v souboru AssemblyInfo.cs. Ve výchozím nastavení budou nové projekty ve stylu sady SDK tyto atributy generovat na základě vlastností v souboru csproj. Vzhledem k tomu, že v tomto případě nechcete, aby k tomu docházelo (automaticky vygenerovaný atribut by byl v konfliktu s hodnotami z AssemblyInfo.cs), zakážete `<GenerateAssemblyInfo>`automaticky generované atributy pomocí.
+- Také je nutné přidat do `<GenerateAssemblyInfo>false</GenerateAssemblyInfo>` nového souboru projektu vlastnost, protože ukázka pro obchodníka v nástroji Bob zahrnuje atributy na úrovni sestavení (například `[AssemblyTitle]` ) v souboru AssemblyInfo.cs. Ve výchozím nastavení budou nové projekty ve stylu sady SDK tyto atributy generovat na základě vlastností v souboru csproj. Vzhledem k tomu, že v tomto případě nechcete, aby k tomu docházelo (automaticky vygenerovaný atribut by byl v konfliktu s hodnotami z AssemblyInfo.cs), zakážete automaticky generované atributy pomocí `<GenerateAssemblyInfo>` .
 
-- I když soubory *RESX* jsou automaticky zahrnuty jako vložené prostředky, `<Resource>` jiné položky jako obrázky nejsou. Proto zkopírujte `<Resource>` prvky pro vkládání obrázků a souborů ikon. Můžete zjednodušit odkazy PNG na jeden řádek pomocí nového formátu souboru projektu, který je podporován pro vzory expanze názvů: `<Resource Include="**\*.png" />`.
+- I když soubory *RESX* jsou automaticky zahrnuty jako vložené prostředky, jiné `<Resource>` položky jako obrázky nejsou. Proto zkopírujte `<Resource>` prvky pro vkládání obrázků a souborů ikon. Můžete zjednodušit odkazy PNG na jeden řádek pomocí nového formátu souboru projektu, který je podporován pro vzory expanze názvů: `<Resource Include="**\*.png" />` .
 
-- Podobně jsou `<None>` položky automaticky zahrnuty, ale ve výchozím nastavení nejsou zkopírovány do výstupního adresáře. Vzhledem k tomu, že projekt `<None>` fazolového účastníka obsahuje položku, která *je* zkopírována `PreserveNewest` do výstupního adresáře (pomocí chování), je `<None>` třeba aktualizovat automaticky vyplněnou položku pro tento soubor, například.
+- Podobně `<None>` jsou položky automaticky zahrnuty, ale ve výchozím nastavení nejsou zkopírovány do výstupního adresáře. Vzhledem k tomu, že projekt fazolového účastníka obsahuje `<None>` položku, která *je* zkopírována do výstupního adresáře (pomocí `PreserveNewest` chování), je třeba aktualizovat automaticky vyplněnou `<None>` položku pro tento soubor, například.
 
   ```xml
   <None Update="BeanTrader.pfx">
@@ -182,7 +182,7 @@ Vzhledem k tomu, že nový formát souboru projektu automaticky obsahuje soubory
   </None>
   ```
 
-- Ukázka pro obchodníka Bob zahrnuje soubor XAML (default. akcent. XAML) jako `Content` (nikoli jako `Page`), protože motivy a zvýraznění definované v tomto souboru jsou načteny z XAML souboru za běhu, místo aby se vložily do samotné aplikace. Nový projektový systém automaticky zahrne tento soubor jako `<Page>`, protože se jedná o soubor XAML. Proto je nutné soubor XAML odebrat jako stránku (`<Page Remove="**\Default.Accent.xaml" />`) a přidat jej jako obsah.
+- Ukázka pro obchodníka Bob zahrnuje soubor XAML (default. akcent. XAML) jako `Content` (nikoli jako), `Page` protože motivy a zvýraznění definované v tomto souboru jsou načteny z XAML souboru za běhu, místo aby se vložily do samotné aplikace. Nový projektový systém automaticky zahrne tento soubor jako `<Page>` , protože se jedná o soubor XAML. Proto je nutné soubor XAML odebrat jako stránku ( `<Page Remove="**\Default.Accent.xaml" />` ) a přidat jej jako obsah.
 
   ```xml
   <Content Include="Resources\Themes\Default.Accent.xaml">
@@ -190,11 +190,11 @@ Vzhledem k tomu, že nový formát souboru projektu automaticky obsahuje soubory
   </Content>
   ```
 
-- Nakonec přidejte odkazy na NuGet tím, že `<ItemGroup>` zkopírujete všechny `<PackageReference>` prvky. Pokud jste jste dříve upgradovali balíčky NuGet na verze kompatibilní se standardem .NET Core, můžete to udělat, pokud jsou odkazy na balíček v projektu specifickém pro .NET Core.
+- Nakonec přidejte odkazy na NuGet tím, že zkopírujete `<ItemGroup>` všechny `<PackageReference>` prvky. Pokud jste jste dříve upgradovali balíčky NuGet na verze kompatibilní se standardem .NET Core, můžete to udělat, pokud jsou odkazy na balíček v projektu specifickém pro .NET Core.
 
 V tomto okamžiku by mělo být možné přidat nový projekt do řešení BeanTrader a otevřít ho v aplikaci Visual Studio. Projekt by měl vypadat správně v **Průzkumník řešení**a `dotnet restore BeanTraderClient.Core.csproj` měl by úspěšně obnovit balíčky (se dvěma očekávanými upozorněními souvisejícími s verzí MahApps. metro, kterou používáte cílení .NET Framework).
 
-I když je možné uchovávat oba soubory projektu souběžně (a může to být žádoucí, pokud chcete zachovat původní projekt přesně tak, jak byl), ztěžuje proces migrace (tyto dva projekty se pokusí použít stejné složky bin a obj) a obvykle není nutné. Pokud chcete sestavovat pro cíle .NET Core i .NET Framework, můžete `<TargetFramework>netcoreapp3.0</TargetFramework>` `<TargetFrameworks>netcoreapp3.0;net472</TargetFrameworks>` místo toho nahradit vlastnost v novém souboru projektu. V případě ukázky pro obchodní oddělení odstraňte starý soubor projektu (BeanTraderClient. csproj), protože už není potřeba. Pokud chcete zachovat oba soubory projektu, nezapomeňte je nechat sestavit do různých výstupních a zprostředkujících výstupních cest.
+I když je možné uchovávat oba soubory projektu souběžně (a může to být žádoucí, pokud chcete zachovat původní projekt přesně tak, jak byl), ztěžuje proces migrace (tyto dva projekty se pokusí použít stejné složky bin a obj) a obvykle není nutné. Pokud chcete sestavovat pro cíle .NET Core i .NET Framework, můžete `<TargetFramework>netcoreapp3.0</TargetFramework>` místo toho nahradit vlastnost v novém souboru projektu `<TargetFrameworks>netcoreapp3.0;net472</TargetFrameworks>` . V případě ukázky pro obchodní oddělení odstraňte starý soubor projektu (BeanTraderClient. csproj), protože už není potřeba. Pokud chcete zachovat oba soubory projektu, nezapomeňte je nechat sestavit do různých výstupních a zprostředkujících výstupních cest.
 
 ## <a name="fix-build-issues"></a>Opravit problémy sestavení
 
@@ -202,9 +202,9 @@ Třetí krok procesu přenosu získává projekt, který se má sestavit. Někte
 
 ### <a name="systemservicemodel-references-and-microsoftwindowscompatibility"></a>Odkazy na System. ServiceModel a Microsoft. Windows. Compatibility
 
-Ve společném zdroji chyb chybí odkazy pro rozhraní API, která jsou k dispozici pro .NET Core, ale nejsou automaticky zahrnutá do aplikace .NET Core Metapackage. Pokud to chcete vyřešit, měli byste se `Microsoft.Windows.Compatibility` na balíček odkazovat. Balíček kompatibility zahrnuje širokou škálu rozhraní API, která jsou společná pro desktopové aplikace pro Windows, jako je například klient WCF, adresářové služby, registr, konfigurace, rozhraní API seznamů ACL a další.
+Ve společném zdroji chyb chybí odkazy pro rozhraní API, která jsou k dispozici pro .NET Core, ale nejsou automaticky zahrnutá do aplikace .NET Core Metapackage. Pokud to chcete vyřešit, měli byste se na `Microsoft.Windows.Compatibility` balíček odkazovat. Balíček kompatibility zahrnuje širokou škálu rozhraní API, která jsou společná pro desktopové aplikace pro Windows, jako je například klient WCF, adresářové služby, registr, konfigurace, rozhraní API seznamů ACL a další.
 
-V případě ukázky v programu Bob obchodník je většina chyb sestavení způsobena chybějícími <xref:System.ServiceModel> typy. Ty je možné řešit pomocí odkazů na potřebné balíčky NuGet WCF. Klientská rozhraní API WCF jsou mezi systémy přítomnými v `Microsoft.Windows.Compatibility` balíčku, a to i tak, aby odkazovaly na balíček kompatibility ještě lepším řešením (protože taky řeší všechny problémy související s rozhraními API a také řešení problémů, ke kterým balíček kompatibility zpřístupňuje přístup). `Microsoft.Windows.Compatibility` Balíček pomáhá ve většině scénářů pro přenos rozhraní .net Core 3,0 WPF a WinForms. Po přidání odkazu na NuGet do `Microsoft.Windows.Compatibility`se zachová jenom jedna chyba buildu!
+V případě ukázky v programu Bob obchodník je většina chyb sestavení způsobena chybějícími <xref:System.ServiceModel> typy. Ty je možné řešit pomocí odkazů na potřebné balíčky NuGet WCF. Klientská rozhraní API WCF jsou mezi systémy přítomnými v `Microsoft.Windows.Compatibility` balíčku, a to i tak, aby odkazovaly na balíček kompatibility ještě lepším řešením (protože taky řeší všechny problémy související s rozhraními API a také řešení problémů, ke kterým balíček kompatibility zpřístupňuje přístup). `Microsoft.Windows.Compatibility`Balíček pomáhá ve většině scénářů pro přenos rozhraní .NET Core 3,0 WPF a WinForms. Po přidání odkazu na NuGet do `Microsoft.Windows.Compatibility` se zachová jenom jedna chyba buildu!
 
 ### <a name="cleaning-up-unused-files"></a>Čištění nepoužívaných souborů
 
@@ -212,7 +212,7 @@ Jeden typ problému migrace, který se často týká souborů C# a XAML, které 
 
 Další chyba sestavení, kterou vidíte v ukázce pro obchodní vztah, odkazuje na chybnou implementaci rozhraní v *OldUnusedViewModel.cs*. Název souboru je pomocný parametr, ale při kontrole zjistíte, že tento zdrojový soubor není správný. Nezpůsobila problémy dříve, protože neobsahovala původní .NET Framework projekt. Zdrojové soubory, které byly přítomny na disku, ale nejsou zahrnuté do starého souboru *csproj* , jsou teď zahrnuté automaticky.
 
-V případě nedostatku problému se dá snadno porovnat s předchozími *csproj* a potvrdit, že soubor není potřeba, a pak ho buď `<Compile Remove="" />` nebo, pokud už zdrojový soubor ještě není potřeba, odstranit. V tomto případě je bezpečné jenom odstranit *OldUnusedViewModel.cs*.
+V případě nedostatku problému se dá snadno porovnat s předchozími *csproj* a potvrdit, že soubor není potřeba, a pak `<Compile Remove="" />` ho buď nebo, pokud už zdrojový soubor ještě není potřeba, odstranit. V tomto případě je bezpečné jenom odstranit *OldUnusedViewModel.cs*.
 
 Pokud máte mnoho zdrojových souborů, které by musely být vyloučeny tímto způsobem, můžete zakázat automatické zahrnutí souborů jazyka C# nastavením `<EnableDefaultCompileItems>` vlastnosti na hodnotu false v souboru projektu. Pak můžete zkopírovat `<Compile Include>` položky ze starého souboru projektu do nového, aby bylo možné sestavit pouze zdroje, které mají být zahrnuty. Podobně `<EnableDefaultPageItems>` lze použít k vypnutí automatického zahrnutí stránek XAML a `<EnableDefaultItems>` může řídit jak jedinou vlastností.
 
@@ -227,33 +227,33 @@ Po odebrání problematického souboru z ukázky pro obchodníka z fazolového �
 
 Další třídou problému, která se nachází v některých scénářích migrace, jsou rozdíly v rozhraní API mezi .NET Framework a verzemi závislostí .NET Core. I v případě, že balíček NuGet cílí na .NET Framework i .NET Standard nebo .NET Core, můžou existovat různé knihovny pro použití s různými cíli .NET. Díky tomu mohou balíčky podporovat mnoho různých platforem .NET, které mohou vyžadovat různé implementace. Také to znamená, že při cílení na různé platformy .NET můžou knihovny obsahovat malé rozdíly v rozhraní API.
 
-Další sada chyb, které vidíte v ukázce obchodníka v programu Bob, se vztahuje `Castle.Windsor` na rozhraní API. Projekt .NET Core Bob používá stejnou verzi `Castle.Windsor` jako projekt cílený na .NET Framework (4.1.1), ale implementace těchto dvou platforem se mírně liší.
+Další sada chyb, které vidíte v ukázce obchodníka v programu Bob, se vztahuje na `Castle.Windsor` rozhraní API. Projekt .NET Core Bob používá stejnou verzi `Castle.Windsor` jako projekt cílený na .NET Framework (4.1.1), ale implementace těchto dvou platforem se mírně liší.
 
 V takovém případě se zobrazí následující problémy, které je potřeba opravit:
 
-1. `Castle.MicroKernel.Registration.Classes.FromThisAssembly`není k dispozici v .NET Core. K dispozici je však podobné rozhraní API `Classes.FromAssemblyContaining` , takže můžeme nahradit obě použití `Classes.FromThisAssembly()` voláním metody `Classes.FromAssemblyContaining(t)`, kde `t` je typ, který provádí volání.
-1. Podobně v *Bootstrapper.cs* `Castle.Windsor.Installer.FromAssembly`. Tato technologie není v .NET Core dostupná. Místo toho lze toto volání nahradit pomocí `FromAssembly.Containing(typeof(Bootstrapper))`.
+1. `Castle.MicroKernel.Registration.Classes.FromThisAssembly`není k dispozici v .NET Core. K dispozici je však podobné rozhraní API `Classes.FromAssemblyContaining` , takže můžeme nahradit obě použití `Classes.FromThisAssembly()` voláním `Classes.FromAssemblyContaining(t)` metody, kde `t` je typ, který provádí volání.
+1. Podobně v *Bootstrapper.cs* `Castle.Windsor.Installer.FromAssembly` . Tato technologie není v .NET Core dostupná. Místo toho lze toto volání nahradit pomocí `FromAssembly.Containing(typeof(Bootstrapper))` .
 
 ### <a name="updating-wcf-client-usage"></a>Aktualizace využití klienta WCF
 
-V případě, `Castle.Windsor` že jsou rozdíly vyřešeny, poslední zbývající chyba sestavení v projektu .NET Core Bob obchodník `BeanTraderServiceClient` je, že (která `DuplexClientBase`je odvozena z `Open` ) nemá metodu. To není překvapivé, protože se jedná o rozhraní API, které na začátku tohoto procesu migrace zvýrazní analyzátor přenositelnosti .NET. Podíváme se na to, co `BeanTraderServiceClient` se věnuje pozornost většímu problému, ale. Tento klient WCF byl automaticky vygenerován nástrojem [Svcutil. exe](../../framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) .
+V případě, že jsou rozdíly vyřešeny `Castle.Windsor` , poslední zbývající chyba sestavení v projektu .NET Core Bob obchodník je, že `BeanTraderServiceClient` (která je odvozena z `DuplexClientBase` ) nemá `Open` metodu. To není překvapivé, protože se jedná o rozhraní API, které na začátku tohoto procesu migrace zvýrazní analyzátor přenositelnosti .NET. Podíváme `BeanTraderServiceClient` se na to, co se věnuje pozornost většímu problému, ale. Tento klient WCF byl automaticky vygenerován nástrojem [Svcutil. exe](../../framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) .
 
 **Klienti WCF vygenerované službou Svcutil jsou určeny pro použití v .NET Framework.**
 
 Řešení, která používají Svcutil klienty WCF, budou muset znovu vygenerovat klienty kompatibilní s .NET Standard pro použití s .NET Core. Jedním z hlavních důvodů, proč původní klienti nebudou fungovat, jsou závislé na konfiguraci aplikací pro definování vazeb a koncových bodů WCF. Protože .NET Standard rozhraní API WCF můžou pracovat na různých platformách (kde nejsou k dispozici rozhraní API pro System. Configuration), klienti WCF pro scénáře .NET Core a .NET Standard musí definovat vazby a koncové body programově místo v konfiguraci.
 
-Ve skutečnosti bude nutné změnit použití všech klientů WCF, který `<system.serviceModel>` závisí na oddílu App. config (ať už vytvořené pomocí Svcutil nebo ručně), aby fungovalo na .NET Core.
+Ve skutečnosti bude nutné změnit použití všech klientů WCF, který závisí na `<system.serviceModel>` oddílu App. config (ať už vytvořené pomocí Svcutil nebo ručně), aby fungovalo na .NET Core.
 
 Existují dva způsoby, jak automaticky generovat .NET Standard kompatibilních klientů WCF:
 
-- Tento `dotnet-svcutil` nástroj je nástroj .NET, který GENERUJE klienty WCF způsobem, který je podobný tomu, jak Svcutil pracovali dříve.
+- Tento `dotnet-svcutil` Nástroj je nástroj .NET, který generuje klienty WCF způsobem, který je podobný tomu, jak Svcutil pracovali dříve.
 - Visual Studio může generovat klienty WCF pomocí možnosti [reference webové služby WCF](../../core/additional-tools/wcf-web-service-reference-guide.md) funkce připojené služby.
 
-Oba postupy fungují dobře. Můžete samozřejmě napsat kód klienta WCF sami. V této ukázce se používá funkce připojená služba sady Visual Studio. Provedete to tak, že kliknete pravým tlačítkem na projekt *BeanTraderClient. Core* v Průzkumníku řešení sady Visual Studio a vyberete **Přidat** > **připojenou službu**. Dále vyberte poskytovatele referencí webové služby WCF. Tím se zobrazí dialogové okno, kde můžete zadat adresu webové služby back-end účastníka (`localhost:8080` Pokud používáte server místně) a obor názvů, který mají generované typy použít (například**BeanTrader. Service**).
+Oba postupy fungují dobře. Můžete samozřejmě napsat kód klienta WCF sami. V této ukázce se používá funkce připojená služba sady Visual Studio. Provedete to tak, že kliknete pravým tlačítkem na projekt *BeanTraderClient. Core* v Průzkumníku řešení sady Visual Studio a vyberete **Přidat**  >  **připojenou službu**. Dále vyberte poskytovatele referencí webové služby WCF. Tím se zobrazí dialogové okno, kde můžete zadat adresu webové služby back-end účastníka (Pokud používáte `localhost:8080` Server místně) a obor názvů, který mají generované typy použít (například**BeanTrader. Service**).
 
 ![Dialogová okna propojené služby odkazu webové služby WCF](./media/convert-project-from-net-framework/connected-service-dialog.png)
 
-Po výběru tlačítka **Dokončit** je do projektu přidán nový uzel připojené služby a do tohoto uzlu bude přidán soubor reference.cs, který obsahuje .NET Standard nového klienta WCF pro přístup ke službě pro přístup k nástroji fazole. Pokud se podíváte `GetEndpointAddress` na `GetBindingForEndpoint` metody nebo v tomto souboru, uvidíte, že vazby a koncové body se nyní generují programově (místo pomocí konfigurace aplikace). Funkce přidat připojené služby může také přidat odkazy na některé balíčky System. ServiceModel v souboru projektu, které nejsou potřeba, protože všechny potřebné balíčky WCF jsou zahrnuté přes Microsoft. Windows. Compatibility. Zkontrolujte csproj a podívejte se, jestli se přidaly další `<PackageReference>` položky System. ServiceModel, a pokud ano, odeberte je.
+Po výběru tlačítka **Dokončit** je do projektu přidán nový uzel připojené služby a do tohoto uzlu bude přidán soubor reference.cs, který obsahuje .NET Standard nového klienta WCF pro přístup ke službě pro přístup k nástroji fazole. Pokud se podíváte `GetEndpointAddress` na `GetBindingForEndpoint` metody nebo v tomto souboru, uvidíte, že vazby a koncové body se nyní generují programově (místo pomocí konfigurace aplikace). Funkce přidat připojené služby může také přidat odkazy na některé balíčky System. ServiceModel v souboru projektu, které nejsou potřeba, protože všechny potřebné balíčky WCF jsou zahrnuté přes Microsoft. Windows. Compatibility. Zkontrolujte csproj a podívejte se, jestli se přidaly další položky System. ServiceModel `<PackageReference>` , a pokud ano, odeberte je.
 
 Náš projekt teď má nové třídy klienta WCF (v *reference.cs*), ale zároveň má i staré (v BeanTrader.cs). V tuto chvíli jsou k dispozici dvě možnosti:
 
@@ -269,7 +269,7 @@ V případě ukázky programu Bob obchodník můžete v původním projektu prov
 
 01. Nový klient služby WCF je podobný původnímu, ale několik oborů názvů v generovaném kódu se liší. Z tohoto důvodu je nutné aktualizovat projekt tak, aby se typy klientů WCF používaly ze služby BeanTrader. Service (nebo libovolného názvu oboru názvů, který jste zvolili) místo BeanTrader. model nebo bez oboru názvů. Sestavování *BeanTraderClient. Core. csproj* vám pomůže zjistit, kde se tyto změny musí provést. Opravy budou potřeba v C# i ve zdrojových souborech XAML.
 
-01. Nakonec zjistíte, že v *BeanTraderServiceClientFactory.cs* dojde k chybě, protože se změnily dostupné konstruktory pro `BeanTraderServiceClient` daný typ. Slouží k zadání `InstanceContext` argumentu (který byl vytvořen pomocí `CallbackHandler` z kontejneru `Castle.Windsor` IOC). Nové konstruktory vytvoří nové `CallbackHandler`s. Existují však konstruktory v `BeanTraderServiceClient`základním typu, které odpovídají požadovaným požadavkům. Vzhledem k tomu, že automaticky generovaný kód klienta WCF existuje v dílčích třídách, je možné jej snadno zvětšit. Chcete-li to provést, vytvořte nový soubor s názvem *BeanTraderServiceClient.cs* a pak vytvořte částečnou třídu se stejným názvem (pomocí oboru názvů BeanTrader. Service). Pak přidejte jeden konstruktor na částečný typ, jak je znázorněno zde.
+01. Nakonec zjistíte, že v *BeanTraderServiceClientFactory.cs* dojde k chybě, protože se změnily dostupné konstruktory pro daný `BeanTraderServiceClient` typ. Slouží k zadání `InstanceContext` argumentu (který byl vytvořen pomocí `CallbackHandler` z `Castle.Windsor` kontejneru IOC). Nové konstruktory vytvoří nové `CallbackHandler` s. Existují však konstruktory v `BeanTraderServiceClient` základním typu, které odpovídají požadovaným požadavkům. Vzhledem k tomu, že automaticky generovaný kód klienta WCF existuje v dílčích třídách, je možné jej snadno zvětšit. Chcete-li to provést, vytvořte nový soubor s názvem *BeanTraderServiceClient.cs* a pak vytvořte částečnou třídu se stejným názvem (pomocí oboru názvů BeanTrader. Service). Pak přidejte jeden konstruktor na částečný typ, jak je znázorněno zde.
 
     ```csharp
     public BeanTraderServiceClient(System.ServiceModel.InstanceContext callbackInstance) :
@@ -277,7 +277,7 @@ V případě ukázky programu Bob obchodník můžete v původním projektu prov
             { }
     ```
 
-V případě těchto změn nyní bude ukázka pro obchodníky v programu Bob používat nového klienta WCF kompatibilního s .NET Standard a můžete provést konečnou opravu změny `Open` volání v *TradingService.cs* . `await OpenAsync`
+V případě těchto změn nyní bude ukázka pro obchodníky v programu Bob používat nového klienta WCF kompatibilního s .NET Standard a můžete provést konečnou opravu změny `Open` volání v *TradingService.cs* `await OpenAsync` .
 
 S vyřešenými problémy WCF se nyní sestavuje verze .NET Core ukázkového obchodníka v programu Bob.
 
@@ -302,7 +302,7 @@ Po odebrání oddílu System. serviceModel v *App. config*se aplikace spustí, a
 System.PlatformNotSupportedException: 'Operation is not supported on this platform.'
 ```
 
-Nepodporované rozhraní API `Func<T>.BeginInvoke`je. Jak je vysvětleno v [dotnet/corefx # 5940](https://github.com/dotnet/corefx/issues/5940), .NET Core nepodporuje `BeginInvoke` metody `EndInvoke` a na typech delegátů z důvodu základních závislostí vzdálené komunikace. Tento problém a jeho opravu jsou podrobněji popsány v článku [migrace delegáta. BeginInvoke volání pro](https://devblogs.microsoft.com/dotnet/migrating-delegate-begininvoke-calls-for-net-core/) Blogový příspěvek .NET Core, ale v registru `BeginInvoke` je `EndInvoke` to, že pokud je `Task.Run` to možné, by volání měla být nahrazena (nebo asynchronními alternativami). Když použijete obecné řešení, `BeginInvoke` volání se dá nahradit `Invoke` voláním spuštěným v. `Task.Run`
+Nepodporované rozhraní API je `Func<T>.BeginInvoke` . Jak je vysvětleno v [dotnet/corefx # 5940](https://github.com/dotnet/corefx/issues/5940), .NET Core nepodporuje `BeginInvoke` `EndInvoke` metody a na typech delegátů z důvodu základních závislostí vzdálené komunikace. Tento problém a jeho opravu jsou podrobněji popsány v článku [migrace delegáta. BeginInvoke volání pro](https://devblogs.microsoft.com/dotnet/migrating-delegate-begininvoke-calls-for-net-core/) Blogový příspěvek .NET Core, ale v registru je to, že `BeginInvoke` Pokud je `EndInvoke` to možné, by volání měla být nahrazena `Task.Run` (nebo asynchronními alternativami). Když použijete obecné řešení, `BeginInvoke` volání se dá nahradit `Invoke` voláním spuštěným v `Task.Run` .
 
 ```csharp
 Task.Run(() =>

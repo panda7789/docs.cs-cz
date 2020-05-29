@@ -5,12 +5,12 @@ ms.date: 10/01/2018
 helpviewer_keywords:
 - Memory&lt;T&gt; and Span&lt;T&gt; best practices
 - using Memory&lt;T&gt; and Span&lt;T&gt;
-ms.openlocfilehash: b9405d746c141308c7d984dac9da0d65d1048d1e
-ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
+ms.openlocfilehash: cb9075a12bb8d842cd8e937e74f8869c910fc0ab
+ms.sourcegitcommit: 71b8f5a2108a0f1a4ef1d8d75c5b3e129ec5ca1e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83380018"
+ms.lasthandoff: 05/29/2020
+ms.locfileid: "84201942"
 ---
 # <a name="memoryt-and-spant-usage-guidelines"></a>Pokyny k používání Memory\<T> a Span\<T>
 
@@ -65,7 +65,7 @@ Vyrovnávací paměť má dva uživatele `WriteInt32ToBuffer` a `DisplayBufferTo
 
 `WriteInt32ToBuffer`Metoda má zapůjčení (může spotřebovat) vyrovnávací paměť mezi začátkem volání metody a časem, který metoda vrátí. Podobně `DisplayBufferToConsole` má zapůjčení ve vyrovnávací paměti během jeho provádění a zapůjčení je uvolněno při zrušení metody. (K dispozici není žádné rozhraní API pro správu zapůjčených adres. "zapůjčení" je koncepční záležitost.)
 
-## <a name="memoryt-and-the-ownerconsumer-model"></a>\<> paměti a model vlastník/příjemce
+## <a name="memoryt-and-the-ownerconsumer-model"></a>Paměť \<T> a model vlastník/příjemce
 
 Jako poznámky k oddílům [pro vlastníky, uživatele a správu životního cyklu](#owners-consumers-and-lifetime-management) má vyrovnávací paměť vždy vlastníka. .NET Core podporuje dva modely vlastnictví:
 
@@ -87,9 +87,9 @@ V tomto kódu:
 
 - `WriteInt32ToBuffer`Metody a `DisplayBufferToConsole` akceptují <xref:System.Memory%601> jako veřejné rozhraní API. Proto jsou příjemci vyrovnávací paměti. A využívají je pouze po jednom.
 
-I když `WriteInt32ToBuffer` je metoda určena pro zápis hodnoty do vyrovnávací paměti, `DisplayBufferToConsole` metoda není. Aby se to odráželo, mohl by být přijatý argument typu <xref:System.ReadOnlyMemory%601> . Další informace o naleznete v <xref:System.ReadOnlyMemory%601> tématu [Rule #2: použijte ReadOnlySpan \< t> nebo ReadOnlyMemory \< t>, pokud by měla být vyrovnávací paměť jen pro čtení](#rule-2).
+I když `WriteInt32ToBuffer` je metoda určena pro zápis hodnoty do vyrovnávací paměti, `DisplayBufferToConsole` metoda není. Aby se to odráželo, mohl by být přijatý argument typu <xref:System.ReadOnlyMemory%601> . Další informace o naleznete v <xref:System.ReadOnlyMemory%601> tématu [Rule #2: použijte ReadOnlySpan \<T> nebo ReadOnlyMemory, \<T> Pokud by měla být vyrovnávací paměť jen pro čtení](#rule-2).
 
-### <a name="ownerless-memoryt-instances"></a>Instance> paměti pro vlastní přidaný \< čas
+### <a name="ownerless-memoryt-instances"></a>Instance paměti "nevlastní" \<T>
 
 Můžete vytvořit <xref:System.Memory%601> instanci bez použití <xref:System.Buffers.IMemoryOwner%601> . V takovém případě je vlastnictví vyrovnávací paměti implicitní, nikoli explicitní, a podporuje se jenom model s jedním vlastníkem. Můžete to udělat takto:
 
@@ -113,9 +113,9 @@ Vzhledem k tomu, že blok paměti je vlastněn, ale má být předán více komp
 
 Níže jsou naše doporučení pro úspěšné používání <xref:System.Memory%601> a související typy. Doprovodné materiály, které se vztahují na <xref:System.Memory%601> a <xref:System.Span%601> platí i <xref:System.ReadOnlyMemory%601> <xref:System.ReadOnlySpan%601> v případě, že výslovně nebereme jinak.
 
-**#1 pravidla: v případě synchronního rozhraní API použijte \< místo \< parametru> paměti t, pokud je to možné, možnost Span t>.**
+**#1 pravidla: pro synchronní rozhraní API použijte \<T> místo toho možnost span namísto paměti \<T> jako parametru, pokud je to možné.**
 
-<xref:System.Span%601>je všestrannější než <xref:System.Memory%601> a může představovat širší škálu souvislých vyrovnávacích pamětí. <xref:System.Span%601>nabízí také lepší výkon než <xref:System.Memory%601> . Nakonec můžete použít <xref:System.Memory%601.Span?displayProperty=nameWithType> vlastnost k převedení <xref:System.Memory%601> instance na a <xref:System.Span%601> , i když \< Převod span t>-to-Memory \<> není možné. Takže v případě, že se volající mají <xref:System.Memory%601> instance, budou moci volat metody s <xref:System.Span%601> parametry přesto.
+<xref:System.Span%601>je všestrannější než <xref:System.Memory%601> a může představovat širší škálu souvislých vyrovnávacích pamětí. <xref:System.Span%601>nabízí také lepší výkon než <xref:System.Memory%601> . Nakonec můžete použít <xref:System.Memory%601.Span?displayProperty=nameWithType> vlastnost k převedení <xref:System.Memory%601> instance na <xref:System.Span%601> , i když převod z rozsahu \<T> na paměť \<T> není možný. Takže v případě, že se volající mají <xref:System.Memory%601> instance, budou moci volat metody s <xref:System.Span%601> parametry přesto.
 
 Použití parametru typu <xref:System.Span%601> místo typu <xref:System.Memory%601> také vám pomůže napsat správnou implementaci využívající metodu. Automaticky získáte kontroly za běhu, abyste se ujistili, že se nepokoušíte o přístup k vyrovnávací paměti nad zapůjčením vaší metody (Další informace najdete později).
 
@@ -123,7 +123,7 @@ V některých případech budete muset <xref:System.Memory%601> místo parametru
 
 <a name="rule-2" />
 
-**#2 pravidla: použijte ReadOnlySpan \< t> nebo ReadOnlyMemory \< t>, pokud by měla být vyrovnávací paměť jen pro čtení.**
+**#2 pravidla: použijte ReadOnlySpan \<T> nebo ReadOnlyMemory, \<T> Pokud by vyrovnávací paměť měla být jen pro čtení.**
 
 V předchozích příkladech `DisplayBufferToConsole` Metoda načítá jenom z vyrovnávací paměti. neupravuje obsah vyrovnávací paměti. Signatura metody by se měla změnit na následující.
 
@@ -139,7 +139,7 @@ void DisplayBufferToConsole(ReadOnlySpan<char> buffer);
 
 `DisplayBufferToConsole`Metoda teď funguje s prakticky všemi typy vyrovnávací paměti, které lze `T[]` předcházet:, úložiště přidělené [stackalloc](../../csharp/language-reference/operators/stackalloc.md)a tak dále. Můžete dokonce předat <xref:System.String> přímo na!
 
-**#3 pravidla: Pokud vaše metoda přijímá paměť \< t> a vrátí `void` , nemusíte \< po návratu metody použít instanci> paměti t.**
+**#3 pravidla: Pokud vaše metoda přijímá paměť \<T> a vrací `void` , nemusíte \<T> po návratu metody použít instanci paměti.**
 
 To se týká konceptu zapůjčení uvedeného výše. Zapůjčení metody vracející anulování <xref:System.Memory%601> instance začíná při zadání metody a končí při ukončení metody. Vezměte v úvahu následující příklad, který volá `Log` smyčku na základě vstupu z konzoly.
 
@@ -173,7 +173,7 @@ Tuto chybu lze vyřešit několika způsoby:
 
    [!code-csharp[defensive-copy](~/samples/snippets/standard/buffers/memory-t/task-returning/task-returning.cs#1)]
 
-**#4 pravidla: Pokud vaše metoda přijímá> paměti \< t a vrátí úlohu, nemusíte \< po přechodu úlohy do stavu terminálu používat instanci t> paměti.**
+**#4 pravidla: Pokud vaše metoda přijímá paměť \<T> a vrátí úlohu, \<T> po přechodu úlohy do stavu terminálu nemusíte instanci paměti používat.**
 
 Toto je pouze asynchronní varianta pravidla #3. `Log`Metodu z předchozího příkladu můžete zapsat takto, aby splňovala toto pravidlo:
 
@@ -183,7 +183,7 @@ V tomto případě "stav terminálu" znamená, že se úloha přechází do stav
 
 Tento návod se vztahuje na metody, které vracejí <xref:System.Threading.Tasks.Task> , <xref:System.Threading.Tasks.Task%601> , <xref:System.Threading.Tasks.ValueTask%601> nebo podobného typu.
 
-**#5 pravidla: Pokud váš konstruktor přijímá paměť \< T,> jako parametr, předpokládá se, že metody instance na vytvořeném objektu budou spotřebiteli \< instance> paměti t.**
+**#5 pravidla: Pokud váš konstruktor přijímá paměť \<T> jako parametr, předpokládá se, že metody instance u vytvořeného objektu budou spotřebiteli instance paměti \<T> .**
 
 Uvažujte následující příklad:
 
@@ -206,7 +206,7 @@ void PrintAllOddValues(ReadOnlyMemory<int> input)
 
 V tomto případě `OddValueExtractor` konstruktor přijímá `ReadOnlyMemory<int>` jako parametr konstruktoru, takže samotný konstruktor je příjemcem `ReadOnlyMemory<int>` instance a všechny metody instance vrácené hodnoty jsou také příjemci původní `ReadOnlyMemory<int>` instance. To znamená, že `TryReadNextOddValue` instance spotřebovává `ReadOnlyMemory<int>` , i když instance není předána přímo `TryReadNextOddValue` metodě.
 
-**#6 pravidla: Pokud máte ve svém typu nastavitelnou vlastnost typu paměť \< t> (nebo ekvivalentní metodu instance), předpokládá se, že metody instance tohoto objektu budou spotřebiteli \< instance> paměti t.**
+**#6 pravidla: Pokud máte na svém typu nastavitelnou vlastnost typu paměti \<T> (nebo ekvivalentní metodu instance), předpokládá se, že metody instance tohoto objektu budou spotřebiteli \<T> instance paměti.**
 
 Toto je opravdu pouze varianta pravidla #5. Toto pravidlo existuje, protože metody setter nebo ekvivalentní metody jsou považovány za zachycení a uchování jejich vstupů, takže metody instance u stejného objektu mohou využívat zachycený stav.
 
@@ -226,7 +226,7 @@ class Person
 }
 ```
 
-**#7 pravidla: Pokud máte \< odkaz na> IMemoryOwner T, je potřeba, abyste ho odstranili nebo přenesli jeho vlastnictví (ale ne obojí).**
+**#7 pravidla: Pokud máte \<T> odkaz IMemoryOwner, je potřeba, abyste ho odstranili nebo přenesli jeho vlastnictví (ale ne obojí).**
 
 Vzhledem k <xref:System.Memory%601> tomu, že instance může být zajištěna buď spravovanou, nebo nespravovanou pamětí, musí vlastník zavolat, <xref:System.Buffers.MemoryPool%601.Dispose%2A?displayProperty=nameWithType> až bude dokončena práce na <xref:System.Memory%601> instanci. Alternativně může vlastník přenést vlastnictví <xref:System.Buffers.IMemoryOwner%601> instance na jinou komponentu. v takovém případě se součást získání bude zodpovědná za volání <xref:System.Buffers.MemoryPool%601.Dispose%2A?displayProperty=nameWithType> v příslušné době (Další informace najdete později).
 
@@ -234,7 +234,7 @@ Nepodaří-li se zavolat <xref:System.Buffers.MemoryPool%601.Dispose%2A> metodu,
 
 Toto pravidlo platí také pro kód, který volá metody objektu pro vytváření, jako je <xref:System.Buffers.MemoryPool%601.Rent%2A?displayProperty=nameWithType> . Volající se stane vlastníkem vráceného <xref:System.Buffers.IMemoryOwner%601> a zodpovídá za odstranění instance po dokončení.
 
-**#8 pravidla: Pokud máte \< na ploše rozhraní API parametr> IMemoryOwner T, přijímáte vlastnictví této instance.**
+**#8 pravidla: Pokud máte \<T> na ploše rozhraní API parametr IMemoryOwner, přijímáte vlastnictví této instance.**
 
 Přijetí instance tohoto typu signalizuje, že vaše komponenta zamýšlí převzít vlastnictví této instance. Vaše komponenta se bude zodpovědná za řádné vyřazení podle pravidla #7.
 
@@ -243,7 +243,7 @@ Jakákoli komponenta, která přenáší vlastnictví <xref:System.Buffers.IMemo
 > [!IMPORTANT]
 > Pokud váš konstruktor přijímá <xref:System.Buffers.IMemoryOwner%601> jako parametr, jeho typ by měl implementovat <xref:System.IDisposable> a vaše <xref:System.IDisposable.Dispose%2A> Metoda by měla volat <xref:System.Buffers.MemoryPool%601.Dispose%2A?displayProperty=nameWithType> .
 
-**#9 pravidla: Pokud zabalíte synchronní metodu volání nespravovaného volání, rozhraní API by mělo \< jako parametr přijmout> s rozsahem T.**
+**#9 pravidla: Pokud zabalíte synchronní metodu volání nespravovaného volání, rozhraní API by mělo přijmout \<T> jako parametr.**
 
 V souladu s pravidly #1 <xref:System.Span%601> je všeobecně správný typ, který se má použít pro synchronní rozhraní API. Instance můžete připnout <xref:System.Span%601> prostřednictvím [`fixed`](../../csharp/language-reference/keywords/fixed-statement.md) klíčového slova, jak je uvedeno v následujícím příkladu.
 
@@ -283,7 +283,7 @@ public unsafe int ManagedWrapper(Span<byte> data)
 }
 ```
 
-**#10 pravidla: Pokud zabalíte asynchronní metodu volání nespravovaného volání, rozhraní API by mělo \< jako parametr přijmout> paměti T.**
+**#10 pravidla: Pokud zabalíte asynchronní metodu volání metody p/Invoke, rozhraní API by mělo přijmout paměť \<T> jako parametr.**
 
 Vzhledem k tomu, že nelze použít [`fixed`](../../csharp/language-reference/keywords/fixed-statement.md) klíčové slovo v rámci asynchronních operací, použijte <xref:System.Memory%601.Pin%2A?displayProperty=nameWithType> metodu pro připnutí <xref:System.Memory%601> instancí bez ohledu na druh souvislé paměti, kterou instance představuje. Následující příklad ukazuje, jak použít toto rozhraní API k provedení asynchronního volání volání nespravovaného volání.
 

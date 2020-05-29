@@ -2,22 +2,22 @@
 title: <serviceMetadata>
 ms.date: 03/30/2017
 ms.assetid: 2b4c3b4c-31d4-4908-a9b7-5bb411c221f2
-ms.openlocfilehash: 04d160535126cf2383cd9d0fa98d99cd76445735
-ms.sourcegitcommit: 093571de904fc7979e85ef3c048547d0accb1d8a
+ms.openlocfilehash: c421273d1d08db047a51f1f1e4f9d6c908f12986
+ms.sourcegitcommit: 71b8f5a2108a0f1a4ef1d8d75c5b3e129ec5ca1e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70399610"
+ms.lasthandoff: 05/29/2020
+ms.locfileid: "84201788"
 ---
-# <a name="servicemetadata"></a>\<serviceMetadata>
+# \<serviceMetadata>
 Určuje publikování metadat služby a přidružených informací.  
   
-[ **\<> Konfigurace**](../configuration-element.md)\
-&nbsp;&nbsp;[ **\<System. serviceModel >** ](system-servicemodel.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;[ **\<> chování**](behaviors.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<serviceBehaviors >** ](servicebehaviors.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<> chování**](behavior-of-servicebehaviors.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<Oddílu serviceMetadata >**  
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<system.serviceModel>**](system-servicemodel.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[**\<behaviors>**](behaviors.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<serviceBehaviors>**](servicebehaviors.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<behavior>**](behavior-of-servicebehaviors.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<serviceMetadata>**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -42,33 +42,33 @@ Určuje publikování metadat služby a přidružených informací.
 |Atribut|Popis|  
 |---------------|-----------------|  
 |externalMetadataLocation|Identifikátor URI, který obsahuje umístění souboru WSDL, který je vrácen uživateli v odpovědi na požadavky WSDL a MEX namísto automaticky generovaného WSDL. Pokud tento atribut není nastaven, je vrácen výchozí prvek WSDL. Výchozí hodnota je prázdný řetězec.|  
-|httpGetBinding|Řetězec, který určuje typ vazby, který bude použit pro načtení metadat prostřednictvím HTTP GET. Toto nastavení je volitelné. Pokud není zadaný, použijí se výchozí vazby.<br /><br /> Budou podporovány pouze vazby s vnitřními prvky <xref:System.ServiceModel.Channels.IReplyChannel> vazby, které podporují. Kromě toho <xref:System.ServiceModel.Channels.MessageVersion> musí být <xref:System.ServiceModel.Channels.MessageVersion.None%2A>vlastnost vazby.|  
-|httpGetBindingConfiguration|Řetězec, který nastaví název vazby, která je zadána v `httpGetBinding` atributu, který odkazuje na Další informace o konfiguraci této vazby. V `<bindings>` části se musí definovat stejný název.|  
-|httpGetEnabled|Logická hodnota, která určuje, zda se mají publikovat metadata služby pro načtení pomocí požadavku HTTP/GET. Výchozí hodnota je `false`.<br /><br /> Pokud není zadán atribut httpGetUrl, adresa, na které jsou metadata publikována, je adresa služby plus a "? WSDL". Například pokud je adresa služby "http://localhost:8080/CalculatorService ", adresa HTTP/GET metadat http://localhost:8080/CalculatorService?wsdl je "".<br /><br /> Pokud je `false`Tato vlastnost nebo adresa služby není založena na http nebo https, "? WSDL" se ignoruje.|  
+|httpGetBinding|Řetězec, který určuje typ vazby, který bude použit pro načtení metadat prostřednictvím HTTP GET. Toto nastavení je volitelné. Pokud není zadaný, použijí se výchozí vazby.<br /><br /> Budou podporovány pouze vazby s vnitřními prvky vazby, které podporují <xref:System.ServiceModel.Channels.IReplyChannel> . Kromě toho <xref:System.ServiceModel.Channels.MessageVersion> musí být vlastnost vazby <xref:System.ServiceModel.Channels.MessageVersion.None%2A> .|  
+|httpGetBindingConfiguration|Řetězec, který nastaví název vazby, která je zadána v `httpGetBinding` atributu, který odkazuje na Další informace o konfiguraci této vazby. V části se musí definovat stejný název `<bindings>` .|  
+|httpGetEnabled|Logická hodnota, která určuje, zda se mají publikovat metadata služby pro načtení pomocí požadavku HTTP/GET. Výchozí formát je `false`.<br /><br /> Pokud není zadán atribut httpGetUrl, adresa, na které jsou metadata publikována, je adresa služby plus a "? WSDL". Například pokud je adresa služby `http://localhost:8080/CalculatorService` , adresa HTTP/GET metadat je `http://localhost:8080/CalculatorService?wsdl` .<br /><br /> Pokud je tato vlastnost `false` nebo adresa služby není založena na http nebo https, "? WSDL" se ignoruje.|  
 |httpGetUrl|Identifikátor URI, který určuje adresu, na které jsou metadata publikována pro načtení pomocí požadavku HTTP/GET. Je-li zadán relativní identifikátor URI, bude považován za relativní k základní adrese služby.|  
-|httpsGetBinding|Řetězec, který určuje typ vazby, který bude použit pro načtení metadat prostřednictvím protokolu HTTPS GET. Toto nastavení je volitelné. Pokud není zadaný, použijí se výchozí vazby.<br /><br /> Budou podporovány pouze vazby s vnitřními prvky <xref:System.ServiceModel.Channels.IReplyChannel> vazby, které podporují. Kromě toho <xref:System.ServiceModel.Channels.MessageVersion> musí být <xref:System.ServiceModel.Channels.MessageVersion.None%2A>vlastnost vazby.|  
-|httpsGetBindingConfiguration|Řetězec, který nastaví název vazby, která je zadána v `httpsGetBinding` atributu, který odkazuje na Další informace o konfiguraci této vazby. V `<bindings>` části se musí definovat stejný název.|  
-|httpsGetEnabled|Logická hodnota, která určuje, zda se mají publikovat metadata služby pro načtení pomocí požadavku HTTPS/Get. Výchozí hodnota je `false`.<br /><br /> Pokud není zadán atribut httpsGetUrl, adresa, na které jsou metadata publikována, je adresa služby plus a "? WSDL". Například pokud je adresa služby "https://localhost:8080/CalculatorService ", adresa HTTP/GET metadat https://localhost:8080/CalculatorService?wsdl je "".<br /><br /> Pokud je `false`Tato vlastnost nebo adresa služby není založena na http nebo https, "? WSDL" se ignoruje.|  
+|httpsGetBinding|Řetězec, který určuje typ vazby, který bude použit pro načtení metadat prostřednictvím protokolu HTTPS GET. Toto nastavení je volitelné. Pokud není zadaný, použijí se výchozí vazby.<br /><br /> Budou podporovány pouze vazby s vnitřními prvky vazby, které podporují <xref:System.ServiceModel.Channels.IReplyChannel> . Kromě toho <xref:System.ServiceModel.Channels.MessageVersion> musí být vlastnost vazby <xref:System.ServiceModel.Channels.MessageVersion.None%2A> .|  
+|httpsGetBindingConfiguration|Řetězec, který nastaví název vazby, která je zadána v `httpsGetBinding` atributu, který odkazuje na Další informace o konfiguraci této vazby. V části se musí definovat stejný název `<bindings>` .|  
+|httpsGetEnabled|Logická hodnota, která určuje, zda se mají publikovat metadata služby pro načtení pomocí požadavku HTTPS/Get. Výchozí formát je `false`.<br /><br /> Pokud není zadán atribut httpsGetUrl, adresa, na které jsou metadata publikována, je adresa služby plus a "? WSDL". Například pokud je adresa služby " https://localhost:8080/CalculatorService ", adresa HTTP/GET metadat je " https://localhost:8080/CalculatorService?wsdl ".<br /><br /> Pokud je tato vlastnost `false` nebo adresa služby není založena na http nebo https, "? WSDL" se ignoruje.|  
 |httpsGetUrl|Identifikátor URI, který určuje adresu, na které jsou metadata publikována pro načtení pomocí požadavku HTTPS/Get.|  
-|policyVersion|Řetězec, který určuje verzi používané specifikace WS-Policy. Tento atribut je typu <xref:System.ServiceModel.Description.PolicyVersion>.|  
+|policyVersion|Řetězec, který určuje verzi používané specifikace WS-Policy. Tento atribut je typu <xref:System.ServiceModel.Description.PolicyVersion> .|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
- Žádné  
+ Žádná  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<> chování](behavior-of-endpointbehaviors.md)|Určuje chování element.|  
+|[\<behavior>](behavior-of-endpointbehaviors.md)|Určuje chování element.|  
   
 ## <a name="remarks"></a>Poznámky  
  Tento prvek konfigurace umožňuje řídit funkce publikování metadat služby. Aby nedocházelo k neúmyslnému zveřejnění potenciálně citlivých metadat služby, služba výchozí konfigurace služby Windows Communication Foundation (WCF) zakáže publikování metadat. Toto chování je standardně zabezpečené, ale také znamená, že nemůžete použít nástroj pro import metadat (například Svcutil. exe), aby se vygeneroval kód klienta vyžadovaný pro volání služby, pokud není v konfiguraci explicitně povolený chování publikování metadat služby. Pomocí tohoto elementu konfigurace můžete toto chování publikování povolit pro vaši službu.  
   
  Podrobný příklad konfigurace tohoto chování najdete v tématu chování při [publikování metadat](../../../wcf/samples/metadata-publishing-behavior.md).  
   
- Volitelné `httpGetBinding` atributy a `httpsGetBinding` umožňují konfigurovat vazby používané pro načtení metadat prostřednictvím HTTP GET (nebo https Get). Pokud nejsou zadány, použijí se výchozí vazby (`HttpTransportBindingElement`v případě protokolu HTTP a `HttpsTransportBindingElement`v případě protokolu HTTPS) pro načtení metadat podle potřeby. Všimněte si, že nemůžete použít tyto atributy s předdefinovanými vazbami WCF. Budou podporovány pouze vazby s vnitřními prvky <xref:System.ServiceModel.Channels.IReplyChannel> vazby, které podporují. Kromě toho <xref:System.ServiceModel.Channels.MessageVersion> musí být <xref:System.ServiceModel.Channels.MessageVersion.None%2A>vlastnost vazby.  
+ Volitelné `httpGetBinding` atributy a `httpsGetBinding` umožňují konfigurovat vazby používané pro načtení METADAT prostřednictvím HTTP GET (nebo https Get). Pokud nejsou zadány, použijí se výchozí vazby ( `HttpTransportBindingElement` v případě protokolu HTTP a `HttpsTransportBindingElement` v případě protokolu HTTPS) pro načtení metadat podle potřeby. Všimněte si, že nemůžete použít tyto atributy s předdefinovanými vazbami WCF. Budou podporovány pouze vazby s vnitřními prvky vazby, které podporují <xref:System.ServiceModel.Channels.IReplyChannel> . Kromě toho <xref:System.ServiceModel.Channels.MessageVersion> musí být vlastnost vazby <xref:System.ServiceModel.Channels.MessageVersion.None%2A> .  
   
- Aby se snížila pravděpodobnost, že se služba vystavuje uživatelům se zlými úmysly, je možné zabezpečit přenos pomocí mechanismu SSL přes protokol HTTP (HTTPS). K tomu je nutné nejdřív navazovat vhodný certifikát X. 509 na konkrétní port v počítači, který je hostitelem služby. (Další informace najdete v tématu [práce s certifikáty](../../../wcf/feature-details/working-with-certificates.md).) Za druhé přidejte tento prvek do konfigurace služby a nastavte `httpsGetEnabled` atribut na. `true` Nakonec nastavte `httpsGetUrl` atribut na adresu URL koncového bodu metadat služby, jak je znázorněno v následujícím příkladu.  
+ Aby se snížila pravděpodobnost, že se služba vystavuje uživatelům se zlými úmysly, je možné zabezpečit přenos pomocí mechanismu SSL přes protokol HTTP (HTTPS). K tomu je nutné nejdřív navazovat vhodný certifikát X. 509 na konkrétní port v počítači, který je hostitelem služby. (Další informace najdete v tématu [práce s certifikáty](../../../wcf/feature-details/working-with-certificates.md).) Za druhé přidejte tento prvek do konfigurace služby a nastavte `httpsGetEnabled` atribut na `true` . Nakonec nastavte `httpsGetUrl` atribut na adresu URL koncového bodu metadat služby, jak je znázorněno v následujícím příkladu.  
   
 ```xml  
 <behaviors>
@@ -82,7 +82,7 @@ Určuje publikování metadat služby a přidružených informací.
 ```  
   
 ## <a name="example"></a>Příklad  
- Následující příklad nakonfiguruje službu tak, aby zveřejnila metadata pomocí \<elementu oddílu serviceMetadata >. Také nakonfiguruje koncový bod k zveřejnění `IMetadataExchange` kontraktu jako implementace protokolu WS-MetadataExchange (MEX). V příkladu se používá `mexHttpBinding`, což je pohodlná standardní vazba, která je ekvivalentní `wsHttpBinding` s režimem zabezpečení nastaveným na `None`. V koncovém bodu se používá relativní adresa "MEX", která při překladu na základě základní adresy služeb má za následek adresu `http://localhost/servicemodelsamples/service.svc/mex`koncového bodu.  
+ Následující příklad nakonfiguruje službu tak, aby zveřejnila metadata pomocí \<serviceMetadata> elementu. Také nakonfiguruje koncový bod k zveřejnění `IMetadataExchange` kontraktu jako implementace protokolu WS-MetadataExchange (MEX). V příkladu se používá `mexHttpBinding` , což je pohodlná standardní vazba, která je ekvivalentní `wsHttpBinding` s režimem zabezpečení nastaveným na `None` . V koncovém bodu se používá relativní adresa "MEX", která při překladu na základě základní adresy služeb má za následek adresu koncového bodu `http://localhost/servicemodelsamples/service.svc/mex` .  
   
 ```xml  
 <configuration>
@@ -117,9 +117,9 @@ Určuje publikování metadat služby a přidružených informací.
 </configuration>
 ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.ServiceModel.Configuration.ServiceMetadataPublishingElement>
 - <xref:System.ServiceModel.Description.ServiceMetadataBehavior>
 - [Chování zabezpečení](../../../wcf/feature-details/security-behaviors-in-wcf.md)
-- [Chování při publikování metadat](../../../wcf/samples/metadata-publishing-behavior.md)
+- [Chování publikování metadat](../../../wcf/samples/metadata-publishing-behavior.md)

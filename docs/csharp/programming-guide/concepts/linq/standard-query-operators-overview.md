@@ -1,30 +1,30 @@
 ---
-title: Standardní operátory dotazů – přehled (C#)
+title: Přehled standardních operátorů dotazů (C#)
 ms.date: 07/20/2015
 ms.assetid: 812fa119-5f65-4139-b4fa-55dccd8dc3ac
-ms.openlocfilehash: 76c2c4684f33c3fb30748b5f08efd215548661ef
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 16ab04e774e6654ce67a8c1d1c5a743c999958ff
+ms.sourcegitcommit: 71b8f5a2108a0f1a4ef1d8d75c5b3e129ec5ca1e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79167852"
+ms.lasthandoff: 05/29/2020
+ms.locfileid: "84201308"
 ---
-# <a name="standard-query-operators-overview-c"></a>Standardní operátory dotazů – přehled (C#)
-*Standardní operátory dotazu* jsou metody, které tvoří vzor LINQ. Většina těchto metod pracovat na sekvence, kde sekvence je <xref:System.Collections.Generic.IEnumerable%601> objekt, <xref:System.Linq.IQueryable%601> jehož typ implementuje rozhraní nebo rozhraní. Standardní operátory dotazů poskytují možnosti dotazu, včetně filtrování, projekce, agregace, řazení a další.  
+# <a name="standard-query-operators-overview-c"></a>Přehled standardních operátorů dotazů (C#)
+*Standardní operátory dotazu* jsou metody, které tvoří vzor LINQ. Většina těchto metod pracuje na sekvencích, kde sekvence je objekt, jehož typ implementuje <xref:System.Collections.Generic.IEnumerable%601> rozhraní nebo <xref:System.Linq.IQueryable%601> rozhraní. Standardní operátory dotazu poskytují možnosti dotazování, včetně filtrování, projekce, agregace, řazení a dalších.  
   
- Existují dvě sady linq standardní operátory dotazu, jeden, který pracuje na objekty typu <xref:System.Collections.Generic.IEnumerable%601> a druhý, který pracuje na objekty typu <xref:System.Linq.IQueryable%601>. Metody, které tvoří každou sadu jsou <xref:System.Linq.Enumerable> <xref:System.Linq.Queryable> statické členy a třídy, resp. Jsou definovány jako *rozšiřující metody* typu, na kterém pracují. To znamená, že mohou být volány pomocí syntaxe statické metody nebo syntaxe metody instance.  
+ Existují dvě sady standardních operátorů dotazů LINQ, jeden, který pracuje na objektech typu <xref:System.Collections.Generic.IEnumerable%601> a druhý, který pracuje s objekty typu <xref:System.Linq.IQueryable%601> . Metody, které tvoří každou sadu, jsou statické členy <xref:System.Linq.Enumerable> tříd a v <xref:System.Linq.Queryable> uvedeném pořadí. Jsou definovány jako *metody rozšíření* typu, na kterém pracují. To znamená, že mohou být volány buď pomocí syntaxe statické metody, nebo syntaxe metody instance.  
   
- Kromě toho několik standardních metod operátoru dotazu <xref:System.Collections.Generic.IEnumerable%601> <xref:System.Linq.IQueryable%601>pracovat na typy než ty, které jsou založeny na nebo . Typ <xref:System.Linq.Enumerable> definuje dvě takové metody, které pracují <xref:System.Collections.IEnumerable>na objekty typu . Tyto metody <xref:System.Linq.Enumerable.Cast%60%601%28System.Collections.IEnumerable%29> <xref:System.Linq.Enumerable.OfType%60%601%28System.Collections.IEnumerable%29>a , umožňují povolit neparametrizované nebo neobecné kolekce, které mají být dotazovány ve vzoru LINQ. To provést vytvořením kolekce silného typu objektů. Třída <xref:System.Linq.Queryable> definuje dvě podobné <xref:System.Linq.Queryable.Cast%60%601%28System.Linq.IQueryable%29> metody <xref:System.Linq.Queryable.OfType%60%601%28System.Linq.IQueryable%29>a , které <xref:System.Linq.Queryable>pracují s objekty typu .  
+ Kromě toho několik metod standardních operátorů dotazů pracuje na jiných typech než těch, které jsou založeny na <xref:System.Collections.Generic.IEnumerable%601> nebo <xref:System.Linq.IQueryable%601> . <xref:System.Linq.Enumerable>Typ definuje dvě takové metody, které pracují s objekty typu <xref:System.Collections.IEnumerable> . Tyto metody <xref:System.Linq.Enumerable.Cast%60%601%28System.Collections.IEnumerable%29> a <xref:System.Linq.Enumerable.OfType%60%601%28System.Collections.IEnumerable%29> umožňují povolit dotazování na kolekci, která není Parametrizovaná, nebo neobecná, aby bylo možné dotazovat ve vzorci LINQ. To dělají vytvořením silně typované kolekce objektů. <xref:System.Linq.Queryable>Třída definuje dvě podobné metody <xref:System.Linq.Queryable.Cast%60%601%28System.Linq.IQueryable%29> a <xref:System.Linq.Queryable.OfType%60%601%28System.Linq.IQueryable%29> , které pracují s objekty typu <xref:System.Linq.Queryable> .  
   
- Standardní operátory dotazu se liší v časování jejich provádění, v závislosti na tom, zda vrátí hodnotu singleton nebo posloupnost hodnot. Tyto metody, které vracejí hodnotu singleton (například <xref:System.Linq.Enumerable.Average%2A> a <xref:System.Linq.Enumerable.Sum%2A>) se spustí okamžitě. Metody, které vrátí pořadí odložit spuštění dotazu a vrátit výčtu objektu.  
+ Standardní operátory dotazu se liší v časování jejich spuštění v závislosti na tom, zda vracejí hodnotu typu Singleton nebo sekvence hodnot. Tyto metody, které vracejí hodnotu typu Singleton (například <xref:System.Linq.Enumerable.Average%2A> a), se <xref:System.Linq.Enumerable.Sum%2A> spustí okamžitě. Metody, které vracejí sekvenci, odloží provedení dotazu a vrátí vyčíslitelné objekty.  
   
- V případě metod, které pracují na in-memory kolekce, to <xref:System.Collections.Generic.IEnumerable%601>znamená, že tyto metody, které rozšiřují , vrácené výčtu objektu zachycuje argumenty, které byly předány metodě. Pokud je tento objekt výčtu, logika operátoru dotazu je zaměstnán a jsou vráceny výsledky dotazu.  
+ V případě metod, které pracují s kolekcemi v paměti, což znamená, že tyto metody, které rozšíření <xref:System.Collections.Generic.IEnumerable%601> , vrátí vyčíslitelné objekty argumenty, které byly předány metodě. Při vytváření výčtu tohoto objektu je vytvořena logika operátoru dotazu a jsou vráceny výsledky dotazu.  
   
- Naproti tomu metody, <xref:System.Linq.IQueryable%601> které rozšiřují neimplementují žádné dotazování chování, ale vytvořit strom výraz, který představuje dotaz, který má být proveden. Zpracování dotazu je zpracována zdrojový <xref:System.Linq.IQueryable%601> objekt.  
+ Naproti tomu metody, které rozšiřuje, <xref:System.Linq.IQueryable%601> neimplementují žádné dotazy, ale sestaví strom výrazu, který představuje dotaz, který má být proveden. Zpracování dotazu je zpracováváno zdrojovým <xref:System.Linq.IQueryable%601> objektem.  
   
- Volání metod dotazu lze zřetězit společně v jednom dotazu, který umožňuje dotazy stát libovolně složité.  
+ Volání metod dotazů lze zřetězit společně v jednom dotazu, který umožňuje, aby se dotazy staly libovolně složité.  
   
- Následující příklad kódu ukazuje, jak lze standardní operátory dotazu použít k získání informací o posloupnosti.  
+ Následující příklad kódu ukazuje, jak lze použít standardní operátory dotazu k získání informací o sekvenci.  
   
 ```csharp  
 string sentence = "the quick brown fox jumps over the lazy dog";  
@@ -67,47 +67,47 @@ foreach (var obj in query)
 ```  
   
 ## <a name="query-expression-syntax"></a>Syntaxe výrazu dotazu  
- Některé z nejčastěji používaných operátorů standardní dotaz mají vyhrazené C# a Visual Basic jazyk syntaxe, která umožňuje jejich volání jako součást *výrazu* *dotazu* . Další informace o standardních operátorech dotazů, které mají vyhrazená klíčová slova a odpovídající syntaxe, naleznete [v tématu Syntaxe výrazu dotazu pro operátory standardních dotazů (C#).](./query-expression-syntax-for-standard-query-operators.md)  
+ Některé z často používaných standardních operátorů dotazů mají vyhrazená syntaxe klíčového slova jazyka C# a Visual Basic, která umožňuje jejich volání jako součást výrazu *dotazu* *expression*. Další informace o standardních operátorech dotazu, které mají vyhrazená klíčová slova a jejich odpovídajících syntaxech, naleznete v tématu [syntaxe výrazu dotazu pro standardní operátory dotazu (C#)](./query-expression-syntax-for-standard-query-operators.md).  
   
-## <a name="extending-the-standard-query-operators"></a>Rozšíření operátorů standardních dotazů  
- Sadu standardních operátorů dotazů můžete rozšířit vytvořením metod specifických pro doménu, které jsou vhodné pro cílovou doménu nebo technologii. Můžete také nahradit operátory standardní dotazů vlastními implementacemi, které poskytují další služby, jako je vzdálené vyhodnocení, překlad dotazů a optimalizace. Viz <xref:System.Linq.Enumerable.AsEnumerable%2A> příklad.  
+## <a name="extending-the-standard-query-operators"></a>Rozšíření standardních operátorů dotazu  
+ Můžete rozšířit sadu standardních operátorů dotazů vytvořením metod specifických pro doménu, které jsou vhodné pro vaši cílovou doménu nebo technologii. Standardní operátory dotazu můžete také nahradit vlastními implementacemi, které poskytují další služby, jako je vzdálené vyhodnocení, překlad dotazů a optimalizace. Příklad najdete v tématu <xref:System.Linq.Enumerable.AsEnumerable%2A> .  
   
 ## <a name="related-sections"></a>Související oddíly  
- Následující odkazy přejdete na témata, která poskytují další informace o různých operátorech standardnídotaz na základě funkce.  
+ Následující odkazy odkazují na témata, která poskytují další informace o různých standardních dotazovacích operátorech na základě funkcí.  
   
  [Řazení dat (C#)](./sorting-data.md)  
   
- [Nastavit operace (C#)](./set-operations.md)  
+ [Operace set (C#)](./set-operations.md)  
   
  [Filtrování dat (C#)](./filtering-data.md)  
   
  [Operace kvantifikátoru (C#)](./quantifier-operations.md)  
   
- [Projekční operace (C#)](./projection-operations.md)  
+ [Operace projekce (C#)](./projection-operations.md)  
   
  [Dělení dat (C#)](./partitioning-data.md)  
   
- [Operace spojení (C#)](./join-operations.md)  
+ [Operace join (C#)](./join-operations.md)  
   
- [Seskupování dat (C#)](./grouping-data.md)  
+ [Seskupení dat (C#)](./grouping-data.md)  
   
  [Operace generování (C#)](./generation-operations.md)  
   
  [Operace rovnosti (C#)](./equality-operations.md)  
   
- [Operace prvku (C#)](./element-operations.md)  
+ [Operace elementu (C#)](./element-operations.md)  
   
  [Převod datových typů (C#)](./converting-data-types.md)  
   
- [Zřetězení (C#)](./concatenation-operations.md)  
+ [Operace zřetězení (C#)](./concatenation-operations.md)  
   
- [Operace agregace (C#)](./aggregation-operations.md)  
+ [Agregační operace (C#)](./aggregation-operations.md)  
   
 ## <a name="see-also"></a>Viz také
 
 - <xref:System.Linq.Enumerable>
 - <xref:System.Linq.Queryable>
 - [Úvod do dotazů LINQ (C#)](./introduction-to-linq-queries.md)
-- [Syntaxe výrazu dotazu pro standardní operátory dotazů (C#)](./query-expression-syntax-for-standard-query-operators.md)
-- [Klasifikace operátorů standardních dotazů podle způsobu spuštění (C#)](./classification-of-standard-query-operators-by-manner-of-execution.md)
+- [Syntaxe výrazu dotazu pro standardní operátory dotazu (C#)](./query-expression-syntax-for-standard-query-operators.md)
+- [Klasifikace standardních operátorů dotazu podle způsobu spuštění (C#)](./classification-of-standard-query-operators-by-manner-of-execution.md)
 - [Metody rozšíření](../../classes-and-structs/extension-methods.md)

@@ -2,12 +2,12 @@
 title: Samostatná serializace JSON pomocí DataContractJsonSerializer
 ms.date: 03/30/2017
 ms.assetid: 312bd7b2-1300-4b12-801e-ebe742bd2287
-ms.openlocfilehash: 259d5da544262b5cae08e1be9e8ea6e077d5b947
-ms.sourcegitcommit: ee5b798427f81237a3c23d1fd81fff7fdc21e8d3
+ms.openlocfilehash: 6bd075405a3bca0cc64dda90225526096b6fa8e3
+ms.sourcegitcommit: 71b8f5a2108a0f1a4ef1d8d75c5b3e129ec5ca1e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84144926"
+ms.lasthandoff: 05/29/2020
+ms.locfileid: "84202393"
 ---
 # <a name="stand-alone-json-serialization-using-datacontractjsonserializer"></a>Samostatná serializace JSON pomocí DataContractJsonSerializer
 
@@ -229,7 +229,7 @@ Neexistuje žádný způsob, jak vygenerovat pomocný parametr typu pro nekomple
 
 Pomocné parametry typu můžou výrazně zvýšit velikost zprávy (jedním ze způsobů, jak to zmírnit, je použití kratších oborů názvů kontraktů dat, pokud je to možné). Proto následující pravidla určují, zda jsou vygenerovány pomocné parametry typu:
 
-- Při použití ASP.NET AJAX jsou pomocné parametry typu vždy vydávány, kdykoli je to možné, i v případě, že není k dispozici žádné základní/odvozené přiřazení, a to i v případě, že je kruh přiřazený k kruhu. (To je nutné k úplnému povolení procesu volání ze slabě typovaného prostředí JSON do prostředí .NET se silným typem bez překvapivé ztráty informací.)
+- Při použití ASP.NET AJAX jsou pomocné parametry typu vždy vydávány, kdykoli je to možné, i v případě, že není k dispozici žádné základní/odvozené přiřazení, a to i v případě, že je kruh přiřazený k kruhu. (To je nutné k úplnému povolení procesu volání ze slabě typovaného prostředí JSON do prostředí .NET silného typu bez překvapivé ztráty informací.)
 
 - Při použití služeb AJAX bez integrace ASP.NET jsou pomocné parametry generovány pouze v případě, že je k dispozici základní nebo odvozené přiřazení – to je vygenerováno při přiřazení kruhu k obrazci, <xref:System.Object> ale ne, je-li přiřazen k kruhu. To poskytuje minimální informace potřebné k správné implementaci klienta jazyka JavaScript, což zvyšuje výkon, ale nechrání před ztrátou informací typu v nesprávně navržených klientech. Pokud se chcete vyhnout tomu, že se tento problém týká klienta, nepoužívejte na serveru zcela základní nebo odvozené přiřazení.
 

@@ -3,12 +3,12 @@ title: global.json – přehled
 description: Naučte se používat soubor Global. JSON k nastavení verze .NET Core SDK při spouštění příkazů .NET Core CLI.
 ms.date: 05/01/2020
 ms.custom: updateeachrelease
-ms.openlocfilehash: 15d8e6191394b9ba67b1e5eb5e8ae54ebaf61bef
-ms.sourcegitcommit: de7f589de07a9979b6ac28f54c3e534a617d9425
+ms.openlocfilehash: 5078bc03056c23bccf02e027441de72c69072c7d
+ms.sourcegitcommit: 71b8f5a2108a0f1a4ef1d8d75c5b3e129ec5ca1e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82795505"
+ms.lasthandoff: 05/29/2020
+ms.locfileid: "84202034"
 ---
 # <a name="globaljson-overview"></a>global.json – přehled
 
@@ -30,7 +30,7 @@ Textový`object`
 
 Určuje informace o .NET Core SDK k výběru.
 
-#### <a name="version"></a>version
+#### <a name="version"></a>verze
 
 - Textový`string`
 
@@ -53,8 +53,8 @@ Určuje, zda má Řešitel sady SDK zvážit předprodejní verze při výběru 
 
 Pokud tuto hodnotu nenastavíte explicitně, bude výchozí hodnota záviset na tom, jestli spouštíte ze sady Visual Studio:
 
-- Pokud nejste **v aplikaci** Visual Studio, výchozí hodnota je `true`.
-- Pokud jste v aplikaci Visual Studio, použije se požadovaný stav předprodejní verze. To znamená, že pokud používáte verzi Preview sady Visual Studio nebo jste nastavili **použití** náhledů .NET Core SDK možností (v části **nástroje** > **Možnosti** > **prostředí** > **verze Preview**), výchozí hodnota je `true`. v opačném případě `false`.
+- Pokud nejste **v aplikaci** Visual Studio, výchozí hodnota je `true` .
+- Pokud jste v aplikaci Visual Studio, použije se požadovaný stav předprodejní verze. To znamená, že pokud používáte verzi Preview sady Visual Studio nebo pokud nastavíte náhled **použití pro .NET Core SDK** možnosti (v části **nástroje**  >  **Možnosti**  >  **prostředí**  >  **verze Preview**), výchozí hodnota je. `true` v opačném případě `false` .
 
 #### <a name="rollforward"></a>Dopředné obnovení
 
@@ -62,9 +62,9 @@ Pokud tuto hodnotu nenastavíte explicitně, bude výchozí hodnota záviset na 
 
 - Dostupné od verze: .NET Core 3,0 SDK.
 
-Zásada pro převzetí služeb při obnovení, která se má použít při výběru verze sady SDK, a to buď jako záložní, pokud konkrétní verze sady SDK chybí, nebo jako direktiva pro použití vyšší verze. [Verze](#version) musí být zadána s `rollForward` hodnotou, pokud ji nenastavujete na. `latestMajor`
+Zásada pro převzetí služeb při obnovení, která se má použít při výběru verze sady SDK, a to buď jako záložní, pokud konkrétní verze sady SDK chybí, nebo jako direktiva pro použití vyšší verze. [Verze](#version) musí být zadána s `rollForward` hodnotou, pokud ji nenastavujete na `latestMajor` .
 
-Pro pochopení dostupných zásad a jejich chování zvažte následující definice verze sady SDK ve formátu `x.y.znn`:
+Pro pochopení dostupných zásad a jejich chování zvažte následující definice verze sady SDK ve formátu `x.y.znn` :
 
 - `x`je hlavní verze.
 - `y`je vedlejší verze.
@@ -162,20 +162,20 @@ dotnet new globaljson --sdk-version 3.0.100
 ## <a name="matching-rules"></a>Pravidla pro porovnání
 
 > [!NOTE]
-> Pravidla pro porovnání se řídí vstupním bodem `dotnet.exe` , který je společný pro všechny nainstalované moduly runtime .NET Core nainstalované v. Pravidla pro porovnání pro nejnovější nainstalovanou verzi modulu runtime .NET Core se používají, když máte více nainstalovaných modulů runtime vedle sebe.
+> Pravidla pro porovnání se řídí `dotnet.exe` vstupním bodem, který je společný pro všechny nainstalované moduly runtime .NET Core nainstalované v. Pravidla pro porovnání pro nejnovější nainstalovanou verzi modulu runtime .NET Core se používají, když máte více nainstalovaných modulů runtime vedle sebe.
 
 ## <a name="net-core-3x"></a>[.NET Core 3. x](#tab/netcore3x)
 
 Počínaje rozhraním .NET Core 3,0 se při určování používané verze sady SDK použijí následující pravidla:
 
-- Pokud není nalezen žádný soubor *Global. JSON* , nebo soubor *Global. JSON* neurčuje verzi sady SDK ani `allowPrerelease` hodnotu, použije se nejvyšší nainstalovaná verze sady SDK (ekvivalentní k `rollForward` nastavení `latestMajor`). Informace o tom, zda jsou verze předprodejních `dotnet` sad zvažovány, závisí na způsobu jejich vyvolání.
+- Pokud není nalezen žádný soubor *Global. JSON* , nebo soubor *Global. JSON* neurčuje verzi sady SDK ani `allowPrerelease` hodnotu, použije se nejvyšší nainstalovaná verze sady SDK (ekvivalentní k `rollForward` nastavení `latestMajor` ). Informace o tom, zda jsou verze předprodejních sad zvažovány, závisí na způsobu `dotnet` jejich vyvolání.
   - Pokud nejste **v aplikaci** Visual Studio, předprodejní verze se považují za.
-  - Pokud jste v aplikaci Visual Studio, použije se požadovaný stav předprodejní verze. To znamená, že pokud používáte verzi Preview sady Visual Studio nebo jste nastavili náhledy **použití možnosti .NET Core SDK** (v části **nástroje** > **Možnosti** > **prostředí** > **verze Preview**), jsou předprodejní verze zváženy. v opačném případě jsou zváženy pouze verze Release.
-- Pokud je nalezen soubor *Global. JSON* , který neurčuje verzi sady SDK, ale Určuje `allowPrerelease` hodnotu, použije se nejvyšší nainstalovaná verze sady SDK (ekvivalent nastavení `rollForward` na `latestMajor`). Bez ohledu na to, zda může být verze sady SDK nebo předběžná verze nejnovější `allowPrerelease`, závisí na hodnotě. `true`označuje, že předprodejní verze jsou zváženy; `false` indikuje, že se považují jenom verze Release.
+  - Pokud jste v aplikaci Visual Studio, použije se požadovaný stav předprodejní verze. To znamená, že pokud používáte verzi Preview sady Visual Studio nebo jste nastavili verze Preview pro **použití .NET Core SDK** (v části **nástroje**  >  **Možnosti**  >  **prostředí**  >  **verze Preview**), jsou předprodejní verze zváženy. v opačném případě jsou zváženy pouze verze Release.
+- Pokud je nalezen soubor *Global. JSON* , který neurčuje verzi sady SDK, ale Určuje `allowPrerelease` hodnotu, použije se nejvyšší nainstalovaná verze sady SDK (ekvivalent nastavení `rollForward` na `latestMajor` ). Bez ohledu na to, zda může být verze sady SDK nebo předběžná verze nejnovější, závisí na hodnotě `allowPrerelease` . `true`označuje, že předprodejní verze jsou zváženy; `false`indikuje, že se považují jenom verze Release.
 - Pokud je nalezen soubor *Global. JSON* a určuje verzi sady SDK:
 
-  - Pokud není `rollFoward` nastavená žádná hodnota, použije `latestPatch` se jako výchozí `rollForward` zásada. V opačném případě Ověřte všechny hodnoty a jejich chování v části [dopředné obnovení](#rollforward) .
-  - Bez ohledu na to, jestli jsou předprodejní verze zvážené `allowPrerelease` a jaké je výchozí chování, když není nastavené, je popsané v části [allowPrerelease](#allowprerelease) .
+  - Pokud `rollFoward` není nastavená žádná hodnota, použije se `latestPatch` jako výchozí `rollForward` zásada. V opačném případě Ověřte všechny hodnoty a jejich chování v části [dopředné obnovení](#rollforward) .
+  - Bez ohledu na to, jestli jsou předprodejní verze zvážené a jaké je výchozí chování, když není `allowPrerelease` nastavené, je popsané v části [allowPrerelease](#allowprerelease) .
 
 ## <a name="net-core-2x"></a>[.NET Core 2. x](#tab/netcore2x)
 
@@ -191,9 +191,9 @@ Verze sady SDK se skládá z následujících částí:
 
 `[.NET Core major version].[.NET Core minor version].[xyz][-optional preview name]`
 
-**Verze .NET Core SDK funkce** je vyjádřena první číslicí (`x`) v poslední části čísla (`xyz`) pro sadu SDK verze 2.1.100 a vyšší. Obecně platí, že .NET Core SDK má rychlejší cyklus vydávání verzí než .NET Core.
+**Verze .NET Core SDK funkce** je vyjádřena první číslicí ( `x` ) v poslední části čísla ( `xyz` ) pro sadu SDK verze 2.1.100 a vyšší. Obecně platí, že .NET Core SDK má rychlejší cyklus vydávání verzí než .NET Core.
 
-**Verze opravy** je definována posledními dvěma číslicemi (`yz`) v poslední části čísla (`xyz`) pro sadu SDK verze 2.1.100 a vyšší. Pokud například `2.1.300` zadáte jako verzi sady SDK, výběr sady SDK `2.1.399` vyhledá, ale `2.1.400` nepovažuje se za verzi opravy `2.1.300`pro.
+**Verze opravy** je definována posledními dvěma číslicemi ( `yz` ) v poslední části čísla ( `xyz` ) pro sadu SDK verze 2.1.100 a vyšší. Pokud například zadáte `2.1.300` jako verzi sady SDK, výběr sady SDK vyhledá, `2.1.399` ale `2.1.400` nepovažuje se za verzi opravy pro `2.1.300` .
 
 .NET Core SDK verze `2.1.100` prostřednictvím `2.1.201` byly vydány během přechodu mezi schématy čísel verzí a nesprávně nezpracovávají `xyz` zápis. Důrazně doporučujeme, pokud zadáte tyto verze v souboru *Global. JSON* , abyste zajistili, že zadané verze jsou na cílových počítačích.
 
@@ -203,15 +203,15 @@ Verze sady SDK se skládá z následujících částí:
 
 * Následující upozornění indikuje, že projekt byl zkompilován pomocí předprodejní verze .NET Core SDK:
 
-  > Pracujete s verzí Preview .NET Core SDK. Verzi sady SDK můžete definovat prostřednictvím globálního souboru. JSON v aktuálním projektu. Další informace <https://go.microsoft.com/fwlink/?linkid=869452>najdete na adrese.
+  > Pracujete s verzí Preview .NET Core SDK. Verzi sady SDK můžete definovat prostřednictvím globálního souboru. JSON v aktuálním projektu. Další informace najdete na adrese <https://go.microsoft.com/fwlink/?linkid=869452> .
 
   Verze .NET Core SDK mají historii a závazek vysoké kvality. Pokud ale nechcete použít předběžnou verzi, Projděte si různé strategie, které můžete použít se sadou .NET Core 3,0 SDK nebo novější verzí v části [allowPrerelease](#allowprerelease) . Pro počítače, které nikdy nemají nainstalovanou sadu .NET Core 3,0 nebo novější modul runtime nebo sadu SDK, je třeba vytvořit soubor *Global. JSON* a zadat přesnou verzi, kterou chcete použít.
 
 * Následující upozornění indikuje, že projekt cílí na EF Core 1,0 nebo 1,1, což není kompatibilní s .NET Core 2,1 SDK a novějšími verzemi:
 
-  > Spouštěcí projekt {startupProject} cílí na rozhraní Framework. NETCoreApp verze {targetFrameworkVersion}. Tato verze nástrojů příkazového řádku Entity Framework Core .NET podporuje pouze verzi 2,0 nebo vyšší. Informace o použití starších verzí nástrojů naleznete v tématu <https://go.microsoft.com/fwlink/?linkid=871254>.
+  > Spouštěcí projekt {startupProject} cílí na rozhraní Framework. NETCoreApp verze {targetFrameworkVersion}. Tato verze nástrojů příkazového řádku Entity Framework Core .NET podporuje pouze verzi 2,0 nebo vyšší. Informace o použití starších verzí nástrojů naleznete v tématu <https://go.microsoft.com/fwlink/?linkid=871254> .
 
-  Počínaje sadou .NET Core 2,1 SDK (verze 2.1.300) se `dotnet ef` příkaz vloží do sady SDK. Pro zkompilování projektu nainstalujte sadu .NET Core 2,0 SDK (verze 2.1.201) nebo starší na svém počítači a definujte požadovanou verzi sady SDK pomocí souboru *Global. JSON* . Další informace o `dotnet ef` příkazu naleznete v tématu [EF Core nástroje příkazového řádku .NET](/ef/core/miscellaneous/cli/dotnet).
+  Počínaje sadou .NET Core 2,1 SDK (verze 2.1.300) se `dotnet ef` příkaz vloží do sady SDK. Pro zkompilování projektu nainstalujte sadu .NET Core 2,0 SDK (verze 2.1.201) nebo starší na svém počítači a definujte požadovanou verzi sady SDK pomocí souboru *Global. JSON* . Další informace o příkazu naleznete `dotnet ef` v tématu [EF Core nástroje příkazového řádku .NET](/ef/core/miscellaneous/cli/dotnet).
 
 ## <a name="see-also"></a>Viz také
 

@@ -11,12 +11,12 @@ helpviewer_keywords:
 - C# language, types
 - strong typing [C#]
 ms.assetid: f782d7cc-035e-4500-b1b1-36a9881130ad
-ms.openlocfilehash: ca499f9762f52126720159fb7c22660b1001895c
-ms.sourcegitcommit: d223616e7e6fe2139079052e6fcbe25413fb9900
+ms.openlocfilehash: fa0aa09b591f9b91a82113343a3655b2240ef490
+ms.sourcegitcommit: 71b8f5a2108a0f1a4ef1d8d75c5b3e129ec5ca1e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/22/2020
-ms.locfileid: "83802935"
+ms.lasthandoff: 05/29/2020
+ms.locfileid: "84201217"
 ---
 # <a name="types-c-programming-guide"></a>Typy (Průvodce programováním v C#)
 
@@ -165,7 +165,7 @@ stringList.Add("String example");
 stringList.Add(4);
 ```
 
-Použití parametru typu umožňuje znovu použít stejnou třídu pro uchování libovolného typu elementu, aniž by bylo nutné převést každý prvek na [Object](../../language-reference/builtin-types/reference-types.md). Třídy obecné kolekce se nazývají *silně typové kolekce* , protože kompilátor zná konkrétní typ prvků kolekce a může vyvolat chybu v době kompilace, pokud se například pokusíte přidat celé číslo k `stringList` objektu v předchozím příkladu. Další informace najdete v tématu [Obecné typy](../generics/index.md).
+Použití parametru typu umožňuje znovu použít stejnou třídu pro uchování libovolného typu elementu, aniž by bylo nutné převést každý prvek na [Object](../../language-reference/builtin-types/reference-types.md). Třídy obecné kolekce se nazývají *kolekce se silnými* typy, protože kompilátor zná konkrétní typ prvků kolekce a může vyvolat chybu v době kompilace, pokud se například pokusíte přidat celé číslo k `stringList` objektu v předchozím příkladu. Další informace najdete v tématu [Obecné typy](../generics/index.md).
 
 ## <a name="implicit-types-anonymous-types-and-nullable-value-types"></a>Implicitní typy, anonymní typy a typy hodnot s možnou hodnotou null
 

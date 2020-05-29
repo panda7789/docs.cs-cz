@@ -2,16 +2,16 @@
 title: Připojovací řetězce
 ms.date: 10/10/2018
 ms.assetid: 745c5f95-2f02-4674-b378-6d51a7ec2490
-ms.openlocfilehash: cb0b2831a22f3fe51dd7c5bfbe51e72f266a0003
-ms.sourcegitcommit: 19014f9c081ca2ff19652ca12503828db8239d48
+ms.openlocfilehash: 3f56a487121757706ef6b4dfd11fcd761657431a
+ms.sourcegitcommit: 71b8f5a2108a0f1a4ef1d8d75c5b3e129ec5ca1e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "76980233"
+ms.lasthandoff: 05/29/2020
+ms.locfileid: "84202283"
 ---
 # <a name="connection-strings-in-adonet"></a>Připojovací řetězce v ADO.NET
 
-Připojovací řetězec obsahuje inicializační informace, které jsou předány jako parametr od poskytovatele dat ke zdroji dat. Zprostředkovatel dat přijímá připojovací řetězec jako hodnotu vlastnosti <xref:System.Data.Common.DbConnection.ConnectionString?displayProperty=nameWithType>. Zprostředkovatel analyzuje připojovací řetězec a ověří, zda je syntaxe správná a zda jsou klíčová slova podporována. Poté metoda <xref:System.Data.Common.DbConnection.Open?displayProperty=nameWithType> předá parametry analyzovaného připojení ke zdroji dat. Zdroj dat provádí další ověření a naváže připojení.
+Připojovací řetězec obsahuje inicializační informace, které jsou předány jako parametr od poskytovatele dat ke zdroji dat. Zprostředkovatel dat přijímá připojovací řetězec jako hodnotu <xref:System.Data.Common.DbConnection.ConnectionString?displayProperty=nameWithType> Vlastnosti. Zprostředkovatel analyzuje připojovací řetězec a ověří, zda je syntaxe správná a zda jsou klíčová slova podporována. Pak <xref:System.Data.Common.DbConnection.Open?displayProperty=nameWithType> Metoda předá analyzovaným parametrům připojení ke zdroji dat. Zdroj dat provádí další ověření a naváže připojení.
 
 ## <a name="connection-string-syntax"></a>Syntaxe připojovacího řetězce
 
@@ -51,9 +51,9 @@ Keyword=no "escaping" 'required';
 Keyword=a=b=c
 ```
 
-Vzhledem k tomu, že každá hodnota je čtena do dalšího středníku nebo konce řetězce, hodnota v druhém příkladu je `a=b=c`a poslední středník je nepovinný.
+Vzhledem k tomu, že každá hodnota je čtena do následujícího středníku nebo konce řetězce, hodnota v druhém příkladu je `a=b=c` a poslední středník je nepovinný.
 
-Všechny připojovací řetězce sdílejí stejnou základní syntaxi popsanou výše. Sada rozpoznaných klíčových slov závisí na poskytovateli, ale na těchto letech se vyvinula z dřívějších rozhraní API, jako je například *ODBC*. Zprostředkovatel dat *.NET Framework* pro *SQL Server* (`SqlClient`) podporuje mnoho klíčových slov ze starších rozhraní API, ale je obecně flexibilnější a přijímá synonyma pro mnohé běžné klíčová slova připojovacího řetězce.
+Všechny připojovací řetězce sdílejí stejnou základní syntaxi popsanou výše. Sada rozpoznaných klíčových slov závisí na poskytovateli, ale na těchto letech se vyvinula z dřívějších rozhraní API, jako je například *ODBC*. Zprostředkovatel dat *.NET Framework* pro *SQL Server* ( `SqlClient` ) podporuje mnoho klíčových slov ze starších rozhraní API, ale je obecně flexibilnější a přijímá synonyma pro mnoho běžných klíčových slov řetězce připojení.
 
 Psaní chyb může způsobit chyby. Například `Integrated Security=true` je platný, ale `IntegratedSecurity=true` způsobí chybu.
 
@@ -61,19 +61,19 @@ Připojovací řetězce konstruované ručně v době spuštění z neověřené
 
 ## <a name="in-this-section"></a>V tomto oddílu
 
-\ pro [sestavování připojovacích řetězců](connection-string-builders.md)
-Ukazuje, jak použít třídy `ConnectionStringBuilder` k vytvoření platných připojovacích řetězců v době běhu.
+[Tvůrci připojovacích řetězců](connection-string-builders.md)\
+Ukazuje, jak použít `ConnectionStringBuilder` třídy pro vytvoření platných připojovacích řetězců za běhu.
 
 [Připojovací řetězce a konfigurační soubory](connection-strings-and-configuration-files.md)\
 Ukazuje, jak ukládat a načítat připojovací řetězce v konfiguračních souborech.
 
-\ [syntaxe připojovacího řetězce](connection-string-syntax.md)
-Popisuje postup konfigurace připojovacích řetězců specifických pro konkrétní poskytovatele pro `SqlClient`, `OracleClient`, `OleDb`a `Odbc`.
+[Syntaxe připojovacího řetězce](connection-string-syntax.md)\
+Popisuje postup konfigurace připojovacích řetězců specifických pro konkrétní poskytovatele pro `SqlClient` , `OracleClient` , `OleDb` a `Odbc` .
 
-[Ochrana\ informací o připojení](protecting-connection-information.md)
+[Ochrana informací o připojení](protecting-connection-information.md)\
 Ukazuje techniky ochrany informací používaných pro připojení ke zdroji dat.
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Připojení ke zdroji dat](/cpp/data/odbc/connecting-to-a-data-source)
 - [Přehled ADO.NET](ado-net-overview.md)
