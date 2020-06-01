@@ -1,23 +1,23 @@
 ---
-title: Použití odchylky v rozhraních pro obecné kolekce (C#)
+title: Použití variance v rozhraních pro obecné kolekce (C#)
 ms.date: 07/20/2015
 ms.assetid: a44f0708-10fa-4c76-82cd-daa6e6b31e8e
-ms.openlocfilehash: b891ccde93e18baf5d5e814911666e9c6268e009
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 5f5531e17a530ed840108df2cf9bf829b2beb656
+ms.sourcegitcommit: a241301495a84cc8c64fe972330d16edd619868b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79169737"
+ms.lasthandoff: 06/01/2020
+ms.locfileid: "84241354"
 ---
-# <a name="using-variance-in-interfaces-for-generic-collections-c"></a>Použití odchylky v rozhraních pro obecné kolekce (C#)
-Kovariantní rozhraní umožňuje jeho metody vrátit více odvozených typů, než jsou uvedeny v rozhraní. Rozhraní contravariant umožňuje jeho metody přijímat parametry méně odvozené typy, než jsou uvedeny v rozhraní.  
+# <a name="using-variance-in-interfaces-for-generic-collections-c"></a>Použití variance v rozhraních pro obecné kolekce (C#)
+Kovariantní rozhraní umožňuje svým metodám vracet více odvozených typů než ty, které jsou zadány v rozhraní. Kontravariantní rozhraní umožňuje jeho metodám přijímat parametry méně odvozených typů než těch, které jsou zadány v rozhraní.  
   
- V rozhraní .NET Framework 4 se několik existujících rozhraní stalo kovariantním i kontravariantními. Patří <xref:System.Collections.Generic.IEnumerable%601> mezi <xref:System.IComparable%601>ně a . To umožňuje znovu použít metody, které pracují s obecnými kolekcemi základních typů pro kolekce odvozených typů.  
+ V .NET Framework 4 se několik stávajících rozhraní stala kovariantou a kontravariantní. Mezi ně patří <xref:System.Collections.Generic.IEnumerable%601> a <xref:System.IComparable%601> . To umožňuje znovu použít metody, které pracují s obecnými kolekcemi základních typů pro kolekce odvozených typů.  
   
- Seznam variantních rozhraní v rozhraní .NET Framework naleznete v tématu [Odchylka v obecných rozhraních (C#).](./variance-in-generic-interfaces.md)  
+ Seznam rozhraní variant v rozhraní .NET najdete v tématu [Variance v obecných rozhraních (C#)](./variance-in-generic-interfaces.md).  
   
 ## <a name="converting-generic-collections"></a>Převod obecných kolekcí  
- Následující příklad ilustruje výhody podpory kovariance <xref:System.Collections.Generic.IEnumerable%601> v rozhraní. Metoda `PrintFullName` přijímá kolekci `IEnumerable<Person>` typu jako parametr. Můžete jej však znovu použít pro `IEnumerable<Employee>` kolekci typu, protože `Employee` dědí `Person`.  
+ Následující příklad ukazuje výhody kovariance v <xref:System.Collections.Generic.IEnumerable%601> rozhraní. `PrintFullName`Metoda přijímá kolekci `IEnumerable<Person>` typu jako parametr. Můžete ji však znovu použít pro kolekci `IEnumerable<Employee>` typu, protože `Employee` dědí `Person` .  
   
 ```csharp  
 // Simple hierarchy of classes.  
@@ -55,7 +55,7 @@ class Program
 ```  
   
 ## <a name="comparing-generic-collections"></a>Porovnání obecných kolekcí  
- Následující příklad ilustruje výhody podpory contravariance <xref:System.Collections.Generic.IComparer%601> v rozhraní. Třída `PersonComparer` implementuje rozhraní `IComparer<Person>`. Tuto třídu však můžete znovu použít k `Employee` porovnání `Employee` posloupnosti objektů typu, protože dědí `Person`.  
+ Následující příklad znázorňuje výhody podpory aplikace kontravariance v <xref:System.Collections.Generic.IComparer%601> rozhraní. Třída `PersonComparer` implementuje rozhraní `IComparer<Person>`. Tuto třídu však můžete použít k porovnání sekvence objektů `Employee` typu, protože `Employee` dědí `Person` .  
   
 ```csharp  
 // Simple hierarchy of classes.  
@@ -115,4 +115,4 @@ class Program
   
 ## <a name="see-also"></a>Viz také
 
-- [Odchylka v obecných rozhraních (C#)](./variance-in-generic-interfaces.md)
+- [Variance v obecných rozhraních (C#)](./variance-in-generic-interfaces.md)

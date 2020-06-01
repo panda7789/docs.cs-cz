@@ -1,49 +1,50 @@
 ---
-title: Použití výjimek – programovací příručka jazyka C#
+title: Použití výjimek – Průvodce programováním v C#
 ms.date: 07/20/2015
 helpviewer_keywords:
 - exception handling [C#], about exception handling
 - exceptions [C#], about exceptions
 ms.assetid: 71472c62-320a-470a-97d2-67995180389d
-ms.openlocfilehash: 4012027dc1a9bd2543d0a4195360e5f7e0586fe1
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: a00259dfd5634ad9b9c951c3cd76da97afe5077d
+ms.sourcegitcommit: a241301495a84cc8c64fe972330d16edd619868b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75705259"
+ms.lasthandoff: 06/01/2020
+ms.locfileid: "84241692"
 ---
-# <a name="using-exceptions-c-programming-guide"></a>Použití výjimek (Průvodce programováním v C#)
-V C# chyby v programu za běhu jsou šířeny prostřednictvím programu pomocí mechanismu nazývaného výjimky. Výjimky jsou vyvolány kódem, který narazí na chybu a zachycen kódem, který může chybu opravit. Výjimky mohou být vyvolány za běhu množých jazyků .NET Framework common language (CLR) nebo kódem v programu. Jakmile je vyvolána výjimka, rozšíří se zásobníkvolání, dokud není nalezen `catch` příkaz pro výjimku. Nezachycené výjimky jsou zpracovány obecnou obslužnou rutinou výjimek poskytovanou systémem, který zobrazuje dialogové okno.  
+# <a name="use-exceptions-c-programming-guide"></a>Použití výjimek (Průvodce programováním v C#)
+
+V jazyce C# jsou chyby v programu za běhu šířeny přes program pomocí mechanismu nazývaného výjimky. Výjimky jsou vyvolány kódem, který zaznamená chybu a zachycena kódem, který může chybu opravit. Výjimky mohou být vyvolány modulem runtime .NET nebo kódem v programu. Jakmile je vyvolána výjimka, rozšíří zásobník volání, dokud nebude `catch` nalezen příkaz pro výjimku. Nezachycené výjimky jsou zpracovávány pomocí obecné obslužné rutiny výjimky poskytované systémem, který zobrazuje dialogové okno.  
   
- Výjimky jsou reprezentovány třídami odvozenými z . <xref:System.Exception> Tato třída identifikuje typ výjimky a obsahuje vlastnosti, které mají podrobnosti o výjimce. Vyvolání výjimky zahrnuje vytvoření instance třídy odvozené od výjimky, volitelně konfiguraci vlastností výjimky a následné vyvolání objektu pomocí klíčového `throw` slova. Například:  
+ Výjimky jsou reprezentovány třídami odvozenými z <xref:System.Exception> . Tato třída identifikuje typ výjimky a obsahuje vlastnosti, které obsahují podrobnosti o výjimce. Vyvolání výjimky zahrnuje vytvoření instance třídy odvozené od výjimky, volitelně konfiguraci vlastností výjimky a následné vyvolání objektu pomocí `throw` klíčového slova. Příklad:  
   
  [!code-csharp[csProgGuideExceptions#1](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideExceptions/CS/Exceptions.cs#1)]  
   
- Po vyvolání výjimky za běhu zkontroluje aktuální příkaz, zda `try` je v rámci bloku. Pokud ano, `catch` všechny bloky `try` přidružené k bloku jsou kontrolovány, zda mohou zachytit výjimku. `Catch`bloky obvykle určují typy výjimek; Pokud je typ `catch` bloku stejného typu jako výjimka nebo základní třída `catch` výjimky, blok může zpracovat metodu. Například:  
+ Po vyvolání výjimky modul runtime zkontroluje aktuální příkaz a zjistí, zda je v rámci `try` bloku. Pokud je, `catch` jsou zkontrolovány všechny bloky přidružené k `try` bloku, aby bylo vidět, zda mohou zachytit výjimku. `Catch`bloky obvykle určují typy výjimek; Pokud `catch` je typ bloku shodný s typem výjimky nebo základní třídou výjimky, `catch` může blok zpracovat metodu. Příklad:  
   
  [!code-csharp[csProgGuideExceptions#2](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideExceptions/CS/Exceptions.cs#2)]  
   
- Pokud příkaz, který vyvolá výjimku `try` není v `try` rámci bloku nebo pokud blok, který jej obklopuje nemá `catch` odpovídající `try` blok, runtime zkontroluje volající metodu pro příkaz a `catch` bloky. Runtime pokračuje do zásobníku volání a `catch` hledá kompatibilní blok. Po `catch` nalezení a spuštění bloku je ovládací prvek předán `catch` dalšímu příkazu za tímto blokem.  
+ Pokud příkaz, který vyvolá výjimku, není uvnitř `try` bloku nebo pokud `try` blok, který ho obklopuje, nemá odpovídající `catch` blok, modul runtime zkontroluje volající metodu pro `try` příkaz a `catch` bloky. Modul runtime pokračuje v zásobníku volání a hledá kompatibilní `catch` blok. Po `catch` nalezení a provedení bloku je ovládací prvek předán dalšímu příkazu po tomto `catch` bloku.  
   
- Příkaz `try` může obsahovat `catch` více než jeden blok. První `catch` příkaz, který může zpracovat výjimku je proveden; všechny `catch` následující příkazy, i když jsou kompatibilní, jsou ignorovány. Proto catch bloky by měly být vždy seřazeny z nejvíce konkrétní (nebo nejvíce odvozené) na nejméně specifické. Například:  
+ `try`Příkaz může obsahovat více než jeden `catch` blok. `catch`Je proveden první příkaz, který může zpracovat výjimku; všechny následující `catch` příkazy, i když jsou kompatibilní, jsou ignorovány. Proto by bloky catch měly být vždy řazeny z nejvíce specifického (nebo nejvíce odvozeného) na nejméně konkrétní. Příklad:  
   
  [!code-csharp[csProgGuideExceptions#3](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideExceptions/CS/Exceptions.cs#3)]  
   
- Před `catch` spuštěním bloku za běhu zkontroluje bloky. `finally` `Finally`Bloky umožňují programátorovi vyčistit nejednoznačný stav, který by `try` mohl zůstat z přerušeného bloku, nebo uvolnit všechny externí prostředky (například grafické popisovače, připojení k databázi nebo datové proudy souborů) bez čekání na uvolňování paměti v době runtime k dokončení objektů. Například:  
+ Před `catch` provedením bloku modul runtime vyhledá `finally` bloky. `Finally`bloky umožňují programátorovi vyčistit libovolný nejednoznačný stav, který by mohl zůstat z přerušeného `try` bloku, nebo uvolnit externí prostředky (jako jsou grafické popisovače, databázová připojení nebo datové proudy souborů), aniž by čekali, až uvolňování paměti v modulu runtime dokončí objekty. Příklad:  
   
  [!code-csharp[csProgGuideExceptions#4](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideExceptions/CS/Exceptions.cs#4)]  
   
- Pokud `WriteByte()` vyvolalvýjimku, kód v `try` druhém bloku, který se pokusí `file.Close()` znovu otevřít soubor selže, pokud není volána, a soubor zůstane uzamčen. Vzhledem k tomu, že `finally` bloky jsou `finally` spouštěny i v případě, že je vyvolána výjimka, blok v předchozím příkladu umožňuje, aby byl soubor správně uzavřen a pomáhá vyhnout se chybě.  
+ Pokud `WriteByte()` vyvolal výjimku, kód v druhém `try` bloku, který se pokusí znovu otevřít soubor `file.Close()` , selže, pokud není volán, a soubor by zůstal uzamčen. Vzhledem k tomu `finally` , že jsou bloky spouštěny i v případě, že dojde k výjimce, `finally` blok v předchozím příkladu umožňuje, aby se soubor správně zavřel, a pomáhá vyhnout se chybě.  
   
- Pokud žádný `catch` kompatibilní blok je nalezen v zásobníku volání po vyvolání výjimky, dojde k jedné ze tří věcí:  
+ Pokud `catch` v zásobníku volání není po vyvolání výjimky nalezen žádný kompatibilní blok, nastane jedna ze tří akcí:  
   
-- Pokud je výjimka v rámci finalizační metody, finalizační metoda je přerušena a je volána základní finalizační metoda, pokud existuje.  
+- Pokud je výjimka v finalizační metodě, finalizační metoda je přerušena a základní finalizační metoda, pokud existuje, je volána.  
   
-- Pokud zásobník volání obsahuje statický konstruktor nebo statický inicializátor pole, je vyvolána, <xref:System.TypeInitializationException> s původní výjimku přiřazenou <xref:System.Exception.InnerException%2A> vlastnosti nové výjimky.  
+- Pokud zásobník volání obsahuje statický konstruktor nebo inicializátor statických polí, <xref:System.TypeInitializationException> je vyvolána, s původní výjimkou přiřazenou <xref:System.Exception.InnerException%2A> Vlastnosti nové výjimky.  
   
 - Pokud je dosaženo začátku vlákna, vlákno je ukončeno.  
   
 ## <a name="see-also"></a>Viz také
 
-- [Programovací příručka jazyka C#](../index.md)
-- [Výjimky a zpracování výjimek](./index.md)
+- [Průvodce programováním v C#](../index.md)
+- [Výjimky a jejich zpracování](./index.md)

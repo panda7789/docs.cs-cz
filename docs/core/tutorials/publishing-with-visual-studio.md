@@ -8,12 +8,12 @@ dev_langs:
 - csharp
 - vb
 ms.custom: vs-dotnet
-ms.openlocfilehash: e4ef8c12f3e52faa7cf09058a98abae65b0dcfce
-ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
+ms.openlocfilehash: 745fb2af332afa278c78ec9baeea7230fe725c02
+ms.sourcegitcommit: a241301495a84cc8c64fe972330d16edd619868b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84005086"
+ms.lasthandoff: 06/01/2020
+ms.locfileid: "84241488"
 ---
 # <a name="tutorial-publish-a-net-core-console-application-with-visual-studio"></a>Kurz: publikování konzolové aplikace .NET Core pomocí sady Visual Studio
 
@@ -59,25 +59,25 @@ V následujících krocích se podíváte na soubory vytvořené procesem publik
 
    Jak ukazuje obrázek, publikovaný výstup obsahuje následující soubory:
 
-      * *HelloWorld. DEPS. JSON*
+   * *HelloWorld. DEPS. JSON*
 
-         Toto je soubor závislostí modulu runtime aplikace. Definuje komponenty .NET Core a knihovny (včetně knihovny DLL, která obsahuje vaši aplikaci) potřebnou ke spuštění aplikace. Další informace najdete v tématu [běhové konfigurační soubory](https://github.com/dotnet/cli/blob/85ca206d84633d658d7363894c4ea9d59e515c1a/Documentation/specs/runtime-configuration-file.md).
+      Toto je soubor závislostí modulu runtime aplikace. Definuje komponenty .NET Core a knihovny (včetně knihovny DLL, která obsahuje vaši aplikaci) potřebnou ke spuštění aplikace. Další informace najdete v tématu [běhové konfigurační soubory](https://github.com/dotnet/cli/blob/85ca206d84633d658d7363894c4ea9d59e515c1a/Documentation/specs/runtime-configuration-file.md).
 
-      * *HelloWorld. dll*
+   * *HelloWorld. dll*
 
-         Toto je verze [nasazení závislá na rozhraní](../deploying/deploy-with-cli.md#framework-dependent-deployment) aplikace. Chcete-li spustit tuto dynamickou knihovnu, zadejte `dotnet HelloWorld.dll` na příkazovém řádku.
+      Toto je verze [nasazení závislá na rozhraní](../deploying/deploy-with-cli.md#framework-dependent-deployment) aplikace. Chcete-li spustit tuto dynamickou knihovnu, zadejte `dotnet HelloWorld.dll` na příkazovém řádku. Tato metoda spuštění aplikace funguje na libovolné platformě, na které je nainstalovaný modul runtime .NET Core.
 
-      * *Soubor HelloWorld. exe*
+   * *Soubor HelloWorld. exe*
 
-         Toto je [spustitelná](../deploying/deploy-with-cli.md#framework-dependent-executable) verze aplikace závislá na rozhraní. Pokud ho chcete spustit, zadejte `HelloWorld.exe` na příkazovém řádku.
+      Toto je [spustitelná](../deploying/deploy-with-cli.md#framework-dependent-executable) verze aplikace závislá na rozhraní. Pokud ho chcete spustit, zadejte `HelloWorld.exe` na příkazovém řádku. Soubor je specifický pro operační systém.
 
-      * *HelloWorld. pdb* (volitelné pro nasazení)
+   * *HelloWorld. pdb* (volitelné pro nasazení)
 
-         Toto je soubor se symboly ladění. Nemusíte tento soubor nasazovat společně s vaší aplikací, i když byste ho měli uložit v události, kterou potřebujete k ladění publikované verze vaší aplikace.
+      Toto je soubor se symboly ladění. Nemusíte tento soubor nasazovat společně s vaší aplikací, i když byste ho měli uložit v události, kterou potřebujete k ladění publikované verze vaší aplikace.
 
-      * *HelloWorld. runtimeconfig. JSON*
+   * *HelloWorld. runtimeconfig. JSON*
 
-         Toto je konfigurační soubor modulu runtime aplikace. Identifikuje verzi .NET Core, na které byla aplikace sestavena. Můžete také přidat možnosti konfigurace. Další informace najdete v tématu [nastavení konfigurace runtime .NET Core](../run-time-config/index.md#runtimeconfigjson).
+      Toto je konfigurační soubor modulu runtime aplikace. Identifikuje verzi .NET Core, na které byla aplikace sestavena. Můžete také přidat možnosti konfigurace. Další informace najdete v tématu [nastavení konfigurace runtime .NET Core](../run-time-config/index.md#runtimeconfigjson).
 
 ## <a name="run-the-published-app"></a>Spuštění publikované aplikace
 
@@ -91,13 +91,13 @@ V následujících krocích se podíváte na soubory vytvořené procesem publik
 
 1. Spusťte aplikaci pomocí spustitelného souboru:
 
-   1. Zadejte `HelloWorld.exe` a stiskněte klávesu ENTER.
+   1. Zadejte `HelloWorld.exe` a stiskněte klávesu <kbd>ENTER</kbd>.
 
    1. Do příkazového řádku zadejte název a stiskněte libovolnou klávesu pro ukončení.
 
 1. Spusťte aplikaci pomocí `dotnet` příkazu:
 
-   1. Zadejte `dotnet HelloWorld.dll` a stiskněte klávesu ENTER.
+   1. Zadejte `dotnet HelloWorld.dll` a stiskněte klávesu <kbd>ENTER</kbd>.
 
    1. Do příkazového řádku zadejte název a stiskněte libovolnou klávesu pro ukončení.
 

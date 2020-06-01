@@ -1,20 +1,20 @@
 ---
-title: Jak vytvořit klíč v registru - C# Programovací průvodce
+title: Postup vytvoření klíče v registru – Průvodce programováním v C#
 ms.date: 07/20/2015
 helpviewer_keywords:
 - registry, adding keys and values [C#]
 - registry keys, creating [C#]
 - keys, creating in registry
 ms.assetid: 8fa475b0-e01f-483a-9327-fd03488fdf5d
-ms.openlocfilehash: 16974db950a3a460416cfb917147439707e1d007
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 9e340083ffca118337dc9a53bdf20808cd1b15cb
+ms.sourcegitcommit: a241301495a84cc8c64fe972330d16edd619868b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75635441"
+ms.lasthandoff: 06/01/2020
+ms.locfileid: "84241627"
 ---
-# <a name="how-to-create-a-key-in-the-registry-c-programming-guide"></a>Jak vytvořit klíč v registru (C# Programovací průvodce)
-Tento příklad přidá dvojici hodnot "Jméno" a "Isabella" do registru aktuálního uživatele pod klíčem "Jména".  
+# <a name="how-to-create-a-key-in-the-registry-c-programming-guide"></a>Postup vytvoření klíče v registru (Průvodce programováním v C#)
+Tento příklad přidá dvojici hodnot "Name" a "Isabella" do registru aktuálního uživatele v klíči "Names".  
   
 ## <a name="example"></a>Příklad  
   
@@ -27,14 +27,14 @@ key.Close();
   
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
   
-- Zkopírujte kód a vložte jej do `Main` metody konzolové aplikace.  
+- Zkopírujte kód a vložte ho do `Main` metody konzolové aplikace.  
   
-- Nahraďte `Names` parametr názvem klíče, který existuje přímo pod HKEY_CURRENT_USER uzlu registru.  
+- Nahraďte `Names` parametr názvem klíče, který existuje přímo pod uzlem HKEY_CURRENT_USER registru.  
   
-- Nahraďte `Name` parametr názvem hodnoty, která existuje přímo pod názvem Název uzlu.  
+- Nahraďte `Name` parametr názvem hodnoty, která existuje přímo pod uzlem Names.  
   
 ## <a name="robust-programming"></a>Robustní programování  
- Zkontrolujte strukturu registru najít vhodné umístění pro váš klíč. Můžete například otevřít klíč Software aktuálního uživatele a vytvořit klíč s názvem vaší společnosti. Pak přidejte hodnoty registru do klíče vaší společnosti.  
+ Projděte si strukturu registru, kde najdete vhodné umístění pro váš klíč. Můžete například chtít otevřít softwarový klíč aktuálního uživatele a vytvořit klíč s názvem vaší společnosti. Pak přidejte hodnoty registru do klíče vaší společnosti.  
   
  Následující podmínky mohou způsobit výjimku:  
   
@@ -44,20 +44,20 @@ key.Close();
   
 - Název klíče překračuje limit 255 znaků.  
   
-- Klíč je zavřený.  
+- Klíč je uzavřený.  
   
 - Klíč registru je jen pro čtení.  
   
-## <a name="net-framework-security"></a>Zabezpečení rozhraní .NET Framework  
- Je bezpečnější zapisovat data do `Microsoft.Win32.Registry.CurrentUser` složky uživatele – `Microsoft.Win32.Registry.LocalMachine`nikoli do místního počítače .  
+## <a name="net-security"></a>Zabezpečení .NET  
+ Je bezpečnější zapsat data do složky uživatele – `Microsoft.Win32.Registry.CurrentUser` místo do místního počítače – `Microsoft.Win32.Registry.LocalMachine` .  
   
- Při vytváření hodnoty registru se musíte rozhodnout, co dělat, pokud tato hodnota již existuje. Jiný proces, možná škodlivý, může mít již vytvořilhodnotu a mají k ní přístup. Když vložíte data do hodnoty registru, data jsou k dispozici pro jiný proces. Chcete-li tomu zabránit, použijte.`Overload:Microsoft.Win32.RegistryKey.GetValue` Metoda. Vrátí hodnotu null, pokud klíč ještě neexistuje.  
+ Když vytváříte hodnotu registru, musíte se rozhodnout, co dělat, pokud tato hodnota již existuje. Jiný proces, pravděpodobně škodlivý, již mohl vytvořit hodnotu a mít k ní přístup. Při vložení dat do hodnoty registru jsou data k dispozici pro druhý proces. Chcete-li tomu zabránit, použijte.`Overload:Microsoft.Win32.RegistryKey.GetValue` Metoda. Vrátí hodnotu null, pokud klíč ještě neexistuje.  
   
- Není bezpečné ukládat tajné klíče, například hesla, do registru jako prostý text, i v případě, že klíč registru je chráněn seznamy řízení přístupu (ACL).  
+ Není bezpečné ukládat tajné klíče, jako jsou hesla, v registru jako prostý text, a to i v případě, že je klíč registru chráněný pomocí seznamů řízení přístupu (ACL).  
   
 ## <a name="see-also"></a>Viz také
 
 - <xref:System.IO?displayProperty=nameWithType>
-- [Programovací příručka jazyka C#](../index.md)
+- [Průvodce programováním v C#](../index.md)
 - [Systém souborů a registr (Průvodce programováním v C#)](./index.md)
-- [Číst, psát a mazat z registru s C #](https://www.codeproject.com/Articles/3389/Read-write-and-delete-from-registry-with-C)
+- [Čtení, zápis a odstranění z registru pomocí jazyka C #](https://www.codeproject.com/Articles/3389/Read-write-and-delete-from-registry-with-C)

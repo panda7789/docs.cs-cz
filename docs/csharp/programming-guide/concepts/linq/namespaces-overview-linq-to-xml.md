@@ -2,25 +2,25 @@
 title: Přehled názvových prostorů (LINQ to XML)
 ms.date: 07/20/2015
 ms.assetid: 16283322-8238-4918-ab11-802ac6748eb7
-ms.openlocfilehash: d5f176a5561b77126ef23af996ab1e4bf51092ad
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 010d8661afe063c06f042084f6b320acb1235ac4
+ms.sourcegitcommit: a241301495a84cc8c64fe972330d16edd619868b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "68868828"
+ms.lasthandoff: 06/01/2020
+ms.locfileid: "84241432"
 ---
 # <a name="namespaces-overview-linq-to-xml"></a>Přehled názvových prostorů (LINQ to XML)
 
-Tento článek představuje obory <xref:System.Xml.Linq.XName> názvů, <xref:System.Xml.Linq.XNamespace> třídy a třídy.
+Tento článek představuje obory názvů, <xref:System.Xml.Linq.XName> třídu a <xref:System.Xml.Linq.XNamespace> třídu.
 
 ## <a name="xml-names"></a>Názvy XML
 
-Názvy XML jsou často zdrojem složitosti programování XML. Název XML se skládá z oboru názvů XML (nazývaného také identifikátor URI oboru názvů XML) a místního názvu. Obor názvů XML je podobný oboru názvů v programu založeném na rozhraní .NET Framework. Umožňuje jedinečně kvalifikovat názvy prvků a atributů. To pomáhá zabránit konfliktům názvů mezi různými částmi dokumentu XML. Pokud jste deklarovali obor názvů XML, můžete vybrat místní název, který musí být jedinečný pouze v tomto oboru názvů.
+Názvy XML jsou často zdrojem složitosti při programování XML. Název XML se skládá z oboru názvů XML (označuje se také jako identifikátor URI oboru názvů XML) a místního názvu. Obor názvů XML je podobný oboru názvů v programu .NET. Umožňuje jednoznačně kvalifikovat názvy elementů a atributů. To pomáhá zabránit konfliktu názvů mezi různými částmi dokumentu XML. Pokud jste deklarovali obor názvů XML, můžete vybrat místní název, který musí být v rámci tohoto oboru názvů jedinečný.
 
-Dalším aspektem názvů XML jsou *předpony oboru názvů*XML . Předpony XML způsobují většinu složitosti názvů XML. Tyto předpony umožňují vytvořit zástupce pro obor názvů XML, díky čemuž je dokument XML stručnější a srozumitelnější. Předpony XML však závisí na jejich kontextu, aby měly význam, což zvyšuje složitost. Předpona XML může `aw` být například přidružena k jednomu oboru názvů XML v jedné části stromu XML a k jinému oboru názvů XML v jiné části stromu XML.
+Dalším aspektem názvů XML jsou *předpony oboru názvů*XML. Předpony XML způsobují většinu složitosti názvů XML. Tyto předpony umožňují vytvořit zástupce pro obor názvů XML, díky čemuž je dokument XML výstižnější a srozumitelný. Předpony XML jsou však závislé na jejich kontextu a mají význam, což zvyšuje složitost. Předpona XML `aw` může být například přidružena k jednomu oboru názvů XML v jedné části stromu XML a s jiným oborem názvů XML v jiné části stromu XML.
 
-Jednou z výhod [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] použití s C# je, že není třeba používat předpony XML. Když [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] načtete nebo analyzujete dokument XML, každá předpona XML je přeložena do odpovídajícího oboru názvů XML. Poté při práci s dokumentem, který používá obory názvů, téměř vždy přistupujete k oborům názvů prostřednictvím identifikátoru URI oboru názvů, nikoli prostřednictvím předpony oboru názvů. Když vývojáři pracují [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] s názvy XML v jevždy pracovat s plně kvalifikovaný název XML (to znamená, že obor názvů XML a místní název). V případě potřeby [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] však umožňuje pracovat s předpony oboru názvů a řídit je.
+Jednou z výhod použití [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] v jazyce C# je, že nemusíte používat předpony XML. Při [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] načítání nebo analýze dokumentu XML je každá předpona XML přeložena na odpovídající obor názvů XML. Po tom, když pracujete s dokumentem, který používá obory názvů, skoro vždy získáte přístup k oborům názvů prostřednictvím identifikátoru URI oboru názvů a nikoli prostřednictvím předpony oboru názvů. Když vývojáři pracují s názvy XML v [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] , vždy pracují s plně kvalifikovaným názvem XML (tj. obor názvů XML a místní název). V případě potřeby ale [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] umožňuje pracovat s a řídit předpony oboru názvů.
 
-V [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]aplikace je <xref:System.Xml.Linq.XName>třída, která představuje názvy XML . Názvy XML se [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] často objevují v celém rozhraní API a <xref:System.Xml.Linq.XName> všude tam, kde je vyžadován název XML, najdete parametr. Zřídka však pracujete přímo <xref:System.Xml.Linq.XName>s . <xref:System.Xml.Linq.XName>obsahuje implicitní převod z řetězce.
+V [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] , třída, která představuje názvy XML, je <xref:System.Xml.Linq.XName> . Názvy XML se často vyskytují v celém [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] rozhraní API a všude, kde se vyžaduje název XML, najdete <xref:System.Xml.Linq.XName> parametr. Nicméně zřídka pracujete přímo s <xref:System.Xml.Linq.XName> . <xref:System.Xml.Linq.XName>obsahuje implicitní převod z řetězce.
 
 Další informace naleznete v tématech <xref:System.Xml.Linq.XNamespace> a <xref:System.Xml.Linq.XName>.

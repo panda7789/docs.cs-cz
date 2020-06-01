@@ -2,12 +2,12 @@
 title: Kolekce (C#)
 ms.date: 07/20/2015
 ms.assetid: 317d7dc3-8587-4873-8b3e-556f86497939
-ms.openlocfilehash: 30aa3e34f362f34fc601f90ee61613acd6e4bc68
-ms.sourcegitcommit: 71b8f5a2108a0f1a4ef1d8d75c5b3e129ec5ca1e
+ms.openlocfilehash: ecab30d50be58f810246e58e637b331d492e4a47
+ms.sourcegitcommit: a241301495a84cc8c64fe972330d16edd619868b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/29/2020
-ms.locfileid: "84201135"
+ms.lasthandoff: 06/01/2020
+ms.locfileid: "84241393"
 ---
 # <a name="collections-c"></a>Kolekce (C#)
 
@@ -182,7 +182,7 @@ public class Galaxy
 
 ## <a name="kinds-of-collections"></a>Typy kolekcí
 
-K dispozici je mnoho běžných kolekcí .NET Framework. Každý typ kolekce je navržený pro konkrétní účel.
+Rozhraní .NET poskytuje mnoho běžných kolekcí. Každý typ kolekce je navržený pro konkrétní účel.
 
 Některé společné třídy kolekcí jsou popsány v této části:
 
@@ -214,7 +214,7 @@ Další informace naleznete v tématu [běžně používané typy kolekcí](../.
 
 ### <a name="systemcollectionsconcurrent-classes"></a>Třídy System.Collections.Concurrent
 
-V .NET Framework 4 nebo novějších kolekce v <xref:System.Collections.Concurrent> oboru názvů poskytují efektivní operace bezpečné pro přístup z více vláken pro přístup k položkám kolekce z více vláken.
+V .NET Framework 4 a novějších verzích kolekce v <xref:System.Collections.Concurrent> oboru názvů poskytují efektivní operace bezpečné pro přístup z více vláken pro přístup k položkám kolekce z více vláken.
 
 Třídy v <xref:System.Collections.Concurrent> oboru názvů by měly být použity namísto odpovídajících typů v <xref:System.Collections.Generic?displayProperty=nameWithType> <xref:System.Collections?displayProperty=nameWithType> oborech názvů a pokaždé, když více vláken přistupuje souběžně k kolekci. Další informace najdete v tématu [kolekce bezpečné](../../../standard/collections/thread-safe/index.md) pro přístup z více vláken a <xref:System.Collections.Concurrent> .
 
@@ -482,7 +482,7 @@ public class Car : IComparable<Car>
 
 Kolekci můžete definovat implementací <xref:System.Collections.Generic.IEnumerable%601> <xref:System.Collections.IEnumerable> rozhraní nebo.
 
-I když můžete definovat vlastní kolekci, je obvykle vhodnější použít kolekce, které jsou součástí .NET Framework, které jsou popsány v části [druhy kolekcí](#BKMK_KindsOfCollections) výše v tomto tématu.
+I když můžete definovat vlastní kolekci, je obvykle vhodnější použít kolekce, které jsou součástí rozhraní .NET, které jsou popsány v [části druhy kolekcí](#BKMK_KindsOfCollections) výše v tomto článku.
 
 Následující příklad definuje vlastní třídu kolekce s názvem `AllColors` . Tato třída implementuje <xref:System.Collections.IEnumerable> rozhraní, které vyžaduje <xref:System.Collections.IEnumerable.GetEnumerator%2A> implementaci metody.
 

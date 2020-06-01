@@ -2,17 +2,17 @@
 title: Kovariance a kontravariance (C#)
 ms.date: 07/20/2015
 ms.assetid: 066d9a3c-aab7-4ea6-826d-0b1a85399c74
-ms.openlocfilehash: 80b4d703bb88d0bf1f7f48236c21b7698017e7f8
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 23633675059b9c295dda7ddf3d78754c0223f5f8
+ms.sourcegitcommit: a241301495a84cc8c64fe972330d16edd619868b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "79169867"
+ms.lasthandoff: 06/01/2020
+ms.locfileid: "84241367"
 ---
 # <a name="covariance-and-contravariance-c"></a>Kovariance a kontravariance (C#)
-V C#, kovariance a contravariance povolit implicitní převod odkazu pro typy polí, typy delegátů a argumenty obecného typu. Kovariance zachovává kompatibilitu přiřazení a kontravariance ji obrátí.  
+V jazyce C# umožňuje kovariance a kontravariance implicitní převod odkazů pro typy polí, typy delegátů a argumenty obecného typu. Kovariance zachovává kompatibilitu přiřazení a kontravariance ji obrátí.  
   
- Následující kód ukazuje rozdíl mezi kompatibilitou přiřazení, kovariance a kontravariance.  
+ Následující kód ukazuje rozdíl mezi kompatibilitou přiřazení, koodchylky a kontravariance.  
   
 ```csharp  
 // Assignment compatibility.
@@ -37,7 +37,7 @@ Action<object> actObject = SetObject;
 Action<string> actString = actObject;  
 ```  
   
- Kovariance pro pole umožňuje implicitní převod pole více odvozeného typu na pole méně odvozeného typu. Ale tato operace není typ bezpečné, jak je znázorněno v následujícím příkladu kódu.  
+ Kovariance pro pole umožňuje implicitní převod pole více odvozeného typu na pole méně odvozeného typu. Tato operace ale není typově bezpečná, jak je znázorněno v následujícím příkladu kódu.  
   
 ```csharp  
 object[] array = new String[10];  
@@ -45,9 +45,9 @@ object[] array = new String[10];
 // array[0] = 10;  
 ```  
   
- Kovariance a podpora kontravariance pro skupiny metod umožňuje odpovídající podpisy metod s typy delegátů. To umožňuje přiřadit delegátům nejen metody, které mají odpovídající podpisy, ale také metody, které vracejí více odvozených typů (kovariance) nebo které přijímají parametry, které mají méně odvozených typů (kontravariance) než ty, které jsou určeny typem delegáta. Další informace naleznete [v tématech Odchylka v delegátech (C#)](./variance-in-delegates.md) a [Použití odchylky v delegátech (C#)](./using-variance-in-delegates.md).  
+ Kovariance a podpora kontravariance pro skupiny metod umožňuje porovnávací signatury metod s typy delegátů. To vám umožňuje přiřadit delegáty nejen metody, které mají odpovídající signatury, ale také metody, které vracejí více odvozené typy (kovariance), nebo které přijímají parametry, které mají méně odvozené typy (kontravariance), než je určeno typem delegáta. Další informace naleznete v tématech [Variance v delegátech (c#)](./variance-in-delegates.md) a [použití variance v delegátech (c#)](./using-variance-in-delegates.md).  
   
- Následující příklad kódu ukazuje kovariance a contravariance podporu pro skupiny metod.  
+ Následující příklad kódu ukazuje kovariance a podporu kontravariance pro skupiny metod.  
   
 ```csharp  
 static object GetObject() { return null; }  
@@ -68,24 +68,24 @@ static void Test()
 }  
 ```  
   
- V rozhraní .NET Framework 4 nebo novější C# podporuje kovariance a contravariance v obecných rozhraních a delegáty a umožňuje implicitní převod parametrů obecného typu. Další informace naleznete [v tématu Odchylka v obecných rozhraních (C#)](./variance-in-generic-interfaces.md) a [Odchylka v delegátech (C#)](./variance-in-delegates.md).  
+ V .NET Framework 4 a novějších verzích C# podporuje kovarianci a kontravariance v obecných rozhraních a delegátech a povoluje implicitní převod parametrů obecného typu. Další informace najdete v tématech [Variance v obecných rozhraních (c#)](./variance-in-generic-interfaces.md) a [Variance v delegátech (c#)](./variance-in-delegates.md).  
   
- Následující příklad kódu ukazuje implicitní převod odkazu pro obecná rozhraní.  
+ Následující příklad kódu ukazuje implicitní převod odkazu pro Obecná rozhraní.  
   
 ```csharp  
 IEnumerable<String> strings = new List<String>();  
 IEnumerable<Object> objects = strings;  
 ```  
   
- Obecné rozhraní nebo delegát se nazývá *varianta,* pokud jsou jeho obecné parametry deklarovány kovariantní nebo kontravariantní. C# umožňuje vytvořit vlastní variantní rozhraní a delegáty. Další informace naleznete [v tématu Vytváření variantních obecných rozhraní (C#)](./creating-variant-generic-interfaces.md) a [odchylky v delegátech (C#).](./variance-in-delegates.md)  
+ Obecné rozhraní nebo delegát se nazývá *typ variant* , pokud jsou jeho obecné parametry deklarovány kovariantní nebo kontravariantní. Jazyk C# umožňuje vytvářet vlastní variantní rozhraní a delegáty. Další informace naleznete v tématu [vytváření variant obecných rozhraní (c#)](./creating-variant-generic-interfaces.md) a [Variance v delegátech (c#)](./variance-in-delegates.md).  
   
 ## <a name="related-topics"></a>Související témata  
   
 |Nadpis|Popis|  
 |-----------|-----------------|  
-|[Odchylka v obecných rozhraních (C#)](./variance-in-generic-interfaces.md)|Popisuje kovariance a kontravariance v obecných rozhraních a poskytuje seznam variant obecných rozhraní v rozhraní .NET Framework.|  
+|[Variance v obecných rozhraních (C#)](./variance-in-generic-interfaces.md)|Popisuje kovarianci a kontravariance v obecných rozhraních a poskytuje seznam variantních obecných rozhraní v .NET Framework.|  
 |[Vytváření variantních obecných rozhraní (C#)](./creating-variant-generic-interfaces.md)|Ukazuje, jak vytvořit vlastní variantní rozhraní.|  
-|[Použití odchylky v rozhraních pro obecné kolekce (C#)](./using-variance-in-interfaces-for-generic-collections.md)|Ukazuje, jak kovariance a contravariance podpora v <xref:System.Collections.Generic.IEnumerable%601> a <xref:System.IComparable%601> rozhraní vám může pomoci znovu použít kód.|  
-|[Odchylka v delegátech (C#)](./variance-in-delegates.md)|Popisuje kovariance a kontravariance v obecné a neobecné delegáty a poskytuje seznam variant obecných delegátů v rozhraní .NET Framework.|  
-|[Použití odchylky v delegátech (C#)](./using-variance-in-delegates.md)|Ukazuje, jak používat kovariance a kontravariance podporu v neobecných delegátů k sladění podpisy metody s typy delegátů.|  
-|[Použití odchylky pro obecné delegáty aplikace Func a obecné akce (C#)](./using-variance-for-func-and-action-generic-delegates.md)|Ukazuje, jak kovariance a contravariance podpora v `Func` a `Action` delegáti vám může pomoci znovu použít kód.|
+|[Použití variance v rozhraních pro obecné kolekce (C#)](./using-variance-in-interfaces-for-generic-collections.md)|Ukazuje, jak se podpora kovariance a kontravariance <xref:System.Collections.Generic.IEnumerable%601> v <xref:System.IComparable%601> rozhraních a může pomoci znovu použít kód.|  
+|[Variance v delegátech (C#)](./variance-in-delegates.md)|Popisuje kovarianci a kontravariance v obecných a neobecných delegátech a poskytuje seznam variant obecných delegátů v .NET Framework.|  
+|[Použití variance v delegátech (C#)](./using-variance-in-delegates.md)|Ukazuje, jak použít kovarianci a podporu kontravariance v neobecných delegátech pro porovnávání signatur metod s typy delegátů.|  
+|[Použití odchylky pro obecné delegáty Func a Action (C#)](./using-variance-for-func-and-action-generic-delegates.md)|Ukazuje, jak se podpora kovariance a kontravariance `Func` v `Action` delegátech a může pomoci znovu použít kód.|

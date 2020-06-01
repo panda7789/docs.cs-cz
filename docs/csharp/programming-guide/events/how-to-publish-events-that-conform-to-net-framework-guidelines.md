@@ -1,19 +1,19 @@
 ---
-title: Postup publikování událostí, které odpovídají pravidlům .NET Framework – Průvodce programováním v C#
+title: Publikovat události, které odpovídají pravidlům rozhraní .NET – Průvodce programováním v C#
 ms.date: 05/26/2020
 helpviewer_keywords:
 - events [C#], implementation guidelines
 ms.assetid: 9310ae16-8627-44a2-b08c-05e5976202b1
-ms.openlocfilehash: 137e52b80703491a4528a3eddc7fa12f9dce6f52
-ms.sourcegitcommit: ee5b798427f81237a3c23d1fd81fff7fdc21e8d3
+ms.openlocfilehash: df2f643f867b93b74d04d8fbd673df545c28938e
+ms.sourcegitcommit: a241301495a84cc8c64fe972330d16edd619868b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84144796"
+ms.lasthandoff: 06/01/2020
+ms.locfileid: "84240743"
 ---
-# <a name="how-to-publish-events-that-conform-to-net-framework-guidelines-c-programming-guide"></a>Jak publikovat události, které jsou v souladu s pokyny pro .NET Framework (Průvodce programováním v C#)
+# <a name="how-to-publish-events-that-conform-to-net-guidelines-c-programming-guide"></a>Jak publikovat události, které jsou v souladu s pokyny rozhraní .NET (Průvodce programováním v C#)
 
-Následující postup ukazuje, jak přidat události, které následují standardní .NET Framework vzor, pro vaše třídy a struktury. Všechny události v knihovně tříd .NET Framework jsou založeny na <xref:System.EventHandler> delegátu, který je definován následujícím způsobem:
+Následující postup ukazuje, jak přidat události, které následují standardní vzor .NET, pro vaše třídy a struktury. Všechny události v knihovně tříd .NET Framework jsou založeny na <xref:System.EventHandler> delegátu, který je definován následujícím způsobem:
 
 ```csharp
 public delegate void EventHandler(object sender, EventArgs e);
@@ -22,11 +22,11 @@ public delegate void EventHandler(object sender, EventArgs e);
 > [!NOTE]
 > .NET Framework 2,0 zavádí obecnou verzi tohoto delegáta <xref:System.EventHandler%601> . Následující příklady ukazují, jak používat obě verze.
 
-I když události v třídách, které definujete, mohou být založeny na jakémkoli platném typu delegáta, dokonce i delegáti, kteří vrací hodnotu, obecně se doporučuje, abyste zavedli své události na vzor .NET Framework pomocí <xref:System.EventHandler> , jak je znázorněno v následujícím příkladu.
+I když události v třídách, které definujete, mohou být založeny na jakémkoli platném typu delegáta, dokonce i delegáti, kteří vrací hodnotu, obecně se doporučuje, abyste zavedli své události na vzor .NET pomocí <xref:System.EventHandler> , jak je znázorněno v následujícím příkladu.
 
 Název `EventHandler` může vést k nejasnostem, protože ve skutečnosti událost nezpracovává. <xref:System.EventHandler>A obecné <xref:System.EventHandler%601> jsou typy delegátů. Metoda nebo výraz lambda, jehož signatura odpovídá definici delegáta, je *obslužná rutina události* a bude vyvolána při vyvolání události.
 
-### <a name="to-publish-events-based-on-the-eventhandler-pattern"></a>Publikování událostí na základě vzoru EventHandler
+## <a name="publish-events-based-on-the-eventhandler-pattern"></a>Publikování událostí na základě vzoru EventHandler
 
 1. (Tento krok přeskočte a přejděte na Krok 3a, pokud nemusíte odesílat vlastní data s událostí.) Deklarujte třídu pro vlastní data v oboru, který je viditelný pro třídy Vydavatel a odběratel. Pak přidejte požadované členy, které budou uchovávat vaše vlastní data události. V tomto příkladu je vrácen jednoduchý řetězec.
 

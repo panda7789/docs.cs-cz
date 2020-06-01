@@ -2,24 +2,22 @@
 title: Migrace databáze SQL Serveru do Azure
 description: Naučte se migrovat databázi SQL Server z místního SQL Server do Azure.
 ms.topic: how-to
-ms.date: 11/15/2017
-ms.openlocfilehash: dac35970f2d77e232c2ee1a5e3a1f6e7bfec2317
-ms.sourcegitcommit: e48a54ebe62e874500a7043f6ee0b77a744d55b4
+ms.date: 05/27/2020
+ms.openlocfilehash: ed5d6ef9395dca14d8e0ecba82d3fc18cb3d629a
+ms.sourcegitcommit: a241301495a84cc8c64fe972330d16edd619868b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "82072093"
+ms.lasthandoff: 06/01/2020
+ms.locfileid: "84241445"
 ---
 # <a name="migrate-a-sql-server-database-to-azure"></a>Migrace databáze SQL Serveru do Azure
 
-Tento krátký článek poskytuje stručný přehled dvou možností migrace databáze SQL Server do Azure.
-
-Azure má dvě primární možnosti migrace provozní SQL Server databáze:
+Tento článek poskytuje stručný přehled dvou možností migrace databáze SQL Server do Azure. Azure má tři primární možnosti migrace provozní databáze SQL Server. Tento článek se zaměřuje na tyto dvě možnosti:
 
 1. [SQL Server na virtuálních počítačích Azure](https://docs.microsoft.com/azure/virtual-machines/windows/sql/virtual-machines-windows-sql-server-iaas-overview): instance SQL Server nainstalovaná a hostovaná na virtuálním počítači s Windows, který běží v Azure, označovaný také jako infrastruktura jako služba (IaaS).
 2. [Azure SQL Database](https://docs.microsoft.com/azure/sql-database/sql-database-technical-overview): plně spravovaná služba Azure SQL Database, která se označuje také jako platforma jako služba (PaaS).
 
-Oba přicházejí s využitím specialistů i nevýhody, které budete muset před migrací vyhodnotit.
+Oba přicházejí s využitím specialistů i nevýhody, které budete muset před migrací vyhodnotit. Třetí možností je [Azure SQL Database spravované instance](https://docs.microsoft.com/azure/sql-database/sql-database-managed-instance).
 
 ## <a name="get-started"></a>Začínáme
 
@@ -63,16 +61,16 @@ Následující tabulka popisuje rozdíly mezi jednotlivými službami v závislo
 | Migrace | Vyžaduje minimální změny v databázi. | Může vyžadovat změny v databázi, pokud používáte funkce, které nejsou k dispozici v Azure SQL, podle určení [Data Migration Assistant](https://www.microsoft.com/download/details.aspx?id=53595), nebo pokud máte jiné závislosti, jako jsou místně instalované spustitelné soubory.|
 | Správa dostupnosti, obnovení a upgradů | Dostupnost a obnovení jsou konfigurovány ručně. Upgrady je možné automatizovat pomocí [VM Scale Sets](https://docs.microsoft.com/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-automatic-upgrade). | Automaticky se spravuje. |
 | Základní konfigurace operačního systému | Ruční konfigurace | Automaticky se spravuje. |
-| Správa velikosti databáze | Podporuje až 64 TB úložiště na instanci SQL Server. | Podporuje 4 TB úložiště před tím, než bude potřeba horizontální oddíl. |
+| Správa velikosti databáze | Podporuje až 256 TB úložiště na instanci SQL Server. | Podporuje 8 TB úložiště před tím, než bude potřeba horizontální oddíl. |
 | Správa nákladů | Musíte spravovat licenční náklady na SQL Server, licenční náklady na Windows Server a náklady na virtuální počítače (na základě jader, paměti RAM a úložiště). | Pokud používáte elastický fond, musíte spravovat náklady na službu (na základě [eDTU nebo DTU](https://docs.microsoft.com/azure/sql-database/sql-database-what-is-a-dtu), úložiště a počtu databází). Je také nutné spravovat náklady na smlouvu SLA. |
 
-Pokud se chcete dozvědět víc o rozdílech mezi těmito dvěma možnostmi, přečtěte si téma volba Cloud SQL Server: [Azure SQL Database nebo SQL Server na virtuálních počítačích Azure](https://docs.microsoft.com/azure/sql-database/sql-database-paas-vs-sql-server-iaas).
+Další informace o rozdílech mezi těmito dvěma postupy najdete v tématu [Volba správné možnosti nasazení v Azure SQL](https://docs.microsoft.com/azure/sql-database/sql-database-paas-vs-sql-server-iaas).
 
-## <a name="faq"></a>Nejčastější dotazy
+## <a name="faq"></a>Časté otázky
 
 * **Můžu dál používat nástroje, jako je SQL Server Management Studio a SQL Server Reporting Services (SSRS) s SQL Server ve virtuálních počítačích Azure nebo Azure SQL Database?**
 
-    Ano! Všechny nástroje Microsoft SQL Tool fungují s oběma službami. Služba SSRS není součástí Azure SQL Database, ale doporučujeme ji spustit ve virtuálním počítači Azure a pak ji nasměrovat na instanci databáze.
+    Ano. Všechny nástroje Microsoft SQL Tool fungují s oběma službami. Služba SSRS není součástí Azure SQL Database, ale doporučujeme ji spustit ve virtuálním počítači Azure a pak ji nasměrovat na instanci databáze.
 
 * **Chci přejít na PaaS, ale nejste si jistí, jestli je databáze kompatibilní. Jsou k dispozici nástroje pro usnadnění?**
 

@@ -2,37 +2,37 @@
 title: Stromy výrazů (C#)
 ms.date: 07/20/2015
 ms.assetid: 7d0ac21a-6d90-4e2e-8903-528cb78615b7
-ms.openlocfilehash: f425ab38bf7bb54814fe777b7cb02180d022a8af
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: c260e649e7bd285a6bd07b5a1cd7fc1a7f75b82a
+ms.sourcegitcommit: a241301495a84cc8c64fe972330d16edd619868b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "79169633"
+ms.lasthandoff: 06/01/2020
+ms.locfileid: "84241549"
 ---
 # <a name="expression-trees-c"></a>Stromy výrazů (C#)
-Stromy výrazů představují kód v datové struktuře podobné stromu, kde každý uzel je výraz, `x < y`například volání metody nebo binární operace, například .  
+Stromy výrazů reprezentují kód v datové struktuře podobné stromu, kde každý uzel je výraz, například volání metody nebo binární operace, jako je například `x < y` .  
   
- Můžete zkompilovat a spustit kód reprezentovaný stromy výrazů. To umožňuje dynamickou modifikaci spustitelného kódu, provádění linq dotazů v různých databázích a vytváření dynamických dotazů. Další informace o stromech výrazů v linq naleznete v [tématu Jak pomocí stromů výrazů vytvářet dynamické dotazy (C#).](./how-to-use-expression-trees-to-build-dynamic-queries.md)
+ Můžete zkompilovat a spustit kód reprezentovaný stromy výrazů. To umožňuje dynamickou úpravu spustitelného kódu, spuštění dotazů LINQ v různých databázích a vytváření dynamických dotazů. Další informace o stromech výrazů v LINQ naleznete v tématu [How to use Expression Trees to Dynamic dotazy (C#)](./how-to-use-expression-trees-to-build-dynamic-queries.md).
   
- Stromy výrazů se také používají v dynamickém jazyku runtime (DLR) k zajištění interoperability mezi dynamickými jazyky a rozhraním .NET Framework a k povolení autorům kompilátoru vyzařovat stromy výrazů namísto zprostředkujícího jazyka Microsoft (MSIL). Další informace o dlr naleznete [v tématu Přehled dynamického jazykového běhu](../../../../framework/reflection-and-codedom/dynamic-language-runtime-overview.md).  
+ Stromy výrazů se také používají v dynamickém jazykovém modulu runtime (DLR) k zajištění interoperability mezi dynamickými jazyky a rozhraním .NET a umožňují zapisovačům kompilátoru vysílat stromy výrazů namísto jazyka MSIL (Microsoft Intermediate Language). Další informace o DLR najdete v tématu [Přehled dynamického jazykového modulu runtime](../../../../framework/reflection-and-codedom/dynamic-language-runtime-overview.md).  
   
- Kompilátor jazyka C# nebo Visual Basic může vytvořit strom výrazů na základě anonymního výrazu lambda <xref:System.Linq.Expressions> nebo můžete vytvořit stromy výrazů ručně pomocí oboru názvů.  
+ Můžete mít kompilátor C# nebo Visual Basic vytvořit strom výrazu pro vás na základě anonymního výrazu lambda, nebo můžete vytvořit stromy výrazů ručně pomocí <xref:System.Linq.Expressions> oboru názvů.  
   
-## <a name="creating-expression-trees-from-lambda-expressions"></a>Vytváření stromů výrazů z výrazů Lambda  
- Když je výraz lambda přiřazen proměnné <xref:System.Linq.Expressions.Expression%601>typu , kompilátor vydává kód k vytvoření stromu výrazů, který představuje výraz lambda.  
+## <a name="creating-expression-trees-from-lambda-expressions"></a>Vytváření stromů výrazů ze výrazů lambda  
+ Když je výraz lambda přiřazen proměnné typu <xref:System.Linq.Expressions.Expression%601> , kompilátor generuje kód pro sestavení stromu výrazu, který reprezentuje lambda výraz.  
   
- Kompilátor Jazyka C# může generovat stromy výrazů pouze z výrazu lambdas (nebo jednořádkové lambdy). Nemůže analyzovat prohlášení lambdas (nebo multi-line lambdas). Další informace o výrazech lambda v c#, naleznete v [tématu Lambda Výrazy](../../statements-expressions-operators/lambda-expressions.md).  
+ Kompilátor jazyka C# může generovat stromy výrazů pouze z výrazů lambda výrazů (nebo jednoduchých výrazů lambda). Nelze analyzovat výrazy lambda příkazů (nebo víceřádkové výrazy lambda). Další informace o výrazech lambda v jazyce C# naleznete v tématu [lambda Expressions](../../statements-expressions-operators/lambda-expressions.md).  
   
- Následující příklady kódu ukazují, jak mít kompilátor Jazyka C# vytvořit `num => num < 5`strom výrazů, který představuje výraz lambda .  
+ Následující příklady kódu ukazují, jak má kompilátor jazyka C# vytvořit strom výrazu, který představuje výraz lambda `num => num < 5` .  
   
 ```csharp  
 Expression<Func<int, bool>> lambda = num => num < 5;  
 ```  
   
 ## <a name="creating-expression-trees-by-using-the-api"></a>Vytváření stromů výrazů pomocí rozhraní API  
- Chcete-li vytvořit stromy výrazů <xref:System.Linq.Expressions.Expression> pomocí rozhraní API, použijte třídu. Tato třída obsahuje statické metody factory, které vytvářejí uzly stromu výrazu určitých typů, <xref:System.Linq.Expressions.ParameterExpression>například , který představuje proměnnou nebo parametr nebo <xref:System.Linq.Expressions.MethodCallExpression>, který představuje volání metody. <xref:System.Linq.Expressions.ParameterExpression>, <xref:System.Linq.Expressions.MethodCallExpression>a další typy specifické pro výraz <xref:System.Linq.Expressions> jsou také definovány v oboru názvů. Tyto typy jsou odvozeny z abstraktního typu <xref:System.Linq.Expressions.Expression>.  
+ Chcete-li vytvořit stromy výrazů pomocí rozhraní API, použijte <xref:System.Linq.Expressions.Expression> třídu. Tato třída obsahuje statické metody továrny, které vytvářejí uzly stromu výrazů specifických typů, například <xref:System.Linq.Expressions.ParameterExpression> , které představují proměnnou nebo parametr, nebo <xref:System.Linq.Expressions.MethodCallExpression> , které představují volání metody. <xref:System.Linq.Expressions.ParameterExpression>, <xref:System.Linq.Expressions.MethodCallExpression> a další typy specifické pro výraz jsou také definovány v <xref:System.Linq.Expressions> oboru názvů. Tyto typy jsou odvozeny z abstraktního typu <xref:System.Linq.Expressions.Expression> .  
   
- Následující příklad kódu ukazuje, jak vytvořit strom výrazů, `num => num < 5` který představuje výraz lambda pomocí rozhraní API.  
+ Následující příklad kódu ukazuje, jak vytvořit strom výrazu, který reprezentuje lambda výraz `num => num < 5` pomocí rozhraní API.  
   
 ```csharp  
 // Add the following using directive to your code file:  
@@ -49,7 +49,7 @@ Expression<Func<int, bool>> lambda1 =
         new ParameterExpression[] { numParam });  
 ```  
   
- V rozhraní .NET Framework 4 nebo novější výraz stromy rozhraní API také podporuje přiřazení a `try-catch` řízení toku výrazy, jako jsou smyčky, podmíněné bloky a bloky. Pomocí rozhraní API můžete vytvořit stromy výrazů, které jsou složitější než ty, které lze vytvořit z výrazů lambda kompilátorem Jazyka C#. Následující příklad ukazuje, jak vytvořit strom výrazů, který vypočítá faktoriál čísla.  
+ V .NET Framework 4 nebo novějších rozhraní API stromů výrazů podporuje také přiřazení a vývojové výrazy řízení, jako jsou smyčky, podmíněné bloky a `try-catch` bloky. Pomocí rozhraní API můžete vytvořit stromy výrazů, které jsou složitější než ty, které lze vytvořit z výrazů lambda kompilátorem jazyka C#. Následující příklad ukazuje, jak vytvořit strom výrazu, který vypočítá faktoriál čísla.  
   
 ```csharp  
 // Creating a parameter expression.  
@@ -91,10 +91,10 @@ Console.WriteLine(factorial);
 // Prints 120.  
 ```
 
-Další informace naleznete [v tématu Generování dynamických metod se stromy výrazů v sadě Visual Studio 2010](https://devblogs.microsoft.com/csharpfaq/generating-dynamic-methods-with-expression-trees-in-visual-studio-2010/), které platí také pro novější verze sady Visual Studio.
+Další informace naleznete v tématu [generování dynamických metod pomocí stromů výrazů v aplikaci Visual studio 2010](https://devblogs.microsoft.com/csharpfaq/generating-dynamic-methods-with-expression-trees-in-visual-studio-2010/), které platí také pro novější verze sady Visual Studio.
   
 ## <a name="parsing-expression-trees"></a>Analýza stromů výrazů  
- Následující příklad kódu ukazuje, jak lze rozdělit strom `num => num < 5` výrazu, který představuje výraz lambda, na jeho části.  
+ Následující příklad kódu ukazuje, jak je možné rozložit strom výrazu reprezentující výraz lambda `num => num < 5` na jeho části.  
   
 ```csharp  
 // Add the following using directive to your code file:  
@@ -117,13 +117,13 @@ Console.WriteLine("Decomposed expression: {0} => {1} {2} {3}",
 // Decomposed expression: num => num LessThan 5  
 ```  
   
-## <a name="immutability-of-expression-trees"></a>Neměnnost výrazových stromů  
- Stromy výrazů by měly být neměnné. To znamená, že pokud chcete upravit strom výrazů, musíte vytvořit nový strom výrazů zkopírováním existujícího stromu a nahrazením uzlů v něm. Návštěvník stromu výrazů můžete použít k procházení existujícího stromu výrazů. Další informace naleznete v tématu [Jak upravit stromy výrazů (C#).](./how-to-modify-expression-trees.md)
+## <a name="immutability-of-expression-trees"></a>Neměnnosti stromů výrazů  
+ Stromy výrazů by měly být neměnné. To znamená, že pokud chcete upravit strom výrazu, je nutné vytvořit nový strom výrazu zkopírováním stávajícího a nahrazením uzlů v něm. K procházení stávajícího stromu výrazů můžete použít návštěvníka stromu výrazu. Další informace najdete v tématu [Postup úpravy stromů výrazů (C#)](./how-to-modify-expression-trees.md).
   
-## <a name="compiling-expression-trees"></a>Kompilace stromů výrazů  
- Typ <xref:System.Linq.Expressions.Expression%601> poskytuje <xref:System.Linq.Expressions.Expression%601.Compile%2A> metodu, která zkompiluje kód reprezentovaný stromem výrazů do spustitelného delegáta.  
+## <a name="compiling-expression-trees"></a>Kompilování stromů výrazů  
+ <xref:System.Linq.Expressions.Expression%601>Typ poskytuje <xref:System.Linq.Expressions.Expression%601.Compile%2A> metodu, která zkompiluje kód reprezentovaný stromem výrazu do delegáta spustitelného souboru.  
   
- Následující příklad kódu ukazuje, jak zkompilovat strom výrazů a spustit výsledný kód.  
+ Následující příklad kódu ukazuje, jak zkompilovat strom výrazu a spustit výsledný kód.  
   
 ```csharp  
 // Creating an expression tree.  
@@ -145,13 +145,13 @@ Console.WriteLine(expr.Compile()(4));
 // Also prints True.  
 ```  
   
- Další informace naleznete v tématu [Jak spustit stromy výrazů (C#).](./how-to-execute-expression-trees.md)
+ Další informace najdete v tématu [spuštění stromů výrazů (C#)](./how-to-execute-expression-trees.md).
   
 ## <a name="see-also"></a>Viz také
 
 - <xref:System.Linq.Expressions>
-- [Jak spustit stromy výrazů (C#)](./how-to-execute-expression-trees.md)
-- [Jak upravit stromy výrazů (C#)](./how-to-modify-expression-trees.md)
-- [Lambda výrazy](../../statements-expressions-operators/lambda-expressions.md)
-- [Přehled dynamického jazykového běhu](../../../../framework/reflection-and-codedom/dynamic-language-runtime-overview.md)
+- [Spuštění stromů výrazů (C#)](./how-to-execute-expression-trees.md)
+- [Postup úpravy stromů výrazů (C#)](./how-to-modify-expression-trees.md)
+- [Výrazy lambda](../../statements-expressions-operators/lambda-expressions.md)
+- [Přehled dynamického jazykového modulu runtime](../../../../framework/reflection-and-codedom/dynamic-language-runtime-overview.md)
 - [Koncepty programování (C#)](../index.md)

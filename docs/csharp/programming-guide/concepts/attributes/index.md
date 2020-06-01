@@ -1,51 +1,51 @@
 ---
 title: Atributy (C#)
 ms.date: 04/26/2018
-ms.openlocfilehash: 0379bb76cf18ff836bd14aafb9cb97c30aee8ec7
-ms.sourcegitcommit: 62285ec11fa8e8424bab00511a90760c60e63c95
+ms.openlocfilehash: 358285a39f72ad3ddf1b265e20b443308375d074
+ms.sourcegitcommit: a241301495a84cc8c64fe972330d16edd619868b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/20/2020
-ms.locfileid: "81645489"
+ms.lasthandoff: 06/01/2020
+ms.locfileid: "84241575"
 ---
 # <a name="attributes-c"></a>Atributy (C#)
 
-Atributy poskytují výkonnou metodu připojování metadat nebo deklarativních informací s kódem (sestavení, typy, metody, vlastnosti atd.). Poté, co je atribut přidružen k entitě programu, může být tento atribut dotazován za běhu pomocí techniky nazývané *reflexe*. Další informace naleznete v [tématu Reflection (C#)](../reflection.md).
+Atributy poskytují výkonnou metodu přidružování metadat nebo deklarativní informace, s kódem (sestavení, typy, metodami, vlastnostmi a tak dále). Po přiřazení atributu k entitě programu lze pomocí metody s názvem *reflexe*zadat dotaz na atribut v době běhu. Další informace naleznete v tématu [reflexe (C#)](../reflection.md).
 
 Atributy mají následující vlastnosti:
 
-- Atributy přidávají do programu metadata. *Metadata* jsou informace o typech definovaných v programu. Všechna sestavení rozhraní .NET obsahují zadanou sadu metadat, která popisuje typy a členy typu definované v sestavení. Můžete přidat vlastní atributy a zadat další informace, které jsou požadovány. Další informace naleznete v [tématu Vytváření vlastních atributů (C#).](creating-custom-attributes.md)
-- Jeden nebo více atributů můžete použít na celá sestavení, moduly nebo menší prvky programu, jako jsou třídy a vlastnosti.
+- Atributy přidávají do programu metadata. *Metadata* jsou informace o typech definovaných v programu. Všechna sestavení .NET obsahují zadanou sadu metadat, které popisují typy a členy typu definované v sestavení. Můžete přidat vlastní atributy a zadat případné další požadované informace. Další informace naleznete v tématu a [vytváření vlastních atributů (C#)](creating-custom-attributes.md).
+- Jeden nebo více atributů lze použít pro celá sestavení, moduly nebo menší prvky programu, jako jsou třídy a vlastnosti.
 - Atributy mohou přijímat argumenty stejným způsobem jako metody a vlastnosti.
-- Program může zkoumat vlastní metadata nebo metadata v jiných programech pomocí reflexe. Další informace naleznete [v tématu Přístup k atributům pomocí reflexe (C#)](accessing-attributes-by-using-reflection.md).
+- Váš program může prošetřit vlastní metadata nebo metadata v jiných programech pomocí reflexe. Další informace naleznete v tématu [přístup k atributům pomocí reflexe (C#)](accessing-attributes-by-using-reflection.md).
 
 ## <a name="using-attributes"></a>Použití atributů
 
-Atributy lze umístit na většinu jakékoli prohlášení, i když konkrétní atribut může omezit typy deklarací, na kterých je platný. V c# zadáte atribut umístěním názvu atributu uzavřeného v hranatých závorkách ([]) nad deklaraci entity, na kterou se vztahuje.
+Atributy lze umístit na většinu jakékoli deklarace, i když konkrétní atribut může omezit typy deklarací, na kterých je platný. V jazyce C# zadáte atribut tak, že umístíte název atributu uzavřený do hranatých závorek ([]) nad deklaraci entity, na kterou se vztahuje.
 
-V tomto příkladu <xref:System.SerializableAttribute> se atribut používá k použití určité charakteristiky na třídu:
+V tomto příkladu <xref:System.SerializableAttribute> je atribut použit k použití konkrétní charakteristiky pro třídu:
 
 [!code-csharp[Using the serializable attribute](~/samples/snippets/csharp/attributes/AttributesOverview.cs#1)]
 
-Metoda s atributem <xref:System.Runtime.InteropServices.DllImportAttribute> je deklarována jako následující příklad:
+Metoda s atributem <xref:System.Runtime.InteropServices.DllImportAttribute> je deklarována jako v následujícím příkladu:
 
 [!code-csharp[Declaring a method to import from an external library](../../../../../samples/snippets/csharp/attributes/AttributesOverview.cs#2)]
 
-Více než jeden atribut lze umístit na prohlášení, jak ukazuje následující příklad:
+V deklaraci lze umístit více než jeden atribut, jak ukazuje následující příklad:
 
 [!code-csharp[Including the interop namespace](~/samples/snippets/csharp/attributes/AttributesOverview.cs#3)]
 [!code-csharp[Declaring two way marshaling for arguments](~/samples/snippets/csharp/attributes/AttributesOverview.cs#4)]
 
-Některé atributy lze zadat více než jednou pro danou entitu. Příkladem takového víceúčelového atributu je <xref:System.Diagnostics.ConditionalAttribute>:
+Některé atributy lze pro danou entitu zadat více než jednou. Příklad takového atributu Multiuse je <xref:System.Diagnostics.ConditionalAttribute> :
 
 [!code-csharp[Using the conditional attribute](~/samples/snippets/csharp/attributes/AttributesOverview.cs#5)]
 
 > [!NOTE]
-> Podle konvence všechny názvy atributů končí slovem "Atribut", aby se odlišily od ostatních položek v knihovnách .NET. Při použití atributů v kódu však není nutné zadávat příponu atributu. Například `[DllImport]` je ekvivalentní `[DllImportAttribute]`, `DllImportAttribute` ale je skutečný název atributu v knihovně tříd rozhraní .NET Framework.
+> Podle konvence názvy všech atributů končí slovem "Attribute", aby je bylo možné odlišit od ostatních položek v knihovnách .NET. Při použití atributů v kódu však není nutné zadávat příponu atributu. Například `[DllImport]` je ekvivalentní k `[DllImportAttribute]` , ale `DllImportAttribute` je skutečným názvem atributu v knihovně tříd .NET.
 
-### <a name="attribute-parameters"></a>Parametry atributů
+### <a name="attribute-parameters"></a>Parametry atributu
 
-Mnoho atributů má parametry, které mohou být poziční, nepojmenované nebo pojmenované. Všechny poziční parametry musí být zadány v určitém pořadí a nelze je vynechat. Pojmenované parametry jsou volitelné a lze je zadat v libovolném pořadí. Nejprve jsou zadány poziční parametry. Například tyto tři atributy jsou ekvivalentní:
+Mnoho atributů má parametry, které mohou být pozice, nepojmenované nebo pojmenované. V určitém pořadí musí být zadány všechny poziční parametry a nelze je vynechat. Pojmenované parametry jsou volitelné a lze je zadat v libovolném pořadí. Poziční parametry jsou uvedeny jako první. Například tyto tři atributy jsou ekvivalentní:
 
 ```csharp
 [DllImport("user32.dll")]
@@ -53,13 +53,13 @@ Mnoho atributů má parametry, které mohou být poziční, nepojmenované nebo 
 [DllImport("user32.dll", ExactSpelling=false, SetLastError=false)]
 ```
 
-První parametr, název dll, je poziční a vždy je na prvním místě; ostatní jsou pojmenovány. V tomto případě oba pojmenované parametry výchozí false, takže mohou být vynechány. Poziční parametry odpovídají parametrům konstruktoru atributu. Pojmenované nebo volitelné parametry odpovídají vlastnostem nebo polím atributu. Informace o výchozích hodnotách parametrů naleznete v dokumentaci k jednotlivým atributům.
+První parametr, název knihovny DLL, je pozice a vždy se nachází jako první; ostatní mají název. V takovém případě mají obě pojmenované parametry výchozí hodnotu false, takže je lze vynechat. Poziční parametry odpovídají parametrům konstruktoru atributu. Pojmenované nebo volitelné parametry odpovídají buď vlastnostem nebo polím atributu. Informace o výchozích hodnotách parametrů naleznete v dokumentaci k jednotlivým atributům.
 
 ### <a name="attribute-targets"></a>Cíle atributů
 
-*Cílem* atributu je entita, na kterou se atribut vztahuje. Atribut může například použít pro třídu, určitou metodu nebo celé sestavení. Ve výchozím nastavení se atribut vztahuje na prvek, který za ním následuje. Můžete však také explicitně určit, například zda je atribut použit pro metodu nebo její parametr nebo na jeho vrácenou hodnotu.
+*Cíl* atributu je entita, na kterou se atribut vztahuje. Atribut může například platit pro třídu, konkrétní metodu nebo celé sestavení. Ve výchozím nastavení se atribut vztahuje na prvek, který následuje. Můžete ale také explicitně určit, zda je atribut použit na metodu, nebo na jeho parametr nebo na jeho návratovou hodnotu.
 
-Chcete-li explicitně identifikovat cíl atributu, použijte následující syntaxi:
+K explicitní identifikaci cíle atributu použijte následující syntaxi:
 
 ```csharp
 [target : attribute-list]
@@ -69,19 +69,19 @@ Seznam možných `target` hodnot je uveden v následující tabulce.
 
 |Cílová hodnota|Platí pro|
 |------------------|----------------|
-|`assembly`|Celá sestava|
-|`module`|Aktuální montážní modul|
+|`assembly`|Celé sestavení|
+|`module`|Aktuální modul sestavení|
 |`field`|Pole ve třídě nebo struktuře|
 |`event`|Událost|
-|`method`|Přístupové `get` `set` objekty metody nebo vlastnosti|
-|`param`|Parametry metody `set` nebo parametry přístupového objektu vlastnosti|
+|`method`|`get` `set` Přístupové objekty metody nebo vlastnosti|
+|`param`|Parametry metody nebo `set` parametry přístupového objektu vlastnosti|
 |`property`|Vlastnost|
-|`return`|Vrácená hodnota metody, indexeru `get` vlastností nebo přistupujícího objektu vlastností|
-|`type`|Struktura, třída, rozhraní, výčt nebo delegát|
+|`return`|Návratová hodnota metody, indexeru vlastností nebo `get` přistupujícího objektu vlastnosti|
+|`type`|Struktura, třída, rozhraní, výčet nebo delegát|
 
-Zadali byste `field` cílovou hodnotu, která má atribut použít na záložní pole vytvořené pro [automaticky implementovanou vlastnost](../../../properties.md).
+Zadejte `field` cílovou hodnotu pro použití atributu pro pole zálohování vytvořené pro [automaticky implementovanou vlastnost](../../../properties.md).
 
-Následující příklad ukazuje, jak použít atributy sestavení a modulů. Další informace naleznete [v tématu Common Attributes (C#)](../../../language-reference/attributes/global.md).
+Následující příklad ukazuje, jak použít atributy na sestavení a moduly. Další informace najdete v tématu [běžné atributy (C#)](../../../language-reference/attributes/global.md).
 
 ```csharp
 using System;
@@ -90,28 +90,28 @@ using System.Reflection;
 [module: CLSCompliant(true)]
 ```
 
-Následující příklad ukazuje, jak použít atributy metody, parametry metody a metody vrácené hodnoty v C#.
+Následující příklad ukazuje, jak použít atributy na metody, parametry metody a návratové hodnoty metody v jazyce C#.
 
 [!code-csharp[Applying attributes to different code elements](../../../../../samples/snippets/csharp/attributes/AttributesOverview.cs#6)]
 
 > [!NOTE]
-> Bez ohledu na cíle, na kterých `ValidatedContract` `return` je definována jako platná, cíl musí být určen, i když `ValidatedContract` byly definovány použít pouze pro vrácené hodnoty. Jinými slovy kompilátor nebude `AttributeUsage` používat informace k vyřešení nejednoznačných cílů atributů. Další informace naleznete v tématu [AttributeUsage (C#)](../../../language-reference/attributes/general.md).
+> Bez ohledu na cíle `ValidatedContract` , které jsou definovány jako platné, je `return` nutné zadat cíl, a to i v případě, že `ValidatedContract` byly definovány pro použití pouze pro návratové hodnoty. Jinými slovy, kompilátor nebude používat `AttributeUsage` informace pro vyřešení dvojznačných cílů atributu. Další informace naleznete v tématu [AttributeUsage (C#)](../../../language-reference/attributes/general.md).
 
 ## <a name="common-uses-for-attributes"></a>Běžné použití atributů
 
 Následující seznam obsahuje několik běžných použití atributů v kódu:
 
-- Metody označení `WebMethod` pomocí atributu ve webových službách označují, že metoda by měla být volatelná přes protokol SOAP. Další informace naleznete v tématu <xref:System.Web.Services.WebMethodAttribute>.
-- Popisující, jak zařazovat parametry metody při spolupráci s nativním kódem. Další informace naleznete v tématu <xref:System.Runtime.InteropServices.MarshalAsAttribute>.
-- Popisující vlastnosti com pro třídy, metody a rozhraní.
-- Volání nespravovaného <xref:System.Runtime.InteropServices.DllImportAttribute> kódu pomocí třídy.
-- Popis vašeho sestavení z hlediska názvu, verze, popisu nebo ochranné známky.
-- Popisující, které členy třídy serializovat pro trvalost.
-- Popis mapování mezi členy třídy a uzly XML pro serializaci XML.
-- Popisující požadavky na zabezpečení metod.
-- Určení charakteristik používaných k vynucení zabezpečení.
-- Řízení optimalizace kompilátorem just-in-time (JIT), takže kód zůstává snadno ladit.
-- Získání informací o volajícím na metodu.
+- Označení metod pomocí `WebMethod` atributu ve webových službách k označení toho, že by měla být metoda volat přes protokol SOAP. Další informace naleznete v tématu <xref:System.Web.Services.WebMethodAttribute>.
+- Popisuje způsob zařazení parametrů metody při spolupráci s nativním kódem. Další informace naleznete v tématu <xref:System.Runtime.InteropServices.MarshalAsAttribute>.
+- Popisuje vlastnosti modelu COM pro třídy, metody a rozhraní.
+- Volání nespravovaného kódu pomocí <xref:System.Runtime.InteropServices.DllImportAttribute> třídy.
+- Popisuje vaše sestavení s ohledem na název, verzi, popis nebo ochrannou známku.
+- Popisuje, kteří členové třídy mají být serializováni k trvalému serializaci.
+- Popisuje, jak mapovat mezi členy třídy a uzly XML pro serializaci kódu XML.
+- Popisuje požadavky na zabezpečení pro metody.
+- Určení vlastností používaných k vymáhání zabezpečení.
+- Řízení optimalizace pomocí kompilátoru JIT (just-in-time), takže kód zůstane snadno laděn.
+- Získání informací o volajícím metody.
 
 ## <a name="related-sections"></a>Související oddíly
 
@@ -119,13 +119,13 @@ Další informace naleznete v tématu:
 
 - [Vytváření vlastních atributů (C#)](creating-custom-attributes.md)  
 - [Přístup k atributům pomocí reflexe (C#)](accessing-attributes-by-using-reflection.md)  
-- [Jak vytvořit sjednocení C/C++ pomocí atributů (C#)](how-to-create-a-c-cpp-union-by-using-attributes.md)  
-- [Běžné atributy (C#)](../../../language-reference/attributes/global.md)  
+- [Postup vytvoření sjednocení jazyka C/C++ pomocí atributů (C#)](how-to-create-a-c-cpp-union-by-using-attributes.md)  
+- [Společné atributy (C#)](../../../language-reference/attributes/global.md)  
 - [Informace o volajícím (C#)](../../../language-reference/attributes/caller-information.md)  
 
 ## <a name="see-also"></a>Viz také
 
-- [Programovací příručka jazyka C#](../../index.md)
+- [Průvodce programováním v C#](../../index.md)
 - [Reflexe (C#)](../reflection.md)
 - [Atributy](../../../../standard/attributes/index.md)
-- [Použití atributů v C #](../../../tutorials/attributes.md)
+- [Používání atributů v jazyce C #](../../../tutorials/attributes.md)

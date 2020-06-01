@@ -1,5 +1,5 @@
 ---
-title: Hello World – Váš první program používající Visual Studio ve Windows nebo Macu – Průvodce programováním v Jazyce C#
+title: Hello World – první program využívající Visual Studio ve Windows nebo v prostředí Mac – Průvodce programováním v C#
 ms.date: 09/12/2019
 f1_keywords:
 - cs.program
@@ -8,16 +8,16 @@ helpviewer_keywords:
 - examples [C#], Hello World
 - Hello World example [C#]
 ms.assetid: 6493182a-b0b6-4539-a719-518a168cb730
-ms.openlocfilehash: 910fa4af1b4e45ce627b589a06910dc168490047
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 6d78ec83fec72b30f5cee398af1816d0cac35886
+ms.sourcegitcommit: a241301495a84cc8c64fe972330d16edd619868b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75712140"
+ms.lasthandoff: 06/01/2020
+ms.locfileid: "84241861"
 ---
-# <a name="hello-world----your-first-program"></a>Hello World - Váš první program
+# <a name="hello-world----your-first-program"></a>Hello World – první program
 
-V tomto článku použijete Visual Studio k vytvoření tradičního "Hello World!" Program. Visual Studio je profesionální integrované vývojové prostředí (IDE) s mnoha funkcemi určenými pro vývoj rozhraní .NET. K vytvoření tohoto programu použijete pouze několik funkcí sady Visual Studio. Další informace o sadě Visual Studio najdete [v tématu Začínáme s visual c#](/visualstudio/ide/quickstart-csharp-console).
+V tomto článku použijete Visual Studio k vytvoření tradičního "Hello World!" editoru. Visual Studio je profesionální integrované vývojové prostředí (IDE) s řadou funkcí navržených pro vývoj pro .NET. K vytvoření tohoto programu použijete pouze několik funkcí v aplikaci Visual Studio. Další informace o aplikaci Visual Studio naleznete v tématu [Začínáme v jazyce Visual C#](/visualstudio/ide/quickstart-csharp-console).
 
 [!INCLUDE[note_settings_general](~/includes/note-settings-general-md.md)]
 
@@ -29,18 +29,18 @@ V tomto článku použijete Visual Studio k vytvoření tradičního "Hello Worl
 
 Spusťte Visual Studio. Ve Windows se zobrazí následující obrázek:
 
-![Úvodní obrazovka Visual Studia ve Windows](./media/hello-world-your-first-program/visual-studio-windows-start-screen.png)
+![Úvodní obrazovka sady Visual Studio ve Windows](./media/hello-world-your-first-program/visual-studio-windows-start-screen.png)
 
-Vyberte **Vytvořit nový projekt** v pravém dolním rohu obrazu. Visual Studio zobrazí dialogové okno **Nový projekt:**
+Vyberte **vytvořit nový projekt** v pravém dolním rohu obrázku. Visual Studio zobrazí dialogové okno **Nový projekt** :
 
-![Obrazovka nového projektu Visual Studia ve Windows](./media/hello-world-your-first-program/visual-studio-windows-new-project.png)
+![Obrazovka nového projektu v aplikaci Visual Studio ve Windows](./media/hello-world-your-first-program/visual-studio-windows-new-project.png)
 
 > [!NOTE]
-> Pokud je to poprvé, co jste spustili Visual Studio, seznam **šablony posledních projektů** je prázdný.
+> Pokud jste spustili aplikaci Visual Studio poprvé, seznam **naposledy použitých šablon projektů** je prázdný.
 
-V novém dialogovém okně projektu zvolte "Console App (.NET Core)" a stiskněte **tlačítko Další**. Pojmenujte projekt, například "HelloWorld", a stiskněte **klávesu Create**.
+V dialogovém okně Nový projekt zvolte možnost Konzolová aplikace (.NET Core) a potom stiskněte tlačítko **Další**. Zadejte název vašeho projektu, například HelloWorld, a pak stiskněte **vytvořit**.
 
-Visual Studio otevře projekt. Je to již základní "Hello World!" Příklad. `Ctrl`  +  Stisknutím `F5` spusťte projekt. Visual Studio vytvoří váš projekt a převede zdrojový kód na spustitelný soubor. Potom spustí příkazové okno, ve které je spuštěna nová aplikace. V okně by se měl zobrazit následující text:
+Visual Studio otevře projekt. Už je základní "Hello World!". případě. Stisknutím klávesy `Ctrl`  +  `F5` spusťte projekt. Visual Studio sestaví projekt a převede zdrojový kód na spustitelný soubor. Potom spustí příkazové okno, které spustí vaši novou aplikaci. V okně byste měli vidět následující text:
 
 ```console
 Hello World!
@@ -49,24 +49,24 @@ C:\Program Files\dotnet\dotnet.exe (process 11964) exited with code 0.
 Press any key to close this window . . .
 ```
 
-Zavřete okno stisknutím klávesy.
+Stisknutím klávesy zavřete okno.
 
-# <a name="macos"></a>[Macos](#tab/macos)
+# <a name="macos"></a>[macOS](#tab/macos)
 
 Spusťte Visual Studio pro Mac. Na Macu se zobrazí následující obrázek:
 
-![Úvodní obrazovka Visual Studia na Macu](./media/hello-world-your-first-program/visual-studio-mac-start-screen.png)
+![Úvodní obrazovka sady Visual Studio na Macu](./media/hello-world-your-first-program/visual-studio-mac-start-screen.png)
 
 > [!NOTE]
-> Pokud je to poprvé, co jste spustili Visual Studio pro Mac, seznam **Nedávné projekty** je prázdný.
+> Pokud Visual Studio pro Macte poprvé, seznam **posledních projektů** je prázdný.
 
-V pravém horním rohu obrazu vyberte **Nový.** Visual Studio pro Mac zobrazí dialogové okno **Nový projekt:**
+V pravém horním rohu obrázku vyberte **Nový** . Visual Studio pro Mac zobrazí dialog **Nový projekt** :
 
-![Visual Studio nový projekt obrazovky na Mac](./media/hello-world-your-first-program/visual-studio-mac-new-project.png)
+![Obrazovka nového projektu v aplikaci Visual Studio na Macu](./media/hello-world-your-first-program/visual-studio-mac-new-project.png)
 
-V novém dialogovém okně projektu zvolte ".NET Core" a "Console App" a stiskněte **tlačítko Další**. Budete muset vybrat cílovou architekturu. Výchozí nastavení je v pořádku, takže stiskněte další. Pojmenujte projekt, například "HelloWorld", a stiskněte **klávesu Create**. Můžete použít výchozí umístění projektu. Nepřidávejte tento projekt do správy zdrojového kódu.
+V dialogovém okně Nový projekt vyberte .NET Core a Konzolová aplikace a pak klikněte na **Další**. Bude nutné vybrat cílovou architekturu. Ve výchozím nastavení je to v pořádku, takže stiskněte tlačítko Další. Zadejte název vašeho projektu, například HelloWorld, a pak stiskněte **vytvořit**. Můžete použít výchozí umístění projektu. Nepřidávat tento projekt do správy zdrojových kódů.
 
-Visual Studio pro Mac otevře váš projekt. Je to již základní "Hello World!" Příklad. `Ctrl`  +  Stisknutím `Fn`  +  spusťte `F5` projekt. Visual Studio pro Mac vytvoří váš projekt a převede zdrojový kód na spustitelný soubor. Potom spustí příkazové okno, ve které je spuštěna nová aplikace. V okně by se měl zobrazit následující text:
+Visual Studio pro Mac otevře projekt. Už je základní "Hello World!". případě. Stisknutím klávesy `Ctrl`  +  `Fn`  +  `F5` spusťte projekt. Visual Studio pro Mac sestavit projekt a převod zdrojového kódu na spustitelný soubor. Potom spustí příkazové okno, které spustí vaši novou aplikaci. V okně byste měli vidět následující text:
 
 ```console
 Hello World!
@@ -74,33 +74,33 @@ Hello World!
 Press any key to close this window . . .
 ```
 
-Stisknutím klávesy ukončíte relaci.
+Ukončete relaci stisknutím klávesy.
 
 ---
 
-## <a name="elements-of-a-c-program"></a>Prvky programu Jazyka C#
+## <a name="elements-of-a-c-program"></a>Prvky programu v jazyce C#
 
-Podívejme se na důležité části tohoto programu. První řádek obsahuje komentář. Znaky `//` převedou zbytek řádku na komentář.
+Pojďme se podívat na důležité části tohoto programu. První řádek obsahuje komentář. Znaky `//` převedou zbytek čáry na komentář.
 
 [!code-csharp[csProgGuide#32](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuide/CS/progGuide.cs#32)]
 
-Můžete také zakomentovat blok textu tím, `/*` že `*/` jej uzavřete mezi znaky a. To je ukázáno v následujícím příkladu.
+Můžete také odkomentovat blok textu uzavřením mezi `/*` `*/` znaky a. To je ukázáno v následujícím příkladu.
 
 [!code-csharp[csProgGuide#33](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuide/CS/progGuide.cs#33)]
 
-Aplikace konzoly Jazyka C# musí obsahovat metodu, `Main` ve které ovládací prvek začíná a končí. Metoda `Main` je místo, kde můžete vytvořit objekty a spustit jiné metody.
+Konzolová aplikace v jazyce C# musí obsahovat `Main` metodu, ve které ovládací prvek začíná a končí. `Main`Metoda je místo, kde vytvoříte objekty a spustíte jiné metody.
 
-Metoda `Main` je [statická](../../language-reference/keywords/static.md) metoda, která se nachází uvnitř třídy nebo struktury. V předchozím "Hello World!" například je umístěn ve `Hello`třídě s názvem . Metodu můžete `Main` deklarovat jedním z následujících způsobů:
+`Main`Metoda je [statická](../../language-reference/keywords/static.md) metoda, která se nachází uvnitř třídy nebo struktury. V předchozím "Hello World!" například se nachází ve třídě s názvem `Hello` . Metodu lze deklarovat `Main` jedním z následujících způsobů:
 
-- Může se `void`vrátit . To znamená, že váš program nevrátí hodnotu.
+- Může vracet `void` . To znamená, že váš program nevrací hodnotu.
 
 [!code-csharp[csProgGuideMain#12](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideMain/CS/Class3.cs#12)]
 
-- Může také vrátit celé číslo. Celé číslo je **ukončovací kód** pro vaši aplikaci.
+- Může také vracet celé číslo. Celé číslo je **ukončovací kód** vaší aplikace.
 
 [!code-csharp[csProgGuideMain#13](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideMain/CS/Class3.cs#13)]
 
-- S jedním z návratových typů může trvat argumenty.
+- U obou návratových typů může vzít v úvahu argumenty.
 
 [!code-csharp[csProgGuideMain#19](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideMain/CS/Class3.cs#19)]
 
@@ -108,23 +108,23 @@ Metoda `Main` je [statická](../../language-reference/keywords/static.md) metoda
 
 [!code-csharp[csProgGuideMain#18](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideMain/CS/Class3.cs#18)]
 
-Parametr `Main` metody , `args`je `string` pole, které obsahuje argumenty příkazového řádku použité k vyvolání programu.
+Parametr `Main` metody, `args` , je `string` pole, které obsahuje argumenty příkazového řádku, které se používají k vyvolání programu.
 
-Další informace o použití argumentů příkazového řádku naleznete v příkladech v [části Main() a Argumenty příkazového řádku](../main-and-command-args/index.md).
+Další informace o tom, jak používat argumenty příkazového řádku, naleznete v příkladech v části [Main () a argumenty příkazového řádku](../main-and-command-args/index.md).
 
 ## <a name="input-and-output"></a>Vstup a výstup
 
-Programy jazyka C# obecně používají vstupní a výstupní služby poskytované knihovnou run-time rozhraní .NET Framework. Příkaz `System.Console.WriteLine("Hello World!");` používá <xref:System.Console.WriteLine%2A> metodu. Toto je jedna z <xref:System.Console> výstupních metod třídy v knihovně za běhu. Zobrazí svůj parametr řetězce ve standardním výstupním datovém proudu následovaném novým řádkem. Jiné <xref:System.Console> metody jsou k dispozici pro různé vstupní a výstupní operace. Pokud zahrnete `using System;` směrnice na začátku programu, <xref:System> můžete přímo použít třídy a metody bez jejich plné kvalifikace. Můžete například volat `Console.WriteLine` místo `System.Console.WriteLine`:
+Programy v jazyce C# obecně používají vstupní a výstupní služby, které poskytuje běhová knihovna rozhraní .NET. Příkaz `System.Console.WriteLine("Hello World!");` používá <xref:System.Console.WriteLine%2A> metodu. Toto je jedna z výstupních metod <xref:System.Console> třídy v knihovně run-time. Zobrazuje parametr řetězce na standardním výstupním streamu následovaný novým řádkem. Další <xref:System.Console> metody jsou k dispozici pro různé vstupní a výstupní operace. Pokud zadáte `using System;` direktivu na začátku programu, můžete přímo použít <xref:System> třídy a metody bez jejich úplného zařazení. Například můžete volat `Console.WriteLine` místo `System.Console.WriteLine` :
 
 [!code-csharp[csProgGuide#1](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuide/CS/using.cs#1)]
 
 [!code-csharp[csProgGuide#23](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuide/CS/progGuide.cs#23)]
 
-Další informace o metodách vstupu <xref:System.IO>a výstupu naleznete v tématu .
+Další informace o metodách vstupu a výstupu naleznete v tématu <xref:System.IO> .
 
 ## <a name="see-also"></a>Viz také
 
-- [Programovací příručka jazyka C#](../index.md)
-- [Ukázky a výukové programy](../../../samples-and-tutorials/index.md)
-- [Argumenty Main() a příkazového řádku](../main-and-command-args/index.md)
-- [Začínáme s visual c #](/visualstudio/ide/quickstart-csharp-console)
+- [Průvodce programováním v C#](../index.md)
+- [Ukázky a kurzy](../../../samples-and-tutorials/index.md)
+- [Argumenty Main () a příkazového řádku](../main-and-command-args/index.md)
+- [Začínáme s Visual C #](/visualstudio/ide/quickstart-csharp-console)

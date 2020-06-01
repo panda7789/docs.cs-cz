@@ -2,12 +2,12 @@
 title: Objektově orientované programování (C#)
 ms.date: 05/13/2020
 ms.assetid: 89574786-65ef-4335-88bc-fbacd094f183
-ms.openlocfilehash: 541d1a2581a3241f35fc8478040c007b6581e3b2
-ms.sourcegitcommit: 046a9c22487551360e20ec39fc21eef99820a254
+ms.openlocfilehash: 98dd5147ab54375ec851ccd9b981a68098a53270
+ms.sourcegitcommit: a241301495a84cc8c64fe972330d16edd619868b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83396690"
+ms.lasthandoff: 06/01/2020
+ms.locfileid: "84241887"
 ---
 # <a name="object-oriented-programming-c"></a>Objektově orientované programování (C#)
 
@@ -91,8 +91,8 @@ Většina vlastností má metody nebo postupy pro nastavení a získání hodnot
 
 Další informace naleznete v tématu:
 
-- [Čtěte](../../language-reference/keywords/get.md)
-- [set](../../language-reference/keywords/set.md)
+- [get](../../language-reference/keywords/get.md)
+- [stanovenými](../../language-reference/keywords/set.md)
 
 #### <a name="methods"></a>Metody
 
@@ -146,9 +146,9 @@ Další informace naleznete v tématu [konstruktory](../classes-and-structs/cons
 
 #### <a name="finalizers"></a>Finalizační metody
 
-Finalizační metoda se používá k destrukci instancí tříd. V .NET Framework systém uvolňování paměti automaticky spravuje přidělování a uvolňování paměti pro spravované objekty ve vaší aplikaci. Nicméně stále budete potřebovat finalizační metody k vyčištění všech nespravovaných prostředků, které vaše aplikace vytvoří. Pro třídu může existovat pouze jeden finalizační metoda.
+Finalizační metoda se používá k destrukci instancí tříd. V rozhraní .NET systém uvolňování paměti automaticky spravuje přidělování a uvolňování paměti pro spravované objekty ve vaší aplikaci. Nicméně stále budete potřebovat finalizační metody k vyčištění všech nespravovaných prostředků, které vaše aplikace vytvoří. Pro třídu může existovat pouze jeden finalizační metoda.
 
-Další informace o finalizační a uvolňování paměti v .NET Framework naleznete v tématu [uvolňování paměti](../../../standard/garbage-collection/index.md).
+Další informace o finalizační a uvolňování paměti v rozhraní .NET najdete v tématu [uvolňování paměti](../../../standard/garbage-collection/index.md).
 
 #### <a name="events"></a>Události
 
@@ -298,7 +298,7 @@ public abstract class B { }
 Další informace naleznete v tématu:
 
 - [sealed](../../language-reference/keywords/sealed.md)
-- [abstract](../../language-reference/keywords/abstract.md)
+- [Výtah](../../language-reference/keywords/abstract.md)
 
 ### <a name="overriding-members"></a>Přepisování členů
 
@@ -310,7 +310,7 @@ Následující modifikátory slouží k řízení způsobu přepsání vlastnost
 |--|--|
 | [virtual](../../language-reference/keywords/virtual.md) | Umožňuje přepsat člena třídy v odvozené třídě. |
 | [override](../../language-reference/keywords/override.md) | Přepíše virtuální (overridabled) člen definovaný v základní třídě. |
-| [abstract](../../language-reference/keywords/abstract.md) | Vyžaduje, aby byl člen třídy přepsán v odvozené třídě. |
+| [Výtah](../../language-reference/keywords/abstract.md) | Vyžaduje, aby byl člen třídy přepsán v odvozené třídě. |
 | [new – modifikátor](../../language-reference/keywords/new-modifier.md) | Skryje člena zděděného ze základní třídy. |
 
 ## <a name="interfaces"></a>Rozhraní
@@ -342,7 +342,7 @@ Další informace najdete v článku Průvodce programováním v tématu [rozhra
 
 ## <a name="generics"></a>Obecné typy
 
-Třídy, struktury, rozhraní a metody v .NET Framework mohou zahrnovat *parametry typu* , které definují typy objektů, které mohou ukládat nebo používat. Nejběžnějším příkladem obecných typů je kolekce, kde můžete určit typ objektů, které mají být uloženy v kolekci.
+Třídy, struktury, rozhraní a metody v rozhraní .NET mohou zahrnovat *parametry typu* , které definují typy objektů, které mohou ukládat nebo používat. Nejběžnějším příkladem obecných typů je kolekce, kde můžete určit typ objektů, které mají být uloženy v kolekci.
 
 Definování obecné třídy:
 
@@ -365,7 +365,7 @@ Další informace naleznete v tématu:
 - [Obecné typy v .NET](../../../standard/generics/index.md)
 - [Obecné typy – Průvodce programováním v C#](../generics/index.md)
 
-## <a name="delegates"></a>Delegáty
+## <a name="delegates"></a>Delegáti
 
 *Delegát* je typ, který definuje signaturu metody a může poskytnout odkaz na libovolnou metodu s kompatibilní signaturou. Metodu můžete vyvolat (nebo volat) prostřednictvím delegáta. Delegáty se používají pro předávání metod jako argumentů jiným metodám.
 

@@ -1,16 +1,16 @@
 ---
-title: Čtení dat objektu ze souboru XML (C#)
+title: Čtení dat objektů ze souboru XML (C#)
 ms.date: 07/20/2015
 ms.assetid: 6ad60d96-a4d9-48e6-a8b0-d7f6f803cafa
-ms.openlocfilehash: 18428cbe2f2d3b9434a77ee4d063ceabbba6bcb8
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: e2365d1260d3f6e239f294b2af3399c2fb659575
+ms.sourcegitcommit: a241301495a84cc8c64fe972330d16edd619868b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79167815"
+ms.lasthandoff: 06/01/2020
+ms.locfileid: "84241874"
 ---
-# <a name="how-to-read-object-data-from-an-xml-file-c"></a>Čtení dat objektu ze souboru XML (C#)
-Tento příklad čte data objektu, která byla <xref:System.Xml.Serialization.XmlSerializer> dříve zapsána do souboru XML pomocí třídy.  
+# <a name="how-to-read-object-data-from-an-xml-file-c"></a>Čtení dat objektů ze souboru XML (C#)
+Tento příklad načte data objektů, která byla dříve zapsána do souboru XML pomocí <xref:System.Xml.Serialization.XmlSerializer> třídy.  
   
 ## <a name="example"></a>Příklad  
   
@@ -43,27 +43,27 @@ public void ReadXML()
 ```  
   
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
-Nahraďte název souboru "c:\temp\SerializationOverview.xml" názvem souboru obsahujícího serializovaná data. Další informace o serializaci dat naleznete v tématu [Jak zapsat data objektů do souboru XML (C#).](./how-to-write-object-data-to-an-xml-file.md)
+Nahraďte název souboru "c:\temp\SerializationOverview.xml" názvem souboru, který obsahuje Serializovaná data. Další informace o serializaci dat naleznete v tématu [jak zapisovat data objektů do souboru XML (C#)](./how-to-write-object-data-to-an-xml-file.md).
   
  Třída musí mít veřejný konstruktor bez parametrů.  
   
- Dekonstruovány jsou pouze veřejné vlastnosti a pole.  
+ Pouze veřejné vlastnosti a pole jsou deserializovány.  
   
 ## <a name="robust-programming"></a>Robustní programování  
  Následující podmínky mohou způsobit výjimku:  
   
-- Třída serializované nemá veřejné, parametrless konstruktoru.  
+- Serializovaná třída nemá veřejný konstruktor bez parametrů.  
   
-- Data v souboru nepředstavují data z třídy, která má být rekonstruována.  
+- Data v souboru reprezentují data z třídy, která se má deserializovat.  
   
-- Soubor neexistuje (<xref:System.IO.IOException>).  
+- Soubor neexistuje ( <xref:System.IO.IOException> ).  
   
-## <a name="net-framework-security"></a>Zabezpečení rozhraní .NET Framework  
- Vždy ověřujte vstupy a nikdy nerekonstruujte data z nedůvěryhodného zdroje. Znovu vytvořený objekt je spuštěn v místním počítači s oprávněními kódu, který jej rekonstruoval. Před použitím dat ve své aplikaci ověřte všechny vstupy.  
+## <a name="net-security"></a>Zabezpečení .NET  
+ Vždy ověřte vstupy a nikdy neserializovat data z nedůvěryhodného zdroje. Nově vytvořený objekt je spuštěn v místním počítači s oprávněním kódu, který jej deserializovat. Před použitím dat ve své aplikaci ověřte všechny vstupy.  
   
 ## <a name="see-also"></a>Viz také
 
 - <xref:System.IO.StreamWriter>
-- [Jak zapisovat data objektů do souboru XML (C#)](./how-to-write-object-data-to-an-xml-file.md)
+- [Zápis dat objektů do souboru XML (C#)](./how-to-write-object-data-to-an-xml-file.md)
 - [Serializace (C#)](./index.md)
-- [Programovací příručka jazyka C#](../../index.md)
+- [Průvodce programováním v C#](../../index.md)

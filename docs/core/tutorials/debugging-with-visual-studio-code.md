@@ -2,12 +2,12 @@
 title: Ladění konzolové aplikace .NET Core pomocí Visual Studio Code
 description: Naučte se ladit konzolovou aplikaci .NET Core pomocí Visual Studio Code.
 ms.date: 05/26/2020
-ms.openlocfilehash: eaeb97f54442006d2f0e29483a68dc3de89b5778
-ms.sourcegitcommit: 71b8f5a2108a0f1a4ef1d8d75c5b3e129ec5ca1e
+ms.openlocfilehash: 82b2798397d702aa2a50c04bf6e4d569b97e3666
+ms.sourcegitcommit: a241301495a84cc8c64fe972330d16edd619868b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/29/2020
-ms.locfileid: "84202587"
+ms.lasthandoff: 06/01/2020
+ms.locfileid: "84241510"
 ---
 # <a name="tutorial-debug-a-net-core-console-application-using-visual-studio-code"></a>Kurz: ladění konzolové aplikace .NET Core pomocí Visual Studio Code
 
@@ -29,7 +29,13 @@ V konfiguraci ladění program kompiluje s úplnými symbolickými informacemi o
 
 Zarážka dočasně přerušuje provádění aplikace *před* provedením řádku se zarážkou.
 
-1. V *program.cs*nastavte *zarážku* na řádku, který zobrazuje název, datum a čas kliknutím na levý okraj okna Code (kód). Levý okraj je nalevo od čísel řádků. Dalším způsobem, jak nastavit zarážku, je umístit kurzor do řádku kódu a stisknout <kbd>F9</kbd>.
+1. Otevřete Visual Studio Code.
+
+1. Otevřete složku projektu *HelloWorld* , kterou jste vytvořili v [části Vytvoření konzolové aplikace .net Core v Visual Studio Code](with-visual-studio-code.md).
+
+1. Otevřete soubor *program.cs* .
+
+1. Nastavte *zarážku* na řádku, který zobrazuje název, datum a čas kliknutím na levý okraj okna Code (kód). Levý okraj je nalevo od čísel řádků. Dalším způsobem, jak nastavit zarážku, je umístit kurzor do řádku kódu a stisknout <kbd>F9</kbd>.
 
    Jak ukazuje následující obrázek, Visual Studio Code označuje řádek, na kterém je zarážka nastavena, zobrazením červené tečky na levém okraji.
 
@@ -215,10 +221,7 @@ dotnet run --configuration Release
 
 ## <a name="next-steps"></a>Další kroky
 
-V tomto kurzu jste použili Visual Studio Code ladicí nástroje. Informace o tom, jak publikovat nasazovatelné verze aplikace, najdete v tématu [publikování aplikace](cli-create-console-app.md#publish-your-app).
-
-<!--In the next tutorial, you publish a deployable version of the app.
+V tomto kurzu jste použili Visual Studio Code ladicí nástroje. V dalším kurzu publikujete nasazovatelné verze aplikace.
 
 > [!div class="nextstepaction"]
-> [Publish a .NET Core console application with Visual Studio Code](publishing-with-visual-studio-code.md)
--->
+> [Publikování konzolové aplikace .NET Core pomocí Visual Studio Code](publishing-with-visual-studio-code.md)
