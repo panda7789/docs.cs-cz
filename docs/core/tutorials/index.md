@@ -4,12 +4,12 @@ description: Při vytváření aplikací a knihoven v počítačích Mac, Linux 
 author: richlander
 ms.date: 03/16/2017
 titleSuffix: ''
-ms.openlocfilehash: 31f63a2bbafc7f1c8dacea0fa8d3a40f36f69e55
-ms.sourcegitcommit: a241301495a84cc8c64fe972330d16edd619868b
+ms.openlocfilehash: a685b7d8d6c849cfea061a997780b9cafeb6d938
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/01/2020
-ms.locfileid: "84241471"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84283725"
 ---
 # <a name="learn-net-core-and-the-net-core-sdk-tools-by-exploring-these-tutorials"></a>Prozkoumejte tyto kurzy a Naučte se .NET Core a nástroje pro .NET Core SDK.
 
@@ -22,10 +22,8 @@ Následující kurzy jsou k dispozici pro získání informací o .NET Core.
 - [Publikování aplikace](publishing-with-visual-studio.md)
 - [Vytvoření knihovny tříd](library-with-visual-studio.md)
 - [Testování částí knihovny tříd](testing-library-with-visual-studio.md)
-- [Použití knihovny tříd](consuming-library-with-visual-studio.md)
 - [Instalace a použití balíčku](/nuget/quickstart/install-and-use-a-package-in-visual-studio)
 - [Vytvoření a publikování balíčku](/nuget/quickstart/create-and-publish-a-package-using-visual-studio)
-
 - [Vytvoření konzolové aplikace F #](../../fsharp/get-started/get-started-visual-studio.md)
 
 ## <a name="use-visual-studio-code"></a>Použití editoru Visual Studio Code
@@ -35,10 +33,10 @@ Tyto kurzy vyberte, pokud chcete použít Visual Studio Code nebo jiný Editor k
 - [Vytvoření konzolové aplikace](with-visual-studio-code.md)
 - [Ladění aplikace](debugging-with-visual-studio-code.md)
 - [Publikování aplikace](publishing-with-visual-studio-code.md)
-- [Vytvoření knihovny s následným testem jednotek – macOS](using-on-macos.md)
+- [Vytvoření knihovny tříd](library-with-visual-studio-code.md)
+- [Testování částí knihovny tříd](testing-library-with-visual-studio-code.md)
 - [Instalace a použití balíčku](/nuget/quickstart/install-and-use-a-package-using-the-dotnet-cli)
 - [Vytvoření a publikování balíčku](/nuget/quickstart/create-and-publish-a-package-using-the-dotnet-cli)
-
 - [Vytvoření konzolové aplikace F #](../../fsharp/get-started/get-started-vscode.md)
 
 ## <a name="use-visual-studio-for-mac"></a>Použití sady Visual Studio pro Mac

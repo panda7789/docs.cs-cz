@@ -7,17 +7,17 @@ helpviewer_keywords:
 - arrays [.NET Framework], usage guidelines
 - empty arrays
 ms.assetid: 66a1b3d8-6f3f-4715-b235-e1ff95e32d8e
-ms.openlocfilehash: d4a1f379a88231654c710b1df7b505316377c915
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: 30277507050091de6b1e9293401d61ac5e351a1f
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76741803"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84280605"
 ---
 # <a name="arrays"></a>Pole
-✔️ preferovat používání kolekcí v polích ve veřejných rozhraních API. V části [kolekce](../../../docs/standard/design-guidelines/guidelines-for-collections.md) najdete podrobné informace o tom, jak zvolit mezi kolekcemi a poli.
+✔️ preferovat používání kolekcí v polích ve veřejných rozhraních API. V části [kolekce](guidelines-for-collections.md) najdete podrobné informace o tom, jak zvolit mezi kolekcemi a poli.
 
- ❌ pole nepoužívají pole jen pro čtení. Pole, které je samotné, je jen pro čtení a nelze jej změnit, ale prvky v poli lze změnit.
+ ❌Nepoužívejte pole polí jen pro čtení. Pole, které je samotné, je jen pro čtení a nelze jej změnit, ale prvky v poli lze změnit.
 
  ✔️ Zvažte použití vícenásobných polí namísto multidimenzionálních polí.
 
@@ -30,5 +30,5 @@ ms.locfileid: "76741803"
 ## <a name="see-also"></a>Viz také
 
 - <xref:System.Array>
-- [Pokyny k návrhu architektury](../../../docs/standard/design-guidelines/index.md)
-- [Pokyny k používání](../../../docs/standard/design-guidelines/usage-guidelines.md)
+- [Pokyny k návrhu architektury](index.md)
+- [Pokyny k použití](usage-guidelines.md)

@@ -9,12 +9,12 @@ helpviewer_keywords:
 - class library design guidelines [.NET Framework], enumerations
 - flags enumerations
 ms.assetid: dd53c952-9d9a-4736-86ff-9540e815d545
-ms.openlocfilehash: 3b24bfefd3edb0585e9c6369e9b8151b17151661
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: efdfcda95a67941f0fde5f7a96467af7dd374396
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76741710"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84280137"
 ---
 # <a name="enum-design"></a>Návrh výčtu
 
@@ -28,17 +28,17 @@ Výčty příznaků jsou navržené tak, aby podporovaly bitové operace s hodno
 
 ✔️ preferovat pomocí výčtu místo statických konstant.
 
-❌ nepoužívejte výčet pro otevřené sady (například verzi operačního systému, názvy vašich přátel atd.).
+❌Nepoužívejte výčet pro otevřené sady (například verzi operačního systému, názvy vašich přátel atd.).
 
-❌ neposkytují rezervované hodnoty výčtu, které jsou určeny pro budoucí použití.
+❌Neposkytněte hodnoty rezervovaných výčtů, které jsou určeny pro budoucí použití.
 
 V pozdější fázi můžete kdykoli jednoduše přidat hodnoty do stávajícího výčtu. Další podrobnosti o přidávání hodnot do výčtů naleznete v tématu [Přidání hodnot do výčtů](#add_value) . Rezervované hodnoty jenom zneznečišťující sadu skutečných hodnot a mají za následek chyby uživatelů.
 
-❌ Vyhněte veřejně vystavování výčtů pouze s jednou hodnotou.
+❌Vyhněte se veřejně vystavování výčtů pouze s jednou hodnotou.
 
 Běžný postup pro zajištění budoucí rozšiřitelnosti rozhraní API jazyka C je přidání rezervovaných parametrů k podpisům metod. Tyto vyhrazené parametry lze vyjádřit jako výčty s jednou výchozí hodnotou. To by nemělo být provedeno ve spravovaných rozhraních API. Přetížení metody umožňuje přidávání parametrů v budoucích verzích.
 
-❌ Nezahrnovat hodnoty Sentinel do výčtů.
+❌Nezahrnujte hodnoty Sentinel do výčtů.
 
 I když jsou někdy užitečné pro vývojáře architektury, hodnoty Sentinel jsou pro uživatele rozhraní matoucí. Používají se ke sledování stavu výčtu, nikoli k jedné z hodnot ze sady reprezentované výčtem.
 
@@ -50,7 +50,7 @@ Zvažte volání hodnoty jako "none". Pokud taková hodnota není vhodná pro te
 
 - Výčtový typ je výčet příznaků a máte více než 32 příznaků nebo v budoucnu očekávat větší hodnotu.
 
-- Podkladový typ musí být jiný než <xref:System.Int32> pro snazší interoperabilitu s nespravovaným kódem očekává v různých velikostech výčty.
+- Podkladový typ musí být jiný než <xref:System.Int32> pro snazší interoperabilitu s nespravovaným kódem, který očekává různé velikosti výčtů.
 
 - Menší nadřízený typ by způsobil značnou úsporu místa. Pokud očekáváte, že se má výčet použít hlavně jako argument pro tok řízení, velikost bude mít malý rozdíl. Úspora velikosti může být významná v těchto případech:
 
@@ -60,31 +60,31 @@ Zvažte volání hodnoty jako "none". Pokud taková hodnota není vhodná pro te
 
   - Očekáváte, že se má serializovat velký počet instancí výčtu.
 
-V případě využití v paměti si uvědomte, že spravované objekty jsou vždycky `DWORD`zarovnané, takže v instanci efektivně potřebujete víc výčtů nebo jiných malých struktur, aby bylo možné vytvořit rozdíl, protože celková velikost instance se vždycky zaokrouhluje na `DWORD`.
+V případě využití paměti je třeba si uvědomit, že jsou spravované objekty vždycky `DWORD` zarovnané, takže budete v instanci efektivně potřebovat více výčtů nebo jiných malých struktur, aby bylo možné provést rozdíl, protože celková velikost instance se vždycky zaokrouhluje na `DWORD` .
 
 ✔️ DO názvů označovat výčty s podstatnými jmény v množném číslech nebo frázemi podstatných jmen a jednoduchými výčty s podstatnými jmény a větami
 
-❌ <xref:System.Enum?displayProperty=nameWithType> přímo nešíří.
+❌Nešíří se <xref:System.Enum?displayProperty=nameWithType> přímo.
 
-<xref:System.Enum?displayProperty=nameWithType> je speciální typ používaný modulem CLR k vytváření výčtů definovaných uživatelem. Většina programovacích jazyků poskytuje programovací prvek, který vám dává přístup k této funkci. Například v C# klíčovém slově `enum` slouží k definování výčtu.
+<xref:System.Enum?displayProperty=nameWithType>je speciální typ používaný modulem CLR k vytváření výčtů definovaných uživatelem. Většina programovacích jazyků poskytuje programovací prvek, který vám dává přístup k této funkci. Například v jazyce C# se `enum` klíčové slovo používá k definování výčtu.
 
 <a name="design"></a>
 
 ### <a name="designing-flag-enums"></a>Navrhování výčtů příznaků
 
-✔️ použít <xref:System.FlagsAttribute?displayProperty=nameWithType> k označení výčtů. Nepoužívejte tento atribut pro jednoduché výčty.
+✔️ použít <xref:System.FlagsAttribute?displayProperty=nameWithType> pro označení výčty. Nepoužívejte tento atribut pro jednoduché výčty.
 
 ✔️ pro hodnoty výčtu příznaků použít mocniny dvou, aby bylo možné volně kombinovat pomocí bitové operace OR.
 
 ✔️ Zvažte poskytování speciálních hodnot výčtu pro běžně používané kombinace příznaků.
 
-Bitové operace jsou pokročilým konceptem a neměly by se vyžadovat pro jednoduché úlohy. <xref:System.IO.FileAccess.ReadWrite> je příkladem takové speciální hodnoty.
+Bitové operace jsou pokročilým konceptem a neměly by se vyžadovat pro jednoduché úlohy. <xref:System.IO.FileAccess.ReadWrite>je příkladem takové speciální hodnoty.
 
-❌ Vyhněte se vytváření výčtů příznaků, kde jsou určité kombinace hodnot neplatné.
+❌Vyhněte se vytváření výčtů příznaků, kde jsou určité kombinace hodnot neplatné.
 
-❌ nepoužívejte hodnoty výčtu příznaku nula, pokud hodnota nepředstavuje "všechny příznaky jsou vymazány" a je pojmenována správně, jak je předepsáno v další směrnici.
+❌Vyhněte se použití hodnot výčtu příznak nula, pokud hodnota nepředstavuje "všechny příznaky jsou vymazány" a je pojmenována správně, jak je předepsáno v další části.
 
-✔️ pojmenovat nulovou hodnotu výčtů příznaků `None`. U výčtu příznaků hodnota musí vždy znamenat "všechny příznaky jsou vymazány".
+✔️ pojmenovat nulovou hodnotu výčtů příznaků `None` . U výčtu příznaků hodnota musí vždy znamenat "všechny příznaky jsou vymazány".
 
 <a name="add_value"></a>
 
@@ -102,5 +102,5 @@ Pokud máte skutečná data týkající se nekompatibility aplikací způsobená
 
 ## <a name="see-also"></a>Viz také
 
-- [Pokyny k návrhu typu](../../../docs/standard/design-guidelines/type.md)
-- [Pokyny k návrhu architektury](../../../docs/standard/design-guidelines/index.md)
+- [Pokyny pro návrh typů](type.md)
+- [Pokyny k návrhu architektury](index.md)

@@ -1,5 +1,5 @@
 ---
-title: Uvolňování paměti rozhraní .NET
+title: Uvolňování paměti .NET
 ms.date: 04/21/2020
 ms.technology: dotnet-standard
 helpviewer_keywords:
@@ -18,34 +18,34 @@ helpviewer_keywords:
 - runtime, garbage collection
 - garbage collection, about
 ms.assetid: 22b6cb97-0c80-4eeb-a2cf-5ed7655e37f9
-ms.openlocfilehash: c087deb033a373dd8b3980feb7ec6901c7909569
-ms.sourcegitcommit: 73aa9653547a1cd70ee6586221f79cc29b588ebd
+ms.openlocfilehash: ef7e078c6ef2f0b4081c49aa0db09316e79f0702
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "82102239"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84286051"
 ---
 # <a name="garbage-collection"></a>Uvolnění paměti
 
-. NET systém uvolňování paměti spravuje přidělení a uvolnění paměti pro vaši aplikaci. Při každém vytvoření nového objektu modul CLR přidělí objektu paměť ze spravované haldy. Dokud je ve spravované haldě k dispozici adresní prostor, modul runtime bude pokračovat v přidělování prostoru pro nové objekty. Paměť však není neomezená. Z důvodu získání paměti musí nakonec systém uvolňování paměti provést uvolnění paměti. Optimalizující modul systému uvolňování paměti určuje nejvhodnější čas k provedení uvolnění paměti na základě způsobu přidělování paměti. Při uvolňování paměti systém ověřuje, zda objekty ve spravované haldě již nejsou používány aplikací, a provede nezbytné úkony k opětovnému získání paměti.  
+. Systém uvolňování paměti sítě spravuje přidělování a uvolňování paměti pro vaši aplikaci. Při každém vytvoření nového objektu modul CLR přidělí objektu paměť ze spravované haldy. Dokud je ve spravované haldě k dispozici adresní prostor, modul runtime bude pokračovat v přidělování prostoru pro nové objekty. Paměť však není neomezená. Z důvodu získání paměti musí nakonec systém uvolňování paměti provést uvolnění paměti. Optimalizující modul systému uvolňování paměti určuje nejvhodnější čas k provedení uvolnění paměti na základě způsobu přidělování paměti. Při uvolňování paměti systém ověřuje, zda objekty ve spravované haldě již nejsou používány aplikací, a provede nezbytné úkony k opětovnému získání paměti.  
   
-## <a name="in-this-section"></a>V tomto oddílu
+## <a name="in-this-section"></a>V této části
   
 |Nadpis|Popis|  
 |-----------|-----------------|  
-|[Základy uvolňování paměti](../../../docs/standard/garbage-collection/fundamentals.md)|Popisuje způsob, jakým funguje systém uvolňování paměti, jakým způsobem jsou objekty přidělovány na spravované haldě, a další základní pojmy.|  
-|[Uvolňování paměti pracovní stanice a serveru](workstation-server-gc.md)|Popisuje rozdíly mezi uvolňování paměti pracovní stanice pro klientské aplikace a uvolňování paměti serveru pro serverové aplikace.|
-|[Uvolňování paměti na pozadí](background-gc.md)|Popisuje uvolňování paměti na pozadí, což je kolekce generace 0 a 1 objekty, zatímco generace 2 kolekce probíhá.|
-|[Halda velkého objektu](large-object-heap.md)|Popisuje haldy velkých objektů (LOH) a jak velké objekty jsou uvolněny.|
-|[Uvolňování paměti a výkon](../../../docs/standard/garbage-collection/performance.md)|Popisuje kontroly výkonu, které slouží k diagnostice problémů uvolňování paměti a výkonu.|  
-|[Vyvolané kolekce](../../../docs/standard/garbage-collection/induced.md)|Popisuje způsob aktivace uvolňování paměti.|  
-|[Režimy latence](../../../docs/standard/garbage-collection/latency.md)|Popisuje režimy, které určují parametry systému uvolňování paměti.|  
-|[Optimalizace pro sdílené hostování webů](../../../docs/standard/garbage-collection/optimization-for-shared-web-hosting.md)|Popisuje způsob optimalizace uvolňování paměti na serverech, které jsou sdíleny několika malými weby.|  
-|[Oznámení o uvolňování paměti](../../../docs/standard/garbage-collection/notifications.md)|Popisuje, jakým způsobem lze zjistit, kdy se blíží termín úplného uvolňování paměti a kdy bude uvolňování dokončeno.|  
-|[Sledování prostředků domény aplikace](../../../docs/standard/garbage-collection/app-domain-resource-monitoring.md)|Popisuje sledování využití procesoru a paměti doménou aplikace.|  
-|[Slabé odkazy](../../../docs/standard/garbage-collection/weak-references.md)|Popisuje funkce, které systému uvolňování paměti umožňují získat paměť objektu a zároveň podporují přístup aplikace k danému objektu.|  
+|[Základní informace o uvolňování paměti](fundamentals.md)|Popisuje způsob, jakým funguje systém uvolňování paměti, jakým způsobem jsou objekty přidělovány na spravované haldě, a další základní pojmy.|  
+|[Uvolnění paměti pracovní stanice a serveru](workstation-server-gc.md)|Popisuje rozdíly mezi uvolňováním paměti pracovní stanice pro klientské aplikace a shromažďování paměti serveru pro serverové aplikace.|
+|[Uvolňování paměti na pozadí](background-gc.md)|Popisuje shromažďování paměti na pozadí, což je kolekce objektů generace 0 a 1, zatímco probíhá shromažďování 2. generace.|
+|[Halda pro velké objekty](large-object-heap.md)|Popisuje haldu rozsáhlých objektů (LOH) a jak velké objekty jsou uvolněny z paměti.|
+|[Uvolňování paměti a výkon](performance.md)|Popisuje kontroly výkonu, které slouží k diagnostice problémů uvolňování paměti a výkonu.|  
+|[Vyvolané kolekce](induced.md)|Popisuje způsob aktivace uvolňování paměti.|  
+|[Režimy latence](latency.md)|Popisuje režimy, které určují parametry systému uvolňování paměti.|  
+|[Optimalizace pro sdílené hostování webů](optimization-for-shared-web-hosting.md)|Popisuje způsob optimalizace uvolňování paměti na serverech, které jsou sdíleny několika malými weby.|  
+|[Oznámení o uvolňování paměti](notifications.md)|Popisuje, jakým způsobem lze zjistit, kdy se blíží termín úplného uvolňování paměti a kdy bude uvolňování dokončeno.|  
+|[Sledování prostředků domény aplikace](app-domain-resource-monitoring.md)|Popisuje sledování využití procesoru a paměti doménou aplikace.|  
+|[Slabé odkazy](weak-references.md)|Popisuje funkce, které systému uvolňování paměti umožňují získat paměť objektu a zároveň podporují přístup aplikace k danému objektu.|  
   
-## <a name="reference"></a>Referenční informace
+## <a name="reference"></a>Odkaz
 
 - <xref:System.GC?displayProperty=nameWithType>  
 - <xref:System.GCCollectionMode?displayProperty=nameWithType>  
@@ -58,4 +58,4 @@ ms.locfileid: "82102239"
   
 ## <a name="see-also"></a>Viz také
 
-- [Vyčištění nespravovaných prostředků](../../../docs/standard/garbage-collection/unmanaged.md)
+- [Vyčištění nespravovaných prostředků](unmanaged.md)

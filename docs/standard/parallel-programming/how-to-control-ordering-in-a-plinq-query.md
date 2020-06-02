@@ -8,42 +8,42 @@ dev_langs:
 helpviewer_keywords:
 - PLINQ queries, how to control ordering
 ms.assetid: c67eccc7-004d-4b2f-987e-919cbbd62ef7
-ms.openlocfilehash: 86011cff71fabed5e47e085f91b1759238638c9a
-ms.sourcegitcommit: 961ec21c22d2f1d55c9cc8a7edf2ade1d1fd92e3
+ms.openlocfilehash: 80e199d75471eba219f1f3da12d307b6cd1d90cf
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2020
-ms.locfileid: "80588493"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84285453"
 ---
 # <a name="how-to-control-ordering-in-a-plinq-query"></a>Postupy: Řazení ovládacích prvků v PLINQ dotazu
-Tyto příklady ukazují, jak řídit řazení v dotazu <xref:System.Linq.ParallelEnumerable.AsOrdered%2A> PLINQ pomocí metody rozšíření.  
+Tyto příklady ukazují, jak řídit řazení v PLINQ dotazu pomocí <xref:System.Linq.ParallelEnumerable.AsOrdered%2A> metody rozšíření.  
   
 > [!WARNING]
-> Tyto příklady jsou primárně určeny k předvádění využití a může nebo nemusí běžet rychleji než ekvivalentní sekvenční LINQ na dotazy objekty.  
+> Tyto příklady jsou primárně určeny k předvedení používání a mohou nebo nemusí běžet rychleji než ekvivalentní sekvenční LINQ to Objects dotazy.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad zachová pořadí zdrojové sekvence. To je někdy nezbytné; Například některé operátory dotazu vyžadují uspořádanou zdrojovou sekvenci k dosažení správných výsledků.  
+ Následující příklad zachovává řazení zdrojové sekvence. V některých případech je to nezbytné. Například některé operátory dotazů vyžadují seřazenou zdrojovou sekvenci, která vytváří správné výsledky.  
   
  [!code-csharp[PLINQ#12](../../../samples/snippets/csharp/VS_Snippets_Misc/plinq/cs/plinqsamples.cs#12)]
  [!code-vb[PLINQ#12](../../../samples/snippets/visualbasic/VS_Snippets_Misc/plinq/vb/plinqsnippets1.vb#12)]  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje některé operátory dotazu, jejichž zdrojová sekvence je pravděpodobně očekává, že bude objednáno. Tyto operátory budou pracovat na neuspořádané sekvence, ale mohou způsobit neočekávané výsledky.  
+ Následující příklad ukazuje některé operátory dotazů, jejichž zdrojová sekvence je pravděpodobně objednána. Tyto operátory budou fungovat na neseřazených sekvencích, ale mohou způsobit neočekávané výsledky.  
   
  [!code-csharp[PLINQ#14](../../../samples/snippets/csharp/VS_Snippets_Misc/plinq/cs/plinqsamples.cs#14)]
  [!code-vb[PLINQ#14](../../../samples/snippets/visualbasic/VS_Snippets_Misc/plinq/vb/plinqsnippets1.vb#14)]  
   
- Chcete-li spustit tuto metodu, vložte ji do třídy PLINQDataSample v projektu [ukázkový vzorek dat PLINQ](../../../docs/standard/parallel-programming/plinq-data-sample.md) a stiskněte klávesu F5.  
+ Chcete-li spustit tuto metodu, vložte ji do třídy PLINQDataSample v projektu [ukázkových dat pro PLINQ](plinq-data-sample.md) a stiskněte klávesu F5.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje, jak zachovat řazení pro první část dotazu, potom odeberte řazení zvýšit výkon join klauzule a potom znovu použít řazení na konečné pořadí výsledků.  
+ Následující příklad ukazuje, jak zachovat řazení první části dotazu, pak odebrat řazení pro zvýšení výkonu klauzule JOIN a pak znovu použít řazení na konečné pořadí výsledků.  
   
  [!code-csharp[PLINQ#15](../../../samples/snippets/csharp/VS_Snippets_Misc/plinq/cs/plinqsamples.cs#15)]
  [!code-vb[PLINQ#15](../../../samples/snippets/visualbasic/VS_Snippets_Misc/plinq/vb/plinqsnippets1.vb#15)]  
   
- Chcete-li spustit tuto metodu, vložte ji do třídy PLINQDataSample v projektu [ukázkový vzorek dat PLINQ](../../../docs/standard/parallel-programming/plinq-data-sample.md) a stiskněte klávesu F5.  
+ Chcete-li spustit tuto metodu, vložte ji do třídy PLINQDataSample v projektu [ukázkových dat pro PLINQ](plinq-data-sample.md) a stiskněte klávesu F5.  
   
 ## <a name="see-also"></a>Viz také
 
 - <xref:System.Linq.ParallelEnumerable>
-- [Paralelní LINQ (PLINQ)](../../../docs/standard/parallel-programming/introduction-to-plinq.md)
+- [Paralelní LINQ (PLINQ)](introduction-to-plinq.md)

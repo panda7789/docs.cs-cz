@@ -2,12 +2,12 @@
 title: dotnet – nový příkaz
 description: Příkaz dotnet New vytvoří nové projekty .NET Core založené na zadané šabloně.
 ms.date: 04/10/2020
-ms.openlocfilehash: 1544f519f2a5f6a1a6e042c1db720eff45f5d98c
-ms.sourcegitcommit: 7b1497c1927cb449cefd313bc5126ae37df30746
+ms.openlocfilehash: 39301ad95761848b60b45cb5c18ede937f70c32c
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83442238"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84283972"
 ---
 # <a name="dotnet-new"></a>dotnet new
 
@@ -75,6 +75,7 @@ Příkaz volá [modul šablony](https://github.com/dotnet/templating) a vytvoř�
 | ViewImports MVC                              | [viewimports](#namespace)       | Jazyk         | Web/ASP. NET                           | 2.0        |
 | ViewStart MVC                                | `viewstart`                     | Jazyk         | Web/ASP. NET                           | 2.0        |
 | Aplikace serveru Blazor                            | [blazorserver](#blazorserver)   | Jazyk         | Web/Blazor                            | 3.0        |
+| Aplikace WebAssembly v Blazor                       | `blazorwasm`                    | Jazyk         | Web/Blazor/WebAssembly                            | 3.1.300    |
 | ASP.NET Core prázdné                           | [webovém](#web)                     | [C#], F #     | Web/prázdné                             | 1.0        |
 | ASP.NET Core webová aplikace (model-zobrazení-kontroler) | [Návrhový](#web-options)             | [C#], F #     | Web/MVC                               | 1.0        |
 | ASP.NET Core webové aplikace                         | [WebApp, Razor](#web-options)   | Jazyk         | Web/MVC/Razor Pages                   | 2,2, 2,0   |
@@ -148,7 +149,7 @@ Příkaz volá [modul šablony](https://github.com/dotnet/templating) a vytvoř�
   Pokud neurčíte parametr této možnosti, příkaz zobrazí seznam nainstalovaných šablon a podrobností.
 
   > [!NOTE]
-  > Chcete-li odinstalovat šablonu pomocí nástroje `PATH` , je nutné plně kvalifikovat cestu. Například *C:/Users/ \< User>/Documents/Templates/garciasoftware.consoletemplate.CSharp* bude fungovat, ale *./GarciaSoftware.ConsoleTemplate.CSharp* z nadřazené složky to nebude.
+  > Chcete-li odinstalovat šablonu pomocí nástroje `PATH` , je nutné plně kvalifikovat cestu. Například *C:/Users/ \<USER> /Documents/Templates/GarciaSoftware.ConsoleTemplate.CSharp* bude fungovat, ale *./GarciaSoftware.ConsoleTemplate.CSharp* z nadřazené složky to nebude.
   > Do cesty k šabloně nezahrnujte konečné koncové lomítko adresáře.
 
 - **`--update-apply`**

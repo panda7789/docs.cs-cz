@@ -10,12 +10,12 @@ helpviewer_keywords:
 - interoperation with unmanaged code, exposing .NET Framework components
 - COM interop, exposing COM components
 ms.assetid: 4b8afb52-fb8d-4e65-b47c-fd82956a3cdd
-ms.openlocfilehash: 5b122befffbcad39258393462c75ac20431d9136
-ms.sourcegitcommit: 9a4488a3625866335e83a20da5e9c5286b1f034c
+ms.openlocfilehash: 5e8d604c8152d37475bf93e3b5687f24cfebfa02
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83420497"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84285960"
 ---
 # <a name="qualifying-net-types-for-com-interoperation"></a>Kvalifikace typů .NET pro mezichodové operace COM
 Pokud máte v úmyslu vystavovat typy v sestavení s aplikacemi modelu COM, zvažte požadavky zprostředkovatele komunikace s objekty COM v době návrhu. Spravované typy (třída, rozhraní, struktura a výčet) hladce integrují s typy modelu COM, když dodržujete následující pokyny:  
@@ -49,7 +49,7 @@ Pokud máte v úmyslu vystavovat typy v sestavení s aplikacemi modelu COM, zva�
 ## <a name="see-also"></a>Viz také
 
 - <xref:System.Runtime.InteropServices.ComVisibleAttribute>
-- [Vystavení komponent architektury .NET Framework pro COM](../../../docs/framework/interop/exposing-dotnet-components-to-com.md)
+- [Vystavení komponent architektury .NET Framework pro COM](../../framework/interop/exposing-dotnet-components-to-com.md)
 - [Představení rozhraní třídy](com-callable-wrapper.md#introducing-the-class-interface)
-- [Použití atributů spolupráce](../../../docs/standard/native-interop/apply-interop-attributes.md)
-- [Balení .NET Framework sestavení pro model COM](../../../docs/framework/interop/packaging-an-assembly-for-com.md)
+- [Použití atributů spolupráce](apply-interop-attributes.md)
+- [Balení .NET Framework sestavení pro model COM](../../framework/interop/packaging-an-assembly-for-com.md)

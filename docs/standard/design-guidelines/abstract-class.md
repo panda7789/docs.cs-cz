@@ -10,16 +10,16 @@ helpviewer_keywords:
 - classes [.NET Framework], design guidelines
 - type design guidelines, classes
 ms.assetid: d3646e6d-5c1f-4922-8fb0-ec5effb30d60
-ms.openlocfilehash: 018dd353024e75e9819f5a97008f2f422ecad291
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: e6a5923f293ed536fb272f6fe6c805067aede0ab
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76739057"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84280774"
 ---
 # <a name="abstract-class-design"></a>Návrh abstraktní třídy
 
-❌ v abstraktních typech nedefinujte veřejné nebo chráněné interní konstruktory.
+❌Nedefinujte veřejné nebo chráněné interní konstruktory v abstraktních typech.
 
  Konstruktory by měly být veřejné pouze v případě, že uživatelé budou muset vytvořit instance daného typu. Vzhledem k tomu, že nemůžete vytvořit instance abstraktního typu, je abstraktní typ s veřejným konstruktorem pro uživatele nesprávně navržený a zavádějící.
 
@@ -31,7 +31,7 @@ ms.locfileid: "76739057"
 
  ✔️ Zadejte alespoň jeden konkrétní typ, který dědí ze všech abstraktních tříd, které dodáváte.
 
- To pomáhá ověřit návrh abstraktní třídy. Například <xref:System.IO.FileStream?displayProperty=nameWithType> je implementace <xref:System.IO.Stream?displayProperty=nameWithType> abstraktní třídy.
+ To pomáhá ověřit návrh abstraktní třídy. Například <xref:System.IO.FileStream?displayProperty=nameWithType> je implementací <xref:System.IO.Stream?displayProperty=nameWithType> abstraktní třídy.
 
  *Části © 2005, 2009 Microsoft Corporation. Všechna práva vyhrazena.*
 
@@ -39,5 +39,5 @@ ms.locfileid: "76739057"
 
 ## <a name="see-also"></a>Viz také
 
-- [Pokyny k návrhu typu](../../../docs/standard/design-guidelines/type.md)
-- [Pokyny k návrhu architektury](../../../docs/standard/design-guidelines/index.md)
+- [Pokyny pro návrh typů](type.md)
+- [Pokyny k návrhu architektury](index.md)

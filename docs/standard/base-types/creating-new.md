@@ -1,5 +1,5 @@
 ---
-title: Vytváření nových řetězců v rozhraní .NET
+title: Vytváření nových řetězců v .NET
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -13,72 +13,72 @@ helpviewer_keywords:
 - strings [.NET Framework], creating
 - Insert method
 ms.assetid: 06fdf123-2fac-4459-8904-eb48ab908a30
-ms.openlocfilehash: ef65c50111d6ba91ab70d0b9c8cb90c606f9366c
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: a5dfe6429ac135202874f0524a252a7af900bd8d
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "73103816"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84279009"
 ---
-# <a name="creating-new-strings-in-net"></a>Vytváření nových řetězců v rozhraní .NET
-Rozhraní .NET Framework umožňuje řetězce, které mají být vytvořeny pomocí jednoduché přiřazení a také přetížení konstruktortřídy pro podporu vytváření řetězců pomocí několika různých parametrů. Rozhraní .NET Framework také poskytuje <xref:System.String?displayProperty=nameWithType> několik metod ve třídě, které vytvářejí nové objekty řetězce kombinací několika řetězců, polí řetězců nebo objektů.  
+# <a name="creating-new-strings-in-net"></a>Vytváření nových řetězců v .NET
+.NET Framework umožňuje vytvoření řetězců pomocí jednoduchého přiřazení a také přetížení konstruktoru třídy pro podporu vytváření řetězců pomocí několika různých parametrů. .NET Framework také poskytuje několik metod ve <xref:System.String?displayProperty=nameWithType> třídě, které vytvářejí nové řetězcové objekty kombinací několika řetězců, polí řetězců nebo objektů.  
   
 ## <a name="creating-strings-using-assignment"></a>Vytváření řetězců pomocí přiřazení  
- Nejjednodušší způsob, jak vytvořit <xref:System.String> nový objekt, je jednoduše přiřadit <xref:System.String> literál řetězce k objektu.  
+ Nejjednodušší způsob, jak vytvořit nový <xref:System.String> objekt, je jednoduše přiřadit řetězcový literál <xref:System.String> objektu.  
   
 ## <a name="creating-strings-using-a-class-constructor"></a>Vytváření řetězců pomocí konstruktoru třídy  
- Přetížení konstruktoru <xref:System.String> třídy můžete použít k vytvoření řetězců z polí znaků. Můžete také vytvořit nový řetězec duplikováním konkrétníznak zadaný počet opakování.  
+ Pomocí přetížení <xref:System.String> konstruktoru třídy lze vytvořit řetězce z polí znaků. Můžete také vytvořit nový řetězec duplikováním určitého znaku a zadáním počtu opakování.  
   
 ## <a name="methods-that-return-strings"></a>Metody, které vracejí řetězce  
- V následující tabulce je uvedeno několik užitečných metod, které vracejí nové objekty řetězce.  
+ Následující tabulka uvádí několik užitečných metod, které vracejí nové řetězcové objekty.  
   
 |Název metody|Použití|  
 |-----------------|---------|  
 |<xref:System.String.Format%2A?displayProperty=nameWithType>|Vytvoří formátovaný řetězec ze sady vstupních objektů.|  
 |<xref:System.String.Concat%2A?displayProperty=nameWithType>|Vytvoří řetězce ze dvou nebo více řetězců.|  
-|<xref:System.String.Join%2A?displayProperty=nameWithType>|Vytvoří nový řetězec kombinací pole řetězců.|  
-|<xref:System.String.Insert%2A?displayProperty=nameWithType>|Vytvoří nový řetězec vložením řetězce do zadaného indexu existujícího řetězce.|  
+|<xref:System.String.Join%2A?displayProperty=nameWithType>|Vytvoří nový řetězec kombinováním pole řetězců.|  
+|<xref:System.String.Insert%2A?displayProperty=nameWithType>|Vytvoří nový řetězec vložením řetězce do zadaného indexu stávajícího řetězce.|  
 |<xref:System.String.CopyTo%2A?displayProperty=nameWithType>|Zkopíruje zadané znaky v řetězci do zadané pozice v poli znaků.|  
   
 ### <a name="format"></a>Formát  
- Metodu **String.Format** můžete použít k vytvoření formátovaných řetězců a zřetězení řetězců představujících více objektů. Tato metoda automaticky převede všechny předané objekt na řetězec. Například pokud aplikace musí zobrazit hodnotu **Int32** a **DateTime** hodnotu pro uživatele, můžete snadno vytvořit řetězec reprezentovat tyto hodnoty pomocí **Format** metoda. Informace o konvencích formátování použitých touto metodou naleznete v části [o složeném formátování](../../../docs/standard/base-types/composite-formatting.md).  
+ Můžete použít metodu **String. Format** pro vytváření formátovaných řetězců a zřetězení řetězců představujících více objektů. Tato metoda automaticky převede všechny předané objekty do řetězce. Například pokud vaše aplikace musí zobrazit hodnotu **Int32** a hodnotu **DateTime** uživateli, můžete snadno vytvořit řetězec, který bude reprezentovat tyto hodnoty pomocí metody **Format** . Informace o konvencích formátování použitých s touto metodou najdete v části [složeného formátování](composite-formatting.md).  
   
- Následující příklad používá metodu **Format** k vytvoření řetězce, který používá celou proměnnou.  
+ Následující příklad používá metodu **Format** k vytvoření řetězce, který používá proměnnou typu Integer.  
   
  [!code-csharp[Strings.Creating#1](../../../samples/snippets/csharp/VS_Snippets_CLR/Strings.Creating/cs/Example.cs#1)]
  [!code-vb[Strings.Creating#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Strings.Creating/vb/Example.vb#1)]  
   
- V tomto<xref:System.DateTime.Now%2A?displayProperty=nameWithType> příkladu zobrazí aktuální datum a čas způsobem určeným jazykovou verzí přidruženou k aktuálnímu vláknu.  
+ V tomto příkladu <xref:System.DateTime.Now%2A?displayProperty=nameWithType> zobrazuje aktuální datum a čas způsobem určeným jazykovou verzí přidruženou k aktuálnímu vláknu.  
   
 ### <a name="concat"></a>Concat  
- **String.Concat** metoda lze snadno vytvořit nový objekt řetězce ze dvou nebo více existujících objektů. Poskytuje jazykově nezávislý způsob, jak zřetězit řetězce. Tato metoda přijímá všechny třídy, která je odvozena z **System.Object**. Následující příklad vytvoří řetězec ze dvou existujících objektů řetězce a oddělující znak.  
+ Metodu **String. Concat** lze použít k snadnému vytvoření nového objektu řetězce ze dvou nebo více existujících objektů. Poskytuje jazykově nezávislé způsob zřetězení řetězců. Tato metoda přijímá všechny třídy, které jsou odvozeny z typu **System. Object**. Následující příklad vytvoří řetězec ze dvou existujících řetězcových objektů a oddělujícího znaku.  
   
  [!code-csharp[Strings.Creating#2](../../../samples/snippets/csharp/VS_Snippets_CLR/Strings.Creating/cs/Example.cs#2)]
  [!code-vb[Strings.Creating#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Strings.Creating/vb/Example.vb#2)]  
   
 ### <a name="join"></a>Spojit  
- Metoda **String.Join** vytvoří nový řetězec z pole řetězců a oddělovacířetězec. Tato metoda je užitečná, pokud chcete zřetězit více řetězců dohromady, takže seznam možná odděleny čárkou.  
+ Metoda **String. Join** vytvoří nový řetězec z pole řetězců a oddělovačového řetězce. Tato metoda je užitečná, pokud chcete zřetězit více řetězců dohromady, takže seznam je pravděpodobně oddělen čárkou.  
   
- Následující příklad používá mezeru k vytvoření svázání pole řetězců.  
+ Následující příklad používá prostor pro svázání pole řetězců.  
   
  [!code-csharp[Strings.Creating#3](../../../samples/snippets/csharp/VS_Snippets_CLR/Strings.Creating/cs/Example.cs#3)]
  [!code-vb[Strings.Creating#3](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Strings.Creating/vb/Example.vb#3)]  
   
 ### <a name="insert"></a>Vložit  
- Metoda **String.Insert** vytvoří nový řetězec vložením řetězce do zadané pozice v jiném řetězci. Tato metoda používá index založený na nule. Následující příklad vloží řetězec do páté pozice `MyString` indexu a vytvoří nový řetězec s touto hodnotou.  
+ Metoda **String. Insert** vytvoří nový řetězec vložením řetězce do zadané pozice v jiném řetězci. Tato metoda používá index založený na nule. Následující příklad vloží řetězec do páté pozice indexu v `MyString` a vytvoří nový řetězec s touto hodnotou.  
   
  [!code-csharp[Strings.Creating#4](../../../samples/snippets/csharp/VS_Snippets_CLR/Strings.Creating/cs/Example.cs#4)]
  [!code-vb[Strings.Creating#4](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Strings.Creating/vb/Example.vb#4)]  
   
-### <a name="copyto"></a>Copyto  
- Metoda **String.CopyTo** zkopíruje části řetězce do pole znaků. Můžete zadat počáteční index řetězce i počet znaků, které mají být zkopírovány. Tato metoda přebírá zdrojový index, pole znaků, cílový index a počet znaků ke kopírování. Všechny indexy jsou založeny na nule.  
+### <a name="copyto"></a>Kopírovat  
+ Metoda **String. CopyTo** kopíruje části řetězce do pole znaků. Můžete zadat jak počáteční index řetězce, tak počet znaků, které mají být zkopírovány. Tato metoda získá zdrojový index, pole znaků, cílový index a počet znaků, které mají být zkopírovány. Všechny indexy jsou počítány od nuly.  
   
- Následující příklad používá **CopyTo** metoda kopírovat znaky slova "Hello" z objektu řetězce do první pozice indexu pole znaků.  
+ Následující příklad používá metodu **CopyTo** ke zkopírování znaků slova "Hello" z objektu řetězce na první pozici indexu pole znaků.  
   
  [!code-csharp[Strings.Creating#5](../../../samples/snippets/csharp/VS_Snippets_CLR/Strings.Creating/cs/Example.cs#5)]
  [!code-vb[Strings.Creating#5](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Strings.Creating/vb/Example.vb#5)]  
   
 ## <a name="see-also"></a>Viz také
 
-- [Základní operace s řetězci](../../../docs/standard/base-types/basic-string-operations.md)
-- [Složené formátování](../../../docs/standard/base-types/composite-formatting.md)
+- [Základní operace s řetězci](basic-string-operations.md)
+- [Složené formátování](composite-formatting.md)

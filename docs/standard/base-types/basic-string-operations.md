@@ -1,6 +1,6 @@
 ---
-title: Základní operace řetězce v rozhraní .NET
-description: Další informace o základních operacích, které můžete provádět na řetězce.
+title: Základní operace s řetězci v .NET
+description: Seznamte se se základními operacemi, které můžete provádět na řetězcích.
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 helpviewer_keywords:
@@ -8,23 +8,23 @@ helpviewer_keywords:
 - custom strings
 ms.assetid: 8133d357-90b5-4b62-9927-43323d99b6b6
 ms.custom: seadec18
-ms.openlocfilehash: 2ce1b148a2b1605b5b1283bdc3398409661f3f83
-ms.sourcegitcommit: 79b0dd8bfc63f33a02137121dd23475887ecefda
+ms.openlocfilehash: 8c19f6bcbdf5e4829c91aee1e2fd631537ed2e0a
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/01/2020
-ms.locfileid: "80523992"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84277749"
 ---
-# <a name="basic-string-operations-in-net"></a>Základní operace řetězce v rozhraní .NET
+# <a name="basic-string-operations-in-net"></a>Základní operace s řetězci v .NET
 
-Aplikace často reagují na uživatele vytvářením zpráv na základě vstupu uživatele. Například není neobvyklé, že weby reagují na nově přihlášeného uživatele se specializovaným pozdravem, který obsahuje jméno uživatele.
+Aplikace často reagují na uživatele tím, že vytváří zprávy na základě vstupu uživatele. Nejedná se například o neobvyklé weby, aby reagovaly na nově přihlášeného uživatele se specializovaným pozdravem, který obsahuje jméno uživatele.
 
-Několik metod <xref:System.String?displayProperty=nameWithType> v <xref:System.Text.StringBuilder?displayProperty=nameWithType> a třídy umožňují dynamicky vytvářet vlastní řetězce pro zobrazení v uživatelském rozhraní. Tyto metody také pomáhají provádět řadu základních operací řetězce, jako je vytváření nových řetězců z polí bajtů, porovnání hodnot řetězců a úprava existujících řetězců.
+Několik metod v <xref:System.String?displayProperty=nameWithType> <xref:System.Text.StringBuilder?displayProperty=nameWithType> třídách a umožňuje dynamicky vytvářet vlastní řetězce pro zobrazení v uživatelském rozhraní. Tyto metody vám také pomůžou provést řadu základních operací s řetězci, jako je vytváření nových řetězců z polí bajtů, porovnávání hodnot řetězců a úprava stávajících řetězců.
 
 ## <a name="related-sections"></a>Související oddíly
 
-[Převod typu v rozhraní .NET](../../../docs/standard/base-types/type-conversion.md)\
+[Převod typu v .NET](type-conversion.md)\
 Popisuje, jak převést jeden typ na jiný typ.  
 
-[Typy formátování](../../../docs/standard/base-types/formatting-types.md)\
-Popisuje způsob formátování řetězců pomocí specifikátorů formátu.
+[Typy formátování](formatting-types.md)\
+Popisuje, jak formátovat řetězce pomocí specifikátorů formátu.

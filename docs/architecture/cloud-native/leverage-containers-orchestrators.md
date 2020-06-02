@@ -2,12 +2,12 @@
 title: Využití kontejnerů a orchestrátorů
 description: Využití kontejnerů Docker a orchestrace Kubernetes v Azure
 ms.date: 05/13/2020
-ms.openlocfilehash: 5d0b7f41caecb3422a4416514de2fdd54e94539a
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: b2fedac205d7a5bd8b8f8cf665ae370b9bf26654
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83613888"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84282581"
 ---
 # <a name="leveraging-containers-and-orchestrators"></a>Využití kontejnerů a orchestrátorů
 
@@ -53,30 +53,11 @@ Kontejnery jsou definovány jednoduchými textovými soubory, které se stanou a
 
 Kontejnery jsou neměnné. Po definování kontejneru ho můžete znovu vytvořit a spustit přesně stejným způsobem. Tato neměnnosti se zapůjčuje do návrhu založeného na komponentách. Pokud se některé části aplikace rozvíjejí jinak než jiné, proč je možné znovu nasadit celou aplikaci, když můžete jenom nasadit části, které se mění nejčastěji? Různé funkce a průřezové aspekty aplikace je možné rozdělit na samostatné jednotky. Obrázek 3-2 ukazuje, jak může aplikace monolitické využít výhod kontejnerů a mikroslužeb pomocí delegování určitých funkcí nebo funkcí. Zbývající funkce samotné aplikace také byly kontejnery.
 
-Kontejnery jsou neměnné. Po definování kontejneru ho můžete znovu vytvořit a spustit přesně stejným způsobem. Tato neměnnosti se zapůjčuje do návrhu založeného na komponentách. Pokud se některé části aplikace rozvíjejí jinak než jiné, proč je možné znovu nasadit celou aplikaci, když můžete jenom nasadit části, které se mění nejčastěji? Různé funkce a průřezové aspekty aplikace je možné rozdělit na samostatné jednotky. Obrázek 3-2 ukazuje, jak může aplikace monolitické využít výhod kontejnerů a mikroslužeb pomocí delegování určitých funkcí nebo funkcí. Zbývající funkce samotné aplikace také byly kontejnery.
-
 ![Rozdělení aplikace monolitické pro použití mikroslužeb v back-endu.](./media/cloud-native-design.png)
 
 **Obrázek 3-2**. Rozložení aplikace monolitické k zapojení mikroslužeb.
 
 Každá nativní cloudová služba je sestavená a nasazená v samostatném kontejneru. Každý se může podle potřeby aktualizovat. Jednotlivé služby můžou být hostované na uzlech s prostředky, které jsou vhodné pro každou službu. Prostředí, ve kterém každá služba běží, je neměnné, sdílí se s vývojem, testovacím a produkčním prostředím a snadnou verzí. Propojení mezi různými oblastmi aplikace probíhá explicitně jako volání nebo zprávy mezi službami, nikoli závislosti na kompilaci v rámci monolitu. Můžete také zvolit technologii, která nejlépe nastaví danou schopnost, aniž byste museli měnit zbytek aplikace.
-
-Kontejnerové služby vyžadují automatizovanou správu. Nebylo by možné ručně spravovat velkou sadu nezávisle nasazených kontejnerů. Zvažte například následující úlohy:
-
-- Jak budou instance kontejnerů zajištěny v rámci clusteru mnoha počítačů?
-- Jak bude po nasazení, jak budou kontejnery zjišťovat a komunikovat mezi sebou?
-- Jak se můžou kontejnery škálovat na vyžádání?
-- Jak monitorovat stav každého kontejneru?
-- Jak chránit kontejner proti selhání hardwaru a softwaru?
-- Jak provedete upgrade kontejnerů pro živou aplikaci s nulovými výpadky?
-
-Orchestrace kontejnerů řeší a automatizují tyto a další obavy.
-
-V rámci nativního ekosystému cloudu se Kubernetes stává nástrojem Orchestrator. Je to open source platforma spravovaná platformou Cloud Native Computing (CNCF). Kubernetes automatizuje nasazení, škálování a provozní obavy z kontejnerových úloh v clusteru počítače. Instalace a Správa Kubernetes je ale obvykle odlaďuje složitá.
-
-Mnohem lepším řešením je využití Kubernetes jako spravované služby od dodavatele cloudu. Cloud Azure nabízí plně spravovanou platformu Kubernetes s názvem [Azure Kubernetes Service (AKS)](https://azure.microsoft.com/services/kubernetes-service/). AKS vyabstrakce složitost a provozní režii správy Kubernetes. Kubernetes spotřebováváte jako cloudovou službu. Společnost Microsoft má odpovědnost za správu a podporu. AKS se také úzce integruje s dalšími službami Azure a nástroji pro vývoj.
-
-AKS je technologie založená na clusteru. Fond federovaných virtuálních počítačů nebo uzlů je nasazený do cloudu Azure. Dohromady tvoří vysoce dostupné prostředí nebo cluster. Cluster se jeví jako bezproblémová a jediná entita do vaší cloudové nativní aplikace. V digestoři AKS nasadí vaše kontejnerové služby v těchto uzlech podle předdefinované strategie, která rovnoměrně distribuuje zatížení.
 
 Kontejnerové služby vyžadují automatizovanou správu. Nebylo by možné ručně spravovat velkou sadu nezávisle nasazených kontejnerů. Zvažte například následující úlohy:
 
@@ -240,8 +221,6 @@ Kromě toho můžete kdykoli přidat podporu Docker do existující aplikace ASP
 ![Přidat podporu Docker pro Visual Studio](./media/visual-studio-add-docker-support.png)
 
 **Obrázek 3-8**. Přidání podpory Docker do sady Visual Studio
-
-Můžete také přidat podporu orchestrace kontejnerů, která je také znázorněna na obrázku 3-8. Ve výchozím nastavení nástroj Orchestrator používá Kubernetes a Helm. Po zvolení nástroje Orchestrator se do `azds.yaml` kořenového adresáře projektu přidá soubor a `charts` přidá se složka obsahující Helm grafy používané ke konfiguraci a nasazení aplikace do Kubernetes. Obrázek 3-9 ukazuje výsledné soubory v novém projektu.
 
 Můžete také přidat podporu orchestrace kontejnerů, která je také znázorněna na obrázku 3-8. Ve výchozím nastavení nástroj Orchestrator používá Kubernetes a Helm. Po zvolení nástroje Orchestrator se do `azds.yaml` kořenového adresáře projektu přidá soubor a `charts` přidá se složka obsahující Helm grafy používané ke konfiguraci a nasazení aplikace do Kubernetes. Obrázek 3-9 ukazuje výsledné soubory v novém projektu.
 
