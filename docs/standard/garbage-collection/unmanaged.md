@@ -12,12 +12,12 @@ helpviewer_keywords:
 - unmanaged resource cleanup
 - Finalize method
 ms.assetid: a17b0066-71c2-4ba4-9822-8e19332fc213
-ms.openlocfilehash: 2d8b22063a184773928e5bc072f51a9f7d5d45ba
-ms.sourcegitcommit: 046a9c22487551360e20ec39fc21eef99820a254
+ms.openlocfilehash: aeb39f32c97424646b85b26ed9c4ed0e350d196b
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83396978"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84287607"
 ---
 # <a name="cleaning-up-unmanaged-resources"></a>Čištění nespravovaných prostředků
 
@@ -40,11 +40,11 @@ Pokud vaše typy používají nespravované prostředky, měli byste provést n�
 
 Příjemci vašeho typu můžou následně zavolat vaši <xref:System.IDisposable.Dispose%2A?displayProperty=nameWithType> implementaci přímo na volnou paměť využívanou nespravovanými prostředky. Při správné implementaci metody se <xref:System.IDisposable.Dispose%2A> buď metoda bezpečného popisovače <xref:System.Object.Finalize%2A> nebo vaše vlastní přepsání <xref:System.Object.Finalize%2A?displayProperty=nameWithType> metody změní na zabezpečení pro vyčištění prostředků v případě, že <xref:System.IDisposable.Dispose%2A> metoda není volána.
 
-## <a name="in-this-section"></a>V tomto oddílu
+## <a name="in-this-section"></a>V této části
 
 [Implementace metody Dispose](implementing-dispose.md) popisuje, jak implementovat vzor Dispose pro uvolnění nespravovaných prostředků.
 
-[Použití objektů, které `IDisposable` implementují](../../../docs/standard/garbage-collection/using-objects.md) Popisuje, jak uživatelé typu zajišťují, že <xref:System.IDisposable.Dispose%2A> je volána jeho implementace. `using`K tomu doporučujeme použít příkaz C# (nebo Visual Basic `Using` ).
+[Použití objektů, které `IDisposable` implementují](using-objects.md) Popisuje, jak uživatelé typu zajišťují, že <xref:System.IDisposable.Dispose%2A> je volána jeho implementace. `using`K tomu doporučujeme použít příkaz C# (nebo Visual Basic `Using` ).
 
 ## <a name="reference"></a>Odkaz
 

@@ -8,45 +8,45 @@ dev_langs:
 helpviewer_keywords:
 - tasks, with other asynchronous models
 ms.assetid: e7b31170-a156-433f-9f26-b1fc7cd1776f
-ms.openlocfilehash: e71c609b500bc6771c405cfb6f4ac14923cc3939
-ms.sourcegitcommit: 1cb64b53eb1f253e6a3f53ca9510ef0be1fd06fe
+ms.openlocfilehash: 7db031c655980dd800de77cbbd6a07a0ba94b33b
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82507543"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84284881"
 ---
 # <a name="tpl-and-traditional-net-framework-asynchronous-programming"></a>TPL a tradiční asynchronní programování v .NET Framework
 .NET Framework poskytuje následující dva standardní vzory pro provádění asynchronních operací vstupně-výstupních operací a výpočtů vázaných na výpočetní prostředky:  
   
-- Asynchronní programovací model (APM), ve kterém jsou asynchronní operace reprezentovány dvojicí metod begin/end, jako <xref:System.IO.FileStream.BeginRead%2A?displayProperty=nameWithType> jsou <xref:System.IO.Stream.EndRead%2A?displayProperty=nameWithType>a.  
+- Asynchronní programovací model (APM), ve kterém jsou asynchronní operace reprezentovány dvojicí metod begin/end, jako jsou <xref:System.IO.FileStream.BeginRead%2A?displayProperty=nameWithType> a <xref:System.IO.Stream.EndRead%2A?displayProperty=nameWithType> .  
   
-- Asynchronní vzor založený na událostech (EAP), ve kterém jsou asynchronní operace reprezentované dvojicí metoda/událost, která má název *OperationName*Async a *operace*dokončena, například <xref:System.Net.WebClient.DownloadStringAsync%2A?displayProperty=nameWithType> a. <xref:System.Net.WebClient.DownloadStringCompleted?displayProperty=nameWithType> (Protokol EAP byl představený v .NET Framework verze 2,0.)  
+- Asynchronní vzor založený na událostech (EAP), ve kterém jsou asynchronní operace reprezentované dvojicí metoda/událost, která má název *OperationName*Async a *operace*dokončena, například <xref:System.Net.WebClient.DownloadStringAsync%2A?displayProperty=nameWithType> a <xref:System.Net.WebClient.DownloadStringCompleted?displayProperty=nameWithType> . (Protokol EAP byl představený v .NET Framework verze 2,0.)  
   
  Task Parallel Library (TPL) lze použít různými způsoby ve spojení s jedním z asynchronních vzorů. Můžete vystavit operace APM i EAP jako úlohy pro příjemce knihovny, nebo můžete vystavit vzory APM, ale použít objekty úlohy k jejich implementaci interně. V obou případech pomocí objektů úkolů můžete zjednodušit kód a využít následující užitečné funkce:  
   
 - Zaregistrujte zpětná volání ve formě pokračování úlohy, kdykoli po spuštění úlohy.  
   
-- Koordinovat více operací, které jsou spouštěny v `Begin_` reakci na metodu, pomocí <xref:System.Threading.Tasks.TaskFactory.ContinueWhenAll%2A> metod <xref:System.Threading.Tasks.TaskFactory.ContinueWhenAny%2A> a nebo <xref:System.Threading.Tasks.Task.WaitAll%2A> metody nebo <xref:System.Threading.Tasks.Task.WaitAny%2A> metody.  
+- Koordinovat více operací, které jsou spouštěny v reakci na `Begin_` metodu, pomocí <xref:System.Threading.Tasks.TaskFactory.ContinueWhenAll%2A> <xref:System.Threading.Tasks.TaskFactory.ContinueWhenAny%2A> metod a nebo metody <xref:System.Threading.Tasks.Task.WaitAll%2A> nebo <xref:System.Threading.Tasks.Task.WaitAny%2A> metody.  
   
 - Zapouzdřit asynchronní operace vázané na vstupně-výstupní operace a výpočetní operace v rámci stejného objektu Task.  
   
 - Monitoruje stav objektu úlohy.  
   
-- Zařazení stavu operace do objektu úlohy pomocí <xref:System.Threading.Tasks.TaskCompletionSource%601>.  
+- Zařazení stavu operace do objektu úlohy pomocí <xref:System.Threading.Tasks.TaskCompletionSource%601> .  
   
 ## <a name="wrapping-apm-operations-in-a-task"></a>Zabalení operací APM do úlohy  
- Třídy <xref:System.Threading.Tasks.TaskFactory?displayProperty=nameWithType> i <xref:System.Threading.Tasks.TaskFactory%601?displayProperty=nameWithType> poskytují několik přetížení metod <xref:System.Threading.Tasks.TaskFactory.FromAsync%2A?displayProperty=nameWithType> a <xref:System.Threading.Tasks.TaskFactory%601.FromAsync%2A?displayProperty=nameWithType> , které umožňují zapouzdřit dvojici metod begin/end APM v jednom <xref:System.Threading.Tasks.Task> nebo <xref:System.Threading.Tasks.Task%601> instanci. Různá přetížení přibývají libovolné dvojici metod begin/end, které mají od nuly až tří vstupních parametrů.  
+ <xref:System.Threading.Tasks.TaskFactory?displayProperty=nameWithType> <xref:System.Threading.Tasks.TaskFactory%601?displayProperty=nameWithType> Třídy i poskytují několik přetížení <xref:System.Threading.Tasks.TaskFactory.FromAsync%2A?displayProperty=nameWithType> <xref:System.Threading.Tasks.TaskFactory%601.FromAsync%2A?displayProperty=nameWithType> metod a, které umožňují zapouzdřit dvojici metod begin/end APM v jednom <xref:System.Threading.Tasks.Task> nebo <xref:System.Threading.Tasks.Task%601> instanci. Různá přetížení přibývají libovolné dvojici metod begin/end, které mají od nuly až tří vstupních parametrů.  
   
- Pro páry, které `End` mají metody, které vracejí hodnotu`Function` (v Visual Basic), použijte metody v <xref:System.Threading.Tasks.TaskFactory%601> , které vytvoří <xref:System.Threading.Tasks.Task%601>. Pro `End` metody, které vracejí typ`Sub` void (v Visual Basic), použijte metody <xref:System.Threading.Tasks.TaskFactory> v, které <xref:System.Threading.Tasks.Task>vytvoří.  
+ Pro páry, které mají `End` metody, které vracejí hodnotu ( `Function` v Visual Basic), použijte metody v <xref:System.Threading.Tasks.TaskFactory%601> , které vytvoří <xref:System.Threading.Tasks.Task%601> . Pro `End` metody, které vracejí typ void ( `Sub` v Visual Basic), použijte metody v <xref:System.Threading.Tasks.TaskFactory> , které vytvoří <xref:System.Threading.Tasks.Task> .  
   
- V několika případech, ve kterých má `Begin` `ref` metoda více než tři parametry nebo obsahuje parametry nebo `out` , jsou k `FromAsync` dispozici další přetížení, která zapouzdřuje pouze `End` metodu.  
+ V několika případech, ve kterých `Begin` má metoda více než tři parametry nebo obsahuje `ref` parametry nebo `out` , jsou k `FromAsync` dispozici další přetížení, která zapouzdřuje pouze `End` metodu.  
   
- Následující příklad ukazuje signaturu pro `FromAsync` přetížení, která odpovídá metodám <xref:System.IO.FileStream.BeginRead%2A?displayProperty=nameWithType> a. <xref:System.IO.FileStream.EndRead%2A?displayProperty=nameWithType> Toto přetížení používá tři vstupní parametry, a to následujícím způsobem.  
+ Následující příklad ukazuje signaturu pro `FromAsync` přetížení, která odpovídá <xref:System.IO.FileStream.BeginRead%2A?displayProperty=nameWithType> <xref:System.IO.FileStream.EndRead%2A?displayProperty=nameWithType> metodám a. Toto přetížení používá tři vstupní parametry, a to následujícím způsobem.  
   
  [!code-csharp[FromAsync#01](../../../samples/snippets/csharp/VS_Snippets_Misc/fromasync/cs/fromasync.cs#01)]
  [!code-vb[FromAsync#01](../../../samples/snippets/visualbasic/VS_Snippets_Misc/fromasync/vb/module1.vb#01)]  
   
- První parametr je <xref:System.Func%606> delegát, který se shoduje s signaturou <xref:System.IO.FileStream.BeginRead%2A?displayProperty=nameWithType> metody. Druhý parametr je <xref:System.Func%602> delegát, který přebírá <xref:System.IAsyncResult> a vrátí. `TResult` Vzhledem <xref:System.IO.FileStream.EndRead%2A> k tomu, že vrací celé číslo, kompilátor odvodí `TResult` typ <xref:System.Int32> jako a typ úlohy <xref:System.Threading.Tasks.Task>. Poslední čtyři parametry jsou stejné jako v <xref:System.IO.FileStream.BeginRead%2A?displayProperty=nameWithType> metodě:  
+ První parametr je <xref:System.Func%606> delegát, který se shoduje s signaturou <xref:System.IO.FileStream.BeginRead%2A?displayProperty=nameWithType> metody. Druhý parametr je <xref:System.Func%602> delegát, který přebírá <xref:System.IAsyncResult> a vrátí `TResult` . Vzhledem <xref:System.IO.FileStream.EndRead%2A> k tomu, že vrací celé číslo, kompilátor odvodí typ `TResult` jako <xref:System.Int32> a typ úlohy <xref:System.Threading.Tasks.Task> . Poslední čtyři parametry jsou stejné jako v <xref:System.IO.FileStream.BeginRead%2A?displayProperty=nameWithType> metodě:  
   
 - Vyrovnávací paměť, do které se mají ukládat data souboru  
   
@@ -57,9 +57,9 @@ ms.locfileid: "82507543"
 - Volitelný objekt, který ukládá uživatelem definovaná data o stavu, která budou předána zpětnému volání.  
   
 ### <a name="using-continuewith-for-the-callback-functionality"></a>Použití ContinueWith pro funkci zpětného volání  
- Pokud budete vyžadovat přístup k datům v souboru, nikoli pouze k počtu bajtů, <xref:System.Threading.Tasks.TaskFactory.FromAsync%2A> metoda není dostačující. Místo toho použijte <xref:System.Threading.Tasks.Task>, jehož `Result` vlastnost obsahuje data souboru. To lze provést přidáním pokračování do původní úlohy. Pokračování provede práci, kterou by obvykle prováděl <xref:System.AsyncCallback> delegát. Vyvolá se po dokončení předchůdce a vyrovnávací paměť dat byla vyplněna. ( <xref:System.IO.FileStream> Objekt by měl být před vrácením zavřen.)  
+ Pokud budete vyžadovat přístup k datům v souboru, nikoli pouze k počtu bajtů, <xref:System.Threading.Tasks.TaskFactory.FromAsync%2A> metoda není dostačující. Místo toho použijte <xref:System.Threading.Tasks.Task> , jehož `Result` vlastnost obsahuje data souboru. To lze provést přidáním pokračování do původní úlohy. Pokračování provede práci, kterou by obvykle prováděl <xref:System.AsyncCallback> delegát. Vyvolá se po dokončení předchůdce a vyrovnávací paměť dat byla vyplněna. ( <xref:System.IO.FileStream> Objekt by měl být před vrácením zavřen.)  
   
- Následující příklad ukazuje <xref:System.Threading.Tasks.Task> , jak vrátit, který zapouzdřuje dvojici BeginRead/funkci EndRead <xref:System.IO.FileStream> třídy.  
+ Následující příklad ukazuje, jak vrátit <xref:System.Threading.Tasks.Task> , který zapouzdřuje dvojici BeginRead/funkci EndRead <xref:System.IO.FileStream> třídy.  
   
  [!code-csharp[FromAsync#03](../../../samples/snippets/csharp/VS_Snippets_Misc/fromasync/cs/fromasync.cs#03)]
  [!code-vb[FromAsync#03](../../../samples/snippets/visualbasic/VS_Snippets_Misc/fromasync/vb/module1.vb#03)]  
@@ -70,7 +70,7 @@ ms.locfileid: "82507543"
  [!code-vb[FromAsync#04](../../../samples/snippets/visualbasic/VS_Snippets_Misc/fromasync/vb/module1.vb#04)]  
   
 ### <a name="providing-custom-state-data"></a>Poskytování vlastních dat o stavu  
- V typických <xref:System.IAsyncResult> operacích, <xref:System.AsyncCallback> Pokud váš delegát požaduje některá vlastní data stavu, je nutné jej předat prostřednictvím posledního parametru v `Begin` metodě, aby bylo možné data zabalit do <xref:System.IAsyncResult> objektu, který je nakonec předán metodě zpětného volání. To obvykle není nutné při použití `FromAsync` metod. Pokud jsou pro pokračování známa vlastní data, lze ji zachytit přímo v delegátu pokračování. Následující příklad je podobný předchozímu příkladu, ale místo prověření `Result` vlastnosti předchůdce kontroluje pokračování vlastní data stavu, která jsou přímo přístupná uživatelskému delegátu pokračování.  
+ V typických <xref:System.IAsyncResult> operacích, pokud váš <xref:System.AsyncCallback> delegát požaduje některá vlastní data stavu, je nutné jej předat prostřednictvím posledního parametru v `Begin` metodě, aby bylo možné data zabalit do <xref:System.IAsyncResult> objektu, který je nakonec předán metodě zpětného volání. To obvykle není nutné při `FromAsync` použití metod. Pokud jsou pro pokračování známa vlastní data, lze ji zachytit přímo v delegátu pokračování. Následující příklad je podobný předchozímu příkladu, ale místo prověření `Result` vlastnosti předchůdce kontroluje pokračování vlastní data stavu, která jsou přímo přístupná uživatelskému delegátu pokračování.  
   
  [!code-csharp[FromAsync#05](../../../samples/snippets/csharp/VS_Snippets_Misc/fromasync/cs/fromasync.cs#05)]
  [!code-vb[FromAsync#05](../../../samples/snippets/visualbasic/VS_Snippets_Misc/fromasync/vb/module1.vb#05)]  
@@ -82,7 +82,7 @@ ms.locfileid: "82507543"
  [!code-vb[FromAsync#06](../../../samples/snippets/visualbasic/VS_Snippets_Misc/fromasync/vb/module1.vb#06)]  
   
 ### <a name="fromasync-tasks-for-only-the-end-method"></a>FromAsync úlohy pouze pro metodu end  
- Pro několik případů, ve `Begin` kterých metoda vyžaduje více než tři vstupní parametry, nebo má `ref` parametry nebo `out` , můžete použít `FromAsync` přetížení, <xref:System.Threading.Tasks.TaskFactory%601.FromAsync%28System.IAsyncResult%2CSystem.Func%7BSystem.IAsyncResult%2C%600%7D%29?displayProperty=nameWithType>například, která představuje pouze `End` metodu. Tyto metody lze také použít v jakémkoli scénáři, ve kterém jste předali <xref:System.IAsyncResult> a chcete ji zapouzdřit do úlohy.  
+ Pro několik případů, ve kterých `Begin` metoda vyžaduje více než tři vstupní parametry, nebo má `ref` parametry nebo `out` , můžete použít `FromAsync` přetížení, například, <xref:System.Threading.Tasks.TaskFactory%601.FromAsync%28System.IAsyncResult%2CSystem.Func%7BSystem.IAsyncResult%2C%600%7D%29?displayProperty=nameWithType> která představuje pouze `End` metodu. Tyto metody lze také použít v jakémkoli scénáři, ve kterém jste předali <xref:System.IAsyncResult> a chcete ji zapouzdřit do úlohy.  
   
  [!code-csharp[FromAsync#07](../../../samples/snippets/csharp/VS_Snippets_Misc/fromasync/cs/fromasync.cs#07)]
  [!code-vb[FromAsync#07](../../../samples/snippets/visualbasic/VS_Snippets_Misc/fromasync/vb/module1.vb#07)]  
@@ -90,21 +90,21 @@ ms.locfileid: "82507543"
 ### <a name="starting-and-canceling-fromasync-tasks"></a>Spuštění a zrušení FromAsync úlohy  
  Úloha vrácená `FromAsync` metodou má stav WaitingForActivation a bude systémem spuštěna v určitém okamžiku po vytvoření úkolu. Při pokusu o volání metody Start na takovou úlohu bude vyvolána výjimka.  
   
- `FromAsync` Úlohu nelze zrušit, protože podkladová rozhraní api pro .NET Framework aktuálně nepodporují zrušení probíhajícího rušení souboru nebo síťové vstupně-výstupních operací. Můžete přidat funkci zrušení do metody, která zapouzdřuje `FromAsync` volání, ale můžete pouze reagovat na zrušení před `FromAsync` voláním nebo po dokončení (například v úloze pokračování).  
+ Úlohu nelze zrušit `FromAsync` , protože podkladová rozhraní API pro .NET Framework aktuálně nepodporují zrušení probíhajícího rušení souboru nebo síťové vstupně-výstupních operací. Můžete přidat funkci zrušení do metody, která zapouzdřuje `FromAsync` volání, ale můžete pouze reagovat na zrušení před `FromAsync` voláním nebo po dokončení (například v úloze pokračování).  
   
- Některé třídy, které podporují protokol EAP, například <xref:System.Net.WebClient>podporují zrušení a můžete integrovat tuto nativní funkci zrušení pomocí tokenů zrušení.  
+ Některé třídy, které podporují protokol EAP, například podporují <xref:System.Net.WebClient> zrušení a můžete integrovat tuto nativní funkci zrušení pomocí tokenů zrušení.  
   
 ## <a name="exposing-complex-eap-operations-as-tasks"></a>Vystavení složitých operací EAP jako úloh  
- TPL neposkytuje žádné metody, které jsou určeny konkrétně k zapouzdření asynchronní operace založené na událostech stejným způsobem, jakým `FromAsync` rodina metod zabalí <xref:System.IAsyncResult> vzor. TPL však poskytuje <xref:System.Threading.Tasks.TaskCompletionSource%601?displayProperty=nameWithType> třídu, kterou lze použít k reprezentaci libovolné sady operací jako <xref:System.Threading.Tasks.Task%601>. Operace můžou být synchronní nebo asynchronní a můžou být vázané na vstupně-výstupní operace nebo výpočetní výkon nebo obojí.  
+ TPL neposkytuje žádné metody, které jsou určeny konkrétně k zapouzdření asynchronní operace založené na událostech stejným způsobem, jakým `FromAsync` rodina metod zabalí <xref:System.IAsyncResult> vzor. TPL však poskytuje <xref:System.Threading.Tasks.TaskCompletionSource%601?displayProperty=nameWithType> třídu, kterou lze použít k reprezentaci libovolné sady operací jako <xref:System.Threading.Tasks.Task%601> . Operace můžou být synchronní nebo asynchronní a můžou být vázané na vstupně-výstupní operace nebo výpočetní výkon nebo obojí.  
   
- Následující příklad ukazuje, jak použít <xref:System.Threading.Tasks.TaskCompletionSource%601> k vystavení sady asynchronních <xref:System.Net.WebClient> operací pro klientský kód jako základní. <xref:System.Threading.Tasks.Task%601> Metoda umožňuje zadat pole webových adres URL a termín nebo název, který se má vyhledat, a potom vrátí počet výskytů hledaného termínu v každé lokalitě.  
+ Následující příklad ukazuje, jak použít <xref:System.Threading.Tasks.TaskCompletionSource%601> k vystavení sady asynchronních <xref:System.Net.WebClient> operací pro klientský kód jako základní <xref:System.Threading.Tasks.Task%601> . Metoda umožňuje zadat pole webových adres URL a termín nebo název, který se má vyhledat, a potom vrátí počet výskytů hledaného termínu v každé lokalitě.  
   
  [!code-csharp[FromAsync#10](../../../samples/snippets/csharp/VS_Snippets_Misc/fromasync/cs/snippet10.cs#10)]
  [!code-vb[FromAsync#10](../../../samples/snippets/visualbasic/VS_Snippets_Misc/fromasync/vb/snippet10.vb#10)]  
   
- Pro úplnější příklad, který obsahuje další zpracování výjimek a ukazuje, jak volat metodu z klientského kódu, naleznete v tématu [How to: Wrap Patterns EAP in a Task](../../../docs/standard/parallel-programming/how-to-wrap-eap-patterns-in-a-task.md).  
+ Pro úplnější příklad, který obsahuje další zpracování výjimek a ukazuje, jak volat metodu z klientského kódu, naleznete v tématu [How to: Wrap Patterns EAP in a Task](how-to-wrap-eap-patterns-in-a-task.md).  
   
- Mějte na paměti, že každý úkol, který <xref:System.Threading.Tasks.TaskCompletionSource%601> je vytvořen pomocí, bude spuštěn tímto TaskCompletionSource, a proto by kód uživatele neměl volat metodu Start tohoto úkolu.  
+ Mějte na paměti, že každý úkol, který je vytvořen pomocí <xref:System.Threading.Tasks.TaskCompletionSource%601> , bude spuštěn tímto TaskCompletionSource, a proto by kód uživatele neměl volat metodu Start tohoto úkolu.  
   
 ## <a name="implementing-the-apm-pattern-by-using-tasks"></a>Implementace vzoru APM pomocí úloh  
  V některých scénářích může být vhodné přímo vystavit <xref:System.IAsyncResult> vzor pomocí párů begin/end metod v rozhraní API. Můžete například chtít zachovat konzistenci se stávajícími rozhraními API nebo můžete mít automatizované nástroje, které vyžadují tento model. V takových případech můžete pomocí úloh zjednodušit způsob, jakým se model APM implementuje interně.  
@@ -119,4 +119,4 @@ ms.locfileid: "82507543"
   
 ## <a name="see-also"></a>Viz také
 
-- [Task Parallel Library (TPL)](../../../docs/standard/parallel-programming/task-parallel-library-tpl.md)
+- [Task Parallel Library (TPL)](task-parallel-library-tpl.md)

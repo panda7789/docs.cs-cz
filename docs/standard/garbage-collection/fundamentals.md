@@ -1,6 +1,6 @@
 ---
-title: Základy uvolňování paměti
-description: Zjistěte, jak funguje systém uvolňování paměti a jak jej lze nakonfigurovat pro optimální výkon.
+title: Základní informace o uvolňování paměti
+description: Přečtěte si, jak systém uvolňování paměti funguje a jak je možné ho nakonfigurovat pro optimální výkon.
 ms.date: 11/15/2019
 ms.technology: dotnet-standard
 helpviewer_keywords:
@@ -11,208 +11,210 @@ helpviewer_keywords:
 - garbage collection, workstation
 - garbage collection, managed heap
 ms.assetid: 67c5a20d-1be1-4ea7-8a9a-92b0b08658d2
-ms.openlocfilehash: 1fdf7fcd61fb4bf9e8e0cbfe28842208f6eadd00
-ms.sourcegitcommit: 73aa9653547a1cd70ee6586221f79cc29b588ebd
+ms.openlocfilehash: 98dee04593ea26bbbc3079f5da98d8106a373168
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "82102434"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84286064"
 ---
-# <a name="fundamentals-of-garbage-collection"></a>Základy uvolňování paměti
+# <a name="fundamentals-of-garbage-collection"></a>Základní informace o uvolňování paměti
 
-V clr (COMMON Language runtime) slouží systém uvolňování paměti jako automatický správce paměti. Systém uvolňování paměti spravuje přidělení a uvolnění paměti pro aplikaci. Pro vývojáře pracující se spravovaným kódem to znamená, že nemusíte psát kód k provádění úloh správy paměti. Automatická správa paměti může eliminovat běžné problémy, jako je například zapomínání na uvolnění objektu a příčinou nevracení paměti nebo pokusu o přístup k paměti pro objekt, který již byl uvolněn.
+V modulu CLR (Common Language Runtime) slouží systém uvolňování paměti (GC) jako automatický správce paměti. Systém uvolňování paměti spravuje přidělování a uvolňování paměti aplikace. Pro vývojáře, kteří pracují se spravovaným kódem, to znamená, že nemusíte psát kód pro provádění úloh správy paměti. Automatická správa paměti může eliminovat běžné problémy, například forgetting k uvolnění objektu a příčinou nevrácení paměti nebo pokusu o přístup k paměti pro objekt, který je již uvolněn.
 
 Tento článek popisuje základní koncepty uvolňování paměti.
 
 ## <a name="benefits"></a>Výhody
 
-Systém uvolňování paměti poskytuje následující výhody:
+Systém uvolňování paměti přináší následující výhody:
 
-- Osvobozuje vývojáře od nutnosti ručně uvolnit paměť.
+- Uvolňuje vývojářům, aby nemuseli ručně uvolnit paměť.
 
-- Přiděluje objekty na spravované haldy efektivně.
+- Přiděluje objekty na spravované haldě efektivně.
 
-- Uvolní objekty, které se již nepoužívají, vymaže jejich paměť a udržuje paměť k dispozici pro budoucí přidělení. Spravované objekty automaticky získat čistý obsah začít, takže jejich konstruktory nemusí inicializovat každé datové pole.
+- Redeklarace objektů, které se již nepoužívají, vymaže jejich paměť a udržuje dostupnou paměť pro budoucí přidělení. Spravované objekty automaticky dostanou čistým obsahem, takže jejich konstruktory nemusí inicializovat každé datové pole.
 
-- Poskytuje bezpečnost paměti tím, že se ujistí, že objekt nemůže použít obsah jiného objektu.
+- Zajišťuje bezpečnost paměti tím, že zajistí, že objekt nemůže použít obsah jiného objektu.
 
 ## <a name="fundamentals-of-memory"></a>Základy paměti
 
 Následující seznam shrnuje důležité koncepty paměti CLR.
 
-- Každý proces má svůj vlastní, samostatný virtuální adresní prostor. Všechny procesy ve stejném počítači sdílejí stejnou fyzickou paměť a stránkovací soubor, pokud existuje.
+- Každý proces má vlastní, oddělený virtuální adresní prostor. Všechny procesy ve stejném počítači sdílejí stejnou fyzickou paměť a stránkovací soubor, pokud je nějaký.
 
-- Ve výchozím nastavení má každý proces v 32bitových počítačích virtuální adresní prostor v uživatelském režimu 2 GB.
+- Ve výchozím nastavení na 32 počítačích má každý proces virtuální adresní prostor 2 GB v uživatelském režimu.
 
-- Jako vývojář aplikace pracujete pouze s virtuálním adresovým prostorem a nikdy nemanipulujete s fyzickou pamětí přímo. Systém uvolňování paměti přiděluje a uvolňuje virtuální paměť pro vás na spravované haldy.
+- Jako vývojář aplikací pracujete jenom s virtuálním adresním prostorem a nikdy nepracujete s fyzickou pamětí přímo. Systém uvolňování paměti přiděluje a uvolňuje virtuální paměť na spravované haldě.
 
-  Pokud píšete nativní kód, můžete používat funkce systému Windows pro práci s virtuálním adresovým prostorem. Tyto funkce přidělit a uvolnit virtuální paměť pro vás na nativní hromady.
+  Pokud píšete nativní kód, použijte funkce systému Windows pro práci s virtuálním adresním prostorem. Tyto funkce přidělují a uvolňují virtuální paměti pro vás na nativních haldách.
 
 - Virtuální paměť může být ve třech stavech:
 
-  | Stav | Popis |
+  | State | Popis |
   |---------|---------|
-  | Free | Blok paměti nemá žádné odkazy na něj a je k dispozici pro přidělení. |
-  | Vyhrazeno | Blok paměti je k dispozici pro vaše použití a nelze jej použít pro žádný jiný požadavek na přidělení. Však nelze ukládat data do tohoto bloku paměti, dokud je potvrzena. |
-  | Committed | Blok paměti je přiřazen fyzickému úložišti. |
+  | Free | Blok paměti neobsahuje žádné odkazy a je k dispozici pro přidělení. |
+  | Vyhrazeno | Blok paměti je k dispozici pro vaše použití a nelze jej použít pro žádnou jinou žádost o přidělení. Do tohoto bloku paměti však nelze ukládat data, dokud není potvrzeno. |
+  | Committed | Blok paměti je přiřazený k fyzickému úložišti. |
 
-- Virtuální adresní prostor může být fragmentován. To znamená, že v adresním prostoru jsou volné bloky, známé také jako díry. Je-li požadováno přidělení virtuální paměti, správce virtuální paměti musí najít jeden volný blok, který je dostatečně velký, aby splňoval tento požadavek na přidělení. I v případě, že máte 2 GB volného místa, přidělení, které vyžaduje 2 GB bude neúspěšné, pokud všechny, které volné místo je v jednom bloku adresy.
+- Virtuální adresní prostor se může fragmentovat. To znamená, že v adresním prostoru jsou k dispozici bezplatné bloky, označované také jako díry. Po vyžádání přidělení virtuální paměti musí správce virtuální paměti najít jeden bezplatný blok, který je dostatečně velký pro splnění této žádosti o přidělení. I v případě, že máte 2 GB volného místa, přidělení, které vyžaduje 2 GB, bude neúspěšné, pokud všechny volné místo nejsou v jednom bloku adres.
 
-- Pokud není dostatek virtuálního adresového prostoru k rezervaci nebo fyzického místa k potvrzení, můžete dojít paměť.
+- Pokud není k dispozici dostatek adresního prostoru pro rezervaci nebo fyzické místo pro potvrzení, můžete nedostatek paměti.
 
-  Stránkovací soubor se používá i v případě, že fyzický tlak paměti (tj. poptávka po fyzické paměti) je nízká. Při prvním fyzickém tlaku paměti je vysoká, operační systém musí vytvořit místo ve fyzické paměti pro ukládání dat a zálohuje některá data, která je ve fyzické paměti do stránkovacího souboru. Tato data nejsou stránkována, dokud není potřeba, takže je možné se setkat stránkování v situacích, kdy je nízký tlak fyzické paměti.
+  Stránkovací soubor se používá i v případě, že je nízká tlak fyzické paměti (tj. poptávka pro fyzickou paměť). Když je první tlak fyzické paměti vysoký, operační systém musí uvolnit místo ve fyzické paměti pro ukládání dat a zálohuje některá data, která jsou ve fyzické paměti pro stránkovací soubor. Tato data nejsou stránkovaná, dokud je nepotřebujete, takže je možné vyskytnout stránkování v situacích, kdy je nízký tlak fyzické paměti.
   
 ### <a name="memory-allocation"></a>Přidělení paměti
 
-Při inicializaci nového procesu si zaběhu rezervuje souvislou oblast adresního prostoru pro proces. Tento vyhrazený adresní prostor se nazývá spravovaná halda. Spravovaná halda udržuje ukazatel na adresu, kde bude přidělen další objekt v haldě. Zpočátku tento ukazatel je nastavena na základní adresu spravované haldy. Všechny typy odkazů jsou přiděleny na spravované haldy. Když aplikace vytvoří první typ odkazu, je přidělena paměť pro typ na základní adrese spravované haldy. Když aplikace vytvoří další objekt, systém uvolňování paměti pro něj přiděluje paměť v adresním prostoru bezprostředně za prvním objektem. Tak dlouho, dokud adresní prostor je k dispozici, systém uvolňování paměti nadále přidělovat prostor pro nové objekty tímto způsobem.
+Při inicializaci nového procesu vyhradí modul runtime souvislou oblast adresního prostoru pro daný proces. Tento vyhrazený adresní prostor se nazývá spravovaná halda. Spravovaná halda udržuje ukazatel na adresu, kde bude přidělen další objekt v haldě. Zpočátku je tento ukazatel nastavený na základní adresu spravované haldy. Všechny typy odkazů jsou přiděleny na spravovanou haldu. Když aplikace vytvoří první typ odkazu, přidělí se paměť pro typ na základní adrese spravované haldy. Když aplikace vytvoří další objekt, systém uvolňování paměti přidělí paměť v adresním prostoru hned za prvním objektem. Pokud je k dispozici adresní prostor, uvolňování paměti pro nové objekty tímto způsobem stále přiděluje místo.
 
-Přidělení paměti ze spravované haldy je rychlejší než přidělení nespravované paměti. Vzhledem k tomu, že runtime přiděluje paměť pro objekt přidáním hodnoty k ukazateli, je téměř stejně rychlý jako přidělení paměti ze zásobníku. Navíc vzhledem k tomu, že nové objekty, které jsou přiděleny postupně, jsou uloženy souvislí ve spravované haldě, aplikace může rychle přistupovat k objektům.
+Přidělování paměti ze spravované haldy je rychlejší než nespravované přidělení paměti. Vzhledem k tomu, že modul Runtime přiděluje paměť pro objekt přidáním hodnoty na ukazatel, je téměř stejně rychlá jako přidělování paměti ze zásobníku. Kromě toho vzhledem k tomu, že nové objekty, které jsou přiděleny po sobě, jsou uloženy souvisle ve spravované haldě, aplikace může přistupovat k objektům rychle.
 
-### <a name="memory-release"></a>Uvolnění paměti
+### <a name="memory-release"></a>Verze paměti
 
-Optimalizační modul systému uvolňování paměti určuje nejlepší čas k provedení kolekce na základě provedených přidělení. Když systém uvolňování paměti provádí kolekci, uvolní paměť pro objekty, které již nejsou používány aplikací. Určuje, které objekty se již nepoužívají, a to zkoumáním *kořenů*aplikace . Kořeny aplikace zahrnují statická pole, místní proměnné a parametry v zásobníku vlákna a registry procesoru. Každý kořen odkazuje na objekt na spravované haldě nebo je nastavenna na hodnotu null. Systém uvolňování paměti má přístup k seznamu aktivních kořenů, které kompilátor just-in-time (JIT) a za běhu udržují. Pomocí tohoto seznamu systém uvolňování paměti vytvoří graf, který obsahuje všechny objekty, které jsou dosažitelné z kořenů.
+Optimalizující modul systému uvolňování paměti určuje nejvhodnější čas k provedení kolekce na základě přidělení. Když systém uvolňování paměti provede kolekci, uvolní paměť pro objekty, které již aplikace nepoužívá. Určuje, které objekty již nejsou používány, prozkoumáním *kořenů*aplikace. Kořeny aplikace zahrnují statická pole, místní proměnné a parametry v zásobníku vlákna a Registry procesoru. Každý kořenový adresář buď odkazuje na objekt na spravované haldě, nebo je nastaven na hodnotu null. Systém uvolňování paměti má přístup k seznamu aktivních kořenových adresářů, které kompilátor JIT (just-in-time) a modul runtime udržují. Pomocí tohoto seznamu vytvoří systém uvolňování paměti graf, který obsahuje všechny objekty, které jsou dosažitelné z kořenů.
 
-Objekty, které nejsou v grafu jsou nedostupné z kořenů aplikace. Systém uvolňování paměti považuje nedosažitelné objekty za nesmyslné a uvolní paměť, která je pro ně přidělena. Během kolekce systém uvolňování paměti zkoumá spravované haldy, hledá bloky adresního prostoru obsazené nedosažitelné objekty. Při zjišťování každého nedosažitelného objektu používá funkci kopírování paměti k komprimaci dosažitelných objektů v paměti a uvolňuje bloky adresních prostorů přidělených nedostupným objektům. Jakmile paměť pro dosažitelné objekty byla zkomprimována, systém uvolňování paměti provede potřebné opravy ukazatele tak, aby kořeny aplikace odkazují na objekty v jejich nových umístěních. Také umístí ukazatele spravované haldy za poslední dosažitelný objekt.
+Objekty, které nejsou v grafu, jsou nedosažitelné z kořenů aplikace. Systém uvolňování paměti považuje nedosažitelné objekty za paměti a uvolní přidělenou paměť. V průběhu kolekce systém uvolňování paměti ověřuje spravovanou haldu a hledá bloky adresního prostoru obsazené nedosažitelnými objekty. Vzhledem k tomu, že zjistí každý nedosažitelný objekt, používá funkci kopírování paměti pro komprimaci dosažitelných objektů v paměti a uvolní bloky adresních prostorů přidělených nedostupným objektům. Po komprimaci paměti pro dostupné objekty provede systém uvolňování paměti nezbytné opravy ukazatelů, aby kořeny aplikace odkazovaly na objekty v jejich nových umístěních. Také umístí ukazatel spravované haldy za poslední dosažitelný objekt.
 
-Paměť je komprimována pouze v případě, že kolekce zjistí významný počet nedostupných objektů. Pokud všechny objekty ve spravované haldy přežít kolekce, pak není nutné pro zhutňování paměti.
+Paměť je komprimována pouze v případě, že kolekce zjistí významný počet nedosažitelných objektů. Pokud všechny objekty ve spravované haldě přestanou kolekci, nepotřebujete komprimaci paměti.
 
-Chcete-li zlepšit výkon, runtime přiděluje paměť pro velké objekty v samostatné haldy. Systém uvolňování paměti automaticky uvolní paměť pro velké objekty. Chcete-li se však vyhnout přesouvání velkých objektů v paměti, tato paměť obvykle není komprimována.
+Za účelem zvýšení výkonu přiděluje modul runtime paměť pro velké objekty v samostatné haldě. Systém uvolňování paměti automaticky uvolňuje paměť pro velké objekty. Chcete-li se ale vyhnout přesunutí velkých objektů v paměti, obvykle se tato paměť nekomprimuje.
 
-## <a name="conditions-for-a-garbage-collection"></a>Podmínky pro uvolnění paměti
+## <a name="conditions-for-a-garbage-collection"></a>Podmínky pro uvolňování paměti
 
-Uvolnění paměti dochází, pokud je splněna jedna z následujících podmínek:
+Uvolňování paměti nastane, pokud je splněna jedna z následujících podmínek:
 
-- Systém má nedostatek fyzické paměti. To je detekováno oznámením nedostatku paměti z operačního systému nebo nedostatku paměti, jak je uvedeno hostitelem.
+- Systém má nedostatek fyzické paměti. Tato možnost je zjištěna buď pomocí oznámení o nedostatku paměti z operačního systému, nebo z nedostatku paměti, jak je uvedeno v hostiteli.
 
-- Paměť, která je používána přidělené objekty na spravované haldy překračuje přijatelnou prahovou hodnotu. Tato prahová hodnota je průběžně upravována při spuštění procesu.
+- Paměť, kterou používá přidělené objekty na spravované haldě, překročí přijatelnou prahovou hodnotu. Tato prahová hodnota je průběžně upravována při spuštění procesu.
 
-- Metoda <xref:System.GC.Collect%2A?displayProperty=nameWithType> je volána. Téměř ve všech případech není třeba volat tuto metodu, protože uvolňování systém běží nepřetržitě. Tato metoda se používá především pro jedinečné situace a testování.
+- <xref:System.GC.Collect%2A?displayProperty=nameWithType>Metoda je volána. Ve většině případů nemusíte volat tuto metodu, protože systém uvolňování paměti běží nepřetržitě. Tato metoda se primárně používá pro jedinečné situace a testování.
 
-## <a name="the-managed-heap"></a>Spravovanou haldu
+## <a name="the-managed-heap"></a>Spravovaná halda
 
-Po systému uvolňování paměti je inicializován clr, přiděluje segment paměti pro ukládání a správu objektů. Tato paměť se nazývá spravované haldy, na rozdíl od nativní haldy v operačním systému.
+Po inicializaci uvolňování paměti modulem CLR přidělí segment paměti pro ukládání a správu objektů. Tato paměť se nazývá spravovaná halda, nikoli nativní halda v operačním systému.
 
-Pro každý spravovaný proces existuje spravovaná halda. Všechna vlákna v procesu přidělit paměť pro objekty na stejné haldě.
+Pro každý spravovaný proces existuje spravovaná halda. Všechna vlákna v procesu přidělují paměť pro objekty ve stejné haldě.
 
-Chcete-li rezervovat paměť, systém uvolňování paměti volá funkci Windows [VirtualAlloc](/windows/desktop/api/memoryapi/nf-memoryapi-virtualalloc) a rezervuje jeden segment paměti najednou pro spravované aplikace. Systém uvolňování paměti také podle potřeby rezervuje segmenty a uvolní segmenty zpět do operačního systému (po jejich vymazání všech objektů) voláním funkce Windows [VirtualFree.](/windows/desktop/api/memoryapi/nf-memoryapi-virtualfree)
+Pro vyhradení paměti systém uvolňování paměti zavolá funkci Windows [VirtualAlloc](/windows/desktop/api/memoryapi/nf-memoryapi-virtualalloc) a rezervuje pro spravované aplikace jeden segment paměti. Systém uvolňování paměti také vyhrazuje segmenty, jak je potřeba, a uvolní segmenty zpátky do operačního systému (po vymazání všech objektů) voláním funkce [VirtualFree](/windows/desktop/api/memoryapi/nf-memoryapi-virtualfree) systému Windows.
 
 > [!IMPORTANT]
-> Velikost segmentů přidělených systémem uvolňování paměti je specifická pro implementaci a může se kdykoli změnit, včetně pravidelných aktualizací. Vaše aplikace by nikdy neměla dělat předpoklady o konkrétní velikosti segmentu nebo na ní záviset, ani by se neměla pokoušet nakonfigurovat množství paměti, která je k dispozici pro přidělení segmentu.
+> Velikost segmentů přidělených systémem uvolňování paměti je specifická pro konkrétní implementaci a může se kdykoli změnit, včetně pravidelných aktualizací. Vaše aplikace by nikdy neměla zabývat ani záviset na konkrétní velikosti segmentu, ani by se neměla pokoušet nakonfigurovat množství paměti dostupné pro přidělení segmentů.
 
-Méně objektů přidělených na haldě, méně práce systému uvolňování paměti musí provést. Při přidělování objektů nepoužívejte hodnoty zaobleného nahoru, které přesahují vaše potřeby, například přidělení pole 32 bajtů, když potřebujete pouze 15 bajtů.
+Čím méně objektů bylo přiděleno haldě, tím méně práce musí systém uvolňování paměti dělat. Při přidělování objektů nepoužívejte zaoblené hodnoty, které překračují vaše potřeby, jako je například přidělení pole 32 bajtů, pokud potřebujete pouze 15 bajtů.
 
-Při uvolnění paměti je spuštěna, uvolňování paměti uvolní paměť, která je obsazena mrtvé objekty. Proces rekultivace komprimuje živé objekty tak, aby byly přesunuty společně a mrtvý prostor je odebrán, čímž se halda menší. Tím je zajištěno, že objekty, které jsou přiděleny společně zůstat společně na spravované haldy zachovat jejich lokalitu.
+Když je aktivováno uvolňování paměti, uvolňování paměti uvolní paměť, která je obsazena mrtvými objekty. Proces opětovného získání komprimuje živé objekty tak, aby se přesunuly dohromady, a nedoručené místo se odebere, takže halda bude menší. Tím se zajistí, aby objekty, které jsou přiděleny dohromady, zůstaly na spravované haldě, aby se zachovala jejich místní aktuálnost.
 
-Rušivost (frekvence a trvání) uvolňování paměti je výsledkem objemu přidělení a množství paměti, která přežila na spravované haldě.
+Rušivost (četnost a doba trvání) uvolňování paměti je výsledkem objemu přidělení a množství zachované paměti na spravované haldě.
 
-Haldy lze považovat za akumulaci dvou hald: [haldy velkého objektu](large-object-heap.md) a haldy malého objektu. Halda velkých objektů obsahuje objekty, které jsou 85 000 bajtů a větší, což jsou obvykle pole. Je vzácné, aby byl objekt instance extrémně velký.
+Halda může být považována za akumulaci dvou hald: [halda velkých objektů](large-object-heap.md) a haldy malých objektů. Halda velkých objektů obsahuje objekty, které jsou 85 000 bajtů a větší, což jsou obvykle pole. Pro objekt instance je zřídka velká.
 
 > [!TIP]
-> Můžete [nakonfigurovat velikost prahové hodnoty](../../core/run-time-config/garbage-collector.md#large-object-heap-threshold) pro objekty jít na haldy velkého objektu.
+> Můžete [nakonfigurovat prahovou velikost](../../core/run-time-config/garbage-collector.md#large-object-heap-threshold) pro objekty, které mají být v haldě velkých objektů.
 
-## <a name="generations"></a>Generace
+## <a name="generations"></a>Všechna
 
-Algoritmus GC je založen na několika aspektech:
+Algoritmus GC je založený na několika ohledech:
 
-- Je rychlejší komprimovat paměť pro část spravované haldy než pro celou spravovanou haldu.
+- Je rychlejší komprimovat paměť pro část spravované haldy, než pro celou spravovanou haldu.
 - Novější objekty mají kratší životnost a starší objekty mají delší životnost.
-- Novější objekty mají tendenci být vzájemně propojeny a přistupovat k nim přibližně ve stejnou dobu.
+- Novější objekty by měly být vzájemně vzájemně propojené a k nim přistupují aplikace po stejnou dobu.
 
-Uvolňování paměti dochází především s rekultivací krátkodobé objekty. Chcete-li optimalizovat výkon systému uvolňování paměti, spravované haldy je rozdělena do tří generací, 0, 1 a 2, takže může zpracovávat dlouhodobé a krátkodobé objekty samostatně. Systém uvolňování paměti ukládá nové objekty v generaci 0. Objekty vytvořené v rané fázi životnosti aplikace, které přežijí kolekce jsou povýšeny a uloženy v generacích 1 a 2. Vzhledem k tomu, že je rychlejší komprimovat část spravované haldy než celou haldu, toto schéma umožňuje uvolňování paměti v určité generaci, nikoli uvolnění paměti pro celou spravovanou haldu pokaždé, když provádí kolekci.
+K uvolňování paměti dochází hlavně v případě opětovného získávání krátkodobých objektů. Pro optimalizaci výkonu uvolňování paměti je spravovaná halda rozdělena na tři generace, 0, 1 a 2, takže může zpracovávat dlouhodobé a krátkodobé objekty samostatně. Systém uvolňování paměti ukládá nové objekty v generaci 0. Objekty vytvořené na začátku v životním cyklu aplikace, které jsou převedené na kolekce, jsou povýšeny a uloženy v generacích 1 a 2. Vzhledem k tomu, že je rychlejší komprimovat část spravované haldy, než je celá halda, toto schéma umožňuje uvolňování paměti uvolnit paměť v konkrétní generaci místo uvolnění paměti pro celou spravovanou haldu pokaždé, když aplikace provede kolekci.
 
-- **Generace 0**. Jedná se o nejmladší generaci a obsahuje krátkodobé objekty. Příkladem krátkodobého objektu je dočasná proměnná. Uvolňování paměti dochází nejčastěji v této generaci.
+- **Generace 0**. Toto je nejmladšího sourozence generace a obsahuje krátkodobé objekty. Příkladem krátkodobého objektu je dočasná proměnná. K uvolňování paměti dochází nejčastěji v této generaci.
 
-  Nově přidělené objekty tvoří novou generaci objektů a jsou implicitně generace 0 kolekce. Však pokud jsou velké objekty, přejdou na haldy velkého objektu v kolekci generace 2.
+  Nově přidělené objekty tvoří novou generaci objektů a jsou implicitními kolekcemi 0. generace. Pokud se však jedná o velké objekty, přejdou na haldu velkých objektů (LOH), což je někdy označováno jako *generace 3*. Generace 3 je fyzická generace, která je logicky shromažďována jako součást generace 2.
 
-  Většina objektů jsou uvolněny pro uvolnění paměti v generaci 0 a nepřežijí na další generaci.
+  Většina objektů se uvolní pro uvolňování paměti v generaci 0 a nepřekoná se k další generaci.
   
-  Pokud se aplikace pokusí vytvořit nový objekt při generování 0 je plná, systém uvolňování paměti provede kolekci ve snaze uvolnit adresní prostor pro objekt. Uvolňování začíná zkoumáním objektů v generaci 0, nikoli všechny objekty ve spravované haldě. Kolekce generace 0 sám často uvolní dostatek paměti, aby aplikace pokračovat ve vytváření nových objektů.
+  Pokud se aplikace pokusí vytvořit nový objekt, když je generace 0 plná, systém uvolňování paměti provede kolekci v pokusu o uvolnění adresního prostoru pro daný objekt. Systém uvolňování paměti začíná prozkoumáním objektů v generaci 0 místo všech objektů ve spravované haldě. Kolekce samotné generace 0 často uvolňuje dostatek paměti, aby mohla aplikace pokračovat v vytváření nových objektů.
 
-- **Generace 1**. Tato generace obsahuje krátkodobé objekty a slouží jako vyrovnávací paměť mezi krátkodobé objekty a dlouhodobé objekty.
+- **Generace 1**. Tato generace obsahuje krátkodobé objekty a slouží jako vyrovnávací paměť mezi krátkodobé a dlouhodobé objekty.
 
-  Po uvolňování provede kolekci generace 0, zkomprimuje paměť pro dosažitelné objekty a povýší je na generaci 1. Protože objekty, které přežívají kolekce mají tendenci mít delší životnost, má smysl je povýšit na vyšší generaci. Systém uvolňování paměti nemusí znovu prozkoumat objekty v generacích 1 a 2 pokaždé, když provede kolekci generace 0.
+  Jakmile systém uvolňování paměti provede kolekci generace 0, zkomprimuje paměť pro dostupné objekty a propaguje je na generaci 1. Vzhledem k tomu, že objekty, které zachují kolekce, mají obvykle delší životnost, je vhodné je zvýšit na vyšší generaci. Systém uvolňování paměti nemusí přezkoumávat objekty v generacích 1 a 2 pokaždé, když provede kolekci generace 0.
   
-  Pokud kolekce generace 0 neuvolněna dostatek paměti pro aplikaci k vytvoření nového objektu, systém uvolňování paměti může provést kolekci generace 1, pak generace 2. Objekty v generaci 1, které přežijí kolekce jsou povýšeny na generaci 2.
+  Pokud kolekce generace 0 neuvolní dostatek paměti pro aplikaci, aby vytvořila nový objekt, může systém uvolňování paměti provést kolekci 1. generace a pak 2. generace. Objekty v generaci 1, které dodržely kolekce, jsou povýšeny na generaci 2.
 
-- **Generace 2**. Tato generace obsahuje objekty s dlouhou životností. Příkladem objektu s dlouhou životností je objekt v serverové aplikaci, který obsahuje statická data, která jsou aktivní po dobu trvání procesu.
+- **Generace 2**. Tato generace obsahuje dlouhodobě nedlouhodobé objekty. Příkladem dlouhotrvajícího objektu je objekt v serverové aplikaci, který obsahuje statická data, která jsou po dobu trvání procesu aktivní.
 
-  Objekty v generaci 2, které přežijí kolekce zůstávají v generaci 2, dokud nejsou určeny jako nedosažitelné v budoucí kolekci.
+  Objekty v generaci 2, které dodržely kolekci, zůstávají v generaci 2, dokud nebudou v budoucí kolekci nedostupné.
+  
+  Objekty v haldě velkých objektů (což je někdy označováno jako *generace 3*) jsou shromažďovány také v generaci 2.
 
-Uvolňování paměti dojít na konkrétní generace jako podmínky rozkaz. Shromažďování generace znamená shromažďování předmětů v této generaci a všech jejích mladších generacích. Uvolnění paměti generace 2 je také známé jako úplné uvolnění paměti, protože uvolňuje objekty ve všech generacích (to znamená, že všechny objekty ve spravované haldě).
+K uvolňování paměti dochází na určitých generacích, protože podmínky zaručují. Shromáždění generace znamená shromažďování objektů v této generaci a všech jejích mladších generací. Uvolňování paměti 2. generace se označuje také jako úplné uvolňování paměti, protože objekty ve všech generacích (tj. všechny objekty ve spravované haldě) uvolňují.
 
-### <a name="survival-and-promotions"></a>Přežití a propagace
+### <a name="survival-and-promotions"></a>Přežití a propagační akce
 
-Objekty, které nejsou uvolněny v uvolňování paměti jsou označovány jako survivors a jsou povýšeny na další generaci:
+Objekty, které nejsou znovu získány v uvolňování paměti, jsou označovány jako zachované a jsou povýšeny na novou generaci:
 
-- Objekty, které přežijí uvolnění paměti generace 0, jsou povýšeny na generaci 1.
-- Objekty, které přežijí uvolnění paměti generace 1 jsou povýšeny na generaci 2.
-- Objekty, které přežijí uvolnění paměti generace 2, zůstávají v generaci 2.
+- Objekty, které jsou zachovány uvolňováním paměti generace 0, jsou povýšeny na generaci 1.
+- Objekty, které jsou zachovány uvolňováním paměti generace 1, jsou povýšeny na generaci 2.
+- Objekty, které jsou v procesu uvolňování paměti generace 2, zůstávají v generaci 2.
 
-Když systém uvolňování paměti zjistí, že míra přežití je vysoká v generaci, zvýší prahovou hodnotu přidělení pro toto generování. Další kolekce získá značnou velikost regenerované paměti. CLR neustále vyvažuje dvě priority: nenechat pracovní sadu aplikace příliš velké zpožděním uvolňování paměti a neumožňuje uvolnění paměti spustit příliš často.
+Když systém uvolňování paměti zjistí, že je míra přežití v generaci vysoká, zvyšuje se prahová hodnota přidělení pro tuto generaci. Další kolekce získá značnou velikost uvolněné paměti. CLR průběžně vyrovnává dvě priority: Pokud nechcete, aby pracovní sada aplikace byla příliš velká, pomocí opožděného uvolňování paměti a neumožnilo spouštění uvolňování paměti příliš často.
 
-### <a name="ephemeral-generations-and-segments"></a>Pomíjivé generace a segmenty
+### <a name="ephemeral-generations-and-segments"></a>Dočasné generace a segmenty
 
-Protože objekty v generacích 0 a 1 jsou krátkodobé, tyto generace jsou známé jako *dočasné generace*.
+Vzhledem k tomu, že objekty v generacích 0 a 1 jsou krátkodobé, tyto generace jsou známy jako *dočasné generace*.
 
-Dočasné generace jsou přiděleny v segmentu paměti, který se označuje jako dočasný segment. Každý nový segment získaný systémem uvolňování paměti se stane novým dočasným segmentem a obsahuje objekty, které přežily uvolnění paměti generace 0. Starý dočasný segment se stává segmentem nové generace 2.
+Dočasné generace jsou přiděleny v segmentu paměti, který je známý jako dočasný segment. Každý nový segment získaný systémem uvolňování paměti se stal novým dočasným segmentem a obsahuje objekty, které předržely uvolňování paměti generace 0. Starý dočasný segment se vytvoří jako nový segment 2. generace.
 
-Velikost dočasného segmentu se liší v závislosti na tom, zda je systém 32bitový nebo 64bitový a na typu systému uvolňování paměti, který je spuštěn[(pracovní stanice nebo server GC](workstation-server-gc.md)). V následující tabulce jsou uvedeny výchozí velikosti dočasného segmentu.
+Velikost dočasného segmentu se liší v závislosti na tom, zda je systém 32 nebo 64 a na typu uvolňování paměti, které je spuštěn ([pracovní stanice nebo Server uvolňování](workstation-server-gc.md)paměti). V následující tabulce jsou uvedeny výchozí velikosti dočasného segmentu.
 
-|Pracovní stanice/server GC|32bitová|64bitová|
+|Uvolňování paměti pracovní stanice/serveru|32bitová|64bitová|
 |-|-------------|-------------|
-|Pracovní stanice GC|16 MB|256 MB|
-|Server GC|64 MB|4 GB|
-|Server GC s logickými procesory > 4|32 MB|2 GB|
-|Server GC s logickými procesory > 8|16 MB|1 GB|
+|GC pracovní stanice|16 MB|256 MB|
+|Uvolňování paměti serveru|64 MB|4 GB|
+|GC serveru s logickými procesory > 4|32 MB|2 GB|
+|Uvolňování paměti serveru s využitím > 8 logických procesorů|16 MB|1 GB|
 
-Dočasný segment může obsahovat objekty generace 2. Generace 2 objekty mohou používat více segmentů (tolik, kolik vyžaduje proces a paměť umožňuje).
+Dočasný segment může zahrnovat objekty generace 2. Objekty generace 2 můžou používat víc segmentů (tolik, kolik je váš proces vyžaduje, a paměť umožňuje).
 
-Množství uvolněné paměti z dočasné uvolňování paměti je omezena na velikost dočasného segmentu. Množství paměti, která je uvolněna, je úměrná prostoru, který byl obsazen mrtvými objekty.
+Velikost volné paměti z dočasného uvolňování paměti je omezená na velikost dočasného segmentu. Velikost paměti, která je uvolněna, je úměrná místu, které byly obsazeny neaktivními objekty.
 
 ## <a name="what-happens-during-a-garbage-collection"></a>Co se stane během uvolňování paměti
 
-Uvolnění paměti má následující fáze:
+Uvolňování paměti má následující fáze:
 
-- Fáze značení, která vyhledá a vytvoří seznam všech živých objektů.
+- Fáze označení, která najde a vytvoří seznam všech živých objektů.
 
-- Fáze přemístění, která aktualizuje odkazy na objekty, které budou komprimovány.
+- Fáze přemístění, která aktualizuje odkazy na objekty, které budou zkomprimovány.
 
-- Fáze komprimace, která uvolňuje prostor obsazený mrtvými objekty a komprimuje přežívající objekty. Fáze komprimace přesune objekty, které přežily uvolňování paměti směrem ke staršímu konci segmentu.
+- Kompaktní fáze, která uvolňuje místo obsazené neaktivními objekty a komprimuje zbývající objekty. Fáze komprimace přesune objekty, které předržely uvolňování paměti směrem na starší konec segmentu.
 
-  Vzhledem k tomu, že kolekce generace 2 mohou zabírat více segmentů, objekty, které jsou povýšeny na generaci 2, lze přesunout do staršího segmentu. Generace 1 i generace 2, které přežily, mohou být přesunuty do jiného segmentu, protože jsou povýšeni na generaci 2.
+  Vzhledem k tomu, že kolekce 2. generace mohou zabírat více segmentů, objekty, které jsou povýšeny do generace 2, lze přesunout do staršího segmentu. Generace 1 i 2, zachované, je možné přesunout do jiného segmentu, protože jsou povýšeny na generaci 2.
 
-  Obvykle haldy velkých objektů (LOH) není komprimován, protože kopírování velkých objektů ukládá snížení výkonu. V .NET Core a v rozhraní .NET Framework 4.5.1 <xref:System.Runtime.GCSettings.LargeObjectHeapCompactionMode%2A?displayProperty=nameWithType> a novějších však můžete vlastnost použít k komprimaci haldy velkých objektů na vyžádání. Kromě toho je LOH automaticky zhutněn, když je nastaven pevný limit, a to zadáním:
+  Obvykle se nekomprimuje halda pro velké objekty (LOH), protože kopírování velkých objektů ukládá snížení výkonu. V rozhraní .NET Core a v .NET Framework 4.5.1 a novějších verzích ale můžete použít <xref:System.Runtime.GCSettings.LargeObjectHeapCompactionMode%2A?displayProperty=nameWithType> vlastnost k komprimaci haldy velkých objektů na vyžádání. Kromě toho se LOH automaticky zkomprimuje, když se nastaví pevný limit zadáním těchto znaků:
 
-  - Omezení paměti na kontejneru.
-  - Možnosti konfigurace [GCHeapHardLimit](../../core/run-time-config/garbage-collector.md#systemgcheaphardlimitcomplus_gcheaphardlimit) nebo [GCHeapHardLimitPercent.](../../core/run-time-config/garbage-collector.md#systemgcheaphardlimitpercentcomplus_gcheaphardlimitpercent)
+  - Omezení paměti pro kontejner.
+  - [GCHeapHardLimit](../../core/run-time-config/garbage-collector.md#systemgcheaphardlimitcomplus_gcheaphardlimit) nebo [GCHeapHardLimitPercent](../../core/run-time-config/garbage-collector.md#systemgcheaphardlimitpercentcomplus_gcheaphardlimitpercent) možnosti konfigurace modulu runtime.
 
-Systém uvolňování paměti používá následující informace k určení, zda jsou objekty aktivní:
+Systém uvolňování paměti používá následující informace k určení, zda jsou objekty živé:
 
-- **Kořeny zásobníku**. Proměnné zásobníku poskytované kompilátorem just-in-time (JIT) a tchytačivým zásobníkem. Jit optimalizace můžete prodloužit nebo zkrátit oblasti kódu, ve kterém jsou hlášeny proměnné zásobníku do systému uvolňování paměti.
+- **Kořeny zásobníku**. Proměnné zásobníku poskytované kompilátorem JIT (just-in-time) a zásobníkem Stack prohlížeč. Optimalizace JIT mohou prodloužit nebo zkrátit oblasti kódu, ve kterých jsou proměnné zásobníku hlášeny do uvolňování paměti.
 
-- **Popisovače uvolňování paměti**. Zpracovává, které odkazují na spravované objekty a které mohou být přiděleny podle uživatelského kódu nebo běžného jazyka runtime.
+- **Popisovače uvolňování paměti**. Obslužné rutiny, které odkazují na spravované objekty a které mohou být přiděleny uživatelským kódem nebo modulem CLR (Common Language Runtime).
 
-- **Statická data**. Statické objekty v aplikačních doménách, které mohou odkazovat na jiné objekty. Každá doména aplikace sleduje své statické objekty.
+- **Statická data**. Statické objekty v aplikačních doménách, které by mohly odkazovat na jiné objekty. Každá doména aplikace udržuje přehled o svých statických objektech.
 
-Před spuštěním uvolňování paměti jsou všechna spravovaná vlákna pozastavena s výjimkou vlákna, které spustilo uvolňování paměti.
+Před spuštěním uvolňování paměti jsou všechna spravovaná vlákna pozastavena s výjimkou vlákna, které vyvolalo uvolňování paměti.
 
-Následující obrázek znázorňuje vlákno, které aktivuje uvolňování paměti a způsobí, že ostatní vlákna mají být pozastavena.
+Následující ilustrace znázorňuje vlákno, které spouští uvolňování paměti a způsobuje pozastavení ostatních vláken.
 
-![Když vlákno aktivuje uvolňování paměti](./media/gc-triggered.png)
+![Když vlákno spustí uvolňování paměti](./media/gc-triggered.png)
 
 ## <a name="unmanaged-resources"></a>Nespravované prostředky
 
-Pro většinu objektů, které aplikace vytvoří, můžete se spolehnout na uvolnění paměti automaticky provádět nezbytné úlohy správy paměti. Nespravované prostředky však vyžadují explicitní vyčištění. Nejběžnějším typem nespravovaného prostředku je objekt, který obtéká prostředek operačního systému, například popisovač souboru, popisovač okna nebo síťové připojení. Přestože systém uvolňování paměti je schopen sledovat životnost spravovaného objektu, který zapouzdřuje nespravovaný prostředek, nemá konkrétní znalosti o tom, jak vyčistit prostředek.
+Pro většinu objektů, které vaše aplikace vytvoří, můžete spoléhat na uvolňování paměti, aby se automaticky prováděly nezbytné úlohy správy paměti. Nespravované prostředky však vyžadují explicitní vyčištění. Nejběžnějším typem nespravovaného prostředku je objekt, který balí prostředek operačního systému, jako je například popisovač souboru, popisovač okna nebo síťové připojení. I když je systém uvolňování paměti schopný sledovat životnost spravovaného objektu, který zapouzdřuje nespravovaný prostředek, nemá specifické znalosti o tom, jak prostředek vyčistit.
 
-Při vytváření objektu, který zapouzdřuje nespravovaný prostředek, doporučujeme zadat potřebný kód `Dispose` k vyčištění nespravovaného prostředku ve veřejné metodě. Poskytnutím `Dispose` metody povolíte uživatelům objektu explicitně uvolnit jeho paměť po dokončení s objektem. Při použití objektu, který zapouzdřuje nespravovaný prostředek, ujistěte se, že volání `Dispose` podle potřeby.
+Při vytváření objektu, který zapouzdřuje nespravovaný prostředek, je doporučeno zadat potřebný kód pro vyčištění nespravovaného prostředku ve veřejné `Dispose` metodě. Poskytnutím `Dispose` metody umožníte uživatelům vašeho objektu explicitně uvolnit svou paměť, až se dokončí s objektem. Při použití objektu, který zapouzdřuje nespravovaný prostředek, se ujistěte, že zavoláte `Dispose` podle potřeby.
 
-Je také nutné poskytnout způsob, jak nespravované prostředky, které mají být `Dispose`uvolněny v případě, že spotřebitel vašeho typu zapomene volat . Můžete buď použít bezpečný popisovač k zalomení <xref:System.Object.Finalize?displayProperty=nameWithType> nespravovaného prostředku, nebo přepsat metodu.
+Musíte také zadat způsob, jakým se mají nespravované prostředky uvolnit pro případ, že příjemce vašeho typu zapomene volání `Dispose` . Můžete buď použít bezpečný popisovač k zabalení nespravovaného prostředku, nebo přepsat <xref:System.Object.Finalize?displayProperty=nameWithType> metodu.
 
-Další informace o vyčištění nespravovaných prostředků naleznete v tématu [Vyčištění nespravovaných prostředků](unmanaged.md).
+Další informace o čištění nespravovaných prostředků najdete v tématu [vyčištění nespravovaných prostředků](unmanaged.md).
 
 ## <a name="see-also"></a>Viz také
 
-- [Uvolňování paměti pracovní stanice a serveru](workstation-server-gc.md)
+- [Uvolnění paměti pracovní stanice a serveru](workstation-server-gc.md)
 - [Uvolňování paměti na pozadí](background-gc.md)
-- [Možnosti konfigurace pro gc](../../core/run-time-config/garbage-collector.md)
+- [Možnosti konfigurace pro GC](../../core/run-time-config/garbage-collector.md)
 - [Uvolnění paměti](index.md)

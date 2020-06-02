@@ -8,26 +8,26 @@ dev_langs:
 helpviewer_keywords:
 - PLINQ queries, how to create
 ms.assetid: 983b4213-bddd-4a44-9262-cbe59186df4c
-ms.openlocfilehash: c4cd75e55aabb551e5951a902ea6394a5659c9ee
-ms.sourcegitcommit: 1c1a1f9ec0bd1efb3040d86a79f7ee94e207cca5
+ms.openlocfilehash: a9c044254423d0f9d266539c728a6604f562e97d
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/03/2020
-ms.locfileid: "80635856"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84290003"
 ---
 # <a name="how-to-create-and-execute-a-simple-plinq-query"></a>Postupy: Vytvoření a provedení jednoduchého dotazu PLINQ
 
-Příklad v tomto článku ukazuje, jak vytvořit jednoduchý paralelní jazyk integrovaný <xref:System.Linq.ParallelEnumerable.AsParallel%2A?displayProperty=nameWithType> dotaz (LINQ) dotaz pomocí metody rozšíření <xref:System.Linq.ParallelEnumerable.ForAll%2A?displayProperty=nameWithTyp> na zdrojové sekvence a provádění dotazu pomocí metody.  
+Příklad v tomto článku ukazuje, jak vytvořit jednoduchý dotaz LINQ (paralelní jazyk Integrated Query) pomocí <xref:System.Linq.ParallelEnumerable.AsParallel%2A?displayProperty=nameWithType> metody rozšíření ve zdrojové sekvenci a provedení dotazu pomocí <xref:System.Linq.ParallelEnumerable.ForAll%2A?displayProperty=nameWithTyp> metody.  
   
 > [!NOTE]
-> Tato dokumentace používá lambda výrazy definovat delegáty v PLINQ. Pokud nejste obeznámeni s lambda výrazy v jazyce C# nebo Visual Basic, naleznete [lambda výrazy v PLINQ a TPL](../../../docs/standard/parallel-programming/lambda-expressions-in-plinq-and-tpl.md).  
+> Tato dokumentace používá lambda výrazy k definování delegátů v PLINQ. Pokud nejste obeznámeni s lambda výrazy v jazyce C# nebo Visual Basic, přečtěte si téma [lambda výrazy v PLINQ a TPL](lambda-expressions-in-plinq-and-tpl.md).  
   
 ## <a name="example"></a>Příklad  
  [!code-csharp[PLINQ#11](../../../samples/snippets/csharp/VS_Snippets_Misc/plinq/cs/create1.cs#11)]
  [!code-vb[PLINQ#11](../../../samples/snippets/visualbasic/VS_Snippets_Misc/plinq/vb/create1.vb#11)]  
   
- Tento příklad ukazuje základní vzor pro vytváření a provádění jakékoli paralelní LINQ dotazu při řazení pořadí výsledek sekvence není důležité. Neuspořádané dotazy jsou obecně rychlejší než objednané dotazy. Dotaz rozdělí zdroj do úloh, které jsou spouštěny asynchronně ve více vláknech. Pořadí, ve kterém každý úkol dokončí závisí nejen na množství práce spojené se zpracováním prvků v oddílu, ale také na externí faktory, jako je například plánování operačního systému každé vlákno. Tento příklad je určen k předvedení využití a nemusí běžet rychleji než ekvivalentní sekvenční LINQ na objekty dotazu. Další informace o zrychlení naleznete v [tématu Principy zrychlení v PLINQ](../../../docs/standard/parallel-programming/understanding-speedup-in-plinq.md). Další informace o tom, jak zachovat řazení prvků v dotazu, naleznete v tématu [How to: Control Ordering in a PLINQ Query](../../../docs/standard/parallel-programming/how-to-control-ordering-in-a-plinq-query.md).  
+ Tento příklad ukazuje základní vzor pro vytvoření a spuštění paralelního dotazu LINQ, pokud pořadí výsledků není důležité. Neuspořádané dotazy jsou všeobecně rychlejší než seřazené dotazy. Dotaz rozdělí zdroj na úlohy, které se provádějí asynchronně ve více vláknech. Pořadí, ve kterém jednotlivé úlohy dokončí, závisí nejen na množství práce, která je součástí zpracování prvků v oddílu, ale také na vnějších faktorech, jako je například způsob, jakým operační systém naplánuje jednotlivá vlákna. Tento příklad je určený k předvedení používání a nemusí běžet rychleji než ekvivalentní sekvenční LINQ to Objects dotaz. Další informace o zrychlení naleznete v tématu [Principy zrychlení v PLINQ](understanding-speedup-in-plinq.md). Další informace o tom, jak zachovat řazení prvků v dotazu, naleznete v tématu [How to: Order Control in a PLINQ Query](how-to-control-ordering-in-a-plinq-query.md).  
   
 ## <a name="see-also"></a>Viz také
 
-- [Paralelní LINQ (PLINQ)](../../../docs/standard/parallel-programming/introduction-to-plinq.md)
+- [Paralelní LINQ (PLINQ)](introduction-to-plinq.md)

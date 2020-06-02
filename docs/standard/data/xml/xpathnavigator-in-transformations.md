@@ -6,21 +6,21 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 118f97d1-7110-4d1b-b0bd-4143252c0bb0
-ms.openlocfilehash: 240f9ca7a887a4a146437fdef46de776b299705a
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 59fb399d80e1d4d33d1a3c659d2ff74a37fd367d
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75709748"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84282815"
 ---
 # <a name="xpathnavigator-in-transformations"></a>XPathNavigator v transformacích
-<xref:System.Xml.XPath.XPathNavigator> Třída poskytuje náhodný přístup jen pro čtení k datům a je určený pro použití jako vstup pro jazyk XSLT (Extensible Stylesheet Language). Je implementována v systémech <xref:System.Xml.XPath.XPathDocument>, <xref:System.Xml.XmlDataDocument>a <xref:System.Xml.XmlDocument>. <xref:System.Xml.XPath.XPathNavigator> Je založena na datovém modelu konsorcium World Wide Web (W3C), jak je popsáno v části 5 doporučení jazyka XML Path (XPath).  
+<xref:System.Xml.XPath.XPathNavigator>Třída poskytuje náhodný přístup jen pro čtení k datům a je určený pro použití jako vstup pro jazyk XSLT (Extensible Stylesheet Language). Je implementována v systémech <xref:System.Xml.XPath.XPathDocument> , <xref:System.Xml.XmlDataDocument> a <xref:System.Xml.XmlDocument> . <xref:System.Xml.XPath.XPathNavigator>Je založena na datovém modelu konsorcium World Wide Web (W3C), jak je popsáno v části 5 doporučení jazyka XML Path (XPath).  
   
- <xref:System.Xml.XPath.XPathNavigator> Definuje model kurzoru v jakémkoli úložišti a poskytuje rychlé dotazy XPath jen pro čtení v jakémkoli úložišti dat. <xref:System.Xml.XPath.XPathNavigator> Je také třída, která se má použít pro iteraci fragmentů stromu výsledků.  
+ <xref:System.Xml.XPath.XPathNavigator>Definuje model kurzoru v jakémkoli úložišti a poskytuje rychlé dotazy XPath jen pro čtení v jakémkoli úložišti dat. <xref:System.Xml.XPath.XPathNavigator>Je také třída, která se má použít pro iteraci fragmentů stromu výsledků.  
   
- Rozhraní API umožňuje získat informace z aktuálního uzlu ve Storu a přejít na připojené uzly. <xref:System.Xml.XPath.XPathNavigator> Je model stylu kurzoru, který provádí přecházení přes úložiště pomocí sady metod **Move** . <xref:System.Xml.XPath.XPathNavigator> Je vždy umístěn na uzlu. Všechny metody **přesunutí** , které selžou, <xref:System.Xml.XPath.XPathNavigator> nezůstane beze změny.  
+ Rozhraní API umožňuje získat informace z aktuálního uzlu ve Storu a přejít na připojené uzly. <xref:System.Xml.XPath.XPathNavigator>Je model stylu kurzoru, který provádí přecházení přes úložiště pomocí sady metod **Move** . <xref:System.Xml.XPath.XPathNavigator>Je vždy umístěn na uzlu. Všechny metody **přesunutí** , které selžou, nezůstane <xref:System.Xml.XPath.XPathNavigator> beze změny.  
   
- <xref:System.Xml.XPath.XPathNavigator> Je třída, která se má použít pro iteraci fragmentů stromu výsledků. Následující ukázka kódu vytvoří fragment stromu výsledek v rámci předlohy se styly voláním funkce s parametrem, `fragment`, který obsahuje XML.  
+ <xref:System.Xml.XPath.XPathNavigator>Je třída, která se má použít pro iteraci fragmentů stromu výsledků. Následující ukázka kódu vytvoří fragment stromu výsledek v rámci předlohy se styly voláním funkce s parametrem, `fragment` , který obsahuje XML.  
   
 ## <a name="testxsl"></a>test. xsl  
   
@@ -116,4 +116,4 @@ public class sample
   
 ## <a name="see-also"></a>Viz také
 
-- [Třída XslTransform implementuje procesor XSLT](../../../../docs/standard/data/xml/xsltransform-class-implements-the-xslt-processor.md)
+- [Třída XslTransform implementuje procesor XSLT](xsltransform-class-implements-the-xslt-processor.md)

@@ -9,15 +9,15 @@ helpviewer_keywords:
 - Portable Class Library [.NET Framework], and MVVM
 - MVVM, and Portable Class Library
 ms.assetid: 41a0b9f8-15a2-431a-bc35-e310b2953b03
-ms.openlocfilehash: f5312177b9f437d9b5474d38fca80db6fc45245b
-ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
+ms.openlocfilehash: ff34b295ba443088115d470d8ade0c986ac1d856
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/11/2020
-ms.locfileid: "77123672"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84288846"
 ---
 # <a name="using-portable-class-library-with-model-view-view-model"></a>Používání knihovny přenosných tříd spolu s modelem MVVM (Model-View-View Model)
-Můžete použít .NET Framework [přenosné knihovny tříd](../../../docs/standard/cross-platform/cross-platform-development-with-the-portable-class-library.md) k implementaci vzoru Model-View-View Model (MVVM) a sdílet sestavení napříč různými platformami.
+Můžete použít .NET Framework [přenosné knihovny tříd](cross-platform-development-with-the-portable-class-library.md) k implementaci vzoru Model-View-View Model (MVVM) a sdílet sestavení napříč různými platformami.
 
 [!INCLUDE[standard](../../../includes/pcl-to-standard.md)]
 
@@ -50,7 +50,7 @@ Můžete použít .NET Framework [přenosné knihovny tříd](../../../docs/stan
 
 - Třída <xref:System.Windows.Input.ICommand?displayProperty=nameWithType>
 
-- Všechny třídy v oboru názvů <xref:System.ComponentModel.DataAnnotations?displayProperty=nameWithType>
+- Všechny třídy v <xref:System.ComponentModel.DataAnnotations?displayProperty=nameWithType> oboru názvů
 
 ## <a name="implementing-mvvm"></a>Implementace MVVM
  Pro implementaci MVVM obvykle vytvoříte model i model zobrazení v přenositelném projektu knihovny tříd, protože Přenosná knihovna tříd nemůže odkazovat na nepřenosný projekt. Model a model zobrazení mohou být ve stejném projektu nebo v samostatných projektech. Použijete-li samostatné projekty, přidejte odkaz z projektu modelu zobrazení do projektu modelu.
@@ -74,7 +74,7 @@ Můžete použít .NET Framework [přenosné knihovny tříd](../../../docs/stan
  [!code-csharp[PortableClassLibraryMVVM#3](../../../samples/snippets/csharp/VS_Snippets_CLR/portableclasslibrarymvvm/cs/viewmodelbase.cs#3)]
  [!code-vb[PortableClassLibraryMVVM#3](../../../samples/snippets/visualbasic/VS_Snippets_CLR/portableclasslibrarymvvm/vb/viewmodelbase.vb#3)]
 
- Implementace rozhraní <xref:System.Windows.Input.ICommand> se často používá se vzorem MVVM. Následující příklad ukazuje implementaci rozhraní <xref:System.Windows.Input.ICommand>.
+ Implementace <xref:System.Windows.Input.ICommand> rozhraní se často používá se vzorem MVVM. Následující příklad ukazuje implementaci <xref:System.Windows.Input.ICommand> rozhraní.
 
  [!code-csharp[PortableClassLibraryMVVM#4](../../../samples/snippets/csharp/VS_Snippets_CLR/portableclasslibrarymvvm/cs/relaycommand.cs#4)]
  [!code-vb[PortableClassLibraryMVVM#4](../../../samples/snippets/visualbasic/VS_Snippets_CLR/portableclasslibrarymvvm/vb/relaycommand.vb#4)]
@@ -84,11 +84,11 @@ Můžete použít .NET Framework [přenosné knihovny tříd](../../../docs/stan
  [!code-csharp[PortableClassLibraryMVVM#5](../../../samples/snippets/csharp/VS_Snippets_CLR/portableclasslibrarymvvm/cs/mainpageviewmodel.cs#5)]
  [!code-vb[PortableClassLibraryMVVM#5](../../../samples/snippets/visualbasic/VS_Snippets_CLR/portableclasslibrarymvvm/vb/customerviewmodel.vb#5)]  
   
-### <a name="view"></a>Zobrazení  
+### <a name="view"></a>Zobrazit  
  Z aplikace .NET Framework 4,5, aplikace pro Store v systému Windows 8. x, aplikace založené na technologii Silverlight nebo aplikace Windows Phone 7,5 můžete odkazovat na sestavení, které obsahuje model a zobrazení projektů modelu.  Pak vytvoříte zobrazení, které komunikuje s modelem zobrazení. Následující příklad ukazuje zjednodušenou aplikaci Windows Presentation Foundation (WPF), která načítá a aktualizuje data z modelu zobrazení. Podobná zobrazení můžete vytvořit v aplikacích Silverlight, Windows Phone nebo Windows 8. x Store.  
   
  [!code-xaml[PortableClassLibraryMVVM#6](../../../samples/snippets/csharp/VS_Snippets_CLR/portableclasslibrarymvvm/cs/mainwindow.xaml#6)]  
   
 ## <a name="see-also"></a>Viz také
 
-- [Přenosná knihovna tříd](../../../docs/standard/cross-platform/cross-platform-development-with-the-portable-class-library.md)
+- [Přenosná knihovna tříd](cross-platform-development-with-the-portable-class-library.md)

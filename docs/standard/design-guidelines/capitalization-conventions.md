@@ -9,12 +9,12 @@ helpviewer_keywords:
 - case sensitivity, capitalization conventions
 - names [.NET Framework], capitalization
 ms.assetid: 4c4ea526-9203-486f-b72d-29d61c5b3c6d
-ms.openlocfilehash: 8af4a15e1e5b34c38b14c6b547cf44801bbf13e6
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: 10d628700a9cbf0e842416878ec2c7febfa3d6f5
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76741768"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84280397"
 ---
 # <a name="capitalization-conventions"></a>Konvence pro malá a velká písmena
 Pokyny v této kapitole vám pomohou vytvořit jednoduchou metodu pro použití Case, která při použití konzistentně usnadňuje čtení identifikátorů pro typy, členy a parametry.
@@ -62,7 +62,7 @@ Pokyny v této kapitole vám pomohou vytvořit jednoduchou metodu pro použití 
 ## <a name="capitalizing-compound-words-and-common-terms"></a>Složená slova na velkých písmen a běžné výrazy
  Většina složených výrazů se považuje za jednotlivá slova pro účely velkých a malých písmen.
 
- ❌ neměňte velká písmena v každém slově, která se označují jako uzavřená složená slova.
+ ❌Neměňte velká písmena jednotlivých slov, která se označují jako uzavřená složená slova.
 
  Jedná se o složená slova zapsaná jako jedno slovo, například koncový bod. Pro účely pokynů pro používání malých a velkých písmen považovat uzavřený složený Word jako jedno slovo. Pomocí aktuálního slovníku určíte, zda je v zavřeném formuláři napsán složený text.
 
@@ -97,7 +97,7 @@ Pokyny v této kapitole vám pomohou vytvořit jednoduchou metodu pro použití 
 ## <a name="case-sensitivity"></a>Rozlišovat velká a malá písmena
  Jazyky, které mohou být spuštěny na CLR, nejsou vyžadovány pro podporu rozlišování velkých a malých písmen, i když některé z nich. I v případě, že ho váš jazyk podporuje, jiné jazyky, které by mohly mít přístup k vašemu rozhraní, ne. Každé rozhraní API, které je externě přístupné, proto nemůže spoléhat na velká a malá písmena, aby bylo možné rozlišovat mezi dvěma názvy ve stejném kontextu.
 
- ❌ nepředpokládá, že všechny programovací jazyky rozlišují velká a malá písmena. Nejsou. Názvy se nesmí lišit pouze podle velikosti písmen.
+ ❌Nepředpokládá se, že všechny programovací jazyky rozlišují velká a malá písmena. Nejsou. Názvy se nesmí lišit pouze podle velikosti písmen.
 
  *Části © 2005, 2009 Microsoft Corporation. Všechna práva vyhrazena.*
 
@@ -105,5 +105,5 @@ Pokyny v této kapitole vám pomohou vytvořit jednoduchou metodu pro použití 
 
 ## <a name="see-also"></a>Viz také
 
-- [Pokyny k návrhu architektury](../../../docs/standard/design-guidelines/index.md)
-- [Pokyny pro pojmenování](../../../docs/standard/design-guidelines/naming-guidelines.md)
+- [Pokyny k návrhu architektury](index.md)
+- [Pokyny pro pojmenování](naming-guidelines.md)

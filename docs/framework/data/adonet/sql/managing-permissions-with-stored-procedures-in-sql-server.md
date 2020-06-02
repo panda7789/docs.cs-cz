@@ -1,13 +1,14 @@
 ---
 title: Správa oprávnění pomocí uložených procedur na SQL Serveru
+description: Přečtěte si, jak omezit přístup k datům a databázovým objektům pomocí implementace přístupu pomocí uložených procedur nebo uživatelsky definovaných funkcí.
 ms.date: 03/30/2017
 ms.assetid: 08fa34e8-2ffa-470d-ba62-e511a5f8558e
-ms.openlocfilehash: 85383c46dd029db825d24d2f67d2dbda00f3bc95
-ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
+ms.openlocfilehash: 890c1c6dd7003f3abd684d6c827b6a77a3a019c1
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77452380"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84286285"
 ---
 # <a name="managing-permissions-with-stored-procedures-in-sql-server"></a>Správa oprávnění pomocí uložených procedur na SQL Serveru
 Jednou z metod vytvoření více řádků obrany v databázi je implementace veškerého přístupu k datům pomocí uložených procedur nebo uživatelsky definovaných funkcí. Odvoláte nebo odepřete všechna oprávnění k podkladovým objektům, jako jsou tabulky, a udělte oprávnění k provádění uložených procedur. Tím se efektivně vytvoří hraniční zabezpečení kolem vašich dat a databázových objektů.  
@@ -37,11 +38,11 @@ Jednou z metod vytvoření více řádků obrany v databázi je implementace ve�
   
 - Udělte oprávnění EXECUTE pro uložené procedury databázových rolí, které chcete mít přístup k datům.  
   
-- Odvolat nebo odepřít všechna oprávnění k podkladovým tabulkám pro všechny role a uživatele v databázi, včetně role `public`. Všichni uživatelé dědí oprávnění z veřejného. Proto odepření oprávnění `public` znamená, že přístup mají pouze vlastníci a `sysadmin` členové. Všichni ostatní uživatelé nebudou moct dědit oprávnění z členství v jiných rolích.  
+- Odvolat nebo odepřít všechna oprávnění k podkladovým tabulkám pro všechny role a uživatele v databázi, včetně `public` role. Všichni uživatelé dědí oprávnění z veřejného. Proto odepření oprávnění `public` znamená, že mají přístup pouze vlastníci a `sysadmin` Členové; všichni ostatní uživatelé nebudou moci dědit oprávnění z členství v jiných rolích.  
   
-- Nepřidávejte do rolí `sysadmin` ani `db_owner` role uživatelů ani rolí. Správci systému a vlastníci databází mají přístup ke všem databázovým objektům.  
+- Nepřidávejte uživatele nebo role do `sysadmin` `db_owner` rolí nebo. Správci systému a vlastníci databází mají přístup ke všem databázovým objektům.  
   
-- Zakažte účet `guest`. Tato akce zabrání anonymním uživatelům v připojení k databázi. Účet hosta je ve výchozím nastavení v nových databázích zakázán.  
+- Zakažte `guest` účet. Tato akce zabrání anonymním uživatelům v připojení k databázi. Účet hosta je ve výchozím nastavení v nových databázích zakázán.  
   
 - Implementuje zpracování chyb a protokolování chyb.  
   

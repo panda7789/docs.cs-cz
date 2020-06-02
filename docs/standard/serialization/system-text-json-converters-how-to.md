@@ -1,16 +1,21 @@
 ---
-title: ''
-ms.date: ''
+title: Zápis vlastních převaděčů pro serializaci JSON – .NET
+ms.date: 01/10/2020
 no-loc:
 - System.Text.Json
 - Newtonsoft.Json
-helpviewer_keywords: []
-ms.openlocfilehash: 69c11df8217ac6dbdddd98c550f084075b901ea6
-ms.sourcegitcommit: 0926684d8d34f4c6b5acce58d2193db093cb9cf2
+helpviewer_keywords:
+- JSON serialization
+- serializing objects
+- serialization
+- objects, serializing
+- converters
+ms.openlocfilehash: abda23ea538c2c0da6ada4f359ce745602dca45d
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83703605"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84279760"
 ---
 # <a name="how-to-write-custom-converters-for-json-serialization-marshalling-in-net"></a>Zápis vlastních převaděčů pro serializaci JSON (zařazování) v .NET
 
@@ -26,7 +31,7 @@ Můžete také napsat vlastní převaděče pro přizpůsobení nebo rozšiřov�
 * [Deserializace odvozených typů do vlastností objektu](#deserialize-inferred-types-to-object-properties).
 * [Slovník podpory s jiným neřetězcovým klíčem](#support-dictionary-with-non-string-key)
 * [Podpora polymorfního deserializace](#support-polymorphic-deserialization).
-* [Podpora zpátečního přenosu pro zásobník \< T>](#support-round-trip-for-stackt).
+* [Podpora zpátečního přenosu pro zásobník \<T> ](#support-round-trip-for-stackt)
 
 ## <a name="custom-converter-patterns"></a>Vlastní vzory převaděče
 
@@ -44,7 +49,7 @@ Mezi příklady typů, které lze zpracovat pomocí základního vzoru, patří:
 * `DateTime`
 * `Int32`
 
-Základní vzor vytvoří třídu, která může zpracovat jeden typ. Model továrny vytvoří třídu, která určuje za běhu, který konkrétní typ vyžaduje, a dynamicky vytvoří odpovídající převaděč.
+Základní vzor vytvoří třídu, která může zpracovat jeden typ. Model Factory vytvoří třídu, která určuje, za běhu, který konkrétní typ je vyžadován, a dynamicky vytvoří odpovídající převaděč.
 
 ## <a name="sample-basic-converter"></a>Ukázka základního převaděče
 
@@ -54,7 +59,7 @@ Následující ukázka je převaděč, který přepisuje výchozí serializaci p
 
 ## <a name="sample-factory-pattern-converter"></a>Ukázkový konvertor vzorků výrobního modelu
 
-Následující kód ukazuje vlastní převaděč, který pracuje s `Dictionary<Enum,TValue>` . Kód se řídí modelem továrny, protože první parametr obecného typu je `Enum` a druhý je otevřený. `CanConvert`Metoda vrátí `true` pouze pro a `Dictionary` se dvěma obecnými parametry, první z nich je `Enum` typ. Vnitřní převaděč získá existující převaděč pro zpracování podle typu za běhu pro `TValue` .
+Následující kód ukazuje vlastní převaděč, který pracuje s `Dictionary<Enum,TValue>` . Kód se řídí modelem továrny, protože první parametr obecného typu je `Enum` a druhý je otevřený. `CanConvert`Metoda vrátí `true` pouze pro a `Dictionary` se dvěma obecnými parametry, první z nich je `Enum` typ. Vnitřní převaděč získá existující převaděč pro zpracování podle typu, který je k dispozici v době běhu pro `TValue` .
 
 [!code-csharp[](snippets/system-text-json-how-to/csharp/DictionaryTKeyEnumTValueConverter.cs)]
 
@@ -77,7 +82,7 @@ Následující postup vysvětluje, jak vytvořit převaděč podle vzorce pro vy
 
 * Vytvořte třídu, která je odvozena z <xref:System.Text.Json.Serialization.JsonConverterFactory> .
 * Přepsat `CanConvert` metodu pro vrácení hodnoty true, pokud typ, který má být převeden, je ten, který může převaděč zpracovat. Například pokud je převodník pro `List<T>` IT, může zpracovat pouze `List<int>` , `List<string>` , a `List<DateTime>` .
-* Přepsat `CreateConverter` metodu pro vrácení instance třídy převaděče, která bude zpracovávat typ k převodu, který je k dispozici za běhu.
+* Přepsat `CreateConverter` metodu pro vrácení instance třídy převaděče, která bude zpracovávat typ k převodu, který je k dispozici v době běhu.
 * Vytvořte třídu převaděče, kterou `CreateConverter` Metoda vytvoří.
 
 Model továrny je vyžadován pro otevřené generické typy, protože kód pro převod objektu na a z řetězce není stejný pro všechny typy. Převaděč pro otevřený obecný typ (například `List<T>` ) musí vytvořit převaděč pro uzavřený obecný typ ( `List<DateTime>` například) na pozadí. Kód musí být napsán pro zpracování každého uzavřeného a obecného typu, který může převaděč zpracovat.
@@ -175,7 +180,7 @@ V následujících částech jsou uvedeny ukázky konvertorů, které řeší n�
 * [Deserializace odvozených typů do vlastností objektu](#deserialize-inferred-types-to-object-properties)
 * [Slovník podpory s jiným neřetězcovým klíčem](#support-dictionary-with-non-string-key)
 * [Podpora polymorfního deserializace](#support-polymorphic-deserialization)
-* [Podpora zpátečního přenosu pro zásobník \< T>](#support-round-trip-for-stackt).
+* [Podpora zpátečního přenosu pro zásobník \<T> ](#support-round-trip-for-stackt)
 
 ### <a name="deserialize-inferred-types-to-object-properties"></a>Deserializace odvozených typů do vlastností objektu
 
@@ -252,7 +257,7 @@ Výstup JSON z serializace vypadá jako v následujícím příkladu:
 
 Integrované funkce poskytují omezený rozsah [polymorfní serializace](system-text-json-how-to.md#serialize-properties-of-derived-classes) , ale vůbec nepodporují deserializaci. Deserializace vyžaduje vlastní převaděč.
 
-Předpokládejme například, že máte `Person` abstraktní základní třídu s `Employee` a `Customer` odvozené třídy. Polymorfní deserializace znamená, že v době návrhu můžete určit `Person` jako cíl deserializace a `Customer` `Employee` objekty ve formátu JSON jsou správně deserializovány za běhu. Během deserializace je nutné najít podoby, které identifikují požadovaný typ ve formátu JSON. Typy, které jsou k dispozici, se liší podle jednotlivých scénářů. Například může být k dispozici vlastnost diskriminátoru nebo může být nutné spoléhat na přítomnost určité vlastnosti nebo absence konkrétní vlastnosti. Aktuální verze `System.Text.Json` neposkytuje atributy pro určení způsobu zpracování polymorfních scénářů deserializace, takže jsou vyžadovány vlastní převaděče.
+Předpokládejme například, že máte `Person` abstraktní základní třídu s `Employee` a `Customer` odvozené třídy. Polymorfní deserializace znamená, že v době návrhu můžete určit `Person` jako cíl deserializace a `Customer` `Employee` objekty ve formátu JSON jsou v době běhu správně deserializovány. Během deserializace je nutné najít podoby, které identifikují požadovaný typ ve formátu JSON. Typy, které jsou k dispozici, se liší podle jednotlivých scénářů. Například může být k dispozici vlastnost diskriminátoru nebo může být nutné spoléhat na přítomnost určité vlastnosti nebo absence konkrétní vlastnosti. Aktuální verze `System.Text.Json` neposkytuje atributy pro určení způsobu zpracování polymorfních scénářů deserializace, takže jsou vyžadovány vlastní převaděče.
 
 Následující kód ukazuje základní třídu, dvě odvozené třídy a vlastní konvertor pro ně. Převaděč používá vlastnost diskriminátor k provedení polymorfního deserializace. Diskriminátor typu není v definicích třídy, ale je vytvořen během serializace a je čten během deserializace.
 
@@ -283,7 +288,7 @@ Konvertor může deserializovat JSON, který byl vytvořen pomocí stejného př
 
 Kód převaděče v předchozím příkladu čte a zapisuje každou vlastnost ručně. Alternativou je volání `Deserialize` nebo `Serialize` k provedení některé práce. Příklad najdete v [tomto příspěvku StackOverflow](https://stackoverflow.com/a/59744873/12509023).
 
-### <a name="support-round-trip-for-stackt"></a>Podpora zpátečního přenosu pro zásobník \< T>
+### <a name="support-round-trip-for-stackt"></a>Podpora zpátečního přenosu pro zásobník\<T>
 
 Pokud deserializovat řetězec JSON na <xref:System.Collections.Generic.Stack%601> objekt a potom tento objekt serializovat, je obsah zásobníku v opačném pořadí. Toto chování platí pro následující typy a rozhraní a uživatelsky definované typy, které jsou z nich odvozeny:
 
@@ -312,7 +317,7 @@ Následující kód registruje převaděč:
 * [Konvertor Int32, který při deserializaci převede hodnotu null na 0](https://github.com/dotnet/runtime/blob/81bf79fd9aa75305e55abe2f7e9ef3f60624a3a1/src/libraries/System.Text.Json/tests/Serialization/CustomConverterTests.NullValueType.cs)
 * [Konvertor Int32, který umožňuje řetězcové i číselné hodnoty při deserializaci](https://github.com/dotnet/runtime/blob/81bf79fd9aa75305e55abe2f7e9ef3f60624a3a1/src/libraries/System.Text.Json/tests/Serialization/CustomConverterTests.Int32.cs)
 * [Konvertor Enum](https://github.com/dotnet/runtime/blob/81bf79fd9aa75305e55abe2f7e9ef3f60624a3a1/src/libraries/System.Text.Json/tests/Serialization/CustomConverterTests.Enum.cs)
-* [\<Převaděč T>, který přijímá externí data](https://github.com/dotnet/runtime/blob/81bf79fd9aa75305e55abe2f7e9ef3f60624a3a1/src/libraries/System.Text.Json/tests/Serialization/CustomConverterTests.List.cs)
+* [\<T>Převaděč seznamu, který přijímá externí data](https://github.com/dotnet/runtime/blob/81bf79fd9aa75305e55abe2f7e9ef3f60624a3a1/src/libraries/System.Text.Json/tests/Serialization/CustomConverterTests.List.cs)
 * [Long [] převaděč, který funguje se seznamem čísel oddělených čárkami](https://github.com/dotnet/runtime/blob/81bf79fd9aa75305e55abe2f7e9ef3f60624a3a1/src/libraries/System.Text.Json/tests/Serialization/CustomConverterTests.Array.cs)
 
 Pokud potřebujete vytvořit převaděč, který upraví chování existujícího integrovaného převaděče, můžete získat [zdrojový kód existujícího převaděče](https://github.com/dotnet/runtime/tree/81bf79fd9aa75305e55abe2f7e9ef3f60624a3a1/src/libraries/System.Text.Json/src/System/Text/Json/Serialization/Converters) , který slouží jako výchozí bod pro přizpůsobení.

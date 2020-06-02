@@ -1,31 +1,31 @@
 ---
-title: Použití dotnet-svcutil.xmlserializer
-description: Zjistěte, jak `dotnet-svcutil.xmlserializer` můžete použít balíček NuGet k předběžnému generování sestavení serializace pro projekty .NET Core.
+title: Použití dotnet-Svcutil. XmlSerializer
+description: Přečtěte si, jak můžete pomocí `dotnet-svcutil.xmlserializer` balíčku NuGet předem vygenerovat sestavení serializace pro projekty .NET Core.
 author: huanwu
 ms.date: 11/27/2018
-ms.openlocfilehash: 4811647c294118cb160d25805e7d3ada97f071f9
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 14bb2e8a85ec35f08b0a83b9734a64d751074f1b
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75344904"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84284322"
 ---
-# <a name="using-dotnet-svcutilxmlserializer-on-net-core"></a>Použití dotnet-svcutil.xmlserializer na .NET Core
+# <a name="using-dotnet-svcutilxmlserializer-on-net-core"></a>Použití dotnet-Svcutil. XmlSerializer v .NET Core
 
-Balíček `dotnet-svcutil.xmlserializer` NuGet můžete předem generovat sestavení serializace pro projekty .NET Core. Předem generuje kód serializace jazyka C# pro typy v klientské aplikaci, které jsou používány wcf service contract a které mohou být serializovány XmlSerializer. To zlepšuje výkon při spuštění serializace XML při serializaci nebo deserializaci objektů těchto typů.
+`dotnet-svcutil.xmlserializer`Balíček NuGet může předem vygenerovat serializaci sestavení pro projekty .NET Core. Předběžně generuje Serializační kód C# pro typy v klientské aplikaci, které používá kontrakt služby WCF a který může být serializován objektem XmlSerializer. To zlepšuje výkon při spuštění serializace XML při serializaci nebo deserializaci objektů těchto typů.
 
 ## <a name="prerequisites"></a>Požadavky
 
-* [Sada .NET Core 2.1 SDK](https://dotnet.microsoft.com/download) nebo novější
+* [.NET Core 2,1 SDK](https://dotnet.microsoft.com/download) nebo novější
 * Váš oblíbený editor kódu
 
-Pomocí příkazu `dotnet --info` můžete zkontrolovat, které verze sady .NET Core SDK a runtime, které jste již nainstalovali.
+Pomocí příkazu můžete `dotnet --info` zjistit, které verze .NET Core SDK a modulu runtime už máte nainstalované.
 
 ## <a name="getting-started"></a>Začínáme
 
-Použití `dotnet-svcutil.xmlserializer` v aplikaci konzoly .NET Core:
+Pro použití `dotnet-svcutil.xmlserializer` v konzolové aplikaci .NET Core:
 
-1. Vytvořte službu WCF s názvem MyWCFService pomocí výchozí šablony WCF Service Application v rozhraní .NET Framework. Přidejte `[XmlSerializerFormat]` atribut metody služby takto:
+1. Vytvořte ve .NET Framework službu WCF s názvem ' MyWCFService ' pomocí výchozí šablony ' aplikace služby WCF '. Přidejte `[XmlSerializerFormat]` atribut pro metodu služby, například následující:
 
    ```csharp
     [ServiceContract]
@@ -37,19 +37,19 @@ Použití `dotnet-svcutil.xmlserializer` v aplikaci konzoly .NET Core:
     }
     ```
 
-2. Vytvořte aplikaci konzoly .NET Core jako klientskou aplikaci WCF, která se zaměřuje na verze .NET Core 2.1 nebo novější. Můžete například vytvořit aplikaci s názvem MyWCFClient s následujícím příkazem:
+2. Vytvořte konzolovou aplikaci .NET Core jako klientskou aplikaci WCF, která cílí na .NET Core 2,1 nebo novější verze. Například vytvořte aplikaci s názvem ' MyWCFClient ' s následujícím příkazem:
 
     ```dotnetcli
     dotnet new console --name MyWCFClient
     ```
 
-    Chcete-li zajistit, aby váš projekt cílil na `TargetFramework` rozhraní .NET Core 2.1 nebo novější, zkontrolujte element XML v souboru projektu:
+    Chcete-li zajistit, aby byl projekt cílen na rozhraní .NET Core 2,1 nebo vyšší, prozkoumejte `TargetFramework` XML element v souboru projektu:
 
     ```xml
     <TargetFramework>netcoreapp2.1</TargetFramework>
     ```
 
-3. Přidejte odkaz `System.ServiceModel.Http` na balíček spuštěním následujícího příkazu:
+3. Pomocí následujícího příkazu přidejte odkaz na balíček `System.ServiceModel.Http` :
 
     ```dotnetcli
     dotnet add package System.ServiceModel.Http
@@ -82,13 +82,13 @@ Použití `dotnet-svcutil.xmlserializer` v aplikaci konzoly .NET Core:
     }
     ```
 
-5. Přidejte odkaz `dotnet-svcutil.xmlserializer` na balíček spuštěním následujícího příkazu:
+5. Přidejte odkaz na `dotnet-svcutil.xmlserializer` balíček spuštěním následujícího příkazu:
   
     ```dotnetcli
     dotnet add package dotnet-svcutil.xmlserializer
     ```
 
-    Spuštění příkazu by mělo přidat položku do souboru projektu podobnou této:
+    Spuštění příkazu by mělo do souboru projektu přidat položku podobný tomuto:
   
     ```xml
     <ItemGroup>
@@ -96,6 +96,6 @@ Použití `dotnet-svcutil.xmlserializer` v aplikaci konzoly .NET Core:
     </ItemGroup>
     ```
 
-6. Vytvořte aplikaci `dotnet build`spuštěním aplikace . Pokud je vše úspěšné, ve výstupní složce je generováno sestavení s názvem *MyWCFClient.XmlSerializers.dll.* Pokud se nástroji nepodařilo generovat sestavení, zobrazí se upozornění ve výstupu sestavení.
+6. Sestavte aplikaci spuštěním `dotnet build` . Pokud je vše úspěšné, sestavení s názvem *MyWCFClient. XmlSerializers. dll* je vygenerováno ve výstupní složce. Pokud nástroji se nepovedlo vygenerovat sestavení, zobrazí se upozornění ve výstupu sestavení.
 
-7. Spusťte službu WCF například spuštěním `http://localhost:2561/Service1.svc` v prohlížeči. Potom spusťte klientskou aplikaci a automaticky se načte a použije předem generované serializátory za běhu.
+7. Spusťte službu WCF tak, aby například běžela `http://localhost:2561/Service1.svc` v prohlížeči. Pak spusťte klientskou aplikaci a automaticky načte a použije předem vygenerované serializace za běhu.

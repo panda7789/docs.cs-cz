@@ -4,12 +4,12 @@ description: Naučte se hostovat modul runtime .NET Core z nativního kódu pro 
 author: mjrousos
 ms.topic: how-to
 ms.date: 12/21/2018
-ms.openlocfilehash: 342a0cec78303f70db3a5b31294be1d465459f55
-ms.sourcegitcommit: 046a9c22487551360e20ec39fc21eef99820a254
+ms.openlocfilehash: 2324b61bcffb686a455fcfd154284a2b78aa746b
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83394855"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84283491"
 ---
 # <a name="write-a-custom-net-core-host-to-control-the-net-runtime-from-your-native-code"></a>Zápis vlastního hostitele .NET Core pro řízení modulu .NET runtime z vašeho nativního kódu
 
@@ -115,7 +115,7 @@ Než začnete s modulem runtime, je nutné připravit některé vlastnosti k ur�
 Mezi běžné vlastnosti patří:
 
 * `TRUSTED_PLATFORM_ASSEMBLIES`Toto je seznam cest sestavení (oddělených znakem '; ' ve Windows a ': ' v systému Linux), který bude moci modul runtime ve výchozím nastavení vyřešit. Někteří hostitelé mají pevně kódované manifesty se seznamem sestavení, která lze načíst. Ostatní budou do tohoto seznamu vkládat všechny knihovny v určitých umístěních (například vedle *CoreCLR. dll*).
-* `APP_PATHS`Toto je seznam cest k testům pro sestavení, pokud jej nelze najít v seznamu důvěryhodných platforem sestavení (TPA). Vzhledem k tomu, že hostitel má větší kontrolu nad tím, která sestavení jsou načtena pomocí seznamu TPA, je osvědčeným postupem pro hostitele k určení, která sestavení chtějí načíst a jejich seznam explicitně. Pokud je tato vlastnost potřebná ke zjišťování za běhu, může tento scénář povolit.
+* `APP_PATHS`Toto je seznam cest k testům pro sestavení, pokud jej nelze najít v seznamu důvěryhodných platforem sestavení (TPA). Vzhledem k tomu, že hostitel má větší kontrolu nad tím, která sestavení jsou načtena pomocí seznamu TPA, je osvědčeným postupem pro hostitele k určení, která sestavení chtějí načíst a jejich seznam explicitně. Pokud je tato vlastnost potřebná ke zjišťování v době běhu, může tuto situaci povolit.
 * `APP_NI_PATHS`Tento seznam je podobný APP_PATHS s tím rozdílem, že se jedná o cesty, které budou zjišťovány pro nativní bitové kopie.
 * `NATIVE_DLL_SEARCH_DIRECTORIES`Tato vlastnost je seznam cest, které by měl zavaděč při hledání nativních knihoven volaných prostřednictvím volání nespravovaného testu otestovat.
 * `PLATFORM_RESOURCE_ROOTS`Tento seznam obsahuje cesty ke sondám pro satelitní sestavení prostředků (v podadresářích specifických pro jazykovou verzi).
@@ -213,7 +213,7 @@ Až se rozhodnete, které příznaky AppDomain se mají použít, musí být def
 Mezi běžné vlastnosti AppDomain patří:
 
 * `TRUSTED_PLATFORM_ASSEMBLIES`Toto je seznam cest sestavení (oddělený systémem `;` Windows a `:` na platformě Linux/MacOS), ve kterých by měla doména AppDomain upřednostňovat načítání a poskytovat úplný vztah důvěryhodnosti (dokonce i v částečně důvěryhodných doménách). Tento seznam má obsahovat sestavení architektury a jiné důvěryhodné moduly, podobně jako globální mezipaměť sestavení (GAC) v .NET Frameworkch scénářích. Někteří hostitelé vloží do tohoto seznamu všechny knihovny v *CoreCLR. dll* , ostatní mají pevně kódované manifesty, které uvádějí důvěryhodná sestavení pro jejich účely.
-* `APP_PATHS`Toto je seznam cest k testům pro sestavení, pokud jej nelze najít v seznamu důvěryhodných platforem sestavení (TPA). Vzhledem k tomu, že hostitel má větší kontrolu nad tím, která sestavení jsou načtena pomocí seznamu TPA, je osvědčeným postupem pro hostitele k určení, která sestavení chtějí načíst a jejich seznam explicitně. Pokud je tato vlastnost potřebná ke zjišťování za běhu, může tento scénář povolit.
+* `APP_PATHS`Toto je seznam cest k testům pro sestavení, pokud jej nelze najít v seznamu důvěryhodných platforem sestavení (TPA). Vzhledem k tomu, že hostitel má větší kontrolu nad tím, která sestavení jsou načtena pomocí seznamu TPA, je osvědčeným postupem pro hostitele k určení, která sestavení chtějí načíst a jejich seznam explicitně. Pokud je tato vlastnost potřebná ke zjišťování v době běhu, může tuto situaci povolit.
 * `APP_NI_PATHS`Tento seznam je velmi podobný APP_PATHS s tím rozdílem, že se jedná o cesty, které budou zjišťovány pro nativní bitové kopie.
 * `NATIVE_DLL_SEARCH_DIRECTORIES`Tato vlastnost je seznam cest, které by měl zavaděč při hledání nativních knihoven DLL volaných prostřednictvím volání nespravovaného testu otestovat.
 * `PLATFORM_RESOURCE_ROOTS`Tento seznam obsahuje cesty ke sondám pro satelitní sestavení prostředků (v podadresářích specifických pro jazykovou verzi).

@@ -8,75 +8,75 @@ dev_langs:
 helpviewer_keywords:
 - tasks, child tasks
 ms.assetid: c95788bf-90a6-4e96-b7bc-58e36a228cc5
-ms.openlocfilehash: 8f15ee4f136e3e2df1a4e1c7683467f2a4bc9bc0
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: c8a5d2c1ccb8bb2d272c2582cd416cdfd75506d8
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "73123189"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84285687"
 ---
 # <a name="attached-and-detached-child-tasks"></a>Připojené a odpojené podřízené úlohy
-Podřízený *úkol* (nebo *vnořený úkol*) je <xref:System.Threading.Tasks.Task?displayProperty=nameWithType> instance, která je vytvořena v delegátovi uživatele jiné úlohy, která se označuje jako *nadřazená úloha*. Podřízený úkol může být odpojen nebo připojen. *Odpojená podřízená úloha* je úloha, která se provádí nezávisle na nadřazené úloze. Připojený *podřízený úkol* je vnořený úkol, který je vytvořen s <xref:System.Threading.Tasks.TaskCreationOptions.AttachedToParent?displayProperty=nameWithType> možností, jejíž nadřazený není explicitně nebo ve výchozím nastavení zakázat připojení. Úkol může vytvořit libovolný počet připojených a odpojených podřízených úloh, omezených pouze systémovými prostředky.  
+*Podřízená úloha* (neboli *vnořená úloha*) je <xref:System.Threading.Tasks.Task?displayProperty=nameWithType> instance, která je vytvořena v uživatelském delegátu jiné úlohy, která je známá jako *nadřazená úloha*. Podřízená úloha může být buď odpojená, nebo připojená. *Odpojená podřízená úloha* je úkol, který se spouští nezávisle na jeho nadřazeném prvku. *Připojená podřízená úloha* je vnořená úloha vytvořená s <xref:System.Threading.Tasks.TaskCreationOptions.AttachedToParent?displayProperty=nameWithType> možností, jejíž nadřazená položka není explicitně nebo ve výchozím nastavení zakazuje připojení. Úkol může vytvořit libovolný počet připojených a odpojených podřízených úloh, které jsou omezeny pouze systémovými prostředky.  
   
- V následující tabulce jsou uvedeny základní rozdíly mezi dvěma druhy podřízených úkolů.  
+ V následující tabulce jsou uvedeny základní rozdíly mezi dvěma druhy podřízených úloh.  
   
-|Kategorie|Odpojené podřízené úkoly|Připojené podřízené úkoly|  
+|Kategorie|Odpojené podřízené úlohy|Připojené podřízené úlohy|  
 |--------------|--------------------------|--------------------------|  
-|Nadřazený čeká na dokončení podřízených úkolů.|Ne|Ano|  
-|Nadřazený šíří výjimky vyzývané podřízenými úkoly.|Ne|Ano|  
-|Stav rodiče závisí na stavu dítěte.|Ne|Ano|  
+|Nadřazený objekt čeká na dokončení podřízených úloh.|No|Ano|  
+|Nadřazený objekt šíří výjimky vyvolané podřízenými úlohami.|No|Ano|  
+|Stav nadřazeného objektu závisí na stavu podřízeného.|No|Ano|  
   
- Ve většině případů doporučujeme použít odpojené podřízené úkoly, protože jejich vztahy s jinými úkoly jsou méně složité. To je důvod, proč jsou úkoly vytvořené uvnitř nadřazených úkolů ve výchozím nastavení odpojeny a je nutné explicitně zadat <xref:System.Threading.Tasks.TaskCreationOptions.AttachedToParent?displayProperty=nameWithType> možnost vytvoření připojené podřízené úlohy.  
+ Ve většině scénářů doporučujeme používat odpojené podřízené úlohy, protože jejich vztahy s ostatními úkoly jsou méně složité. To je důvod, proč se úlohy vytvořené v nadřazených úlohách odpojí ve výchozím nastavení a Vy musíte explicitně zadat <xref:System.Threading.Tasks.TaskCreationOptions.AttachedToParent?displayProperty=nameWithType> možnost vytvoření připojené podřízené úlohy.  
   
-## <a name="detached-child-tasks"></a>Odpojené podřízené úkoly  
- Přestože je podřízená úloha vytvořena nadřazeným úkolem, je ve výchozím nastavení nezávislá na nadřazené úloze. V následujícím příkladu nadřazený úkol vytvoří jednu jednoduchou podřízenou úlohu. Pokud spustíte ukázkový kód vícekrát, můžete si všimnout, že výstup z příkladu se liší od zobrazené a také, že výstup může změnit při každém spuštění kódu. K tomu dochází, protože nadřazené úlohy a podřízené úkoly provádět nezávisle na sobě; dítě je samostatný úkol. Příklad čeká pouze na dokončení nadřazené úlohy a podřízená úloha se nemusí spustit nebo dokončit před ukončením konzolové aplikace.  
+## <a name="detached-child-tasks"></a>Odpojené podřízené úlohy  
+ I když je podřízená úloha vytvořena nadřazenou úlohou, ve výchozím nastavení je nezávislá na nadřazené úloze. V následujícím příkladu vytvoří nadřazená úloha jednu jednoduchou podřízenou úlohu. Pokud spustíte ukázkový kód několikrát, můžete si všimnout, že výstup z příkladu se liší od zobrazeného a také když se výstup může změnit při každém spuštění kódu. K tomu dochází, protože nadřazená úloha a podřízené úlohy se spouštějí nezávisle na sobě. podřízená úloha je odpojená úloha. Příklad čeká pouze na dokončení nadřazené úlohy a podřízená úloha se nemusí spustit nebo dokončit před ukončením aplikace konzoly.  
   
  [!code-csharp[TPL_ChildTasks#1](../../../samples/snippets/csharp/VS_Snippets_Misc/tpl_childtasks/cs/nested1.cs#1)]
  [!code-vb[TPL_ChildTasks#1](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpl_childtasks/vb/nested1.vb#1)]  
   
- Pokud je podřízená <xref:System.Threading.Tasks.Task%601> úloha reprezentována objektem, nikoli objektem, <xref:System.Threading.Tasks.Task> můžete zajistit, že <xref:System.Threading.Tasks.Task%601.Result%2A?displayProperty=nameWithType> nadřazená úloha bude čekat na dokončení podřízené ho dokončení přístupem k vlastnosti podřízeného i v případě, že se jedná o odpojenou podřízenou úlohu. Vlastnost <xref:System.Threading.Tasks.Task%601.Result%2A> blokuje, dokud jeho úkol dokončí, jak ukazuje následující příklad.  
+ Pokud je podřízená úloha reprezentována <xref:System.Threading.Tasks.Task%601> objektem, nikoli <xref:System.Threading.Tasks.Task> objektem, můžete zajistit, že nadřazená úloha bude čekat na dokončení podřízeného objektu, a <xref:System.Threading.Tasks.Task%601.Result%2A?displayProperty=nameWithType> to i v případě, že se jedná o odpojenou podřízenou úlohu. <xref:System.Threading.Tasks.Task%601.Result%2A>Vlastnost blokuje až do dokončení její úlohy, jak ukazuje následující příklad.  
   
  [!code-csharp[TPL_ChildTasks#4](../../../samples/snippets/csharp/VS_Snippets_Misc/tpl_childtasks/cs/childtasks.cs#4)]
  [!code-vb[TPL_ChildTasks#4](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpl_childtasks/vb/tpl_childtasks.vb#4)]  
   
-## <a name="attached-child-tasks"></a>Připojené podřízené úkoly  
- Na rozdíl od odpojených podřízených úkolů jsou připojené podřízené úkoly úzce synchronizovány s nadřazenou úlohou. Odpojenou podřízenou úlohu v předchozím příkladu můžete změnit <xref:System.Threading.Tasks.TaskCreationOptions.AttachedToParent?displayProperty=nameWithType> na připojenou podřízenou úlohu pomocí možnosti v příkazu vytvoření úkolu, jak je znázorněno v následujícím příkladu. V tomto kódu musí být připojená podřízená úloha dokončena před nadřazenou úlohou. V důsledku toho výstup z příkladu je stejný při každém spuštění kódu.  
+## <a name="attached-child-tasks"></a>Připojené podřízené úlohy  
+ Na rozdíl od odpojených podřízených úloh jsou připojené podřízené úlohy úzce synchronizovány s nadřazenou položkou. Odpojenou podřízenou úlohu v předchozím příkladu můžete změnit na připojenou podřízenou úlohu pomocí <xref:System.Threading.Tasks.TaskCreationOptions.AttachedToParent?displayProperty=nameWithType> Možnosti v příkazu pro vytvoření úlohy, jak je znázorněno v následujícím příkladu. V tomto kódu se připojená podřízená úloha dokončí před svým nadřazeným prvkem. Výsledkem je, že výstup z příkladu je stejný při každém spuštění kódu.  
   
  [!code-csharp[TPL_ChildTasks#2](../../../samples/snippets/csharp/VS_Snippets_Misc/tpl_childtasks/cs/child1.cs#2)]
  [!code-vb[TPL_ChildTasks#2](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpl_childtasks/vb/child1.vb#2)]  
   
  Připojené podřízené úlohy můžete použít k vytvoření úzce synchronizovaných grafů asynchronních operací.  
   
- Podřízený úkol se však může připojit k nadřazenému úkolu pouze v případě, že její nadřazený úkol nezakazuje připojené podřízené úkoly. Nadřazené úkoly mohou explicitně zabránit <xref:System.Threading.Tasks.TaskCreationOptions.DenyChildAttach?displayProperty=nameWithType> tomu, aby se k nim podřízené úkoly připojily zadáním možnosti v konstruktoru třídy nadřazeného úkolu nebo v metodě. <xref:System.Threading.Tasks.TaskFactory.StartNew%2A?displayProperty=nameWithType> Nadřazené úkoly implicitně zabránit podřízené úkoly <xref:System.Threading.Tasks.Task.Run%2A?displayProperty=nameWithType> z jejich připojení, pokud jsou vytvořeny voláním metody. Toto dokládá následující příklad. Je totožný s předchozím příkladem, s tím <xref:System.Threading.Tasks.Task.Run%28System.Action%29?displayProperty=nameWithType> rozdílem, <xref:System.Threading.Tasks.TaskFactory.StartNew%28System.Action%29?displayProperty=nameWithType> že nadřazený úkol je vytvořen voláním metody spíše než metody. Vzhledem k tomu, že podřízený úkol není schopen připojit k nadřazené, výstup z příkladu je nepředvídatelné. Vzhledem k tomu, <xref:System.Threading.Tasks.Task.Run%2A?displayProperty=nameWithType> že výchozí <xref:System.Threading.Tasks.TaskCreationOptions.DenyChildAttach?displayProperty=nameWithType>možnosti vytváření úloh pro přetížení zahrnují , tento příklad je funkčně ekvivalentní prvnímu příkladu v části "Odpojené podřízené úkoly".  
+ Podřízená úloha se ale může připojit k nadřazenému objektu pouze v případě, že jeho nadřazený objekt nezakáže připojené podřízené úlohy. Nadřazené úlohy mohou explicitně zabránit tomu, aby se k nim podřízené úlohy připojily zadáním <xref:System.Threading.Tasks.TaskCreationOptions.DenyChildAttach?displayProperty=nameWithType> Možnosti v konstruktoru třídy nadřazené úlohy nebo v <xref:System.Threading.Tasks.TaskFactory.StartNew%2A?displayProperty=nameWithType> metodě. Nadřazené úlohy implicitně zabraňují podřízeným úkolům v připojení, pokud jsou vytvořeny voláním <xref:System.Threading.Tasks.Task.Run%2A?displayProperty=nameWithType> metody. Toto dokládá následující příklad. Je stejný jako předchozí příklad s tím rozdílem, že nadřazená úloha je vytvořena voláním <xref:System.Threading.Tasks.Task.Run%28System.Action%29?displayProperty=nameWithType> metody namísto <xref:System.Threading.Tasks.TaskFactory.StartNew%28System.Action%29?displayProperty=nameWithType> metody. Vzhledem k tomu, že se podřízená úloha nemůže připojit ke své nadřazené položce, není možné předpovědět výstup z tohoto příkladu. Vzhledem k tomu, že výchozí možnosti pro vytvoření úlohy pro <xref:System.Threading.Tasks.Task.Run%2A?displayProperty=nameWithType> přetížení zahrnují <xref:System.Threading.Tasks.TaskCreationOptions.DenyChildAttach?displayProperty=nameWithType> , je tento příklad funkčně ekvivalentní prvnímu příkladu v části "odpojené podřízené úlohy".  
   
  [!code-csharp[TPL_ChildTasks#3](../../../samples/snippets/csharp/VS_Snippets_Misc/tpl_childtasks/cs/child1a.cs#3)]
  [!code-vb[TPL_ChildTasks#3](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpl_childtasks/vb/child1a.vb#3)]  
   
-## <a name="exceptions-in-child-tasks"></a>Výjimky v podřízených úkolech  
- Pokud odpojená podřízená úloha vyvolá výjimku, musí být tato výjimka pozorována nebo zpracována přímo v nadřazené úloze stejně jako u všech nevnořených úloh. Pokud připojená podřízená úloha vyvolá výjimku, výjimka se automaticky rozšíří do nadřazené úlohy a <xref:System.Threading.Tasks.Task%601.Result%2A?displayProperty=nameWithType> zpět do vlákna, které čeká nebo se pokusí o přístup k vlastnosti úlohy. Proto pomocí připojené podřízené úkoly, můžete zpracovat všechny výjimky <xref:System.Threading.Tasks.Task.Wait%2A?displayProperty=nameWithType> pouze v jednom bodě volání na volající vlákno. Další informace naleznete v [tématu Zpracování výjimek](../../../docs/standard/parallel-programming/exception-handling-task-parallel-library.md).  
+## <a name="exceptions-in-child-tasks"></a>Výjimky v podřízených úlohách  
+ Pokud odpojená podřízená úloha vyvolá výjimku, musí být tato výjimka pozorována nebo zpracována přímo v nadřazené úloze stejně jako u libovolné nevnořené úlohy. Pokud připojená podřízená úloha vyvolá výjimku, výjimka je automaticky šířena do nadřazené úlohy a zpět do vlákna, které čeká nebo se pokouší o přístup k <xref:System.Threading.Tasks.Task%601.Result%2A?displayProperty=nameWithType> vlastnosti úkolu. Proto pomocí připojených podřízených úloh můžete zpracovat všechny výjimky pouze v jednom bodě volání do <xref:System.Threading.Tasks.Task.Wait%2A?displayProperty=nameWithType> volajícího vlákna. Další informace naleznete v tématu [zpracování výjimek](exception-handling-task-parallel-library.md).  
   
-## <a name="cancellation-and-child-tasks"></a>Zrušení a podřízené úkoly  
- Zrušení úkolu je kooperativní. To znamená, že chcete-li zrušit, musí každá připojená nebo odpojená podřízená úloha sledovat stav tokenu zrušení. Pokud chcete zrušit nadřazenou položku a všechny jeho podřízené položky pomocí jednoho požadavku na zrušení, předáte stejný token jako argument všem úkolům a v každém úkolu poskytnete logiku pro odpověď na požadavek v jednotlivých úkolech. Další informace naleznete v [tématu Zrušení úkolu](../../../docs/standard/parallel-programming/task-cancellation.md) a [postup: Zrušení úkolu a jeho podřízených úloh](../../../docs/standard/parallel-programming/how-to-cancel-a-task-and-its-children.md).  
+## <a name="cancellation-and-child-tasks"></a>Zrušení a podřízené úlohy  
+ Zrušení úlohy je kooperativní. To znamená, že aby bylo možné je zrušit, každá připojená nebo odpojená podřízená úloha musí monitorovat stav tokenu zrušení. Pokud chcete zrušit nadřazenou položku a všechny její podřízené položky pomocí jedné žádosti o zrušení, předáte stejný token jako argument všem úkolům a v každém úkolu poskytnete logiku reagovat na požadavek v jednotlivých úkolech. Další informace naleznete v tématu [zrušení úlohy](task-cancellation.md) a [Postup: zrušení úlohy a jejích podřízených objektů](how-to-cancel-a-task-and-its-children.md).  
   
-### <a name="when-the-parent-cancels"></a>Když rodič zruší  
- Pokud nadřazený zruší sám před spuštěním podřízené úlohy, podřízený nikdy nespustí. Pokud nadřazený zruší sám po jeho podřízené úlohy již byla zahájena, podřízený spustí k dokončení, pokud má vlastní logiku zrušení. Další informace naleznete v [tématu Zrušení úkolu](../../../docs/standard/parallel-programming/task-cancellation.md).  
+### <a name="when-the-parent-cancels"></a>Při zrušení nadřazené položky  
+ Pokud nadřazený objekt zruší sám sebe před spuštěním podřízené úlohy, podřízené položky se nikdy nespustí. Pokud nadřazený objekt zruší sám sebe poté, co již byla podřízená úloha spuštěna, bude podřízená tabulka dokončena, pokud nemá svou vlastní logiku zrušení. Další informace najdete v tématu [zrušení úlohy](task-cancellation.md).  
   
-### <a name="when-a-detached-child-task-cancels"></a>Když se odpojená podřízená úloha zruší  
- Pokud odpojené podřízené úlohy zruší sám pomocí stejného tokenu, který byl předán nadřazený a nadřazený nečeká na podřízenou úlohu, žádná výjimka je rozšířena, protože výjimka je považována za neškodné zrušení spolupráce. Toto chování je stejné jako u všech úkolů nejvyšší úrovně.  
+### <a name="when-a-detached-child-task-cancels"></a>Když se zruší odpojená podřízená úloha  
+ Pokud odpojená podřízená úloha zruší sebe sama pomocí stejného tokenu, který byl předán nadřazenému objektu, a nadřazený objekt nečeká na podřízenou úlohu, není šířena žádná výjimka, protože výjimka je považována za zrušení neškodné spolupráce. Toto chování je stejné jako u všech úloh nejvyšší úrovně.  
   
-### <a name="when-an-attached-child-task-cancels"></a>Když se připojený podřízený úkol zruší  
- Když připojené podřízené úlohy zruší sám pomocí stejného tokenu, <xref:System.Threading.Tasks.TaskCanceledException> který byl předán jeho nadřazené úlohy, a je rozšířena do spojovacího vlákna uvnitř <xref:System.AggregateException>. Musíte počkat na nadřazenou úlohu, abyste mohli zpracovávat všechny neškodné výjimky kromě všech chybných výjimek, které jsou šířeny prostřednictvím grafu připojených podřízených úloh.  
+### <a name="when-an-attached-child-task-cancels"></a>Když se zruší připojená podřízená úloha  
+ Pokud připojená podřízená úloha zruší sebe sama pomocí stejného tokenu, který byl předán jeho nadřazené úloze, <xref:System.Threading.Tasks.TaskCanceledException> je šířena do spojovacího vlákna uvnitř <xref:System.AggregateException> . Je nutné počkat na nadřazenou úlohu, aby bylo možné zpracovat všechny neškodné výjimky kromě všech výjimek, které jsou šířeny pomocí grafu připojených podřízených úloh.  
   
- Další informace naleznete v [tématu Zpracování výjimek](../../../docs/standard/parallel-programming/exception-handling-task-parallel-library.md).  
+ Další informace naleznete v tématu [zpracování výjimek](exception-handling-task-parallel-library.md).  
   
-## <a name="preventing-a-child-task-from-attaching-to-its-parent"></a>Zabránění připojení podřízené úlohy k nadřazené úloze  
- Neošetřená výjimka, která je vyvolána podřízenou úlohou, je rozšířena na nadřazenou úlohu. Toto chování můžete použít k pozorování všech výjimek podřízených úloh z jedné kořenové úlohy namísto procházení stromu úkolů. Šíření výjimek však může být problematické, pokud nadřazená úloha neočekává přílohu z jiného kódu. Zvažte například aplikaci, která volá komponentu <xref:System.Threading.Tasks.Task> knihovny jiného výrobce z objektu. Pokud součást knihovny jiného <xref:System.Threading.Tasks.Task> výrobce také <xref:System.Threading.Tasks.TaskCreationOptions.AttachedToParent?displayProperty=nameWithType> vytvoří objekt a určuje jeho připojení k nadřazené úloze, všechny neošetřené výjimky, ke kterým dochází v podřízené úloze, se rozšíří na nadřazenou úlohu. To může vést k neočekávanému chování v hlavní aplikaci.  
+## <a name="preventing-a-child-task-from-attaching-to-its-parent"></a>Zabránění tomu, aby se podřízená úloha připojila k nadřazenému objektu  
+ Neošetřená výjimka, která je vyvolána podřízenou úlohou, je šířena do nadřazené úlohy. Toto chování můžete použít ke sledování všech výjimek podřízených úloh z jedné kořenové úlohy namísto procházení stromu úkolů. Šíření výjimky však může být problematické, Pokud nadřazená úloha neočekává přílohu z jiného kódu. Zvažte například aplikaci, která volá komponentu knihovny třetí strany z <xref:System.Threading.Tasks.Task> objektu. Pokud komponenta knihovny třetí strany vytvoří <xref:System.Threading.Tasks.Task> objekt a určí <xref:System.Threading.Tasks.TaskCreationOptions.AttachedToParent?displayProperty=nameWithType> , že se má připojit k nadřazené úloze, všechny neošetřené výjimky, ke kterým dojde v podřízené úloze, se šíří do nadřazeného objektu. To může vést k neočekávanému chování v hlavní aplikaci.  
   
- Chcete-li zabránit připojení podřízené úlohy k <xref:System.Threading.Tasks.TaskCreationOptions.DenyChildAttach?displayProperty=nameWithType> nadřazené <xref:System.Threading.Tasks.Task> <xref:System.Threading.Tasks.Task%601> úloze, zadejte tuto možnost při vytváření nadřazeného nebo objektu. Když se úloha pokusí připojit k nadřazené a nadřazená určuje <xref:System.Threading.Tasks.TaskCreationOptions.DenyChildAttach?displayProperty=nameWithType> možnost, podřízená <xref:System.Threading.Tasks.TaskCreationOptions.AttachedToParent?displayProperty=nameWithType> úloha se nebude moci připojit k nadřazené úloze a provede se stejně, jako by tato možnost nebyla zadána.  
+ Chcete-li zabránit tomu, aby se podřízená úloha připojila k nadřazené úloze, určete <xref:System.Threading.Tasks.TaskCreationOptions.DenyChildAttach?displayProperty=nameWithType> možnost při vytváření <xref:System.Threading.Tasks.Task> nadřazeného <xref:System.Threading.Tasks.Task%601> objektu nebo. Když se úloha pokusí připojit k nadřazené položce a Nadřazená položka určuje <xref:System.Threading.Tasks.TaskCreationOptions.DenyChildAttach?displayProperty=nameWithType> možnost, podřízená úloha se nebude moci připojit k nadřazenému objektu a provede se stejným způsobem, jako kdyby nebyla <xref:System.Threading.Tasks.TaskCreationOptions.AttachedToParent?displayProperty=nameWithType> zadána možnost.  
   
- Můžete také zabránit podřízené úloze v připojení k nadřazené úlohě, když podřízená úloha není dokončena včas. Vzhledem k tomu, že nadřazená úloha se nedokončí, dokud nebudou dokončeny všechny podřízené úlohy, může dlouho běžící podřízená úloha způsobit, že celková aplikace bude fungovat špatně. Příklad, který ukazuje, jak zlepšit výkon aplikace tím, že brání úkolu v připojení k nadřazenému úkolu, najdete v [tématu Jak: Zabránit podřízené úloze v připojení k nadřazené úloze](../../../docs/standard/parallel-programming/how-to-prevent-a-child-task-from-attaching-to-its-parent.md).  
+ V případě, že se podřízená úloha nedokončuje včas, můžete také zabránit tomu, aby se podřízená úloha připojila k nadřazené úloze. Vzhledem k tomu, že nadřazená úloha není dokončena, dokud nebudou dokončeny všechny podřízené úlohy, může dlouhodobě spuštěná podřízená úloha způsobit, že celková aplikace nebude fungovat špatně. Příklad, který ukazuje, jak zlepšit výkon aplikace tím, že zabráníte tomu, aby se úloha připojila k nadřazené úloze, najdete v tématu [How to: Inpomoci při připojení podřízené úlohy ke své nadřazené položce](how-to-prevent-a-child-task-from-attaching-to-its-parent.md).  
   
 ## <a name="see-also"></a>Viz také
 
-- [Paralelní programování](../../../docs/standard/parallel-programming/index.md)
-- [Datový paralelismus](../../../docs/standard/parallel-programming/data-parallelism-task-parallel-library.md)
+- [Paralelní programování](index.md)
+- [Datový paralelismus](data-parallelism-task-parallel-library.md)

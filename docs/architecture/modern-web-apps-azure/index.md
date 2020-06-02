@@ -3,13 +3,13 @@ title: Navrhování moderních webových aplikací pomocí ASP.NET Core a Azure
 description: Příručka, která poskytuje kompletní pokyny k vytváření monolitické webových aplikací pomocí ASP.NET Core a Azure.
 author: ardalis
 ms.author: wiwagn
-ms.date: 12/4/2019
-ms.openlocfilehash: 8eebe9a8e530b244f4596adef1b5e6dd23e305bd
-ms.sourcegitcommit: ee5b798427f81237a3c23d1fd81fff7fdc21e8d3
+ms.date: 5/25/2020
+ms.openlocfilehash: 7be03ea8edb763096b0684a62e71826f1cfcd42f
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84144536"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84284452"
 ---
 # <a name="architect-modern-web-applications-with-aspnet-core-and-azure"></a>Navrhování moderních webových aplikací pomocí ASP.NET Core a Azure
 
@@ -87,6 +87,10 @@ Další a více organizací se volí pro hostování webových aplikací v cloud
 
 Vytváření webových aplikací pomocí ASP.NET Core hostovaných v Azure nabízí řadu konkurenčních výhod oproti tradičním alternativám. ASP.NET Core je optimalizovaná pro moderní postupy pro vývoj webových aplikací a hostování cloudu. V této příručce se dozvíte, jak navrhovat aplikace ASP.NET Core, abyste mohli nejlépe využít tyto možnosti.
 
+## <a name="version"></a>Verze
+
+Tato příručka byla revidována tak, aby kryla verzi **.NET core 3,1** spolu s mnoha dalšími aktualizacemi, které se týkají stejných "Wave" technologií (tj. Azure a dalších technologií třetích stran), které se shodují v čase s verzí .net Core 3,1. To je důvod, proč se verze knihy aktualizovala také na verzi **3,1**.
+
 ## <a name="purpose"></a>Účel
 
 Tato příručka poskytuje kompletní pokyny k vytváření *monolitické* webových aplikací pomocí ASP.NET Core a Azure. V tomto kontextu odkazuje "monolitické" na skutečnost, že tyto aplikace jsou nasazeny jako jediná jednotka, nikoli jako kolekce interaktivních služeb a aplikací.
@@ -112,7 +116,7 @@ Tato příručka je zhuštěná do relativně malého dokumentu, který se zamě
 
 Nebojte se této příručky s vaším týmem, abyste se ujistili, že se tyto otázky a příležitosti budou porozumět běžným způsobem. Díky tomu, že všichni pracují se společnou sadou terminologie a základními principy, pomáhají zajistit konzistentní používání vzorů a postupů architektury.
 
-## <a name="references"></a>Odkazy
+## <a name="references"></a>Reference
 
 - **Volba mezi .NET Core a .NET Framework pro serverové aplikace**  
   [https://docs.microsoft.com/dotnet/standard/choosing-core-framework-server](../../standard/choosing-core-framework-server.md)
